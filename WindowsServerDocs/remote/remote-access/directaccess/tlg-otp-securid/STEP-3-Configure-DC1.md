@@ -2,22 +2,18 @@
 title: 步驟3設定 DC1
 description: 本主題屬於測試實驗室指南-示範使用 OTP 驗證的 DirectAccess 和適用于 Windows Server 2016 的 RSA SecurID
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 836a2a08-3d22-48d2-873e-80d7e57ebbd6
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 8104868103fff29044041136b48c59d966cc7bd0
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 07167f2bc68ab8c465a96ce00552339d04dbb198
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314400"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856071"
 ---
 # <a name="step-3-configure-dc1"></a>步驟3設定 DC1
 

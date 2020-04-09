@@ -1,19 +1,19 @@
 ---
 title: 確認受防護主機可以證明
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 7485796b-b840-4678-9b33-89e9710fbbc7
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: 2bab2b653127ae13d27dea76225ada91b3ee8ecc
-ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
+ms.openlocfilehash: aa2075bda71c6713fa76577b685315118199e63b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940694"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856781"
 ---
 # <a name="confirm-guarded-hosts-can-attest"></a>確認受防護主機可以證明
 
@@ -41,7 +41,7 @@ ms.locfileid: "71940694"
 
     - **透過 VMM**：如果您使用 System Center 2016-VIRTUAL MACHINE MANAGER （vmm），您可以在 VMM 中設定證明和金鑰保護 url。 如需詳細資訊，請參閱在**VMM 中**布建受防護主機中的[設定全域 HGS 設定](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-hosts#configure-global-hgs-settings)。
 
-    >**注意事項**
+    >**紀錄**
     > - 如果 hgs 系統管理員在[hgs 伺服器上啟用 HTTPS](guarded-fabric-configure-hgs-https.md)，請使用 `https://`開始 url。
     > - 如果 HGS 系統管理員在 HGS 伺服器上啟用 HTTPS，並使用自我簽署憑證，您必須將憑證匯入每部主機上的「受信任的根憑證授權」存放區中。 若要這麼做，請在每部主機上執行下列命令：
        ```PowerShell
@@ -70,7 +70,7 @@ ms.locfileid: "71940694"
 > [!div class="nextstepaction"]
 > [部署受防護的 VM](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 - [部署主機守護者服務（HGS）](guarded-fabric-deploying-hgs-overview.md)
 - [部署受防護的 VM](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)

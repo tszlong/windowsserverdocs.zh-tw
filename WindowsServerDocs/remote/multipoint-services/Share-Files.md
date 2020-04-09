@@ -1,24 +1,20 @@
 ---
 title: 共用檔案
 description: 瞭解如何使用共用資料夾和網路在 MultiPoint 服務中共用檔案
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5e138e01-39e3-4d60-ad3c-5a33b1e0b076
 author: lizap
 manager: dongill
 ms.date: 08/04/2016
 ms.author: elizapo
-ms.openlocfilehash: f050691603ed0989ab3b0ea3aac34a5fd74e1fbd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: db2707803a6be2db83ac574e7b50c8698d6bd0b5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394993"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855611"
 ---
 # <a name="share-files"></a>共用檔案
 您可以將內容儲存在 Windows 檔案總管的公用資料夾中，與其他 MultiPoint 服務使用者共用內容。 在 MultiPoint 服務系統中，所有儲存在 Windows 檔案總管之公用資料夾中的內容，都可供 MultiPoint 服務系統上的所有使用者存取。  

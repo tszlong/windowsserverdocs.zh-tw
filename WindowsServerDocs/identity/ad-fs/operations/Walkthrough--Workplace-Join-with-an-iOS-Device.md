@@ -1,7 +1,6 @@
 ---
 ms.assetid: 299e4fb9-8f1a-4275-ad7d-dad4f1594657
 title: 逐步解說-使用 iOS 裝置 Workplace Join
-description: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 10/18/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 5214165c2843461a2da8b574ad28f92b0e0bc64d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7b1d2a5f5c32d55e482f5f53a04668b34fc9aece
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407491"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815991"
 ---
 # <a name="walkthrough-workplace-join-with-an-ios-device"></a>逐步解說：將 iOS 裝置加入工作地點網路
 
@@ -51,14 +50,14 @@ ms.locfileid: "71407491"
 
 5. 若您的裝置要求您輸入 PIN 以解除鎖定裝置，系統會提示您輸入 PIN。
 
-6. 當您看到 [設定檔已安裝] 畫面時，表示設定檔已安裝完成。 按一下 \[完成\]。
+6. 當您看到 [設定檔已安裝] 畫面時，表示設定檔已安裝完成。 按一下 [完成]。
 
    返回到 Safari。 會顯示一個訊息通知您您可以關閉或離開 Safari。
 
 > [!TIP]
 > 若要檢視或移除「加入工作地點網路」設定檔，請在您的 iOS 裝置上瀏覽到 [設定]，按一下 [一般]，然後按一下 [設定檔]。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 
 - [從任何裝置加入工作地點網路，並在公司的各個應用程式提供 SSO 和無縫式的次要因素驗證](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)

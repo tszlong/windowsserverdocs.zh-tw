@@ -1,24 +1,20 @@
 ---
 title: ksetup： removerealm
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 39f0c6f0-4c50-4781-941e-0893495405e8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 11858d8a24d4f125c83b3e4092ac48f336a9ef0b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1465ce08c0cf45de828683324b29fb2df8d0e893
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374952"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80841451"
 ---
 # <a name="ksetupremoverealm"></a>ksetup： removerealm
 
@@ -32,7 +28,7 @@ ms.locfileid: "71374952"
 ksetup /removerealm <RealmName>
 ```
 
-### <a name="parameters"></a>參數
+#### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -40,13 +36,13 @@ ksetup /removerealm <RealmName>
 
 ## <a name="remarks"></a>備註
 
-領域名稱會儲存在登錄中的兩個位置：**HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001**和 **\CurrentControlSet\Control\Lsa\Kerberos**。
+領域名稱會儲存在登錄中的兩個位置： **HKEY_LOCAL_MACHINE \system\controlset001**和 **\CurrentControlSet\Control\Lsa\Kerberos**。
 
 您無法從網域控制站移除預設的領域名稱，因為這將會重設其 DNS 資訊，而將它移除可能會使網域控制站無法使用。
 
-## <a name="BKMK_Examples"></a>典型
+## <a name="examples"></a><a name=BKMK_Examples></a>典型
 
-將本機電腦上的 ".COM" 拼錯，以誤設定領域名稱為 CORP。CONTOSO.CON
+錯誤地在本機電腦上將領域名稱設定為 CORP。CONTOSO.CON
 ```
 ksetup /setrealm CORP.CONTOSO.CON
 ```
@@ -56,8 +52,8 @@ ksetup /removerealm CORP.CONTOSO.CON
 ```
 執行**ksetup**並檢查輸出，以確認移除。
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
 -   [Ksetup](ksetup.md)
 -   [Ksetup:setrealm](ksetup-setrealm.md)
--   [命令列語法關鍵](command-line-syntax-key.md)
+-   - [命令列語法關鍵](command-line-syntax-key.md)

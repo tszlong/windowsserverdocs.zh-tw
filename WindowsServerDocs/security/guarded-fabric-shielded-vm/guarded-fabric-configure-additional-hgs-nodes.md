@@ -1,19 +1,19 @@
 ---
 title: 設定其他 HGS 節點
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 227f723b-acb2-42a7-bbe3-44e82f930e35
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 01/14/2020
-ms.openlocfilehash: ece005617c4a2faac41c2be15967b2f43951517e
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: d131643db4dfb179f5bdb8bcbad9f003d1ae61e1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265860"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856891"
 ---
 # <a name="configure-additional-hgs-nodes"></a>設定其他 HGS 節點
 
@@ -28,7 +28,7 @@ ms.locfileid: "76265860"
 |新的 HGS 樹系  | [使用 PFX 檔案](#dedicated-hgs-forest-with-pfx-certificates) | [使用憑證指紋](#dedicated-hgs-forest-with-certificate-thumbprints) |
 |現有的防禦樹系 |  [使用 PFX 檔案](#existing-bastion-forest-with-pfx-certificates) | [使用憑證指紋](#existing-bastion-forest-with-certificate-thumbprints) |
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 請確定每個額外的節點： 
 - 具有與主要節點相同的硬體和軟體設定 

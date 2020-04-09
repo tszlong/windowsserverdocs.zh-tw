@@ -1,23 +1,23 @@
 ---
 title: 取得 HGS 的憑證
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: f4b4d1a8-bf6d-4881-9150-ddeca8b48038
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: e8f4a3696ec5096281ba1ffd130aa97004530cc1
-ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
+ms.openlocfilehash: da1ae4bacd5a6b2e38b22930aacf06f65b16bb29
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940739"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856531"
 ---
 # <a name="obtain-certificates-for-hgs"></a>取得 HGS 的憑證
 
->適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
+>適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
 
 當您部署 HGS 時，系統會要求您提供簽署和加密憑證，以用來保護啟動受防護 VM 所需的機密資訊。
 這些憑證永遠不會離開 HGS，而且只會在其執行所在的主機證明其狀況良好時，用來解密受防護的 VM 金鑰。
@@ -37,9 +37,9 @@ ms.locfileid: "71940739"
 ------------------------------|----------------
 加密提供者               | 任何金鑰儲存提供者（KSP）。 **不**支援舊版密碼編譯服務提供者（csp）。
 金鑰演算法                 | RSA
-最小金鑰大小              | 2048位
-簽章演算法           | 建議：SHA256
-金鑰使用方法                     | 數位簽章*和*資料加密
+最小金鑰大小              | 2048 位元
+簽章演算法           | 建議： SHA256
+金鑰使用方式                     | 數位簽章*和*資料加密
 增強金鑰使用方法            | 伺服器驗證
 金鑰更新原則            | 以相同的金鑰更新。 使用不同的金鑰來更新 HGS 憑證，會導致受防護的 Vm 無法啟動。
 主體名稱                  | 建議：您公司的名稱或網址。 這項資訊會顯示在 [防護資料檔案] 中的 VM 擁有者。
@@ -74,14 +74,14 @@ Remove-Item $encCert.PSPath
 
 ## <a name="request-an-ssl-certificate"></a>要求 SSL 憑證
 
-在 Hyper-v 主機和 HGS 之間傳輸的所有金鑰和機密資訊都會在訊息層級進行加密，亦即，資訊會以 HGS 或 Hyper-v 已知的金鑰加密，防止他人探查您的網路流量和竊取金鑰至您的 Vm。
+在 Hyper-v 主機和 HGS 之間傳輸的所有金鑰和機密資訊都會在訊息層級進行加密，亦即，資訊會以 HGS 或 Hyper-v 已知的金鑰加密，以防止他人探查您的網路流量，並竊取金鑰給您的 Vm。
 不過，如果您有合規性 reqiurements，或只是想要加密 Hyper-v 與 HGS 之間的所有通訊，您可以使用 SSL 憑證來設定 HGS，這會加密傳輸層級的所有資料。
 
 Hyper-v 主機和 HGS 節點都必須信任您提供的 SSL 憑證，因此建議您向企業憑證授權單位單位要求 SSL 憑證。 要求憑證時，請務必指定下列各項：
 
 SSL 憑證屬性 | 必要值
 -------------------------|---------------
-主體名稱             | HGS 叢集的名稱（稱為「分散式網路名稱」或「虛擬電腦物件 FQDN」）。 這會將提供給 `Initialize-HgsServer` 和您 HGS 功能變數名稱的 HGS 服務名稱串連。
+主體名稱             | HGS 叢集的名稱（稱為「分散式網路名稱」或「虛擬電腦物件 FQDN」）。 這會將提供給 `Initialize-HgsServer` 的 HGS 服務名稱與您的 HGS 功能變數名稱串連。
 主體替代名稱 | 如果您將使用不同的 DNS 名稱來連線到 HGS 叢集（例如，如果它位於負載平衡器後方），請務必在憑證要求的 SAN 欄位中包含這些 DNS 名稱。
 
 [設定第一個 hgs 節點](guarded-fabric-initialize-hgs.md)時，會涵蓋在初始化 HGS 伺服器時指定此憑證的選項。

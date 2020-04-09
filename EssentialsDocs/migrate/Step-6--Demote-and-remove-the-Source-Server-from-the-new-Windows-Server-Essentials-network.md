@@ -1,23 +1,19 @@
 ---
 title: 步驟 6：從新的 Windows Server Essentials 網路降級和移除來源伺服器
 description: 說明如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 86244c66-2c5e-488d-adb8-112e1ca3e2e1
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 3df8b2901ca2ca3d38066c592aaeb326d7471ba0
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: b1b7836e976ef35aec66e206ec8b1de0e2150d62
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318738"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852331"
 ---
 # <a name="step-6-demote-and-remove-the-source-server-from-the-new-windows-server-essentials-network"></a>步驟 6：從新的 Windows Server Essentials 網路降級和移除來源伺服器
 

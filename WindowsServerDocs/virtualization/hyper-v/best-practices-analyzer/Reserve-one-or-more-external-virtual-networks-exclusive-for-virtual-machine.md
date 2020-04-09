@@ -2,33 +2,32 @@
 title: 保留一或多個外部虛擬網路供虛擬機器獨佔使用
 description: 提供解決此最佳做法分析程式規則所回報之問題的指示。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: f7732258-93f1-44e8-835b-5ad2d1c45cd9
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: a72f3d616bb0c520e49c27f90686196463f25953
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c371743f20f8192b682ff68045c5d72e9e0f7e8d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364785"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861801"
 ---
 # <a name="reserve-one-or-more-external-virtual-networks-for-exclusive-use-by-virtual-machines"></a>保留一或多個外部虛擬網路供虛擬機器獨佔使用
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
 如需最佳做法和掃描的詳細資訊，請參閱 [最佳做法分析程式](https://go.microsoft.com/fwlink/?LinkId=122786)。  
   
 |屬性|詳細資料|  
 |-|-|  
-|**作業系統**|Windows Server 2016|  
+|**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
-|**Severity**|Error|  
-|**分類**|組態|  
+|**低於**|錯誤|  
+|**類別**|組態|  
   
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   

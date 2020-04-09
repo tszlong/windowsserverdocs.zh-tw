@@ -2,22 +2,18 @@
 title: 步驟3驗證部署
 description: 本主題是將 DirectAccess 新增至 Windows Server 2016 的現有遠端存取（VPN）部署指南的一部分
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 43ac612e-2e77-418c-8171-ebb2086b7cb6
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 3967f50a354ee6ed31273734f2449d6d337d9b50
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: b187d017a3cf2865a92d95a8ae93bec11ff457f0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314719"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859531"
 ---
 # <a name="step-3-verify-the-deployment"></a>步驟3驗證部署
 

@@ -2,17 +2,17 @@
 title: 儲存空間直接存取的嵌套復原
 ms.prod: windows-server
 ms.author: jgerend
-ms.manager: dansimp
+manager: dansimp
 ms.technology: storagespaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/15/2019
-ms.openlocfilehash: ea1c4b2c249759634e00f6a1ac2caa34f8085ae1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ac4edccf0c1f8882dd2544b2544c3d8555bbc716
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402865"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857341"
 ---
 # <a name="nested-resiliency-for-storage-spaces-direct"></a>儲存空間直接存取的嵌套復原
 
@@ -22,12 +22,12 @@ Nested 復原是 Windows Server 2019 中[儲存空間直接存取](storage-space
 
 ## <a name="prerequisites"></a>必要條件
 
-### <a name="green-checkmark-iconmedianested-resiliencysupportedpng-consider-nested-resiliency-if"></a>![綠色核取記號圖示。](media/nested-resiliency/supported.png) 假設有下列情況，請考慮 nested 復原：
+### <a name="green-checkmark-icon-consider-nested-resiliency-if"></a>![綠色核取記號圖示。](media/nested-resiliency/supported.png) 假設有下列情況，請考慮 nested 復原：
 
 - 您的叢集執行 Windows Server 2019;和
 - 您的叢集只有2個伺服器節點
 
-### <a name="red-x-iconmedianested-resiliencyunsupportedpng-you-cant-use-nested-resiliency-if"></a>![紅色 X 圖示。](media/nested-resiliency/unsupported.png) 如果是下列情況，則無法使用 nested 復原：
+### <a name="red-x-icon-you-cant-use-nested-resiliency-if"></a>![紅色 X 圖示。](media/nested-resiliency/unsupported.png) 如果是下列情況，則無法使用 nested 復原：
 
 - 您的叢集執行 Windows Server 2016;或
 - 您的叢集有3個或多個伺服器節點
@@ -111,7 +111,7 @@ New-StorageTier -StoragePoolFriendlyName S2D* -FriendlyName NestedParity -Resili
 
 #### <a name="nested-two-way-mirror"></a>嵌套的雙向鏡像
 
-若要使用「嵌套的雙向鏡像」，請參考「`NestedMirror` 層」範本，並指定大小。 例如：
+若要使用「嵌套的雙向鏡像」，請參考「`NestedMirror` 層」範本，並指定大小。 例如，
 
 ```PowerShell
 New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume01 -StorageTierFriendlyNames NestedMirror -StorageTierSizes 500GB
@@ -171,11 +171,11 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.N
 
 ### <a name="does-nested-resiliency-change-how-drive-replacement-works"></a>Nested 復原是否會變更磁片磁碟機更換的運作方式？
 
-不。
+No。
 
 ### <a name="does-nested-resiliency-change-how-server-node-replacement-works"></a>Nested 復原是否會變更伺服器節點取代的運作方式？
 
-不。 若要取代伺服器節點和其磁片磁碟機，請遵循下列順序：
+No。 若要取代伺服器節點和其磁片磁碟機，請遵循下列順序：
 
 1. 淘汰傳出伺服器中的磁片磁碟機
 2. 將含有其磁片磁碟機的新伺服器新增至叢集
@@ -184,7 +184,7 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.N
 
 如需詳細資訊，請參閱[移除伺服器](remove-servers.md)主題。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 - [儲存空間直接存取總覽](storage-spaces-direct-overview.md)
 - [瞭解儲存空間直接存取中的容錯](storage-spaces-fault-tolerance.md)

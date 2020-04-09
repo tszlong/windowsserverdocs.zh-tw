@@ -4,15 +4,15 @@ description: PowerShell 模組撰寫考慮
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: JasonSh
+ms.author: jasonsh
 author: lzybkr
 ms.date: 10/16/2017
-ms.openlocfilehash: 8945339e7a7950d3cd722ab2af629b45e7f6dd5d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 25b202e56286b7c26c3150642a656eb31a120808
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370365"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851931"
 ---
 # <a name="powershell-module-authoring-considerations"></a>PowerShell 模組撰寫考慮
 

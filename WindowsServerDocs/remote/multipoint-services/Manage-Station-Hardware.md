@@ -1,29 +1,25 @@
 ---
 title: 管理站台硬體
 description: 提供如何管理 MultiPoint 工作站硬體的總覽
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 429b8539-b17a-4e01-9576-860600466451
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 9ca65352a6f016d5d18bdd92b39b737cdddb9057
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8ffb6fd714293471a0e9aa020390943b201261c4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395243"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853521"
 ---
 # <a name="manage-station-hardware"></a>管理站台硬體
-MultiPoint 服務系統是由單一電腦和至少一個工作站所組成。 工作站硬體通常是由一部站集線器、滑鼠、鍵盤和 video 監視器所組成。 站台通常以實體方式接線到電腦。  
+MultiPoint 服務系統是由單一電腦與至少一個「站台」所組成。 站台硬體通常是由「站台集線器」、滑鼠、鍵盤和視訊監視器所組成。 站台通常以實體方式接線到電腦。  
   
-下圖顯示具有四個站台之 MultiPoint 服務系統的配置範例︰ 每個工作站都會使用 USB 集線器和多監視器視訊卡來連接到 MultiPoint 服務電腦。 此圖例不代表使用「多功能集線器」連線的工作站。  
+下圖顯示具有四個站台之 MultiPoint 服務系統的配置範例︰ 每個工作站都會使用 USB 集線器和多監視器視訊卡來連接到 MultiPoint 服務電腦。 此圖並未顯示使用「多功能集線器」連接的站台。  
    
 ![MultiPoint 服務以 USB 為基礎的系統版面配置影像](./media/WMSMultiPointServerUSBSystemLayout.gif)  
   

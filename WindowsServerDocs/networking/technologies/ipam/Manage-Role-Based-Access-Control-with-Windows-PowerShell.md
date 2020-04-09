@@ -2,22 +2,18 @@
 title: 使用 Windows PowerShell 管理角色型存取控制
 description: 本主題是 Windows Server 2016 中 IP 位址管理（IPAM）管理指南的一部分。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ipam
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4f13f78e-0114-4e41-9a28-82a4feccecfc
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: a5cd347b849948052f4f7caa7fa8a863808e8c26
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 8fd8a0780e18324748e0352b124b2e3182bca13b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309530"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860641"
 ---
 # <a name="manage-role-based-access-control-with-windows-powershell"></a>使用 Windows PowerShell 管理角色型存取控制
 

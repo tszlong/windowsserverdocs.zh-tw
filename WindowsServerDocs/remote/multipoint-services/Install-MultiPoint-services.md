@@ -1,24 +1,20 @@
 ---
 title: 安裝 MultiPoint 服務
 description: 瞭解如何在 Windows Server 2016 中安裝和設定 MultiPoint 服務
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f6f8970b-de3f-4255-b2a1-5472a16ed02f
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 442699afe40ee67e4cd4f13572d1a482f675b84a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ab82782f4ac1ffa8532dc23ad9340329a65765de
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395378"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859211"
 ---
 # <a name="install-multipoint-services"></a>安裝 MultiPoint 服務
 如果您要從頭開始安裝伺服器，請遵循這些指示來安裝 MultiPoint 服務。  

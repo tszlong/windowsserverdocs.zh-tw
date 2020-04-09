@@ -1,28 +1,22 @@
 ---
 title: sort
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: 「排序」的 Windows 命令主題，可讀取輸入、排序資料，以及將結果寫入螢幕、檔案或另一個裝置。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 77116469-4790-4442-8a21-9fa73b65ef9f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 65b091a6de4f20ce94389ed39f4fe645c72b3560
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 853a9d5dc0928eec78199c8e0d0fe1715ea64808
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383946"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834081"
 ---
 # <a name="sort"></a>sort
-
-
 
 讀取輸入、排序資料，並將結果寫入螢幕、檔案或另一個裝置。
 
@@ -34,7 +28,7 @@ ms.locfileid: "71383946"
 sort [/r] [/+<N>] [/m <Kilobytes>] [/l <Locale>] [/rec <Characters>] [[<Drive1>:][<Path1>]<FileName1>] [/t [<Drive2>:][<Path2>]] [/o [<Drive3>:][<Path3>]<FileName3>]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -60,7 +54,7 @@ sort [/r] [/+<N>] [/m <Kilobytes>] [/l <Locale>] [/rec <Characters>] [[<Drive1>:
     當輸入和輸出都是檔案時，預設的記憶體大小上限是可用主儲存體的90%，否則為45% 的主儲存體。 預設設定通常會提供最佳效能。
 -   使用 **/l**命令列選項
 
-    目前，預設地區設定的唯一替代方式是 "C" 地區設定，其速度比自然語言排序更快（它會根據其二進位編碼來排序字元）。
+    目前，預設地區設定的唯一替代方式是 C 地區設定，其速度比自然語言排序更快（它會根據其二進位編碼來排序字元）。
 -   搭配**sort**命令使用重新導向符號
 
     您可以使用管線符號（ **|** ），從另一個命令將輸入資料導向至**sort**命令，或將排序的輸出導向另一個命令。 您可以使用重新導向符號（ **<** 或 **>** ）指定輸入和輸出檔案。 它可以更快速且更有效率（尤其是大型檔案）來直接指定輸入檔（如命令語法中的*FileName1*所定義），然後使用 **/o**參數指定輸出檔。
@@ -77,7 +71,7 @@ sort [/r] [/+<N>] [/m <Kilobytes>] [/l <Locale>] [/rec <Characters>] [[<Drive1>:
 
     如果排序符合最大記憶體大小（根據預設值或 **/m**參數所指定），則會在單一階段中執行排序。 否則，會在兩個不同的排序和合併階段中執行排序，而且兩個傳遞所使用的記憶體數量相等。 執行兩個行程時，部分排序的資料會儲存在磁片上的暫存檔案中。 如果記憶體不足，無法在兩個階段中執行排序，就會發出執行階段錯誤。 如果使用 **/m**命令列選項來指定比真正可用的記憶體更多，可能會發生效能降低或執行階段錯誤。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 **排序檔案**
 
@@ -87,9 +81,9 @@ sort [/r] [/+<N>] [/m <Kilobytes>] [/l <Locale>] [/rec <Characters>] [[<Drive1>:
 
 **排序命令的輸出**
 
-若要在名為 Maillist 的大型檔案中搜尋文字 "，"，並排序搜尋結果，請使用分隔號（|）將**find**命令的輸出導向至**sort**命令，如下所示：
+若要在名為 Maillist 的大型檔案中搜尋文字，並排序搜尋結果，請使用管線（|）將**find**命令的輸出導向至**sort**命令，如下所示：
 
-`find "Jones" maillist.txt | sort`
+`find Jones maillist.txt | sort`
 
 命令會產生已排序的行清單，其中包含指定的文字。
 
@@ -101,6 +95,6 @@ sort [/r] [/+<N>] [/m <Kilobytes>] [/l <Locale>] [/rec <Characters>] [[<Drive1>:
 
 然後輸入您想要排序的文字，然後在每一行的結尾按 ENTER 鍵。 當您完成輸入文字時，請按 CTRL + Z，然後按 ENTER 鍵。 **Sort**命令會顯示您輸入的文字，並依字母順序排序。
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

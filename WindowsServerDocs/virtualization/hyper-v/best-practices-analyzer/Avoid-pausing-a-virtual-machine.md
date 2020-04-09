@@ -2,33 +2,32 @@
 title: 避免暫停虛擬機器
 description: 此最佳做法分析程式規則的線上版本文字。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 930f927c-e414-4a36-9786-028941e886e4
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 406b24edd4a7e87e32058006590ac7cd37206568
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 56c147f6bd2423cdbe2c8847efb43d8601e12ddf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366447"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857741"
 ---
 # <a name="avoid-pausing-a-virtual-machine"></a>避免暫停虛擬機器
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
 如需最佳做法與掃描的相關詳細資訊，請參閱[執行最佳做法分析程式掃描及管理掃描結果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。
   
 |屬性|詳細資料|  
 |-|-|  
-|**作業系統**|Windows Server 2016|  
+|**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
-|**Severity**|警告|  
-|**分類**|組態|  
+|**低於**|警告|  
+|**類別**|組態|  
 
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。
 
@@ -44,7 +43,7 @@ ms.locfileid: "71366447"
   
 ## <a name="resolution"></a>解析度  
   
-*If 這是刻意的，不需要採取進一步的動作。否則，請考慮繼續這些虛擬機器，或將其關閉。*  
+*如果這是故意的，則不需要採取進一步的動作。否則，請考慮繼續這些虛擬機器，或將它們關閉。*  
   
 #### <a name="use-hyper-v-manager-to-resume-the-virtual-machine"></a>使用 Hyper-v 管理員繼續虛擬機器  
   
@@ -59,7 +58,7 @@ ms.locfileid: "71366447"
   
 #### <a name="use-windows-powershell-to-resume-the-virtual-machine"></a>使用 Windows PowerShell 繼續虛擬機器  
   
-您可以在取得主機上的所有虛擬機器之後，使用篩選和管線在一個命令中執行此動作。 輸入：  
+您可以在取得主機上的所有虛擬機器之後，使用篩選和管線在一個命令中執行此動作。 類型：  
   
 ```  
 get-vm | where state -eq 'paused' | resume-vm  

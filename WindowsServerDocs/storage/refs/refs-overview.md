@@ -2,21 +2,21 @@
 title: 復原檔案系統 (ReFS) 概觀
 ms.prod: windows-server
 ms.author: gawatu
-ms.manager: mchad
+manager: mchad
 ms.technology: storage-file-systems
 ms.topic: article
 author: gawatu
 ms.date: 06/17/2019
-ms.openlocfilehash: 91fdd5aa696c170cacc8903a65e996beb71c4b8f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8d32ef6bc4ce169ff73f9ab147783ac0607617f2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403012"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857541"
 ---
 # <a name="resilient-file-system-refs-overview"></a>復原檔案系統 (ReFS) 概觀
 
->適用於：Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server （半年通道）
+>適用于： Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server （半年通道）
 
 復原檔案系統 (ReFS) 是 Microsoft 最新的檔案系統，設計用來將資料可用性最大化、在各種工作負載間有效率地調整為極大型的資料集，以及透過復原損毀來提供資料完整性。 其會設法因應一組擴充的儲存體案例，並建立基礎供未來創新所用。
 
@@ -64,7 +64,7 @@ ReFS 設計用來支援超大型資料集 (百萬個 TB) 而不會對效能有�
 
 ## <a name="supported-deployments"></a>支援的部署
 
-Microsoft 已特別針對一般用途搭配各種設定和工作負載開發 NTFS，不過對於特別需要 ReFS 提供之可用性、復原和/或規模的客戶，Microsoft 支援 ReFS 以用於下列設定和案例。 
+Microsoft 已特別針對一般用途搭配各種設定和工作負載開發 NTFS，不過對於特別需要 ReFS 提供之可用性、復原和/或規模的客戶，Microsoft 支援 ReFS 以在下列設定和案例下使用。 
 
 > [!NOTE]
 > 所有 ReFS 支援的設定都必須使用[Windows Server Catalog](https://www.WindowsServerCatalog.com)認證的硬體，並符合應用程式需求。

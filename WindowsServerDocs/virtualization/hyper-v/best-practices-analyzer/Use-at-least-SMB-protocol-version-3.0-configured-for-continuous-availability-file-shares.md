@@ -2,20 +2,19 @@
 title: 在儲存虛擬機器檔案的檔案共用上，至少使用 SMB 通訊協定版本3.0 設定為持續可用性
 description: 此最佳做法分析程式規則的線上版本文字。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: a1fa5cf9-8a48-4f63-bb57-d81e63e77b30
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 3a6cbb6052e2e50b7fd78792c5e01885d7672932
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 18943c6b34ab74206483779db5afa06bbde04874
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393335"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854201"
 ---
 # <a name="use-at-least-smb-protocol-version-30-configured-for-continuous-availability-on-file-shares-that-store-files-for-virtual-machines"></a>在儲存虛擬機器檔案的檔案共用上，至少使用 SMB 通訊協定版本3.0 設定為持續可用性
 
@@ -28,7 +27,7 @@ ms.locfileid: "71393335"
 |**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
 |**低於**|警告|  
-|**類別**|設定|  
+|**類別**|組態|  
   
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   
@@ -41,7 +40,7 @@ ms.locfileid: "71393335"
 \<的虛擬機器清單 >  
   
 ## <a name="resolution"></a>**解決方法**  
-執行下列其中一項：  
+執行下列任一步驟：  
   
 -   將檔案移至設定為持續可用性的 SMB 3.0 檔案共用。  
   

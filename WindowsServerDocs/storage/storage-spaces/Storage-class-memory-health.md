@@ -3,22 +3,22 @@ ms.assetid: 2bab6bf6-90e7-46a7-b917-14a7a8f55366
 title: Windows 中的存放裝置類別記憶體 (NVDIMM-N) 健全狀況管理
 ms.prod: windows-server
 ms.author: jgerend
-ms.manager: dongill
+manager: dongill
 ms.technology: storage-spaces
 ms.topic: article
 author: JasonGerend
 ms.date: 06/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 03d986832e14e0dd7b80324de3c9f14d0537dba5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 07fdd682683be00ad7643bfa20b6e95270471f62
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402902"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859141"
 ---
 # <a name="storage-class-memory-nvdimm-n-health-management-in-windows"></a>Windows 中的存放裝置類別記憶體 (NVDIMM-N) 健全狀況管理
 
-> 適用於：Windows Server 2019、Windows Server 2016、Windows Server （半年通道）、Windows 10
+> 適用于： Windows Server 2019、Windows Server 2016、Windows Server （半年通道）、Windows 10
 
 本文向系統管理員和 IT 專業人員提供 Windows 中存放裝置類別記憶體 (NVDIMM-N) 裝置特定的錯誤處理與健全狀況管理相關資訊，強調說明存放裝置類別記憶體與傳統存放裝置之間的差異。
 
@@ -53,7 +53,7 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-| 802c-01-1602-117cb5fc | 良好 | [確定] | |
+| 802c-01-1602-117cb5fc | 狀況良好 | 確定 | |
 | 802c-01-1602-117cb64f | 警告 | 預測性失敗 | {超出閾值，NVDIMM\_N 錯誤} |
 
 > [!NOTE]
@@ -67,7 +67,7 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-| 802c-01-1602-117cb5fc | 良好 | [確定] | |
+| 802c-01-1602-117cb5fc | 狀況良好 | 確定 | |
 | 802c-01-1602-117cb64f | 警告 | 預測性失敗 | {超出閾值，NVDIMM\_N 錯誤} |
 
 下表列出有關此情況的部分資訊。
@@ -79,7 +79,7 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 | 一般行為 | 裝置維持完全正常運作。 這是警告，而不是錯誤。 |
 | 儲存空間行為 | 裝置維持完全正常運作。 這是警告，而不是錯誤。 |
 | 其他資訊 | PhysicalDisk 物件的 OperationalStatus 欄位。 EventLog – Microsoft-Windows-ScmDisk0101/Operational |
-| 工作 | 根據違反的警告閾值，為謹慎起見，可能需要考慮取代整個或部分的 NVDIMM-N。 例如，如果 NVM 存留期達到閾值時，取代 NVDIMM-N 很合理。 |
+| 應採取的動作 | 根據違反的警告閾值，為謹慎起見，可能需要考慮取代整個或部分的 NVDIMM-N。 例如，如果 NVM 存留期達到閾值時，取代 NVDIMM-N 很合理。 |
 
 ## <a name="writes-to-an-nvdimm-n-fail"></a>寫入 NVDIMM-N 會失敗
 
@@ -87,8 +87,8 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-| 802c-01-1602-117cb5fc | 良好 | [確定] | |
-| 802c-01-1602-117cb64f | Unhealthy | {過時的中繼資料、IO 錯誤、暫時性錯誤} | {遺失資料持續性、遺失資料、NV...} |
+| 802c-01-1602-117cb5fc | 狀況良好 | 確定 | |
+| 802c-01-1602-117cb64f | 狀況不良 | {過時的中繼資料、IO 錯誤、暫時性錯誤} | {遺失資料持續性、遺失資料、NV...} |
 
 下表列出有關此情況的部分資訊。
 
@@ -99,7 +99,7 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 |一般行為|NTFS 磁碟區將會卸載。<br>[PhysicalDisk 健全狀況狀態] 欄位會針對所有受影響的 NVDIMM-N 裝置顯示「狀況不良」。|
 |儲存空間行為|只要僅有一個 NVDIMM-N 受影響，儲存空間將會維持運作。 如果多個裝置受到影響，寫入儲存空間將會失敗。 <br>[PhysicalDisk 健全狀況狀態] 欄位會針對所有受影響的 NVDIMM-N 裝置顯示「狀況不良」。|
 |其他資訊|PhysicalDisk 物件的 OperationalStatus 欄位。<br>EventLog – Microsoft-Windows-ScmDisk0101/Operational|
-|工作|建議您備份受影響的 NVDIMM-N 的資料。 若要取得讀取權限，您可以手動讓磁碟重新上線 (它會顯示為唯讀 NTFS 磁碟區)。<br><br>若要完全清除這種情況，則必須解決根本原因 (也就是，根據問題來維修電源供應器或是更換 NVDIMM-N)，且 NVDIMM-N 上的磁碟區必須離線並重新上線，或者系統必須重新啟動。<br><br>若要讓 NVDIMM-N 可再度於儲存空間中使用，請使用 **Reset-PhysicalDisk** Cmdlet，這會重新整合裝置並啟動修復程序。|
+|應採取的動作|建議您備份受影響的 NVDIMM-N 的資料。 若要取得讀取權限，您可以手動讓磁碟重新上線 (它會顯示為唯讀 NTFS 磁碟區)。<br><br>若要完全清除這種情況，則必須解決根本原因 (也就是，根據問題來維修電源供應器或是更換 NVDIMM-N)，且 NVDIMM-N 上的磁碟區必須離線並重新上線，或者系統必須重新啟動。<br><br>若要讓 NVDIMM-N 可再度於儲存空間中使用，請使用 **Reset-PhysicalDisk** Cmdlet，這會重新整合裝置並啟動修復程序。|
 
 ## <a name="nvdimm-n-is-shown-with-a-capacity-of-0-bytes-or-as-a-generic-physical-disk"></a>NVDIMM-N 會顯示容量為 '0' 位元組或是「一般實體磁碟」
 
@@ -107,7 +107,7 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-|802c-01-1602-117cb5fc|良好|[確定]||
+|802c-01-1602-117cb5fc|狀況良好|確定||
 ||警告|遺失通訊||
 
 下表列出有關此情況的部分資訊。
@@ -119,7 +119,7 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 |一般行為|NVDIMM-N 會顯示為未初始化，容量為 0 位元組且無法讀取或寫入。|
 |儲存空間行為|儲存空間會維持運作 (前提是只有 1 個　NVDIMM-N 受到影響)。<br>NVDIMM-N PhysicalDisk 物件會顯示 [健全狀況狀態] 為 [警告]，且為「一般實體磁碟」|
 |其他資訊|PhysicalDisk 物件的 OperationalStatus 欄位。 <br>EventLog – Microsoft-Windows-ScmDisk0101/Operational|
-|工作|NVDIMM-N 裝置必須更換或受到妥善處理，這樣伺服器平台才能將它重新公開給主機作業系統。 建議更換裝置，因為可能發生其他無法修正的錯誤。 將更換裝置新增到儲存空間組態的作業，可以使用 **Add-Physicaldisk** Cmdlet 來完成。|
+|應採取的動作|NVDIMM-N 裝置必須更換或受到妥善處理，這樣伺服器平台才能將它重新公開給主機作業系統。 建議更換裝置，因為可能發生其他無法修正的錯誤。 將更換裝置新增到儲存空間組態的作業，可以使用 **Add-Physicaldisk** Cmdlet 來完成。|
 
 ## <a name="nvdimm-n-is-shown-as-a-raw-or-empty-disk-after-a-reboot"></a>在重新開機後，NVDIMM-N 會顯示為 RAW 或空的磁碟
 
@@ -127,8 +127,8 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-|802c-01-1602-117cb5fc|良好|[確定]|{不明}|
-|802c-01-1602-117cb64f|Unhealthy|{無法識別的中繼資料、過時的中繼資料}|{不明}|
+|802c-01-1602-117cb5fc|狀況良好|確定|{不明}|
+|802c-01-1602-117cb64f|狀況不良|{無法識別的中繼資料、過時的中繼資料}|{不明}|
 
 下表列出有關此情況的部分資訊。
 
@@ -139,7 +139,7 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 |一般行為|NVDIMM-N 會處於唯讀模式。 需要明確的使用者動作，才能再次使用它。|
 |儲存空間行為|如果只有一個 NVDIMM 受到影響，儲存空間會維持運作)。<br>NVDIMM-N 實體磁碟物件會顯示 [健全狀況狀態] 為 [狀況不良] 且儲存空間不會使用。|
 |其他資訊|PhysicalDisk 物件的 OperationalStatus 欄位。<br>EventLog – Microsoft-Windows-ScmDisk0101/Operational|
-|工作|如果使用者不想要更換受影響的裝置，他們可以使用 **Reset-PhysicalDisk** Cmdlet 來清除受影響 NVDIMM-N 的唯讀狀況。 在儲存空間環境中，這也會嘗試將 NVDIMM-N 重新整合至儲存空間，並啟動修復程序。|
+|應採取的動作|如果使用者不想要更換受影響的裝置，他們可以使用 **Reset-PhysicalDisk** Cmdlet 來清除受影響 NVDIMM-N 的唯讀狀況。 在儲存空間環境中，這也會嘗試將 NVDIMM-N 重新整合至儲存空間，並啟動修復程序。|
 
 ## <a name="interleaved-sets"></a>交錯式集合
 

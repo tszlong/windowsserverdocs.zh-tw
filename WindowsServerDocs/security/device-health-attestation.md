@@ -1,42 +1,38 @@
 ---
 title: 裝置健康情況證明
-H1: na
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
 ms.technology: techgroup-security
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8e7b77a4-1c6a-4c21-8844-0df89b63f68d
 author: brianlic-msft
+ms.author: brianlic
 ms.date: 10/12/2016
-ms.openlocfilehash: 888992366f8a722c4834f23e08a393c829b47a26
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 2e810a2a20e7c5bdc404077760e259468cecd24e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544622"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857031"
 ---
 # <a name="device-health-attestation"></a>裝置健康情況證明
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
 Windows 10 (版本 1507) 已引進「裝置健康情況證明」(DHA)，其中包括：
 
--   與 Windows 10「行動裝置管理」(MDM) 架構整合，且符合 [Open Mobile Alliance (OMA) 標準](http://openmobilealliance.org/)。
+-    與 Windows 10「行動裝置管理」(MDM) 架構整合，且符合 [Open Mobile Alliance (OMA) 標準](http://openmobilealliance.org/)。
 
--   支援以韌體或特定格式佈建「信賴模組平台」(TPM) 的裝置。
+-    支援以韌體或特定格式佈建「信賴模組平台」(TPM) 的裝置。
 
--   讓企業能夠提升其組織的安全性基準提升至硬體監視和安全性證明，而不影響作業成本或只有些微影響。
+-    讓企業能夠提升其組織的安全性基準提升至硬體監視和安全性證明，而不影響作業成本或只有些微影響。
 
 從 Windows Server 2016 開始，您現在可以將 DHA 服務當作組織內的伺服器角色來執行。 使用本主題來了解如何安裝及設定「裝置健康情況證明」伺服器角色。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 您可以使用 DHA 評估下列裝置健康情況：
   
--   支援 TPM 1.2 或 2.0 的 Windows 10 和 Windows 10 行動裝置版裝置。  
--   由使用具備網際網路存取的 Active Directory 管理的內部部署裝置、由使用不具備網際網路存取的 Active Directory 管理的裝置、由 Azure Active Directory 管理的裝置，或者是使用 Active Directory 和 Azure Active Directory 兩者的混合式部署。
+-    支援 TPM 1.2 或 2.0 的 Windows 10 和 Windows 10 行動裝置版裝置。  
+-    由使用具備網際網路存取的 Active Directory 管理的內部部署裝置、由使用不具備網際網路存取的 Active Directory 管理的裝置、由 Azure Active Directory 管理的裝置，或者是使用 Active Directory 和 Azure Active Directory 兩者的混合式部署。
 
 
 ### <a name="dha-service"></a>DHA 服務
@@ -51,8 +47,8 @@ DHA 服務會驗證裝置的 TPM 和 PCR 記錄，然後發行 DHA 報告。 Mic
 
 DHA 服務與 MDM 解決方案整合，並提供下列功能︰ 
 
--   將它們從裝置收到的資訊 (透過現有裝置管理通訊通道) 與 DHA 報告結合
--   根據硬體證明和受保護的資料，做出更安全且可靠的安全性決策
+-    將它們從裝置收到的資訊 (透過現有裝置管理通訊通道) 與 DHA 報告結合
+-    根據硬體證明和受保護的資料，做出更安全且可靠的安全性決策
 
 以下範例說明您可以如何使用 DHA 來協助提升您組織資產的安全性保護基準。
 
@@ -71,9 +67,9 @@ DHA 服務與 MDM 解決方案整合，並提供下列功能︰
 
 DHA 雲端服務提供下列優點：
 
--   檢閱從在 MDM 解決方案中註冊的裝置處收到的 TCG 和 PCR 裝置開機記錄。 
--   根據裝置的 TPM 晶片所收集並保護的資料，建立描述裝置啟動方式，且可以防止竄改及可辨識其是否遭竄改的報告 (DHA 報告)。 
--   在已受保護的通訊通道中將 DHA 報告傳遞給要求該報告的 MDM 伺服器。
+-    檢閱從在 MDM 解決方案中註冊的裝置處收到的 TCG 和 PCR 裝置開機記錄。 
+-    根據裝置的 TPM 晶片所收集並保護的資料，建立描述裝置啟動方式，且可以防止竄改及可辨識其是否遭竄改的報告 (DHA 報告)。 
+-    在已受保護的通訊通道中將 DHA 報告傳遞給要求該報告的 MDM 伺服器。
 
 #### <a name="dha-on-premises-service"></a>DHA 內部部署服務
 
@@ -98,7 +94,7 @@ EKCert 驗證模式已經針對未連線到網際網路的組織最佳化。 連
 
 Microsoft 會在 .cab 封存中可公開存取的封存中，針對核准的 TPM 製造商發行 (在它們可用時) 受信任的根憑證和中繼 CA 的可彙總套件。 您需要下載該摘要，驗證其完整性，並將其安裝在執行「裝置健康情況證明」的伺服器上。
 
-封存的範例為[https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925)。
+[https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925)封存的範例。
 
 #### <a name="aikcert-validation-mode"></a>AIKCert 驗證模式
 
@@ -108,7 +104,7 @@ AIKCert 驗證模式已經針對可存取網際網路的作業環境最佳化。
 
 使用以下章節在 Windows Server 2016 上安裝和設定 DHA。
 
-### <a name="prerequisites"></a>先決條件
+### <a name="prerequisites"></a>必要條件
 
 為了設定和驗證 DHA 內部部署服務，您需要：
 
@@ -131,23 +127,23 @@ AIKCert 驗證模式已經針對可存取網際網路的作業環境最佳化。
 
 安裝 Windows Server 2016 之後，裝置會重新啟動並開啟「伺服器管理員」。 如果「伺服器管理員」沒有自動啟動，請按一下 [開始]，然後按一下 [伺服器管理員]。
 
-1.  按一下 [新增角色及功能]。
-2.  在 [在您開始前]  頁面上，按一下 [下一步] 。
-3.  在 [選取安裝類型] 頁面上，按一下 [角色型或功能型安裝]，然後按 [下一步]。
-4.  在 [選取目的地伺服器] 頁面上，按一下 [從伺服器集區選取伺服器]，選取伺服器然後按一下 [下一步]。
-5.  在 [選取伺服器角色] 頁面上，選取 [裝置健康情況證明] 核取方塊。
-6.  按一下 [新增功能] 來安裝其他必要的角色服務和功能。
-7.  按一下 [下一步] 。
-8.  在 [選取功能] 頁面上，按 [下一步]。
-9.  在 [網頁伺服器 (IIS) 角色]  頁面上，按一下 [下一步] 。
-10. 在 [選取角色服務] 頁面上，按 [下一步]。
-11. 在 [裝置健全狀況證明服務] 頁面上，按一下 [下一步]。
-12. 在 [確認安裝選項]  頁面上，按一下 [安裝] 。
-13. 安裝完成時，按一下 [關閉]。
+1.    按一下 [新增角色及功能]。
+2.    在 [在您開始前] 頁面中按 [下一步]。
+3.    在 [選取安裝類型] 頁面上，按一下 [角色型或功能型安裝]，然後按 [下一步]。
+4.    在 [選取目的地伺服器] 頁面上，按一下 [從伺服器集區選取伺服器]，選取伺服器然後按一下 [下一步]。
+5.    在 [選取伺服器角色] 頁面上，選取 [裝置健康情況證明] 核取方塊。
+6.    按一下 [新增功能] 來安裝其他必要的角色服務和功能。
+7.    按 [下一步]。
+8.    在 [選取功能] 頁面上，按 [下一步]。
+9.    在 [網頁伺服器角色 (IIS)] 頁面上，按 [下一步]。
+10.    在 [選取角色服務] 頁面上，按 [下一步]。
+11.    在 [裝置健全狀況證明服務] 頁面上，按一下 [下一步]。
+12.    在 [確認安裝選項] 頁面上，按一下 [安裝]。
+13.    安裝完成時，按一下 [關閉]。
 
 ### <a name="install-the-signing-and-encryption-certificates"></a>安裝簽署和加密憑證
 
-使用下列 Windows PowerShell 指令碼安裝簽署和加密憑證。 如需有關指紋的詳細資訊, [請參閱如何:取得憑證](https://msdn.microsoft.com/library/ms734695.aspx)的指紋。
+使用下列 Windows PowerShell 指令碼安裝簽署和加密憑證。 如需指紋的詳細資訊，請參閱[如何：取出憑證的指紋](https://msdn.microsoft.com/library/ms734695.aspx)。
 
 ```
 $key = Get-ChildItem Cert:\LocalMachine\My | Where-Object {$_.Thumbprint -like "<thumbprint>"}
@@ -165,9 +161,9 @@ icacls $keypath /grant <username>`:R
 
 #### <a name="download-the-trusted-tpm-roots-certificate-package"></a>下載受信任的 TPM 根憑證封裝
 
-安裝憑證套件之前, 您可以從[https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925)下載最新的受信任 TPM 根目錄清單。
+安裝憑證套件之前，您可以從[https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925)下載最新的受信任 TPM 根目錄清單。
 
-> **重要事項：** 安裝套件之前, 請確認它已由 Microsoft 進行數位簽署。
+> **重要事項：** 安裝封裝之前，請確認該封裝已由 Microsoft 以數位方式簽署。
 
 #### <a name="extract-the-trusted-certificate-package"></a>解壓縮受信任的憑證封裝
 執行下列命令來將受信任的憑證封裝解壓縮。
@@ -180,7 +176,7 @@ expand -F:* .\TrustedTpm.cab .\TrustedTpm
 
 刪除您的組織不信任的任何 TPM 廠商信任鏈結的資料夾。
 
-> **注意：** 如果使用 AIK 憑證模式, 則需要 Microsoft 資料夾來驗證 Microsoft 發行的 AIK 憑證。
+> **注意：** 若使用 AIK 憑證模式，則需要 Microsoft 資料夾以驗證 Microsoft 發行的 AIK 憑證。
 
 #### <a name="install-the-trusted-certificate-package"></a>安裝受信任的憑證封裝
 執行 .cab 檔案中的設定指令碼來安裝受信任的憑證封裝。
@@ -238,7 +234,7 @@ Get-DHASActiveSigningCertificate
 Set-DHASActiveSigningCertificate -Thumbprint "<hex>" -Force
 ```
 
-> **注意：** 此憑證必須部署在**LocalMachine\My**憑證存放區中執行 DHA 服務的伺服器上。 設定作用中簽署憑證之後，現有的作用中簽署憑證會移動到非作用中簽署憑證清單。
+> **注意：** 此憑證必須部署在執行 DHA 服務的伺服器上的 **LocalMachine\My** 憑證存放區。 設定作用中簽署憑證之後，現有的作用中簽署憑證會移動到非作用中簽署憑證清單。
 
 ### <a name="list-the-inactive-signing-certificates"></a>列出非作用中簽署憑證
 ```
@@ -251,7 +247,7 @@ Remove-DHASInactiveSigningCertificates -Force
 Remove-DHASInactiveSigningCertificates  -Thumbprint "<hex>" -Force
 ```
 
-> **注意：** 服務中一次只能有*一個*非使用中的憑證 (任何類型)。 當憑證已不再需要時，應將它們從非作用中憑證清單中移除。
+> **注意：** 服務中一次只能存在「一個」非作用中憑證 (任何類型)。 當憑證已不再需要時，應將它們從非作用中憑證清單中移除。
 
 ### <a name="get-the-active-encryption-certificate"></a>取得作用中加密憑證
 

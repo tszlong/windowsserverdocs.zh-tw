@@ -1,23 +1,19 @@
 ---
 title: 從現有的用戶端電腦備份還原完整的系統
 description: 說明如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 47e498a6-1b71-47de-88f6-8c13c221d108
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b9629f41c4e8eb707b19914a297d9d8b88c6aead
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 37e4d45f6bd34d77fbbf3cbabcd66a776b624c19
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310649"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852641"
 ---
 # <a name="restore-a-full-system-from-an-existing-client-computer-backup"></a>從現有的用戶端電腦備份還原完整的系統
 
@@ -91,7 +87,7 @@ ms.locfileid: "80310649"
  不支援備份獨立磁碟容錯陣列 (RAID) 及動態磁碟。  
   
 ##  <a name="how-does-the-system-restore-environment-work"></a><a name="BKMK_HowDoes"></a>系統還原環境如何運作？  
- Windows Server® 2012 Essentials 提供的系統還原媒體會在電腦上安裝 Windows 預先安裝環境（Windows PE）。 Windows PE 會取代 MS-DOS 環境並且包含適用於 Windows 的核心程式檔案。 在 Windows Server Essentials 中，有兩種支援的方法可以還原系統：使用用戶端還原服務，其使用網路且不依賴媒體，或使用 USB 快閃磁片磁碟機。  
+ Windows Server&reg; 2012 Essentials 提供的系統還原媒體會在電腦上安裝 Windows 預先安裝環境（Windows PE）。 Windows PE 會取代 MS-DOS 環境並且包含適用於 Windows 的核心程式檔案。 在 Windows Server Essentials 中，有兩種支援的方法可以還原系統：使用用戶端還原服務，其使用網路且不依賴媒體，或使用 USB 快閃磁片磁碟機。  
   
 > [!NOTE]
 >  Windows PE 不支援無線連線。 因此，要進行還原的電腦必須實際連接到小型企業網路。  

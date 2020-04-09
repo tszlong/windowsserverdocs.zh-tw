@@ -1,28 +1,22 @@
 ---
 title: timeout
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: Timeout 的 Windows 命令主題，會在指定的秒數內暫停命令處理器。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e26b4a84-0e30-46e1-aa10-0667b7d3cb4c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 09f294eb78a8868b4e3962557a36199b69fae0c9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bd0a43e49e8a7567ac975333b04a9e6f549a0fd8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385769"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80832811"
 ---
 # <a name="timeout"></a>timeout
-
-
 
 在指定的秒數內暫停命令處理器。
 
@@ -34,7 +28,7 @@ ms.locfileid: "71385769"
 timeout /t <TimeoutInSeconds> [/nobreak] 
 ```
 
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -48,7 +42,7 @@ timeout /t <TimeoutInSeconds> [/nobreak]
 -   使用者按鍵會立即繼續命令處理器執行，即使超時時間尚未過期也一樣。
 -   與**睡眠**命令搭配使用時， **timeout**類似于**pause**命令。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 若要將命令處理器暫停10秒，請輸入：
 ```
@@ -63,6 +57,6 @@ timeout /t 100 /nobreak
 timeout /t -1
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

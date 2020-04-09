@@ -2,25 +2,23 @@
 title: Windows Server 上的 Hyper-v 入門
 description: 提供開始使用 Hyper-v 之文章的連結
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 9a3f8b74-f3c0-433f-a320-850ca8610757
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 10/07/2016
-ms.openlocfilehash: b361b6d1ea1d20f63f97a0590586cac4180ba19d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fcbf7f52984d6cd1c0fcc0b04e6a9cf3a7aad639
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364267"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860831"
 ---
 # <a name="get-started-with-hyper-v-on-windows-server"></a>Windows Server 上的 Hyper-v 入門
 
->適用於：Windows Server 2016，Microsoft Hyper-v Server 2016，Windows Server 2019，Microsoft Hyper-v Server 2019
+>適用于： Windows Server 2016、Microsoft Hyper-v Server 2016、Windows Server 2019、Microsoft Hyper-v Server 2019
   
 使用下列資源，在 Windows Server 2019 或 Windows Server 2016 的 Server Core 或 GUI 安裝選項上設定並試用 Hyper-v。 但是在安裝任何專案之前，請先查看[Windows Server 的系統需求](../../../get-started/System-Requirements--and-Installation.md)和[Hyper-v 的系統需求](../System-requirements-for-Hyper-V-on-Windows.md)。
 

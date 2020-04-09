@@ -2,24 +2,21 @@
 title: 用於設定 Hyper-v Vm 之持續性記憶體裝置的 Cmdlet
 description: 如何設定 Hyper-v Vm 的持續性記憶體裝置
 ms.prod: windows-server
-ms.service: na
-manager: jasgroce
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b5715c02-a90f-4de9-a71e-0fc08039ba1d
 author: coreyp-at-msft
 ms.author: coreyp
-ms.openlocfilehash: ecae1fe96bc5088fa840c6e2e24a75bb72a9e8f3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b58e2a4e2f31c5bf3e49b89da912b77060e334ed
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392539"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860421"
 ---
 # <a name="cmdlets-for-configuring-persistent-memory-devices-for-hyper-v-vms"></a>用於設定 Hyper-v Vm 之持續性記憶體裝置的 Cmdlet
 
->適用於：Windows Server Standard 2012 R2
+>適用於︰Windows Server 2019
 
 本文提供系統管理員和 IT 專業人員有關設定具有持續性記憶體（也稱為儲存類別記憶體或 NVDIMM-N）之 Hyper-v Vm 的資訊。 Windows Server 2016 和 Windows 10 支援 JDEC 相容的 NVDIMM-N 持續性記憶體裝置，並為非常低延遲的非 volatile 裝置提供位元組層級的存取。 Windows Server 2019 支援 VM 持續性記憶體裝置。 
 
@@ -35,7 +32,7 @@ ms.locfileid: "71392539"
 
 使用**新的-VM Cmdlet**來建立具有指定之記憶體大小和 VHDX 映射路徑的第2代 VM。 然後，使用**VMPmemController**將持續性記憶體控制器新增至 VM。
 
-**範例:** 
+**範例：** 
     
     New-VM -Name "ProductionVM1" -MemoryStartupBytes 1GB -VHDPath c:\vhd\BaseImage.vhdx
 

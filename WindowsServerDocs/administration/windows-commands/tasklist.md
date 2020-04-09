@@ -1,26 +1,22 @@
 ---
-title: Tasklist
+title: tasklist
 description: 瞭解如何顯示在本機或遠端電腦上執行的處理常式清單。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8dbe30ee-1484-46be-917b-5ca3ff4fdc9c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f7ad61dfe8beb86c8299dd71bec1d862805e50e0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b43f4c9a89fa60f2244253d48d3dca646fe8e02d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383677"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80833431"
 ---
-# <a name="tasklist"></a>Tasklist
+# <a name="tasklist"></a>tasklist
 
 顯示目前在本機電腦或遠端電腦上正在執行的處理序清單。 **Tasklist**取代了**tlist.exe**工具。
 
@@ -32,7 +28,7 @@ ms.locfileid: "71383677"
 tasklist [/s <Computer> [/u [<Domain>\]<UserName> [/p <Password>]]] [{/m <Module> | /svc | /v}] [/fo {table | list | csv}] [/nh] [/fi <Filter> [/fi <Filter> [ ... ]]]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |          參數           |                                                                                                                                            描述                                                                                                                                             |
 |------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -54,11 +50,11 @@ tasklist [/s <Computer> [/u [<Domain>\]<UserName> [/p <Password>]]] [{/m <Module
 |   狀態    |         eq、ne         |                                                                   運行                                                                    |
 |  IMAGENAME  |         eq、ne         |                                                                  映射名稱                                                                  |
 |     PID     | eq、ne、gt、lt、ge、le |                                                                  PID 值                                                                   |
-|   本次   | eq、ne、gt、lt、ge、le |                                                                會話編號                                                                |
+|   本次   | eq、ne、gt、lt、ge、le |                                                                工作階段編號                                                                |
 | 會話 |         eq、ne         |                                                                 會話名稱                                                                 |
 |   CPUTIME   | eq、ne、gt、lt、ge、le | CPU 時間，格式為<em>HH</em> **：** <em>MM</em> **：** <em>SS</em>，其中*MM*和*SS*介於0到59之間，而*HH*則為任何不帶正負號的數位 |
 |  MEMUSAGE   | eq、ne、gt、lt、ge、le |                                                              記憶體使用量（KB）                                                              |
-|  USERNAME   |         eq、ne         |                                                             任何有效的使用者名稱                                                              |
+|  使用者名稱   |         eq、ne         |                                                             任何有效的使用者名稱                                                              |
 |  伺服器   |         eq、ne         |                                                                 服務名稱                                                                 |
 | SYSTEM.WINDOWS.CONTROLS.PAGE.WINDOWTITLE |         eq、ne         |                                                                 視窗標題                                                                 |
 |   模組   |         eq、ne         |                                                                   DLL 名稱                                                                   |
@@ -67,7 +63,7 @@ tasklist [/s <Computer> [/u [<Domain>\]<UserName> [/p <Password>]]] [{/m <Module
 
 當指定遠端系統時，不支援 SYSTEM.WINDOWS.CONTROLS.PAGE.WINDOWTITLE 和 STATUS 篩選。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name="BKMK_examples"></a>典型
 
 若要列出處理序識別碼大於1000的所有工作，並將其顯示為 CSV 格式，請輸入：
 ```
@@ -94,6 +90,6 @@ tasklist /s srvmain
 tasklist /s srvmain /u maindom\hiropln /p p@ssW23
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

@@ -1,26 +1,22 @@
 ---
-title: mode
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+title: 模式
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b59b04f2-b41d-42df-b5be-19c3721445b1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 00dabdbeb7f0665c99714d0a97c7d3c78b22e04e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 528277075f7448c86ca2d660c5e65c59098afbc0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373606"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839431"
 ---
-# <a name="mode"></a>mode
+# <a name="mode"></a>模式
 
 
 
@@ -34,7 +30,7 @@ ms.locfileid: "71373606"
 -   [若要變更命令提示字元螢幕緩衝區的大小](#BKMK_5)
 -   [設定鍵盤的按鍵速度](#BKMK_6)
 
-## <a name="BKMK_1"></a>設定序列通訊埠
+## <a name="to-configure-a-serial-communications-port"></a><a name=BKMK_1></a>設定序列通訊埠
 
 ### <a name="syntax"></a>語法
 
@@ -42,7 +38,7 @@ ms.locfileid: "71373606"
 mode com<M>[:] [baud=<B>] [parity=<P>] [data=<D>] [stop=<S>] [to={on|off}] [xon={on|off}] [odsr={on|off}] [octs={on|off}] [dtr={on|off|hs}] [rts={on|off|hs|tg}] [idsr={on|off}]
 ```
 
-### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>參數
 
 |  參數  |                                                                                                                                                                                     描述                                                                                                                                                                                     |
 |-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -51,16 +47,16 @@ mode com<M>[:] [baud=<B>] [parity=<P>] [data=<D>] [stop=<S>] [to={on|off}] [xon=
 | 同位檢查 =\<P > |                              指定系統如何使用同位檢查單位來檢查傳輸錯誤。 下表列出*P*的有效值。預設值為**e**。 並非所有電腦都支援**m**和**s**的值。</br>-   **n** = 無</br>-   **e** = 偶數</br>-   **o** = 奇數</br>-   **m** = mark</br>-   **s** = 空格                              |
 |  data =\<D >  |                                                                                                    指定字元中的資料位數目。 **D**的有效值範圍為5到8。 預設值為 7。 並非所有電腦都支援5和6的值。                                                                                                     |
 |  停止 =\<S >  |                                                                                  指定定義字元結尾的停止位數目：1、1.5 或2。 如果傳輸速率為110，預設值為2。 否則，預設值為1。 並非所有電腦都支援值1.5。                                                                                   |
-|   to = {on    |                                                                                                                                                                                        停止                                                                                                                                                                                         |
-|   xon = {on   |                                                                                                                                                                                        停止                                                                                                                                                                                         |
-|  odsr = {on   |                                                                                                                                                                                        停止                                                                                                                                                                                         |
-|  octs = {on   |                                                                                                                                                                                        停止                                                                                                                                                                                         |
-|   dtr = {on   |                                                                                                                                                                                         關閉                                                                                                                                                                                         |
-|   rts = {on   |                                                                                                                                                                                         關閉                                                                                                                                                                                         |
-|  idsr = {on   |                                                                                                                                                                                        停止                                                                                                                                                                                         |
+|   to = {on    |                                                                                                                                                                                        off}                                                                                                                                                                                         |
+|   xon = {on   |                                                                                                                                                                                        off}                                                                                                                                                                                         |
+|  odsr = {on   |                                                                                                                                                                                        off}                                                                                                                                                                                         |
+|  octs = {on   |                                                                                                                                                                                        off}                                                                                                                                                                                         |
+|   dtr = {on   |                                                                                                                                                                                         off                                                                                                                                                                                         |
+|   rts = {on   |                                                                                                                                                                                         off                                                                                                                                                                                         |
+|  idsr = {on   |                                                                                                                                                                                        off}                                                                                                                                                                                         |
 |     /?      |                                                                                                                                                                        在命令提示字元顯示說明。                                                                                                                                                                         |
 
-## <a name="BKMK_2"></a>顯示所有裝置或單一裝置的狀態
+## <a name="to-display-the-status-of-all-devices-or-of-a-single-device"></a><a name=BKMK_2></a>顯示所有裝置或單一裝置的狀態
 
 ### <a name="syntax"></a>語法
 
@@ -68,7 +64,7 @@ mode com<M>[:] [baud=<B>] [parity=<P>] [data=<D>] [stop=<S>] [to={on|off}] [xon=
 mode [<Device>] [/status]
 ```
 
-### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -80,7 +76,7 @@ mode [<Device>] [/status]
 
 如果使用時不含參數，**模式**會顯示系統上安裝之所有裝置的狀態。
 
-## <a name="BKMK_3"></a>將平行埠的輸出重新導向至序列通訊埠
+## <a name="to-redirect-output-from-a-parallel-port-to-a-serial-communications-port"></a><a name=BKMK_3></a>將平行埠的輸出重新導向至序列通訊埠
 
 ### <a name="syntax"></a>語法
 
@@ -88,7 +84,7 @@ mode [<Device>] [/status]
 mode lpt<N>[:]=com<M>[:]
 ```
 
-### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -115,7 +111,7 @@ mode lpt1
 ```
 此命令可防止將檔案從 LPT1 重新導向到 COM1。
 
-## <a name="BKMK_4"></a>若要選取、重新整理或顯示主控台的字碼頁編號
+## <a name="to-select-refresh-or-display-the-numbers-of-the-code-pages-for-the-console"></a><a name=BKMK_4></a>若要選取、重新整理或顯示主控台的字碼頁編號
 
 ### <a name="syntax"></a>語法
 
@@ -124,7 +120,7 @@ mode <Device> codepage select=<YYY>
 mode <Device> codepage [/status]
 ```
 
-### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -135,7 +131,7 @@ mode <Device> codepage [/status]
 |/status|顯示針對指定裝置所選取的目前字碼頁數目。 您可以將 **/status**縮寫為 **/sta**。 無論您是否指定 **/status**，**模式代碼**頁都會顯示針對指定裝置選取的字碼頁編號。|
 |/?|在命令提示字元顯示說明。|
 
-## <a name="BKMK_5"></a>若要變更命令提示字元螢幕緩衝區的大小
+## <a name="to-change-the-size-of-the-command-prompt-screen-buffer"></a><a name=BKMK_5></a>若要變更命令提示字元螢幕緩衝區的大小
 
 ### <a name="syntax"></a>語法
 
@@ -143,7 +139,7 @@ mode <Device> codepage [/status]
 mode con[:] [cols=<C>] [lines=<N>]
 ```
 
-### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -152,7 +148,7 @@ mode con[:] [cols=<C>] [lines=<N>]
 |行 =\<N >|指定命令提示字元螢幕緩衝區中的行數。|
 |/?|在命令提示字元顯示說明。|
 
-## <a name="BKMK_6"></a>設定鍵盤的按鍵速度
+## <a name="to-set-the-keyboard-typematic-rate"></a><a name=BKMK_6></a>設定鍵盤的按鍵速度
 
 ### <a name="syntax"></a>語法
 
@@ -160,7 +156,7 @@ mode con[:] [cols=<C>] [lines=<N>]
 mode con[:] [rate=<R> delay=<D>]
 ```
 
-### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -179,6 +175,6 @@ mode con[:] [rate=<R> delay=<D>]
 
   *D*的有效值為1、2、3和4（代表0.25、0.50、0.75 和1秒）。 預設值為2。 如果您設定延遲，則也必須設定速率。
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

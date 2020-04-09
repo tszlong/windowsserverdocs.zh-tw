@@ -1,24 +1,20 @@
 ---
 title: Kerberos Constrained Delegation Overview
 description: Windows Server 安全性
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-kerberos
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 51923b0a-0c1a-47b2-93a0-d36f8e295589
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: e6e62effcb875c0e3a1cdd6c886f3d74923e1b94
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 07717743017c15a7bdabd3c3ce38d75a02980460
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403421"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858861"
 ---
 # <a name="kerberos-constrained-delegation-overview"></a>Kerberos Constrained Delegation Overview
 
@@ -42,7 +38,7 @@ Kerberos 通訊協定的 Windows Server 2012 R2 和 Windows Server 2012 的執�
 
 限制委派讓服務系統管理員能夠指定並強制執行應用程式信任界限，方法是限制應用程式服務可以代表使用者採取行動的範圍。 服務系統管理員能夠設定哪些前端服務帳戶可以委派給它們的後端服務。
 
-藉由在 Windows Server 2012 R2 和 Windows Server 2012 中跨網域支援限制委派，前端服務（例如 Microsoft Internet Security and 加速（ISA） Server、Microsoft Forefront Threat Management Gateway、Microsoft Exchange）Outlook Web 存取（OWA）和 Microsoft SharePoint Server 可以設定為使用限制委派來驗證其他網域中的伺服器。 這樣可以使用現有的 Kerberos 基礎結構，支援跨網域服務解決方案。 Kerberos 限制委派可以由網域系統管理員或服務系統管理員來管理。
+藉由在 Windows Server 2012 R2 和 Windows Server 2012 中跨網域支援限制委派，前端服務（例如 Microsoft Internet Security and 加速（ISA） Server、Microsoft Forefront Threat Management Gateway、Microsoft Exchange Outlook Web 存取（OWA）和 Microsoft SharePoint Server）可以設定為使用限制委派來驗證其他網域中的伺服器。 這樣可以使用現有的 Kerberos 基礎結構，支援跨網域服務解決方案。 Kerberos 限制委派可以由網域系統管理員或服務系統管理員來管理。
 
 ## <a name="resource-based-constrained-delegation-across-domains"></a>跨網域的資源型限制委派
 
@@ -83,7 +79,7 @@ Kerberos 通訊協定的 Windows Server 2012 R2 和 Windows Server 2012 的執�
 
 -   若要設定資源服務，請使用**get-adcomputer**、 **uninstall-adserviceaccount**、 **adserviceaccount**、 **set-get-adcomputer**、 **set-uninstall-adserviceaccount**和**adserviceaccount**參數的**Cmdlet。**
 
-## <a name="BKMK_SOFT"></a>軟體需求
+## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>軟體需求
 以資源為基礎的限制委派只能在執行 Windows Server 2012 R2 和 Windows Server 2012 的網域控制站上設定，但可以在混合模式樹系中套用。
 
 您必須在執行 windows server 之前作業系統的前端和後端網域之間，于使用者帳戶網域中的所有域2012控制器上套用下列修補程式：以資源為基礎的限制委派 KDC_ERR_POLICY 失敗的環境中有 Windows Server 2008 R2 架構的網域控制站（ https://support.microsoft.com/en-gb/help/2665790/resource-based-constrained-delegation-kdc-err-policy-failure-in-enviro)。

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 638c89bd-87e6-484b-9d2e-8ae2a74227e5
 title: 設定服務通訊憑證
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: d0464853c73f88ed76545921ffc8a4bf8551c800
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6e0f9e6cca4fe915d3faed77fd5b5db543596d70
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408322"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855301"
 ---
 # <a name="set-a-service-communications-certificate"></a>設定服務通訊憑證
 
@@ -30,7 +29,7 @@ Active Directory 同盟服務 \(AD FS 中的同盟伺服器\) 使用服務通訊
 > [!NOTE]  
 > 中的 [AD FS 管理] 嵌入式\-管理單元是指做為服務通訊憑證之同盟伺服器的伺服器驗證憑證。  
 
-若要完成此程序，至少需要本機電腦上之 **Administrators** 群組的成員資格或同等權限。  如需使用適當帳戶和群組成員資格的詳細資料，請參閱[本機與網域預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)\(HTTP：\/\/go.microsoft.com\/fwlink\/？LinkId\=83477\)。   
+若要完成此程序，至少需要本機電腦之 **Administrators** 群組的成員資格或同等權限。  如需使用適當帳戶和群組成員資格的詳細資料，請參閱[本機與網域預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)\(HTTP：\/\/go.microsoft.com\/fwlink\/？LinkId\=83477\)。   
 
 ### <a name="to-set-a-service-communications-certificate"></a>設定服務通訊憑證  
 

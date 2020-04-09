@@ -2,21 +2,19 @@
 title: Hyper-v 技術總覽
 description: 說明什麼是 Hyper-v、如何取得、主要功能，以及常見的用法。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ac069fed-7bf5-4cc3-aff5-25a2766040b8
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 11/29/2016
-ms.openlocfilehash: 053f92f1ef07a2e574c93412626ee792d4d982e3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d21bec24a22607213771bdad0b48df18fd88eb4d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366780"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853241"
 ---
 # <a name="hyper-v-technology-overview"></a>Hyper-v 技術總覽
 
@@ -98,7 +96,7 @@ Hyper-v 也有管理和連線能力的工具。 您可以將這些安裝在 Hype
 以下是一些通常與 Hyper-v 搭配使用的 Microsoft 技術：
 
 - [容錯移轉叢集](../../failover-clustering/whats-new-in-failover-clustering.md)
-- [遠端桌面服務](../../remote/remote-desktop-services/Host-desktops-and-apps-in-Remote-Desktop-Services.md)
+- [Host desktops and apps in Remote Desktop Services on Azure](../../remote/remote-desktop-services/Host-desktops-and-apps-in-Remote-Desktop-Services.md) (主機桌上型電腦和應用程式在 Azure 上的遠端桌面服務)
 - [System Center Virtual Machine Manager](https://docs.microsoft.com/system-center/vmm/overview)
 
 各種存放裝置技術：叢集共用磁片區、SMB 3.0、儲存空間直接存取

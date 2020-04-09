@@ -2,23 +2,21 @@
 title: 使用離散裝置指派部署 NVMe 存放裝置
 description: 瞭解如何使用 DDA 來部署存放裝置
 ms.prod: windows-server
-ms.service: na
 ms.technology: hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
 ms.assetid: 1c36107e-78c9-4ec0-a313-6ed557ac0ffc
-ms.openlocfilehash: eb76b25e8ff1428b2c03b37dde1f76562751d3bb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2b92b175a6e914b62b069f76f92255cb99d55d74
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364322"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860901"
 ---
 # <a name="deploy-nvme-storage-devices-using-discrete-device-assignment"></a>使用離散裝置指派部署 NVMe 存放裝置
 
->適用於：Microsoft Hyper-v Server 2016、Windows Server 2016
+>適用于： Microsoft Hyper-v Server 2016、Windows Server 2016
 
 從 Windows Server 2016 開始，您可以使用離散裝置指派或 DDA，將整個 PCIe 裝置傳遞至 VM。  這可讓您對裝置的高效能存取，例如從 VM 內 NVMe 儲存體或圖形卡，同時能夠利用裝置原生驅動程式。  請流覽[使用離散裝置指派來部署裝置的計畫](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)，以取得更多裝置的工作、可能的安全性含意等等。使用具有 DDA 的裝置有三個步驟：
 -   為 DDA 設定 VM

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 2d62386c-b466-4a54-b6fa-5d16cda120d8
 title: 為 Active Directory 使用者提供其他組織的應用程式與服務的存取權
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: bcf9b9ec91c1757ad060747a6aa1589012c1ec14
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 13b8c3650442ac85b8b248b58372448543c8ba02
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359026"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858581"
 ---
 # <a name="provide-your-active-directory-users-access-to-the-applications-and-services-of-other-organizations"></a>為 Active Directory 使用者提供其他組織的應用程式與服務的存取權
 
@@ -44,5 +43,5 @@ ms.locfileid: "71359026"
   
 ![存取您的應用程式](media/50af4837-31e0-451f-a942-e705c2300065.gif)  
   
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 [Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

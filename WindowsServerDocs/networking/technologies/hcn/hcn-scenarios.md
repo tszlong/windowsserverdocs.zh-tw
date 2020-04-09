@@ -1,26 +1,26 @@
 ---
-title: 主機計算網路 (HCN) 案例
-description: ''
+title: 主機計算網路（HCN）案例
 ms.author: jmesser
 author: jmesser81
+ms.prod: windows-server
 ms.date: 11/05/2018
-ms.openlocfilehash: 91cdafa9699cd213156d872090034dd4ea67108e
-ms.sourcegitcommit: 213989f29cc0c30a39a78573bd4396128a59e729
+ms.openlocfilehash: 2fdf0d13a0a362681a27106356fbe295532ed970
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70031527"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859831"
 ---
-# <a name="common-scenarios"></a>常見案例
+# <a name="common-scenarios"></a>常見的案例
 
->適用於：Windows Server (半年通道)、Windows Server 2019
+>適用于： Windows Server （半年通道）、Windows Server 2019
 
-## <a name="scenario-hcn"></a>案例：HCN 
+## <a name="scenario-hcn"></a>案例： HCN 
 
 
 ### <a name="create-an-hcn"></a>建立 HCN
 
-此範例示範如何使用主機計算網路服務 API, 在主機上建立主機計算網路, 以用來將虛擬 NIC 連線至虛擬機器或容器。
+此範例示範如何使用主機計算網路服務 API，在主機上建立主機計算網路，以用來將虛擬 NIC 連線至虛擬機器或容器。
 
 ```C++
 using unique_hcn_network = wil::unique_any< 
@@ -96,9 +96,9 @@ void CreateHcnNetwork()
                     // UnMarshal  the result Json
      // ErrorSchema
         //   {
-        //  "ErrorCode" : <uint32>,
-        //  "Error" : <string>,
-        //  "Success" : <bool>,
+        //    "ErrorCode" : <uint32>,
+        //    "Error" : <string>,
+        //    "Success" : <bool>,
        //   }
 
         // Failed to create network
@@ -189,11 +189,11 @@ void CreateHcnNetwork()
 ```
 
 
-## <a name="scenario-hcn-endpoint"></a>案例：HCN 端點
+## <a name="scenario-hcn-endpoint"></a>案例： HCN 端點
 
 ### <a name="create-an-hcn-endpoint"></a>建立 HCN 端點
 
-此範例示範如何使用主機計算網路服務 API 來建立主機計算網路端點, 然後將其熱新增至虛擬機器或容器。
+此範例示範如何使用主機計算網路服務 API 來建立主機計算網路端點，然後將其熱新增至虛擬機器或容器。
 
 ```C++
 using unique_hcn_endpoint = wil::unique_any< 
@@ -222,7 +222,7 @@ void CreateAndHotAddEndpoint()
             "Suffix" : "net.home",
             "ServerList" : "10.0.0.10",
         }
-    })”;
+    })";
     GUID endpointGuid;  
     HRESULT result = CoCreateGuid(&endpointGuid);
 
@@ -381,11 +381,11 @@ void CreateAndHotAddEndpoint()
 ```
 
 
-## <a name="scenario-hcn-namespace"></a>案例：HCN 命名空間
+## <a name="scenario-hcn-namespace"></a>案例： HCN 命名空間
 
 ### <a name="create-an-hcn-namespace"></a>建立 HCN 命名空間
 
-此範例示範如何使用主機計算網路服務 API, 在主機上建立可用於連接端點和容器的主機計算網路命名空間。
+此範例示範如何使用主機計算網路服務 API，在主機上建立可用於連接端點和容器的主機計算網路命名空間。
 
 ```C++
 using unique_hcn_namespace = wil::unique_any< 
@@ -424,9 +424,9 @@ void CreateHcnNamespace()
                     // UnMarshal  the result Json
      // ErrorSchema
         //   {
-        //  "ErrorCode" : <uint32>,
-        //  "Error" : <string>,
-        //  "Success" : <bool>,
+        //    "ErrorCode" : <uint32>,
+        //    "Error" : <string>,
+        //    "Success" : <bool>,
        //   }
 
         // Failed to create network
@@ -564,11 +564,11 @@ void CreateHcnNamespace()
 ```
 
 
-## <a name="scenario-hcn-load-balancer"></a>案例：HCN 負載平衡器
+## <a name="scenario-hcn-load-balancer"></a>案例： HCN 負載平衡器
 
 ### <a name="create-an-hcn-load-balancer"></a>建立 HCN 負載平衡器
 
-這個範例會示範如何使用主機計算網路服務 API, 在主機上建立主機計算網路 Load Balancer, 以用來在計算之間平衡端點的負載。
+這個範例會示範如何使用主機計算網路服務 API，在主機上建立主機計算網路 Load Balancer，以用來在計算之間平衡端點的負載。
 
 ```C++
 using unique_hcn_loadbalancer = wil::unique_any< 
@@ -620,9 +620,9 @@ void CreateHcnLoadBalancer()
                     // UnMarshal  the result Json
      // ErrorSchema
         //   {
-        //  "ErrorCode" : <uint32>,
-        //  "Error" : <string>,
-        //  "Success" : <bool>,
+        //    "ErrorCode" : <uint32>,
+        //    "Error" : <string>,
+        //    "Success" : <bool>,
        //   }
 
         // Failed to create network
@@ -761,11 +761,11 @@ void CreateHcnLoadBalancer()
 ```
 
 
-## <a name="scenario-hcn-notifications"></a>案例：HCN 通知
+## <a name="scenario-hcn-notifications"></a>案例： HCN 通知
 
 ### <a name="register-and-unregister-service-wide-notifications"></a>註冊及取消註冊整個服務的通知
 
-這個範例示範如何使用主機計算網路服務 API 來註冊和取消註冊整個服務的通知。 這可讓呼叫者在每次發生全服務作業 (例如新的網路建立事件) 時, 接收通知 (透過其在註冊期間所指定的回呼函式)。
+這個範例示範如何使用主機計算網路服務 API 來註冊和取消註冊整個服務的通知。 這可讓呼叫者在每次發生全服務作業（例如新的網路建立事件）時，接收通知（透過其在註冊期間所指定的回呼函式）。
 
 ```C++
 using unique_hcn_callback = wil::unique_any< 

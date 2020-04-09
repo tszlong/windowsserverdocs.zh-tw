@@ -8,12 +8,12 @@ ms.date: 06/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e5e90119066285ae8e04b392a13ab1a38488f5ee
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: b0881bff3455b471b0e51e960e1b0e522508a8b3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265750"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854861"
 ---
 # <a name="fine-tuning-sql-and-addressing-latency-issues-with-ad-fs"></a>微調 SQL 並解決 AD FS 的延遲問題
 在[AD FS 2016](https://support.microsoft.com/help/4503294/windows-10-update-kb4503294)的更新中，我們引進了下列改良功能來減少跨資料庫的延遲。 即將推出的 AD FS 2019 更新將包含這些改良功能。
@@ -53,7 +53,7 @@ AD FS 會註冊 SQL 變更的回呼，而在變更時，ADFS 會收到通知。 
  
 其他支援的可設定值： 
 
-   - **maxRelyingPartyEntries** -AD FS 將保留在記憶體中的信賴憑證者專案數上限。 OAuth 應用程式許可權快取也會使用此值。 如果應用程式許可權多於 RPs，而且全部都儲存在記憶體中，則此值應為應用程式許可權的數目。 預設值為 1000。
+   - **maxRelyingPartyEntries** -AD FS 將保留在記憶體中的信賴憑證者專案數上限。 OAuth 應用程式許可權快取也會使用此值。 如果應用程式許可權多於 RPs，而且全部都儲存在記憶體中，則此值應為應用程式許可權的數目。 預設值為1000。
    - **maxIdentityProviderEntries** -這是 AD FS 將保留在記憶體中的宣告提供者專案數上限。 預設值為 200。 
    - **maxClientEntries** -這是 AD FS 將保留在記憶體中的 OAuth 用戶端專案數上限。 預設值為 500。 
    - **maxClaimDescriptorEntries** -AD FS 將保留在記憶體中的宣告描述項專案數上限。 預設值為 500。 

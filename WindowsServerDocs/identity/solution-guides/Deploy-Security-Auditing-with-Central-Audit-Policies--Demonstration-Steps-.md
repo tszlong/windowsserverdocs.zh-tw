@@ -1,7 +1,6 @@
 ---
 ms.assetid: 22347a94-aeea-44b4-85fb-af2c968f432a
 title: 使用集中稽核原則部署安全性稽核 (示範步驟)
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: ecbaa33d83d7b37f376a426571c0d2df89c7695d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9ad3f069eaea6917d29f56a00c6ecde035ecb01d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407110"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861191"
 ---
 # <a name="deploy-security-auditing-with-central-audit-policies-demonstration-steps"></a>使用集中稽核原則部署安全性稽核 (示範步驟)
 
@@ -29,7 +28,7 @@ ms.locfileid: "71407110"
 |[更新群組原則設定](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md#BKMK_2)|登入檔案伺服器並套用群組原則更新。|  
 |[確認已套用全域物件存取原則](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md#BKMK_3)|在事件檢視器中檢視相關的事件。 事件應該包含國家或地區及文件類型的中繼資料。|  
   
-## <a name="BKMK_1"></a>設定全域物件存取原則  
+## <a name="configure-global-object-access-policy"></a><a name="BKMK_1"></a>設定全域物件存取原則  
 在這個步驟中，您在網域控制站中設定全域物件存取原則。  
   
 #### <a name="to-configure-a-global-object-access-policy"></a>設定全域物件存取原則  
@@ -65,7 +64,7 @@ ms.locfileid: "71407110"
   
 15. 在瀏覽窗格中，按一下 [物件存取]，然後在結果窗格中，按兩下 [稽核控制代碼操作]。 按一下 [設定下列稽核事件]、[成功] 及 [失敗]，按一下 [確定]，然後關閉彈性存取 GPO。  
   
-## <a name="BKMK_2"></a>更新群組原則設定  
+## <a name="update-group-policy-settings"></a><a name="BKMK_2"></a>更新群組原則設定  
 在這個步驟中，您會在建立稽核原則之後更新群組原則設定。  
   
 #### <a name="to-update-group-policy-settings"></a>更新群組原則設定  
@@ -75,11 +74,11 @@ ms.locfileid: "71407110"
 2. 按 Windows 鍵 + R，然後輸入 **cmd**，以開啟命令提示字元視窗。  
   
    > [!NOTE]  
-   > 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。  
+   > 如果出現 [使用者帳戶控制] 對話方塊，請確認其顯示的動作為您想要的動作，然後按一下 [是]。  
   
 3. 輸入 **gpupdate /force**，然後按 ENTER。  
   
-## <a name="BKMK_3"></a>確認已套用全域物件存取原則  
+## <a name="verify-that-the-global-object-access-policy-has-been-applied"></a><a name="BKMK_3"></a>確認已套用全域物件存取原則  
 套用群組原則設定之後，您可以確認稽核原則設定已正確套用。  
   
 #### <a name="to-verify-that-the-global-object-access-policy-has-been-applied"></a>確認已套用全域物件存取原則  
@@ -91,7 +90,7 @@ ms.locfileid: "71407110"
 > [!IMPORTANT]  
 > 系統會代表已檢查其有效存取權的使用者，於資源所在的電腦上產生新的登入事件。 分析使用者登入活動的安全性稽核記錄時，為了區分因為有效存取權而產生的登入事件，以及因為互動式網路使用者登入而產生的登入事件，會包含模擬等級資訊。 因為有效存取權而產生登入事件時，模擬等級將會是「識別碼」。 網路互動式使用者登入通常會產生模擬等級為「模擬」或「委派」的登入事件。  
   
-## <a name="BKMK_Links"></a>另請參閱  
+## <a name="see-also"></a><a name="BKMK_Links"></a>另請參閱  
   
 -   [案例：檔案存取審核](Scenario--File-Access-Auditing.md)  
   

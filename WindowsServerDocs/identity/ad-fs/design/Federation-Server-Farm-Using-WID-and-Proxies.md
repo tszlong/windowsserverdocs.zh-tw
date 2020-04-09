@@ -1,7 +1,6 @@
 ---
 ms.assetid: f0464182-56a2-4bfa-a8c8-7e39c1bd62d3
 title: 使用 WID 和 Proxy 的同盟伺服器陣列
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,19 +8,19 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6a123afaebba002b8ee4fb98d5cee5aded286a96
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 523e076ad9593f09ac2f9db5c45fa8c2e82f05bb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359129"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853101"
 ---
 # <a name="federation-server-farm-using-wid-and-proxies"></a>使用 WID 和 Proxy 的同盟伺服器陣列
 
 適用于 Active Directory 同盟服務 \(AD FS\) 的這個部署拓撲，與 Windows Internal Database \(WID\) 拓撲的同盟伺服器陣列相同，但它會將 proxy 電腦新增至周邊網路，以支援外部使用者。 這些 proxy 會將來自公司網路外部的用戶端驗證要求重新導向至同盟伺服器陣列。 在舊版的 AD FS 中，這些 proxy 稱為同盟伺服器 proxy。  
   
 > [!IMPORTANT]  
-> 在 Windows Server 2012 R2 中的 Active Directory 同盟服務 \(AD FS\) 中，同盟伺服器 proxy 的角色是由新的遠端存取角色服務（稱為 Web 應用程式 Proxy）所處理。 若要讓您的 AD FS 可從公司網路外部存取（這是在舊版 AD FS 中部署同盟伺服器 proxy 的目的，例如 Windows Server 2012 中的 AD FS 2.0 和 AD FS，您可以部署一或多個 web 應用程式 proxyWindows Server 2012 R2 中的 D FS。  
+> 在 Windows Server 2012 R2 中的 Active Directory 同盟服務 \(AD FS\) 中，同盟伺服器 proxy 的角色是由新的遠端存取角色服務（稱為 Web 應用程式 Proxy）所處理。 若要讓您的 AD FS 可從公司網路外部存取（這是在舊版 AD FS 中部署同盟伺服器 proxy 的目的，例如 Windows Server 2012 中的 AD FS 2.0 和 AD FS，您可以在 Windows Server 2012 R2 中為 AD FS 部署一或多個 web 應用程式 proxy。  
 >   
 > 在 AD FS 的內容中，Web 應用程式 Proxy 會當做 AD FS 的同盟伺服器 proxy。 此外，Web 應用程式 Proxy 為您公司網路內部的 Web 應用程式提供反向 Proxy 功能，以讓任何裝置上的使用者能從公司網路外部存取這些應用程式。 如需 Web 應用程式 Proxy 的詳細資訊，請參閱 Web 應用程式 Proxy 概觀。  
 >   
@@ -63,7 +62,7 @@ ms.locfileid: "71359129"
   
 如需有關如何設定網路環境以與同盟伺服器或 web 應用程式 Proxy 搭配使用的詳細資訊，請參閱[AD FS 需求](AD-FS-Requirements.md)和[規劃 Web 應用程式 Proxy 基礎結構（WAP）](https://technet.microsoft.com/library/dn383648.aspx)中的「名稱解析需求」一節。  
   
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
 [規劃您的 AD FS 部署拓撲](Plan-Your-AD-FS-Deployment-Topology.md)  
 [Windows Server 2012 R2 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
   

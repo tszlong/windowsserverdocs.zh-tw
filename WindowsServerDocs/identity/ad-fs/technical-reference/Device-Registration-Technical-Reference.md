@@ -1,7 +1,6 @@
 ---
 ms.assetid: 69ec592a-5499-4249-8ba0-afa356a8ff75
 title: 裝置註冊技術參考
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: ab78a5847c52650f2a608dfc89e2001cc43153ff
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0b921e4a88940477ec7d0d4b2fa165880bd41150
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407353"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860221"
 ---
 # <a name="device-registration-technical-reference"></a>裝置註冊技術參考
 裝置註冊服務 \(DRS\) 是 Windows Server 2012 R2 上 Active Directory 同盟服務角色隨附的新 Windows 服務。  DRS 必須安裝並設定在 AD FS 伺服器陣列中的所有同盟伺服器上。  如需部署 DRS 的詳細資訊，請參閱 [使用裝置註冊服務設定同盟伺服器](https://technet.microsoft.com/library/dn486831.aspx)。  
@@ -40,7 +39,7 @@ ms.locfileid: "71407353"
   
 根據預設，容器是在 AD FS 的相同網域中建立。  \(例如， **CN\=RegisteredDevices，DC\=< 預設\-命名\-內容 >** \)。當 Active Directory 樹系在註冊裝置時，會建立此物件。  
   
-### <a name="registered-devices"></a>登錄的裝置  
+### <a name="registered-devices"></a>已註冊的裝置  
 裝置物件是 Active Directory 中的新的輕量型物件。  它們用來代表使用者、裝置與公司之間的關聯性。  裝置物件使用 AD FS 所簽署的憑證來錨定實體裝置至 Active Directory 中的邏輯裝置物件。  
   
 登錄的裝置包括下列元素：  

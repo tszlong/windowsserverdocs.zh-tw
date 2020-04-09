@@ -1,24 +1,20 @@
 ---
 title: MultiPoint 服務
 description: 瞭解如何使用 MultiPoint 服務，這是一種可讓多個使用者存取相同系統的解決方案
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 426005e1-03af-4595-9418-964b0962b905
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 4b5900039dc241acb0da75a680b52088a6a6f3c2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2e96621319d541bbc2dc4b7fe9f915397ce451c4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405047"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853431"
 ---
 # <a name="multipoint-services"></a>MultiPoint 服務
 MultiPoint 服務是一種解決方案，可讓多個使用者各自擁有各自獨立且熟悉的 Windows 體驗，同時共用一部電腦。

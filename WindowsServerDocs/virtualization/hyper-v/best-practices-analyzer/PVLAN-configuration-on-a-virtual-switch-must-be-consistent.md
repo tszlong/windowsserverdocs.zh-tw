@@ -2,33 +2,32 @@
 title: 虛擬交換器上的 PVLAN 設定必須一致
 description: 此最佳做法分析程式規則的線上版本文字。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 4db63bcc-7a54-4f19-98a6-c274c3956d51
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 36616a5c4d8e57ae929cdab846db65dcdda57b85
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7e42c874e883157b3f85f523511b950e2863b155
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364754"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861851"
 ---
 # <a name="pvlan-configuration-on-a-virtual-switch-must-be-consistent"></a>虛擬交換器上的 PVLAN 設定必須一致
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
 如需最佳做法與掃描的相關詳細資訊，請參閱[執行最佳做法分析程式掃描及管理掃描結果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
 |屬性|詳細資料|  
 |-|-|  
-|**作業系統**|Windows Server 2016| 
+|**作業系統**|Windows Server 2016| 
 |**產品/功能**|Hyper-V|  
-|**Severity**|Error|  
-|**分類**|組態|  
+|**低於**|錯誤|  
+|**類別**|組態|  
   
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。
   

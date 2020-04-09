@@ -1,7 +1,6 @@
 ---
 ms.assetid: fde99b44-cb9f-49bf-b888-edaeabe6b88d
 title: 適用於應用程式廠商的虛擬網域控制站複製測試指導方針
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,18 +8,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 4926fabe255f964b6d39e6c39c5e794a37423111
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.openlocfilehash: 7273c59022edf4b03276a9e26c8291849ef93b40
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517463"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853991"
 ---
 # <a name="virtualized-domain-controller-cloning-test-guidance-for-application-vendors"></a>適用於應用程式廠商的虛擬網域控制站複製測試指導方針
 
 >適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-本主題說明在虛擬網域控制站（DC）複製程式完成之後，應用程式廠商應考慮哪些事項，以協助確保其應用程式繼續如預期般運作。 其中涵蓋了複製程式的相關層面，也就是可能需要額外測試的應用程式廠商和案例。 已驗證其應用程式可在已複製的虛擬網域控制站上運作的應用程式廠商，鼓勵您在本主題底部的 [社區內容] 中列出應用程式的名稱，以及您的組織的網站，使用者可在此深入瞭解驗證。
+本主題說明在虛擬網域控制站（DC）複製程式完成之後，應用程式廠商應考慮哪些事項，以協助確保其應用程式繼續如預期般運作。 其中涵蓋了複製程式的相關層面，也就是可能需要額外測試的應用程式廠商和案例。 已驗證其應用程式是否可在已複製的虛擬網域控制站上運作的應用程式廠商，建議您在本主題底部的 [社區內容] 中列出應用程式的名稱，並附上您組織網站的連結，使用者可以在此深入瞭解驗證。
 
 ## <a name="overview-of-virtualized-dc-cloning"></a>虛擬化 DC 複製的總覽
 [Active Directory Domain Services （AD DS）虛擬化（等級100）](https://docs.microsoft.com/windows-server/identity/ad-ds/introduction-to-active-directory-domain-services-ad-ds-virtualization-level-100)和[虛擬網域控制站技術參考（等級300）](https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/virtual-dc/virtualized-domain-controller-technical-reference--level-300-)的簡介中會詳細說明虛擬網域控制站複製程式。 從應用程式廠商的觀點來看，在評估複製到應用程式的影響時，需要考慮下列事項：
@@ -31,7 +30,7 @@ ms.locfileid: "77517463"
 
 -   複製是僅適用于虛擬網域控制站的特定部署功能，不是用來複製其他伺服器角色的一般用途延伸模組。 某些伺服器角色特別不支援複製：
 
-    -   Dynamic Host Configuration Protocol (DHCP)
+    -   動態主機設定通訊協定 (DHCP)
 
     -   Active Directory 憑證服務 (AD CS)
 

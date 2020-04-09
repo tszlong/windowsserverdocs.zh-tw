@@ -8,12 +8,12 @@ ms.date: 06/13/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: f4973da0d9e0c347cff8fc910f96277055b66dec
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: f7e68558945fcd26d5e8ab405f39e86266beeea8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465542"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853861"
 ---
 # <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>使用 OAuth 和 ADAL 建立單一頁面 web 應用程式。JS 與 AD FS 2016 或更新版本
 
@@ -43,9 +43,9 @@ ms.locfileid: "77465542"
 ## <a name="setting-up-the-environment"></a>設定環境
 在此逐步解說中，我們將使用的基本設定：
 
-1.  DC：將主控 AD FS 之網域的網域控制站
-2.  AD FS 伺服器：網域的 AD FS 伺服器
-3.  開發電腦：我們已安裝 Visual Studio 的電腦，並將會開發我們的範例
+1.    DC：將主控 AD FS 之網域的網域控制站
+2.    AD FS 伺服器：網域的 AD FS 伺服器
+3.    開發電腦：我們已安裝 Visual Studio 的電腦，並將會開發我們的範例
 
 如有需要，您可以只使用兩部電腦。 一個用於 DC/AD FS，另一個用於開發範例。
 

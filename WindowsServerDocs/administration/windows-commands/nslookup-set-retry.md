@@ -1,24 +1,20 @@
 ---
 title: nslookup set retry
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 615fdfa2-fa29-47a8-8c9e-a6c5b45b3b71
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 306bcc4f5e7ac98767c3c2e274100cf917874a8e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2b95c4c8af2d7960270fd43f7a766b313ddbc07a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372865"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80838341"
 ---
 # <a name="nslookup-set-retry"></a>nslookup set retry
 
@@ -29,7 +25,7 @@ ms.locfileid: "71372865"
 ```
 set retry=<Number>
 ```
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |    參數    |                                      描述                                       |
 |-----------------|----------------------------------------------------------------------------------------|
@@ -38,6 +34,6 @@ set retry=<Number>
 
 ## <a name="remarks"></a>備註
 - 在特定時間內未收到要求的回復時，超時期間會加倍，而且會重新傳送要求。 重試值會控制要求在放棄之前重新傳送的次數。 您可以使用**set timeout**子命令來變更超時時間。
-  ## <a name="additional-references"></a>其他參考
-  [命令列語法索引鍵](command-line-syntax-key.md)
+  ## <a name="additional-references"></a>其他參考資料
+  - [命令列語法索引鍵](command-line-syntax-key.md)
   [nslookup 設定超時](nslookup-set-timeout.md)

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 96b9f4e6-f01c-4517-8299-017d187d447e
 title: 建立規則傳送驗證方法相容宣告
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 4efcae02b96904c9f869a5ed9e14eba161892b74
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2c011c3b15f6223a6cea2f9c7226d9319641a693
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358165"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816572"
 ---
 # <a name="create-a-rule-to-send-an-authentication-method-claim"></a>建立規則傳送驗證方法相容宣告
 

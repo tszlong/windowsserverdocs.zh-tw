@@ -1,24 +1,20 @@
 ---
 title: reg copy
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3fe74213-39ec-4b2d-ba3d-086243eac997
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a82b17b631d4242fa6affdec0ff67b5b09380550
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b2acfdd3c0ad66d93313a11f8025b690ea0157c2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371784"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836531"
 ---
 # <a name="reg-copy"></a>reg copy
 
@@ -34,7 +30,7 @@ ms.locfileid: "71371784"
 reg copy <KeyName1> <KeyName2> [/s] [/f]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -54,7 +50,7 @@ reg copy <KeyName1> <KeyName2> [/s] [/f]
 |0|成功|
 |1|失敗|
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 若要將金鑰 MyApp 底下的所有子機碼和值複製到金鑰 SaveMyApp，請輸入：
 ```
@@ -65,6 +61,6 @@ REG COPY HKLM\Software\MyCo\MyApp HKLM\Software\MyCo\SaveMyApp /s
 REG COPY \\ZODIAC\HKLM\Software\MyCo HKLM\Software\MyCo1
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

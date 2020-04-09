@@ -1,5 +1,5 @@
 ---
-title: 將 Active Directory 同盟服務角色服務移轉到 Windows Server 2012
+title: 將 Active Directory Federation Services 角色服務移轉到 Windows Server 2012
 description: 提供將 AD FS 服務遷移至 Windows Server 2012 的指示。
 author: billmath
 ms.author: billmath
@@ -8,14 +8,14 @@ ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: cdb5523ade5c3c7572656d62d1b4f744683ec96e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 36d37eb2cc886d9831b995aa8cfdda16765994b8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408272"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857511"
 ---
-# <a name="migrate-active-directory-federation-services-role-services-to-windows-server-2012"></a>將 Active Directory 同盟服務角色服務移轉到 Windows Server 2012
+# <a name="migrate-active-directory-federation-services-role-services-to-windows-server-2012"></a>將 Active Directory Federation Services 角色服務移轉到 Windows Server 2012
 
 以下提供將下列角色服務遷移至 Windows Server 2012 上 Active Directory 同盟服務（AD FS）的指示：  
   
@@ -70,12 +70,12 @@ ms.locfileid: "71408272"
 |AD FS 1.0 與 Windows Server 2003 R2 一起安裝的宣告感知代理程式）|不支援移轉|  
 |隨 Windows Server 2008 或 Windows Server 2008 R2 安裝的 AD FS 1.1 同盟伺服器|不支援移轉|  
 |與 Windows Server 2008 或 Windows Server 2008 R2 一起安裝的 AD FS 1.1 同盟伺服器 proxy|不支援移轉|  
-|AD FS 1.1 以 Windows Server 2008 或 Windows Server 2008 R2 安裝的 Windows 權杖型代理程式|支援在同一部伺服器上進行遷移，但遷移的 AD FS Windows 權杖型代理程式只能與隨 Windows Server 2008 或 Windows Server 2008 R2 一起安裝的 AD FS 1.1 federation service 搭配運作。 如需詳細資訊，請參閱：<br /><br /> [移轉 AD FS 1.1 網路代理程式](migrate-the-ad-fs-web-agent.md)<br /><br /> [與 AD FS 1.x 互通](Interoperating-with-AD-FS-1.x.md)|  
-|AD FS 1.1 與 Windows Server 2008 或 Windows Server 2008 R2 一起安裝的宣告感知代理程式）|支援相同伺服器的移轉。 已遷移的 AD FS 1.1 宣告感知 web 代理程式將與下列內容搭配運作：<br /><br /> 隨 Windows Server 2008 或 Windows Server 2008 R2 安裝的 AD FS 1.1 federation service<br /><br /> 安裝在 Windows Server 2008 或 Windows Server 2008 R2 上的 AD FS 2.0 federation service<br /><br /> 與 Windows Server 2012 一起安裝 AD FS federation service<br /><br /> 如需詳細資訊，請參閱：<br /><br /> [移轉 AD FS 1.1 網路代理程式](migrate-the-ad-fs-web-agent.md)<br /><br /> [與 AD FS 1.x 互通](Interoperating-with-AD-FS-1.x.md)|  
-|安裝在 Windows Server 2008 或 Windows Server 2008 R2 上的 AD FS 2.0 同盟伺服器|支援相同伺服器的移轉。 如需詳細資訊，請參閱：<br /><br /> [準備移轉 AD FS 2.0 同盟伺服器](prepare-to-migrate-ad-fs-fed-server.md)<br /><br /> [移轉 AD FS 2.0 同盟伺服器](migrate-the-ad-fs-fed-server.md)|  
-|在 Windows Server 2008 或 Windows Server 2008 R2 上安裝 AD FS 2.0 同盟伺服器 proxy|支援相同伺服器的移轉。  如需詳細資訊，請參閱：<br /><br /> [準備移轉 AD FS 2.0 同盟伺服器 Proxy](prepare-to-migrate-ad-fs-fed-proxy.md)<br /><br /> [移轉 AD FS 2.0 同盟伺服器 Proxy](migrate-the-ad-fs-2-fed-server-proxy.md)|  
+|AD FS 1.1 以 Windows Server 2008 或 Windows Server 2008 R2 安裝的 Windows 權杖型代理程式|支援在同一部伺服器上進行遷移，但遷移的 AD FS Windows 權杖型代理程式只能與隨 Windows Server 2008 或 Windows Server 2008 R2 一起安裝的 AD FS 1.1 federation service 搭配運作。 如需詳細資訊，請參閱：<p> [移轉 AD FS 1.1 網路代理程式](migrate-the-ad-fs-web-agent.md)<p> [與 AD FS 1.x 互通](Interoperating-with-AD-FS-1.x.md)|  
+|AD FS 1.1 與 Windows Server 2008 或 Windows Server 2008 R2 一起安裝的宣告感知代理程式）|支援相同伺服器的移轉。 已遷移的 AD FS 1.1 宣告感知 web 代理程式將與下列內容搭配運作：<p> 隨 Windows Server 2008 或 Windows Server 2008 R2 安裝的 AD FS 1.1 federation service<p> 安裝在 Windows Server 2008 或 Windows Server 2008 R2 上的 AD FS 2.0 federation service<p> 與 Windows Server 2012 一起安裝 AD FS federation service<p> 如需詳細資訊，請參閱：<p> [移轉 AD FS 1.1 網路代理程式](migrate-the-ad-fs-web-agent.md)<p> [與 AD FS 1.x 互通](Interoperating-with-AD-FS-1.x.md)|  
+|安裝在 Windows Server 2008 或 Windows Server 2008 R2 上的 AD FS 2.0 同盟伺服器|支援相同伺服器的移轉。 如需詳細資訊，請參閱：<p> [準備移轉 AD FS 2.0 同盟伺服器](prepare-to-migrate-ad-fs-fed-server.md)<p> [移轉 AD FS 2.0 同盟伺服器](migrate-the-ad-fs-fed-server.md)|  
+|在 Windows Server 2008 或 Windows Server 2008 R2 上安裝 AD FS 2.0 同盟伺服器 proxy|支援相同伺服器的移轉。  如需詳細資訊，請參閱：<p> [準備移轉 AD FS 2.0 同盟伺服器 Proxy](prepare-to-migrate-ad-fs-fed-proxy.md)<p> [移轉 AD FS 2.0 同盟伺服器 Proxy](migrate-the-ad-fs-2-fed-server-proxy.md)|  
   
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
  [準備遷移 AD FS 2.0 同盟伺服器](prepare-to-migrate-ad-fs-fed-server.md)   
  [準備遷移 AD FS 2.0 同盟伺服器 Proxy](prepare-to-migrate-ad-fs-fed-proxy.md)   
  [遷移 AD FS 2.0 同盟伺服器](migrate-the-ad-fs-fed-server.md)   

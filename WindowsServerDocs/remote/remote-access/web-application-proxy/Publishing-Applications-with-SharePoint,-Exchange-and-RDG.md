@@ -1,7 +1,6 @@
 ---
 ms.assetid: 61ed00fd-51c7-4728-91fa-8501de9d8f28
 title: 使用 SharePoint、Exchange 及 RDG 發佈應用程式
-description: ''
 author: billmath
 manager: mtillman
 ms.author: billmath
@@ -9,12 +8,12 @@ ms.date: 04/30/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: web-app-proxy
-ms.openlocfilehash: 3852baf866dae20d1d1d08219841295aa976c626
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 18851463b82afc1dc34615e6faaa14622c80224a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79319932"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818681"
 ---
 # <a name="publishing-applications-with-sharepoint-exchange-and-rdg"></a>使用 SharePoint、Exchange 及 RDG 發佈應用程式
 
@@ -27,7 +26,7 @@ ms.locfileid: "79319932"
 > [!NOTE]
 > 這是依原樣提供的資訊。  遠端桌面服務支援並建議使用[Azure App Proxy，為內部部署應用程式提供安全的遠端存取](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-get-started)。
 
-## <a name="BKMK_6.1"></a>發行 SharePoint Server
+## <a name="publish-sharepoint-server"></a><a name="BKMK_6.1"></a>發行 SharePoint Server
 當 SharePoint 網站設定為宣告式驗證或整合式 Windows 驗證時，您可以透過 Web 應用程式 Proxy 發佈 SharePoint 網站。 如果您想要使用 Active Directory 同盟服務（AD FS）進行預先驗證，則必須使用其中一個嚮導來設定信賴憑證者。
 
 -   如果 SharePoint 網站使用宣告式驗證，您必須使用 [新增信賴憑證者信任精靈] 來設定應用程式的信賴憑證者信任。
@@ -40,7 +39,7 @@ ms.locfileid: "79319932"
 
 如果您的 SharePoint 網站是使用備用存取對應 (AAM) 或主機名稱為網站集合加以設定，您可以使用不同的外部和後端伺服器 URL 來發行您的應用程式。 不過，如果您未使用 AAM 或主機名稱網站集合設定您的 SharePoint 網站，您必須使用相同的外部和後端伺服器 URL。
 
-## <a name="BKMK_6.2"></a>發佈 Exchange Server
+## <a name="publish-exchange-server"></a><a name="BKMK_6.2"></a>發佈 Exchange Server
 下表描述您可以透過 Web 應用程式 Proxy 發佈的 Exchange 服務，以及這些服務支援的預先驗證：
 
 
@@ -48,7 +47,7 @@ ms.locfileid: "79319932"
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    Outlook Web App     | -AD FS 使用非宣告式驗證<br />-傳遞<br />-針對內部部署 Exchange 2013 Service Pak 1 （SP1）使用宣告式驗證的 AD FS |                                                                  如需詳細資訊，請參閱： [使用 AD FS 宣告式驗證搭配 Outlook Web App 和 EAC](https://go.microsoft.com/fwlink/?LinkId=393723)                                                                  |
 | Exchange 控制台 |                                                                               傳遞                                                                               |                                                                                                                                                                                                                                                                                    |
-|    Outlook 無所不在    |                                                                               傳遞                                                                               | 您必須發行三個 URL，Outlook 無所不在才能正常運作：<br /><br />-自動探索 URL。<br />-Exchange Server 的外部主機名稱;也就是針對要連接的用戶端所設定的 URL。<br />-Exchange Server 的內部 FQDN。 |
+|    Outlook 無所不在    |                                                                               傳遞                                                                               | 您必須發行三個 URL，Outlook 無所不在才能正常運作：<p>-自動探索 URL。<br />-Exchange Server 的外部主機名稱;也就是針對要連接的用戶端所設定的 URL。<br />-Exchange Server 的內部 FQDN。 |
 |  Exchange ActiveSync   |                                                     傳遞<br/> 使用 HTTP 基本驗證通訊協定 AD FS                                                      |                                                                                                                                                                                                                                                                                    |
 
 若要使用整合式 Windows 驗證來發行 Outlook Web App，您必須使用 [新增非宣告式信賴憑證者信任精靈] 來設定應用程式的信賴憑證者信任。
@@ -162,7 +161,7 @@ ms.locfileid: "79319932"
 
             如需 RDP 的詳細資訊，請參閱設定[TS 閘道 OTP 案例](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731249(v=ws.10))。
 
-## <a name="BKMK_Links"></a>另請參閱
+## <a name="see-also"></a><a name="BKMK_Links"></a>另請參閱
 
 - [規劃使用 Web 應用程式 Proxy 發行應用程式](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383650(v=ws.11))
 

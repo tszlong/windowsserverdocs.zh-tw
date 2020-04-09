@@ -1,28 +1,24 @@
 ---
 title: Windows 驗證架構
 description: Windows Server 安全性
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-windows-auth
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 07c9d6bb-9b03-407d-89b6-97c7551b256b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 4a9deef6481c1f7dacb56e8166584de1c59d613c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f2a2b9db60842ba7889116cf35163c579d9131d1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403275"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861721"
 ---
 # <a name="windows-authentication-architecture"></a>Windows 驗證架構
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 這個適用于 IT 專業人員的總覽主題說明 Windows 驗證的基本架構配置。
 

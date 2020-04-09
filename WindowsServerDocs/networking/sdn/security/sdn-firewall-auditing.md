@@ -1,20 +1,20 @@
 ---
 title: SDN 防火牆稽核
 description: 防火牆審核是 Windows Server 2019 中 SDN 防火牆的新功能。 當您啟用 SDN 防火牆時，會記錄已啟用記錄的 SDN 防火牆規則（Acl）所處理的任何流程。
-manager: dougkim
+manager: grcusanz
 ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: c4e2f6c7-0364-4bf8-bb66-9af59c0bbd74
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/22/2018
-ms.openlocfilehash: 1452720d8ba71e7306dce0271ea7a9e6011b2952
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: d834c78d393fdbaeaa65900f16f4d1e32f2e5131
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317375"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854381"
 ---
 # <a name="sdn-firewall-auditing"></a>SDN 防火牆稽核
 

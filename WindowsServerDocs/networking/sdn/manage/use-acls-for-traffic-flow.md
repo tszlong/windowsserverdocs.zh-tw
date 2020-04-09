@@ -1,24 +1,20 @@
 ---
 title: 使用存取控制清單（Acl）管理資料中心網路流量流程
 description: 在本主題中，您將瞭解如何使用虛擬子網上的資料中心防火牆和 Acl，設定存取控制清單（Acl）來管理資料流程的流量。 您可以藉由建立可套用至虛擬子網或網路介面的 Acl 來啟用和設定資料中心防火牆。
-manager: dougkim
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6a7ac5af-85e9-4440-a631-6a3a38e9015d
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/27/2018
-ms.openlocfilehash: 1f18ad9ddb0ea1a7575f6fcb26189f36f818ada2
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 2b8a3af119ac11f3bcfd704bb4f43f12c989dbf6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317481"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854411"
 ---
 # <a name="use-access-control-lists-acls-to-manage-datacenter-network-traffic-flow"></a>使用存取控制清單（Acl）管理資料中心網路流量流程
 

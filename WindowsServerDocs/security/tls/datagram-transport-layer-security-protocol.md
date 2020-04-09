@@ -1,28 +1,24 @@
 ---
 title: 資料包傳輸層安全性通訊協定
 description: Windows Server 安全性
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-tls-ssl
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 57b8873a-ad9c-4f2c-93e0-a2af352c6965
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/16/2018
-ms.openlocfilehash: f603dc0c5616619088537ffcbd06f64baece0e23
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d0c066b063cbfc8def54c2e0d02cbb0eaf7f1d40
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402293"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852921"
 ---
 # <a name="datagram-transport-layer-security-protocol"></a>資料包傳輸層安全性通訊協定
 
-Windows Server （半年通道）、Windows Server 2016、Windows 10
+Windows Server (半年通道)、Windows Server 2016、Windows 10
 
 這個適用于 IT 專業人員的參考主題說明資料包傳輸層安全性（DTLS）通訊協定，這是安全通道安全性支援提供者（SSP）的一部分。
 
@@ -38,3 +34,4 @@ DTLS 通訊協定是在 Windows Server 2012 和 Windows 8 中的安全通道 SSP
 [IETF RFC 4347 資料包傳輸層安全性](http://tools.ietf.org/html/rfc4347)
 
 
+                                        

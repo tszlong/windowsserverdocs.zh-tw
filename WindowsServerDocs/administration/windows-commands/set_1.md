@@ -1,28 +1,22 @@
 ---
-title: set
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+title: 設定
+description: Set 的 Windows 命令主題，它會顯示、設定或移除 CMD。EXE 環境變數。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5fdd60d6-addf-4574-8c92-8aa53fa73d76
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 12dce38bf8ad050c65a7a8c0fca4a71267cca93f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7477caa47ef8f728b2ebe99fe0bbf961888b846e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384098"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834391"
 ---
-# <a name="set"></a>set
-
-
+# <a name="set"></a>設定
 
 顯示、設定或移除 CMD。EXE 環境變數。 如果使用時不含參數，**設定**會顯示目前的環境變數設定。
 
@@ -36,14 +30,14 @@ set [/p] <Variable>=[<PromptString>]
 set /a <Variable>=<Expression>
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
 |\<變數 >|指定要設定或修改的環境變數。|
 |\<字串 >|指定要與指定的環境變數產生關聯的字串。|
 |/p|將*變數*的值設定為使用者輸入的一行。|
-|\<PromptString >|選用。 指定訊息以提示使用者輸入。 這個參數會與 **/p**命令列選項搭配使用。|
+|\<PromptString >|選擇性。 指定訊息以提示使用者輸入。 這個參數會與 **/p**命令列選項搭配使用。|
 |/a|將*字串*設定為已評估的數值運算式。|
 |\<運算式 >|指定數值運算式。 如需可在*運算式*中使用的有效運算子，請參閱備註。|
 |/?|在命令提示字元顯示說明。|
@@ -55,7 +49,7 @@ set /a <Variable>=<Expression>
   當命令延伸模組已啟用（預設值），而且您執行**設定**時，會顯示以該值開頭的所有變數。
 - 使用特殊字元
 
-  **<** 、 **>** 、 **|** 、 **&** 、 **^** 的字元是特殊的命令 shell 字元，而且在*字串*中使用時，前面必須加上 escape 字元（ **^** ）或括在引號中（例如， **"StringContaining & Symbol"** ）。 如果您使用引號來括住包含其中一個特殊字元的字串，則會將引號設定為環境變數值的一部分。
+  字元 **<** 、 **>** 、 **|** 、 **&** 、 **^** 是特殊的命令 shell 字元，而且在*字串*中使用時，前面必須加上 Escape 字元（ **^** ）或括在引號中（例如**StringContaining & Symbol**）。 如果您使用引號來括住包含其中一個特殊字元的字串，則會將引號設定為環境變數值的一部分。
 - 使用環境變數
 
   使用環境變數來控制某些批次檔和程式的行為，以及控制 Windows 和 MS-DOS 子系統的顯示和運作方式。 **Set**命令通常會在 Autoexec 檔案中用來設定環境變數。
@@ -77,12 +71,12 @@ set /a <Variable>=<Expression>
   |          ! ~ -          |        一元         |
   |         \*/%          |      算術      |
   |           + -           |      算術      |
-  |          < < > >          |    邏輯移位     |
+  |          << >>          |    邏輯移位     |
   |            &            |     位 AND      |
-  |            ^            | 位互斥 OR |
+  |            ^            | 位元互斥 OR |
   |                         |                      |
   | = \*=/=% = + =-= & = ^ = |      = < < = > > =       |
-  |            、            | 運算式分隔符號 |
+  |            ,            | 運算式分隔符號 |
 
   如果您使用邏輯（ **&&** 或 **||** ）或模數（ **%** ）運算子，請將運算式字串括在引號中。 運算式中的任何非數值字串都會被視為環境變數名稱，而且它們的值會在處理之前轉換成數位。 如果您指定目前環境中未定義的環境變數名稱，則會配置零值，這可讓您以環境變數值執行算術，而不需要使用% 來取得值。
 
@@ -105,7 +99,7 @@ set /a <Variable>=<Expression>
 
   具有不同參數的**set**命令可從 [修復主控台] 取得。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 若要設定名為 TEST ^ 1 的環境變數，請輸入：
 ```
@@ -115,11 +109,11 @@ set testVar=test^^1
 > [!NOTE]
 > **Set**命令會將等號（=）後面的所有內容指派給變數的值。 如果您輸入：
 > ```
-> set testVar="test^1"
+> set testVar=test^1
 > ```
 > 您會得到下列結果：
 > ```
-> testVar="test^1"
+> testVar=test^1
 > ```
 > 若要設定名為 TEST & 1 的環境變數，請輸入：
 > ```
@@ -135,7 +129,7 @@ set testVar=test^^1
 > ```
 > 處理此命令時，字串 C:\Inc 會取代 **% include%** 。
 
-您也可以在 batch 程式中使用**set** ，將新目錄加入 PATH 環境變數中。 例如：
+您也可以在 batch 程式中使用**set** ，將新目錄加入 PATH 環境變數中。 例如，
 ```
 @echo off
 rem ADDPATH.BAT adds a new directory
@@ -151,6 +145,6 @@ set p
 > [!NOTE]
 > 此命令需要預設啟用的命令延伸模組。
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

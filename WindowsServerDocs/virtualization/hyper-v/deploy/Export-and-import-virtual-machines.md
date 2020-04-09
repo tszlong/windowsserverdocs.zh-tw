@@ -2,19 +2,19 @@
 title: 匯出和匯入虛擬機器
 description: 說明如何使用 Hyper-v 管理員或 Windows PowerShell 匯出和匯入虛擬機器。
 ms.prod: windows-server
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 manager: dongill
 ms.technology: compute-hyper-v
 ms.date: 12/13/2016
 ms.topic: article
 ms.assetid: 7fd996f5-1ea9-4b16-9776-85fb39a3aa34
-ms.openlocfilehash: 6e130ee8a040cd5b56908d77d91bf196a60de6f7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1e9cd8710a53c1e5d9d97e464c32dbf7f17d29a7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392973"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860891"
 ---
 >適用于： Windows 10、Windows Server 2016、Microsoft Hyper-v Server 2016、Windows Server 2019、Microsoft Hyper-v Server 2019
 
@@ -58,7 +58,7 @@ Export-VM -Name \<vm name\> -Path \<path\>
 
 1. 從 [Hyper-v 管理員] 中的 [**動作**] 功能表，按一下 [匯**入虛擬機器**]。
 
-2. 按一下 **\[下一步\]** 。
+2. 按 [下一步]。
 
 3. 選取包含匯出檔案的資料夾，然後按 **[下一步]** 。
 

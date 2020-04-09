@@ -1,24 +1,20 @@
 ---
 title: prnqctl
 description: 列印測試頁、暫停或繼續印表機。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8df9dfa7-984c-4276-bb7d-e7675e7c399e jpjofre
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 189b344dc0c4f587ba7a6382c481304242e22c74
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d07d8caa0568b26f5edc16258085a59ecdafcf4e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372036"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837201"
 ---
 # <a name="prnqctl"></a>prnqctl
 
@@ -31,7 +27,7 @@ ms.locfileid: "71372036"
 cscript Prnqctl {-z | -m | -e | -x | -?} [-s <ServerName>]   
 [-p <printerName>] [-u <UserName>] [-w <Password>]  
 ```  
-## <a name="parameters"></a>Parameters  
+### <a name="parameters"></a>參數  
 
 |參數|描述|  
 |-------|--------|  
@@ -45,13 +41,13 @@ cscript Prnqctl {-z | -m | -e | -x | -?} [-s <ServerName>]
 |/?|在命令提示字元顯示說明。|  
 
 ## <a name="remarks"></a>備註  
-- **Prnqctl**命令是位於%windir%\system32\ printing_Admin_Scripts\\<language> 目錄中的 Visual Basic 腳本。 若要使用此命令，請在命令提示字元中輸入**cscript** ，後面接著 prnqctl 檔案的完整路徑，或將目錄變更為適當的資料夾。 例如：  
+- **Prnqctl**命令是位於%windir%\system32\ printing_Admin_Scripts\\<language> 目錄中的 Visual Basic 腳本。 若要使用此命令，請在命令提示字元中輸入**cscript** ，後面接著 prnqctl 檔案的完整路徑，或將目錄變更為適當的資料夾。 例如，  
   ```  
   cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnqctl  
   ```  
 - 如果您提供的資訊包含空格，請使用引號括住文字（例如 `"computer Name"`）。  
 
-## <a name="BKMK_examples"></a>典型  
+## <a name="examples"></a><a name="BKMK_examples"></a>典型  
 若要在 \\\Server1 電腦共用的 Laserprinter1 印表機上列印測試頁，請輸入：  
 ```  
 cscript Prnqctl -e -s Server1 -p Laserprinter1  
@@ -65,6 +61,6 @@ cscript Prnqctl -z -p Laserprinter1
 cscript Prnqctl -x -p Laserprinter1  
 ```  
 
-#### <a name="additional-references"></a>其他參考  
-[命令列語法關鍵](command-line-syntax-key.md)  
+## <a name="additional-references"></a>其他參考資料  
+- [命令列語法關鍵](command-line-syntax-key.md)  
 [列印命令參考](print-command-reference.md)  

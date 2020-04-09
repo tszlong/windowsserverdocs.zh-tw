@@ -1,28 +1,24 @@
 ---
 title: 伺服器管理員的鍵盤快速鍵
 description: 伺服器管理員
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 96a2a8be-cbeb-4799-9034-284ea057915c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a78a9eb0923a067fe2a8f1c9faee38b9d7f8b944
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8135f453f633f8193fa56d80ae05cd9601435c87
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383167"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851511"
 ---
 # <a name="keyboard-shortcuts-for-server-manager"></a>伺服器管理員的鍵盤快速鍵
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 因為從 Windows Server 2012 開始已完全重新設計伺服器管理員，所以在 Windows Server 2008 R2 或 Windows Server 2008 的伺服器管理員主控台中工作的鍵盤快速鍵不一定是相同的命令。 本主題說明 Windows Server 2012 和更新版本的 Windows Server 中伺服器管理員的新鍵盤快速鍵和存取金鑰。
 
@@ -33,7 +29,7 @@ ms.locfileid: "71383167"
 
 **歡迎使用磚**
 
-|控制項群組|便捷鍵|
+|控制項群組|存取金鑰|
 |---------|-------|
 |歡迎使用磚-快速入門索引標籤|**Alt + Q**|
 |歡迎使用磚 - [最新內容] 索引標籤|**Alt + W**|
@@ -42,20 +38,20 @@ ms.locfileid: "71383167"
 
 **角色和群組縮圖**
 
-|控制項群組|便捷鍵|
+|控制項群組|存取金鑰|
 |---------|-------|
 |角色及伺服器群組磚|**Alt + R**|
 
 **主控台標題控制項**
 
-|控制項群組|便捷鍵|
+|控制項群組|存取金鑰|
 |---------|-------|
 |網址列中的上一頁按鈕|**Alt+向左鍵**或**退格鍵**|
 |網址列中的 [下一頁] 按鈕|**Alt + 向右鍵**|
 |重新整理|**F5**|
 |通知區域，開啟工作詳細資料對話方塊|**Alt + N**|
 |[管理] 功能表|**Alt + M**|
-|[檢視] 功能表|**Alt + V**|
+|檢視功能表|**Alt + V**|
 |[說明] 功能表|**Alt + H**|
 |開啟伺服器管理員說明|**瞭解**|
 |放大|**Ctrl + 加號（+）**|
@@ -64,7 +60,7 @@ ms.locfileid: "71383167"
 
 **角色、群組或本機伺服器頁面上的磚**
 
-|控制項群組|便捷鍵|
+|控制項群組|存取金鑰|
 |---------|-------|
 |[本機伺服器] 頁面 [屬性] 磚|**Alt + P**|
 |角色、群組或本機伺服器頁面 [事件] 磚|**Alt + E**|
@@ -76,14 +72,14 @@ ms.locfileid: "71383167"
 
 **在本機伺服器屬性磚中導覽**
 
-|控制項群組|便捷鍵|
+|控制項群組|存取金鑰|
 |---------|-------|
-|電腦名稱稱|**Alt + C**|
+|電腦名稱|**Alt + C**|
 |上次安裝的更新|**Alt + L**|
 |網域或工作群組|**Alt + D**|
 |Windows Update|**Alt + W**|
 |上次檢查更新的時間|**Alt + S**|
-|遠端系統管理|**Alt + R**|
+|遠端管理|**Alt + R**|
 |Windows 防火牆|**Alt + F**|
 |遠端桌面|**Alt + K**|
 |Windows 錯誤報告|**Alt + G**|
@@ -95,7 +91,7 @@ ms.locfileid: "71383167"
 
 **在事件、服務、BPA、效能及角色和功能磚內流覽**
 
-|控制項群組|便捷鍵|
+|控制項群組|存取金鑰|
 |---------|-------|
 |[工作] 功能表|**Alt + T**|
 |篩選控制項|**Alt + F**|

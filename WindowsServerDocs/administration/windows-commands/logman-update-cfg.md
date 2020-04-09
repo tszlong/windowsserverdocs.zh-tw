@@ -1,24 +1,20 @@
 ---
 title: logman 更新 cfg
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9da4e8b4-3be5-42d3-b0b4-c429630c35c4 britw
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 880499048978f3a451f2ccb4e898155b49e33bcb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c74370432dbc21f244dd675bb62cc65a13fa2ec7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374364"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840531"
 ---
 # <a name="logman-update-cfg"></a>logman 更新 cfg
 
@@ -30,7 +26,7 @@ ms.locfileid: "71374364"
 ```  
 logman update cfg <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>Parameters  
+### <a name="parameters"></a>參數  
 
 |                    參數                     |                                                                               描述                                                                               |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -61,11 +57,11 @@ logman update cfg <[-n] <name>> [options]
 
 ## <a name="remarks"></a>備註  
 其中列出 [-]，此選項會有額外的否定。  
-## <a name="BKMK_examples"></a>典型  
+## <a name="examples"></a><a name=BKMK_examples></a>典型  
 下列命令會更新現有的設定資料收集器 cfg_log，以 HKEY_LOCAL_MACHINE \Software\microsoft\windows server\ NT\Currentverion\\收集登錄機碼。  
 ```  
-logman update cfg cfg_log -reg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\Currentverion\"  
+logman update cfg cfg_log -reg HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\Currentverion\  
 ```  
-#### <a name="additional-references"></a>其他參考  
+## <a name="additional-references"></a>其他參考資料  
 [logman](logman.md)  
 [logman 建立 cfg](logman-create-cfg.md)  

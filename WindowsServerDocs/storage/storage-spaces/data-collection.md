@@ -1,21 +1,18 @@
 ---
 title: 使用儲存空間直接存取收集診斷資料
 description: 瞭解儲存空間直接存取資料收集工具，以及如何執行和使用它們的特定範例。
-keywords: 儲存空間、資料收集、疑難排解、事件通道、SDDCDiagnosticInfo
-ms.assetid: ''
 ms.prod: windows-server
 ms.author: adagashe
 ms.technology: storage-spaces
 ms.topic: article
 author: adagashe
 ms.date: 10/24/2018
-ms.localizationpriority: ''
-ms.openlocfilehash: 0d64e6188b24b5a1ec45242c3d99366fdde5a623
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: 75a74017f48b357dd029b062a7ce06775836bd0a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465212"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858961"
 ---
 # <a name="collect-diagnostic-data-with-storage-spaces-direct"></a>使用儲存空間直接存取收集診斷資料
 

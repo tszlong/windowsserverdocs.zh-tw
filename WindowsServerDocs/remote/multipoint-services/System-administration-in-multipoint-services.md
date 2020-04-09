@@ -1,24 +1,20 @@
 ---
 title: MultiPoint 服務中的系統管理
 description: MultiPoint 服務管理資訊的導覽主題
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8fce1bcf-5459-43a2-957e-c1bc1749bca2
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 79c8240c78ada6bb08e37a28442c1cf392dc71e4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: da27d56b8180949d911f17e334b2e377f004fc8f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394924"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853881"
 ---
 # <a name="system-administration-in-multipoint-services"></a>MultiPoint 服務中的系統管理
 在您開始使用 MultiPoint 服務系統之前，最好先進行一些基本的系統管理。  

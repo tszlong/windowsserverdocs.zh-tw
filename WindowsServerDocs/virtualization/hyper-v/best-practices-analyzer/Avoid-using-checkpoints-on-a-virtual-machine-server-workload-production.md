@@ -2,20 +2,19 @@
 title: 避免在生產環境中執行伺服器工作負載的虛擬機器上使用檢查點
 description: 此最佳做法分析程式規則的線上版本文字。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 1be75890-d316-495a-b9b7-be75fc1aac10
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: f2486093e31143b7493665d3d1254f7034ad1415
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f0e9d40fa6e28b515621402b853012cb59086a07
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365225"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857711"
 ---
 # <a name="avoid-using-checkpoints-on-a-virtual-machine-that-runs-a-server-workload-in-a-production-environment"></a>避免在生產環境中執行伺服器工作負載的虛擬機器上使用檢查點
 
@@ -45,7 +44,7 @@ ms.locfileid: "71365225"
   
 *儲存檢查點檔案的實體磁片可能會耗盡可用空間。如果發生這種情況，就無法在實體儲存體上執行額外的磁片作業。依賴實體存放裝置的任何虛擬機器都可能受到影響。*  
   
-當實體磁碟空間不足時，任何已儲存在該磁片上的檢查點或虛擬硬碟的執行中虛擬機器，都可能會自動暫停。 [Hyper-v 管理員] 會將這些虛擬機器的狀態顯示為「已暫停-重大」。  
+當實體磁碟空間不足時，任何已儲存在該磁片上的檢查點或虛擬硬碟的執行中虛擬機器，都可能會自動暫停。 [Hyper-v 管理員] 會將這些虛擬機器的狀態顯示為 [已暫停-重大]。  
   
 ## <a name="resolution"></a>解析度  
   

@@ -4,15 +4,15 @@ description: Windows Server 平衡電源計劃的處理器電源管理（PPM）�
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Qizha;TristanB
+ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 2f1d5e2f3f17c40f262b8cea98c04e3347790ba8
-ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
+ms.openlocfilehash: 1457328a151c87d2d4cb41c4ee91b4759f4fb8e2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001823"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851991"
 ---
 # <a name="power-and-performance-tuning"></a>電源與效能調整
 
@@ -100,7 +100,7 @@ Intel Turbo 加速和 AMD Turbo CORE 技術是一種功能，可讓處理器在�
 > [!Note]
 > 只有 Intel Westmere 和更新版本的處理器才支援 EPB 暫存器。
 
-針對 Intel Nehalem 和 AMD 處理器，在 P 狀態平臺上預設會停用 Turbo。 不過，如果系統支援共同工作處理器效能控制（CPPC），這是作業系統與硬體（定義于 ACPI 5.0）之間的新替代模式效能通訊，則在 Windows 操作時可能會參與系統會動態要求硬體，以提供最高的可能效能層級。
+針對 Intel Nehalem 和 AMD 處理器，在 P 狀態平臺上預設會停用 Turbo。 不過，如果系統支援共同工作處理器效能控制（CPPC），這是作業系統與硬體（定義于 ACPI 5.0）之間的新替代模式效能通訊，則在 Windows 作業系統動態要求硬體以提供最高可能的效能層級時，可能會涉嫌用 Turbo。
 
 若要啟用或停用 [Turbo 加速功能]，必須由系統管理員或所選電源計劃的預設參數設定來設定 [處理器效能提升模式] 參數。 處理器效能提升模式具有五個允許的值，如 [表 5] 所示。
 
@@ -191,7 +191,7 @@ Powercfg.exe /setactive scheme_current
 
 如果您的伺服器有特定的核心停車需求，您可以使用**處理器效能核心停車最大核心**參數或 Windows server 2016 中的**處理器效能核心停車最小**核心參數，來控制可供公園使用的核心數目。
 
-當有一或多個作用中的執行緒相似化為至 NUMA 節點（也就是超過1個 CPU，但小於節點上的整組 cpu）時，核心停車不一定是最理想的情況。 當核心停車演算法挑選核心來 unpark （假設工作負載濃度增加）時，它可能不一定會將使用中相似化為子集（或子集）內的核心挑選到 unpark，因此可能會導致 unparking 核心不會實際出現黑屏.
+當有一或多個作用中的執行緒相似化為至 NUMA 節點（也就是超過1個 CPU，但小於節點上的整組 cpu）時，核心停車不一定是最理想的情況。 當核心停車演算法挑選核心來 unpark （假設工作負載強度增加）時，可能不一定會在 unpark 的作用中相似化為子集（或子集）內挑選核心，因此可能會導致無法實際使用的 unparking 核心。
 
 這些參數的值是範圍0–100中的百分比。 **處理器效能核心停車最大核心**數參數會控制可以隨時離開的核心百分比上限（可用於執行執行緒），而**處理器效能核心的停車最小核心**參數則會控制可停用核心的最小百分比。 若要關閉核心停車，請使用下列命令，將**處理器效能核心停車最小核心**參數設定為100%：
 

@@ -2,20 +2,19 @@
 title: 使用1或2個虛擬處理器設定執行 Windows Vista 的虛擬機器
 description: 此最佳做法分析程式規則的線上版本文字。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: e562bce3-fd68-42c9-821c-12022ae4746c
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: f0fd83122ce148cfa97147a352ebef4f7cc443cf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0319039dfc26d59b1045ffc60f52e56eb900ff76
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364929"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80862021"
 ---
 # <a name="configure-virtual-machines-running-windows-vista-with-1-or-2-virtual-processors"></a>使用1或2個虛擬處理器設定執行 Windows Vista 的虛擬機器
 
@@ -27,7 +26,7 @@ ms.locfileid: "71364929"
 |-|-|  
 |**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
-|**低於**|設定|  
+|**低於**|組態|  
 |**類別**|錯誤|  
   
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  

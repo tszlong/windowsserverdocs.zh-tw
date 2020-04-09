@@ -1,25 +1,20 @@
 ---
 title: 規劃軟體定義網路的基礎結構
 description: 本主題提供如何規劃軟體定義網路（SDN）基礎結構部署的相關資訊。
-manager: dougkim
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.service: virtual-network
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: ea7e53c8-11ec-410b-b287-897c7aaafb13
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/10/2018
-ms.openlocfilehash: 83f94d3770c475fca7f5d4b8cc2f5a5ade1a20d7
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 1542ff2c81ec0b6b4bc598dd5039578a67d0fc3e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317468"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854401"
 ---
 # <a name="plan-a-software-defined-network-infrastructure"></a>規劃軟體定義網路的基礎結構
 
@@ -238,7 +233,7 @@ BGP 對等互連通常會在受管理交換器或路由器中設定為網路基�
 
 Host|硬體需求|軟體需求|  
 --------|-------------------------|-------------------------  
-|實體 Hyper-v 主機|4核心 2.66 GHz CPU<br /><br />32 GB 的 RAM<br /><br />300 GB 磁碟空間<br /><br />1 Gb/秒（或更快）的實體網路介面卡|作業系統： Windows Server 2016<br /><br />已安裝 hyper-v 角色|  
+|實體 Hyper-v 主機|4核心 2.66 GHz CPU<p>32 GB 的 RAM<p>300 GB 磁碟空間<p>1 Gb/秒（或更快）的實體網路介面卡|作業系統： Windows Server 2016<p>已安裝 hyper-v 角色|  
 
 
 **SDN 基礎結構虛擬機器角色需求**  
@@ -247,8 +242,8 @@ Host|硬體需求|軟體需求|
 --------|---------------------|-----------------------|---------------------  
 |網路控制站（三個節點）|4個 vcpu|4 GB 分鐘（建議使用 8 GB）|適用于 OS 磁片磁碟機的 75 GB  
 |SLB/MUX （三個節點）|8個 vcpu|建議使用 8 GB|適用于 OS 磁片磁碟機的 75 GB  
-|RAS 閘道<br /><br />（三個節點閘道的單一集區，兩個作用中，一個被動）|8個 vcpu|建議使用 8 GB|適用于 OS 磁片磁碟機的 75 GB  
-|適用于 SLB/MUX 對等互連的 RAS 閘道 BGP 路由器<br /><br />（也會使用 ToR 交換器做為 BGP 路由器）|2個 vcpu|2 GB|適用于 OS 磁片磁碟機的 75 GB|  
+|RAS 閘道<p>（三個節點閘道的單一集區，兩個作用中，一個被動）|8個 vcpu|建議使用 8 GB|適用于 OS 磁片磁碟機的 75 GB  
+|適用于 SLB/MUX 對等互連的 RAS 閘道 BGP 路由器<p>（也會使用 ToR 交換器做為 BGP 路由器）|2個 vcpu|2 GB|適用于 OS 磁片磁碟機的 75 GB|  
 
 
 如果您使用 VMM 進行部署，VMM 和其他非 SDN 基礎結構需要額外的基礎結構虛擬機器資源。 如需其他資訊，請參閱[System Center Technical Preview 的最低硬體建議。](https://technet.microsoft.com/library/dn997303.aspx)  

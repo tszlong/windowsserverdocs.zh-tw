@@ -1,19 +1,19 @@
 ---
 title: 受防護的 Vm-準備 VM 防護協助程式 VHD
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 0e3414cf-98ca-4e91-9e8d-0d7bce56033b
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 2ab9d4afb6e4219c6e6aae23d2d58052f20d3998
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 9972ec77b78c6c4efa2d52fffd44d27d71a1afe0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950320"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856361"
 ---
 # <a name="shielded-vms---preparing-a-vm-shielding-helper-vhd"></a>受防護的 Vm-準備 VM 防護協助程式 VHD
 
@@ -59,7 +59,7 @@ ms.locfileid: "75950320"
 
 ![VMM-主機守護者服務設定](../media/Guarded-Fabric-Shielded-VM/guarded-host-vmm-hgs-settings-01.png)
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 - [適用于受防護主機和受防護 Vm 的主機服務提供者設定步驟](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [受防護網狀架構與受防護的 VM](guarded-fabric-and-shielded-vms-top-node.md)

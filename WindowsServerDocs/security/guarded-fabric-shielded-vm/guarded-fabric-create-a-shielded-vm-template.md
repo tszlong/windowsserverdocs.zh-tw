@@ -1,19 +1,19 @@
 ---
 title: 建立 Windows 受防護的 VM 範本磁片
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 9c8b84e8-1f5a-47a1-83ca-b1dbd801cb0b
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 01/29/2019
-ms.openlocfilehash: 04fdd52544b69d2c41abcbee00dd00b31bf5f21c
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 766ea9688b7f08914ca68a960cc21393963bd0e9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949779"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856771"
 ---
 # <a name="create-a-windows-shielded-vm-template-disk"></a>建立 Windows 受防護的 VM 範本磁片
 
@@ -85,7 +85,7 @@ ms.locfileid: "75949779"
     > 範本磁片只能與安全受防護的 VM 布建程式搭配使用。
     > 嘗試使用範本磁片來啟動一般（非遮罩） VM 可能會導致停止錯誤（藍色畫面），而且不受支援。
 
-9. 在 [**摘要**] 頁面上，會顯示磁片範本的相關資訊、用來簽署 VSC 的憑證，以及憑證簽發者。 按一下 **[關閉]** 以結束精靈。
+9. 在 [**摘要**] 頁面上，會顯示磁片範本的相關資訊、用來簽署 VSC 的憑證，以及憑證簽發者。 按一下 [關閉] 以結束精靈。
 
 如果您使用 VMM，請遵循本主題其餘各節中的步驟，將範本磁片併入 VMM 中受防護的 VM 範本。 
 
@@ -101,7 +101,7 @@ ms.locfileid: "75949779"
 
     a. 在 [連結**庫**] 工作區的程式庫伺服器上，尋找新匯入的範本磁片。
 
-    b。 以滑鼠右鍵按一下磁片，然後按一下 [**屬性**]。
+    b. 以滑鼠右鍵按一下磁片，然後按一下 [**屬性**]。
 
     c. 在 [**作業系統**] 中，展開清單並選取安裝在磁片上的作業系統。 選取作業系統會向 VMM 指出 VHDX 不是空白。
 
@@ -113,7 +113,7 @@ ms.locfileid: "75949779"
 
 ## <a name="create-the-shielded-vm-template-in-vmm-using-the-prepared-template-disk"></a>使用已備妥的範本磁片，在 VMM 中建立受防護的 VM 範本
 
-在 VMM 程式庫中備妥的範本磁片之後，您就可以為受防護的 Vm 建立 VM 範本。 受防護 Vm 的 VM 範本與傳統 VM 範本稍有不同，因為已修正特定設定（第2代 VM、UEFI 和安全開機等），而其他則無法使用（租使用者自訂僅限於少數，請選取 VM 的屬性）. 若要建立 VM 範本，請執行下列步驟：
+在 VMM 程式庫中備妥的範本磁片之後，您就可以為受防護的 Vm 建立 VM 範本。 受防護 Vm 的 VM 範本與傳統 VM 範本稍有不同，因為已修正特定設定（第2代 VM、UEFI 和安全開機等），而其他則無法使用（租使用者自訂僅限於少數，請選取 VM 的屬性）。 若要建立 VM 範本，請執行下列步驟：
 
 1. 在 [連結**庫**] 工作區中，按一下頂端 [首頁] 索引標籤上的 [**建立 VM 範本**]。
 
@@ -167,7 +167,7 @@ Save-VolumeSignatureCatalog -TemplateDiskPath 'C:\temp\MyLinuxTemplate.vhdx' -Vo
 > [!div class="nextstepaction"]
 > [建立防護資料檔案](guarded-fabric-tenant-creates-shielding-data.md)
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 - [適用于受防護主機和受防護 Vm 的主機服務提供者設定步驟](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [受防護網狀架構與受防護的 VM](guarded-fabric-and-shielded-vms-top-node.md)

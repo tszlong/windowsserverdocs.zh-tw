@@ -1,7 +1,6 @@
 ---
 ms.assetid: f88238ea-d851-4129-8b4e-a3a62b813614
 title: 檢閱資源夥伴中的同盟伺服器角色
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: fd9f20eb7559f5862ee50bdd8364fa1604d3c1b6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8cda394800bf0554e00e2897d240e2c08a72a00b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358974"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858551"
 ---
 # <a name="review-the-role-of-the-federation-server-in-the-resource-partner"></a>檢閱資源夥伴中的同盟伺服器角色
 
@@ -28,6 +27,6 @@ ms.locfileid: "71358974"
 > [!NOTE]  
 > 在資源夥伴組織中設定同盟伺服器電腦之前，您必須先將電腦加入資源夥伴組織中的任何 Active Directory 網域。 如需詳細資訊，請參閱 [Checklist: Setting Up a Federation Server](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server.md)。  
   
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 [Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
 

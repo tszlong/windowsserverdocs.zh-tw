@@ -2,20 +2,19 @@
 title: 為虛擬機器提供所有可用的整合服務
 description: 提供解決此最佳做法分析程式規則所回報之問題的指示。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 2c4b2043-ad81-495e-aa7a-467f813bb3d2
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 5ec2dc73cea8b8356d832bf9fdb960985df2df6c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c7ddf53823a69e1bd66d4e0e43ee452a4614436e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393598"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861881"
 ---
 # <a name="offer-all-available-integration-services-to-virtual-machines"></a>為虛擬機器提供所有可用的整合服務
 
@@ -28,7 +27,7 @@ ms.locfileid: "71393598"
 |**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
 |**低於**|警告|  
-|**類別**|設定|  
+|**類別**|組態|  
   
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   

@@ -1,7 +1,6 @@
 ---
 ms.assetid: d3cf4cb9-9b9e-4dcf-b6c6-8c6c42ec5f3e
 title: 規劃同盟伺服器 Proxy 的位置
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: cbb573b60404b67529de7f4d82afce770a6e4fa4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8cb27155c29f21911d793be913d0d43a63b61f24
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408019"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858651"
 ---
 # <a name="planning-federation-server-proxy-placement"></a>規劃同盟伺服器 Proxy 的位置
 
@@ -39,7 +38,7 @@ ms.locfileid: "71408019"
   
 如需如何在兩個主要 AD FS 設計案例中放置同盟伺服器 proxy 的範例，請參閱將[部署目標對應至 AD FS 設計](Mapping-Your-Deployment-Goals-to-an-AD-FS-Design.md)。  
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 [Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
   
 

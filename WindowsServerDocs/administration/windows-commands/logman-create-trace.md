@@ -1,28 +1,24 @@
 ---
 title: logman 建立追蹤
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1b4dfecd-6f56-4c51-b622-c2054b4aabd7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 39e54cc10827a473bc19304c91dd6cd7afbf008c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0b415bba125c9ae85f1bba9d5580c28c5c7af9b5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374534"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840851"
 ---
 # <a name="logman-create-trace"></a>logman 建立追蹤
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 建立事件追蹤資料收集器。  
 
@@ -30,7 +26,7 @@ ms.locfileid: "71374534"
 ```  
 logman create trace <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>參數  
+### <a name="parameters"></a>參數  
 
 |                         參數                          |                                                                                                                                                                                                                                                                                                                                描述                                                                                                                                                                                                                                                                                                                                |
 |------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -63,14 +59,14 @@ logman create trace <[-n] <name>> [options]
 |                           -[-] ul                           |                                                                                                                                                                                                                                                                                                                 在使用者模式中執行事件追蹤會話。                                                                                                                                                                                                                                                                                                                 |
 |                        -bs <value>                         |                                                                                                                                                                                                                                                                                                           指定事件追蹤會話緩衝區大小（以 kb 為單位）。                                                                                                                                                                                                                                                                                                            |
 |                       -nb <min max>                        |                                                                                                                                                                                                                                                                                                           指定事件追蹤會話緩衝區的數目。                                                                                                                                                                                                                                                                                                            |
-| -mode < globalsequence&#124;localsequence&#124;pagedmemory > | 指定事件追蹤會話記錄器模式。<br /><br />**Globalsequence**指定事件追蹤程式會將序號新增至它收到的每個事件，而不論哪一個追蹤會話接收到事件。<br /><br />**Localsequence**指定事件追蹤程式會為在特定追蹤會話收到的事件新增序號。 使用**localsequence**選項時，重複的序號可以存在於所有會話中，但在每個追蹤會話中都是唯一的。<br /><br />**Pagedmemory**指定事件追蹤程式會使用分頁記憶體，而不是預設的非分頁式記憶體集區來進行內部緩衝區配置。 |
+| -mode < globalsequence&#124;localsequence&#124;pagedmemory > | 指定事件追蹤會話記錄器模式。<p>**Globalsequence**指定事件追蹤程式會將序號新增至它收到的每個事件，而不論哪一個追蹤會話接收到事件。<p>**Localsequence**指定事件追蹤程式會為在特定追蹤會話收到的事件新增序號。 使用**localsequence**選項時，重複的序號可以存在於所有會話中，但在每個追蹤會話中都是唯一的。<p>**Pagedmemory**指定事件追蹤程式會使用分頁記憶體，而不是預設的非分頁式記憶體集區來進行內部緩衝區配置。 |
 
 ## <a name="remarks"></a>備註  
 其中列出 [-]，此選項會有額外的否定。  
-## <a name="BKMK_examples"></a>典型  
-下列範例會使用不小於16且不超過256的緩衝區（每個緩衝區大小為64kb），建立名為 trace_log 的事件追蹤資料收集器，並將結果輸出至位置 c:\logfile。  
+## <a name="examples"></a><a name=BKMK_examples></a>典型  
+下列範例會使用不超過16個且不超過256個緩衝區（大小為 64 kb），建立名為 trace_log 的事件追蹤資料收集器，並將結果輸出至位置 c:\logfile。  
 ```  
 logman create trace trace_log -nb 16 256 -bs 64 -o c:\logfile  
 ```  
-#### <a name="additional-references"></a>其他參考  
+## <a name="additional-references"></a>其他參考資料  
 [logman](logman.md)  

@@ -1,20 +1,20 @@
 ---
 redirect_url: guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md
 title: 受防護的租使用者 Vm-在內部部署建立新的受防護 VM，並將其移至受保護的網狀架構
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 0ca1efa0-01f9-4b6f-87d4-c66db00d7d70
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: a4b5ff2942c8485a4c10770a4374d56734f7f3c9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a5ca3ab29b83d0cb6cb2d55507471790f65800a2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402384"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856721"
 ---
 # <a name="shielded-vms-for-tenants---creating-a-new-shielded-vm-on-premises-and-moving-it-to-a-guarded-fabric"></a>受防護的租使用者 Vm-在內部部署建立新的受防護 VM，並將其移至受保護的網狀架構
 
@@ -28,7 +28,7 @@ ms.locfileid: "71402384"
 
 1.  開始此程式之前，請確定您是在執行 Windows Server 2016 的 Hyper-v 主機上，且已安裝下列角色和功能：
 
-    - Role
+    - [角色]
 
         - Hyper-V
 
@@ -130,7 +130,7 @@ ms.locfileid: "71402384"
 
     使用 Hyper-v 管理員或 Windows PowerShell 匯入受防護的 VM。 您必須從 VM 擁有者匯入 VM 設定檔，才能啟動 VM。 這是因為金鑰保護裝置和 VM 的虛擬 TPM 會儲存在設定檔中。 如果 VM 設定為在受防護網狀架構上執行，則應該能夠順利啟動。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 - [適用于受防護主機和受防護 Vm 的主機服務提供者設定步驟](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [受防護網狀架構與受防護的 VM](guarded-fabric-and-shielded-vms-top-node.md)

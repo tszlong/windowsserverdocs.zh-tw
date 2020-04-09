@@ -2,18 +2,17 @@
 title: 停用 DNS 用戶端上的 DNS 用戶端快取
 description: 本文介紹如何在 DNS 用戶端上停用 DNS 用戶端快取。
 manager: dcscontentpm
-ms.prod: ''
 ms.technology: networking-dns
 ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: 51a9dbfd05402a9d018aec3bfea8a5c89e9e5d5e
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: 09af41a544cacb0fd0977847b7bc2e6b0d8a59f7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265840"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860071"
 ---
 # <a name="disable-dns-client-side-caching-on-dns-clients"></a>停用 DNS 用戶端上的 DNS 用戶端快取
 
@@ -52,7 +51,7 @@ ipconfig /displaydns
 ## <a name="using-the-registry-to-control-the-caching-time"></a>使用登錄來控制快取時間
 
 > [!IMPORTANT]  
-> 請仔細依循本節中的步驟。 如果您未正確修改登錄，可能會發生嚴重問題。 在修改之前，[備份登錄以供還原](https://support.microsoft.com/help/322756)，以免發生問題。
+> 請仔細依循本節中的步驟。 若您不正確地修改登錄，可能會發生嚴重的問題。 在修改之前，[備份登錄以供還原](https://support.microsoft.com/help/322756)，以免發生問題。
 
 快取正面或負回應的時間長度取決於下列登錄機碼中的專案值：
 

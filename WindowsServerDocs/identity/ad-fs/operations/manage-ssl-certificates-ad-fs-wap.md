@@ -9,12 +9,12 @@ ms.date: 10/02/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 230fdaac28f4766c33e62362ca4c7e4d20f22c8e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b832756e123bee0223738ee804ac3a4db2371e84
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357744"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855291"
 ---
 # <a name="managing-ssl-certificates-in-ad-fs-and-wap-in-windows-server-2016"></a>管理 Windows Server 2016 中 AD FS 及 WAP 的 SSL 憑證
 
@@ -46,7 +46,7 @@ ms.locfileid: "71357744"
 AD FS 預設會在埠443上執行裝置憑證驗證，並在埠49443上執行使用者憑證驗證（或不是443的可設定通訊埠）。
 在此模式中，請使用 powershell Cmdlet Set-Set-adfssslcertificate 來管理 SSL 憑證。
 
-遵循下列步驟：
+遵循下面的步驟：
 
 1. 首先，您將需要取得新的憑證。 這通常是藉由將憑證簽署要求（CSR）提交給協力廠商的公開憑證提供者來完成。 有各種方式可產生 CSR，包括從 Windows 7 或更新版本的電腦。 您的廠商應該有此的檔。
 
@@ -77,7 +77,7 @@ dir Cert:\LocalMachine\My\
 在替代用戶端 TLS 系結模式中設定時，AD FS 會在埠443上執行裝置憑證驗證，以及在埠443上的使用者憑證驗證也會在不同的主機名稱。 使用者憑證主機名稱是使用 "certauth" 預先暫止的 AD FS 主機名稱，例如 "certauth.fs.contoso.com"。
 在此模式中，請使用 powershell Cmdlet Set-AdfsAlternateTlsClientBinding 來管理 SSL 憑證。 這不僅會管理替代的用戶端 TLS 系結，其他 AD FS 也會設定 SSL 憑證的其他所有系結。
 
-遵循下列步驟：
+遵循下面的步驟：
 
 1. 首先，您將需要取得新的憑證。 這通常是藉由將憑證簽署要求（CSR）提交給協力廠商的公開憑證提供者來完成。 有各種方式可產生 CSR，包括從 Windows 7 或更新版本的電腦。 您的廠商應該有此的檔。
 

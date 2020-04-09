@@ -1,23 +1,19 @@
 ---
 title: 將電腦加入新的 Windows Server Essentials 的伺服器
 description: 說明如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d94de050-3300-4323-a5ea-c824cb9cecc9
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 48703ed78ee7d604e67be06b540d4206617d4578
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 29ea08ff981723a256606bbecdcb3b98fe9d8eec
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318987"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852571"
 ---
 # <a name="join-computers-to-the-new-windows-server-essentials-network1"></a>將電腦加入新的 Windows Server Essentials 的伺服器
 

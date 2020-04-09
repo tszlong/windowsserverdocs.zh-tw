@@ -1,7 +1,6 @@
 ---
 ms.assetid: 81c55015-82e5-4ba1-b15e-cc7b49af28fc
 title: 在檔案伺服器上執行資訊保留的案例
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,23 +8,23 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: b6df28987e9e6d2fa1382b00e9403f2d112fc226
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2f6b55d8a98a0f4fb0c286e16d752a18e61dce1a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406980"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861101"
 ---
-# <a name="scenario-implement-retention-of-information-on-file-servers"></a>案例：在檔案伺服器上實作資訊保留
+# <a name="scenario-implement-retention-of-information-on-file-servers"></a>Scenario: Implement Retention of Information on File Servers
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 保留期限是文件到期之間應該被保留的時間。 保留期限取決於每個組織而有所不同。 您可以將資料夾中的檔案分類為短期、中期或長期保留期限，然後為每個期限指派一個時間範圍。 如果檔案適用法務保存措施，就可以無限期地保留檔案。  
   
-## <a name="BKMK_OVER"></a>案例描述  
+## <a name="scenario-description"></a><a name="BKMK_OVER"></a>案例描述  
 檔案分類基礎結構及檔案伺服器資源管理員會使用檔案管理工作和檔案分類，對一組檔案套用保留期限。 您可以在資料夾上指派一個保留期限，然後使用檔案管理工作來設定所指派之保留期限的持續時間。 當資料夾中的檔案快要到期時，檔案的擁有人會收到一封通知電子郵件。 您也可以將檔案分類為適用法務保存措施，這樣檔案管理工作就不會讓檔案到期。  
   
-您可以在 [Plan for Retention of Information on File Servers](assetId:///edf13190-7077-455a-ac01-f534064a9e0c)找到設定保留的規劃資訊。  
+您可以在[在檔案伺服器上規劃資訊保留](assetId:///edf13190-7077-455a-ac01-f534064a9e0c)中找到設定保留的規劃資訊。  
   
 在[檔案伺服器&#40;示範步驟&#41;](Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-.md)中，您可以找到分類檔案以進行合法保存和設定保留期限的步驟。  
   
@@ -35,9 +34,9 @@ ms.locfileid: "71406980"
 ## <a name="in-this-scenario"></a>在這個案例中  
 此案例是動態存取控制案例的一部分。 如需動態存取控制的其他資訊，請參閱：  
   
--   [動態存取控制：案例概觀](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [動態存取控制：案例總覽](Dynamic-Access-Control--Scenario-Overview.md)  
   
-## <a name="BKMK_NEW"></a>此案例中包含的功能  
+## <a name="features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>此案例中包含的功能  
 下表列出這個案例中的功能，並說明它們如何支援這個案例。  
   
 |功能|如何支援本案例|  

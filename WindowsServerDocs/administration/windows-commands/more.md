@@ -1,26 +1,22 @@
 ---
-title: more
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+title: 更多
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ded14f6a-d82f-4aeb-a2d8-7ec1c94dfb8f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/26/2019
-ms.openlocfilehash: d505f99511d8702f11ac0c70edba3d62c8cf7996
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4c627e003e71cb2265c717669e082d48564dd483
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373913"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839421"
 ---
-# <a name="more"></a>more
+# <a name="more"></a>更多
 
 
 
@@ -36,7 +32,7 @@ more [[/c] [/p] [/s] [/t<N>] [+<N>]] < [<Drive>:][<Path>]<FileName>
 more [/c] [/p] [/s] [/t<N>] [+<N>] [<Files>]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |           參數            |                               描述                               |
 |--------------------------------|-------------------------------------------------------------------------|
@@ -54,7 +50,7 @@ more [/c] [/p] [/s] [/t<N>] [+<N>] [<Files>]
 
 -   在**更多**提示（`-- More --`）接受下列子命令。 
 
-    | 索引鍵 | 動作 |
+    | Key | 動作 |
     | --- | ------ |
     | 空格鍵 | 顯示下一個頁面。 |
     | ENTER | 顯示下一行。 |
@@ -68,7 +64,7 @@ more [/c] [/p] [/s] [/t<N>] [+<N>] [<Files>]
 -   使用重新導向字元（ **<** ）時，您必須指定檔案名做為來源。 使用 [管道] （ **\|** ）時，您可以使用**目錄**、**排序**和**類型**之類的命令。
 -   具有不同參數的命令**越多**，就可以從修復主控台中取得。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 若要查看名為 [用戶端] 之檔案的第一個畫面，請輸入下列其中一個命令：
 ```
@@ -114,6 +110,6 @@ type clients.new | more /c /s
   ```  
   輸入要略過的行數，然後按 ENTER 鍵。 **更多**略過指定的行數，並顯示下一個畫面的資訊。
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

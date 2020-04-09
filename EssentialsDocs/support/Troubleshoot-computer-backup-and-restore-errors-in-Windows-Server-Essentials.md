@@ -1,23 +1,19 @@
 ---
 title: 疑難排解 Windows Server Essentials 中的電腦備份與還原錯誤
 description: 說明如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 06/25/2013
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5cc73aff-d2c0-4cf9-a23d-ef928ae5ddc9
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 28e3564c93f192563626bfb44992ef9bc4a49598
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 542c0a583aca56ce72ef0e2e55f2b1543558dfa8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313243"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852181"
 ---
 # <a name="troubleshoot-computer-backup-and-restore-errors-in-windows-server-essentials"></a>疑難排解 Windows Server Essentials 中的電腦備份與還原錯誤
 

@@ -1,24 +1,20 @@
 ---
 title: prnport
 description: 瞭解如何建立、刪除和列出印表機埠。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6a0ec638-a21e-4a34-be5c-bd0f7ca89ffe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c9c162cef2a3ae2f3de1e891691572130ae68f93
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 17f81b127927a41e60c290535032876def109989
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372549"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837221"
 ---
 # <a name="prnport"></a>prnport
 
@@ -34,12 +30,12 @@ cscript prnport {-a | -d | -l | -g | -t | -?} [-r <PortName>]
 [-i <SNMPIndex>] [-y <CommunityName>] -2{e | -d}
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |          參數           |                                                                                                                                                                                                                                                                                                     描述                                                                                                                                                                                                                                                                                                      |
 |------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |              -a              |                                                                                                                                                                                                                                                                                       建立標準 TCP/IP 印表機埠。                                                                                                                                                                                                                                                                                        |
-|              -d.ddd...e              |                                                                                                                                                                                                                                                                                       刪除標準 TCP/IP 印表機埠。                                                                                                                                                                                                                                                                                        |
+|              -d              |                                                                                                                                                                                                                                                                                       刪除標準 TCP/IP 印表機埠。                                                                                                                                                                                                                                                                                        |
 |              -l              |                                                                                                                                                                                                                                                             列出電腦上使用 **-s**參數指定的所有標準 tcp/ip 印表機埠。                                                                                                                                                                                                                                                             |
 |              -g              |                                                                                                                                                                                                                                                                            顯示標準 TCP/IP 印表機埠的設定。                                                                                                                                                                                                                                                                             |
 |              -t              |                                                                                                                                                                                                                                                                           設定標準 TCP/IP 印表機埠的通訊埠設定。                                                                                                                                                                                                                                                                           |
@@ -57,14 +53,14 @@ cscript prnport {-a | -d | -l | -g | -t | -?} [-r <PortName>]
 |              /?              |                                                                                                                                                                                                                                                                                         在命令提示字元顯示說明。                                                                                                                                                                                                                                                                                         |
 
 ## <a name="remarks"></a>備註
--   **Prnport**命令是位於%windir%\system32\ printing_Admin_Scripts\\<language> 目錄中的 Visual Basic 腳本。 若要使用此命令，請在命令提示字元中輸入**cscript** ，後面接著 prnport 檔案的完整路徑，或將目錄變更為適當的資料夾。 例如：
+-   **Prnport**命令是位於%windir%\system32\ printing_Admin_Scripts\\<language> 目錄中的 Visual Basic 腳本。 若要使用此命令，請在命令提示字元中輸入**cscript** ，後面接著 prnport 檔案的完整路徑，或將目錄變更為適當的資料夾。 例如，
     ```
     cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnport
     ```
 -   如果您提供的資訊包含空格，請使用引號括住文字（例如 `"computer Name"`）。
 -   TCP 原始通訊協定在 Windows 上是比 lpr 通訊協定更高的效能通訊協定。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name="BKMK_examples"></a>典型
 若要顯示伺服器上的所有標準 TCP/IP 列印埠 \\\Server1，請輸入：
 ```
 cscript prnport -l -s Server1
@@ -86,6 +82,6 @@ cscript prnport -t -s Server1 -r IP_10.2.3.4 -me -y public -i 1 -n 9100
 cscript prnport -a -r IP_10.2.3.4 -h 10.2.3.4
 ```
 
-#### <a name="additional-references"></a>其他參考
-[命令列語法索引鍵](command-line-syntax-key.md)
+## <a name="additional-references"></a>其他參考資料
+- [命令列語法索引鍵](command-line-syntax-key.md)
 [列印命令參考](print-command-reference.md)

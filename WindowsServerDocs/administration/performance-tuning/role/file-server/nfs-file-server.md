@@ -5,18 +5,18 @@ ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 author: phstee
-ms.author: RoopeshB, NedPyle
+ms.author: roopeshb, nedpyle
 ms.date: 10/16/2017
-ms.openlocfilehash: 07e5005c1bc38e791e847c8965cbc9a6c0ac96f4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9bee396532c3319e43d10012e098533495cf0b03
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355178"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851851"
 ---
 # <a name="performance-tuning-nfs-file-servers"></a>效能微調 NFS 檔案伺服器
 
-## <a href="" id="servicesnfs"></a>Services for NFS 模型
+## <a name="services-for-nfs-model"></a><a href="" id="servicesnfs"></a>Services for NFS 模型
 
 
 下列各節提供適用于用戶端-伺服器通訊之 Microsoft Services for Network File System （NFS）模型的相關資訊。 由於 NFS v2 和 NFS v3 仍然是最廣泛部署的通訊協定版本，因此除了 MaxConcurrentConnectionsPerIp 以外的所有登錄機碼僅適用于 NFS v2 和 NFS v3。
@@ -41,7 +41,7 @@ Microsoft Services for NFS 針對具有混合 Windows 和 UNIX 環境的企業�
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\OptimalReads
     ```
 
-    預設值為 0。 此參數會決定是否要針對檔案\_隨機\_存取，或僅根據工作負載 i/o 特性，針對檔案\_順序\_來開啟檔案。 將此值設定為1，以強制開啟檔案\_隨機\_存取。 FILE\_RANDOM\_ACCESS 會防止檔案系統和快取管理員進行預先提取。
+    預設為 0。 此參數會決定是否要針對檔案\_隨機\_存取，或僅根據工作負載 i/o 特性，針對檔案\_順序\_來開啟檔案。 將此值設定為1，以強制開啟檔案\_隨機\_存取。 FILE\_RANDOM\_ACCESS 會防止檔案系統和快取管理員進行預先提取。
 
     >[!NOTE]
     > 必須仔細評估這種設定，因為它可能會對系統檔案快取成長造成潛在的影響。
@@ -93,7 +93,7 @@ Microsoft Services for NFS 針對具有混合 Windows 和 UNIX 環境的企業�
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\LockFileHandleCacheInMemory
     ```
 
-    預設值為 0。 這個參數會指定配置給 FileHandleCacheSizeInMB 所指定快取大小的實體頁面是否會在記憶體中鎖定。 將此值設定為1可啟用此活動。 分頁會在記憶體中鎖定（未分頁到磁片），這可改善解析檔案控制代碼的效能，但會減少應用程式可用的記憶體。
+    預設為 0。 這個參數會指定配置給 FileHandleCacheSizeInMB 所指定快取大小的實體頁面是否會在記憶體中鎖定。 將此值設定為1可啟用此活動。 分頁會在記憶體中鎖定（未分頁到磁片），這可改善解析檔案控制代碼的效能，但會減少應用程式可用的記憶體。
 
 -   **MaxIcbNfsReadHandlesCacheSize**
 
@@ -109,7 +109,7 @@ Microsoft Services for NFS 針對具有混合 Windows 和 UNIX 環境的企業�
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\HandleSigningEnabled
     ```
 
-    預設值為 1。 此參數控制由 NFS 檔案伺服器提供的控制碼是否已簽署密碼編譯。 將它設定為0會停用控制碼簽署。
+    預設為 1。 此參數控制由 NFS 檔案伺服器提供的控制碼是否已簽署密碼編譯。 將它設定為0會停用控制碼簽署。
 
 -   **RdWrNfsDeferredWritesFlushDelay**
 
@@ -153,7 +153,7 @@ Microsoft Services for NFS 針對具有混合 Windows 和 UNIX 環境的企業�
     HKLM\System\CurrentControlSet\Control\FileSystem\NtfsDisableLastAccessUpdate
     ```
 
-    預設值為 1。 此系統全域交換器會藉由停用最後一個檔案或目錄存取的日期和時間戳記更新，來減少磁片 i/o 負載和延遲。
+    預設為 1。 此系統全域交換器會藉由停用最後一個檔案或目錄存取的日期和時間戳記更新，來減少磁片 i/o 負載和延遲。
 
 -   **MaxConcurrentConnectionsPerIp**
 

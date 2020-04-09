@@ -1,28 +1,22 @@
 ---
 title: cipher
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: 適用于 cipher 的 Windows 命令主題，它會顯示或變更 NTFS 磁片區上的目錄和檔案的加密。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 78ef795e-0f87-4acd-8d15-192c972c0f41
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7ba6a54c275e1765bfdc31fe30d78fc6e3da6c05
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 40e969735e6280fb10084440f34cae7753962f66
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379362"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847761"
 ---
 # <a name="cipher"></a>cipher
-
-
 
 顯示或變更 NTFS 磁碟區上的目錄和檔案的加密。 如果在沒有參數的情況下使用， **cipher**會顯示目前目錄及其包含之任何檔案的加密狀態。
 
@@ -43,7 +37,7 @@ cipher /removeuser /certhash:<Hash> [/s:<Directory>] [/b] [/h] [<PathName> [...]
 cipher /rekey [PathName [...]]
 ```
 
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
 |          參數           |                                                                                                                                                   描述                                                                                                                                                    |
 |-------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -53,15 +47,15 @@ cipher /rekey [PathName [...]]
 |              /e               |                                                                                          加密指定的檔案或目錄。 系統會標示目錄，以便在之後新增的檔案會進行加密。                                                                                           |
 |              /h               |                                                                                                     顯示具有隱藏或系統屬性的檔案。 根據預設，這些檔案不會經過加密或解密。                                                                                                     |
 |              /k               |                                                                            建立要與加密檔案系統（EFS）檔案搭配使用的新憑證和金鑰。 如果指定了 **/k**參數，則會忽略所有其他參數。                                                                            |
-|  /r： \<FileName > [/smartcard]  |   會產生 EFS 復原代理程式金鑰和憑證，然後將它們寫入 .pfx 檔案（包含憑證和私密金鑰）和 .cer 檔案（僅包含憑證）。 如果指定 **/smartcard** ，則會將修復金鑰和憑證寫入智慧卡，且不會產生 .pfx 檔案。   |
-|        /s： \<Directory >        |                                                                                                               在指定*目錄*中的所有子目錄上執行指定的操作。                                                                                                               |
+|  /r：\<FileName > [/smartcard]  |   會產生 EFS 復原代理程式金鑰和憑證，然後將它們寫入 .pfx 檔案（包含憑證和私密金鑰）和 .cer 檔案（僅包含憑證）。 如果指定 **/smartcard** ，則會將修復金鑰和憑證寫入智慧卡，且不會產生 .pfx 檔案。   |
+|        /s：\<Directory >        |                                                                                                               在指定*目錄*中的所有子目錄上執行指定的操作。                                                                                                               |
 |            /u [/n]            |  尋找本機磁片磁碟機上的所有加密檔案。 如果搭配 **/n**參數使用，則不會進行任何更新。 如果使用時不含 **/n**， **/u**會將使用者的檔案加密金鑰或復原代理程式的金鑰與目前的金鑰進行比較，並在變更時加以更新。 這個參數只能搭配 **/n**使用。  |
-|        /w： \<Directory >        | 從整個磁片區上可用的未使用磁碟空間移除資料。 如果您使用 **/w**參數，則會忽略所有其他參數。 指定的目錄可以位於本機磁片區中的任何位置。 如果是掛接點或指向另一個磁片區中的目錄，則會移除該磁片區上的資料。 |
+|        /w：\<目錄 >        | 從整個磁片區上可用的未使用磁碟空間移除資料。 如果您使用 **/w**參數，則會忽略所有其他參數。 指定的目錄可以位於本機磁片區中的任何位置。 如果是掛接點或指向另一個磁片區中的目錄，則會移除該磁片區上的資料。 |
 |  /x [： efsfile] [\<FileName >]   |                                 將 EFS 憑證和金鑰備份至指定的檔案名。 如果搭配使用 **： efsfile**， **/x**會備份用來加密檔案的使用者憑證。 否則，會備份使用者目前的 EFS 憑證和金鑰。                                 |
 |              /y               |                                                                                                                      顯示本機電腦上目前的 EFS 憑證縮圖。                                                                                                                      |
-|  /adduser [/certhash： \<Hash >  |                                                                                                                                              /certfile： <FileName>]                                                                                                                                               |
+|  /adduser [/certhash：\<雜湊 >  |                                                                                                                                              /certfile：<FileName>]                                                                                                                                               |
 |            /rekey             |                                                                                                                 更新指定的加密檔案，以使用目前設定的 EFS 金鑰。                                                                                                                 |
-| /removeuser/certhash： \<Hash > |                                                                                       從指定的檔案中移除使用者。 提供給 **/certhash**的*雜湊*必須是要移除之憑證的 SHA1 雜湊。                                                                                       |
+| /removeuser/certhash：\<雜湊 > |                                                                                       從指定的檔案中移除使用者。 提供給 **/certhash**的*雜湊*必須是要移除之憑證的 SHA1 雜湊。                                                                                       |
 |              /?               |                                                                                                                                       在命令提示字元顯示說明。                                                                                                                                       |
 
 ## <a name="remarks"></a>備註
@@ -71,7 +65,7 @@ cipher /rekey [PathName [...]]
 -   您可以使用多個目錄名稱和萬用字元。
 -   您必須在多個參數之間加上空格。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 若要顯示目前目錄中每個檔案和子目錄的加密狀態，請輸入：
 ```
@@ -107,4 +101,4 @@ U hello.txt
 
 #### <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

@@ -1,20 +1,19 @@
 ---
 title: 使用伺服器管理員安裝網路控制卡伺服器角色
 description: 本主題提供有關如何使用 Windows Server 2016 中的伺服器管理員安裝網路控制卡伺服器角色的指示。
-manager: brianlic
+manager: grcusanz
 ms.prod: windows-server
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 3a6e4352-ff62-4290-b8a4-5c83740070fc
-ms.author: lizross
-author: eross-msft
-ms.openlocfilehash: b8a3e1ede1cdec1ca5ee66be8d53d4420bec673b
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.author: anpaul
+author: AnirbanPaul
+ms.openlocfilehash: a93d737b80e41fbc4401105a9f72426c3a73fa7d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317129"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859671"
 ---
 # <a name="install-the-network-controller-server-role-using-server-manager"></a>使用伺服器管理員安裝網路控制卡伺服器角色
 
@@ -29,7 +28,7 @@ ms.locfileid: "80317129"
   
 ### <a name="to-install-network-controller"></a>安裝網路控制卡  
   
-1.  在 [伺服器管理員] 中，按一下 [ **管理**]，然後按一下 [ **新增角色及功能**]。 [新增角色及功能] wizard 隨即開啟。 按 [下一步]。  
+1.  在 [伺服器管理員] 中，按一下 [**管理**]，然後按一下 [**新增角色及功能**]。 [新增角色及功能] wizard 隨即開啟。 按 [下一步]。  
   
 2.  在 [**選取安裝類型**] 中，保留預設設定，然後按 **[下一步]** 。  
   

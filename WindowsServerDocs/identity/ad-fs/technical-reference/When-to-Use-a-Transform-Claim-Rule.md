@@ -1,7 +1,6 @@
 ---
 ms.assetid: 77aa61bf-9c04-4889-a5d2-6f45bc1b8bd2
 title: 使用轉換宣告規則的時機
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b7cdf68783db1b6b775209e4e42dc6b6ccf0e1b8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2b69156d1e2825f4287112735493ebc5cc8469d2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385425"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853781"
 ---
 # <a name="when-to-use-a-transform-claim-rule"></a>使用轉換宣告規則的時機
 當您需要將傳入的宣告類型對應到傳出宣告類型，然後套用動作來根據傳入宣告中的值，決定應該發生的輸出時，您可以在 Active Directory 同盟服務 \(AD FS\) 中使用此規則。 當您使用此規則時，您會根據您在規則中設定的選項之一傳遞或轉換符合下列規則邏輯的宣告，如下表中所述。  
@@ -79,10 +78,10 @@ ms.locfileid: "71385425"
 如果必須從一個以上的傳入宣告的內容建構傳出宣告，則必須改用自訂規則。 如果傳出宣告的宣告值必須根據傳入宣告值 — 但還有其他內容 — 您也必須在該內容中使用自訂規則。 如需詳細資訊，請參閱 [When to Use a Custom Claim Rule](When-to-Use-a-Custom-Claim-Rule.md)。  
   
 ### <a name="examples-of-how-to-construct-a-transform-rule-syntax"></a>如何建構轉換規則語法的範例  
-使用宣告規則語言語法來轉換宣告時，可以設定轉換後宣告的屬性為新的常值。 例如，下列規則將角色宣告的值從 "Administrators" 變更為 "root"，並同時保留相同的宣告類型：  
+使用宣告規則語言語法來轉換宣告時，可以設定轉換後宣告的屬性為新的常值。 例如，下列規則會將角色宣告的值從「系統管理員」變更為「根」，同時保留相同的宣告類型：  
   
 ```  
-c:[type == “https://schemas.microsoft.com/ws/2008/06/identity/claims/role”, value == “Administrators”]  => issue(type = c.type, value = “root”);  
+c:[type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/role", value == "Administrators"]  => issue(type = c.type, value = "root");  
 ```  
   
 規則運算式也可以用於宣告轉換。 例如，下列規則會將網域\\使用者格式的 windows 使用者名稱宣告中的網域設定為 FABRIKAM：  
@@ -97,7 +96,7 @@ c:[type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"] => issu
 |宣告屬性|描述|  
 |------------------|---------------|  
 |Type, Value, ValueType|指派最常使用這些屬性。 為了產生轉換後的宣告，至少必須指派類型和值。|  
-|簽發者|宣告規則語言允許設定宣告的簽發者 (Issuer)，但通常不建議您這麼做。 宣告的簽發者在權杖中不會序列化。 收到權杖時，系統會將所有宣告的 Issuer 屬性設為簽署該權杖之同盟伺服器的識別碼。 因此，在規則中設定宣告的簽發者並不會影響權杖的內容，且一旦宣告封裝在權杖中，設定就會遺失。 設定簽發者唯一有意義的案例，是將簽發者設為宣告提供者規則集中的特定值，並且以參考這個特定值的規則撰寫信賴憑證者規則集。 如果沒有明確將 Issuer 屬性設為宣告規則中的值，宣告發行引擎會將其設為 “LOCAL AUTHORITY”。|  
+|簽發者|宣告規則語言允許設定宣告的簽發者 (Issuer)，但通常不建議您這麼做。 宣告的簽發者在權杖中不會序列化。 收到權杖時，系統會將所有宣告的 Issuer 屬性設為簽署該權杖之同盟伺服器的識別碼。 因此，在規則中設定宣告的簽發者並不會影響權杖的內容，且一旦宣告封裝在權杖中，設定就會遺失。 設定簽發者唯一有意義的案例，是將簽發者設為宣告提供者規則集中的特定值，並且以參考這個特定值的規則撰寫信賴憑證者規則集。 如果簽發者屬性未明確設定為宣告規則中的值，則宣告發行引擎會將它設定為「本機授權」。|  
 |OriginalIssuer|和 Issuer 類似，通常不應該為 OriginalIssuer 明確指派值。 不同於 Issuer 的是，OriginalIssuer 屬性會在權杖中序列化，但是權杖取用者期望的是，如果有設定 OriginalIssuer，它會包含原始簽發宣告之同盟伺服器的識別碼。|  
 |屬性|如上一節所述，在權杖之中不會保留宣告的屬性包，因此，只有當後續的本機原則會參考儲存在屬性內的資訊時，才應該指派屬性。|  
   

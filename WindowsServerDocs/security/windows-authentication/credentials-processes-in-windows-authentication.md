@@ -1,28 +1,24 @@
 ---
 title: Windows 驗證中的認證程序
 description: Windows Server 安全性
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-windows-auth
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 48c60816-fb8b-447c-9c8e-800c2e05b14f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 051cb88620065ed675f377f3369860f7b04460bd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2de8383ce6a946dfdd80cfc027478c495037169b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402281"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857581"
 ---
 # <a name="credentials-processes-in-windows-authentication"></a>Windows 驗證中的認證程序
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 這個適用于 IT 專業人員的參考主題說明 Windows 驗證如何處理認證。
 
@@ -30,7 +26,7 @@ Windows 認證管理是作業系統從服務或使用者接收認證，並保護
 
 根據預設，Windows 認證會針對本機電腦上的安全性帳戶管理員（SAM）資料庫進行驗證，或透過 Winlogon 服務，針對加入網域的電腦上的 Active Directory 進行驗證。 認證會透過登入使用者介面上的使用者輸入來收集，或透過應用程式開發介面（API）以程式設計方式來呈現，以提供給驗證目標。
 
-本機安全性資訊儲存在登錄中的**HKEY_LOCAL_MACHINE\SECURITY**下。 儲存的資訊包括原則設定、預設安全性值，以及帳戶資訊，例如快取的登入認證。 SAM 資料庫的複本也會儲存在這裡，雖然它是有寫入保護的。
+本機安全性資訊儲存在登錄中**HKEY_LOCAL_MACHINE \security**底下。 儲存的資訊包括原則設定、預設安全性值，以及帳戶資訊，例如快取的登入認證。 SAM 資料庫的複本也會儲存在這裡，雖然它是有寫入保護的。
 
 下圖顯示所需的元件，以及認證通過系統來驗證使用者或進程以成功登入的路徑。
 
@@ -43,15 +39,15 @@ Windows 認證管理是作業系統從服務或使用者接收認證，並保護
 |Component|描述|
 |-------|--------|
 |使用者登入|Winlogon 是負責管理安全使用者互動的可執行檔。 Winlogon 服務會藉由將使用者動作在安全桌面（登入 UI）所收集的認證傳遞給本地安全機構（LSA）到 Secur32，來起始 Windows 作業系統的登入程式。|
-|應用程式登入|不需要互動式登入的應用程式或服務登入。 使用者所起始的大部分進程都會使用 Secur32 以使用者模式執行，而在啟動時起始的進程（例如服務）則是使用 Ksecdd 以核心模式執行。<br /><br />如需使用者模式和核心模式的詳細資訊，請參閱本主題中的應用程式和使用者模式或服務和核心模式。|
+|應用程式登入|不需要互動式登入的應用程式或服務登入。 使用者所起始的大部分進程都會使用 Secur32 以使用者模式執行，而在啟動時起始的進程（例如服務）則是使用 Ksecdd 以核心模式執行。<p>如需使用者模式和核心模式的詳細資訊，請參閱本主題中的應用程式和使用者模式或服務和核心模式。|
 |Secur32.dll|形成驗證程式基礎的多個驗證提供者。|
 |Lsasrv.dll|LSA 伺服器服務，這兩者都會強制執行安全性原則，並作為 LSA 的安全性套件管理員。 LSA 包含 Negotiate 函式，此函式會在判斷哪一個通訊協定成功之後，選取 NTLM 或 Kerberos 通訊協定。|
 |安全性支援提供者|一組可個別叫用一或多個驗證通訊協定的提供者。 預設的提供者集合可能會隨著 Windows 作業系統的每個版本而變更，而且可以寫入自訂提供者。|
-|Netlogon.dll|Net Logon 服務執行的服務如下所示：<br /><br />-維護電腦的安全通道（不要與 Schannel 混淆）到網域控制站。<br />-透過安全通道將使用者的認證傳遞至網域控制站，並傳回使用者的網域安全識別碼（Sid）和使用者權限。<br />-在網域名稱系統（DNS）中發佈服務資源記錄，並使用 DNS 將名稱解析成網域控制站的網際網路通訊協定（IP）位址。<br />-根據用於同步處理主域控制站（Pdc）和備份網域控制站（Bdc）的遠端程序呼叫（RPC），來執行複寫通訊協定。|
+|Netlogon.dll|Net Logon 服務執行的服務如下所示：<p>-維護電腦的安全通道（不要與 Schannel 混淆）到網域控制站。<br />-透過安全通道將使用者的認證傳遞至網域控制站，並傳回使用者的網域安全識別碼（Sid）和使用者權限。<br />-在網域名稱系統（DNS）中發佈服務資源記錄，並使用 DNS 將名稱解析成網域控制站的網際網路通訊協定（IP）位址。<br />-根據用於同步處理主域控制站（Pdc）和備份網域控制站（Bdc）的遠端程序呼叫（RPC），來執行複寫通訊協定。|
 |Samsrv .dll|儲存本機安全性帳戶的安全性帳戶管理員（SAM）會強制執行本機儲存的原則，並支援 Api。|
 |登錄|登錄包含 SAM 資料庫的複本、本機安全性原則設定、預設的安全性值，以及只有系統可存取的帳戶資訊。|
 
-本主題包含下列幾節：
+本主題包含下列各節：
 
 -   [使用者登入的認證輸入](#BKMK_CrentialInputForUserLogon)
 
@@ -69,7 +65,7 @@ Windows 認證管理是作業系統從服務或使用者接收認證，並保護
 
 -   [Windows 驗證中的憑證](#BKMK_CertificatesInWindowsAuthentication)
 
-## <a name="BKMK_CrentialInputForUserLogon"></a>使用者登入的認證輸入
+## <a name="credential-input-for-user-logon"></a><a name="BKMK_CrentialInputForUserLogon"></a>使用者登入的認證輸入
 在 Windows Server 2008 和 Windows Vista 中，已使用認證提供者模型取代圖形化識別和驗證（GINA）架構，讓您可以透過使用登入磚來列舉不同的登入類型。 以下說明這兩種模型。
 
 **圖形化識別和驗證架構**
@@ -132,24 +128,24 @@ SSO 提供者的目的是要用於下列案例：
 
 -   認證提供者會列舉磚以回應使用者要求，以變更其密碼或其他私人資訊，例如 PIN。 通常，目前登入的使用者是預設的磚;不過，如果有一位以上的使用者登入，則會顯示許多磚。
 
--   認證提供者會根據要用於遠端電腦驗證的序列化認證來列舉磚。 認證 UI 不會使用與登入 UI、解除鎖定工作站或變更密碼相同的提供者實例。 因此，在認證 UI 的實例之間，無法在提供者中維護狀態資訊。 此結構會針對每一部遠端電腦登入產生一個磚，假設認證已正確地序列化。 此案例也用於使用者帳戶控制（UAC），這有助於防止未經授權的電腦變更，方法是先提示使用者提供許可權或系統管理員密碼，再允許可能影響電腦操作的動作或者，這可能會變更影響電腦其他使用者的設定。
+-   認證提供者會根據要用於遠端電腦驗證的序列化認證來列舉磚。 認證 UI 不會使用與登入 UI、解除鎖定工作站或變更密碼相同的提供者實例。 因此，在認證 UI 的實例之間，無法在提供者中維護狀態資訊。 此結構會針對每一部遠端電腦登入產生一個磚，假設認證已正確地序列化。 此案例也用於使用者帳戶控制（UAC），這有助於防止未經授權的電腦變更，方法是先提示使用者提供許可權或系統管理員密碼，再允許可能影響電腦操作的動作，或變更影響電腦其他使用者的設定。
 
 下圖顯示本主題開頭的 [**適用**于] 清單中指定之作業系統的認證處理常式。
 
 ![此圖顯示在本主題開頭的 * * 適用于 * * 清單中指定之作業系統的認證處理常式](../media/credentials-processes-in-windows-authentication/AuthN_CredMan_CredProv.gif)
 
-## <a name="BKMK_CredentialInputForApplicationAndServiceLogon"></a>應用程式和服務登入的認證輸入
+## <a name="credential-input-for-application-and-service-logon"></a><a name="BKMK_CredentialInputForApplicationAndServiceLogon"></a>應用程式和服務登入的認證輸入
 Windows 驗證的設計目的是要管理不需要使用者互動的應用程式或服務認證。 使用者模式中的應用程式會根據其可存取的系統資源而受到限制，而服務可以對系統記憶體和外部裝置具有不受限制的存取權。
 
-系統服務和傳輸層級應用程式會透過 Windows 中的安全性支援提供者介面（SSPI）存取安全性支援提供者（SSP），這會提供函式來列舉系統上可用的安全性套件，並選取封裝，並使用該封裝來取得已驗證的連接。
+系統服務和傳輸層級應用程式會透過 Windows 中的安全性支援提供者介面（SSPI）存取安全性支援提供者（SSP），這會提供函式來列舉系統上可用的安全性套件、選取套件，以及使用該封裝來取得已驗證的連線。
 
 當用戶端/伺服器連線已通過驗證時：
 
 -   連接之用戶端上的應用程式會使用 SSPI 函數 `InitializeSecurityContext (General)`，將認證傳送至伺服器。
 
--   連接的伺服器端上的應用程式會以 SSPI 函數 `AcceptSecurityContext (General)` 來回應。
+-   連接的伺服器端上的應用程式會以 `AcceptSecurityContext (General)`的 SSPI 函式來回應。
 
--   SSPI 函數 `InitializeSecurityContext (General)` 和 `AcceptSecurityContext (General)` 會重複，直到所有必要的驗證訊息都已交換為成功或失敗驗證為止。
+-   `InitializeSecurityContext (General)` 和 `AcceptSecurityContext (General)` 的 SSPI 函式會重複，直到所有必要的驗證訊息都已交換為成功或失敗驗證為止。
 
 -   連接經過驗證之後，伺服器上的 LSA 會使用來自用戶端的資訊來建立安全性內容，其中包含存取權杖。
 
@@ -157,15 +153,15 @@ Windows 驗證的設計目的是要管理不需要使用者互動的應用程式
 
 **應用程式和使用者模式**
 
-Windows 中的使用者模式是由兩個可將 i/o 要求傳遞至適當核心模式驅動程式的系統所組成：環境系統，它會執行針對許多不同類型的作業系統所撰寫的應用程式，以及可運作的整數系統代表環境系統的系統特定函數。
+Windows 中的使用者模式是由兩個可將 i/o 要求傳遞至適當核心模式驅動程式的系統所組成：環境系統，它會執行為許多不同類型的作業系統所撰寫的應用程式，以及可代表環境系統運作系統特定功能的整數系統。
 
-整數系統會代表環境系統管理操作 system'specific 功能，並包含安全性系統進程（LSA）、工作站服務和伺服器服務。 安全性系統程式會處理安全性權杖、授與或拒絕許可權來存取以資源許可權為基礎的使用者帳戶、處理登入要求，以及起始登入驗證，以及判斷作業系統所使用的系統資源需要進行審核。
+整數系統會代表環境系統管理操作 system'specific 功能，並包含安全性系統進程（LSA）、工作站服務和伺服器服務。 安全性系統程式會處理安全性權杖、授與或拒絕許可權來存取以資源許可權為基礎的使用者帳戶、處理登入要求並起始登入驗證，並決定作業系統需要進行哪些系統資源的審核。
 
 應用程式可以在使用者模式中執行，應用程式可以在其中以任何主體的形式執行，包括本機系統（系統）的安全性內容。 應用程式也可以在核心模式中執行，應用程式可以在本機系統（系統）的安全性內容中執行。
 
-SSPI 可透過 Secur32 模組取得，這是用來取得整合式安全性服務以進行驗證、訊息完整性和訊息隱私權的 API。 它提供應用層級通訊協定與安全性通訊協定之間的抽象層。 因為不同的應用程式需要不同的方式來識別或驗證使用者，以及在透過網路傳送時加密資料的不同方式，所以 SSPI 提供了一種方法來存取包含不同驗證的動態連結程式庫（Dll）。和密碼編譯功能。 這些 Dll 稱為安全性支援提供者（Ssp）。
+SSPI 可透過 Secur32 模組取得，這是用來取得整合式安全性服務以進行驗證、訊息完整性和訊息隱私權的 API。 它提供應用層級通訊協定與安全性通訊協定之間的抽象層。 由於不同的應用程式需要不同的方式來識別或驗證使用者，以及在透過網路傳送時加密資料的不同方式，因此 SSPI 提供了一種方法來存取包含不同驗證和密碼編譯功能的動態連結程式庫（Dll）。 這些 Dll 稱為安全性支援提供者（Ssp）。
 
-Windows Server 2008 R2 和 Windows 7 中引進了受管理的服務帳戶和虛擬帳戶，以提供重要的應用程式，例如 Microsoft SQL Server 和 Internet Information Services （IIS），並隔離自己的網域帳戶，同時不需要系統管理員手動管理服務主體名稱（SPN）和這些帳戶的認證。 如需這些功能及其在驗證中之角色的詳細資訊，請參閱[Windows 7 和 Windows Server 2008 R2 的受管理的服務帳戶檔](https://technet.microsoft.com/library/ff641731(v=ws.10).aspx)和[群組受管理的服務帳戶總覽](../group-managed-service-accounts/group-managed-service-accounts-overview.md)。
+受管理的服務帳戶和虛擬帳戶是在 Windows Server 2008 R2 和 Windows 7 中引進，以提供重要的應用程式，例如 Microsoft SQL Server 和 Internet Information Services （IIS），並隔離自己的網域帳戶，同時不需要系統管理員手動管理服務主體名稱（SPN）和這些帳戶的認證。 如需這些功能及其在驗證中之角色的詳細資訊，請參閱[Windows 7 和 Windows Server 2008 R2 的受管理的服務帳戶檔](https://technet.microsoft.com/library/ff641731(v=ws.10).aspx)和[群組受管理的服務帳戶總覽](../group-managed-service-accounts/group-managed-service-accounts-overview.md)。
 
 **服務和核心模式**
 
@@ -180,7 +176,7 @@ Ksecdd 檔案會管理和加密這些認證，並在 LSA 中使用本機程序�
 
 核心模式具有電腦的硬體和系統資源的完整存取權。 核心模式會阻止使用者模式服務和應用程式存取不應存取之作業系統的重要區域。
 
-## <a name="BKMK_LSA"></a>本地安全機構
+## <a name="local-security-authority"></a><a name="BKMK_LSA"></a>本地安全機構
 「本地安全機構」（LSA）是一個受保護的系統程式，可在本機電腦上驗證和登入使用者。 此外，LSA 也會維護電腦上本機安全性的所有層面（這些層面統稱為本機安全性原則）的相關資訊，並提供在名稱和安全識別碼（Sid）之間進行轉譯的各種服務。 安全性系統程式（本地安全機構伺服器服務（LSASS））會追蹤安全性原則，以及在電腦系統上生效的帳戶。
 
 LSA 會根據發出使用者帳戶的下列兩個實體中的哪一個來驗證使用者的身分識別：
@@ -235,7 +231,7 @@ LSASS 可以使用多種形式儲存認證，包括：
 
 如需這些額外保護的詳細資訊，請參閱設定[其他 LSA 保護](../credentials-protection-and-management/configuring-additional-lsa-protection.md)。
 
-## <a name="BKMK_CachedCredentialsAndValidation"></a>快取的認證和驗證
+## <a name="cached-credentials-and-validation"></a><a name="BKMK_CachedCredentialsAndValidation"></a>快取的認證和驗證
 驗證機制會依賴登入時的認證呈現方式。 不過，當電腦與網域控制站中斷連線，而且使用者正在出示網域認證時，Windows 會使用驗證機制中快取認證的程式。
 
 每次使用者登入網域時，Windows 會快取所提供的認證，並將其儲存在作業系統登錄中的安全性 hive 中。
@@ -243,7 +239,7 @@ LSASS 可以使用多種形式儲存認證，包括：
 使用快取的認證時，使用者可以登入網域成員，而不需要連線到該網域內的網域控制站。
 
 
-## <a name="BKMK_CredentialStorageAndValidation"></a>認證儲存和驗證
+## <a name="credential-storage-and-validation"></a><a name="BKMK_CredentialStorageAndValidation"></a>認證儲存和驗證
 您不一定要使用一組認證來存取不同的資源。 例如，在存取遠端伺服器時，系統管理員可能會想要使用管理而不是使用者認證。 同樣地，如果使用者存取外部資源（例如銀行帳戶），則他或她只能使用不同于其網域認證的認證。 下列各節說明目前版本的 Windows 作業系統與 Windows Vista 和 Windows XP 作業系統之間的認證管理差異。
 
 ### <a name="remote-logon-credential-processes"></a>遠端登入認證進程
@@ -259,7 +255,7 @@ LSASS 可以使用多種形式儲存認證，包括：
 如需 ARSO 的詳細資訊，請參閱[Winlogon 自動重新開機&#40;登&#41;入 ARSO](winlogon-automatic-restart-sign-on-arso.md)。
 
 ### <a name="stored-user-names-and-passwords-in-windows-vista-and-windows-xp"></a>Windows Vista 和 Windows XP 中的預存使用者名稱和密碼
-在 Windows Server 2008、Windows Server 2003、Windows Vista 和 Windows XP 中，[控制台] 中**儲存的使用者名稱和密碼**可簡化管理和使用多組登入認證，包括與智慧卡搭配使用的 x.509 憑證，以及Windows Live 認證（現在稱為 Microsoft 帳戶）。 認證-使用者設定檔的一部分會儲存到需要的位置。 這個動作可以藉由確保如果有一項密碼遭到入侵，而不會危及所有安全性，以每個資源為基礎來提高安全性。
+在 Windows Server 2008、Windows Server 2003、Windows Vista 和 Windows XP 中，[控制台] 中**儲存的使用者名稱和密碼**可簡化管理和使用多個登入認證，包括用於智慧卡和 Windows Live 認證的 x.509 憑證（現在稱為 Microsoft 帳戶）。 認證-使用者設定檔的一部分會儲存到需要的位置。 這個動作可以藉由確保如果有一項密碼遭到入侵，而不會危及所有安全性，以每個資源為基礎來提高安全性。
 
 使用者登入並嘗試存取其他受密碼保護的資源（例如伺服器上的共用），而且如果使用者的預設登入認證不足以取得存取權，就會查詢**儲存的使用者名稱和密碼**。 如果已將具有正確登入資訊的替代認證儲存在**儲存的使用者名稱和密碼**中，就會使用這些認證來取得存取權。 否則，系統會提示使用者提供新的認證，之後可以在登入會話或後續會話期間，儲存以供重複使用。
 
@@ -269,7 +265,7 @@ LSASS 可以使用多種形式儲存認證，包括：
 
 -   **儲存的使用者名稱和密碼**只會儲存 NTLM、Kerberos 通訊協定、Microsoft 帳戶（先前稱為 WINDOWS Live ID）和安全通訊端層（SSL）驗證的認證。 某些版本的 Internet Explorer 會維護自己的快取，以進行基本驗證。
 
-這些認證會成為使用者本機設定檔在 \Documents 和 Settings\Username\Application Data\Microsoft\Credentials 目錄中的加密部分。 因此，如果使用者的網路原則支援漫遊使用者設定檔，這些認證就可以與使用者漫遊。 不過，如果使用者在兩部不同的電腦上有已**儲存之使用者名稱和密碼**的副本，並變更與其中一部電腦上的資源相關聯的認證，則變更不會傳播到**儲存的使用者名稱和密碼**在第二部電腦上。
+這些認證會成為使用者本機設定檔在 \Documents 和 Settings\Username\Application Data\Microsoft\Credentials 目錄中的加密部分。 因此，如果使用者的網路原則支援漫遊使用者設定檔，這些認證就可以與使用者漫遊。 不過，如果使用者在兩部不同的電腦上有已**儲存之使用者名稱和密碼**的副本，並變更與其中一部電腦上的資源相關聯的認證，則變更不會傳播到第二部電腦上**儲存的使用者名稱和密碼**。
 
 ### <a name="windows-vault-and-credential-manager"></a>Windows 保存庫和認證管理員
 認證管理員是在 Windows Server 2008 R2 和 Windows 7 中引進，做為用來儲存和管理使用者名稱和密碼的控制台功能。 認證管理員可讓使用者將與其他系統和網站相關的認證儲存在安全的 Windows 保存庫中。 某些版本的 Internet Explorer 會使用這項功能來驗證網站。
@@ -280,21 +276,21 @@ LSASS 可以使用多種形式儲存認證，包括：
 
 下次使用服務時，認證管理員會自動提供儲存在 Windows 保存庫中的認證。 如果不接受這個認證，則會提示使用者輸入正確的存取資訊。 如果使用新的認證來授與存取權，認證管理員會使用新的認證來覆寫先前的認證，然後將新的認證儲存在 Windows 保存庫中。
 
-## <a name="BKMK_SAM"></a>安全性帳戶管理員資料庫
+## <a name="security-accounts-manager-database"></a><a name="BKMK_SAM"></a>安全性帳戶管理員資料庫
 安全性帳戶管理員（SAM）是儲存本機使用者帳戶和群組的資料庫。 它會出現在每個 Windows 作業系統中;不過，當電腦加入網域時，Active Directory 管理 Active Directory 網域中的網域帳戶。
 
-例如，即使沒有任何人為登入，執行 Windows 作業系統的用戶端電腦也會與網域控制站通訊來加入網路網域。 若要起始通訊，電腦在網域中必須有使用中的帳戶。 在接受來自電腦的通訊之前，網域控制站上的 LSA 會驗證電腦的身分識別，然後將電腦的安全性內容與人為安全性主體進行比對。 此安全性內容會定義特定電腦或網路上的使用者、服務或電腦上的使用者或服務的身分識別和功能。 例如，包含在安全性內容中的存取權杖，會定義可存取的資源（例如檔案共用或印表機），以及該主體可執行檔動作（例如讀取、寫入或修改），也就是使用者、電腦或服務。resource.
+例如，即使沒有任何人為登入，執行 Windows 作業系統的用戶端電腦也會與網域控制站通訊來加入網路網域。 若要起始通訊，電腦在網域中必須有使用中的帳戶。 在接受來自電腦的通訊之前，網域控制站上的 LSA 會驗證電腦的身分識別，然後將電腦的安全性內容與人為安全性主體進行比對。 此安全性內容會定義特定電腦或網路上的使用者、服務或電腦上的使用者或服務的身分識別和功能。 例如，包含在安全性內容中的存取權杖，會定義可存取的資源（例如檔案共用或印表機），以及該主體可執行檔動作（例如讀取、寫入或修改），也就是該資源上的使用者、電腦或服務。
 
 使用者或電腦的安全性內容可能會因一部電腦而異，例如當使用者登入伺服器或工作站，而不是使用者自己的主要工作站時。 它也可能會因一個會話而異，例如當系統管理員修改使用者的權利和許可權時。 此外，當使用者或電腦以獨立、網路或 Active Directory 網域的一部分進行操作時，安全性內容通常會不同。
 
-## <a name="BKMK_LocalDomainsAndTrustedDomains"></a>本機網域和受信任的網域
+## <a name="local-domains-and-trusted-domains"></a><a name="BKMK_LocalDomainsAndTrustedDomains"></a>本機網域和受信任的網域
 當兩個網域之間有信任存在時，每個網域的驗證機制會依賴來自其他網域之驗證的有效性。 信任有助於透過驗證傳入驗證要求是否來自受信任的授權單位（受信任的網域），以提供資源網域（信任網域）中共用資源的受控制存取權。 如此一來，信任就會作為橋接器，讓只有經過驗證的驗證要求可在網域之間移動。
 
 特定信任通過驗證要求的方式，取決於其設定方式。 信任關係可以是單向的，方法是提供來自受信任網域的存取權給信任網域中的資源，或將存取權提供給另一個網域中的資源，藉此雙向。 信任也是不可轉移的，在這種情況下，信任只存在於兩個信任夥伴網域之間，或可轉移，在此情況下，信任會自動延伸到任何夥伴信任的其他任何網域。
 
 如需有關與驗證有關的網域和樹系信任關係的詳細資訊，請參閱[委派的驗證和信任關係](https://technet.microsoft.com/library/dn169022.aspx)。
 
-## <a name="BKMK_CertificatesInWindowsAuthentication"></a>Windows 驗證中的憑證
+## <a name="certificates-in-windows-authentication"></a><a name="BKMK_CertificatesInWindowsAuthentication"></a>Windows 驗證中的憑證
 公開金鑰基礎結構（PKI）是軟體、加密技術、程式和服務的組合，可讓組織保護其通訊和商務交易。 PKI 保護通訊和商務交易的能力，是根據已驗證使用者與受信任資源之間的數位憑證交換。
 
 數位憑證是一種電子檔，其中包含其所屬實體的相關資訊、其所發行的實體、唯一的序號或一些其他唯一的識別碼、發行和到期日，以及數位指紋。
@@ -320,11 +316,11 @@ Windows 8 引進了虛擬智慧卡技術。 它會在電腦中儲存智慧卡的
 
 **遠端和無線驗證**
 
-遠端和無線網路驗證是另一種使用憑證進行驗證的技術。 網際網路驗證服務（IAS）和虛擬私人網路伺服器使用可延伸的驗證通訊協定-傳輸層級安全性（EAP-TLS）、受保護的可擴展驗證通訊協定（PEAP），或網際網路通訊協定安全性（IPsec）針對許多類型的網路存取執行憑證型驗證，包括虛擬私人網路（VPN）和無線連線。
+遠端和無線網路驗證是另一種使用憑證進行驗證的技術。 網際網路驗證服務（IAS）和虛擬私人網路伺服器使用可延伸的驗證通訊協定-傳輸層級安全性（EAP-TLS）、受保護的可延伸驗證通訊協定（PEAP），或網際網路通訊協定安全性（IPsec），為許多網路存取類型（包括虛擬私人網路（VPN）和無線連線）執行憑證型驗證。
 
 如需網路中以憑證為基礎之驗證的相關資訊，請參閱[網路存取驗證和憑證](https://technet.microsoft.com/library/cc759575(WS.10).aspx)。
 
-## <a name="BKMK_SeeAlso"></a>另請參閱
+## <a name="see-also"></a><a name="BKMK_SeeAlso"></a>另請參閱
 [Windows 驗證概念](https://docs.microsoft.com/windows-server/security/windows-authentication/windows-authentication-concepts)
 
 

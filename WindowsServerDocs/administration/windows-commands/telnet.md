@@ -1,35 +1,32 @@
 ---
 title: telnet
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: Telnet 的 Windows 命令主題，它會與執行 telnet 伺服器服務的電腦通訊。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b70a6156-9413-4300-84ce-a34c467e2b4e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b1621a10b9b445e87eb6bc16a8d7f52a64c146a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b59a3891dd276c6ab0b8e7a8a0a2d11a6b6b55c0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385149"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80833131"
 ---
 # <a name="telnet"></a>telnet
 
 >適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-與執行 telnet 伺服器服務的電腦通訊。 
+與執行 telnet 伺服器服務的電腦通訊。
+ 
 ## <a name="syntax"></a>語法
 ```
 telnet [/a] [/e <EscapeChar>] [/f <FileName>] [/l <UserName>] [/t {vt100 | vt52 | ansi | vtnt}] [<Host> [<Port>]] [/?]
 ```
-### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>參數
 |參數|描述|
 |-------|--------|
 |/a|嘗試自動登入。 與/l 選項相同，但會使用目前登入的使用者名稱。|
@@ -44,7 +41,7 @@ telnet [/a] [/e <EscapeChar>] [/f <FileName>] [/l <UserName>] [/t {vt100 | vt52 
 -   您必須先安裝 telnet 用戶端軟體，才能執行此命令。 如需詳細資訊，請參閱[安裝 telnet](https://technet.microsoft.com/library/cc754293(v=ws.10).aspx)。
 -   您可以不使用參數來執行 telnet，以輸入 telnet 內容，如 telnet 提示（**Microsoft telnet >** ）所示。 從 telnet 提示字元，您可以使用 telnet 命令來管理執行 telnet 用戶端的電腦。
 
-## <a name="BKMK_Examples"></a>典型
+## <a name="examples"></a><a name=BKMK_Examples></a>典型
 使用 telnet 連線到執行 telnet 伺服器服務的電腦，網址為 telnet.microsoft.com。
 ```
 telnet telnet.microsoft.com
@@ -54,7 +51,7 @@ telnet telnet.microsoft.com
 telnet /f telnetlog.txt telnet.microsoft.com 44
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 -   [安裝 telnet](https://technet.microsoft.com/library/cc754293(v=ws.10).aspx)
 -   [telnet 技術參考](https://technet.microsoft.com/library/cc754987(v=ws.10).aspx)
--   [命令列語法關鍵](command-line-syntax-key.md)
+-   - [命令列語法關鍵](command-line-syntax-key.md)

@@ -2,22 +2,18 @@
 title: 使用歷程記錄資料來產生遠端用戶端的使用狀況報告
 description: 本主題是 Windows Server 2016 中遠端存取監視和帳戶處理指南的一部分。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0305467b-ce39-4532-a05a-2cc5ff946f55
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: ce5219feca1d55191352d95f2aac017709a5a449
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: ae862b596ff8c3d222c8f448f9b81b3c6bea05be
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314297"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860561"
 ---
 # <a name="generate-a-usage-report-for-remote-clients-using-historical-data"></a>使用歷程記錄資料來產生遠端用戶端的使用狀況報告
 

@@ -4,19 +4,19 @@ description: HNV 軟體定義網路的閘道效能微調指導方針
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: grcusanz; AnPaul
+ms.author: grcusanz; anpaul
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 907b160b143af18a8ede3a9a7975fa8b22753118
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 98b8a50873cf69e96131f98d5d94c386cb30a13d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383502"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851621"
 ---
 # <a name="hnv-gateway-performance-tuning-in-software-defined-networks"></a>在軟體定義的網路中 HNV 閘道效能微調
 
-本主題提供執行 Hyper-v 和裝載 Windows Server 閘道虛擬機器之伺服器的硬體規格和設定建議，以及 Windows Server 閘道虛擬機器（Vm）的設定參數. 若要從 Windows Server 閘道 Vm 取得最佳效能，預期會遵循這些指導方針。
+除了 Windows Server 閘道虛擬機器（Vm）的設定參數之外，本主題還提供執行 Hyper-v 並裝載 Windows Server 閘道虛擬機器之伺服器的硬體規格和設定建議。 若要從 Windows Server 閘道 Vm 取得最佳效能，預期會遵循這些指導方針。
 以下幾節涵蓋部署 Windows Server 閘道時的硬體和設定需求。
 1. Hyper-V 硬體建議
 2. Hyper-V 主機設定
@@ -30,7 +30,7 @@ ms.locfileid: "71383502"
 |--------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 中央處理器 (CPU)  | 非統一記憶體架構（NUMA）節點：2 <br> 如果主機上有多個 Windows Server 閘道 Vm，為了達到最佳效能，每個閘道 VM 都應該具有一個 NUMA 節點的完整存取權。 而且應該與主機實體介面卡所使用的 NUMA 節點不同。 |
 | 每個 NUMA 節點的核心            | 2                                                                                                                                                                                                                                                                               |
-| 超執行緒                | 已停用。 超執行緒無法改善 Windows Server 閘道的效能。                                                                                                                                                                                           |
+| 超執行緒                | 已停用： 超執行緒無法改善 Windows Server 閘道的效能。                                                                                                                                                                                           |
 | 隨機存取記憶體 (RAM)     | 48 GB                                                                                                                                                                                                                                                                           |
 | 網路介面卡 (NIC) | 2 10 GB 的 Nic，閘道效能將取決於線路速率。 如果線路速率小於10Gbps，閘道通道的輸送量數位也會依相同的因素向下移動。                                                                                          |
 
@@ -59,13 +59,13 @@ Write-Host ("Total Number of Logical Processors: ", $lps)
 >[!Note]
 > 若要執行下列 Windows PowerShell 命令，您必須是 Administrators 群組的成員。
 
-| 設定專案                          | Windows Powershell 設定                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| 設定項目                          | Windows Powershell 設定                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 |---------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 交換器內嵌小組                     | 當您建立具有多張網路介面卡的 vswitch 時，它會自動啟用這些介面卡的交換器內嵌小組。 <br> ```New-VMSwitch -Name TeamedvSwitch -NetAdapterName "NIC 1","NIC 2"``` <br> Windows Server 2016 中的 SDN 不支援透過 LBFO 的傳統團隊。 交換器內嵌小組可讓您針對虛擬流量和 RDMA 流量使用一組相同的 Nic。 這不支援以 LBFO 為基礎的 NIC 小組。                                                        |
 | 實體 NIC 的插斷仲裁       | 使用預設設定。 若要檢查設定，您可以使用下列 Windows PowerShell 命令： ```Get-NetAdapterAdvancedProperty```                                                                                                                                                                                                                                                                                                                                                                    |
-| 實體 NIC 的接收緩衝區大小       | 您可以執行命令 ```Get-NetAdapterAdvancedProperty```，確認實體 Nic 是否支援此參數的設定。 如果不支援此參數，則命令的輸出不會包含屬性「接收緩衝區」。 如果 NIC 支援此參數，您可以使用下列 Windows PowerShell 命令設定接收緩衝區大小： <br>```Set-NetAdapterAdvancedProperty "NIC1" –DisplayName "Receive Buffers" –DisplayValue 3000``` <br>                          |
-| 實體 NIC 的傳送緩衝區大小          | 您可以執行命令 ```Get-NetAdapterAdvancedProperty```，確認實體 Nic 是否支援此參數的設定。 如果 Nic 不支援此參數，則命令的輸出不會包含屬性「傳送緩衝區」。 如果 NIC 支援此參數，您可以使用下列 Windows PowerShell 命令設定傳送緩衝區大小： <br> ```Set-NetAdapterAdvancedProperty "NIC1" –DisplayName "Transmit Buffers" –DisplayValue 3000``` <br>                           |
-| 實體 NIC 的接收端調整 (RSS) | 您可以執行 Windows PowerShell 命令 Set-netadapterrss，確認您的實體 Nic 是否已啟用 RSS。 您可以使用下列 Windows PowerShell 命令來啟用及設定網路介面卡上的 RSS： <br> ```Enable-NetAdapterRss "NIC1","NIC2"```<br> ```Set-NetAdapterRss "NIC1","NIC2" –NumberOfReceiveQueues 16 -MaxProcessors``` <br> 注意：如果已啟用 VMMQ 或 VMQ，則不需要在實體網路介面卡上啟用 RSS。 您可以在主機虛擬網路介面卡上啟用它 |
+| 實體 NIC 的接收緩衝區大小       | 您可以藉由執行命令 ```Get-NetAdapterAdvancedProperty```，確認實體 Nic 是否支援此參數的設定。 如果不支援此參數，則命令的輸出不會包含屬性「接收緩衝區」。 如果 NIC 支援此參數，您可以使用下列 Windows PowerShell 命令設定接收緩衝區大小： <br>```Set-NetAdapterAdvancedProperty "NIC1" –DisplayName "Receive Buffers" –DisplayValue 3000``` <br>                          |
+| 實體 NIC 的傳送緩衝區大小          | 您可以藉由執行命令 ```Get-NetAdapterAdvancedProperty```，確認實體 Nic 是否支援此參數的設定。 如果 Nic 不支援此參數，則命令的輸出不會包含屬性「傳送緩衝區」。 如果 NIC 支援此參數，您可以使用下列 Windows PowerShell 命令設定傳送緩衝區大小： <br> ```Set-NetAdapterAdvancedProperty "NIC1" –DisplayName "Transmit Buffers" –DisplayValue 3000``` <br>                           |
+| 實體 NIC 的接收端調整 (RSS) | 您可以執行 Get-NetAdapterRss Windows PowerShell 命令，驗證實體 NIC 是否啟用 RSS。 您可以使用下列 Windows PowerShell 命令來啟用及設定網路介面卡上的 RSS： <br> ```Enable-NetAdapterRss "NIC1","NIC2"```<br> ```Set-NetAdapterRss "NIC1","NIC2" –NumberOfReceiveQueues 16 -MaxProcessors``` <br> 注意：如果已啟用 VMMQ 或 VMQ，則不需要在實體網路介面卡上啟用 RSS。 您可以在主機虛擬網路介面卡上啟用它 |
 | VMMQ                                        | 若要啟用 VM 的 VMMQ，請執行下列命令： <br> ```Set-VmNetworkAdapter -VMName <gateway vm name>,-VrssEnabled $true -VmmqEnabled $true``` <br> 注意：並非所有的網路介面卡都支援 VMMQ。 目前，在 Chelsio T5 和 T6、Mellanox CX-3 和 CX-4 和 QLogic 45xxx 系列上都有支援                                                                                                                                                                                                                                      |
 | NIC 小組的虛擬機器佇列 (VMQ) | 您可以使用下列 Windows PowerShell 命令，在設定小組上啟用 VMQ： <br>```Enable-NetAdapterVmq``` <br> 注意：只有在硬體不支援 VMMQ 時，才應該啟用此功能。 如果支援，則應啟用 VMMQ 以獲得更好的效能。                                                                                                                                                                                                                                                               |
 >[!Note]
@@ -76,10 +76,10 @@ Write-Host ("Total Number of Logical Processors: ", $lps)
 在這兩個 Hyper-v 主機上，您可以設定多個 Vm，並設定為具有 Windows Server 閘道的閘道。 您可以使用虛擬交換器管理員建立繫結至 Hyper-V 主機上 NIC 小組的 Hyper-V 虛擬交換器。 請注意，為了達到最佳效能，您應該在 Hyper-v 主機上部署單一閘道 VM。
 以下是對每個 Windows Server 閘道 VM 建議的設定。
 
-| 設定專案                 | Windows Powershell 設定                                                                                                                                                                                                                                                                                                                                                               |
+| 設定項目                 | Windows Powershell 設定                                                                                                                                                                                                                                                                                                                                                               |
 |------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 記憶體                             | 8 GB                                                                                                                                                                                                                                                                                                                                                                                           |
-| 虛擬網路介面卡數目 | 具有下列特定用途的3個 Nic：1用於管理作業系統所使用的管理（1個外部，提供外部網路的存取，1個為內部，僅提供內部網路的存取）。                                                                                                                                                            |
+| 虛擬網路介面卡數目 | 3具有下列特定用途的 Nic：1用於管理作業系統所使用的管理，第1個則提供外部網路的存取權，1個為僅提供內部網路存取權。                                                                                                                                                            |
 | Receive Side Scaling (RSS)         | 您可以保留管理 NIC 的預設 RSS 設定。 下列範例設定是針對具有 8 個虛擬處理器的 VM。 針對外部和內部 Nic，您可以使用下列 Windows PowerShell 命令，將 BaseProcNumber 設為0，並將 MaxRssProcessors 設為8，以啟用 RSS： <br> ```Set-NetAdapterRss "Internal","External" –BaseProcNumber 0 –MaxProcessorNumber 8``` <br> |
 | 傳送端緩衝區                   | 您可以保留管理 NIC 的預設傳送端緩衝區設定。 對於內部和外部 Nic，您可以使用下列 Windows PowerShell 命令，設定具有 32 MB RAM 的傳送端緩衝區： <br> ```Set-NetAdapterAdvancedProperty "Internal","External" –DisplayName "Send Buffer Size" –DisplayValue "32MB"``` <br>                                                       |
 | 接收端緩衝區                | 您可以保留管理 NIC 的預設接收端緩衝區設定。 對於內部和外部 Nic，您可以使用下列 Windows PowerShell 命令，將接收端緩衝區設定為 16 MB 的 RAM： <br> ```Set-NetAdapterAdvancedProperty "Internal","External" –DisplayName "Receive Buffer Size" –DisplayValue "16MB"``` <br>                                            |

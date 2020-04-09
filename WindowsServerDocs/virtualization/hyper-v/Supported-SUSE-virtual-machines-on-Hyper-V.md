@@ -2,29 +2,27 @@
 title: Hyper-v 上支援的 SUSE 虛擬機器
 description: 列出每個版本中包含的 Linux 整合服務和功能
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7ec0e14c-4498-4bd9-8fe6-b94260198efc
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: 45517c1d381ba55c819b09b53ae563092e161b1e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c5daa73e2e0c59a262565237d979d2e1e544ae4f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366733"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858001"
 ---
 # <a name="supported-suse-virtual-machines-on-hyper-v"></a>Hyper-v 上支援的 SUSE 虛擬機器
 
->適用於：Windows Server 2016、Hyper-v Server 2016、Windows Server 2012 R2、Hyper-v Server 2012 R2、Windows Server 2012、Hyper-v Server 2012、Windows Server 2008 R2、Windows 10、Windows 8.1、Windows 8、Windows 7.1、Windows 7
+>適用于： Windows Server 2016、Hyper-v Server 2016、Windows Server 2012 R2、Hyper-v Server 2012 R2、Windows Server 2012、Hyper-v Server 2012、Windows Server 2008 R2、Windows 10、Windows 8.1、Windows 8、Windows 7.1、Windows 7
 
 以下是功能發佈對應，表示每個版本的功能。 每個散發套件的已知問題和因應措施會列在表格之後。
 
-Hyper-v 的內建 SUSE Linux Enterprise Service 驅動程式已通過 SUSE 認證。 您可以在此公告中查看範例設定：[SUSE 是認證公告](https://www.suse.com/nbswebapp/yesBulletin.jsp?bulletinNumber=144176)。
+Hyper-v 的內建 SUSE Linux Enterprise Service 驅動程式已通過 SUSE 認證。 您可以在此公告中查看範例設定： [SUSE YES 認證公告](https://www.suse.com/nbswebapp/yesBulletin.jsp?bulletinNumber=144176)。
 
 ## <a name="table-legend"></a>資料表圖例
 
@@ -36,13 +34,13 @@ Hyper-v 的內建 SUSE Linux Enterprise Service 驅動程式已通過 SUSE 認�
 
 SLES12 + 僅限64位。
 
-|**功能**|**Windows Server 作業系統版本**|**SLES 15**|**SLES 12 SP3/SP4**|**SLES 12 SP2**|**SLES 12 SP1**|**SLES 11 SP4**|**SLES 11 SP3**|
+|**特徵**|**Windows Server 作業系統版本**|**SLES 15**|**SLES 12 SP3/SP4**|**SLES 12 SP2**|**SLES 12 SP1**|**SLES 11 SP4**|**SLES 11 SP3**|
 |-|-|-|-|-|-|-|-|
-|**Availability**||內建|內建|內建|內建|內建|內建|
+|**可用性**||內建|內建|內建|內建|內建|內建|
 |**[雙核處理器](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Windows Server 2016 精確時間|2019、2016|&#10004;|&#10004;|&#10004;||||
 |**[連](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**||||||||
-|大型訊框|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|Jumbo 框架|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |VLAN 標記和中繼|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |即時移轉|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |靜態 IP 插入|2019、2016、2012 R2、2012|&#10004;附注1|&#10004;附注1|&#10004;附注1|&#10004;附注1|&#10004;附注1|&#10004;附注1|
@@ -74,7 +72,7 @@ SLES12 + 僅限64位。
 |使用 UEFI 開機|2019、2016、2012 R2|&#10004;附注9|&#10004;附注9|&#10004;附注9|&#10004;附注9|&#10004;附注9||
 |安全開機|2019、2016|&#10004;|&#10004;|&#10004;|&#10004;|||
 
-## <a name="BKMK_notes"></a>紀錄
+## <a name="notes"></a><a name="BKMK_notes"></a>紀錄
 
 1. 如果已針對虛擬機器上指定的 Hyper-v 特定網路介面卡設定**網路系統管理員**，則靜態 IP 插入可能無法正常執行。 為確保能順利運作靜態 IP 插入，請確認網路系統管理員已完全關閉，或已透過其**Ifcfg-eth0 ethX**檔關閉特定網路介面卡。
 
@@ -86,7 +84,7 @@ SLES12 + 僅限64位。
 
    * [啟動記憶體] 和 [最小記憶體] 應該等於或大於散發廠商建議的記憶體數量。
 
-   * 通常會耗用系統上整個可用記憶體的應用程式，只能耗用最多 80% 的可用 RAM。
+   * 通常會耗用系統上整個可用記憶體的應用程式，只能耗用最多80% 的可用 RAM。
 
 5. 動態記憶體支援僅適用于64位的虛擬機器。
 

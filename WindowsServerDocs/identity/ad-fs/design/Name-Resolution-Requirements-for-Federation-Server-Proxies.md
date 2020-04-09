@@ -1,7 +1,6 @@
 ---
 ms.assetid: c28c60ff-693d-49ee-a75b-58f24866217b
 title: 同盟伺服器 Proxy 的名稱解析需求
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 51176101b471ec940e2b43a95e1a1a8d37b394f3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 47c5bd23d3ba82c3df81c71951c2a50db0fe99d7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408064"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853041"
 ---
 # <a name="name-resolution-requirements-for-federation-server-proxies"></a>同盟伺服器 Proxy 的名稱解析需求
 
@@ -38,7 +37,7 @@ ms.locfileid: "71408064"
 如需使用 NLB 設定叢集 IP 位址或叢集 FQDN 的詳細資訊，請參閱[指定叢集參數](https://go.microsoft.com/fwlink/?LinkId=75282)。  
   
 ### <a name="1-configure-the-hosts-file-on-the-federation-server-proxy"></a>1.在同盟伺服器 Proxy 上設定主機檔案。  
-因為周邊網路中的 DNS 設定為將 fs.fabrikam.com 的所有要求解析為帳戶同盟伺服器 proxy，帳戶夥伴同盟伺服器 proxy 在其本機主機檔案中會有一個專案，可將 fs.fabrikam.com 解析為實際帳戶同盟伺服器的 IP 位址 \(或連線到公司網路之同盟伺服器陣列的叢集 DNS 名稱\)。 如此一來，帳戶同盟伺服器 proxy 就可以將主機名稱 fs.fabrikam.com 解析為帳戶同盟伺服器，而不是解析為本身—如果它嘗試使用周邊 DNS 來查詢 fs.fabrikam.com，就會發生這種情況，因此同盟伺服器 proxy 可以與同盟伺服器通訊。  
+因為周邊網路中的 DNS 設定為將 fs.fabrikam.com 的所有要求解析為帳戶同盟伺服器 proxy，帳戶夥伴同盟伺服器 proxy 在其本機主機檔案中會有一個專案，可將 fs.fabrikam.com 解析為實際帳戶同盟伺服器的 IP 位址 \(或連線到公司網路之同盟伺服器陣列的叢集 DNS 名稱\)。 如此一來，帳戶同盟伺服器 proxy 就可以將主機名稱 fs.fabrikam.com 解析為帳戶同盟伺服器，而不是解析為本身—如果它嘗試使用周邊 DNS 來查詢 fs.fabrikam.com 就會發生這種情況，讓同盟伺服器 proxy 可以與同盟伺服器通訊。  
   
 ### <a name="2-configure-perimeter-dns"></a>2.設定周邊 DNS  
 因為用戶端電腦只會被導向至單一 AD FS 主機名稱（無論是在內部網路或網際網路上），所以使用周邊 DNS 伺服器的網際網路上的用戶端電腦必須將帳戶同盟伺服器的 FQDN \(fs.fabrikam.com\) 解析為周邊網路上帳戶同盟伺服器 proxy 的 IP 位址。 如此一來，當用戶端嘗試解析 fs.fabrikam.com 時，就可以將它們轉送到帳戶同盟伺服器 proxy，而周邊 DNS 則包含有限的 corp.fabrikam.com DNS 區域與單一主機 \(fs \(fs.fabrikam.com\) 的\) 資源記錄，以及周邊網路上的帳戶同盟伺服器 proxy 的 IP 位址。  
@@ -59,12 +58,12 @@ ms.locfileid: "71408064"
 ### <a name="1-configure-perimeter-dns"></a>1.設定周邊 DNS  
 在此案例中，由於假設您將設定您控制的網際網路 DNS 區域來解析針對特定端點 URL 提出的要求 \(也就是 fs.fabrikam.com\) 到周邊網路中的同盟伺服器 proxy 時，您也必須設定周邊 DNS 中的區域，將這些要求轉送到公司網路中的同盟伺服器。  
   
-為了讓用戶端在嘗試解析 fs.fabrikam.com 時可以轉送到帳戶同盟伺服器，會使用單一主機來設定周邊 DNS \(fs \(fs.fabrikam.com\) 的\) 資源記錄，以及公司網路上帳戶同盟伺服器的 IP 位址。 如此一來，帳戶同盟伺服器 proxy 就可以將主機名稱 fs.fabrikam.com 解析為帳戶同盟伺服器，而不是解析為本身—如果它嘗試使用網際網路 DNS 來查詢 fs.fabrikam.com，就會發生這種情形—讓同盟伺服器proxy 可以與同盟伺服器通訊。  
+為了讓用戶端在嘗試解析 fs.fabrikam.com 時可以轉送到帳戶同盟伺服器，會使用單一主機來設定周邊 DNS \(fs \(fs.fabrikam.com\) 的\) 資源記錄，以及公司網路上帳戶同盟伺服器的 IP 位址。 如此一來，帳戶同盟伺服器 proxy 就可以將主機名稱 fs.fabrikam.com 解析為帳戶同盟伺服器，而不是解析為本身—如果它嘗試使用網際網路 DNS 來查詢 fs.fabrikam.com，就會發生這種情況，讓同盟伺服器 proxy 可以與同盟伺服器通訊。  
   
 ### <a name="2-configure-internet-dns"></a>2.設定網際網路 DNS  
 若要讓此案例的名稱解析成功，來自網際網路上用戶端電腦至 fs.fabrikam.com 的所有要求，必須透過您控制的網際網路 DNS 區域進行解析。 因此，您必須設定您的網際網路 DNS 區域，以將 fs.fabrikam.com 的用戶端要求轉送至周邊網路中帳戶同盟伺服器 proxy 的 IP 位址。  
   
 如需有關如何修改周邊網路和網際網路 DNS 區域的詳細資訊，請參閱[在同時提供周邊網路和網際網路用戶端的 DNS 區域中設定同盟伺服器 Proxy 的名稱解析](../../ad-fs/deployment/Configure-Name-Resolution-for-a-Federation-Server-Proxy-in-a-DNS-Zone-That-Serves-Both-the-Perimeter-Network-and-Internet-Clients.md)。  
   
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 [Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

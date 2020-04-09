@@ -1,24 +1,20 @@
 ---
 title: ksetup： dumpstate
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3ef2f7b8-97af-4f42-9542-cff324840637
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 625d05b2fea9ae58681648c64e309aa8b2a201ed
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 46f827d26d867392db4cbef92cf5be496aee8d74
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375005"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80841511"
 ---
 # <a name="ksetupdumpstate"></a>ksetup： dumpstate
 
@@ -32,9 +28,9 @@ ms.locfileid: "71375005"
 ksetup /dumpstate
 ```
 
-### <a name="parameters"></a>參數
+#### <a name="parameters"></a>參數
 
-None
+無
 
 ## <a name="remarks"></a>備註
 
@@ -49,14 +45,14 @@ None
 
 **Ksetup**會產生與**Ksetup/dumpstate**相同的輸出。
 
-## <a name="BKMK_Examples"></a>典型
+## <a name="examples"></a><a name=BKMK_Examples></a>典型
 
 在電腦上尋找大部分的 Kerberos 領域設定：
 ```
 ksetup /dumpstate
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
 -   [Ksetup](ksetup.md)
--   [命令列語法關鍵](command-line-syntax-key.md)
+-   - [命令列語法關鍵](command-line-syntax-key.md)

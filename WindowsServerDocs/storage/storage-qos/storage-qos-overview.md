@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.assetid: 8dcb8cf9-0e08-4fdd-9d7e-ec577ce8d8a0
 author: kumudd
 ms.date: 10/10/2016
-ms.openlocfilehash: ed7d7ca4f41784f2ae12220eb2e30077e2467175
-ms.sourcegitcommit: 056d355516f199e8a505c32b9aa685d0cde89e44
+ms.openlocfilehash: 1a320a53ccda78ea19c8dc7b8e22c2bb2c1d236b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79518743"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854111"
 ---
 # <a name="storage-quality-of-service"></a>存放裝置服務品質
 
@@ -31,10 +31,10 @@ Windows Server 2016 中的「存放裝置服務品質」(QoS) 可提供方法，
 
 本文件概述企業如何從新的存放裝置 QoS 功能中受益。 本文件假設您先前已具備使用 Windows Server、Windows Server 容錯移轉叢集、向外延展檔案伺服器、Hyper-V 和 Windows PowerShell 的知識。
 
-## <a name="BKMK_Overview"></a>簡要  
+## <a name="overview"></a><a name="BKMK_Overview"></a>簡要  
 本節說明使用存放裝置 QoS 的需求、使用存放裝置 QoS 的軟體定義解決方案概觀，以及一份存放裝置 QoS 相關術語的清單。  
 
-### <a name="BKMK_Requirements"></a>存放裝置 QoS 需求  
+### <a name="storage-qos-requirements"></a><a name="BKMK_Requirements"></a>存放裝置 QoS 需求  
 存放裝置 QoS 支援兩種部署案例：  
 
 -   **使用向外延展檔案伺服器的 Hyper-V。** 此案例需要下列兩項：  
@@ -55,7 +55,7 @@ Windows Server 2016 中的「存放裝置服務品質」(QoS) 可提供方法，
 
 需要容錯移轉叢集。 所有伺服器都必須執行相同版本的 Windows Server 2016。  
 
-### <a name="BKMK_SolutionOverview"></a>在軟體定義的存放裝置解決方案中使用存放裝置 QoS  
+### <a name="using-storage-qos-in-a-software-defined-storage-solution"></a><a name="BKMK_SolutionOverview"></a>在軟體定義的存放裝置解決方案中使用存放裝置 QoS  
 存放裝置服務品質內建於向外延展檔案伺服器和 Hyper-V 所提供的 Microsoft 軟體定義存放裝置解決方案中。 向外延展檔案伺服器會使用 SMB3 通訊協定，向 Hyper-V 伺服器公開檔案共用。 新的原則管理員已新增到檔案伺服器叢集中，可提供中央存放裝置的效能監視。  
 
 ![向外延展檔案伺服器和存放裝置 QoS](media/overview-Clustering_SOFSStorageQoS.png)  
@@ -66,25 +66,25 @@ Windows Server 2016 中的「存放裝置服務品質」(QoS) 可提供方法，
 
 變更存放裝置 QoS 原則或虛擬機器的效能需求時，原則管理員會通知 Hyper-V 伺服器來調整其行為。 這個意見反應迴圈可確保所有虛擬機器 VHD 都會根據所定義的存放裝置 QoS 原則，以一致的方式執行。  
 
-### <a name="BKMK_Glossary"></a>詞彙  
+### <a name="glossary"></a><a name="BKMK_Glossary"></a>詞彙  
 
 |詞彙|描述|  
 |--------|---------------|  
-|標準化的 IOPS|所有的存放裝置使用量都是以「標準化的 IOPS」來測量。  這是存放裝置每秒輸入/輸出作業的計數。  任何等於或小於 8 KB 的 IO 都會被視為一個標準化的 IO。  任何大於 8 KB 的 IO 都會被視為多個標準化的 IO。 例如，256 KB 的要求會被視為 32 個標準化的 IOPS。<br /><br />Windows Server 2016 讓您能夠指定要用來將 IO 標準化的大小。  在存放裝置叢集上，可以指定標準化的大小，並在整個標準化計算叢集中生效。  預設值會維持 8 KB。|  
+|標準化的 IOPS|所有的存放裝置使用量都是以「標準化的 IOPS」來測量。  這是存放裝置每秒輸入/輸出作業的計數。  任何等於或小於 8 KB 的 IO 都會被視為一個標準化的 IO。  任何大於 8 KB 的 IO 都會被視為多個標準化的 IO。 例如，256 KB 的要求會被視為 32 個標準化的 IOPS。<p>Windows Server 2016 讓您能夠指定要用來將 IO 標準化的大小。  在存放裝置叢集上，可以指定標準化的大小，並在整個標準化計算叢集中生效。  預設值會維持 8 KB。|  
 |流程|每個由 Hyper-V 伺服器開啟到 VHD 或 VHDX 檔案的檔案控制代碼都會被視為一個「流程」。 如果一個虛擬機器連接了兩個虛擬硬碟，則每個檔案中都會有 1 個連至檔案伺服器叢集的流程。 如果 VHDX 會與多個虛擬機器共用，則每個虛擬機器中將會有 1 個流程。|  
 |InitiatorName|針對每個流程要對向外延展檔案伺服器報告的虛擬機器名稱。|  
 |InitiatorID|符合虛擬機器識別碼的識別碼。  這一律可用來唯一識別個別流程的虛擬機器，即使虛擬機器具有相同的 InitiatorName 也一樣。|  
-|Policy(Windows Intune 說明：原則)|存放裝置 QoS 原則會儲存於叢集資料庫中，並具有下列屬性︰PolicyId、MinimumIOPS、MaximumIOPS、ParentPolicy 和 PolicyType。|  
+|Policy(Windows Intune 說明：原則)|存放裝置 QoS 原則會儲存於叢集資料庫中，並具有下列屬性︰PolicyId、MinimumIOPS、MaximumIOPS、 ParentPolicy 和 PolicyType。|  
 |PolicyId|原則的唯一識別碼。  根據預設所產生，但可視需要加以指定。|  
 |MinimumIOPS|原則將提供的最小值標準化 IOPS。  也稱為「保留項目」。|  
 |MaximumIOPS|原則將限制的最大值標準化 IOPS。  也稱為「限制」。|  
 |彙總 |原則類型，指定的 MinimumIOPS 與 MaximumIOPS 和 Bandwidth 會在指派給原則的所有流程中加以共用。 在該存放系統上指派原則的所有 VHD，在它們到所有共用之間都會有單一配置的 I/O 頻寬。|  
 |專用|原則類型，會針對個別 VHD/VHDx 管理指定的Minimum 與 MaximumIOPS 和 Bandwidth。|  
 
-## <a name="BKMK_SetUpQoS"></a>如何設定存放裝置 QoS 和監視基本效能  
+## <a name="how-to-set-up-storage-qos-and-monitor-basic-performance"></a><a name="BKMK_SetUpQoS"></a>如何設定存放裝置 QoS 和監視基本效能  
 本節說明如何啟用新的存放裝置 QoS 功能，以及如何在不套用自訂原則的情況下監視存放裝置效能。  
 
-### <a name="BKMK_SetupStorageQoSonStorageCluster"></a>在存放裝置叢集上設定存放裝置 QoS  
+### <a name="set-up-storage-qos-on-a-storage-cluster"></a><a name="BKMK_SetupStorageQoSonStorageCluster"></a>在存放裝置叢集上設定存放裝置 QoS  
 本節將討論如何在執行 Windows Server 2016 的新或現有容錯移轉叢集和向外延展檔案伺服器上啟用存放裝置 QoS。  
 
 #### <a name="set-up-storage-qos-on-a-new-installation"></a>在新的安裝上設定存放裝置 QoS  
@@ -93,7 +93,7 @@ Windows Server 2016 中的「存放裝置服務品質」(QoS) 可提供方法，
 #### <a name="verify-storage-qos-installation"></a>確認存放裝置 QoS 的安裝  
 在建立容錯移轉叢集並設定 CSV 磁碟之後，**存放裝置 QoS 資源**即會顯示為叢集核心資源，並出現在容錯移轉叢集管理員與 Windows PowerShell 中。 這表示容錯移轉叢集系統將會管理此資源，而您應該不需對此資源執行任何動作。  我們會在容錯移轉叢集管理員和 PowerShell 中顯示此資源，使其可與其他容錯移轉叢集系統資源 (例如新的健全狀況服務) 保持一致。  
 
-![\[存放裝置 QoS 資源\] 會出現在 \[叢集核心資源\] 中](media/overview-Clustering_StorageQoSFCM.png)  
+![[存放裝置 QoS 資源] 會出現在 [叢集核心資源] 中](media/overview-Clustering_StorageQoSFCM.png)  
 
 **圖2：存放裝置 QoS 資源在容錯移轉叢集管理員中顯示為叢集核心資源**  
 
@@ -107,7 +107,7 @@ Name                   State      OwnerGroup        ResourceType
 Storage Qos Resource   Online     Cluster Group     Storage QoS Policy Manager  
 ```  
 
-### <a name="BKMK_SetupStorageQoSonComputeCluster"></a>在計算叢集上設定存放裝置 QoS  
+### <a name="set-up-storage-qos-on-a-compute-cluster"></a><a name="BKMK_SetupStorageQoSonComputeCluster"></a>在計算叢集上設定存放裝置 QoS  
 Windows Server 2016 中的 Hyper-V 角色具備存放裝置 QoS 的內建支援，且預設會加以發行。  
 
 #### <a name="install-remote-administration-tools-to-manage-storage-qos-policies-from-remote-computers"></a>安裝遠端系統管理工具以從遠端電腦管理存放裝置 QoS 原則  
@@ -289,7 +289,7 @@ MaximumIops    : 0
 MinimumIops    : 781  
 ```  
 
-## <a name="BKMK_CreateQoSPolicies"></a>如何建立和監視存放裝置 QoS 原則  
+## <a name="how-to-create-and-monitor-storage-qos-policies"></a><a name="BKMK_CreateQoSPolicies"></a>如何建立和監視存放裝置 QoS 原則  
 本節說明如何建立存放裝置 QoS 原則、將這些原則套用到虛擬機器，並在套用原則之後，監視存放裝置叢集。  
 
 ### <a name="create-storage-qos-policies"></a>建立存放裝置 QoS 原則  
@@ -531,10 +531,10 @@ WinOltp1      7e2f3e73-1ae4-4710-8219-0769a4aba072        1500         250      
 WinOltp1      7e2f3e73-1ae4-4710-8219-0769a4aba072        6000        1000            4507  
 ```  
 
-## <a name="BKMK_KnownIssues"></a>如何識別及解決常見問題  
+## <a name="how-to-identify-and-address-common-issues"></a><a name="BKMK_KnownIssues"></a>如何識別及解決常見問題  
 本節說明如何尋找具有無效存放裝置 QoS 原則的虛擬機器、如何重新建立比對原則、如何從虛擬機器移除原則，以及如何識別不符合存放裝置 QoS 原則需求的虛擬機器。  
 
-### <a name="BKMK_FindingVMsWithInvalidPolicies"></a>識別具有無效原則的虛擬機器  
+### <a name="identify-virtual-machines-with-invalid-policies"></a><a name="BKMK_FindingVMsWithInvalidPolicies"></a>識別具有無效原則的虛擬機器  
 
 如果在從虛擬機器移除原則之前，先從檔案伺服器中刪除該原則，則虛擬機器將會繼續執行，就像未曾套用任何原則一樣。  
 
@@ -578,7 +578,7 @@ WinOltp1      UnknownPolicyId           0           0            4926 UnknownPol
 WinOltp1      UnknownPolicyId           0           0               0 UnknownPolicyId BOO...  
 ```  
 
-#### <a name="BKMK_RecreateMatchingPolicy"></a>重新建立符合的存放裝置 QoS 原則  
+#### <a name="recreate-a-matching-storage-qos-policy"></a><a name="BKMK_RecreateMatchingPolicy"></a>重新建立符合的存放裝置 QoS 原則  
 如果已在無意中移除原則，您可以使用舊的 PolicyId 建立一個新的原則。  首先，取得所需的 PolicyId  
 
 ```PowerShell
@@ -629,7 +629,7 @@ TR20-VMM          Ok          33         666              10     Ok BOOT.VHDX
 WinOltp1          Ok          25         500               0     Ok 9914.0.AMD64FRE.WINMA...  
 ```  
 
-#### <a name="BKMK_RemovePolicyFromVM"></a>移除存放裝置 QoS 原則  
+#### <a name="remove-storage-qos-policies"></a><a name="BKMK_RemovePolicyFromVM"></a>移除存放裝置 QoS 原則  
 
 如果已刻意移除原則，或者 VM 是使用您不再需要的原則所匯入，則可能會移除該原則。  
 
@@ -667,7 +667,7 @@ WinOltp1                0           0            1811     Ok IOMETER.VHDX
 WinOltp1                0           0               0     Ok BOOT.VHDX  
 ```  
 
-### <a name="BKMK_VMsThatDoNotMeetStorageQoSPoilicies"></a>尋找不符合存放裝置 QoS 原則的虛擬機器  
+### <a name="find-virtual-machines-that-are-not-meeting-storage-qos-policies"></a><a name="BKMK_VMsThatDoNotMeetStorageQoSPoilicies"></a>尋找不符合存放裝置 QoS 原則的虛擬機器  
 **InsufficientThroughput** 狀態會指派給任何符合下列情況的流程：  
 
 -   已由原則設定最小值定義的 IOPS；以及  
@@ -729,7 +729,7 @@ MaximumIops        : 20000
 MinimumIops        : 15000  
 ```  
 
-## <a name="BKMK_Health"></a>使用存放裝置 QoS 監視健全狀況  
+## <a name="monitor-health-using-storage-qos"></a><a name="BKMK_Health"></a>使用存放裝置 QoS 監視健全狀況  
 新的健全狀況服務可以簡化存放裝置叢集的監視，提供單一位置來檢查任一個節點中是否有任何可採取動作的事件。 本節說明如何使用 `debug-storagesubsystem` Cmdlet，來監視存放裝置叢集的健康情況。  
 
 ### <a name="view-storage-status-with-debug-storagesubsystem"></a>使用 Debug-StorageSubSystem 檢視存放裝置狀態  
@@ -823,7 +823,7 @@ while ($true)
 
 如果您有一個流程正達到原則的最大值且您變更了該原則以使其變得更高或更低，而您接著立即使用 PowerShell Cmdlet 來判斷流程的延遲/IOPS/頻寬，則最多需要 5 分鐘，才能顯示在流程上變更原則的完整效果。  新的限制會在幾秒鐘內生效，但 **Get-StorgeQoSFlow** PowerShell Cmdlet 會利用一個 5 分鐘的滑動視窗來使用每個計數器的平均值。  否則，如果它目前正在顯示值，而您在某一列中多次執行 PowerShell Cmdlet，則您可能會看到截然不同的值，因為適用於 IOPS 和延遲的值在每秒之間都會呈現大幅波動。
 
-### <a name="BKMK_Updates"></a>Windows Server 2016 中新增了哪些新功能
+### <a name="what-new-functionality-was-added-in-windows-server-2016"></a><a name="BKMK_Updates"></a>Windows Server 2016 中新增了哪些新功能
 
 在 Windows Server 2016 中，已將存放裝置 QoS 原則類型名稱重新命名。  **Multi-instance** 原則類型已重新命名為**專用**，而 **Single-instance** 已重新命名為**彙總**。 同時也修改了專用原則的管理行為 - 相同虛擬機器中已將相同**專用**原則套用到其中的 VHD/VHDX 檔案將不會共用 I/O 配置。  
 
@@ -885,7 +885,7 @@ IOPSNormalizationSize
 32768  
 ```    
 
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
 - [Windows Server 2016](../../get-started/windows-server-2016.md)  
 - [Windows Server 2016 中的儲存體複本](../storage-replica/storage-replica-overview.md)  
 - [Windows Server 2016 中的儲存空間直接存取](../storage-spaces/storage-spaces-direct-overview.md)  

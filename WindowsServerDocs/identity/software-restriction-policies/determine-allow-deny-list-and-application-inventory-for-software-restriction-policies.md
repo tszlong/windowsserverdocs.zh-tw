@@ -1,28 +1,24 @@
 ---
 title: 決定軟體限制原則的允許拒絕清單和應用程式清查
 description: Windows Server 安全性
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-software-restriction-policies
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0abb73b6-b5d8-4505-8ab1-2f29e4bf0411
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 4ddea6daeb2150bd9fd3131a8457a6a4b408cfc3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7609ebb0fdcb6d429cd40d99399eaaedb732df08
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357665"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855091"
 ---
 # <a name="determine-allow-deny-list-and-application-inventory-for-software-restriction-policies"></a>決定軟體限制原則的允許拒絕清單和應用程式清查
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 本主題適用于 IT 專業人員，提供如何建立應用程式的允許和拒絕清單，以供從 Windows Server 2008 和 Windows Vista 開始的軟體限制原則（SRP）管理。
 
@@ -37,8 +33,8 @@ ms.locfileid: "71357665"
 
 -   [使用軟體限制原則來協助保護您的電腦免于電子郵件病毒](use-software-restriction-policies-to-help-protect-your-computer-against-an-email-virus.md)
 
-### <a name="what-default-rule-to-choose-allow-or-deny"></a>要選擇的預設規則：允許或拒絕
-軟體限制原則可以部署為預設規則基礎的兩種模式之一：允許清單或拒絕清單。 您可以建立一個原則來識別允許在環境中執行的每個應用程式;原則內的預設規則是受限制的，而且會封鎖您未明確允許執行的所有應用程式。 或者，您可以建立一個原則來識別每個無法執行的應用程式;預設規則是 [不受限制]，而且只會限制您已明確列出的應用程式。
+### <a name="what-default-rule-to-choose-allow-or-deny"></a>要選擇的預設規則： [允許] 或 [拒絕]
+軟體限制原則可以部署為預設規則基礎的兩種模式之一： [允許清單] 或 [拒絕清單]。 您可以建立一個原則來識別允許在環境中執行的每個應用程式;原則內的預設規則是受限制的，而且會封鎖您未明確允許執行的所有應用程式。 或者，您可以建立一個原則來識別每個無法執行的應用程式;預設規則是 [不受限制]，而且只會限制您已明確列出的應用程式。
 
 > [!IMPORTANT]
 > [拒絕清單] 模式可能是您的組織關於應用程式控制的高維護策略。 建立和維護妨礙所有惡意程式碼和其他有問題之應用程式的不斷進化清單會很耗時，而且容易發生錯誤。
@@ -52,9 +48,9 @@ ms.locfileid: "71357665"
 
 2.  建立下列登錄值，以啟用 advanced 記錄功能，並將路徑設定為應該寫入記錄檔的位置。
 
-    **"HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Safer\ CodeIdentifiers"**
+    **"HKEY_LOCAL_MACHINE \SOFTWARE\Policies\Microsoft\Windows\Safer\ CodeIdentifiers"**
 
-    字串值：*NameLogFile 的 NameLogFile 路徑*
+    字串值： *NameLogFile 至 NameLogFile 的路徑*
 
     因為 SRP 會在執行時評估所有的應用程式，所以每次執行應用程式時，都會將專案寫入記錄檔*NameLogFile* 。
 

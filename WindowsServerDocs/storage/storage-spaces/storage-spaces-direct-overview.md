@@ -2,7 +2,7 @@
 title: 儲存空間直接存取概觀
 ms.prod: windows-server
 ms.author: cosdar
-ms.manager: dongill
+manager: dongill
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
@@ -10,18 +10,18 @@ ms.date: 06/26/2019
 ms.assetid: 8bd0d09a-0421-40a4-b752-40ecb5350ffd
 description: 概述儲存空間直接存取，這是 Windows Server 的一項功能，可讓您將具有內部存放裝置的伺服器叢集為軟體定義的儲存體解決方案。
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e47adcebf7da87e9d3c96812f5d7d90ca00601b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b032d286398b3c1719d290ca83da8bbc9c6b9f85
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402838"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859131"
 ---
 # <a name="storage-spaces-direct-overview"></a>儲存空間直接存取概觀
 
 >適用于： Windows Server 2019、Windows Server 2016
 
-儲存空間直接存取會使用業界標準的伺服器搭配本機連接的磁碟機，以比傳統 SAN 或 NAS 陣列更少的成本來建立高可用性、高延展性的軟體定義存放裝置。 其交集或超融合式架構會大幅簡化採購和部署，而快取、儲存層和抹除編碼等功能，以及最新的硬體革新（如 RDMA 網路和 NVMe 磁片磁碟機）提供無可匹敵的效率和效能。
+儲存空間直接存取會使用業界標準的伺服器搭配本機連接的磁碟機，以比傳統 SAN 或 NAS 陣列更少的成本來建立高可用性、高延展性的軟體定義存放裝置。 其交集或超融合式架構會大幅簡化採購和部署，而快取、儲存層和抹除編碼等功能以及最新的硬體革新（如 RDMA 網路和 NVMe 磁片磁碟機）則提供無可匹敵的效率和效能。
 
 儲存空間直接存取包含在 Windows Server 2019 Datacenter、Windows Server 2016 Datacenter 和[Windows Server Insider Preview 組建](https://insider.windows.com/for-business-getting-started-server/)中。 
 
@@ -33,7 +33,7 @@ ms.locfileid: "71402838"
 | **部署**<br><ul><li>[部署儲存空間直接存取](deploy-storage-spaces-direct.md)</li><li>[建立磁碟區](create-volumes.md)</li><li>[巢狀復原](nested-resiliency.md)</li><li>[設定仲裁](../../failover-clustering/manage-cluster-quorum.md)</li><li>[將儲存空間直接存取叢集升級到 Windows Server 2019](upgrade-storage-spaces-direct-to-windows-server-2019.md)</li><li>[了解和部署持續性記憶體](deploy-pmem.md)</li> | **管理**<br><ul><li>[使用 Windows Admin Center 管理](../../manage/windows-admin-center/use/manage-hyper-converged.md)</li><li>[新增伺服器或磁碟機](add-nodes.md)</li><li>[使伺服器離線以進行維護](maintain-servers.md)</li><li>[移除伺服器](remove-servers.md)</li><li>[延伸磁碟區](resize-volumes.md)</li><li>[刪除磁碟區](delete-volumes.md)</li><li>[更新磁碟機韌體](../update-firmware.md)</li><li>[效能歷程記錄](performance-history.md)</li><li>[限定磁碟區配置](delimit-volume-allocation.md)</li><li>[在超融合式叢集上使用 Azure 監視器](configure-azure-monitor.md)</li> |
 | **疑難排解**<br><ul><li>[疑難排解案例](troubleshooting-storage-spaces.md)</li><li>[針對健全狀況和操作狀態進行疑難排解](storage-spaces-states.md)</li><li>[使用儲存空間直接存取收集診斷資料](data-collection.md)</li><li>[存放裝置類別記憶體健康情況管理](Storage-class-memory-health.md)</li> | **近期的 blog 文章**<br><ul><li>[13700000 IOPS 與儲存空間直接存取：超融合式基礎結構的新產業記錄](https://blogs.technet.microsoft.com/filecab/2018/10/30/windows-server-2019-and-intel-optane-dc-persistent-memory/)</li><li>[Windows Server 2019 中的超融合式基礎結構-計時時鐘現在已啟動！](https://blogs.technet.microsoft.com/filecab/2018/10/02/hci-the-countdown-clock-starts-now/)</li><li>[Windows Server 高峰的五大宣告](https://blogs.technet.microsoft.com/filecab/2018/06/27/windows-server-summit-recap)</li><li>[10000儲存空間直接存取叢集和計數 .。。](https://blogs.technet.microsoft.com/filecab/2018/03/27/storage-spaces-direct-momentum/)</li> |
 
-## <a name="videos"></a>影片
+## <a name="videos"></a>Videos
 
 **快速影片總覽（5分鐘）**
 
@@ -66,7 +66,7 @@ ms.locfileid: "71402838"
 
 儲存空間直接存取是為兩個不同的部署選項而設計：
 
-### <a name="converged"></a>交集
+### <a name="converged"></a>已交集
 
 **在不同的叢集中儲存和計算。** 交集的部署選項 (也就是「分離式」) 會在儲存空間直接存取上方設定向外延展檔案伺服器 (SoFS) 層，以便透過 SMB3 檔案共用提供網路連接的儲存空間。 這樣就能為從存放裝置叢集獨立出來的電腦/工作負載調整範圍，對於 Hyper-V IaaS (基礎結構即服務) 等適用於服務提供者和企業的大規模部署非常重要。
 
@@ -120,16 +120,16 @@ ms.locfileid: "71402838"
 
 | 名稱 | 圖形化或命令列？ | 付費或包含？ |
 |-----------------|----------------------------|-------------------|
-| [Windows Admin Center](../../manage/windows-admin-center/overview.md)     | 拖放式    | 內含 |
-| 伺服器管理員 & 容錯移轉叢集管理員                                 | 拖放式    | 內含 |
-| Windows PowerShell                                                        | 命令列 | 內含 |
-| [System Center Virtual Machine Manager （SCVMM）](https://technet.microsoft.com/system-center-docs/vmm/manage/manage-storage-spaces-direct-vmm) <br>& [Operations Manager （SCOM）](https://www.microsoft.com/download/details.aspx?id=54700) | 拖放式    | 付費     |
+| [Windows Admin Center](../../manage/windows-admin-center/overview.md)     | 拖放式    | 已併入 |
+| 伺服器管理員 & 容錯移轉叢集管理員                                 | 拖放式    | 已併入 |
+| Windows PowerShell                                                        | 命令列 | 已併入 |
+| [System Center Virtual Machine Manager （SCVMM）](https://technet.microsoft.com/system-center-docs/vmm/manage/manage-storage-spaces-direct-vmm) <br>& [Operations Manager （SCOM）](https://www.microsoft.com/download/details.aspx?id=54700) | 拖放式    | 已付     |
 
-## <a name="get-started"></a>立即開始
+## <a name="get-started"></a>開始使用
 
 [在 Microsoft Azure 中](https://blogs.technet.microsoft.com/filecab/2016/05/05/s2dazuretp5/)，立即試用儲存空間直接存取，或從 [Windows Server 評估版](https://go.microsoft.com/fwlink/?linkid=842602)下載 Windows Server 的 180 天授權評估版。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 - [容錯與儲存空間效率](storage-spaces-fault-tolerance.md)
 - [儲存體複本](../storage-replica/storage-replica-overview.md)

@@ -2,22 +2,18 @@
 title: 規劃啟用 DirectAccess
 description: 本主題是將 DirectAccess 新增至 Windows Server 2016 的現有遠端存取（VPN）部署指南的一部分
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 458a3bcf-50b6-47b2-b53c-1b8204c5189e
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 3886e8e5203a5374ee0686340063a38aacb0e931
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 61e1f4eb75a9d512553abf6c3d75858cfdbbda96
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314755"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854053"
 ---
 # <a name="plan-to-enable-directaccess"></a>規劃啟用 DirectAccess
 

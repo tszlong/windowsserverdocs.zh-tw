@@ -1,7 +1,6 @@
 ---
 ms.assetid: eb778f63-f7be-438e-8c5e-1fd9b194b967
 title: 網頁 SSO 設計
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: d7f52cd36588a1e5de4536a760c38c147dd1e003
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 47c946ac617cc64c224c1bc3153fcaf55c2d069c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407837"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858511"
 ---
 # <a name="web-sso-design"></a>網頁 SSO 設計
 
@@ -30,5 +29,5 @@ ms.locfileid: "71407837"
   
 如需可用來規劃和部署網頁 SSO 設計的詳細工作清單，請參閱＜ [Checklist: Implementing a Web SSO Design](../../ad-fs/deployment/Checklist--Implementing-a-Web-SSO-Design.md)＞。  
   
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 [Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

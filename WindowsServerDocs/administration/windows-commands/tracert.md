@@ -1,28 +1,24 @@
 ---
 title: tracert
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: Tracert 的 Windows 命令主題，會藉由將網際網路控制訊息通訊協定（ICMP）回顯要求或 ICMPv6 訊息傳送至目的地，並以累加方式增加存留時間（TTL）域值，來決定目的地所採用的路徑。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9032a032-2e5e-49d4-9e86-f821600e4ba6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f08fd3276f3377fed06d7b9a2cc3399fa1071f39
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a4485763aecf46aa91664c6a6a42c437be518f02
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385652"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80832641"
 ---
 # <a name="tracert"></a>tracert
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 藉由將網際網路控制訊息通訊協定（ICMP） echo 要求或 ICMPv6 訊息傳送至目的地，並以累加方式增加存留時間（TTL）域值，來決定目的地所採用的路徑。 顯示的路徑是來源主機與目的地之間路徑中路由器的近/端路由器介面清單。 近端介面是最接近路徑中傳送主機的路由器介面。 使用時不含參數，tracert 會顯示說明。   
 
@@ -30,7 +26,7 @@ ms.locfileid: "71385652"
 ```  
 tracert [/d] [/h <MaximumHops>] [/j <Hostlist>] [/w <timeout>] [/R] [/S <Srcaddr>] [/4][/6] <TargetName>  
 ```  
-### <a name="parameters"></a>參數  
+#### <a name="parameters"></a>參數  
 |參數|描述|  
 |-------|--------|  
 |/d|防止**tracert**嘗試將中繼路由器的 IP 位址解析為其名稱。 這可以加速顯示**tracert**結果。|  
@@ -49,7 +45,7 @@ tracert [/d] [/h <MaximumHops>] [/j <Hostlist>] [/w <timeout>] [/R] [/S <Srcaddr
 -   若要追蹤路徑，並針對路徑中的每個路由器和連結提供網路延遲和封包遺失，請使用**pathping**命令。  
 -   只有當網際網路通訊協定（TCP/IP）通訊協定是在網路連線的網路介面卡內容中安裝為元件時，才可以使用此命令。  
 
-## <a name="BKMK_Examples"></a>典型  
+## <a name="examples"></a><a name=BKMK_Examples></a>典型  
 若要追蹤名為 corp7.microsoft.com 之主機的路徑，請輸入：  
 ```  
 tracert corp7.microsoft.com  
@@ -63,4 +59,4 @@ tracert /d corp7.microsoft.com
 tracert /j 10.12.0.1 10.29.3.1 10.1.44.1 corp7.microsoft.com  
 ```  
 ## <a name="additional-references"></a>其他參考資料  
--   [命令列語法關鍵](command-line-syntax-key.md)  
+-   - [命令列語法關鍵](command-line-syntax-key.md)  

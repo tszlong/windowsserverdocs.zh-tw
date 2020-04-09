@@ -1,28 +1,24 @@
 ---
 title: 建立金鑰發佈服務 KDS 根金鑰
 description: Windows Server 安全性
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-gmsa
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 42e5db8f-1516-4d42-be0a-fa932f5588e9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: fd335d61eae7cf753d09436d54f14c7d6004d643
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d26cd32f021e8b00c6c9c6d3949a00f71096a3c9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386899"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857011"
 ---
 # <a name="create-the-key-distribution-services-kds-root-key"></a>建立金鑰發佈服務 KDS 根金鑰
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題適用于 IT 專業人員，說明如何使用 Windows PowerShell 在網域控制站上建立 Microsoft 金鑰發佈服務（kdssvc）根金鑰，以在 Windows Server 2012 或更新版本中產生群組受管理的服務帳戶密碼。
 

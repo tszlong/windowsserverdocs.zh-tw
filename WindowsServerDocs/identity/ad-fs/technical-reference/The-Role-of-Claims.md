@@ -1,7 +1,6 @@
 ---
 ms.assetid: 22f53391-8c6a-4873-a1f4-08b4760ea621
 title: 宣告的角色
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 851a70bbed606530ca8292f65bc4f776eae77fae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2477152231489e309fc48fd57d38e09a9bf658eb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407343"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860171"
 ---
 # <a name="the-role-of-claims"></a>宣告的角色
 在以宣告\-為基礎的身分識別模型中，宣告會在同盟程式中扮演 pivotal 角色，這些是用來決定所有 Web\-型驗證和授權要求結果的主要元件。 此模型可讓組織以標準化方式跨安全性與企業界限安全地投射數位身分識別與權限或「宣告」。  
@@ -53,14 +52,14 @@ Active Directory 同盟服務 \(AD FS\) 中的同盟服務會定義同盟夥伴�
 |名稱|描述|URI|  
 |--------|---------------|-------|  
 |電子\-郵寄地址|使用者的電子\-郵寄地址|HTTP：\/\/schemas.xmlsoap.org\/ws\/2005\/05\/身分識別\/宣告\/emailaddress|  
-|名字|使用者的名字|HTTP：\/\/schemas.xmlsoap.org\/ws\/2005\/05\/身分識別\/宣告\/givenname|  
+|名稱|使用者的名字|HTTP：\/\/schemas.xmlsoap.org\/ws\/2005\/05\/身分識別\/宣告\/givenname|  
 |名稱|使用者的唯一名稱|HTTP：\/\/schemas.xmlsoap.org\/ws\/2005\/05\/身分識別\/宣告\/名稱|  
 |UPN|使用者的使用者主體名稱 \(UPN\)|HTTP：\/\/schemas.xmlsoap.org\/ws\/2005\/05\/身分識別\/宣告\/upn|  
 |一般名稱|使用者的一般名稱。|HTTP：\/\/schemas.xmlsoap.org\/宣告\/CommonName|  
 |AD FS 1. x E\-郵寄地址|與 AD FS 1.1 或 ADFS 1.0 交互操作時，使用者的電子\-郵寄地址|HTTP：\/\/schemas.xmlsoap.org\/宣告\/EmailAddress|  
 |群組|使用者所屬的群組|HTTP：\/\/schemas.xmlsoap.org\/宣告\/群組|  
 |AD FS 1.x UPN|與 AD FS 1.1 或 ADFS 1.0 搭配使用時的使用者 UPN|HTTP：\/\/schemas.xmlsoap.org\/宣告\/UPN|  
-|Role|使用者擁有的角色|HTTP：\/\/schemas.microsoft.com\/ws\/2008\/06\/身分識別\/宣告\/角色|  
+|[角色]|使用者擁有的角色|HTTP：\/\/schemas.microsoft.com\/ws\/2008\/06\/身分識別\/宣告\/角色|  
 |姓氏|使用者的姓氏|HTTP：\/\/schemas.xmlsoap.org\/ws\/2005\/05\/身分識別\/宣告\/姓氏|  
 |PPID|使用者的私人識別碼|HTTP：\/\/schemas.xmlsoap.org\/ws\/2005\/05\/身分識別\/宣告\/privatepersonalidentifier|  
 |名稱識別碼|使用者的 SAML 名稱識別碼|HTTP：\/\/schemas.xmlsoap.org\/ws\/2005\/05\/身分識別\/宣告\/nameidentifier|  

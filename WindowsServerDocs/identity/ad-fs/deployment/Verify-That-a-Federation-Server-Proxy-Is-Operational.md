@@ -1,7 +1,6 @@
 ---
 ms.assetid: d555041a-709e-42c7-920a-8dfd2c7e0488
 title: 驗證同盟伺服器 Proxy 運作正常
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 24f4fe2a152244dc904be82c4c10abe71abffcc4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3e74af4a63476040ca44522ceb7c0ae22e914fec
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359975"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855851"
 ---
 # <a name="verify-that-a-federation-server-proxy-is-operational"></a>驗證同盟伺服器 Proxy 運作正常
 
@@ -24,7 +23,7 @@ ms.locfileid: "71359975"
 > [!IMPORTANT]  
 > 此測試的結果是在同盟伺服器 Proxy 電腦上的事件檢視器中成功產生特定事件。  
   
-若要完成此程序，至少需要本機電腦上之 **Administrators** 群組的成員資格或同等權限。  請參閱[本機與網域的預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中關於使用適當帳戶和群組成員資格的詳細資料。   
+若要完成此程序，至少需要本機電腦之 **Administrators** 群組的成員資格或同等權限。  請參閱[本機與網域的預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中關於使用適當帳戶和群組成員資格的詳細資料。   
   
 ### <a name="to-verify-that-a-federation-server-proxy-is-operational"></a>若要驗證同盟伺服器 proxy 是否可運作  
   
@@ -34,7 +33,7 @@ ms.locfileid: "71359975"
   
 3.  在詳細資料窗格中，\-按兩下 [**應用程式及服務記錄**檔]，再\-按兩下 [ **AD FS 事件**]，然後按一下 [系統**管理員**]。  
   
-4.  在 **[事件識別碼]** 欄中，尋找事件識別碼 198。  
+4.  在 [事件識別碼] 欄位中，搜尋事件識別碼 198。  
   
     如果同盟伺服器 proxy 設定正確，您會在事件檢視器的應用程式記錄檔中看到新的事件，且事件識別碼為198。 這個事件會確認同盟伺服器 proxy 服務是否已成功啟動，且現在已上線。  
   

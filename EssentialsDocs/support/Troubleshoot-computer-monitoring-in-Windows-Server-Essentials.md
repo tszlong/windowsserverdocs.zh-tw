@@ -1,23 +1,19 @@
 ---
 title: Windows Server Essentials 中的電腦監視問題疑難排解
 description: 說明如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f1e6b377-4a24-4d28-9b25-05910914826b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 968c8c82bfde350e631f1f6ae4830a4fd920aa4b
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 5e2c8706c29e63a74d637e4a2c072d0ffa0a56d5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318601"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852201"
 ---
 # <a name="troubleshoot-computer-monitoring-in-windows-server-essentials"></a>Windows Server Essentials 中的電腦監視問題疑難排解
 

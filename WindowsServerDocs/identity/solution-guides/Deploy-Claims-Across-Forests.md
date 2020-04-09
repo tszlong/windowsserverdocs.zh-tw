@@ -1,7 +1,6 @@
 ---
 ms.assetid: ceb9ce18-5a94-4166-9edd-2685b81fc15f
 title: 跨樹系部署宣告
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 21ddcbd3b71a8d623950f1600b654e04ecc41f1e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 99af1022870c891c75bb2008f57e8d8e171961ff
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357575"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861231"
 ---
 # <a name="deploy-claims-across-forests"></a>跨樹系部署宣告
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 在 Windows Server 2012 中，宣告類型是與相關聯之物件的判斷提示。 宣告類型會依據 Active Directory 中的每個樹系而定義。 在許多情況下，安全性主體都可能需要周遊信任邊界，以存取信任樹系中的資源。 Windows Server 2012 中的跨樹系宣告轉換，可讓您轉換可遍歷樹系的輸出和輸入宣告，以便在信任和受信任的樹系中辨識和接受宣告。 以下是宣告轉換的部分實際案例：  
   
@@ -49,12 +48,12 @@ ms.locfileid: "71357575"
   
 -   [宣告轉換規則語言](Claims-Transformation-Rules-Language.md)  
   
-## <a name="BKMK_NEW"></a>此案例中包含的角色和功能  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>此案例中包含的角色和功能  
 下表列出這個案例中的角色與功能，並說明它們如何支援這個案例。  
   
 |角色/功能|如何支援本案例|  
 |-----------------|---------------------------------|  
-|Active Directory Domain Services|在此案例中，您必須設定兩個具有雙向信任的 Active Directory 樹系。 您在兩個樹系中都有宣告。 您也必須在資源所在的信任樹系上設定集中存取原則。|  
+|Active Directory 網域服務|在此案例中，您必須設定兩個具有雙向信任的 Active Directory 樹系。 您在兩個樹系中都有宣告。 您也必須在資源所在的信任樹系上設定集中存取原則。|  
 |檔案和存放服務角色|在此案例中，資料分類會套用到檔案伺服器上的資源。 集中存取原則會套用到您要授與使用者存取權的資料夾。 在轉換之後，宣告會根據檔案伺服器上的資料夾所套用的集中存取原則，為使用者授與資源的存取權。|  
   
 

@@ -1,6 +1,5 @@
 ---
 title: Active Directory 同盟服務和憑證金鑰規格屬性資訊
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.prod: windows-server
 ms.assetid: a5307da5-02ff-4c31-80f0-47cb17a87272
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 51c9828cfe494c68422f4985e5b17113020c8414
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e3ddc427d84a79d831c61cad8087dbfa1d3fb564
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407414"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860241"
 ---
 # <a name="ad-fs-and-certificate-keyspec-property-information"></a>AD FS 和憑證 KeySpec 屬性資訊
 金鑰規格（"KeySpec"）是與憑證和金鑰相關聯的屬性。 它會指定與憑證相關聯的私密金鑰是否可以用於簽署、加密或兩者。   
@@ -42,7 +41,7 @@ ms.locfileid: "71407414"
 ## <a name="what-causes-the-problem"></a>造成問題的原因
 KeySpec 屬性會識別 Microsoft CryptoAPI （CAPI）從 Microsoft 舊版密碼編譯儲存提供者（CSP）所產生或取出的金鑰如何使用。
 
-KeySpec 值**1**（或**AT_KEYEXCHANGE**）可用於簽署和加密。  值**2**（或**AT_SIGNATURE**）僅用於簽署。
+KeySpec 值**1**（或**AT_KEYEXCHANGE**）可用於簽署和加密。  值為**2**或**AT_SIGNATURE**，僅用於簽署。
 
 最常見的 KeySpec 錯誤設定是針對權杖簽署憑證以外的憑證使用2的值。  
 
@@ -53,14 +52,14 @@ KeySpec 值**1**（或**AT_KEYEXCHANGE**）可用於簽署和加密。  值**2**
 ### <a name="example"></a>範例
 舊版 CSP 的範例是 Microsoft 增強型密碼編譯提供者。 
 
-Microsoft RSA CSP 金鑰 blob 格式包括分別是**CALG_RSA_KEYX**或**CALG_RSA_SIGN**的演算法識別碼，以服務<strong>AT_KEYEXCHANGE * * 或 * * AT_SIGNATURE</strong>金鑰的要求。
+Microsoft RSA CSP 金鑰 blob 格式包括分別**CALG_RSA_KEYX**或**CALG_RSA_SIGN**的演算法識別碼，以服務<strong>AT_KEYEXCHANGE * * 或 * * AT_SIGNATURE</strong>金鑰的要求。
 
 RSA 金鑰演算法識別碼會對應至 KeySpec 值，如下所示
 
 | 提供者支援的演算法| CAPI 呼叫的金鑰規格值 |
 | --- | --- |
-|CALG_RSA_KEYX :可用於簽署和解密的 RSA 金鑰| AT_KEYEXCHANGE （或 KeySpec = 1）|
-CALG_RSA_SIGN :僅限 RSA 簽章金鑰 |AT_SIGNATURE （或 KeySpec = 2）|
+|CALG_RSA_KEYX：可用於簽署和解密的 RSA 金鑰| AT_KEYEXCHANGE （或 KeySpec = 1）|
+CALG_RSA_SIGN：僅限 RSA 簽章金鑰 |AT_SIGNATURE （或 KeySpec = 2）|
 
 ## <a name="keyspec-values-and-associated-meanings"></a>KeySpec 值和相關聯的意義
 以下是各種 KeySpec 值的意義：
@@ -78,11 +77,11 @@ CALG_RSA_SIGN :僅限 RSA 簽章金鑰 |AT_SIGNATURE （或 KeySpec = 2）|
 
 ![Keyspec cert](media/AD-FS-and-KeySpec-Property/keyspec1.png)
 
-在 CERT_KEY_PROV_INFO_PROP_ID 下尋找兩件事：
+在 CERT_KEY_PROV_INFO_PROP_ID 會尋找兩件事：
 
 
 1. **ProviderType：** 這表示憑證是否使用舊版的密碼編譯儲存提供者（CSP），或以較新的憑證新一代（CNG） api 為基礎的金鑰儲存提供者。  任何非零值表示舊版提供者。
-2. **KeySpec**以下是 AD FS 憑證的有效 KeySpec 值：
+2. **KeySpec：** 以下是 AD FS 憑證的有效 KeySpec 值：
 
    舊版 CSP 提供者（ProviderType 不等於0）：
 
@@ -108,7 +107,7 @@ CALG_RSA_SIGN :僅限 RSA 簽章金鑰 |AT_SIGNATURE （或 KeySpec = 2）|
 3. 針對每個 AD FS 和 WAP 伺服器執行下列步驟
     1. 刪除憑證（從 AD FS/WAP 伺服器）
     2. 開啟提升許可權的 PowerShell 命令提示字元，並使用下列 Cmdlet 語法，在每個 AD FS 和 WAP 伺服器上匯入 PFX 檔案，並指定 AT_KEYEXCHANGE 值（適用于所有 AD FS 憑證用途）：
-        1. C： \>certutil – importpfx certfile .pfx AT_KEYEXCHANGE
+        1. C：\>certutil – importpfx certfile .pfx AT_KEYEXCHANGE
         2. 輸入 PFX 密碼
     3. 上述步驟完成後，請執行下列動作
         1. 檢查私密金鑰許可權

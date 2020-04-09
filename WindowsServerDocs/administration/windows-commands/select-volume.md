@@ -1,28 +1,24 @@
 ---
 title: select volume
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5d70d776-80ad-4f20-8288-a7997fb1df28
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cc981131c8de2dc4534e390645ef45c39a7b02ab
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b9337d7e4b37adcc22084249e53fb272335bf4f3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371059"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834701"
 ---
 # <a name="select-volume"></a>select volume
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 選取指定的磁片區，並將焦點移至其上。 此命令也可以用來顯示目前在所選磁片中具有焦點的磁片區。  
   
@@ -34,7 +30,7 @@ ms.locfileid: "71371059"
 select volume={<n>|<d>}  
 ```  
   
-## <a name="parameters"></a>參數  
+### <a name="parameters"></a>參數  
   
 | 參數 |                                                                               描述                                                                                |
 |-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -51,7 +47,7 @@ select volume={<n>|<d>}
   
 -   如果選取的資料分割具有對應的磁片區，則會自動選取該磁片區。  
   
-## <a name="BKMK_examples"></a>典型  
+## <a name="examples"></a><a name=BKMK_examples></a>典型  
 若要將焦點移到第2卷，請輸入：  
   
 ```  
@@ -64,7 +60,7 @@ select volume=2
 select volume=c  
 ```  
   
-若要將焦點移至名為 "mountpath" 的資料夾上所裝載的磁片區，請輸入：  
+若要將焦點移至名為 mountpath 之資料夾上掛接的磁片區，請輸入：  
   
 ```  
 select volume=c:\mountpath  
@@ -76,8 +72,8 @@ select volume=c:\mountpath
 select volume  
 ```  
   
-#### <a name="additional-references"></a>其他參考  
-[命令列語法關鍵](command-line-syntax-key.md)  
+## <a name="additional-references"></a>其他參考資料  
+- [命令列語法關鍵](command-line-syntax-key.md)  
   
 
   

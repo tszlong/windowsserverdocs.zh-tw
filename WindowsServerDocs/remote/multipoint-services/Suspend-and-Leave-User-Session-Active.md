@@ -1,24 +1,20 @@
 ---
 title: 暫停使用者工作階段並保持使用中
 description: 瞭解如何在不中斷連線的情況下，從 MultiPoint 會話暫停使用者
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5263bce3-fe92-4398-8393-2e3a4e05d530
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 0ef9d98584df568438cc3c905a7c86cd58f53343
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2d2771fd60f4d8c11c602a4c5d55f3b5ae2d8b11
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394933"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861621"
 ---
 # <a name="suspend-and-leave-user-session-active"></a>暫停使用者工作階段並保持使用中
 當您不想要結束使用者的會話時，可以中斷連線或暫停 MultiPoint 服務系統的使用者。 使用者也可以自行中斷工作階段連線，而不是由您為他們中斷工作階段連線。 當使用者會話暫停時，會話會在 MultiPoint 服務系統的電腦記憶體中保持作用中狀態，直到電腦關機或重新開機為止。 此時，所有暫停的工作階段會結束，並將遺失所有未儲存的工作。  

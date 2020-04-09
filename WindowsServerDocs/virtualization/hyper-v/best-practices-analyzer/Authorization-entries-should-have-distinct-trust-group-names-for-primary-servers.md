@@ -2,20 +2,19 @@
 title: 對於具有不屬於相同信任群組之虛擬機器的主伺服器，授權專案應具有不同的信任組名
 description: 此最佳做法分析程式規則的線上版本文字。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 8827a3a7-9f3c-4f51-826a-8e2ec43e01df
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: ab71e0e6562b73d81b871914fd0e9e76570c518e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 22e1a3bdeb40c5440862b4931dda344756cc34a5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366545"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857811"
 ---
 # <a name="authorization-entries-should-have-distinct-trust-group-names-for-primary-servers-with-virtual-machines-that-are-not-part-of-the-same-trust-group"></a>對於具有不屬於相同信任群組之虛擬機器的主伺服器，授權專案應具有不同的信任組名
 
@@ -28,7 +27,7 @@ ms.locfileid: "71366545"
 |**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
 |**低於**|警告|  
-|**類別**|設定|  
+|**類別**|組態|  
   
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   

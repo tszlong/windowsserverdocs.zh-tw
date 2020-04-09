@@ -1,7 +1,6 @@
 ---
 ms.assetid: 9eab8c43-a0f2-4d19-a5a4-e1399f0d5f25
 title: 決定資源夥伴的同盟應用程式策略
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 0cc7a9202813cd3f8d45a72305d13ad197f5b04d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b7b50d93ef09259cd6d1893eda4fd5c651b8e688
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359158"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853151"
 ---
 # <a name="determine-your-federated-application-strategy-in-the-resource-partner"></a>決定資源夥伴的同盟應用程式策略
 
@@ -40,6 +39,6 @@ ms.locfileid: "71359158"
   
 如需如何建立宣告\-感知 ASP.NET 應用程式或 WCF 服務的詳細資訊，請參閱[Windows Identity FOUNDATION SDK](https://go.microsoft.com/fwlink/?LinkId=122266)。  
   
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 [Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
 

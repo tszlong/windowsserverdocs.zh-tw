@@ -1,23 +1,19 @@
 ---
 title: 在 Windows Server Essentials 中建立連線
 description: 說明如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 05/07/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 149a5d34-43b7-4b9e-99e7-9f2294ab9ddb
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 14acbff8b538224546884e5bb51c40a22b8849b4
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 7591efcc896dd382afd50cf0e360e28e0cb08f3e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318558"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852151"
 ---
 # <a name="get-connected-in-windows-server-essentials"></a>在 Windows Server Essentials 中建立連線
 
@@ -448,7 +444,7 @@ ms.locfileid: "80318558"
     > [!NOTE]
     >  在執行 Windows 8 的電腦連線到伺服器後，第一次使用您的網路帳戶登入電腦時，會出現從舊的使用者帳戶移轉檔案和應用程式的指示。 請遵循 **[我要如何從我的舊使用者帳戶移轉檔案和應用程式?]** 頁面的指示，將所有檔案和應用程式移轉到網路使用者帳戶。  
 
-9. 電腦成功連線到伺服器後，連接器 TrayApp 和伺服器儀表板的快捷方式會出現在 [開始] 功能表上，其使用方式如下（如果您的電腦執行的是 Windows 8、Windows 8.1 或 Windows 10、儀表板和連接器TrayApp 將可從電腦的 [開始] 畫面取得）：  
+9. 電腦成功連線到伺服器之後，連接器 TrayApp 和伺服器儀表板的快捷方式會出現在 [開始] 功能表上，其可用方式如下（如果您的電腦執行的是 Windows 8、Windows 8.1 或 Windows 10，儀表板和連接器 TrayApp 將可從電腦的 [開始] 畫面取得）：  
 
     -   如果您的電腦執行的是 Windows 8、Windows 8.1 或 Windows 10，儀表板和連接器 TrayApp 將可作為應用程式進行搜尋。  
 

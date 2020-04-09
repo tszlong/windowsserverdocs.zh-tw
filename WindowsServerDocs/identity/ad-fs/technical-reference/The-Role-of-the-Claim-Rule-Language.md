@@ -1,6 +1,5 @@
 ---
 title: 宣告規則語言的角色
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,15 +8,15 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: dda9d148-d72f-4bff-aa2a-f2249fa47e4c
 ms.technology: identity-adfs
-ms.openlocfilehash: ff4c43bb8dc5582716638f0a3f6e4f6a8022aece
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 742e0ce781225303c623461439f8d4460fec97c9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407377"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860101"
 ---
 # <a name="the-role-of-the-claim-rule-language"></a>宣告規則語言的角色
-Active Directory 同盟服務（AD FS）宣告規則語言做為傳入和傳出宣告行為的系統管理建立區塊，而宣告引擎則是做為宣告規則語言中邏輯的處理引擎，定義自訂規則。 如需有關宣告引擎如何處理所有規則的詳細資訊，請參閱[宣告引擎的角色](The-Role-of-the-Claims-Engine.md)。  
+Active Directory 同盟服務（AD FS）宣告規則語言會作為傳入和傳出宣告行為的系統管理建立區塊，而宣告引擎會作為定義自訂規則之宣告規則語言中邏輯的處理引擎。 如需有關宣告引擎如何處理所有規則的詳細資訊，請參閱[宣告引擎的角色](The-Role-of-the-Claims-Engine.md)。  
 
 ## <a name="creating-custom-claim-rules-using-the-claim-rule-language"></a>使用宣告規則語言建立自訂宣告規則  
 AD FS 提供系統管理員定義自訂規則的選項，讓使用者可以使用宣告規則語言來判斷身分識別宣告的行為。 您可以使用本主題中的宣告規則語言語法範例來建立自訂規則，以便列舉、加入、刪除和修改宣告以符合您的組織需求。 您可以在 [使用自訂宣告傳送宣告] 規則範本中鍵入宣告規則語言語法，以建立自訂的規則。  

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 133474ee-316d-4b1c-acc6-ad5434a064d5
 title: 檢閱 DNS 概念
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 0a1ffe065991e76c91fa95a6ac080a8e8d54bcce
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 37c33ca181394c66ef149715c3f1477774061660
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408702"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822061"
 ---
 # <a name="reviewing-dns-concepts"></a>檢閱 DNS 概念
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 網域名稱系統（DNS）是代表命名空間的分散式資料庫。 命名空間包含任何用戶端查閱任何名稱所需的所有資訊。 任何 DNS 伺服器都可以回應其命名空間內任何名稱的查詢。 DNS 伺服器會透過下列其中一種方式來回答查詢：  
   

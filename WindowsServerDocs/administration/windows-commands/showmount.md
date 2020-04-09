@@ -1,24 +1,20 @@
 ---
 title: showmount
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: Showmount –的 Windows 命令主題，它會顯示裝載的目錄。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a6dd562e-e3bd-4ee6-be3b-6d29e29fd20e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e1d197072db93130de880b5ec52d1875720b1d26
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6fa61d47bb14cf21d93beec0a6e9257b9f66737b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383909"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834221"
 ---
 # <a name="showmount"></a>showmount
 
@@ -40,5 +36,5 @@ showmount {-e|-a|-d} <Server>
 - **\-a** -顯示所有的網路檔案系統 \(NFS\) 用戶端，以及每個已掛接之伺服器上的目錄。  
 - **\-d** -顯示伺服器上目前由 NFS 用戶端裝載的所有目錄。  
   
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
 [網路檔案系統服務命令參考資料](services-for-network-file-system-command-reference.md)  

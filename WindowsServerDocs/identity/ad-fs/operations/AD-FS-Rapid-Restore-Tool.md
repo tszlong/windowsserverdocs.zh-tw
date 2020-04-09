@@ -1,7 +1,6 @@
 ---
 ms.assetid: 4deff06a-d0ef-4e5a-9701-5911ba667201
 title: AD FS 快速還原工具
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 07/02/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2570aae52da2925a62dd6c9262af325fb5461fff
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: 506734812689a42ec17768652ac715f5c7e24401
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465262"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858101"
 ---
 # <a name="ad-fs-rapid-restore-tool"></a>AD FS 快速還原工具
 
@@ -79,7 +78,7 @@ import-module 'C:\Program Files (x86)\ADFS Rapid Recreation Tool\ADFSRapidRecrea
 
 - **BackupDKM** -備份 Active Directory DKM 容器，其中包含預設設定中的 AD FS 金鑰（自動產生的權杖簽署和解密憑證）。 這會使用 AD 工具 ' ldifde ' 來匯出 AD 容器和其所有的子樹。
 
-- -**StorageType &lt;字串&gt;** -使用者想要使用的儲存體類型。 "FileSystem" 表示使用者想要將它儲存在本機資料夾或網路 "Azure" 中，表示使用者想要在使用者執行備份時，將它儲存在 Azure 儲存體容器中，他們會選取備份位置，也就是檔案系統或形成. 若要使用 Azure，應將 Azure 儲存體認證傳遞至 Cmdlet。 儲存體認證包含帳戶名稱和金鑰。 此外，也必須傳入容器名稱。 如果容器不存在，則會在備份期間建立。 對於要使用的檔案系統，必須指定儲存路徑。 在該目錄中，將會為每個備份建立一個新的目錄。 所建立的每個目錄都會包含備份檔案。 
+- -**StorageType &lt;字串&gt;** -使用者想要使用的儲存體類型。 「檔案系統」表示使用者想要將它儲存在本機的資料夾或網路「Azure」中，表示當使用者執行備份時，使用者想要將它儲存在 Azure 儲存體容器中，他們會選取備份位置，也就是檔案系統或雲端。 若要使用 Azure，應將 Azure 儲存體認證傳遞至 Cmdlet。 儲存體認證包含帳戶名稱和金鑰。 此外，也必須傳入容器名稱。 如果容器不存在，則會在備份期間建立。 對於要使用的檔案系統，必須指定儲存路徑。 在該目錄中，將會為每個備份建立一個新的目錄。 所建立的每個目錄都會包含備份檔案。 
 
 - **EncryptionPassword &lt;字串&gt;** -在儲存之前用來加密所有備份檔案的密碼
 
@@ -117,7 +116,7 @@ Backup-ADFS -StorageType "Azure" -AzureConnectionCredentials $cred -AzureStorage
 
 ### <a name="backup-the-ad-fs-configuration-without-the-dkm-to-the-file-system"></a>將不具 DKM 的 AD FS 設定備份至檔案系統
 
-```powershell   
+```powershell     
 Backup-ADFS -StorageType "FileSystem" -StoragePath "C:\Users\administrator\testExport\" -EncryptionPassword "password" -BackupComment "Clean Install of ADFS (FS)"
 ```
 

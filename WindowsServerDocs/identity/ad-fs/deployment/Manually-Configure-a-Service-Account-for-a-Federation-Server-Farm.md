@@ -1,7 +1,6 @@
 ---
 ms.assetid: 5a1ae56b-adcb-447e-9e34-c0629d7cb241
 title: 手動設定同盟伺服器陣列的服務帳戶
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 8240903b3c446d4f02ca93dc053e520480f5e8ca
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c30215f5f8e39bb97452fccaaef8d1bb0469dc31
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359486"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855341"
 ---
 # <a name="manually-configure-a-service-account-for-a-federation-server-farm"></a>手動設定同盟伺服器陣列的服務帳戶
 
@@ -24,13 +23,13 @@ ms.locfileid: "71359486"
 > 從 AD FS 3.0 （Windows Server 2012 R2），AD FS 支援使用[群組受管理的服務帳戶](https://docs.microsoft.com/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview)\(gMSA\) 做為服務帳戶。  這是建議的選項，因為它不需要在一段時間內管理服務帳戶密碼。  本檔涵蓋使用傳統服務帳戶的替代案例，例如在仍執行 Windows Server 2008 R2 或更早版本網域功能等級的網域中，\(DFL\)。
 
 > [!NOTE]  
-> 針對整個同盟伺服器陣列，您必須只執行此程序中的工作一次。 之後，當您使用 [AD FS 同盟伺服器設定] Wizard 建立同盟伺服器時，必須在伺服器陣列中每部同盟伺服器的 [**服務帳戶**] [Wizard] 頁面上指定這個相同的帳戶。  
+> 針對整個同盟伺服器陣列，您必須只執行此程序中的工作一次。 稍後，當使用 AD FS 同盟伺服器組態精靈建立同盟伺服器時，您必須在伺服器陣列中每一部同盟伺服器的 [服務帳戶] 精靈頁面上指定這個相同帳戶。  
   
 #### <a name="create-a-dedicated-service-account"></a>建立專用服務帳戶  
   
 1.  在位於身分識別提供者組織的 Active Directory 樹系中，建立專用的使用者\/服務帳戶。 Kerberos 驗證通訊協定必須要有此帳戶，才能在伺服器陣列案例中使用，並允許在每部同盟伺服器上通過驗證來進行傳遞\-。 此帳戶僅適用于同盟伺服器陣列的用途。  
   
-2.  編輯使用者帳戶內容，然後選取 [密碼永久有效] 核取方塊。 此動作可確保此服務帳戶的功能不會因為網域密碼變更需求而中斷。  
+2.  編輯使用者帳戶內容，然後選取 [密碼永久有效] 核取方塊。 此動作可確保這個服務帳戶的運作不會因為網域密碼變更需求而遭到中斷。  
   
     > [!NOTE]  
     > 針對此專用帳戶使用 Network Service 帳戶將會導致隨機失敗 (當嘗試透過「Windows 整合式驗證」存取時)，因為 Kerberos 票證無法在伺服器之間彼此驗證。  

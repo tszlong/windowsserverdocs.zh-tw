@@ -1,22 +1,22 @@
 ---
 title: 使用主機金鑰證明初始化 HGS
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 92b8b61a2c940ed7ca2879f6639b11f4a92a694f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ea734d71a3872931a90f5add657491ecfa66c0cf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403614"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856621"
 ---
 # <a name="initialize-hgs-using-host-key-attestation"></a>使用主機金鑰證明初始化 HGS
 
->適用於：Windows Server Standard 2012 R2
+>適用于： Windows Server 2019
 
 此步驟取決於您是在新樹系或現有防禦樹系中初始化 HGS：
 

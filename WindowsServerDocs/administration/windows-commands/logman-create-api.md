@@ -1,28 +1,24 @@
 ---
 title: logman 建立 api
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2ecc0a75-2613-464a-8616-c5dc404bb736
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 512602213fcfd95770af0e27b721a589ed489771
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3beca5ddafcb1d4fbfc6fbe179e219553f7acaf8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374605"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840911"
 ---
 # <a name="logman-create-api"></a>logman 建立 api
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 建立 API 追蹤資料收集器。  
 
@@ -30,7 +26,7 @@ ms.locfileid: "71374605"
 ```  
 logman create api <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>參數  
+### <a name="parameters"></a>參數  
 
 |                    參數                     |                                                                               描述                                                                               |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -63,18 +59,18 @@ logman create api <[-n] <name>> [options]
 
 ## <a name="remarks"></a>備註  
 其中列出 [-]，此選項會有額外的否定。  
-## <a name="BKMK_examples"></a>典型  
-下列命令會針對可執行檔 c:\windows\notepad.exe 建立名為 trace_notepad 的 API 追蹤計數器，並將結果輸出到 file c:\notepad.etl。  
+## <a name="examples"></a><a name=BKMK_examples></a>典型  
+下列命令會針對可執行檔 c:\windows\notepad.exe 建立名為 trace_notepad 的 API 追蹤計數器，並將結果輸出至檔案 c:\notepad.etl。  
 ```  
 logman create api trace_notepad -exe c:\windows\notepad.exe -o c:\notepad.etl  
 ```  
-下列命令會建立名為 trace_notepad 的 API 追蹤計數器，以供可執行檔 c:\windows\notepad.exe 收集模組 c:\windows\system32\advapi32.dll. 所產生的值  
+下列命令會針對可執行檔 c:\windows\notepad.exe 收集模組 c:\windows\system32\advapi32.dll. 所產生的值，建立名為 trace_notepad 的 API 追蹤計數器  
 ```  
 logman create api trace_notepad -exe c:\windows\notepad.exe -mods c:\windows\system32\advapi32.dll  
 ```  
-下列命令會建立名為 trace_notepad 的 API 追蹤計數器，以作為 c:\windows\notepad.exe 模組 kernel32.dll 所產生之 API 呼叫 TlsGetValue 的可執行檔。  
+下列命令會針對可執行檔 c:\windows\notepad.exe 建立名為 trace_notepad 的 API 追蹤計數器，並排除模組 kernel32.dll 所產生的 API 呼叫 TlsGetValue。  
 ```  
 logman create api trace_notepad -exe c:\windows\notepad.exe -exapis kernel32.dll!TlsGetValue  
 ```  
-#### <a name="additional-references"></a>其他參考  
+## <a name="additional-references"></a>其他參考資料  
 [logman](logman.md)  

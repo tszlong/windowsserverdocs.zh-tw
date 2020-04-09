@@ -2,22 +2,18 @@
 title: 管理多個 Active Directory 樹系中的資源
 description: 本主題是 Windows Server 2016 中 IP 位址管理（IPAM）管理指南的一部分。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ipam
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 82f8f382-246e-4164-8306-437f7a019e0f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 9a3e58a3ca8ca5334996776644bfb2c3b19cbc2e
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: d86b93180708c772c052b242412bfdd1fc7e68c7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309592"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860651"
 ---
 # <a name="manage-resources-in-multiple-active-directory-forests"></a>管理多個 Active Directory 樹系中的資源
 

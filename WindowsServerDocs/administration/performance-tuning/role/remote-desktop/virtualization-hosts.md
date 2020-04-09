@@ -4,25 +4,25 @@ description: 遠端桌面虛擬主機的效能微調
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: HammadBu; VladmiS; denisgun
+ms.author: hammadbu; vladmis; denisgun
 author: phstee
 ms.date: 10/22/2019
-ms.openlocfilehash: 1b66f6404df5debee2a4c52ffc9166c8eabb9f81
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 2a0db4d890a01df13c44a9bb7adfbd13bebbdde0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947122"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851701"
 ---
 # <a name="performance-tuning-remote-desktop-virtualization-hosts"></a>效能微調遠端桌面虛擬主機
 
-遠端桌面虛擬主機（RD 虛擬主機）是支援虛擬桌面基礎結構（VDI）案例的角色服務，可讓多個使用者在裝載于執行 Windows Server 之伺服器上的虛擬機器中執行 Windows 應用程式，以及Hyper-v。
+遠端桌面虛擬主機（RD 虛擬主機）是支援虛擬桌面基礎結構（VDI）案例的角色服務，可讓多個使用者在裝載于執行 Windows Server 和 Hyper-v 的伺服器上的虛擬機器中執行 Windows 應用程式。
 
 Windows Server 支援兩種類型的虛擬桌面：個人虛擬桌面和集區虛擬桌面。
 
 ## <a name="general-considerations"></a>一般考量
 
-### <a name="storage"></a>存放
+### <a name="storage"></a>儲存體
 
 儲存體是最可能的效能瓶頸，因此請務必調整您的儲存體大小，以適當處理虛擬機器狀態變更所產生的 i/o 負載。 如果試驗或模擬不可行，最好的指導方針是為四部作用中的虛擬機器布建一個磁片主軸。 使用具有良好寫入效能的磁片設定（例如 RAID 1 + 0）。
 
@@ -41,7 +41,7 @@ Enable-DedupVolume <volume> -UsageType HyperV
 > [!NOTE]
 > 已開啟檔案的重復資料刪除優化僅支援使用透過 SMB 3.0 的遠端存放 Hyper-v 的 VDI 案例。
 
-### <a name="memory"></a>Memory
+### <a name="memory"></a>記憶體
 
 伺服器記憶體使用量是由三個主要因素所驅動：
 
@@ -69,7 +69,7 @@ Enable-DedupVolume <volume> -UsageType HyperV
 
 動態記憶體可讓您使用已有的資源增加虛擬機器密度，而不會犧牲效能或擴充性。 結果是更有效率地使用昂貴的伺服器硬體資源，這可以讓管理工作變得更容易，而且成本更低。
 
-在執行 Windows 8 和更新版本的客體作業系統上，搭配跨越多個邏輯處理器的虛擬處理器，請考慮使用動態記憶體執行之間的取捨，以協助將記憶體使用量降到最低，並停用動態記憶體以改善效能在電腦拓撲感知的應用程式中。 這類應用程式可以利用拓撲資訊來進行排程和記憶體配置決策。
+在執行 Windows 8 和更新版本的客體作業系統上，搭配跨越多個邏輯處理器的虛擬處理器，請考慮使用動態記憶體執行之間的取捨，以協助將記憶體使用量降到最低，並停用動態記憶體以改善電腦拓朴感知之應用程式的效能。 這類應用程式可以利用拓撲資訊來進行排程和記憶體配置決策。
 
 ### <a name="tiered-storage"></a>階層式存放區
 
@@ -93,7 +93,7 @@ Windows Server 2012 和更新版本中的容錯移轉叢集提供叢集共用磁
 
 在進行廣泛部署之前，應該先適當地評估每個特定服務。 以下是一些要考慮的初始事項：
 
-| 服務                                      | 為什麼？                                                                                                                                                                                                      |
+| Service                                      | 為什麼？                                                                                                                                                                                                      |
 |----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 自動更新                                  | 重新建立虛擬桌面範本，即可更新集區虛擬桌面。                                                                                                                          |
 | 離線檔案                                | 虛擬桌面一律會上線，並從網路觀點來連接。                                                                                                                         |

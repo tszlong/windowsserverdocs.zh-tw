@@ -1,9 +1,7 @@
 ---
 title: 適用于 Microsoft 產品的 Linux 軟體存放庫
 description: 本檔說明如何使用和安裝適用于 Microsoft 產品的 Linux 軟體套件。
-ms.custom: na
 ms.prod: windows-server
-ms.service: na
 manager: szark
 ms.technology: compute
 ms.topic: article
@@ -11,12 +9,12 @@ ms.assetid: b5387444-595f-4f38-abb7-163a70ea1895
 author: szarkos
 ms.author: szark
 ms.date: 10/16/2017
-ms.openlocfilehash: e32c11dac1d887ba0ae0192bb658f71ece77a42c
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: b57a1e7243f989a4529a666880572a9ceaa57644
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947240"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852061"
 ---
 # <a name="linux-software-repository-for-microsoft-products"></a>適用于 Microsoft 產品的 Linux 軟體存放庫
 
@@ -30,7 +28,7 @@ Microsoft 的 Linux 軟體存放庫是由多個子存放庫所組成：
  - mssql-伺服器-這些存放庫包含 Linux 上的 Microsoft SQL Server 的套件-另請參閱： [Linux 上的 SQL Server](https://www.microsoft.com/sql-server/sql-server-vnext-including-Linux)。
 
 > [!Note]
-> Linux 軟體存放庫中的套件受限於套件中的授權條款。 使用封裝前，請先閱讀授權條款。 安裝及使用套件即表示接受這些授權條款。 如果您不同意授權條款，請勿使用封裝。
+> Linux 軟體存放庫中的套件受限於套件中的授權條款。 使用套件之前，請先閱讀授權條款。 您的套件安裝和使用會構成您接受這些條款的規定。 如果您不同意授權條款，請勿使用套件。
 
 
 ## <a name="configuring-the-repositories"></a>設定存放庫
@@ -63,19 +61,19 @@ Microsoft 的 Linux 軟體存放庫是由多個子存放庫所組成：
 
  - Ubuntu 18.04 （Bionic）
 
-        curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+         curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
         sudo apt-add-repository https://packages.microsoft.com/ubuntu/18.04/prod
         sudo apt-get update
 
  - Ubuntu 18.10 （宇宙射線）
 
-        curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+         curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
         sudo apt-add-repository https://packages.microsoft.com/ubuntu/18.10/prod
         sudo apt-get update
 
  - Ubuntu 19.04 （Disco）
 
-        curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+         curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
         sudo apt-add-repository https://packages.microsoft.com/ubuntu/19.04/prod
         sudo apt-get update
 

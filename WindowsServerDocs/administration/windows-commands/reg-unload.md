@@ -1,24 +1,20 @@
 ---
 title: reg unload
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1d07791d-ca27-454e-9797-27d7e84c5048
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 32df397b597291269dcfb1449d00e86b2f4f5836
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e5fd1436ed1122a09eea11d358a3711aedddf2c1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384625"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836271"
 ---
 # <a name="reg-unload"></a>reg unload
 
@@ -34,7 +30,7 @@ ms.locfileid: "71384625"
 reg unload <KeyName>
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -50,7 +46,7 @@ reg unload <KeyName>
 |0|成功|
 |1|失敗|
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 若要卸載 file HKLM 中的 hive TempHive，請輸入：
 ```
@@ -60,6 +56,6 @@ REG UNLOAD HKLM\TempHive
 > [!CAUTION]
 > 請勿直接編輯登錄，除非您沒有替代方案。 登錄編輯程式會略過標準保護，允許降低效能、損毀您的系統，甚至要求您重新安裝 Windows 的設定。 您可以使用 [控制台] 或 Microsoft Management Console （MMC）中的程式，安全地改變大部分的登錄設定。 如果您必須直接編輯登錄，請先備份。
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

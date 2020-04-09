@@ -1,24 +1,20 @@
 ---
 title: openfiles
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c3be561d-a11f-4bf1-9835-8e4e96fe98ec
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 38b1d27b86551c6d4cd9e6b1ad87bfc0e8dd221d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f684acc48fbb279ced8ce1dfb3a930ff15f3bf13
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372497"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837821"
 ---
 # <a name="openfiles"></a>openfiles
 
@@ -31,7 +27,7 @@ ms.locfileid: "71372497"
 -   [openfiles/query](#BKMK_query)
 -   [openfiles/local](#BKMK_local)
 
-## <a name="BKMK_disconnect"></a>openfiles/disconnect
+## <a name="openfiles-disconnect"></a><a name=BKMK_disconnect></a>openfiles/disconnect
 
 可讓系統管理員透過共用資料夾中斷遠端開啟的檔案和資料夾的連線。
 
@@ -41,7 +37,7 @@ ms.locfileid: "71372497"
 openfiles /disconnect [/s <System> [/u [<Domain>\]<UserName> [/p [<Password>]]]] {[/id <OpenFileID>] | [/a <AccessedBy>] | [/o {read | write | read/write}]} [/op <OpenFile>]
 ```
 
-### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>參數
 
 |            參數             |                                                                                                                                 描述                                                                                                                                  |
 |----------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -60,7 +56,7 @@ openfiles /disconnect [/s <System> [/u [<Domain>\]<UserName> [/p [<Password>]]]]
 ```
 openfiles /disconnect /id 26843578
 ```
-若要中斷使用者 "hiropln" 存取的所有開啟的檔案和目錄，請輸入：
+若要中斷使用者 hiropln 存取的所有已開啟檔案和目錄，請輸入：
 ```
 openfiles /disconnect /a hiropln
 ```
@@ -68,16 +64,16 @@ openfiles /disconnect /a hiropln
 ```
 openfiles /disconnect /o read/write
 ```
-若要中斷目錄與開啟的檔案名 "C:\TestShare\"的連線，無論存取的物件為何，請輸入：
+若要將目錄與開啟的檔案名 C:\TestShare 中斷連線\, 無論存取的物件為何，請輸入：
 ```
-openfiles /disconnect /a * /op "c:\testshare\"
+openfiles /disconnect /a * /op c:\testshare\
 ```
-若要中斷使用者「hiropln」所存取之遠端電腦 "srvmain" 上所有開啟的檔案，不論其識別碼為何，請輸入：
+若要中斷使用者 hiropln 存取的遠端電腦 srvmain 上所有開啟的檔案，不論其識別碼為何，請輸入：
 ```
 openfiles /disconnect /s srvmain /u maindom\hiropln /id *
 ```
 
-## <a name="BKMK_query"></a>openfiles/query
+## <a name="openfiles-query"></a><a name=BKMK_query></a>openfiles/query
 
 查詢並顯示所有開啟的檔案。
 
@@ -87,7 +83,7 @@ openfiles /disconnect /s srvmain /u maindom\hiropln /id *
 openfiles /query [/s <System> [/u [<Domain>\]<UserName> [/p [<Password>]]]] [/fo {TABLE | LIST | CSV}] [/nh] [/v]
 ```
 
-### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>參數
 
 |          參數           |                                                                                                                                 描述                                                                                                                                  |
 |------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -113,7 +109,7 @@ openfiles /query /fo table /nh
 ```
 openfiles /query /fo list /v
 ```
-若要使用 "maindom" 網域上使用者 "hiropln" 的認證來查詢和顯示遠端系統 "srvmain" 上所有開啟的檔案，請輸入：
+若要使用 maindom 網域上的使用者 hiropln 認證，在遠端系統 srvmain 上查詢和顯示所有開啟的檔案，請輸入：
 ```
 openfiles /query /s srvmain /u maindom\hiropln /p p@ssW23
 ```
@@ -121,7 +117,7 @@ openfiles /query /s srvmain /u maindom\hiropln /p p@ssW23
 > [!NOTE]
 > 在此範例中，會在命令列上提供密碼。 若要避免顯示密碼，請省略 **/p**選項。 系統會提示您輸入密碼，這不會送到畫面。
 
-## <a name="BKMK_local"></a>openfiles/local
+## <a name="openfiles-local"></a><a name=BKMK_local></a>openfiles/local
 
 啟用或停用 [系統維護物件清單] 全域旗標。 如果在沒有參數的情況下使用， **openfiles/local**會顯示 [維護物件清單] 全域旗標的目前狀態。
 
@@ -131,7 +127,7 @@ openfiles /query /s srvmain /u maindom\hiropln /p p@ssW23
 openfiles /local [on | off]
 ```
 
-### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -167,6 +163,6 @@ SUCCESS: The system global flag 'maintain objects list' is enabled.
 openfiles /local off
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

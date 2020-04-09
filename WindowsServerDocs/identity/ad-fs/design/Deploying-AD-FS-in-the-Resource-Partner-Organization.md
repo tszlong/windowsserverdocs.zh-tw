@@ -1,7 +1,6 @@
 ---
 ms.assetid: 41d6b897-1e72-4522-aad6-eece1154a154
 title: 在資源夥伴組織中部署 AD FS
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 55291293349ce77337c5b35585dd3ea8e0d8c9e2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d9afc19be9ee92c23198b7fd8a7716379eb0821d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359166"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853161"
 ---
 # <a name="deploying-ad-fs-in-the-resource-partner-organization"></a>在資源夥伴組織中部署 AD FS
 
@@ -33,5 +32,5 @@ Active Directory 同盟服務 \(AD FS\) 中的資源夥伴組織，代表其 Web
 -   [決定資源夥伴的同盟應用程式策略](Determine-Your-Federated-Application-Strategy-in-the-Resource-Partner.md)  
   
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 [Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

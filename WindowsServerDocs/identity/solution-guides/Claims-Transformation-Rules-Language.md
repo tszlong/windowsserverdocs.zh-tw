@@ -1,7 +1,6 @@
 ---
 ms.assetid: e831f781-3c45-4d44-b411-160d121d1324
 title: 宣告轉換規則語言
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 200d592bc68562856bbdee623e70d73d41457c15
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f391c3f8ef2bb5b12f0dd15db55df4f861c05f9b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357584"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861271"
 ---
 # <a name="claims-transformation-rules-language"></a>宣告轉換規則語言
 
@@ -24,7 +23,7 @@ ms.locfileid: "71357584"
   
 跨樹系信任的轉換原則的 Windows PowerShell Cmdlet 有選項可設定一般案例中所需的簡單原則。 這些 Cmdlet 會將使用者輸入轉譯為宣告轉換規則語言中的原則和規則，然後以指定的格式將它們儲存在 Active Directory 中。 如需宣告轉換 Cmdlet 的詳細資訊，請參閱[動態存取控制的 AD DS Cmdlet](https://go.microsoft.com/fwlink/?LinkId=243150)。  
   
-根據您 Active Directory 樹系中跨樹系信任的宣告設定和需求而定，您的宣告轉換原則可能必須比適用于 Active 的 Windows PowerShell Cmdlet 所支援的原則更複雜Directory. 若要有效地撰寫這類原則，必須瞭解宣告轉換規則語言語法和語義。 Active Directory 中的這個宣告轉換規則語言（「語言」）是[Active Directory 同盟服務](https://go.microsoft.com/fwlink/?LinkId=243982)用於類似用途的語言子集，而且具有非常類似的語法和語義。 不過，允許的作業數目較少，且其他語法限制會放在語言的 Active Directory 版本中。  
+根據 Active Directory 樹系中跨樹系信任的宣告設定和需求而定，您的宣告轉換原則可能必須比 Windows PowerShell Cmdlet 針對 Active Directory 所支援的原則更複雜。 若要有效地撰寫這類原則，必須瞭解宣告轉換規則語言語法和語義。 Active Directory 中的這個宣告轉換規則語言（「語言」）是[Active Directory 同盟服務](https://go.microsoft.com/fwlink/?LinkId=243982)用於類似用途的語言子集，而且具有非常類似的語法和語義。 不過，允許的作業數目較少，且其他語法限制會放在語言的 Active Directory 版本中。  
   
 本主題簡要說明 Active Directory 中宣告轉換規則語言的語法和語義，以及撰寫原則時所需的考慮。 其中提供幾組範例規則，協助您開始使用，以及不正確的語法和其產生的訊息範例，以便在您撰寫規則時，説明您解密錯誤訊息。  
   
@@ -295,10 +294,10 @@ Active Directory 無法判斷在此情況下的意圖，並進入不安全的模
   
    這個範例在語法上和語義正確。 不過，將 "boolean" 當做字串值使用會造成混淆，因此應該避免。 如先前所述，應盡可能避免使用語言終端機作為宣告值。  
   
-## <a name="BKMK_LT"></a>語言終端機  
+## <a name="language-terminals"></a><a name="BKMK_LT"></a>語言終端機  
 下表列出宣告轉換規則語言中所使用的一組完整的終端字串和相關聯的語言終端機。 這些定義會使用不區分大小寫的 UTF-16 字串。  
   
-|字串|終端機|  
+|String|終端機|  
 |----------|------------|  
 |"= >"|兩者|  
 |";"|均|  
@@ -324,7 +323,7 @@ Active Directory 無法判斷在此情況下的意圖，並進入不安全的模
 |"\\" [^\\"\n] *\\" "|字串|  
 |uint64|UINT64_TYPE|  
 |int64|INT64_TYPE|  
-|字串|STRING_TYPE|  
+|"字串"|STRING_TYPE|  
 |true|BOOLEAN_TYPE|  
   
 ## <a name="language-syntax"></a>語言語法  

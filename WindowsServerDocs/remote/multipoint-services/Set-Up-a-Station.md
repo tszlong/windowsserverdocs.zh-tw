@@ -1,31 +1,27 @@
 ---
 title: 設定站台
 description: 瞭解如何在 MultiPoint 服務中設定工作站
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dce05b6c-795e-43b2-9920-026550b873c5
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 95a332a3d15e82047b46cc19f168f945cdb334d2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c3d40346402131e64c437da12f1ff89b4eb3f8f3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389450"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853941"
 ---
 # <a name="set-up-a-station"></a>設定站台
 MultiPoint 服務「站台」通常是由「站台集線器」、滑鼠、鍵盤和視訊監視器所組成。 本主題說明如何將硬體裝置連接到站台集線器，以建立 MultiPoint 服務站台。  
   
 站台集線器是將周邊裝置連接到 MultiPoint 服務系統中之電腦的硬體裝置。 MultiPoint 服務支援兩種站台集線器類型︰  
   
--   **USB 集線器：** 符合通用序列匯流排2.0 或更新版本規格的一般多埠 USB 擴充集線器。 這類集線器通常有兩個、四個或更多 USB 連接埠，可讓多個 USB 裝置連接到電腦上的單一 USB 連接埠。 USB 集線器通常是獨立的裝置，可能是外部電源或匯流排驅動。 搭配 MultiPoint 服務當作站台集線器使用時，建議您使用含有四個以上連接埠的集線器。  
+-   **USB 集線器**：與通用序列匯流排 2.0 或更新規格相容的一般多連接埠 USB 擴充集線器。 這類集線器通常有兩個、四個或更多 USB 連接埠，可讓多個 USB 裝置連接到電腦上的單一 USB 連接埠。 USB 集線器通常是獨立的裝置，可能是外部電源或匯流排驅動。 搭配 MultiPoint 服務當作「站台集線器」使用時，建議您使用含有四個以上連接埠的集線器。  
   
     > [!IMPORTANT]  
     > 如果您打算將鍵盤和滑鼠以外的 USB 裝置連接到集線器，建議您使用外部供電的集線器以獲得最佳效能。  

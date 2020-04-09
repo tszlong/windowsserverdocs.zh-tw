@@ -1,27 +1,23 @@
 ---
 title: 分割使用者站台
 description: 瞭解如何分割 MultiPoint 服務中的顯示，讓兩位使用者可以使用相同的工作站
-ms.custom: na
 ms.date: 07/08/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f0d1fc9c-f5ea-45bc-a8da-623c5d081cdf
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 5067df3f5902570d56ee130264c751d66b5b0d3f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: db828da06045bb884db138458f875af1d4d5b99d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394945"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853891"
 ---
 # <a name="split-a-user-station"></a>分割使用者站台
-任何大於 1024 x 768 解析度的 MultiPoint 服務站台螢幕，都可以使用 [站台] 索引標籤上的 [Split station (分割站台)] 工作來分割成兩個站台。在分割發生時，螢幕上所顯示的桌面會移至螢幕左半部，並在相同螢幕右半部建立新的站台。 新的站台必須對應到鍵盤、滑鼠及 USB 集線器以完成其建立程序。 分割站台後，使用者可以登入到左方站台，而另一個使用者則可登入右方站台。  
+解析度大於1024x768 的任何 MultiPoint 服務站監視，都可以使用 [**工作站**] 索引標籤上的 [**分割站**] 工作分割成兩個工作站。發生分割時，監視器上出現的桌面會移到監視器的左邊半部，而新的工作站會建立在相同監視器的右半部。 新的站台必須對應到鍵盤、滑鼠及 USB 集線器以完成其建立程序。 分割站台後，使用者可以登入到左方站台，而另一個使用者則可登入右方站台。  
   
 使用分割螢幕工作站的優點可能包括：  
   

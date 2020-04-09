@@ -1,24 +1,20 @@
 ---
 title: 管理虛擬桌面
 description: 瞭解如何管理 MultiPoint 服務中的虛擬桌面（VDI）
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: fa9ac0ed-47cb-4811-91ff-4fcb62d7858b
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 45bb3e98779bc27913c7e675a9c9db7e575d9d72
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 114fde42ca36f9451680066056251bafbe944e56
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389586"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853461"
 ---
 # <a name="manage-virtual-desktops"></a>管理虛擬桌面
 單一電腦 VDI 可讓您設定每個*本機*MultiPoint 服務站，以連線到與工作站位於相同 MultiPoint 服務電腦上的 hyper-v 虛擬機器（VM）中執行的 Windows 10 企業版客體作業系統。 如果無法在 Windows Server 版本中安裝這些虛擬桌面站台，您可以使用應用程式來加以自訂。  
@@ -56,11 +52,11 @@ ms.locfileid: "71389586"
 ## <a name="import-a-virtual-desktop-template"></a>匯入虛擬桌面範本  
 如果您已在另一部 Multipoint Server 建立虛擬桌面範本，您可以使用下列步驟匯入該範本。  
 
-1.  開啟 MultiPoint 管理員，然後按一下 [虛擬桌面] 索引標籤。  
+1.    開啟 MultiPoint 管理員，然後按一下 [虛擬桌面] 索引標籤。  
   
-2.  在 [VDI Tasks (VDI 工作)] 下，按一下 [Import Virtual desktop template (匯入虛擬桌面範本)]。  
+2.    在 [VDI Tasks (VDI 工作)] 下，按一下 [Import Virtual desktop template (匯入虛擬桌面範本)]。  
   
-3.  找出範本，並針對匯入的範本定義路徑和首碼。  
+3.    找出範本，並針對匯入的範本定義路徑和首碼。  
   
 ## <a name="customize-the-virtual-desktop-template"></a>自訂虛擬桌面範本  
 建立虛擬桌面範本之後，您可以搭配應用程式、軟體更新加以自訂，並進行系統設定。   
@@ -83,11 +79,11 @@ ms.locfileid: "71389586"
     虛擬桌面站台的建立程序需要幾分鐘時間。  
   
     > [!NOTE]  
-    > 若有任何本機工作站目前已連線至以\-為基礎的虛擬桌面電腦，您必須登出這些工作站，才能連接到其中一個新建立的虛擬桌面工作站。  
+    > 如果任何本機站台目前正連接到以工作階段為基礎的虛擬桌面，則您必須登出這些站台，以連接到新建立的虛擬桌面站台。  
   
 ### <a name="validate-the-newly-created-customized-virtual-station-desktops"></a>驗證新建立的自訂虛擬站台桌面  
   
-您可以使用本機系統管理員帳戶或網域帳戶登入一或多個虛擬桌面工作站來驗證您自訂的虛擬工作站桌上型電腦，然後確認新的 VM\-虛擬桌面電腦是否正常運作。  
+若要驗證自訂虛擬站台桌面，請使用本機系統管理員帳戶或網域帳戶登入一或多個虛擬桌面站台後，再驗證以 VM 為基礎的新虛擬桌面是否能夠正常運作。  
   
 ## <a name="disable-virtual-desktops"></a>停用虛擬桌面  
   

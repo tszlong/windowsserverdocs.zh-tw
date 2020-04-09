@@ -5,16 +5,15 @@ manager: dougkim
 ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
-ms.assetid: ''
 ms.author: dacuo
-author: eross-msft
+author: dcuomo
 ms.date: 09/07/2018
-ms.openlocfilehash: 4a6fd33dce35cf2a185cf5e4357c37e8050197a2
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 0ffb417728bbdb73d8fb462ff7783b17b511bcd3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312509"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80814771"
 ---
 # <a name="rsc-in-the-vswitch"></a>VSwitch 中的 RSC
 >適用于： Windows Server 2019
@@ -35,7 +34,7 @@ Windows Server 2012 和更新版本包含硬體專用卸載版本（實作為實
 
     -   Hyper-V 主機
 
-    -   儲存空間 Direct
+    -   儲存空間直接存取
 
 -   Hyper-v 來賓虛擬 Nic
 

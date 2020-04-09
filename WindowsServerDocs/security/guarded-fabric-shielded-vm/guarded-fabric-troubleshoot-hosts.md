@@ -1,19 +1,19 @@
 ---
 title: 針對主機守護者服務進行疑難排解
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 80ea38f4-4de6-4f85-8188-33a63bb1cf81
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: ec885670ca6808e89c63848781c4ff3dc27799b8
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 86627f6013592c95f517d77fed6ac5f57eb139b6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79321980"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856391"
 ---
 # <a name="troubleshooting-guarded-hosts"></a>針對受防護主機進行疑難排解
 

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 663a2482-33d1-4c19-8607-2e24eef89fcb
 title: 使用 WID 的同盟伺服器陣列
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,30 +8,30 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 5f6911bea712dadd9a0b666c3bf8cbe9a260efb7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4704928213de4ed1ed71630fe6a49b54f2019af5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359137"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853111"
 ---
 # <a name="federation-server-farm-using-wid"></a>使用 WID 的同盟伺服器陣列
 
-Active Directory 同盟服務\(AD FS\)的預設拓撲是同盟伺服器陣列，使用 Windows 內部資料庫\(WID\)，其中包含最多五部裝載您的同盟伺服器組織的同盟服務。 在此拓撲中，AD FS 會針對加入該伺服器陣列的所有同盟伺服器，使用 WID 做為 AD FS 設定資料庫的存放區。 伺服器陣列會複寫並維護伺服器陣列中每部伺服器之設定資料庫的 Federation Service 資料。  
+Active Directory 同盟服務 \(AD FS\) 的預設拓撲是同盟伺服器陣列，使用 Windows 內部資料庫 \(WID\)，其中包含最多五部裝載貴組織同盟服務的同盟伺服器。 在此拓撲中，AD FS 會針對加入該伺服器陣列的所有同盟伺服器，使用 WID 做為 AD FS 設定資料庫的存放區。 伺服器陣列會複寫並維護伺服器陣列中每部伺服器之設定資料庫的 Federation Service 資料。  
   
-在伺服器陣列中建立第一部同盟伺服器時，也會建立新的 Federation Service。 當您使用 WID 做為 AD FS 設定資料庫時，您在伺服器陣列中建立的第一部同盟伺服器稱為「*主要同盟伺服器*」。 這表示這部電腦是使用 AD FS 設定資料庫的\/讀取寫入複本進行設定。  
+在伺服器陣列中建立第一部同盟伺服器時，也會建立新的 Federation Service。 當您使用 WID 做為 AD FS 設定資料庫時，您在伺服器陣列中建立的第一部同盟伺服器稱為「*主要同盟伺服器*」。 這表示這部電腦已使用 AD FS 設定資料庫的讀取\/寫入複本進行設定。  
   
-您為此伺服器陣列所設定的其他所有同盟伺服器稱為「*次要同盟伺服器*」，因為它們必須將在主要同盟伺服器上所做的任何變更複寫\-到 AD FS 的唯讀複本。他們儲存在本機的設定資料庫。  
+您為此伺服器陣列所設定的其他所有同盟伺服器稱為「*次要同盟伺服器*」，因為它們必須將在主要同盟伺服器上所做的任何變更複寫到「讀取\-只會將其儲存在本機的 AD FS 設定資料庫複本。  
   
 > [!NOTE]  
-> 建議您在負載\-平衡設定中至少使用兩部同盟伺服器。  
+> 我們建議在負載\-平衡設定中至少使用兩部同盟伺服器。  
   
 ## <a name="deployment-considerations"></a>部署考量  
 本節說明與此部署拓撲相關聯的目標物件、優點和限制的各種考慮。  
   
 ### <a name="who-should-use-this-topology"></a>誰應該使用此拓撲？  
   
--   具有100或更少已設定信任關係的組織，必須提供他們\(的內部使用者登入實際連線到公司網路\)的電腦，並使用\-單一登入\( SSO\)存取同盟應用程式或服務  
+-   具有100或較少已設定之信任關係的組織，必須提供其內部使用者 \(登入實際連線到公司網路的電腦\) 使用 \(SSO\) 存取同盟應用程式或服務的單一登入\-  
   
 -   想要為其內部使用者提供 Microsoft Online Services 或 Microsoft Office 365 的 SSO 存取權的組織  
   
@@ -45,7 +44,7 @@ Active Directory 同盟服務\(AD FS\)的預設拓撲是同盟伺服器陣列，
   
 -   提供內部使用者的 SSO 存取權  
   
--   資料和同盟服務冗余\(每一部同盟伺服器都會將變更複寫到相同伺服器陣列中的其他同盟伺服器\)  
+-   資料和同盟服務冗余 \(每部同盟伺服器都會將變更複寫到相同伺服器陣列中的其他同盟伺服器\)  
   
 -   您可以新增最多五部同盟伺服器，以相應放大伺服器陣列  
   
@@ -55,15 +54,15 @@ Active Directory 同盟服務\(AD FS\)的預設拓撲是同盟伺服器陣列，
   
 -   WID 伺服器陣列的限制為五部同盟伺服器。 如需詳細資訊，請參閱 [AD FS 部署拓撲考量](AD-FS-Deployment-Topology-Considerations.md)。  
   
--   WID 伺服器\(陣列不支援安全性聲明標記語言\(SAML\)通訊協定\)的權杖重新執行偵測或成品解析部分。  
+-   WID 伺服器陣列不支援權杖重新執行偵測或成品解析 \(安全性聲明標記語言 \(SAML\) 通訊協定\)的一部分。  
   
 ## <a name="server-placement-and-network-layout-recommendations"></a>伺服器放置和網路設定建議  
-當您準備好要開始在網路中部署此拓撲時，您應該規劃將公司網路中的所有同盟伺服器放置在網路負載平衡\(nlb\)主機（可針對 nlb 叢集設定）後方具有專用叢集網域名稱系統\(DNS\)名稱和叢集 IP 位址。  
+當您準備好要開始在網路中部署此拓撲時，您應該規劃將公司網路中的所有同盟伺服器放置在網路負載平衡後方，\(NLB\) 主機，其可針對具有專用叢集網域名稱系統 \(DNS\) 名稱和叢集 IP 位址的 NLB 叢集進行設定。  
   
 > [!NOTE]  
 > 此叢集 DNS 名稱必須符合同盟服務名稱，例如 fs.fabrikam.com。  
   
-NLB 主機可以使用此 NLB 叢集中定義的設定，將用戶端要求配置給個別的同盟伺服器。 下圖顯示虛構 Fabrikam，inc.，公司如何使用兩\-部電腦同盟\(伺服器陣列 fs1 來設定其部署的第一個階段，以及如何搭配 WID\)和 DNS 伺服器的位置進行 fs2和一個連接公司網路的 NLB 主機。  
+NLB 主機可以使用此 NLB 叢集中定義的設定，將用戶端要求配置給個別的同盟伺服器。 下圖顯示虛構 Fabrikam，Inc.，公司如何使用兩部\-的電腦同盟伺服器陣列來設定其部署的第一個階段 \(fs1 和 fs2\) 搭配 WID 以及 DNS 伺服器的定位，以及連接公司網路的單一 NLB 主機。  
   
 ![使用 WID 的伺服器陣列](media/FarmWID.gif)  
   

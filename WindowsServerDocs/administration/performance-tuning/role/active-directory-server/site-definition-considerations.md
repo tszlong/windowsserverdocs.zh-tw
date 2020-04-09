@@ -4,15 +4,15 @@ description: Active Directory 效能微調中的網站定義和網域控制站�
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
+ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 66c6f94f1f3fee924ba0d9a3bfa0c712d62bb095
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: aac7b8f37de2132778bd681d2f2e29ad0ad0810d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947111"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851871"
 ---
 # <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>適當位置的網域控制站和網站考慮
 
@@ -76,7 +76,7 @@ ms.locfileid: "75947111"
 
 -   停用在所有可用的信任上指定 Null 網域的傳遞驗證要求。 [如果 Active Directory 網域控制站上有許多外部信任，Lsass.exe 進程可能會停止回應](https://support.microsoft.com/kb/923241/EN-US)
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 - [Active Directory 伺服器的效能微調](index.md)
 - [硬體考量](hardware-considerations.md)
 - [LDAP 考量](ldap-considerations.md)

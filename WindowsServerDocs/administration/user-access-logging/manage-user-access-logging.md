@@ -1,28 +1,24 @@
 ---
 title: 管理使用者存取記錄
 description: 說明如何管理使用者存取記錄
-ms.custom: na
 ms.prod: windows-server
 ms.technology: manage-user-access-logging
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4f039017-4152-47eb-838e-bb6ef730b638
 author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b209cdb4763d4f30478725aa1ba47f399e9a729f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0ff33102a2197cc961a44290c5b7e4e3e40b0191
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71382839"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851381"
 ---
 # <a name="manage-user-access-logging"></a>管理使用者存取記錄
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 本文件說明如何管理使用者存取記錄 (UAL)。  
   
@@ -48,7 +44,7 @@ UAL 是一項功能，可協助伺服器系統管理員量化本機伺服器上�
   
 -   啟用工作資料夾使用量授權追蹤   
   
-## <a name="BKMK_Step1"></a>停用和啟用 UAL 服務  
+## <a name="disabling-and-enabling-the-ual-service"></a><a name="BKMK_Step1"></a>停用和啟用 UAL 服務  
 當第一次安裝並啟動執行 Windows Server 2012 或更新版本的電腦時，預設會啟用並執行 UAL。 系統管理員可能要關閉並停用 UAL 才能符合隱私權需求或其他操作的需求。 您可以使用 [服務] 主控台、從命令列或使用 PowerShell Cmdlet 來關閉 UAL。 不過，若要確保下次電腦啟動時不會再次執行 UAL，您也需要停用服務。 下列程式描述如何關閉和停用 UAL。  
   
 > [!NOTE]  
@@ -62,7 +58,7 @@ UAL 是一項功能，可協助伺服器系統管理員量化本機伺服器上�
   
 3.  向下捲動並選取 **User Access Logging Service**。按一下 [停止服務]。  
   
-4.  以\-滑鼠右鍵按一下服務名稱，然後選取 [**屬性**]。 在 [一般] 索引標籤上，將 [啟動類型] 變更為 [已停用]，然後按一下 [確定]。  
+4.  以滑鼠\-按右鍵服務名稱，然後選取 [**屬性**]。 在 [一般] 索引標籤上，將 [啟動類型] 變更為 [已停用]，然後按一下 [確定]。  
   
 #### <a name="to-stop-and-disable-ual-from-the-command-line"></a>從命令列停止和停用 UAL  
   
@@ -71,13 +67,13 @@ UAL 是一項功能，可協助伺服器系統管理員量化本機伺服器上�
 2.  按 Windows 標誌 + R，然後輸入 **cmd** 以開啟命令提示字元視窗。  
   
     > [!IMPORTANT]  
-    > 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。  
+    > 如果出現 [使用者帳戶控制] 對話方塊，請確認其顯示的動作為您想要的動作，然後按一下 [是]。  
   
 3.  輸入 **net stop ualsvc**，然後按 ENTER。  
   
 4.  輸入 **netsh ualsvc set opmode mode=disable**，然後按 ENTER。  
    
-下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
+下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
 
 您也可以使用 Windows PowerShell 命令的 Stop-service 和 Disable-Ual 來停止和停用 UAL。  
   
@@ -108,13 +104,13 @@ Disable-ual
 2.  按 Windows 標誌 + R，然後輸入 **cmd** 以開啟命令提示字元視窗。  
   
     > [!IMPORTANT]  
-    > 如果出現 [**使用者帳戶控制**] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [**是**]。  
+    > 如果出現 [使用者帳戶控制] 對話方塊，請確認其顯示的動作為您想要的動作，然後按一下 [是]。  
   
 3.  輸入 **net start ualsvc**，然後按 ENTER。  
   
 4.  輸入 **netsh ualsvc set opmode mode=enable**，然後按 ENTER。  
 
-下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
+下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。
   
 您也可以使用 Windows PowerShell 命令的 Start-service 和 Enable-Ual 來啟動和重新啟用 UAL。  
   
@@ -126,7 +122,7 @@ Enable-ual
 Start-service ualsvc  
 ```  
   
-## <a name="BKMK_Step2"></a>收集 UAL 資料  
+## <a name="collecting-ual-data"></a><a name="BKMK_Step2"></a>收集 UAL 資料  
 除了上一節所述的 PowerShell Cmdlet 之外，還可以使用12個額外的 Cmdlet 來收集 UAL 資料：  
   
 -   **Get-UalOverview**：提供已安裝產品和角色的 UAL 相關詳細資料和歷程記錄。  
@@ -151,12 +147,12 @@ Start-service ualsvc
   
 -   **Get-UalSystemId**：提供可唯一識別本機或目標伺服器的系統特定資料。  
   
-`Get-UalSystemId` 的目的在於提供伺服器的唯一設定檔，讓該伺服器的所有其他資料都可以與該設定檔關聯。  如果伺服器在新的設定檔的其中一個參數`Get-UalSystemId`中，有任何變更，就會建立。  `Get-UalOverview` 可為系統管理員提供伺服器上安裝和使用的角色清單。  
+`Get-UalSystemId` 的目的在於提供伺服器的唯一設定檔，讓該伺服器的所有其他資料都可以與該設定檔關聯。  如果伺服器在 `Get-UalSystemId` 的其中一個參數中發生任何變更，就會建立新的設定檔。  `Get-UalOverview` 可為系統管理員提供伺服器上安裝和使用的角色清單。  
   
 > [!NOTE]  
-> 預設會安裝列印和檔服務和檔案服務的基本功能。 因此，系統管理員永遠會看到這些服務的相關資訊，就像是安裝了完整的角色一樣。 由於 UAL 要為 Hyper-V 和 DNS 收集獨特的資料，因此另外提供有這些伺服器角色的 UAL Cmdlet。  
+> 預設會安裝列印和檔服務和檔案服務的基本功能。 因此，系統管理員永遠會看到這些服務的相關資訊，就像是安裝了完整的角色一樣。 由於 UAL 為這些伺服器角色收集的唯一資料，因此 Hyper-v 和 DNS 會包含個別的 UAL Cmdlet。  
   
-UAL Cmdlet 的典型使用案例是讓系統管理員查詢 UAL 在某個日期範圍內的唯一用戶端存取。 您可利用多種方法來完成這個動作。 下列是查詢某一日期範圍內唯一裝置存取的建議方法。  
+UAL Cmdlet 的典型使用案例是讓系統管理員查詢 UAL 在某個日期範圍內的唯一用戶端存取。 這可以透過各種方式來完成。 以下是在日期範圍內查詢唯一裝置存取的建議方法。  
   
 ```  
 PS C:\Windows\system32>Gwmi -Namespace "root\AccessLogging" -query "SELECT * FROM MsftUal_DeviceAccess WHERE LastSeen >='1/01/2013' and LastSeen <='3/31/2013'"  
@@ -165,7 +161,7 @@ PS C:\Windows\system32>Gwmi -Namespace "root\AccessLogging" -query "SELECT * FRO
   
 這會依 IP 位址傳回在該日期範圍內提出伺服器要求的所有唯一用戶端裝置的詳細資訊清單。  
   
-每個唯一用戶端的 ' ActivityCount ' 限制為每天65535。 此外，只有依日期查詢時才需要從 PowerShell 呼叫 WMI。  所有其他 UAL Cmdlet 參數皆可如預期般在 PS 查詢中使用，如下列範例所示：  
+每個唯一用戶端的 ' ActivityCount ' 限制為每天65535。 此外，只有當您依日期進行查詢時，才需要從 PowerShell 呼叫 WMI。  所有其他 UAL Cmdlet 參數都可以如預期般在 PS 查詢中使用，如下列範例所示：  
   
 ```  
 PS C:\Windows\system32> Get-UalDeviceAccess -IPAddress "10.36.206.112"  
@@ -184,7 +180,7 @@ PSComputerName
   
 UAL 最多可保留兩年的歷程記錄。 若要在服務執行時允許系統管理員抓取 UAL 資料，UAL 會將作用中資料庫檔案（目前的 .mdb）複本複製到名為*GUID .mdb*的檔案，以供 WMI 提供者使用。  
   
-UAL 會在一年中的第一天建立新的 *GUID.mdb*。 舊的*GUID .mdb*會保留為提供者使用的封存。  兩年之後，就會覆寫原始的 *GUID.mdb* 。  
+UAL 會在一年中的第一天建立新的 *GUID.mdb*。 舊的*GUID .mdb*會保留為提供者使用的封存。  兩年之後，就會覆寫原始的 *GUID.mdb*。  
   
 > [!IMPORTANT]  
 > 只有進階使用者才能執行下列程序，通常是由開發人員在測試本身的 UAL 應用程式開發介面檢測時使用...  
@@ -195,12 +191,12 @@ UAL 會在一年中的第一天建立新的 *GUID.mdb*。 舊的*GUID .mdb*會�
   
 2.  按 Windows 標誌 + R，然後輸入 **cmd** 以開啟命令提示字元視窗。  
   
-3.  新增登錄值：**HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\WMI\AutoLogger\Sum\PollingInterval (REG_DWORD)** 。  
+3.  新增登錄值：  **HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\WMI\AutoLogger\Sum\PollingInterval (REG_DWORD)** 。  
   
     > [!WARNING]  
-    > 不正確地編輯登錄可能會對系統造成嚴重的損害。 變更登錄之前，應先備份電腦上的重要資料。  
+    > 不當編輯登錄可能會造成系統嚴重受損。 變更登錄前，應先備份電腦上所有的重要資料。  
   
-    下列範例顯示如何新增兩分鐘的間隔 (不建議在長期執行狀態中使用)：**REG ADD HKLM\System\CurrentControlSet\Control\WMI\\AutoLogger\Sum/v PollingInterval/t REG\_DWORD/d 120000/f**  
+    下列範例顯示如何新增兩分鐘的間隔（不建議長期執行狀態）： **REG add HKLM\System\CurrentControlSet\Control\WMI\\AutoLogger\Sum/V PollingInterval/T REG\_DWORD/d 120000/f**  
   
     時間值以毫秒為單位。 最小值是 60 秒，最大值是 7 天，預設是 24 小時。  
   
@@ -222,11 +218,11 @@ UAL 並不是做為關鍵元件使用。 它的設計目的是為了在維護高
 ## <a name="managing-ual-in-high-volume-environments"></a>在高容量環境下管理 UAL  
 本節說明系統管理員在具有大量用戶端的伺服器上使用 UAL 時會遇到的情況：  
   
-UAL 可以記錄的存取數目上限為每天 65,535 個。  不建議在直接連線到網際網路的伺服器上 (例如直接連線到網際網路的網頁伺服器)，或當伺服器的主要功能是提供極高效能的情況下 (例如在 HPC 工作負載環境) 使用 UAL。 UAL 主要是用於需要高容量的小型、中型和企業內部網路案例，但不像是定期提供網際網路面向流量的許多部署一樣高。  
+UAL 可以記錄的存取數目上限為每天 65,535 個。  不建議在直接連線到網際網路的伺服器上使用 UAL，例如直接連線到網際網路的 web 伺服器，或在極高效能為伺服器主要功能的情況下（例如在 HPC 工作負載環境中）。 UAL 主要是用於需要高容量的小型、中型和企業內部網路案例，但不像是定期提供網際網路面向流量的許多部署一樣高。  
   
-**UAL 的記憶體**：因為 UAL 使用可延伸儲存引擎（ESE），所以 UAL 的記憶體需求會隨時間（或依用戶端要求的數量）而增加。 但是當系統要求記憶體將對系統效能的影響降到最低時，將會釋放記憶體。  
+**記憶體中的 UAL**：因為 UAL 使用可延伸儲存引擎（ESE），所以 UAL 的記憶體需求會隨時間（或依用戶端要求的數量）而增加。 但是當系統要求記憶體將對系統效能的影響降到最低時，將會釋放記憶體。  
   
-**UAL 的磁碟**：UAL 的硬碟需求大致如下所示：  
+**磁片上的 UAL**： UAL 的硬碟需求大約如下所示：  
   
 -   0 個唯一用戶端記錄：22M  
   
@@ -261,7 +257,7 @@ Reg add HKLM\Software\Microsoft\Windows\CurrentVersion\SyncShareSrv /v EnableWor
   
 啟用記錄之後，每當用戶端連線至伺服器時，2 個資訊事件會記錄到 Windows 記錄\應用程式通道。 對於「工作資料夾」，每個使用者可以有連線至伺服器的一或多個用戶端裝置，並且每 10 分鐘檢查資料更新。 如果伺服器有 1000 位使用者，每位使用者都有 2 個裝置的應用程式記錄檔將會每隔 70 分鐘覆寫，這樣會使疑難排解不相關的問題變得困難。 若要避免這種情況，您可以暫時停用使用者存取記錄服務，或增加伺服器的 Windows Logs\Application 通道大小。  
   
-## <a name="BKMK_Links"></a>另請參閱  
+## <a name="see-also"></a><a name="BKMK_Links"></a>另請參閱  
 
 - [開始使用使用者存取記錄](get-started-with-user-access-logging.md)
   

@@ -8,12 +8,12 @@ ms.assetid: 7110ad21-a33e-48d5-bb3c-129982913bc8
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: a5b2e750bd7a0103382f6d91c515f4e283a112cb
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 1e962948feaf6bb37beeb3c241d3ae3369be77dc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312665"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860701"
 ---
 # <a name="deploy-dhcp-using-windows-powershell"></a>使用 Windows PowerShell 部署 AD DHCP
 
@@ -79,7 +79,7 @@ Windows Server 2016 中的 TCP/IP 如下所示：
 
 TCP/IP 提供基本的 TCP/IP 公用程式，可讓 Windows 電腦與其他 Microsoft 及非 Microsoft 系統連線和共用資訊，其中包括：
 
-- Windows Server 2016
+- Windows Server 2016
 
 - Windows 10
 
@@ -207,7 +207,7 @@ TCP/IP 提供基本的 TCP/IP 公用程式，可讓 Windows 電腦與其他 Micr
 |網路連線繫結|乙太網路|
 |DNS 伺服器設定|DC1.corp.contoso.com|
 |慣用 DNS 伺服器 IP 位址|10.0.0.2|
-|範圍值<br /><br />1. 範圍名稱<br />2. 起始 IP 位址<br />3. 結束 IP 位址<br />4. 子網路遮罩<br />5. 預設閘道（選擇性）<br />6. 租用期間|1. 主要子網<br />2. 10.0.0。1<br />3. 10.0.0.254<br />4. 255.255.255。0<br />5. 10.0.0。1<br />6. 8 天|
+|範圍值<p>1. 範圍名稱<br />2. 起始 IP 位址<br />3. 結束 IP 位址<br />4. 子網路遮罩<br />5. 預設閘道（選擇性）<br />6. 租用期間|1. 主要子網<br />2. 10.0.0。1<br />3. 10.0.0.254<br />4. 255.255.255。0<br />5. 10.0.0。1<br />6. 8 天|
 |IPv6 DHCP 伺服器操作模式|未啟用|
 
 ## <a name="using-this-guide-in-a-test-lab"></a><a name="bkmk_lab"></a>在測試實驗室中使用本指南

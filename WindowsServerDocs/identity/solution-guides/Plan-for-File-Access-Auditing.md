@@ -1,7 +1,6 @@
 ---
 ms.assetid: 3ea48a72-20a2-4da4-84e4-26b5728513ce
 title: 規劃檔案存取稽核
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 25d6e1c3dd3ab0d10f04cef3e88a7671957b51db
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ffe8843f9ace604bc0904ba2d1eaef78d2872b99
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407080"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861161"
 ---
 # <a name="plan-for-file-access-auditing"></a>規劃檔案存取稽核
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 本主題中的資訊說明 Windows Server 2012 中引進的安全性審核增強功能，以及您在企業中部署動態存取控制時應考慮的新 audit 設定。 您部署的實際稽核原則設定將根據您的目標而定，其中可以包含法規相符性、監視、資料安全分析及疑難排解。  
   

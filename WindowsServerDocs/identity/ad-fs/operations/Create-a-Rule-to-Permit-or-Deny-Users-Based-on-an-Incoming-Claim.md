@@ -1,7 +1,6 @@
 ---
 ms.assetid: 3d770385-9834-4ebe-b66c-b684e0245971
 title: 建立規則依據傳入宣告允許或拒絕使用者
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,23 +8,23 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 061d7b64ae0be0ebc1408d74f18f8c59926714ab
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7d6be5b9194060bb16673e01e0fee8b36b081769
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407619"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816811"
 ---
 # <a name="create-a-rule-to-permit-or-deny-users-based-on-an-incoming-claim"></a>建立規則依據傳入宣告允許或拒絕使用者 
 
 
-在 Windows Server 2016 中，您可以使用**存取控制原則**來建立規則，以根據傳入宣告來允許或拒絕使用者。  在 Windows Server 2012 R2 中，使用 Active Directory 同盟服務\(AD FS\)中的 [**根據傳入宣告允許或拒絕使用者**] 規則範本，您可以建立將授與或拒絕使用者存取權的授權規則信賴憑證者是根據傳入宣告的類型和值。 
+在 Windows Server 2016 中，您可以使用**存取控制原則**來建立規則，以根據傳入宣告來允許或拒絕使用者。  在 Windows Server 2012 R2 中，使用 Active Directory 同盟服務 \(AD FS\)中的 [**根據傳入宣告允許或拒絕使用者**] 規則範本，您可以建立授權規則，以根據傳入宣告的類型和值，授與或拒絕使用者對信賴憑證者的存取權。 
 
 例如，您可以使用它來建立規則，只允許具有網域系統管理員值之群組宣告的使用者存取信賴憑證者。 如果您想要允許所有使用者存取信賴憑證者，請使用 [**允許每個人**存取控制原則] 或 [**允許所有使用者**] 規則範本（視您的 Windows Server 版本而定）。 從同盟服務獲准存取信賴憑證者的使用者，仍可能遭信賴憑證者拒絕服務。  
   
-您可以使用下列程式，利用 AD FS 管理嵌入式管理單元\-來建立宣告規則。  
+您可以使用下列程式，利用中的 [AD FS 管理] 嵌入式\-管理單元來建立宣告規則。  
   
-若要完成此程序，至少需要本機電腦上之 **Administrators** 群組的成員資格或同等權限。  請參閱[本機與網域的預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中關於使用適當帳戶和群組成員資格的詳細資料。  
+若要完成此程序，至少需要本機電腦之 **Administrators** 群組的成員資格或同等權限。  請參閱[本機與網域的預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中關於使用適當帳戶和群組成員資格的詳細資料。  
 
 ## <a name="to-create-a-rule-to-permit-users-based-on-an-incoming-claim-on-windows-server-2016"></a>建立規則以允許以 Windows Server 2016 上的傳入宣告為基礎的使用者
  
@@ -70,7 +69,7 @@ ms.locfileid: "71407619"
 4. 在 [名稱] 方塊中，輸入原則的名稱、描述，然後按一下 [**新增**]。
 ![建立規則](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny9.PNG)
 
-5. 在 [**規則編輯器**] 上，確定已選取 [所有人]，並在 **[在要求中使用特定宣告**簽入] 底下，按一下底部的底線**特定**。
+5. 在 [**規則編輯器**] 上，確定已選取 [所有**Except**人]，並在 **[在要求中使用特定宣告**簽入] 底下，按一下底部的底線**特定**。
 ![建立規則](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny10.PNG)
 
 6. 在 [**選取宣告**] 畫面上，按一下 [宣告] 選項按鈕，然後依序選取 [**宣告** **類型**]、[**運算子**] 和 [**聲明] 值**，然後按一下 **[確定]** 。
@@ -92,18 +91,18 @@ ms.locfileid: "71407619"
   
 1.  在伺服器管理員中，按一下 [**工具**]，然後選取 [ **AD FS 管理**]。    
   
-2.  在主控台樹的 [ **\\AD FS 信任關係\\** ] [信賴憑證者信任] 底下，按一下您要在其中建立此規則的清單中的特定信任。  
+2.  在主控台樹的 [ **AD FS\\信任關係]\\[信賴**憑證者信任] 底下，按一下您要在清單中建立此規則的特定信任。  
   
-3.  以\-滑鼠右鍵按一下選取的信任，然後按一下 [**編輯宣告規則**]。  
+3.  以滑鼠\-按右鍵選取的信任，然後按一下 [**編輯宣告規則**]。  
 ![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)   
 
-4.  在 [**編輯宣告規則**] 對話方塊中，按一下 **[發佈授權規則**] 索引標籤或 [ \(**委派授權規則**] 索引標籤（根據\)您所需的授權規則類型），然後按一下 [**新增規則]** 以啟動 [**新增授權宣告規則]** 。  
+4.  在 [**編輯宣告規則**] 對話方塊中，按一下 **[發佈授權規則**] 索引標籤或 [**委派授權規則**] 索引標籤，\(根據您所需的授權規則類型\)，然後按一下 [**新增規則**] 來啟動 [**新增授權宣告規則]** 。  
 ![建立規則](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
 
 5.  在 [**選取規則範本**] 頁面的 [宣告**規則範本**] 底下，選取 [**根據傳入宣告允許或拒絕使用者**]，然後按 **[下一步]** 。  
 ![建立規則](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny1.PNG)
 
-6.  在 [**設定規則**] 頁面的 [宣告**規則名稱**] 下，輸入此規則的顯示名稱，在 [**傳入宣告類型**] 中選取清單中 [**傳入宣告值**] 底下的 [ \(宣告類型]，輸入一個值，或按一下 [流覽] （如果它是可用\)並選取一個值，然後根據您組織的需求，選取下列其中一個選項：  
+6.  在 [**設定規則**] 頁面的 [宣告**規則名稱**] 下，輸入此規則的顯示名稱，在 [**傳入宣告類型**] 中，選取清單中的 [**傳入宣告值**] 底下的 [輸入值]，或按一下 [流覽 \(] （如果可用）\) 並選取一個值，然後選取下列其中一個選項，視您組織的需求而定：  
   
     -   **允許具有這個傳入宣告的使用者存取權**  
   
@@ -116,7 +115,7 @@ ms.locfileid: "71407619"
 ## <a name="additional-references"></a>其他參考資料 
 [設定宣告規則](Configure-Claim-Rules.md)  
  
-[檢查清單：為信賴憑證者信任建立宣告規則](https://technet.microsoft.com/library/ee913578.aspx)  
+[檢查清單：建立信賴憑證者信任的宣告規則](https://technet.microsoft.com/library/ee913578.aspx)  
   
 [使用授權宣告規則的時機](../../ad-fs/technical-reference/When-to-Use-an-Authorization-Claim-Rule.md)  
 

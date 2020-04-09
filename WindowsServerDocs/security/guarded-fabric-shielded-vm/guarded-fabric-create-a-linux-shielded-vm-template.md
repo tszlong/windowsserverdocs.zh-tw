@@ -1,23 +1,23 @@
 ---
 title: 建立 Linux 受防護的 VM 範本磁片
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: d0e1d4fb-97fc-4389-9421-c869ba532944
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 66d5f70f747a6209f2856afde58b6f486ea597f8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1a6325a5d8e931f1e62c83ba4013d94760e39f86
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386713"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856791"
 ---
 # <a name="create-a-linux-shielded-vm-template-disk"></a>建立 Linux 受防護的 VM 範本磁片
 
-> 適用於：Windows Server 2019、Windows Server （半年通道）、 
+> 適用于： Windows Server 2019、Windows Server （半年通道）、 
 
 本主題說明如何準備可用於將一或多個租使用者 Vm 具現化的 Linux 受防護 Vm 的範本磁片。
 
@@ -29,7 +29,7 @@ ms.locfileid: "71386713"
 - 第二部電腦（Windows 10 或 Windows Server 2016），能夠執行 Hyper-v 管理員以連線至執行中 VM 的主控台
 - 其中一個支援的 Linux 受防護 VM 作業系統的 ISO 映像：
     - 具有4.4 核心的 Ubuntu 16.04 LTS
-    - Red Hat Enterprise Linux 7.3
+    - Red Hat Enterprise Linux 7。3
     - SUSE Linux Enterprise Server 12 Service Pack 2
 - 下載 lsvmtools 套件和 OS 更新的網際網路存取權
 
@@ -72,7 +72,7 @@ ms.locfileid: "71386713"
 5.  使用 Hyper-v 管理員，在虛擬化伺服器上[設定外部交換器](https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/create-a-virtual-switch-for-hyper-v-virtual-machines)，讓 Linux VM 可以存取網際網路以取得更新。
 
 6.  接下來，建立新的虛擬機器以安裝 Linux OS。
-    在 [動作] 窗格中，按一下 [**新增**]  >  [**虛擬機器**] 以顯示嚮導。
+    在 [動作] 窗格中，按一下 [**新增** > **虛擬機器**] 以顯示嚮導。
     為您的 VM 提供易記名稱，例如「預先範本化的 Linux」，然後按 **[下一步]** 。
 
 7.  在嚮導的第二個頁面上，選取 [**第2代**] 以確保 VM 是以 UEFI 為基礎的固件設定檔來布建。
@@ -169,9 +169,9 @@ ms.locfileid: "71386713"
 Certificate 屬性 | 必要值
 ---------------------|---------------
 金鑰演算法 | RSA
-最小金鑰大小 | 2048位
+最小金鑰大小 | 2048 位元
 簽章演算法 | SHA256 （建議）
-金鑰使用方法 | 數位簽章
+金鑰使用方式 | 數位簽章
 
 當租使用者建立其防護資料檔案時，會向租使用者顯示此憑證的詳細資料，並授權其信任的磁片。
 因此，請務必從您和您的租使用者雙方信任的憑證授權單位單位取得此憑證。

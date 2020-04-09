@@ -1,28 +1,24 @@
 ---
 title: manage-bde tpm
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 11a8530d-edd7-4fe3-ae81-b943766760fe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 577f5f2ecb85ac8c0c28fef2ca343635796454d2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b6495bfbfedea7219ae175145f72fc12314ce7ae
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373835"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839761"
 ---
 # <a name="manage-bde-tpm"></a>manage-bde： tpm
 
-> 適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 > 
 > [!IMPORTANT]
 > 在執行 Windows 8、Windows Server 2012 或更新版本作業系統的電腦上，不支援使用此命令。 針對這些電腦，您可以使用[適用于 Windows PowerShell 的 TPM 管理 Cmdlet](https://docs.microsoft.com/powershell/module/trustedplatformmodule/)。
@@ -31,7 +27,7 @@ ms.locfileid: "71373835"
 > ```
 > manage-bde -tpm [-turnon] [-takeownership <OwnerPassword>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
 > ```
-> ### <a name="parameters"></a>參數
+> #### <a name="parameters"></a>參數
 > 
 > |    參數    |                                                                              描述                                                                               |
 > |-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -43,7 +39,7 @@ ms.locfileid: "71373835"
 > |    -? 或/？     |                                                               在命令提示字元中顯示簡短說明。                                                               |
 > |   -help 或-h   |                                                             在命令提示字元中顯示完整的說明。                                                              |
 > 
-> ## <a name="BKMK_Examples"></a>典型
+> ## <a name="examples"></a><a name=BKMK_Examples></a>典型
 > 下列範例說明如何使用 **-tpm**命令來開啟 tpm。
 > ```
 > manage-bde  tpm -turnon
@@ -52,6 +48,6 @@ ms.locfileid: "71373835"
 > ```
 > manage-bde  tpm  takeownership 0wnerP@ss
 > ```
-> ## <a name="additional-references"></a>其他參考
-> -   [命令列語法關鍵](command-line-syntax-key.md)
+> ## <a name="additional-references"></a>其他參考資料
+> -   - [命令列語法關鍵](command-line-syntax-key.md)
 > -   [manage-bde](manage-bde.md)

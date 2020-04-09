@@ -1,31 +1,30 @@
 ---
-title: 叢集的效能歷程記錄
+title: 群集的效能歷程記錄
 ms.author: cosdar
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 02/02/2018
-Keywords: 儲存空間直接存取
 ms.localizationpriority: medium
-ms.openlocfilehash: 68596cbdcf8593cd3017c8ae5d0836891c78229c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7a5eec986d6e7d633f1917c599ab6fcd244c7008
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59818769"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856201"
 ---
-# <a name="performance-history-for-clusters"></a>叢集的效能歷程記錄
+# <a name="performance-history-for-clusters"></a>群集的效能歷程記錄
 
-> 適用於：Windows Server Insider Preview
+> 適用于： Windows Server 2019
 
-子主題[效能歷程記錄的儲存空間直接存取](performance-history.md)說明叢集所收集的效能歷程記錄。
+[儲存空間直接存取的效能歷程記錄](performance-history.md)的子主題說明為叢集收集的效能歷程記錄。
 
-有源自於叢集層級沒有數列。 相反地，server 系列，例如`clusternode.cpu.usage`，針對叢集中的所有伺服器彙總。 磁碟區的數列，例如`volume.iops.total`，針對叢集中的所有磁碟區彙總。 這類磁碟機系列和`physicaldisk.size.total`，會彙總的叢集中的所有磁碟機。
+沒有源自叢集層級的數列。 相反地，伺服器系列（例如 `clusternode.cpu.usage`）會針對叢集中的所有伺服器進行匯總。 磁片區系列（例如 `volume.iops.total`）會針對叢集中的所有磁片區進行匯總。 和磁片磁碟機系列（例如 `physicaldisk.size.total`）會針對叢集中的所有磁片磁碟機進行匯總。
 
 ## <a name="usage-in-powershell"></a>在 PowerShell 中的使用方式
 
-使用[取得叢集](https://docs.microsoft.com/powershell/module/failoverclusters/get-cluster)cmdlet:
+使用[取得](https://docs.microsoft.com/powershell/module/failoverclusters/get-cluster)叢集 Cmdlet：
 
 ```PowerShell
 Get-Cluster | Get-ClusterPerf
@@ -33,4 +32,4 @@ Get-Cluster | Get-ClusterPerf
 
 ## <a name="see-also"></a>另請參閱
 
-- [效能歷程記錄的儲存空間直接存取](performance-history.md)
+- [儲存空間直接存取的效能歷程記錄](performance-history.md)

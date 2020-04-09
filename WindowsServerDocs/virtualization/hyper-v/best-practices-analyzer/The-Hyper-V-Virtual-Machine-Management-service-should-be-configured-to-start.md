@@ -2,33 +2,32 @@
 title: Hyper-v 虛擬機器管理服務應設定為自動啟動
 description: 提供解決此最佳做法分析程式規則所回報之問題的指示。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 222bbe76-c514-4a3f-b61b-860a4dc2826a
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: f35f94a815e9f895f7f7690737b6b8fb2bed82e1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 26122d40b3fbdbdc40a94801d5e3ff8fcf4fa646
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393424"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859311"
 ---
 # <a name="the-hyper-v-virtual-machine-management-service-should-be-configured-to-start-automatically"></a>Hyper-v 虛擬機器管理服務應設定為自動啟動
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
 如需最佳做法和掃描的詳細資訊，請參閱 [最佳做法分析程式](https://go.microsoft.com/fwlink/?LinkId=122786)。  
   
 |屬性|詳細資料|  
 |-|-|  
-|**作業系統**|Windows Server 2016|  
+|**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
-|**Severity**|警告|  
-|**分類**|組態|  
+|**低於**|警告|  
+|**類別**|組態|  
 
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。
 
@@ -50,7 +49,7 @@ ms.locfileid: "71393424"
 > 如果您在桌面應用程式中找不到該服務，或命令列工具報告該服務不存在，可能是尚未安裝 Hyper-v 管理工具。 若要安裝它們：  
 >   
 > - 在 Windows Server 上，開啟伺服器管理員並使用 [新增角色及功能]。 如需詳細資訊，請參閱[在 Windows Server 2016 上安裝 hyper-v 角色](../get-started/Install-the-Hyper-V-role-on-Windows-Server.md)。  
-> - 在 Windows 上，從桌面開始輸入**程式**，按一下 [**程式和功能**] （控制台） >**開啟或關閉 Windows 功能** > **hyper-v** > **hyper-v 管理工具**。 然後按一下 **[確定]** 。  
+> - 在 Windows 上，從桌面開始輸入**程式**，按一下 **程式和功能** （控制台） >**開啟或關閉 Windows 功能** > **hyper-v** > **hyper-v 管理工具**。 然後按一下 **[確定]** 。  
   
 #### <a name="to-reconfigure-the-service-to-start-automatically-using-the-services-desktop-app"></a>若要將服務重新設定為使用服務桌面應用程式自動啟動  
   
@@ -64,7 +63,7 @@ ms.locfileid: "71393424"
   
 1.  開啟 Windows PowerShell。  
   
-2.  輸入：  
+2.  類型：  
   
     ```  
     set-service  vmms -startuptype automatic  

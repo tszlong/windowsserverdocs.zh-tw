@@ -1,24 +1,20 @@
 ---
 title: secedit
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 58ed57ed-08e3-403d-a363-0620b358637a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5598f830ad4cef8d45c99594da12cbcdd84e7eef
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e80217c201cde4dc1df58c0e8976fbe1422511fe
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371108"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834841"
 ---
 # <a name="secedit"></a>secedit
 
@@ -38,7 +34,7 @@ secedit
 [/validate <configuration file name>]
 ```
 
-### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -66,7 +62,7 @@ secedit
 > [!NOTE]
 > Microsoft Management Console （MMC）和 [安全性設定及分析] 嵌入式管理單元無法在 Server Core 上使用。
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
 如需如何使用此命令的範例，請參閱任何子命令檔案中的範例一節。
--   [命令列語法關鍵](command-line-syntax-key.md)
+-   - [命令列語法關鍵](command-line-syntax-key.md)

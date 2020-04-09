@@ -1,24 +1,20 @@
 ---
 title: 管理軟體限制原則
 description: Windows Server 安全性
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-software-restriction-policies
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8cc22093-67d1-47b6-9ddd-4569b6761ce9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: c75c7813041870f79ed95250857a5c7d1576c7dc
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 88e745b6951ab27f22cc412ee63f792d30775d14
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322980"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855111"
 ---
 # <a name="administer-software-restriction-policies"></a>管理軟體限制原則
 
@@ -53,7 +49,7 @@ ms.locfileid: "79322980"
 
 -   [使用軟體限制原則來協助保護您的電腦免于電子郵件病毒](use-software-restriction-policies-to-help-protect-your-computer-against-an-email-virus.md)
 
-## <a name="BKMK_Open_SRP"></a>若要開啟軟體限制原則
+## <a name="to-open-software-restriction-policies"></a><a name="BKMK_Open_SRP"></a>若要開啟軟體限制原則
 
 -   [針對您的本機電腦](#BKMK_1)
 
@@ -63,7 +59,7 @@ ms.locfileid: "79322980"
 
 -   [若為網站，且您位於網域控制站或已安裝遠端伺服器管理工具的工作站上](#BKMK_4)
 
-### <a name="BKMK_1"></a>針對您的本機電腦
+### <a name="for-your-local-computer"></a><a name="BKMK_1"></a>針對您的本機電腦
 
 1.  開啟 [本機安全性設定]。
 
@@ -76,7 +72,7 @@ ms.locfileid: "79322980"
 > [!NOTE]
 > 若要執行這項程序，您必須是本機電腦的 Administrators 群組成員，或者必須委派有適當的授權。
 
-### <a name="BKMK_2"></a>適用于網域、網站或組織單位，而且您位於已加入網域的成員伺服器或工作站上。
+### <a name="for-a-domain-site-or-organizational-unit-and-you-are-on-a-member-server-or-on-a-workstation-that-is-joined-to-a-domain"></a><a name="BKMK_2"></a>適用于網域、網站或組織單位，而且您位於已加入網域的成員伺服器或工作站上。
 
 1.  開啟 [Microsoft Management Console (MMC)]。
 
@@ -101,7 +97,7 @@ ms.locfileid: "79322980"
 > [!NOTE]
 > 您必須是 Domain Admins 群組的成員，才可以執行這個程序。
 
-### <a name="BKMK_3"></a>針對網域或組織單位，以及您位於已安裝遠端伺服器管理工具的網域控制站或工作站上
+### <a name="for-a-domain-or-organizational-unit-and-you-are-on-a-domain-controller-or-on-a-workstation-that-has-the-remote-server-administration-tools-installed"></a><a name="BKMK_3"></a>針對網域或組織單位，以及您位於已安裝遠端伺服器管理工具的網域控制站或工作站上
 
 1.  開啟群組原則管理主控台。
 
@@ -120,7 +116,7 @@ ms.locfileid: "79322980"
 > [!NOTE]
 > 您必須是 Domain Admins 群組的成員，才可以執行這個程序。
 
-### <a name="BKMK_4"></a>若為網站，且您位於網域控制站或已安裝遠端伺服器管理工具的工作站上
+### <a name="for-a-site-and-you-are-on-a-domain-controller-or-on-a-workstation-that-has-the-remote-server-administration-tools-installed"></a><a name="BKMK_4"></a>若為網站，且您位於網域控制站或已安裝遠端伺服器管理工具的工作站上
 
 1.  開啟群組原則管理主控台。
 
@@ -145,7 +141,7 @@ ms.locfileid: "79322980"
 > -   若要設定將套用至電腦的原則設定，不論哪些使用者登入，請按一下 [**電腦**設定]。
 > -   若要設定將套用至使用者的原則設定，不論他們登入哪一部電腦，請按一下 [**使用者**設定]。
 
-## <a name="BKMK_Create_SRP"></a>若要建立新的軟體限制原則
+## <a name="to-create-new-software-restriction-policies"></a><a name="BKMK_Create_SRP"></a>若要建立新的軟體限制原則
 
 1.  開啟 [軟體限制原則]。
 
@@ -158,7 +154,7 @@ ms.locfileid: "79322980"
 >     -   如果您為已加入網域的電腦建立新軟體限制原則，則 Domain Admins 群組的成員便可執行此程序。
 > -   如果已為群組原則物件 (GPO) 建立軟體限制原則，則 [新軟體限制原則] 命令不會顯示於 [執行] 功能表上。 若要刪除已套用至 GPO 的軟體限制原則，在主控台樹狀目錄中，以滑鼠右鍵按一下 [軟體限制原則]，然後按一下 [刪除軟體限制原則]。 當您刪除 GPO 的軟體限制原則時，也會刪除該 GPO 的所有軟體限制原則規則。 刪除軟體限制原則之後，您可為該 GPO 建立新軟體限制原則。
 
-## <a name="BKMK_Add_Del"></a>若要新增或刪除指定的檔案類型
+## <a name="to-add-or-delete-a-designated-file-type"></a><a name="BKMK_Add_Del"></a>若要新增或刪除指定的檔案類型
 
 1.  開啟 [軟體限制原則]。
 
@@ -178,7 +174,7 @@ ms.locfileid: "79322980"
 > -   如果您尚未為群組原則物件 (GPO) 建立新軟體限制原則設定，可能需要進行這項動作。
 > -   指定檔案類型的清單是由適用于 GPO 的電腦設定和使用者設定的所有規則所共用。
 
-## <a name="BKMK_Prevent_Admin"></a>防止軟體限制原則套用至本機系統管理員
+## <a name="to-prevent-software-restriction-policies-from-applying-to-local-administrators"></a><a name="BKMK_Prevent_Admin"></a>防止軟體限制原則套用至本機系統管理員
 
 1.  開啟 [軟體限制原則]。
 
@@ -192,7 +188,7 @@ ms.locfileid: "79322980"
 > -   如果使用者成為組織中電腦的本機 Administrators 群組成員是很常見的，就不需要啟用這個選項。
 > -   如果您是為本機電腦定義軟體限制原則設定，可使用此程序以防止在本機系統管理員套用軟體限制原則。 如果您要為您的網路定義軟體限制原則設定，請透過群組原則根據安全性群組中的成員資格來篩選使用者原則設定。
 
-## <a name="BKMK_Sec_Lvl"></a>變更軟體限制原則的預設安全性等級
+## <a name="to-change-the-default-security-level-of-software-restriction-policies"></a><a name="BKMK_Sec_Lvl"></a>變更軟體限制原則的預設安全性等級
 
 1.  開啟 [軟體限制原則]。
 
@@ -210,7 +206,7 @@ ms.locfileid: "79322980"
 > -   系統會建立軟體限制原則規則，以指定預設安全性等級的例外狀況。 當預設的安全性等級設定成 [沒有限制] 時，規則可指定不允許執行的軟體。 當預設的安全性等級設定成 [不允許] 時，規則可指定允許執行的軟體。
 > -   安裝時，系統上所有檔案的軟體限制原則的預設安全性等級是設定成 [沒有限制]。
 
-## <a name="BKMK_Apply_SRP_DLLs"></a>將軟體限制原則套用至 Dll
+## <a name="to-apply-software-restriction-policies-to-dlls"></a><a name="BKMK_Apply_SRP_DLLs"></a>將軟體限制原則套用至 Dll
 
 1.  開啟 [軟體限制原則]。
 

@@ -1,29 +1,25 @@
 ---
 title: 將 Windows Small Business Server 2011 Standard 移轉到 Windows Server Essentials
 description: 說明如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c8325f87-fd79-471b-bf70-3f052692c383
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 9ab3dae227faeec6ece3071bb669af0906514711
-ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
+ms.openlocfilehash: d4f4dbb7063428aee7728071b8e62c5cc019b2af
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80639889"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852491"
 ---
 # <a name="migrate-windows-small-business-server-2011-standard-to-windows-server-essentials"></a>將 Windows Small Business Server 2011 Standard 移轉到 Windows Server Essentials
 
 >適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-本指南說明如何將現有的 Windows Small Business Server 2011 Standard 網域遷移至新硬體上的 Windows Server® 2012 Essentials，然後遷移設定和資料。 本指南也說明如何在完成遷移之後，從 Windows Server Essentials 網路移除現有的伺服器。  
+本指南說明如何將現有的 Windows Small Business Server 2011 Standard 網域遷移至新硬體上的 Windows Server&reg; 2012 Essentials，然後遷移設定和資料。 本指南也說明如何在完成遷移之後，從 Windows Server Essentials 網路移除現有的伺服器。  
   
 > [!NOTE]
 >  為了避免在遷移期間發生問題，Windows Server Essentials 產品開發小組強烈建議您先閱讀這份檔，再開始進行遷移。  

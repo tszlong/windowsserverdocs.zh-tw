@@ -1,28 +1,24 @@
 ---
-title: 登出
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+title: logoff
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 939f09cc-de8c-436c-a05d-aca5f2a06371
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d09b58823f12d0b26bf21c00638b58046119bdab
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1661a9dd6cc89ea05980fd9085aa8fa67b8fe2c0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374234"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840411"
 ---
-# <a name="logoff"></a>登出
+# <a name="logoff"></a>logoff
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 將使用者從遠端桌面工作階段主機（rd 工作階段主機）伺服器上的會話登出，並從伺服器刪除會話。
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
@@ -34,7 +30,7 @@ ms.locfileid: "71374234"
 ```
 logoff [<SessionName> | <SessionID>] [/server:<ServerName>] [/v]
 ```
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
 |      參數       |                                                                             描述                                                                              |
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -50,7 +46,7 @@ logoff [<SessionName> | <SessionID>] [/server:<ServerName>] [/v]
 - 如果未指定 <*SessionID*> 或 <*SessionName*>，**登出**就會登出使用者的目前會話。 如果您指定 <*SessionName*>，它必須是作用中的一個。
 - 當您登出使用者時，所有處理常式都會結束，而且會話會從伺服器中刪除。
 - 您無法從主控台會話登出使用者。
-  ## <a name="BKMK_examples"></a>典型
+  ## <a name="examples"></a><a name=BKMK_examples></a>典型
 - 若要從目前的會話登出使用者，請輸入：
   ```
   logoff
@@ -64,6 +60,6 @@ logoff [<SessionName> | <SessionID>] [/server:<ServerName>] [/v]
   logoff TERM04 /server:Server1
   ```
 
-#### <a name="additional-references"></a>其他參考
--   [命令列語法關鍵](command-line-syntax-key.md)
--   [遠端桌面服務&#40;終端機&#41;服務命令參考](remote-desktop-services-terminal-services-command-reference.md)
+## <a name="additional-references"></a>其他參考資料
+-   - [命令列語法關鍵](command-line-syntax-key.md)
+-   [遠端桌面服務 (終端機服務) 命令參考資料](remote-desktop-services-terminal-services-command-reference.md)

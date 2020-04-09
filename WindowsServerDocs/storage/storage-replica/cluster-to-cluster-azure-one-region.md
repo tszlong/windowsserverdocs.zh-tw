@@ -1,7 +1,6 @@
 ---
 title: Azure 中相同區域內的叢集對叢集儲存體複本
 description: 在 Azure 中的相同區域內進行叢集對叢集儲存體複寫
-keywords: 儲存體複本，伺服器管理員，Windows Server，Azure，叢集，相同區域
 author: arduppal
 ms.author: arduppal
 ms.date: 04/26/2019
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: 3e620b5597a2d25a7bb02daf80c5812d25f6a987
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 00dbf709139ef245b94a3f083ab83a12503131c2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950029"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856291"
 ---
 # <a name="cluster-to-cluster-storage-replica-within-the-same-region-in-azure"></a>Azure 中相同區域內的叢集對叢集儲存體複本
 
@@ -103,7 +102,7 @@ ms.locfileid: "75950029"
      $IPResourceName = "Cluster IP Address" # IP Address cluster resource name.
      $ILBIP = "10.3.0.100" # IP Address in Internal Load Balancer (ILB) - The static IP address for the load balancer configured in the Azure portal.
      [int]$ProbePort = 59999
-     Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";”ProbeFailureThreshold”=5;"EnableDhcp"=0}
+     Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"ProbeFailureThreshold"=5;"EnableDhcp"=0}
     ```
 
 14. 從任何一個節點**az2az3**/**az2az4**執行下列命令。 
@@ -113,7 +112,7 @@ ms.locfileid: "75950029"
     $IPResourceName = "Cluster IP Address" # IP Address cluster resource name.
     $ILBIP = "10.3.0.101" # IP Address in Internal Load Balancer (ILB) - The static IP address for the load balancer configured in the Azure portal.
     [int]$ProbePort = 59999
-    Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";”ProbeFailureThreshold”=5;"EnableDhcp"=0}  
+    Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"ProbeFailureThreshold"=5;"EnableDhcp"=0}  
     ```   
     請確定這兩個叢集都可以彼此連接/通訊。 
 

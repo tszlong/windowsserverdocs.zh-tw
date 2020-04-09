@@ -1,7 +1,6 @@
 ---
 ms.assetid: 74ef34c8-e13f-499b-b2bb-952ad7036622
 title: 同盟伺服器的名稱解析需求
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 88ec418bd72a6389856deb1abd85641d8782bc30
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b455596910e1b04569e087843da8b88f9f020137
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408044"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853031"
 ---
 # <a name="name-resolution-requirements-for-federation-servers"></a>同盟伺服器的名稱解析需求
 
@@ -34,5 +33,5 @@ ms.locfileid: "71408044"
 如需有關如何在周邊網路中設定同盟伺服器 proxy 的詳細資訊，請參閱[同盟伺服器 proxy 的名稱解析需求](Name-Resolution-Requirements-for-Federation-Server-Proxies.md)。  
   
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 [Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

@@ -2,20 +2,19 @@
 title: 應該啟用協力廠商擴充功能所需的 WFP 虛擬交換器擴充功能
 description: 此最佳做法分析程式規則的線上版本文字。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 8aa8a9a5-e3fa-4c9b-8331-ba5a3de22429
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 41ab2bac7c98608b051c74d2fbfb8359f493385c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d4cc23ce638f7b5ee95f80de067b4ad5b360d118
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364622"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859301"
 ---
 # <a name="the-wfp-virtual-switch-extension-should-be-enabled-if-it-is-required-by-third-party-extensions"></a>應該啟用協力廠商擴充功能所需的 WFP 虛擬交換器擴充功能
 
@@ -28,7 +27,7 @@ ms.locfileid: "71364622"
 |**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
 |**低於**|警告|  
-|**類別**|設定|  
+|**類別**|組態|  
   
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   
@@ -52,10 +51,10 @@ ms.locfileid: "71364622"
 3.  在以外部交換器的名稱取代 External 之後，請執行此命令：  
   
 ```  
-Enable-VMSwitchExtension -VMSwitchName External -Name "Microsoft Windows Filtering Platform"  
+Enable-VMSwitchExtension -VMSwitchName External -Name Microsoft Windows Filtering Platform  
 ```  
   
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
 [啟用-VMSwitchExtension](https://technet.microsoft.com/library/hh848541.aspx)  
   
 

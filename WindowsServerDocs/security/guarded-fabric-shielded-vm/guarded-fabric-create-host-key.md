@@ -1,19 +1,19 @@
 ---
 title: 建立主機金鑰並將它新增至 HGS
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: a12c8494-388c-4523-8d70-df9400bbc2c0
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 2aea6c8416a0f3af04ad6056c5d09a4d07708eaa
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 664b3cfc1e529fe3591f6477ae0eb0b64e32441a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322010"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856731"
 ---
 # <a name="create-a-host-key-and-add-it-to-hgs"></a>建立主機金鑰並將它新增至 HGS
 
@@ -24,14 +24,14 @@ ms.locfileid: "79322010"
 
 ## <a name="create-a-host-key"></a>建立主機金鑰
 
-1.  在您的 Hyper-v 主機電腦上安裝 Windows Server 2019。
-2.  安裝 Hyper-v 和主機守護者 Hyper-v 支援功能：
+1.    在您的 Hyper-v 主機電腦上安裝 Windows Server 2019。
+2.    安裝 Hyper-v 和主機守護者 Hyper-v 支援功能：
 
     ```powershell
     Install-WindowsFeature Hyper-V, HostGuardian -IncludeManagementTools -Restart
     ``` 
 
-3.  自動產生主機金鑰，或選取現有的憑證。 如果您使用自訂憑證，它應該至少有2048位的 RSA 金鑰、用戶端驗證 EKU 和數位簽章金鑰使用方式。
+3.    自動產生主機金鑰，或選取現有的憑證。 如果您使用自訂憑證，它應該至少有2048位的 RSA 金鑰、用戶端驗證 EKU 和數位簽章金鑰使用方式。
 
     ```powershell
     Set-HgsClientHostKey
@@ -41,17 +41,17 @@ ms.locfileid: "79322010"
     如果您想要跨多部電腦共用憑證，或使用系結至 TPM 或 HSM 的憑證，這會很有用。 以下是建立 TPM 系結憑證的範例（這會使私密金鑰無法被盜用，並在另一部電腦上使用，而且只需要 TPM 1.2）：
 
     ```powershell
-    $tpmBoundCert = New-SelfSignedCertificate -Subject “Host Key Attestation ($env:computername)” -Provider “Microsoft Platform Crypto Provider”
+    $tpmBoundCert = New-SelfSignedCertificate -Subject "Host Key Attestation ($env:computername)" -Provider "Microsoft Platform Crypto Provider"
     Set-HgsClientHostKey -Thumbprint $tpmBoundCert.Thumbprint
     ```
 
-4.  取得金鑰的公開半部，以提供給 HGS 伺服器。 您可以使用下列 Cmdlet，或者，如果您將憑證儲存在其他位置，請提供 .cer，其中包含金鑰的公用一半。 請注意，我們只會儲存和驗證 HGS 上的公開金鑰;我們不會保留任何憑證資訊，也不會驗證憑證鏈或到期日。
+4.    取得金鑰的公開半部，以提供給 HGS 伺服器。 您可以使用下列 Cmdlet，或者，如果您將憑證儲存在其他位置，請提供 .cer，其中包含金鑰的公用一半。 請注意，我們只會儲存和驗證 HGS 上的公開金鑰;我們不會保留任何憑證資訊，也不會驗證憑證鏈或到期日。
 
     ```powershell
     Get-HgsClientHostKey -Path "C:\temp\$env:hostname-HostKey.cer"
     ```
 
-5.  將 .cer 檔案複製到您的 HGS 伺服器。
+5.    將 .cer 檔案複製到您的 HGS 伺服器。
 
 ## <a name="add-the-host-key-to-the-attestation-service"></a>將主機金鑰新增至證明服務
 

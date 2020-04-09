@@ -1,24 +1,20 @@
 ---
 title: tsprof
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: 適用于 tsprof 的 Windows 命令主題，會將遠端桌面服務的使用者設定資訊從一個使用者複製到另一個。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 27047868-b706-4208-b7e0-1437a2325dd3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 77d0752f74d2f6031f83f805273650747d24cfee
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3b1037b6daff467a71517917d423e4cbe87a97f2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392314"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80832471"
 ---
 # <a name="tsprof"></a>tsprof
 
@@ -41,7 +37,7 @@ tsprof /copy {/domain:<DomainName> | /local} [/profile:<path>] <Src_usr> <Dest_u
 tsprof /q {/domain:<DomainName> | /local} <UserName>
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 |參數|描述|
 |-------|--------|
 |/update|更新網域 <*DomainName*> 中 <*UserName*> 的設定檔路徑資訊，以 <*Profilepath*>。|
@@ -58,16 +54,16 @@ tsprof /q {/domain:<DomainName> | /local} <UserName>
 ## <a name="remarks"></a>備註
 -   只有當您已在執行 Windows Server 2008 的電腦上安裝終端機伺服器角色服務，或在執行 Windows Server 2008 R2 的電腦上 RD 工作階段主機角色服務時，才可以使用**tsprof**命令。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 -   若要將使用者設定資訊從 LocalUser1 複製到 LocalUser2，請輸入：
     ```
     tsprof /copy /local LocalUser1 LocalUser2
     ```
--   若要將 LocalUser1 的遠端桌面服務設定檔路徑設定為名為 "c:\profiles" 的目錄，請輸入：
+-   若要將 LocalUser1 的遠端桌面服務設定檔路徑設定為名為 c:\profiles 的目錄，請輸入：
     ```
     tsprof /update /local /profile:c:\profiles LocalUser1
     ```
 
-#### <a name="additional-references"></a>其他參考資料
-
-[ &#40;遠端桌面服務終端機服務&#41;命令參考](remote-desktop-services-terminal-services-command-reference.md)[的命令列語法金鑰](command-line-syntax-key.md)
+## <a name="additional-references"></a>其他參考資料
+- [命令列語法金鑰](command-line-syntax-key.md)
+[遠端桌面服務（終端機服務）命令參考](remote-desktop-services-terminal-services-command-reference.md)

@@ -1,28 +1,22 @@
 ---
 title: shutdown
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: Windows 命令的關機主題，可讓您一次關閉或重新開機本機或遠端電腦。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c432f5cf-c5aa-4665-83af-0ec52c87112e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e8a5170fa214d4ed639ff3b817cf949a9f44ebd6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 649695fb8ec936375057cf730eb215047c97e19e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383894"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834181"
 ---
 # <a name="shutdown"></a>shutdown
-
-
 
 可讓您一次針對一台本機或遠端電腦進行關機或重新啟動。
 
@@ -31,10 +25,10 @@ ms.locfileid: "71383894"
 ## <a name="syntax"></a>語法
 
 ```
-shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t <XXX>] [/d [p|u:]<XX>:<YY> [/c "comment"]] 
+shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t <XXX>] [/d [p|u:]<XX>:<YY> [/c comment]] 
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -50,7 +44,7 @@ shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t 
 |/m \\\\\<ComputerName >|指定目的電腦。 不能與 **/l**選項一起使用。|
 |/t \<XXX >|在重新開機或關機之前，將超時時間或延遲設定為*XXX*秒。 這會導致在本機主控台上顯示警告。 您可以指定0-600 秒。 如果您未使用 **/t**，則超時期間預設為30秒。|
 |/d [p\|u：]\<XX >：\<YY >|列出系統重新開機或關機的原因。 以下是參數值：</br>**p**表示已規劃重新開機或關機。</br>**u**表示原因是使用者定義的。</br>注意：如果未指定**p**或**u** ，則會有未規劃的重新開機或關機。</br>*XX*指定主要的原因號碼（正小於256的正整數）。</br>*YY*指定次要原因號碼（正整數小於65536）。|
-|/c "\<批註 >"|可以讓您詳細註解關機的原因。 您必須先使用 **/d**選項來提供原因。 您必須將批註括在引號中。 最多可以使用 511 個字元。|
+|/c \<批註 >|讓您能夠詳細註解關機的原因。 您必須先使用 **/d**選項來提供原因。 您必須將批註括在引號中。 最多可以使用 511 個字元。|
 |/?|在命令提示字元中顯示說明，包括在本機電腦上定義的主要和次要原因清單。|
 
 ## <a name="remarks"></a>備註
@@ -63,17 +57,17 @@ shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t 
 -   如果您指定主要和次要原因代碼，您必須先在您打算使用原因的每部電腦上定義這些原因代碼。 如果目的電腦上未定義原因代碼，關機事件追蹤器就無法記錄正確的原因文字。
 -   請記得使用**p：** 參數來表示已規劃關機。 省略**p：** 表示關機未計畫。 如果您輸入**p：** ，後面接著未規劃關機的原因代碼，則此命令不會執行關機。 相反地，如果您省略**p：** ，並輸入計畫關閉的原因代碼，則此命令不會執行關機。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
-若要強制應用程式在一分鐘延遲之後關閉並重新啟動本機電腦，並出現「應用程式：維護（已規劃）」和「重新設定 myapp .exe」的批註類型：
+若要強制應用程式在一分鐘延遲之後關閉並重新啟動本機電腦，原因是應用程式：維護（已規劃）和批註設定 myapp 類型：
 ```
-shutdown /r /t 60 /c "Reconfiguring myapp.exe" /f /d p:4:1
+shutdown /r /t 60 /c Reconfiguring myapp.exe /f /d p:4:1
 ```
 若要使用相同的參數重新開機遠端電腦 \\\\ServerName，請輸入：
 ```
-shutdown /r /m \\servername /t 60 /c "Reconfiguring myapp.exe" /f /d p:4:1
+shutdown /r /m \\servername /t 60 /c Reconfiguring myapp.exe /f /d p:4:1
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

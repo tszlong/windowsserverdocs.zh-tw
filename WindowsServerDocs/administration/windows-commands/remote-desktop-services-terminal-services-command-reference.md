@@ -1,28 +1,24 @@
 ---
 title: 遠端桌面服務 (終端機服務) 命令參考資料
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2f371848-5c48-470c-908c-afbc95d3a805
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3d13d6ac2e423c5a07a2a84af5e17fe9081cd70f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b2e188be84c657688a971a75788942d4acf598d7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371608"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836061"
 ---
 # <a name="remote-desktop-services-terminal-services-command-reference"></a>遠端桌面服務 (終端機服務) 命令參考資料
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 以下是遠端桌面服務命令列工具的清單。
 > [!NOTE]

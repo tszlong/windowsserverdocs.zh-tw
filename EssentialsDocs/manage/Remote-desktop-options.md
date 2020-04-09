@@ -1,22 +1,18 @@
 ---
 title: 遠端桌面選項
-description: 描述如何使用 Windows Server Essentials
-ms.custom: na
+description: 說明如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 51076946-ea9b-4ac7-9a6e-d6023816b97d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: bbf7f258b2904732ab2e605d1eb3ea6bd2d306be
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5f2c0da644aaf08cc921f778d9d1203c94e3f94e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59818309"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852651"
 ---
 # <a name="remote-desktop-options"></a>遠端桌面選項
  
@@ -32,7 +28,7 @@ ms.locfileid: "59818309"
 |桌面轉譯緩衝處理|否|否|是|是|  
 |拖曳時顯示視窗的內容|否|否|是|是|  
 |功能表及視窗動畫|否|否|是|是|  
-|佈景主題|否|是|是|是|  
+|主題|否|是|是|是|  
 |點陣圖快取|是|是|是|是|  
   
 ## <a name="screen-size"></a>螢幕大小  

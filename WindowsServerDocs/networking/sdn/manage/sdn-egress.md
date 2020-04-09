@@ -1,20 +1,19 @@
 ---
 title: 虛擬網路中的輸出計量
 description: 雲端網路營收的基本層面是網路頻寬輸出。 例如，Microsoft Azure 商務模型中的輸出資料傳輸。 輸出資料的收費依據是在給定的計費週期內，透過網際網路從 Azure 資料中心移出的總數據量。
-manager: dougkim
+manager: grcusanz
 ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
-ms.assetid: ''
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 10/02/2018
-ms.openlocfilehash: 5425a562264addd3b2fc416f659f8ba79d6d99d6
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: a5d530d5cd1b42206bd6881ee902496713573793
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317491"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854431"
 ---
 # <a name="egress-metering-in-a-virtual-network"></a>虛擬網路中的輸出計量
 

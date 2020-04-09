@@ -2,22 +2,20 @@
 title: 開始使用安裝與開機事件集合
 description: 設定安裝與開機事件集合收集器及目標
 ms.prod: windows-server
-ms.service: na
 manager: DonGill
 ms.technology: server-sbec
 ms.localizationpriority: medium
 ms.date: 10/16/2017
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: fc239aec-e719-47ea-92fc-d82a7247b3f8
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: d1d24cdf481f19b37093f76cf8741702e1b4de60
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1160a5dcf2f647a335a22eba54501589db6695ab
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370506"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852071"
 ---
 # <a name="get-started-with-setup-and-boot-event-collection"></a>開始使用安裝與開機事件集合
 
@@ -25,13 +23,13 @@ ms.locfileid: "71370506"
 
   
 ## <a name="overview"></a>概觀  
-「安裝與開機事件集合」是 Windows Server 2016 中的新功能，可讓您指定「收集器」電腦，這部電腦會收集其他電腦開機或進行設定程序時所發生的各種重要事件。 您隨後可以使用事件檢視器、訊息分析器、Wevtutil 或 Windows PowerShell Cmdlet 來分析收集到的事件。  
+設定和開機事件收集是 Windows Server 2016 中的新功能，可讓您指定收集器電腦，收集在其他電腦開機或完成安裝程式時所發生的各種重要事件。 您隨後可以使用事件檢視器、訊息分析器、Wevtutil 或 Windows PowerShell Cmdlet 來分析收集到的事件。  
   
 先前，由於在電腦經過設定之前，收集事件所需的基礎結構並不存在，因此無法監視這些事件。 您可以監視的安裝與開機事件類型包括：  
   
 -   載入核心模組和驅動程式  
   
--   列舉裝置和初始化其驅動程式 (包括像 CPU 類型這樣的「裝置」)  
+-   裝置的列舉和其驅動程式的初始化（包括如 CPU 類型的裝置）  
   
 -   驗證和掛接檔案系統  
   
@@ -48,7 +46,7 @@ ms.locfileid: "71370506"
 |Windows 8.1|是|是|  
 |Windows 10|是|是|  
 |Windows Server 2016|是|是|  
-|Windows Server 2012 R2|是|否|  
+|Windows Server 2012 R2|是|no|  
   
 ## <a name="installing-the-collector-service"></a>安裝收集器服務  
 從 Windows Server 2016 開始，事件收集器服務是做為選用功能來提供。 在此版本中，您可以在提升權限的 Windows PowerShell 命令提示字元中透過此命令，使用 DISM.exe 來進行安裝：  
@@ -61,7 +59,7 @@ ms.locfileid: "71370506"
   
 您也可以使用伺服器管理員中的 [新增角色及功能精靈] 來安裝「安裝與開機事件集合」服務。  
   
-## <a name="configuration"></a>設定  
+## <a name="configuration"></a>組態  
 您需要設定兩個項目來收集安裝與開機事件。  
   
 -   在傳送事件的目標電腦 (也就是，您要監視其安裝與開機的電腦)，啟用 KDNET/EVENT-NET 傳輸並啟用事件轉送。  
@@ -82,13 +80,13 @@ ms.locfileid: "71370506"
   
     winrm quickconfig  
   
-2.  回應提示，然後重新啟動目標電腦。 如果目標電腦與收集器電腦不在相同網域中，您可能需要將這些電腦定義為受信任的主機。 請這樣做：  
+2.  回應提示，然後重新啟動目標電腦。 如果目標電腦與收集器電腦不在相同網域中，您可能需要將這些電腦定義為受信任的主機。 若要這樣做：  
   
 3.  在收集器電腦上，執行下列任一命令：  
   
-    -   在 Windows PowerShell 提示字元中： `Set-Item -Force WSMan:\localhost\Client\TrustedHosts "<target1>,<target2>,..."`，後面接著 \<target1 > 的 `Set-Item -Force WSMan:\localhost\Client\AllowUnencrypted true`，這是目的電腦的名稱或 IP 位址。  
+    -   在 Windows PowerShell 提示字元中： `Set-Item -Force WSMan:\localhost\Client\TrustedHosts <target1>,<target2>,...`，後面接著 \<target1 > 的 `Set-Item -Force WSMan:\localhost\Client\AllowUnencrypted true`，這是目的電腦的名稱或 IP 位址。  
   
-    -   或在命令提示字元中： **winrm set winrm/config/client @ {TrustedHosts = "\<target1 >，\<target2 >,...";AllowUnencrypted = "true"}**  
+    -   或在命令提示字元中： **winrm 設定 winrm/config/client @ {TrustedHosts =\<target1 >，\<target2 >,...;AllowUnencrypted = true}**  
   
         > [!IMPORTANT]  
         > 這會設定未加密的通訊，因此不要在實驗室環境外部執行此命令。  
@@ -107,7 +105,7 @@ ms.locfileid: "71370506"
   
     這裡 < target_name > 是目的電腦的名稱，\<ip > 是收集器電腦的 IP 位址。 \<埠 > 是收集器將在其中執行的埠號碼。 金鑰 <a.b.c.d> 是通訊所需的加密金鑰，包含四個以點分隔的英數字元字串。 收集器電腦上會使用這同一個金鑰。 如果您沒有輸入金鑰，系統會產生隨機金鑰；收集器電腦將需要此金鑰，因此請記下。  
   
-6.  如果您已設定收集器電腦，請以新目標電腦的資訊來更新收集器電腦上的設定檔。 如需詳細資訊，請參閱「設定收集器電腦」一節。  
+6.  如果您已設定收集器電腦，請以新目標電腦的資訊來更新收集器電腦上的設定檔。 如需詳細資訊，請參閱設定收集器電腦一節。  
   
 ##### <a name="to-enable-event-transport-locally-on-the-target-computer"></a>若要在目標電腦本機啟用事件傳輸  
   
@@ -117,9 +115,9 @@ ms.locfileid: "71370506"
   
     **bcdedit/eventsettings net hostip：1.2.3.4 埠：50000機碼： a. b. c. d**  
   
-    其中 "1.2.3.4" 是範例，請將此取代為收集器電腦的 IP 位址。 此外，也將 "50000" 取代為收集器用來執行的連接埠號碼，並將 "a.b.c.d" 取代為通訊所需的加密金鑰。 收集器電腦上會使用這同一個金鑰。 如果您沒有輸入金鑰，系統會產生隨機金鑰；收集器電腦將需要此金鑰，因此請記下。  
+    這裡的1.2.3.4 是一個範例;將此取代為收集器電腦的 IP 位址。 也請將50000取代為收集器將在其中執行的埠號碼，並以通訊所需的加密金鑰做為 b. .c。 收集器電腦上會使用這同一個金鑰。 如果您沒有輸入金鑰，系統會產生隨機金鑰；收集器電腦將需要此金鑰，因此請記下。  
   
-2.  如果您已設定收集器電腦，請以新目標電腦的資訊來更新收集器電腦上的設定檔。 如需詳細資訊，請參閱「設定收集器電腦」一節。  
+2.  如果您已設定收集器電腦，請以新目標電腦的資訊來更新收集器電腦上的設定檔。 如需詳細資訊，請參閱設定收集器電腦一節。  
   
 **現在已啟用事件傳輸本身，您必須讓系統透過該傳輸實際傳送 ETW 事件。**  
   
@@ -161,7 +159,7 @@ ms.locfileid: "71370506"
 ### <a name="validate-target-computer-configuration"></a>驗證目標電腦設定  
 若要檢查目標電腦上的設定，請開啟提升權限的命令提示字元並執行 **bcdedit /enum**。 完成此命令後，接著執行 **bcdedit /eventsettings**。 您可以仔細檢查下列值：  
   
--   索引鍵  
+-   Key  
   
 -   Debugtype = NET  
   
@@ -214,7 +212,7 @@ ms.locfileid: "71370506"
   
 -   用於與收集器電腦通訊的加密金鑰  
   
--   目標電腦的名稱。 您可以使用 IP 位址、主機名稱或任何其他名稱做為電腦名稱。  
+-   目標電腦名稱。 您可以使用 IP 位址、主機名稱或任何其他名稱做為電腦名稱。  
   
 -   所要使用之 ETL 檔案的名稱，以及其循環索引序列大小設定  
   
@@ -227,24 +225,24 @@ ms.locfileid: "71370506"
 3.  將此範例設定複製到 [記事本] 視窗：  
   
     ```  
-    <collector configVersionMajor="1" statuslog="c:\ProgramData\Microsoft\BootEventCollector\Logs\statuslog.xml">  
+    <collector configVersionMajor=1 statuslog=c:\ProgramData\Microsoft\BootEventCollector\Logs\statuslog.xml>  
       <common>  
-        <collectorport value="50000"/>  
-        <forwarder type="etl">  
-          <set name="file" value="c:\ProgramData\Microsoft\BootEventCollector\Etl\{computer}\{computer}_{#3}.etl"/>  
-          <set name="size" value="10mb"/>  
-          <set name="nfiles" value="10"/>  
-          <set name="toxml" value="none"/>  
+        <collectorport value=50000/>  
+        <forwarder type=etl>  
+          <set name=file value=c:\ProgramData\Microsoft\BootEventCollector\Etl\{computer}\{computer}_{#3}.etl/>  
+          <set name=size value=10mb/>  
+          <set name=nfiles value=10/>  
+          <set name=toxml value=none/>  
         </forwarder>  
         <target>  
-          <ipv4 value="192.168.1.1"/>  
-          <key value="a.b.c.d"/>  
-          <computer value="computer1"/>  
+          <ipv4 value=192.168.1.1/>  
+          <key value=a.b.c.d/>  
+          <computer value=computer1/>  
         </target>  
         <target>  
-          <ipv4 value="192.168.1.2"/>  
-          <key value="d1.e2.f3.g4"/>  
-          <computer value="computer2"/>  
+          <ipv4 value=192.168.1.2/>  
+          <key value=d1.e2.f3.g4/>  
+          <computer value=computer2/>  
         </target>  
       </common>  
     </collector>  
@@ -257,13 +255,13 @@ ms.locfileid: "71370506"
     >   
     > \<collectorport > 元素會定義收集器將接聽傳入資料的 UDP 埠號碼。 這與 Bcdedit 目標組態步驟所指定的連接埠相同。 收集器僅支援一個連接埠，而所有的目標都必須連線至同一個連接埠。  
     >   
-    > \<轉寄站 > 元素指定從目的電腦接收 ETW 事件的方式。 只有一種類型的轉寄站，這會將事件寫入 ETL 檔案。 參數會指定檔案名稱模式、循環索引序列中每個檔案的大小限制，以及每部電腦的循環索引序列大小。 設定 "toxml" 會指定，收到 ETW 事件時，以二進位格式將其寫入，而不轉換為 XML。 如需有關決定是否將事件轉換為 XML 的詳細資訊，請參閱「XML 事件轉換」一節。 檔案名稱模式包含下列替代位置：{computer} 代表電腦名稱，而 {#3} 代表循環索引序列中的檔案索引。  
+    > \<轉寄站 > 元素指定從目的電腦接收 ETW 事件的方式。 只有一種類型的轉寄站，這會將事件寫入 ETL 檔案。 參數會指定檔案名稱模式、循環索引序列中每個檔案的大小限制，以及每部電腦的循環索引序列大小。 設定 toxml 指定 ETW 事件會在收到時以二進位格式寫入，而不會轉換成 XML。 如需決定是否要將事件授與 XML 的相關資訊，請參閱 XML 事件轉換一節。 檔案名稱模式包含下列替代位置：{computer} 代表電腦名稱，而 {#3} 代表循環索引序列中的檔案索引。  
     >   
-    > 在此範例檔案中，會使用 \<目標 > 元素來定義兩部目的電腦。 每個定義都會指定具有 \<ipv4 > 的 IP 位址。但是您也可以使用 MAC 位址（例如，< mac 值 = "11：22：33：44：55： 66"\/> 或 < MAC 值 = "11-22-33-44-55-66"\/>）或 SMBIOS GUID （例如 < GUID value = "{269076F9-4B77-46E1-B03B-CA5003775B88}"\/>）來識別目的電腦。 另請記下加密金鑰 (與之前使用 Bcdedit 在目標電腦上所指定或產生的一樣) 和電腦名稱。  
+    > 在此範例檔案中，會使用 \<目標 > 元素來定義兩部目的電腦。 每個定義都會指定具有 \<ipv4 > 的 IP 位址，但您也可以使用 MAC 位址（例如，`<mac value=11:22:33:44:55:66/>` 或 `<mac value=11-22-33-44-55-66/>`）或 SMBIOS GUID （例如 `<guid value={269076F9-4B77-46E1-B03B-CA5003775B88}/>`）來識別目的電腦。 另請記下加密金鑰 (與之前使用 Bcdedit 在目標電腦上所指定或產生的一樣) 和電腦名稱。  
   
 4.  輸入每部目的電腦的詳細資料作為設定檔中的個別 \<目標 > 元素，然後儲存 Newconfig.json 並關閉 [記事本]。  
   
-5.  使用 `$result = (Get-Content .\newconfig.xml | Set-SbecActiveConfig); $result` 套用新的設定。 輸出應該會傳回顯示 "true" 的 [成功] 欄位。 如果您收到其他結果，請參閱本主題的「疑難排解」一節。  
+5.  使用 `$result = (Get-Content .\newconfig.xml | Set-SbecActiveConfig); $result` 套用新的設定。 輸出應該會傳回，並出現 Success 欄位 true。 如果您收到其他結果，請參閱本主題的「疑難排解」一節。  
   
 您隨時都可以使用 `(Get-SbecActiveConfig).text` 來檢查目前的作用中設定。  
   
@@ -282,7 +280,7 @@ Nano 伺服器提供的基本介面有時使其發生的問題難以診斷。 �
   
 1.  建立基本 Nano 伺服器映像。 如需詳細資訊，請參閱[開始使用 Nano 伺服器](https://technet.microsoft.com/library/mt126167.aspx)。  
   
-2.  設定收集器電腦，如本主題「設定收集器電腦」一節所示。  
+2.  如本主題的設定收集器電腦一節所述，設定收集器電腦。  
   
 3.  新增自動記錄工具登錄機碼以啟用傳送診斷訊息功能。 若要這樣做，您可以掛接步驟 1 所建立的 Nano Server VHD、載入登錄區，然後新增特定登錄機碼。 在本範例中，Nano 伺服器映像位於 C:\NanoServer；您的路徑可能不同，請相應調整步驟。  
   
@@ -294,7 +292,7 @@ Nano 伺服器提供的基本介面有時使其發生的問題難以診斷。 �
   
 4.  更新 Nano 伺服器映像中的 BCD 設定以啟用事件旗標，並設定收集器電腦以確保診斷事件傳送至正確的伺服器。 記下您在收集器 Active.XML 檔案中設定的收集器電腦 IPv4 位址、TCP 連接埠及加密金鑰 (已於本主題其他位置述及) 。 在 Windows PowerShell 主控台中，以較高的許可權使用此命令： `Enable-SbecBcd -Path C:\NanoServer\Workloads\IncludingWorkloads.vhd -CollectorIp 192.168.100.1 -CollectorPort 50000 -Key a.b.c.d`  
   
-5.  將 Nano 伺服器的 IPv4 位址範圍、特定 IPv4 位址或 MAC 位址新增至收集器電腦上的 Active.XML 檔案 (請參閱本主題「設定收集器電腦」一節)，更新收集器電腦以接收 Nano 伺服器電腦所傳送的事件。  
+5.  將收集器電腦更新為接收 Nano 伺服器電腦傳送的事件，方法是將 IPv4 位址範圍、特定的 IPv4 位址或 Nano 伺服器的 MAC 位址新增到收集器電腦上的 Active .XML 檔案（請參閱本主題的設定收集器電腦一節）。  
   
 ## <a name="starting-the-event-collector-service"></a>啟動事件收集器服務  
 將有效的設定檔儲存在收集器電腦並設定好目標電腦之後，只要重新啟動目標電腦，就會立即對收集器進行連線並開始收集事件。  
@@ -311,7 +309,7 @@ Nano 伺服器提供的基本介面有時使其發生的問題難以診斷。 �
   
 ||錯誤|錯誤描述|徵兆|潛在問題|  
 |-|---------|---------------------|-----------|---------------------|  
-|Dism.exe|87|功能名稱選項在此內容中無法辨識||- 如果拼錯功能名稱，即可能發生此情況。 確認您的拼字正確無誤，然後再試一次。<br />- 確認此功能可在您使用中的作業系統版本上使用。 在 Windows PowerShell 中，執行 **dism /online /get-features &#124; ?{$_ -match "boot"}** 。 如果沒有傳回相符項目，您可能執行的是不支援此功能的版本。|  
+|Dism.exe|87|功能名稱選項在此內容中無法辨識||- 如果拼錯功能名稱，即可能發生此情況。 確認您的拼字正確無誤，然後再試一次。<br />- 確認此功能可在您使用中的作業系統版本上使用。 在 Windows PowerShell 中，執行**dism/online &#124; /get-features？ {$ _-match boot}** 。 如果沒有傳回相符項目，您可能執行的是不支援此功能的版本。|  
 |Dism.exe|0x800f080c|功能 \<名稱 > 不明。||與上述相同|  
   
 ### <a name="troubleshooting-the-collector"></a>收集器疑難排解  
@@ -323,15 +321,15 @@ Nano 伺服器提供的基本介面有時使其發生的問題難以診斷。 �
   
 在 Windows PowerShell 命令提示字元：`Get-WinEvent -LogName Microsoft-Windows-BootEvent-Collector/Admin` (您可附加 `-Oldest`，以傳回依時間先後順序第一個列出最早事件的清單)  
   
-您可以從「錯誤」到「警告」、「資訊」(預設)、「詳細資訊」及「偵測」，調整記錄檔的詳細等級。 比「資訊」更詳細的等級有助於診斷未連線目標電腦發生的問題，但可能會產生大量的資料，因此要小心使用。  
+您可以透過 [警告]、[資訊] （預設值）、[詳細資料] 和 [debug]，從錯誤中調整記錄檔的詳細程度。 比資訊更詳細的層級有助於診斷目的電腦未連線的問題，但它們可能會產生大量的資料，因此請小心使用它們。  
   
-您可以在設定檔的 \<收集器 > 元素中設定最低記錄層級。 例如： < 收集器 configVersionMajor = "1" minlog\="verbose" >。  
+您可以在設定檔的 \<收集器 > 元素中設定最低記錄層級。 例如： < 收集器 configVersionMajor = 1 minlog\=verbose >。  
   
 詳細資料等級會記錄每個在處理時所收到封包的記錄。 偵錯等級會新增更多處理詳細資料，也會傾印所有收到的 ETW 封包的內容。  
   
 使用偵錯等級時，將記錄寫入檔案而不嘗試在一般記錄系統中檢視記錄，可能會很有用。 若要這麼做，請在設定檔的 \<收集器 > 元素中新增額外的元素：  
   
-< 收集器 configVersionMajor = "1" minlog = "debug" log\="c:\ProgramData\Microsoft\BootEventCollector\Logs\log.txt" >  
+< 收集器 configVersionMajor = 1 minlog = debug log\=c:\ProgramData\Microsoft\BootEventCollector\Logs\log.txt >  
       
  **針對收集器進行疑難排解的建議方法：**  
    
@@ -342,18 +340,18 @@ Nano 伺服器提供的基本介面有時使其發生的問題難以診斷。 �
    如果傳回的訊息應表示有來自此目標的連線，則問題可能出在自動記錄工具設定。 如果沒有傳回任何訊息，問題在於要開始使用的 KDNET 連線。 若要診斷 KDNET 連線問題，請嘗試檢查兩端的連線 (亦即來自收集器和來自目標的連線)。  
   
 2. 若要查看收集器的擴充診斷，請將下列內容新增至設定檔的 \<收集器 > 元素：  
-   \<收集器 .。。minlog = "verbose" >  
+   \<收集器 。minlog = verbose >  
    這會允許提供有關每個收到封包的訊息。  
 3. 檢查是否任何封包都收到了。 或者，您可能還需要在詳細資訊模式下將記錄直接寫入記錄檔，而不是透過 ETW 來查看。 若要這麼做，請將此專案新增至設定檔的 \<收集器 > 元素：  
-   \<收集器 .。。minlog = "verbose" log = "c:\ProgramData\Microsoft\BootEventCollector\Logs\log.txt" >  
+   \<收集器 。minlog = verbose log = c:\ProgramData\Microsoft\BootEventCollector\Logs\log.txt >  
       
 4. 檢查事件記錄檔是否有關於所收到封包的資訊。 檢查是否任何封包都收到了。 如果封包已收到但不正確，請檢查事件訊息以取得詳細資料。  
-5. KDNET 會從目標端將一些診斷資訊寫入至登錄。 查詢   
+5. KDNET 會從目標端將一些診斷資訊寫入至登錄。 [查詢]   
    **HKLM\SYSTEM\CurrentControlSet\Services\kdnet** 是否有訊息。  
    KdInitStatus (DWORD) 在成功時為 0，而錯誤時，則顯示錯誤碼  
    KdInitErrorString = 錯誤的說明 (如果沒有錯誤，也會包含參考訊息)  
   
-6. 對目標執行 Ipconfig.exe，並檢查其回報的裝置名稱。 如果 KDNET 正確載入，裝置名稱應該類似 "kdnic" 這樣，而不是原始廠商的介面卡名稱。  
+6. 對目標執行 Ipconfig.exe，並檢查其回報的裝置名稱。 如果 KDNET 正確載入，則裝置名稱應該類似 kdnic，而不是原始廠商的卡片名稱。  
 7. 檢查是否已為目標設定 DHCP。 KDNET 絕對需要 DHCP。  
 8. 確認收集器與目標位於相同網路。 如果不是，請檢查是否正確設定路由，特別是 DHCP 的預設閘道設定。  
   
@@ -380,7 +378,7 @@ Nano 伺服器提供的基本介面有時使其發生的問題難以診斷。 �
   
 ||錯誤|錯誤描述|徵兆|潛在問題|  
 |-|---------|---------------------|-----------|---------------------|  
-|目標電腦||目標未連線至收集器||- 目標電腦無法在進行設定之後重新啟動。 重新啟動目標電腦。<br />- 目標電腦的 BCD 設定不正確。 檢查「驗證目標電腦設定」一節中的設定。 視需要進行修正，然後再重新啟動目標電腦。<br />- KDNET/EVENT-NET 驅動程式無法連線至網路介面卡，或已連線至錯誤的網路介面卡。 在 Windows PowerShell 中，執行 `gwmi Win32_NetworkAdapter`，並檢查輸出是否有一個 ServiceName 為 **kdnic** 的介面卡。 如果選取了錯誤的網路介面卡，請重新執行「若要指定網路介面卡」中的步驟。 如果完全沒有出現網路介面卡，可能是驅動程式不支援您的任何網路介面卡。<br>**另請參閱**前述「建議的收集器疑難排解方法」，特別是步驟 5 到 8。|  
-|收集器||移轉裝載收集器的 VM 之後，我再也無法查看事件。||確認收集器電腦的 IP 位址沒有變更。 如果已變更，請檢閱「若要啟用透過傳輸從遠端傳送 ETW 事件的功能」。|  
+|目標電腦||目標未連線至收集器||- 目標電腦無法在進行設定之後重新啟動。 重新啟動目標電腦。<br />- 目標電腦的 BCD 設定不正確。 檢查 [驗證目的電腦設定] 區段中的設定。 視需要進行修正，然後再重新啟動目標電腦。<br />- KDNET/EVENT-NET 驅動程式無法連線至網路介面卡，或已連線至錯誤的網路介面卡。 在 Windows PowerShell 中，執行 `gwmi Win32_NetworkAdapter`，並檢查輸出是否有一個 ServiceName 為 **kdnic** 的介面卡。 如果選取了錯誤的網路介面卡，請重新執行中的步驟，以指定網路介面卡。 如果完全沒有出現網路介面卡，可能是驅動程式不支援您的任何網路介面卡。<br>另**請參閱**針對上述收集器進行疑難排解的建議方法，特別是步驟5到8。|  
+|收集器||移轉裝載收集器的 VM 之後，我再也無法查看事件。||確認收集器電腦的 IP 位址沒有變更。 如果有的話，請參閱以啟用透過遠端傳輸的 ETW 事件。|  
 |收集器||未建立 ETL 檔案。|`Get-SbecForwarding` 顯示目標已連線，但沒有任何錯誤，但不會建立 ETL 檔案。|目標電腦可能尚未傳送任何資料，只有在接收到資料時，才會建立 ETL 檔案。|  
 |收集器||有事件未顯示在 ETL 檔案中。|目標電腦已傳送事件，但是當使用訊息分析程式的事件檢視器讀取 ETL 檔案時，事件卻不存在。|- 事件可能仍然在緩衝區中。 除非收集到 64 KB 緩衝區已滿，或因 10-15 秒沒有新事件而發生逾時之前，系統不會將事件寫入 ETL 檔案。 等待逾時過期，或是使用 `Save-SbecInstance` 排清緩衝區。<br />- 事件資訊清單無法在收集器電腦上，或在執行事件檢視器或訊息分析程式的電腦上使用。  在此情況下，收集器可能無法處理事件 (檢查收集器記錄檔)，或檢視器可能無法顯示事件。  最好是將所有的資訊清單都安裝在收集器電腦，並且先將更新安裝在收集器電腦上，再安裝到目標電腦。|

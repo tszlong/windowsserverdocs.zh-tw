@@ -1,28 +1,24 @@
 ---
 title: logman 建立警示
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 93e6fc2b-5bf5-413b-84b4-be8b9dd3a57d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9420c486d4c6161c2c5724384f0d916448164a2a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7568d4a2164cb9c387f59ff581ab739e7bb1f3e9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374583"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840941"
 ---
 # <a name="logman-create-alert"></a>logman 建立警示
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 建立警示資料收集器。  
 
@@ -30,7 +26,7 @@ ms.locfileid: "71374583"
 ```  
 logman create alert <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>參數  
+### <a name="parameters"></a>參數  
 
 |                 參數                  |                                                                               描述                                                                               |
 |--------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -62,12 +58,12 @@ logman create alert <[-n] <name>> [options]
 
 ## <a name="remarks"></a>備註  
 其中列出 [-]，此選項會有額外的否定。  
-## <a name="BKMK_examples"></a>典型  
-下列命令會建立名為 new_alert 的警示，當 Processor （_Total）計數器群組中的效能計數器時間百分比超過計數器值50時，就會引發此警示。  
+## <a name="examples"></a><a name=BKMK_examples></a>典型  
+下列命令會建立稱為 new_alert 的警示，而當處理器（_Total）計數器群組中的效能計數器時間超過計數器值50時，就會引發此警示。  
 ```  
-logman create alert new_alert -th "\Processor(_Total)\% Processor time>50"  
+logman create alert new_alert -th \Processor(_Total)\% Processor time>50  
 ```  
 > [!NOTE]
-> 定義的臨界值是以計數器所收集的值為基礎，因此在此範例中，50的值等於 50% 的處理器時間。  
-> #### <a name="additional-references"></a>其他參考  
+> 定義的臨界值是以計數器所收集的值為基礎，因此在此範例中，50的值等於50% 的處理器時間。  
+> ## <a name="additional-references"></a>其他參考資料  
 > [logman](logman.md)  

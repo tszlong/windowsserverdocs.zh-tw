@@ -1,7 +1,6 @@
 ---
 ms.assetid: c17d143b-86b4-47c0-b76e-1862dda8f0bd
 title: 逐步解說-使用 Windows 裝置 Workplace Join
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 9867e11aa659be9aff9912780e1186a796a7232e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 68249c4afcd3fc23f040020a221e53df6d2f6865
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357766"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816011"
 ---
 # <a name="walkthrough-workplace-join-with-a-windows-device"></a>逐步解說：將 Windows 裝置加入工作地點網路
 
@@ -56,7 +55,7 @@ ms.locfileid: "71357766"
 
 4. 在 [**輸入您的使用者識別碼以取得工作地點存取或開啟裝置管理**] 方塊中，輸入<strong>roberth@contoso.com</strong>，然後按一下 [**加入**]。
 
-5. 當系統提示您輸入認證時，請輸入<strong>roberth@contoso.com</strong>和 password： <strong>P@ssword</strong>。 按一下 **\[確定\]** 。
+5. 當系統提示您輸入認證時，請輸入<strong>roberth@contoso.com</strong>和 password： <strong>P@ssword</strong>。 按一下 [確定]。
 
 6. 您現在應該會看到下列訊息：「此裝置已加入您的工作地點網路。」
 
@@ -65,7 +64,7 @@ ms.locfileid: "71357766"
 
 ##### <a name="to-access-the-web-application-after-joining-the-workplace"></a>在加入工作地點網路之後存取 Web 應用程式
 
-1. 使用您的 Microsoft 帳戶登入 **Client1** 。
+1. 使用您的 Microsoft 帳戶登入 **Client1**。
 
 2. 開啟 Internet Explorer，然後流覽至您的一般宣告應用程式， **https://webserv1.contoso.com/claimapp** 。
 
@@ -77,9 +76,9 @@ ms.locfileid: "71357766"
 
 6. 開啟 Internet Explorer 並流覽至相同的宣告應用程式， **https://webserv1.contoso.com/claimapp** 。
 
-7. 請注意，系統 **不會** 提示您再次輸入認證。 您已使用「加入工作地點網路」功能連線，因此有「單一登入」。
+7. 請注意，系統**不會**提示您再次輸入認證。 您已使用「加入工作地點網路」功能連線，因此有「單一登入」。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 [從任何裝置加入工作場所以進行 SSO，以及跨公司應用程式進行無縫第二因素驗證](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
 [設定 Windows Server 2012 R2 中 AD FS 的實驗室環境](../deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
 [逐步解說：使用 iOS 裝置 Workplace Join](Walkthrough--Workplace-Join-with-an-iOS-Device.md)

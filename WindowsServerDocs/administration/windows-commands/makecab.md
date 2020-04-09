@@ -1,28 +1,24 @@
 ---
 title: makecab
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4da95297-c593-427b-9f76-2f389c46cbf4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b0231b6f1ddd3e81caa7544587f764e2308015b8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 46efbae1d59a85071622df51fc018d0bf73dc504
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374152"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840261"
 ---
 # <a name="makecab"></a>makecab
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 將現有的檔案封裝成封包檔（.cab）。
 ## <a name="syntax"></a>語法
@@ -30,7 +26,7 @@ ms.locfileid: "71374152"
 makecab [/v[n]] [/d var=<value> ...] [/l <dir>] <source> [<destination>]
 makecab [/v[<n>]] [/d var=<value> ...] /f <directives_file> [...]
 ```
-### <a name="parameters"></a>參數
+#### <a name="parameters"></a>參數
 
 |      參數       |                                                                        描述                                                                        |
 |----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -43,8 +39,8 @@ makecab [/v[<n>]] [/d var=<value> ...] /f <directives_file> [...]
 |          /?          |                                                           在命令提示字元顯示說明。                                                            |
 
 ## <a name="remarks"></a>備註
--   如需 directive_file 的相關資訊，請參閱 MSDN 上的[Microsoft 封包格式](https://go.microsoft.com/fwlink/?LinkId=226852)。
+-   如需 directive_file 的詳細資訊，請參閱 MSDN 上的[Microsoft 封包格式](https://go.microsoft.com/fwlink/?LinkId=226852)。
 
-## <a name="additional-references"></a>其他參考
--   [命令列語法關鍵](command-line-syntax-key.md)
+## <a name="additional-references"></a>其他參考資料
+-   - [命令列語法關鍵](command-line-syntax-key.md)
 

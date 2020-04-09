@@ -1,6 +1,5 @@
 ---
 title: 使用 SQL Server 升級至 Windows Server 2016 中的 AD FS
-description: ''
 author: billmath
 manager: mtillman
 ms.date: 04/11/2018
@@ -9,12 +8,12 @@ ms.prod: windows-server
 ms.assetid: 70f279bf-aea1-4f4f-9ab3-e9157233e267
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: dd843724faf1c7a8101def84091484a5e7f7900f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e9488357eecb4a2093d6989e4ebfcc195ce68567
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408232"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854001"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-with-sql-server"></a>使用 SQL Server 升級至 Windows Server 2016 中的 AD FS
 
@@ -33,7 +32,7 @@ Windows Server 2016 AD FS 伺服器可以新增至 Windows Server 2012 R2 陣列
 
 -   系統管理員可以將新的 Windows Server 2016 同盟伺服器新增至現有的 Windows Server 2012 R2 伺服器陣列。  因此，伺服器陣列處於「混合模式」，並可操作 Windows Server 2012 R2 伺服器陣列行為層級。  為了確保整個伺服器陣列的行為一致，新的 Windows Server 2016 功能無法在此模式中設定或使用。  
 
--   所有的 Windows Server 2012 R2 同盟伺服器一旦從混合模式伺服器陣列中移除後，在 WID 伺服器陣列的情況下，其中一個新的 Windows 服務2016同盟伺服器已升級為主要節點的角色，然後系統管理員就可以從 Win 中提高 FBLwindows Server 2012 R2 到 Windows Server 2016。  如此一來，就可以設定和使用任何新的 AD FS Windows Server 2016 功能。  
+-   當所有 Windows Server 2012 R2 同盟伺服器都已從混合模式伺服器陣列中移除，而且在 WID 伺服器陣列的情況下，其中一個新的 Windows 服務2016同盟伺服器已升級為主要節點的角色，然後系統管理員可以將 FBL 從 Windows Server 2012 R2 提升到 Windows Server 2016。  如此一來，就可以設定和使用任何新的 AD FS Windows Server 2016 功能。  
 
 -   由於「混合伺服器陣列」功能的結果，想要升級至 Windows Server 2016 的 Windows Server 2012 R2 組織 AD FS 不需要部署全新的伺服器陣列、匯出和匯入設定資料。  相反地，他們可以將 Windows Server 2016 節點加入至現有的伺服器陣列（當其上線時），而且只會產生與 FBL 引發相關的短暫停機時間。  
 
@@ -46,7 +45,7 @@ Windows Server 2016 AD FS 伺服器可以新增至 Windows Server 2012 R2 陣列
 
 以下架構圖顯示用來驗證及記錄下列步驟的設定。
 
-![Architecture](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/arch.png)
+![架構](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/arch.png)
 
 
 #### <a name="join-the-windows-2016-ad-fs-server-to-the-ad-fs-farm"></a>將 Windows 2016 AD FS 伺服器加入 AD FS 伺服器陣列

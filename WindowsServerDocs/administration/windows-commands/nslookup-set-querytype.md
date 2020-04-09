@@ -1,24 +1,20 @@
 ---
 title: nslookup set querytype
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5af54ac5-fc1a-4af6-977b-f8e97c8eba90
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bc0eb19fd66e738b4bfc110a2bbc172153a12d98
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1c066277a22325e5db8383f58cda31038aa656e0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372899"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80838431"
 ---
 # <a name="nslookup-set-querytype"></a>nslookup set querytype
 
@@ -29,7 +25,7 @@ ms.locfileid: "71372899"
 ```
 set querytype=<ResourceRecordtype>
 ```
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 <ResourceRecordtype> 指定 DNS 資源記錄類型。 預設的資源記錄類型為。下表列出此命令的有效值。
 
 | 值 |                                                   描述                                                   |
@@ -57,6 +53,5 @@ set querytype=<ResourceRecordtype>
 ## <a name="remarks"></a>備註
 - <strong>Set type</strong>命令會執行與<strong>set querytype</strong>命令相同的功能。
 - 如需資源記錄類型的詳細資訊，請參閱徵求意見（Rfc）1035。
-  ## <a name="additional-references"></a>其他參考
-  <a href="command-line-syntax-key.md" data-raw-source="[Command-Line Syntax Key](command-line-syntax-key.md)">命令列語法索引鍵</a>
-  <a href="nslookup-set-type.md" data-raw-source="[nslookup set type](nslookup-set-type.md)">nslookup 集類型</a>
+  ## <a name="additional-references"></a>其他參考資料
+  < href = 命令列語法-key.md 資料-原始來源 =-[命令列](command-line-syntax-key.md)語法索引鍵 > 命令列語法索引鍵</a> < href = nslookup-type.md 資料-原始來源 =[nslookup 集合類型](nslookup-set-type.md)> nslookup 設定類型</a>

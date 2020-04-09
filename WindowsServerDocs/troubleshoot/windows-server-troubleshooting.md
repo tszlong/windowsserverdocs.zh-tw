@@ -3,23 +3,17 @@ title: Windows Server 疑難排解
 description: 取得 Windows Server 問題疑難排解文章的連結
 layout: LandingPage
 ms.prod: windows-server
-ms.custom:
-- CI 113175
-- CSSTroubleshooting
-audience: Admin
-ms.service: na
-manager: ''
 ms.technology: server-general
 ms.date: 1/24/2020
 ms.topic: landing-page
 author: kaushika-msft
 ms.author: kaushika
-ms.openlocfilehash: cd4e61a9fac5b1a1f6a1b66309e514ef75b1e4db
-ms.sourcegitcommit: f0fcfee992b76f1ad5dad460d4557f06ee425083
+ms.openlocfilehash: 0537f00a06b27f855fcd87e9b1caa9d2e5085685
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77125129"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820731"
 ---
 # <a name="troubleshooting-windows-server-components"></a>Windows Server 元件疑難排解
 
@@ -162,7 +156,7 @@ Microsoft 會定期發行 Windows Server 的這兩項更新。 為了確保您�
 ## <a name="troubleshoot-sdn"></a>疑難排解 SDN
 
 - [疑難排解 SDN](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-software-defined-networking)
-- [針對 Windows Server 軟體定義網路堆疊進行疑難排解](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-windows-server-software-defined-networking-stack)
+- [對 Windows Server 軟體定義網路堆疊進行疑難排解](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-windows-server-software-defined-networking-stack)
 
 ## <a name="troubleshoot-rds-session-connectivity"></a>針對 RDS 會話連接進行疑難排解
 

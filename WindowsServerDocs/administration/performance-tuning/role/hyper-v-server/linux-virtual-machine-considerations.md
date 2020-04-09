@@ -4,15 +4,15 @@ description: Linux 和 BSD 虛擬機器
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Asmahi; SandySp; JoPoulso
+ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 5668629e7eded214525561d30fec496a4e91b8dc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7abc1ef5473365dd26dce1167bb685f116822a7d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385075"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851741"
 ---
 # <a name="linux-virtual-machine-considerations"></a>Linux 虛擬機器考慮
 
@@ -57,7 +57,7 @@ net.ipv4.tcp_abort_on_overflow = 1
 
 與網路類似，Linux 的來賓效能與存放裝置的優點是多個佇列的深度，足以讓主機保持忙碌。 使用 libaio 引擎的 fio 基準測試，Microbenchmarking 儲存體效能可能最佳。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 -   [Hyper-V 術語](terminology.md)
 

@@ -1,22 +1,22 @@
 ---
 title: 在新的專用樹系中使用 TPM 模式初始化 HGS 叢集（預設值）
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 56971f029dc8caa3b0d399230b75285396551390
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ba7543dfa92942c6854edb6b0d7f0f6ee2547766
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403623"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856641"
 ---
 # <a name="initialize-the-hgs-cluster-using-tpm-mode-in-a-new-dedicated-forest-default"></a>在新的專用樹系中使用 TPM 模式初始化 HGS 叢集（預設值）
 
->適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
+>適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
 
 1.  [!INCLUDE [Initialize HGS](../../../includes/guarded-fabric-initialize-hgs-default-step-one.md)]
 
@@ -33,7 +33,7 @@ ms.locfileid: "71403623"
         Initialize-HgsServer -HgsServiceName 'MyHgsDNN' -SigningCertificatePath '.\signCert.pfx' -SigningCertificatePassword $signingCertPass -EncryptionCertificatePath '.\encCert.pfx' -EncryptionCertificatePassword $encryptionCertPass -TrustTpm
         ```
 
-    -   如果您使用的是安裝在本機憑證存放區中的不可匯出憑證，請執行下列命令。 如果您不知道憑證的指紋，可以藉由執行 `Get-ChildItem Cert:\LocalMachine\My` 來列出可用的憑證。
+    -   如果您使用的是安裝在本機憑證存放區中的不可匯出憑證，請執行下列命令。 如果您不知道憑證的指紋，可以藉由執行 `Get-ChildItem Cert:\LocalMachine\My`來列出可用的憑證。
 
         ```powershell
         Initialize-HgsServer -HgsServiceName 'MyHgsDNN' -SigningCertificateThumbprint '1A2B3C4D5E6F...' -EncryptionCertificateThumbprint '0F9E8D7C6B5A...' -TrustTpm

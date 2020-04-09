@@ -2,20 +2,19 @@
 title: 若要參與複寫，容錯移轉叢集中的伺服器必須已設定 Hyper-v 複本代理人
 description: 此最佳做法分析程式規則的線上版本文字。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 5ec88ce5-a8b2-4ece-9062-366523c8b17f
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 2e15d2c4a467807397ef4712d2df1730b40d8024
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 921d31aa63bcaaf0946c487d327144f5e29bcfe0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364603"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854581"
 ---
 # <a name="to-participate-in-replication-servers-in-failover-clusters-must-have-a-hyper-v-replica-broker-configured"></a>若要參與複寫，容錯移轉叢集中的伺服器必須已設定 Hyper-v 複本代理人
 
@@ -28,7 +27,7 @@ ms.locfileid: "71364603"
 |**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
 |**低於**|錯誤|  
-|**類別**|設定|  
+|**類別**|組態|  
   
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   

@@ -2,22 +2,18 @@
 title: 步驟3規劃多網站部署
 description: 本主題是在 Windows Server 2016 的多網站部署中部署多部遠端存取服務器指南的一部分。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e5ea9d22-a503-4ed4-96b3-0ee2ccf4fd17
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: e85998138f3aa3627b5e212766d491cd3fc8305f
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 97705e3d6f5a4300c32ec98cc59e849862381607
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313865"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858321"
 ---
 # <a name="step-3-plan-the-multisite-deployment"></a>步驟3規劃多網站部署
 

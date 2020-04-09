@@ -1,19 +1,18 @@
 ---
 title: 防止使用 RC4 秘密金鑰的 Kerberos 變更密碼
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: de207d55-aa3d-4c16-bd3b-496db43663a4
 manager: alanth
 author: justinha
-ms.technology: security-crdential-protection-and-management
+ms.technology: security-credential-protection-and-management
 ms.date: 11/09/2016
-ms.openlocfilehash: 21c2d3d79653bd02fea9d2ac0d09bd18690a388f
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 4b335ca4432f17acd60d9246de81081cf0441552
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949739"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858821"
 ---
 # <a name="preventing-kerberos-change-password-that-uses-rc4-secret-keys"></a>防止 Kerberos 變更使用 RC4 祕密金鑰的密碼
 
@@ -37,7 +36,7 @@ ms.locfileid: "75949739"
 
 - 部署設定為 Windows Server 2012 R2 網域功能等級或更高層級的網域，並將使用者設定為 Protected Users 安全性群組的成員。 因為這項功能只會干擾 Kerberos 通訊協定中的 RC4 使用方式，請參閱下列另[請參閱](#see-also)一節中的資源。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 - 如需如何防止在 Windows Server 2012 R2 網域中使用 RC4 加密類型的相關資訊，請參閱[Protected Users 安全性群組](/../credentials-protection-and-management/protected-users-security-group.md)，以及[如何設定受保護的帳戶](/../credentials-protection-and-management/how-to-configure-protected-accounts.md)。
 

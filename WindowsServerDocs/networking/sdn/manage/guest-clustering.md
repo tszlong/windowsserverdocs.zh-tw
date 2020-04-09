@@ -1,24 +1,20 @@
 ---
 title: 虛擬網路中的客體叢集
 description: 連線到虛擬網路的虛擬機器只能使用網路控制站已指派來在網路上進行通訊的 IP 位址。  需要浮動 IP 位址的叢集技術（例如 Microsoft 容錯移轉叢集）需要一些額外的步驟，才能正常運作。
-manager: dougkim
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8e9e5c81-aa61-479e-abaf-64c5e95f90dc
 ms.author: grcusanz
-author: eross-msft
+author: AnirbanPaul
 ms.date: 08/26/2018
-ms.openlocfilehash: 200d53d856d4b37daffde0c6213ec4f5eb26773d
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 6889b58f5d49a4932ef8277b11e1002e85606f3f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317576"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854451"
 ---
 # <a name="guest-clustering-in-a-virtual-network"></a>虛擬網路中的客體叢集
 
@@ -146,7 +142,7 @@ ms.locfileid: "80317576"
    
    $ClusterNetworkName = "Cluster Network 1"
    $IPResourceName =  
-   $ILBIP = “192.168.2.100” 
+   $ILBIP = "192.168.2.100" 
 
    $nodes = @("DB1", "DB2")
    ```

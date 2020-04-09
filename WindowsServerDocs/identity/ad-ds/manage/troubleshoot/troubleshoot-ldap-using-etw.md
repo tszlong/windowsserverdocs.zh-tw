@@ -1,26 +1,20 @@
 ---
 title: 使用 ETW 針對 LDAP 連接進行疑難排解
 description: 如何開啟和使用 ETW 來追蹤 AD DS 網域控制站之間的 LDAP 連接。
-audience: Admin
-ms.custom:
-- CI ID 110964
-- CSSTroubleshoot
 author: Teresa-Motiv
 manager: dcscontentpm
 ms.prod: windows-server-dev
 ms.technology: active-directory-lightweight-directory-services
-ms.tgt_platform: multiple
-keywords:
-- 事件追蹤 LDAP
+audience: Admin
 ms.author: v-tea
 ms.topic: article
 ms.date: 11/22/2019
-ms.openlocfilehash: 32929a89e959ee28fdf29ec121e74eafcb0209e4
-ms.sourcegitcommit: 30de12eebeb0fc79567d6bb6ab513692ea2415d3
+ms.openlocfilehash: f7b7df714dbd02b15555fa20c70c1e995e121a48
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74854177"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822931"
 ---
 # <a name="using-etw-to-troubleshoot-ldap-connections"></a>使用 ETW 針對 LDAP 連接進行疑難排解
 
@@ -60,7 +54,7 @@ ms.locfileid: "74854177"
 
 **若要停止追蹤**
 
-- 在命令提示字元中執行以下命令：
+- 在命令提示字元執行下列命令：
 
    ```cmd
    tracelog.exe -stop <SessionName>

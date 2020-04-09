@@ -2,20 +2,18 @@
 title: 使用離散裝置指派來部署圖形裝置
 description: 瞭解如何在 Windows Server 中使用 DDA 部署圖形裝置
 ms.prod: windows-server
-ms.service: na
 ms.technology: hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
 ms.assetid: 67a01889-fa36-4bc6-841d-363d76df6a66
 ms.date: 08/21/2019
-ms.openlocfilehash: 5466cecf9f11a53dc6e205f36d50d7b27b310ea1
-ms.sourcegitcommit: 81198fbf9e46830b7f77dcd345b02abb71ae0ac2
+ms.openlocfilehash: 07f0ba19aaf998bb7b2fe8cf4ef1ba6cf8cae322
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72923871"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860911"
 ---
 # <a name="deploy-graphics-devices-using-discrete-device-assignment"></a>使用離散裝置指派來部署圖形裝置
 
@@ -133,7 +131,7 @@ Dismount-VMHostAssignableDevice -force -LocationPath $locationPath
 Add-VMAssignableDevice -LocationPath $locationPath -VMName $vm
 ```
 
-## <a name="troubleshooting"></a>[疑難排解]
+## <a name="troubleshooting"></a>疑難排解
 
 如果您已將 GPU 傳遞至 VM，但遠端桌面或應用程式無法辨識 GPU，請檢查下列常見問題：
 
@@ -141,4 +139,4 @@ Add-VMAssignableDevice -LocationPath $locationPath -VMName $vm
 - 請確定您的裝置在 VM 內配置了足夠的 MMIO 空間。 若要深入瞭解，請參閱[MMIO Space](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md#mmio-space)。
 - 請確定您使用的是廠商支援在此設定中使用的 GPU。 例如，某些廠商會在傳遞至 VM 時，防止取用者卡運作。
 - 請確定正在執行的應用程式支援在 VM 內執行，而且應用程式支援 GPU 及其關聯的驅動程式。 有些應用程式具有 Gpu 和環境的允許清單。
-- 如果您在來賓上使用遠端桌面工作階段主機角色或 Windows Multipoint 服務，則必須確定已將特定的群組原則專案設定為允許使用預設 GPU。 使用套用至來賓的群組原則物件（或來賓上的本機群組原則編輯器），流覽至下列群組原則專案：**電腦**設定 > **系統管理員範本** > **Windows 元件** > **遠端桌面服務** > **遠端桌面工作階段主機** > **遠端會話環境** > **使用所有遠端桌面服務會話的硬體預設圖形配接器**。 將此值設定為 [已啟用]，然後在套用原則之後重新開機 VM。
+- 如果您在來賓上使用遠端桌面工作階段主機角色或 Windows Multipoint 服務，則必須確定已將特定的群組原則專案設定為允許使用預設 GPU。 使用套用至來賓的群組原則物件（或來賓上的本機群組原則編輯器），流覽至下列群組原則專案：**電腦**設定 > **系統管理員範本** > **Windows 元件** > **遠端桌面服務** > **遠端桌面工作階段主機 > ** **遠端會話環境** > **針對所有遠端桌面服務會話使用硬體預設圖形配接器**。 將此值設定為 [已啟用]，然後在套用原則之後重新開機 VM。

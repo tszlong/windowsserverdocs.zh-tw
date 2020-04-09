@@ -1,29 +1,25 @@
 ---
 title: 從 Windows Server Essentials 轉換到 Windows Server 2012 Standard
 description: 說明如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 51bcf124-c215-4e9d-9fa8-a90fa2c2fa22
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 0d7ed80f61dcfa313f867afda5689b2c64b1406a
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: aace7849244bb65ec0042971e6ec899f554a62d2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318700"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852301"
 ---
 # <a name="transition-from-windows-server-essentials-to-windows-server-2012-standard"></a>從 Windows Server Essentials 轉換到 Windows Server 2012 Standard
 
 >適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
- Windows Server® 2012 Essentials 最多可支援25位使用者和50裝置。 當您的業務需求超過限制時，您可以執行從 Windows Server Essentials 到 Windows Server 2012 Standard 的就地授權轉換，以維持與授權相容。  
+ Windows Server&reg; 2012 Essentials 最多可支援25位使用者和50裝置。 當您的業務需求超過限制時，您可以執行從 Windows Server Essentials 到 Windows Server 2012 Standard 的就地授權轉換，以維持與授權相容。  
   
 ## <a name="how-the-transition-affects-user-and-device-limits"></a>這個轉換對使用者和裝置限制有什麼影響  
  轉換到 Windows Server 2012 Standard 之後，會移除使用者帳戶和裝置限制，但 Windows Server Essentials 特有的功能（例如儀表板、遠端 Web 存取和用戶端電腦備份）仍會繼續使用。 不過，這些功能的技術限制最多支援 75 個使用者帳戶和 75 個裝置。 如果需要新增75個以上的使用者帳戶或裝置，您應該關閉 Windows Server Essentials 功能，並使用 Windows Server 2012 標準原生工具來管理使用者帳戶和裝置。  

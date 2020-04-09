@@ -1,7 +1,6 @@
 ---
 ms.assetid: 65ed5956-6140-4e06-8d99-8771553637d1
 title: 將網域控制站和網域降級 (等級 200)
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 11/14/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e3f320b67196a2400ebedbaeaf0a5b59969400e8
-ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
+ms.openlocfilehash: b8c5502f50b065e8c75d0167328868ac129dfad1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72588097"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825427"
 ---
 # <a name="demoting-domain-controllers-and-domains"></a>降級網域控制站和網域
 
@@ -36,8 +35,8 @@ ms.locfileid: "72588097"
 |||  
 |-|-|  
 |**ADDSDeployment 和 ServerManager Cmdlet**|引數 (**粗體**的引數是必要的。 *斜體*的引數可以使用 Windows PowerShell 或 [AD DS 設定精靈] 來指定。)|  
-|卸載-Uninstall-addsdomaincontroller|-SkipPreChecks<br /><br />*-LocalAdministratorPassword*<br /><br />-Confirm<br /><br />***-Credential***<br /><br />-DemoteOperationMasterRole<br /><br />*-DNSDelegationRemovalCredential*<br /><br />-Force<br /><br />*-ForceRemoval*<br /><br />*-IgnoreLastDCInDomainMismatch*<br /><br />*-IgnoreLastDNSServerForZone*<br /><br />*-LastDomainControllerInDomain*<br /><br />-Norebootoncompletion<br /><br />*-Removeapplicationpartitions 範例*<br /><br />*-RemoveDNSDelegation*<br /><br />-RetainDCMetadata|  
-|Uninstall-WindowsFeature/Remove-WindowsFeature|***-Name***<br /><br />***-IncludeManagementTools***<br /><br />*-重新開機*<br /><br />-Remove<br /><br />-Force<br /><br />-ComputerName<br /><br />-Credential<br /><br />-LogPath<br /><br />-Vhd|  
+|卸載-Uninstall-addsdomaincontroller|-SkipPreChecks<p>*-LocalAdministratorPassword*<p>-Confirm<p>***-Credential***<p>-DemoteOperationMasterRole<p>*-DNSDelegationRemovalCredential*<p>-Force<p>*-ForceRemoval*<p>*-IgnoreLastDCInDomainMismatch*<p>*-IgnoreLastDNSServerForZone*<p>*-LastDomainControllerInDomain*<p>-Norebootoncompletion<p>*-Removeapplicationpartitions 範例*<p>*-RemoveDNSDelegation*<p>-RetainDCMetadata|  
+|Uninstall-WindowsFeature/Remove-WindowsFeature|***-Name***<p>***-IncludeManagementTools***<p>*-重新開機*<p>-Remove<p>-Force<p>-ComputerName<p>-Credential<p>-LogPath<p>-Vhd|  
   
 > [!NOTE]  
 > 只有在您尚未登入為 Enterprise Admins 群組 (降級網域中最後一個 DC) 或 Domain Admins 群組 (降級複本 DC) 的成員時才需要 **-credential** 引數。只有在您想要移除所有 AD DS 管理公用程式時，才需要 **-Includemanagementtools** 引數。  
@@ -58,11 +57,11 @@ ms.locfileid: "72588097"
 
 ServerManager Cmdlet **Uninstall**和**Remove**會阻止您移除 AD DS 角色，除非您將網域控制站降級。
   
-### <a name="server-selection"></a>伺服器選項
+### <a name="server-selection"></a>選取伺服器
 
 ![移除角色及功能嚮導選取目的地伺服器](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ServerSelection2.png)  
 
-[伺服器選取項目] 對話方塊可讓您從先前已加入集區的伺服器中選擇其中之一 (只要其可供存取)。 執行伺服器管理員的本機伺服器一律會自動可用。  
+[伺服器選取項目] 對話方塊可讓您從先前已加入集區的伺服器中選擇其中之一 (只要其可供存取)。 執行伺服器管理員的本機伺服器會一律自動變成可供使用的伺服器。  
 
 ### <a name="server-roles-and-features"></a>伺服器角色與功能
 
@@ -170,7 +169,7 @@ Uninstall-windowsfeature
 > [!WARNING]
 > 因為先前的兩個選項不會確認密碼，請小心使用：不會顯示密碼。
 
-您也可以提供轉換的純文字變數當做安全字串，不過我們不鼓勵這種做法。 例如：
+您也可以提供轉換的純文字變數當做安全字串，不過我們不鼓勵這種做法。 例如，
 
 ```
 -localadministratorpassword (convertto-securestring "Password1" -asplaintext -force)
@@ -193,7 +192,7 @@ Uninstall-ADDSDomainController
 
 搭配使用選擇性 **Whatif** 引數與 **Uninstall-ADDSDomainController** 及 Cmdlet 來檢閱組態資訊。 這可讓您看到明確和隱含的 Cmdlet 引數值。
 
-例如：
+例如，
 
 ![PowerShell 卸載-Uninstall-addsdomaincontroller 範例](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_PSUninstall.png)
 

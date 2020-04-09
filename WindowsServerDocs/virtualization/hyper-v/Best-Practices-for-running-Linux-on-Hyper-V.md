@@ -2,25 +2,23 @@
 title: 在 Hyper-v 上執行 Linux 的最佳做法
 description: 提供在虛擬機器上執行 Linux 的建議
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a08648eb-eea0-4e2b-87fb-52bfe8953491
 author: shirgall
 ms.author: kathydav
 ms.date: 3/1/2019
-ms.openlocfilehash: 3488bbc1e295a68befc7044b83379bd65a5f28df
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7baf71af401b8318ccd136fe12d6eb810cf9434e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365574"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853301"
 ---
 # <a name="best-practices-for-running-linux-on-hyper-v"></a>在 Hyper-v 上執行 Linux 的最佳做法
 
->適用於：Windows Server 2019、Windows Server 2016、Hyper-v Server 2016、Windows Server 2012 R2、Hyper-v Server 2012 R2、Windows Server 2012、Hyper-v Server 2012、Windows Server 2008 R2、Windows 10、Windows 8.1、Windows 8、Windows 7.1、Windows 7
+>適用于： Windows Server 2019、Windows Server 2016、Hyper-v Server 2016、Windows Server 2012 R2、Hyper-v server 2012 R2、Windows Server 2012、Hyper-v Server 2012、Windows Server 2008 R2、Windows 10、Windows 8.1、Windows 8、Windows 7.1、Windows 7
 
 本主題包含在 Hyper-v 上執行 Linux 虛擬機器的建議清單。
 
@@ -82,7 +80,7 @@ Linux 核心有四個不同的 i/o 排程器，可使用不同的演算法來重
 
 ## <a name="numa"></a>NUMA
 
-早于2.6.37 的 Linux 核心版本不支援具有較大 VM 大小的 Hyper-v 上的 NUMA。 此問題主要會影響使用上游 Red Hat 2.6.32 核心的舊散發套件，並已在 Red Hat Enterprise Linux （RHEL）6.6 （2.6.32-504）中修正。 執行早于2.6.37 的自訂核心，或早于 2.6.32-504 的 RHEL 型核心的系統，必須在 grub 的內核命令列上，將開機參數設定 `numa=off`。 如需詳細資訊，請參閱[Red HAT KB 436883](https://access.redhat.com/solutions/436883)。
+早于2.6.37 的 Linux 核心版本不支援具有較大 VM 大小的 Hyper-v 上的 NUMA。 此問題主要會影響使用上游 Red Hat 2.6.32 核心的舊散發套件，並已在 Red Hat Enterprise Linux （RHEL）6.6 （2.6.32-504）中修正。 執行早于2.6.37 的自訂核心，或早于 2.6.32-504 的 RHEL 型核心的系統，必須在 grub 的內核命令列上設定開機參數 `numa=off`。 如需詳細資訊，請參閱[Red HAT KB 436883](https://access.redhat.com/solutions/436883)。
 
 ## <a name="reserve-more-memory-for-kdump"></a>為 kdump 保留更多記憶體
 

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 20d183f0-ef94-44bb-9dfc-ed93799dd1a6
 title: 使用自訂宣告規則的時機
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: c784c4b6dbfee7034dd9302dc87fc74b896763f5
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 41e7ea7c2bc627f2fce198e5c7227148e8b03d88
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950147"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853821"
 ---
 # <a name="when-to-use-a-custom-claim-rule"></a>使用自訂宣告規則的時機
 您可以使用宣告規則語言，在 Active Directory 同盟服務 \(AD FS\) 中撰寫自訂宣告規則，這是宣告發行引擎用來以程式設計方式產生、轉換、傳遞和篩選宣告的架構。 藉由使用自訂規則，您可以透過比標準規則範本更複雜的邏輯來建立規則。 當您想要執行下列作業時，請考慮使用自訂規則：  
@@ -52,7 +51,7 @@ ms.locfileid: "75950147"
   
 如需宣告規則和宣告規則集的詳細資訊，請參閱宣告[規則的角色](The-Role-of-Claim-Rules.md)。 如需如何處理規則的詳細資訊，請參閱[宣告引擎的角色](The-Role-of-the-Claims-Engine.md)。 如需宣告規則集處理方式的詳細資訊，請參閱[宣告管線的角色](The-Role-of-the-Claims-Pipeline.md)。  
   
-## <a name="how-to-create-this-rule"></a>如何建立這項規則  
+## <a name="how-to-create-this-rule"></a>如何建立此規則  
 若要建立此規則，您必須先使用宣告規則語言撰寫作業所需的語法，然後將結果貼入 [使用自訂規則來傳送宣告] 範本中的 [在中的 AD FS 管理] 嵌入式\-管理單元中，或信賴憑證者信任的內容中所提供的文字方塊。  
   
 此規則範本提供以下選項：  
@@ -70,12 +69,12 @@ ms.locfileid: "75950147"
 ## <a name="using-the-claim-rule-language"></a>使用宣告規則語言  
   
 ### <a name="example-how-to-combine-first-and-last-names-based-on-a-users-name-attribute-values"></a>範例：如何根據使用者的名稱屬性值來合併名字和姓氏  
-下列規則語法會結合會從給定屬性存放區中的屬性值結合名字和姓氏。 原則引擎會組成每個條件之相符項目的笛卡兒乘積。 例如，名字 {“Frank”, “Alan”} 和姓氏 {“Miller”, “Shen”} 的輸出是 {“Frank Miller”, “Frank Shen”, “Alan Miller”, “Alan Shen”}：  
+下列規則語法會結合會從給定屬性存放區中的屬性值結合名字和姓氏。 原則引擎會組成每個條件之相符項目的笛卡兒乘積。 例如，名字 {"Frank"，"Alan"} 和 last name {"莎莎"，"Shen"} 的輸出是 {"Frank 莎莎"，"Frank Shen"，"Alan 莎莎"，"Alan Shen"}：  
   
 ```  
 c1:[type == "http://exampleschema/firstname" ]  
 &&  c2:[type == "http://exampleschema/lastname",]   
-=> issue(type = "http://exampleschema/name", value = c1.value + “  “ + c2.value);  
+=> issue(type = "http://exampleschema/name", value = c1.value + "  " + c2.value);  
 ```  
   
 ### <a name="example-how-to-issue-a-manager-claim-based-on-whether-users-have-direct-reports"></a>範例：如何根據使用者是否有直接報告發出管理員宣告  
@@ -83,7 +82,7 @@ c1:[type == "http://exampleschema/firstname" ]
   
 ```  
 c:[type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"] => add(store = "SQL Store", types = ("http://schemas.xmlsoap.org/claims/Reports"), query = "SELECT Reports FROM dbo.DirectReports WHERE UserName = {0}", param = c.value );  
-count([type == “http://schemas.xmlsoap.org/claims/Reports“] ) > 0 => issue(= "http://schemas.xmlsoap.org/claims/ismanager", value = "true");  
+count([type == "http://schemas.xmlsoap.org/claims/Reports"] ) > 0 => issue(= "http://schemas.xmlsoap.org/claims/ismanager", value = "true");  
 ```  
   
 ### <a name="example-how-to-issue-a-ppid-claim-based-on-an-ldap-attribute"></a>範例：如何根據 LDAP 屬性發出 PPID 宣告  

@@ -1,23 +1,19 @@
 ---
 title: Windows Server Essentials 中的啟動列概觀
 description: 說明如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 198d16cb-3d07-4706-be89-ad14a5f7dc47
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 63a161057f7068dcb9e02faa353270f0150200b4
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: ffff090e360282933723465bb3bbde6c0285a97b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310668"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852661"
 ---
 # <a name="overview-of-the-launchpad-in-windows-server-essentials"></a>Windows Server Essentials 中的啟動列概觀
 
@@ -77,7 +73,7 @@ ms.locfileid: "80310668"
  顯示在 [啟動列] 上的警示可提供有關電腦立即健康情況的快速狀態。 若要檢視有關健康狀態警示的資訊，請按一下警示指示來開啟警示檢視器。 健康狀態警示會根據嚴重性層級顯示在檢視器中。 最嚴重的警示會顯示在清單中的最前面；較不嚴重的警示會顯示在清單中較後面的地方。 如需電腦健康情況警示的詳細資訊，請參閱[管理系統健康狀態](Manage-System-Health-in-Windows-Server-Essentials.md)。  
   
 ##  <a name="use-the-launchpad-with-a-mac-computer"></a><a name="BKMK_Mac"></a>在 Mac 電腦上使用啟動列  
- 您可以將執行 Mac OS X®10.5 或更新版本的 Mac®電腦連線到 Windows Server Essentials、Windows Server Essentials 或 Windows Server 2012 R2，或下載並安裝連接器軟體。 當您安裝完連線程式軟體時，您可以選擇在啟動時自動啟動 [啟動列]。  
+ 您可以將執行 Mac OS X&reg; 10.5 或更新版本的 Mac&reg; 電腦連線到 Windows Server Essentials、Windows Server Essentials 或 Windows Server 2012 R2，或下載並安裝連接器軟體。 當您安裝完連線程式軟體時，您可以選擇在啟動時自動啟動 [啟動列]。  
   
  [啟動列] 是一個小型應用程式，可讓已驗證的使用者存取伺服器的重要功能，包括共用檔案和媒體、增益集及「遠端 Web 存取」。 [啟動列] 也提供有關電腦健康情況的即時資訊和通知。  
   

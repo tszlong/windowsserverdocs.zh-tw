@@ -2,20 +2,19 @@
 title: 應該至少以最小記憶體數量設定 Windows 10
 description: 提供解決此最佳做法分析程式規則所回報之問題的指示。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: e4f5bd2f-b5be-4d43-80e0-0cf198182791
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: ced9b0ebab9fdac0e7bfdf37ce1581ec334864f5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1bdde1924c983748238e51984facf732356f4a2c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393250"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854991"
 ---
 # <a name="windows-10-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>應該至少以最小記憶體數量設定 Windows 10
 
@@ -28,7 +27,7 @@ ms.locfileid: "71393250"
 |**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
 |**低於**|錯誤|  
-|**類別**|設定|  
+|**類別**|組態|  
   
 下列各節提供有關特定問題的詳細資料。 斜體表示在特定問題的最佳做法分析程式工具中出現的 UI 文字。  
   
@@ -67,7 +66,7 @@ ms.locfileid: "71393250"
 Set-VMMemory <MyVM> -StartupBytes 512MB  
 ```  
   
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
 [設定-Set-vmmemory](https://technet.microsoft.com/library/hh848572.aspx)  
   
 

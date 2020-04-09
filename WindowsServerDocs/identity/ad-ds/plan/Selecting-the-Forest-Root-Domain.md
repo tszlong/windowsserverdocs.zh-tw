@@ -1,7 +1,6 @@
 ---
 ms.assetid: ef4ef4a9-8969-4ad0-bd17-b2bb24f36ef6
 title: 選取樹系根網域
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 80d39a5910d06559b98211eaf55a4cd0c82442a1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3fddf5179e2944800d57568f0b8e52262c04cd43
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402506"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821901"
 ---
 # <a name="selecting-the-forest-root-domain"></a>選取樹系根網域
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 您在 Active Directory 樹系中部署的第一個網域稱為樹系根域。 此網域仍然是 AD DS 部署生命週期的樹系根域。  
   
@@ -89,4 +88,4 @@ Active Directory DNS 擁有者必須與組織的 DNS 擁有者合作，才能取
   
 ## <a name="documenting-the-forest-root-domain-name"></a>記載樹系根功能變數名稱稱
 
-記錄您為樹系根域選取的 DNS 前置詞和尾碼。 此時，請識別哪個網域會是樹系根目錄。 您可以將樹系根功能變數名稱資訊新增至您所建立的「網域規劃」工作表，以記載新網域和升級網域的計畫，以及您的功能變數名稱。 若要開啟它，請從[適用于 Windows Server 2003 部署套件的作業輔助](https://go.microsoft.com/fwlink/?LinkID=102558)下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services，並開啟「網域規劃」（DSSLOGI_5）。
+記錄您為樹系根域選取的 DNS 前置詞和尾碼。 此時，請識別哪個網域會是樹系根目錄。 您可以將樹系根功能變數名稱資訊新增至您所建立的「網域規劃」工作表，以記載新網域和升級網域的計畫，以及您的功能變數名稱。 若要開啟它，請從[適用于 Windows Server 2003 部署套件的作業輔助](https://go.microsoft.com/fwlink/?LinkID=102558)下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，並開啟「網域規劃」（DSSLOGI_5 .doc）。

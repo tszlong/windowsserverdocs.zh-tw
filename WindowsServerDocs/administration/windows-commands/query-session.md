@@ -1,28 +1,24 @@
 ---
-title: 查詢會話
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+title: query session
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: abc0ace8-0b74-4b6e-a937-a78bb4b61a1f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bde9a246f2c46eaa466f2863c2cfc3c28a3a04eb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 173b6e53bbd5cd42f3172582a46277dccff7dcbd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384906"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836941"
 ---
-# <a name="query-session"></a>查詢會話
+# <a name="query-session"></a>query session
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 顯示遠端桌面工作階段主機（rd 工作階段主機）伺服器上的會話相關資訊。
 此清單不僅包含作用中會話的資訊，還包括伺服器執行的其他會話。
@@ -33,7 +29,7 @@ ms.locfileid: "71384906"
 > ```
 > query session [<SessionName> | <UserName> | <SessionID>] [/server:<ServerName>] [/mode] [/flow] [/connect] [/counter]
 > ```
-> ## <a name="parameters"></a>參數
+> ### <a name="parameters"></a>參數
 > 
 > |      參數       |                                                      描述                                                      |
 > |----------------------|-----------------------------------------------------------------------------------------------------------------------|
@@ -61,7 +57,7 @@ ms.locfileid: "71384906"
 >                                   5 idle
 >   ```
 >   大於（>）符號表示目前的會話。 SESSIONNAME 指定指派給會話的名稱。 使用者名稱表示連接到會話之使用者的使用者名稱。 狀態提供會話目前狀態的相關資訊。 類型表示會話類型。 裝置（不存在於主控台或網路連線的會話）是指派給會話的裝置名稱。 下列會話資訊的批註來自會話設定檔。 初始狀態設定為 [已停用] 的任何會話，都不會顯示在 [**查詢會話**] 清單中，直到它們啟用為止。
->   ## <a name="BKMK_examples"></a>典型
+>   ## <a name="examples"></a><a name=BKMK_examples></a>典型
 > - 若要顯示伺服器 SERver2 上所有作用中會話的相關資訊，請輸入：
 >   ```
 >   query session /server:SERver2
@@ -70,7 +66,7 @@ ms.locfileid: "71384906"
 >   ```
 >   query session modeM02
 >   ```
->   #### <a name="additional-references"></a>其他參考
->   [命令列語法索引鍵](command-line-syntax-key.md)
+>   ## <a name="additional-references"></a>其他參考資料
+>   - [命令列語法索引鍵](command-line-syntax-key.md)
 >   [查詢](query.md)
->   [遠端桌面服務&#40;終端機&#41;服務命令參考](remote-desktop-services-terminal-services-command-reference.md)
+>   [遠端桌面服務（終端機服務）命令參考](remote-desktop-services-terminal-services-command-reference.md)

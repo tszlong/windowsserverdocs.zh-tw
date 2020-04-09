@@ -1,24 +1,20 @@
 ---
 title: mqbkup
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7bdd41c4-75ef-455f-b241-1d64a4c7acf5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 66783e0bbfe5c82971e14fd05e913d485485dc6f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5ff6fc2f483bceb99b970cd0c48f56985ecd485b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373507"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839351"
 ---
 # <a name="mqbkup"></a>mqbkup
 
@@ -31,14 +27,14 @@ ms.locfileid: "71373507"
 ```  
 mqbkup {/b | /r} <folder path_to_storage_device>  
 ```  
-### <a name="parameters"></a>Parameters  
+#### <a name="parameters"></a>參數  
 |參數|描述|  
 |-------|--------|  
 |/b|指定備份作業|  
 |/r|指定還原作業|  
 |< 資料夾 path_to_storage\_裝置 >|指定儲存 MSMQ 訊息檔案和登錄設定的路徑|  
 |/?|在命令提示字元顯示說明。|  
-## <a name="BKMK_Examples"></a>典型  
+## <a name="examples"></a><a name=BKMK_Examples></a>典型  
 若要備份所有 MSMQ 訊息檔案和登錄設定，並將它們儲存在 C：磁片磁碟機的*Msmqbkup*資料夾中。  
 ```  
 mqbkup /b c:\msmqbkup  
@@ -53,5 +49,5 @@ mqbkup /b /y c:\oldbkup
 mqbkup /r c:\msmqbkup  
 ```  
 用來儲存 MSMQ 訊息檔案的資料夾位置會儲存在登錄中。 因此，公用程式會將 MSMQ 訊息檔案還原至登錄中指定的資料夾，而不是還原作業之前使用的儲存體資料夾。 如果登錄中指定的資料夾不存在，還原作業將會自動建立它們。 如果資料夾目錄存在且不是空的，公用程式會提示您提供刪除這些資料夾目前內容的許可權。  
-## <a name="additional-references"></a>其他參考  
--   [命令列語法關鍵](command-line-syntax-key.md)  
+## <a name="additional-references"></a>其他參考資料  
+-   - [命令列語法關鍵](command-line-syntax-key.md)  

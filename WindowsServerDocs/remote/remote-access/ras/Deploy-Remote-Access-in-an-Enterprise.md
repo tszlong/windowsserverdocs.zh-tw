@@ -2,22 +2,18 @@
 title: 在企業中部署遠端存取
 description: 本主題提供適用于企業的 Windows Server 2016 中 DirectAccess 案例的簡介。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4781df0a-158b-4562-b8f5-32b27615a4f8
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: aebdbd02ebe256872b52e794c755e0d590b175a5
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 6d0a9248865dca4afb3db9609b284048155f9eef
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308471"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857431"
 ---
 # <a name="deploy-remote-access-in-an-enterprise"></a>在企業中部署遠端存取
 
@@ -60,15 +56,15 @@ ms.locfileid: "80308471"
   
 -   **成本效益**。 遠端存取多網站部署可讓企業在對應至用戶端位置的多個網站中部署遠端存取服務器。 這樣一來，無論遠端用戶端所在的位置為何，都可以為它們提供一種可預測的連接方式，另外將用戶端使用的網際網路流量，改由最近的遠端存取伺服器負責傳送，藉此降低成本和內部網路頻寬。  
   
--   **安全性**： 使用單次密碼（OTP）部署強大的用戶端驗證，而不是標準的 Active Directory 密碼會提高安全性。  
+-   **安全性**。 使用單次密碼（OTP）部署強大的用戶端驗證，而不是標準的 Active Directory 密碼會提高安全性。  
   
 ## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>此案例中包含的角色和功能  
 下表列出本企業案例使用的角色和功能：  
   
 |角色/功能|如何支援本案例|  
 |---------|-----------------|  
-|遠端存取伺服器角色|這個角色是利用伺服器管理員主控台安裝和解除安裝。 這個角色包含 DirectAccess (以前是 Windows Server 2008 R2 的功能)、 路由及遠端存取服務 (以前是網路原則與存取服務 (NPAS) 伺服器角色底下的角色服務)。 遠端存取角色包含兩個元件：<br /><br />1. DirectAccess 與路由及遠端存取服務（RRAS） VPN-DirectAccess 和 VPN 會在 [遠端存取管理] 主控台中一起管理。<br />2. RRAS 路由-RRAS 路由功能是在舊版路由及遠端存取主控台中管理。<br /><br />遠端存取伺服器角色需要以下伺服器功能：<br /><br />-Internet Information Services （IIS）-設定網路位置伺服器和預設 web 探查時，需要這項功能。<br />-群組原則管理主控台功能-DirectAccess 需要使用功能來建立和管理 Active Directory 中的群組原則物件（Gpo），而且必須安裝為伺服器角色的必要功能。|  
-|遠端存取管理工具功能|這個功能的安裝方式如下：<br /><br />-安裝遠端存取角色時，預設會將它安裝在遠端存取服務器上，並支援遠端管理主控台使用者介面。<br />-您可以選擇性地將它安裝在未執行遠端存取服務器角色的伺服器上。 在這種情況下，它是用於從遠端管理那些執行 DirectAccess 和 VPN 的遠端存取電腦。<br /><br />遠端存取管理工具功能包含以下各項：<br /><br />1. 遠端存取 GUI 和命令列工具<br />2. 適用于 Windows PowerShell 的遠端存取模組<br /><br />依存項目包括：<br /><br />1. 群組原則管理主控台<br />2. RAS 連線管理員系統管理元件（CMAK）<br />3. Windows PowerShell 3。0<br />4. 圖形化管理工具與基礎結構|  
+|遠端存取伺服器角色|這個角色是利用伺服器管理員主控台安裝和解除安裝。 這個角色包含 DirectAccess (以前是 Windows Server 2008 R2 的功能)、 路由及遠端存取服務 (以前是網路原則與存取服務 (NPAS) 伺服器角色底下的角色服務)。 遠端存取角色包含兩個元件：<p>1. DirectAccess 與路由及遠端存取服務（RRAS） VPN-DirectAccess 和 VPN 會在 [遠端存取管理] 主控台中一起管理。<br />2. RRAS 路由-RRAS 路由功能是在舊版路由及遠端存取主控台中管理。<p>遠端存取伺服器角色需要以下伺服器功能：<p>-Internet Information Services （IIS）-設定網路位置伺服器和預設 web 探查時，需要這項功能。<br />-群組原則管理主控台功能-DirectAccess 需要使用功能來建立和管理 Active Directory 中的群組原則物件（Gpo），而且必須安裝為伺服器角色的必要功能。|  
+|遠端存取管理工具功能|這個功能的安裝方式如下：<p>-安裝遠端存取角色時，預設會將它安裝在遠端存取服務器上，並支援遠端管理主控台使用者介面。<br />-您可以選擇性地將它安裝在未執行遠端存取服務器角色的伺服器上。 在這種情況下，它是用於從遠端管理那些執行 DirectAccess 和 VPN 的遠端存取電腦。<p>遠端存取管理工具功能包含以下各項：<p>1. 遠端存取 GUI 和命令列工具<br />2. 適用于 Windows PowerShell 的遠端存取模組<p>依存項目包括：<p>1. 群組原則管理主控台<br />2. RAS 連線管理員系統管理元件（CMAK）<br />3. Windows PowerShell 3。0<br />4. 圖形化管理工具與基礎結構|  
 |Windows NLB|這個功能可以平均分攤多個遠端存取伺服器的工作量。|  
   
 

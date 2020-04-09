@@ -1,28 +1,22 @@
 ---
-title: copy
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+title: 複製
+description: 適用于複製的 Windows 命令主題，可將一或多個檔案從一個位置複製到另一個位置。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9624d4a1-349a-4693-ad00-1d1d4e59e9ac
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 102fd6b59516b04b8986ee47b52f521be73f04de
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3f1ba088f62dec574a23406683bf5ae3d13c1e86
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379036"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847141"
 ---
-# <a name="copy"></a>copy
-
-
+# <a name="copy"></a>複製
 
 將一個或多個檔案從一個位置複製到另一個位置。
 
@@ -34,7 +28,7 @@ ms.locfileid: "71379036"
 copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <Source> [/a | /b] [+<Source> [/a | /b] [+ ...]] [<Destination> [/a | /b]]
 ```
 
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -46,8 +40,8 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <Source> [/a | /b] [+<Source> [/a 
 |/z|複製可重新開機模式的網路檔案。|
 |/a|表示 ASCII 文字檔。|
 |/b|表示二進位檔案。|
-|\<Source >|必要。 指定您要從中複製檔案或一組檔案的位置。 *來源*可以包含磁碟機號和冒號、目錄名稱、檔案名或這些的組合。|
-|\<Destination >|必要。 指定您要複製檔案或一組檔案的目標位置。 *目的地*可以包含磁碟機號和冒號、目錄名稱、檔案名或這些的組合。|
+|\<來源 >|必要。 指定您要從中複製檔案或一組檔案的位置。 *來源*可以包含磁碟機號和冒號、目錄名稱、檔案名或這些的組合。|
+|\<目的地 >|必要。 指定您要複製檔案或一組檔案的目標位置。 *目的地*可以包含磁碟機號和冒號、目錄名稱、檔案名或這些的組合。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
@@ -112,7 +106,7 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <Source> [/a | /b] [+<Source> [/a 
     若要複製目錄的所有檔案和子目錄，請使用**xcopy**命令。
 -   具有不同參數的**copy**命令可從 [修復主控台] 取得。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 若要將稱為備忘檔案的檔案複製到目前磁片磁碟機中的 Letter，並確定檔案結尾字元（CTRL + Z）位於複製檔案的結尾，請輸入：
 ```
@@ -153,6 +147,6 @@ copy *.txt + *.ref *.doc
 copy *.txt + *.ref Combined.doc
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

@@ -1,19 +1,16 @@
 ---
 title: Minroot
 description: 設定主機 CPU 資源控制
-keywords: windows 10, hyper-v
 author: allenma
 ms.date: 12/15/2017
 ms.topic: article
-ms.prod: windows-10-hyperv
-ms.service: windows-10-hyperv
-ms.assetid: ''
-ms.openlocfilehash: 92de899a39aed05e2f598fcb3aae3fbae3f1cb67
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.prod: windows-server
+ms.openlocfilehash: de621b3bfdc9792e61e6d21d9f3774da76c55df6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70872044"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860781"
 ---
 # <a name="hyper-v-host-cpu-resource-management"></a>Hyper-v 主機 CPU 資源管理
 
@@ -39,7 +36,7 @@ Windows Server 2016 或更新版本中引進的 hyper-v 主機 CPU 資源控制�
 
 ## <a name="the-minimum-root-or-minroot-configuration"></a>最小根或 "Minroot" 設定
 
-舊版的 Hyper-v 具有每個分割區 64 VPs 的架構上限。  這會同時套用至根和來賓磁碟分割。  當高階伺服器上出現超過64個邏輯處理器的系統時，Hyper-v 也會演變其主機分級限制，以支援這些較大的系統，其中一點支援最多 320 LPs 的主機。  不過，每個分割區的限制為64副總裁，當時呈現了幾項挑戰，並引進了支援每個資料分割超過 64 VPs 的複雜度。  為了解決此情況，Hyper-v 將指定給根磁碟分割的 VPs 數目限制為64，即使基礎電腦有更多可用的邏輯處理器也一樣。  虛擬程式管理人員會繼續使用所有可用的 LPs 來執行來賓 VPs，但在64的根磁碟分割上按人工限制。  這種設定稱為「最小根」或「minroot」設定。  效能測試已確認，即使在具有超過 64 LPs 的大型系統上，根目錄也不需要超過64根 VPs，就能為大量的來賓 Vm 和來賓 VPs 提供足夠的支援–事實上，遠低於64的根 VPs 通常都是足夠的，視來賓 Vm 的數目和大小、執行中的特定工作負載等而定。
+舊版的 Hyper-v 具有每個分割區 64 VPs 的架構上限。  這會同時套用至根和來賓磁碟分割。  當高階伺服器上出現超過64個邏輯處理器的系統時，Hyper-v 也會演變其主機分級限制，以支援這些較大的系統，其中一點支援最多 320 LPs 的主機。  不過，每個分割區的限制為64副總裁，當時呈現了幾項挑戰，並引進了支援每個資料分割超過 64 VPs 的複雜度。  為了解決此情況，Hyper-v 將指定給根磁碟分割的 VPs 數目限制為64，即使基礎電腦有更多可用的邏輯處理器也一樣。  虛擬程式管理人員會繼續使用所有可用的 LPs 來執行來賓 VPs，但在64的根磁碟分割上按人工限制。  這種設定稱為「最小根」或「minroot」設定。  效能測試已確認，即使在具有超過 64 LPs 的大型系統上，根目錄也不需要超過64根 VPs，就能對大量的來賓 Vm 和來賓 VPs 提供足夠的支援–事實上，根據來賓 Vm 的數目和大小，幾乎小於64的根 VPs 通常是足夠的、正在執行的特定工作負載等。
 
 這個「minroot」概念今天會繼續使用。  事實上，即使 Windows Server 2016 Hyper-v 增加了主機 LPs 到 512 LPs 的最大架構支援限制，根磁碟分割仍會限制為最多 320 LPs。
 
@@ -51,13 +48,13 @@ Windows Server 2016 或更新版本中引進的 hyper-v 主機 CPU 資源控制�
 Minroot 設定是透過「虛擬程式」 BCD 專案來控制。 若要啟用 minroot，請從具有系統管理員許可權的 cmd 提示字元：
 
 ```
-    bcdedit /set hypervisorrootproc n
+     bcdedit /set hypervisorrootproc n
 ```
 其中 n 是根 VPs 的數目。 
 
 系統必須重新開機，而且在 OS 開機的存留期間，新的根處理器數目將會保存。  Minroot 設定無法在執行時間動態變更。
 
-如果有多個 NUMA 節點，每個節點都會`n/NumaNodeCount`取得處理器。
+如果有多個 NUMA 節點，則每個節點都會取得 `n/NumaNodeCount` 的處理器。
 
 請注意，使用多個 NUMA 節點時，您必須確定 VM 的拓撲是在每個 NUMA 節點上有足夠的可用 LPs （也就是 LPs，不含根 VPs），才能執行對應的 VM NUMA 節點 VPs。
 

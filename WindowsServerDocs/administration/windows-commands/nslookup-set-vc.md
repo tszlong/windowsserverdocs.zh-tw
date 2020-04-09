@@ -1,24 +1,20 @@
 ---
 title: nslookup set vc
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e9232c92-cd8d-4eff-8ae5-0647bd03bdcb
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d46e60d6c755a75928c801494c385578c3b5bc5d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b7429612ba25b2eab25ec29f01493aaee5de2c9d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372743"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80838181"
 ---
 # <a name="nslookup-set-vc"></a>nslookup set vc
 
@@ -32,7 +28,7 @@ ms.locfileid: "71372743"
 set [no]vc
 ```
 
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
 | 參數 |                                              描述                                               |
 |-----------|--------------------------------------------------------------------------------------------------------|
@@ -40,6 +36,6 @@ set [no]vc
 |  **vc**   |             指定在傳送要求給伺服器時，一律使用虛擬電路。             |
 |   {說明   |                                                   ?}                                                   |
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

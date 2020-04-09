@@ -1,24 +1,20 @@
 ---
 title: mapadmin
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b17332c7-8622-4223-9c43-2fb9cf4d992d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fc4b76c1989298ea83c480b9c838ce0fc18fef5f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5ea60f4d9753ed90c0d13ee48289b011aeafe6b0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373764"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839671"
 ---
 # <a name="mapadmin"></a>mapadmin
 
@@ -57,14 +53,14 @@ mapadmin [<computer>] [-u <user> [-p <password>]] listdomainmaps
 -p &lt;密碼&gt; 指定使用者的密碼。 如果您指定 **-u**選項，但省略 **-p**選項，系統會提示您輸入使用者的密碼。
 **Mapadmin**所執行的特定動作取決於您指定的命令引數：
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 ### <a name="start"></a>start
 啟動消費者名稱對應服務。
 
 ### <a name="stop"></a>stop
 停止消費者名稱對應服務。
 
-### <a name="config"></a>web.config
+### <a name="config"></a>config
 指定消費者名稱對應的一般設定。 下列選項可用於此命令引數： **-r &lt;dddd&gt;：&lt;hh&gt;：&lt;mm&gt;** -指定從 WINDOWS 和 NIS 資料庫更新的重新整理間隔（以天、小時和分鐘為單位）。 最小間隔為5分鐘。
 **-i {yes | no}** -開啟（**是**）或關閉的簡單對應（**no**）。 根據預設，簡單對應是 on。
 **add** -為使用者或群組建立新的對應。 下列選項可用於此命令引數：
@@ -127,7 +123,7 @@ mapadmin [<computer>] [-u <user> [-p <password>]] listdomainmaps
 
 **listdomainmaps** -列出對應至 NIS 網域或密碼和群組檔案的 Windows 網域。
 
-## <a name="notes"></a>附註
+## <a name="notes"></a>注意事項
 -   如果您未指定命令引數， **mapadmin**會顯示消費者名稱對應的目前設定。
 -   針對指定使用者或組名的所有選項，可以使用下列格式：
 -   對於 Windows 使用者，請使用 &lt;網域&gt;\\&lt;使用者名稱&gt;、\\\\&lt;電腦&gt;\\&lt;使用者名稱&gt;、\\&lt;電腦&gt;\\&lt;使用者名稱&gt;或 &lt;電腦&gt;\\使用者名稱 &lt;&gt;
@@ -135,5 +131,5 @@ mapadmin [<computer>] [-u <user> [-p <password>]] listdomainmaps
 -   針對 UNIX 使用者，請使用表單 &lt;NISdomain&gt;\\&lt;使用者名稱&gt;、&lt;使用者名稱&gt;@&lt;NISdomain&gt;、使用者 &lt;名稱&gt;@PCNFS或 PCNFS\\&lt;使用者名稱&gt;
 -   針對 UNIX 群組，請使用 &lt;NISdomain&gt;\\&lt;組名&gt;、&lt;擁有群組&gt;@&lt;NISdomain&gt;、&lt;組名&gt;@PCNFS或 PCNFS\\組名組 &lt;&gt;
 
-## <a name="additional-references"></a>其他參考
-[命令列語法關鍵](command-line-syntax-key.md)
+## <a name="additional-references"></a>其他參考資料
+- [命令列語法關鍵](command-line-syntax-key.md)

@@ -1,24 +1,20 @@
 ---
 title: prncnfg
 description: 瞭解如何使用 prncfg 命令來設定印表機。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 38a4e8fa-3122-495b-a125-35b926bc6415
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 5cbbf82e832c50d168e0bef06b2b7c3022dd90e8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3db99c06232e4ed6b3ad5df4ee189d38bffb14c2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372145"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837321"
 ---
 # <a name="prncnfg"></a>prncnfg
 
@@ -31,7 +27,7 @@ ms.locfileid: "71372145"
 cscript Prncnfg {-g | -t | -x | -?} [-S <ServerName>] [-P <printerName>] [-z <NewprinterName>] [-u <UserName>] [-w <Password>] [-r <PortName>] [-l <Location>] [-h <Sharename>] [-m <Comment>] [-f <SeparatorFileName>] [-y <Datatype>] [-st <starttime>] [-ut <Untiltime>] [-i <DefaultPriority>] [-o <Priority>] [<+|->shared] [<+|->direct] [<+|->hidden] [<+|->published] [<+|->rawonly] [<+|->queued] [<+|->enablebidi] [<+|->keepprintedjobs] [<+|->workoffline] [<+|->enabledevq] [<+|->docompletefirst]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 |參數|描述|
 |-------|--------|
 |-g|顯示印表機的設定資訊。|
@@ -65,13 +61,13 @@ cscript Prncnfg {-g | -t | -x | -?} [-S <ServerName>] [-P <printerName>] [-z <Ne
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
--   **Prncnfg**命令是位於%windir%\system32\ printing_Admin_Scripts\\<language> 目錄中的 Visual Basic 腳本。 若要使用此命令，請在命令提示字元中輸入**cscript** ，後面接著 prncnfg 檔案的完整路徑，或將目錄變更為適當的資料夾。 例如：
+-   **Prncnfg**命令是位於%windir%\system32\ printing_Admin_Scripts\\<language> 目錄中的 Visual Basic 腳本。 若要使用此命令，請在命令提示字元中輸入**cscript** ，後面接著 prncnfg 檔案的完整路徑，或將目錄變更為適當的資料夾。 例如，
     ```
     cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prncnfg
     ```
 -   如果您提供的資訊包含空格，請使用引號括住文字（例如 `"computer Name"`）。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name="BKMK_examples"></a>典型
 若要使用名為 HRServer 的遠端電腦所裝載的列印佇列來顯示名為 colorprinter_2 之印表機的設定資訊，請輸入：
 ```
 cscript prncnfg -g -S HRServer -P colorprinter_2 
@@ -87,6 +83,6 @@ cscript prncnfg -t -S HRServer -P colorprinter_2 +keepprintedjobs
 cscript prncnfg -x -S HRServer -P colorprinter_2 -z "colorprinter 3" 
 ```
 
-#### <a name="additional-references"></a>其他參考
-[命令列語法索引鍵](command-line-syntax-key.md)
+## <a name="additional-references"></a>其他參考資料
+- [命令列語法索引鍵](command-line-syntax-key.md)
 [列印命令參考](print-command-reference.md)

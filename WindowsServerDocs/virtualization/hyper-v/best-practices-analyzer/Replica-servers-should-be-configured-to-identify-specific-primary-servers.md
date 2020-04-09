@@ -2,20 +2,19 @@
 title: 應設定複本伺服器，以識別已獲授權傳送複寫流量的特定主伺服器
 description: 提供解決此最佳做法分析程式規則所回報之問題的指示。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 0aeb1f4b-2e75-430b-9557-fe64738c4992
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 567b20d00d2f245ae7e9577d9d200dca116a9b4d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 649af22f615f2f36baceb1fa23b79c54b038f9c2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364743"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861831"
 ---
 # <a name="replica-servers-should-be-configured-to-identify-specific-primary-servers-authorized-to-send-replication-traffic"></a>應設定複本伺服器，以識別已獲授權傳送複寫流量的特定主伺服器
 
@@ -28,7 +27,7 @@ ms.locfileid: "71364743"
 |**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
 |**低於**|警告|  
-|**類別**|設定|  
+|**類別**|組態|  
   
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   
@@ -59,7 +58,7 @@ ms.locfileid: "71364743"
   
     -   指定專用的位置來儲存該伺服器的檔案。  
   
-7.  按一下 **\[確定\]** 。  
+7.  按一下 [確定]。  
   
 8.  針對每部主伺服器重複執行。  
   
@@ -83,7 +82,7 @@ ms.locfileid: "71364743"
 New-VMReplicationAuthorizationEntry server01.domain01.contoso.com D:\ReplicaVMStorage DEFAULT  
 ```  
   
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
 [新增-New-vmreplicationauthorizationentry](https://technet.microsoft.com/library/hh848606.aspx)  
   
 
