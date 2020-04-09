@@ -2,25 +2,23 @@
 title: 由世代和來賓的 hyper-v 功能相容性
 description: 列出與主要 Hyper-v 功能相容的世代和作業系統
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 81c1f32d-7814-4992-8a66-dd4b77c939b4
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 12/05/2016
-ms.openlocfilehash: cdca6c31ff14fe63e99ec4afa2581885677bb61d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7212cf21858c8031db0a72efa8d79d78974b0309
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365545"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853231"
 ---
 # <a name="hyper-v-feature-compatibility-by-generation-and-guest"></a>由世代和來賓的 hyper-v 功能相容性
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
   
 本文中的表格說明與部分 Hyper-v 功能相容的世代和作業系統，並依類別分組。 一般來說，您可以透過執行最新作業系統的第2代虛擬機器，取得功能的最佳可用性。  
   
@@ -51,12 +49,12 @@ ms.locfileid: "71365545"
 ------------- | ------------- | -----------  
 COM/序列通訊埠 | 1和2 <br>**注意：** 針對第2代，請使用 Windows PowerShell 進行設定。 如需詳細資訊，請參閱[新增內核偵錯工具的 COM 埠](./plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v.md#add-a-com-port-for-kernel-debugging)。 | 任何支援的來賓  
   
-## <a name="mobility"></a>行動力  
+## <a name="mobility"></a>移動性  
   
 功能  | 代數 | 客體作業系統  
 ------------- | ------------- | -----------  
 即時移轉  | 1和2 |  任何支援的來賓  
-匯入/匯出 | 1和2 |  任何支援的來賓  
+Import/export (匯入/匯出) | 1和2 |  任何支援的來賓  
   
 ## <a name="networking"></a>網路功能  
   
@@ -79,7 +77,7 @@ RemoteFx | 1和2 | 從 Windows 8 開始，32位和64位 Windows 版本上的第1
   
 功能  | 代數 | 客體作業系統  
 ------------- | ------------- | -----------  
-安全開機 | 2 | **Linux**：Ubuntu 14.04 和更新版本、SUSE Linux Enterprise Server 12 和更新版本、Red Hat Enterprise Linux 7.0 和更新版本，以及 CentOS 7.0 和更新版本<br>**Windows**：可在第2代虛擬機器上執行的所有支援版本  
+安全開機 | 2 | **Linux**： Ubuntu 14.04 和更新版本、SUSE Linux Enterprise Server 12 和更新版本、Red Hat Enterprise Linux 7.0 和更新版本，以及 CentOS 7.0 和更新版本<br>**Windows**：可在第2代虛擬機器上執行的所有支援版本  
 受防護的虛擬機器 | 2 | **Windows**：可在第2代虛擬機器上執行的所有支援版本  
   
 ## <a name="storage"></a>儲存體  
@@ -88,7 +86,7 @@ RemoteFx | 1和2 | 從 Windows 8 開始，32位和64位 Windows 版本上的第1
 ------------- | ------------- | -----------  
 共用虛擬硬碟（僅限 VHDX） | 1和2  | Windows Server 2016、Windows Server 2012 R2、Windows Server 2012  
 SMB3 | 1和2 | 所有支援 SMB3 的  
-儲存空間直接存取 | 2 | Windows Server 2016  
+儲存空間直接存取 | 2 | Windows Server 2016  
 虛擬光纖通道 | 1和2 | Windows Server 2016、Windows Server 2012 R2、Windows Server 2012  
 VHDX 格式 | 1和2 | 任何支援的來賓   
   

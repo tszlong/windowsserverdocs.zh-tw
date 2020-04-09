@@ -1,20 +1,20 @@
 ---
 title: 對 Windows Server 軟體定義網路堆疊進行疑難排解
 description: 本 Windows Server 指南會檢查常見的軟體定義網路（SDN）錯誤和失敗案例，並概述利用可用診斷工具的疑難排解工作流程。
-manager: ravirao
+manager: grcusanz
 ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 9be83ed2-9e62-49e8-88e7-f52d3449aac5
-ms.author: lizross
-author: JMesser81
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/14/2018
-ms.openlocfilehash: 5827ad3b23d6f084e0138bf34ad47223eccb4e76
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 90e3fd4bde06107871cc3a6b31939ca6b30f2473
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312841"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853611"
 ---
 # <a name="troubleshoot-the-windows-server-software-defined-networking-stack"></a>對 Windows Server 軟體定義網路堆疊進行疑難排解
 
@@ -524,7 +524,7 @@ Checking if physical nics support jumbo packets on host
 Physical Nic  <NIC> Ethernet Adapter #2 can support SDN traffic. Encapoverhead value set on the nic is  160
 Cannot send jumbo packets to the destination. Physical switch ports may not be configured to support jumbo packets.
 
-# TODO: Success Results aftering updating MTU on physical switch ports
+
 ```
 
 *補救*

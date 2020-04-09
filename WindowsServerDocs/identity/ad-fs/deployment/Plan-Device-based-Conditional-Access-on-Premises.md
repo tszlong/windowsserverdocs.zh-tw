@@ -1,7 +1,6 @@
 ---
 ms.assetid: c5eb3fa0-550c-4a2f-a0bc-698b690c4199
 title: 規劃裝置型條件式存取內部部署
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 00a7edf9529e1f116d951fd69d3bfa381d6d413a
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: d22897111588393efc148e6f24affeb243ee9e88
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822751"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855331"
 ---
 # <a name="plan-device-based-conditional-access-on-premises"></a>規劃裝置型條件式存取內部部署
 
@@ -32,12 +31,12 @@ AD FS 在混合式案例中提供條件式存取原則的內部部署元件。  
 
 | |新增公司或學校帳戶  |加入 Azure AD  |Windows 10 網域加入    
 | --- | --- |--- | --- |
-|說明    |  使用者會以互動方式將其公司或學校帳戶新增至其 BYOD 裝置。  **注意：** 新增公司或學校帳戶是 Windows 8/8.1 中的 Workplace Join 取代       | 使用者將其 Windows 10 工作裝置加入 Azure AD。|已加入網域的 Windows 10 裝置會自動向 Azure AD 註冊。|           
+|描述    |  使用者會以互動方式將其公司或學校帳戶新增至其 BYOD 裝置。  **注意：** 新增公司或學校帳戶是 Windows 8/8.1 中的 Workplace Join 取代       | 使用者將其 Windows 10 工作裝置加入 Azure AD。|已加入網域的 Windows 10 裝置會自動向 Azure AD 註冊。|           
 |使用者如何登入裝置     |  不會以工作或學校帳戶登入 Windows。  使用 Microsoft 帳戶登入。       |   以註冊裝置的（公司或學校）帳戶身分登入 Windows。      |     使用 AD 帳戶登入。|      
 |如何管理裝置    |      MDM 原則（含其他 Intune 註冊）   | MDM 原則（含其他 Intune 註冊）        |   群組原則，Configuration Manager |
-|Azure AD 信任類型|已加入工作場所|Azure AD 聯結|加入網域  |     
+|Azure AD 信任類型|已加入工作場所|Azure AD 聯結|已加入  |     
 |W10 設定位置    | 設定 > 帳戶 > 帳戶 > 新增工作或學校帳戶        | 有關 > Join 的 > 系統 > 設定 Azure AD       |   有關 > 加入網域的系統 > 設定 > |       
-|也適用于 iOS 和 Android 裝置？   |    [是]     |       無  |   無   |   
+|也適用于 iOS 和 Android 裝置？   |    是     |       否  |   否   |   
 
   
 
@@ -89,7 +88,7 @@ AD FS 2016 根據 PRT 和 Passport 認證提供無縫裝置和使用者的 SSO�
 如需 AD FS 2016 裝置和條件式存取宣告的完整清單，請參閱[參考](#reference)。  
 
 
-## <a name="reference"></a>參考資料  
+## <a name="reference"></a>參考  
 #### <a name="complete-list-of-new-ad-fs-2016-and-device-claims"></a>新 AD FS 2016 和裝置宣告的完整清單  
 
 * https://schemas.microsoft.com/ws/2014/01/identity/claims/anchorclaimtype  

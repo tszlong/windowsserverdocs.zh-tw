@@ -1,23 +1,19 @@
 ---
 title: 利用 Windows Server Essentials 使用 Microsoft Office 365 快速入門指南
 description: 說明如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 51a7f1f1-088b-4487-b2c6-4f97aad3004d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 82fa7a206e0f5100f6fb043d9e569b1e114f1537
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 49ffab44c1d385bd149ec048ff0bd4b627529fef
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313162"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852131"
 ---
 # <a name="quick-start-guide-to-using-microsoft-office-365-with-windows-server-essentials"></a>利用 Windows Server Essentials 使用 Microsoft Office 365 快速入門指南
 
@@ -54,7 +50,7 @@ ms.locfileid: "80313162"
 >  如果您尚未設定電腦來使用 Office 365，請遵循 Office 365 入口網站 [**從這裡開始**] 區段中的步驟進行。  
 
 ## <a name="work-with-documents-in-your-sharepoint-online-libraries-from-my-server-2012-r2"></a>從 My Server 2012 R2 處理 SharePoint Online 文件庫中的文件  
- 如果您的伺服器有 Windows Server Essentials 作業系統，而您的系統管理員是從伺服器管理 Office 365，您可以使用 My Server 2012，從膝上型電腦、行動裝置或電話處理 SharePoint Online 文件庫中的檔R2 應用程式。 這個應用程式是免費的。 您必須先安裝它。  
+ 如果您的伺服器有 Windows Server Essentials 作業系統，而您的系統管理員是從伺服器管理 Office 365，您可以使用 My Server 2012，從膝上型電腦、行動裝置或電話處理 SharePoint Online 文件庫中的檔R2 應用程式。 應用程式是免費的。 您必須先安裝它。  
 
 #### <a name="to-install-my-server-2012-r2"></a>安裝 My Server 2012 R2  
 

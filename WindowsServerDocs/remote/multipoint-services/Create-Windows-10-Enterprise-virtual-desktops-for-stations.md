@@ -1,24 +1,20 @@
 ---
 title: 建立站台的 Windows 10 企業版虛擬桌面
 description: 瞭解如何建立適用于工作站的 Windows Server 2016 桌上型電腦
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 63f08b5b-c735-41f4-b6c8-411eff85a4ab
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: cd08caef8228a4d20c6d5f4a40fe5bd90aacbe40
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 40af6ea98aa91730f78bde8a71f2ad9a741a6490
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395543"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859801"
 ---
 # <a name="create-windows-10-enterprise-virtual-desktops-for-stations"></a>建立站台的 Windows 10 企業版虛擬桌面
 MultiPoint 服務中的這項選擇性設定主要適用于基本應用程式需要每個使用者自己的用戶端作業系統實例的情況。 範例包括無法安裝在 Windows Server 上的應用程式，以及不會在同一部主機電腦上執行多個實例的應用程式。  
@@ -32,7 +28,7 @@ MultiPoint 服務中的這項選擇性設定主要適用于基本應用程式需
 |硬體|需求|         |
 |------------|----------------|----------------| 
 |CPU （多媒體）|1個核心或每個虛擬機器的執行緒|  
-|固態硬碟（SSD）|容量 > = 每一站 20 gb + 40GB，適用于 MultiPoint 服務主機作業系統<br /><br />隨機讀取\/寫入 IOPS > = 每台工作站3K|  
+|固態硬碟（SSD）|容量 > = 每一站 20 gb + 40GB，適用于 MultiPoint 服務主機作業系統<p>隨機讀取\/寫入 IOPS > = 每台工作站3K|  
 |RAM|Windows MultiPoint Server 主機作業系統的每個工作站 2GB + 2GB|  
 |圖形|DX11|  
 |BIOS|設定為啟用虛擬化的 BIOS CPU 設定-第二層位址轉譯（SLAT）|  
@@ -77,7 +73,7 @@ MultiPoint 服務中的這項選擇性設定主要適用于基本應用程式需
   
 6.  在 [**前置**詞] 中，輸入用來識別範本的前置詞，以及使用範本建立的虛擬桌面。 預設的前置詞是主電腦名稱稱。  
   
-    首碼是用來命名範本和虛擬桌面站台。 此範本將會 <*前置*詞 >-t。 虛擬桌面工作站會命名 <*前置*>-詞*n*，其中*n*是工作站識別碼。  
+    首碼是用來命名範本和虛擬桌面站台。 此範本將會 <*前置*詞 >-t。 虛擬桌面工作站會命名為 <*首碼*>-*n*，其中*n*是工作站識別碼。  
   
 7.  輸入使用者名稱和密碼，以用於範本的本機系統管理員帳戶。 在 [網域] 中，輸入將新增到本機系統管理員群組的網域帳號憑證。 此帳戶可以用來登入範本，以及從範本建立的所有虛擬桌面工作站。  
   
@@ -142,7 +138,7 @@ MultiPoint 服務中的這項選擇性設定主要適用于基本應用程式需
 > 如果使用者帳戶已登入任何本機工作站，您就必須登出會話，讓工作站連接到其中一個新建立的工作站虛擬桌面。  
   
 ### <a name="copy-an-existing-virtual-desktop-template"></a>複製現有的虛擬桌面範本  
-使用下列程式，建立您可以自訂和使用的現有虛擬桌面範本複本。 在下列情況下，這會很有用：  
+使用下列程式，建立您可以自訂和使用的現有虛擬桌面範本複本。 在下列情況下會非常有用：  
   
 -   若要從網路共用將主要範本複製到 MultiPoint Server 主機電腦，讓虛擬桌面工作站可以從主要範本建立。  
   
@@ -156,7 +152,7 @@ MultiPoint 服務中的這項選擇性設定主要適用于基本應用程式需
   
 3.  按一下 [**虛擬桌面**] 索引標籤。  
   
-4.  按一下 [匯**入虛擬桌面範本**]，然後使用 **[流覽]** 來選取您要匯入的 .vhd 檔案（範本）。 當您匯入範本時，會建立原始 .vhd 的複本。 根據預設，MultiPoint 服務會將 .vhd 檔案儲存在 C：\\Users\\公用\\ \\檔的\-[\\hyper-v 虛擬硬碟\\ ] 資料夾中。  
+4.  按一下 [匯**入虛擬桌面範本**]，然後使用 **[流覽]** 來選取您要匯入的 .vhd 檔案（範本）。 當您匯入範本時，會建立原始 .vhd 的複本。 根據預設，MultiPoint 服務會將 .vhd 檔案儲存在 C：\\使用者\\公用\\檔\\超\-V\\虛擬硬碟\\ 資料夾。  
   
 5.  輸入新範本的前置詞，然後按一下 **[確定]** 。  
   

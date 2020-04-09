@@ -1,28 +1,24 @@
 ---
 title: 適用于 MultiPoint 服務遷移的規劃工作表
 description: 提供可協助您在 Windows Server 2016 中遷移至 MultiPoint 服務的規劃工作表
-ms.custom: na
 ms.date: 07/29/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 864405bb-47ed-4c83-97a2-8df4c6e6f96b
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: d3d2ecca4062d28d210196d9191e08710eb731c2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c0d5976e70bcf8009cd98e54e973dd6f585d7208
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394625"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858901"
 ---
 # <a name="planning-worksheet-for-multipoint-services-migration"></a>適用于 MultiPoint 服務遷移的規劃工作表
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
 使用下列清單和資料表，在 MultiPoint 服務遷移期間收集您所需的設定。
 
@@ -44,7 +40,7 @@ ms.locfileid: "71394625"
 
 記錄受管理伺服器和電腦的名稱。 您可以在 [MultiPoint 管理員] 的 [**首頁**] 索引標籤上找到這項資訊。
 
-| Computer | 電腦名稱 |
+| 電腦 | 電腦名稱 |
 |----------|---------------|
 | 1        |               |
 | 2        |               |
@@ -81,20 +77,20 @@ ms.locfileid: "71394625"
 
 Administrators：
 
-- 使用者名稱：
-- 使用者名稱：
-- 使用者名稱：
-- 使用者名稱：
-- 使用者名稱：
-- 使用者名稱：
+- 使用者名稱:
+- 使用者名稱:
+- 使用者名稱:
+- 使用者名稱:
+- 使用者名稱:
+- 使用者名稱:
 
 儀表板使用者：
 
-- 使用者名稱：
-- 使用者名稱：
-- 使用者名稱：
-- 使用者名稱：
-- 使用者名稱：
+- 使用者名稱:
+- 使用者名稱:
+- 使用者名稱:
+- 使用者名稱:
+- 使用者名稱:
 
 ## <a name="vdi-template-and-virtual-desktops"></a>VDI 範本與虛擬桌面
 

@@ -2,24 +2,23 @@
 title: Hyper-v 的最佳做法分析程式
 description: 此最佳做法分析程式規則的線上版本文字。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 3747faa5-6e9f-499e-8a79-3fb9d73b6b92
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 671e1de78b390e1b595bb218ece375e88a47155b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d4a2fb889aa13bc945a38a3d879ee013769fabca
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365154"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857691"
 ---
 # <a name="best-practices-analyzer-for-hyper-v"></a>Hyper-v 的最佳做法分析程式
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
   
 在 Windows 管理中，*最佳做法*是專家定義在一般情況下最理想的伺服器設定方式的指導方針。 最佳做法（甚至是重要違規）可能不一定會造成問題。 但是，它們可以指出可能導致效能不佳、可靠性不佳、非預期的衝突、安全性風險增加或其他潛在問題的伺服器設定。  
   

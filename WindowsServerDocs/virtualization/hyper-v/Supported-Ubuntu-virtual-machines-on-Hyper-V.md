@@ -2,25 +2,23 @@
 title: Hyper-v 上支援的 Ubuntu 虛擬機器
 description: 列出每個版本中包含的 Linux 整合服務和功能
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 95ea5f7c-25c6-494b-8ffd-2a77f631ee94
 author: shirgall
 ms.author: shirgall
 ms.date: 06/13/2019
-ms.openlocfilehash: ed1c1a9f678dd7cb68b59d2df239ca278b7a3688
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 06c836d9671547ea3d40e5582c2ed7b330777ac9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365476"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857991"
 ---
 # <a name="supported-ubuntu-virtual-machines-on-hyper-v"></a>Hyper-v 上支援的 Ubuntu 虛擬機器
 
->適用於：Windows Server 2019、2016、Hyper-v Server 2019、2016、Windows Server 2012 R2、Hyper-v Server 2012 R2、Windows Server 2012、Hyper-v Server 2012、Windows Server 2008 R2、Windows 10、Windows 8.1、Windows 8、Windows 7.1、Windows 7
+>適用于： Windows Server 2019、2016、Hyper-v Server 2019、2016、Windows Server 2012 R2、Hyper-v server 2012 R2、Windows Server 2012、Hyper-v Server 2012、Windows Server 2008 R2、Windows 10、Windows 8.1、Windows 8、Windows 7.1、Windows 7
 
 從 Ubuntu 12.04 開始，載入 "linux-virtual" 套件會安裝適合做為來賓虛擬機器使用的核心。 此套件一律取決於用於虛擬機器的最新最小一般核心映射和標頭。 雖然其使用是選擇性的，但 linux 虛擬核心會載入較少的驅動程式，而且開機速度會更快，而且記憶體額外負荷會比一般映射少。
 
@@ -36,13 +34,13 @@ ms.locfileid: "71365476"
 
 * （*空白*）-無法使用功能
 
-|**功能**|**Windows Server 作業系統版本**|**18.10/19.04**|**18.04 LTS**|**16.04 LTS**|**14.04 LTS**|**12.04 LTS**|
+|**特徵**|**Windows Server 作業系統版本**|**18.10/19.04**|**18.04 LTS**|**16.04 LTS**|**14.04 LTS**|**12.04 LTS**|
 |-|-|-|-|-|-|-|
-|**Availability**||內建|內建|內建|內建|內建|
+|**可用性**||內建|內建|內建|內建|內建|
 |**[雙核處理器](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Windows Server 2016 精確時間|2019、2016|&#10004;|&#10004;|&#10004;|||
 |**[連](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**|||||||
-|大型訊框|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|Jumbo 框架|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |VLAN 標記和中繼|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |即時移轉|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |靜態 IP 插入|2019、2016、2012 R2、2012|&#10004;附注1|&#10004;附注1|&#10004;附注1|&#10004;附注1|&#10004;附注1|
@@ -74,7 +72,7 @@ ms.locfileid: "71365476"
 |使用 UEFI 開機|2019、2016、2012 R2|&#10004;注11，12|&#10004;注11，12|&#10004;注11，12|&#10004;注11，12||
 |安全開機|2019、2016|&#10004;|&#10004;|&#10004;|&#10004;||
 
-## <a name="notes"></a>注意
+## <a name="notes"></a>注意事項
 
 1. 如果已針對虛擬機器上指定的 Hyper-v 特定網路介面卡設定**網路系統管理員**，則靜態 IP 插入可能無法正常執行。 為確保能順利運作靜態 IP 插入，請確認網路系統管理員已完全關閉，或已透過其**Ifcfg-eth0 ethX**檔關閉特定網路介面卡。
 
@@ -131,7 +129,7 @@ ms.locfileid: "71365476"
 
    * [啟動記憶體] 和 [最小記憶體] 應該等於或大於散發廠商建議的記憶體數量。
 
-   * 通常會耗用系統上整個可用記憶體的應用程式，只能耗用最多 80% 的可用 RAM。
+   * 通常會耗用系統上整個可用記憶體的應用程式，只能耗用最多80% 的可用 RAM。
 
 9. 如果您使用 Windows Server 2019、Windows Server 2016 或 Windows Server 2012/2012 R2 作業系統上的動態記憶體，請指定**啟動記憶體**、**最小記憶體**和**最大記憶體**參數（以 128 mb 的倍數表示）。 如果無法這樣做，可能會導致熱新增失敗，而且您可能不會在客體作業系統上看到任何記憶體增加。
 

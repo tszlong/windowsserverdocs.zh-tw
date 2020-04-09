@@ -1,24 +1,20 @@
 ---
 title: Configure Features on Demand in Windows Server
 description: 伺服器管理員
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e663bbea-d025-41fa-b16c-c2bff00a88e8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f834ca2e4c4acd045ccaeb4f46142dcc0e86f674
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 090b87810dc519728bf915bdb2cd79668c7f01f4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383273"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851551"
 ---
 # <a name="configure-features-on-demand-in-windows-server"></a>Configure Features on Demand in Windows Server
 
@@ -28,7 +24,7 @@ ms.locfileid: "71383273"
 
 [功能隨選安裝] 是 Windows 8 和 Windows Server 2012 中引進的功能，可讓您從作業系統中移除角色和功能檔案（有時*稱為功能裝載*）以節省磁碟空間，以及從遠端位置或安裝媒體（而不是從本機電腦）安裝角色和功能。 您可以從執行中的實體或虛擬電腦移除功能檔案。 您也可以在 Windows 映像 (WIM) 檔或離線虛擬硬碟 (VHD) 中新增或移除功能檔案，以建立可重製的「功能隨選安裝」設定複本。
 
-在 [功能隨選安裝] 設定中，當電腦上的功能檔案無法使用時，如果安裝需要這些功能檔案，可以將 Windows Server 2012 R2 或 Windows Server 2012 導向從並存功能存放區（共用資料夾）取得檔案其中包含功能檔案，且可供網路上的電腦使用）、Windows Update，或從安裝媒體。 根據預設，當目標伺服器未提供功能檔案時，[功能隨選安裝] 會依顯示的順序執行下列工作來搜尋遺漏的功能檔案。
+在 [功能隨選安裝] 設定中，當電腦上無法使用功能檔案時，如果安裝需要這些功能檔案，可以將 Windows Server 2012 R2 或 Windows Server 2012 導向從並存功能存放區取得檔案（包含功能檔案的共用資料夾，並可供網路上的電腦使用），從 Windows Update，或從安裝媒體。 根據預設，當目標伺服器未提供功能檔案時，[功能隨選安裝] 會依顯示的順序執行下列工作來搜尋遺漏的功能檔案。
 
 1.  在 [新增角色及功能] Wizard 或 DISM 安裝命令的使用者所指定的位置中進行搜尋
 
@@ -52,7 +48,7 @@ ms.locfileid: "71383273"
 
 -   [使用 Uninstall 來移除功能檔案](#BKMK_remove)
 
-## <a name="BKMK_store"></a>建立功能檔案或並存存放區
+## <a name="create-a-feature-file-or-side-by-side-store"></a><a name=BKMK_store></a>建立功能檔案或並存存放區
 本節說明如何設定遠端功能檔案共用資料夾（也稱為並存存放區），以儲存在執行 Windows Server 2012 R2 或 Windows Server 2012 的伺服器上安裝角色、角色服務和功能所需的檔案。 設定功能存放區之後，您可以在執行這些作業系統的伺服器上安裝角色、角色服務和功能，並將功能存放區指定為安裝來源檔案的位置。
 
 #### <a name="to-create-a-feature-file-store"></a>建立功能檔案存放
@@ -72,14 +68,14 @@ ms.locfileid: "71383273"
 
 3.  從 Windows Server 安裝媒體將 **Sources\SxS** 複製到您在步驟 1 中建立的共用資料夾。
 
-## <a name="BKMK_methods"></a>移除功能檔案的方法
+## <a name="methods-of-removing-feature-files"></a><a name=BKMK_methods></a>移除功能檔案的方法
 在「功能隨選安裝」設定中，有兩種方法可以從 Windows Server 移除功能檔案。
 
 -   `Uninstall-WindowsFeature` Cmdlet 的 `remove` 參數可讓您從執行 Windows Server 2012 R2 或 Windows Server 2012 的伺服器或離線虛擬硬碟（VHD）刪除功能檔案。 `remove` 參數的有效值為角色、角色服務和功能的名稱。
 
 -   部署映像服務與管理 (DISM) 命令可讓您建立自訂 WIM 檔，藉由省略不需要或是可以從其他遠端來源取得的功能檔案來節省磁碟空間。 如需有關使用 DISM 準備自訂映像的詳細資訊，請參閱 [如何啟用或停用 Windows 功能](https://technet.microsoft.com/library/hh824822.aspx)。
 
-## <a name="BKMK_remove"></a>使用 Uninstall 來移除功能檔案
+## <a name="remove-feature-files-by-using-uninstall-windowsfeature"></a><a name=BKMK_remove></a>使用 Uninstall 來移除功能檔案
 您可以使用 Uninstall Cmdlet，從執行 Windows Server 2012 R2 或 Windows Server 2012 的伺服器和離線 Vhd 卸載角色、角色服務和功能，以及刪除功能檔案。 如有需要，您可以在相同的命令中卸載和刪除相同的角色、角色服務和功能。
 
 > [!IMPORTANT]
@@ -121,7 +117,7 @@ ms.locfileid: "71383273"
     Uninstall-WindowsFeature -Name AD-Domain-Services,GPMC -VHD C:\WS2012VHDs\Contoso.vhd -computerName ContosoDC1
     ```
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 [安裝或卸載角色、角色服務或功能](install-or-uninstall-roles-role-services-or-features.md)
 [Windows Server 安裝選項](https://technet.microsoft.com/library/hh831786.aspx)
 [如何啟用或停用 Windows 功能](https://technet.microsoft.com/library/hh824822.aspx)

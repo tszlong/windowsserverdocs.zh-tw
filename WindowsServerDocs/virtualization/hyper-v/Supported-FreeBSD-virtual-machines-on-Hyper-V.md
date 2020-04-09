@@ -2,25 +2,23 @@
 title: Hyper-v 上支援的 FreeBSD 虛擬機器
 description: 列出每個版本中包含的 Linux 整合服務和功能
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 930e758f-bd50-46b4-a3a4-9857110f17b4
 author: shirgall
 ms.author: kathydav
 ms.date: 08/30/2017
-ms.openlocfilehash: b7b02e1ec93d6255412a89e7e7d7b8246cf5e50e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ea63a64ee0e1ce36ceb7783bbbc764c6ca5ca9d6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365515"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855951"
 ---
 # <a name="supported-freebsd-virtual-machines-on-hyper-v"></a>Hyper-v 上支援的 FreeBSD 虛擬機器
 
->適用於：Windows Server 2016、Hyper-v Server 2016、Windows Server 2012 R2、Hyper-v Server 2012 R2、Windows Server 2012、Hyper-v Server 2012、Windows Server 2008 R2、Windows 10、Windows 8.1、Windows 8、Windows 7.1、Windows 7
+>適用于： Windows Server 2016、Hyper-v Server 2016、Windows Server 2012 R2、Hyper-v Server 2012 R2、Windows Server 2012、Hyper-v Server 2012、Windows Server 2008 R2、Windows 10、Windows 8.1、Windows 8、Windows 7.1、Windows 7
 
 下列功能發佈對應會指出每個版本的功能。 每個散發套件的已知問題和因應措施會列在表格之後。
 
@@ -32,13 +30,13 @@ ms.locfileid: "71365515"
 
 * （*空白*）-無法使用功能
 
-|**功能**|**Windows Server 作業系統版本**|**11.1/11。2**|**11.0**|**10.3**|**10.2**|**10.0-10。1**|**9.1-9.3、8。4**|
+|**特徵**|**Windows Server 作業系統版本**|**11.1/11。2**|**11.0**|**10.3**|**10.2**|**10.0-10。1**|**9.1-9.3、8。4**|
 |-|-|-|-|-|-|-|-|
-|**Availability**||內建|內建|內建|內建|內建|[埠](https://svnweb.freebsd.org/ports/branches/2015Q1/emulators/hyperv-is/) |
+|**可用性**||內建|內建|內建|內建|內建|[埠](https://svnweb.freebsd.org/ports/branches/2015Q1/emulators/hyperv-is/) |
 |**[雙核處理器](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004; |
 |Windows Server 2016 精確時間|2019、2016|&#10004;||||||
 |**[連](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**||||||||
-|大型訊框|2019、2016、2012 R2、2012、2008 R2|&#10004;附注3|&#10004;附注3|&#10004;附注3|&#10004;附注3|&#10004;附注3|&#10004;附注3|
+|Jumbo 框架|2019、2016、2012 R2、2012、2008 R2|&#10004;附注3|&#10004;附注3|&#10004;附注3|&#10004;附注3|&#10004;附注3|&#10004;附注3|
 |VLAN 標記和中繼|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |即時移轉|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |靜態 IP 插入|2019、2016、2012 R2、2012|&#10004;注4|&#10004;注4|&#10004;注4|&#10004;注4|&#10004;注4|&#10004;|
@@ -46,7 +44,7 @@ ms.locfileid: "71365515"
 |TCP 分割和總和檢查碼卸載|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|||
 |大型接收卸載（LRO）|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;||||
 |SR-IOV|2019、2016|||||||
-|**[容量](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**||附注1|附注1|附注1|附注1|附注1、2|附注1、2|
+|**[容量](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**||附註 1|附註 1|附註 1|附註 1|附注1、2|附注1、2|
 |VHDX 調整大小|2019、2016、2012 R2|&#10004;附注7|&#10004;附注7|||||
 |虛擬光纖通道|2019、2016、2012 R2|||||||
 |即時虛擬機器備份|2019、2016、2012 R2|&#10004;||||||
@@ -71,7 +69,7 @@ ms.locfileid: "71365515"
 |使用 UEFI 開機|2019、2016、2012 R2|&#10004;||||||
 |安全開機|2019、2016|||||||
 
-## <a name="BKMK_notes"></a>紀錄
+## <a name="notes"></a><a name="BKMK_notes"></a>紀錄
 
 1. 建議您為[磁片裝置加上標籤]( https://www.freebsd.org/doc/handbook/geom-glabel.html)，以避免在啟動期間發生根掛接錯誤。
 
@@ -94,9 +92,9 @@ ms.locfileid: "71365515"
     # dd if=/dev/da1 of=/dev/da1 count=0
     # gpart recover da1
     ```
-   **其他注意事項**：10穩定和11穩定的功能矩陣與 FreeBSD 11.1 版本相同。 此外，FreeBSD 10.2 和舊版（10.1，10.0，9. x，8. x）的生命週期結束。 如需最新的支援版本清單和最新的資訊安全摘要報告，請參閱[這裡](https://security.freebsd.org/)。
+   **其他注意事項**：10穩定和11穩定的功能對照表與 FreeBSD 11.1 版本相同。 此外，FreeBSD 10.2 和舊版（10.1，10.0，9. x，8. x）的生命週期結束。 如需最新的支援版本清單和最新的資訊安全摘要報告，請參閱[這裡](https://security.freebsd.org/)。
 
-**其他注意事項**：10穩定和11穩定的功能矩陣與 FreeBSD 11.1 版本相同。 此外，FreeBSD 10.2 和舊版（10.1，10.0，9. x，8. x）的生命週期結束。 如需最新的支援版本清單和最新的資訊安全摘要報告，請參閱[這裡](https://security.freebsd.org/)。
+**其他注意事項**：10穩定和11穩定的功能對照表與 FreeBSD 11.1 版本相同。 此外，FreeBSD 10.2 和舊版（10.1，10.0，9. x，8. x）的生命週期結束。 如需最新的支援版本清單和最新的資訊安全摘要報告，請參閱[這裡](https://security.freebsd.org/)。
 
 ## <a name="see-also"></a>另請參閱
 

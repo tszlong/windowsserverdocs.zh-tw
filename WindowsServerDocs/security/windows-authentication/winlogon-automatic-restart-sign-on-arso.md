@@ -1,24 +1,19 @@
 ---
 title: Winlogon 自動重新啟動登入 (ARSO)
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.service: na
-ms.suite: na
 ms.technology: security-auditing
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 15cddcfa-8a8e-45e4-bb76-b8e1a14ceac0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: f085cf78a01148f97a450577131213ce977a432a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3dd66cc799ee23f77c9c60e23e49d3088a27b2fc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402325"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855101"
 ---
 # <a name="winlogon-automatic-restart-sign-on-arso"></a>Winlogon 自動重新啟動登入 (ARSO)
 
@@ -66,7 +61,7 @@ Windows 8 引進了鎖定畫面應用程式。  這些應用程式會在使用�
   
     -   較佳的使用者體驗：不需要等候15分鐘的時間來完成安裝更新  
   
--   程度? Autologon  
+-   程度? AutoLogon  
   
     -   儲存密碼，使用該認證將您登入  
   
@@ -93,9 +88,9 @@ Windows 8 引進了鎖定畫面應用程式。  這些應用程式會在使用�
   
 **登錄編輯程式**  
   
-|值名稱|類型|資料|  
+|值名稱|類型|Data|  
 |-------|----|----|  
-|DisableAutomaticRestartSignOn|DWORD|0<br /><br />**範例：**<br /><br />0（已啟用）<br /><br />1（已停用）|  
+|DisableAutomaticRestartSignOn|DWORD|0<p>**範例：**<p>0（已啟用）<p>1（已停用）|  
   
 **原則登錄位置：** HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System  
   
@@ -147,6 +142,6 @@ Windows 8 引進了鎖定畫面應用程式。  這些應用程式會在使用�
   
 |詞彙|定義|  
 |----|-------|  
-|Autologon|自動登入功能是已在 Windows 中針對數個版本而呈現的功能。  這是 Windows 的已記載功能，甚至還具有 Windows v4.0  *[HTTP：/technet. .com/sysinternals/bb963905](https://technet.microsoft.com/sysinternals/bb963905.aspx)等工具的自動登出。*<br /><br />它允許裝置的單一使用者自動登入，而不需要輸入認證。 認證會以加密的 LSA 秘密設定並儲存在登錄中。|  
+|Autologon|自動登入功能是已在 Windows 中針對數個版本而呈現的功能。  這是 Windows 的已記載功能，甚至還具有 Windows v4.0  *[HTTP：/technet. .com/sysinternals/bb963905](https://technet.microsoft.com/sysinternals/bb963905.aspx)等工具的自動登出。*<p>它允許裝置的單一使用者自動登入，而不需要輸入認證。 認證會以加密的 LSA 秘密設定並儲存在登錄中。|  
   
 

@@ -2,20 +2,19 @@
 title: 設定以 VSS 為基礎的備份的客體作業系統，為 Hyper-v 複本啟用應用程式一致快照
 description: 此最佳做法分析程式規則的線上版本文字。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 7638e996-d42d-47b8-a670-1e09e7183850
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 032ca585da1c556fff6f9e06b3bde0662a5d64db
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f7a77b2cb743f478525f839e1c64ecc892b3fb04
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364956"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80862061"
 ---
 # <a name="configure-guest-operating-systems-for-vss-based-backups-to-enable-application-consistent-snapshots-for-hyper-v-replica"></a>設定以 VSS 為基礎的備份的客體作業系統，為 Hyper-v 複本啟用應用程式一致快照
 
@@ -28,7 +27,7 @@ ms.locfileid: "71364956"
 |**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
 |**低於**|錯誤|  
-|**類別**|設定|  
+|**類別**|組態|  
   
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   

@@ -1,7 +1,6 @@
 ---
 ms.assetid: d254fca3-85a1-424d-ac22-d6687ec3798e
 title: 為 Active Directory 使用者提供宣告感知應用程式與服務的存取權
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 48436f8e98af965f2bc2b38d296c4a15924e4db1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0cb530eacfa8239f3a2a135397e54becfadb602b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407958"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858571"
 ---
 # <a name="provide-your-active-directory-users-access-to-your-claims-aware-applications-and-services"></a>為 Active Directory 使用者提供宣告感知應用程式與服務的存取權
 
@@ -35,7 +34,7 @@ ms.locfileid: "71407958"
     > [!NOTE]  
     > 您也可以使用輕量型目錄存取協定 \(LDAP\) 或結構化查詢語言 (SQL) \(SQL\)，以包含 AD FS 權杖產生的身分識別。  
   
--   **公司 DNS：** 此網域名稱系統 \(DNS\) 的執行包含簡單的主機 \(\) 資源記錄，讓內部網路用戶端可以找到帳戶同盟伺服器。 這項 DNS 實作也可以裝載公司網路所需的其他 DNS 記錄。 如需詳細資訊，請參閱 [Name Resolution Requirements for Federation Servers](Name-Resolution-Requirements-for-Federation-Servers.md)。  
+-   **公司 DNS：** 此網域名稱系統 \(DNS\) 的執行包含簡單的主機 \(\) 資源記錄，讓內部網路用戶端可以找到帳戶同盟伺服器。 這項 DNS 實作也可以裝載公司網路所需的其他 DNS 記錄。 如需詳細資訊，請參閱[同盟伺服器的名稱解析需求](Name-Resolution-Requirements-for-Federation-Servers.md)。  
   
 -   **帳戶夥伴同盟伺服器：** 此同盟伺服器已加入帳戶夥伴樹系中的網域。 它會驗證員工使用者帳戶，並產生 AD FS 權杖。 員工的用戶端電腦會對此同盟伺服器執行 Windows 整合式驗證，以產生 AD FS token。 如需詳細資訊，請參閱＜ [Review the Role of the Federation Server in the Account Partner](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)＞。  
   
@@ -55,5 +54,5 @@ ms.locfileid: "71407958"
   
 ![存取您的宣告](media/31394ea8-fecb-4372-ac3f-cc3cf566ffc9.gif)  
   
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 [Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

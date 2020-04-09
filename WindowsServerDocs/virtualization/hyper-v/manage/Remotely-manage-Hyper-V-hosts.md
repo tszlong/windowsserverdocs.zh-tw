@@ -2,21 +2,19 @@
 title: 從遠端系統管理 Hyper-v 主機
 description: 描述 Hyper-v 主機與 Hyper-v 管理員之間的版本相容性，以及如何連接到不同環境（包括跨網域和獨立）中的遠端主機。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2d34e98c-6134-479b-8000-3eb360b8b8a3
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 12/06/2016
-ms.openlocfilehash: 677e054fe42978697ef786b73daac75069f0408f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 592bb6352c4ca56770e1a3051ecbc88d9d378467
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392684"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859411"
 ---
 # <a name="remotely-manage-hyper-v-hosts-with-hyper-v-manager"></a>使用 Hyper-v 管理員從遠端系統管理 Hyper-v 主機
 
@@ -37,7 +35,7 @@ Hyper-v 管理員可讓您管理少量的 Hyper-v 主機，包括遠端和本機
 |Hyper-v 管理員版本 | Hyper-v 主機版本|
 |---|---|
 |Windows 2016、Windows 10|-Windows Server 2016 —所有版本和安裝選項，包括 Nano Server，以及對應的 Hyper-v 伺服器版本 <br>-Windows Server 2012 R2 —所有版本和安裝選項，以及對應版本的 Hyper-v 伺服器 <br>-Windows Server 2012 —所有版本和安裝選項，以及對應版本的 Hyper-v 伺服器 <br> -Windows 10 <br> -Windows 8。1  |
-| Windows Server 2012 R2、Windows 8。1 | -Windows Server 2012 R2 —所有版本和安裝選項，以及對應版本的 Hyper-v 伺服器 <br>-Windows Server 2012 —所有版本和安裝選項，以及對應版本的 Hyper-v 伺服器 <br>-Windows 8。1
+| Windows Server 2012 R2、Windows 8.1 | -Windows Server 2012 R2 —所有版本和安裝選項，以及對應版本的 Hyper-v 伺服器 <br>-Windows Server 2012 —所有版本和安裝選項，以及對應版本的 Hyper-v 伺服器 <br>-Windows 8。1
 | Windows Server 2012 | -Windows Server 2012 —所有版本和安裝選項，以及對應版本的 Hyper-v 伺服器
 | Windows Server 2008 R2 Service Pack 1、Windows 7 Service Pack 1 | -Windows Server 2008 R2 —所有版本和安裝選項，以及對應版本的 Hyper-v 伺服器
 | Windows Server 2008、Windows Vista Service Pack 2 | -Windows Server 2008 —所有版本和安裝選項，以及對應版本的 Hyper-v 伺服器
@@ -51,7 +49,7 @@ Hyper-v 管理員可讓您管理少量的 Hyper-v 主機，包括遠端和本機
 
 ## <a name="manage-hyper-v-on-a-local-computer"></a>管理本機電腦上的 Hyper-v
 
-Hyper-v 管理員不會列出任何裝載 Hyper-v 的電腦，除非您新增電腦，包括本機電腦。 請這樣做：
+Hyper-v 管理員不會列出任何裝載 Hyper-v 的電腦，除非您新增電腦，包括本機電腦。 若要這樣做：
 
 1. 在左窗格中，以滑鼠右鍵按一下 [ **Hyper-v 管理員**]。
 2. 按一下 **[連接到伺服器]** 。
@@ -85,7 +83,7 @@ Windows Server 2016 和 Windows 10 中的 hyper-v 管理員提供比先前版本
 
 ### <a name="connect-to-a-windows-2016-or-windows-10-remote-host-as-a-different-user"></a>以不同的使用者身分連接至 Windows 2016 或 Windows 10 遠端主機
 
-當您不是在本機電腦上以 hyper-v 系統管理員群組或 Hyper-v 主機上的 Administrators 群組成員的使用者身分執行時，這可讓您連線至 Hyper-v 主機。 請這樣做：
+當您不是在本機電腦上以 hyper-v 系統管理員群組或 Hyper-v 主機上的 Administrators 群組成員的使用者身分執行時，這可讓您連線至 Hyper-v 主機。 若要這樣做：
 
 1. 在左窗格中，以滑鼠右鍵按一下 [ **Hyper-v 管理員**]。
 1. 按一下 **[連接到伺服器]** 。
@@ -97,7 +95,7 @@ Windows Server 2016 和 Windows 10 中的 hyper-v 管理員提供比先前版本
 
 ### <a name="connect-to-a-windows-2016-or-windows-10-remote-host-using-ip-address"></a>使用 IP 位址連接到 Windows 2016 或 Windows 10 遠端主機
 
-請這樣做：
+若要這樣做：
 
 1. 在左窗格中，以滑鼠右鍵按一下 [ **Hyper-v 管理員**]。
 1. 按一下 **[連接到伺服器]** 。
@@ -108,7 +106,7 @@ Windows Server 2016 和 Windows 10 中的 hyper-v 管理員提供比先前版本
 
 ### <a name="connect-to-a-windows-2016-or-windows-10-remote-host-outside-your-domain-or-with-no-domain"></a>連線到網域外的 Windows 2016 或 Windows 10 遠端主機，或不含網域的連線
 
-請這樣做：
+若要這樣做：
 
 1. 在要管理的 Hyper-v 主機上，以系統管理員身分開啟 Windows PowerShell 會話。
 
@@ -169,7 +167,7 @@ Windows Server 2016 和 Windows 10 中的 hyper-v 管理員提供比先前版本
 add-windowsfeature rsat-hyper-v-tools
 ```
 
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
  
 [安裝 Hyper-V](../get-started/Install-the-Hyper-V-role-on-Windows-Server.md) 
 

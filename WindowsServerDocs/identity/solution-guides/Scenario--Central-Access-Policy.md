@@ -1,7 +1,6 @@
 ---
 ms.assetid: 7f285c9f-c3e8-4aae-9ff4-a9123815114e
 title: 案例集中存取原則
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 91fd437895e765d4d73f3a200f76a5f8f96b52f2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a22592e5c8af9fa23725de90a14a9a8a46c286d7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407091"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861151"
 ---
 # <a name="scenario-central-access-policy"></a>案例：集中存取原則
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 檔案的集中存取原則，可讓組織集中部署和管理授權原則，這些原則包含使用使用者群組、使用者宣告、裝置宣告及資源屬性的條件運算式。 (宣告是對其相關聯物件之屬性的判斷提示。) 例如，若要存取高業務衝擊 (HBI) 資料，使用者必須是全職員工、取得受管理裝置的存取權，並使用智慧卡登入。 這些原則是定義和裝載在 Active Directory 網域服務 (AD DS) 中。  
   
@@ -83,14 +82,14 @@ ms.locfileid: "71407091"
   
 -   [部署集中存取原則&#40;示範步驟&#41;](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md)  
   
--   [動態存取控制：案例概觀](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [動態存取控制：案例總覽](Dynamic-Access-Control--Scenario-Overview.md)  
   
-## <a name="BKMK_NEW"></a>此案例中包含的角色和功能  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>此案例中包含的角色和功能  
 下表列出這個案例中的角色與功能，並說明它們如何支援這個案例。  
   
 |角色/功能|如何支援本案例|  
 |-----------------|---------------------------------|  
-|Active Directory 網域服務角色|Windows Server 2012 中的 AD DS 引進了宣告型授權平臺，可讓您建立使用者宣告和裝置宣告、複合身分識別、（使用者加上裝置宣告）、新的集中存取原則（CAP）模型，以及使用檔案分類授權決策中的資訊。|  
+|Active Directory 網域服務角色|Windows Server 2012 中的 AD DS 引進了以宣告為基礎的授權平臺，可在授權決策中建立使用者宣告和裝置宣告、複合身分識別、（使用者加上裝置宣告）、新的集中存取原則（CAP）模型，以及使用檔案分類資訊。|  
 |檔案和存放服務角色|檔案和存放服務提供的技術可幫助您設定和管理一或多個檔案伺服器，這些伺服器會在網路上提供儲存檔案以及讓使用者共用檔案的中心位置。 如果您的網路使用者需要存取相同的檔案和應用程式，或集中式的備份與檔案管理對您的組織來說很重要，則應透過新增檔案和存放服務角色與適當的角色服務，將一或多個電腦設成檔案伺服器。|  
 |Windows 用戶端電腦|使用者可以透過用戶端電腦存取網路上的檔案和資料夾。|  
   

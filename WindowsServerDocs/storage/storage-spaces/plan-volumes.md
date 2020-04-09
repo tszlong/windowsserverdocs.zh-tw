@@ -3,18 +3,18 @@ ms.assetid: 342173ca-4e10-44f4-b2c9-02a6c26f7a4a
 title: 規劃儲存空間直接存取中的磁碟區
 ms.prod: windows-server
 ms.author: cosdar
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 06/28/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 52c600068d5dd447ff9faa7c40788664e222a83a
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 0825c531913d134cc5711e3c8668fd6dedc4998f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322780"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856181"
 ---
 # <a name="planning-volumes-in-storage-spaces-direct"></a>規劃儲存空間直接存取中的磁碟區
 
@@ -41,7 +41,7 @@ ms.locfileid: "79322780"
 
 我們建議您將磁片區總數限制為：
 
-| Windows Server 2016          | Windows Server 2019          |
+| Windows Server 2016          | Windows Server 2019          |
 |------------------------------|------------------------------|
 | 每個叢集最多32個磁片區 | 每個叢集最多64個磁片區 |
 
@@ -128,7 +128,7 @@ Nested 復原（僅適用于 Windows Server 2019）提供具有雙向鏡像之�
 
 我們建議您將每個磁片區的大小限制為：
 
-| Windows Server 2016 | Windows Server 2019 |
+| Windows Server 2016 | Windows Server 2019 |
 | ------------------- | ------------------- |
 | 最高 32 TB         | 最高 64 TB         |
 
@@ -193,7 +193,7 @@ Nested 復原（僅適用于 Windows Server 2019）提供具有雙向鏡像之�
    >[!TIP]
    > 您不需要立即建立所有磁碟區。 您隨時可以延伸磁碟區，或稍後建立新的磁碟區。
 
-為了簡化，這整個範例使用十進位 (以 10 為底數) 單位，表示 1 TB = 1,000,000,000,000 位元組。 不過，Windows 中的儲存數量以二進位 (以 2 為底數) 單位表示。 例如，每個 2 TB 磁碟機在 Windows 中顯示為 1.82 TiB。 同樣地，128 TB 儲存集區顯示為 116.41 TiB。 這是預期行為。
+為了簡化，這整個範例使用十進位 (以 10 為底數) 單位，表示 1 TB = 1,000,000,000,000 位元組。 不過，Windows 中的儲存數量以二進位 (以 2 為底數) 單位表示。 例如，每個 2 TB 磁碟機在 Windows 中顯示為 1.82 TiB。 同樣地，128 TB 儲存集區顯示為 116.41 TiB。 此為預期性行為。
 
 ## <a name="usage"></a>使用方式
 

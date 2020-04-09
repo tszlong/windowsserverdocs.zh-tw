@@ -1,24 +1,20 @@
 ---
 title: 一般 MultiPoint 服務使用案例
 description: 瞭解 MultiPoint 服務的常見用法
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9aefaf1b-3ba2-4f41-9068-9629a28157ad
 author: evaseydl
 manager: scottman
 ms.author: evas
 ms.date: 08/04/2016
-ms.openlocfilehash: b6e1ce47be76d8df1d8c9079204106f51c9067b3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9429bb297ead933f461b563951a628b1514f28c7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395575"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859081"
 ---
 # <a name="common-usage-scenarios"></a>常見使用案例
 MultiPoint 服務以 Windows 10 桌上型電腦經驗最重要的元素，提供個別使用者桌上型電腦。 它也提供簡單的管理工具（MultiPoint 管理員），系統管理員可以使用它來探索和控制多個 MultiPoint 伺服器和用戶端。 此外，MultiPoint 服務包含 MultiPoint 儀表板以進行即時可見度。 您可以使用 MultiPoint 服務執行之動作的範例包括下列各項：  

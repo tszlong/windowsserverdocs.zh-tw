@@ -1,18 +1,18 @@
 ---
 title: 受防護網狀架構與受防護的 VM 概觀
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: ace6eb30ae6df2dc29aacc05eb7852e03145df4f
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: edcf2e011b701904fb8c1b27d4f9b7d13415b2a8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79321990"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856901"
 ---
 # <a name="guarded-fabric-and-shielded-vms-overview"></a>受防護網狀架構與受防護的 VM 概觀
 
@@ -89,9 +89,9 @@ HGS 與建立受防護的 VM 的方法搭配使用，協助提供以下保證。
 
 受防護網狀架構能夠以三種可能方式的其中之一執行 VM：
 
-1.  一般的 VM 供應項目，不提供舊版本 Hyper-V 以外的保護
-2.  支援加密的 VM，可由網狀架構系統管理員設定保護
-3.  受防護的 VM，所有的保護均會開啟，並且無法由網狀架構系統管理員停用
+1.    一般的 VM，不提供舊版本 Hyper-V 以外的保護
+2.    支援加密的 VM，可由網狀架構系統管理員設定保護
+3.    受防護的 VM，所有的保護均會開啟，並且無法由網狀架構系統管理員停用
 
 支援加密的 VM 是專供在網狀架構系統管理員完全受信任時使用。  例如，企業可能會部署受防護網狀架構，以確保 VM 磁碟在靜止時會加密，以符合法規規定。 網狀架構系統管理員可以繼續使用便利的管理功能，例如 VM 主控台連線、PowerShell Direct，和其他日常的管理功能及疑難排解工具。
 

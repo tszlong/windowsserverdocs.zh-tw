@@ -2,23 +2,19 @@
 title: 在主機電腦或 VM 上建立新的 NIC 小組
 description: 在本主題中，您會在主機電腦或執行 Windows Server 2016 的 Hyper-v 虛擬機器（VM）中建立新的 NIC 小組。
 manager: dougkim
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-nict
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a4caaa86-5799-4580-8775-03ee213784a3
 ms.author: lizross
 author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: 1463d3b9a596436b93423806a0acdb40728a15fb
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: d552460a94f4278c32f57130d7973ca5bdedca08
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316697"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854771"
 ---
 # <a name="create-a-new-nic-team-on-a-host-computer-or-vm"></a>在主機電腦或 VM 上建立新的 NIC 小組
 
@@ -43,7 +39,7 @@ ms.locfileid: "80316697"
 
 -   如果您要在 VM 中設定 NIC 小組，您必須選取 [_交換器獨立_] 和 [_位址雜湊_的**負載平衡模式]** 的**分組模式**。 
 
-## <a name="step-1-configure-the-physical-and-virtual-network"></a>步驟 1。 設定實體和虛擬網路  
+## <a name="step-1-configure-the-physical-and-virtual-network"></a>步驟 1. 設定實體和虛擬網路  
 在此程式中，您會建立兩個外部 Hyper-v 虛擬交換器、將 VM 連線至交換器，然後設定與交換器的 VM 連線。  
 
 ### <a name="prerequisites"></a>必要條件

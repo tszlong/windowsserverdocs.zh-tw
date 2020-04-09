@@ -8,12 +8,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 292bec5f73e2746103ffc41cde729ddc59728e0b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c36de1c3565be7f0f0e6c6203a21345f3d227e96
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407875"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857321"
 ---
 # <a name="identity-delegation-scenario-with-ad-fs"></a>具有 AD FS 的身分識別委派案例
 
@@ -26,20 +26,20 @@ ms.locfileid: "71407875"
 
 下圖說明典型的身分識別委派案例，其中 Fabrikam 員工會存取 Contoso.com 應用程式中公開的資源。
 
-![身分識別](media/ad-fs-identity-delegation/id1.png)
+![相同比較](media/ad-fs-identity-delegation/id1.png)
 
 參與此案例的虛構使用者包括：
 
-- Frank想要存取 Contoso 資源的 Fabrikam 員工。
-- Daniel在應用程式中執行必要變更的 Contoso 應用程式開發人員。
-- 原址Contoso IT 系統管理員。
+- Frank：想要存取 Contoso 資源的 Fabrikam 員工。
+- Daniel： Contoso 應用程式開發人員，其可在應用程式中執行必要的變更。
+- Adam： Contoso IT 系統管理員。
 
 此案例中包含的元件包括：
 
-- web1Web 應用程式，其中包含需要初始呼叫者委派身分識別的後端資源連結。 此應用程式是以 ASP.NET 建立。
+- web1：一個 Web 應用程式，其中包含需要初始呼叫者委派身分識別的後端資源連結。 此應用程式是以 ASP.NET 建立。
 - 存取 SQL Server 的 Web 服務，這需要初始呼叫者的委派身分識別，以及立即呼叫端的識別碼。 此服務是以 WCF 建立。
-- sts1:屬於宣告提供者角色的 STS，會發出應用程式所預期的宣告（web1）。 它已建立與 Fabrikam.com 的信任，以及與應用程式搭配使用。
-- sts2:以 Fabrikam.com 身分識別提供者角色的 STS，並提供 Fabrikam 員工用來進行驗證的結束點。 它已建立與 Contoso.com 的信任，讓 Fabrikam 員工可以存取 Contoso.com 上的資源。
+- sts1：屬於宣告提供者角色的 STS，會發出應用程式所需的宣告（web1）。 它已建立與 Fabrikam.com 的信任，以及與應用程式搭配使用。
+- sts2：一種 STS，其為 Fabrikam.com 的識別提供者角色，並提供 Fabrikam 員工用來進行驗證的結束點。 它已建立與 Contoso.com 的信任，讓 Fabrikam 員工可以存取 Contoso.com 上的資源。
 
 >[!NOTE] 
 >在此案例中經常使用的「ActAs token」一詞是指 STS 所發出的權杖，並包含使用者的身分識別。 執行者屬性包含 STS 的身分識別。
@@ -57,7 +57,7 @@ ms.locfileid: "71407875"
 有三個選項可供 Fabrikam.com 系統管理員使用，Frank：
 
 
-1. 購買並安裝 STS 產品，例如 Active Directory® Federation Services （AD FS）。
+1. 購買並安裝 STS 產品，例如 Active Directory&reg; Federation Services （AD FS）。
 2. 訂閱雲端 STS 產品，例如 LiveID STS。
 3. 使用 WIF 建立自訂的 STS。
 

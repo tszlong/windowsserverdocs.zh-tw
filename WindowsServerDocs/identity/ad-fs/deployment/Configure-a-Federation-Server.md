@@ -1,7 +1,6 @@
 ---
 ms.assetid: 434fd617-373a-405e-bae4-da324ea83efc
 title: Windows Server 2012 R2 AD FS 部署指南
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 7a3cada555fbf22a853e3aaf002c6413b6555fb8
-ms.sourcegitcommit: 5197a87e659589bcc8d2a32069803ae736b02892
+ms.openlocfilehash: b4cf161d9dfcbeeb467ccb0a83cc260c5299057e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79376275"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855521"
 ---
 # <a name="configure-a-federation-server"></a>設定同盟伺服器
 
@@ -151,7 +150,7 @@ ms.locfileid: "79376275"
 4.  在 [**指定伺服器**陣列] 頁面上，提供使用 WID 之伺服器陣列中主要同盟伺服器的名稱，或指定資料庫主機名稱，以及使用 SQL Server 之現有同盟伺服器陣列的資料庫實例名稱。  
   
     > [!WARNING]  
-    > 在 Windows Server® 2012 R2 中，有一個因應措施，可指定 SQL Server 的預設實例。 解決辦法為不使用使用者介面。 相反地，請使用中的步驟，透過[Windows PowerShell 設定新同盟伺服器陣列中的第一部同盟伺服器](Configure-a-Federation-Server.md#BKMK_3)。  
+    > 在 Windows Server&reg; 2012 R2 中，有一個因應措施，可指定 SQL Server 的預設實例。 解決辦法為不使用使用者介面。 相反地，請使用中的步驟，透過[Windows PowerShell 設定新同盟伺服器陣列中的第一部同盟伺服器](Configure-a-Federation-Server.md#BKMK_3)。  
   
     > [!IMPORTANT]  
     > 如果您要建立一個 AD FS 陣列並使用 SQL Server 儲存您的設定資料，可以使用 SQL Server 2008 和更新版本，包括 SQL Server 2012。  
@@ -225,7 +224,7 @@ ms.locfileid: "79376275"
 
 -   [將同盟伺服器新增至現有的同盟伺服器陣列](Configure-a-Federation-Server.md#BKMK_2)
 
-## <a name="BKMK_1"></a>在新的同盟伺服器陣列中設定第一部同盟伺服器
+## <a name="configure-the-first-federation-server-in-a-new-federation-server-farm"></a><a name="BKMK_1"></a>在新的同盟伺服器陣列中設定第一部同盟伺服器
 
 ### <a name="to-configure-the-first-federation-server-in-a-new-federation-server-farm-by-using-the-active-directory-federation-service-configuration-wizard"></a>若要使用 Active Directory 同盟服務 Configuration Wizard 設定新同盟伺服器陣列中的第一部同盟伺服器
 
@@ -271,7 +270,7 @@ ms.locfileid: "79376275"
 
 9. 在 [**結果**] 頁面上，檢查結果並檢查設定是否已順利完成，然後按一下 **[完成 federation service 部署所需的後續步驟]** 。 如需詳細資訊，請參閱[完成 AD FS 安裝的後續步驟](https://go.microsoft.com/fwlink/p/?LinkId=286704)。 按一下 [關閉] 以結束精靈。
 
-### <a name="BKMK_3"></a>透過 Windows PowerShell 在新的同盟伺服器陣列中設定第一部同盟伺服器
+### <a name="to-configure-the-first-federation-server-in-a-new-federation-server-farm-via-windows-powershell"></a><a name="BKMK_3"></a>透過 Windows PowerShell 在新的同盟伺服器陣列中設定第一部同盟伺服器
 您可以使用新的或現有的 gMSA 帳戶或現有的網域使用者帳戶，來建立新的同盟伺服器陣列。
 
 -   **如果您想要使用新的 gMSA 帳戶建立新的同盟伺服器，請執行下列動作：**
@@ -330,7 +329,7 @@ ms.locfileid: "79376275"
         > [!IMPORTANT]
         > 如果您想要建立 AD FS 伺服器陣列，並使用 SQL Server 來儲存設定資料，您可以使用 SQL Server 2008 和更新版本，包括 SQL Server 2012 和 SQL Server 2014。
 
-## <a name="BKMK_2"></a>將同盟伺服器新增至現有的同盟伺服器陣列
+## <a name="add-a-federation-server-to-an-existing-federation-server-farm"></a><a name="BKMK_2"></a>將同盟伺服器新增至現有的同盟伺服器陣列
 
 > [!IMPORTANT]
 > 請確定您已完成[步驟3：安裝 AD FS 角色服務](../../ad-fs/deployment/Install-the-AD-FS-Role-Service.md)，然後再啟動本節中的任何程式。
@@ -351,7 +350,7 @@ ms.locfileid: "79376275"
 4.  在 [**指定伺服器**陣列] 頁面上，提供使用 WID 之伺服器陣列中主要同盟伺服器的名稱，或指定資料庫主機名稱，以及使用 SQL Server 之現有同盟伺服器陣列的資料庫實例名稱。
 
     > [!WARNING]
-    > 在 Windows Server® 2012 R2 中，有一個因應措施，可指定 SQL Server 的預設實例。 解決辦法為不使用使用者介面。 相反地，請使用中的步驟，透過[Windows PowerShell 設定新同盟伺服器陣列中的第一部同盟伺服器](Configure-a-Federation-Server.md#BKMK_3)。
+    > 在 Windows Server&reg; 2012 R2 中，有一個因應措施，可指定 SQL Server 的預設實例。 解決辦法為不使用使用者介面。 相反地，請使用中的步驟，透過[Windows PowerShell 設定新同盟伺服器陣列中的第一部同盟伺服器](Configure-a-Federation-Server.md#BKMK_3)。
 
     > [!IMPORTANT]
     > 如果您要建立一個 AD FS 陣列並使用 SQL Server 儲存您的設定資料，可以使用 SQL Server 2008 和更新版本，包括 SQL Server 2012。

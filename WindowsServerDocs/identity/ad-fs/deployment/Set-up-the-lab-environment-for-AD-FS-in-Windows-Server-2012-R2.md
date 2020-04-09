@@ -1,7 +1,6 @@
 ---
 ms.assetid: 6b38480e-5b1c-49f0-9d46-8cf22f70f0d2
-title: 在 Windows Server 2012 R2 設定 AD FS 實驗室環境
-description: ''
+title: 在 Windows Server 2012 R2 設定 AD FS 實驗室環境
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 52199ab8ca6f82443e78e72c6980746fa561363a
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 44de547b0a9c8636b07886d35c451bca6ec46341
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323120"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855171"
 ---
-# <a name="set-up-the-lab-environment-for-ad-fs-in-windows-server-2012-r2"></a>在 Windows Server 2012 R2 設定 AD FS 實驗室環境
+# <a name="set-up-the-lab-environment-for-ad-fs-in-windows-server-2012-r2"></a>在 Windows Server 2012 R2 設定 AD FS 實驗室環境
 
 
 此主題概述設定測試環境以用於完成下列逐步解說指南中之逐步解說所需的步驟：
@@ -43,12 +42,12 @@ ms.locfileid: "79323120"
 
 4.  [步驟4：設定用戶端電腦（Client1）](../../ad-fs/deployment/../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_10)
 
-## <a name="BKMK_1"></a>步驟1：設定網域控制站（DC1）
+## <a name="step-1-configure-the-domain-controller-dc1"></a><a name="BKMK_1"></a>步驟1：設定網域控制站（DC1）
 基於此測試環境的目的，您可以呼叫根 Active Directory 網域**contoso.com** ，並指定<strong>pass@word1</strong>做為系統管理員密碼。
 
 -   安裝 AD DS 角色服務並安裝 Active Directory Domain Services （AD DS），讓您的電腦成為 Windows Server 2012 R2 中的網域控制站。 此動作會在建立網域控制站的過程中升級您的 AD DS 架構。 如需詳細資訊和逐步指示，請參閱[https://technet.microsoft.com/library/hh472162.aspx](https://technet.microsoft.com/library/hh472162.aspx)。
 
-### <a name="BKMK_2"></a>建立測試 Active Directory 帳戶
+### <a name="create-test-active-directory-accounts"></a><a name="BKMK_2"></a>建立測試 Active Directory 帳戶
 在您的網域控制站開始運作之後，您可以在此網域中建立測試群組與測試使用者帳戶，並將該使用者帳戶新增到群組帳戶。 您可以使用這些帳戶來完成此主題稍早所述之逐步解說指南中的逐步解說。
 
 建立下列帳戶：
@@ -74,7 +73,7 @@ Active Directory 同盟服務（AD FS）安裝和設定期間需要群組受管�
 
     ```
 
-## <a name="BKMK_4"></a>步驟2：使用裝置註冊服務設定同盟伺服器（ADFS1）
+## <a name="step-2-configure-the-federation-server-adfs1-by-using-device-registration-service"></a><a name="BKMK_4"></a>步驟2：使用裝置註冊服務設定同盟伺服器（ADFS1）
 若要設定另一部虛擬機器，請安裝 Windows Server 2012 R2，並將它連線到網域**contoso.com**。 將電腦加入網域之後，請進行設定，然後繼續安裝並設定 AD FS 角色。
 
 如需影片，請參閱 [Active Directory Federation Services How-To Video Series: Installing an AD FS Server Farm](https://technet.microsoft.com/video/dn469436)(Active Directory 同盟服務使用方法影片系列：安裝 AD FS 伺服器陣列)。
@@ -202,7 +201,7 @@ Active Directory 同盟服務（AD FS）安裝和設定期間需要群組受管�
     > [!IMPORTANT]
     > 在真實世界的部署中，若您的公司有多個使用者主體名稱 (UPN) 尾碼，您必須建立多個 CNAME 記錄 (每個記錄適用於 DNS 中的一個 UPN 尾碼)。
 
-## <a name="BKMK_5"></a>步驟3：設定網頁伺服器（WebServ1）和範例宣告式應用程式
+## <a name="step-3-configure-the-web-server-webserv1-and-a-sample-claims-based-application"></a><a name="BKMK_5"></a>步驟3：設定網頁伺服器（WebServ1）和範例宣告式應用程式
 藉由安裝 Windows Server 2012 R2 作業系統並將它連線到網域**contoso.com**，來設定虛擬機器（WebServ1）。 當它加入該網域後，您可以繼續安裝及設定「網頁伺服器」角色。
 
 若要完成此主題稍早所述的逐步解說，您必須有受您的同盟伺服器 (ADFS1) 所保護的簡單應用程式。
@@ -222,7 +221,7 @@ Active Directory 同盟服務（AD FS）安裝和設定期間需要群組受管�
 
 4.  [在您的同盟伺服器上建立信賴憑證者信任](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_11)
 
-### <a name="BKMK_15"></a>安裝網頁伺服器角色與 Windows Identity Foundation
+### <a name="install-the-web-server-role-and-windows-identity-foundation"></a><a name="BKMK_15"></a>安裝網頁伺服器角色與 Windows Identity Foundation
 
 1. > [!NOTE]
    > 您必須具有 Windows Server 2012 R2 安裝媒體的存取權。
@@ -247,11 +246,11 @@ Active Directory 同盟服務（AD FS）安裝和設定期間需要群組受管�
 
 10. 在 [確認安裝選項] 頁面上，按一下 [指定替代來源路徑]。 輸入位於 Windows Server 2012 R2 安裝媒體中 Sxs 目錄的路徑。 例如 D:\Sources\Sxs。 按一下 [確定]，然後按一下 [安裝]。
 
-### <a name="BKMK_13"></a>安裝 Windows Identity Foundation SDK
+### <a name="install-windows-identity-foundation-sdk"></a><a name="BKMK_13"></a>安裝 Windows Identity Foundation SDK
 
 1.  執行 Windowsidentityfoundation-sdk-3.5.msi 3.5 .msi 以安裝 Windows Identity Foundation SDK 3.5 （ https://www.microsoft.com/download/details.aspx?id=4451)。 選擇所有預設選項。
 
-### <a name="BKMK_9"></a>在 IIS 中設定簡單宣告應用程式
+### <a name="configure-the-simple-claims-app-in-iis"></a><a name="BKMK_9"></a>在 IIS 中設定簡單宣告應用程式
 
 1.  在電腦憑證存放區中安裝有效的 SSL 憑證。 憑證應該包含您的網頁伺服器名稱 **webserv1.contoso.com**。
 
@@ -322,7 +321,7 @@ Active Directory 同盟服務（AD FS）安裝和設定期間需要群組受管�
 
 您現在必須使用 AD FS 來保護在 web 伺服器上執行的範例應用程式。 您可以透過在您的同盟伺服器 (ADFS1) 上新增信賴憑證者信任來執行此動作。 如需影片，請參閱 [Active Directory Federation Services How-To Video Series: Add a Relying Party Trust](https://technet.microsoft.com/video/adfs-how-to-add-a-relying-party-trust)(Active Directory 同盟服務使用方法影片系列：新增信賴憑證者信任)。
 
-### <a name="BKMK_11"></a>在您的同盟伺服器上建立信賴憑證者信任
+### <a name="create-a-relying-party-trust-on-your-federation-server"></a><a name="BKMK_11"></a>在您的同盟伺服器上建立信賴憑證者信任
 
 1.  在您的同盟伺服器 (ADFS1) 上，在 [AD FS 管理] 主控台中，瀏覽到 [信賴憑證者信任]，然後按一下 [新增信賴憑證者信任]。
 
@@ -350,7 +349,7 @@ Active Directory 同盟服務（AD FS）安裝和設定期間需要群組受管�
 
 10. 按一下 [完成]，然後按一下 [確定]。
 
-## <a name="BKMK_10"></a>步驟4：設定用戶端電腦（Client1）
+## <a name="step-4-configure-the-client-computer-client1"></a><a name="BKMK_10"></a>步驟4：設定用戶端電腦（Client1）
 設定另一部虛擬機器，並安裝 Windows 8.1。 此虛擬機器必須位於與其他機器一樣的虛擬網路中。 此機器不應該加入 Contoso 網域。
 
 用戶端必須信任您在 [Step 2: Configure the federation server (ADFS1) with Device Registration Service](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_4)中設定同盟伺服器 (ADFS1) 時所使用的 SSL 憑證。 它也必須能夠驗證憑證撤銷資訊。

@@ -2,32 +2,31 @@
 title: 複本伺服器必須設定為接受複寫要求
 description: 提供解決此最佳做法分析程式規則所回報之問題的指示。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 54868d4db2dccc893bd2897134d9125446873384
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 09bb573bbb091d1b167f3c354be4d6448476e26d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366719"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857951"
 ---
 # <a name="a-replica-server-must-be-configured-to-accept-replication-requests"></a>複本伺服器必須設定為接受複寫要求
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
 如需最佳做法與掃描的相關詳細資訊，請參閱[執行最佳做法分析程式掃描及管理掃描結果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
 |屬性|詳細資料|
 |-|-|  
-|**作業系統**|Windows Server 2016|  
+|**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
-|**Severity**|Error|  
-|**分類**|組態|  
+|**低於**|錯誤|  
+|**類別**|組態|  
   
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。
   
@@ -42,7 +41,7 @@ ms.locfileid: "71366719"
   
 #### <a name="create-authorization-entries-using-hyper-v-manager"></a>使用 Hyper-v 管理員建立授權專案  
   
-1.  開啟 \[Hyper-V 管理員\]。 （從伺服器管理員，按一下 [**工具**] [ > ] [**hyper-v 管理員**]）。  
+1.  開啟 \[Hyper-V 管理員\]。 （從伺服器管理員按一下 [**工具** > **hyper-v 管理員**]）。  
   
 2.  在主機清單中，以滑鼠右鍵按一下您想要的主控制項，然後按一下 [ **Hyper-v 設定**]。  
   

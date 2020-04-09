@@ -1,7 +1,6 @@
 ---
 ms.assetid: cd4d4902-dcdf-49dd-8059-82a56bf4b585
 title: 匯出伺服器驗證憑證的私密金鑰部分
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 8e1bbeddc4bae1c420b6cc78b52d6b873320ae8f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6baa734e3fc346d94f4387e2ed54d3e707e5af75
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359585"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855421"
 ---
 # <a name="export-the-private-key-portion-of-a-server-authentication-certificate"></a>匯出伺服器驗證憑證的私密金鑰部分
 
@@ -27,7 +26,7 @@ Active Directory 同盟服務 \(AD FS\) 伺服器陣列中的每部同盟伺服�
   
 根據這部電腦會播放的角色，在您安裝伺服器驗證憑證與私密金鑰的同盟伺服器電腦或同盟伺服器 proxy 電腦上使用此程式。 完成此程序時，您可以接著在陣列中每部伺服器的「預設的網站」上匯入此憑證。 如需詳細資訊，請參閱將[伺服器驗證憑證匯入至預設的網站](Import-a-Server-Authentication-Certificate-to-the-Default-Web-Site.md)。  
   
-若要完成此程序，至少需要本機電腦上之 **Administrators** 群組的成員資格或同等權限。  請參閱[本機與網域的預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中關於使用適當帳戶和群組成員資格的詳細資料。   
+若要完成此程序，至少需要本機電腦之 **Administrators** 群組的成員資格或同等權限。  請參閱[本機與網域的預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中關於使用適當帳戶和群組成員資格的詳細資料。   
   
 ### <a name="to-export-the-private-key-portion-of-a-server-authentication-certificate"></a>匯出伺服器驗證憑證的私密金鑰部分  
   
@@ -50,7 +49,7 @@ Active Directory 同盟服務 \(AD FS\) 伺服器陣列中的每部同盟伺服�
    > [!IMPORTANT]  
    > 為了可以將此憑證匯入到新伺服器上的本機憑證存放區，在將檔案傳輸到新伺服器期間，您必須將檔案傳輸到實體媒體上並保護其安全。 保護私密金鑰的安全格外重要。 如果此金鑰遭到入侵，則整個 AD FS 部署的安全性 \(包括組織內和資源夥伴組織中的資源\) 遭到入侵。  
   
-9. 安裝 Federation Service 之前，請先將匯出的伺服器驗證憑證匯入到新伺服器上的憑證存放區。 如需有關如何匯入憑證的詳細資訊，請參閱 匯入伺服器憑證 \([HTTP：\/\/go.microsoft.com\/fwlink\/？LinkId\=108283](https://go.microsoft.com/fwlink/?LinkId=108283)\)。  
+9. 安裝 Federation Service 之前，請先將匯出的伺服器驗證憑證匯入到新伺服器上的憑證存放區。 如需有關如何匯入憑證的詳細資訊，請參閱 < 匯入伺服器憑證 \([HTTP：\/\/go.microsoft.com\/fwlink\/？LinkId\=108283](https://go.microsoft.com/fwlink/?LinkId=108283)\)。  
   
 ## <a name="additional-references"></a>其他參考資料  
 [檢查清單：設定同盟伺服器](Checklist--Setting-Up-a-Federation-Server.md)  
