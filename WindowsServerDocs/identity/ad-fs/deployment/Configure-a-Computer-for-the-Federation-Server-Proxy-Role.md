@@ -1,7 +1,6 @@
 ---
 ms.assetid: a2f23877-30a7-439f-817d-387da9e00e86
 title: 為電腦設定同盟伺服器 Proxy 角色
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: d47f7d3985aa779276f0712347eb9030857cefdb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a8bfe21f50a68edfcdbc7c937dc914ff1e1d94c3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359795"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854901"
 ---
 # <a name="configure-a-computer-for-the-federation-server-proxy-role"></a>為電腦設定同盟伺服器 Proxy 角色
 
@@ -25,29 +24,29 @@ ms.locfileid: "71359795"
   
 完成電腦設定之後，請確認同盟伺服器 Proxy 如預期般運作。 如需詳細資訊，請參閱[驗證同盟伺服器 Proxy 是否正確運作](Verify-That-a-Federation-Server-Proxy-Is-Operational.md)。  
   
-若要完成此程序，至少需要本機電腦上之 **Administrators** 群組的成員資格或同等權限。  請參閱[本機與網域的預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中關於使用適當帳戶和群組成員資格的詳細資料。   
+若要完成此程序，至少需要本機電腦之 **Administrators** 群組的成員資格或同等權限。  請參閱[本機與網域的預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中關於使用適當帳戶和群組成員資格的詳細資料。   
   
-### <a name="to-configure-a-computer-for-the-federation-server-proxy-role"></a>為電腦設定同盟伺服器 Proxy 角色  
+### <a name="to-configure-a-computer-for-the-federation-server-proxy-role"></a>若要設定用於同盟伺服器 Proxy 角色的電腦  
   
-1.  有兩種方式可以啟動 [AD FS 同盟伺服器設定向導]。 若要啟動該精靈，請執行下列其中一個動作：  
+1.  有兩種方式可以啟動 AD FS 同盟伺服器設定精靈。 若要啟動精靈，請執行下列其中一項：  
   
     -   在 **開始** 畫面上，輸入**AD FS 同盟伺服器 Proxy 設定向導**，然後按 enter。  
   
     -   在安裝程式完成之後，請開啟 [Windows Explorer]，流覽至**C：\\windows\\ADFS**資料夾，然後按兩下 [fspconfigwizard.exe]\-按一下 [ **.exe**]。  
   
-2.  另一種方式是啟動該精靈，然後按一下 [歡迎] 頁面上的 [下一步]。  
+2.  使用其中一種方法啟動此精靈，然後在 **[歡迎使用]** 頁面上按 [下一步]。  
   
-3.  在 [指定 Federation Service 名稱] 頁面上，在 [Federation Service 名稱] 下輸入代表此電腦將以 Proxy 角色運作之 Federation Service 的名稱。  
+3.  在 [指定 Federation Service 名稱] 頁面上的 [Federation Service 名稱] 下，輸入代表將以此電腦作為 Proxy 角色之 Federation Service 的名稱。  
   
-4.  根據您的特定網路需求而定，判斷您是否需要使用 HTTP Proxy 伺服器來將要求轉送到 Federation Service。 若需要，請選取 [傳送要求給此 Federation Service 時使用 HTTP Proxy 伺服器] 核取方塊，在 [HTTP Proxy 伺服器位址] 下輸入 Proxy 伺服器的位址，按一下 [測試連線] 以檢查連線功能，然後按一下 [下一步]。  
+4.  根據您特定的網路需求，決定您是否需要使用 HTTP Proxy 伺服器將要求轉送到 Federation Service。 如果需要，請選取 [在傳送要求至此 Federation Service 時使用 HTTP Proxy 伺服器] 核取方塊、在 [HTTP Proxy 伺服器位址] 下輸入 Proxy 伺服器的位址、按一下 [測試連線] 以驗證連線，然後按 [下一步]。  
   
-5.  當您收到提示時，請指定在此同盟伺服器 Proxy 與 Federation Service 之間建立信任關係時所需的憑證。  
+5.  提示出現時，指定在此同盟伺服器 Proxy 和 Federation Service 之間建立信任所需的認證。  
   
     根據預設，只有同盟服務所使用的服務帳戶或本機內建\\Administrators 群組的成員可以授權同盟伺服器 proxy。  
   
-6.  在 [準備套用設定] 頁面上，檢閱詳細資料。 若設定正確，請按一下 [下一步] 開始使用這些  Proxy 設定來設定此電腦。  
+6.  在 [已可套用設定] 頁面上，檢閱詳細資料。 如果顯示的設定正確無誤，請按 [下一步]，開始以這些 Proxy 設定進行此電腦的設定。  
   
-7.  在 [設定結果] 頁面上，檢閱結果。 完成所有設定步驟之後，請按一下 [**關閉**] 結束嚮導。  
+7.  在 [設定結果] 頁面上檢閱結果。 完成所有設定步驟之後，請按一下 [**關閉**] 結束嚮導。  
   
     不 \(MMC 的 Microsoft Management Console\) 的嵌入式管理\-，以用於管理同盟伺服器 proxys。 若要設定組織中每個同盟伺服器 proxys 的設定，請使用 Windows PowerShell Cmdlet。  
   
@@ -80,7 +79,7 @@ ms.locfileid: "71359795"
     > [!NOTE]  
     > 同盟伺服器 proxy 服務預設不會啟用端點 Url。 如果您要設定新的同盟伺服器安裝，您必須先啟用同盟伺服器 proxy 服務端點。 例如，假設針對此程式中的範例所參考的所有端點，您都已在的 [AD FS 管理] 嵌入式管理單元\-中選取，然後選取 [**在 proxy 上啟用**]，以啟用 proxy。  
   
-3.  更新同盟伺服器 proxy 上的 IIS 安裝，讓安全性聲明標記語言 \(SAML\) 和 WS\-信任端點設定為反映更新的埠號碼。 若要這樣做，您可以使用 [記事本] 修改 Web.config 檔案中的下列資訊，此檔案位於同盟伺服器 proxy 電腦上的 systemdrive%\\inetpub\\adfs\\ls\\ 上。 例如，假設您有一個名為 sts1.contoso.com 的同盟伺服器，而新的埠號碼是444，請在同盟伺服器 proxy 電腦上的 [記事本] 中流覽並開啟 web.config 檔案，找出下列區段，將 [埠號碼] 修改為在下方反白顯示，然後儲存並結束 [記事本]。  
+3.  更新同盟伺服器 proxy 上的 IIS 安裝，讓安全性聲明標記語言 \(SAML\) 和 WS\-信任端點設定為反映更新的埠號碼。 若要這樣做，您可以使用 [記事本] 修改 Web.config 檔案中的下列資訊，此檔案位於同盟伺服器 proxy 電腦上的 systemdrive%\\inetpub\\adfs\\ls\\ 上。 例如，假設您有一個名為 sts1.contoso.com 的同盟伺服器，而且新的埠號碼是444，請在同盟伺服器 proxy 電腦上的 [記事本] 中流覽並開啟 web.config 檔案，找出下列區段，修改下面反白顯示的埠號碼，然後儲存並結束 [記事本]。  
   
     ```  
     <securityTokenService samlProtocolEndpoint="https://sts1.contoso.com:444/adfs/services/trust/samlprotocol/proxycertificatetransport"  

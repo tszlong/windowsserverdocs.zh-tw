@@ -1,23 +1,19 @@
 ---
 title: wecutil
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: 適用于 wecutil 的 Windows 命令主題，可讓您建立及管理從遠端電腦轉送之事件的訂閱。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0c82a6cb-d652-429c-9c3d-0f568c78d54b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimps
-ms.openlocfilehash: 78005a715a0dbd20124bfb24be27586a8e153310
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2bb397ace7cc99c8b8d6bbed3598346ff2d0801c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362183"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829433"
 ---
 # <a name="wecutil"></a>wecutil
 
@@ -39,14 +35,14 @@ wecutil  [{es | enum-subscription}]
 [{qc | quick-config} [/q:[<Quiet>]]].
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
 |{es \| 列舉訂閱}|顯示存在之所有遠端事件訂閱的名稱。|
 |{gs \| get-訂用帳戶} \<Subid > [/f：\<格式 >] [/uni：\<Unicode >]|顯示遠端訂閱設定資訊。 \<Subid > 是可唯一識別訂用帳戶的字串。 \<Subid > 與 XML 設定檔 \<SubscriptionId > 標記中所指定的字串相同，後者是用來建立訂閱。|
 |{gr \| subscriptionruntimestatus} \<Subid > [\<Eventsource > ...]|顯示訂用帳戶的執行時間狀態。 \<Subid > 是可唯一識別訂用帳戶的字串。 \<Subid > 與 XML 設定檔 \<SubscriptionId > 標記中所指定的字串相同，後者是用來建立訂閱。 \<Eventsource > 是一個字串，可識別做為事件來源的電腦。 \<Eventsource > 應該是完整功能變數名稱、NetBIOS 名稱或 IP 位址。|
-|{ss \| 設定訂用帳戶} \<Subid > [/e： [\<Subenabled >]] [/esa：\<Address >] [/ese： [\<Srcenabled >]] [/aes] [/res] [/un：\<使用者名稱 >] [/up：\<密碼 >] [/d：\<Desc >] [/uri：\<Uri >] [/cm：\<Configmode >] [/ex：\<Expires >] [/q：\<查詢 >] [/tp：\</Dia >] [net-transportname：\<Deliverymode.persistent >] [/dmi：\<Deliverymax >] [/dmlt：\<Deliverytime >] [/hi：\<的心跳 >] [/cf：\<內容 >] [/l：\<地區設定 >] [/ree： [\<Readexist >]] [/lf：\<記錄 >] [/pn：\<Publishername >] [/essp：\<Enableport >]\<]\<\<\<</br>或</br>{ss \| 設定-訂用帳戶/c：\<Read-configfile > [/cun：\<Comusername >/cup：\<Compassword >]|變更訂用帳戶設定。 您可以指定訂用帳戶識別碼和適當的選項來變更訂用帳戶參數，或者您可以指定 XML 設定檔案來變更訂用帳戶參數。|
+|{ss \| 設定訂用帳戶} \<Subid > [/e： [\<Subenabled >]] [/esa：\<Address >] [/ese： [\<Srcenabled >]] [/aes] [/res] [/un：\<Username >] [/up：\<Password >] [/d：\<Desc >] [/uri：\<Uri >] [/cm：\<Configmode >] [/ex：\<過期 >] [/q：\<查詢 >] [/dia：\<方言 >] [/tn：\<Net-transportname >] [/tp：\<Transportport >] [/dm：\<Deliverymode.persistent >] [/dmi：\<Deliverymax >] [/dmlt：\<內容 >] [/l：\<地區設定 >] [/ree： [\<Readexist >]] [/lf：\<記錄檔 >] [/pn：\<Publishername >] [/essp：\<Enableport >] [/hn：\<Hostname >] [/ct：\<類型 >]\<\<</br>或</br>{ss \| 設定-訂用帳戶/c：\<Read-configfile > [/cun：\<Comusername >/cup：\<Compassword >]|變更訂用帳戶設定。 您可以指定訂用帳戶識別碼和適當的選項來變更訂用帳戶參數，或者您可以指定 XML 設定檔案來變更訂用帳戶參數。|
 |{cs \| 建立訂閱} \<Read-configfile > [/cun：\<使用者名稱 >/cup：\<密碼 >]|建立遠端訂閱。 \<的 > 指定包含訂用帳戶設定之 XML 檔案的路徑。 路徑可以是目前目錄的絕對或相對路徑。|
 |{ds \| 刪除訂用帳戶} \<Subid >|刪除訂用帳戶，並從將事件傳遞至該訂用帳戶的事件記錄檔的所有事件來源取消訂閱。 已收到並記錄的任何事件都不會刪除。 \<Subid > 是可唯一識別訂用帳戶的字串。 \<Subid > 與 XML 設定檔 \<SubscriptionId > 標記中所指定的字串相同，後者是用來建立訂閱。|
 |{rs \| 重試-訂用帳戶} \<Subid > [\<Eventsource > ...]|重試建立連線，並將遠端訂閱要求傳送至非作用中的訂用帳戶。 嘗試重新開機所有事件來源或指定的事件來源。 不會重試已停用的來源。 \<Subid > 是可唯一識別訂用帳戶的字串。 \<Subid > 與 XML 設定檔 \<SubscriptionId > 標記中所指定的字串相同，後者是用來建立訂閱。 \<Eventsource > 是一個字串，可識別做為事件來源的電腦。 \<Eventsource > 應該是完整功能變數名稱、NetBIOS 名稱或 IP 位址。|
@@ -78,7 +74,7 @@ wecutil  [{es | enum-subscription}]
 |/dmlt：\<Deliverytime >|設定傳遞事件批次的最大延遲。 \<Deliverytime > 是毫秒數。 只有當 **/cm**設定為 Custom 時，這個選項才有效。|
 |/hi：\<的 > 的心跳|定義 [心跳間隔]。 \<的心跳 > 是毫秒數。 只有當 **/cm**設定為 Custom 時，這個選項才有效。|
 |/cf：\<內容 >|指定所傳回事件的格式。 \<內容 > 可以是事件或 RenderedText。 當 RenderedText 值時，會傳回事件，並附上附加至事件的當地語系化字串（例如事件描述）。 預設值為 RenderedText。|
-|/l：\<地區設定 >|指定以 RenderedText 格式傳遞當地語系化字串的地區設定。 \<地區設定 > 是語言和國家/地區識別碼，例如 "EN-US"。 只有當 **/cf**選項設定為 RenderedText 時，這個選項才有效。|
+|/l：\<地區設定 >|指定以 RenderedText 格式傳遞當地語系化字串的地區設定。 \<地區設定 > 是語言和國家/地區識別碼，例如 EN-US。 只有當 **/cf**選項設定為 RenderedText 時，這個選項才有效。|
 |/ree： [\<Readexist >]|識別針對訂用帳戶傳遞的事件。 \<Readexist > 可以是 true 或 false。 當 <Readexist> 為 true 時，就會從訂用帳戶事件來源讀取所有現有的事件。 當 <Readexist> 為 false 時，只會傳遞未來（抵達）的事件。 如果沒有值， **/ree**選項的預設值為 true。 如果未指定 **/ree**選項，則預設值為 false。|
 |/lf：\<Logfile >|指定用來儲存從事件來源接收之事件的本機事件記錄檔。|
 |/pn：\<Publishername >|指定發行者名稱。 它必須是擁有或匯入 **/lf**選項所指定之記錄檔的發行者。|
@@ -96,7 +92,7 @@ wecutil  [{es | enum-subscription}]
 
 - 下列範例會顯示設定檔的內容：  
   ```
-  <Subscription xmlns="https://schemas.microsoft.com/2006/03/windows/events/subscription">
+  <Subscription xmlns=https://schemas.microsoft.com/2006/03/windows/events/subscription>
   <Uri>https://schemas.microsoft.com/wbem/wsman/1/windows/EventLog</Uri>
   <!-- Use Normal (default), Custom, MinLatency, MinBandwidth -->
   <ConfigurationMode>Normal</ConfigurationMode>
@@ -104,24 +100,24 @@ wecutil  [{es | enum-subscription}]
   <SubscriptionId>SampleSubscription</SubscriptionId>
   <Query><![CDATA[
   <QueryList>
-  <Query Path="Application">
+  <Query Path=Application>
   <Select>*</Select>
   </Query>
   </QueryList>
   ]]></Query>
   <EventSources>
-  <EventSource Enabled="true">
+  <EventSource Enabled=true>
   <Address>mySource.myDomain.com</Address>
   <UserName>myUserName</UserName>
   <Password>*</Password>
   </EventSource>
   </EventSources>
   <CredentialsType>Default</CredentialsType>
-  <Locale Language="EN-US"></Locale>
+  <Locale Language=EN-US></Locale>
   </Subscription>
   ```
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 名為 sub1 之訂用帳戶的輸出設定資訊：
 ```
@@ -164,6 +160,6 @@ wecutil cs subscription.xml
 wecutil ds sub1
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

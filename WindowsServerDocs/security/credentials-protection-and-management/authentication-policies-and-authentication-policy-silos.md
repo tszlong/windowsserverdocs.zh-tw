@@ -1,28 +1,24 @@
 ---
 title: 驗證原則和驗證原則定址接收器
 description: Windows Server 安全性
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-credential-protection
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7eb0e640-033d-49b5-ab44-3959395ad567
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 6b0b841930df246bd784d990916b6029f12a1f96
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 48171657b42ec8b6ba09aa6a35a2f898d6775d07
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403819"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857081"
 ---
 # <a name="authentication-policies-and-authentication-policy-silos"></a>驗證原則和驗證原則定址接收器
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題適用於 IT 專業人員，說明驗證原則定址接收器以及限制這些定址接收器帳戶的原則。 它也會說明驗證原則如何用來限制帳戶的範圍。
 
@@ -45,7 +41,7 @@ Windows Server 2012 R2 中引進的功能，可讓您建立驗證原則定址接
 |--------|--------|
 |驗證原則定址接收器|此類別的執行個體定義指派的使用者、電腦及服務的驗證原則和相關的行為。|
 |驗證原則定址接收器|此類別的容器可以包含驗證原則定址接收器物件。|
-|強制執行驗證原則定址接收器|指定是否要強制執行驗證原則定址接收器。<br /><br />不強制執行時，原則預設處於稽核模式。 會產生表示可能成功和失敗的事件，但是不會在系統套用保護。|
+|強制執行驗證原則定址接收器|指定是否要強制執行驗證原則定址接收器。<p>不強制執行時，原則預設處於稽核模式。 會產生表示可能成功和失敗的事件，但是不會在系統套用保護。|
 |指派的驗證原則定址接收器返回連結|這個屬性是 msDS-AssignedAuthNPolicySilo 的返回連結。|
 |驗證原則定址接收器成員|指定要指派給 AuthNPolicySilo 的主體。|
 |驗證原則定址接收器成員返回連結|這個屬性是 msDS-AuthNPolicySiloMembers 的返回連結。|
@@ -88,27 +84,27 @@ Active Directory 帳戶類型會將呼叫者的角色判斷為下列其中一項
 
 使用者、電腦及服務的 Active Directory 物件的原則是由下表中結構描述來定義。
 
-|Type|顯示名稱|描述|
+|類型|顯示名稱|描述|
 |----|--------|--------|
-|原則|驗證原則|此類別的執行個體定義指派主體的驗證原則行為。|
-|原則|驗證原則|此類別的容器可以包含驗證原則物件。|
-|原則|強制執行驗證原則|指定是否要強制執行驗證原則。<br /><br />未強制執行時，原則預設處於稽核模式，而且會產生表示可能成功和失敗的事件，但不會在系統套用保護。|
-|原則|指派的驗證原則返回連結|這個屬性是 msDS-AssignedAuthNPolicy 的返回連結。|
-|原則|指派的驗證原則|指定套用到這個主體的 AuthNPolicy。|
+|Policy(Windows Intune 說明：原則)|驗證原則|此類別的執行個體定義指派主體的驗證原則行為。|
+|Policy(Windows Intune 說明：原則)|驗證原則|此類別的容器可以包含驗證原則物件。|
+|Policy(Windows Intune 說明：原則)|強制執行驗證原則|指定是否要強制執行驗證原則。<p>未強制執行時，原則預設處於稽核模式，而且會產生表示可能成功和失敗的事件，但不會在系統套用保護。|
+|Policy(Windows Intune 說明：原則)|指派的驗證原則返回連結|這個屬性是 msDS-AssignedAuthNPolicy 的返回連結。|
+|Policy(Windows Intune 說明：原則)|指派的驗證原則|指定套用到這個主體的 AuthNPolicy。|
 |使用者|使用者驗證原則|針對指派給這個定址接收器物件的使用者，指定要套用的 AuthNPolicy。|
 |使用者|使用者驗證原則返回連結|這個屬性是 msDS-UserAuthNPolicy 的返回連結。|
 |使用者|ms-DS-User-Allowed-To-Authenticate-To|這個屬性用來決定允許向使用者帳戶下執行之服務驗證的一組主體。|
 |使用者|ms-DS-User-Allowed-To-Authenticate-From|這個屬性用來決定使用者帳戶具有登入權限的一組裝置。|
 |使用者|使用者 TGT 存留期|指定發行給使用者的 Kerberos TGT 的最長使用期限 (以秒表示)。 結果 TGT 是不可更新。|
-|Computer|電腦驗證原則|針對指派給這個定址接收器物件的電腦，指定要套用的 AuthNPolicy。|
-|Computer|電腦驗證原則返回連結|這個屬性是 msDS-ComputerAuthNPolicy 的返回連結。|
-|Computer|ms-DS-Computer-Allowed-To-Authenticate-To|這個屬性用來決定允許向電腦帳戶下執行之服務驗證的一組主體。|
-|Computer|電腦 TGT 存留期|指定發行給電腦的 Kerberos TGT 的最長使用期限 (以秒表示)。 不建議變更這個設定。|
-|服務|服務驗證原則|針對指派給這個定址接收器物件的服務，指定要套用的 AuthNPolicy。|
-|服務|服務驗證原則返回連結|這個屬性是 msDS-ServiceAuthNPolicy 的返回連結。|
-|服務|ms-DS-Service-Allowed-To-Authenticate-To|這個屬性用來決定允許向服務帳戶下執行之服務驗證的一組主體。|
-|服務|ms-DS-Service-Allowed-To-Authenticate-From|這個屬性用來決定服務帳戶具有登入權限的一組裝置。|
-|服務|服務 TGT 存留期|指定發行給服務的 Kerberos TGT 的最長使用期限 (以秒表示)。|
+|電腦|電腦驗證原則|針對指派給這個定址接收器物件的電腦，指定要套用的 AuthNPolicy。|
+|電腦|電腦驗證原則返回連結|這個屬性是 msDS-ComputerAuthNPolicy 的返回連結。|
+|電腦|ms-DS-Computer-Allowed-To-Authenticate-To|這個屬性用來決定允許向電腦帳戶下執行之服務驗證的一組主體。|
+|電腦|電腦 TGT 存留期|指定發行給電腦的 Kerberos TGT 的最長使用期限 (以秒表示)。 不建議變更這個設定。|
+|Service|服務驗證原則|針對指派給這個定址接收器物件的服務，指定要套用的 AuthNPolicy。|
+|Service|服務驗證原則返回連結|這個屬性是 msDS-ServiceAuthNPolicy 的返回連結。|
+|Service|ms-DS-Service-Allowed-To-Authenticate-To|這個屬性用來決定允許向服務帳戶下執行之服務驗證的一組主體。|
+|Service|ms-DS-Service-Allowed-To-Authenticate-From|這個屬性用來決定服務帳戶具有登入權限的一組裝置。|
+|Service|服務 TGT 存留期|指定發行給服務的 Kerberos TGT 的最長使用期限 (以秒表示)。|
 
 使用 [Active Directory 管理主控台] 或 Windows PowerShell，可以為每個定址接收器設定驗證原則。 如需詳細資訊，請參閱[如何設定受保護的帳戶](how-to-configure-protected-accounts.md)。
 
@@ -143,7 +139,7 @@ Active Directory 帳戶類型會將呼叫者的角色判斷為下列其中一項
 
 -   [Kerberos 驗證的變更](https://technet.microsoft.com/library/dd560670(v=ws.10).aspx)（Windows Server 2008 R2 和 windows 7）
 
-### <a name="BKMK_HowKerbUsed"></a>如何搭配使用 Kerberos 通訊協定與驗證原則定址接收器和原則
+### <a name="how-the-kerberos-protocol-is-used-with-authentication-policy-silos-and-policies"></a><a name="BKMK_HowKerbUsed"></a>如何搭配使用 Kerberos 通訊協定與驗證原則定址接收器和原則
 當網域帳戶連結到驗證原則定址接收器且使用者登入時，安全性帳戶管理員會新增驗證原則定址接收器的宣告類型，其中將定址接收器做為值。 帳戶上的這個宣告提供存取目標定址接收器。
 
 當強制執行驗證原則且網域控制站上收到網域帳戶的驗證服務要求時，網域控制站會傳回已設定存留期的不可更新 TGT (除非網域 TGT 存留時間較短)。
@@ -161,7 +157,7 @@ Active Directory 帳戶類型會將呼叫者的角色判斷為下列其中一項
 > [!NOTE]
 > 網域帳戶必須直接連結到原則或間接透過定址接收器成員資格連結。
 
-當驗證原則處於 audit 模式，且網域控制站收到票證授與服務要求的網域帳戶時，網域控制站會根據要求的票證許可權屬性憑證，檢查是否允許驗證。（PAC）資料，它會在失敗時記錄一則警告訊息。 PAC 包含各種類型的授權資料，包括使用者所屬的群組、使用者具有的權限以及套用到使用者的原則。 此資訊用來產生使用者的存取權杖。 如果它是強制驗證原則，允許驗證使用者、裝置或服務，則網域控制站會根據要求的票證 PAC 資料，檢查是否允許驗證。 如果失敗，網域控制站會傳回錯誤訊息，並記錄事件。
+當驗證原則處於 audit 模式，且網域控制站收到票證授與服務要求的網域帳戶時，網域控制站會根據要求的票證許可權屬性憑證（PAC）資料檢查是否允許驗證，並在失敗時記錄一則警告訊息。 PAC 包含各種類型的授權資料，包括使用者所屬的群組、使用者具有的權限以及套用到使用者的原則。 此資訊用來產生使用者的存取權杖。 如果它是強制驗證原則，允許驗證使用者、裝置或服務，則網域控制站會根據要求的票證 PAC 資料，檢查是否允許驗證。 如果失敗，網域控制站會傳回錯誤訊息，並記錄事件。
 
 > [!NOTE]
 > 網域帳戶必須直接連結或透過定址器成員資格連結到稽核的驗證原則，允許驗證使用者、裝置或服務。
@@ -170,7 +166,7 @@ Active Directory 帳戶類型會將呼叫者的角色判斷為下列其中一項
 
 使用 [Active Directory 管理主控台] 或 Windows PowerShell，可以為每個定址接收器設定驗證原則。 如需詳細資訊，請參閱[如何設定受保護的帳戶](how-to-configure-protected-accounts.md)。
 
-### <a name="BKMK_HowRestrictingSignOn"></a>限制使用者登入的運作方式
+### <a name="how-restricting-a-user-sign-in-works"></a><a name="BKMK_HowRestrictingSignOn"></a>限制使用者登入的運作方式
 因為這些驗證原則會被套用至帳戶，所以也會套用到服務使用的帳戶。 如果您想要對特定主機限制使用服務密碼，此設定非常有用。 例如，在允許主機從 Active Directory 網域服務擷取密碼之處，可設定群組受管理的服務帳戶。 不過，可以從所有主機使用該密碼於初始驗證。 藉由套用存取控制條件，可將密碼限制在可擷取密碼的一組主機，而建立額外的一層保護。
 
 當以系統、網路服務或其他本機服務身分識別執行的服務連線到網路服務時，會使用該主機的電腦帳戶。 不能限制電腦帳戶。 因此即使服務正在使用不是 Windows 主機的電腦帳戶，也不能限制它。
@@ -204,7 +200,7 @@ Active Directory 帳戶類型會將呼叫者的角色判斷為下列其中一項
 
 3.  網域控制站使用防護回覆 (AS-REP) 來回覆，然後繼續驗證。
 
-### <a name="BKMK_HowRestrictingServiceTicket"></a>限制服務票證發行的運作方式
+### <a name="how-restricting-service-ticket-issuance-works"></a><a name="BKMK_HowRestrictingServiceTicket"></a>限制服務票證發行的運作方式
 當不允許帳戶，且具有 TGT 的使用者嘗試連線到服務時（例如開啟需要驗證服務的應用程式，而該服務是由服務的服務主體名稱（SPN）所識別），會發生下列順序：
 
 1.  嘗試從 SPN 連線到 SPN1 時，Windows 會傳送一個 TGS-REQ 給要求 SPN1 服務票證的網域控制站。
@@ -215,7 +211,7 @@ Active Directory 帳戶類型會將呼叫者的角色判斷為下列其中一項
 
 4.  網域控制站會拒絕要求。
 
-允許帳戶，因為該帳戶符合驗證原則所設定的存取控制條件，而且具有 TGT 的使用者嘗試連線到服務（例如，開啟的應用程式需要驗證服務，由服務的 SPN 識別），會發生下列順序：
+當帳戶符合驗證原則所設定的存取控制條件，而且具有 TGT 的使用者嘗試連線到服務時（例如開啟需要驗證服務的應用程式，而該服務是由服務的 SPN 所識別），就會發生下列順序：
 
 1.  嘗試連線到 SPN1 時，Windows 會傳送一個 TGS-REQ 給要求 SPN1 服務票證的網域控制站。
 
@@ -225,7 +221,7 @@ Active Directory 帳戶類型會將呼叫者的角色判斷為下列其中一項
 
 4.  網域控制站使用票證授與服務回覆 (TGS-REP) 回覆要求。
 
-## <a name="BKMK_ErrorandEvents"></a>關聯的錯誤和資訊事件訊息
+## <a name="associated-error-and-informational-event-messages"></a><a name="BKMK_ErrorandEvents"></a>關聯的錯誤和資訊事件訊息
 下表描述與 Protected Users 安全性群組相關的事件，以及套用到驗證原則定址接收器的驗證原則。
 
 事件會記錄在 **Microsoft\Windows\Authentication** 的應用程式及服務記錄檔中。
@@ -234,11 +230,11 @@ Active Directory 帳戶類型會將呼叫者的角色判斷為下列其中一項
 
 |事件識別碼和記錄檔|描述|
 |----------|--------|
-|101<br /><br />**AuthenticationPolicyFailures-DomainController**|原因：因為設定了驗證原則，所以發生 NTLM 登入失敗。<br /><br />事件會記錄在網域控制站，指出 NTLM 驗證失敗，因為需要存取控制限制，而且這些限制不能套用到 NTLM。<br /><br />顯示帳戶、裝置、原則及定址接收器的名稱。|
-|105<br /><br />**AuthenticationPolicyFailures-DomainController**|原因：因為不允許來自特定裝置的驗證，所以發生 Kerberos 限制失敗。<br /><br />事件會記錄在網域控制站，指出 Kerberos TGT 被拒絕，因為裝置不符合強制執行的存取控制限制。<br /><br />顯示帳戶、裝置、原則、定址接收器的名稱以及 TGT 存留期。|
-|305<br /><br />**AuthenticationPolicyFailures-DomainController**|原因：因為不允許來自特定裝置的驗證，所以可能發生 Kerberos 限制失敗。<br /><br />在稽核模式中，資訊事件會記錄在網域控制站，以判斷是否因為裝置不符合存取控制限制而拒絕 Kerberos TGT。<br /><br />顯示帳戶、裝置、原則、定址接收器的名稱以及 TGT 存留期。|
-|106<br /><br />**AuthenticationPolicyFailures-DomainController**|原因：因為不允許使用者或裝置向伺服器驗證，所以發生 Kerberos 限制失敗。<br /><br />事件會記錄在網域控制站，指出 Kerberos TGT 被拒絕，因為使用者、裝置或兩者不符合強制執行的存取控制限制。<br /><br />顯示裝置、原則及定址接收器的名稱。|
-|306<br /><br />**AuthenticationPolicyFailures-DomainController**|原因：因為不允許使用者或裝置向伺服器驗證，所以可能發生 Kerberos 限制失敗。<br /><br />在稽核模式中，資訊事件會記錄在網域控制站，指出 Kerberos 服務票證將被拒絕，因為使用者、裝置或兩者不符合存取控制限制。<br /><br />顯示裝置、原則及定址接收器的名稱。|
+|101<p>**AuthenticationPolicyFailures-DomainController**|原因：發生 NTLM 登入失敗，因為已設定驗證原則。<p>事件會記錄在網域控制站，指出 NTLM 驗證失敗，因為需要存取控制限制，而且這些限制不能套用到 NTLM。<p>顯示帳戶、裝置、原則及定址接收器的名稱。|
+|105<p>**AuthenticationPolicyFailures-DomainController**|原因：因為不允許來自特定裝置的驗證，所以發生 Kerberos 限制失敗。<p>事件會記錄在網域控制站，指出 Kerberos TGT 被拒絕，因為裝置不符合強制執行的存取控制限制。<p>顯示帳戶、裝置、原則、定址接收器的名稱以及 TGT 存留期。|
+|305<p>**AuthenticationPolicyFailures-DomainController**|原因：因為不允許來自特定裝置的驗證，所以可能發生 Kerberos 限制失敗。<p>在稽核模式中，資訊事件會記錄在網域控制站，以判斷是否因為裝置不符合存取控制限制而拒絕 Kerberos TGT。<p>顯示帳戶、裝置、原則、定址接收器的名稱以及 TGT 存留期。|
+|106<p>**AuthenticationPolicyFailures-DomainController**|原因：因為不允許使用者或裝置向伺服器進行驗證，所以發生 Kerberos 限制失敗。<p>事件會記錄在網域控制站，指出 Kerberos TGT 被拒絕，因為使用者、裝置或兩者不符合強制執行的存取控制限制。<p>顯示裝置、原則及定址接收器的名稱。|
+|306<p>**AuthenticationPolicyFailures-DomainController**|原因：因為不允許使用者或裝置向伺服器驗證，所以可能會發生 Kerberos 限制失敗。<p>在稽核模式中，資訊事件會記錄在網域控制站，指出 Kerberos 服務票證將被拒絕，因為使用者、裝置或兩者不符合存取控制限制。<p>顯示裝置、原則及定址接收器的名稱。|
 
 ## <a name="see-also"></a>另請參閱
 [如何設定受保護的帳戶](how-to-configure-protected-accounts.md)

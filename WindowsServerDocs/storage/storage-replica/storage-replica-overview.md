@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 4/26/2019
 ms.assetid: e9b18e14-e692-458a-a39f-d5b569ae76c5
-ms.openlocfilehash: d95feb67001dc7b5eff68a0062d5f944672bad80
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: 33626dd632dc8c065d2e32b3a21d9f4c9cf77fa7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465227"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861071"
 ---
 # <a name="storage-replica-overview"></a>儲存體複本概觀
 
@@ -36,7 +36,7 @@ ms.locfileid: "77465227"
 
 儲存體複本也針對範圍較遠及延遲較高的網路支援非同步複寫。 由於它不是以檢查點為基礎，而是持續進行複寫，因此變更的差異可能遠低於快照集產品。 此外，儲存體複本是在資料分割層運作，因此會複寫 Windows Server 或備份軟體所建立的所有 VSS 快照；這將允許針對時間點復原使用應用程式一致的資料快照，特別是以非同步方式複寫的非結構化使用者資料。  
 
-## <a name="BKMK_SRSupportedScenarios"></a>支援的設定
+## <a name="supported-configurations"></a><a name="BKMK_SRSupportedScenarios"></a>支援的設定
 
 您可以在延展式叢集中、叢集對叢集之間，以及伺服器對伺服器設定中部署儲存體複本（請參閱 [圖 1-3]）。
 
@@ -61,7 +61,7 @@ ms.locfileid: "77465227"
 > [!NOTE]
 > 您也可以在一部電腦上使用四個不同的磁碟區，設定伺服器對自我複寫。 不過，本指南並未涵蓋此案例。  
 
-## <a name="BKMK_SR2"></a>儲存體複本功能  
+## <a name="storage-replica-features"></a><a name="BKMK_SR2"> </a>儲存體複本功能  
 
 * **零資料遺失、區塊層級的複寫**： 使用同步複寫時，不可能會發生資料遺失。 使用區塊層級的複寫時，不可能會發生檔案鎖定。  
 
@@ -71,7 +71,7 @@ ms.locfileid: "77465227"
 
 * **以 SMB3 為基礎**： 儲存體複本會使用經過實證且成熟的 SMB 3 技術，此技術首次是在 Windows Server 2012 中發佈。 這表示所有 SMB 的進階特性 (例如 RoCE、iWARP 及 InfiniBand RDMA 網路卡上的多重通道和 SMB 直接傳輸支援) 都可用於儲存體複本。   
 
-* **安全性**： 與許多廠商的產品不同，儲存體複本具備領先業界的安全性技術。 這包括封包簽署、AES-128-GCM 完整資料加密、Intel AES NI 加密加速的支援，以及預先驗證完整性攔截式攻擊預防。 儲存體複本在節點之間利用 Kerberos AES256 進行所有驗證。  
+* **安全性**。 與許多廠商的產品不同，儲存體複本具備領先業界的安全性技術。 這包括封包簽署、AES-128-GCM 完整資料加密、Intel AES NI 加密加速的支援，以及預先驗證完整性攔截式攻擊預防。 儲存體複本在節點之間利用 Kerberos AES256 進行所有驗證。  
 
 * **高效能的初始同步**。儲存體複本支援已植入的初始同步，其中資料的子集已經存在於舊版複本、備份，或隨附磁碟機的目標上。 初始複寫只會複製不同的區塊，可能會縮短初始同步處理時間，並防止資料使用有限的頻寬。 儲存體複本會封鎖總和檢查碼計算和彙總，也就是說，初始同步效能只會受到儲存體和網路速度的限制。  
 
@@ -109,7 +109,7 @@ ms.locfileid: "77465227"
 
 *可能需要更長的運輸設備及纜線。  
 
-## <a name="BKMK_SR3"></a>儲存體複本必要條件
+## <a name="storage-replica-prerequisites"></a><a name="BKMK_SR3"></a>儲存體複本必要條件
 
 * Active Directory 網域服務樹系。
 * 具有 SAS JBOD、儲存空間直接存取、光纖通道 SAN、共用 VHDX、iSCSI 目標或本機 SAS/SCSI/SATA 儲存體的儲存空間。 針對複寫記錄檔磁碟機，建議使用 SSD 或更快的裝置。 Microsoft 建議記錄檔儲存體應該要比資料儲存體更快。 記錄檔磁碟區不得用於其他工作負載。
@@ -122,7 +122,7 @@ ms.locfileid: "77465227"
   * 儲存體複本會複寫單一磁片區，而不是不限數目的磁片區。
   * 磁片區的大小最高可達 2 TB，而不是無限制大小。
 
-##  <a name="BKMK_SR4"></a>背景
+##  <a name="background"></a><a name="BKMK_SR4"> </a>背景
 
 本節包含高階業界術語、同步和非同步複寫和重要行為的相關資訊。
 
@@ -140,7 +140,7 @@ ms.locfileid: "77465227"
 
 | Mode | 圖表 | 步驟 |
 | -------- | ----------- | --------- |
-| **同步**<br /><br />零資料遺失<br /><br />RPO | ![這個圖表顯示儲存體複本如何在同步複寫中寫入資料](./media/Storage-Replica-Overview/Storage_SR_SynchronousV2.png) | 1.應用程式寫入資料<br />2.記錄檔資料已寫入，且資料已複寫至遠端站台<br />3.記錄檔資料已在遠端站台寫入<br />4.遠端站台做出確認<br />5.應用程式寫入已確認<br /><br />t & t1︰資料排清到磁碟區，記錄檔一律寫入 |
+| **同步**<p>零資料遺失<p>RPO | ![這個圖表顯示儲存體複本如何在同步複寫中寫入資料](./media/Storage-Replica-Overview/Storage_SR_SynchronousV2.png) | 1.應用程式寫入資料<br />2.記錄檔資料已寫入，且資料已複寫至遠端站台<br />3.記錄檔資料已在遠端站台寫入<br />4.遠端站台做出確認<br />5.應用程式寫入已確認<p>t & t1︰資料排清到磁碟區，記錄檔一律寫入 |
 
 ### <a name="asynchronous-replication"></a>非同步複寫
 
@@ -152,7 +152,7 @@ ms.locfileid: "77465227"
 
 | Mode | 圖表 | 步驟 |
 | -------- | ----------- | --------- |
-| **同步**<br /><br />接近零的資料遺失<br /><br />(取決於多個因素)<br /><br />RPO | ![這個圖表顯示儲存體複本如何在非同步複寫中寫入資料](./media/Storage-Replica-Overview/Storage_SR_AsynchronousV2.png)|1.應用程式寫入資料<br />2.記錄檔資料已寫入<br />3.應用程式寫入已確認<br />4.資料複寫到遠端站台<br />5.記錄檔資料已在遠端站台寫入<br />6.遠端站台做出確認<br /><br />t & t1︰資料排清到磁碟區，記錄檔一律寫入 |
+| **同步**<p>接近零的資料遺失<p>(取決於多個因素)<p>RPO | ![這個圖表顯示儲存體複本如何在非同步複寫中寫入資料](./media/Storage-Replica-Overview/Storage_SR_AsynchronousV2.png)|1.應用程式寫入資料<br />2.記錄檔資料已寫入<br />3.應用程式寫入已確認<br />4.資料複寫到遠端站台<br />5.記錄檔資料已在遠端站台寫入<br />6.遠端站台做出確認<p>t & t1︰資料排清到磁碟區，記錄檔一律寫入 |
 
 ### <a name="key-evaluation-points-and-behaviors"></a>重要的評估點和行為  
 

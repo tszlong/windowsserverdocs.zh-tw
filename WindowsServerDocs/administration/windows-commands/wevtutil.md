@@ -1,24 +1,20 @@
 ---
 title: wevtutil
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: 適用于 wevtutil 的 Windows 命令主題，可讓您取得事件記錄檔和發行者的相關資訊。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d4c791e0-7e59-45c5-aa55-0223b77a4822 vhorne
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 21f3b721a2a08a7fa101ec09f1f11b5e984f0113
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 62be2b14373457a3b114e8d067e1c7aa32b2182d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362174"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829351"
 ---
 # <a name="wevtutil"></a>wevtutil
 
@@ -40,7 +36,7 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
 [{cl | clear-log} <Logname> [/bu:<Backup>]] [/r:<Remote>] [/u:<Username>] [/p:<Password>] [/a:<Auth>] [/uni:<Unicode>]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -61,7 +57,7 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
 
 |       選項       |                                                                                                                                                                                                                                                                 描述                                                                                                                                                                                                                                                                  |
 |--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    /f：\<格式 >    |                                                                                                                                                               指定輸出應該是 XML 或文字格式。 如果 \<格式 > 是 XML，則輸出會以 XML 格式顯示。 如果 \<格式 > 為文字，則會顯示不含 XML 標記的輸出。 預設值為 Text。                                                                                                                                                                |
+|    /f：\<格式 >    |                                                                                                                                                               指定輸出應該是 XML 或文字格式。 如果 \<格式 > 是 XML，則輸出會以 XML 格式顯示。 如果 \<格式 > 為文字，則會顯示不含 XML 標記的輸出。 預設值是 Text。                                                                                                                                                                |
 |   /e：\<啟用 >    |                                                                                                                                                                                                                                         啟用或停用記錄檔。 \<啟用 > 可以是 true 或 false。                                                                                                                                                                                                                                          |
 |  /i：\<隔離 >   | 設定記錄隔離模式。 \<隔離 > 可以是 [系統]、[應用程式] 或 [自訂]。 記錄檔的隔離模式會決定記錄檔是否與相同隔離類別中的其他記錄共用會話。 如果您指定系統隔離，目標記錄檔將至少與系統記錄共用寫入權限。 如果您指定應用程式隔離，目標記錄檔將至少與應用程式記錄檔共用寫入權限。 如果您指定自訂隔離，則也必須使用 **/ca**選項提供安全描述項。 |
 |  /lfn：\<Logpath >   |                                                                                                                                                                                                           定義記錄檔名稱。 \<Logpath > 是檔案的完整路徑，事件記錄檔服務會在此檔案中儲存此記錄檔的事件。                                                                                                                                                                                                           |
@@ -87,7 +83,7 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
 |   /bu：\<備份 >    |                                                                                                                                                                                                      指定將儲存已清除之事件的檔案路徑。 在備份檔案的名稱中包含 .evtx 副檔名。                                                                                                                                                                                                       |
 |    /r：\<遠端 >    |                                                                                                                                                                                            在遠端電腦上執行命令。 \<遠端 > 是遠端電腦的名稱。 **Im**和**um**參數不支援遠端操作。                                                                                                                                                                                            |
 |   /u：\<Username >   |                                                                                                                                                                          指定不同的使用者登入遠端電腦。 \<Username > 是 domain\user 或 user 格式的使用者名稱。 只有在指定 **/r**選項時，才適用此選項。                                                                                                                                                                          |
-|   /p：\<密碼 >   |                                                                                                                                               指定使用者的密碼。 如果使用 **/u**選項，但未指定此選項，或 \<密碼 > 為 " *"，則會提示使用者輸入密碼。只有在指定 \*\*/u\* 選項時，才適用此選項*。                                                                                                                                                |
+|   /p：\<密碼 >   |                                                                                                                                               指定使用者的密碼。 如果使用 **/u**選項，但未指定此選項，或 \<密碼 > 為 *，則會提示使用者輸入密碼。只有在指定 \*\*/u\* 選項時，才適用此選項*。                                                                                                                                                |
 |     /a：\<Auth >     |                                                                                                                                                                                             定義用來連接到遠端電腦的驗證類型。 \<Auth > 可以是 [預設]、[Negotiate]、[Kerberos] 或 [NTLM]。 預設值為 Negotiate。                                                                                                                                                                                              |
 |  /uni：\<Unicode >   |                                                                                                                                                                                                             以 Unicode 顯示輸出。 \<Unicode > 可以是 true 或 false。 如果 <Unicode> 為 true，則輸出會是 Unicode。                                                                                                                                                                                                             |
 
@@ -97,9 +93,9 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
 
     設定檔是一個 XML 檔案，其格式與 wevtutil gl 的輸出 \<Logname >/f： xml 相同。 下列範例會顯示啟用保留的配置檔案格式、啟用 autobackup，以及設定應用程式記錄檔的記錄大小上限：  
     ```
-    <?xml version="1.0" encoding="UTF-8"?>
-    <channel name="Application" isolation="Application"
-    xmlns="https://schemas.microsoft.com/win/2004/08/events">
+    <?xml version=1.0 encoding=UTF-8?>
+    <channel name=Application isolation=Application
+    xmlns=https://schemas.microsoft.com/win/2004/08/events>
     <logging>
     <retention>true</retention>
     <autoBackup>true</autoBackup>
@@ -110,7 +106,7 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
     </channel>
     ```
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 列出所有記錄檔的名稱：
 ```
@@ -155,4 +151,4 @@ wevtutil cl Application /bu:C:\admin\backups\a10306.evtx
 
 #### <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

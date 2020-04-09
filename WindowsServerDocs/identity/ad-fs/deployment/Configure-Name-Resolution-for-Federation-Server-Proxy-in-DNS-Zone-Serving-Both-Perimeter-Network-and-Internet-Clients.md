@@ -1,7 +1,6 @@
 ---
 ms.assetid: 1a6740e6-5b6d-41f8-9ec4-32cdbee3e1bb
 title: 僅適用於周邊網路及網際網路用戶端的 DNS 區域中設定同盟伺服器 Proxy 的名稱解析
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 118c03ada32d3cd5b198ecd238078984a38df0db
-ms.sourcegitcommit: 8fbd2d877612a9feb02d7d91ed0372d7cd441d5c
+ms.openlocfilehash: 487ba9d90043ada0d401d7e5a9d02872e1872b7e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71359826"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854931"
 ---
 # <a name="configure-name-resolution-for-a-federation-server-proxy-in-a-dns-zone-that-serves-both-the-perimeter-network-and-internet-clients"></a>僅適用於周邊網路及網際網路用戶端的 DNS 區域中設定同盟伺服器 Proxy 的名稱解析
 
@@ -52,7 +51,7 @@ ms.locfileid: "71359826"
 為了讓同盟伺服器 proxy 可以成功處理網際網路用戶端要求，並在網際網路 DNS 區域解析後連線到同盟伺服器，您必須在周邊 DNS 區域中 \(\) 資源記錄建立主機。 此資源記錄會解析帳戶同盟伺服器的主機名稱 \(例如 fs。 fabrikam.com\) 至帳戶同盟伺服器的 IP 位址 \(例如，在公司網路中的 192.168.1.4\)。  
   
 > [!NOTE]  
-> 假設您使用的 DNS 伺服器執行 Windows 2000 Server、Windows Server 2003、Windows Server 2008 或 Windows Server®2012與 DNS 伺服器服務，以控制周邊 DNS 區域。  
+> 假設您使用的 DNS 伺服器執行 Windows 2000 Server、Windows Server 2003、Windows Server 2008 或 Windows Server&reg; 2012 與 DNS 伺服器服務，以控制周邊 DNS 區域。  
   
 若要完成此程式，至少需要**Administrators**的成員資格或同等許可權。  請參閱[本機與網域的預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中關於使用適當帳戶和群組成員資格的詳細資料。   
   
@@ -62,7 +61,7 @@ ms.locfileid: "71359826"
   
 2.  在主控台樹中，以滑鼠右鍵\-按一下適用的正向對應區域，然後按一下 **新增主機 \(A 或 AAAA\)** 。  
   
-3.  在 [**名稱**] 中，只輸入同盟伺服器的電腦名稱稱。 例如，針對 FQDN fs.fabrikam.com，輸入 **fs**。  
+3.  在 [**名稱**] 中，只輸入同盟伺服器的電腦名稱稱。 例如，對於 FQDN fs.fabrikam.com，請輸入 **fs**。  
   
 4.  在 [ **ip 位址**] 文字方塊中，輸入公司網路中同盟伺服器的 IP 位址，例如192.168.1.4。  
   

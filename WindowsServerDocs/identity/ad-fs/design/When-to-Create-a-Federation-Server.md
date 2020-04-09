@@ -1,7 +1,6 @@
 ---
 ms.assetid: 824005ae-c3c1-459b-9baa-1660158918ab
 title: 建立同盟伺服器的時機
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 91c260dad1bd260a7dad7320fecd15e6472c50a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b1e58e8940d024b2fbca9ada5d5fa430aeab70a7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407888"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858471"
 ---
 # <a name="when-to-create-a-federation-server"></a>建立同盟伺服器的時機
 
@@ -31,7 +30,7 @@ ms.locfileid: "71407888"
   
 當同盟伺服器放在帳戶夥伴的公司網路時，其角色就是驗證瀏覽器、Web 服務或身分識別選取器用戶端的使用者認證，並將安全性權杖傳送給用戶端。 如需詳細資訊，請參閱＜ [Review the Role of the Federation Server in the Account Partner](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)＞。  
   
-當同盟伺服器放在資源夥伴的公司網路時，其角色是根據資源夥伴組織中的同盟伺服器所發出的安全性權杖來驗證使用者，或其角色是重新導向權杖要求針對用戶端所屬的帳戶夥伴組織，設定 Web 應用程式或 Web 服務。 如需詳細資訊，請參閱 <<c0> [ 檢閱資源夥伴中的同盟伺服器角色](Review-the-Role-of-the-Federation-Server-in-the-Resource-Partner.md)。  
+當同盟伺服器放在資源夥伴的公司網路時，其角色是根據資源夥伴組織中的同盟伺服器所發出的安全性權杖來驗證使用者，或其角色是將權杖要求從設定的 Web 應用程式或 Web 服務重新導向至用戶端所屬的帳戶夥伴組織。 如需詳細資訊，請參閱 [Review the Role of the Federation Server in the Resource Partner](Review-the-Role-of-the-Federation-Server-in-the-Resource-Partner.md)。  
   
 ## <a name="determine-which-ad-fs-design-to-deploy"></a>判斷要部署哪一種 AD FS 設計  
 當您想要部署下列任何一項 AD FS 設計時，您可以在組織中建立同盟伺服器：  
@@ -72,10 +71,10 @@ ms.locfileid: "71407888"
   
     如需如何將同盟伺服器加入至伺服陣列的詳細資訊，請參閱＜ [Add a Federation Server to a Federation Server Farm](../../ad-fs/deployment/Add-a-Federation-Server-to-a-Federation-Server-Farm.md)＞。  
   
-如需詳細的每一種選項之運作方式的相關資訊，請參閱[AD FS 設定資料庫的角色](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)。  
+如需其中每一個選項之運作方式的更詳細資訊，請參閱＜ [The Role of the AD FS Configuration Database](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)＞。  
   
 如需如何設定所有必要的先決條件以部署同盟伺服器的詳細資訊，請參閱＜ [Checklist: Setting Up a Federation Server](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server.md)＞。  
   
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 [Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
 

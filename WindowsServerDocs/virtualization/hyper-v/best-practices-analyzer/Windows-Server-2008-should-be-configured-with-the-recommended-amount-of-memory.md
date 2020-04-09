@@ -2,20 +2,19 @@
 title: 應該使用建議的記憶體數量來設定 Windows Server 2008
 description: 提供解決此最佳做法分析程式規則所回報之問題的指示。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: a98a8594-603b-487a-8739-78887c568e57
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: a563f809d067345ad6a17dbfaed052ab1010b2b3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1df2c7d10f35c7dcabbb210d8bd09233468697c0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364376"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861021"
 ---
 # <a name="windows-server-2008-should-be-configured-with-the-recommended-amount-of-memory"></a>應該使用建議的記憶體數量來設定 Windows Server 2008
 
@@ -28,7 +27,7 @@ ms.locfileid: "71364376"
 |**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
 |**低於**|警告|  
-|**類別**|設定|  
+|**類別**|組態|  
   
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   
@@ -70,7 +69,7 @@ ms.locfileid: "71364376"
 Set-VMMemory <MyVM> -StartupBytes 2GB  
 ```  
   
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
 [設定-Set-vmmemory](https://technet.microsoft.com/library/hh848572.aspx)  
   
 

@@ -1,30 +1,26 @@
 ---
-title: 管理本機伺服器和伺服器管理員主控台
+title: Manage the Local Server and the Server Manager Console
 description: 伺服器管理員
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: eeb32f65-d588-4ed5-82ba-1ca37f517139
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 45bb0efcaf989cadd717ddbfde27230b76901113
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d64d45fec0c48f66da72dfee7ab9f1f9965205ad
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383114"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851491"
 ---
-# <a name="manage-the-local-server-and-the-server-manager-console"></a>管理本機伺服器和伺服器管理員主控台
+# <a name="manage-the-local-server-and-the-server-manager-console"></a>Manage the Local Server and the Server Manager Console
 
 >適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-在 Windows Server 中，伺服器管理員可讓您同時管理本機伺服器（如果您是在 Windows Server 上執行伺服器管理員，而不是在以 Windows 為基礎的用戶端作業系統上執行），以及執行 Windows Server 2008 和更新版本之 Windows 的遠端伺服器。伺服器作業系統。
+在 Windows Server 中，伺服器管理員可讓您同時管理本機伺服器（如果您是在 Windows Server 上執行，而不伺服器管理員是在 Windows 用戶端作業系統上執行），以及執行 Windows Server 2008 和較新版本之 Windows Server 作業系統的遠端伺服器。
 
 伺服器管理員中的 [**本機伺服器**] 頁面會顯示伺服器屬性、事件、服務和效能計數器資料，以及本機伺服器的最佳做法分析程式（BPA）結果。 事件、服務、BPA 和效能磚的運作方式與在角色和伺服器群組頁面上相同。 如需有關設定這些磚中顯示之資料的詳細資訊，請參閱 [View 和 Configure Performance, Event, 和 Service Data](view-and-configure-performance-event-and-service-data.md) 和 [Run Best Practices Analyzer Scans 和 Manage Scan Results](run-best-practices-analyzer-scans-and-manage-scan-results.md)。
 
@@ -42,15 +38,15 @@ ms.locfileid: "71383114"
 
 -   [管理角色首頁上的角色](#BKMK_roles)
 
-## <a name="BKMK_shutdown"></a>關閉本機伺服器
-本地**伺服器 [** **屬性**] 磚中的 [工作] 功能表可讓您在本機伺服器上啟動 Windows PowerShell 會話、開啟 [**電腦管理**] mmc 嵌入式管理單元，或開啟本機伺服器上所安裝角色或功能的 mmc 嵌入式管理單元。 您也可以使用這個 [工作] 功能表中的 [關閉本機伺服器] 命令來關閉本機伺服器。 您也可以在 [所有伺服器] 頁面的 [伺服器] 磚中或在本機伺服器代表的任何角色或群組頁面中，找到供本機伺服器使用的 [關閉本機伺服器] 命令。
+## <a name="shut-down-the-local-server"></a><a name=BKMK_shutdown></a>關閉本機伺服器
+本地**伺服器 [** **屬性**] 磚中的 [工作] 功能表可讓您在本機伺服器上啟動 Windows PowerShell 會話、開啟 [**電腦管理**] mmc 嵌入式管理單元，或開啟本機伺服器上所安裝角色或功能的 mmc 嵌入式管理單元。 您也可以使用這個 [工作] 功能表中的 [關閉本機伺服器] 命令來關閉本機伺服器。 您也可以在 [所有伺服器] 頁面的 [伺服器] 磚中或在本機伺服器代表的任何角色或群組頁面中，找到供本機伺服器使用的[關閉本機伺服器] 命令。
 
 與從 [**開始**] 畫面關閉 windows server 2016 不同的是，使用這個方法關閉本機伺服器會開啟 [**關閉 windows** ] 對話方塊，讓您在 [**關機事件追蹤**器] 區域中指定關機的原因。
 
 > [!NOTE]
 > 只有 Administrators 群組的成員才能關閉或重新啟動伺服器。 標準使用者無法關閉或重新啟動伺服器。 按一下 [關閉本機伺服器] 命令會將標準使用者登出伺服器工作階段。 這與標準使用者從伺服器桌面執行 **Alt+F4** 關機命令的經驗相符。
 
-## <a name="BKMK_props"></a>設定伺服器管理員屬性
+## <a name="configure-server-manager-properties"></a><a name=BKMK_props></a>設定伺服器管理員屬性
 您可以檢視或變更 [本機伺服器] 頁面上 [屬性] 磚中的下列設定。 若要變更設定的值，請按一下設定的超文字值。
 
 > [!NOTE]
@@ -60,13 +56,13 @@ ms.locfileid: "71383114"
 
 |設定|描述|
 |------|--------|
-|電腦名稱稱|顯示電腦的易記名稱，並開啟 [**系統**內容] 對話方塊，讓您變更伺服器的名稱、網域成員資格以及其他系統設定，例如使用者設定檔。|
+|電腦名稱|顯示電腦的易記名稱，並開啟 [**系統**內容] 對話方塊，讓您變更伺服器的名稱、網域成員資格以及其他系統設定，例如使用者設定檔。|
 |網域 (如果伺服器未加入網域，則為工作群組)|顯示伺服器為其成員的網域或工作群組。 開啟 [**系統**內容] 對話方塊，可讓您變更伺服器的名稱、網域成員資格以及其他系統設定，例如使用者設定檔。|
 |Windows 防火牆|顯示本機伺服器的 Windows 防火牆狀態。 開啟 [控制台\系統及安全性\Windows 防火牆]。 如需設定 Windows 防火牆的詳細資訊，請參閱 [具有進階安全性的 Windows 防火牆與 IPsec](https://go.microsoft.com/fwlink/?LinkId=253465)。|
-|遠端系統管理|顯示伺服器管理員和 Windows PowerShell 遠端系統管理狀態。 開啟 [**設定遠端系統管理**] 對話方塊。 如需遠端系統管理的詳細資訊，請參閱[在伺服器管理員中設定遠端系統管理](configure-remote-management-in-server-manager.md)。|
+|遠端管理|顯示伺服器管理員和 Windows PowerShell 遠端系統管理狀態。 開啟 [**設定遠端系統管理**] 對話方塊。 如需遠端系統管理的詳細資訊，請參閱[在伺服器管理員中設定遠端系統管理](configure-remote-management-in-server-manager.md)。|
 |遠端桌面|顯示使用者是否可以從遠端使用遠端桌面工作階段連線到伺服器。 開啟 [**系統**內容] 對話方塊的 [**遠端**] 索引標籤。|
 |NIC 小組|顯示本機伺服器是否參與 NIC 小組。 開啟 [NIC 小組] 對話方塊，並將本機伺服器加入 NIC 小組 (如有需要)。 如需有關 NIC 小組的詳細資訊，請參閱 [NIC 小組白皮書](https://go.microsoft.com/fwlink/?LinkID=253449)。|
-|Ethernet|顯示伺服器的網路狀態。 開啟 [控制台\網路和網際網路\網路連線]。|
+|乙太網路|顯示伺服器的網路狀態。 開啟 [控制台\網路和網際網路\網路連線]。|
 |作業系統版本|這個唯讀欄位會顯示本機伺服器所執行 Windows 作業系統的版本號碼。|
 |硬體資訊|這個唯讀欄位會顯示伺服器硬體的製造商以及型號名稱和號碼。|
 |上次安裝的更新|顯示上次安裝 Windows 更新的日期和時間。 開啟 [控制台\系統及安全性\Windows Update]。|
@@ -81,7 +77,7 @@ ms.locfileid: "71383114"
 |安裝的記憶體 (RAM)|這個唯讀欄位會顯示可用的 RAM 數量 (單位 GB)。|
 |磁碟空間總計|這個唯讀欄位會顯示可用的磁碟空間數量 (單位 GB)。|
 
-## <a name="BKMK_managesm"></a>管理伺服器管理員主控台
+## <a name="manage-the-server-manager-console"></a><a name=BKMK_managesm></a>管理伺服器管理員主控台
 適用于整個伺服器管理員主控台以及已新增至伺服器管理員伺服器集區之所有遠端伺服器的全域設定，可以在 [伺服器管理員主控台] 視窗頂端的標題列中找到。
 
 ### <a name="add-servers-to-server-manager"></a>將伺服器新增至伺服器管理員
@@ -104,7 +100,7 @@ ms.locfileid: "71383114"
 遠端桌面服務、IP 位址管理以及檔案和存放服務的伺服器管理員角色首頁中所顯示的資料不會自動重新整理。 手動重新整理這些頁面中顯示的資料，方法是在您使用這些頁面時，按**F5** **或按一下伺服器管理員**主控台標題中的 [重新整理]。
 
 ### <a name="add-or-remove-roles-or-features"></a>新增或移除角色或功能
-開啟 [新增角色及功能嚮導] 和 [移除角色及功能] 的命令，並讓您在伺服器集區的伺服器中新增或移除角色、角色服務和功能，位於伺服器管理員主控台的 [**管理**] 功能表，以及角色或群組頁面上 [**角色和功能**]**磚的 [工作] 功能表。** 如需如何新增或移除角色或功能的詳細資訊，請參閱 [Install or Uninstall Roles, Role Services, or Features](install-or-uninstall-roles-role-services-or-features.md)。
+開啟 [新增角色及功能嚮導] 和 [移除角色及功能] 的命令，並讓您在伺服器集區的伺服器中新增或移除角色、角色服務和功能，位於伺服器管理員主控台的 [**管理**] 功能表，以及角色或群組頁面上 [**角色和功能**]**磚的 [工作] 功能表。** 如需如何新增或移除角色或功能的詳細資訊，請參閱[安裝或解除安裝角色、角色服務或功能](install-or-uninstall-roles-role-services-or-features.md)。
 
 在伺服器管理員中，角色和功能資料會以系統的基礎語言顯示（也稱為系統預設 GUI 語言），或是在安裝作業系統期間選取的語言。
 
@@ -117,7 +113,7 @@ ms.locfileid: "71383114"
 ### <a name="zoom-in-or-out"></a>放大或縮小
 若要放大或縮小伺服器管理員主控台的視圖，您可以使用 [ **view** ] 功能表上的 [**縮放**] 命令，或按**ctrl + 加號（+）** 放大和**Ctrl + 減號（-）** 縮小。
 
-## <a name="BKMK_tools"></a>自訂 [工具] 功能表中顯示的工具
+## <a name="customize-tools-that-are-displayed-in-the-tools-menu"></a><a name=BKMK_tools></a>自訂 [工具] 功能表中顯示的工具
 伺服器管理員中的 [**工具**] 功能表包括 [**控制台/系統及安全性**] 的 [系統**管理工具**] 資料夾中快捷方式的軟連結。 [系統**管理工具**] 資料夾包含可用管理工具的快捷方式或 .lnk 檔案清單，例如 mmc 嵌入式管理單元。伺服器管理員會在 [**工具**] 功能表中填入這些快捷方式的連結，並將 [系統**管理工具**] 資料夾的資料夾結構複製到 [**工具**] 功能表。 根據預設，[系統管理工具] 資料夾中的工具會是依類型或名稱排序的平面清單。 在 [伺服器管理員**工具**] 功能表中，專案只會依名稱排序，而不是依類型。
 
 若要自訂 [工具] 功能表，請將您要使用的工具或指令碼捷徑複製到 [系統管理工具] 資料夾。 您也可以管理資料夾中的捷徑，這樣會在 [工具] 功能表中建立串聯功能表。 此外，如果您想要限制 [**工具**] 功能表上自訂工具的存取權，您可以在 [系統管理工具] 中的自訂工具資料夾上，或直接在原始工具或腳本檔案上設定使用者存取權限。
@@ -158,8 +154,8 @@ ms.locfileid: "71383114"
 
 8.  如有必要，請重新整理或重新開機伺服器管理員，以查看 [**工具**] 功能表中的自訂工具快捷方式。
 
-## <a name="BKMK_roles"></a>管理角色首頁上的角色
-在您將伺服器新增至伺服器管理員伺服器集區，並伺服器管理員收集集區中伺服器的清查資料之後，伺服器管理員會將頁面新增至受管理伺服器上探索到的角色的流覽窗格。 角色頁面上的 [伺服器] 磚會列出執行該角色的受管理伺服器。 根據預設，[事件]、[最佳做法分析程式]、[服務]及 [效能] 磚會顯示執行該角色的所有伺服器資料；選取 [伺服器] 磚中的特定伺服器會讓事件、服務、效能計數器和 BPA 結果的範圍僅限於選取的伺服器。 在受管理的伺服器上安裝或探索角色或功能之後，管理工具通常會在伺服器管理員主控台的 [**工具**] 功能表中提供。 您也可以用滑鼠右鍵按一下 [伺服器] 磚中某個角色或群組的伺服器項目，然後啟動您要使用的管理工具。
+## <a name="manage-roles-on-role-home-pages"></a><a name=BKMK_roles></a>管理角色首頁上的角色
+在您將伺服器新增至伺服器管理員伺服器集區，並伺服器管理員收集集區中伺服器的清查資料之後，伺服器管理員會將頁面新增至受管理伺服器上探索到的角色的流覽窗格。 角色頁面上的 [伺服器] 磚會列出執行該角色的受管理伺服器。 根據預設，[事件]、[最佳做法分析程式]、[服務] 及 [效能] 磚會顯示執行該角色的所有伺服器資料；選取 [伺服器] 磚中的特定伺服器會讓事件、服務、效能計數器和 BPA 結果的範圍僅限於選取的伺服器。 在受管理的伺服器上安裝或探索角色或功能之後，管理工具通常會在伺服器管理員主控台的 [**工具**] 功能表中提供。 您也可以用滑鼠右鍵按一下 [伺服器] 磚中某個角色或群組的伺服器項目，然後啟動您要使用的管理工具。
 
 在 Windows Server 2016 中，下列角色和功能的管理工具已整合到伺服器管理員主控台作為頁面。
 
@@ -175,7 +171,7 @@ ms.locfileid: "71383114"
 
     如需部署和管理 IPAM 的詳細資訊，請參閱[IP 位址管理（ipam）](https://go.microsoft.com/fwlink/p/?LinkId=241533)。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 [伺服器管理員](server-manager.md)
 [將伺服器新增至伺服器管理員](add-servers-to-server-manager.md)
 [建立和管理伺服器群組](create-and-manage-server-groups.md)

@@ -1,24 +1,20 @@
 ---
 title: rdpsign
 description: 瞭解如何以數位方式簽署 RDP 檔案。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4a6fa8ce-3d32-49a5-b056-bcc1a23391f5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 406563a07d3760c2846c201410f3a7b8f1c2829b
-ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
+ms.openlocfilehash: c9df46ab09b758cbd86334d5b418c876c41f0eff
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72588060"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836671"
 ---
 # <a name="rdpsign"></a>rdpsign
 
@@ -35,7 +31,7 @@ ms.locfileid: "72588060"
 rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |-------|--------|
@@ -56,7 +52,7 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
 -   已簽署的輸出檔案將會覆寫輸入檔。
 -   如果無法讀取或寫入任何 .rdp 檔案，此工具將會繼續進行下一個檔案（如果有指定多個檔案）。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name="BKMK_examples"></a>典型
 - 若要簽署名為 File1 的 .rdp 檔案，請流覽至儲存 .rdp 檔案的資料夾，然後輸入下列內容：
   ```
   rdpsign /sha1 hash file1.rdp
@@ -71,6 +67,6 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
   ```
   rdpsign /sha1 hash file1.rdp file2.rdp file3.rdp
   ```
-  ## <a name="see-also"></a>請參閱
-  
-  [ &#40;遠端桌面服務終端機服務&#41;命令參考](remote-desktop-services-terminal-services-command-reference.md)[的命令列語法金鑰](command-line-syntax-key.md)
+  ## <a name="see-also"></a>另請參閱
+  - [命令列語法金鑰](command-line-syntax-key.md)
+  [遠端桌面服務（終端機服務）命令參考](remote-desktop-services-terminal-services-command-reference.md)

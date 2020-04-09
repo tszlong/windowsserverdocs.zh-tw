@@ -1,7 +1,6 @@
 ---
 ms.assetid: 1a443181-7ded-4912-8e40-5aa447faf00c
 title: AD FS 2016 單一登入設定
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 08/17/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 76c34dc518f4578b4ae2ead3459f1d79c191b3d7
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: bad6ad9a95618239825366187c8083c1fe77ae94
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949193"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860081"
 ---
 # <a name="ad-fs-single-sign-on-settings"></a>AD FS 單一登入設定
 
@@ -40,7 +39,7 @@ AD FS 支援數種類型的單一登入體驗：
   
      在 OAuth 案例中，重新整理權杖是用來在特定應用程式的範圍內維護使用者的 SSO 狀態。  
   
-     如果裝置已註冊，AD FS 會根據已註冊裝置的持續 SSO cookie 存留期，設定重新整理權杖的到期時間（預設為7天，AD FS 2012R2，最多90天，如果使用其裝置，則為 AD FS 2016）在14天的時間範圍記憶體取 AD FS 資源。 
+     如果裝置已註冊，AD FS 會根據已註冊裝置的持續 SSO cookie 存留期，設定重新整理權杖的到期時間（預設為7天，AD FS 2012R2，最多90天，如果他們使用其裝置來存取14天內的 AD FS 資源，則會以 AD FS 2016 為准）。 
 
 如果裝置未註冊，但使用者選取 [讓我保持登入] 選項，重新整理權杖的到期時間將會等於 [讓我保持登入] 的持續 SSO cookie 存留期，預設為1天，最多7天。 否則，重新整理權杖存留期等於會話 SSO cookie 存留期，預設為8小時  
   
@@ -48,7 +47,7 @@ AD FS 支援數種類型的單一登入體驗：
  
  針對 Windows Server 2012 R2，若要啟用「讓我保持登入」案例的 PSSO，您必須安裝此[修補程式](https://support.microsoft.com/kb/2958298/)，這也是[windows RT 8.1、Windows 8.1 和 Windows Server 2012 R2 的2014年8月更新彙總套件](https://support.microsoft.com/kb/2975719)的一部分。   
 
-工作 | PowerShell | 說明
+工作 | PowerShell | 描述
 ------------ | ------------- | -------------
 啟用/停用持續性 SSO | ```` Set-AdfsProperties –EnablePersistentSso <Boolean> ````| 預設會啟用持續性 SSO。 如果已停用，則不會寫入任何 PSSO cookie。
 [啟用/停用] [讓我保持登入] | ```` Set-AdfsProperties –EnableKmsi <Boolean> ```` | 預設會停用 [讓我保持登入] 功能。 如果已啟用，終端使用者會在 AD FS 登入頁面上看到 [讓我保持登入] 選項
@@ -96,7 +95,7 @@ Set-AdfsProperties –KmsiLifetimeMins <Int32\>
 ```   
 
 ## <a name="multi-factor-authentication-mfa-behavior"></a>多重要素驗證（MFA）行為  
-請務必注意，雖然提供較長的單一登入週期，但當先前的登入是以主要認證為基礎，而不是 MFA 時，AD FS 會提示您進行額外的驗證（多重要素驗證），但目前的登入需要 MFA。  無論 SSO 設定為何，都是如此。 AD FS，當它收到驗證要求時，會先判斷是否有 SSO 內容（例如 cookie），如果需要 MFA （例如，如果要求是來自外部，則會評估 SSO 內容是否包含 MFA）。  如果不是，則會提示 MFA。  
+請務必注意，雖然提供較長的單一登入週期，但當先前的登入是以主要認證為基礎，而不是使用 MFA 時，AD FS 會提示您進行額外的驗證（多重要素驗證），但目前的登入需要 MFA。  無論 SSO 設定為何，都是如此。 AD FS，當它收到驗證要求時，會先判斷是否有 SSO 內容（例如 cookie），如果需要 MFA （例如，如果要求是來自外部，則會評估 SSO 內容是否包含 MFA）。  如果不是，則會提示 MFA。  
 
 
   
@@ -165,21 +164,21 @@ c:[Type == "https://schemas.microsoft.com/2014/03/psso"]
  <tr align="center">
     <td>SSO =&gt;設定重新整理權杖 =&gt;</td>
     <td>8小時</td>
-    <td>無</td>
-    <td>無</td>
+    <td>N/A</td>
+    <td>N/A</td>
     <th></th>
     <td>8小時</td>
-    <td>無</td>
-    <td>無</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
 
  <tr align="center">
     <td>PSSO =&gt;設定重新整理權杖 =&gt;</td>
-    <td>無</td>
+    <td>N/A</td>
     <td>24小時</td>
-    <td>7 天</td>
+    <td>7天</td>
     <th></th>
-    <td>無</td>
+    <td>N/A</td>
     <td>24小時</td>
     <td>最大90天（含14天）視窗</td>
   </tr>

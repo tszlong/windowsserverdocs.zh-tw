@@ -4,15 +4,15 @@ description: 伺服器硬體電源考慮
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Qizha;TristanB
+ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: a9d4653824d497ea0c42337260aa788bab354ba3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 865899e5f33bde97dff97efaff6010b95aafd3e6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355021"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851981"
 ---
 # <a name="server-hardware-power-considerations"></a>伺服器硬體電源考慮
 
@@ -62,7 +62,7 @@ Power 塊不是伺服器硬體不可或缺的一部分，但在資料中心內�
 
 -   處理器通訊端
 -   NUMA 節點
--   Core
+-   核心版
 -   邏輯處理器
 
 ![處理器術語](../media/perftune-guide-figure-1.png)

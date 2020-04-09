@@ -1,24 +1,20 @@
 ---
 title: 建立、刪除或更新租使用者虛擬網路
 description: 在本主題中，您將瞭解如何在部署軟體定義的網路功能（SDN）後，建立、刪除和更新 Hyper-v 網路虛擬化虛擬網路。 Hyper-v 網路虛擬化可協助您隔離租使用者網路，讓每個租使用者網路都是個別的實體。 除非您設定公用存取工作負載，否則每個實體都沒有跨連接的可能性。
-manager: dougkim
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6a820826-e829-4ef2-9a20-f74235f8c25b
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/24/2018
-ms.openlocfilehash: f85f593ec3dca33c5b35fb065c7d84ed12ea9af2
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: acb663cd33d015c1ce96241abffd4ca260cc5559
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309827"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854521"
 ---
 # <a name="create-delete-or-update-tenant-virtual-networks"></a>建立、刪除或更新租用戶虛擬網路
 

@@ -2,22 +2,18 @@
 title: 部署 Windows Server 混合式雲端列印
 description: 如何設定 Microsoft 混合式雲端列印
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.technology: Windows Server 2016
-ms.tgt_pltfrm: na
-ms.topic: ''
+ms.technology: windows server 2016
 ms.assetid: fc239aec-e719-47ea-92fc-d82a7247c5e9
 author: msjimwu
 ms.author: coreyp
 manager: dongill
 ms.date: 3/15/2018
-ms.openlocfilehash: 77462ab74ee63677362b779615376e831c71de00
-ms.sourcegitcommit: eca5bb75d1db20ac07232cea759b6b542626c02f
+ms.openlocfilehash: c06aafb015b065f307eca02abc7a6adaa8ba763c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/10/2020
-ms.locfileid: "77114527"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852111"
 ---
 # <a name="deploy-windows-server-hybrid-cloud-print"></a>部署 Windows Server 混合式雲端列印
 
@@ -186,9 +182,9 @@ ms.locfileid: "77114527"
 2. 安裝混合式雲端列印 PowerShell 模組。
     - 從提高許可權的 PowerShell 命令提示字元執行下列命令：
 
-        `find-module -Name "PublishCloudPrinter"` 確認機器可以觸達 PowerShell 資源庫（PSGallery）
+        `find-module -Name PublishCloudPrinter` 確認機器可以觸達 PowerShell 資源庫（PSGallery）
 
-        `install-module -Name "PublishCloudPrinter"`
+        `install-module -Name PublishCloudPrinter`
 
     > 注意：您可能會看到訊息，指出 ' PSGallery ' 是不受信任的存放庫。  輸入 ' y ' 以繼續安裝。
 
@@ -197,9 +193,9 @@ ms.locfileid: "77114527"
 3. 安裝混合式雲端列印解決方案。
     - 在同一個已提升許可權的 PowerShell 命令提示字元中，將目錄變更為下列內容（所需的引號）：
 
-        `"C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0"`
+        `C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0`
 
-    - WMIMgmt.msc
+    - 執行
 
         `.\CloudPrintDeploy.ps1 -AzureTenant <Azure Active Directory domain name> -AzureTenantGuid <Azure Active Directory ID>`
 
@@ -247,7 +243,7 @@ ms.locfileid: "77114527"
 
         `Install-Package system.data.sqlite [-requiredversion x.x.x.x] -providername nuget`
 
-   > 注意：建議您保留 "-requiredversion" 選項來下載並安裝最新版本。
+   > 注意：建議您保留-requiredversion 選項來下載並安裝最新版本。
 
     ![列印伺服器 Mopria 登錄機碼](../media/hybrid-cloud-print/PrintServer-InstallSQLite.png)
 
@@ -257,18 +253,18 @@ ms.locfileid: "77114527"
     - 在提高許可權的 PowerShell 命令提示字元中執行 ps1 檔案。
 
     ```powershell
-    $source = "\Program Files\PackageManagement\NuGet\Packages"
-    $core = "System.Data.SQLite.Core"
-    $linq = "System.Data.SQLite.Linq"
-    $ef6 = "System.Data.SQLite.EF6"
-    $version = "x.x.x.x"
-    $target = "C:\inetpub\wwwroot\MopriaCloudService\bin"
+    $source = \Program Files\PackageManagement\NuGet\Packages
+    $core = System.Data.SQLite.Core
+    $linq = System.Data.SQLite.Linq
+    $ef6 = System.Data.SQLite.EF6
+    $version = x.x.x.x
+    $target = C:\inetpub\wwwroot\MopriaCloudService\bin
 
-    xcopy /y "$source\$core.$version\lib\net46\System.Data.SQLite.dll" "$target\"
-    xcopy /y "$source\$core.$version\build\net46\x86\SQLite.Interop.dll" "$target\x86\"
-    xcopy /y "$source\$core.$version\build\net46\x64\SQLite.Interop.dll" "$target\x64\"
-    xcopy /y "$source\$linq.$version\lib\net46\System.Data.SQLite.Linq.dll" "$target\"
-    xcopy /y "$source\$ef6.$version\lib\net46\System.Data.SQLite.EF6.dll" "$target\"
+    xcopy /y $source\$core.$version\lib\net46\System.Data.SQLite.dll $target\
+    xcopy /y $source\$core.$version\build\net46\x86\SQLite.Interop.dll $target\x86\
+    xcopy /y $source\$core.$version\build\net46\x64\SQLite.Interop.dll $target\x64\
+    xcopy /y $source\$linq.$version\lib\net46\System.Data.SQLite.Linq.dll $target\
+    xcopy /y $source\$ef6.$version\lib\net46\System.Data.SQLite.EF6.dll $target\
     ```
 
 10. 更新 c:\inetpub\wwwroot\MopriaCloudService\web.config 檔案，以在下列 `<runtime>/<assemblyBinding>` 區段中包含 SQLite 版本 x.x. x。 這是上一個步驟中使用的相同版本。
@@ -276,20 +272,20 @@ ms.locfileid: "77114527"
     ```xml
     ...
     <dependentAssembly>
-    assemblyIdentity name="System.Data.SQLite" culture="neutral" publicKeyToken="db937bc2d44ff139" /
-    <bindingRedirect oldVersion="0.0.0.0-x.x.x.x" newVersion="x.x.x.x" />
+    assemblyIdentity name=System.Data.SQLite culture=neutral publicKeyToken=db937bc2d44ff139 /
+    <bindingRedirect oldVersion=0.0.0.0-x.x.x.x newVersion=x.x.x.x />
     </dependentAssembly>
     <dependentAssembly>
-    <assemblyIdentity name="System.Data.SQLite.Core" culture="neutral" publicKeyToken="db937bc2d44ff139" />
-    <bindingRedirect oldVersion="0.0.0.0-x.x.x.x" newVersion="x.x.x.x" />
+    <assemblyIdentity name=System.Data.SQLite.Core culture=neutral publicKeyToken=db937bc2d44ff139 />
+    <bindingRedirect oldVersion=0.0.0.0-x.x.x.x newVersion=x.x.x.x />
     </dependentAssembly>
     <dependentAssembly>
-    <assemblyIdentity name="System.Data.SQLite.EF6" culture="neutral" publicKeyToken="db937bc2d44ff139" />
-    <bindingRedirect oldVersion="0.0.0.0-x.x.x.x" newVersion="x.x.x.x" />
+    <assemblyIdentity name=System.Data.SQLite.EF6 culture=neutral publicKeyToken=db937bc2d44ff139 />
+    <bindingRedirect oldVersion=0.0.0.0-x.x.x.x newVersion=x.x.x.x />
     </dependentAssembly>
     <dependentAssembly>
-    <assemblyIdentity name="System.Data.SQLite.Linq" culture="neutral" publicKeyToken="db937bc2d44ff139" />
-    <bindingRedirect oldVersion="0.0.0.0-x.x.x.x" newVersion="x.x.x.x" />
+    <assemblyIdentity name=System.Data.SQLite.Linq culture=neutral publicKeyToken=db937bc2d44ff139 />
+    <bindingRedirect oldVersion=0.0.0.0-x.x.x.x newVersion=x.x.x.x />
     </dependentAssembly>
     ...
     ```
@@ -299,7 +295,7 @@ ms.locfileid: "77114527"
     - 移至 `c:\inetpub\wwwroot\MopriaCloudService\Database` 目錄。
     - 執行下列命令，在此目錄中建立資料庫：
 
-        `sqlite3.exe MopriaDeviceDb.db ".read MopriaSQLiteDb.sql"`
+        `sqlite3.exe MopriaDeviceDb.db .read MopriaSQLiteDb.sql`
 
     - 在 [檔案管理器] 中，開啟 [MopriaDeviceDb] 檔案內容，以新增允許在 [安全性] 索引標籤中發佈至 Mopria 資料庫的使用者或群組。使用者或群組必須存在於內部部署 Active Directory，並與 Azure AD 同步處理。
     - 如果解決方案部署至不可路由傳送的網域（例如*mydomain*），則必須將 Azure AD 網域（例如 onmicrosoft.com，或從協力廠商購買的一個）新增為內部部署 ACTIVE DIRECTORY 的 UPN*尾碼。* 如此一來，就可以在資料庫檔案的安全性設定中加入與發行印表機相同的使用者（例如 admin@*domainname*. onmicrosoft.com）。 如需目錄同步作業，請參閱[準備無法路由](https://docs.microsoft.com/office365/enterprise/prepare-a-non-routable-domain-for-directory-synchronization)傳送的網域。
@@ -334,7 +330,7 @@ ms.locfileid: "77114527"
     - 移至 [**應用程式 proxy**]。 將 [預先驗證方法] 變更為**Azure Active Directory**。
     - 移至 [**單一登入**]。 選取 [整合式 Windows 驗證] 做為單一登入方法。
     - 將 [**內部應用程式 spn** ] 設定為列印伺服器電腦的 spn。
-    - 將 [**委派的登**入身分識別] 設定為 [使用者主體名稱]。
+    - 將 **[委派的登**入身分識別] 設定為 [使用者主體名稱]。
     - 針對 EntperiseCloudPrint 應用程式重複此步驟。
     ![AAD 單一登入 IWA](../media/hybrid-cloud-print/AAD-SingleSignOn-IWA.png)
 
@@ -343,10 +339,10 @@ ms.locfileid: "77114527"
 1. 登入您的 MDM 提供者。
 2. 尋找「企業雲端列印原則」群組，並遵循下列指導方針來設定原則：
     - CloudPrintOAuthAuthority = `https://login.microsoftonline.com/<Azure AD Directory ID>`。 您可以在 Azure Active Directory > 屬性 下找到目錄識別碼。
-    - CloudPrintOAuthClientId = "應用程式 \(用戶端\) ID" 的原生 app 值。 您可以在 Azure Active Directory > 應用程式註冊中找到此，> 選取原生應用程式 > 總覽。
-    - CloudPrinterDiscoveryEndPoint = Mopria 探索服務應用程式的外部 URL。 您可以在 Azure Active Directory > 企業應用程式 下找到此 > 選取 Mopria 探索服務應用程式 > 應用程式 proxy。 **它必須完全相同，但不含尾端的 "/"** 。
-    - MopriaDiscoveryResourceId = Mopria 探索服務應用程式的應用程式識別碼 URI。 您可以在 Azure Active Directory > 應用程式註冊中找到此，> 選取 [Mopria 探索服務] 應用程式 > [總覽]。 **它必須與尾端的 "/" 完全相同**。
-    - CloudPrintResourceId = 企業雲端列印應用程式的應用程式識別碼 URI。 您可以在 Azure Active Directory > 應用程式註冊中找到此 > 選取 [企業雲端列印應用程式] > 總覽。 **它必須與尾端的 "/" 完全相同**。
+    - CloudPrintOAuthClientId = 應用程式 \(原生應用程式的用戶端\) 識別碼值。 您可以在 Azure Active Directory > 應用程式註冊中找到此，> 選取原生應用程式 > 總覽。
+    - CloudPrinterDiscoveryEndPoint = Mopria 探索服務應用程式的外部 URL。 您可以在 Azure Active Directory > 企業應用程式 下找到此 > 選取 Mopria 探索服務應用程式 > 應用程式 proxy。 **它必須完全相同，但不含尾端/** 。
+    - MopriaDiscoveryResourceId = Mopria 探索服務應用程式的應用程式識別碼 URI。 您可以在 Azure Active Directory > 應用程式註冊中找到此，> 選取 [Mopria 探索服務] 應用程式 > [總覽]。 **它必須與尾端/完全相同**。
+    - CloudPrintResourceId = 企業雲端列印應用程式的應用程式識別碼 URI。 您可以在 Azure Active Directory > 應用程式註冊中找到此 > 選取 [企業雲端列印應用程式] > 總覽。 **它必須與尾端/完全相同**。
     - DiscoveryMaxPrinterLimit = \<正整數\>。
 
 > 注意：如果您使用 Microsoft Intune 服務，您可以在 [雲端印表機] 類別下找到這些設定。
@@ -368,7 +364,7 @@ ms.locfileid: "77114527"
         - CloudPrintOAuthClientId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthClientId
             - 值 = < Azure AD 原生應用程式的應用程式識別碼 >
         - CloudPrinterDiscoveryEndPoint =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrinterDiscoveryEndPoint
-            - 值 = Mopria 探索服務應用程式的外部 URL （必須完全相同，但不含尾端的 "/"）
+            - 值 = Mopria 探索服務應用程式的外部 URL （必須完全相同，但不含尾端/）
         - MopriaDiscoveryResourceId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/MopriaDiscoveryResourceId
             - 值 = Mopria 探索服務應用程式的應用程式識別碼 URI
         - CloudPrintResourceId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintResourceId
@@ -385,8 +381,8 @@ ms.locfileid: "77114527"
 5. 準備 Windows 10 秋季建立者更新或更新版本的電腦。 將電腦加入 Azure AD，並以與內部部署 Active Directory 同步處理的使用者身分登入，並已獲得 MopriaDeviceDb 檔案的適當許可權。
 6. 從 Windows 10 電腦，開啟提升許可權的 Windows PowerShell 命令提示字元。
     - 執行下列命令。
-        - `find-module -Name "PublishCloudPrinter"` 確認機器可以觸達 PowerShell 資源庫（PSGallery）
-        - `install-module -Name "PublishCloudPrinter"`
+        - `find-module -Name PublishCloudPrinter` 確認機器可以觸達 PowerShell 資源庫（PSGallery）
+        - `install-module -Name PublishCloudPrinter`
 
             > 注意：您可能會看到訊息，指出 ' PSGallery ' 是不受信任的存放庫。  輸入 ' y ' 以繼續安裝。
 
@@ -399,13 +395,13 @@ ms.locfileid: "77114527"
         - Model = 印表機型號。
         - OrgLocation = 指定印表機位置的 JSON 字串，例如
 
-            `{"attrs": [{"category":"country", "vs":"USA", "depth":0}, {"category":"organization", "vs":"Microsoft", "depth":1}, {"category":"site", "vs":"Redmond, WA", "depth":2}, {"category":"building", "vs":"Building 1", "depth":3}, {"category":"floor_number", "vs":1, "depth":4}, {"category":"room_name", "vs":"1111", "depth":5}]}`
+            `{attrs: [{category:country, vs:USA, depth:0}, {category:organization, vs:Microsoft, depth:1}, {category:site, vs:Redmond, WA, depth:2}, {category:building, vs:Building 1, depth:3}, {category:floor_number, vs:1, depth:4}, {category:room_name, vs:1111, depth:5}]}`
 
         - Sddl = 代表印表機權限的 SDDL 字串。
             - 以系統管理員身分登入列印伺服器，然後針對您要發佈的印表機執行下列 PowerShell 命令： `(Get-Printer PrinterName -full).PermissionSDDL`。
-            - 在上述命令的結果中，將**O:BA**新增為前置詞。 例如 如果上一個命令所傳回的字串為 "G:DUD：（A; OICI; FA;;;WD） "，然後 SDDL =" O:BAG： DUD：（A; OICI; FA;;;WD）」。
-        - DiscoveryEndpoint = 登入 Azure 入口網站，然後從企業應用程式 > Mopria 探索服務應用程式 > 應用程式 proxy > 外部 URL 取得字串。 省略尾端的 "/"。
-        - PrintServerEndpoint = 登入 Azure 入口網站，然後從企業應用程式 > 企業雲端列印應用程式 > 應用程式 proxy > 外部 URL 取得字串。 省略尾端的 "/"。
+            - 在上述命令的結果中，將**O:BA**新增為前置詞。 例如 如果上一個命令所傳回的字串是 G:DUD：（A; OICI; FA;;;WD），然後 SDDL = O:BAG： DUD：（A; OICI; FA;;;WD）。
+        - DiscoveryEndpoint = 登入 Azure 入口網站，然後從企業應用程式 > Mopria 探索服務應用程式 > 應用程式 proxy > 外部 URL 取得字串。 省略尾端/。
+        - PrintServerEndpoint = 登入 Azure 入口網站，然後從企業應用程式 > 企業雲端列印應用程式 > 應用程式 proxy > 外部 URL 取得字串。 省略尾端/。
         - AzureClientId = 已註冊原生應用程式的應用程式識別碼。
         - AzureTenantGuid = Azure AD 租使用者的目錄識別碼。
         - DiscoveryResourceId = Mopria 探索服務應用程式的應用程式識別碼 URI。
@@ -416,7 +412,7 @@ ms.locfileid: "77114527"
 
         範例命令：
 
-        `Publish-CloudPrinter -Printer HcpTestPrinter -Manufacturer Manufacturer1 -Model Model1 -OrgLocation '{"attrs": [{"category":"country", "vs":"USA", "depth":0}, {"category":"organization", "vs":"MyCompany", "depth":1}, {"category":"site", "vs":"MyCity, State", "depth":2}, {"category":"building", "vs":"Building 1", "depth":3}, {"category":"floor_name", "vs":1, "depth":4}, {"category":"room_name", "vs":"1111", "depth":5}]}' -Sddl "O:BAG:DUD:(A;OICI;FA;;;WD)" -DiscoveryEndpoint "https://mopriadiscoveryservice-contoso.msappproxy.net/mcs" -PrintServerEndpoint "https://enterprisecloudprint-contoso.msappproxy.net/ecp" -AzureClientId "dbe4feeb-cb69-40fc-91aa-73272f6d8fe1" -AzureTenantGuid "8de6a14a-5a23-4c1c-9ae4-1481ce356034" -DiscoveryResourceId "https://mopriadiscoveryservice-contoso.msappproxy.net/mcs/"`
+        `Publish-CloudPrinter -Printer HcpTestPrinter -Manufacturer Manufacturer1 -Model Model1 -OrgLocation '{attrs: [{category:country, vs:USA, depth:0}, {category:organization, vs:MyCompany, depth:1}, {category:site, vs:MyCity, State, depth:2}, {category:building, vs:Building 1, depth:3}, {category:floor_name, vs:1, depth:4}, {category:room_name, vs:1111, depth:5}]}' -Sddl O:BAG:DUD:(A;OICI;FA;;;WD) -DiscoveryEndpoint https://mopriadiscoveryservice-contoso.msappproxy.net/mcs -PrintServerEndpoint https://enterprisecloudprint-contoso.msappproxy.net/ecp -AzureClientId dbe4feeb-cb69-40fc-91aa-73272f6d8fe1 -AzureTenantGuid 8de6a14a-5a23-4c1c-9ae4-1481ce356034 -DiscoveryResourceId https://mopriadiscoveryservice-contoso.msappproxy.net/mcs/`
 
     - 使用下列命令來確認已發佈印表機。
 
@@ -424,7 +420,7 @@ ms.locfileid: "77114527"
 
         範例命令：
 
-        `Publish-CloudPrinter -Query -DiscoveryEndpoint "https://mopriadiscoveryservice-contoso.msappproxy.net/mcs" -AzureClientId "dbe4feeb-cb69-40fc-91aa-73272f6d8fe1" -AzureTenantGuid "8de6a14a-5a23-4c1c-9ae4-1481ce356034" -DiscoveryResourceId "https://mopriadiscoveryservice-contoso.msappproxy.net/mcs/"`
+        `Publish-CloudPrinter -Query -DiscoveryEndpoint https://mopriadiscoveryservice-contoso.msappproxy.net/mcs -AzureClientId dbe4feeb-cb69-40fc-91aa-73272f6d8fe1 -AzureTenantGuid 8de6a14a-5a23-4c1c-9ae4-1481ce356034 -DiscoveryResourceId https://mopriadiscoveryservice-contoso.msappproxy.net/mcs/`
 
 ## <a name="verify-the-deployment"></a>檢查部署
 
@@ -433,7 +429,7 @@ ms.locfileid: "77114527"
 - 您應該會看到描述此端點功能集的 JSON 文字。
 - 移至 [**設定**] [ > **印表機 & 掃描器**] > [**裝置**]。
     - 按一下 [**新增印表機] 或 [掃描器**]。
-    - 您應該會在較新的 Windows 10 電腦上看到「搜尋雲端印表機」（或「在我的組織中搜尋印表機」）連結。
+    - 您應該會看到 [搜尋雲端印表機] （或在較新的 Windows 10 電腦上搜尋我組織中的印表機）連結。
     - 按一下連結。
     - 按一下 [請選取搜尋位置] 連結。
         - 您應該會看到裝置位置階層。
@@ -441,7 +437,7 @@ ms.locfileid: "77114527"
     - 選取 [印表機]，然後按一下 [**新增裝置**] 按鈕。
     - 成功安裝印表機之後，請從您最愛的應用程式列印到印表機。
 
-> 注意：如果使用 "EcpPrintTest" 印表機，您可以在列印伺服器電腦的 "C：\\ECPTestOutput\\EcpTestPrint. xps" 位置中找到輸出檔案。
+> 注意：如果使用 EcpPrintTest 印表機，您可以在列印伺服器電腦的 C：\\ECPTestOutput\\EcpTestPrint. xps location 底下找到輸出檔案。
 
 ## <a name="troubleshooting"></a>疑難排解
 
@@ -452,12 +448,12 @@ ms.locfileid: "77114527"
 |CloudPrintDeploy PowerShell 腳本失敗 | <ul><li>確定 Windows Server 有最新的更新。</li><li>如果使用 Windows Server Update Services （WSUS），請參閱[如何在使用 WSUS/SCCM 時，讓功能隨選和語言套件可用](https://docs.microsoft.com/windows/deployment/update/fod-and-lang-packs)。</li></ul> |
 |SQLite 安裝失敗，訊息：偵測到封裝 ' System.object ' 的相依性迴圈 | Install-Package system.object-providername nuget-SkipDependencies<br>Install-Package EF6-providername nuget-SkipDependencies<br>Install-Package system.string-providername nuget-SkipDependencies<br><br>成功下載套件之後，請確定它們都是相同的版本。 如果不是，請將-requiredversion 參數新增至上述命令，並將它們設定為相同的版本。 |
 |發行印表機失敗 | <ul><li>針對 [傳遞預先驗證]，請確定發行印表機的使用者已獲得發行資料庫的適當許可權。</li><li>針對 Azure AD 預先驗證，請確定已在 IIS 中啟用 Windows 驗證。 請參閱步驟5.3。 此外，請先嘗試傳遞預先驗證。 如果通過預先驗證運作，問題可能與應用程式 proxy 相關。 請參閱針對[應用程式 Proxy 問題和錯誤訊息進行疑難排解](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-troubleshoot)。 請注意，切換到 [通過] 會重設單一登入設定;再次流覽步驟5以重新設定 Azure AD 預先驗證。</li></ul> |
-|列印工作會保持「傳送至印表機」狀態 | <ul><li>請確定連接器伺服器上已啟用 TLS 1.2。 請參閱步驟2.1 中的連結文章。</li><li>請確定連接器伺服器上的 HTTP2 已停用。 請參閱步驟2.1 中的連結文章。</li></ul> |
+|列印工作會保持傳送至印表機狀態 | <ul><li>請確定連接器伺服器上已啟用 TLS 1.2。 請參閱步驟2.1 中的連結文章。</li><li>請確定連接器伺服器上的 HTTP2 已停用。 請參閱步驟2.1 中的連結文章。</li></ul> |
 
 以下是可協助疑難排解的記錄檔位置
 
-|元件 |記錄檔位置 |
+|Component |記錄檔位置 |
 |------|------|
-|Windows 10 用戶端 | <ul><li>使用事件檢視器查看 Azure AD 作業的記錄。 按一下 [**開始**]，然後輸入 "事件檢視器"。 流覽至 [應用程式及服務記錄檔] > Microsoft > Windows > AAD > 作業。</li><li>使用意見反應中樞來收集記錄。 請參閱[使用意見反應中樞應用程式將意見反應傳送給 Microsoft](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app)</li></ul> |
-|連接器伺服器 | 使用事件檢視器查看應用程式 Proxy 的記錄檔。 按一下 [**開始**]，然後輸入 "事件檢視器"。 流覽至 [應用程式及服務記錄檔] > Microsoft > AadApplicationProxy > 連接器 > 系統管理員。 |
+|Windows 10 用戶端 | <ul><li>使用事件檢視器查看 Azure AD 作業的記錄。 按一下 [**開始**]，然後輸入事件檢視器。 流覽至 [應用程式及服務記錄檔] > Microsoft > Windows > AAD > 作業。</li><li>使用意見反應中樞來收集記錄。 請參閱[使用意見反應中樞應用程式將意見反應傳送給 Microsoft](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app)</li></ul> |
+|連接器伺服器 | 使用事件檢視器查看應用程式 Proxy 的記錄檔。 按一下 [**開始**]，然後輸入事件檢視器。 流覽至 [應用程式及服務記錄檔] > Microsoft > AadApplicationProxy > 連接器 > 系統管理員。 |
 |列印伺服器 | 您可以在 C:\inetpub\logs\LogFiles\W3SVC1. 找到 Mopria 探索服務應用程式和企業雲端列印應用程式的記錄檔。 |

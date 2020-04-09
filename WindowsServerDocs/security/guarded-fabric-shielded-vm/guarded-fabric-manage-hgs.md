@@ -1,18 +1,18 @@
 ---
 title: 管理主機守護者服務
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: eecb002e-6ae5-4075-9a83-2bbcee2a891c
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: 41912c90beacbb0c0c285ea4da8305c1afdf2a51
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 2eb9107427ff005c1b3c27e7064d677429d817ee
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322600"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856551"
 ---
 # <a name="managing-the-host-guardian-service"></a>管理主機守護者服務
 
@@ -706,7 +706,7 @@ HGS 上過期的加密或簽署憑證並未指出受防護 Vm 的弱點或遺失
    $updatedKP = Get-Content -Path .\updatedVM001.kp
    Set-VMKeyProtector -VMName VM001 -KeyProtector $updatedKP
    ```
-12. 最後，啟動 VM，並確認其執行成功。
+12.    最後，啟動 VM，並確認其執行成功。
 
 > [!NOTE]
 > 如果 VM 擁有者在 VM 上設定了不正確的金鑰保護裝置，但未授權您的網狀架構執行 VM，您將無法啟動受防護的 VM。

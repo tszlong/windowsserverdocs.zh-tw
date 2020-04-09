@@ -2,22 +2,18 @@
 title: 使用遠端存取監視和計量
 description: 本主題是 Windows Server 2016 中遠端存取監視和帳戶處理指南的一部分。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 92519b49-0df4-43c1-9717-f13570644212
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 81eb82310508242a82d3236f1ec5b4056ad4bf37
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 03d367f2f981ca3ed649f1ca4d5eca23967c9cfc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314115"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860511"
 ---
 # <a name="use-remote-access-monitoring-and-accounting"></a>使用遠端存取監視和計量
 

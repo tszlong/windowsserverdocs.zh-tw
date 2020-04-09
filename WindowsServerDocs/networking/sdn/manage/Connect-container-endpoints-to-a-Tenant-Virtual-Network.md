@@ -1,24 +1,20 @@
 ---
 title: 將容器端點連線至租用戶虛擬網路
 description: 在本主題中，我們將示範如何將容器端點連線至透過 SDN 建立的現有租使用者虛擬網路。 您可以使用適用于 Docker 的 Windows libnetwork 外掛程式所提供的 l2bridge （並選擇性 l2tunnel）網路驅動程式，在租使用者 VM 上建立容器網路。
-manager: ravirao
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f7af1eb6-d035-4f74-a25b-d4b7e4ea9329
-ms.author: lizross
-author: jmesser81
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/24/2018
-ms.openlocfilehash: 5673cb6f808f37fb7737e22cf93c3984073e4f48
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 2b8927ec260b4f5a42aa59a25db1b18896ce91ef
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309830"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854531"
 ---
 # <a name="connect-container-endpoints-to-a-tenant-virtual-network"></a>將容器端點連線至租用戶虛擬網路
 

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 934ac796-e2ee-490d-8265-6a818be5ee79
 title: 透過其他多因素驗證管理機密應用程式的風險
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 79319f54ceb14195dffd56b5a4dfe1b17f048df9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dc6608713ddd60d20b0b717d4133d93d23fc7b25
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407528"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816251"
 ---
 # <a name="manage-risk-with-additional-multi-factor-authentication-for-sensitive-applications"></a>透過其他多因素驗證管理機密應用程式的風險
 
@@ -27,7 +26,7 @@ ms.locfileid: "71407528"
 
 -   [設定 AD FS 的其他驗證方法](../../ad-fs/operations/Configure-Additional-Authentication-Methods-for-AD-FS.md)
 
-## <a name="in-this-guide"></a>此指南內容
+## <a name="in-this-guide"></a>在本指南中
 本指南提供下列資訊：
 
 -   [AD FS 中的驗證機制](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_1)-Windows Server 2012 R2 中 Active Directory 同盟服務（AD FS）提供的驗證機制描述
@@ -39,7 +38,7 @@ ms.locfileid: "71407528"
 
     如需設定和驗證此案例的詳細逐步解說指示，請參閱逐步解說[指南：透過其他多因素驗證管理機密應用程式的風險](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)。
 
-## <a name="BKMK_1"></a>主要概念-AD FS 中的驗證機制
+## <a name="key-concepts---authentication-mechanisms-in-ad-fs"></a><a name="BKMK_1"></a>主要概念-AD FS 中的驗證機制
 
 ### <a name="benefits-of-authentication-mechanisms-in-ad---fs"></a>AD FS 驗證機制的好處
 Windows Server 2012 R2 中的 Active Directory 同盟服務（AD FS）為 IT 系統管理員提供更豐富、更有彈性的工具組，以驗證想要存取公司資源的使用者。 它可讓系統管理員有彈性地控制主要和其他驗證方法，提供豐富的管理體驗來設定驗證原則（透過使用者介面和 Windows PowerShell），並增強存取受 AD FS 保護之應用程式和服務的終端使用者體驗。 以下是在 Windows Server 2012 R2 中使用 AD FS 保護您的應用程式和服務的一些優點：
@@ -118,7 +117,7 @@ MFA 設定 (需要 MFA 的條件) 有下列可用選項：
 
 -   如果受保護資源的存取要求來自外部網路或內部網路，您可以要求 MFA。
 
-## <a name="BKMK_2"></a>案例總覽
+## <a name="scenario-overview"></a><a name="BKMK_2"></a>案例總覽
 在此案例中，您會根據使用者的群組成員資格資料，針對特定應用程式啟用 MFA。 換句話說，您將在同盟伺服器上設定驗證原則，在屬於特定群組的使用者要求存取裝載在網頁伺服器上的特定應用程式時要求 MFA。
 
 更具體來說，在這個案例中，您針對名為 **claimapp** 的宣告測試應用程式啟用驗證原則，因此 AD 使用者 **Robert Hatley** 將需要使用 MFA，因為他屬於 AD 群組 **Finance**。
@@ -147,7 +146,7 @@ MFA 設定 (需要 MFA 的條件) 有下列可用選項：
 
     ```
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 [逐步解說指南：透過其他多因素驗證管理機密應用程式的風險](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 [設定 Windows Server 2012 R2 中 AD FS 的實驗室環境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
 

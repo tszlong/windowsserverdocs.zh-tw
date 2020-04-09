@@ -1,7 +1,5 @@
 ---
-ms.assetid: ''
 title: Active Directory 同盟服務2.0 中的用戶端存取控制原則
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +7,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 4f5d2cfa8383bcf3c0813b272f8c4828473b8df9
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 6ae1f34343e8574ce776fcc5761c078b12bc9977
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948601"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80814821"
 ---
 # <a name="client-access-control-policies-in-ad-fs-20"></a>AD FS 2.0 中的用戶端存取控制原則
 Active Directory 同盟服務2.0 中的用戶端存取原則可讓您限制或授與使用者對資源的存取權。  本檔說明如何在 AD FS 2.0 中啟用用戶端存取原則，以及如何設定最常見的案例。
@@ -141,7 +139,7 @@ Active Directory 同盟服務2.0 中的用戶端存取原則可讓您限制或�
 
 ### <a name="scenario-4-block-all-external-access-to-office-365-for-designated-active-directory-groups"></a>案例4：封鎖指定 Active Directory 群組的所有 Office 365 外部存取
 
-下列範例會根據 IP 位址啟用內部用戶端的存取。 它會封鎖來自公司網路外部用戶端 IP 位址的用戶端存取權，但指定的 Active Directory 群組中的人員除外。此規則集是以預設發佈授權規則為基礎，其標題為 [允許存取]所有使用者。 使用下列步驟，使用 [宣告規則] Wizard 將發行授權規則新增至 Microsoft Office 365 身分識別平臺信賴憑證者信任：
+下列範例會根據 IP 位址啟用內部用戶端的存取。 它會封鎖來自公司網路外部用戶端 IP 位址的用戶端存取權，但指定的 Active Directory 群組中的人員除外。此規則集會根據標題為 [允許所有使用者存取] 的預設發佈授權規則來建立。 使用下列步驟，使用 [宣告規則] Wizard 將發行授權規則新增至 Microsoft Office 365 身分識別平臺信賴憑證者信任：
 
 #### <a name="to-create-a-rule-to-block-all-external-access-to-office-365-for-designated-active-directory-groups"></a>建立規則以封鎖指定 Active Directory 群組的所有 Office 365 外部存取
 
@@ -162,7 +160,7 @@ Active Directory 同盟服務2.0 中的用戶端存取原則可讓您限制或�
 
 ### <a name="descriptions-of-the-claim-rule-language-syntax-used-in-the-above-scenarios"></a>上述案例中使用的宣告規則語言語法描述
 
-|                                                                                                   說明                                                                                                   |                                                                     宣告規則語言語法                                                                     |
+|                                                                                                   描述                                                                                                   |                                                                     宣告規則語言語法                                                                     |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |              預設 AD FS 規則允許所有使用者的存取權。 此規則應該已經存在於 Microsoft Office 365 身分識別平臺信賴憑證者信任發行授權規則清單中。              |                                  = > 問題（類型 = "<https://schemas.microsoft.com/authorization/claims/permit>"，值 = "true"）;                                   |
 |                               將此子句新增至新的自訂規則，會指定要求來自同盟伺服器 proxy （也就是，它具有 x-ms proxy 標頭）                                |                                                                                                                                                                    |
@@ -187,7 +185,7 @@ X 毫秒轉送的用戶端 ip 宣告是從目前僅由 Exchange Online 設定的
 
 透過 VPN 或 Microsoft DirectAccess （DA）連線到公司網路的用戶端，可能會顯示為內部公司用戶端，或作為外部用戶端（視 VPN 或 DA 的設定而定）。
 
-一或多個 IP 位址：當 Exchange Online 無法判斷連線用戶端的 IP 位址時，它會根據 x 轉送的標頭值來設定值，這是一個非標準標頭，可包含在 HTTP 要求中，並受到許多支援用戶端、負載平衡器，以及市場上的 proxy。
+一或多個 IP 位址：當 Exchange Online 無法判斷連線用戶端的 IP 位址時，它會根據 x 轉送的標頭值來設定值，這是可包含在 HTTP 要求中的非標準標頭，而且市場上有許多用戶端、負載平衡器和 proxy 支援。
 
 >[!Note]
 >多個 IP 位址，指出通過要求的每個 proxy 的用戶端 IP 位址和位址，將以逗號分隔。
@@ -271,6 +269,6 @@ AD FS 追蹤事件會記錄到 AD FS 2.0 debug 記錄檔。 若要啟用追蹤�
 
 啟用追蹤之後，請使用下列命令列語法來啟用詳細資訊記錄層級： wevtutil. exe sl "AD FS 2.0 追蹤/Debug"/l：5  
 
-## <a name="related"></a>相關
+## <a name="related"></a>相關的
 如需新宣告類型的詳細資訊，請參閱[AD FS 宣告類型](AD-FS-Claims-Types.md)。
 

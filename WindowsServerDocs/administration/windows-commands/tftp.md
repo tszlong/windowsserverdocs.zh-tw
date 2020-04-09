@@ -1,24 +1,20 @@
 ---
 title: tftp
 description: 在遠端電腦之間傳輸檔案。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 772f19a8-dafe-45cd-878a-f5691f6568ef vhorne
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 66f729d090a78b74bc0334cd9b7276219a980e8c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5ae76883798ddd2b61682700c56684b2ac3f214d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370206"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80832995"
 ---
 # <a name="tftp"></a>tftp
 
@@ -31,12 +27,12 @@ ms.locfileid: "71370206"
 tftp [-i] [<Host>] [{get | put}] <Source> [<Destination>]  
 ```  
 
-### <a name="parameters"></a>Parameters  
+#### <a name="parameters"></a>參數  
 |參數|描述|  
 |-------|--------|  
 |-i|指定二進位影像傳輸模式（也稱為「八位模式」）。 在二進位影像模式中，檔案是以一個位元組的單位傳輸。 傳送二進位檔案時，請使用此模式。 如果省略 **-i** ，則會以 ASCII 模式傳送檔案。 這是預設的傳輸模式。 此模式會將指定電腦的行尾（EOL）字元轉換為適當的格式。 傳送文字檔時，請使用此模式。 如果檔案傳輸成功，則會顯示資料傳送速率。|  
 |\<主機\>|指定本機或遠端電腦。|  
-|提出|將本機電腦上的檔案*來源*傳送到遠端電腦上的檔案*目的地*。 因為 tftp 通訊協定不支援使用者驗證，所以使用者必須登入遠端電腦，而且檔案必須可在遠端電腦上寫入。|  
+|put|將本機電腦上的檔案*來源*傳送到遠端電腦上的檔案*目的地*。 因為 tftp 通訊協定不支援使用者驗證，所以使用者必須登入遠端電腦，而且檔案必須可在遠端電腦上寫入。|  
 |取得|將遠端電腦上的檔案*目的地*傳送到本機電腦上的檔案*來源*。|  
 |\<來源\>|指定要傳送的檔案。|  
 |\<目的地\>|指定要將檔案傳送到何處。|  
@@ -46,11 +42,11 @@ tftp [-i] [<Host>] [{get | put}] <Source> [<Destination>]
 -   Tftp 通訊協定不支援任何驗證或加密機制，因此在出現時可能會導致安全性風險。 不建議針對連線到網際網路的系統安裝 tftp 用戶端。  
 -   Tftp 用戶端是選用軟體，在 Windows Vista 和更新版本的 Windows 作業系統上會標示為已淘汰。 基於安全性理由，Microsoft 不再提供 tftp 伺服器服務。  
 
-## <a name="BKMK_Examples"></a>典型  
+## <a name="examples"></a><a name="BKMK_Examples"></a>典型  
 從遠端電腦**Host1**複製檔**開機。**  
 ```  
 tftp  -i Host1 get boot.img  
 ```  
 
 ## <a name="additional-references"></a>其他參考資料  
--   [命令列語法關鍵](command-line-syntax-key.md)  
+-   - [命令列語法關鍵](command-line-syntax-key.md)  

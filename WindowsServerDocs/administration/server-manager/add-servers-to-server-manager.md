@@ -1,12 +1,8 @@
 ---
-title: 將伺服器新增到伺服器管理員
+title: Add Servers to Server Manager
 description: 伺服器管理員
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aab895f2-fe4d-4408-b66b-cdeadbd8969e
 author: coreyp-at-msft
@@ -14,14 +10,14 @@ ms.author: coreyp
 manager: dongill
 ms.localizationpriority: medium
 ms.date: 02/01/2018
-ms.openlocfilehash: ad30a8f1c4c1e0aa317512eb68fffbd76413175b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f7b5a5b358fa2df54777e0f1f88b1e86a7dafd80
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383264"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851571"
 ---
-# <a name="add-servers-to-server-manager"></a>將伺服器新增到伺服器管理員
+# <a name="add-servers-to-server-manager"></a>Add Servers to Server Manager
 
 >適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -42,7 +38,7 @@ ms.locfileid: "71383264"
 
 -   [使用 [管理身分] 命令提供認證](#BKMK_creds)
 
-## <a name="BKMK_creds"></a>使用 [管理身分] 命令提供認證
+## <a name="provide-credentials-with-the-manage-as-command"></a><a name=BKMK_creds></a>使用 [管理身分] 命令提供認證
 當您新增遠端伺服器至伺服器管理員時，部分您新增的伺服器可能需要不同的使用者帳戶認證來存取或管理它們。 若要指定受管理伺服器的認證 (與您用來登入執行伺服器管理員之電腦的認證不同)，請在新增伺服器至伺服器管理員之後使用 **\[管理身分\]** 命令；以滑鼠右鍵按一下角色或群組首頁上 **\[伺服器\]** 磚之中的受管理伺服器項目即可存取此命令。 按一下 [管理身分] 會開啟 [Windows 安全性] 對話方塊，您可用下列其中一種格式在對話方塊中提供具有受管理伺服器存取權的使用者名稱。
 
 -   *使用者名稱*
@@ -53,7 +49,7 @@ ms.locfileid: "71383264"
 
 由 **\[管理身分\]** 開啟的 **\[Windows 安全性\]** 對話方塊無法接受智慧卡認證；系統不支援透過伺服器管理員提供智慧卡認證。 系統會快取您使用 **\[管理身分\]** 命令提供給受管理伺服器的認證，而且只要您在使用您目前執行伺服器管理員所在的相同電腦來管理該伺服器，或只要您沒有為同一部伺服器指定空白或不同的認證來覆寫那些認證，系統也會加以保存。 如果您將伺服器管理員設定匯出至其他電腦，或是將網域設定檔設定為漫遊以允許伺服器管理員設定在其他電腦上使用，則不會將您伺服器集區中伺服器的 **\[管理身分\]** 認證存放在漫遊設定檔中。 伺服器管理員使用者必須將這些認證新增到他們要管理的每一部電腦。
 
-在您依照本主題的程序新增要管理的伺服器之後，但在使用 **\[管理身分\]** 命令指定管理您新增的伺服器可能需要的替代認證之前，可能會顯示伺服器有下列管理性狀態錯誤：
+在您依照本主題的程序新增要管理的伺服器之後，但在使用 [管理身分] 命令指定管理您新增的伺服器可能需要的替代認證之前，可能會顯示伺服器有下列管理性狀態錯誤：
 
 -   Kerberos 目標解析錯誤
 
@@ -64,7 +60,7 @@ ms.locfileid: "71383264"
 > [!NOTE]
 > 不支援 **\[管理身分\]** 命令的角色和功能包括遠端桌面服務 (RDS) 和 IP 位址管理 (IPAM) 伺服器。 如果您無法使用您執行伺服器管理員所在電腦上使用的相同認證來管理遠端 RDS 或 IPAM 伺服器，請嘗試將您通常用來管理這些遠端伺服器的帳戶新增至執行伺服器管理員所在電腦上的 Administrators 群組。 然後，使用您用來管理執行 RDS 或 IPAM 之遠端伺服器的帳戶登入正在執行伺服器管理員的電腦。
 
-## <a name="BKMK_add"></a>新增要管理的伺服器
+## <a name="add-servers-to-manage"></a><a name=BKMK_add></a>新增要管理的伺服器
 您可以在 **\[新增伺服器\]** 對話方塊中使用下列三種方法中的任何方法，將伺服器新增至伺服器管理員以進行管理。
 
 -   **Active Directory Domain Services** 新增要管理的伺服器，Active Directory 可以在與本機電腦相同的網域中尋找這些伺服器。
@@ -73,7 +69,7 @@ ms.locfileid: "71383264"
 
 -   **匯入多部伺服器**：在檔案中指定多部要匯入的伺服器，檔案所包含的伺服器是依電腦名稱或 IP 位址列出。
 
-#### <a name="to-add-servers-to-the-server-pool"></a>若要將伺服器新增至伺服器集區
+#### <a name="to-add-servers-to-the-server-pool"></a>將伺服器新增到伺服器集區
 
 1.  如果已經開啟伺服器管理員，請移至下一個步驟。 如果尚未開啟伺服器管理員，請執行下列其中一項動作來將它開啟。
 
@@ -83,7 +79,7 @@ ms.locfileid: "71383264"
 
 2.  在 **\[管理\]** 功能表上，按一下 **\[新增伺服器\]** 。
 
-3.  執行下列其中一項。
+3.  執行下列其中一個步驟。
 
     -   在 [ **Active Directory** ] 索引標籤上，選取位於目前網域中的伺服器。 選取時按住 **Ctrl** 即可選取多部伺服器。 按一下向右箭號按鈕，將選取的伺服器移至 **\[已選取\]** 清單。
 
@@ -96,7 +92,7 @@ ms.locfileid: "71383264"
 ### <a name="add-and-manage-servers-in-workgroups"></a>在工作群組中新增和管理伺服器
 雖然將工作群組中的伺服器新增至服器管理員可能會成功，但是在新增之後， **\[伺服器\]** 磚 (在包含工作群組伺服器的角色或群組頁面上) 的 **\[管理性\]** 欄會顯示 **\[認證無效\]** 錯誤，這個錯誤會在嘗試連線至遠端工作群組伺服器或從中收集資料時發生。
 
-這些或類似的錯誤可能會在下列情況中發生。
+下列情況可能會發生這些或類似的錯誤。
 
 -   受管理的伺服器位於與執行伺服器管理員的電腦相同的工作群組中。
 
@@ -114,7 +110,7 @@ ms.locfileid: "71383264"
 
 ##### <a name="to-add-remote-workgroup-servers-to-server-manager"></a>將遠端工作群組伺服器新增到伺服器管理員
 
-1.  在執行伺服器管理員的電腦上，將工作群組伺服器名稱新增至 **\[TrustedHosts\]** 清單。 這是 NTLM 驗證的需求。 若要將電腦名稱新增至現有的信任主機清單，請在命令中加入 `Concatenate` 參數。 例如，若要將 `Server01` 電腦新增到現有的信任主機清單，請使用下列命令。
+1.  在執行伺服器管理員的電腦上，將工作群組伺服器名稱新增至 **\[TrustedHosts\]** 清單。 這是 NTLM 驗證的需求。 若要將電腦新增到現有的信任主機清單，請在命令中加入 `Concatenate` 參數。 例如，若要將 `Server01` 電腦新增到現有的信任主機清單，請使用下列命令。
 
     ```
     Set-Item wsman:\localhost\Client\TrustedHosts Server01 -Concatenate -force
@@ -129,7 +125,7 @@ ms.locfileid: "71383264"
 3.  > [!IMPORTANT]
     > 執行這個步驟中的 Cmdlet，會覆寫使用者帳戶控制 (UAC) 測量，除非內建的 Administrator 或 System 帳戶正在執行處理序，否則可防止提高權限的處理序在工作群組電腦上執行。 這個 Cmdlet 讓 Administrators 群組成員能夠在未使用內建系統管理員身分登入時管理工作群組伺服器。 允許其他使用者管理工作群組伺服器會降低它的安全性；不過，這會比提供內建的 Administrator 帳戶認證來得安全，因為可能會有多人正在管理該工作群組伺服器。
 
-    若要覆寫在工作群組電腦上執行提高權限的處理序的 UAC 限制，請執行下列 Cmdlet，在工作群組伺服器上建立名為 **LocalAccountTokenFilterPolicy** 的登錄項目。
+    若要覆寫在工作群組電腦上執行提高權限的處理序的 UAC 限制，請執行下列 Cmdlet，在工作群組伺服器上建立名為 **LocalAccountTokenFilterPolicy** 的登錄項。
 
     ```
     New-ItemProperty -Name LocalAccountTokenFilterPolicy -path HKLM:\SOFTWARE\Microsoft\Windows\Currentversion\Policies\System -propertytype DWord -value 1
@@ -145,7 +141,7 @@ ms.locfileid: "71383264"
 
 ##### <a name="to-add-remote-servers-when-server-manager-is-running-on-a-workgroup-computer"></a>當伺服器管理員在工作群組電腦上執行時新增遠端伺服器
 
-1.  在執行伺服器管理員的電腦上，將遠端伺服器新增至 Windows PowerShell 工作階段中本機電腦的 **\[TrustedHosts\]** 清單。 若要將電腦名稱新增至現有的信任主機清單，請在命令中加入 `Concatenate` 參數。 例如，若要將 `Server01` 電腦新增到現有的信任主機清單，請使用下列命令。
+1.  在執行伺服器管理員的電腦上，將遠端伺服器新增至 Windows PowerShell 工作階段中本機電腦的 **\[TrustedHosts\]** 清單。 若要將電腦新增到現有的信任主機清單，請在命令中加入 `Concatenate` 參數。 例如，若要將 `Server01` 電腦新增到現有的信任主機清單，請使用下列命令。
 
     ```
     Set-Item wsman:\localhost\Client\TrustedHosts Server01 -Concatenate -force
@@ -170,12 +166,12 @@ ms.locfileid: "71383264"
 
 -   將叢集中的一部伺服器新增至伺服器管理員時，叢集中的實體和虛擬伺服器都會自動新增至伺服器管理員。 同樣地，當您從伺服器管理員移除叢集中的伺服器，系統會提示您移除叢集中的其他伺服器。
 
--   伺服器管理員不會顯示叢集化虛擬伺服器的資料，因為資料是動態的，並且與裝載虛擬叢集節點之伺服器的資料完全相同。 您可以選取裝載虛擬伺服器的伺服器來檢視其資料。
+-   伺服器管理員不會顯示叢集化虛擬伺服器的資料，因為資料是動態的，並且與裝載虛擬叢集節點之伺服器的資料完全相同。 您可以選取裝載該虛擬伺服器的伺服器以檢視其資料。
 
 -   如果您使用伺服器的虛擬叢集物件名稱，將該伺服器新增至伺服器管理員，則在伺服器管理員中顯示的是虛擬物件名稱，而不是預期的實體伺服器名稱。
 
--   您無法在叢集化虛擬伺服器上安裝角色和功能。
+-   您無法在叢集中的虛擬伺服器上安裝角色和功能。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 [伺服器管理員](server-manager.md)
 [建立和管理伺服器群組](create-and-manage-server-groups.md)

@@ -1,7 +1,6 @@
 ---
 title: 儲存空間直接存取的常見問題
 description: 深入瞭解儲存空間直接存取
-keywords: 儲存空間
 ms.prod: windows-server
 ms.author: kaushik
 ms.technology: storage-spaces
@@ -9,12 +8,12 @@ ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 19dcc1c57fe7c7eea74b003553a0b0a6ab5508aa
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 18384ab3c9e520ace9237b68474a45c8ec349502
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950234"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856101"
 ---
 # <a name="storage-spaces-direct---frequently-asked-questions-faq"></a>儲存空間直接存取-常見問題（FAQ）
 
@@ -36,13 +35,13 @@ ms.locfileid: "75950234"
 
 新增新的容錯網域之後，您建立的新虛擬磁片會跳到3向鏡像。 不過，現有的虛擬磁片將會維持為雙向鏡像磁片。 您可以從現有的磁片區將資料複製到新的虛擬磁片，以獲得新復原的優點。
  
-## <a name="the-storage-spaces-direct-was-created-using-the-autoconfig0-switch-and-the-pool-created-manually-when-i-try-to-query-the-storage-spaces-direct-pool-to-create-a-new-volume-i-get-a-message-that-says-enable-clusters2d-again-what-should-i-do"></a>儲存空間直接存取是使用自動設定：0所建立的參數和手動建立的集區。 當我嘗試查詢儲存空間直接存取集區以建立新的磁片區時，會收到一則訊息，指出「再次啟用-Enable-clusters2d」。我該怎麼做？
+## <a name="the-storage-spaces-direct-was-created-using-the-autoconfig0-switch-and-the-pool-created-manually-when-i-try-to-query-the-storage-spaces-direct-pool-to-create-a-new-volume-i-get-a-message-that-says-enable-clusters2d-again-what-should-i-do"></a>儲存空間直接存取是使用自動設定：0所建立的參數和手動建立的集區。 當我嘗試查詢儲存空間直接存取集區以建立新的磁片區時，會收到一則訊息，指出「再次啟用-Enable-clusters2d」。 我該怎麼做？
 
 根據預設，當您使用 enable-S2D Cmdlet 設定儲存空間直接存取時，此 Cmdlet 會為您執行所有工作。 它會建立集區和層級。 使用自動設定時：0時，必須以手動方式完成所有作業。 如果您只建立集區，就不一定會建立該層。 如果您未以對應于所連接裝置的方式建立所有層或尚未建立的階層，您將會收到「Enable-clusters2d 再次出現」錯誤訊息。 我們建議您不要在生產環境中使用自動設定參數。 
  
 ## <a name="is-it-possible-to-add-a-spinning-disk-hdd-to-the-storage-spaces-direct-pool-after-you-have-created-storage-spaces-direct-with-ssd-devices"></a>在建立 SSD 裝置的儲存空間直接存取之後，是否可以將旋轉磁片（HDD）新增至儲存空間直接存取集區？
 
-不。 根據預設，如果您使用單一裝置類型來建立集區，它不會設定快取磁片，而且所有磁片都會用於容量。 您可以在設定中新增 NVME 磁片，而 NVME 磁片則會針對快取進行設定。
+No。 根據預設，如果您使用單一裝置類型來建立集區，它不會設定快取磁片，而且所有磁片都會用於容量。 您可以在設定中新增 NVME 磁片，而 NVME 磁片則會針對快取進行設定。
  
 ## <a name="i-have-configured-a-2-rack-fault-domain-rack-1-has-2-fault-domains-rack-2-has-1-fault-domain-each-server-has-4-capacity-100-gb-devices-can-i-use-all-1200-gb-of-space-from-the-pool"></a>我設定了2個機架的容錯網域：機架1有2個容錯網域，第2機架有1個容錯網域。 每部伺服器都有4個容量 100 GB 的裝置。 我可以從集區使用所有 1200 GB 的空間嗎？
 
@@ -58,7 +57,7 @@ ms.locfileid: "75950234"
  
 ## <a name="is-there-a-calculator-that-shows-the-exact-size-of-the-disks-that-are-being-set-aside-for-cache-capacity-and-resiliency-that-would-enable-me-to-plan-better"></a>是否有計算機會顯示針對快取、容量和復原所設定的確切磁片大小，讓我能夠更好地進行規劃？
 
-您可以使用「儲存空間」計算機協助您進行規劃。 您可以在 https://aka.ms/s2dcalc 取得此功能。
+您可以使用「儲存空間」計算機協助您進行規劃。 您可以在 https://aka.ms/s2dcalc取得此功能。
  
 ## <a name="what-is-the-best-configuration-that-you-would-recommend-when-configuring-6-servers-and-3-racks"></a>設定6部伺服器和3個機架時，建議您最好的設定為何？
 
@@ -87,5 +86,5 @@ Get-PhysicalDisk -SerialNumber <SerialNumber> | Enable-StorageMaintenanceMode
 這個：
 
 ```powershell
-get-virtualdisk -friendlyname “xyz” | get-physicalextent
+get-virtualdisk -friendlyname "xyz" | get-physicalextent
 ```

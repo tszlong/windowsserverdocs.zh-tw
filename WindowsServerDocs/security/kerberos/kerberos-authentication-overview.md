@@ -1,24 +1,20 @@
 ---
 title: Kerberos Authentication Overview
 description: Windows Server 安全性
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-kerberos
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 646c6309-e865-4be2-b415-44dd125af5c2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 33712dc8502035bd9e47e1d2bdd4583eb8347dec
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6b5ec9bfa5c17a9ee9a5ad15af183d25bd533d7e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386312"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856321"
 ---
 # <a name="kerberos-authentication-overview"></a>Kerberos Authentication Overview
 
@@ -26,12 +22,12 @@ ms.locfileid: "71386312"
 
 Kerberos 是用來驗證使用者或主機身分識別的驗證通訊協定。 本主題包含 Windows Server 2012 和 Windows 8 中 Kerberos 驗證的相關資訊。
 
-## <a name="BKMK_OVER"></a>功能描述
+## <a name="feature-description"></a><a name="BKMK_OVER"></a>功能描述
 Windows Server 作業系統會針對公開金鑰驗證、傳輸授權資料及委派，實作 Kerberos 第 5 版的驗證通訊協定和延伸。 Kerberos 驗證用戶端會實作為安全性支援提供者，\(SSP\)，而且可以透過安全性支援提供者介面 \(SSPI\)來存取。 初始使用者驗證會與在架構上的 Winlogon 單一登入\-整合。
 
 Kerberos 金鑰發佈中心 \(KDC\) 會與網域控制站上執行的其他 Windows Server 安全性服務整合。 KDC 會使用網域的 Active Directory Domain Services 資料庫做為它的安全性帳戶資料庫。 在網域或樹系中實作預設的 Kerberos 時，需要 Active Directory 網域服務。
 
-## <a name="kerb_tr_Kerb_Benefits"></a>實際應用
+## <a name="practical-applications"></a><a name="kerb_tr_Kerb_Benefits"></a>實際應用
 針對以網域\-為基礎的驗證，使用 Kerberos 取得的優點如下：
 
 -   **委派的驗證。**
@@ -54,7 +50,7 @@ Kerberos 金鑰發佈中心 \(KDC\) 會與網域控制站上執行的其他 Wind
 
     在網路連線任一端的一方可以使用 Kerberos 通訊協定來驗證另一端的一方是它所宣稱的實體。 NTLM 不會讓用戶端驗證服務器的身分識別，或讓一部伺服器驗證另一部伺服器的身分識別。 NTLM 驗證是針對假設伺服器為正版的網路環境所設計。 Kerberos 通訊協定不會做這種假設。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 [Windows 驗證概觀](../windows-authentication/windows-authentication-overview.md)
 
 

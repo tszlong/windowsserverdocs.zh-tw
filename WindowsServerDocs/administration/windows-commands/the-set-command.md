@@ -1,30 +1,27 @@
 ---
-title: Set 命令
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+title: 設定
+description: 適用于 set 的 Windows 命令主題，設定 Windows 部署服務伺服器、預先設置的電腦、映射、映射群組和傳輸伺服器的屬性和屬性。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5def6be0-83b9-4133-bc1b-bbe6d407eca7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8131685b227444a0114e9c0eb70d6191a78f3da0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2e47a90137a94d4ada149135ee0b593e0ade0ae3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385079"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80833051"
 ---
-# <a name="the-set-command"></a>Set 命令
+# <a name="set"></a>設定
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 設定 Windows 部署服務伺服器、預先設置的電腦、映射、映射群組和傳輸伺服器的內容和屬性。
+
 ## <a name="subcommands"></a>子
 |來|描述|
 |-------|--------|

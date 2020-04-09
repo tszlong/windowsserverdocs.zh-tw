@@ -1,24 +1,20 @@
 ---
 title: rem
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1a45b585-a83c-4ff6-badd-ff40f34cec23
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2da0b6e42858582c1485659f3bf8f59e8e2ed97e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 94428e6d5ec6fdb482a5d0d15bd1120e45ffea80
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384570"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836111"
 ---
 # <a name="rem"></a>rem
 
@@ -34,11 +30,11 @@ ms.locfileid: "71384570"
 rem [<Comment>]
 ```
 
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
-|\<Comment >|指定要包含在批註中的字元字串。|
+|\<批註 >|指定要包含在批註中的字元字串。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
@@ -47,7 +43,7 @@ rem [<Comment>]
 -   您不能在批次檔批註中使用重新導向字元（ **<** 或 **>** ）或管道（ **|** ）。
 -   雖然您可以使用**rem**而不加批註來將垂直間距新增至批次檔，但您也可以使用空白行。 處理批次程式時，會忽略空白行。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 下列範例顯示的批次檔會使用備註和垂直間距：
 ```
@@ -65,6 +61,6 @@ rem Set prompt to indicate current directory
 prompt $p$g
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

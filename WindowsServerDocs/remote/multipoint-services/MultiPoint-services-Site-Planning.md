@@ -1,24 +1,20 @@
 ---
 title: MultiPoint 服務網站規劃
 description: Windows Server 2016 中 MultiPoint 服務部署的規劃資訊
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 063783cd-d748-489e-b175-46eadc993f7a
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 744e49f47f7144dac82dbe68c885060b0c08490d
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 1ad91d0e4f3e8de806ff46bf6b83051177025661
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322790"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853441"
 ---
 # <a name="multipoint-services-site-planning"></a>MultiPoint 服務網站規劃
 您應該考慮將會部署一或多部執行 MultiPoint 服務之電腦及其相關聯的工作站的位置。  

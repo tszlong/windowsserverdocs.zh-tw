@@ -4,15 +4,15 @@ description: Hyper-v 效能調整中的處理器效能考慮
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Asmahi; SandySp; JoPoulso
+ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 5d61d0e37bd80033bfcfb0cf5c601d8bcedda104
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fc1d6bdb848ea9662ba9b3d3119f286af3476688
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370036"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851751"
 ---
 # <a name="hyper-v-processor-performance"></a>Hyper-v 處理器效能
 

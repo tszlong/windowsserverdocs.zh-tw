@@ -1,30 +1,26 @@
 ---
 title: mstsc
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 59801227-1e7e-4dbd-96e6-f54102a3ce92
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bd68defd56f5e0b910c9505d6b159d242c95e6f0
-ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
+ms.openlocfilehash: e5accd56ea622b85966bf0cb95750d8bb2d97e42
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76259093"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839071"
 ---
 # <a name="mstsc"></a>mstsc
 
 >適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-建立遠端桌面工作階段主機（rd 工作階段主機）伺服器或其他遠端電腦的連線、編輯現有的遠端桌面連線（.rdp）設定檔，以及遷移以用戶端連線管理員建立的舊版連接檔案。新的 .rdp 連接檔案。
+建立遠端桌面工作階段主機（rd 工作階段主機）伺服器或其他遠端電腦的連線、編輯現有的遠端桌面連線（.rdp）設定檔，並將使用用戶端連接管理員建立的舊版連接檔案遷移至新的 .rdp 連接檔案。
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 > [!NOTE]
 > 在 Windows Server 2008 R2 中，終端機服務已重新命名為遠端桌面服務。 若要瞭解最新版本的新功能，請參閱 Windows Server TechNet Library 中的[Windows server 2012 遠端桌面服務的新功能](https://technet.microsoft.com/library/hh831527)。
@@ -36,9 +32,9 @@ mstsc.exe /edit <Connection File>
 mstsc.exe /migrate
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
-|        參數        |                                                         說明                                                         |
+|        參數        |                                                         描述                                                         |
 |-------------------------|-----------------------------------------------------------------------------------------------------------------------------|
 |    <Connection File>    |                                   指定連接的 .rdp 檔案名。                                    |
 |  /v： < 伺服器\>[： < 埠\>] |                指定遠端電腦，以及您想要連接的埠號碼（選擇性）。                 |
@@ -56,7 +52,7 @@ mstsc.exe /migrate
 -   預設會將每個使用者的 .rdp 儲存為使用者的 [檔] 資料夾中的隱藏檔案。 使用者建立的 .rdp 檔案預設會儲存在使用者的 [檔] 資料夾中，但可以儲存在任何位置。
 -   若要跨越監視器，監視器必須使用相同的解析度，而且必須水準對齊（也就是並存）。 目前不支援跨越用戶端系統上彼此垂直的多個監視器顯示桌面內容。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 -   若要以全螢幕模式連接到會話，請輸入：
     ```
     mstsc /f
@@ -66,6 +62,6 @@ mstsc.exe /migrate
     mstsc /edit filename.rdp
     ```
 
-#### <a name="additional-references"></a>其他參考
--   [命令列語法關鍵](command-line-syntax-key.md)
--   [遠端桌面服務&#40;終端機&#41;服務命令參考](remote-desktop-services-terminal-services-command-reference.md)
+## <a name="additional-references"></a>其他參考資料
+-   - [命令列語法關鍵](command-line-syntax-key.md)
+-   [遠端桌面服務 (終端機服務) 命令參考資料](remote-desktop-services-terminal-services-command-reference.md)

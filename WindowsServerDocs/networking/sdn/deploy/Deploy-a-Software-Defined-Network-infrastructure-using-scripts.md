@@ -1,27 +1,24 @@
 ---
 title: 使用腳本部署軟體定義的網路基礎結構
-description: 本主題說明如何使用 Windows Server 2016 中的腳本來部署 Microsoft 軟體定義網路（SDN）基礎結構。
-manager: dougkim
+description: 本主題說明如何使用 Windows Server 2016 中的腳本來部署 Microsoft 軟體定義網路（SDN）基礎結構。 '
+manager: grcusanz
 ms.prod: windows-server
-ms.service: virtual-network
 ms.technology: networking-sdn
 ms.topic: get-started-article
 ms.assetid: 5ba5bb37-ece0-45cb-971b-f7149f658d19
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: 1a17d5f5fec0a05b4258b295eb37b6dc80cdaee1
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 522c4c640daf438f122857154fed2b0ec8138bec
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313050"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855721"
 ---
 # <a name="deploy-a-software-defined-network-infrastructure-using-scripts"></a>使用指令碼部署軟體定義網路的基礎結構
 
->適用於：Windows Server (半年通道)、Windows Server 2016
-
-在本主題中，您會使用腳本來部署 Microsoft 軟體定義網路（SDN）基礎結構。 基礎結構包含高可用性（HA）網路控制站、HA 軟體 Load Balancer （SLB）/MUX、虛擬網路，以及相關聯的存取控制清單（Acl）。 此外，另一個腳本會部署租使用者工作負載，以驗證您的 SDN 基礎結構。  
+>適用物件：本主題中的 Windows Server （半年通道）、Windows Server 2016 '，您可以使用腳本部署 Microsoft 軟體定義網路（SDN）基礎結構。 基礎結構包含高可用性（HA）網路控制站、HA 軟體 Load Balancer （SLB）/MUX、虛擬網路，以及相關聯的存取控制清單（Acl）。 此外，另一個腳本會部署租使用者工作負載，以驗證您的 SDN 基礎結構。  
 
 如果您想要讓租使用者工作負載在其虛擬網路外部進行通訊，您可以設定 SLB NAT 規則、站對站閘道通道或第3層轉送，以在虛擬和實體工作負載之間進行路由。  
 
@@ -88,8 +85,7 @@ ms.locfileid: "80313050"
 
    a. 以滑鼠右鍵按一下 [**開始**]，按一下 [**系統**]，然後按一下 [**變更設定**]。  
    b. 按一下 [變更]。  
-   c. 按一下 [**網域**]，並指定功能變數名稱。  
-   d. 按一下 [確定]。  
+   c. 按一下 [**網域**]，並指定功能變數名稱。  "" "" d。 按一下 [確定]。  
    e. 出現提示時，輸入使用者名稱和密碼認證。  
    f. 重新啟動伺服器。  
 
@@ -158,7 +154,7 @@ ms.locfileid: "80313050"
    |    憑證    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         NC 憑證檔案的暫存共用位置。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
    |   映像    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         空白，將您的 Windows Server 2016 vhdx 映射放在這裡                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
    |    工具    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            用於疑難排解和調試的公用程式。  已複製到主機和虛擬機器。  建議您在這裡網路監視器或 Wireshark，讓它可在必要時使用。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-   |   指令碼   | 部署腳本。<br /><br />-   **SDNExpress. ps1**<br />    部署並設定網狀架構，包括網路控制站虛擬機器、SLB Mux 虛擬機器、閘道集區，以及對應至集區的 HNV 閘道虛擬機器。<br />-   **fabricconfig.psd1. .psd1**<br />    SDNExpress 腳本的設定檔案範本。  您會為您的環境自訂此程式。<br />-   **SDNExpressTenant. ps1**<br />    在具有負載平衡 VIP 的虛擬網路上部署範例租使用者工作負載。<br />    也會在服務提供者邊緣閘道上布建一或多個網路連線（IPSec S2S VPN、GRE、L3），而這些閘道會連接到先前建立的租使用者工作負載。 IPSec 和 GRE 閘道可透過對應的 VIP IP 位址，以及透過對應位址集區的 L3 轉送閘道來進行連線。<br />    此腳本也可以用來刪除具有 [復原] 選項的對應設定。<br />-   **TenantConfig. .psd1**<br />    租使用者工作負載和 S2S 閘道設定的範本設定檔案。<br />-   **SDNExpressUndo. ps1**<br />    清除網狀架構環境，並將其重設為啟動狀態。<br />-   **SDNExpressEnterpriseExample. ps1**<br />    布建一或多個企業網站環境，其中包含一個遠端存取閘道，以及（選擇性）每個網站一個對應的企業虛擬機器。 IPSec 或 GRE 企業閘道會連接到服務提供者閘道的對應 VIP IP 位址，以建立 S2S 通道。 L3 轉送閘道會透過對應的對等 IP 位址進行連接。 <br />            此腳本也可以用來刪除具有 [復原] 選項的對應設定。<br />-   **EnterpriseConfig. .psd1**<br />    適用于企業站對站閘道和用戶端 VM 設定的範本設定檔。 |
+   |   指令碼   | 部署腳本。<p>-   **SDNExpress. ps1**<br />    部署並設定網狀架構，包括網路控制站虛擬機器、SLB Mux 虛擬機器、閘道集區，以及對應至集區的 HNV 閘道虛擬機器。<br />-   **fabricconfig.psd1. .psd1**<br />    SDNExpress 腳本的設定檔案範本。  您會為您的環境自訂此程式。<br />-   **SDNExpressTenant. ps1**<br />    在具有負載平衡 VIP 的虛擬網路上部署範例租使用者工作負載。<br />    也會在服務提供者邊緣閘道上布建一或多個網路連線（IPSec S2S VPN、GRE、L3），而這些閘道會連接到先前建立的租使用者工作負載。 IPSec 和 GRE 閘道可透過對應的 VIP IP 位址，以及透過對應位址集區的 L3 轉送閘道來進行連線。<br />    此腳本也可以用來刪除具有 [復原] 選項的對應設定。<br />-   **TenantConfig. .psd1**<br />    租使用者工作負載和 S2S 閘道設定的範本設定檔案。<br />-   **SDNExpressUndo. ps1**<br />    清除網狀架構環境，並將其重設為啟動狀態。<br />-   **SDNExpressEnterpriseExample. ps1**<br />    布建一或多個企業網站環境，其中包含一個遠端存取閘道，以及（選擇性）每個網站一個對應的企業虛擬機器。 IPSec 或 GRE 企業閘道會連接到服務提供者閘道的對應 VIP IP 位址，以建立 S2S 通道。 L3 轉送閘道會透過對應的對等 IP 位址進行連接。 <br />            此腳本也可以用來刪除具有 [復原] 選項的對應設定。<br />-   **EnterpriseConfig. .psd1**<br />    適用于企業站對站閘道和用戶端 VM 設定的範本設定檔。 |
    | TenantApps  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             用來部署範例租使用者工作負載的檔案。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 
    ---

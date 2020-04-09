@@ -2,20 +2,19 @@
 title: 避免將一個儲存體路徑對應至多個資源集區
 description: 此最佳做法分析程式規則的線上版本文字。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 24992453-762b-4892-9a50-55d237b9b7f2
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: e89c0382d20d586d8c0b50396ddbd56d6fdadf0b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 53ef04a2dde875b26dd109075a2cfa4484ebd5cd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365260"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857751"
 ---
 # <a name="avoid-mapping-one-storage-path-to-multiple-resource-pools"></a>避免將一個儲存體路徑對應至多個資源集區
 

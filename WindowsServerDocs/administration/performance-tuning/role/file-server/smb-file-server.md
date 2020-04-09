@@ -5,14 +5,14 @@ ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 author: phstee
-ms.author: NedPyle; Danlo; DKruse
+ms.author: nedpyle; danlo; dkruse
 ms.date: 4/14/2017
-ms.openlocfilehash: 918d21139a068da1a46fbda1fa5034e14c8379c0
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 89017686801501593c51245d44bf88a6ecf4baf6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947068"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851821"
 ---
 # <a name="performance-tuning-for-smb-file-servers"></a>SMB 檔案伺服器的效能微調
 
@@ -106,7 +106,7 @@ SMB 相應放大允許在叢集設定中使用 SMB 3.0，在叢集的所有節�
   預設值分別是512和8192。 這些參數可讓伺服器在指定的界限內動態地對用戶端操作並行進行節流。 某些用戶端可能會以較高的平行存取限制來達到增加的輸送量，例如，透過高頻寬、高延遲的連結複製檔案。
     
   > [!TIP]
-  > 在 Windows 10 和 Windows Server 2016 之前，授與用戶端的信用額度數目會根據演算法，在 Smb2CreditsMin 與 Smb2CreditsMax 之間動態變化，這是依據嘗試判斷根據網路延遲而授與的最佳信用額度數目和點數使用方式。 在 Windows 10 和 Windows Server 2016 中，SMB 伺服器已變更為在要求時，無條件將信用額度授與已設定的最大點數。 做為這項變更的一部分，信用節流機制會在伺服器發生記憶體不足的壓力時，減少每個連線的點數視窗大小。 觸發節流的核心記憶體不足事件只會在伺服器記憶體不足（< 幾 MB）時才會收到信號，表示毫無用處。 因為伺服器不會再縮減信用額度視窗，所以不再需要 Smb2CreditsMin 設定，而且現在會忽略。
+  > 在 Windows 10 和 Windows Server 2016 之前，授與用戶端的信用額度數目會根據嘗試根據網路延遲和點數使用量來判斷所要授與的最佳信用額度數目的演算法，在 Smb2CreditsMin 與 Smb2CreditsMax 之間動態變化。 在 Windows 10 和 Windows Server 2016 中，SMB 伺服器已變更為在要求時，無條件將信用額度授與已設定的最大點數。 做為這項變更的一部分，信用節流機制會在伺服器發生記憶體不足的壓力時，減少每個連線的點數視窗大小。 觸發節流的核心記憶體不足事件只會在伺服器記憶體不足（< 幾 MB）時才會收到信號，表示毫無用處。 因為伺服器不會再縮減信用額度視窗，所以不再需要 Smb2CreditsMin 設定，而且現在會忽略。
   > 
   > 您可以監視 SMB 用戶端共用\\點數會延遲數秒，以查看是否有任何信用額度問題。
 
@@ -127,7 +127,7 @@ SMB 相應放大允許在叢集設定中使用 SMB 3.0，在叢集的所有節�
   HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\MaxThreadsPerQueue
   ```
 
-  預設值為 20。 增加此值會引發檔案伺服器可用於服務並行要求的執行緒數目。 當有大量作用中的連線需要服務，且硬體資源（例如存放裝置頻寬）足夠時，增加價值可以改善伺服器的擴充性、效能和回應時間。
+  預設值為20。 增加此值會引發檔案伺服器可用於服務並行要求的執行緒數目。 當有大量作用中的連線需要服務，且硬體資源（例如存放裝置頻寬）足夠時，增加價值可以改善伺服器的擴充性、效能和回應時間。
 
   >[!TIP]
   > 可能需要增加值的指示是，如果 SMB2 工作佇列的成長非常大（效能計數器「伺服器工作佇列」\\佇列長度\\SMB2 非封鎖 \*' 的持續時間高於100）。
@@ -142,13 +142,13 @@ SMB 相應放大允許在叢集設定中使用 SMB 3.0，在叢集的所有節�
   HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\AsynchronousCredits
   ```
 
-  預設值為 512。 此參數會限制單一連接上允許的並行非同步 SMB 命令數目。 在某些情況下（例如，當前端伺服器具有後端 IIS 伺服器時）需要大量的平行存取（尤其是針對檔案變更通知要求）。 此專案的值可以增加以支援這些案例。
+  預設值為512。 此參數會限制單一連接上允許的並行非同步 SMB 命令數目。 在某些情況下（例如，當前端伺服器具有後端 IIS 伺服器時）需要大量的平行存取（尤其是針對檔案變更通知要求）。 此專案的值可以增加以支援這些案例。
 
 ### <a name="smb-server-tuning-example"></a>SMB 伺服器微調範例
 
 下列設定可在許多情況下，優化電腦的檔案伺服器效能。 在所有電腦上，這些設定並不是最佳或適當的。 套用個別設定之前，您應該評估其影響。
 
-| 參數                       | 值 | Default |
+| 參數                       | 值 | 預設 |
 |---------------------------------|-------|---------|
 | AdditionalCriticalWorkerThreads | 64    | 0       |
 | MaxThreadsPerQueue              | 64    | 20      |

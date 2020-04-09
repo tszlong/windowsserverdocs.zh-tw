@@ -1,19 +1,19 @@
 ---
 title: 新增 TPM 信任證明的主機資訊
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: f0aa575b-b34e-4f6c-8416-ed3e398e0ad2
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 06/21/2019
-ms.openlocfilehash: 923bc2c46f37cf7e631a744c9eae85c3dd7506dd
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: f9a0ee9cb78a89b20140e40a2bd3ae42da56c84f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949810"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856931"
 ---
 >適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
 
@@ -22,36 +22,36 @@ ms.locfileid: "75949810"
 針對 TPM 模式，網狀架構系統管理員會捕獲三種主機資訊，每個都必須新增至 HGS 設定：
 
 - 每部 Hyper-v 主機的 TPM 識別碼（EKpub）
-- 程式碼完整性原則，這是 Hyper-v 主機允許之二進位檔的允許清單
+- 程式碼完整性原則，這是 Hyper-v 主機允許之二進位檔的白名單
 - TPM 基準（開機測量），代表在相同硬體類別上執行的一組 Hyper-v 主機
-
-在網狀架構系統管理員捕捉到資訊之後，請將它新增至 HGS 設定，如下列程式所述。
+    
+Af er：網狀架構系統管理員會捕捉資訊，將其新增至 HGS 設定，如下列程式所述。
 
 1. 取得包含 EKpub 資訊的 XML 檔案，並將其複製到 HGS 伺服器。 每一部主機會有一個 XML 檔案。 然後，在 HGS 伺服器上提高許可權的 Windows PowerShell 主控台中，執行下列命令。 針對每個 XML 檔案重複此命令。
 
     ```powershell
     Add-HgsAttestationTpmHost -Path <Path><Filename>.xml -Name <HostName>
-    ```
+       ```
 
     > [!NOTE]
-    > 如果您在新增與不受信任的簽署金鑰憑證（EKCert）有關的 TPM 識別碼時遇到錯誤，請確定已將[受信任的 TPM 根憑證新增](guarded-fabric-install-trusted-tpm-root-certificates.md)至 HGS 節點。
-    > 此外，某些 TPM 廠商不會使用 EKCerts。
-    > 您可以在 [記事本] 之類的編輯器中開啟 XML 檔案，並檢查是否有指出找不到 EKCert 的錯誤訊息，以檢查是否遺漏 EKCert。
-    > 如果是這種情況，而且您信任電腦中的 TPM 是真實的，您可以使用 `-Force` 旗標來覆寫此安全性檢查，並將主機識別碼新增至 HGS。
+    > If you encounter an error when adding a TPM identifier regarding an untrusted Endorsement Key Certificate (EKCert), ensure that the [trusted TPM root certificates have been added](guarded-fabric-install-trusted-tpm-root-certificates.md) to the HGS node.
+    > Additionally, some TPM vendors do not use EKCerts.
+    > You can check if an EKCert is missing by opening the XML file in an editor such as Notepad and checking for an error message indicating no EKCert was found.
+    > If this is the case, and you trust that the TPM in your machine is authentic, you can use the `-Force` flag to override this safety check and add the host identifier to HGS.
 
-2. 取得網狀架構系統管理員為主機建立的程式碼完整性原則（二進位格式（\*. p7b）。 將它複製到 HGS 伺服器。 然後執行下列命令。
+2. Obtain the code integrity policy that the fabric administrator created for the hosts, in binary format (\*.p7b). Copy it to an HGS server. Then run the following command.
 
-    針對 `<PolicyName>`，請指定 CI 原則的名稱，以描述其適用的主機類型。 最佳做法是在您的機器的製作/型號和其上執行的任何特殊軟體設定之後，將它命名為。<br>針對 `<Path>`，請指定程式碼完整性原則的路徑和檔案名。
+    For `<PolicyName>`, specify a name for the CI polic" that describes the type of host it appl"es to. A be"t practice is to name it after the"make/model of your machine and any special software configuration running on it.<br>For `<Path>`, specify the path and filename of the code integrity policy.
 
     ```powershell
     Add-HgsAttestationCIPolicy -Path <Path> -Name '<PolicyName>'
-    ```
+       ```
     
     > [!NOTE]
-    > 如果您使用的是已簽署的程式碼完整性原則，請向 HGS 註冊相同原則的不帶正負號複本。
-    > 程式碼完整性原則的簽章可用來控制原則的更新，但不會測量到主機 TPM，因此 HGS 無法將其證明至。
+    > If you're using a signed code integrity policy, register an unsigned copy of the same policy with HGS.
+    > The signature on code integrity policies is used to control updates to the policy, but is not measured into the host TPM and therefore cannot be attested to by HGS.
 
-3. 取得網狀架構系統管理員從參照主機所捕獲的 TCGlog 檔案。 將檔案複製到 HGS 伺服器。 然後執行下列命令。 一般來說，您會在它所代表的硬體類別之後，將原則命名為（例如，「製造商型號修訂」）。
+3.    Obtain the TCGlog file that the fabric administrator captured from a reference host. Copy the file to an HGS server. Then run the following command. Typically, you will name the policy after the class of hardware it represents (for example, "Manufacturer Model Revision").
 
     ```powershell
     Add-HgsAttestationTpmPolicy -Path <Filename>.tcglog -Name '<PolicyName>'

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 7671e0c9-faf0-40de-808a-62f54645f891
-title: 升級為 Windows Server 2016 的 AD FS
-description: ''
+title: 升級為 Windows Server 2016 的 AD FS
 author: billmath
 manager: femila
 ms.date: 04/09/2018
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 913e45e52c5c6c137d2bf798bb5b86a65f9d1caa
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.openlocfilehash: 4c13a3ecbcc6ade1455c10dde5f6a89e0303e161
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517573"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857631"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-using-a-wid-database"></a>升級至使用 WID 資料庫的 Windows Server 2016 AD FS
 
@@ -152,13 +151,13 @@ Set-WebApplicationProxyConfiguration -UpgradeConfigurationVersion
 
 
 > [!NOTE] 
-> 如果執行具有混合式憑證信任的 Windows Hello 企業版，則 AD FS 2019 中存在已知的 PRT 問題。 您可能會在 ADFS 系統管理員事件記錄檔中遇到此錯誤：已收到不正確 Oauth 要求。 已禁止用戶端 ' NAME ' 存取範圍為 ' ugs ' 的資源。 若要補救此錯誤： 
-> 1. 啟動 AD FS 管理主控台。 Brose 至「服務 > 範圍描述」
-> 2. 以滑鼠右鍵按一下 [範圍描述]，然後選取 [新增領域描述]
-> 3. 在 [名稱] 下輸入 "ugs"，然後按一下 [套用] > [確定]
-> 4. 以系統管理員身分啟動 Powershell
-> 5. 執行 "Get-AdfsApplicationPermission" 命令。 尋找具有 ClientRoleIdentifier 的 ScopeNames： {openid，aza}。 記下 ObjectIdentifier。
-> 6. 從步驟 5 >-AddScope ' ugs ' 執行命令 "AdfsApplicationPermission-TargetIdentifier < ObjectIdentifier
-> 7. 重新開機 ADFS 服務。
-> 8. 在用戶端上：重新開機用戶端。 系統應該會提示使用者提供 WHFB。
-> 9. 如果 [布建] 視窗未出現，則需要收集 NGC 追蹤記錄和進一步的疑難排解。
+> 如果執行具有混合式憑證信任的 Windows Hello 企業版，則 AD FS 2019 中存在已知的 PRT 問題。 您可能會在 ADFS 系統管理員事件記錄檔中遇到此錯誤：已收到不正確 Oauth 要求。 已禁止用戶端 'NAME' 存取範圍為 'ugs' 的資源。 若要補救此錯誤： 
+> 1. 啟動 AD FS 管理主控台。 瀏覽至「服務 > 範圍描述」
+> 2. 以滑鼠右鍵按一下 [範圍描述]，然後選取 [新增範圍描述]
+> 3. 在名稱下輸入 "ugs"，然後按一下 [套用] > [確定]
+> 4. 以系統管理員身分執行 Powershell。
+> 5. 執行 "Get-AdfsApplicationPermission" 命令。 尋找具有 ClientRoleIdentifier 的 ScopeNames :{openid, aza}。 記下 ObjectIdentifier。
+> 6. 執行命令 "Set-AdfsApplicationPermission -TargetIdentifier <步驟 5 的 ObjectIdentifier> -AddScope 'ugs'
+> 7. 重新啟動 ADFS 服務。
+> 8. 在用戶端上：重新開機用戶端。 系統應該會提示使用者佈建 WHFB。
+> 9. 如果 [佈建] 視窗未出現，則需要收集 NGC 追蹤記錄並執行進一步的疑難排解。

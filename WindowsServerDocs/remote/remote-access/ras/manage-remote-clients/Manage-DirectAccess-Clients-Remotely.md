@@ -2,22 +2,18 @@
 title: 遠端管理 DirectAccess 用戶端
 description: 本主題是在 Windows Server 2016 中遠端系統管理 DirectAccess 用戶端指南的一部分。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 36255d80-a13e-4af7-a5c0-ab4c8f302622
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: a0e717b75e1d973f1594b254e1ea5c4eb55536b8
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 378ec2f5f8b43b8d577337ca824b083d1570fc68
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308231"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855221"
 ---
 # <a name="manage-directaccess-clients-remotely"></a>遠端管理 DirectAccess 用戶端
 

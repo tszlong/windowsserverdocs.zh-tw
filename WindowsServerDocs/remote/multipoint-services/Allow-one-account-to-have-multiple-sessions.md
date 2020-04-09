@@ -1,24 +1,20 @@
 ---
 title: 允許一個帳戶有多個工作階段
 description: 讓使用者同時存取多個系統。
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f14cf1bd-f176-4de4-b27d-f3d8e6334158
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: dbc3f3b5a01f86cd1376cd4ecca59fd2951559e4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 24c0fa0f62e39e1260e3c73ae13f760bb6b14772
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395612"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855921"
 ---
 # <a name="allow-one-account-to-have-multiple-sessions"></a>允許一個帳戶有多個工作階段
 若要讓使用者群組同時在多個工作站上使用共用帳戶，請將 MultiPoint 伺服器設定為允許一個帳戶同時登入多個工作站。 根據預設，如果使用者使用共用的使用者帳戶登入第二部工作站，則會將該使用者帳戶登出第一部工作站。  

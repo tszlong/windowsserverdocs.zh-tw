@@ -1,23 +1,19 @@
 ---
 title: RAS 閘道部署架構
 description: 您可以使用本主題來瞭解 Windows Server 2016 中 RAS 閘道的雲端服務提供者（CSP）部署，包括 RAS 閘道集區、路由反映程式，以及為個別租使用者部署多個閘道。
-manager: brianlic
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: d46e4e91-ece0-41da-a812-af8ab153edc4
-ms.author: lizross
-author: eross-msft
-ms.openlocfilehash: 91d8081261d3cbc5e2da61cc2b5a9737e76a0dc7
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.author: anpaul
+author: AnirbanPaul
+ms.openlocfilehash: 1704cd6d933af1e796a9ac1237ff2de3a49fb3d3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309809"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859601"
 ---
 # <a name="ras-gateway-deployment-architecture"></a>RAS 閘道部署架構
 

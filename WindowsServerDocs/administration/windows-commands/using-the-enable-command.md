@@ -1,30 +1,27 @@
 ---
-title: 使用 Enable 命令
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+title: 啟用
+description: 適用于 Enable 的 Windows 命令主題，可啟用所有服務以進行 Windows 部署服務。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aafebfb2-fff0-41c9-a095-8884acf49f50
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cd886fa6f84e4d52ef90e998871d84ded8fdaf53
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 676c180f3c36a09bea99d38036f5974c75e3ffc0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392248"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80831551"
 ---
-# <a name="using-the-enable-command"></a>使用 Enable 命令
+# <a name="enable"></a>啟用
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 啟用 Windows 部署服務的所有服務。
+
 ## <a name="subcommands"></a>子
 |Subommand|描述|
 |-------|--------|

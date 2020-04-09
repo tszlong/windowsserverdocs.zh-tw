@@ -1,23 +1,19 @@
 ---
 title: 在 Windows Server Essentials 目的地伺服器設定資料夾重新導向
 description: 說明如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: fe77ba67-128c-4fc3-9361-30fa6af42516
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 44fb54a654689285c5db6d178e6d1c714779b91b
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 15a2dee75b5a57f843e8e63b486efe55645e5de2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310607"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852611"
 ---
 # <a name="configure-folder-redirection-on-the-windows-server-essentials-destination-server"></a>在 Windows Server Essentials 目的地伺服器設定資料夾重新導向
 

@@ -1,24 +1,20 @@
 ---
 title: prndrvr
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 82b09e3e-bd38-4df1-9953-b0e9ee2565a3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 05e03a4b0b5d686c8fbd1646a775c7f0e5c95706
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: eebb28ae50f4546ac5ab3d495994c96e293f6928
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372125"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837301"
 ---
 # <a name="prndrvr"></a>prndrvr
 
@@ -33,51 +29,51 @@ cscript prndrvr {-a | -d | -l | -x | -?} [-m <model>] [-v {0|1|2|3}]
 [-h <path>] [-i <inf file>]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |-------|--------|
 |-a|安裝驅動程式。|
-|-d.ddd...e|刪除驅動程式。|
+|-d|刪除驅動程式。|
 |-l|列出安裝在 **-s**參數所指定之伺服器上的所有印表機驅動程式。 如果您未指定伺服器，Windows 會列出安裝在本機電腦上的印表機驅動程式。|
 |-x|刪除 **-s**參數所指定之伺服器上的邏輯印表機未使用的所有印表機驅動程式和其他印表機驅動程式。 如果您未指定要從清單中移除的伺服器，Windows 會刪除本機電腦上所有未使用的印表機驅動程式。|
 |-m \<DrivermodelName\>|指定您想要安裝的驅動程式（依名稱）。 驅動程式通常是以其支援的印表機型號來命名。 如需詳細資訊，請參閱印表機檔。|
-|-v {0 &#124; 1 &#124; 2 &#124; 3}|指定您想要安裝的驅動程式版本。 如需哪些版本適用于哪些環境的詳細資訊，請參閱 **-e**參數的描述。 如果您未指定版本，則會安裝適用于您要安裝驅動程式之電腦上所執行之 Windows 版本的驅動程式版本。<br /><br />-version **0**支援 windows 95、windows 98 和 windows Millennium edition。<br />-版本**1**支援 Windows NT 3.51。<br />-**第 2**版支援 Windows NT 4.0。<br />-**第 3**版支援 windows Vista、windows XP、windows 2000 和 windows Server 2003 作業系統。 請注意，這是 Windows Vista 唯一支援的印表機驅動程式版本。|
-|-e \<環境 >|指定您想要安裝之驅動程式的環境。 如果您未指定環境，則會使用您要安裝驅動程式之電腦的環境。 支援的環境參數包括：<br /><br />-   「 **WINDOWS NT x86** 」<br />-    **"Windows x64"**<br />-   「 **WINDOWS IA64** 」|
+|-v {0 &#124; 1 &#124; 2 &#124; 3}|指定您想要安裝的驅動程式版本。 如需哪些版本適用于哪些環境的詳細資訊，請參閱 **-e**參數的描述。 如果您未指定版本，則會安裝適用于您要安裝驅動程式之電腦上所執行之 Windows 版本的驅動程式版本。<p>-version **0**支援 windows 95、windows 98 和 windows Millennium edition。<br />-版本**1**支援 Windows NT 3.51。<br />-**第 2**版支援 Windows NT 4.0。<br />-**第 3**版支援 windows Vista、windows XP、windows 2000 和 windows Server 2003 作業系統。 請注意，這是 Windows Vista 唯一支援的印表機驅動程式版本。|
+|-e \<環境 >|指定您想要安裝之驅動程式的環境。 如果您未指定環境，則會使用您要安裝驅動程式之電腦的環境。 支援的環境參數包括：<p>-   **WINDOWS NT x86**<br />-   **Windows x64**<br />-   **WINDOWS IA64**|
 |-s \<ServerName >|指定裝載您要管理之印表機的遠端電腦名稱稱。 如果您未指定電腦，則會使用本機電腦。|
 |-u \<UserName >-w \<密碼 >|指定具有許可權可連接到裝載您要管理之印表機的電腦的帳戶。 目的電腦的本機系統管理員群組的所有成員都具有這些許可權，但也可以將許可權授與給其他使用者。 如果您未指定帳戶，您必須使用具有這些許可權的帳戶登入，命令才能正常執行。|
 |-h \<路徑 >|指定驅動程式檔案的路徑。 如果您未指定路徑，則會使用安裝 Windows 之位置的路徑。|
-|-i \<檔案名 .inf >|指定您想要安裝之驅動程式的完整路徑和檔案名。 如果您未指定檔案名，腳本會使用 Windows 目錄之 inf 子目錄中的其中一個 [收件匣] 印表機 .inf 檔案。<br /><br />如果未指定驅動程式路徑，腳本會搜尋驅動程式 .cab 檔案中的驅動程式檔案。|
+|-i \<檔案名 .inf >|指定您想要安裝之驅動程式的完整路徑和檔案名。 如果您未指定檔案名，腳本會使用 Windows 目錄之 inf 子目錄中的其中一個 [收件匣] 印表機 .inf 檔案。<p>如果未指定驅動程式路徑，腳本會搜尋驅動程式 .cab 檔案中的驅動程式檔案。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
 - **Prndrvr**命令是位於%windir%\system32\ printing_Admin_Scripts\\<language> 目錄中的 Visual Basic 腳本。 若要使用此命令，請在命令提示字元中輸入**cscript** ，後面接著 prndrvr 檔案的完整路徑，或將目錄變更為適當的資料夾。
 
-  例如：
+  例如，
   ```
   cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prndrvr
   ```
-- 如果您提供的資訊包含空格，請使用引號括住文字（例如 `"computer Name"`）。
+- 如果您提供的資訊包含空格，請使用引號括住文字（例如 `computer Name`）。
 - -X 選項會刪除所有額外的印表機驅動程式（安裝在執行其他 Windows 版本的用戶端上使用的驅動程式），即使主要驅動程式正在使用中也一樣。 如果已安裝傳真元件，此選項也會刪除傳真驅動程式。 如果主要傳真驅動程式不在使用中，則會將其刪除（也就是沒有佇列使用它）。 如果主要傳真驅動程式遭到刪除，重新啟用傳真的唯一方法就是重新安裝傳真元件。
 - 使用時不含參數， **prndrvr**會顯示**prndrvr**命令的命令列說明。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 若要列出 \\\printServer1 伺服器上的所有驅動程式，請輸入：
 ```
 cscript Prndrvr -l -s
 ```
 
-針對儲存在 C：\temp 資料夾類型中的驅動程式，使用 C:\temp\Laserprinter1.inf 驅動程式資訊檔案為印表機的「雷射印表機型號1」型號新增第3版的 Windows x64 印表機驅動程式：
+若要使用 C:\temp\Laserprinter1.inf 驅動程式資訊檔案，針對儲存在 C：\temp 資料夾類型中的驅動程式，新增第3版的 Windows x64 印表機驅動程式（適用于雷射印表機型號1）：
 ```
-cscript Prndrvr -a -m "Laser printer model 1" -v 3 -e "Windows x64" -i c:\temp\Laserprinter1.inf -h c:\temp
-```
-
-若要刪除 "雷射印表機型號 1" 的第3版 Windows NT x86 印表機驅動程式，請輸入：
-```
-cscript Prndrvr -a -m "Laser printer model 1" -v 3 -e "Windows NT x86" 
+cscript Prndrvr -a -m Laser printer model 1 -v 3 -e Windows x64 -i c:\temp\Laserprinter1.inf -h c:\temp
 ```
 
-#### <a name="additional-references"></a>其他參考
-[命令列語法索引鍵](command-line-syntax-key.md)
+若要刪除第3版的 Windows NT x86 印表機驅動程式，以取得雷射印表機型號1，請輸入：
+```
+cscript Prndrvr -a -m Laser printer model 1 -v 3 -e Windows NT x86 
+```
+
+## <a name="additional-references"></a>其他參考資料
+- [命令列語法索引鍵](command-line-syntax-key.md)
 [列印命令參考](print-command-reference.md)

@@ -1,7 +1,7 @@
 ---
 ms.assetid: b7bf7579-ca53-49e3-a26a-6f9f8690762f
 title: 保護 AD FS 和 Web 應用程式 Proxy 的最佳做法
-description: 本檔提供安全規劃和部署 Active Directory 同盟服務（AD FS）和 Web 應用程式 Proxy 的最佳作法。
+description: 安全規劃和部署 Active Directory 同盟服務（AD FS）和 Web 應用程式 Proxy 的最佳作法。
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 717308a157d7f4a5f54e3aef2e829fbed9f12152
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.openlocfilehash: 8206ddc43eab7a220a9f0f988c294c627bc8c977
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517543"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853021"
 ---
 # <a name="best-practices-for-securing-active-directory-federation-services"></a>保護 Active Directory 同盟服務的最佳做法
 
@@ -83,7 +83,7 @@ TCP|49443（TCP）|用於憑證驗證。
 |/adfs/services/trust/13/usernamemixed|用於 Exchange Online 與 Office 2013 舊的 Office 用戶端可能會更新2015。  較新的用戶端會使用被動 \adfs\ls 端點。
 |/adfs/oauth2|這項功能適用于任何現代化應用程式（在內部部署或雲端上）您已設定為直接向 AD FS 進行驗證（亦即不透過 AAD）
 |/adfs/services/trust/mex|用於 Exchange Online 與 Office 2013 舊的 Office 用戶端可能會更新2015。  較新的用戶端會使用被動 \adfs\ls 端點。
-|/adfs/ls/federationmetadata/2007-06/federationmetadata.xml |任何被動流程的需求;Office 365/Azure AD 用來檢查 AD FS 憑證
+|/adfs/ls/federationmetadata/2007-06/federationmetadata.xml    |任何被動流程的需求;Office 365/Azure AD 用來檢查 AD FS 憑證
 
 
 您可以使用下列 PowerShell Cmdlet，在 proxy 上停用 AD FS 的端點：
@@ -109,11 +109,11 @@ TCP|49443（TCP）|用於憑證驗證。
 Federation service proxy （WAP 的一部分）提供擁塞控制來保護 AD FS 服務免于大量的要求。  如果 Web 應用程式 Proxy 與同盟伺服器之間的延遲偵測到同盟伺服器超載，Web 應用程式 Proxy 就會拒絕外部用戶端驗證要求。  此功能預設會設定為建議的延遲臨界值層級。
 
 #### <a name="to-verify-the-settings-you-can-do-the-following"></a>若要驗證設定，您可以執行下列動作：
-1.  在 Web 應用程式 Proxy 電腦上，啟動提升權限的命令視窗。
-2.  流覽至 ADFS 目錄，網址為%WINDIR%\adfs\config。
-3.  將 [擁塞控制設定] 從其預設值變更為 [<congestionControl latencyThresholdInMSec="8000" minCongestionWindowSize="64" enabled="true" />]。
-4.  儲存並關閉檔案。
-5.  執行 ' net stop adfssrv '，然後按 [net start adfssrv]，以重新開機 AD FS 服務。
+1.    在 Web 應用程式 Proxy 電腦上，啟動提升權限的命令視窗。
+2.    流覽至 ADFS 目錄，網址為%WINDIR%\adfs\config。
+3.    將 [擁塞控制設定] 從其預設值變更為 [<congestionControl latencyThresholdInMSec="8000" minCongestionWindowSize="64" enabled="true" />]。
+4.    儲存並關閉檔案。
+5.    執行 ' net stop adfssrv '，然後按 [net start adfssrv]，以重新開機 AD FS 服務。
 如需這項功能的指引，請參閱[這裡](https://msdn.microsoft.com/library/azure/dn528859.aspx )。
 
 ### <a name="standard-http-request-checks-at-the-proxy"></a>Proxy 上的標準 HTTP 要求檢查
@@ -124,7 +124,7 @@ Proxy 也會對所有流量執行下列標準檢查：
 - FS-P 會執行 HTTP 要求驗證，專門篩選出 AD FS 服務不需要的 HTTP 標頭。
 
 ## <a name="recommended-security-configurations"></a>建議的安全性設定
-請確定所有 AD FS 和 WAP 伺服器都收到最新的更新，AD FS 基礎結構最重要的安全性建議是確保您有辦法讓您的 AD FS 和 WAP 伺服器在所有安全性更新中都是最新的，以及選擇性的針對此頁面上 AD FS 指定為重要的更新。
+確保所有 AD FS 和 WAP 伺服器都能收到最新的更新，AD FS 基礎結構最重要的安全性建議是確保您有一個方法可以讓 AD FS 和 WAP 伺服器以所有安全性更新為最新，以及在此頁面上指定為重要 AD FS 的選擇性更新。
 
 Azure AD 客戶監視並保持最新基礎結構的建議方式是透過 Azure AD Connect Health AD FS，這是 Azure AD Premium 的一項功能。  Azure AD Connect Health 包括當 AD FS 或 WAP 電腦缺少特別針對 AD FS 和 WAP 的其中一個重要更新時，所觸發的監視和警示。
 

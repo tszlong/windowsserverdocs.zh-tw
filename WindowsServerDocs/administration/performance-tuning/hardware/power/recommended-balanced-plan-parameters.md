@@ -4,15 +4,15 @@ description: 建議的平衡電源計劃參數以快速回應時間
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Qizha;TristanB
+ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 96037a577c9f2a835e9c49bf9339ed8dc6da1a6b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 288746b5361c550e167f64886a929c96c81ff8d0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383508"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851961"
 ---
 # <a name="recommended-balanced-power-plan-parameters-for-workloads-requiring-quick-response-times"></a>針對需要快速回應時間的工作負載，建議的平衡電源計劃參數
 
@@ -64,7 +64,7 @@ Powercfg -setactive scheme_balanced
 >[!Important]
 >從執行 Windows Server 2016 的 Intel [Broadwell] 處理器開始，大部分的處理器電源管理決策都是在處理器中進行，而不是 OS 層級，以達到更快的工作負載變更音。 OS 使用的舊版 PPM 參數會對實際的頻率決策造成最小的影響，但會告訴處理器其是否應具備電源或效能，或將最小和最大頻率降到最低。 因此，建議的 PPM 參數變更僅以預先 Broadwell 的系統為目標。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 - [伺服器硬體效能考慮](../index.md)
 - [伺服器硬體電源的考量](../power.md)
 - [電源與效能調整](power-performance-tuning.md)

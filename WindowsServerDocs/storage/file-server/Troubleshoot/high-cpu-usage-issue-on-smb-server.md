@@ -3,16 +3,15 @@ title: SMB 伺服器上的 CPU 使用量過高的問題
 description: 介紹如何針對 SMB 伺服器上的高 CPU 使用量問題進行疑難排解。
 author: Deland-Han
 manager: dcscontentpm
-audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 8a14952ca90b6ee3bea901fd944d7c9843492fd4
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: 9634ca5b0eb07beff8d8213f88e771d76734e6fc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654339"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815432"
 ---
 # <a name="high-cpu-usage-issue-on-the-smb-server"></a>SMB 伺服器上的 CPU 使用量過高的問題
 

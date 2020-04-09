@@ -1,28 +1,22 @@
 ---
 title: setlocal
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: 適用于 setlocal 的 Windows 命令主題，它會啟動批次檔中環境變數的當地語系化。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e4e4b6d3-3f1a-4851-a782-25ee2470e16e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 997c996854f488bb1776f135e3288e3b094e683c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 24ed41289bb517d41db11fd3ebc41e5751b7afd9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384095"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834361"
 ---
 # <a name="setlocal"></a>setlocal
-
-
 
 啟動批次檔中環境變數的當地語系化。 當地語系化會繼續進行，直到遇到相符的**endlocal**命令或到達批次檔的結尾為止。
 
@@ -63,9 +57,9 @@ setlocal [enableextensions | disableextensions] [enabledelayedexpansion | disabl
     verify other 2>nul
     if errorlevel 1 echo Unable to enable extensions
     ```  
-    由於在停用命令延伸模組時， **cmd**不會設定 ERRORLEVEL 變數，因此當您使用不正確引數時， **verify**命令會將 ERRORLEVEL 變數初始化為非零值。 此外，如果您將**setlocal**命令與引數 {**enableextensions** | **disableextensions**} 或 {**enabledelayedexpansion** | **disabledelayedexpansion**} 搭配使用，它就不會設定 ERRORLEVEL 變數為**1**，無法使用命令延伸模組。
+    由於在停用命令延伸模組時， **cmd**不會設定 ERRORLEVEL 變數，因此當您使用不正確引數時， **verify**命令會將 ERRORLEVEL 變數初始化為非零值。 此外，如果您使用**setlocal**命令搭配引數 {**enableextensions** | **disableextensions**} 或 {**enabledelayedexpansion** | **disabledelayedexpansion**}，且未將 ERRORLEVEL 變數設定為**1**，則無法使用命令延伸模組。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 您可以將批次檔中的環境變數當地語系化，如下列範例腳本所示：
 ```
@@ -82,6 +76,6 @@ endlocal
 start notepad c:\superapp.out
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

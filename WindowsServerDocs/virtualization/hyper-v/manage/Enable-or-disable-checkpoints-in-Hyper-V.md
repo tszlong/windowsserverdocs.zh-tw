@@ -2,25 +2,23 @@
 title: 在 Hyper-v 中啟用或停用檢查點
 description: 提供開啟或關閉檢查點功能的指示。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 92e1d0d0-f2c1-4ba2-8510-c8eb091cf5d6
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 645af307b26b56fc3863a47d6bb05d224ccb5710
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2e6602b46ee851ca112dd93b82efc6baaa2b7954
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364160"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859441"
 ---
 # <a name="enable-or-disable-checkpoints-in-hyper-v"></a>在 Hyper-v 中啟用或停用檢查點
 
->適用於：Windows 10，Windows Server 2016，Microsoft Hyper-v Server 2016，Windows Server 2019，Microsoft Hyper-v Server 2019
+>適用于： Windows 10、Windows Server 2016、Microsoft Hyper-v Server 2016、Windows Server 2019、Microsoft Hyper-v Server 2019
   
 您可以選擇啟用或停用每部虛擬機器的檢查點。  
   
@@ -30,7 +28,7 @@ ms.locfileid: "71364160"
   
 3.  若要允許此虛擬機器執行檢查點，請確定已選取 [**啟用檢查點**]。 若要停用檢查點，請清除 [**啟用檢查點**] 核取方塊。  
   
-4.  按一下 **\[套用\]** 以套用變更。 完成之後，請按一下 **\[確定\]** 以關閉對話方塊。  
+4.  按一下 [套用] 以套用變更。 完成之後，請按一下 [確定] 以關閉對話方塊。  
   
 ## <a name="see-also"></a>另請參閱  
   

@@ -1,24 +1,20 @@
 ---
 title: 認證保護的新功能
 description: Windows Server 安全性
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-credential-protection
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1b0b5180-f65a-43ac-8ef3-66014116f297
 author: gitmichiko
 ms.author: michikos
 manager: dongill
 ms.date: 03/06/2017
-ms.openlocfilehash: 2351be82ad1d8b9af17715ce363836f57c71ea66
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 35097cee243239735995a00cec7a6fd3936c62a8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386918"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857041"
 ---
 # <a name="whats-new-in-credential-protection"></a>認證保護的新功能
 
@@ -47,7 +43,7 @@ ms.locfileid: "71386918"
 
 ### <a name="domain-joined-device-support-for-authentication-using-public-key"></a>已加入網域的裝置支援使用公開金鑰進行驗證
 
-從 Windows 10 版本1507和 Windows Server 2016 開始，如果已加入網域的裝置能夠向 Windows Server 2016 網域控制站（DC）註冊其系結公開金鑰，則裝置可以使用 Kerberos PKINIT 以公開金鑰進行驗證Windows Server 2016 DC 的驗證。
+從 Windows 10 版本1507和 Windows Server 2016 開始，如果已加入網域的裝置能夠向 Windows Server 2016 網域控制站（DC）註冊其系結的公開金鑰，則裝置可以對 Windows Server 2016 DC 使用 Kerberos PKINIT 驗證，以公開金鑰進行驗證。
 
 從 Windows Server 2016 開始，Kdc 支援使用 Kerberos 金鑰信任進行驗證。  
 
@@ -68,7 +64,7 @@ ms.locfileid: "71386918"
 > [!WARNING] 
 > 將網域控制站新增到已啟用輪替 NTLM 秘密的網域中，在 DC 更新至少為2016年11月8日之前，服務會執行 DC 損毀的風險。 
 
-設定：針對新的網域，此功能預設為啟用。 針對現有的網域，必須在 Active Directory 管理中心設定： 
+設定：對於新的網域，此功能預設為啟用。 針對現有的網域，必須在 Active Directory 管理中心設定： 
 
 1. 從 Active Directory 的管理中心，以滑鼠右鍵按一下左窗格中的網域，然後選取 [**屬性**]。
 

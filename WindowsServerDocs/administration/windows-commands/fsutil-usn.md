@@ -9,12 +9,12 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: b62d031c547f140ac5008af20a9e0ee4bcecc919
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 326390a5b40de46ca932043e9982f84c7758d901
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376794"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844001"
 ---
 # <a name="fsutil-usn"></a>Fsutil usn
 >適用于： Windows Server （半年通道）、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7
@@ -33,7 +33,7 @@ fsutil usn [readdata] <FileName>
 fsutil usn [readjournal] [c= <chunk-size> s=<file-size-threshold>] <volumepath>
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |-------------|---------------|
@@ -76,7 +76,7 @@ fsutil usn [readjournal] [c= <chunk-size> s=<file-size-threshold>] <volumepath>
 
     變更日誌可能會成長到大於此目標值，但變更日誌會在下一個 NTFS 檢查點截斷到小於此值。 NTFS 會檢查變更日誌，並在其大小超過*MaxSize*的值加上*AllocationDelta*的值時加以修剪。 在 NTFS 檢查點，作業系統會將記錄寫入 NTFS 記錄檔，讓 NTFS 能夠判斷從失敗復原所需的處理。
 
--   使用
+-   使用**a**
 
     在修剪之前，變更日誌可以成長到大於*MaxSize*和*AllocationDelta*值的總和。
 
@@ -84,7 +84,7 @@ fsutil usn [readjournal] [c= <chunk-size> s=<file-size-threshold>] <volumepath>
 
     刪除或停用使用中的變更日誌非常耗時，因為系統必須存取主要檔案資料表（MFT）中的所有記錄，並將最後一個 USN 屬性設為0（零）。 此程式可能需要幾分鐘的時間，而且如果需要重新開機，它可以在系統重新開機之後繼續進行。 在此過程中，變更日誌不會被視為作用中，也不會停用。 當系統停用日誌時，就無法存取它，而且所有日誌作業都會傳回錯誤。 停用使用中的日誌時，您應該特別小心，因為它會對其他使用日誌的應用程式造成不良影響。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name="BKMK_examples"></a>典型
 若要在 C 磁片磁碟機上建立 USN 變更日誌，請輸入：
 
 ```
@@ -127,8 +127,8 @@ fsutil usn readdata c:\temp\sample.txt
 fsutil usn readjournal startusn=0xF00
 ```
 
-#### <a name="additional-references"></a>其他參考資料
-[命令列語法關鍵](Command-Line-Syntax-Key.md)
+## <a name="additional-references"></a>其他參考資料
+- [命令列語法關鍵](command-line-syntax-key.md)
 
 [Fsutil](Fsutil.md)
 

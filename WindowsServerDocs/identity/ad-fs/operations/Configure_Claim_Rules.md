@@ -1,7 +1,6 @@
 ---
 ms.assetid: 20d48afc-2623-43e9-8ed9-aeb9a0505630
 title: 設定宣告規則
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b46e228f202eeae7f8cbcf4c1a6851686f905e48
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 37c5688980da50abc4da61dddf77b3dfd83210bc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407639"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816971"
 ---
 # <a name="configure-claim-rules"></a>設定宣告規則
 
@@ -40,5 +39,5 @@ AD FS 會根據以宣告形式提供的身分識別資訊和其他內容資訊�
   
 -   [建立規則使用自訂規則傳送宣告](../../ad-fs/operations/Create-a-Rule-to-Send-Claims-Using-a-Custom-rule.md)  
 
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
 [AD FS 操作](../../ad-fs/AD-FS-2016-Operations.md) 

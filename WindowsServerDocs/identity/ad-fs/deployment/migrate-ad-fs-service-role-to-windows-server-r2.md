@@ -8,12 +8,12 @@ ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2a3cf6cd523f5cfd69785104fed7aa3938d79525
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6c2f9c8079eb2dfaf208c8835940351a925d0a16
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359395"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857501"
 ---
 # <a name="migrate-active-directory-federation-services-role-services-to-windows-server-2012-r2"></a>將 Active Directory 同盟服務角色服務移轉到 Windows Server 2012 R2
  本檔提供將下列角色服務遷移至隨 Windows Server 2012 R2 安裝之 Active Directory 同盟服務（AD FS）的指示：  
@@ -59,8 +59,8 @@ ms.locfileid: "71359395"
   
 |從|若要使用 Windows Server 2012 R2 安裝 AD FS|  
 |----------|----------------------------------------------------------------------------------------------|  
-|安裝在 Windows Server 2008 或 Windows Server 2008 R2 上的 AD FS 2.0 同盟伺服器|支援相同伺服器的移轉。 如需詳細資訊，請參閱：<br /><br /> [準備遷移 AD FS 同盟伺服器](prepare-migrate-ad-fs-server-r2.md)<br /><br /> [遷移 AD FS 同盟伺服器](migrate-ad-fs-fed-server-r2.md)|  
-|在 Windows Server 2012 上安裝 AD FS 同盟伺服器|支援相同伺服器的移轉。  如需詳細資訊，請參閱：<br /><br /> [準備遷移 AD FS 同盟伺服器](prepare-migrate-ad-fs-server-r2.md)<br /><br /> [遷移 AD FS 同盟伺服器](migrate-ad-fs-fed-server-r2.md)|  
+|安裝在 Windows Server 2008 或 Windows Server 2008 R2 上的 AD FS 2.0 同盟伺服器|支援相同伺服器的移轉。 如需詳細資訊，請參閱：<p> [準備遷移 AD FS 同盟伺服器](prepare-migrate-ad-fs-server-r2.md)<p> [遷移 AD FS 同盟伺服器](migrate-ad-fs-fed-server-r2.md)|  
+|在 Windows Server 2012 上安裝 AD FS 同盟伺服器|支援相同伺服器的移轉。  如需詳細資訊，請參閱：<p> [準備遷移 AD FS 同盟伺服器](prepare-migrate-ad-fs-server-r2.md)<p> [遷移 AD FS 同盟伺服器](migrate-ad-fs-fed-server-r2.md)|  
   
 ## <a name="next-steps"></a>後續步驟
  [準備遷移 AD FS 同盟伺服器](prepare-migrate-ad-fs-server-r2.md)   

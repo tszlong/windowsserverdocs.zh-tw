@@ -1,24 +1,20 @@
 ---
 title: nslookup set all
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 04b695cb-38b2-4adf-aa55-9d1b628eb8ac
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0e752427a07fe290c3f70e7dce60a0e21f805e8d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f914d546a4902c63d893977059f2e95516842aab
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373027"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80838601"
 ---
 # <a name="nslookup-set-all"></a>nslookup set all
 
@@ -32,7 +28,7 @@ ms.locfileid: "71373027"
 set all 
 ```
 
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
 | 參數 | 描述 |
 |-----------|-------------|
@@ -42,6 +38,6 @@ set all
 
 -   [**全部設定**] 也會列印預設伺服器和電腦（也就是主機）的相關資訊。
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

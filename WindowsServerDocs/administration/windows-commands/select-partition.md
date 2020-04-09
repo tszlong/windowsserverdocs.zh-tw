@@ -1,26 +1,22 @@
 ---
-title: 選取資料分割
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+title: select partition
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 25f70083-b8f7-4a8e-9b34-4b3ffbe06670
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9a186e2678fde64396a8b4b57a2d14e4b0b7bf26
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 97145d73cbbe1bdc9b27e545b047b78fe89e4984
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371066"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834801"
 ---
-# <a name="select-partition"></a>選取資料分割
+# <a name="select-partition"></a>select partition
 
 >適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -34,7 +30,7 @@ ms.locfileid: "71371066"
 select partition=<n>  
 ```  
   
-## <a name="parameters"></a>Parameters  
+### <a name="parameters"></a>參數  
   
 |   參數    |                                                                                    描述                                                                                    |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -50,7 +46,7 @@ select partition=<n>
   
 -   如果選取的資料分割具有對應的磁片區，則會自動選取該磁片區。  
   
-## <a name="BKMK_examples"></a>典型  
+## <a name="examples"></a><a name=BKMK_examples></a>典型  
 若要將焦點移至資料分割3，請輸入：  
   
 ```  
@@ -63,8 +59,8 @@ select partitition=3
 select partition  
 ```  
   
-#### <a name="additional-references"></a>其他參考  
-[命令列語法關鍵](command-line-syntax-key.md)  
+## <a name="additional-references"></a>其他參考資料  
+- [命令列語法關鍵](command-line-syntax-key.md)  
   
 
   

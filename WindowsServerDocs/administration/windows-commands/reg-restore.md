@@ -1,24 +1,20 @@
 ---
 title: reg 還原
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a51f1c0c-969b-4b76-930a-c8bb14dea26e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d6c121256cecaebc26e2c402d9b9ced8890eddc2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e511694247c04f2befc9c0148498e43b85f664ed
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384668"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836361"
 ---
 # <a name="reg-restore"></a>reg 還原
 
@@ -34,12 +30,12 @@ ms.locfileid: "71384668"
 Reg restore <KeyName> <FileName>
 ```
 
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
-|\<KeyName >|指定要還原之子機碼的完整路徑。 還原作業只適用于本機電腦。 KeyName 必須包含有效的根金鑰。 有效的根金鑰如下：HKLM、HKCU、HKCR、HKU 和 HKCC。|
-|\<檔案名 >|指定包含要寫入登錄之內容的檔案名和路徑。 此檔案必須預先建立，並使用 hiv 副檔名來進行**reg save**作業。|
+|\<KeyName >|指定要還原之子機碼的完整路徑。 還原作業只適用于本機電腦。 KeyName 必須包含有效的根金鑰。 有效的根金鑰包括： HKLM、HKCU、HKCR、HKU 和 HKCC。|
+|\<FileName >|指定包含要寫入登錄之內容的檔案名和路徑。 此檔案必須預先建立，並使用 hiv 副檔名來進行**reg save**作業。|
 |/?|在命令提示字元中顯示**reg 還原**的說明。|
 
 ## <a name="remarks"></a>備註
@@ -52,13 +48,13 @@ Reg restore <KeyName> <FileName>
 |0|成功|
 |1|失敗|
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 若要將名為 NTRKBkUp. hiv 的檔案還原到金鑰 HKLM\Software\Microsoft\ResKit 中，並覆寫現有的金鑰內容，請輸入：
 ```
 REG RESTORE HKLM\Software\Microsoft\ResKit NTRKBkUp.hiv
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

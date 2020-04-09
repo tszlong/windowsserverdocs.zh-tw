@@ -1,7 +1,6 @@
 ---
 ms.assetid: 935ea7c2-4678-4033-b50f-2036a0359c5d
 title: 放置同盟伺服器的位置
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: c64b28f0e62839ff771cd50c0f09b534861cf9e2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fe3a7c491810d391c201344e32506f52a446b879
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358783"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858441"
 ---
 # <a name="where-to-place-a-federation-server"></a>放置同盟伺服器的位置
 
@@ -37,5 +36,5 @@ ms.locfileid: "71358783"
   
 如需有關如何在周邊網路中設定伺服器發佈的詳細資訊，請參閱 [Where to Place a Federation Server Proxy](Where-to-Place-a-Federation-Server-Proxy.md)。 如需有關如何設定 ISA Server 以發佈伺服器的詳細資訊，請參閱[建立安全的 Web 發行規則](https://go.microsoft.com/fwlink/?LinkId=75182)。  
   
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 [Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

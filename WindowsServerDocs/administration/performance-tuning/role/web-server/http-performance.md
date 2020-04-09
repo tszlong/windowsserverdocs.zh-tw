@@ -4,15 +4,15 @@ description: HTTP 1.1/2 的效能微調建議
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: IvanPash; GMonte
+ms.author: ivanpash; gmonte
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: f7d7bd5145a0804b9ec86438602dfed7c75a2b02
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5e62f7428f015193896aba5c7d9c146bd11e7225
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384974"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851681"
 ---
 # <a name="performance-tuning-http-112"></a>效能微調 HTTP 1.1/2
 

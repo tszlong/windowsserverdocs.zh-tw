@@ -1,28 +1,22 @@
 ---
 title: typeperf
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: 適用于 typeperf 的 Windows 命令主題，它會將效能資料寫入至命令視窗或記錄檔。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0c7ca89a-03b3-4626-afcf-ef8565e90043
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 087b201c51d5aec8e6f61c7469c59307d3ed8b4d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ac5f7def37939a472eb8f47cf65edf184a2fe2fc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392292"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80832361"
 ---
 # <a name="typeperf"></a>typeperf
-
-
 
 **Typeperf**命令會將效能資料寫入至命令視窗或記錄檔。 若要停止**typeperf**，請按 CTRL + C。
 
@@ -37,7 +31,7 @@ typeperf -q [object] [options]
 typeperf -qx [object] [options]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -62,11 +56,11 @@ typeperf -qx [object] [options]
 |            -s \<computer_name >             |                   指定在計數器路徑中未指定電腦時要監視的遠端電腦。                    |
 |                     -y                     |                                        對所有問題回答 [是] 而不提示。                                        |
 
-## <a name="BKMK_EXAMPLES"></a>典型
+## <a name="examples"></a><a name=BKMK_EXAMPLES></a>典型
 
 - 下列範例會將本機電腦之效能計數器的值 **\\\\processor （_Total）\% 處理器時間**寫入命令視窗的預設取樣間隔1秒，直到按下 CTRL + C 為止。  
   ```
-  typeperf "\Processor(_Total)\% Processor Time"
+  typeperf \Processor(_Total)\% Processor Time
   ```  
 - 下列範例會以5秒的取樣間隔，將檔案**計數器**中的計數器清單值寫入至 tab 鍵分隔的檔案**domain2> ...** ，直到收集50樣本為止。  
   ```

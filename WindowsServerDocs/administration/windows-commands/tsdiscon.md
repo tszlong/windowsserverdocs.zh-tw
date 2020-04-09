@@ -1,30 +1,27 @@
 ---
 title: tsdiscon
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: 適用于 tsdiscon 的 Windows 命令主題，這會中斷會話與遠端桌面工作階段主機伺服器的連線。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 13139674-7dee-4965-8cac-32f4928e8b9a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 577ff8ee672583b85c907642bd21256124aa8034
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b008fa920290043b64e7421e91a545123634f1e7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369873"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80832511"
 ---
 # <a name="tsdiscon"></a>tsdiscon
 
 >適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-中斷會話與遠端桌面工作階段主機（rd 工作階段主機）伺服器的連線。
+中斷會話與遠端桌面工作階段主機伺服器的連線。
+
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
 > [!NOTE]
@@ -35,7 +32,7 @@ ms.locfileid: "71369873"
 tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |-------|--------|
@@ -52,7 +49,7 @@ tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
 -   只有當您從遠端伺服器使用**tsdiscon**時，才需要 **/server**參數。
 -   無法中斷連接主控台會話。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 - 若要中斷目前會話的連線，請輸入：
   ```
   tsdiscon
@@ -65,6 +62,6 @@ tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
   ```
   tsdiscon TERM04
   ```
-  #### <a name="additional-references"></a>其他參考資料
-  
-  [ &#40;遠端桌面服務終端機服務&#41;命令參考](remote-desktop-services-terminal-services-command-reference.md)[的命令列語法金鑰](command-line-syntax-key.md)
+  ## <a name="additional-references"></a>其他參考資料
+  - [命令列語法金鑰](command-line-syntax-key.md)
+  [遠端桌面服務（終端機服務）命令參考](remote-desktop-services-terminal-services-command-reference.md)

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 6a852428-c1ec-4703-b3b3-a4bfdf8cbb9d
-title: Windows&#39;Server 2016 中 Active Directory Domain Services 的新功能
-description: ''
+title: Windows Server 2016 中 Active Directory Domain Services 的新功能
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,22 +8,22 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 1ef77613919ea6caf39a7cb41ba575652680466d
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: a82f45772e5e35afffc632de2b40c02c75b5e5e4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950110"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856281"
 ---
-# <a name="whats-new-in-active-directory-domain-services-for-windows-server-2016"></a>Windows Server 2016 Active Directory Domain Services 的新功能
+# <a name="whats-new-in-active-directory-domain-services-for-windows-server-2016"></a>Windows Server 2016 的 Active Directory Domain Services 新功能
 
 >適用於︰Windows Server 2016
 
-Active Directory Domain Services （AD DS）中的下列新功能可改善組織保護 Active Directory 環境的能力，並協助他們遷移至僅限雲端的部署和混合式部署，其中有些應用程式和服務託管于雲端，其他則裝載于內部部署。 其中包括下列增強功能：  
+Active Directory Domain Services （AD DS）中的下列新功能可改善組織保護 Active Directory 環境的能力，並協助他們遷移至僅限雲端的部署和混合式部署，其中某些應用程式和服務裝載于雲端，而其他則裝載于內部部署。 這些改良功能包括：  
   
 - [特殊許可權存取管理](https://docs.microsoft.com/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services)  
   
-- [透過 Azure Active Directory Join 擴充 Windows 10 裝置的雲端功能](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-overview/)
+- [透過 Azure Active Directory Join 將雲端功能延伸到 Windows 10 裝置](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-overview/)
   
 - [將已加入網域的裝置連接到 Azure AD 以進行 Windows 10 體驗](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)
   
@@ -66,7 +65,7 @@ Azure Active Directory Join 可增強企業和 EDU 客戶的身分識別體驗�
 - 公司擁有的 Windows 裝置上**的現代化設定可用性**。 氧氣 Services 不再需要個人 Microsoft 帳戶：他們現在會從使用者現有的工作帳戶執行，以確保合規性。 氧氣服務將適用于加入內部部署 Windows 網域的電腦，以及已加入 Azure AD 租使用者（「雲端網域」）的電腦和裝置。 這些設定包括︰  
 
    - 漫遊或個人化、協助工具設定和認證  
-   - 備份和還原  
+   - 備份與還原  
    - 使用工作帳戶存取 Microsoft Store  
    - 動態磚和通知  
   

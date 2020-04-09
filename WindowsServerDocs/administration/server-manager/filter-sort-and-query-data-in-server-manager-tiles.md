@@ -1,32 +1,28 @@
 ---
 title: 在伺服器管理員磚中篩選、排序及查詢資料
 description: 伺服器管理員
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8786f791-73e5-4c75-8d12-46e88a196976
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 89604b73fd071030d0f800b3a38a7ac3858ef1c6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e8447d06c03b6adca00966d05978d4337d9b5984
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383200"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851531"
 ---
 # <a name="filter-sort-and-query-data-in-server-manager-tiles"></a>在伺服器管理員磚中篩選、排序及查詢資料
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 在 Windows Server 中，伺服器管理員中的磚可讓您篩選和排序資料，以及建立和儲存自訂查詢。 您可以排序、使用關鍵字篩選器，以及在伺服器管理員的伺服器角色或群組頁面的 [事件]、[效能]、[最佳做法分析程式]、[服務] 和 [角色及功能] 磚中，對清單專案執行查詢。  
   
-本主題涵蓋下列各節。  
+本主題包含下列各節。  
   
 -   [篩選磚中的清單專案](#BKMK_tiles)  
   
@@ -34,7 +30,7 @@ ms.locfileid: "71383200"
   
 -   [針對磚資料建立及執行自訂查詢](#BKMK_query)  
   
-## <a name="BKMK_tiles"></a>篩選磚中的清單專案  
+## <a name="filter-list-entries-in-tiles"></a><a name=BKMK_tiles></a>篩選磚中的清單專案  
 [篩選] 文字方塊是一種快速方法，可以減少磚中顯示的項目清單，只顯示包含特定文字字串的項目。  
   
 #### <a name="to-apply-a-filter-to-the-list-of-entries-in-a-tile"></a>將篩選條件套用到磚中的項目清單  
@@ -49,10 +45,10 @@ ms.locfileid: "71383200"
   
 4.  若要清除篩選條件，請刪除篩選方塊中的字串，或按一下 **X**。  
   
-## <a name="BKMK_sort"></a>排序磚中的清單專案  
+## <a name="sort-list-entries-in-tiles"></a><a name=BKMK_sort></a>排序磚中的清單專案  
 按一下資料行標題，排序伺服器管理員磚中的清單專案。 第一次按一下欄標題時，會以遞增的英數字元順序 (箭頭向上) 排序欄值；再按一次則會以遞減的英數字元順序 (箭頭向下) 排序欄值。  
   
-## <a name="BKMK_query"></a>針對磚資料建立及執行自訂查詢  
+## <a name="create-and-run-custom-queries-on-tile-data"></a><a name=BKMK_query></a>針對磚資料建立及執行自訂查詢  
 您可以在伺服器管理員的 [事件]、[效能]、[最佳做法分析程式]、[服務] 或 [角色及功能] 磚中建立自訂查詢 根據預設，會隱藏您選取條件來建立自訂查詢的磚工具列區域;按一下 [**展開**] （磚工具列右邊緣的 v 形箭號按鈕）以顯示查詢準則。  
   
 #### <a name="to-create-a-custom-query-for-tile-data"></a>建立磚資料的自訂查詢  

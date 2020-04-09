@@ -1,23 +1,19 @@
 ---
 title: 啟用或停用磁碟保護
 description: 瞭解如何使用 MultiPoint 服務的磁片保護
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 00aba4c4-0244-4b39-8c85-c46fd96e1d6a
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: ad5f12a3901a3faf3559abae76e0ba924dce2eb9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7f51491ff81077ec3d6eeb5d42322350a68bb018
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389747"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859251"
 ---
 # <a name="enable-or-disable-disk-protection"></a>啟用或停用磁碟保護
 [磁碟保護] 功能可讓您在每次重新啟動系統時，都能將 MultiPoint 服務系統重設為指定的狀態。 透過 [磁碟保護]，使用者可以暫時變更 MultiPoint 服務系統，這些變更將在重新啟動伺服器時被捨棄。 重新開機伺服器時將捨棄的變更範例包括個人化使用者的設定檔、儲存檔案、變更設定，或安裝應用程式。  

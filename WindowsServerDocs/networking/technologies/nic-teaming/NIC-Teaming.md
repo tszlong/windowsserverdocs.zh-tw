@@ -2,23 +2,19 @@
 title: NIC 小組
 description: 在本主題中，我們將概述 Windows Server 2016 中的網路介面卡（NIC）小組。 NIC 小組可讓您將一和32實體 Ethernet 網路介面卡分成一或多個以軟體為基礎的虛擬網路介面卡。 這些虛擬網路介面卡可在網路介面卡故障時，提供快速的效能與容錯。
 manager: dougkim
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-nict
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: abded6f3-5708-4e35-9a9e-890e81924fec
 ms.author: lizross
 author: eross-msft
 ms.date: 09/10/2018
-ms.openlocfilehash: f4d9dd20d626f998bee0a8414c281cd27b2d3dbb
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 13607bedb436b794e03e3b2ef67ca0e90d865ed7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316439"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854731"
 ---
 # <a name="nic-teaming"></a>NIC 小組
 
@@ -41,7 +37,10 @@ ms.locfileid: "80316439"
 此外，您也可以將組合的 Nic 連接到相同的交換器或不同的交換器。 如果您將 Nic 連接至不同的交換器，這兩個交換器必須位於相同的子網上。  
   
 ## <a name="availability"></a>可用性  
-NIC 小組適用于所有版本的 Windows Server 2016。 您可以使用各種工具，從執行用戶端作業系統的電腦管理 NIC 小組，例如：• Windows PowerShell Cmdlet •遠端桌面•遠端伺服器管理工具  
+NIC 小組適用于所有版本的 Windows Server 2016。 您可以使用各種工具，從執行用戶端作業系統的電腦管理 NIC 小組，例如：
+*    Windows PowerShell 指令程式
+*    遠端桌面
+*    遠端伺服器管理工具  
   
 ## <a name="supported-and-unsupported-nics"></a>支援和不支援的 Nic   
 您可以在 Windows Server 2016 的 NIC 小組中，使用已通過 Windows 硬體合格和標誌測試（WHQL 測試）的任何乙太網路 NIC。  
@@ -116,9 +115,9 @@ Vm 中的 NIC 小組不會影響即時移轉。 無論是否在 VM 中設定 NIC
 
 請使用下列指導方針，規劃在使用 NIC 小組設定的 VM 中使用 Vlan：
   
--   在 VM 中支援多個 Vlan 的慣用方法，是在 Hyper-v 虛擬交換器上設定具有多個埠的 VM，並將每個埠與 VLAN 產生關聯。 永遠不要將這些埠小組在 VM 中，因為這樣做會造成網路通訊問題。  
+-    在 VM 中支援多個 Vlan 的慣用方法，是在 Hyper-v 虛擬交換器上設定具有多個埠的 VM，並將每個埠與 VLAN 產生關聯。 永遠不要將這些埠小組在 VM 中，因為這樣做會造成網路通訊問題。  
 
--   如果 VM 有多個 SR-IOV 虛擬函式（VFs），請確定它們位於相同的 VLAN 上，然後再將它們小組在 VM 中。 您可以輕鬆地將不同的 VFs 設定在不同的 Vlan 上，這樣做會造成網路通訊問題。  
+-    如果 VM 有多個 SR-IOV 虛擬函式（VFs），請確定它們位於相同的 VLAN 上，然後再將它們小組在 VM 中。 您可以輕鬆地將不同的 VFs 設定在不同的 Vlan 上，這樣做會造成網路通訊問題。  
  
   
 ### <a name="manage-network-interfaces-and-vlans"></a>管理網路介面和 Vlan 

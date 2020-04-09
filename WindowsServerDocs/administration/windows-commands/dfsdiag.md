@@ -1,30 +1,24 @@
 ---
 title: dfsdiag
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: 適用于 dfsdiag 的 Windows 命令主題，其提供 DFS 命名空間的診斷資訊。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c0891e67-0187-4f18-923d-5623e6127f90
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 61a6ab9a90e4d0220cfe27d2d21120be19b9ff1f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2c895dabbbafbe8ea253920d3bc6de17f42918e6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71378316"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80846191"
 ---
 # <a name="dfsdiag"></a>dfsdiag
 
-
-
-@No__t-0 命令會提供 DFS 命名空間的診斷資訊。
+提供 DFS 命名空間的診斷資訊。
 
 ## <a name="syntax"></a>語法
 
@@ -33,7 +27,7 @@ dfsdiag [ /TestDCs [/Domain:<Domain name>]| /TestSites </Machine:<server name>| 
 
 ```
 
-### <a name="parameters"></a>參數
+#### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -44,6 +38,6 @@ dfsdiag [ /TestDCs [/Domain:<Domain name>]| /TestSites </Machine:<server name>| 
 |[Dfsdiag TestReferral](dfsdiag-testreferral.md)|檢查參照回應。|
 |/?|在命令提示字元顯示說明。|
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
--   [命令列語法關鍵](command-line-syntax-key.md)
+-   - [命令列語法關鍵](command-line-syntax-key.md)

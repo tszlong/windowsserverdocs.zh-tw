@@ -1,24 +1,20 @@
 ---
 title: macfile
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e2ce586c-b316-41d3-90f8-4be0d074cc0e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 194d1adaaf64ffee2a217982638ddf0661dd0369
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0156be5a3209bf8cedf13b35ceab61ef38a0f49a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374173"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840311"
 ---
 # <a name="macfile"></a>macfile
 
@@ -30,14 +26,14 @@ ms.locfileid: "71374173"
 -   [變更登入訊息和限制會話](#BKMK_LogonLimit)
 -   [新增、變更或移除 Macintosh 可存取的磁片區](#BKMK_addvol)
 
-## <a name="BKMK_Moddirs"></a>修改 Macintosh 可存取磁片區中的目錄
+## <a name="to-modify-directories-in-macintosh-accessible-volumes"></a><a name=BKMK_Moddirs></a>修改 Macintosh 可存取磁片區中的目錄
 
 ### <a name="syntax"></a>語法
 ```
 macfile directory[/server:\\<computerName>] /path:<directory> [/owner:<OwnerName>] [/group:<GroupName>] [/permissions:<Permissions>]
 ```
 
-### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>參數
 -   /server：\\\\<computerName> 指定要變更目錄的伺服器。 如果省略，則會在本機電腦上執行此操作。
 -   /path：<directory> 需要。 指定您要變更之目錄的路徑。 目錄必須存在。 **macfile 目錄**不會建立目錄。
 -   /owner：<OwnerName> 變更目錄的擁有者。 如果省略，則擁有者會保持不變。
@@ -45,14 +41,14 @@ macfile directory[/server:\\<computerName>] /path:<directory> [/owner:<OwnerName
 -   /permissions：<Permissions> 為擁有者、主要群組和全球（everyone）設定目錄的許可權。 使用11位數的數位來設定許可權。 數位1會授與許可權，0則會撤銷許可權（例如，11111011000）。 如果省略，許可權會維持不變。
     數位的位置會決定要設定的許可權，如下表所述。
 
-    |位置|設定許可權|
+    |Position|設定許可權|
     |------|------------|
     |第一個|OwnerSeeFiles|
     |第二個|OwnerSeeFolders|
-    |第|OwnerMakechanges|
-    |四維|GroupSeeFiles|
-    |步|GroupSeeFolders|
-    |六分之一|GroupMakechanges|
+    |步驟 3|OwnerMakechanges|
+    |步驟 4|GroupSeeFiles|
+    |步驟 5|GroupSeeFolders|
+    |步驟 6|GroupMakechanges|
     |第|WorldSeeFiles|
     |8|WorldSeeFolders|
     |隊員|WorldMakechanges|
@@ -63,22 +59,22 @@ macfile directory[/server:\\<computerName>] /path:<directory> [/owner:<OwnerName
     在命令提示字元顯示說明。
 
 ### <a name="remarks"></a>備註
-- 如果您提供的資訊包含空格或特殊字元 **，請使用**引號括住文字（例如「<em>電腦名稱稱</em> **」）。**
+- 如果您提供的資訊包含空格或特殊字元，請使用引號括住文字（例如，* * * *<em>電腦名稱稱</em>* * * *）。
 - 使用**macfiledirectory** ，將 macintosh 可存取磁片區中的現有目錄提供給 macintosh 使用者。 **Macfiledirectory**命令不會建立目錄。 使用 [檔案管理員]、[命令提示字元] 或 [ **macintosh 新增資料夾**] 命令，在使用**macfile 目錄**命令之前，先在 macintosh 可存取的磁片區中建立目錄。
-  ### <a name="BKMK_Examples"></a>典型
+  ### <a name="examples"></a><a name=BKMK_Examples></a>典型
   下列範例會在本機伺服器的 E 磁片磁碟機上，變更 [Macintosh 可存取磁片區] 統計資料中的子目錄許可權。 此範例會指派 [查看檔案]、[資料夾] 和 [變更擁有者的許可權] 和 [查看檔案]，並查看所有其他使用者的資料夾許可權，同時防止重新命名、移動或刪除目錄。
   ```
-  macfile directory /path:"e:\statistics\may sales" /permissions:11111011000
+  macfile directory /path:e:\statistics\may sales /permissions:11111011000
   ```
 
-## <a name="BKMK_Joinforks"></a>加入 Macintosh 檔案的資料和資源分支
+## <a name="to-join-a-macintosh-files-data-and-resource-forks"></a><a name=BKMK_Joinforks></a>加入 Macintosh 檔案的資料和資源分支
 
 ### <a name="syntax"></a>語法
 ```
 macfile forkize[/server:\\<computerName>] [/creator:<CreatorName>] [/type:<typeName>]  [/datafork:<Filepath>] [/resourcefork:<Filepath>] /targetfile:<Filepath>
 ```
 
-### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>參數
 
 |         參數          |                                                                                                           描述                                                                                                            |
 |----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -91,25 +87,25 @@ macfile forkize[/server:\\<computerName>] [/creator:<CreatorName>] [/type:<typeN
 |             /?             |                                                                                               在命令提示字元顯示說明。                                                                                               |
 
 ### <a name="remarks"></a>備註
-- 如果您提供的資訊包含空格或特殊字元 **，請使用**引號括住文字（例如「<em>電腦名稱稱</em> **」）。**
+- 如果您提供的資訊包含空格或特殊字元，請使用引號括住文字（例如，* * * *<em>電腦名稱稱</em>* * * *）。
 
 ### <a name="examples"></a>範例
-若要在 Macintosh 可存取磁片區 D:\Release 上建立 treeapp 檔案，請使用資源分支 C:\Cross\Mac\Appcode，並將此新檔案顯示為 Macintosh 用戶端作為應用程式（Macintosh 應用程式會使用類型 APPL.EXE）與建立者（簽章）設定為木蘭，輸入：
+若要在 [Macintosh 可存取磁片區] D:\Release 上建立 treeapp 檔案，請使用 [資源分支 C:\Cross\Mac\Appcode]，並將此新檔案顯示為 Macintosh 用戶端作為應用程式（Macintosh 應用程式會使用類型 APPL.EXE），並將建立者（簽章）設定為木蘭，請輸入：
 ```
 macfile forkize /resourcefork:c:\cross\mac\appcode /type:APPL /creator:MAGNOLIA /targetfile:D:\Release\treeapp
 ```
 若要將檔案建立者變更為 Microsoft Word 5.1，請針對目錄 D:\Word documents\Group 檔中的檔案單字，在伺服器 \\\SERverA 上，輸入：
 ```
-macfile forkize /server:\\servera /creator:MSWD /type:TEXT /targetfile:"d:\Word documents\Group files\Word.txt"
+macfile forkize /server:\\servera /creator:MSWD /type:TEXT /targetfile:d:\Word documents\Group files\Word.txt
 ```
 
-## <a name="BKMK_LogonLimit"></a>變更登入訊息和限制會話
+## <a name="to-change-the-logon-message-and-limit-sessions"></a><a name=BKMK_LogonLimit></a>變更登入訊息和限制會話
 ### <a name="syntax"></a>語法
 ```
 macfile server [/server:\\<computerName>] [/maxsessions:{Number | unlimited}] [/loginmessage:<Message>]
 ```
 
-### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>參數
 
 |               參數                |                                                                                                                                                                           描述                                                                                                                                                                            |
 |----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -119,22 +115,22 @@ macfile server [/server:\\<computerName>] [/maxsessions:{Number | unlimited}] [/
 |                   /?                   |                                                                                                                                                               在命令提示字元顯示說明。                                                                                                                                                               |
 
 ### <a name="remarks"></a>備註
-- 如果您提供的資訊包含空格或特殊字元 **，請使用**引號括住文字（例如「<em>電腦名稱稱</em> **」）。**
+- 如果您提供的資訊包含空格或特殊字元，請使用引號括住文字（例如，* * * *<em>電腦名稱稱</em>* * * *）。
 
 ### <a name="examples"></a>範例
-若要將本機伺服器上允許之 Macintosh 會話的檔案和列印伺服器數目，從目前的設定變更為五個會話，並在完成時，新增登入訊息「登出伺服器 for Macintosh」。請輸入：
+若要將本機伺服器上允許之 Macintosh 會話的檔案和列印伺服器數目，從目前的設定變更為五個會話，並在完成時，從 Server for Macintosh 新增登入訊息記錄檔。請輸入：
 ```
-macfile server /maxsessions:5 /loginmessage:"Log off from Server for Macintosh when you are finished."
+macfile server /maxsessions:5 /loginmessage:Log off from Server for Macintosh when you are finished.
 ```
 
-## <a name="BKMK_addvol"></a>新增、變更或移除 Macintosh 可存取的磁片區
+## <a name="to-add-change-or-remove-macintosh-accessible-volumes"></a><a name=BKMK_addvol></a>新增、變更或移除 Macintosh 可存取的磁片區
 ### <a name="syntax"></a>語法
 ```
 macfile volume {/add|/set} [/server:\\<computerName>] /name:<volumeName>/path:<directory>[/readonly:{true | false}] [/guestsallowed:{true | false}] [/password:<Password>] [/maxusers:{<Number>>|unlimited}]
 macfile volume /remove[/server:\\<computerName>] /name:<volumeName>
 ```
 
-### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>參數
 
 |              參數               |                                                                                                                                                                       描述                                                                                                                                                                        |
 |--------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -150,25 +146,25 @@ macfile volume /remove[/server:\\<computerName>] /name:<volumeName>
 |                  /?                  |                                                                                                                                                           在命令提示字元顯示說明。                                                                                                                                                           |
 
 ### <a name="remarks"></a>備註
-- 如果您提供的資訊包含空格或特殊字元 **，請使用**引號括住文字（例如「<em>電腦名稱稱</em> **」）。**
+- 如果您提供的資訊包含空格或特殊字元，請使用引號括住文字（例如，* * * *<em>電腦名稱稱</em>* * * *）。
 
 ### <a name="examples"></a>範例
 若要在本機伺服器上建立名為「美國行銷統計資料」的磁片區，並使用電子磁片磁碟機中的 Stats 目錄，並指定來賓無法存取該磁片區，請輸入：
 ```
-macfile volume /add /name:"US Marketing Statistics" /guestsallowed:false /path:e:\Stats
+macfile volume /add /name:US Marketing Statistics /guestsallowed:false /path:e:\Stats
 ```
 若要將以上建立的磁片區變更為唯讀，並將最大使用者數設定為五個，請輸入：
 ```
-macfile volume /set /name:"US Marketing Statistics" /readonly:true /password:saturn /maxusers:5
+macfile volume /set /name:US Marketing Statistics /readonly:true /password:saturn /maxusers:5
 ```
 若要新增名為 [橫向設計] 的磁片區，請在伺服器 \\\Magnolia 上，使用 E 磁片磁碟機中的樹狀目錄，並指定來賓可以存取該磁片區，請輸入：
 ```
-macfile volume /add /server:\\Magnolia /name:"Landscape Design" /path:e:\trees
+macfile volume /add /server:\\Magnolia /name:Landscape Design /path:e:\trees
 ```
 若要移除本機伺服器上稱為「銷售報告」的磁片區，請輸入：
 ```
-macfile volume /remove /name:"Sales Reports"
+macfile volume /remove /name:Sales Reports
 ```
 
-## <a name="additional-references"></a>其他參考
--   [命令列語法關鍵](command-line-syntax-key.md)
+## <a name="additional-references"></a>其他參考資料
+-   - [命令列語法關鍵](command-line-syntax-key.md)

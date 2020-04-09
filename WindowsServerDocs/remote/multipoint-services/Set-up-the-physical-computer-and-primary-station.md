@@ -1,24 +1,20 @@
 ---
 title: 設定實體電腦與主要站台
 description: 瞭解如何在 MultiPoint 服務中設定您的第一個系統（主要工作站）
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4e83b126-ce9a-4cd7-a0bd-6627c9e0f81b
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 1a5865b6bd15b6cd07cde393012afd495e3378be
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0f52d3fa4aeca8fd4e036a93ee5a175bf1e96d0b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395294"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855621"
 ---
 # <a name="set-up-the-physical-computer-and-primary-station"></a>設定實體電腦與主要站台
 安裝 MultiPoint 服務之前，您必須先設定 MultiPoint 服務系統的主要工作站。 如果您將使用區域網路（LAN），請將電腦連線到 LAN。  

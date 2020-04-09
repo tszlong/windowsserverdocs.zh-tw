@@ -1,18 +1,18 @@
 ---
 title: 使用 PowerShell 建立受防護的 VM
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: 6111b3fbff508c3c485f2a998bab8c0b16beaed6
-ms.sourcegitcommit: 471464a674a53c468a2f1e28575c91245ce9badf
+ms.openlocfilehash: 09e09fa30a38ef5f6046f623e24be0bc7b6ce87e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75548174"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856751"
 ---
 # <a name="create-a-shielded-vm-using-powershell"></a>使用 PowerShell 建立受防護的 VM
 
@@ -22,7 +22,7 @@ ms.locfileid: "75548174"
 
 簡言之，您會在任何電腦上建立範本磁片、防護資料檔案、自動安裝回應檔案和其他安全性成品，然後將這些檔案複製到受防護的主機，並布建受防護的 VM。
 
-## <a name="create-a-signed-template-disk"></a>建立已簽署的範本磁碟
+## <a name="create-a-signed-template-disk"></a>建立已簽署的範本磁片
 
 若要建立新的受防護 VM，您必須先將受防護的 VM 範本磁片預先加密，並簽署其作業系統磁片區（或 Linux 上的開機和根磁碟分割）。
 如需如何建立範本磁片的詳細資訊，請遵循下列連結。

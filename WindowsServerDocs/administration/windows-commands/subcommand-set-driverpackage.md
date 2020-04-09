@@ -1,28 +1,22 @@
 ---
 title: 子命令集-DriverPackage
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: DriverPackage 的 Windows 命令主題，會重新命名及/或啟用或停用伺服器上的驅動程式套件。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 11804bb6-ca29-4461-8c63-5131748cd742
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 65751cf6e03baa87c7734b318a26111652bee0a1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 68d282b3338e67a33a55481658f55db69930b10e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370816"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834014"
 ---
 # <a name="subcommand-set-driverpackage"></a>子命令： set-DriverPackage
-
-
 
 重新命名和（或）啟用或停用伺服器上的驅動程式套件。
 
@@ -32,17 +26,17 @@ ms.locfileid: "71370816"
 WDSUTIL /Set-DriverPackage [/Server:<Server name>] {/DriverPackage:<Name> | /PackageId:<ID>} [/Name:<New Name>] [/Enabled:{Yes | No}
 ```
 
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
 |        參數         |                                                                                                                                                                                                               描述                                                                                                                                                                                                                |
 |--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [/Server： \<Server 名稱 >] |                                                                                                                                                 指定伺服器的名稱。 這可以是 NetBIOS 名稱或 FQDN。 如果未指定伺服器名稱，則會使用本機伺服器。                                                                                                                                                 |
-| [/DriverPackage： \<Name >] |                                                                                                                                                                                       指定要修改之驅動程式套件的目前名稱。                                                                                                                                                                                        |
-|    [/PackageId： \<ID >]    | 指定驅動程式套件的 Windows 部署服務識別碼。 如果驅動程式套件無法以名稱唯一識別，您就必須指定此選項。 若要尋找封裝的此識別碼，請按一下封裝所在的驅動程式群組（或 [**所有封裝**] 節點），以滑鼠右鍵按一下套件，然後按一下 [**屬性**]。 套件識別碼會列在 [**一般**] 索引標籤上。例如： {DD098D20-1850-4FC8-8E35-EA24A1BEFF5E}。 |
-|   [/Name： \<New 名稱 >]    |                                                                                                                                                                                              指定驅動程式套件的新名稱。                                                                                                                                                                                              |
+| [/Server：\<伺服器名稱 >] |                                                                                                                                                 指定伺服器的名稱。 這可以是 NetBIOS 名稱或 FQDN。 如果未指定伺服器名稱，則會使用本機伺服器。                                                                                                                                                 |
+| [/DriverPackage：\<名稱 >] |                                                                                                                                                                                       指定要修改之驅動程式套件的目前名稱。                                                                                                                                                                                        |
+|    [/PackageId：\<識別碼 >]    | 指定驅動程式套件的 Windows 部署服務識別碼。 如果驅動程式套件無法以名稱唯一識別，您就必須指定此選項。 若要尋找封裝的此識別碼，請按一下封裝所在的驅動程式群組（或 [**所有封裝**] 節點），以滑鼠右鍵按一下套件，然後按一下 [**屬性**]。 套件識別碼會列在 [**一般**] 索引標籤上。例如： {DD098D20-1850-4FC8-8E35-EA24A1BEFF5E}。 |
+|   [/Name：\<新名稱 >]    |                                                                                                                                                                                              指定驅動程式套件的新名稱。                                                                                                                                                                                              |
 |      [/Enabled： {Yes      |                                                                                                                                                                                                                   不要                                                                                                                                                                                                                    |
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 若要變更封裝的設定，請輸入下列其中一項：
 ```
@@ -52,6 +46,6 @@ WDSUTIL /Set-DriverPackage /PackageId:{4D36E972-E325-11CE-BFC1-08002BE10318} /Na
 WDSUTIL /Set-DriverPackage /DriverPackage:MyDriverPackage /Name:NewName /Enabled:Yes
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

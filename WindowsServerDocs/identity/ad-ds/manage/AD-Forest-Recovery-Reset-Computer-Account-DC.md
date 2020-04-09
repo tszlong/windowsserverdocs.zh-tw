@@ -1,6 +1,5 @@
 ---
 title: AD 樹系復原-重設 DC 上的電腦帳戶
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 4e1a6070-df0a-4dfe-8773-899a010bfabd
 ms.technology: identity-adds
-ms.openlocfilehash: 320d02f789b8dda771b648b0aa9a58f545f3358b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 80bdf4bd78b1d4cd678ff09dc2e7326a290032dd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71368875"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823711"
 ---
 # <a name="ad-forest-recovery---resetting-the-computer-account-on-the-dc"></a>AD 樹系復原-重設 DC 上的電腦帳戶
 
->適用於：Windows Server 2016、Windows Server 2012 及 2012 R2、Windows Server 2008 和 2008 R2
+>適用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
  使用下列程式重設 DC 的電腦帳戶密碼。 
   

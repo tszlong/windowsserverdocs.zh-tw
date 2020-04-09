@@ -1,19 +1,19 @@
 ---
 title: 捕捉 HGS 所需的 TPM 模式資訊
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 915b1338-5085-481b-8904-75d29e609e93
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 04/01/2019
-ms.openlocfilehash: ba67cb80a405cd1c6d368a52798e3dec4d9861cb
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 480901321b53adb03cc44f7e8b7c597c77404c90
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322000"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856421"
 ---
 # <a name="authorize-guarded-hosts-using-tpm-based-attestation"></a>使用 TPM 型證明授權受防護主機
 
@@ -29,7 +29,7 @@ TPM 模式會使用 TPM 識別碼（也稱為平臺識別碼或簽署金鑰 \[EK
 
     -  這適用于在相同硬體類別上執行的所有 Hyper-v 主機
 
-3.  程式碼完整性原則（允許的二進位檔的允許清單）
+3.  程式碼完整性原則（允許的二進位檔的白名單）
 
     -  這適用于所有共用通用硬體和軟體的 Hyper-v 主機
 

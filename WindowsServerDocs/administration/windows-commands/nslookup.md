@@ -1,28 +1,24 @@
 ---
 title: nslookup
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 41516932-7833-434a-aa92-b4cf0f9a7ef7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6b47592be57d5999ac26465097490da266bd0aea
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 15062d81992ee1b6e55d47cb9e49822350e4f2bc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372700"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80838091"
 ---
 # <a name="nslookup"></a>nslookup
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 顯示您可以用來診斷網域名稱系統（DNS）基礎結構的資訊。 使用此工具之前，您應該先熟悉 DNS 的運作方式。 只有當您已安裝 TCP/IP 通訊協定時，才能使用 nslookup 命令列工具。
 ## <a name="syntax"></a>語法
@@ -57,7 +53,7 @@ nslookup /set [no]vc
 nslookup /view <FileName>
 ```
 
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
 |                       參數                       |                                                                                                         描述                                                                                                         |
 |-------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -106,15 +102,15 @@ nslookup /view <FileName>
   |`No response from server`|伺服器電腦上沒有正在執行的 DNS 名稱伺服器。|
   |`No records`|DNS 名稱伺服器沒有電腦目前查詢類型的資源記錄，雖然電腦名稱稱是有效的。 查詢類型是使用**set querytype**命令來指定。|
   |`Nonexistent domain`|電腦或 DNS 功能變數名稱不存在。|
-  |`Connection refused`<br /><br />-或-<br /><br />`Network is unreachable`|無法連接到 DNS 名稱伺服器或 finger 伺服器。 此錯誤通常發生于**ls**和**finger**要求。|
+  |`Connection refused`<p>-或-<p>`Network is unreachable`|無法連接到 DNS 名稱伺服器或 finger 伺服器。 此錯誤通常發生于**ls**和**finger**要求。|
   |`Server failure`|DNS 名稱伺服器在其資料庫中發現內部不一致，因此無法傳回有效的答案。|
   |`Refused`|DNS 名稱伺服器已拒絕服務要求。|
   |`format error`|DNS 名稱伺服器發現要求封包的格式不正確。 這可能表示**nslookup**中發生錯誤。|
 - 如需**nslookup**命令和 DNS 的詳細資訊，請參閱下列資源：
-  - 先生，T.，Davies，J。2000。 *Microsoft Windows 2000 Tcp/ip 通訊協定和服務技術參考*。 華盛頓州雷德蒙德：Microsoft 請按。
-  - Albitz、P.、Loukides、M. 和 c. Liu。 2001。 *DNS 和 BIND，第四版*。 Sebastopol，加州：O'Reilly 和關聯，Inc。
-  - Larson、M. 和 C. Liu。 2001。 *Windows 2000 上的 DNS*。 Sebastopol，加州：O'Reilly 和關聯，Inc。
+  - 先生，T.，Davies，J. 2000。 *Microsoft Windows 2000 Tcp/ip 通訊協定和服務技術參考*。 華盛頓州雷德蒙德： Microsoft 請按。
+  - Albitz、P.、Loukides、M. 和 c. Liu。 2001。 *DNS 和 BIND，第四版*。 Sebastopol，加州： O'Reilly 和關聯，Inc。
+  - Larson、M. 和 C. Liu。 2001。 *Windows 2000 上的 DNS*。 Sebastopol，加州： O'Reilly 和關聯，Inc。
     #### <a name="examples"></a>範例
     每個命令列選項都包含連字號（-），後面緊接著命令名稱，在某些情況下是等號（=）和值。 例如，若要將預設的查詢類型變更為 [主機（電腦）] 資訊，並將初始超時設定為10秒，請輸入： **nslookup-querytype = hinfo-timeout = 10**
     ## <a name="see-also"></a>另請參閱
-    [命令列語法關鍵](command-line-syntax-key.md)
+    - [命令列語法關鍵](command-line-syntax-key.md)

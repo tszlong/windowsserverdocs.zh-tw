@@ -1,32 +1,26 @@
 ---
 title: diskraid
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: 適用于 diskraid 的 Windows 命令主題，這是一種命令列工具，可讓您設定和管理獨立（或便宜）磁片（RAID）儲存子系統的重複陣列。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 20aef1e5-7641-47cf-b4eb-cda117f65b6e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f72e91f856da3b24e7450381b293f4b365d914f3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ea71fc67420700527a3a14494c947aed7a2ec747
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377804"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80845401"
 ---
 # <a name="diskraid"></a>diskraid
 
-
-
 DiskRAID 是一種命令列工具，可讓您設定和管理獨立（或便宜）磁片（RAID）儲存子系統的重複陣列。
 
-RAID 是一種用來標準化和分類容錯磁片系統的方法。 RAID 層級提供各種效能、可靠性和成本組合。 RAID 通常是在伺服器上使用。 有些伺服器會提供三個 RAID 層級：層級0（等量）、層級1（鏡像）和層級5（以同位方式分割）。
+RAID 是一種用來標準化和分類容錯磁片系統的方法。 RAID 層級提供各種效能、可靠性及成本的混合。 RAID 通常是在伺服器上使用。 有些伺服器會提供三個 RAID 層級：層級0（等量）、層級1（鏡像）和層級5（以同位方式分割）。
 
 硬體 RAID 子系統會使用邏輯單元編號（LUN），區別實體可定址的儲存單位。 LUN 物件必須至少有一個 plex，而且可以有任意數目的額外 plex。 每個 plex 都包含 LUN 物件上的資料複本。 可以在 LUN 物件中新增和移除 plex。
 
@@ -38,7 +32,7 @@ RAID 是一種用來標準化和分類容錯磁片系統的方法。 RAID 層級
 ## <a name="diskraid-commands"></a>DiskRAID 命令
 
 若要查看命令語法，請按一下命令：
--   [載入](#BKMK_1)
+-   [add](#BKMK_1)
 -   [起來](#BKMK_2)
 -   [automagic](#BKMK_3)
 -   [break](#BKMK_4)
@@ -55,7 +49,7 @@ RAID 是一種用來標準化和分類容錯磁片系統的方法。 RAID 層級
 -   [啟動器](#BKMK_15)
 -   [invalidatecache](#BKMK_16)
 -   [lbpolicy](#BKMK_18)
--   [list](#BKMK_19)
+-   [名單](#BKMK_19)
 -   [登入](#BKMK_20)
 -   [登出](#BKMK_21)
 -   [保養](#BKMK_22)
@@ -68,14 +62,14 @@ RAID 是一種用來標準化和分類容錯磁片系統的方法。 RAID 層級
 -   [rem](#BKMK_29)
 -   [取消](#BKMK_30)
 -   [replace](#BKMK_31)
--   [啟動](#BKMK_32)
+-   [reset](#BKMK_32)
 -   [請](#BKMK_33)
 -   [setflag](#BKMK_34)
 -   [shrink](#BKMK_shrink)
 -   [待命](#BKMK_35)
 -   [取消遮罩](#BKMK_36)
 
-### <a name="BKMK_1"></a>載入
+### <a name="add"></a><a name=BKMK_1></a>載入
 
 將現有的 LUN 新增至目前選取的 LUN，或將 iSCSI 目標入口網站新增至目前選取的 iSCSI 目標入口網站群組。
 
@@ -86,7 +80,7 @@ add plex lun=n [noerr]
 add tpgroup tportal=n [noerr]
 ```
 
-#### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>參數
 
 **plex lun**=*n*
 
@@ -103,9 +97,9 @@ add tpgroup tportal=n [noerr]
 
 指定在執行此作業時所發生的任何失敗都會被忽略。 這在腳本模式中很有用。
 
-### <a name="BKMK_2"></a>起來
+### <a name="associate"></a><a name=BKMK_2></a>起來
 
-針對目前選取的 LUN，將指定的控制器埠清單設定為作用中（其他控制器埠會變成非作用中），或將指定的控制器埠新增至目前所選 LUN 的現有作用中控制器埠清單，或將目前所選取 LUN 的指定 iSCSI 目標。
+針對目前選取的 LUN，將指定的控制器埠清單設定為作用中（其他控制器埠會變成非作用中），或將指定的控制器埠新增至目前所選 LUN 的現有作用中控制器埠清單，或將指定的 iSCSI 目標關聯至目前選取的 LUN。
 
 #### <a name="syntax"></a>語法
 
@@ -115,7 +109,7 @@ associate ports [add] <n-m>[,<n-m>[,…]]
 associate targets [add] <n>[,<n> [,…]]
 ```
 
-#### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>參數
 
 **控制器**
 
@@ -129,7 +123,7 @@ associate targets [add] <n>[,<n> [,…]]
 
 僅與 VDS 1.1 提供者搭配使用。 新增或取代與目前所選 LUN 相關聯的 iSCSI 目標清單。
 
-**載入**
+**add**
 
 對於 VDS 1.0 提供者，會將指定的控制器新增至與 LUN 相關聯的現有控制器清單。 如果未指定此參數，控制器清單會取代與此 LUN 相關聯的現有控制器清單。
 
@@ -159,7 +153,7 @@ Controller port associations changed.
 (Controller ports active after this command: Ctlr 0 Port 0, Ctlr 0 Port 1, Ctlr 1 Port 1)
 ```
 
-### <a name="BKMK_3"></a>automagic
+### <a name="automagic"></a><a name=BKMK_3></a>automagic
 
 設定或清除旗標，提供有關如何設定 LUN 的提示給提供者。 不搭配任何參數使用時， **automagic**作業會顯示旗標清單。
 
@@ -169,13 +163,13 @@ Controller port associations changed.
 automagic {set | clear | apply} all <flag=value> [<flag=value> [...]]
 ```
 
-#### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>參數
 
 **set**
 
 將指定的旗標設定為指定的值。
 
-**clear**
+**明確**
 
 清除指定的旗標。 **All**關鍵字會清除所有的 automagic 旗標。
 
@@ -187,7 +181,7 @@ automagic {set | clear | apply} all <flag=value> [<flag=value> [...]]
 
 旗標是以三個字母的縮寫來識別。
 
-|旗標|描述|
+|Flag|描述|
 |----|-----------|
 |FCR|需要快速損毀復原|
 |FTL|容錯|
@@ -203,11 +197,11 @@ automagic {set | clear | apply} all <flag=value> [<flag=value> [...]]
 |RBP|重建優先順序|
 |RBV|讀回驗證已啟用|
 |RMP|已啟用重新對應|
-|STS|等量大小|
+|安全性權杖服務|等量大小|
 |WTC|已啟用寫入快取|
-|YNK|可|
+|YNK|卸除式|
 
-### <a name="BKMK_4"></a>崩潰
+### <a name="break"></a><a name=BKMK_4></a>崩潰
 
 從目前選取的 LUN 移除 plex。 並不會保留該 plex 和其包含的資料，而且可能會回收磁片區範圍。
 
@@ -217,7 +211,7 @@ automagic {set | clear | apply} all <flag=value> [<flag=value> [...]]
 break plex=<plex_number> [noerr]
 ```
 
-#### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>參數
 
 **複雜**
 
@@ -238,7 +232,7 @@ break plex=<plex_number> [noerr]
 > [!CAUTION]
 > 原始 LUN 上包含的所有資料都不保證一致。
 
-### <a name="BKMK_5"></a>dh-chap
+### <a name="chap"></a><a name=BKMK_5></a>dh-chap
 
 設定挑戰交握驗證通訊協定（CHAP）共用密碼，讓 iSCSI 啟動器和 iSCSI 目標可以彼此通訊。
 
@@ -251,7 +245,7 @@ chap target set secret=[<secret>] [initiator=<initiatorname>]
 chap target remember secret=[<secret>] initiator=<initiatorname>
 ```
 
-#### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>參數
 
 **起始端集合**
 
@@ -281,7 +275,7 @@ chap target remember secret=[<secret>] initiator=<initiatorname>
 
 指定要與密碼相關聯的啟動器 iSCSI 名稱。 這是設定目標上的秘密並讓它退出時，這是選擇性的，這表示密碼將用於所有尚未擁有相關聯秘密的啟動器。
 
-### <a name="BKMK_6"></a>建立
+### <a name="create"></a><a name=BKMK_6></a>建立
 
 在目前選取的子系統上建立新的 LUN 或 iSCSI 目標，或在目前選取的目標上建立目標入口網站群組。 您可以使用 [ **DiskRAID 清單**] 命令來查看實際的系結。
 
@@ -299,7 +293,7 @@ create tpgroup [noerr]
 
 #### <a name="parameter"></a>參數
 
-**simple**
+**單個**
 
 建立簡單的 LUN。
 
@@ -374,7 +368,7 @@ create tpgroup [noerr]
 -   必須指定**size**= 或**磁片磁碟機**= 參數。 它們也可以一起使用。
 -   建立之後，就無法變更 LUN 的等量大小。
 
-### <a name="BKMK_7"></a>delete
+### <a name="delete"></a><a name=BKMK_7></a>delete
 
 刪除目前選取的 LUN、iSCSI 目標（只要沒有任何與 iSCSI 目標相關聯的 Lun）或 iSCSI 目標入口網站群組。
 
@@ -386,7 +380,7 @@ delete target [noerr]
 delete tpgroup [noerr]
 ```
 
-#### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>參數
 
 **lun**
 
@@ -408,7 +402,7 @@ delete tpgroup [noerr]
 
 指定在執行此作業時所發生的任何失敗都會被忽略。 這在腳本模式中很有用。
 
-### <a name="BKMK_8"></a>資訊
+### <a name="detail"></a><a name=BKMK_8></a>資訊
 
 顯示指定類型之目前選取物件的詳細資訊。
 
@@ -418,7 +412,7 @@ delete tpgroup [noerr]
 Detail {hbaport | iadapter | iportal | provider | subsystem | controller | port | drive | lun | tportal | target | tpgroup} [verbose]
 ```
 
-#### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>參數
 
 **hbaport**
 
@@ -472,7 +466,7 @@ Detail {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 
 僅用於 LUN 參數。 列出其他資訊，包括其 plex。
 
-### <a name="BKMK_9"></a>中斷關聯
+### <a name="dissociate"></a><a name=BKMK_9></a>中斷關聯
 
 針對目前選取的 LUN，將指定的控制器埠清單設定為非作用中（其他控制器埠不會受到影響），或分離目前所選 LUN 的指定 iSCSI 目標清單。
 
@@ -525,7 +519,7 @@ Controller port associations changed.
 (Controller ports active after this command: Ctlr 0 Port 1)
 ```
 
-### <a name="BKMK_10"></a>退出
+### <a name="exit"></a><a name=BKMK_10></a>退出
 
 結束 DiskRAID。
 
@@ -535,7 +529,7 @@ Controller port associations changed.
 exit
 ```
 
-### <a name="BKMK_11"></a>延遲
+### <a name="extend"></a><a name=BKMK_11></a>延遲
 
 藉由將磁區新增至 LUN 的結尾，來擴充目前選取的 LUN。 並非所有提供者都支援擴充 Lun。 不會擴充 LUN 上包含的任何磁片區或檔案系統。 擴充 LUN 之後，您應該使用**DiskPart extend**命令來擴充相關聯的磁片上結構。
 
@@ -545,7 +539,7 @@ exit
 extend lun [size=<LUN_size>] [drives=<drive_number>, [<drive_number>, ...]] [noerr]
 ```
 
-#### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>參數
 
 **大小 =**
 
@@ -571,7 +565,7 @@ extend lun [size=<LUN_size>] [drives=<drive_number>, [<drive_number>, ...]] [noe
 
 必須指定*大小*或 \<磁片磁碟機 > 參數。 它們也可以一起使用。
 
-### <a name="BKMK_12"></a>flushcache
+### <a name="flushcache"></a><a name=BKMK_12></a>flushcache
 
 清除目前選取的控制器上的快取。
 
@@ -581,7 +575,7 @@ extend lun [size=<LUN_size>] [drives=<drive_number>, [<drive_number>, ...]] [noe
 flushcache controller
 ```
 
-### <a name="BKMK_13"></a>説明
+### <a name="help"></a><a name=BKMK_13></a>説明
 
 顯示所有 DiskRAID 命令的清單。
 
@@ -591,7 +585,7 @@ flushcache controller
 help
 ```
 
-### <a name="BKMK_14"></a>importtarget
+### <a name="importtarget"></a><a name=BKMK_14></a>importtarget
 
 抓取或設定目前所選子系統的目前磁碟區陰影複製服務（VSS）匯入目標。
 
@@ -607,7 +601,7 @@ importtarget subsystem [set target]
 
 若已指定，會將目前選取的目標設定為目前所選子系統的 VSS 匯入目標。 如果未指定，命令會抓取目前所選子系統所設定的目前 VSS 匯入目標。
 
-### <a name="BKMK_15"></a>啟動器
+### <a name="initiator"></a><a name=BKMK_15></a>啟動器
 
 抓取本機 iSCSI 啟動器的相關資訊。
 
@@ -617,7 +611,7 @@ importtarget subsystem [set target]
 initiator
 ```
 
-### <a name="BKMK_16"></a>invalidatecache
+### <a name="invalidatecache"></a><a name=BKMK_16></a>invalidatecache
 
 使目前選取的控制器上的快取失效。
 
@@ -627,7 +621,7 @@ initiator
 invalidatecache controller
 ```
 
-### <a name="BKMK_18"></a>lbpolicy
+### <a name="lbpolicy"></a><a name=BKMK_18></a>lbpolicy
 
 在目前選取的 LUN 上設定負載平衡原則。
 
@@ -638,7 +632,7 @@ lbpolicy set lun type=<type> [paths=<path>-{primary | <weight>}[,<path>-{primary
 lbpolicy set lun paths=<path>-{primary | <weight>}[,<path>-{primary | <weight>}[,…]]
 ```
 
-#### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>參數
 
 **type**
 
@@ -662,7 +656,7 @@ lbpolicy set lun paths=<path>-{primary | <weight>}[,<path>-{primary | <weight>}[
 
 指定路徑為**主要**或具有特定的 \<權數 >。 未指定的任何路徑都會隱含地設定為備份。 列出的任何路徑都必須是目前所選取 LUN 的其中一個路徑。
 
-### <a name="BKMK_19"></a>名單
+### <a name="list"></a><a name=BKMK_19></a>名單
 
 顯示指定類型的物件清單。
 
@@ -672,7 +666,7 @@ lbpolicy set lun paths=<path>-{primary | <weight>}[,<path>-{primary | <weight>}[
 List {hbaports | iadapters | iportals | providers | subsystems | controllers | ports | drives | LUNs | tportals | targets | tpgroups}
 ```
 
-#### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>參數
 
 **hbaports**
 
@@ -722,7 +716,7 @@ List {hbaports | iadapters | iportals | providers | subsystems | controllers | p
 
 列出目前所選目標中所有 iSCSI 目標入口網站群組的摘要資訊。 目前選取的入口網站群組會以星號（*）標示。
 
-### <a name="BKMK_20"></a>登入
+### <a name="login"></a><a name=BKMK_20></a>登入
 
 將指定的 iSCSI 啟動器介面卡記錄到目前選取的 iSCSI 目標。
 
@@ -732,7 +726,7 @@ List {hbaports | iadapters | iportals | providers | subsystems | controllers | p
 login target iadapter=<iadapter> [type={manual | persistent | boot}] [chap={none | oneway | mutual}] [iportal=<iportal>] [tportal=<tportal>] [<flag> [<flag> […]]]
 ```
 
-#### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>參數
 
 **type**
 
@@ -768,7 +762,7 @@ login target iadapter=<iadapter> [type={manual | persistent | boot}] [chap={none
 
 **EDD**：啟用資料摘要
 
-### <a name="BKMK_21"></a>登出
+### <a name="logout"></a><a name=BKMK_21></a>登出
 
 從目前選取的 iSCSI 目標記錄指定的 iSCSI 啟動器介面卡。
 
@@ -778,13 +772,13 @@ login target iadapter=<iadapter> [type={manual | persistent | boot}] [chap={none
 logout target iadapter= <iadapter>
 ```
 
-#### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>參數
 
 **iadapter**
 
 指定要登出之登入會話的啟動器介面卡。
 
-### <a name="BKMK_22"></a>保養
+### <a name="maintenance"></a><a name=BKMK_22></a>保養
 
 在目前選取的指定類型物件上執行維護作業。
 
@@ -794,7 +788,7 @@ logout target iadapter= <iadapter>
 maintenance <object operation> [count=<iteration>]
 ```
 
-#### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>參數
 
 \<物件 >
 
@@ -808,7 +802,7 @@ maintenance <object operation> [count=<iteration>]
 
 指定重複*作業的次數。* 這通常與**閃爍**、**嗶聲**或**ping**搭配使用。
 
-### <a name="BKMK_23"></a>檔案名
+### <a name="name"></a><a name=BKMK_23></a>檔案名
 
 將目前選取的子系統、LUN 或 iSCSI 目標的易記名稱設定為指定的名稱。
 
@@ -824,7 +818,7 @@ name {subsystem | lun | target} [<name>]
 
 指定子系統、LUN 或目標的名稱。 名稱的長度必須少於64個字元。 如果未提供任何名稱，則會刪除現有的名稱（如果有的話）。
 
-### <a name="BKMK_24"></a>離線
+### <a name="offline"></a><a name=BKMK_24></a>離線
 
 將指定類型之目前選取物件的狀態設定為 [**離線**]。
 
@@ -842,7 +836,7 @@ offline <object>
 
 類型可以是**子系統**、**控制器**、**磁片磁碟機**、 **LUN**或**管理入口網站**。
 
-### <a name="BKMK_25"></a>線上
+### <a name="online"></a><a name=BKMK_25></a>線上
 
 將指定類型之所選物件的狀態設定為 [**線上**]。 如果物件是**hbaport**，則會將目前所選 HBA 埠的路徑狀態變更為 [**線上**]。
 
@@ -860,7 +854,7 @@ online <object>
 
 類型可以是**hbaport**、**子系統**、**控制器**、**磁片磁碟機**、 **LUN**或**管理入口網站**。
 
-### <a name="BKMK_26"></a>recover
+### <a name="recover"></a><a name=BKMK_26></a>recover
 
 執行必要的作業，例如重新同步或熱備份，以修復目前選取的容錯 LUN。 例如，復原可能會導致熱備件系結至具有故障磁片或其他磁片區重新配置的 RAID 集。
 
@@ -870,7 +864,7 @@ online <object>
 recover <lun>
 ```
 
-### <a name="BKMK_27"></a>reenumerate
+### <a name="reenumerate"></a><a name=BKMK_27></a>reenumerate
 
 Reenumerates 指定之類型的物件。 如果您使用 [擴充 LUN] 命令，則必須先使用 [重新整理] 命令來更新磁片大小，再使用 reenumerate 命令。
 
@@ -880,7 +874,7 @@ Reenumerates 指定之類型的物件。 如果您使用 [擴充 LUN] 命令，�
 reenumerate {subsystems | drives}
 ```
 
-#### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>參數
 
 **分系統**
 
@@ -890,7 +884,7 @@ reenumerate {subsystems | drives}
 
 查詢內部 i/o 匯流排，以探索目前所選子系統中新增的任何新磁片磁碟機。
 
-### <a name="BKMK_28"></a>恢復
+### <a name="refresh"></a><a name=BKMK_28></a>恢復
 
 重新整理目前所選提供者的內部資料。
 
@@ -900,7 +894,7 @@ reenumerate {subsystems | drives}
 refresh provider
 ```
 
-### <a name="BKMK_29"></a>剩餘
+### <a name="rem"></a><a name=BKMK_29></a>剩餘
 
 用來批註腳本。
 
@@ -910,7 +904,7 @@ refresh provider
 Rem <comment>
 ```
 
-### <a name="BKMK_30"></a>取消
+### <a name="remove"></a><a name=BKMK_30></a>取消
 
 從目前選取的目標入口網站群組移除指定的 iSCSI 目標入口網站。
 
@@ -930,7 +924,7 @@ remove tpgroup tportal=<tportal> [noerr]
 
 指定應該忽略執行此作業時所發生的任何失敗。 這在腳本模式中很有用。
 
-### <a name="BKMK_31"></a>取代
+### <a name="replace"></a><a name=BKMK_31></a>取代
 
 以目前選取的磁片磁碟機取代指定的磁片磁碟機。
 
@@ -950,7 +944,7 @@ replace drive=<drive_number>
 
 -   指定的磁片磁碟機可能不是目前選取的磁片磁碟機。
 
-### <a name="BKMK_32"></a>啟動
+### <a name="reset"></a><a name=BKMK_32></a>啟動
 
 重設目前選取的控制器或埠。
 
@@ -960,7 +954,7 @@ replace drive=<drive_number>
 Reset {controller | port}
 ```
 
-#### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>參數
 
 **控制器**
 
@@ -970,7 +964,7 @@ Reset {controller | port}
 
 重設埠。
 
-### <a name="BKMK_33"></a>請
+### <a name="select"></a><a name=BKMK_33></a>請
 
 顯示或變更目前選取的物件。
 
@@ -980,7 +974,7 @@ Reset {controller | port}
 Select {hbaport | iadapter | iportal | provider | subsystem | controller | port | drive | lun | tportal | target | tpgroup } [<n>]
 ```
 
-#### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>參數
 
 **目標**
 
@@ -1038,7 +1032,7 @@ Select {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 
 指定要選取的 \<物件編號 >。 如果指定的 <object number> 無效，則會清除指定類型之物件的任何現有選取專案。 如果未指定 <object number>，則會顯示目前的物件。
 
-### <a name="BKMK_34"></a>setflag
+### <a name="setflag"></a><a name=BKMK_34></a>setflag
 
 將目前選取的磁片磁碟機設定為熱備件。
 
@@ -1048,7 +1042,7 @@ Select {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 setflag drive hotspare={true | false}
 ```
 
-#### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>參數
 
 **true**
 
@@ -1062,7 +1056,7 @@ setflag drive hotspare={true | false}
 
 熱備件無法用於一般 LUN 系結作業。 它們只保留給錯誤處理。 磁片磁碟機目前不得系結到任何現有的 LUN。
 
-### <a name="BKMK_shrink"></a>排
+### <a name="shrink"></a><a name=BKMK_shrink></a>排
 
 縮小所選 LUN 的大小。
 
@@ -1072,7 +1066,7 @@ setflag drive hotspare={true | false}
 shrink lun size=<n> [noerr]
 ```
 
-#### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>參數
 
 **大小 =**
 
@@ -1082,7 +1076,7 @@ shrink lun size=<n> [noerr]
 
 指定在執行此作業時所發生的任何失敗都會被忽略。 這在腳本模式中很有用。
 
-### <a name="BKMK_35"></a>待命
+### <a name="standby"></a><a name=BKMK_35></a>待命
 
 將目前選取的主機匯流排介面卡（HBA）埠的路徑狀態變更為待命。
 
@@ -1092,13 +1086,13 @@ shrink lun size=<n> [noerr]
 standby hbaport
 ```
 
-#### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>參數
 
 **hbaport**
 
 將目前選取的主機匯流排介面卡（HBA）埠的路徑狀態變更為待命。
 
-### <a name="BKMK_36"></a>取消遮罩
+### <a name="unmask"></a><a name=BKMK_36></a>取消遮罩
 
 使目前選取的 Lun 可從指定的主機存取。
 
@@ -1108,7 +1102,7 @@ standby hbaport
 unmask LUN {all | none | [add] wwn=<hexadecimal_number> [;<hexadecimal_number> [;…]] | [add] initiator=<initiator>[;<initiator>[;…]]} [uninstall]
 ```
 
-#### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>參數
 
 **這**
 
@@ -1124,7 +1118,7 @@ unmask LUN {all | none | [add] wwn=<hexadecimal_number> [;<hexadecimal_number> [
 > [!IMPORTANT]
 > 您必須先登出目標，才能執行「取消遮罩 LUN NONE」命令。
 
-**載入**
+**add**
 
 指定必須將指定的主機新增至可存取此 LUN 的現有主機清單。 如果未指定此參數，則提供的主機清單會取代可存取此 LUN 的現有主機清單。
 
@@ -1150,14 +1144,14 @@ diskraid /s <script.txt>
 
 ### <a name="diskraid-error-codes"></a>DiskRAID 錯誤碼
 
-|錯誤碼|錯誤描述|
+|錯誤 碼|錯誤描述。|
 |----------|-----------------|
-|0|未發生任何錯誤。 整個腳本執行時不會失敗。|
+|0|未發生任何錯誤。 執行整個指令檔過程中未發生失敗。|
 |1|發生嚴重例外狀況。|
 |2|在 DiskRAID 命令列上指定的引數不正確。|
 |3|DiskRAID 無法開啟指定的腳本或輸出檔。|
 |4|其中一個 DiskRAID 使用的服務傳回失敗。|
-|5|發生命令語法錯誤。 腳本失敗，因為物件未正確選取或對該命令使用的無效。|
+|5|發生命令語法錯誤。 指令檔失敗的原因是，未正確選取物件或物件對於該命令無效。|
 
 ## <a name="example-interactively-view-status-of-subsystem"></a>範例：以互動方式查看子系統的狀態
 

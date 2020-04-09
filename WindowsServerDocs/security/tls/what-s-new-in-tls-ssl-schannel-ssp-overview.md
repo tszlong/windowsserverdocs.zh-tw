@@ -1,30 +1,26 @@
 ---
 title: TLS-SSL （安全通道 SSP）總覽
 description: Windows Server 安全性
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-tls-ssl
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c8836345-16bb-4dcc-8d2b-2b9b687456a3
 author: justinha
 ms.author: justinha
-manager: brianlic-msft
+manager: brianlic
 ms.date: 05/16/2018
-ms.openlocfilehash: c1ff76e6e611876a30196e1c8eefddbd783d86a9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5478a97a6b333cfc92de100440d53a769a8c0fd9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403357"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855183"
 ---
 # <a name="overview-of-tls---ssl-schannel-ssp"></a>TLS-SSL （安全通道 SSP）的總覽
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows 10
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows 10
 
-本主題適用于 IT 專業人員，說明安全通道安全性支援提供者（SSP）中的功能變更，其中包括傳輸層安全性（TLS）、安全通訊端層（SSL）及資料包傳輸層安全性（DTLS）適用于 Windows Server 2012 R2、Windows Server 2012、Windows 8.1 和 Windows 8 的驗證通訊協定。
+本主題適用于 IT 專業人員，說明安全通道安全性支援提供者（SSP）中的功能變更，其中包括傳輸層安全性（TLS）、安全通訊端層（SSL）和資料包傳輸層安全性（DTLS）驗證通訊協定，適用于 Windows Server 2012 R2、Windows Server 2012、Windows 8.1 和 Windows 8。
 
 安全通道是安全性支援提供者 (SSP)，可以實作 SSL、TLS 及 DTLS 網際網路標準驗證通訊協定。 安全性支援提供者介面 (SSPI) 是 Windows 系統所使用的 API，可以執行包含驗證在內的安全性相關功能。 SSPI 可以做為包含安全通道 SSP 在內的數個安全性支援提供者 (SSP) 的常用介面來運作。
 
@@ -51,7 +47,7 @@ ms.locfileid: "71403357"
 如需無狀態 TLS 工作階段繼續的詳細資訊，請參閱 IETF 文件 [RFC 5077。](http://www.ietf.org/rfc/rfc5077)
 
 ### <a name="application-protocol-negotiation"></a>應用程式通訊協定交涉
- Windows Server 2012 R2 和 Windows 8.1 支援用戶端 TLS 應用程式協定協商，因此應用程式可以利用通訊協定作為 HTTP 2.0 標準開發的一部分，而使用者可以使用執行的應用程式存取線上服務，例如 Google 和 TwitterSPDY 通訊協定。
+ Windows Server 2012 R2 和 Windows 8.1 支援用戶端 TLS 應用程式協定協商，因此應用程式可以利用通訊協定作為 HTTP 2.0 標準開發的一部分，而使用者可以使用執行 SPDY 通訊協定的應用程式存取線上服務（例如 Google 和 Twitter）。
 
 **運作方式**
 
@@ -59,7 +55,7 @@ ms.locfileid: "71403357"
 
 當 TLS 用戶端對伺服器提出要求時，TLS 伺服器會針對最慣用的應用程式通訊協定 (用戶端也支援) 讀取其支援的通訊協定清單。 如果發現這類通訊協定，伺服器會回應所選的通訊協定識別碼，並如往常一樣繼續信號交換。 如果沒有一般的應用程式通訊協定，伺服器會傳送信號交換嚴重失敗警示。
 
-### <a name="BKMK_TrustedIssuers"></a>用戶端驗證的受信任簽發者管理
+### <a name="management-of-trusted-issuers-for-client-authentication"></a><a name="BKMK_TrustedIssuers"></a>用戶端驗證的受信任簽發者管理
 當用戶端電腦的驗證需要使用 SSL 或 TLS 時，您可以設定伺服器傳送受信任的憑證簽發者清單。 這份清單包含伺服器將會信任的一組憑證簽發者，並為用戶端電腦提供出現多個憑證時，應選擇使用之用戶端憑證的提示。 此外，用戶端電腦傳送到伺服器的憑證鏈結必須向設定的信任簽發者清單進行驗證。
 
 在 Windows Server 2012 和 Windows 8 之前，使用安全通道 SSP （包括 HTTP.SYS 和 IIS）的應用程式或進程，可以透過憑證信任清單（CTL）提供支援用戶端驗證的受信任簽發者清單。
@@ -68,7 +64,7 @@ ms.locfileid: "71403357"
 
 -   不再支援 CTL 式受信任簽發者清單的管理。
 
--   傳送受信任簽發者清單的行為預設是關閉的：SendTrustedIssuerList 登錄機碼的預設值現在是 0 (預設為關閉)，而不是 1。
+-   預設會關閉傳送受信任簽發者清單的行為： SendTrustedIssuerList 登錄機碼的預設值現在是0（預設為關閉），而不是1。
 
 -   保留與舊版 Windows 作業系統的相容性。
 
@@ -102,7 +98,7 @@ Windows Server 2012 中的安全通道 SSP 架構預設會使用上述的存放�
 
 **信任模式的預設值**
 
-安全通道提供者支援三種用戶端驗證信任模式。 信任模式控制用戶端憑證鏈驗證的執行方式，而且是由 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\Schannel 底下的 REG_DWORD "ClientAuthTrustMode" 所控制的全系統設定.
+安全通道提供者支援三種用戶端驗證信任模式。 [信任] 模式會控制用戶端憑證鏈的驗證如何執行，而且是由 HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\Schannel. 之下的 REG_DWORD "ClientAuthTrustMode" 所控制的全系統設定。
 
 |值|信任模式|描述|
 |-----|-------|--------|
@@ -112,7 +108,7 @@ Windows Server 2012 中的安全通道 SSP 架構預設會使用上述的存放�
 
 如需因受信任簽發者設定問題所發生的驗證失敗詳細資訊，請參閱 Microsoft 知識庫文章 [280256](https://support.microsoft.com/kb/2802568)。
 
-### <a name="BKMK_SNI"></a>伺服器名稱指標（SNI）延伸的 TLS 支援
+### <a name="tls-support-for-server-name-indicator-sni-extensions"></a><a name="BKMK_SNI"></a>伺服器名稱指標（SNI）延伸的 TLS 支援
 伺服器名稱指示器功能會延伸 SSL 和 TLS 通訊協定，當單一伺服器上有許多虛擬映像正在執行時，允許對伺服器進行適當的識別。 為了適當保護用戶端電腦與伺服器之間的通訊安全，用戶端電腦會要求伺服器提供數位憑證。 在伺服器回應要求並傳送憑證之後，用戶端電腦會檢驗該憑證、使用它來加密通訊，並繼續進行正常的要求回應交換。 不過，在虛擬主機案例中，會在一部伺服器上裝載多個網域，每個網域都各自擁有可能完全不同的憑證。 在這種情況下，伺服器沒有方法可以預先得知要將哪個憑證傳送到用戶端電腦。 SNI 允許用戶端電腦在通訊協定中提前通知目標網域，而這讓伺服器能夠正確地選取適當的憑證。
 
 **這會新增什麼值？**
@@ -133,7 +129,7 @@ Windows Server 2012 中的安全通道 SSP 架構預設會使用上述的存放�
 
 藉由讓您建構可能的憑證簽發者名稱清單 (這可以提示使用者要選擇哪一個)，強迫使用者選取憑證。 這個清單可以使用群組原則來設定。
 
-### <a name="BKMK_DTLS"></a>資料包傳輸層安全性（DTLS）
+### <a name="datagram-transport-layer-security-dtls"></a><a name="BKMK_DTLS"></a>資料包傳輸層安全性（DTLS）
 DTLS 版本 1.0 通訊協定已新增到安全通道安全性支援提供者。 DTLS 通訊協定可以為資料包通訊協定提供通訊私密性。 這個通訊協定讓用戶端/伺服器應用程式能夠以設計來防止竊聽、竄改或訊息偽造的方式來通訊。 DTLS 通訊協定會以傳輸層安全性 (TLS) 通訊協定為基礎並提供對等的安全性保證，減少使用 IPsec 或設計自訂應用程式層安全性通訊協定的需要。
 
 **這會新增什麼值？**
@@ -144,7 +140,7 @@ DTLS 版本 1.0 通訊協定已新增到安全通道安全性支援提供者。 
 
 透過 UDP 使用 DTLS 的應用程式可以使用 Windows Server 2012 和 Windows 8 中的 SSPI 模型。 特定的加密套件可以用來進行設定，與您設定 TLS 的方式類似。 安全通道會繼續使用 CNG 密碼編譯提供者以利用 FIPS 140 憑證，此憑證是在 Windows Vista 中所引進。
 
-### <a name="BKMK_Deprecated"></a>已淘汰的功能
+### <a name="deprecated-functionality"></a><a name="BKMK_Deprecated"></a>已淘汰的功能
 在 Windows Server 2012 和 Windows 8 的安全通道 SSP 中，沒有已淘汰的功能或功能。
 
 ## <a name="see-also"></a>另請參閱

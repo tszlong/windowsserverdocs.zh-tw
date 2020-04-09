@@ -1,30 +1,27 @@
 ---
 title: tscon
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: Tscon 的 Windows 命令主題，它會連接到遠端桌面工作階段主機（rd 工作階段主機）伺服器上的另一個會話。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 315a9793-cd10-4987-bb68-89a9d13f7fce
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6e53ea2888b66b9e4fbf026f752acf9803270fc2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1666e3fd47fab89b63efccef43489d15930cd6de
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392361"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80832531"
 ---
 # <a name="tscon"></a>tscon
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-連接到遠端桌面工作階段主機（rd 工作階段主機）伺服器上的另一個會話。  
+連接到遠端桌面工作階段主機伺服器上的另一個會話。  
+
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。  
 
 > [!NOTE]  
@@ -34,14 +31,14 @@ ms.locfileid: "71392361"
 ```  
 tscon {<SessionID> | <SessionName>} [/dest:<SessionName>] [/password:<pw> | /password:*] [/v]  
 ```  
-## <a name="parameters"></a>參數  
+### <a name="parameters"></a>參數  
 
 |參數|描述|  
 |-------|--------|  
-|\<SessionID >|指定您要連接之會話的識別碼。 如果您使用選擇性的 **/dest：** <*SessionName*> 參數，這就是您要連接的會話識別碼。|  
+|\<SessionID >|指定您要連接之會話的識別碼。 如果您使用選擇性的 **/dest：** <*SessionName*> 參數，這就是您要連接之會話的識別碼。|  
 |\<SessionName >|指定您要連接之會話的名稱。|  
-|/dest： \<SessionName >|指定目前會話的名稱。 當您連接到新的會話時，此會話將會中斷連線。|  
-|/password： \<pw >|指定擁有您想要連接之會話的使用者密碼。 當連接的使用者未擁有會話時，就需要此密碼。|  
+|/dest：\<SessionName >|指定目前會話的名稱。 當您連接到新的會話時，此會話將會中斷連線。|  
+|/password：\<pw >|指定擁有您想要連接之會話的使用者密碼。 當連接的使用者未擁有會話時，就需要此密碼。|  
 |/password： *|提示輸入擁有您想要連接之會話的使用者密碼。|  
 |/v|顯示正在執行之動作的相關資訊。|  
 |/?|在命令提示字元顯示說明。|  
@@ -52,7 +49,7 @@ tscon {<SessionID> | <SessionName>} [/dest:<SessionName>] [/password:<pw> | /pas
 -   如果您未在 <*密碼*> 參數中指定密碼，而目標會話屬於目前的使用者，則**tscon**會失敗。  
 -   您無法連接到主控台會話。  
 
-## <a name="BKMK_examples"></a>典型  
+## <a name="examples"></a><a name=BKMK_examples></a>典型  
 - 若要連接到目前 rd 工作階段主機伺服器上的會話12並中斷目前會話的連線，請輸入：  
   ```  
   tscon 12  
@@ -65,6 +62,6 @@ tscon {<SessionID> | <SessionName>} [/dest:<SessionName>] [/password:<pw> | /pas
   ```  
   tscon TERM03 /v /dest:TERM05  
   ```  
-  #### <a name="additional-references"></a>其他參考資料  
-  [命令列語法關鍵](command-line-syntax-key.md)  
-  [遠端桌面服務&#40;終端機&#41;服務命令參考](remote-desktop-services-terminal-services-command-reference.md)  
+  ## <a name="additional-references"></a>其他參考資料  
+  - [命令列語法關鍵](command-line-syntax-key.md)  
+  [遠端桌面服務 (終端機服務) 命令參考資料](remote-desktop-services-terminal-services-command-reference.md)  

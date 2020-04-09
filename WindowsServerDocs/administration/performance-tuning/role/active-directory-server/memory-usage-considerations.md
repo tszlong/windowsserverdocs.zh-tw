@@ -5,14 +5,14 @@ ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: v-tea; lindakup
-author: Teresa-Motiv
+author: teresa-motiv
 ms.date: 7/3/2019
-ms.openlocfilehash: 55ac47d835874ddb8e160603f08cbafa985aad2a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cceabd73a3064ff82cfe1d3c353ea63574f5feff
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370295"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851881"
 ---
 # <a name="memory-usage-considerations-for-ad-ds-performance-tuning"></a>AD DS 效能微調的記憶體使用量考慮
 

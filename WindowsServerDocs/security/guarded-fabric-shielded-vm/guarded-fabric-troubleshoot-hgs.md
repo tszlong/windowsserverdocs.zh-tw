@@ -1,19 +1,19 @@
 ---
 title: 針對主機守護者服務進行疑難排解
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 424b8090-0692-49a6-9dc4-3c0e77d74b80
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: d34bbeee1a980aba76b5bed994be8db7fc8c8acf
-ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
+ms.openlocfilehash: 4cbbb41b965a44b6c81b58adc94990bb4d6af046
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940816"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856401"
 ---
 # <a name="troubleshooting-the-host-guardian-service"></a>針對主機守護者服務進行疑難排解
 
@@ -108,7 +108,7 @@ CSR 屬性 | 必要值
 -------------|---------------
 演算法    | RSA
 金鑰大小     | 至少2048位
-金鑰使用方法    | Signature/Sign/DigitalSignature
+金鑰使用方式    | Signature/Sign/DigitalSignature
 
 **加密憑證**
 
@@ -116,7 +116,7 @@ CSR 屬性 | 必要值
 -------------|---------------
 演算法    | RSA
 金鑰大小     | 至少2048位
-金鑰使用方法    | 加密/加密/DataEncipherment
+金鑰使用方式    | 加密/加密/DataEncipherment
 
 **Active Directory 憑證服務範本**
 

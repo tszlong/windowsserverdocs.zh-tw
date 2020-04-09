@@ -1,7 +1,6 @@
 ---
 ms.assetid: 73a4deba-7da6-4eae-8fdd-2a4d369f9cbb
 title: 虛擬網域控制站技術參考附錄
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e1018d5bbff5922df5a696e5c4fad12dc9f6ec3d
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: ee5a46781a61b8546fef113763c0d8ef9ca9f6cc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323130"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853981"
 ---
 # <a name="virtualized-domain-controller-technical-reference-appendix"></a>虛擬網域控制站技術參考附錄
 
@@ -26,7 +25,7 @@ ms.locfileid: "79323130"
   
 -   [Fixvdcpermissions.ps1. ps1](../../../ad-ds/reference/virtual-dc/../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Technical-Reference-Appendix.md#BKMK_FixPDCPerms)  
   
-## <a name="BKMK_Terms"></a>庫  
+## <a name="terminology"></a><a name="BKMK_Terms"></a>庫  
   
 -   **快照**-虛擬機器在特定時間點的狀態。 它相依于先前拍攝的快照集、硬體上和虛擬化平臺上的鏈。  
   
@@ -44,7 +43,7 @@ ms.locfileid: "79323130"
   
 -   匯**入/匯出**-hyper-v 功能，可讓使用者儲存整個虛擬機器（VM 檔案、VHD 和電腦設定）。 然後，它可讓使用者使用該檔案集，將機器重新放在與相同 VM （還原）相同的電腦上、在不同的電腦上作為相同的 vm （移動），或新的 VM （複製）  
   
-## <a name="BKMK_FixPDCPerms"></a>Fixvdcpermissions.ps1. ps1  
+## <a name="fixvdcpermissionsps1"></a><a name="BKMK_FixPDCPerms"></a>Fixvdcpermissions.ps1. ps1  
   
 ```  
 # Unsigned script, requires use of set-executionpolicy remotesigned -force  

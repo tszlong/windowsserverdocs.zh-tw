@@ -1,21 +1,20 @@
 ---
 title: 虛擬機器資源控制
 description: 使用 VM CPU 群組
-keywords: windows 10, hyper-v
 author: allenma
 ms.date: 06/18/2018
 ms.topic: article
-ms.prod: windows-10-hyperv
+ms.prod: windows-server
 ms.service: windows-10-hyperv
 ms.assetid: cc7bb88e-ae75-4a54-9fb4-fc7c14964d67
-ms.openlocfilehash: 41390421c9e3126915cdf2e827e251e84495bafd
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: fcf61c22a24abb6b16baf75b4846cc188dcecd49
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70872022"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860791"
 ---
->適用於：Windows Server 2016，Microsoft Hyper-v Server 2016，Windows Server 2019，Microsoft Hyper-v Server 2019
+>適用于： Windows Server 2016、Microsoft Hyper-v Server 2016、Windows Server 2019、Microsoft Hyper-v Server 2019
 
 # <a name="virtual-machine-resource-controls"></a>虛擬機器資源控制
 
@@ -46,7 +45,7 @@ CPU 群組上限的計算方式為 G = *n* x *C*，其中：
     *n* is the total number of logical processors (LPs) in the group
     *C* is the maximum CPU allocation — that is, the class of service desired for the group, expressed as a percentage of the system's total compute capacity
 
-例如，假設有一個 CPU 群組設定了4個邏輯處理器（LPs），而上限為 50%。
+例如，假設有一個 CPU 群組設定了4個邏輯處理器（LPs），而上限為50%。
 
     G = n * C
     G = 4 * 50%
@@ -60,39 +59,39 @@ CPU 群組上限的計算方式為 G = *n* x *C*，其中：
 
 讓我們來看一些簡單的範例。 首先，假設 Hyper-v 主機系統管理員想要支援來賓 Vm 的兩個服務層級：
 
-1. 低端「C」層。 我們會為這一層提供整個主機計算資源的 10%。
+1. 低端「C」層。 我們會為這一層提供整個主機計算資源的10%。
 
-1. 中間範圍「B」層。 這一層配置了整部主機計算資源的 50%。
+1. 中間範圍「B」層。 這一層配置了整部主機計算資源的50%。
 
 在我們的範例中，我們將判斷提示不會使用其他 CPU 資源控制，例如個別 VM cap、權數和保留。
 不過，個別的 VM cap 很重要，因為我們稍後會看到一些。
 
 為了簡單起見，假設每個 VM 都有1個副總裁，而我們的主機有 8 LPs。 我們會從空白主機開始。
 
-若要建立「B」層，主機 adminstartor 會將群組上限設定為 50%：
+若要建立「B」層，主機 adminstartor 會將群組上限設定為50%：
 
     G = n * C
     G = 8 * 50%
     G = 4 LP's worth of CPU time for the entire group
 
 主機管理員會新增單一「B」層 VM。
-此時，我們的「B」層 VM 最多可使用 50% 的主機 CPU，或在我們的範例系統中相當於4個 LPs。
+此時，我們的「B」層 VM 最多可使用50% 的主機 CPU，或在我們的範例系統中相當於4個 LPs。
 
-現在，管理員會新增第二個「層 B」 VM。 CPU 群組的配置，會平均分散到所有 Vm。 我們總共在群組 B 中有2個 Vm，因此每個 VM 現在都有一半的群組 B 總計 50%、25%，或等於2個 LPs 值得計算時間。
+現在，管理員會新增第二個「層 B」 VM。 CPU 群組的配置，會平均分散到所有 Vm。 我們總共在群組 B 中有2個 Vm，因此每個 VM 現在都有一半的群組 B 總計50%、25%，或等於2個 LPs 值得計算時間。
 
 ## <a name="setting-cpu-caps-on-individual-vms"></a>在個別 Vm 上設定 CPU 限定
 
 除了群組上限，每個 VM 也可以有個別的「VM 端點」。 自其簡介以來，每個 VM 的 CPU 資源控制項（包括 CPU 限定、權數和保留）都是 Hyper-v 的一部分。
 結合群組上限時，即使群組有可用的 CPU 資源，VM 上限也會指定每個 VP 可以取得的 CPU 最大數量。
 
-例如，主機管理員可能會想要在 "C" Vm 上放置 10% 的 VM 上限。
-如此一來，即使大部分的 "C" VPs 都閒置，每副總 VP 也無法超過 10%。
+例如，主機管理員可能會想要在 "C" Vm 上放置10% 的 VM 上限。
+如此一來，即使大部分的 "C" VPs 都閒置，每副總 VP 也無法超過10%。
 如果沒有 VM 上限，"C" Vm 可能會都伺機達到其層級所允許的等級以外的效能。
 
 ## <a name="isolating-vm-groups-to-specific-host-processors"></a>將 VM 群組隔離到特定主機處理器
 
 Hyper-v 主機系統管理員可能也想要能夠將計算資源專用於 VM。
-例如，假設系統管理員想要提供高階「A」 VM，其類別上限為 100%。
+例如，假設系統管理員想要提供高階「A」 VM，其類別上限為100%。
 這些 premium Vm 也需要最低的排程延遲和抖動;也就是說，它們可能不會被其他任何 VM 取消排程。
 若要達到此分隔，也可以使用特定的 LP 親和性對應來設定 CPU 群組。
 
@@ -217,9 +216,9 @@ CpuGroupId                          CpuCap LpIndexes
 36AB08CB-3A76-4B38-992E-000000000004 65536 24,25,26,27,28,29,30,31
 ```
 
-### <a name="example-5--set-the-cpu-group-cap-to-50"></a>範例5–將 CPU 群組上限設定為 50%
+### <a name="example-5--set-the-cpu-group-cap-to-50"></a>範例5–將 CPU 群組上限設定為50%
 
-在這裡，我們會將 CPU 群組上限設定為 50%。
+在這裡，我們會將 CPU 群組上限設定為50%。
 
 ```console
 C:\vm\tools>CpuGroups.exe SetGroupProperty /GroupId:36AB08CB-3A76-4B38-992E-000000000001 /CpuCap:32768

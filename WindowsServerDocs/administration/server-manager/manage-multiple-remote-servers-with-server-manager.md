@@ -1,34 +1,30 @@
 ---
 title: 使用伺服器管理員管理多部遠端伺服器
 description: 伺服器管理員
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3a17e686-e7f2-47e2-b7af-733777c38b5f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 74632dd26a1bfe7b280c73737557f1e954a7a1db
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4b7a33e15287f24ee5b259618dfcfef3c6245564
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383145"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851501"
 ---
 # <a name="manage-multiple-remote-servers-with-server-manager"></a>使用伺服器管理員管理多部遠端伺服器
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
-伺服器管理員是 Windows Server 2012 R2 和 Windows Server 2012 中的管理主控台，可協助 IT 專業人員從桌面布建和管理本機與遠端 Windows 伺服器，而不需要實際存取伺服器或需要啟用與每部伺服器的遠端桌面通訊協定（rdP）連線。 雖然 Windows Server 2008 R2 和 Windows Server 2008 中有提供伺服器管理員，但 Windows Server 2012 中的伺服器管理員已更新，以支援遠端、多伺服器管理，並協助增加系統管理員可管理的伺服器數目。
+伺服器管理員是 Windows Server 2012 R2 和 Windows Server 2012 中的管理主控台，可協助 IT 專業人員從桌面布建和管理本機與遠端 Windows 伺服器，而不需要實際存取伺服器，或需要啟用每部伺服器的遠端桌面通訊協定（rdP）連線。 雖然 Windows Server 2008 R2 和 Windows Server 2008 中有提供伺服器管理員，但 Windows Server 2012 中的伺服器管理員已更新，以支援遠端、多伺服器管理，並協助增加系統管理員可管理的伺服器數目。
 
 在我們的測試中，Windows Server 2012 R2 和 Windows Server 2012 中的伺服器管理員可用來管理以一般工作負載設定的最多100部伺服器。 使用單一 [伺服器管理員] 主控台所能管理的伺服器數目，依據您向受管理伺服器要求的資料量，以及可供執行伺服器管理員之電腦使用的硬體和網路資源，可能會有所不同。 當您要顯示的資料量接近該電腦的資源容量時，可能會發生伺服器管理員回應變慢，以及延遲完成重新整理的情形。 為了增加可以使用伺服器管理員所管理的伺服器數目，建議您使用 **\[設定事件資料\]** 對話方塊中的設定，限制伺服器管理員從受管理伺服器取得的事件資料。 [設定事件資料] 可以從 [事件] 磚中的 [工作] 功能表開啟。 如果您需要管理組織中數量達企業等級的伺服器時，建議您評估 [Microsoft System Center 套件](https://go.microsoft.com/fwlink/p/?LinkId=239437)中的產品。
 
-本主題及其子主題提供如何在伺服器管理員主控台中使用功能的相關資訊。 本主題涵蓋下列各節。
+本主題及其子主題提供如何在伺服器管理員主控台中使用功能的相關資訊。 本主題包含下列各節。
 
 -   [檢查初始考慮和系統需求](#BKMK_1.1)
 
@@ -40,13 +36,13 @@ ms.locfileid: "71383145"
 
 -   [將伺服器管理員設定匯出至其他電腦](#BKMK_export)
 
-## <a name="BKMK_1.1"></a>檢查初始考慮和系統需求
+## <a name="review-initial-considerations-and-system-requirements"></a><a name=BKMK_1.1></a>檢查初始考慮和系統需求
 下列各節列出一些您需要檢查的初始考慮，以及伺服器管理員的硬體和軟體需求。
 
 ### <a name="hardware-requirements"></a>硬體需求
 伺服器管理員預設會隨著 Windows Server 2012 R2 和 Windows Server 2012 的所有版本一起安裝。 伺服器管理員不存在任何額外的硬體需求。
 
-### <a name="BKMK_softconfig"></a>軟體和設定需求
+### <a name="software-and-configuration-requirements"></a><a name=BKMK_softconfig></a>軟體和設定需求
 預設會隨所有版本的 Windows Server 2012 安裝伺服器管理員。 雖然您可以使用伺服器管理員來管理在遠端電腦上執行之 Windows Server 2012 和 Windows Server 2008 R2 的[Server core 安裝選項](https://go.microsoft.com/fwlink/p/?LinkID=241573)，但伺服器管理員不會直接在 Server Core 安裝選項上執行。
 
 若要完整管理執行 Windows Server 2008 或 Windows Server 2008 R2 的遠端伺服器，請依照顯示的順序，在您想要管理的伺服器上安裝下列更新。
@@ -83,7 +79,7 @@ ms.locfileid: "71383145"
 
 2.  在 [**開始**] 畫面上，按一下 [**伺服器管理員**]。 安裝遠端伺服器管理工具後，就可以使用 [伺服器管理員] 磚。
 
-3.  如果安裝遠端伺服器管理工具之後，[系統**管理工具**] 和 [**伺服器管理員**] 磚都未顯示在 [**開始**] 畫面上，而且在 [**開始**] 畫面上搜尋伺服器管理員不會顯示結果，確認 [**顯示系統管理工具**] 設定已開啟。 若要查看此設定，請將滑鼠游標暫留在 [**開始**] 畫面右上角，然後按一下 [**設定**]。 如果 [顯示系統管理工具] 為關閉狀態，請將設定開啟，以顯示隨遠端伺服器管理工具一起安裝的工具。
+3.  如果安裝遠端伺服器管理工具之後，[系統**管理工具**] 和 [**伺服器管理員**] 磚都未顯示在 [**開始**] 畫面上，而且在 [**開始**] 畫面上搜尋伺服器管理員不會顯示結果，請確認 [**顯示系統管理工具**] 設定已開啟。 若要查看此設定，請將滑鼠游標暫留在 [**開始**] 畫面右上角，然後按一下 [**設定**]。 如果 [顯示系統管理工具] 為關閉狀態，請將設定開啟，以顯示隨遠端伺服器管理工具一起安裝的工具。
 
 如需有關執行 Windows 8 遠端伺服器管理工具以管理遠端伺服器的詳細資訊，請參閱 TechNet Wiki 上的[遠端伺服器管理工具](https://go.microsoft.com/fwlink/?LinkID=221055)。
 
@@ -94,7 +90,7 @@ ms.locfileid: "71383145"
 
 若要使用伺服器管理員在遠端伺服器上執行管理工作，您必須將您要管理的遠端伺服器設定為允許使用伺服器管理員和 Windows PowerShell 進行遠端系統管理。 如果 Windows Server 2012 R2 或 Windows Server 2012 上的遠端系統管理已停用，而您想要再次啟用它，請執行下列步驟。
 
-##### <a name="BKMK_windows"></a>使用 Windows 介面在 Windows Server 2012 R2 或 Windows Server 2012 上設定伺服器管理員遠端系統管理
+##### <a name="to-configure-server-manager-remote-management-on--windows-server-2012-r2--or--windows-server-2012--by-using-the-windows-interface"></a><a name=BKMK_windows></a>使用 Windows 介面在 Windows Server 2012 R2 或 Windows Server 2012 上設定伺服器管理員遠端系統管理
 
 1.  > [!NOTE]
     > [**設定遠端系統管理**] 對話方塊所控制的設定，不會影響使用 DCOM 進行遠端通訊的伺服器管理員部分。
@@ -113,9 +109,9 @@ ms.locfileid: "71383145"
 
     -   若要讓這部電腦使用伺服器管理員或 Windows PowerShell 從遠端系統管理，請選取 [**啟用從其他電腦遠端系統管理這部伺服器**]。
 
-##### <a name="BKMK_ps"></a>使用 Windows PowerShell 在 Windows Server 2012 R2 或 Windows Server 2012 上啟用伺服器管理員遠端系統管理
+##### <a name="to-enable-server-manager-remote-management-on--windows-server-2012-r2--or--windows-server-2012--by-using-windows-powershell"></a><a name=BKMK_ps></a>使用 Windows PowerShell 在 Windows Server 2012 R2 或 Windows Server 2012 上啟用伺服器管理員遠端系統管理
 
-1.  執行下列其中一項。
+1.  執行下列其中一個步驟。
 
     -   若要從 [**開始**] 畫面以系統管理員身分執行 Windows powershell，請在 [ **Windows powershell** ] 磚上按一下滑鼠右鍵，然後按一下 [以**系統管理員身分執行**]。
 
@@ -132,7 +128,7 @@ ms.locfileid: "71383145"
 
 ###### <a name="to-enable-server-manager-and-windows-powershell-remote-management-on-older-operating-systems"></a>在舊版作業系統上啟用伺服器管理員與 Windows PowerShell 遠端管理
 
--   執行下列其中一項。
+-   執行下列其中一個步驟。
 
     -   若要在執行 Windows Server 2008 R2 的伺服器上啟用遠端系統管理，請參閱 Windows Server 2008 R2 說明中[的使用伺服器管理員進行遠端系統管理](https://go.microsoft.com/fwlink/?LinkID=137378)。
 
@@ -140,15 +136,15 @@ ms.locfileid: "71383145"
 
     -   若要在執行 Windows Server 2003 的伺服器上啟用遠端管理，請在 Windows 防火牆中啟用 WMI DCOM 例外。 如需如何在執行 Windows Server 2003 的伺服器上進行這項操作的詳細資訊，請參閱 MSDN 上的＜ [透過 Windows 防火牆連線](https://msdn.microsoft.com/library/aa389286.aspx) ＞。
 
-## <a name="BKMK_tasks"></a>您可以在伺服器管理員中執行的工作
-伺服器管理員藉由允許系統管理員使用單一工具執行下表中的工作，讓伺服器管理變得更有效率。 在 Windows Server 2012 R2 和 Windows Server 2012 中，伺服器的標準使用者和 Administrators 群組成員都可以在伺服器管理員中執行管理工作，但根據預設，標準使用者無法執行某些工作，如下所示：下表。
+## <a name="tasks-that-you-can-perform-in-server-manager"></a><a name=BKMK_tasks></a>您可以在伺服器管理員中執行的工作
+伺服器管理員藉由允許系統管理員使用單一工具執行下表中的工作，讓伺服器管理變得更有效率。 在 Windows Server 2012 R2 和 Windows Server 2012 中，伺服器的標準使用者和 Administrators 群組成員都可以在伺服器管理員中執行管理工作，但根據預設，標準使用者無法執行某些工作，如下表所示。
 
-系統管理員可以使用伺服器管理員 Cmdlet 模組中的兩個 Windows PowerShell Cmdlet [enable-servermanagerstandarduserremoting](https://technet.microsoft.com/library/jj205470.aspx)和[停用-enable-servermanagerstandarduserremoting](https://technet.microsoft.com/library/jj205468.aspx)，進一步控制標準使用者存取某些其他資料。 **Enable-servermanagerstandarduserremoting** Cmdlet 可以提供一或多個標準、非系統管理員的使用者存取事件、服務、效能計數器，以及角色和功能清查資料。
+系統管理員可以使用伺服器管理員 Cmdlet 模組中的兩個 Windows PowerShell Cmdlet [enable-servermanagerstandarduserremoting](https://technet.microsoft.com/library/jj205470.aspx)和[停用-enable-servermanagerstandarduserremoting](https://technet.microsoft.com/library/jj205468.aspx)，進一步控制標準使用者存取某些額外的資料。 **Enable-servermanagerstandarduserremoting** Cmdlet 可以提供一或多個標準、非系統管理員的使用者存取事件、服務、效能計數器，以及角色和功能清查資料。
 
 > [!IMPORTANT]
 > 伺服器管理員無法用來管理較新版本的 Windows Server 作業系統。 在 Windows Server 2012 或 Windows 8 上執行的伺服器管理員無法用來管理執行 Windows Server 2012 R2 的伺服器。
 
-|工作描述|系統管理員 (內建的 Administrator 帳戶)|標準伺服器使用者|
+|工作說明|系統管理員 (內建的 Administrator 帳戶)|標準伺服器使用者|
 |----------|----------------------------------|-------------|
 |將遠端伺服器新增至伺服器管理員可以用來管理的伺服器集區。|是|否|
 |建立和編輯自訂的伺服器群組，例如位於特定地理位置或提供特定用途的伺服器。|是|是|
@@ -166,7 +162,7 @@ ms.locfileid: "71383145"
 > [!NOTE]
 > 伺服器管理員只能接收執行 Windows Server 2003 之伺服器的線上或離線狀態。 伺服器管理員不能用來將角色和功能新增到執行 Windows Server 2008 R2、Windows Server 2008 或 Windows Server 2003 的伺服器。
 
-## <a name="BKMK_start"></a>啟動伺服器管理員
+## <a name="start-server-manager"></a><a name=BKMK_start></a>啟動伺服器管理員
 當 Administrators 群組的成員登入伺服器時，伺服器管理員預設會在執行 Windows Server 2012 的伺服器上自動啟動。 如果您關閉伺服器管理員，請以下列其中一種方式重新開機它。 本節也包含變更預設行為以及防止伺服器管理員自動啟動的步驟。
 
 #### <a name="to-start-server-manager-from-the-start-screen"></a>從 [開始] 畫面啟動伺服器管理員
@@ -181,17 +177,17 @@ ms.locfileid: "71383145"
 
 1.  在伺服器管理員主控台的 [**管理**] 功能表上，按一下 [**伺服器管理員**內容]。
 
-2.  在 [伺服器管理員屬性] 對話方塊中，核取 [登入時不要自動啟動伺服器管理員]核取方塊。 按一下 [確定]。
+2.  在 [伺服器管理員屬性] 對話方塊中，核取 [登入時不要自動啟動伺服器管理員] 核取方塊。 按一下 [確定]。
 
 3.  或者，您可以啟用 [群組原則] 設定來防止伺服器管理員自動啟動，**不要在登入時自動啟動伺服器管理員**。 此原則設定在本機群組原則編輯器主控台中的路徑是電腦設定 \ 系統管理 Templates\System\Server 管理員。
 
-## <a name="BKMK_restart"></a>重新開機遠端伺服器
+## <a name="restart-remote-servers"></a><a name=BKMK_restart></a>重新開機遠端伺服器
 您可以在伺服器管理員中，從角色或群組頁面的 [**伺服器**] 磚重新開機遠端伺服器。
 
 > [!IMPORTANT]
 > 重新啟動遠端伺服器會強制伺服器重新啟動，即使使用者仍登入遠端伺服器，或含有未儲存資料的程式仍開啟。 這個行為與關閉或重新啟動本機電腦不同，關閉或重新啟動會提示您儲存未儲存的程式資料，並確認您要強制登出已登入的使用者。 請確定您能夠將其他使用者強制登出遠端伺服器，而且您可以捨棄在遠端伺服器執行之程式所未儲存的資料。
 > 
-> 如果在受管理伺服器正在關閉和重新開機的情況下伺服器管理員自動重新整理，受管理伺服器可能會發生重新整理和管理性狀態錯誤，因為伺服器管理員無法連線到遠端伺服器，直到它完成為止啟服務.
+> 如果在受管理伺服器正在關閉和重新開機的情況下伺服器管理員自動重新整理，受管理伺服器可能會發生重新整理和管理性狀態錯誤，因為伺服器管理員無法連線到遠端伺服器，直到它完成重新開機為止。
 
 #### <a name="to-restart-remote-servers-in-server-manager"></a>在伺服器管理員中重新啟動遠端伺服器
 
@@ -201,12 +197,12 @@ ms.locfileid: "71383145"
 
 3.  在選取的伺服器上按一下滑鼠右鍵，然後按一下 [重新啟動伺服器]。
 
-## <a name="BKMK_export"></a>將伺服器管理員設定匯出至其他電腦
+## <a name="export-server-manager-settings-to-other-computers"></a><a name=BKMK_export></a>將伺服器管理員設定匯出至其他電腦
 在伺服器管理員中，您的受管理伺服器清單、伺服器管理員主控台設定的變更，以及您所建立的自訂群組都會儲存在下列兩個檔案中。 您可以在執行相同版本伺服器管理員（不是執行 Server Core 安裝選項的電腦）或 Windows 8 的其他電腦上重複使用這些設定。 遠端伺服器管理工具必須在以 Windows 用戶端為基礎的電腦上執行，才能將伺服器管理員設定匯出到這些電腦。
 
 -   %*appdata*% \ Microsoft\Windows\ServerManager\Serverlist.xml
 
--   %*appdata*% \ Local\Microsoft_Corporation\ServerManager.exe_StrongName_*GUID*\6.2.0.0\user.config
+-   %*appdata*% \ Local \ Microsoft_Corporation \Servermanager. exe_StrongName_*GUID*\6.2.0.0\user.config
 
 > [!NOTE]
 > -   伺服器集區中伺服器的 [管理身分] (或備用) 認證不會儲存在漫遊設定檔中。 伺服器管理員使用者必須將這些認證新增到他們要管理的每一部電腦。
@@ -224,15 +220,15 @@ ms.locfileid: "71383145"
 
 2.  在 [**設定檔**] 索引標籤上，新增網路共用的路徑以儲存使用者的設定檔。
 
-3.  執行下列其中一項。
+3.  執行下列其中一個步驟。
 
-    -   在英文（en-us）組建， **Serverlist**的變更會自動儲存到設定檔。 繼續下一個步驟。
+    -   在美式英文（en-us）組建中， **Serverlist**的變更會自動儲存到設定檔。 繼續下一個步驟。
 
     -   在其他組建上，從執行伺服器管理員的電腦將下列兩個檔案複製到屬於使用者漫遊設定檔的網路共用。
 
         -   %*appdata*% \ Microsoft\Windows\ServerManager\Serverlist.xml
 
-        -   %*localappdata*% \ Microsoft_Corporation\ServerManager.exe_StrongName_*GUID*\6.2.0.0\user.config
+        -   %*localappdata*% \ Microsoft_Corporation \Servermanager. exe_StrongName_*GUID*\6.2.0.0\user.config
 
 4.  按一下 [確定] 儲存變更，並關閉 [屬性] 對話方塊。
 
@@ -242,6 +238,6 @@ ms.locfileid: "71383145"
 
     -   %*appdata*% \ Microsoft\Windows\ServerManager\Serverlist.xml
 
-    -   %*localappdata*% \ Microsoft_Corporation\ServerManager.exe_StrongName_*GUID*\6.2.0.0\user.config
+    -   %*localappdata*% \ Microsoft_Corporation \Servermanager. exe_StrongName_*GUID*\6.2.0.0\user.config
 
 

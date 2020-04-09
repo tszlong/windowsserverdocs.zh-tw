@@ -1,28 +1,24 @@
 ---
 title: Scwcmd 分析
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0259271b-be5b-48d7-a51d-8b9b6786efb4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 14426ae33144ae9bdd8f8154b4be74a3f088606b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1b0657523b49f8db444b6a48a41e3078d6351a34
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371259"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80835231"
 ---
 # <a name="scwcmd-analyze"></a>Scwcmd: analyze
 
-> 適用於：Windows Server 2012 R2、Windows Server 2012
+> 適用目標︰Windows Server 2012 R2、Windows Server 2012
 
 判斷電腦是否符合原則。 結果會以 .xml 檔案傳回。 也接受電腦名稱稱清單做為輸入。 若要在瀏覽器中查看結果，請使用**scwcmd view** ，並將 **%windir%\security\msscw\TransformFiles\scwanalysis.xsl**指定為 .xsl 轉換。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
 
@@ -33,18 +29,18 @@ scwcmd analyze [[[/m:<ComputerName> | /ou:<Ou>] /p:<Policy>] | /i:<ComputerList>
 <ResultDir>] [/u:<UserName>] [/pw:<Password>] [/t:<Threads>] [/l] [/e]
 ```
 
-### <a name="parameters"></a>參數
+#### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
-|/m： \<ComputerName >|指定要分析之電腦的 NetBIOS 名稱、DNS 名稱或 IP 位址。 如果指定 **/m**參數，則也必須指定 **/p**參數。|
-|/ou： \<OuName >|在 Active Directory Domain Services 中指定組織單位（OU）的完整功能變數名稱（FQDN）。 如果指定 **/ou**參數，則也必須指定 **/p**參數。 OU 中的所有電腦都會針對指定的原則進行分析。|
-|/p： \<Policy >|指定要用來執行分析之 .xml 原則檔案的路徑和檔案名。|
-|/i： \<ComputerList >|指定 .xml 檔案的路徑和檔案名，其中包含一份電腦清單及其預期的原則檔案。 .Xml 檔案中的所有電腦都會根據其對應的原則檔案進行分析。 範例 .xml 檔案為%windir%\security\SampleMachineList.xml。|
-|/o： \<ResultDir >|指定應儲存分析結果檔案的路徑和目錄。 預設值是目前的目錄。|
-|/u： \<UserName >|指定在遠端電腦上執行分析時要使用的替代使用者認證。 預設為登入的使用者。|
-|/pw： \<Password >|指定在遠端電腦上執行分析時要使用的替代使用者認證。 預設值為登入使用者的密碼。|
-|/t： \<Threads >|指定在分析期間應維持的同時未完成分析作業數目（DefaultValue = 40，MinValue = 1，int32.maxvalue = 1000）。|
+|/m：\<ComputerName >|指定要分析之電腦的 NetBIOS 名稱、DNS 名稱或 IP 位址。 如果指定 **/m**參數，則也必須指定 **/p**參數。|
+|/ou：\<OuName >|在 Active Directory Domain Services 中指定組織單位（OU）的完整功能變數名稱（FQDN）。 如果指定 **/ou**參數，則也必須指定 **/p**參數。 OU 中的所有電腦都會針對指定的原則進行分析。|
+|/p：\<原則 >|指定要用來執行分析之 .xml 原則檔案的路徑和檔案名。|
+|/i：\<ComputerList >|指定 .xml 檔案的路徑和檔案名，其中包含一份電腦清單及其預期的原則檔案。 .Xml 檔案中的所有電腦都會根據其對應的原則檔案進行分析。 範例 .xml 檔案為%windir%\security\SampleMachineList.xml。|
+|/o：\<ResultDir >|指定應儲存分析結果檔案的路徑和目錄。 預設值是目前的目錄。|
+|/u：\<UserName >|指定在遠端電腦上執行分析時要使用的替代使用者認證。 預設為登入的使用者。|
+|/pw：\<密碼 >|指定在遠端電腦上執行分析時要使用的替代使用者認證。 預設值為登入使用者的密碼。|
+|/t：\<執行緒 >|指定在分析期間應維持的同時未完成分析作業數目（DefaultValue = 40，MinValue = 1，int32.maxvalue = 1000）。|
 |/l|會記錄分析進程。 系統會為每一部要分析的電腦產生一個記錄檔。 記錄檔將會儲存在與結果檔案相同的目錄中。 使用 **/o**選項來指定結果檔案的目錄。|
 |/e|如果找到不相符的專案，請將事件記錄至應用程式事件記錄檔。|
 |/?|在命令提示字元顯示說明。|
@@ -53,7 +49,7 @@ scwcmd analyze [[[/m:<ComputerName> | /ou:<Ou>] /p:<Policy>] | /i:<ComputerList>
 
 Scwcmd 只能在執行 Windows Server 2008 R2、Windows Server 2008 或 Windows Server 2003 的電腦上使用。
 
-## <a name="BKMK_Examples"></a>典型
+## <a name="examples"></a><a name=BKMK_Examples></a>典型
 
 若要針對 webpolicy 檔案分析安全性原則，請輸入：
 ```
@@ -75,6 +71,6 @@ scwcmd analyze /i:webpolicy.xml /t:100 /o:\\resultserver\results
 scwcmd analyze /ou:OU=WebServers,DC=Marketing,DC=ABCCompany,DC=com /p:webpolicy.xml /u:DomainAdmin
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
--   [命令列語法關鍵](command-line-syntax-key.md)
+-   - [命令列語法關鍵](command-line-syntax-key.md)

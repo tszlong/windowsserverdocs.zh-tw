@@ -2,21 +2,19 @@
 title: Hyper-v 上支援的 Oracle Linux 虛擬機器
 description: 列出每個版本中包含的 Linux 整合服務和功能
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c02fdb5b-62f3-43cb-a190-ab74b3ebcf77
 author: shirgall
 ms.author: kathydav
 ms.date: 06/01/2017
-ms.openlocfilehash: cc2a864ddb1b2bcbc972c895fbb79105107a84b8
-ms.sourcegitcommit: 9687d3eb221b89061a48bf1e73fb3b25bee69f9a
+ms.openlocfilehash: edf92689f1dbe93c387c65e64694c64635fe3958
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78169628"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858011"
 ---
 # <a name="supported-oracle-linux-virtual-machines-on-hyper-v"></a>Hyper-v 上支援的 Oracle Linux 虛擬機器
 
@@ -42,7 +40,7 @@ ms.locfileid: "78169628"
 
 * **UEK RxUy** -Unbreakable Enterprise KERNEL （UEK），其中 x 是版本號碼，而 y 是每季更新。
 
-## <a name="BKMK_rhc"></a>具有 Red Hat 相容核心 Oracle Linux 版本的功能
+## <a name="features-of-oracle-linux-releases-with-the-red-hat-compatible-kernel"></a><a name="BKMK_rhc"></a>具有 Red Hat 相容核心 Oracle Linux 版本的功能
 
 6\. x 系列的32位核心已啟用 PAE。 Oracle Linux RHCK 6.0-6.3 沒有內建的 .LIS 支援。 Oracle Linux 7.x 核心僅限64位。
 
@@ -85,7 +83,7 @@ ms.locfileid: "78169628"
 | 安全開機                                                                                                                                  | 2019、2016                         | &#10004;           | &#10004;            |                                                                     |                                                                     |                          |                          |                          |                           |                           |
 
 
-## <a name="BKMK_uek"></a>使用 Unbreakable Enterprise 核心（UEK）的 Oracle Linux 版本
+## <a name="oracle-linux-releases-with-the-unbreakable-enterprise-kernel-uek"></a><a name="BKMK_uek"></a>使用 Unbreakable Enterprise 核心（UEK）的 Oracle Linux 版本
 
 Unbreakable Enterprise Kernel （UEK）的 Oracle Linux 僅限64，並內建了 .LIS 支援。 
 
@@ -127,7 +125,7 @@ Unbreakable Enterprise Kernel （UEK）的 Oracle Linux 僅限64，並內建了 
 | 使用 UEFI 開機                                                                                                                              | 2019、2016、2012 R2                | &#10004;                  | &#10004;                  |                           |                           |                      |
 | 安全開機                                                                                                                                  | 2019、2016                         | &#10004;                  | &#10004;                  |                           |                           |                      |
 
-## <a name="BKMK_notes"></a>紀錄
+## <a name="notes"></a><a name="BKMK_notes"></a>紀錄
 
 1. 在此 Oracle Linux 版本中，VLAN 標記可運作，但 VLAN 中繼不會。
 

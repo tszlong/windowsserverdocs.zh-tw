@@ -1,24 +1,20 @@
 ---
 title: rwinsta
 description: 瞭解如何從命令列重設 RDSH sessionf。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 82bee0e4-1c2c-43fe-afd3-04a6ce0f4518
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 05e14c468d8f78cfcc4017b966e779d4c8f9eb9c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 334a7abc6e8b80127f18d74a634c03572857da7e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371368"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80835411"
 ---
 # <a name="rwinsta"></a>rwinsta
 
@@ -32,7 +28,7 @@ ms.locfileid: "71371368"
 ## <a name="remarks"></a>備註
 此命令與 [**重設會話**] 命令相同。
 
-#### <a name="additional-references"></a>其他參考
-
-[命令列語法金鑰](command-line-syntax-key.md)
-[重設會話](reset-session.md)[遠端桌面服務&#40;終端機&#41;服務命令參考](remote-desktop-services-terminal-services-command-reference.md)
+## <a name="additional-references"></a>其他參考資料
+[reset session](reset-session.md)
+- [命令列語法金鑰](command-line-syntax-key.md)
+[遠端桌面服務（終端機服務）命令參考](remote-desktop-services-terminal-services-command-reference.md)

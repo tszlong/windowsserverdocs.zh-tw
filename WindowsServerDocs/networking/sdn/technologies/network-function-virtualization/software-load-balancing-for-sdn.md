@@ -1,23 +1,19 @@
 ---
 title: SDN 的軟體負載平衡 (SLB)
 description: 您可以使用本主題來瞭解 Windows Server 2016 中軟體定義網路的軟體負載平衡。
-manager: brianlic
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 97abf182-4725-4026-801c-122db96964ed
-ms.author: lizross
-author: eross-msft
-ms.openlocfilehash: 1e7870e045f9af79ed46ec1ad998dbc1f1474afd
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.author: anpaul
+author: AnirbanPaul
+ms.openlocfilehash: 245faa00eed6f8ee49f8d178ab2cde5d01b1e23e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312906"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859571"
 ---
 # <a name="software-load-balancing-slb-for-sdn"></a>適用于 SDN 的軟體負載平衡 \(SLB\)
 
@@ -133,7 +129,7 @@ SLB 包含健康情況探查，可驗證網路基礎結構的健康情況，包�
 > [!NOTE]  
 > 如果您不想要使用 System Center 2016，您可以使用 Windows PowerShell 或其他管理應用程式來安裝和設定網路控制站和其他 SLB 基礎結構。 如需詳細資訊，請參閱[使用 Windows PowerShell 部署網路控制](../../../sdn/deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)站。  
   
-### <a name="network-controller"></a>網路控制站  
+### <a name="network-controller"></a>網路控制卡  
 網路控制卡會裝載 SLB 管理員，並針對 SLB 執行下列動作。  
   
 -   處理透過 Northbound API 從 System Center、Windows PowerShell 或其他網路管理應用程式傳入的 SLB 命令。  

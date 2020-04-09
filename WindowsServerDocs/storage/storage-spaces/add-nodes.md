@@ -3,19 +3,19 @@ ms.assetid: 898d72f1-01e7-4b87-8eb3-a8e0e2e6e6da
 title: 將伺服器或磁碟機新增至儲存空間直接存取
 ms.prod: windows-server
 ms.author: cosdar
-ms.manager: dongill
+manager: dongill
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 11/06/2017
 description: 如何將伺服器或磁片磁碟機新增至儲存空間直接存取叢集
 ms.localizationpriority: medium
-ms.openlocfilehash: f5fb9da903bb76de3a075fa7feeeaba468d802c2
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: be79a2d3e0e8c56afc409298518d967c9bc80453
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465622"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859121"
 ---
 # <a name="adding-servers-or-drives-to-storage-spaces-direct"></a>將伺服器或磁碟機新增至儲存空間直接存取
 
@@ -23,7 +23,7 @@ ms.locfileid: "77465622"
 
 本主題說明如何將伺服器或磁碟機新增至儲存空間直接存取。
 
-## <a name="adding-servers"></a>新增伺服器
+## <a name="adding-servers"></a><a name="adding-servers"></a>新增伺服器
 
 新增伺服器 (通常稱為相應放大) 會增加儲存容量、改善儲存空間的效能，並解除鎖定更佳的儲存空間效率。 如果您的部署為超交集，新增伺服器也可為您的工作負載提供更多計算資源。
 
@@ -40,7 +40,7 @@ ms.locfileid: "77465622"
    這可確認新的伺服器正在執行 Windows Server 2016 Datacenter Edition、已加入與現有伺服器相同的 Active Directory Domain Services、具有所有必要的角色和功能，並且已正確設定網路。
 
    >[!IMPORTANT]
-   > 若您重新使用的磁碟機內含您不再需要的舊資料或中繼資料，使用 **\[磁碟管理\]** 或 **Reset-PhysicalDisk** Cmdlet 加以清除。 若偵測到舊的資料或中繼資料，磁碟機便不會置於集區。
+   > 若您重新使用的磁碟機內含您不再需要的舊資料或中繼資料，使用 [磁碟管理] 或 **Reset-PhysicalDisk** Cmdlet 加以清除。 若偵測到舊的資料或中繼資料，磁碟機便不會置於集區。
 
 2. 在叢集上執行下列 Cmdlet 以完成新增伺服器：
 
@@ -55,7 +55,7 @@ Add-ClusterNode -Name NewNode
 
 ![將第三部伺服器新增至雙節點叢集](media/add-nodes/Scaling-2-to-3.png)
 
-使用兩個伺服器，您只能建立雙向鏡像磁碟區 (相較於分散式 RAID-1)。 使用三個伺服器，您便能建立三向鏡像磁碟區並獲得更佳的容錯。 我們建議盡可能使用三向鏡像。
+使用兩個伺服器，您只能建立雙向鏡像磁碟區 (相較於分散式 RAID-1)。 使用三個伺服器，您便能建立三向鏡像磁碟區並獲得更佳的容錯。 建議您盡可能使用三向鏡像。
 
 雙向鏡像磁碟區無法就地升級至三向鏡像。 然而，您可建立新的磁碟區並將資料移轉 (複製，例如透過使用[儲存體複本](../storage-replica/server-to-server-storage-replication.md)) 至其中，然後移除舊的磁碟區。
 
@@ -117,7 +117,7 @@ New-Volume -FriendlyName <Name> -FileSystem CSVFS_ReFS -StoragePoolFriendlyName 
 
 利用四個伺服器，您也可以開始使用鏡像加速的同位，其中的個別磁碟區為部分鏡像及部分同位。
 
-為此，您必須更新您的 **StorageTier** 範本，以同時擁有 *[效能]* 和 [容量] *[容量]* 層，因為如果您先在四個伺服器上執行 **Enable-ClusterS2D** 就會加以建立。 具體來說，這兩層都應該具有您容量裝置 (例如 SSD 或 HDD) 的 **MediaType** 且 **PhysicalDiskRedundancy = 2**。 *Performance* 層應該是 **ResiliencySettingName = Mirror**，而 *Capacity* 層應該是 **ResiliencySettingName = Parity**。
+為此，您必須更新您的 **StorageTier** 範本，以同時擁有 *[效能]* 和 [容量] *[容量]* 層，因為如果您先在四個伺服器上執行 **Enable-ClusterS2D** 就會加以建立。 具體來說，這兩層都應該具有您容量裝置 (例如 SSD 或 HDD) 的 **MediaType** 且 **PhysicalDiskRedundancy = 2**。 *[效能]* 層應該是 **ResiliencySettingName = Mirror**，而 *[容量]* 層應該是 **ResiliencySettingName = Parity**。
 
 #### <a name="option-3"></a>選項 3
 
@@ -166,7 +166,7 @@ New-Volume -FriendlyName "Sir-Mix-A-Lot" -FileSystem CSVFS_ReFS -StoragePoolFrie
 
 3. 將伺服器新增到叢集，如[新增伺服器](#adding-servers)中所述。 當新伺服器加入叢集時，它會自動與預留位置容錯網域產生關聯 (使用它的名稱)。
 
-## <a name="adding-drives"></a>新增磁片磁碟機
+## <a name="adding-drives"></a><a name="adding-drives"></a>新增磁片磁碟機
 
 新增磁碟機 (也稱為相應增加) 會增加儲存容量，並可改善效能。 如果您有可用的插槽，可將磁碟機新增至每個伺服器以擴充儲存容量，而不需新增伺服器。 您可以隨時個別新增快取磁碟機或容量磁碟機。
 
@@ -175,7 +175,7 @@ New-Volume -FriendlyName "Sir-Mix-A-Lot" -FileSystem CSVFS_ReFS -StoragePoolFrie
 
 ![顯示將磁片磁碟機新增至系統的動畫](media/add-nodes/Scale-Up.gif)
 
-若要向上擴充，請連接磁碟機並確認 Windows 會探索它們。 其應顯示於 PowerShell 中 **Get-PhysicalDisk** Cmdlet 的輸出中，且其 **CanPool** 屬性設為 **True**。 若其顯示為 **CanPool = False**，您可透過檢查其 **CannotPoolReason** 屬性了解原因。
+若要相應增加，請連接磁碟機並驗證 Windows 會加以探索。 其應顯示於 PowerShell 中 **Get-PhysicalDisk** Cmdlet 的輸出中，且其 **CanPool** 屬性設為 **True**。 若其顯示為 **CanPool = False**，您可透過檢查其 **CannotPoolReason** 屬性了解原因。
 
 ```PowerShell
 Get-PhysicalDisk | Select SerialNumber, CanPool, CannotPoolReason
@@ -183,7 +183,7 @@ Get-PhysicalDisk | Select SerialNumber, CanPool, CannotPoolReason
 
 在短時間內，儲存空間直接存取將會自動宣告符合資格的磁碟機、將之新增至儲存集區，而磁碟區將自動[平均重新分散到所有磁碟機上](https://blogs.technet.microsoft.com/filecab/2016/11/21/deep-dive-pool-in-spaces-direct/)。 此時，您已完成並準備好[延伸磁碟區](resize-volumes.md)或[建立新磁碟區](create-volumes.md)。
 
-如果磁碟機沒有出現，請手動掃描硬體變更。 這可以使用 [動作] 功能表下方的 [裝置管理員] 來完成。 如果它們包含舊的資料或中繼資料，請考慮重新格式化它們。 可透過使用 **[磁碟管理]** 或 **Reset-PhysicalDisk** Cmdlet 進行此操作。
+如果磁碟機沒有出現，請手動掃描硬體變更。 這可以使用 [動作] 功能表下方的 [裝置管理員] 來完成。 如果它們包含舊的資料或中繼資料，請考慮加以重新格式化。 可透過使用 **[磁碟管理]** 或 **Reset-PhysicalDisk** Cmdlet 進行此操作。
 
    >[!NOTE]
    > 自動加入集區取決於您是否只有一個集區。 如果您已經規避標準設定來建立多個集區，您必須自行使用 **Add-PhysicalDisk**，將新的磁碟機新增至您慣用的集區。

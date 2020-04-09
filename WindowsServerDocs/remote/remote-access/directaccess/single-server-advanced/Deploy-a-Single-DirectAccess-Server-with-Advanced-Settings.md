@@ -2,22 +2,18 @@
 title: 使用進階設定部署單一 DirectAccess 伺服器
 description: 本主題是使用 Windows Server 2016 部署單一 DirectAccess 伺服器與 Advanced Settings 指南的一部分
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b211a9ca-1208-4e1f-a0fe-26a610936c30
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 4e6c8379f225dbeefd7c97ac96b9a0047dfd4a0b
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 7f6a6724a2ab7bb6da48a11d31fb04461912e388
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309212"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859521"
 ---
 # <a name="deploy-a-single-directaccess-server-with-advanced-settings"></a>使用進階設定部署單一 DirectAccess 伺服器
 
@@ -85,8 +81,8 @@ ms.locfileid: "80309212"
   
 |角色/功能|如何支援本案例|  
 |---------|-----------------|  
-|遠端存取角色|這個角色是利用伺服器管理員主控台或 Windows PowerShell 安裝和解除安裝。 這個角色同時包含 DirectAccess 和「路由及遠端存取服務」(RRAS)。 遠端存取角色包含兩個元件：<br/><br/>1. DirectAccess 和 RRAS VPN。 在 [遠端存取管理] 主控台中，會同時管理 DirectAccess 和 VPN。<br/>2. RRAS 路由。 RRAS 路由功能是在舊版路由及遠端存取主控台中管理。<br /><br />「遠端存取」伺服器角色取決於下列伺服器角色/功能：<br/><br/> -Internet Information Services （IIS）網頁伺服器-設定 DirectAccess 伺服器上的網路位置伺服器和預設 Web 探查時，需要這項功能。<br/> -Windows 內部資料庫。 用於 DirectAccess 伺服器上的本機帳戶處理。|  
-|遠端存取管理工具功能|這個功能的安裝方式如下：<br /><br />-安裝遠端存取角色時，預設會將它安裝在 DirectAccess 伺服器上，並支援遠端管理主控台使用者介面和 Windows PowerShell Cmdlet。<br />-您可以選擇性地將它安裝在未執行 DirectAccess 伺服器角色的伺服器上。 在這種情況下，它是用於從遠端管理那些執行 DirectAccess 和 VPN 的遠端存取電腦。<br /><br />遠端存取管理工具功能包含以下各項：<br /><br />-遠端存取圖形化使用者介面（GUI）<br />-適用于 Windows PowerShell 的遠端存取模組<br /><br />依存項目包括：<br /><br />-群組原則管理主控台<br />-RAS 連線管理員系統管理元件（CMAK）<br />-Windows PowerShell 3。0<br />-圖形化管理工具與基礎結構|  
+|遠端存取角色|這個角色是利用伺服器管理員主控台或 Windows PowerShell 安裝和解除安裝。 這個角色同時包含 DirectAccess 和「路由及遠端存取服務」(RRAS)。 遠端存取角色包含兩個元件：<br/><br/>1. DirectAccess 和 RRAS VPN。 在 [遠端存取管理] 主控台中，會同時管理 DirectAccess 和 VPN。<br/>2. RRAS 路由。 RRAS 路由功能是在舊版路由及遠端存取主控台中管理。<p>「遠端存取」伺服器角色取決於下列伺服器角色/功能：<br/><br/> -Internet Information Services （IIS）網頁伺服器-設定 DirectAccess 伺服器上的網路位置伺服器和預設 Web 探查時，需要這項功能。<br/> -Windows 內部資料庫。 用於 DirectAccess 伺服器上的本機帳戶處理。|  
+|遠端存取管理工具功能|這個功能的安裝方式如下：<p>-安裝遠端存取角色時，預設會將它安裝在 DirectAccess 伺服器上，並支援遠端管理主控台使用者介面和 Windows PowerShell Cmdlet。<br />-您可以選擇性地將它安裝在未執行 DirectAccess 伺服器角色的伺服器上。 在這種情況下，它是用於從遠端管理那些執行 DirectAccess 和 VPN 的遠端存取電腦。<p>遠端存取管理工具功能包含以下各項：<p>-遠端存取圖形化使用者介面（GUI）<br />-適用于 Windows PowerShell 的遠端存取模組<p>依存項目包括：<p>-群組原則管理主控台<br />-RAS 連線管理員系統管理元件（CMAK）<br />-Windows PowerShell 3。0<br />-圖形化管理工具與基礎結構|  
   
 ## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>硬體需求  
 本案例需要的硬體如下所示：  
@@ -148,9 +144,9 @@ ms.locfileid: "80309212"
   
 |內容類型|參考|  
 |--------|-------|  
-|**部署**|[Windows Server 中的 DirectAccess 部署路徑](../../../remote-access/directaccess/DirectAccess-Deployment-Paths-in-Windows-Server.md)<br /><br />[使用消費者入門 Wizard 部署單一 DirectAccess 伺服器](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md)|  
+|**部署**|[Windows Server 中的 DirectAccess 部署路徑](../../../remote-access/directaccess/DirectAccess-Deployment-Paths-in-Windows-Server.md)<p>[使用消費者入門 Wizard 部署單一 DirectAccess 伺服器](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md)|  
 |**工具及設定**|[遠端存取 PowerShell Cmdlet](https://technet.microsoft.com/library/hh918399.aspx)|  
-|**社群資源**|[DirectAccess 生存指南](https://social.technet.microsoft.com/wiki/contents/articles/23210.directaccess-survival-guide.aspx)<br /><br />[DirectAccess Wiki 專案](https://go.microsoft.com/fwlink/?LinkId=236871)|  
+|**社群資源**|[DirectAccess 生存指南](https://social.technet.microsoft.com/wiki/contents/articles/23210.directaccess-survival-guide.aspx)<p>[DirectAccess Wiki 專案](https://go.microsoft.com/fwlink/?LinkId=236871)|  
 |**相關技術**|[IPv6 的運作方式](https://technet.microsoft.com/library/cc781672(v=WS.10).aspx)|  
   
 

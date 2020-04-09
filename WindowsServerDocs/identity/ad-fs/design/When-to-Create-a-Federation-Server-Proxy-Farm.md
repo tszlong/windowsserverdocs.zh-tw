@@ -1,7 +1,6 @@
 ---
 ms.assetid: ad0bf21d-2ace-4565-b1f5-ce57c8eb2689
 title: 建立同盟伺服器 Proxy 伺服器陣列的時機
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 247daf1b9b49124188f6bb16bce7da381fe997ef
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d4b2b889159dee9f3b93a54a2b1924be286792f4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402428"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858491"
 ---
 # <a name="when-to-create-a-federation-server-proxy-farm"></a>建立同盟伺服器 Proxy 伺服器陣列的時機
 
@@ -31,10 +30,10 @@ ms.locfileid: "71402428"
   
 |工作|描述|  
 |--------|---------------|  
-|將伺服器陣列中的所有 proxy 指向相同的 AD FS 同盟服務名稱|當您建立同盟伺服器 Proxy 時，您必須在 [AD FS 同盟伺服器 Proxy 設定] Wizard 中，為要參與伺服器陣列的所有同盟伺服器 Proxy 輸入相同的同盟服務名稱。 同盟伺服器 proxy 會使用組成此 DNS 主機名稱的 URL 來判斷它所聯絡的 AD FS 同盟服務實例。<br /><br />如需詳細資訊，請參閱 [Configure a Computer for the Federation Server Proxy Role](../../ad-fs/deployment/Configure-a-Computer-for-the-Federation-Server-Proxy-Role.md)。|  
-|取得及共用憑證|您可以從公開證書\)\(頒發機構單位（例如 VeriSign）取得伺服器驗證憑證，然後設定憑證，讓所有同盟伺服器 proxy 在預設網站上共用相同憑證的相同私密金鑰部分，以供每個同盟伺服器 proxy 使用。 若要共用憑證，您必須在每個同盟伺服器 proxy 的預設網站上安裝相同的伺服器驗證憑證。 如需詳細資訊，請參閱將[伺服器驗證憑證匯入至預設的網站](../../ad-fs/deployment/Import-a-Server-Authentication-Certificate-to-the-Default-Web-Site.md)。<br /><br />如需詳細資訊，請參閱 [Certificate Requirements for Federation Server Proxies](Certificate-Requirements-for-Federation-Server-Proxies.md)。|  
+|將伺服器陣列中的所有 proxy 指向相同的 AD FS 同盟服務名稱|當您建立同盟伺服器 Proxy 時，您必須在 [AD FS 同盟伺服器 Proxy 設定] Wizard 中，為要參與伺服器陣列的所有同盟伺服器 Proxy 輸入相同的同盟服務名稱。 同盟伺服器 proxy 會使用組成此 DNS 主機名稱的 URL 來判斷它所聯絡的 AD FS 同盟服務實例。<p>如需詳細資訊，請參閱 [Configure a Computer for the Federation Server Proxy Role](../../ad-fs/deployment/Configure-a-Computer-for-the-Federation-Server-Proxy-Role.md)。|  
+|取得及共用憑證|您可以從公開證書\)\(頒發機構單位（例如 VeriSign）取得伺服器驗證憑證，然後設定憑證，讓所有同盟伺服器 proxy 在預設網站上共用相同憑證的相同私密金鑰部分，以供每個同盟伺服器 proxy 使用。 若要共用憑證，您必須在每個同盟伺服器 proxy 的預設網站上安裝相同的伺服器驗證憑證。 如需詳細資訊，請參閱將[伺服器驗證憑證匯入至預設的網站](../../ad-fs/deployment/Import-a-Server-Authentication-Certificate-to-the-Default-Web-Site.md)。<p>如需詳細資訊，請參閱 [Certificate Requirements for Federation Server Proxies](Certificate-Requirements-for-Federation-Server-Proxies.md)。|  
   
 如需新增同盟伺服器 proxy 以建立同盟伺服器 proxy 伺服器陣列的詳細資訊，請參閱[檢查清單：設定同盟伺服器 proxy](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server-Proxy.md)。  
   
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 [Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

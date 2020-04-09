@@ -2,18 +2,18 @@
 title: DFS 命名空間概觀
 ms.prod: windows-server
 ms.author: jgerend
-ms.manager: daveba
+manager: daveba
 ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms.date: 06/07/2019
 description: 本主題說明 DFS 命名空間，這是 Windows Server 中的角色服務，可讓您將位於不同伺服器上的共用資料夾，分組成一個或多個邏輯結構命名空間。
-ms.openlocfilehash: f4ff1bc394ddb57a290e5ffab1a89f596fc48d05
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 07f6ac857164257810b297f9e2b83db4e4bd42be
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949719"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858981"
 ---
 # <a name="dfs-namespaces-overview"></a>DFS 命名空間概觀
 
@@ -27,8 +27,8 @@ DFS 命名空間是 Windows Server 中的角色服務，可讓您將位於不同
 
 - **命名空間伺服器** - 命名空間伺服器會裝載一個命名空間。 命名空間伺服器可以是成員伺服器或網域控制站。
 - **命名空間根目錄** - 命名空間根目錄是命名空間的起始點。 在上圖中，根的名稱是公用的，而命名空間路徑是 \\\\Contoso\\Public。 這類命名空間稱為網域型命名空間，因為其開頭為網域名稱 (例如 Contoso)，而其中繼資料存放在 Active Directory 網域服務 (AD DS) 中。 雖然上圖顯示的是單一命名空間伺服器，但網域型命名空間還是可以裝載於多部命名空間伺服器來提高命名空間的可用性。
-- **資料夾** - 沒有資料夾目標的資料夾會將結構和階層新增至命名空間，而有資料夾目標的資料夾則會提供實際內容給使用者。 當使用者瀏覽命名空間中有資料夾目標的資料夾時，用戶端電腦會收到明確地將用戶端電腦重新導向至其中一個資料夾目標的轉介。
-- **資料夾目標** - 資料夾目標是共用資料夾的 UNC 路徑或其他與命名空間中資料夾相關聯的命名空間。 資料夾目標是儲存資料及內容所在的位置。 在上圖中，名為 Tools 的資料夾有兩個資料夾目標，一個在倫敦，另一個在紐約，而名為 Training Guides 的資料夾有一個在紐約的單一資料夾目標。 流覽至 \\\\Contoso\\公用\\軟體\\工具的使用者，會以透明方式重新導向至共用資料夾 \\\\LDN-SVR-01\\工具或 \\\\NYC-SVR-01\\工具，視使用者目前所在的網站而定。
+- **資料夾** - 沒有資料夾目標的資料夾會將結構和階層新增至命名空間，而有資料夾目標的資料夾則會提供實際內容給使用者。 當使用者瀏覽命名空間中含資料夾目標的資料夾時，用戶端電腦會收到轉介，將用戶端電腦透明地重新導向到其中一個資料夾目標。
+- **資料夾目標** - 資料夾目標是共用資料夾的 UNC 路徑或其他與命名空間中資料夾相關聯的命名空間。 資料夾目標是存放資料與內容的位置。 在上圖中，名為 Tools 的資料夾有兩個資料夾目標，分別在倫敦和紐約，而名為 Training Guides 的資料夾則僅有一個在紐約的資料夾目標。 流覽至 \\\\Contoso\\公用\\軟體\\工具的使用者，會以透明方式重新導向至共用資料夾 \\\\LDN-SVR-01\\工具或 \\\\NYC-SVR-01\\工具，視使用者目前所在的網站而定。
 
 本主題討論如何安裝 DFS、新功能，以及尋找評估和部署資訊的位置。
 
@@ -38,14 +38,14 @@ DFS 命名空間是 Windows Server 中的角色服務，可讓您將位於不同
 
 執行 DFS 管理或使用 DFS 命名空間不需要額外的硬體或軟體。
 
-命名空間伺服器是裝載命名空間的網域控制站或成員伺服器。 您可在伺服器上裝載的命名空間數目取決於命名空間伺服器上執行的作業系統。
+命名空間伺服器是裝載命名空間的網域控制站或成員伺服器。 可在伺服器上裝載的命名空間數目取決於命名空間伺服器上所執行的作業系統。
 
 執行下列作業系統的伺服器除了單一獨立命名空間之外，還可以裝載多個網域型命名空間。 
 
 - Windows Server 2019
-- WIN ENT LTSB 2016 Finnish 64 Bits
-- Windows Server 2012 R2
-- Windows 2012 Server
+- Windows Server 2016
+- Windows Server 2012 R2
+- Windows Server 2012
 - Windows Server 2008 R2 Datacenter 和 Enterprise Edition
 - Windows Server (半年通道)
 
@@ -53,13 +53,13 @@ DFS 命名空間是 Windows Server 中的角色服務，可讓您將位於不同
 
 - Windows Server 2008 R2 Standard
 
-下表說明選擇裝載命名空間的伺服器時所要考量的其他因素。
+下表描述選擇用於裝載命名空間的伺服器時需考量的其他因素。
 
 | 裝載獨立命名空間的伺服器 | 裝載網域型命名空間的伺服器 |
 | ---                                   |        ---                                |
-| 必須包含 NTFS 磁碟區才能裝載命名空間。|必須包含 NTFS 磁碟區才能裝載命名空間。 |
-| 可以是成員伺服器或網域控制站。|必須是設定命名空間所在網域中的成員伺服器或網域控制站 (這項需求適用於裝載指定之網域型命名空間的每一個命名空間伺服器)。 |
-| 可以由容錯移轉叢集裝載來提高命名空間可用性。|命名空間不可以是容錯移轉叢集中的叢集化資源。 不過，如果您將命名空間設定為只使用同樣於容錯移轉叢集中做為節點之伺服器的本機資源，則可以在該伺服器上找到命名空間。 |
+| 必須含有 NTFS 磁碟區才能裝載命名空間。|必須含有 NTFS 磁碟區才能裝載命名空間。 |
+| 可以是成員伺服器或網域控制站。|必須是設定命名空間之網域中的成員伺服器或網域控制站。 (此需求適用於裝載指定之網域型命名空間的所有命名空間伺服器)。 |
+| 可以由容錯移轉叢集裝載，以增加命名空間的可用性。|命名空間不可以是容錯移轉叢集中的叢集化資源。 不過，如果您將命名空間設定成只使用做為容錯移轉叢集的其中一個節點之伺服器上的本機資源，即可在該伺服器上找出命名空間。 |
 
 ## <a name="installing-dfs-namespaces"></a>安裝 DFS 命名空間
 
@@ -67,7 +67,7 @@ DFS 命名空間與 DFS 複寫是檔案和存放服務角色中的一部分。 D
 
 使用[Windows 管理中心](../../manage/windows-admin-center/understand/windows-admin-center.md)、伺服器管理員或 POWERSHELL 安裝 DFS 命名空間，如下一節所述。
 
-### <a name="to-install-dfs-by-using-server-manager"></a>若要使用 [伺服器管理員] 安裝 DFS
+### <a name="to-install-dfs-by-using-server-manager"></a>使用 [伺服器管理員] 安裝 DFS
 
 1. 開啟 [伺服器管理員]，按一下 [管理]，然後按一下 [新增角色及功能]。 [新增角色及功能精靈] 隨即顯示。
 
@@ -77,13 +77,13 @@ DFS 命名空間與 DFS 複寫是檔案和存放服務角色中的一部分。 D
 
     - 若要安裝 DFS 命名空間服務，請選取 **\[伺服器角色\]** 頁面上的 **\[DFS 命名空間\]** 。
 
-    - 若要只安裝 DFS 管理工具，請在 **\[功能\]** 頁面上，依序展開 **\[遠端伺服器管理工具\]** 、 **\[角色管理工具\]** 、 **\[檔案服務工具\]** ，然後選取 **\[DFS 管理工具\]** 。
+    - 若要只安裝 DFS 管理工具，請在 [功能] 頁面上，依序展開 [遠端伺服器管理工具]、[角色管理工具]、[檔案服務工具]，然後選取 [DFS 管理工具]。
 
-         **\[DFS 管理工具\]** 會安裝 DFS 管理嵌入式管理單元、適用於 Windows PowerShell 的 DFS 命名空間模組及命令列工具，但是不會在伺服器上安裝任何 DFS 服務。
+         [DFS 管理工具] 會安裝 DFS 管理嵌入式管理單元、適用於 Windows PowerShell 的 DFS 命名空間模組及命令列工具，但是不會在伺服器上安裝任何 DFS 服務。
 
-### <a name="to-install-dfs-by-using-windows-powershell"></a>若要使用 Windows PowerShell 安裝 DFS
+### <a name="to-install-dfs-by-using-windows-powershell"></a>使用 Windows PowerShell 安裝 DFS
 
-使用提高的使用者權限開啟 Windows PowerShell 會話，然後輸入下列命令，其中 < 名稱\> 是您想要安裝的角色服務或功能（請參閱下表，以取得相關角色服務或功能名稱的清單）：
+以提高的使用者權限開啟 Windows PowerShell 工作階段，然後輸入下列命令，其中 <name\> 是想要安裝的角色服務或功能 (請參閱下表，了解相關角色服務或功能名稱的清單)：
 
 ```PowerShell
 Install-WindowsFeature <name>
@@ -116,11 +116,11 @@ Install-WindowsFeature "FS-DFS-Namespace", "RSAT-DFS-Mgmt-Con"
 
 若要深入了解如何開始使用 Azure 虛擬機器，請參閱 [Azure 虛擬機器文件](https://docs.microsoft.com/azure/virtual-machines/)。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 如需其他相關資訊，請參閱下列資源。
 
-| 內容類型        | 參考資料 |
+| 內容類型        | 參考 |
 | ------------------  | ----------------|
 | **產品評估** | [Windows Server 中 DFS 命名空間和 DFS 複寫的新功能](https://technet.microsoft.com/library/dn281957(v=ws.11).aspx) |
 | **部署**    | [DFS 命名空間的擴充性考慮](https://blogs.technet.com/b/filecab/archive/2012/08/26/dfs-namespace-scalability-considerations.aspx) |

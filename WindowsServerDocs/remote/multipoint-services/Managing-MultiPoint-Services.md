@@ -1,27 +1,23 @@
 ---
 title: 管理 MultiPoint 服務
 description: 關於管理 MultiPoint 服務的文章總覽
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 81135740-e9ce-4b4c-a770-760d741f20b1
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 3000ea7dbbcb32e117db5faceb41145233e1baca
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 267ade36be28a90eecb6beafb49b338ea870c073
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405086"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853451"
 ---
 # <a name="managing-multipoint-services"></a>管理 MultiPoint 服務
-MultiPoint™ 服務可讓多位使用者保有獨立的 Windows 體驗，且同時共用一部電腦。 使用者站台是由監視器、鍵盤和滑鼠組成，可透過 USB、視訊纜線或網路直接連接到主機電腦。  
+MultiPoint&trade; 服務可讓多個使用者（每一個都有各自獨立的 Windows 體驗）同時共用一部電腦。 使用者站台是由監視器、鍵盤和滑鼠組成，可透過 USB、視訊纜線或網路直接連接到主機電腦。  
   
 使用下列資訊來瞭解您可以在 MultiPoint 管理員和 MultiPoint 儀表板中執行的工作，例如如何使用 MultiPoint 管理員管理 MultiPoint 服務站，以及如何每日使用 MultiPoint 儀表板。  
   

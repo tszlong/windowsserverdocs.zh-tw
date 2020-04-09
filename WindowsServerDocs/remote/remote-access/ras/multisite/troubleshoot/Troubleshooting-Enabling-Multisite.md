@@ -2,22 +2,18 @@
 title: 疑難排解啟用多站台
 description: 本主題是在 Windows Server 2016 的多網站部署中部署多部遠端存取服務器指南的一部分。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 570c81d6-c4f4-464c-bee9-0acbd4993584
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 59db462e3772b551f0d80819e7cd79519e95fb14
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: ae01a63a494504120ca248ec56dd9bc9648c1ae4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313827"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858291"
 ---
 # <a name="troubleshooting-enabling-multisite"></a>疑難排解啟用多站台
 

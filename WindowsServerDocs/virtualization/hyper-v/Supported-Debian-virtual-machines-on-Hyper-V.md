@@ -2,21 +2,19 @@
 title: Hyper-v 上支援的 Debian 虛擬機器
 description: 列出每個版本中包含的 Linux 整合服務和功能
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3cc62c10-02a3-4633-960c-23bf91a45bd5
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: 7a717acf5c132d68d6ee041aeb5af5a430aa171b
-ms.sourcegitcommit: 9f7cc76b8c9add44dcbbd97f77b4f881d5a2c073
+ms.openlocfilehash: db4d29ce2fa54c2a6d9006cbd0af909c92d36590
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80612999"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855961"
 ---
 # <a name="supported-debian-virtual-machines-on-hyper-v"></a>Hyper-v 上支援的 Debian 虛擬機器
 

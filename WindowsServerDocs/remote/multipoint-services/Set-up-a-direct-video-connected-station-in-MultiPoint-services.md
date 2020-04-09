@@ -1,24 +1,20 @@
 ---
 title: 在 MultiPoint 服務中設定直接視頻連線的工作站
 description: 瞭解如何在 MultiPoint 服務中建立直接視頻連線的工作站
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 82ba3517-9743-4cde-8eea-63a17edb016f
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: ab57f3d996cfe9196fd256a76516a44dc146043b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4bab07a21c6e2de529797e240325b3ff27446fe0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389359"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859351"
 ---
 # <a name="set-up-a-direct-video-connected-station-in-multipoint-services"></a>在 MultiPoint 服務中設定直接視頻連線的工作站
 在直接連接視頻的工作站上，監視器會直接連線到 MultiPoint Server 電腦上的視訊連接埠。 鍵盤和滑鼠接著會連接到 USB 集線器，並與監視相關聯。  

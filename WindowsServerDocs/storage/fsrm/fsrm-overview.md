@@ -2,18 +2,18 @@
 title: 檔案伺服器資源管理員 (FSRM) 概觀
 ms.prod: windows-server
 ms.author: jgerend
-ms.manager: brianlic
+manager: brianlic
 ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms.date: 5/14/2018
 description: 檔案伺服器 Resource Manager （FSRM）是一種工具，可讓您管理和分類 Windows Server 檔案伺服器上的資料。
-ms.openlocfilehash: 719176307afc320ad676fd1acfc07ad9d15920cf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0ed7e5abce9389283a9b9d641f813b5df89a586b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394174"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854241"
 ---
 # <a name="file-server-resource-manager-fsrm-overview"></a>檔案伺服器資源管理員 (FSRM) 概觀
 
@@ -53,7 +53,7 @@ ms.locfileid: "71394174"
   
 -   將報告排程在每個星期天午夜執行，並產生一份過去兩天內最新存取的檔案清單。 這麼做可以幫助您判斷週末存放活動，並據此規劃您的伺服器停機時間。  
 
-## <a name="whats-new"></a>新功能-防止 FSRM 建立變更日誌
+## <a name="whats-new---prevent-fsrm-from-creating-change-journals"></a><a name="whats-new"></a>新功能-防止 FSRM 建立變更日誌
 
 從 Windows Server 版本1803開始，您現在可以在服務啟動時，防止檔案伺服器 Resource Manager 服務在磁片區上建立變更日誌（也稱為 USN 日誌）。 這可以節省每個磁片區上的空間，但會停用即時檔案分類。
 
@@ -90,7 +90,7 @@ ms.locfileid: "71394174"
        ```
     2. 回到 [登錄編輯程式]，以滑鼠右鍵按一下**HKEY_LOCAL_MACHINE \system\currentcontrolset\services\srmsvc\settings**機碼，然後選取 [**新增** > **多字串值**]。
     3. 將值命名為 `SkipUSNCreationForVolumes`。
-    4. 輸入您略過建立變更日誌之每個磁片區的路徑，並將每個路徑放在不同的行上。 例如：
+    4. 輸入您略過建立變更日誌之每個磁片區的路徑，並將每個路徑放在不同的行上。 例如，
 
         ```
         \\?\Volume{8d3c9e8a-0000-0000-0000-100000000000}\
@@ -104,6 +104,6 @@ ms.locfileid: "71394174"
 
 
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 - [動態存取控制](https://technet.microsoft.com/library/dn408191(v=ws.11).aspx) 

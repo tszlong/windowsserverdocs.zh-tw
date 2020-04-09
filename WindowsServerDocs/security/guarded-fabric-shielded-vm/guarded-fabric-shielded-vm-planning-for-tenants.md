@@ -1,18 +1,18 @@
 ---
 title: 適用于主控者的受防護網狀架構與受防護的 VM 規劃指南
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 392af37f-a02d-4d40-a25d-384211cbbfdd
 manager: dongill
 author: nirb-ms
+ms.author: nirb
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: 255429960735d70ff3a4d260bd9090b95882b6bd
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 829d6a3efef082e35c6a4f98e0ba9e4b70c27a93
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949775"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856471"
 ---
 # <a name="guarded-fabric-and-shielded-vm-planning-guide-for-tenants"></a>租使用者的受保護網狀架構與受防護的 VM 規劃指南
 
@@ -63,7 +63,7 @@ VM 受防護或加密是否受支援取決於建立 VM 時選取的防護資料�
 
 防護資料是使用 [防護資料檔案] [檔案] 建立，並儲存在 VM 擁有者上傳至受保護網狀架構的 PDK 檔案中。
 
-受防護的 Vm 可協助防範受到入侵之虛擬化網狀架構的攻擊，因此我們需要一個安全的機制來傳遞敏感的初始化資料，例如系統管理員的密碼、網域加入認證或 RDP 憑證，而不會將這些資訊洩漏給虛擬化網狀架構本身或其系統管理員。 此外，防護資料包含下列各項：
+受防護的 Vm 可協助防範受到入侵之虛擬化網狀架構的攻擊，因此我們需要一個安全的機制來傳遞敏感的初始化資料，例如系統管理員的密碼、網域加入認證或 RDP 憑證，而不會向虛擬化網狀架構本身或其系統管理員顯示這些資訊。 此外，防護資料包含下列各項：
 
 1. 安全性等級–受防護或加密-支援
 2. 可執行 VM 的受信任主機保護者的擁有者和清單

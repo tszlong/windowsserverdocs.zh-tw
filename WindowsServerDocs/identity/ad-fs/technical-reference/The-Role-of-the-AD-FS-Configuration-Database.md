@@ -1,7 +1,6 @@
 ---
 ms.assetid: 68db7f26-d6e3-4e67-859b-80f352e6ab6a
 title: AD FS 設定資料庫的角色
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,22 +8,22 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 22047a93ab67d3f21b3e2318fcce497feab8f996
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9ffdd1876e2dfbc044cebb65d7d6ef80880a64b8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385579"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860161"
 ---
 # <a name="the-role-of-the-ad-fs-configuration-database"></a>AD FS 設定資料庫的角色
-AD FS 設定資料庫會儲存代表單一實例的所有設定資料，Active Directory 同盟服務 \(AD FS\) \(也就是同盟服務\)。 AD FS 設定資料庫定義了供 Federation Service 識別夥伴、憑證、屬性存放區、宣告與這些關聯實體之各種相關資料所需的參數集。 您可以將此設定資料儲存在 Windows Server®2008、Windows Server 2008 R2 和 Windows Server®2012所隨附的 Microsoft SQL Server®資料庫或 Windows 內部資料庫 \(WID\) 功能。  
+AD FS 設定資料庫會儲存代表單一實例的所有設定資料，Active Directory 同盟服務 \(AD FS\) \(也就是同盟服務\)。 AD FS 設定資料庫定義了供 Federation Service 識別夥伴、憑證、屬性存放區、宣告與這些關聯實體之各種相關資料所需的參數集。 您可以將此設定資料儲存在 Windows Server&reg; 2008、Windows Server 2008 R2 和 Windows Server&reg; 2012 所隨附的 Microsoft SQL Server&reg; 資料庫或 Windows 內部資料庫 \(WID\) 功能。  
   
 > [!NOTE]  
 > 您可以將 AD FS 設定資料庫的整個內容儲存在單一 WID 執行個體或單一 SQL 資料庫執行個體中，但不能分開儲存。 這表示對於相同的 AD FS 設定資料庫執行個體，您不能為某些同盟伺服器使用 WID 並為其他同盟伺服器使用 SQL Server 資料庫。  
   
 您可以使用此主題中的下列資訊搭配  [AD FS 部署拓撲考量](https://technet.microsoft.com/library/gg982489.aspx)中提供的內容來了解選擇 WID 或 SQL Server 來儲存AD FS 設定資料庫的優點與缺點：  
   
-WID 使用關聯式資料存放區，而且沒有自己的管理使用者介面 \(UI\)。 系統管理員可以改為使用、Fsconfig.exe 或 Windows PowerShell™ Cmdlet 中的 AD FS 管理嵌入式\-管理單元來修改 AD FS 設定資料庫的內容。  
+WID 使用關聯式資料存放區，而且沒有自己的管理使用者介面 \(UI\)。 系統管理員可以改為使用、Fsconfig.exe 或 Windows PowerShell&trade; Cmdlet 中的 AD FS 管理嵌入式\-管理單元來修改 AD FS 設定資料庫的內容。  
   
 ## <a name="using-wid-to-store-the-ad-fs-configuration-database"></a>使用 WID 來儲存 AD FS 設定資料庫  
 您可以使用 Fsconfig.exe 命令\-程式程式碼工具或 AD FS 同盟伺服器設定，以使用 WID 做為存放區來建立 AD FS 設定資料庫。 使用上述任一工具時，您可以選擇下列任一選項來建立您的同盟伺服器拓撲。 這些選項中的每個選項都是使用 WID 來儲存 AD FS 設定資料庫：  
@@ -45,10 +44,10 @@ WID 使用關聯式資料存放區，而且沒有自己的管理使用者介面 
 > 當您使用 WID 部署同盟伺服器陣列時，AD FS 的某些功能可能無法使用。 設定您的伺服器陣列時若要存取完整功能，請考慮改為使用 Microsoft SQL Server 來儲存 AD FS 設定資料庫。 如需詳細資訊，請參閱 [AD FS 部署拓撲考量](https://technet.microsoft.com/library/gg982489(v=ws.11).aspx)。  
   
 ### <a name="how-a-wid-federation-server-farm-works"></a>WID 同盟伺服器陣列的運作方式  
-本節說明一些重要概念，它們說明 WID 同盟伺服器陣列如何在主要同盟伺服器與次要同盟伺服器之間複寫資料。 .  
+本節說明一些重要概念，它們說明 WID 同盟伺服器陣列如何在主要同盟伺服器與次要同盟伺服器之間複寫資料。 。  
   
 #### <a name="primary-federation-server"></a>主要同盟伺服器  
-「主要同盟伺服器」是一部執行 Windows Server 2008、Windows Server 2008 R2 或 Windows Server®2012的電腦，其已在具有 AD FS 同盟伺服器設定向導的同盟伺服器角色中設定，且具有 AD FS 設定資料庫的讀取/寫入複本。 當您使用 [AD FS 同盟伺服器設定] Wizard 並選取建立新同盟服務的選項，並將該電腦設定為伺服器陣列中的第一部同盟伺服器時，一律會建立主要同盟伺服器。 此陣列中的所有其他同盟伺服器 (亦稱為次要同盟伺服器) 必須將主要同盟伺服器上的變更同步到其本機儲存的 AD FS 設定資料庫複本。  
+「主要同盟伺服器」是一部執行 Windows Server 2008、Windows Server 2008 R2 或 Windows Server&reg; 2012 的電腦，其已在具有 AD FS 同盟伺服器設定向導的同盟伺服器角色中設定，且具有 AD FS 設定資料庫的讀取/寫入複本。 當您使用 [AD FS 同盟伺服器設定] Wizard 並選取建立新同盟服務的選項，並將該電腦設定為伺服器陣列中的第一部同盟伺服器時，一律會建立主要同盟伺服器。 此陣列中的所有其他同盟伺服器 (亦稱為次要同盟伺服器) 必須將主要同盟伺服器上的變更同步到其本機儲存的 AD FS 設定資料庫複本。  
   
 #### <a name="secondary-federation-servers"></a>次要同盟伺服器  
 次要同盟伺服器會將 AD FS 設定資料庫的複本儲存在主要同盟伺服器上，但這些複本只會讀取\-。 次要同盟伺服器會根據已設定的間隔時間定期連線到陣列中的主要同盟伺服器並進行輪詢以檢查資料是否已變更，來同步資料。 次要同盟伺服器的存在是為了提供主要同盟伺服器的容錯，同時負責負載\-在整個網路環境中的不同網站上進行存取要求的平衡。  
@@ -79,7 +78,7 @@ WID 同步程序也支援遞增傳輸，可提供更有效率的變更傳輸。 
   
 -   它提供 SAML 成品解析和 SAML/WS\-同盟權杖重新執行偵測的功能支援 \(下文\)所述。  
   
-當 AD FS 設定資料庫是儲存在 SQL 資料庫執行個體中時，「主要同盟伺服器」一詞不適用，因為所有同盟伺服器都可以讀取及寫入使用相同叢集 SQL Server 執行個體的 AD FS 設定資料庫，如下圖所示。  
+當 AD FS 設定資料庫儲存在 SQL 資料庫實例中時，「主要同盟伺服器」一詞不適用，因為所有的同盟伺服器都可以讀取和寫入使用相同叢集 SQL Server 實例的 AD FS 設定資料庫，如下圖所示。  
   
 ![AD FS 角色](media/adfs2_SQL.png)  
   

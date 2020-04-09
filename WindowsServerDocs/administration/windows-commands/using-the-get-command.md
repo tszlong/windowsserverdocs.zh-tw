@@ -1,30 +1,27 @@
 ---
-title: 使用 get 命令
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+title: 取得
+description: Get 的 Windows 命令主題，它會抓取所指定物件的屬性或屬性。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: fbd44c67-0670-4dfe-a1c0-2ab8abe327b5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 35fe9ebf036e82fce0f6b2ff67ddb654d8dad586
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: be532dcb57faf4ec2a86a34c3ab59c921c5b8d0c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71363279"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80831141"
 ---
-# <a name="using-the-get-command"></a>使用 get 命令
+# <a name="get"></a>取得
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 抓取有關指定物件的屬性或屬性。
+
 ## <a name="subcommands"></a>子
 |來|描述|
 |-------|--------|

@@ -1,17 +1,17 @@
 ---
 title: 分公司考慮
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: 5a07553e6662fd79230d566ba2049c5e8997f4d6
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: a9893ecd76e142dd243a1d99e83a48d2edfd5872
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322500"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856561"
 ---
 # <a name="branch-office-considerations"></a>分公司考量
 
@@ -61,4 +61,4 @@ Set-HgsKeyProtectionConfiguration -AllowKeyMaterialCaching:$true
 ```
 
 由於可快取的金鑰保護裝置對每個受防護的 VM 而言是唯一的，因此您必須完全關閉（而非重新開機），並啟動受防護的 Vm，以在 HGS 上啟用此設定之後，取得可快取的金鑰保護裝置。
-如果您的受防護 VM 會遷移至執行舊版 Windows Server 的 Hyper-v 主機，或從舊版 HGS 取得新的金鑰保護裝置，它將無法在離線模式中啟動，但可在存取 HGS 時繼續在線上模式中執行能夠.
+如果您的受防護 VM 會遷移至執行舊版 Windows Server 的 Hyper-v 主機，或從舊版 HGS 取得新的金鑰保護裝置，它將無法在離線模式中啟動，但可在存取 HGS 時繼續在線上模式中執行。

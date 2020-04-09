@@ -2,22 +2,18 @@
 title: 步驟2準備叢集伺服器
 description: 本主題是在 Windows Server 2016 的叢集中部署遠端存取指南的一部分。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 35d68abb-6914-42e0-91e8-803933cf785e
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 74aac416a5aa69a0cd935d58e3ecb931e4b5fd02
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: e53557f1fb2715f1d0318adc12aebb8f84423519
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308330"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861441"
 ---
 # <a name="step-2-prepare-cluster-servers"></a>步驟2準備叢集伺服器
 
@@ -27,7 +23,7 @@ ms.locfileid: "80308330"
   
 |工作|描述|  
 |----|--------|  
-|[2.1 設定遠端存取基礎結構](#BKMK_config)|在您要新增到叢集的每部伺服器上，設定伺服器拓撲、IP 定址、路由和轉送。 如果您設定虛擬機器的負載平衡叢集，則必須將虛擬機器設定為使用 MAC 位址詐騙。<br /><br />此外，將每部伺服器聯結至相同的網域，並將所有伺服器連線到相同的子網。|  
+|[2.1 設定遠端存取基礎結構](#BKMK_config)|在您要新增到叢集的每部伺服器上，設定伺服器拓撲、IP 定址、路由和轉送。 如果您設定虛擬機器的負載平衡叢集，則必須將虛擬機器設定為使用 MAC 位址詐騙。<p>此外，將每部伺服器聯結至相同的網域，並將所有伺服器連線到相同的子網。|  
 |[2.2 安裝遠端存取角色](#BKMK_Install)|在您要新增到叢集的每部額外伺服器上，安裝遠端存取角色|  
 |[2.3 安裝 NLB](#BKMK_NLB)|在部署的遠端存取服務器上，以及您要新增到叢集的每部額外伺服器上，安裝 NLB 功能。 請注意，使用外部 Load Balancer 時，不需要執行此步驟。|  
   

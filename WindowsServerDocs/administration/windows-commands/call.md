@@ -1,35 +1,29 @@
 ---
 title: 呼叫
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: 呼叫的 Windows 命令主題，它會呼叫另一個 batch 程式，而不會停止父批次程式。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d34a41dc-e6c7-4467-bf6a-15cec704833e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 06/05/2018
-ms.openlocfilehash: 89097ec5d3711b3d8831f8c33b3778ed0752246f
-ms.sourcegitcommit: ee8fa8e1293f29229b5ce1b0f3d4a07ba99568f5
+ms.openlocfilehash: 58b2d03c76f53fa7bbf5c483c1a423cd4a011f94
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78280189"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80848231"
 ---
 # <a name="call"></a>呼叫
 
-
-
-呼叫另一個批次程式，而不停止父批次程式。 **呼叫**命令會接受標籤做為呼叫的目標。
-
-> [!NOTE]
-> 在腳本或批次檔外部使用**呼叫**時，在命令提示字元中不會有任何作用。
+呼叫另一個批次程式，而不停止父批次程式。 **呼叫**命令會接受標籤做為呼叫的目標
 
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+
+> [!NOTE]
+> 在腳本或批次檔外部使用呼叫時，在命令提示字元中不會有任何作用。
 
 ## <a name="syntax"></a>語法
 
@@ -37,7 +31,7 @@ ms.locfileid: "78280189"
 call [Drive:][Path]<FileName> [<BatchParameters>] [:<Label> [<Arguments>]]
 ```
 
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
 |           參數           |                                                                         描述                                                                          |
 |-------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -57,7 +51,7 @@ call [Drive:][Path]<FileName> [<BatchParameters>] [:<Label> [<Arguments>]]
 
 |Batch 參數|描述|
 |---------------|-----------|
-|% ~ 1|展開 **%1** ，並移除括住的引號（""）。|
+|% ~ 1|展開 **%1** ，並移除前後的引號（）。|
 |% ~ f1|將 **%1**展開為完整路徑。|
 |% ~ d1|僅將 **%1**擴充到磁碟機號。|
 |% ~ p1|僅將 **%1**擴充到路徑。|
@@ -100,7 +94,7 @@ call [Drive:][Path]<FileName> [<BatchParameters>] [:<Label> [<Arguments>]]
 
     `call :<Label> <Arguments>`
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 若要從另一個 batch 程式執行 Checknew 程式，請在父批次程式中輸入下列命令：
 ```
@@ -111,6 +105,6 @@ call checknew
 call checknew %1 %2
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

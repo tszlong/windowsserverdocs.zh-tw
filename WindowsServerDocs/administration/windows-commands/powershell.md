@@ -1,28 +1,24 @@
 ---
 title: PowerShell
 description: 瞭解如何從命令提示字元開啟 PowerShell 主控台。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 694fc970-0b6c-4046-b1b5-7eb1a0d26609
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 2c43c71fce9bb25efcf3f03284160d5534475a8a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 327ac844bec0e4c89ee1443c193aa628de038dea
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372204"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837401"
 ---
 # <a name="powershell"></a>PowerShell
 
-Windows PowerShell 是以工作為基礎的命令列 shell 與指令碼語言，專為系統管理所設計。 Windows PowerShell 是以 .NET Framework 為基礎所建置，可協助 IT 專業人員與進階使用者控制和自動化管理 Windows 作業系統與在 Windows 上執行的應用程式。
+Windows PowerShell 是以工作為基礎的命令列 shell 與指令碼語言，專為系統管理所設計。 Windows PowerShell 內建於 .NET Framework 中，可協助 IT 專業人員、加強使用者控制及自動化 Windows 作業系統與在 Windows 上執行之應用程式的系統管理。
 
 **PowerShell .exe**命令列工具會在 [命令提示字元] 視窗中啟動 Windows PowerShell 會話。 當您使用**PowerShell**時，您可以使用其選擇性參數來自訂會話。 例如，您可以啟動使用特定執行原則或排除 Windows PowerShell 設定檔的會話。 否則，會話會與 Windows PowerShell 主控台中啟動的任何會話相同。
 
@@ -58,7 +54,7 @@ Windows PowerShell 是以工作為基礎的命令列 shell 與指令碼語言，
 
 - 若要在 [命令提示字元] 視窗中結束 Windows PowerShell 會話，請輸入 `exit`。 一般的命令提示字元會傳回。
 
-如需完整的**PowerShell .exe**命令列參數清單，請參閱[about_PowerShell。](https://go.microsoft.com/fwlink/?LinkID=113439)
+如需完整的**PowerShell .exe**命令列參數清單，請參閱[about_PowerShell .exe](https://go.microsoft.com/fwlink/?LinkID=113439)。
 
 ## <a name="other-ways-to-start-windows-powershell"></a>啟動 Windows PowerShell 的其他方式
 
@@ -70,7 +66,7 @@ Windows PowerShell 會在 Windows Server 作業系統的 Server Core 安裝選�
 
 ## <a name="additional-references"></a>其他參考資料
 
-[about_PowerShell](https://go.microsoft.com/fwlink/?LinkID=113439)
-[about_PowerShell_Ise](https://go.microsoft.com/fwlink/?LinkId=256512)
-[windows Powershell](https://go.microsoft.com/fwlink/?LinkID=107116)
-[使用 windows powershell 的腳本，](https://technet.microsoft.com/scriptcenter/dd742419)另請參閱
+[About_PowerShell .exe](https://go.microsoft.com/fwlink/?LinkID=113439)
+[About_PowerShell_Ise .exe](https://go.microsoft.com/fwlink/?LinkId=256512)
+[Windows](https://go.microsoft.com/fwlink/?LinkID=107116) Powershell
+[使用 windows powershell 編寫腳本，](https://technet.microsoft.com/scriptcenter/dd742419)另請參閱

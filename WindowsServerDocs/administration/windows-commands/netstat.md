@@ -1,28 +1,24 @@
 ---
 title: netstat
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 60e2718f-93cc-4ceb-bf0e-58a6a6e4fc8b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 54bd21b7e96275d329e45e825971d9236488c793
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: afd34cca2ecd3caa7ac480b380b85ba6d2a19fcb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373261"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839011"
 ---
 # <a name="netstat"></a>netstat
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 顯示使用中的 TCP 連線、電腦正在接聽的埠、乙太網路統計資料、IP 路由表、IPv4 統計資料（適用于 IP、ICMP、TCP 和 UDP 通訊協定），以及 IPv6 統計資料（適用于 IPv6、ICMPv6、透過 IPv6 的 TCP 和 UDP 通訊協定）。 使用時不含參數， **netstat**會顯示作用中的 TCP 連接。 
 
@@ -31,7 +27,7 @@ ms.locfileid: "71373261"
 netstat [-a] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<Interval>]
 ```
 
-### <a name="parameters"></a>參數
+#### <a name="parameters"></a>參數
 
 |   參數   |                                                                                                                                              描述                                                                                                                                              |
 |---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -51,10 +47,10 @@ netstat [-a] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<Interval>]
     -   Proto 通訊協定（TCP 或 UDP）的名稱。
     -   [本機位址] 本機電腦的 IP 位址，以及所使用的埠號碼。 除非指定 **-n**參數，否則會顯示對應至 IP 位址和埠名稱的本機電腦名稱稱。 如果尚未建立埠，埠號碼會顯示為星號（*）。
     -   外部地址：通訊端所連接之遠端電腦的 IP 位址和埠號碼。 除非指定 **-n**參數，否則會顯示對應至 IP 位址和埠的名稱。 如果尚未建立埠，埠號碼會顯示為星號（*）。
-    -   狀態表示 TCP 連接的狀態。 可能的狀態如下：CLOSE_WAIT CLOSED 已建立 FIN_WAIT_1 FIN_WAIT_2 LAST_ACK 接聽 SYN_RECEIVED SYN_SEND timeD_WAIT 如需 TCP 線上狀態的詳細資訊，請參閱 Rfc 793。
+    -   狀態表示 TCP 連接的狀態。 可能的狀態如下： CLOSE_WAIT 已建立的已關閉 FIN_WAIT_1 FIN_WAIT_2 LAST_ACK 接聽 SYN_RECEIVED SYN_SEND timeD_WAIT 如需 TCP 線上狀態的詳細資訊，請參閱 Rfc 793。
 -   只有當網際網路通訊協定（TCP/IP）通訊協定是在網路連線的網路介面卡內容中安裝為元件時，才可以使用此命令。
 
-## <a name="BKMK_Examples"></a>典型
+## <a name="examples"></a><a name=BKMK_Examples></a>典型
 若要顯示所有通訊協定的 Ethernet 統計資料和統計資料，請輸入：
 ```
 netstat -e -s
@@ -72,5 +68,5 @@ netstat -o 5
 netstat -n -o
 ```
 
-## <a name="additional-references"></a>其他參考
--   [命令列語法關鍵](command-line-syntax-key.md)
+## <a name="additional-references"></a>其他參考資料
+-   - [命令列語法關鍵](command-line-syntax-key.md)

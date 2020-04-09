@@ -1,24 +1,20 @@
 ---
 title: 使用 MultiPoint 服務儲存檔案
 description: 瞭解 MultiPoint 服務中的檔案儲存體
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c9eb0461-3846-4ddc-97ff-de10f03f30cf
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: bf31f5c582cffb5b38cff8cb15fcfdb4b3f76386
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 504389af62af8ec303e5b3baa2797a46f3ef52e6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389305"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853871"
 ---
 # <a name="storing-files-with-multipoint-services"></a>使用 MultiPoint 服務儲存檔案
 MultiPoint 服務支援以下列方式儲存使用者檔案：  

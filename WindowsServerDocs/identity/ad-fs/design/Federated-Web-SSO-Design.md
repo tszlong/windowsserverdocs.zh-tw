@@ -1,7 +1,6 @@
 ---
 ms.assetid: 09f335bb-896a-45dd-adc2-f215b8fba828
 title: 同盟網頁 SSO 設計
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6a3e7eb6c42c8190da799c88c1e947e6aef1c29f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9915a2942c9336d5aeb7776169d2e51491c22909
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408108"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853141"
 ---
 # <a name="federated-web-sso-design"></a>同盟網頁 SSO 設計
 
@@ -26,7 +25,7 @@ ms.locfileid: "71408108"
   
 ![同盟網頁 sso](media/adfs2_FederatedWebSSODesign.gif)  
   
-圖例中的一個\-方式箭號表示同盟信任的方向，也就是 Windows 信任的方向，一律指向樹系的帳戶端。 這表示從帳戶夥伴組織到資源夥伴組織的驗證流程。  
+圖例中的一個\-方式箭號表示同盟信任的方向，也就是 Windows 信任的方向，一律指向樹系的帳戶端。 這表示驗證流程會從帳戶夥伴組織進行至資源夥伴組織。  
   
 在此同盟網頁 SSO 設計中，兩部同盟伺服器 \(Fabrikam 的其中一個，而 Contoso 中的另一個則\) 將來自 Fabrikam 使用者帳戶的驗證要求路由傳送至 Contoso 中以 Web\-為基礎的應用程式或服務。  
   
@@ -45,5 +44,5 @@ Contoso 是資源提供者。 同盟網頁 SSO 設計的 Contoso 部分會達到
   
 如需可用來規劃和部署同盟網頁 SSO 設計的詳細工作清單，請參閱＜ [Checklist: Implementing a Federated Web SSO Design](../../ad-fs/deployment/Checklist--Implementing-a-Federated-Web-SSO-Design.md)＞。  
   
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 [Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

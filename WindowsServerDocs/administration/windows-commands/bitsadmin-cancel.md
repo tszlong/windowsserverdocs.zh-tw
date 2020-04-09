@@ -1,24 +1,20 @@
 ---
 title: bitsadmin cancel
-description: '**Bitsadmin 取消**的 Windows 命令主題-從傳輸佇列移除作業，並刪除與作業相關聯的所有暫存檔案。'
-ms.custom: na
+description: '**Bitsadmin cancel**的 Windows 命令主題，這會從傳送佇列中移除作業，並刪除與作業相關聯的所有暫存檔案。'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7374b544-6a16-4d3e-872c-dcf4c02ad89d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 77e46d787359af43a37faba5d844bfec09730454
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5c2bdeef824bc269671cc5ae926fb77cd5726c58
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71381801"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80850831"
 ---
 # <a name="bitsadmin-cancel"></a>bitsadmin cancel
 
@@ -27,22 +23,23 @@ ms.locfileid: "71381801"
 ## <a name="syntax"></a>語法
 
 ```
-bitsadmin /cancel <Job>
+bitsadmin /cancel <job>
 ```
 
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
-|參數|描述|
-|---------|-----------|
-|Job|作業的顯示名稱或 GUID|
+| 參數 | 描述 |
+| --------- | ----------- |
+| 工作 | 作業的顯示名稱或 GUID。 |
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 下列範例會從傳送佇列中移除*myDownloadJob*作業。
+
 ```
 C:\>bitsadmin /cancel myDownloadJob
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

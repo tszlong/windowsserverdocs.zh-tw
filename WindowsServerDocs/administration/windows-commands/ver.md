@@ -1,24 +1,20 @@
 ---
 title: ver
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: 適用于 ver 的 Windows 命令主題，它會顯示作業系統版本號碼。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5a9c6cd4-b67d-4b30-8c56-5f9798eafd2a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e48b3b1061edf793c88693b3353753c6a4cedcfc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d0d0676dcfa6546e4bbf74c4c58a24f51744d00f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362719"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80830191"
 ---
 # <a name="ver"></a>ver
 
@@ -36,13 +32,13 @@ Windows 命令提示字元（Cmd.exe）中支援此命令，但在 PowerShell �
 ver
 ```
 
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
 |/?|在命令提示字元顯示說明。|
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 若要從命令 shell （cmd.exe）取得作業系統的版本號碼，請輸入：
 
@@ -57,6 +53,6 @@ $PSVersionTable.BuildVersion
 ````
 
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

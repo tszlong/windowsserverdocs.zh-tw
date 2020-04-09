@@ -1,39 +1,35 @@
 ---
 title: msinfo32
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a38f31d7-1766-4103-becc-9d0b87c2826d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9ec08171816476cf04bbfb70637ff8253192e21b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5a77cf9ae4c5f054e66839ff5b5b057e031b36ff
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373376"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839111"
 ---
 # <a name="msinfo32"></a>msinfo32
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 開啟 [系統資訊] 工具，以顯示本機電腦上硬體、系統元件和軟體環境的完整觀點。 
 ## <a name="syntax"></a>語法
 ```
 msinfo32 [/pch] [/nfo <path>] [/report <path>] [/computer <computerName>] [/showcategories] [/category <CategoryID>] [/categories {+<CategoryID>(+<CategoryID>)|+all(-<CategoryID>)}]
 ```
-### <a name="parameters"></a>參數
+#### <a name="parameters"></a>參數
 
 |    參數    |                                                                                                                                 描述                                                                                                                                  |
 |-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|     <path>      | 指定要以*C:\Folder1\File1.XXX*格式開啟的檔案，其中*C*是磁碟機號， *Folder1*是資料夾， *File1*是檔案名， *XXX*則是副檔名。<br /><br />這個檔案可以是 **.nfo**、 **.xml**、 **.txt**或 **.cab**檔案。 |
+|     <path>      | 指定要以*C:\Folder1\File1.XXX*格式開啟的檔案，其中*C*是磁碟機號， *Folder1*是資料夾， *File1*是檔案名， *XXX*則是副檔名。<p>這個檔案可以是 **.nfo**、 **.xml**、 **.txt**或 **.cab**檔案。 |
 | <computerName>  |                                                                             指定目標或本機電腦的名稱。 這可以是 UNC 名稱、IP 位址或完整的電腦名稱稱。                                                                              |
 |  <CategoryID>   |                                                                                     指定類別目錄專案的識別碼。 您可以使用 **/showcategories**來取得類別目錄識別碼。                                                                                      |
 |      /pch       |                                                                                                       顯示 [系統資訊] 工具中的 [系統歷程記錄]。                                                                                                       |
@@ -47,7 +43,7 @@ msinfo32 [/pch] [/nfo <path>] [/report <path>] [/computer <computerName>] [/show
 
 ## <a name="remarks"></a>備註
 某些系統資訊分類包含大量資料。 您可以使用 [**開始/wait** ] 命令，將這些類別的報告效能優化。 如需詳細資訊，請參閱[系統資訊](https://technet.microsoft.com/library/cc783305(v=ws.10).aspx)。
-## <a name="BKMK_Examples"></a>典型
+## <a name="examples"></a><a name=BKMK_Examples></a>典型
 若要列出可用的分類識別碼，請輸入：
 ```
 msinfo32 /showcategories
@@ -64,6 +60,6 @@ msinfo32 /nfo syssum.nfo /categories +systemsummary
 ```
 msinfo32 /nfo conflicts.nfo /categories    +componentsproblemdevices+resourcesconflicts+resourcesforcedhardware
 ```
-## <a name="additional-references"></a>其他參考
--   [命令列語法關鍵](command-line-syntax-key.md)
+## <a name="additional-references"></a>其他參考資料
+-   - [命令列語法關鍵](command-line-syntax-key.md)
 

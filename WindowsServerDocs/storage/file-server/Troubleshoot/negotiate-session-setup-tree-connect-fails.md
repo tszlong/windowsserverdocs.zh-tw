@@ -3,16 +3,15 @@ title: Negotiate、會話設定和樹狀連接失敗
 description: 介紹如何針對 Negotiate、會話設定和樹狀結構連接失敗進行疑難排解。
 author: Deland-Han
 manager: dcscontentpm
-audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 0ccd8d882060432dcfc27ee47b82d0c61e3aad4d
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: 13124176e530aa7b74d18a38c906bf5297be511e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654369"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815381"
 ---
 # <a name="negotiate-session-setup-and-tree-connect-failures"></a>Negotiate、會話設定和樹狀連接失敗
 
@@ -30,7 +29,7 @@ SMB 伺服器會從 SMB 用戶端接收 SMB NEGOTIATE 要求。 連接逾時，�
 
 SMB 伺服器會從 SMB 用戶端收到 SMB 會話\_安裝要求，但無法回應。
 
-如果在通用命名慣例（UNC）路徑中使用伺服器的完整功能變數名稱（FQDN）或網路基本輸入/輸出系統（NetBIOS）名稱，Windows 將會使用 Kerberos 進行驗證。
+如果伺服器的完整功能變數名稱（FQDN）或網路基本輸入/輸出系統（NetBIOS）名稱在通用命名慣例（UNC）路徑中是 ' sed，Windows 就會使用 Kerberos 進行驗證。
 
 在 Negotiate 回應之後，將會嘗試取得伺服器通用網際網路檔案系統（CIFS）服務主體名稱（SPN）的 Kerberos 票證。 查看 TCP 通訊埠88上的 Kerberos 流量，以確定當 SMB 用戶端取得權杖時，沒有任何 Kerberos 錯誤。
 
@@ -61,7 +60,7 @@ SMB 伺服器會從 SMB 用戶端收到 SMB 會話\_安裝要求，但無法回�
 
 確認共用所使用的磁片和資料夾存在且可存取。
 
-如果您使用 SMBv3 或更新版本，請檢查伺服器和共用是否需要加密，但用戶端不支援加密。 若要這麼做，請執行下列動作：
+如果您使用 SMBv3 或更新版本，請檢查伺服器和共用是否需要加密，但用戶端不支援加密。 若要這麼做，請採取下列動作：
 
 - 執行下列命令來檢查伺服器。
 
@@ -87,7 +86,7 @@ SMB 伺服器會從 SMB 用戶端收到 SMB 會話\_安裝要求，但無法回�
 
 - Samba 和協力廠商裝置可能不支援加密。 您可能必須參閱產品檔以取得詳細資訊。
 
-## <a name="references"></a>參考資料
+## <a name="references"></a>參考
 
 如需詳細資訊，請參閱下列文章。
 

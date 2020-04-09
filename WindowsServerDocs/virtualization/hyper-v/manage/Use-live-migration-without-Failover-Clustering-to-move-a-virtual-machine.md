@@ -2,21 +2,19 @@
 title: 在沒有容錯移轉叢集的情況下使用即時移轉來移動虛擬機器
 description: 提供在獨立環境中進行即時移轉的必要條件和指示。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 75c32e42-97f7-48df-aac9-1d82d34825e1
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 01/17/2017
-ms.openlocfilehash: 55c96ff4696871e4013c3abd6247209d0d4517c0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 41d5edb02d4384955e711024d4e4d68cee5d3937
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392562"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858921"
 ---
 # <a name="use-live-migration-without-failover-clustering-to-move-a-virtual-machine"></a>在沒有容錯移轉叢集的情況下使用即時移轉來移動虛擬機器
 
@@ -76,7 +74,7 @@ PS C:\> Move-VM LMTest TestServer02 -IncludeStorage -DestinationStoragePath D:\L
 1. 從 [Hyper-v 管理員] 的 [**虛擬機器**] 窗格中，以滑鼠右鍵按一下虛擬機器，然後按一下 [設定]。
 2. 在流覽窗格中，展開 [**處理器**]，然後按一下 [**相容性**]。
 3. 勾選 [**遷移至具有不同處理器版本的電腦**]。
-4. 按一下 **\[確定\]** 。
+4. 按一下 [確定]。
  
    若要使用 Windows PowerShell，請使用[VMProcessor](https://technet.microsoft.com/library/hh848533.aspx) Cmdlet：
  

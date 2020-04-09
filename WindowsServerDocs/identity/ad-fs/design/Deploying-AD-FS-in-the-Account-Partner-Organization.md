@@ -1,7 +1,6 @@
 ---
 ms.assetid: 8c3536b7-d091-4ee6-ad04-24713f070862
 title: 在帳戶夥伴組織中部署 AD FS
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 63c080904482814f9f62451e8e7cfa4862d19927
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7a1d92a932638388ef50322078084c648c9dfdb9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359250"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853191"
 ---
 # <a name="deploying-ad-fs-in-the-account-partner-organization"></a>在帳戶夥伴組織中部署 AD FS
 
@@ -34,5 +33,5 @@ Active Directory 同盟服務 \(AD FS\) 中的帳戶夥伴代表在支援的屬�
   
 -   [在帳戶夥伴中準備用戶端電腦](Prepare-Client-Computers-in-the-Account-Partner.md)  
   
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 [Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

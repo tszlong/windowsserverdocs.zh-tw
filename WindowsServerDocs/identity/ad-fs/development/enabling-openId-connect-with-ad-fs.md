@@ -1,7 +1,6 @@
 ---
 ms.assetid: d282bb4e-38a0-4c7c-83d8-f6ea89278057
 title: 使用 OpenID Connect 搭配 AD FS 2016 和更新版本來建立 web 應用程式
-description: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 9b3d64558c27e7b4bda20b6af27e02d55431c94d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 49d952a49cf474708f57a0ae2a7760d2470af607
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358796"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857491"
 ---
 # <a name="build-a-web-application-using-openid-connect-with-ad-fs-2016-and-later"></a>使用 OpenID Connect 搭配 AD FS 2016 和更新版本來建立 web 應用程式
 
-## <a name="pre-requisites"></a>先決條件  
+## <a name="pre-requisites"></a>必要條件  
 以下是完成本檔之前所需的先決條件清單。 本檔假設已安裝 AD FS，且已建立 AD FS 伺服器陣列。  
 
 -   GitHub 用戶端工具  
@@ -34,13 +33,13 @@ ms.locfileid: "71358796"
 
 1.  在 AD FS 管理 中，以滑鼠右鍵按一下 應用程式群組，然後選取 **新增應用程式群組**。  
 
-2.  在 [應用程式組嚮導] 的 [名稱] 中，輸入**ADFSSSO** ，然後在 [**用戶端-伺服器應用程式**] 下，選取**網頁瀏覽器存取 web 應用程式**範本。  按一下 [下一步]。
+2.  在 [應用程式組嚮導] 的 [名稱] 中，輸入**ADFSSSO** ，然後在 [**用戶端-伺服器應用程式**] 下，選取**網頁瀏覽器存取 web 應用程式**範本。  按 [下一步]。
 
     ![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_1.PNG)  
 
 3.  複製 [**用戶端識別碼**] 值。  稍後在應用程式的 web.config 檔案中，將會使用它做為 ida： ClientId 的值。  
 
-4.  針對 [重新導向 URI] 輸入下列**內容：**  -  **https://localhost:44320/** 。  按一下 [新增]。 按一下 [下一步]。  
+4.  針對 [重新導向 URI] 輸入下列**內容：**  -  **https://localhost:44320/** 。  按一下 [加入]。 按 [下一步]。  
 
     ![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_2.PNG)  
 
@@ -118,14 +117,14 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-openid
 
         -   我們不會使用授權來傳達有關受信任簽發者的資料，而是直接透過 MetadataAddress 指定探索 doc 位置。  
 
-        -   Azure AD 不會強制在要求中出現 redirect_uri，但是 ADFS 會執行。 因此，我們需要將它新增到這裡  
+        -   Azure AD 不會強制在要求中存在 redirect_uri，但 ADFS 會執行。 因此，我們需要將它新增到這裡  
 
 ## <a name="verify-the-app-is-working"></a>確認應用程式正在運作  
 完成上述變更後，按 F5。  這會顯示範例頁面。  按一下 [登入]。  
 
 ![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_12.PNG)  
 
-系統會將您重新導向至 AD FS 登入頁面。  請繼續並登入。  
+系統會將您重新導向至 AD FS 登入頁面。  繼續進行並登入。  
 
 ![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_13.PNG)  
 

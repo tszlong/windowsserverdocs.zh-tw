@@ -1,30 +1,26 @@
 ---
 title: bitsadmin setnotifycmdline
-description: '\* * * *-Bitsadmin 的 Windows 命令主題 setnotifycmdlineSets 當作業完成傳輸資料或工作進入狀態時，將會執行的命令列命令。'
-ms.custom: na
+description: 適用于 bitsadmin setnotifycmdline 的 Windows 命令主題，會設定當作業完成傳輸資料或工作進入狀態時，將會執行的命令列命令。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 415ae6ef-8549-48b2-9693-2368a6e24075
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7a307fe552e7d8ec5852de953a3a439cb02246ec
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 761a7003e44e8dc15cb2dd2f1ce5a1a23be53286
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71380484"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80849331"
 ---
 # <a name="bitsadmin-setnotifycmdline"></a>bitsadmin setnotifycmdline
 
 設定當作業完成傳輸資料或工作進入狀態時，將會執行的命令列命令。
 
-**BITS 1.2 和更早版本**： 未支援。
+**BITS 1.2 和更早版本**：不支援。
 
 ## <a name="syntax"></a>語法
 
@@ -32,7 +28,7 @@ ms.locfileid: "71380484"
 bitsadmin /SetNotifyCmdLine <Job> <ProgramName> [ProgramParameters]
 ```
 
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -47,16 +43,16 @@ bitsadmin /SetNotifyCmdLine <Job> <ProgramName> [ProgramParameters]
 > [!IMPORTANT]
 > 如果*ProgramParameters*不是 Null，則*ProgramParameters*中的第一個參數必須符合*ProgramName*。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 下列範例會設定當名為*myDownloadJob*的作業完成時，服務用來執行「記事本」的命令列命令。
 ```
 C:\>bitsadmin /SetNotifyCmdLine myDownloadJob c:\winnt\system32\notepad.exe NULL
 ```
 ```
-C:\>bitsadmin /SetNotifyCmdLine myDownloadJob c:\winnt\system32\notepad.exe "notepad c:\eula.txt"
+C:\>bitsadmin /SetNotifyCmdLine myDownloadJob c:\winnt\system32\notepad.exe notepad c:\eula.txt
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

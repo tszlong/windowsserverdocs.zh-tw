@@ -1,7 +1,6 @@
 ---
 ms.assetid: b146f47e-3081-4c8e-bf68-d0f993564db2
 title: 虛擬網域控制站的部署與設定
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: be2c919e4379cf615fe25d68446855229ace87dd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 97d726f8bfbbe664dfdfd6b7000988f009174631
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390703"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824691"
 ---
 # <a name="virtualized-domain-controller-deployment-and-configuration"></a>虛擬網域控制站的部署與設定
 
@@ -34,7 +33,7 @@ ms.locfileid: "71390703"
   
     本節將詳細說明在安全還原虛擬網域控制站期間所做的驗證。  
   
-## <a name="BKMK_InstallConsiderations"></a>安裝考慮  
+## <a name="installation-considerations"></a><a name="BKMK_InstallConsiderations"></a>安裝考慮  
 沒有任何適用於虛擬網域控制站的特殊角色或功能安裝；所有的網域控制站都會自動包含複製與安全還原功能。 您無法移除或停用這些功能。  
   
 使用 Windows Server 2012 網域控制站需要 Windows Server 2012 AD DS 結構描述版本 56 或更高版本，以及相當於 Windows Server 2003 原生或更高版本的樹系功能等級。  
@@ -44,7 +43,7 @@ ms.locfileid: "71390703"
 > [!IMPORTANT]  
 > 當複製開始時，PDC 模擬器 FSMO 角色持有者必須位於線上。  
   
-### <a name="BKMK_PlatformReqs"></a>平臺需求  
+### <a name="platform-requirements"></a><a name="BKMK_PlatformReqs"></a>平臺需求  
 複製虛擬網域控制站需要：  
   
 -   裝載於 Windows Server 2012 DC 上的 PDC 模擬器 FSMO 角色  
@@ -65,7 +64,7 @@ ms.locfileid: "71390703"
 |**具有 Hyper-v 功能的 Microsoft Windows Server 2012 伺服器**|是|  
 |**Microsoft Windows Server 2012 Hyper-v 伺服器**|是|  
 |**Microsoft Windows 8 with Hyper-v Client 功能**|是|  
-|**Windows Server 2008 R2 和 Windows Server 2008**|不可以|  
+|**Windows Server 2008 R2 和 Windows Server 2008**|否|  
 |**非 Microsoft 虛擬化解決方案**|請連絡廠商|  
   
 即使 Microsoft 支援 Windows 7 Virtual PC、Virtual PC 2007、Virtual PC 2004 及 Virtual Server 2005，它們還是無法執行 64 位元的客體，也不支援-VM 世代識別碼。  
@@ -93,7 +92,7 @@ ms.locfileid: "71390703"
   
 如需 USN 泡泡與延遲物件的詳細資訊，請參閱 [Troubleshooting Active Directory operations that fail with error 8606: "Insufficient attributes were given to create an object"](https://support.microsoft.com/kb/2028495)(為 Active Directory 作業失敗進行疑難排解，出現錯誤 8606：「提供的屬性不足以建立物件」)。  
   
-## <a name="BKMK_VDCCloning"></a>虛擬網域控制站複製  
+## <a name="virtualized-domain-controller-cloning"></a><a name="BKMK_VDCCloning"></a>虛擬網域控制站複製  
 不論使用的是圖形工具或 Windows PowerShell，複製虛擬網域控制站都有許多階段和步驟。 可概略分為下列三個階段：  
   
 **準備環境**  
@@ -196,7 +195,7 @@ get-adcomputer(Get-ADDomainController -Discover -Service "PrimaryDC").name -prop
 2.  在 [成員隸屬] 區段中，新增該網域的 [可複製的網域控制站] 群組。  
   
 #### <a name="windows-powershell-method"></a>Windows PowerShell 方法  
-您可以結合下列 Active Directory Windows PowerShell 模組 Cmdlet **get-adcomputer**和**新增-add-adgroupmember** ，將網域控制站新增至**Cloneable 網域控制站**群組：  
+您可以結合下列的 Active Directory Windows PowerShell 模組 Cmdlet **get-adcomputer** 和 **add-adgroupmember**，將網域控制站新增到 [可複製的網域控制站]** 群組：  
   
 ```  
 Get-adcomputer <dc name> | %{add-adgroupmember "cloneable domain controllers" $_.samaccountname}  
@@ -237,7 +236,7 @@ set-acl -aclobject $acl $domainNC
 cd c:  
 ```  
   
-或者，在 Windows PowerShell 主控台中執行範例 [FixVDCPermissions.ps1](../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Technical-Reference-Appendix.md#BKMK_FixPDCPerms) ，其中主控台會在受影響網域中的網域控制站上，以提升權限的系統管理員身分啟動。 它會自動設定權限。 這個範例位於本單元的附錄中。  
+或者，在 Windows PowerShell 主控台中執行範例 [FixVDCPermissions.ps1](../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Technical-Reference-Appendix.md#BKMK_FixPDCPerms)，其中的主控台會在受影響的網域中的網域控制站上，以提升權限的系統管理員身分啟動。 它會自動設定權限。 這個範例位於本單元的附錄中。  
   
 ### <a name="step-4---remove-incompatible-applications-or-services-if-not-using-customdccloneallowlistxml"></a>步驟 4 - 移除不相容的應用程式或服務 (如果不使用 CustomDCCloneAllowList.xml)  
 Get-ADDCCloningExcludedApplicationList 先前傳回「且未新增到 CustomDCCloneAllowList.xml」 的任何程式或服務都必須在複製之前移除。 建議的方法是取消安裝應用程式或服務。  
@@ -268,7 +267,7 @@ New-ADDCCloneConfigFile
   
 ||||  
 |-|-|-|  
-|**Directory**<br /><br />**Cmdlet**|**參量**|**簡短**|  
+|**Directory**<p>**Cmdlet**|**參量**|**簡短**|  
 |**新增-New-addccloneconfigfile**|*<no argument specified>*|在 DSA 工作目錄 (預設為 %systemroot%\ntds) 中建立空白的 DcCloneConfig.xml 檔案|  
 ||-CloneComputerName|指定複製 DC 電腦名稱。 字串資料類型。|  
 ||-Path|指定要建立 DcCloneConfig.xml 的資料夾。 若未指定，則會寫入 DSA 工作目錄 (預設為 %systemroot%\ntds)。 字串資料類型。|  
@@ -451,7 +450,7 @@ Convert-vm
   
 ![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSConvertVhd.png)  
   
-#### <a name="BKMK_Offline"></a>將 XML 新增到離線系統磁片  
+#### <a name="adding-xml-to-the-offline-system-disk"></a><a name="BKMK_Offline"></a>將 XML 新增到離線系統磁片  
 如果您將 Dccloneconfig.xml 複製到執行中的來源 DC，現在就必須將更新的 dccloneconfig.xml 檔案複製到離線複製/匯出的系統磁碟中。 根據先前使用 Get-ADDCCloningExcludedApplicationList 偵測到的已安裝應用程式而定，您可能也需要將 CustomDCCloneAllowList.xml 檔案複製到磁碟。  
   
 下列位置可以包含 DcCloneConfig.xml 檔案：  
@@ -546,7 +545,7 @@ copy-item <xml file path><destination path>\dccloneconfig.xml
 dismount-vhd <disk path>  
 ```  
   
-例如：  
+例如，  
   
 ![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSMountVHD.png)  
   
@@ -640,7 +639,7 @@ Get-VMSnapshot
 Remove-VMSnapshot  
 ```  
   
-例如：  
+例如，  
   
 ![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSGetVMSnap.png)  
   
@@ -664,13 +663,13 @@ Remove-VMSnapshot
 Start-VM  
 ```  
   
-例如：  
+例如，  
   
 ![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSStartVM.png)  
   
 當電腦在複製完成後重新啟動之後，它就是一個網域控制站，而您可以正常登入以確認正常運作。 如果發生任何錯誤，伺服器設定為開機進入 [目錄服務還原模式] 以供進行調查。  
   
-## <a name="BKMK_VDCSafeRestore"></a>虛擬化保護措施  
+## <a name="virtualization-safeguards"></a><a name="BKMK_VDCSafeRestore"></a>虛擬化保護措施  
 與複製虛擬網域控制站不同，Windows Server 2012 虛擬化保護措施不需要任何設定步驟。 只要您符合一些簡單條件，這個功能就能在沒有任何介入的情況下運作：  
   
 -   Hypervisor 支援 VM 世代識別碼  

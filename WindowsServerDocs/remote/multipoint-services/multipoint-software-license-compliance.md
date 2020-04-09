@@ -1,24 +1,20 @@
 ---
 title: 軟體使用權規範遵循的相關重要資訊
 description: 提供 MultiPoint 服務中授權的相關資訊。
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: cd42fbac-fa7b-484d-b97d-3911e9180e7b
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 100566b5d27e4d142307b3043d341833b99c4e3b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dc1c070542369881566cc953a17b34c072882c39
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388950"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80814621"
 ---
 # <a name="important-information-about-software-license-compliance"></a>軟體使用權規範遵循的相關重要資訊
 您必須遵守在 MultiPoint 服務系統上使用之程式的授權條款。 您也必須擁有您新增至 MultiPoint 服務系統之*工作站*數目的適當授權數目，如下列各節所述。  

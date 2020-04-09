@@ -2,18 +2,17 @@
 title: 疑難排解 DNS 伺服器
 description: 本文介紹如何從伺服器端針對 DNS 問題進行疑難排解。
 manager: dcscontentpm
-ms.prod: ''
 ms.technology: networking-dns
 ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: 23e51adafa5ab6da0a9317a1b0fad88bd3901073
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: 4413c60072c43b623f386d5037e3da7ed5dc128d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265800"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861321"
 ---
 # <a name="troubleshooting-dns-servers"></a>疑難排解 DNS 伺服器
 
@@ -30,7 +29,7 @@ ms.locfileid: "76265800"
    ```cmd
    nslookup <name> <IP address of the DNS server>
    ```
-   例如： 
+   例如， 
    ```cmd
    nslookup app1 10.0.0.1
    ```
@@ -50,13 +49,13 @@ ms.locfileid: "76265800"
 
 ## <a name="check-dns-server-problems"></a>檢查 DNS 伺服器問題
 
-### <a name="event-log"></a>事件記錄檔
+### <a name="event-log"></a>事件日誌
 
 請檢查下列記錄檔，以查看是否有任何記錄的錯誤：
 
 - 應用程式
 
-- [系統]
+- System
 
 - DNS 伺服器
 

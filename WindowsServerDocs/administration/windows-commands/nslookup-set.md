@@ -1,24 +1,20 @@
 ---
 title: nslookup set
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1fe5b36d-e93e-468b-abca-43b0204b32d1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4e584a9727fc0cd552d0c07840ccb12b555428af
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3883e6b032c5a4542711ad14a4e45b31fb605485
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372726"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80838141"
 ---
 # <a name="nslookup-set"></a>nslookup set
 
@@ -29,7 +25,7 @@ ms.locfileid: "71372726"
 ```
 set <KeyWord>[=<Value>]
 ```
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |    參數    |                                                                                                                    描述                                                                                                                    |
 |-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -39,6 +35,6 @@ set <KeyWord>[=<Value>]
 
 ## <a name="remarks"></a>備註
 使用 [**全部設定**] 以查看目前設定的清單。
-## <a name="additional-references"></a>其他參考
-[命令列語法索引鍵](command-line-syntax-key.md)
+## <a name="additional-references"></a>其他參考資料
+- [命令列語法索引鍵](command-line-syntax-key.md)
 [nslookup 設定全部](nslookup-set-all.md)

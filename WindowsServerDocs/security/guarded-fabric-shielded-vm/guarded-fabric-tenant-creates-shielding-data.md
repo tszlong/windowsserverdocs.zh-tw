@@ -1,19 +1,19 @@
 ---
 title: 受防護的租使用者 Vm-建立防護資料以定義受防護的 VM
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 49f4e84d-c1f7-45e5-9143-e7ebbb2ef052
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: 26ff5e27494e2f42a0c8e4d28e2b9820f8d19e6a
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 6ff502e7246c899a7b4f29125266bf05d07e40ef
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322460"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856451"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>受防護的租使用者 Vm-建立防護資料以定義受防護的 VM
 
@@ -39,7 +39,7 @@ ms.locfileid: "79322460"
 
 ## <a name="optional-obtain-a-certificate-for-remote-desktop-connection"></a>選擇性取得遠端桌面連線的憑證
 
-由於租使用者只能使用遠端桌面連線或其他遠端系統管理工具來連線到其受防護的 Vm，因此請務必確保租使用者可以驗證它們是否連線到正確的端點（也就是不會有「中間人」）。攔截連接）。
+由於租使用者只能使用遠端桌面連線或其他遠端系統管理工具來連線到其受防護的 Vm，因此請務必確保租使用者可以驗證它們是否連線到正確的端點（也就是不會有「中間人」攔截連接）。
 
 驗證您要連線到目標伺服器的其中一種方式，就是安裝和設定憑證，讓遠端桌面服務在您起始連線時顯示。 連接到伺服器的用戶端電腦將會檢查它是否信任憑證，如果沒有，則會顯示警告。 一般而言，若要確保連線的用戶端信任憑證，RDP 憑證會從租使用者的 PKI 發行。 如需如何[在遠端桌面服務中使用憑證](https://technet.microsoft.com/library/dn781533.aspx)的詳細資訊，請參閱 TechNet。
 
@@ -96,7 +96,7 @@ ms.locfileid: "79322460"
     | @Prefix-1-1@        | 24                   |
     | @NextHop-1-1@       | 192.168.1.254        |
     | @IP4Addr-2@         | 10.0.20.30/24        |
-    | @MACAddr-2@         | Ethernet 2           |
+    | @MACAddr-2@         | 乙太網路 2           |
     | @Prefix-2-1@        | 24                   |
     | @NextHop-2-1@       | 10.0.20.1            |
 

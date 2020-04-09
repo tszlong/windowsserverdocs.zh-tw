@@ -2,20 +2,18 @@
 title: 規劃 Windows Server 2016 和 Windows Server 2019 中的 Hyper-v 擴充性
 description: 列出您可以在 Hyper-v 和虛擬機器中新增或移除之元件的最大支援數目，像是多少記憶體和多少個虛擬處理器。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 09/28/2016
-ms.openlocfilehash: 493f7926a6ef686e6d47c1a3120a65ed0799b0db
-ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
+ms.openlocfilehash: 2eb75283f68a1d1e0c05397b67d9c012d0adc899
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71934949"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860751"
 ---
 # <a name="plan-for-hyper-v-scalability-in-windows-server-2016-and-windows-server-2019"></a>規劃 Windows Server 2016 和 Windows Server 2019 中的 Hyper-v 擴充性
 
@@ -31,14 +29,14 @@ ms.locfileid: "71934949"
 ## <a name="maximums-for-virtual-machines"></a>虛擬機器的最大上限  
 這些最大上限適用于每部虛擬機器。 並非所有元件都可用於兩代的虛擬機器。 如需各層代的比較，請參閱[應該在 hyper-v 中建立第1代或第2代虛擬機器嗎？](should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v.md) 
   
-|元件|最大值|附註|  
+|Component|最大需求|注意事項|  
 |-------------|-----------|---------|  
 |檢查點|50|實際數字可能較低，取決於可用的存放裝置。 每個檢查點都會儲存為使用實體儲存體的 .avhd 檔案。|  
 |記憶體|第2代的 12 TB; <br>1 TB 的層代1|檢閱特定作業系統的需求，以判定需求量下限及建議的需求量。|  
-|序列 (COM) 埠|2|無。|  
-|直接連到虛擬機器的實體磁碟大小|不定|大小上限取決於客體作業系統。|  
+|序列 (COM) 埠|2|None。|  
+|直接連到虛擬機器的實體磁碟大小|非固定|大小上限取決於客體作業系統。|  
 |虛擬光纖通道介面卡|4|我們建議的最佳做法是將每個虛擬光纖通道介面卡連線到不同的虛擬 SAN。|  
-|虛擬磁碟片裝置|1 個虛擬軟碟機|無。|
+|虛擬磁碟片裝置|1 個虛擬軟碟機|None。|
 |虛擬硬碟容量|適用于 VHDX 格式的 64 TB;<br>2040 GB 的 VHD 格式|每個虛擬硬碟會在實體媒體上儲存為.vhdx 或.vhd 檔案，視虛擬硬碟使用的格式而定。|  
 |虛擬 IDE 磁碟|4|啟動磁片（有時稱為開機磁片）必須連接到其中一個 IDE 裝置。 啟動磁碟可以是虛擬硬碟，也可以是直接連到虛擬機器的實體磁碟。|  
 |虛擬處理器|240代表層代 2;<br>適用于層代1的 64;<br>320可供主機 OS （根磁碟分割）使用|客體作業系統支援的虛擬處理器數目可能較低。 如需詳細資訊，請參閱針對特定作業系統發佈的資訊。|
@@ -49,18 +47,18 @@ ms.locfileid: "71934949"
 ## <a name="maximums-for-hyper-v-hosts"></a>Hyper-v 主機的最大上限  
 這些最大限制適用于每個 Hyper-v 主機。  
   
-|元件|最大值|附註|  
+|Component|最大需求|注意事項|  
 |-------------|-----------|---------|  
-|邏輯處理器|512|這兩個都必須在固件中啟用：<br /><br />-硬體輔助虛擬化<br />-硬體強制的資料執行防止（DEP）<br /><br />主機 OS （根磁碟分割）只會看到最大320的邏輯處理器|  
-|記憶體|24 TB|無。|  
+|邏輯處理器|512|這兩個都必須在固件中啟用：<p>-硬體輔助虛擬化<br />-硬體強制的資料執行防止（DEP）<p>主機 OS （根磁碟分割）只會看到最大320的邏輯處理器|  
+|記憶體|24 TB|None。|  
 |網路介面卡小組 (NIC 小組)|Hyper-V 並無強制限制。|如需詳細資訊，請參閱[NIC](../../../networking/technologies/nic-teaming/NIC-Teaming.md)小組。|  
-|實體網路介面卡|Hyper-V 並無強制限制。|無。|  
-|每一伺服器執行的虛擬機器|1024|無。|  
+|實體網路介面卡|Hyper-V 並無強制限制。|None。|  
+|每一伺服器執行的虛擬機器|1024|None。|  
 |儲存體|受限於主機作業系統支援的功能。 Hyper-V 並無強制限制。|**注意：** 使用 SMB 3.0 時，Microsoft 支援網路連接儲存裝置（NAS）。 不支援 NFS 型存放裝置。|
 |每一伺服器的虛擬網路交換器連接埠|各有不同；Hyper-V 並無強制限制。|實際限制取決於可用的運算資源。|  
-|每一邏輯處理器的虛擬處理器|Hyper-V 並無強制比例。|無。|  
-|每一伺服器的虛擬處理器|2048|無。|  
-|虛擬存放區域網路 (SAN)|Hyper-V 並無強制限制。|無。|  
+|每一邏輯處理器的虛擬處理器|Hyper-V 並無強制比例。|None。|  
+|每一伺服器的虛擬處理器|2048|None。|  
+|虛擬存放區域網路 (SAN)|Hyper-V 並無強制限制。|None。|  
 |虛擬交換器|各有不同；Hyper-V 並無強制限制。|實際限制取決於可用的運算資源。|  
  
 ## <a name="failover-clusters-and-hyper-v"></a>容錯移轉叢集與 Hyper-V  
@@ -68,7 +66,7 @@ ms.locfileid: "71934949"
 
 若要瞭解容錯移轉叢集的更新（包括虛擬機器的新功能），請參閱[Windows Server 2016 中容錯移轉叢集的新](../../../failover-clustering/whats-new-in-failover-clustering.md)功能。
 
-|元件|最大值|附註|  
+|Component|最大需求|注意事項|  
 |-------------|-----------|---------|  
 |每一叢集的節點|64|請考量要保留給容錯移轉的節點數目，以及例如套用更新等維護工作。 建議您規劃足夠的資源，將一個節點保留給容錯移轉；這表示該節點將維持閒置，直到其他節點容錯移轉至該節點為止 （這有時稱為被動節點）。如果您想要保留其他節點，可以增加此數目。 不建議將保留節點的比率或乘數用於作用中節點;唯一的要求是叢集中的節點總數不能超過最大值64。|  
 |每個叢集的每個節點執行的虛擬機器|每個叢集 8000 個|有數個因素會影響您可以在一個節點上同時執行的實際虛擬機器數目，例如：<br />-每部虛擬機器正在使用的實體記憶體數量。<br />-網路和儲存體頻寬。<br />-磁片軸的數目，會影響磁片 i/o 效能。|  

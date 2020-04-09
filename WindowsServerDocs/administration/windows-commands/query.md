@@ -1,24 +1,20 @@
 ---
 title: query
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 675c5128-f3cf-4e8f-8a3f-b29ab2a8b6de
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d0aee400a3fae38cce73a34b55aa92f266082b19
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8d89ae8c7c526bce396b2583abc1728456f7bcc3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371845"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836821"
 ---
 # <a name="query"></a>query
 
@@ -37,7 +33,7 @@ query termserver
 query user
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 |參數|描述|
 |-------|--------|
 |[查詢進程](query-process.md)|顯示在 rd 工作階段主機伺服器上執行之處理常式的相關資訊。|
@@ -45,6 +41,6 @@ query user
 |[查詢 termserver](query-termserver.md)|顯示網路上所有 rd 工作階段主機伺服器的清單。|
 |[查詢使用者](query-user.md)|顯示 rd 工作階段主機伺服器上使用者會話的相關資訊。|
 
-#### <a name="additional-references"></a>其他參考
-
-[ &#40;遠端桌面服務終端機服務&#41;命令參考](remote-desktop-services-terminal-services-command-reference.md)[的命令列語法金鑰](command-line-syntax-key.md)
+## <a name="additional-references"></a>其他參考資料
+- [命令列語法金鑰](command-line-syntax-key.md)
+[遠端桌面服務（終端機服務）命令參考](remote-desktop-services-terminal-services-command-reference.md)

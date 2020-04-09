@@ -2,21 +2,19 @@
 title: 我應該在 Hyper-v 中建立第1代或第2代虛擬機器嗎？
 description: 提供支援的開機方法和其他功能差異等考慮，以協助您選擇符合您需求的世代。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 02e31413-6140-4723-a8d6-46c7f667792d
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 12/05/2016
-ms.openlocfilehash: fce9b45f538b0d506b621b888d413c99590b1362
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 0e8b8dbaa937229b5a87560f3993bb07d7cd7ff8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322700"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860771"
 ---
 # <a name="should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v"></a>我應該在 Hyper-v 中建立第1代或第2代虛擬機器嗎？
 
@@ -60,7 +58,7 @@ ms.locfileid: "79322700"
 |64位版本的 Windows|第 1 代|第 2 代|  
 |-------------------------------|----------------|----------------|  
 | Windows Server 2019 |&#10004;|&#10004;|  
-| Windows Server 2016 |&#10004;|&#10004;|  
+| Windows Server 2016 |&#10004;|&#10004;|  
 | Windows Server 2012 R2 |&#10004;|&#10004;|  
 | Windows Server 2012 |&#10004;|&#10004;|  
 |Windows Server 2008 R2|&#10004;| &#10006;|  
@@ -171,7 +169,7 @@ ms.locfileid: "79322700"
 ## <a name="what-are-the-advantages-of-using-generation-2-virtual-machines"></a>使用第2代虛擬機器的優點為何？
 
 以下是您在使用第2代虛擬機器時取得的一些優點：  
-- **安全開機**這項功能可確認開機載入器是由 UEFI 資料庫中的受信任授權單位所簽署，以協助防止未經授權的固件、作業系統或 UEFI 驅動程式在開機時執行。 第 2 代虛擬機器預設會啟用安全開機。 如果您需要執行安全開機不支援的客體作業系統，可以在建立虛擬機器之後將它停用。  如需詳細資訊，請參閱 [安全開機](https://technet.microsoft.com/library/dn486875.aspx)。  
+- **安全開機**這項功能可確認開機載入器是由 UEFI 資料庫中的受信任授權單位所簽署，以協助防止未經授權的固件、作業系統或 UEFI 驅動程式在開機時執行。 第 2 代虛擬機器預設會啟用安全開機。 如果您需要執行安全開機不支援的客體作業系統，可以在建立虛擬機器之後將它停用。  如需詳細資訊，請參閱[安全開機](https://technet.microsoft.com/library/dn486875.aspx)。  
 
     若要保護開機第2代 Linux 虛擬機器，您必須在建立虛擬機器時選擇 UEFI CA 安全開機範本。  
 

@@ -1,17 +1,17 @@
 ---
 title: 分隔儲存空間直接存取中的磁片區配置
 ms.author: cosmosdarwin
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/29/2018
-ms.openlocfilehash: 19e5a38ca406878b7dbc5a187b0057e97e4fe2d1
-ms.sourcegitcommit: 74107a32efe1e53b36c938166600739a79dd0f51
+ms.openlocfilehash: 26454881279e1d33392a827f794788370def2cab
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76918297"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858971"
 ---
 # <a name="delimit-the-allocation-of-volumes-in-storage-spaces-direct"></a>分隔儲存空間直接存取中的磁片區配置
 > 適用于： Windows Server 2019
@@ -21,14 +21,14 @@ Windows Server 2019 引進了一個選項，可手動將儲存空間直接存取
    > [!IMPORTANT]
    > 這是 Windows Server 2019 中的新功能。 它在 Windows Server 2016 中無法使用。 
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
-### <a name="green-checkmark-iconmediadelimit-volume-allocationsupportedpng-consider-using-this-option-if"></a>![綠色核取記號圖示。](media/delimit-volume-allocation/supported.png) 如果是下列情況，請考慮使用此選項：
+### <a name="green-checkmark-icon-consider-using-this-option-if"></a>![綠色核取記號圖示。](media/delimit-volume-allocation/supported.png) 如果是下列情況，請考慮使用此選項：
 
 - 您的叢集有六部以上的伺服器;和
 - 您的叢集僅使用[三向鏡像](storage-spaces-fault-tolerance.md#mirroring)復原
 
-### <a name="red-x-iconmediadelimit-volume-allocationunsupportedpng-do-not-use-this-option-if"></a>![紅色 X 圖示。](media/delimit-volume-allocation/unsupported.png) 如果是下列情況，請勿使用此選項：
+### <a name="red-x-icon-do-not-use-this-option-if"></a>![紅色 X 圖示。](media/delimit-volume-allocation/unsupported.png) 如果是下列情況，請勿使用此選項：
 
 - 您的叢集少於六部伺服器;或
 - 您[的叢集使用同](storage-spaces-fault-tolerance.md#parity)位檢查或[鏡像加速同位](storage-spaces-fault-tolerance.md#mirror-accelerated-parity)復原
@@ -153,7 +153,7 @@ MyVolume                300 GB         0       100 GB  100 GB  100 GB  100 GB  0
 
 請注意，Server1 不再包含*MyVolume*的 slab，而是 Server5。
 
-## <a name="best-practices"></a>最佳做法
+## <a name="best-practices"></a>最佳作法
 
 以下是使用分隔磁片區配置時要遵循的最佳作法：
 
@@ -194,13 +194,13 @@ MyVolume                300 GB         0       100 GB  100 GB  100 GB  100 GB  0
 
 ### <a name="can-i-delimit-some-volumes-but-not-others"></a>我可以分隔某些磁片區，而不是其他磁片區嗎？
 
-可以。 您可以選擇每個磁片區是否要分隔配置。
+是的。 您可以選擇每個磁片區是否要分隔配置。
 
 ### <a name="does-delimited-allocation-change-how-drive-replacement-works"></a>分隔配置是否會變更磁片磁碟機更換的運作方式？
 
 否，與一般配置相同。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 - [儲存空間直接存取總覽](storage-spaces-direct-overview.md)
 - [儲存空間直接存取中的容錯](storage-spaces-fault-tolerance.md)

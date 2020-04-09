@@ -2,22 +2,18 @@
 title: 步驟3設定 OTP 的遠端存取服務器
 description: 本主題是在 Windows Server 2016 中使用 OTP 驗證部署遠端存取指南的一部分。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: df1e87f2-6a0f-433b-8e42-816ae75395f9
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d588d9b8675dad8bffc9e020032bc66bebf503b0
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 98de4a1e673065e0b759186a7a53ce45675302be
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313671"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858211"
 ---
 # <a name="step-3-configure-the-remote-access-server-for-otp"></a>步驟3設定 OTP 的遠端存取服務器
 

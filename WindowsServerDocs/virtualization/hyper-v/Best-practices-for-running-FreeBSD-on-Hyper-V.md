@@ -2,25 +2,23 @@
 title: 在 Hyper-v 上執行 FreeBSD 的最佳做法
 description: 提供在虛擬機器上執行 FreeBSD 的建議
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0c66f1c8-2606-43a3-b4cc-166acaaf2d2a
 author: shirgall
 ms.author: kathydav
 ms.date: 01/09/2017
-ms.openlocfilehash: 1d284b38e1bdb642aa40ecbb8e82caa7712f7aad
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 18f59020ed4878e9a54150dcda18bca3da1dd614
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365626"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853281"
 ---
 # <a name="best-practices-for-running-freebsd-on-hyper-v"></a>在 Hyper-v 上執行 FreeBSD 的最佳做法
 
->適用於：Windows Server 2019、Windows Server 2016、Hyper-v Server 2016、Windows Server 2012 R2、Hyper-v Server 2012 R2、Windows Server 2012、Hyper-v Server 2012、Windows Server 2008 R2、Windows 10、Windows 8.1、Windows 8、Windows 7.1、Windows 7
+>適用于： Windows Server 2019、Windows Server 2016、Hyper-v Server 2016、Windows Server 2012 R2、Hyper-v server 2012 R2、Windows Server 2012、Hyper-v Server 2012、Windows Server 2008 R2、Windows 10、Windows 8.1、Windows 8、Windows 7.1、Windows 7
 
 本主題包含在 Hyper-v 虛擬機器上執行 FreeBSD 做為客體作業系統的建議清單。
 
@@ -62,7 +60,7 @@ ms.locfileid: "71365626"
    # exit
    ```
 
-   您可以在下列位置找到幾何標籤的其他資訊：[標籤磁片裝置](https://www.freebsd.org/doc/handbook/geom-glabel.html)。
+   幾何標籤的其他資訊可在下列位置找到：[標記磁片裝置](https://www.freebsd.org/doc/handbook/geom-glabel.html)。
 
 3. 系統會繼續進行多使用者開機。 開機完成後，請編輯/etc/fstab，並將傳統的裝置名稱取代為其各自的標籤。 最終的/etc/fstab 看起來會像這樣：
 

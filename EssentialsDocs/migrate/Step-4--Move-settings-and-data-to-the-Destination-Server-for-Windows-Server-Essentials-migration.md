@@ -1,23 +1,19 @@
 ---
 title: 步驟 4：將設定和資料移至進行 Windows Server Essentials 移轉的目的地伺服器
 description: 說明如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e143df43-e227-4629-a4ab-9f70d9bf6e84
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d9aea85513e2453c02f6c14fb3f4d708be211d3f
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: e19f3a8333cc08568f8d437da2e35a6c64920df1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318750"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852351"
 ---
 # <a name="step-4-move-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>步驟 4：將設定和資料移至進行 Windows Server Essentials 移轉的目的地伺服器
 

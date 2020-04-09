@@ -1,24 +1,20 @@
 ---
 title: MultiPoint 站台
 description: 瞭解 MultiPoint 服務中的工作站，包括不同的使用者選項
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f9f9d618-ccfe-41ea-a52c-00c3c7adb51a
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 7b8f757d552bf54cd7f4eed0783ba8e0062b9d30
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 3bcdd2d3f7492b29ecf92c59714f1d93b910c9b5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322800"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853421"
 ---
 # <a name="multipoint--stations"></a>MultiPoint 工作站
 在 MultiPoint 服務系統內容中，*工作站*是用來連接到執行 MultiPoint 服務之電腦的使用者端點。 每個工作站會為使用者提供獨立的 Windows 10 體驗。 支援下列工作站類型：  
@@ -48,7 +44,7 @@ Multipoint 服務支援這些工作站類型的任意組合，但建議一部工
   
 **圖 1**MultiPoint 服務系統，具有四個直接視頻連線的工作站  
   
-### <a name="BKMK_PS2stations"></a>PS/2 電臺  
+### <a name="ps2-stations"></a><a name="BKMK_PS2stations"></a>PS/2 電臺  
 使用 MultiPoint 服務時，您可以將主機板上的 PS/2 鍵盤和滑鼠對應到直接連線到視頻的監視器，以建立 PS/2 站。 主機板上的高定義類比音訊是與這種類型的工作站相關聯的音訊。 這不適用於主機板上沒有 PS/2 插座的電腦。  
   
 ## <a name="usb-zero-client-connected-stations"></a>USB-零-用戶端連線的工作站  
@@ -64,7 +60,7 @@ USB-零用戶端連線的工作站會利用*usb 零用戶端*做為工作站中�
 USB over 乙太網路的零用戶端是一種 USB 零用戶端的變化，會將 USB over LAN 傳送至 MultiPoint 服務系統。 這些類型的 USB 零用戶端的運作方式類似于其他 USB 零用戶端，但不受 USB 纜線長度上限的限制。 USB over 乙太網路的零用戶端不是傳統的瘦用戶端，而是顯示為 MultiPoint 服務系統上的虛擬 USB 裝置。 使用這些裝置時，請參閱裝置製造商，以取得特定的效能和網站規劃建議。 大部分的裝置都有適用于 MultiPoint 管理員的協力廠商外掛程式，可讓您將裝置與 MultiPoint 服務系統建立關聯和連接。  
   
 ## <a name="rdp-over-lan-connected-stations"></a>RDP over LAN 連線的工作站  
-瘦用戶端和傳統桌上型電腦、膝上型電腦或平板電腦，都可以使用遠端桌面通訊協定（RDP）或專屬通訊協定和遠端桌面通訊協定，透過區域網路（LAN）連接到執行 MultiPoint 服務的電腦。那裡. RDP 連線提供的使用者體驗與任何其他 MultiPoint 工作站非常類似，但會使用本機用戶端電腦的硬體。 深入瞭解[遠端桌面用戶端](../remote-desktop-services/clients/remote-desktop-clients.md)中適用于 Android、IOS、Mac 和 Windows 的遠端桌面應用程式。 
+瘦用戶端和傳統桌上型電腦、膝上型電腦或平板電腦，都可以使用遠端桌面通訊協定（RDP）或專屬通訊協定和遠端桌面通訊協定提供者，透過區域網路（LAN）連接到執行 MultiPoint 服務的電腦。 RDP 連線提供的使用者體驗與任何其他 MultiPoint 工作站非常類似，但會使用本機用戶端電腦的硬體。 深入瞭解[遠端桌面用戶端](../remote-desktop-services/clients/remote-desktop-clients.md)中適用于 Android、IOS、Mac 和 Windows 的遠端桌面應用程式。 
   
 執行 Microsoft RemoteFX 的用戶端和裝置可以利用本機瘦用戶端或電腦的處理器和視頻硬體功能，透過網路提供高定義的影片，來提供豐富的多媒體體驗。  
   
@@ -113,7 +109,7 @@ MultiPoint 服務會在具有直接視頻連線的工作站或 USB-零用戶端�
   
 **圖 4**含有分割螢幕電臺的 MultiPoint 服務系統  
   
-## <a name="BKMK_StationTypeComparison"></a>工作站類型比較  
+## <a name="station-type-comparison"></a><a name="BKMK_StationTypeComparison"></a>工作站類型比較  
   
 ||直接連接影片|USB 零用戶端連線|已連線的 RDP over LAN|  
 |-|--------------------------|-----------------------------|----------------------------|  

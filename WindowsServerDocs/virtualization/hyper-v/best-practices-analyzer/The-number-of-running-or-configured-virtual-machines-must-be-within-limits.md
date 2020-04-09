@@ -2,33 +2,32 @@
 title: 執行中或已設定的虛擬機器數目必須在支援的限制內
 description: 提供解決此最佳做法分析程式規則所回報之問題的指示。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 9d3c4aa3-8416-46ec-a253-26dc98088d7b
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 56d7fd528d7fda20dbdbb16a6262bb072f053ef0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 49013d6a4c9dda6e79d6a803bae0f5641d826817
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364634"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854621"
 ---
 # <a name="the-number-of-running-or-configured-virtual-machines-must-be-within-supported-limits"></a>執行中或已設定的虛擬機器數目必須在支援的限制內
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
 如需最佳做法與掃描的相關詳細資訊，請參閱[執行最佳做法分析程式掃描及管理掃描結果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
 |屬性|詳細資料|  
 |-|-|  
-|**作業系統**|Windows Server 2016|  
+|**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
-|**Severity**|Error  
-|**分類**|組態|  
+|**低於**|錯誤  
+|**類別**|組態|  
   
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的文字。  
   
@@ -82,7 +81,7 @@ ms.locfileid: "71364634"
 1.  在安裝了 [Active Directory Domain Services 工具] 功能的電腦上，在 [系統**管理工具**] 中開啟 [ **Active Directory 使用者和電腦**]，然後流覽至執行 hyper-v 之電腦的電腦帳戶。  
   
     > [!NOTE]  
-    > 若未列出[Active Directory 使用者和電腦]，請安裝「Active Directory 網域服務工具」功能。 如需指示，請參閱[安裝 AD DS 的遠端伺服器管理工具](https://go.microsoft.com/fwlink/?LinkId=140463)（ https://go.microsoft.com/fwlink/?LinkId=140463) 。  
+    > 若未列出[Active Directory 使用者和電腦]，請安裝「Active Directory 網域服務工具」功能。 如需指示，請參閱[安裝 AD DS 的遠端伺服器管理工具](https://go.microsoft.com/fwlink/?LinkId=140463)（ https://go.microsoft.com/fwlink/?LinkId=140463)。  
   
 2.  在執行 Hyper-v 之電腦的電腦帳戶上按一下滑鼠右鍵，然後按一下 [內容 **]。**  
   
@@ -90,7 +89,7 @@ ms.locfileid: "71364634"
   
 4.  若要允許 Hyper-v 電腦帳戶向遠端電腦出示委派的認證：  
   
-    1.  按一下 [新增]。  
+    1.  按一下 [加入]。  
   
     2.  在 [**新增服務**] 對話方塊中，按一下 [**使用者或電腦**]，選取遠端電腦，然後按一下 **[確定]** 。  
   

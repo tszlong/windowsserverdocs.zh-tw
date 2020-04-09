@@ -1,107 +1,106 @@
 ---
-title: 效能歷程記錄的儲存空間直接存取
+title: 儲存空間直接存取的效能歷程記錄
 ms.author: cosdar
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 09/07/2018
-Keywords: 儲存空間直接存取
 ms.localizationpriority: medium
-ms.openlocfilehash: 1916d2d5e4d1fc846bec19826437b200afe36f42
-ms.sourcegitcommit: 4ff3d00df3148e4bea08056cea9f1c3b52086e5d
+ms.openlocfilehash: ab9b6016d49725b7f25d2ad3c40bd6265ac811a9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64772218"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856151"
 ---
-# <a name="performance-history-for-storage-spaces-direct"></a>效能歷程記錄的儲存空間直接存取
+# <a name="performance-history-for-storage-spaces-direct"></a>儲存空間直接存取的效能歷程記錄
 
-> 適用於：Windows Server 2019
+> 適用于： Windows Server 2019
 
-效能歷程記錄是新的功能，可讓[儲存空間直接存取](storage-spaces-direct-overview.md)跨主應用程式伺服器、 磁碟機、 磁碟區、 虛擬機器，以及更多歷程記錄的計算、 記憶體、 網路和儲存體度量 」 的系統管理員輕鬆存取。 效能歷程記錄會自動收集並儲存在叢集上達一年。
+效能歷程記錄是一項新功能，可讓[儲存空間直接存取](storage-spaces-direct-overview.md)系統管理員能夠輕鬆存取跨主機伺服器、磁片磁碟機、磁片區、虛擬機器等的歷程記錄計算、記憶體、網路和存放裝置測量。 系統會自動收集效能歷程記錄，並將其儲存在叢集中，最多一年。
 
    > [!IMPORTANT]
-   > 這項功能的新 Windows Server 2019。 您不可以使用 Windows Server 2016 中。
+   > 這是 Windows Server 2019 中的新功能。 它在 Windows Server 2016 中無法使用。
 
-## <a name="get-started"></a>立即開始
+## <a name="get-started"></a>開始使用
 
-效能歷程記錄會收集與儲存空間直接存取在 Windows Server 2019 的預設值。 您不必安裝、 設定或啟動的任何項目。 不需要網際網路連線、 並非必要，System Center 和外部資料庫則不需要。
+預設會使用 Windows Server 2019 中的儲存空間直接存取來收集效能歷程記錄。 您不需要安裝、設定或啟動任何專案。 不需要網際網路連線，系統中心不是必要的，而且不需要外部資料庫。
 
-若要以圖形方式查看您叢集的效能記錄，請使用[Windows Admin Center](../../manage/windows-admin-center/understand/windows-admin-center.md):
+若要以圖形方式查看叢集的效能歷程記錄，請使用[Windows 系統管理中心](../../manage/windows-admin-center/understand/windows-admin-center.md)：
 
-![在 Windows Admin Center 中的效能歷程記錄](media/performance-history/perf-history-in-wac.png)
+![Windows 系統管理中心的效能歷程記錄](media/performance-history/perf-history-in-wac.png)
 
-若要查詢，並以程式設計方式處理它，使用 新`Get-ClusterPerf`cmdlet。 請參閱[在 PowerShell 中的使用方式](#usage-in-powershell)。
+若要以程式設計方式查詢和處理它，請使用新的 `Get-ClusterPerf` Cmdlet。 請參閱[PowerShell 中的使用方式](#usage-in-powershell)。
 
-## <a name="whats-collected"></a>收集項目的
+## <a name="whats-collected"></a>收集的內容
 
-效能歷程記錄會收集 7 類型的物件：
+會針對7種物件類型收集效能歷程記錄：
 
-![類型的物件](media/performance-history/types-of-object.png)
+![物件的類型](media/performance-history/types-of-object.png)
 
-每個物件類型有許多系列： 例如，`ClusterNode.Cpu.Usage`會收集每個伺服器。
+每個物件類型都有許多數列：例如，會針對每個伺服器收集 `ClusterNode.Cpu.Usage`。
 
-收集項目的每個物件類型，以及如何解譯這些的詳細資訊，請參閱下列子主題：
+如需針對每個物件類型所收集的內容，以及如何解讀這些專案的詳細資訊，請參閱下列子主題：
 
-| 物件             | 系列                                                                               |
+| 物件             | 數列                                                                               |
 |--------------------|--------------------------------------------------------------------------------------|
-| 磁碟機             | [收集項目的磁碟機](performance-history-for-drives.md)                     |
-| 網路介面卡   | [什麼被收集網路介面卡](performance-history-for-network-adapters.md) |
-| 伺服器            | [什麼被收集的伺服器](performance-history-for-servers.md)                   |
-| 虛擬硬碟 | [什麼被收集的虛擬硬碟](performance-history-for-vhds.md)           |
-| 虛擬機器   | [什麼被收集的虛擬機器](performance-history-for-vms.md)              |
-| 磁碟區            | [收集項目的磁碟區](performance-history-for-volumes.md)                   |
-| 叢集           | [收集項目的叢集](performance-history-for-clusters.md)                 |
+| 磁碟機             | [磁片磁碟機的收集內容](performance-history-for-drives.md)                     |
+| 網路介面卡   | [為網路介面卡收集的內容](performance-history-for-network-adapters.md) |
+| 伺服器            | [為伺服器收集的內容](performance-history-for-servers.md)                   |
+| 虛擬硬碟 | [為虛擬硬碟收集的內容](performance-history-for-vhds.md)           |
+| 虛擬機器   | [為虛擬機器收集的內容](performance-history-for-vms.md)              |
+| 磁碟區            | [磁片區的收集內容](performance-history-for-volumes.md)                   |
+| 叢集           | [為叢集收集的內容](performance-history-for-clusters.md)                 |
 
-許多系列會彙總至其父代的對等物件:，例如`NetAdapter.Bandwidth.Inbound`是分別針對每個網路介面卡收集和彙總成整體的伺服器; 同樣地`ClusterNode.Cpu.Usage`整體叢集使用; 彙總，依此類推。
+許多數列會在對等物件之間匯總至其父系：例如，會分別針對每個網路介面卡收集 `NetAdapter.Bandwidth.Inbound`，並匯總至整體伺服器;同樣地 `ClusterNode.Cpu.Usage` 會匯總至整體叢集;以此類推。
 
-## <a name="timeframes"></a>時間範圍
+## <a name="timeframes"></a>段
 
-效能歷程記錄會儲存最多一年的資料，以減少資料粒度。 最新的小時度量可供使用每隔 10 秒。 之後，它們會以聰明的方式合併 （藉由平均或加總，適當地） 成較不精細的系列跨越更多的時間。 最新的一天，度量可每隔五分鐘;最新的當週，每隔十五分鐘;等等。
+效能歷程記錄最多儲存一年，而且資料細微性會降低。 在最近的一小時內，每十秒就會提供測量。 之後，它們會以智慧方式合併（依適當情況平均或總和）至較不細微的數列，而更多時間。 在最近的一天，每五分鐘可取得度量;最近一周，每十五分鐘;以此類推。
 
-在 Windows Admin Center，您可以選取在右上方圖表上方的時間範圍。
+在 Windows 系統管理中心內，您可以選取圖表右上方的時間範圍。
 
-![在 Windows Admin Center 中的時間範圍](media/performance-history/timeframes-in-honolulu.png)
+![Windows 系統管理中心的時程表](media/performance-history/timeframes-in-honolulu.png)
 
-在 PowerShell 中，使用`-TimeFrame`參數。
+在 PowerShell 中，使用 `-TimeFrame` 參數。
 
 以下是可用的時間範圍：
 
-| 時間範圍   | 度量的頻率 | 保留 |
+| 時間範圍   | 測量頻率 | 保留給 |
 |-------------|-----------------------|--------------|
-| `LastHour`  | 每隔 10 秒         | 1 小時       |
-| `LastDay`   | 每隔 5 分鐘       | 25 個小時     |
-| `LastWeek`  | 每隔 15 分鐘      | 8 天       |
-| `LastMonth` | 每 1 小時          | 35 天前      |
-| `LastYear`  | 每隔 1 天           | 400 天     |
+| `LastHour`  | 每10秒         | 1 小時       |
+| `LastDay`   | 每5分鐘       | 25小時     |
+| `LastWeek`  | 每 15 分鐘      | 8天       |
+| `LastMonth` | 每1小時          | 35天      |
+| `LastYear`  | 每隔1天           | 400天     |
 
 ## <a name="usage-in-powershell"></a>在 PowerShell 中的使用方式
 
-使用`Get-ClusterPerformanceHistory`cmdlet，在 PowerShell 中的查詢和處理序效能歷程記錄。
+使用 `Get-ClusterPerformanceHistory` Cmdlet 來查詢和處理 PowerShell 中的效能歷程記錄。
 
 ```PowerShell
 Get-ClusterPerformanceHistory
 ```
 
    > [!TIP]
-   > 使用**Get ClusterPerf**儲存某些按鍵輸入的別名。
+   > 使用**ClusterPerf**別名來儲存一些按鍵。
 
 ### <a name="example"></a>範例
 
-取得虛擬機器的 CPU 使用量*MyVM*四個：
+取得過去一小時內虛擬機器*MyVM*的 CPU 使用量：
 
 ```PowerShell
 Get-VM "MyVM" | Get-ClusterPerf -VMSeriesName "VM.Cpu.Usage" -TimeFrame LastHour
 ```
 
-如需更進階的範例，請參閱已發行[範例指令碼](performance-history-scripting.md)提供起始程式碼，以找出尖峰值、 計算平均值、 繪製趨勢線、 執行極端值偵測和更多功能。
+如需更多的範例，請參閱已發佈的[範例腳本](performance-history-scripting.md)，其提供起始程式碼來尋找尖峰值、計算平均值、繪製趨勢線、執行極端值偵測等等。
 
-### <a name="specify-the-object"></a>指定的物件
+### <a name="specify-the-object"></a>指定物件
 
-您可以指定想要在管線的物件。 這適用於 7 種物件：
+您可以指定管線所需的物件。 這適用于7種類型的物件：
 
-| 從管線物件 | 範例     |
+| 管線中的物件 | 範例     |
 |----------------------|-------------|
 | `Get-PhysicalDisk`   | <code>Get-PhysicalDisk -SerialNumber "XYZ456" &#124; Get-ClusterPerf</code>         |
 | `Get-NetAdapter`     | <code>Get-NetAdapter "Ethernet" &#124; Get-ClusterPerf</code>                       |
@@ -113,120 +112,120 @@ Get-VM "MyVM" | Get-ClusterPerf -VMSeriesName "VM.Cpu.Usage" -TimeFrame LastHour
 
 如果您未指定，則會傳回整體叢集的效能歷程記錄。
 
-### <a name="specify-the-series"></a>指定此系列
+### <a name="specify-the-series"></a>指定數列
 
-您可以使用這些參數來指定所需的序列：
+您可以使用下列參數來指定您想要的數列：
 
 
 | 參數                 | 範例                       | 清單                                                                                 |
 |---------------------------|-------------------------------|--------------------------------------------------------------------------------------|
-| `-PhysicalDiskSeriesName` | `"PhysicalDisk.Iops.Read"`    | [收集項目的磁碟機](performance-history-for-drives.md)                     |
-| `-NetAdapterSeriesName`   | `"NetAdapter.Bandwidth.Outbound"` | [什麼被收集網路介面卡](performance-history-for-network-adapters.md) |
-| `-ClusterNodeSeriesName`  | `"ClusterNode.Cpu.Usage"`     | [什麼被收集的伺服器](performance-history-for-servers.md)                   |
-| `-VHDSeriesName`          | `"Vhd.Size.Current"`          | [什麼被收集的虛擬硬碟](performance-history-for-vhds.md)           |
-| `-VMSeriesName`           | `"Vm.Memory.Assigned"`        | [什麼被收集的虛擬機器](performance-history-for-vms.md)              |
-| `-VolumeSeriesName`       | `"Volume.Latency.Write"`      | [收集項目的磁碟區](performance-history-for-volumes.md)                   |
-| `-ClusterSeriesName`      | `"PhysicalDisk.Size.Total"`   | [收集項目的叢集](performance-history-for-clusters.md)                 |
+| `-PhysicalDiskSeriesName` | `"PhysicalDisk.Iops.Read"`    | [磁片磁碟機的收集內容](performance-history-for-drives.md)                     |
+| `-NetAdapterSeriesName`   | `"NetAdapter.Bandwidth.Outbound"` | [為網路介面卡收集的內容](performance-history-for-network-adapters.md) |
+| `-ClusterNodeSeriesName`  | `"ClusterNode.Cpu.Usage"`     | [為伺服器收集的內容](performance-history-for-servers.md)                   |
+| `-VHDSeriesName`          | `"Vhd.Size.Current"`          | [為虛擬硬碟收集的內容](performance-history-for-vhds.md)           |
+| `-VMSeriesName`           | `"Vm.Memory.Assigned"`        | [為虛擬機器收集的內容](performance-history-for-vms.md)              |
+| `-VolumeSeriesName`       | `"Volume.Latency.Write"`      | [磁片區的收集內容](performance-history-for-volumes.md)                   |
+| `-ClusterSeriesName`      | `"PhysicalDisk.Size.Total"`   | [為叢集收集的內容](performance-history-for-clusters.md)                 |
 
 
    > [!TIP]
-   > 您可以使用 tab 鍵自動完成來探索可用的序列。
+   > 使用 tab 鍵自動完成來探索可用的系列。
 
-如果您未指定，則會傳回指定的物件可使用每個數列。
+如果您未指定，則會傳回指定物件可用的每個數列。
 
-### <a name="specify-the-timeframe"></a>指定的時間範圍
+### <a name="specify-the-timeframe"></a>指定時間範圍
 
-您可以指定您想要使用的歷程記錄的時間範圍`-TimeFrame`參數。
+您可以使用 `-TimeFrame` 參數來指定您想要的歷程記錄時間範圍。
 
    > [!TIP]
-   > 您可以使用 tab 鍵自動完成來探索可用的時間範圍。
+   > 使用 tab 鍵自動完成來探索可用的時間範圍。
 
-如果您未指定，`MostRecent`度量會傳回。
+如果您未指定，則會傳回 `MostRecent` 測量。
 
 ## <a name="how-it-works"></a>運作方式
 
 ### <a name="performance-history-storage"></a>效能歷程記錄儲存體
 
-短時間內儲存空間直接存取啟用之後，大約 10 GB 的磁碟區命名為`ClusterPerformanceHistory`建立，而且那里佈建的可延伸儲存引擎 (也稱為 Microsoft JET) 執行個體。 此輕量級資料庫存放區效能歷程記錄，而不需要任何系統管理員介入或管理。
+一旦啟用儲存空間直接存取之後，就會建立大約 10 GB 的磁片區，名為 `ClusterPerformanceHistory`，並在該處布建可延伸儲存引擎（也稱為 Microsoft JET）的實例。 這個輕量資料庫會儲存效能歷程記錄，而不需要任何系統管理員介入或管理。
 
-![效能歷程記錄儲存體的磁碟區](media/performance-history/perf-history-volume.png)
+![效能記錄儲存的磁片區](media/performance-history/perf-history-volume.png)
 
-磁碟區是由儲存空間，會使用簡單的雙向鏡像或三向鏡像復原時，叢集中的節點數目而定。 修復磁碟機或伺服器故障，就像任何其他磁碟區中儲存空間直接存取之後。
+磁片區是由儲存空間支援，而且會根據叢集中的節點數目，使用簡單、雙向鏡像或三向鏡像復原功能。 它會在磁片磁碟機或伺服器失敗之後修復，就像儲存空間直接存取中的任何其他磁片區一樣。
 
-磁碟區會使用 ReFS，但不是叢集共用磁碟區 (CSV)，所以才會出現在 叢集群組擁有者節點上。 除了自動建立，沒有特別關於此磁碟區： 您可以看到它，瀏覽它、 調整其大小，或刪除它 （不建議）。 如果發生錯誤，請參閱[疑難排解](#troubleshooting)。
+磁片區使用 ReFS，但不叢集共用磁碟區（CSV），因此它只會出現在叢集群組擁有者節點上。 除了自動建立以外，此磁片區沒有任何特別的內容：您可以查看、流覽、調整其大小，或將它刪除（不建議）。 如果發生錯誤，請參閱[疑難排解](#troubleshooting)。
 
-### <a name="object-discovery-and-data-collection"></a>物件探索和資料集合
+### <a name="object-discovery-and-data-collection"></a>物件探索和資料收集
 
-效能歷程記錄會自動探索相關的物件，例如虛擬機器，叢集中的任何位置，並開始串流處理及其效能計數器。 計數器會彙總、 同步處理，以及插入至資料庫。 串流處理會持續執行，而且已最佳化的最基本的系統的影響。
+效能歷程會在叢集中的任何位置自動探索相關物件（例如虛擬機器），並開始串流處理其效能計數器。 計數器會進行匯總、同步處理，並插入到資料庫中。 串流會持續執行，並已針對最低系統影響進行優化。
 
-集合由健全狀況服務，也就是高可用性： 如果執行所在的節點故障時，它會繼續時間稍後在另一個叢集中的節點。 效能歷程記錄簡單地說，可能會失敗，但它會自動繼續。 您可以看到健全狀況服務和其擁有者節點執行`Get-ClusterResource Health`在 PowerShell 中。
+集合是由健全狀況服務（高度可用）所處理：如果執行的節點停止運作，它稍後會在叢集中的另一個節點上恢復時間。 效能歷程記錄可能很快就會繼續，但會自動復原。 您可以在 PowerShell 中執行 `Get-ClusterResource Health`，以查看健全狀況服務和其擁有者節點。
 
-### <a name="handling-measurement-gaps"></a>處理度量的間距
+### <a name="handling-measurement-gaps"></a>處理測量間隙
 
-當度量會合併成較不精細的系列跨越更多的時間，如中所述[時間表](#timeframes)，遺漏資料的期間會排除。 比方說，如果伺服器已關閉 30 分鐘，然後執行 50%的 CPU 在接下來的 30 分鐘內，`ClusterNode.Cpu.Usage`平均時數會正確地記錄為 50%（不是 25%)。
+當量值合併到較不精確的數列時（如時間[範圍中所述），會](#timeframes)排除遺失資料的期間。 例如，如果伺服器已關閉30分鐘，然後在接下來的30分鐘內于 50% CPU 執行，則會將該小時的 `ClusterNode.Cpu.Usage` 平均記錄為50% （而非25%）。
 
-### <a name="extensibility-and-customization"></a>擴充和自訂功能
+### <a name="extensibility-and-customization"></a>擴充性和自訂
 
-效能歷程記錄是指令碼友善。 使用 PowerShell 來提取任何可用的歷程記錄，直接從建置自動化報告或警示，匯出以利妥善保存的歷程記錄資料庫，請回復您自己的視覺效果，依此類推。請參閱已發行[範例指令碼](performance-history-scripting.md)很有幫助的起始程式碼。
+效能歷程記錄是腳本易懂的。 使用 PowerShell 直接從資料庫提取任何可用的歷程記錄，以建立自動化的報告或警示、用於妥善保管的匯出歷程記錄、製作您自己的視覺效果等等。如需實用的入門程式碼，請參閱已發佈的[範例腳本](performance-history-scripting.md)。
 
-您不可以收集其他物件、 時間範圍內，或系列的歷程記錄。
+不可能收集其他物件、時間範圍或數列的記錄。
 
-測量頻率和保留期間不會是目前無法設定項目。
+目前無法設定測量頻率和保留期限。
 
 ## <a name="start-or-stop-performance-history"></a>啟動或停止效能歷程記錄
 
-### <a name="how-do-i-enable-this-feature"></a>如何啟用這項功能？
+### <a name="how-do-i-enable-this-feature"></a>如何? 啟用此功能嗎？
 
-除非您`Stop-ClusterPerformanceHistory`，預設會啟用效能記錄。
+除非您 `Stop-ClusterPerformanceHistory`，否則預設會啟用效能歷程記錄。
 
-若要重新啟用它，請以系統管理員身分執行這個 PowerShell cmdlet:
+若要重新啟用它，請以系統管理員身分執行此 PowerShell Cmdlet：
 
 ```PowerShell
 Start-ClusterPerformanceHistory
 ```
 
-### <a name="how-do-i-disable-this-feature"></a>如何停用這項功能？
+### <a name="how-do-i-disable-this-feature"></a>如何? 停用此功能嗎？
 
-若要停止收集效能歷程記錄，請以系統管理員身分執行這個 PowerShell cmdlet:
+若要停止收集效能歷程記錄，請以系統管理員身分執行此 PowerShell Cmdlet：
 
 ```PowerShell
 Stop-ClusterPerformanceHistory
 ```
 
-若要刪除現有的度量，請使用`-DeleteHistory`旗標：
+若要刪除現有的度量，請使用 `-DeleteHistory` 旗標：
 
 ```PowerShell
 Stop-ClusterPerformanceHistory -DeleteHistory
 ```
 
    > [!TIP]
-   > 初始部署期間，您可以防止效能歷程記錄設定啟動`-CollectPerformanceHistory`的參數`Enable-ClusterStorageSpacesDirect`至`$False`。
+   > 在初始部署期間，您可以藉由將 `Enable-ClusterStorageSpacesDirect` 的 `-CollectPerformanceHistory` 參數設定為 `$False`來避免啟動效能歷程記錄。
 
 ## <a name="troubleshooting"></a>疑難排解
 
-### <a name="the-cmdlet-doesnt-work"></a>此 cmdlet 無法運作
+### <a name="the-cmdlet-doesnt-work"></a>Cmdlet 無法使用
 
-之類的錯誤訊息 「 *' 取得 ClusterPerf' 詞彙無法辨識為 cmdlet 名稱*」 表示此功能不是沒有或未安裝。 請確認您有 17692 或更新版本的 Windows Server Insider Preview 組建，您已安裝容錯移轉叢集，以及您執行儲存空間直接存取。
+「ClusterPerf」一*詞「無法辨識為 Cmdlet 的名稱*」之類的錯誤訊息表示此功能無法使用或已安裝。 確認您有 Windows Server Insider Preview 組建17692或更新版本，且您已安裝容錯移轉叢集，而且您正在執行儲存空間直接存取。
 
    > [!NOTE]
-   > 這項功能不提供 Windows Server 2016 或更早版本。
+   > Windows Server 2016 或更早版本無法使用這項功能。
 
-### <a name="no-data-available"></a>沒有可用的資料 
+### <a name="no-data-available"></a>沒有可用資料 
 
-如果有圖表可顯示 」*沒有可用的資料*"，如圖所示，以下是如何進行疑難排解：
+如圖所示，如果圖表顯示「*沒有可用的資料*」，以下是疑難排解的方法：
 
-![沒有可用的資料](media/performance-history/no-data-available.png)
+![沒有可用資料](media/performance-history/no-data-available.png)
 
-1. 如果新加入或建立的物件，等候它才能探索到的 （最多 15 分鐘）。
+1. 如果是新加入或建立的物件，請等候它被探索（最多15分鐘）。
 
-2. 重新整理頁面，或等到下一步 的背景重新整理 （最多 30 秒為單位）。
+2. 重新整理頁面，或等候下一個背景重新整理（最多30秒）。
 
-3. 效能歷程記錄 – 比方說，不叢集的虛擬機器而不使用叢集共用磁碟區 (CSV) 檔案系統磁碟區不包含某些特殊的物件。 檢查子主題的物件類型，例如[磁碟區的效能歷程](performance-history-for-volumes.md)，fine 列印。
+3. 某些特殊物件會從效能歷程中排除（例如，未叢集化的虛擬機器），以及未使用叢集共用磁碟區（CSV）檔案系統的磁片區。 檢查物件類型的子主題（例如磁片區的[效能歷程記錄](performance-history-for-volumes.md)），以進行微調列印。
 
-4. 如果問題持續發生，請開啟 PowerShell，以系統管理員身分執行`Get-ClusterPerf`cmdlet。 此 cmdlet 可讓您包含移難排解邏輯，以識別常見的問題，例如，如果 ClusterPerformanceHistory 磁碟區遺失，並提供補救指示。
+4. 如果問題持續發生，請以系統管理員身分開啟 PowerShell，然後執行 `Get-ClusterPerf` Cmdlet。 此 Cmdlet 包含可識別常見問題的疑難排解邏輯，例如，如果 ClusterPerformanceHistory 磁片區遺失，則會提供補救指示。
 
-5. 如果上一個步驟中的命令會傳回任何項目的，您可以嘗試重新啟動健全狀況服務 （以收集效能歷程記錄），藉由執行`Stop-ClusterResource Health ; Start-ClusterResource Health`在 PowerShell 中。
+5. 如果上一個步驟中的命令未傳回任何內容，您可以嘗試在 PowerShell 中執行 `Stop-ClusterResource Health ; Start-ClusterResource Health` 來重新開機健全狀況服務（這會收集效能歷程記錄）。
 
 ## <a name="see-also"></a>另請參閱
 
-- [儲存空間直接存取概觀](storage-spaces-direct-overview.md)
+- [儲存空間直接存取總覽](storage-spaces-direct-overview.md)
