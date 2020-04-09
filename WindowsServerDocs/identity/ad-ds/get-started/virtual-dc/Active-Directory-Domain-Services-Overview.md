@@ -1,7 +1,6 @@
 ---
 ms.assetid: f052dfcd-dace-4485-8d0a-cc7df5cf3751
-title: Active Directory Domain Services 概觀
-description: ''
+title: Active Directory 網域服務概觀
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 2d5630ece940e5bd7895510c245d14b67c847a70
-ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
+ms.openlocfilehash: 3c11e4a925eae89355da301d0b0facb62a53a942
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74791130"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824561"
 ---
-# <a name="active-directory-domain-services-overview"></a>Active Directory Domain Services 概觀
+# <a name="active-directory-domain-services-overview"></a>Active Directory 網域服務概觀
 
 >適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 

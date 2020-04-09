@@ -3,16 +3,15 @@ title: 在 Windows 10 1709 版、Windows Server 1709 版和更新版本中，預
 description: 討論 Windows 10 秋季建立者更新和 Windows Server 版本1709和更新版本中 SMBv1 通訊協定的行為。
 author: Deland-Han
 manager: dcscontentpm
-audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 27869820e49257d059d124bac3f515ac91fef7b0
-ms.sourcegitcommit: 30afd51d74cb6472720fb13ec47d80cf42b20c27
+ms.openlocfilehash: fdc90c6e5d6790348fafc12079eec5ac7e387b3f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80272314"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815311"
 ---
 # <a name="smbv1-is-not-installed-by-default-in-windows-10-version-1709-windows-server-version-1709-and-later-versions"></a>在 Windows 10 1709 版、Windows Server 1709 版和更新版本中，預設不會安裝 SMBv1
 

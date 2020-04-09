@@ -1,7 +1,6 @@
 ---
 ms.assetid: 41b56704-c6f9-4d29-af97-62123e300565
 title: 檢閱 OU 設計概念
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 6dc2cbb7ddff8725876f8dd4ec2760e828fd4e4c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 67f8ef3ec37146002f3e099caa459fc209fcf5b7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402518"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821972"
 ---
 # <a name="reviewing-ou-design-concepts"></a>檢閱 OU 設計概念
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 網域的組織單位（OU）結構包括下列各項：  
   
@@ -42,7 +41,7 @@ OU 階層不需要反映組織或群組的部門階層。 Ou 是針對特定用�
   
 您可以針對特定用途建立 Ou 的子樹，以進一步精簡您的 OU 結構，例如群組原則的應用程式，或限制受保護物件的可見度，讓只有特定使用者可以看到它們。 例如，如果您需要將群組原則套用至選取的使用者或資源群組，您可以將這些使用者或資源新增至 OU，然後將群組原則套用至該 OU。 您也可以使用 OU 階層來啟用進一步的系統管理控制委派。  
   
-雖然 OU 結構中的層級數目沒有任何技術限制，但為了方便管理，我們建議您將 OU 結構限制為不超過10個層級的深度。 每個層級上的 Ou 數目沒有任何技術限制。 請注意，啟用 Active Directory Domain Services （AD DS）的應用程式可能會限制分辨名稱中使用的字元數（也就是目錄中物件的完整輕量型目錄存取協定（LDAP）路徑）或階層中的 OU 深度。  
+雖然 OU 結構中的層級數目沒有任何技術限制，但為了方便管理，我們建議您將 OU 結構限制為不超過10個層級的深度。 每個層級上的 Ou 數目沒有任何技術限制。 請注意，啟用 Active Directory Domain Services （AD DS）的應用程式可能會限制辨別名稱中使用的字元數（也就是目錄中物件的完整輕量型目錄存取協定（LDAP）路徑），或階層內的 OU 深度。  
   
 AD DS 中的 OU 結構不適合用戶看到。 OU 結構是服務管理員和資料管理員的系統管理工具，而且很容易變更。 繼續檢查並更新 OU 結構設計，以反映系統管理結構中的變更，並支援以原則為基礎的系統管理。  
   

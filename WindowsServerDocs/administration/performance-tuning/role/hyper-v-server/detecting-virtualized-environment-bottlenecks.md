@@ -4,15 +4,15 @@ description: 如何偵測並解決可能的 Hyper-v 效能瓶頸
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Asmahi; SandySp; JoPoulso
+ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 53ec6159d177284773f17a05a37dd89184ef3c12
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 211f35c151e94bc8b8a11a614edad18053cb18b9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370119"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851774"
 ---
 # <a name="detecting-bottlenecks-in-a-virtualized-environment"></a>偵測虛擬化環境中的瓶頸
 
@@ -130,7 +130,7 @@ ms.locfileid: "71370119"
 
 -   使用 VHDX
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 -   [Hyper-V 術語](terminology.md)
 

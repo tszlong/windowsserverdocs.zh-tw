@@ -1,7 +1,6 @@
 ---
 ms.assetid: ba7f2b9f-7351-4680-b7d8-a5f270614f1c
-title: Active Directory 網域服務安裝和移除的新功能
-description: ''
+title: Active Directory Domain Services 安裝和移除的新功能
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,14 +8,14 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 1f24615491391d932609d7f80549985818ced8c1
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: b290b11487ce84b0c7cd962b272f52fea538769a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323200"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824941"
 ---
-# <a name="whats-new-in-active-directory-domain-services-installation-and-removal"></a>Active Directory 網域服務安裝和移除的新功能
+# <a name="whats-new-in-active-directory-domain-services-installation-and-removal"></a>Active Directory Domain Services 安裝和移除的新功能
 
 >適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -36,7 +35,7 @@ AD DS 安裝包括下列功能：
 - **您可以匯出包含圖形化安裝期間指定之所有選項的 Windows PowerShell 指令碼。** 在安裝或移除的最後，您可以將設定匯出到 Windows PowerShell 指令碼，以便用於自動化相同的操作。  
 - **在重新開機之前只會執行關鍵性複寫。** 新的參數允許在重新開機前複寫非關鍵性資料。 如需詳細資訊，請參閱 [ADDSDeployment Cmdlet 引數](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Params)。  
 
-## <a name="BKMK_ADConfigurationWizard"></a>Active Directory Domain Services Configuration Wizard
+## <a name="the-active-directory-domain-services-configuration-wizard"></a><a name="BKMK_ADConfigurationWizard"></a>Active Directory Domain Services Configuration Wizard
 
 從 Windows Server 2012 開始，Active Directory Domain Services Configuration Wizard 會取代舊版的 Active Directory Domain Services 安裝精靈，做為安裝網域控制站時指定設定的使用者介面（UI）選項。 [Active Directory 網域服務設定精靈] 在 [新增角色精靈] 完成後開始。  
 
@@ -45,7 +44,7 @@ AD DS 安裝包括下列功能：
 
 在[安裝 Active Directory Domain Services &#40;層級&#41;100](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md)中，UI 程式會示範如何啟動 [新增角色] 嚮導來安裝 AD DS 伺服器角色二進位檔，然後執行 [Active Directory Domain Services 設定] 嚮導以完成網域控制站安裝。 Windows PowerShell 範例示範如何使用 AD DS 部署 Cmdlet 完成這兩個程序的步驟。  
   
-## <a name="BKMK_NewAdprep"></a>Adprep 整合
+## <a name="adprepexe-integration"></a><a name="BKMK_NewAdprep"></a>Adprep 整合
 
 從 Windows Server 2012 開始，只有一個版本的 Adprep （沒有32位版本（adprep32.exe .exe）。 當您將執行 Windows Server 2012 的網域控制站安裝到現有的 Active Directory 網域或樹系時，會視需要自動執行 Adprep 命令。  
   
@@ -104,7 +103,7 @@ adprep /domainprep /gpprep 命令不會做為 AD DS 安裝的一部分來執行�
 
 您可以安全地將執行 Windows Server 2012 的網域控制站新增至現有的網域，而不需要執行 adprep/domainprep/gpprep，但是 RSOP 規劃模式將無法正常運作。  
 
-## <a name="BKMK_PrereqCheck"></a>AD DS 安裝先決條件驗證
+## <a name="ad-ds-installation-prerequisite-validation"></a><a name="BKMK_PrereqCheck"></a>AD DS 安裝先決條件驗證
 
 AD DS 安裝精靈會在安裝開始之前，先檢查是否符合下列先決條件。 這讓您有機會先行修正可能阻止安裝的問題。  
   
@@ -122,13 +121,13 @@ AD DS 安裝精靈會在安裝開始之前，先檢查是否符合下列先決�
 - 子網域名稱驗證：確定父系及新增的子網域名稱是有效的，而且它們與現有網域沒有衝突。  
 - 樹狀目錄網域名稱驗證：確定指定的樹狀目錄名稱是有效的，而且目前不存在。  
 
-## <a name="BKMK_SystemReqs"></a>系統需求
+## <a name="system-requirements"></a><a name="BKMK_SystemReqs"></a>系統需求
 
 Windows server 2012 的系統需求與 Windows Server 2008 R2 保持不變。 如需詳細資訊，請參閱[Windows Server 2008 R2 SP1 系統需求](https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx)（ https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx)。  
 
 某些功能可能會有其他的需求。 例如，虛擬網域控制站複製功能需要 PDC 模擬器執行 Windows Server 2012，以及安裝有 Hyper-v 角色的 Windows Server 2012 電腦。  
 
-## <a name="BKMK_KnownIssues"></a>已知問題
+## <a name="known-issues"></a><a name="BKMK_KnownIssues"></a>已知問題
 
 本節列出一些會影響 Windows Server 2012 中 AD DS 安裝的已知問題。 如需其他已知問題，請參閱[疑難排解網域控制站部署](../../ad-ds/deploy/Troubleshooting-Domain-Controller-Deployment.md)。  
 
@@ -230,7 +229,7 @@ Windows server 2012 的系統需求與 Windows Server 2008 R2 保持不變。 �
 
    如果錯誤是因為指定本機系統管理員帳戶和密碼而產生，為了進行復原，您需要重新安裝作業系統、針對無法完成安裝的網域控制站帳戶 [執行中繼資料清理](https://technet.microsoft.com/library/cc816907(WS.10).aspx) ，然後使用網域管理員認證重試 AD DS 安裝。 重新啟動伺服器將不會更正這個錯誤狀況，因為伺服器將指出已安裝 AD DS，即使安裝並未成功完成也一樣。  
 
-### <a name="BKMK_nonnormalDNSNameWarning"></a>當指定了非標準化的 DNS 名稱時，Active Directory Domain Services Configuration Wizard 會發出警告
+### <a name="active-directory-domain-services-configuration-wizard-warns-when-a-non-normalized-dns-name-is-specified"></a><a name="BKMK_nonnormalDNSNameWarning"></a>當指定了非標準化的 DNS 名稱時，Active Directory Domain Services Configuration Wizard 會發出警告
 
 如果您建立新的網域或樹系，且指定包含非標準化的國際化字元的 DNS 網域名稱，那麼 [Active Directory 網域服務設定精靈] 會顯示警告，說明名稱的 DNS 查詢可能會失敗。 雖然 DNS 網域名稱是在 [部署設定] 頁面上指定的，但是警告是在精靈稍後的 [先決條件檢查] 頁面上出現。  
 

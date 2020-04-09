@@ -3,22 +3,21 @@ title: SMB 連線期間的 TCP 三向交握失敗
 description: 引進 SMB 連線期間的 TCP 三向交握失敗。
 author: Deland-Han
 manager: dcscontentpm
-audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 8cef47e164b8768747cb383f4d7012130c7cb516
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: cb88fa89344172cfc1ed036865a4496ed73e9a22
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654629"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815321"
 ---
 # <a name="tcp-three-way-handshake-failure-during-smb-connection"></a>SMB 連線期間的 TCP 三向交握失敗
 
 當您分析網路追蹤時，您會發現發生 SMB 問題的傳輸控制通訊協定（TCP）三向交握失敗。 本文說明如何針對這種情況進行疑難排解。
 
-## <a name="troubleshooting"></a>[疑難排解]
+## <a name="troubleshooting"></a>疑難排解
 
 一般來說，原因是封鎖流量的本機或基礎結構防火牆。 此問題可能會發生在下列任一情況下。
 
@@ -71,7 +70,7 @@ netsh wfp capture stop
 > [!NOTE]
 > 根據您電腦的設定方式而定，「Windows 防火牆」可能稱為「Windows Defender 防火牆」。
 
-## <a name="scenario-2"></a>案例 2
+## <a name="scenario-2"></a>案例2
 
 TCP SYN 封包永遠不會抵達 SMB 伺服器。
 

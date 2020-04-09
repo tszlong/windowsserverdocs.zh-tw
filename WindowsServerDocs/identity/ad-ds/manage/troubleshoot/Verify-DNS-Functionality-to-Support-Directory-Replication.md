@@ -1,22 +1,17 @@
 ---
 ms.assetid: 709353b0-b913-4367-8580-44745183e2bc
 title: 驗證 DNS 功能以支援目錄複寫
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.service: ''
-ms.suite: na
 ms.technology: identity-adds
 ms.author: joflore
 ms.date: 05/31/2017
-ms.tgt_pltfrm: na
 author: Femila
-ms.openlocfilehash: 066f7ebe1cd8f981344e059797daa9d3f86bdf49
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 51472c1a64b7825b48362efbe76ea8ef6bbaac73
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71409053"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822951"
 ---
 # <a name="verify-dns-functionality-to-support-directory-replication"></a>驗證 DNS 功能以支援目錄複寫
 
@@ -24,7 +19,7 @@ ms.locfileid: "71409053"
 
  若要檢查可能會干擾 Active Directory 複寫的網域名稱系統（DNS）設定，您可以從執行基本測試開始，以確保您網域的 DNS 運作正常。 執行基本測試之後，您可以測試 DNS 功能的其他層面，包括資源記錄註冊和動態更新。
 
-雖然您可以在任何網域控制站上執行這項基本 DNS 功能測試，但您通常會在您認為可能會遇到複寫問題的網域控制站上執行此測試，例如，報告事件識別碼1844、1925、2087或的網域控制站2088在事件檢視器目錄服務 DNS 記錄檔中。
+雖然您可以在任何網域控制站上執行這項基本 DNS 功能測試，但您通常會在您認為可能會遇到複寫問題的網域控制站上執行此測試，例如，在事件檢視器目錄服務 DNS 記錄檔中報告事件識別碼1844、1925、2087或2088的網域控制站。
 
 
 
@@ -48,7 +43,7 @@ ms.locfileid: "71409053"
 
 
 1. 在您要測試的網域控制站，或在已安裝 Active Directory Domain Services （AD DS）工具的網域成員電腦上，以系統管理員身分開啟命令提示字元。 若要以系統管理員身分開啟命令提示字元，按一下 [**開始**]。 
-2. 在 [開始搜尋] 中，輸入命令提示字元。 
+2. 在 [開始搜尋] 中，輸入 Command Prompt。 
 3. 在 [開始] 功能表的頂端，以滑鼠右鍵按一下 [命令提示字元]，然後按一下 [以系統管理員身分執行]。 如果出現 [使用者帳戶控制] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [繼續]。
 4. 在命令提示字元中，輸入下列命令，然後按 ENTER： `dcdiag /test:dns /v /s:<DCName> /DnsBasic /f:dcdiagreport.txt`
 </br></br>以 &lt;DCName&gt;取代網域控制站的實際辨別名稱、NetBIOS 名稱或 DNS 名稱。 或者，您可以輸入/e：而不是/s：，藉以測試樹系中的所有網域控制站。 /F 參數會指定一個檔案名，在上一個命令中是 dcdiagreport .txt。 如果您想要將檔案放在目前工作目錄以外的位置，您可以指定檔案路徑，例如/f： c:reportsdcdiagreport.txt。
@@ -63,14 +58,14 @@ ms.locfileid: "71409053"
             
 ## <a name="verifying-resource-record-registration"></a>正在驗證資源記錄註冊
     
-目的地網域控制站會使用 DNS 別名（CNAME）資源記錄來找出其來源網域控制站複寫協力電腦。 雖然執行 Windows Server 的網域控制站（從 Windows Server 2003 含 Service Pack 1 （SP1）開始）可以使用完整功能變數名稱（Fqdn）找出來源複寫協力電腦，或如果失敗，則 NetBIOS namesthe 存在別名（CNAME）預期會有資源記錄，而且應該確認是否有適當的 DNS 運作。 
+目的地網域控制站會使用 DNS 別名（CNAME）資源記錄來找出其來源網域控制站複寫協力電腦。 雖然執行 Windows Server 的網域控制站（從 Windows Server 2003 含 Service Pack 1 （SP1）開始）可以使用完整功能變數名稱（Fqdn）找出來源複寫協力電腦，或如果失敗，則會預期別名（CNAME）資源記錄的 NetBIOS namesthe 存在，而且應該確認是否有適當的 DNS 運作。 
       
 您可以使用下列程式來驗證資源記錄註冊，包括別名（CNAME）資源記錄註冊。
       
 ### <a name="to-verify-resource-record-registrationtitle"></a>若要驗證資源記錄註冊</title>
 
 
-1. 以系統管理員身分開啟命令提示字元。 若要以系統管理員身分開啟命令提示字元，請按一下 [啟動]。 在 [開始搜尋] 中，輸入命令提示字元。 
+1. 以系統管理員身分開啟命令提示字元。 若要以系統管理員身分開啟命令提示字元，按一下 [開始]。 在 [開始搜尋] 中，輸入 Command Prompt。 
 2. 在 [開始] 功能表的頂端，以滑鼠右鍵按一下 [命令提示字元]，然後按一下 [以系統管理員身分執行]。 如果出現 [使用者帳戶控制] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [繼續]。  </br></br>您可以使用 Dcdiag 工具，藉由執行 `dcdiag /test:dns /DnsRecordRegistration` 命令，驗證網域控制站位置所需的所有資源記錄的註冊。
 
 此命令會驗證 DNS 中下列資源記錄的註冊：
@@ -100,7 +95,7 @@ ms.locfileid: "71409053"
 ### <a name="to-verify-dynamic-updatetitle"></a>確認動態更新</title>
 
 
-1. 以系統管理員身分開啟命令提示字元。 若要以系統管理員身分開啟命令提示字元，請按一下 [啟動]。 在 [開始搜尋] 中，輸入命令提示字元。 在 [開始] 功能表的頂端，以滑鼠右鍵按一下 [命令提示字元]，然後按一下 [以系統管理員身分執行]。 如果出現 [使用者帳戶控制] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [繼續]。
+1. 以系統管理員身分開啟命令提示字元。 若要以系統管理員身分開啟命令提示字元，按一下 [開始]。 在 [開始搜尋] 中，輸入 Command Prompt。 在 [開始] 功能表的頂端，以滑鼠右鍵按一下 [命令提示字元]，然後按一下 [以系統管理員身分執行]。 如果出現 [使用者帳戶控制] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [繼續]。
 2. 在命令提示字元中，輸入下列命令，然後按 ENTER： `dcdiag /test:dns /v /s:<DCName> /DnsDynamicUpdate`
    </br></br>以 &lt;DCName&gt;取代網域控制站的 [辨別名稱]、[NetBIOS 名稱] 或 [DNS 名稱]。 或者，您可以輸入/e：而不是/s：，藉以測試樹系中的所有網域控制站。 如果您未在網域控制站上啟用 IPv6，您應該預期測試的主機（AAAA）資源記錄部分失敗，這是未啟用 IPv6 時的正常情況。
 
@@ -111,8 +106,8 @@ ms.locfileid: "71409053"
 
 1. 開啟 [DNS] 嵌入式管理單元。 若要開啟 DNS，請按一下 [啟動]。 
 2. 在 [開始搜尋] 中，輸入 dnsmgmt.msc，然後按 ENTER。 如果出現 [使用者帳戶控制] 對話方塊，請確認它顯示您想要的動作，然後按一下 [繼續]。
-3. 在主控台樹中，以滑鼠右鍵按一下適用的區域，然後按一下 [內容]。
-4. 在 [一般] 索引標籤上，確認區欄位型別已 Active Directory 整合。
+3. 在主控台樹狀目錄的適用區域上按一下滑鼠右鍵，然後按一下 [內容]。
+4. 在 [一般] 索引標籤上，確認區域類型是否為 [Active Directory 整合]。
 5. 在 [動態更新] 中，按一下 [僅安全]。
 
 ## <a name="registering-dns-resource-records"></a>註冊 DNS 資源記錄
@@ -122,8 +117,8 @@ ms.locfileid: "71409053"
 ### <a name="to-register-dns-resource-records-manuallytitle"></a>若要手動註冊 DNS 資源記錄</title>
 
 
-1. 以系統管理員身分開啟命令提示字元。 若要以系統管理員身分開啟命令提示字元，請按一下 [啟動]。 
-2. 在 [開始搜尋] 中，輸入命令提示字元。 
+1. 以系統管理員身分開啟命令提示字元。 若要以系統管理員身分開啟命令提示字元，按一下 [開始]。 
+2. 在 [開始搜尋] 中，輸入 Command Prompt。 
 3. 在 [開始] 的頂端，以滑鼠右鍵按一下 [命令提示字元]，然後按一下 [以系統管理員身分執行]。 如果出現 [使用者帳戶控制] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [繼續]。
 4. 若要在來源網域控制站上手動起始網域控制站定位器資源記錄的註冊，請在命令提示字元中輸入下列命令，然後按 ENTER： `net stop netlogon && net start netlogon`
 5. 若要手動起始主機（A）資源記錄的註冊，請在命令提示字元中輸入下列命令，然後按 ENTER： `ipconfig /flushdns && ipconfig /registerdns`

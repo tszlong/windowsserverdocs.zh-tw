@@ -1,7 +1,6 @@
 ---
 ms.assetid: ac6604b0-7459-4ff3-af1c-4936897f5d14
 title: 委派預設容器與 OU 的管理
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 15c6688e32a7ebefbb2dd0fa1e53a4d72baef267
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a8523ee738b991714a9c8673b6faaff7d9003987
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408935"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822651"
 ---
 # <a name="delegating-administration-of-default-containers-and-ous"></a>委派預設容器與 OU 的管理
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 每個 Active Directory 網域都包含一組標準的容器和組織單位（Ou），會在安裝 Active Directory Domain Services （AD DS）期間建立。 包括以下各項：  
   
@@ -52,7 +51,7 @@ ms.locfileid: "71408935"
   
 |知名的使用者和群組|內建帳戶|  
 |--------------------------------|----------------------|  
-|Cert Publishers<br /><br />網域控制站<br /><br />Group Policy Creator Owners<br /><br />KRBTGT<br /><br />網域來賓<br /><br />Administrator<br /><br />Domain Admins<br /><br />架構管理員（僅限樹系根域）<br /><br />企業系統管理員（僅限樹系根域）<br /><br />網域使用者|Administrator<br /><br />Guest<br /><br />Guests<br /><br />Account Operators<br /><br />Administrators<br /><br />Backup Operators<br /><br />連入樹系信任構建者<br /><br />Print Operators<br /><br />Windows 2000 之前的相容存取<br /><br />Server Operators<br /><br />使用者|  
+|Cert Publishers<p>網域控制站<p>Group Policy Creator Owners<p>KRBTGT<p>網域來賓<p>系統管理員<p>Domain Admins<p>架構管理員（僅限樹系根域）<p>企業系統管理員（僅限樹系根域）<p>網域使用者|系統管理員<p>來賓<p>Guests<p>Account Operators<p>Administrators<p>Backup Operators<p>連入樹系信任構建者<p>Print Operators<p>Windows 2000 之前的相容存取<p>Server Operators<p>使用者|  
   
 ## <a name="domain-controller-ou"></a>網域控制站 OU  
 當網域控制站新增至網域時，其電腦物件會自動新增至網域控制站 OU。 此 OU 套用了一組預設的原則。 為確保這些原則會一致地套用至所有網域控制站，建議您不要將網域控制站的電腦物件移出此 OU。 如果無法套用預設原則，可能會導致網域控制站無法正常運作。  

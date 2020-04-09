@@ -1,30 +1,26 @@
 ---
 title: diskcomp
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: 適用于 diskcomp 的 Windows 命令主題，它會比較兩個磁片的內容。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4f56f534-a356-4daa-8b4f-38e089341e42
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ca5ea0f4587b21b2a274c772aab239668b7868b4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e36e644616e25659c1a2a5ca684e975fd06fc19f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377866"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80845551"
 ---
 # <a name="diskcomp"></a>diskcomp
 
+比較兩個磁片磁碟機的內容。 如果在沒有參數的情況下使用， **diskcomp**會使用目前的磁片磁碟機來比較這兩個磁片。
 
-
-比較兩個磁片磁碟機的內容。 如果在沒有參數的情況下使用， **diskcomp**會使用目前的磁片磁碟機來比較這兩個磁片。如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
 ## <a name="syntax"></a>語法
 
@@ -32,7 +28,7 @@ ms.locfileid: "71377866"
 diskcomp [<Drive1>: [<Drive2>:]]
 ```
 
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -107,7 +103,7 @@ diskcomp [<Drive1>: [<Drive2>:]]
 
   若要處理**diskcomp**傳回的結束代碼，您可以在 batch 程式的**if**命令列上使用 ERRORLEVEL 環境變數。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 如果您的電腦只有一個磁片磁碟機（例如磁片磁碟機 A），而您想要比較兩個磁片，請輸入：
 ```
@@ -131,7 +127,7 @@ goto exit
 echo ERROR: An irrecoverable error occurred 
 goto exit 
 :break 
-echo "You just pressed CTRL+C" to stop the comparison 
+echo You just pressed CTRL+C to stop the comparison 
 goto exit 
 :no_compare 
 echo Disks are not the same 
@@ -142,6 +138,6 @@ goto exit
 :exit
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

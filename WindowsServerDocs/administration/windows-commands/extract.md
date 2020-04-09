@@ -1,24 +1,20 @@
 ---
 title: extract
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 20dab03e-f6e1-4eb8-b8a1-fd6f1d97ee83
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 967f08e271019cc33970419179c9ddbf902b1882
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d66682126f1cc3c924c42b4605a537a997e8ac52
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377256"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844771"
 ---
 # <a name="extract"></a>extract
 
@@ -32,7 +28,7 @@ EXTRACT [/Y] source [newname]
 EXTRACT [/Y] /C source destination
 ```
 
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -47,6 +43,6 @@ EXTRACT [/Y] /C source destination
 |/L dir|要放置解壓縮檔案的位置（預設為目前的目錄）。|
 |/Y|覆寫現有檔案之前不提示。|
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

@@ -1,24 +1,20 @@
 ---
 title: bitsadmin setaclflag
-description: '**Bitsadmin setaclflag**的 Windows 命令主題-設定存取控制清單傳播旗標。'
-ms.custom: na
+description: 適用于 bitsadmin setaclflag 的 Windows 命令主題，其會設定存取控制清單傳播旗標。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6e3bcda0-827d-4dfd-8384-d1da018f3e10
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fbdb12c29af7b4db8b25846d43ee1c93b2454ff2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4ac47e554dde6a555e891d89668cd12fec3179d4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71380763"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80849671"
 ---
 # <a name="bitsadmin-setaclflag"></a>bitsadmin setaclflag
 
@@ -30,7 +26,7 @@ ms.locfileid: "71380763"
 bitsadmin /SetAclFlags <Job> <Flags>
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -41,13 +37,13 @@ bitsadmin /SetAclFlags <Job> <Flags>
 
 當作業從 Windows （SMB）共用下載資料時，會使用 SetAclFlags 參數來維護擁有者和存取控制清單資訊。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 下列範例會針對名為*myDownloadJob*的作業設定存取控制清單傳播旗標，以使用下載的檔案來維護擁有者和群組資訊。
 ```
 C:\>bitsadmin /setaclflags myDownloadJob OG
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

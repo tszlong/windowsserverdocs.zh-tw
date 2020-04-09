@@ -1,24 +1,20 @@
 ---
 title: wbadmin 取得專案
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: 適用于 wbadmin get items 的 Windows 命令主題，其中列出特定備份中包含的專案。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 27d08ce3-6e06-4260-b264-fc1bde132d09
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6c3cc532381321655bbd3d5549b3c9b1896b9280
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 781057bb450ab4b692c793f67d807e008efcf5d8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362409"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829751"
 ---
 # <a name="wbadmin-get-items"></a>wbadmin 取得專案
 
@@ -39,15 +35,15 @@ wbadmin get items
 [-machine:<BackupMachineName>]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
-|-版本|以 MM/DD/YYYY-HH： MM 格式指定備份的版本。 如果您不知道版本資訊，請輸入**wbadmin get 版本**。|
+|-version|以 MM/DD/YYYY-HH： MM 格式指定備份的版本。 如果您不知道版本資訊，請輸入**wbadmin get 版本**。|
 |-backupTarget|指定包含您想要其詳細資料之備份的儲存位置。 用於列出儲存于該目標位置的備份。 備份目標位置可以是本機連接的磁片磁碟機或遠端共用資料夾。 如果在建立備份的同一部電腦上執行**wbadmin get items**，則不需要此參數。 不過，若要取得從另一部電腦建立之備份的相關資訊，則需要此參數。|
-|-機器|指定您想要備份詳細資料的電腦名稱稱。 當多部電腦已備份到相同位置時很有用。 當指定 **-backupTarget**時，應該使用。|
+|-機器|指定您想要備份詳細資料的電腦名稱稱。 當多部電腦都已備份到相同位置時很有用。 當指定 **-backupTarget**時，應該使用。|
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 若要列出在2013年3月31日上午9:00 點執行的備份專案，請輸入：
 ```
@@ -58,8 +54,8 @@ wbadmin get items -version:03/31/2013-09:00
 wbadmin get items -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
--   [命令列語法關鍵](command-line-syntax-key.md)
+-   - [命令列語法關鍵](command-line-syntax-key.md)
 -   [Restore](wbadmin.md)
 -   [WBBackupSet](https://technet.microsoft.com/library/jj902473.aspx) Cmdlet

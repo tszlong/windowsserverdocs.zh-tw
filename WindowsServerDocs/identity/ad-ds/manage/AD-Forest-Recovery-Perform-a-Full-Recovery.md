@@ -1,6 +1,5 @@
 ---
 title: AD 樹系復原-執行完整伺服器復原
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 1a1182a6-4462-4a13-806e-0e642a0d5db2
 ms.technology: identity-adds
-ms.openlocfilehash: 1ade1f2e316387fbe84209c1bc7a986fff6f2a71
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bf321ae769aa6f0da1cebce7700ea429161a0956
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390545"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824011"
 ---
 # <a name="ad-forest-recovery---performing-a-full-server-recovery"></a>AD 樹系復原-執行完整伺服器復原 
 
@@ -51,7 +50,7 @@ ms.locfileid: "71390545"
    -  安裝驅動程式
    -  取消選取 [自動重新開機] 和 [檢查磁片錯誤] 的 [ **Advanced** ] 功能。 預設會啟用這些功能。
    ![伺服器還原](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore6.png)
-8. 按一下 **\[下一步\]** 。
+8. 按 [下一步]。
 9. 按一下 **[完成]** 。 系統會提示您是否確定要繼續。 按一下 [是]。 
    ![伺服器還原](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore11.png) 
 10. 一旦此動作完成，就會如[AD 樹系復原-執行 DFSR 複寫 SYSVOL 的授權同步](AD-Forest-Recovery-Authoritative-Recovery-SYSVOL.md)處理中所述，執行 SYSVOL 的授權還原。
@@ -75,7 +74,7 @@ ms.locfileid: "71390545"
     - 格式化和重新分割磁片
     - 安裝驅動程式
     - 取消選取 [自動重新開機] 和 [檢查磁片錯誤] 的 [ **Advanced** ] 功能。 預設會啟用這些功能。
-12. 按一下 **\[下一步\]** 。
+12. 按 [下一步]。
 13. 按一下 **[完成]** 。 系統會提示您是否確定要繼續。 按一下 [是]。  
 14. 一旦此動作完成，就會如[AD 樹系復原-執行 DFSR 複寫 SYSVOL 的授權同步](AD-Forest-Recovery-Authoritative-Recovery-SYSVOL.md)處理中所述，執行 SYSVOL 的授權還原。
 
@@ -84,9 +83,9 @@ ms.locfileid: "71390545"
 如果您需要從命令提示字元啟用網路介面卡，以從網路共用還原，請使用下列步驟。
 
 1. 啟動 Windows 安裝程式，指定語言、時間和貨幣格式，以及鍵盤選項，然後按 **[下一步]** 。 
-2. 按一下 **\[修復您的電腦\]** 。 怎樣
+2. 按一下 **\[修復您的電腦\]** 。 I
 3. 按一下 [**疑難排解**]，然後按一下 [**命令提示**字元]。 
-4. 輸入下列命令，然後按 ENTER：  
+4. 輸入下列命令，然後按下 ENTER：  
 
    ```  
    wpeinit  
@@ -120,7 +119,7 @@ ms.locfileid: "71390545"
    set address "Name of Network Adapter" static IPv4 Address SubnetMask IPv4 Gateway Address 1  
    ```  
 
-   例如：  
+   例如，  
   
    ```  
    set address "Local Area Connection" static 192.168.1.2 255.0.0.0 192.168.1.1 1  

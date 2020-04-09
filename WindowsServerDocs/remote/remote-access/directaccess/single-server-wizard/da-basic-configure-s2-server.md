@@ -2,22 +2,18 @@
 title: 步驟2設定基本 DirectAccess 伺服器
 description: 本主題是使用適用于 Windows Server 2016 的消費者入門 Wizard 部署單一 DirectAccess 伺服器指南的一部分
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 82bf5fed-93b3-4fa6-8e71-522146eccdb1
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6faa40428df424f60637fb206641d8bae2774c79
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: adadac26a914ebf0d218d1945ab375c87ac8ebb9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308938"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819431"
 ---
 # <a name="step-2-configure-the-basic-directaccess-server"></a>步驟2設定基本 DirectAccess 伺服器
 

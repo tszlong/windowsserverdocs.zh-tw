@@ -3,17 +3,17 @@ ms.assetid: 56fc7f80-9558-467e-a6e9-a04c9abbee33
 title: 容錯網域感知
 ms.prod: windows-server
 ms.author: cosdar
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-failover-clustering
 ms.topic: article
 author: cosmosdarwin
 ms.date: 09/16/2016
-ms.openlocfilehash: 439f898b7c96ecc3d2f380509fe86d528aa737c5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4e42333ecc80ab7401b6e39151377baa86dcf190
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361138"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827751"
 ---
 # <a name="fault-domain-awareness"></a>容錯網域感知
 
@@ -58,7 +58,7 @@ ms.locfileid: "71361138"
 
 ![不同容錯網域層級的圖表](media/Fault-Domains-in-Windows-Server-2016/levels-of-fault-domains.png)
 
-## <a name="usage"></a>用途  
+## <a name="usage"></a>使用方式  
 您可以使用 PowerShell 或 XML 標記來指定容錯網域。 這兩種方法是一樣的，而且都可以提供完整功能。
 
 >[!IMPORTANT]
@@ -193,7 +193,7 @@ Set-ClusterFaultDomainXML -XML $xml
 
 [![按一下以查看簡短影片，示範將位置描述項新增至容錯網域的值](media/Fault-Domains-in-Windows-Server-2016/part-4-location-description.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-4-Location-Description)
 
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
 - [開始使用 Windows Server 2019](https://docs.microsoft.com/windows-server/get-started-19/get-started-19)  
 - [Windows Server 2016 入門](https://docs.microsoft.com/windows-server/get-started/server-basics)  
 -   [儲存空間直接存取總覽](../storage/storage-spaces/storage-spaces-direct-overview.md) 

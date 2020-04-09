@@ -1,7 +1,6 @@
 ---
 ms.assetid: 231158d8-5e81-4630-b8d5-93fee16e0cd3
 title: 識別功能等級升級
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,18 +8,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e43bec8a8d61cd0f6fd82982d5e3a0f01984fc65
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 920f051ef188670f81233098ba38370900e015ae
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408783"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822351"
 ---
 # <a name="identifying-your-functional-level-upgrade"></a>識別功能等級升級
 
 >適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-您必須先評估目前的環境，並找出最符合您組織需求的功能等級需求，才能提高網域和樹系功能等級。 識別樹系中的網域、位於每個網域中的網域控制站、每個網域控制站執行的作業系統和 service pack，以及您打算升級網域的日期，以評估您目前的環境。控制器. 如果您打算淘汰網域控制站，請確定您瞭解這對您的環境所造成的完整影響。  
+您必須先評估目前的環境，並找出最符合您組織需求的功能等級需求，才能提高網域和樹系功能等級。 識別樹系中的網域、位於每個網域中的網域控制站、每個網域控制站執行的作業系統和 service pack，以及您打算升級網域控制站的日期，以評估您目前的環境。 如果您打算淘汰網域控制站，請確定您瞭解這對您的環境所造成的完整影響。  
   
 下列情況可能會讓您無法將舊版的 Windows Server 作業系統升級至 Windows Server 2008 或 Windows Server 2008 R2 功能等級：  
   
@@ -60,7 +59,7 @@ ms.locfileid: "71408783"
     > [!IMPORTANT]  
     >  Windows Server 2008 R2 是以 x64 為基礎的作業系統。 如果您的伺服器執行的是 x64 版本的 Windows Server 2003，您可以順利地將這部電腦的作業系統就地升級到 Windows Server 2008 R2。 如果您的伺服器執行的是 x86 版本的 Windows Server 2003，就無法將這部電腦升級到 Windows Server 2008 R2。  
   
-若要使用 Windows Server 2008 或 Windows Server 2008 R2 網域層級功能，而不將整個 Windows 2000 樹系升級至 Windows Server 2008 或 Windows Server 2008 R2，請只將網域功能等級提高至 Windows Server 2008 或 Windows Server 2008R2、windows.  
+若要使用 Windows Server 2008 或 Windows Server 2008 R2 網域層級功能，而不將整個 Windows 2000 樹系升級至 Windows Server 2008 或 Windows Server 2008 R2，請只將網域功能等級提高至 Windows Server 2008 或 Windows Server 2008 R2。  
   
 > [!NOTE]  
 > 提高網域功能等級之前，您必須將該網域中的所有 Windows 2000 型網域控制站升級至 Windows Server 2008 或 Windows Server 2008 R2。  
@@ -101,7 +100,7 @@ ms.locfileid: "71408783"
   
 -   Windows 2000 樹系功能等級  
   
-功能等級是在這些預設層級設定，可讓您選擇將 Windows 2000 或 Windows Server 2003 架構的網域控制站新增至新的 Windows Server 2008 樹系。 建立樹系根域之後，您新增至 Windows Server 2008 樹系的每個網域的網域功能等級都會設定為 Windows 2000 native。 不過，如果您想要讓新的 Windows Server 2008 環境中的所有網域控制站執行 Windows Server 2008，請將樹系功能等級和網域功能等級設定為 Windows Server 2008 （當您在 fores 中安裝第一個網域控制站時）。而已. 這麼做可以節省時間，並啟用 Windows Server 2008 中的所有樹系層級和網域層級功能。  
+功能等級是在這些預設層級設定，可讓您選擇將 Windows 2000 或 Windows Server 2003 架構的網域控制站新增至新的 Windows Server 2008 樹系。 建立樹系根域之後，您新增至 Windows Server 2008 樹系的每個網域的網域功能等級都會設定為 Windows 2000 native。 不過，如果您要讓新的 Windows Server 2008 環境中的所有網域控制站執行 Windows Server 2008，請將樹系功能等級和網域功能等級設定為 Windows Server 2008 （當您在樹系中安裝第一個網域控制站時）。 這麼做可以節省時間，並啟用 Windows Server 2008 中的所有樹系層級和網域層級功能。  
   
 > [!IMPORTANT]  
 > 如果樹系操作的是 Windows Server 2008 功能等級，而且您嘗試在 Windows Server 2003 型成員伺服器或 Windows 2000 成員伺服器上安裝 Active Directory，則安裝會失敗。  
@@ -115,7 +114,7 @@ ms.locfileid: "71408783"
   
 -   Windows Server 2003 樹系功能等級  
   
-功能等級是在這些預設層級設定，可讓您選擇將 Windows Server 2003 網域控制站新增至新的 Windows Server 2008 R2 樹系。 建立樹系根域之後，您新增至 Windows Server 2008 R2 樹系的每個網域的網域功能等級都會設定為 Windows Server 2003。 不過，如果您想要讓新的 Windows Server 2008 R2 環境中的所有網域控制站執行 Windows Server 2008 R2，請將樹系功能等級和網域功能等級設定為 Windows Server 2008 R2 （當您在 yo 中安裝第一個網域控制站時）您的樹系。 這麼做可以節省時間，並啟用 Windows Server 2008 R2 中的所有樹系層級和網域層級功能。  
+功能等級是在這些預設層級設定，可讓您選擇將 Windows Server 2003 網域控制站新增至新的 Windows Server 2008 R2 樹系。 建立樹系根域之後，您新增至 Windows Server 2008 R2 樹系的每個網域的網域功能等級都會設定為 Windows Server 2003。 不過，如果您想要讓新的 Windows Server 2008 R2 環境中的所有網域控制站執行 Windows Server 2008 R2，請將樹系功能等級和網域功能等級設定為 Windows Server 2008 R2 （當您在樹系中安裝第一個網域控制站時）。 這麼做可以節省時間，並啟用 Windows Server 2008 R2 中的所有樹系層級和網域層級功能。  
   
 > [!IMPORTANT]  
 > 如果樹系在 Windows Server 2008 R2 功能等級運作，而您嘗試在 Windows Server 2008 或 Windows Server 2003 型成員伺服器或 Windows 2000 成員伺服器上安裝 Active Directory，則安裝會失敗。  

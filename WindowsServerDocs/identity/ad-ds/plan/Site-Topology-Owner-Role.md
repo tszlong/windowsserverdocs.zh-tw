@@ -1,7 +1,6 @@
 ---
 ms.assetid: af76ddbe-83a2-4a62-9989-873e3bb1c772
 title: 站台拓撲擁有者角色
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 7b010dcb7a150f4ebcfcc941aa9e5c016795e717
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1e90c88db6a40de48444e047628abcee6cc3673b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402495"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821821"
 ---
 # <a name="site-topology-owner-role"></a>站台拓撲擁有者角色
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 管理網站拓撲的系統管理員稱為「網站拓撲擁有者」。 網站拓朴擁有者瞭解網站間的網路狀況，並有權變更 Active Directory Domain Services （AD DS）中的設定，以執行網站拓撲的變更。 網站拓朴的變更會影響複寫拓撲中的變更。 網站拓朴擁有者的責任包括：  
   

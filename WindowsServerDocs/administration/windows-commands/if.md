@@ -1,24 +1,20 @@
 ---
 title: if
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 698b3fb9-532b-4c2b-af7f-179f8dc57131
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e8518fffc4f271369b13899e149ebd30145726b8
-ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
+ms.openlocfilehash: 706ac1569ac3ca7ae504410935f334be360eda3a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76259028"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80842231"
 ---
 # <a name="if"></a>if
 
@@ -42,11 +38,11 @@ if cmdextversion <Number> <Command> [else <Expression>]
 if defined <Variable> <Command> [else <Expression>]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
-|        參數        |                                                                                                                                                                                                                說明                                                                                                                                                                                                                 |
+|        參數        |                                                                                                                                                                                                                描述                                                                                                                                                                                                                 |
 |-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|           否           |                                                                                                                                                                              指定只有在條件為 false 時，才執行命令。                                                                                                                                                                              |
+|           not           |                                                                                                                                                                              指定只有在條件為 false 時，才執行命令。                                                                                                                                                                              |
 |  errorlevel \<數目 >   |                                                                                                                                                      只有在 Cmd.exe 執行的先前程式傳回的結束代碼等於或大於*數位*時，才指定 true 條件。                                                                                                                                                       |
 |       \<命令 >        |                                                                                                                                                                            指定在符合前述條件時應執行的命令。                                                                                                                                                                             |
 |  \<String1 > = =<String2>  |                                                                                                             只有在*String1*和*String2*相同時，才指定 true 條件。 這些值可以是常值字串或批次變數（例如，%1）。 您不需要將常值字串括在引號中。                                                                                                              |
@@ -68,9 +64,9 @@ if defined <Variable> <Command> [else <Expression>]
     -   **% cmdextversion%** 會展開為目前**cmdextversion**值的字串表示。 這會假設沒有名為 CMDEXTVERSION 的現有環境變數（如果有的話），您會改為取得 CMDEXTVERSION 值。
 -   在**if**之後，您必須在命令的同一行上使用**else**子句。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
-若要顯示訊息「找不到資料檔」，如果找不到檔案產品，請輸入：
+若要顯示 [找不到檔案時找不到資料檔案] 訊息，請輸入：
 ```
 if not exist product.dat echo Cannot find data file 
 ```
@@ -110,15 +106,15 @@ echo The Product.dat file is missing.
 > :end
 > echo Done! 
 > ```
-> 若要移至 "ok" 標籤，如果 ERRORLEVEL 環境變數的值小於或等於1，請輸入：
+> 若要移至 [ok] 標籤，如果 ERRORLEVEL 環境變數的值小於或等於1，請輸入：
 > ```
 > if %errorlevel% LEQ 1 goto okay
 > ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)
 
-[If](if.md)
+[只有](if.md)
 
 [Goto](goto.md)

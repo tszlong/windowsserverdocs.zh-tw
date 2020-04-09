@@ -1,56 +1,56 @@
 ---
 title: bitsadmin getnotifyflags
-description: '**Bitsadmin getnotifyflags**的 Windows 命令主題-抓取指定之作業的通知旗標。'
-ms.custom: na
+description: 適用于**bitsadmin getnotifyflags**的 Windows 命令主題，它會抓取指定之作業的通知旗標。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d4657e6c-8959-4db7-a4af-e73d3f80ecf8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 56ee3a30050b6cc934b35bab24e9508911ea250e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3138baea05f793cfb587d3f8fb669d446daea6b5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71381485"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80850581"
 ---
 # <a name="bitsadmin-getnotifyflags"></a>bitsadmin getnotifyflags
-
-
 
 抓取指定之作業的通知旗標。
 
 ## <a name="syntax"></a>語法
 
 ```
-bitsadmin /GetNotifyFlags <Job>
+bitsadmin /getnotifyflags <job>
 ```
 
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
-|參數|描述|
-|---------|-----------|
-|Job|作業的顯示名稱或 GUID|
+| 參數 | 描述 |
+| -------------- | -------------- |
+| 工作 | 作業的顯示名稱或 GUID。 |
 
 ## <a name="remarks"></a>備註
 
-作業可以包含下列一個或多個通知旗標。
+作業可以包含下列一個或多個通知旗標：
 
-|-----|-----| | 0x001 |當作業中的所有檔案都已轉移時，產生事件。 || 0x002 |發生錯誤時產生事件。 || 0x004 |停用通知。 || 0x008 |在修改作業或進行傳輸進度時，產生事件。 |
+| Flag | 描述 |
+| ----- | ----- |
+| 0x001 | 當作業中的所有檔案都已轉移時，產生事件。 |
+| 0x002 | 發生錯誤時產生事件。 |
+| 0x004 | 停用通知。 |
+| 0x008 | 在修改作業或傳送進度時產生事件。 |
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 下列範例會抓取名為*myDownloadJob*之作業的通知旗標。
+
 ```
-C:\>bitsadmin /GetNotifyFlags myDownloadJob
+C:\>bitsadmin /getnotifyflags myDownloadJob
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

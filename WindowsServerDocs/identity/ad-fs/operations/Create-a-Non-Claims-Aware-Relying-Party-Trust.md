@@ -1,7 +1,6 @@
 ---
 ms.assetid: 7b7ae389-5032-44f7-9c0a-94398c3e4d88
 title: 建立一個非宣告感知信賴憑證者信任
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b0ea877170a07db6abe9ac82e72d1722600ec933
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c6886145e910b76edbe99549266d651cdd7c3edf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358106"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816921"
 ---
 # <a name="create-a-non-claims-aware-relying-party-trust"></a>建立非宣告感知信賴憑證者信任
 
@@ -25,7 +24,7 @@ ms.locfileid: "71358106"
   
 若要新增非\-宣告\-感知信賴憑證者信任，請使用中的 AD FS 管理嵌入式管理單元\-，執行下列程式。  
   
-若要完成此程序，至少需要本機電腦上之 **Administrators** 群組的成員資格或同等權限。  請參閱[本機與網域的預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中關於使用適當帳戶和群組成員資格的詳細資料。   
+若要完成此程序，至少需要本機電腦之 **Administrators** 群組的成員資格或同等權限。  請參閱[本機與網域的預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中關於使用適當帳戶和群組成員資格的詳細資料。   
   
 ## <a name="to-create-a-non-claims-aware-relying-party-trust-manually"></a>手動建立非宣告感知信賴憑證者信任 
 1. 在伺服器管理員中，按一下 [**工具**]，然後選取 [ **AD FS 管理**]。  
@@ -51,5 +50,5 @@ ms.locfileid: "71358106"
 8. 在 [完成] 頁面上，按一下 [關閉]。 此動作會自動顯示 [編輯宣告規則] 對話方塊。  
 ![信賴憑證者](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon6.PNG)  
   
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
 [AD FS 操作](../../ad-fs/AD-FS-2016-Operations.md) 

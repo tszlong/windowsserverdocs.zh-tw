@@ -1,24 +1,25 @@
 ---
 title: 叢集親和性
 ms.prod: windows-server
-ms.manager: eldenc
+manager: eldenc
 ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
+ms.author: johnmar
 ms.date: 03/07/2019
 description: 本文說明容錯移轉叢集親和性和 antiAffinity 層級
-ms.openlocfilehash: 9a269d2b14e953daee849008a473c750dfbfe84b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c9910cac602802b753391fad1009fb7f1fa3d2f2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361463"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828281"
 ---
 # <a name="cluster-affinity"></a>叢集親和性
 
-> 適用於：Windows Server 2019、Windows Server 2016
+> 適用于： Windows Server 2019、Windows Server 2016
 
-容錯移轉叢集可以保存許多可在節點之間移動並執行的角色。  有些時候，某些角色（例如虛擬機器、資源群組等）不應該在相同的節點上執行。  這可能是因為資源耗用量、記憶體使用量等。例如，有兩部虛擬機器耗用記憶體和 CPU，而且如果兩部虛擬機器在相同的節點上執行，則其中一部或兩部虛擬機器可能會影響效能問題。  本文將說明叢集 antiaffinity 層級，以及您可以如何使用它們。
+容錯移轉叢集可以保存許多可在節點之間移動並執行的角色。  有些時候，某些角色（例如虛擬機器、資源群組等）不應該在相同的節點上執行。  這可能是因為資源耗用量、記憶體使用量等。 例如，有兩部虛擬機器耗用記憶體和 CPU，而且如果兩部虛擬機器在相同的節點上執行，則其中一部或兩部虛擬機器可能會影響效能問題。  本文將說明叢集 antiaffinity 層級，以及您可以如何使用它們。
 
 ## <a name="what-is-affinity-and-antiaffinity"></a>什麼是親和性和 AntiAffinity？
 
@@ -86,7 +87,7 @@ AntiAffinityClassName 參數是「軟性」區塊。  也就是說，它會嘗�
 - 請記住，在雙節點案例和 ClusterEnforcedAntiAffinity 中，如果某個節點已關閉，這兩個群組將不會執行。  
 
 - 在群組上使用慣用的擁有者，可以在三個或更多節點叢集中與 AntiAffinity 結合。
-- 只有在資源回收之後，才會發生 AntiAffinityClassNames 和 ClusterEnforcedAntiAffinity 設定。 I.E. 您可以設定它們，但如果兩個群組在設定的相同節點上都處於線上狀態，則兩者都會繼續保持線上狀態。
+- 只有在資源回收之後，才會發生 AntiAffinityClassNames 和 ClusterEnforcedAntiAffinity 設定。 亦即. 您可以設定它們，但如果兩個群組在設定的相同節點上都處於線上狀態，則兩者都會繼續保持線上狀態。
 
 
 

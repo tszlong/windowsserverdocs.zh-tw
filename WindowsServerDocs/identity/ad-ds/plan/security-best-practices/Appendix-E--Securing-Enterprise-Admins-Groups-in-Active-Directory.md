@@ -1,7 +1,6 @@
 ---
 ms.assetid: f643099e-f9c6-476f-9378-5a9228c39b33
 title: 附錄 E-保護 Active Directory 中的 Enterprise Admins 群組
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 51337e5d4940a490045e146d32408d4f709bb6ed
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5294be945ce4a93ffeb1c27cffa8a82470920e7b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408710"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821631"
 ---
 # <a name="appendix-e-securing-enterprise-admins-groups-in-active-directory"></a>附錄 E︰保護 Active Directory 中的 Enterprise Admins 群組
 
@@ -238,7 +237,7 @@ ms.locfileid: "71408710"
 
 7.  在 [**程式/腳本**] 底下，按一下 **[流覽]** ，找出並選取建立**批次檔**一節中建立的批次檔，然後按一下 [**開啟**]。  
 
-8.  按一下 **\[確定\]** 。  
+8.  按一下 [確定]。  
 
 9. 按一下 [一般] 索引標籤。  
 
@@ -248,7 +247,7 @@ ms.locfileid: "71408710"
 
 12. 選取 **[執行]，無論使用者是否登入**，並選取 [不要**儲存密碼**]。 此工作只會存取本機電腦資源。  
 
-13. 按一下 **\[確定\]** 。  
+13. 按一下 [確定]。  
 
 14. 對話方塊應該會出現，要求使用者帳號憑證才能執行工作。  
 

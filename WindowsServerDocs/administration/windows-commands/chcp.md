@@ -1,28 +1,22 @@
 ---
 title: chcp
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: 適用于 chcp 的 Windows 命令主題，會變更使用中的主控台字碼頁。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dc7b1c71-7b80-443d-9cf1-9bcf305aa1fd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d5784b052ff1d7084d68cca0589caf518b8e44a8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e644cf8544d135c5d21c344b0fd0a3364c7f89c1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379533"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847941"
 ---
 # <a name="chcp"></a>chcp
-
-
 
 變更 active 主控台字碼頁。 如果使用時不含參數，則**chcp**會顯示作用中主控台字碼頁的數目。
 
@@ -34,7 +28,7 @@ ms.locfileid: "71379533"
 chcp [<NNN>]
 ```
 
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -64,7 +58,7 @@ chcp [<NNN>]
 -   您不需要準備字碼頁（如 MS-DOS 中的）。
 -   您在指派新字碼頁之後啟動的程式會使用新的字碼頁。 不過，在您指派新字碼頁之前啟動的程式（Cmd.exe 除外），會使用原始字碼頁。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 若要查看作用中的字碼頁設定，請輸入：
 ```
@@ -82,6 +76,6 @@ chcp 850
 
 `Invalid code page`
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

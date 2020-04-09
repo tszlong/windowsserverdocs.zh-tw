@@ -9,12 +9,12 @@ author: jasongerend
 ms.author: jgerend
 manager: lizapo
 ms.date: 10/09/2019
-ms.openlocfilehash: 130b51e472ebf3d900186d6d63e318c88a340579
-ms.sourcegitcommit: e2964a803cba1b8037e10d065a076819d61e8dbe
+ms.openlocfilehash: 21f6ac91faefa17f153df43fbd2530a2c8c0f713
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72252357"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847781"
 ---
 # <a name="chkdsk"></a>chkdsk
 
@@ -37,7 +37,7 @@ ms.locfileid: "72252357"
 chkdsk [<Volume>[[<Path>]<FileName>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<Size>]] [/b]  
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |      參數       |                  描述                                    |
 | -------------------- | ------------------------------------------------------------------------ |
@@ -52,8 +52,8 @@ chkdsk [<Volume>[[<Path>]<FileName>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<Size>]
 |    /l [：\<大小 >]     | 僅使用 NTFS。 將記錄檔大小變更為您輸入的大小。 如果您省略 size 參數， **/l**會顯示目前的大小。 |
 |         /b          | 僅限 NTFS：清除磁片區上的錯誤叢集清單，並重新掃描所有已配置和可用的叢集是否有錯誤。 **/b**包含 **/r**的功能。 將磁片區映射處理到新的硬碟之後，請使用此參數。            |
 | /scan               | 僅限 NTFS：在磁片區上執行線上掃描。 |
-| /forceofflinefix    | 僅限 NTFS：（必須與 "/scan" 一起使用）。 略過所有線上修復;所有找到的缺失都會排入離線修復的佇列（亦即 "chkdsk/spotfix"）。 |
-| /perf               | 僅限 NTFS：（必須與 "/scan" 一起使用）。 使用更多系統資源，以快速 aspossible 的方式來完成掃描。 對於在系統上執行的其他工作，這可能會對效能造成負面影響。|
+| /forceofflinefix    | 僅限 NTFS：（必須與/scan 一起使用）。 略過所有線上修復;所有找到的缺失都會排入離線修復的佇列（亦即 chkdsk/spotfix）。 |
+| /perf               | 僅限 NTFS：（必須與/scan 一起使用）。 使用更多系統資源，以快速 aspossible 的方式來完成掃描。 對於在系統上執行的其他工作，這可能會對效能造成負面影響。|
 | /spotfix            | 僅限 NTFS：在磁片區上執行點修正。 |
 | /sdcleanup          | 僅限 NTFS：垃圾收集不必要的安全描述項資料（隱含/F）。 |
 | /offlinescanandfix  | 在磁片區上執行離線掃描和修正。 |
@@ -144,4 +144,4 @@ chkdsk *.*
 
 ## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

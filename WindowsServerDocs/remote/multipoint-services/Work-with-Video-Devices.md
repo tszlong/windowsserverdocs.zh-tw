@@ -1,24 +1,20 @@
 ---
 title: 使用視訊裝置
 description: 瞭解視頻監視器與投影機如何使用 MultiPoint 服務中的工作站
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2f7f5a97-efd2-4184-8ad3-cf029d615eab
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: b7019000c99295204f196ee918129cded02e084f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6b967d4523058fe1dfcb086e5918f84257bd51bf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389255"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820441"
 ---
 # <a name="work-with-video-devices"></a>使用視訊裝置
 了解視訊裝置 (例如監視器或投影機) 連接到 MultiPoint 服務系統中的電腦或 MultiPoint 服務「站台」時的運作方式。  
@@ -53,9 +49,9 @@ ms.locfileid: "71389255"
   
 -   您可能需要取得轉接頭或轉換裝置，才能在 DVI 與 VGA 插頭之間轉換。  
   
--   使用 "Y" 型分接纜線可能會降低兩個視訊裝置上的視訊品質。  
+-   使用「Y」分隔器纜線可能會降低兩部視頻裝置上的視頻品質。  
   
--   透過 "Y" 型分接纜線同時使用投影機和監視器時，MultiPoint 服務會將兩個裝置的螢幕解析度調整為兩個裝置中最大解析度較低者的解析度，通常是投影機的解析度。  
+-   透過「Y」分隔器纜線同時使用投影機和監視器時，MultiPoint 服務會將這兩部裝置的螢幕解析度調整為任一裝置的最低解析度（通常是投影機）。  
   
 -   MultiPoint 服務不支援跨多個監視器擴充單一工作站的顯示。  
   

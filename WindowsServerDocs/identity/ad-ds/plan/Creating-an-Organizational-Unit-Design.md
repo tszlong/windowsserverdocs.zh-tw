@@ -1,7 +1,6 @@
 ---
 ms.assetid: b8df1828-5ead-4c90-b0fe-95c675116b7c
 title: 建立組織單位設計
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: a699a30cce3b330c434fdb3784214de3a2daa403
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 718cb4ed8efebbd92f13db67cc4b8f86ac9feb56
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408950"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822731"
 ---
 # <a name="creating-an-organizational-unit-design"></a>建立組織單位設計
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 樹系擁有者負責建立其網域的組織單位（OU）設計。 建立 OU 設計牽涉到設計 OU 結構、指派 OU 擁有者角色，以及建立帳戶和資源 Ou。  
   
@@ -27,7 +26,7 @@ ms.locfileid: "71408950"
 ## <a name="ou-owner-role"></a>OU 擁有者角色  
 樹系擁有者會為您為網域設計的每個 OU 指定 OU 擁有者。 OU 擁有者是在 Active Directory Domain Services （AD DS）中控制物件之子樹的資料管理員。 OU 擁有者可以控制管理委派的方式，以及如何將原則套用至其 OU 內的物件。 他們也可以建立新的子樹，並委派管理這些子樹中的 Ou。  
   
-因為 OU 擁有者並未擁有或控制目錄服務的作業，所以您可以區分目錄服務的擁有權和管理，以取得物件的擁有權和管理，進而減少擁有高階的服務系統管理員數目存取權。  
+因為 OU 擁有者並未擁有或控制目錄服務的作業，所以您可以區分目錄服務的擁有權和管理，以取得物件的擁有權和管理，進而減少具有高階存取權的服務系統管理員數目。  
   
 Ou 提供系統管理自主性，以及控制目錄中物件可見度的方法。 Ou 提供與其他資料管理員的隔離，但不提供與服務系統管理員的隔離。 雖然 OU 擁有者對物件的子樹有控制權，但樹系擁有者仍會保有所有子樹狀目錄的完整控制權。 這可讓樹系擁有者更正錯誤，例如存取控制清單（ACL）中的錯誤，以及在資料管理員終止時回收委派的子樹。  
   
@@ -41,7 +40,7 @@ Ou 提供系統管理自主性，以及控制目錄中物件可見度的方法�
   
 記錄您的 OU 設計是很重要的。 列出您打算建立的 Ou 名稱。 而且，針對每個 OU，記錄 OU 的類型、OU 擁有者、父 OU （如果適用的話），以及該 OU 的來源。  
   
-如需協助您記錄 OU 設計的工作表，請從適用于 Windows Server 2003 部署套件的作業輔助（[https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)）下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services，並開啟「識別每個網域的 ou」（DSSLOGI_9）。  
+如需協助您記錄 OU 設計的工作表，請從適用于 Windows Server 2003 部署套件（[https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)）的工作輔助下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，並開啟「識別每個網域的 ou」（DSSLOGI_9 .doc）。  
   
 ## <a name="in-this-section"></a>本節內容  
   

@@ -1,6 +1,5 @@
 ---
 title: AD 樹系復原-使 RID 集區失效
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 2f5f84df-bd85-4ca4-bdd3-835bd1d45c11
 ms.technology: identity-adds
-ms.openlocfilehash: c3c477e21a455e5e5777da00b064ca7a02672571
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9e693f6f30fb721897eaaac89b3d146c57e0e63f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390406"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823921"
 ---
 # <a name="ad-forest-recovery---invalidating-the-current-rid-pool"></a>AD 樹系復原-使目前的 RID 集區失效  
 
->適用於：Windows Server 2016、Windows Server 2012 及 2012 R2、Windows Server 2008 和 2008 R2
+>適用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
 請使用下列程式，讓 Windows PowerShell 在網域控制站上使目前的 RID 集區失效。 Windows PowerShell 在 Windows Server 2012 和 Windows Server 2008 R2 上預設為啟用，但不是 Windows Server 2008，必須使用 [**新增功能**] 來安裝。 您可以[下載](https://www.microsoft.com/download/details.aspx?id=20020)它以在 Windows Server 2003 上執行。  
 

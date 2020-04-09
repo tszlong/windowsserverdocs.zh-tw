@@ -1,24 +1,20 @@
 ---
 title: ksetup： mapuser
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 84113e6e-89ff-488a-9cd0-f14bbf23b543
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6b80538999c364e9ed10ca0ed43387f603ac9ad3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f61c67fa21eccb77601b78aed51791259d609c5e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374985"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80841481"
 ---
 # <a name="ksetupmapuser"></a>ksetup： mapuser
 
@@ -32,12 +28,12 @@ ms.locfileid: "71374985"
 ksetup /mapuser <Principal> <Account>
 ```
 
-### <a name="parameters"></a>參數
+#### <a name="parameters"></a>參數
 
 |  參數   |                                                   描述                                                   |
 |--------------|-----------------------------------------------------------------------------------------------------------------|
-| \<Principal > |              任何主體的完整功能變數名稱;例如，mike@corp.CONTOSO.COM。              |
-|  \<Account >  | 存在於此電腦上的任何帳戶或安全性群組名稱，例如 [來賓]、[網域使用者] 或 [系統管理員]。 |
+| \<主體 > |              任何主體的完整功能變數名稱;例如，mike@corp.CONTOSO.COM。              |
+|  \<帳戶 >  | 存在於此電腦上的任何帳戶或安全性群組名稱，例如 [來賓]、[網域使用者] 或 [系統管理員]。 |
 
 ## <a name="remarks"></a>備註
 
@@ -51,7 +47,7 @@ ksetup /mapuser <Principal> <Account>
 
 每當對外部金鑰發佈中心（KDC）和領域設定進行變更時，就需要重新開機已變更設定的電腦。
 
-## <a name="BKMK_Examples"></a>典型
+## <a name="examples"></a><a name=BKMK_Examples></a>典型
 
 將 Kerberos 領域 CONTOSO 內的 Mike Danseglio 帳戶對應到這部電腦上的 guest 帳戶，授與他內建來賓帳戶成員的擁有權限，而不需向此電腦驗證：
 ```
@@ -70,7 +66,7 @@ ksetup /mapuser mike@corp.CONTOSO.COM *
 ksetup /mapuser * *
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
--   [命令列語法關鍵](command-line-syntax-key.md)
+-   - [命令列語法關鍵](command-line-syntax-key.md)
 -   [Ksetup](ksetup.md)

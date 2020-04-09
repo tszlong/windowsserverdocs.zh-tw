@@ -1,24 +1,20 @@
 ---
 title: 更新同步處理設定
 description: Windows Server Update Service （WSUS）主題-如何設定和設定更新同步處理
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ddd5c395-451b-44a0-8e08-a05db26d2282
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9c7bca5be7a8ec0e857cba65680fbc3b967af4f8
-ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
+ms.openlocfilehash: f4da028b2100d824b55c00c185f8b90df7d787bf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80639748"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828540"
 ---
 # <a name="setting-up-update-synchronizations"></a>更新同步處理設定
 
@@ -89,7 +85,7 @@ WSUS 伺服器會根據您指定的產品或產品系列（例如，Windows 或 
 
 -   您可以指定自訂埠進行同步處理。 如需設定埠的詳細資訊，請參閱《 WSUS 部署指南》中的[步驟3：設定 wsus](../deploy/2-configure-wsus.md) 。
 
--   您可以使用安全通訊端層（SSL）來保護 WSUS 伺服器之間更新資訊的同步處理。 如需使用 SSL 的詳細資訊，請參閱「3.5」一節。 保護 wsus 與安全通訊端層通訊協定」的[步驟3：](../deploy/2-configure-wsus.md)在 wsus 部署指南中設定 wsus。
+-   您可以使用安全通訊端層（SSL）來保護 WSUS 伺服器之間更新資訊的同步處理。 如需使用 SSL 的詳細資訊，請參閱第3.5 節。 使用[步驟3：](../deploy/2-configure-wsus.md)在 wsus 部署指南中設定 wsus 的安全通訊端層通訊協定來保護 wsus。
 
 ## <a name="synchronizing-manually-or-automatically"></a>手動或自動同步處理
 您可以手動同步處理您的 WSUS 伺服器，或指定自動同步處理的時間。

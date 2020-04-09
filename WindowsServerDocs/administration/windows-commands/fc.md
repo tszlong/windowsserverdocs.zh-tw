@@ -1,24 +1,20 @@
 ---
 title: fc
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 485fc3d8-b7c5-496d-87be-0011112f27d5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f6c004fcebcf5eb743354d9e0a121ff8598217a4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4b358b8c1bf44b5b7942cef05bd09fa8cac850a3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377255"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844741"
 ---
 # <a name="fc"></a>fc
 
@@ -35,7 +31,7 @@ fc /a [/c] [/l] [/lb<N>] [/n] [/off[line]] [/t] [/u] [/w] [/<NNNN>] [<Drive1>:][
 fc /b [<Drive1:>][<Path1>]<FileName1> [<Drive2:>][<Path2>]<FileName2>
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |            參數             |                                                                                                                                     描述                                                                                                                                      |
 |----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -46,8 +42,8 @@ fc /b [<Drive1:>][<Path1>]<FileName1> [<Drive2:>][<Path2>]<FileName2>
 |             /lb\<N >              |                         將內部行緩衝區的行數設定為*N*。行緩衝區的預設長度為100行。 如果您要比較的檔案超過100個連續的不同行， **fc**會取消比較。                         |
 |                /n                |                                                                                                                在 ASCII 比較期間顯示行號。                                                                                                                 |
 |            /off [行]            |                                                                                                               不會略過已設定離線屬性的檔案。                                                                                                               |
-|                一起                |                                                                    防止**fc**將索引標籤轉換為空格。 預設行為是將定位字元視為空格，並在每個第八個字元位置停止。                                                                    |
-|                u                |                                                                                                                        將檔案與 Unicode 文字檔做比較。                                                                                                                         |
+|                /t                |                                                                    防止**fc**將索引標籤轉換為空格。 預設行為是將定位字元視為空格，並在每個第八個字元位置停止。                                                                    |
+|                /u                |                                                                                                                        將檔案與 Unicode 文字檔做比較。                                                                                                                         |
 |                /w                |         在比較期間壓縮空白字元（也就是定位字元和空格）。 如果一行包含多個連續的空格或索引標籤，則 **/w**會將這些字元視為單一空格。 與 **/w**搭配使用時， **fc**會忽略行開頭和結尾的空白字元。         |
 |             /\<NNNN >             | 指定遵循不相符時必須符合的連續行數， **fc**會考慮重新同步處理檔案。 如果檔案中相符的行數小於*NNNN*， **fc**會顯示相符的行做為差異。 預設值為2。 |
 | [\<Drive1 >：][<Path1>]<FileName1> |                                                                                        指定要比較之第一個檔案或一組檔案的位置和名稱。 *FileName1*是必要的。                                                                                        |
@@ -85,7 +81,7 @@ fc /b [<Drive1:>][<Path1>]<FileName1> [<Drive2:>][<Path2>]<FileName2>
 
     比較大於可用記憶體的二進位檔案時， **fc**會完全比較這兩個檔案，並將記憶體中的部分與磁片中的下一個部分覆迭。 輸出與完全符合記憶體的檔案相同。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 若要進行兩個文字檔的 ASCII 比較（每月 rpt 和 rpt），並以縮寫的格式顯示結果，請輸入：
 ```
@@ -124,6 +120,6 @@ fc c:new.bat d:*.bat
 fc c:*.bat d:*.bat
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

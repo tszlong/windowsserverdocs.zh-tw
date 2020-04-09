@@ -1,26 +1,23 @@
 ---
 title: 使用 Windows 錯誤報告疑難排解容錯移轉叢集
 description: 使用 WER 報表疑難排解容錯移轉叢集，並提供如何收集報表和診斷常見問題的特定詳細資料。
-keywords: 容錯移轉叢集、WER 報告、診斷、叢集、Windows 錯誤報告
 ms.prod: windows-server
 ms.technology: storage-failover-clustering
 ms.author: vpetter
-ms.topic: article
-author: vpetter
+author: dcuomo
 ms.date: 03/27/2018
-ms.localizationpriority: ''
-ms.openlocfilehash: 46c633af8cf82ac43d2a787a7193685d88ad0ecc
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: e8db88dc4fe3ad9176299c5b423a7aac6093f254
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322150"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827351"
 ---
 # <a name="troubleshooting-a-failover-cluster-using-windows-error-reporting"></a>使用 Windows 錯誤報告疑難排解容錯移轉叢集 
 
 > 適用于： Windows Server 2019、Windows Server 2016、Windows Server
 
-Windows 錯誤報告（WER）是彈性的事件型意見基礎結構，其設計目的是協助高級管理員或第3層支援收集 Windows 可偵測之硬體和軟體問題的相關資訊，並向 Microsoft 報告資訊。並為使用者提供任何可用的解決方案。 此[參考](https://docs.microsoft.com/powershell/module/windowserrorreporting/)提供所有 WindowsErrorReporting Cmdlet 的說明和語法。
+Windows 錯誤報告（WER）是彈性的事件型意見基礎結構，其設計目的是要協助高級管理員或第3層支援收集 Windows 可偵測的硬體和軟體問題的相關資訊、向 Microsoft 報告資訊，以及為使用者提供任何可用的解決方案。 此[參考](https://docs.microsoft.com/powershell/module/windowserrorreporting/)提供所有 WindowsErrorReporting Cmdlet 的說明和語法。
 
 下列有關疑難排解的資訊將有助於疑難排解已升級的 advanced 問題，而且可能需要將資料傳送給 Microsoft 以進行分類。
 

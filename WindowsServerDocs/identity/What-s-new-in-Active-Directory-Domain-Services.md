@@ -1,34 +1,29 @@
 ---
 ms.assetid: 9a06cd41-426f-4cb9-89cf-f5be730e0b79
-title: Active Directory Domain Services&#39;的新功能
-ms.custom: na
+title: Active Directory Domain Services 的新功能
 ms.prod: windows-server
-ms.reviewer: na
-ms.service: ''
-ms.suite: na
 ms.technology: active-directory-domain-services
-ms.tgt_pltfrm: na
 ms.topic: article
 author: Femila
 ms.author: billmath
 ms.date: 05/31/2017
-ms.openlocfilehash: 064ccf80faf77bbf128351a78ea437730983bf06
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 5e58bb229aa8fe02fb20f870a0e922d1aa8c34b7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948189"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825641"
 ---
-# <a name="what39s-new-in-active-directory-domain-services"></a>Active Directory Domain Services&#39;的新功能 
+# <a name="whats-new-in-active-directory-domain-services"></a>Active Directory Domain Services 的新功能 
 
 >適用於︰Windows Server 2016
 
-Active Directory Domain Services （AD DS）中的下列新功能可改善組織保護 Active Directory 環境的能力，並協助他們遷移至僅限雲端的部署和混合式部署，其中有些應用程式和服務託管于雲端，其他則裝載于內部部署。 其中包括下列增強功能：  
+Active Directory Domain Services （AD DS）中的下列新功能可改善組織保護 Active Directory 環境的能力，並協助他們遷移至僅限雲端的部署和混合式部署，其中某些應用程式和服務裝載于雲端，而其他則裝載于內部部署。 這些改良功能包括：  
   
 -   [特殊許可權存取管理](https://technet.microsoft.com/library/mt150258.aspx   
 )  
   
-- [透過 Azure Active Directory Join 擴充 Windows 10 裝置的雲端功能](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-overview/)   
+- [透過 Azure Active Directory Join 將雲端功能延伸到 Windows 10 裝置](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-overview/)   
   
 - [將已加入網域的裝置連接到 Azure AD 以進行 Windows 10 體驗](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)   
   
@@ -37,7 +32,7 @@ Active Directory Domain Services （AD DS）中的下列新功能可改善組織
 -  [檔案複寫服務（FRS）和 Windows Server 2003 功能等級的淘汰](ad-ds/active-directory-functional-levels.md)  
   
   
-## <a name="BKMK_PAM"></a>特殊許可權存取管理  
+## <a name="privileged-access-management"></a><a name="BKMK_PAM"></a>特殊許可權存取管理  
 特殊許可權存取管理（PAM）有助於減輕因認證竊取技術（例如傳遞雜湊、魚叉式網路釣魚和類似的攻擊類型）而造成的 Active Directory 環境的安全性疑慮。 它提供了使用 Microsoft Identity Manager （MIM）設定的新系統管理存取解決方案。 PAM 引進：  
   
 -   由 MIM 布建的新防禦 Active Directory 樹系。 防禦樹系與現有樹系具有特別的 PAM 信任。 它提供一個新的 Active Directory 環境，已知這是任何惡意活動，而且可以從現有的樹系隔離，以使用特殊許可權帳戶。  
@@ -55,13 +50,13 @@ Active Directory Domain Services （AD DS）中的下列新功能可改善組織
   
 -   新的監視功能，可協助您輕鬆地找出要求存取的物件、授與的存取權，以及執行的活動。  
   
-**Requirements**  
+**滿足**  
   
 -   Microsoft Identity Manager  
   
 -   Active Directory Windows Server 2012 R2 或更高版本的樹系功能等級。  
   
-## <a name="BKMK_AzureADJoin"></a>Azure AD 聯結  
+## <a name="azure-ad-join"></a><a name="BKMK_AzureADJoin"></a>Azure AD 聯結  
 Azure Active Directory Join 可增強企業和 EDU 客戶的身分識別體驗，並改善公司和個人裝置的功能。  
   
 優點：  
@@ -70,7 +65,7 @@ Azure Active Directory Join 可增強企業和 EDU 客戶的身分識別體驗�
   
     -   漫遊或個人化、協助工具設定和認證  
   
-    -   備份和還原  
+    -   備份與還原  
   
     -   使用工作帳戶存取 Microsoft Store  
   
@@ -92,14 +87,14 @@ Azure Active Directory Join 可增強企業和 EDU 客戶的身分識別體驗�
   
 如需詳細資訊，請參閱[適用于企業的 Windows 10：使用裝置工作的方式](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-windows10-devices-overview/?rnd=1)。  
   
-## <a name="BKMK_IDLocker"></a>Microsoft Passport  
+## <a name="microsoft-passport"></a><a name="BKMK_IDLocker"></a>Microsoft Passport  
 Microsoft Passport 是以新的金鑰為基礎的驗證方法，也就是組織和取用者，不僅是密碼。 這種形式的驗證會依賴缺口、遭竊和網路釣魚認證。  
   
 使用者以已連結至憑證或非對稱金鑰組之資訊的生物識別或 PIN 碼登入裝置。 身分識別提供者（Idp）會藉由將使用者的公開金鑰對應至 IDLocker 來驗證使用者，並透過單次密碼（OTP）、Phonefactor 或不同的通知機制來提供登入資訊。  
   
 如需詳細資訊，請參閱[透過 Microsoft Passport 驗證不含密碼](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-passport/)的身分識別  
   
-## <a name="BKMK_FRSDeprecation"></a>檔案複寫服務（FRS）和 Windows Server 2003 功能等級的淘汰  
+## <a name="deprecation-of-file-replication-service-frs-and-windows-server-2003-functional-levels"></a><a name="BKMK_FRSDeprecation"></a>檔案複寫服務（FRS）和 Windows Server 2003 功能等級的淘汰  
 雖然檔案複寫服務（FRS）和 Windows Server 2003 功能等級在舊版的 Windows Server 中已淘汰，但仍有重複的 Windows Server 2003 作業系統不再受到支援。 因此，執行 Windows Server 2003 的任何網域控制站都應該從網域中移除。 網域和樹系功能等級應至少提高至 Windows Server 2008，以防止執行舊版 Windows Server 的網域控制站新增至環境。  
   
 在 Windows Server 2008 及更高版本的網域功能等級，分散式檔案服務 (DFS) 複寫是用來複寫網域控制站之間的 SYSVOL 資料夾內容。 如果您在 Windows Server 2008 網域功能等級或更高版本建立新的網域，DFS 複寫會自動複寫 SYSVOL。 如果您已在較低的功能等級建立網域，則需要從使用 FRS 移轉至 SYSVOL 的 DFS 複寫。 至於移轉的步驟，您可以遵循 [TechNet 上的程序](https://technet.microsoft.com/library/dd640019(v=WS.10).aspx)，也可以參閱[Storage Team File Cabinet 上的簡化步驟](https://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx)。  

@@ -3,16 +3,15 @@ title: SMB 多重通道疑難排解
 description: 介紹 SMB 多重通道的疑難排解方法。
 author: Deland-Han
 manager: dcscontentpm
-audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 91f034a0062f509b1185f04554af4383022a68e1
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: 210bc2057f25dc196fe9d76495c42f76c8b36311
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654539"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815341"
 ---
 # <a name="smb-multichannel-troubleshooting"></a>SMB 多重通道疑難排解
 
@@ -58,7 +57,7 @@ Get-SmbClientNetworkInterface
 
 您需要從 TCP 三向交握開始的 SMB 連接追蹤資訊。 我們建議您先關閉所有應用程式（尤其是 Windows Explorer），然後再開始捕獲。 重新開機 SMB 用戶端上的**工作站**服務，啟動封包捕獲，然後重現問題。
 
-請確定 SMBv3 連線正在進行協商，而且伺服器與用戶端之間的任何內容都不會影響方言的協商。 SMBv2 和較早的版本不支援多重通道。
+請確定 SMBv3 連線正在進行*x*協商，而且伺服器與用戶端之間的任何內容都不會影響方言的協商。 SMBv2 和較早的版本不支援多重通道。
 
 尋找網路\_介面\_資訊封包。 這是 SMB 用戶端向 SMB 伺服器要求介面卡清單的位置。 如果未交換這些封包，則多重通道無法使用。
 

@@ -1,24 +1,20 @@
 ---
 title: ksetup： delenctypeattr
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4fc25ef3-e271-4229-a712-72c507df55aa
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e3810d83c06b9ea08766451e13390b02b1867c83
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c650b973ac34e28394d5b6ec38142a058ad76338
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375165"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80841761"
 ---
 # <a name="ksetupdelenctypeattr"></a>ksetup： delenctypeattr
 
@@ -32,7 +28,7 @@ ms.locfileid: "71375165"
 ksetup /delenctypeattr <DomainName> 
 ```
 
-### <a name="parameters"></a>參數
+#### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -46,7 +42,7 @@ ksetup /delenctypeattr <DomainName>
 
 若要設定您想要連接並使用的網域，請執行**ksetup/domain \<DomainName >** 命令。
 
-## <a name="BKMK_Examples"></a>典型
+## <a name="examples"></a><a name=BKMK_Examples></a>典型
 
 判斷這部電腦上設定的目前加密類型：
 ```
@@ -65,11 +61,11 @@ ksetup /getenctypeattr mit.contoso.com
 ksetup /delenctypeattr mit.contoso.com
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
 -   [Klist](klist.md)
 -   [Ksetup:domain](ksetup-domain.md)
 -   [Ksetup:addenctypeattr](ksetup-addenctypeattr.md)
 -   [Ksetup:setenctypeattr](ksetup-setenctypeattr.md)
 -   [Ksetup:delenctypeattr](ksetup-delenctypeattr.md)
--   [命令列語法關鍵](command-line-syntax-key.md)
+-   - [命令列語法關鍵](command-line-syntax-key.md)

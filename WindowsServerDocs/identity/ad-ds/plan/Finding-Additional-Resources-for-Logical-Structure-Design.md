@@ -1,7 +1,6 @@
 ---
 ms.assetid: 8b900c2b-35b1-4c95-a73d-e5f2e9cf0adb
 title: 尋找其他邏輯結構設計資源
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,22 +8,22 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 257e78b58962b5a91d1c3845efdd1452a93efdfb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 562f29bb36f5ff0cc0b2260e29cc31189a1dfa36
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402574"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822471"
 ---
 # <a name="finding-additional-resources-for-logical-structure-design"></a>尋找其他邏輯結構設計資源
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 您可以在下列有關 Active Directory Domain Services （AD DS）的檔中找到邏輯結構設計的其他資源：  
   
 - 如需設計網站拓撲的詳細資訊，請參閱[設計 Windows Server 2008 的網站拓朴 AD DS](Designing-the-Site-Topology.md)。  
 
-- 如需協助您記錄建議的樹系、網域、網域名稱系統（DNS）基礎結構和組織單位（OU）設計的工作表，請從的作業輔助下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services。Windows Server 2003 部署套件（[https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)）。  
+- 如需協助您記錄建議的樹系、網域、網域名稱系統（DNS）基礎結構和組織單位（OU）設計的工作表，請從適用于 Windows Server 2003 部署套件的工作輔助（[https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)）下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip。  
   
 - 如需委派驗證和限制委派的詳細資訊，請參閱委派驗證（[https://go.microsoft.com/fwlink/?LinkID=106614](https://go.microsoft.com/fwlink/?LinkID=106614)）。  
   

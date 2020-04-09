@@ -1,24 +1,20 @@
 ---
 title: ksetup： getenctypeattr
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6c7ec002-355e-474d-bc27-27215049f1a8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1ff55cfd204f76b42c5f1342b3cf206ee4c14f14
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 60de138ac73140c69e9a863083e01a51c0e13ca3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374991"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80841531"
 ---
 # <a name="ksetupgetenctypeattr"></a>ksetup： getenctypeattr
 
@@ -32,7 +28,7 @@ ms.locfileid: "71374991"
 ksetup /getenctypeattr <DomainName> 
 ```
 
-### <a name="parameters"></a>參數
+#### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -46,18 +42,18 @@ ksetup /getenctypeattr <DomainName>
 
 若要設定您想要連接並使用的網域，請執行**ksetup/domain \<DomainName >** 命令。
 
-## <a name="BKMK_Examples"></a>典型
+## <a name="examples"></a><a name=BKMK_Examples></a>典型
 
 確認網域的 [加密類型] 屬性：
 ```
 ksetup /getenctypeattr mit.contoso.com
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
 -   [Klist](klist.md)
 -   [Ksetup:domain](ksetup-domain.md)
 -   [Ksetup:addenctypeattr](ksetup-addenctypeattr.md)
 -   [Ksetup:setenctypeattr](ksetup-setenctypeattr.md)
 -   [Ksetup:delenctypeattr](ksetup-delenctypeattr.md)
--   [命令列語法關鍵](command-line-syntax-key.md)
+-   - [命令列語法關鍵](command-line-syntax-key.md)

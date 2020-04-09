@@ -1,24 +1,20 @@
 ---
 title: findstr
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c2d803fb-4cd2-46a1-a1b7-6f5e0249c418
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 547a0abf658ef826cca8c87d451144181f8dac7d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dbdc1b741b5934f53340bda773909fb5035e449b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377194"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844631"
 ---
 # <a name="findstr"></a>findstr
 
@@ -32,7 +28,7 @@ ms.locfileid: "71377194"
 findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] [/c:<String>] [/g:<File>] [/d:<DirList>] [/a:<ColorAttribute>] [/off[line]] <Strings> [<Drive>:][<Path>]<FileName>[ ...]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -56,7 +52,7 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] 
 |/a：\<ColorAttribute >|指定具有兩個十六進位數位的色彩屬性。 如需其他資訊，請輸入 `color /?`。|
 |\<字串 >|指定要在*FileName*中搜尋的文字。 必要。|
 |[\<磁片磁碟機 >：][<Path>]<FileName>[...]|指定要搜尋的位置和檔案。 至少需要一個檔案名。|
-|/?|在命令提示字元顯示 [說明]。|
+|/?|在命令提示字元中顯示說明。|
 
 ## <a name="remarks"></a>備註
 
@@ -67,7 +63,7 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] 
 
   |元字元|值|
   |-------------|-----|
-  |.|萬用字元：任何字元|
+  |。|萬用字元：任何字元|
   |*|重複：上一個或多個字元或類別出現零次以上|
   |^|行位置：行首|
   |$|行位置：行尾|
@@ -84,7 +80,7 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] 
   .*
   ``` 
 
-  使用下列運算式做為較大運算式的一部分，以比對開頭為 "b" 且結尾為 "ing" 的任何字串： 
+  使用下列運算式做為較大運算式的一部分，以比對開頭為 b 並以 ing 結尾的任何字串： 
 
   ```
   b.*ing
@@ -94,19 +90,19 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] 
 
 除非引數前面加上 **/c**，否則請使用空格來分隔多個搜尋字串。
 
-若要在檔案 x. y 中搜尋 "hello" 或 "file"，請輸入：
+若要搜尋 hello 或 file x. y，請輸入：
 
 ```
-findstr "hello there" x.y 
+findstr hello there x.y 
 ```
 
-若要在檔案 x. y 中搜尋 "hello"，請輸入：
+若要在 file x. y 中搜尋 hello，請輸入：
 
 ```
-findstr /c:"hello there" x.y 
+findstr /c:hello there x.y 
 ```
 
-若要在檔案提案 .txt 中尋找所有出現的 "Windows" 字組（含初始大寫字母 W），請輸入：
+若要在檔案提案 .txt 中尋找所有出現的 word 視窗（包含初始大寫字母 W），請輸入：
 
 ```
 findstr Windows proposal.txt 
@@ -118,10 +114,10 @@ findstr Windows proposal.txt
 findstr /s /i Windows *.* 
 ```
 
-若要尋找所有開頭為 "FOR" 的行，且前面加上零或多個空格（如同在電腦程式迴圈中），並顯示每次找到的行號，請輸入：
+若要尋找所有以為開頭，且前面加上零或多個空格（如同在電腦程式迴圈中）的所有專案，並顯示每次找到的行號，請輸入：
 
 ```
-findstr /b /n /r /c:"^ *FOR" *.bas 
+findstr /b /n /r /c:^ *FOR *.bas 
 ```
 
 若要在一組檔案中搜尋多個字串，請建立一個文字檔，其中包含個別行上的每個搜尋條件。 您也可以列出想要在文字檔中搜尋的確切檔案。 例如，若要使用 Stringlist 檔案中的搜尋準則，請搜尋 Filelist 中列出的檔案，然後將結果儲存在檔案結果中，輸入：
@@ -130,18 +126,18 @@ findstr /b /n /r /c:"^ *FOR" *.bas
 findstr /g:stringlist.txt /f:filelist.txt > results.out 
 ```
 
-若要列出目前目錄和所有子目錄中包含 "computer" 一字的每個檔案，請輸入：
+若要列出在目前目錄和所有子目錄中包含 word computer 的每個檔案，請在不區分大小寫的情況下，輸入：
 
 ```
-findstr /s /i /m "\<computer\>" *.*
+findstr /s /i /m \<computer\> *.*
 ```
 
-若要列出每個包含 "computer" 一字的檔案，以及任何其他開頭為 "comp" 的單字（例如「補充」和「競爭」），請輸入：
+若要列出包含「電腦」和開頭為「複合」之任何其他單字的每個檔案（例如「補充和競爭」），請輸入：
 
 ```
-findstr /s /i /m "\<comp.*" *.*
+findstr /s /i /m \<comp.* *.*
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

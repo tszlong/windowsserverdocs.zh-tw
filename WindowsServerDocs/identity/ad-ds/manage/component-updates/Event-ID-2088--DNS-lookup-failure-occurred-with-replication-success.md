@@ -1,7 +1,6 @@
 ---
 ms.assetid: 0fd7b6aa-3e50-45a3-a3a6-56982844363e
 title: 事件識別碼 2088-複寫成功時發生 DNS 查閱失敗
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: d51cbcc93a8decbcb72a1e91854a09345507511d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f84fd7be45995e9e0b318b42c8b4152af244a9da
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71368906"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823051"
 ---
 # <a name="event-id-2088-dns-lookup-failure-occurred-with-replication-success"></a>事件識別碼 2088：發生 DNS 查閱錯誤但複寫成功
 
@@ -54,7 +53,7 @@ DNS 設定無效可能會影響成員電腦、網域控制站或此 Active Direc
 
 使用者動作： 
 
-1) 如果來源網域控制站已不再正常運作，或其作業系統已使用不同的電腦名稱稱或 NTDSDSA 物件 GUID 重新安裝，請使用 MSKB 文章中所述的步驟，移除來源網域控制站的中繼資料與 ntdsutil.exe216498。 
+1) 如果來源網域控制站已不再運作，或其作業系統已經使用不同的電腦名稱稱或 NTDSDSA 物件 GUID 重新安裝，請使用 MSKB 文章216498中所述的步驟，移除來源網域控制站的中繼資料與 ntdsutil.exe。 
 
 2) 確認來源網域控制站正在執行 Active Directory 且可在網路上存取，方法是輸入 "net view \\&lt;來源 DC 名稱&gt;" 或 [ping &lt;來源 DC 名稱&gt;]。 
 

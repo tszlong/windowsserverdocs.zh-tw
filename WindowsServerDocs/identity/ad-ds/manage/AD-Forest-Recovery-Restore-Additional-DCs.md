@@ -1,6 +1,5 @@
 ---
 title: AD 樹系復原-重新部署剩餘的 Dc
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: fbab907c5624a76540ab6a28c568afbd9192c028
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 17e5ceec74277c888232d17adca5c2bbb305af97
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390254"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823621"
 ---
 # <a name="ad-forest-recovery---redeploy-remaining-dcs"></a>AD 樹系復原-重新部署剩餘的 Dc
 
->適用於：Windows Server 2016、Windows Server 2012 及 2012 R2、Windows Server 2008 和 2008 R2
+>適用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
 到目前為止的步驟適用于所有樹系：尋找每個網域的有效備份、獨立復原網域、重新連線、重設通用類別目錄，以及清除。 在下一個步驟中，您將重新部署樹系。 執行此動作的方式很明顯取決於您的樹系設計、服務等級協定、網站結構、可用的頻寬，以及許多其他因素。 您必須根據本節中的原則和建議，以最適合您商務需求的方式來設計您自己的重新部署計畫。  
   
@@ -40,8 +39,8 @@ ms.locfileid: "71390254"
 - 如果您從第一個要還原的虛擬化 DC 複製其他虛擬化 dc，則在複製其 VHDX 檔案時，來源 DC 將需要關閉。 然後，在第一次啟動複製虛擬 Dc 時，它就必須在執行中並可供線上使用。 如果第一個復原的 DC 無法接受關機所需的停機時間，請安裝 AD DS 作為複製的來源，以部署額外的虛擬化 DC。  
 - 複製的虛擬化 DC 的主機名稱或您想要安裝 AD DS 的伺服器不會有任何限制。 您可以使用先前使用的新主機名稱或主機名稱。 如需 DNS 主機名稱語法的詳細資訊，請參閱[建立 Dns 電腦名稱稱](https://technet.microsoft.com/library/cc785282.aspx)（[https://go.microsoft.com/fwlink/?LinkId=74564](https://go.microsoft.com/fwlink/?LinkId=74564)）。  
 - 使用樹系中的第一部 DNS 伺服器（在根域中還原的第一個 DC）來設定每部伺服器，做為其網路介面卡的 TCP/IP 屬性中慣用的 DNS 伺服器。 如需詳細資訊，請參閱[CONFIGURE tcp/ip to USE DNS](https://technet.microsoft.com/library/cc779282.aspx)。  
-- 如果在中央位置部署了數個 Rodc，或藉由移除並重新安裝 AD DS （如果個別部署在獨立位置），則重新部署網域中的所有 Rodc （透過虛擬 DC 複製）：例如分公司。  
-   - 重建 Rodc 可確保它們不包含任何延遲物件，並有助於防止複寫衝突之後發生。 當您從 RODC 移除 AD DS 時，請*選擇保留 DC 中繼資料的選項*。 使用此選項會保留 RODC 的 krbtgt 帳戶，並保留委派的 RODC 系統管理員帳戶和密碼複寫原則（PRP）的許可權，並防止您必須使用網域系統管理員認證來移除和重新安裝 AD DSRODC。 它也會保留 DNS 伺服器和通用類別目錄角色（如果原先是安裝在 RODC 上）。  
+- 如果在中央位置部署了數個 Rodc，或藉由移除並重新安裝 AD DS，如果將它們個別部署在獨立的位置（例如分公司），請在網域中重新部署所有 Rodc （藉由虛擬化 DC 複製）。  
+   - 重建 Rodc 可確保它們不包含任何延遲物件，並有助於防止複寫衝突之後發生。 當您從 RODC 移除 AD DS 時，請*選擇保留 DC 中繼資料的選項*。 使用此選項會保留 RODC 的 krbtgt 帳戶，並保留委派的 RODC 系統管理員帳戶和密碼複寫原則（PRP）的許可權，並防止您必須使用網域系統管理員認證來移除和重新安裝 RODC 上的 AD DS。 它也會保留 DNS 伺服器和通用類別目錄角色（如果原先是安裝在 RODC 上）。  
    - 當您重建 Dc （Rodc 或可寫入的 Dc）時，可能會在重新安裝時增加複寫流量。 為協助降低這項影響，您可以錯開 RODC 安裝的排程，而且可以使用 [從媒體安裝（IFM）] 選項。 如果您使用 IFM 選項，請在您信任的可寫入 DC 上執行**ntdsutil IFM**命令，以釋放損毀的資料。 這有助於防止在 AD DS 重新安裝完成後，可能會出現在 RODC 上的損毀。 如需 IFM 的詳細資訊，請參閱[從媒體安裝 AD DS](https://technet.microsoft.com/library/cc770654\(WS.10\).aspx)。  
    - 如需重建 Rodc 的詳細資訊，請參閱[Rodc 移除和重新安裝](https://technet.microsoft.com/library/cc835490\(WS.10\).aspx)。  
 - 如果 DC 在樹系故障前執行 DNS 伺服器服務，請在安裝 AD DS 期間安裝和設定 DNS 伺服器服務。 否則，請使用其他 DNS 伺服器設定其先前的 DNS 用戶端。  

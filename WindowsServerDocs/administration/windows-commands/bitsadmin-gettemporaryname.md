@@ -1,51 +1,46 @@
 ---
 title: bitsadmin gettemporaryname
-description: 適用于**bitsadmin gettemporaryname**的 Windows 命令主題-報告作業中指定檔案的暫存檔案案。
-ms.custom: na
+description: 適用于**bitsadmin gettemporaryname**的 Windows 命令主題，它會報告作業中指定檔案的暫存檔案。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 68925edc-a801-4292-a812-7471c4f60fdd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7b665fae4c0bfdd5ea04b929be49f9590430b358
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6c331ecf12cb02d34c76692158c79eafbe5691c5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71381296"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80850451"
 ---
 # <a name="bitsadmin-gettemporaryname"></a>bitsadmin gettemporaryname
-
-
 
 報告作業中指定檔案的暫存檔案案。
 
 ## <a name="syntax"></a>語法
 
 ```
-bitsadmin /GetTemporaryName <Job> <file index> 
+bitsadmin /gettemporaryname <job> <file_index>
 ```
 
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
-|參數|描述|
-|---------|-----------|
-|Job|作業的顯示名稱或 GUID|
-|檔案索引|從0開始|
+| 參數 | 描述 |
+| -------------- | -------------- |
+| 工作 | 作業的顯示名稱或 GUID。 |
+| file_index | 從0開始。 |
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
-下列範例會針對名為*myJob*的作業報告檔案2的暫存檔案名。
+下列範例會針對名為*myDownloadJob*的作業報告檔案2的暫存檔案名。
+
 ```
-C:\>bitsadmin /GetTemporaryName myJob 1 
+C:\>bitsadmin /gettemporaryname myDownloadJob 1
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

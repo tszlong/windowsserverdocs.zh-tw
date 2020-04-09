@@ -6,17 +6,17 @@ ms.technology: networking-ras
 ms.topic: article
 ms.assetid: 3c9de3ec-4bbd-4db0-b47a-03507a315383
 ms.localizationpriority: medium
-ms.author: lizross
-author: eross-msft
+ms.author: v-tea
+author: Teresa-MOTIV
 ms.date: 11/05/2018
-ms.openlocfilehash: e0e061a38170242a3808fbad0c82a4154bf9c536
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: c1e85f2ee44d241bdc04e63d20de36e5cdeafb1a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313300"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80814491"
 ---
-# <a name="step-1-plan-the-always-on-vpn-deployment"></a>步驟 1。 規劃 Always On VPN 部署
+# <a name="step-1-plan-the-always-on-vpn-deployment"></a>步驟 1. 規劃 Always On VPN 部署
 
 >適用于： Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows 10
 

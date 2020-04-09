@@ -1,7 +1,6 @@
 ---
 ms.assetid: 8a3cf2ae-2511-4eea-afd5-a43179a78613
 title: 目錄服務元件更新
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,25 +8,25 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: d79f31572bc30d0f4fa3af45671c58b799e40f02
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cde839feda47d55415b2b6cc1026a7a3e6515a44
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390024"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823091"
 ---
 # <a name="directory-services-component-updates"></a>目錄服務元件更新
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-**作者**：Justin Turner，Microsoft 團隊的資深支援擴大工程師  
+**作者**： Justin Turner，具備 Windows 群組的資深支援提升工程師  
   
 > [!NOTE]  
 > 本內容由 Microsoft 客戶支援工程師編寫，適用對象為經驗豐富的系統管理員和系統架構​​師，如果 TechNet 提供的主題已無法滿足您，您要找的是 Windows Server 2012 R2 中功能和解決方案的更深入技術講解，則您是本文的適用對象。 不過，本文未經過相同的編輯階段，因此部分語句也許不如 TechNet 文章那樣洗鍊。  
   
 本課程說明 Windows Server 2012 R2 中的目錄服務元件更新。  
   
-## <a name="what-you-will-learn"></a>學習內容  
+## <a name="what-you-will-learn"></a>您將學到  
 說明下列新的目錄服務元件更新：  
   
 -   說明下列新的目錄服務元件更新：  
@@ -42,17 +41,17 @@ ms.locfileid: "71390024"
   
     -   [Active Directory 複寫輸送量改進](../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_ADRepl)  
   
-## <a name="BKMK_FL"></a>網域和樹系功能等級  
+## <a name="domain-and-forest-functional-levels"></a><a name="BKMK_FL"></a>網域和樹系功能等級  
   
-### <a name="overview"></a>總覽  
+### <a name="overview"></a>概觀  
 本節提供網域和樹系功能等級變更的簡介。  
   
 ### <a name="new-dfl-and-ffl"></a>新的 DFL 和 FFL  
 發行時，有新的網域和樹系功能等級：  
   
--   樹系功能等級：Windows Server 2012 R2  
+-   樹系功能等級： Windows Server 2012 R2  
   
--   網域功能等級：Windows Server 2012 R2  
+-   網域功能等級： Windows Server 2012 R2  
   
 ### <a name="the-windows-server-2012-r2-domain-functional-level-enables-support-for-the-following"></a>Windows Server 2012 R2 網域功能等級可支援下列各項：  
   
@@ -64,9 +63,9 @@ ms.locfileid: "71390024"
   
     -   在 Kerberos 預先驗證中使用 DES 或 RC4 加密套件  
   
-    -   使用非限制或限制委派進行委派  
+    -   以非限制或限制委派方式受到委派  
   
-    -   更新超過初始4小時存留期的使用者票證（Tgt）  
+    -   在初始 4 小時存留期之後更新使用者票證 (TGT)  
   
 2.  驗證原則  
   
@@ -145,9 +144,9 @@ Set-ADDomainMode -DomainMode Windows2008Domain -Identity contoso.com
   
 2.  Sch69  
   
-## <a name="BKMK_NTFRS"></a>取代 NTFRS  
+## <a name="deprecation-of-ntfrs"></a><a name="BKMK_NTFRS"></a>取代 NTFRS  
   
-### <a name="overview"></a>總覽  
+### <a name="overview"></a>概觀  
 FRS 在 Windows Server 2012 R2 中已被取代。  FRS 的淘汰是藉由強制執行 Windows Server 2008 的最低網域功能等級（DFL）來完成。  只有在使用伺服器管理員或 Windows PowerShell 建立新網域時，才會出現此強制執行。  
   
 您可以使用-DomainMode 參數搭配 Install-addsforest 或 Install-addsdomain Cmdlet 來指定網域功能等級。  這個參數支援的值可以是有效的整數或對應的列舉字串值。 例如，若要將網域模式層級設定為 Windows Server 2008 R2，您可以指定值4或 "Win2008R2"。  從伺服器 2012 R2 執行這些 Cmdlet 時，有效值包括 Windows Server 2008 （3、Win2008） Windows Server 2008 R2 （4，Win2008R2） Windows Server 2012 （5，Win2012）和 Windows Server 2012 R2 （6，Win2012R2）。 網域功能等級不能低於、但可以高於樹系功能等級。  由於 FRS 在此版本中已被取代，因此從 Windows Server 2012 R2 執行時，Windows Server 2003 （2，Win2003）不是使用這些 Cmdlet 的可辨識參數。  
@@ -156,9 +155,9 @@ FRS 在 Windows Server 2012 R2 中已被取代。  FRS 的淘汰是藉由強制�
   
 ![目錄服務更新](media/Directory-Services-component-updates/GTR_ADDS_PS_InstallDFL2.gif)  
   
-## <a name="BKMK_LDAPQuery"></a>LDAP 查詢最佳化工具變更  
+## <a name="ldap-query-optimizer-changes"></a><a name="BKMK_LDAPQuery"></a>LDAP 查詢最佳化工具變更  
   
-### <a name="overview"></a>總覽  
+### <a name="overview"></a>概觀  
 LDAP 查詢最佳化工具演算法已重新評估並進一步優化。  結果是在 LDAP 搜尋效率和複雜查詢的 LDAP 搜尋時間方面的效能改進。  
   
 > [!NOTE]
@@ -268,7 +267,7 @@ Log Record Bytes Generated: 0
   
         ![目錄服務更新](media/Directory-Services-component-updates/GTR_ADDS_Event1644.gif)  
   
-### <a name="BKMK_EnableStats"></a>啟用 LDP 中的統計資料控制項  
+### <a name="to-enable-the-stats-control-in-ldp"></a><a name="BKMK_EnableStats"></a>啟用 LDP 中的統計資料控制項  
   
 1.  開啟 LDP.EXE，然後連接並系結至網域控制站。  
   
@@ -308,9 +307,9 @@ Log Record Bytes Generated: 0
   
 [951581](https://support.microsoft.com/kb/951581) LDAP 查詢執行速度比預期的 AD 或 LDS/ADAM 目錄服務更慢，而且可能會記錄事件識別碼1644  
   
-## <a name="BKMK_1644"></a>1644事件改進  
+## <a name="1644-event-improvements"></a><a name="BKMK_1644"></a>1644事件改進  
   
-### <a name="overview"></a>總覽  
+### <a name="overview"></a>概觀  
 此更新會將其他 LDAP 搜尋結果統計資料新增至事件識別碼1644，以協助進行疑難排解。  此外，還有一個新的登錄值，可以用來啟用以時間為基礎的閾值記錄。  這些改良功能已在 Windows Server 2012 和 Windows Server 2008 R2 SP1 中透過 KB [2800945](https://support.microsoft.com/kb/2800945)提供使用，而且將可供 windows SERVER 2008 SP2 取得。  
   
 > [!NOTE]  
@@ -326,7 +325,7 @@ Log Record Bytes Generated: 0
   
 -   起始節點  
   
--   篩選  
+-   篩選器  
   
 -   搜尋範圍  
   
@@ -386,9 +385,9 @@ Windows Registry Editor Version 5.00
   
 4.  執行 LDAP 搜尋，查詢最佳化工具無法優化，因為一個或多個屬性未編制索引。  
   
-## <a name="BKMK_ADRepl"></a>Active Directory 複寫輸送量改進  
+## <a name="active-directory-replication-throughput-improvement"></a><a name="BKMK_ADRepl"></a>Active Directory 複寫輸送量改進  
   
-### <a name="overview"></a>總覽  
+### <a name="overview"></a>概觀  
 AD 複寫會針對其複寫傳輸使用 RPC。 根據預設，RPC 會使用8K 傳輸緩衝區和較大的封包大小。 這會產生淨效果，傳送的實例將會傳輸三個封包（大約有15K 的資料），然後必須等到網路往返之後，才送出更多。 假設有3ms 的往返時間，即使是在1Gbps 或 10 Gbps 的網路上，最高的輸送量還是大約40Mbps。  
   
 > [!NOTE]  

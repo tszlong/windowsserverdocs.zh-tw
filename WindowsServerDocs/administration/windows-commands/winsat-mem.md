@@ -1,24 +1,20 @@
 ---
 title: winsat 記憶體
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: Winsat 記憶體的 Windows 命令主題，它會以反映記憶體緩衝區複本的方式來測試系統記憶體頻寬，如同用於多媒體處理。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
-ms.topic: article
+winms.topic: article
 ms.assetid: cda017bf-6193-43c1-b71f-e379c23e1152
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 23bbaf8551031a2e573b117e672a656213efde12
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 20d7a67ebc6ee623ed7cba41e98bc0105465bdcc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361982"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829111"
 ---
 # <a name="winsat-mem"></a>winsat 記憶體
 
@@ -34,7 +30,7 @@ ms.locfileid: "71361982"
 winsat mem <parameters>
 ```
 
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -49,11 +45,11 @@ winsat mem <parameters>
 |-xml \<檔案名 >|將評量的輸出儲存為指定的 XML 檔案。 如果指定的檔案存在，則會覆寫該檔案。|
 |-idiskinfo|將實體磁片區和邏輯磁片的相關資訊儲存為 XML 輸出中 **\<SystemConfig >** 區段的一部分。|
 |-iguid|在 XML 輸出檔中建立全域唯一識別碼（GUID）。|
-|-注意「附注文字」|將附注文字加入至 XML 輸出檔中的 **\<note >** 區段。|
+|-注意附注文字|將附注文字加入至 XML 輸出檔中的 **\<note >** 區段。|
 |-icn|在 XML 輸出檔中包含本機電腦名稱稱。|
 |-eef|列舉 XML 輸出檔中的額外系統資訊。|
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 - 下列範例會使用32MB 緩衝區大小，並將結果以 XML 格式儲存至檔案**memtest**，來執行最少4秒且不超過12秒的評量。  
   ```
@@ -65,5 +61,5 @@ winsat mem <parameters>
 -   若要使用**winsat**，至少需要本機 Administrators 群組的成員資格或同等許可權。 命令必須從提高許可權的命令提示字元視窗執行。
 -   若要開啟提高許可權的命令提示字元視窗，請依序按一下 **開始**、**附屬**應用程式、**命令提示**字元 和 **以系統管理員身分執行**
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 

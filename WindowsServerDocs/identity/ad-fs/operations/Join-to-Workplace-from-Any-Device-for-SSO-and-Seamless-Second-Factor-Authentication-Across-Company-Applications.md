@@ -1,7 +1,6 @@
 ---
 ms.assetid: e22d84a5-113d-4bec-b484-036ed29f0c28
 title: 從任何裝置加入工作地點網路，並在公司的各個應用程式提供 SSO 和無縫式的次要因素驗證
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 12/05/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 05a8b8bb5685c31ece29ed8eb38d37a424e478b8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 82c94adadb9241e2b7cd8d75ea1693957aaffc61
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357945"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816261"
 ---
 # <a name="join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications"></a>從任何裝置加入工作地點網路，並在公司的各個應用程式提供 SSO 和無縫式的次要因素驗證
 
@@ -31,7 +30,7 @@ ms.locfileid: "71357945"
 ### <a name="workplace-join"></a>工作地方聯結
 透過使用「加入工作地點網路」，資訊工作者可以讓其個人裝置加入公司工作地點電腦所在的網路，以存取公司資源與裝置。 當您將個人裝置加入到您的工作地點時，它會成為已知裝置並提供無縫式次要因素驗證與「單一登入」，讓您可以存取工作地點資源與應用程式。 當裝置是使用「加入工作地點網路」加入時，您可以從目錄擷取裝置屬性，以針對授權簽發應用程式安全性權杖目的提供條件式存取。 可使用 [加入工作地點網路] 來加入 Windows 8.1 與 iOS 6.0+ 和 Android 4.0+ 裝置。
 
-### <a name="BKMK_DRS"></a>Azure Active Directory 裝置註冊服務
+### <a name="azure-active-directory-device-registration-service"></a><a name="BKMK_DRS"></a>Azure Active Directory 裝置註冊服務
 可使用 Azure Active Directory 裝置註冊服務來執行 [加入工作地點網路]。 使用 [加入工作地點網路] 加入裝置時，服務會在 Azure Active Directory 中佈建裝置物件，然後在本機裝置上設定可用來代表裝置身分識別的金鑰。 接著可針對雲端和內部部署中裝載的應用程式，搭配使用此裝置身分識別與存取控制規則。
 
 如需詳細資訊，請參閱[Azure Active Directory 中的裝置管理簡介](https://docs.microsoft.com/azure/active-directory/device-management-introduction)。
@@ -54,11 +53,11 @@ ms.locfileid: "71357945"
 
 此解決方案指南會帶您完成下列逐步解說步驟：
 
-1.  [逐步解說：將 Windows 裝置加入工作地點網路](../../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
+1.  [逐步解說：使用 Windows 裝置 Workplace Join](../../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
 
-2.  [逐步解說：將 iOS 裝置加入工作地點網路](../../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
+2.  [逐步解說：使用 iOS 裝置 Workplace Join](../../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
 
-3.  [逐步解說：將 Android 裝置加入工作場所網路](../../ad-fs/operations/walkthrough--workplace-join-to-an-android-device.md)
+3.  [逐步解說：使用 Android 裝置 Workplace Join](../../ad-fs/operations/walkthrough--workplace-join-to-an-android-device.md)
 
 ## <a name="see-also"></a>另請參閱
 [使用裝置註冊服務設定同盟伺服器](../deployment/configure-a-federation-server-with-device-registration-service.md)

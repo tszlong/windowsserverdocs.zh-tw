@@ -1,7 +1,6 @@
 ---
 ms.assetid: 38eb3726-e97b-484e-9926-67e8a046b0c5
 title: 建立規則使用自訂規則傳送宣告
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 8cd3e6d0073061710bd9ee76958891e036688472
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 81a1fbbd703a5d452c437b089b822e227f55af82
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407607"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816691"
 ---
 # <a name="create-a-rule-to-send-claims-using-a-custom-rule"></a>建立規則使用自訂規則傳送宣告
 

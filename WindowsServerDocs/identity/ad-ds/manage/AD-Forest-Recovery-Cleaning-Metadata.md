@@ -1,6 +1,5 @@
 ---
 title: AD 樹系復原-清除已移除 dc 的中繼資料
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: e7543381-4081-407f-adad-a9de792c6616
 ms.technology: identity-adds
-ms.openlocfilehash: cc41170051e55fbaeca048ac587ecd3351cd53ad
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b9ba00939ccb2ee747501733fb9654edb4c8132e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369272"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824251"
 ---
 # <a name="ad-forest-recovery---cleaning-metadata-of-removed-writable-domain-controllers"></a>AD 樹系復原-清除已移除可寫入網域控制站的中繼資料
 
->適用於：Windows Server 2016、Windows Server 2012 及 2012 R2、Windows Server 2008 和 2008 R2
+>適用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
 中繼資料清除會將識別 DC 的 Active Directory 資料移除至複寫系統。  
 

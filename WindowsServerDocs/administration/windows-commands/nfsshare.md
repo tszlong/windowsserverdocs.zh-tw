@@ -1,24 +1,20 @@
 ---
 title: nfsshare
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 437a2615-335a-442f-9713-d50d5f3983a3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d205bcfad11d22fea7fc9d0651aca61f234347cf
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 032baaf3013d2658b1040345da3a35cb6a1631f2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948499"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80838901"
 ---
 # <a name="nfsshare"></a>nfsshare
 
@@ -33,11 +29,11 @@ nfsshare <ShareName>=<Drive:Path> [-o <Option=value>...]
 nfsshare {<ShareName> | <Drive>:<Path> | * } /delete
 ```
 
-## <a name="description"></a>說明
+## <a name="description"></a>描述
 
 如果沒有引數， **nfsshare**命令列公用程式會列出 SERVER for NFS 所匯出的所有網路檔案系統（NFS）共用。 使用*共用名稱*作為唯一的引數時， **Nfsshare**會列出*共用名稱*所識別之 NFS 共用的屬性。 當已提供「*共用名稱*」和「<em>磁片磁碟機</em> **：** <em>路徑</em>」時， **nfsshare**會將<em>磁片磁碟機</em> **：** <em>path</em>所識別的資料夾匯出為*共用名稱* 使用 **/delete**選項時，不會再讓 NFS 用戶端使用指定的資料夾。
 
-## <a name="options"></a>[選項]
+## <a name="options"></a>選項
 
 **Nfsshare**命令會接受下列選項和引數：
 
@@ -54,8 +50,8 @@ nfsshare {<ShareName> | <Drive>:<Path> | * } /delete
 |            /delete            |                                                                                                                                                       如果指定了 [共用*名*] 或 [<em>磁片磁碟機</em> **：** <em>路徑</em>]，會刪除指定的共用。 如果指定了 \*，就會刪除所有 NFS 共用。                                                                                                                                                       |
 
 > [!NOTE]
-> 若要檢視此命令的完整語法，請在命令提示字元中輸入：</br>> **nfsshare/？**
+> 若要檢視此命令的完整語法，請於命令提示字元中輸入：</br>> **nfsshare/？**
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 [網路檔案系統服務命令參考資料](services-for-network-file-system-command-reference.md)

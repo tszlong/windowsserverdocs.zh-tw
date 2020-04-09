@@ -1,21 +1,17 @@
 ---
 ms.assetid: 0b3587b2-219f-43d8-88b4-1254eaa8b910
 title: Windows Server 中的 Web 應用程式 Proxy
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.service: ''
-ms.suite: na
 ms.technology: web-app-proxy
-ms.tgt_pltfrm: na
 ms.topic: article
-author: kgremban
-ms.openlocfilehash: bfa57a18ee74e1e54f6e7c1ed85d4bfbccb8937b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: kgremban
+author: eross-msft
+ms.openlocfilehash: 2fef89dc999166a7dcbb0479c28160b14b95340e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404245"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818631"
 ---
 # <a name="web-application-proxy-in-windows-server"></a>Windows Server 中的 Web 應用程式 Proxy
 
@@ -57,7 +53,7 @@ ms.locfileid: "71404245"
   
 - 將用戶端 IP 位址傳播至後端應用程式  
   
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
   
 -   [Windows Server 2016 中的新功能](https://technet.microsoft.com/library/dn765472.aspx)  
   

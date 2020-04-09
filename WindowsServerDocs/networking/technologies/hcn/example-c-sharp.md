@@ -1,19 +1,19 @@
 ---
 title: 最上層 IPAM C# & 子網物件產生的程式碼範例
-description: ''
 ms.author: jmesser
 author: jmesser81
+ms.prod: windows-server
 ms.date: 11/05/2018
-ms.openlocfilehash: ae324b0a376f4fdf55cf09df652893b7894cc73e
-ms.sourcegitcommit: 213989f29cc0c30a39a78573bd4396128a59e729
+ms.openlocfilehash: 74096c86fefa82e4cc9dee0d5e6fa981b43d9335
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70031506"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820951"
 ---
 # <a name="example-of-c-generated-code"></a>C# 產生的程式碼範例 
 
->適用於：Windows Server (半年通道)、Windows Server 2019
+>適用于： Windows Server （半年通道）、Windows Server 2019
 
 ```C#
 /* 

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 4163cf03-3bff-426c-9844-4cc2d7897d52
 title: 指派 AD DS 擁有者角色的 DNS
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 1b42c60374162b6482b18df2555997e80463d6d9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8ef63fd9e53d20c812ff84e601e73d4276b304be
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390855"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825261"
 ---
 # <a name="assigning-the-dns-for-ad-ds-owner-role"></a>指派 AD DS 擁有者角色的 DNS
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 樹系擁有者會為樹系的 Active Directory Domain Services （AD DS）擁有者指派網域名稱系統（DNS）。 樹系 AD DS 擁有者的 DNS 是一員（或一群人），負責監督 AD DS 基礎結構的 DNS 部署，以及確定（如有必要）功能變數名稱已向適當的網際網路授權單位註冊。  
   

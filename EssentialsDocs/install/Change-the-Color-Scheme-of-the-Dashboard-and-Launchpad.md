@@ -1,23 +1,19 @@
 ---
 title: 變更儀表板及啟動列的色彩配置
 description: 說明如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b2913e51-7979-4d48-a431-d2ec5f1042be
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: a3ffac0b89a62b04b73aada0a49cb755c7e7bd9a
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 59c596e8fc5dc3944128e8916ff44ed011349b6b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312281"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817381"
 ---
 # <a name="change-the-color-scheme-of-the-dashboard-and-launchpad"></a>變更儀表板及啟動列的色彩配置
 

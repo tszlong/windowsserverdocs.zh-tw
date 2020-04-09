@@ -1,7 +1,6 @@
 ---
 ms.assetid: e727a33d-133b-43c9-b6a4-7c00f9cb6000
 title: 檢查領域模型
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 00683b09aff5b3a3b097f7f8b423c51080b86d02
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b77f634d8548994d2f9e130faad9ca34aa226327
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408686"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821951"
 ---
 # <a name="reviewing-the-domain-models"></a>檢查領域模型
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 下列因素會影響您所選取的網域設計模型：  
   
@@ -30,7 +29,7 @@ ms.locfileid: "71408686"
 
 最好將您在樹系中部署的網域數目降至最低。 這可降低部署的整體複雜度，因而降低擁有權總成本。 下表列出與新增地區網域相關聯的系統管理成本。  
 
-|成本|產生|  
+|Cost|產生|  
 |--------|----------------|  
 |管理多個服務系統管理員群組|每個網域都有自己的服務系統管理員群組，必須獨立管理。 必須謹慎控制這些服務管理員群組的成員資格。|  
 |維護多個網域通用群組原則設定之間的一致性|需要套用到整個樹系的群組原則設定必須分別套用至樹系中的每個個別網域。|  
@@ -38,7 +37,7 @@ ms.locfileid: "71408686"
 |在網域之間移動物件的可能性增加|網域數目越大，使用者必須從某個網域移到另一個網域的可能性就越高。 這種移動可能會影響終端使用者。|  
 
 > [!NOTE]  
-> Windows Server 更細緻的密碼和帳戶鎖定原則也會影響您所選取的網域設計模型。 在此版本的 Windows Server 2008 之前，您只能將網域預設網域原則中所指定的一個密碼和帳戶鎖定原則套用到網域中的所有使用者。 因此，如果您想要讓不同的使用者集合有不同的密碼和帳戶鎖定設定，就必須建立密碼篩選或部署多個網域。 您現在可以使用更細緻的密碼原則來指定多個密碼原則，以及將不同的密碼限制和帳戶鎖定原則套用至單一網域中的不同使用者集合。 如需更細緻的密碼和帳戶鎖定原則的詳細資訊，請參閱更細緻的[密碼和帳戶鎖定原則設定的逐步指南](https://go.microsoft.com/fwlink/?LinkID=91477)一文。  
+> Windows Server 更細緻的密碼和帳戶鎖定原則也會影響您所選取的網域設計模型。 在此版本的 Windows Server 2008 之前，您只能將網域預設網域原則中所指定的一個密碼和帳戶鎖定原則套用到網域中的所有使用者。 因此，如果您想要針對不同的使用者集合套用不同的密碼與帳戶鎖定設定，您必須建立密碼篩選或部署多個網域。 您現在可以使用更細緻的密碼原則來指定多個密碼原則，以及將不同的密碼限制和帳戶鎖定原則套用至單一網域中的不同使用者集合。 如需更細緻的密碼和帳戶鎖定原則的詳細資訊，請參閱更細緻的[密碼和帳戶鎖定原則設定的逐步指南](https://go.microsoft.com/fwlink/?LinkID=91477)一文。  
 
 ## <a name="single-domain-model"></a>單一網域模型
 

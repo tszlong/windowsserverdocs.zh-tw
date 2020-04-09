@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9779da98ecb43245fe206390d9b70471f15d706e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9807efa2c570b8ed63c2d776327b8e3311846488
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362610"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80830111"
 ---
 # <a name="vssadmin-delete-shadows"></a>Vssadmin 刪除陰影
 
->適用於：Windows 10、Windows 8.1、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+>適用于： Windows 10、Windows 8.1、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 刪除指定的磁片區陰影複製。
 
@@ -27,14 +27,14 @@ ms.locfileid: "71362610"
 vssadmin delete shadows /for=<ForVolumeSpec> [/oldest | /all | /shadow=<ShadowID>] [/quiet]
 ```
 
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---|---|
-|/for = \<ForVolumeSpec >|指定將刪除哪一個磁片區的陰影複製。|
+|/for =\<ForVolumeSpec >|指定將刪除哪一個磁片區的陰影複製。|
 |/oldest|只刪除最舊的陰影複製。|
 |/all|刪除指定磁片區的所有陰影複製。|
-|/shadow = \<ShadowID >|刪除 ShadowID 所指定的陰影複製。 若要取得陰影複製識別碼，請使用**vssadmin list shadows**命令。 當您輸入陰影複製識別碼時，請使用下列格式，其中每個*X*代表一個十六進位字元：<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX （XXXX）|
+|/shadow =\<ShadowID >|刪除 ShadowID 所指定的陰影複製。 若要取得陰影複製識別碼，請使用**vssadmin list shadows**命令。 當您輸入陰影複製識別碼時，請使用下列格式，其中每個*X*代表一個十六進位字元：<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX （XXXX）|
 |/quiet|指定命令在執行時不會顯示訊息。|
 
 ## <a name="remarks"></a>備註

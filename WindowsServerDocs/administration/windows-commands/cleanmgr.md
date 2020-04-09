@@ -1,6 +1,6 @@
 ---
 title: cleanmgr
-description: 瞭解如何使用命令列選項來設定磁片清理工具（Cleanmgr.exe 釋放），以自動清除特定檔案。
+description: 了解如何使用命令列選項來設定磁碟清理工具 (Cleanmgr.exe)，以自動清除特定檔案。
 ms.prod: windows-server
 ms.reviewer: cosmosdarwin
 author: iangpgh
@@ -8,12 +8,12 @@ ms.author: jgerend
 manager: daveba
 ms.technology: storage-spaces
 ms.date: 06/20/2019
-ms.openlocfilehash: 0646922f409d4ea8abb85c927a329013e32016de
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 9abde0cb0db910cd500df94f98c76e6c370cba2a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947579"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847711"
 ---
 # <a name="cleanmgr"></a>cleanmgr
 
@@ -29,9 +29,9 @@ ms.locfileid: "75947579"
 cleanmgr [/d <driveletter>] [/sageset:n]  [/sagerun:n] [/TUNEUP:n] [/LOWDISK] [/VERYLOWDISK]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
-|      參數      |    說明     |
+|      參數      |    描述     |
 | ------------------- | ------------------ |
 |  /d \<磁碟機號 >          | 指定您想要清理磁片的磁片磁碟機。<br>**注意：** /D 選項不會與/sagerun： n 搭配使用。 |
 | /sageset： n | 顯示 [磁片清理設定] 對話方塊，並建立登錄機碼來儲存您所選取的設定。 儲存在登錄中的 `n` 值可讓您指定要執行磁片清理的工作。 `n` 值可以是從0到65535的任何整數值。 若要在使用/sageset 選項時提供所有選項，請指定安裝 Windows 的磁片磁碟機。  |
@@ -41,7 +41,7 @@ cleanmgr [/d <driveletter>] [/sageset:n]  [/sagerun:n] [/TUNEUP:n] [/LOWDISK] [/
 | /VERYLOWDISK | 以預設設定執行，不提示使用者。 |
 | /?           | 顯示 [說明]。 |
 
-## <a name="options"></a>[選項]
+## <a name="options"></a>選項
 
 您可以使用/sageset 和/sagerun 針對 [磁片清理] 指定的檔案選項包括：
 
@@ -89,4 +89,4 @@ cleanmgr /tuneup:1
 
 ## <a name="additional-references"></a>其他參考資料
 
-[釋放 Windows 10 中的磁片磁碟機空間](https://support.microsoft.com/help/12425/windows-10-free-up-drive-space)
+[在 Windows 10 中釋放磁碟機空間](https://support.microsoft.com/help/12425/windows-10-free-up-drive-space)

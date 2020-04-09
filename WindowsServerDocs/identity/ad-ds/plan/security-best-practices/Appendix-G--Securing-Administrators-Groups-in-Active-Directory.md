@@ -1,7 +1,6 @@
 ---
 ms.assetid: 4baefbd3-038f-44c0-85ba-f24e9722b757
 title: 附錄 G-保護 Active Directory 中的系統管理員群組
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: cdea04e211b1873ff51c4bc3dc9ff24e746ead69
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f113dc7fc5b131a2c0ef10433125ef12a775707c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408643"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821521"
 ---
 # <a name="appendix-g-securing-administrators-groups-in-active-directory"></a>附錄 G︰保護 Active Directory 中的 Administrators 群組
 
@@ -271,7 +270,7 @@ ms.locfileid: "71408643"
 
 7.  在 [**程式/腳本**] 欄位中，按一下 **[流覽]** ，找出並選取建立**批次檔**一節中建立的批次檔，然後按一下 [**開啟**]。  
 
-8.  按一下 **\[確定\]** 。  
+8.  按一下 [確定]。  
 
 9. 按一下 [一般] 索引標籤。  
 
@@ -281,7 +280,7 @@ ms.locfileid: "71408643"
 
 12. 選取 **[執行]，不論使用者是否已記錄 onor** ，而不是**儲存密碼**。 此工作只會存取本機電腦資源。  
 
-13. 按一下 **\[確定\]** 。  
+13. 按一下 [確定]。  
 
 14. 對話方塊應該會出現，要求使用者帳號憑證才能執行工作。  
 

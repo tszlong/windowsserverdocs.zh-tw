@@ -3,21 +3,21 @@ ms.assetid: 13210461-1e92-48a1-91a2-c251957ba256
 title: 對磁碟機韌體更新進行疑難排解
 ms.prod: windows-server
 ms.author: toklima
-ms.manager: masriniv
+manager: masriniv
 ms.technology: storage
 ms.topic: article
 author: toklima
 ms.date: 04/18/2017
-ms.openlocfilehash: 9c9c1083def53e09b063a0ca9879e4d4527e98c0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b62fdfe64ea579f61239dc582c639fb10ec1371c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365892"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820881"
 ---
 # <a name="troubleshooting-drive-firmware-updates"></a>對磁碟機韌體更新進行疑難排解
 
->適用於：Windows 10、Windows Server （半年通道）、
+>適用於：Windows 10、Windows Server (半年度管道)、
 
 Windows 10 版本 1703 和更新版本，以及 Windows Server (半年度管道) 包含可更新已使用韌體升級 AQ (其他辨識符號) 透過 PowerShell 取得認證之 HDD 和 SSD 韌體的功能。
 
@@ -41,7 +41,7 @@ Windows 10 版本 1703 和更新版本，以及 Windows Server (半年度管道)
 下列各節根據使用的是 Microsoft 還是協力廠商的驅動程式，概述疑難排解資訊。
 
 ## <a name="identifying-inappropriate-hardware"></a>識別不適當的硬體
-識別裝置是否支援正確命令集最快速方法就是，直接啟動 PowerShell，並將磁碟的象徵 PhysicalDisk 物件傳遞至 Get-StorageFirmwareInfo Cmdlet。 請看以下範例：
+識別裝置是否支援正確命令集最快速方法就是，直接啟動 PowerShell，並將磁碟的象徵 PhysicalDisk 物件傳遞至 Get-StorageFirmwareInfo Cmdlet。 以下是範例：
 
 ```powershell
 Get-PhysicalDisk -SerialNumber 15140F55976D | Get-StorageFirmwareInformation
@@ -142,7 +142,7 @@ NumberOfRetriesDone 0
 
 若要收集這些進階記錄檔項目，請啟用記錄檔、重現韌體更新失敗，並儲存診斷記錄檔。
 
-以下是 SATA 裝置上的固件更新範例失敗，因為要下載的映射無效（事件識別碼：258）：
+以下是有關 SATA 裝置因下載映像無效 (事件識別碼：258) 而失敗的韌體更新範例：
 
 ``` 
 EventData
@@ -174,11 +174,11 @@ Parameter8Value 0
 ```
 
 上述事件的參數值 2 至 6 包含詳細的裝置資訊。 我們在這裡看到了各種 ATA 暫存器值。 ATA ACS 規格可以用來解碼下面的下載微碼命令失敗值：
-- 傳回碼：0（0000 0000）（N/A-無意義，因為未傳輸任何承載）
+- 傳回碼：0 (0000 0000) (不適用 - 無意義，因為沒有傳輸任何承載)
 - 功能：15（0000 1111）（Bit 1 已設定為 ' 1 '，表示「中止」）
-- SectorCount:0（0000 0000）（N/A）
-- DriveHead:160（1010 0000）（N/A –只設定過時的位）
-- 命令146（1001 0010）（Bit 1 設定為 ' 1 '，表示有意義資料的可用性）
+- 磁區計數：0 (0000 0000) (不適用)
+- 磁碟機磁頭：160 (1010 0000) (不適用 – 只有過時的位元已設定)
+- 命令：146（1001 0010）（Bit 1 設定為 ' 1 '，表示有意義資料的可用性）
 
 這就是說，韌體更新作業已由裝置中止。
 

@@ -1,28 +1,24 @@
 ---
 title: 為軟體限制原則進行疑難排解
 description: Windows Server 安全性
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-software-restriction-policies
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4fd53736-03e7-4bf9-ba90-d1212d93e19a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 8dff3e1542afcc3cba3645b6834981bd6ed33f58
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c6b3a475f21925b506d073bd3618d78e2ee0c1d7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407168"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819721"
 ---
 # <a name="troubleshoot-software-restriction-policies"></a>為軟體限制原則進行疑難排解
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 本主題說明從 Windows Server 2008 和 Windows Vista 開始針對軟體限制原則（SRP）進行疑難排解時，常見的問題及其解決方案。
 
@@ -49,7 +45,7 @@ ms.locfileid: "71407168"
 
 2.  登出網路，然後再次登入網路，以重新整理原則。 如果透過群組原則套用任何原則，登入將會重新整理這些原則。
 
-3.  您可以使用命令列公用程式 gpupdate 或登出，然後重新登入您的電腦，以更新原則設定。 為獲得最佳結果，請執行 gpupdate，然後登出再重新登入您的電腦。 一般來說，在工作站或伺服器上每90分鐘都會重新整理安全性設定，而在網域控制站上每隔5分鐘重新整理一次。 不管是否有變更，每 16 小時也會重新整理這些設定。 這些是可設定的設定值，因此每個網域中的重新整理間隔可能會不同。
+3.  您可以使用命令列公用程式 gpupdate 或登出，然後重新登入您的電腦，以更新原則設定。 為獲得最佳結果，請執行 gpupdate，然後登出再重新登入您的電腦。 一般來說，在工作站或伺服器上每90分鐘都會重新整理安全性設定，而在網域控制站上每隔5分鐘重新整理一次。 此外，無論是否有變更，這些設定每 16 小時也都會重新整理一次。 這些是可設定的設定值，因此每個網域中的重新整理間隔可能會不同。
 
 4.  檢查適用的原則。 檢查網域層級原則是否**沒有覆寫**設定。
 

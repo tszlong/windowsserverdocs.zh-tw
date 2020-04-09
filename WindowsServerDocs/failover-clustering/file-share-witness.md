@@ -1,30 +1,31 @@
 ---
 title: 在 Windows Server 2019 中部署檔案共用見證
+description: 檔案共用見證可讓您使用檔案共用，在叢集仲裁中進行投票。 本主題描述檔案共用見證和新功能，包括使用連接到路由器的 USB 磁片磁碟機做為檔案共用見證。
 ms.prod: windows-server
-ms.manager: eldenc
+manager: eldenc
 ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
+ms.author: johnmar
 ms.date: 01/24/2019
-description: 檔案共用見證可讓您使用檔案共用，在叢集仲裁中進行投票。 本主題描述檔案共用見證和新功能，包括使用連接到路由器的 USB 磁片磁碟機做為檔案共用見證。
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f0a0c5b48f7c382367e4b1100ff649fe73d3be9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 63e016b8e00482529e69aaa12727f854afd51e41
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369758"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827671"
 ---
 # <a name="deploy-a-file-share-witness"></a>部署檔案共用見證
 
-> 適用於：Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 「檔案共用見證」是一個 SMB 共用，容錯移轉叢集會在叢集仲裁中用來做為投票。 本主題提供 Windows Server 2019 中技術和新功能的總覽，包括使用連接到路由器的 USB 磁片磁碟機做為檔案共用見證。
 
 在下列情況下，檔案共用見證很方便：  
 
 - 無法使用雲端見證，因為並非叢集中的所有伺服器都有可靠的網際網路連線
-- 無法使用磁片見證，因為沒有任何共用磁片磁碟機可用於磁片見證。 這可能是儲存空間直接存取叢集、SQL Server Always On 可用性群組（AG）、Exchange 資料庫可用性群組（DAG）等。這些類型的叢集都不會使用共用磁片。
+- 無法使用磁片見證，因為沒有任何共用磁片磁碟機可用於磁片見證。 這可能是儲存空間直接存取叢集、SQL Server Always On 可用性群組（AG）、Exchange 資料庫可用性群組（DAG）等。 這些類型的叢集都不會使用共用磁片。
 
 ## <a name="file-share-witness-requirements"></a>檔案共用見證需求
 
@@ -32,7 +33,7 @@ ms.locfileid: "71369758"
 
 |檔案伺服器類型                 | 支援的叢集 |
 |---------------------------------|--------------------|
-|任何具有 SMB 2 檔案共用的裝置 | Windows Server Standard 2012 R2|
+|任何具有 SMB 2 檔案共用的裝置 | Windows Server 2019|
 |已加入網域的 Windows Server     | Windows Server 2008 和更新版本|
 
 如果叢集正在執行 Windows Server 2019，以下是需求：

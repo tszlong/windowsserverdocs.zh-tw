@@ -1,23 +1,19 @@
 ---
 title: 建立 PostIC.cmd 檔案以便執行初始設定後續的工作
 description: 說明如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 99e258bc-0695-48c9-b694-a7f3cbe2a2d0
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 81a38f0baf3a47323f6bf8836e48d02bc955cde0
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 4655db35803680b7b1ebd0d2da29a3a09f135b63
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312067"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818171"
 ---
 # <a name="create-the-posticcmd-file-for-running-post-initial-configuration-tasks"></a>建立 PostIC.cmd 檔案以便執行初始設定後續的工作
 

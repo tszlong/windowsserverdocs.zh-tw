@@ -1,7 +1,6 @@
 ---
 ms.assetid: ef63d40c-a262-4a18-938d-b95c10680c0b
-title: 自主性與實施
-description: ''
+title: 自治與隔離
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c3430ae9320ed2d39768d91f768adb3f9ab1c716
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9d836804f1de84ed9d10a978876db9cbecc23123
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402650"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822831"
 ---
-# <a name="autonomy-vs-isolation"></a>自主性與實施
+# <a name="autonomy-vs-isolation"></a>自治與隔離
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 您可以設計 Active Directory 邏輯結構來達到下列其中一項：  
   
@@ -44,7 +43,7 @@ ms.locfileid: "71402650"
 ### <a name="data-isolation"></a>資料隔離  
 資料隔離牽涉到擁有資料的群組或組織對資料進行獨佔控制。 值得注意的是，服務系統管理員能夠控制遠離資料管理員的資源。 和資料管理員無法防止服務系統管理員存取他們所控制的資源。 因此，當組織內的另一個群組負責服務管理時，您無法達到資料隔離。 如果群組需要資料隔離，則該群組也必須承擔服務管理的責任。  
   
-因為儲存在 AD DS 和加入 AD DS 的電腦上的資料無法與服務系統管理員隔離，組織內群組的唯一方法就是為該資料建立個別的樹系。 受到惡意軟體或已轉型服務管理員攻擊之後果的組織，可能會選擇建立個別的樹系以達成資料隔離。 法律需求通常會建立這類資料隔離的需求。 例如:  
+因為儲存在 AD DS 和加入 AD DS 的電腦上的資料無法與服務系統管理員隔離，組織內群組的唯一方法就是為該資料建立個別的樹系。 受到惡意軟體或已轉型服務管理員攻擊之後果的組織，可能會選擇建立個別的樹系以達成資料隔離。 法律需求通常會建立這類資料隔離的需求。 例如，  
   
 -   金融機構必須將屬於特定管轄權之用戶端的資料，限制為位於該管轄區的使用者、電腦和系統管理員。 雖然機構信任在受保護區域外部工作的服務系統管理員，但如果違反存取限制，該機構將無法再于該管轄範圍內執行業務。 因此，金融機構必須將資料與該管轄區以外的服務系統管理員隔離。 請注意，加密不一定是此解決方案的替代方案。 加密可能無法保護服務系統管理員的資料。  
   
@@ -61,7 +60,7 @@ ms.locfileid: "71402650"
 ### <a name="service-isolation"></a>服務隔離  
 服務隔離牽涉到 Active Directory 基礎結構的獨佔控制。 需要服務隔離的群組需要群組外部的系統管理員不會干擾目錄服務的操作。  
   
-營運或法律需求通常會產生服務隔離的需求。 例如:  
+營運或法律需求通常會產生服務隔離的需求。 例如，  
   
 -   製造公司有一個重要的應用程式，可控制工廠中的設備。 組織網路其他部分的服務中斷，不能幹擾處理站樓層的作業。  
   
@@ -70,7 +69,7 @@ ms.locfileid: "71402650"
 ### <a name="service-autonomy"></a>服務獨立性  
 服務獨立性包含管理基礎結構的能力，而不需要獨佔控制;例如，當群組想要對基礎結構進行變更時（例如新增或移除網域、修改網域名稱系統（DNS）命名空間，或修改架構），而不需核准樹系擁有者。  
   
-組織內可能需要服務自主性，才能控制 AD DS 的服務層級（視需要新增和移除網域控制站），或針對需要能夠安裝啟用目錄之應用程式的群組，需要架構延伸。  
+對於想要能夠控制 AD DS 服務層級的群組（視需要新增和移除網域控制站）或群組（需要能夠安裝需要架構延伸的已啟用目錄的應用程式），組織中可能需要服務獨立性。  
   
 ## <a name="limited-connectivity"></a>連線能力有限  
 如果您組織內的群組所擁有的網路是以限制或限制網路之間連線的裝置（例如防火牆和網路位址轉譯（NAT）裝置）來分隔，這可能會影響您的樹系設計。 當您識別樹系設計需求時，請務必記下您的網路連線能力有限的位置。 這是讓您針對樹系設計做出決策所需的資訊。  

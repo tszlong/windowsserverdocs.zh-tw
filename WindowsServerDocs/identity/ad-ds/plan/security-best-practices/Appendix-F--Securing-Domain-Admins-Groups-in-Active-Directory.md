@@ -1,7 +1,6 @@
 ---
 ms.assetid: 017b88a6-f29b-4787-99b6-b5c8eaf8c3df
 title: 附錄 F-保護 Active Directory 中的 Domain Admins 群組
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 4f453aa9f076b0272821849840106dae0c52fbbc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d1df7403b7e50fa50894bb4dbaa0cac9c6f42727
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408697"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821501"
 ---
 # <a name="appendix-f-securing-domain-admins-groups-in-active-directory"></a>附錄 F︰保護 Active Directory 中的 Domain Admins 群組
 
@@ -215,7 +214,7 @@ ms.locfileid: "71408697"
 
 7.  在 [**程式/腳本**] 底下，按一下 **[流覽]** ，找出並選取建立**批次檔**一節中建立的批次檔，然後按一下 [**開啟**]。  
 
-8.  按一下 **\[確定\]** 。  
+8.  按一下 [確定]。  
 
 9. 按一下 [一般] 索引標籤。  
 
@@ -225,7 +224,7 @@ ms.locfileid: "71408697"
 
 12. 選取 **[執行]，無論使用者是否登入**，並選取 [不要**儲存密碼**]。 此工作只會存取本機電腦資源。  
 
-13. 按一下 **\[確定\]** 。  
+13. 按一下 [確定]。  
 
 14. 對話方塊應該會出現，要求使用者帳號憑證才能執行工作。  
 

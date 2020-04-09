@@ -1,7 +1,6 @@
 ---
 ms.assetid: 864ad4bc-8428-4a8b-8671-cb93b68b0c03
 title: 減少 Active Directory 的攻擊面
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 94bc65d42fa90dd7c93ba759a41d34edec10de09
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dcd0b412e7a0005bc6574638e0f6fce4554c6487
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367652"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821051"
 ---
 # <a name="reducing-the-active-directory-attack-surface"></a>減少 Active Directory 的攻擊面
 
@@ -32,7 +31,7 @@ ms.locfileid: "71367652"
 本節提供 Active Directory 中的特殊許可權帳戶和群組的背景資訊，以說明 Active Directory 中的特殊許可權帳戶和群組之間的共通性和差異。 瞭解這些差異後，無論您是實作為原實行[最低許可權系統管理模型](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Implementing-Least-Privilege-Administrative-Models.md)的建議，或是選擇為組織自訂它們，您都擁有適當的工具來保護每個群組和帳戶。  
   
 ### <a name="built-in-privileged-accounts-and-groups"></a>內建的特殊許可權帳戶和群組  
-Active Directory 有助於管理委派，並支援指派權利和許可權的最低許可權原則。 根據預設，在網域中具有帳戶的「一般」使用者，可以讀取儲存在目錄中的大部分內容，但只能變更目錄中非常有限的資料集。 需要額外許可權的使用者可以被授與目錄內建之各種「特殊許可權」群組的成員資格，使其可以執行與其角色相關的特定工作，但無法執行與其責任無關的工作。 組織也可以建立專為特定工作責任量身打造的群組，並獲得更細微的權利和許可權，讓 IT 人員能夠執行日常的系統管理功能，而不需授與的權利和許可權超過這是這些函式的必要參數。  
+Active Directory 有助於管理委派，並支援指派權利和許可權的最低許可權原則。 根據預設，在網域中具有帳戶的「一般」使用者，可以讀取儲存在目錄中的大部分內容，但只能變更目錄中非常有限的資料集。 需要額外許可權的使用者可以被授與目錄內建之各種「特殊許可權」群組的成員資格，使其可以執行與其角色相關的特定工作，但無法執行與其責任無關的工作。 組織也可以建立專為特定工作責任量身打造的群組，並獲得更細微的權利和許可權，讓 IT 人員能夠執行日常的系統管理功能，而不需授與超過這些功能所需的許可權。  
   
 在 Active Directory 中，三個內建群組是目錄中最高的許可權群組： Enterprise Admins、Domain Admins 和 Administrators。 下列各節將說明每個群組的預設設定和功能：  
   
@@ -43,7 +42,7 @@ Enterprise Admins （EA）是只存在於樹系根域中的群組，而且根據
   
 ##### <a name="domain-admins"></a>Domain Admins  
 
-樹系中的每個網域都有自己的網域系統管理員（DA）群組，這是該網域的系統管理員群組成員，以及每一部加入網域的電腦上本機 Administrators 群組的成員。 網域的 DA 群組唯一的預設成員是該網域的內建系統管理員帳戶。 DAs 在其網域內具有「全功能」，而 EAs 則具備全樹系許可權。 在適當設計和實行的委派模型中，只有在「中斷玻璃」的情況下才需要網域系統管理員成員資格（例如，需要在網域中的每一部電腦上具有高階許可權的帳戶）。 雖然原生 Active Directory 委派機制允許委派的範圍，只有在緊急情況下才能夠使用 DA 帳戶，而建立有效的委派模型可能相當耗時，而許多組織都利用可加速程式的協力廠商工具。  
+樹系中的每個網域都有自己的網域系統管理員（DA）群組，這是該網域的系統管理員群組成員，以及每一部加入網域的電腦上本機 Administrators 群組的成員。 網域的 DA 群組唯一的預設成員是該網域的內建系統管理員帳戶。 DAs 在其網域內具有「全功能」，而 EAs 則具備全樹系許可權。 在適當設計和實行的委派模型中，只有在「中斷玻璃」的情況下才需要網域系統管理員成員資格（例如，需要在網域中的每一部電腦上具有高階許可權的帳戶）。 雖然原生 Active Directory 委派機制允許委派的範圍，只有在緊急情況下才能夠使用 DA 帳戶，而建立有效的委派模型可能相當耗時，而許多組織都利用協力廠商工具來加速此程式。  
   
 ##### <a name="administrators"></a>Administrators  
 第三個群組是在其中嵌套 DAs 和 EAs 的內建網域本機系統管理員（BA）群組。 此群組會被授與目錄和網域控制站上的許多直接權利和許可權。 不過，網域的 Administrators 群組在成員伺服器或工作站上沒有許可權。 它是透過授與本機許可權的電腦本機系統管理員群組中的成員資格。  
@@ -55,7 +54,7 @@ Enterprise Admins （EA）是只存在於樹系根域中的群組，而且根據
 
 第四個特殊許可權群組（架構系統管理員（SA））只存在於樹系根域中，而且只有該網域的內建 Administrator 帳戶作為預設成員，類似于 Enterprise Admins 群組。 Schema Admins 群組僅供暫時和偶爾填入（需要修改 AD DS 架構時）。  
   
-雖然 SA 群組是唯一能夠修改 Active Directory 架構的群組（也就是目錄的基礎資料結構，例如物件和屬性），但 SA 群組的許可權與許可權的範圍比先前所述的限制更多。部門. 同時也會發現組織已針對 SA 群組的成員資格而開發適當的作法，因為通常不常需要群組中的成員資格，而且只是短時間內。 這在技術上，這在 Active Directory 的 EA、DA 和 BA 群組中都是如此，但在某些情況下，發現組織已為這些群組實作為 SA 群組的類似做法，這種方式也比較不常見。  
+雖然 SA 群組是唯一能夠修改 Active Directory 架構的群組（也就是目錄的基礎資料結構，例如物件和屬性），但 SA 群組的許可權與許可權的範圍比先前所述的群組更受限制。 同時也會發現組織已針對 SA 群組的成員資格而開發適當的作法，因為通常不常需要群組中的成員資格，而且只是短時間內。 這在技術上，這在 Active Directory 的 EA、DA 和 BA 群組中都是如此，但在某些情況下，發現組織已為這些群組實作為 SA 群組的類似做法，這種方式也比較不常見。  
   
 #### <a name="protected-accounts-and-groups-in-active-directory"></a>Active Directory 中的受保護帳戶和群組  
 在 Active Directory 中，一組稱為「受保護」帳戶和群組的預設特殊許可權帳戶和群組，與目錄中的其他物件的保護方式不同。 任何在任何受保護群組中具有直接或可轉移成員資格的帳戶（不論成員資格是否衍生自安全性或通訊群組）都會繼承此限制的安全性。  
@@ -74,7 +73,7 @@ Enterprise Admins （EA）是只存在於樹系根域中的群組，而且根據
 |-|-|-|-|  
 |**Windows 2000 < SP4**|**Windows 2000 SP4-Windows Server 2003**|**Windows Server 2003 SP1 +**|**Windows Server 2008-Windows Server 2012**|  
 |Administrators|Account Operators|Account Operators|Account Operators|  
-||Administrator|Administrator|Administrator|  
+||系統管理員|系統管理員|系統管理員|  
 ||Administrators|Administrators|Administrators|  
 |Domain Admins|Backup Operators|Backup Operators|Backup Operators|  
 ||Cert Publishers|||  
@@ -100,7 +99,7 @@ Enterprise Admins （EA）是只存在於樹系根域中的群組，而且根據
 ###### <a name="adminsdholder-ownership"></a>AdminSDHolder 擁有權  
 Active Directory 中的大部分物件都是由網域的 BA 群組所擁有。 不過，根據預設，AdminSDHolder 物件是由網域的 DA 群組所擁有。 （這是 DAs 不會透過網域的 Administrators 群組中的成員資格來衍生其權利和許可權的情況）。  
   
-在 Windows Server 2008 之前的 Windows 版本中，物件的擁有者可以變更物件的許可權，包括授與本身原本不具有的許可權。 因此，網域 AdminSDHolder 物件的預設許可權會防止屬於 BA 或 EA 群組成員的使用者變更網域 AdminSDHolder 物件的許可權。 不過，網域系統管理員群組的成員可以取得物件的擁有權，並授與自己其他許可權，這表示這項保護是基本的，而且只會保護物件免于遭到下列情況的使用者意外修改：不是網域中的 DA 群組成員。 此外，BA 和 EA （若適用）群組具有在本機網域（EA 的根域）中變更 AdminSDHolder 物件屬性的許可權。  
+在 Windows Server 2008 之前的 Windows 版本中，物件的擁有者可以變更物件的許可權，包括授與本身原本不具有的許可權。 因此，網域 AdminSDHolder 物件的預設許可權會防止屬於 BA 或 EA 群組成員的使用者變更網域 AdminSDHolder 物件的許可權。 不過，網域的 Administrators 群組成員可以取得物件的擁有權，並授與自己其他許可權，這表示這項保護是基本的，而且只會保護物件不受網域中的 DA 群組成員的使用者意外修改。 此外，BA 和 EA （若適用）群組具有在本機網域（EA 的根域）中變更 AdminSDHolder 物件屬性的許可權。  
   
 > [!NOTE]  
 > AdminSDHolder 物件（dSHeuristics）上的屬性（attribute）允許有限的自訂（移除）被視為受保護群組且受到 AdminSDHolder 和 SDProp 影響的群組。 這項自訂應該仔細考慮是否已實行，雖然在某些情況下，在 AdminSDHolder 上修改 dSHeuristics 很有用。 如需有關在 AdminSDHolder 物件上修改 dSHeuristics 屬性的詳細資訊，請參閱 Microsoft 支援服務文章[817433](https://support.microsoft.com/?id=817433)和[973840](https://support.microsoft.com/kb/973840)，以及[附錄 C： Active Directory 中的受保護帳戶和群組](Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md)。  

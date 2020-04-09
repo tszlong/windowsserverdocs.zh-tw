@@ -1,7 +1,6 @@
 ---
 ms.assetid: 22c514b2-401e-49e1-a87e-0cbaa2c1dac1
 title: 站台功能
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 109f576bfdacf68a0eadc7dd84ddb9a4148e6dd9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4443e5a0cfeba0eaee767404359febec256209d4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408679"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821841"
 ---
 # <a name="site-functions"></a>站台功能
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
  Windows Server 2008 使用的網站資訊有許多用途，包括路由複寫、用戶端親和性、系統磁碟區（SYSVOL）複寫、分散式檔案系統命名空間（DFSN）和服務位置。  
   
@@ -28,9 +27,9 @@ Active Directory Domain Services （AD DS）使用複寫的多宿主、儲存後
 在網站內，複寫已針對速度、資料更新觸發複寫進行優化，而且資料會在沒有資料壓縮所需的額外負荷下傳送。 相反地，會壓縮網站之間的複寫，以將透過廣域網路（WAN）連結傳輸的成本降至最低。 在網站之間進行複寫時，每個網站上每個網域的單一網域控制站會收集並儲存目錄變更，並在排定的時間將它們與另一個網站中的網域控制站進行通訊。  
   
 ## <a name="client-affinity"></a>用戶端親和性  
-網域控制站會使用網站資訊來通知 Active Directory 用戶端與用戶端位於最接近的網站中的網域控制站。 例如，假設西雅圖網站中的用戶端不知道其網站關係，並與亞特蘭大網站的網域控制站聯繫。 根據用戶端的 IP 位址，亞特蘭大中的網域控制站會決定用戶端實際來自哪個網站，並將網站資訊傳回給用戶端。 網域控制站也會通知用戶端，選擇的網域控制站是否與它最接近。 用戶端會快取亞特蘭大中的網域控制站所提供的網站資訊、網站特定服務（SRV）資源記錄的查詢（用來尋找 AD DS 的網域控制站的網域名稱系統（DNS）資源記錄），進而尋找網域相同網站內的控制器。  
+網域控制站會使用網站資訊來通知 Active Directory 用戶端與用戶端位於最接近的網站中的網域控制站。 例如，假設西雅圖網站中的用戶端不知道其網站關係，並與亞特蘭大網站的網域控制站聯繫。 根據用戶端的 IP 位址，亞特蘭大中的網域控制站會決定用戶端實際來自哪個網站，並將網站資訊傳回給用戶端。 網域控制站也會通知用戶端，選擇的網域控制站是否與它最接近。 用戶端會快取亞特蘭大中的網域控制站所提供的網站資訊、網站特定服務（SRV）資源記錄的查詢（用來尋找 AD DS 的網域控制站的網域名稱系統（DNS）資源記錄），進而尋找相同網站內的網域控制站。  
   
-藉由尋找相同網站中的網域控制站，用戶端可避免透過 WAN 連結進行通訊。 如果在用戶端網站上找不到網域控制站，則與其他連線的網站相對的最低成本連接的網域控制站會向自己公告（在 DNS 中註冊網站特定服務（SRV）資源記錄），而該網站中沒有網域控制站。 在 DNS 中發佈的網域控制站，是來自網站拓撲所定義的最接近網站。 此程式可確保每個網站都有慣用的網域控制站來進行驗證。  
+藉由尋找相同網站中的網域控制站，用戶端可避免透過 WAN 連結進行通訊。 如果在用戶端網站上找不到網域控制站，則與其他連線的網站相對的最低成本連接的網域控制站會在沒有網域控制站的網站中，向其註冊網站特定服務（SRV）資源記錄。 在 DNS 中發佈的網域控制站，是來自網站拓撲所定義的最接近網站。 此程式可確保每個網站都有慣用的網域控制站來進行驗證。  
   
 如需尋找網域控制站之程式的詳細資訊，請參閱 Active Directory 集合（[https://go.microsoft.com/fwlink/?LinkID=88626](https://go.microsoft.com/fwlink/?LinkID=88626)）。  
   

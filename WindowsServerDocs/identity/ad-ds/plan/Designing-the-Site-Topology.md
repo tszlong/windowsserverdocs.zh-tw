@@ -1,7 +1,6 @@
 ---
 ms.assetid: eeb919de-e21e-48d8-8186-e42adec6933f
 title: 設計站台拓撲
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: d3ebc3bd764a8ed44e201d0fca5f85b06df8be9d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e7b6267946217d5c5fb57496eb6bf54911b61e8a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408890"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822593"
 ---
 # <a name="designing-the-site-topology"></a>設計站台拓撲
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 目錄服務網站拓撲是實體網路的邏輯標記法。 設計 Active Directory Domain Services （AD DS）的網站拓撲牽涉到規劃網域控制站放置和設計網站、子網、站台連結和站台連結橋，以確保查詢和複寫流量的路由有效。  
   
@@ -36,7 +35,7 @@ ms.locfileid: "71408890"
   
 完成網站拓朴設計之後，您必須確認您的網域控制站符合 Windows Server 2008 Standard、Windows Server 2008 Enterprise 和 Windows Server 2008 Datacenter 的硬體需求。  
   
-## <a name="in-this-guide"></a>本指南內容  
+## <a name="in-this-guide"></a>在本指南中  
   
 -   [了解 Active Directory 站台拓撲](../../ad-ds/plan/Understanding-Active-Directory-Site-Topology.md)  
   

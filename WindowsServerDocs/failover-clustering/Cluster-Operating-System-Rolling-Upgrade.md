@@ -6,13 +6,14 @@ ms.topic: get-started-article
 ms.assetid: 6e102c1f-df26-4eaa-bc7a-d0d55d3b82d5
 author: jasongerend
 ms.author: jgerend
+manager: lizross
 ms.date: 03/27/2018
-ms.openlocfilehash: fc1799db76f528a599ef70eec5093da0a76206a2
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 8b2ea665542d57b12899a5993a62973c446485a7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948531"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828351"
 ---
 # <a name="cluster-operating-system-rolling-upgrade"></a>叢集作業系統輪流升級
 
@@ -226,7 +227,7 @@ System Center Virtual Machine Manager （SCVMM）2016完全支援叢集 OS 輪�
         顯示 VMHostSupportedVersion Cmdlet 輸出的 ![螢幕擷取畫面](media/Cluster-Operating-System-Rolling-Upgrade/Clustering_GetVMHostSupportVersion.png)  
         **圖21：查看主機支援的 Hyper-v VM 設定版本**  
 
-   3. 在叢集中的每個 Hyper-v 主機節點上，可以藉由排程使用者、備份、關閉虛擬機器，以及執行[`Update-VMVersion`](https://docs.microsoft.com/powershell/module/hyper-v/Update-VMVersion?view=win10-ps) Cmdlet （請參閱 [圖 22]），來升級 hyper-v VM 設定版本。 這會更新虛擬機器版本，並啟用新的 Hyper-v 功能，而不需要未來的 Hyper-v 整合元件（IC）更新。 您可以從裝載 VM 的 Hyper-v 節點執行此 Cmdlet，或使用 `-ComputerName` 參數從遠端更新 VM 版本。 在此範例中，我們會將 VM1 的設定版本從5.0 升級至7.0，以利用與此 VM 設定版本（例如生產檢查點（應用程式一致備份）和二進位 VM）相關聯的許多新 Hyper-v 功能設定檔。  
+   3. 在叢集中的每個 Hyper-v 主機節點上，可以藉由排程使用者、備份、關閉虛擬機器，以及執行[`Update-VMVersion`](https://docs.microsoft.com/powershell/module/hyper-v/Update-VMVersion?view=win10-ps) Cmdlet （請參閱 [圖 22]），來升級 hyper-v VM 設定版本。 這會更新虛擬機器版本，並啟用新的 Hyper-v 功能，而不需要未來的 Hyper-v 整合元件（IC）更新。 您可以從裝載 VM 的 Hyper-v 節點執行此 Cmdlet，或使用 `-ComputerName` 參數從遠端更新 VM 版本。 在此範例中，我們會將 VM1 的設定版本從5.0 升級至7.0，以利用與此 VM 設定版本相關聯的許多新 Hyper-v 功能，例如生產檢查點（應用程式一致備份）和二進位 VM 設定檔。  
 
        ![螢幕擷取畫面顯示 VMVersion Cmdlet 的動作](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_StopVM.png)  
        **圖22：使用 VMVersion PowerShell Cmdlet 升級 VM 版本**  
@@ -254,7 +255,7 @@ System Center Virtual Machine Manager （SCVMM）2016完全支援叢集 OS 輪�
     是，在開始叢集 OS 輪流升級程式之前，請先確認所有叢集節點都已更新最新的軟體更新。  
 
 **當節點關閉或暫停時，我可以執行[`Update-ClusterFunctionalLevel`](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps) Cmdlet 嗎？**  
-    不。 所有叢集節點都必須是 on 和 active 成員資格， [`Update-ClusterFunctionalLevel`](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps) Cmdlet 才能正常執行。  
+    No。 所有叢集節點都必須是 on 和 active 成員資格， [`Update-ClusterFunctionalLevel`](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps) Cmdlet 才能正常執行。  
 
 **叢集 OS 輪流升級是否適用于任何叢集工作負載？它是否適用于 SQL Server？**  
     是，叢集 OS 輪流升級適用于任何叢集工作負載。 不過，Hyper-v 和向外延展檔案伺服器叢集只會有零停機時間。 大部分其他工作負載會在容錯移轉時產生一些停機時間（通常是幾分鐘），而且在叢集 OS 輪流升級程式期間至少需要容錯移轉一次。  
@@ -263,7 +264,7 @@ System Center Virtual Machine Manager （SCVMM）2016完全支援叢集 OS 輪�
     是，我們已設計要使用 PowerShell 自動化叢集 OS 輪流升級。  
 
 **針對具有額外工作負載和容錯移轉容量的大型叢集，是否可以同時升級多個節點？**  
-    可以。 從叢集移除一個節點以升級 OS 時，叢集將會有一個較少的節點來進行容錯移轉，因此會降低容錯移轉的容量。 對於具有足夠工作負載和容錯移轉容量的大型叢集，可以同時升級多個節點。 您可以暫時將叢集節點新增至叢集，以在叢集 OS 輪流升級程式期間提供改良的工作負載和容錯移轉功能。  
+    是的。 從叢集移除一個節點以升級 OS 時，叢集將會有一個較少的節點來進行容錯移轉，因此會降低容錯移轉的容量。 對於具有足夠工作負載和容錯移轉容量的大型叢集，可以同時升級多個節點。 您可以暫時將叢集節點新增至叢集，以在叢集 OS 輪流升級程式期間提供改良的工作負載和容錯移轉功能。  
 
 **成功執行[`Update-ClusterFunctionalLevel`](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps)之後，如果我在叢集中發現問題，該怎麼辦？**  
     如果您在執行[`Update-ClusterFunctionalLevel`](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps)之前，已使用系統狀態備份來備份叢集資料庫，您應該能夠在 Windows Server 2012 R2 叢集節點上執行授權還原，並還原原始叢集資料庫和設定。  
@@ -277,7 +278,7 @@ System Center Virtual Machine Manager （SCVMM）2016完全支援叢集 OS 輪�
 **我可以使用 System Center 2016 Virtual Machine Manager （SCVMM）將叢集 OS 輪流升級程式自動化嗎？**  
     是，您可以使用 System Center 2016 中的 VMM，將叢集 OS 輪流升級程式自動化。  
 
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
 -   [版本資訊： Windows Server 2016 中的重要問題](../get-started/Release-Notes--Important-Issues-in-Windows-Server-2016-Technical-Preview.md)  
 -   [Windows Server 2016 中的新功能](../get-started/What-s-New-in-windows-server-2016.md)  
 -   [Windows Server 中容錯移轉叢集的新功能](whats-new-in-failover-clustering.md)  

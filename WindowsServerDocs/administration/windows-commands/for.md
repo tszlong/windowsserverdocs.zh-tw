@@ -1,24 +1,20 @@
 ---
 title: 作為
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e275726c-035f-4a74-8062-013c37f5ded1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: db0bf54e35e4226cb020b040d5fc36ddd88dc02b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e7040e4cb8e0f38e58ce5e868535dcfb2d897fbd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377119"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844531"
 ---
 # <a name="for"></a>作為
 
@@ -34,7 +30,7 @@ ms.locfileid: "71377119"
 for {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -68,7 +64,7 @@ for {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
   當您使用**for**命令時， *Set*中的第一個值會取代 **%** <em>變數</em>或 **%%** <em>變數</em>，然後指定的命令會處理此值。 這會繼續進行，直到處理對應至*集合*值的所有檔案（或檔案群組）為止。
 - 使用**in**和**do**關鍵字
 
-  和中**的不**是參數，但您必須將它們與**用於**。 如果您省略上述任一關鍵字，就會出現錯誤訊息。
+  **In**和中**的不**是參數，但您必須將它們與**用於**。 如果您省略上述任一關鍵字，就會出現錯誤訊息。
 - **針對**使用其他形式的
 
   如果已啟用命令延伸模組（這是預設值），則支援下列其他**形式的：**  
@@ -104,17 +100,17 @@ for {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
 
     語法如下：  
     ```
-    for /f ["<ParsingKeywords>"] {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
-    for /f ["<ParsingKeywords>"] {%%|%}<Variable> in ("<LiteralString>") do <Command> [<CommandLineOptions>]
-    for /f ["<ParsingKeywords>"] {%%|%}<Variable> in ('<Command>') do <Command> [<CommandLineOptions>]
+    for /f [<ParsingKeywords>] {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
+    for /f [<ParsingKeywords>] {%%|%}<Variable> in (<LiteralString>) do <Command> [<CommandLineOptions>]
+    for /f [<ParsingKeywords>] {%%|%}<Variable> in ('<Command>') do <Command> [<CommandLineOptions>]
     ```  
     *Set*引數會指定一個或多個檔案名。 在移至*集合*中的下一個檔案之前，會先開啟、讀取和處理每個檔案。 若要覆寫預設剖析行為，請指定*ParsingKeywords*。 這是加上引號的字串，其中包含一或多個用來指定不同剖析選項的關鍵字。
 
     如果您使用**usebackq**選項，請使用下列其中一個語法：  
     ```
-    for /f ["usebackq <ParsingKeywords>"] {%%|%}<Variable> in ("<Set>") do <Command> [<CommandLineOptions>]
-    for /f ["usebackq <ParsingKeywords>"] {%%|%}<Variable> in ('<LiteralString>') do <Command> [<CommandLineOptions>]
-    for /f ["usebackq <ParsingKeywords>"] {%%|%}<Variable> in (`<Command>`) do <Command> [<CommandLineOptions>]
+    for /f [usebackq <ParsingKeywords>] {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
+    for /f [usebackq <ParsingKeywords>] {%%|%}<Variable> in ('<LiteralString>') do <Command> [<CommandLineOptions>]
+    for /f [usebackq <ParsingKeywords>] {%%|%}<Variable> in (`<Command>`) do <Command> [<CommandLineOptions>]
     ```  
     下表列出您可以用於*ParsingKeywords*的剖析關鍵字。  
 
@@ -133,7 +129,7 @@ for {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
 
     |具有修飾詞的變數|描述|
     |----------------------|-----------|
-    |% ~ I|展開 **% I** ，移除任何前後的引號（""）。|
+    |% ~ I|展開 **% I** ，移除任何前後的引號（）。|
     |% ~ fI|將 **% I**展開為完整路徑名稱。|
     |% ~ dI|僅將 **% I**展開為磁碟機號。|
     |% ~ pI|將 **% I**展開為僅限路徑。|
@@ -160,12 +156,12 @@ for {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
     藉由使用大寫的變數名稱（例如 **% I**），您可以讓程式碼更容易閱讀，並避免與不區分大小寫的修飾詞混淆。
 - 剖析字串
 
-  您可以藉由以雙引號（*不含*"usebackq"）或以單引號括住 *\<LiteralString\>* *（"* MyString"）或（' MyString '），在立即字串上使用**for/f**剖析邏輯。 *\<LiteralString\>* 會視為檔案中的單一輸入行。 剖析以雙引號括住 *\<LiteralString\>* 時，會將命令符號（例如 **\\ \& \|** \> \< \^）視為一般字元。
+  您可以藉由將 *\<LiteralString\>* 包裝在任一：雙引號（*不含*usebackq）或單引號（*with* usebackq）---例如，（MyString）或（' MyString '），在立即字串上使用**for/f**剖析邏輯。 *\<LiteralString\>* 會視為檔案中的單一輸入行。 剖析以雙引號括住 *\<LiteralString\>* 時，會將命令符號（例如 **\\ \& \|** \> \< \^）視為一般字元。
 - 剖析輸出
 
   您可以使用**for/f**命令來剖析命令的輸出，方法是將加上引號的 *\<命令*放在括弧之間\>。 它會被視為命令列，它會傳遞至子 Cmd.exe。 輸出會捕獲到記憶體中，並剖析成檔案。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 若要在批次處理**檔中使用，請**使用下列語法：
 ```
@@ -179,17 +175,17 @@ for %f in (*.doc *.txt) do type %f
 
 若要剖析檔案，忽略批註行，請輸入：
 ```
-for /f "eol=; tokens=2,3* delims=," %i in (myfile.txt) do @echo %i %j %k
+for /f eol=; tokens=2,3* delims=, %i in (myfile.txt) do @echo %i %j %k
 ```
-此命令會剖析 Myfile.txt 中的每一行。 它會忽略以分號開頭的行，並將每一行的第二個和第三個 token 傳遞至**for**主體（標記會以逗號或空格分隔）。 **For**語句的主體會參考 **% i**來取得第二個 token， **% j**以取得第三個 token，而 **% k**則用來取得所有剩餘的權杖。 如果您提供的檔案名包含空格，請使用引號括住文字（例如，"File Name"）。 若要使用引號，您必須使用**usebackq**。 否則，引號會被視為定義要剖析的常值字串。
+此命令會剖析 Myfile.txt 中的每一行。 它會忽略以分號開頭的行，並將每一行的第二個和第三個 token 傳遞至**for**主體（標記會以逗號或空格分隔）。 **For**語句的主體會參考 **% i**來取得第二個 token， **% j**以取得第三個 token，而 **% k**則用來取得所有剩餘的權杖。 如果您提供的檔案名包含空格，請使用引號括住文字（例如，檔案名）。 若要使用引號，您必須使用**usebackq**。 否則，引號會被視為定義要剖析的常值字串。
 
-**% i**是在**for**語句中明確宣告的。 **% j**和 **% k**是使用 token **=** 來隱含宣告。 您可以使用 token **=** 來指定最多26個權杖，但前提是它不會嘗試宣告高於字母 "z" 或 "z" 的變數。
+**% i**是在**for**語句中明確宣告的。 **% j**和 **% k**是使用 token **=** 來隱含宣告。 您可以使用 token **=** 來指定最多26個權杖，但前提是它不會嘗試宣告高於字母 Z 或 z 的變數。
 
 下列範例會列舉目前環境中的環境變數名稱。 若要藉由在括弧之間放置*設定*來剖析命令的輸出，請輸入：
 ```
-for /f "usebackq delims==" %i in ('set') do @echo %i 
+for /f usebackq delims== %i in ('set') do @echo %i 
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

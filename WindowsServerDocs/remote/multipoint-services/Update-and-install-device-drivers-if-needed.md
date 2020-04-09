@@ -1,24 +1,20 @@
 ---
 title: 視需要更新及安裝裝置驅動程式
 description: 瞭解如何檢查和更新 MultiPoint 服務中的設備磁碟機
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 16be3ef9-a05b-4621-a431-5806b567e997
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 766e2175a16cd20a68730870c8980ed9c9204a3c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6d20aa80edeafa4311262a380cfd7aad65ae0315
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394881"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820601"
 ---
 # <a name="update-and-install-device-drivers-if-needed"></a>視需要更新及安裝裝置驅動程式
 如果您使用 USB 零用戶端或需要驅動程式的週邊設備，您應該在這段時間安裝驅動程式。 也最好檢查是否有任何驅動程式警示的**Device Manager** ，並安裝這些裝置的驅動程式。  

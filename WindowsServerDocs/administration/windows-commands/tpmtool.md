@@ -1,23 +1,19 @@
 ---
 title: tpmtool
-description: Tpmtool 的 Windows 命令主題-取得可信賴平臺模組的相關資訊。
-ms.custom: na
+description: 適用于 tpmtool 的 Windows 命令主題，可取得信賴平臺模組的相關資訊。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 author: ashleytqy
 ms.author: ashleytqy
 manager: ronaldai
 ms.date: 05/07/2019
-ms.openlocfilehash: 3967136bc64d1e06425a019466dea15ddce3a563
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 14a2401fae008c9749f33b076346fe8df7794d3e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385723"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80832741"
 ---
 # <a name="tpmtool"></a>tpmtool
 
@@ -33,7 +29,7 @@ ms.locfileid: "71385723"
 ```
 tpmtool /parameter [<arguments>]
 ```
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -43,7 +39,7 @@ tpmtool /parameter [<arguments>]
 |parsetcglogs [-validate （-v）]|顯示已剖析的 TCG 記錄檔（也稱為 Windows 開機設定記錄檔（WBCL））。 您可以在[TCG 網站](https://trustedcomputinggroup.org/resource/pc-client-specific-platform-firmware-profile-specification/)的**事件描述**下找到最新的事件描述。 如果設定了 `-validate` 旗標，會驗證 TPM 上的平臺設定暫存器（PCR）值是否符合記錄檔中的值。|
 |/?|在命令提示字元顯示說明。|
 
-## <a name="tpmtool_examples"></a>典型
+## <a name="examples"></a><a name=tpmtool_examples></a>典型
 
 若要顯示 TPM 的基本資訊，請輸入：
 ```
@@ -53,7 +49,7 @@ tpmtool getdeviceinformation
 ```
 tpmtool gatherlogs
 ```
-若要收集 TPM 記錄檔，並將它們放在 `C:\Users\Public`，請輸入：
+若要收集 TPM 記錄檔，並將它們放在 `C:\Users\Public`中，請輸入：
 ```
 tpmtool gatherlogs C:\Users\Public
 ```

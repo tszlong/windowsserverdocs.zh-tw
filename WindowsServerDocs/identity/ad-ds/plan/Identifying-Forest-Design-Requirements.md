@@ -1,7 +1,6 @@
 ---
 ms.assetid: 7d957ebb-3476-49d8-b00b-6e93b4a94778
 title: 識別樹系設計需求
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,20 +8,20 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 41caeca82819eaea3d86d5f1eb4883ab8bbf53cc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 33025dc2e08185744ffd0dee7eac4d0c020a0691
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408794"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822401"
 ---
 # <a name="identifying-forest-design-requirements"></a>識別樹系設計需求
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 若要為您的組織建立樹系設計，您必須識別目錄結構需要配合的商務需求。 這牽涉到決定組織中的群組需要多少獨立性來管理其網路資源，以及每個群組是否需要在網路上將其資源與其他群組隔離。  
   
-Active Directory Domain Services （AD DS）可讓您設計一個目錄基礎結構，以容納組織內具有獨特管理需求的多個群組，以及達成群組之間的結構化和操作獨立性視需要。  
+Active Directory Domain Services （AD DS）可讓您設計一個目錄基礎結構，以容納組織內具有獨特管理需求的多個群組，並視需要達成群組之間的結構化和操作獨立性。  
   
 您組織中的群組可能會有下列部分類型的需求：  
   
@@ -38,14 +37,14 @@ Active Directory Domain Services （AD DS）可讓您設計一個目錄基礎結
   
 -   **法律需求**。 有些組織會以特定方式來操作法律需求，例如，限制存取商務合約中指定的特定資訊。 有些組織具有在隔離的內部網路上操作的安全性需求。 若不符合這些需求，可能會導致合約遺失，並可能會造成合法的行動。  
   
-識別樹系設計需求的一部分，包括識別組織中的群組可以信任的可能樹系擁有者及其服務系統管理員，以及識別各自的獨立性和隔離需求組織中的群組。  
+識別樹系設計需求的一部分，包括識別組織中的群組可以信任的可能樹系擁有者及其服務系統管理員，以及識別組織中每個群組的自主性和隔離需求。  
   
 設計小組必須記錄組織中想要使用 AD DS 之每個群組的服務和資料管理的隔離和獨立性需求。 小組也必須注意可能會影響 AD DS 部署的任何受限連線區域。  
   
-設計小組必須記錄組織中想要使用 AD DS 之每個群組的服務和資料管理的隔離和獨立性需求。 小組也必須注意可能會影響 AD DS 部署的任何受限連線區域。 如需協助您記載所識別區域的工作表，請從[適用于 Windows Server 2003 部署套件的作業輔助](https://go.microsoft.com/fwlink/?LinkID=102558)下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services，並開啟「樹系設計需求」（DSSLOGI_2）。  
+設計小組必須記錄組織中想要使用 AD DS 之每個群組的服務和資料管理的隔離和獨立性需求。 小組也必須注意可能會影響 AD DS 部署的任何受限連線區域。 如需協助您記載所識別區域的工作表，請從[適用于 Windows Server 2003 部署套件的作業輔助](https://go.microsoft.com/fwlink/?LinkID=102558)下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，並開啟「樹系設計需求」（DSSLOGI_2 .doc）。  
   
 ## <a name="in-this-section"></a>本節內容  
   
 -   [授權單位的服務管理員範圍](../../ad-ds/plan/Service-Administrator-Scope-of-Authority.md)  
   
--   [自治與隔離](../../ad-ds/plan/Autonomy-vs.-Isolation.md)  
+-   [自治與隔離的比較](../../ad-ds/plan/Autonomy-vs.-Isolation.md)  

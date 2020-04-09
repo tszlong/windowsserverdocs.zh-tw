@@ -1,7 +1,6 @@
 ---
 ms.assetid: 40bc24b1-2e7d-4e77-bd0f-794743250888
 title: SPN 和 UPN 的唯一性
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: ded707276471fccd28f0ec17afef0a24015ff32f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f182f79b5bb97e45f1cfd34ad59cf52322f09063
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390035"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823061"
 ---
 # <a name="spn-and-upn-uniqueness"></a>SPN 和 UPN 的唯一性
 
@@ -37,7 +36,7 @@ ms.locfileid: "71390035"
   
 **資料表 SEQ 資料表 \\\* 阿拉伯文1： UPN 和 SPN 唯一性**  
   
-|功能|留言|  
+|功能|註解|  
 |-----------|-----------|  
 |UPN 唯一性|重複的 Upn 會中斷內部部署 AD 帳戶與 Windows Azure AD 型服務（例如 Office 365）的同步處理。|  
 |SPN 唯一性|Kerberos 需要 Spn 以進行相互驗證。  重複的 Spn 會導致驗證失敗。|  
@@ -51,7 +50,7 @@ ms.locfileid: "71390035"
   
 **資料表 SEQ 資料表 \\\* 阿拉伯文2： UPN 和 SPN 唯一性錯誤代碼**  
   
-|DECIMAL|Hex|符號|字串|  
+|DECIMAL|Hex|符號|String|  
 |-----------|-------|------------|----------|  
 |8467|21C7|ERROR_DS_SPN_VALUE_NOT_UNIQUE_IN_FOREST|作業失敗，因為提供給新增/修改的 SPN 值不是唯一全樹系。|  
 |8648|21C8|ERROR_DS_UPN_VALUE_NOT_UNIQUE_IN_FOREST|作業失敗，因為提供給新增/修改的 UPN 值不是唯一全樹系。|  
@@ -240,7 +239,7 @@ servicePrincipalName Value=<SPN>
   
             -   如果傳回的專案！ = 0-> 寫入失敗  
   
-                -   記錄的事件  
+                -   已記錄事件  
   
                 -   也會傳回擴充錯誤：  
   
@@ -256,7 +255,7 @@ servicePrincipalName Value=<SPN>
   
             -   如果傳回的專案！ = 0-> 寫入失敗  
   
-                -   記錄的事件  
+                -   已記錄事件  
   
                 -   也會傳回擴充錯誤：  
   
@@ -280,7 +279,7 @@ servicePrincipalName Value=<SPN>
   
             -   如果傳回的專案！ = 0-> 寫入失敗  
   
-                -   記錄的事件  
+                -   已記錄事件  
   
                 -   也會傳回擴充錯誤：  
   
@@ -296,7 +295,7 @@ servicePrincipalName Value=<SPN>
   
             -   如果傳回的專案！ = 0-> 寫入失敗  
   
-                -   記錄的事件  
+                -   已記錄事件  
   
                 -   也會傳回擴充錯誤：  
   

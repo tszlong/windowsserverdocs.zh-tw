@@ -1,30 +1,27 @@
 ---
-title: 使用新的命令
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+title: 新增
+description: 適用于新的 Windows 命令主題，其會建立捕獲及探索映射、多播傳輸和命名空間。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0f06f310-c585-42f4-9d15-4680b4a3355d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e8ca818468050cf21a55a4c9963ea2411ab018c7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bd5e4270eb5f72679803a4720ed5c737fe44c5bf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392072"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80830691"
 ---
-# <a name="using-the-new-command"></a>使用新的命令
+# <a name="new"></a>新增
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 建立捕獲及探索映射、多播傳輸和命名空間。
+
 ## <a name="subcommands"></a>子
 |來|描述|
 |-------|--------|

@@ -2,20 +2,19 @@
 title: 管理 Hyper-v Integration Services
 description: 描述如何開啟和關閉 integration services，並視需要加以安裝
 ms.technology: compute-hyper-v
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 manager: dongill
 ms.date: 12/20/2016
 ms.topic: article
 ms.prod: windows-server
-ms.service: na
 ms.assetid: 9cafd6cb-dbbe-4b91-b26c-dee1c18fd8c2
-ms.openlocfilehash: bcf8109530043f5e0a6d141c484233c4364fb307
-ms.sourcegitcommit: 9687d3eb221b89061a48bf1e73fb3b25bee69f9a
+ms.openlocfilehash: 2c5e2d67b391cd53a6995957da5dab108a34e1a9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78169568"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820711"
 ---
 >適用于： Windows 10、Windows Server 2012、Windows Server 2012R2、Windows Server 2016、Windows Server 2019
 
@@ -239,7 +238,7 @@ Linux 整合服務通常是透過 Linux 核心提供。 Linux integration servic
 | Windows 7 | Windows Update | 需要「資料交換」整合服務。* |
 | Windows Vista (SP 2) | Windows Update | 需要「資料交換」整合服務。* |
 | - | | |
-| Windows Server 2016 | Windows Update | |
+| Windows Server 2016 | Windows Update | |
 | Windows Server 半年通道 | Windows Update | |
 | Windows Server 2012 R2 | Windows Update | |
 | Windows Server 2012 | Windows Update | 需要「資料交換」整合服務。* |
@@ -263,7 +262,7 @@ Linux 整合服務通常是透過 Linux 核心提供。 Linux integration servic
 | Windows Vista (SP 2) | 整合服務光碟 | 請參閱下面的[指示](#install-or-update-integration-services)。 |
 | Windows XP (SP 2、SP 3) | 整合服務光碟 | 請參閱下面的[指示](#install-or-update-integration-services)。 |
 | - | | |
-| Windows Server 2016 | Windows Update | |
+| Windows Server 2016 | Windows Update | |
 | Windows Server 半年通道 | Windows Update | |
 | Windows Server 2012 R2 | 整合服務光碟 | 請參閱下面的[指示](#install-or-update-integration-services)。 |
 | Windows Server 2012 | 整合服務光碟 | 請參閱下面的[指示](#install-or-update-integration-services)。 |
@@ -307,7 +306,7 @@ Linux 整合服務通常是透過 Linux 核心提供。 Linux integration servic
 
 手動安裝或更新整合服務的程式：
 
-1.  開啟 [Hyper-V 管理員]。 從伺服器管理員的 [工具] 功能表中，按一下 [ **Hyper-v 管理員**]。  
+1.  開啟 \[Hyper-V 管理員\]。 從伺服器管理員的 [工具] 功能表中，按一下 [ **Hyper-v 管理員**]。  
   
 2.  連接到虛擬機器。 以滑鼠右鍵按一下虛擬機器，然後按一下 **[連線]** 。  
   

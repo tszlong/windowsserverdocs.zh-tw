@@ -1,24 +1,20 @@
 ---
 title: 硬體需求和效能建議
 description: 提供 MultiPoint 服務的硬體和效能需求和建議
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 99a5c9c2-270f-4753-a28c-434882c03125
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 284131028b308ee86389f25102d934390ba2f16d
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: dcb139cddf6a7838511365c6a85dc12bd06a81eb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322080"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820341"
 ---
 # <a name="hardware-requirements-and-performance-recommendations"></a>硬體需求和效能建議
 本主題描述執行 MultiPoint 服務系統所需的硬體，並支援使用者應用程式案例。 使用者案例會直接影響 CPU、RAM 和網路頻寬需求。  
@@ -41,9 +37,9 @@ MultiPoint 服務系統的效能會受到 CPU、GPU 和執行 MultiPoint 服務�
   
 |應用程式案例|最多5個工作站|6-8 電臺|9-12 電臺|13-16 電臺|17-20 電臺|21-24 電臺|  
 |------------------------|----------------------|-------------------|------------------|-------------------|-------------------|-----------------|  
-|**生產力**<br /><br />Office、web 流覽、企業營運應用程式|CPU：2C<br /><br />RAM： 2 GB|CPU：2C<br /><br />RAM： 4 GB|CPU：4C<br /><br />RAM： 6 GB|CPU：4C<br /><br />RAM： 8 GB|CPU： 4C + MT 或6C<br /><br />RAM： 10 GB| CPU： 6C + MT<br /><br />RAM： 12 GB|
-|**型**<br /><br />Office、網頁流覽、企業營運應用程式，以及某些使用者偶爾使用的影片|CPU：2C<br /><br />RAM： 2 GB|CPU：2C<br /><br />RAM： 4 GB|CPU：4C<br /><br />RAM： 6 GB|CPU： 4C + MT 或6C<br /><br />RAM： 8 GB|CPU： 6C + MT<br /><br />RAM： 10 GB| CPU： 6C + MT<br /><br />RAM： 12 GB| 
-|**需要大量影片**<br /><br />Office、web 流覽、企業營運應用程式，以及所有使用者經常使用的影片，**請注意：** 影片測試是在原生解析度中使用 360p h.264 video 來執行。|CPU： 4C + MT<br /><br />RAM： 2 GB|CPU： 6C + MT<br /><br />RAM： 4 GB|CPU： 8C + MT<br /><br />RAM： 6 GB|CPU： 12C + MT<br /><br />RAM： 8 GB|CPU： 16C + MT<br /><br />RAM： 10 GB<br /><br />-瘦用戶端： RemoteFX<br />-不建議使用 USB 影片| CPU： 20C + MT<br /><br />RAM： 12 GB<br /><br />-瘦用戶端： RemoteFX<br />-不建議使用 USB 影片|   
+|**生產力**<p>Office、web 流覽、企業營運應用程式|CPU：2C<p>RAM： 2 GB|CPU：2C<p>RAM： 4 GB|CPU：4C<p>RAM： 6 GB|CPU：4C<p>RAM： 8 GB|CPU： 4C + MT 或6C<p>RAM： 10 GB| CPU： 6C + MT<p>RAM： 12 GB|
+|**型**<p>Office、網頁流覽、企業營運應用程式，以及某些使用者偶爾使用的影片|CPU：2C<p>RAM： 2 GB|CPU：2C<p>RAM： 4 GB|CPU：4C<p>RAM： 6 GB|CPU： 4C + MT 或6C<p>RAM： 8 GB|CPU： 6C + MT<p>RAM： 10 GB| CPU： 6C + MT<p>RAM： 12 GB| 
+|**需要大量影片**<p>Office、web 流覽、企業營運應用程式，以及所有使用者經常使用的影片，**請注意：** 影片測試是在原生解析度中使用 360p h.264 video 來執行。|CPU： 4C + MT<p>RAM： 2 GB|CPU： 6C + MT<p>RAM： 4 GB|CPU： 8C + MT<p>RAM： 6 GB|CPU： 12C + MT<p>RAM： 8 GB|CPU： 16C + MT<p>RAM： 10 GB<p>-瘦用戶端： RemoteFX<br />-不建議使用 USB 影片| CPU： 20C + MT<p>RAM： 12 GB<p>-瘦用戶端： RemoteFX<br />-不建議使用 USB 影片|   
   
 ## <a name="minimum-recommended-hardware-for-running-full-windows-10-virtual-desktops"></a>執行完整 Windows 10 虛擬桌面的最低建議硬體  
 針對每個工作站執行完整的虛擬作業系統實例，比執行預設的 MultiPoint 桌面會話更需要大量運算資源，因此每部工作站的主機硬體需求也會更高：  

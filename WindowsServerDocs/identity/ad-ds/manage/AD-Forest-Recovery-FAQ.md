@@ -1,6 +1,5 @@
 ---
 title: AD 樹系復原 - 常見問題
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,22 +8,22 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: ac9e5a3d-8b1e-41b7-8e02-f64b7acf1359
 ms.technology: identity-adds
-ms.openlocfilehash: 49cd12621c6ddf89393f0463e4856555ca241491
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f32111cf7cc81f8f49b7b1058cc1a0ccc780da7f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369110"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824001"
 ---
 # <a name="ad-forest-recovery---faq"></a>AD 樹系復原 - 常見問題
 
->適用於：Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2、Windows Server 2003
+>適用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2、Windows Server 2003
 
 本檔包含關於樹系復原的常見問題（Faq）：  
 
 ## <a name="general-recovery"></a>一般復原
 
-**問題解答我該怎麼做才能加速復原？**
+**問：我可以做什麼來加速復原？**
 
 雖然復原的速度不是本指南的主要目標，但是您可以藉由下列方式縮短復原時間：  
   
@@ -46,18 +45,18 @@ ms.locfileid: "71369110"
 - 當您重建 Dc 時，需要時間複寫資料以進行以網路為基礎的升級。  
    - 您可以執行下列步驟來減少還原 Dc 所需的時間：  
 - 藉由下列方式減少抓取備份媒體的時間：  
-   - 使用 Active Directory 資料庫掛接工具（Dsamain.exe）來識別要用於還原作業的最佳備份。 如需有關使用 Active Directory 資料庫掛接工具的詳細資訊，請參閱[Active Directory 資料庫裝載工具逐步指南](https://go.microsoft.com/fwlink/?LinkId=132577)（ https://go.microsoft.com/fwlink/?LinkId=132577) 。  
+   - 使用 Active Directory 資料庫掛接工具（Dsamain.exe）來識別要用於還原作業的最佳備份。 如需有關使用 Active Directory 資料庫掛接工具的詳細資訊，請參閱[Active Directory 資料庫掛接工具逐步指南](https://go.microsoft.com/fwlink/?LinkId=132577)（ https://go.microsoft.com/fwlink/?LinkId=132577)。  
    - 清楚地標示備份媒體，並以組織的方式將媒體儲存在方便但安全的位置，以允許快速抓取。  
-   - 使用磁碟區陰影複製服務搭配存放區域網路（SAN）來維護不同時間點的備份。 如需詳細資訊，請參閱[Windows Server 2003 Active Directory 使用磁碟區陰影複製服務和虛擬磁碟服務的快速](https://go.microsoft.com/fwlink/?LinkId=70781)復原（ https://go.microsoft.com/fwlink/?LinkId=70781) 。  
+   - 使用磁碟區陰影複製服務搭配存放區域網路（SAN）來維護不同時間點的備份。 如需詳細資訊，請參閱[Windows Server 2003 Active Directory 使用磁碟區陰影複製服務和虛擬磁碟服務的快速](https://go.microsoft.com/fwlink/?LinkId=70781)復原（ https://go.microsoft.com/fwlink/?LinkId=70781)。  
 - 強制從 Dc 移除 AD DS，而不是重新安裝作業系統。 如果整個樹系失敗的原因已被識別為純粹在 AD DS 範圍內，您就不需要在 Dc 上重新安裝作業系統。  
-   - 如需強制從執行 Windows Server 2008 或更新版本的 DC 移除 AD DS 的詳細資訊，請參閱[強制移除 Windows server 2008 網域控制站](https://go.microsoft.com/fwlink/?LinkId=132627)（ https://go.microsoft.com/fwlink/?LinkId=132627) 。 如需強制從執行 Windows Server 2003 的 DC 移除 AD DS 的詳細資訊，請參閱 Microsoft 知識庫中的[文章 332199](https://go.microsoft.com/fwlink/?LinkId=70780) （ https://go.microsoft.com/fwlink/?LinkId=70780) 。  
+   - 如需強制從執行 Windows Server 2008 或更新版本的 DC 移除 AD DS 的詳細資訊，請參閱[強制移除 Windows server 2008 網域控制站](https://go.microsoft.com/fwlink/?LinkId=132627)（ https://go.microsoft.com/fwlink/?LinkId=132627)。 如需強制從執行 Windows Server 2003 的 DC 移除 AD DS 的詳細資訊，請參閱 Microsoft 知識庫中的[文章 332199](https://go.microsoft.com/fwlink/?LinkId=70780) （ https://go.microsoft.com/fwlink/?LinkId=70780)。  
 - 使用更快速的磁帶裝置或磁片備份來縮短還原作業所需的時間。  
   
 您也可以使用 [從媒體安裝（IFM）] 功能，在每個網域中重建 Dc，以協助加速 AD DS 安裝。 IFM 可減少在每個網域中重建 Dc 時所產生的複寫延遲。  
   
 具有更積極服務等級協定（SLA）的企業可能會考慮改變樹系復原程式，以加速復原。  
   
-**問題解答我可以自動化樹系復原程式嗎？**
+**問：我可以自動化樹系復原程式嗎？**
 
 因為樹系復原程式有複雜且重要的本質，所以目前沒有任何端對端自動化。 樹系復原程式在還原商務持續性方面，比處理自動化的技術問題更具物流和組織的挑戰。 因此，負責管理環境的個人應該建立該環境專屬的樹系復原計畫，然後自動化可成功自動化的區段。  
   

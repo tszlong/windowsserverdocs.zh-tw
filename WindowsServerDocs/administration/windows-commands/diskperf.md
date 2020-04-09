@@ -1,28 +1,22 @@
 ---
 title: diskperf
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: 適用于 diskperf 的 Windows 命令主題，可用來從遠端啟用或停用執行 Windows 2000 之電腦上的實體或邏輯磁片效能計數器。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f06916e8-069b-4ec8-a6eb-59f1d9f77111
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 829f0284d761e6a5134011fa1dff99646d55fc13
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1b07471c051d57d0279e4fd8b38afdc4acdc4069
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377806"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80845461"
 ---
 # <a name="diskperf"></a>diskperf
-
-
 
 在 Windows 2000 中，預設不會啟用實體和邏輯磁片效能計數器。
 

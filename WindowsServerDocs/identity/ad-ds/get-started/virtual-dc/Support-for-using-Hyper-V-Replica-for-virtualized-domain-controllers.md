@@ -1,7 +1,6 @@
 ---
 ms.assetid: 45a65504-70b5-46ea-b2e0-db45263fabaa
 title: 支援針對虛擬網域控制站使用 Hyper-V 複本
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 92324ef7c0fab81e80974a1f05eeec4833f09875
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d882fc5a8e519c461e17a7a82c8abfc6c16fbe9c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390426"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824501"
 ---
 # <a name="support-for-using-hyper-v-replica-for-virtualized-domain-controllers"></a>支援針對虛擬網域控制站使用 Hyper-V 複本
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 這個主題說明使用 Hyper-V 複本來複寫做為網域控制站 (DC) 執行的虛擬機器 (VM) 的支援能力。 Hyper-V 複本是從 Windows Server 2012 開始提供的新 Hyper-V 功能，可在 VM 層級提供內建的複寫機制。  
   
@@ -62,9 +61,9 @@ Windows Server 2012 Hyper-v 引進了 VM-GenerationID （VMGenID）。 VMGenID �
   
 |||  
 |-|-|  
-|規劃的容錯移轉|未規劃的容錯移轉|  
+|規劃的容錯移轉|非計劃性容錯移轉|  
 |支援|支援|  
-|測試案例：<br /><br />-DC1 和 DC2 正在執行 Windows Server 2012。<br /><br />-DC2 已關閉，並在 DC2-Rec 上執行容錯移轉。不一定需要規劃容錯移轉。<br /><br />-DC2 啟動之後，它會檢查它在其資料庫中的 VMGenID 值是否與 Hyper-v 複本伺服器所儲存之虛擬機器驅動程式中的值相同。<br /><br />-因此，DC2-Rec 觸發了虛擬化保護措施;換句話說，它會重設其 InvocationID、捨棄其 RID 集區，並設定初始同步處理需求，然後才會採用操作主機角色。 如需初始同步處理需求的詳細資訊，請參閱：<br /><br />-DC2 會在其資料庫中儲存 VMGenID 的新值，並認可新 InvocationID 內容中的任何後續更新。<br /><br />-由於 InvocationID 重設的結果，DC1 會針對 DC2-Rec 引進的所有 AD 變更進行匯總，即使它已準時回復也是一樣，這表示在容錯移轉之後，在 DC2 上執行的任何 AD 更新都會安全地收斂|這個測試案例與規劃的容錯移轉的案例相同，但有下列例外：<br /><br />-在進行容錯移轉事件之前，在 DC2 上收到但尚未由 AD 複寫到複寫協力電腦的任何 AD 更新都將遺失。<br /><br />-在將 AD 複寫到 DC1 之後，在 DC2 上收到的 AD 更新會從 DC1 複寫回到 DC2-Rec。|  
+|測試案例：<p>-DC1 和 DC2 正在執行 Windows Server 2012。<p>-DC2 已關閉，並在 DC2-Rec 上執行容錯移轉。容錯移轉可以是已規劃或未計畫的。<p>-DC2 啟動之後，它會檢查它在其資料庫中的 VMGenID 值是否與 Hyper-v 複本伺服器所儲存之虛擬機器驅動程式中的值相同。<p>-因此，DC2-Rec 觸發了虛擬化保護措施;換句話說，它會重設其 InvocationID、捨棄其 RID 集區，並設定初始同步處理需求，然後才會採用操作主機角色。 如需初始同步處理需求的詳細資訊，請參閱：<p>-DC2 會在其資料庫中儲存 VMGenID 的新值，並認可新 InvocationID 內容中的任何後續更新。<p>-由於 InvocationID 重設的結果，DC1 會針對 DC2-Rec 引進的所有 AD 變更進行匯總，即使它已準時回復也是一樣，這表示在容錯移轉之後，在 DC2 上執行的任何 AD 更新都會安全地收斂|這個測試案例與規劃的容錯移轉的案例相同，但有下列例外：<p>-在進行容錯移轉事件之前，在 DC2 上收到但尚未由 AD 複寫到複寫協力電腦的任何 AD 更新都將遺失。<p>-在將 AD 複寫到 DC1 之後，在 DC2 上收到的 AD 更新會從 DC1 複寫回到 DC2-Rec。|  
   
 ### <a name="windows-server-2008-r2-and-earlier-versions"></a>Windows Server 2008 R2 及較舊版本
 
@@ -72,6 +71,6 @@ Windows Server 2012 Hyper-v 引進了 VM-GenerationID （VMGenID）。 VMGenID �
   
 |||  
 |-|-|  
-|規劃的容錯移轉|未規劃的容錯移轉|  
-|支援但不建議使用，因為執行這些 Windows Server 版本的 DC 不支援 VMGenID 或使用相關的虛擬化防護措施。 這會讓它們處於 USN 復原的風險之中。 如需詳細資訊，請參閱[usn 和 Usn 回復](https://technet.microsoft.com/library/d2cae85b-41ac-497f-8cd1-5fbaa6740ffe(v=ws.10))。|不支援的**注意事項：** 若沒有 USN 復原的風險，則支援未規劃的容錯移轉，例如，樹系中的單一 DC (不建議使用這個設定)。|  
-|測試案例：<br /><br />-DC1 和 DC2 正在執行 Windows Server 2008 R2。<br /><br />-DC2 已關閉，而且已規劃的容錯移轉會在 DC2-Rec 上執行。已在完成關機之前，將 DC2 上的所有資料複寫到 DC2-Rec。<br /><br />-DC2 啟動之後，它會使用與 DC2 相同的 invocationID，繼續與 DC1 進行複寫。|N/A|  
+|規劃的容錯移轉|非計劃性容錯移轉|  
+|支援但不建議使用，因為執行這些 Windows Server 版本的 DC 不支援 VMGenID 或使用相關的虛擬化防護措施。 這會讓它們處於 USN 復原的風險之中。 如需詳細資訊，請參閱[usn 和 Usn 回復](https://technet.microsoft.com/library/d2cae85b-41ac-497f-8cd1-5fbaa6740ffe(v=ws.10))。|不支援的**注意事項：** 如果 USN 復原不是風險，例如樹系中的單一 DC （不建議設定），則會支援未計畫的容錯移轉。|  
+|測試案例：<p>-DC1 和 DC2 正在執行 Windows Server 2008 R2。<p>-DC2 已關閉，而且已規劃的容錯移轉會在 DC2-Rec 上執行。在關機完成之前，DC2 上的所有資料會複寫至 DC2-Rec。<p>-DC2 啟動之後，它會使用與 DC2 相同的 invocationID，繼續與 DC1 進行複寫。|N/A|  

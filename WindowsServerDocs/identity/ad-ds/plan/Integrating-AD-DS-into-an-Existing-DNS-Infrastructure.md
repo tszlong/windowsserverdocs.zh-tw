@@ -1,7 +1,6 @@
 ---
 ms.assetid: 4981b32f-741e-4afc-8734-26a8533ac530
 title: 將 AD DS 整合至現有 DNS 基礎結構
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f4bb480be4696f15f0a63c20ab47042264584d2c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cf069102f409247832204546f3e1c15de7238bd3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402558"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822271"
 ---
 # <a name="integrating-ad-ds-into-an-existing-dns-infrastructure"></a>將 AD DS 整合至現有 DNS 基礎結構
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 如果您的組織已經有現有的網域名稱系統（DNS）伺服器服務，Active Directory Domain Services （AD DS）擁有者的 DNS 就必須與您組織的 dns 擁有者合作，將 AD DS 整合到現有的基礎結構中。 這牽涉到建立 DNS 伺服器和 DNS 用戶端設定。  
   
@@ -31,7 +30,7 @@ ms.locfileid: "71402558"
   
 -   設定每個地區網域的網域控制站，以裝載對應至其 Active Directory 網域的 DNS 區域。  
   
--   設定包含 Active Directory 全樹系定位器記錄的區域（也就是 _msdcs）。*forestname*區域）使用全樹系 DNS 應用程式目錄分割來複寫至樹系中的每一部 dns 伺服器。  
+-   設定包含 Active Directory 全樹系定位器記錄的區域（也就是 _msdcs。*forestname*區域）使用全樹系 DNS 應用程式目錄分割來複寫至樹系中的每一部 dns 伺服器。  
   
     > [!NOTE]  
     > 當 DNS 伺服器服務與 Active Directory Domain Services 安裝精靈一併安裝時（我們建議使用此選項），會自動執行所有先前的工作。 如需詳細資訊，請參閱[部署 Windows Server 2008 樹系根域](https://technet.microsoft.com/library/cc731174.aspx)。  
@@ -44,9 +43,9 @@ ms.locfileid: "71402558"
 ## <a name="creating-the-dns-client-configuration"></a>建立 DNS 用戶端設定  
 若要在用戶端電腦上設定 DNS，AD DS 擁有者的 DNS 必須指定電腦命名配置，以及用戶端將如何找到 DNS 伺服器。 下表列出這些設計項目的建議設定。  
   
-|Design 元素|組態|  
+|設計元素|組態|  
 |------------------|-----------------|  
-|電腦命名|使用預設命名。 當 Windows 2000、Windows XP、Windows Server 2003、Windows Server 2008 或 Windows Vista 電腦加入網域時，電腦會指派完整的功能變數名稱（FQDN），其中包含電腦的主機名稱和作用中的名稱目錄網域。|  
+|電腦命名|使用預設命名。 當 Windows 2000、Windows XP、Windows Server 2003、Windows Server 2008 或 Windows Vista 電腦加入網域時，電腦會將包含電腦主機名稱的完整功能變數名稱（FQDN）和 Active Directory 網域的名稱指派給自己。|  
 |用戶端解析程式設定|設定用戶端電腦指向網路上的任何 DNS 伺服器。|  
   
 > [!NOTE]  

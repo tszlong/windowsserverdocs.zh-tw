@@ -1,24 +1,20 @@
 ---
 title: 使用軟體限制原則規則
 description: Windows Server 安全性
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-software-restriction-policies
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4a8047d5-9bb9-4bed-bc8f-583a237731e2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: bb5e56fe541a06b1100de2f25fc10f4db46b8d24
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 249426f7b0ef1b427d903e8d0cac9ca2e0747b68
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322950"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820981"
 ---
 # <a name="work-with-software-restriction-policies-rules"></a>使用軟體限制原則規則
 
@@ -47,7 +43,7 @@ ms.locfileid: "79322950"
 
 如需管理軟體限制原則之其他工作的相關資訊，請參閱[管理軟體限制原則](administer-software-restriction-policies.md)。
 
-## <a name="BKMK_Cert_Rules"></a>使用憑證規則
+## <a name="working-with-certificate-rules"></a><a name="BKMK_Cert_Rules"></a>使用憑證規則
 軟體限制原則也可以透過其簽署憑證來識別軟體。 您可以根據安全性等級來建立識別軟體的憑證規則，允許或不允許軟體執行。 例如，您可以使用憑證規則，自動信任來自網域中信任來源的軟體而不提示使用者。 您也可以使用憑證規則，執行作業系統不允許的區域檔案。 預設不會啟用憑證規則。
 
 使用群組原則為網域建立規則時，您必須擁有建立或修改群組原則物件的許可權。 如果您是建立本機電腦的規則，必須具有該電腦的系統管理認證。
@@ -82,7 +78,7 @@ ms.locfileid: "79322950"
 
 -   [僅適用于網域控制站，而您位於已安裝遠端伺服器管理工具 Pack 的網域控制站或工作站上](#BKMK_4)
 
-#### <a name="BKMK_1"></a>啟用本機電腦的憑證規則
+#### <a name="to-enable-certificate-rules-for-your-local-computer"></a><a name="BKMK_1"></a>啟用本機電腦的憑證規則
 
 1.  開啟 [本機安全性設定]。
 
@@ -96,7 +92,7 @@ ms.locfileid: "79322950"
 
     -   若要停用憑證規則，按一下 [停用]。
 
-#### <a name="BKMK_2"></a>啟用群組原則物件的憑證規則，而且您位於已加入網域的伺服器上
+#### <a name="to-enable-certificate-rules-for-a-group-policy-object-and-you-are-on-a-server-that-is-joined-to-a-domain"></a><a name="BKMK_2"></a>啟用群組原則物件的憑證規則，而且您位於已加入網域的伺服器上
 
 1.  開啟 [Microsoft Management Console (MMC)]。
 
@@ -122,7 +118,7 @@ ms.locfileid: "79322950"
 
     -   若要停用憑證規則，按一下 [停用]。
 
-#### <a name="BKMK_3"></a>若要啟用群組原則物件的憑證規則，而且您位於網域控制站或已安裝遠端伺服器管理工具的工作站上
+#### <a name="to-enable-certificate-rules-for-a-group-policy-object-and-you-are-on-a-domain-controller-or-on-a-workstation-that-has-the-remote-server-administration-tools-installed"></a><a name="BKMK_3"></a>若要啟用群組原則物件的憑證規則，而且您位於網域控制站或已安裝遠端伺服器管理工具的工作站上
 
 1.  開啟 [Active Directory 使用者和電腦]。
 
@@ -144,7 +140,7 @@ ms.locfileid: "79322950"
 
     -   若要停用憑證規則，按一下 [停用]。
 
-#### <a name="BKMK_4"></a>僅啟用網域控制站的憑證規則，而且您位於網域控制站或已安裝遠端伺服器管理工具的工作站上
+#### <a name="to-enable-certificate-rules-for-only-domain-controllers-and-you-are-on-a-domain-controller-or-on-a-workstation-that-has-the-remote-server-administration-tools-installed"></a><a name="BKMK_4"></a>僅啟用網域控制站的憑證規則，而且您位於網域控制站或已安裝遠端伺服器管理工具的工作站上
 
 1.  開啟 [網域控制站安全性設定]。
 
@@ -218,7 +214,7 @@ ms.locfileid: "79322950"
 
 6.  選取 [定義這些原則設定] 核取方塊後，執行您要的變更，然後按一下 [確定] 套用新設定。
 
-## <a name="BKMK_Hash_Rules"></a>使用雜湊規則
+## <a name="working-with-hash-rules"></a><a name="BKMK_Hash_Rules"></a>使用雜湊規則
 雜湊是由固定長度的一系列位元組組成的，能夠唯一識別軟體程式或檔案。 雜湊是由雜湊演算法運算。 為軟體程式建立雜湊規則時，軟體限制原則會計算程式的雜湊。 使用者嘗試開啟軟體程式時，程式的雜湊會與軟體限制原則現有的雜湊規則進行比較。 不論程式位於電腦的哪個位置，軟體程式的雜湊永遠是相同的。 不過，如果以任何方式變更軟體程式，雜湊也會變更，不再與軟體限制原則之雜湊規則中的雜湊相符。
 
 例如，您可以建立雜湊規則並將安全性等級設定成 [不允許]，防止使用者執行某個特定檔案。 將檔案重新命名或移到另一個資料夾，雜湊仍然是相同的。 不過，對檔案本身的任何變更也會變更其雜湊值，讓檔案略過限制。
@@ -248,7 +244,7 @@ ms.locfileid: "79322950"
 > -   若要讓軟體限制原則生效，使用者必須登出並登入其電腦，以更新原則設定。
 > -   當有一個以上的軟體限制原則規則套用至原則設定時，會有處理衝突的規則優先順序。
 
-## <a name="BKMK_Internet_Zone_Rules"></a>使用網際網路區域規則
+## <a name="working-with-internet-zone-rules"></a><a name="BKMK_Internet_Zone_Rules"></a>使用網際網路區域規則
 網際網路區域規則只適用於 Windows Installer 套件。 區域規則可以識別來自 Internet Explorer 指定之區域的軟體。 這些區域為網際網路、近端內部網路、限制的網站、信任的網站和我的電腦。 網際網路區域規則的設計目的是要防止使用者下載及安裝軟體。
 
 #### <a name="to-create-an-internet-zone-rule"></a>建立網際網路區域規則
@@ -267,7 +263,7 @@ ms.locfileid: "79322950"
 > -   若要讓軟體限制原則生效，使用者必須登出並登入其電腦，以更新原則設定。
 > -   當有一個以上的軟體限制原則規則套用至原則設定時，會有處理衝突的規則優先順序。
 
-## <a name="BKMK_Path_Rules"></a>使用路徑規則
+## <a name="working-with-path-rules"></a><a name="BKMK_Path_Rules"></a>使用路徑規則
 路徑規則可透過軟體的檔案路徑來識別軟體。 例如，如果電腦的預設安全性等級為 [不允許]，您仍可授與每個使用者存取權，不受限制地存取特定資料夾。 您可以使用檔案路徑來建立路徑規則，並將路徑規則的安全性等級設定為 [沒有限制]。 此規則類型的一些常用路徑為 %userprofile%、%windir%、%appdata%、%programfiles% 和 %temp%。 您也可以建立登錄路徑規則，使用軟體的登錄機碼做為其路徑。
 
 因為這些規則是由路徑指定的，如果移動軟體程式，該路徑規則就不再適用。

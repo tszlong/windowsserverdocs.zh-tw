@@ -1,24 +1,20 @@
 ---
 title: waitfor
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: Waitfor 的 Windows 命令主題，它會傳送或等候系統上的信號。 **Waitfor**是用來同步處理網路上的電腦。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a48ef70d-4d28-4035-b6b0-7d7b46ac2157
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aecea0ad19ee42e61396eb8b8ccd579b9ce2057b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4542fc9d231b8150ab89e07e173d9671d6b7a3f3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362597"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829931"
 ---
 # <a name="waitfor"></a>waitfor
 
@@ -35,7 +31,7 @@ waitfor [/s <Computer> [/u [<Domain>\]<User> [/p [<Password>]]]] /si <SignalName
 waitfor [/t <Timeout>] <SignalName>
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |       參數       |                                                                                         描述                                                                                          |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -57,23 +53,23 @@ waitfor [/t <Timeout>] <SignalName>
 -   只有當電腦與傳送信號的電腦位於相同網域時，才會收到信號。
 -   當您測試軟體組建時，可以使用**waitfor** 。 例如，編譯電腦可以在編譯成功完成之後，傳送信號給執行**waitfor**的數部電腦。 收到信號時，包含**waitfor**的批次檔可指示電腦立即開始安裝軟體，或在已編譯的組建上執行測試。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
-若要等到收到「espresso\build007」信號，請輸入：
+若要等到收到 espresso\build007 信號，請輸入：
 ```
 waitfor espresso\build007
 ```
 根據預設， **waitfor**會無限期地等候信號。
 
-若要等候10秒，讓 "espresso\compile007" 信號在超時前收到，請輸入：
+若要等候10秒，讓 espresso\compile007 信號在超時前收到，請輸入：
 ```
 waitfor /t 10 espresso\build007
 ```
-若要手動啟用「espresso\build007」信號，請輸入：
+若要手動啟動 espresso\build007 信號，請輸入：
 ```
 waitfor /si espresso\build007
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

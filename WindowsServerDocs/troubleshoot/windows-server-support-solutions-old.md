@@ -2,19 +2,18 @@
 title: Windows Server 的最佳支援解決方案
 description: 取得 Windows Server 問題解決方案的連結
 ms.prod: windows-server
-ms.service: na
 manager: alant
 ms.technology: server-general
 ms.date: 03/16/2018
 ms.topic: article
 author: kaushika-msft
 ms.author: elizapo
-ms.openlocfilehash: 61c10f25ac97934f73c4f393e2c91c9b36fc59fd
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 6bd0d22c7df7344e6c4bfbf8360532ab0f36d117
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950169"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820751"
 ---
 # <a name="top-support-solutions-for-windows-server-2016"></a>Windows Server 2016 的最佳支援解決方案
 
@@ -31,7 +30,7 @@ Microsoft 會定期發行 Windows Server 的更新及解決方案。 為了確�
 - [適用于 Windows 10 1607 版和 Windows Server 2016 的服務堆疊更新：2017年8月8日](https://support.microsoft.com/help/4035631)
 - [升級至 Windows 10 1607 版和 Windows Server 2016 的相容性更新：2017年8月3日](https://support.microsoft.com/help/4033524)
 - [以 Windows 為基礎的 Azure Vm 不支援就地系統升級](https://support.microsoft.com/help/4014997)
-- [Windows Server 2016 的升級與轉換選項](../get-started/supported-upgrade-paths.md)
+- [Windows Server 2016 的升級和轉換選項](../get-started/supported-upgrade-paths.md)
 - [Windows Server 2016 的伺服器角色升級和遷移矩陣](../get-started/server-role-upgradeability-table.md)
 - [Windows Server 安裝和升級](../get-started/installation-and-upgrade.md)
 - [版本資訊： Windows Server 2016 中的重要問題](../get-started/windows-server-2016-ga-release-notes.md)
@@ -39,7 +38,7 @@ Microsoft 會定期發行 Windows Server 的更新及解決方案。 為了確�
 
 ## <a name="solutions-for-volume-activation"></a>大量啟用解決方案
 - [Windows Server 2016 啟用](../get-started/server-2016-activation.md)
-- [檢閱並選取啟用方法](https://technet.microsoft.com/library/jj134256(ws.11).aspx)
+- [審查並選取啟用方法](https://technet.microsoft.com/library/jj134256(ws.11).aspx)
 - [大量啟用的啟用錯誤碼](https://technet.microsoft.com/library/dn502528.aspx)
 - [如何針對金鑰管理服務（KMS）進行疑難排解](https://technet.microsoft.com/library/ee939272.aspx)
 - [大量啟用疑難排解](https://technet.microsoft.com/library/ff793439.aspx)
@@ -52,11 +51,11 @@ Microsoft 會定期發行 Windows Server 的更新及解決方案。 為了確�
 - [Windows Server 2016 的 Exchange Server 支援](https://technet.microsoft.com/library/ff728623(v=exchg.150).aspx)
 - [使用 Ntdsutil.exe 傳輸或抓取 FSMO 角色到網域控制站](https://support.microsoft.com/kb/255504)
 - [疑難排解網域控制站部署](../identity/ad-ds/deploy/troubleshooting-domain-controller-deployment.md)
-- [Active Directory 安裝精靈問題疑難排解](https://msdn.microsoft.com/library/bb727058.aspx)
+- [疑難排解 Active Directory 安裝精靈問題](https://msdn.microsoft.com/library/bb727058.aspx)
 - [安裝和移除 AD DS 的已知問題](https://technet.microsoft.com/library/cc754463(v=ws.10).aspx)
 
 ## <a name="solutions-for-active-directory-federation-services-ad-fs"></a>Active Directory Federation Services (AD FS) 解決方案
-- [如何設定讓已加入網域的 Windows 裝置自動向 Azure Active Directory 註冊](/azure/active-directory/active-directory-conditional-access-automatic-device-registration-setup)
+- [如何設定以 Azure Active Directory 自動向已加入網域的 Windows 裝置註冊](/azure/active-directory/active-directory-conditional-access-automatic-device-registration-setup)
 - [設定宣告的發行](/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup#step-2-setup-issuance-of-claims)
 - [設定 AD FS 驗證 LDAP 目錄中儲存的使用者](../identity/ad-fs/operations/configure-ad-fs-to-authenticate-users-stored-in-ldap-directories.md)
 - [AD FS 支援憑證驗證的替代主機名稱繫結](../identity/ad-fs/operations/ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md)

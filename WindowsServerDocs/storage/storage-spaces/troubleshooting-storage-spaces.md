@@ -1,7 +1,6 @@
 ---
 title: 儲存空間直接存取疑難排解
 description: 瞭解如何針對您的儲存空間直接存取部署進行疑難排解。
-keywords: 儲存空間
 ms.prod: windows-server
 ms.author: ''
 ms.technology: storage-spaces
@@ -9,16 +8,16 @@ ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ace19b711445106956ae223f17afb6b4181d352d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 429eddf30fddf6bfd035d1f928196a3b66d14646
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365944"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820941"
 ---
 # <a name="troubleshoot-storage-spaces-direct"></a>疑難排解儲存空間直接存取
 
-> 適用於：Windows Server 2019、Windows Server 2016
+> 適用于： Windows Server 2019、Windows Server 2016
 
 使用下列資訊對您的儲存空間直接存取部署進行疑難排解。
 
@@ -36,12 +35,12 @@ ms.locfileid: "71365944"
 ## <a name="virtual-disk-resources-are-in-no-redundancy-state"></a>虛擬磁片資源處於無冗余狀態
 儲存空間直接存取系統的節點意外重新開機，因為發生損毀或電源中斷。 然後，一或多個虛擬磁片可能不會上線，而您會看到「沒有足夠的冗余資訊」描述。
 
-|FriendlyName|ResiliencySettingName| OperationalStatus| HealthStatus| IsManualAttach|Size| PSComputerName|
+|FriendlyName|ResiliencySettingName| OperationalStatus| HealthStatus| IsManualAttach|大小| PSComputerName|
 |------------|---------------------| -----------------| ------------| --------------|-----| --------------|
-|Disk4| Mirror| [確定]|  良好| True|  10 TB|  節點-01. conto 。|
-|Disk3         |Mirror                 |[確定]                          |良好       |True            |10 TB | 節點-01. conto 。|
-|Disk2         |Mirror                 |無冗余               |Unhealthy     |True            |10 TB | 節點-01. conto 。|
-|Disk1         |Mirror                 |{沒有冗余，InService}  |Unhealthy     |True            |10 TB | 節點-01. conto 。| 
+|Disk4| 鏡像| 確定|  狀況良好| True|  10 TB|  節點-01. conto 。|
+|Disk3         |鏡像                 |確定                          |狀況良好       |True            |10 TB | 節點-01. conto 。|
+|Disk2         |鏡像                 |無冗余               |狀況不良     |True            |10 TB | 節點-01. conto 。|
+|Disk1         |鏡像                 |{沒有冗余，InService}  |狀況不良     |True            |10 TB | 節點-01. conto 。| 
 
 此外，在嘗試讓虛擬磁片上線之後，下列資訊會記錄在叢集記錄檔（DiskRecoveryAction）中。  
 
@@ -99,12 +98,12 @@ ms.locfileid: "71365944"
 
 以下是**VirtualDisk** Cmdlet 的輸出範例。
 
-|FriendlyName|  ResiliencySettingName|  OperationalStatus|   HealthStatus|  IsManualAttach|  Size|   PSComputerName|
+|FriendlyName|  ResiliencySettingName|  OperationalStatus|   HealthStatus|  IsManualAttach|  大小|   PSComputerName|
 |-|-|-|-|-|-|-|
-|Disk4|         Mirror|                 [確定]|                  良好|       True|            10 TB|  節點-01. conto 。|
-|Disk3|         Mirror|                 [確定]|                  良好|       True|            10 TB|  節點-01. conto 。|
-|Disk2|         Mirror|                 已中斷連結|            不明|       True|            10 TB|  節點-01. conto 。|
-|Disk1|         Mirror|                 已中斷連結|            不明|       True|            10 TB|  節點-01. conto 。| 
+|Disk4|         鏡像|                 確定|                  狀況良好|       True|            10 TB|  節點-01. conto 。|
+|Disk3|         鏡像|                 確定|                  狀況良好|       True|            10 TB|  節點-01. conto 。|
+|Disk2|         鏡像|                 已中斷連結|            未知|       True|            10 TB|  節點-01. conto 。|
+|Disk1|         鏡像|                 已中斷連結|            未知|       True|            10 TB|  節點-01. conto 。| 
 
 
 此外，節點上可能會記錄下列事件：
@@ -151,7 +150,7 @@ DeviceName:
 Volume Name:
 ``` 
 
-如果中途區域追蹤（DRT）記錄已滿，則可能會發生卸**離的操作狀態**。 儲存空間會針對鏡像空間使用中途區域追蹤（DRT），以確保在發生電源中斷時，會記錄任何對中繼資料進行中的更新，以確保儲存空間可以重做或復原作業，讓儲存空間恢復彈性而當電源恢復時，就會出現一致的狀態，而且系統又恢復運作。 如果 DRT 記錄已滿，則在同步處理和排清 DRT 中繼資料之前，虛擬磁片將無法上線。 此程式需要執行完整掃描，這可能需要幾個小時才能完成。
+如果中途區域追蹤（DRT）記錄已滿，則可能會發生卸**離的操作狀態**。 儲存空間會針對鏡像空間使用中途區域追蹤（DRT），以確保在發生電源中斷時，會記錄任何對中繼資料的進行中更新，以確保儲存空間可以重做或復原作業，讓儲存空間在電源恢復時恢復為彈性且一致的狀態。 如果 DRT 記錄已滿，則在同步處理和排清 DRT 中繼資料之前，虛擬磁片將無法上線。 此程式需要執行完整掃描，這可能需要幾個小時才能完成。
 
 若要修正此問題，請遵循下列步驟：
 1. 從 CSV 移除受影響的虛擬磁片。
@@ -206,9 +205,9 @@ Volume Name:
 ## <a name="event-5120-with-status_io_timeout-c00000b5"></a>STATUS_IO_TIMEOUT c00000b5 的事件5120 
 
 > [!Important]
-> **若為 Windows Server 2016：** 若要減少在套用更新與修正程式時遇到這些徵兆的機率，建議使用以下的「儲存體維護模式」程式來安裝[2018 年10月18日，Windows Server 2016](https://support.microsoft.com/help/4462928)或更新版本的累積更新當節點目前已安裝從[2018 年5月8日](https://support.microsoft.com/help/4103723)發行的 Windows Server 2016 累積更新[，2018](https://support.microsoft.com/help/KB4462917)。
+> 若**為 Windows Server 2016：** 若要減少在套用更新與修正程式時遇到這些徵兆的機率，建議使用下列的「儲存維護模式」程式來安裝[2018 年10月18日，Windows server 2016 的累計更新](https://support.microsoft.com/help/4462928)或更新版本，當節點目前已安裝從[5 月8日](https://support.microsoft.com/help/4103723)發行的 windows server 2016 累積更新（從2018到[年10月9日2018）](https://support.microsoft.com/help/KB4462917)。
 
-當您重新開機 Windows Server 2016 上的節點時，您可能會收到 STATUS_IO_TIMEOUT c00000b5 的事件5120，其累積更新已從[5 月8日](https://support.microsoft.com/help/4103723)發行，已從 2018 kb 4103723 到[10 月9日，已安裝 2018 kb 4462917](https://support.microsoft.com/help/4462917) 。
+當您重新開機 Windows Server 2016 上的節點時，您可能會收到 STATUS_IO_TIMEOUT c00000b5 的事件5120，其累計更新是從[5 月8日](https://support.microsoft.com/help/4103723)發行，已安裝 2018 kb 4103723 到[10 月9日的 2018 kb 4462917](https://support.microsoft.com/help/4462917) 。
 
 當您重新開機節點時，事件5120會記錄在系統事件記錄檔中，並包含下列其中一個錯誤碼：
 
@@ -217,7 +216,7 @@ Event Source: Microsoft-Windows-FailoverClustering
 Event ID: 5120
 Description:    Cluster Shared Volume 'CSVName' ('Cluster Virtual Disk (CSVName)') has entered a paused state because of 'STATUS_IO_TIMEOUT(c00000b5)'. All I/O will temporarily be queued until a path to the volume is reestablished. 
 
-Cluster Shared Volume ‘CSVName' ('Cluster Virtual Disk (CSVName)') has entered a paused state because of 'STATUS_CONNECTION_DISCONNECTED(c000020c)'. All I/O will temporarily be queued until a path to the volume is reestablished.    
+Cluster Shared Volume 'CSVName' ('Cluster Virtual Disk (CSVName)') has entered a paused state because of 'STATUS_CONNECTION_DISCONNECTED(c000020c)'. All I/O will temporarily be queued until a path to the volume is reestablished.    
 ```
 
 記錄事件5120時，會產生即時傾印，以收集可能會造成額外徵兆或效能影響的偵錯工具資訊。 產生即時傾印會建立短暫的暫停，以讓記憶體快照集寫入傾印檔案。 具有大量記憶體且承受壓力的系統可能會導致節點卸載叢集成員資格，同時也會記錄下列事件1135。
@@ -274,8 +273,8 @@ Description: Cluster node 'NODENAME'was removed from the active failover cluster
 #### <a name="method-1-recommended-in-this-scenario"></a>方法1（在此案例中建議使用）
 若要完全停用所有傾印（包括全系統的即時傾印），請遵循下列步驟：
 
-1. 建立下列登錄機碼：HKLM\System\CurrentControlSet\Control\CrashControl\ForceDumpsDisabled
-2. 在新的**ForceDumpsDisabled**索引鍵底下，建立 REG_DWORD 屬性作為 GuardedHost，然後將其值設定為0x10000000。
+1. 建立下列登錄機碼： HKLM\System\CurrentControlSet\Control\CrashControl\ForceDumpsDisabled
+2. 在新的**ForceDumpsDisabled**索引鍵底下，建立 REG_DWORD 屬性做為 GuardedHost，然後將其值設定為0x10000000。
 3. 將新的登錄機碼套用到每個叢集節點。
 
 >[!NOTE]
@@ -311,20 +310,20 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
 
 1. 使用叢集記錄檔。 在選擇的文字編輯器中開啟叢集記錄檔，並搜尋 "[= = = SBL 磁片 = =]。" 這會是產生記錄檔之節點上的磁片清單。 
 
-     已啟用快取的磁片範例：請注意，這裡的狀態是 CacheDiskStateInitializedAndBound，而這裡有一個 GUID。 
+     已啟用快取的磁片範例：請注意，這裡的狀態為 CacheDiskStateInitializedAndBound，而這裡有一個 GUID 存在。 
 
    ```
    [=== SBL Disks ===]
     {26e2e40f-a243-1196-49e3-8522f987df76},3,false,true,1,48,{1ff348f1-d10d-7a1a-d781-4734f4440481},CacheDiskStateInitializedAndBound,1,8087,54,false,false,HGST    ,HUH721010AL4200 ,        7PG3N2ER,A21D,{d5e27a3b-42fb-410a-81c6-9d8cc12da20c},[R/M 0 R/U 0 R/T 0 W/M 0 W/U 0 W/T 0],
     ```
 
-    未啟用快取：在這裡，我們可以看到沒有 GUID 存在，而且狀態為 CacheDiskStateNonHybrid。 
+    未啟用快取：在這裡我們可以看到沒有 GUID 存在，而且狀態為 CacheDiskStateNonHybrid。 
     ```
    [=== SBL Disks ===]
     {426f7f04-e975-fc9d-28fd-72a32f811b7d},12,false,true,1,24,{00000000-0000-0000-0000-000000000000},CacheDiskStateNonHybrid,0,0,0,false,false,HGST    ,HUH721010AL4200 ,        7PGXXG6C,A21D,{d5e27a3b-42fb-410a-81c6-9d8cc12da20c},[R/M 0 R/U 0 R/T 0 W/M 0 W/U 0 W/T 0],
     ```
 
-    未啟用快取：當所有磁片都屬於相同類型的大小寫時，預設不會啟用。 在這裡，我們可以看到沒有 GUID 存在，而且狀態為 CacheDiskStateIneligibleDataPartition。 
+    未啟用快取：預設不會啟用所有磁片都是相同類型的大小寫。 在這裡，我們可以看到沒有 GUID 存在，而且狀態為 CacheDiskStateIneligibleDataPartition。 
     ```
     {d543f90c-798b-d2fe-7f0a-cb226c77eeed},10,false,false,1,20,{00000000-0000-0000-0000-000000000000},CacheDiskStateIneligibleDataPartition,0,0,0,false,false,NVMe    ,INTEL SSDPE7KX02,  PHLF7330004V2P0LGN,0170,{79b4d631-976f-4c94-a783-df950389fd38},[R/M 0 R/U 0 R/T 0 W/M 0 W/U 0 W/T 0], 
     ```  
@@ -333,19 +332,19 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
     2. 執行「ipmo 儲存體」
     3. 執行 "$d"。 請注意，[使用量] 是自動選取，而不是 [筆記本]，您會看到如下所示的輸出： 
 
-   |FriendlyName|  SerialNumber| MediaType| CanPool| OperationalStatus| HealthStatus| 使用量| Size|
+   |FriendlyName|  SerialNumber| MediaType| CanPool| OperationalStatus| HealthStatus| 使用方式| 大小|
    |-----------|------------|---------| -------| -----------------| ------------| -----| ----|
-   |NVMe INTEL SSDPE7KX02| PHLF733000372P0LGN| SSD| 偽|   [確定]|                良好|      自動選取 1.82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7504008J2P0LGN| SSD|  偽|    [確定]|                良好| 自動選取| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02| PHLF7504005F2P0LGN| SSD|  偽|  [確定]|                良好| 自動選取| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7504002A2P0LGN| SSD| 偽| [確定]|    良好| 自動選取| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02| PHLF7504004T2P0LGN |SSD| 偽|[確定]|       良好| 自動選取| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7504002E2P0LGN| SSD| 偽| [確定]|      良好| 自動選取| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7330002Z2P0LGN| SSD| 偽| [確定]|      良好|自動選取| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF733000272P0LGN |SSD| 偽| [確定]|  良好| 自動選取| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7330001J2P0LGN |SSD| 偽| [確定]| 良好| 自動選取| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02| PHLF733000302P0LGN |SSD| 偽| [確定]|良好| 自動選取| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02| PHLF7330004D2P0LGN |SSD| 偽| [確定]| 良好| 自動選取 |1.82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF733000372P0LGN| SSD| False|   確定|                狀況良好|      自動選取 1.82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7504008J2P0LGN| SSD|  False|    確定|                狀況良好| 自動選取| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF7504005F2P0LGN| SSD|  False|  確定|                狀況良好| 自動選取| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7504002A2P0LGN| SSD| False| 確定|    狀況良好| 自動選取| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF7504004T2P0LGN |SSD| False|確定|       狀況良好| 自動選取| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7504002E2P0LGN| SSD| False| 確定|      狀況良好| 自動選取| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7330002Z2P0LGN| SSD| False| 確定|      狀況良好|自動選取| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF733000272P0LGN |SSD| False| 確定|  狀況良好| 自動選取| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7330001J2P0LGN |SSD| False| 確定| 狀況良好| 自動選取| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF733000302P0LGN |SSD| False| 確定|狀況良好| 自動選取| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF7330004D2P0LGN |SSD| False| 確定| 狀況良好| 自動選取 |1.82 TB|
 
 ## <a name="how-to-destroy-an-existing-cluster-so-you-can-use-the-same-disks-again"></a>如何摧毀現有的叢集，讓您可以再次使用相同的磁片
 
@@ -358,25 +357,25 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
 
 現在，如果您在任何節點上執行**PhysicalDisk** ，您會看到集區中的所有磁片。 例如，在具有4個 SAS 磁片的4節點叢集的實驗室中，每個節點會顯示每個節點 100 GB。 在這種情況下，在停用儲存空間直接存取之後（這會移除 SBL （儲存匯流排層）但離開篩選器），如果您執行**PhysicalDisk**，它應該會報告4個磁片，但不包括本機 OS 磁片。 而是改為回報16。 對於叢集中的所有節點而言，這都是相同的。 當您執行「**磁片磁碟機**」命令時，您會看到本機連接的磁片編號為0、1、2等等，如下列範例輸出所示：
 
-|Number| 易記名稱| 序號|HealthStatus|OperationalStatus|總大小| 分割區樣式|
+|Number| 好記的名稱| 序號|HealthStatus|OperationalStatus|總共大小| 分割區樣式|
 |-|-|-|-|-|-|-|-|
-|0|Msft Virtu 。  ||良好 | Online|  127 GB| GPT|
-||Msft Virtu 。 ||良好| 離線| 100 GB| 原始|
-||Msft Virtu 。 ||良好| 離線| 100 GB| 原始|
-||Msft Virtu 。 ||良好| 離線| 100 GB| 原始|
-||Msft Virtu 。 ||良好| 離線| 100 GB| 原始|
-|1|Msft Virtu 。||良好| 離線| 100 GB| 原始|
-||Msft Virtu 。 ||良好| 離線| 100 GB| 原始|
-|2|Msft Virtu 。||良好| 離線| 100 GB| 原始|
-||Msft Virtu 。 ||良好| 離線| 100 GB| 原始|
-||Msft Virtu 。 ||良好| 離線| 100 GB| 原始|
-||Msft Virtu 。 ||良好| 離線| 100 GB| 原始|
-||Msft Virtu 。 ||良好| 離線| 100 GB| 原始|
-|4|Msft Virtu 。||良好| 離線| 100 GB| 原始|
-|3|Msft Virtu 。||良好| 離線| 100 GB| 原始|
-||Msft Virtu 。 ||良好| 離線| 100 GB| 原始|
-||Msft Virtu 。 ||良好| 離線| 100 GB| 原始|
-||Msft Virtu 。 ||良好| 離線| 100 GB| 原始|
+|0|Msft Virtu 。  ||狀況良好 | 線上|  127 GB| GPT|
+||Msft Virtu 。 ||狀況良好| 離線| 100 GB| RAW|
+||Msft Virtu 。 ||狀況良好| 離線| 100 GB| RAW|
+||Msft Virtu 。 ||狀況良好| 離線| 100 GB| RAW|
+||Msft Virtu 。 ||狀況良好| 離線| 100 GB| RAW|
+|1|Msft Virtu 。||狀況良好| 離線| 100 GB| RAW|
+||Msft Virtu 。 ||狀況良好| 離線| 100 GB| RAW|
+|2|Msft Virtu 。||狀況良好| 離線| 100 GB| RAW|
+||Msft Virtu 。 ||狀況良好| 離線| 100 GB| RAW|
+||Msft Virtu 。 ||狀況良好| 離線| 100 GB| RAW|
+||Msft Virtu 。 ||狀況良好| 離線| 100 GB| RAW|
+||Msft Virtu 。 ||狀況良好| 離線| 100 GB| RAW|
+|4|Msft Virtu 。||狀況良好| 離線| 100 GB| RAW|
+|3|Msft Virtu 。||狀況良好| 離線| 100 GB| RAW|
+||Msft Virtu 。 ||狀況良好| 離線| 100 GB| RAW|
+||Msft Virtu 。 ||狀況良好| 離線| 100 GB| RAW|
+||Msft Virtu 。 ||狀況良好| 離線| 100 GB| RAW|
 
 
 ## <a name="error-message-about-unsupported-media-type-when-you-create-an-storage-spaces-direct-cluster-using-enable-clusters2d"></a>當您使用 Enable-clusters2d 建立儲存空間直接存取叢集時，「不支援的媒體類型」的錯誤訊息  
@@ -387,14 +386,14 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
 
 若要修正此問題，請確定 HBA 介面卡是以 HBA 模式設定。 不應在 RAID 模式中設定任何 HBA。  
 
-## <a name="enable-clusterstoragespacesdirect-hangs-at-waiting-until-sbl-disks-are-surfaced-or-at-27"></a>ClusterStorageSpacesDirect 在「等待 SBL 磁片」或 27% 時停止回應
+## <a name="enable-clusterstoragespacesdirect-hangs-at-waiting-until-sbl-disks-are-surfaced-or-at-27"></a>ClusterStorageSpacesDirect 在「等待 SBL 磁片」或27% 時停止回應
 
 您會在驗證報告中看到下列資訊：
 
     Disk <identifier> connected to node <nodename> returned a SCSI Port Association and the corresponding enclosure device could not be found. The hardware is not compatible with Storage Spaces Direct (S2D), contact the hardware vendor to verify support for SCSI Enclosure Services (SES). 
 
 
-問題在於磁片和 HBA 卡之間的 HPE SAS 擴充器卡。 SAS 擴充器會在連接到擴充器的第一個磁片磁碟機和展開器本身之間建立重複的識別碼。  已在 HPE 智慧陣列[控制器 SAS 擴充器固件中解決此問題：4.02](https://support.hpe.com/hpsc/swd/public/detail?sp4ts.oid=7304566&swItemId=MTX_ef8d0bf4006542e194854eea6a&swEnvOid=4184#tab3)。
+問題在於磁片和 HBA 卡之間的 HPE SAS 擴充器卡。 SAS 擴充器會在連接到擴充器的第一個磁片磁碟機和展開器本身之間建立重複的識別碼。  這項功能已在[HPE 智慧陣列控制器 SAS 擴充器固件： 4.02](https://support.hpe.com/hpsc/swd/public/detail?sp4ts.oid=7304566&swItemId=MTX_ef8d0bf4006542e194854eea6a&swEnvOid=4184#tab3)中解決。
 
 ## <a name="intel-ssd-dc-p4600-series-has-a-non-unique-nguid"></a>Intel SSD DC P4600 系列具有非唯一的 n
 在下列範例中，您可能會看到 Intel SSD DC P4600 系列裝置似乎針對多個命名空間（例如0100000001000000E4D25C000014E214 或0100000001000000E4D25C0000EEE214）報告類似的16個位元組的問題。
@@ -402,11 +401,11 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
 
 |               uniqueid               | deviceid | MediaType | BusType |               serialnumber               |      size      | canpool | friendlyname | OperationalStatus |
 |--------------------------------------|----------|-----------|---------|------------------------------------------|----------------|---------|--------------|-------------------|
-|           5000CCA251D12E30           |    0     |    HDD    |   SAS   |                 7PKR197G                 | 10000831348736 |  偽  |     HGST     |  HUH721010AL4200  |
-| eui. 0100000001000000E4D25C000014E214 |    4     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214. | 1600321314816  |  True   |    迅馳     |   SSDPE2KE016T7   |
-| eui. 0100000001000000E4D25C000014E214 |    5     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214. | 1600321314816  |  True   |    迅馳     |   SSDPE2KE016T7   |
-| eui. 0100000001000000E4D25C0000EEE214 |    6     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214. | 1600321314816  |  True   |    迅馳     |   SSDPE2KE016T7   |
-| eui. 0100000001000000E4D25C0000EEE214 |    7     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214. | 1600321314816  |  True   |    迅馳     |   SSDPE2KE016T7   |
+|           5000CCA251D12E30           |    0     |    HDD    |   SAS   |                 7PKR197G                 | 10000831348736 |  False  |     HGST     |  HUH721010AL4200  |
+| eui. 0100000001000000E4D25C000014E214 |    4     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214。 | 1600321314816  |  True   |    迅馳     |   SSDPE2KE016T7   |
+| eui. 0100000001000000E4D25C000014E214 |    5     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214。 | 1600321314816  |  True   |    迅馳     |   SSDPE2KE016T7   |
+| eui. 0100000001000000E4D25C0000EEE214 |    6     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214。 | 1600321314816  |  True   |    迅馳     |   SSDPE2KE016T7   |
+| eui. 0100000001000000E4D25C0000EEE214 |    7     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214。 | 1600321314816  |  True   |    迅馳     |   SSDPE2KE016T7   |
 
 若要修正此問題，請將 Intel 磁片磁碟機上的固件更新為最新版本。  已知從2018年5月 QDV101B1 的固件版本可解決此問題。
 

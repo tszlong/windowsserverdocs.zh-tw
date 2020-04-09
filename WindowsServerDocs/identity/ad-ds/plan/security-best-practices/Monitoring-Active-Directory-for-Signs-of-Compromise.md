@@ -1,7 +1,6 @@
 ---
 ms.assetid: a7ef2fba-b05c-4be2-93b2-b9456244c3ad
 title: 監視 Active Directory 遭到危害的徵兆
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e51b7ea151db1ca5d53a8cacef3b042e345175de
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 1d00ab702ab6b4ff4307f96f9e266a1cb3420197
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949638"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821141"
 ---
 # <a name="monitoring-active-directory-for-signs-of-compromise"></a>監視 Active Directory 遭到危害的徵兆
 
@@ -101,7 +100,7 @@ Windows 中有數十種使用者權利和許可權（例如，以批次工作登
 
 從 Windows Vista 和 Windows Server 2008 開始，Microsoft 藉由在每個主要審核類別下建立子類別目錄，來改善事件記錄檔類別選擇的方式。 子類別目錄可讓您比使用主要類別更細微的方式進行審核。 藉由使用子類別，您可以只啟用特定主要類別的某些部分，並略過產生無法使用的事件。 每個稽核原則子類別可以針對成功、失敗或成功和失敗事件啟用。  
   
-若要列出所有可用的審核子類別，請在群組原則物件中檢查 Advanced Audit Policy 容器，或在執行 Windows Server 2012、Windows Server 2008 R2 或 Windows Server 2008、Windows 8 的任何電腦上，于命令提示字元中輸入下列命令：Windows 7 或 Windows Vista：  
+若要列出所有可用的審核子類別，請在群組原則物件中檢查 Advanced Audit Policy 容器，或在執行 Windows Server 2012、Windows Server 2008 R2 或 Windows Server 2008、Windows 8、Windows 7 或 Windows Vista 的任何電腦上，于命令提示字元中輸入下列命令：  
   
 `auditpol /list /subcategory:*`
   
@@ -170,7 +169,7 @@ Windows 中有數十種使用者權利和許可權（例如，以批次工作登
   
 #### <a name="detailed-process-tracking"></a>詳細的進程追蹤  
   
-##### <a name="process-creation"></a>處理序建立  
+##### <a name="process-creation"></a>進程建立  
 這個子類別會報告建立程式的方式，以及建立該進程的使用者或程式的名稱。  
   
 ##### <a name="process-termination"></a>進程終止  
@@ -201,7 +200,7 @@ Windows 中有數十種使用者權利和許可權（例如，以批次工作登
 ##### <a name="logon"></a>Logon  
 當使用者嘗試登入系統時，此子類別會報告。 這些事件會發生在存取的電腦上。 若為互動式登入，則會在登入的電腦上產生這些事件。 如果進行網路登入以存取共用，這些事件會在裝載所存取資源的電腦上產生。 如果此設定設為 [**無**]，則很難或無法判斷哪些使用者已存取或嘗試存取組織電腦。  
   
-##### <a name="network-policy-server"></a>網路原則伺服器  
+##### <a name="network-policy-server"></a>Network Policy Server  
 此子類別會報告 RADIUS （IAS）和網路存取保護（NAP）使用者存取要求所產生的事件。 這些要求可以是**Grant**、 **Deny**、**捨棄**、**隔離**、**鎖定**和**解除鎖定**。 此設定會導致 NPS 和 資訊存取伺服器上的記錄量適中或大量。  
   
 ##### <a name="ipsec-main-mode"></a>IPsec 主要模式  
@@ -213,7 +212,7 @@ Windows 中有數十種使用者權利和許可權（例如，以批次工作登
 ##### <a name="other-logonlogoff-events"></a>其他登入/登出事件  
 此子類別會報告其他登入和登出相關的事件，例如遠端桌面服務會話中斷連線並重新連線、使用 RunAs 在不同帳戶下執行進程，以及鎖定和解除鎖定工作站。  
   
-##### <a name="logoff"></a>登出  
+##### <a name="logoff"></a>Logoff  
 此子類別會報告使用者何時登出系統。 這些事件會發生在存取的電腦上。 若為互動式登入，則會在登入的電腦上產生這些事件。 如果進行網路登入以存取共用，這些事件會在裝載所存取資源的電腦上產生。 如果此設定設為 [**無**]，則很難或無法判斷哪些使用者已存取或嘗試存取組織電腦。  
   
 ##### <a name="account-lockout"></a>帳戶鎖定  
@@ -248,10 +247,10 @@ Windows 中有數十種使用者權利和許可權（例如，以批次工作登
 #### <a name="privilege-use"></a>許可權使用  
   
 ##### <a name="sensitive-privilege-use"></a>敏感性許可權使用  
-此子類別會報告使用者帳戶或服務何時使用敏感性許可權。 敏感性許可權包括下列使用者權限：作為作業系統的一部分、備份檔案和目錄、建立權杖物件、偵錯工具、讓電腦和使用者帳戶可供委派、產生安全性審核、在驗證之後模擬用戶端、載入和卸載設備磁碟機、管理審核和安全性記錄、修改固件環境值、取代進程層級權杖、還原檔案和目錄，以及取得檔案或其他物件的擁有權。 此子類別目錄的審核將會建立大量的事件。  
+此子類別會報告使用者帳戶或服務何時使用敏感性許可權。 敏感性許可權包括下列使用者權限：作為作業系統的一部分、備份檔案和目錄、建立權杖物件、偵錯工具、讓電腦和使用者帳戶可供委派、產生安全性審核、在驗證後模擬用戶端、載入和卸載設備磁碟機、管理審核和安全性記錄、修改固件環境值、取代進程層級權杖、還原檔案和目錄，以及取得檔案或其他物件的擁有權。 此子類別目錄的審核將會建立大量的事件。  
   
 ##### <a name="nonsensitive-privilege-use"></a>Nonsensitive 許可權使用  
-此子類別會報告使用者帳戶或服務何時使用 nonsensitive 許可權。 Nonsensitive 許可權包括下列使用者權限：以信任的呼叫者身分存取認證管理員、從網路存取這部電腦、將工作站新增到網域、調整進程的記憶體配額、允許本機登入、允許透過遠端登入桌面服務，略過遍歷檢查，變更系統時間，建立分頁檔，建立全域物件，建立永久共用物件，建立符號連結，拒絕從網路存取這台電腦，拒絕以批次工作登入，拒絕以服務方式登入，拒絕本機登入、拒絕透過遠端桌面服務登入、強制從遠端系統關機、增加進程工作集、增加排程優先順序、鎖定記憶體中的分頁、以批次工作方式登入、修改物件標籤、執行磁片區維護工作、分析單一進程、分析系統效能、從銜接站移除電腦、關閉系統，以及同步處理目錄服務資料。 此子類別目錄的審核將會建立非常大量的事件。  
+此子類別會報告使用者帳戶或服務何時使用 nonsensitive 許可權。 Nonsensitive 許可權包括下列使用者權限：以信任的呼叫者身分存取認證管理員、從網路存取這部電腦、將工作站新增到網域、調整處理常式的記憶體配額、允許本機登入、允許透過遠端桌面服務登入、略過遍歷檢查、變更系統時間、建立分頁檔、建立全域物件、建立永久共用物件、建立符號連結、[拒絕從網路存取這部電腦]、[拒絕以批次工作登入]、[拒絕登入為服務]、[拒絕本機登入]、[拒絕透過遠端桌面服務登入]、[強制從遠端系統關機]、[拒絕程式工作集]、[以批次工作登入]、[以服務方式登入]、[修改物件標籤]、執行磁片區維護工作、分析單一進程、分析系統效能、從銜接站移除電腦、關閉系統，以及同步處理目錄服務資料。 此子類別目錄的審核將會建立非常大量的事件。  
   
 ##### <a name="other-privilege-use-events"></a>其他許可權使用事件  
 目前未使用此安全性原則設定。  
@@ -293,7 +292,7 @@ Windows 中有數十種使用者權利和許可權（例如，以批次工作登
 ##### <a name="other-object-access-events"></a>其他物件存取事件  
 這個子類別會報告其他與物件存取相關的事件，例如工作排程器作業和 COM + 物件。  
   
-#### <a name="system"></a>[系統]  
+#### <a name="system"></a>System  
   
 ##### <a name="security-state-change"></a>安全性狀態變更  
 此子類別會報告系統安全性狀態的變更，例如安全性子系統啟動和停止的時間。  
@@ -336,7 +335,7 @@ IPsec 驅動程式
 
 Auditpol （用於設定 Windows 稽核原則）是在 Windows Server 2008 和 Windows Vista 中引進。 一開始，只有 auditpol 可以用來設定 Advanced 稽核原則，但群組原則可以用於 Windows Server 2012、Windows Server 2008 R2 或 Windows Server 2008、Windows 8 和 Windows 7。  
   
-Auditpol 是命令列公用程式。 語法如下：  
+Auditpol 是命令列公用程式。 語法如下所示：  
   
 `auditpol /set /<Category|Subcategory>:<audit category> /<success|failure:> /<enable|disable>`
   
@@ -388,7 +387,7 @@ Auditpol 可以用來儲存和還原本機稽核原則，以及查看其他的�
   
 您可以使用數種方法來設定 [審核子類別]，包括群組原則和命令列程式（auditpol .exe）。  
   
-## <a name="next-steps"></a>接下來的步驟
+## <a name="next-steps"></a>後續步驟
   
 * [Windows 7 和 Windows Server 2008 R2 中的先進安全性審查](https://social.technet.microsoft.com/wiki/contents/articles/advanced-security-auditing-in-windows-7-and-windows-server-2008-r2.aspx)  
   

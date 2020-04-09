@@ -1,6 +1,5 @@
 ---
 title: 使用 AlwaysOn 可用性群組設定 AD FS 部署
-description: ''
 author: billmath
 ms.author: billmath
 manager: daveba
@@ -8,12 +7,12 @@ ms.date: 01/20/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2ea32943f8b46718b90c30024da883c1a35f3888
-ms.sourcegitcommit: b649047f161cb605df084f18b573f796a584753b
+ms.openlocfilehash: ddec398be56aba6d354b1863a98c8d641831415c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76162742"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816091"
 ---
 # <a name="setting-up-an-ad-fs-deployment-with-alwayson-availability-groups"></a>使用 AlwaysOn 可用性群組設定 AD FS 部署
 高可用性地理分佈拓撲提供：
@@ -35,7 +34,7 @@ AD FS 可以針對高可用性地理位置分散案例進行設定。
 Always On 可用性群組（AG）是一或多個一起故障切換的使用者資料庫。 可用性群組是由主要可用性複本和一到四個次要複本所組成，透過 SQL Server 記錄式資料移動來維護，而不需要共用儲存體。 每個複本都是由 WSFC 的不同節點上的 SQL Server 實例所主控。 可用性群組和對應的虛擬網路名稱會註冊為 WSFC 叢集中的資源。
 
 主要複本節點上的可用性群組接聽程式會回應連接到虛擬網路名稱的內送用戶端要求，並根據連接字串中的屬性，將每個要求重新導向至適當的 SQL Server 實例。
-發生容錯移轉時，會利用 WSFC，將另一個 SQL Server 實例上的次要複本重新設定為可用性群組的主要複本，而不會將共用實體資源的擁有權轉移至另一個節點。 然後可用性群組的虛擬網路名稱資源會轉移至該執行個體。
+發生容錯移轉時，會利用 WSFC，將另一個 SQL Server 實例上的次要複本重新設定為可用性群組的主要複本，而不會將共用實體資源的擁有權轉移至另一個節點。 接著，可用性群組的虛擬網路名稱資源會傳輸到該實例。
 在任何指定的時間，只有一個 SQL Server 實例可以裝載可用性群組之資料庫的主要複本，所有相關聯的次要複本都必須位於個別的實例上，而且每個實例必須位於個別的實體節點上。
 
 > [!NOTE] 
@@ -52,13 +51,13 @@ Always On 可用性群組（AG）是一或多個一起故障切換的使用者�
 下表說明 WID 與 SQL database 之間支援的功能差異。
 
 
-| 分類      | 功能       | 受 WID 支援  | 支援 SQL |
+| 類別      | 功能       | 受 WID 支援  | 支援 SQL |
 | ------------------ |:-------------:| :---:|:---: |
-| AD FS 功能     | 同盟伺服器陣列部署 | [是]  | [是] |
-| AD FS 功能     | SAML 成品解析。 注意：這不是 SAML 應用程式的常見情況     |   無 | 無  |
-| AD FS 功能 | SAML/WS-同盟權杖重新執行偵測。 注意：只有在 AD FS 收到來自外部 Idp 的權杖時才需要。 如果 AD FS 不是 IDP，就不需要這麼做。      |    無  | [是] |
-| 資料庫功能     |   使用提取複寫的基本資料庫冗余，其中一或多部裝載資料庫的唯讀複本的伺服器要求變更資料庫的讀取/寫入複本    |   無 | 無  |
-| 資料庫功能 | 使用高可用性解決方案的資料庫冗余，例如叢集或鏡像（在資料庫層級）      |    無  | [是] |
+| AD FS 功能     | 同盟伺服器陣列部署 | 是  | 是 |
+| AD FS 功能     | SAML 成品解析。 注意：這不是 SAML 應用程式的常見情況     |   否 | 否  |
+| AD FS 功能 | SAML/WS-同盟權杖重新執行偵測。 注意：只有在 AD FS 收到來自外部 Idp 的權杖時才需要。 如果 AD FS 不是 IDP，就不需要這麼做。      |    否  | 是 |
+| 資料庫功能     |   使用提取複寫的基本資料庫冗余，其中一或多部裝載資料庫的唯讀複本的伺服器要求變更資料庫的讀取/寫入複本    |   否 | 否  |
+| 資料庫功能 | 使用高可用性解決方案的資料庫冗余，例如叢集或鏡像（在資料庫層級）      |    否  | 是 |
 
 如果您是具有超過100個信任關係的大型組織，而且需要為他們的內部使用者和外部使用者提供同盟應用程式或服務的單一登入存取權，則建議使用 SQL 選項。
 
@@ -148,7 +147,7 @@ Windows Server 容錯移轉叢集角色提供有關 Windows Server 容錯移轉�
 6. 在 [確認] 頁面上，選取 [下一步]。
 [驗證中] 頁面會顯示執行測試的狀態。
 7. 在 [摘要] 頁面上，執行下列其中一項：
-- 如果結果指出測試已順利完成，且設定適用于叢集，而您想要立即建立叢集，請確定已選取 [立即使用已驗證的節點建立叢集] 核取方塊，然後選取結束. 然後，繼續進行[建立容錯移轉](https://docs.microsoft.com/windows-server/failover-clustering/create-failover-cluster#create-the-failover-cluster)叢集程式的步驟4。
+- 如果結果指出測試已順利完成，且設定適用于叢集，而且您想要立即建立叢集，請確定已選取 [立即使用已驗證的節點建立叢集] 核取方塊，然後選取 [完成]。 然後，繼續進行[建立容錯移轉](https://docs.microsoft.com/windows-server/failover-clustering/create-failover-cluster#create-the-failover-cluster)叢集程式的步驟4。
 
 ![驗證設定圖片](media/ad-fs-always-on/clusterValidationResults.png)
 
@@ -156,11 +155,11 @@ Windows Server 容錯移轉叢集角色提供有關 Windows Server 容錯移轉�
 
 > [!NOTE]
 > 如果您收到「驗證儲存空間持續保留」測試的警告，請參閱部落格文章 [Windows 容錯移轉叢集驗證警告指示您的磁碟不支援持續保留儲存空間](https://blogs.msdn.microsoft.com/clustering/2013/05/24/validate-storage-spaces-persistent-reservation-test-results-with-warning/) ，以了解詳細資訊。
-> 如需硬體驗證測試的詳細資訊，請參閱 [Validate Hardware for a Failover Cluster](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134244(v%3dws.11))。
+> 如需硬體驗證測試的相關詳細資訊，請參閱[驗證容錯移轉叢集的硬體](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134244(v%3dws.11))。
 
 ## <a name="create-the-failover-cluster"></a>建立容錯移轉叢集
 
-若要完成此步驟，請確定您用來登入的使用者帳戶符合本主題 [確認先決條件](https://docs.microsoft.com/windows-server/failover-clustering/create-failover-cluster#verify-the-prerequisites) 一節中所列的需求。
+若要完成此步驟，請確定您用來登入的使用者帳戶符合本主題中[確認先決條件](https://docs.microsoft.com/windows-server/failover-clustering/create-failover-cluster#verify-the-prerequisites)一節所述的需求。
 1.  啟動 [伺服器管理員]。
 2.  在 [工具] 功能表上，選取 [容錯移轉叢集管理員]。
 3.  在 [容錯移轉叢集管理員] 窗格的 [管理] 底下，選取 [建立叢集]。
@@ -184,7 +183,7 @@ Windows Server 容錯移轉叢集角色提供有關 Windows Server 容錯移轉�
 
 8.  檢視 [確認] 頁面上的設定。 預設會選取 [新增適合的儲存裝置到叢集] 核取方塊。 如果您想要執行下列其中一項，請取消選取此核取方塊：
 -   您想要稍後再設定存放裝置。
--   您計畫透過 [容錯移轉叢集管理員] 或透過容錯移轉叢集 Windows PowerShell Cmdlet 來建立叢集儲存空間，且尚未在檔案和存放服務中建立儲存空間。 如需詳細資訊，請參閱 [Deploy Clustered Storage Spaces](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11))。
+-   您計畫透過 [容錯移轉叢集管理員] 或透過容錯移轉叢集 Windows PowerShell Cmdlet 來建立叢集儲存空間，且尚未在檔案和存放服務中建立儲存空間。 如需詳細資訊，請參閱[部署叢集儲存空間](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11))。
 9.  選取 [下一步] 以建立容錯移轉叢集。
 10. 在 [摘要] 頁面上，確認已順利建立容錯移轉叢集。 如果出現任何警告或錯誤，請查看摘要輸出或選取 [查看報表]，以查看完整的報表。 選取 [完成]。
 11. 若要確認已建立叢集，請確認瀏覽樹狀目錄中 [容錯移轉叢集管理員] 底下有列出叢集名稱。 您可以展開叢集名稱，然後選取 [節點]、[儲存體] 或 [網路] 底下的專案，以查看相關聯的資源。
@@ -200,7 +199,7 @@ Windows Server 容錯移轉叢集角色提供有關 Windows Server 容錯移轉�
 4.  選取 [Always On 高可用性] 索引標籤。
 5.  確認 [Windows  容錯移轉叢集名稱] 欄位包含本機容錯移轉叢集的名稱。 如果此欄位為空白，則這個伺服器實例目前不支援 Always On 可用性群組。 可能是本機電腦不是叢集節點、WSFC 叢集已關閉，或此版本的 SQL Server 不支援 Always On 可用性群組。
 6.  選取 [啟用 Always On 可用性群組] 核取方塊，然後按一下 [確定]。
-SQL Server 組態管理員會儲存您的變更。 然後您必須手動重新啟動 SQL Server 服務。 這讓您可以選擇最適合您業務需求的重新啟動時間。 當 SQL Server 服務重新開機時，Always On 將會啟用，而且 IsHadrEnabled 伺服器屬性會設定為1。
+SQL Server 組態管理員會儲存您的變更。 然後您必須手動重新啟動 SQL Server 服務。 這可讓您選擇最適合您商務需求的重新開機時間。 當 SQL Server 服務重新開機時，Always On 將會啟用，而且 IsHadrEnabled 伺服器屬性會設定為1。
 
 ![啟用 AoA](media/ad-fs-always-on/enableAoAGroup.png)
 
@@ -213,44 +212,44 @@ SQL Server 組態管理員會儲存您的變更。 然後您必須手動重新�
 
 ## <a name="create-new-availability-group"></a>建立新的可用性群組
 
-1.  在 [物件總管] 中，連接到裝載主要複本的伺服器執行個體。
+1.  在物件總管中，連接到裝載主要複本的伺服器實例。
 2.  展開 [Always On 高可用性] 節點和 [可用性群組] 節點。
 3.  若要啟動 [新增可用性群組精靈]，請選取 [新增可用性群組精靈] 命令。
 4.  當您初次執行此精靈時，將會出現 [簡介] 頁面。 如果將來要略過此頁面，您可以按一下 [不要再顯示此頁面]。 閱讀這個頁面之後，請按 [下一步]。
-5.  在 [指定可用性群組選項] 頁面上，于 [可用性組名] 欄位中輸入新的可用性組名。 此名稱必須是在叢集和整個網域中唯一的有效 SQL Server 識別碼。 可用性群組名稱的最大長度為 128 個字元。 e
+5.  在 [指定可用性群組選項] 頁面上，于 [可用性組名] 欄位中輸入新的可用性組名。 此名稱必須是在叢集和整個網域中唯一的有效 SQL Server 識別碼。 可用性組名的最大長度為128個字元。 e
 6.  接下來，指定叢集類型。 可能的叢集類型取決於 SQL Server 版本和作業系統。 選擇 [WSFC]、[外部] 或 [無]。 如需詳細資訊，請參閱[指定可用性組名](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/specify-availability-group-name-page?view=sql-server-ver15)頁面
 
 ![名稱 AoA 群組和叢集](media/ad-fs-always-on/createAoAName.png)
 
-7.  在 [選取資料庫] 頁面上，方格會列出連接之伺服器執行個體上有資格變成「可用性資料庫」(Availability Database) 的使用者資料庫。 請選取一個或多個列出的資料庫，以便參與新的可用性群組。 這些資料庫一開始將會成為初始「主要資料庫」(Primary Database)。
-針對每個列出的資料庫，[大小] 資料行會顯示資料庫大小 (如果已知的話)。 [狀態] 欄指出給定的資料庫是否符合可用性資料庫的[必要條件](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/prereqs-restrictions-recommendations-always-on-availability?view=sql-server-ver15)。 如果不符合必要條件，簡短狀態描述會指出資料庫不合格的原因。例如，資料庫沒有使用完整復原模式。 如需詳細資訊，請按一下狀態描述。
+7.  在 [選取資料庫] 頁面上，方格會列出連接之伺服器執行個體上有資格變成「可用性資料庫」(Availability Database) 的使用者資料庫。 選取一或多個列出的資料庫，以參與新的可用性群組。 這些資料庫一開始將會成為初始「主要資料庫」(Primary Database)。
+針對每個列出的資料庫，[大小] 資料行會顯示資料庫大小 (如果已知的話)。 [狀態] 欄指出給定的資料庫是否符合可用性資料庫的[必要條件](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/prereqs-restrictions-recommendations-always-on-availability?view=sql-server-ver15)。 不符合必要條件，簡短的狀態原因會指出資料庫不合格的原因;例如，如果未使用完整復原模式，則為。 如需詳細資訊，請按一下狀態原因。
 如果您變更資料庫讓它符合資格，請按一下 [重新整理] 更新資料庫方格。
 如果資料庫含有資料庫主要金鑰，請在 [密碼] 資料行輸入資料庫主要金鑰的密碼。
 
 ![選取要 AoA 的資料庫](media/ad-fs-always-on/createAoASelectDb.png)
 
-8. 在 [指定複本] 頁面上，為新的可用性群組指定並設定一個或多個複本。 此頁面包含四個索引標籤。 下表將介紹這些索引標籤。 如需詳細資訊，請參閱[指定複本頁面（新增可用性群組 wizard：加入複本嚮導）](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/specify-replicas-page-new-availability-group-wizard-add-replica-wizard?view=sql-server-ver15)主題。
+8. 在 [指定複本] 頁面上，為新的可用性群組指定並設定一個或多個複本。 此頁面包含四個索引標籤。 下表介紹這些索引標籤。 如需詳細資訊，請參閱[指定複本頁面（新增可用性群組 wizard：加入複本嚮導）](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/specify-replicas-page-new-availability-group-wizard-add-replica-wizard?view=sql-server-ver15)主題。
 
-| Tab      | 簡短描述       |
+| 索引標籤      | 簡短描述       |
 | ------------------ |:-------------:|
-| 複本     | 使用此索引標籤可指定將裝載次要複本的每個 SQL Server 實例。 請注意，您目前所連接的伺服器執行個體必須裝載主要複本。 |
-| 端點     | 使用此索引標籤可驗證任何現有的資料庫鏡像端點，此外，如果在其服務帳戶使用 Windows 驗證的伺服器執行個體上缺少此端點，則可自動建立該端點。|
-| 備份喜好設定 | 使用此索引標籤可指定整個可用性群組的備份喜好設定，以及個別可用性複本的備份優先權。      |
-| Listener     | 使用此索引標籤可建立可用性群組接聽程式。 根據預設，精靈不會建立接聽程式。      |
+| 複本     | 使用此索引標籤可指定將裝載次要複本的每個 SQL Server 實例。 請注意，您目前連接的伺服器實例必須裝載主要複本。 |
+| 端點     | 使用此索引標籤來驗證任何現有的資料庫鏡像端點，此外，如果在服務帳戶使用 Windows 驗證的伺服器實例上缺少此端點，則會自動建立端點。|
+| 備份喜好設定 | 使用此索引標籤可指定整體可用性群組的備份喜好設定，以及個別可用性複本的備份優先權。      |
+| Listener     | 使用此索引標籤來建立可用性群組接聽程式。 根據預設，此 wizard 不會建立接聽程式。      |
 
 ![指定複本詳細資料](media/ad-fs-always-on/createAoAchooseReplica.png)
 
 9. 在 [選取初始資料同步處理] 頁面上，選擇您要如何建立新的次要資料庫並將它聯結至可用性群組。 選擇下列其中一個選項：
 -   自動植入
- - SQL Server 會自動為群組中的每個資料庫建立次要複本。 自動植入要求參與群組之每個 SQL Server 執行個體上的資料和記錄檔案路徑都必須相同。 適用于 SQL Server 2016 （13. x）和更新版本。 請參閱[自動初始化 Always On 可用性群組](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/automatically-initialize-always-on-availability-group?view=sql-server-ver15)。
+ - SQL Server 會自動為群組中的每個資料庫建立次要複本。 自動植入需要在每個參與群組的 SQL Server 實例上都有相同的資料和記錄檔路徑。 適用于 SQL Server 2016 （13. x）和更新版本。 請參閱[自動初始化 Always On 可用性群組](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/automatically-initialize-always-on-availability-group?view=sql-server-ver15)。
 - 完整資料庫和記錄備份
  - 如果您的環境符合自動啟動初始資料同步處理的需求，請選取此選項（如需詳細資訊，請參閱[本主題稍早的必要條件、限制和建議）](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/use-the-availability-group-wizard-sql-server-management-studio?view=sql-server-ver15#Prerequisites)。
-如果您選取 [完整]，在建立可用性群組之後，精靈會將每個主要資料庫及其交易記錄備份至網路共用，並在裝載次要複本的每個伺服器執行個體上還原這些備份。 然後精靈會將每個次要資料庫聯結至可用性群組。
-在 [指定所有複本可存取的共用網路位置:] 欄位中，指定裝載複本的所有伺服器執行個體都有讀寫存取的備份共用。 如需詳細資訊，請參閱本主題前面的＜必要條件＞。 在驗證步驟中，此精靈會執行測試以確定所提供的網路位置有效，測試會在主要複本上建立名為 "BackupLocDb_" 的資料庫，後面接著 GUID，並備份到所提供的網路位置，然後在次要複本上將它還原。 您可以放心地將此資料庫隨其備份歷程記錄和備份檔案一同刪除 (如果精靈無法將其刪除)。
+如果您選取 [完整]，在建立可用性群組之後，精靈會將每個主要資料庫及其交易記錄備份至網路共用，並在裝載次要複本的每個伺服器執行個體上還原這些備份。 接著，嚮導會將每個次要資料庫聯結至可用性群組。
+在 [指定所有複本可存取的共用網路位置:] 欄位中，指定裝載複本的所有伺服器執行個體都有讀寫存取的備份共用。 如需詳細資訊，請參閱本主題前面的＜必要條件＞。 在驗證步驟中，此 wizard 會執行測試，以確定提供的網路位置有效，測試會在名為 "BackupLocDb_" 的主要複本上建立資料庫，後面接著 Guid 並執行備份至所提供的網路位置，然後在次要複本上進行還原。 將此資料庫連同其備份歷程記錄和備份檔案一併刪除，以防 wizard 無法將其刪除。
 - 僅加入
- - 如果您已經在將裝載次要複本的伺服器執行個體上手動備妥次要資料庫，就可以選取此選項。 然後精靈會將現有的次要資料庫聯結至可用性群組。
+ - 如果您已在將裝載次要複本的伺服器實例上手動備妥次要資料庫，您可以選取此選項。 Wizard 會將現有的次要資料庫聯結至可用性群組。
 - 略過初始資料同步處理
- - 如果要使用您自己的主要資料庫的資料庫和記錄備份，請選取此選項。 如需詳細資訊，請參閱[在 Always On 次要資料庫上啟動資料移動（SQL Server）](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/start-data-movement-on-an-always-on-secondary-database-sql-server?view=sql-server-ver15)。
+ - 如果您想要使用您自己的資料庫和主資料庫的記錄備份，請選取此選項。 如需詳細資訊，請參閱[在 Always On 次要資料庫上啟動資料移動（SQL Server）](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/start-data-movement-on-an-always-on-secondary-database-sql-server?view=sql-server-ver15)。
 
 ![選擇資料同步選項](media/ad-fs-always-on/createAoADataSync.png)
 
@@ -263,7 +262,7 @@ SQL Server 組態管理員會儲存您的變更。 然後您必須手動重新�
 > 如果您對所做的選擇感到滿意時，可以選擇按一下 [指令碼]，建立精靈將執行之步驟的指令碼。 然後，若要建立及設定新的可用性群組，請按一下 [完成]。
 
 11. [進度] 頁面會顯示建立可用性群組之步驟的進度 (設定端點、建立可用性群組，並將次要複本加入群組中)。
-12. 當這些步驟完成時，[結果] 頁面會顯示每個步驟的結果。 如果所有這些步驟都成功，表示新的可用性群組已完成設定。 如果任何步驟導致錯誤，您可能需要手動完成組態，或者針對失敗的步驟使用精靈。 如需有關給定錯誤原因的詳細資訊，請按一下 [結果] 資料行中相關聯的 [錯誤] 連結。
+12. 當這些步驟完成時，[結果] 頁面會顯示每個步驟的結果。 如果所有這些步驟都成功，則會完整設定新的可用性群組。 如果任何步驟導致錯誤，您可能需要手動完成設定，或使用 wizard 來執行失敗的步驟。 如需有關給定錯誤原因的詳細資訊，請按一下 [結果] 資料行中相關聯的 [錯誤] 連結。
 當精靈完成時，按一下 [關閉] 以結束。
 
 ![驗證完成](media/ad-fs-always-on/createAoAValidation.png)
@@ -280,9 +279,9 @@ SQL Server 組態管理員會儲存您的變更。 然後您必須手動重新�
 
 ## <a name="join-availability-replica-to-an-availability-group"></a>將可用性複本加入可用性群組
 
-1.  在 [物件總管] 中，連接到裝載次要複本的伺服器執行個體，然後按一下伺服器名稱以展開伺服器樹狀目錄。
+1.  在物件總管中，連接到裝載次要複本的伺服器實例，然後按一下伺服器名稱以展開伺服器樹狀目錄。
 2.  展開 [Always On 高可用性] 節點和 [可用性群組] 節點。
-3.  選取所連接之次要複本的可用性群組。
+3.  選取您所連接之次要複本的可用性群組。
 4.  以滑鼠右鍵按一下次要複本，然後按一下 [加入可用性群組]。
 5.  這會開啟 [將複本加入至可用性群組] 對話方塊。
 6.  若要將次要複本聯結至可用性群組，請按一下 [確定]。

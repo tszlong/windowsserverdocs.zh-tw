@@ -2,22 +2,19 @@
 title: 檢視和管理更新
 description: Windows Server Update Service （WSUS）主題-如何在 WSUS 主控台中查看和管理更新
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ac70192b-0309-4385-b697-2e8eda51911c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: de2d12ad34ba11f948baa390546747a6bf4b635c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a2a9f7e1f1f3f648a0cba22d599ccc64e7b424d8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361488"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828441"
 ---
 # <a name="viewing-and-managing-updates"></a>檢視和管理更新
 
@@ -76,7 +73,7 @@ ms.locfileid: "71361488"
 
 5.  在 [**步驟3：指定名稱**] 下，為您的新視圖命名。
 
-6.  按一下 **\[確定\]** 。
+6.  按一下 [確定]。
 
 您的新視圖會出現在 [更新] 下的樹狀檢視窗格中。 當您選取時，它會顯示在中間窗格中，就像標準的觀點一樣。
 
@@ -98,7 +95,7 @@ ms.locfileid: "71361488"
 
     -   標題列會顯示更新的標題;例如，Windows 媒體播放機9的安全性更新（KB911565）。
 
-    -   [狀態] 區段會顯示更新的安裝狀態（需要安裝它的電腦、其安裝所在的電腦、錯誤、已安裝或不適用的電腦，以及尚未回報的電腦）更新的狀態），以及一般資訊（KB 和 MSRC 編號的發行日期等等）。
+    -   [狀態] 區段會顯示更新的安裝狀態（需要安裝它的電腦、安裝它的電腦上有錯誤、已安裝或不適用的電腦，以及未回報更新狀態的電腦），以及一般資訊（KB 和 MSRC 編號的發行日期等）。
 
     -   [描述] 區段會顯示更新的簡短描述。
 
@@ -123,7 +120,7 @@ ms.locfileid: "71361488"
 ## <a name="managing-updates-with-wsus"></a>使用 WSUS 管理更新
 更新可用於更新或提供電腦上所安裝軟體的完整檔案取代。 Microsoft Update 上可用的每個更新都是由兩個元件所組成：
 
--   中繼資料：提供有關更新的資訊。 例如，中繼資料提供更新內容的資訊，可讓您找出更新的用途。 中繼資料也包含 Microsoft 軟體授權條款。 下載更新的中繼資料封裝通常遠小於實際的更新檔案封裝。
+-   中繼資料：提供有關更新的資訊。 例如，中繼資料可提供更新屬性的資訊，而讓您能夠了解更新的用途。 中繼資料也包含 Microsoft 軟體授權條款。 為更新下載的中繼資料套件，通常會比實際更新檔案套件小得多。
 
 -   更新檔案：在電腦上安裝更新時所需的實際檔案。
 

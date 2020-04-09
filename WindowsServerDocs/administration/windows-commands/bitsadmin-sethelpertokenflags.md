@@ -1,23 +1,19 @@
 ---
 title: bitsadmin sethelpertokenflags
-description: 適用于**bitsadmin sethelpertokenflags**的 Windows 命令主題-設定與 BITS 傳送工作相關聯之 helper token 的使用旗標。
-ms.custom: na
+description: 適用于 bitsadmin sethelpertokenflags 的 Windows 命令主題，它會針對與 BITS 傳送工作相關聯的 helper token 設定使用旗標。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: 6047c63677fac3311634ababb675be5301b7f3b5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c644e82026cfc1d62f3fb5d20e3925002b871036
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71380580"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80849491"
 ---
 # <a name="bitsadmin-sethelpertokenflags"></a>bitsadmin sethelpertokenflags
 
@@ -31,13 +27,13 @@ ms.locfileid: "71380580"
 bitsadmin /SetHelperTokenFlags <Job> <Flags>
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
 |Job|作業的顯示名稱或 GUID。|
 |Flags|可能的值包括下列各項。 0x0001&mdash;協助程式權杖用來開啟上傳作業的本機檔案、建立或重新命名下載作業的暫存檔案，或建立或重新命名上傳-回復作業的回復檔案。 0x0002&mdash;協助程式權杖可用來開啟伺服器訊息區（SMB）上傳或下載作業的遠端檔案，或回應 HTTP 伺服器或 proxy 挑戰的隱含 NTLM 或 Kerberos 認證。 您必須呼叫 `/SetCredentialsJob TargetScheme NULL NULL` ，以允許透過 HTTP 傳送認證。|
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

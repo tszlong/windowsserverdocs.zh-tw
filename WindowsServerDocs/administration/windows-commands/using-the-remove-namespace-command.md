@@ -1,51 +1,48 @@
 ---
-title: 使用 remove-Namespace 命令
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+title: 移除-Namespace
+description: 移除-Namespace 的 Windows 命令主題，它會移除自訂命名空間。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4eb758b6-8519-4e26-9fe0-2e19bb0e8702
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b4c087442c43fd885fe4554cb29f9b2788420e05
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1f8b830a5d99d13ed00a3a19f2cf246ad71d1c5f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362786"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80830231"
 ---
 # <a name="using-the-remove-namespace-command"></a>使用 remove-Namespace 命令
 
 >適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 移除自訂命名空間。
+
 ## <a name="syntax"></a>語法
 ```
 wdsutil /remove-Namespace /Namespace:<Namespace name> [/Server:<Server name>] [/force]
 ```
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 |參數|描述|
 |-------|--------|
-|/Namespace：<Namespace name>|指定命名空間的名稱。 這不是易記的名稱，而且必須是唯一的。<br /><br />-   **部署伺服器角色服務**：命名空間名稱的語法是/NAMESPACE： WDS：<ImageGroup>/<ImageName>/<Index>。 例如： **WDS： ImageGroup1/install .wim/1**<br />-   **傳輸伺服器角色服務**：此值必須符合在伺服器上建立命名空間時所提供的名稱。|
+|/Namespace：<Namespace name>|指定命名空間的名稱。 這不是易記的名稱，而且必須是唯一的。<p>-   **部署伺服器角色服務**：命名空間名稱的語法是/NAMESPACE： WDS：<ImageGroup>/<ImageName>/<Index>。 例如： **WDS： ImageGroup1/install .wim/1**<br />-   **傳輸伺服器角色服務**：此值必須符合在伺服器上建立命名空間時所提供的名稱。|
 |[/Server：<Server name>]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。|
 |/force|立即移除命名空間，並終止所有用戶端。 請注意，除非您指定 **/force**，否則現有的用戶端可以完成轉移，但新的用戶端無法加入。|
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 若要停止命名空間（目前的用戶端可以完成轉移，但新的用戶端無法加入），請輸入：
 ```
-wdsutil /remove-Namespace /Namespace:"Custom Auto 1"
+wdsutil /remove-Namespace /Namespace:Custom Auto 1
 ```
 若要強制終止所有用戶端，請輸入：
 ```
-wdsutil /remove-Namespace /Server:MyWDSServer /Namespace:"Custom Auto 1" /force
+wdsutil /remove-Namespace /Server:MyWDSServer /Namespace:Custom Auto 1 /force
 ```
-#### <a name="additional-references"></a>其他參考
-[命令列語法索引鍵](command-line-syntax-key.md)
+## <a name="additional-references"></a>其他參考資料
+- [命令列語法索引鍵](command-line-syntax-key.md)
 [使用 AllNamespaces 命令](using-the-get-allnamespaces-command.md)
 [使用新的-namespace 命令](using-the-new-namespace-command.md)
 [子命令： start-namespace](subcommand-start-namespace.md)

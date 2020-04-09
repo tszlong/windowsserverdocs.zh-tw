@@ -1,6 +1,5 @@
 ---
 title: AD 樹系復原-重設 krbtgt 密碼
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 3bd6c1d0-d316-4b03-b7b4-557d4537635c
 ms.technology: identity-adds
-ms.openlocfilehash: 14dd09c6177d473547a67e1d79e9714f0a7a29b3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e2d19621c80b40fa70706bf75434dce74693990d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390299"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823631"
 ---
 # <a name="ad-forest-recovery---resetting-the-krbtgt-password"></a>AD 樹系復原-重設 krbtgt 密碼
 

@@ -1,23 +1,19 @@
 ---
 title: 預先設定路由器
 description: 說明如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9153ac90-bb0c-4b8d-93b2-e2121ed13636
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: bdfa3215b7a2426bcde807119971d99ccc229716
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: c39bf3ac260a23b7fc9cc9feec7f34786b1e8aae
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311570"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819941"
 ---
 # <a name="preconfiguring-a-router"></a>預先設定路由器
 
@@ -43,7 +39,7 @@ ms.locfileid: "80311570"
   
 -   如果路由器可支援多個子網路，則必須透過 DHCP 將伺服器的 IP 位址當做一個 DNS 伺服器遞交。  
   
--   如果路由器具有 Active DirectoryÂ®網域服務的整合式存取控制功能，您可以在伺服器的初始設定期間自動化 Active Directory 整合。 您還必須透過儀表板中的路由器管理增益集來公開此功能。  
+-   如果路由器具有 Active DirectoryÂ&reg; 網域服務的整合式存取控制功能，您可以在伺服器的初始設定期間自動化 Active Directory 整合。 您還必須透過儀表板中的路由器管理增益集來公開此功能。  
   
 > [!NOTE]
 >  如需設定無線連線的詳細資訊，請參閱[設定無線網路支援](Configure-Support-for-a-Wireless-Network.md)。  

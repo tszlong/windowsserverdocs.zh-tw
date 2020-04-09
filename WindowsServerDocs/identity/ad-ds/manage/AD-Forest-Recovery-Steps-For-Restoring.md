@@ -1,6 +1,5 @@
 ---
 title: AD 樹系復原-還原樹系的步驟
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: 07a043c4361f8eaae30b1dea665c604c0df42333
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 537543bedd68bff002054f637d96240a71f75793
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390286"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823401"
 ---
 # <a name="ad-forest-recovery---steps-for-restoring-the-forest"></a>AD 樹系復原-還原樹系的步驟
 
->適用於：Windows Server 2016、Windows Server 2012 及 2012 R2、Windows Server 2008 和 2008 R2
+>適用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
 本節提供復原樹系的建議路徑總覽。 樹系復原步驟稍後會詳細說明。  
   
@@ -30,7 +29,7 @@ ms.locfileid: "71390286"
   
 2. [決定如何復原樹系](AD-Forest-Recovery-Determine-how-to-Recover.md)  
 
-   在您判斷是否需要進行樹系復原之後，請完成預備步驟來準備它：判斷目前的樹系結構、識別每個 DC 所執行的函式、決定要針對每個網域還原哪個 DC，以及確保所有可寫入的 dc會離線。  
+   在您判斷是否需要進行樹系復原之後，請完成預備步驟來準備它：判斷目前的樹系結構、識別每個 DC 執行的功能、決定每個網域要還原的 DC，並確保所有可寫入的 Dc 都已離線。  
 
 3. [執行初始復原](AD-Forest-Recovery-Perform-initial-recovery.md)  
 

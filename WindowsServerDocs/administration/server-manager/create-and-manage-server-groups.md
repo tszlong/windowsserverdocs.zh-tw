@@ -1,24 +1,20 @@
 ---
 title: 建立和管理伺服器群組
 description: 伺服器管理員
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9d5b1be8-49fd-4ff7-9580-e4ff21fe4b17
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 74075f091cd707f6faf73567c1dce6f22a2f6753
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2f4ad512c55bcd1391ad55bdbdeb9a2ba3bfd7f0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383224"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851541"
 ---
 # <a name="create-and-manage-server-groups"></a>建立和管理伺服器群組
 
@@ -26,7 +22,7 @@ ms.locfileid: "71383224"
 
 本主題說明如何在 Windows Server 的伺服器管理員中，建立自訂的使用者定義伺服器群組。
 
-## <a name="BKMK_groups"></a>伺服器群組
+## <a name="server-groups"></a><a name=BKMK_groups></a>伺服器群組
 您新增至伺服器集區的伺服器會顯示在伺服器管理員的 [**所有伺服器**] 頁面上。 您可以為您新增的伺服器建立自訂的伺服器群組。 伺服器群組可讓您以邏輯單元的形式，來查看和管理伺服器集區的較小子集;例如，您可以為組織會計部門中的所有伺服器建立稱為「**會計伺服器**」的群組，或是針對地理位置在芝加哥的所有伺服器建立稱為「**芝加哥**」的群組。 建立伺服器群組之後，中的群組首頁伺服器管理員會顯示事件、服務、效能計數器、最佳做法分析程式結果，以及整個群組的已安裝角色和功能的相關資訊。
 
 伺服器可以是多個群組的成員。
@@ -43,7 +39,7 @@ ms.locfileid: "71383224"
 
 #### <a name="to-edit-an-existing-server-group"></a>編輯現有的伺服器群組
 
-1.  執行下列其中一項。
+1.  執行下列其中一個步驟。
 
     -   在 [伺服器管理員] 流覽窗格中，以滑鼠右鍵按一下伺服器群組，然後按一下 [**編輯服務器群組**]。
 
@@ -58,7 +54,7 @@ ms.locfileid: "71383224"
 
 #### <a name="to-delete-an-existing-server-group"></a>刪除現有的伺服器群組
 
-1.  執行下列其中一項。
+1.  執行下列其中一個步驟。
 
     -   在 [伺服器管理員] 流覽窗格中，以滑鼠右鍵按一下伺服器群組，然後按一下 [**刪除伺服器群組**]。
 
@@ -71,7 +67,7 @@ ms.locfileid: "71383224"
 
 3.  當您完成對群組的變更後，按一下 [確定]。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 [將伺服器新增至伺服器管理員](add-servers-to-server-manager.md)
 [伺服器管理員](server-manager.md)
 

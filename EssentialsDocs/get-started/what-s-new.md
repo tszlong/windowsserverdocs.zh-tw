@@ -1,23 +1,19 @@
 ---
 title: Windows Server 2016 Essentials 中的新功能
 description: 說明如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: affff774-5fa6-4944-887a-9bfde05f6a3f
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 1d5176a69136e9bad36e22472b8fadbd6d0e9e79
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 420d3b043959b8b1201aad7a5b3210fd9bd6a0da
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310299"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817751"
 ---
 # <a name="whats-new-in-windows-server-2016-essentials"></a>Windows Server 2016 Essentials 中的新功能
 
@@ -27,7 +23,7 @@ ms.locfileid: "80310299"
 
 ## <a name="integration-with-azure-site-recovery-services"></a>[與 Azure Site Recovery 服務整合](azure-site-recovery-services-integration.md)
 
-**其作用**--當受保護的虛擬機器失敗，或受保護虛擬機器執行所在的主機伺服器失敗時，使用 Azure Site Recovery 服務進行容錯移轉會維持商務持續性，直到內部部署虛擬機器或主機伺服器已修復並可供使用為止。 
+當受保護的虛擬機器失敗，或受保護虛擬機器執行所在的主機伺服器失敗時 Azure Site Recovery，**會執行**的作業 --&reg;會在內部部署虛擬機器或主機伺服器已修復且可供使用之前，維持業務持續性。 
 
 **運作方式**--Microsoft Azure 提供的 Azure Site Recovery 服務，可讓您將虛擬機器（VM）即時複寫到 Azure 中的備份保存庫。 如果您的伺服器或網站因硬體或其他失敗而停止運作，您可以使用 Azure Site Recovery 服務損毀修復，讓儲存在備份保存庫中的 VM 映射會布建為 Azure 中執行中的 VM。 與 Azure 虛擬網路結合之後，先前連線到內部部署伺服器的用戶端電腦將會以透明的方式連接到在 Azure 中執行的伺服器。     
                                                                                                                                                                                                                                                                                                                
@@ -52,4 +48,4 @@ ms.locfileid: "80310299"
 <a name="see-also"></a>另請參閱
 --------
 
-[開始使用 Windows Server Essentials](get-started.md)
+[開始使用 Windows Server Essentials](get-started.md) &copy;&reg;

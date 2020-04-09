@@ -1,7 +1,6 @@
 ---
 ms.assetid: f74eec9a-2485-4ee0-a0d8-cce01250a294
 title: AD DS 簡化的系統管理
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 4f12b1e88414a17c8fb82a707bd4399505df4c6c
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: e1989630cadd7d63f8ed041174135722d568484f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323160"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824421"
 ---
 # <a name="ad-ds-simplified-administration"></a>AD DS 簡化的系統管理
 
@@ -114,7 +113,7 @@ Windows Server 2012 新增額外的 Active Directory 複寫 Cmdlet 到 Active Di
 
 Windows 2000 Active Directory 引進 RID 主機，其可將相關的識別元集區發行到網域控制站，以建立安全性信任者 (如使用者、群組及電腦) 的安全性識別碼 (SID)。  根據預設，這個全域的 RID 空間大小限制為 2<sup>30</sup> (或網域中共建立 1,073,741,823 個 SID) 。 SID 無法傳回集區或重新發行。 經過一段時間，大型網域的 RID 可能會開始不足，或意外可能導致不必要的 RID 消耗，最後終究匱乏。  
   
-Windows Server 2012 可解決自 1999 年首次建立 Active Directory 網域以來，隨著 AD DS 成熟而有許多客戶和 Microsoft 客戶支援未發現的 RID 發行與管理問題。 這些包括：  
+Windows Server 2012 可解決自 1999 年首次建立 Active Directory 網域以來，隨著 AD DS 成熟而有許多客戶和 Microsoft 客戶支援未發現的 RID 發行與管理問題。 這些地方包括：  
 
 - 定期的 RID 消耗警告會寫入事件記錄檔  
 - 當系統管理員使 RID 集區失效時會產生事件記錄檔  
@@ -173,7 +172,7 @@ Adprep 不再需要於架構主機上執行。 它可以從執行 Windows Server
 > [!IMPORTANT]  
 > Windows Server 2012 沒有 32 位元的 Adprep32.exe 工具。 您必須至少擁有一部 Windows Server 2008 x64、Windows Server 2008 R2 或 Windows Server 2012 電腦執行為網域控制站、成員伺服器或在工作群組中執行，才能夠準備樹系和網域。 Adprep.exe 無法在 Windows Server 2003 x64 的作業系統上執行。  
   
-## <a name="BKMK_PrereuisiteChecking"></a>先決條件檢查
+## <a name="prerequisite-checking"></a><a name="BKMK_PrereuisiteChecking"></a>先決條件檢查
 
 ADDSDeployment Windows PowerShell Managed 程式碼內建的先決條件檢查系統會依據作業而有不同的運作模式。 下表描述當其使用時的每個測試，並說明其驗證方式與內容。 如果有驗證失敗但錯誤不足以疑難排解問題的情況，這些表格可能會很有用。  
   
@@ -191,23 +190,23 @@ ADDSDeployment Windows PowerShell Managed 程式碼內建的先決條件檢查�
 
 通常不需要執行這些 Cmdlet，根據預設，它們已隨著部署 Cmdlet 自動執行。  
 
-#### <a name="BKMK_ADDSInstallPrerequisiteTests"></a>先決條件測試
+#### <a name="prerequisite-tests"></a><a name="BKMK_ADDSInstallPrerequisiteTests"></a>先決條件測試
 
 ||||  
 |-|-|-|  
-|測試名稱|通訊協定<br /><br />已使用|說明與附註|  
-|VerifyAdminTrusted<br /><br />ForDelegationProvider|LDAP|驗證您在現有的協力廠商網域控制站上具有 [讓電腦及使用者帳戶受信賴，以進行委派] (SeEnableDelegationPrivilege) 權限。 這需要您所建構的 tokenGroups 屬性的存取權。<br /><br />在連線 Windows Server 2003 網域控制站時不會使用。 在升級之前，您必須手動確認此權限。|  
-|VerifyADPrep<br /><br />先決條件 (樹系)|LDAP|使用 rootDSE namingContexts 屬性和結構描述命名內容 fsmoRoleOwner 屬性探索並連線架構主機。 判斷 AD DS 安裝需要哪些準備作業 (forestprep、domainprep 或 rodcprep)。 驗證結構描述 objectVersion 是否為預期的值，及其是否需要進一步的延伸。|  
-|VerifyADPrep<br /><br />先決條件 (網域和 RODC)|LDAP|使用 rootDSE namingContexts 屬性和基礎架構容器 fsmoRoleOwner 屬性探索並連線基礎架構主機。 如果是 RODC 安裝，這項測試會探索網域命名主機並確定其在線上。|  
-|CheckGroup<br /><br />成員資格|LDAP、<br /><br />RPC over SMB (LSARPC)|視作業而定，驗證使用者是否為 Domain Admins 或 Enterprise Admins 群組的成員 (新增或降級網域控制站為 DA，新增或移除網域為 EA)|  
-|CheckForestPrep<br /><br />GroupMembership|LDAP、<br /><br />RPC over SMB (LSARPC)|驗證使用者是否為 Schema Admins 和 Enterprise Admins 群組的成員，而且對現有的網域控制站具有管理稽核及安全性事件記錄檔 (SesScurityPrivilege) 的權限|  
-|CheckDomainPrep<br /><br />GroupMembership|LDAP、<br /><br />RPC over SMB (LSARPC)|驗證使用者是否為 Domain Admins 群組的成員，而且對現有的網域控制站具有管理稽核及安全性事件記錄檔 (SesScurityPrivilege) 的權限|  
-|CheckRODCPrep<br /><br />GroupMembership|LDAP、<br /><br />RPC over SMB (LSARPC)|驗證使用者是否為 Enterprise Admins 群組的成員，而且對現有的網域控制站具有管理稽核及安全性事件記錄檔 (SesScurityPrivilege) 的權限|  
-|VerifyInitSync<br /><br />AfterReboot|LDAP|透過在 rootDSE 屬性 becomeSchemaMaster 設定虛擬值，以驗證架構主機自重新啟動後是否至少複寫過一次|  
-|VerifySFUHotFix<br /><br />已套用|LDAP|驗證現有的樹系架構未包含 OID 為 1.2.840.113556.1.4.7000.187.102 的 UID 屬性的已知問題 SFU2 延伸<br /><br />（[https://support.microsoft.com/kb/821732](https://support.microsoft.com/kb/821732)）|  
-|VerifyExchange<br /><br />SchemaFixed|LDAP、WMI、DCOM、RPC|驗證現有的樹系架構是否仍未包含問題 Exchange 2000 延伸模組-Ms-exch-assistant-name-Assistant-Name、Ms-exch-assistant-name-LabeledURI 和 ms-chap-Ms-exch-assistant-name-內部識別碼（[https://support.microsoft.com/kb/314649](https://support.microsoft.com/kb/314649)）|  
-|VerifyWin2KSchema<br /><br />一致性|LDAP|驗證現有的樹系架構是否有一致 (未經其他廠商不當修改) 的核心屬性及類別。|  
-|DCPromo|DRSR over RPC、<br /><br />LDAP、<br /><br />DNS<br /><br />RPC over SMB (SAMR)|驗證命令列語法已傳送到升級程式碼和測試升級。 如果是新建樹系或網域，驗證其是否尚未存在|  
-|VerifyOutbound<br /><br />ReplicationEnabled|LDAP、DRSR over SMB、RPC over SMB (LSARPC)|檢查 NTDS 設定物件的選項屬性是否為 NTDSDSA_OPT_DISABLE_OUTBOUND_REPL (0x00000004)，以驗證指定為複寫協力電腦的現有網域控制站是否已啟用連出複寫|  
-|VerifyMachineAdmin<br /><br />Password|DRSR over RPC、<br /><br />LDAP、<br /><br />DNS<br /><br />RPC over SMB (SAMR)|驗證為 DSRM 設定的安全模式密碼符合網域複雜性需求。|  
+|測試名稱|通訊協定<p>已使用|說明與附註|  
+|VerifyAdminTrusted<p>ForDelegationProvider|LDAP|驗證您在現有的協力廠商網域控制站上具有 [讓電腦及使用者帳戶受信賴，以進行委派] (SeEnableDelegationPrivilege) 權限。 這需要您所建構的 tokenGroups 屬性的存取權。<p>在連線 Windows Server 2003 網域控制站時不會使用。 在升級之前，您必須手動確認此權限。|  
+|VerifyADPrep<p>先決條件 (樹系)|LDAP|使用 rootDSE namingContexts 屬性和結構描述命名內容 fsmoRoleOwner 屬性探索並連線架構主機。 判斷 AD DS 安裝需要哪些準備作業 (forestprep、domainprep 或 rodcprep)。 驗證結構描述 objectVersion 是否為預期的值，及其是否需要進一步的延伸。|  
+|VerifyADPrep<p>先決條件 (網域和 RODC)|LDAP|使用 rootDSE namingContexts 屬性和基礎架構容器 fsmoRoleOwner 屬性探索並連線基礎架構主機。 如果是 RODC 安裝，這項測試會探索網域命名主機並確定其在線上。|  
+|CheckGroup<p>成員資格|LDAP、<p>RPC over SMB (LSARPC)|視作業而定，驗證使用者是否為 Domain Admins 或 Enterprise Admins 群組的成員 (新增或降級網域控制站為 DA，新增或移除網域為 EA)|  
+|CheckForestPrep<p>GroupMembership|LDAP、<p>RPC over SMB (LSARPC)|驗證使用者是否為 Schema Admins 和 Enterprise Admins 群組的成員，而且對現有的網域控制站具有管理稽核及安全性事件記錄檔 (SesScurityPrivilege) 的權限|  
+|CheckDomainPrep<p>GroupMembership|LDAP、<p>RPC over SMB (LSARPC)|驗證使用者是否為 Domain Admins 群組的成員，而且對現有的網域控制站具有管理稽核及安全性事件記錄檔 (SesScurityPrivilege) 的權限|  
+|CheckRODCPrep<p>GroupMembership|LDAP、<p>RPC over SMB (LSARPC)|驗證使用者是否為 Enterprise Admins 群組的成員，而且對現有的網域控制站具有管理稽核及安全性事件記錄檔 (SesScurityPrivilege) 的權限|  
+|VerifyInitSync<p>AfterReboot|LDAP|透過在 rootDSE 屬性 becomeSchemaMaster 設定虛擬值，以驗證架構主機自重新啟動後是否至少複寫過一次|  
+|VerifySFUHotFix<p>已套用|LDAP|驗證現有的樹系架構未包含 OID 為 1.2.840.113556.1.4.7000.187.102 的 UID 屬性的已知問題 SFU2 延伸<p>（[https://support.microsoft.com/kb/821732](https://support.microsoft.com/kb/821732)）|  
+|VerifyExchange<p>SchemaFixed|LDAP、WMI、DCOM、RPC|驗證現有的樹系架構是否仍未包含問題 Exchange 2000 延伸模組-Ms-exch-assistant-name-Assistant-Name、Ms-exch-assistant-name-LabeledURI 和 ms-chap-Ms-exch-assistant-name-內部識別碼（[https://support.microsoft.com/kb/314649](https://support.microsoft.com/kb/314649)）|  
+|VerifyWin2KSchema<p>一致性|LDAP|驗證現有的樹系架構是否有一致 (未經其他廠商不當修改) 的核心屬性及類別。|  
+|DCPromo|DRSR over RPC、<p>LDAP、<p>DNS<p>RPC over SMB (SAMR)|驗證命令列語法已傳送到升級程式碼和測試升級。 如果是新建樹系或網域，驗證其是否尚未存在|  
+|VerifyOutbound<p>ReplicationEnabled|LDAP、DRSR over SMB、RPC over SMB (LSARPC)|檢查 NTDS 設定物件的選項屬性是否為 NTDSDSA_OPT_DISABLE_OUTBOUND_REPL (0x00000004)，以驗證指定為複寫協力電腦的現有網域控制站是否已啟用連出複寫|  
+|VerifyMachineAdmin<p>Password|DRSR over RPC、<p>LDAP、<p>DNS<p>RPC over SMB (SAMR)|驗證為 DSRM 設定的安全模式密碼符合網域複雜性需求。|  
 |VerifySafeModePassword|*不適用*|驗證設定的本機系統管理員密碼符合電腦的安全性原則複雜性需求。|  

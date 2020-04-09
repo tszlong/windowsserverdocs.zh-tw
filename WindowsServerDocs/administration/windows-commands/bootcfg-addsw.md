@@ -1,24 +1,20 @@
 ---
 title: bootcfg addsw
-description: 適用于**bootcfg addsw**的 Windows 命令主題-新增指定之作業系統專案的作業系統載入選項。
-ms.custom: na
+description: 適用于 bootcfg addsw 的 Windows 命令主題，會為指定的作業系統專案新增作業系統載入選項。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d8389293-ecd9-42f0-b84b-b9ead4cf52e6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2dd727c839babe1ae4f7743285844f35cf5bf76e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a9ae5175dfc3b068276f6ab95d6823699c96b2b5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71380176"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80848711"
 ---
 # <a name="bootcfg-addsw"></a>bootcfg addsw
 
@@ -30,7 +26,7 @@ ms.locfileid: "71380176"
 ```
 bootcfg /addsw [/s <computer> [/u <Domain>\<User> /p <Password>]] [/mm <MaximumRAM>] [/bv] [/so] [/ng] /id <OSEntryLineNum>
 ```
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |         詞彙         |                                                                                                            定義                                                                                                            |
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -44,7 +40,7 @@ bootcfg /addsw [/s <computer> [/u <Domain>\<User> /p <Password>]] [/mm <MaximumR
 | /id <OSEntryLineNum> | 在新增作業系統載入選項的 Boot.ini 檔案的 [作業系統] 區段中，指定作業系統專案行號。 [作業系統] 區段標頭後面的第一行是1。 |
 |          /?          |                                                                                               在命令提示字元顯示說明。                                                                                               |
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 下列範例會示範如何使用**bootcfg/addsw**命令：
 ```
 bootcfg /addsw /mm 64 /id 2 
@@ -53,5 +49,5 @@ bootcfg /addsw /so /ng /s srvmain /u hiropln /id 2
 bootcfg /addsw /ng /id 2 
 bootcfg /addsw /mm 96 /ng /s srvmain /u maindom\hiropln /p p@ssW23 /id 2
 ```
-#### <a name="additional-references"></a>其他參考
-[命令列語法關鍵](command-line-syntax-key.md)
+## <a name="additional-references"></a>其他參考資料
+- [命令列語法關鍵](command-line-syntax-key.md)

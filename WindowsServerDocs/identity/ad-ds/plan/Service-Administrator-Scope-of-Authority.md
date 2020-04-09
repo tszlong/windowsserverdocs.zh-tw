@@ -1,7 +1,6 @@
 ---
 ms.assetid: da7b6dcf-53ec-4394-88c0-c087d92f3893
 title: 授權單位的服務管理員範圍
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 2c54279f591545c6207dfec1536f16e29e69aa99
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3a891ade46fdee1dffc35df31a11c6d138e71e8a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408661"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821891"
 ---
 # <a name="service-administrator-scope-of-authority"></a>授權單位的服務管理員範圍
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 如果您選擇參與 Active Directory 樹系，您必須信任樹系擁有者和服務系統管理員。 樹系擁有者負責選取和管理服務系統管理員;因此，當您信任樹系擁有者時，您也會信任樹系擁有者所管理的服務系統管理員。 這些服務系統管理員可以存取樹系中的所有資源。 在決定參與樹系之前，請務必瞭解樹系擁有者和服務管理員將會擁有您資料的完整存取權。 您無法防止此存取。  
   
@@ -38,7 +37,7 @@ ms.locfileid: "71408661"
   
 -   樹系擁有者可以受到信任來處理群組的興趣，而且沒有理由對群組採取惡意的動作。  
   
--   樹系擁有者會適當限制對網域控制站的實體存取。 樹系中的網域控制站無法互相隔離。 對單一網域控制站具有實體存取權的攻擊者可能會對目錄資料庫進行離線變更，而藉由這樣做，會干擾樹系中任何網域的作業，並查看或操作樹系中任何位置所儲存的資料，以及查看或操作已加入樹系的任何電腦上所儲存的資料。 基於這個理由，對網域控制站的實體存取權必須限制為受信任的人員。  
+-   樹系擁有者會適當限制對網域控制站的實體存取。 樹系中的網域控制站無法互相隔離。 對單一網域控制站具有實體存取權的攻擊者可能會對目錄資料庫進行離線變更，並藉由這樣做，會干擾樹系中任何網域的作業、查看或操作樹系中任何位置所儲存的資料，以及查看或操作加入樹系的任何電腦上儲存的資料。 基於這個理由，對網域控制站的實體存取權必須限制為受信任的人員。  
   
 -   您瞭解並接受信任的服務系統管理員可能會受到強制的潛在風險，以危害系統的安全性。  
   

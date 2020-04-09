@@ -1,7 +1,6 @@
 ---
 ms.assetid: 0f21951c-b1bf-43bb-a329-bbb40c58c876
 title: 複寫錯誤 1753：端點對應表中無更多可用的端點
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 64b479663dfc930ec9a6d2055b4c9ad5755b30fc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2e63d177abd0a6880c1825b821d265c8fa233a22
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389966"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823161"
 ---
 # <a name="replication-error-1753-there-are-no-more-endpoints-available-from-the-endpoint-mapper"></a>複寫錯誤 1753：端點對應表中無更多可用的端點
 
@@ -141,7 +140,7 @@ NTDS KCC、NTDS General 或 Microsoft-Windows ActiveDirectory_DomainService 事�
 * 在暫時埠上使用埠135和 RPC 用戶端（目的地 DC）的 RPC 伺服器（來源 DC）之間缺少網路連線能力。
 * 密碼不相符，或來源 DC 無法解密 Kerberos 加密封包
 
-## <a name="resolutions"></a>解決方法
+## <a name="resolutions"></a>解決方式
 
 確認服務向端點對應程式註冊其服務已啟動
 
@@ -196,7 +195,7 @@ NSLOOKUP -type=hostname <fully qualified computer name of source DC> <secondary 
 * 確認伺服器應用程式（Active Directory et al）已向 RPC 伺服器（來源 DC）上的端點對應工具註冊
 * Active Directory 混合使用已知且動態註冊的埠。 下表列出 Active Directory 網域控制站所使用的知名埠和通訊協定。
 
-| RPC 伺服器應用程式 | 連接埠 | TCP | UDP |
+| RPC 伺服器應用程式 | Port | TCP | UDP |
 | --- | --- | --- | --- |
 | DNS 伺服器 | 53 | X | X |
 | Kerberos | 88 | X | X |
@@ -240,7 +239,7 @@ ncacn_http:CONTOSO-DC01[6004]
 * 針對 RPC 用戶端（目的地 DC）和 RPC 伺服器（來源 DC）的 OS 版本，確認 [RPC 服務] 和 [RPC 定位器] 的啟動值和 [服務狀態] 是正確的。 如果服務目前已停止或未設定預設的啟動值，請重設預設的啟動值，重新開機修改過的 DC，然後重試一次作業。
    * 此外，請確定服務內容符合下表所列的預設設定。
 
-      | 服務 | Windows Server 2003 和更新版本中的預設狀態（啟動類型） | Windows Server 2000 中的預設狀態（啟動類型） |
+      | Service | Windows Server 2003 和更新版本中的預設狀態（啟動類型） | Windows Server 2000 中的預設狀態（啟動類型） |
       | --- | --- | --- |
       | 遠端程序呼叫 | 已啟動（自動） | 已啟動（自動） |
       | 遠端程序呼叫定位器 | Null 或已停止（手動） | 已啟動（自動） |
@@ -266,7 +265,7 @@ ncacn_http:CONTOSO-DC01[6004]
    ncacn_ip_udp REG_SZ rpcrt4.dll
    ```
 
-## <a name="more-information"></a>更多資訊
+## <a name="more-information"></a>詳細資訊
 
 導致 RPC 錯誤1753與-2146893022 的 IP 對應名稱錯誤範例：目標主體名稱不正確
 
@@ -295,7 +294,7 @@ F# SRC    DEST    Operation
 
 這類不正確主機對 IP 對應可能是因為主機/lmhost 檔中的過時專案、在 DNS 中裝載 A/AAAA 註冊，或是 WINS。
 
-摘要：此範例失敗，因為不正確主機對 IP 對應（在此情況下，在主機檔案中）導致目的地 DC 解析為沒有執行 Active Directory Domain Services 服務的「來源」 DC （或甚至已安裝）複寫 SPN 尚未註冊，且來源 DC 傳回錯誤1753。 在第二個案例中，不正確主機對 IP 對應（同樣在主機檔案中）導致目的地 DC 連接到已註冊 E351 的 DC 。複寫 SPN 但該來源的主機名稱和安全性識別與預期的來源 DC 不同，因此嘗試失敗，錯誤為-2146893022：目標主體名稱不正確。
+摘要：此範例失敗，因為不正確主機對 IP 對應（在此案例中為主機檔案）導致目的地 DC 解析為沒有執行 Active Directory Domain Services 服務的「來源」 DC （或甚至是已安裝），因此複寫 SPN 尚未註冊，且來源 DC 傳回錯誤1753。 在第二個案例中，不正確主機對 IP 對應（同樣在主機檔案中）導致目的地 DC 連接到已註冊 E351 的 DC 。複寫 SPN 但該來源的主機名稱和安全性識別與預期的來源 DC 不同，因此嘗試失敗，錯誤為-2146893022：目標主體名稱不正確。
 
 ## <a name="related-topics"></a>相關主題
 

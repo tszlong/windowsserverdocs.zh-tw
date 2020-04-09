@@ -1,28 +1,24 @@
 ---
-title: help
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+title: 說明
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 75dbf94f-d79c-45b2-9463-c06648218f4a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c3d76a71ec287e5c874ae3e4dec34016c5c80336
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 404cefe879e8f63678f2cba90516fad9c216eb23
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375576"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80842311"
 ---
-# <a name="help"></a>help
+# <a name="help"></a>說明
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 顯示指定命令的可用命令或詳細說明資訊的清單。  
   
@@ -34,7 +30,7 @@ ms.locfileid: "71375576"
 help [<command>]  
 ```  
   
-## <a name="parameters"></a>參數  
+### <a name="parameters"></a>參數  
   
 | 參數 |                              描述                              |
 |-----------|-----------------------------------------------------------------------|
@@ -44,7 +40,7 @@ help [<command>]
   
 -   如果未指定任何命令，[說明] 將會顯示所有**可能的命令**。  
   
-## <a name="BKMK_examples"></a>典型  
+## <a name="examples"></a><a name=BKMK_examples></a>典型  
 若要顯示 DiskPart 中所有可用命令的清單，請輸入：  
   
 ```  
@@ -57,8 +53,8 @@ help
 help create partition primary  
 ```  
   
-#### <a name="additional-references"></a>其他參考  
-[命令列語法關鍵](command-line-syntax-key.md)  
+## <a name="additional-references"></a>其他參考資料  
+- [命令列語法關鍵](command-line-syntax-key.md)  
   
 
   

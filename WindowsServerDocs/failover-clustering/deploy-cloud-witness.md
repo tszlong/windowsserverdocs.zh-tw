@@ -2,19 +2,19 @@
 ms.assetid: 0cd1ac70-532c-416d-9de6-6f920a300a45
 title: 為容錯移轉叢集部署雲端見證
 ms.prod: windows-server
-manager: eldenc
+manager: lizross
 ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.topic: article
 author: JasonGerend
 ms.date: 01/18/2019
 description: 如何使用 Microsoft Azure 來裝載雲端中 Windows Server 容錯移轉叢集的見證，亦即如何部署雲端見證。
-ms.openlocfilehash: ad5ff47a72319fee7650d1d9c0d0616cfaaa22d3
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 0b4ba643dca81d2d19b94b1d27485149f938e1c4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948170"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827911"
 ---
 # <a name="deploy-a-cloud-witness-for-a-failover-cluster"></a>部署容錯移轉叢集的雲端見證
 
@@ -22,7 +22,7 @@ ms.locfileid: "75948170"
 
 雲端見證是一種容錯移轉叢集仲裁見證，它會使用 Microsoft Azure 來提供叢集仲裁的投票。 本主題概要說明雲端見證功能、其支援的案例，以及如何為容錯移轉叢集設定雲端見證的指示。
 
-## <a name="CloudWitnessOverview"></a>雲端見證總覽
+## <a name="cloud-witness-overview"></a><a name="CloudWitnessOverview"></a>雲端見證總覽
 
 [圖 1] 說明使用 Windows Server 2016 的多網站延展容錯移轉叢集仲裁設定。 在此範例設定（圖1）中，2個資料中心內有2個節點（稱為「網站」）。 請注意，叢集可能會跨越超過2個資料中心。 此外，每個資料中心都可以有2個以上的節點。 這項安裝程式中的典型叢集仲裁設定（自動容錯移轉 SLA）會提供每個節點的投票。 仲裁見證會提供一項額外的投票，讓叢集可以繼續執行，即使其中一個資料中心發生電源中斷的情況也一樣。 數學運算很簡單-總共有5個投票，您需要3個投票讓叢集保持執行狀態。  
 
@@ -47,7 +47,7 @@ ms.locfileid: "75948170"
 
 如 [圖 2] 所示，沒有第三個不同的網站。 雲端見證與其他仲裁見證一樣，會取得投票，並可參與仲裁計算。  
 
-## <a name="CloudWitnessSupportedScenarios"></a>雲端見證：單一見證類型的支援案例
+## <a name="cloud-witness-supported-scenarios-for-single-witness-type"></a><a name="CloudWitnessSupportedScenarios"></a>雲端見證：單一見證類型的支援案例
 如果您有容錯移轉叢集部署，其中所有節點都可以連線到網際網路（透過 Azure 的延伸模組），建議您將雲端見證設定為仲裁見證資源。  
 
 支援使用雲端見證作為仲裁見證的部分案例如下所示：  
@@ -60,7 +60,7 @@ ms.locfileid: "75948170"
 
 從 Windows Server 2012 R2 開始，建議一律設定見證，因為叢集會自動管理見證投票，而節點會使用動態仲裁來投票。  
 
-## <a name="CloudWitnessSetUp"></a>設定叢集的雲端見證
+## <a name="set-up-a-cloud-witness-for-a-cluster"></a><a name="CloudWitnessSetUp"></a>設定叢集的雲端見證
 若要為您的叢集設定雲端見證作為仲裁見證，請完成下列步驟：
 1. 建立用來作為雲端見證的 Azure 儲存體帳戶
 2. 將雲端見證設定為叢集的仲裁見證。
@@ -78,12 +78,12 @@ ms.locfileid: "75948170"
 1. 登入 [Azure 入口網站](https://portal.azure.com)。
 2. 在 [集線器] 功能表中，選擇 [新增] -> [資料 + 儲存體] -> [儲存體帳戶]。
 3. 在 [建立儲存體帳戶] 頁面中，執行下列動作：
-    1. 輸入儲存體帳戶的名稱。
-    <br>儲存體帳戶名稱必須介於 3 到 24 個字元的長度，而且只能包含數字和小寫字母。 儲存體帳戶名稱在 Azure 內也必須是唯一的。
+    1. 輸入您儲存體帳戶的 [名稱]。
+    <br>儲存體帳戶名稱的長度必須介於3到24個字元，而且只能包含數位和小寫字母。 儲存體帳戶名稱在 Azure 內也必須是唯一的。
         
     2. 針對 [**帳戶類型**]，選取 **[一般用途**]。
     <br>您不能將 Blob 儲存體帳戶用於雲端見證。
-    3. 針對 [效能]，請選取 [標準]。
+    3. 針對 [**效能**]，選取 [**標準**]。
     <br>您無法將 Azure 進階儲存體用於雲端見證。
     2. 針對 **[** 複寫]，選取 **[本地-多餘儲存體（LRS）** ]。
     <br>容錯移轉叢集會使用 blob 檔案作為仲裁點，而在讀取資料時需要一些一致性保證。 因此，您**必須針對複寫**類型選取 [**本機-多餘的儲存體**]。
@@ -172,5 +172,5 @@ Set-ClusterQuorum -CloudWitness -AccountName <StorageAccountName> -AccessKey <St
 ### <a name="proxy-considerations-with-cloud-witness"></a>雲端見證的 Proxy 考慮  
 雲端見證會使用 HTTPS （預設通訊埠443）來建立與 Azure blob 服務的通訊。 確定可以透過網路 Proxy 存取 HTTPS 埠。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 - [Windows Server 中容錯移轉叢集的新功能](whats-new-in-failover-clustering.md)

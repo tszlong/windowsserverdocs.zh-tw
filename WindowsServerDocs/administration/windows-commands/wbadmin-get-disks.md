@@ -1,26 +1,22 @@
 ---
-title: wbadmin 取得磁片
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+title: wbadmin get disks
+description: 適用于 wbadmin get 磁片的 Windows 命令主題，其中列出本機電腦目前在線上的內部和外部磁片。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 320edef1-df11-446b-a183-9f81811ef938
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3440e061a97e54c32179ef7d71f469093e9fae00
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0243edce77febddccc3497df34685113f2a1b48f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362423"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829761"
 ---
-# <a name="wbadmin-get-disks"></a>wbadmin 取得磁片
+# <a name="wbadmin-get-disks"></a>wbadmin get disks
 
 
 
@@ -34,12 +30,12 @@ ms.locfileid: "71362423"
 wbadmin get disks
 ```
 
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
 這個子命令沒有任何參數。
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
--   [命令列語法關鍵](command-line-syntax-key.md)
+-   - [命令列語法關鍵](command-line-syntax-key.md)
 -   [Restore](wbadmin.md)
 -   [WBDisk](https://technet.microsoft.com/library/jj902446.aspx) Cmdlet

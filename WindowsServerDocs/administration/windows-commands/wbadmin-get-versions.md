@@ -1,24 +1,20 @@
 ---
 title: wbadmin get 版本
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: 適用于 wbadmin get 版本的 Windows 命令主題，其中列出本機電腦或另一部電腦上儲存的可用備份的詳細資料。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b986acc4-d083-4d32-9434-862314ed5e97
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0b7ba0749c8ef347e27590bde4eed7bbcf25af7e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 61353d4d607f87878d8001a626279016274c8eff
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362356"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829731"
 ---
 # <a name="wbadmin-get-versions"></a>wbadmin get 版本
 
@@ -38,7 +34,7 @@ wbadmin get versions
 [-machine:BackupMachineName]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -49,7 +45,7 @@ wbadmin get versions
 
 若要列出可從特定備份復原的專案，請使用**wbadmin get items**。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 若要查看磁片區 h 上儲存的可用備份清單，請輸入：
 ```
@@ -60,8 +56,8 @@ wbadmin get versions -backupTarget:h:
 wbadmin get versions -backupTarget:\\servername\share -machine:server01
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
--   [命令列語法關鍵](command-line-syntax-key.md)
+-   - [命令列語法關鍵](command-line-syntax-key.md)
 -   [Restore](wbadmin.md)
 -   [WBBackupTarget](https://technet.microsoft.com/library/jj902447.aspx) Cmdlet

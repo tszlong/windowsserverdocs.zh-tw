@@ -1,24 +1,20 @@
 ---
 title: wbadmin restore catalog
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: Wbadmin restore catalog 的 Windows 命令主題，它會從您指定的儲存位置復原本機電腦的備份類別目錄。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ce1e24a0-821d-4353-b09d-8f82c5c4ad56
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b0d646440ca9b30f9fa30fb1ac3ff08458b8e44d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0ce9182e4e405b1538277db25f06b6a49d7240f9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362333"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829701"
 ---
 # <a name="wbadmin-restore-catalog"></a>wbadmin restore catalog
 
@@ -39,7 +35,7 @@ wbadmin restore catalog
 [-quiet]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -51,7 +47,7 @@ wbadmin restore catalog
 
 如果您儲存備份的位置（磁片、DVD 或遠端共用資料夾）損毀或遺失，而且無法用來還原備份類別目錄，請使用**wbadmin delete catalog**來刪除損毀的類別目錄。 在此情況下，您應該在刪除備份類別目錄後建立新的備份。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 若要從磁片 d：上儲存的備份還原目錄，請輸入：
 ```
@@ -62,8 +58,8 @@ wbadmin restore catalog -backupTarget:d
 wbadmin restore catalog -backupTarget:\\servername\share -machine:server01
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
--   [命令列語法關鍵](command-line-syntax-key.md)
+-   - [命令列語法關鍵](command-line-syntax-key.md)
 -   [Restore](wbadmin.md)
 -   [Restore-WBCatalog](https://technet.microsoft.com/library/jj902437.aspx) Cmdlet

@@ -1,24 +1,20 @@
 ---
 title: wbadmin get 狀態
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: 適用于 wbadmin get status 的 Windows 命令主題，它會報告目前正在執行之備份或復原作業的狀態。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2911b944-7b95-46aa-8c1e-1d55a2fcc94c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0270a29e557ec135301753dd66c1f5f2404a8acc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f8ebf1a078632f78dc8d58c232550345f0de78f2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362394"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829741"
 ---
 # <a name="wbadmin-get-status"></a>wbadmin get 狀態
 
@@ -34,7 +30,7 @@ ms.locfileid: "71362394"
 wbadmin get status
 ```
 
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
 這個子命令沒有任何參數。
 
@@ -43,8 +39,8 @@ wbadmin get status
 -   在目前的備份或復原作業完成之前，這個子命令不會停止，即使您關閉命令視窗，子命令仍會繼續執行。
 -   如果您想要停止目前的備份或復原作業，請使用**wbadmin stop job**子命令。
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
--   [命令列語法關鍵](command-line-syntax-key.md)
+-   - [命令列語法關鍵](command-line-syntax-key.md)
 -   [Restore](wbadmin.md)
 -   [Get-wbjob](https://technet.microsoft.com/library/jj902426.aspx) Cmdlet

@@ -1,7 +1,6 @@
 ---
 ms.assetid: e6da5984-d99d-4c34-9c11-4a18cd413f06
 title: 在現有網域中安裝複本 Windows Server 2012 網域控制站 (等級 200)
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 5e72c18d3aa49774cf73d5365748e7bf20764b22
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 12068e5a062358463cf208f777144091e1de8257
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390841"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825201"
 ---
 # <a name="install-a-replica-windows-server-2012-domain-controller-in-an-existing-domain-level-200"></a>在現有網域中安裝複本 Windows Server 2012 網域控制站 (等級 200)
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 本主題涵蓋使用 [伺服器管理員] 或 Windows PowerShell 將現有的樹系或網域升級到 Windows Server 2012 所需的步驟。 其中涵蓋如何將執行 Windows Server 2012 的網域控制站新增至現有的網域中  。  
   
@@ -28,22 +27,22 @@ ms.locfileid: "71390841"
   
 -   [部署](../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md#BKMK_Dep)  
   
-## <a name="BKMK_Workflow"></a>升級與複本工作流程  
+## <a name="upgrade-and-replica-workflow"></a><a name="BKMK_Workflow"></a>升級與複本工作流程  
 下圖說明已安裝過 AD DS 角色，並且使用伺服器管理員啟動 Active Directory 網域服務設定精靈以在現有的網域中建立新的網域控制站時的 Active Directory 網域服務設定程序。  
   
 ![安裝複本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/adds_forestupgrade.png)  
   
-## <a name="BKMK_PS"></a>升級與複本 Windows PowerShell  
+## <a name="upgrade-and-replica-windows-powershell"></a><a name="BKMK_PS"></a>升級與複本 Windows PowerShell  
   
 |||  
 |-|-|  
 |**ADDSDeployment Cmdlet**|引數 (**粗體**的引數是必要的。 *斜體*的引數可以使用 Windows PowerShell 或 [AD DS 設定精靈] 來指定。)|  
-|Install-AddsDomainController|-SkipPreChecks<br /><br />***-DomainName***<br /><br />*-SafeModeAdministratorPassword*<br /><br />*-SiteName*<br /><br />*-ADPrepCredential*<br /><br />-ApplicationPartitionsToReplicate<br /><br />*-AllowDomainControllerReinstall*<br /><br />-Confirm<br /><br />*-CreateDNSDelegation*<br /><br />***-Credential***<br /><br />-CriticalReplicationOnly<br /><br />*-DatabasePath*<br /><br />*-DNSDelegationCredential*<br /><br />-Force<br /><br />*-InstallationMediaPath*<br /><br />*-InstallDNS*<br /><br />*-LogPath*<br /><br />-MoveInfrastructureOperationMasterRoleIfNecessary<br /><br />-NoDnsOnNetwork<br /><br />*-NoGlobalCatalog*<br /><br />-Norebootoncompletion<br /><br />*-ReplicationSourceDC*<br /><br />-SkipAutoConfigureDNS<br /><br />-SiteName<br /><br />*-SystemKey*<br /><br />*-SYSVOLPath*<br /><br />*-UseExistingAccount*<br /><br />*-Whatif*|  
+|Install-AddsDomainController|-SkipPreChecks<p>***-DomainName***<p>*-SafeModeAdministratorPassword*<p>*-SiteName*<p>*-ADPrepCredential*<p>-ApplicationPartitionsToReplicate<p>*-AllowDomainControllerReinstall*<p>-Confirm<p>*-CreateDNSDelegation*<p>***-Credential***<p>-CriticalReplicationOnly<p>*-DatabasePath*<p>*-DNSDelegationCredential*<p>-Force<p>*-InstallationMediaPath*<p>*-InstallDNS*<p>*-LogPath*<p>-MoveInfrastructureOperationMasterRoleIfNecessary<p>-NoDnsOnNetwork<p>*-NoGlobalCatalog*<p>-Norebootoncompletion<p>*-ReplicationSourceDC*<p>-SkipAutoConfigureDNS<p>-SiteName<p>*-SystemKey*<p>*-SYSVOLPath*<p>*-UseExistingAccount*<p>*-Whatif*|  
   
 > [!NOTE]  
 > 當您不是以 Enterprise Admins 和 Schema Admins 群組 (如果您要升級樹系) 或 Domain Admins 群組 (如果您要將新的 DC 新增至現有的網域) 的成員身分登入時，才需要 **-credential** 引數。  
   
-## <a name="BKMK_Dep"></a>部署  
+## <a name="deployment"></a><a name="BKMK_Dep"></a>部署  
   
 ### <a name="deployment-configuration"></a>部署設定  
 ![安裝複本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeDeployConfig.png)  
@@ -122,7 +121,7 @@ Install-AddsDomainController
   
 ```  
   
-最後，您可以將模糊化密碼儲存到檔案中以在稍後重複使用，而不顯示純文字密碼。 例如:  
+最後，您可以將模糊化密碼儲存到檔案中以在稍後重複使用，而不顯示純文字密碼。 例如，  
   
 ```  
 $file = "c:\pw.txt"  
@@ -221,7 +220,7 @@ Active Directory 路徑 ADDSDeployment Cmdlet 引數為：
   
 [伺服器管理員] 中的 [檢閱選項] 頁面也提供選用的 [檢視指令碼] 按鈕，用來建立一個包含目前的 ADDSDeployment 設定的 Unicode 文字檔，以便做為一個 Windows PowerShell 指令碼。 這樣可以讓您將 [伺服器管理員] 的圖形介面當作 Windows PowerShell 部署工作室一樣操作。 使用 [Active Directory 網域服務設定精靈] 來設定選項、匯出設定，然後取消精靈。  這個程序會建立一個有效且合乎語義的正確範例，以備日後修改或直接使用。  
   
-例如:  
+例如，  
   
 ```  
 #  
@@ -249,7 +248,7 @@ Install-ADDSDomainController `
   
 ![安裝複本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_PSWhatIf.png)  
   
-### <a name="prerequisites-check"></a>先決條件檢查  
+### <a name="prerequisites-check"></a>必要條件檢查  
 ![安裝複本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradePrereqCheck.png)  
   
 [先決條件檢查] 是 AD DS 網域設定中的新功能。 這個新階段會驗證網域和樹系可支援新的 Windows Server 2012 網域控制站。  
@@ -258,7 +257,7 @@ Install-ADDSDomainController `
   
 [先決條件檢查] 也會提供諸如影響舊版作業系統之安全性變更的相關資訊。  
   
-如需特定先決條件檢查的詳細資訊，請參閱 [Prerequisite Checking](../../ad-ds/manage/AD-DS-Simplified-Administration.md#BKMK_PrereuisiteChecking)。  
+如需特定先決條件檢查的詳細資訊，請參閱[先決條件檢查](../../ad-ds/manage/AD-DS-Simplified-Administration.md#BKMK_PrereuisiteChecking)。  
   
 使用 [伺服器管理員] 時無法略過 [先決條件檢查] ，但您可以在使用 AD DS 部署 Cmdlet 時使用下列引數略過該程序：  
   
@@ -306,18 +305,18 @@ Install-addsdomaincontroller
   
 ![安裝複本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_PSUpgradeProgress.png)  
   
-若要使用 Windows PowerShell 從遠端設定網域控制站, 請將**uninstall-addsdomaincontroller** Cmdlet 包裝在**調用命令**Cmdlet*內*。 這需要使用大括號。  
+若要使用 Windows PowerShell 從遠端設定網域控制站，請將**uninstall-addsdomaincontroller** Cmdlet 包裝在**調用命令**Cmdlet*內*。 這需要使用大括號。  
   
 ```  
 invoke-command {install-addsdomaincontroller "domainname <domain> -credential (get-credential)} -computername <dc name>  
 ```  
   
-例如:  
+例如，  
   
 ![安裝複本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_PSUpgradeExample.gif)  
   
 > [!NOTE]  
-> 如需安裝與 Adprep 程序運作的詳細資訊，請參閱 [Troubleshooting Domain Controller Deployment](../../ad-ds/deploy/Troubleshooting-Domain-Controller-Deployment.md)。  
+> 如需安裝與 Adprep 程序運作的詳細資訊，請參閱[疑難排解網域控制站部署](../../ad-ds/deploy/Troubleshooting-Domain-Controller-Deployment.md)。  
   
 ### <a name="results"></a>結果  
 ![安裝複本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_ForestSignOff.png)  

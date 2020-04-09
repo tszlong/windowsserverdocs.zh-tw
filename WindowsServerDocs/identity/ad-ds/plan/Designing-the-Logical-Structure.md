@@ -1,7 +1,6 @@
 ---
 ms.assetid: 9ad81367-f3fe-4b2e-bd7c-5900b2b9f77f
 title: 設計邏輯結構
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 8d72d7ed9617d18b42f1be10daeafbac994dad88
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: de56205c163abff1b05d57ea90954fa93606abce
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402636"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822611"
 ---
 # <a name="designing-the-logical-structure"></a>設計邏輯結構
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Active Directory Domain Services （AD DS）可讓組織為使用者與資源管理建立可擴充、安全且可管理的基礎結構。 它也可讓他們支援啟用目錄的應用程式。  
   
@@ -42,7 +41,7 @@ Active Directory Domain Services （AD DS）可讓組織為使用者與資源管
   
 當您在部署 AD DS 之前，設計 Active Directory 邏輯結構時，您可以將部署程式優化，以充分利用 Active Directory 的功能。 若要設計 Active Directory 邏輯結構，您的設計小組會先識別組織的需求，並根據此資訊決定樹系和網域界限的放置位置。 然後，設計小組會決定如何設定網域名稱系統（DNS）環境，以符合樹系的需求。 最後，設計小組會識別委派組織中資源管理所需的組織單位（OU）結構。  
   
-## <a name="in-this-guide"></a>本指南內容  
+## <a name="in-this-guide"></a>在本指南中  
   
 -   [瞭解 Active Directory 的邏輯模型](../../ad-ds/plan/Understanding-the-Active-Directory-Logical-Model.md)  
   
@@ -56,7 +55,7 @@ Active Directory Domain Services （AD DS）可讓組織為使用者與資源管
   
 -   [建立組織單位設計](../../ad-ds/plan/Creating-an-Organizational-Unit-Design.md)  
   
--   [附錄 A：DNS 清查](../../ad-ds/plan/Appendix-A--DNS-Inventory.md)  
+-   [附錄 A： DNS 清查](../../ad-ds/plan/Appendix-A--DNS-Inventory.md)  
   
 
 

@@ -1,23 +1,19 @@
 ---
 title: 安裝和設定 Windows Server Essentials 或 Windows Server Essentials 體驗
 description: 說明如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 48ea6cd4-3955-4aaf-9236-2515a6c3e730
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b0323c8ce2ac69ade9adeca7e948c728e4791f09
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 2605483de447e78fc1bd091d911867656c8ab8b6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311666"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820044"
 ---
 # <a name="install-and-configure-windows-server-essentials-or-windows-server-essentials-experience"></a>安裝和設定 Windows Server Essentials 或 Windows Server Essentials 體驗
 

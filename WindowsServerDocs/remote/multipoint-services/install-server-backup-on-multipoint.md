@@ -1,24 +1,20 @@
 ---
 title: 在 MultiPoint 伺服器上安裝伺服器備份
 description: 引導您完成安裝備份和修復工具的步驟
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e4331370-ba07-4529-92ab-db14a41bfc3b
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 933a24ee91fa1f5ccbe31ff4cb722a7c3eb54e4b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f8fe5ac8b57105d421af431b12c8dc17250b622d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395116"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820331"
 ---
 # <a name="install-server-backup-on-your-multipoint-server"></a>在 MultiPoint 伺服器上安裝伺服器備份
 建議您考慮 MultiPoint 伺服器的備份和復原計畫。
@@ -56,7 +52,7 @@ Windows Server Backup 的一項主要功能是能夠排程自動執行備份。
   
     -   若要開啟 [Windows Server Backup] 嵌入式管理單元，請在 [**開始**] 畫面上輸入**Backup**，然後按一下結果中的 [ **Windows Server Backup** ]。  
   
-    -   若要啟動 Wbadmin 工具和其命令的 view 語法：在 [**開始**] 畫面上，輸入**命令**。 在結果中，以滑鼠右鍵按一下 [**命令提示**字元]，按一下頁面底部的 [**以系統管理員身分執行**]，然後在確認提示中按一下 [**是]** 。 在命令提示字元中，輸入**wbadmin/？** 然後按 ENTER 鍵。 您應該會看到工具的命令語法和描述。  
+    -   若要啟動其命令的 Wbadmin tool 和 view 語法：在 [**開始**] 畫面上，輸入**命令**。 在結果中，以滑鼠右鍵按一下 [**命令提示**字元]，按一下頁面底部的 [**以系統管理員身分執行**]，然後在確認提示中按一下 [**是]** 。 在命令提示字元中，輸入**wbadmin/？** 然後按 ENTER 鍵。 您應該會看到工具的命令語法和描述。  
   
 ## <a name="configure-backups-using-windows-server-backup"></a>使用 Windows Server Backup 設定備份  
   

@@ -1,28 +1,22 @@
 ---
 title: comp
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: 適用于 comp 的 Windows 命令主題，會逐位元組比較兩個檔案或一組檔案的內容。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 40319d23-704d-4da1-be93-8259547275d0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 84604cea36b0b4c9543a7169002551c0da4f0493
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2f61743b55f38cfdebb17506368609895f48b4f6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379264"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847451"
 ---
 # <a name="comp"></a>comp
-
-
 
 比較兩個檔案或一組檔案的內容（逐位元組）。 如果使用時不含參數，則**comp**會提示您輸入要比較的檔案。
 
@@ -34,7 +28,7 @@ ms.locfileid: "71379264"
 comp [<Data1>] [<Data2>] [/d] [/a] [/l] [/n=<Number>] [/c]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -46,7 +40,7 @@ comp [<Data1>] [<Data2>] [/d] [/a] [/l] [/n=<Number>] [/c]
 |/n =\<數位 >|只比較針對每個檔案指定的行數，即使檔案的大小不同也一樣。|
 |/c|執行不區分大小寫的比較。|
 |/off [行]|處理具有離線屬性集的檔案。|
-|/?|在命令提示字元顯示 [說明]。|
+|/?|在命令提示字元中顯示說明。|
 
 ## <a name="remarks"></a>備註
 
@@ -91,7 +85,7 @@ comp [<Data1>] [<Data2>] [/d] [/a] [/l] [/n=<Number>] [/c]
 
     若要比較多個檔案，請按 Y。**Comp**命令會提示您輸入新檔案的位置和名稱。 若要停止比較，請按 N。當您按下 Y 時， **comp**會提示您輸入要使用的命令列選項。 如果您未指定任何命令列選項，則**comp**會使用您先前指定的選項。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 若要比較目錄 C:\Reports 與備份目錄的內容 \\\\Sales\Backup\April，請輸入：
 ```
@@ -102,6 +96,6 @@ comp c:\reports \\sales\backup\april
 comp \invoice\*.txt \invoice\backup\*.txt /n=10 /d
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

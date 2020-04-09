@@ -5,15 +5,16 @@ ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
+manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d85866284272d80727d3fdb21c6e6447bd3ded2f
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 03e5f875b19a9d903f7cefa9d2174b6e60b44c13
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322810"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827811"
 ---
 # <a name="create-a-failover-cluster"></a>建立容錯移轉叢集
 
@@ -219,7 +220,7 @@ New-Cluster -Name CN=MyCluster,OU=Cluster,DC=Contoso,DC=com -Node Server1, Serve
 
 如需如何新增叢集角色的範例，請參閱 [Add-ClusterFileServerRole](https://docs.microsoft.com/powershell/module/failoverclusters/add-clusterfileserverrole?view=win10-ps) 和 [Add-ClusterGenericApplicationRole](https://docs.microsoft.com/powershell/module/failoverclusters/add-clustergenericapplicationrole?view=win10-ps)之類的主題。
 
-## <a name="more-information"></a>其他資訊
+## <a name="more-information"></a>詳細資訊
 
   - [容錯移轉叢集](failover-clustering.md)
   - [部署 Hyper-v 叢集](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj863389(v%3dws.11)>)

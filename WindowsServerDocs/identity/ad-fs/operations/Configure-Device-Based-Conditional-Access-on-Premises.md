@@ -1,7 +1,6 @@
 ---
 ms.assetid: 35de490f-c506-4b73-840c-b239b72decc2
 title: 設定裝置型條件式存取內部部署
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 08/11/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 0eb0271dd27791e6f59e896e43bf79b15b89e730
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 19e139df53cd1c076f8d5597c1c68b8ffe2cfe91
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949449"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817171"
 ---
 # <a name="configure-on-premises-conditional-access-using-registered-devices"></a>使用已註冊的裝置設定內部部署條件式存取
 
@@ -26,12 +25,12 @@ ms.locfileid: "75949449"
 ## <a name="infrastructure-pre-requisites"></a>基礎結構先決條件
 在您開始使用內部部署條件式存取之前，必須先執行下列每個元件。 
 
-|需求|說明
+|需求|描述
 |-----|-----
 |具有 Azure AD Premium 的 Azure AD 訂用帳戶 | 啟用內部部署條件式存取的裝置回寫-[免費試用版正常](https://azure.microsoft.com/trial/get-started-active-directory/)  
-|Intune 訂閱|只有適用于裝置合規性案例的 MDM 整合才需要-[免費試用版正常](https://portal.office.com/Signup/Signup.aspx?OfferId=40BE278A-DFD1-470a-9EF7-9F2596EA7FF9&dl=INTUNE_A&ali=1#0)
+|Intune 訂用帳戶|只有適用于裝置合規性案例的 MDM 整合才需要-[免費試用版正常](https://portal.office.com/Signup/Signup.aspx?OfferId=40BE278A-DFD1-470a-9EF7-9F2596EA7FF9&dl=INTUNE_A&ali=1#0)
 |Azure AD Connect|2015年11月 QFE 或更新版本。  在[這裡](https://www.microsoft.com/download/details.aspx?id=47594)取得最新版本。  
-|WIN ENT LTSB 2016 Finnish 64 Bits|適用于 AD FS 的組建10586或更新版本  
+|Windows Server 2016|適用于 AD FS 的組建10586或更新版本  
 |Windows Server 2016 Active Directory 架構|需要架構層級85或更高版本。
 |Windows Server 2016 網域控制站|這只是 Hello 企業版金鑰信任部署的必要條件。  您可以在[這裡](https://aka.ms/whfbdocs)找到其他資訊。  
 |Windows 10 用戶端|只有加入上述網域的組建10586或更新版本，才能加入 Windows 10 網域和 Microsoft Passport for Work 案例  
@@ -45,7 +44,7 @@ ms.locfileid: "75949449"
     - 只有 AD FS 加入的樹系才需要此參數
 
 > [!NOTE]
-> 如果您在升級至 Windows Server 2016 中的架構版本（層級85或更高）之前已安裝 Azure AD Connect，您必須重新執行 Azure AD Connect 安裝，並重新整理內部部署 AD 架構，以確保的同步處理規則已設定 Msds-keycredentiallink。
+> 如果您在升級至 Windows Server 2016 中的架構版本（層級85或更高）之前安裝 Azure AD Connect，您必須重新執行 Azure AD Connect 安裝，並重新整理內部部署 AD 架構，以確保已設定 Msds-keycredentiallink 的同步處理規則。
 
 ### <a name="verify-your-schema-level"></a>驗證您的架構層級
 若要驗證您的架構層級，請執行下列動作：
@@ -166,7 +165,7 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
  
 
 
-- 位於 CN=RegisteredDevices,DC=&lt;domain&gt; 且類型為 ms-DS-DeviceContainer 的物件        
+- 位於 CN=RegisteredDevices,DC=&lt;domain&gt; 且類型為 ms-DS-DeviceContainer 的物件          
     - AD FS 服務帳戶讀取存取權   
     - Azure AD Connect 同步 AD 連接器帳戶讀寫存取權限</br></br>
 
@@ -210,7 +209,7 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
 ### <a name="automatic-mdm-enrollment"></a>自動 MDM 註冊   
 若要啟用已註冊裝置的自動 MDM 註冊，讓您可以在存取控制原則中使用 isCompliant 宣告，請遵循[此處](https://blogs.technet.microsoft.com/ad/2015/08/14/windows-10-azure-ad-and-microsoft-intune-automatic-mdm-enrollment-powered-by-the-cloud/)的步驟。  
 
-## <a name="troubleshooting"></a>[疑難排解]  
+## <a name="troubleshooting"></a>疑難排解  
 1.  如果您在 `Initialize-ADDeviceRegistration` 上發生錯誤，抱怨有關已存在錯誤狀態的物件，例如「找不到具有所有必要屬性的 drs 服務物件」，表示您先前已執行 Azure AD Connect powershell 命令，並在 AD DS 中具有部分設定。  請嘗試手動刪除**CN = Device Registration configuration，cn = Services，cn = Configuration，DC =&lt;網域&gt;** 下的物件，然後再試一次。  
 2.  適用于已加入網域的 Windows 10 用戶端  
     1. 若要確認裝置驗證是否正常運作，請以測試使用者帳戶身分登入加入網域的用戶端。 若要快速觸發布建，請至少一次鎖定並解除鎖定桌面。   
@@ -222,7 +221,7 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
     4. 再次嘗試註冊裝置或註冊  
 
 ### <a name="related-articles"></a>相關文章  
-* [保護對 Office 365 及其他連接至 Azure Active Directory 之應用程式的存取](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access/)  
+* [保護存取 Office 365 和其他連接到 Azure Active Directory 的應用程式](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access/)  
 * [Office 365 服務的條件式存取裝置原則](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access-device-policies/)  
 * [使用 Azure Active Directory 裝置註冊設定內部部署條件式存取](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup)  
-* [將已加入網域裝置連接到 Azure AD 以體驗 Windows 10](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)  
+* [將已加入網域的裝置連接到適用于 Windows 10 體驗的 Azure AD](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)  

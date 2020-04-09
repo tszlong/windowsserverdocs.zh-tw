@@ -1,26 +1,22 @@
 ---
-title: Cmd
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+title: cmd
+description: Cmd 的 Windows 命令主題，它會啟動新的命令直譯器（Cmd.exe）實例。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6ec588db-31a9-4a73-a970-65a2c6f4abbe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 032fbea2039faa09753ac0c2b51e4b62004d36ac
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 83b5e27017a9a0f979acec428b8ddaa73cd9d46b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379341"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847621"
 ---
-# <a name="cmd"></a>Cmd
+# <a name="cmd"></a>cmd
 
 啟動新的命令直譯器（Cmd.exe）實例。 如果使用時不含參數， **cmd**會顯示作業系統的版本和著作權資訊。
 
@@ -30,7 +26,7 @@ ms.locfileid: "71379341"
 cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}] [/v:{on|off}] [<String>]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -40,7 +36,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
 |/q|關閉回應。|
 |/d|停用自動執行命令。|
 |/a|將內部命令輸出格式化為管道或檔案，做為美國國家標準局（ANSI）。|
-|u|將內部命令輸出格式化為管道或檔案，以做為 Unicode。|
+|/u|將內部命令輸出格式化為管道或檔案，以做為 Unicode。|
 |/t： {\<B\>\<F\>\|\<F\>}|設定背景（*B*）和前景（*F*）色彩。|
 |/e：開啟|啟用命令延伸模組。|
 |/e： off|停用命令延伸模組。|
@@ -55,8 +51,8 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
 
 |值|色彩|
 |-----|-----|
-|0|號|
-|1|藍天|
+|0|0：黑色|
+|1|藍色|
 |2|綠色|
 |3|綠色|
 |4|紅色|
@@ -69,17 +65,17 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
 |b|淺淺綠色|
 |c|淺紅色|
 |d|淺紫色|
-|版|淺黃色|
+|e|淺黃色|
 |f|明亮白色|
 
 ## <a name="remarks"></a>備註
 
 -   使用多個命令
 
-    若要針對 \<字串 > 使用多個命令，請 **&&** 命令分隔符號來分隔它們，並將它們括在引號中。 例如：
+    若要針對 \<字串 > 使用多個命令，請 **&&** 命令分隔符號來分隔它們，並將它們括在引號中。 例如，
 
     ```
-    "<Command>&&<Command>&&<Command>"
+    <Command>&&<Command>&&<Command>
     ``` 
  
 -   處理引號
@@ -103,7 +99,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
     如果有一或兩個登錄子機碼存在，則會在所有其他變數之前執行。
 
 > [!CAUTION]
-> 不正確地編輯登錄可能會對系統造成嚴重的損害。 變更登錄之前，您應該先備份電腦所有的重要資料。
+> 不當編輯登錄可能會造成系統嚴重受損。 變更登錄之前，您應該先備份電腦所有的重要資料。
 
 -   啟用和停用命令延伸模組
 
@@ -116,7 +112,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
     使用 Regedit.exe，在登錄中將**REG_DWORD**值設定為**0 × 1** （已啟用）或**0 × 0** （已停用）。 使用者指定的設定會優先于電腦設定，而命令列選項的優先順序高於登錄設定。
 
 > [!CAUTION]
-> 不正確地編輯登錄可能會對系統造成嚴重的損害。 變更登錄之前，您應該先備份電腦所有的重要資料。
+> 不當編輯登錄可能會造成系統嚴重受損。 變更登錄之前，您應該先備份電腦所有的重要資料。
 
     When you enable command extensions, the following commands are affected:  
     -  **assoc**
@@ -156,7 +152,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
     若要設定**REG_DWORD**值，請執行 regedit.exe，並針對特定函式使用控制字元的十六進位值（例如， **0 × 9**是 TAB， **0 × 08**是倒退鍵）。 使用者指定的設定會優先于電腦設定，而命令列選項的優先順序高於登錄設定。
 
 > [!CAUTION]
-> 不正確地編輯登錄可能會對系統造成嚴重的損害。 變更登錄之前，您應該先備份電腦所有的重要資料。
+> 不當編輯登錄可能會造成系統嚴重受損。 變更登錄之前，您應該先備份電腦所有的重要資料。
 
 如果您使用 **/f： on**啟用檔案和目錄名稱完成功能，請使用 Ctrl + D 進行目錄名稱自動完成，然後按 Ctrl + f 進行檔案名自動完成。 若要在登錄中停用特定的完成字元，請使用空白字元 [**0 × 20**] 的值，因為它不是有效的控制字元。
 
@@ -166,10 +162,10 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
 
 下列特殊字元需要加上引號： & < > [] {} ^ =;！ ' +，' ~ [空白字元]。
 
-如果您提供的資訊包含空格，請使用引號括住文字（例如「電腦名稱稱」）。
+如果您提供的資訊包含空格，請使用引號括住文字（例如，電腦名稱稱）。
 
 如果您從*字串*內處理檔案和目錄名稱自動完成，則會捨棄游標右邊*路徑*的任何部分（在*字串*中處理完成的位置）。
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

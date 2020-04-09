@@ -1,23 +1,19 @@
 ---
 title: Windows Server Essentials 系統需求
 description: 說明如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/31/2013
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0951a67d-492f-41ad-9ae5-8e4cd25e3041
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 1b1c34646050c3459c88b10f608d8e003e72fdef
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 72a02084afc78fc12d32ddd32971798a93db14d3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310432"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817801"
 ---
 # <a name="system-requirements-for-windows-server-essentials"></a>Windows Server Essentials 系統需求
 
@@ -28,7 +24,7 @@ ms.locfileid: "80310432"
   
 ## <a name="table-1-system-requirements-for-windows-server-essentials"></a>表 1。 Windows Server Essentials 的系統需求  
   
-|元件|最低|建議需求*|最大需求|  
+|Component|最低|建議需求*|最大需求|  
 |---------------|-------------|-------------------|-------------|  
 |CPU 通訊端|單一核心的需求為 1.4 GHz (64 位元處理器) 或更快速度<br /><br /> 多個核心的需求為 1.3 GHz (64 位元處理器) 或更快速度|多個核心的需求為 3.1 GHz (64 位元處理器) 或更快速度|2 個通訊端|  
 |記憶體 (RAM)|2 GB<br /><br /> 4 GB (如果您要部署 Windows Server Essentials 為虛擬機器)|16 GB|64 GB|  
@@ -38,7 +34,7 @@ ms.locfileid: "80310432"
   
 ## <a name="table-2-additional-hardware-and-software-requirements-for-windows-server-essentials"></a>資料表 2： Windows Server Essentials 的其他硬體和軟體需求  
   
-|元件|描述|  
+|Component|描述|  
 |---------------|-----------------|  
 |網路介面卡|Gigabit Ethernet 介面卡 (10/100/1000baseT PHY/MAC)|  
 |網際網路|某些功能可能會需要網際網路存取權 (可能需支付費用) 或 Microsoft 帳戶|  

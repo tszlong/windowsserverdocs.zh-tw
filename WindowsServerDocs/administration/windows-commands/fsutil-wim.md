@@ -9,12 +9,12 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: fc79b70e8dedb9ecad5e8c6e89f51ece3279faa4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d4a8f2c008c1a28e498edb7726a8c209e91f41af
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376665"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80843921"
 ---
 # <a name="fsutil-wim"></a>Fsutil wim
 >適用於：Windows Server (半年通道)、Windows Server 2016、Windows 10
@@ -30,7 +30,7 @@ fsutil wim [queryfile] <filename>
 fsutil wim [removewim] <drive name> <data source>
 ```
 
-### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>參數
 
 |參數|描述|
 |-------------|---------------|
@@ -72,6 +72,6 @@ fsutil wim removewims C: 2
 ```
 
 ### <a name="additional-references"></a>其他參考資料
-[命令列語法關鍵](Command-Line-Syntax-Key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)
 
 [Fsutil](Fsutil.md)

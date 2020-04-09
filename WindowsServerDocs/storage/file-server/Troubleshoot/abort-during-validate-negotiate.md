@@ -3,16 +3,15 @@ title: TCP 連線在驗證協商期間中止
 description: 介紹如何在驗證協商期間中止 TCP 連線時，針對 SMB 問題進行疑難排解。
 author: Deland-Han
 manager: dcscontentpm
-audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 3455b4ac0a2706f80702378dda02c1877af219ca
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: 36bd49777899870246a19531c6681a5b45bb622d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654619"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815511"
 ---
 # <a name="tcp-connection-is-aborted-during-validate-negotiate"></a>TCP 連線在驗證協商期間中止
 
@@ -32,7 +31,7 @@ ms.locfileid: "75654619"
 
 - 您應該比較 FSCTL\_驗證\_NEGOTIATE\_INFO 訊息與 Negotiate 訊息，以確保沒有任何變更。
 
-## <a name="workaround"></a>解決方法
+## <a name="workaround"></a>因應措施
 
 您可以暫時停用驗證協商進程。 若要這麼做，請找出下列登錄子機碼：
 
@@ -51,7 +50,7 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanWorkstatio
 
 如果用戶端或伺服器無法支援 [驗證 Negotiate] 命令，您可以將 SMB 簽署設定為 [必要] 來解決此問題。 SMB 簽署會被視為比驗證 Negotiate 更安全。 不過，如果需要簽署，也可能會降低效能。
 
-## <a name="reference"></a>參考資料
+## <a name="reference"></a>參考
 
 如需詳細資訊，請參閱下列文章：
 

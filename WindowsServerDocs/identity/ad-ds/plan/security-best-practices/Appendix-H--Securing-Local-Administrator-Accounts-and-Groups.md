@@ -1,7 +1,6 @@
 ---
 ms.assetid: ea015cbc-dea9-4c72-a9d8-d6c826d07608
 title: 附錄 H-保護本機系統管理員帳戶和群組
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 7e0cff62851250009d8af6ec7d87ec8191dcaec0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9c5cb76ff137912893c5bc0322d5b79bee2203fe
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408636"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821461"
 ---
 # <a name="appendix-h-securing-local-administrator-accounts-and-groups"></a>附錄 H︰保護本機 Administrators 帳戶和群組
 
@@ -83,7 +82,7 @@ ms.locfileid: "71408636"
 
         ![保護本機系統管理員帳戶和群組](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_105.png)  
 
-    3.  按一下 **\[確定\]** 。  
+    3.  按一下 [確定]。  
 
         > [!IMPORTANT]  
         > 當您將系統管理員帳戶新增至這些設定時，您可以指定是要依照如何為帳戶加上標籤來設定本機系統管理員帳戶或網域系統管理員帳戶。 例如，若要將 TAILSPINTOYS 網域的系統管理員帳戶新增至這些拒絕許可權，您可以流覽至 TAILSPINTOYS 網域的系統管理員帳戶，這會顯示為 TAILSPINTOYS\Administrator。 如果您在群組原則物件編輯器的這些使用者權限設定中輸入**系統管理員**，您將會限制套用 GPO 的每部電腦上的本機系統管理員帳戶，如先前所述。  
@@ -96,7 +95,7 @@ ms.locfileid: "71408636"
 
         ![保護本機系統管理員帳戶和群組](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_106.png)  
 
-    3.  按一下 **\[確定\]** 。  
+    3.  按一下 [確定]。  
 
         > [!IMPORTANT]  
         > 當您將系統管理員帳戶新增至這些設定時，您可以指定是要依照如何為帳戶加上標籤來設定本機系統管理員帳戶或網域系統管理員帳戶。 例如，若要將 TAILSPINTOYS 網域的系統管理員帳戶新增至這些拒絕許可權，您可以流覽至 TAILSPINTOYS 網域的系統管理員帳戶，這會顯示為 TAILSPINTOYS\Administrator。 如果您在群組原則物件編輯器的這些使用者權限設定中輸入**系統管理員**，您將會限制套用 GPO 的每部電腦上的本機系統管理員帳戶，如先前所述。  
@@ -109,7 +108,7 @@ ms.locfileid: "71408636"
 
         ![保護本機系統管理員帳戶和群組](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_107.png)  
 
-    3.  按一下 **\[確定\]** 。  
+    3.  按一下 [確定]。  
 
         > [!IMPORTANT]  
         > 當您將系統管理員帳戶新增至這些設定時，您可以指定是要依照如何為帳戶加上標籤來設定本機系統管理員帳戶或網域系統管理員帳戶。 例如，若要將 TAILSPINTOYS 網域的系統管理員帳戶新增至這些拒絕許可權，您可以流覽至 TAILSPINTOYS 網域的系統管理員帳戶，這會顯示為 TAILSPINTOYS\Administrator。 如果您在群組原則物件編輯器的這些使用者權限設定中輸入**系統管理員**，您將會限制套用 GPO 的每部電腦上的本機系統管理員帳戶，如先前所述。  
@@ -191,7 +190,7 @@ ms.locfileid: "71408636"
 
 7.  在 [**程式/腳本**] 欄位中，按一下 **[流覽]** ，找出並選取建立**批次檔**一節中建立的批次檔，然後按一下 [**開啟**]。  
 
-8.  按一下 **\[確定\]** 。  
+8.  按一下 [確定]。  
 
 9. 按一下 [一般] 索引標籤。  
 
@@ -201,7 +200,7 @@ ms.locfileid: "71408636"
 
 12. 選取 **[執行] 表示使用者是否登入**，而且不會**儲存密碼**。 此工作只會存取本機電腦資源。  
 
-13. 按一下 **\[確定\]** 。  
+13. 按一下 [確定]。  
 
 14. 對話方塊應該會出現，要求使用者帳號憑證才能執行工作。  
 

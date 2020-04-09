@@ -1,27 +1,23 @@
 ---
 title: 使用者帳戶考量
 description: 提供 MultiPoint 服務的使用者帳戶、使用者名稱和密碼考慮
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e225900b-cee9-48c9-b21c-394dc5e72b78
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: c81d14d46e96d39676e1fb6fa31892e0d5e1b683
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 732100a79adbdd7d9fbe4ade742c43084d6b54f6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389264"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820571"
 ---
 # <a name="user-account-considerations"></a>使用者帳戶考量
-本主題說明當您建立和管理使用者帳戶時，系統管理使用者應考慮的問題。 您可在 MultiPoint 管理員的 [使用者] 索引標籤中管理使用者帳戶。 如需詳細資訊，請參閱[管理使用者帳戶](Manage-User-Accounts.md)主題。  
+本主題說明「系統管理使用者」在建立及管理使用者帳戶時應考量的問題。 您可在 MultiPoint 管理員的 [使用者] 索引標籤中管理使用者帳戶。 如需詳細資訊，請參閱[管理使用者帳戶](Manage-User-Accounts.md)主題。  
   
 ## <a name="user-account-types"></a>使用者帳戶類型  
 使用者帳戶是一種資訊集合，告訴 MultiPoint 服務使用者可以存取哪些檔案和資料夾、可以對 MultiPoint 服務系統進行哪些變更，以及每個使用者的喜好設定，例如桌面背景。 每個人都可以使用唯一的使用者名稱和密碼，來存取自己的使用者帳戶。 MultiPoint 服務支援三種類型的使用者帳戶：  
@@ -40,7 +36,7 @@ ms.locfileid: "71389264"
 > [!TIP]  
 > 為了加強系統安全性，所有使用者的密碼都應該是強式密碼。 強式密碼不容易被猜到或破解，長度至少為八個字元，不包含全部或部分的使用者帳戶名稱，且至少包含下列四種字元類別中的三種：大寫字元、小寫字元、數位和在鍵盤上找到的符號（例如！、@、#）。  
   
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
 [建立系統管理使用者帳戶](Create-an-Administrative-User-Account.md)  
 [建立標準使用者帳戶](Create-a-Standard-User-Account.md)  
 [管理](Manage-User-Files.md)使用者檔案

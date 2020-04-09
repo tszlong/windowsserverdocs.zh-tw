@@ -1,7 +1,6 @@
 ---
 ms.assetid: c7f49a65-c3eb-4383-99d3-756aa8c79fc0
 title: 樹系設計模型
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 436bbc7038e9797d194f4b4a6ea65d88c0b8279a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 86ae51e9c315bf982db98c6d62c00f338deb05e8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402567"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822461"
 ---
 # <a name="forest-design-models"></a>樹系設計模型
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 您可以在 Active Directory 環境中套用下列三種樹系設計模型的其中一種：  
   

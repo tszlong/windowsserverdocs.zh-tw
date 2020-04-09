@@ -1,28 +1,22 @@
 ---
 title: diskcopy
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: 適用于 diskcopy 的 Windows 命令主題，它會將來源磁片磁碟機中的軟碟內容複寫到目的地磁片磁碟機中格式化或未格式化的磁片。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5fd21efa-52cc-4e70-a7fe-35125a435106
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/07/2018
-ms.openlocfilehash: 553a85ac4fd9b7708d7adc668be4e000b36a9346
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 675694503cab207f05fd6b48e0d17c23196f85d0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377825"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80845541"
 ---
 # <a name="diskcopy"></a>diskcopy
-
-
 
 將來源磁片磁碟機中的軟碟內容複寫到目的地磁片磁碟機中已格式化或未格式化的軟碟。 如果使用時不含參數，則**diskcopy**會使用來源磁片和目的地磁片的目前磁片磁碟機。
 
@@ -37,7 +31,7 @@ ms.locfileid: "71377825"
 diskcopy [<Drive1>: [<Drive2>:]] [/v]
 ```
 
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -84,9 +78,11 @@ diskcopy [<Drive1>: [<Drive2>:]] [/v]
 
 > [!NOTE]
 > 您不能使用**xcopy**來複製啟動磁片。
-> -   瞭解**diskcopy**結束代碼
 
-    The following table explains each exit code.  
+### <a name="understanding-diskcopy-exit-codes"></a>瞭解**diskcopy**結束代碼
+
+    The following table explains each exit code.
+    
     |結束代碼|描述|
     |---------|-----------|
     |0|複製操作成功|
@@ -96,7 +92,7 @@ diskcopy [<Drive1>: [<Drive2>:]] [/v]
 
     To process the exit codes that are returned by **diskcomp**, you can use the *ERRORLEVEL* environment variable on the **if** command line in a batch program.
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 若要將磁片磁碟機 B 中的磁碟複製到磁片磁碟機 A 中的磁片，請輸入：
 ```
@@ -106,6 +102,6 @@ diskcopy b: a:
 
 diskcopy a： a：
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

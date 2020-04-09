@@ -1,7 +1,6 @@
 ---
 ms.assetid: f0cbdd78-f5ae-47ff-b5d3-96faf4940f4a
 title: 設定替代登入識別碼
-description: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 11/14/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 026873e231628e93738cba096cfae44c8b053217
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 7e7a881a2e6bae499ed7d4713bd70a804c3412e6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948557"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816961"
 ---
 # <a name="configuring-alternate-login-id"></a>設定替代登入識別碼
 
@@ -36,7 +35,7 @@ Active Directory 同盟服務（AD FS）可讓使用 AD FS 的同盟應用程式
    在上述案例中，具有 AD FS 的替代識別碼可讓使用者登入 Azure AD，而不需要修改您的內部部署 Upn。 
 
 ## <a name="end-user-experience-with-alternate-login-id"></a>具有替代登入識別碼的終端使用者體驗
-使用者體驗會根據搭配替代登入識別碼使用的驗證方法而有所不同。 目前有三種不同的方式可以達到使用替代登入識別碼。  這些類型包括：
+使用者體驗會根據搭配替代登入識別碼使用的驗證方法而有所不同。 目前有三種不同的方式可以達到使用替代登入識別碼。  這些系統為：
 
 - **一般驗證（舊版）** -使用基本驗證通訊協定。
 - **新式驗證**-將以 ACTIVE DIRECTORY 驗證程式庫（ADAL）為基礎的登入帶入應用程式。 這可讓登入功能（例如多重要素驗證（MFA）、以 SAML 為基礎的協力廠商身分識別提供者）搭配 Office 用戶端應用程式、智慧卡和憑證型驗證。
@@ -126,20 +125,20 @@ Set-AdfsClaimsProviderTrust -TargetIdentifier "AD AUTHORITY" -AlternateLoginID $
 
 透過下列額外的設定，使用者體驗會大幅改善，而且您可以針對組織中的替代識別碼使用者，達到接近零的提示以進行驗證。
 
-##### <a name="step-1-update-to-required-office-version"></a>步驟 1。 更新為所需的 Office 版本
+##### <a name="step-1-update-to-required-office-version"></a>步驟 1. 更新為所需的 Office 版本
 Office 1712 版（組建無8827.2148）和更新版本已更新驗證邏輯，以處理替代識別碼案例。 若要利用新邏輯，用戶端電腦必須更新為 Office 1712 版（不含8827.2148）和以上版本。
 
-##### <a name="step-2-update-to-required-windows-version"></a>步驟 2。 更新為所需的 Windows 版本
+##### <a name="step-2-update-to-required-windows-version"></a>步驟 2. 更新為所需的 Windows 版本
 Windows 1709 和更新版本已更新驗證邏輯，以處理替代識別碼案例。 若要利用新邏輯，用戶端電腦必須更新為 Windows 1709 版和更高版本。
 
-##### <a name="step-3-configure-registry-for-impacted-users-using-group-policy"></a>步驟 3. 使用群組原則為受影響的使用者設定登錄
+##### <a name="step-3-configure-registry-for-impacted-users-using-group-policy"></a>步驟 3： 使用群組原則為受影響的使用者設定登錄
 Office 應用程式會依賴目錄系統管理員所推送的資訊來識別替代識別碼環境。 必須設定下列登錄機碼，以協助 office 應用程式使用替代識別碼來驗證使用者，而不會顯示任何額外的提示
 
-|要新增的 Regkey|Regkey 資料名稱、類型和值|Windows 7/8|Windows 10|說明|
+|要新增的 Regkey|Regkey 資料名稱、類型和值|Windows 7/8|Windows 10|描述|
 |-----|-----|-----|-----|-----|
-|HKEY_CURRENT_USER \Software\Microsoft\AuthN|DomainHint</br>REG_SZ</br>contoso.com|必要|必要|此 regkey 的值是組織租使用者中已驗證的自訂功能變數名稱。 例如，如果 Contoso.com 是租使用者 Contoso.onmicrosoft.com 中其中一個已驗證的自訂功能變數名稱，則 Contoso corp 可以在此 regkey 中提供 Contoso.com 的值。|
+|HKEY_CURRENT_USER \Software\Microsoft\AuthN|DomainHint</br>REG_SZ</br>contoso.com|必要項|必要項|此 regkey 的值是組織租使用者中已驗證的自訂功能變數名稱。 例如，如果 Contoso.com 是租使用者 Contoso.onmicrosoft.com 中其中一個已驗證的自訂功能變數名稱，則 Contoso corp 可以在此 regkey 中提供 Contoso.com 的值。|
 HKEY_CURRENT_USER \Software\Microsoft\Office\16.0\Common\Identity|EnableAlternateIdSupport</br>REG_DWORD</br>1|Outlook 2016 ProPlus 的必要|Outlook 2016 ProPlus 的必要|此 regkey 的值可以是 1/0，向 Outlook 應用程式表示它是否應該參與改良的替代識別碼驗證邏輯。|
-HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\contoso.com\sts|&#42;</br>REG_DWORD</br>1|必要|必要|此 regkey 可以用來將 STS 設定為網際網路設定中的信任區域。 標準 ADFS 部署建議將 ADFS 命名空間新增至 Internet Explorer 的近端內部網路區域|
+HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\contoso.com\sts|&#42;</br>REG_DWORD</br>1|必要項|必要項|此 regkey 可以用來將 STS 設定為網際網路設定中的信任區域。 標準 ADFS 部署建議將 ADFS 命名空間新增至 Internet Explorer 的近端內部網路區域|
 
 ## <a name="new-authentication-flow-after-additional-configuration"></a>其他設定之後的新驗證流程
 
@@ -185,7 +184,7 @@ HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\Z
 -   啟用時，[替代登入識別碼] 功能僅適用于 AD FS （SAML-P、WS-ADDRESSING、WS-TRUST 和 OAuth）支援的所有使用者名稱/密碼驗證通訊協定。
 
 
--   當執行 Windows 整合式驗證（WIA）時（例如，當使用者嘗試從內部網路存取已加入網域之電腦上的公司應用程式，且 AD FS 系統管理員已將驗證原則設定為使用適用于內部網路的 WIA）時，UPN isused用於驗證。 如果您已針對替代登入識別碼功能的信賴憑證者設定任何宣告規則，您應該確定這些規則在 WIA 案例中仍然有效。
+-   執行 Windows 整合式驗證（WIA）時（例如，當使用者嘗試從內部網路存取已加入網域之電腦上的公司應用程式，且 AD FS 系統管理員已將驗證原則設定為使用適用于內部網路的 WIA）、UPN isused 進行驗證。 如果您已針對替代登入識別碼功能的信賴憑證者設定任何宣告規則，您應該確定這些規則在 WIA 案例中仍然有效。
 
 -   啟用時，替代登入識別碼功能需要至少一個通用類別目錄伺服器，才能從 AD FS 伺服器連線到 AD FS 支援的每個使用者帳戶樹系。 無法連線到使用者帳戶樹系中的通用類別目錄伺服器，會導致 AD FS 回到使用 UPN。 根據預設，所有網域控制站都是通用類別目錄伺服器。
 
@@ -212,14 +211,14 @@ HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\Z
 
 
 
-|                       **錯誤案例**                        | **對登入體驗的影響** |                                                              **Event**                                                              |
+|                       **錯誤案例**                        | **對登入體驗的影響** |                                                              **發生**                                                              |
 |--------------------------------------------------------------|----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
 | 無法取得使用者物件的 SAMAccountName 值 |          登入失敗           |                  事件識別碼364，例外狀況訊息 MSIS8012：找不到使用者的 samAccountName： '{0}'。                   |
 |        無法存取 CanonicalName 屬性         |          登入失敗           |               事件識別碼364，例外狀況訊息 MSIS8013： CanonicalName：使用者的 '{0}'： '{1}' 格式不正確。                |
 |        在一個樹系中找到多個使用者物件        |          登入失敗           | 事件識別碼364，例外狀況訊息 MSIS8015：在樹系 '{1}' 中找到多個身分識別為 '{0}' 的使用者帳戶，具有身分識別： {2} |
 |   在多個樹系中找到多個使用者物件    |          登入失敗           |           事件識別碼364，例外狀況訊息 MSIS8014：在樹系中找到多個身分識別為 '{0}' 的使用者帳戶： {1}            |
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 [AD FS 操作](../../ad-fs/AD-FS-2016-Operations.md)
 
 

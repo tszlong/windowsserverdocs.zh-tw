@@ -1,28 +1,22 @@
 ---
-title: 啟動
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+title: start
+description: Start 的 Windows 命令主題，它會啟動個別的命令提示字元視窗來執行指定的程式或命令。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0173f9b3-5cd7-4edb-b01e-d02193b4fadc
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 48197b1bc1d1c9f91a6a35b5fb8aad81b229eb6b
-ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
+ms.openlocfilehash: 6ab8fc07923a2396a173803264d54a036983fb71
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76259083"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834071"
 ---
-# <a name="start"></a>啟動
-
-
+# <a name="start"></a>start
 
 啟動個別的 [命令提示字元] 視窗，以執行指定的程式或命令。
 
@@ -31,14 +25,14 @@ ms.locfileid: "76259083"
 ## <a name="syntax"></a>語法
 
 ```
-start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/low | /normal | /high | /realtime | /abovenormal | belownormal}] [/affinity <HexAffinity>] [/wait] [/elevate] [/b] [<Command> [<Parameter>... ] | <Program> [<Parameter>... ]]
+start [<Title>] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/low | /normal | /high | /realtime | /abovenormal | belownormal}] [/affinity <HexAffinity>] [/wait] [/elevate] [/b] [<Command> [<Parameter>... ] | <Program> [<Parameter>... ]]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
-|參數|說明|
+|參數|描述|
 |---------|-----------|
-|「\<標題 >」|指定要在 [命令提示字元] 視窗標題列中顯示的標題。|
+|\<標題 >|指定要在 [命令提示字元] 視窗標題列中顯示的標題。|
 |/d \<路徑 >|指定啟動目錄。|
 |/i|將 Cmd.exe 啟動環境傳遞至新的命令提示字元視窗。 如果未指定 **/i** ，則會使用目前的環境。|
 |/min \|/max|指定以最小化（ **/min**）或最大化（ **/max**）新的命令提示字元視窗。|
@@ -55,7 +49,7 @@ start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/lo
 ## <a name="remarks"></a>備註
 
 - 您可以藉由將檔案的名稱輸入為命令，以透過檔案關聯來執行非檔的檔案。
-- 當您執行的命令包含字串 "CMD" 做為第一個不含副檔名或路徑辨識符號的權杖時，"CMD" 會取代為 COMSPEC 變數的值。 這可防止使用者從目前目錄中挑選**cmd** 。
+- 當您執行的命令包含字串 CMD 做為第一個不含副檔名或路徑辨識符號的 token 時，CMD 會取代為 COMSPEC 變數的值。 這可防止使用者從目前目錄中挑選**cmd** 。
 - 當您執行32點陣圖形使用者介面（GUI）應用程式時， **cmd**不會等待應用程式結束，然後再返回命令提示字元。 如果您從命令腳本執行應用程式，就不會發生這種行為。
 - 當您執行使用第一個不含擴充功能之權杖的命令時，Cmd.exe 會使用 PATHEXT 環境變數的值來決定要尋找的延伸模組和順序。 PATHEXT 變數的預設值為：  
   ```
@@ -64,7 +58,7 @@ start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/lo
   請注意，語法與 PATH 變數相同，以分號分隔每個副檔名。
 - 當它搜尋可執行檔時，如果有任何延伸模組沒有相符專案，就會**開始**檢查名稱是否符合目錄名稱。 如果**有，就會開啟**該路徑上的 Explorer。
 
-## <a name="BKMK_examples"></a>範例
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 若要在命令提示字元中啟動 Myapp 程式，並繼續使用目前的命令提示字元視窗，請輸入：
 ```
@@ -75,6 +69,6 @@ start myapp
 start /max start /?
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

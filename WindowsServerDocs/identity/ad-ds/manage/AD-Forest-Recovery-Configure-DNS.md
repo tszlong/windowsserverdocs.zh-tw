@@ -1,6 +1,5 @@
 ---
 title: AD 樹系復原-設定 DNS 伺服器服務
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -8,12 +7,12 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 2c1f2f68509c9136735fb13e24c86a1da40660eb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 144a45f2a835d9cca60b5be5aac7569809c45b7c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369253"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824171"
 ---
 # <a name="ad-forest-recovery---configuring-the-dns-server-service"></a>AD 樹系復原-設定 DNS 伺服器服務
 
@@ -47,7 +46,7 @@ ms.locfileid: "71369253"
 1. 開啟伺服器管理員，按一下 [**工具**]，然後按一下 [ **DNS**]。
    ![DNS 伺服器](media/AD-Forest-Recovery-Configure-DNS/dns2.png)
 2. 為 DNS 伺服器上裝載的相同 DNS 功能變數名稱建立 DNS 區域，然後才會發生嚴重的故障。 如需詳細資訊，請參閱新增正向對應區域（[https://go.microsoft.com/fwlink/?LinkId=74574](https://go.microsoft.com/fwlink/?LinkId=74574)）。
-3. 在嚴重的故障之前，設定 DNS 資料。 例如：  
+3. 在嚴重的故障之前，設定 DNS 資料。 例如，  
 
    - 設定要儲存在 AD DS 中的 DNS 區域。 如需詳細資訊，請參閱變更區欄位型別（[https://go.microsoft.com/fwlink/?LinkId=74579](https://go.microsoft.com/fwlink/?LinkId=74579)）。
    - 設定網域控制站定位程式（DC 定位器）資源記錄的授權 DNS 區域，以允許安全的動態更新。 如需詳細資訊，請參閱只允許安全的動態更新（[https://go.microsoft.com/fwlink/?LinkId=74580](https://go.microsoft.com/fwlink/?LinkId=74580)）。
@@ -58,11 +57,11 @@ ms.locfileid: "71369253"
    > [!NOTE]
    > 只有在有可用的通用類別目錄伺服器時，才能使用安全動態更新。 
 
-   在命令提示字元中輸入下列命令，然後按 ENTER：  
+   在命令提示字元，輸入下列命令，然後按 ENTER：  
 
    **net stop netlogon**  
 
-6. 輸入下列命令，然後按 ENTER：  
+6. 輸入下列命令，然後按下 ENTER：  
 
    **net start netlogon**  
 

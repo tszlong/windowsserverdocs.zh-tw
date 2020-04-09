@@ -1,23 +1,24 @@
 ---
 title: Windows Server 2016/2019 中的跨網域叢集遷移
+description: 本文說明如何將 Windows Server 2019 叢集從一個網域移到另一個網域
 ms.prod: windows-server
-ms.manager: eldenc
+manager: eldenc
 ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
+ms.author: johnmar
 ms.date: 01/18/2019
-description: 本文說明如何將 Windows Server 2019 叢集從一個網域移到另一個網域
 ms.localizationpriority: medium
-ms.openlocfilehash: 68f49795124dedf0655726853a4d865686f6d697
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ba556b5a00f3932e2049135b177a7ad8bbceec9c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361415"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828291"
 ---
 # <a name="failover-cluster-domain-migration"></a>容錯移轉叢集網域遷移
 
-> 適用於：Windows Server 2019、Windows Server 2016
+> 適用于： Windows Server 2019、Windows Server 2016
 
 本主題提供將 Windows Server 容錯移轉叢集從一個網域移至另一個網域的總覽。
 
@@ -40,7 +41,7 @@ ms.locfileid: "71361415"
 
 在 Windows Server 2016 和更早版本中，叢集服務無法從某個網域移至另一個網域。  這是因為 Active Directory Domain Services 和所建立之虛擬名稱的相依性增加。   
 
-## <a name="options"></a>選項。
+## <a name="options"></a>選項
 
 為了進行這類移動，有兩個選項。
 
@@ -66,7 +67,7 @@ ms.locfileid: "71361415"
 
 在這兩個選項中，新的叢集都必須安裝所有叢集[感知應用程式](https://technet.microsoft.com/aa369082(v=vs.90))、驅動程式都是最新狀態，而且可能會進行測試，以確保所有元件都能正常執行。  如果也需要移動資料，這就是耗時的進程。
 
-## <a name="windows-server-2019"></a>Windows Server Standard 2012 R2
+## <a name="windows-server-2019"></a>Windows Server 2019
 
 在 Windows Server 2019 中，我們引進了跨叢集網域遷移功能。  因此，您可以輕鬆地完成上述案例，而且不再需要重建的需求。  
 
@@ -122,7 +123,7 @@ ms.locfileid: "71361415"
    New-ClusterNameAccount -Name CLUSTERNAME -Domain NEWDOMAINNAME.com -UpgradeVCOs
    ```
 
-    注意：如果您沒有任何其他具有網路名稱的群組（也就是僅有虛擬機器的 Hyper-v 叢集），則不需要-UpgradeVCOs 參數切換。
+    注意：如果您沒有任何其他具有網路名稱的群組（也就是僅含虛擬機器的 Hyper-v 叢集），則不需要-UpgradeVCOs 參數切換。
 
 9. 使用 Active Directory 的使用者和電腦來檢查新的網域，並確定已建立相關聯的電腦物件。 如果有，則將群組中的其餘資源上線。
 

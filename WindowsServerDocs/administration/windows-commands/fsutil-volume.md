@@ -9,15 +9,15 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: c4496cfec94823ae177bc6de4fac83dc977fb61d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 587ff48bd0af80667f9a336323641b87be808b1d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376703"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80843931"
 ---
 # <a name="fsutil-volume"></a>Fsutil volume
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7
+>適用于： Windows Server （半年通道）、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7
 
 卸載磁片區，或查詢硬碟以判斷硬碟上目前有多少可用空間，或哪些檔案正在使用特定的叢集。
 
@@ -34,21 +34,21 @@ fsutil volume [list]
 fsutil volume [querycluster] <VolumePath> <Cluster> [<Cluster>] … …
 ```
 
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |-------------|---------------|
 |allocationreport|顯示如何在指定磁片區上使用儲存體的相關資訊。|
 |\<VolumePath >|指定磁碟機號（後面接著冒號）。|
 |diskfree|查詢硬碟以判斷磁片上的可用空間量。|
-|卸載 - dismount|卸載磁片區。|
+|dismount|卸載磁片區。|
 |filelayout|顯示指定檔案的 NTFS 中繼資料。|
 |\<fileid >|指定檔案識別碼。|
 |list|列出系統上的所有磁片區。|
-|querycluster|尋找哪個檔案正在使用指定的叢集。 您可以使用**querycluster**參數指定多個叢集。<br /><br />此參數適用于：Windows Server 2008 R2 和 Windows 7。|
-|\<cluster >|指定邏輯群集編號（LCN）。|
+|querycluster|尋找哪個檔案正在使用指定的叢集。 您可以使用**querycluster**參數指定多個叢集。<p>此參數適用于： Windows Server 2008 R2 和 Windows 7。|
+|\<叢集 >|指定邏輯群集編號（LCN）。|
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name="BKMK_examples"></a>典型
 若要顯示已配置的叢集報告，請輸入：
 
 ```
@@ -87,8 +87,8 @@ fsutil volume list
 fsutil volume querycluster C: 50 0x2000
 ```
 
-#### <a name="additional-references"></a>其他參考資料
-[命令列語法關鍵](Command-Line-Syntax-Key.md)
+## <a name="additional-references"></a>其他參考資料
+- [命令列語法關鍵](command-line-syntax-key.md)
 
 [Fsutil](Fsutil.md)
 

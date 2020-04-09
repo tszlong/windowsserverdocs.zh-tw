@@ -5,15 +5,14 @@ manager: eldenc
 ms.author: cosdar
 ms.technology: storage-health-service
 ms.topic: article
-ms.assetid: ''
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: 11af69d1c6f32205b87ad4605edebacb59b0b710
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 913a596a46720718a165295345cb02e3e2baa1de
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369714"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827561"
 ---
 # <a name="health-service-faults"></a>健全狀況服務錯誤
 > 適用于： Windows Server 2019、Windows Server 2016
@@ -24,7 +23,7 @@ ms.locfileid: "71369714"
 
 每個錯誤都包含五個重要欄位：  
 
--   嚴重性
+-   Severity
 -   問題描述
 -   解決此問題的下一個建議步驟
 -   錯誤實體的識別資訊
@@ -72,7 +71,7 @@ Get-FileShare -Name <Name> | Debug-FileShare
 
 ## <a name="usage-in-net-and-c"></a>.NET 和中的使用方式C#
 
-### <a name="connect"></a>連線
+### <a name="connect"></a>連接
 
 為了查詢健全狀況服務，您必須建立叢集的**CimSession** 。 若要這麼做，您將需要一些只在完整 .NET 中提供的專案，這表示您無法直接從 web 或行動裝置應用程式進行這項操作。 這些程式碼範例將使用 C\#，這是最直接的此資料存取層選擇。
 
@@ -521,6 +520,6 @@ class FaultsObserver : IObserver
 >[!NOTE]
 > 存放裝置機箱組件 (如風扇、電源供應器和感應器) 的健康情況是衍生自 SCSI 機箱服務 (SES)。 如果您的廠商沒有提供這項資訊，「健全狀況服務」就無法顯示它。  
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 - [Windows Server 2016 中的健全狀況服務](health-service-overview.md)

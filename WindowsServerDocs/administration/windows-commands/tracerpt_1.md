@@ -1,28 +1,22 @@
 ---
 title: tracerpt
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: 適用于 tracerpt 的 Windows 命令主題，它會剖析事件追蹤記錄檔、由效能監視器產生的記錄檔，以及即時事件追蹤提供者。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: cb9eaf86-0ef6-4197-b6c8-9cca8a1d723c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1c8e85acc59383d0a027c8d5ec51e68942a76b85
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 17bed5b1cb084392ed3169ca963ce03c1ee2b0d2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385682"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80832681"
 ---
 # <a name="tracerpt"></a>tracerpt
-
-
 
 **Tracerpt**命令可以用來剖析事件追蹤記錄、由效能監視器產生的記錄檔，以及即時事件追蹤提供者。 它會產生傾印檔案、報表檔案和報表架構。
 
@@ -34,7 +28,7 @@ ms.locfileid: "71385682"
 tracerpt <[-l] <value [value [...]]>|-rt <session_name [session_name [...]]>> [options]
 ```
 
-## <a name="options"></a>選項。
+## <a name="options"></a>選項
 
 |              選項旗標               |                                                                    描述                                                                    |
 |----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -42,7 +36,7 @@ tracerpt <[-l] <value [value [...]]>|-rt <session_name [session_name [...]]>> [o
 |          -config \<檔案名 >           |                                                 載入包含命令選項的設定檔案。                                                  |
 |                   -y                   |                                                  對所有問題回答 [是] 而不提示。                                                   |
 |            -f \<XML\|HTML >             |                                                                  報表格式。                                                                   |
-|         \<-CSV\|.evtxXML>\|          |                                                         傾印格式，預設值為 XML。                                                          |
+|         -of \<CSV\|.EVTX\|XML >          |                                                         傾印格式，預設值為 XML。                                                          |
 |            -df \<filename >             |                                            建立 Microsoft 特定的計數/報告架構檔案。                                            |
 |            -int \<filename >            |                                            將解讀的事件結構傾印到指定的檔案。                                            |
 |                  -rts                  |                        報告事件追蹤標頭中的原始時間戳記。 只能與-o、非報表或-summary 搭配使用。                         |
@@ -55,18 +49,18 @@ tracerpt <[-l] <value [value [...]]>|-rt <session_name [session_name [...]]>> [o
 |          -summary [filename]           |                                  產生摘要報告文字檔。 如果未指定，則為 Filename 的摘要 .txt。                                   |
 |             -o [filename]              |                                      產生文字輸出檔案。 如果未指定，則為檔案名 dumpfile.xml。                                      |
 |           -report [filename]           |                                  產生文字輸出報告檔案。 如果未指定，則為 Filename，其為工作負載 .xml。                                   |
-|                  -lr                   |                        指定「較不嚴格」。 這會針對不符合事件架構的事件使用最佳做法。                         |
+|                  -lr                   |                        指定較少的限制。 這會針對不符合事件架構的事件使用最佳做法。                         |
 |           -export [filename]           |                                  產生事件架構匯出檔案。 如果未指定 Filename，則為 schema. man。                                   |
-|       [-l] \<value [value [...]]>        |                                                   指定要處理的事件追蹤記錄檔。                                                    |
+|       [-l] \<值 [值 [...]]>        |                                                   指定要處理的事件追蹤記錄檔。                                                    |
 | -rt \<session_name [session_name [...]]> |                                                指定即時事件追蹤會話資料來源。                                                |
 
-## <a name="BKMK_EXAMPLES"></a>典型
+## <a name="examples"></a><a name=BKMK_EXAMPLES></a>典型
 
 - 這個範例會根據**logfile1**和**logfile2**這兩個事件記錄檔建立報表，並以 xml 格式建立傾印檔案**logdump** 。  
   ```
   tracerpt logfile1.etl logfile2.etl -o logdump.xml -of XML
   ```  
-- 這個範例會根據事件記錄檔 **.etl**建立報告，以 xml 格式建立傾印檔案**logdmp** ，使用最佳的方式來識別不在架構中的事件，產生摘要報告檔案**logdump**，並產生報表檔案**logrpt**。  
+- 這個範例會根據事件記錄檔 **.etl**建立報告，以 xml 格式建立傾印檔案**logdmp** ，使用最佳的方式來識別不在架構中的事件，產生摘要報告檔案**logdump**，並產生報告檔案**logrpt**。  
   ```
   tracerpt logfile.etl -o logdmp.xml -of XML -lr -summary logdmp.txt -report logrpt.xml
   ```  
@@ -78,7 +72,7 @@ tracerpt <[-l] <value [value [...]]>|-rt <session_name [session_name [...]]>> [o
   ```
   tracerpt logfile.etl counterfile.blg -report logrpt.xml -df schema.xml
   ```  
-- 此範例會讀取即時事件追蹤會話「NT 核心記錄器」，並以 CSV 格式產生傾印檔案**logfile。**  
+- 此範例會讀取即時事件追蹤會話 NT 核心記錄器，並以 CSV 格式產生傾印檔案**logfile。**  
   ```
-  tracerpt -rt "NT Kernel Logger" -o logfile.csv -of CSV
+  tracerpt -rt NT Kernel Logger -o logfile.csv -of CSV
   ```

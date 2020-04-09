@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 82b0035075c981d123ab3b90d56768940f65558e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dd3cc1c112560e77d0ab166ffb10a677b62f32e8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391106"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825481"
 ---
 # <a name="install-a-windows-server-2012-active-directory-read-only-domain-controller-rodc-level-200"></a>安裝 Windows Server 2012 Active Directory 唯讀網域控制站 (RODC) (等級 200)
 
@@ -33,12 +33,12 @@ ms.locfileid: "71391106"
   
 ![安裝 RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/adds_stagedcreation.png)  
   
-## <a name="BKMK_StagePS"></a>階段 RODC Windows PowerShell  
+## <a name="stage-rodc-windows-powershell"></a><a name=BKMK_StagePS></a>階段 RODC Windows PowerShell  
   
 |||  
 |-|-|  
 |**ADDSDeployment Cmdlet**|引數 (**粗體**的引數是必要的。 *斜體*的引數可以使用 Windows PowerShell 或 [AD DS 設定精靈] 來指定。)|  
-|Add-addsreadonlydomaincontrolleraccount|-SkipPreChecks<br /><br />***-DomainControllerAccountName***<br /><br />***-DomainName***<br /><br />***-SiteName***<br /><br />*-AllowPasswordReplicationAccountName*<br /><br />***-Credential***<br /><br />*-DelegatedAdministratorAccountName*<br /><br />*-DenyPasswordReplicationAccountName*<br /><br />*-NoGlobalCatalog*<br /><br />*-InstallDNS*<br /><br />-ReplicationSourceDC|  
+|Add-addsreadonlydomaincontrolleraccount|-SkipPreChecks<p>***-DomainControllerAccountName***<p>***-DomainName***<p>***-SiteName***<p>*-AllowPasswordReplicationAccountName*<p>***-Credential***<p>*-DelegatedAdministratorAccountName*<p>*-DenyPasswordReplicationAccountName*<p>*-NoGlobalCatalog*<p>*-InstallDNS*<p>-ReplicationSourceDC|  
   
 > [!NOTE]  
 > 當您不是以 Domain Admins 群組成員的身分登入時，才需要 **-credential** 引數。  
@@ -48,17 +48,17 @@ ms.locfileid: "71391106"
   
 ![安裝 RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/adds_stageddeploy_beta1.png)  
   
-## <a name="BKMK_AttachPS"></a>附加 RODC Windows PowerShell  
+## <a name="attach-rodc-windows-powershell"></a><a name=BKMK_AttachPS></a>附加 RODC Windows PowerShell  
   
 |||  
 |-|-|  
 |**ADDSDeployment Cmdlet**|引數 (**粗體**的引數是必要的。 *斜體*的引數可以使用 Windows PowerShell 或 [AD DS 設定精靈] 來指定。)|  
-|Install-AddsDomaincontroller|-SkipPreChecks<br /><br />***-DomainName***<br /><br />*-SafeModeAdministratorPassword*<br /><br />*-ApplicationPartitionsToReplicate*<br /><br />*-CreateDNSDelegation*<br /><br />***-Credential***<br /><br />-CriticalReplicationOnly<br /><br />*-DatabasePath*<br /><br />*-DNSDelegationCredential*<br /><br />*-InstallationMediaPath*<br /><br />*-LogPath*<br /><br />-Norebootoncompletion<br /><br />*-ReplicationSourceDC*<br /><br />*-SystemKey*<br /><br />*-SYSVOLPath*<br /><br />***-UseExistingAccount***|  
+|Install-AddsDomaincontroller|-SkipPreChecks<p>***-DomainName***<p>*-SafeModeAdministratorPassword*<p>*-ApplicationPartitionsToReplicate*<p>*-CreateDNSDelegation*<p>***-Credential***<p>-CriticalReplicationOnly<p>*-DatabasePath*<p>*-DNSDelegationCredential*<p>*-InstallationMediaPath*<p>*-LogPath*<p>-Norebootoncompletion<p>*-ReplicationSourceDC*<p>*-SystemKey*<p>*-SYSVOLPath*<p>***-UseExistingAccount***|  
   
 > [!NOTE]  
 > 當您不是以 Domain Admins 群組成員的身分登入時，才需要 **-credential** 引數。  
   
-## <a name="staging"></a>執行  
+## <a name="staging"></a>預備環境  
 ![安裝 RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_PreCreateRODC.png)  
   
 開啟 [Active Directory 管理中心] (**Dsac.exe**) 以執行唯讀網域控制站電腦帳戶的執行操作 。 按一下瀏覽窗格中的網域名稱。 按兩下管理清單中的 [網域控制站]。 按一下工作窗格中的 [預先建立唯讀網域控制站帳戶]。  
@@ -76,7 +76,7 @@ Add-addsreadonlydomaincontrolleraccount
   
 ```  
   
-### <a name="welcome"></a>歡迎  
+### <a name="welcome"></a>Welcome  
 ![安裝 RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_WelcomeStage1.png)  
   
 [歡迎使用 Active Directory 網域服務安裝精靈] 對話方塊有一個名為 [使用進階模式安裝] 的選項。 選取此選項，然後按 [下一步] 會顯示密碼複寫原則選項。 清除此選項可使用密碼複寫原則選項的預設值 (本節稍後將進一步詳細探討)。  
@@ -84,7 +84,7 @@ Add-addsreadonlydomaincontrolleraccount
 ### <a name="network-credentials"></a>網路認證  
 ![安裝 RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_Stage1Creds.png)  
   
-[網路認證] 對話方塊中的網域名稱選項會顯示 Active Directory 管理中心預設的目標網域。 預設會使用您目前的認證。 如果它們未包含 Domain Admins 群組中的成員資格，請按一下 [備用認證]，再按一下 [設定] ，以提供精靈屬於 Domain Admins 成員的使用者名稱密碼。  
+[網路認證] 對話方塊中的網域名稱選項會顯示 Active Directory 管理中心預設的目標網域。 預設會使用您目前的認證。 如果它們未包含 Domain Admins 群組中的成員資格，請按一下 [備用認證]，再按一下 [設定]，以提供精靈屬於 Domain Admins 成員的使用者名稱密碼。  
   
 對等的 ADDSDeployment Windows PowerShell 引數為：  
   
@@ -94,14 +94,14 @@ Add-addsreadonlydomaincontrolleraccount
   
 請記住，暫存系統是 Windows Server 2008 R2 的直接連接埠，並不提供新的 Adprep 功能。 如果您計劃部署執行的 RODC 帳戶，您必須先在該網域部署未執行的 RODC 以使自動 rodcprep 作業執行，或是先手動執行 adprep.exe /rodcprep。  
   
-否則，您會收到「因為尚未執行 " adprep /rodcprep" ，所以無法在這個網域安裝唯讀網域控制站」錯誤。  
+否則，您將會收到錯誤，因為 adprep/rodcprep 尚未執行，所以您將無法在此網域中安裝唯讀網域控制站。  
   
 ![安裝 RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_RODCPrepNotRunError.png)  
   
 ### <a name="specify-the-computer-name"></a>指定電腦名稱  
 ![安裝 RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_Stage1CompName.png)  
   
-[指定電腦名稱] 對話方塊會要求您輸入不存在的網域控制站的單一標籤 [電腦名稱] 。 您設定的網域控制站和稍後連結至此帳戶的網域控制站必須是相同名稱，否則升級作業將無法偵測執行的帳戶。  
+[指定電腦名稱] 對話方塊會要求您輸入不存在的網域控制站的單一標籤 [電腦名稱]。 您設定的網域控制站和稍後連結至此帳戶的網域控制站必須是相同名稱，否則升級作業將無法偵測執行的帳戶。  
   
 對等的 ADDSDeployment Windows PowerShell 引數為：  
   
@@ -163,7 +163,7 @@ Add-addsreadonlydomaincontrolleraccount
 ### <a name="delegation-of-rodc-installation-and-administration"></a>RODC 安裝與管理的委派  
 ![安裝 RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_Stage1DelegateAdmin.png)  
   
-[RODC 安裝與管理的委派] 對話方塊可讓您設定使用者或設定包含可將伺服器連結至 RODC 電腦帳戶的群組。 按一下 [設定] 以瀏覽網域的使用者或群組。 在此對話方塊中指定的使用者或群組會獲得 RODC 的本機系統管理權限。 指定的使用者或指定群組的成員可以在 RODC 上，以與電腦的 Administrators 群組相同的許可權來執行作業。 他們 *不是* Domain Admins 群組的成員或網域內建的 Administrators 群組的成員。  
+[RODC 安裝與管理的委派] 對話方塊可讓您設定使用者或設定包含可將伺服器連結至 RODC 電腦帳戶的群組。 按一下 [設定] 以瀏覽網域的使用者或群組。 在此對話方塊中指定的使用者或群組會獲得 RODC 的本機系統管理權限。 指定的使用者或指定群組的成員可以在 RODC 上，以與電腦的 Administrators 群組相同的許可權來執行作業。 他們*不是* Domain Admins 群組的成員或網域內建的 Administrators 群組的成員。  
   
 使用這個選項可委派分公司的管理工作，而不需要將分公司系統管理員成員資格授與 Domain Admins 群組。 委派 RODC 管理工作不是必要的。  
   
@@ -205,7 +205,7 @@ RODC 作業階段會在 Active Directory 中建立 RODC 電腦帳戶。 Active D
 ![安裝 RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_Unoccupied.png)  
   
 > [!IMPORTANT]  
-> 要將伺服器連結至唯讀的網域控制站電腦帳戶，已不再需要 Active Directory 管理中心。 使用伺服器管理員和 Active Directory 網域服務設定精靈或 ADDSDeployment Windows PowerShell 模組 Cmdlet **Install-AddsDomainController** ，即可將新的 RODC 連結至其執行的帳戶。 除了執行的 RODC 電腦帳戶包含您執行 RODC 電腦帳戶時決定的設定選項以外，步驟類似於將新的可寫入網域控制站加入現有的網域。  
+> 要將伺服器連結至唯讀的網域控制站電腦帳戶，已不再需要 Active Directory 管理中心。 使用伺服器管理員和 Active Directory 網域服務設定精靈或 ADDSDeployment Windows PowerShell 模組 Cmdlet **Install-AddsDomainController**，即可將新的 RODC 連結至其執行的帳戶。 除了執行的 RODC 電腦帳戶包含您執行 RODC 電腦帳戶時決定的設定選項以外，步驟類似於將新的可寫入網域控制站加入現有的網域。  
   
 ## <a name="attaching"></a>連結  
   
@@ -229,10 +229,10 @@ Install-AddsDomainController
 ### <a name="domain-controller-options"></a>網域控制站選項  
 ![安裝 RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_Stage2DCOptions.png)  
   
-[網域控制站選項] 頁面顯示新網域控制站的網域控制站選項。 當這個頁面載入時，Active Directory 網域服務設定精靈會將 LDAP 查詢傳送到現有的網域控制站，以檢查是否有未使用的帳戶。 如果查詢找到與目前電腦共用相同名稱的未使用網域控制站電腦帳戶，則此 wizard 會在頁面頂端顯示一個參考用訊息，其中會讀取「**預先建立的 RODC 帳戶，符合目錄中存在的目標伺服器名稱。選擇要使用這個現有的 RODC 帳戶或重新安裝此網域控制站**。」 精靈會使用 [使用現有的 RODC 帳戶] 做為預設設定。  
+[網域控制站選項] 頁面顯示新網域控制站的網域控制站選項。 當這個頁面載入時，Active Directory 網域服務設定精靈會將 LDAP 查詢傳送到現有的網域控制站，以檢查是否有未使用的帳戶。 如果查詢找到與目前電腦共用相同名稱的未使用網域控制站電腦帳戶，則嚮導會在頁面頂端顯示一個參考用訊息，其中會讀取**與目錄中存在的目標伺服器名稱相符的預先建立 RODC 帳戶。選擇要使用這個現有的 RODC 帳戶，或重新安裝此網域控制站**。 精靈會使用 [使用現有的 RODC 帳戶] 做為預設設定。  
   
 > [!IMPORTANT]  
-> 當網域控制站發生實體問題而無法回復功能時，您可以使用 [重新安裝此網域控制站] 。 這可節省設定取代網域控制站的時間，因為能在 Active Directory 中保留網域控制站電腦帳戶與物件中繼資料。 使用 *相同的名稱*安裝新的電腦，並將它升級為網域中的網域控制站。 如果您從 Active Directory 移除網域控制站物件的中繼資料（中繼資料清除），[**重新安裝此網域控制站**] 選項就無法使用。  
+> 當網域控制站發生實體問題而無法回復功能時，您可以使用 [重新安裝此網域控制站]。 這可節省設定取代網域控制站的時間，因為能在 Active Directory 中保留網域控制站電腦帳戶與物件中繼資料。 使用*相同的名稱*安裝新的電腦，並將它升級為網域中的網域控制站。 如果您從 Active Directory 移除網域控制站物件的中繼資料（中繼資料清除），[**重新安裝此網域控制站**] 選項就無法使用。  
   
 當您將伺服器連結至 RODC 電腦帳戶時，無法設定網域控制站選項。 您要在建立執行的 RODC 電腦帳戶時設定網域控制站選項。  
   
@@ -265,7 +265,7 @@ Install-AddsDomainController
 例如，您可以使用 **Read-Host** Cmdlet 手動提示輸入密碼，提示使用者輸入安全字串：  
   
 ```  
--safemodeadministratorpassword (read-host -prompt "Password:" -assecurestring)  
+-safemodeadministratorpassword (read-host -prompt Password: -assecurestring)  
   
 ```  
   
@@ -275,14 +275,14 @@ Install-AddsDomainController
 您也可以提供轉換的純文字變數當做安全字串，不過我們不鼓勵這種做法。  
   
 ```  
--safemodeadministratorpassword (convertto-securestring "Password1" -asplaintext -force)  
+-safemodeadministratorpassword (convertto-securestring Password1 -asplaintext -force)  
 ```  
   
-最後，您可以將模糊化密碼儲存到檔案中以在稍後重複使用，而不顯示純文字密碼。 例如：  
+最後，您可以將模糊化密碼儲存到檔案中以在稍後重複使用，而不顯示純文字密碼。 例如，  
   
 ```  
-$file = "c:\pw.txt"  
-$pw = read-host -prompt "Password:" -assecurestring  
+$file = c:\pw.txt  
+$pw = read-host -prompt Password: -assecurestring  
 $pw | ConvertFrom-SecureString | Set-Content $file  
   
 -safemodeadministratorpassword (Get-Content $File | ConvertTo-SecureString)  
@@ -299,8 +299,9 @@ $pw | ConvertFrom-SecureString | Set-Content $file
   
 您也可以使用「從媒體安裝」(IFM) 選項，使用備份的媒體來安裝網域控制站。 選取 [從媒體安裝] 核取方塊時會提供瀏覽選項，您必須按一下 [驗證] 以確保提供的路徑是有效的媒體。
 
-IFM 來源的指導方針：• IFM 選項所使用的媒體是使用具有相同作業系統版本的另一個現有 Windows Server 網域控制站的 Windows Server Backup 或 Ntdsutil.exe 所建立。 例如，您無法使用 Windows Server 2008 R2 或舊版作業系統來建立 Windows Server 2012 網域控制站的媒體。
-• IFM 來源資料應該來自可寫入的網域控制站。 雖然在技術上，來自 RODC 的來源會用來建立新的 RODC，但 IFM 來源 RODC 不會複寫錯誤的正面複寫警告。
+IFM 來源的指導方針：
+*    IFM 選項使用的媒體，是使用具有相同作業系統版本的另一個現有 Windows Server 網域控制站的 Windows Server Backup 或 Ntdsutil.exe 所建立。 例如，您無法使用 Windows Server 2008 R2 或舊版作業系統來建立 Windows Server 2012 網域控制站的媒體。
+*    IFM 來源資料應該來自可寫入的網域控制站。 雖然在技術上，來自 RODC 的來源會用來建立新的 RODC，但 IFM 來源 RODC 不會複寫錯誤的正面複寫警告。
 
 如需 IFM 變更的相關資訊，請參閱[透過媒體變更的 Ntdsutil.exe 安裝](../../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_IFM)。 如果使用以 SYSKEY 保護的媒體，伺服器管理員在驗證期間會提示輸入映像的密碼。 
   
@@ -328,7 +329,7 @@ IFM 來源的指導方針：• IFM 選項所使用的媒體是使用具有相�
 ### <a name="review-options-and-view-script"></a>檢閱選項和檢視指令碼  
 ![安裝 RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_Stage2ReviewOptions.png)  
   
-[檢閱選項] 頁面能讓您驗證設定，並確保它們符合您的需求，然後才開始安裝。 這不是使用 [伺服器管理員] 停止安裝的最後機會。 這個頁面只是讓您檢閱並確認設定，然後才繼續設定。 [伺服器管理員] 中的 [檢閱選項] 頁面也提供選用的 [檢視指令碼] 按鈕，用來建立一個包含目前的 ADDSDeployment 設定的 Unicode 文字檔，以便做為一個 Windows PowerShell 指令碼。 這樣可以讓您將 [伺服器管理員] 的圖形介面當作 Windows PowerShell 部署工作室一樣操作。 使用 [Active Directory 網域服務設定精靈] 來設定選項、匯出設定，然後取消精靈。 這個程序會建立一個有效且合乎語義的正確範例，以備日後修改或直接使用。 例如：  
+[檢閱選項] 頁面能讓您驗證設定，並確保它們符合您的需求，然後才開始安裝。 這不是使用 [伺服器管理員] 停止安裝的最後機會。 這個頁面只是讓您檢閱並確認設定，然後才繼續設定。 [伺服器管理員] 中的 [檢閱選項] 頁面也提供選用的 [檢視指令碼] 按鈕，用來建立一個包含目前的 ADDSDeployment 設定的 Unicode 文字檔，以便做為一個 Windows PowerShell 指令碼。 這樣可以讓您將 [伺服器管理員] 的圖形介面當作 Windows PowerShell 部署工作室一樣操作。 使用 [Active Directory 網域服務設定精靈] 來設定選項、匯出設定，然後取消精靈。 這個程序會建立一個有效且合乎語義的正確範例，以備日後修改或直接使用。 例如，  
   
 ```  
 #  
@@ -339,10 +340,10 @@ Import-Module ADDSDeployment
 Install-ADDSDomainController `  
 -Credential (Get-Credential) `  
 -CriticalReplicationOnly:$false `  
--DatabasePath "C:\Windows\NTDS" `  
--DomainName "corp.contoso.com" `  
--LogPath "C:\Windows\NTDS" `  
--SYSVOLPath "C:\Windows\SYSVOL" `  
+-DatabasePath C:\Windows\NTDS `  
+-DomainName corp.contoso.com `  
+-LogPath C:\Windows\NTDS `  
+-SYSVOLPath C:\Windows\SYSVOL `  
 -UseExistingAccount:$true `  
 -Norebootoncompletion:$false  
 -Force:$true  
@@ -356,14 +357,14 @@ Install-ADDSDomainController `
   
 ![安裝 RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_Stage2WhatIf.png)  
   
-### <a name="prerequisites-check"></a>先決條件檢查  
+### <a name="prerequisites-check"></a>必要條件檢查  
 ![安裝 RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_Stage2PrereqCheck.png)  
   
 [先決條件檢查] 是 AD DS 網域設定中的新功能。 這個新階段會驗證伺服器設定是否能夠支援新的 AD DS 樹系。  
   
 安裝新的樹系根網域時，[伺服器管理員] 的 [Active Directory 網域服務設定精靈] 會叫用一系列序列化的模組化測試。 這些測試會提醒您建議的修復選項。 您可以視需要執行多次測試。 必須通過所有的先決條件測試，網域控制站安裝程序才能繼續。  
   
-[先決條件檢查] 也會提供諸如影響舊版作業系統之安全性變更的相關資訊。 如需先決條件檢查的詳細資訊，請參閱 [Prerequisite Checking](../../../ad-ds/manage/AD-DS-Simplified-Administration.md#BKMK_PrereuisiteChecking)。  
+[先決條件檢查] 也會提供諸如影響舊版作業系統之安全性變更的相關資訊。 如需先決條件檢查的詳細資訊，請參閱[先決條件檢查](../../../ad-ds/manage/AD-DS-Simplified-Administration.md#BKMK_PrereuisiteChecking)。  
   
 使用 [伺服器管理員] 時無法略過 [先決條件檢查] ，但您可以在使用 AD DS 部署 Cmdlet 時使用下列引數略過該程序：  
   
@@ -393,9 +394,9 @@ Install-addsdomaincontroller
   
 ```  
   
-如需必要引數和選擇性引數的詳細資訊，請參閱 [Attach RODC Windows PowerShell](../../../ad-ds/deploy/RODC/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-.md#BKMK_AttachPS) 。  
+如需必要引數和選擇性引數的詳細資訊，請參閱[連結 RODC Windows PowerShell](../../../ad-ds/deploy/RODC/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-.md#BKMK_AttachPS)。  
   
-**Install-addsdomaincontroller** Cmdlet 只有兩個階段 (先決條件檢查與安裝)。 下列兩個圖形顯示使用 **-domainname**、 **-useexistingaccount**及 **-credential**的基本必要引數的安裝階段。 請注意 **Install-ADDSDomainController** 如何提醒您升級會自動將伺服器重新開機 (和伺服器管理員一樣)：  
+**Install-addsdomaincontroller** Cmdlet 只有兩個階段 (先決條件檢查與安裝)。 下列兩個圖形顯示使用 **-domainname**、 **-useexistingaccount** 及 **-credential** 的基本必要引數的安裝階段。 請注意 **Install-ADDSDomainController** 如何提醒您升級會自動將伺服器重新開機 (和伺服器管理員一樣)：  
   
 ![安裝 RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_PSStage2.png)  
   
@@ -421,7 +422,7 @@ Install-addsdomaincontroller
 |||  
 |-|-|  
 |**ADDSDeployment Cmdlet**|引數 (**粗體**的引數是必要的。 *斜體*的引數可以使用 Windows PowerShell 或 [AD DS 設定精靈] 來指定。)|  
-|Install-AddsDomainController|-SkipPreChecks<br /><br />***-DomainName***<br /><br />*-SafeModeAdministratorPassword*<br /><br />***-SiteName***<br /><br />*-ApplicationPartitionsToReplicate*<br /><br />*-CreateDNSDelegation*<br /><br />***-Credential***<br /><br />*-CriticalReplicationOnly*<br /><br />*-DatabasePath*<br /><br />*-DNSDelegationCredential*<br /><br />-DNSOnNetwork<br /><br />*-InstallationMediaPath*<br /><br />*-InstallDNS*<br /><br />*-LogPath*<br /><br />-MoveInfrastructureOperationMasterRoleIfNecessary<br /><br />*-NoGlobalCatalog*<br /><br />-Norebootoncompletion<br /><br />*-ReplicationSourceDC*<br /><br />-SkipAutoConfigureDNS<br /><br />*-SystemKey*<br /><br />*-SYSVOLPath*<br /><br />*-AllowPasswordReplicationAccountName*<br /><br />*-DelegatedAdministratorAccountName*<br /><br />*-DenyPasswordReplicationAccountName*<br /><br />***-ReadOnlyReplica***|  
+|Install-AddsDomainController|-SkipPreChecks<p>***-DomainName***<p>*-SafeModeAdministratorPassword*<p>***-SiteName***<p>*-ApplicationPartitionsToReplicate*<p>*-CreateDNSDelegation*<p>***-Credential***<p>*-CriticalReplicationOnly*<p>*-DatabasePath*<p>*-DNSDelegationCredential*<p>-DNSOnNetwork<p>*-InstallationMediaPath*<p>*-InstallDNS*<p>*-LogPath*<p>-MoveInfrastructureOperationMasterRoleIfNecessary<p>*-NoGlobalCatalog*<p>-Norebootoncompletion<p>*-ReplicationSourceDC*<p>-SkipAutoConfigureDNS<p>*-SystemKey*<p>*-SYSVOLPath*<p>*-AllowPasswordReplicationAccountName*<p>*-DelegatedAdministratorAccountName*<p>*-DenyPasswordReplicationAccountName*<p>***-ReadOnlyReplica***|  
   
 > [!NOTE]  
 > 當您不是以 Domain Admins 群組成員的身分登入時，才需要 **-credential** 引數。  
@@ -455,7 +456,7 @@ Install-AddsDomainController
 > [!IMPORTANT]  
 > 如果伺服器不屬於某個 Active Directory 子網路且有一個以上的 Active Directory 站台，則不會選取任何站台，而且會等到您從清單選擇一個站台後，[下一步] 按鈕才可以使用。  
   
-指定的 [目錄服務還原模式密碼] 必須遵守套用至伺服器的密碼原則。 請一律選擇強式的複雜密碼或最好是複雜密碼。網域控制站選項 ADDSDeployment Windows PowerShell 引數為：  
+指定的 [目錄服務還原模式密碼] 必須遵守套用至伺服器的密碼原則。 請一律選擇強式的複雜密碼或最好是複雜密碼。網域控制站選項ADDSDeployment Windows PowerShell 引數為：  
   
 ```  
 -UseExistingAccount <{$true | $false}>  
@@ -482,7 +483,7 @@ Install-AddsDomainController
 例如，您可以使用 **Read-Host** Cmdlet 手動提示輸入密碼，提示使用者輸入安全字串：  
   
 ```  
--safemodeadministratorpassword (read-host -prompt "Password:" -assecurestring)  
+-safemodeadministratorpassword (read-host -prompt Password: -assecurestring)  
   
 ```  
   
@@ -492,14 +493,14 @@ Install-AddsDomainController
 您也可以提供轉換的純文字變數當做安全字串，不過我們不鼓勵這種做法。  
   
 ```  
--safemodeadministratorpassword (convertto-securestring "Password1" -asplaintext -force)  
+-safemodeadministratorpassword (convertto-securestring Password1 -asplaintext -force)  
 ```  
   
-最後，您可以將模糊化密碼儲存到檔案中以在稍後重複使用，而不顯示純文字密碼。 例如：  
+最後，您可以將模糊化密碼儲存到檔案中以在稍後重複使用，而不顯示純文字密碼。 例如，  
   
 ```  
-$file = "c:\pw.txt"  
-$pw = read-host -prompt "Password:" -assecurestring  
+$file = c:\pw.txt  
+$pw = read-host -prompt Password: -assecurestring  
 $pw | ConvertFrom-SecureString | Set-Content $file  
   
 -safemodeadministratorpassword (Get-Content $File | ConvertTo-SecureString)  
@@ -556,8 +557,9 @@ $pw | ConvertFrom-SecureString | Set-Content $file
   
 您也可以使用「從媒體安裝」(IFM) 選項，使用備份的媒體來安裝網域控制站。 選取 [從媒體安裝] 核取方塊時會提供瀏覽選項，您必須按一下 [驗證] 以確保提供的路徑是有效的媒體。
 
-IFM 來源的指導方針：• IFM 選項所使用的媒體是使用具有相同作業系統版本的另一個現有 Windows Server 網域控制站的 Windows Server Backup 或 Ntdsutil.exe 所建立。 例如，您無法使用 Windows Server 2008 R2 或舊版作業系統來建立 Windows Server 2012 網域控制站的媒體。
-• IFM 來源資料應該來自可寫入的網域控制站。 雖然在技術上，來自 RODC 的來源會用來建立新的 RODC，但 IFM 來源 RODC 不會複寫錯誤的正面複寫警告。
+IFM 來源的指導方針：
+*    IFM 選項使用的媒體，是使用具有相同作業系統版本的另一個現有 Windows Server 網域控制站的 Windows Server Backup 或 Ntdsutil.exe 所建立。 例如，您無法使用 Windows Server 2008 R2 或舊版作業系統來建立 Windows Server 2012 網域控制站的媒體。
+*    IFM 來源資料應該來自可寫入的網域控制站。 雖然在技術上，來自 RODC 的來源會用來建立新的 RODC，但 IFM 來源 RODC 不會複寫錯誤的正面複寫警告。
 
 如需 IFM 變更的相關資訊，請參閱[透過媒體變更的 Ntdsutil.exe 安裝](../../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_IFM)。 如果使用以 SYSKEY 保護的媒體，伺服器管理員在驗證期間會提示輸入映像的密碼。
   
@@ -607,7 +609,7 @@ IFM 來源的指導方針：• IFM 選項所使用的媒體是使用具有相�
   
 [檢閱選項] 頁面能讓您驗證設定，並確保它們符合您的需求，然後才開始安裝。 這不是使用 [伺服器管理員] 停止安裝的最後機會。 這個頁面只是讓您檢閱並確認設定，然後才繼續設定。  
   
-[伺服器管理員] 中的 [檢閱選項] 頁面也提供選用的 [檢視指令碼] 按鈕，用來建立一個包含目前的 ADDSDeployment 設定的 Unicode 文字檔，以便做為一個 Windows PowerShell 指令碼。 這樣可以讓您將 [伺服器管理員] 的圖形介面當作 Windows PowerShell 部署工作室一樣操作。 使用 [Active Directory 網域服務設定精靈] 來設定選項、匯出設定，然後取消精靈。 這個程序會建立一個有效且合乎語義的正確範例，以備日後修改或直接使用。 例如：  
+[伺服器管理員] 中的 [檢閱選項] 頁面也提供選用的 [檢視指令碼] 按鈕，用來建立一個包含目前的 ADDSDeployment 設定的 Unicode 文字檔，以便做為一個 Windows PowerShell 指令碼。 這樣可以讓您將 [伺服器管理員] 的圖形介面當作 Windows PowerShell 部署工作室一樣操作。 使用 [Active Directory 網域服務設定精靈] 來設定選項、匯出設定，然後取消精靈。 這個程序會建立一個有效且合乎語義的正確範例，以備日後修改或直接使用。 例如，  
   
 ```  
 #  
@@ -616,18 +618,18 @@ IFM 來源的指導方針：• IFM 選項所使用的媒體是使用具有相�
   
 Import-Module ADDSDeployment  
 Install-ADDSDomainController `  
--AllowPasswordReplicationAccountName @("CORP\Allowed RODC Password Replication Group", "CORP\Chicago RODC Admins", "CORP\Chicago RODC Users and Computers") `  
+-AllowPasswordReplicationAccountName @(CORP\Allowed RODC Password Replication Group, CORP\Chicago RODC Admins, CORP\Chicago RODC Users and Computers) `  
 -Credential (Get-Credential) `  
 -CriticalReplicationOnly:$false `  
--DatabasePath "C:\Windows\NTDS" `  
--DelegatedAdministratorAccountName "CORP\Chicago RODC Admins" `  
--DenyPasswordReplicationAccountName @("BUILTIN\Administrators", "BUILTIN\Server Operators", "BUILTIN\Backup Operators", "BUILTIN\Account Operators", "CORP\Denied RODC Password Replication Group") `  
--DomainName "corp.contoso.com" `  
+-DatabasePath C:\Windows\NTDS `  
+-DelegatedAdministratorAccountName CORP\Chicago RODC Admins `  
+-DenyPasswordReplicationAccountName @(BUILTIN\Administrators, BUILTIN\Server Operators, BUILTIN\Backup Operators, BUILTIN\Account Operators, CORP\Denied RODC Password Replication Group) `  
+-DomainName corp.contoso.com `  
 -InstallDNS:$true `  
--LogPath "C:\Windows\NTDS" `  
+-LogPath C:\Windows\NTDS `  
 -ReadOnlyReplica:$true `  
--SiteName "Default-First-Site-Name" `  
--SYSVOLPath "C:\Windows\SYSVOL"  
+-SiteName Default-First-Site-Name `  
+-SYSVOLPath C:\Windows\SYSVOL  
 -Force:$true  
   
 ```  
@@ -639,7 +641,7 @@ Install-ADDSDomainController `
   
 ![安裝 RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_RODCWhatIf.png)  
   
-### <a name="prerequisites-check"></a>先決條件檢查  
+### <a name="prerequisites-check"></a>必要條件檢查  
 ![安裝 RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_RODCPrereqCheck.png)  
   
 [先決條件檢查] 是 AD DS 網域設定中的新功能。 這個新階段會驗證伺服器設定是否能夠支援新的 AD DS 樹系。  
@@ -675,7 +677,7 @@ Install-addsdomaincontroller
   
 如需必要引數和選擇性引數，請參閱本節開頭的 [ADDSDeployment Cmdlet] 表格。  
   
-**Install-addsdomaincontroller** Cmdlet 只有兩個階段 (先決條件檢查與安裝)。 下列兩個圖形顯示使用 **-domainname**、 **-readonlyreplica**、 **-sitename**及 **-credential**的基本必要引數的安裝階段。 請注意 **Install-ADDSDomainController** 如何提醒您升級會自動將伺服器重新開機 (和伺服器管理員一樣)：  
+**Install-addsdomaincontroller** Cmdlet 只有兩個階段 (先決條件檢查與安裝)。 下列兩個圖形顯示使用 **-domainname**、 **-readonlyreplica**、 **-sitename** 及 **-credential** 的基本必要引數的安裝階段。 請注意 **Install-ADDSDomainController** 如何提醒您升級會自動將伺服器重新開機 (和伺服器管理員一樣)：  
   
 ![安裝 RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_PSInstallRODC.png)  
   

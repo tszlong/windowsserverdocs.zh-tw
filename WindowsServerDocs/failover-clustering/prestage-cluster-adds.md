@@ -5,16 +5,16 @@ ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.manager: daveba
+manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 05/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 56bf122923525de6e0005dd6d866220221dc9ce1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b14561a05778ed30e71363a2cd3b3b6fdf24f78e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392068"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827471"
 ---
 # <a name="prestage-cluster-computer-objects-in-active-directory-domain-services"></a>在 Active Directory Domain Services 中預先設置叢集電腦物件
 
@@ -73,12 +73,12 @@ ms.locfileid: "71392068"
 2. 找出並以滑鼠右鍵按一下 CNO，然後選取 [**屬性**]。
 3. 在 [**安全性**] 索引標籤上，選取 [**新增**]。
 4. 在 [**選取使用者、電腦或群組**] 對話方塊中，指定您想要授與許可權的使用者帳戶或群組，然後選取 **[確定]** 。
-5. 選取您剛才新增的使用者帳戶或群組，然後選取 [完全控制]旁邊的 [允許] 核取方塊。
+5. 選取您剛才新增的使用者帳戶或群組，然後選取 [完全控制] 旁邊的 [允許] 核取方塊。
   
    ![將完全控制授與將要建立叢集的使用者或群組](media/prestage-cluster-adds/granting-full-control-to-the-user-create-the-cluster.png)
   
    **[圖 2]將完全控制授與將建立叢集的使用者或群組**
-6. 選取 [確定]。
+6. 選取 **[確定]** 。
 
 完成此步驟之後，獲得您授與權限的使用者就可以建立容錯移轉叢集。 不過，如果 CNO 位於 OU，必須等到您完成步驟 3，使用者才能建立需要用戶端存取點的叢集角色。
 
@@ -111,7 +111,7 @@ ms.locfileid: "71392068"
 6. 在 [**選取使用者、電腦、服務帳戶或群組**] 對話方塊中，選取 [**物件類型**]，選取 [**電腦**] 核取方塊，然後選取 **[確定]** 。
 7. 在 [**輸入物件名稱來選取**] 下，輸入 CNO 的名稱，選取 [**檢查名稱**]，然後選取 **[確定]** 。 若要回應指出您即將新增已停用物件的警告訊息，請選取 **[確定]** 。
 8. 在 [權限項目] 對話方塊中，確定 [類型] 清單設定為 [允許]，且 [套用到] 清單設定為 [此物件及所有子系物件]。
-9. 在 [權限]底下，選取 [建立電腦物件] 核取方塊。
+9. 在 [權限] 底下，選取 [建立電腦物件] 核取方塊。
 
    ![將建立電腦物件權限授與 CNO](media/prestage-cluster-adds/granting-create-computer-objects-permission-to-the-cno.png)
 
@@ -132,11 +132,11 @@ ms.locfileid: "71392068"
 8. 在 [**選取使用者、電腦、服務帳戶或群組**] 對話方塊中，選取 [**物件類型**]，選取 [**電腦**] 核取方塊，然後選取 **[確定]** 。
 9. 在 [**輸入物件名稱來選取**] 下，輸入 CNO 的名稱，選取 [**檢查名稱**]，然後選取 **[確定]** 。 如果您收到一則警告訊息，指出您即將新增已停用的物件，請選取 **[確定]** 。
 10. 確定已選取 CNO，然後選取 [完全控制] 旁邊的 [允許] 核取方塊。
-11. 選取 [確定]。
+11. 選取 **[確定]** 。
 
 容錯移轉叢集的系統管理員現在可以建立含有符合預先設定 VCO 名稱的用戶端存取點的叢集角色，並將資源上線。
 
-## <a name="more-information"></a>更多資訊
+## <a name="more-information"></a>詳細資訊
 
 - [容錯移轉叢集](failover-clustering.md)
 - [在 Active Directory 中設定叢集帳戶](configure-ad-accounts.md)

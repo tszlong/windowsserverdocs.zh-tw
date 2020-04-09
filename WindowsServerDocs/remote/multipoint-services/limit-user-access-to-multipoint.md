@@ -1,24 +1,20 @@
 ---
 title: 限制使用者對伺服器的存取權
 description: 瞭解如何為使用者和群組授與或拒絕 MultiPoint 服務的存取權
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4cabd4f1-a764-4be6-bc6e-0a5f5566390c
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 62f2a3f9b94ac3f0474636c34e8ec1f81c568cad
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ddc852eea3ed17cd354cc87c79d82066f989bd5d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389063"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820251"
 ---
 # <a name="limit-users-access-to-the-multipoint-server"></a>限制使用者對 Multipoint 伺服器的存取
 無論您是將 MultiPoint server 加入 Active Directory 網域，或使用本機使用者帳戶，所有使用者預設都可以存取 MultiPoint server。 在您允許使用者登入 MultiPoint 服務環境中的工作站之前，您應該限制伺服器的存取權。  

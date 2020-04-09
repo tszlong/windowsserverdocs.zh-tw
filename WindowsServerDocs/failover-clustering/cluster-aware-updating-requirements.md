@@ -3,18 +3,18 @@ ms.assetid: 75cc1d24-fa2f-45bd-8f3b-1bbd4a1aead0
 title: 叢集感知更新需求和最佳作法
 ms.prod: windows-server
 ms.topic: article
-ms.manager: dongill
+manager: lizross
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 08/06/2018
 description: 使用叢集感知更新在執行 Windows Server 的叢集上安裝更新的需求。
-ms.openlocfilehash: 14ef72c2d2dd74dbc67bec37d9b09bb6fb077925
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: 6062004f094dfa3b412942f44db568459ce61e17
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465512"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828021"
 ---
 # <a name="cluster-aware-updating-requirements-and-best-practices"></a>叢集感知更新需求和最佳作法
 
@@ -25,7 +25,7 @@ ms.locfileid: "77465512"
 > [!NOTE]  
 > 如果您使用**microsoft.windowsupdateplugin**以外的\-外掛程式，您可能需要單獨驗證您的叢集環境是否已準備好套用更新。 如果您在中使用非\-的 Microsoft 外掛程式\-，請洽詢發行者以取得詳細資訊。 如需有關插入\-的詳細資訊，請參閱[外掛程式\-的工作方式](cluster-aware-updating-plug-ins.md)。   
 
-## <a name="BKMK_REQ_CLUS"></a>安裝容錯移轉叢集功能和容錯移轉叢集工具  
+## <a name="install-the-failover-clustering-feature-and-the-failover-clustering-tools"></a><a name="BKMK_REQ_CLUS"></a>安裝容錯移轉叢集功能和容錯移轉叢集工具  
 CAU 要求您必須安裝「容錯移轉叢集」功能與「容錯移轉叢集工具」。 容錯移轉叢集工具組含 CAU 工具 \(clusterawareupdating.dll\)、容錯移轉叢集 Cmdlet，以及 CAU 作業所需的其他元件。 如需安裝「容錯移轉叢集」功能的步驟，請參閱 [安裝容錯移轉叢集功能和工具](create-failover-cluster.md#install-the-failover-clustering-feature)。  
 
 容錯移轉叢集工具的確切安裝需求取決於 CAU 是否會在容錯移轉叢集上使用自我\-更新模式\) 或從遠端電腦上，以叢集角色來協調更新 \(。 此外，自我\-的 CAU 模式也需要使用 CAU 工具，在容錯移轉叢集上安裝 CAU 叢集角色。    
@@ -62,7 +62,7 @@ CAU 要求您必須安裝「容錯移轉叢集」功能與「容錯移轉叢集�
 
 -   若要在 CAU 更新執行期間使用 PowerShell 預先\-更新或 post\-更新腳本，請確定腳本已安裝在所有叢集節點上，或所有節點皆可存取，例如，在高可用性網路檔案共用上。 若指令碼是儲存到網路檔案共用，請設定該資料夾，讓 Everyone 群組擁有該資料夾的「讀取」權限。  
 
-## <a name="BKMK_NODE_CONFIG"></a>設定節點以進行遠端系統管理  
+## <a name="configure-the-nodes-for-remote-management"></a><a name="BKMK_NODE_CONFIG"></a>設定節點以進行遠端系統管理  
 若要使用叢集感知更新，叢集的所有節點都必須設定為進行遠端系統管理。 根據預設，設定節點以進行遠端系統管理時，唯一必須執行的工作是[啟用防火牆規則以允許自動重新開機](#BKMK_FW)。 
 
 下表列出完整的遠端系統管理需求，以防您的環境從預設值分歧。
@@ -73,10 +73,10 @@ CAU 要求您必須安裝「容錯移轉叢集」功能與「容錯移轉叢集�
 |---------------|---|-----------------------|-------------------------|  
 |[啟用防火牆規則以允許自動重新開機](#BKMK_FW)|已停用|若使用防火牆，在所有叢集節點上是必要的|若使用防火牆，在所有叢集節點上是必要的|  
 |[啟用 Windows Management Instrumentation](#BKMK_WMI)|已啟用|在所有叢集節點上是必要的|在所有叢集節點上是必要的|  
-|[啟用 Windows PowerShell 3.0 或4.0 與 Windows PowerShell 遠端執行功能](#BKMK_PS)|已啟用|在所有叢集節點上是必要的|在執行下列項目的所有叢集節點上是必要的：<br /><br />- [Save-caudebugtrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps) Cmdlet<br />-在更新執行期間，PowerShell\-更新並張貼\-更新腳本<br />-使用叢集感知更新視窗或[測試\-Test-causetup](https://docs.microsoft.com/powershell/module/clusterawareupdating/Test-CauSetup?view=win10-ps) Windows PowerShell Cmdlet 來測試叢集更新就緒|  
-|[安裝 .NET Framework 4.6 或4。5](#BKMK_NET)|已啟用|在所有叢集節點上是必要的|在執行下列項目的所有叢集節點上是必要的：<br /><br />- [Save-caudebugtrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps) Cmdlet<br />-在更新執行期間，PowerShell\-更新並張貼\-更新腳本<br />-使用叢集感知更新視窗或[測試\-Test-causetup](https://docs.microsoft.com/powershell/module/clusterawareupdating/Test-CauSetup?view=win10-ps) Windows PowerShell Cmdlet 來測試叢集更新就緒|  
+|[啟用 Windows PowerShell 3.0 或4.0 與 Windows PowerShell 遠端執行功能](#BKMK_PS)|已啟用|在所有叢集節點上是必要的|在執行下列項目的所有叢集節點上是必要的：<p>- [Save-caudebugtrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps) Cmdlet<br />-在更新執行期間，PowerShell\-更新並張貼\-更新腳本<br />-使用叢集感知更新視窗或[測試\-Test-causetup](https://docs.microsoft.com/powershell/module/clusterawareupdating/Test-CauSetup?view=win10-ps) Windows PowerShell Cmdlet 來測試叢集更新就緒|  
+|[安裝 .NET Framework 4.6 或4。5](#BKMK_NET)|已啟用|在所有叢集節點上是必要的|在執行下列項目的所有叢集節點上是必要的：<p>- [Save-caudebugtrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps) Cmdlet<br />-在更新執行期間，PowerShell\-更新並張貼\-更新腳本<br />-使用叢集感知更新視窗或[測試\-Test-causetup](https://docs.microsoft.com/powershell/module/clusterawareupdating/Test-CauSetup?view=win10-ps) Windows PowerShell Cmdlet 來測試叢集更新就緒|  
 
-### <a name="BKMK_FW"></a>啟用防火牆規則以允許自動重新開機  
+### <a name="enable-a-firewall-rule-to-allow-automatic-restarts"></a><a name="BKMK_FW"></a>啟用防火牆規則以允許自動重新開機  
 若要允許在套用更新後自動重新開機 \(如果安裝更新需要重新開機\)，如果叢集節點上使用 Windows 防火牆或非\-Microsoft 防火牆，則必須在允許下列流量的每個節點上啟用防火牆規則：  
 
 -   通訊協定：TCP  
@@ -102,7 +102,7 @@ CAU 要求您必須安裝「容錯移轉叢集」功能與「容錯移轉叢集�
 Set-NetFirewallRule -Group "@firewallapi.dll,-36751" -Profile Domain -Enabled true  
 ```  
 
-### <a name="BKMK_WMI"></a>啟用 Windows Management Instrumentation （WMI） 
+### <a name="enable-windows-management-instrumentation-wmi"></a><a name="BKMK_WMI"></a>啟用 Windows Management Instrumentation （WMI） 
 所有叢集節點都必須設定為使用 Windows Management Instrumentation \(WMI\)進行遠端系統管理。 預設為啟用。  
 
 若要手動啟用遠端管理，請執行下列動作：  
@@ -117,7 +117,7 @@ Set-NetFirewallRule -Group "@firewallapi.dll,-36751" -Profile Domain -Enabled tr
 
 若要支援 WMI 遠端處理，如果叢集節點上使用 Windows 防火牆，則必須在每個節點上啟用 **\)中 Windows 遠端管理 \(HTTP\-** 的輸入防火牆規則。  根據預設值，此規則是啟用的。  
 
-### <a name="BKMK_PS"></a>啟用 Windows PowerShell 和 Windows PowerShell 遠端執行功能  
+### <a name="enable-windows-powershell-and-windows-powershell-remoting"></a><a name="BKMK_PS"></a>啟用 Windows PowerShell 和 Windows PowerShell 遠端執行功能  
 若要啟用自我\-更新模式和遠端\-更新模式中的特定 CAU 功能，必須安裝並啟用 PowerShell，才能在所有叢集節點上執行遠端命令。 根據預設，PowerShell 會安裝並啟用以進行遠端處理。  
 
 若要啟用 PowerShell 遠端，請使用下列其中一種方法：  
@@ -128,7 +128,7 @@ Set-NetFirewallRule -Group "@firewallapi.dll,-36751" -Profile Domain -Enabled tr
 
 如需有關啟用 PowerShell 遠端功能的詳細資訊，請參閱[關於遠端需求](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements?view=powershell-6)。  
 
-### <a name="BKMK_NET"></a>安裝 .NET Framework 4.6 或4。5  
+### <a name="install-net-framework-46-or-45"></a><a name="BKMK_NET"></a>安裝 .NET Framework 4.6 或4。5  
 若要啟用自我\-更新模式和遠端\-更新模式中的特定 CAU 功能，必須在所有叢集節點上安裝 .NET Framework 4.6 或 .NET Framework 4.5 （在 Windows Server 2012 R2 上）。 根據預設，會安裝 NET Framework。  
 
 若要使用 PowerShell 安裝 .NET Framework 4.6 （或4.5）（如果尚未安裝），請使用下列命令：
@@ -137,9 +137,9 @@ Set-NetFirewallRule -Group "@firewallapi.dll,-36751" -Profile Domain -Enabled tr
 Install-WindowsFeature -Name NET-Framework-45-Core
 ```
 
-## <a name="BKMK_BEST_PRAC"></a>使用叢集感知更新的最佳做法建議 
+## <a name="best-practices-recommendations-for-using-cluster-aware-updating"></a><a name="BKMK_BEST_PRAC"></a>使用叢集感知更新的最佳做法建議 
 
-### <a name="BKMK_BP_WUA"></a>適用于套用 Microsoft 更新的建議
+### <a name="recommendations-for-applying-microsoft-updates"></a><a name="BKMK_BP_WUA"></a>適用于套用 Microsoft 更新的建議
 
 當您開始使用 CAU 在叢集上以預設的**microsoft.windowsupdateplugin**\-外掛程式來套用更新時，建議您停止使用其他方法在叢集節點上安裝來自 Microsoft 的軟體更新。  
 
@@ -169,7 +169,7 @@ Install-WindowsFeature -Name NET-Framework-45-Core
 
 -   例如，如果 \(內部軟體發佈伺服器，就會使用 WSUS 伺服器\) 來包含及部署更新，請確定這些伺服器正確地識別叢集節點的已核准更新。  
 
-#### <a name="BKMK_PROXY"></a>在分公司案例中套用 Microsoft updates  
+#### <a name="apply-microsoft-updates-in-branch-office-scenarios"></a><a name="BKMK_PROXY"></a>在分公司案例中套用 Microsoft updates  
 若要從 Microsoft Update 或 Windows Update 下載 Microsoft 更新到特定分公司案例中的叢集節點，您可能需要在每個節點上設定本機系統帳戶的 Proxy 設定。 例如，若您的分公司叢集使用本機 Proxy 伺服器來存取 Microsoft Update 或 Windows Update 以下載更新，您可能需要執行此動作。  
 
 如有必要，請在每個節點上設定 WinHTTP proxy 設定以指定本機 proxy 伺服器，並設定本機位址例外 \(也就是本機位址\)的略過清單。 若要這樣做，您可以在每個叢集節點上從已提升權限的命令提示字元執行下列命令：  
@@ -186,7 +186,7 @@ netsh winhttp set proxy <ProxyServerFQDN >:<port> "<local>"
 netsh winhttp set proxy MyProxy.CONTOSO.com:443 "<local>"  
 ```  
 
-### <a name="BKMK_BP_HF"></a>使用 Microsoft.hotfixplugin 的建議  
+### <a name="recommendations-for-using-the-microsofthotfixplugin"></a><a name="BKMK_BP_HF"></a>使用 Microsoft.hotfixplugin 的建議  
 
 -   建議您設定 Hotfix 根資料夾與 Hotfix 設定檔的權限，只將「寫入」存取權授與用來儲存這些檔案之電腦上的本機系統管理員。 這樣有助於防止未經授權的使用者竄改這些檔案，以免容錯移轉叢集功能在您套用 Hotfix 後有安全之虞。  
 
@@ -204,7 +204,7 @@ netsh winhttp set proxy MyProxy.CONTOSO.com:443 "<local>"
 
 -   為根據 IT 組織中的類似更新需求儲存「更新執行」設定並在容錯移轉叢集中重複使用，您可以建立「更新執行設定檔」。 此外，視更新模式而定，您可以在位於可供所有遠端「更新協調器」電腦或容錯移轉叢集存取的檔案共用中儲存「更新執行設定檔」並進行管理。 如需詳細資訊，請參閱[Advanced Options 和更新 CAU 的執行設定檔](cluster-aware-updating-options.md)。  
 
-## <a name="BKMK_BPA"></a>測試叢集更新準備就緒  
+## <a name="test-cluster-updating-readiness"></a><a name="BKMK_BPA"></a>測試叢集更新準備就緒  
 您可以 \(BPA\) 模型執行 CAU 最佳做法分析程式，以測試容錯移轉叢集和網路環境是否符合許多需求，以讓 CAU 套用軟體更新。 許多測試都會檢查環境是否準備就緒，使用**microsoft.windowsupdateplugin**中的預設插入\-來套用 Microsoft 更新。  
 
 > [!NOTE]  
@@ -235,16 +235,16 @@ netsh winhttp set proxy MyProxy.CONTOSO.com:443 "<local>"
 |----------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                                     容錯移轉叢集必須可供使用                                     |                                                                                       無法解析容錯移轉叢集名稱，或無法存取一或多個叢集節點。 BPA 無法執行叢集整備測試。                                                                                        |                                                                   -檢查在 BPA 執行期間指定的叢集名稱是否正確。<br />-確定叢集的所有節點都在線上且正在執行。<br />-確認 [驗證設定] Wizard 可以成功在容錯移轉叢集上執行。                                                                    |
 |                    必須啟用容錯移轉叢集節點以透過 WMI 進行遠端管理                    |                                                一或多個容錯移轉叢集節點不會使用 Windows Management Instrumentation \(WMI\)來啟用遠端系統管理。 若未將節點設定為允許遠端管理，CAU 將無法更新叢集節點。                                                 |                                                                                                  確定已啟用所有容錯移轉叢集節點以透過 WMI 進行遠端管理。 如需詳細資訊，請參閱此主題中的[設定節點以進行遠端管理](#BKMK_NODE_CONFIG)。                                                                                                   |
-|                      應該在每個容錯移轉叢集節點上啟用 PowerShell 遠端                       |                                                           PowerShell 未安裝，或未在一或多個容錯移轉叢集節點上啟用遠端功能。 CAU 無法設定為自我\-更新模式，或使用遠端\-更新模式中的特定功能。                                                            |                                                                                             請確定已在所有叢集節點上安裝 PowerShell，並已啟用遠端功能。<br /><br />如需詳細資訊，請參閱此主題中的[設定節點以進行遠端管理](#BKMK_NODE_CONFIG)。                                                                                             |
-|                                            容錯移轉叢集版本                                            |                                                                            容錯移轉叢集中的一或多個節點未執行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012。 CAU 無法更新容錯移轉叢集。                                                                             |                                                                   確認在 BPA 執行期間所指定的容錯移轉叢集正在執行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012。<br /><br />如需詳細資訊，請參閱此主題中的[驗證叢集設定](#BKMK_REQ_CLUS)。                                                                   |
-| 所有容錯移轉叢集節點上都必須安裝必要的 .NET Framework 與 Windows PowerShell 版本。 |                                                                                              .NET Framework 4.6、4.5 或 Windows PowerShell 未安裝在一或多個叢集節點上。 某些 CAU 功能可能無法運作。                                                                                              |                                                                            請確定在所有叢集節點上安裝 .NET Framework 4.6 或4.5 和 Windows PowerShell （如果需要的話）。<br /><br />如需詳細資訊，請參閱此主題中的[設定節點以進行遠端管理](#BKMK_NODE_CONFIG)。                                                                             |
-|                           所有叢集節點都必須執行 Cluster 服務                           |                                                                                                            一或多個節點未執行 Cluster 服務。 CAU 無法更新容錯移轉叢集。                                                                                                             |                        -確定已在叢集中的所有節點上啟動叢集服務 \(clussvc\)，並將其設定為自動啟動。<br />-確認 [驗證設定] Wizard 可以成功在容錯移轉叢集上執行。<br /><br />如需詳細資訊，請參閱此主題中的[驗證叢集設定](#BKMK_REQ_CLUS)。                         |
-|     所有容錯移轉叢集節點上的「自動更新」都不應該設定為自動安裝更新。     |                                           在至少一個容錯移轉叢集節點上，「自動更新」是設定為在該節點上自動安裝 Microsoft 更新。 結合 CAU 與其他更新方法會導致未規劃的停機或無法預期的結果。                                            |                                                     若已在一或多個叢集節點上為「自動更新」設定 Windows Update 功能，請確定未將「自動更新」設定為自動安裝更新。<br /><br />如需詳細資訊，請參閱[套用 Microsoft 更新的建議](#BKMK_BP_WUA)。                                                     |
-|                          所有容錯移轉叢集節點都應該使用相同的更新來源                          |                                                    一或多個容錯移轉叢集節點未設定為針對 Microsoft 更新使用與其他節點相同的更新來源。 CAU 可能無法一致地在叢集節點上套用更新。                                                    |                                                                        確定每個叢集節點都已設定為使用相同的更新來源，例如 WSUS 伺服器、Windows Update 或 Microsoft Update。<br /><br />如需詳細資訊，請參閱[套用 Microsoft 更新的建議](#BKMK_BP_WUA)。                                                                         |
-|       必須在容錯移轉叢集中的每個節點上啟用允許遠端關機的防火牆規則       |                 一或多個容錯移轉叢集節點未啟用允許遠端關機的防火牆規則，或群組原則設定防止啟用此規則。 套用需要重新啟動節點之更新的「更新執行」可能未正確完成。                  |                                                                    如果叢集節點上正在使用 Windows 防火牆或非\-的 Microsoft 防火牆，請設定允許遠端關機的防火牆規則。<br /><br />如需詳細資訊，請參閱此主題中的[啟用防火牆規則以允許自動重新啟動](#BKMK_FW)。                                                                    |
-|          每個容錯移轉叢集節點上的 Proxy 伺服器設定應該設定為本機 Proxy 伺服器          |                             一或多個容錯移轉叢集節點具有不正確的 Proxy 伺服器設定。<br /><br />若正在使用本機 Proxy 伺服器，您應該正確地設定每個節點上的 Proxy 伺服器設定，讓叢集能存取 Microsoft Update 或 Windows Update。                              |                                            確定每個叢集節點上的 WinHTTP Proxy 設定已設定為本機 Proxy 伺服器 (如果需要)。 若您的環境中未使用 Proxy 伺服器，則可以忽略此警告。<br /><br />如需詳細資訊，請參閱此主題中的[在分公司案例中套用更新](#BKMK_PROXY)。                                            |
-|        CAU 叢集角色應該安裝在容錯移轉叢集上，以啟用自我\-更新模式        |                                                                                                   此容錯移轉叢集上未安裝 CAU 叢集角色。 叢集自我\-更新需要此角色。                                                                                                   |      若要在自我\-更新模式中使用 CAU，請以下列其中一種方式在容錯移轉叢集中新增 CAU 叢集角色：<br /><br />-執行[Add-cauclusterrole](https://docs.microsoft.com/powershell/module/clusterawareupdating/Add-CauClusterRole) PowerShell Cmdlet。<br />-在 [叢集感知更新] 視窗中，選取 [**設定叢集自我\-更新選項**] 動作。      |
-|         應該在容錯移轉叢集上啟用 CAU 叢集角色，以啟用自我\-更新模式         | CAU 叢集角色已停用。 例如，未安裝 CAU 叢集角色，或已使用[Disable\-Add-cauclusterrole](https://docs.microsoft.com/powershell/module/clusterawareupdating/Disable-CauClusterRole) PowerShell Cmdlet 來停用它。 叢集自我\-更新需要此角色。 | 若要在自我\-更新模式中使用 CAU，請以下列其中一種方式在此容錯移轉叢集上啟用 CAU 叢集角色：<br /><br />-執行[Add-cauclusterrole](https://docs.microsoft.com/powershell/module/clusterawareupdating/Enable-CauClusterRole) PowerShell Cmdlet。<br />-在 [叢集感知更新] 視窗中，選取 [**設定叢集自我\-更新選項**] 動作。 |
+|                      應該在每個容錯移轉叢集節點上啟用 PowerShell 遠端                       |                                                           PowerShell 未安裝，或未在一或多個容錯移轉叢集節點上啟用遠端功能。 CAU 無法設定為自我\-更新模式，或使用遠端\-更新模式中的特定功能。                                                            |                                                                                             請確定已在所有叢集節點上安裝 PowerShell，並已啟用遠端功能。<p>如需詳細資訊，請參閱此主題中的[設定節點以進行遠端管理](#BKMK_NODE_CONFIG)。                                                                                             |
+|                                            容錯移轉叢集版本                                            |                                                                            容錯移轉叢集中的一或多個節點未執行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012。 CAU 無法更新容錯移轉叢集。                                                                             |                                                                   確認在 BPA 執行期間所指定的容錯移轉叢集正在執行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012。<p>如需詳細資訊，請參閱此主題中的[驗證叢集設定](#BKMK_REQ_CLUS)。                                                                   |
+| 所有容錯移轉叢集節點上都必須安裝必要的 .NET Framework 與 Windows PowerShell 版本。 |                                                                                              .NET Framework 4.6、4.5 或 Windows PowerShell 未安裝在一或多個叢集節點上。 某些 CAU 功能可能無法運作。                                                                                              |                                                                            請確定在所有叢集節點上安裝 .NET Framework 4.6 或4.5 和 Windows PowerShell （如果需要的話）。<p>如需詳細資訊，請參閱此主題中的[設定節點以進行遠端管理](#BKMK_NODE_CONFIG)。                                                                             |
+|                           所有叢集節點都必須執行 Cluster 服務                           |                                                                                                            一或多個節點未執行 Cluster 服務。 CAU 無法更新容錯移轉叢集。                                                                                                             |                        -確定已在叢集中的所有節點上啟動叢集服務 \(clussvc\)，並將其設定為自動啟動。<br />-確認 [驗證設定] Wizard 可以成功在容錯移轉叢集上執行。<p>如需詳細資訊，請參閱此主題中的[驗證叢集設定](#BKMK_REQ_CLUS)。                         |
+|     所有容錯移轉叢集節點上的「自動更新」都不應該設定為自動安裝更新。     |                                           在至少一個容錯移轉叢集節點上，「自動更新」是設定為在該節點上自動安裝 Microsoft 更新。 結合 CAU 與其他更新方法會導致未規劃的停機或無法預期的結果。                                            |                                                     若已在一或多個叢集節點上為「自動更新」設定 Windows Update 功能，請確定未將「自動更新」設定為自動安裝更新。<p>如需詳細資訊，請參閱[套用 Microsoft 更新的建議](#BKMK_BP_WUA)。                                                     |
+|                          所有容錯移轉叢集節點都應該使用相同的更新來源                          |                                                    一或多個容錯移轉叢集節點未設定為針對 Microsoft 更新使用與其他節點相同的更新來源。 CAU 可能無法一致地在叢集節點上套用更新。                                                    |                                                                        確定每個叢集節點都已設定為使用相同的更新來源，例如 WSUS 伺服器、Windows Update 或 Microsoft Update。<p>如需詳細資訊，請參閱[套用 Microsoft 更新的建議](#BKMK_BP_WUA)。                                                                         |
+|       必須在容錯移轉叢集中的每個節點上啟用允許遠端關機的防火牆規則       |                 一或多個容錯移轉叢集節點未啟用允許遠端關機的防火牆規則，或群組原則設定防止啟用此規則。 套用需要重新啟動節點之更新的「更新執行」可能未正確完成。                  |                                                                    如果叢集節點上正在使用 Windows 防火牆或非\-的 Microsoft 防火牆，請設定允許遠端關機的防火牆規則。<p>如需詳細資訊，請參閱此主題中的[啟用防火牆規則以允許自動重新啟動](#BKMK_FW)。                                                                    |
+|          每個容錯移轉叢集節點上的 Proxy 伺服器設定應該設定為本機 Proxy 伺服器          |                             一或多個容錯移轉叢集節點具有不正確的 Proxy 伺服器設定。<p>若正在使用本機 Proxy 伺服器，您應該正確地設定每個節點上的 Proxy 伺服器設定，讓叢集能存取 Microsoft Update 或 Windows Update。                              |                                            確定每個叢集節點上的 WinHTTP Proxy 設定已設定為本機 Proxy 伺服器 (如果需要)。 若您的環境中未使用 Proxy 伺服器，則可以忽略此警告。<p>如需詳細資訊，請參閱此主題中的[在分公司案例中套用更新](#BKMK_PROXY)。                                            |
+|        CAU 叢集角色應該安裝在容錯移轉叢集上，以啟用自我\-更新模式        |                                                                                                   此容錯移轉叢集上未安裝 CAU 叢集角色。 叢集自我\-更新需要此角色。                                                                                                   |      若要在自我\-更新模式中使用 CAU，請以下列其中一種方式在容錯移轉叢集中新增 CAU 叢集角色：<p>-執行[Add-cauclusterrole](https://docs.microsoft.com/powershell/module/clusterawareupdating/Add-CauClusterRole) PowerShell Cmdlet。<br />-在 [叢集感知更新] 視窗中，選取 [**設定叢集自我\-更新選項**] 動作。      |
+|         應該在容錯移轉叢集上啟用 CAU 叢集角色，以啟用自我\-更新模式         | CAU 叢集角色已停用。 例如，未安裝 CAU 叢集角色，或已使用[Disable\-Add-cauclusterrole](https://docs.microsoft.com/powershell/module/clusterawareupdating/Disable-CauClusterRole) PowerShell Cmdlet 來停用它。 叢集自我\-更新需要此角色。 | 若要在自我\-更新模式中使用 CAU，請以下列其中一種方式在此容錯移轉叢集上啟用 CAU 叢集角色：<p>-執行[Add-cauclusterrole](https://docs.microsoft.com/powershell/module/clusterawareupdating/Enable-CauClusterRole) PowerShell Cmdlet。<br />-在 [叢集感知更新] 視窗中，選取 [**設定叢集自我\-更新選項**] 動作。 |
 |      在中，為自我\-更新模式設定的 CAU 外掛程式\-必須在所有容錯移轉叢集節點上註冊      |                                                              在此容錯移轉叢集的一或多個節點上，CAU 叢集角色無法存取自我\-更新選項中所設定之模組中的 CAU 外掛程式\-。 自我\-更新執行可能會失敗。                                                              |           -確定已在所有叢集節點上安裝已設定的 CAU\-外掛程式，方法是遵循提供 CAU 插頭\-之產品的安裝程式。<br />-執行[register\-Unregister-cauplugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/Register-CauPlugin) PowerShell Cmdlet，在所需的叢集節點上註冊外掛程式\-。           |
 |                所有容錯移轉叢集節點都應該具有一組相同的已登錄 CAU 外掛程式\-                 |                                                                             如果設定為用於「更新執行」中的「外掛程式」\-變更為所有叢集節點上都無法使用的，則「自我\-更新執行」可能會失敗。                                                                              |           -確定已在所有叢集節點上安裝已設定的 CAU\-外掛程式，方法是遵循提供 CAU 插頭\-之產品的安裝程式。<br />-執行[register\-Unregister-cauplugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/Register-CauPlugin) PowerShell Cmdlet，在所需的叢集節點上註冊外掛程式\-。           |
 |                               已設定的「更新執行」選項必須是有效的                                |                                                                          為此容錯移轉叢集設定的自助式\-更新排程和更新執行選項不完整或無效。 自我\-更新執行可能會失敗。                                                                           |                                                            設定有效的自我\-更新排程和一組更新執行選項。 例如，您可以使用[Set\-Add-cauclusterrole](https://docs.microsoft.com/powershell/module/clusterawareupdating/Set-CauClusterRole) PowerShell Cmdlet 來設定 CAU 叢集角色。                                                            |

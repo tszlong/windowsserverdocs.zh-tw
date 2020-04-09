@@ -1,7 +1,6 @@
 ---
 ms.assetid: d562ef46-f240-48be-bbd4-fd88fc6bbbdc
 title: 針對不支援 WIA 的裝置設定內部網路表單架構驗證
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,17 +8,17 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 09172b3fcfcedf0888205d099409647a6e077577
-ms.sourcegitcommit: b5c12007b4c8fdad56076d4827790a79686596af
+ms.openlocfilehash: 7db040d98317cee67e78493b2210f33279221aa9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78856352"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817041"
 ---
 # <a name="configuring-intranet-forms-based-authentication-for-devices-that-do-not-support-wia"></a>針對不支援 WIA 的裝置設定內部網路表單架構驗證
 
 
-根據預設，windows Server 2012 R2 中的 Active Directory 同盟服務（AD FS）中已啟用 Windows 整合式驗證（WIA），以取得針對任何使用的應用程式在組織內部網路（內部網路）內發生的驗證要求瀏覽器以進行驗證。 例如，這些可以是以瀏覽器為基礎的應用程式，使用 WS-同盟或 SAML 通訊協定，以及使用 OAuth 通訊協定的豐富應用程式。 WIA 可讓使用者順暢地登入應用程式，而不需要手動輸入其認證。 不過，有些裝置和瀏覽器無法支援 WIA，因此來自這些裝置的驗證要求將會失敗。 此外，與 NTLM 協商的特定瀏覽器的體驗並不理想。 建議的方法是針對這類裝置和瀏覽器，切換到以表單為基礎的驗證。
+根據預設，windows Server 2012 R2 中的 Active Directory 同盟服務（AD FS）會啟用 Windows 整合式驗證（WIA），以取得針對任何使用瀏覽器進行驗證之應用程式在組織內部網路（內部網路）中發生的驗證要求。 例如，這些可以是以瀏覽器為基礎的應用程式，使用 WS-同盟或 SAML 通訊協定，以及使用 OAuth 通訊協定的豐富應用程式。 WIA 可讓使用者順暢地登入應用程式，而不需要手動輸入其認證。 不過，有些裝置和瀏覽器無法支援 WIA，因此來自這些裝置的驗證要求將會失敗。 此外，與 NTLM 協商的特定瀏覽器的體驗並不理想。 建議的方法是針對這類裝置和瀏覽器，切換到以表單為基礎的驗證。
 
 Windows Server 2016 和 Windows Server 2012 R2 中的 AD FS 可讓系統管理員設定使用者代理程式清單，以支援以表單為基礎的驗證。 您可以透過兩個設定來進行回復：
 

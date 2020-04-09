@@ -9,12 +9,12 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 472c3b91285810ac1ff528da24de50533bae526d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 56e27c386451c561de8f62e523e2d1e59a8ce84c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376938"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844301"
 ---
 # <a name="fsutil-fsinfo"></a>Fsutil fsinfo
 >適用于： Windows Server （半年通道）、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7
@@ -33,11 +33,11 @@ fsutil fsinfo [statistics] <VolumePath>
 fsutil fsinfo [volumeinfo] <RootPath>
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |-------------|---------------|
-|硬|列出電腦中的所有磁片磁碟機。|
+|磁碟機|列出電腦中的所有磁片磁碟機。|
 |drivetype|查詢磁片磁碟機並列出其類型，例如 CD-ROM 光碟機。|
 |ntfsinfo|列出指定磁片區的 NTFS 特定磁片區資訊，例如磁區數目、叢集總計、可用叢集，以及 MFT 區域的開始和結束。|
 |sectorinfo|列出硬體磁區大小和對齊的相關資訊。|
@@ -46,7 +46,7 @@ fsutil fsinfo [volumeinfo] <RootPath>
 |< "VolumePath" >|指定磁碟機號（後面接著冒號）。|
 |< "RootPathname" >|指定根磁片磁碟機的磁碟機號（後面接著冒號）。|
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name="BKMK_examples"></a>典型
 若要列出電腦中的所有磁片磁碟機，請輸入：
 
 ```
@@ -153,8 +153,8 @@ UserFileReadBytes :    1305244512
 LogFileWriteBytes :    180936704       
 ```
 
-#### <a name="additional-references"></a>其他參考資料
-[命令列語法索引鍵](Command-Line-Syntax-Key.md)
+## <a name="additional-references"></a>其他參考資料
+- [命令列語法索引鍵](command-line-syntax-key.md)
 [Fsutil](Fsutil.md)
 
 

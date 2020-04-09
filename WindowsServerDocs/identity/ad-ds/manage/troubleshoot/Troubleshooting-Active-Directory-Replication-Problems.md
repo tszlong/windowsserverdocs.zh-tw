@@ -1,7 +1,6 @@
 ---
 ms.assetid: b11f7a65-ec7b-4c11-8dc4-d7cabb54cd94
-title: 疑難排解 Active Directory 複寫問題
-description: ''
+title: 進行 Active Directory 複寫問題疑難排解
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: cf6b50ab3b4991bd8cab8523494261f1284945a5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a3e9c3e901f164d793ca40943934efbbccafda38
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71409066"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822961"
 ---
-# <a name="troubleshooting-active-directory-replication-problems"></a>疑難排解 Active Directory 複寫問題
+# <a name="troubleshooting-active-directory-replication-problems"></a>進行 Active Directory 複寫問題疑難排解
 
 >適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -26,7 +25,7 @@ Active Directory 複寫問題可以有數個不同的來源。 例如，網域�
 
 ## <a name="introduction-and-resources-for-troubleshooting-active-directory-replication"></a>疑難排解 Active Directory 複寫的簡介和資源
 
-輸入或輸出複寫失敗會導致代表複寫拓撲、複寫排程、網域控制站、使用者、電腦、密碼、安全性群組、群組成員資格和群組原則的 Active Directory 物件不一致在網域控制站之間。 目錄不一致和複寫失敗，會造成作業失敗或不一致的結果，視與作業聯繫的網域控制站而定，並可防止應用程式群組原則和存取控制許可權。 Active Directory Domain Services （AD DS）取決於網路連接、名稱解析、驗證和授權、目錄資料庫、複寫拓撲和複寫引擎。 當複寫問題的根本原因不是立即明顯時，判斷許多可能原因之間的原因需要有系統地排除可能的原因。
+輸入或輸出複寫失敗會使代表複寫拓撲、複寫排程、網域控制站、使用者、電腦、密碼、安全性群組、群組成員資格和群組原則的 Active Directory 物件在網域控制站之間不一致。 目錄不一致和複寫失敗，會造成作業失敗或不一致的結果，視與作業聯繫的網域控制站而定，並可防止應用程式群組原則和存取控制許可權。 Active Directory Domain Services （AD DS）取決於網路連接、名稱解析、驗證和授權、目錄資料庫、複寫拓撲和複寫引擎。 當複寫問題的根本原因不是立即明顯時，判斷許多可能原因之間的原因需要有系統地排除可能的原因。
 
 如需以 UI 為基礎的工具，以協助監視複寫和診斷錯誤，請參閱[Active Directory 複寫狀態工具](https://www.microsoft.com/download/details.aspx?id=30005)
 
@@ -49,7 +48,7 @@ Active Directory 複寫問題可以有數個不同的來源。 例如，網域�
 
 ### <a name="intentional-disconnections"></a>蓄意中斷連線
 
-如果複寫錯誤是由嘗試複寫的網域控制站所報告，而該控制器已內建在預備網站中，而且目前正在離線等候其部署在最後一個生產網站（例如分公司），您可以考慮這些複寫錯誤。 若要避免長時間將網域控制站與複寫拓撲隔開，這會造成連續錯誤，直到網域控制站重新連線為止，請考慮一開始將這類電腦新增為成員伺服器，並使用 [從媒體安裝] （IFM）方法來安裝 Active Directory Domain Services （AD DS）。 您可以使用 Ntdsutil 命令列工具來建立可儲存在卸載式媒體（CD、DVD 或其他媒體）上的安裝媒體，並寄送到目的地網站。 然後，您可以使用安裝媒體在網站的網域控制站上安裝 AD DS，而不需要使用複寫。 
+如果複寫錯誤是由嘗試複寫的網域控制站所報告，且該網域控制站已內建在預備網站中，而且目前在最後一個生產網站中等待其部署（例如分公司），則您可以考慮這些複寫錯誤。 為了避免長時間將網域控制站與複寫拓撲隔開，這會造成連續錯誤，直到網域控制站重新連線為止，請考慮一開始將這類電腦新增為成員伺服器，並使用 [從媒體安裝（IFM）] 方法來安裝 Active Directory Domain Services （AD DS）。 您可以使用 Ntdsutil 命令列工具來建立可儲存在卸載式媒體（CD、DVD 或其他媒體）上的安裝媒體，並寄送到目的地網站。 然後，您可以使用安裝媒體在網站的網域控制站上安裝 AD DS，而不需要使用複寫。 
 
 ### <a name="hardware-failures-or-upgradestitle"></a>硬體故障或升級</title>
 
@@ -146,7 +145,7 @@ Active Directory 複寫問題可以有數個不同的來源。 例如，網域�
 12. 針對 [上次失敗時間] 資料行重複步驟11，但使用 [不等於] 值，然後輸入0值。
 13. 解決複寫失敗。
 
-對於樹系中的每個網域控制站，試算表會顯示來源複寫協力電腦、複寫上次發生的時間，以及每個命名內容（目錄分割）發生上次複寫失敗的時間。 藉由在 Excel 中使用 [自動篩選]，您可以只查看工作網域控制站的複寫健全狀況、僅針對網域控制站執行失敗，或是最少或最新的網域控制站，以及您可以查看正在複寫的複寫協力電腦。能夠.
+對於樹系中的每個網域控制站，試算表會顯示來源複寫協力電腦、複寫上次發生的時間，以及每個命名內容（目錄分割）發生上次複寫失敗的時間。 藉由使用 Excel 中的 [自動篩選]，您只可以查看工作網域控制站的複寫健康情況、僅失敗的網域控制站，或最小或最新的網域控制站，而且您可以看到複寫協力電腦已成功複寫。
 
 ## <a name="replication-problems-and-resolutions"></a>複寫問題和解決方式
 

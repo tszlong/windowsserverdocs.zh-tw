@@ -1,24 +1,20 @@
 ---
 title: 將 MultiPoint 服務加入網域（選擇性）
 Description: 提供將 MultiPoint 服務加入網域的步驟
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 623b7c21-dcbb-402e-8b5a-8e434cd225bd
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 79bd9e594f94c7b3acd06265891dd646b3853b50
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 03b60b1d3a7a776448eaa18d926a87a00f56fc30
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394738"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820241"
 ---
 # <a name="join-the-multipoint-services-computer-to-a-domain-optional"></a>將 MultiPoint 服務電腦加入網域（選擇性）
 如果您將透過 Active Directory 網域存取 MultiPoint 服務電腦，下一步就是將電腦新增至網域。  
@@ -28,7 +24,7 @@ ms.locfileid: "71394738"
    
 1.  從 [開始] 畫面，開啟 [控制台]。 按一下 [**系統及安全性**]，然後按一下 [**系統**]。  
   
-2.  在 [電腦名稱、網域及工作群組設定]底下，按一下 [變更設定]。  
+2.  在 **[電腦名稱、網域及工作群組設定]** 底下，按一下 **[變更設定]** 。  
   
 3.  在 [**電腦名稱稱**] 索引標籤上，按一下 [**變更**]。  
   

@@ -1,24 +1,20 @@
 ---
 title: gpresult
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dfaa3adf-2c83-486c-86d6-23f93c5c883c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bb61911450ea8c0c68af0cf1a35c2f571810504b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 480599a4040ab1fdcc3842cdb0eaa8c35afa873c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375662"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80842461"
 ---
 # <a name="gpresult"></a>gpresult
 
@@ -33,7 +29,7 @@ ms.locfileid: "71375662"
 gpresult [/s <system> [/u <USERNAME> [/p [<PASSWOrd>]]]] [/user [<TARGETDOMAIN>\]<TARGETUSER>] [/scope {user | computer}] {/r | /v | /z | [/x | /h] <FILENAME> [/f] | /?}
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 > [!NOTE]
 > 除了使用 **/？** 時，您必須包含 **/r**、 **/v**、 **/z**、 **/x**或 **/h**這兩個輸出選項。
@@ -76,7 +72,7 @@ gpresult [/s <system> [/u <USERNAME> [/p [<PASSWOrd>]]]] [/user [<TARGETDOMAIN>\
   gpresult /s srvmain /u maindom\hiropln /p p@ssW23 /r
   ```
   
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 - [群組原則技術中心](https://go.microsoft.com/fwlink/?LinkID=145531)
 
-- [命令列語法關鍵](command-line-syntax-key.md)
+- - [命令列語法關鍵](command-line-syntax-key.md)

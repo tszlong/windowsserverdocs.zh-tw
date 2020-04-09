@@ -1,24 +1,20 @@
 ---
 title: icacls
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 403edfcc-328a-479d-b641-80c290ccf73e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/21/2018
-ms.openlocfilehash: 494c87073cfd78c7f5e17c72d4c65bec33a49b98
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 59d10b9ed681b7e0af120798dde9f200182d67d3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375495"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80842261"
 ---
 # <a name="icacls"></a>icacls
 
@@ -33,13 +29,13 @@ icacls <FileName> [/grant[:r] <Sid>:<Perm>[...]] [/deny <Sid>:<Perm>[...]] [/rem
 icacls <Directory> [/substitute <SidOld> <SidNew> [...]] [/restore <ACLfile> [/c] [/l] [/q]]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
 |\<FileName >|指定要顯示其 Dacl 的檔案。|
 |\<目錄 >|指定要顯示其 Dacl 的目錄。|
-|一起|對目前目錄及其子目錄中的所有指定檔案執行作業。|
+|/t|對目前目錄及其子目錄中的所有指定檔案執行作業。|
 |/c|即使有任何檔案錯誤，仍繼續操作。 仍然會顯示錯誤訊息。|
 |/l|在符號連結和其目的地上執行運算。|
 |/q|隱藏成功訊息。|
@@ -141,18 +137,18 @@ icacls c:\windows\* /save aclfile /t
 icacls c:\windows\ /restore aclfile
 ```
 
-若要對名為 "Test1" 的檔案授與使用者 User1 Delete 和 Write DAC 許可權，請輸入：
+若要將使用者 User1 刪除和寫入 DAC 許可權授與名為 Test1 的檔案，請輸入：
 
 ```
 icacls test1 /grant User1:(d,wdac)
 ```
 
-若要將 SID S-1-1-0 Delete 和 Write DAC 許可權所定義的使用者授與名為 "Test2" 的檔案，請輸入：
+若要將 SID S-1-1-0 Delete 和 Write DAC 許可權所定義的使用者授與名為 Test2 的檔案，請輸入：
 
 ```
 icacls test2 /grant *S-1-1-0:(d,wdac)
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

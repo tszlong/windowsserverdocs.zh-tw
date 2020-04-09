@@ -1,7 +1,6 @@
 ---
 ms.assetid: 5b9fc9c1-5d12-4ad4-8ddc-3b8a6d45b217
 title: 建立信賴憑證者信任
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a0d32edd7ebc23fa724439710c6511642d9c49a3
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: c9134360498184ab578b02809634279a84753e43
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323050"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816841"
 ---
 # <a name="create-a-relying-party-trust"></a>建立信賴憑證者信任
 
@@ -64,7 +63,7 @@ ms.locfileid: "79323050"
 
 ## <a name="to-create-a-claims-aware-relying-party-trust-using-federation-metadata"></a>使用同盟中繼資料建立宣告感知信賴憑證者信任
 
-若要使用 [AD FS 管理] 嵌入式管理單元來新增新的信賴憑證者信任，請從合作夥伴發佈到區域網路或網際網路的同盟中繼資料自動匯入有關合作夥伴的設定資料，然後在上執行下列程式：帳戶夥伴組織中的同盟伺服器。
+若要加入新的信賴憑證者信任，請使用 [AD FS 管理] 嵌入式管理單元，自動從合作夥伴發佈到區域網路或網際網路的同盟中繼資料匯入有關合作夥伴的設定資料，在帳戶夥伴組織的同盟伺服器上執行下列程式。
 
 >[!NOTE]
 >雖然使用具有不合格主機名稱的憑證（例如 https://myserver）很長，但這些憑證沒有安全性價值，而且可以讓攻擊者模擬發行同盟中繼資料的同盟服務。 因此，在查詢同盟中繼資料時，您應該只使用完整功能變數名稱，例如 https://myserver.contoso.com。

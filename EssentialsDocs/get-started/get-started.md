@@ -1,22 +1,18 @@
 ---
 title: 開始使用 Windows Server Essentials
 description: 說明如何使用 Windows Server Essentials
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2d0eb084-09dd-4d85-a41a-5d449cc3b504
 author: nnamuhcs
 ms.author: coreyp
 manager: jasgro
-ms.openlocfilehash: bafcd95abf24cb93ed0ae0bd83090d224666a5bd
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 4e4e6391bc5def5f9d4be3035951d18bd51c416b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310455"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815081"
 ---
 # <a name="get-started-with-windows-server-essentials"></a>開始使用 Windows Server Essentials 
 

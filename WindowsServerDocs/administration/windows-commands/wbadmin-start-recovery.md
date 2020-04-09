@@ -1,24 +1,20 @@
 ---
 title: wbadmin start recovery
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: 適用于 wbadmin start recovery 的 Windows 命令主題，它會根據您指定的參數執行復原操作。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 52381316-a0fa-459f-b6a6-01e31fb21612
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: edb287573dc76619502faf58018f48c464140629
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6b5a65e67e7a34ca5263c85c1038820e0a4fc1ed
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362354"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829611"
 ---
 # <a name="wbadmin-start-recovery"></a>wbadmin start recovery
 
@@ -48,11 +44,11 @@ wbadmin start recovery
 [-quiet]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
-|-版本|以 MM/DD/YYYY-HH： MM 格式指定要復原之備份的版本識別碼。 如果您不知道版本識別碼，請輸入**wbadmin get 版本**。|
+|-version|以 MM/DD/YYYY-HH： MM 格式指定要復原之備份的版本識別碼。 如果您不知道版本識別碼，請輸入**wbadmin get 版本**。|
 |-items|指定要復原的磁片區、應用程式、檔案或資料夾清單（以逗號分隔）。</br>-如果 **-itemtype**是**volume**，您可以藉由提供磁片區磁碟機號、磁片區掛接點或以 GUID 為基礎的磁片區名稱來指定單一磁片區。</br>-如果 **-itemtype**是**App**，您只能指定單一應用程式。 若要復原，應用程式必須已向 Windows Server Backup 註冊。 您也可以使用 [值**ADIFM** ] 來復原 Active Directory 的安裝。 如需詳細資訊，請參閱中的備註。</br>-如果 **-itemtype**是**File**，您可以指定檔案或資料夾，但它們應該是同一個磁片區的一部分，而且它們應該位於相同的父資料夾底下。|
 |-itemtype|指定要復原的專案類型。 必須是**磁片**區、**應用程式** **或檔案**。|
 |-backupTarget|指定包含您要復原之備份的存放位置。 當位置不同于通常儲存此電腦的備份時，此參數會很有用。|
@@ -73,7 +69,7 @@ wbadmin start recovery
 >     [!NOTE]
 >     Before using **wbadmin** to perform an install from media operation, you should consider using the **ntdsutil** command because **ntdsutil** only copies the minimum amount of data needed, and it uses a more secure data transport method.
 
-## <a name="BKMK_Examples"></a>典型
+## <a name="examples"></a><a name=BKMK_Examples></a>典型
 
 若要從2013年3月31日（上午9:00）執行備份復原，請在磁片區 d：上輸入：
 ```
@@ -97,9 +93,9 @@ wbadmin start recovery -version:03/31/2013-09:00 -itemType:Volume
 wbadmin start recovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
--   [命令列語法關鍵](command-line-syntax-key.md)
+-   - [命令列語法關鍵](command-line-syntax-key.md)
 -   [Restore](wbadmin.md)
 -   [WBFileRecovery](https://technet.microsoft.com/library/jj902457.aspx) Cmdlet
 -   [WBHyperVRecovery](https://technet.microsoft.com/library/jj902463.aspx) Cmdlet

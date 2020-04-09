@@ -1,7 +1,6 @@
 ---
 ms.assetid: c54b544f-cc32-4837-bb2d-a8656b22f3de
 title: 使用 Windows PowerShell 進行 Active Directory 複寫和拓撲管理簡介 (層級 100)
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c8a5863865d465d55f1d5865fdcbdeeb942ce194
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 63ecad01ec6d4b4d72b7aaff315b74541cb0fadc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71409086"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822981"
 ---
 # <a name="introduction-to-active-directory-replication-and-topology-management-using-windows-powershell-level-100"></a>使用 Windows PowerShell 進行 Active Directory 複寫和拓撲管理簡介 (層級 100)
 
@@ -131,7 +130,7 @@ Active Directory 的 Windows PowerShell 可讓您管理複寫、站台、網域�
 
     驗證 **DC2** 現在位於 **BRANCH1** 站台。 或者，您可以開啟 [Windows PowerShell 的 Active Directory 模組] 並輸入下列命令以驗證 **DC2** 現在位於 **BRANCH1** 站台：`Get-ADDomainController -Filter * | ft Hostname,Site`。
 
-## <a name="view-replication-status-information"></a>查看複寫狀態資訊
+## <a name="view-replication-status-information"></a>檢視複寫狀態資訊
 在下列程序中，您將使用 Active Directory 複寫與管理適用的其中一個 Windows PowerShell Cmdlet (`Get-ADReplicationUpToDatenessVectorTable DC1`)，產生使用最新向量表格製成的簡單複寫報告 (由各個網域控制站維護)。 這個最新向量表格會記錄從樹系中的每個網域控制站所觀察到的最高來源寫入 USN。
 
 您必須是 Domain Admins 群組的成員或具備相等的權限，才能完成下列程序中的步驟。
@@ -154,7 +153,7 @@ Active Directory 的 Windows PowerShell 可讓您管理複寫、站台、網域�
 
     排序功能可以讓您輕鬆比較每個網域控制站針對指定的複寫協力電腦所觀察到的最後一個 USN。 這是確認您的環境正在進行複寫的一個快速方法。 如果複寫可以正常進行，則所有網域控制站針對指定的複寫協力電腦所回報的 UsnFilter 值應該相當類似。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 [使用 Windows PowerShell &#40;Level 200 進行先進的 Active Directory 複寫和拓撲管理&#41;](Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-.md)
 
 

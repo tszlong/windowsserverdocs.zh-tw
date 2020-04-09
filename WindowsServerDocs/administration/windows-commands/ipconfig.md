@@ -1,24 +1,20 @@
 ---
 title: ipconfig
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 15071c2c-4815-4893-93b2-ab30232e312e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4bfe3476dd90016291881ca8cee2b66283772bce
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1c93b75d6518746df7ef936c7059bd03fcf96ab6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375380"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80842071"
 ---
 # <a name="ipconfig"></a>ipconfig
 
@@ -32,7 +28,7 @@ ms.locfileid: "71375380"
 ipconfig [/allcompartments] [/all] [/renew [<Adapter>]] [/release [<Adapter>]] [/renew6[<Adapter>]] [/release6 [<Adapter>]] [/flushdns] [/displaydns] [/registerdns] [/showclassid <Adapter>] [/setclassid <Adapter> [<ClassID>]]
 ```
 
-### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -47,12 +43,12 @@ ipconfig [/allcompartments] [/all] [/renew [<Adapter>]] [/release [<Adapter>]] [
 |/renew6 [\<Adapter >]|針對所有介面卡（如果未指定介面卡）或特定介面卡（如果*包含介面卡參數）* ，更新 DHCPv6 設定。 只有在已設定為自動取得 IPv6 位址的介面卡電腦上，才能使用此參數。 若要指定介面卡名稱，請輸入當您使用不含參數的**ipconfig**時，所顯示的介面卡名稱。|
 |/setclassid \<介面卡 > [<ClassID>]|設定指定介面卡的 DHCP 類別識別碼。 若要設定所有介面卡的 DHCP 類別識別碼，請使用星號 **&#42;** （）萬用字元來取代*介面卡*。 只有在已設定為自動取得 IP 位址的介面卡電腦上，才能使用此參數。 如果未指定 DHCP 類別識別碼，則會移除目前的類別識別碼。|
 |/showclassid \<介面卡 >|顯示指定介面卡的 DHCP 類別識別碼。 若要查看所有介面卡的 DHCP 類別識別碼，請使用星號 **&#42;** （）萬用字元來取代*介面卡*。 只有在已設定為自動取得 IP 位址的介面卡電腦上，才能使用此參數。|
-|/?|在命令提示字元顯示 [說明]。|
+|/?|在命令提示字元中顯示說明。|
 
 ## <a name="remarks"></a>備註
 
 - 此命令最適用于設定為自動取得 IP 位址的電腦。 這可讓使用者判斷哪些 TCP/IP 設定值已由 DHCP、自動私人 IP 位址（APIPA）或替代設定進行設定。
-- 如果您為*介面卡*提供的名稱包含任何空格，請使用引號括住介面卡名稱（**例如：「** <em>介面卡名稱</em> **」）。**
+- 如果您為*介面卡*提供的名稱包含任何空格，請使用引號括住介面卡名稱（例如： * * * *<em>介面卡名稱</em>* * * *）。
 - 對於介面卡名稱， **ipconfig**支援使用星號（\*）萬用字元來指定名稱開頭為指定字串的介面卡，或名稱包含指定字串的介面卡。 例如，**本機\*** 符合所有以本機字串開頭的介面卡，而 **\*con\*** 符合包含字串 Con 的所有介面卡。
 
 ## <a name="examples"></a>範例
@@ -67,7 +63,7 @@ ipconfig /all
 ```
 若只要針對本機區域連線介面卡更新 DHCP 指派的 IP 位址設定，請輸入：
 ```
-ipconfig /renew "Local Area Connection"
+ipconfig /renew Local Area Connection
 ```
 若要在針對 DNS 名稱解析問題進行疑難排解時排清 DNS 解析程式快取，請輸入：
 ```
@@ -79,9 +75,9 @@ ipconfig /showclassid Local*
 ```
 若要將本機區域連線介面卡的 DHCP 類別識別碼設定為測試，請輸入：
 ```
-ipconfig /setclassid "Local Area Connection" TEST
+ipconfig /setclassid Local Area Connection TEST
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
--   [命令列語法關鍵](command-line-syntax-key.md)
+-   - [命令列語法關鍵](command-line-syntax-key.md)

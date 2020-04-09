@@ -1,24 +1,20 @@
 ---
 title: gpupdate
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2fd4e567-2ce1-4637-b611-c2f0895e5708
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7f73917721fca7b623501b521ad095d40ab98e33
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: 23f9bf243210db7c47b9b08bc363f5dfa7815fc9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465412"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80842421"
 ---
 # <a name="gpupdate"></a>gpupdate
 
@@ -30,7 +26,7 @@ ms.locfileid: "77465412"
 gpupdate [/target:{Computer | User}] [/force] [/wait:<VALUE>] [/logoff] [/boot] [/sync] [/?]
 ```
 
-### <a name="parameters"></a>參數
+#### <a name="parameters"></a>參數
 
 |     參數     |                                                                                                                                                                                                                                                                                                                             描述                                                                                                                                                                                                                                                                                                                             |
 |-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -54,7 +50,7 @@ gpupdate [/target:{Computer | User}] [/force] [/wait:<VALUE>] [/logoff] [/boot] 
 gpupdate /force
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
 -   [群組原則技術中心](https://go.microsoft.com/fwlink/?LinkID=145531)
--   [命令列語法關鍵](command-line-syntax-key.md)
+-   - [命令列語法關鍵](command-line-syntax-key.md)

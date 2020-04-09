@@ -1,24 +1,20 @@
 ---
 title: bootcfg query
-description: 適用于**bootcfg 查詢**的 Windows 命令主題：查詢，並顯示 boot.ini 的 [開機載入器] 和 [作業系統] 區段專案。
-ms.custom: na
+description: 適用于 bootcfg 查詢的 Windows 命令主題，它會查詢並顯示 boot.ini 中的開機載入器和作業系統區段專案。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a4cacfd1-10a6-4a11-b0c5-f8abde72bfc8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ae82357cfe178343872448c2ebd46c49a797b5a9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1ac80c802b1d30dcf7221f94f761233c6b6fc6b6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379906"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80848521"
 ---
 # <a name="bootcfg-query"></a>bootcfg query
 
@@ -30,7 +26,7 @@ ms.locfileid: "71379906"
 ```
 bootcfg /query [/s <computer> [/u <Domain>\<User> /p <Password>]]
 ```
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |        詞彙         |                                                                                             定義                                                                                              |
 |---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -49,18 +45,18 @@ bootcfg /query [/s <computer> [/u <Domain>\<User> /p <Password>]]
   Boot Entries
   ------
   Boot entry ID:   1
-  Friendly Name:   ""
+  Friendly Name:   
   path:            multi(0)disk(0)rdisk(0)partition(1)\WINDOWS
   OS Load Options: /fastdetect /debug /debugport=com1:
   ```
 - [ **Bootcfg 查詢**輸出] 的 [開機載入器設定] 部分會顯示 boot.ini 的 [開機載入器] 區段中的每個專案。
 - [ **Bootcfg 查詢**輸出] 的 [開機專案] 部分會針對 boot.ini 的 [作業系統] 區段中的每個作業系統專案顯示下列詳細資料： [開機專案識別碼]、[易記名稱]、[路徑] 和 [OS 載入選項]。
-  ## <a name="BKMK_examples"></a>典型
+  ## <a name="examples"></a><a name=BKMK_examples></a>典型
   下列範例會示範如何使用**bootcfg/query**命令：
   ```
   bootcfg /query
   bootcfg /query /s srvmain /u maindom\hiropln /p p@ssW23
   bootcfg /query /u hiropln /p p@ssW23
   ```
-  #### <a name="additional-references"></a>其他參考
-  [命令列語法關鍵](command-line-syntax-key.md)
+  ## <a name="additional-references"></a>其他參考資料
+  - [命令列語法關鍵](command-line-syntax-key.md)

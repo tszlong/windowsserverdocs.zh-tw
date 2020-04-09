@@ -1,7 +1,6 @@
 ---
 ms.assetid: 3acaa977-ed63-4e38-ac81-229908c47208
 title: 如何處理 LDAP 伺服器 Cookie
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: ca63fa9504765b0376eb671b4decd67de7768f15
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: f90f53763e7a31ffed1fd820061910742e5cf98a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948892"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823231"
 ---
 # <a name="how-ldap-server-cookies-are-handled"></a>如何處理 LDAP 伺服器 Cookie
 

@@ -1,7 +1,6 @@
 ---
 ms.assetid: e3d55565-ad45-4504-ad73-8103d1a92170
 title: 安裝新的 Windows Server 2012 Active Directory 子網域或樹狀目錄網域 (等級 200)
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: d0944377739f43ea5d9b8d0d9c94c13e9f18985f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f7244b76364c8e2ce7249af8e76825a08b2a75c8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390893"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825331"
 ---
 # <a name="install-a-new-windows-server-2012-active-directory-child-or-tree-domain-level-200"></a>安裝新的 Windows Server 2012 Active Directory 子網域或樹狀目錄網域 (等級 200)
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 此主題說明如何使用 [伺服器管理員] 或 Windows PowerShell，將子網域與樹狀目錄網域新增至現有的 Windows Server 2012 樹系。  
   
@@ -28,22 +27,22 @@ ms.locfileid: "71390893"
   
 -   [部署](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md#BKMK_Deployment)  
   
-## <a name="BKMK_Workflow"></a>子域與樹狀目錄網域工作流程  
+## <a name="child-and-tree-domain-workflow"></a><a name="BKMK_Workflow"></a>子域與樹狀目錄網域工作流程  
 下圖說明當您已安裝 AD DS 角色且使用 [伺服器管理員] 啟動 [Active Directory 網域服務設定精靈] 在現有的樹系中建立新網域時的「Active Directory 網域服務」設定程序。  
   
 ![安裝新的 AD 子系](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/adds_childtreedeploy_beta1.png)  
   
-## <a name="BKMK_PS"></a>子域與樹狀目錄網域 Windows PowerShell  
+## <a name="child-and-tree-domain-windows-powershell"></a><a name="BKMK_PS"></a>子域與樹狀目錄網域 Windows PowerShell  
   
 |||  
 |-|-|  
 |**ADDSDeployment Cmdlet**|引數 (**粗體**的引數是必要的。 *斜體*的引數可以使用 Windows PowerShell 或 [AD DS 設定精靈] 來指定。)|  
-|**安裝-Install-addsdomain**|-SkipPreChecks<br /><br />***-NewDomainName***<br /><br />***-ParentDomainName***<br /><br />***-SafeModeAdministratorPassword***<br /><br />*-ADPrepCredential*<br /><br />-AllowDomainReinstall<br /><br />-Confirm<br /><br />*-CreateDNSDelegation*<br /><br />***-Credential***<br /><br />*-DatabasePath*<br /><br />*-DNSDelegationCredential*<br /><br />-NoDNSOnNetwork<br /><br />*-DomainMode*<br /><br />***-DomainType***<br /><br />-Force<br /><br />*-InstallDNS*<br /><br />*-LogPath*<br /><br />*-NewDomainNetBIOSName*<br /><br />*-NoGlobalCatalog*<br /><br />-NoNorebootoncompletion<br /><br />*-ReplicationSourceDC*<br /><br />*-SiteName*<br /><br />-SkipAutoConfigureDNS<br /><br />*-SYSVOLPath*<br /><br />*-Whatif*|  
+|**安裝-Install-addsdomain**|-SkipPreChecks<p>***-NewDomainName***<p>***-ParentDomainName***<p>***-SafeModeAdministratorPassword***<p>*-ADPrepCredential*<p>-AllowDomainReinstall<p>-Confirm<p>*-CreateDNSDelegation*<p>***-Credential***<p>*-DatabasePath*<p>*-DNSDelegationCredential*<p>-NoDNSOnNetwork<p>*-DomainMode*<p>***-DomainType***<p>-Force<p>*-InstallDNS*<p>*-LogPath*<p>*-NewDomainNetBIOSName*<p>*-NoGlobalCatalog*<p>-NoNorebootoncompletion<p>*-ReplicationSourceDC*<p>*-SiteName*<p>-SkipAutoConfigureDNS<p>*-SYSVOLPath*<p>*-Whatif*|  
   
 > [!NOTE]  
 > 只有當您不是以 Enterprise Admins 群組成員登入時才需要 **-credential** 引數。若要變更根據 DNS 網域名稱首碼自動產生的 15 個字元的名稱或超過 15 個字元的名稱，您將需要 **-NewDomainNetBIOSName** 引數。  
   
-## <a name="BKMK_Deployment"></a>部署  
+## <a name="deployment"></a><a name="BKMK_Deployment"></a>部署  
   
 ### <a name="deployment-configuration"></a>部署設定  
 下列螢幕擷取畫面顯示新增子網域的選項：  
@@ -135,7 +134,7 @@ Microsoft 建議所有網域控制站都提供 DNS 與 GC 服務，以在分散�
   
 ```  
   
-最後，您可以將模糊化密碼儲存到檔案中以在稍後重複使用，而不顯示純文字密碼。 例如:  
+最後，您可以將模糊化密碼儲存到檔案中以在稍後重複使用，而不顯示純文字密碼。 例如，  
   
 ```  
 $file = "c:\pw.txt"  
@@ -215,7 +214,7 @@ ADDSDeployment 模組提供略過 DNS 用戶端、轉寄站與根目錄提示自
   
 [檢閱選項] 頁面可讓您在開始安裝之前先驗證設定，並確保它們符合您的需求。 使用 [伺服器管理員] 時，這不是能停止安裝的最後機會。 這只是可讓您在繼續設定前確認設定的選項。  
   
-[伺服器管理員] 中的 [檢閱選項] 頁面也提供選用的 [檢視指令碼] 按鈕，用來建立一個包含目前的 ADDSDeployment 設定的 Unicode 文字檔，以便做為一個 Windows PowerShell 指令碼。 這樣可以讓您將 [伺服器管理員] 的圖形介面當作 Windows PowerShell 部署工作室一樣操作。 使用 [Active Directory 網域服務設定精靈] 來設定選項、匯出設定，然後取消精靈。  這個程序會建立一個有效且合乎語義的正確範例，以備日後修改或直接使用。 例如:  
+[伺服器管理員] 中的 [檢閱選項] 頁面也提供選用的 [檢視指令碼] 按鈕，用來建立一個包含目前的 ADDSDeployment 設定的 Unicode 文字檔，以便做為一個 Windows PowerShell 指令碼。 這樣可以讓您將 [伺服器管理員] 的圖形介面當作 Windows PowerShell 部署工作室一樣操作。 使用 [Active Directory 網域服務設定精靈] 來設定選項、匯出設定，然後取消精靈。  這個程序會建立一個有效且合乎語義的正確範例，以備日後修改或直接使用。 例如，  
   
 ```  
 #  
@@ -249,7 +248,7 @@ Install-ADDSDomain `
   
 ![安裝新的 AD 子系](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/ADDS_SMI_TR_ChildWhatIf.png)  
   
-### <a name="prerequisites-check"></a>先決條件檢查  
+### <a name="prerequisites-check"></a>必要條件檢查  
 ![安裝新的 AD 子系](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/ADDS_SMI_TR_ChildPrereqCheck.png)  
   
 [先決條件檢查] 是 AD DS 網域設定中的新功能。 這個新的階段會驗證伺服器設定是否能支援新的 AD DS 網域。  
@@ -258,7 +257,7 @@ Install-ADDSDomain `
   
 [先決條件檢查] 也會提供諸如影響舊版作業系統之安全性變更的相關資訊。  
   
-如需特定先決條件檢查的詳細資訊，請參閱 [Prerequisite Checking](../../ad-ds/manage/AD-DS-Simplified-Administration.md#BKMK_PrereuisiteChecking)。  
+如需特定先決條件檢查的詳細資訊，請參閱[先決條件檢查](../../ad-ds/manage/AD-DS-Simplified-Administration.md#BKMK_PrereuisiteChecking)。  
   
 使用 [伺服器管理員] 時無法略過 [先決條件檢查] ，但您可以在使用 AD DS 部署 Cmdlet 時使用下列引數略過該程序：  
   

@@ -1,30 +1,27 @@
 ---
-title: 啟動伺服器命令
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+title: 啟動伺服器
+description: 啟動伺服器的 Windows 命令主題，它會啟動多播傳輸、命名空間、傳輸伺服器，或 Windows 部署服務伺服器上的所有服務。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7bbb68e0-1275-4c5f-b276-383a5be4534b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e18ed6a7707516410e96ecf4b6bd43e668667c2d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 05a7df2ed9f1276588808434d6b963e470ee1a73
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385096"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80832981"
 ---
-# <a name="the-start-server-command"></a>啟動伺服器命令
+# <a name="start-server"></a>啟動伺服器
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 啟動多播傳輸、命名空間、傳輸伺服器或 Windows 部署服務伺服器上的所有服務。
+
 ## <a name="subcommands"></a>子
 |來|描述|
 |-------|--------|

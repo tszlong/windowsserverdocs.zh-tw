@@ -2,26 +2,23 @@
 title: 伺服器清理精靈
 description: Windows Server Update Service （WSUS）主題-如何使用伺服器清理嚮導來管理磁碟空間
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7c351797-2716-4442-a668-60d5b4e77751
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e285e59a27b6bf0ef1bf3b1ab0f78a96efa60c87
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 12049e2bba28f2381e6e80db07768b4e180861d6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361530"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828531"
 ---
 # <a name="the-server-cleanup-wizard"></a>伺服器清理精靈
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 伺服器清理 Wizard 已整合到使用者介面中，可用來協助您管理磁碟空間。 此 wizard 可以執行下列作業：
 
@@ -51,7 +48,7 @@ ms.locfileid: "71361530"
   > [!IMPORTANT]
   >  如果您使用 [伺服器清理] Wizard 移除不必要的內容，則也會移除您從 Microsoft Update 目錄網站下載的所有私人更新檔案。 執行 [伺服器清理嚮導] 之後，您必須重新匯入這些檔案。 
 
-如果使用自動核准規則核准更新，它們可能仍處於「已核准」狀態，且不會被伺服器清理嚮導移除。 若要移除處於「已核准」狀態的自動核准更新，WSUS 系統管理員必須至少以手動方式將已取代更新的核准狀態設定為「未核准」，這樣他們就可以由 [伺服器清理] Wizard 進行 declination。 伺服器清理嚮導會確保已核准較新的更新，而且沒有任何用戶端系統在將更新標示為「已拒絕」之前，不會視需要進行更新。
+如果使用自動核准規則核准更新，它們可能仍處於 [已核准] 狀態，而且不會由 [伺服器清理] Wizard 移除。 若要移除處於核准狀態的自動核准更新，WSUS 系統管理員必須至少以手動方式將已取代之更新的核准狀態設定為 [未核准]，如此使用者就可以由 [伺服器清理] Wizard 進行 declination。 伺服器清理嚮導會確保已核准較新的更新，而且沒有任何用戶端系統仍會在將更新標示為已拒絕之前，視需要進行更新。
 
 
 

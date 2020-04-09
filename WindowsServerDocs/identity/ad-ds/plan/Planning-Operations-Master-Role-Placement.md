@@ -1,7 +1,6 @@
 ---
 ms.assetid: bd64a766-5362-4f29-b963-5465c2bb79e7
 title: 規劃設置操作主機角色
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,21 +8,21 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: eb17ed55ba7d7ba23d21162fd41f4022821948fe
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 990f93d44189a6061653d5e190a176b049a280c4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402528"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822101"
 ---
 # <a name="planning-operations-master-role-placement"></a>規劃設置操作主機角色
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Active Directory Domain Services （AD DS）支援目錄資料的多宿主複寫，這表示任何網域控制站都可以接受目錄變更，並將變更複寫到所有其他網域控制站。 不過，某些變更（例如架構修改）並不實用，無法以多宿主方式執行。 基於此原因，某些網域控制站（稱為「操作主機」）會保留負責接受特定變更之要求的角色。  
   
 > [!NOTE]  
-> 操作主機角色持有者必須能夠將某些資訊寫入 Active Directory 資料庫。 由於唯讀網域控制站（RODC）上 Active Directory 資料庫的唯讀性質， **rodc 無法作為操作主機角色持有**者。  
+> 操作主機角色持有者必須能將資訊寫入 Active Directory 資料庫。 由於唯讀網域控制站（RODC）上 Active Directory 資料庫的唯讀性質， **rodc 無法作為操作主機角色持有**者。  
   
 每個網域中都有三個操作主機角色（也稱為彈性單一主機操作或 FSMO）：  
   
@@ -52,11 +51,11 @@ Active Directory Domain Services （AD DS）支援目錄資料的多宿主複寫
 
 PDC 模擬器會處理用戶端密碼變更。 只有一個網域控制站會作為樹系中每個網域的 PDC 模擬器。  
   
-即使所有網域控制站都已升級至 Windows 2000、Windows Server 2003 和 Windows Server 2008，而且網域是在 Windows 2000 原生功能等級上運作，PDC 模擬器還是會收到所執行之密碼變更的優先複寫由網域中的其他網域控制站。 如果最近變更過密碼，該變更會花時間複寫到網域中的每個網域控制站。 如果由於密碼不正確而導致另一個網域控制站的登入驗證失敗，則該網域控制站會將驗證要求轉送至 PDC 模擬器，然後再決定是否要接受或拒絕登入嘗試。  
+即使所有網域控制站都已升級為 Windows 2000、Windows Server 2003 和 Windows Server 2008，而網域是在 Windows 2000 原生功能等級上運作，PDC 模擬器還是會收到網域中其他網域控制站所執行之密碼變更的優先複寫。 如果最近變更過密碼，該變更會花時間複寫到網域中的每個網域控制站。 如果由於密碼不正確而導致另一個網域控制站的登入驗證失敗，則該網域控制站會將驗證要求轉送至 PDC 模擬器，然後再決定是否要接受或拒絕登入嘗試。  
   
 如有需要，請將 PDC 模擬器放在包含來自該網域之大量使用者的位置，以進行密碼轉送作業。 此外，請確定該位置已妥善連接到其他位置，以將複寫延遲降到最低。  
   
-如需協助您記載規劃放置 PDC 模擬器之位置的資訊，以及每個位置所代表每個網域的使用者數目，請參閱 Windows Server 2003 部署套件的工作輔助（[https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)）、下載作業_Aids_Designing_and_Deploying_Directory_and_Security_Services，並開啟 [網域控制站放置] （DSSTOPO_4）。  
+如需可協助您記錄有關放置 PDC 模擬器之位置的資訊，以及每個位置中所代表每個網域的使用者數目，請參閱 Windows Server 2003 部署套件的工作輔助（[https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)）、下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，以及開啟網域控制站放置（DSSTOPO_4 .doc）。  
   
 當您部署地區網域時，您必須參考需要放置 PDC 模擬器之位置的相關資訊。 如需部署地區網域的詳細資訊，請參閱[部署 Windows Server 2008 地區網域](https://technet.microsoft.com/library/cc755118.aspx)。  
   
@@ -83,7 +82,7 @@ PDC 模擬器會處理用戶端密碼變更。 只有一個網域控制站會作
 - 網站 C 和 D 中的網域控制站無法新增或移除目錄、DNS 或自訂的應用程式磁碟分割。  
 - 網站 C 和 D 中的網域控制站無法進行架構變更。  
   
-如需協助您規劃操作主機角色位置的工作表，請參閱[Windows Server 2003 部署套件的工作輔助](https://go.microsoft.com/fwlink/?LinkID=102558)工具、下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services，以及開啟網域控制站位置（DSSTOPO_4）。  
+如需協助您規劃操作主機角色位置的工作表，請參閱[Windows Server 2003 部署套件的工作輔助工具](https://go.microsoft.com/fwlink/?LinkID=102558)、下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，以及開啟網域控制站位置（DSSTOPO_4 .doc）。  
   
 當您建立樹系根域和地區網域時，您將需要參考這則資訊。 如需部署樹系根域的詳細資訊，請參閱部署[部署 Windows Server 2008 樹系根域](https://technet.microsoft.com/library/cc731174.aspx)。 如需部署地區網域的詳細資訊，請參閱[部署 Windows Server 2008 地區網域](https://technet.microsoft.com/library/cc755118.aspx)。  
 

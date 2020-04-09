@@ -1,7 +1,6 @@
 ---
 ms.assetid: d92731f1-e4d8-4223-9b07-ca1f40bb0e1f
 title: 斷續命名空間
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 5abe67c89ce4c2f4b5056f6197242b5db8db340e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b21e849bb69068f66b1b80c6b1a3afbdef91459f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408854"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822531"
 ---
 # <a name="disjoint-namespace"></a>斷續命名空間
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 當一或多個網域成員電腦的主功能變數名稱稱服務（DNS）尾碼不符合電腦所屬之 Active Directory 網域的 DNS 名稱時，就會發生脫離的命名空間。 例如，在名為 na.corp.fabrikam.com 的 Active Directory 網域中使用主要 DNS 尾碼 corp.fabrikam.com 的成員電腦，會使用脫離的命名空間。  
   
@@ -27,7 +26,7 @@ ms.locfileid: "71408854"
 ## <a name="support-for-disjoint-namespaces"></a>支援脫離的命名空間  
 網域成員電腦（包括網域控制站）可以在脫離的命名空間中運作。 網域成員電腦可以在脫離的 DNS 命名空間中註冊其主機（A）資源記錄和 IP 第6版（IPv6）主機（AAAA）資源記錄。 當網域成員電腦以這種方式註冊其資源記錄時，網域控制站會繼續在 DNS 區域中註冊與 Active Directory 功能變數名稱相同的全域和網站特定服務（SRV）資源記錄。  
   
-例如，假設名為 na.corp.fabrikam.com 且使用主要 DNS 尾碼 corp.fabrikam.com 的域 Active Directory 控制器，會在 corp.fabrikam.com DNS 區域中註冊主機（A）和 IPv6 主機（AAAA）資源記錄。 網域控制站會繼續在 _msdcs 和 na.corp.fabrikam.com DNS 區域中註冊全域和網站特定服務（SRV）資源記錄，讓服務位置得以實現。  
+例如，假設名為 na.corp.fabrikam.com 且使用主要 DNS 尾碼 corp.fabrikam.com 的域 Active Directory 控制器，會在 corp.fabrikam.com DNS 區域中註冊主機（A）和 IPv6 主機（AAAA）資源記錄。 網域控制站會繼續在 _msdcs. na .com 和 na.corp.fabrikam.com DNS 區域中註冊全域和網站特定服務（SRV）資源記錄，以提供服務位置。  
   
 > [!IMPORTANT]  
 > 雖然 Windows 作業系統可能支援脫離的命名空間，但撰寫的應用程式假設主要 DNS 尾碼與 Active Directory 網域尾碼在這類環境中可能無法運作。 基於這個理由，您應該在部署脫離的命名空間之前，仔細測試所有應用程式及其各自的作業系統。  
@@ -94,7 +93,7 @@ ms.locfileid: "71408854"
   
     -   如果您想要委派許可權來修改次級系統管理員的 Spn，請參閱委派授權以修改 Spn （[https://go.microsoft.com/fwlink/?LinkId=106639](https://go.microsoft.com/fwlink/?LinkId=106639)）。  
   
--   如果您在部署中使用輕量型目錄存取協定（LDAP） over 安全通訊端層（SSL）（也稱為 LDAPS）搭配使用在脫離的命名空間中設定之網域控制站的 CA，則必須使用適當的 Active Directory 功能變數名稱和主要 DNS 尾碼（當您設定 LDAPS 憑證時）。  
+-   如果您在部署中使用輕量型目錄存取協定（LDAP） over 安全通訊端層（SSL）（也就是在具有脫離的命名空間中設定之網域控制站的 CA），則當您設定 LDAPS 憑證時，必須使用適當的 Active Directory 功能變數名稱和主要 DNS 尾碼。  
   
     如需網域控制站憑證需求的詳細資訊，請參閱 Microsoft 知識庫中的文章321051（[https://go.microsoft.com/fwlink/?LinkId=102307](https://go.microsoft.com/fwlink/?LinkId=102307)）。  
   

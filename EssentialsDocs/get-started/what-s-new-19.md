@@ -1,22 +1,18 @@
 ---
 title: Windows Server 2019 Essentials 中的新功能
 description: 說明 Windows Server Essentials 2019 中的變更
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: affff774-5fa6-4944-887a-9bfde05f6a3f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: jasgroce
-ms.openlocfilehash: 11d12d3dc00357e09e156daa47c373a893ac40f7
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 321ada3c046b7c78f141d2697191f48e225b93be
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310285"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817731"
 ---
 # <a name="whats-new-in-windows-server-2019-essentials"></a>Windows Server 2019 Essentials 中的新功能
 
@@ -28,8 +24,8 @@ Windows Server Essentials 體驗角色已從所有伺服器 Sku 中移除，包�
 
 隨著伺服器 Essentials 體驗角色的淘汰，將無法再使用下列功能：
 
--   用戶端備份 
--   遠端 web 存取 
+-    用戶端備份 
+-    遠端 web 存取 
 
 ## <a name="microsoft-365-business-the-modern-small-business-solution"></a>Microsoft 365 商務版：新式小型企業解決方案 
 

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 5b2876ac-fe7d-4054-bfba-b692e57bc0d2
 title: 附錄 C-Active Directory 中受保護的帳戶和群組
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 606b3a42d70ee5c2a3479f9c9df2f95a495d6afd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3036176127cbb5401c582d81ddb2704d790a209a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408722"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821681"
 ---
 # <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>附錄 C︰Active Directory 中受保護的帳戶和群組
 
@@ -22,7 +21,7 @@ ms.locfileid: "71408722"
 
 ## <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>附錄 C︰Active Directory 中受保護的帳戶和群組
 
-在 Active Directory 內，會將一組預設的高許可權帳戶和群組視為受保護的帳戶和群組。 在 Active Directory 中的大部分物件，委派的系統管理員（已委派管理 Active Directory 物件的許可權）可以變更物件的許可權，包括變更許可權以允許自己變更的成員資格例如，群組。  
+在 Active Directory 內，會將一組預設的高許可權帳戶和群組視為受保護的帳戶和群組。 在 Active Directory 的大部分物件中，委派的系統管理員（已委派管理 Active Directory 物件之許可權的使用者）可以變更物件的許可權，包括變更許可權以允許自己變更群組的成員資格，例如。  
 
 不過，透過受保護的帳戶和群組，物件的許可權會透過自動程式來設定和強制執行，確保物件上的許可權會保持一致，即使物件已移至目錄也一樣。 即使有人手動變更受保護物件的許可權，此程式仍可確保許可權會快速地傳回給其預設值。  
 
@@ -35,7 +34,7 @@ ms.locfileid: "71408722"
 | Windows Server 2003 RTM | Windows Server 2003 SP1 + | Windows Server 2012、 <br> Windows Server 2008 R2、 <br> Windows Server 2008 | Windows Server 2016 |
 | --- | --- | --- | --- |
 |Account Operators|Account Operators|Account Operators|Account Operators|
-|Administrator|Administrator|Administrator|Administrator|
+|系統管理員|系統管理員|系統管理員|系統管理員|
 |Administrators|Administrators|Administrators|Administrators|
 |Backup Operators|Backup Operators|Backup Operators|Backup Operators|
 |Cert Publishers|||

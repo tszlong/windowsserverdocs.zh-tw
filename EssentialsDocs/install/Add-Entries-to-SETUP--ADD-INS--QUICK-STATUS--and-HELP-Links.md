@@ -1,23 +1,19 @@
 ---
 title: 將項目新增至「設定」、「增益集」、「快速狀態」和「說明連結」
 description: 說明如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c0a8f10d-fd85-4c8d-b9bb-176cb1db1f46
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 074e4e638a1fe96bedf2c8340ec71848a8fa4ac4
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 78eb8a24b32763ae4f7c048889529f87d3b4fecf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310273"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817661"
 ---
 # <a name="add-entries-to-setup-add-ins-quick-status-and-help-links"></a>將項目新增至「設定」、「增益集」、「快速狀態」和「說明連結」
 

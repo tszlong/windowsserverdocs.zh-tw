@@ -5,15 +5,14 @@ manager: eldenc
 ms.author: cosdar
 ms.technology: storage-health-service
 ms.topic: article
-ms.assetid: ''
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: e65db8834bd0b059dc7bbebbcaf9288fb46da225
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3b47e1abf3805b7e6e3dc180d5d937ddb2723fa4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369685"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827541"
 ---
 # <a name="health-service-reports"></a>健全狀況服務報表
 > 適用于： Windows Server 2019、Windows Server 2016
@@ -46,7 +45,7 @@ Get-StorageNode -Name <Name> | Get-StorageHealthReport -Count <Count>
 
 ## <a name="usage-in-net-and-c"></a>.NET 和中的使用方式C#
 
-### <a name="connect"></a>連線
+### <a name="connect"></a>連接
 
 為了查詢健全狀況服務，您必須建立叢集的**CimSession** 。 若要這麼做，您將需要一些只在完整 .NET 中提供的專案，這表示您無法直接從 web 或行動裝置應用程式進行這項操作。 這些程式碼範例將使用 C\#，這是最直接的此資料存取層選擇。
 
@@ -282,6 +281,6 @@ public void BeginStreamingMetrics(CimSession Session, CimInstance HealthService,
 | IOThroughputTotal   | 1         |
 | IOThroughputWrite   | 1         |
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 - [Windows Server 2016 中的健全狀況服務](health-service-overview.md)

@@ -1,30 +1,26 @@
 ---
 title: bitsadmin
-description: '**Bitsadmin**的 Windows 命令主題-bitsadmin 是一種命令列工具，可讓您用來建立、下載或上傳作業，以及監視其進度。'
-ms.custom: na
+description: 適用于 bitsadmin 的 Windows 命令主題，這是用來建立、下載或上傳作業及監視其進度的命令列工具。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4853036e-1df8-45ad-8be6-cfb097b8dd27
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b53293b28a83ecced34d248741996c958531d517
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ae6536b5c149f54bbfd37a5e0e814ffaa09a6bae
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71380103"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80848741"
 ---
 # <a name="bitsadmin"></a>bitsadmin
 
 > **適用于**： windows Server （半年通道）、windows server 2016、windows Server 2012 R2、windows server 2012、windows 10
 
-bitsadmin 是一種命令列工具，可讓您用來建立下載或上傳作業，以及監視其進度。 Bitsadmin 工具會使用參數來識別要執行的工作。  您可以呼叫 `bitsadmin /?` 或 `bitsadmin /HELP` 來取得參數的清單。
+Bitsadmin 是一種命令列工具，可讓您用來建立下載或上傳作業，以及監視其進度。 Bitsadmin 工具會使用參數來識別要執行的工作。  您可以呼叫 `bitsadmin /?` 或 `bitsadmin /HELP` 來取得參數的清單。
 
 大部分的交換器都需要 \<作業\> 參數設定為作業的顯示名稱或 GUID。 請注意，作業的顯示名稱可能不是唯一的。 **/Create**和 **/list**參數會傳回作業的 GUID。
 
@@ -34,7 +30,7 @@ bitsadmin 是一種命令列工具，可讓您用來建立下載或上傳作業�
 
 使用下列參數來建立作業、設定和取出作業的屬性，以及監視作業的狀態。 如需示範如何使用這些參數來執行工作的範例，請參閱[bitsadmin 範例](bitsadmin-examples.md)。
 
-## <a name="switches"></a>參數
+## <a name="switches"></a>交換機
 
 [bitsadmin addfile](bitsadmin-addfile.md)  
 [bitsadmin addfileset](bitsadmin-addfileset.md)  

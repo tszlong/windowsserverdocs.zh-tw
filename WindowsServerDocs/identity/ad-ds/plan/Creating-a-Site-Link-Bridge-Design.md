@@ -1,7 +1,6 @@
 ---
 ms.assetid: 64142026-07b5-4601-840a-c8dcf6ab9814
 title: 建立站台連結橋接器設計
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 79e91481c357d05617ee0ddc716e2bf6e90b8b27
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f75feb34b64e2ab41859dd708147a2e8d05a768a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408963"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822761"
 ---
 # <a name="creating-a-site-link-bridge-design"></a>建立站台連結橋接器設計
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 站台連結橋會連接兩個或多個站台連結，並啟用站台連結之間的傳遞。 橋接器中的每個站台連結都必須具有與橋接器中另一個站台連結相同的網站。 知識一致性檢查程式（KCC）會使用每個站台連結上的資訊，來計算一個站台連結中的網站與橋接器的另一個站台連結中的網站之間的複寫成本。 如果沒有在站台連結之間出現一般網站，則 KCC 也無法在相同站台連結橋連線的網站中的網域控制站之間建立直接連線。  
   
@@ -39,4 +38,4 @@ ms.locfileid: "71408963"
   
 ### <a name="controlling-replication-through-a-firewall"></a>控制透過防火牆的複寫
 
-如果在兩個不同的網站中代表相同網域的兩個網域控制站特別允許透過防火牆彼此通訊，您可以停用**橋接所有站台連結**，並在相同的那一邊建立網站的站台連結橋防火牆. 因此，如果您的網路是以防火牆分隔，建議您停用站台連結的轉移，並在防火牆的一端建立網路的站台連結橋。 如需透過防火牆管理複寫的相關資訊，請參閱[在防火牆分割的網路中 Active Directory](https://go.microsoft.com/fwlink/?LinkId=107074)一文。
+如果兩個不同網站中代表相同網域的兩個網域控制站特別允許透過防火牆彼此通訊，您可以停用 [**橋接所有站台連結**]，並在防火牆的同一端建立網站的站台連結橋。 因此，如果您的網路是以防火牆分隔，建議您停用站台連結的轉移，並在防火牆的一端建立網路的站台連結橋。 如需透過防火牆管理複寫的相關資訊，請參閱[在防火牆分割的網路中 Active Directory](https://go.microsoft.com/fwlink/?LinkId=107074)一文。

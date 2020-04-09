@@ -1,7 +1,6 @@
 ---
 ms.assetid: d8e61aa4-8e4b-4097-83ca-70cf61366b75
 title: 使用 OU 物件委派管理
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 31b8ef30cb12903936d00a8ab8fe56de77f8025a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: af13896c07c10710be6e087be5d31dbd4aec698f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408944"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822711"
 ---
 # <a name="delegating-administration-by-using-ou-objects"></a>使用 OU 物件委派管理
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 您可以使用組織單位（Ou），將 OU 內的物件管理（例如使用者或電腦）委派給指定的個人或群組。 若要使用 OU 來委派管理，請將您要委派系統管理許可權的個人或群組放入群組中、將要控制的一組物件放入 OU 中，然後將 OU 的系統管理工作委派給該群組。  
   

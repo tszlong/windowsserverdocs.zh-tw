@@ -2,22 +2,18 @@
 title: 步驟1設定基本 DirectAccess 基礎結構
 description: 本主題是使用適用于 Windows Server 2016 的消費者入門 Wizard 部署單一 DirectAccess 伺服器指南的一部分
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ba4de2a4-f237-4b14-a8a7-0b06bfcd89ad
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: c53adce68168ac4890f14c766e10b2b886dd598c
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 622e8e0f6b4b692cc9bec5bfebeca3336e1e77a1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308949"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819521"
 ---
 # <a name="step-1-configure-the-basic-directaccess-infrastructure"></a>步驟1設定基本 DirectAccess 基礎結構
 
@@ -151,7 +147,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 2.  在 [**系統**內容] 對話方塊中，按一下 [**電腦名稱稱**] 索引標籤。在 [**電腦名稱稱**] 索引標籤上，按一下 [**變更**]。  
   
-3.  在 [電腦名稱]中，如果您將伺服器加入網域時也要變更電腦名稱，請輸入該電腦名稱。 在 [隸屬於]下面，按一下 [網域]，然後輸入要加入伺服器的網域名稱，例如，corp.contoso.com，然後按一下 [確定]。  
+3.  在 [電腦名稱] 中，如果您將伺服器加入網域時也要變更電腦名稱，請輸入該電腦名稱。 在 [隸屬於]下面，按一下 [網域]，然後輸入要加入伺服器的網域名稱，例如，corp.contoso.com，然後按一下 [確定]。  
   
 4.  提示您輸入使用者名稱和密碼時，輸入有權將電腦加入至網域的使用者名稱及密碼，然後按一下 [確定]。  
   

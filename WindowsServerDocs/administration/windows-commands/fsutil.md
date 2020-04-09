@@ -9,16 +9,16 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 08/21/2018
-ms.openlocfilehash: 0f338c80dca0ed88ca206aea5aeb415bc191e03a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 717c287995be2ab56bd49f2f24d46001f77e0e68
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376666"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80843901"
 ---
 # <a name="fsutil"></a>Fsutil
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7
+>適用于： Windows Server （半年通道）、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7
 
 執行與檔案配置表（FAT）和 NTFS 檔案系統相關的工作，例如管理重新分析點、管理稀疏檔案或卸載磁片區。 如果使用時不含參數， **Fsutil**會顯示一份支援的子命令清單。 
 
@@ -32,14 +32,14 @@ ms.locfileid: "71376666"
 >```
 > 安裝後，系統會提示您重新開機電腦。 在您的電腦重新開機之後，您將能夠以系統管理員身分執行**Fsutil** 。
 
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
 |來 |描述|
 |---|---|
 |[Fsutil 8dot3name](fsutil-8dot3name.md) | 例如，查詢或變更系統上的簡短名稱行為設定時，會產生8.3 字元長度的檔案名。 移除目錄中所有檔案的簡短名稱。 掃描目錄，並識別從目錄中的檔案移除簡短名稱時可能會受到影響的登錄機碼。|
 |[Fsutil 行為](fsutil-behavior.md) |查詢或設定磁片區行為。|
 |[Fsutil dirty](fsutil-dirty.md)| 查詢磁片區的中途位是否已設定，或是否設定磁片區的中途位。 設定磁片區的中途位時， **autochk**會在下一次電腦重新開機時，自動檢查磁片區是否有錯誤。|
-|[Fsutil 檔案](fsutil-file.md)|依使用者名稱尋找檔案（如果已啟用磁片配額）、設定檔案範圍的查詢、設定檔案的簡短名稱、設定檔案的有效資料長度、為檔案設定零個數據、建立指定大小的新檔案，並在給定名稱時尋找檔案識別碼，或尋找指定檔案識別碼的檔案連結名稱。|
+|[Fsutil 檔案](fsutil-file.md)|依使用者名稱尋找檔案（如果已啟用磁片配額）、設定檔案範圍的查詢、設定檔案的簡短名稱、設定檔案的有效資料長度、設定檔案的零資料、建立指定大小的新檔案、在指定的名稱時尋找檔案識別碼，或尋找指定檔案識別碼的檔案連結名稱。|
 |[Fsutil fsinfo](fsutil-fsinfo.md)|列出所有磁片磁碟機，並查詢磁片磁碟機類型、磁片區資訊、NTFS 特定磁片區資訊或檔案系統統計資料。|
 |[Fsutil 硬連結](fsutil-hardlink.md)|列出檔案的硬連結，或建立硬連結（檔案的目錄專案）。 每個檔案都可以被視為至少有一個硬連結。 在 NTFS 磁片區上，每個檔案都可以有多個永久連結，因此單一檔案可能會出現在多個目錄（或甚至在相同的目錄中，名稱不同）。 由於所有連結都參考相同的檔案，因此程式可以開啟任何連結並修改檔案。 只有在刪除檔案的所有連結之後，檔案才會從檔案系統中刪除。 建立硬式連結之後，程式就可以像任何其他檔案名一樣使用它。|
 |[Fsutil objectid](fsutil-objectid.md)|管理物件識別碼，由 Windows 作業系統用來追蹤檔案和目錄等物件。|
@@ -55,4 +55,4 @@ ms.locfileid: "71376666"
 |[Fsutil wim](fsutil-wim.md)|提供探索和管理 WIM 支援檔案的功能。|
 
 ## <a name="see-also"></a>另請參閱
-[命令列語法關鍵](Command-Line-Syntax-Key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

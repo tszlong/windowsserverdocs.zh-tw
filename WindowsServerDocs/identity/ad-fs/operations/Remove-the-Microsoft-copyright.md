@@ -1,7 +1,6 @@
 ---
 ms.assetid: c89a977c-b09f-44ec-be42-41e76a6cf3ad
 title: 移除 Microsoft 著作權
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 0c24173dd03e03f9e8a19ef5981a6dc1259d62d7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9306950ab83ea94c1ff814ea9a404c0efeff0e40
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407519"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816211"
 ---
 # <a name="remove-the-microsoft-copyright"></a>移除 Microsoft 著作權 
 
@@ -38,9 +37,9 @@ ms.locfileid: "71407519"
    Export-AdfsWebTheme -Name custom -DirectoryPath C:\CustomWebTheme
    ```
 
-3. 找出位於 [輸出] 資料夾中的 [`Style.css`] 檔案。 藉由使用上述範例，路徑會 `C:\CustomWebTheme\Css\Style.css.`
+3. 找出位於輸出檔案夾中的 `Style.css` 檔案。 藉由使用上述範例，路徑會是 `C:\CustomWebTheme\Css\Style.css.`
   
-4. 使用編輯器（例如 [記事本]）開啟 [`Style.css`] 檔案。  
+4. 使用編輯器（例如 [記事本]）開啟 `Style.css` 檔案。  
   
 5. 找出 `#copyright` 部分，並將它變更如下：  
 

@@ -3,16 +3,15 @@ title: 針對事件識別碼50錯誤訊息進行疑難排解
 description: 說明如何疑難排解事件識別碼50錯誤訊息
 author: Deland-Han
 manager: dcscontentpm
-audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 202e0604fc492ff72cd1794bc8197a12c1ab9163
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: 7ce3551b60450a3720c9350b5c55f396368490c1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654379"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815231"
 ---
 # <a name="troubleshoot-the-event-id-50-error-message"></a>針對事件識別碼50錯誤訊息進行疑難排解
 
@@ -48,7 +47,7 @@ Please try to save this file elsewhere.
 > [!NOTE] 
 > 描述中的裝置和路徑和特定的十六進位資料會有所不同。 
 
-##  <a name="more-information"></a>更多資訊
+##  <a name="more-information"></a>詳細資訊
 
 當 Windows 嘗試將資訊寫入磁片時，如果發生一般錯誤，則會記錄事件識別碼50訊息。 當 Windows 嘗試將資料從檔案系統快取管理員（而非硬體層級快取）認可至實體磁片時，就會發生此錯誤。 此行為是 Windows 記憶體管理的一部分。 例如，如果程式傳送寫入要求，則快取管理員會快取寫入要求，而程式會告知寫入已順利完成。 在稍後的時間點，快取管理員會嘗試將資料延遲寫入實體磁片。 當「快取管理員」嘗試將資料認可到磁片時，寫入資料時發生錯誤，而且會從快取中清除資料並予以捨棄。 回寫式快取可改善系統效能，但是遺失延遲寫入失敗，可能會導致資料遺失和磁片區完整性遺失。
 
@@ -66,7 +65,7 @@ Please try to save this file elsewhere.
 
 下表描述此訊息的每個位移代表的意義： 
 
-|OffsetLengthValues|長度|值|
+|OffsetLengthValues|Length|值|
 |-----------|------------|---------|
 |0x00|2|未使用|
 |0x02|2|傾印資料大小 = 0x0004|
@@ -83,7 +82,7 @@ Please try to save this file elsewhere.
 
 **錯誤碼**
 
-在 [摘要] 區段的範例中，錯誤碼會列在第二行。 這一行的開頭為 "0008："，它包含這一行中的最後四個位元組：0008： 00 00 00 00 32 00 04 80 在此情況下，錯誤碼為0x80040032。 下列程式碼是錯誤50的代碼，而且對於所有事件識別碼50訊息都是相同的： IO_LOST_DELAYED_WRITEWARNINGNote 當您將事件識別碼訊息中的十六進位資料轉換成狀態碼時，請記住這些值會以下列方式表示：位元組由小到大格式。
+在 [摘要] 區段的範例中，錯誤碼會列在第二行。 這一行的開頭為 "0008："，它包含這一行中的最後四個位元組：0008： 00 00 00 00 32 00 04 80 在此情況下，錯誤碼為0x80040032。 下列程式碼是錯誤50的代碼，而且對於所有事件識別碼50訊息而言都相同： IO_LOST_DELAYED_WRITEWARNINGNote 當您將事件識別碼訊息中的十六進位資料轉換成狀態碼時，請記住這些值是以位元組由小到大的格式表示。
 
 **目標磁片**
 

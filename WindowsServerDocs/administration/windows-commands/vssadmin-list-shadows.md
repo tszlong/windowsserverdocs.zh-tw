@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 49bee3deac463b68fda94097bb183bcbf1c89810
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cadbacb5225e28118ec71e9cbad6b3c57a6086e0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362589"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80830061"
 ---
 # <a name="vssadmin-list-shadows"></a>Vssadmin 清單陰影
 
->適用於：Windows 10、Windows 8.1、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+>適用于： Windows 10、Windows 8.1、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 列出指定磁片區的所有現有陰影複製。 如果您在沒有參數的情況下使用此命令，它會依**陰影複製組所規定**的順序，顯示電腦上的所有磁片區陰影複製。
 
@@ -27,12 +27,12 @@ ms.locfileid: "71362589"
 vssadmin list shadows [/for=<ForVolumeSpec>] [/shadow=<ShadowID>]
 ```
 
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---|---|
-|/for = \<ForVolumeSpec >|指定將為其列出陰影複製的磁片區。|
-|/shadow = \<ShadowID >|列出 ShadowID 所指定的陰影複製。 若要取得陰影複製識別碼，請使用**vssadmin list shadows**命令。 當您輸入陰影複製識別碼時，請使用下列格式，其中每個*X*代表一個十六進位字元：<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX （XXXX）|
+|/for =\<ForVolumeSpec >|指定將為其列出陰影複製的磁片區。|
+|/shadow =\<ShadowID >|列出 ShadowID 所指定的陰影複製。 若要取得陰影複製識別碼，請使用**vssadmin list shadows**命令。 當您輸入陰影複製識別碼時，請使用下列格式，其中每個*X*代表一個十六進位字元：<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX （XXXX）|
 
 ## <a name="additional-references"></a>其他參考資料
 

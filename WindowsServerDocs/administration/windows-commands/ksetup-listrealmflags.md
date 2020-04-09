@@ -1,24 +1,20 @@
 ---
 title: ksetup： listrealmflags
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aa96e4da-6b98-4c05-bccf-73cbf33258c2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8f103875dc10dfbf7b0c604a8e2060fe58ee7a92
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 265f988d85deb7602e91677626d207bc3a7873ef
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374966"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80841491"
 ---
 # <a name="ksetuplistrealmflags"></a>ksetup： listrealmflags
 
@@ -32,7 +28,7 @@ ms.locfileid: "71374966"
 ksetup /listrealmflags
 ```
 
-### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>參數
 
 無
 
@@ -52,7 +48,7 @@ ksetup /listrealmflags
 
 領域旗標會儲存在登錄中， **HKEY_LOCAL_MACHINE \system\currentcontrolset\control\lsa\kerberos\domains\\** <em>領域名稱</em>。 此項目依預設不存在於登錄中。 您可以使用[Ksetup： addrealmflags](ksetup-addrealmflags.md)命令來填入登錄。
 
-## <a name="BKMK_Examples"></a>典型
+## <a name="examples"></a><a name=BKMK_Examples></a>典型
 
 列出此電腦上的已知領域旗標：
 ```
@@ -66,10 +62,10 @@ ksetup /setrealmflags CORP.CONTOSO.COM sendaddress tcpsupported delete ncsupport
 ksetup /setrealmflags CORP.CONTOSO.COM 0xF
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
 -   [Ksetup:setrealmflags](ksetup-setrealmflags.md)
 -   [Ksetup:addrealmflags](ksetup-addrealmflags.md)
 -   [Ksetup:delrealmflags](ksetup-delrealmflags.md)
 -   [Ksetup](ksetup.md)
--   [命令列語法關鍵](command-line-syntax-key.md)
+-   - [命令列語法關鍵](command-line-syntax-key.md)

@@ -1,6 +1,5 @@
 ---
 title: AD 樹系復原-移除通用類別目錄
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 60087a62-11e6-4750-a70e-510f35315688
 ms.technology: identity-adds
-ms.openlocfilehash: 3ba1336828ad6031ce7fb47a659d084494466e4a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9c16d25c3e749062bdcb2531960c17be434cf615
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71409093"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823721"
 ---
 # <a name="ad-forest-recovery---removing-the-global-catalog"></a>AD 樹系復原-移除通用類別目錄  
 
@@ -32,7 +31,7 @@ ms.locfileid: "71409093"
 4. 以滑鼠右鍵按一下 [ **NTDS 設定**]，然後按一下 [**屬性**]。 
 5. 清除 [**通用類別目錄**] 核取方塊。 
    ![移除 GC](media/AD-Forest-Recovery-Remove-GC/removegc1.png)
-6. 按一下 [套用]。
+6. 按一下 **[套用]** 。
   
 ## <a name="to-remove-the-global-catalog-using-repadmin"></a>使用 Repadmin 移除通用類別目錄  
   

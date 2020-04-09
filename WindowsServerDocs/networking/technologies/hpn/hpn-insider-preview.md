@@ -1,5 +1,4 @@
 ---
-ms.assetid: ''
 title: Windows Server 2019 中適用于 HPN 功能的 Insider Preview
 description: 瞭解 Windows Server 2019 中的新高效能網路功能。
 manager: dougkim
@@ -9,12 +8,12 @@ ms.date: 09/12/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 03a652372fd86b11a87863330bf9536a28367167
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: f6403cd9787ccdd4f50eb08ebd7723d2de789ebb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316950"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819641"
 ---
 # <a name="new-hpn-features-in-windows-server-2019"></a>Windows Server 2019 中的新 HPN 功能
 

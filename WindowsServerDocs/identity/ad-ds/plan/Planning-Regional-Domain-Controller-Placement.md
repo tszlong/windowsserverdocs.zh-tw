@@ -1,7 +1,6 @@
 ---
 ms.assetid: eb600904-24b8-4488-a278-c1c971dc2f2d
 title: 規劃區域網域控制站放置
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 2508476f35462516f32877365cb15be919b5b6df
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cb1d83d5afca92de85c4de8b3e9125e119250f66
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408733"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822111"
 ---
 # <a name="planning-regional-domain-controller-placement"></a>規劃區域網域控制站放置
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 若要確保成本效率，請盡可能將最少的地區網域控制站放在其中。 首先，請參閱用來[收集網路資訊](../../ad-ds/plan/Collecting-Network-Information.md)的「地理位置和通訊連結」（DSSTOPO_1 .doc）工作表，以判斷某個位置是否為中樞。  
   
@@ -32,7 +31,7 @@ ms.locfileid: "71408733"
   
 僅將可寫入的區域網域控制站新增至可確保其實體安全性的位置。  
   
-在實體安全性不適當的位置中，建議您部署唯讀網域控制站（RODC）。 除了帳戶密碼以外，RODC 會保存可寫入網域控制站所保有的所有 Active Directory 物件和屬性。 不過，無法對儲存在 RODC 上的資料庫進行變更。 必須在可寫入的網域控制站上進行變更，然後再複寫回 RODC。  
+在實體安全性不適當的位置中，建議您部署唯讀網域控制站（RODC）。 除了帳戶密碼以外，RODC 會保存可寫入網域控制站所保有的所有 Active Directory 物件和屬性。 不過，您無法對儲存於 RODC 上的資料庫進行變更。 變更必須在可寫入的網域控制站上進行，然後複寫回 RODC。  
   
 若要驗證用戶端登入和存取本機檔案伺服器，大部分的組織會針對指定位置中所代表的所有地區網域，各放置區域網域控制站。 不過，在評估企業位置是否需要其用戶端進行本機驗證，或用戶端可以依賴廣域網路（WAN）連結的驗證和查詢時，您必須考慮許多變數。 下圖顯示如何決定是否要將網域控制站放在附屬位置。  
   
@@ -42,15 +41,15 @@ ms.locfileid: "71408733"
 
 基於各種原因，需要持續管理網域控制站。 僅將地區網域控制站放在包含可以管理網域控制站之人員的位置，或確定可以從遠端系統管理網域控制站。  
   
-在分公司環境中，通常會有不佳的實體安全性和沒有資訊技術知識的人員，部署 RODC 通常是建議的解決方案。 RODC 的本機系統管理許可權可以委派給任何網域使用者，而不需要將網域或其他網域控制站的任何使用者權限授與該使用者。 這允許本機分支使用者登入 RODC，並在伺服器上執行維護工作，例如升級驅動程式。 不過，分支使用者無法登入任何其他網域控制站，或在網域中執行任何其他系統管理工作。 如此一來，就可以將分支使用者委派為能夠有效管理分公司中的 RODC，而不會危及網域或樹系其他部分的安全性。  
+在分公司環境中，通常會有不佳的實體安全性和沒有資訊技術知識的人員，部署 RODC 通常是建議的解決方案。 RODC 的本機系統管理許可權可以委派給任何網域使用者，而不需要將網域或其他網域控制站的任何使用者權限授與該使用者。 這允許位於分公司的使用者登入 RODC，並在伺服器上執行維護工作，例如升級驅動程式。 不過，分公司的使用者無法登入任何其他網域控制站，或在網域中執行任何其他系統管理工作。 如此一來，就可以將分支使用者委派為能夠有效管理分公司中的 RODC，而不會危及網域或樹系其他部分的安全性。  
   
 ## <a name="wan-link-availability"></a>WAN 連結可用性
 
-如果位置不包含可驗證使用者的網域控制站，則經常發生中斷的 WAN 連結可能會對使用者造成明顯的生產力。 如果您的 WAN 連結可用性不是 100%，而您的遠端網站無法容忍服務中斷，請將區域網域控制站放在使用者需要能夠登入或 exchange 伺服器存取的位置（當 WAN 連結關閉時）。  
+如果位置不包含可驗證使用者的網域控制站，則經常發生中斷的 WAN 連結可能會對使用者造成明顯的生產力。 如果您的 WAN 連結可用性不是100%，而您的遠端網站無法容忍服務中斷，請將區域網域控制站放在使用者需要能夠登入或 exchange 伺服器存取的位置（當 WAN 連結關閉時）。  
   
 ## <a name="authentication-availability"></a>驗證可用性
 
-某些組織（例如銀行）要求使用者必須經過驗證。 將區域網域控制站放在 WAN 連結可用性不是 100% 的位置，但使用者必須隨時進行驗證。  
+某些組織（例如銀行）要求使用者必須經過驗證。 將區域網域控制站放在 WAN 連結可用性不是100% 的位置，但使用者必須隨時進行驗證。  
   
 ## <a name="logon-performance-over-wan-links"></a>透過 WAN 連結的登入效能
 
@@ -80,6 +79,6 @@ ms.locfileid: "71408733"
   
 如果降低維護網域控制站的成本比網路流量更重要，請將該網域的網域控制站集中化，而不要將任何地區網域控制站放在該位置，或考慮將 Rodc 放在該位置。  
   
-如需協助您記錄地區網域控制站位置的工作表，以及每個位置中所代表每個網域的使用者數目，請參閱[Windows Server 2003 部署套件的工作輔助](https://go.microsoft.com/fwlink/?LinkID=102558)工具，下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services，並開啟 [網域控制站放置] （DSSTOPO_4）。  
+如需協助您記錄地區網域控制站位置的工作表，以及每個位置中所代表每個網域的使用者數目，請參閱[Windows Server 2003 部署套件的工作輔助工具](https://go.microsoft.com/fwlink/?LinkID=102558)、下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，然後開啟「網域控制站位置」（DSSTOPO_4 .doc）。  
   
 當您部署地區網域時，您必須參考您需要放置區域網域控制站之位置的相關資訊。 如需部署地區網域的詳細資訊，請參閱[部署 Windows Server 2008 地區網域](https://technet.microsoft.com/library/cc755118.aspx)。  

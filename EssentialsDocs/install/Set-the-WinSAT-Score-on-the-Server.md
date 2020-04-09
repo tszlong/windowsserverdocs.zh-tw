@@ -1,23 +1,19 @@
 ---
 title: 在伺服器上設定 WinSAT 分數
 description: 說明如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 911dc494-0f8f-4723-93d6-2106f914b906
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 20aafa957bd49f6522bfef98a2f8626dc5aab9df
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 2f469f902f28642890723552ac460e844281c7b8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311499"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819831"
 ---
 # <a name="set-the-winsat-score-on-the-server"></a>在伺服器上設定 WinSAT 分數
 

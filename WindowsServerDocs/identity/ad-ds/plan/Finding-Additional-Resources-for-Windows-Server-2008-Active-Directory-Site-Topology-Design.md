@@ -1,24 +1,22 @@
 ---
 ms.assetid: eca5bbf0-088e-4753-bf49-4d6c1125f689
 title: 尋找其他 Windows Server 2008 Active Directory 站台拓撲設計資源
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 1b94197e850b0bf0865c9281281ad063102c29eb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 49709ca40c515c8fdb7df62598e9a9dc766029c8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408827"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822451"
 ---
-# <a name="finding-additional-resources-for-windows-server-2008-active-directory-site-topology-design"></a>尋找其他 Windows Server 2008 Active Directory 站台拓撲設計資源
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+# <a name="finding-additional-resources-for-windows-server-2008-active-directory-site-topology-design"></a>尋找 Windows Server 2008 的其他結果 # rces Active Directory 網站拓朴設計
 
 您可以在 Windows Server 2003 和 Windows Server 2008 技術中心網站上找到下列關於 Active Directory Domain Services （AD DS）的檔：  
   
@@ -32,7 +30,7 @@ ms.locfileid: "71408827"
   
 -   如需有關安裝網路監視器的詳細資訊，請參閱監視網路流量（[https://go.microsoft.com/fwlink/?LinkId=107058](https://go.microsoft.com/fwlink/?LinkId=107058)）。  
   
--   如需協助您記載 Windows Server 2008 AD DS 網站拓撲設計的工作表，請參閱 Windows Server 2003 部署套件的工作輔助工具（[https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)）。  
+-   如需協助您記載 Windows Server 2008 AD DS 網站拓撲設計的工作表，請參閱 Windows Server 2003 部署套件（[https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)）的工作輔助。  
   
 -   如需有關網域之間的快捷方式信任的詳細資訊，請參閱瞭解何時建立快捷方式信任（[https://go.microsoft.com/fwlink/?LinkId=107061](https://go.microsoft.com/fwlink/?LinkId=107061)）。  
   
@@ -54,7 +52,7 @@ ms.locfileid: "71408827"
   
 -   如需唯讀網域控制站（RODC）功能的詳細資訊，請參閱 AD DS：唯讀網域控制站（[https://go.microsoft.com/fwlink/?LinkID=106616](https://go.microsoft.com/fwlink/?LinkID=106616)）。  
   
--   如需如何部署 RODC 的相關資訊，請參閱唯讀網域控制站的逐步指南（[https://go.microsoft.com/fwlink/?LinkID=92728](https://go.microsoft.com/fwlink/?LinkID=92728)）。  
+-   如需有關如何部署 RODC 的詳細資訊，請參閱唯讀網域控制站的逐步指南（[https://go.microsoft.com/fwlink/?LinkID=92728](https://go.microsoft.com/fwlink/?LinkID=92728)）。  
   
 
 

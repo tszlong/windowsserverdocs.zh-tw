@@ -1,28 +1,22 @@
 ---
 title: break
-description: '**Break_2**的 Windows 命令主題-將陰影複製磁片區與 VSS 解除對應，使其可作為一般磁片區存取。'
-ms.custom: na
+description: 適用于 break_2 的 Windows 命令主題，這會解除陰影複製磁片區與 VSS 的對應，並使其可做為一般磁片區存取。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: de2b6c95-1c2e-4a43-bec5-341a9014371b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a5789e3442152c705b3197bf1ce5e63dc782a15c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6683c44c84f4baae5f016f7df62d5bd6591cff70
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379782"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80848251"
 ---
 # <a name="break"></a>break
-
-
 
 將陰影複製磁片區與 VSS 解除，使其可做為一般磁片區存取。 然後可以使用磁碟機號（若已指派）或磁片區名稱來存取該磁片區。 如果在沒有參數的情況下使用， **break**會在命令提示字元中顯示說明。
 
@@ -37,7 +31,7 @@ ms.locfileid: "71379782"
 break [writable] <SetID>
 ```
 
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -49,7 +43,7 @@ break [writable] <SetID>
 -   公開的磁片區（例如它們源自的陰影複製）預設為唯讀。
 -   「**載入中繼資料**」命令儲存為環境變數的陰影複製識別碼別名，可用於*SetID*參數。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 若要在作業系統中，以可寫入磁片區的別名名稱 Alias1 來進行陰影複製，請輸入：
 ```
@@ -59,6 +53,6 @@ break writable %Alias1%
 > [!NOTE]
 > 磁片區的存取權會直接對硬體提供者進行，而不會記錄具有陰影複製的磁片區。
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

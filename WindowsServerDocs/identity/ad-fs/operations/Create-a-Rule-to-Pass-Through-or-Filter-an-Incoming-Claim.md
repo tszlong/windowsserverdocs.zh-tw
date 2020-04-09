@@ -1,7 +1,6 @@
 ---
 ms.assetid: 6127963f-71b2-4d8f-8b53-7c525bf06521
 title: 建立規則以傳遞或篩選傳入宣告
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,20 +8,20 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 145558e620188c4311d79d2a9ba4ed7aaf7b13a8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fb885d8b822faf4bd5ee82ad70c59b99678a58e9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358136"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816831"
 ---
 # <a name="create-a-rule-to-pass-through-or-filter-an-incoming-claim"></a>建立規則以傳遞或篩選傳入宣告
 
-在 Active Directory 同盟服務 \(AD FS\)中使用 [傳遞] 或 [篩選傳入宣告] 規則範本時，您可以傳遞所有具有所選宣告類型的傳入宣告。 您也可以使用選取的宣告類型來篩選傳入宣告的值。 例如，您可以使用此規則範本來建立規則，以傳送所有傳入的群組宣告。 您也可以使用此規則，只傳送使用者主體名稱 \(UPN，\) 以 @fabrikam結尾的宣告。  
+在 Active Directory 同盟服務 \(AD FS\)中使用 [傳遞] 或 [篩選傳入宣告] 規則範本時，您可以傳遞所有具有所選宣告類型的傳入宣告。 您也可以篩選包含所選宣告類型的內送宣告值。 例如，您可以使用此規則範本來建立將傳送所有內送群組宣告的規則。 您也可以使用此規則，只傳送使用者主體名稱 \(UPN，\) 以 @fabrikam結尾的宣告。  
   
 您可以使用下列程式，利用中的 [AD FS 管理] 嵌入式\-管理單元來建立宣告規則。  
   
-若要完成此程序，至少需要本機電腦上之 **Administrators** 群組的成員資格或同等權限。  請參閱[本機與網域的預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中關於使用適當帳戶和群組成員資格的詳細資料。   
+若要完成此程序，至少需要本機電腦之 **Administrators** 群組的成員資格或同等權限。  請參閱[本機與網域的預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中關於使用適當帳戶和群組成員資格的詳細資料。   
 
 ## <a name="to-create-a-rule-to-pass-through-or-filter-an-incoming-claim-on-a-relying-party-trust-in-windows-server-2016"></a>建立規則以在 Windows Server 2016 中的信賴憑證者信任上傳遞或篩選傳入宣告 
 

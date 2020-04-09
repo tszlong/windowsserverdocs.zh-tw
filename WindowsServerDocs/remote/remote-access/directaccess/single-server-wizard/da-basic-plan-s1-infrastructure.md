@@ -2,22 +2,17 @@
 title: 步驟1規劃基本 DirectAccess 基礎結構
 description: 本主題是使用適用于 Windows Server 2016 的消費者入門 Wizard 部署單一 DirectAccess 伺服器指南的一部分
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: ''
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 9c71ef26f9e4ba5d20705827109d9ad22fe5c7ab
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 6bab4adbcf006556c73c96f403afe7538079e967
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308898"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819341"
 ---
 # <a name="step-1-plan-the-basic-directaccess-infrastructure"></a>步驟1規劃基本 DirectAccess 基礎結構
 在單一伺服器上進行基本 DirectAccess 部署的第一個步驟，是針對部署所需的基礎結構進行規劃。 本主題描述基礎結構規劃步驟：  
@@ -55,8 +50,8 @@ ms.locfileid: "80308898"
   
     ||外部網路介面卡|內部網路介面卡<sup>1</sup>|路由需求|  
     |-|--------------|--------------------|------------|  
-    |IPv4 內部網路與 IPv4 網際網路|設定下列項目：<br /><br />-一個靜態公用 IPv4 位址，具有適當的子網路遮罩。<br />-網際網路防火牆或本機網際網路服務提供者 \(ISP\) 路由器的預設閘道 IPv4 位址。|設定下列項目：<br /><br />-具有適當子網路遮罩的 IPv4 內部網路位址。<br />-連線\-內部網路命名空間的特定 DNS 尾碼。 此外，也必須在內部介面上設定 DNS 伺服器。<br />-請勿在任何內部網路介面上設定預設閘道。|若要設定 DirectAccess 伺服器連線到內部 IPv4 網路上的所有子網路，請執行下列動作：<br /><br />1. 列出內部網路上所有位置的 IPv4 位址空間。<br />2. 使用**route add \-p**或**netsh interface ipv4 add route**命令來新增 ipv4 位址空間，做為 DirectAccess 伺服器之 ipv4 路由表中的靜態路由。|  
-    |IPv6 網際網路與 IPv6 內部網路|設定下列項目：<br /><br />-使用您 ISP 所提供的自動設定位址設定。<br />-使用 [**路由列印**] 命令，以確保指向 ISP 路由器的預設 ipv6 路由存在於 IPv6 路由表中。<br />-判斷 ISP 和內部網路路由器是否使用 RFC 4191 中所述的預設路由器喜好設定，以及使用高於您近端內部網路路由器的預設喜好設定。 如果這兩項都是肯定的，預設路由就不需要其他設定。 ISP 路由器的喜好設定等級較高時，可確保 DirectAccess 伺服器的作用中預設 IPv6 路由指向 IPv6 網際網路。<br /><br />由於 DirectAccess 伺服器是 IPv6 路由器，因此如果您有原生的 IPv6 基礎結構，網際網路介面也可以連線到內部網路上的網域控制站。 在此情況下，請將封包篩選器新增至周邊網路中的網域控制站，以防止連線到 DirectAccess 伺服器\-面向介面的 IPv6 位址。|設定下列項目：<br /><br />-如果您不是使用預設的喜好設定層級，請使用**netsh interface ipv6 Set InterfaceIndex ignoredefaultroutes\=enabled 命令設定**內部網路介面。 此命令可確保指向內部網路路由器的其他預設路由不會新增至 IPv6 路由表。 您可以從 netsh interface show interface 命令的顯示畫面，取得內部網路介面的 InterfaceIndex。|當您有 IPv6 內部網路時，若要設定 DirectAccess 伺服器來連線到所有 IPv6 位置，請執行下列動作：<br /><br />1. 列出內部網路上所有位置的 IPv6 位址空間。<br />2. 使用**netsh interface ipv6 add route**命令來新增 ipv6 位址空間，做為 DirectAccess 伺服器之 ipv6 路由表中的靜態路由。|  
+    |IPv4 內部網路與 IPv4 網際網路|設定下列項目：<p>-一個靜態公用 IPv4 位址，具有適當的子網路遮罩。<br />-網際網路防火牆或本機網際網路服務提供者 \(ISP\) 路由器的預設閘道 IPv4 位址。|設定下列項目：<p>-具有適當子網路遮罩的 IPv4 內部網路位址。<br />-連線\-內部網路命名空間的特定 DNS 尾碼。 此外，也必須在內部介面上設定 DNS 伺服器。<br />-請勿在任何內部網路介面上設定預設閘道。|若要設定 DirectAccess 伺服器連線到內部 IPv4 網路上的所有子網路，請執行下列動作：<p>1. 列出內部網路上所有位置的 IPv4 位址空間。<br />2. 使用**route add \-p**或**netsh interface ipv4 add route**命令來新增 ipv4 位址空間，做為 DirectAccess 伺服器之 ipv4 路由表中的靜態路由。|  
+    |IPv6 網際網路與 IPv6 內部網路|設定下列項目：<p>-使用您 ISP 所提供的自動設定位址設定。<br />-使用 [**路由列印**] 命令，以確保指向 ISP 路由器的預設 ipv6 路由存在於 IPv6 路由表中。<br />-判斷 ISP 和內部網路路由器是否使用 RFC 4191 中所述的預設路由器喜好設定，以及使用高於您近端內部網路路由器的預設喜好設定。 如果這兩項都是肯定的，預設路由就不需要其他設定。 ISP 路由器的喜好設定等級較高時，可確保 DirectAccess 伺服器的作用中預設 IPv6 路由指向 IPv6 網際網路。<p>由於 DirectAccess 伺服器是 IPv6 路由器，因此如果您有原生的 IPv6 基礎結構，網際網路介面也可以連線到內部網路上的網域控制站。 在此情況下，請將封包篩選器新增至周邊網路中的網域控制站，以防止連線到 DirectAccess 伺服器\-面向介面的 IPv6 位址。|設定下列項目：<p>-如果您不是使用預設的喜好設定層級，請使用**netsh interface ipv6 Set InterfaceIndex ignoredefaultroutes\=enabled 命令設定**內部網路介面。 此命令可確保指向內部網路路由器的其他預設路由不會新增至 IPv6 路由表。 您可以從 netsh interface show interface 命令的顯示畫面，取得內部網路介面的 InterfaceIndex。|當您有 IPv6 內部網路時，若要設定 DirectAccess 伺服器來連線到所有 IPv6 位置，請執行下列動作：<p>1. 列出內部網路上所有位置的 IPv6 位址空間。<br />2. 使用**netsh interface ipv6 add route**命令來新增 ipv6 位址空間，做為 DirectAccess 伺服器之 ipv6 路由表中的靜態路由。|  
     |IPv4 網際網路和 IPv6 內部網路|DirectAccess 伺服器會使用 Microsoft 6to4 介面卡介面，將預設的 IPv6 路由流量轉送到 IPv4 網際網路上的 6to4 轉送。 您可以使用下列命令，針對 IPv4 網際網路上的 Microsoft 6to4 轉送的 IPv4 位址設定 DirectAccess 伺服器 \(在公司網路\) 中未部署原生 IPv6 時使用： netsh interface IPv6 6to4 set 轉送 name\=192.88.99.1 state\=enabled 命令。|||  
   
     > [!NOTE]  

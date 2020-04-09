@@ -1,28 +1,24 @@
 ---
 title: quser
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8056204f-ed11-4c91-bb1d-c799283a48a4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0c088c7f52340e4dd83f85bc4a153132cc966b36
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cd8b6d41d1a5904bc2a76273b93e10aad5b4741c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384807"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836731"
 ---
 # <a name="quser"></a>quser
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 顯示遠端桌面工作階段主機（rd 工作階段主機）伺服器上的使用者會話相關資訊。  
 
@@ -32,7 +28,7 @@ ms.locfileid: "71384807"
 ## <a name="remarks"></a>備註  
 此命令與**查詢使用者**命令相同。  
 
-#### <a name="additional-references"></a>其他參考  
+## <a name="additional-references"></a>其他參考資料  
 [查詢使用者](query-user.md)  
-[命令列語法關鍵](command-line-syntax-key.md)  
-[遠端桌面服務&#40;終端機&#41;服務命令參考](remote-desktop-services-terminal-services-command-reference.md)  
+- [命令列語法關鍵](command-line-syntax-key.md)  
+[遠端桌面服務 (終端機服務) 命令參考資料](remote-desktop-services-terminal-services-command-reference.md)  

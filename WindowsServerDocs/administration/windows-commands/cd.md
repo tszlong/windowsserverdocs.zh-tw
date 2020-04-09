@@ -1,28 +1,22 @@
 ---
 title: cd
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: Cd 的 Windows 命令主題，其顯示名稱或變更目前目錄。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 932d9cc1-3dff-40da-835c-1cb0894874f1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ed0942232eb205a8198d4b3d366ca9482af1f4b3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2d62f529ab6c45957f0fdea24358a2f13151adb6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379715"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80848221"
 ---
 # <a name="cd"></a>cd
-
-
 
 顯示或變更目前目錄的名稱。 如果只搭配磁碟機號使用（例如 `cd C:`）， **cd**會顯示指定磁片磁碟機中目前目錄的名稱。 如果在沒有參數的情況下使用， **cd**會顯示目前的磁片磁碟機和目錄。
 
@@ -40,7 +34,7 @@ chdir [/d] [<Drive>:][<Path>]
 chdir [..]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -54,13 +48,13 @@ chdir [..]
 
 如果已啟用命令延伸模組，則下列條件適用于**cd**命令：
 - 目前的目錄字串會轉換成使用與磁片上的名稱相同的大小寫。 例如，如果磁片上發生這種情況，`cd C:\TEMP` 會將目前的目錄設為 C：\Temp。
-- 空格不會被視為分隔符號，因此*Path*可以包含空格，而不需要括住引號。 例如：  
+- 空格不會被視為分隔符號，因此*Path*可以包含空格，而不需要括住引號。 例如，  
   ```
   cd username\programs\start menu
   ```  
   與相同：  
   ```
-  cd "username\programs\start menu"
+  cd username\programs\start menu
   ```  
   不過，如果已停用延伸模組，則需要引號。
 
@@ -69,7 +63,7 @@ chdir [..]
 cmd /e:off
 ```
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 根目錄是磁片磁碟機目錄階層的頂端。 若要返回根目錄，請輸入：
 ```
@@ -84,6 +78,6 @@ cd [<Drive>:\[<Directory>]]
 cd [<Drive>:]
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

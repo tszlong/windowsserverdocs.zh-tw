@@ -1,6 +1,5 @@
 ---
 title: AD 樹系復原 - 找出問題
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: dddbd187fb100b94b505a74595e040cec580a797
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 73b7ef8dc6093ae28c4b5076e7b332b704090b4f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369125"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823991"
 ---
 # <a name="identify-the-problem"></a>找出問題
 
->適用於：Windows Server 2016、Windows Server 2012 及 2012 R2、Windows Server 2008 和 2008 R2
+>適用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
   
 當全樹系失敗的徵兆出現時（例如事件記錄檔或其他監視解決方案），請使用 Microsoft 支援服務來判斷失敗的原因，並評估任何可能的補救方式。  
 

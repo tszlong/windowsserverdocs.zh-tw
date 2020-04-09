@@ -2,22 +2,19 @@
 title: 將 WSUS 資料庫從（Windows 內部資料庫） WID 遷移至 SQL
 description: Windows Server Update Service （WSUS）主題-如何將 WSUS 資料庫（SUSDB）從 Windows 內部資料庫實例遷移到 SQL Server 的本機或遠端實例。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: get-started article
 ms.assetid: 90e3464c-49d8-4861-96db-ee6f8a09g7dr
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dougkim
 ms.date: 07/25/2018
-ms.openlocfilehash: 594c20cbfea521006de6d1ec69763669298376e6
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 8d38833170aae5e13f9d42b726d7cb0b3c12de56
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948525"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828451"
 ---
 >適用于： Windows Server 2012、Windows Server 2012 R2、Windows Server 2016
 
@@ -25,7 +22,7 @@ ms.locfileid: "75948525"
 
 使用下列步驟，將 WSUS 資料庫（SUSDB）從 Windows 內部資料庫實例遷移到 SQL Server 的本機或遠端實例。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 - SQL 實例。 這可以是預設的**MSSQLServer**或自訂的實例。
 - SQL Server Management Studio
@@ -47,9 +44,9 @@ ms.locfileid: "75948525"
 
 #### <a name="using-sql-management-studio"></a>使用 SQL Management Studio
 
-1. 以滑鼠右鍵按一下 [SUSDB **-&gt; 工作**] -&gt; 按一下 [卸**離**]： ![image1](images/image1.png)
+1. 以滑鼠右鍵**SUSDB**按一下 [SUSDB **-&gt; 工作**] -&gt; 按一下 [卸**離**]： ![image1](images/image1.png)
 2. 核取 [卸載**現有的連接**]，然後按一下 **[確定]** （如果有作用中連線存在，則為選擇性
-    ![image2](images/image2.png)
+    ![image2)](images/image2.png)
 
 #### <a name="using-command-prompt"></a>使用 [命令提示字元]
 
@@ -124,14 +121,14 @@ ms.locfileid: "75948525"
 4. 在 [**使用者對應**] 頁面上：
     - 在 **[對應到此登入的使用者**] 下：選取 [ **SUSDB** ]
     - 在 [**資料庫角色成員資格： SUSDB**] 底下，確定已核取下列各項：
-        - **public**
+        - **公立**
         - **webService** ![image9](images/image9.png)
-5. 按一下 **\[確定\]**
+5. 按一下 [確定]。
 
 您現在應該會在 [登入] 下看到**NT AUTHORITY\NETWORK SERVICE** 。
 ![image10](images/image10.png)
 
-#### <a name="database-permissions"></a>資料庫權限
+#### <a name="database-permissions"></a>資料庫許可權
 
 1. 以滑鼠右鍵按一下 SUSDB
 2. 選取**屬性**
@@ -149,8 +146,8 @@ ms.locfileid: "75948525"
     >
     > ![image11](images/image11.png)
 
-4. 在 [**使用者對應**] 頁面上，選取 [**對應到此登入的使用者]** 底下的 [ **SUSDB** ] 資料庫。
-5. 在 [**資料庫角色成員資格： SUSDB]** 底下檢查**webservice** ： ![image12](images/image12.png)
+4. 在 [**使用者對應**] 頁面上，選取 [**對應到此登**入的使用者] 底下的 [ **SUSDB** ] 資料庫
+5. 檢查**資料庫角色成員資格**下的**webservice** ： SUSDB： ![image12](images/image12.png)
 6. 按一下 **[確定]** 以儲存設定。
     > [!NOTE]
     > 您可能需要重新開機 SQL 服務，變更才會生效。
@@ -158,7 +155,7 @@ ms.locfileid: "75948525"
 ### <a name="edit-the-registry-to-point-wsus-to-the-sql-server-instance"></a>編輯登錄以將 WSUS 指向 SQL Server 實例
 
 > [!IMPORTANT]
-> 請仔細依循本節中的步驟。 如果您未正確修改登錄，可能會發生嚴重問題。 在修改之前，[備份登錄以供還原](https://support.microsoft.com/help/322756)，以免發生問題。
+> 請仔細依循本節中的步驟。 若您不正確地修改登錄，可能會發生嚴重的問題。 在修改之前，[備份登錄以供還原](https://support.microsoft.com/help/322756)，以免發生問題。
 
 1. 依序按一下 [開始] 和 [執行]、輸入 **regedit**，然後按一下 [確定]。
 2. 找出下列機碼： **HKEY_LOCAL_MACHINE \software\microsoft\updateservices\server\setup\sqlservername**

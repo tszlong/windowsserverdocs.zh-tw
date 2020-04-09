@@ -1,7 +1,6 @@
 ---
 ms.assetid: e3ea1f67-60d4-4566-b24c-37faa95c3b2a
 title: 決定成本
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 0ce7acddbfa9f7536f3d5a190c6968ea0d8cf6b3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1bbc75cab2e78d1001fa13d419072807f202fd61
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408873"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822581"
 ---
 # <a name="determining-the-cost"></a>決定成本
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 您可以將成本值指派給站台連結，以優先于昂貴的連線來進行便宜的連接。 某些應用程式和服務（例如網域控制站定位器（DCLocator）和分散式檔案系統命名空間（DFSN））也會使用成本資訊來找出最接近的資源。 如果指定網域的網域控制站不存在於該網站，則可以使用站台連結成本來判斷用戶端在一個網站中所聯繫的網域控制站。 用戶端會使用已指派最低成本的站台連結來聯絡網域控制站。  
   
@@ -30,20 +29,20 @@ ms.locfileid: "71408873"
   
 |網路類型|速度|  
 |----------------|---------|  
-|非常慢|56每秒千位（Kbps）|  
-|慢速|64 Kbps|  
-|整合式服務數位網路（ISDN）|64 kbps 或 128 Kbps|  
+|非常慢|56 千位元/秒 (Kbps)|  
+|慢|64 Kbps|  
+|整合服務數位網路 (ISDN)|64 kbps 或 128 Kbps|  
 |框架轉送|可變速率，通常介於 56 Kbps 和每秒 1.5 mb （Mbps）之間|  
 |T1|1.5 Mbps|  
 |T3|45 Mbps|  
 |10BaseT|10 Mbps|  
 |非同步傳輸模式（ATM）|可變速率，通常介於 155 Mbps 到 622 Mbps 之間|  
 |100BaseT|100 Mbps|  
-|Gigabit 乙太網路|每秒 1 gigabit （Gbps）|  
+|Gigabit 乙太網路|1 Gigabit/秒 (Gbps)|  
   
 使用下表來根據廣域網路速度（WAN）連結速度來計算每個站台連結的成本。 針對未列于資料表中的 WAN 連結速度，您可以藉由將1024除以可用頻寬的記錄來計算相對成本因素，以 Kbps 為單位。  
   
-|可用的頻寬（Kbps）|成本|  
+|可用的頻寬（Kbps）|Cost|  
 |--------------------------------|--------|  
 |9.6|1042|  
 |19.2|798|  
@@ -54,7 +53,7 @@ ms.locfileid: "71408873"
 |256|425|  
 |512|378|  
 |1024|340|  
-|2048|309|  
+|2,048|309|  
 |4096|283|  
   
 這些成本不會反映網路連結之間的可靠性差異。 在任何容易發生錯誤的網路連結上設定較高的成本，讓您不必依賴這些連結進行複寫。 藉由設定較高的站台連結成本，您可以在站台連結失敗時控制複寫容錯移轉。  

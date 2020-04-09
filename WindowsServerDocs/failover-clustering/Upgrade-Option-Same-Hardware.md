@@ -1,29 +1,30 @@
 ---
 title: 使用相同的硬體升級容錯移轉叢集
+description: 本文說明如何使用相同的硬體來升級2個節點的容錯移轉叢集
 ms.prod: windows-server
-ms.manager: eldenc
+manager: eldenc
 ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
+ms.author: johnmar
 ms.date: 02/28/2019
-description: 本文說明如何使用相同的硬體來升級2個節點的容錯移轉叢集
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fe93f1d43e0c3a1bc4269b585cb9d021d3461aa
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b2d9866417908b3979a4ee17b25dd0d3a404bb1c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361404"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828181"
 ---
 # <a name="upgrading-failover-clusters-on-the-same-hardware"></a>升級相同硬體上的容錯移轉叢集
 
-> 適用於：Windows Server 2019、Windows Server 2016
+> 適用于： Windows Server 2019、Windows Server 2016
 
-容錯移轉叢集是一組獨立電腦，共同運作以提升應用程式和服務的可用性。 各個叢集伺服器 (稱為節點) 是透過實體纜線與軟體連接。 如果其中一個叢集節點失敗，另一個節點即會開始提供服務 (稱為容錯移轉的處理程序)。 使用者在服務中遇到最少的中斷。
+容錯移轉叢集是由獨立電腦組成的群組，它們共同運作以提升服務和應用程式的可用性。 各個叢集伺服器 (稱為節點) 是透過實體纜線與軟體連接。 如果其中一個叢集節點失敗，另一個節點即會透過稱為「容錯移轉」的程序開始提供服務。 這樣可將使用者感受到服務中斷的時間降到最低。
 
 本指南說明從使用相同硬體的舊版將叢集節點升級至 Windows Server 2019 或 Windows Server 2016 的步驟。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 只有在從 Windows Server 2016 到 Windows 2019 時，才支援在現有容錯移轉叢集上升級作業系統。  如果容錯移轉叢集執行的是舊版（例如 Windows Server 2012 R2 和更早版本），則在執行叢集服務時升級時，將不允許將節點聯結在一起。  如果使用相同的硬體，則可以採取步驟，將它取得至較新的版本。  
 
@@ -37,7 +38,7 @@ ms.locfileid: "71361404"
 
 在下列範例中，容錯移轉叢集的名稱是叢集，而節點名稱是1和2。
 
-## <a name="step-1-evict-first-node-and-upgrade-to-windows-server-2016"></a>步驟 1:收回第一個節點並升級至 Windows Server 2016
+## <a name="step-1-evict-first-node-and-upgrade-to-windows-server-2016"></a>步驟1：收回第一個節點並升級至 Windows Server 2016
 
 1. 在容錯移轉叢集管理員中，以滑鼠右鍵按一下節點，然後選取 [**暫停**和**清空角色**]，將所有資源從節點1清空至節點2。  或者，您可以使用 PowerShell 命令 [[暫止-start-clusternode](https://docs.microsoft.com/powershell/module/failoverclusters/suspend-clusternode)]。
 
@@ -61,7 +62,7 @@ ms.locfileid: "71361404"
 
 7.  所有資源都已遷移之後，請關閉節點2（原始叢集），然後中斷存放裝置的連線，以便不會造成任何干擾。  將存放裝置連接到節點1。  一旦連線之後，請將所有資源上線，並確保其正常運作。
 
-## <a name="step-2-rebuild-second-node-to-windows-server-2019"></a>步驟 2:將第二個節點重建至 Windows Server 2019
+## <a name="step-2-rebuild-second-node-to-windows-server-2019"></a>步驟2：重建第二個節點到 Windows Server 2019
 
 一旦您確認所有專案都能正常運作，您可以將節點2重建到 Windows Server 2019 並加入叢集。
 
@@ -85,7 +86,7 @@ ms.locfileid: "71361404"
 
 5. 以滑鼠右鍵按一下節點，然後選取 [**暫停**並**清空角色**]，將所有資源從節點1清空至節點2。  或者，您可以使用 PowerShell 命令 [[暫止-start-clusternode](https://docs.microsoft.com/powershell/module/failoverclusters/suspend-clusternode)]。  請確定所有資源都在線上，而且運作正常。
 
-## <a name="step-3-rebuild-first-node-to-windows-server-2019"></a>步驟 3：重建第一個節點到 Windows Server 2019
+## <a name="step-3-rebuild-first-node-to-windows-server-2019"></a>步驟3：重建第一個節點到 Windows Server 2019
 
 1. 從叢集收回節點1，並以您先前的方式從節點中斷存放裝置的連線。
 
@@ -99,7 +100,7 @@ ms.locfileid: "71361404"
 
 您目前正在使用功能完整的 Windows Server 2019 容錯移轉叢集來執行。
 
-## <a name="additional-notes"></a>其他備註
+## <a name="additional-notes"></a>其他附註
 
 - 如先前所述，中斷存放裝置的連線可能不是必要的。  在我們的檔中，我們想要在注意時錯誤。  請洽詢您的存放裝置廠商。
 - 如果您的起點是 Windows Server 2008 或 2008 R2 叢集，則可能需要執行額外的步驟。

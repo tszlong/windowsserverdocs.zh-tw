@@ -1,24 +1,20 @@
 ---
 title: endlocal
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 765fae3c-0c0a-4639-99a4-cf613489b949
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 16d2b7b445a2220a10f88f21029948ed10ee96e4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4958c5419ed4f6374f7c6ecf09bdf67f61134d93
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377568"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80845111"
 ---
 # <a name="endlocal"></a>endlocal
 
@@ -34,7 +30,7 @@ ms.locfileid: "71377568"
 endlocal
 ```
 
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -49,7 +45,7 @@ endlocal
 > [!NOTE]
 > 如需啟用和停用命令延伸的詳細資訊，請參閱[Cmd](cmd.md)。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 您可以將批次檔中的環境變數當地語系化。 例如，下列程式會在網路上啟動 superapp batch 程式、將輸出導向至檔案，然後在 [記事本] 中顯示檔案：
 ```
@@ -61,6 +57,6 @@ endlocal
 start notepad c:\superapp.out
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

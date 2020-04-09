@@ -1,24 +1,20 @@
 ---
 title: takeown
 description: 瞭解如何藉由成為檔案的擁有者來取得檔案的存取權。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0683cd65-a6db-4cab-962b-45a0ff61f43c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 08804db36357c3d1d1efa7243b338bd85d5c48e2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: af6952b8c4c14a717f7904ee0b77bf6ec9f5030e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383757"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80833442"
 ---
 # <a name="takeown"></a>takeown
 
@@ -32,7 +28,7 @@ ms.locfileid: "71383757"
 takeown [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <File name> [/a] [/r [/d {Y|N}]]
 ```
 
-### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -52,13 +48,13 @@ takeown [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <File n
 -   使用的混合模式（ **？** 和 **&#42;** ）不受**takeown**命令支援。
 -   使用**takeown**刪除鎖定之後，您可能必須使用 Windows Explorer 或**cacls**命令，將檔案和目錄的完整許可權授與您自己，然後才能將它們刪除。 如需**cacls**的詳細資訊，請參閱本主題結尾處的「其他參考」。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name="BKMK_examples"></a>典型
 
 若要取得名為 Lostfile 之檔案的擁有權，請輸入：
 ```
 takeown /f lostfile
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

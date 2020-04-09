@@ -4,15 +4,15 @@ description: 遠端桌面閘道的效能微調建議
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: HammadBu; VladmiS
+ms.author: hammadbu; vladmis
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: fcd7afd840df12ec19e162f751df9e5c0c9c84d4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3794b47e7226a905944495dd7c31f3196a33d0d5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385009"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851731"
 ---
 # <a name="performance-tuning-remote-desktop-gateways"></a>效能微調遠端桌面閘道
 
@@ -44,7 +44,7 @@ Internet Information Services （IIS）和 RD 閘道匯出下列登錄參數，�
     HKLM\System\CurrentControlSet\Services\InetInfo\Parameters\MaxPoolThreads (REG_DWORD)
     ```
 
-    此參數會指定要為每個邏輯處理器建立的 IIS 集區執行緒數目。 IIS 集區執行緒會監看網路中的要求，並處理所有傳入的要求。 **MaxPoolThreads**計數不包含 RD 閘道使用的執行緒。 預設值為4。
+    此參數會指定要為每個邏輯處理器建立的 IIS 集區執行緒數目。 IIS 集區執行緒會監看網路中的要求，並處理所有傳入的要求。 **MaxPoolThreads**計數不包含 RD 閘道使用的執行緒。 預設值為 4。
 
 **RD 閘道的遠端程序呼叫 tunings**
 
@@ -74,7 +74,7 @@ Internet Information Services （IIS）和 RD 閘道匯出下列登錄參數，�
 
 -   \\RPC/HTTP Proxy\\\*
 
--   \\每一伺服器的 RPC/HTTP Proxy\\\*
+-   每一伺服器的 \\RPC/HTTP Proxy\\\*
 
 -   \\Web 服務\\\*
 
@@ -82,7 +82,7 @@ Internet Information Services （IIS）和 RD 閘道匯出下列登錄參數，�
 
 -   \\IPv4\\\*
 
--   \\快閃記憶體\\\*
+-   \\記憶體\\\*
 
 -   \\網路介面（\*）\\\*
 
@@ -90,22 +90,22 @@ Internet Information Services （IIS）和 RD 閘道匯出下列登錄參數，�
 
 -   \\處理器資訊（\*）\\\*
 
--   \\同步處理\*（）\\\*
+-   \\同步處理（\*）\\\*
 
--   \\筆記本電腦\\\*
+-   \\系統\\\*
 
 -   \\Tcpv4 已\\\*
 
 下列效能計數器僅適用于舊版 RPC 傳輸：
 
--   \\Rpc/HTTP Proxy\\rpc \*
+-   \\RPC/HTTP Proxy\\\* RPC
 
--   \\每個伺服器\\ \* rpc 的 rpc/HTTP Proxy
+-   每一伺服器 \\RPC/HTTP Proxy\\\* RPC
 
--   \\Web 服務\\ \* RPC
+-   \\Web 服務\\\* RPC
 
--   \\W3SVC\_W3WP.EXE\\ RPC\*
+-   \\W3SVC\_W3WP.EXE\\\* RPC
 
 > [!NOTE]
-> 如果適用的話，請\\新增\\ IPv6 \\ \*和\\ TCPv6\*物件。ReplaceThisText
+> 如果適用的話，請將 \\IPv6\\\*，並 \\TCPv6\\\* 物件。ReplaceThisText
 

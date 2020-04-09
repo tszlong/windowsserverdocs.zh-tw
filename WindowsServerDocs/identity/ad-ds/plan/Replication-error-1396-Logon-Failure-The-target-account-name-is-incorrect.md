@@ -1,7 +1,6 @@
 ---
 ms.assetid: 399a8bbe-3375-4bb0-b55b-5f46e7050028
 title: '複寫錯誤 1396：登入失敗: 目標帳戶名稱不正確'
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: a8af10fd54f557e4f4a2127dbd1cc178d53d93a4
-ms.sourcegitcommit: 214847318401cebdcb7f1924a731b4439c9d8a24
+ms.openlocfilehash: b608066f3fd9d2f6c2bd86194e816f4c9665d6c1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "71402490"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822071"
 ---
 # <a name="replication-error-1396-logon-failure-the-target-account-name-is-incorrect"></a>複寫錯誤 1396：登入失敗: 目標帳戶名稱不正確
 
@@ -116,7 +115,7 @@ Dcdiag 也會報告無法更新 RODC krbtgt 帳戶的錯誤。 </para></listItem
         <listItem>
           <para>在步驟2中探索到的通用類別目錄上，搜尋在步驟1中探索到的 SPN。</para>
           <code>C:&gt;repadmin /showattr Server_Name DC=corp,DC=contoso,dc=com &lt;GC used by KDC&gt; &lt;DN path of forest root domain&gt; /filter:&quot;(serviceprincipalname=&lt;SPN cited in the NTDS Replication event 1645&gt;)&quot; /gc /subtree /atts:cn,serviceprincipalname</code>
-          <para>或</para>
+          <para>OR</para>
           <code>C:&gt;dsquery * forestroot -scope subtree -filter &quot;(serviceprincipalname=E3514235-4B06-11D1-AB04-00C04FC2DCD2/65cead9f-4949-46a3-a49a-f1fbfe13d2b3*)&quot; -attr * -s Server_Name.europe.corp.contoso.com</code>
           <para>確認 SPN 的主機物件是否存在。</para>
           <para>請確認主機物件的 DN 路徑，包括物件是否 MY.CNF/衝突，或位於遺失和找到的容器中。</para>

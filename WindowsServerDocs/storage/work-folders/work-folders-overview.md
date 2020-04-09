@@ -9,12 +9,12 @@ manager: dougkim
 ms.author: jgerend
 ms.date: 06/07/2019
 description: 工作資料夾概觀 - 這是 Windows Server 中的一種伺服器角色，可提供使用者一致的方式來存取電腦和裝置中的工作檔案。
-ms.openlocfilehash: ca76412a6e623b42718fc4f7589f7053073e0f64
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 67c62d81c7d9b6d33a198f5282fa39a88e07f2e8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950198"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820781"
 ---
 # <a name="work-folders-overview"></a>工作資料夾概觀
 
@@ -30,7 +30,7 @@ ms.locfileid: "75950198"
 - [適用于 iOS 的工作資料夾](https://itunes.apple.com/app/work-folders/id950878067)
 - [適用于 Android 的工作資料夾](https://play.google.com/store/apps/details?id=com.microsoft.workfolders)
 
-## <a name="role-description"></a>角色說明
+## <a name="role-description"></a>角色描述
 
  利用工作資料夾，除了公司電腦，使用者可以在個人電腦和裝置 (通常稱為「帶您自己的裝置 (BYOD)」) 上儲存和存取工作檔案。 使用者獲得方便儲存工作檔案的位置，而他們能夠從任何地方存取這類檔案。 組織將檔案儲存在集中管理的檔案伺服器上，並選擇性地指定使用者裝置原則 (例如加密和鎖定畫面密碼)，藉此維持對公司資料的控制權。  
   
@@ -56,18 +56,18 @@ ms.locfileid: "75950198"
 
  工作資料夾包含下列功能。  
   
-| 功能 | 可用性 | 說明 |  
+| 功能 | 可用性 | 描述 |  
 | ------------------- | ------------------ | ----------------- |  
 | 伺服器管理員中的工作資料夾角色服務 | Windows Server 2019、Windows Server 2016 或 Windows Server 2012 R2 | 檔案和存放服務可提供設定同步共用 (儲存使用者工作檔案的資料夾)、監視工作資料夾和管理同步共用與使用者存取的方法 |
 | 工作資料夾 Cmdlet | Windows Server 2019、Windows Server 2016 或 Windows Server 2012 R2 | Windows PowerShell 模組包含可用來管理工作資料夾伺服器的完整 Cmdlet |  
-| 工作資料夾與 Windows 的整合 | Windows 10<br /><br /> Windows 8.1<br /><br /> Windows RT 8.1<br /><br /> Windows 7（需要下載） | 工作資料夾可在 Windows 電腦中提供下列功能：<br /><br /> -   可設定及監視工作資料夾的控制台項目<br />-   可輕鬆存取工作資料夾檔案的檔案總管整合<br />-   同步引擎可將檔案傳入及傳出中央檔案伺服器，同時將電池壽命和系統效能最大化 |
-| 適用於裝置的工作資料夾 App | Android<br /><br /> Apple iPhone 和 iPad® | 可讓常見的裝置存取工作資料夾檔案的 App |  
+| 工作資料夾與 Windows 的整合 | Windows 10<p> Windows 8.1<p> Windows RT 8.1<p> Windows 7（需要下載） | 工作資料夾可在 Windows 電腦中提供下列功能：<p> -   可設定及監視工作資料夾的控制台項目<br />-   可輕鬆存取工作資料夾檔案的檔案總管整合<br />-   同步引擎可將檔案傳入及傳出中央檔案伺服器，同時將電池壽命和系統效能最大化 |
+| 適用於裝置的工作資料夾 App | Android<p> Apple iPhone 和 iPad® | 可讓常見的裝置存取工作資料夾檔案的 App |  
   
 ## <a name="new-and-changed-functionality"></a>新功能和變更的功能
   
 下表描述工作資料夾的一些重大變更。  
   
-| 特色/功能 | 新功能或更新功能？ | 說明 |
+| 特色/功能 | 新功能或更新功能？ | 描述 |
 | ---------------------------- | --------------------- | ----------------- |
 | Azure AD 應用程式 Proxy 支援 | 已新增至 Windows 10 版本 1703、Android、iOS | 遠端使用者可以使用 Azure AD 應用程式 Proxy，安全地存取他們在工作資料夾伺服器上的檔案。 |
 | 更快速地變更複寫 | Windows 10 和 Windows Server 2016 中的更新 | 在 Windows Server 2012 R2 中，將檔案變更同步處理到工作資料夾伺服器時，用戶端不會收到變更的通知，而且最多等待 10 分鐘就會收到更新。 使用 Windows Server 2016 時，工作資料夾伺服器會立即通知 Windows 10 用戶端，而且檔案變更會立即同步處理。 這是 Windows Server 2016 的新功能，且需要 Windows 10 用戶端。 如果您使用的是舊版用戶端，或工作資料夾伺服器是 Windows Server 2012 R2，則用戶端會每隔 10 分鐘繼續輪詢變更。 |  
@@ -102,7 +102,7 @@ ms.locfileid: "75950198"
   
     -   Windows 10  
   
-    -   Windows 8.1  
+    -   Windows 8.1  
   
     -   Windows RT 8.1  
   
@@ -114,9 +114,9 @@ ms.locfileid: "75950198"
   
 -   Windows 7 電腦必須執行下列其中一個 Windows 版本：  
   
-    -   Windows 7 專業版  
+    -   Windows 7 Professional  
   
-    -   Windows 7 旗艦版  
+    -   Windows 7 Ultimate  
   
     -   Windows 7 企業版  
   
@@ -137,10 +137,10 @@ ms.locfileid: "75950198"
 | | 工作資料夾 | 離線檔案 | 商務用 OneDrive | OneDrive |
 | - | ------------------ | ------------------- | -------------------------- | -------------- |
 | **技術摘要** | 同步處理儲存在檔案伺服器與電腦和裝置上的檔案 | 同步處理儲存在可存取企業網路的檔案伺服器與電腦上的檔案 (可由工作資料夾取代) | 同步處理儲存在 Office 365 或 SharePoint 與電腦和裝置 (位於企業網路內部或外部) 中的檔案，並提供文件共同作業功能 | 同步處理儲存在 OneDrive 與 PC、Mac 電腦和裝置上的個人檔案 |
-| **旨在提供使用者對工作檔案的存取權** | [是] | [是] | [是] | 無 |
+| **旨在提供使用者對工作檔案的存取權** | 是 | 是 | 是 | 否 |
 | **雲端服務** | 無 | 無 | Office 365 | Microsoft OneDrive |
 | **內部網路伺服器** | 執行 Windows Server 2012 R2 或 Windows Server 2016 的檔案伺服器 | 檔案伺服器 | SharePoint 伺服器 (選擇性) | 無 |
-| **支持的用戶端** | PC、iOS、Android | 位於企業網路內，或透過 DirectAccess、VPN 或其他遠端存取技術連接的電腦 | PC、iOS、Android、Windows Phone | PC、Mac 電腦、Windows Phone、iOS、Android |
+| **支援的用戶端** | PC、iOS、Android | 位於企業網路內，或透過 DirectAccess、VPN 或其他遠端存取技術連接的電腦 | PC、iOS、Android、Windows Phone | PC、Mac 電腦、Windows Phone、iOS、Android |
   
 > [!NOTE]
 >  除了列於上表中的同步技術以外，Microsoft 還提供其他的複寫技術，包括針對伺服器對伺服器複寫所設計的 DFS 複寫，以及設計為分公司 WAN 加速技術的 BranchCache。 如需詳細資訊，請參閱 [DFS 命名空間和 DFS 複寫](https://technet.microsoft.com/library/jj127250(v=ws.11).aspx) 和 [BranchCache 概觀](https://technet.microsoft.com/library/hh831696(v=ws.11).aspx) 
@@ -161,11 +161,11 @@ ms.locfileid: "75950198"
   
 若要深入瞭解如何開始使用 Windows Azure 虛擬機器，請造訪 [Windows Azure 網站](http://www.windowsazure.com/documentation/services/virtual-machines)。  
   
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
  如需其他相關資訊，請參閱下列資源。  
   
-| 內容類型 | 參考資料 |
+| 內容類型 | 參考 |
 | ------------------ | ---------------- |
 | **產品評估** | [適用于 Android 的 -   工作資料夾–已發行](https://blogs.technet.microsoft.com/filecab/2016/03/16/work-folders-for-android-released)（blog 文章）<br />-   [iOS 的工作資料夾– IPad 應用程式版本](https://blogs.technet.com/b/filecab/archive/2015/01/16/work-folders-for-ios-ipad-app-release.aspx)（blog 文章）<br />[Windows Server 2012 R2 上的工作資料夾 -   簡介](https://blogs.technet.com/b/filecab/archive/2013/07/09/introducing-work-folders-on-windows-server-2012-r2.aspx)（blog 文章）<br />-   [工作資料夾簡介](https://channel9.msdn.com/posts/Introduction-to-Work-Folders)（Channel 9 影片）<br />-   [工作資料夾測試實驗室部署](https://blogs.technet.com/b/filecab/archive/2013/07/10/work-folders-test-lab-deployment.aspx)（blog 文章）<br />-   適用[于 Windows 7 的工作資料夾](https://blogs.technet.com/b/filecab/archive/2014/04/24/work-folders-for-windows-7.aspx)（blog 文章） |
 | **部署** | -   [設計工作資料夾的執行](plan-work-folders.md)<br />-   [部署工作資料夾](deploy-work-folders.md)<br />-   [使用 AD FS 和 Web 應用程式 Proxy （WAP）部署工作資料夾](deploy-work-folders-adfs-overview.md)<br />-   [使用 Azure AD 應用程式 Proxy 部署工作資料夾](https://blogs.technet.microsoft.com/filecab/2017/05/31/enable-remote-access-to-work-folders-using-azure-active-directory-application-proxy/)<br />- [離線檔案（CSC）至工作資料夾遷移指南](https://blogs.technet.microsoft.com/filecab/2016/08/12/offline-files-csc-to-work-folders-migration-guide/)<br />-   [工作資料夾部署的效能考慮](https://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx)<br />-   適用[于 Windows 7 的工作資料夾（64位下載）](https://www.microsoft.com/download/details.aspx?id=42558)<br />-   適用[于 Windows 7 的工作資料夾（32位下載）](https://www.microsoft.com/download/details.aspx?id=42559) |

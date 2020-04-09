@@ -1,24 +1,20 @@
 ---
 title: route_ws2008
 description: 瞭解如何修改和顯示本機 IP 路由表中的專案。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: afcd666c-0cef-47c2-9bcc-02d202b983b3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: cc68dd5634ae4832376924c1678dc10a0427f2b2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a0287fed8452cb155ea858ff0a544962dd765c3a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371418"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80835601"
 ---
 # <a name="route_ws2008"></a>route_ws2008
 
@@ -31,18 +27,18 @@ ms.locfileid: "71371418"
 route [/f] [/p] [<Command> [<Destination>] [mask <Netmask>] [<Gateway>] [metric <Metric>]] [if <Interface>]]  
 ```  
 
-### <a name="parameters"></a>Parameters  
+#### <a name="parameters"></a>參數  
 
 |參數|描述|  
 |-------|--------|  
-|/f|清除所有不是主機路由之專案的路由表（網路遮罩為255.255.255.255 的路由）、回送網路路由（目的地為127.0.0.0 且網路遮罩為255.0.0.0 的路由）或多播路由（目的地為224.0.0.0 的路由）和240.0.0.0 的網路遮罩）。 如果搭配其中一個命令（例如 [新增]、[變更] 或 [刪除]）使用此選項，則在執行此命令之前，會先清除該資料表。|  
+|/f|清除所有不是主機路由之專案的路由表（網路遮罩為255.255.255.255 的路由）、回送網路路由（目的地為127.0.0.0 且網路遮罩為255.0.0.0 的路由），或多播路由（目的地為224.0.0.0 且網路遮罩為240.0.0.0 的路由）。 如果搭配其中一個命令（例如 [新增]、[變更] 或 [刪除]）使用此選項，則在執行此命令之前，會先清除該資料表。|  
 |/p|與 add 命令搭配使用時，會將指定的路由新增至登錄，並在每次啟動 TCP/IP 通訊協定時，用來初始化 IP 路由表。 根據預設，當 TCP/IP 通訊協定啟動時，不會保留新增的路由。 與 print 命令搭配使用時，會顯示持續性路由清單。 所有其他命令都會忽略這個參數。 持續性路由會儲存在登錄位置， **HKEY_LOCAL_MACHINE \system\currentcontrolset\services\tcpip\parameters\persistentroutes**。|  
-|\<命令 >|指定您想要執行的命令。 下表列出有效的命令：<br /><br />-   **新增：** 新增路由。<br />-   **變更：** 修改現有的路由。<br />-   **刪除：** 刪除路由或路由。<br />-   **列印：** 列印路線或路線。|  
+|\<命令 >|指定您想要執行的命令。 下表列出有效的命令：<p>-   **新增：** 新增路由。<br />-   **變更：** 修改現有的路由。<br />-   **刪除：** 刪除路由或路由。<br />-   **列印：** 列印路線或路線。|  
 |\<目的地 >|指定路由的網路目的地。 目的地可以是 IP 網路位址（其中網路位址的主機位設定為0）、主機路由的 IP 位址，或預設路由的0.0.0.0。|  
 |mask \<網路遮罩 >|指定路由的網路目的地。 目的地可以是 IP 網路位址（其中網路位址的主機位設定為0）、主機路由的 IP 位址，或預設路由的0.0.0.0。|  
 |\<閘道 >|指定轉送或下一個躍點 IP 位址，以供連線到網路目的地和子網路遮罩所定義的位址集合。 若為本機附加的子網路由，閘道位址就是指派給附加至子網之介面的 IP 位址。 對於在一或多個路由器上提供的遠端路由，閘道位址是可直接連線的 IP 位址，指派給連續的路由器。|  
-|計量 \<度量 >|指定路由的整數成本標準（範圍介於1到9999），這是在路由表中選擇多個路由時所使用，最符合轉送封包的目的地位址。 已選擇最低度量的路由。 計量可以反映躍點的數目、路徑的速度、路徑可靠性、路徑輸送量，或系統管理屬性。|  
-|如果 \<介面 >|指定可連接目的地之介面的介面索引。 如需介面和其對應介面索引的清單，請使用 route print 命令的顯示。 您可以針對介面索引使用十進位或十六進位值。 若為十六進位值，請在十六進位數位前面加上0x。 省略 if 參數時，會從閘道位址判斷介面。|  
+|計量 \<度量 >|指定路由的整數成本公制 (範圍從 1 到 9999)，用於在路由表的多個路由中選擇時，是最接近轉遞之封包的目的地位址。 將會選擇具有最低公制的路由。 此公制可反映出躍點的數量、路徑速度、路徑可靠性、路徑輸送量或系統管理內容。|  
+|如果 \<介面 >|指定介面的介面索引，透過此介面可連接目的地。 對於介面清單及其對應的介面索引，請使用 Route Print 命令的顯示。 介面索引可以使用十進位或十六進位的值。 若是十六進位的值，請在十六進位的數字前加 0x。 如果省略 if 參數，則會從閘道位址判別介面。|  
 |/?|在命令提示字元顯示說明。|  
 
 ## <a name="remarks"></a>備註  
@@ -53,7 +49,7 @@ route [/f] [/p] [<Command> [<Destination>] [mask <Netmask>] [<Gateway>] [metric 
 - 只有適用于 Windows NT 4.0、Windows 2000、Windows Millennium edition、Windows XP 和 Windows Server 2003 的 route 命令才支援 **/p**參數。 Windows 95 或 Windows 98 的**route**命令不支援這個參數。  
 - 只有當網際網路通訊協定（TCP/IP）通訊協定是在網路連線的網路介面卡內容中安裝為元件時，才可以使用此命令。  
 
-## <a name="BKMK_Examples"></a>典型  
+## <a name="examples"></a><a name="BKMK_Examples"></a>典型  
 若要顯示 IP 路由表的完整內容，請輸入：  
 ```  
 route print  
@@ -95,5 +91,5 @@ route delete 10.*
 route change 10.41.0.0 mask 255.255.0.0 10.27.0.25  
 ```  
 
-## <a name="additional-references"></a>其他參考  
--   [命令列語法關鍵](command-line-syntax-key.md)  
+## <a name="additional-references"></a>其他參考資料  
+-   - [命令列語法關鍵](command-line-syntax-key.md)  

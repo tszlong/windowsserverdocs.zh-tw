@@ -1,7 +1,6 @@
 ---
 ms.assetid: 1ea2e1be-874f-4df3-bc9a-eb215002da91
 title: 設定使用者憑證驗證的 AD FS 支援
-description: ''
 author: jenfieldmsft
 ms.author: billmath
 manager: samueld
@@ -9,12 +8,12 @@ ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6c8a3b30a337c164227bf344b5704cc7e782461a
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.openlocfilehash: 5f2416e45fad8ca47cd756526dc6a554b3a952b1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517513"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817071"
 ---
 # <a name="configuring-ad-fs-for-user-certificate-authentication"></a>設定使用者憑證驗證的 AD FS
 
@@ -27,7 +26,7 @@ ms.locfileid: "77517513"
 1) 使用[本文所](ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md)述的其中一種模式，判斷您想要啟用之 AD FS 使用者憑證驗證的模式
 2) 請確定您的使用者憑證信任鏈已安裝 & 由所有 AD FS 和 WAP 伺服器信任，包括任何中繼憑證授權單位單位。 這通常是透過 AD FS/WAP 伺服器上的 GPO 來完成的
 3)  請確定您的使用者憑證信任鏈的根憑證位於 NTAuth 存放區中的 Active Directory
-4) 如果在替代憑證驗證模式中使用 AD FS，請確定您的 AD FS 和 WAP 伺服器都具有 SSL 憑證，其中包含前面加上 "certauth" （例如 "certauth.fs.contoso.com"）的 AD FS 主機名稱，且允許此主機名稱的流量透過防火牆
+4) 如果在替代憑證驗證模式中使用 AD FS，請確定您的 AD FS 和 WAP 伺服器都具有 SSL 憑證，其中包含前面加上 "certauth" （例如 "certauth.fs.contoso.com"）的 AD FS 主機名稱，而且允許此主機名稱的流量通過防火牆
 5) 如果使用外部網路的憑證驗證，請確定您在憑證中指定的清單中，至少有一個 AIA 和至少一個 CDP 或 OCSP 位置可從網際網路存取。
 6) 此外，對於 Exchange ActiveSync 用戶端的 Azure AD 憑證驗證，用戶端憑證必須在 [主體別名] 欄位的 [主體名稱] 或 [RFC822 名稱] 值中，讓使用者可路由傳送的電子郵件地址在 Exchange online 中。 （Azure Active Directory 會將 RFC822 值對應到目錄中的 Proxy 位址屬性）。
 

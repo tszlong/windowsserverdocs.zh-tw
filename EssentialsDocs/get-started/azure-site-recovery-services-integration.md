@@ -1,23 +1,19 @@
 ---
 title: Azure Site Recovery Services 整合
 description: 說明如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/01/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 262701a6-8a97-4c4e-bfbf-9f8007c308d6
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c04f27d4bf6ff6e615cf06da73247bf79dea1008
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 29db78fdf38a6fab23d9a5ec5539c0606e2fbbaa
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310410"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80814481"
 ---
 # <a name="azure-site-recovery-services-integration"></a>Azure Site Recovery Services 整合
 
@@ -43,7 +39,7 @@ ms.locfileid: "80310410"
 
 ### <a name="enabling-guest-virtual-machines-for-protection"></a>啟用來賓虛擬機器以進行保護
 
-選取 [Azure 復原] 視窗中的虛擬機器時，您可以按一下儀表板右側的 [**啟用複寫至 azure** ]，以準備並將虛擬機器™的映射複製到 azure：
+選取 [Azure 復原] 視窗中的虛擬機器時，您可以按一下儀表板右側的 [**啟用複寫至 azure** ]，以準備並將虛擬機器 &trade;的映射複製到 azure：
 
 ![顯示 [啟用複寫至 Azure] 對話方塊的螢幕擷取畫面。 在新增主機時，會顯示進度列。](media/azure-site-recovery-5.PNG)
 

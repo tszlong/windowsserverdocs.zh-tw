@@ -1,7 +1,6 @@
 ---
 ms.assetid: 11f36f2b-9981-4da0-9e7c-4eca78035f37
 title: 附錄 D-在 Active Directory 中保護內建的系統管理員帳戶
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: cc91ccd00c951863f4f9802f3d669e36ff3f3d9a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3e0060e4b732fe77de4371c7b84b77da21de9e20
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367843"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821661"
 ---
 # <a name="appendix-d-securing-built-in-administrator-accounts-in-active-directory"></a>附錄 D︰保護 Active Directory 中的內建的 Administrator 帳戶
 
@@ -68,7 +67,7 @@ ms.locfileid: "71367843"
         -   拒絕透過遠端桌面服務登入  
 
 > [!NOTE]  
-> 這些設定會確保網域的內建 Administrator 帳戶無法用來連線到網域控制站，雖然帳戶（如果啟用的話）可以在本機登入網域控制站。 由於此帳戶應該只在嚴重損壞修復案例中啟用和使用，因此預期至少有一個網域控制站可以使用實體存取，或其他具有遠端存取網域控制站許可權的帳戶可以作為.  
+> 這些設定會確保網域的內建 Administrator 帳戶無法用來連線到網域控制站，雖然帳戶（如果啟用的話）可以在本機登入網域控制站。 由於此帳戶應該只在嚴重損壞修復案例中啟用和使用，因此預期會有至少一個網域控制站的實體存取權，或可使用遠端存取網域控制站之許可權的其他帳戶。  
 
 -   設定系統管理員帳戶的審核  
 
@@ -259,7 +258,7 @@ ms.locfileid: "71367843"
 
 7.  在 [**程式/腳本：** ] 底下，按一下 **[流覽]** ，找出並選取 [建立批次檔] 區段中建立的批次檔，然後按一下 [**開啟**]。  
 
-8.  按一下 **\[確定\]** 。  
+8.  按一下 [確定]。  
 
 9. 按一下 [一般] 索引標籤。  
 
@@ -269,7 +268,7 @@ ms.locfileid: "71367843"
 
 12. 選取 **[執行] 表示使用者是否登入**，而且不會**儲存密碼**。 此工作只會存取本機電腦資源。  
 
-13. 按一下 **\[確定\]** 。  
+13. 按一下 [確定]。  
 
 14. 對話方塊應該會出現，要求使用者帳號憑證才能執行工作。  
 

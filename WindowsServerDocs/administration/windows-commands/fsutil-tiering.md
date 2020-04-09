@@ -9,15 +9,15 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 6863940d69e30f4984897a7e03369a834da21d1d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8227fafc6b29471e2f09db171645012967553429
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376776"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844051"
 ---
 # <a name="fsutil-tiering"></a>Fsutil 分層
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows 10
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows 10
 
 啟用儲存層功能的管理，例如設定和停用旗標和層級清單。
 
@@ -31,12 +31,12 @@ fsutil tiering [setflags] <volume> <flags>
 fsutil tiering [tierlist] <volume>
 ```
 
-### <a name="parameters"></a>參數
+#### <a name="parameters"></a>參數
 
 |參數|描述|
 |-------------|---------------|
 |clearflags|停用磁片區的分層行為旗標。|
-|\<volume >|指定磁片區。|
+|\<磁片區 >|指定磁片區。|
 |/TrNH|針對具有階層式存放裝置的磁片區，將會停用熱收集。<br /><br>僅適用于 NTFS 和 ReFS。|
 |queryflags|查詢磁片區的分層行為旗標。|
 |regionlist|列出磁片區的分層區域及其各自的儲存層。|
@@ -79,7 +79,7 @@ fsutil tiering tierlist C:
 
 
 ### <a name="additional-references"></a>其他參考資料
-[命令列語法關鍵](Command-Line-Syntax-Key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)
 
 [Fsutil](Fsutil.md)
 

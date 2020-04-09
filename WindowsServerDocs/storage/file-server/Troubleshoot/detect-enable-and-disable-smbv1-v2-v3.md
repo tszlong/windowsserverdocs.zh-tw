@@ -3,16 +3,15 @@ title: 如何偵測、啟用和停用 Windows 中的 SMBv1、SMBv2 和 SMBv3
 description: 描述如何啟用和停用 Windows 用戶端和伺服器環境中的伺服器訊息區通訊協定（SMBv1、SMBv2 和 SMBv3）。
 author: Deland-Han
 manager: dcscontentpm
-audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 9da4d6f2b5616dc6f8aec3fefb1ae7141ed88b0b
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: d6c47843dedaf45842f70d1bb408b59d63c03eb4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654389"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815501"
 ---
 # <a name="how-to-detect-enable-and-disable-smbv1-smbv2-and-smbv3-in-windows"></a>如何偵測、啟用和停用 Windows 中的 SMBv1、SMBv2 和 SMBv3
 
@@ -46,7 +45,7 @@ ms.locfileid: "75654389"
 - 目錄租用-透過快取改善分公司中的應用程式回應時間    
 - 效能優化-針對小型隨機讀取/寫入 i/o 的優化
 
-##  <a name="more-information"></a>更多資訊
+##  <a name="more-information"></a>詳細資訊
 
 SMBv2 通訊協定是在 Windows Vista 和 Windows Server 2008 中引進。
 
@@ -54,7 +53,7 @@ SMBv3 通訊協定是在 Windows 8 和 Windows Server 2012 中引進。
 
 如需 SMBv2 和 SMBv3 功能功能的詳細資訊，請參閱下列文章：
 
-[伺服器訊息區總覽](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831795(v=ws.11))
+[伺服器訊息區概觀](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831795(v=ws.11))
 
 [SMB 的新功能](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff625695(v=ws.10))  
 
@@ -76,7 +75,7 @@ SMBv3 通訊協定是在 Windows 8 和 Windows Server 2012 中引進。
   Disable-WindowsOptionalFeature -Online -FeatureName smb1protocol
   ```
 
-- 啟用： 
+- 啟用 
 
   ```PowerShell
   Enable-WindowsOptionalFeature -Online -FeatureName smb1protocol
@@ -96,7 +95,7 @@ SMBv3 通訊協定是在 Windows 8 和 Windows Server 2012 中引進。
   Set-SmbServerConfiguration -EnableSMB2Protocol $false
   ```
 
-- 啟用：
+- 啟用
 
   ```PowerShell
   Set-SmbServerConfiguration -EnableSMB2Protocol $true 
@@ -124,7 +123,7 @@ SMBv3 通訊協定是在 Windows 8 和 Windows Server 2012 中引進。
   Disable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol
   ```
 
-- 啟用： 
+- 啟用 
 
   ```PowerShell
   Enable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol
@@ -144,7 +143,7 @@ SMBv3 通訊協定是在 Windows 8 和 Windows Server 2012 中引進。
   Set-SmbServerConfiguration –EnableSMB2Protocol $false
   ```
 
-- 啟用：
+- 啟用
 
   ```PowerShell
   Set-SmbServerConfiguration –EnableSMB2Protocol $true
@@ -179,7 +178,7 @@ Windows 8 和 Windows Server 2012 引進了新的**SMBServerConfiguration** Wind
   Set-SmbServerConfiguration -EnableSMB1Protocol $false
   ```
 
-- 啟用： 
+- 啟用 
   ```PowerShell
   Set-SmbServerConfiguration -EnableSMB1Protocol $true
   ```
@@ -199,7 +198,7 @@ Windows 8 和 Windows Server 2012 引進了新的**SMBServerConfiguration** Wind
   Set-SmbServerConfiguration -EnableSMB2Protocol $false
   ```
 
-- 啟用：
+- 啟用
   
   ```PowerShell
   Set-SmbServerConfiguration -EnableSMB2Protocol $true
@@ -230,7 +229,7 @@ Get-Item HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters | ForEa
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 0 –Force
 ```
 
-啟用：  
+啟用  
 
 ```PowerShell
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 1 –Force
@@ -251,7 +250,7 @@ Get-ItemProperty HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB2 -Type DWORD -Value 0 –Force  
 ```
 
-啟用：
+啟用
 
 ```PowerShell
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB2 -Type DWORD -Value 1 –Force 
@@ -263,7 +262,7 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Par
 #### <a name="registry-editor"></a>登錄編輯程式
 
 > [!IMPORTANT]
-> 請仔細依循本節中的步驟。 如果您未正確修改登錄，可能會發生嚴重問題。 在修改之前，[備份登錄以供還原](https://support.microsoft.com/help/322756)，以免發生問題。
+> 請仔細依循本節中的步驟。 若您不正確地修改登錄，可能會發生嚴重的問題。 在修改之前，[備份登錄以供還原](https://support.microsoft.com/help/322756)，以免發生問題。
  
 若要啟用或停用 SMB 伺服器上的 SMBv1，請設定下列登錄機碼：
 
@@ -312,7 +311,7 @@ Default: 1 = Enabled (No registry key is created)
   sc.exe config mrxsmb10 start= disabled
   ```
 
-- 啟用：
+- 啟用
 
   ```cmd
   sc.exe config lanmanworkstation depend= bowser/mrxsmb10/mrxsmb20/nsi
@@ -335,7 +334,7 @@ Default: 1 = Enabled (No registry key is created)
   sc.exe config mrxsmb20 start= disabled 
   ```
 
-- 啟用：
+- 啟用
 
   ```cmd
   sc.exe config lanmanworkstation depend= bowser/mrxsmb10/mrxsmb20/nsi
@@ -358,7 +357,7 @@ Default: 1 = Enabled (No registry key is created)
 
 若要使用群組原則來進行此設定，請遵循下列步驟：
  
-1. 開啟 [群組原則管理主控台]。 在應包含新的喜好設定項目之群組原則物件 (GPO) 上按一下滑鼠右鍵，然後按一下 \[**編輯**\]。
+1. 開啟 [群組原則管理主控台]。 在應包含新的喜好設定項目之群組原則物件 (GPO) 上按一下滑鼠右鍵，然後按一下 [編輯]。
 
 2. 在 [**電腦**設定] 底下的主控台樹中，展開 [**喜好**設定] 資料夾，然後展開 [ **Windows 設定**] 資料夾。
 
@@ -404,7 +403,7 @@ Default: 1 = Enabled (No registry key is created)
 
 若要使用群組原則來進行此設定，請遵循下列步驟：
  
-1. 開啟 [群組原則管理主控台]。 在應包含新的喜好設定項目之群組原則物件 (GPO) 上按一下滑鼠右鍵，然後按一下 \[**編輯**\]。
+1. 開啟 [群組原則管理主控台]。 在應包含新的喜好設定項目之群組原則物件 (GPO) 上按一下滑鼠右鍵，然後按一下 [編輯]。
 
 2. 在 [**電腦**設定] 底下的主控台樹中，展開 [**喜好**設定] 資料夾，然後展開 [ **Windows 設定**] 資料夾。
 
@@ -430,7 +429,7 @@ Default: 1 = Enabled (No registry key is created)
    - **金鑰路徑**： SYSTEM\CurrentControlSet\Services\LanmanWorkstation
    - **值名稱**： DependOnService
    - **數值型別**： REG_MULTI_SZ 
-   - **值資料**：
+   - **數值資料**：
       - Bowser
       - MRxSmb20
       - NSI

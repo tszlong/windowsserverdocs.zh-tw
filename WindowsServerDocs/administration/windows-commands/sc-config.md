@@ -1,24 +1,20 @@
 ---
 title: Sc config
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ad4d68a6-efe5-452b-8501-7f1f1c552a4a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 06/05/2018
-ms.openlocfilehash: 26157df1db358dd1a0e0fb48d334dc0e131c5089
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fc864afe98823fa609cbe82398a486bf6e29defd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371325"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80835311"
 ---
 # <a name="sc-config"></a>Sc config
 
@@ -34,7 +30,7 @@ ms.locfileid: "71371325"
 sc [<ServerName>] config [<ServiceName>] [type= {own | share | kernel | filesys | rec | adapt | interact type= {own | share}}] [start= {boot | system | auto | demand | disabled | delayed-auto}] [error= {normal | severe | critical | ignore}] [binpath= <BinaryPathName>] [group= <LoadOrderGroup>] [tag= {yes | no}] [depend= <dependencies>] [obj= {<AccountName> | <ObjectName>}] [displayname= <DisplayName>] [password= <Password>]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -57,13 +53,13 @@ sc [<ServerName>] config [<ServiceName>] [type= {own | share | kernel | filesys 
 -   針對每個命令列選項（參數），等號是選項名稱的一部分。
 -   選項與值之間必須有空格（例如， **type = 自有**）。 如果省略空間，作業將會失敗。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 若要指定 NEWSERVICE 服務的二進位路徑，請輸入：
 ```
-sc config NewService binpath= "ntsd -d c:\windows\system32\NewServ.exe"
+sc config NewService binpath= ntsd -d c:\windows\system32\NewServ.exe
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

@@ -1,24 +1,20 @@
 ---
 title: xcopy
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: Xcopy 的 Windows 命令主題，w hich 會複製檔案和目錄，包括子目錄。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 76a310d7-9925-4571-a252-0e28960d5f89
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 01/05/2019
-ms.openlocfilehash: 885729f2bca100d7ac89a3463135d56f48c8b75a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 660ef69a5f1df99c3b959a588984719c9d4dea6b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361786"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828921"
 ---
 # <a name="xcopy"></a>xcopy
 
@@ -32,7 +28,7 @@ ms.locfileid: "71361786"
 Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-DD-YYYY]] [/u] [/i] [/s [/e]] [/t] [/k] [/r] [/h] [{/a | /m}] [/n] [/o] [/x] [/exclude:FileName1[+[FileName2]][+[FileName3]] [{/y | /-y}] [/z] [/b] [/j]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -47,11 +43,11 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 |/l|顯示要複製的檔案清單。|
 |/g|當目的地不支援加密時，建立解密的*目的地*檔案。|
 |/d [： MM-DD-YYYY]|複製在指定的日期之前或之後變更的來源檔案。 如果您未包含*MM DD-YYYY*值， **xcopy**會複製比現有*目的地*檔案更新的所有*原始*程式檔。 此命令列選項可讓您更新已變更的檔案。|
-|u|只從存在於*目的地*的*來源*複製檔案。|
+|/u|只從存在於*目的地*的*來源*複製檔案。|
 |/i|如果*來源*是目錄，或包含萬用字元且*目的地*不存在， **xcopy**會假設*目的地*指定目錄名稱，並建立新的目錄。 然後， **xcopy**會將所有指定的檔案複製到新的目錄。 根據預設， **xcopy**會提示您指定*目的地*是檔案或目錄。|
 |/s|複製目錄和子目錄，除非它們是空的。 如果您省略 **/s**， **xcopy**會在單一目錄中運作。|
 |/e|複製所有子目錄，即使它們是空的。 使用 **/e**搭配 **/s**和 **/t**命令列選項。|
-|一起|只複製子目錄結構（也就是樹狀目錄），而不是檔案。 若要複製空的目錄，您必須包含 **/e**命令列選項。|
+|/t|只複製子目錄結構（也就是樹狀目錄），而不是檔案。 若要複製空的目錄，您必須包含 **/e**命令列選項。|
 |/k|複製檔案，並在*目的地*檔案上保留唯讀屬性（如果存在於*來源*檔案）。 根據預設， **xcopy**會移除唯讀屬性。|
 |/r|複製唯讀檔案。|
 |/h|複製具有隱藏和系統檔案屬性的檔案。 根據預設， **xcopy**不會複製隱藏或系統檔案|
@@ -210,7 +206,7 @@ rem  3 File(s) copied
 
 在上述範例中，這個特定的來源參數值 **。\\toc\*. yml**會複製相同的3個檔案，即使已移除其兩個路徑字元 **。\\** 。 不過，如果已從來源參數移除星號萬用字元，則不會複製任何檔案，只是 **\\yml**。
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
 -   [複製](copy.md)
 -   [移動](move.md)
@@ -218,4 +214,4 @@ rem  3 File(s) copied
 -   [Attrib](attrib.md)
 -   [Diskcopy](diskcopy.md)
 -   [只有](if.md)
--   [命令列語法關鍵](command-line-syntax-key.md)
+-   - [命令列語法關鍵](command-line-syntax-key.md)

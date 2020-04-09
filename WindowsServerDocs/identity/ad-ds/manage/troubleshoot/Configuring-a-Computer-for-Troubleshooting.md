@@ -1,7 +1,6 @@
 ---
 ms.assetid: 155abe09-6360-4913-8dd9-7392d71ea4e6
 title: 設定電腦進行疑難排解
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 53af8acd7da8f9008c88ad7c6c14b00e63801847
-ms.sourcegitcommit: 1f3ffff0af340868dcf3a2cfef5b8f8aea69d96d
+ms.openlocfilehash: d9d279615dc1f70ffdcff9e49a4aa619f0106a93
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78278553"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822971"
 ---
 # <a name="configuring-a-computer-for-troubleshooting"></a>設定電腦進行疑難排解
 
@@ -36,7 +35,7 @@ ms.locfileid: "78278553"
 
 ### <a name="configure-reliability-and-performance-monitor"></a>設定可靠性和效能監視器
 
-Windows Server 包含 Windows 可靠性和效能監視器，這是一個 Microsoft Management Console （MMC）嵌入式管理單元，結合了先前獨立工具的功能，包括效能記錄檔及警示、Server Performance Advisor、和 [系統監視器]。 此嵌入式管理單元提供圖形化使用者介面（GUI），可用於自訂資料收集器集合和事件追蹤會話。
+Windows Server 包含 Windows 可靠性和效能監視器，這是一個 Microsoft Management Console （MMC）嵌入式管理單元，結合了舊版獨立工具的功能，包括效能記錄檔及警示、Server Performance Advisor 和系統監視器。 此嵌入式管理單元提供圖形化使用者介面（GUI），可用於自訂資料收集器集合和事件追蹤會話。
 
 可靠性和效能監視器也包括可靠性監視器，此 MMC 嵌入式管理單元會追蹤系統的變更，並將其與系統穩定性的變更進行比較，以提供其關聯性的圖形化視圖。
 

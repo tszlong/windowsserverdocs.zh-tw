@@ -1,28 +1,22 @@
 ---
-title: shift
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+title: 移位
+description: 適用于 shift 的 Windows 命令主題，會變更批次檔中批次參數的位置。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b56574e8-570a-4cc9-bbac-1b94fbf6a47a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f74e0f1f9041a4a7b95d83772ea79376c82876de
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9c242fe90a8bf32eda5a3db511910e3d7aa4610f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371246"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834261"
 ---
-# <a name="shift"></a>shift
-
-
+# <a name="shift"></a>移位
 
 變更批次檔中批次參數的位置。
 
@@ -34,7 +28,7 @@ ms.locfileid: "71371246"
 shift [/n <N>]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -49,7 +43,7 @@ shift [/n <N>]
 - **Shift**命令對 **%\\** * batch 參數不會有任何影響。
 - 沒有回溯**shift**命令。 在您執行**shift**命令之後，就無法復原在轉移之前已存在的批次參數（ **%0**）。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 來自名為 Mycopy 之範例批次檔的下列幾行會示範如何搭配使用**shift**與任意數目的批次參數。 在此範例中，Mycopy 會將檔案清單複製到特定目錄。 批次參數是以目錄和檔案名引數來表示。
 ```
@@ -61,7 +55,7 @@ rem mycopy dir file1 file2 ...
 set todir=%1
 :getfile
 shift
-if "%1"=="" goto end
+if %1== goto end
 copy %1 %todir%
 goto getfile
 :end
@@ -69,6 +63,6 @@ set todir=
 echo All done
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

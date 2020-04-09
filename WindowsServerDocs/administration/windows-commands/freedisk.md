@@ -1,24 +1,20 @@
 ---
 title: freedisk
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 91c15166-5baa-4b80-9e0c-4cd815d00530
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8e417a8f9768706fe391f705adde37c62ceaa818
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5d652aa89c689a97bf2ecc67383bc2fd464a3054
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377032"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844441"
 ---
 # <a name="freedisk"></a>freedisk
 
@@ -30,7 +26,7 @@ ms.locfileid: "71377032"
 ```
 freedisk [/s <computer> [/u [<Domain>\]<User> [/p [<Password>]]]] [/d <Drive>] [<Value>]
 ```
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |       參數       |                                                                                         描述                                                                                          |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -44,7 +40,7 @@ freedisk [/s <computer> [/u [<Domain>\]<User> [/p [<Password>]]]] [/d <Drive>] [
 - 只有當您使用 **/s**時，才可以使用 **/s**、 **/u**和 **/p**命令列選項。 您必須使用 **/p**搭配 **/u**來提供使用者的密碼。
 - 若為自動安裝，您可以使用安裝批次檔中的**freedisk** ，檢查是否有必要的可用空間量，再繼續進行安裝。
 - 當您在批次檔中使用**freedisk**時，如果有足夠的空間，則會傳回**0** ，如果沒有足夠的空間，則會傳回**1** 。
-  ## <a name="BKMK_examples"></a>典型
+  ## <a name="examples"></a><a name=BKMK_examples></a>典型
   若要判斷磁片磁碟機 C：上是否有至少 50 MB 的可用空間，請輸入：
   ```
   freedisk 50mb 
@@ -53,5 +49,5 @@ freedisk [/s <computer> [/u [<Domain>\]<User> [/p [<Password>]]]] [/d <Drive>] [
   ```
   INFO: The specified 52,428,800 byte(s) of free space is available on current drive.
   ```
-  ## <a name="additional-references"></a>其他參考
-  [命令列語法關鍵](command-line-syntax-key.md)
+  ## <a name="additional-references"></a>其他參考資料
+  - [命令列語法關鍵](command-line-syntax-key.md)

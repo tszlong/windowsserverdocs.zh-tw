@@ -4,15 +4,15 @@ description: SDN 網路上的 SLB 閘道效能微調指導方針
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: grcusanz; AnPaul
+ms.author: grcusanz; anpaul
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 9a0d239da2ca321333ec757db22bbaf9a9b8ba30
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d1a497f24eba26b3b9b866772ae5171ea0fcbb24
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383465"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851581"
 ---
 # <a name="slb-gateway-performance-tuning-in-software-defined-networks"></a>軟體定義網路中的 SLB 閘道效能微調
 
@@ -26,7 +26,7 @@ SLB Mux 虛擬機器部署在主動-主動設定中。  這表示每個部署並
 
 虛擬 IP （VIP）的個別連線一律會傳送至相同的 Mux，假設 mux 的數目維持不變，因此其輸送量會限制為單一 Mux VM 的輸送量。  Mux 只會處理目的地為 VIP 的輸入流量。  回應封包會直接從傳送回應的 VM 傳送至實體交換器，並將其轉送至用戶端。
 
-在某些情況下，當要求的來源是從加入至管理 VIP 的相同網路控制站的 SDN 主機所產生時，也會執行要求之輸入路徑的進一步優化，讓大部分的封包直接傳送到用戶端到伺服器，完全略過 Mux 虛擬機器。  不需要進行其他設定，就可以進行此優化。
+在某些情況下，當要求的來源是來自新增到管理 VIP 之相同網路控制站的 SDN 主機時，也會執行要求之輸入路徑的進一步優化，讓大部分的封包直接從用戶端傳送到伺服器，完全略過 Mux VM。  不需要進行其他設定，就可以進行此優化。
 
 每個 SLB Mux VM 都必須根據[規劃軟體定義網路基礎結構](../../../../networking/sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md)主題中的 SDN 基礎結構虛擬機器角色需求一節中提供的指導方針來調整大小。
 

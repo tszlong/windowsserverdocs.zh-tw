@@ -1,7 +1,6 @@
 ---
 ms.assetid: e02bb152-d0db-40b0-9942-846dce75f6c7
 title: AD DS 部署需求
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: a23ba4ac8bbdb076381c8419e3a0821bee364acf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dff95633b71d42e25aad33793abd609ac61adbdf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71409035"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822921"
 ---
 # <a name="ad-ds-deployment-requirements"></a>AD DS 部署需求
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 現有環境的結構決定了部署 Windows Server 2008 Active Directory Domain Services （AD DS）的策略。 如果您要建立 AD DS 環境，而且沒有現有的網域結構，請在開始建立 AD DS 環境之前，先完成您的 AD DS 設計。 然後，您可以部署新的樹系根域，並根據您的設計部署網域結構的其餘部分。  
   

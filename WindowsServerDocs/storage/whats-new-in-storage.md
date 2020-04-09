@@ -3,17 +3,17 @@ ms.assetid: 0f2a7f7b-aca8-4e5d-ad67-4258e88bc52f
 title: Windows Server 中存放裝置的新功能
 ms.prod: windows-server
 ms.author: jgerend
-ms.manager: dongill
+manager: dongill
 ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms.date: 05/29/2019
-ms.openlocfilehash: ffcff036a7e30018e523def055ce3aeb8d30c225
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 0de83c8642629b3a7ff21c9accadec5f9331178e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322330"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820851"
 ---
 # <a name="whats-new-in-storage-in-windows-server"></a>Windows Server 中存放裝置的新功能
 
@@ -65,7 +65,7 @@ ms.locfileid: "79322330"
 
 儲存空間移轉服務是新的技術，可讓您更輕鬆地將伺服器移轉至較新版本的 Windows Server。 它提供圖形化工具，可用於清查伺服器上的資料、將資料與設定傳輸到較新的伺服器，然後選擇性地將舊伺服器的身分識別移動至新伺服器，因此應用程式和使用者不需要變更任何項目。 如需詳細資訊，請參閱[存放裝置移轉服務](storage-migration-service/overview.md)。
 
-### <a id="storage-spaces-direct"></a>儲存空間直接存取（僅限 Windows Server 2019）
+### <a name="storage-spaces-direct-windows-server-2019-only"></a><a id="storage-spaces-direct"></a>儲存空間直接存取（僅限 Windows Server 2019）
 
 Windows Server 2019 中的儲存空間直接存取有一些改良功能（儲存空間直接存取不包含在 Windows Server、半年通道）：
 
@@ -109,7 +109,7 @@ Windows Server 2019 中的儲存空間直接存取有一些改良功能（儲存
 
     這可讓系統管理員以手動方式分隔儲存空間直接存取中的磁片區配置。 這麼做可以在某些情況下大幅增加容錯能力，但會強加一些額外的管理考慮和複雜度。 如需詳細資訊，請參閱[分隔磁片區配置](storage-spaces/delimit-volume-allocation.md)。
 
-### <a name="storage-replica2019"></a>儲存體複本
+### <a name="storage-replica"></a><a name="storage-replica2019"></a>儲存體複本
 
 在此版本中，[儲存體複本](storage-replica/storage-replica-overview.md)有一些改良功能：
 
@@ -193,7 +193,7 @@ Windows Server （版本1709）是半年通道中的第一個 Windows Server 版
 
 ## <a name="whats-new-in-storage-in-windows-server-2016"></a>Windows Server 2016 中存放裝置的新功能
 
-### <a name="s2d"></a>儲存空間直接存取  
+### <a name="storage-spaces-direct"></a><a name="s2d"></a>儲存空間直接存取  
 「儲存空間直接存取」能讓您使用具本機磁碟的伺服器，建置高可用且可調整的儲存空間。 它簡化了軟體定義儲存體系統的部署和管理，也解除了先前使用共用磁碟的叢集儲存空間限制，而能夠使用新的磁碟裝置類型 (例如 SATA SSD 和 NVMe 磁碟裝置)。  
 
 **這個變更增加了什麼價值？**  
@@ -205,7 +205,7 @@ Windows Server （版本1709）是半年通道中的第一個 Windows Server 版
 **有哪些不同？**  
 這是 Windows Server 2016 中的新功能。  
 
-### <a name="storage-replica"></a>儲存體複本
+### <a name="storage-replica"></a><a name="storage-replica"></a>儲存體複本
 
 儲存體複本可在伺服器或叢集之間啟用與存放裝置無關、區塊層級及同步的複寫來進行災害復原，以及在站台之間延伸容錯移轉叢集。 同步複寫能以當機時保持一致的磁碟區啟用對實體站台中資料的鏡像，來確保檔案系統層級零資料遺失。 非同步複寫允許都會範圍外的站台擴充功能，但有資料遺失的可能性。  
 
@@ -229,7 +229,7 @@ Windows Server （版本1709）是半年通道中的第一個 Windows Server 版
 **有哪些不同？**  
 這是 Windows Server 2016 中的新功能。  
 
-### <a name="storage-qos"></a>存放裝置服務品質  
+### <a name="storage-quality-of-service"></a><a name="storage-qos"></a>存放裝置服務品質  
 您現在可以在 Windows Server 2016 中，使用存放裝置服務品質 (QoS) 集中監視端對端儲存體效能，以及使用 Hyper-V 和 CSV 叢集建立管理原則。  
 
 **這個變更增加了什麼價值？**  
@@ -248,7 +248,7 @@ Windows Server （版本1709）是半年通道中的第一個 Windows Server 版
 
 如需詳細資訊，請參閱[存放裝置服務品質](storage-qos/storage-qos-overview.md)
 
-### <a name="dedup"></a>重復資料刪除  
+### <a name="data-deduplication"></a><a name="dedup"></a>重復資料刪除  
 | 功能 | 新功能或更新功能 | 描述 |
 |---------------|----------------|-------------|
 | [支援大型磁片區](data-deduplication/whats-new.md#large-volume-support) | 已更新 | 在 Windows Server 2016 之前，使用者必須特別針對預期的變動設定磁碟區大小，而大於 10 TB 的磁碟區並不是重複資料刪除的良好候選項目。 在 Windows Server 2016 中，重複資料刪除支援「最高 64 TB」的磁碟區大小。 |
@@ -257,11 +257,11 @@ Windows Server （版本1709）是半年通道中的第一個 Windows Server 版
 | [簡化的備份支援](data-deduplication/whats-new.md#simple-backup-support) | 新增 | 在 Windows Server 2012 R2 中，虛擬備份應用程式 (例如 Microsoft 的 [Data Protection Manager](https://technet.microsoft.com/library/hh758173.aspx)) 必須透過一系列的手動設定步驟來取得支援。 在 Windows Server 2016 中，已加入新的預設使用類型 "Backup"，以無接縫地針對虛擬備份應用程式部署重複資料刪除。 |
 | [支援叢集 OS 輪流升級](data-deduplication/whats-new.md#cluster-upgrade-support) | 新增 | 重複資料刪除完整支援 Windows Server 2016 新的[叢集 OS 輪流升級](..//failover-clustering/cluster-operating-system-rolling-upgrade.md)功能。 |
 
-### <a name="smb-hardening-improvements"></a>SYSVOL 和 NETLOGON 連線的 SMB 強化功能改進  
+### <a name="smb-hardening-improvements-for-sysvol-and-netlogon-connections"></a><a name="smb-hardening-improvements"></a>SYSVOL 和 NETLOGON 連線的 SMB 強化功能改進  
 在 Windows 10 和 Windows Server 2016 中，用戶端針對網域控制站上 Active Directory 網域服務之預設 SYSVOL 和 NETLOGON 共用的連線，現在需要 SMB 簽署及相互驗證 (例如 Kerberos)。   
 
 **這個變更增加了什麼價值？**  
-這項變更可降低攔截式攻擊的可能性。   
+這項變更降低了攔截式攻擊的可能性。   
 
 **有哪些不同？**  
 如果無法使用 SMB 簽署和相互驗證，Windows 10 或 Windows Server 2016 電腦將不會處理網域型的群組原則和指令碼。  

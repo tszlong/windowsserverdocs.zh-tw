@@ -1,24 +1,20 @@
 ---
 title: prnjobs
 description: 瞭解如何從命令列管理列印工作。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5ad34199-7a5a-40c1-8053-bccd5929df43
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: c4fb9be9545274bbbf33926042f7a4deec5ceb05
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 231b8a7a9f4f8623b3d84cc789064d256883a733
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372103"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837291"
 ---
 # <a name="prnjobs"></a>prnjobs
 
@@ -32,7 +28,7 @@ cscript Prnjobs {-z | -m | -x | -l | -?} [-s <ServerName>]
 [-p <printerName>] [-j <JobID>] [-u <UserName>] [-w <Password>]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |          參數           |                                                                                                                                                                                        描述                                                                                                                                                                                        |
 |------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -47,13 +43,13 @@ cscript Prnjobs {-z | -m | -x | -l | -?} [-s <ServerName>]
 |              /?              |                                                                                                                                                                           在命令提示字元顯示說明。                                                                                                                                                                            |
 
 ## <a name="remarks"></a>備註
--   **Prnjobs**命令是位於%windir%\system32\ printing_Admin_Scripts\\<language> 目錄中的 Visual Basic 腳本。 若要使用此命令，請在命令提示字元中輸入**cscript** ，後面接著 prnjobs 檔案的完整路徑，或將目錄變更為適當的資料夾。 例如：
+-   **Prnjobs**命令是位於%windir%\system32\ printing_Admin_Scripts\\<language> 目錄中的 Visual Basic 腳本。 若要使用此命令，請在命令提示字元中輸入**cscript** ，後面接著 prnjobs 檔案的完整路徑，或將目錄變更為適當的資料夾。 例如，
     ```
     cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnjobs.vbs
     ```
 -   如果您提供的資訊包含空格，請使用引號括住文字（例如 `"computer Name"`）。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name="BKMK_examples"></a>典型
 若要暫停工作識別碼為27的列印工作，並傳送至名為 HRServer 的遠端電腦，以在名為 colorprinter 的印表機上列印，請輸入：
 ```
 cscript prnjobs.vbs -z -s HRServer -p colorprinter -j 27
@@ -63,7 +59,7 @@ cscript prnjobs.vbs -z -s HRServer -p colorprinter -j 27
 cscript prnjobs.vbs -l -p colorprinter_2
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
--   [命令列語法關鍵](command-line-syntax-key.md)
+-   - [命令列語法關鍵](command-line-syntax-key.md)
 -   [列印命令參考資料](print-command-reference.md)

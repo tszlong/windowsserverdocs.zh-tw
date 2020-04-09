@@ -1,6 +1,5 @@
 ---
 title: AD 樹系復原-執行初始復原
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: a369347fe889c7f6675d0091d05a6dee93cb4434
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7d592198187d44927f643b45e7a8bb4c2eec2a69
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369072"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823901"
 ---
 # <a name="perform-initial-recovery"></a>執行初始復原  
 
->適用於：Windows Server 2016、Windows Server 2012 及 2012 R2、Windows Server 2008 和 2008 R2
+>適用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
 本節包含下列步驟：  
 
@@ -53,11 +52,11 @@ ms.locfileid: "71369072"
 
       **HKLM\System\CurrentControlSet\Services\NTDS\Parameters\Repl 執行初始同步處理**  
   
-      建立具有資料類型**REG_DWORD**且值為**0**的專案。 完整復原樹系之後，您可以將此專案的值重設為**1**，這需要重新開機並保留操作主機角色的網域控制站，才能成功地 AD DS 輸入和輸出複寫及其已知複本合作夥伴在將本身通告為網域控制站，並開始提供服務給用戶端之前， 如需初始同步處理需求的詳細資訊，請參閱知識庫文章[305476](https://support.microsoft.com/kb/305476)。 
+      建立資料類型**REG_DWORD**且值為**0**的專案。 完整復原樹系之後，您可以將此專案的值重設為**1**，這需要重新開機並保留操作主機角色的網域控制站，才能成功地 AD DS 輸入和輸出複寫給其已知的複本夥伴，然後才將本身通告為網域控制站，並開始提供服務給用戶端。 如需初始同步處理需求的詳細資訊，請參閱知識庫文章[305476](https://support.microsoft.com/kb/305476)。 
   
       只有在您還原和驗證資料之後，以及將這部電腦加入生產網路之前，才繼續進行下一個步驟。 
   
-4. 如果您懷疑整個樹系失敗與網路入侵或惡意攻擊有關，請重設所有系統管理帳戶的帳戶密碼，包括 Enterprise Admins、Domain Admins、Schema Admins、Server Operators、Account 的成員操作員群組等等。 在樹系復原的下一個階段安裝額外的網域控制站之前，應該先完成系統管理帳戶密碼的重設。 
+4. 如果您懷疑整個樹系的失敗與網路入侵或惡意攻擊有關，請重設所有系統管理帳戶的帳戶密碼，包括 Enterprise Admins、Domain Admins、Schema Admins、Server Operators、Account Operators 群組等的成員。 在樹系復原的下一個階段安裝額外的網域控制站之前，應該先完成系統管理帳戶密碼的重設。 
 5. 在樹系根域中第一個還原的 DC 上，捕獲所有全網域和全樹系操作主機角色。 需要 Enterprise Admins 和 Schema Admins 認證，才能抓取全樹系操作主機角色。 
   
      在每個子域中，會佔用全網域操作主機角色。 雖然您可能只會暫時在還原的 DC 上保留操作主機角色，但佔用這些角色可確保您在樹系復原程式中的哪個 DC 上裝載它們。 作為復原後程式的一部分，您可以視需要轉散發操作主機角色。 如需有關取取操作主機角色的詳細資訊，請參閱[佔用操作主機角色](AD-forest-recovery-seizing-operations-master-role.md)。 如需有關放置操作主機角色之位置的建議，請參閱[什麼是操作主機？](https://technet.microsoft.com/library/cc779716.aspx)。 
@@ -77,7 +76,7 @@ ms.locfileid: "71369072"
   
      在每個子域中，將還原的 DC 設定為樹系根域中第一部 DNS 伺服器的 IP 位址，作為其慣用的 DNS 伺服器。 您可以在 LAN 介面卡的 TCP/IP 屬性中進行這項設定。 如需詳細資訊，請參閱[CONFIGURE tcp/ip to USE DNS](https://technet.microsoft.com/library/cc779282\(WS.10\).aspx)。 
   
-     在 _msdcs 和網域 DNS 區域中，刪除在中繼資料清除後已不存在之 Dc 的 NS 記錄。 檢查已清除之 Dc 的 SRV 記錄是否已移除。 若要協助加速 DNS SRV 記錄移除，請執行：  
+     在 [_msdcs] 和 [網域 DNS] 區域中，刪除在中繼資料清除後已不存在之 Dc 的 NS 記錄。 檢查已清除之 Dc 的 SRV 記錄是否已移除。 若要協助加速 DNS SRV 記錄移除，請執行：  
   
     ```  
     nltest.exe /dsderegdns:server.domain.tld  
@@ -111,7 +110,7 @@ ms.locfileid: "71369072"
   
      第二個問題是，不再存在的使用者帳戶可能仍會出現在全域通訊清單中。 第三個問題是，不再存在的萬用群組可能仍會出現在使用者的存取權杖中。 
   
-     如果您還原的是通用類別目錄的 DC （不小心或因為這是您信任的單獨備份），建議您在還原作業之後立即停用通用類別目錄，以避免出現延遲物件的情況。套. 停用通用類別目錄旗標會導致電腦遺失其所有部分複本（分割區），並 relegating 到正常的 DC 狀態。 
+     如果您還原的是通用類別目錄的 DC （不慎或因為這是您信任的單獨備份），建議您在還原作業完成之後，立即停用通用類別目錄，以避免發生延遲物件。 停用通用類別目錄旗標會導致電腦遺失其所有部分複本（分割區），並 relegating 到正常的 DC 狀態。 
   
 13. 設定 Windows Time 服務。 在樹系根域中，將 PDC 模擬器設定為從外部時間來源同步處理時間。 如需詳細資訊，請參閱在[樹系根域中的 PDC 模擬器上設定 Windows 時間服務](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731191%28v=ws.10%29)。 
   
@@ -126,7 +125,7 @@ ms.locfileid: "71369072"
 
 - 若要修正名稱解析，請建立 DNS 委派記錄，並視需要設定 DNS 轉送和根提示。 執行**repadmin/replsum**以檢查 dc 之間的複寫。 
 - 如果還原的 DC 不是直接複寫協力電腦，則在兩者之間建立暫存連線物件，複寫復原的速度會更快。 
-- 若要驗證中繼資料清除，請執行**Repadmin/viewlist \\** *，以取得樹系中所有 dc 的清單。 執行**Nltest/DCList：** *< 網域\>*  ，以取得網域中所有 dc 的清單。 
+- 若要驗證中繼資料清除，請執行**Repadmin/viewlist \\** *，以取得樹系中所有 dc 的清單。 執行**Nltest/DCList：** *< 網域\>* ，以取得網域中所有 dc 的清單。 
 - 若要檢查 DC 和 DNS 健全狀況，請執行 DCDiag/v 以報告樹系中所有 Dc 的錯誤。 
 
 ## <a name="add-the-global-catalog-to-a-domain-controller-in-the-forest-root-domain"></a>將通用類別目錄新增至樹系根域中的網域控制站

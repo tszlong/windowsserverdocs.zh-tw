@@ -1,28 +1,22 @@
 ---
 title: chkntfs
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: Chkntfs 的 Windows 命令主題，它會在電腦啟動時顯示或修改自動磁片檢查。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 93eca810-8699-4716-8e9d-aecd54f704be
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f940fe81f0e7e01495e071931059b2375b78bb22
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bb04022964b3c315c1003a9746f6551fc281dba3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379349"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847771"
 ---
 # <a name="chkntfs"></a>chkntfs
-
-
 
 當電腦啟動時，顯示或修改自動磁片檢查。 如果在沒有選項的情況下使用， **chkntfs**會顯示指定磁片區的檔案系統。 如果已排程執行自動檔案檢查， **chkntfs**會顯示指定的磁片區是否已變更，或是否已排程在下次電腦啟動時進行檢查。
 
@@ -41,7 +35,7 @@ chkntfs [/x <Volume> [...]]
 chkntfs [/c <Volume> [...]]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -52,7 +46,7 @@ chkntfs [/c <Volume> [...]]
 |/c \<磁片區 > [...]|排程一或多個要在電腦啟動時檢查的磁片區，並在那些已變更的磁片區上執行**chkdsk** 。|
 |/?|在命令提示字元顯示說明。|
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 若要顯示磁片磁碟機 C 的檔案系統類型，請輸入：
 ```
@@ -95,6 +89,6 @@ chkntfs /x c: d: e:
 chkntfs /c d:
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

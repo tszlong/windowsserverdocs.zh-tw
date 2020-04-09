@@ -9,12 +9,12 @@ ms.author: jgerend
 manager: dongill
 ms.date: 06/26/2019
 ms.prod: windows-server
-ms.openlocfilehash: 5cb26bcff99d9cf3a1ee8b3a937ad6098a913c3d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9d68e2becbf9c6522be7e1ff6e6742d44f3a8247
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362058"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829231"
 ---
 # <a name="windows-commands"></a>Windows 命令
 
@@ -24,20 +24,38 @@ ms.locfileid: "71362058"
 
 若要尋找特定命令的相關資訊，請在下列 a-z 功能表中，按一下命令開頭的字母，然後按一下命令名稱。
 
-[@NO__T-](#a)1[B](#b) | 
+[A](#a) |
+[B](#b) | 
 [C](#c) | 
 [D](#d) | 
 [E](#e) | 
-[F](#f) |
-1[G](#g)3[H](#h)5[I](#i)7[J](#j)9[K](#k)1[L](#l)3[M](#m)5[N](#n)7[O](#o)9[P](#p)1[Q](#q)3[R](#r)5[S](#s)7[T](#t)9[U](#u)1[V](#v)3[W](#w)5[X](#x) |Y |Z
+[F](#f) | 
+[G](#g) | 
+[H](#h) | 
+[ |
+](#i) [J](#j) | 
+[K](#k) | 
+[L](#l) | 
+[M](#m) | 
+[N](#n) | 
+[O](#o) | 
+[P](#p) [ | 
+](#u) [Q](#q) [ | 
+](#v) [R](#r) | 
+ | 
+[S](#s) [ | 
+](#t) [X](#x) | [W](#w)Y |Z | 
+ | 
+ | 
+
 
 ## <a name="prerequisites"></a>必要條件
 
 本主題所包含的資訊適用于：
 
--   Windows Server Standard 2012 R2
--   Windows Server (半年度管道)
--   Windows Server 2016
+-   Windows Server 2019
+-   Windows Server (半年通道)
+-   Windows Server 2016
 -   Windows Server 2012 R2
 -   Windows Server 2012 
 -   Windows Server 2008 R2
@@ -49,7 +67,7 @@ ms.locfileid: "71362058"
 
 命令 shell 是 Windows 內建的第一個 shell，可使用 batch （.bat）檔案，將例行工作（例如使用者帳戶管理或夜間備份）自動化。 使用 Windows Script Host，您可以在命令 shell 中執行更複雜的腳本。 如需詳細資訊，請參閱[cscript](cscript.md)或[wscript.echo](wscript.md)。 您可以使用腳本，而不是使用使用者介面來更有效率地執行作業。 腳本會接受命令列上可用的所有命令。
 
-Windows 有兩個命令 shell：命令 shell 和[PowerShell](https://docs.microsoft.com/powershell/scripting/powershell-scripting?view=powershell-6)。 每個 shell 都是一種軟體程式，可提供您與作業系統或應用程式之間的直接通訊，並提供環境來自動化 IT 作業。
+Windows 有兩個命令執行介面：命令 shell 和[PowerShell](https://docs.microsoft.com/powershell/scripting/powershell-scripting?view=powershell-6)。 每個 shell 都是一種軟體程式，可提供您與作業系統或應用程式之間的直接通訊，並提供環境來自動化 IT 作業。
 
 PowerShell 的設計目的是要擴充命令 shell 的功能，以執行稱為 Cmdlet 的 PowerShell 命令。 Cmdlet 類似于 Windows 命令，但提供更可擴充的指令碼語言。 您可以在 Powershell 中執行 Windows 命令和 PowerShell Cmdlet，但命令 shell 只能執行 Windows 命令，而不是 PowerShell Cmdlet。
 
@@ -58,12 +76,12 @@ PowerShell 的設計目的是要擴充命令 shell 的功能，以執行稱為 C
 >您也可以下載並安裝 powershell [Core](https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6)，也就是 powershell 的開放原始碼版本。 
 
 > [!CAUTION]
-> 不正確地編輯登錄可能會對系統造成嚴重的損害。 在對登錄進行下列變更之前，您應該先備份電腦上任何重要的資料。
+> 不當編輯登錄可能會造成系統嚴重受損。 在對登錄進行下列變更之前，您應該先備份電腦上任何重要的資料。
 
 > [!NOTE]
 > 若要在電腦或使用者登入會話的命令 shell 中啟用或停用檔案和目錄名稱自動完成，請執行**regedit.exe** ，並設定下列**reg_DWOrd 值**：
 > 
-> HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\completionChar\reg_DWOrd
+> HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\completionChar\ reg_DWOrd
 > 
 > 若要設定**reg_DWOrd**值，請針對特定函式使用控制字元的十六進位值（例如， **0 9**為 Tab， **0 08**為倒退鍵）。 使用者指定的設定會優先于電腦設定，而命令列選項的優先順序高於登錄設定。
 
@@ -71,12 +89,30 @@ PowerShell 的設計目的是要擴充命令 shell 的功能，以執行稱為 C
 
 若要尋找特定 Windows 命令的相關資訊，請在下列 a-z 功能表中，按一下命令開頭的字母，然後按一下命令名稱。
 
-[@NO__T-](#a)1[B](#b) | 
+[A](#a) |
+[B](#b) | 
 [C](#c) | 
 [D](#d) | 
 [E](#e) | 
-[F](#f) |
-1[G](#g)3[H](#h)5[I](#i)7[J](#j)9[K](#k)1[L](#l)3[M](#m)5[N](#n)7[O](#o)9[P](#p)1[Q](#q)3[R](#r)5[S](#s)7[T](#t)9[U](#u)1[V](#v)3[W](#w)5[X](#x) |Y |Z
+[F](#f) | 
+[G](#g) | 
+[H](#h) | 
+[ |
+](#i) [J](#j) | 
+[K](#k) | 
+[L](#l) | 
+[M](#m) | 
+[N](#n) | 
+[O](#o) | 
+[P](#p) [ | 
+](#u) [Q](#q) [ | 
+](#v) [R](#r) | 
+ | 
+[S](#s) [ | 
+](#t) [X](#x) | [W](#w)Y |Z | 
+ | 
+ | 
+
 
 ### <a name="a"></a>A
 -   [append](append.md)
@@ -234,7 +270,7 @@ PowerShell 的設計目的是要擴充命令 shell 的功能，以執行稱為 C
 -   [expand](expand.md)
 -   [extract](extract.md)
 
-### <a name="f"></a>F
+### <a name="f"></a>華氏 (F)
 - [fc](fc.md)
 - [find](find.md)
 - [findstr](findstr.md)
@@ -280,7 +316,7 @@ PowerShell 的設計目的是要擴充命令 shell 的功能，以執行稱為 C
 -   [helpctr](helpctr.md)
 -   [hostname](hostname.md)
 
-### <a name="i"></a>怎樣
+### <a name="i"></a>I
 -   [icacls](icacls.md)
 -   [if](if.md)
 -   [inuse](inuse.md)
@@ -288,7 +324,7 @@ PowerShell 的設計目的是要擴充命令 shell 的功能，以執行稱為 C
 -   [ipxroute](ipxroute.md)
 -   [irftp](irftp.md)
 
-### <a name="j"></a>韓文
+### <a name="j"></a>J
 -   [jetpack](jetpack.md)
 
 ### <a name="k"></a>K
@@ -348,13 +384,13 @@ PowerShell 的設計目的是要擴充命令 shell 的功能，以執行稱為 C
   -   [manage-bde：保護裝置](manage-bde-protectors.md)
   -   [manage-bde： tpm](manage-bde-tpm.md)
   -   [manage-bde： setidentifier](manage-bde-setidentifier.md)
-  -   [manage-manage-bde：ForceRecovery](manage-bde-forcerecovery.md)
+  -   [manage-bde： ForceRecovery](manage-bde-forcerecovery.md)
   -   [manage-bde： changepassword](manage-bde-changepassword.md)
   -   [manage-bde： changepin](manage-bde-changepin.md)
   -   [manage-bde： changekey](manage-bde-changekey.md)
-  -   [manage-manage-bde：KeyPackage](manage-bde-keypackage.md)
+  -   [manage-bde： KeyPackage](manage-bde-keypackage.md)
   -   [manage-bde： upgrade](manage-bde-upgrade.md)
-  -   [manage-manage-bde：WipeFreeSpace](manage-bde-wipefreespace.md)
+  -   [manage-bde： WipeFreeSpace](manage-bde-wipefreespace.md)
 - [mapadmin](mapadmin.md)
 - [Md](Md.md)
 - [mkdir](mkdir.md)
@@ -514,7 +550,7 @@ PowerShell 的設計目的是要擴充命令 shell 的功能，以執行稱為 C
 - [showmount](showmount.md)
 - [shutdown](shutdown.md)
 - [sort](sort.md)
-- [start](start.md)
+- [開始](start.md)
 - [subst](subst.md)
 - [sxstrace](sxstrace.md)
 - [sysocmgr](sysocmgr.md)
@@ -545,7 +581,7 @@ PowerShell 的設計目的是要擴充命令 shell 的功能，以執行稱為 C
 -   [typeperf](typeperf.md)
 -   [tzutil](tzutil.md)
 
-### <a name="u"></a>那麼
+### <a name="u"></a>U
 -   [unlodctr](unlodctr_1.md)
 
 ### <a name="v"></a>V
@@ -582,7 +618,6 @@ PowerShell 的設計目的是要擴充命令 shell 的功能，以執行稱為 C
 - [winnt32](winnt32.md)
 - [winpop](winpop.md)
 - [winrs](winrs.md)
-- [wlbs](wlbs_1.md)
 - [wmic](wmic.md)
 - [wscript](wscript.md)
 

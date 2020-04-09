@@ -1,24 +1,20 @@
 ---
 title: 管理 WSUS 用戶端電腦和 WSUS 電腦群組
 description: Windows Server Update Service （WSUS）主題-如何管理用戶端電腦和群組
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4b1ea915-0f9f-4f0e-8913-a1dd460d07ab
 author: coreyp-at-msft
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: 36ac4230ae84cae3a859e53e5faa2b83cb7412d5
-ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
+ms.openlocfilehash: 3ac5a0c09d28de53430ded651b6da92ba92a1f68
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80639817"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828622"
 ---
 # <a name="managing-wsus-client-computers-and-wsus-computer-groups"></a>管理 WSUS 用戶端電腦和 WSUS 電腦群組
 

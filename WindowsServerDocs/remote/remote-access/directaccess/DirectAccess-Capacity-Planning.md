@@ -2,22 +2,18 @@
 title: DirectAccess 容量規劃
 description: 您可以使用本主題來取得 Windows Server 2012 DirectAccess 伺服器效能的報告，以協助您在 Windows Server 2016 中進行 DirectAccess 的容量規劃。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 456e5971-3aa7-4a24-bc5d-0c21fec7687e
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: e63b4c4f266d286b766c89b61676493328aa8652
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 413dc88ce9ec551a318b63f3df44ed256f289219
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310988"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815791"
 ---
 # <a name="directaccess-capacity-planning"></a>DirectAccess 容量規劃
 
@@ -37,7 +33,7 @@ ms.locfileid: "80310988"
 ||||  
 |-|-|-|  
 |設定-硬體|低階硬體 (4GB RAM、4 核心)|高階硬體 (8 GB、8 核心)|  
-|雙通道<br /><br />-PKI<br /><br />-包含 DNS64/NAT64|750 個並行連線，使用 50% CPU、50 % 記憶體，Corpnet NIC 輸送量 75 Mbps。 延伸目標是 1000 位使用者使用 50% CPU。|1500在 50% CPU 的並行連線，50% 記憶體與公司網路 NIC 輸送量 150 Mbps。|  
+|雙通道<p>-PKI<p>-包含 DNS64/NAT64|750 個並行連線，使用 50% CPU、50 % 記憶體，Corpnet NIC 輸送量 75 Mbps。 延伸目標是 1000 位使用者使用 50% CPU。|1500在 50% CPU 的並行連線，50% 記憶體與公司網路 NIC 輸送量 150 Mbps。|  
 ## <a name="test-environment"></a>測試環境
 
 **效能工作臺拓撲**  

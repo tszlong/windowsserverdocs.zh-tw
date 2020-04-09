@@ -1,7 +1,6 @@
 ---
 ms.assetid: 6785de86-4f7d-4ed1-9055-8de0871d59b5
 title: 附錄 M-檔連結和建議的閱讀
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c48b5330ee1b9a186885645aaa4c1ac79f1782e7
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: f1c13f0a7054f236f1ba35201ad9ad62c978d08f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822741"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823291"
 ---
 # <a name="appendix-m-document-links-and-recommended-reading"></a>附錄 M︰文件連結與建議閱讀資料
 
@@ -196,19 +195,19 @@ ms.locfileid: "76822741"
 |[嚴格的 KDC 驗證](https://www.microsoft.com/download/details.aspx?id=6382)|  
   
 #### <a name="copyright-information"></a>著作權資訊  
-本文件包含的資訊代表 Microsoft Corporation 對於截至文件發行當日為止探討之問題的最新觀點。 由於 Microsoft 必須回應不斷變動的市場狀況，因此您不應該將這些觀點解讀成 Microsoft 所做的承諾，而且 Microsoft 也無法保證發行日期後提出之任何資訊的正確性。  
+本文件包含的資訊代表 Microsoft Corporation 在發行日當時對於討論之議題的觀點。 由於 Microsoft 必須回應不斷變動的市場狀況，因此您不應該將這些觀點解讀成 Microsoft 所做的承諾，而且 Microsoft 也無法保證發行日期後提出之任何資訊的正確性。  
   
-本白皮書僅供資訊參考之用。 Microsoft 對本檔不提供任何明示或默示的擔保。  
+本白皮書僅做為資訊參考之用。 Microsoft 對本檔不提供任何明示或默示的擔保。  
   
-使用者應負責遵守一切適用之著作權法律。 若未限制著作權之下的權利，本檔的任何部分均不得複製、儲存或引進抓取系統，或以任何形式或透過任何方式（電子、機械、影印、錄音或其他方式）或任何用途來傳輸，但不含 Microsoft Corporation 的明示書面許可。  
+遵守所有適用之著作權法係使用者的責任。 非經 Microsoft Corporation 書面許可，本文之敘述不會限制任何依著作權本得享有之權利，您不得為任何目的使用任何形式或方法 (電子形式、機械形式、影印、記錄或其他方式) 複製或傳送本文件的任何部份，也不得將本文件的任何部份儲存或放入檢索系統 (a retrieval system)。  
   
-Microsoft 對本文件所述及之主題可能擁有專利權、申請中專利權、商標權、著作權或其他智慧財產權。 除非 Microsoft 書面授權合約中所明示規定者外，提供本文件並不授予 貴用戶上述專利權、商標、著作權或其他智慧財產權。  
+Microsoft 可能擁有本文件所提及內容中所含之專利權、專利優先權、商標、著作權，或其他智慧財產權。 除非 Microsoft 書面授權合約所明示規定者外，提供本文件並不授予　貴用戶上述專利權、商標、著作權或其他智慧財產權。  
   
-Microsoft、Active Directory、BitLocker、Hyper-v、Internet Explorer、Windows Vista、Windows 和 Windows Server 為 Microsoft Corporation 在美國及/或其他國家的注冊商標或商標。 其他商標皆屬於其各自之擁有者。  
+Microsoft、Active Directory、BitLocker、Hyper-v、Internet Explorer、Windows Vista、Windows 和 Windows Server 為 Microsoft Corporation 在美國及/或其他國家的注冊商標或商標。 所有其他商標均為各所有人所有之財產。  
   
-此處所描述的範例公司、組織、產品、功能變數名稱、電子郵件地址、商標、人員、地點及事件均屬虛構。 並非影射任何真實的公司、組織、產品、網域名稱、電子郵件地址、商標、人員、地點或事件。  
+此範例中描述的公司、組織、產品、網域名稱、電子郵件位址、標誌、人員、地點與事件均屬虛構。 並非影射任何真實的公司、組織、產品、網域名稱、電子郵件位址、商標圖樣、人員、地點及事件。  
   
-? 2013 Microsoft Corporation。 保留一切權利。  
+? 2013 Microsoft Corporation。 著作權所有，並保留一切權利。  
   
 
 

@@ -1,24 +1,20 @@
 ---
 title: ksetup： setrealmflags
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: bcb2824e-fba7-4ebe-be62-e62b4fae5b17
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b594ae0a1c3c9814d93496ac76e82a594ff4ee00
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 29ef5de8130fa9b10ce6d999e16765b0aa2697a4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374814"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80841281"
 ---
 # <a name="ksetupsetrealmflags"></a>ksetup： setrealmflags
 
@@ -32,7 +28,7 @@ ms.locfileid: "71374814"
 ksetup /setrealmflags <RealmName> [sendaddress] [tcpsupported] [delegate] [ncsupported] [rc4]
 ```
 
-### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -41,7 +37,7 @@ ksetup /setrealmflags <RealmName> [sendaddress] [tcpsupported] [delegate] [ncsup
 
 ## <a name="remarks"></a>備註
 
-領域旗標會指定不是以 Windows 伺服器作業系統為基礎的 Kerberos 領域的其他功能。 執行 Windows Server 2003、Windows Server 2008 或 Windows Server 2008 R2 的電腦可以使用 Kerberos 伺服器來管理驗證，而不是使用執行 Windows Server 作業系統的網域，而這些系統會參與Kerberos 領域。 此專案會建立領域的功能。 下表描述每個。
+領域旗標會指定不是以 Windows 伺服器作業系統為基礎的 Kerberos 領域的其他功能。 執行 Windows Server 2003、Windows Server 2008 或 Windows Server 2008 R2 的電腦可以使用 Kerberos 伺服器來管理驗證，而不是使用執行 Windows Server 作業系統的網域，而這些系統會參與 Kerberos 領域。 此專案會建立領域的功能。 下表描述每個。
 
 |值|領域旗標|描述|
 |-----|----------|-----------|
@@ -57,7 +53,7 @@ ksetup /setrealmflags <RealmName> [sendaddress] [tcpsupported] [delegate] [ncsup
 
 您可以查看**ksetup**的輸出，以查看可用和設定的領域旗標。
 
-## <a name="BKMK_Examples"></a>典型
+## <a name="examples"></a><a name=BKMK_Examples></a>典型
 
 列出領域 CONTOSO 的可用和設定領域旗標：
 ```
@@ -69,9 +65,9 @@ ksetup /setrealmflags CONTOSO ncsupported delegate
 ```
 執行**ksetup**命令，以確認是否已透過查看輸出並尋找**領域旗標 =** 來設定領域旗標。
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
 -   [Ksetup:listrealmflags](ksetup-listrealmflags.md)
 -   [Ksetup:addrealmflags](ksetup-addrealmflags.md)
 -   [Ksetup:delrealmflags](ksetup-delrealmflags.md)
--   [命令列語法關鍵](command-line-syntax-key.md)
+-   - [命令列語法關鍵](command-line-syntax-key.md)

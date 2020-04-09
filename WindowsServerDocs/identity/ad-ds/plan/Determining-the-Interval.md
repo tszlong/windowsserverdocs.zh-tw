@@ -1,7 +1,6 @@
 ---
 ms.assetid: 96a6749c-6c9f-4f2f-ad0a-51272d282ace
 title: 決定間隔
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 065b4ff707bdd8b82e33e06ad2b52c57a746045f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f39ad2ce2ce84e36d2faff2a07b8310d3600b6c9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402626"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822571"
 ---
 # <a name="determining-the-interval"></a>決定間隔
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 您必須設定 [站台連結複寫間隔] 屬性，以指出在排程允許複寫的期間，您想要進行複寫的頻率。 例如，如果排程允許在02:00 小時和04:00 小時之間進行複寫，且複寫間隔設定為30分鐘，則在排定的時間內，複寫最多可能會發生四次。 預設複寫間隔為180分鐘或3小時。 最小間隔為15分鐘。  
   
@@ -32,13 +31,13 @@ ms.locfileid: "71402626"
   
 -   在您的網路上建立所有網站的資料表，如下列範例所示：  
   
-    |Sites|西雅圖|波士頓|洛杉磯|紐約|華盛頓特區|  
+    |站台|西雅圖|波士頓|洛杉磯|紐約|Washington, D.C.|  
     |---------|-----------|----------|---------------|------------|--------------------|  
     |西雅圖|0.25|||||  
     |波士頓||0.25||||  
     |洛杉磯|||0.25|||  
     |紐約||||0.25||  
-    |華盛頓特區|||||0.25|  
+    |Washington, D.C.|||||0.25|  
   
     網站內的最差狀況延遲估計為15分鐘。  
   
@@ -52,15 +51,15 @@ ms.locfileid: "71402626"
   
 -   結合這些最大延遲，以判斷整個網路的最大延遲。  
   
-    例如，如果位於洛杉磯的西雅圖和其衛星網站之間的最大延遲是一天，這組連結的最大複寫延遲（華盛頓特區-紐約-西雅圖-洛杉磯）是31小時，也就是4（華盛頓特區-紐約） + 3 （新增紐約-西雅圖） + 24 （西雅圖-洛杉磯），如下表所示。  
+    例如，如果位於洛杉磯的西雅圖和其衛星網站之間的最大延遲為一天，這組連結的最大複寫延遲（華盛頓特區-紐約-西雅圖-洛杉磯）是31小時，也就是4（華盛頓特區，紐約） + 3 （紐約-西雅圖） + 24 （西雅圖-洛杉磯），如下表所示。  
   
-    |Sites|西雅圖|波士頓|洛杉磯|紐約|華盛頓特區|  
+    |站台|西雅圖|波士頓|洛杉磯|紐約|Washington, D.C.|  
     |---------|-----------|----------|---------------|------------|--------------------|  
     |西雅圖|0.25|4 + 3|24.00|3.00|4 + 3|  
     |波士頓||0.25|4 + 3 + 24|4.00|4.00|  
     |洛杉磯|||0.25|24 + 3|24 + 3 + 4|  
     |紐約||||0.25|4.00|  
-    |華盛頓特區|||||0.25|  
+    |Washington, D.C.|||||0.25|  
   
 
 

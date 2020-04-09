@@ -1,7 +1,6 @@
 ---
 ms.assetid: aac117a7-aa7a-4322-96ae-e3cc22ada036
 title: 管理 RID 發行
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 712fc6c4cf47b642cb2ab028fea693047d60c30e
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: aabb48643c58019339b96e9a4c54df8e1d66893c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948878"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823241"
 ---
 # <a name="managing-rid-issuance"></a>管理 RID 發行
 
@@ -28,7 +27,7 @@ ms.locfileid: "75948878"
   
 如需詳細資訊，請[請參閱 askds 的 Blog](https://blogs.technet.com/b/askds/archive/2012/08/10/managing-rid-issuance-in-windows-server-2012.aspx)。  
   
-## <a name="BKMK_Manage"></a>管理 RID 發行  
+## <a name="managing-rid-issuance"></a><a name="BKMK_Manage"></a>管理 RID 發行  
 根據預設，網域有約 10 億個安全性主體 (例如使用者、群組及電腦) 的容量。 當然，沒有一個網域有那麼多正在使用的物件。 不過，Microsoft 客戶支援服務卻發現以下情況：  
   
 -   佈建軟體或系統管理指令碼會意外大量產生建立的使用者、群組及電腦。  
@@ -60,7 +59,7 @@ Windows Server 2012 新增了全域 RID 空間事件追蹤，可在越過主要�
 ### <a name="rid-pool-invalidation-events"></a>RID 集區失效事件  
 有新的事件會警示本機 DC RID 集區已被捨棄。 這些是參考事件，並且可以預期，尤其是因為新的 VDC 功能時。 如需事件的詳細資訊，請參閱下列事件清單。  
   
-### <a name="BKMK_RIDBlockMaxSize"></a>RID 區塊大小限制  
+### <a name="rid-block-size-limit"></a><a name="BKMK_RIDBlockMaxSize"></a>RID 區塊大小限制  
 一般來說，網域控制站會要求一次在區塊中配置 500 個 RID。 您可以使用下列登錄 REG_DWORD 值來覆寫網域控制站上的這個預設值：  
   
 ```  
@@ -75,7 +74,7 @@ RID Block Size
   
 如果該值設為*超過* 15,000，會將該值視為 15,000，而網域控制站會在每次重新開機時在目錄服務中記錄事件 16653，一直到該值更正為止。  
   
-### <a name="BKMK_GlobalRidSpaceUnlock"></a>全域 RID 空間大小解除鎖定  
+### <a name="global-rid-space-size-unlock"></a><a name="BKMK_GlobalRidSpaceUnlock"></a>全域 RID 空間大小解除鎖定  
 在 Windows Server 2012 之前，全域 RID 空間大小限制為 2<sup>30</sup> (或共 1,073,741,823 個 RID)。 一旦達到此限制，只能移轉網域或將樹系復原到早期允許新建 SID 的時間範圍內，亦即用盡一切方法執行災難復原。 自 Windows Server 2012 起，已可解除 2<sup>31</sup> 位元大小的限制，以將全域集區增加到 2,147,483,648 個 RID。  
   
 AD DS 將此設定儲存在所有網域控制站的 RootDSE 內容內一個名為 **SidCompatibilityVersion** 的特殊隱藏屬性中。 這個屬性無法透過 ADSIEdit、LDP 或其他工具來讀取。 如果要查看全域 RID 空間是否增加，請自 Directory-Services-SAM 檢查系統事件記錄檔中是否有警告事件 16655，或使用下列 Dcdiag 命令：  
@@ -85,7 +84,7 @@ Dcdiag.exe /TEST:RidManager /v | find /i "Available RID Pool for the Domain"
   
 ```  
   
-如果您增加全域 RID 集區，可用的集區將變為 2,147,483,647，而非預設的 1,073,741,823。 例如：  
+如果您增加全域 RID 集區，可用的集區將變為 2,147,483,647，而非預設的 1,073,741,823。 例如，  
   
 ![RID 發行](media/Managing-RID-Issuance/ADDS_RID_TR_Dcdiag.png)  
   
@@ -211,7 +210,7 @@ CN = RID 管理員 $，CN = System，DC = *<domain>*
 ### <a name="rid-fixes-for-earlier-versions-of-windows-server"></a>舊版的 Windows Server 的 RID 修正  
 上述所有修正和變更包含在已發行的 Windows Server 2008 R2 Hotfix 中。 目前沒有計劃中或進行中的 Windows Server 2008 Hotfix。  
   
-## <a name="BKMK_Tshoot"></a>針對 RID 發行進行疑難排解  
+## <a name="troubleshooting-rid-issuance"></a><a name="BKMK_Tshoot"></a>針對 RID 發行進行疑難排解  
   
 ### <a name="introduction-to-troubleshooting"></a>疑難排解簡介  
 RID 發行的疑難排解需要邏輯與線性方法。 除非您正在仔細監視事件記錄檔中 RID 觸發的警告與錯誤，否則您發生問題的第一個指標可能會是帳戶建立失敗。 疑難排解 RID 發行的重點是了解當時的徵兆是否為預期的徵兆；許多 RID 發行問題可能只會影響一個網域控制站，而與元件改良無關。 下面這張簡單的圖表有助於更清楚說明這些決策：  
@@ -256,52 +255,52 @@ RID 發行的所有記錄都在系統事件記錄檔的來源 Directory-Services
 |||  
 |-|-|  
 |事件識別碼|16653|  
-|Source|Directory-Services-SAM|  
-|嚴重性|Warning|  
-|訊息|系統管理員設定的帳戶識別元 (RID) 的集區大小超過支援的最大值。 當網域控制站是 RID 主機時，將使用最大值 %1。<br /><br />如需詳細資訊，請參閱 [RID 區塊大小限制](../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_RIDBlockMaxSize)。|  
+|來源|Directory-Services-SAM|  
+|Severity|警告|  
+|訊息|系統管理員設定的帳戶識別元 (RID) 的集區大小超過支援的最大值。 當網域控制站是 RID 主機時，將使用最大值 %1。<p>如需詳細資訊，請參閱 [RID 區塊大小限制](../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_RIDBlockMaxSize)。|  
 |注意事項與解決方法|RID 區塊大小的最大值現在是 15000 十進位 (3A98 十六進位)。 網域控制站無法要求 15000 個以上的 RID。 此事件會在每次開機時記錄，直到此值設為等於或低於此最大值為止。|  
   
 |||  
 |-|-|  
 |事件識別碼|16654|  
-|Source|Directory-Services-SAM|  
-|嚴重性|資訊|  
-|訊息|帳戶識別碼 (RID) 集區成為無效。 在下列預期情況中可能會發生此問題：<br /><br />1. 從備份還原網域控制站。<br /><br />2. 在虛擬機器上執行的網域控制站會從快照集還原。<br /><br />3. 系統管理員已手動將集區失效。<br /><br />如需相關資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=226247 。|  
+|來源|Directory-Services-SAM|  
+|Severity|資訊|  
+|訊息|帳戶識別碼 (RID) 集區成為無效。 在下列預期情況中可能會發生此問題：<p>1. 從備份還原網域控制站。<p>2. 在虛擬機器上執行的網域控制站會從快照集還原。<p>3. 系統管理員已手動將集區失效。<p>如需相關資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=226247。|  
 |注意事項與解決方法|如果此事件是非預期的，請連絡所有網域系統管理員，確定由誰執行了動作。 目錄服務事件記錄檔也包含這些步驟的其中之一是在何時執行時的詳細資訊。|  
   
 |||  
 |-|-|  
 |事件識別碼|16655|  
-|Source|Directory-Services-SAM|  
-|嚴重性|資訊|  
+|來源|Directory-Services-SAM|  
+|Severity|資訊|  
 |訊息|帳戶識別元 (RID) 的全域最大值已增加至 %1。|  
 |注意事項與解決方法|如果此事件是非預期的，請連絡所有網域系統管理員，確定由誰執行了動作。 此事件會記錄整體的 RID 集區大小增加到超過預設值 2<sup>30</sup>，但不會自動記錄；需由系統管理員指定。|  
   
 |||  
 |-|-|  
 |事件識別碼|16656|  
-|Source|Directory-Services-SAM|  
-|嚴重性|Warning|  
+|來源|Directory-Services-SAM|  
+|Severity|警告|  
 |訊息|帳戶識別元 (RID) 的全域最大值已增加至 %1。|  
-|注意事項與解決方法|需要採取動作！ 帳戶識別元 (RID) 集區已配置給此網域控制站。 集區值指示這個網域耗用了可用的帳戶識別元總數中相當大的一部分。<br /><br />當網域達到下列可用帳戶識別碼總計的閾值時，將會啟用保護機制： %1。  直到您在 RID 主機網域控制站上手動重新啟用帳戶識別元配置之前，保護機制可防止建立帳戶。<br /><br />如需相關資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=228610 。|  
+|注意事項與解決方法|需要採取動作！ 帳戶識別元 (RID) 集區已配置給此網域控制站。 集區值指示這個網域耗用了可用的帳戶識別元總數中相當大的一部分。<p>當網域達到下列可用帳戶識別碼總計的閾值時，將會啟用保護機制： %1。  直到您在 RID 主機網域控制站上手動重新啟用帳戶識別元配置之前，保護機制可防止建立帳戶。<p>如需相關資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=228610。|  
   
 |||  
 |-|-|  
 |事件識別碼|16657|  
-|Source|Directory-Services-SAM|  
-|嚴重性|錯誤|  
-|訊息|需要採取動作！ 這個網域耗用了可用的帳戶識別元 (RID) 總數中相當大的一部分。 已啟用保護機制，因為可用的帳戶識別碼總計小於： X% [人工上限引數]。<br /><br />直到您在 RID 主機網域控制站上手動重新啟用帳戶識別元配置之前，保護機制可防止建立帳戶。<br /><br />重要的是，在重新啟用帳戶建立功能之前必須執行某些診斷，以確保此網域不會以異常高的速率耗用帳戶識別元。 在重新啟用帳戶建立功能之前，應先解決發現的任何問題。<br /><br />未能診斷和修正導致帳戶識別元以異常高的速率消耗的相關問題，可能會導致網域中的帳戶識別元耗盡，因而使這個網域中的帳戶建立功能永久停用。<br /><br />如需相關資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=228610 。|  
+|來源|Directory-Services-SAM|  
+|Severity|錯誤|  
+|訊息|需要採取動作！ 這個網域耗用了可用的帳戶識別元 (RID) 總數中相當大的一部分。 已啟用保護機制，因為可用的帳戶識別碼總計小於： X% [人工上限引數]。<p>直到您在 RID 主機網域控制站上手動重新啟用帳戶識別元配置之前，保護機制可防止建立帳戶。<p>重要的是，在重新啟用帳戶建立功能之前必須執行某些診斷，以確保此網域不會以異常高的速率耗用帳戶識別元。 在重新啟用帳戶建立功能之前，應先解決發現的任何問題。<p>未能診斷和修正導致帳戶識別元以異常高的速率消耗的相關問題，可能會導致網域中的帳戶識別元耗盡，因而使這個網域中的帳戶建立功能永久停用。<p>如需相關資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=228610。|  
 |注意事項與解決方法|連絡所有網域系統管理員，通知他們在覆寫此保護機制前不能在此網域中建立任何安全性主體。 如需如何覆寫保護機制與增加整體 RID 集區 (可能的話) 的詳細資訊，請參閱[解除全域 RID 空間大小限制](../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_GlobalRidSpaceUnlock)。|  
   
 |||  
 |-|-|  
 |事件識別碼|16658|  
-|Source|Directory-Services-SAM|  
-|嚴重性|Warning|  
-|訊息|此事件會定期更新剩餘的可用帳戶識別元 (RID) 總數。 剩餘的帳戶識別碼數目約為： %1。<br /><br />帳戶建立時會使用帳戶識別元，當帳戶識別元用完後，即無法在網域中建立新帳戶。<br /><br />如需相關資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=228745 。|  
+|來源|Directory-Services-SAM|  
+|Severity|警告|  
+|訊息|此事件會定期更新剩餘的可用帳戶識別元 (RID) 總數。 剩餘的帳戶識別碼數目約為： %1。<p>帳戶建立時會使用帳戶識別元，當帳戶識別元用完後，即無法在網域中建立新帳戶。<p>如需相關資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=228745。|  
 |注意事項與解決方法|連絡所有網域系統管理員，通知他們 RID 耗用量已越過主要里程碑；複查安全信任者建立模式以判斷這是否為預期行為。 看到此事件是極不尋常的，因為這表示至少已配置了上億個 RID。|  
   
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
 [管理 Windows Server 2012 中的 RID 發行](https://blogs.technet.com/b/askds/archive/2012/08/10/managing-rid-issuance-in-windows-server-2012.aspx)  
   
 
