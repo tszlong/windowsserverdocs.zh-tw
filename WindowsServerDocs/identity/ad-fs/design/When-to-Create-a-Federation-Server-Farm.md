@@ -1,7 +1,6 @@
 ---
 ms.assetid: 02580b2f-a339-4470-947c-d700b2d55f3f
 title: 建立同盟伺服器陣列的時機
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: fcfc7d640d3688bf0e23557af9bd56082418ef37
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 61e5c2c31ef4f6771c379c93e61b78640f4a180a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358937"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858501"
 ---
 # <a name="when-to-create-a-federation-server-farm"></a>建立同盟伺服器陣列的時機
 
@@ -32,7 +31,7 @@ ms.locfileid: "71358937"
 ## <a name="best-practices-for-deploying-a-federation-server-farm"></a>部署同盟伺服器陣列的最佳作法  
 我們建議您在生產環境中部署同盟伺服器的下列最佳作法：  
   
--   如果您要同時部署多部同盟伺服器，或您知道您將會在一段時間後新增更多伺服器至伺服器陣列，請考慮在伺服器陣列中建立現有同盟伺服器的伺服器映射，然後在需要 cr 時從該映射進行安裝。快速建立 e) 額外的同盟伺服器。  
+-   如果您要同時部署多部同盟伺服器，或您知道您將會在一段時間後新增更多伺服器至伺服器陣列，請考慮在伺服陣列中建立現有同盟伺服器的伺服器映射，然後在需要快速建立其他同盟伺服器時，從該映射進行安裝。  
   
     > [!NOTE]  
     > 如果您決定使用伺服器映射方法來部署其他同盟伺服器，您就不需要在每次想要將新的伺服器加入至伺服器陣列時，完成[檢查清單：設定同盟伺服器](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server.md)中的工作。  
@@ -49,8 +48,8 @@ ms.locfileid: "71358937"
 |工作|描述|  
 |--------|---------------|  
 |如果您使用 SQL Server 來儲存 AD FS 設定資料庫|同盟伺服器陣列是由兩部或多部同盟伺服器所組成，它們共用相同的 AD FS 設定資料庫和權杖\-簽署憑證。 設定資料庫可以存放在 Windows 內部資料庫或 SQL Server 資料庫中。 如果您打算將設定資料庫存放在 SQL 資料庫中，請確定設定資料庫可供存取，以供所有參與伺服器陣列的新同盟伺服器存取。 **注意：** 對於伺服器陣列案例而言，設定資料庫必須位於不會同時參與該伺服器陣列中同盟伺服器的電腦上，這點很重要。 Microsoft NLB 不允許參與伺服器陣列中的任何電腦互相通訊。 **注意：** 請確定參與伺服器陣列的每一部同盟伺服器上，Internet Information Services \(IIS\)\) 中的 AD FS AppPool 的識別，都具有設定資料庫的讀取權限。|  
-|取得及共用憑證|您可以從公開憑證授權單位單位 \(CA\)（例如 VeriSign）取得單一伺服器驗證憑證。 接著，您可以設定憑證，讓所有同盟伺服器共用憑證的相同私密金鑰部分。 如需有關如何共用相同憑證的詳細資訊，請參閱＜ [Checklist: Setting Up a Federation Server](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server.md)＞。 **注意：** 中的 [AD FS 管理] 嵌入式\-管理單元是指做為服務通訊憑證之同盟伺服器的伺服器驗證憑證。<br /><br />如需詳細資訊，請參閱＜ [Certificate Requirements for Federation Servers](Certificate-Requirements-for-Federation-Servers.md)＞。|  
+|取得及共用憑證|您可以從公開憑證授權單位單位 \(CA\)（例如 VeriSign）取得單一伺服器驗證憑證。 接著，您可以設定憑證，讓所有同盟伺服器共用憑證的相同私密金鑰部分。 如需有關如何共用相同憑證的詳細資訊，請參閱＜ [Checklist: Setting Up a Federation Server](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server.md)＞。 **注意：** 中的 [AD FS 管理] 嵌入式\-管理單元是指做為服務通訊憑證之同盟伺服器的伺服器驗證憑證。<p>如需詳細資訊，請參閱＜ [Certificate Requirements for Federation Servers](Certificate-Requirements-for-Federation-Servers.md)＞。|  
 |指向相同的 SQL Server 執行個體|如果 AD FS 設定資料庫會儲存在 SQL 資料庫中，新的同盟伺服器必須指向伺服器陣列中其他同盟伺服器所使用的相同 SQL Server 實例，如此新的伺服器才可以參與伺服器陣列。|  
   
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 [Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

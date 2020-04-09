@@ -5,16 +5,16 @@ ms.prod: windows-server
 ms.author: helohr
 ms.date: 11/01/2017
 ms.topic: article
-author: Heidilohr
-ms.openlocfilehash: 0a109d0bfc4fc09b5e8097059d68b728d17752a6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+author: heidilohr
+ms.openlocfilehash: 13167dad848ac31827c42045360e45c76718207a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383377"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851591"
 ---
 # <a name="what-is-server-core-2008"></a>什麼是 Server Core 2008？
->適用於：Windows Server 2008
+>適用于： Windows Server 2008
 
 >[!NOTE]
 >這套資訊適用于 Windows Server 2008。 如需 Windows Server 中 Server Core 的相關資訊，請參閱[什麼是 Windows server 中的 Server Core 安裝](https://docs.microsoft.com/windows-server/administration/server-core/what-is-server-core)。 
@@ -43,14 +43,14 @@ ms.locfileid: "71383377"
 
 **圖 1-1**選取要安裝的 Server Core 安裝選項
 
-在圖1-1 中，您的大量授權（或零售媒體的產品金鑰）會提供您兩個安裝選項：第二個選項（Windows Server 2008 Enterprise 的完整安裝）和第五個選項（Windows 的 Server Core 安裝）。伺服器2008企業版），並在此範例中選取了後者。 
+在圖1-1 中，您的大量授權（或零售媒體的產品金鑰）會提供您兩個安裝選項：第二個選項（Windows Server 2008 Enterprise 的完整安裝）和第五個選項（Windows Server 2008 Enterprise 的 Server Core 安裝），並在此範例中選取後者。 
 
-## <a name="full-vs-server-core"></a>完整與Server Core 
+## <a name="full-vs-server-core"></a>Full 與 Server Core 的比較 
 從 Microsoft Windows 平臺的初期開始，Windows 伺服器基本上是「一切」伺服器，其中包含所有種類的功能，有些則可能永遠不會在網路環境中使用。 例如，當您在系統上安裝 Windows Server 2003 時，即使您不需要此服務，也會在伺服器上安裝路由及遠端存取服務（RRAS）的二進位檔（雖然您仍然必須設定並啟用 RRAS 才能正常執行）。 Windows Server 2008 只有在您選擇在伺服器上安裝該特定角色時，才會藉由安裝伺服器角色所需的二進位檔來改善舊版。 不過，Windows Server 2008 的完整安裝選項仍然會安裝許多服務，以及特定使用案例通常不需要的其他元件。 
 
 這就是 Microsoft 為 Windows Server 2008 建立第二個安裝選項（Server Core）的原因：若要排除對某些常用伺服器角色的支援不重要的任何服務和其他功能。 例如，網域名稱系統（DNS）伺服器不需要安裝 Windows Internet Explorer，因為基於安全考慮，您不會想要從 DNS 伺服器流覽網路。 而且 DNS 伺服器甚至不需要圖形化使用者介面（GUI），因為您可以從命令列使用強大的 Dnscmd 命令，或從遠端使用 DNS Microsoft Management Console （MMC）嵌入式管理單元來管理 DNS 的所有層面。
 
-為了避免這種情況，Microsoft 決定從 Windows Server 2008 中去除所有內容，這些都不是執行核心網路服務（例如 Active Directory Domain Services （AD DS）、DNS、動態主機設定通訊協定（DHCP）、檔案和列印，以及其他幾個伺服器角色。 結果是新的 Server Core 安裝選項，可用來建立僅支援有限數目角色和功能的伺服器。 
+為了避免這種情況，Microsoft 決定從 Windows Server 2008 中去除所有內容，而這對於執行核心網路服務（例如 Active Directory Domain Services （AD DS）、DNS、動態主機設定通訊協定（DHCP）、檔案和列印，以及一些其他伺服器角色而言並不是絕對必要。 結果是新的 Server Core 安裝選項，可用來建立僅支援有限數目角色和功能的伺服器。 
 
 ## <a name="the-server-core-gui"></a>Server Core GUI
 當您完成在系統上安裝 Server Core 並第一次登入時，您會感到驚訝。 圖1-2 顯示第一次登入後的 Server Core 使用者介面。
@@ -59,7 +59,7 @@ ms.locfileid: "71383377"
 
 **圖 1-2**Server Core 使用者介面
 
-沒有桌面！ 也就是說，沒有 Windows Explorer shell，其 [開始] 功能表、工作列，以及您可能會用到的其他功能。 您只需要一個命令提示字元，這表示您必須一次輸入一個命令（速度較慢）或使用腳本和批次檔，來完成設定 Server Core 安裝的大部分工作，這可協助您加速並簡化您的 configurati藉由將工作自動化來執行工作。 當您執行 Server Core 的自動安裝時，您也可以使用回應檔案來執行一些初始設定工作。 
+沒有桌面！ 也就是說，沒有 Windows Explorer shell，其 [開始] 功能表、工作列，以及您可能會用到的其他功能。 您只需要一個命令提示字元，這表示您必須一次輸入一個命令（速度較慢），或使用腳本和批次檔，來完成設定 Server Core 安裝的大部分工作，這可協助您藉由將它們自動化來加速和簡化您的設定工作。 當您執行 Server Core 的自動安裝時，您也可以使用回應檔案來執行一些初始設定工作。 
 
 對於使用 Netsh、Dfscmd 和 Dnscmd 等命令列工具的系統管理員而言，設定及管理 Server Core 安裝可能很簡單，甚至更有趣。 不過，對於不是專家的人來說，全都不會遺失。 您仍然可以使用標準的 Windows Server 2008 MMC 工具來管理 Server Core 安裝。 您只需要在執行 Windows Server 2008 或 Windows Vista Service Pack 1 完整安裝的不同系統上使用它們。 
 
@@ -142,7 +142,7 @@ Server Core 安裝也只支援 Windows Server 2008 完整安裝上可用的有�
 | 容錯移轉叢集  | X  | X |
 | 群組原則管理  | X  |  |
 | 網際網路列印用戶端  | X  |  |
-| 網際網路存放裝置名稱伺服器  | X  |  |
+| Internet Storage Name Server  | X  |  |
 | LPR 連接埠監視器  | X  |  |
 | 訊息佇列  | X  |  |
 | 多重路徑 IO  | X  | X |
@@ -157,8 +157,8 @@ Server Core 安裝也只支援 Windows Server 2008 完整安裝上可用的有�
 | 簡單 TCP/IP 服務  | X  |  |
 | SMTP 伺服器  | X  |  |
 | SMNP 服務  | X  | X  |
-| San 存放管理員  | X  |  |
-| UNIX 應用程式子系統 | X | X  |
+| SAN 存放管理員  | X  |  |
+| UNIX 型應用程式子系統 | X | X  |
 | Telnet 用戶端  | X | X  |
 | Telnet 伺服器  | X   |  |
 | TFTP 用戶端  | X   |  |
@@ -178,7 +178,7 @@ Server Core 安裝也只支援 Windows Server 2008 完整安裝上可用的有�
 深入探討更深入探討 Server Core，讓我們先來看一下 Windows Server 2008 的 Server Core 安裝架構與完整安裝的比較。 首先，請記住 Server Core 不是不同版本的 Windows Server 2008，而只是在安裝 Windows Server 2008 到系統時，您可以選取的安裝選項。 這表示下列各項：
 * Server Core 安裝上的核心與在相同硬體架構（x86 或 x64）和版本的完整安裝上找到的相同。 
 * 如果二進位檔出現在 Server Core 安裝上，相同硬體架構（x86 或 x64）和版本的完整安裝會具有該特定二進位檔的相同版本（稍後會討論兩個例外狀況）。 
-* 如果特定設定（例如特定的防火牆例外或特定服務的啟動類型）在 Server Core 安裝上有特定的預設值，則該設定在完整安裝相同的上會以完全相同的方式設定硬體架構（x86 或 x64）和版本。
+* 如果特定設定（例如特定的防火牆例外或特定服務的啟動類型）在 Server Core 安裝上有特定的預設設定，則在完整安裝相同的硬體架構（x86 或 x64）和版本時，會以完全相同的方式設定該設定。
 
 圖1-3 顯示完整安裝和 Windows Server 2008 之 Server Core 安裝的架構的簡單觀點。 虛線表示伺服器核心的架構，而整個圖表則代表完整安裝的架構。 
 
@@ -200,7 +200,7 @@ Server Core 安裝也只支援 Windows Server 2008 完整安裝上可用的有�
 
 請注意，針對此處所示的三種裝置類別，Server Core 包含相同的內建驅動程式，可在對應的完整安裝上找到（針對相同的硬體架構）。 
 
-此外，當 PnP 子系統自動安裝新裝置的驅動程式時，它會以無訊息方式執行-不會顯示任何氣球快顯視窗通知。 為什麼不呢？ 因為 Server Core 上沒有 GUI，所以工作列上沒有任何通知區域！ 
+此外，當 PnP 子系統自動安裝新裝置的驅動程式時，它會以無訊息方式執行-不會顯示任何氣球快顯視窗通知。 為什麼？ 因為 Server Core 上沒有 GUI，所以工作列上沒有任何通知區域！ 
 
 那麼，當您將列印服務角色新增到 Server Core 安裝，而且想要安裝印表機時，該怎麼辦？ 您可以手動將印表機驅動程式新增到伺服器— Server Core 沒有任何內建的列印驅動程式。
 
@@ -211,13 +211,13 @@ Server Core 安裝也只支援 Windows Server 2008 完整安裝上可用的有�
 
 **資料表 1-5**伺服器核心上預設安裝的系統服務
 
-| 服務名稱  | Display name  | 啟動模式  | 帳戶  |
+| 服務名稱  | 顯示名稱  | 啟動模式  | Account  |
 | ------------- | ------------- | ------------ | ------------ |
 | AeLookupSvc  | 應用程式體驗  | 自動 | LocalSystem |
 | AppMgmt  | 應用程式管理  | 手動 | LocalSystem |
-| BFE | 基礎篩選引擎  | 自動 | LocalService |
+| BFE | Base Filtering Engine  | 自動 | LocalService |
 | BITS | 背景智慧型傳送服務  | 自動 | LocalSystem |
-| Browser | 電腦瀏覽器  | 手動 | LocalSystem |
+| 瀏覽器 | 電腦瀏覽器  | 手動 | LocalSystem |
 | CertPropSvc | 憑證傳播  | 手動 | LocalSystem |
 | COMSysApp  | COM+ 系統應用程式  | 手動 | LocalSystem |
 | CryptSvc  | 密碼編譯服務  | 自動 | 網路服務 |
@@ -231,13 +231,13 @@ Server Core 安裝也只支援 Windows Server 2008 完整安裝上可用的有�
 | gpsvc  | 群組原則用戶端  | 自動 | LocalSystem |
 | hidserv | 人類介面裝置存取  | 手動 | LocalSystem |
 | hkmsvc  | 健康情況金鑰和憑證管理  | 手動 | LocalSystem |
-| IKEEXT  | IKE 和 AuthIP IPsec 金鑰處理模組  | 自動 | LocalSystem |
+| IKEEXT  | IKE and AuthIP IPsec Keying Modules  | 自動 | LocalSystem |
 | iphlpsvc  | IP 協助程式  | 自動 | LocalSystem |
 | KeyIso | CNG 金鑰隔離  | 手動 | LocalSystem |
 | KtmRm  | 用於分散式交易協調器的 KtmRm  | 自動 | 網路服務 |
 | LanmanServer  | Server  | 自動 | LocalSystem |
 | LanmanWorkstation  | Workstatione  | 自動 | LocalService |
-| lltdsvc  | 連結階層拓撲探索對應程式  | 手動 | LocalService |
+| lltdsvc  | Link-Layer Topology Discovery Mapper  | 手動 | LocalService |
 | lmhosts  | TCP/IP NetBIOS 協助程式  | 自動 | LocalService |
 | MpsSvc  | Windows 防火牆  | 自動 | LocalService |
 | MSDTC  | 分散式交易協調器  | 自動 | 網路服務 |

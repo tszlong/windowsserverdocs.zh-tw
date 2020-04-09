@@ -5,19 +5,15 @@ ms.custom: it-pro
 ms.author: joflore
 ms.date: 05/31/2017
 ms.prod: windows-server
-ms.reviewer: na
-ms.service: ''
-ms.suite: na
 ms.technology: active-directory-domain-services
-ms.tgt_pltfrm: na
 ms.topic: article
 author: Femila
-ms.openlocfilehash: 83c4e7b262ad588c85e50ba5e83f01c2e81b6df8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 034404a50b6943230e1438eae0c28cd3a11b7a7a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369484"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824788"
 ---
 # <a name="changes-made-by-adprepexe"></a>Changes Made by Adprep.exe
 
@@ -33,7 +29,7 @@ ms.locfileid: "71369484"
   
 -   [架構更新](../../../ad-ds/deploy/Schema-Updates.md)  
   
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
 [Windows Server 2008 R2：支援 AD DS 的 Adprep 變更附錄](https://technet.microsoft.com/library/dd378876(v=ws.10).aspx)  
 [Windows Server 2008：支援 AD DS 的 Adprep 變更附錄](https://technet.microsoft.com/library/cc770703(v=ws.10).aspx)  
   

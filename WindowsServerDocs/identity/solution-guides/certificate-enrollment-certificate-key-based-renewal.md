@@ -1,18 +1,17 @@
 ---
 title: 在自訂埠上設定以憑證金鑰為基礎之更新的憑證註冊 Web 服務
-description: ''
 author: Deland-Han
 ms.author: delhan
 manager: dcscontentpm
 ms.date: 11/12/2019
 ms.topic: article
 ms.prod: windows-server
-ms.openlocfilehash: 3d3d08d6abe9daa571dd7365815c1fc61f926501
-ms.sourcegitcommit: e5df3fd267352528eaab5546f817d64d648b297f
+ms.openlocfilehash: a21a34448248658d2ceffcad07d2a4e6e17b9348
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74163108"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856341"
 ---
 # <a name="configuring-certificate-enrollment-web-service-for-certificate-key-based-renewal-on-a-custom-port"></a>在自訂埠上設定以憑證金鑰為基礎之更新的憑證註冊 Web 服務
 
@@ -21,7 +20,7 @@ Windows 群組的 Ankit Tyagi 支援工程師
 
 ## <a name="summary"></a>摘要
 
-本文提供逐步指示，讓您在443以外的自訂埠上執行憑證註冊原則 Web 服務（CEP）和憑證註冊 Web 服務（CES）以進行以憑證金鑰為基礎的更新，以利用自動的CEP 和 CES 的更新功能。
+本文提供逐步指示，讓您在443以外的自訂埠上執行憑證註冊原則 Web 服務（CEP）和憑證註冊 Web 服務（CES）以進行憑證金鑰型更新，以利用 CEP 和 CES 的自動續約功能。
 
 本文也會說明 CEP 和 CES 的運作方式，並提供安裝指導方針。
 
@@ -46,7 +45,7 @@ Windows 群組的 Ankit Tyagi 支援工程師
 
 ![部署](media/certificate-enrollment-certificate-key-based-renewal-1.png)
 
-## <a name="configuration-instructions"></a>設定指示
+## <a name="configuration-instructions"></a>組態指示
 
 ### <a name="overview"></a>概觀 
 
@@ -61,7 +60,7 @@ Windows 群組的 Ankit Tyagi 支援工程師
 
 4.  設定用戶端設定。
 
-### <a name="configuration"></a>設定
+### <a name="configuration"></a>組態
 
 本節提供設定初始註冊的步驟。
 
@@ -224,7 +223,7 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
    
    CN = ENTCA，CN = 註冊服務，CN = Public Key Services，CN = Services，CN = Configuration，DC = contoso，DC = com
 
-3. 以滑鼠右鍵按一下並編輯 CA 物件。 使用自訂埠搭配您在 [應用程式設定] 中找到的 CEP 和 CES 伺服器 Uri，以變更 [ **mspki-site-name-註冊-伺服器**] 屬性。 例如：
+3. 以滑鼠右鍵按一下並編輯 CA 物件。 使用自訂埠搭配您在 [應用程式設定] 中找到的 CEP 和 CES 伺服器 Uri，以變更 [ **mspki-site-name-註冊-伺服器**] 屬性。 例如，
 
    ```
    140https://cepces.contoso.com:49999/ENTCA_CES_UsernamePassword/service.svc/CES0   
@@ -248,7 +247,7 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
 
    a. 按一下 [**新增**] 以新增註冊原則，並輸入我們在 ADSI 中編輯的**USERNAMEPASSWORD**的 CEP URI。
    
-   b。 針對 [**驗證類型**]，選取 [使用者**名稱/密碼**]。
+   b. 針對 [**驗證類型**]，選取 [使用者**名稱/密碼**]。
    
    c. 設定**10**的優先順序，然後驗證原則伺服器。
       ![註冊原則](media/certificate-enrollment-certificate-key-based-renewal-10.png)
@@ -266,7 +265,7 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
 
    a. 按一下 [**新增**]，輸入我們在 ADSI 中編輯的**憑證**的 CEP URI。 
    
-   b。 將優先順序設定為**1**，然後驗證原則伺服器。 系統會提示您進行驗證，並選擇我們最初註冊的憑證。
+   b. 將優先順序設定為**1**，然後驗證原則伺服器。 系統會提示您進行驗證，並選擇我們最初註冊的憑證。
 
    ![註冊原則](media/certificate-enrollment-certificate-key-based-renewal-13.png) 
 
@@ -279,7 +278,7 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
 
 開啟 [電腦個人] 憑證存放區，然後新增 [封存的憑證] 視圖。 若要這麼做，請將 [本機電腦帳戶] 嵌入式管理單元新增至 mmc.exe，按一下 [**憑證（本機電腦）** ]，按一下右邊的 [**動作]** 索引標籤或 mmc 頂端的 [**流覽**]，按一下 [**流覽選項**]，選取 [封存的**憑證**]，然後按一下 **[確定]** 。
 
-### <a name="method-1"></a>方法1 
+### <a name="method-1"></a>方法 1 
 
 執行下列命令：
 
@@ -304,7 +303,7 @@ certreq -machine -q -enroll -cert <thumbprint> renew
 > [!Note]
 > 先前的螢幕擷取畫面是示範自動註冊引擎如預期般運作的範例，因為 CA 日期仍然設定為18。 因此，它會繼續發行憑證。 在實際情況下，將不會進行這項大量的更新。
 
-## <a name="references"></a>參考資料
+## <a name="references"></a>參考
 
 [測試實驗室指南：示範以憑證金鑰為基礎的更新](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj590165(v%3Dws.11))
 
@@ -314,7 +313,7 @@ certreq -machine -q -enroll -cert <thumbprint> renew
 
 [安裝-AdcsEnrollmentWebService](https://docs.microsoft.com/powershell/module/adcsdeployment/install-adcsenrollmentwebservice?view=win10-ps)
 
-請參閱
+另請參閱
 
 [Windows Server 安全性論壇](https://aka.ms/adcsforum)
 

@@ -2,20 +2,19 @@
 title: Windows 虛擬程式必須正在執行
 description: 提供解決此最佳做法分析程式規則所回報之問題的指示。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 501a9beb-c464-46c0-88c5-e3e7e3e70101
-author: KBDAzure
+author: kbdazure
 ms.date: 10/03/2016
-ms.openlocfilehash: 51f863425bd1107894fb5e4d44ed7c742a806394
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b24700e0ed617177af888013e36f971870d0ac59
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393051"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860951"
 ---
 # <a name="windows-hypervisor-must-be-running"></a>Windows 虛擬程式必須正在執行
 
@@ -76,7 +75,7 @@ ms.locfileid: "71393051"
   
 #### <a name="to-check-the-event-logs"></a>若要檢查事件記錄檔  
   
-1.  開啟 \[事件檢視器\]。 依序按一下 [**開始**] 和 [系統**管理工具**]，然後按一下 [**事件檢視器**]。  
+1.  開啟 [事件檢視器]。 依序按一下 [**開始**] 和 [系統**管理工具**]，然後按一下 [**事件檢視器**]。  
   
 2.  開啟 [Hyper-v-虛擬機器] 事件記錄檔。 在流覽窗格中，展開 **應用程式及服務記錄**檔 >> **Microsoft** >> **Windows** >> **hyper-v-虛擬機器**，然後按一下 **操作**。  
   
@@ -88,7 +87,7 @@ ms.locfileid: "71393051"
     1. 在 [**動作**] 窗格中，按一下 [**篩選目前的記錄**]。 針對 [**事件來源**]，指定 [Hyper-v-虛擬機器]。   
     2. 尋找報告問題的事件。 例如，事件識別碼41表示 BIOS 設定的問題：「Hyper-v 啟動失敗;VMX 不存在或未在 BIOS 中啟用。」  
   
-### <a name="see-also"></a>請參閱  
+### <a name="see-also"></a>另請參閱  
 如需在 Windows 10 上使用 Hyper-v 的詳細資訊，包括如何檢查您的電腦是否可以執行 Hyper-v，請參閱[Windows 10 Hyper-v 系統需求](https://msdn.microsoft.com/virtualization/hyperv_on_windows/quick_start/walkthrough_compatibility)。 
 
 

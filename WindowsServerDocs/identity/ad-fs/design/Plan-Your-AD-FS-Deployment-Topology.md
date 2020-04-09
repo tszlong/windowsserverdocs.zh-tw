@@ -1,7 +1,6 @@
 ---
 ms.assetid: 5c8c6cc0-0d22-4f27-a111-0aa90db7d6c8
 title: 規劃您的 AD FS 部署拓撲
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,18 +8,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 9cd036e9dd0b249197fb475504c9cad532ead0ea
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 53364e076a8c3b7d95e8c834a5a7621071ed6061
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408034"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858671"
 ---
 # <a name="plan-your-ad-fs-deployment-topology"></a>規劃您的 AD FS 部署拓撲
 
 規劃 Active Directory 同盟服務 \(AD FS\) 部署的第一步，就是決定適當的部署拓撲，以符合您組織的需求。  
   
-閱讀本主題之前，請先複習如何將 AD FS 資料儲存及複寫到同盟伺服器陣列中的其他同盟伺服器，並確定您瞭解的用途，以及可用於儲存于 AD FS con 之基礎資料的複寫方法f) 資料庫。  
+閱讀本主題之前，請先參閱如何將 AD FS 資料儲存及複寫到同盟伺服器陣列中的其他同盟伺服器，並確定您瞭解的用途，以及可用於儲存在 AD FS 設定資料庫中基礎資料的複寫方法。  
   
 您可以使用兩種資料庫類型來儲存 AD FS 設定資料： Windows 內部資料庫 \(WID\) 和 Microsoft SQL Server。 如需詳細資訊，請參閱 [AD FS 設定資料庫的角色](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)。 請參閱使用 WID 或 SQL Server 做為 AD FS 設定資料庫相關聯的各種優點和限制，以及它們支援的各種應用程式案例，然後進行選取。  
   
@@ -34,11 +33,11 @@ AD FS 使用資料庫來儲存設定，而在某些情況下，則是與同盟�
   
 ||功能|受到 WID 支援？|受到 SQL Server 支援？
 | --- | --- | --- |--- |
-|AD FS 功能|同盟伺服器陣列部署|是。 如果您有100或較少的信賴憑證者信任，WID 伺服器陣列的限制為30部同盟伺服器。</br></br>WID 伺服器陣列不支援權杖重新執行偵測或成品解析（安全性聲明標記語言（SAML）通訊協定的一部分）。 |是。 沒有限制您可以在單一伺服陣列中部署的同盟伺服器數目  
-|AD FS 功能|SAML 成品解析 </br></br>**注意：** Microsoft Online Services、Microsoft Office 365、Microsoft Exchange 或 Microsoft Office SharePoint 案例不需要這項功能。|不可以|是  
-|AD FS 功能|SAML\/WS\-同盟權杖重新執行偵測|不可以|是  
-|資料庫功能|使用提取複寫的基本資料庫冗余，其中一或多部裝載讀取\-的伺服器只會在裝載資料庫讀取\/寫入複本的來源伺服器上進行變更|是|不可以 
-|資料庫功能|使用高\-可用性解決方案的資料庫冗余，例如在資料庫層級的容錯移轉叢集或鏡像 \(僅\)**注意：** 所有 AD FS 部署拓撲都支援 AD FS 服務層級的叢集。|不可以|是  
+|AD FS 功能|同盟伺服器陣列部署|是的。 如果您有100或較少的信賴憑證者信任，WID 伺服器陣列的限制為30部同盟伺服器。</br></br>WID 伺服器陣列不支援權杖重新執行偵測或成品解析（安全性聲明標記語言（SAML）通訊協定的一部分）。 |是的。 沒有限制您可以在單一伺服陣列中部署的同盟伺服器數目  
+|AD FS 功能|SAML 成品解析 </br></br>**注意：** Microsoft Online Services、Microsoft Office 365、Microsoft Exchange 或 Microsoft Office SharePoint 案例不需要這項功能。|否|是  
+|AD FS 功能|SAML\/WS\-同盟權杖重新執行偵測|否|是  
+|資料庫功能|使用提取複寫的基本資料庫冗余，其中一或多部裝載讀取\-的伺服器只會在裝載資料庫讀取\/寫入複本的來源伺服器上進行變更|是|否 
+|資料庫功能|使用高\-可用性解決方案的資料庫冗余，例如在資料庫層級的容錯移轉叢集或鏡像 \(僅\)**注意：** 所有 AD FS 部署拓撲都支援 AD FS 服務層級的叢集。|否|是  
 
   
 ## <a name="sql-server-considerations"></a>SQL Server 考量  
@@ -53,7 +52,7 @@ AD FS 使用資料庫來儲存設定，而在某些情況下，則是與同盟�
   
 相較之下，使用 SQL Server 資料庫在伺服陣列中部署的同盟伺服器並不需要包含 AD FS 設定資料庫的本機執行個體。 因此，它們對硬體資源的要求會比較低。  
   
-## <a name="BKMK_1"></a>放置同盟伺服器的位置  
+## <a name="where-to-place-a-federation-server"></a><a name="BKMK_1"></a>放置同盟伺服器的位置  
 基於安全性最佳作法，請將 AD FS 同盟伺服器放在防火牆前面，並將它們連線到您的公司網路，以避免暴露在網際網路上。 這很重要，因為同盟伺服器具有授與安全性權杖的完整授權。 因此，它們應該像網域控制站一樣受到保護。 如果同盟伺服器遭到入侵，惡意使用者就能夠對所有 Web 應用程式和受 AD FS 保護的同盟伺服器發出完整存取權杖。  
   
 > [!NOTE]  
@@ -75,7 +74,7 @@ AD FS 使用資料庫來儲存設定，而在某些情況下，則是與同盟�
   
 -   [使用 SQL Server 的同盟伺服器陣列](Federation-Server-Farm-Using-SQL-Server.md)  
   
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
 [Windows Server 2012 R2 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
   
 

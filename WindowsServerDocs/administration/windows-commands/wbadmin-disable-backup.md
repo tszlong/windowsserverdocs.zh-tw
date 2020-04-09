@@ -1,24 +1,20 @@
 ---
 title: wbadmin 停用備份
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: Wbadmin disable backup 的 Windows 命令主題會停止執行現有排程的每日備份。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5176cbd9-0696-4b3f-9c35-272dd84f7898
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 405bbb3c07206032f1a9e3039c563e7c842e362e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e2fb3d22fc3857cce191ee11381ae6e7e6ac1175
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362489"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829851"
 ---
 # <a name="wbadmin-disable-backup"></a>wbadmin 停用備份
 
@@ -35,13 +31,13 @@ wbadmin disable backup
 [-quiet]
 ```
 
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
 |-quiet|執行子命令，而不提示使用者。|
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
--   [命令列語法關鍵](command-line-syntax-key.md)
+-   - [命令列語法關鍵](command-line-syntax-key.md)
 -   [Restore](wbadmin.md)

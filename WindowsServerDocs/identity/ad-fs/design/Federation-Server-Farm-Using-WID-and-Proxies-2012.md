@@ -1,7 +1,6 @@
 ---
 ms.assetid: 8890ccc9-068d-4da2-bd51-8a2964173ff1
 title: 使用 WID 和 Proxy 的同盟伺服器陣列
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 60072037aea4ecd81376e1334f3a89b7bb2ff851
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9c6dba880b80de43bb713d1b4495f0e03d56a695
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408084"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853091"
 ---
 # <a name="federation-server-farm-using-wid-and-proxies"></a>使用 WID 和 Proxy 的同盟伺服器陣列
 
@@ -48,5 +47,5 @@ ms.locfileid: "71408084"
   
 如需有關如何設定網路環境以與同盟伺服器或同盟伺服器 proxy 搭配使用的詳細資訊，請參閱同盟伺服器的[名稱解析需求](Name-Resolution-Requirements-for-Federation-Servers.md)或[同盟伺服器 Proxy 的名稱解析需求](Name-Resolution-Requirements-for-Federation-Server-Proxies.md)。  
   
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 [Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

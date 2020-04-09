@@ -1,20 +1,18 @@
 ---
 title: 瞭解和設定 Azure 監視器
 description: Azure 監視器的詳細設定資訊，以及如何在 Windows Server 2016 和2019中設定儲存空間直接存取叢集的電子郵件和 sms 警示。
-keywords: 儲存空間直接存取，azure 監視器，通知，電子郵件，sms
-ms.assetid: ''
 ms.prod: windows-server
 ms.author: adagashe
 ms.technology: storage-spaces
 ms.topic: article
 author: adagashe
 ms.date: 01/10/2020
-ms.openlocfilehash: 878bbce9543439cf78501e496c59e06e077c5ddc
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: fa4d8793c07cabd39ee6cc0d54b5cddc84eac202
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308185"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859041"
 ---
 # <a name="use-azure-monitor-to-send-emails-for-health-service-faults"></a>使用 Azure 監視器來傳送健全狀況服務錯誤的電子郵件
 

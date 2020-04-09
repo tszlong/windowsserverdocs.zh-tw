@@ -1,7 +1,6 @@
 ---
 ms.assetid: f7f6bac2-1100-4b00-a248-4ca3eb3cdbe9
 title: 變更 AD FS 登入頁面上的公司標誌
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 03/08/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b22c969e0113081e1ca8a662ae81a2ee24829835
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d12429b22265495cb8168ce3e5993a5cf3e74a0c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358300"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859971"
 ---
 # <a name="changing-the-company-logo-on-the-ad-fs-sign-in-page"></a>變更 AD FS 登入頁面上的公司標誌
 

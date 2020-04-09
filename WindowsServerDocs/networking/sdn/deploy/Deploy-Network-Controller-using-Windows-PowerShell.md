@@ -1,24 +1,20 @@
 ---
 title: 使用 Windows PowerShell 部署網路控制卡
 description: 本主題提供在執行 Windows Server 2016 的一部或多部電腦或虛擬機器（Vm）上，使用 Windows PowerShell 部署網路控制站的指示。
-manager: dougkim
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 2448d381-55aa-4c14-997a-202c537c6727
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
+manager: grcusanz
 ms.date: 08/23/2018
-ms.openlocfilehash: ee3aa93c02419667b05a987f548ef4d14285231d
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 429d79ec9ed2f22bd7c7e1a4c1bd8f6cb6ff7fb1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313076"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860731"
 ---
 # <a name="deploy-network-controller-using-windows-powershell"></a>使用 Windows PowerShell 部署網路控制卡
 

@@ -1,30 +1,26 @@
 ---
 title: 管理使用者站台
 description: 瞭解如何管理 MultiPoint 服務中的使用者工作站
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b418578d-3a4c-49b0-90db-8389b320b2f6
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 7f46d2a68fc6247bddc1251c32ac55544b6fbf52
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7b434002b5f542e3a9242290217fa66d418ee2f1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405065"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853491"
 ---
 # <a name="manage-user-stations"></a>管理使用者站台
 本節討論如何管理組成 MultiPoint 服務系統的「站台」。 管理 MultiPoint 服務系統同時包含管理 MultiPoint 管理員的硬體和軟體元件。 在 MultiPoint 服務系統中，桌面是在每部使用者工作站的監視器上顯示的軟體使用者介面。  
   
 ## <a name="station-status"></a>站台狀態  
-您可以在 [站台] 索引標籤上，檢視每個桌面的下列狀態類型。狀態包括︰  
+您可以在 [**工作站**] 索引標籤上，針對每個桌面視圖下列狀態類型。狀態包括：  
   
 -   已登入的使用者  
   

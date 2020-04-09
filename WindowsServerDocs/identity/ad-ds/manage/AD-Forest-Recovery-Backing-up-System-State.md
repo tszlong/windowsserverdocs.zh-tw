@@ -1,6 +1,5 @@
 ---
 title: AD 樹系復原-備份完整伺服器
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 9238cb27-0020-42f7-90d6-fcebf7e3c0bc
 ms.technology: identity-adds
-ms.openlocfilehash: 14aa7abc19573b76ebc144cb6dea5f510b45e269
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 321f927a3efc4f2391daff92ac4c8b7acb47c055
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369355"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824278"
 ---
 # <a name="ad-forest-recovery---backing-up-the-system-state-data"></a>AD 樹系復原-備份系統狀態資料  
 
->適用於：Windows Server 2016、Windows Server 2012 及 2012 R2、Windows Server 2008 和 2008 R2
+>適用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
 使用下列程式，利用 Windows Server Backup 或 wbadmin 在 DC 上執行系統狀態備份。  
 

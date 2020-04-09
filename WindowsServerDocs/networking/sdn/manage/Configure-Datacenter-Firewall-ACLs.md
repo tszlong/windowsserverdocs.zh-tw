@@ -1,24 +1,20 @@
 ---
 title: 設定資料中心防火牆存取控制清單 (ACL)
 description: 您可以將特定的 Acl 套用到網路介面。  如果在網路介面所連線的虛擬子網上也設定 Acl，則會同時套用這兩個 Acl，但網路介面 Acl 的優先順序高於虛擬子網 Acl。
-manager: dougkim
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 25f18927-a63e-44f3-b02a-81ed51933187
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: fdf9f7dbe8fb9541cc8f77cfbce014c5210296d5
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: f6b1078f88b2d377c3c49934e2b1bd219641d82e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317668"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854561"
 ---
 # <a name="configure-datacenter-firewall-access-control-lists-acls"></a>設定資料中心防火牆存取控制清單（Acl）
 

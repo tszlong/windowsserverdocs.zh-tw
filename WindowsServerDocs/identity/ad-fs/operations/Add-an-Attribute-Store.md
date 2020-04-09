@@ -1,7 +1,6 @@
 ---
 ms.assetid: c60227a8-7b44-40f8-b807-a6532851a4a6
 title: 新增屬性存放區
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 0f5c9d3b0f856ab72a16930ddb5c50686d747ecc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b197268de3c5335e30c2a24a74c5a7b01224b500
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358393"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859691"
 ---
 # <a name="add-an-attribute-store"></a>新增屬性存放區
 
@@ -23,7 +22,7 @@ ms.locfileid: "71358393"
   
 您可以使用下列程式，將屬性存放區新增至同盟服務。  
   
-若要完成此程序，至少需要本機電腦上之 **Administrators** 群組的成員資格或同等權限。  請參閱[本機與網域的預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中關於使用適當帳戶和群組成員資格的詳細資料。   
+若要完成此程序，至少需要本機電腦之 **Administrators** 群組的成員資格或同等權限。  請參閱[本機與網域的預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中關於使用適當帳戶和群組成員資格的詳細資料。   
   
 #### <a name="to-add-an-attribute-store"></a>新增屬性存放區  
   
@@ -46,7 +45,7 @@ ms.locfileid: "71358393"
  
 ![新增屬性存放區](media/Add-an-Attribute-Store/addstore2.PNG) 
 
-4. 按一下 **\[確定\]** 。  
+4. 按一下 [確定]。  
   
 ## <a name="additional-references"></a>其他參考資料  
 

@@ -1,23 +1,23 @@
 ---
 title: 租使用者的受防護 Vm-建立範本磁片-選擇性
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: c1992f8b-6f88-4dbc-b4a5-08368bba2787
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 8e5080dd74506e86687dddb7be0fd35af92f5b56
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1f51a0f90f60847929f6fe46732c98f355a6a859
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403437"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856441"
 ---
 # <a name="shielded-vms-for-tenants---creating-a-template-disk-optional"></a>租使用者的受防護 Vm-建立範本磁片（選擇性）
 
->適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
+>適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
 
 若要建立新的受防護 VM，您必須使用特別備妥且已簽署的範本磁片。 已簽署的範本磁片中的中繼資料有助於確保磁片在建立後不會修改，並可讓您作為租使用者，以限制哪些磁片可以用來建立受防護的 Vm。 提供此磁片的其中一種方式是供您（租使用者）建立，如本主題中所述。 
 
@@ -28,11 +28,11 @@ ms.locfileid: "71403437"
 
 若要建立受防護的範本磁片，您需要先準備將透過「範本磁片」 wizard 執行的 OS 磁片。 此磁片將用來做為受防護 Vm 中的 OS 磁片。 您可以使用任何現有的工具來建立此磁片，例如 Microsoft 桌面映射 Service Manager （DISM），或手動設定具有空白 VHDX 的 VM，並將 OS 安裝到該磁片。 設定磁片時，必須遵守下列專屬於第2代和/或受防護 Vm 的需求： 
 
-| VHDX 的需求 | `Reason` |
+| VHDX 的需求 | 原因 |
 |-----------|----|
 |必須是 GUID 磁碟分割表格（GPT）磁片 | 第2代虛擬機器需要支援 UEFI|
 |磁片類型必須是 [**基本**]，而不是 [**動態**]。 <br>注意：這是指邏輯磁片類型，而不是 Hyper-v 所支援的「動態擴充」 VHDX 功能。 | BitLocker 不支援動態磁碟。|
-|磁片至少有兩個磁碟分割。 一個磁碟分割必須包含安裝 Windows 的磁片磁碟機。 這是 BitLocker 將加密的磁片磁碟機。 另一個磁碟分割是作用中的磁碟分割，其中包含開機載入器，並且會保持未加密狀態，讓電腦可以啟動。|BitLocker 所需|
+|磁片至少有兩個磁碟分割。 一個磁碟分割必須包含安裝 Windows 的磁片磁碟機。 此為 BitLocker 將會加密的磁碟機。 另一個磁碟分割是作用中的磁碟分割，其中包含開機載入器，並且會保持未加密狀態，讓電腦可以啟動。|BitLocker 所需|
 |檔案系統為 NTFS | BitLocker 所需|
 |安裝在 VHDX 上的作業系統是下列其中一項：<br>-Windows Server 2019、Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 <br>-Windows 10、Windows 8.1、Windows 8| 需要支援第2代虛擬機器和 Microsoft 安全開機範本|
 |作業系統必須一般化（執行 sysprep.inf） | 範本布建牽涉到將 Vm 專門用於特定租使用者的工作負載| 
@@ -86,7 +86,7 @@ ms.locfileid: "71403437"
 
     等到簽署程式完成後，再嘗試掛接或移動範本磁片。 視您的磁片大小而定，此程式可能需要一段時間才能完成。 
 
-9. 在 [**摘要**] 頁面上，會顯示磁片範本的相關資訊、用來簽署範本的憑證，以及憑證簽發者。 按一下 **[關閉]** 以結束精靈。
+9. 在 [**摘要**] 頁面上，會顯示磁片範本的相關資訊、用來簽署範本的憑證，以及憑證簽發者。 按一下 [關閉] 以結束精靈。
 
 
 提供受防護的磁片範本給主機服務提供者，以及您所建立的防護資料檔案，如[建立防護資料以定義受防護的 VM](guarded-fabric-tenant-creates-shielding-data.md)中所述。

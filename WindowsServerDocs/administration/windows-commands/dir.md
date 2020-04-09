@@ -1,28 +1,22 @@
 ---
 title: dir
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: Dir 的 Windows 命令主題，它會顯示目錄的檔案和子目錄清單。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: edcbf69b-eaa4-466e-b210-3dd8892f4d93
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8aeb2b3b7d62ae62ba9b8fa70988cf64060673ca
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 44e50707886df87b217f22bc04edcdaf7496b0d1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79320012"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80845561"
 ---
 # <a name="dir"></a>dir
-
-
 
 顯示目錄的檔案和子目錄清單。 如果使用時不含參數， **dir**會顯示磁片的磁片區標籤和序號，後面接著磁片上的目錄和檔案清單（包括其名稱，以及每個上次修改的日期和時間）。 針對檔案， **dir**會顯示名稱延伸模組和大小（以位元組為單位）。 **Dir**也會顯示所列的檔案和目錄總數、其累計大小，以及磁片上剩餘的可用空間（以位元組為單位）。
 
@@ -34,7 +28,7 @@ ms.locfileid: "79320012"
 dir [<Drive>:][<Path>][<FileName>] [...] [/p] [/q] [/w] [/d] [/a[[:]<Attributes>]][/o[[:]<SortOrder>]] [/t[[:]<TimeField>]] [/s] [/b] [/l] [/n] [/x] [/c] [/4]
 ```
 
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -44,7 +38,7 @@ dir [<Drive>:][<Path>][<FileName>] [...] [/p] [/q] [/w] [/d] [/a[[:]<Attributes>
 |/q|顯示檔案擁有權資訊。|
 |/w|以寬格式顯示清單，每一行最多有五個檔案名或目錄名稱。|
 |/d|以與 **/w**相同的格式顯示清單，但檔案是依資料行排序。|
-|/a [[：]\<屬性 >]|只以您指定的屬性，顯示這些目錄和檔案的名稱。 如果您省略 **/a**， **dir**會顯示隱藏檔案和系統檔案以外所有檔案的名稱。 如果您使用 **/a**而不指定*屬性*， **dir**會顯示所有檔案的名稱，包括隱藏的檔案和系統檔案。</br>下列清單說明您可以用於*屬性*的每個值。 使用冒號（:)是選擇性的。 請使用這些值的任何組合，而不要以空格分隔這些值。</br>**d 個**目錄</br>**h**隱藏的檔案</br>**s**系統檔案</br>**l**重新分析點</br>**r**唯讀檔案</br>準備**封存的檔案**</br>**我**不是內容索引檔案</br>**-** 前置詞表示 "not"|
+|/a [[：]\<屬性 >]|只以您指定的屬性，顯示這些目錄和檔案的名稱。 如果您省略 **/a**， **dir**會顯示隱藏檔案和系統檔案以外所有檔案的名稱。 如果您使用 **/a**而不指定*屬性*， **dir**會顯示所有檔案的名稱，包括隱藏的檔案和系統檔案。</br>下列清單說明您可以用於*屬性*的每個值。 使用冒號（:)是選擇性的。 請使用這些值的任何組合，而不要以空格分隔這些值。</br>**d 個**目錄</br>**h**隱藏的檔案</br>**s**系統檔案</br>**l**重新分析點</br>**r**唯讀檔案</br>準備**封存的檔案**</br>**我**不是內容索引檔案</br>**-** 前置詞表示 not|
 |/o [[：]\<SortOrder >]|根據*SortOrder*排序輸出，它可以是下列值的任意組合：</br>**n**依名稱（依字母順序）</br>**e** By 擴充（依字母順序）</br>**g**群組目錄優先</br>**依大小**（最小優先）</br>**d**依據日期/時間（第一個最舊）</br>**-** 反向順序的前置詞</br>注意：使用冒號是選擇性的。 系統會依照您列出的順序來處理多個值。 請勿以空格分隔多個值。</br>如果未指定*SortOrder* ， **dir/o**會以字母順序列出目錄，後面接著檔案，這些檔案也會以字母順序排序。|
 |/t [[：]\<TimeField >]|指定要顯示或用於排序的時間欄位。 下列清單說明您可以用於*TimeField*的每個值：</br>**c**建立</br>**上次存取**</br>**w**上次寫入時間|
 |/s|列出指定目錄和所有子目錄中指定檔案名的每一次出現。|
@@ -63,8 +57,8 @@ dir [<Drive>:][<Path>][<FileName>] [...] [/p] [/q] [/w] [/d] [/a[[:]<Attributes>
 
   **星號（\*）：** 使用星號取代任何字元字串，例如：  
   - **dir \*** 會列出目前目錄中副檔名開頭為 .txt 的所有檔案，例如 .txt、. txt1、. txt_old。
-  - **dir read\*.txt**列出目前目錄中開頭為「讀取」且副檔名開頭為 .txt 的所有檔案，例如 .txt、txt1 或 txt_old。
-  - **目錄讀取\*。\*** 會列出目前目錄中所有副檔名開頭為「讀取」的所有檔案。
+  - **dir read\*.txt**列出目前目錄中開頭為 read 且副檔名為 .txt 的所有檔案，例如 .txt、txt1 或 txt_old。
+  - **目錄讀取\*。\*** 會列出目前目錄中所有副檔名開頭為 [讀取] 的所有檔案。
 
   星號萬用字元一律使用簡短的檔案名對應，因此您可能會收到非預期的結果。 例如，下列目錄包含兩個檔案（txt2 和 t97）： 
  
@@ -83,7 +77,7 @@ dir [<Drive>:][<Path>][<FileName>] [...] [/p] [/q] [/w] [/d] [/a[[:]<Attributes>
 
   您可能預期輸入**dir t97\\** * 會傳回 t97 檔案。 不過，鍵入**dir t97\\** * 會傳回這兩個檔案，因為星號萬用字元會使用其簡短名稱對應 T97B4 ~ 1 .txt 與 txt2 t97。 同樣地，輸入**del t97\\** * 會同時刪除這兩個檔案。
 
-  **問號（？）：** 使用問號取代名稱中的單一字元。 例如，輸入**dir read???。txt**會列出目前目錄中副檔名開頭為「讀取」且最多三個字元的所有檔案。 這包括 Read .txt、Read1 .txt、Read12 .txt、Read123 .txt 和 Readme1，但不包含 Readme12 .txt。
+  **問號（？）：** 使用問號取代名稱中的單一字元。 例如，輸入**dir read???。txt**會列出目前目錄中副檔名為 .txt 且開頭為 read 且後面最多三個字元的所有檔案。 這包括 Read .txt、Read1 .txt、Read12 .txt、Read123 .txt 和 Readme1，但不包含 Readme12 .txt。
 - 指定檔顯示內容
 
   如果您在*屬性*中使用具有一個以上值的 **/a** ， **dir**只會顯示具有所有指定屬性之檔案的名稱。 例如，如果您使用 **/a**搭配**r**和 **-h**做為屬性（藉由使用 **/a： r-h**或 **/ar-h**）， **dir**只會顯示未隱藏之唯讀檔案的名稱。
@@ -103,7 +97,7 @@ dir [<Drive>:][<Path>][<FileName>] [...] [/p] [/q] [/w] [/d] [/a[[:]<Attributes>
 dir /s/w/o/p
 ```
 
-**Dir**列出根目錄中的根目錄、子目錄和檔案，包括副檔名。 然後， **dir**會列出樹狀目錄中每個子目錄中的子目錄名稱和檔案名。
+**Dir**命令會列出根目錄中的根目錄、子目錄和檔案，包括副檔名。 然後， **dir**會列出樹狀目錄中每個子目錄中的子目錄名稱和檔案名。
 
 若要改變上述範例，讓**dir**顯示檔案名和副檔名，但省略目錄名稱，請輸入：
 
@@ -135,8 +129,8 @@ dir > \records\dir.doc
 dir c:\*.txt /w/o/s/p
 ```
 
-**Dir**會以字母順序顯示每個目錄中相符檔案名的清單，並在每次螢幕填滿時暫停，直到您按任意鍵繼續。
+**Dir**命令會以寬格式顯示每個目錄中相符檔案名的清單，並在每次螢幕填滿時暫停，直到您按任意鍵繼續。
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- - [命令列語法關鍵](command-line-syntax-key.md)

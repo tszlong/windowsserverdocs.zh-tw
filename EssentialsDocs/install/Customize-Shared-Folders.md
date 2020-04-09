@@ -1,23 +1,19 @@
 ---
 title: 自訂共用資料夾
 description: 說明如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 47bc4986-14eb-4a29-9930-83a25704a3a0
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 387f9570e87bd2bd65266489b0f3eac6c945e3be
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 861107035408fc39d0dc5e4d94a4d82d8dfba74e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311910"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818071"
 ---
 # <a name="customize-shared-folders"></a>自訂共用資料夾
 
@@ -57,7 +53,7 @@ ms.locfileid: "80311910"
   
 1.  依照[建立 PostIC.cmd 檔案以便執行初始設定後續的工作](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md)一節中的詳細說明，建立用來執行初始設定後續工作的 PostIC.cmd 檔案。  
   
-2.  使用 [記事本] 在 C:\Windows\Setup\Scripts 資料夾中建立名為 **customizefolders.ps1** 的檔案，然後將下列 Windows PowerShell® 命令貼到此檔案中 (根據所要的行為適當取消某幾行的標示)。  
+2.  使用 [記事本]，在 C:\Windows\Setup\Scripts 資料夾中建立名為**customizefolders.ps1**的檔案，然後將下列 Windows PowerShell&reg; 命令貼入檔案中（根據所要的行為取消標示適當的行）。  
   
     ```  
     # Move the Documents folder to D:\ServerFolders  

@@ -1,19 +1,20 @@
 ---
 title: 叢集集合
 ms.prod: windows-server
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: johnmarlin-msft
+ms.author: johnmar
 ms.date: 01/30/2019
 description: 本文說明叢集集合案例
 ms.localizationpriority: medium
-ms.openlocfilehash: db427e8fa4e5574c6eb7837cf0ab4a9fcc180410
-ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
+ms.openlocfilehash: 3c7ddef1831a82f7fc068ec4241bb1a72bd888bd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80639956"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861041"
 ---
 # <a name="cluster-sets"></a>叢集集合
 
@@ -100,13 +101,13 @@ ms.locfileid: "80639956"
 
 下列考慮適用于基礎結構 SOFS 角色：
 
-1.  容錯移轉叢集上最多隻能有一個基礎結構 SOFS 叢集角色。 基礎結構 SOFS 角色是藉由指定**ClusterScaleOutFileServerRole** Cmdlet 的「**基礎結構**」切換參數來建立。  例如，
+1.    容錯移轉叢集上最多隻能有一個基礎結構 SOFS 叢集角色。 基礎結構 SOFS 角色是藉由指定**ClusterScaleOutFileServerRole** Cmdlet 的「**基礎結構**」切換參數來建立。  例如，
 
-        Add-ClusterScaleoutFileServerRole -Name "my_infra_sofs_name" -Infrastructure
+        ClusterScaleoutFileServerRole-Name "my_infra_sofs_name"-基礎結構
 
-2.  在容錯移轉中建立的每個 CSV 磁片區都會根據 CSV 磁片區名稱，自動觸發建立具有自動產生之名稱的 SMB 共用。 除了透過 CSV 磁片區建立/修改作業以外，系統管理員無法直接在 SOFS 角色下建立或修改 SMB 共用。
+2.    在容錯移轉中建立的每個 CSV 磁片區都會根據 CSV 磁片區名稱，自動觸發建立具有自動產生之名稱的 SMB 共用。 除了透過 CSV 磁片區建立/修改作業以外，系統管理員無法直接在 SOFS 角色下建立或修改 SMB 共用。
 
-3.  在超融合式設定中，基礎結構 SOFS 可讓 SMB 用戶端（Hyper-v 主機）與基礎結構 SOFS SMB 伺服器的保證持續可用性（CA）進行通訊。 這個超交集 SMB 回送 CA 是透過存取其虛擬磁片（VHDx）檔案的虛擬機器來達成，其中擁有的虛擬機器身分識別會在用戶端與伺服器之間轉送。 此身分識別轉送允許 ACL 的 VHDx 檔案，如同之前的標準超融合叢集設定。
+3.    在超融合式設定中，基礎結構 SOFS 可讓 SMB 用戶端（Hyper-v 主機）與基礎結構 SOFS SMB 伺服器的保證持續可用性（CA）進行通訊。 這個超交集 SMB 回送 CA 是透過存取其虛擬磁片（VHDx）檔案的虛擬機器來達成，其中擁有的虛擬機器身分識別會在用戶端與伺服器之間轉送。 此身分識別轉送允許 ACL 的 VHDx 檔案，如同之前的標準超融合叢集設定。
 
 建立叢集集之後，叢集集命名空間會依賴每個成員叢集上的基礎結構 SOFS，以及管理叢集中的基礎結構 SOFS。
 

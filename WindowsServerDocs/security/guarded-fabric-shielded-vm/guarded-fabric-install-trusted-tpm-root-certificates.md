@@ -1,30 +1,30 @@
 ---
 title: 安裝受信任的 TPM 根憑證
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 06/27/2019
-ms.openlocfilehash: 15614ce1065170bc557fad10a168b3dda6a5b05a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 096a40f422f308a036b8062e4515ebe698c31f08
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386555"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856571"
 ---
 # <a name="install-trusted-tpm-root-certificates"></a>安裝受信任的 TPM 根憑證
 
->適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
+>適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
 
 當您設定 HGS 使用 TPM 證明時，您也必須設定 HGS 以信任伺服器中 Tpm 的廠商。
 這個額外的驗證程式可確保只有可靠且值得信賴的 Tpm 能夠使用您的 HGS 進行證明。
-如果您嘗試使用 `Add-HgsAttestationTpmHost` 來註冊不受信任的 TPM，您會收到錯誤，指出 TPM 廠商不受信任。
+如果您嘗試使用 `Add-HgsAttestationTpmHost`註冊不受信任的 TPM，您會收到錯誤，指出 TPM 廠商不受信任。
 
 若要信任您的 Tpm，您必須在 HGS 上安裝用來簽署伺服器 Tpm 中簽署金鑰的根和中繼簽署憑證。
 如果您在資料中心內使用一個以上的 TPM 模型，可能需要為每個模型安裝不同的憑證。
-HGS 會查看廠商憑證的 "TrustedTPM_RootCA" 和 "TrustedTPM_IntermediateCA" 憑證存放區。
+HGS 會查看廠商憑證的「TrustedTPM_RootCA」和「TrustedTPM_IntermediateCA」憑證存放區。
 
 > [!NOTE]
 > TPM 廠商憑證不同于 Windows 中預設安裝的憑證，並代表 TPM 廠商所使用的特定根和中繼憑證。

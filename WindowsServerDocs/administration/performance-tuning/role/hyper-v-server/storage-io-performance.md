@@ -4,15 +4,15 @@ description: Hyper-v 效能調整中的儲存體 i/o 效能考慮
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Asmahi; SandySp; JoPoulso
+ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 7c5a7b667f24ee929a80010dc51508033f991ed5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 83b22c47cb23b02bb9984e03d78fcae93be1ca0a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370057"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851811"
 ---
 # <a name="hyper-v-storage-io-performance"></a>Hyper-v 存放裝置 i/o 效能
 
@@ -20,7 +20,7 @@ ms.locfileid: "71370057"
 
 ## <a name="virtual-controllers"></a>虛擬控制器
 
-Hyper-v 提供三種類型的虛擬控制器：IDE、SCSI 和虛擬主機匯流排介面卡（Hba）。
+Hyper-v 提供三種類型的虛擬控制器： IDE、SCSI 和虛擬主機匯流排介面卡（Hba）。
 
 ## <a name="ide"></a>IDE
 
@@ -160,7 +160,7 @@ VHD 會指向父 VHD 檔案。 對區塊的任何寫入都不會寫入，因而�
 
 ## <a name="block-size-considerations"></a>區塊大小考慮
 
-區塊大小可能會大幅影響效能。 將區塊大小與使用磁片的工作負載配置模式進行比對，是最佳做法。 例如，如果應用程式是以 16 MB 的區塊進行配置，則虛擬硬碟區塊大小最好是 16 MB。 只有在具有 VHDX &gt;格式的虛擬硬碟上，才能有 2 MB 的區塊大小。 如果區塊大小大於隨機 i/o 工作負載的配置模式，將會大幅增加主機上的空間使用量。
+區塊大小可能會大幅影響效能。 將區塊大小與使用磁片的工作負載配置模式進行比對，是最佳做法。 例如，如果應用程式是以 16 MB 的區塊進行配置，則虛擬硬碟區塊大小最好是 16 MB。 只有在具有 VHDX 格式的虛擬硬碟上，才可以使用 &gt;2 MB 的區塊大小。 如果區塊大小大於隨機 i/o 工作負載的配置模式，將會大幅增加主機上的空間使用量。
 
 ## <a name="sector-size-implications"></a>磁區大小的影響
 
@@ -244,7 +244,7 @@ Windows Server 2012 儲存堆疊和 Hyper-v 中首次引進的下列主要改良
 
 -   更有效率的 i/o 完成機制，涉及虛擬處理器之間的中斷分佈，以避免耗費資源的 interprocessor 中斷。
 
-在 Windows Server 2012 中引進，有幾個登錄專案，位於 HKLM\\System\\CurrentControlSet\\Enum\\VMBUS\\{device id}\\{instance id}\\StorChannel，允許調整通道數目。 它們也會將處理 i/o 完成的虛擬處理器，與應用程式指派給 i/o 處理器的虛擬 Cpu 對齊。 登錄設定會根據裝置的硬體機碼，以每個介面卡為基礎進行設定。
+在 Windows Server 2012 中引進了一些登錄專案，位於 HKLM\\系統\\CurrentControlSet\\Enum\\VMBUS\\{device id}\\{instance id}\\StorChannel，可讓您調整頻道數目。 它們也會將處理 i/o 完成的虛擬處理器，與應用程式指派給 i/o 處理器的虛擬 Cpu 對齊。 登錄設定會根據裝置的硬體機碼，以每個介面卡為基礎進行設定。
 
 -   **ChannelCount （DWORD）** 要使用的通道總數，最大值為16。 其預設值為上限，這是虛擬處理器/16 的數目。
 
@@ -262,7 +262,7 @@ Windows Server 2012 和以上的 hyper-v 支援卸載資料傳輸（ODX）作業
 
 虛擬硬碟檔案會以檔案的形式存在於存放磁片區上，並與其他檔案共用可用空間。 因為這些檔案的大小通常會很大，所以取用的空間可能會快速成長。 對更多實體儲存體的需求會影響 IT 硬體預算。 請務必盡可能將實體儲存體的使用優化。
 
-在 Windows Server 2012 之前，當應用程式刪除虛擬硬碟中的內容（這實際上會放棄內容的儲存空間）時，客體作業系統和 Hyper-v 主機中的 Windows 儲存堆疊具有防止此情況的限制要傳達給虛擬硬碟和實體存放裝置的資訊。 這使得 Hyper-v 存放裝置堆疊無法將 VHD 虛擬磁片檔案的空間使用量優化。 它也會防止基礎存放裝置回收已刪除資料先前所佔用的空間。
+在 Windows Server 2012 之前，當應用程式刪除虛擬硬碟中的內容（這實際上會放棄內容的儲存空間）時，客體作業系統和 Hyper-v 主機中的 Windows 儲存堆疊具有防止此資訊傳送到虛擬硬碟和實體存放裝置的限制。 這使得 Hyper-v 存放裝置堆疊無法將 VHD 虛擬磁片檔案的空間使用量優化。 它也會防止基礎存放裝置回收已刪除資料先前所佔用的空間。
 
 從 Windows Server 2012 開始，Hyper-v 支援取消對應通知，讓 VHDX 檔案在代表其中的資料時更有效率。 這會產生較小的檔案大小，並允許基礎實體存放裝置回收未使用的空間。
 

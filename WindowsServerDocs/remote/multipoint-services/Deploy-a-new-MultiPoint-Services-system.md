@@ -1,24 +1,20 @@
 ---
 title: 部署新的 Windows MultiPoint 服務系統
 description: 部署新的 MultiPoint 服務環境所需的步驟
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4bac9d1b-bd21-4bc8-8f72-0dd9bb2b3f5d
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: a4ee5145af0dd8cc7d90a2fd7c02ed810157de21
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e152d8d259d0d838147ff11d88423b9ad2204009
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389715"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859751"
 ---
 # <a name="deploy-a-new-windows-multipoint-services-system"></a>部署新的 Windows MultiPoint 服務系統
 本節中的主題說明如何設定 MultiPoint 服務系統。 您將安裝和設定 MultiPoint 伺服器;設定您的工作站;安裝驅動程式、更新和軟體;選擇性地加入網域;啟動 MultiPoint Server;並新增每個工作站的用戶端存取使用權（Cal）。  

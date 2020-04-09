@@ -1,26 +1,20 @@
 ---
 title: 使用 Azure 流量管理員在 Azure 中部署高可用性跨地理位置 AD FS |Microsoft Docs
-description: 在本檔中，您將瞭解如何在 Azure 中部署 AD FS 以獲得高可用性。
-keywords: Ad fs 搭配 Azure 流量管理員、Azure 流量管理員的 adfs、地理位置、多個資料中心、地理資料中心、多地理資料中心、在 azure 中部署 AD FS、部署 azure adfs、azure adfs、azure AD fs、部署 adfs、部署 AD fs、azure 中的 adfs、在 azure 中部署 adfs，在 azure 中部署 AD FS，adfs azure，Azure 中的 AD FS，Azure，AD FS 簡介，iaas，ADFS，將 adfs 移至 azure
+description: 如何在 Azure 中部署 AD FS 以獲得高可用性。
 services: active-directory
-documentationcenter: ''
 author: anandyadavmsft
 manager: mtillman
-editor: ''
+ms.prod: windows-server
 ms.assetid: a14bc870-9fad-45ed-acd5-a90ccd432e54
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: get-started-article
 ms.date: 09/01/2016
 ms.author: anandy;billmath
-ms.openlocfilehash: d98eb126513d707bce7abe3e901c8bf584d2319c
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 9bfb59fadd2cf6b07d3c47ab69f0fe67974706a3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868022"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855201"
 ---
 # <a name="high-availability-cross-geographic-ad-fs-deployment-in-azure-with-azure-traffic-manager"></a>使用 Azure 流量管理員在 Azure 中部署高可用性跨地理位置 AD FS
 [Azure 中的 AD FS 部署](how-to-connect-fed-azure-adfs.md)提供逐步指導方針，說明如何在 azure 中為您的組織部署簡單的 AD FS 基礎結構。 本文提供使用[azure 流量管理員](https://docs.microsoft.com/azure/traffic-manager/)在 azure 中建立跨地理位置部署 AD FS 的後續步驟。 Azure 流量管理員藉由使用各種可用的路由方法，以符合基礎結構的不同需求，協助為您的組織建立散佈高可用性和高效能 AD FS 基礎結構的地理位置。
@@ -41,7 +35,7 @@ ms.locfileid: "70868022"
 * **網路安全性群組：** 作為儲存體帳戶，在區域中建立的網路安全性群組不能用於另一個地理區域。 因此，您必須建立新的網路安全性群組，類似于新地理區域中 INT 和 DMZ 子網的第一個地理區域。
 * **公用 IP 位址的 DNS 標籤：** Azure 流量管理員只能透過 DNS 標籤參考端點。 因此，您必須為外部負載平衡器的公用 IP 位址建立 DNS 標籤。
 * **Azure 流量管理員：** Microsoft Azure 流量管理員可讓您控制如何將使用者流量分散到您的服務端點（在世界各地的不同資料中心內執行）。 Azure 流量管理員在 DNS 層級運作。 它會使用 DNS 回應，將使用者流量導向至全域散發的端點。 接著，用戶端會直接連接到這些端點。 透過不同的效能、加權和優先順序路由選項，您可以輕鬆地選擇最適合您組織需求的路由選項。 
-* **在兩個區域之間的 v-net 到 V-net 連線能力：** 您不需要具備虛擬網路本身之間的連線能力。 由於每個虛擬網路都可存取網域控制站，而且具有 AD FS 和 WAP 伺服器本身，因此在不同區域中的虛擬網路之間不會有任何連線能力。 
+* **在兩個區域之間的 v-net 到 v-net 連線能力：** 您不需要具備虛擬網路本身之間的連線能力。 由於每個虛擬網路都可存取網域控制站，而且具有 AD FS 和 WAP 伺服器本身，因此在不同區域中的虛擬網路之間不會有任何連線能力。 
 
 ## <a name="steps-to-integrate-azure-traffic-manager"></a>整合 Azure 流量管理員的步驟
 ### <a name="deploy-ad-fs-in-the-new-geographical-region"></a>在新的地理區域中部署 AD FS
@@ -60,7 +54,7 @@ ms.locfileid: "70868022"
     ![建立流量管理員設定檔](./media/active-directory-adfs-in-azure-with-azure-traffic-manager/trafficmanager01.png)
 2. **流量路由方法：** 流量管理員中有三個可用的路由選項：
    
-   * Priority 
+   * 優先順序 
    * 效能
    * 加權
      
@@ -73,7 +67,7 @@ ms.locfileid: "70868022"
    
    **類型：** 選取 Azure 端點，因為我們會指向 Azure 公用 IP 位址。
    
-   **名稱:** 建立您想要與端點建立關聯的名稱。 這不是 DNS 名稱，而且與 DNS 記錄無關。
+   **名稱：** 建立您想要與端點建立關聯的名稱。 這不是 DNS 名稱，而且與 DNS 記錄無關。
    
    **目標資源類型：** 選取 [公用 IP 位址] 做為此屬性的值。 
    
@@ -106,7 +100,7 @@ ms.locfileid: "70868022"
 
 1. 使用 PowerShell 在 AD FS 伺服器上執行下列 Cmdlet，將其設定為 [已啟用]。 
    Set-adfsproperties-EnableIdPInitiatedSignonPage $true
-2. 從任何外部電腦存取權<yourfederationservicedns>HTTPs:///adfs/ls/IdpInitiatedSignon.aspx
+2. 從任何外部電腦存取 HTTPs://<yourfederationservicedns>/adfs/ls/IdpInitiatedSignon.aspx
 3. 您應該會看到如下所示的 [AD FS] 頁面：
    
     ![ADFS 測試-驗證挑戰](./media/active-directory-adfs-in-azure-with-azure-traffic-manager/adfstest1.png)

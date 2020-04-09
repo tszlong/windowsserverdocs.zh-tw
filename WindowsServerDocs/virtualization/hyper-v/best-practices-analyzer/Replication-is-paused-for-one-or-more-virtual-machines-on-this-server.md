@@ -2,20 +2,19 @@
 title: 這部伺服器上的一或多部虛擬機器的複寫已暫停
 description: 此最佳做法分析程式規則的線上版本文字。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: e1119a40-eda3-4058-8648-7df81cbc6c29
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 17d50f116c6cee488367c924bfbce3791a8d879f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6974016dd564cf19d39a6d83b041020a4e327d2c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393538"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861811"
 ---
 # <a name="replication-is-paused-for-one-or-more-virtual-machines-on-this-server"></a>這部伺服器上的一或多部虛擬機器的複寫已暫停
 

@@ -1,28 +1,24 @@
 ---
 title: 遷移 MultiPoint 服務的步驟
 description: 逐步引導您在 Windows Server 2016 中遷移至 MultiPoint 服務的步驟
-ms.custom: na
 ms.date: 07/29/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3ee77efa-7cc5-4ddf-aaff-b5634a717014
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 862e9b70cfafa9de0928a4789c5d23dfa0fbb530
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f2e293fafb8d6f5d84e9ea5a4ad8ef3b7fe2ba7d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389033"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858691"
 ---
 # <a name="migrate-to--multipoint-services-in-windows-server-2016"></a>遷移至 Windows Server 2016 中的 MultiPoint 服務
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
 使用下列步驟，再加上您在「遷移規劃」工作表中所收集的資訊，以遷移至 Windows Server 2016 中的 MultiPoint 服務。
 

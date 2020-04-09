@@ -1,19 +1,19 @@
 ---
 title: 請連絡資料中心和雲端網路團隊
 description: 此頁面的設計目的是通知客戶有關在各種內容中達到 SDN 小組的最佳方法。
-manager: brianlic
+manager: grcusanz
 ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: f9945c55-c2d0-448f-86dd-8c734e1b2987
-ms.author: lizross
-author: kallie-b
-ms.openlocfilehash: 84c0847313542953543316ceb6c3d9cffb99c2dc
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.author: anpaul
+author: AnirbanPaul
+ms.openlocfilehash: ed8041750f2b57526a173d7cacb5f221ce1f9722
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309971"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860741"
 ---
 # <a name="contact-the-datacenter-and-cloud-networking-team"></a>請連絡資料中心和雲端網路團隊
 

@@ -1,7 +1,6 @@
 ---
 title: 瞭解和部署持續性記憶體
 description: 有關什麼是持續性記憶體的詳細資訊，以及如何在 Windows Server 2019 中使用儲存空間直接存取來設定它。
-keywords: 儲存空間直接存取，持續性記憶體，pmem，儲存體，S2D
 ms.prod: windows-server
 ms.author: adagashe
 ms.technology: storage-spaces
@@ -9,12 +8,12 @@ ms.topic: article
 author: adagashe
 ms.date: 1/27/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a9070d2e2ab73c7882f4b2ef585ccb01986695bb
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: 43268986f0ef42aabc218062ac19f1d98f27be6d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822311"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861031"
 ---
 # <a name="understand-and-deploy-persistent-memory"></a>瞭解和部署持續性記憶體
 
@@ -38,11 +37,11 @@ ms.locfileid: "76822311"
 
 如果您仔細觀賞影片，您會發現更多的 jaw 捨棄是延遲。 即使在超過 13.7 M IOPS，Windows 中的檔案系統仍會回報持續低於40μs 的延遲！ （這是毫秒的符號，一秒的百萬分之一秒）。這種速度比平常極光榮公告的一般全 flash 廠商快很多。
 
-儲存空間直接存取在 Windows Server 2019 和 Intel® Optane 中，™ DC 持續性記憶體提供突破性的效能。 這項領先業界的 13.7 M IOPS 基準測試，加上可預測且非常低的延遲，而不是我們先前領先的 6.7 M IOPS 基準測試的兩倍。 另外，這次我們只需要12個伺服器節點，&mdash;25% 以上。
+儲存空間直接存取在 Windows Server 2019 和 Intel&reg; Optane 中，&trade; DC 持續性記憶體提供突破性的效能。 這項領先業界的 13.7 M IOPS 基準測試，加上可預測且非常低的延遲，而不是我們先前領先的 6.7 M IOPS 基準測試的兩倍。 另外，這次我們只需要12個伺服器節點，&mdash;25% 以上。
 
 ![IOPS 增益](media/deploy-pmem/iops-gains.png)
 
-測試硬體是12部伺服器的叢集，已設定為使用三向鏡像和分隔的 ReFS 磁片區、 **12** x INTEL® S2600WFT、 **384 GiB**記憶體、2 x 28 核心 "CASCADELAKE"、 **1.5 TB** Intel® Optane™ DC 持續性記憶體作為快取、 **32 TB** NVME （4 x 8 TB Intel® DC P4510）作為容量， **2** x Mellanox ConnectX-4 25 Gbps。
+測試硬體是12部伺服器的叢集，已設定為使用三向鏡像和分隔的 ReFS 磁片區、 **12** x INTEL&reg; S2600WFT、 **384 GiB**記憶體、2 x 28 核心 "CASCADELAKE"、 **1.5 TB** Intel&reg; Optane&trade; DC 持續性記憶體作為快取、 **32 TB** NVME （4 x 8 TB Intel&reg; DC P4510）作為容量， **2** x Mellanox ConnectX-4 25 Gbps。
 
 下表顯示完整的效能數位。  
 
@@ -56,17 +55,17 @@ ms.locfileid: "76822311"
 
 下表顯示 Windows Server 2019 和 Windows Server 2016 的支援持續性記憶體硬體。  
 
-| 持續性記憶體技術                                      | WIN ENT LTSB 2016 Finnish 64 Bits | Windows Server 2019 |
+| 持續性記憶體技術                                      | Windows Server 2016 | Windows Server 2019 |
 |-------------------------------------------------------------------|--------------------------|--------------------------|
 | 持續模式中**的 nvdimm-n**                                  | 支援                | 支援                |
-| Intel Optane 在應用程式直接模式中**™ DC 持續性記憶體**             | 不支援            | 支援                |
-| **Intel Optane™ DC**在記憶體模式中的持續性記憶體 | 支援            | 支援                |
+| Intel Optane 在應用程式直接模式中 **&trade; DC 持續性記憶體**             | 不支援            | 支援                |
+| **Intel Optane&trade; DC**在記憶體模式中的持續性記憶體 | 支援            | 支援                |
 
 > [!NOTE]  
 > Intel Optane 支援*記憶體*（volatile）和*應用程式直接*（持續）模式。
    
 > [!NOTE]  
-> 當您重新開機具有多個 Intel® Optane 的系統時，™應用程式直接模式中的 PMem 模組劃分成多個命名空間時，您可能會失去部分或所有相關邏輯儲存體磁片的存取權。 此問題發生在版本1903之前的 Windows Server 2019 版本上。
+> 當您重新開機具有多個 Intel&reg; Optane 的系統時，&trade; 應用程式直接模式中的 PMem 模組劃分成多個命名空間時，您可能會失去部分或所有相關邏輯儲存體磁片的存取權。 此問題發生在版本1903之前的 Windows Server 2019 版本上。
 >   
 > 因為 PMem 模組未定型，或在系統啟動時失敗，所以會發生這種存取中斷的情況。 在這種情況下，系統上任何 PMem 模組上的所有儲存命名空間都會失敗，包括未實際對應至失敗模組的命名空間。
 >   
@@ -159,7 +158,7 @@ Windows Server 2019 上的儲存空間直接存取支援使用持續性記憶體
 
 ### <a name="understanding-dax"></a>瞭解 DAX
 
-有兩種方法可存取持續性記憶體。 這些類型包括：
+有兩種方法可存取持續性記憶體。 這些系統為：
 
 1. **直接存取（DAX）** ，其運作方式就像記憶體，以取得最低延遲。 應用程式會直接修改持續性記憶體，略過堆疊。 請注意，您只能搭配使用 DAX 與 NTFS。
 1. **封鎖存取**，其運作方式類似于應用程式相容性的儲存體。 在此組態中，資料會流經堆疊。 您可以搭配使用此設定與 NTFS 和 ReFS。
@@ -310,7 +309,7 @@ Initializing the physical persistent memory device. This may take a few moments.
 > [!IMPORTANT]  
 > **PmemPhysicalDevice**會導致持續性記憶體中的資料遺失。 使用它做為修正持續性記憶體相關問題的最後手段。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 - [儲存空間直接存取總覽](storage-spaces-direct-overview.md)
 - [Windows 中的存放裝置類別記憶體（NVDIMM-N）健全狀況管理](storage-class-memory-health.md)

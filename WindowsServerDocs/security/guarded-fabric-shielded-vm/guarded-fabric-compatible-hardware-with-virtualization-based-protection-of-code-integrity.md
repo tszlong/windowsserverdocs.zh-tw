@@ -1,23 +1,23 @@
 ---
 title: 相容硬體與 Windows Server 虛擬化型的程式碼完整性保護
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 15ded82c-f70f-4efb-9e26-2731127931af
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 5a9a4b91cc3528ce59f8ef3e4952b6162ca5c74e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 32194d6f0634ab9cee90b321ea7a1f3e2769542d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403691"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856871"
 ---
 # <a name="compatible-hardware-with-windows-server-virtualization-based-protection-of-code-integrity"></a>相容硬體與 Windows Server 虛擬化型的程式碼完整性保護
 
->適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
+>適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
 
 Windows Server 2016 引進了新的虛擬化型程式碼保護，以協助保護實體和虛擬機器，免于遭受修改系統程式碼的攻擊。 為了達到此高保護層級，Microsoft 會與電腦硬體製造商（原始設備製造商或 Oem）結合，以防止惡意寫入系統執行程式碼。 這項保護可以套用至任何系統，並作為執行受防護虛擬機器（Vm）之 Hyper-v 主機健全狀況的其中一個建立區塊。 
 

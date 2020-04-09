@@ -1,23 +1,19 @@
 ---
 title: Windows Server 2016 中的 hyper-v 網路虛擬化總覽
 description: 本主題提供 Windows Server 2016 中的 Hyper-v 網路虛擬化總覽
-manager: brianlic
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0115b7ad-d229-4c69-9d7e-a3f5fbaa3b2f
-ms.author: lizross
-author: eross-msft
-ms.openlocfilehash: 2d85545224d8487b4778b95b9366a0336b27b343
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.author: anpaul
+author: AnirbanPaul
+ms.openlocfilehash: fc81e753675792eeda01e5048f0e3fad88b69b92
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317226"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854251"
 ---
 # <a name="hyper-v-network-virtualization-overview-in-windows-server-2016"></a>Windows Server 2016 中的 hyper-v 網路虛擬化總覽
 

@@ -1,24 +1,20 @@
 ---
 title: 選取適用於 MultiPoint 服務系統的硬體
 description: MultiPoint 服務的硬體考慮
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e74961a2-bd38-48ae-b1c0-4b3eff761b4a
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 9cfd6572c82bf5c3754165420e61054ec12b9617
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3dca1b68564c977394c1b71f72db0fde5727c861
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388998"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859071"
 ---
 # <a name="selecting-hardware-for-your-multipoint-services-system"></a>選取適用於 MultiPoint 服務系統的硬體
 當您建立 MultiPoint 服務系統時，您應該選取符合 Windows Server 2016 系統需求的電腦。 如果您決定要選取哪些元件，請考慮下列事項：  
@@ -81,7 +77,7 @@ MultiPoint 服務需要以 x64\-為基礎的 CPU，而且必須符合電腦的�
   
     -   鍵盤和滑鼠裝置  
   
-    -   [監視]  
+    -   監視器  
   
 -   週邊裝置  
   
@@ -129,7 +125,7 @@ USB 零用戶端包含外部視訊控制器，可將監視器連接到用戶端�
   
 如果您想要在不開啟電腦的情況下啟用其他監視的支援，或如果您想要支援的工作站超過可用的影片輸出，請選取 USB 零用戶端。 例如，如果您先前已將四個監視器插上\-到內部視訊卡，而您想要新增兩個監視器，可以將兩個外部視訊控制器中的\-插到電腦上，並有兩個以上監視器的空間。 如此一來，您可以結合 USB 0 用戶端與影片控制器，而不使用主機板上的額外 PCI 或 PCIe 插槽。  
   
-## <a name="BKMK_Selectingdirect-video-connectedorUSBzeroclientstationdevices"></a>選取直接\-video\-已連線或 USB 零的用戶端工作站裝置  
+## <a name="selecting-direct-video-connected-or-usb-zero-client-station-devices"></a><a name="BKMK_Selectingdirect-video-connectedorUSBzeroclientstationdevices"></a>選取直接\-video\-已連線或 USB 零的用戶端工作站裝置  
 MultiPoint 服務站是由一個使用鍵盤和滑鼠插頭\-的工作站集線器或 USB 零用戶端，以及一部插\-到主機電腦或 USB 零用戶端的監視器所組成。 其他週邊裝置可以\-到工作站集線器或 USB 零用戶端，但不需要建立 MultiPoint 工作站。 這些其他週邊裝置會在[選取其他工作站的裝置](#selecting-other-station-peripheral-devices)中說明。  
   
 您選取要建立 MultiPoint 服務工作站的裝置，應符合使用 MultiPoint 服務的最低需求。 本主題提供有關下列 MultiPoint 服務工作站裝置需求的詳細資料：  
@@ -186,14 +182,14 @@ MultiPoint 服務支援連接到工作站集線器、USB 零用戶端或直接�
   
 ||已連接到主機電腦|連線到站中樞或下游中樞|  
 |-|------------------------------|----------------------------------------------|  
-|鍵盤|無法運作，除非它是 PS/2 站的一部分。 |適用于個別的工作站<br /><br />無法連線到下游中樞|  
+|鍵盤|無法運作，除非它是 PS/2 站的一部分。 |適用于個別的工作站<p>無法連線到下游中樞|  
 |滑鼠|無法運作，除非它是 PS/2 站的一部分。 |適用于個別的工作站|  
 |喇叭/耳機|無法運作，除非它是 PS/2 站的一部分。|適用于個別的工作站|  
 |USB 存放裝置|適用于所有工作站|適用于個別的工作站|  
 |HID 取用者控制項|無法運作|適用于個別的工作站|  
 |其他 USB 裝置，例如相機、檔讀取器和 DVD 光碟機|適用于 Windows Server 2012 支援的所有工作站|適用于 Windows Server 2008 R2 支援的所有工作站遠端桌面服務|  
   
-## <a name="BKMK_SelectingRDP-over-LAN-connectedstationhardware"></a>選取透過\-LAN\-連線的工作站硬體的 RDP\-  
+## <a name="selecting-rdp-over-lan-connected-station-hardware"></a><a name="BKMK_SelectingRDP-over-LAN-connectedstationhardware"></a>選取透過\-LAN\-連線的工作站硬體的 RDP\-  
 任何可以使用遠端桌面通訊協定連接到遠端桌面服務的 LAN 用戶端，都可以成為 MultiPoint 服務站。  
   
 如果您想要將 LAN 用戶端僅作為 MultiPoint 工作站使用，您可能會想要「鎖定」您的 LAN 用戶端。 例如，設定您的瘦用戶端，使其只能連線到 MultiPoint 服務會話，或設定桌上型電腦，以便移除桌面圖示和 [開始] 功能表項目（例如網頁瀏覽器）的存取權，以防止直接存取網際網路。 您可以使用 LAN 用戶端設定工具或群組或本機原則來進行這些設定。  

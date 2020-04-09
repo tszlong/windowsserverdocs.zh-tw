@@ -4,15 +4,15 @@ description: 效能微調的 hyper-v 設定考慮
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Asmahi; SandySp; JoPoulso
+ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: f21115265ca7d2788fc0be078860048602d82c0f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e3c4fa32b97761ad05c88722ef090f96fff21cf3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370164"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851791"
 ---
 # <a name="hyper-v-configuration"></a>Hyper-V 設定
 
@@ -34,7 +34,7 @@ ms.locfileid: "71370164"
 
 -   **儲存空間**
 
-    存放裝置硬體應有足夠的 i/o 頻寬和容量，以符合實體伺服器所裝載之虛擬機器目前和未來的需求。 當您選取 [存放控制器和磁片] 並選擇 RAID 設定時，請考慮這些需求。 將具有高度磁片密集型工作負載的虛擬機器放置在不同的實體磁片上，可能會改善整體效能。 例如，如果有四部虛擬機器共用單一磁片並主動使用它，則每部虛擬機器只能產生該磁片的 25% 頻寬。
+    存放裝置硬體應有足夠的 i/o 頻寬和容量，以符合實體伺服器所裝載之虛擬機器目前和未來的需求。 當您選取 [存放控制器和磁片] 並選擇 RAID 設定時，請考慮這些需求。 將具有高度磁片密集型工作負載的虛擬機器放置在不同的實體磁片上，可能會改善整體效能。 例如，如果有四部虛擬機器共用單一磁片並主動使用它，則每部虛擬機器只能產生該磁片的25% 頻寬。
 
 ## <a name="power-plan-considerations"></a>電源計劃考慮
 
@@ -76,15 +76,15 @@ Hyper-v 會發佈效能計數器，以協助描述虛擬化伺服器的行為，
 
 您應該一律使用 Hyper-v 虛擬機器邏輯處理器效能計數器來測量實體系統的 CPU 使用量。 「工作管理員」和「效能監視器」報表在根和子分割區中的 CPU 使用率計數器，並不會反映實際的實體 CPU 使用量。 使用下列效能計數器來監視效能：
 
-- **Hyper-v 虛擬機器邏輯處理器（\*） \\% 總執行時間**邏輯處理器的非閒置時間總計
+- **Hyper-v 虛擬機器邏輯處理器（\*）\\% 總執行時間**邏輯處理器的非閒置時間總計
 
-- **Hyper-v 虛擬機器邏輯處理器（\*） \\% 來賓執行時間**在來賓或主機內執行迴圈所花費的時間
+- **Hyper-v 虛擬機器邏輯處理器（\*）\\% 來賓執行時間**在來賓或主機內執行迴圈所花費的時間
 
-- **Hyper-v 虛擬機器邏輯處理器（\*） \\% 執行器執行時間**在虛擬機器內執行所花費的時間
+- **Hyper-v 虛擬機器邏輯處理器（\*）\\% 監控程式執行時間**在虛擬機器內執行所花費的時間
 
-- **Hyper-v 虛擬機器根虛擬\*處理器（）\\ \\** * 測量根磁碟分割的 CPU 使用量
+- **Hyper-v 虛擬機器根虛擬處理器（\*）\\\\** * 測量根磁碟分割的 CPU 使用量
 
-- **Hyper-v 虛擬處理器（\*）\\ \\** * 測量來賓磁碟分割的 CPU 使用量
+- **Hyper-v 虛擬處理器（\*）\\\\** * 測量來賓磁碟分割的 CPU 使用量
 
 
 ## <a name="see-also"></a>另請參閱

@@ -1,24 +1,20 @@
 ---
 title: 建立本機使用者帳戶
 description: 瞭解 MultiPoint 服務中的三種使用者帳戶 abou thte
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 33321932-4266-4961-9924-2cb4620bfcb4
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: 874d9cbdb56c59693cb5843a898b9ebd6893d674
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b07c88e4961544f5854f6e9d829b8d4b97adf7e8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405106"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859761"
 ---
 # <a name="create-local-user-accounts"></a>建立本機使用者帳戶
 使用 MultiPoint 管理員可以在中建立三種層級的本機使用者帳戶：標準使用者帳戶;具有有限系統管理許可權的 MultiPoint 儀表板使用者;以及完整的系統管理使用者帳戶。  

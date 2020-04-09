@@ -2,20 +2,19 @@
 title: 應該在虛擬機器中啟用存放控制器，以提供對附加存放裝置的存取權
 description: 提供解決此最佳做法分析程式規則所回報之問題的指示。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 532548a1-8ffe-4b5b-902e-ed2f0819012b
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: f0d10ab4c419a6014a9edb4b7f721714dc92798d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b530a5868633e6007f311f3d15c94b7ec4ded52c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393487"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858791"
 ---
 # <a name="storage-controllers-should-be-enabled-in-virtual-machines-to-provide-access-to-attached-storage"></a>應該在虛擬機器中啟用存放控制器，以提供對附加存放裝置的存取權
 
@@ -28,7 +27,7 @@ ms.locfileid: "71393487"
 |**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
 |**低於**|警告|  
-|**類別**|設定|  
+|**類別**|組態|  
 
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。
 

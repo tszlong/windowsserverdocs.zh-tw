@@ -1,24 +1,20 @@
 ---
 title: 在 MultiPoint 服務中設定 RDP over LAN 的連線站
 description: 瞭解如何在 MultiPoint 服務中設定 RDP over LAN 系統
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 60e1a025-c2fb-4708-a3ff-c44c223a3224
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: d0d63a75d3ef6e042d44df0ecf4cc08973e859a6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 36aaa4c1571ff6dd48ae645b9c7b5746be7c1857
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394996"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853901"
 ---
 # <a name="set-up-an-rdp-over-lan-connected-station-in-multipoint-services"></a>在 MultiPoint 服務中設定 RDP over LAN 的連線站
 RDP over LAN 連接的工作站是一種瘦用戶端、傳統桌上型電腦或膝上型電腦，會使用遠端桌面通訊協定（RDP）連接到區域網路（LAN）上的 MultiPoint 服務。 如需此和其他工作站類型的詳細資訊，請參閱[MultiPoint 電臺](MultiPoint-services-Stations.md)。  

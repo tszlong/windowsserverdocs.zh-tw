@@ -1,7 +1,6 @@
 ---
 ms.assetid: fdd1c1fd-55aa-4eb8-ae84-53f811de042c
 title: 使用裝置註冊服務設定同盟伺服器
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,23 +8,23 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6d4285816993ffd277df471348149b3b54039939
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c7775801940faeba07ad91aa81434a34c97eb6bc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359766"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855511"
 ---
 # <a name="configure-a-federation-server-with-device-registration-service"></a>使用裝置註冊服務設定同盟伺服器
 
-完成步驟4：中\( [的程式\)之後，您可以在同盟伺服器上啟用裝置註冊服務 DRS。設定同盟伺服器](https://technet.microsoft.com/library/dn303424.aspx)。 裝置註冊服務會提供上線機制，以進行無縫式的第二因素\-驗證\(、\)持續的單一登入 SSO，以及要求存取公司之取用者的條件式存取人員. 如需 DRS 的詳細資訊，請參閱[從任何裝置加入工作場所以進行 SSO，以及跨公司應用程式進行無縫第二因素驗證](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)  
+完成[步驟4：設定同盟伺服器](https://technet.microsoft.com/library/dn303424.aspx)中的程式之後，您可以在同盟伺服器上啟用 \(DRS\) 的裝置註冊服務。 裝置註冊服務會提供上線機制，以進行無縫式的第二因素驗證、\(SSO\)的持續性單一登入\-，以及需要存取公司資源的取用者的條件式存取。 如需 DRS 的詳細資訊，請參閱[從任何裝置加入工作場所以進行 SSO，以及跨公司應用程式進行無縫第二因素驗證](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)  
   
 ## <a name="prepare-your-active-directory-forest-to-support-devices"></a>準備 Active Directory 樹系以支援裝置  
   
 > [!NOTE]  
-> 這是一項\-一次性作業，您必須執行此作業，才能準備 Active Directory 樹系以支援裝置。 您必須以企業系統管理員許可權登入，而且您的 Active Directory 樹系必須具有 Windows Server 2012 R2 架構，才能完成此程式。  
+> 這是一項\-時間作業，您必須執行此作業，才能準備 Active Directory 樹系以支援裝置。 您必須以企業系統管理員許可權登入，而且您的 Active Directory 樹系必須具有 Windows Server 2012 R2 架構，才能完成此程式。  
 >   
-> 此外，DRS 要求您的樹系根域中至少要有一部通用類別目錄伺服器。 需要通用類別目錄伺服器，才能在 AD FS 驗證期間執行\-Initialize initialize-addeviceregistration 和。 AD FS 會在每\-個驗證要求上初始化 DRS 設定物件的記憶體中表示，而且如果在目前網域的 DC 上找不到 drs config 物件，則會嘗試針對 DRS 物件所在的 GC 進行要求在初始化\-initialize-addeviceregistration 期間布建。  
+> 此外，DRS 要求您的樹系根域中至少要有一部通用類別目錄伺服器。 需要通用類別目錄伺服器，才能在 AD FS 驗證期間執行初始化\-Initialize-addeviceregistration 和。 AD FS 會在每個驗證要求的 DRS 設定物件\-記憶體表示中初始化，而且如果在目前網域的 DC 上找不到 DRS config 物件，則會嘗試針對在初始化\-Initialize-addeviceregistration 期間布建 DRS 物件的 GC 進行要求。  
   
 #### <a name="to-prepare-the-active-directory-forest"></a>準備 Active Directory 樹系  
   
@@ -35,7 +34,7 @@ ms.locfileid: "71359766"
     Initialize-ADDeviceRegistration  
     ```  
   
-2.  當系統提示您進行 ServiceAccountName 時，請輸入您選取做為 AD FS 之服務帳戶的服務帳戶名稱。  如果它是 gMSA 帳戶，請以 **\\domain accountname $** 格式輸入帳戶。 若為網域帳戶，請使用**domain\\accountname**格式。  
+2.  出現 ServiceAccountName 的提示時，請輸入您選取作為 AD FS 服務帳戶的服務帳戶名稱。  如果它是 gMSA 帳戶，請輸入網域中的帳戶 **\\accountname $** 格式。 若為網域帳戶，請使用**domain\\accountname**格式。  
   
 ## <a name="enable-device-registration-service-on-a-federation-server-farm-node"></a>啟用同盟伺服器陣列節點上的裝置註冊服務  
   
@@ -55,9 +54,9 @@ ms.locfileid: "71359766"
 ## <a name="enable-seamless-second-factor-authentication"></a>啟用無縫式的第二因素驗證  
 無縫的第二因素驗證是 AD FS 中的增強功能，可針對嘗試存取的外部裝置，提供對公司資源和應用程式的額外存取保護層級。 當個人裝置加入工作地點時，它會變成「已知」的裝置，而系統管理員可以使用此資訊來驅動條件式存取和閘道存取資源。  
   
-#### <a name="to-enable-seamless-second-factor-authentication-persistent-single-sign-on-sso-and-conditional-access-for-workplace-joined-devices"></a>若要啟用無縫式的第二因素\-驗證\(，已加入工作場所裝置的持續單一登入 SSO\)和條件式存取  
+#### <a name="to-enable-seamless-second-factor-authentication-persistent-single-sign-on-sso-and-conditional-access-for-workplace-joined-devices"></a>若要啟用無縫式的第二因素驗證，\(SSO\) 上的持續單一登入\-和加入工作場所裝置的條件式存取  
   
-1.  在 [AD FS 管理] 主控台中，流覽至 [驗證原則]。 選取 [編輯全域主要驗證]。 選取 [啟用裝置驗證] 旁的核取方塊，然後按一下 [確定]。  
+1.  在 [AD FS 管理] 主控台中，流覽至 [驗證原則]。 選取 [啟用全域主要驗證]。 選取 [啟用裝置驗證]，然後按一下 [確定]。  
   
 ## <a name="update-the-web-application-proxy-configuration"></a>更新 Web 應用程式 Proxy 設定  
   

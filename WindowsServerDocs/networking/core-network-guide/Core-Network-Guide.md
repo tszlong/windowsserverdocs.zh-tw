@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: b3cd60f7-d380-4712-9a78-0a8f551e1121
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: a0da2265f8f66256ed2ba71d4847bf8a548626f8
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: b58fe9eaa66abd91de27713398759529ae6147ae
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80319148"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861761"
 ---
 # <a name="core-network-components"></a>核心網路元件
 
@@ -77,7 +77,7 @@ Windows Server 核心網路提供許多好處，包括下列各項。
 
 -   其他網路資源，例如印表機及檔案伺服器
 
--   網際網路連線能力
+-   網際網路連線
 
 -   遠端存取
 
@@ -119,7 +119,7 @@ Windows Server 2016 中的 TCP/IP 如下所示：
 
 TCP/IP 提供基本的 TCP/IP 公用程式，可讓 Windows 電腦與其他 Microsoft 及非 Microsoft 系統連線和共用資訊，其中包括：
 
--    Windows Server 2016
+-    Windows Server 2016
 
 -   Windows 10
 
@@ -283,11 +283,11 @@ AD DS 設計程式的第一個步驟是判斷您的組織需要多少個樹系�
 
 |設定項目：|範例值：|
 |------------------------|-------------------|
-|完整 DNS 名稱|範例：<br /><br />-corp.contoso.com<br />-example.com|
+|完整 DNS 名稱|範例：<p>-corp.contoso.com<br />-example.com|
 |樹系功能等級|-Windows Server 2008 <br />-Windows Server 2008 R2 <br />-Windows Server 2012 <br />-Windows Server 2012 R2 <br />-Windows Server 2016|
-|Active Directory 網域服務資料庫資料夾位置|E:\Configuration\\<br /><br />或接受預設位置。|
-|Active Directory 網域服務記錄檔資料夾位置|E:\Configuration\\<br /><br />或接受預設位置。|
-|Active Directory 網域服務 SYSVOL 資料夾位置|E:\Configuration\\<br /><br />或接受預設位置|
+|Active Directory 網域服務資料庫資料夾位置|E:\Configuration\\<p>或接受預設位置。|
+|Active Directory 網域服務記錄檔資料夾位置|E:\Configuration\\<p>或接受預設位置。|
+|Active Directory 網域服務 SYSVOL 資料夾位置|E:\Configuration\\<p>或接受預設位置|
 |目錄還原模式系統管理員密碼|**J\*p2leO4 $ F**|
 |回應檔案名稱 (選擇性)|**AD DS_AnswerFile**|
 
@@ -412,7 +412,7 @@ Arpa 網域會套用到以網際網路通訊協定第4版（IPv4）定址為基�
 |網路連線繫結|乙太網路|
 |DNS 伺服器設定|DC1.corp.contoso.com|
 |慣用 DNS 伺服器 IP 位址|10.0.0.2|
-|[新增領域] 對話方塊值<br /><br />1. 範圍名稱<br />2. 起始 IP 位址<br />3. 結束 IP 位址<br />4. 子網路遮罩<br />5. 預設閘道（選擇性）<br />6. 租用期間|1. 主要子網<br />2. 10.0.0。1<br />3. 10.0.0.254<br />4. 255.255.255。0<br />5. 10.0.0。1<br />6. 8 天|
+|[新增領域] 對話方塊值<p>1. 範圍名稱<br />2. 起始 IP 位址<br />3. 結束 IP 位址<br />4. 子網路遮罩<br />5. 預設閘道（選擇性）<br />6. 租用期間|1. 主要子網<br />2. 10.0.0。1<br />3. 10.0.0.254<br />4. 255.255.255。0<br />5. 10.0.0。1<br />6. 8 天|
 |IPv6 DHCP 伺服器操作模式|未啟用|
 
 ## <a name="core-network-deployment"></a><a name="BKMK_deployment"></a>核心網路部署
@@ -1437,9 +1437,9 @@ Windows Server 核心網路部署程序[安裝新樹系的 AD DS 與 DNS](#BKMK_
 |-----------------------|------------------|----------|
 |完整 DNS 名稱|corp.contoso.com||
 |樹系功能等級|Windows Server 2003||
-|Active Directory 網域服務資料庫資料夾位置|E:\Configuration\\<br /><br />或接受預設位置。||
-|Active Directory 網域服務記錄檔資料夾位置|E:\Configuration\\<br /><br />或接受預設位置。||
-|Active Directory 網域服務 SYSVOL 資料夾位置|E:\Configuration\\<br /><br />或接受預設位置||
+|Active Directory 網域服務資料庫資料夾位置|E:\Configuration\\<p>或接受預設位置。||
+|Active Directory 網域服務記錄檔資料夾位置|E:\Configuration\\<p>或接受預設位置。||
+|Active Directory 網域服務 SYSVOL 資料夾位置|E:\Configuration\\<p>或接受預設位置||
 |目錄還原模式系統管理員密碼|J*p2leO4$F||
 |回應檔案名稱 (選擇性)|AD DS_AnswerFile||
 
@@ -1448,10 +1448,10 @@ Windows Server 核心網路部署程序[安裝新樹系的 AD DS 與 DNS](#BKMK_
 |組態項目|範例值|值|
 |-----------------------|------------------|----------|
 |區域類型：|-主要區域<br />-次要區域<br />-存根區域||
-|區域類型<br /><br />**將區域儲存在 Active Directory**|-已選取<br />-未選取||
+|區域類型<p>**將區域儲存在 Active Directory**|-已選取<br />-未選取||
 |Active Directory 區域複寫領域|-至此樹系中的所有 DNS 伺服器<br />-到此網域中的所有 DNS 伺服器<br />-到此網域中的所有網域控制站<br />-到此目錄磁碟分割的範圍內指定的所有網域控制站||
-|反向對應區域名稱<br /><br />(IP 類型)|-IPv4 反向對應區域<br />-IPv6 反向對應區域||
-|反向對應區域名稱<br /><br />(網路識別碼)|10.0.0||
+|反向對應區域名稱<p>(IP 類型)|-IPv4 反向對應區域<br />-IPv6 反向對應區域||
+|反向對應區域名稱<p>(網路識別碼)|10.0.0||
 
 ### <a name="installing-dhcp"></a><a name="BKMK_FndtnPrep_InstallDHCP"></a>安裝 DHCP
 本節中的表格列出預先安裝及安裝 DHCP 的設定項目。
@@ -1509,16 +1509,16 @@ Windows Server 核心網路部署程序[建立和啟用新的 DHCP 領域](#BKMK
 |-----------------------|------------------|----------|
 |新領域名稱|Corp2||
 |領域說明|總公司子網2||
-|(IP 位址範圍)<br /><br />起始 IP 位址|10.0.1.1||
-|(IP 位址範圍)<br /><br />結束 IP 位址|10.0.1.254||
+|(IP 位址範圍)<p>起始 IP 位址|10.0.1.1||
+|(IP 位址範圍)<p>結束 IP 位址|10.0.1.254||
 |Length|8||
 |子網路遮罩|255.255.255.0||
 |(排除範圍) 起始 IP 位址|10.0.1.1||
 |排除範圍結束 IP 位址|10.0.1.15||
-|租用期間<br /><br />日<br /><br />時<br /><br />分|-8<br />-0<br />-0||
-|路由器 (預設閘道)<br /><br />IP 位址|10.0.1.1||
+|租用期間<p>日<p>小時<p>分|-8<br />-0<br />-0||
+|路由器 (預設閘道)<p>IP 位址|10.0.1.1||
 |DNS 父系網域|corp.contoso.com||
-|DNS 伺服器<br /><br />IP 位址|10.0.0.2||
+|DNS 伺服器<p>IP 位址|10.0.0.2||
 
 ### <a name="installing-network-policy-server-optional"></a><a name="BKMK_FndtnPrep_InstallNPS"></a>安裝網路原則伺服器（選擇性）
 本節中的表格列出預先安裝及安裝 NPS 的設定項目。

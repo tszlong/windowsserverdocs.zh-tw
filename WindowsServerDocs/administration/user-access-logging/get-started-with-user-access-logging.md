@@ -1,24 +1,20 @@
 ---
 title: 開始使用使用者存取記錄
 desctription: Describes the User Access Logging feature and how to start using it.
-ms.custom: na
 ms.prod: windows-server
 ms.technology: manage-user-access-logging
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5c395b8b-3b35-4042-b9cc-07e438f86d50
 author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f69a1fe4f3c17123f91ade3b6aebdb5f7bab9982
-ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
+ms.openlocfilehash: b36253b8dfa10ac8156fdc5526d02aa98ebdc740
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001783"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851401"
 ---
 # <a name="get-started-with-user-access-logging"></a>開始使用使用者存取記錄
 
@@ -31,7 +27,7 @@ ms.locfileid: "77001783"
 > [!NOTE]  
 > UAL 支援 [Microsoft Assessment and Planning Toolkit](https://go.microsoft.com/fwlink/?LinkID=111000)。  
   
-## <a name="BKMK_APP"></a>實際應用  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>實際應用  
 UAL 會匯總登入本機資料庫的唯一用戶端裝置和使用者要求事件。 然後，這些記錄可供使用 (透過伺服器管理員的查詢)，依伺服器角色、使用者、裝置、本機伺服器以及日期來抓取數量和執行個體。  此外，UAL 也已擴充，可讓非 Microsoft 軟體發展人員檢測其 UAL 事件，以由 Windows Server 進行匯總。  
   
 UAL 可以執行下列工作：  
@@ -92,7 +88,7 @@ UAL 可以支援下列伺服器角色和服務：
 > [!IMPORTANT]  
 > 不建議在直接連線到網際網路的伺服器上 (例如可存取網際網路位址空間的網頁伺服器)，或當伺服器的主要功能是提供極高效能的情況下 (例如在 HPC 工作負載環境) 使用 UAL。 UAL 主要是用於需要高容量的小型、中型和企業內部網路案例，但不像是定期提供網際網路面向流量的部署一樣高。  
   
-## <a name="BKMK_NEW"></a>重要功能  
+## <a name="important-functionality"></a><a name="BKMK_NEW"></a>重要功能  
 下表描述 UAL 的主要功能和其潛在價值。  
   
 |功能|值|  
@@ -128,7 +124,7 @@ UAL 可以支援下列伺服器角色和服務：
 |**RoleName**|提供 UAL 資料之角色、元件或子產品的名稱。 它也與 ProductName 和 RoleGUID 關聯。|  
 |**TenantIdentifier**|已安裝角色之租用戶用戶端及伴隨 UAL 資料之產品的唯一 GUID (如果有的話)。|  
   
-## <a name="BKMK_SOFT"></a>軟體需求  
+## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>軟體需求  
 在 Windows Server 2012 之後執行 Windows Server 版本的任何電腦上，都可以使用 UAL。  
   
 ## <a name="see-also"></a>另請參閱  

@@ -1,24 +1,20 @@
 ---
 title: extend
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2414e21d-fc0b-40e8-9e33-3e072f8ad76b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bb54a661bf60b55fd95bf3a686d758d13831a6ba
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 11991f9fc338dca5201d8f9c9c598b9d7dcf239b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377314"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844781"
 ---
 # <a name="extend"></a>extend
 
@@ -35,14 +31,14 @@ extend [size=<n>] [disk=<n>] [noerr]
 extend filesystem [noerr]  
 ```  
   
-## <a name="parameters"></a>Parameters  
+### <a name="parameters"></a>參數  
   
 | 參數  |                                                                                             描述                                                                                              |
 |------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 大小\=<n>  |      指定要新增至目前磁片區或磁碟分割的空間量（以 mb 為單位） \(MB\)。 如果未指定大小，則會使用磁片上可用的所有連續可用空間。       |
 | 磁片\=<n>  |                          指定擴充磁片區或分割區的磁片。 如果未指定磁片，磁片區或磁碟分割會在目前的磁片上擴充。                          |
 | 內 |                                   以焦點擴充磁片區的檔案系統。 僅適用于未使用磁片區擴充檔案系統的磁片。                                    |
-|   noerr    | 僅適用于腳本。 當發生錯誤時，DiskPart 會繼續處理命令，就像未發生錯誤一樣。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
+|   noerr    | 僅適用于腳本。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
   
 ## <a name="remarks"></a>備註  
   
@@ -58,7 +54,7 @@ extend filesystem [noerr]
   
 -   分割區必須具有相關聯的磁片區，才能進行擴充。  
   
-## <a name="BKMK_examples"></a>典型  
+## <a name="examples"></a><a name=BKMK_examples></a>典型  
 若要將焦點延伸到 500 mb 的磁片區或磁碟分割，請在磁片3上輸入：  
   
 ```  
@@ -71,8 +67,8 @@ extend size=500 disk=3
 extend filesystem  
 ```  
   
-#### <a name="additional-references"></a>其他參考  
-[命令列語法關鍵](command-line-syntax-key.md)  
+## <a name="additional-references"></a>其他參考資料  
+- [命令列語法關鍵](command-line-syntax-key.md)  
   
 
   

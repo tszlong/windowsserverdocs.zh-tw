@@ -2,18 +2,18 @@
 title: 鏡像加速的同位
 ms.prod: windows-server
 ms.author: gawatu
-ms.manager: masriniv
+manager: masriniv
 ms.technology: storage-file-systems
 ms.topic: article
 author: gawatu
 ms.date: 10/17/2018
 ms.assetid: ''
-ms.openlocfilehash: 2721f1c744c5c03d8e4bce0508fd23fa5237f95f
-ms.sourcegitcommit: 9a6a692a7b2a93f52bb9e2de549753e81d758d28
+ms.openlocfilehash: 752073e4f12db3b994261a70a9306d45b9a00d77
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72591090"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861511"
 ---
 # <a name="mirror-accelerated-parity"></a>鏡像加速的同位
 
@@ -53,17 +53,17 @@ ReFS 會即時在鏡像和同位之間主動循環資料。 這可讓連入寫�
 
     - **1a.** 如果連入寫入修改鏡像上的現有資料，ReFS 會就地修改資料。
     - **1a-1b.** 如果連入寫入是新的寫入，且 ReFS 可以在鏡像中成功找到服務這個寫入的足夠空間，則 ReFS 將會寫入鏡像。
-    ![Write 對鏡像 ](media/mirror-accelerated-parity/Write-to-Mirror.png)
+    ![的寫入鏡像](media/mirror-accelerated-parity/Write-to-Mirror.png)
 
 2. **寫入鏡像，從同位重新配置：**
 
     如果傳入的寫入會修改同位檢查中的資料，且 ReFS 可以成功地在鏡像中找到足夠的可用空間，以服務傳入的寫入，則 ReFS 會先使先前的資料在同位檢查中失效，然後寫入鏡像。 這個失效動作是快速又便宜的中繼資料操作，可協助有意義地改善對同位的寫入效能。
-    ![Reallocated-寫入 ](media/mirror-accelerated-parity/Reallocated-Write.png)
+    ![重新配置-寫入](media/mirror-accelerated-parity/Reallocated-Write.png)
 
 3. **寫入同位檢查：**
     
     如果 ReFS 無法在鏡像中成功找到足夠空間，則 ReFS 會將新資料寫入同位，或直接在同位中修改現有資料。 下方的＜效能最佳化＞章節提供協助將寫入同位最小化的指導方針。
-    ![Write 對同位檢查 ](media/mirror-accelerated-parity/Write-to-Parity.png)
+    ![寫入同位](media/mirror-accelerated-parity/Write-to-Parity.png)
 
 **讀取：** ReFS 會直接從包含相關資料的層讀取。 如果同位是以 HDD 建構，則「儲存空間直接存取」中的快取會快取此資料來加快未來的讀取。 
 
@@ -153,7 +153,7 @@ Resize-StorageTier -InputObject (Get-StorageTier -FriendlyName “Performance”
 New-Volume – FriendlyName “TestVolume” -FileSystem CSVFS_ReFS -StoragePoolFriendlyName “StoragePoolName” -StorageTierFriendlyNames Performance, Capacity -StorageTierSizes 200GB, 800GB
 ```
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 -   [ReFS 總覽](refs-overview.md)
 -   [ReFS 區塊複製](block-cloning.md)

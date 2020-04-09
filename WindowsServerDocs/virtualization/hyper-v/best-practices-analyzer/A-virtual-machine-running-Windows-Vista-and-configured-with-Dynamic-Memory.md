@@ -2,20 +2,19 @@
 title: 執行 Windows Vista 並設定動態記憶體的虛擬機器應該使用建議的記憶體設定值
 description: 提供解決此最佳做法分析程式規則所回報之問題的指示。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: c35f08b2-e624-4811-a159-c1e5bb6d5281
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 0a9ce14c31d2ea6e26b03d5c430a428474255b84
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fb74b68a561c756845a746c0e745aabff24c5b27
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366583"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857851"
 ---
 # <a name="a-virtual-machine-running-windows-vista-and-configured-with-dynamic-memory-should-use-recommended-values-for-memory-settings"></a>執行 Windows Vista 並設定動態記憶體的虛擬機器應該使用建議的記憶體設定值
 
@@ -28,7 +27,7 @@ ms.locfileid: "71366583"
 |**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
 |**低於**|警告|  
-|**類別**|設定|  
+|**類別**|組態|  
   
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   
@@ -55,7 +54,7 @@ ms.locfileid: "71366583"
   
 5.  在 [**動態記憶體**] 底下，將 [**最小 ram** ] 變更為至少 256 MB，並將 [**最大 RAM** ] 設為 1 GB  
   
-6.  按一下 **\[確定\]** 。  
+6.  按一下 [確定]。  
   
 ### <a name="increase-memory-using-windows-powershell"></a>使用 Windows PowerShell 增加記憶體  
   

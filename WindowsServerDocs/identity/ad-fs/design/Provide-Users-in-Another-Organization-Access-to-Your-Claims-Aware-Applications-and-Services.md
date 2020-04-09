@@ -1,7 +1,6 @@
 ---
 ms.assetid: de7e1e4a-f96d-4b59-ac9b-f65f5d37a96f
 title: 為其他組織的使用者提供您的宣告感知應用程式與服務的存取權
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a0b2429599036f2893f23df7921a11c8232d9f67
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2e47197a980c9bcb576d6634a0031a8ae13afbfd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359075"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858601"
 ---
 # <a name="provide-users-in-another-organization-access-to-your-claims-aware-applications-and-services"></a>為其他組織的使用者提供您的宣告感知應用程式與服務的存取權
 
@@ -33,7 +32,7 @@ ms.locfileid: "71359075"
   
 -   **Active Directory Domain Services \(AD DS\)：** 資源夥伴同盟伺服器必須加入 Active Directory 網域。  
   
--   **周邊 DNS：** 網域名稱系統 \(DNS\) 應該包含簡單的主機 \(\) 資源記錄，讓用戶端電腦可以找到資源夥伴同盟伺服器和 Web 服務器。 DNS 伺服器可以裝載周邊網路也需要的其他 DNS 記錄。 如需詳細資訊，請參閱 [Name Resolution Requirements for Federation Servers](Name-Resolution-Requirements-for-Federation-Servers.md)。  
+-   **周邊 DNS：** 網域名稱系統 \(DNS\) 應該包含簡單的主機 \(\) 資源記錄，讓用戶端電腦可以找到資源夥伴同盟伺服器和 Web 服務器。 DNS 伺服器可以裝載周邊網路也需要的其他 DNS 記錄。 如需詳細資訊，請參閱[同盟伺服器的名稱解析需求](Name-Resolution-Requirements-for-Federation-Servers.md)。  
   
 -   **資源夥伴同盟伺服器：** 資源夥伴同盟伺服器會驗證帳戶夥伴所傳送 AD FS 權杖。 帳戶夥伴探索是透過此同盟伺服器執行。 如需詳細資訊，請參閱 [Review the Role of the Federation Server in the Resource Partner](Review-the-Role-of-the-Federation-Server-in-the-Resource-Partner.md)。  
   
@@ -47,5 +46,5 @@ ms.locfileid: "71359075"
   
 ![存取您的宣告](media/75358b16-2a6f-4e16-9cc4-b0e614480305.gif)  
   
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 [Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

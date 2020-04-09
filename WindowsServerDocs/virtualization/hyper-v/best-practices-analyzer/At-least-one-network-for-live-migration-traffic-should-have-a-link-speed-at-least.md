@@ -2,33 +2,32 @@
 title: 針對即時移轉流量，至少要有一個網路的連結速度至少必須為 1 Gbps
 description: 此最佳做法分析程式規則的線上版本文字。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 5714df3f-f810-4618-8c93-e24881651100
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 95066cc111fb91ac1d6745dfb93527735de92a69
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 04ce4ea86e39e8bd98216ae4e6b12899c9366421
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365294"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857821"
 ---
 # <a name="at-least-one-network-for-live-migration-traffic-should-have-a-link-speed-of-at-least-1-gbps"></a>針對即時移轉流量，至少要有一個網路的連結速度至少必須為 1 Gbps
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
 
   
 |屬性|詳細資料|  
 |-|-|  
-|**作業系統**|Windows Server 2016|  
+|**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
-|**Severity**|Error|  
-|**分類**|組態|  
+|**低於**|錯誤|  
+|**類別**|組態|  
   
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   

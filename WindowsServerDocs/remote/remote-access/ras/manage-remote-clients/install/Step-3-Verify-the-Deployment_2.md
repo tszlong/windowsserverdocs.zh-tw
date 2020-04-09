@@ -2,22 +2,18 @@
 title: 步驟3驗證部署
 description: 本主題是在 Windows Server 2016 中遠端系統管理 DirectAccess 用戶端指南的一部分。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6a78a078-d2e7-4cbd-b8d5-20cfb6d1524b
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: e1a8d3208acb0e0ce891e517492916357b9fbfcc
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 8b936b335d0f5d574edbc3ec7c88b7b36fcac767
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314349"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859151"
 ---
 # <a name="step-3-verify-the-deployment"></a>步驟3驗證部署
 

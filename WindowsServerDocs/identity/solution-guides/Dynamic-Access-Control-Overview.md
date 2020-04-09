@@ -1,7 +1,6 @@
 ---
 ms.assetid: 9ee8a6cb-7550-46e2-9c11-78d0545c3a97
 title: 動態存取控制概觀
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 343e51f113f54c3965ef45d49f5d8fd64c260991
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2374e2c8a1efb204dbae1ee633bc5ee41d049d57
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357506"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861171"
 ---
 # <a name="dynamic-access-control-overview"></a>動態存取控制概觀
 
@@ -40,12 +39,12 @@ Windows Server 2012 與 Windows 8 之前的 Windows 作業系統不支援動態�
   
 -   [建議的許可權](#BKMK_Permissions2)  
   
-### <a name="BKMK_Rules"></a>集中存取規則  
+### <a name="central-access-rules"></a><a name="BKMK_Rules"></a>集中存取規則  
 集中存取規則是授權規則的運算式，可以包含一或多個涉及使用者群組、使用者宣告、裝置宣告及資源內容的條件。 多個集中存取規則可以組成一個集中存取原則。  
   
 如果已針對網域定義了一或多個集中存取規則，檔案共用系統管理員便可將特定的規則與特定的資源和業務需求進行比對。  
   
-### <a name="BKMK_Policies"></a>集中存取原則  
+### <a name="central-access-policies"></a><a name="BKMK_Policies"></a>集中存取原則  
 集中存取原則是包含條件運算式的授權原則。 例如，假設組織有商務需求，將檔案中個人識別資訊（PII）的存取限制為只有檔案擁有者和人力資源（HR）部門的成員可以查看 PII 資訊。 這代表要套用至 PII檔案的全組織原則，而不論它們位於組織中檔案伺服器上的何處。 若要實作這個原則，組織需要能夠：  
   
 -   識別和標記包含 PII 的檔案。  
@@ -56,7 +55,7 @@ Windows Server 2012 與 Windows 8 之前的 Windows 作業系統不支援動態�
   
 集中存取原則就像是安全性保護傘，組織可以跨伺服器套用這個保護傘。 這些是套用到檔案和資料夾的本機存取原則或判別存取控制清單 (DACL) 以外 (但不取代) 的原則。  
   
-### <a name="BKMK_Claims"></a>退款  
+### <a name="claims"></a><a name="BKMK_Claims"></a>退款  
 宣告是由網域控制站所發佈的使用者、裝置或資源的相關資訊中一個獨特的部分。 使用者的標題、檔案的部門分類，或電腦的健全狀況狀態，都是宣告的有效範例。 實體可以包含一個以上的宣告，而且所有的宣告組合都可用來授權資源的存取。 下列宣告類型可以在支援的 Windows 版本中使用：  
   
 -   **使用者宣告** 與特定的使用者相關聯的 Active Directory 屬性。  
@@ -67,12 +66,12 @@ Windows Server 2012 與 Windows 8 之前的 Windows 作業系統不支援動態�
   
 宣告讓系統管理員能夠精確做出有關使用者、裝置及資源的整個組織或整個企業的聲明，並可合併到運算式、規則及原則中。  
   
-### <a name="BKMK_Expressions2"></a>運算式  
+### <a name="expressions"></a><a name="BKMK_Expressions2"></a>運算式  
 條件運算式是存取控制管理的增強功能，只有在符合特定條件 (例如，群組成員資格、位置或裝置的安全性狀態) 時，才允許或拒絕存取資源。 運算式是透過 Active Directory 管理中心 (ADAC) 中 ACL 編輯器或集中存取規則編輯器的 [進階安全性設定] 對話方塊來管理。  
   
 運算式可以協助系統管理員，在日漸複雜的商業環境中，利用彈性化條件來管理敏感性資源的存取。  
   
-### <a name="BKMK_Permissions2"></a>建議的許可權  
+### <a name="proposed-permissions"></a><a name="BKMK_Permissions2"></a>建議的許可權  
 建議的權限讓系統管理員能夠更準確地針對存取控制設定的潛在變更所造成的影響塑造模型，而不需實際變更它們。  
   
 預測資源的有效存取權，可以協助您在實作這些變更之前，先規劃和設定這些資源的權限。  

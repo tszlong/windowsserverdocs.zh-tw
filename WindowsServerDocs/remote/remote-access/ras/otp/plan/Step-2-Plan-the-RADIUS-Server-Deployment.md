@@ -2,22 +2,18 @@
 title: 步驟2規劃 RADIUS 伺服器部署
 description: 本主題是在 Windows Server 2016 中使用 OTP 驗證部署遠端存取指南的一部分。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2d6ad863-02a5-49b0-9aff-d189e78b2b80
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 44f8514bd046d2c5f526e85309af430383bf1ec1
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 1722b750405ea1188d18fab6282d82434f5334ef
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313572"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858171"
 ---
 # <a name="step-2-plan-the-radius-server-deployment"></a>步驟2規劃 RADIUS 伺服器部署
 

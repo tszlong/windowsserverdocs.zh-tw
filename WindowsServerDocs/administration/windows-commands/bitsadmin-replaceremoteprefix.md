@@ -1,51 +1,47 @@
 ---
 title: bitsadmin replaceremoteprefix
-description: 適用于**bitsadmin replaceremoteprefix**的 Windows 命令主題-遠端 URL 開頭為*OldPrefix*的作業中的所有檔案都會變更為使用*NewPrefix*。
-ms.custom: na
+description: 適用于**bitsadmin replaceremoteprefix**的 Windows 命令主題，視需要將作業中所有檔案的遠端 URL 從*oldprefix*變更為*newprefix*。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d0e0abb1-bdb4-4c74-abbc-16c809f5fd81
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ee896a337b571487797967d3ce0bf1f1b17e7507
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0cea0108a292815e31e893e91dc4079305c1da9a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71380805"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80849811"
 ---
 # <a name="bitsadmin-replaceremoteprefix"></a>bitsadmin replaceremoteprefix
 
-作業中其遠端 URL 開頭為*OldPrefix*的所有檔案都會變更為使用*NewPrefix*。
+視需要將作業中所有檔案的遠端 URL 從*oldprefix*變更為*newprefix*。
 
 ## <a name="syntax"></a>語法
 
 ```
-bitsadmin /ReplaceRemotePrefix <Job> <OldPrefix> <NewPrefix
+bitsadmin /replaceremoteprefix <job> <oldprefix> <newprefix>
 ```
 
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
-|參數|描述|
-|---------|-----------|
-|Job|作業的顯示名稱或 GUID|
-|OldPrefix|現有的 URL 前置詞|
-|NewPrefix|新的 URL 前置詞|
+| 參數 | 描述 |
+| -------------- | -------------- |
+| 工作 | 作業的顯示名稱或 GUID。 |
+| oldprefix | 現有的 URL 前置詞。 |
+| newprefix | 新的 URL 前置詞。 |
 
 ## <a name="examples"></a>範例
 
-下列範例會變更名為*myDownloadJob*之作業中的所有檔案，其遠端 URL 的開頭為 *http://stageserver* 到 *http://prodserver* 。
+下列範例會將名為*myDownloadJob*之作業中所有檔案的遠端 URL 從 *http://stageserver* 變更為 *http://prodserver* 。
 
 ```
-C:\>bitsadmin /ReplaceRemotePrefix myDownloadJob http://stageserver http://prodserver
+C:\>bitsadmin /replaceremoteprefix myDownloadJob http://stageserver http://prodserver
 ```
 
 ## <a name="additional-information"></a>其他資訊
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

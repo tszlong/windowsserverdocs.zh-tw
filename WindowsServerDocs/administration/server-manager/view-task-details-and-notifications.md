@@ -1,24 +1,20 @@
 ---
 title: 檢視工作詳細資料與通知
 description: 伺服器管理員
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 95117407-2dd3-4f9a-841f-4331be3544c3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a3dcbac95e60fce75316f8a4427aef54bdfad15b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0047a9f2d4b6b66cec85b2746b1975af2ced3316
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383016"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851451"
 ---
 # <a name="view-task-details-and-notifications"></a>檢視工作詳細資料與通知
 
@@ -50,8 +46,8 @@ ms.locfileid: "71383016"
 ## <a name="viewing-and-troubleshooting-tasks-by-using-task-details"></a>使用工作詳細資料來查看和疑難排解工作
 [**通知**] 功能表底部的 [工作**詳細資料**] 命令會開啟 [工作**詳細資料**] 對話方塊，其中提供工作事件（啟動、停止、警告、成功或失敗）的完整說明。 如同伺服器管理員中的其他清單控制項（例如 [**事件**]、[**服務**] 和 [**最佳做法分析**程式] 磚），您可以篩選和建立要在 [工作**詳細資料**] 對話方塊中所顯示工作上執行的查詢。 （如需在清單控制項上篩選和建立查詢的詳細資訊，請參閱[篩選、排序和查詢伺服器管理員磚中的資料](filter-sort-and-query-data-in-server-manager-tiles.md)）。在上方窗格中，您可以在 [**通知**] 功能表中顯示通知，並查看已產生有關相同工作的通知數目。 在上方窗格中選取通知時，會在下方窗格中顯示通知的完整詳細資料。
 
-下方窗格對於失敗工作的疑難排解尤其實用。 如果伺服器管理員無法連接或取得屬於伺服器集區成員之伺服器的資料，此窗格中的專案通常會包含詳細訊息，包括基礎 Windows 遠端系統管理（WinRM）、網路功能或安全性問題的完整文字。防止伺服器管理員與目標伺服器通訊。
+下方窗格對於失敗工作的疑難排解尤其實用。 如果伺服器管理員無法連接或取得屬於伺服器集區成員之伺服器的資料，此窗格中的專案通常會包含詳細訊息，包括基礎 Windows 遠端系統管理（WinRM）、網路功能，或導致伺服器管理員無法與目標伺服器通訊的安全性問題的完整文字。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 [在伺服器管理員磚中篩選、排序及查詢資料](filter-sort-and-query-data-in-server-manager-tiles.md)
 [伺服器管理員疑難排解指南](https://social.technet.microsoft.com/wiki/contents/articles/13443.windows-server-2012-server-manager-troubleshooting-guide-part-i-overview.aspx)

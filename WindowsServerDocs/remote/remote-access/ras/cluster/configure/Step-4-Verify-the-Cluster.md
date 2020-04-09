@@ -2,22 +2,18 @@
 title: 步驟4驗證叢集
 description: 本主題是在 Windows Server 2016 的叢集中部署遠端存取指南的一部分。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f22dcf10-b453-4664-a9ef-e40e95c72f63
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 16a31e5435bcb3f0fa3a332bba0e767beb913c08
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: c31db158856eb3c3881a36c29e40d1227116201f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308200"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855261"
 ---
 # <a name="step-4-verify-the-cluster"></a>步驟4驗證叢集
 

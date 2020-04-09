@@ -1,7 +1,6 @@
 ---
 ms.assetid: 01988844-df02-4952-8535-c87aefd8a38a
 title: Deploy Automatic File Classification (Demonstration Steps)
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 7b8d613653bc2effdae155d34a1a94a820bae3aa
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cc89e97aacab3b764df7314beeab701df846048a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357595"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861251"
 ---
 # <a name="deploy-automatic-file-classification-demonstration-steps"></a>Deploy Automatic File Classification (Demonstration Steps)
 
@@ -37,9 +36,9 @@ ms.locfileid: "71357595"
 -   [步驟4：確認檔案已分類](Deploy-Automatic-File-Classification--Demonstration-Steps-.md#BKMK_Step4)  
   
 > [!NOTE]  
-> 本主題包含可讓您用來將部分所述的程序自動化的 Windows PowerShell Cmdlet 範例。 如需詳細資訊，請參閱[使用 Cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693).  
+> 本主題包含可讓您用以自動化文中所述部分程序的範例 Windows PowerShell 指令程式。 如需詳細資訊，請參閱[使用 Cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
-## <a name="BKMK_Step1"></a>步驟1：建立資源屬性定義  
+## <a name="step-1-create-resource-property-definitions"></a><a name="BKMK_Step1"></a>步驟1：建立資源屬性定義  
 [影響] 和 [個人識別資訊] 資源內容已啟用，所以檔案分類基礎結構可以使用這些資源內容來標記網路共用資料夾上掃描到的檔案。  
   
 [使用 Windows PowerShell 執行此步驟](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1)  
@@ -58,14 +57,14 @@ ms.locfileid: "71357595"
   
 ![解決方案引導](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
   
-下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
+下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
   
 ```  
 Set-ADResourceProperty '"Enabled:$true '"Identity:'CN=Impact_MS,CN=Resource Properties,CN=Claims Configuration,CN=Services,CN=Configuration,DC=contoso,DC=com'   
 Set-ADResourceProperty '"Enabled:$true '"Identity:'CN=PII_MS,CN=Resource Properties,CN=Claims Configuration,CN=Services,CN=Configuration,DC=contoso,DC=com'  
 ```  
   
-## <a name="BKMK_Step2"></a>步驟2：建立字串內容分類規則  
+## <a name="step-2-create-a-string-content-classification-rule"></a><a name="BKMK_Step2"></a>步驟2：建立字串內容分類規則  
 字串內容分類規則會掃描檔案是否包含特定字串。 如果找到字串，則可以設定資源內容的值。 在此範例中，我們會掃描網路共用資料夾上的每個檔案，並尋找「Contoso 機密」字串。 如果找到字串，關聯的檔案會被分類為具有高商業影響。  
   
 [使用 Windows PowerShell 執行此步驟](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep2)  
@@ -74,15 +73,15 @@ Set-ADResourceProperty '"Enabled:$true '"Identity:'CN=PII_MS,CN=Resource Propert
   
 1.  以本機 Administrators 安全性群組成員的身分登入檔案伺服器。  
   
-2.  在 Windows PowerShell 命令提示字元中，輸入 **Update-FsrmClassificationPropertyDefinition** ，然後按下 ENTER。 這會將網域控制站上建立的內容定義與檔案伺服器同步。  
+2.  在 Windows PowerShell 命令提示字元中，輸入 **Update-FsrmClassificationPropertyDefinition**，然後按下 ENTER。 這會將網域控制站上建立的內容定義與檔案伺服器同步。  
   
 3.  開啟檔案伺服器資源管理員。 在 [伺服器管理員] 中按一下 [工具]，然後按一下 [檔案伺服器資源管理員]。  
   
 4.  展開 [分類管理]，以滑鼠右鍵按一下 [分類規則]，然後按一下 [設定分類排程]。  
   
-5.  選取 [啟用固定的排程] 核取方塊，選取 [允許對新檔案進行連續分類] 核取方塊，選擇每週中執行分類的日子，然後按一下 [確定]。  
+5.  選取 [啟用固定的排程] 核取方塊，選取 [允許對新檔案進行連續分類]核取方塊，選擇每週中執行分類的日子，然後按一下 [確定]。  
   
-6.  在 [分類規則]上按一下滑鼠右鍵，然後按一下 [建立分類規則]。  
+6.  在 [分類規則] 上按一下滑鼠右鍵，然後按一下 [建立分類規則]。  
   
 7.  在 [一般] 索引標籤的 [規則名稱] 方塊中，輸入規則的名稱，例如 **Contoso Confidential**。  
   
@@ -109,7 +108,7 @@ Set-ADResourceProperty '"Enabled:$true '"Identity:'CN=PII_MS,CN=Resource Propert
   
 ![解決方案引導](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
   
-下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
+下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
   
 ```  
 $date = Get-Date  
@@ -118,7 +117,7 @@ Set-FsrmClassification -Continuous -schedule $AutomaticClassificationScheduledTa
 New-FSRMClassificationRule -Name 'Contoso Confidential' -Property "Impact_MS" -PropertyValue "3000" -Namespace @('D:\Finance Documents') -ClassificationMechanism "Content Classifier" -Parameters @("StringEx=Min=1;Expr=Contoso Confidential") -ReevaluateProperty Overwrite  
 ```  
   
-## <a name="BKMK_Step3"></a>步驟3：建立正則運算式內容分類規則  
+## <a name="step-3-create-a-regular-expression-content-classification-rule"></a><a name="BKMK_Step3"></a>步驟3：建立正則運算式內容分類規則  
 規則運算式分類規則會掃描檔案，尋找符合規則運算式的模式。 如果找到符合規則運算式的字串，則可以設定資源內容的值。 在這個範例中，我們會掃描網路共用資料夾上的每個檔案，尋找符合身份證號碼 (XXX-XX-XXXX) 模式的字串。 如果找到這種模式，關聯的檔案會被分類為包含個人識別資訊。  
   
 [使用 Windows PowerShell 執行此步驟](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep3)  
@@ -131,7 +130,7 @@ New-FSRMClassificationRule -Name 'Contoso Confidential' -Property "Impact_MS" -P
   
 3.  開啟檔案伺服器資源管理員。 在 [伺服器管理員] 中按一下 [工具]，然後按一下 [檔案伺服器資源管理員]。  
   
-4.  在 [分類規則]上按一下滑鼠右鍵，然後按一下 [建立分類規則]。  
+4.  在 [分類規則] 上按一下滑鼠右鍵，然後按一下 [建立分類規則]。  
   
 5.  在 [一般] 索引標籤上的 [規則名稱] 方塊中，輸入分類規則的名稱，例如「PII 規則」。  
   
@@ -157,13 +156,13 @@ New-FSRMClassificationRule -Name 'Contoso Confidential' -Property "Impact_MS" -P
   
 ![解決方案引導](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
   
-下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
+下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
   
 ```  
 New-FSRMClassificationRule -Name "PII Rule" -Property "PII_MS" -PropertyValue "5000" -Namespace @('D:\Finance Documents') -ClassificationMechanism "Content Classifier" -Parameters @("RegularExpressionEx=Min=10;Expr=^(?!000)([0-7]\d{2}|7([0-7]\d|7[012]))([ -]?)(?!00)\d\d\3(?!0000)\d{4}$") -ReevaluateProperty Overwrite  
 ```  
   
-## <a name="BKMK_Step4"></a>步驟4：確認檔案已正確分類  
+## <a name="step-4-verify-that-the-files-are-classified-correctly"></a><a name="BKMK_Step4"></a>步驟4：確認檔案已正確分類  
 您可以檢視分類規則中指定的資料夾中建立的檔案的內容，確認檔案已正確分類。  
   
 #### <a name="to-verify-that-the-files-are-classified-correctly"></a>確認檔案正確分類  
@@ -184,7 +183,7 @@ New-FSRMClassificationRule -Name "PII Rule" -Property "PII_MS" -PropertyValue "5
   
 4.  按一下 [分類] 索引標籤，並確認已正確分類檔案。  
   
-## <a name="BKMK_Links"></a>另請參閱  
+## <a name="see-also"></a><a name="BKMK_Links"></a>另請參閱  
   
 -   [案例：使用分類深入瞭解您的資料](Scenario--Get-Insight-into-Your-Data-by-Using-Classification.md)  
   

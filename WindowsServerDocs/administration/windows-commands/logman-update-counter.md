@@ -1,28 +1,24 @@
 ---
 title: logman 更新計數器
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 607df6d5-876c-428d-a0b3-f59cb244e2ce britw
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8c0696b6077a919d93106cb39329c986e91883fa
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d93ea91fb1b5d105923457aeb8d5515e1ac5b9c5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374349"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840571"
 ---
 # <a name="logman-update-counter"></a>logman 更新計數器
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 更新現有的計數器資料收集器的屬性。  
 
@@ -30,7 +26,7 @@ ms.locfileid: "71374349"
 ```  
 logman update counter <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>參數  
+### <a name="parameters"></a>參數  
 
 |                    參數                     |                                                                               描述                                                                               |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -60,11 +56,11 @@ logman update counter <[-n] <name>> [options]
 
 ## <a name="remarks"></a>備註  
 其中列出 [-]，此選項會有額外的否定。  
-## <a name="BKMK_examples"></a>典型  
-下列命令會更新資料收集器 perf_log，將取樣間隔變更為10，並將記錄格式變更為 CSV，並以 mmddhhmm 格式將版本控制新增至記錄檔名稱。  
+## <a name="examples"></a><a name=BKMK_examples></a>典型  
+下列命令會更新資料收集器 perf_log、將取樣間隔變更為10，並將記錄格式變更為 CSV，並以 mmddhhmm 格式將版本設定新增至記錄檔名稱。  
 ```  
 logman update perf_log -si 10 -f csv -v mmddhhmm  
 ```  
-#### <a name="additional-references"></a>其他參考  
+## <a name="additional-references"></a>其他參考資料  
 [logman](logman.md)  
 [logman 建立計數器](logman-create-counter.md)  

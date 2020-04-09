@@ -1,28 +1,24 @@
 ---
 title: logman 更新追蹤
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b7111f7f-4162-4d1a-8e53-d766db0ede1f britw
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c28256826e341ce1421984025546421258bb1db7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8d619dc0c267351e842286044cc037e63c75740b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374275"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840511"
 ---
 # <a name="logman-update-trace"></a>logman 更新追蹤
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 更新現有事件追蹤資料收集器的屬性。  
 
@@ -30,7 +26,7 @@ ms.locfileid: "71374275"
 ```  
 logman update trace <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>參數  
+### <a name="parameters"></a>參數  
 
 |                         參數                          |                                                                                                                                                                                                                                                                                                                                描述                                                                                                                                                                                                                                                                                                                                |
 |------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -63,15 +59,15 @@ logman update trace <[-n] <name>> [options]
 |                           -[-] ul                           |                                                                                                                                                                                                                                                                                                                 在使用者模式中執行事件追蹤會話。                                                                                                                                                                                                                                                                                                                 |
 |                        -bs <value>                         |                                                                                                                                                                                                                                                                                                           指定事件追蹤會話緩衝區大小（以 kb 為單位）。                                                                                                                                                                                                                                                                                                            |
 |                       -nb <min max>                        |                                                                                                                                                                                                                                                                                                           指定事件追蹤會話緩衝區的數目。                                                                                                                                                                                                                                                                                                            |
-| -mode < globalsequence&#124;localsequence&#124;pagedmemory > | 指定事件追蹤會話記錄器模式。<br /><br />**Globalsequence**指定事件追蹤程式會將序號新增至它收到的每個事件，而不論哪一個追蹤會話接收到事件。<br /><br />**Localsequence**指定事件追蹤程式會為在特定追蹤會話收到的事件新增序號。 使用**localsequence**選項時，重複的序號可以存在於所有會話中，但在每個追蹤會話中都是唯一的。<br /><br />**Pagedmemory**指定事件追蹤程式會使用分頁記憶體，而不是預設的非分頁式記憶體集區來進行內部緩衝區配置。 |
+| -mode < globalsequence&#124;localsequence&#124;pagedmemory > | 指定事件追蹤會話記錄器模式。<p>**Globalsequence**指定事件追蹤程式會將序號新增至它收到的每個事件，而不論哪一個追蹤會話接收到事件。<p>**Localsequence**指定事件追蹤程式會為在特定追蹤會話收到的事件新增序號。 使用**localsequence**選項時，重複的序號可以存在於所有會話中，但在每個追蹤會話中都是唯一的。<p>**Pagedmemory**指定事件追蹤程式會使用分頁記憶體，而不是預設的非分頁式記憶體集區來進行內部緩衝區配置。 |
 
 ## <a name="remarks"></a>備註  
 其中列出 [-]，此選項會有額外的否定。  
-## <a name="BKMK_examples"></a>典型  
-下列命令會更新現有的資料收集器 perf_log、將最大記錄檔大小變更為 10 MB、將記錄檔格式更新為 CSV，以及以 mmddhhmm 格式附加檔案版本設定。  
+## <a name="examples"></a><a name=BKMK_examples></a>典型  
+下列命令會更新現有的資料收集器 perf_log、將記錄檔大小上限變更為 10 MB、將記錄檔格式更新為 CSV，以及以 mmddhhmm 的格式附加檔案版本設定。  
 ```  
 logman update perf_log -max 10 -f csv -v mmddhhmm  
 ```  
-#### <a name="additional-references"></a>其他參考  
+## <a name="additional-references"></a>其他參考資料  
 [logman](logman.md)  
 [logman 建立追蹤](logman-create-trace.md)  

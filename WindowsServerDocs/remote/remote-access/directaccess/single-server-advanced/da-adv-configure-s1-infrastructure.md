@@ -2,22 +2,18 @@
 title: 步驟1設定 Advanced DirectAccess 基礎結構
 description: 本主題是使用 Windows Server 2016 部署單一 DirectAccess 伺服器與 Advanced Settings 指南的一部分
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 43abc30a-300d-4752-b845-10a6b9f32244
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: c5ab8e089d3cf5fd8f9ed53f7f67cc47a8c17f70
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 0e6e368c75f45e23fb229de409ff51b76f4ec53c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309185"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861491"
 ---
 # <a name="step-1-configure-advanced-directaccess-infrastructure"></a>步驟1設定 Advanced DirectAccess 基礎結構
 

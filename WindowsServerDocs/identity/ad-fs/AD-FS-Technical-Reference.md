@@ -1,7 +1,6 @@
 ---
 ms.assetid: e2c940f5-4b1f-457a-bc71-dcced0c752f7
 title: AD FS 技術參考
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 29c52b21e5bb30fc54c2f561015c64ae93447836
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 54d97a0dc9e4c752f4b5141fba015edc4ed4d8b4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408563"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854141"
 ---
 # <a name="ad-fs-technical-reference"></a>AD FS 技術參考
 
@@ -30,7 +29,7 @@ ms.locfileid: "71408563"
 > 您可以在 Microsoft TechNet Wiki 上的 [AD FS 2.0 內容地圖](https://social.technet.microsoft.com/wiki/contents/articles/2735.ad-fs-2-0-content-map.aspx)頁面找到其他 AD FS 2.0 設計內容。 此頁面由 AD FS 2.0 社群成員負責管理，而 AD FS 產品團隊也會定期監控。
 
 ## <a name="see-also"></a>另請參閱
-[Active Directory 同盟服務總覽](AD-FS-2016-Overview.md)
+[Active Directory Federation Services 概觀](AD-FS-2016-Overview.md)
 
 
 

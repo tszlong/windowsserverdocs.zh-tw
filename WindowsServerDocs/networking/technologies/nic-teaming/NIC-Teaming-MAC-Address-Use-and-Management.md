@@ -2,22 +2,18 @@
 title: NIC 小組 MAC 位址使用和管理
 description: 當您使用「交換器獨立模式」設定 NIC 小組，並使用「位址雜湊」或「動態」負載散發時，小組會在輸出流量上使用主要 NIC 小組成員的媒體存取控制（MAC）位址。 主要 NIC 小組成員是由一組初始小組成員的作業系統選取的網路介面卡。
 manager: dougkim
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-nict
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 26d105e0-afc3-44b5-bb5e-0c884a4c5d62
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d8e7130d5774c19cc3d51045786bfef319cf7d16
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: a1671b16bdadfcd159bc728f2d39ec45ad82fc0f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316438"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854721"
 ---
 # <a name="nic-teaming-mac-address-use-and-management"></a>NIC 小組 MAC 位址使用和管理
 

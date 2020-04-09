@@ -1,7 +1,6 @@
 ---
 ms.assetid: 777aab65-c9c7-4dc9-a807-9ab73fac87b8
 title: 設定 AD FS 外部網路鎖定保護
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 02/01/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: bb5958f8205271fe3ab2258ed9812ae03f2a0be0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: defe77972dd66f4de27b38bfad3fb172c1f7bee0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358206"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859911"
 ---
 # <a name="configure-ad-fs-extranet-lockout-protection"></a>設定 AD FS 外部網路鎖定保護
 

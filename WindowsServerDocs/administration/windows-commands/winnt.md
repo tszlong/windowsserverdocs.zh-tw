@@ -1,24 +1,20 @@
 ---
 title: winnt
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: Winnt 的 Windows 命令主題已被取代，在未來的 Windows 版本中不保證會受到支援。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3bf6e792-befb-435c-8fa3-940a45a98adb
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fc4e50b6fbf8598bf14bbe281f53830dd10d4c5b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ee7fdccef796ececf5464fb5cefe64c93c6509d7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362042"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829181"
 ---
 # <a name="winnt"></a>winnt
 

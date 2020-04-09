@@ -2,19 +2,17 @@
 title: 規劃使用離散裝置指派來部署裝置
 description: 瞭解在 Windows Server 中的 DDA 運作方式
 ms.prod: windows-server
-ms.service: na
 ms.technology: hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
 ms.date: 08/21/2019
-ms.openlocfilehash: 114dd87b86bfffd1070229af57ae65deea2c2db0
-ms.sourcegitcommit: 81198fbf9e46830b7f77dcd345b02abb71ae0ac2
+ms.openlocfilehash: 9cc9614524c424398df550351aa2abfa7d173d43
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72923868"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856091"
 ---
 # <a name="plan-for-deploying-devices-using-discrete-device-assignment"></a>規劃使用離散裝置指派來部署裝置
 >適用于： Microsoft Hyper-v Server 2016、Windows Server 2016、Microsoft Hyper-v Server 2019、Windows Server 2019
@@ -29,11 +27,11 @@ ms.locfileid: "72923868"
 第1代或第二部 Vm 支援個別的裝置指派。  此外，支援的來賓包括 Windows 10、Windows Server 2019、Windows Server 2016、已套用[KB 3133690](https://support.microsoft.com/kb/3133690)的 windows server 2012r2，以及[Linux OS](../supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows.md)的各種發行版本。
 
 ## <a name="system-requirements"></a>系統需求
-除了[Windows Server 的系統需求](../../../get-started/System-Requirements--and-Installation.md)和[Hyper-v 的系統需求](../System-requirements-for-Hyper-V-on-Windows.md)之外，離散裝置指派需要能夠授與作業系統控制以設定 PCIe 的伺服器類別硬體網狀架構（原生 PCI Express 控制項）。 此外，PCIe Root 複雜，必須支援「存取控制服務」（ACS），這可讓 Hyper-v 透過 i/o MMU 強制所有的 PCIe 流量。
+除了[Windows Server 的系統需求](../../../get-started/System-Requirements--and-Installation.md)和[Hyper-v 的系統需求](../System-requirements-for-Hyper-V-on-Windows.md)之外，離散裝置指派需要能夠授與作業系統控制的伺服器類別硬體，使其無法設定 PCIe 網狀架構（原生 PCI Express 控制）。 此外，PCIe Root 複雜，必須支援「存取控制服務」（ACS），這可讓 Hyper-v 透過 i/o MMU 強制所有的 PCIe 流量。
 
 這些功能通常不會直接在伺服器的 BIOS 中公開，而且通常會隱藏在其他設定後面。  例如，SR-IOV 支援需要相同的功能，而且在 BIOS 中，您可能需要設定「啟用 SR-IOV」。  如果您無法在 BIOS 中識別正確的設定，請與您的系統廠商聯繫。
 
-為了協助確保硬體能夠進行不連續的裝置指派，我們的工程師結合了一組[電腦設定檔腳本](#machine-profile-script)，可讓您在已啟用 hyper-v 的主機上執行，以測試您的伺服器是否已正確設定以及有哪些裝置能夠使用離散裝置指派。
+為了協助確保硬體能夠進行不連續的裝置指派，我們的工程師結合了一組[電腦設定檔腳本](#machine-profile-script)，可讓您在已啟用 hyper-v 的主機上執行，以測試您的伺服器是否已正確設定，以及哪些裝置可以進行不同的裝置指派。
 
 ## <a name="device-requirements"></a>裝置需求
 並非每個 PCIe 裝置都可以與個別的裝置指派搭配使用。  例如，不支援利用舊版（INTx） PCI 中斷的舊版裝置。 Jake Oshin 的[blog 文章](https://blogs.technet.microsoft.com/virtualization/2015/11/20/discrete-device-assignment-machines-and-devices/)會更詳細說明-不過，針對取用者，執行[電腦設定檔腳本](#machine-profile-script)會顯示哪些裝置可以用於個別的裝置指派。

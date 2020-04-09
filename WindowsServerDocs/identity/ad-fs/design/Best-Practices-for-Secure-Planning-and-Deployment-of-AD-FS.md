@@ -1,7 +1,6 @@
 ---
 ms.assetid: 963a3d37-d5f1-4153-b8d5-2537038863cb
 title: 安全規劃和部署 AD FS 的最佳做法
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: be488ccffee7b267d2a3a120b85436abf206f65a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bcddb3cc7534f45f0a84e25a6174648f1e3b82af
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359196"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858411"
 ---
 # <a name="best-practices-for-secure-planning-and-deployment-of-ad-fs"></a>安全規劃和部署 AD FS 的最佳做法
 
@@ -57,12 +56,12 @@ ms.locfileid: "71359196"
   
     下表說明如何根據您在安裝 AD FS 的電腦上選擇的 AD FS 伺服器角色，來登錄適當的 SCW 角色延伸。  
   
-    |AD FS 伺服器角色|使用的 AD FS 設定資料庫|在命令提示字元中輸入下列命令：|  
+    |AD FS 伺服器角色|使用的 AD FS 設定資料庫|在命令提示字元中，輸入下列命令：|  
     |---------------------|-------------------------------------|---------------------------------------------------|  
     |獨立同盟伺服器|Windows 內部資料庫|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwStandAlone.xml"`|  
     |已加入伺服陣列的同盟伺服器|Windows 內部資料庫|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwFarm.xml"`|  
     |已加入伺服陣列的同盟伺服器|SQL Server|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwSQLFarm.xml"`|  
-    |同盟伺服器 Proxy|不適用|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwProxy.xml"`|  
+    |同盟伺服器 Proxy|N/A|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwProxy.xml"`|  
   
     如需您可以與 AD FS 搭配使用之資料庫的相關詳細資訊，請參閱 [AD FS 設定資料庫的角色](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)。  
   
@@ -87,7 +86,7 @@ ms.locfileid: "71359196"
   
     |參數值|安全性層級|保護設定|  
     |-------------------|------------------|----------------------|  
-    |必要|會完全強化伺服器。|會強制執行且一律必須強制執行延伸的保護。|  
+    |要求|會完全強化伺服器。|會強制執行且一律必須強制執行延伸的保護。|  
     |允許|會部分強化伺服器。|若已修補所涉及的系統來支援此功能，即會強制執行延伸的保護。|  
     |無|伺服器容易受到攻擊。|不會強制執行延伸的保護。|  
   
@@ -114,7 +113,7 @@ ms.locfileid: "71359196"
      若為 Windows Server 2016 上的 AD FS 外部網路智慧鎖定，請參閱[AD FS 外部網路智慧鎖定保護](../../ad-fs/operations/Configure-AD-FS-Extranet-Smart-Lockout-Protection.md)。  
   
 ## <a name="sql-serverspecific-security-best-practices-for-ad-fs"></a>適用於 AD FS 的 SQL Server 特定的安全性最佳做法  
-當使用這些資料庫技術來管理 AD FS 設計和部署中的資料時，下列安全性最佳做法是使用 Microsoft SQL Server®或 Windows 內部資料庫（WID）所特有。  
+當使用這些資料庫技術來管理 AD FS 設計和部署中的資料時，下列安全性最佳做法是使用 Microsoft SQL Server&reg; 或 Windows 內部資料庫（WID）所特有。  
   
 > [!NOTE]  
 > 這些建議的用意是要延伸 (而非取代) SQL Server 產品安全性指導方針。 如需有關規劃安全 SQL Server 安裝的詳細資訊，請參閱安全[SQL 安裝的安全性考慮](https://go.microsoft.com/fwlink/?LinkID=139831)（ https://go.microsoft.com/fwlink/?LinkID=139831)。  
@@ -125,7 +124,7 @@ ms.locfileid: "71359196"
   
 -   **在服務帳戶下執行 SQL Server，而不是使用內建的預設系統服務帳戶。**  
   
-    根據預設，通常會安裝並設定 SQL Server 來使用其中一個支援的內建系統帳戶，例如 LocalSystem 或 NetworkService 帳戶。 若要加強 AD FS 的 SQL Server 安裝的安全性，請盡可能使用個別服務帳戶來存取您的 SQL Server 服務，並在您的中註冊此帳戶的安全性主體名稱（SPN），藉以啟用 Kerberos 驗證。Active Directory 部署。 這會在用戶端和伺服器之間啟用相互驗證。 在沒有為個別服務帳戶登錄 SPN 的情況下，SQL Server 將針對 Windows 型驗證使用 NTLM，這只會驗證用戶端。  
+    根據預設，通常會安裝並設定 SQL Server 來使用其中一個支援的內建系統帳戶，例如 LocalSystem 或 NetworkService 帳戶。 若要加強 AD FS 的 SQL Server 安裝的安全性，請盡可能使用個別服務帳戶來存取您的 SQL Server 服務，並在您的 Active Directory 部署中註冊此帳戶的安全性主體名稱（SPN），藉以啟用 Kerberos 驗證。 這會在用戶端和伺服器之間啟用相互驗證。 在沒有為個別服務帳戶登錄 SPN 的情況下，SQL Server 將針對 Windows 型驗證使用 NTLM，這只會驗證用戶端。  
   
 -   **將 SQL Server 的介面區最小化。**  
   
@@ -149,5 +148,5 @@ ms.locfileid: "71359196"
   
     若要提供更安全的服務和資料隔離，您可以針對所有屬性存放區查閱命令建立預存程序。 您可以建立資料庫角色，然後授與權限以執行預存程序。 將 AD FS Windows 服務的服務識別指派給這個資料庫角色。 除了用於屬性查閱的適當預存程式以外，AD FS Windows 服務不能執行任何其他 SQL 語句。 以這種方式鎖定對 SQL Server 資料庫的存取，可降低受到「權限提高」攻擊的風險。  
   
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 [Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

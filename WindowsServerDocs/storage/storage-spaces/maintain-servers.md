@@ -2,24 +2,23 @@
 title: 將儲存空間直接存取伺服器離線以進行維護
 ms.prod: windows-server
 ms.author: eldenc
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
 ms.date: 10/08/2018
-Keywords: 儲存空間直接存取, S2D, 維護
 ms.assetid: 73dd8f9c-dcdb-4b25-8540-1d8707e9a148
 ms.localizationpriority: medium
-ms.openlocfilehash: 20439a06c255a73f20a297f765e6ed11abfde6f2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2ccf8d809354f96277701cd365966ba5e914f64b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402827"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857531"
 ---
 # <a name="taking-a-storage-spaces-direct-server-offline-for-maintenance"></a>將儲存空間直接存取伺服器離線以進行維護
 
-> 適用於：Windows Server 2019、Windows Server 2016
+> 適用于： Windows Server 2019、Windows Server 2016
 
 此主題說明如何使用 [直接儲存空間](storage-spaces-direct-overview.md) 正確地重新啟動或關閉伺服器。
 
@@ -72,7 +71,7 @@ Suspend-ClusterNode -Drain
 
 ![Pause-Drain](media/maintain-servers/pause-drain.png)
 
-所有虛擬機器都將開始即時移轉至叢集中的其他伺服器。 這可能需要數分鐘。
+所有虛擬機器都將開始即時移轉至叢集中的其他伺服器。 這可能需要幾分鐘的時間。
 
    > [!NOTE]
    > 當您正確暫停並清空叢集結點時，Windows 會執行自動安全檢查以確保該程序可繼續執行。 如果磁碟區狀況不良，它將會停止，並提醒您繼續執行並不安全。
@@ -83,7 +82,7 @@ Suspend-ClusterNode -Drain
 
 伺服器完成清空之後，將會在容錯移轉叢集管理員和 PowerShell 中顯示為 **\[已暫停\]** 。
 
-![已暫停](media/maintain-servers/paused.png)
+![暫停](media/maintain-servers/paused.png)
 
 您現在可以放心地像平常一樣重新啟動或將它關閉 (例如，使用 Restart-Computer 或 Stop-Computer PowerShell Cmdlet)。
 
@@ -155,7 +154,7 @@ MyVolume2    Mirror                InService         Warning      True          
 MyVolume3    Mirror                InService         Warning      True           1 TB
 ```
 
-一旦工作完成，請使用 `Get-VirtualDisk` Cmdlet 以再次確認磁碟區顯示為 **\[Healthy\]** 。 以下是一些輸出範例︰
+一旦工作完成，請使用 **Cmdlet 以再次確認磁碟區顯示為**\[Healthy\]`Get-VirtualDisk`。 以下是一些輸出範例︰
 
 ```
 FriendlyName ResiliencySettingName OperationalStatus HealthStatus IsManualAttach Size

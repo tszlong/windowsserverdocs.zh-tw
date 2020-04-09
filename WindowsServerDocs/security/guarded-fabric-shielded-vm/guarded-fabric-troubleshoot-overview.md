@@ -1,18 +1,18 @@
 ---
 title: 針對受防護網狀架構進行疑難排解
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 55e954ec-6a5f-4b42-b6a7-1006f3e24556
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: 0da623cc0cd5de5a9b9f31a819a9ad3a4a08b9f8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f55b7a81f57c2f7087f3f236813c3ef3c6508036
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403468"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856381"
 ---
 # <a name="troubleshooting-a-guarded-fabric"></a>針對受防護網狀架構進行疑難排解
 

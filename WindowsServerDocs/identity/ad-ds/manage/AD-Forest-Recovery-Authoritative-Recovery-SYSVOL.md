@@ -1,6 +1,5 @@
 ---
 title: AD 樹系復原-SYSVOL 的授權同步
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 38a1c543-c76d-4b8e-a06b-53742aaa172f
 ms.technology: identity-adds
-ms.openlocfilehash: 051e3fdb1c801ab6f19b276b66599ea555026845
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4c797c98fc8d41621954077ebf470f1f52604cf7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369379"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824301"
 ---
 # <a name="ad-forest-recovery---performing-an-authoritative-synchronization-of-dfsr-replicated-sysvol"></a>AD 樹系復原-執行 DFSR 複寫 SYSVOL 的授權同步處理  
 
->適用於：Windows Server 2016、Windows Server 2012 及 2012 R2、Windows Server 2008 和 2008 R2
+>適用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
 有不同的方式可執行 SYSVOL 的授權還原。 您可以編輯**MsDFSR 選項**屬性，或使用 wbadmin – authsysvol 來執行系統狀態還原。 如果您可以選擇還原系統狀態備份（亦即，您要將 AD DS 還原至相同的硬體和作業系統實例），則使用 wbadmin – authsysvol 比較簡單。 但是，如果您需要執行裸機還原，則需要編輯**MsDFSR 選項**屬性。  
 

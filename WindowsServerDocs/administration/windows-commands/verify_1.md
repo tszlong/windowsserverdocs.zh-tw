@@ -1,24 +1,20 @@
 ---
 title: verify
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: 適用于 verify 的 Windows 命令主題會告訴**cmd** ，是否要確認您的檔案已正確寫入至磁片。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dfe8bc91-d948-4e47-84ad-a79a60506ffa
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 840fd3609ed3aded1c9cfebd4e395ddcc6d5588b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 91a0777999a604a23e2de83eda6b89c926cb241c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71363097"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80830051"
 ---
 # <a name="verify"></a>verify
 
@@ -34,14 +30,14 @@ ms.locfileid: "71363097"
 verify [on | off]
 ```
 
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
 |[on \| off]|將 [**驗證**] 設定設為 [開啟] 或 [關閉]。|
 |/?|在命令提示字元顯示說明。|
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 若要顯示 [目前的**驗證**] 設定，請輸入：
 ```
@@ -52,6 +48,6 @@ verify
 Verify on
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

@@ -2,33 +2,32 @@
 title: Hyper-v 虛擬機器管理服務必須正在執行
 description: 提供解決此最佳做法分析程式規則所回報之問題的指示。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: f44d6887-6458-4438-9d93-574587e3f7d1
-author: KBDAzure
+author: kbdazure
 ms.date: 10/03/2016
-ms.openlocfilehash: de1e2ed9fc24afe7d1ccc12bc11eb94a846f0664
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 50f101f9dad824e13fa5827175cc1c944a96a91b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364685"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859321"
 ---
 # <a name="the-hyper-v-virtual-machine-management-service-must-be-running"></a>Hyper-v 虛擬機器管理服務必須正在執行
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
   
 如需最佳做法和掃描的詳細資訊，請參閱 [最佳做法分析程式](https://go.microsoft.com/fwlink/?LinkId=122786)。  
   
 |屬性|詳細資料|  
 |-|-|  
-|**作業系統**|Windows Server 2016|  
+|**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
-|**Severity**|Error|  
-|**分類**|必要條件|  
+|**低於**|錯誤|  
+|**類別**|必要條件|  
 
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。
 
@@ -52,7 +51,7 @@ ms.locfileid: "71364685"
 若要安裝 Hyper-v 管理工具：  
 >   
 > - 在 Windows Server 上，開啟伺服器管理員並使用 [新增角色及功能]。 如需詳細資訊，請參閱[在 Windows Server 2016 上安裝 hyper-v 角色](../get-started/Install-the-Hyper-V-role-on-Windows-Server.md)。  您也可以使用 PowerShell 來安裝工具（`Install-WindowsFeature -Name Hyper-V-Tools, Hyper-V-PowerShell`） 
-> - 在 Windows 上，從桌面開始輸入**程式**，按一下 [**程式和功能**] （控制台） >**開啟或關閉 Windows 功能** > **hyper-v** > **hyper-v 管理工具**。 然後按一下 **[確定]** 。  
+> - 在 Windows 上，從桌面開始輸入**程式**，按一下 **程式和功能** （控制台） >**開啟或關閉 Windows 功能** > **hyper-v** > **hyper-v 管理工具**。 然後按一下 **[確定]** 。  
   
 ### <a name="to-reconfigure-the-service-to-start-automatically-using-the-services-desktop-app"></a>若要將服務重新設定為使用服務桌面應用程式自動啟動  
   
@@ -82,7 +81,7 @@ ms.locfileid: "71364685"
     sc start vmms  
     ```  
   
-如果服務已設定為自動啟動，而您只需要重新開機服務，您可以從 [Hyper-v 管理員] 或從上面顯示的 [sc start vmms] 命令來執行此動作。  
+如果服務已設定為自動啟動，而您只需要重新開機服務，您可以從 [Hyper-v 管理員] 或從上面顯示的 sc start vmms 命令來執行此動作。  
   
 #### <a name="to-restart-the-service-from-hyper-v-manager"></a>從 Hyper-v 管理員重新開機服務  
   

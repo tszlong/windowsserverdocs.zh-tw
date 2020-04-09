@@ -1,24 +1,20 @@
 ---
 title: ksetup
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4e046f8a-811b-48dc-9a69-18d8e097f353
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 265f67bff65794938485472a41064837551c7699
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b3c61fd81691f9db44330eddbf40d4212d1786ff
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374803"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80841251"
 ---
 # <a name="ksetup"></a>ksetup
 
@@ -55,7 +51,7 @@ ksetup
 
 ```
 
-### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -81,7 +77,7 @@ ksetup
 |[Ksetup:getenctypeattr](ksetup-getenctypeattr.md)|取得網域的加密類型信任屬性。|
 |[Ksetup:addenctypeattr](ksetup-addenctypeattr.md)|將加密類型新增至網域的加密類型信任屬性。|
 |[Ksetup:delenctypeattr](ksetup-delenctypeattr.md)|刪除網域的加密類型信任屬性。|
-|/?|在命令提示字元顯示 [說明]。|
+|/?|在命令提示字元中顯示說明。|
 
 ## <a name="remarks"></a>備註
 
@@ -91,6 +87,6 @@ ksetup
 
 Kerberos 第5版通訊協定是執行 Windows XP Professional、Windows Vista 和 Windows 7 之電腦上的網路驗證預設值。 Kerberos SSP 會在登錄中搜尋使用者領域的功能變數名稱，然後藉由查詢 DNS 伺服器，將名稱解析成 IP 位址。 Kerberos 通訊協定可以使用 DNS 來尋找 Kdc，方法是只使用領域名稱，但必須特別設定才能執行這項操作。
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
--   [命令列語法關鍵](command-line-syntax-key.md)
+-   - [命令列語法關鍵](command-line-syntax-key.md)

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 8738c03d-6ae8-49a7-8b0c-bef7eab81057
 title: 部署集中存取原則 (示範步驟)
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 09b7edcd843dfe65d7e2391612f029cf18b633ec
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5f4d94facc57cf2b71d6d546b4a2b60253ff58fe
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357504"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861201"
 ---
 # <a name="deploy-a-central-access-policy-demonstration-steps"></a>部署集中存取原則 (示範步驟)
 
@@ -31,28 +30,28 @@ ms.locfileid: "71357504"
 |[部署集中存取原則](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.4)|部署原則。  
 |[維護：變更和暫存原則](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.5)|原則變更和預備。 
 
-## <a name="BKMK_1.1"></a>設定測試環境  
+## <a name="set-up-a-test-environment"></a><a name="BKMK_1.1"></a>設定測試環境  
 在開始之前，您需要設定測試此案例的實驗室。 [附錄 B：設定測試環境](Appendix-B--Setting-Up-the-Test-Environment.md)中會詳細說明設定實驗室的步驟。  
 
-## <a name="BKMK_1.2"></a>規劃：識別原則的需求和部署所需的設定  
+## <a name="plan-identify-the-need-for-policy-and-the-configuration-required-for-deployment"></a><a name="BKMK_1.2"></a>規劃：識別原則的需求和部署所需的設定  
 本節提供一系列高階步驟，協助部署的規劃階段。  
 
 ||步驟|範例|  
 |-|--------|-----------|  
 |1.1|公司決定需要集中存取原則。|為了保護儲存在檔案伺服器的財務資訊，財務部門安全性作業使用中央資訊安全性，指定需要集中存取原則。|  
 |1.2|表達存取原則|財務文件只應該由財務部門的成員讀取。 財務部門的成員應該只能存取他們自己國家/地區的文件。 只有財務系統管理員具有寫入存取權。 對於 FinanceException 群組的成員，可允許例外狀況。 此群組將具有讀取存取權。|  
-|1.3|在 Windows Server 2012 結構中表達存取原則|目標：<br /><br />-Resource. 部門包含財務<br /><br />存取規則：<br /><br />-允許讀取使用者。國家/地區 = 資源。國家/地區和使用者. 部門 = 資源部門<br />-允許完全控制使用者。 MemberOf （FinanceAdmin）<br /><br />例外狀況：<br /><br />Allow read memberOf(FinanceException)|  
-|1.4|決定原則所需的檔案屬性|標記檔案：<br /><br />-部門<br />-國家/地區|  
-|1.5|判斷原則所需的宣告類型和群組|宣告類型：<br /><br />-國家/地區<br />-部門<br /><br />使用者群組：<br /><br />-FinanceAdmin<br />-FinanceException|  
+|1.3|在 Windows Server 2012 結構中表達存取原則|目標：<p>-Resource. 部門包含財務<p>存取規則：<p>-允許讀取使用者。國家/地區 = 資源。國家/地區和使用者. 部門 = 資源部門<br />-允許完全控制使用者。 MemberOf （FinanceAdmin）<p>例外狀況：<p>Allow read memberOf(FinanceException)|  
+|1.4|決定原則所需的檔案屬性|標記檔案：<p>-部門<br />-國家/地區|  
+|1.5|判斷原則所需的宣告類型和群組|宣告類型：<p>-國家/地區<br />-部門<p>使用者群組：<p>-FinanceAdmin<br />-FinanceException|  
 |1.6|決定要套用此原則的伺服器|將原則套用到所有的財務檔案伺服器。|  
 
-## <a name="BKMK_1.3"></a>執行：設定元件和原則  
+## <a name="implement-configure-the-components-and-policy"></a><a name="BKMK_1.3"></a>執行：設定元件和原則  
 本節說明部署財務文件集中存取原則的範例。  
 
-|不可以|步驟|範例|  
+|否|步驟|範例|  
 |------|--------|-----------|  
-|2.1|建立宣告類型|建立下列宣告類型：<br /><br />-部門<br />-國家/地區|  
-|2.2|建立資源內容|建立並啟用下列資源內容：<br /><br />-部門<br />-國家/地區|  
+|2.1|建立宣告類型|建立下列宣告類型：<p>-部門<br />-國家/地區|  
+|2.2|建立資源內容|建立並啟用下列資源內容：<p>-部門<br />-國家/地區|  
 |2.3|設定集中存取規則|建立包含上節決定之原則的財務文件規則。|  
 |2.4|設定集中存取原則 (CAP)|建立稱為「財務原則」的 CAP，並將「財務文件」規則新增到該 CAP。|  
 |2.5|檔案伺服器的目標集中存取原則|將財務原則 CAP 發佈至檔案伺服器。|  
@@ -73,7 +72,7 @@ ms.locfileid: "71357504"
    > [!TIP]  
    > 您也可以從 [工作] 窗格開啟 [建立宣告類型:] 視窗。 在 [工作] 窗格中，依序按一下 [新增] 和 [宣告類型]。  
 
-4. 在 [來源屬性] 清單中，向下捲動屬性清單，按一下 [部門]。 如此會在 [顯示名稱] 欄位填入 [部門]。 按一下 **\[確定\]** 。  
+4. 在 [來源屬性] 清單中，向下捲動屬性清單，按一下 [部門]。 如此會在 [顯示名稱] 欄位填入 [部門]。 按一下 [確定]。  
 
 5. 在 [工作] 窗格中，依序按一下 [新增] 和 [宣告類型]。  
 
@@ -87,7 +86,7 @@ ms.locfileid: "71357504"
 
 ![解決方案引導](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
 
-下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
+下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
 
 
     New-ADClaimType country -SourceAttribute c -SuggestedValues:@((New-Object Microsoft.ActiveDirectory.Management.ADSuggestedValueEntry("US","US","")), (New-Object Microsoft.ActiveDirectory.Management.ADSuggestedValueEntry("JP","JP","")))  
@@ -117,13 +116,13 @@ ms.locfileid: "71357504"
 
 6.  在 Active Directory 管理中心內瀏覽窗格上的 [資源內容] 清單中，現在會有兩個已啟用的資源內容：  
 
-    -   國家/地區  
+    -   Country  
 
     -   部門  
 
 ![解決方案引導](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
 
-下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
+下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
 
 ```  
 New-ADResourceProperty Country -IsSecured $true -ResourcePropertyValueType MS-DS-MultivaluedChoice -SharesValuesWith country  
@@ -191,7 +190,7 @@ Add-ADResourcePropertyListMember "Global Resource Property List" -Members Depart
 
     ![解決方案引導](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
 
-    下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
+    下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
 
 
 ~~~
@@ -226,7 +225,7 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
    ![解決方案引導](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
 
-   下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
+   下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
 
    ```  
    New-ADCentralAccessPolicy "Finance Policy" Add-ADCentralAccessPolicyMember   
@@ -263,7 +262,7 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
 10. 按兩下 [稽核檔案系統內容]。 選取全部三個核取方塊，然後按一下 [確定]。  
 
-11. 關閉 \[群組原則管理編輯器\]。 您現在已將集中存取原則包含在群組原則中。  
+11. 關閉 [群組原則管理編輯器]。 您現在已將集中存取原則包含在群組原則中。  
 
 若要讓網域的網域控制站提供宣告或裝置授權資料，必須將網域控制站設定為支援動態存取控制。  
 
@@ -281,7 +280,7 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
 6.  開啟命令提示字元，然後輸入 `gpupdate /force`：  
 
-## <a name="BKMK_1.4"></a>部署集中存取原則  
+## <a name="deploy-the-central-access-policy"></a><a name="BKMK_1.4"></a>部署集中存取原則  
 
 ||步驟|範例|  
 |-|--------|-----------|  
@@ -294,7 +293,7 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
 1. 在 [HYPER-V 管理員] 中，連線至伺服器 FILE1。 使用 contoso\administrator 和密碼登入伺服器： <strong>pass@word1</strong>。  
 
-2. 開啟提升權限的命令提示字元，輸入： **gpupdate /force**。 這可確保您的群組原則變更能在伺服器上生效。  
+2. 開啟提升權限的命令提示字元，輸入：**gpupdate /force** 這可確保您的群組原則變更能在伺服器上生效。  
 
 3. 您也需要重新整理 Active Directory 的全域資源內容。 開啟提升權限的 Windows PowerShell 視窗並輸入 `Update-FSRMClassificationpropertyDefinition`。 按一下 Enter 鍵，然後關閉 Windows PowerShell。  
 
@@ -302,7 +301,7 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
    > 您也可以藉由登入檔案伺服器，以重新整理全域資源內容。 若要從檔案伺服器重新整理全域資源內容，請執行下列動作  
    > 
    > 1. 使用<strong>pass@word1</strong>的密碼，以 contoso\administrator 的身分登入檔案伺服器 FILE1。  
-   > 2. 開啟檔案伺服器資源管理員。 若要開啟檔案伺服器資源管理員，按一下 [開始]，輸入 **檔案伺服器資源管理員**，然後按一下 [檔案伺服器資源管理員]。  
+   > 2. 開啟檔案伺服器資源管理員。 若要開啟檔案伺服器資源管理員，按一下 [開始]，輸入**檔案伺服器資源管理員**，然後按一下 [檔案伺服器資源管理員]。  
    > 3. 在 [檔案伺服器資源管理員] 中按一下 [檔案分類管理]，以滑鼠右鍵按一下 [分類內容]，然後按一下 [重新整理]。  
 
 4. 開啟 [Windows 檔案總管]，在左窗格中，按一下磁碟機 D。以滑鼠右鍵按一下 [財務文件] 資料夾，然後按一下 [內容]。  
@@ -328,7 +327,7 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
 2.  按一下 [安全性] 索引標籤，按一下 [進階]，然後按一下 [有效存取權] 索引標籤。  
 
-3.  若要檢查使用者的許可權，請按一下 [**選取使用者**]，輸入使用者的名稱，然後按一下 [**查看有效存取**權] 來查看有效存取權限。 例如：  
+3.  若要檢查使用者的許可權，請按一下 [**選取使用者**]，輸入使用者的名稱，然後按一下 [**查看有效存取**權] 來查看有效存取權限。 例如，  
 
     -   Myriam Delesalle (MDelesalle) 在財務部門中工作，應該具有資料夾的讀取存取權。  
 
@@ -340,11 +339,11 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
     請注意有效存取權視窗中名為 [存取限制依據] 的最後一欄。 此欄會告訴您哪些閘道會影響該人員的許可權。 在此例中，共用和 NTFS 權限允許所有使用者具有完全控制的權限。 不過，集中存取原則會根據您先前設定的規則限制存取權。  
 
-## <a name="BKMK_1.5"></a>維護：變更和暫存原則  
+## <a name="maintain-change-and-stage-the-policy"></a><a name="BKMK_1.5"></a>維護：變更和暫存原則  
 
 ||||  
 |-|-|-|  
-|數字|步驟|範例|  
+|Number|步驟|範例|  
 |4.1|設定用戶端裝置宣告|設定群組原則設定，以啟用裝置宣告|  
 |4.2|啟用裝置宣告。|啟用裝置的國家/地區宣告類型。|  
 |4.3|將暫存原則新增至您想要修改的現有集中存取規則。|修改財務文件規則以新增暫存原則。|  
@@ -366,7 +365,7 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
 3. 按一下 [樹狀檢視]，展開 [動態存取控制]，按兩下 [宣告類型]，按兩下 [國家/地區] 宣告。  
 
-4. 在 [可以針對下列類別發行此類型的宣告] 中，選取 [電腦] 核取方塊。 按一下 **\[確定\]** 。   
+4. 在 [可以針對下列類別發行此類型的宣告] 中，選取 [電腦] 核取方塊。 按一下 [確定]。   
    [使用者] 和 [電腦] 兩個核取方塊現在應該都已選取。 國家/地區宣告現在除了可以搭配使用者以外，還可以搭配裝置。  
 
 下一個步驟是建立暫存原則規則。 暫存原則可以用來在啟用新的原則項目之前先監視它的效果。 在下列步驟中，您將建立暫存原則項目，並監視它在共用資料夾上的效果。  
@@ -404,7 +403,7 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
 ![解決方案引導](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***  
 
-下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
+下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
 
 ```  
 Set-ADCentralAccessRule  

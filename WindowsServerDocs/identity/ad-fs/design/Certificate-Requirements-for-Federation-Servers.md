@@ -1,7 +1,6 @@
 ---
 ms.assetid: 9831b421-8fb7-4e15-ac27-c013cbca6d05
 title: 同盟伺服器的憑證需求
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 7eeff82ef3311f18c8252c44c96310fcf3c18217
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9154e168fa03b08177dd0125fcbc1707d8e5594f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359179"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853211"
 ---
 # <a name="certificate-requirements-for-federation-servers"></a>同盟伺服器的憑證需求
 
@@ -22,10 +21,10 @@ ms.locfileid: "71359179"
   
 |憑證類型|描述|  
 |--------------------|---------------|  
-|權杖\-簽署憑證|權杖\-簽署憑證是 X509 憑證。 同盟伺服器會使用相關聯的公用\/私密金鑰組，以數位方式簽署其產生的所有安全性權杖。 這包括簽署已發佈的同盟中繼資料及成品解析要求。<br /><br />您可以在的 [AD FS 管理] 嵌入式管理\-中設定多個權杖\-簽署憑證，以便在其中一個憑證即將到期時，允許進行憑證變換。 根據預設，清單中的所有憑證都會發佈，但 AD FS 只會使用主要權杖\-簽署憑證來實際簽署權杖。 您選取的所有憑證都必須具備相對應的私密金鑰。<br /><br />如需詳細資訊，請參閱 [Token-Signing Certificates](Token-Signing-Certificates.md) 和 [Add a Token-Signing Certificate](../../ad-fs/deployment/Add-a-Token-Signing-Certificate.md)。|  
-|服務通訊憑證|同盟伺服器會使用伺服器驗證憑證，也稱為 Windows Communication Foundation \(WCF\) 訊息安全性的服務通訊。 根據預設，這是同盟伺服器用來作為安全通訊端層 \(SSL\) 憑證的憑證，Internet Information Services \(IIS\)中。 **注意：** 中的 [AD FS 管理] 嵌入式\-管理單元是指做為服務通訊憑證之同盟伺服器的伺服器驗證憑證。<br /><br />如需詳細資訊，請參閱[服務通訊憑證](Service-Communications-Certificates.md)和[設定服務通訊憑證](../../ad-fs/deployment/Set-a-Service-Communications-Certificate.md)。<br /><br />由於服務通訊憑證必須受到用戶端電腦信任，因此建議您使用由信任的憑證授權單位單位所簽署的憑證 \(CA\)。 您選取的所有憑證都必須具備相對應的私密金鑰。|  
-|安全通訊端層 \(SSL\) 憑證|同盟伺服器會使用 SSL 憑證，針對與 Web 用戶端及同盟伺服器 Proxy 的 SSL 通訊來保護 Web 服務流量的安全。<br /><br />由於 SSL 憑證必須受到用戶端電腦信任，因此，建議您使用由信任的 CA 所簽署的憑證。 您選取的所有憑證都必須具備相對應的私密金鑰。|  
-|權杖\-解密憑證|此憑證是用來解密此同盟伺服器所接收的權杖。<br /><br />您可以有多個解密憑證。 這讓資源同盟伺服器能夠在新憑證設定為主要解密憑證之後，將使用較舊憑證所簽發的權杖解密。 所有憑證都可以用來進行解密，但只有主要權杖\-解密憑證才會實際發佈在同盟中繼資料中。 您選取的所有憑證都必須具備相對應的私密金鑰。<br /><br />如需詳細資訊，請參閱[新增權杖解密憑證](../../ad-fs/deployment/Add-a-Token-Decrypting-Certificate.md)。|  
+|權杖\-簽署憑證|權杖\-簽署憑證是 X509 憑證。 同盟伺服器會使用相關聯的公用\/私密金鑰組，以數位方式簽署其產生的所有安全性權杖。 這包括簽署已發佈的同盟中繼資料及成品解析要求。<p>您可以在的 [AD FS 管理] 嵌入式管理\-中設定多個權杖\-簽署憑證，以便在其中一個憑證即將到期時，允許進行憑證變換。 根據預設，清單中的所有憑證都會發佈，但 AD FS 只會使用主要權杖\-簽署憑證來實際簽署權杖。 您選取的所有憑證都必須具備相對應的私密金鑰。<p>如需詳細資訊，請參閱[權杖簽署憑證](Token-Signing-Certificates.md)和[新增權杖簽署憑證](../../ad-fs/deployment/Add-a-Token-Signing-Certificate.md)。|  
+|服務通訊憑證|同盟伺服器會使用伺服器驗證憑證，也稱為 Windows Communication Foundation \(WCF\) 訊息安全性的服務通訊。 根據預設，這是同盟伺服器用來作為安全通訊端層 \(SSL\) 憑證的憑證，Internet Information Services \(IIS\)中。 **注意：** 中的 [AD FS 管理] 嵌入式\-管理單元是指做為服務通訊憑證之同盟伺服器的伺服器驗證憑證。<p>如需詳細資訊，請參閱[服務通訊憑證](Service-Communications-Certificates.md)和[設定服務通訊憑證](../../ad-fs/deployment/Set-a-Service-Communications-Certificate.md)。<p>由於服務通訊憑證必須受到用戶端電腦信任，因此建議您使用由信任的憑證授權單位單位所簽署的憑證 \(CA\)。 您選取的所有憑證都必須具備相對應的私密金鑰。|  
+|安全通訊端層 \(SSL\) 憑證|同盟伺服器會使用 SSL 憑證，針對與 Web 用戶端及同盟伺服器 Proxy 的 SSL 通訊來保護 Web 服務流量的安全。<p>由於 SSL 憑證必須受到用戶端電腦信任，因此，建議您使用由信任的 CA 所簽署的憑證。 您選取的所有憑證都必須具備相對應的私密金鑰。|  
+|權杖\-解密憑證|此憑證是用來解密此同盟伺服器所接收的權杖。<p>您可以有多個解密憑證。 這讓資源同盟伺服器能夠在新憑證設定為主要解密憑證之後，將使用較舊憑證所簽發的權杖解密。 所有憑證都可以用來進行解密，但只有主要權杖\-解密憑證才會實際發佈在同盟中繼資料中。 您選取的所有憑證都必須具備相對應的私密金鑰。<p>如需詳細資訊，請參閱[新增權杖解密憑證](../../ad-fs/deployment/Add-a-Token-Decrypting-Certificate.md)。|  
   
 您可以要求並安裝 SSL 憑證或服務通訊憑證，方法是透過 Microsoft Management Console \(MMC\) 的嵌入式管理\-。 如需使用 SSL 憑證的一般資訊，請參閱[iis 7.0：在 iis 7.0](https://go.microsoft.com/fwlink/?LinkID=108544)和 iis 7.0 中設定安全通訊端層[：在 iis 7.0 中設定伺服器憑證](https://go.microsoft.com/fwlink/?LinkID=108545)。  
   
@@ -52,5 +51,5 @@ AD FS 不需要 CA 所簽發的憑證。 不過，SSL 憑證 \(預設也使用�
 ## <a name="certificate-revocation-lists"></a>憑證撤銷清單  
 如果您使用的任何憑證具有 CRL，含有已設定憑證的伺服器就必須能夠連絡發佈 CRL 的伺服器。  
   
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 [Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

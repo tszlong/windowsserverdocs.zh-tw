@@ -1,28 +1,22 @@
 ---
 title: setx
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: Setx 的 Windows 命令主題，它會在使用者或系統內容中建立或修改環境變數，而不需要程式設計或編寫腳本。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ef37482f-f8a8-4765-951a-2518faac3f44
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c206f36e2d0bc947329124b08fb797091e838bcd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 19f6625ffaaf745ae2af26e52986e97382f42702
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384026"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834341"
 ---
 # <a name="setx"></a>setx
-
-
 
 在使用者或系統內容中建立或修改環境變數，而不需要程式設計或編寫腳本。 **Setx**命令也會抓取登錄機碼的值，並將它們寫入文字檔。
 
@@ -33,10 +27,10 @@ ms.locfileid: "71384026"
 ```
 setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] <Variable> <Value> [/m]
 setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] [<Variable>] /k <Path> [/m]
-setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <FileName> {[<Variable>] {/a <X>,<Y> | /r <X>,<Y> "<String>"} [/m] | /x} [/d <Delimiters>]
+setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <FileName> {[<Variable>] {/a <X>,<Y> | /r <X>,<Y> <String>} [/m] | /x} [/d <Delimiters>]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |         參數          |                                                                                                                                              描述                                                                                                                                              |
 |----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -48,10 +42,10 @@ setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <FileName>
 |         /k \<路徑 >         | 指定根據登錄機碼中的資訊來設定變數。 P*路徑 a)* 會使用下列語法：</br>`\\<HIVE>\<KEY>\...\<Value>`</br>例如，您可以指定下列路徑：</br>`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName` |
 |      /f \<檔案名 >       |                                                                                                                               指定您想要使用的檔案。                                                                                                                                |
 |        /a \<X >，<Y>         |                                                                                                                    指定絕對座標和位移作為搜尋參數。                                                                                                                    |
-|   /r \<X >，<Y> "<String>"   |                                                                                                            指定**字串**的相對座標和位移作為搜尋參數。                                                                                                            |
+|   /r \<X >，<Y> <String>   |                                                                                                            指定**字串**的相對座標和位移作為搜尋參數。                                                                                                            |
 |             /m             |                                                                                                指定在系統內容中設定變數。 預設設定是本機環境。                                                                                                 |
 |             /x             |                                                                                                       顯示檔案座標，忽略 **/a**、 **/r**和 **/d**命令列選項。                                                                                                        |
-|      /d \<分隔符號 >      |                    除了四個內建分隔符號（空格、TAB、ENTER 和換行字元）以外，還會指定要使用的分隔符號，例如 " **，** " 或 " **\\** "。 有效的分隔符號包含任何 ASCII 字元。 分隔符號的最大數目為15，包括內建的分隔符號。                    |
+|      /d \<分隔符號 >      |                    除了四個內建分隔符號（空格、TAB、ENTER 和換行字元）之外，指定要使用的分隔符號 **，** 或 **\\** 。 有效的分隔符號包含任何 ASCII 字元。 分隔符號的最大數目為15，包括內建的分隔符號。                    |
 |             /?             |                                                                                                                                 在命令提示字元顯示說明。                                                                                                                                  |
 
 ## <a name="remarks"></a>備註
@@ -66,7 +60,7 @@ setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <FileName>
 -   REG_DWORD 登錄值會解壓縮並在十六進位模式中使用。
 -   [檔案模式] 僅支援剖析 [回車] 和 [換行字元（CRLF）] 文字檔。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 若要將本機環境中的電腦環境變數設定為 Brand1 值，請輸入：
 ```
@@ -74,7 +68,7 @@ setx MACHINE Brand1
 ```
 若要將系統內容中的電腦環境變數設定為 Brand1 電腦的值，請輸入：
 ```
-setx MACHINE "Brand1 Computer" /m
+setx MACHINE Brand1 Computer /m
 ```
 若要將本機環境中的 MYPATH 環境變數設定為使用 PATH 環境變數中定義的搜尋路徑，請輸入：
 ```
@@ -102,11 +96,11 @@ setx /s computer1 /u maindom\hiropln /p p@ssW23 TZONE /k HKEY_LOCAL_MACHINE\Syst
 ```
 若要將系統內容中的組建環境變數設定為**HKEY_LOCAL_MACHINE \software\microsoft\windowsnt\currentversion\currentbuildnumber**登錄機碼中找到的值，請輸入：
 ```
-setx BUILD /k "HKEY_LOCAL_MACHINE\Software\Microsoft\WindowsNT\CurrentVersion\CurrentBuildNumber" /m
+setx BUILD /k HKEY_LOCAL_MACHINE\Software\Microsoft\WindowsNT\CurrentVersion\CurrentBuildNumber /m
 ```
 若要在名為 Computer1 的遠端電腦系統內容中，將組建環境變數設定為在**HKEY_LOCAL_MACHINE \software\microsoft\windowsnt\currentversion\currentbuildnumber**登錄機碼中找到的值，請輸入：
 ```
-setx /s computer1 /u maindom\hiropln /p p@ssW23  BUILD /k "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\CurrentBuildNumber" /m
+setx /s computer1 /u maindom\hiropln /p p@ssW23  BUILD /k HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\CurrentBuildNumber /m
 ```
 若要顯示名為 Ipconfig. out 的檔案內容，以及內容的對應座標，請輸入：
 ```
@@ -116,11 +110,11 @@ setx /f ipconfig.out /x
 ```
 setx IPADDR /f ipconfig.out /a 5,11
 ```
-若要將本機環境中的 OCTET1 環境變數設定為在座標5中找到的值，請將檔案 Ipconfig 中的3（以分隔符號 **"# $\*."** ），輸入：
+若要將本機環境中的 OCTET1 環境變數設定為在座標5中找到的值，請在檔案 Ipconfig 中使用分隔符號 **#$\*。** 輸入：
 ```
-setx OCTET1 /f ipconfig.out /a 5,3 /d "#$*." 
+setx OCTET1 /f ipconfig.out /a 5,3 /d #$*. 
 ```
-若要將本機環境中的 IPGATEWAY 環境變數設定為在座標0、7上找到的值（在檔案 Ipconfig. out 中的「閘道」座標而言），請輸入：
+若要將本機環境中的 IPGATEWAY 環境變數設定為在與檔案 Ipconfig 中的閘道座標相對的座標0、7上找到的值，請輸入：
 ```
 setx IPGATEWAY /f ipconfig.out /r 0,7 Gateway 
 ```
@@ -129,6 +123,6 @@ setx IPGATEWAY /f ipconfig.out /r 0,7 Gateway
 setx /s computer1 /u maindom\hiropln /p p@ssW23 /f ipconfig.out /x 
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

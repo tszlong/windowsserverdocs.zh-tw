@@ -1,24 +1,20 @@
 ---
 title: ksetup：伺服器
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e3407111-ac92-457f-aa1f-a04fe9109d59
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dd05fd294640c63e633b7b866307197ae6770476
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7889e1a03d3c0eec1958bf1d6356c67e9371a80f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374964"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80841441"
 ---
 # <a name="ksetupserver"></a>ksetup：伺服器
 
@@ -32,7 +28,7 @@ ms.locfileid: "71374964"
 ksetup /server <ServerName>
 ```
 
-### <a name="parameters"></a>參數
+#### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
@@ -42,16 +38,16 @@ ksetup /server <ServerName>
 
 沒有任何方法可以移除目標伺服器名稱;您只能將它變更回本機電腦名稱稱，這是預設值。
 
-目標伺服器名稱會儲存在**HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\LSA\Kerberos**的登錄中。 不會使用**ksetup**來報告。
+目標伺服器名稱會儲存在登錄中的**HKEY_LOCAL_MACHINE \system\controlset001\control\lsa\kerberos**。 不會使用**ksetup**來報告。
 
-## <a name="BKMK_Examples"></a>典型
+## <a name="examples"></a><a name=BKMK_Examples></a>典型
 
 在連接到 Contoso 網域的 IPops897 電腦上，讓您的**ksetup**設定生效：
 ```
 ksetup /server IPops897.corp.contoso.com
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
 -   [Ksetup](ksetup.md)
--   [命令列語法關鍵](command-line-syntax-key.md)
+-   - [命令列語法關鍵](command-line-syntax-key.md)

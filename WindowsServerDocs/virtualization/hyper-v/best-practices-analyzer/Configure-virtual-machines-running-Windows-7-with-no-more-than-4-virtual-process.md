@@ -2,20 +2,19 @@
 title: 設定執行 Windows 7 的虛擬機器，且不超過4個虛擬處理器
 description: 此最佳做法分析程式規則的線上版本文字。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 8fcf0868-b543-4f94-aee7-35324346da55
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 14b5e0637ad2e6462e13f0e1f18af651bbcc5fc3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: da58833b33f25a8ce724dcbe46161ae99c8d1224
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366274"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80862031"
 ---
 # <a name="configure-virtual-machines-running-windows-7-with-no-more-than-4-virtual-processors"></a>設定執行 Windows 7 的虛擬機器，且不超過4個虛擬處理器
 
@@ -28,7 +27,7 @@ ms.locfileid: "71366274"
 |**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
 |**低於**|錯誤|  
-|**類別**|設定|  
+|**類別**|組態|  
   
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   

@@ -1,24 +1,20 @@
 ---
 title: bootcfg raw
-description: 適用于**bootcfg raw**的 Windows 命令主題-將指定為字串的作業系統載入選項新增至 boot.ini 檔案的 **[作業系統]** 區段中的作業系統專案。
-ms.custom: na
+description: 適用于 bootcfg raw 的 Windows 命令主題，其會將作業系統載入選項（指定為字串）新增至 Boot.ini 檔案之作業系統區段中的作業系統專案。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e3458749-b0a0-460f-a022-3ff199a71f27
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fb5c052f85f54656c54a9e534f867d287407d2d4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fd5137187c5ba1dc1b410d728f1c2930ddcbc3cc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379904"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80848511"
 ---
 # <a name="bootcfg-raw"></a>bootcfg raw
 
@@ -30,7 +26,7 @@ ms.locfileid: "71379904"
 ```
 bootcfg /raw [/s <computer> [/u <Domain>\<User> /p <Password>]] <OSLoadOptionsString> [/id <OSEntryLineNum>] [/a]
 ```
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |         詞彙          |                                                                                                            定義                                                                                                             |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -43,15 +39,15 @@ bootcfg /raw [/s <computer> [/u <Domain>\<User> /p <Password>]] <OSLoadOptionsSt
 |          /?           |                                                                                               在命令提示字元顯示說明。                                                                                                |
 
 ##### <a name="remarks"></a>備註
-- **bootcfg raw**是用來將文字新增至作業系統專案的結尾，並覆寫任何現有的作業系統專案選項。 此文字應包含有效的 OS 載入選項，例如 **/debug**、 **/fastdetect**、 **/nodebug**、 **/baudrate**、 **/crashdebug**和 **/sos**。 例如，下列命令會將 " **/debug/fastdetect**" 新增至第一個作業系統專案的結尾，並取代任何先前的作業系統專案選項：
+- **bootcfg raw**是用來將文字新增至作業系統專案的結尾，並覆寫任何現有的作業系統專案選項。 此文字應包含有效的 OS 載入選項，例如 **/debug**、 **/fastdetect**、 **/nodebug**、 **/baudrate**、 **/crashdebug**和 **/sos**。 例如，下列命令會將 **/debug/fastdetect**新增至第一個作業系統專案的結尾，並取代任何先前的作業系統專案選項：
   ```
-  bootcfg /raw "/debug /fastdetect" /id 1
+  bootcfg /raw /debug /fastdetect /id 1
   ```
-  ## <a name="BKMK_examples"></a>典型
+  ## <a name="examples"></a><a name=BKMK_examples></a>典型
   下列範例會示範如何使用**bootcfg/raw**命令：
   ```
-  bootcfg /raw "/debug /sos" /id 2
-  bootcfg /raw /s srvmain /u maindom\hiropln /p p@ssW23 "/crashdebug " /id 2
+  bootcfg /raw /debug /sos /id 2
+  bootcfg /raw /s srvmain /u maindom\hiropln /p p@ssW23 /crashdebug  /id 2
   ```
-  #### <a name="additional-references"></a>其他參考
-  [命令列語法關鍵](command-line-syntax-key.md)
+  ## <a name="additional-references"></a>其他參考資料
+  - [命令列語法關鍵](command-line-syntax-key.md)

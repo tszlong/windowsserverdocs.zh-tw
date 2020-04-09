@@ -1,28 +1,24 @@
 ---
 title: 認證保護和管理
 description: Windows Server 安全性
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-credential-protection
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e457229c-0126-40fe-948c-101c943e1b57
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 31f0f89099a71f8ea6abcf0064113d6af9608c5a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c836da8f83510e6547e0e182ac06fd2151dd9c41
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403792"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857061"
 ---
 # <a name="credentials-protection-and-management"></a>認證保護和管理
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server (半年通道)、Windows Server 2016
 
 本主題適用于 IT 專業人員，討論 Windows Server 2012 R2 中引進的功能和方法，以及 Windows 8.1 認證保護和網域驗證控制，以減少認證竊取的情況。
 
@@ -62,7 +58,7 @@ Protected Users 群組的成員進一步受到下列驗證方法的限制：
 
 -   使用者
 
--   Computer
+-   電腦
 
 -   受管理的服務帳戶
 

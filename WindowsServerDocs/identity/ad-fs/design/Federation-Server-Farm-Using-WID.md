@@ -1,7 +1,6 @@
 ---
 ms.assetid: f775cbda-a75d-439d-9aa7-82f3bc8dc932
 title: 使用 WID 的同盟伺服器陣列
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b0a84940018a0e71aaa1b47c7af3aba5966fe0ae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 926848f9d39a4e00cb30a6bbde5aecee0ef31043
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408050"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853081"
 ---
 # <a name="federation-server-farm-using-wid"></a>使用 WID 的同盟伺服器陣列
 
@@ -77,7 +76,7 @@ NLB 主機可以使用此 NLB 叢集中定義的設定，將用戶端要求配�
   
 如需有關如何設定網路環境以與同盟伺服器搭配使用的詳細資訊，請參閱[AD FS 需求](AD-FS-Requirements.md)中的名稱解析需求一節。  
   
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
 [規劃您的 AD FS 部署拓撲](Plan-Your-AD-FS-Deployment-Topology.md)  
 [Windows Server 2012 R2 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
   

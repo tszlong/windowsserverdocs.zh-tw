@@ -1,24 +1,20 @@
 ---
 title: bootcfg default
-description: 適用于**bootcfg default**的 Windows 命令主題-指定要指定為預設值的作業系統專案。
-ms.custom: na
+description: 適用于 bootcfg default 的 Windows 命令主題，指定要指定為預設值的作業系統專案。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e21824d7-8278-41d7-a2c5-ce09803d513a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e69868739a9c338b711984ba0f03452f307b430b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 517cf444a5517b3d612266b57b428e47ac60d4ef
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71380020"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80848562"
 ---
 # <a name="bootcfg-default"></a>bootcfg default
 
@@ -30,7 +26,7 @@ ms.locfileid: "71380020"
 ```
 bootcfg /default [/s <computer> [/u <Domain>\<User> /p <Password>]] [/id <OSEntryLineNum>]
 ```
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |      參數       |                                                                                             描述                                                                                              |
 |----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -40,11 +36,11 @@ bootcfg /default [/s <computer> [/u <Domain>\<User> /p <Password>]] [/id <OSEntr
 | /id <OSEntryLineNum> | 在 Boot.ini 檔案的 [作業系統] 區段中，指定要指定為預設值的作業系統專案行號。 [作業系統] 區段標頭後面的第一行是1。  |
 |          /?          |                                                                                 在命令提示字元顯示說明。                                                                                 |
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 下列範例會示範如何使用**bootcfg/default**命令：
 ```
 bootcfg /default /id 2
 bootcfg /default /s srvmain /u maindom\hiropln /p p@ssW23 /id 2
 ```
-#### <a name="additional-references"></a>其他參考
-[命令列語法關鍵](command-line-syntax-key.md)
+## <a name="additional-references"></a>其他參考資料
+- [命令列語法關鍵](command-line-syntax-key.md)

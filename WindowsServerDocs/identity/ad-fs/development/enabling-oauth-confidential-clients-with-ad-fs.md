@@ -1,7 +1,6 @@
 ---
 ms.assetid: 5a64e790-6725-4099-aa08-8067d57c3168
 title: 使用 AD FS 2016 或更新版本的 OAuth 機密用戶端建立伺服器端應用程式
-description: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 5b2bf036de1de8300e36c3413c551e51d408a4d2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8a8567a497e10df66f77fb996c937791b4aa9e08
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407860"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857561"
 ---
 # <a name="build-a-server-side-application-using-oauth-confidential-clients-with-ad-fs-2016-or-later"></a>使用 AD FS 2016 或更新版本的 OAuth 機密用戶端建立伺服器端應用程式
 
@@ -22,7 +21,7 @@ ms.locfileid: "71407860"
 AD FS 2016 和更新版本支援用戶端能夠維護自己的密碼，例如在 web 伺服器上執行的應用程式或服務。  這些用戶端稱為機密用戶端。
 以下是在 web 伺服器上執行的 web 應用程式，並做為機密用戶端以 AD FS 的示意圖：  
 
-## <a name="pre-requisites"></a>先決條件  
+## <a name="pre-requisites"></a>必要條件  
 以下是完成本檔之前所需的先決條件清單。 本檔假設已安裝 AD FS。  
 
 -   GitHub 用戶端工具  
@@ -38,7 +37,7 @@ AD FS 2016 和更新版本支援用戶端能夠維護自己的密碼，例如在
 
 1.  在 AD FS 管理 中，以滑鼠右鍵按一下 應用程式群組，然後選取 **新增應用程式群組**。  
 
-2.  在 [應用程式組嚮導] 的 [**名稱**] 中，輸入**ADFSOAUTHCC** ，然後在 [**用戶端-伺服器應用程式**] 下，選取**存取 Web API 範本的伺服器應用程式**。  按一下 [下一步]。  
+2.  在 [應用程式組嚮導] 的 [**名稱**] 中，輸入**ADFSOAUTHCC** ，然後在 [**用戶端-伺服器應用程式**] 下，選取**存取 Web API 範本的伺服器應用程式**。  按 [下一步]。  
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_2.PNG)  
 
@@ -46,13 +45,13 @@ AD FS 2016 和更新版本支援用戶端能夠維護自己的密碼，例如在
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_3.PNG)  
 
-4.  針對 [重新導向 URI] 輸入下列**內容：**  -  **https://localhost:44323** 。  按一下 [新增]。 按一下 [下一步]。  
+4.  針對 [重新導向 URI] 輸入下列**內容：**  -  **https://localhost:44323** 。  按一下 [加入]。 按 [下一步]。  
 
-5.  在 [**設定應用程式認證**] 畫面上，勾選 [**產生共用密碼**] 和 [複製密碼]。  稍後在應用程式的 web.config 檔案中，這將會用來當做**ida： ClientSecret**的值。  按一下 [下一步]。  
+5.  在 [**設定應用程式認證**] 畫面上，勾選 [**產生共用密碼**] 和 [複製密碼]。  稍後在應用程式的 web.config 檔案中，這將會用來當做**ida： ClientSecret**的值。  按 [下一步]。  
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_4.PNG)   
 
-6. 在 [**設定 WEB API** ] 畫面上，針對 [**識別碼** -  **https://contoso.com/WebApp** ] 輸入下列各項。  按一下 [新增]。 按一下 [下一步]。  稍後在應用程式的 web.config 檔案中，將會使用此值進行**ida： GraphResourceId** 。  
+6. 在 [**設定 WEB API** ] 畫面上，針對 [**識別碼**] - 輸入下列資訊 **https://contoso.com/WebApp** 。  按一下 [加入]。 按 [下一步]。  稍後在應用程式的 web.config 檔案中，將會使用此值進行**ida： GraphResourceId** 。  
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_9.PNG)  
 
@@ -69,7 +68,7 @@ AD FS 2016 和更新版本支援用戶端能夠維護自己的密碼，例如在
 10. 在 [**完成**] 畫面上，按一下 [**關閉**]。  
 
 ## <a name="upgrade-the-database"></a>升級資料庫  
-建立此逐步解說時，使用了 Visual Studio 2015。   為了讓範例使用 Visual Studio 2015，您將需要更新資料庫檔案。  請使用下列程序來執行此動作。  
+建立此逐步解說時，使用了 Visual Studio 2015。   為了讓範例使用 Visual Studio 2015，您將需要更新資料庫檔案。  使用下列程序來執行此動作。  
 
 本節討論如何下載範例 Web API，並在 Visual Studio 2015 中升級資料庫。   我們將使用[這裡](https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi-oauth2-useridentity)的 Azure AD 範例。  
 
@@ -115,7 +114,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_18.PNG)  
 
-9.  現在，開啟 Web.config 檔案，並將 connectionString 中的值取代為您先前複製的值。  儲存 web.config 檔案。  
+9.  現在，開啟 Web.config 檔案，並將 connectionString 中的值取代為您先前複製的值。  儲存 Web.config 檔案。  
 
     > [!NOTE]  
     > 需要上述步驟，才能取得新的 connectionString。  否則，當我們在下方執行更新資料庫時，將會發生錯誤。  
@@ -221,7 +220,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi
 
         ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_34.PNG)  
 
-## <a name="test-the-solution"></a>測試解決方案  
+## <a name="test-the-solution"></a>測試方案  
 在本節中，我們將測試機密用戶端解決方案。  請使用下列程式來測試方案。  
 
 #### <a name="testing-the-confidential-client-solution"></a>測試機密用戶端解決方案  
@@ -234,7 +233,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi
 
    ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_31.PNG)  
 
-3. 請注意，ASP.NET 網站會顯示 Hello abby@contoso.com！。  按一下 [**設定檔**]。  
+3. 請注意，ASP.NET 網站會顯示 Hello abby@contoso.com！。  按一下 [設定檔]。  
 
    ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_32.PNG)  
 

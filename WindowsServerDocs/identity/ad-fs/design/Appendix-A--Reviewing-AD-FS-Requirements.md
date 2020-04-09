@@ -1,7 +1,6 @@
 ---
 ms.assetid: 39ecc468-77c5-4938-827e-48ce498a25ad
 title: 附錄 A-審查 AD FS 需求
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 281bb3763bc13e28b007a819254de382dc977f1c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e8a11c7e6072d4aaa1ace19885c92639acfdbbb8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408159"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858051"
 ---
 # <a name="appendix-a-reviewing-ad-fs-requirements"></a>附錄 A：檢閱 AD FS 需求
 
-為了讓您的 Active Directory 同盟服務（AD FS）部署中的組織夥伴可以成功共同作業，您必須先確定您的公司網路基礎結構已設定為支援帳戶、名稱的 AD FS 需求解決方式和憑證。 AD FS 具有下列類型的需求：  
+為了讓您的 Active Directory 同盟服務（AD FS）部署中的組織夥伴可以成功共同作業，您必須先確定您的公司網路基礎結構已設定為支援帳戶、名稱解析和憑證的 AD FS 需求。 AD FS 具有以下類型的需求：  
   
 > [!TIP]  
 > 您可以在 Microsoft TechNet Wiki 上的 [AD FS 內容地圖](https://social.technet.microsoft.com/wiki/contents/articles/2735.aspx) 頁面找到其他 AD FS 資源連結。 此頁面是由 AD FS 社群的成員管理，而且 AD FS 產品小組會不定期監控此頁面。  
@@ -26,17 +25,17 @@ ms.locfileid: "71408159"
 ## <a name="hardware-requirements"></a>硬體需求  
 下列最低和建議硬體需求適用于同盟伺服器和同盟伺服器 proxy 電腦。  
   
-|硬體需求|最低需求|建議的需求|  
+|硬體需求|最低需求|建議需求|  
 |------------------------|-----------------------|---------------------------|  
 |CPU 速度|單核心，1 GHz|四核心，2 GHz|  
-|RAM|1 GB|4 GB|  
+|RAM|1 GB|4 GB|  
 |磁碟空間|50 MB|100 MB|  
   
 ## <a name="software-requirements"></a>軟體需求  
-AD FS 依賴 Windows Server®2012作業系統內建的伺服器功能。  
+AD FS 依賴 Windows Server&reg; 2012 作業系統內建的伺服器功能。  
   
 > [!NOTE]  
-> Federation Service 和 Federation Service Proxy 角色服務無法並存於相同的電腦上。  
+> Federation Service 與 Federation Service Proxy 角色服務無法共存於相同電腦中。  
   
 ## <a name="certificate-requirements"></a>憑證需求  
 憑證在同盟伺服器、同盟伺服器 Proxy、宣告感知 (Claims-Aware) 應用程式及 Web 用戶端之間進行安全通訊時扮演最重要的角色。 憑證的需求會根據您是否設定同盟伺服器或同盟伺服器 Proxy 電腦而有所不同，如本節所述。  
@@ -44,12 +43,12 @@ AD FS 依賴 Windows Server®2012作業系統內建的伺服器功能。
 ### <a name="federation-server-certificates"></a>同盟伺服器憑證  
 同盟伺服器需要下表中的憑證。  
   
-|憑證類型|描述|您需要在部署之前了解的內容|  
+|憑證類型|描述|部署前必須知道的事項|  
 |--------------------|---------------|------------------------------------------|  
-|安全通訊端層 (SSL) 憑證|這是標準的安全通訊端層 (SSL) 憑證，可用來保護同盟伺服器與用戶端之間的通訊安全。|這個憑證必須繫結到網際網路資訊服務 (IIS) 中預設的網站，以供同盟伺服器或同盟伺服器 Proxy 使用。  針對同盟伺服器 Proxy，必須先在 IIS 中設定繫結才能成功執行 [同盟伺服器 Proxy 設定精靈]。<br /><br />**建議**由於這個憑證必須受到 AD FS 用戶端信任，因此，請使用公開 (第三方) 憑證授權單位 (CA)　所簽發的伺服器驗證憑證，例如 VeriSign。 **變更複寫用快取資料夾路徑**憑證的主體名稱可用來表示您部署的每個 AD FS 執行個體的 Federation Service 名稱。 基於這個理由，您可能想要考慮在任何 CA 簽發的新憑證上，選擇對合作夥伴而言最能代表貴公司或組織名稱的主體名稱。|  
+|安全通訊端層 (SSL) 憑證|這是標準的安全通訊端層 (SSL) 憑證，可用來保護同盟伺服器與用戶端之間的通訊安全。|這個憑證必須繫結到網際網路資訊服務 (IIS) 中預設的網站，以供同盟伺服器或同盟伺服器 Proxy 使用。  針對同盟伺服器 Proxy，必須先在 IIS 中設定繫結才能成功執行 [同盟伺服器 Proxy 設定精靈]。<p>**建議：** 由於此憑證必須受到 AD FS 的用戶端信任，因此，請使用由公用（協力廠商）憑證授權單位單位（CA）所發行的伺服器驗證憑證，例如 VeriSign。 **秘訣：** 此憑證的主體名稱用來代表您所部署 AD FS 的每個實例的同盟服務名稱。 基於這個理由，您可能想要考慮在任何 CA 簽發的新憑證上，選擇對合作夥伴而言最能代表貴公司或組織名稱的主體名稱。|  
 |服務通訊憑證|這個憑證會啟用 WCF 訊息安全性，來保護同盟伺服器之間的通訊。|根據預設，SSL 憑證會用來做為服務通訊憑證。  這可以使用 AD FS 管理主控台來變更。|  
-|權杖簽署憑證|這是標準的 X509 憑證，可以用來安全地簽署同盟伺服器簽發的所有權杖。|權杖簽署憑證必須包含一個私密金鑰，而且應該鏈結到 Federation Service 中受信任的根目錄。 根據預設，AD FS 會建立自我簽署憑證。 但是，根據組織需求而定，您稍後可以使用 AD FS 管理嵌入式管理單元，將這個憑證變更為 CA 簽發的憑證。|  
-|權杖解密憑證|這是標準的 SSL 憑證，可以用來解密任何由夥伴同盟伺服器加密的傳入權杖。 它也會在同盟中繼資料中發佈。|根據預設，AD FS 會建立自我簽署憑證。 但是，根據組織需求而定，您稍後可以使用 AD FS 管理嵌入式管理單元，將這個憑證變更為 CA 簽發的憑證。|  
+|權杖簽署憑證|這是標準的 X509 憑證，可以用來安全地簽署同盟伺服器簽發的所有權杖。|權杖簽署憑證必須包含私密金鑰，而且應該鏈結到 Federation Service 中受信任的根。 依預設，AD FS 會建立自我簽署的憑證。 但是，根據組織需求而定，您稍後可以使用 AD FS 管理嵌入式管理單元，將這個憑證變更為 CA 簽發的憑證。|  
+|權杖解密憑證|這是標準的 SSL 憑證，可以用來解密任何由夥伴同盟伺服器加密的傳入權杖。 它也會在同盟中繼資料中發佈。|依預設，AD FS 會建立自我簽署的憑證。 但是，根據組織需求而定，您稍後可以使用 AD FS 管理嵌入式管理單元，將這個憑證變更為 CA 簽發的憑證。|  
   
 > [!CAUTION]  
 > 用來進行權杖簽署和權杖解密的憑證對於 Federation Service 的穩定性而言相當重要。 因為遺失或意外移除基於此目的設定的任何憑證都會中斷服務，所以您應該備份基於此目的設定的所有憑證。  
@@ -59,9 +58,9 @@ AD FS 依賴 Windows Server®2012作業系統內建的伺服器功能。
 ### <a name="federation-server-proxy-certificates"></a>同盟伺服器 Proxy 憑證  
 同盟伺服器 Proxy 需要下表中的憑證。  
   
-|憑證類型|描述|您需要在部署之前了解的內容|  
+|憑證類型|描述|部署前必須知道的事項|  
 |--------------------|---------------|------------------------------------------|  
-|伺服器驗證憑證|這是標準的安全通訊端層 (SSL) 憑證，可用來在同盟伺服器 Proxy 與網際網路用戶端電腦之間進行安全通訊。|這個憑證必須先繫結到網際網路資訊服務 (IIS) 中預設的網站，您才能成功執行 [AD FS 同盟伺服器 Proxy 設定精靈]。<br /><br />**建議**由於這個憑證必須受到 AD FS 用戶端信任，因此，請使用公開 (第三方) 憑證授權單位 (CA)　所簽發的伺服器驗證憑證，例如 VeriSign。<br /><br />**變更複寫用快取資料夾路徑**憑證的主體名稱可用來表示您部署的每個 AD FS 執行個體的 Federation Service 名稱。 基於這個理由，您可能想要考慮選擇對合作夥伴而言最能代表貴公司或組織名稱的主體名稱。|  
+|伺服器驗證憑證|這是標準的安全通訊端層 (SSL) 憑證，可用來在同盟伺服器 Proxy 與網際網路用戶端電腦之間進行安全通訊。|這個憑證必須先繫結到網際網路資訊服務 (IIS) 中預設的網站，您才能成功執行 [AD FS 同盟伺服器 Proxy 設定精靈]。<p>**建議：** 由於此憑證必須受到 AD FS 的用戶端信任，因此，請使用由公用（協力廠商）憑證授權單位單位（CA）所發行的伺服器驗證憑證，例如 VeriSign。<p>**秘訣：** 此憑證的主體名稱用來代表您所部署 AD FS 的每個實例的同盟服務名稱。 基於這個理由，您可能想要考慮選擇對合作夥伴而言最能代表貴公司或組織名稱的主體名稱。|  
   
 如需同盟伺服器 Proxy 所使用的憑證相關詳細資訊，請參閱[同盟伺服器 Proxy 的憑證需求](Certificate-Requirements-for-Federation-Server-Proxies.md)。  
   
@@ -70,7 +69,7 @@ AD FS 依賴 Windows Server®2012作業系統內建的伺服器功能。
   
 Microsoft 的 AD FS 產品小組已成功測試下表中的瀏覽器和作業系統設定。  
   
-|Browser|Windows 7|Windows Vista|  
+|瀏覽器|Windows 7|Windows Vista|  
 |-----------|-------------|-----------------|  
 |Internet Explorer 7。0|X|X|  
 |Internet Explorer 8。0|X|X|  
@@ -81,19 +80,19 @@ Microsoft 的 AD FS 產品小組已成功測試下表中的瀏覽器和作業系
 > [!NOTE]  
 > AD FS 支援上表中顯示之所有瀏覽器的 32 位元和 64 位元版本。  
   
-### <a name="cookies"></a>Cookie  
+### <a name="cookies"></a>Cookies  
 AD FS 會建立以工作階段為基礎的永續性 Cookie，這類 Cookie 必須儲存於用戶端電腦上，以提供登入、登出、單一登入 (SSO) 及其他功能。 因此，用戶端瀏覽器必須設定為接受 Cookie。 用來驗證的 Cookie 一律為安全超文字傳輸通訊協定 (HTTPS) 工作階段 Cookie，它們是針對原始伺服器所撰寫的。 如果未將用戶端瀏覽器設定為允許這些 Cookie，AD FS 就無法正確運作。 永續性 Cookie 可用來保留宣告提供者的使用者選項。 您可以在適用於 AD FS 登入頁面的設定檔中使用組態設定來停用它們。  
   
 基於安全理由，需要支援 TLS/SSL。  
   
 ## <a name="network-requirements"></a>網路需求  
-適當地設定下列網路服務對於在組織中成功部署 AD FS 非常重要。  
+適當地設定以下網路服務是在組織中成功部署 AD FS 的要素。  
   
 ### <a name="tcpip-network-connectivity"></a>TCP/IP 網路連線  
 若要讓 AD FS 運作，用戶端之間必須存在 TCP/IP 網路連線能力。網域控制站;以及主控同盟服務的電腦、同盟服務 Proxy （使用時），以及 AD FS 網路代理程式。  
   
 ### <a name="dns"></a>DNS  
-除了 Active Directory Domain Services （AD DS）以外，對 AD FS 作業而言，主要網路服務是網域名稱系統（DNS）。 部署 DNS 時，使用者可以使用容易記住的好記電腦名稱，連接到電腦及 IP 網路上的其他資源。  
+除了 Active Directory Domain Services （AD DS）以外，對 AD FS 作業而言，主要網路服務是網域名稱系統（DNS）。 部署 DNS 時，使用者可以使用易記的電腦名稱來連線到 IP 網路上的電腦和其他資源。  
   
  Windows Server 2008 使用 DNS 進行名稱解析，而不是以 Windows NT 4.0 為基礎的網路中使用的 Windows 網際網路名稱服務（WINS） NetBIOS 名稱解析。 您還是能夠針對需要 WINS 的應用程式使用它。 不過，AD DS 和 AD FS 需要 DNS 名稱解析。  
   
@@ -101,7 +100,7 @@ AD FS 會建立以工作階段為基礎的永續性 Cookie，這類 Cookie 必�
   
 -   您的組織現在已經具備 DNS 基礎結構。 在大部分的情況下，DNS 已經在您的整個網路中設定完成，讓貴公司網路中的網頁瀏覽器用戶端都能存取網際網路。 因為網際網路存取和名稱解析是 AD FS 的需求，所以會假設此基礎結構已適用于您的 AD FS 部署。  
   
--   您想要將同盟伺服器新增到公司網路。 基於在公司網路中驗證使用者的目的，必須設定公司網路樹系中的內部 DNS 伺服器，以傳回正在執行 Federation Service 的內部伺服器 CNAME。 如需詳細資訊，請參閱 [Name Resolution Requirements for Federation Servers](Name-Resolution-Requirements-for-Federation-Servers.md)。  
+-   您想要將同盟伺服器新增到公司網路。 基於在公司網路中驗證使用者的目的，必須設定公司網路樹系中的內部 DNS 伺服器，以傳回正在執行 Federation Service 的內部伺服器 CNAME。 如需詳細資訊，請參閱[同盟伺服器的名稱解析需求](Name-Resolution-Requirements-for-Federation-Servers.md)。  
   
 -   您想要將同盟伺服器 Proxy 新增到周邊網路。 當您想要驗證位於身分識別夥伴組織的公司網路中的使用者帳戶時，必須設定公司網路樹系中的內部 DNS 伺服器，以傳回內部同盟伺服器 proxy 的 CNAME。 如需如何設定 DNS 以配合同盟伺服器 proxy 新增的詳細資訊，請參閱[同盟伺服器 proxy 的名稱解析需求](Name-Resolution-Requirements-for-Federation-Server-Proxies.md)。  
   
@@ -115,7 +114,7 @@ AD FS 需要至少一個用來驗證使用者的屬性存放區，並將這些�
   
 屬性存放區需求需視您的組織是帳戶夥伴 (主控同盟使用者) 或資源夥伴 (主控同盟應用程式) 而定。  
   
-### <a name="adds"></a>AD DS  
+### <a name="adds"></a>AD DS  
 若要讓 AD FS 順利操作，帳戶夥伴組織或資源夥伴組織中的網域控制站必須執行 Windows Server 2003 SP1、Windows Server 2003 R2、Windows Server 2008 或 Windows Server 2012。  
   
 在已加入網域的電腦上安裝並設定 AD FS 時，該網域的 Active Directory 使用者帳戶存放區會變成可選取的屬性存放區。  
@@ -135,7 +134,7 @@ AD FS 不需要架構變更或 AD DS 的功能層級修改。
 ### <a name="ldap"></a>LDAP  
 當您使用其他以輕量型目錄存取通訊協定 (LDAP) 為基礎的屬性存放區時，必須連線到支援 Windows 整合式驗證的 LDAP 伺服器。 LDAP 連線字串也必須以 LDAP URL 的格式來書寫，如 RFC 2255 中所述。  
   
-### <a name="sql-server"></a>[SQL Server]  
+### <a name="sql-server"></a>SQL Server  
 若要讓 AD FS 能夠順利運作，裝載結構化查詢語言 (SQL) （SQL）伺服器屬性存放區的電腦必須執行 Microsoft SQL Server 2005 或 SQL Server 2008。 當您使用以 SQL 為基礎的屬性存放區時，也必須設定連線字串。  
   
 ### <a name="custom-attribute-stores"></a>自訂屬性存放區  

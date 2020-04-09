@@ -1,27 +1,23 @@
 ---
 title: 建立 MultiPoint 儀表板使用者帳戶
-ms.custom: na
 description: 建立要搭配儀表板使用的帳戶
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: eb9d7da1-eb5e-42c0-8d59-bb6d7b007ea9
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: b4e5fb85ae1dcaf7bd698f052e990e6ac1ac8dbc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b94c02fe514b4f7a694b908600127eda7c664c09
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389766"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859791"
 ---
 # <a name="create-a-multipoint-dashboard-user-account"></a>建立 MultiPoint 儀表板使用者帳戶
-針對將會定期存取工作站，但不會管理 MultiPoint 服務系統的使用者，建立 MultiPoint 儀表板使用者帳戶。 具有 MultiPoint 儀表板使用者帳戶的使用者可以執行大部分的應用程式並儲存檔案，但無法執行 MultiPoint 管理員。 若要查看具有 MultiPoint 儀表板使用者存取權的使用者，請在 [MultiPoint 管理員] 中按一下 [**使用者**] 索引標籤MultiPoint 儀表板使用者帳戶會作為 **MultiPoint 儀表板使用者**來顯示在 [帳戶類型] 欄位內。  
+如果使用者要定期存取站台，但不會管理 MultiPoint 服務系統，請為他們建立「MultiPoint 儀表板使用者帳戶」。 具有 MultiPoint 儀表板使用者帳戶的使用者可以執行大部分的應用程式並儲存檔案，但無法執行 MultiPoint 管理員。 若要查看具有 MultiPoint 儀表板使用者存取權的使用者，請在 [MultiPoint 管理員] 中按一下 [**使用者**] 索引標籤。 Multipoint 儀表板使用者帳戶會在 [**帳戶類型**] 欄中顯示為**multipoint 儀表板**  
   
 如果您的 MultiPoint 服務使用者會將私人文件儲存在 Windows 中，則每位使用者應該使用唯一的使用者名稱和密碼來登入 MultiPoint 服務系統。  
   

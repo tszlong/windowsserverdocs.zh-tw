@@ -1,7 +1,6 @@
 ---
 ms.assetid: 8ce6e7c4-cf8e-4b55-980c-048fea28d50f
 title: 使用 SQL Server 的同盟伺服器陣列
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b299ddc823b3fbbd5818f96202e3c01faf0762d7
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 9f8375ffb73ff6be290b534d59e6ce5c8a7be27b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323100"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858061"
 ---
 # <a name="ad-fs-requirements"></a>AD FS 需求
 
@@ -48,7 +47,7 @@ ms.locfileid: "79323100"
   
 -   [權限需求](AD-FS-Requirements.md#BKMK_13)  
   
-## <a name="BKMK_1"></a>憑證需求  
+## <a name="certificate-requirements"></a><a name="BKMK_1"></a>憑證需求  
 憑證在保護同盟伺服器、Web 應用程式 proxy、宣告\-感知應用程式和 Web 用戶端之間的通訊時，扮演最重要的角色。 憑證的需求會根據您設定的是同盟伺服器或 proxy 電腦而有所不同，如本節所述。  
   
 **同盟伺服器憑證**  
@@ -70,7 +69,7 @@ ms.locfileid: "79323100"
 > [!NOTE]  
 > 在您收到來自 CA 的憑證之後，請確定會將所有憑證匯入本機電腦的個人憑證存放區。 您可以使用中的憑證 MMC 嵌入式管理\-，將憑證匯入到個人存放區。  
   
-## <a name="BKMK_2"></a>硬體需求  
+## <a name="hardware-requirements"></a><a name="BKMK_2"></a>硬體需求  
 下列最低和建議硬體需求適用于 Windows Server 2012 R2 中的 AD FS 同盟伺服器：  
   
 ||||  
@@ -80,14 +79,14 @@ ms.locfileid: "79323100"
 |RAM|512 MB|4 GB|  
 |磁碟空間|32 GB|100 GB|  
   
-## <a name="BKMK_3"></a>軟體需求  
-下列 AD FS 需求適用于 Windows Server® 2012 R2 作業系統內建的伺服器功能：  
+## <a name="software-requirements"></a><a name="BKMK_3"></a>軟體需求  
+下列 AD FS 需求適用于 Windows Server&reg; 2012 R2 作業系統內建的伺服器功能：  
   
--   針對外部網路存取，您必須將 Web 應用程式 Proxy 角色服務部署 \- Windows Server® 2012 R2 遠端存取服務器角色的一部分。 Windows Server® 2012 R2 中的 AD FS 不支援先前版本的同盟伺服器 proxy。  
+-   針對外部網路存取，您必須將 Web 應用程式 Proxy 角色服務部署 \- Windows Server&reg; 2012 R2 遠端存取服務器角色的一部分。 Windows Server&reg; 2012 R2 中的 AD FS 不支援先前版本的同盟伺服器 proxy。  
   
 -   同盟伺服器和 Web 應用程式 Proxy 角色服務無法安裝在同一部電腦上。  
   
-## <a name="BKMK_4"></a>AD DS 需求  
+## <a name="ad-ds-requirements"></a><a name="BKMK_4"></a>AD DS 需求  
 **網域控制站需求**  
   
 所有使用者網域中的網域控制站，以及 AD FS 伺服器所加入的網域，都必須執行 Windows Server 2008 或更新版本。  
@@ -134,7 +133,7 @@ ms.locfileid: "79323100"
   
 -   在包含向 AD FS 服務驗證的使用者的每個使用者網域中，都必須信任 AD FS 服務帳戶。  
   
-## <a name="BKMK_5"></a>設定資料庫需求  
+## <a name="configuration-database-requirements"></a><a name="BKMK_5"></a>設定資料庫需求  
 以下是根據設定存放區類型所適用的需求和限制：  
   
 **WID**  
@@ -157,7 +156,7 @@ ms.locfileid: "79323100"
   
 針對 Windows Server 2012 R2 中的 AD FS，您可以使用 SQL Server 2008 及更新版本  
   
-## <a name="BKMK_6"></a>瀏覽器需求  
+## <a name="browser-requirements"></a><a name="BKMK_6"></a>瀏覽器需求  
 透過瀏覽器或瀏覽器控制項執行 AD FS 驗證時，您的瀏覽器必須符合下列需求：  
   
 -   必須啟用 JavaScript  
@@ -187,12 +186,12 @@ ms.locfileid: "79323100"
   
 AD FS 會建立必須儲存在用戶端電腦上的會話\-型和持續性 cookie，以便在中提供登入\-、簽署\-、\-SSO \(上的單一登入\)和其他功能。 因此，用戶端瀏覽器必須設定為接受 Cookie。 用於驗證的 cookie 一律是安全超文字傳輸通訊協定，\(HTTPS\) 為源伺服器所撰寫的會話 cookie。 如果未將用戶端瀏覽器設定為允許這些 Cookie，AD FS 就無法正確運作。 永續性 Cookie 可用來保留宣告提供者的使用者選項。 您可以使用頁面中 AD FS sign\-設定檔案中的設定來停用它們。 基於安全性理由，需要對 TLS\/SSL 的支援。  
   
-## <a name="BKMK_extranet"></a>外部網路需求  
+## <a name="extranet-requirements"></a><a name="BKMK_extranet"></a>外部網路需求  
 若要提供 AD FS 服務的外部網路存取，您必須將 Web 應用程式 Proxy 角色服務部署為對 AD FS 服務的安全方式 proxy 驗證要求的外部網站角色。 這會提供 AD FS 服務端點的隔離，以及隔離所有的安全性金鑰 \(例如從來自網際網路的要求\) 權杖簽署憑證。 此外，諸如「軟外部網路」帳戶鎖定之類的功能都需要使用 Web 應用程式 Proxy。 如需 Web 應用程式 Proxy 的詳細資訊，請參閱[Web 應用程式 proxy](https://technet.microsoft.com/library/dn584107.aspx)。  
   
 如果您想要使用第三個\-方 proxy 進行外部網路存取，第三個\-方 proxy 必須支援 HTTP：\/中定義的通訊協定[\/download.microsoft.com\/下載\/9\/5\/E\/95EF66AF\-9026\-4BB0\-A41D\-A4F81802D92C\/% 5bMS\-ADFSPIP %5 d. .pdf](https://download.microsoft.com/download/9/5/E/95EF66AF-9026-4BB0-A41D-A4F81802D92C/%5bMS-ADFSPIP%5d.pdf)。  
   
-## <a name="BKMK_7"></a>網路需求  
+## <a name="network-requirements"></a><a name="BKMK_7"></a>網路需求  
 適當地設定下列網路服務對於在組織中成功部署 AD FS 非常重要：  
   
 **設定公司防火牆**  
@@ -220,7 +219,7 @@ AD FS 會建立必須儲存在用戶端電腦上的會話\-型和持續性 cooki
   
 如需有關如何使用 NLB 設定叢集 IP 位址或叢集 FQDN 的詳細資訊，請參閱在[HTTP：\/\/go.microsoft.com\/fwlink\/指定叢集參數？LinkId\=75282](https://go.microsoft.com/fwlink/?LinkId=75282)。  
   
-## <a name="BKMK_8"></a>屬性存放區需求  
+## <a name="attribute-store-requirements"></a><a name="BKMK_8"></a>屬性存放區需求  
 AD FS 需要至少一個用來驗證使用者的屬性存放區，並將這些使用者的安全性宣告解壓縮。 如需 AD FS 支援的屬性存放區清單，請參閱[屬性存放區的角色](../../ad-fs/technical-reference/The-Role-of-Attribute-Stores.md)。  
   
 > [!NOTE]  
@@ -256,7 +255,7 @@ AD FS 需要至少一個用來驗證使用者的屬性存放區，並將這些�
   
 當您使用自訂屬性存放區時，您可能也必須設定連接字串。 在這種情況下，您可以輸入您選擇的自訂程式碼，以啟用與您的自訂屬性存放區的連接。 在此情況下，連接字串是由自訂屬性存放區的開發人員所執行的一組名稱\/值配對。如需開發和使用自訂屬性存放區的詳細資訊，請參閱[屬性存放區總覽](https://go.microsoft.com/fwlink/?LinkId=190782)。  
   
-## <a name="BKMK_9"></a>應用程式需求  
+## <a name="application-requirements"></a><a name="BKMK_9"></a>應用程式需求  
 AD FS 支援使用下列通訊協定的宣告\-感知應用程式：  
   
 -   WS\-同盟  
@@ -269,7 +268,7 @@ AD FS 支援使用下列通訊協定的宣告\-感知應用程式：
   
 AD FS 也支援 Web 應用程式 Proxy 支援的任何非\-宣告\-感知應用程式的驗證和授權。  
   
-## <a name="BKMK_10"></a>驗證需求  
+## <a name="authentication-requirements"></a><a name="BKMK_10"></a>驗證需求  
 **AD DS 驗證 \(主要驗證\)**  
   
 針對內部網路存取，支援下列 AD DS 標準驗證機制：  
@@ -322,7 +321,7 @@ AD FS 支援 AD DS\) 使用提供者模型所支援的其他驗證 \(，而廠�
   
 AD FS 在使用者工作場所加入裝置的動作期間，使用裝置註冊服務所布建的憑證來支援裝置驗證。  
   
-## <a name="BKMK_11"></a>工作地點加入需求  
+## <a name="workplace-join-requirements"></a><a name="BKMK_11"></a>工作地點加入需求  
 使用者可以使用 AD FS，將其裝置加入組織的工作場所。 AD FS 中的裝置註冊服務可支援此功能。 如此一來，使用者就能在 AD FS 支援的應用程式中獲得 SSO 的額外優點。 此外，系統管理員可以藉由限制只有已加入工作場所的裝置才能存取應用程式，來管理風險。 以下是啟用此案例的下列需求。  
   
 -   AD FS 支援 Windows 8.1 和 iOS 5\+ 裝置的 workplace join  
@@ -331,7 +330,7 @@ AD FS 在使用者工作場所加入裝置的動作期間，使用裝置註冊�
   
 -   AD FS 服務之 SSL 憑證的主體替代名稱必須包含值 enterpriseregistration，後面接著您組織的使用者主體名稱 \(UPN\) 尾碼，例如 enterpriseregistration.corp.contoso.com。  
   
-## <a name="BKMK_12"></a>密碼編譯需求  
+## <a name="cryptography-requirements"></a><a name="BKMK_12"></a>密碼編譯需求  
 下表提供有關 AD FS 權杖簽署、權杖加密\/解密功能的其他密碼編譯支援資訊：  
   
 ||||  
@@ -347,10 +346,10 @@ AD FS 在使用者工作場所加入裝置的動作期間，使用裝置註冊�
 |AES256KeyWrap \- [HTTP：\/\/www.w3.org\/2001\/04\/xmlenc\#kw\-aes256](http://www.w3.org/2001/04/xmlenc#kw-aes256)|256|支援加密安全性權杖之對稱金鑰的演算法。|  
 |RsaV15KeyWrap \- [HTTP：\/\/www.w3.org\/2001\/04\/xmlenc\#rsa\-1\_5](http://www.w3.org/2001/04/xmlenc#rsa-1_5)|1024|支援加密安全性權杖之對稱金鑰的演算法。|  
 |RsaOaepKeyWrap \- [HTTP：\/\/www.w3.org\/2001\/04\/xmlenc\#rsa\-oaep\-rsa-oaep-mgf1p 代表](http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p)|1024|Default： 支援加密安全性權杖之對稱金鑰的演算法。|  
-|SHA1\-[HTTP：\/\/www.w3.org\/圖片\/DSig\/SHA1\_1\_0 .html](http://www.w3.org/PICS/DSig/SHA1_1_0.html)|N\/A|由成品 SourceId 產生中的 AD FS 伺服器使用：在此案例中，STS 會根據 SAML 2.0 標準\) 中的建議使用 SHA1 \(，以建立成品 sourceiD 的簡短160位值。<br /><br />ADFS web 代理 \(程式也會使用 WS2003 時間範圍內的舊版元件\) 來識別「上次更新」時間值的變更，讓它知道何時要從 STS 更新資訊。|  
-|SHA1withRSA\-<br /><br />[HTTP：\/\/www.w3.org\/圖片\/DSig\/RSA\-SHA1\_1\_0 .html](http://www.w3.org/PICS/DSig/RSA-SHA1_1_0.html)|N\/A|用於 AD FS 伺服器驗證 SAML AuthenticationRequest 簽章、簽署成品解析要求或回應、建立權杖\-簽署憑證的情況。<br /><br />在這些情況下，SHA256 是預設值，只有在合作夥伴 \(信賴憑證者\) 無法支援 SHA256 且必須使用 SHA1 時，才會使用 SHA1。|  
+|SHA1\-[HTTP：\/\/www.w3.org\/圖片\/DSig\/SHA1\_1\_0 .html](http://www.w3.org/PICS/DSig/SHA1_1_0.html)|N\/A|由成品 SourceId 產生中的 AD FS 伺服器使用：在此案例中，STS 會根據 SAML 2.0 標準\) 中的建議使用 SHA1 \(，以建立成品 sourceiD 的簡短160位值。<p>ADFS web 代理 \(程式也會使用 WS2003 時間範圍內的舊版元件\) 來識別「上次更新」時間值的變更，讓它知道何時要從 STS 更新資訊。|  
+|SHA1withRSA\-<p>[HTTP：\/\/www.w3.org\/圖片\/DSig\/RSA\-SHA1\_1\_0 .html](http://www.w3.org/PICS/DSig/RSA-SHA1_1_0.html)|N\/A|用於 AD FS 伺服器驗證 SAML AuthenticationRequest 簽章、簽署成品解析要求或回應、建立權杖\-簽署憑證的情況。<p>在這些情況下，SHA256 是預設值，只有在合作夥伴 \(信賴憑證者\) 無法支援 SHA256 且必須使用 SHA1 時，才會使用 SHA1。|  
   
-## <a name="BKMK_13"></a>權限需求  
+## <a name="permissions-requirements"></a><a name="BKMK_13"></a>權限需求  
 執行安裝的系統管理員和 AD FS 的初始設定，必須擁有本機網域中的網域系統管理員許可權 \(換句話說，即為同盟伺服器加入的網域。\)  
   
 ## <a name="see-also"></a>另請參閱  

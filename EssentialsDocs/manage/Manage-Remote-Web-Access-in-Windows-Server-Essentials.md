@@ -1,29 +1,25 @@
 ---
 title: 在 Windows Server Essentials 中管理遠端 Web 存取
 description: 說明如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f3ea40fa-b6ba-4d66-b754-221ca6271387
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 6f4277637ed0f721b0cae12c15086a59ac6190fc
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 3457eb28c05bd79f0de3a982da77ca01ffe9b52d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311164"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852761"
 ---
 # <a name="manage-remote-web-access-in-windows-server-essentials"></a>在 Windows Server Essentials 中管理遠端 Web 存取
 
 >適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
  
- Windows Server Essentials 中的遠端 Web 存取，或在已安裝 Windows Server Essentials 體驗角色的 Windows Server 2012 R2 中，提供簡化且易於觸控的瀏覽器體驗，可讓您從幾乎任何地方存取應用程式和資料您有網際網路連線，並使用幾乎任何裝置。 若要使用遠端 Web 存取功能，您必須先使用 [設定隨處存取精靈] 開啟該功能，然後設定您的路由器和網域名稱。  
+ Windows Server Essentials 中的遠端 Web 存取，或在已安裝 Windows Server Essentials 體驗角色的 Windows Server 2012 R2 中，提供簡化且易於觸控的瀏覽器體驗，可讓您從幾乎任何有網際網路連線的地方存取應用程式和資料，以及使用幾乎任何裝置。 若要使用遠端 Web 存取功能，您必須先使用 [設定隨處存取精靈] 開啟該功能，然後設定您的路由器和網域名稱。  
   
 ## <a name="in-this-topic"></a>本主題內容  
   
@@ -296,7 +292,7 @@ ms.locfileid: "80311164"
   
  **次層網域名稱**是頂層網域名稱延伸旁的標籤。 次層網域名稱通常是根據公司名稱、產品或服務來建立的。 例如，在 www\.contoso.com 中，contoso 是第二層功能變數名稱，並已針對公司名稱 Contoso 製藥進行選擇。 次層網域有時也稱為主機名稱，它會有一個關聯的 IP 位址。  
   
- **網域名稱前置碼** 可識別子網域。 子網域名稱可用來識別服務、裝置或地區。 例如，Contoso Pharmaceuticals 想要讓遠端使用者可以登入「遠端 Web 存取」，但是不想要將網站提供給大眾使用，因此它們會建立一個只允許具有適當權限之使用者存取網站的子網域。 Contoso Pharmaceuticals 會設定 remote.contoso.com 做為子網域，而 remote 就是網域名稱前置碼。  
+ **網域名稱前置碼**可識別子網域。 子網域名稱可用來識別服務、裝置或地區。 例如，Contoso Pharmaceuticals 想要讓遠端使用者可以登入「遠端 Web 存取」，但是不想要將網站提供給大眾使用，因此它們會建立一個只允許具有適當權限之使用者存取網站的子網域。 Contoso Pharmaceuticals 會設定 remote.contoso.com 做為子網域，而 remote 就是網域名稱前置碼。  
   
 > [!TIP]
 >  建議您使用預設的 **Remote** 做為您網域名稱的前置碼。  

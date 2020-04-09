@@ -5,15 +5,15 @@ ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.date: 11/05/2018
-ms.author: lizross
-author: eross-msft
+ms.author: v-tea
+author: Teresa-MOTIV
 ms.localizationpriority: medium
-ms.openlocfilehash: a5d65dd9f8fb6328bd00be8a46af37ee69ccd2bf
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 570b96d07f414442a00d5f7ec48de80f270f0a76
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313399"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861311"
 ---
 # <a name="always-on-vpn-technology-overview"></a>Always On VPN 技術總覽
 
@@ -68,7 +68,7 @@ ms.locfileid: "80313399"
 
 IKEv2 是網際網路工程任務要求批註7296中所述的 VPN 通道通訊協定。 IKEv2 的主要優點是它會容許基礎網路連線的中斷。 例如，如果連線暫時遺失，或使用者將用戶端電腦從一個網路移到另一個網路，則在重新建立網路連線時，IKEv2 會自動還原 VPN 連線，而不需要使用者介入。
 
-藉由使用 RAS 閘道，您可以部署 VPN 連線，讓使用者可以從遠端存取您組織的網路和資源。 部署 Always On VPN 會在遠端電腦連線到網際網路時，維護用戶端與組織網路之間的持續連接。 使用 RAS 閘道，您也可以在不同位置的兩部伺服器之間建立站對站 VPN 連線，例如在主要辦公室和分公司之間，以及使用網路位址轉譯（NAT），讓網路內的使用者可以存取外部資源，例如網際網路。 此外，RAS 閘道支援邊界閘道協定（BGP），在您的遠端辦公室位置也有支援 BGP 的邊緣閘道時，提供動態路由服務。
+藉由使用 RAS 閘道，您可以部署 VPN 連線，讓使用者可以從遠端存取您組織的網路和資源。 部署 Always On VPN 會在遠端電腦連線到網際網路時，維護用戶端與組織網路之間的持續連接。 使用 RAS 閘道時，您也可以在不同位置的兩部伺服器之間建立站對站 VPN 連線，例如主要辦公室和分公司，以及使用網路位址轉譯（NAT），讓網路內的使用者可以存取外部資源（例如網際網路）。 此外，RAS 閘道支援邊界閘道協定（BGP），在您的遠端辦公室位置也有支援 BGP 的邊緣閘道時，提供動態路由服務。
 
 您可以使用 Windows PowerShell 命令和遠端存取 Microsoft Management Console （MMC）來管理遠端存取服務（RAS）閘道。
 
@@ -202,10 +202,10 @@ Windows 10 提供許多 Csp，但此部署著重于使用 VPNv2 CSP 來設定 VP
 
 - [網域名稱系統（dns）](../../../../networking/dns/dns-top.md)：本主題提供網域名稱系統（dns）的總覽。 在 Windows Server 2016 中，DNS 是一種伺服器角色，您可以使用伺服器管理員或 Windows PowerShell 命令來安裝它。 如果您要安裝新的 Active Directory 樹系和網域，則會自動安裝 DNS，Active Directory 做為樹系和網域的全域目錄伺服器。
 
-- [Active Directory 憑證服務總覽](https://technet.microsoft.com/library/hh831740.aspx)：本檔提供 Windows Server®2012中 Active Directory 憑證服務（AD CS）的總覽。 AD CS 是一種伺服器角色，可以讓您為組織建立公開金鑰基礎結構 (PKI)，並提供公開金鑰密碼編譯、數位憑證以及數位簽章功能。
+- [Active Directory 憑證服務總覽](https://technet.microsoft.com/library/hh831740.aspx)：本檔提供 Windows Server&reg; 2012 中 Active Directory 憑證服務（AD CS）的總覽。 AD CS 是一種伺服器角色，可以讓您為組織建立公開金鑰基礎結構 (PKI)，並提供公開金鑰密碼編譯、數位憑證以及數位簽章功能。
 
 - [公開金鑰基礎結構設計指導](https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx)方針：此 wiki 提供有關設計公開金鑰基礎結構（pki）的指導方針。 設定 PKI 和憑證授權單位單位（CA）階層之前，您應該瞭解組織的安全性原則和憑證實務聲明（CPS）。
 
-- [AD CS 逐步指南：兩層式 PKI 階層部署](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx)：此逐步指南說明在實驗室環境中設定 Active Directory®憑證服務（AD CS）基本設定所需的步驟。 Windows Server® 2008 R2 中的 AD CS 提供了可自訂的服務，可用來建立及管理採用公開金鑰技術的軟體安全性系統中所使用的公開金鑰憑證。
+- [AD CS 逐步指南：兩層式 PKI 階層部署](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx)：此逐步指南說明在實驗室環境中設定 Active Directory&reg; 憑證服務（AD CS）基本設定所需的步驟。 Windows Server&reg; 2008 R2 中的 AD CS 提供了可自訂的服務，可用來建立及管理採用公開金鑰技術的軟體安全性系統中所使用的公開金鑰憑證。
 
 - [網路原則伺服器（NPS）](../../../../networking/technologies/nps/nps-top.md)：本主題提供 Windows Server 2016 中網路原則伺服器的總覽。 網路原則伺服器 (NPS) 可讓您建立並執行全組織網路存取原則，以用於連線要求驗證與授權。

@@ -1,6 +1,5 @@
 ---
 title: 針對受防護網狀架構部署快速入門
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: e060e052-39a0-4154-90bb-b97cc6dde68e
@@ -9,12 +8,12 @@ author: justinha
 ms.author: justinha
 ms.technology: security-guarded-fabric
 ms.date: 01/30/2019
-ms.openlocfilehash: e2b8400fc7b7f0e01e000fcb2f6472bdb4059ac8
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: c0e29abf14ff1dded12e7e20a0c0a74f80a91d8e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949808"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856741"
 ---
 # <a name="quick-start-for-guarded-fabric-deployment"></a>針對受防護網狀架構部署快速入門
 
@@ -105,9 +104,9 @@ Hyper-v 主機必須執行 Windows Server 2016 Datacenter edition 或更新版�
 
 針對 TPM 模式，需要三件事： 
 
-1.  每一部 Hyper-v 主機上的 TPM 2.0_公開簽署金鑰_（或_EKpub_）。 若要捕捉 EKpub，請使用 `Get-PlatformIdentifier`。 
-2.  _硬體基準_。 如果您的每一部 Hyper-v 主機都相同，則您只需要單一基準。 如果不是，則每個硬體類別都需要一個。 基準的形式為可信任的運算群組記錄檔，或 TCGlog。 此 TCGlog 包含主機從 UEFI 固件到核心為止的所有專案，最高可由主機完全啟動。 若要捕獲硬體基準，請安裝 Hyper-v 角色和主機守護者 Hyper-v 支援功能，並使用 `Get-HgsAttestationBaselinePolicy`。 
-3.  程式_代碼完整性原則_。 如果您的每一部 Hyper-v 主機都相同，則您只需要單一 CI 原則。 如果不是，則每個硬體類別都需要一個。 Windows Server 2016 和 Windows 10 都有新的 CI 原則形式強制執行，稱為「_虛擬程式碼完整性」（HVCI）_ 。 HVCI 提供強式強制執行，並確保主機只能執行受信任的系統管理員允許它執行的二進位檔。 這些指示會包裝在新增至 HGS 的 CI 原則中。 HGS 會測量每個主機的 CI 原則，然後才允許它們執行受防護的 Vm。 若要捕捉 CI 原則，請使用 `New-CIPolicy`。 接著，必須使用 `ConvertFrom-CIPolicy`，將原則轉換成其二進位格式。
+1.    每一部 Hyper-v 主機上的 TPM 2.0_公開簽署金鑰_（或_EKpub_）。 若要捕捉 EKpub，請使用 `Get-PlatformIdentifier`。 
+2.    _硬體基準_。 如果您的每一部 Hyper-v 主機都相同，則您只需要單一基準。 如果不是，則每個硬體類別都需要一個。 基準的形式為可信任的運算群組記錄檔，或 TCGlog。 此 TCGlog 包含主機從 UEFI 固件到核心為止的所有專案，最高可由主機完全啟動。 若要捕獲硬體基準，請安裝 Hyper-v 角色和主機守護者 Hyper-v 支援功能，並使用 `Get-HgsAttestationBaselinePolicy`。 
+3.    程式_代碼完整性原則_。 如果您的每一部 Hyper-v 主機都相同，則您只需要單一 CI 原則。 如果不是，則每個硬體類別都需要一個。 Windows Server 2016 和 Windows 10 都有新的 CI 原則形式強制執行，稱為「_虛擬程式碼完整性」（HVCI）_ 。 HVCI 提供強式強制執行，並確保主機只能執行受信任的系統管理員允許它執行的二進位檔。 這些指示會包裝在新增至 HGS 的 CI 原則中。 HGS 會測量每個主機的 CI 原則，然後才允許它們執行受防護的 Vm。 若要捕捉 CI 原則，請使用 `New-CIPolicy`。 接著，必須使用 `ConvertFrom-CIPolicy`，將原則轉換成其二進位格式。
 
 ![解壓縮身分識別、基準和 CI 原則](../media/Guarded-Fabric-Shielded-VM/guarded-fabric-deployment-step-three-extract-identity-baseline-ci-policy.png)
 

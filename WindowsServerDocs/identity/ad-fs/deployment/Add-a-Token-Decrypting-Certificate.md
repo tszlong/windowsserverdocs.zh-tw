@@ -1,7 +1,6 @@
 ---
 ms.assetid: 27e1e299-0beb-4e86-8143-1ba031dc3502
 title: 新增權杖解密憑證
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 388414fff97705901bf52ee844b90508d62f8c83
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5714a41950b9c2f818ddc154a9af7a55fdb362d8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408459"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80814962"
 ---
 # <a name="add-a-token-decrypting-certificate"></a>新增權杖解密憑證
 
@@ -25,7 +24,7 @@ ms.locfileid: "71408459"
   
 您可以使用下列程式，從您已匯出的檔案中，將憑證\-解密至中的 AD FS 管理嵌入式管理\-。  
   
-若要完成此程序，至少需要本機電腦上之 **Administrators** 群組的成員資格或同等權限。  如需使用適當帳戶和群組成員資格的詳細資料，請參閱[本機與網域預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)\(HTTP：\/\/go.microsoft.com\/fwlink\/？LinkId\=83477\)。   
+若要完成此程序，至少需要本機電腦之 **Administrators** 群組的成員資格或同等權限。  如需使用適當帳戶和群組成員資格的詳細資料，請參閱[本機與網域預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)\(HTTP：\/\/go.microsoft.com\/fwlink\/？LinkId\=83477\)。   
   
 ### <a name="to-add-a-token-decrypting-certificate"></a>新增權杖\-解密憑證  
   

@@ -2,25 +2,23 @@
 title: Windows Server 上的 Hyper-v 系統需求
 description: 列出 Windows Server 中 Hyper-v 的硬體和固件需求
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: bc4a4971-f727-40cd-91f5-2ee6d24b54cb
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 9/30/2016
-ms.openlocfilehash: fabaa1933fef836bb6ce3fc01badf337b832d072
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9bb50448f1ee819b3b886536424ee1556775b78d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365436"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857981"
 ---
 # <a name="system-requirements-for-hyper-v-on-windows-server"></a>Windows Server 上的 Hyper-v 系統需求
 
->適用於：Windows Server 2016，Microsoft Hyper-v Server 2016，Windows Server 2019，Microsoft Hyper-v Server 2019
+>適用于： Windows Server 2016、Microsoft Hyper-v Server 2016、Windows Server 2019、Microsoft Hyper-v Server 2019
 
 Hyper-v 具有特定的硬體需求，而某些 Hyper-v 功能則有額外的需求。 請使用本文中的詳細資料來決定您的系統必須符合哪些需求，才能以您規劃的方式使用 Hyper-v。 然後，請參閱[Windows Server catalog](https://www.windowsservercatalog.com/)。 請記住，Hyper-v 的需求超過 Windows Server 2016 的一般最低需求，因為虛擬化環境需要更多運算資源。
 

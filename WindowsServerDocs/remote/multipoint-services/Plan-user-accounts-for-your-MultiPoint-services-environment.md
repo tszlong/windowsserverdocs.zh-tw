@@ -1,24 +1,20 @@
 ---
 title: 為您的 MultiPoint 服務環境規劃使用者帳戶
 description: MultiPoint 服務中使用者帳戶的規劃資訊
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d47be540-e891-47bd-85da-6df4bbf93b2f
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 056c3b9773387cf00b40baf6f14e4e1f3583f6c9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 28ee7a1475ec55352fe344842b8df7633abb9137
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405009"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853391"
 ---
 # <a name="plan-user-accounts-for-your-multipoint-services-environment"></a>為您的 MultiPoint 服務環境規劃使用者帳戶
 在 MultiPoint 服務中執行使用者帳戶的最佳方式，會視部署的大小和複雜度而定：  
@@ -62,7 +58,7 @@ ms.locfileid: "71405009"
 |UserAccount_04|UserAccount_04|  
 |UserAccount_05|UserAccount_05|  
   
-這種方法的優點是，使用者在每個可用的 MultiPoint 服務上都有一個本機使用者帳戶。 不過，缺點可能會超過這種優點。 例如，即使這兩部電腦上特定人員的使用者名稱和密碼相同，這些帳戶也不會彼此連結。 因此，如果使用者在星期一登入電腦 A 的帳戶，則會儲存檔案，然後在星期二的電腦 B 上登入其帳戶，他或她將無法存取先前儲存在電腦 A 上的檔案。此外，，在多部電腦上複寫使用者帳戶會增加系統管理額外負荷和儲存需求。  
+這種方法的優點是，使用者在每個可用的 MultiPoint 服務上都有一個本機使用者帳戶。 不過，缺點可能會超過這種優點。 例如，即使這兩部電腦上特定人員的使用者名稱和密碼相同，這些帳戶也不會彼此連結。 因此，如果使用者在星期一的電腦 A 登入自己的帳戶、儲存檔案，然後在星期二的電腦 B 登入其帳戶，他或她將無法存取先前儲存在電腦 A 上的檔案。此外，在多部電腦上複寫使用者帳戶會增加管理負擔和儲存需求。  
   
 ### <a name="use-generic-local-user-accounts"></a>使用一般本機使用者帳戶  
 如果您的 MultiPoint 服務系統未連線到網域，而您不想要為每個使用者建立個別帳戶，您可以為每個工作站建立一般帳戶。 例如，如果您有兩部執行 MultiPoint 服務的電腦，而且有五個工作站與每部電腦相關聯，您可能會決定建立如下表所示的使用者帳戶。  

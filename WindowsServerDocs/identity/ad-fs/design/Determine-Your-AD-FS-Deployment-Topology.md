@@ -1,7 +1,6 @@
 ---
 ms.assetid: f67b0bc9-e5af-4891-9da0-d9be539af42d
 title: 決定您的 AD FS 部署拓撲
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b9128dded44e83acc63cef6785a1949e614cf6a7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0336c54357745217c30e14afc0824f97d476b45d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408114"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855151"
 ---
 # <a name="determine-your-ad-fs-deployment-topology"></a>決定您的 AD FS 部署拓撲
 
@@ -42,6 +41,6 @@ ms.locfileid: "71408114"
   
 在您完成選取 AD FS 部署拓撲之後，建議您參閱[規劃 AD FS 伺服器容量](Planning-for-AD-FS-Server-Capacity.md)主題，以判斷您需要部署以支援此拓撲的建議伺服器數目。  
   
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 [Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
 

@@ -2,22 +2,19 @@
 title: WSUS 訊息和疑難排解秘訣
 description: Windows Server Update Service （WSUS）主題-使用 WSUS 訊息進行疑難排解
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9f6317f7-bfe0-42d9-87ce-d8f038c728ca
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0c66e655ea6b6c44ee3ba375f75e6532fab74bfb
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: e4fe14eeaba3fc82e125288f8c47fb445f6e00b0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948479"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828311"
 ---
 # <a name="wsus-messages-and-troubleshooting-tips"></a>WSUS 訊息和疑難排解秘訣
 
@@ -25,13 +22,13 @@ ms.locfileid: "75948479"
 
 本主題包含下列 WSUS 訊息的相關資訊：
 
--   「電腦未回報狀態」
+-   電腦未回報狀態
 
--   「訊息識別碼 6703-WSUS 同步處理失敗」
+-   訊息識別碼 6703-WSUS 同步處理失敗
 
--   「錯誤0x80070643：安裝期間發生嚴重錯誤」
+-   錯誤0x80070643：安裝期間發生嚴重錯誤
 
--   「某些服務並未執行。 檢查下列服務 [...] "
+-   某些服務並未執行。 檢查下列服務 [...]
 
 ## <a name="computer-has-not-reported-status"></a>電腦未回報狀態
 當 WSUS 用戶端電腦未將資訊傳送至 WSUS 伺服器以指出其目前的更新狀態時，會在 WSUS 主控台中產生此訊息。 此問題通常是由 WSUS 用戶端電腦所造成，而不是 WSUS 伺服器。
@@ -76,7 +73,7 @@ WSUS 安裝程式會使用 Microsoft SQL Server 來執行安裝。 發生此問�
 
 - **Selfupdate：** 如[需](https://technet.microsoft.com/library/cc708554(v=ws.10).aspx)Selfupdate 服務疑難排解的相關資訊，請參閱自動更新。
 
-- **WSSUService .exe：** 此服務有助於同步處理。 如果您有同步處理的問題，請按一下 [**開始**]、指向 [系統**管理工具**]、按一下 [**服務**]，然後在服務清單中尋找 [ **Windows Server Update Service** ]，以存取 WSUSService。 執行下列動作：
+- **WSSUService .exe：** 此服務有助於同步處理。 如果您有同步處理的問題，請按一下 [**開始**]、指向 [系統**管理工具**]、按一下 [**服務**]，然後在服務清單中尋找 [ **Windows Server Update Service** ]，以存取 WSUSService。 請執行下列動作：
     
     -   確認此服務正在執行。 如果已停止或**重新開機**，請按一下 [**啟動**] 以重新整理服務。
     
@@ -90,6 +87,6 @@ WSUS 安裝程式會使用 Microsoft SQL Server 來執行安裝。 發生此問�
     
   - **MSSQLSERver** （如果您使用的是 WMSDE 或 MSDE，或如果您使用 SQL Server，而且使用實例名稱的預設實例名稱）
     
-  - **MSSQL $ WSUS** （如果您使用 SQL Server 資料庫，並已將您的資料庫實例命名為 "WSUS"）
+  - **MSSQL $ WSUS** （如果您使用 SQL Server 資料庫，並已命名您的資料庫實例 WSUS）
     
     在服務上按一下滑鼠右鍵，然後按一下 [**啟動**] （如果服務不在執行中），或 [**重新開機**] 以重新整理正在執行的服務。

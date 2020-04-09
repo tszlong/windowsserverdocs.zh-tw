@@ -1,28 +1,24 @@
 ---
 title: logman 建立計數器
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1e214c32-b704-43c1-b548-e1cf43b583c3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3245ce1c153ac0d5fe95ea0c85009e33f71a230c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 416a62331bccc9c646ce0a00ec71b9ef7bb4238d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374560"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840871"
 ---
 # <a name="logman-create-counter"></a>logman 建立計數器
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 建立計數器資料收集器。  
 
@@ -30,7 +26,7 @@ ms.locfileid: "71374560"
 ```  
 logman create counter <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>參數  
+### <a name="parameters"></a>參數  
 
 |                    參數                     |                                                                               描述                                                                               |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -60,14 +56,14 @@ logman create counter <[-n] <name>> [options]
 
 ## <a name="remarks"></a>備註  
 其中列出 [-]，此選項會有額外的否定。  
-## <a name="BKMK_examples"></a>典型  
+## <a name="examples"></a><a name=BKMK_examples></a>典型  
 下列命令會使用 Processor （_Total）計數器類別的 [% Processor time] 計數器，建立名為 perf_log 的計數器。  
 ```  
-logman create counter perf_log -c "\Processor(_Total)\% Processor time"  
+logman create counter perf_log -c \Processor(_Total)\% Processor time  
 ```  
-下列命令會使用 [處理器（_Total）] 計數器類別的 [% Processor time] 計數器建立名為 perf_log 的計數器，並建立大小上限為 10 MB 的記錄檔，並收集1分鐘和0秒的資料。  
+下列命令會使用 Processor （_Total）計數器類別的% Processor time 計數器建立名為 perf_log 的計數器，建立大小上限為 10 MB 的記錄檔，並收集1分鐘和0秒的資料。  
 ```  
-logman create counter perf_log -c "\Processor(_Total)\% Processor time" -max 10 -rf 01:00  
+logman create counter perf_log -c \Processor(_Total)\% Processor time -max 10 -rf 01:00  
 ```  
-#### <a name="additional-references"></a>其他參考  
+## <a name="additional-references"></a>其他參考資料  
 [logman](logman.md)  

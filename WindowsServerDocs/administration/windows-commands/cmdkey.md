@@ -1,28 +1,24 @@
 ---
 title: cmdkey
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: 適用于 cmdkey 的 Windows 命令主題，它會建立、列出及刪除已儲存的使用者名稱和密碼或認證。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5fcd68ee-a14a-4b71-9300-c3f5c5d31e8e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dc2b12cb53eef930d05c1e291de5574a8ba94306
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cdb732bf95e30af012f78d1bad337d6d6d191268
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379314"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847591"
 ---
 # <a name="cmdkey"></a>cmdkey
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 建立、列出和刪除儲存的使用者名稱和密碼或認證。
 
@@ -30,23 +26,23 @@ ms.locfileid: "71379314"
 ```
 cmdkey [{/add:<TargetName>|/generic:<TargetName>}] {/smartcard|/user:<UserName> [/pass:<Password>]} [/delete{:<TargetName>|/ras}] /list:<TargetName>
 ```
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
 |             參數             |                                                                                    描述                                                                                     |
 |------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|         /add： <TargetName>          | 將使用者名稱和密碼加入清單中。<br /><br />需要 <TargetName> 的參數，它會識別與此專案相關聯的電腦或功能變數名稱。 |
-|       /一般： <TargetName>        |   將一般認證加入清單中。<br /><br />需要 <TargetName> 的參數，它會識別與此專案相關聯的電腦或功能變數名稱。    |
+|         /add：<TargetName>          | 將使用者名稱和密碼加入清單中。<p>需要 <TargetName> 的參數，它會識別與此專案相關聯的電腦或功能變數名稱。 |
+|       /一般：<TargetName>        |   將一般認證加入清單中。<p>需要 <TargetName> 的參數，它會識別與此專案相關聯的電腦或功能變數名稱。    |
 |             /smartcard             |                                                                    從智慧卡抓取認證。                                                                     |
-|          /user： <UserName>          |                                 指定要與此專案一起儲存的使用者或帳戶名稱。 如果未提供使用者*名稱*，則會要求使用者。                                  |
-|          /pass： <Password>          |                                       指定要與此專案一起儲存的密碼。 如果未提供*密碼*，則會要求它。                                        |
-| /delete{： <TargetName> &#124; /ras} |  刪除清單中的使用者名稱和密碼。 如果指定了*TargetName* ，將會刪除該專案。 如果指定/ras，將會刪除儲存的遠端存取專案。   |
-|         /list： <TargetName>         |                  顯示已儲存的使用者名稱和認證清單。 如果未指定*TargetName* ，則會列出所有儲存的使用者名稱和認證。                   |
+|          /user：<UserName>          |                                 指定要與此專案一起儲存的使用者或帳戶名稱。 如果未提供使用者*名稱*，則會要求使用者。                                  |
+|          /pass：<Password>          |                                       指定要與此專案一起儲存的密碼。 如果未提供*密碼*，則會要求它。                                        |
+| /delete{：<TargetName> &#124; /ras} |  刪除清單中的使用者名稱和密碼。 如果指定了*TargetName* ，將會刪除該專案。 如果指定/ras，將會刪除儲存的遠端存取專案。   |
+|         /list：<TargetName>         |                  顯示已儲存的使用者名稱和認證清單。 如果未指定*TargetName* ，則會列出所有儲存的使用者名稱和認證。                   |
 |                 /?                 |                                                                        在命令提示字元顯示說明。                                                                        |
 
 ## <a name="remarks"></a>備註
 - 當使用/smartcard 命令列選項時，如果在系統上找到一個以上的智慧卡， **cmdkey**將會顯示所有可用智慧卡的相關資訊，然後提示使用者指定要使用哪一個。
 - 儲存之後，將不會顯示密碼。
-  ## <a name="BKMK_examples"></a>典型
+  ## <a name="examples"></a><a name=BKMK_examples></a>典型
   若要顯示所有已儲存的使用者名稱和認證清單，請輸入：
   ```
   cmdkey /list
@@ -67,5 +63,5 @@ cmdkey [{/add:<TargetName>|/generic:<TargetName>}] {/smartcard|/user:<UserName> 
   ```
   cmdkey /delete:Server01
   ```
-  ## <a name="additional-references"></a>其他參考
-  [命令列語法關鍵](command-line-syntax-key.md)
+  ## <a name="additional-references"></a>其他參考資料
+  - [命令列語法關鍵](command-line-syntax-key.md)

@@ -4,15 +4,15 @@ description: Hyper-v 效能調整中的網路 i/o 效能考慮
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Asmahi; SandySp; JoPoulso
+ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: e8f4261c11a63786c2d170105fb0fa65dc6966a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 17551da6cd270f05cf2d6b1a8147958f82b2c9b3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385116"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851801"
 ---
 # <a name="hyper-v-network-io-performance"></a>Hyper-v 網路 i/o 效能
 

@@ -2,22 +2,17 @@
 title: 在叢集中部署遠端存取
 description: 本主題是在 Windows Server 2016 的叢集中部署遠端存取指南的一部分。
 manager: dougkim
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: ''
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 9a025c82b5bece3a4719905c4e28333c42aac35c
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 7b9ab144c19b81d2229ea0618aebc9a94b9fdccf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308379"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861461"
 ---
 # <a name="deploy-remote-access-in-a-cluster"></a>在叢集中部署遠端存取
 
@@ -72,8 +67,8 @@ Windows Server 2016 和 Windows Server 2012 將 DirectAccess 與遠端存取服�
 
 |角色\/功能|如何支援本案例|  
 |---------|-----------------|  
-|遠端存取角色|這個角色是利用伺服器管理員主控台安裝和解除安裝。 它同時包含 DirectAccess （先前是 Windows Server 2008 R2 中的功能），以及路由及遠端存取服務 \(RRAS\)，先前是網路原則與存取服務 \(NPAS\) 伺服器角色底下的角色服務。 遠端存取角色包含兩個元件：<br /><br />-Always On VPN 和路由及遠端存取服務 \(RRAS\) VPN-DirectAccess 和 VPN 會在 [遠端存取管理] 主控台中一起管理。<br />-RRAS 路由-在舊版路由及遠端存取主控台中管理 RRAS 路由功能。<br /><br />相依性如下所示：<br /><br />-Internet Information Services \(IIS\) Web 服務器-設定網路位置伺服器和預設 Web 探查時，需要這項功能。<br />-Windows 內部資料庫-用於遠端存取服務器上的本機帳戶處理。|  
-|遠端存取管理工具功能|這個功能的安裝方式如下：<br /><br />-安裝遠端存取角色時，預設會將它安裝在遠端存取服務器上，並支援遠端管理主控台使用者介面。<br />-您可以選擇性地將它安裝在未執行遠端存取服務器角色的伺服器上。 在這種情況下，它是用於從遠端管理那些執行 DirectAccess 和 VPN 的遠端存取電腦。<br /><br />遠端存取管理工具功能包含以下各項：<br /><br />-遠端存取 GUI 和命令列工具<br />-適用于 Windows PowerShell 的遠端存取模組<br /><br />依存項目包括：<br /><br />-群組原則管理主控台<br />-RAS 連線管理員系統管理元件 \(CMAK\)<br />-Windows PowerShell 3。0<br />-圖形化管理工具與基礎結構|  
+|遠端存取角色|這個角色是利用伺服器管理員主控台安裝和解除安裝。 它同時包含 DirectAccess （先前是 Windows Server 2008 R2 中的功能），以及路由及遠端存取服務 \(RRAS\)，先前是網路原則與存取服務 \(NPAS\) 伺服器角色底下的角色服務。 遠端存取角色包含兩個元件：<p>-Always On VPN 和路由及遠端存取服務 \(RRAS\) VPN-DirectAccess 和 VPN 會在 [遠端存取管理] 主控台中一起管理。<br />-RRAS 路由-在舊版路由及遠端存取主控台中管理 RRAS 路由功能。<p>相依性如下所示：<p>-Internet Information Services \(IIS\) Web 服務器-設定網路位置伺服器和預設 Web 探查時，需要這項功能。<br />-Windows 內部資料庫-用於遠端存取服務器上的本機帳戶處理。|  
+|遠端存取管理工具功能|這個功能的安裝方式如下：<p>-安裝遠端存取角色時，預設會將它安裝在遠端存取服務器上，並支援遠端管理主控台使用者介面。<br />-您可以選擇性地將它安裝在未執行遠端存取服務器角色的伺服器上。 在這種情況下，它是用於從遠端管理那些執行 DirectAccess 和 VPN 的遠端存取電腦。<p>遠端存取管理工具功能包含以下各項：<p>-遠端存取 GUI 和命令列工具<br />-適用于 Windows PowerShell 的遠端存取模組<p>依存項目包括：<p>-群組原則管理主控台<br />-RAS 連線管理員系統管理元件 \(CMAK\)<br />-Windows PowerShell 3。0<br />-圖形化管理工具與基礎結構|  
 |網路負載平衡|這個功能利用 Windows NLB，提供叢集的負載平衡功能。|  
 
 ## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>硬體需求  

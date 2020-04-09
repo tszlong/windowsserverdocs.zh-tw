@@ -2,22 +2,18 @@
 title: DirectAccess
 description: 您可以使用本主題，以取得 Windows Server 2016 中 DirectAccess 的簡短總覽。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6b71d18e-1939-4fc0-bb42-29e0e5ffc8da
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d07e4ab62c7362d8d58f68380d8d9abb8e7a7f2c
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: facd4fc6821d8f1dc927e1247aa3e2537e027f2f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310819"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857461"
 ---
 # <a name="directaccess"></a>DirectAccess
 
@@ -59,7 +55,7 @@ DirectAccess 僅為加入網域的用戶端提供支援，包括 DirectAccess �
   
 下列用戶端作業系統支援 DirectAccess。  
   
--   Windows 10 Enterprise  
+-   Windows 10 企業版  
   
 -   Windows 10 企業版2015長期維護分支（LTSB）  
   
@@ -67,4 +63,4 @@ DirectAccess 僅為加入網域的用戶端提供支援，包括 DirectAccess �
   
 -   Windows 7 Ultimate  
   
--   Windows 7 Enterprise
+-   Windows 7 企業版

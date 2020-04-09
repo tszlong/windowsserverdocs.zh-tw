@@ -5,15 +5,15 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: a6615411-83d9-495f-8a6a-1ebc8b12f164
-manager: brianlic
-ms.author: lizross
-author: eross-msft
-ms.openlocfilehash: 5e1ed095b3180f3aebd25381ec9086445bb141ec
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+manager: dcscontentpm
+ms.author: v-tea
+author: Teresa-Motiv
+ms.openlocfilehash: 2e902f3aea4025afe4f475c45193710a8b474dcd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316627"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80862221"
 ---
 # <a name="choosing-a-network-adapter"></a>選擇網路介面卡
 
@@ -100,27 +100,27 @@ RSS 也會對 UDP 單播和多播流量進行負載平衡，並將相關流程 \
 
 - **\* MaxProcessors**：設定要使用的 RSS 處理器最大數目。 這可確保應用程式流量會系結至指定介面上的處理器數目上限。 範例語法：
 
-     `Set-NetAdapterRss –Name “Ethernet” –MaxProcessors <value>`
+     `Set-NetAdapterRss –Name "Ethernet" –MaxProcessors <value>`
 
 - **\* BaseProcessorGroup**：設定 NUMA 節點的基礎處理器群組。 這會影響 RSS 所使用的處理器陣列。 範例語法：
 
-     `Set-NetAdapterRss –Name “Ethernet” –BaseProcessorGroup <value>`
+     `Set-NetAdapterRss –Name "Ethernet" –BaseProcessorGroup <value>`
   
 - **\* MaxProcessorGroup**：設定 NUMA 節點的最大處理器群組。 這會影響 RSS 所使用的處理器陣列。 設定此項會限制最大處理器群組，讓負載平衡在 k 群組內對齊。 範例語法：
 
-     `Set-NetAdapterRss –Name “Ethernet” –MaxProcessorGroup <value>`
+     `Set-NetAdapterRss –Name "Ethernet" –MaxProcessorGroup <value>`
 
 - **\* BaseProcessorNumber**：設定 NUMA 節點的基本處理器號碼。 這會影響 RSS 所使用的處理器陣列。 這可讓您跨網路介面卡分割處理器。 這是指派給每個介面卡的 RSS 處理器範圍中的第一個邏輯處理器。 範例語法：
 
-     `Set-NetAdapterRss –Name “Ethernet” –BaseProcessorNumber <Byte Value>`
+     `Set-NetAdapterRss –Name "Ethernet" –BaseProcessorNumber <Byte Value>`
 
 - **\* NumaNode**：每個網路介面卡可以從中配置記憶體的 NUMA 節點。 這可以在 k 群組中，或來自不同的 k 群組。 範例語法：
 
-     `Set-NetAdapterRss –Name “Ethernet” –NumaNodeID <value>`
+     `Set-NetAdapterRss –Name "Ethernet" –NumaNodeID <value>`
 
 - **\* NumberofReceiveQueues**：如果您的邏輯處理器似乎使用量過低，而無法接收流量 \(例如，如工作管理員\)所示，您可以嘗試將 RSS 佇列的數目從預設值2增加到網路介面卡所支援的最大值。 您的網路介面卡可能有選項可將 RSS 佇列的數目變更為驅動程式的一部分。 範例語法：
 
-     `Set-NetAdapterRss –Name “Ethernet” –NumberOfReceiveQueues <value>`
+     `Set-NetAdapterRss –Name "Ethernet" –NumberOfReceiveQueues <value>`
 
 如需詳細資訊，請按一下下列連結以下載[可調整的網路功能：排除接收處理瓶頸— Word 格式的 RSS 簡介](https://download.microsoft.com/download/5/D/6/5D6EAF2B-7DDF-476B-93DC-7CF0072878E6/NDIS_RSS.doc)。
   
@@ -190,7 +190,7 @@ Ethernet                       True         False        True            False  
 以下是當您執行 NetAdapterStatistics Cmdlet 時的範例輸出。
 
 ```  
-PS C:\Users\Administrator> $x = Get-NetAdapterStatistics “myAdapter”   
+PS C:\Users\Administrator> $x = Get-NetAdapterStatistics "myAdapter"   
 PS C:\Users\Administrator> $x.rscstatistics  
   
 CoalescedBytes       : 0  

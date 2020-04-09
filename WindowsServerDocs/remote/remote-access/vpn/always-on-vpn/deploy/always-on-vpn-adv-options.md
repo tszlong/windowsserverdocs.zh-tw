@@ -6,16 +6,16 @@ ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.date: 07/24/2019
-ms.author: lizross, v-tea
-author: eross-msft
+ms.author: v-tea
+author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 30a8e3053f263ffad3be940a52e845fb7159dde1
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 74cda6a899d69a951c34a9a88e2f51ef1590b621
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313290"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859491"
 ---
 # <a name="advanced-features-of-always-on-vpn"></a>Always On VPN 的先進功能
 
@@ -32,7 +32,7 @@ ms.locfileid: "80313290"
 
 |選項  |描述  |
 |---------|---------|
-|伺服器復原和負載平衡     |在需要高可用性或支援大量要求的環境中，您可以在執行網路原則伺服器（NPS）的多部伺服器之間使用負載平衡，以提高遠端存取的效能和復原能力，並啟用遠端存取服務器群集。<p>相關檔：<ul><li>[NPS Proxy 伺服器負載平衡](../../../../../networking/technologies/nps/nps-manage-proxy-lb.md)</li><li>[在叢集中部署遠端存取](https://docs.microsoft.com/windows-server/remote/remote-access/ras/cluster/deploy-remote-access-in-cluster)</li></ul>        |
+|伺服器復原和負載平衡     |在需要高可用性或支援大量要求的環境中，您可以使用執行網路原則伺服器（NPS）的多部伺服器之間的負載平衡，並啟用遠端存取服務器群集，來提升遠端存取的效能和復原能力。<p>相關檔：<ul><li>[NPS Proxy 伺服器負載平衡](../../../../../networking/technologies/nps/nps-manage-proxy-lb.md)</li><li>[在叢集中部署遠端存取](https://docs.microsoft.com/windows-server/remote/remote-access/ras/cluster/deploy-remote-access-in-cluster)</li></ul>        |
 |地理位置彈性     |對於以 IP 為基礎的地理位置，您可以在 Windows Server 2016 中使用全域流量管理員搭配 DNS。 如需更穩固的地理負載平衡，您可以使用全域伺服器負載平衡解決方案，例如 Microsoft Azure 流量管理員。<p>相關檔：<ul><li>[流量管理員總覽](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-overview)</li><li>[Microsoft Azure 流量管理員](https://azure.microsoft.com/services/traffic-manager)</li></ul>         |
 
 ## <a name="advanced-authentication"></a>先進驗證
@@ -76,7 +76,7 @@ ms.locfileid: "80313290"
 
 1. 在 Windows 更新可供使用時加以安裝。
 1. 請確定您使用的所有 VPN 用戶端和 RRAS 伺服器憑證都具有 CDP 專案，而且 RRAS 伺服器可以連線到各自的 Crl。
-1. 在 RRAS 伺服器上，使用 VpnAuthProtocol PowerShell Cmdlet 來**設定** **RootCertificateNameToAccept**參數。<br /><br />
+1. 在 RRAS 伺服器上，使用 VpnAuthProtocol PowerShell Cmdlet 來**設定** **RootCertificateNameToAccept**參數。<p>
    下列範例會列出執行此動作的命令。 在此範例中， **CN = Contoso 根憑證授權**單位代表根憑證授權單位的辨別名稱。 
    ``` powershell
    $cert1 = ( Get-ChildItem -Path cert:LocalMachine\root | Where-Object -FilterScript { $_.Subject -Like "*CN=Contoso Root Certification Authority*" } )

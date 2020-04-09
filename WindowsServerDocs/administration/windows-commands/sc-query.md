@@ -1,24 +1,20 @@
 ---
 title: Sc 查詢
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ac365f89-4b20-4de6-a582-b204c5e7d0eb
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4d2f3f603ad173b5ab90bc56a9a4e589c0fe9d8a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 38d83fa07e9f85f3a5a4b86388bbed41fcf326d1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384341"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80835281"
 ---
 # <a name="sc-query"></a>Sc 查詢
 
@@ -34,18 +30,18 @@ ms.locfileid: "71384341"
 sc [<ServerName>] query [<ServiceName>] [type= {driver | service | all}] [type= {own | share | interact | kernel | filesys | rec | adapt}] [state= {active | inactive | all}] [bufsize= <BufferSize>] [ri= <ResumeIndex>] [group= <GroupName>]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>參數
 
 |       參數        |                                                                                                                          描述                                                                                                                          |
 |------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |     \<ServerName >      |                       指定服務所在的遠端伺服器名稱。 名稱必須使用通用命名慣例（UNC）格式（例如，\\\\myserver）。 若要在本機執行 SC.EXE，請省略此參數。                        |
 |     \<ServiceName >     |                                      指定**getkeyname**作業所傳回的服務名稱。 此**查詢**參數不會與其他**查詢**參數搭配使用（除了*ServerName*以外）。                                      |
 |     類型 = {driver      |                                                                                                                            服務                                                                                                                            |
-|       類型 = {自有       |                                                                                                                             分享                                                                                                                             |
-|     state = {active     |                                                                                                                           非使用                                                                                                                            |
+|       類型 = {自有       |                                                                                                                             共用                                                                                                                             |
+|     state = {active     |                                                                                                                           inactive                                                                                                                            |
 | bufsize = \<BufferSize > |                     指定列舉緩衝區的大小（以位元組為單位）。 預設緩衝區大小為1024個位元組。 當查詢所產生的顯示超過1024個位元組時，您應該增加列舉緩衝區的大小。                      |
 |   ri = \<ResumeIndex >   | 指定列舉開始或繼續的索引編號。 預設值為**0** （零）。 當查詢傳回的資訊超過預設緩衝區可顯示的數目時，請使用此參數搭配**bufsize =** 參數。 |
-|  群組 = \<組名 >   |                                                                             指定要列舉的服務群組。 根據預設，會列舉所有群組（**group = ""** ）。                                                                              |
+|  群組 = \<組名 >   |                                                                             指定要列舉的服務群組。 根據預設，系統會列舉所有群組（* * group = * *）。                                                                              |
 |           /?           |                                                                                                             在命令提示字元顯示說明。                                                                                                              |
 
 ## <a name="remarks"></a>備註
@@ -62,7 +58,7 @@ sc [<ServerName>] query [<ServiceName>] [type= {driver | service | all}] [type= 
   sc query bufsize= 1822 ri= 79
   ```
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name=BKMK_examples></a>典型
 
 若只要顯示作用中服務的資訊，請輸入下列其中一個命令：
 ```
@@ -98,6 +94,6 @@ sc query type= driver
 sc query type= driver group= ndis
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考資料
 
-[命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

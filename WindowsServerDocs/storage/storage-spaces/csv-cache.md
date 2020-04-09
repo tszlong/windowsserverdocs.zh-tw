@@ -2,21 +2,21 @@
 title: 儲存空間直接存取記憶體內部讀取快取
 ms.prod: windows-server
 ms.author: eldenc
-ms.manager: siroy
+manager: siroy
 ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
 ms.date: 02/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 83fc923f505531f955fc0131d7dcc1ce98974daa
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d9ebc40b69373dafbebdb87f2abe624a5a7a4375
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394093"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858951"
 ---
 # <a name="using-storage-spaces-direct-with-the-csv-in-memory-read-cache"></a>使用儲存空間直接存取搭配 CSV 記憶體內部讀取快取
-> 適用於：Windows Server 2016、Windows Server 2019
+> 適用于： Windows Server 2016、Windows Server 2019
 
 本主題描述如何使用系統記憶體來提升[儲存空間直接存取](storage-spaces-direct-overview.md)的效能。
 
@@ -28,7 +28,7 @@ ms.locfileid: "71394093"
 
 記憶體內部讀取快取最適用于大量讀取的工作負載，例如虛擬桌面基礎結構（VDI）。 相反地，如果工作負載非常密集寫入，則快取可能會造成額外的負擔，而不是值，應該予以停用。
 
-您最多可以為 CSV 記憶體內部讀取快取使用 80% 的總實體記憶體。
+您最多可以為 CSV 記憶體內部讀取快取使用80% 的總實體記憶體。
 
   > [!TIP]
   > 針對在相同伺服器上執行計算和儲存體的超交集部署，請小心為您的虛擬機器保留足夠的記憶體。 針對交集的向外延展檔案伺服器（SoFS）部署，對記憶體的爭用較少，這並不適用。
@@ -40,10 +40,10 @@ ms.locfileid: "71394093"
 
 CSV 記憶體內部讀取快取可在 Windows Server 2016 和 Windows Server 2019 中使用相同的功能。 在 Windows Server 2016 中，預設為關閉。 在 Windows Server 2019 中，它預設為開啟，並配置 1 GB。
 
-| OS 版本          | 預設 CSV 快取大小 |
+| 作業系統版本          | 預設 CSV 快取大小 |
 |---------------------|------------------------|
-| Windows Server 2016 | 0（已停用）           |
-| Windows Server Standard 2012 R2 | 1 GiB                   |
+| Windows Server 2016 | 0（已停用）           |
+| Windows Server 2019 | 1 GiB                   |
 
 若要查看使用 PowerShell 配置多少記憶體，請執行：
 

@@ -2,7 +2,7 @@
 title: 儲存空間直接存取中的容錯和儲存效率
 ms.prod: windows-server
 ms.author: cosmosdarwin
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
@@ -10,16 +10,16 @@ ms.date: 10/11/2017
 ms.assetid: 5e1d7ecc-e22e-467f-8142-bad6d82fc5d0
 description: 討論儲存空間直接存取中的復原選項，包括鏡像和同位。
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e60a715ffa0097f3f5c615792da3aa0a291d6bd
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: b64592bf3cf5659410dcbbeb4c190d2d6a85485a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950047"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859011"
 ---
 # <a name="fault-tolerance-and-storage-efficiency-in-storage-spaces-direct"></a>儲存空間直接存取中的容錯和儲存效率
 
->適用於：Windows Server 2016
+>適用於︰Windows Server 2016
 
 本主題介紹[儲存空間直接存取](storage-spaces-direct-overview.md)中可用的復原選項，並概述各選項的規模需求、儲存效率，以及一般的優點和取捨。 文中也會提供一些使用上的指示供您入門，並且會參考一些可讓您進行深入了解的優質文章、部落格和其他內容。
 
@@ -41,7 +41,7 @@ ms.locfileid: "75950047"
 
 雙向鏡像會為所有內容寫入兩個複本。 其儲存效率是 50%，因此若要撰寫 1 TB 的資料，您會需要至少 2 TB 的實體儲存容量。 同樣地，您也需要至少兩個[硬體「容錯網域」](../../failover-clustering/fault-domains.md)，在使用儲存空間直接存取時，這表示需要兩部伺服器。
 
-![雙向鏡像](media/Storage-Spaces-Fault-Tolerance/two-way-mirror-180px.png)
+![two-way-mirror](media/Storage-Spaces-Fault-Tolerance/two-way-mirror-180px.png)
 
    >[!WARNING]
    > 如果您有兩個以上伺服器，建議您改為使用三向鏡像。
@@ -54,7 +54,7 @@ ms.locfileid: "75950047"
 
 ![three-way-mirror](media/Storage-Spaces-Fault-Tolerance/three-way-mirror-180px.png)
 
-## <a name="parity"></a>同位
+## <a name="parity"></a>Parity
 
 同位編碼 (通常稱為「清除編碼」) 會使用位元算術提供容錯，而這會變得[非常複雜](https://www.microsoft.com/research/wp-content/uploads/2016/02/LRC12-cheng20webpage.pdf)。 相較於鏡像，同位的運作方式較不容易理解，但有許多絕佳的線上資源 (例如，這個由第三方提供的[清除編碼傻瓜指南](http://smahesh.com/blog/2012/07/01/dummies-guide-to-erasure-coding/)) 可協助您了解。 可以這麼說，它提供更好的儲存效率，卻又不會犧牲容錯能力。
 
@@ -102,7 +102,7 @@ Windows Server 2016 的儲存空間引進了 Microsoft Research 所開發的進
 > [!IMPORTANT]
 > 我們建議使用鏡像處理大部分易受效能影響的工作負載。 若要深入了解如何根據您的工作負載來平衡效能與產能，請參閱[規劃磁碟區](plan-volumes.md#choosing-the-resiliency-type)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a><a name="summary"></a>總計
 
 本節摘要說明儲存空間直接存取中可用的復原類型、使用各種類型的最小規模需求、每種類型可容許多少故障，以及對應的儲存效率。
 
@@ -113,7 +113,7 @@ Windows Server 2016 的儲存空間引進了 Microsoft Research 所開發的進
 |    雙向鏡像      |    1                       |    50.0%                   |
 |    三向鏡像    |    2                       |    33.3%                   |
 |    雙同位         |    2                       |    50.0% - 80.0%           |
-|    混合式               |    2                       |    33.3% - 80.0%           |
+|    Mixed               |    2                       |    33.3% - 80.0%           |
 
 ### <a name="minimum-scale-requirements"></a>最小規模需求
 
@@ -122,7 +122,7 @@ Windows Server 2016 的儲存空間引進了 Microsoft Research 所開發的進
 |    雙向鏡像      |    2                                |
 |    三向鏡像    |    3                                |
 |    雙同位         |    4                                |
-|    混合式               |    4                                |
+|    Mixed               |    4                                |
 
    >[!TIP]
    > 除非您使用[底座或機架容錯](../../failover-clustering/fault-domains.md)，否則容錯網域的數目就是指伺服器數目。 只要您符合儲存空間直接存取的最小需求，每部伺服器中的磁碟機數目就不會影響您所能使用的復原類型。 
@@ -171,7 +171,7 @@ Windows Server 2016 的儲存空間引進了 Microsoft Research 所開發的進
 |    15                 |    RS 6+2           |    75.0%        |
 |    16                 |    LRC (12, 2, 1)   |    80.0%        |
 
-## <a name="examples"></a>範例
+## <a name="examples"></a><a name="examples"></a>典型
 
 除非您只有兩部伺服器，否則建議您使用三向鏡像和/或雙同位，因為它們提供較好的容錯能力。 具體而言，它們可確保即使兩個錯誤網域 (在使用儲存空間直接存取時，這表示兩部伺服器) 都受到同時故障的影響，所有資料仍可保持安全並持續可供存取。
 
@@ -205,11 +205,11 @@ Windows Server 2016 的儲存空間引進了 Microsoft Research 所開發的進
 
 ![fault-tolerance-examples-7-and-8](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-78.png)
 
-## <a name="usage"></a>用法
+## <a name="usage"></a>使用方式
 
 請查看[建立儲存空間直接存取中的磁碟區](create-volumes.md)。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 下列每個連結都內嵌在本主題的內文中。
 

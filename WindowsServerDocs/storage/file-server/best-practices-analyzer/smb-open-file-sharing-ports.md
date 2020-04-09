@@ -1,18 +1,17 @@
 ---
-title: SMB：檔案和印表機共用連接埠應該開啟
-TOCTitle: 'SMB: File and printer sharing ports should be open'
+title: SMB-檔案和印表機共用埠應開啟
 ms.date: 07/02/2012
 ms.prod: windows-server
 ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 80cc75f983d4593e4ee98309d1fa39c024b7b379
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: a7e98129c2fb4f2259364c547b426d46f0a24ef3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950289"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859461"
 ---
 # <a name="smb-file-and-printer-sharing-ports-should-be-open"></a>SMB：檔案和印表機共用連接埠應該開啟
 
@@ -32,19 +31,19 @@ ms.locfileid: "75950289"
 <tbody>
 <tr class="odd">
 <td><p><strong>作業系統</strong></p></td>
-<td><p>WIN ENT LTSB 2016 Estonian 64 Bits</p></td>
+<td><p>Windows Server</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>產品/功能</strong></p></td>
 <td><p>檔案服務</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>嚴重性</strong></p></td>
+<td><p><strong>低於</strong></p></td>
 <td><p>錯誤</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>類別</strong></p></td>
-<td><p>設定</p></td>
+<td><p>組態</p></td>
 </tr>
 </tbody>
 </table>
@@ -71,7 +70,7 @@ ms.locfileid: "75950289"
 
 3.  在 [**輸入規則**] 底下，找出 [檔案**及印表機共用（NB-會話）** ] 和 [檔案**及印表機共用（SMB）** ] 規則。
 
-4.  針對每個規則，以滑鼠右鍵按一下該規則，然後按一下 [啟用規則]。
+4.  針對每個規則，以滑鼠右鍵按一下規則，然後按一下 [**啟用規則**]。
 
 ## <a name="additional-references"></a>其他參考資料
 

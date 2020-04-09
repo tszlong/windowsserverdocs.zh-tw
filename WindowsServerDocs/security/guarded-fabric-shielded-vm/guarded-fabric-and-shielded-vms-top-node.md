@@ -1,26 +1,25 @@
 ---
 title: 受防護網狀架構與受防護的 VM
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 5c7ada81-2d97-41d4-87cf-1a7ccf06cd20
 manager: dongill
 author: rpsqrd
-ms.author: justinha
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: f23d0be0d860695b014f57fd55d8e321e81a70ca
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 9e76b3081438ae38c6b83b7cdd179d47b1e21a70
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950331"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856911"
 ---
 # <a name="guarded-fabric-and-shielded-vms"></a>受防護網狀架構與受防護的 VM
 
 >適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
 
-提供裝載環境的其中一個最重要的目標，就是保證在環境中執行之虛擬機器的安全性。 身為雲端服務提供者或企業私人雲端系統管理員，您可以使用受防護網狀架構為 VM 提供更安全的環境。 受防護網狀架構包含一個主機守護者服務 (HGS) (通常是有三個節點的叢集)，加上一個或多個受防護主機，以及一組受防護虛擬機器 (VM)。
+提供裝載環境的其中一個最重要的目標，就是保證在環境中執行之虛擬機器的安全性。 身為雲端服務提供者或企業私人雲端系統管理員，您可以使用受防護網狀架構為 VM 提供更安全的環境。 受防護網狀架構包含一個主機守護者服務 (HGS) (通常是有三個節點的叢集)，加上一或多個受防護的主機，以及一組受防護的虛擬機器 (VM)。
 
 > [!IMPORTANT]
 > 在生產環境中部署受防護的虛擬機器之前，請確定您已安裝最新的累計更新。

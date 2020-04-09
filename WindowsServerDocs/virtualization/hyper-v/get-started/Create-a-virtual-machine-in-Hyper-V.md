@@ -2,21 +2,19 @@
 title: 在 Hyper-v 中建立虛擬機器
 description: 提供使用 Hyper-v 管理員或 Windows PowerShell 建立虛擬機器的指示
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 59297022-a898-456c-b299-d79cd5860238
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 739691650ce3cda8066e9f7ac77626f53f22affa
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fa8d23a184f7be4c55b4a694b38501edb43d661c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364253"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860851"
 ---
 # <a name="create-a-virtual-machine-in-hyper-v"></a>在 Hyper-v 中建立虛擬機器
 
@@ -46,7 +44,7 @@ ms.locfileid: "71364253"
 
 2. 以滑鼠右鍵按一下 [ **Windows PowerShell** ]，然後選取 [**以系統管理員身分執行**]。  
 
-3. 取得您想[要讓虛擬](https://technet.microsoft.com/library/hh848499.aspx)機使用的虛擬交換器名稱。  例如，  
+3. 取得您想[要讓虛擬](https://technet.microsoft.com/library/hh848499.aspx)機使用的虛擬交換器名稱。  例如：  
 
    ```  
    Get-VMSwitch  * | Format-Table Name  
@@ -70,7 +68,7 @@ ms.locfileid: "71364253"
        New-VM -Name <Name> -MemoryStartupBytes <Memory> -BootDevice <BootDevice> -VHDPath <VHDPath> -Path <Path> -Generation <Generation> -Switch <SwitchName>  
        ```  
 
-       例如：  
+       例如，  
 
        ```  
        New-VM -Name Win10VM -MemoryStartupBytes 4GB -BootDevice VHD -VHDPath .\VMs\Win10.vhdx -Path .\VMData -Generation 2 -Switch ExternalSwitch  
@@ -78,7 +76,7 @@ ms.locfileid: "71364253"
 
        這會建立名為 Win10VM 的第2代虛擬機器，其記憶體為4GB。 它會從目前目錄中的 VMs\Win10.vhdx 資料夾啟動，並使用名為 ExternalSwitch 的虛擬交換器。 虛擬機器組態檔會儲存在 VMData 資料夾中。  
 
-   - **新增虛擬硬碟**-若要使用新的虛擬硬碟來建立虛擬機器，請使用 **-NewVHDPath**取代上述範例中的 **-VHDPath**參數，並新增 **-NewVHDSizeBytes**參數。 例如，  
+   - **新增虛擬硬碟**-若要使用新的虛擬硬碟來建立虛擬機器，請使用 **-NewVHDPath**取代上述範例中的 **-VHDPath**參數，並新增 **-NewVHDSizeBytes**參數。 例如：  
 
      ```  
      New-VM -Name Win10VM -MemoryStartupBytes 4GB -BootDevice VHD -NewVHDPath .\VMs\Win10.vhdx -Path .\VMData -NewVHDSizeBytes 20GB -Generation 2 -Switch ExternalSwitch  
@@ -92,7 +90,7 @@ ms.locfileid: "71364253"
    Start-VM -Name <Name>  
    ```  
 
-   例如：  
+   例如，  
 
    ```  
    Start-VM -Name Win10VM  
@@ -109,20 +107,20 @@ ms.locfileid: "71364253"
 
 |頁面|Windows Server 2016 和 Windows 10 的預設值|其他選項|  
 |--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|  
-|**指定名稱和位置**|名稱：新的虛擬機器。<br /><br />位置： **C:\ProgramData\Microsoft\Windows\Hyper-V\\** 。|您也可以輸入自己的名稱，並為虛擬機器選擇另一個位置。<br /><br />這是將儲存虛擬機器組態檔案的位置。|  
+|**指定名稱和位置**|名稱：新的虛擬機器。<p>位置： **C:\ProgramData\Microsoft\Windows\Hyper-V\\** 。|您也可以輸入自己的名稱，並為虛擬機器選擇另一個位置。<p>這是將儲存虛擬機器組態檔案的位置。|  
 |**指定世代**|第 1 代|您也可以選擇建立第2代虛擬機器。 如需詳細資訊，請參閱[我應該在 hyper-v 中建立第1代或第2代虛擬機器嗎？。](../plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md)|  
-|**指派記憶體**|啟動記憶體： 1024 MB<br /><br />動態記憶體：**未選取**|您可以將啟動記憶體從32MB 設定為5902MB。<br /><br />您也可以選擇使用動態記憶體。 如需詳細資訊，請參閱[hyper-v 動態記憶體總覽](https://technet.microsoft.com/library/hh831766.aspx)。|  
+|**指派記憶體**|啟動記憶體： 1024 MB<p>動態記憶體：**未選取**|您可以將啟動記憶體從32MB 設定為5902MB。<p>您也可以選擇使用動態記憶體。 如需詳細資訊，請參閱[hyper-v 動態記憶體總覽](https://technet.microsoft.com/library/hh831766.aspx)。|  
 |**設定網路功能**|未連接|您可以從現有的虛擬交換器清單中選取要用於虛擬機器的網路連線。 請參閱[為 hyper-v 虛擬機器建立虛擬交換器](Create-a-virtual-switch-for-Hyper-V-virtual-machines.md)。|  
-|**連接虛擬硬碟**|建立虛擬硬碟<br /><br />名稱： <*vmname*> .vhdx<br /><br />**位置**： **C:\Users\Public\Documents\Hyper-V\Virtual 硬碟\\**<br /><br />**大小**：127GB|您也可以選擇使用現有的虛擬硬碟，或稍後等候並連接虛擬硬碟。|  
+|**連接虛擬硬碟**|建立虛擬硬碟<p>名稱： <*vmname*> .vhdx<p>**位置**： **C:\Users\Public\Documents\Hyper-V\Virtual 硬碟\\**<p>**大小**：127GB|您也可以選擇使用現有的虛擬硬碟，或稍後等候並連接虛擬硬碟。|  
 |**安裝選項**|稍後安裝作業系統|這些選項會變更虛擬機器的開機順序，讓您可以從 .iso 檔案、可開機的磁片或網路安裝服務（如 Windows 部署服務（WDS））進行安裝。|  
-|**摘要**|顯示您所選擇的選項，讓您可以確認它們是否正確。<br /><br />-Name<br />-產生<br />-記憶體<br />-網路<br />-硬碟<br />-作業系統|**秘訣：** 您可以從頁面複製摘要，並將其貼到電子郵件或其他地方，以協助您追蹤虛擬機器。|  
+|**摘要**|顯示您所選擇的選項，讓您可以確認它們是否正確。<p>-Name<br />-產生<br />-記憶體<br />-網路<br />-硬碟<br />-作業系統|**秘訣：** 您可以從頁面複製摘要，並將其貼到電子郵件或其他地方，以協助您追蹤虛擬機器。|  
 
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
 
 - [新增-VM](https://technet.microsoft.com/library/hh848537.aspx)  
 
 - [支援的虛擬機器設定版本](../deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md#supported-virtual-machine-configuration-versions)  
 
--   [我應該在 Hyper-v 中建立第1代或第2代虛擬機器嗎？](../plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md)  
+-   [我應在 Hyper-V 建立第 1 或 2 代的虛擬機器嗎？](../plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md)  
 
 -   [為 Hyper-V 虛擬機器建立虛擬交換器](Create-a-virtual-switch-for-Hyper-V-virtual-machines.md)  

@@ -2,22 +2,18 @@
 title: 設定測試實驗室的步驟
 description: 本主題屬於測試實驗室指南-示範適用于 Windows Server 2016 的 DirectAccess 多網站部署
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dc7205b4-a822-4038-ab67-ec0a870737f2
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 8a0d77208425774c8ea2b4fc663fc43e2a02ee5b
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: c83d89cefe330a99777ea204f0aea417f5e03c33
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314529"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861521"
 ---
 # <a name="steps-for-configuring-the-test-lab"></a>設定測試實驗室的步驟
 

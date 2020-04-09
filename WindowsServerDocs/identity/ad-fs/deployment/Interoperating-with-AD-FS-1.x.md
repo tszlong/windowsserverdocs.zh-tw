@@ -1,7 +1,6 @@
 ---
 ms.assetid: 97999892-29c6-4076-be19-5e5259d8ada6
 title: 部署同盟伺服器
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: f2aaca5ffc846c41af82c276750c564db38b5020
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 800c7fc23c9b126a17e54311fc6df0d3dcf36b4c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359506"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855361"
 ---
 # <a name="interoperating-with-ad-fs-1x"></a>與 AD FS 1.x 互通
 
-在 Windows Server®2012和 AD FS 1 中，Active Directory 同盟服務 \(AD FS\) 之間的互通性。*x*，視您組織的需求而定，完成下列一或多項工作：  
+在 Windows Server&reg; 2012 和 AD FS 1 中，Active Directory 同盟服務 \(AD FS\) 之間的互通性。*x*，視您組織的需求而定，完成下列一或多項工作：  
   
 -   規劃 Windows Server 2012 中 AD FS 與舊版 AD FS 之間的互通性，並深入瞭解名稱識別碼宣告類型。 如需詳細資訊，請參閱[規劃與 AD FS 1.x 的互通性](https://technet.microsoft.com/library/ff678040.aspx)。  
   
@@ -41,7 +40,7 @@ ms.locfileid: "71359506"
 |同盟服務 URI|Federation Service 識別碼  
 |同盟服務端點 URL|WS\-同盟被動端點 URL  
   
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
 [AD FS 和 AD FS 1.x 互通性](https://go.microsoft.com/fwlink/?LinkId=200776)  
   
 

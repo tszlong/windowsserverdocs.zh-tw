@@ -1,31 +1,27 @@
 ---
 title: 影響 MultiPoint 服務系統效能的變數
 description: MultiPoint 服務的效能資訊
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0f3e8875-1b5e-4789-b16c-d06d6e31f38e
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: cba973e3b0a89c26f886a67154c27831adb2c8cc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 44f268c958ed32e527b66cebe1a10d33652eb9b0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394834"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858911"
 ---
 # <a name="variables-affecting-multipoint-services-system-performance"></a>影響 MultiPoint 服務系統效能的變數
 有許多變數可能會影響 MultiPoint 服務系統的整體效能。 在設計系統時，您可能會想要考慮這些事項。  
   
-## <a name="usage"></a>使用量  
+## <a name="usage"></a>使用方式  
   
--   **應用程式**同時執行的應用程式類型和數目，特別是圖形\-繁重或記憶體密集型應用程式將會影響系統的整體效能。 如需詳細資訊，請參閱[應用程式和網際網路內容](hardware-and-performance-recommendations.md#applications-and-internet-content)。  
+-   **應用程式**同時執行的應用程式類型和數目（尤其是圖形\-繁重或耗用大量記憶體的應用程式）將會影響系統的整體效能。 如需詳細資訊，請參閱[應用程式和網際網路內容](hardware-and-performance-recommendations.md#applications-and-internet-content)。  
   
 -   **網際網路使用**請考慮您的使用者是否要觀看多媒體內容或使用全動作影片的網頁。 如果同時查看太多使用者，這種類型的內容可能會使系統超載。  
   

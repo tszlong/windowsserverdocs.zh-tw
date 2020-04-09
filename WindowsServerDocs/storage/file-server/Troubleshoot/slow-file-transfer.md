@@ -3,16 +3,15 @@ title: 緩慢的 SMB 檔案傳送速率
 description: 介紹如何針對 SMB 檔案傳輸效能問題進行疑難排解。
 author: Deland-Han
 manager: dcscontentpm
-audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 0e6c049404f464eba872075a8ef5060b303920c8
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: af05daa164b5b2c5eca73eff51d97d4c25ba1ca3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654559"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815391"
 ---
 # <a name="slow-smb-files-transfer-speed"></a>緩慢的 SMB 檔案傳送速率
 
@@ -46,7 +45,7 @@ ms.locfileid: "75654559"
 
 ## <a name="small-file-transfer-is-slow"></a>小型檔案傳輸速度緩慢
 
-透過 SMB 進行小型檔案的緩慢傳輸，最常見的原因是有許多檔案。 這是預期中的行為。
+透過 SMB 進行小型檔案的緩慢傳輸，最常見的原因是有許多檔案。 這是預期的行為。
 
 檔案傳輸期間，檔案建立會導致高通訊協定額外負荷和高檔案系統額外負荷。 對於大型檔案傳輸，這些成本只會發生一次。 當傳送大量小型檔案時，成本會重複，並導致傳送速率變慢。
 

@@ -1,24 +1,20 @@
 ---
 title: 設定額外的 LSA 保護
 description: Windows Server 安全性
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-credential-protection
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 038e7c2b-c032-491f-8727-6f3f01116ef9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 40e489089fc0c15c3e6ebf7b654377f4d6f7e482
-ms.sourcegitcommit: 3d76683718ec6f38613f552f518ebfc6a5db5401
+ms.openlocfilehash: 1c923cfe39892ba105c437cf73843c2f6d07e49b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74829624"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857071"
 ---
 # <a name="configuring-additional-lsa-protection"></a>設定額外的 LSA 保護
 
@@ -114,7 +110,7 @@ LSA 外掛程式或驅動程式必須符合以下條件，才能順利載入為�
 
 10. 在 [數值資料] 方塊中輸入 **00000008**。
 
-11. 按一下 **\[確定\]** 。
+11. 按一下 [確定]。
 
 > [!NOTE]
 > GPO 變更必須複寫到網域中的所有網域控制站，GPO 才會生效。
@@ -134,7 +130,7 @@ LSA 外掛程式或驅動程式必須符合以下條件，才能順利載入為�
 
 共用區段通常是程式設計技術的結果，可讓執行個體資料與使用相同資訊安全內容的其他處理程序互動。 這可能產生安全性弱點。
 
-## <a name="BKMK_HowToConfigure"></a>如何設定額外的 LSA 保護認證
+## <a name="how-to-configure-additional-lsa-protection-of-credentials"></a><a name="BKMK_HowToConfigure"></a>如何設定額外的 LSA 保護認證
 在執行 Windows 8.1 （不論有無安全開機或 UEFI）的裝置上，可以藉由執行本節所述的程式來進行設定。 對於執行 Windows RT 8.1 的裝置，lsass.exe 保護一律會啟用，且無法關閉。
 
 ### <a name="on-x86-based-or-x64-based-devices-using-secure-boot-and-uefi-or-not"></a>在使用或不使用安全開機和 UEFI 的 x86 型或 x64 型裝置上
@@ -174,7 +170,7 @@ LSA 外掛程式或驅動程式必須符合以下條件，才能順利載入為�
 
 10. 在 [**數值資料**] 方塊中，輸入**00000001**。
 
-11. 按一下 **\[確定\]** 。
+11. 按一下 [確定]。
 
 ##### <a name="to-disable-lsa-protection"></a>停用 LSA 保護
 

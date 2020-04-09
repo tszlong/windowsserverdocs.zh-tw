@@ -1,24 +1,24 @@
 ---
 title: HCN 的 RPC 內容控點
-description: ''
 ms.author: jmesser
 author: jmesser81
+ms.prod: windows-server
 ms.date: 11/05/2018
-ms.openlocfilehash: 0eb620fe52de5ee98a247e17ed73304b2325c7c8
-ms.sourcegitcommit: 213989f29cc0c30a39a78573bd4396128a59e729
+ms.openlocfilehash: d55a990b2158f8dfbc61d8e75e9b0606edc9bf7c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70031486"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859861"
 ---
 # <a name="rpc-context-handles-for-hcn"></a>HCN 的 RPC 內容控點
 
->適用於：Windows Server (半年通道)、Windows Server 2019
+>適用于： Windows Server （半年通道）、Windows Server 2019
 
 
 ## <a name="hcn_network"></a>HCN_Network
 
-HCN 網路是一個實體, 用來代表主機計算網路及其相關聯的系統資源和原則。 例如, HCN 網路通常包含一組中繼資料 (例如識別碼、名稱、類型)、虛擬交換器、主機虛擬網路介面卡 (作為網路的預設閘道)、NAT 實例 (如果網路類型需要)、一組子網和 MAC 集區, 以及要套用的任何全網路原則 (例如 Acl)。
+HCN 網路是一個實體，用來代表主機計算網路及其相關聯的系統資源和原則。 例如，HCN 網路通常包含一組中繼資料（例如識別碼、名稱、類型）、虛擬交換器、主機虛擬網路介面卡（做為網路的預設閘道）、NAT 實例（如果網路類型需要）、一組子網和 MAC 集區，以及要套用的任何全網路原則（例如 Acl）。
 
 HCN 網路實體會使用 HCN_NETWORK RPC 內容控制碼來表示。
 
@@ -151,7 +151,7 @@ HcnCloseNetwork(
 
 ## <a name="hcn_endpoint"></a>HCN_Endpoint
 
-HCN 端點是一個實體, 用來代表 HCN 網路上的 IP 端點及其相關聯的系統資源和原則。 例如, HCN 端點通常會包含一組中繼資料 (例如識別碼、名稱、父網路識別碼)、其網路識別 (例如 IP 位址、MAC 位址), 以及要套用的任何端點特定原則 (例如 Acl、路由)。
+HCN 端點是一個實體，用來代表 HCN 網路上的 IP 端點及其相關聯的系統資源和原則。 例如，HCN 端點通常會包含一組中繼資料（例如識別碼、名稱、父網路識別碼）、其網路識別（例如 IP 位址、MAC 位址），以及要套用的任何端點特定原則（例如 Acl、路由）。
 HCN 端點實體會使用 HCN_ENDPOINT RPC 內容控制碼來表示。
 
 ```
@@ -285,7 +285,7 @@ HcnCloseEndpoint(
 
 ## <a name="hcn_namespace"></a>HCN_Namespace
 
-HCN 命名空間是用來代表主機計算網路命名空間的實體。 命名空間可讓您在單一主機上擁有隔離的網路環境, 其中每個命名空間都有自己的網路介面和路由表 (與其他命名空間分隔)。
+HCN 命名空間是用來代表主機計算網路命名空間的實體。 命名空間可讓您在單一主機上擁有隔離的網路環境，其中每個命名空間都有自己的網路介面和路由表（與其他命名空間分隔）。
 
 HCN 命名空間實體會使用 HCN_NAMESPACE RPC 內容控制碼來表示。
 
@@ -560,7 +560,7 @@ HcnCloseLoadBalancer(
 
 ## <a name="hcn_notification_callback"></a>HCN_Notification_Callback
 
-函式可讓您存取服務範圍的作業, 例如通知 (例如接收新網路建立的通知)。
+函式可讓您存取服務範圍的作業，例如通知（例如接收新網路建立的通知）。
 
 ```
 /// Registers a callback function to receive notifications of service-wide events such as network

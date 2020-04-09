@@ -1,6 +1,5 @@
 ---
 title: AD 樹系復原-設計 AD 樹系復原計畫
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 17381f30-55f2-4e00-977a-b701675fa4ff
 ms.technology: identity-adds
-ms.openlocfilehash: 0ef0fbc19f1b3ba5a46fe09f66da6721f2e84712
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ebdff0616d0e3a99b710e07e3bff149a275ff4ea
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369154"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824022"
 ---
 # <a name="ad-forest-recovery---devising-an-ad-forest-recovery-plan"></a>AD 樹系復原-設計 AD 樹系復原計畫
 
->適用於：Windows Server 2016、Windows Server 2012 及 2012 R2、Windows Server 2008 和 2008 R2
+>適用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
 視您的環境和商務需求而定，您可能需要執行本指南中所述的所有步驟，才能執行成功的樹系復原。 假設本指南僅作為樹系復原的範本，請務必設計符合您環境的自訂樹系復原計畫，並符合您的業務需求。  
   

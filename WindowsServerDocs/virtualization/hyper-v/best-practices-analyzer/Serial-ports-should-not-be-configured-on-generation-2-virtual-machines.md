@@ -2,20 +2,19 @@
 title: 第2代虛擬機器上不應設定序列埠
 description: 此最佳做法分析程式規則的線上版本文字。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 87061193-dd3f-4398-aa5d-4cee83cadfa3
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 8a8c15076921efa0e1e791a18c6a45ea1bf27b0e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d9cfb8db2dc3fdff32544670d9443632c2d2264e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364734"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861781"
 ---
 # <a name="serial-ports-should-not-be-configured-on-generation-2-virtual-machines"></a>第2代虛擬機器上不應設定序列埠
 
@@ -28,7 +27,7 @@ ms.locfileid: "71364734"
 |**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
 |**低於**|警告|  
-|**類別**|設定|  
+|**類別**|組態|  
   
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   

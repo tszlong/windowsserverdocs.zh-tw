@@ -1,23 +1,19 @@
 ---
 title: 在 Windows Server Essentials 中管理系統健康情況
 description: 說明如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3043f83b-389c-4f37-a1ff-85afe99314fa
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: bbe05c0564e706ef0227e723a52bd10b2f774756
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 8bca8f89e876da56dc6ede53a017e4d4331e39fc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311069"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852711"
 ---
 # <a name="manage-system-health-in-windows-server-essentials"></a>在 Windows Server Essentials 中管理系統健康情況
 
@@ -28,7 +24,7 @@ ms.locfileid: "80311069"
 > [!NOTE]
 >  在已安裝 Windows Server Essentials 體驗角色的 Windows Server Essentials 和 Windows Server 2012 R2 中，系統不會再于 [警示檢視器] 中顯示伺服器和用戶端電腦的健康情況警示，而是可以在**首頁**的 [**健康情況報告**] 索引標籤上查看。  
   
- Windows Server Essentials 會主動監視與伺服器連線的每一部電腦，並警示系統管理員與系統健康狀態相關的問題，包括重大更新、遺失惡意程式碼防護、用戶端上的病毒定義過期電腦，以及其他需要採取行動的重要問題。 這些問題會在 [警示檢視器] 中顯示為警示，您可以從伺服器的 [儀表板] 或 Windows Server Essentials 中的用戶端電腦的 [啟動列]，或在 Windows Server Essentials 的 [**健康情況報告**] 索引標籤上啟動。 警示預設是每 30 分鐘重新整理一次，但是您也可以按一下 [警示檢視器] 中或 [健康情況報告] 索引標籤上的 [重新整理]，來隨時評估您的網路是否有警示。  
+ Windows Server Essentials 會主動監視連線到伺服器的每一部電腦，並警示系統管理員與系統健康狀態相關的問題，包括重大更新、遺失惡意程式碼防護、用戶端電腦上的病毒定義過時，以及其他需要採取行動的重要問題。 這些問題會在 [警示檢視器] 中顯示為警示，您可以從伺服器的 [儀表板] 或 Windows Server Essentials 中的用戶端電腦的 [啟動列]，或在 Windows Server Essentials 的 [**健康情況報告**] 索引標籤上啟動。 警示預設是每 30 分鐘重新整理一次，但是您也可以按一下 [警示檢視器] 中或 [健康情況報告] 索引標籤上的 [重新整理]，來隨時評估您的網路是否有警示。  
   
  下列主題將協助您了解、檢視及回應 [警示檢視器] 中的警示，同時也提供設定您的伺服器以透過電子郵件接收警示通知的指示：  
   
@@ -72,13 +68,13 @@ ms.locfileid: "80311069"
   
 - **事件記錄中的嚴重錯誤** 系統會掃描應用程式和服務記錄檔，並在報告的 [詳細資料] 區段中顯示過去 24 小時記錄的錯誤。  
   
-- **伺服器備份** 報告的 [詳細資料] 區段中會顯示上一次伺服器備份的相關資訊。  
+- **伺服器備份**報告的 [詳細資料] 區段中會顯示上一次伺服器備份的相關資訊。  
   
 - **自動啟動服務未執行** 產生報告時，如果自動啟動服務未執行，報告的 [詳細資料] 區段中將會列出這項服務的相關資訊。  
   
 - **更新** 您可以在 [詳細資料] 區段中看見伺服器和所有用戶端電腦的更新狀態。  
   
-- **儲存體** [詳細資料] 區段中會顯示磁碟機及其容量的清單。  
+- **存放** [詳細資料] 區段中會顯示磁碟機及其容量的清單。  
   
   在「健康情況報告」中，請先檢視 [摘要]，然後針對那些帶有紅色錯誤圖示或黃色警告圖示的項目，按一下同一列中的 [詳細資料] 連結，以檢視該項目的相關詳細資料。  
   

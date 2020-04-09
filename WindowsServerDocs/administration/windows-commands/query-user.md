@@ -1,28 +1,24 @@
 ---
-title: 查詢使用者
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+title: query user
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a670fb78-c055-464a-b61d-3a85632c52c5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 65bf42281e6e1956331c061167aea23d1cd61a1d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6624c559bc85263da955f993ae7e4ad7e8b9ee2d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384875"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836801"
 ---
-# <a name="query-user"></a>查詢使用者
+# <a name="query-user"></a>query user
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 顯示遠端桌面工作階段主機（rd 工作階段主機）伺服器上的使用者會話相關資訊。
 如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
@@ -32,7 +28,7 @@ ms.locfileid: "71384875"
 > ```
 > query user [<UserName> | <SessionName> | <SessionID>] [/server:<ServerName>]
 > ```
-> ## <a name="parameters"></a>參數
+> ### <a name="parameters"></a>參數
 > 
 > |      參數       |                                                     描述                                                     |
 > |----------------------|---------------------------------------------------------------------------------------------------------------------|
@@ -54,7 +50,7 @@ ms.locfileid: "71384875"
 > - 如果您使用**查詢使用者**，但未指定 <*UserName*>、<*SessionName*> 或 <*SessionID*>，則會傳回所有登入伺服器的使用者清單。 或者，您也可以使用 [**查詢會話**] 顯示伺服器上所有會話的清單。
 > - 當**查詢使用者**傳回信息時，會在目前的會話之前顯示大於（>）符號。
 > - 只有當您使用遠端伺服器的**查詢使用者**時，才需要 **/server**參數。
->   ## <a name="BKMK_examples"></a>典型
+>   ## <a name="examples"></a><a name=BKMK_examples></a>典型
 > - 若要顯示所有登入系統之使用者的相關資訊，請輸入：
 >   ```
 >   query user
@@ -63,7 +59,7 @@ ms.locfileid: "71384875"
 >   ```
 >   query user USER1 /server:SERver1
 >   ```
->   #### <a name="additional-references"></a>其他參考
->   [命令列語法索引鍵](command-line-syntax-key.md)
+>   ## <a name="additional-references"></a>其他參考資料
+>   - [命令列語法索引鍵](command-line-syntax-key.md)
 >   [查詢](query.md)
->   [遠端桌面服務&#40;終端機&#41;服務命令參考](remote-desktop-services-terminal-services-command-reference.md)
+>   [遠端桌面服務（終端機服務）命令參考](remote-desktop-services-terminal-services-command-reference.md)

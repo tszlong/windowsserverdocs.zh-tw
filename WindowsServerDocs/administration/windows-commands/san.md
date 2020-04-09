@@ -1,28 +1,24 @@
 ---
 title: 聖約瑟
-description: '\* * * * 的 Windows 命令主題 '
-ms.custom: na
+description: '\* * * * 的 Windows 命令主題'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d57c2df1-eb82-4b81-b8cd-e30564c6a929
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 970a5d6403804db7585bf3895dbb61eead286c37
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e1a5762309054cb9e5df0936990afa2331a9ceec
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384379"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80835401"
 ---
 # <a name="san"></a>聖約瑟
 
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 顯示或設定作業系統的存放區域網路（san）原則。
 > [!NOTE]
@@ -32,16 +28,16 @@ ms.locfileid: "71384379"
 ```
 san [policy={onlineAll | offlineAll | offlineShared}] [noerr]
 ```
-### <a name="parameters"></a>參數
+#### <a name="parameters"></a>參數
 
 |                          參數                           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           描述                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 |--------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| policy = {onlineAll &#124; offlineAll &#124; offlineShared}] | 設定目前開機作業系統的 san 原則。 San 原則會判斷新探索到的磁片是否上線或保持離線狀態，以及它是否為讀取/寫入或保持唯讀。 當磁片離線時，可以讀取磁片版面配置，但不會透過隨插即用呈現任何磁片區裝置。 這表示磁片上不能裝載任何檔案系統。 當磁片在線上時，系統會安裝一或多個磁片區裝置。 以下是每個參數的說明：<br /><br />-   **onlineAll**。 指定所有新探索到的磁片都會上線，並進行讀取/寫入。 **重大**   在共用磁片的伺服器上指定**onlineAll**可能會導致資料損毀。 因此，除非伺服器是叢集的一部分，否則您不應該設定此原則。<br />-   **offlineAll**。 指定除了啟動磁片以外，所有新探索到的磁片都預設為離線 andread。<br />-   **offlineShared**。 指定不在共用匯流排上的所有新發現的磁片（例如 SCSI 和 iSCSI）都會上線，並進行讀寫。 根據預設，離線的磁片將會是唯讀的。<br /><br />如需詳細資訊，請參閱[VDS_san_POLICY 列舉](https://go.microsoft.com/fwlink/?LinkId=203815)（<https://go.microsoft.com/fwlink/?LinkId=203815>）。 |
-|                            noerr                             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            僅用於腳本。 當發生錯誤時，DiskPart 會繼續處理命令，就像未發生錯誤一樣。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| policy = {onlineAll &#124; offlineAll &#124; offlineShared}] | 設定目前開機作業系統的 san 原則。 San 原則會判斷新探索到的磁片是否上線或保持離線狀態，以及它是否為讀取/寫入或保持唯讀。 當磁片離線時，可以讀取磁片版面配置，但不會透過隨插即用呈現任何磁片區裝置。 這表示磁片上不能裝載任何檔案系統。 當磁片在線上時，系統會安裝一或多個磁片區裝置。 以下是每個參數的說明：<p>-   **onlineAll**。 指定所有新探索到的磁片都會上線，並進行讀取/寫入。 **重要事項：**    在共用磁片的伺服器上指定**onlineAll**可能會導致資料損毀。 因此，除非伺服器是叢集的一部分，否則您不應該設定此原則。<br />-   **offlineAll**。 指定除了啟動磁片以外，所有新探索到的磁片都預設為離線 andread。<br />-   **offlineShared**。 指定不在共用匯流排上的所有新發現的磁片（例如 SCSI 和 iSCSI）都會上線，並進行讀寫。 根據預設，離線的磁片將會是唯讀的。<p>如需詳細資訊，請參閱[VDS_san_POLICY 列舉](https://go.microsoft.com/fwlink/?LinkId=203815)（<https://go.microsoft.com/fwlink/?LinkId=203815>）。 |
+|                            noerr                             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            僅用於腳本。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 
 ## <a name="remarks"></a>備註
 - 如果未指定任何參數給命令，則會顯示目前的 san 原則。
-  ## <a name="BKMK_Examples"></a>典型
+  ## <a name="examples"></a><a name=BKMK_Examples></a>典型
   若要查看目前的原則，請輸入：
   ```
   san
@@ -50,5 +46,5 @@ san [policy={onlineAll | offlineAll | offlineShared}] [noerr]
   ```
   san policy=offlineAll
   ```
-  ## <a name="additional-references"></a>其他參考
-- [命令列語法關鍵](command-line-syntax-key.md)
+  ## <a name="additional-references"></a>其他參考資料
+- - [命令列語法關鍵](command-line-syntax-key.md)

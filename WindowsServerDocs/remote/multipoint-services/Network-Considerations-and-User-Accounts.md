@@ -1,24 +1,20 @@
 ---
 title: 網路考量和使用者帳戶
 description: 使用 MultiPoint 服務為不同的網路和使用者案例提供規劃資訊
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ef4859fc-b7ae-4827-ab9c-b1dc07ab6c16
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 5369776a0341bf1f4d4d1d13569cf0964fdf11f1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ed9770ff6e91e548dfc38a1de927646590a25165
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405041"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853411"
 ---
 # <a name="network-considerations-and-user-accounts"></a>網路考量和使用者帳戶
 MultiPoint 服務可以部署在各種不同的網路環境中，而且可以支援本機使用者帳戶和網域使用者帳戶。 通常，MultiPoint 服務使用者帳戶會在下列其中一個網路環境中進行管理：  

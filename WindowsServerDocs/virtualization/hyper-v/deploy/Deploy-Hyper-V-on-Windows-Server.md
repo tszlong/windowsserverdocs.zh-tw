@@ -2,21 +2,19 @@
 title: 在 Windows Server 上部署 Hyper-v
 description: 提供部署 Hyper-v 之文章的連結
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e13abdca-5412-4c0a-99f3-2ab83666ec66
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 08/21/2019
-ms.openlocfilehash: 2d99d5b98c2e91e88c2b3a2c4a9f6fa92b069ca8
-ms.sourcegitcommit: 81198fbf9e46830b7f77dcd345b02abb71ae0ac2
+ms.openlocfilehash: 1746bb94063d82b6a6cf9be83e0956c2e6149d02
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72923821"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860921"
 ---
 # <a name="deploy-hyper-v-on-windows-server"></a>在 Windows Server 上部署 Hyper-v
 

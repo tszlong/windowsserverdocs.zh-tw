@@ -2,20 +2,19 @@
 title: 初始複寫完成後，應該嘗試測試容錯移轉
 description: 此最佳做法分析程式規則的線上版本文字。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: cea7eeaa-c1a7-4f87-89be-d4e1208c546f
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: ec3ad3994227eb14d1d2e53842c755af76ac538d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 41d96b33c686631f57cd35e76b64ee3dde206655
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364696"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858941"
 ---
 # <a name="test-failover-should-be-attempted-after-initial-replication-is-complete"></a>初始複寫完成後，應該嘗試測試容錯移轉
 

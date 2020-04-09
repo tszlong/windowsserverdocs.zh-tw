@@ -2,20 +2,19 @@
 title: 執行 Windows Server 2012 並設定動態記憶體的虛擬機器應該使用建議的記憶體設定值
 description: 提供解決此最佳做法分析程式規則所回報之問題的指示。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 0aa35e36-8e3b-498b-b71d-003a0a0947be
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 4eb223fa2638e453bae14bdbae5029ae5835207e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 776fbbfc3170ad0c569e57648f8e055f9c68a262
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365349"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857861"
 ---
 # <a name="a-virtual-machine-running-windows-server-2012-and-configured-with-dynamic-memory-should-use-recommended-values-for-memory-settings"></a>執行 Windows Server 2012 並設定動態記憶體的虛擬機器應該使用建議的記憶體設定值
 
@@ -28,7 +27,7 @@ ms.locfileid: "71365349"
 |**作業系統**|Windows Server 2016|  
 |**產品/功能**|Hyper-V|  
 |**低於**|警告|  
-|**類別**|設定|  
+|**類別**|組態|  
   
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。  
   
@@ -55,7 +54,7 @@ ms.locfileid: "71365349"
   
 5.  在 [**動態記憶體**] 底下，將 [**最小 ram** ] 變更為至少 256 MB，並將 [**最大 RAM** ] 設為 2 GB  
   
-6.  按一下 **\[確定\]** 。  
+6.  按一下 [確定]。  
   
 ### <a name="increase-memory-using-windows-powershell"></a>使用 Windows PowerShell 增加記憶體  
   

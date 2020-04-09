@@ -1,7 +1,6 @@
 ---
 ms.assetid: cea6011d-3753-4b95-aaa5-38d4e97d6e42
 title: 在帳戶夥伴中準備用戶端電腦
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 5725f4a7761d08a25ee8c67c0568977e3646397e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 014524c78312c6fcd478b40ec47e212a194b0531
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407945"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858591"
 ---
 # <a name="prepare-client-computers-in-the-account-partner"></a>在帳戶夥伴中準備用戶端電腦
 
@@ -31,5 +30,5 @@ ms.locfileid: "71407945"
     如需詳細資訊，請參閱[使用群組原則將憑證散發到用戶端電腦](../../ad-fs/deployment/Distribute-Certificates-to-Client-Computers-by-Using-Group-Policy.md)。  
   
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 [Windows Server 2012 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

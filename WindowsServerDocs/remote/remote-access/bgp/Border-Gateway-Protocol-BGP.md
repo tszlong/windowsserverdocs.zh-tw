@@ -2,22 +2,18 @@
 title: 邊界閘道通訊協定 (BGP)
 description: 您可以使用本主題來瞭解 Windows Server 2016 中的邊界閘道協定（BGP），包括 BGP 支援的部署拓撲和 BGP 特性和功能。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 78cc2ce3-a48e-45db-b402-e480b493fab1
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 3e04c732cbacb182731717215a4cf99cf3cc1f76
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 5407c2580f9546c59df9e6c1c35520449bdfaa3f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309295"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815861"
 ---
 # <a name="border-gateway-protocol-bgp"></a>邊界閘道通訊協定 (BGP)
 

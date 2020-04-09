@@ -1,24 +1,20 @@
 ---
 title: 安裝或解除安裝角色、角色服務或功能
 description: 伺服器管理員
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 04f16d84-45c2-4771-84c1-1cc973d0ee02
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cca2e4c7ba2658c4d85b14ef61ef5f79fbc96345
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8c270fbdacf5359af4e3150d61693470207f566b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383195"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851521"
 ---
 # <a name="install-or-uninstall-roles-role-services-or-features"></a>安裝或解除安裝角色、角色服務或功能
 
@@ -63,9 +59,9 @@ ms.locfileid: "71383195"
   
 2.  在 [**管理**] 功能表上，按一下 [**新增角色及功能**]。  
   
-3.  在 [在您開始前] 頁面上，確認已準備好目的地伺服器和網路環境，以便安裝您要的角色和功能。 按一下 **\[下一步\]** 。  
+3.  在 [在您開始前] 頁面上，確認已準備好目的地伺服器和網路環境，以便安裝您要的角色和功能。 按 [下一步]。  
   
-4.  在 [選取安裝類型] 頁面上，選取 [角色型或功能型安裝] 以在單一伺服器上安裝角色或功能的所有部分，或 [遠端桌面服務安裝] 來為遠端桌面服務安裝虛擬機器型桌面基礎結構或工作階段型桌面基礎結構。 [遠端桌面服務安裝] 選項可讓系統管理員視需要將遠端桌面服務角色的邏輯部分分散到不同的伺服器。 按一下 **\[下一步\]** 。  
+4.  在 [選取安裝類型] 頁面上，選取 [角色型或功能型安裝] 以在單一伺服器上安裝角色或功能的所有部分，或 [遠端桌面服務安裝] 來為遠端桌面服務安裝虛擬機器型桌面基礎結構或工作階段型桌面基礎結構。 [遠端桌面服務安裝] 選項可讓系統管理員視需要將遠端桌面服務角色的邏輯部分分散到不同的伺服器。 按 [下一步]。  
   
 5.  在 [選取目的地伺服器] 頁面上，從伺服器集區選取一部伺服器，或者選取一個離線 VHD。 若要選取離線 VHD 做為目的地伺服器，請先選取要掛接 VHD 的伺服器，然後選取 VHD 檔案。 如需如何將伺服器新增到伺服器集區的相關資訊，請參閱[將伺服器新增至伺服器管理員](add-servers-to-server-manager.md)。 選取目的地伺服器之後，按 [下一步]。  
   
@@ -96,7 +92,7 @@ ms.locfileid: "71383195"
 8.  按一下 [**安裝**] 之後，[**安裝進度**] 頁面就會顯示安裝進度、結果以及訊息，例如警告、失敗，或您安裝的角色或功能所需的後續安裝設定步驟。 在 Windows Server 2012 和更新版本的 Windows Server 中，您可以在安裝仍在進行時關閉 [新增角色及功能嚮導]，並在伺服器管理員主控台頂端的 [**通知**] 區域中，查看安裝結果或其他訊息。 按一下 [**通知**] 旗標圖示，即可查看您在伺服器管理員中執行的安裝或其他工作的詳細資料。  
   
 ## <a name="install-roles-role-services-and-features-by-using-windows-powershell-cmdlets"></a>使用 Windows PowerShell Cmdlet 來安裝角色、角色服務與功能  
-適用于 Windows PowerShell 的伺服器管理員部署 Cmdlet 的運作方式與以 GUI 為基礎的 [新增角色及功能嚮導] 和 [移除角色及功能] Wizard 相似，但有一項重要的差異。 在 Windows PowerShell 中，與 [新增角色及功能] Wizard 不同的是，預設不會包含角色的管理工具和嵌入式管理單元。 若要在角色安裝中包含管理工具，請新增 `IncludeManagementTools` 參數到 Cmdlet。 如果您要在執行 Windows Server 2012 或更新版本之 Server Core 安裝選項的伺服器上安裝角色和功能，您可以將角色的管理工具新增至安裝，但是無法安裝 GUI 管理工具和嵌入式管理單元在執行 Windows Server 之 Server Core 安裝選項的伺服器上。 只有命令列和 Windows PowerShell 管理工具可以安裝在 Server Core 安裝選項上。  
+適用于 Windows PowerShell 的伺服器管理員部署 Cmdlet 的運作方式與以 GUI 為基礎的 [新增角色及功能嚮導] 和 [移除角色及功能] Wizard 相似，但有一項重要的差異。 在 Windows PowerShell 中，與 [新增角色及功能] Wizard 不同的是，預設不會包含角色的管理工具和嵌入式管理單元。 若要在角色安裝中包含管理工具，請新增 `IncludeManagementTools` 參數到 Cmdlet。 如果您要在執行 Windows Server 2012 或更新版本之 Server Core 安裝選項的伺服器上安裝角色和功能，您可以將角色的管理工具新增至安裝，但是以 GUI 為基礎的管理工具和嵌入式管理單元無法安裝在執行 Windows Server 之 Server Core 安裝選項的伺服器上。 只有命令列和 Windows PowerShell 管理工具可以安裝在 Server Core 安裝選項上。  
   
 #### <a name="to-install-roles-and-features-by-using-the-install-windowsfeature-cmdlet"></a>使用 Install-WindowsFeature Cmdlet 安裝角色及功能  
   
@@ -109,7 +105,7 @@ ms.locfileid: "71383195"
   
    -   在 Windows [**開始**] 畫面上，以滑鼠右鍵按一下 windows PowerShell 的磚，然後在應用程式行上，按一下 [**以系統管理員身分執行**]。  
   
-2. 輸入 **Get-WindowsFeature** ，然後按 **Enter** ，以檢視本機伺服器上可用且已安裝的角色及功能清單。 如果本機電腦不是伺服器，或如果您想要遠端伺服器的相關資訊，請執行 <<em>computer_name</em> **>** 中的 [ **get-help-computerName**]，其中*computer_name*代表執行 Windows server 2016 的遠端電腦名稱稱。 Cmdlet 的結果包含您在步驟4中新增至 Cmdlet 的角色和功能的命令名稱。  
+2. 輸入 **Get-WindowsFeature**，然後按 **Enter**，以檢視本機伺服器上可用且已安裝的角色及功能清單。 如果本機電腦不是伺服器，或如果您想要遠端伺服器的相關資訊，請執行 <<em>computer_name</em> **>** 中的 [ **get-help-computerName**]，其中*computer_name*代表執行 Windows server 2016 的遠端電腦名稱稱。 Cmdlet 的結果包含您在步驟4中新增至 Cmdlet 的角色和功能的命令名稱。  
   
    > [!NOTE]  
    > 在 windows PowerShell 3.0 和更新版本的 Windows PowerShell 中，在執行屬於模組的 Cmdlet 之前，不需要將伺服器管理員 Cmdlet 模組匯入 Windows PowerShell 會話。 當您首次執行屬於模組的 Cmdlet 時，會自動匯入模組。 此外，Windows PowerShell Cmdlet 和與 Cmdlet 搭配使用的功能名稱都不區分大小寫。  
@@ -161,7 +157,7 @@ ms.locfileid: "71383195"
   
 2.  在 [管理] 功能表上，按一下 [移除角色及功能]。  
   
-3.  在 [在您開始前] 頁面中，確認您已準備好從伺服器移除角色或功能。 按一下 **\[下一步\]** 。  
+3.  在 [在您開始前] 頁面中，確認您已準備好從伺服器移除角色或功能。 按 [下一步]。  
   
 4.  在 [**選取目的地伺服器**] 頁面上，從伺服器集區中選取伺服器，或選取離線 VHD。 若要選取離線 VHD，請先選取要掛接 VHD 的伺服器，然後選取 VHD 檔案。  
   
@@ -187,7 +183,7 @@ ms.locfileid: "71383195"
 7.  按一下 [**移除**] 之後，[**移除進度**] 頁面就會顯示移除進度、結果及訊息，例如警告、失敗或所需的後續移除設定步驟（例如重新開機目的地伺服器）。 在 Windows Server 2012 和更新版本的 Windows Server 中，您可以在移除仍在進行時關閉 [移除角色及功能]，並在伺服器管理員主控台上方的 [**通知**] 區域中查看移除結果或其他訊息。 按一下 [**通知**] 旗標，以查看您在伺服器管理員中執行的移除或其他工作的詳細資料。  
   
 ## <a name="remove-roles-role-services-and-features-by-using-windows-powershell-cmdlets"></a>使用 Windows PowerShell Cmdlet 來移除角色、角色服務與功能  
-適用于 Windows PowerShell 的伺服器管理員部署 Cmdlet 的運作方式與以 GUI 為基礎的 [移除角色及功能] Wizard 類似，但有一項重要的差異。 在 Windows PowerShell 中，與 [移除角色及功能] Wizard 不同的是，預設不會移除角色的管理工具和嵌入式管理單元。 若要移除管理工作以做為角色移除的一部分，請將 `IncludeManagementTools` 參數新增到 Cmdlet。 如果您要從執行 Windows Server 2012 或更新版本 Windows Server 之 Server Core 安裝選項的伺服器卸載角色和功能，這個參數會移除指定之的命令列和 Windows PowerShell 管理工具。角色和功能。  
+適用于 Windows PowerShell 的伺服器管理員部署 Cmdlet 的運作方式與以 GUI 為基礎的 [移除角色及功能] Wizard 類似，但有一項重要的差異。 在 Windows PowerShell 中，與 [移除角色及功能] Wizard 不同的是，預設不會移除角色的管理工具和嵌入式管理單元。 若要移除管理工作以做為角色移除的一部分，請將 `IncludeManagementTools` 參數新增到 Cmdlet。 如果您要從執行 Windows Server 2012 或更新版本之 Windows server 的 Server Core 安裝選項的伺服器卸載角色和功能，這個參數會移除指定之角色和功能的命令列和 Windows PowerShell 管理工具。  
   
 #### <a name="to-remove-roles-and-features-by-using-the-uninstall-windowsfeature-cmdlet"></a>使用 Uninstall-WindowsFeature Cmdlet 移除角色及功能  
   
@@ -200,7 +196,7 @@ ms.locfileid: "71383195"
   
    -   在 Windows [**開始**] 畫面上，以滑鼠右鍵按一下 [windows PowerShell] 磚，然後在應用程式行上，按一下 [**以系統管理員身分執行**]。  
   
-2. 輸入 **Get-WindowsFeature** ，然後按 **Enter** ，以檢視本機伺服器上可用且已安裝的角色及功能清單。 如果本機電腦不是伺服器，或如果您想要遠端伺服器的相關資訊，請執行 <<em>computer_name</em> **>** 中的 [ **get-help-computerName**]，其中*computer_name*代表執行 Windows server 2016 的遠端電腦名稱稱。 Cmdlet 的結果包含您在步驟4中新增至 Cmdlet 的角色和功能的命令名稱。  
+2. 輸入 **Get-WindowsFeature**，然後按 **Enter**，以檢視本機伺服器上可用且已安裝的角色及功能清單。 如果本機電腦不是伺服器，或如果您想要遠端伺服器的相關資訊，請執行 <<em>computer_name</em> **>** 中的 [ **get-help-computerName**]，其中*computer_name*代表執行 Windows server 2016 的遠端電腦名稱稱。 Cmdlet 的結果包含您在步驟4中新增至 Cmdlet 的角色和功能的命令名稱。  
   
    > [!NOTE]  
    > 在 windows PowerShell 3.0 和更新版本的 Windows PowerShell 中，在執行屬於模組的 Cmdlet 之前，不需要將伺服器管理員 Cmdlet 模組匯入 Windows PowerShell 會話。 當您首次執行屬於模組的 Cmdlet 時，會自動匯入模組。 此外，Windows PowerShell Cmdlet 和與 Cmdlet 搭配使用的功能名稱都不區分大小寫。  
@@ -236,10 +232,10 @@ ms.locfileid: "71383195"
 5. 移除完成時，請在 伺服器管理員中開啟 **所有伺服器** 頁面，選取移除角色和功能的伺服器，然後在所選伺服器的頁面上查看 **角色及功能** 磚，藉以確認角色和功能已移除。 您也可以執行以選取的伺服器為目標的 `Get-WindowsFeature` Cmdlet （<*computer_name*>），以查看伺服器上所安裝的角色和功能清單。  
   
 ## <a name="install-roles-and-features-on-multiple-servers-by-running-a-windows-powershell-script"></a>執行 Windows PowerShell 指令碼，在多個伺服器上安裝角色和功能  
-雖然您不能在單一的 Wizard 會話中使用 [新增角色及功能] 嚮導在多個目標伺服器上安裝角色、角色服務和功能，但您可以使用 Windows PowerShell 腳本，在多個目標上安裝角色、角色服務和功能。使用伺服器管理員管理的伺服器。 您用來執行批次部署的腳本會使用 [新增角色及功能] Wizard，指向您可以輕鬆建立的 XML 設定檔，然後在瀏覽器前進至 [新增角色及功能] 嚮導的 [**確認安裝選項**] 頁面後，按一下 [**匯出設定**]。  
+雖然您不能在單一的 Wizard 會話中使用 [新增角色及功能] 嚮導在多個目標伺服器上安裝角色、角色服務和功能，但您可以使用 Windows PowerShell 腳本，在您使用伺服器管理員管理的多個目標伺服器上安裝角色、角色服務和功能。 您用來執行批次部署的腳本會使用 [新增角色及功能] Wizard，指向您可以輕鬆建立的 XML 設定檔，然後在瀏覽器前進至 [新增角色及功能] 嚮導的 [**確認安裝選項**] 頁面後，按一下 [**匯出設定**]。  
   
 > [!IMPORTANT]  
-> 腳本中指定的所有目標伺服器都必須執行符合您在本機電腦上執行之伺服器管理員版本的 Windows Server 版本。 例如，如果您是在 Windows 10 上執行伺服器管理員，您可以在執行 Windows Server 2016 的伺服器上安裝角色、角色服務和功能。 如果將 GUI 管理工具新增至安裝，安裝程式會自動將執行 Windows Server 之 Server Core 安裝選項的目標伺服器轉換成完整安裝選項（含完整 GUI 的伺服器，也稱為做為執行伺服器圖形化介面）。  
+> 腳本中指定的所有目標伺服器都必須執行符合您在本機電腦上執行之伺服器管理員版本的 Windows Server 版本。 例如，如果您是在 Windows 10 上執行伺服器管理員，您可以在執行 Windows Server 2016 的伺服器上安裝角色、角色服務和功能。 如果將 GUI 管理工具新增至安裝，安裝程式會自動將執行 Windows Server 之 Server Core 安裝選項的目標伺服器轉換成完整安裝選項（含完整 GUI 的伺服器，也稱為執行伺服器圖形化介面）。  
 >   
 > 本節所提供的腳本範例說明如何使用 `Install-WindowsFeature` Cmdlet 和 Windows PowerShell 腳本來執行批次部署。 在多個伺服器上執行批次部署還有其他可能的指令碼和方法。 若要搜尋或提供部署角色和功能的其他指令碼，請搜尋 [Script Center Repository (指令碼中心存放庫)](https://gallery.technet.microsoft.com/ScriptCenter)。  
   
@@ -299,16 +295,16 @@ ms.locfileid: "71383195"
   
 您可以執行下列其中一個動作來安裝 .NET Framework 3.5。  
   
--   使用 [執行 Install-WindowsFeature Cmdlet 來安裝 .NET Framework 3.5](#to-install-net-framework-35-by-running-the-install-windowsfeature-cmdlet) 以加入 `Source` 參數，並指定要從中取得.NET Framework 3.5 功能檔案的來源。 如果您沒有新增 `Source` 參數，安裝程序會先判斷群組原則設定是否已指定功能檔案的路徑，如果找不到這個路徑，則使用 Windows Update 來搜尋遺失的功能檔案。  
+-   藉由[執行 Install-WindowsFeature Cmdlet 來安裝 .NET Framework 3.5](#to-install-net-framework-35-by-running-the-install-windowsfeature-cmdlet)，以新增 `Source` 參數並指定要從中取得 .NET Framework 3.5 功能檔案的來源。 如果您沒有新增 `Source` 參數，安裝程序會先判斷群組原則設定是否已指定功能檔案的路徑，如果找不到這個路徑，則使用 Windows Update 來搜尋遺失的功能檔案。  
   
 -   使用[來安裝 .NET Framework 3.5，方法是使用 [新增角色及功能嚮導]](#to-install-net-framework-35-by-using-the-add-roles-and-features-wizard) ，在 [新增角色及功能] wizard 的 [**確認安裝選項**] 頁面上指定替代來源檔案位置。  
   
--   使用 [使用 DISM 來安裝 .NET Framework 3.5](#to-install-net-framework-35-by-using-dism) 以根據預設取得 Windows Update 的檔案，或是指定安裝媒體的來源路徑。  
+-   藉由[使用 DISM 來安裝 .NET Framework 3.5](#to-install-net-framework-35-by-using-dism)，以根據預設取得 Windows Update 的檔案，或是指定安裝媒體的來源路徑。  
   
 若在本機電腦上找不到功能檔案，則使用[設定群組原則中功能檔案的替代來源](#configure-alternate-sources-for-feature-files-in-group-policy) 取得 .NET Framework 3.5 或其他功能。  
   
 > [!IMPORTANT]  
-> 當您從遠端來源安裝功能檔案，來源路徑或檔案共用必須將 [讀取] 權限授與 **Everyone** 群組 (基於安全性因素不建議這麼做) 或目的地伺服器的電腦 (本機系統) 帳戶；授與使用者帳戶存取權是不夠的。  
+> 當您從遠端來源安裝功能檔案，來源路徑或檔案共用必須將 [讀取]**權限授與**Everyone** 群組 (基於安全性因素不建議這麼做) 或目的地伺服器的電腦 (本機系統) 帳戶；授與使用者帳戶存取權是不夠的。  
 >   
 > 即使工作群組伺服器的電腦帳戶擁有外部共用的 [讀取] 權限，工作群組中的伺服器仍無法存取外部檔案共用。 用於工作群組伺服器的替代來源位置包括安裝媒體、Windows Update，以及儲存在本機工作群組伺服器上的 VHD 或 WIM 檔。  
 >   
@@ -413,7 +409,7 @@ ms.locfileid: "71383195"
   
 6. 您完成變更此原則設定之後，請按一下 [確定]，然後關閉群組原則編輯器。  
   
-## <a name="see-also"></a>請參閱  
+## <a name="see-also"></a>另請參閱  
 [Windows Server 安裝選項](https://go.microsoft.com/fwlink/p/?LinkId=241573)  
 [Microsoft .NET Framework 3.5 部署考量](https://go.microsoft.com/fwlink/p/?LinkId=248869)  
 [如何啟用或停用 Windows 功能](https://go.microsoft.com/fwlink/p/?LinkId=246552)  

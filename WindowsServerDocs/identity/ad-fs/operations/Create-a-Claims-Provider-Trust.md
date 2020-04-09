@@ -1,7 +1,6 @@
 ---
 ms.assetid: a4f7842c-cfca-4d78-916e-023d12a9cdf0
 title: 建立宣告提供者信任
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 4539e8abd1af1eca7bacb51971e6d355bb0aab28
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: bd5c13dbdf4258b6a87dcf599299dd7969da5acd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323080"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817061"
 ---
 # <a name="create-a-claims-provider-trust"></a>建立宣告提供者信任
 
@@ -54,7 +53,7 @@ ms.locfileid: "79323080"
 ![的宣告提供者信任](media/Create-a-Claims-Provider-Trust/addclaim9.PNG)
 
 ## <a name="to-create-a-claims-provider-trust-using-federation-metadata"></a>使用同盟中繼資料建立宣告提供者信任
-若要使用 [AD FS 管理] 嵌入式管理單元來新增宣告提供者信任，請從合作夥伴已發佈至區域網路或網際網路的同盟中繼資料自動匯入有關合作夥伴的設定資料，然後在上執行下列程式資源夥伴組織中的同盟伺服器。
+若要使用 [AD FS 管理] 嵌入式管理單元來加入新的宣告提供者信任，請從合作夥伴已發佈到區域網路或網際網路的同盟中繼資料，自動匯入有關合作夥伴的設定資料，在資源夥伴組織中的同盟伺服器上執行下列程式。
 
 >[!NOTE]
 >雖然使用具有不合格主機名稱的憑證（例如 HTTPs：\//myserver）很長，但這些憑證沒有安全性價值，而且可以讓攻擊者模擬發行同盟中繼資料的同盟服務。 因此，在查詢同盟中繼資料時，您應該只使用完整功能變數名稱，例如 `https://myserver.contoso.com`。

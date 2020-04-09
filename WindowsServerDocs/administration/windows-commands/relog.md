@@ -1,24 +1,20 @@
 ---
 title: relog
 description: 瞭解如何從效能 coutner 記錄檔中解壓縮效能計數器資訊。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7480f6c0-9953-4d70-9b1c-b27e09d8db13
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: daedd85f1557c191a690e7eb750559cfd268d3a0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0ecd06b11c2f055761ed06ef6c9332fb491eaaf3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371620"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836181"
 ---
 # <a name="relog"></a>relog
 
@@ -31,7 +27,7 @@ ms.locfileid: "71371620"
 relog [<FileName> [<FileName> ...]] [/a] [/c <path> [<path> ...]] [/cf <FileName>] [/f  {bin|csv|tsv|SQL}] [/t <Value>] [/o {OutputFile|DSN!CounterLog}] [/b <M/D/YYYY> [[<HH>:] <MM>:] <SS>] [/e <M/D/YYYY> [[<HH>:] <MM>:] <SS>] [/config {<FileName>|i}] [/q]  
 ```  
 
-### <a name="parameters"></a>Parameters  
+#### <a name="parameters"></a>參數  
 
 |                                         參數                                          |                                                                                                                                                                  描述                                                                                                                                                                   |
 |--------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -74,7 +70,7 @@ relog [<FileName> [<FileName> ...]] [/a] [/c <path> [<path> ...]] [/cf <FileName
 
 如需將**重新執行納入**WINDOWS MANAGEMENT INSTRUMENTATION （WMI）腳本的詳細資訊，請參閱[Microsoft Windows 資源套件網站](https://go.microsoft.com/fwlink/?LinkId=4665)上的「編寫 WMI 腳本」。  
 
-## <a name="BKMK_Examples"></a>典型  
+## <a name="examples"></a><a name="BKMK_Examples"></a>典型  
 若要對現有的追蹤記錄進行重新取樣，請將固定間隔設為30，列出計數器路徑、輸出檔案和格式：  
 ```  
 relog c:\perflogs\daily_trace_log.blg /cf counter_file.txt /o c:\perflogs\reduced_log.csv /t 30 /f csv  
@@ -89,4 +85,4 @@ relog "c:\perflogs\daily_trace_log.blg" -f sql -o "SQL:sql2016x64odbc!counter_lo
 ```
 
 ## <a name="additional-references"></a>其他參考資料  
--   [命令列語法關鍵](command-line-syntax-key.md)  
+-   - [命令列語法關鍵](command-line-syntax-key.md)  

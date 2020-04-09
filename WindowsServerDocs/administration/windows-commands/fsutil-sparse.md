@@ -9,15 +9,15 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: f9fb3cf46afb7e96c13fb623bc8f4fe67c1f3694
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 70c881cc02f31614160920766d32d73a3a939315
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376812"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844061"
 ---
 # <a name="fsutil-sparse"></a>Fsutil sparse
->適用於：Windows Server （半年通道）、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7
+>適用于： Windows Server （半年通道）、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7
 
 管理稀疏檔案。
 
@@ -32,7 +32,7 @@ fsutil sparse [setflag] <FileName>
 fsutil sparse [setrange] <FileName> <BeginningOffset> <Length>
 ```
 
-## <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
 |     參數     |                                                    描述                                                    |
 |-------------------|-------------------------------------------------------------------------------------------------------------------|
@@ -54,15 +54,15 @@ fsutil sparse [setrange] <FileName> <BeginningOffset> <Length>
 
 -   如果檔案為稀疏或壓縮檔案，NTFS 可能會解除配置檔案內的磁碟空間。 這會將位元組範圍設定為零，而不會延伸檔案大小。
 
-## <a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name="BKMK_examples"></a>典型
 若要將 C：\Temp 目錄中名為 Sample .txt 的檔案標示為稀疏，請輸入：
 
 ```
 fsutil sparse setflag c:\temp\sample.txt 
 ```
 
-#### <a name="additional-references"></a>其他參考資料
-[命令列語法關鍵](Command-Line-Syntax-Key.md)
+## <a name="additional-references"></a>其他參考資料
+- [命令列語法關鍵](command-line-syntax-key.md)
 
 [Fsutil](Fsutil.md)
 

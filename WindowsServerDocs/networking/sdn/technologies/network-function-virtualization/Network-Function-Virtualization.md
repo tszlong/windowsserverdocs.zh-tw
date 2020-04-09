@@ -1,23 +1,19 @@
 ---
 title: 網路函式虛擬化
 description: 您可以使用本主題來瞭解網路功能虛擬化，這可讓您部署虛擬網路設備（例如資料中心防火牆、多租使用者 RAS 閘道，以及 Windows Server 2016 中的軟體負載平衡（SLB））。
-manager: brianlic
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 79df3bbe-48fd-4eff-8df6-35f6317566f3
-ms.author: lizross
-author: eross-msft
-ms.openlocfilehash: 1d5d5aaae5983e062dae203c60a7001f36e5629b
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.author: anpaul
+author: AnirbanPaul
+ms.openlocfilehash: aed1591756e7b491bd4c9ab325694dfb3e6fddb1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309812"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859621"
 ---
 # <a name="network-function-virtualization"></a>網路函式虛擬化
 
