@@ -1,5 +1,5 @@
 # [Windows 命令](windows-commands.md)
-## [命令列語法關鍵](command-line-syntax-key.md)
+## - [命令列語法關鍵](command-line-syntax-key.md)
 ## [依伺服器角色的命令](commands-by-server-role.md)
 ### [列印命令參考資料](print-command-reference.md)
 ### [網路檔案系統服務命令參考資料](services-for-network-file-system-command-reference.md)
