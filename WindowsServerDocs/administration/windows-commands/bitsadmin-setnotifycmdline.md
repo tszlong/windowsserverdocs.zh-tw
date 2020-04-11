@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setnotifycmdline
-description: 適用于 bitsadmin setnotifycmdline 的 Windows 命令主題，會設定當作業完成傳輸資料或工作進入狀態時，將會執行的命令列命令。
+description: 適用于**bitsadmin setnotifycmdline**的 Windows 命令主題，它會設定當作業完成傳輸資料或工作進入狀態時，將執行的命令列命令。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,48 +9,44 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 761a7003e44e8dc15cb2dd2f1ce5a1a23be53286
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b268b68cbd355a7fe7f993d678a98f6fcb99f0ab
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80849331"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81122890"
 ---
 # <a name="bitsadmin-setnotifycmdline"></a>bitsadmin setnotifycmdline
 
-設定當作業完成傳輸資料或工作進入狀態時，將會執行的命令列命令。
+設定當作業完成傳輸資料或工作進入指定狀態時，將會執行的命令列命令。
 
-**BITS 1.2 和更早版本**：不支援。
+> [!NOTE]
+> BITS 1.2 和更早版本不支援此命令。
 
 ## <a name="syntax"></a>語法
 
 ```
-bitsadmin /SetNotifyCmdLine <Job> <ProgramName> [ProgramParameters]
+bitsadmin /setnotifycmdline <job> <program_name> [program_parameters]
 ```
 
 ### <a name="parameters"></a>參數
 
-|參數|描述|
-|---------|-----------|
-|Job|作業的顯示名稱或 GUID|
-|ProgramName|作業完成時要執行的命令名稱。|
-|ProgramParameters|您想要傳遞給*ProgramName*的參數。|
+| 參數 | 描述 |
+| --------- | ----------- |
+| 工作 | 作業的顯示名稱或 GUID。 |
+| program_name | 作業完成時要執行的命令名稱。 您可以將此值設定為 Null，但如果您這樣做， *program_parameters*也必須設定為 null。 |
+| program_parameters | 您想要傳遞給*program_name*的參數。 您可以將此值設定為 Null。 如果*program_parameters*未設定為 Null，則*program_parameters*中的第一個參數必須符合*program_name*。 |
 
-## <a name="remarks"></a>備註
+## <a name="examples"></a>範例
 
-您可以為*ProgramName*和*ProgramParameters*指定 Null。 如果*ProgramName*為 null，則*PROGRAMPARAMETERS*必須是 null。
+下列範例會在名為*myDownloadJob*的作業完成之後，設定服務用來執行 notepad.exe 的命令列命令。
 
-> [!IMPORTANT]
-> 如果*ProgramParameters*不是 Null，則*ProgramParameters*中的第一個參數必須符合*ProgramName*。
-
-## <a name="examples"></a><a name=BKMK_examples></a>典型
-
-下列範例會設定當名為*myDownloadJob*的作業完成時，服務用來執行「記事本」的命令列命令。
 ```
-C:\>bitsadmin /SetNotifyCmdLine myDownloadJob c:\winnt\system32\notepad.exe NULL
+C:\>bitsadmin /setnotifycmdline myDownloadJob c:\winnt\system32\notepad.exe NULL
 ```
+
 ```
-C:\>bitsadmin /SetNotifyCmdLine myDownloadJob c:\winnt\system32\notepad.exe notepad c:\eula.txt
+C:\>bitsadmin /setnotifycmdline myDownloadJob c:\winnt\system32\notepad.exe notepad c:\eula.txt
 ```
 
 ## <a name="additional-references"></a>其他參考資料

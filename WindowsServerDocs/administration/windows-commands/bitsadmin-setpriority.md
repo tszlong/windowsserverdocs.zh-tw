@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setpriority
-description: 適用于 bitsadmin setpriority 的 Windows 命令主題，其會設定指定之作業的優先順序。
+description: 適用于**bitsadmin setpriority**的 Windows 命令主題，其會設定指定之作業的優先順序。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7d007c62402a3d70910e1c79fab5c406295a63a5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9348680a61649b938267b3277de9aa5aa521361f
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80849211"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81122761"
 ---
 # <a name="bitsadmin-setpriority"></a>bitsadmin setpriority
 
@@ -23,21 +23,22 @@ ms.locfileid: "80849211"
 ## <a name="syntax"></a>語法
 
 ```
-bitsadmin /SetPriority <Job> <Priority>
+bitsadmin /setpriority <job> <priority>
 ```
 
 ### <a name="parameters"></a>參數
 
-|參數|描述|
-|---------|-----------|
-|Job|作業的顯示名稱或 GUID|
-|優先順序|下列其中一個值：</br>-前景</br>-高</br>-正常</br>-低|
+| 參數 | 描述 |
+| --------- | ----------- |
+| 工作 | 作業的顯示名稱或 GUID。 |
+| 優先順序 | 設定作業的優先順序，包括：<ul><li>FOREGROUND</li><li>HIGH</li><li>NORMAL</li><li>LOW</li></ul> |
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 下列範例會將名為*myDownloadJob*之作業的優先順序設定為 normal。
+
 ```
-C:\>bitsadmin /SetPriority myDownloadJob NORMAL
+C:\>bitsadmin /setpriority myDownloadJob NORMAL
 ```
 
 ## <a name="additional-references"></a>其他參考資料

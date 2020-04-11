@@ -8,12 +8,12 @@ ms.date: 04/30/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: web-app-proxy
-ms.openlocfilehash: 18851463b82afc1dc34615e6faaa14622c80224a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f859d40ed04cc25285212968e6cd186cffe760ae
+ms.sourcegitcommit: 5c93c685dca3cafeea916cedcc0f915c528484ca
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80818681"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81119242"
 ---
 # <a name="publishing-applications-with-sharepoint-exchange-and-rdg"></a>使用 SharePoint、Exchange 及 RDG 發佈應用程式
 
@@ -112,7 +112,7 @@ ms.locfileid: "80818681"
 5.  如果外部和內部 FQDN 不同，您不應該在 RDWeb 發行規則上停用要求標頭轉譯。 這可以藉由在 Web 應用程式 Proxy 伺服器上執行下列 PowerShell 腳本來完成，但預設應加以啟用：
 
     ```PowerShell
-    Get-WebApplicationProxyApplication applicationname | Set-WebApplicationProxyApplication -DisableTranslateUrlInRequestHeaders:$false
+    Get-WebApplicationProxyApplication applicationname | Set-WebApplicationProxyApplication -DisableTranslateUrlInRequestHeaders:$true
     ```
 
 6.  在 RDG 發行的應用程式上，停用 Web 應用程式 Proxy 中的 HttpOnly cookie 屬性。 若要允許 RDG ActiveX 控制項存取 Web 應用程式 Proxy 驗證 cookie，您必須停用 Web 應用程式 Proxy cookie 上的 HttpOnly 屬性。

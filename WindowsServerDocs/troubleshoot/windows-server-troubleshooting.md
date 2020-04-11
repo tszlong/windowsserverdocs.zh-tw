@@ -1,19 +1,17 @@
 ---
 title: Windows Server 疑難排解
 description: 取得 Windows Server 問題疑難排解文章的連結
-layout: LandingPage
 ms.prod: windows-server
 ms.technology: server-general
 ms.date: 1/24/2020
-ms.topic: landing-page
 author: kaushika-msft
 ms.author: kaushika
-ms.openlocfilehash: 0537f00a06b27f855fcd87e9b1caa9d2e5085685
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e5fdae6e005adf6ea221fb3c2bf3ea09bfbfb03a
+ms.sourcegitcommit: 5c93c685dca3cafeea916cedcc0f915c528484ca
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820731"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81119260"
 ---
 # <a name="troubleshooting-windows-server-components"></a>Windows Server 元件疑難排解
 

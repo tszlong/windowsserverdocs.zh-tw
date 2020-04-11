@@ -1,6 +1,6 @@
 ---
 title: bitsadmin suspend
-description: Bitsadmin 暫停的 Windows 命令主題，這會暫停指定的工作。
+description: '**Bitsadmin 暫停**的 Windows 命令主題，這會暫停指定的工作。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,41 +9,38 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0419f4cdf59d04539b8b4c6d47cec886197d412b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 42ed83d4dbf8c3d982c5c186b440cf17997903c9
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80849051"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81123158"
 ---
 # <a name="bitsadmin-suspend"></a>bitsadmin suspend
 
 > 適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-暫停指定的工作。
+暫停指定的工作。 如果您不小心暫停工作，可以使用[bitsadmin resume](bitsadmin-resume.md)參數重新開機作業。
 
 ## <a name="syntax"></a>語法
 
 ```
-bitsadmin /Suspend <Job>
+bitsadmin /suspend <job>
 ```
 
 ### <a name="parameters"></a>參數
 
-|參數|描述|
-|-------|--------|
-|Job|作業的顯示名稱或 GUID|
+| 參數 | 描述 |
+| --------- | ---------- |
+| Job | 作業的顯示名稱或 GUID。 |
 
-## <a name="remarks"></a>備註
-
-若要重新開機作業，請使用[bitsadmin resume](bitsadmin-resume.md)參數。
-
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="example"></a>範例
 
 下列範例會暫停名為*myDownloadJob*的作業。
 
+
 ```
-C:\>bitsadmin /Suspend myDownloadJob
+C:\>bitsadmin /suspend myDownloadJob
 ```
 
 ## <a name="additional-references"></a>其他參考資料

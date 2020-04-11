@@ -1,6 +1,6 @@
 ---
 title: bitsadmin util 和 enableanalyticchannel
-description: 適用于 bitsadmin util 和 enableanalyticchannel 的 Windows 命令主題，可啟用或停用 BITS 用戶端分析通道。
+description: 適用于**bitsadmin util 和 enableanalyticchannel**的 Windows 命令主題，可啟用或停用 BITS 用戶端分析通道。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7302c9368649d47cd65110f4a515b527d3df2aac
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f8ff1f835415979036fdc0f8aa637fe693e57d46
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80848981"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81122688"
 ---
 # <a name="bitsadmin-util-and-enableanalyticchannel"></a>bitsadmin util 和 enableanalyticchannel
 
@@ -23,14 +23,19 @@ ms.locfileid: "80848981"
 ## <a name="syntax"></a>語法
 
 ```
-bitsadmin /Util /EnableAnalyticChannel TRUE|FALSE
+bitsadmin /util /enableanalyticchannel TRUE|FALSE
 ```
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+| 參數 | 描述 |
+| --------- | ---------- |
+| TRUE 或 FALSE | **TRUE**會開啟指定檔案的內容驗證，而**FALSE**則關閉它。 |
+
+## <a name="examples"></a>範例
 
 下列範例會啟用 BITS 用戶端分析通道。
+
 ```
-C:\>bitsadmin /Util / EnableAnalyticChannel TRUE
+C:\>bitsadmin /util / enableanalyticchannel TRUE
 ```
 
 ## <a name="additional-references"></a>其他參考資料

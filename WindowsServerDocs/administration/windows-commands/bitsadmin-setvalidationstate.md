@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setvalidationstate
-description: 適用于 bitsadmin setvalidationstate 的 Windows 命令主題，可設定作業中指定檔案的內容驗證狀態。
+description: 適用于**bitsadmin setvalidationstate**的 Windows 命令主題，可設定作業中指定檔案的內容驗證狀態。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: de6480596b55b3a483076297f32ce52a975915db
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6bec42ae926050cd21df594a38f1c441a40a527f
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80849111"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81122713"
 ---
 # <a name="bitsadmin-setvalidationstate"></a>bitsadmin setvalidationstate
 
@@ -23,22 +23,23 @@ ms.locfileid: "80849111"
 ## <a name="syntax"></a>語法
 
 ```
-bitsadmin /SetValidationState <Job> <file index> <true|false> 
+bitsadmin /setvalidationstate <job> <file_index> <TRUE|FALSE>
 ```
 
 ### <a name="parameters"></a>參數
 
-| 參數  |          描述           |
-|------------|--------------------------------|
-|    Job     | 作業的顯示名稱或 GUID |
-| 檔案索引 |         從0開始          |
-|    True    |             False              |
+| 參數 | 描述 |
+| --------- | ---------- |
+| Job | 作業的顯示名稱或 GUID。 |
+| file_index | 從0開始。 |
+| TRUE 或 FALSE | **TRUE**會開啟指定檔案的內容驗證，而**FALSE**則關閉它。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
-下列範例會針對名為*myJob*的作業，將檔案2的內容驗證狀態設定為 TRUE。
+下列範例會針對名為*myDownloadJob*的作業，將檔案2的內容驗證狀態設定為 TRUE。
+
 ```
-C:\>bitsadmin /SetValidationState myJob 2 TRUE 
+C:\>bitsadmin /setvalidationstate myDownloadJob 2 TRUE
 ```
 
 ## <a name="additional-references"></a>其他參考資料

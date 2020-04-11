@@ -1,6 +1,6 @@
 ---
 title: bitsadmin util 與協助
-description: 適用于 bitsadmin util 和 help 的 Windows 命令主題，其中顯示 Util 參數的命令列使用方式。
+description: 適用于**bitsadmin util 和 help**的 Windows 命令主題，其中顯示 util 參數的命令列使用方式。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,28 +9,29 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fac449fea329cf8f03985ab8bc036c4046a5dd24
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3cbfcb5a630d6670202551a433ca3acc4b9b7fa0
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80848901"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81122486"
 ---
 # <a name="bitsadmin-util-and-help"></a>bitsadmin util 與協助
 
-顯示**Util**參數的命令列使用方式。
+顯示**util**參數的命令列使用方式。
 
 ## <a name="syntax"></a>語法
 
 ```
-Bitsadmin /Util /Help 
+bitsadmin /util /help
 ```
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 下列命令會顯示**Util**參數的命令列說明。
+
 ```
-Bitsadmin /Util /Help
+C:\>bitsadmin /util /help
 ```
 
 ## <a name="additional-references"></a>其他參考資料
