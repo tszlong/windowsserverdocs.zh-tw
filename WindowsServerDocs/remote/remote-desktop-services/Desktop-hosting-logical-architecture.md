@@ -1,24 +1,20 @@
 ---
 title: 遠端桌面服務架構
 description: RDS 的架構圖表
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 02/10/2017
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7f73bb0a-ce98-48a4-9d9f-cf7438936ca1
 author: lizap
 manager: dongill
-ms.openlocfilehash: 7cd46cadf5ed5424e50556ee0c91a80804108113
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 441b0b24fd4b4dc18d3afd65283bbf7ff2417048
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323670"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818432"
 ---
 # <a name="remote-desktop-services-architecture"></a>遠端桌面服務架構
 
@@ -32,8 +28,8 @@ ms.locfileid: "79323670"
 ## <a name="standard-rds-deployment-architectures"></a>標準 RDS 部署架構
 
 遠端桌面服務具有兩種標準架構：
--   基本部署 - 這包含為建立完全有效 RDS 環境的最少伺服器數目
--   高可用性部署 - 這包含為保證 RDS 環境有最高執行時間的所有必要元件
+-    基本部署 - 這包含為建立完全有效 RDS 環境的最少伺服器數目
+-    高可用性部署 - 這包含為保證 RDS 環境有最高執行時間的所有必要元件
 
 ### <a name="basic-deployment"></a>基本部署
 

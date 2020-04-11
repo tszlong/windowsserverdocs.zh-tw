@@ -1,24 +1,20 @@
 ---
 title: 建立遠端桌面服務集合
 description: 了解如何將 RDSH 和 RemoteApp 程式新增至您的 RDS 部署。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 10/22/2019
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ae9767e3-864a-4eb2-96c0-626759ce6d60
 author: lizap
 manager: dongill
-ms.openlocfilehash: 92af2b4e9fb174f1aa815256148ee8d5c7c7181a
-ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
+ms.openlocfilehash: 6a842c7984dc63fe40c05300f6cfbb6718846525
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72812252"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852951"
 ---
 # <a name="create-a-remote-desktop-services-collection-for-desktops-and-apps-to-run"></a>建立遠端桌面服務集合，以執行桌面和應用程式
 
@@ -45,7 +41,7 @@ ms.locfileid: "72812252"
 3.  選取您建立的 RD 工作階段主機伺服器 (例如 Contoso-Shr1)。  
 4.  接受預設的**使用者群組**。  
 5.  輸入您為這個集合所建立使用者設定檔磁碟的檔案共用位置 (例如 **\Contoso-Cb1\UserDisksr**)。   
-6.  按一下 \[建立\]  。 建立集合之後，請按一下 [關閉]  。  
+6.  按一下 [建立]  。 建立集合之後，請按一下 [關閉]  。  
 
 
 ## <a name="create-a-personal-desktop-session-collection"></a>建立個人桌面工作階段集合

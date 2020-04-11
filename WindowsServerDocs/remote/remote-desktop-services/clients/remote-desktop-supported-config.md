@@ -1,12 +1,8 @@
 ---
 title: 遠端桌面用戶端：支援的設定
 description: 了解您可以使用遠端桌面用戶端存取哪些電腦
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: bb932dad-6f74-484f-8f7b-dd957b615d44
 author: lizap
@@ -14,30 +10,30 @@ manager: dongill
 ms.author: elizapo
 ms.date: 06/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2dc8eb68aebc904640aa4adc3e75cdeda34e97b2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1480a2a14a1c3fc23c4e5122e366741d37d9091f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387655"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856011"
 ---
 # <a name="remote-desktop-client---supported-configuration"></a>遠端桌面用戶端：支援的設定
 
 ## <a name="supported-pcs"></a>支援的電腦
 您可以連線至執行下列 Windows 作業系統的電腦：
-- Windows 10 專業版
-- Windows 10 企業版
+- Windows 10 Pro
+- Windows 10 Enterprise
 - Windows 8 企業版
 - Windows 8 專業版
-- Windows 7 專業版
-- Windows 7 企業版
+- Windows 7 Professional
+- Windows 7 Enterprise
 - Windows 7 旗艦版
 - Windows 7 旗艦版
 - Windows Server 2008
 - Windows Server 2008 R2
 - Windows Server 2012
 - Windows Server 2012 R2
-- Windows Server 2016
+- Windows Server 2016
 - Windows Multipoint Server 2011
 - Windows Multipoint Server 2012
 - Windows Small Business Server 2008
@@ -49,14 +45,14 @@ ms.locfileid: "71387655"
 - Windows Server 2008 R2
 - Windows Server 2012
 - Windows Server 2012 R2
-- Windows Server 2016
+- Windows Server 2016
 - Windows Small Business Server 2011
 
 下列作業系統可以用作 RD Web 存取或 RemoteApp 伺服器：
 - Windows Server 2008 R2
 - Windows Server 2012
 - Windows Server 2012 R2
-- Windows Server 2016
+- Windows Server 2016
 
 ## <a name="unsupported-windows-versions-and-editions"></a>不支援的 Windows 版本
 

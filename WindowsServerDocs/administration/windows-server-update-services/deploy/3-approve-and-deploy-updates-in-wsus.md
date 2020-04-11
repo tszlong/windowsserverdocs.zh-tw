@@ -2,7 +2,6 @@
 title: 步驟 3 - 在 WSUS 中核准和部署更新
 description: Windows Server Update Service (WSUS) 主題 - 核准和部署 WSUS 更新是部署 WSUS 四步驟程序當中的第三個步驟
 ms.prod: windows-server
-ms.reviewer: na
 ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: 8d728ff9-170f-47e6-aefe-52be93315a75
@@ -10,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7731cc84f946bfab7f53a3446ed90d1be92cae75
-ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
+ms.openlocfilehash: d8758c4f957d2d9abb156652a568b23634cb1bf0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80639803"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828851"
 ---
 # <a name="step-3-approve-and-deploy-updates-in-wsus"></a>步驟 3：在 WSUS 中核准和部署更新
 
@@ -29,7 +28,7 @@ ms.locfileid: "80639803"
 |[3.2.設定自動核准規則](3-approve-and-deploy-updates-in-wsus.md#BKM_3.2.a.)|設定 WSUS 來自動核准安裝所選群組的更新，以及如何核准現有更新的修訂。|
 |[3.3.使用 WSUS 報告檢閱安裝的更新](3-approve-and-deploy-updates-in-wsus.md#BKM_3.3.)|使用 WSUS 報告功能檢閱已經安裝的更新、接收這些更新的電腦及其他詳細資料。|
 
-## <a name="31-approve-and-deploy-wsus-updates"></a><a name="BKM_3.1."></a>3.1. 核准和部署 WSUS 更新
+## <a name="31-approve-and-deploy-wsus-updates"></a><a name=BKM_3.1.></a>3.1. 核准和部署 WSUS 更新
 使用下列程序來核准和部署更新。
 
 #### <a name="to-approve-and-deploy-wsus-updates"></a>核准和部署 WSUS 更新
@@ -48,7 +47,7 @@ ms.locfileid: "80639803"
 
 7.  [核准進度]  視窗進度隨即出現，顯示影響更新核准的工作進度。 核准程序完成後，按一下 [關閉]  。
 
-## <a name="32-configure-auto-approval-rules"></a><a name="BKM_3.2.a."></a>3.2. 設定自動核准規則
+## <a name="32-configure-auto-approval-rules"></a><a name=BKM_3.2.a.></a>3.2. 設定自動核准規則
 「自動核准」可讓您指定如何自動核准安裝所選群組的更新，以及如何核准現有更新的修訂。
 
 #### <a name="to-configure-automatic-approvals"></a>設定自動核准
@@ -73,7 +72,7 @@ ms.locfileid: "80639803"
 
 7.  按一下 [確定]  關閉 [自動核准] 對話方塊。
 
-## <a name="33-review-installed-updates-with-wsus-reports"></a><a name="BKM_3.3."></a>3.3. 使用 WSUS 報告檢閱安裝的更新
+## <a name="33-review-installed-updates-with-wsus-reports"></a><a name=BKM_3.3.></a>3.3. 使用 WSUS 報告檢閱安裝的更新
 更新核准 24 小時之後，您就可以使用 WSUS 報告功能來判斷更新是否部署到測試群組電腦。 若要檢查更新的狀態，您可以使用下列方式使用 WSUS 報告功能。
 
 #### <a name="to-review-updates"></a>檢閱更新

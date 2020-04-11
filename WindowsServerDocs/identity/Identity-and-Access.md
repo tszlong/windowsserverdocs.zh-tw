@@ -1,6 +1,5 @@
 ---
 title: 身分識別 | 存取
-description: ''
 author: billmath
 manager: femila
 layout: LandingPage
@@ -10,12 +9,12 @@ ms.assetid: c248b41f-0de3-4247-9a25-b4b08e50ebf0
 ms.topic: landing-page
 ms.author: billmath
 ms.localizationpriority: high
-ms.openlocfilehash: c4e3589a8aecd01d06301b702cf5286a6d8d175d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ecc943878c18525ec10b03d870b8825269628101
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391155"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825681"
 ---
 # <a name="identity--access"></a>身分識別 | 存取
 
@@ -39,7 +38,7 @@ ms.locfileid: "71391155"
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h2>有何新功能？</h2>
+                                            <h2>新功能</h2>
                                             <p>了解 Active Directory 同盟服務的新功能</p>
                                         </div>
                                     </div>
@@ -99,7 +98,7 @@ ms.locfileid: "71391155"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Active Directory Domain Services</h3><hr />
+                        <h3>Active Directory 網域服務</h3><hr />
                         <p>Windows Server 中 AD DS 所有可用功能的詳細記載。</p>
                     </div>
                 </div>
@@ -118,7 +117,7 @@ ms.locfileid: "71391155"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Active Directory 同盟服務</h3><hr />
+                        <h3>Active Directory Federation Services</h3><hr />
                         <p>Windows Server 中 AD FS 所有可用功能的詳細記載。</p>
                     </div>
                 </div>

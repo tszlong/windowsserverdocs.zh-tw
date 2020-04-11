@@ -1,24 +1,20 @@
 ---
 title: 遠端桌面服務 - 確保資料儲存安全性
 description: 在 RDS 中使用使用者設定檔磁碟 (UPD) 安全地儲存資料的規劃資訊。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 37b7f68e-7c3a-4190-a52f-99ae96885fae
 author: lizap
 ms.author: elizapo
 ms.date: 11/21/2016
 manager: dongill
-ms.openlocfilehash: 8b7fa596f88f5cb361e0c681ffec3bcc72403d03
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 934aab380f9e58f4fe9567921623279a1893af4b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403929"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860291"
 ---
 # <a name="remote-desktop-services---secure-data-storage-with-upds"></a>遠端桌面服務 - 使用 UPD 確保資料儲存安全性
 

@@ -1,24 +1,20 @@
 ---
 title: 遠端桌面服務 - 多重要素驗證
 description: 將 MFA 用於 RDS 的規劃資訊。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 09ea784e-5644-417a-a3d9-bdbcebc313f9
 author: lizap
 ms.author: elizapo
 ms.date: 09/07/2016
 manager: dongill
-ms.openlocfilehash: 833eafd0b762098b67b11e6e5f26f63e62057fd1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c46ad24c62510b4a100a89b5c10a8f52c1a66151
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403848"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857351"
 ---
 # <a name="remote-desktop-services---multi-factor-authentication"></a>遠端桌面服務 - 多重要素驗證
 

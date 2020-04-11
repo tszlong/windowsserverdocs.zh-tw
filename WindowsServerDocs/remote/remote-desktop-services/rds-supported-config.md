@@ -1,24 +1,20 @@
 ---
 title: 支援遠端桌面服務的設定
 description: 提供 Windows Server 2016 和 Windows Server 2019 中支援 RDS 設定的相關資訊。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 10/22/2019
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c925c7eb-6880-411f-8e59-bd0f57cc5fc3
 author: lizap
 manager: dongill
-ms.openlocfilehash: e501d550e5371c668f7e243f00106a0b79f694dc
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: dae6c00bd09e9c10e32932701095244a75f9ca7a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323350"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860111"
 ---
 # <a name="supported-configurations-for-remote-desktop-services"></a>支援遠端桌面服務的設定
 

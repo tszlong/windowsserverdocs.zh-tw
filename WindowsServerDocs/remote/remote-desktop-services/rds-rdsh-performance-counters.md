@@ -5,17 +5,16 @@ ms.prod: windows-server
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 07/11/2019
-ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b222104abd5b0b964bac748c3be15049075191d
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: c33e5c6309c41e39aeda3a2bdff1a0caf72b2675
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950420"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860331"
 ---
 # <a name="use-performance-counters-to-diagnose-app-performance-problems-on-remote-desktop-session-hosts"></a>在遠端桌面工作階段主機上使用效能計數器來診斷應用程式效能問題
 
@@ -84,13 +83,13 @@ reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCou
 
 |計數器類型|執行個體名稱|回報的延遲 (毫秒)|
 |---------------|-------------|-------------------|
-|每個處理序的使用者輸入延遲|1:4232 <Calculator.exe>|  200|
-|每個處理序的使用者輸入延遲|2:1000 <Calculator.exe>|  16|
-|每個處理序的使用者輸入延遲|1:2000 <Calculator.exe>|  32|
+|每個處理序的使用者輸入延遲|1:4232 <Calculator.exe>|    200|
+|每個處理序的使用者輸入延遲|2:1000 <Calculator.exe>|    16|
+|每個處理序的使用者輸入延遲|1:2000 <Calculator.exe>|    32|
 |每個工作階段的使用者輸入延遲|1|    200|
 |每個工作階段的使用者輸入延遲|2|    16|
-|每個工作階段的使用者輸入延遲|平均|  108|
-|每個工作階段的使用者輸入延遲|最大值|  200|
+|每個工作階段的使用者輸入延遲|平均|     108|
+|每個工作階段的使用者輸入延遲|最大值|     200|
 
 ## <a name="counters-used-in-an-overloaded-system"></a>已超載之系統中所使用的計數器
 

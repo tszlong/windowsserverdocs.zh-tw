@@ -1,28 +1,24 @@
 ---
 title: 開始使用遠端桌面服務
 description: 提供協助您在 Windows Server 2016 中開始使用 RDS 的資訊。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 10/11/2016
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e8f8cfd2-c62e-4f9b-b843-099fd37c6d58
 author: lizap
 manager: dongill
-ms.openlocfilehash: bdce4b2144330fcfc91772403047d6bb908a0d63
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 583f62784aa171ddb20ddf3e5cd0a4e6c6223884
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387555"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861391"
 ---
 # <a name="get-started-with-remote-desktop-services-in-windows-server-2016"></a>在 Windows Server 2016 中開始使用遠端桌面服務
 
-> 適用於：Windows Server 2016
+> 適用於：Windows Server 2016
 
 使用下列資訊，在 Windows Server 2016 中開始探索及使用遠端桌面服務。
 

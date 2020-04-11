@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: d60ba6ffd661aeb284a2ade775e14b9108cbb6c9
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 5fefdb83667ba7893218de21df1f6c36cae40e12
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950537"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855121"
 ---
 # <a name="securing-privileged-access"></a>保護特殊權限存取
 

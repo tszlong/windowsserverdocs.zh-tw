@@ -1,24 +1,20 @@
 ---
 title: 遠端桌面服務 - 隨處存取
 description: RD 閘道的規劃資訊
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5c38fab1-3586-4b7a-8bf0-7d85a8d5361d
 author: lizap
 ms.author: elizapo
 ms.date: 11/03/2016
 manager: dongill
-ms.openlocfilehash: c79afeb38ce0b196c0f1edddd01a6166df53583b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fb0fddbe86c4c06280fdbe55f2f6a7f490a1340b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403913"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857391"
 ---
 # <a name="remote-desktop-services---access-from-anywhere"></a>遠端桌面服務 - 隨處存取
 

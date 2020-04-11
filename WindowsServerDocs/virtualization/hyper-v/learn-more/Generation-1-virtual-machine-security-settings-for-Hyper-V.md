@@ -2,21 +2,19 @@
 title: Hyper-V 的第 1 代虛擬機器安全性設定
 description: 說明 Hyper-V 管理員針對第 1 代虛擬機器提供的安全性設定
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f8f8c569-8b74-4c19-876e-1c7d00cce308
 author: larsiwer
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: ceb3c2628546815f9b0af35946e173f4276130d2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f86c4fe9222f08b3ef3719080deeb4fbda6edd33
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392784"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860811"
 ---
 # <a name="generation-1-virtual-machine-security-settings"></a>第 1 代虛擬機器安全性設定
 

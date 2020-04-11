@@ -1,23 +1,19 @@
 ---
 title: 使用 Azure 災害復原設定 RDS 的災害復原
 description: 了解如何使用 Azure 災害復原設定 RDS 部署的災害復原
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 06/12/2017
-ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 514262fde3b433baf89fe8f5a0cf8b04ef267354
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 68fa7026a3198b7800c4855f8472f4a0bec62009
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387542"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858991"
 ---
 # <a name="set-up-disaster-recovery-for-rds-using-azure-site-recovery"></a>使用 Azure Site Recovery 設定 RDS 的災害復原
 

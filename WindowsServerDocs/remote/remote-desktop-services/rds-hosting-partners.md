@@ -1,24 +1,20 @@
 ---
 title: RDS - 託管桌面和應用程式的合作夥伴
 description: 可使用 RDS 託管桌面和應用程式的合作夥伴清單。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 04/27/2017
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9a3cb426-fb39-40c5-ae07-26dbe9e3aed9
 author: lizap
 manager: dongill
-ms.openlocfilehash: 4d9a6d4885566204bf9fc29cd9513d25d1b39deb
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 503a9917e271c69a78e5f26db6556d788254c823
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949849"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861361"
 ---
 # <a name="remote-desktop-services-hosting-partners-and-assessment"></a>遠端桌面服務託管合作夥伴
 
@@ -36,7 +32,7 @@ ms.locfileid: "75949849"
 
 ## <a name="partners-who-have-passed-the-learning-path-assessment"></a>已通過學習路徑評估的合作夥伴 
 
-如果您是一名客戶，正在尋找合作夥伴協助您為使用者在 Azure 中託管 Windows 桌面和應用程式，我們編譯了已通過評估的合作夥伴清單，可供您參考。 這是截至 2017/03/28 為止的[合作夥伴清單](https://github.com/MicrosoftDocs/windowsserverdocs/blob/master/WindowsServerDocs/remote/remote-desktop-services/RDS-Hosting-Partners.pdf)，可供您下載。
+如果您是一名客戶，正在尋找合作夥伴協助您為使用者在 Azure 中託管 Windows 桌面和應用程式，我們編譯了已通過評估的合作夥伴清單，可供您參考。 這是截至 2017/03/28 為止的[合作夥伴清單](rds-hosting-partners.md)，可供您下載。
 
 您可以使用下列步驟找到更多關於每個合作夥伴的資訊：
 

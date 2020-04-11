@@ -1,22 +1,20 @@
 ---
 title: 安全性 | 保證
 description: Windows Server 的安全性概觀
-ms.custom: na
 layout: LandingPage
 ms.prod: windows-server
 ms.technology: techgroup-security
-ms.tgt_pltfrm: na
 ms.topic: landing-page
 ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: high
-ms.openlocfilehash: fe2022ba3ff382d1070495b28dfdb03a34f9be42
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 2ecec7ad47ade22ec05f1d721c9667b0887f3de3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950309"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852941"
 ---
 # <a name="security--assurance"></a>安全性 | 保證
 

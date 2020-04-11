@@ -1,22 +1,20 @@
 ---
 title: 更新 Nano Server
-description: " "
+description: ''
 ms.prod: windows-server
-ms.service: na
 manager: DonGill
 ms.technology: server-nano
 ms.date: 09/06/2017
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: d0ac67eed766f9b04121fc521557f906f644d42f
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 3f8bbe4dcf9161686367f7807d522b79bcf99e32
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947715"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826401"
 ---
 # <a name="updating-nano-server"></a>更新 Nano Server
 

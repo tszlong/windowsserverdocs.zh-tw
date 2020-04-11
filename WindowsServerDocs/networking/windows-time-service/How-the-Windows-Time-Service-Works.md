@@ -1,20 +1,19 @@
 ---
 ms.assetid: d1953097-63ea-4a0e-b860-2f3b7c175c41
 title: Windows 時間服務的運作方式
-description: ''
-author: eross-msft
-ms.author: lizross
+author: dcuomo
+ms.author: dacuo
 manager: dougkim
 ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: d8532dedb6473a34591a1f160a94a785cc4ba367
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: b8b30893abe4cdfe8d7e8c5a95ede651f85643a9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315177"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861661"
 ---
 # <a name="how-the-windows-time-service-works"></a>Windows 時間服務的運作方式
 
@@ -207,10 +206,10 @@ Windows Time 服務的設計訴求是要同步處理網路上的電腦時鐘。 
 |----------------|---------------------|------------|------------------------------|  
 |1|父系網域控制站|網站內|偏好可靠的時間來源，但其可與不可靠的時間來源 (如果這是僅有的可用來源) 進行同步處理。|  
 |2|區域網域控制站|網站內|只會與可靠的時間來源進行同步處理。|  
-|3|本機 PDC 模擬器|網站內|不適用。<br /><br />網域控制站不會嘗試與其本身進行同步處理。|  
+|3|本機 PDC 模擬器|網站內|不適用。<p>網域控制站不會嘗試與其本身進行同步處理。|  
 |4|父系網域控制站|網站外|偏好可靠的時間來源，但其可與不可靠的時間來源 (如果這是僅有的可用來源) 進行同步處理。|  
 |5|區域網域控制站|網站外|只會與可靠的時間來源進行同步處理。|  
-|6|本機 PDC 模擬器|網站外|不適用。<br /><br />網域控制站不會嘗試與其本身進行同步處理。| 
+|6|本機 PDC 模擬器|網站外|不適用。<p>網域控制站不會嘗試與其本身進行同步處理。| 
   
 **注意**  
   

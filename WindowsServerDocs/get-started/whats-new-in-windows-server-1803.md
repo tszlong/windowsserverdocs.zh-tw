@@ -8,18 +8,18 @@ author: greg-lindsay
 ms.author: greg-lindsay
 ms.localizationpriority: high
 ms.date: 05/07/2018
-ms.openlocfilehash: 211a0e2b49e9f15682a251f96dc338d124e2f998
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8b359ac883c24d559e2c3d47db5b68e4f5341338
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391377"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826001"
 ---
 # <a name="whats-new-in-windows-server-version-1803"></a>Windows Server 版本 1803 中的新功能
 
 >適用於：Windows Server (半年通道)
 
-<img src="../media/landing-icons/new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">&nbsp;若要深入了解 Windows 的最新功能，請參閱 [Windows Server 的新功能](whats-new-in-windows-server.md)。 本節內容說明 Windows Server 版本 1803 的新功能和變更。 此處所列的新功能和變更是您使用這個版本時最可能帶來最大影響的新功能和變更。 另請參閱 [Windows Server 半年通道更新](https://cloudblogs.microsoft.com/windowsserver/2018/03/29/windows-server-semi-annual-channel-update/)。
+<img src=../media/landing-icons/new.png style='float:left; padding:.5em;' alt=Icon showing a newspaper>&nbsp;若要深入了解 Windows 的最新功能，請參閱 [Windows Server 的新功能](whats-new-in-windows-server.md)。 本節內容說明 Windows Server 版本 1803 的新功能和變更。 此處所列的新功能和變更是您使用這個版本時最可能帶來最大影響的新功能和變更。 另請參閱 [Windows Server 半年通道更新](https://cloudblogs.microsoft.com/windowsserver/2018/03/29/windows-server-semi-annual-channel-update/)。
 
 ## <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -92,7 +92,7 @@ Kubernetes (通常稱為 K8s) 是在[雲端原生運算基金會 (Cloud Native C
     - 具體來說，對 Server Core 及 Nano 伺服器容器映像的通知都已變更為 CTRL_SHUTDOWN_EVENT。 此外，這還會延伸 Server Core 容器映像中的通知來影響所有在容器中執行的處理程序，包括傳送服務關閉通知至容器中執行的服務。
 - docker pull 及 docker load，與判斷固定資料磁碟機是否必須有 BitLocker 保護才可寫入 (FDVDenyWriteAccess) 之原則設定的相容性問題已修正。 
 
-## <a name="storage"></a>儲存體
+## <a name="storage"></a>存放裝置
 
 在此版本中，可以防止檔案伺服器資源管理員服務於其啟動時在所有磁碟區上建立變更日誌 (也稱為 USN 日誌)。 這可以節省每個磁碟區的空間，但會停用即時檔案分類。 如需詳細資訊，請參閱[檔案伺服器資源管理員概觀](https://docs.microsoft.com/windows-server/storage/fsrm/fsrm-overview)。
 
@@ -108,7 +108,7 @@ Kubernetes (通常稱為 K8s) 是在[雲端原生運算基金會 (Cloud Native C
 Install-WindowsFeature -Name WDS
 ```
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 [Windows Server 版本資訊](https://docs.microsoft.com/windows-server/get-started/windows-server-release-info)<br>
 [Windows 10 (版本 1803) 新功能 IT 專業人員內容](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1803)

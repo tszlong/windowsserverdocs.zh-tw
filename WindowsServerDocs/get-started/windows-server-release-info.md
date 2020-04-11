@@ -3,18 +3,17 @@ title: Windows Server 版本資訊
 description: 關於 Windows Server 的版本資訊
 ms.prod: windows-server
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/12/2019
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
-ms.openlocfilehash: c27fd6652e86211449c1db0e69e88a604d659498
-ms.sourcegitcommit: b9ec35416a06854c1bc875a2b731d42a436fe313
+ms.openlocfilehash: 19911ceb52587a0897e7fde34bd4b95d375c13a8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73956050"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825841"
 ---
 # <a name="windows-server-release-information"></a>Windows Server 版本資訊
 

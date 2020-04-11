@@ -8,12 +8,12 @@ ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ce821c2e793792032e2f91aa806b1bd8d8a76f6
-ms.sourcegitcommit: b9ec35416a06854c1bc875a2b731d42a436fe313
+ms.openlocfilehash: 6c424d19c006cfae6343d577dc08ff3553a5616b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73956066"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825871"
 ---
 # <a name="whats-new-in-windows-server"></a>Windows Server 的新功能
 
@@ -35,7 +35,7 @@ ms.locfileid: "73956066"
 
 Windows Server 半年通道發行以更快的速度提供新的作業系統功能。 每六個月推出新版本，且支援 18 個月。 檢查 [Windows Server 版本資訊](windows-server-release-info.md)和[生命週期支援頁面](https://support.microsoft.com/lifecycle)的支援日期，並盡可能一律使用最新版本。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 - [版本資訊：Windows Server 2019 中的重要問題](../get-started-19/rel-notes-19.md)
 - [版本資訊：Windows Server 2016 中的重要問題](Windows-Server-2016-GA-Release-Notes.md)

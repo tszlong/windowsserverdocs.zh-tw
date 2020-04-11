@@ -1,23 +1,19 @@
 ---
 title: 變更遠端桌面中的接聽連接埠
 description: 了解如何變更遠端桌面用戶端的接聽連接埠。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 ms.author: elizapo
 ms.date: 07/19/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b6b5a48435a99b1bf1392acb6a5764b106984bbe
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 818ae5217d0144b2a4ec6e45f3a7757455cfabf1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404187"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854661"
 ---
 # <a name="change-the-listening-port-for-remote-desktop-on-your-computer"></a>變更電腦上的遠端桌面接聽連接埠
 

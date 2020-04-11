@@ -1,24 +1,20 @@
 ---
 title: 管理 RDS 集合中的使用者
 description: 了解如何管理遠端桌面服務中的使用者。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2727e1ab-69b8-46f3-9f6d-2540324fe596
 author: christianmontoya
 ms.author: chrimo
 ms.date: 03/27/2018
 manager: scottman
-ms.openlocfilehash: 870a6360f685c2de31485135202b0f1415c90d85
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 430c38f98dd9aec3034e023d737952e3015622eb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403855"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858681"
 ---
 # <a name="manage-users-in-your-rds-collection"></a>管理 RDS 集合中的使用者
 
@@ -26,8 +22,8 @@ ms.locfileid: "71403855"
 
 身為系統管理員，您可以直接管理哪些使用者有權存取特定的集合。 如此一來，您就能建立一個集合來為資訊工作者提供標準應用程式，但接著要建立不同的集合來為工程師提供大量圖形的模型化應用程式。 有兩個主要步驟可用來管理遠端桌面服務 (RDS) 部署中的使用者存取：
 
-1.  [在 Active Directory 中建立使用者和群組](#create-your-users-and-groups-in-active-directory)
-2.  [將使用者和群組指派給集合](#assign-users-and-groups-to-collections)
+1.    [在 Active Directory 中建立使用者和群組](#create-your-users-and-groups-in-active-directory)
+2.    [將使用者和群組指派給集合](#assign-users-and-groups-to-collections)
 
 
 ## <a name="create-your-users-and-groups-in-active-directory"></a>在 Active Directory 中建立使用者和群組
@@ -41,7 +37,7 @@ ms.locfileid: "71403855"
 1. 連線至執行 Active Directory 網域服務的伺服器。 針對 Azure 部署：
    1. 在 Azure 入口網站中，按一下 [瀏覽] > [資源群組]  ，然後按一下部署的資源群組。
    2. 選取 AD 虛擬機器。
-   3. 按一下 [連線] > [開啟]  以開啟遠端桌面用戶端。 如果 [連線]  呈現灰色，則虛擬機器可能沒有公用 IP 位址。 若要為它提供一個，請執行下列步驟，然後重試此步驟。
+   3. 按一下 [連線 > 開啟]  以開啟遠端桌面用戶端。 如果 [連線]  呈現灰色，則虛擬機器可能沒有公用 IP 位址。 若要為它提供一個，請執行下列步驟，然後重試此步驟。
       1. 按一下 [設定] > [網路介面]  ，然後按一下對應的網路介面。
       2. 按一下 [設定] > [IP 位址]  。
       3. 針對 [公用 IP 位址]  選取 [已啟用]  ，然後按一下 [IP 位址]  。

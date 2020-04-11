@@ -1,24 +1,20 @@
 ---
 title: 部署遠端桌面環境
-ms.custom: na
 ms.prod: windows-server
 description: 部署遠端桌面環境的基本步驟。
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 04/10/2017
-ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: e00be471b2607ad4bc8cc8e11652d428419b4fd6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 31bb6afaca92b36453d4565c1f79aae35a6f0900
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404017"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855751"
 ---
 # <a name="deploy-your-remote-desktop-environment"></a>部署遠端桌面環境
 

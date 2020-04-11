@@ -1,24 +1,20 @@
 ---
 title: 將遠端桌面服務部署移轉至 Windows Server 2016
 description: 本文描述如何將遠端桌面服務部署移轉到新的 Windows Server 2016 伺服器。
-ms.custom: na
 ms.prod: windows-server
-msreviewer: ''
-nams.suite: ''
-nams.technology: remote-desktop-services
+ms.technology: remote-desktop-services
 ms.author: chrimo
 ms.date: 11/01/2016
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9b1fa833-4325-48a8-bf34-46265f40c001
 author: christianmontoya
 manager: scottman
-ms.openlocfilehash: e8471d67c8b9978d8b3c08fd3ef497e4e329d84b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 88806c7302474b111b700376c75b9b09f4da9236
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387601"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853001"
 ---
 # <a name="migrate-your-remote-desktop-services-deployment-to-windows-server-2016"></a>將遠端桌面服務部署移轉至 Windows Server 2016
 

@@ -1,24 +1,20 @@
 ---
 title: 租用戶內部部署元件
 description: 描述您 RDS 部署中的內部部署元件。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 08/01/2016
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b3eebb38-a835-4fa6-9e41-1966014bf2cb
 author: lizap
 manager: dongill
-ms.openlocfilehash: 5ae0a711d146de5b7eff272916cc7f06568848e6
-ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
+ms.openlocfilehash: 849b0e3eb751c4e45a7c23da4230c7c4eb6bfcb1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72812259"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854701"
 ---
 # <a name="tenant-on-premises-components"></a>租用戶內部部署元件
 
@@ -37,7 +33,7 @@ ms.locfileid: "72812259"
 [Mac App Store - Microsoft 遠端桌面](https://itunes.apple.com/app/microsoft-remote-desktop/id715768417?mt=12)  
 [App Store 中的 Microsoft 遠端桌面](https://itunes.apple.com/app/microsoft-remote-desktop/id714464092?mt=8)  
   
-##  <a name="active-directory-domain-services"></a>Active Directory Domain Services  
+##  <a name="active-directory-domain-services"></a>Active Directory 網域服務  
 某些較大且較複雜的租用戶可以選擇在內部裝載 Active Directory 網域服務 (AD DS) 伺服器。 在此情況下，租用戶環境中的 AD DS 伺服器，通常會是租用戶內部部署 AD DS 伺服器的複本。 在租用戶環境中建立虛擬網路，並使用 Azure VPN 建立從租用戶內部部署網路到位於 Azure 資料中心租用戶虛擬網路的站對站連線，即可支援這一點。  
   
 其他資訊：  

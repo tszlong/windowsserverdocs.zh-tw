@@ -1,24 +1,20 @@
 ---
 title: 其他遠端桌面資源
 description: 提供可讓您取得 RDS 詳細資訊和相關協助的連結。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: evas
 ms.date: 11/21/2018
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 938adb3d-71ab-488b-b2f2-57b29df210d7
 author: evaseydl
 manager: scottman
-ms.openlocfilehash: eaf3aa737718ce2c0e4654319bea7079e3f92373
-ms.sourcegitcommit: a4b489d0597b6a73c905d3448d5bc332efd6191b
+ms.openlocfilehash: cf497bae1cd228096d02444498b9e6d769fe2cad
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77675349"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861371"
 ---
 # <a name="additional-remote-desktop-resources"></a>其他遠端桌面資源
 

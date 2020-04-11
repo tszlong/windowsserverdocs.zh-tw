@@ -1,24 +1,20 @@
 ---
 title: RDS - 執行並微調
 description: 規劃資訊可協助您設計 RD 部署。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: spatnaik
 ms.date: 12/06/2019
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 047b08be-7f91-4194-a641-5b6941b92515
 author: spatnaik
 manager: scottman
-ms.openlocfilehash: 9f0758679353efebfcea85eeb082f1dbe188a7ec
-ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
+ms.openlocfilehash: 88e081a5ac6a40efb1df50bfd904d9454f013733
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75351836"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857381"
 ---
 # <a name="plan-and-design-your-remote-desktop-services-environment"></a>規劃和設計您的遠端桌面服務環境
 

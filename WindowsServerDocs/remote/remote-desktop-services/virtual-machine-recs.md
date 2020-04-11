@@ -1,23 +1,19 @@
 ---
 title: 虛擬機器大小
 description: 每個工作負載類型的大小建議。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: helohr
 ms.date: 12/02/2019
-ms.tgt_pltfrm: na
 ms.topic: article
 author: Heidilohr
 manager: lizross
-ms.openlocfilehash: 9564643e02a0b659914736c4047a8d723816976f
-ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
+ms.openlocfilehash: 1d6a7daa3966488c951117b083411587d13be56b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75919931"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857101"
 ---
 # <a name="virtual-machine-sizing-guidance"></a>虛擬機器大小指引
 

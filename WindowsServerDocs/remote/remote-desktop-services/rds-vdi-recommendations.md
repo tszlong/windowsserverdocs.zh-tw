@@ -1,24 +1,20 @@
 ---
 title: 建議的 VDI 桌面設定
 description: 將當作 VDI 映像之 Windows 10 1607 (10.0.1393) 桌面的額外負荷降至的最低建議設定和組態
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 12/18/2018
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2a44dc9f-c221-4bf7-89c3-fb4c86a90f8c
 author: jaimeo
 manager: dougkim
-ms.openlocfilehash: ca6d82973ae8201cdb4021c205a580a11c599b2f
-ms.sourcegitcommit: d7045c56046dbfaefd59a8ba132bfd8444690a73
+ms.openlocfilehash: 2ab78ccbc4e49bd95a74fe1e17d5ea14891eb1b8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78256668"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857271"
 ---
 # <a name="recommended-settings-for-vdi-desktops"></a>建議的 VDI 桌面設定
 
@@ -40,7 +36,7 @@ Microsoft Desktop Virtualization 會透過即時設定公司的應用程式和�
 ## <a name="creating-the-windows-10-image"></a>建立 Windows 10 映像
 第一個步驟是在實體電腦或虛擬機器上安裝 Windows 10 1607 (版本 10.0.1393) 的參照映像。 安裝至虛擬機器很簡單，而可讓您儲存虛擬硬碟 (VHD) 檔案的版本，以防您想要回復到舊版。
 
-在安裝期間，您可以選擇 [快速設定]  或 [自訂]  。 在 [自訂]  選項期間提供的設定也可以使用群組原則調整，因此安裝基本 OS 的方法並不是那麼重要。
+在安裝期間，您可以選擇 快速設定  或 {自訂  。 在 [自訂]  選項期間提供的設定也可以使用群組原則調整，因此安裝基本 OS 的方法並不是那麼重要。
 
 
 如果您選擇 [自訂]  ，您可以在安裝期間調整這些設定：
@@ -412,7 +408,7 @@ Microsoft Desktop Virtualization 會透過即時設定公司的應用程式和�
 ||自動安裝新版 Internet Explorer|      停用|
 ||防止參與客戶經驗改進計畫|     啟用|
 ||防止執行 [首次執行] 精靈。直接到首頁|   已啟用，然後使用 [選項]  下拉式功能表選取 [直接到首頁] |
-||設定索引標籤程序成長速率|已啟用，然後在 [索引標籤處理程序成長速率]  方塊中輸入下列內容：*低*。|
+||設定索引標籤程序成長速率|已啟用，然後在 [索引標籤處理程序成長速率]  方塊中輸入下列內容：*低*：|
 ||指定新索引標籤的預設行為|已啟用，然後使用 [選項]  下拉式功能表選取 [新索引標籤頁面] |
 ||關閉附加元件效能通知|        啟用|
 ||關閉瀏覽器地理位置|     啟用|

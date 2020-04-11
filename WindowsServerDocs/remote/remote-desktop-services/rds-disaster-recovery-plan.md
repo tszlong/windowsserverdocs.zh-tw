@@ -1,23 +1,19 @@
 ---
 title: 建立您的災害復原方案
 description: 了解如何建立您的 RDS 部署災害復原方案。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 05/05/2017
-ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: e4e9a9ab05e672c72925e3699900218abdf1c682
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 18342bb7fd3ad26427ae1e1a051e20444fdff7c2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404024"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859021"
 ---
 # <a name="create-your-disaster-recovery-plan-for-rds"></a>建立您的 RDS 災害復原方案
 

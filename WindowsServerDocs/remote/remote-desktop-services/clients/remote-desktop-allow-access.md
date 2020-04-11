@@ -1,12 +1,8 @@
 ---
 title: 遠端桌面 - 允許存取您的電腦
 description: 深入了解您從遠端存取電腦的選項
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0f1557ed-53f7-4333-b023-c8e0f4b58bf4
 author: lizap
@@ -14,12 +10,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 06/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: de08101ed1d4d4527242778d657778f1a16b3dad
-ms.sourcegitcommit: 5b055fc1d73375f68149c214152f1d63396dd6ca
+ms.openlocfilehash: 0596dbd847ae8e64e1f4c780f142f28e34656ae8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76248400"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855901"
 ---
 # <a name="remote-desktop---allow-access-to-your-pc"></a>遠端桌面 - 允許存取您的電腦
 

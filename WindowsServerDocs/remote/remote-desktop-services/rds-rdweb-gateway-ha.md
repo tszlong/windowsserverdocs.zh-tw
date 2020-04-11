@@ -1,23 +1,19 @@
 ---
 title: 將高可用性新增至 RD Web 和閘道 Web 前端
 description: 提供在 RDS 部署中安裝 RD Web 和閘道伺服器的步驟。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 ms.author: elizapo
 ms.date: 11/08/2016
 manager: dongill
-ms.openlocfilehash: 5838480847e5f86a03f264a0ece1f8d4097597cc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e98bbda5460311dd379eab6f5a5bde0ec3845d5c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387233"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860281"
 ---
 # <a name="add-high-availability-to-the-rd-web-and-gateway-web-front"></a>將高可用性新增至 RD Web 和閘道 Web 前端
 
@@ -99,7 +95,7 @@ ms.locfileid: "71387233"
     3.  針對 [配置]  選取 [公用]  。
     4.  在 [公用 IP 位址]  底下，選取 [選擇公用 IP 位址]  ，然後挑選現有的公用 IP 位址或建立新的。
     5.  選取適當的 [訂用帳戶]  、[資源群組]  和 [位置]  。
-    6.  按一下 \[建立\]  。  
+    6.  按一下 [建立]  。  
 2. 建立[探查](https://azure.microsoft.com/documentation/articles/load-balancer-custom-probe-overview/)以監視正在運作的伺服器：  
     1.  在 Azure 入口網站中，選取 [瀏覽]   >  [負載平衡器]  ，然後選擇您在上一個步驟中建立的負載平衡器。
     2.  選取 [所有數定]   >  [探查]   >  [新增]  。  

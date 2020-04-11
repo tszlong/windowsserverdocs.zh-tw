@@ -1,23 +1,19 @@
 ---
 title: 新增 RD 連線代理人伺服器以設定 RDS 中的高可用性
 description: 了解如何將 RD 連線代理人新增至 RDS 部署以達到高可用性。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 04/10/2017
-ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 511f852568aa4cc7498e3a0b8deacea83db22c08
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dc6a9fa0d6834f63c9935518e4b2c26320a04082
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404060"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852961"
 ---
 # <a name="add-the-rd-connection-broker-server-to-the-deployment-and-configure-high-availability"></a>將 RD 連線代理人伺服器加入部署並設定高可用性
 

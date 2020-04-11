@@ -1,12 +1,8 @@
 ---
 title: 開始使用 Windows Store 用戶端
 description: 適用於 Microsoft Store 的遠端桌面用戶端的基本設定步驟。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: lizap
@@ -14,12 +10,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 13fbe22ef33ea7861ae4c8677792b5758f37ad0f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 64362c6f6da77ee15a95ddcbaf33c6cb9ecd5cf4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387608"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861431"
 ---
 # <a name="get-started-with-the-windows-store-client"></a>開始使用 Windows Store 用戶端
 
@@ -72,7 +68,7 @@ ms.locfileid: "71387608"
 
 遠端資源包括 RemoteApp 程式、工作階段型桌面，以及您的系統管理員使用遠端桌面服務發佈的虛擬桌面。
 
-新增遠端資源：
+若要新增遠端資源：
 
 1. 在 [連線中心] 畫面上，點選 [+ 新增]  ，然後點選 [遠端資源]  。
 2. 輸入由系統管理員所提供的**摘要 URL**，然後點選 [尋找摘要]  。
@@ -131,7 +127,7 @@ ms.locfileid: "71387608"
 
 當您連線到桌面或遠端資源時，您可以儲存使用者帳戶，以便再次從中選取。 您也可以在用戶端本身定義使用者帳戶，而不是在連線到桌面時儲存使用者資料。
 
-建立新的使用者帳戶：
+若要建立新的使用者帳戶：
 
 1. 在連線中心，點選 [設定]  。
 2. 點選 [使用者帳戶] 旁邊的 [+]  來新增使用者帳戶。
@@ -202,7 +198,7 @@ ms.locfileid: "71387608"
 | 滑鼠指標 | 按滑鼠右鍵          | 2 指點選                                                          |
 | 滑鼠指標 | 按滑鼠右鍵並拖曳 | 用 2 指點兩下並按住，然後拖曳                               |
 | 滑鼠指標 | 滑鼠滾輪          | 用 2 指點兩下並按住，然後向上或向下拖曳                           |
-| 滑鼠指標 | Zoom                 | 使用 2 指捏合以放大或將手指分開以縮小。 |
+| 滑鼠指標 | 縮放                 | 使用 2 指捏合以放大或將手指分開以縮小。 |
 
 > [!TIP]
 > 隨時都歡迎提出問題和意見。 不過，請「勿」使用本文結尾的留言功能來張貼需要疑難排解協助的要求。 請改為前往[遠端桌面用戶端論壇](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc)，並開始新的對話。 有功能建議嗎？ 請使用[意見反應中樞](feedback-hub://?tabid=2&contextid=605)告知我們。

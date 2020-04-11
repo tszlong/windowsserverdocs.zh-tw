@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 16d711a288843163b134b0226ed4b8513d7070eb
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 00335fb2ca7a54031430c6c606fb6ffa23a8f7a2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950058"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855131"
 ---
 # <a name="active-directory-administrative-tier-model"></a>Active Directory 系統管理層模型
 
@@ -592,7 +592,7 @@ ms.locfileid: "75950058"
 
 |連線方式|登入類型|目的地上可重複使用的認證|評價|
 |-----------|-------|--------------------|------|
-|IIS「基本驗證」|NetworkCleartext<br />(IIS 6.0+)<br /><br />Interactive (互動式)<br />(IIS 6.0 之前)|v||
+|IIS「基本驗證」|NetworkCleartext<br />(IIS 6.0+)<p>Interactive (互動式)<br />(IIS 6.0 之前)|v||
 |IIS「整合式 Windows 驗證」|網路|-|NTLM 和 Kerberos 提供者。|
 
 欄位定義：
