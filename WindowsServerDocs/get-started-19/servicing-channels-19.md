@@ -1,6 +1,6 @@
 ---
 title: 維護通道
-description: Windows Server 維護通道的說明：LTSC 和 SAC
+description: Windows Server 服務通道說明 - LTSC 和 SAC
 ms.prod: windows-server
 ms.technology: server-general
 ms.topic: article
@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 05/21/2019
-ms.openlocfilehash: 06f92e0a2f74ed229b42e936583a7f75d4584234
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: a10cb3b27e3434ab818b41e051edb38ab77626db
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822111"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827131"
 ---
 # <a name="windows-server-servicing-channels-ltsc-and-sac"></a>Windows Server 維護通道：LTSC 和 SAC
 
@@ -112,7 +112,7 @@ Windows Server 2019 之前發行的半年通道版本使用 Windows Server 2016 
 
 ## <a name="how-to-tell-whether-a-server-is-running-an-ltsc-or-sac-release"></a>如何判斷伺服器是否正在執行 LTSC 或 SAC 版本
 
-一般而言，Windows Server 2019 之類的長期維護通道版本會與半年通道 (例如 Windows Server 1809 版) 同時發行。 這會讓人難以判斷伺服器是否正在執行半年通道版本。 您必須查看產品名稱，而不是查看組建編號：半年通道版本會使用沒有版本號碼的 "Windows Server Standard" 或 "Windows Server Datacenter" 產品名稱，而長期維護通道版本會包含版本號碼，例如 "Windows Server 2019 Datacenter"。
+一般而言，Windows Server 2019 之類的長期維護通道版本會與半年通道 (例如 Windows Server 1809 版) 同時發行。 這會讓人難以判斷伺服器是否正在執行半年通道版本。 您必須查看產品名稱，而不是查看組建編號：半年通道版本會使用沒有版本號碼的 Windows Server Standard 或 Windows Server Datacenter 產品名稱，而長期維護通道版本會包含版本號碼，例如 Windows Server 2019 Datacenter。
 
 >[!Note]  
 > 下列指導方針旨在協助識別和區分 LTSC 以及 SAC，但僅適用於生命週期和一般清查目的。  它不適用於應用程式相容性，也不代表特定的 API 介面。  由於元件、API 和功能在系統的整個生命週期都可以加入或不加入，因此應用程式開發人員應該使用其他地方的指導方針以正確地確保相容性。 [作業系統版本](https://docs.microsoft.com/windows/desktop/SysInfo/operating-system-version)是適用於應用程式開發人員的更好起始點。
@@ -122,7 +122,7 @@ Windows Server 2019 之前發行的半年通道版本使用 Windows Server 2016 
 **具備桌面體驗的 Windows Server 2019 Datacenter Edition (LTSC) 範例：**
 
 ````PowerShell
-Get-ItemProperty -Path "HKLM:\Software\Microsoft\Windows NT\CurrentVersion" | Select ProductName, ReleaseId, InstallationType, CurrentMajorVersionNumber,CurrentMinorVersionNumber,CurrentBuild
+Get-ItemProperty -Path HKLM:\Software\Microsoft\Windows NT\CurrentVersion | Select ProductName, ReleaseId, InstallationType, CurrentMajorVersionNumber,CurrentMinorVersionNumber,CurrentBuild
 ````
 
 ````
@@ -137,7 +137,7 @@ CurrentBuild              : 17763
 **Windows Server 版本 1809 (SAC) Standard Edition Server Core 範例：**
 
 ````PowerShell
-Get-ItemProperty -Path "HKLM:\Software\Microsoft\Windows NT\CurrentVersion" | Select ProductName, ReleaseId, InstallationType, CurrentMajorVersionNumber,CurrentMinorVersionNumber,CurrentBuild
+Get-ItemProperty -Path HKLM:\Software\Microsoft\Windows NT\CurrentVersion | Select ProductName, ReleaseId, InstallationType, CurrentMajorVersionNumber,CurrentMinorVersionNumber,CurrentBuild
 ````
 
 ````

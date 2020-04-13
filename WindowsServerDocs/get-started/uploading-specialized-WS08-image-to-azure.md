@@ -7,15 +7,14 @@ ms.sitesec: library
 author: mikeblodge
 ms.author: mikeblodge
 ms.date: 07/11/2018
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.localizationpriority: high
-ms.openlocfilehash: 19e4abf1573b8d3ee99b8e8828c1674f24d27695
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: de9233e31c5530abd207a1bbba0e1e16a07d1561
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391498"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826121"
 ---
 # <a name="upload-a-windows-server-20082008-r2-specialized-image-to-azure"></a>將 Windows Server 2008/2008 R2 專用映像上傳至 Azure 
 
@@ -41,7 +40,7 @@ ms.locfileid: "71391498"
   4. 選取 [允許來自執行任何版本之遠端桌面的電腦進行連線 (較不安全)]。   
   5. 依序按一下 [套用]  、[確定]  。
 - 設定 Windows 防火牆設定。   
-   1. 在系統管理員模式的命令提示字元處，輸入 “**wf.msc**” 以進入 Windows 防火牆與進階安全性設定。   
+   1. 在系統管理員模式的命令提示字元處，輸入 **wf.msc** 以進入 Windows 防火牆與進階安全性設定。   
    2. 依 [連接埠]  排序發現的項目，然後選取 [連接埠 3389]  。   
      ![WIndows 防火牆設定輸入規則螢幕擷取畫面。](media/3b_inboundrules.png)   
    3. 為設定檔啟用遠端桌面 (TCP IN)：**網域**、**私人**及**公用** (如上所示)。
@@ -86,26 +85,26 @@ Login-AzureRmAccount
 > [!IMPORTANT]
 > 請勿在 Azure 中使用預先定義的使用者映像。
 
-1.  建立新的[資源群組](https://docs.microsoft.com/rest/api/resources/resourcegroups/createorupdate) (英文)。 
-2.  在資源群組內部建立新的[儲存體 Blob](https://docs.microsoft.com/rest/api/storageservices/put-blob)(英文)。
-3.  在儲存體 Blob 內部建立[容器](https://docs.microsoft.com/rest/api/storageservices/create-container) (英文)。
-4.  複製內容中 Blob 儲存體的 URL。
-5.  使用於上方提供的指令碼將映像上傳至新的儲存體 Blob。
-6.  為您的 VHD 建立[磁碟](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image)。   
-     a. 移至 \[磁碟\]，按一下 \[新增\]  。  
-     b. 輸入磁碟的名稱。 選取您要使用的訂用帳戶、設定區域，然後選擇帳戶類型。   
+1.    建立新的[資源群組](https://docs.microsoft.com/rest/api/resources/resourcegroups/createorupdate) (英文)。 
+2.    在資源群組內部建立新的[儲存體 Blob](https://docs.microsoft.com/rest/api/storageservices/put-blob)(英文)。
+3.    在儲存體 Blob 內部建立[容器](https://docs.microsoft.com/rest/api/storageservices/create-container) (英文)。
+4.    複製內容中 Blob 儲存體的 URL。
+5.    使用於上方提供的指令碼將映像上傳至新的儲存體 Blob。
+6.    為您的 VHD 建立[磁碟](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image)。   
+     a.    移至 \[磁碟\]，按一下 \[新增\]  。  
+     b.    輸入磁碟的名稱。 選取您要使用的訂用帳戶、設定區域，然後選擇帳戶類型。   
      c. 對於 \[來源類型\]，選取儲存體。 瀏覽至使用指令碼建立的 Blob VHD 位置。  
      d. 選取 Windows 作業系統類型和 \[大小\] (預設：1023)。   
-     e. 按一下 \[建立\]  。   
+     e. 按一下 [建立]  。   
 
-7.  移至 \[已建立磁碟\]，按一下 \[建立 VM\]  。   
-     a. 命名 VM。   
-     b. 選取您在步驟 5 (在此您已上傳磁碟) 中建立的現有群組。   
-     c. 為您的 VM 選擇大小與 SKU 計劃。   
-     d. 在設定頁面上選取網路介面。 確定網路介面的下列規則已指定：
+7.    移至 \[已建立磁碟\]，按一下 \[建立 VM\]  。   
+     a.    命名 VM。   
+     b.    選取您在步驟 5 (在此您已上傳磁碟) 中建立的現有群組。   
+     c.    為您的 VM 選擇大小與 SKU 計劃。   
+     d.    在設定頁面上選取網路介面。 確定網路介面的下列規則已指定：
  
-        PORT:3389 Protocol: TCP Action: Allow Priority: 1000 Name: ‘RDP-Rule'.   
-     e. 按一下 \[建立\]  。
+        PORT:3389 Protocol：TCP Action:Allow Priority:1000 Name:'RDP-Rule'.   
+     e.    按一下 [建立]  。
 
 
 
