@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 09/18/2018
 ms.prod: windows-server
-ms.openlocfilehash: 67bd2a476cedd6d522daeaae54081b02fd893fbd
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 136107210d2a8a4b336c9e4eb809e2ca096bfba2
+ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949969"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81269215"
 ---
 # <a name="prepare-your-development-environment"></a>準備您的開發環境
 
@@ -32,11 +32,12 @@ ms.locfileid: "75949969"
 
 * [Windows 系統管理中心](https://aka.ms/WACDownloadPage)（GA 或預覽版本）
 * Visual Studio 或 [Visual Studio Code](https://code.visualstudio.com)
+* [Node.js](https://nodejs.org/en/download/releases/) （版本10.3.0）
 * [Node 封裝管理員](https://npmjs.com/get-npm)（8.12.0 或更新版本）
 * [Nuget](https://www.nuget.org/downloads) (用於發佈擴充功能)
 
 > [!NOTE]
-> 您必須依照下列步驟，在開發人員模式中安裝並執行 Windows Admin Center。 開發人員模式允許 Windows Admin Center 載入未簽署的擴充功能。
+> 您必須依照下列步驟，在開發人員模式中安裝並執行 Windows Admin Center。 開發人員模式允許 Windows Admin Center 載入未簽署的擴充功能。 Windows 管理中心只能在 Windows 10 電腦上以 Dev 模式安裝。 
 >
 >  若要啟用開發人員模式，請使用參數 DEV_MODE=1 從命令列中安裝 Windows Admin Center。 在以下範例中，將 ```<version>``` 取代為您要安裝的版本，亦即 ```WindowsAdminCenter1809.msi```。
 >
@@ -49,7 +50,7 @@ ms.locfileid: "75949969"
 ```
 npm install -g npm
 
-npm install -g @angular/cli@1.6.5
+npm install -g @angular/cli@7.1.2
 
 npm install -g gulp
 npm install -g typescript
@@ -58,9 +59,9 @@ npm install -g windows-admin-center-cli
 ```
 
 >[!NOTE]
->您可以安裝較新版本的 @angular/cli，但請注意，如果您安裝的版本大於1.6.5，則在 gulp 組建步驟期間會收到警告，表示本機 cli 版本不符合已安裝的版本。
+>您可以安裝較新版本的 @angular/cli，但請注意，如果您安裝的版本大於7.1.2，則在 gulp 組建步驟期間會收到警告，表示本機 cli 版本不符合已安裝的版本。
 
-## <a name="next-steps"></a>接下來的步驟
+## <a name="next-steps"></a>後續步驟
 
 既然您的環境已準備就緒，您就可以開始建立內容。
 

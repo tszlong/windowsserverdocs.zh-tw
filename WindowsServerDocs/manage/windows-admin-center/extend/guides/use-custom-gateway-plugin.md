@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 829cbf6df8cc2738bf4066b36210b860595774ed
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5bcaaa452a2b42a54cbc3b1d8f9a296504054e34
+ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385235"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81269225"
 ---
 # <a name="use-a-custom-gateway-plugin-in-your-tool-extension"></a>使用工具擴充功能中的自訂閘道外掛程式
 
@@ -61,9 +61,9 @@ export class PluginService {
 }
 ```
 
-視需要將參考變更為 ```Sample Uno```，並 ```Sample%20Uno``` 至您的功能名稱。
+視需要變更 ```Sample Uno``` 的參考，並 ```Sample%20Uno``` 至您的功能名稱。
 
-[!WARNING]
+> [!WARNING]
 > 建議使用內建的 ```this.appContextService.node``` 來呼叫自訂閘道外掛程式中定義的任何 API。 這可確保您的閘道外掛程式內必須有認證，才會正確處理它們。
 
 ### <a name="modify-modulets"></a>修改模組。 ts

@@ -8,18 +8,18 @@ ms.author: jol
 ms.date: 06/06/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: d761ba61ae5680373c334889799e82e5d092a0d4
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: f51070abfeed3a790055b12f733fc61be383472c
+ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950102"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81269255"
 ---
 # <a name="enabling-the-extension-discovery-banner"></a>啟用延伸模組探索橫幅
 
 >適用於：Windows Admin Center、Windows Admin Center 預覽版
 
-Windows 管理中心 Preview 1903 中提供的新功能是延伸模組探索橫幅。 這項功能可讓延伸模組宣告所支援的伺服器硬體製造商和模型，以及當使用者連線到可用擴充功能的伺服器或叢集時，將會顯示通知橫幅，方便安裝延伸模組。 延伸模組開發人員將能夠取得其延伸模組的更多可見度，而且使用者將能夠輕鬆地探索其伺服器的更多管理功能。
+延伸模組探索橫幅功能是在 Windows 管理中心 Preview 1903 版中引進。 這項功能可讓延伸模組宣告所支援的伺服器硬體製造商和模型，以及當使用者連線到可用擴充功能的伺服器或叢集時，將會顯示通知橫幅，方便安裝延伸模組。 延伸模組開發人員將能夠取得其延伸模組的更多可見度，而且使用者將能夠輕鬆地探索其伺服器的更多管理功能。
 
 ![延伸模組探索橫幅](../../media/extend-guides-extension-discovery-banner/extension-discovery-banner.png)
 
