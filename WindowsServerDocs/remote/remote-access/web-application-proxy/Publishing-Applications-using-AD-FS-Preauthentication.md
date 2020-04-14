@@ -1,19 +1,18 @@
 ---
 ms.assetid: 5f733510-c96e-4d3a-85d2-4407de95926e
 title: 使用 AD FS 預先驗證發佈應用程式
-description: ''
-author: kgremban
-manager: femila
+ms.author: kgremban
+author: eross-msft
 ms.date: 07/13/2016
 ms.topic: article
 ms.prod: windows-server
 ms.technology: web-app-proxy
-ms.openlocfilehash: bd5c4c97e01942e7c5ab8ed1aba3fcf92030ac59
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 97bfae42c873ecf7196138920a21d96714239da9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404262"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818701"
 ---
 # <a name="publishing-applications-using-ad-fs-preauthentication"></a>使用 AD FS 預先驗證發佈應用程式
 
@@ -70,9 +69,9 @@ ms.locfileid: "71404262"
 > 設定外部 URL 和後端伺服器 URL 時，確定您包含完整網域名稱 (FQDN)，而不是 IP 位址。  
   
 > [!NOTE]  
-> 本主題包含可讓您用來將部分所述的程序自動化的 Windows PowerShell Cmdlet 範例。 如需詳細資訊，請參閱[使用 Cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693).  
+> 本主題包含可讓您用以自動化文中所述部分程序的範例 Windows PowerShell 指令程式。 如需詳細資訊，請參閱[使用 Cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
-## <a name="BKMK_1.1"></a>發行適用于網頁瀏覽器用戶端的宣告式應用程式  
+## <a name="publish-a-claims-based-application-for-web-browser-clients"></a><a name="BKMK_1.1"></a>發行適用于網頁瀏覽器用戶端的宣告式應用程式  
 若要發行使用宣告進行驗證的應用程式，您必須將應用程式的信賴憑證者信任新增至 Federation Service。  
   
 發行宣告式應用程式以及從瀏覽器存取應用程式的時候，一般驗證流程如下：  
@@ -130,7 +129,7 @@ ms.locfileid: "71404262"
   
 ![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif) ***<em>Windows PowerShell 對等命令</em>***  
   
-下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
+下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
   
 ```  
 Add-WebApplicationProxyApplication  
@@ -142,7 +141,7 @@ Add-WebApplicationProxyApplication
     -ADFSRelyingPartyName 'SP_Relying_Party'  
 ```  
   
-## <a name="BKMK_1.2"></a>發行適用于網頁瀏覽器用戶端的整合式 Windows 驗證型應用程式  
+## <a name="publish-an-integrated-windows-authenticated-based-application-for-web-browser-clients"></a><a name="BKMK_1.2"></a>發行適用于網頁瀏覽器用戶端的整合式 Windows 驗證型應用程式  
 Web 應用程式 Proxy 可以用來發行使用整合式 Windows 驗證的應用程式;也就是說，Web 應用程式 Proxy 會視需要執行預先驗證，然後再對使用整合式 Windows 驗證的已發行應用程式執行 SSO。 若要發行使用整合式 Windows 驗證的應用程式，您必須將應用程式的非宣告感知信賴憑證者信任新增至 Federation Service。  
   
 若要允許 Web 應用程式 Proxy 執行單一登入（SSO）並使用 Kerberos 限制委派執行認證委派，Web 應用程式 Proxy 伺服器必須加入網域。 請參閱[計畫 Active Directory](https://technet.microsoft.com/library/dn383648.aspx#BKMK_AD)。  
@@ -212,7 +211,7 @@ Web 應用程式 Proxy 可以用來發行使用整合式 Windows 驗證的應用
   
 ![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif) ***<em>Windows PowerShell 對等命令</em>***  
   
-下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
+下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
   
 ```  
 Add-WebApplicationProxyApplication  
@@ -225,7 +224,7 @@ Add-WebApplicationProxyApplication
     -ADFSRelyingPartyName 'Non-Claims_Relying_Party'  
 ```  
   
-## <a name="BKMK_1.3"></a>發行使用 OFBA 的應用程式  
+## <a name="publish-an-application-that-uses-ms-ofba"></a><a name="BKMK_1.3"></a>發行使用 OFBA 的應用程式  
 Web 應用程式 Proxy 支援從存取後端伺服器上的檔和資料的 Microsoft Office 用戶端（例如 Microsoft Word）存取。 這些應用程式與標準瀏覽器之間唯一的差別在於，重新導向至 STS 的作業不是透過一般 HTTP 重新導向來完成，而是使用中指定的特殊 OFBA 標頭： [https://msdn.microsoft.com/library/dd773463(v=office.12).aspx](https://msdn.microsoft.com/library/dd773463(v=office.12).aspx)。 後端應用程式可以是宣告或 IWA。   
 若要為使用 OFBA 的用戶端發行應用程式，您必須將應用程式的信賴憑證者信任新增至同盟服務。 取決於應用程式，您可以使用宣告式驗證或整合式 Windows 驗證。 所以，您必須根據應用程式來新增相關的信賴憑證者信任。  
   
@@ -312,7 +311,7 @@ HTTP Basic 是許多通訊協定所使用的授權通訊協定，可透過您的
   
 ![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif) ***<em>Windows PowerShell 對等命令</em>***  
   
-下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
+下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
   
 這個 Windows PowerShell 腳本會啟用所有裝置的預先驗證，而不只是加入工作地點的裝置。  
   
@@ -339,7 +338,7 @@ Add-WebApplicationProxyApplication
      -ADFSRelyingPartyName 'EAS_Relying_Party'  
 ```  
   
-## <a name="BKMK_1.4"></a>發行使用 OAuth2 的應用程式，例如 Microsoft Store 應用程式  
+## <a name="publish-an-application-that-uses-oauth2-such-as-a-microsoft-store-app"></a><a name="BKMK_1.4"></a>發行使用 OAuth2 的應用程式，例如 Microsoft Store 應用程式  
 若要發佈 Microsoft Store 應用程式的應用程式，您必須將應用程式的信賴憑證者信任新增至同盟服務。  
   
 若要允許 Web 應用程式 Proxy 執行單一登入（SSO）並使用 Kerberos 限制委派執行認證委派，Web 應用程式 Proxy 伺服器必須加入網域。 請參閱[計畫 Active Directory](https://technet.microsoft.com/library/dn383648.aspx#BKMK_AD)。  
@@ -418,7 +417,7 @@ Add-WebApplicationProxyApplication
   
 8.  在 [結果] 頁面上，確認已成功發行應用程式，然後按一下 [關閉]。  
   
-在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
+請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
   
 若要為同盟伺服器位址 fs.contoso.com 和 URL 路徑/adfs/oauth2/設定 OAuth 驗證 URL：  
   
@@ -439,7 +438,7 @@ Add-WebApplicationProxyApplication
     -UseOAuthAuthentication  
 ```  
   
-## <a name="BKMK_Links"></a>另請參閱  
+## <a name="see-also"></a><a name="BKMK_Links"></a>另請參閱  
   
 -   [對 Web 應用程式 Proxy 進行疑難](https://technet.microsoft.com/library/dn770156.aspx)排解  
   
