@@ -268,6 +268,7 @@
 #### [保護 AD FS 的最佳做法](ad-fs/deployment/Best-Practices-Securing-AD-FS.md)
 #### [規劃裝置型條件式存取內部部署](ad-fs/deployment/Plan-Device-based-Conditional-Access-on-Premises.md)
 #### [AD FS 和 WAP 的必要更新](ad-fs/deployment/Updates-for-Active-Directory-Federation-Services-AD-FS.md)
+#### [建立沒有網域系統管理員權限的 AD FS 伺服器陣列](ad-fs/deployment/Install-AD-FS-Delegated-Admin.md)
 #### [使用 SQL Server 複寫設定地理備援](ad-fs/deployment/Set-up-Geographic-Redundancy-with-SQL-Server-Replication.md)
 #### [在 Windows Server 2012 R2 設定 AD FS 實驗室環境](ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
 #### [升級至使用 WID 資料庫的 Windows Server 2016 AD FS](ad-fs/deployment/Upgrading-to-AD-FS-in-Windows-Server.md)
