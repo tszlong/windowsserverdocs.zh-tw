@@ -1,7 +1,6 @@
 ---
 ms.assetid: aa892a85-f95a-4bf1-acbb-e3c36ef02b0d
 title: Windows Server 2016 的 Active Directory 同盟服務新功能
-description: ''
 author: billmath
 ms.author: billmath
 manager: daveba
@@ -9,12 +8,12 @@ ms.date: 01/22/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 8061f41dab0f02bccd59a659e0bcd209bd73a249
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.openlocfilehash: e88297bdbd55d2f834f1bff72b6d05bdf356bb85
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517553"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860251"
 ---
 # <a name="whats-new-in-active-directory-federation-services"></a>Active Directory 同盟服務的新功能
 
@@ -52,7 +51,7 @@ AD FS 2019 提供下列額外的安全性改進：
 AD FS 2019 做了下列登入 SSO 改進：
 
 - [具有置中主題的分頁 UX](../operations/AD-FS-paginated-sign-in.md) - ADFS 現已移至分頁 UX 流程，讓 ADFS 能夠進行驗證，並提供更流暢的登入體驗。 ADFS 現在會使用置中的 UI (而非位於畫面右側)。 您可能需要較新的標誌和背景影像，才能與此體驗協調。 這也會反映 Azure AD 中提供的功能。
-- **Bug 修正：Win10 裝置在執行 PRT 驗證時具有持續性的 SSO 狀態** 此修正解決了對 Windows 10 裝置使用 PRT 驗證時未持續保存 MFA 狀態的問題。 此問題會導致使用者經常收到第二因素認證 (MFA) 的提示。 此修正也使透過用戶端 TLS 和透過 PRT 機制順利執行的裝置驗證能有一致的體驗。 
+- **Bug 修正：Win10 裝置在執行 PRT 驗證時具有持續性的 SSO 狀態**    此修正解決了對 Windows 10 裝置使用 PRT 驗證時未持續保存 MFA 狀態的問題。 此問題會導致使用者經常收到第二因素認證 (MFA) 的提示。 此修正也使透過用戶端 TLS 和透過 PRT 機制順利執行的裝置驗證能有一致的體驗。 
 
 
 ### <a name="suppport-for-building-modern-line-of-business-apps"></a>建置新式企業營運應用程式的支援
@@ -72,7 +71,7 @@ AD FS 2019 新增了下列建置新式 LOB 應用程式的支援：
 AD FS 2019 現在包含下列部署更新：
 - **伺服器陣列行為層級 2019** - 如同 AD FS 2016，若要啟用上述新功能，必須要有新的伺服器陣列行為層級版本。 其可行的途徑如下：
     - 2012 R2-> 2019
-    - 2016 -> 2019   
+    - 2016 -> 2019     
 
 ### <a name="saml-updates"></a>SAML 更新
 以下是 AD FS 2019 中的 SAML 更新：

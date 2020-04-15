@@ -1,25 +1,21 @@
 ---
 title: 移至 Windows Server 2016 的建議
 description: 移至 Windows Server 2016 的建議。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.date: 10/18/2016
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 74aa1da3-7076-4a1f-ad5b-9e17bd46dba2
 author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: be63880e8a07e71aa6811f3a6979eb6e2fcd8eba
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 6b02a3caa0db2a66307754ebd95865d8ba10ef4f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947800"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826751"
 ---
 # <a name="recommendations-for-moving-to-windows-server-2016"></a>移至 Windows Server 2016 的建議
 
@@ -33,7 +29,7 @@ ms.locfileid: "75947800"
 |**ISV 應用程式工作負載**|- 升級至 Windows Server 2016 應使用應用程式特定的指引。 <br>如需 Windows Server 與非 Microsoft 應用程式的相容性相關資訊，請瀏覽 [Windows Server Logo Certification 入口網站](https://msdn.microsoft.com/enterprisecloudcertified)。|- 若要善用 Windows Server 2016 的新功能，請部署新的硬體，或在現有主機的虛擬機器中安裝 Windows Server 2016。 部分新功能最適用於執行 Hyper-V 的 Windows Server 2016 實體主機。 請遵循適用的移轉指引。 <br>- 或保留在目前的 OS 上，並在 Windows Server 2016 主機或 Microsoft Azure 所執行的虛擬機器中執行。 請透過[軟體保證](https://www.microsoft.com/Licensing/licensing-programs/software-assurance-default.aspx)連絡您的 EA 轉銷商、TAM 或 Microsoft 取得延伸支援選項。|
 |**自訂應用程式工作負載**|- 請洽詢應用程式開發人員取得 Windows Server 2016 相容性及升級指南。 <br>- 善用 Microsoft Azure 在切換前於 Windows Server 2016 測試應用程式。 <br>- 請參閱下一節中的完整選項。|- 請洽詢應用程式開發人員取得 Windows Server 2016 相容性及升級指南。 <br>- 善用 Microsoft Azure 在切換前於 Windows Server 2016 測試您的應用程式。 <br>- 若要善用 Windows Server 2016 的新功能，請部署新的硬體，或在現有主機的虛擬機器中安裝 Windows Server 2016。 部分新功能最適用於執行 Hyper-V 的 Windows Server 2016 實體主機。 <br>- 請參閱下一節中的完整選項。|
 
-## <a name="complete-options-for-moving-servers-running-custom-or-in-house-applications-on-older-versions-of-windows-server-to-windows-server-2016"></a>完成將在 Windows Server 較舊版本上執行自訂或「內部」應用程式的伺服器移至 Windows Server 2016 的選項
+## <a name="complete-options-for-moving-servers-running-custom-or-in-house-applications-on-older-versions-of-windows-server-to-windows-server-2016"></a>完成將在 Windows Server 較舊版本上執行自訂或內部應用程式的伺服器移至 Windows Server 2016 的選項
 
 現在有比以往更多的選項供您選擇，可協助您和客戶善用 Windows Server 2016 的功能，且會將對您目前服務及工作負載的影響降至最低。
 

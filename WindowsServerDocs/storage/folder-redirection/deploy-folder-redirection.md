@@ -1,5 +1,5 @@
 ---
-title: 使用離線檔案部署資料夾重新導向
+title: 使用離線檔案搭配離線 FilesDeploy 資料夾重新導向來部署資料夾重新導向
 description: 如何使用 Windows Server，使用離線檔案將資料夾重新導向部署至 Windows 用戶端電腦。
 ms.prod: windows-server
 ms.topic: article
@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d8f6bf0df67b76028945403352bd135e6641a5a
-ms.sourcegitcommit: ab3967d71dcbb962079af194875de58e7c32c4e2
+ms.openlocfilehash: e8e6e5a29c75c117f6faa3c1d1b3f288582d81a2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2020
-ms.locfileid: "76967423"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855881"
 ---
 # <a name="deploy-folder-redirection-with-offline-files"></a>使用離線檔案部署資料夾重新導向
 
@@ -30,7 +30,7 @@ ms.locfileid: "76967423"
 
 ### <a name="hardware-requirements"></a>硬體需求
 
-資料夾重新導向需要 x64 或 x86 型電腦；但 Windows® RT 並不支援。
+資料夾重新導向需要 x64 或 x86 型電腦；但 Windows&reg; RT 並不支援。
 
 ### <a name="software-requirements"></a>軟體需求
 
@@ -99,7 +99,7 @@ ms.locfileid: "76967423"
 | System     | 完全控制        |    這個資料夾、子資料夾及檔案     |
 | Administrators     | 完全控制       | 只有這個資料夾        |
 | 建立者/擁有者     |   完全控制      |   子資料夾及檔案      |
-| 需要將資料放在共用上的使用者安全性群組 (資料夾重新導向使用者)     |   列出資料夾/讀取資料 (進階權限)  <br /><br />建立資料夾/附加資料 (進階權限)  <br /><br />讀取屬性 (進階權限)  <br /><br />讀取擴充屬性 (進階權限)  <br /><br />讀取權限 (進階權限)       |  只有這個資料夾       |
+| 需要將資料放在共用上的使用者安全性群組 (資料夾重新導向使用者)     |   列出資料夾/讀取資料 (進階權限)  <p>建立資料夾/附加資料 (進階權限)  <p>讀取屬性 (進階權限)  <p>讀取擴充屬性 (進階權限)  <p>讀取權限 (進階權限)       |  只有這個資料夾       |
 | 其他群組與帳戶     |  無 (移除)       |         |
 
 ## <a name="step-3-create-a-gpo-for-folder-redirection"></a>步驟 3：建立資料夾重新導向的 GPO

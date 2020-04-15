@@ -1,35 +1,31 @@
 ---
 title: Windows Server 2016 中 Windows 主控台的新功能
 description: 列出 Windows Server 2016 主控台的重要新功能。
-ms.custom: na
 ms.prod: windows-server
 ms.technology: server-general
-ms.reviewer: na
-ms.suite: na
 ms.date: 10/04/2016
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: da9fc582-033b-4973-84e7-0c6024ecfcbc
 author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 305363646aa1714504b0cfb4838170b994ce5da9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b055c379e1d5ee632e420ffd1362389878d3dfd1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391436"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825961"
 ---
 # <a name="whats-new-in-the-windows-console-in-windows-server-2016"></a>Windows Server 2016 中 Windows 主控台的新功能
->適用於：Windows Server 2016
+>適用於：Windows Server 2016
 
 主控台主機 (支援所有字元模式應用程式，包括 Windows 命令提示字元、Windows PowerShell 命令提示字元等的基礎程式碼) 已利用數種方式更新，以新增各種不同的新功能。  
 
 ## <a name="controlling-the-new-features"></a>控制新功能  
 新功能預設將會啟用，但您可以透過 [內容] 介面 (大部分位於 [選項]  索引標籤上)，或使用這些登錄機碼 (所有機碼都是位於 **HKEY_CURRENT_USER\Console** 下的 DWORD 值) 來開啟和關閉各項新功能，或是還原為先前的主控台主機：  
 
-|登錄機碼|描述|  
+|登錄機碼|說明|  
 |----------------|---------------|  
 |ForceV2|1 會啟用所有新主控台功能；0 會停用所有新功能。 注意︰此值不會儲存在捷徑中，而只會儲存在此登錄機碼中。|  
 |LineSelection|1 會啟用線路選擇；0 會僅使用區塊模式|  
@@ -57,7 +53,7 @@ ms.locfileid: "71391436"
 
 主控台視窗現在能有半透明效果 (最小透明度為 30%)。 您可以從 [內容] 功能表，或是使用下列鍵盤命令來調整透明度︰  
 
-|請這樣做：|使用此按鍵組合︰|  
+|若要這樣做：|使用此按鍵組合︰|  
 |---------------|-----------------------------|  
 |增加透明度|CTRL+SHIFT+加號 (+) 或 CTRL+SHIFT+滑鼠向上捲動|  
 |降低透明度|CTRL+SHIFT+減號 (-) 或 CTRL+SHIFT+滑鼠向下捲動|  
@@ -72,7 +68,7 @@ ms.locfileid: "71391436"
 
 **文字選取**  
 
-|請這樣做：|使用此按鍵組合︰|  
+|若要這樣做：|使用此按鍵組合︰|  
 |---------------|-----------------------------|  
 |將游標移至某一字元的左側，以延伸選取範圍|SHIFT+向左鍵|  
 |將游標移至某一字元的右側，以延伸選取範圍|SHIFT+向右鍵|  
@@ -84,7 +80,7 @@ ms.locfileid: "71391436"
 |如果游標「沒有」  位於目前正在編輯的那一行，使用此命令以將選取範圍延伸至左邊界。|SHIFT+HOME|  
 |將選取範圍向下延伸一個畫面|SHIFT+PAGE DOWN|  
 |將選取範圍向上延伸一個畫面|SHIFT+PAGE UP|  
-|將選取範圍向右延伸一個單字。 (您可以使用 WordDelimiters 登錄機碼來為「單字」定義分隔符號)。|CTRL+SHIFT+向右鍵|  
+|將選取範圍向右延伸一個單字。 (您可以使用 WordDelimiters 登錄機碼來為單字定義分隔符號)。|CTRL+SHIFT+向右鍵|  
 |將選取範圍向左延伸一個單字|CTRL+SHIFT+HOME|  
 |將選取範圍延伸至螢幕緩衝區的開頭|CTRL+SHIFT+END|  
 |如果游標位於目前那一行，且該行不是空的，便會選取提示之後的所有文字|CTRL+A|  
@@ -94,7 +90,7 @@ ms.locfileid: "71391436"
 
 您可以使用鍵盤命令在主控台中複製並貼上文字。 CTRL+C 現在具有兩種功能。 如果使用時並未選取任何文字，它會如往常般傳送 BREAK 命令。 如果有選取文字，第一次使用時會複製該文字並清除選取範圍；第二次使用時會傳送 BREAK。 以下是其他的編輯命令︰  
 
-|請這樣做：|使用此按鍵組合︰|  
+|若要這樣做：|使用此按鍵組合︰|  
 |---------------|-----------------------------|  
 |將文字貼到命令列|CTRL+V|  
 |將選取的文字複製到剪貼簿|CTRL+INS|  
@@ -105,7 +101,7 @@ ms.locfileid: "71391436"
 
 若要進入標記模式，您可以隨時以滑鼠右鍵按一下主控台標題列的任何地方，指向 [編輯]  ，然後從開啟的功能表中選取 [標記]  。 您也可以輸入 CTRL+M。 處於標記模式時，使用 ALT 鍵來識別換行選取的開頭。 (如果 [啟用換行選取]  已停用，標記模式將會以區塊的方式選取文字)。處於標記模式時，CTRL+SHIFT+方向鍵會依字元逐一選取，而不是如一般模式中依單字逐一選取。 除了 [編輯文字]  區段中的選取按鍵之外，也可以在標記模式中使用下列組合︰  
 
-|請這樣做：|使用此按鍵組合︰|  
+|若要這樣做：|使用此按鍵組合︰|  
 |---------------|-----------------------------|  
 |進入標記模式以在視窗中移動指標|CTRL+M|  
 |搭配其他按鍵組合，在標記模式中開始換行選取|ALT|  
@@ -116,7 +112,7 @@ ms.locfileid: "71391436"
 
 **瀏覽歷程記錄**  
 
-|請這樣做：|使用此按鍵組合︰|  
+|若要這樣做：|使用此按鍵組合︰|  
 |---------------|-----------------------------|  
 |在輸出歷程記錄中上移一行|CTRL+向上鍵|  
 |在輸出歷程記錄中下移一行|CTRL+向下鍵|  
@@ -125,7 +121,7 @@ ms.locfileid: "71391436"
 
 **其他鍵盤命令**  
 
-|請這樣做：|使用此按鍵組合︰|  
+|若要這樣做：|使用此按鍵組合︰|  
 |---------------|-----------------------------|  
 |開啟 [尋找] 對話方塊|CTRL+F|  
 |關閉主控台視窗|ALT+F4|  

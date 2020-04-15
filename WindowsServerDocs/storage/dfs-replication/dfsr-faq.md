@@ -1,17 +1,17 @@
 ---
-title: DFS 複寫：常見問題集 (FAQ)
+title: DFS 複寫 - 常見問題集 (FAQ)
 ms.date: 06/18/2014
 ms.prod: windows-server
 ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: e92ada07140b88ef4178a5aecdb263b825380c2d
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 1e11f6c596d7e5eb0bdf379adcf47d21e74e9f6b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950288"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815621"
 ---
 # <a name="dfs-replication-frequently-asked-questions-faq"></a>DFS 複寫：常見問題集 (FAQ)
 
@@ -33,7 +33,7 @@ ms.locfileid: "75950288"
   - [從 Windows Server 2003 with SP1 到 Windows Server 2008 的功能變更](https://technet.microsoft.com/library/cc753208)中的[分散式檔案系統](https://technet.microsoft.com/library/cc753479)主題  
       
 
-如需本主題的近期變更清單，請參閱本主題的[變更歷程記錄](#change-history)一節。
+如需近期對本主題所做變更的清單，請參閱本主題的＜ [變更歷程記錄](#change-history) ＞一節。
 
       
 
@@ -74,7 +74,7 @@ DFS 複寫會在執行 Windows Server 作業系統的伺服器上與 NFS 交互�
 
 不可以，系統不支援在執行 windows Server 2003 或更早版本的電腦上，使用 Windows 備份 (Ntbackup.exe) 備份執行 Windows Server 2012、Windows Server 2008 R2 或 Windows Server 2008 的電腦上複寫資料夾的內容。
 
-若要備份儲存在複寫資料夾中的檔案，請使用 Windows Server Backup 或 Microsoft® System Center Data Protection Manager。 如需 Windows Server 2008 R2 及 Windows Server 2008 中備份與復原功能的相關資訊，請參閱[備份和復原](https://technet.microsoft.com/library/Cc754097)＞。 如需詳細資訊，請參閱 [System Center Data Protection Manager](https://go.microsoft.com/fwlink/?linkid=182261) (https://go.microsoft.com/fwlink/?LinkId=182261) 。
+若要備份儲存在複寫資料夾中的檔案，請使用 Windows Server Backup 或 Microsoft&reg; System Center Data Protection Manager。 如需 Windows Server 2008 R2 及 Windows Server 2008 中備份與復原功能的相關資訊，請參閱[備份和復原](https://technet.microsoft.com/library/Cc754097)＞。 如需詳細資訊，請參閱 [System Center Data Protection Manager](https://go.microsoft.com/fwlink/?linkid=182261) (https://go.microsoft.com/fwlink/?LinkId=182261) 。
 
 ### <a name="do-file-system-policies-impact-dfs-replication"></a>檔案系統原則是否會影響 DFS 複寫？
 
@@ -129,7 +129,7 @@ DFS 複寫會在執行 Windows Server 作業系統的伺服器上與 NFS 交互�
 
 ### <a name="what-are-the-benefits-of-using-dfs-replication-instead-of-windows-sharepoint-services"></a>使用 DFS 複寫而不是 Windows SharePoint Services 有哪些優點？
 
-有別於 DFS 複寫，Windows® SharePoint® Services 以檔案簽出功能的形式提供緊密的一致性。 如果您擔心多人編輯相同的檔案，建議使用 Windows SharePoint Services。 Windows Server 2003 R2 中會隨附 Windows SharePoint Services 2.0 (含 Service Pack 2)。 您可以從 Microsoft 網站下載 Windows SharePoint Services；較新版本的 Windows 伺服器中並未包含 Windows SharePoint Services。 不過，如果您要跨多個網站複寫資料，而且使用者不會同時編輯相同的檔案，DFS 複寫能提供更大的頻寬和更簡單的管理。
+有別於 DFS 複寫，Windows&reg; SharePoint&reg; Services 以檔案簽出功能的形式提供緊密的一致性。 如果您擔心多人編輯相同的檔案，建議使用 Windows SharePoint Services。 Windows Server 2003 R2 中會隨附 Windows SharePoint Services 2.0 (含 Service Pack 2)。 您可以從 Microsoft 網站下載 Windows SharePoint Services；較新版本的 Windows 伺服器中並未包含 Windows SharePoint Services。 不過，如果您要跨多個網站複寫資料，而且使用者不會同時編輯相同的檔案，DFS 複寫能提供更大的頻寬和更簡單的管理。
 
 ## <a name="limitations-and-requirements"></a>限制和需求
 
@@ -152,7 +152,7 @@ DFS 複寫可以安全地複寫僅儲存供封存之用的 Microsoft Outlook 個
 
 ### <a name="can-i-use-dfs-replication-in-a-workgroup"></a>我可以在工作組中使用 DFS 複寫嗎？
 
-不可以。 DFS 複寫依賴 Active Directory®Domain Services 進行組態設定。 它只能在網域中運作。
+不可以。 DFS 複寫依賴 Active Directory&reg; Domain Services 進行組態設定。 它只能在網域中運作。
 
 ### <a name="can-more-than-one-folder-be-replicated-on-a-single-server"></a>可以在單一伺服器上複寫一個以上的資料夾嗎？
 
@@ -343,7 +343,7 @@ Windows Server 2008 中的 DFS 複寫包含幾項效能增強功能，如 [Windo
 
 ### <a name="how-does-dfs-replication-performance-compare-with-frs"></a>相較於 FRS，DFS 複寫的效能表現如何？
 
-DFS 複寫比 FRS 更快，特別是對大型檔案和 RDC 進行些微變更時。 例如，使用 RDC 對 2 MB PowerPoint®簡報進行些微變更時，可能只會在網路上傳送 60 KB 的流量 (可節省 97% 的位元組傳輸量)。
+DFS 複寫比 FRS 更快，特別是對大型檔案和 RDC 進行些微變更時。 例如，使用 RDC 對 2 MB PowerPoint&reg; 簡報進行些微變更時，可能只會在網路上傳送 60 KB 的流量 (可節省 97% 的位元組傳輸量)。
 
 RDC 不會用於小於 64 KB 的檔案，而且對於未爭用網路頻寬的高速 Lan 而言，可能不會有任何好處。 您可以使用 DFS 管理，以每個連線為基礎來停用 RDC。
 

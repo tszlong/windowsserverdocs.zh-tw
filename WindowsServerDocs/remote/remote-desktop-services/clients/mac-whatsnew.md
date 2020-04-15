@@ -1,30 +1,56 @@
 ---
 title: macOS 用戶端中的新功能
 description: 了解適用於 Mac 的遠端桌面用戶端最新變更
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 01/06/2020
+ms.date: 04/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ef2a9966da7046a14fb1d9d4562f0ef9b1a09a45
-ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
+ms.openlocfilehash: c378d8c4a87b6aa0cf4f6b4f30f3bd5524dbb7a9
+ms.sourcegitcommit: f95d0e6904b103fc30dcae13e9199e138c287e2b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75919851"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80980850"
 ---
 # <a name="whats-new-in-the-macos-client"></a>macOS 用戶端中的新功能
 
 我們會定期更新[適用於 macOS 的遠端桌面用戶端](remote-desktop-mac.md)，進而新增功能並修正問題。 您可以在這裡找到最新的更新。
 
 如果您遇到任何問題，可以隨時導覽至 [協助]   > [回報問題]  與我們連絡。
+
+## <a name="updates-for-version-1039"></a>10.3.9 版的更新
+
+*發行日期：4/6/20*
+
+在此版本中，我們進行了一些變更，以改善與 [Windows 虛擬桌面服務](https://azure.microsoft.com/services/virtual-desktop/)的互通性。 此外，我們還包含下列更新：
+
+- Control+Option+Delete 現在會觸發 Ctrl+Alt+Del 序列 (先前需要按下 Fn 鍵)。
+- 已修正淺色模式的鍵盤模式通知色彩配置。
+- 已解決使用 GatewayAccessToken RDP 檔案屬性起始的連線無法運作的案例。
+
+>[!NOTE]
+>這是將與 macOS 10.12 相容的最後一個版本。
+
+## <a name="updates-for-version-1038"></a>10.3.8 版的更新
+
+*發行日期：2/12/20*
+
+這是我們 2020 第一次發行的時間！
+
+透過這項更新，您可以在輸入鍵盤輸入時，於 Scancode (Ctrl+Command+K) 與 Unicode (Ctrl+Command+U) 模式之間切換。 Unicode 模式可讓您使用 Mac 鍵盤上的 Option 鍵來輸入擴充字元。 例如，在美國 Mac 鍵盤上，Option+2 會輸入商標 (&trade;) 符號。 您也可以在 Unicode 模式下輸入重音字元。 例如，在美國 Mac 鍵盤上，同時輸入 Option+E 和 "A" 鍵將會在您的遠端工作階段上輸入 "á" 字元。
+
+此版本中的其他更新包括：
+
+- 已清除工作區重新整理體驗和 UI。
+- 已解決智慧卡重新導向問題，這會導致遠端工作階段在登入畫面時停止回應，同時出現「正在檢查狀態」訊息。
+- 縮短建立暫存檔案的時間，這些暫存檔案用於剪貼簿型的檔案複製和貼上。
+- 當您結束應用程式時，現在會自動刪除用於剪貼簿檔案複製和貼上的暫存檔案，而不是依賴 macOS 來進行刪除。
+- 現在會在縮圖的右上角呈現電腦書簽動作。
+- 已進行修正以解決透過損毀遙測回報的問題。
 
 ## <a name="updates-for-version-1037"></a>10.3.7 版的更新
 
@@ -259,7 +285,7 @@ ms.locfileid: "75919851"
 
 *發行日期：08/06/2018*
 
-- 允許連線到加入 Azure Active Directory (AAD) 的電腦。 若要連線到加入 AAD 的電腦，您的使用者名稱必須採用下列其中一種格式：“AzureAD\user” 或 “AzureAD\user@domain”。
+- 允許連線到加入 Azure Active Directory (AAD) 的電腦。 若要連線到加入 AAD 的電腦，您的使用者名稱必須採用下列其中一種格式："AzureAD\user" 或 "AzureAD\user@domain"。
 - 解決影響在遠端工作階段中使用智慧卡的一些 Bug。
 
 ## <a name="updates-for-version-1020"></a>10.2.0 版的更新
@@ -310,7 +336,7 @@ ms.locfileid: "75919851"
 - 您現在可以在桌面磚上按 ENTER 鍵來啟動連線。
 - 當您在全螢幕檢視時，CMD+M 現在會正確對應至 WIN+M。
 - [連線中心]、[喜好設定] 和 [關於] 視窗現在會回應 CMD+M。
-- 您現在可以在 [新增遠端資源]  頁面上按 ENTER 鍵來開始探索摘要。
+- 您現在可以在 *[新增遠端資源]  頁面上按 ENTER 鍵來開始探索摘要。
 - 修正在您重新整理之前，新遠端資源摘要在連線中心顯示空白的問題。
 
 ## <a name="updates-for-version-1016"></a>10.1.6 版的更新

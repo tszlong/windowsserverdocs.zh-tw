@@ -1,20 +1,19 @@
 ---
-ms.assetid: ''
 title: 適用於可追蹤性的 Windows Time
 description: 在許多磁區中，都必須仰賴 UTC 對系統的追蹤來符合法規。  這表示系統的位移可在 UTC 方面得到證實。
-author: eross-msft
+author: dcuomo
 ms.author: dacuo
 manager: dougkim
 ms.date: 10/17/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: e7f7a68d61729813583255d64afbf172475969e3
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 30952c7a15109ccdd8bcbb09d7c8dda44f716d5d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314930"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859811"
 ---
 # <a name="windows-time-for-traceability"></a>適用於可追蹤性的 Windows Time
 >適用於：Windows Server 2016 1709 版或更新版本，以及 Windows 10 1703 或更新版本
@@ -126,7 +125,7 @@ server1.fabrikam.com,0x8 (ntp.m|0x8|[::]:123->[IPAddress]:123)server2.fabrikam.c
 |||
 |---|---|
 |事件描述 |系統時脈頻率已調整 |
-|詳細資料 |當時鐘緊密同步處理時，W32time 會持續修改系統時脈頻率。 我們應在事件記錄檔不滿溢的情況下，擷取對時脈頻率的「相當程度的」調整。 |
+|詳細資料 |當時鐘緊密同步處理時，W32time 會持續修改系統時脈頻率。 我們應在事件記錄檔不滿溢的情況下，擷取對時脈頻率的「相當程度」調整。 |
 |節流機制  |所有低於 TimeAdjustmentAuditThreshold (最小值 = 百萬分之 128，預設值 = 百萬分之 800) 的時脈調整，都不會列入記錄。<br><br>具有目前細微性的時脈頻率若有 2 PPM 的變更，時鐘準確度將會產生 120 微秒/秒的變更。<br><br>在同步化系統上，大部分的調整都會低於此層級。 如果您想要更細微的追蹤，您可以調整這項設定，或是使用效能計數器，或兩者同時進行。 |
 
 # <a name="263"></a>[263](#tab/263)

@@ -1,27 +1,25 @@
 ---
-title: 管理 Nano Server
+title: 管理 Nano 伺服器
 description: 更新、服務封裝、網路追蹤、效能監控
 ms.prod: windows-server
-ms.service: na
 manager: DonGill
 ms.technology: server-nano
 ms.date: 09/06/2017
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 599d6438-a506-4d57-a0ea-1eb7ec19f46e
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 132f4e1966b332cd6bb6e21402984db7ceed4497
-ms.sourcegitcommit: d599eea5203f95609fb21801196252d5dd9f2669
+ms.openlocfilehash: 0b41113f302dad1c9917001bf137da28ef431d38
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005220"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826781"
 ---
-# <a name="manage-nano-server"></a>管理 Nano Server
+# <a name="manage-nano-server"></a>管理 Nano 伺服器
 
->適用於：Windows Server 2016
+>適用於：Windows Server 2016
 
 > [!IMPORTANT]
 > 從 Windows Server 1709 版開始，Nano Server 僅以[容器基礎 OS 映像](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)的形式來提供。 請查看 [Nano Server 的變更](nano-in-semi-annual-channel.md)以了解這代表的意義。   
@@ -45,14 +43,14 @@ Nano Server 是從遠端進行管理。 完全沒有本機登入功能，也不�
   
 若要將 Nano Server 新增至信任主機清單，請在提升權限的 Windows PowerShell 命令提示字元中執行下列命令：  
   
-`Set-Item WSMan:\localhost\Client\TrustedHosts "<IP address of Nano Server>"`  
+`Set-Item WSMan:\localhost\Client\TrustedHosts <IP address of Nano Server>`  
   
 若要啟動遠端 Windows PowerShell 工作階段，請啟動提升權限的本機 Windows PowerShell 工作階段，然後執行下列命令：  
   
   
 ```  
-$ip = "<IP address of Nano Server>"  
-$user = "$ip\Administrator"  
+$ip = <IP address of Nano Server>  
+$user = $ip\Administrator  
 Enter-PSSession -ComputerName $ip -Credential $user  
 ```  
   
@@ -71,7 +69,7 @@ Enter-PSSession -ComputerName $ip -Credential $user
   
   
 ```  
-$ip = "<IP address of the Nano Server\>"  
+$ip = <IP address of the Nano Server\>  
 $user = $ip\Administrator  
 $cim = New-CimSession -Credential $user -ComputerName $ip  
 ```  
@@ -82,7 +80,7 @@ $cim = New-CimSession -Credential $user -ComputerName $ip
   
 ```  
 Get-CimInstance -CimSession $cim -ClassName Win32_ComputerSystem | Format-List *  
-Get-CimInstance -CimSession $Cim -Query "SELECT * from Win32_Process WHERE name LIKE 'p%'"  
+Get-CimInstance -CimSession $Cim -Query SELECT * from Win32_Process WHERE name LIKE 'p%'  
 ```  
   
   
@@ -91,7 +89,7 @@ Get-CimInstance -CimSession $Cim -Query "SELECT * from Win32_Process WHERE name 
   
 ```
 winrm quickconfig
-winrm set winrm/config/client @{TrustedHosts="<ip address of Nano Server>"}
+winrm set winrm/config/client @{TrustedHosts=<ip address of Nano Server>}
 chcp 65001
 ```
   
@@ -126,7 +124,7 @@ Stop-NetEventSession [-Name]
   
 1.  下載服務套件 (從關聯的知識庫文章或 [Microsoft Update Catalog](https://catalog.update.microsoft.com/v7/site/home.aspx))。 將它儲存至本機目錄或網路共用，例如︰C:\ServicingPackages  
 2.  建立您要在其中儲存解壓縮之服務套件的資料夾。  範例︰c:\KB3157663_expanded  
-3.  開啟 Windows PowerShell 主控台，然後使用 `Expand` 命令來指定服務套件的 .msu 檔案路徑，包括 `-f:*` 參數和解壓縮服務套件的目的地路徑。  例如：`Expand "C:\ServicingPackages\Windows10.0-KB3157663-x64.msu" -f:* "C:\KB3157663_expanded"`  
+3.  開啟 Windows PowerShell 主控台，然後使用 `Expand` 命令來指定服務套件的 .msu 檔案路徑，包括 `-f:*` 參數和解壓縮服務套件的目的地路徑。  例如：`Expand C:\ServicingPackages\Windows10.0-KB3157663-x64.msu -f:* C:\KB3157663_expanded`  
   
     展開的檔案應該類似如下：  
 C:>dir C:\KB3157663_expanded   
@@ -158,7 +156,7 @@ C:>dir C:\KB3157663_expanded
 ```  
 $sess = New-CimInstance -Namespace root/Microsoft/Windows/WindowsUpdate -ClassName MSFT_WUOperationsSession  
 
-$scanResults = Invoke-CimMethod -InputObject $sess -MethodName ScanForUpdates -Arguments @{SearchCriteria="IsInstalled=0";OnlineScan=$true}  
+$scanResults = Invoke-CimMethod -InputObject $sess -MethodName ScanForUpdates -Arguments @{SearchCriteria=IsInstalled=0;OnlineScan=$true}  
 ```  
 **注意：**  
 如果沒有更新可用，此命令會傳回下列錯誤：  
@@ -171,7 +169,7 @@ At line:1 char:16
 
 +                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
 
-    + CategoryInfo          : NotSpecified: (MSFT_WUOperatio...-5b842a3dd45d")  
+    + CategoryInfo          : NotSpecified: (MSFT_WUOperatio...-5b842a3dd45d)  
 
    :CimInstance) [Invoke-CimMethod], CimException  
 
@@ -201,7 +199,7 @@ Windows Defender 將會防止安裝更新。 若要解決此問題，請解除�
 ```  
 $sess = New-CimInstance -Namespace root/Microsoft/Windows/WindowsUpdate -ClassName MSFT_WUOperationsSession  
 
-$scanResults = Invoke-CimMethod -InputObject $sess -MethodName ScanForUpdates -Arguments @{SearchCriteria="IsInstalled=1";OnlineScan=$true}  
+$scanResults = Invoke-CimMethod -InputObject $sess -MethodName ScanForUpdates -Arguments @{SearchCriteria=IsInstalled=1;OnlineScan=$true}  
 ```  
 
 **注意：**  
@@ -214,7 +212,7 @@ Get-WindowsPackage -Online
 ---  
 上述命令會在網際網路上查詢 Windows Update 和 Microsoft Update 服務，並下載更新。 如果您使用 WSUS，您可以在 Nano Server 上設定登錄機碼，以改用 WSUS 伺服器。  
   
-請參閱 [Configure Automatic Updates in a Non-Active Directory Environment](https://technet.microsoft.com/library/cc708449(v=ws.10).aspx) (在非 Active Directory 環境中設定自動更新) 中的「Windows Update Agent Environment Options Registry Keys」(Windows Update 代理程式環境選項登錄機碼) 表格  
+請參閱 [Configure Automatic Updates in a Non-Active Directory Environment](https://technet.microsoft.com/library/cc708449(v=ws.10).aspx) (在非 Active Directory 環境中設定自動更新) 中的 Windows Update Agent Environment Options Registry Keys (Windows Update 代理程式環境選項登錄機碼) 表格  
   
 您至少應該設定 **WUServer** 和 **WUStatusServer** 登錄機碼，但視您如何實作 WSUS，可能需要其他值。 您一律可以藉由檢查相同環境中的另一部 Windows Server，來確認這些設定。  
 
@@ -244,7 +242,7 @@ wpr.exe -providers
 
 您可以依感興趣的事件類型篩選輸出。 例如：
 ```
-PS C:\> wpr.exe -providers | select-string "Storage"
+PS C:\> wpr.exe -providers | select-string Storage
 
        595f33ea-d4af-4f4d-b4dd-9dacdd17fc6e                              : Microsoft-Windows-StorageManagement-WSP-Host
        595f7f52-c90a-4026-a125-8eb5e083f15e                              : Microsoft-Windows-StorageSpaces-Driver
@@ -258,21 +256,21 @@ PS C:\> wpr.exe -providers | select-string "Storage"
 
 建立及啟動追蹤，並指定檔案名稱以儲存事件。
 ```
-PS C:\> New-EtwTraceSession -Name "ExampleTrace" -LocalFilePath c:\etrace.etl
+PS C:\> New-EtwTraceSession -Name ExampleTrace -LocalFilePath c:\etrace.etl
 ```
 
 將提供者 GUID 新增至追蹤。 使用 ```wpr.exe -providers``` 作為 GUID 翻譯的提供者名稱。 
 ```
-PS C:\> wpr.exe -providers | select-string "Kernel-Memory"
+PS C:\> wpr.exe -providers | select-string Kernel-Memory
 
        d1d93ef7-e1f2-4f45-9943-03d245fe6c00                              : Microsoft-Windows-Kernel-Memory
 
-PS C:\> Add-EtwTraceProvider -Guid "{d1d93ef7-e1f2-4f45-9943-03d245fe6c00}" -SessionName "ExampleTrace"
+PS C:\> Add-EtwTraceProvider -Guid {d1d93ef7-e1f2-4f45-9943-03d245fe6c00} -SessionName ExampleTrace
 ```
 
 移除追蹤 -- 這會停止追蹤工作階段，並將事件排清至關聯的記錄檔。
 ```
-PS C:\> Remove-EtwTraceSession -Name "ExampleTrace"
+PS C:\> Remove-EtwTraceSession -Name ExampleTrace
 
 PS C:\> dir .\etrace.etl
 
@@ -330,12 +328,12 @@ Copyright (c) 2015 Microsoft Corporation. All rights reserved.
 
 首先，建立新的自動記錄工具設定。
 ```
-PS C:\> New-AutologgerConfig -Name "BootPnpLog" -LocalFilePath c:\bootpnp.etl 
+PS C:\> New-AutologgerConfig -Name BootPnpLog -LocalFilePath c:\bootpnp.etl 
 ```
 
 將 ETW 提供者新增至此設定。 此範例使用核心 PnP 提供者。 再次叫用 ```Add-EtwTraceProvider```，然後指定相同的自動記錄工具名稱但不同的 GUID，來啟用多個來源的開機追蹤收集。
 ```
-Add-EtwTraceProvider -Guid "{9c205a39-1250-487d-abd7-e831c6290539}" -AutologgerName BootPnpLog
+Add-EtwTraceProvider -Guid {9c205a39-1250-487d-abd7-e831c6290539} -AutologgerName BootPnpLog
 ```
 
 這不會立即啟動 ETW 工作階段，而是設定一個工作階段在下次開機時啟動。 重新開機之後，具有自動記錄工具設定名稱的新 ETW 工作階段會自動啟動，並啟用已新增的追蹤提供者。 Nano Server 開機之後，下列命令會在將記錄的事件排清至關聯的追蹤檔案之後停止追蹤工作階段：
@@ -355,7 +353,7 @@ PS C:\> Remove-AutologgerConfig -Name BootPnpLog
 
 查詢可用的計數器 - 您可以篩選輸出，輕鬆地找出感興趣的輸出。
 ```
-PS C:\> typeperf.exe -q | Select-String "UDPv6"
+PS C:\> typeperf.exe -q | Select-String UDPv6
 
 \UDPv6\Datagrams/sec
 \UDPv6\Datagrams Received/sec
@@ -366,14 +364,14 @@ PS C:\> typeperf.exe -q | Select-String "UDPv6"
 
 這些選項可讓您指定收集計數器值的次數和間隔。 在下列範例中，每隔 3 秒會收集 5 次處理器閒置時間。
 ```
-PS C:\> typeperf.exe "\Processor Information(0,0)\% Idle Time" -si 3 -sc 5
+PS C:\> typeperf.exe \Processor Information(0,0)\% Idle Time -si 3 -sc 5
 
-"(PDH-CSV 4.0)","\\ns-g2\Processor Information(0,0)\% Idle Time"
-"09/15/2016 09:20:56.002","99.982990"
-"09/15/2016 09:20:59.002","99.469634"
-"09/15/2016 09:21:02.003","99.990081"
-"09/15/2016 09:21:05.003","99.990454"
-"09/15/2016 09:21:08.003","99.998577"
+(PDH-CSV 4.0),\\ns-g2\Processor Information(0,0)\% Idle Time
+09/15/2016 09:20:56.002,99.982990
+09/15/2016 09:20:59.002,99.469634
+09/15/2016 09:21:02.003,99.990081
+09/15/2016 09:21:05.003,99.990454
+09/15/2016 09:21:08.003,99.998577
 Exiting, please wait...
 The command completed successfully.
 ```

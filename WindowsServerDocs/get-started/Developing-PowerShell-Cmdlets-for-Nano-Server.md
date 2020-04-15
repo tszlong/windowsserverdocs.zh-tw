@@ -1,23 +1,21 @@
 ---
 title: 開發 Nano 伺服器的 PowerShell Cmdlet
-description: '移植 CIM、.NET Cmdlet、C++ '
+description: 移植 CIM、.NET Cmdlet、C++
 ms.prod: windows-server
-ms.service: na
 manager: DonGill
 ms.technology: server-nano
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7b4267f0-1c91-4a40-9262-5daf4659f686
 author: jaimeo
 ms.author: jaimeo
 ms.date: 09/06/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 434b79508dbf88a90348840573255c3084d6e989
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 3965e453483b3515e4957ecfaba39cf9a0b8104f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948458"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827071"
 ---
 # <a name="developing-powershell-cmdlets-for-nano-server"></a>開發 Nano 伺服器的 PowerShell Cmdlet
 
@@ -74,7 +72,7 @@ CompatiblePSEditions Property   System.Collections.Generic.IEnumerable[string] C
 ```  
 取得可用的模組清單時，您可以依 PowerShell 版本篩選清單。  
 ```powershell  
-Get-Module -ListAvailable | ? CompatiblePSEditions -Contains "Desktop"  
+Get-Module -ListAvailable | ? CompatiblePSEditions -Contains Desktop  
   
     Directory: C:\Program Files\WindowsPowerShell\Modules  
   
@@ -83,21 +81,21 @@ ModuleType Version    Name                                ExportedCommands
 ---------- -------    ----                                ----------------  
 Manifest   1.0        ModuleWithPSEditions  
   
-Get-Module -ListAvailable | ? CompatiblePSEditions -Contains "Core" | % CompatiblePSEditions  
+Get-Module -ListAvailable | ? CompatiblePSEditions -Contains Core | % CompatiblePSEditions  
 Desktop  
 Core  
   
 ```  
 指令碼作者可在 #requires 陳述式上使用 PSEdition 參數，只允許指令碼在相容的 PowerShell 版本上執行。  
 ```powershell  
-Set-Content C:\script.ps1 -Value "#requires -PSEdition Core  
-Get-Process -Name PowerShell"  
+Set-Content C:\script.ps1 -Value #requires -PSEdition Core  
+Get-Process -Name PowerShell  
 Get-Content C:\script.ps1  
 #requires -PSEdition Core  
 Get-Process -Name PowerShell  
   
 C:\script.ps1  
-C:\script.ps1 : The script 'script.ps1' cannot be run because it contained a "#requires" statement for PowerShell editions 'Core'. The edition of PowerShell that is required by the script does not match the currently running PowerShell Desktop edition.  
+C:\script.ps1 : The script 'script.ps1' cannot be run because it contained a #requires statement for PowerShell editions 'Core'. The edition of PowerShell that is required by the script does not match the currently running PowerShell Desktop edition.  
 At line:1 char:1  
 + C:\script.ps1  
 + ~~~~~~~~~~~~~  
@@ -145,7 +143,7 @@ PowerShell 支援 Cmdlet 的一些實作類型，而您所使用的類型會決�
 Nano Server 支援大部分的 C# 程式碼。 您可以使用 [ApiPort](https://github.com/Microsoft/dotnet-apiport) 掃描是否有不相容的 API。  
   
 ### <a name="powershell-core-sdk"></a>Powershell Core SDK  
-[PowerShell Gallery](https://www.powershellgallery.com/packages/Microsoft.PowerShell.NanoServer.SDK/) (PowerShell 資源庫) 中提供模組 "Microsoft.PowerShell.NanoServer.SDK"，使用以 Nano Server 隨附的 CoreCLR 和 PowerShell Core 版本為目標的 Visual Studio 2015 Update 2 來加速 .NET Cmdlet 的開發。 您可以使用 PowerShellGet 搭配下列命令來安裝模組：  
+[PowerShell Gallery](https://www.powershellgallery.com/packages/Microsoft.PowerShell.NanoServer.SDK/) (PowerShell 資源庫) 中提供模組 Microsoft.PowerShell.NanoServer.SDK，使用以 Nano Server 隨附的 CoreCLR 和 PowerShell Core 版本為目標的 Visual Studio 2015 Update 2 來加速 .NET Cmdlet 的開發。 您可以使用 PowerShellGet 搭配下列命令來安裝模組：  
   
 `Find-Module Microsoft.PowerShell.NanoServer.SDK -Repository PSGallery | Install-Module -Scope <scope>`  
   
@@ -214,7 +212,7 @@ public class TestNetConnectionResult
 '@  
 # Create object and set properties  
 $result = New-Object TestNetConnectionResult  
-$result.ComputerName = "Foo"  
+$result.ComputerName = Foo  
 $result.RemoteAddress = 1.1.1.1  
   
 ```  
@@ -231,7 +229,7 @@ class TestNetConnectionResult
 }  
 # Create object and set properties  
 $result = [TestNetConnectionResult]::new()  
-$result.ComputerName = "Foo"  
+$result.ComputerName = Foo  
 $result.RemoteAddress = 1.1.1.1  
   
 ```  

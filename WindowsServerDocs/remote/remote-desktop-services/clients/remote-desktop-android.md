@@ -1,12 +1,8 @@
 ---
 title: 開始使用 Android 用戶端
 description: 有關 Android 用戶端的一般資訊。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: heidilohr
@@ -14,12 +10,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 03/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d4ef08107c816aebf6563e57e5e76b12b793d472
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: a9cb49f2570b297c81f41412ad041215090538d0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323420"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856231"
 ---
 # <a name="get-started-with-the-android-client"></a>開始使用 Android 用戶端
 
@@ -72,7 +68,7 @@ ms.locfileid: "79323420"
 想要移除連線嗎？ 再次點選 [更多選項]  功能表 ( **...** )，然後點選 [移除]  。
 
 >[!TIP]
-> 如果您收到有關密碼錯誤的錯誤 0xf07 (「無法連線到遠端電腦，因為與使用者帳戶關聯的密碼已過期」)，請變更密碼，然後再試一次。
+> 如果您收到有關密碼錯誤的錯誤 0xf07 (無法連線到遠端電腦，因為與使用者帳戶關聯的密碼已過期)，請變更密碼，然後再試一次。
 
 ### <a name="add-remote-resources"></a>新增遠端資源
 
@@ -103,7 +99,7 @@ ms.locfileid: "79323420"
 
 1. 點選 [應用程式]  以啟動 [應用程式] 功能表。
 2. 點選 [Widget]  。
-3. 撥動 Widget 清單，並尋找有以下描述的 [遠端桌面] 圖示：「釘選遠端桌面。」
+3. 撥動 Widget 清單，並尋找有以下描述的 [遠端桌面] 圖示：釘選遠端桌面。
 4. 點選並按住該遠端桌面 Widget，並將它移到主畫面。
 5. 當您放開圖示時，您將看到已儲存的遠端桌面。 選擇您想要儲存到主畫面的連線。
 

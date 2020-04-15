@@ -1,12 +1,8 @@
 ---
 title: 遠端桌面用戶端 URI 配置
 description: 了解遠端桌面用戶端的統一資源識別項配置
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0c3f1eb6-835c-4522-99ff-56c6ee4bb911
 author: lizap
@@ -14,12 +10,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 06/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 56d11a2ab0afab1e119666aea17bb6d54cd5638b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 02f970cb2e793c1e342a2818a2bca3900327fa9c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404122"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856001"
 ---
 # <a name="remote-desktop-client-universal-resource-identifier-uri-scheme-support"></a>遠端桌面用戶端的統一資源識別項 (URI) 配置支援
 

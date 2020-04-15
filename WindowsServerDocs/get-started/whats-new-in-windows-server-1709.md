@@ -8,18 +8,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
 ms.date: 06/03/2019
-ms.openlocfilehash: 5dbbdc19707f2eadfa3b2c919af95b58645de441
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 07479bc5bd2fdf661db8a30e3a9f20c7cce0513e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391373"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825991"
 ---
 # <a name="whats-new-in-windows-server-version-1709"></a>Windows Server 版本 1709 中的新功能
 
 >適用於：Windows Server (半年通道)
 
-<img src="../media/landing-icons/new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">&nbsp;若要了解 Windows 的最新功能，請參閱 [Windows Server 的新功能](whats-new-in-windows-server.md)。 本節內容說明 Windows Server 版本 1709 的新功能和變更。 此處所列的新功能和變更是您使用這個版本時最可能帶來最大影響的新功能和變更。 另請參閱 [Windows Server 版本 1709](https://blogs.technet.microsoft.com/windowsserver/2017/08/24/sneak-peek-1-windows-server-version-1709/)。
+<img src=../media/landing-icons/new.png style='float:left; padding:.5em;' alt=Icon showing a newspaper>&nbsp;若要了解 Windows 的最新功能，請參閱 [Windows Server 的新功能](whats-new-in-windows-server.md)。 本節內容說明 Windows Server 版本 1709 的新功能和變更。 此處所列的新功能和變更是您使用這個版本時最可能帶來最大影響的新功能和變更。 另請參閱 [Windows Server 版本 1709](https://blogs.technet.microsoft.com/windowsserver/2017/08/24/sneak-peek-1-windows-server-version-1709/)。
 
 > [!IMPORTANT]
 > 自 2019 年 4 月 9 日起，Windows Server 版本 1709 不再受到支援。
@@ -56,7 +56,7 @@ ms.locfileid: "71391373"
 請查看 [Project Honolulu](https://docs.microsoft.com/windows-server/manage/honolulu/honolulu)，以了解可協助 IT 系統管理員管理核心疑難排解、設定及維護案例的簡化整合式安全體驗。  Project Honolulu 包含提供簡化整合式安全可延伸介面的新一代工具。
 Project Honolulu 包含直覺式全新管理體驗，適用於管理電腦、Windows 伺服器、容錯移轉叢集，以及以儲存空間直接存取為基礎的超融合式基礎結構，並且降低營運成本。
 
-## <a name="compute"></a>計算
+## <a name="compute"></a>運算
 
 **Nano 容器和 Server Core 容器**：首先，這個版本是關於推動應用程式創新。 Nano Server 或 Nano as Host 已被取代並更換成 Nano 容器，這是以容器映像方式執行的 Nano。 
 
@@ -88,7 +88,7 @@ Project Honolulu 包含直覺式全新管理體驗，適用於管理電腦、Win
 
 **SMBLoris 弱點**：已解決可能導致阻斷服務所謂「SMBLoris」的問題。
 
-## <a name="storage"></a>儲存體
+## <a name="storage"></a>存放裝置
 
 **儲存體複本**：儲存體複本在 Windows Server 2016 中新增的災害復原保護現已擴充到包含：
 - **測試容錯移轉**：掛接目的地存放裝置的選項現在可以透過測試容錯移轉功能來使用。 您可以在目的地節點上暫時掛接已複寫存放裝置的快照集以作測試或備份之用。  如需詳細資訊，請參閱[儲存體複本的常見問題集](https://aka.ms/srfaq)。 

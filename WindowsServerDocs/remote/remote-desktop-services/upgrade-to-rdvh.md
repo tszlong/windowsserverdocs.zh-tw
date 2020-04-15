@@ -1,24 +1,20 @@
 ---
 title: 將遠端桌面虛擬主機升級至 Windows Server 2016
 description: 本文說明如何將現有的遠端桌面服務部署升級至 Windows Server 2016。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: spatnaik
 ms.date: 08/01/2016
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5aed8ba7-f541-4416-b01c-4d3b1712e2b1
 author: spatnaik
 manager: scottman
-ms.openlocfilehash: 319074987ae161e2b567c15e9e56cce0e2106a1f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7bbf5f6a81a18303d4f9f4b02a1b8dead3c9a53a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403787"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857111"
 ---
 # <a name="upgrading-your-remote-desktop-virtualization-host-to-windows-server-2016"></a>將遠端桌面虛擬主機升級至 Windows Server 2016
 
@@ -54,7 +50,7 @@ ms.locfileid: "71403787"
     1. 按一下 [角色]  。 
     1. 以滑鼠右鍵按一下 VM 物件，然後按一下 [移除]  。 
 10. 在一個未升級的 RDVH 伺服器上，使用 Hyper-V 管理員將所有 VM 移至其中一個已升級的 RDVH 伺服器和新的叢集 CSV：
-    1. 開啟 \[Hyper-V 管理員\]。 
+    1. 開啟 [Hyper-V 管理員]。 
     2. 選取其中一個未升級 RDVH 伺服器。 
     3. 以滑鼠右鍵按一下其中一個要移動的 VM，然後按一下 [移動]  。 
     4. 選擇 [移動虛擬機器]  ，然後按 [下一步]  。 

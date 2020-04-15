@@ -1,23 +1,19 @@
 ---
 title: 版本資訊 - Windows Server 2016 的重要問題
 description: 摘要說明需要因應措施以避免損毀、停止回應、安裝失敗、資料遺失的重要問題。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.date: 11/13/2018
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 134aab85-664f-4d44-87ef-9e5fd389071f
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: f4568e1781dbe385d8abe8a96f07841391506738
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: 8ceff837c2b85466f5583eed03f39e73f32fd4a4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822161"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826381"
 ---
 # <a name="release-notes-important-issues-in-windows-server-2016"></a>版本資訊：Windows Server 2016 中的重要問題
 
@@ -42,7 +38,7 @@ ms.locfileid: "76822161"
 ## <a name="containers"></a>容器
 
 [comment]: # (ID:371; Submitter: taylorb; state: 已核准)
-- 使用容器之前，請先安裝 [Windows 10 1607 版的服務堆疊更新：2016 年 8 月 23 日](https://support.microsoft.com/kb/3176936)或任何可用的更新版本。 否則，可能會發生許多問題，包括建置、啟動，或執行容器失敗，以及與「CreateProcess 在 Win32 中失敗:RPC 伺服器無法使用」類似的錯誤。
+- 使用容器之前，請先安裝 [Windows 10 1607 版的服務堆疊更新：2016 年 8 月 23 日](https://support.microsoft.com/kb/3176936)或任何可用的更新版本。 否則，可能會發生許多問題，包括建置、啟動，或執行容器失敗，以及類似下列的錯誤訊息：CreateProcess 在 Win32 中失敗:RPC 伺服器無法使用。
 
 [comment]: # (ID:373; Submitter: plang; state: 已核准)
 - NanoServerPackage OneGet 提供者無法在 Windows 容器中運作。 若要解決這個問題，請在不同的電腦 (非容器) 上使用 Find-NanoServerPackage 和 Save-NanoServerPackage，來下載所需的套件。 然後將套件複製到容器並進行安裝。
@@ -86,7 +82,7 @@ ms.locfileid: "76822161"
 
 ## <a name="copyright"></a>著作權
 
-本文件是以原本的形式提供， 本文件中提供的資訊及檢視 (包括 URL 及其他網際網路網站參照) 如有變更，恕不另行通知。  
+本文件是以原本的形式提供。 本文件中提供的資訊及檢視 (包括 URL 及其他網際網路網站參照) 如有變更，恕不另行通知。  
 
 本文件不為您提供對任何 Microsoft 產品中的任何智慧財產的法定權利。 您可以複製本文件供內部參照之用。  
 

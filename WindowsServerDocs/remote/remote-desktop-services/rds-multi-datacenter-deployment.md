@@ -1,24 +1,20 @@
 ---
 title: Azure 中的異地備援 RDS 資料中心
 description: 了解如何建立 RDS 部署，以使用多個資料中心跨地理位置提供高可用性。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 61c36528-cf47-4af0-83c1-a883f79a73a5
 author: haley-rowland
 ms.author: elizapo
 ms.date: 06/14/2017
 manager: dongill
-ms.openlocfilehash: 55b96c112dd7f7294ff674ee4675501af4287da4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5c0f5d6937a79f36df264597400fe71af3f3779b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403956"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855591"
 ---
 # <a name="create-a-geo-redundant-multi-data-center-rds-deployment-for-disaster-recovery"></a>建立異地備援的多資料中心 RDS 部署以進行災害復原
 
@@ -66,7 +62,7 @@ ms.locfileid: "71403956"
    
       2. 編輯電腦名稱，使它們不會與 RG A 中的部署名稱衝突。
       
-         在範本的 [資源]  區段中尋找 VM。 變更 [osProfile]  下的 [computerName]  欄位。 例如，"gateway" 可變成 "gateway **-b**"；"[concat('rdsh-', copyIndex())]" 可變成 "[concat('rdsh-b-', copyIndex())]"；而 “broker” 可變成 “broker **-b**”。
+         在範本的 [資源]  區段中尋找 VM。 變更 [osProfile]  下的 [computerName]  欄位。 例如，"gateway" 可以變成 "gateway **-b**"、"[concat('rdsh-', copyIndex())]" 可以變成 "[concat('rdsh-b-', copyIndex())]"，而 "broker" 可以變成 "broker **-b**"。
       
          (您也可以在執行範本之後手動變更 VM 的名稱。)
    2. 如上述步驟 3 所述，您可以使用[遠端桌面服務 - 高可用性](rds-plan-high-availability.md)中的資訊設定其他 RDS 元件以取得高可用性。
@@ -103,7 +99,7 @@ ms.locfileid: "71403956"
 
 建立 [Azure 流量管理員](/azure/traffic-manager/traffic-manager-overview)，並確定選取 [優先順序]  路由方法。 將兩個端點設定為每個部署的公用 IP 位址。 在 [設定]  下，將通訊協定變更為 HTTPS (而不是 HTTP)，並將連接埠變更為 443 (而不是 80)。 記下 [DNS 存留時間]  ，並根據您的容錯移轉需求適當地進行設定。 
 
-請注意，流量管理員需要端點在 GET 要求的回應中傳回 200 確定，才能標示為「狀況良好」。 從 RDS 範本建立的 publicIP 物件將會運作，但不會新增路徑增補。 相反地，您可以提供附加 “/RDWeb” 的流量管理員 URL 給終端使用者，例如：```http://deployment.trafficmanager.net/RDWeb```
+請注意，流量管理員需要端點在 GET 要求的回應中傳回 200 確定，才能標示為「狀況良好」。 從 RDS 範本建立的 publicIP 物件將會運作，但不會新增路徑增補。 相反地，您可以提供附加 "/RDWeb" 的流量管理員 URL 給終端使用者，例如：```http://deployment.trafficmanager.net/RDWeb```
 
 藉由部署使用 [優先順序] 路由方法的 Azure 流量管理員，您就可以防止終端使用者在使用中部署運作時存取被動部署。 如果終端使用者存取被動部署，而且尚未針對容錯移轉切換儲存體複本方向，使用者登入會停止回應，因為部署會嘗試且無法存取被動儲存空間直接存取叢集上的檔案共用 - 最終部署將會放棄並提供暫存設定檔給使用者。  
 

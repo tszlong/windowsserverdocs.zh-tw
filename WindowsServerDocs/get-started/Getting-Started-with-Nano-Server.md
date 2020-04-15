@@ -2,22 +2,20 @@
 title: 安裝 Nano 伺服器
 description: Nano Server 的全新安裝、升級、移轉及評估
 ms.prod: windows-server
-ms.service: na
 manager: dougkim
 ms.technology: server-nano
 ms.date: 09/06/2017
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 2c2fa45b-6f3b-4663-b421-2da6ecc463bf
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 09f031c19c8f6d1105d47b9f22d52db30e9c57ef
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: 68de1697c8655075041cd9e598ccd2bbc2e6237b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822151"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826981"
 ---
 # <a name="install-nano-server"></a>安裝 Nano 伺服器
 
@@ -30,7 +28,7 @@ Windows Server 2016 提供新的安裝選項︰Nano Server。 Nano Server 是一
 
 Nano Server 適用於一些案例：  
   
--   作為 Hyper-V 虛擬機器的「計算」主機 (可以是叢集或非叢集)  
+-   作為 Hyper-V 虛擬機器的計算主機 (可以在或不在叢集中)  
   
 -   作為向外延展檔案伺服器的存放裝置主機。  
   
@@ -42,9 +40,9 @@ Nano Server 適用於一些案例：
   
 ## <a name="important-differences-in-nano-server"></a>Nano Server 中的重要差異
 
-由於 Nano Server 經過最佳化，作為輕量型作業系統，用來執行以容器和微服務為基礎的「雲端原生」應用程式，或是作為靈活且符合成本效益的資料中心主機，並大幅減少使用量，因此 Nano Server 與 Server Core 或「使用桌面體驗的伺服器」有重要的差異︰
+由於 Nano Server 經過最佳化，作為輕量型作業系統，用來執行以容器和微服務為基礎的雲端原生應用程式，或是作為靈活且符合成本效益的資料中心主機，並大幅減少使用量，因此 Nano Server 與 Server Core 或「使用桌面體驗的伺服器」有重要的差異︰
 
-- Nano Server 為「無周邊」，不具本機登入功能或圖形化使用者介面。
+- Nano Server 為無周邊，不具本機登入功能或圖形化使用者介面。
 - 僅支援 64 位元應用程式、工具及代理程式。
 - Nano Server 無法作為 Active Directory 網域控制站。
 - 不支援群組原則。 不過，您可以使用[預期狀態設定](https://msdn.microsoft.com/powershell/dsc/nanoDsc)大規模地套用設定。
@@ -58,7 +56,7 @@ Nano Server 適用於一些案例：
 - Nano Server 僅在最新商務分支 (CBB) 模型上受支援，Nano Server 目前沒有長期維護分支 (LTSB) 版本。 如需詳細資訊，請參閱下列各子章節。
 
 ### <a name="current-branch-for-business"></a>最新商務分支
-Nano Server 由更為活躍的模型提供服務，稱作最新商務分支 (CBB)，以替使用快速開發週期移至「雲端節奏」的客戶提供支援。 在此模型中，Nano Server 預期每年會有兩到三次的功能更新版本。 此模型需要[軟體保證](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx)，才能在生產環境中部署及操作 Nano Server。 為了維持支援，系統管理員不得落後超過兩個 CBB 版本。 不過，這些版本不會自動更新現有的部署；系統管理員會依其便利性手動安裝新的 CBB 版本。 如需其他資訊，請參閱 [Windows Server 2016 新的最新商務分支服務選項](https://blogs.technet.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/)。
+Nano Server 由更為活躍的模型提供服務，稱作最新商務分支 (CBB)，以替使用快速開發週期移至雲端節奏的客戶提供支援。 在此模型中，Nano Server 預期每年會有兩到三次的功能更新版本。 此模型需要[軟體保證](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx)，才能在生產環境中部署及操作 Nano Server。 為了維持支援，系統管理員不得落後超過兩個 CBB 版本。 不過，這些版本不會自動更新現有的部署；系統管理員會依其便利性手動安裝新的 CBB 版本。 如需其他資訊，請參閱 [Windows Server 2016 新的最新商務分支服務選項](https://blogs.technet.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/)。
 
 Server Core 和「使用桌面體驗的伺服器」安裝選項仍由[長期維護分支 (LTSB) 模型](https://support.microsoft.com/lifecycle#gp%2Fgp_msl_policy)提供服務，由 5 年的主流支援及 5 年的延伸支援組成。
 

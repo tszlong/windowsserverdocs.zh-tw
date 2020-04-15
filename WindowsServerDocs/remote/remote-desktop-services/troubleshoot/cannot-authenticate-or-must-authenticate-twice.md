@@ -1,24 +1,19 @@
 ---
 title: 使用者無法驗證，或必須驗證兩次
 description: 針對啟動遠端桌面連線時，使用者無法驗證或必須驗證兩次的問題進行疑難排解。
-audience: itpro
-ms.custom: na
 ms.reviewer: rklemen
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: troubleshooting
-ms.assetid: ''
 author: kaushika-msft
 manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dbb037e335af52dacbc56c920b1776be995e753
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: 8fd7cfda8814347f8bab9dc7b3f7632e3b992ecb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265930"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857231"
 ---
 # <a name="user-cant-authenticate-or-must-authenticate-twice"></a>使用者無法驗證，或必須驗證兩次
 
@@ -100,7 +95,7 @@ ms.locfileid: "76265930"
 
 ### <a name="cant-stay-signed-in-with-a-smart-card-and-remote-desktop-services-service-hangs"></a>無法使用智慧卡保持登入，且「遠端桌面服務」服務停止回應
 
-當使用者登入透過 KB 4056446 更新的 Windows 或 Windows Server 電腦，就會發生此問題。 一開始，使用者或許可以使用智慧卡登入系統，但接著會收到「SCARD\_E\_NO\_SERVICE」錯誤訊息。 遠端電腦可能沒有回應。
+當使用者登入透過 KB 4056446 更新的 Windows 或 Windows Server 電腦，就會發生此問題。 一開始，使用者或許可以使用智慧卡登入系統，但接著會收到 "SCARD\_E\_NO\_SERVICE" 錯誤訊息。 遠端電腦可能沒有回應。
 
 若要解決此問題，請重新啟動遠端電腦。
 

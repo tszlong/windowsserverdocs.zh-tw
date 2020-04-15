@@ -2,21 +2,18 @@
 title: 不含 WSUS 的每月差異更新 ISV 支援
 description: Windows Server Update Service (WSUS) 主題 - 獨立軟體廠商 (ISV) 如何使用每月差異更新而非 WSUS 快速更新傳遞來減少套件大小
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: get-started article
 author: sakitong
 ms.author: coreyp
 manager: dougkim
 ms.date: 10/16/2017
-ms.openlocfilehash: 4607827d73c34f50f721a2774fa498eb95f9dbb8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3ccddd3bfd55ae340dc5273905bb475e7d2cb98a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361726"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828741"
 ---
 # <a name="monthly-delta-update-isv-support-without-wsus"></a>不含 WSUS 的每月差異更新 ISV 支援
 

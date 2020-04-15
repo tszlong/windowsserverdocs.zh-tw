@@ -2,7 +2,6 @@
 title: 規劃 WSUS 部署
 description: Windows Server Update Service (WSUS) 主題 - 部署規劃程序的概觀，其中包含相關主題的聯結
 ms.prod: windows-server
-ms.reviewer: na
 ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: 35865398-b011-447a-b781-1c52bc0c9e3a
@@ -10,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/24/2018
-ms.openlocfilehash: 8d284c51bfa1e04a38c32adf5dce2b6f5d948b0a
-ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
+ms.openlocfilehash: 68825c6bc4d24bca41c04a238fbf4d6291a6625b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80639926"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828191"
 ---
 # <a name="plan-your-wsus-deployment"></a>規劃 WSUS 部署
 
@@ -218,7 +217,7 @@ Windows Server Update Services (WSUS) 使用兩種類型的儲存系統：儲存
 更新由兩個部分組成：描述更新的中繼資料，以及安裝更新的必要檔案。 更新中繼資料通常比實際更新小很多，而且儲存在 WSUS 資料庫。 更新檔案則儲存在本機 WSUS 伺服器或 Microsoft Update 網頁伺服器上。
 
 ### <a name="wsus-database"></a>WSUS 資料庫
-WSUS 要求每個 WSUS 伺服器都要有一個資料庫。 WSUS 支援使用位於 WSUS 伺服器以外不同電腦上的資料庫，但有一些限制。 如需支援的資料庫清單和遠端資料庫限制，請參閱本指南中的「1.1 檢閱初始考量和系統需求」一節。
+WSUS 要求每個 WSUS 伺服器都要有一個資料庫。 WSUS 支援使用位於 WSUS 伺服器以外不同電腦上的資料庫，但有一些限制。 如需支援的資料庫清單和遠端資料庫限制，請參閱本指南中的＜1.1 檢閱初始考量和系統需求＞一節。
 
 WSUS 資料庫儲存下列資訊：
 
@@ -436,7 +435,7 @@ WSUS 可讓您依語言、產品及分類篩選更新同步處理。 在 WSUS �
 ### <a name="installation"></a>安裝
 更新通常是由要更新電腦上已經存在檔案的新版本組成。 在二進位層級上，這些現有的檔案可能與更新版檔案沒有太大的差異。 快速安裝檔案功能可識別不同版本的確實位元組、只針對這些差異建立和散佈更新，然後將現有檔案與更新的位元組合併。
 
-這個功能有時候稱為「差異傳送」，因為只會下載兩個檔案版本之間的差異資料。 快速安裝檔案大於散佈到用戶端電腦的更新，因為快速安裝檔案包含每個檔案要更新的所有可能版本。
+這個功能有時候稱為差異傳送，因為只會下載兩個檔案版本之間的差異資料。 快速安裝檔案大於散佈到用戶端電腦的更新，因為快速安裝檔案包含每個檔案要更新的所有可能版本。
 
 因為 WSUS 只會傳輸適用於更新元件特定版本的差異，您可以使用快速安裝檔案來限制本機網路上消耗的頻寬。 不過，這其實會佔用 WSUS 伺服器、任何上游 WSUS 伺服器和 Microsoft Update 之間的額外頻寬，而且會需要額外本機磁碟空間。 根據預設，WSUS 不會使用快速安裝檔案。
 

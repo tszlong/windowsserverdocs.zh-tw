@@ -7,15 +7,14 @@ ms.author: billmath
 manager: mtillman
 ms.date: 04/17/2019
 ms.topic: article
-ms.custom: it-pro
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 48d93f515a5f3e5f8ce2c3ff9a1b40f300ca57ed
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: a1041bdc189238c7da32896e6f867f730e392d24
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265740"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80814428"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>AD FS 常見問題集 (FAQ)
 
@@ -232,14 +231,14 @@ AD FS UserInfo 端點一律會傳回 OpenID 標準中所指定的主體宣告。
 
 ### <a name="why-am-i-seeing-a-warning-for-failure-to-add-the-ad-fs-service-account-to-the-enterprise-key-admins-group"></a>為何我會看到無法將 AD FS 服務帳戶新增至 Enterprise Key Admins 群組的警告？
 只有當網域中存在具有 FSMO PDC 角色的 Windows 2016 網域控制站時，才會建立此群組。 若要解決此錯誤，您可以手動建立群組，並遵循下列步驟，在將服務帳戶新增為群組成員之後，提供必要的權限。
-1.  開啟 [Active Directory 使用者和電腦]  。
-2.  在導覽窗格中您的網域名稱上**按一下滑鼠右鍵**，然後按一下 [屬性]  。
-3.  按一下 [安全性]  (如果沒看見 [安全性] 索引標籤，請從 [檢視] 功能表開啟 [進階功能])。
-4.  按一下 [進階]  。 按一下 [新增]  。 按一下 [選取主體]  。
-5.  [選取使用者、電腦、服務帳戶或群組] 對話方塊隨即出現。  在 [輸入物件名稱來選取] 文字方塊中，鍵入 Key Admin Group。  按一下 [確定]。
-6.  在 [適用對象] 清單方塊中，選取 [子系使用者物件]  。
-7.  使用捲軸捲動到頁面底部，然後按一下 [全部清除]  。
-8.  在 [屬性]  區段中，選取 [讀取 msDS-KeyCredentialLink]  和 [寫入 msDS-KeyCrendentialLink]  。
+1.    開啟 [Active Directory 使用者和電腦]  。
+2.    在導覽窗格中您的網域名稱上**按一下滑鼠右鍵**，然後按一下 [屬性]  。
+3.    按一下 [安全性]  (如果沒看見 [安全性] 索引標籤，請從 [檢視] 功能表開啟 [進階功能])。
+4.    按一下 [進階]  。 按一下 [新增]  。 按一下 [選取主體]  。
+5.    [選取使用者、電腦、服務帳戶或群組] 對話方塊隨即出現。  在 [輸入物件名稱來選取] 文字方塊中，鍵入 Key Admin Group。  按一下 [確定]。
+6.    在 [適用對象] 清單方塊中，選取 [子系使用者物件]  。
+7.    使用捲軸捲動到頁面底部，然後按一下 [全部清除]  。
+8.    在 [屬性]  區段中，選取 [讀取 msDS-KeyCredentialLink]  和 [寫入 msDS-KeyCrendentialLink]  。
 
 ### <a name="why-does-modern-authentication-from-android-devices-fail-if-the-server-does-not-send-all-the-intermediate-certificates-in-the-chain-with-the-ssl-cert"></a>當伺服器未使用 SSL 憑證傳送憑證鏈中的所有中繼憑證時，Android 裝置的新式驗證為何會失敗？
 

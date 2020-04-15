@@ -1,31 +1,27 @@
 ---
 title: Windows Server 2016 的升級和轉換選項
 description: 說明到 Windows Server 2016 的所有支援升級路徑。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.date: 01/18/2017
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 74aa1da3-7076-4a1f-ad5b-9e17bd46dba2
 author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 2484363db661620844993d52914700cb8b6cdf56
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 05e891d4170458018577b39bc83e952bf18d420e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391588"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826501"
 ---
 # <a name="upgrade-and-conversion-options-for-windows-server-2016"></a>Windows Server 2016 的升級和轉換選項
 
 >適用於：Windows Server 2019、Windows Server 2016
 
-本主題包含有關使用各種方式從舊版作業系統升級到 Windows Server® 2016 的資訊。
+本主題包含有關使用各種方式從舊版作業系統升級到 Windows Server&reg; 2016 的資訊。
 
 視您開始使用的作業系統和採取的方式而定，移至 Windows Server 2016 的程序可能有極大的差異。 我們使用下列詞彙來區別不同的動作，任何一項都可能涉及新的 Windows Server 2016 部署。
 
@@ -35,9 +31,9 @@ ms.locfileid: "71391588"
 
 - **叢集作業系統輪流升級**是 Windows Server 2016 中的新功能，可讓系統管理員將叢集節點的作業系統從 Windows Server 2012 R2 升級至 Windows Server 2016，而不需停止 Hyper-V 或「向外延展檔案伺服器」工作負載。 這項功能可讓您避免可能影響服務等級協定的停機時間。 [Cluster operating system rolling upgrade](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade) (叢集作業系統輪流升級) 會更詳細地討論這項新功能。
 
-- **授權轉換**：在某些作業系統版本中，您可使用簡單的命令與適當的授權金鑰執行一個步驟，就能將特定的版本轉換成另一種版本。 我們將此方式稱為「授權轉換」。 例如，如果您的伺服器執行 Windows Server 2016 Standard，您可以將它轉換為 Windows Server 2016 Datacenter。
+- **授權轉換**：在某些作業系統版本中，您可使用簡單的命令與適當的授權金鑰執行一個步驟，就能將特定的版本轉換成另一種版本。 我們將此方式稱為授權轉換。 例如，如果您的伺服器執行 Windows Server 2016 Standard，您可以將它轉換為 Windows Server 2016 Datacenter。
 
-- **升級**表示從現有作業系統版本移至更新的版本，但仍使用相同硬體 (這有時稱為「就地」用戶端)。例如，如果您的伺服器執行 Windows Server 2012 或 Windows Server 2012 R2，則可以將它升級到 Windows Server 2016。 您可以從評估版的作業系統升級到零售版，或從較舊的零售版升級到較新的版本，而在某些情況下，您甚至可以從大量授權版本的作業系統升級到一般的零售版。
+- **升級**表示從現有作業系統版本移至更新的版本，但仍使用相同硬體。 (這有時稱為就地用戶端。)例如，如果您的伺服器執行 Windows Server 2012 或 Windows Server 2012 R2，則可以將它升級到 Windows Server 2016。 您可以從評估版的作業系統升級到零售版，或從較舊的零售版升級到較新的版本，而在某些情況下，您甚至可以從大量授權版本的作業系統升級到一般的零售版。
 
 > [!IMPORTANT]  
 > 虛擬機器中的升級效果最佳，因為虛擬機器不需要特定 OEM 硬體驅動程式，就能成功升級。  
@@ -70,7 +66,7 @@ ms.locfileid: "71391588"
 |Windows Server 2012 Standard|Windows Server 2016 Standard 或 Datacenter|
 |Windows Server 2012 Datacenter|Windows Server 2016 Datacenter|
 |Windows Server 2012 R2 Standard|Windows Server 2016 Standard 或 Datacenter|
-|Windows Server 2012 R2 Datacenter|Windows Server 2016 Datacenter|
+|Windows Server 2012 R2 Datacenter|Windows Server 2016 Datacenter|
 |Windows Server 2012 R2 Essentials|Windows Server 2016 Essentials|
 |Windows Storage Server 2012 Standard|Windows Storage Server 2016 Standard|
 |Windows Storage Server 2012 Workgroup|Windows Storage Server 2016 Workgroup|
@@ -91,21 +87,21 @@ ms.locfileid: "71391588"
 
 嘗試從評估版轉換為零售版之前，請確認您的伺服器的確是執行評估版。 若要這樣做，請執行下列其中一項：
 
-- 從提升權限的命令提示字元，執行 **slmgr.vbs /dlv**；評估版的輸出中將包含 "EVAL"。
+- 從提升權限的命令提示字元，執行 **slmgr.vbs /dlv**；評估版的輸出中將包含 EVAL。
 
 - 從 [開始] 畫面中，開啟 [控制台]  。 依序開啟 [系統及安全性]  、[系統]  。 檢視 [系統]  頁面之 [Windows 啟用] 區域中的 Windows 啟用狀態。 按一下 [Windows 啟用] 中的 [檢視詳細資料]  ，了解 Windows 啟用狀態的詳細資訊。
 
 如果已經啟用 Windows，桌面會顯示評估期的剩餘時間。
 
-如果伺服器是執行零售版而不是評估版，請參閱本主題的＜將舊的 Windows Server 零售版升級到 Windows Server 2016＞小節，了解升級到 Windows Server 2016 的指示。
+如果伺服器是執行零售版而不是評估版，請參閱本主題的＜將舊的 Windows Server 零售版升級到 Windows Server 2016＞一節，了解升級到 Windows Server 2016 的指示。
 
 對於 **Windows Server 2016 Essentials**：只要在命令 **slmgr.vbs** 中輸入零售、大量授權或 OEM 金鑰，即可轉換成完整的零售版。
 
 如果伺服器執行 Windows Server 2016 Standard 或 Windows Server 2016 Datacenter 的評估版，您可以按照下列方式將它轉換成零售版：
 
-1.  如果伺服器是**網域控制站**，則不能轉換成零售版。 在這種情況下，請在執行零售版的伺服器上安裝另一個網域控制站，然後從評估版上執行的網域控制站中移除 AD DS。 如需詳細資訊，請參閱[將網域控制站升級為 Windows Server 2012 R2 與 Windows Server 2012](https://technet.microsoft.com/library/hh994618.aspx)。
-2.  閱讀授權條款。
-3.  從提升權限的命令提示字元，使用命令 **DISM /online /Get-CurrentEdition**判斷目前的版本名稱。 記下版本識別碼，它是版本名稱的簡短形式。 然後，提供版本識別碼和零售版產品金鑰，來執行 **DISM /online /Set-Edition:\<版本識別碼\> /ProductKey:XXXXX-XXXXX-XXXXX-XXXXX-XXXXX /AcceptEula**。 伺服器將重新啟動兩次。
+1.    如果伺服器是**網域控制站**，則不能轉換成零售版。 在這種情況下，請在執行零售版的伺服器上安裝另一個網域控制站，然後從評估版上執行的網域控制站中移除 AD DS。 如需詳細資訊，請參閱[將網域控制站升級為 Windows Server 2012 R2 與 Windows Server 2012](https://technet.microsoft.com/library/hh994618.aspx)。
+2.    閱讀授權條款。
+3.    從提升權限的命令提示字元，使用命令 **DISM /online /Get-CurrentEdition**判斷目前的版本名稱。 記下版本識別碼，它是版本名稱的簡短形式。 然後，提供版本識別碼和零售版產品金鑰，來執行 **DISM /online /Set-Edition:\<版本識別碼\> /ProductKey:XXXXX-XXXXX-XXXXX-XXXXX-XXXXX /AcceptEula**。 伺服器將重新啟動兩次。
 
 對於 Windows Server 2016 Standard 的評估版，您也可以使用這個相同的命令及適當的產品金鑰，以一個步驟轉換成 Windows Server 2016 Datacenter 的零售版。
 
@@ -114,8 +110,8 @@ ms.locfileid: "71391588"
 
 ## <a name="converting-a-current-retail-edition-to-a-different-current-retail-edition"></a>將目前的零售版轉換為不同的目前零售版
 
-安裝 Windows Server 2016 之後，您可以隨時執行安裝程式來修復安裝 (有時也稱為「就地修復」)，或者，在特定情況下，將它轉換為不同的版本。
-您可以在任何版本的 Windows Server 2016 上執行安裝程式來執行「就地修復」；結果會是您一開始使用的相同版本。
+安裝 Windows Server 2016 之後，您可以隨時執行安裝程式來修復安裝 (有時也稱為就地修復)，或者，在特定情況下，將其轉換為不同的版本。
+您可以在任何版本的 Windows Server 2016 上執行安裝程式來執行就地修復；結果會是您一開始使用的相同版本。
 
 以 Windows Server 2016 Standard 為例，您可以將系統轉換為 Windows Server 2016 Datacenter，如下所示：從提升權限的命令提示字元，使用命令 **DISM /online /Get-CurrentEdition**判斷目前的版本名稱。 就 Windows Server 2016 Standard 而言，這會是 `ServerStandard`。 執行命令 **DISM /online /Get-TargetEditions**，以取得可行升級目標版本的識別碼。 記下此版本識別碼，這是版本名稱的簡短形式。 然後，提供目標的版本識別碼及其零售版產品金鑰，以執行 **DISM /online /Set-Edition:\<版本識別碼\> /ProductKey:XXXXX-XXXXX-XXXXX-XXXXX-XXXXX /AcceptEula**。 伺服器將重新啟動兩次。
 

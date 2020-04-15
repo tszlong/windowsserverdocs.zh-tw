@@ -1,25 +1,21 @@
 ---
 title: Microsoft Server 啟用
 description: 如何啟用 Windows Server 2016。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.date: 09/19/2018
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 99f7daa4-30ce-4d13-be65-0a45d5cc7a54
 author: jaimeo
 ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 1354d89ba2c9169b302dca10ae52bad34ef80b43
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: fd9ea63785e8de313d2177113a466fa67c17410b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947768"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826641"
 ---
 # <a name="windows-server-2016-activation"></a>Windows Server 2016 啟用
 
@@ -37,9 +33,9 @@ KMS 主機不需要是專用伺服器，而且 KMS 可以與其他服務並存�
 
 |產品金鑰群組|KMS 可以裝載於|由這個 KMS 主機啟用的 Windows 版本|  
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|  
-|Windows Server 2016 的大量授權|Windows Server 2012<br /><br />Windows Server 2012 R2<br /><br />Windows Server 2016<br /><br />|Windows Server 半年通道 <br><br>Windows Server 2016 (所有版本)<br /><br />Windows 10 LTSB (2015 和 2016)<br /><br />Windows 10 Professional<br /><br />Windows 10 Enterprise<br /><br />Windows 10 工作站專業版<br><br>Windows 10 Education<br><br>Windows Server 2012 R2 (所有版本)<br /><br />Windows 8.1 專業版<br /><br />Windows 8.1 Enterprise<br /><br />Windows Server 2012 (所有版本)<br /><br />Windows Server 2008 R2 (所有版本)<br /><br />Windows Server 2008 (所有版本)<br /><br />Windows 7 Professional<br /><br />Windows 7 Enterprise| 
-|Windows 10 的大量授權|Windows 7<br /><br />Windows 8.1<br /><br /> Windows 10|Windows 10 Professional<br /><br /> Windows 10 Professional N<br /><br /> Windows 10 Enterprise<br /><br /> Windows 10 Enterprise N<br /><br /> Windows 10 Education<br /><br /> Windows 10 Education N<br /><br /> Windows 10 企業版 LTSB (2015)<br /><br /> Windows 10 企業版 LTSB N (2015)<br /><br /> Windows 10 工作站專業版<br><br>Windows 8.1 專業版<br /><br /> Windows 8.1 Enterprise<br /><br /> Windows 7 Professional<br /><br /> Windows 7 Enterprise<br /><br />|  
-|「適用於 Windows 10 的 Windows Server 2012 R2」的大量授權|Windows Server 2008 R2<br /><br /> Windows Server 2012 Standard<br /><br /> Windows Server 2012 Datacenter<br /><br /> Windows Server 2012 R2 Standard<br /><br />Windows Server 2012 R2 Datacenter|Windows 10 Professional<br /><br /> Windows 10 Enterprise<br /><br />Windows 10 企業版 LTSB (2015)<br><br>Windows 10 工作站專業版<br><br>Windows 10 Education<br><br> Windows Server 2012 R2 (所有版本)<br /><br /> Windows 8.1 專業版<br /><br /> Windows 8.1 Enterprise<br /><br /> Windows Server 2012 (所有版本)<br /><br /> Windows Server 2008 R2 (所有版本)<br /><br />Windows Server 2008 (所有版本)<br /><br /> Windows 7 Professional<br /><br /> Windows 7 Enterprise|
+|Windows Server 2016 的大量授權|Windows Server 2012<p>Windows Server 2012 R2<p>Windows Server 2016<p>|Windows Server 半年通道 <br><br>Windows Server 2016 (所有版本)<p>Windows 10 LTSB (2015 和 2016)<p>Windows 10 Professional<p>Windows 10 Enterprise<p>Windows 10 工作站專業版<br><br>Windows 10 Education<br><br>Windows Server 2012 R2 (所有版本)<p>Windows 8.1 專業版<p>Windows 8.1 Enterprise<p>Windows Server 2012 (所有版本)<p>Windows Server 2008 R2 (所有版本)<p>Windows Server 2008 (所有版本)<p>Windows 7 Professional<p>Windows 7 Enterprise| 
+|Windows 10 的大量授權|Windows 7<p>Windows 8.1<p> Windows 10|Windows 10 Professional<p> Windows 10 Professional N<p> Windows 10 Enterprise<p> Windows 10 Enterprise N<p> Windows 10 Education<p> Windows 10 Education N<p> Windows 10 企業版 LTSB (2015)<p> Windows 10 企業版 LTSB N (2015)<p> Windows 10 工作站專業版<br><br>Windows 8.1 專業版<p> Windows 8.1 Enterprise<p> Windows 7 Professional<p> Windows 7 Enterprise<p>|  
+|Windows Server 2012 R2 的大量授權，適用於 Windows 10|Windows Server 2008 R2<p> Windows Server 2012 Standard<p> Windows Server 2012 Datacenter<p> Windows Server 2012 R2 Standard<p>Windows Server 2012 R2 Datacenter|Windows 10 Professional<p> Windows 10 Enterprise<p>Windows 10 企業版 LTSB (2015)<br><br>Windows 10 工作站專業版<br><br>Windows 10 Education<br><br> Windows Server 2012 R2 (所有版本)<p> Windows 8.1 專業版<p> Windows 8.1 Enterprise<p> Windows Server 2012 (所有版本)<p> Windows Server 2008 R2 (所有版本)<p>Windows Server 2008 (所有版本)<p> Windows 7 Professional<p> Windows 7 Enterprise|
 
 > [!NOTE]  
 > 根據 KMS 伺服器正在執行的作業系統，以及您要啟動的作業系統，您可能需要安裝一或多個更新：

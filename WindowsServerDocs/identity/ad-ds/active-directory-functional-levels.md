@@ -1,7 +1,6 @@
 ---
 ms.assetid: f964d056-11bf-4d9b-b5ab-dceaad8bfbc3
 title: Windows Server 2016 功能等級
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -11,12 +10,12 @@ ms.prod: windows-server
 ms.custom: it-pro
 ms.reviewer: maheshu
 ms.technology: identity-adds
-ms.openlocfilehash: 53793fc62b1bc1444c567f92c9f18642245fded9
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 5f7a8f08ff10102fbc04b6f8272320bd3b77785d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948179"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825491"
 ---
 # <a name="forest-and-domain-functional-levels"></a>樹系和網域功能等級
 
@@ -51,7 +50,7 @@ ms.locfileid: "75948179"
 ### <a name="windows-server-2016-domain-functional-level-features"></a>Windows Server 2016 網域功能等級的功能
 
 * 所有預設的 Active Directory 功能、來自 Windows Server 2012R2 網域功能等級的所有功能，以及下列功能：
-   * 在設定為需要 PKI 驗證的使用者帳戶上，DC 可以支援自動回復 NTLM 和其他密碼型秘密。 此設定也稱為「互動式登入需要智慧卡」。
+   * 在設定為需要 PKI 驗證的使用者帳戶上，DC 可以支援自動回復 NTLM 和其他密碼型秘密。 此設定也稱為「互動式登入需要智慧卡」
    * 當限制使用者為已加入特定網域的裝置時，DC 可以支援允許網路 NTLM。
    * Kerberos 用戶端成功使用 PKInit Freshness Extension 進行驗證時，將會取得全新的公開金鑰身分識別 SID。
 

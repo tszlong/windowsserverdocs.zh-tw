@@ -1,28 +1,24 @@
 ---
 title: 安裝含有桌面體驗的伺服器
-description: '說明如何取得並安裝含有桌面體驗的伺服器安裝 '
-ms.custom: na
+description: 說明如何取得並安裝含有桌面體驗的伺服器安裝
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.date: 01/18/2017
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5b38b8a0-4dfc-4130-be00-fc58bba99595
 author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d92ae9e0013d622c1e0a6b8b6a1662dc82360f2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 18c454d9ef4deb8c9ea681a486e85f356ad5c9cd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391795"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826941"
 ---
 # <a name="install-server-with-desktop-experience"></a>安裝含有桌面體驗的伺服器
-> 適用於：Windows Server 2016
+> 適用於：Windows Server 2016
   
 
 當您使用安裝精靈安裝 Windows Server 2016 時，您可以在 **Windows Server 2016**和 **Windows Server (含有桌面體驗的伺服器)** 之間進行選擇。 Windows Server 2016 的 [含有桌面體驗的伺服器] 選項，相當於已安裝桌面體驗功能之 Windows Server 2012 R2 中的 [完整] 安裝選項。 如果您不在安裝精靈中做出選擇，系統將會安裝 **Windows Server 2016**，這是 [Server Core]  安裝選項。
@@ -37,7 +33,7 @@ ms.locfileid: "71391795"
 
 **在本機安裝、設定、解除安裝伺服器角色：** 使用「伺服器管理員」或使用 Windows PowerShell
 
-**遠端安裝、設定、解除安裝伺服器角色：** 利用伺服器管理員、遠端伺服器、RSAT 或 Windows PowerShell
+**在遠端安裝、設定、解除安裝伺服器角色：** 使用「伺服器管理員」、「遠端伺服器」、RSAT 或 Windows PowerShell
 
 **Microsoft Management Console：已安裝**
 
@@ -77,7 +73,7 @@ ms.locfileid: "71391795"
 |Windows Server 2012 Standard|Windows Server 2016 Standard 或 Datacenter|
 |Windows Server 2012 Datacenter|Windows Server 2016 Datacenter|
 |Windows Server 2012 R2 Standard|Windows Server 2016 Standard 或 Datacenter|
-|Windows Server 2012 R2 Datacenter|Windows Server 2016 Datacenter|
+|Windows Server 2012 R2 Datacenter|Windows Server 2016 Datacenter|
 |Windows Server 2012 R2 Essentials|Windows Server 2016 Essentials|
 |Windows Storage Server 2012 Standard|Windows Storage Server 2016 Standard|
 |Windows Storage Server 2012 Workgroup|Windows Storage Server 2016 Workgroup|
@@ -93,19 +89,19 @@ ms.locfileid: "71391795"
 
 |伺服器角色|是否可從 Windows Server 2012 R2 升級？|是否可從 Windows Server 2012 升級？|是否支援移轉？|是否可以在不停機的情況下完成移轉？|  
 |-------------------|----------|--------------|--------------|----------|  
-|Active Directory 憑證服務| 是|    是|    是|    否|
-|Active Directory Domain Services|  是|    是|    是|    是|
-|Active Directory Federation Services|  否| 否| 是|    否 (不需要新增節點至伺服器陣列)|
-|Active Directory 輕量型目錄服務|   是|    是|    是|    是|
-|Active Directory Rights Management Services|   是|    是|    是|    否|
-|容錯移轉叢集|使用包含節點 [暫停-清空]、[收回] 的 [Cluster OS Rolling Upgrade](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade) (叢集作業系統輪流升級) 程序，升級至 Windows Server 2016 並重新加入原始叢集時，則為是。 當伺服器遭升級用叢集移除後再新增至其他叢集時，則為是。|當伺服器不是叢集的一部分時，則為否。 當伺服器遭升級用叢集移除後再新增至其他叢集時，則為是。  |是|若是 Windows Server 2012 容錯移轉叢集，則為否。 若是含 Hyper-V VM 的 Windows Server 2012 R2 容錯移轉叢集，或執行向外延展檔案伺服器角色的 Windows Server 2012 R2 容錯移轉叢集，則為是。 請參閱 [Cluster OS Rolling Upgrade](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade) (叢集作業系統輪流升級)。|
-|檔案和存放服務| 是|    是|    因子功能而異|  否|
-|列印和傳真服務|    否| 否| 是 (Printbrm.exe)| 否|
-|遠端桌面服務|   是，適用於所有子角色，但不支援混合模式的伺服器陣列|   是，適用於所有子角色，但不支援混合模式的伺服器陣列|   是|    否|
-|Web 伺服器 (IIS)|  是|    是|    是|    否|
-|Windows Server Essentials 體驗|  是|    不適用 - 新功能|  是|    否|
-|Windows Server Update Services|    是|    是|    是|    否|
-|工作資料夾|  是|    是|    是|    是，使用[叢集作業系統輪流升級](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade)時從 WS 2012 R2 叢集進行。|
+|Active Directory 憑證服務|    是|    是|    是|    否|
+|Active Directory 網域服務|    是|    是|    是|    是|
+|Active Directory Federation Services|    否|    否|    是|    否 (不需要新增節點至伺服器陣列)|
+|Active Directory 輕量型目錄服務|    是|    是|    是|    是|
+|Active Directory Rights Management Services|    是|    是|    是|    否|
+|容錯移轉叢集|使用包含節點 [暫停-清空]、[收回] 的 [Cluster OS Rolling Upgrade](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade) (叢集作業系統輪流升級) 程序，升級至 Windows Server 2016 並重新加入原始叢集時，則為是。 當伺服器遭升級用叢集移除後再新增至其他叢集時，則為是。|當伺服器不是叢集的一部分時，則為否。 當伺服器遭升級用叢集移除後再新增至其他叢集時，則為是。    |是|若是 Windows Server 2012 容錯移轉叢集，則為否。 若是含 Hyper-V VM 的 Windows Server 2012 R2 容錯移轉叢集，或執行向外延展檔案伺服器角色的 Windows Server 2012 R2 容錯移轉叢集，則為是。 請參閱 [Cluster OS Rolling Upgrade](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade) (叢集作業系統輪流升級)。|
+|檔案和存放服務|    是|    是|    因子功能而異|    否|
+|列印和傳真服務|    否|    否|    是 (Printbrm.exe)|    否|
+|遠端桌面服務|    是，適用於所有子角色，但不支援混合模式的伺服器陣列|    是，適用於所有子角色，但不支援混合模式的伺服器陣列|    是|    否|
+|Web 伺服器 (IIS)|    是|    是|    是|    否|
+|Windows Server Essentials 體驗|    是|    不適用 - 新功能|    是|    否|
+|Windows Server Update Services|    是|    是|    是|    否|
+|工作資料夾|    是|    是|    是|    是，使用[叢集作業系統輪流升級](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade)時從 WS 2012 R2 叢集進行。|
 
 > [!IMPORTANT]  
 > 一旦安裝程式完成，而且您已安裝所有必要的伺服器角色和功能之後，請立即使用 Windows Update 或其他更新方法來檢查並安裝 Windows Server 2016 的可用更新。

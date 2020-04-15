@@ -2,21 +2,18 @@
 title: 快速更新傳遞 ISV 支援
 description: Windows Server Update Service (WSUS) 主題 - 獨立軟體廠商 (ISV) 如何使用 WSUS 來設定快速更新傳遞
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: get-started article
 author: sakitong
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: 13568bb320a3d70bfd6a70d2b9731b460be6f346
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 60d01ef425ed96160cd76afdd7c27c081c778add
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948495"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828771"
 ---
 # <a name="express-update-delivery-isv-support"></a>快速更新傳遞 ISV 支援
 
@@ -58,11 +55,11 @@ ISV 可以使用 WSUS 和 WU 用戶端來支援快速更新傳遞。 Microsoft �
    - ISV 用戶端代理程式會決定要核准的更新，以及下載和安裝更新的時間
    - WU 用戶端會決定要下載的位元組範圍，並起始下載要求
 
-### <a name="BKMK_1"></a>步驟 1：設定 WSUS
+### <a name="step-1-configure-wsus"></a><a name=BKMK_1></a>步驟 1：設定 WSUS
 
 WSUS 會作為 Windows Update 的介面，並管理所有對需要下載的「快速」套件進行說明的中繼資料。 如果您需要部署，請參閱 [**Windows Server Update Services 3.0 SP2**](https://technet.microsoft.com/library/dd939931(v=ws.10).aspx) 的概觀。 部署 WSUS 後，主要考量將是是否要將更新內容儲存在 WSUS 伺服器的本機上。 在設定 WSUS 時，建議您不要將更新儲存於本機。 若您這麼做，系統會假設您已讓軟體將這些套件的部署導入環境中。 如需如何設定 WSUS 本機儲存的詳細資訊，請參閱[**決定要將更新儲存在何處**](https://technet.microsoft.com/library/cc720494(v=ws.10).aspx)。
 
-### <a name="BKMK_2"></a>步驟2：指定並填入 ISV 檔案快取 
+### <a name="step-2-specify-and-populate-the-isv-file-cache"></a><a name=BKMK_2></a>步驟2：指定並填入 ISV 檔案快取 
 
 #### <a name="specify-the-isv-file-cache"></a>指定 ISV 檔案快取
 
@@ -85,7 +82,7 @@ WSUS 會作為 Windows Update 的介面，並管理所有對需要下載的「�
 > [!IMPORTANT]
 > ISV 檔案快取有下列需求：                                                          
 > - 根據 RFC，伺服器必須與 HTTP 1.1 相容：<http://www.w3.org/Protocols/rfc2616/rfc2616.html>                                                                                                                                                                
-> 具體而言，Web 伺服器必須支援 [**HEAD**](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) 和 [**GET**](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.htm) 要求<br>                                                                                                                                                                                                                                                                                                  - 部分範圍要求<br>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   - 保持連線<br>                                                                                                                                                                                                                                                                                                                                                                                                                            - 請勿使用 "Transfer-Encoding:chunked"                                                                                                 
+> 具體而言，Web 伺服器必須支援 [**HEAD**](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) 和 [**GET**](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.htm) 要求<br>                                                                                                                                                                                                                                                                                                  - 部分範圍要求<br>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   - 保持連線<br>                                                                                                                                                                                                                                                                                                                                                                                                                            - 請勿使用 Transfer-Encoding:chunked                                                                                                 
 
 #### <a name="populate-the-isv-file-cache"></a>填入 ISV 檔案快取
 
@@ -105,7 +102,7 @@ ISV 檔案快取必須填入與要安裝在受管理用戶端上的更新相關�
 
      讓 HTTP 伺服器 (或 localhost) 將 **HTTP GET** 要求 (參考 MU 資料夾路徑和檔案名稱) 重新導向至 ISV 檔案位置。
 
-### <a name="BKMK_3"></a>步驟 3：設定 ISV 用戶端代理程式以指示 WU 用戶端作業
+### <a name="step-3-set-up-an-isv-client-agent-to-direct-wu-client-operations"></a><a name=BKMK_3></a>步驟 3：設定 ISV 用戶端代理程式以指示 WU 用戶端作業
 
 ISV 用戶端代理程式會使用下列建議的工作流程，為已核准的更新協調下載和安裝作業：
 

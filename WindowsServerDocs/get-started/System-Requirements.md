@@ -1,25 +1,21 @@
 ---
 title: 系統需求
 description: 全新安裝時，每種安裝選項之儲存體、CPU 網路、記憶體、RAM 的最低需求。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.date: 10/17/2017
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4a8b42d7-9fe5-4efe-9ea1-ace2131fe068
 author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e8b0c04137ff3b11cdaa7aba3c7899ca6300848
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: cd4666f9ac0677ce8893041ae4e937cca41e8164
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947745"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826491"
 ---
 # <a name="system-requirements"></a>系統需求
 
@@ -35,12 +31,12 @@ ms.locfileid: "75947745"
 
 
 ## <a name="review-system-requirements"></a>檢閱系統需求  
-下列是 Windows Server 2016 的預估系統需求。 如果您的電腦低於「最低」需求，則無法正確安裝本產品。 視系統設定以及安裝的應用程式和功能而定，實際需求會有所不同。
+下列是 Windows Server 2016 的預估系統需求。 如果您的電腦低於最低需求，則無法正確安裝本產品。 視系統設定以及安裝的應用程式和功能而定，實際需求會有所不同。
 
 除非另行指定，否則這些最低系統需求適用於所有的安裝選項 ([Server Core]、[含桌面體驗的伺服器] 和 [Nano 伺服器]) 以及 Standard 和 Datacenter 版本。  
 
 > [!IMPORTANT]  
-> 因為有太多可能的部署方式，所以不太可能提出一般通用的「建議」系統需求。 請參閱每一個要部署的伺服器角色相關文件，取得更多有關特定伺服器角色所需資源的詳細資料。 為了達到最佳效果，可執行測試部署，判斷特定部署案例的適當系統需求。  
+> 因為有太多可能的部署方式，所以不太可能提出一般通用的建議系統需求。 請參閱每一個要部署的伺服器角色相關文件，取得更多有關特定伺服器角色所需資源的詳細資料。 為了達到最佳效果，可執行測試部署，判斷特定部署案例的適當系統需求。  
 
 
 ## <a name="processor"></a>處理器  

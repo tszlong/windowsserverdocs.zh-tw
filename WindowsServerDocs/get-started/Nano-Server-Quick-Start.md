@@ -1,26 +1,24 @@
 ---
-title: Nano Server 快速入門
+title: Nano 伺服器快速入門
 description: 快速在實體或虛擬機器上部署基本 Nano Server 的步驟
 ms.prod: windows-server
-ms.service: na
 manager: DonGill
 ms.technology: server-nano
 ms.date: 09/05/2017
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 5de589d9da1c7d4fc9eb116e6ea1f6a326d1ad7c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7729b853f2e54c7f99d428fcb821a68d7a22aef0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391716"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826811"
 ---
-# <a name="nano-server-quick-start"></a>Nano Server 快速入門
+# <a name="nano-server-quick-start"></a>Nano 伺服器快速入門
 
->適用於：Windows Server 2016
+>適用於：Windows Server 2016
 
 > [!IMPORTANT]
 > 從 Windows Server 1709 版開始，Nano Server 僅以[容器基礎 OS 映像](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)的形式來提供。 請查看 [Nano Server 的變更](nano-in-semi-annual-channel.md)以了解這代表的意義。 
