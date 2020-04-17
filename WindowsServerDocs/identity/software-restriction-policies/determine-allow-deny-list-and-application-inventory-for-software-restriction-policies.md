@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 7609ebb0fdcb6d429cd40d99399eaaedb732df08
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c0fdb5c1d7c4b03610a173c6cd0575d39646a7d0
+ms.sourcegitcommit: af1cf89632d62a94943d3ad9f6b5234b88499278
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855091"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81524903"
 ---
 # <a name="determine-allow-deny-list-and-application-inventory-for-software-restriction-policies"></a>決定軟體限制原則的允許拒絕清單和應用程式清查
 
@@ -48,9 +48,9 @@ ms.locfileid: "80855091"
 
 2.  建立下列登錄值，以啟用 advanced 記錄功能，並將路徑設定為應該寫入記錄檔的位置。
 
-    **"HKEY_LOCAL_MACHINE \SOFTWARE\Policies\Microsoft\Windows\Safer\ CodeIdentifiers"**
+    **「HKEY_LOCAL_MACHINE \SOFTWARE\Policies\Microsoft\Windows\Safer\CodeIdentifiers」**
 
-    字串值： *NameLogFile 至 NameLogFile 的路徑*
+    字串值： *LogFileName 至 LogFileName 的路徑*
 
     因為 SRP 會在執行時評估所有的應用程式，所以每次執行應用程式時，都會將專案寫入記錄檔*NameLogFile* 。
 
@@ -69,5 +69,4 @@ ms.locfileid: "80855091"
     寫入記錄檔的輸出範例：
 
 **explorer .exe （PID = 4728） identifiedC： \ Windows\system32\onenote.exe as 不受限制的 usingpath 規則，Guid = {320bd852-aa7c-4674-82c5-9a80321670a3}**   SRP 檢查和設定為 [封鎖] 的所有應用程式和相關程式碼都會記錄在記錄檔中，接著您可以使用該檔案來判斷哪些可執行檔應視為允許清單。
-
 
