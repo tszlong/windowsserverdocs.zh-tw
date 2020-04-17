@@ -1,23 +1,23 @@
 ---
 title: SDN 的安全性
 description: 您可以使用本節中的主題來瞭解軟體定義網路中的安全性 \(Windows Server 2016 Datacenter 中的 SDN\)。
-manager: brianlic
+manager: grcusanz
 ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 763d11a8-4225-4d96-b56f-1ec62e256bfd
-ms.author: lizross
-author: eross-msft
-ms.openlocfilehash: c464784e95f011ed4fa0ddeb18e91d456fe8da32
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.author: anpaul
+author: AnirbanPaul
+ms.openlocfilehash: ee39adc80dd510ec64432ffe4a4e017c84a1a01f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317357"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854341"
 ---
 # <a name="security-for-sdn"></a>SDN 的安全性
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 您可以使用本節中的主題來瞭解軟體定義網路 \(SDN\)中的安全性。
 
@@ -33,4 +33,4 @@ ms.locfileid: "80317357"
 本節包含下列主題。
 
 - [網路控制卡安全性](nc-security.md)
-- [管理軟體定義網路的憑證](sdn-manage-certs.md)
+- [管理軟體定義的網路](sdn-manage-certs.md)功能 "" "" 的憑證                                                                

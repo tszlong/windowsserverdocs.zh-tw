@@ -1,23 +1,19 @@
 ---
 title: 在 Windows Server Essentials 中管理使用者帳戶
 description: 說明如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0d115697-532b-48c2-a659-9f889e235326
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 86feb7168aa53837c4bef514e8a9b6724c0e5682
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 3aa78edb19891c368408fbf1e4045fea049fc827
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311049"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852701"
 ---
 # <a name="manage-user-accounts-in-windows-server-essentials"></a>在 Windows Server Essentials 中管理使用者帳戶
 
@@ -194,7 +190,7 @@ ms.locfileid: "80311049"
   
 -   **標準**帳戶是用於日常運算。 標準帳戶可防止使用者進行影響其他使用者的變更 (例如刪除檔案或變更網路設定)，從而協助您保護網路。  
   
--   **系統管理員** 帳戶提供最充分的電腦網路控制權。 您應該只有在必要時才指派系統管理員帳戶類型。  
+-   **系統管理員**帳戶提供最充分的電腦網路控制權。 您應該只有在必要時才指派系統管理員帳戶類型。  
   
 ###  <a name="manage-user-accounts-using-the-dashboard"></a><a name="BKMK_Manage8"></a>使用儀表板管理使用者帳戶  
  Windows Server Essentials 可讓您使用 [Windows Server Essentials 儀表板] 來執行一般系統管理工作。 [儀表板] 的 [**使用者**] 頁面預設包含兩個索引標籤： [**使用者**] 和 [**使用者] 群組**。  
