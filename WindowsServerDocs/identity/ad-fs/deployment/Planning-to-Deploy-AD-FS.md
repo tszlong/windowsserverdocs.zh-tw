@@ -1,7 +1,6 @@
 ---
 ms.assetid: c87dc32d-ab33-44d2-a46f-f9f878b4e5b4
 title: 計畫部署 AD FS
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,17 +8,17 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: ed2082706975d58a1535aaeb61e6c5283d23306a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3cc26807d43f8a041647045af0074fd538c395a4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359496"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855321"
 ---
 # <a name="planning-to-deploy-ad-fs"></a>計畫部署 AD FS
 
 
-在您收集環境的相關資訊，並根據[Windows Server 2012 中 AD FS 設計指南](https://technet.microsoft.com/library/dd807036.aspx)中的指導方針決定 Active Directory 同盟服務 \(AD FS\) 設計] 之後，您就可以開始規劃組織的 AD FS 設計部署。 透過本主題中的完整設計和資訊，您可以決定要執行哪些工作，以便在組織中部署 AD FS。  
+在您收集環境的相關資訊，並根據[Windows Server 2012 中 AD FS 設計指南](https://technet.microsoft.com/library/dd807036.aspx)中的指導方針決定 Active Directory 同盟服務 \(AD FS\) 設計 之後，您就可以開始規劃組織的 AD FS 設計部署。 透過本主題中的完整設計和資訊，您可以決定要執行哪些工作，以便在組織中部署 AD FS。  
   
 ## <a name="reviewing-your-ad-fs-design"></a>檢閱您的 AD FS 設計  
 如果為您的組織建立原始 AD FS 設計的設計小組與實際實施部署的部署小組不同，請確定部署小組會向設計團隊審查最終的設計。 檢閱有關設計的下列各點：  

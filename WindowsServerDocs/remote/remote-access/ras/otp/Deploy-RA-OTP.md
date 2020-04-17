@@ -2,26 +2,22 @@
 title: 使用 OTP 驗證部署遠端存取
 description: 本主題是在 Windows Server 2016 中使用 OTP 驗證部署遠端存取指南的一部分。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b1b2fe70-7956-46e8-a3e3-43848868df09
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 5b86cbe970c60f0684f3f6e5198fa91bbb9745b1
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 47a92db6c451b2e1e9bb44393ab987f242cc0ef5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313680"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858251"
 ---
 # <a name="deploy-remote-access-with-otp-authentication"></a>使用 OTP 驗證部署遠端存取
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
  Windows Server 2016 和 Windows Server 2012 將 DirectAccess 與路由及遠端存取服務 \(RRAS\) VPN 合併成一個遠端存取角色。   
 
@@ -39,7 +35,7 @@ ms.locfileid: "80313680"
   
 -   必須部署公開金鑰基礎結構。  
   
-    如需詳細資訊，請參閱： [測試實驗室指南小單元：Windows Server 2012 的基本 PKI。](https://social.technet.microsoft.com/wiki/contents/articles/7862.test-lab-guide-mini-module-basic-pki-for-windows-server-2012.aspx)  
+    如需詳細資訊，請參閱：[測試實驗室指南迷你模組：Windows Server 2012 的基本 PKI。](https://social.technet.microsoft.com/wiki/contents/articles/7862.test-lab-guide-mini-module-basic-pki-for-windows-server-2012.aspx)  
   
 -   不支援在 DirectAccess 管理主控台或 Windows PowerShell Cmdlet 以外變更原則。  
   
@@ -52,7 +48,7 @@ OTP 驗證案例包含一些步驟：
   
 3.  [使用 OTP 驗證來設定 DirectAccess](/configure/Configure-RA-with-OTP-Authentication.md)。 OTP 部署包含數個設定步驟，包括準備 OTP 驗證的基礎結構、設定 OTP 伺服器、設定遠端存取服務器上的 OTP 設定，以及更新 DirectAccess 用戶端設定。  
   
-4.  [針對 OTP 部署進行疑難排解](/troubleshoot/Troubleshoot-an-OTP-Deployment.md). 此疑難排解章節說明使用 OTP 驗證部署「遠端存取」時，可能發生的一些最常見錯誤。  
+4.  [針對 OTP 部署進行疑難排解]\((/troubleshoot/Troubleshoot-an-OTP-Deployment.md). 此疑難排解章節說明使用 OTP 驗證部署「遠端存取」時，可能發生的一些最常見錯誤。  
   
 ## <a name="practical-applications"></a><a name="BKMK_APP"></a>實際應用  
 增加安全性-使用 OTP 可增加 DirectAccess 部署的安全性。 使用者一定要有 OTP 認證，才能連通內部網路。 使用者可透過 Windows 10 或 Windows 8 用戶端電腦上網路連線中的「工作地點連線」，或在執行 Windows 7 的用戶端電腦上使用 DirectAccess 連線助理 \(DCA\)，來提供 OTP 認證。 OTP 驗證程序運作方式如下：  
@@ -74,8 +70,8 @@ OTP 驗證案例包含一些步驟：
   
 |角色\/功能|如何支援本案例|  
 |---------|-----------------|  
-|*遠端存取管理角色*|這個角色是利用伺服器管理員主控台安裝和解除安裝。 此角色同時包含 DirectAccess （先前是 Windows Server 2008 R2 中的功能），以及路由及遠端存取服務（先前是網路原則與存取服務 \(NPAS\) 伺服器角色下的角色服務）。 遠端存取角色包含兩個元件：<br /><br />1. DirectAccess 與路由及遠端存取服務 \(RRAS\) VPN-DirectAccess 和 VPN 會在 [遠端存取管理] 主控台中一起管理。<br />2. RRAS 路由-RRAS 路由功能是在舊版路由及遠端存取主控台中管理。<br /><br />遠端存取角色需要以下伺服器功能：<br /><br />-Internet Information Services \(IIS\) Web 服務器-設定網路位置伺服器、使用 OTP 驗證和設定預設 Web 探查時，需要這項功能。<br />-Windows 內部資料庫-用於遠端存取服務器上的本機帳戶處理。|  
-|遠端存取管理工具功能|這個功能的安裝方式如下：<br /><br />-安裝遠端存取角色時，預設會將它安裝在遠端存取服務器上，並支援遠端管理主控台使用者介面。<br />-您可以選擇性地將它安裝在未執行遠端存取服務器角色的伺服器上。 在這種情況下，它是用於從遠端管理那些執行 DirectAccess 和 VPN 的遠端存取電腦。<br /><br />遠端存取管理工具功能包含以下各項：<br /><br />-遠端存取 GUI 和命令列工具<br />-適用于 Windows PowerShell 的遠端存取模組<br /><br />依存項目包括：<br /><br />-群組原則管理主控台<br />-RAS 連線管理員系統管理元件 \(CMAK\)<br />-Windows PowerShell 3。0<br />-圖形化管理工具與基礎結構|  
+|*遠端存取管理角色*|這個角色是利用伺服器管理員主控台安裝和解除安裝。 此角色同時包含 DirectAccess （先前是 Windows Server 2008 R2 中的功能），以及路由及遠端存取服務（先前是網路原則與存取服務 \(NPAS\) 伺服器角色下的角色服務）。 遠端存取角色包含兩個元件：<p>1.DirectAccess 與路由及遠端存取服務 \(RRAS\) VPN-DirectAccess 和 VPN 會在 [遠端存取管理] 主控台中一起管理。<br />2.RRAS 路由-在舊版路由和遠端存取主控台中管理 RRAS 路由功能。<p>遠端存取角色需要以下伺服器功能：<p>-Internet Information Services \(IIS\) Web 服務器-設定網路位置伺服器、使用 OTP 驗證和設定預設 Web 探查時，需要這項功能。<br />-Windows 內部資料庫-用於遠端存取服務器上的本機帳戶處理。|  
+|遠端存取管理工具功能|這個功能的安裝方式如下：<p>-安裝遠端存取角色時，預設會將它安裝在遠端存取服務器上，並支援遠端管理主控台使用者介面。<br />-您可以選擇性地將它安裝在未執行遠端存取服務器角色的伺服器上。 在這種情況下，它是用於從遠端管理那些執行 DirectAccess 和 VPN 的遠端存取電腦。<p>遠端存取管理工具功能包含以下各項：<p>-遠端存取 GUI 和命令列工具<br />-適用于 Windows PowerShell 的遠端存取模組<p>依存項目包括：<p>-群組原則管理主控台<br />-RAS 連線管理員系統管理元件 \(CMAK\)<br />-Windows PowerShell 3。0<br />-圖形化管理工具與基礎結構|  
   
 ## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>硬體需求  
 本案例需要的硬體如下所示：  
@@ -103,7 +99,7 @@ OTP 驗證案例包含一些步驟：
   
     4.  用戶端\-端需求-對於 Windows 10 和 Windows 8 用戶端電腦，系統會使用網路連線助理 \(NCA\) 服務來偵測是否需要 OTP 認證。 如果是，DirectAccess 媒體管理員就會提示您輸入認證。  NCA 已包含在作業系統中，不需要安裝或部署。 對於 Windows 7 用戶端電腦，需要 \(DCA\) 2.0 的 DirectAccess 連線助理。 您可以從 [Microsoft 下載中心](https://www.microsoft.com/download/details.aspx?id=29039)加以取得。  
   
-    5.  請注意下列事項：  
+    5.  請注意以下幾點：  
   
         1.  OTP 驗證可以與智慧卡和信賴平臺模組並行使用，\(TPM\)\-為基礎的驗證。 在遠端存取管理主控台中啟用 OTP 驗證，也可以啟用智慧卡驗證。  
   
@@ -113,7 +109,7 @@ OTP 驗證案例包含一些步驟：
   
         4.  在遠端存取多站台部署中，OTP 設定是全系統通用的而且會識別所有進入點。 如果為 OTP 設定多個 RADIUS 或 CA 伺服器，每一個遠端存取伺服器就會根據可用性和遠近關係排序它們。  
   
-        5.  在遠端存取多\-樹系環境中設定 OTP 時，OTP Ca 應僅來自資源樹系，而且應該在樹系信任間設定憑證註冊。 如需詳細資訊，請參閱 [AD CS：將跨樹系憑證註冊到 Windows Server 2008 R2](https://technet.microsoft.com/library/ff955842.aspx)。  
+        5.  在遠端存取多\-樹系環境中設定 OTP 時，OTP Ca 應僅來自資源樹系，而且應該在樹系信任間設定憑證註冊。 如需詳細資訊，請參閱 [AD CS：Windows Server 2008 R2](https://technet.microsoft.com/library/ff955842.aspx)的跨樹系憑證註冊。  
   
         6.  使用金鑰 FOB OTP 權杖的使用者應在 [DirectAccess OTP] 對話方塊中，插入 PIN 碼，後面加上 token \(，而不\) 任何分隔符號。 PIN PAD OTP 權杖使用者只能在對話方塊中插入 tokencode。  
   

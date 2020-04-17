@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 72e71ce2d1427f392aa02d32597f92d031f9a5c9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7a4dacd611741942e874e831fd9598aeda5e97b3
+ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407007"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81269275"
 ---
 # <a name="prepare-your-environment-for-windows-admin-center"></a>準備您的 Windows Admin Center 環境
 
@@ -22,7 +22,6 @@ ms.locfileid: "71407007"
 有一些 Server 版本需要先做額外準備，才可開始使用 Windows Admin Center 進行管理：
 
 - [Windows Server 2012 和 2012 R2](#prepare-windows-server-2012-and-2012-r2)
-- [Windows Server 2008 R2](#prepare-windows-server-2008-r2)
 - [Microsoft Hyper-V Server 2016](#prepare-microsoft-hyper-v-server-2016)
 - [Microsoft Hyper-V Server 2012 R2](#prepare-microsoft-hyper-v-server-2012-r2)
 
@@ -37,26 +36,6 @@ Windows Admin Center 需要使用預設未包含在 Windows Server 2012 和 2012
 請在 PowerShell 中輸入 `$PSVersiontable`，確認已安裝 WMF，且版本是 5.1 或更新版本。
 
 如果未安裝，您可以[下載並安裝 WMF 5.1](https://docs.microsoft.com/powershell/wmf/setup/install-configure)。
-
-## <a name="prepare-windows-server-2008-r2"></a>準備 Windows Server 2008 R2
-
-### <a name="install-wmf-version-51-or-higher"></a>安裝 WMF 5.1 版或更新版本
-
-Windows Admin Center 需要使用預設未包含在 Windows Server 2008 R2 中的 PowerShell 功能。 若要使用 Windows Admin Center 管理 Windows Server 2008 R2，必須在這些伺服器上安裝 WMF 5.1 版或更新版本。 
-
-請確定電腦上已安裝 [.NET Framework 4.5.2 或更新版本](https://docs.microsoft.com/dotnet/framework/install/on-windows-7)。
-
-請在 PowerShell 中輸入 `$PSVersiontable`，確認已安裝 WMF，且版本是 5.1 或更新版本。
-
-如果未安裝，您可以[下載並安裝 WMF 5.1](https://docs.microsoft.com/powershell/wmf/setup/install-configure)。
-
-在 Powershell 主控台中執行 `Enable-PSRemoting –force`，以啟用 PowerShell 遠端連線。 
-
-### <a name="enable-remote-desktop"></a>啟用遠端桌面
-
-若要在 Windows Admin Center 中使用遠端桌面，您必須在 Windows Server 2008 R2 伺服器上啟用遠端桌面。
-
-在 [伺服器管理員]  中，移至 [設定遠端桌面]  。 啟用遠端桌面的 [允許來自執行任何版本之遠端桌面的電腦進行連線] 選項。
 
 ## <a name="prepare-microsoft-hyper-v-server-2016"></a>準備 Microsoft Hyper-V Server 2016
 
