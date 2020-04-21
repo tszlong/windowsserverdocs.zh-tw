@@ -1,6 +1,5 @@
 ---
 title: 使用 SQL Server 複寫設定地理位置冗余
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.prod: windows-server
 ms.technology: active-directory-federation-services
 ms.author: billmath
 ms.assetId: 7b9f9a4f-888c-4358-bacd-3237661b1935
-ms.openlocfilehash: 16cf1a237043aa546d4fc24164045aa9f9a1e6ac
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 54106ae635d44368542986c7c469560981f9888a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359825"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855841"
 ---
 # <a name="setup-geographic-redundancy-with-sql-server-replication"></a>使用 SQL Server 複寫設定地理位置冗余
 
@@ -62,7 +61,7 @@ ms.locfileid: "71359825"
 3. 在散發者 頁面上，選擇 本機伺服器 做為散發者，然後按  
    ![設定地理冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql9.png) </br>   
 
-4. 在 [**快照**集資料夾] 頁面上，輸入 \\\SQL1\repldata 來取代預設資料夾。 \(注意：您可能必須自行建立此共用\)。  
+4. 在 [**快照**集資料夾] 頁面上，輸入 \\\SQL1\repldata 來取代預設資料夾。 \(附註：您可能必須自行\)建立此共用。  
    ![設定地理冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql10.png) </br>   
   
 5. 選擇 [ **AdfsConfigurationV3** ] 作為發行集資料庫，然後按 **[下一步]** 。  
@@ -89,7 +88,7 @@ ms.locfileid: "71359825"
     ![設定地理冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql18.png) </br>   
     您可能需要為 SQL 代理程式建立網域帳戶。 使用為[網域帳戶 CONTOSO\\Sqlagent 設定 sql 登](Set-up-Geographic-Redundancy-with-SQL-Server-Replication.md#sqlagent)入中的步驟，為這個新的 AD 使用者建立 sql 登入，並指派特定的許可權。  
   
-13. 在 [**代理程式安全性**] 頁面上，按一下 [**安全性設定**]，並輸入網域帳戶的使用者名稱\/密碼 \(不是針對 SQL 代理程式所建立的 GMSA\)，然後按一下 **[確定]** 。  按一下 **\[下一步\]** 。  
+13. 在 [**代理程式安全性**] 頁面上，按一下 [**安全性設定**]，並輸入網域帳戶的使用者名稱\/密碼 \(不是針對 SQL 代理程式所建立的 GMSA\)，然後按一下 **[確定]** 。  按 [下一步]。  
     ![設定地理冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql19.png) </br>  
 
 14. 在 [ **Wizard 動作]** 頁面上，按 **[下一步]** 。   
@@ -107,7 +106,7 @@ ms.locfileid: "71359825"
 ## <a name="create-subscription-settings-on-the-replica-sql-server"></a>在複本上建立訂用帳戶設定 SQL Server  
 請確定您已在初始 SQL Server 上建立發行者設定（如上所述），然後完成下列程式：  
   
-1. 在 [複本 SQL Server 上，從 SQL Server Management studio 的 [複寫] 底下，以滑鼠右鍵按一下 [**本機訂閱** **]，然後**選擇 [**新增訂**用帳戶]。![設定地理冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql24.png) </br>  
+1. 在複本 SQL Server 上，從 SQL Server Management studio 的 [複寫] 底下，以滑鼠右鍵按一下 [**本機訂閱** **]，然後**選擇 [**新增訂**用帳戶]。![設定地理冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql24.png) </br>  
 
 2. 在 [**新增訂閱嚮導]** 頁面上，按 **[下一步]** 。
    ![設定地理冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql25.png) </br>   
@@ -156,7 +155,7 @@ ms.locfileid: "71359825"
   
 4.  此外，您可以在 [ **SQL Server Agent\\作業**] 節點下查看工作\(\) 排程執行發行集\/訂閱的作業。  只會顯示本機作業，因此請務必檢查發行者和訂閱者以進行疑難排解。  以滑鼠\-按右鍵作業，然後選取 [ **view 歷程記錄**] 來查看執行歷程記錄和結果。  
   
-## <a name="sqlagent"></a>為網域帳戶設定 SQL 登入 CONTOSO\\sqlagent  
+## <a name="configure-sql-login-for-the-domain-account-contososqlagent"></a><a name="sqlagent"></a>為網域帳戶設定 SQL 登入 CONTOSO\\sqlagent  
   
 1.  在主要和複本 SQL Server （稱為 CONTOSO\\sqlagent）上建立新的登入 \(在上述程式的 [**代理程式安全性**] 頁面上建立和設定的新網域使用者名稱。\)  
   

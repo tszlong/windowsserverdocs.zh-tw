@@ -1,38 +1,34 @@
 ---
 title: 設定租使用者 VM 網路介面卡的服務品質（QoS）
 description: 當您設定租使用者 VM 網路介面卡的 QoS 時，您可以選擇在資料中心橋接 \(DCB\)或軟體定義網路 \(SDN\) QoS。
-manager: dougkim
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6d783ff6-7dd5-496c-9ed9-5c36612c6859
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: 61f790898d2a6068afb1436957e64861f4c0ebe8
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 76a37bde8ca89fe6808a12aff51185d179f5d523
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309935"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854551"
 ---
 # <a name="configure-quality-of-service-qos-for-a-tenant-vm-network-adapter"></a>設定租使用者 VM 網路介面卡的服務品質（QoS）
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 當您設定租使用者 VM 網路介面卡的 QoS 時，您可以選擇在資料中心橋接 \(DCB\)或軟體定義網路 \(SDN\) QoS。
 
-1.  **DCB**。 您可以使用 Windows PowerShell NetQoS Cmdlet 來設定 DCB。 如需範例，請參閱[遠端直接記憶體存取（RDMA）和交換器內嵌小組（SET）](../../../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)主題中的「啟用資料中心橋接」一節。
+1.    **DCB**。 您可以使用 Windows PowerShell NetQoS Cmdlet 來設定 DCB。 如需範例，請參閱[遠端直接記憶體存取（RDMA）和交換器內嵌小組（SET）](../../../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)主題中的「啟用資料中心橋接」一節。
 
-2.  **SDN QoS**。 您可以使用網路控制卡來啟用 SDN QoS，這可設定為限制虛擬介面上的頻寬，以防止高流量的 VM 封鎖其他使用者。  您也可以設定 SDN QoS 來保留 VM 的特定頻寬量，以確保不論網路流量的數量為何，VM 皆可供存取。  
+2.    **SDN QoS**。 您可以使用網路控制卡來啟用 SDN QoS，這可設定為限制虛擬介面上的頻寬，以防止高流量的 VM 封鎖其他使用者。  您也可以設定 SDN QoS 來保留 VM 的特定頻寬量，以確保不論網路流量的數量為何，VM 皆可供存取。  
 
 透過網路介面內容的埠設定，套用所有 SDN QoS 設定。 如需詳細資訊，請參閱下表。
 
-|元素名稱|描述|
+|元素名稱|說明|
 |------------|-----------| 
 |macSpoofing| 可讓 Vm 將連出封包中 MAC\) 位址的來源媒體存取控制 \(，變更為未指派給 VM 的 MAC 位址。<p>允許的值：<ul><li>[已啟用] –使用不同的 MAC 位址。</li><li>已停用-僅使用指派給它的 MAC 位址。</li></ul>|
 |arpGuard| 只允許 ArpFilter 中指定的 ARP 防護位址通過埠。<p>允許的值：<ul><li>已啟用-允許</li><li>Disabled –不允許</li></ul>|
