@@ -6,12 +6,12 @@ ms.technology: server-general
 author: Teresa-Motiv
 ms.author: v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cd94e997deaaf358c72793e6ff35d51a9ab3df6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 76665d91cc1e2997a837721ffbc51b0513dd7c1a
+ms.sourcegitcommit: af1cf89632d62a94943d3ad9f6b5234b88499278
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80826182"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81524933"
 ---
 # <a name="guidelines-for-troubleshooting-dns-related-activation-issues"></a>針對 DNS 相關啟用問題進行疑難排解的指導方針
 
@@ -241,7 +241,7 @@ allow-update { any; };
 - 若為已加入網域的電腦，則為 DNS 系統所指派的電腦網域 (例如 Active Directory Domain Services (AD DS) DNS)。
 - 若為工作群組電腦，這是由動態主機設定通訊協定 (DHCP) 指派的電腦網域。 如要求建議 (RFC) 2132 中所定義，此網域名稱是由代碼值為 15 的選項所定義。
 
-根據預設，KMS 主機會在對應至 KMS 主機電腦網域的 DNS 區域中登錄其 SRV 記錄。 例如，假設 KMS 主機加入 contoso.com 網域。 在此案例中，KMS 主機會在 contoso.com DNS 區域下登錄其 _vmlcs SRV 記錄。 因此，此記錄會將服務識別為 VLMCS._TCP.CONTOSO.COM。
+根據預設，KMS 主機會在對應至 KMS 主機電腦網域的 DNS 區域中登錄其 SRV 記錄。 例如，假設 KMS 主機加入 contoso.com 網域。 在此案例中，KMS 主機會在 contoso.com DNS 區域下登錄其 _vmlcs SRV 記錄。 因此，此記錄會將服務識別為 _VLMCS._TCP.CONTOSO.COM。
 
 如果 KMS 主機和 KMS 用戶端使用不同的 DNS 區域，您必須將 KMS 主機設定為在多個 DNS 網域中自動發佈其 SRV 記錄。 若要這樣做，請執行下列步驟：
 

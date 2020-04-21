@@ -7,14 +7,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 03/24/2020
+ms.date: 04/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 34f5fdb5a2826173edf471fd65248008761863dd
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 016a88999b93d686faff73134a660014fd602765
+ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861411"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81279694"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面用戶端的新功能
 
@@ -27,7 +27,26 @@ ms.locfileid: "80861411"
 |使用者群組 |版本  |
 |-----------|---------|
 |公用     |1.2.790  |
-|Insider    |1.2.790  |
+|Insider    |1.2.940  |
+
+## <a name="updates-for-version-12940"></a>1\.2.940 版的更新
+
+發行日期：  04/14/2020
+
+下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4txZU)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4txZV)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4tM6I)
+
+- 當您以滑鼠右鍵按一下連線中心上的桌面圖示時，就可以新增桌面連線的 [顯示設定] 選項。
+  - 現在有三個顯示組態選項：**所有顯示**、**單一顯示**，以及**選取 顯示**。
+  - 我們現在只會在選取顯示組態時顯示可用的設定。
+  - 在選取顯示模式中，新的 [將目前的顯示最大化]  選項可讓您以動態方式變更用於工作階段的顯示，而不需要重新連線。 啟用時，將工作階段最大化會讓工作階段視窗觸及的所有顯示上的畫面全滿。
+  - 我們已在所有顯示的中新增新的**使用視窗型時單一顯示**選項，並選取顯示模式。 當您結束全螢幕模式時，這個選項會自動將您的工作階段切換為單一顯示，當您將視窗最大化時，會自動返回多個顯示。
+- 我們已將新的**顯示設定**群組新增至系統功能表；以滑鼠右鍵按一下視窗型桌面工作階段的標題列時即會顯示。 這可讓您在工作階段期間動態變更一些設定。 例如，您可以變更新的**使用視窗型時單一顯示模式**和**將目前顯示最大化**設定。
+- 結束全螢幕並第一次進入全螢幕時，工作階段視窗會回到其原始位置。
+- 從「關於」頁面重設使用者資料時，現在會在完成時將您重新導向至「連線中心」，而不是關閉用戶端。
+- 使用 Tab 鍵瀏覽和螢幕讀取器解決了一些協助工具問題。
+- 已修正在不同縮放比例的顯示之間拖曳桌面工作階段視窗時，發生閃爍和壓縮的問題。
+- 已修正重新導向相機時發生的錯誤。
+- 已修正多個損毀問題以改善可靠性。
 
 ## <a name="updates-for-version-12790"></a>1\.2.790 版的更新
 

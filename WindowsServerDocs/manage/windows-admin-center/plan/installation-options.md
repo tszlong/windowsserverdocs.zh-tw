@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 12/02/2019
-ms.openlocfilehash: 503cd64cac0673829fe21bc15e8ad9d6a83bbb15
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: bd7ec8a5a072cbda99b036718d24ec1908fb8b53
+ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950509"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81269245"
 ---
 # <a name="what-type-of-installation-is-right-for-you"></a>什麼類型的安裝最適合您？
 
@@ -64,10 +64,9 @@ Microsoft Edge (包括 [Microsoft Edge Insider](https://microsoftedgeinsider.com
 | Windows Server 2012 R2 | 是 | 是 |
 | Microsoft Hyper-V Server 2012 R2 | 是 | 是 |
 | Windows Server 2012 | 是 | 是 |
-| Windows Server 2008 R2 | 是，有限的功能 | 不適用 |
 
 > [!NOTE]
-> Windows Admin Center 需要 Windows Server 2008 R2、2012 和 2012 R2 中未包含的 PowerShell 功能。 如果您將使用 Windows Admin Center 來管理這些平台，您必須在這些伺服器上安裝 Windows Management Framework (WMF) 5.1 版或更新版本。
+> Windows Admin Center 需要 Windows Server 2012 和 2012 R2 中未包含的 PowerShell 功能。 如果您將使用 Windows Admin Center 來管理這些平台，您必須在這些伺服器上安裝 Windows Management Framework (WMF) 5.1 版或更新版本。
 > 
 > 請在 PowerShell 中輸入 `$PSVersiontable`，確認已安裝 WMF，且版本是 5.1 或更新版本。 
 > 

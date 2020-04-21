@@ -1,28 +1,24 @@
 ---
 title: Windows 驗證技術概觀
 description: Windows Server 安全性
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-windows-auth
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 286d3e41-434f-4703-9320-706d06ebda51
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: f2916bc9c3654f0e5e3d4dc27ce79874fdb863f7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7a19230e0fc1fb96700785fd83e70d501d59b76a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403269"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861691"
 ---
 # <a name="windows-authentication-technical-overview"></a>Windows 驗證技術概觀
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 本主題適用于 IT 專業人員，提供 Windows 驗證技術總覽的主題連結。 Windows 驗證是證明使用者或服務嘗試存取 Windows 之真實性的程式。
 
