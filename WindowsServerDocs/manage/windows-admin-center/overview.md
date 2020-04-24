@@ -9,10 +9,10 @@ ms.date: 01/07/2020
 ms.localizationpriority: high
 ms.prod: windows-server
 ms.openlocfilehash: bb2f6d7fcbf18ef9bc67534982d1a98fdc5172a1
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "79320032"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
