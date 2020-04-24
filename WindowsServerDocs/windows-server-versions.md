@@ -11,10 +11,10 @@ ms.author: elizapo
 manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: 5133e474882531e05cd8b6a3e69ca9c90a1c101a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80859721"
 ---
 # <a name="windows-server---it-administrator-content-for-current-and-previous-releases"></a>Windows Server - 新版與舊版的 IT 管理員內容

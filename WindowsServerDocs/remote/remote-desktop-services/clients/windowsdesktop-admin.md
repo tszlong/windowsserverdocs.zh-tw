@@ -10,10 +10,10 @@ ms.author: helohr
 ms.date: 09/16/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 202b39c33896f6b5e570c8abcf630dad436466c3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80861421"
 ---
 # <a name="windows-desktop-client-for-admins"></a>適用於系統管理員的 Windows 桌面用戶端

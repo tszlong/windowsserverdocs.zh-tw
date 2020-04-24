@@ -9,10 +9,10 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.openlocfilehash: 455b5609c1409d7c01e464c51025042d3b0090c8
-ms.sourcegitcommit: 719b2ee1fe08429cb7929a201dd2816e861ec534
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/15/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "81385313"
 ---
 # <a name="windows-server-release-information"></a>Windows Server 版本資訊

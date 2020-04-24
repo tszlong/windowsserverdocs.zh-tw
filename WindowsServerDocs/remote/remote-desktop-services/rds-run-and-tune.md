@@ -10,10 +10,10 @@ ms.assetid: 79909767-a4c3-4ecf-8d3f-77d37a663153
 author: spatnaik
 manager: scottman
 ms.openlocfilehash: 8ce006894376ad120d9d23b6c5f0f891615657fb
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80859061"
 ---
 # <a name="run-and-tune-your-remote-desktop-services-environment"></a>執行並調整您的遠端桌面服務環境

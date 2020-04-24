@@ -66,13 +66,11 @@
 #### [使用工具擴充功能中的自訂閘道外掛程式](extend/guides/use-custom-gateway-plugin.md)
 #### [建立連線提供者](extend/guides/create-connection-provider.md)
 #### [修改根瀏覽行為](extend/guides/modify-root-navigation.md)
-#### [Windows 系統管理中心 1909 版中的叢集連線類型變更](extend/guides/cluster-connection-change-wac-1909.md)
 #### [控制您的工具可見性](extend/guides/dynamic-tool-display.md)
 #### [字串和當地語系化](extend/guides/strings-localization.md)
 #### [UI 文字與設計樣式指南](extend/guides/ui-text-style-guide.md)
 #### [在擴充功能中使用 PowerShell](extend/guides/powershell.md)
 #### [CSS 圖示指南](extend/guides/cssicons.md)
-#### [移轉至最新的 SDK](extend/guides/migration-guide-0_1-1_0.md)
 #### [啟用擴充功能探索橫幅](extend/guides/extension-discovery-banner.md)
 ### [發佈擴充功能](extend/publish-extensions.md)
 ### 案例研究
