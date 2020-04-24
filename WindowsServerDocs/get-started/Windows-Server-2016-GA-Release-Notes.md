@@ -9,10 +9,10 @@ ms.assetid: 134aab85-664f-4d44-87ef-9e5fd389071f
 author: jaimeo
 ms.author: jaimeo
 ms.openlocfilehash: 8ceff837c2b85466f5583eed03f39e73f32fd4a4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80826381"
 ---
 # <a name="release-notes-important-issues-in-windows-server-2016"></a>版本資訊：Windows Server 2016 中的重要問題

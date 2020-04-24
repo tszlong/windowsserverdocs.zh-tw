@@ -10,10 +10,10 @@ author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: high
 ms.openlocfilehash: 2ecec7ad47ade22ec05f1d721c9667b0887f3de3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80852941"
 ---
 # <a name="security--assurance"></a>安全性 | 保證

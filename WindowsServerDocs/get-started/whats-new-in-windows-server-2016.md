@@ -11,10 +11,10 @@ ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c140c61a5887cc63b2a9d0b468f8d1daf02cd76
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "76822711"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>Windows Server 2016 的新功能
@@ -23,7 +23,7 @@ ms.locfileid: "76822711"
 
 ![顯示報紙的圖示](media/whats-new.png)若要深入了解 Windows 的最新功能，請參閱 [Windows Server 的新功能](whats-new-in-windows-server.md)。 本節內容說明 Windows Server&reg; 2016 的新功能和變更。 此處所列的新功能和變更是您使用這個版本時最可能帶來最大影響的新功能和變更。
 
-## <a name="computevirtualizationvirtualizationmd"></a>[Compute](../virtualization/virtualization.md)
+## <a name="compute"></a>[Compute](../virtualization/virtualization.md)
 
 「虛擬化」領域包含 IT 專業人員可用來設計、部署及維護 Windows Server 的虛擬化產品與功能。  
 
@@ -59,7 +59,7 @@ Windows Server 2016 提供新的 Hyper-V 型受防護虛擬機器，保護遭入
 
 如需使用受防護虛擬機器的詳細資料和指示，請參閱[適用於 Windows Server 2016 的受防護 VM 和受防護網狀架構驗證指南 (TPM)](https://aka.ms/shieldedvms)。  
 
-## <a name="identity-and-accessidentityidentity-and-accessmd"></a>[身分識別與存取](../identity/Identity-and-Access.md)  
+## <a name="identity-and-access"></a>[身分識別與存取](../identity/Identity-and-Access.md)  
 「身分識別」中的新功能可提升組織保護 Active Directory 環境的能力，並協助他們移轉至僅限雲端的部署和混合式部署，其中有些應用程式與服務會裝載於雲端，而其他則會裝載於內部部署上。  
 
 ### <a name="active-directory-certificate-services"></a>Active Directory 憑證服務  
@@ -74,7 +74,7 @@ Active Directory 同盟服務的新功能。 Windows Server 2016 中的 Active D
 ### <a name="web-application-proxy"></a>Web 應用程式 Proxy  
 最新版的「Web 應用程式 Proxy」著重於可發行和預先驗證更多應用程式及改善使用者體驗的新功能。 請查看新功能的完整清單，其中包括豐富型用戶端應用程式 (例如 Exchange ActiveSync) 的預先驗證，以及讓 SharePoint 應用程式更容易發行的萬用字元網域。 如需詳細資訊，請參閱 [Windows Server 2016 的 Web 應用程式 Proxy](../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md)。  
 
-##  <a name="administrationadministrationmanage-windows-servermd"></a>[系統管理](../administration/manage-windows-server.md)  
+##  <a name="administration"></a>[系統管理](../administration/manage-windows-server.md)  
 「管理和自動化」領域著重在適用於想要執行和管理 Windows Server 2016 (包括 Windows PowerShell) 之 IT 專業人員的工具及參考資訊。
 
 Windows PowerShell 5.1 包含重要的新功能 (包括支援進行類別開發)，以及新的安全性功能，這些安全性功能可延伸其用途、改善其可用性，並可讓您更輕鬆地全面控制及管理 Windows 型環境。 如需詳細資訊，請參閱 [WMF 5.1 中的新案例及功能](https://docs.microsoft.com/powershell/wmf/5.1/scenarios-features)。
@@ -98,7 +98,7 @@ Windows Server 2016 和 Windows 10 包含新的 PackageManagement 功能 (先前
 
 如需詳細資訊，請參閱 [PowerShell ♥ the Blue Team](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/) (PowerShell 心繫藍隊)。
 
-## <a name="networkingnetworkingnetworkingmd"></a>[網路功能](../networking/Networking.md)  
+## <a name="networking"></a>[網路功能](../networking/Networking.md)  
 此領域提供 IT 專業人員用來設計、部署和維護 Windows Server 2016 的網路功能產品與功能。  
 
 ### <a name="software-defined-networking"></a>軟體定義的網路
@@ -109,7 +109,7 @@ Windows Server 2016 和 Windows 10 包含新的 PackageManagement 功能 (先前
 
 為了在復原封包遺失時改善 TCP 行為，我們已經實作 TCP 結尾遺失探查 (TLP) 和最新通知 (RACK)。 TLP 有助於將重新傳輸逾時 (RTO) 轉換為快速復原，RACK 則降低快速復原重新傳輸遺失封包所需的時間。 
 
-## <a name="security-and-assurancesecuritysecurity-and-assurancemd"></a>[安全性和保證](../security/Security-and-Assurance.md)  
+## <a name="security-and-assurance"></a>[安全性和保證](../security/Security-and-Assurance.md)  
 包含 IT專業人員可用來部署於您的資料中心和雲端環境中的安全性解決方案與功能。 如需 Windows Server 2016 中安全性的基本相關資訊，請參閱[安全性和保證](../security/Security-and-Assurance.md)。  
 
 ### <a name="just-enough-administration"></a>Just Enough Administration  
@@ -132,7 +132,7 @@ Credential Guard 支援 RDP 工作階段，讓使用者認證保留在用戶端�
 控制流程防護 (CFG) 是平台安全性功能，建立目的是要對抗記憶體損毀弱點。 如需詳細資訊，請參閱 [Control Flow Guard](https://msdn.microsoft.com/library/windows/desktop/mt637065(v=vs.85).aspx) (控制流程防護)。
 
 
-## <a name="storagestoragestoragemd"></a>[儲存體](../storage/storage.md)
+## <a name="storage"></a>[儲存體](../storage/storage.md)
 
 Windows Server 2016 中的儲存體包括軟體定義儲存體的新功能和增強功能，以及傳統檔案伺服器的新功能和增強功能。 以下是其中一些新功能。如需詳細增強功能和詳細資訊，請參閱 [Windows Server 2016 中儲存體的新功能](../storage/whats-new-in-storage.md)。
 
@@ -154,7 +154,7 @@ Windows Server 2016 中的儲存體包括軟體定義儲存體的新功能和增
 
 如需詳細資訊，請參閱[存放裝置服務品質](../storage/storage-qos/storage-qos-overview.md)。
 
-## <a name="failover-clusteringfailover-clusteringwhats-new-in-failover-clusteringmd"></a>[容錯移轉叢集](../failover-clustering/whats-new-in-failover-clustering.md)
+## <a name="failover-clustering"></a>[容錯移轉叢集](../failover-clustering/whats-new-in-failover-clustering.md)
 
 Windows Server 2016 包含的一些新功能和增強功能是針對使用容錯移轉叢集功能分組到單一容錯叢集的多部伺服器。 其中部分新增項目如下；如需更完整的清單，請參閱 [Windows Server 2016 中容錯移轉叢集的新功能](../failover-clustering/whats-new-in-failover-clustering.md)。
 

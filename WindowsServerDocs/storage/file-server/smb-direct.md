@@ -9,10 +9,10 @@ ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 41126aa0d054607449d57928c1777679e5087e73
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71394464"
 ---
 # <a name="smb-direct"></a>SMB 直接傳輸
@@ -84,7 +84,7 @@ Set-NetOffloadGlobalSetting -NetworkDirect Disabled
 Enable-NetAdapterRDMA <name>
 ```
 
-若要重新啟用所有介面的 RDMA，請輸入：
+若要重新啟用所有介面的 RDMA ，請輸入：
 
 ```PowerShell
 Set-NetOffloadGlobalSetting -NetworkDirect Enabled

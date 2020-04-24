@@ -8,10 +8,10 @@ ms.author: davso; ericam; yashi
 author: akino
 ms.date: 10/16/2017
 ms.openlocfilehash: a4508e28e54562748422b198f703e23326d15720
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80851631"
 ---
 # <a name="performance-tuning-windows-server-containers"></a>Windows Server 容器的效能調整

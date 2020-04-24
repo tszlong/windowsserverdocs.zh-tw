@@ -9,10 +9,10 @@ manager: daveba
 ms.technology: storage-spaces
 ms.date: 06/20/2019
 ms.openlocfilehash: bb93ec15fd138ee65797c9d27413552c3a1759a6
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "75949675"
 ---
 # <a name="using-disk-cleanup-on-windows-server"></a>在 Windows Server 上使用磁碟清理

@@ -9,10 +9,10 @@ ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d7b96574dcfc2a4417aa36780d7bd87c2556f61f
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "75950265"
 ---
 # <a name="smb-security-enhancements"></a>SMB 安全性增強功能

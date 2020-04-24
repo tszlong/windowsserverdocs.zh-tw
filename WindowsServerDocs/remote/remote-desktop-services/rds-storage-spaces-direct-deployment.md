@@ -10,10 +10,10 @@ ms.author: harowl
 ms.date: 07/17/2018
 manager: scottman
 ms.openlocfilehash: 2386a231edf80fa611daf71c171bc0de3a7b497e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80855541"
 ---
 # <a name="deploy-a-two-node-storage-spaces-direct-scale-out-file-server-for-upd-storage-in-azure"></a>部署雙節點儲存空間直接存取向外延展檔案伺服器以在 Azure 中儲存 UPD

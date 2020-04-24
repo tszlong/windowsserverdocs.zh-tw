@@ -9,13 +9,13 @@ ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
 ms.openlocfilehash: 09206b90dc8b829aaa70d0cca34bd05a9e0eb693
-ms.sourcegitcommit: 9855d6b59b1f8722f39ae74ad373ce1530da0ccf
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71963044"
 ---
-# <a name="troubleshooting-windows-volume-activation"></a>Windows 大量啟用疑難排解
+# <a name="troubleshooting-windows-volume-activation"></a>針對 Windows 大量啟用進行疑難排解
 
 產品啟用是在特定電腦上安裝軟體之後，驗證該軟體的程序。 啟用會確認產品是否為正版軟體 (而非不實複本)，且產品金鑰或序號是有效的，且沒有被盜用或撤銷。 啟用也會建立產品金鑰與安裝之間的連結或關係。
 

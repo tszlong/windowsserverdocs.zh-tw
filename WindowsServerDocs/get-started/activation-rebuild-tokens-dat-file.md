@@ -9,17 +9,17 @@ ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a5835cd601b2eb327c8605d70bf075e6c8e8414
-ms.sourcegitcommit: 9855d6b59b1f8722f39ae74ad373ce1530da0ccf
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71962994"
 ---
 # <a name="rebuild-the-tokensdat-file"></a>重建 Tokens.dat 檔案
 
 在對 Windows 啟用問題進行疑難排解時，您可能必須重建 Tokens.dat 檔案。 本文將詳細說明如何執行這項作業。
 
-## <a name="resolution"></a>解析度
+## <a name="resolution"></a>解決方法
 
 若要重建 Tokens.dat 檔案，請遵循下列步驟：
 
@@ -67,7 +67,7 @@ ms.locfileid: "71962994"
    ```
 1. 重新啟動電腦。
 
-## <a name="more-information"></a>詳細資訊
+## <a name="more-information"></a>其他資訊
 
 重建 Tokens.dat 檔案之後，您必須使用下列其中一種方法重新安裝您的產品金鑰：
 

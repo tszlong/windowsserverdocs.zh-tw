@@ -9,10 +9,10 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
 ms.openlocfilehash: 2723868251f90429fb0ad5e966c9222a6a22ab0c
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "77520639"
 ---
 # <a name="windows-server-2016-improvements"></a>Windows Server 2016 改進功能
@@ -321,7 +321,7 @@ MaxAllowedPhaseOffset 設定位於使用全域組態設定的 System\Windows Tim
 ### <a name="event-logging"></a>事件記錄
 若要取得完整的脈絡，您也需要事件記錄資訊。 藉由收集系統事件記錄，以及篩選 Time-Server、Microsoft-Microsoft-Windows-Kernel-Boot 和 Microsoft-Windows-Kernel-General，您可以探索是否有其他因素變更了時間 (例如，第三方)。 您需要這些記錄以排除外部干擾。 群組原則可能會影響寫入記錄的事件記錄檔。 如需詳細資訊，請參閱上述有關使用群組原則一節。
 
-### <a name="W32Logging"></a>W32time 偵錯記錄
+### <a name="w32time-debug-logging"></a><a name="W32Logging"></a>W32time 偵錯記錄
 若要啟用 w32tm 以進行稽核，下列命令會啟用記錄以顯示時鐘的定期更新，並指出來源時鐘。 重新啟動服務，以啟用新的記錄。 
 
 如需詳細資訊，請參閱[如何開啟 Windows T時間服務中的偵錯記錄](https://support.microsoft.com/kb/816043)。

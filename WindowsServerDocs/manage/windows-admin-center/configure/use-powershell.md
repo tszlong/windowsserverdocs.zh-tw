@@ -9,10 +9,10 @@ ms.date: 11/21/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: 58b6f5dd064eb315ac2d4518283a870d137f837a
-ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "74908302"
 ---
 # <a name="use-powershell-to-manage-windows-admin-center-settings"></a>使用 PowerShell 管理 Windows Admin Center 設定
@@ -27,7 +27,7 @@ ms.locfileid: "74908302"
 
 [!INCLUDE [ps-extensions](../includes/ps-extensions.md)]
 
-### <a name="see-also"></a>請參閱
+### <a name="see-also"></a>另請參閱
 
 * [在叢集上部署高可用性的 Windows Admin Center 閘道](../deploy/high-availability.md)
 * [使用 Cloud Shell 在 Azure 中部署 Windows Admin Center 閘道](../azure/deploy-wac-in-azure.md)

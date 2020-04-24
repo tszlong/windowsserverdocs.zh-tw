@@ -9,10 +9,10 @@ ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
 ms.openlocfilehash: fc673d2c3e1404dbd750d4c0ef05ec6db50017aa
-ms.sourcegitcommit: 9855d6b59b1f8722f39ae74ad373ce1530da0ccf
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71963074"
 ---
 # <a name="guidelines-for-troubleshooting-the-key-management-service-kms"></a>金鑰管理服務 (KMS) 疑難排解的指導方針
@@ -133,7 +133,7 @@ KMS 用戶端會記錄兩個對應的事件，即事件識別碼 12288 和事件
 - KMS 主機和 KMS 用戶端系統的 **Slmgr.vbs /dlv** 輸出。 無論您使用 wscript 還是 cscript 來執行命令，都可以使用 Ctrl+C 來複製輸出，然後將其貼到 [記事本] 中，並傳送給支援連絡人。
 - KMS 主機的事件記錄檔 (金鑰管理服務記錄) 和 KMS 用戶端系統的事件記錄檔 (應用程式記錄)
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 - [詢問核心小組：啟用次數](https://blogs.technet.microsoft.com/askcore/tag/Activation/)
 
 

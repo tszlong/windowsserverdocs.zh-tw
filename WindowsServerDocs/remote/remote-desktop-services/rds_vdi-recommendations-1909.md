@@ -10,10 +10,10 @@ author: heidilohr
 manager: lizross
 ms.date: 02/19/2020
 ms.openlocfilehash: 44aa465773674625fa392a644ffb188140138bde
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "77519593"
 ---
 # <a name="optimizing-windows-10-version-1909-for-a-virtual-desktop-infrastructure-vdi-role"></a>針對虛擬桌面基礎結構 (VDI) 角色將 Windows 10 版本 1909 最佳化
@@ -378,7 +378,7 @@ VDI 環境中的許多 Windows 10 最佳化都可使用 Windows 原則來進行�
 | 登入 | 關閉鎖定畫面上的應用程式通知 |  | 啟用 |
 | 登入 | 關閉 Windows 啟動音效 |  | 啟用 |
 | 電源管理 | 選取使用中電源計劃 | 高效能 | 啟用 |
-| 復原 | 允許將系統還原到預設狀態 |  | 停用 |
+| 修復 | 允許將系統還原到預設狀態 |  | 停用 |
 | *儲存空間健全狀況 | 允許下載磁碟失敗預測模型的更新 |  | 停用。 不會下載磁碟失敗預測模型的更新。 |
 | *Windows 時間服務 \\ 時間提供者 | 啟用 Windows NTP 用戶端 |  | 停用。 如果停用或未設定此原則設定，則本機電腦時鐘的時間不會與 NTP 伺服器同步化。 注意：使用此設定前請謹慎考量。 已加入網域的 Windows 裝置都使用 **NT5DS**。 父系網域 DC 的 DC 可使用 NTP。 PDCe 角色可使用 NTP。 虛擬機器有時會使用「增強功能」或「整合服務」。 |
 | 疑難排解與診斷 \\ 排程維護 | 設定排程維護行為 |   | 停用 |

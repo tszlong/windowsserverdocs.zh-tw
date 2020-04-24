@@ -9,10 +9,10 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 6bd97802fbef342520e92a857a1a53acf3e8d7a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71385944"
 ---
 # <a name="convert-an-mbr-disk-into-a-gpt-disk"></a>將 MBR 磁碟轉換為 GPT 磁碟
@@ -58,7 +58,7 @@ ms.locfileid: "71385944"
 
 7.  在 **DISKPART** 提示中鍵入 `convert gpt`。
 
-| 值  | 描述  |
+| 值  | 說明  |
 | ----- | ---- |
 | **list disk** | 顯示磁碟清單和這些磁碟的相關資訊，例如大小、可用空間數量、磁碟是基本還是動態磁碟，以及磁碟使用的是主開機記錄 (MBR) 還是 GUID 磁碟分割表格 (GPT) 磁碟分割樣式。 標示有星號 (*) 的磁碟具有焦點。 |
 | **select disk** *disknumber* | 選取指定的磁碟 (其中 *disknumber* 是磁碟編號)，並讓它成為焦點。 |

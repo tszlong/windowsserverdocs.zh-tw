@@ -7,10 +7,10 @@ author: JasonGerend
 manager: elizapo
 ms.author: jgerend
 ms.openlocfilehash: 1e11f6c596d7e5eb0bdf379adcf47d21e74e9f6b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80815621"
 ---
 # <a name="dfs-replication-frequently-asked-questions-faq"></a>DFS 複寫：常見問題集 (FAQ)

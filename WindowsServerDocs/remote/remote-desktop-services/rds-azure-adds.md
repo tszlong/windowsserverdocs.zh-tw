@@ -9,10 +9,10 @@ ms.topic: article
 author: christianmontoya
 ms.localizationpriority: medium
 ms.openlocfilehash: bc70300df8bc8aef78371f4b84fe697bf8e66749
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80852981"
 ---
 # <a name="integrate-azure-ad-domain-services-with-your-rds-deployment"></a>將 Azure AD Domain Services 與您的 RDS 部署整合

@@ -11,10 +11,10 @@ ms.author: elizapo
 ms.date: 06/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 02f970cb2e793c1e342a2818a2bca3900327fa9c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80856001"
 ---
 # <a name="remote-desktop-client-universal-resource-identifier-uri-scheme-support"></a>遠端桌面用戶端的統一資源識別項 (URI) 配置支援

@@ -9,10 +9,10 @@ ms.topic: article
 author: lizap
 manager: dongill
 ms.openlocfilehash: dc6a9fa0d6834f63c9935518e4b2c26320a04082
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80852961"
 ---
 # <a name="add-the-rd-connection-broker-server-to-the-deployment-and-configure-high-availability"></a>將 RD 連線代理人伺服器加入部署並設定高可用性

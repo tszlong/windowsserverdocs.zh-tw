@@ -9,10 +9,10 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 46ed1256ed9039311939f9de12ea46416443be9c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71402150"
 ---
 # <a name="overview-of-disk-management"></a>磁碟管理概觀
@@ -49,7 +49,7 @@ ms.locfileid: "71402150"
 
 雖然 [磁碟管理] 可能顯示 EFI 系統磁碟分割和修復磁碟分割 100% 可用，但並非如此。 這些磁碟分割通常佔滿了電腦正常運作所需的重要檔案。 最好保持原狀，讓它們可以執行啟動電腦和協助從問題中復原等工作。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 - [管理磁碟](manage-disks.md)
 - [管理基本磁碟區](manage-basic-volumes.md)

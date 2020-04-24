@@ -11,10 +11,10 @@ ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
 ms.openlocfilehash: 33c1aa654e4c660b4fe2f3305bfaf78b5191220a
-ms.sourcegitcommit: e58e1646ffd75d4a89576d967b2dbbbb84764303
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "70119204"
 ---
 # <a name="migrating-roles-and-features-in-windows-server"></a>在 Windows Server 中移轉角色和功能
@@ -25,18 +25,18 @@ ms.locfileid: "70119204"
 
 移轉指南支援將指定的角色和功能從一部伺服器移轉至另一部 (而不是就地升級)。 除非指引中另有說明，否則所支援移轉乃介於實體與虛擬電腦之間，和在 Windows Server 完整安裝選項與執行 Server Core 安裝選項的伺服器之間。
 
-## <a name="before-you-begin"></a>開始之前
+## <a name="before-you-begin"></a>在您開始前
 
 在您開始移轉角色和功能之前，請確認來源和目的地伺服器是否執行適用於其作業系統的最新 Service Pack。 
 
 > [!NOTE]
 > 每當您移轉或升級到任何 Windows Server 版本時，都應該檢閱和了解該版本的[支援週期原則](https://support.microsoft.com/lifecycle)與時間範圍，並進行適當規劃。 您可以針對感興趣的特定 Windows Server 版本[搜尋週期資訊](https://support.microsoft.com/lifecycle)。
 
-## <a name="windows-server-2019"></a>Windows Server Standard 2012 R2
+## <a name="windows-server-2019"></a>Windows Server 2019
 
 若要將檔案伺服器和儲存體移轉至 Windows Server 2019 或 Windows Server 2016，建議使用[儲存體移轉服務](../storage/storage-migration-service/overview.md)。 若要移轉其他角色，請參閱 Windows Server 2016 和 Windows Server 2012 R2 的指引。
 
-## <a name="windows-server-2016"></a>Windows Server 2016
+## <a name="windows-server-2016"></a>Windows Server 2016
 
 以下是 Windows Server 2016 的移轉指南。 請注意，在許多情況下，您也可以使用 Windows Server 2012 R2 移轉指南。
 

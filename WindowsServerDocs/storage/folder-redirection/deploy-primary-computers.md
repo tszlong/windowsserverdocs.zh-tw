@@ -9,10 +9,10 @@ ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: be2b41cf32e2020422c32415e2d8f4273eb09859
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71394435"
 ---
 # <a name="deploy-primary-computers-for-folder-redirection-and-roaming-user-profiles"></a>部署資料夾重新導向及漫遊使用者設定檔的主要電腦

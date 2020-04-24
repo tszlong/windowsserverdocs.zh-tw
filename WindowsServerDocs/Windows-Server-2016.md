@@ -1,10 +1,10 @@
 ---
 redirect_url: /windows-server/windows-server
 ms.openlocfilehash: 9ef5565af748b4dd592e71ec4bd34a2be58003d9
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "75947290"
 ---
 # <a name="windows-server-2016"></a>Windows Server 2016

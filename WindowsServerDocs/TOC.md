@@ -9,7 +9,7 @@
 ## [網路功能](networking/Networking.md)
 ## [遠端](remote/index.md)
 ## [安全性和保證](security/security-and-assurance.md)
-## [儲存空間](storage/storage.md)
+## [儲存體](storage/storage.md)
 ## [虛擬化](virtualization/virtualization.md)
 ## [疑難排解](troubleshoot/windows-server-troubleshooting.md)
 ## [其他 Windows Server 版本](windows-server-versions.md)

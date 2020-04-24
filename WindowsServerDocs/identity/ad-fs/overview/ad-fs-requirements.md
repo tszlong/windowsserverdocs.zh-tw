@@ -10,10 +10,10 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.openlocfilehash: a2f4c9ac05e72083fab3e3a926dbdd2876214a7b
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "77517533"
 ---
 # <a name="ad-fs-requirements"></a>AD FS 需求
@@ -38,7 +38,7 @@ ms.locfileid: "77517533"
   
 -   [權限需求](ad-fs-requirements.md#BKMK_13)  
   
-## <a name="BKMK_1"></a>憑證需求  
+## <a name="certificate-requirements"></a><a name="BKMK_1"></a>憑證需求  
   
 ### <a name="ssl-certificates"></a>SSL 憑證
 
@@ -90,7 +90,7 @@ Web 應用程式 Proxy 上的 SSL 憑證必須符合下列需求
 ### <a name="user-certificates"></a>使用者憑證
 - 搭配 AD FS 使用 x509 使用者憑證驗證時，所有使用者憑證都必須鏈結到 AD FS 和 Web 應用程式 Proxy 伺服器所信任的根憑證授權單位。
 
-## <a name="BKMK_2"></a>硬體需求  
+## <a name="hardware-requirements"></a><a name="BKMK_2"></a>硬體需求  
 AD FS 和 Web 應用程式 Proxy 硬體需求 (實體或虛擬) 會受到 CPU 的節制，因此請調整伺服器陣列的大小以獲得處理容量。  
 - 使用 [AD FS 2016 容量規劃試算表](http://adfsdocs.blob.core.windows.net/adfs/ADFSCapacity2016.xlsx)來判斷您需要的 AD FS 和 Web 應用程式 Proxy 伺服器數目。
 
@@ -106,7 +106,7 @@ AD FS 的記憶體和磁碟需求相當靜態，請參閱下表：
 
 如果您使用 SQL Server 來作為 AD FS 的設定資料庫，請根據最基本的 SQL Server 建議來調整 SQL Server 的大小。  AD FS 的資料庫規模很小，因此 AD FS 不會在資料庫執行個體上放置大量的處理負載。  不過，AD FS 的確會在驗證期間連線至資料庫多次，因此網路連線必須穩固。  可惜的是，SQL Azure 不支援作為 AD FS 的設定資料庫。
   
-## <a name="BKMK_3"></a>Proxy 需求  
+## <a name="proxy-requirements"></a><a name="BKMK_3"></a>Proxy 需求  
   
 -   若要能夠存取外部網路，您必須部署 Web 應用程式 Proxy 角色服務 \- 遠端存取伺服器角色的一部分。 
 
@@ -116,7 +116,7 @@ AD FS 的記憶體和磁碟需求相當靜態，請參閱下表：
   
 -   同盟伺服器和 Web 應用程式 Proxy 角色服務無法安裝在同一部電腦上。  
   
-## <a name="BKMK_4"></a>AD DS 需求  
+## <a name="ad-ds-requirements"></a><a name="BKMK_4"></a>AD DS 需求  
 **網域控制站需求**  
   
 - AD FS 會要求網域控制站執行 Windows Server 2008 或更新版本。
@@ -165,7 +165,7 @@ AD FS 的記憶體和磁碟需求相當靜態，請參閱下表：
   
 -   AD FS 服務帳戶必須有權在向 AD FS 服務進行驗證的使用者所在的每個網域中讀取使用者屬性。  
   
-## <a name="BKMK_5"></a>設定資料庫需求  
+## <a name="configuration-database-requirements"></a><a name="BKMK_5"></a>設定資料庫需求  
 本節會說明分別使用 Windows 內部資料庫 (WID) 或 SQL Server 作為資料庫的 AD FS 伺服器陣列有何需求和限制：  
   
 **WID**  
@@ -188,7 +188,7 @@ AD FS 的記憶體和磁碟需求相當靜態，請參閱下表：
 
 - SQL Server 伺服器陣列同時支援 SAML 成品解析和權杖重新偵測。  
   
-## <a name="BKMK_6"></a>瀏覽器需求  
+## <a name="browser-requirements"></a><a name="BKMK_6"></a>瀏覽器需求  
 透過瀏覽器或瀏覽器控制項執行 AD FS 驗證時，您的瀏覽器必須符合下列需求：  
   
 - 必須啟用 JavaScript  
@@ -200,7 +200,7 @@ AD FS 的記憶體和磁碟需求相當靜態，請參閱下表：
 - 若要驗證使用者憑證和裝置憑證，瀏覽器必須支援 SSL 用戶端憑證驗證  
 
 - 若要使用 Windows 整合式驗證來進行無縫登入，則必須在近端內部網路區域或信任的網站區域中設定同盟服務名稱 (例如 https:\/\/fs.contoso.com)。
-  ## <a name="BKMK_7"></a>網路需求  
+  ## <a name="network-requirements"></a><a name="BKMK_7"></a>網路需求  
  
 **防火牆需求**  
   
@@ -237,7 +237,7 @@ AD FS 的記憶體和磁碟需求相當靜態，請參閱下表：
 - 不建議使用 DNS 循環配置資源來作為負載平衡的方法。 使用這類負載平衡並無法使用健康情況探查自動從負載平衡器移除節點。 
 - 不建議使用 IP 型工作階段親和性或黏性工作階段，來向負載平衡器內的 AD FS 驗證流量。 當郵件用戶端使用舊版驗證通訊協定來連線至 Office 365 郵件服務 (Exchange Online) 時，這可能會造成某些節點發生多載情形。 
 
-## <a name="BKMK_13"></a>權限需求  
+## <a name="permissions-requirements"></a><a name="BKMK_13"></a>權限需求  
 執行 AD FS 安裝和初始設定的系統管理員，必須具有 AD FS 伺服器上的本機系統管理員權限。  如果本機系統管理員沒有在 Active Directory 中建立物件的權限，則必須先讓網域管理員建立必要的 AD 物件，然後才能使用 AdminConfiguration 參數來設定 AD FS 伺服器陣列。  
   
   
