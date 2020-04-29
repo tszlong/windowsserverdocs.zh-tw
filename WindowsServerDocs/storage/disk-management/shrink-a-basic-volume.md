@@ -9,10 +9,10 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 2baf24ed656ef06d44dff93180701d25e6852500
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71385856"
 ---
 # <a name="shrink-a-basic-volume"></a>壓縮基本磁碟區
@@ -53,7 +53,7 @@ ms.locfileid: "71385856"
 
 4.  在 **DISKPART** 提示中鍵入 `shrink [desired=<desiredsize>] [minimum=<minimumsize>]`。 可能的話，將選取的磁碟區壓縮到 *desiredsize* (以 MB 為單位)，如果 *desiredsize* 太大，則壓縮到 *minimumsize*。
 
-| 值             | 描述 |
+| 值             | 說明 |
 | ---               | ----------- |
 | **list volume** | 顯示所有磁碟上的基本和動態磁碟區清單。 |
 | **select volume** | 選取指定的磁碟區 (其中 <em>volumenumber</em> 是磁碟區編號)，並讓它成為焦點。 如果沒有指定磁碟區，**select** 命令會列出焦點所在的目前磁碟區。 您可以用編號、磁碟機代號或掛接點路徑來指定磁碟區。 在基本磁碟上，選取磁碟區也會讓對應的磁碟分割成為焦點。 |

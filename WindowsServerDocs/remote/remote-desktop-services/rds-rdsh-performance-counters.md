@@ -9,12 +9,12 @@ ms.topic: article
 author: lizap
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: c33e5c6309c41e39aeda3a2bdff1a0caf72b2675
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a424a28be835fa2a941187b110907fff76e6f220
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860331"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "81650061"
 ---
 # <a name="use-performance-counters-to-diagnose-app-performance-problems-on-remote-desktop-session-hosts"></a>在遠端桌面工作階段主機上使用效能計數器來診斷應用程式效能問題
 
@@ -22,8 +22,8 @@ ms.locfileid: "80860331"
 
 最難診斷的問題之一是應用程式效能低落：應用程式執行速度很慢或沒有回應。 傳統上，您會在診斷一開始收集 CPU、記憶體、磁碟輸入/輸出及其他計量，然後使用 Windows Performance Analyzer 等工具嘗試找出導致問題的原因。 遺憾的是，在大部分的情況下，此資料無法協助您識別根本原因，因為資源耗用量計數器具有頻繁且巨大的變化。 這讓您難以讀取資料並將它與所回報的問題相互關聯。 為了協助您快速地解決應用程式效能問題，我們新增了一些新的效能計數器 (可透過 [Windows 測試人員計畫](https://insider.windows.com) (英文) [下載](#download-windows-server-insider-software)) 來測量使用者輸入流程。
 
->[!NOTE]
->使用者輸入延遲計數器只適用於：
+> [!NOTE]
+> 使用者輸入延遲計數器只適用於：
 > - Windows Server 2019 或更新版本
 > - Windows 10，版本 1809 或更新版本
 
@@ -33,7 +33,7 @@ ms.locfileid: "80860331"
 
 ![遠端桌面：從使用者遠端桌面用戶端到應用程式的使用者輸入流程](./media/rds-user-input.png)
 
-使用者輸入延遲計數器會在[傳統訊息迴圈](https://msdn.microsoft.com/library/windows/desktop/ms644927.aspx#loop) \(英文\) 中，測量要排入佇列的輸入與在應用程式挑選該輸入時之間的最大差異 (在一段時間間隔內)，如以下流程圖所示：
+使用者輸入延遲計數器會在[傳統訊息迴圈](https://docs.microsoft.com/windows/win32/winmsg/about-messages-and-message-queues#message-loop) \(英文\) 中，測量要排入佇列的輸入與在應用程式挑選該輸入時之間的最大差異 (在一段時間間隔內)，如以下流程圖所示：
 
 ![遠端桌面：使用者輸入延遲效能計數器流程](./media/rds-user-input-delay.png)
 
@@ -41,9 +41,9 @@ ms.locfileid: "80860331"
 
 例如，在下表中，使用者輸入延遲會在此間隔內回報為 1,000 毫秒。 計數器會以該間隔回報最慢的使用者輸入延遲，因為使用者對於「緩慢」的認知取決於他們所體驗到的最慢輸入時間 (上限)，而非所有輸入總數的平均速度。
 
-|數字| 0 | 1 | 2 |
-|------|---|---|---|
-|延遲 |16 毫秒| 20 毫秒| 1,000 毫秒|
+| 數字 |   0   |   1   |    2     |
+| ------ | ----- | ----- | -------- |
+| 延遲  | 16 毫秒 | 20 毫秒 | 1,000 毫秒 |
 
 ## <a name="enable-and-use-the-new-performance-counters"></a>啟用並使用新的效能計數器
 
@@ -53,7 +53,7 @@ ms.locfileid: "80860331"
 reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCounter" /t REG_DWORD /d 0x1 /f
 ```
 
->[!NOTE]
+> [!NOTE]
 > 如果您使用的是 Windows 10 1809 版或更新版本，或是 Windows Server 2019 或更新版本，則不需啟用登錄機碼。
 
 接下來，重新啟動伺服器。 然後，開啟效能監視器並選取加號 (+)，如下列螢幕擷取畫面所示。
@@ -68,12 +68,12 @@ reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCou
 
 如果您選取 [每個處理序的使用者輸入延遲]  ，您將會看到格式為 ```SessionID:ProcessID <Process Image>``` 的 [所選物件的執行個體]  (亦即處理序)。
 
-例如，如果 [小算盤] 應用程式正在[工作階段識別碼 1](https://msdn.microsoft.com/library/ms524326.aspx) \(英文\) 中執行，您將會看到 ```1:4232 <Calculator.exe>```。
+例如，如果 [小算盤] 應用程式正在[工作階段識別碼 1](https://docs.microsoft.com/previous-versions/iis/6.0-sdk/ms524326(v=vs.90)) \(英文\) 中執行，您將會看到 ```1:4232 <Calculator.exe>```。
 
 > [!NOTE]
 > 並非所有處理序都會包含在內。 您將不會看到以 SYSTEM 身分執行的任何處理序。
 
-一旦您新增它之後，計數器就會立即開始回報使用者輸入延遲。 請注意，預設會將調整上限設定為 100 (毫秒)。 
+一旦您新增它之後，計數器就會立即開始回報使用者輸入延遲。 請注意，預設會將調整上限設定為 100 (毫秒)。
 
 ![遠端桌面：效能監視器中針對每個處理序所使用之使用者輸入延遲的活動範例](./media/rds-sample-user-input-delay-perfmon.png)
 
@@ -81,15 +81,15 @@ reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCou
 
 下表顯示這些執行個體的視覺範例 (您可以在 Perfmon 中藉由切換至 [報表] 圖表類型來取得相同資訊)。
 
-|計數器類型|執行個體名稱|回報的延遲 (毫秒)|
-|---------------|-------------|-------------------|
-|每個處理序的使用者輸入延遲|1:4232 <Calculator.exe>|    200|
-|每個處理序的使用者輸入延遲|2:1000 <Calculator.exe>|    16|
-|每個處理序的使用者輸入延遲|1:2000 <Calculator.exe>|    32|
-|每個工作階段的使用者輸入延遲|1|    200|
-|每個工作階段的使用者輸入延遲|2|    16|
-|每個工作階段的使用者輸入延遲|平均|     108|
-|每個工作階段的使用者輸入延遲|最大值|     200|
+| 計數器類型 | 執行個體名稱 | 回報的延遲 (毫秒) |
+| --------------- | ------------- | ------------------- |
+| 每個處理序的使用者輸入延遲 | 1:4232 <Calculator.exe> |    200 |
+| 每個處理序的使用者輸入延遲 | 2:1000 <Calculator.exe> |     16 |
+| 每個處理序的使用者輸入延遲 | 1:2000 <Calculator.exe> |     32 |
+| 每個工作階段的使用者輸入延遲 | 1 |    200 |
+| 每個工作階段的使用者輸入延遲 | 2 |     16 |
+| 每個工作階段的使用者輸入延遲 | 平均 |     108 |
+| 每個工作階段的使用者輸入延遲 | 最大值 |     200 |
 
 ## <a name="counters-used-in-an-overloaded-system"></a>已超載之系統中所使用的計數器
 
@@ -120,8 +120,8 @@ reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCou
 "LagCounterInterval"=dword:00005000
 ```
 
->[!NOTE]
->如果您使用 Windows 10 1809 版或更新版本，或是 Windows Server 2019 或更新版本，則不需設定 LagCounterInterval 來修正效能計數器。
+> [!NOTE]
+> 如果您使用 Windows 10 1809 版或更新版本，或是 Windows Server 2019 或更新版本，則不需設定 LagCounterInterval 來修正效能計數器。
 
 我們也在相同的登錄機碼底下新增了數個您可能發現有所助益的機碼：
 
@@ -135,11 +135,11 @@ reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCou
 
 ## <a name="using-the-new-counters-with-non-microsoft-tools"></a>搭配非 Microsoft 工具使用新的計數器
 
-監視工具可以藉由使用 [Perfmon API](https://msdn.microsoft.com/library/windows/desktop/aa371903.aspx) \(英文\) 來取用此計數器。
+監視工具可以藉由[使用效能計數器](https://docs.microsoft.com/windows/win32/perfctrs/using-performance-counters) \(英文\) 來取用此計數器。
 
 ## <a name="download-windows-server-insider-software"></a>下載 Windows Server 測試人員軟體
 
-已註冊的測試人員可以直接巡覽至 [Windows Server Insider Preview 下載頁面](https://www.microsoft.com/software-download/windowsinsiderpreviewserver) \(英文\)，來取得最新的測試人員軟體下載。  若要了解如何註冊為測試人員，請參閱[開始使用 Server](https://insider.windows.com/en-us/for-business-getting-started-server/) \(英文\)。
+已註冊的測試人員可以直接巡覽至 [Windows Server Insider Preview 下載頁面](https://microsoft.com/en-us/software-download/windowsinsiderpreviewserver) \(英文\)，來取得最新的測試人員軟體下載。  若要了解如何註冊為測試人員，請參閱[開始使用 Server](https://insider.windows.com/en-us/for-business-getting-started-server/) \(英文\)。
 
 ## <a name="share-your-feedback"></a>分享您的意見反應
 

@@ -32,7 +32,7 @@ sections:
             html: <p>將儲存體硬體虛擬化可讓您在跨超融合式叢集中所有伺服器散佈的虛擬化磁碟區集區上建立磁碟區。</p>
             image:
               src: ../media/i-store.svg
-            title: 儲存空間直接存取
+            title: 儲存空間 Direct
           - href: ../failover-clustering/failover-clustering-overview.md
             html: <p>將多部伺服器組成群組，以便工作負載 (例如虛擬機器) 可以在叢集中的任何伺服器上執行，進而獲得伺服器之間的負載平衡與容錯移轉功能。</p>
             image:
@@ -43,8 +43,23 @@ sections:
             image:
               src: ../media/i-network.svg
             title: 軟體定義的網路功能
+          - href: ../manage/windows-admin-center/overview.md
+            html: <p>管理您的叢集和其他 Windows 伺服器。</p>
+            image:
+              src: ../media/i-admin-center.svg
+            title: Windows Admin Center
+          - href: ../azure-hybrid-services.md
+            html: <p>將您的叢集連線到 Azure 混合式服務，以進行站台復原、監視等等。</p>
+            image:
+              src: ../media/i-microsoft-azure.svg
+            title: 連線到 Azure 混合式服務
+          - href: ../azure-stack-hci
+            html: <p>搭配來自您所選合作夥伴且經認證的硬體解決方案使用 Windows Server 2019 虛擬化與叢集技術，有助於在調整軟體定義資料中心時排除不定因素。</p>
+            image:
+              src: ../media/i-azure-stack.svg
+            title: Azure Stack HCI
           - href: 'https://www.microsoft.com/cloud-platform/software-defined-datacenter'
-            html: <p>搭配來自您選擇之合作夥伴且經認證的硬體解決方案使用 Windows Server 虛擬化與叢集技術有助於在調整軟體定義資料中心時排除不定因素。</p>
+            html: <p>搭配來自您所選合作夥伴且經認證的硬體解決方案使用 Windows Server 2016 虛擬化與叢集技術，有助於在調整軟體定義資料中心時排除不定因素。</p>
             image:
               src: 'https://docs.microsoft.com/media/common/i_data-collection.svg'
             title: Windows Server 軟體定義 (WSSD)

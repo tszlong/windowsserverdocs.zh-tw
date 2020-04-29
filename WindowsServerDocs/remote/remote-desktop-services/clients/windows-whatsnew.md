@@ -7,18 +7,33 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 01/02/2020
+ms.date: 04/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 540630ce4baa8246d654b0d50f203623705286c5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5fd9e353c18293d22b18c6ffb6a57ad97a819a4a
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859731"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "81650045"
 ---
 # <a name="whats-new-in-the-windows-store-client"></a>Windows Store 用戶端中的新功能
 
 我們會定期更新 [Windows Store 用戶端](windows.md)，進而新增功能並修正問題。 您可以在這裡找到最新的更新。
+
+## <a name="updates-for-version-1011215"></a>10.1.1215 版的更新
+
+*發行日期：2020/04/20*
+
+- 已更新 Windows 虛擬桌面的使用者代理程式字串。
+
+## <a name="updates-for-version-1011195"></a>10.1.1195 版的更新
+
+*發行日期：2020/03/06*
+
+- 現在即使當應用程式已最小化或在背景中，來自工作階段的音訊仍會繼續播放。
+- 已修正切換鍵 (Caps lock、Num lock 等等) 在本機與遠端電腦之間未同步的問題。
+- 64 位元裝置上的效能改善。
+- 已修正每當應用程式暫停時所發生的損毀。
 
 ## <a name="updates-for-version-1011107"></a>10.1.1107 版的更新
 
