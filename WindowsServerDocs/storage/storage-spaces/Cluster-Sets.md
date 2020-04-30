@@ -9,16 +9,16 @@ ms.author: johnmar
 ms.date: 01/30/2019
 description: 本文說明叢集集合案例
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c7ddef1831a82f7fc068ec4241bb1a72bd888bd
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 484b6a1e658cd5c0583747194fa42494e54c3301
+ms.sourcegitcommit: 4824f3b307e5b8b9bf5be7bc948f7aba9cf7063f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861041"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82579937"
 ---
 # <a name="cluster-sets"></a>叢集集合
 
-> 適用于： Windows Server 2019
+> 適用於：Windows Server 2019
 
 叢集集是 Windows Server 2019 版本中的新雲端向外延展技術，可在單一軟體定義資料中心（SDDC）雲端中依等級的順序增加叢集節點計數。 叢集集是多個容錯移轉叢集的鬆散結合群組：計算、儲存體或超融合。 叢集集合技術可讓叢集集內的成員叢集與虛擬機器流動性間的統一儲存命名空間中的每個成員叢集進行虛擬機器流動性。
 
@@ -101,13 +101,15 @@ ms.locfileid: "80861041"
 
 下列考慮適用于基礎結構 SOFS 角色：
 
-1.    容錯移轉叢集上最多隻能有一個基礎結構 SOFS 叢集角色。 基礎結構 SOFS 角色是藉由指定**ClusterScaleOutFileServerRole** Cmdlet 的「**基礎結構**」切換參數來建立。  例如，
+1. 容錯移轉叢集上最多隻能有一個基礎結構 SOFS 叢集角色。 基礎結構 SOFS 角色是藉由指定**ClusterScaleOutFileServerRole** Cmdlet 的「**基礎結構**」切換參數來建立。  例如：
 
-        ClusterScaleoutFileServerRole-Name "my_infra_sofs_name"-基礎結構
+    ```PowerShell
+    Add-ClusterScaleoutFileServerRole -Name "my_infra_sofs_name" -Infrastructure
+    ```
 
-2.    在容錯移轉中建立的每個 CSV 磁片區都會根據 CSV 磁片區名稱，自動觸發建立具有自動產生之名稱的 SMB 共用。 除了透過 CSV 磁片區建立/修改作業以外，系統管理員無法直接在 SOFS 角色下建立或修改 SMB 共用。
+2. 在容錯移轉中建立的每個 CSV 磁片區都會根據 CSV 磁片區名稱，自動觸發建立具有自動產生之名稱的 SMB 共用。 除了透過 CSV 磁片區建立/修改作業以外，系統管理員無法直接在 SOFS 角色下建立或修改 SMB 共用。
 
-3.    在超融合式設定中，基礎結構 SOFS 可讓 SMB 用戶端（Hyper-v 主機）與基礎結構 SOFS SMB 伺服器的保證持續可用性（CA）進行通訊。 這個超交集 SMB 回送 CA 是透過存取其虛擬磁片（VHDx）檔案的虛擬機器來達成，其中擁有的虛擬機器身分識別會在用戶端與伺服器之間轉送。 此身分識別轉送允許 ACL 的 VHDx 檔案，如同之前的標準超融合叢集設定。
+3. 在超融合式設定中，基礎結構 SOFS 可讓 SMB 用戶端（Hyper-v 主機）與基礎結構 SOFS SMB 伺服器的保證持續可用性（CA）進行通訊。 這個超交集 SMB 回送 CA 是透過存取其虛擬磁片（VHDx）檔案的虛擬機器來達成，其中擁有的虛擬機器身分識別會在用戶端與伺服器之間轉送。 此身分識別轉送允許 ACL 的 VHDx 檔案，如同之前的標準超融合叢集設定。
 
 建立叢集集之後，叢集集命名空間會依賴每個成員叢集上的基礎結構 SOFS，以及管理叢集中的基礎結構 SOFS。
 
@@ -117,7 +119,7 @@ ms.locfileid: "80861041"
 
 ## <a name="creating-a-cluster-set"></a>建立叢集集
 
-### <a name="prerequisites"></a>必要條件
+### <a name="prerequisites"></a>Prerequisites
 
 建立叢集集時，建議您遵循下列必要條件：
 
@@ -138,49 +140,69 @@ ms.locfileid: "80861041"
 
 2. 建立所有叢集之後，請使用下列命令來建立叢集集主機。
 
-        New-ClusterSet -Name CSMASTER -NamespaceRoot SOFS-CLUSTERSET -CimSession SET-CLUSTER
+    ```PowerShell
+    New-ClusterSet -Name CSMASTER -NamespaceRoot SOFS-CLUSTERSET -CimSession SET-CLUSTER
+    ```
 
 3. 若要將叢集伺服器新增到叢集集，將會使用以下的。
 
-        Add-ClusterSetMember -ClusterName CLUSTER1 -CimSession CSMASTER -InfraSOFSName SOFS-CLUSTER1
-        Add-ClusterSetMember -ClusterName CLUSTER2 -CimSession CSMASTER -InfraSOFSName SOFS-CLUSTER2
+    ```PowerShell
+    Add-ClusterSetMember -ClusterName CLUSTER1 -CimSession CSMASTER -InfraSOFSName SOFS-CLUSTER1
+    Add-ClusterSetMember -ClusterName CLUSTER2 -CimSession CSMASTER -InfraSOFSName SOFS-CLUSTER2
+    ```
 
    > [!NOTE]
    > 如果您使用靜態 IP 位址配置，您必須在**ClusterSet**命令上包含 *-StaticAddress x* . x. x。
 
 4. 建立叢集成員的叢集集之後，您可以列出節點集及其屬性。  若要列舉叢集集合中的所有成員叢集：
 
-        Get-ClusterSetMember -CimSession CSMASTER
+    ```PowerShell
+    Get-ClusterSetMember -CimSession CSMASTER
+    ```
 
 5. 列舉叢集集合中的所有成員叢集，包括管理叢集節點：
 
-        Get-ClusterSet -CimSession CSMASTER | Get-Cluster | Get-ClusterNode
+    ```PowerShell
+    Get-ClusterSet -CimSession CSMASTER | Get-Cluster | Get-ClusterNode
+    ```
 
 6. 若要列出成員叢集中的所有節點：
 
-        Get-ClusterSetNode -CimSession CSMASTER
+    ```PowerShell
+    Get-ClusterSetNode -CimSession CSMASTER
+    ```
 
 7. 若要列出整個叢集集的所有資源群組：
 
-        Get-ClusterSet -CimSession CSMASTER | Get-Cluster | Get-ClusterGroup 
+    ```PowerShell
+    Get-ClusterSet -CimSession CSMASTER | Get-Cluster | Get-ClusterGroup 
+    ```
 
 8. 若要確認叢集集建立程式是否已建立一個 SMB 共用（識別為 Volume1，或在每個叢集成員的 CSV 磁片區的基礎結構 SOFS 上，將 ScopeName 標示為基礎結構檔案伺服器的名稱，以及兩者的路徑）：
 
-        Get-SmbShare -CimSession CSMASTER
+    ```PowerShell
+    Get-SmbShare -CimSession CSMASTER
+    ```
 
 8. 叢集集具有可收集來進行審查的偵錯工具記錄。  您可以為所有成員和管理叢集收集叢集集和叢集偵錯工具記錄。
 
-        Get-ClusterSetLog -ClusterSetCimSession CSMASTER -IncludeClusterLog -IncludeManagementClusterLog -DestinationFolderPath <path>
+    ```PowerShell
+    Get-ClusterSetLog -ClusterSetCimSession CSMASTER -IncludeClusterLog -IncludeManagementClusterLog -DestinationFolderPath <path>
+    ```
 
 9. 設定所有叢集集合成員之間的 Kerberos[限制委派](https://techcommunity.microsoft.com/t5/virtualization/live-migration-via-constrained-delegation-with-kerberos-in/ba-p/382334)。
 
 10. 在叢集集合中的每個節點上，將跨叢集虛擬機器即時移轉驗證類型設定為 Kerberos。
 
-        foreach($h in $hosts){ Set-VMHost -VirtualMachineMigrationAuthenticationType Kerberos -ComputerName $h }
+    ```PowerShell
+    foreach($h in $hosts){ Set-VMHost -VirtualMachineMigrationAuthenticationType Kerberos -ComputerName $h }
+    ```
 
 11. 將管理叢集新增至叢集集合中每個節點上的本機 administrators 群組。
 
-        foreach($h in $hosts){ Invoke-Command -ComputerName $h -ScriptBlock {Net localgroup administrators /add <management_cluster_name>$} }
+    ```PowerShell
+    foreach($h in $hosts){ Invoke-Command -ComputerName $h -ScriptBlock {Net localgroup administrators /add <management_cluster_name>$} }
+    ```
 
 ## <a name="creating-new-virtual-machines-and-adding-to-cluster-sets"></a>建立新的虛擬機器並新增至叢集集合
 
@@ -198,43 +220,53 @@ ms.locfileid: "80861041"
 - 將使用的虛擬處理器設定為1
 - 檢查以確定虛擬機器至少有10% 的 CPU 可用
 
-   ```PowerShell
-   # Identify the optimal node to create a new virtual machine
-   $memoryinMB=4096
-   $vpcount = 1
-   $targetnode = Get-ClusterSetOptimalNodeForVM -CimSession CSMASTER -VMMemory $memoryinMB -VMVirtualCoreCount $vpcount -VMCpuReservation 10
-   $secure_string_pwd = convertto-securestring "<password>" -asplaintext -force
-   $cred = new-object -typename System.Management.Automation.PSCredential ("<domain\account>",$secure_string_pwd)
+```PowerShell
+# Identify the optimal node to create a new virtual machine
+$memoryinMB=4096
+$vpcount = 1
+$targetnode = Get-ClusterSetOptimalNodeForVM -CimSession CSMASTER -VMMemory $memoryinMB -VMVirtualCoreCount $vpcount -VMCpuReservation 10
+$secure_string_pwd = convertto-securestring "<password>" -asplaintext -force
+$cred = new-object -typename System.Management.Automation.PSCredential ("<domain\account>",$secure_string_pwd)
 
-   # Deploy the virtual machine on the optimal node
-   Invoke-Command -ComputerName $targetnode.name -scriptblock { param([String]$storagepath); New-VM CSVM1 -MemoryStartupBytes 3072MB -path $storagepath -NewVHDPath CSVM.vhdx -NewVHDSizeBytes 4194304 } -ArgumentList @("\\SOFS-CLUSTER1\VOLUME1") -Credential $cred | Out-Null
-   
-   Start-VM CSVM1 -ComputerName $targetnode.name | Out-Null
-   Get-VM CSVM1 -ComputerName $targetnode.name | fl State, ComputerName
-   ```
+# Deploy the virtual machine on the optimal node
+Invoke-Command -ComputerName $targetnode.name -scriptblock { param([String]$storagepath); New-VM CSVM1 -MemoryStartupBytes 3072MB -path $storagepath -NewVHDPath CSVM.vhdx -NewVHDSizeBytes 4194304 } -ArgumentList @("\\SOFS-CLUSTER1\VOLUME1") -Credential $cred | Out-Null
+
+Start-VM CSVM1 -ComputerName $targetnode.name | Out-Null
+Get-VM CSVM1 -ComputerName $targetnode.name | fl State, ComputerName
+```
 
 當它完成時，將會提供虛擬機器的相關資訊及其放置位置。  在上述範例中，它會顯示為：
 
-        State         : Running
-        ComputerName  : 1-S2D2
+```
+State         : Running
+ComputerName  : 1-S2D2
+```
 
 如果您的記憶體、cpu 或磁碟空間不足，無法新增虛擬機器，您將會收到下列錯誤：
 
-      Get-ClusterSetOptimalNodeForVM : A cluster node is not available for this operation.  
+```
+Get-ClusterSetOptimalNodeForVM : A cluster node is not available for this operation.  
+```
 
 建立虛擬機器之後，它就會顯示在指定的特定節點上的 [Hyper-v 管理員] 中。  若要將它新增為叢集集虛擬機器和叢集，請使用下列命令。  
 
-        Register-ClusterSetVM -CimSession CSMASTER -MemberName $targetnode.Member -VMName CSVM1
+```PowerShell
+Register-ClusterSetVM -CimSession CSMASTER -MemberName $targetnode.Member -VMName CSVM1
+```
 
 當它完成時，輸出將會是：
 
-         Id  VMName  State  MemberName  PSComputerName
-         --  ------  -----  ----------  --------------
-          1  CSVM1      On  CLUSTER1    CSMASTER
+```
+Id  VMName  State  MemberName  PSComputerName
+--  ------  -----  ----------  --------------
+1  CSVM1      On  CLUSTER1    CSMASTER
+```
 
 如果您已新增具有現有虛擬機器的叢集，則虛擬機器也必須向叢集集合註冊，因此請一次註冊所有虛擬機器，使用的命令為：
 
-        Get-ClusterSetMember -name CLUSTER3 -CimSession CSMASTER | Register-ClusterSetVM -RegisterAll -CimSession CSMASTER
+```PowerShell
+Get-ClusterSetMember -Name CLUSTER3 -CimSession CSMASTER | Register-ClusterSetVM -RegisterAll -CimSession CSMASTER
+```
 
 不過，此程式並未完成，因為虛擬機器的路徑必須新增至叢集集命名空間。
 
@@ -242,12 +274,16 @@ ms.locfileid: "80861041"
 
 在此範例中，CLUSTER3 已使用 ClusterSetMember 作為基礎結構向外延展檔案伺服器新增至叢集集，做為 SOFS-CLUSTER3。  若要移動虛擬機器設定和存放裝置，命令為：
 
-        Move-VMStorage -DestinationStoragePath \\SOFS-CLUSTER3\Volume1 -Name MYVM
+```PowerShell
+Move-VMStorage -DestinationStoragePath \\SOFS-CLUSTER3\Volume1 -Name MYVM
+```
 
 完成後，您會收到警告：
 
-        WARNING: There were issues updating the virtual machine configuration that may prevent the virtual machine from running.  For more information view the report file below.
-        WARNING: Report file location: C:\Windows\Cluster\Reports\Update-ClusterVirtualMachineConfiguration '' on date at time.htm.
+```
+WARNING: There were issues updating the virtual machine configuration that may prevent the virtual machine from running.  For more information view the report file below.
+WARNING: Report file location: C:\Windows\Cluster\Reports\Update-ClusterVirtualMachineConfiguration '' on date at time.htm.
+```
 
 您可以忽略此警告，因為警告是「偵測不到虛擬機器角色存放裝置設定中的變更」。  警告的原因是實際實體位置不會變更;僅限設定路徑。 
 
@@ -261,13 +297,17 @@ ms.locfileid: "80861041"
 
 使用叢集設定時，不需要執行這些步驟，而且只需要一個命令。  首先，您應該使用命令將所有網路設定為可供遷移：
 
-    Set-VMHost -UseAnyNetworkForMigration $true
+```PowerShell
+Set-VMHost -UseAnyNetworkForMigration $true
+```
 
 例如，我想要將叢集集虛擬機器從 CLUSTER1 移至 CLUSTER3 上的節點 2-CL3。  單一命令會是：
 
-        Move-ClusterSetVM -CimSession CSMASTER -VMName CSVM1 -Node NODE2-CL3
+```PowerShell
+Move-ClusterSetVM -CimSession CSMASTER -VMName CSVM1 -Node NODE2-CL3
+```
 
-請注意，這不會移動虛擬機器存放裝置或設定檔。  這不是必要的，因為虛擬機器的路徑會維持 \\SOFS-CLUSTER1\VOLUME1。  當虛擬機器已向叢集集合註冊基礎結構檔案伺服器共用路徑後，磁片磁碟機和虛擬機器就不需要與虛擬機器位於相同的電腦上。
+請注意，這不會移動虛擬機器存放裝置或設定檔。  這不是必要的，因為虛擬機器的路徑會保持\\ \\為 SOFS-CLUSTER1\VOLUME1。  當虛擬機器已向叢集集合註冊基礎結構檔案伺服器共用路徑後，磁片磁碟機和虛擬機器就不需要與虛擬機器位於相同的電腦上。
 
 ## <a name="creating-availability-sets-fault-domains"></a>建立可用性設定組容錯網域
 
@@ -279,39 +319,49 @@ ms.locfileid: "80861041"
 
 若要建立容錯網域，命令為：
 
-        New-ClusterSetFaultDomain -Name FD1 -FdType Logical -CimSession CSMASTER -MemberCluster CLUSTER1,CLUSTER2 -Description "This is my first fault domain"
+```PowerShell
+New-ClusterSetFaultDomain -Name FD1 -FdType Logical -CimSession CSMASTER -MemberCluster CLUSTER1,CLUSTER2 -Description "This is my first fault domain"
 
-        New-ClusterSetFaultDomain -Name FD2 -FdType Logical -CimSession CSMASTER -MemberCluster CLUSTER3,CLUSTER4 -Description "This is my second fault domain"
+New-ClusterSetFaultDomain -Name FD2 -FdType Logical -CimSession CSMASTER -MemberCluster CLUSTER3,CLUSTER4 -Description "This is my second fault domain"
+```
 
 為確保已成功建立它們，ClusterSetFaultDomain 可以執行，並顯示其輸出。
 
-        PS C:\> Get-ClusterSetFaultDomain -CimSession CSMASTER -FdName FD1 | fl *
+```PowerShell
+PS C:\> Get-ClusterSetFaultDomain -CimSession CSMASTER -FdName FD1 | fl *
 
-        PSShowComputerName    : True
-        FaultDomainType       : Logical
-        ClusterName           : {CLUSTER1, CLUSTER2}
-        Description           : This is my first fault domain
-        FDName                : FD1
-        Id                    : 1
-        PSComputerName        : CSMASTER
+PSShowComputerName    : True
+FaultDomainType       : Logical
+ClusterName           : {CLUSTER1, CLUSTER2}
+Description           : This is my first fault domain
+FDName                : FD1
+Id                    : 1
+PSComputerName        : CSMASTER
+```
 
 既然已建立容錯網域，就必須建立可用性設定組。
 
-        New-ClusterSetAvailabilitySet -Name CSMASTER-AS -FdType Logical -CimSession CSMASTER -ParticipantName FD1,FD2
+```PowerShell
+New-ClusterSetAvailabilitySet -Name CSMASTER-AS -FdType Logical -CimSession CSMASTER -ParticipantName FD1,FD2
+```
 
 若要驗證它是否已建立，請使用：
 
-        Get-ClusterSetAvailabilitySet -AvailabilitySetName CSMASTER-AS -CimSession CSMASTER
+```PowerShell
+Get-ClusterSetAvailabilitySet -AvailabilitySetName CSMASTER-AS -CimSession CSMASTER
+```
 
 建立新的虛擬機器時，您必須使用-AvailabilitySet 參數做為判斷最佳節點的一部分。  因此，它會看起來像這樣：
 
-        # Identify the optimal node to create a new virtual machine
-        $memoryinMB=4096
-        $vpcount = 1
-        $av = Get-ClusterSetAvailabilitySet -Name CSMASTER-AS -CimSession CSMASTER
-        $targetnode = Get-ClusterSetOptimalNodeForVM -CimSession CSMASTER -VMMemory $memoryinMB -VMVirtualCoreCount $vpcount -VMCpuReservation 10 -AvailabilitySet $av
-        $secure_string_pwd = convertto-securestring "<password>" -asplaintext -force
-        $cred = new-object -typename System.Management.Automation.PSCredential ("<domain\account>",$secure_string_pwd)
+```PowerShell
+# Identify the optimal node to create a new virtual machine
+$memoryinMB=4096
+$vpcount = 1
+$av = Get-ClusterSetAvailabilitySet -Name CSMASTER-AS -CimSession CSMASTER
+$targetnode = Get-ClusterSetOptimalNodeForVM -CimSession CSMASTER -VMMemory $memoryinMB -VMVirtualCoreCount $vpcount -VMCpuReservation 10 -AvailabilitySet $av
+$secure_string_pwd = convertto-securestring "<password>" -asplaintext -force
+$cred = new-object -typename System.Management.Automation.PSCredential ("<domain\account>",$secure_string_pwd)
+```
 
 因為各種生命週期而從叢集集移除叢集。 有時候，叢集必須從叢集集合中移除。 最佳做法是將所有叢集集虛擬機器移出叢集。 您可以使用**ClusterSetVM**和**VMStorage**命令來完成這項作業。
 
@@ -322,7 +372,9 @@ ms.locfileid: "80861041"
 
 例如，從叢集集移除 CLUSTER1 叢集的命令會是：
 
-        Remove-ClusterSetMember -ClusterName CLUSTER1 -CimSession CSMASTER
+```PowerShell
+Remove-ClusterSetMember -ClusterName CLUSTER1 -CimSession CSMASTER
+```
 
 ## <a name="frequently-asked-questions-faq"></a>常見問題集 (FAQ)
 
@@ -356,7 +408,7 @@ ms.locfileid: "80861041"
 **答：** 否，請注意，尚未支援邏輯容錯網域內的跨叢集容錯移轉。 
 
 **問題：** 我的叢集集是否可以跨越多個網站（或 DNS 網域）中的叢集？ <br> 
-**解答：** 這是未經測試的案例，不會立即針對生產環境支援進行規劃。 請讓 Microsoft 知道此案例對您以及您計畫如何使用這種情況十分重要。
+**答：** 這是未經測試的案例，不會立即針對生產環境支援進行規劃。 請讓 Microsoft 知道此案例對您以及您計畫如何使用這種情況十分重要。
 
 **問題：** 叢集集是否與 IPv6 搭配使用？ <br>
 **答：** 叢集集和容錯移轉叢集都支援 IPv4 和 IPv6。
