@@ -8,16 +8,16 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 4a91d09d6824795a21a9a7cdc7695c407aa70756
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 5c9e8b7e1e11deaa82fbec6f451b4f194609c299
+ms.sourcegitcommit: 1d83ca198c50eef83d105151551c6be6f308ab94
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322920"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82605548"
 ---
 # <a name="windows-admin-center-known-issues"></a>Windows Admin Center 已知問題
 
-> 適用于： Windows 系統管理中心、Windows 系統管理中心預覽
+> 適用於：Windows Admin Center、Windows Admin Center 預覽版
 
 如果您發生本頁面未述及的問題，請[讓我們知道](https://aka.ms/WACfeedback)。
 
@@ -29,7 +29,7 @@ ms.locfileid: "79322920"
 
 ## <a name="general"></a>一般
 
-- 如果您將 Windows 系統管理中心安裝為**Windows Server 2016**上的閘道，請使用 [繁重]，此服務可能會在包含 ```Faulting application name: sme.exe``` 和 ```Faulting module name: WsmSvc.dll```的事件記錄檔中發生錯誤時損毀。 這是因為 Windows Server 2019 已修正的錯誤。 Windows Server 2016 的修補程式隨附于2月2019累積更新（ [KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977)）。
+- 如果您將 Windows 系統管理中心安裝為**Windows Server 2016**上的閘道，請使用 [繁重]，此服務可能會在包含```Faulting application name: sme.exe```和```Faulting module name: WsmSvc.dll```的事件記錄檔中發生錯誤時損毀。 這是因為 Windows Server 2019 已修正的錯誤。 Windows Server 2016 的修補程式隨附于2月2019累積更新（ [KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977)）。
 
 - 如果您已將 Windows 系統管理中心安裝為閘道，且您的連線清單似乎已損毀，請執行下列步驟：
 
@@ -44,7 +44,7 @@ ms.locfileid: "79322920"
 
 - 在 Windows 管理中心模組中執行的 OSS 版本號碼和協力廠商軟體注意事項中所列出的內容之間，可能會有些許差異。
 
-### <a name="extension-manager"></a>延伸模組管理員
+### <a name="extension-manager"></a>擴充管理員
 
 - 當您更新 Windows 管理中心時，必須重新安裝擴充功能。
 - 如果您新增無法存取的延伸模組摘要，就不會出現警告。 [14412861]
@@ -53,7 +53,7 @@ ms.locfileid: "79322920"
 
 ### <a name="microsoft-edge"></a>Microsoft Edge
 
-- 如果您已將 Windows 系統管理中心部署為服務，而且您使用 Microsoft Edge 作為瀏覽器，則在建立新的瀏覽器視窗之後，將閘道連線至 Azure 可能會失敗。 請嘗試在用戶端瀏覽器上新增 https://login.microsoftonline.com、 https://login.live.com和閘道的 URL 作為 [信任的網站] 和 [允許的網站] 快顯封鎖程式設定，以解決此問題。 如需修正此問題的詳細指引，請[參考疑難排解指南](troubleshooting.md#azure-features-dont-work-properly-in-edge)。 [17990376]
+- 如果您已將 Windows 系統管理中心部署為服務，而且您使用 Microsoft Edge 作為瀏覽器，則在建立新的瀏覽器視窗之後，將閘道連線至 Azure 可能會失敗。 嘗試解決此問題，方法是在https://login.microsoftonline.com客戶https://login.live.com端瀏覽器上新增、和閘道的 URL 作為 [受信任的網站] 和 [允許的網站] 快顯封鎖程式設定。 如需修正此問題的詳細指引，請[參考疑難排解指南](troubleshooting.md#azure-features-dont-work-properly-in-edge)。 [17990376]
 
 ### <a name="google-chrome"></a>Google Chrome
 
@@ -67,11 +67,11 @@ ms.locfileid: "79322920"
 
 Windows Admin Center 未使用 Mozilla Firefox 來測試，但大部分功能應該都能運作。
 
-- Windows 10 安裝： Mozilla Firefox 有自己的憑證存放區，因此您必須將 ```Windows Admin Center Client``` 憑證匯入 Firefox，才能在 Windows 10 上使用 Windows 系統管理中心。
+- Windows 10 安裝： Mozilla Firefox 有自己的憑證存放區，因此您必須將```Windows Admin Center Client```憑證匯入 Firefox，才能在 windows 10 上使用 Windows 系統管理中心。
 
-## <a name="websocket-compatibility-when-using-a-proxy-service"></a>使用 proxy 服務時的 WebSocket 相容性
+## <a name="websocket-compatibility-when-using-a-proxy-service"></a>使用 Proxy 服務時的 WebSocket 相容性
 
-Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 WebSocket 通訊協定，而這通常在使用 Proxy 服務時不受支援。 Azure AD 應用程式 Proxy 相容性中的 Websocket 支援尚處於[預覽](https://blogs.technet.microsoft.com/applicationproxyblog/2018/03/28/limited-websocket-support-now-in-public-preview/)階段，正在尋求有關相容性的意見反應。
+Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 WebSocket 通訊協定，而這通常在使用 Proxy 服務時不受支援。 
 
 ## <a name="support-for-windows-server-versions-before-2016-2012-r2-2012-2008-r2"></a>2016之前的 Windows Server 版本支援（2012 R2、2012、2008 R2）
 
@@ -82,7 +82,7 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 
 如果未安裝，您可以[下載並安裝 WMF 5.1](https://www.microsoft.com/download/details.aspx?id=54616)。
 
-## <a name="role-based-access-control-rbac"></a>以角色為基礎的存取控制（RBAC）
+## <a name="role-based-access-control-rbac"></a>角色型存取控制 (RBAC)
 
 - RBAC 部署無法在設定為使用 Windows Defender 應用程式控制 (WDAC，先前稱為程式碼完整性) 的電腦上成功進行。[16568455]
 
@@ -102,7 +102,7 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 
 - 匯出大型記錄檔時，您可能會收到參考「封包大小」的錯誤。
 
-  - 若要解決此問題，請在閘道電腦上以提高許可權的命令提示字元中使用下列命令： ```winrm set winrm/config @{MaxEnvelopeSizekb="8192"}```
+  - 若要解決此問題，請在閘道電腦上以提高許可權的命令提示字元中使用下列命令：```winrm set winrm/config @{MaxEnvelopeSizekb="8192"}```
 
 ### <a name="files"></a>檔案
 
@@ -118,7 +118,7 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 
 - 當您讓 Windows Admin Center 視窗變小時，終端機內容會自動重排，但是再讓該視窗變大時，內容可能無法回復到先前狀態。 如果內容變得雜亂時，您可以嘗試 Clear-Host，或使用終端機上方的按鈕，中斷連線然後重新連線。
 
-### <a name="registry-editor"></a>登錄編輯程式
+### <a name="registry-editor"></a>登錄編輯器
 
 - 尚未實行搜尋功能。 [13820009]
 
@@ -128,9 +128,9 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 
 - 管理 Windows Server 2012 時，遠端桌面工具可能無法連接。 [20258278]
 
-- 使用遠端桌面連線到未加入網域的電腦時，您必須以 ```MACHINENAME\USERNAME``` 格式輸入您的帳戶。
+- 使用遠端桌面連線到未加入網域的電腦時，您必須以格式輸入您的```MACHINENAME\USERNAME```帳戶。
 
-- 有些設定可以封鎖 Windows Admin Center 的遠端桌面用戶端與群組原則。 如果您遇到這種情況，請在 ```Computer Configuration/Policies/Administrative Templates/Windows Components/Remote Desktop Services/Remote Desktop Session Host/Connections``` 下啟用 ```Allow users to connect remotely by using Remote Desktop Services```
+- 有些設定可以封鎖 Windows Admin Center 的遠端桌面用戶端與群組原則。 如果您遇到這種情況```Allow users to connect remotely by using Remote Desktop Services``` ，請在下啟用```Computer Configuration/Policies/Administrative Templates/Windows Components/Remote Desktop Services/Remote Desktop Session Host/Connections```
 
 - 遠端桌面受到[websocket 相容性](#websocket-compatibility-when-using-a-proxy-service)的影響。
 
@@ -152,7 +152,7 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 
 - 如果您選擇要自動重新開機，將會在狀態更新進度達 100% 之前發生重新開機。 [13098852]
 
-### <a name="storage"></a>存放
+### <a name="storage"></a>存放裝置
 
 - 下層：DVD/CD/軟碟機不會顯示為下層的磁碟區。
 
@@ -205,7 +205,7 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 
 - 叢集可能必須使用整個 FQDN 來新增，才能正確地探索到該叢集。
 
-- 連線至使用安裝為閘道之 Windows Admin Center 的叢集時，並提供明確使用者名稱/密碼進行驗證時，您必須選取 **\[使用這些認證進行所有連線\]** ，讓認證可用於查詢成員節點。
+- 連線至使用安裝為閘道之 Windows Admin Center 的叢集時，並提供明確使用者名稱/密碼進行驗證時，您必須選取 **\[使用這些認證進行所有連線\]**，讓認證可用於查詢成員節點。
 
 ## <a name="hyper-converged-cluster-manager-solution"></a>超融合式叢集管理員解決方案
 
@@ -215,15 +215,15 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 
 ### <a name="azure-file-sync-permissions"></a>Azure 檔案同步許可權
 
-Azure 檔案同步需要 Azure 中 Windows 系統管理中心未提供1910版之前的許可權。 如果您使用早于 Windows 管理中心版本1910的版本向 Azure 註冊您的 Windows 管理中心閘道，則必須更新 Azure Active Directory 應用程式，以取得在最新版本中使用 Azure 檔案同步的正確許可權Windows 系統管理中心。 其他許可權可讓 Azure 檔案同步執行自動設定儲存體帳戶存取權，如這篇文章中所述：[確定 Azure 檔案同步有權存取儲存體帳戶](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#tabpanel_CeZOj-G++Q-5_azure-portal)。
+Azure 檔案同步需要 Azure 中 Windows 系統管理中心未提供1910版之前的許可權。 如果您使用早于 Windows 管理中心版本1910的版本向 Azure 註冊您的 Windows 管理中心閘道，您將需要更新 Azure Active Directory 應用程式，以取得在最新版本的 Windows 管理中心內使用 Azure 檔案同步的正確許可權。 其他許可權可讓 Azure 檔案同步執行自動設定儲存體帳戶存取權，如這篇文章中所述：[確定 Azure 檔案同步有權存取儲存體帳戶](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#tabpanel_CeZOj-G++Q-5_azure-portal)。
 
 若要更新您的 Azure Active Directory 應用程式，您可以執行兩個動作的其中一項
-1. 移至 [**設定**] > **Azure** > **取消註冊**，然後再次向 azure 註冊 Windows 系統管理中心，並確定您選擇建立新的 Azure Active Directory 應用程式。 
-2. 移至您的 Azure Active Directory 應用程式，並手動將您現有 Azure Active Directory 應用程式所需的許可權新增到已向 Windows 系統管理中心註冊。 若要這麼做，請移至**azure 中的**[**設定**] > **azure** > View。 從 Azure 的 [**應用程式註冊**] 分頁中，移至 [ **API 許可權**]，選取 [**新增許可權**]。 依序選取 [ **Azure Active Directory 圖形]** 、[**委派的許可權**] 和 [**目錄**]，然後選取 [ **AccessAsUser**]。 按一下 [**新增許可權**]，將更新儲存至應用程式。
+1. 移至 [**設定** > ] [**Azure** > ] [**取消註冊**]，然後再次向 azure 註冊 Windows 系統管理中心，並確定您選擇建立新的 Azure Active Directory 應用程式。 
+2. 移至您的 Azure Active Directory 應用程式，並手動將您現有 Azure Active Directory 應用程式所需的許可權新增到已向 Windows 系統管理中心註冊。 若要這麼做，請移至**azure 中的**[**設定** > ] [**azure** > View]。 從 Azure 的 [**應用程式註冊**] 分頁中，移至 [ **API 許可權**]，選取 [**新增許可權**]。 依序選取 [ **Azure Active Directory 圖形]**、[**委派的許可權**] 和 [**目錄**]，然後選取 [ **AccessAsUser**]。 按一下 [**新增許可權**]，將更新儲存至應用程式。
 
 ### <a name="options-for-setting-up-azure-management-services"></a>設定 Azure 管理服務的選項
 
-包括 Azure 監視器、Azure 更新管理和 Azure 資訊安全中心的 Azure 管理服務，會針對內部部署伺服器使用相同的代理程式： Microsoft Monitoring Agent。 Azure 更新管理有一組較有限的支援區域，而且需要將 Log Analytics 工作區連結至 Azure 自動化帳戶。 基於這項限制，如果您想要在 Windows 管理中心設定多個服務，您必須先設定 Azure 更新管理，然後 Azure 資訊安全中心或 Azure 監視器。 如果您已設定任何使用 Microsoft Monitoring Agent 的 Azure 管理服務，然後嘗試使用 Windows 管理中心來設定 Azure 更新管理，Windows 系統管理中心只會允許您設定 Azure 更新管理（如果現有的連結至 Microsoft Monitoring Agent 的資源支援 Azure 更新管理。 如果不是這種情況，您有兩個選項：
+包括 Azure 監視器、Azure 更新管理和 Azure 資訊安全中心的 Azure 管理服務，會針對內部部署伺服器使用相同的代理程式： Microsoft Monitoring Agent。 Azure 更新管理有一組較有限的支援區域，而且需要將 Log Analytics 工作區連結至 Azure 自動化帳戶。 基於這項限制，如果您想要在 Windows 管理中心設定多個服務，您必須先設定 Azure 更新管理，然後 Azure 資訊安全中心或 Azure 監視器。 如果您已設定任何使用 Microsoft Monitoring Agent 的 Azure 管理服務，然後嘗試使用 Windows 系統管理中心來設定 Azure 更新管理，則 Windows 系統管理中心只會在連結至 Microsoft Monitoring Agent 的現有資源支援 Azure 更新管理時，允許您設定 Azure 更新管理。 如果不是這種情況，您有兩個選項：
 
 1. 移至 [控制台] > Microsoft Monitoring Agent，將[您的伺服器與現有的 Azure 管理解決方案](https://docs.microsoft.com/azure/azure-monitor/platform/log-faq#q-how-do-i-stop-an-agent-from-communicating-with-log-analytics)（例如 Azure 監視器或 Azure 資訊安全中心）中斷連接。 然後在 Windows 系統管理中心設定 Azure 更新管理。 之後，您可以透過 Windows 系統管理中心返回設定其他 Azure 管理解決方案，而不會發生問題。
 2. 您可以[手動設定 azure 更新管理所需的 azure 資源](https://docs.microsoft.com/azure/automation/automation-update-management)，然後[手動更新 Microsoft Monitoring Agent](https://docs.microsoft.com/azure/azure-monitor/platform/agent-manage#adding-or-removing-a-workspace) （在 Windows 系統管理中心以外），以新增對應至您想要使用之更新管理解決方案的新工作區。
