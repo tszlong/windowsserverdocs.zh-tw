@@ -8,21 +8,21 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 4bbdbfe294695e068c2ec76a135526febb4b6485
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8f3e6ec300fcf9fad1c97cb912eb686ab8884781
+ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80822142"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81623866"
 ---
 # <a name="planning-forest-root-domain-controller-placement"></a>規劃設置樹系根網域控制站
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-必須要有樹系根網域控制站，才能為需要存取其本身以外網域中資源的用戶端建立信任路徑。 將樹系根網域控制站放在中樞位置和裝載資料中心的位置。 如果指定位置中的使用者需要從相同位置的其他網域存取資源，而且資料中心和使用者位置之間的網路可用性不可靠，您可以在位置新增樹系根網域控制站，或在這兩個網域之間建立快捷方式信任。 除非您有其他理由將樹系根網域控制站放在該位置，否則在網域之間建立快捷方式信任會比較符合成本效益。  
-  
-快捷方式信任有助於優化來自任一網域的使用者所提出的驗證要求。 如需有關網域之間的快捷方式信任的詳細資訊，請參閱[瞭解何時建立快捷方式信任一](https://go.microsoft.com/fwlink/?LinkId=107061)文。  
-  
-如需協助您記載樹系根網域控制站位置的工作表，請參閱[Windows Server 2003 部署套件的工作輔助工具](https://go.microsoft.com/fwlink/?LinkID=102558)、下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，然後開啟「網域控制站位置」（DSSTOPO_4 .doc）。  
-  
-當您建立樹系根域時，您將需要參考這則資訊。 如需部署樹系根域的詳細資訊，請參閱[部署 Windows Server 2008 樹系根域](https://technet.microsoft.com/library/cc731174.aspx)。  
+必須要有樹系根網域控制站，才能為需要存取其本身以外網域中資源的用戶端建立信任路徑。 將樹系根網域控制站放在中樞位置和裝載資料中心的位置。 如果指定位置中的使用者需要從相同位置的其他網域存取資源，而且資料中心和使用者位置之間的網路可用性不可靠，您可以在位置新增樹系根網域控制站，或在這兩個網域之間建立快捷方式信任。 除非您有其他理由將樹系根網域控制站放在該位置，否則在網域之間建立快捷方式信任會比較符合成本效益。
+
+快捷方式信任有助於優化來自任一網域的使用者所提出的驗證要求。 如需有關網域之間的快捷方式信任的詳細資訊，請參閱[瞭解何時建立快捷方式信任一](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754538(v=ws.11))文。
+
+如需協助您記載樹系根網域控制站位置的工作表，請參閱[Windows Server 2003 部署套件的工作輔助工具](https://microsoft.com/download/details.aspx?id=9608)、下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，然後開啟「網域控制站位置」（DSSTOPO_4 .doc）。
+
+當您建立樹系根域時，您將需要參考這則資訊。 如需部署樹系根域的詳細資訊，請參閱[部署 Windows Server 2008 樹系根域](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731174(v=ws.10))。

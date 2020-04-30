@@ -8,12 +8,12 @@ ms.author: jol
 ms.date: 09/17/2018
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 90f5b670744b812769164a7a2c70fc673fe4089f
-ms.sourcegitcommit: 3cb84bc0bd4be0f9333b7c85cda858c38730cb3a
+ms.openlocfilehash: 010ab340dc71d199119f1bd51fbc22e3ad449040
+ms.sourcegitcommit: 074b59341640a8ae0586d6b37df7ba256e03a0c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79432447"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81650084"
 ---
 # <a name="extensions-for-windows-admin-center"></a>Windows Admin Center 擴充功能
 
@@ -30,7 +30,7 @@ Windows Admin Center 擴充功能是使用新式 Web 技術 (包括 HTML5、CSS�
 - **與 Windows Admin Center 工具整合：** 將您的產品及服務與 Windows Admin Center 中的伺服器及叢集管理工具整合，並將一致且順暢的端對端監視、管理及疑難排解體驗提供給您的客戶。
 - **利用平臺安全性、身分識別和管理功能：** 藉由運用 Windows 管理中心平臺功能，以符合現今 IT 組織的複雜需求，為您的產品和服務啟用 Azure Active Directory （AAD）支援、多重要素驗證、角色型存取控制（RBAC）、記錄、審核。
 - **使用最新的 Web 技術進行開發：** 使用新式 Web 技術 (包括 HTML5、CSS、Angular、TypeScript 和 jQuery)，以及 Windows Admin Center SDK 中包含的豐富強大的 UI 控制項，快速建置精彩體驗。
-- **擴展產品推廣範圍：** 將業務拓展到我們快速成長的客戶群，成為新興 Windows Admin Center 生態系統的一部分，並趁勢掌握今年稍後時間將推出 Windows Server 2019 的市場動向。
+- **擴充產品延伸：** 成為 Windows 管理中心生態系統的一部分，並延伸到我們擴充的客戶群。
 
 ## <a name="start-developing-with-the-windows-admin-center-sdk"></a>使用 Windows Admin Center SDK 開始進行開發
 
@@ -42,7 +42,7 @@ Windows Admin Center 擴充功能是使用新式 Web 技術 (包括 HTML5、CSS�
 
 請參閱下列主題以深入了解 SDK 並開始使用：
 
-- [瞭解擴充功能的工作方式](understand-extensions.md)
+- [了解擴充功能的運作方式](understand-extensions.md)
 - [開發擴充功能](developing-extensions.md)
 - [指南](guides.md)
 - [發佈您的擴充功能](publish-extensions.md)
@@ -58,7 +58,7 @@ BiitOps 變更延伸模組會針對 Windows Server 實體/虛擬機器上的硬�
 
 ### <a name="dataon"></a>DataON
 
-DataON 必須擴充功能，將監視、管理和端對端深入解析帶入以 Windows Server 為基礎的 DataON 超融合基礎結構和儲存系統。 「必須」延伸模組新增了唯一的值，例如歷程記錄資料包告、磁片對應、系統警示和類似 SAN 的呼叫家用服務、透過順暢的方式來補充 Windows Admin Center 伺服器和超融合的基礎結構管理功能。整合體驗。 [深入了解 DataON 的 MUST 擴充功能及其開發經驗](case-studies/dataon.md)。
+DataON 必須擴充功能，將監視、管理和端對端深入解析帶入以 Windows Server 為基礎的 DataON 超融合基礎結構和儲存系統。 「必須」延伸模組會加入唯一的值，例如歷程記錄資料包表、磁片對應、系統警示和類似 SAN 的呼叫家用服務，透過順暢且一致的體驗，來補充 Windows Admin Center 伺服器和超融合的基礎結構管理功能。 [深入了解 DataON 的 MUST 擴充功能及其開發經驗](case-studies/dataon.md)。
 
 ![DataON MUST 擴充功能](../media/extensibility-overview/dataon-must-extension.png)
 
@@ -76,7 +76,7 @@ DataON 必須擴充功能，將監視、管理和端對端深入解析帶入以 
 
 ### <a name="pure-storage"></a>Pure Storage
 
-純粹儲存空間提供企業、所有 flash 的資料儲存體解決方案，可提供以資料為中心的架構，以加速您的業務以獲得競爭優勢。 適用于 Windows 系統管理中心的純粹儲存延伸模組，可讓您以單一窗格的模式觀看單純的 FlashArray 產品，並可讓使用者透過單一 UI 來執行監視工作、觀看即時效能計量，以及管理儲存磁片區和啟動器遇到. [深入瞭解純粹的延伸模組及其開發體驗](case-studies/purestorage.md)。
+純粹儲存空間提供企業、所有 flash 的資料儲存體解決方案，可提供以資料為中心的架構，以加速您的業務以獲得競爭優勢。 適用于 Windows 系統管理中心的純粹儲存延伸模組，可讓您以單一窗格的方式來觀看純粹 FlashArray 的產品，並可讓使用者透過單一 UI 體驗來進行監視工作、觀看即時效能計量，以及管理儲存磁片區和啟動器。 [深入瞭解純粹的延伸模組及其開發體驗](case-studies/purestorage.md)。
 
 ![純粹儲存延伸模組](../media/extensibility-overview/purestorage-extension.png)
 

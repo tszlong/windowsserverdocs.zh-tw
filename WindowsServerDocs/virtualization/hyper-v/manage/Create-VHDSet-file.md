@@ -11,12 +11,12 @@ ms.technology: compute-hyper-v
 ms.assetid: 444e1496-9e5a-41cf-bfbc-306e2ed8e00a
 audience: IT Pros
 ms.reviewer: kathydav
-ms.openlocfilehash: f5c9b932cabfea8df55ba8622165bbb04b4a4113
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ea78bf9cb892f8e8cb41f357242f3b38a5bca934
+ms.sourcegitcommit: d669d4af166b9018bcf18dc79cb621a5fee80042
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392726"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82037127"
 ---
 # <a name="create-hyper-v-vhd-set-files"></a>建立 Hyper-v VHD 集檔案
 VHD 集檔案是 Windows Server 2016 中來賓叢集的新共用虛擬磁片模型。 VHD 集檔案支援線上調整大小的共用虛擬磁片、支援 Hyper-v 複本，而且可以包含在應用程式一致的檢查點中。 
@@ -25,13 +25,16 @@ VHD 集檔案使用新的 VHD 檔案類型。Vhd. VHD 集檔案會以中繼資�
 
 Hyper-v 會處理管理檢查點鏈和合併共用 VHD 集的所有層面。 管理軟體可以執行磁片作業，像是在 VHD 設定檔上進行線上調整大小的方式，就像在中一樣。VHDX 檔案。 這表示管理軟體不需要知道 VHD 集檔案格式。
 
+> [!NOTE]  
+> 在部署到生產環境之前，請務必先評估 VHD 集檔案的影響。 請確定您的環境中沒有效能或功能降低，例如磁片等待時間。
+
 ## <a name="create-a-vhd-set-file-from-hyper-v-manager"></a>從 Hyper-v 管理員建立 VHD 集檔案
 
-1.  開啟 \[Hyper-V 管理員\]。 按一下 [開始]，指向 [系統管理工具]，然後按一下 [Hyper-V 管理員]。
+1.  開啟 Hyper-V 管理員。 按一下 [開始]****，指向 [系統管理工具]****，然後按一下 [Hyper-V 管理員]****。
 2.  在 [動作] 窗格中，按一下 [**新增**]，然後按一下 [**硬碟**]。
 3.  在 [**選擇磁片格式**] 頁面上，選取 [ **VHD 集**] 做為虛擬硬碟的格式。
 4.  繼續進行嚮導的頁面，以自訂虛擬硬碟。 您可以按 [**下一步**]，在嚮導的每一頁上移動，或按一下左窗格中的頁面名稱，直接移至該頁面。
-5.  完成虛擬硬碟的設定之後，請按一下 **[完成]** 。
+5.  完成虛擬硬碟的設定之後，請按一下 **[完成]**。
 
 ## <a name="create-a-vhd-set-file-from-windows-powershell"></a>從 Windows PowerShell 建立 VHD 集檔案
 

@@ -8,12 +8,12 @@ ms.date: 05/23/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: bc881efcd932e36e40f4483ae5a8378884db64a6
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 53bbc2bd30f7ede3fc9e4f3580a96514068a7d5f
+ms.sourcegitcommit: d669d4af166b9018bcf18dc79cb621a5fee80042
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948859"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82037157"
 ---
 # <a name="build-a-custom-authentication-method-for-ad-fs-in-windows-server"></a>在 Windows Server 中建立 AD FS 的自訂驗證方法
 
@@ -21,7 +21,7 @@ ms.locfileid: "75948859"
 
 
 > [!WARNING]
-> 您可以在這裡建立的範例僅供教育目的之用&nbsp;。 &nbsp;這些指示，是為了公開模型所需專案的最簡單且最基本的執行方式。&nbsp; 沒有驗證後端、錯誤處理或設定資料。 
+> 您可以在這裡建立的範例僅&nbsp;供教育目的之用。 &nbsp;這些指示適用于公開模型所需元素的最簡單且最基本的執行方式。&nbsp;沒有驗證後端、錯誤處理或設定資料。 
 > <P></P>
 
 
@@ -40,8 +40,8 @@ ms.locfileid: "75948859"
 <tbody>
 <tr class="odd">
 <td><p><strong>參考 dll</strong></p></td>
-<td><p><strong>尋找位置</strong></p></td>
-<td><p><strong>需要</strong></p></td>
+<td><p><strong>所在位置</strong></p></td>
+<td><p><strong>必要項目</strong></p></td>
 </tr>
 <tr class="even">
 <td><p>IdentityServer. Web .dll</p></td>
@@ -56,13 +56,13 @@ ms.locfileid: "75948859"
 
 ## <a name="create-the-provider"></a>建立提供者
 
-1.  在 Visual Studio 2012：選擇 檔案-\>新增-\>專案
+1.  在 Visual Studio 2012：選擇 [檔案\>-新增\>-專案 ...]
 
 2.  選取 [類別庫]，並確定您的目標是 .NET 4.5。
 
     ![建立提供者](media/ad-fs-build-custom-auth-method/Dn783423.71a57ae1-d53d-462b-a846-5b3c02c7d3f2(MSDN.10).jpg "建立提供者")
 
-3.  在已安裝 AD FS 的 Windows Server 2012 R2 伺服器上，從% windir%\\ADFS 複製**IdentityServer** ，並將它貼入開發電腦上的專案資料夾中。
+3.  從已安裝 AD FS **Microsoft.IdentityServer.Web.dll**的 Windows Server 2012 R2 伺服器上的% windir%\\ADFS 複製 IdentityServer，並將它貼入開發電腦上的專案資料夾中。
 
 4.  在**方案總管**中，以滑鼠右鍵按一下 [**參考**] 並**新增參考 ...**
 
@@ -74,7 +74,7 @@ ms.locfileid: "75948859"
 
     您現在應該設定為解析提供者所需的所有類型。 
 
-7.  將新類別新增至您的專案（以滑鼠右鍵按一下您的專案，然後**新增 .。。類別 ...** ）並提供名稱，例如**MyAdapter**，如下所示：
+7.  將新類別新增至您的專案（以滑鼠右鍵按一下您的專案，然後**新增 .。。類別 ...**）並提供名稱，例如**MyAdapter**，如下所示：
 
     ![建立提供者](media/ad-fs-build-custom-auth-method/Dn783423.6b6a7a8b-9d66-40c7-8a86-a2e3b9e14d09(MSDN.10).jpg "建立提供者")
 
@@ -341,7 +341,7 @@ ms.locfileid: "75948859"
         //]]>
         </script></div>
 
-14. 然後，選取 [**專案-\>新增元件 ...]資源**檔並將檔案命名為**資源**，然後按一下 [**新增]：**
+14. 然後，選取 [**專案\>-新增元件 ...]資源**檔並將檔案命名為**資源**，然後按一下 [**新增]：**
 
    ![建立提供者](media/ad-fs-build-custom-auth-method/Dn783423.3369ad8f-f65f-4f36-a6d5-6a3edbc1911a(MSDN.10).jpg "建立提供者")
 
@@ -359,9 +359,9 @@ ms.locfileid: "75948859"
 
 1.  在方案總管中，以滑鼠右鍵按一下您的專案名稱，然後按一下 [**屬性**]。
 
-2.  在 [**簽署**] 索引標籤上，核取 [**簽署元件**]，然後選擇 **[選擇強式名稱金鑰**檔] 底下的 [ **\<新增 ...]\>** ：輸入金鑰檔名稱和密碼，然後按一下 **[確定]** 。  然後，確定已核取 **[簽署元件**]，而且未選取 [**延遲簽**章]。  [屬性**簽署**] 頁面看起來應該像這樣：
+2.  在 [**簽署**] 索引標籤上，核取 **[簽署元件**]，然後選擇 [ ** \<新增 ...]\> **在 **[選擇強式名稱金鑰檔：** 輸入金鑰檔名稱和密碼]，然後按一下 **[確定]**。  然後，確定已核取 **[簽署元件**]，而且未選取 [**延遲簽**章]。  [屬性**簽署**] 頁面看起來應該像這樣：
 
-    ![建立提供者](media/ad-fs-build-custom-auth-method/Dn783423.0b1a1db2-d64e-4bb8-8c01-ef34296a2668(MSDN.10).jpg "建置您的提供者")
+    ![建置您的提供者](media/ad-fs-build-custom-auth-method/Dn783423.0b1a1db2-d64e-4bb8-8c01-ef34296a2668(MSDN.10).jpg "建置您的提供者")
 
 3.  然後建立解決方案。
 
@@ -381,13 +381,13 @@ ms.locfileid: "75948859"
 
 3.  將 Gacutil 工具複製到伺服器。
 
-    您可以在 **% homedrive%\\Program Files （x86）中找到 Gacutil，\\Microsoft sdk\\windows\\8.0 版\\bin\\NETFX 4.0 Tools\\** 在 windows 8 電腦上。  您需要**gacutil**檔案本身以及**1033**、 **en-us**和其他當地語系化資源資料夾，位於**NETFX 4.0 工具**位置底下。
+    Gacutil 可在 **%\\homedrive% Program Files （x86）\\Microsoft sdk\\windows\\v4.0 8.0 a Windows 8 電腦上\\的\\bin NETFX 4.0\\工具**中找到。  您需要**gacutil**檔案本身以及**1033**、 **en-us**和其他當地語系化資源資料夾，位於**NETFX 4.0 工具**位置底下。
 
 4.  將您的提供者檔案（一個或多個強式名稱簽署的 .dll 檔案）複製到與**gacutil**相同的資料夾位置（此位置只是為了方便起見）
 
 5.  將您的 .dll 檔案加入至伺服器陣列中每部 AD FS 同盟伺服器上的 GAC：
 
-    範例：使用命令列工具 GACutil 將 dll 新增至 GAC： `C:\>.\gacutil.exe /if .\<yourdllname>.dll`
+    範例：使用命令列工具 GACutil 將 dll 新增至 GAC：`C:\>.\gacutil.exe /if .\<yourdllname>.dll`
 
     若要在 GAC 中查看產生的專案：`C:\>.\gacutil.exe /l <yourassemblyname>`
 
@@ -395,17 +395,17 @@ ms.locfileid: "75948859"
 
 ### <a name="register-your-provider-in-ad-fs"></a>在 AD FS 中註冊您的提供者
 
-符合上述先決條件之後，請在您的同盟伺服器上開啟 Windows PowerShell 命令視窗，並輸入下列命令（請注意，如果您使用的是使用 Windows Internal Database 的同盟伺服器陣列，您必須在下列電腦上執行這些命令：伺服器陣列的主要同盟伺服器）：
+符合上述先決條件之後，請在您的同盟伺服器上開啟 Windows PowerShell 命令視窗，並輸入下列命令（請注意，如果您使用的是使用 Windows Internal Database 的同盟伺服器陣列，您必須在伺服器陣列的主要同盟伺服器上執行這些命令）：
 
 1.  `Register-AdfsAuthenticationProvider –TypeName YourTypeName –Name “AnyNameYouWish” [–ConfigurationFilePath (optional)]`
 
-    其中，YourTypeName 是您的 .NET 強型別名稱： "YourDefaultNamespace. YourIAuthenticationAdapterImplementationClassName，YourAssemblyName，Version = YourAssemblyVersion，Culture = 中性，PublicKeyToken = YourPublicKeyTokenValue，processorArchitecture = MSIL "
+    其中，YourTypeName 是您的 .NET 強型別名稱： "YourDefaultNamespace. YourIAuthenticationAdapterImplementationClassName，YourAssemblyName，Version = YourAssemblyVersion，Culture = 中性，PublicKeyToken = YourPublicKeyTokenValue，processorArchitecture = MSIL"
 
     這會在 AD FS 中註冊您的外部提供者，並以您在上面所提供的名稱 AnyNameYouWish。
 
 2.  重新開機 AD FS 服務（例如，使用 Windows 服務嵌入式管理單元）。
 
-3.  執行下列命令：`Get-AdfsAuthenticationProvider`
+3.  執行下列命令：`Get-AdfsAuthenticationProvider`。
 
     這會將您的提供者顯示為系統中的其中一個提供者。
 
@@ -416,9 +416,9 @@ ms.locfileid: "75948859"
         PS C:\>net stop adfssrv
         PS C:\>net start adfssrv
 
-    如果您已在 AD FS 環境中啟用裝置註冊服務，請同時執行下列動作： `PS C:\>net start drs`
+    如果您已在 AD FS 環境中啟用裝置註冊服務，請同時執行下列步驟：`PS C:\>net start drs`
 
-    若要確認已註冊的提供者，請使用下列命令：`PS C:\>Get-AdfsAuthenticationProvider`。
+    若要確認已註冊的提供者，請使用`PS C:\>Get-AdfsAuthenticationProvider`下列命令：。
 
     這會將您的提供者顯示為系統中的其中一個提供者。
 
@@ -432,15 +432,15 @@ ms.locfileid: "75948859"
 
 3.  在中央窗格的 [**多重要素驗證**] 底下，按一下 [**全域設定**] 右邊的 [**編輯**] 連結。
 
-4.  在頁面底部的 [**選取其他驗證方法**] 底下，選取提供者 AdminName 的方塊。 按一下 **\[Apply\]** (套用)。
+4.  在頁面底部的 [**選取其他驗證方法**] 底下，選取提供者 AdminName 的方塊。 按一下 [套用]  。
 
-5.  若要提供「觸發程式」以使用介面卡叫用 MFA，請在 [**位置**] 底下檢查**外部**網路和**內部**網路，例如。 按一下 **\[確定\]** 。 （若要設定每個信賴憑證者的觸發程式，請參閱下方的「使用 Windows PowerShell 建立驗證原則」）。
+5.  若要提供「觸發程式」以使用介面卡叫用 MFA，請在 [**位置**] 底下檢查**外部**網路和**內部**網路，例如。 按一下 [確定]  。 （若要設定每個信賴憑證者的觸發程式，請參閱下方的「使用 Windows PowerShell 建立驗證原則」）。
 
 6.  使用下列命令來檢查結果：
 
-    第一次使用 `Get-AdfsGlobalAuthenticationPolicy`。 您應該會看到提供者名稱做為其中一個 AdditionalAuthenticationProvider 值。
+    第一`Get-AdfsGlobalAuthenticationPolicy`次使用。 您應該會看到提供者名稱做為其中一個 AdditionalAuthenticationProvider 值。
 
-    然後使用 `Get-AdfsAdditionalAuthenticationRule`。 您應該會看到外部網路和內部網路的規則，設定為系統管理員 UI 中的原則選取結果。
+    然後使用`Get-AdfsAdditionalAuthenticationRule`。 您應該會看到外部網路和內部網路的規則，設定為系統管理員 UI 中的原則選取結果。
 
 #### <a name="create-the-authentication-policy-using-windows-powershell"></a>使用 Windows PowerShell 建立驗證原則
 
@@ -477,7 +477,7 @@ Example:`PS C:\>Set-AdfsGlobalAuthenticationPolicy –AdditionalAuthenticationPr
 
         1.  或者，只需按一下 [**多重要素原則**] UI 中的 [**主要**] 索引標籤。
 
-2.  確定 [**表單驗**證] 是同時檢查外部網路和內部網路驗證方法的唯一選項。  按一下 **\[確定\]** 。
+2.  確定 [**表單驗**證] 是同時檢查外部網路和內部網路驗證方法的唯一選項。  按一下 [確定]  。
 
 3.  開啟 IDP 起始的登入 html 頁面（HTTPs://\<fsname\>/adfs/ls/iDPInitiatedsignon.htm），然後在您的測試環境中以有效的 AD 使用者身分登入。
 
@@ -487,15 +487,15 @@ Example:`PS C:\>Set-AdfsGlobalAuthenticationPolicy –AdditionalAuthenticationPr
 
     如果您已設定多個介面卡，您會看到 [MFA 選擇] 頁面上有您的易記名稱。
 
-    ![使用介面卡進行驗證](media/ad-fs-build-custom-auth-method/Dn783423.c98d2712-cbd3-4cb9-ac03-2838b81c4f63(MSDN.10).jpg "使用配接器來驗證")
+    ![使用配接器來驗證](media/ad-fs-build-custom-auth-method/Dn783423.c98d2712-cbd3-4cb9-ac03-2838b81c4f63(MSDN.10).jpg "使用配接器來驗證")
 
-    ![使用介面卡進行驗證](media/ad-fs-build-custom-auth-method/Dn783423.fd3aefc0-ef6c-4a8c-a737-4914c78ff2d2(MSDN.10).jpg "使用配接器來驗證")
+    ![使用配接器來驗證](media/ad-fs-build-custom-auth-method/Dn783423.fd3aefc0-ef6c-4a8c-a737-4914c78ff2d2(MSDN.10).jpg "使用配接器來驗證")
 
 您現在已可正常執行介面，並瞭解模型的運作方式。 您可以 trym 為額外的範例，以在 BeginAuthentication 和 TryEndAuthentication 中設定中斷點。  請注意，當使用者第一次進入 MFA 表單時，BeginAuthentication 的執行方式，而 TryEndAuthentication 則是在每次提交表單時觸發。
 
 ## <a name="update-the-adapter-for-successful-authentication"></a>更新介面卡以驗證成功
 
-但請稍候–您的範例介面卡永遠不會成功驗證\!  這是因為您程式碼中的任何內容都不會針對 TryEndAuthentication 傳回 null。
+等待–您的範例介面卡永遠不會成功驗證\!  這是因為您程式碼中的任何內容都不會針對 TryEndAuthentication 傳回 null。
 
 完成上述程式之後，您建立了基本介面卡的執行，並將它新增至 AD FS 伺服器。  您可以取得 [MFA 表單] 頁面，但您還無法驗證，因為您尚未將正確的邏輯放在 TryEndAuthentication 的執行中。  讓我們來加入它。
 
@@ -539,7 +539,7 @@ Example:`PS C:\>Set-AdfsGlobalAuthenticationPolicy –AdditionalAuthenticationPr
      outgoingClaims = new[] 
      {
      // Return the required authentication method claim, indicating the particulate authentication method used.
-     new Claim( "https://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", 
+     new Claim( "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", 
      "http://example.com/myauthenticationmethod1" )
      };
      return null;
@@ -607,9 +607,9 @@ Example:`PS C:\>Set-AdfsGlobalAuthenticationPolicy –AdditionalAuthenticationPr
 
 3.  在 [**多重要素驗證**] 底下，按一下 [**全域設定**] 右邊的 [**編輯**] 連結。
 
-4.  在 [**選取其他驗證方法**] 底下，勾選提供者 AdminName 的方塊。 按一下 **\[Apply\]** (套用)。
+4.  在 [**選取其他驗證方法**] 底下，勾選提供者 AdminName 的方塊。 按一下 [套用]  。
 
-5.  若要提供「觸發程式」以使用介面卡叫用 MFA，請在 [位置] 底下檢查**外部**網路和**內部**網路，例如。 按一下 **\[確定\]** 。
+5.  若要提供「觸發程式」以使用介面卡叫用 MFA，請在 [位置] 底下檢查**外部**網路和**內部**網路，例如。 按一下 [確定]  。
 
 ### <a name="authenticate-with-mfa-using-your-adapter"></a>使用您的介面卡向 MFA 進行驗證
 
@@ -621,7 +621,7 @@ Example:`PS C:\>Set-AdfsGlobalAuthenticationPolicy –AdditionalAuthenticationPr
 
         1.  或者，只需按一下 [多重要素原則] UI 中的 [**主要**] 索引標籤。
 
-2.  確定 [**表單驗**證] 是同時檢查**外部**網路和**內部**網路驗證方法的唯一選項。  按一下 **\[確定\]** 。
+2.  確定 [**表單驗**證] 是同時檢查**外部**網路和**內部**網路驗證方法的唯一選項。  按一下 [確定]  。
 
 3.  開啟 IDP 起始的登入 html 頁面（HTTPs://\<fsname\>/adfs/ls/iDPInitiatedsignon.htm），然後在您的測試環境中以有效的 AD 使用者身分登入。
 
@@ -633,11 +633,11 @@ Example:`PS C:\>Set-AdfsGlobalAuthenticationPolicy –AdditionalAuthenticationPr
 
 在 [MFA 驗證] 頁面輸入 "adfabric" 時，您應該會看到成功的登入。
 
-![使用介面卡登入](media/ad-fs-build-custom-auth-method/Dn783423.630d8a91-3bfe-4cba-8acf-03eae21530ee(MSDN.10).jpg "使用配接器來登入")
+![使用配接器來登入](media/ad-fs-build-custom-auth-method/Dn783423.630d8a91-3bfe-4cba-8acf-03eae21530ee(MSDN.10).jpg "使用配接器來登入")
 
-![使用介面卡登入](media/ad-fs-build-custom-auth-method/Dn783423.c340fa73-f70f-4870-b8dd-07900fea4469(MSDN.10).jpg "使用配接器來登入")
+![使用配接器來登入](media/ad-fs-build-custom-auth-method/Dn783423.c340fa73-f70f-4870-b8dd-07900fea4469(MSDN.10).jpg "使用配接器來登入")
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 #### <a name="other-resources"></a>其他資源
 

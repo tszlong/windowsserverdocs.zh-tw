@@ -7,18 +7,19 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 01/06/2020
 ms.prod: windows-server
-ms.openlocfilehash: 5f6777939b907a0d50d134c5507efec5f03e3286
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 3976761836e4bbec2a3d06d56220066a595046b4
+ms.sourcegitcommit: 074b59341640a8ae0586d6b37df7ba256e03a0c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75952740"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81650088"
 ---
 # <a name="windows-admin-center-release-history"></a>Windows Admin Center 發行歷程記錄
 
 以下是我們最新發行的功能清單：
 
-- 版本 [1910](https://aka.ms/wac1910) 是最新的 GA 版本 - 引進數個新的 Azure 混合式服務，並將先前預覽版中的功能帶入 GA 通道。
+- [1910.2](https://aka.ms/wac1910.2)版是最新的 GA 版本-它包含平臺存取範圍的更新，以及許多 bug 修正
+- [1910](https://aka.ms/wac1910)版引進了數個新的 Azure 混合式服務，並將先前處於預覽狀態的功能帶入 GA 頻道。
 - 版本 [1909](https://aka.ms/wac1909) 引進了 Azure VM 特定的連線類型，並將傳統容錯移轉叢集和 HCI 叢集的連線類型統一。
 - 版本 [1908](https://aka.ms/wac1908) 新增了視覺更新、Packetmon、FlowLog Audit、叢集的 Azure 監視器上架，以及透過 HTTPS 支援 WinRM (連接埠 5986)。
 - 版本 [1907](https://aka.ms/wac1907) 新增了 Azure 成本預估連結，並改善了匯入/匯出和標記虛擬機器的功能。

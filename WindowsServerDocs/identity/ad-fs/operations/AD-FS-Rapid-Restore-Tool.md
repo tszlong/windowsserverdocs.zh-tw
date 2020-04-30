@@ -4,16 +4,16 @@ title: AD FS 快速還原工具
 author: billmath
 ms.author: billmath
 manager: femila
-ms.date: 07/02/2019
+ms.date: 04/24/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 506734812689a42ec17768652ac715f5c7e24401
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: dde9d60278a32ae4e6ba0baf35bc11ce631d4e02
+ms.sourcegitcommit: 371e59315db0cca5bdb713264a62b215ab43fd0f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858101"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82192597"
 ---
 # <a name="ad-fs-rapid-restore-tool"></a>AD FS 快速還原工具
 
@@ -54,7 +54,7 @@ import-module 'C:\Program Files (x86)\ADFS Rapid Recreation Tool\ADFSRapidRecrea
 ```
 
 >[!NOTE] 
->如果您使用的是 Windows 整合式資料庫（WID），則此工具必須在主要 AD FS 伺服器上執行。  您可以使用 `Get-AdfsSyncProperties` PowerShell Cmdlet 來判斷您所在的伺服器是否為主伺服器。
+>如果您使用的是 Windows 整合式資料庫（WID），則此工具必須在主要 AD FS 伺服器上執行。  您可以使用`Get-AdfsSyncProperties` PowerShell Cmdlet 來判斷您所在的伺服器是否為主伺服器。
 
 ### <a name="system-requirements"></a>系統需求
 
@@ -78,19 +78,19 @@ import-module 'C:\Program Files (x86)\ADFS Rapid Recreation Tool\ADFSRapidRecrea
 
 - **BackupDKM** -備份 Active Directory DKM 容器，其中包含預設設定中的 AD FS 金鑰（自動產生的權杖簽署和解密憑證）。 這會使用 AD 工具 ' ldifde ' 來匯出 AD 容器和其所有的子樹。
 
-- -**StorageType &lt;字串&gt;** -使用者想要使用的儲存體類型。 「檔案系統」表示使用者想要將它儲存在本機的資料夾或網路「Azure」中，表示當使用者執行備份時，使用者想要將它儲存在 Azure 儲存體容器中，他們會選取備份位置，也就是檔案系統或雲端。 若要使用 Azure，應將 Azure 儲存體認證傳遞至 Cmdlet。 儲存體認證包含帳戶名稱和金鑰。 此外，也必須傳入容器名稱。 如果容器不存在，則會在備份期間建立。 對於要使用的檔案系統，必須指定儲存路徑。 在該目錄中，將會為每個備份建立一個新的目錄。 所建立的每個目錄都會包含備份檔案。 
+- -**StorageType &lt;字串&gt; ** -使用者想要使用的儲存體類型。 「檔案系統」表示使用者想要將它儲存在本機的資料夾或網路「Azure」中，表示當使用者執行備份時，使用者想要將它儲存在 Azure 儲存體容器中，他們會選取備份位置，也就是檔案系統或雲端。 若要使用 Azure，應將 Azure 儲存體認證傳遞至 Cmdlet。 儲存體認證包含帳戶名稱和金鑰。 此外，也必須傳入容器名稱。 如果容器不存在，則會在備份期間建立。 對於要使用的檔案系統，必須指定儲存路徑。 在該目錄中，將會為每個備份建立一個新的目錄。 所建立的每個目錄都會包含備份檔案。 
 
-- **EncryptionPassword &lt;字串&gt;** -在儲存之前用來加密所有備份檔案的密碼
+- **EncryptionPassword &lt;字串&gt; ** -將用來加密所有備份檔案的密碼，然後再儲存
 
-- **AzureConnectionCredentials &lt;pscredential&gt;** -Azure 儲存體帳戶的帳戶名稱和金鑰
+- **AzureConnectionCredentials &lt;pscredential&gt; ** -Azure 儲存體帳戶的帳戶名稱和金鑰
 
-- **New-azurestoragecontainer &lt;字串&gt;** -備份將儲存在 Azure 中的儲存體容器
+- **New-azurestoragecontainer &lt;字串&gt; ** -備份將儲存在 Azure 中的儲存體容器
 
-- **StoragePath &lt;字串&gt;** -將儲存備份的位置
+- **StoragePath &lt;字串&gt; ** -將儲存備份的位置
 
-- **ServiceAccountCredential &lt;pscredential&gt;** -指定目前正在執行的 AD FS 服務所使用的服務帳戶。 只有當使用者想要備份 DKM，而不是網域系統管理員或無法存取容器的內容時，才需要此參數。 
+- **ServiceAccountCredential &lt;pscredential&gt; ** -指定目前正在執行的 AD FS 服務所使用的服務帳戶。 只有當使用者想要備份 DKM，而不是網域系統管理員或無法存取容器的內容時，才需要此參數。 
 
-- **BackupComment &lt;string []&gt;** -在還原期間將顯示之備份的相關資訊字串，類似于 hyper-v 檢查點命名的概念。 預設值為空字串
+- **BackupComment &lt;string []&gt; ** -有關將在還原期間顯示之備份的資訊字串，類似于 hyper-v 檢查點命名的概念。 預設值為空字串
 
  
 ## <a name="backup-examples"></a>備份範例
@@ -123,7 +123,7 @@ Backup-ADFS -StorageType "FileSystem" -StoragePath "C:\Users\administrator\testE
 ## <a name="restore-from-backup"></a>從備份還原
 若要將使用備份-ADFS 建立的設定套用至新的 AD FS 安裝，請使用 Restore-ADFS Cmdlet。
 
-此 Cmdlet 會使用 Cmdlet 建立新的 AD FS 伺服器陣列 `Install-AdfsFarm` 並還原 AD FS 設定、資料庫、憑證等。 如果尚未在伺服器上安裝 AD FS 角色，此 Cmdlet 將會安裝它。  指令程式會檢查現有備份的還原位置，並提示使用者根據所取得的日期/時間，以及使用者可能附加至備份的任何備份批註，來選擇適當的備份。 如果有多個 AD FS 設定具有不同的同盟服務名稱，則系統會提示使用者先選擇適當的 AD FS 設定。
+此 Cmdlet 會使用 Cmdlet `Install-AdfsFarm`建立新的 AD FS 伺服器陣列，並還原 AD FS 設定、資料庫、憑證等。 如果尚未在伺服器上安裝 AD FS 角色，此 Cmdlet 將會安裝它。  指令程式會檢查現有備份的還原位置，並提示使用者根據所取得的日期/時間，以及使用者可能附加至備份的任何備份批註，來選擇適當的備份。 如果有多個 AD FS 設定具有不同的同盟服務名稱，則系統會提示使用者先選擇適當的 AD FS 設定。
 使用者必須同時是本機和網域系統管理員，才能執行此 Cmdlet。
 
 
@@ -136,28 +136,28 @@ Backup-ADFS -StorageType "FileSystem" -StoragePath "C:\Users\administrator\testE
 
 ### <a name="detailed-description"></a>詳細描述
 
-- **StorageType &lt;字串&gt;** -使用者想要使用的儲存體類型。
+- **StorageType &lt;字串&gt; ** -使用者想要使用的儲存體類型。
  "FileSystem" 表示使用者想要將它儲存在本機資料夾或網路 "Azure" 中，表示使用者想要將它儲存在 Azure 儲存體容器中
 
-- **DecryptionPassword &lt;字串&gt;** -用來加密所有備份檔案的密碼 
+- **DecryptionPassword &lt;字串&gt; ** -用來加密所有備份檔案的密碼 
 
-- **AzureConnectionCredentials &lt;pscredential&gt;** -Azure 儲存體帳戶的帳戶名稱和金鑰
+- **AzureConnectionCredentials &lt;pscredential&gt; ** -Azure 儲存體帳戶的帳戶名稱和金鑰
 
-- **New-azurestoragecontainer &lt;字串&gt;** -備份將儲存在 Azure 中的儲存體容器
+- **New-azurestoragecontainer &lt;字串&gt; ** -備份將儲存在 Azure 中的儲存體容器
 
-- **StoragePath &lt;字串&gt;** -將儲存備份的位置
+- **StoragePath &lt;字串&gt; ** -將儲存備份的位置
 
-- **ADFSName &lt; 字串 &gt;** -已備份且即將還原之同盟的名稱。 如果未提供此項，而且只有一個 federation service 名稱，則會使用。 如果有一個以上的同盟服務備份至該位置，則會提示使用者選擇其中一個已備份的同盟服務。
+- **ADFSName &lt; string &gt; ** -已備份且即將還原之同盟的名稱。 如果未提供此項，而且只有一個 federation service 名稱，則會使用。 如果有一個以上的同盟服務備份至該位置，則會提示使用者選擇其中一個已備份的同盟服務。
 
-- **ServiceAccountCredential &lt; pscredential &gt;** -指定將用於要還原之新 AD FS 服務的服務帳戶 
+- **ServiceAccountCredential &lt; pscredential &gt; ** -指定將用於要還原之新 AD FS 服務的服務帳戶 
 
-- **GroupServiceAccountIdentifier &lt;字串&gt;** -使用者想要用來還原新 AD FS 服務的 GMSA。 根據預設，如果未提供任何值，則會使用已備份的帳戶名稱（如果已 GMSA），否則系統會提示使用者將其放入服務帳戶
+- **GroupServiceAccountIdentifier &lt;字串&gt; ** -使用者想要用於還原之新 AD FS 服務的 GMSA。 根據預設，如果未提供任何值，則會使用已備份的帳戶名稱（如果已 GMSA），否則系統會提示使用者將其放入服務帳戶
 
-- **DBConnectionString &lt;字串&gt;** -如果使用者想要使用不同的 DB 進行還原，則它們應該在 wid 中傳遞 SQL 連接字串或類型。
+- **DBConnectionString &lt;字串&gt; ** -如果使用者想要使用不同的 DB 進行還原，他們應該在 wid 中傳遞 SQL 連接字串或類型。
 
-- **Force &lt;bool&gt;** -略過工具在選擇備份後可能會有的提示
+- **強制&lt;使用&gt; bool** -略過工具在選擇備份之後可能會有的提示
 
-- **RestoreDKM &lt;bool&gt;** -將 DKM 容器還原至 AD，應設定為如果要新增至新的 ad，並在一開始備份 dkm。
+- **RestoreDKM &lt;bool&gt; ** -將 DKM 容器還原至 AD，應設定為如果要新增至新的 ad，並在一開始備份 dkm。
 
 ## <a name="restore-examples"></a>還原範例
 
@@ -219,10 +219,21 @@ RngCryptoServiceProvider 是用來產生 AES 和 Rfc2898DeriveBytes 類別所使
 
 ## <a name="version-release-history"></a>版本發行歷程記錄
 
+### <a name="version-10823"></a>版本1.0.82。3
+版本：2020年4月
+
+**已修正的問題：**
+
+
+- 已新增 CNG 型憑證的支援
+
+
 ### <a name="version-10820"></a>版本1.0.82。0
 版本：2019年7月
 
 **已修正的問題：**
+
+
 - 修正包含 LDAP 逸出字元 AD FS 服務帳戶名稱的 Bug
 
 

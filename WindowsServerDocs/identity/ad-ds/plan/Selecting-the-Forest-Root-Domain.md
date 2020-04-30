@@ -8,16 +8,16 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: abc02bec101b39a66a78da871f838d2585d89377
-ms.sourcegitcommit: af1cf89632d62a94943d3ad9f6b5234b88499278
+ms.openlocfilehash: 1abf845ce69b395bf46a0f155db2c683c359207c
+ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81524923"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81623876"
 ---
 # <a name="selecting-the-forest-root-domain"></a>選取樹系根網域
 
-> 適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 您在 Active Directory 樹系中部署的第一個網域稱為樹系根域。 此網域仍然是 AD DS 部署生命週期的樹系根域。
 
@@ -68,7 +68,7 @@ ms.locfileid: "81524923"
 我們建議您在 Active Directory 命名空間中使用已向網際網路授權單位註冊的 DNS 名稱。 只有已註冊的名稱保證是全域唯一的。 如果另一個組織稍後註冊相同的 DNS 功能變數名稱（或者，如果您的組織與使用相同 DNS 名稱的另一家公司進行合併、取得或），這兩個基礎結構無法彼此互動。
 
 > [!CAUTION]
-> 請勿使用單一標籤 DNS 名稱。 如需詳細資訊，請參閱（[部署和操作使用單一標籤 DNS 名稱設定的 Active Directory 網域](https://go.microsoft.com/fwlink/?LinkId=106631)）。 此外，我們不建議使用未註冊的尾碼，例如 local。
+> 請勿使用單一標籤 DNS 名稱。 如需詳細資訊，請參閱[部署和操作使用單一標籤 DNS 名稱設定的 Active Directory 網域](https://support.microsoft.com/help/300684/)。 此外，我們不建議使用未註冊的尾碼，例如 local。
 
 ### <a name="selecting-a-prefix"></a>選取前置詞
 
@@ -78,14 +78,14 @@ ms.locfileid: "81524923"
 
 下表列出為已註冊的 DNS 名稱選取前置詞的規則。
 
-|規則|說明|
-|--------|---------------|
-|選取不太可能過時的前置詞。|避免未來可能會變更的名稱，例如產品線或作業系統。 我們建議使用一般名稱，例如 corp 或 ds。|
-|選取僅包含網際網路標準字元的首碼。|A-z、a-z、0-9 和（-），但不是完全數值。|
-|在前置詞中包含15個字元或更少。|如果您選擇15個字元或更少的前置長度，則 NetBIOS 名稱會與前置詞相同。|
+| 規則     | 說明 |
+| -------- | --------------- |
+| 選取不太可能過時的前置詞。 | 避免未來可能會變更的名稱，例如產品線或作業系統。 我們建議使用一般名稱，例如 corp 或 ds。|
+| 選取僅包含網際網路標準字元的首碼。 | A-z、a-z、0-9 和（-），但不是完全數值。 |
+| 在前置詞中包含15個字元或更少。 | 如果您選擇15個字元或更少的前置長度，則 NetBIOS 名稱會與前置詞相同。 |
 
 Active Directory DNS 擁有者必須與組織的 DNS 擁有者合作，才能取得將用於 Active Directory 命名空間的名稱擁有權。 如需設計 DNS 基礎結構以支援 AD DS 的詳細資訊，請參閱[建立 Dns 基礎結構設計](../../ad-ds/plan/Creating-a-DNS-Infrastructure-Design.md)。
 
 ## <a name="documenting-the-forest-root-domain-name"></a>記載樹系根功能變數名稱稱
 
-記錄您為樹系根域選取的 DNS 前置詞和尾碼。 此時，請識別哪個網域會是樹系根目錄。 您可以將樹系根功能變數名稱資訊新增至您所建立的「網域規劃」工作表，以記載新網域和升級網域的計畫，以及您的功能變數名稱。 若要開啟它，請從[適用于 Windows Server 2003 部署套件的作業輔助](https://www.microsoft.com/download/details.aspx?id=9608)下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，並開啟「網域規劃」（DSSLOGI_5 .doc）。
+記錄您為樹系根域選取的 DNS 前置詞和尾碼。 此時，請識別哪個網域會是樹系根目錄。 您可以將樹系根功能變數名稱資訊新增至您所建立的「網域規劃」工作表，以記載新網域和升級網域的計畫，以及您的功能變數名稱。 若要開啟它，請從[適用于 Windows Server 2003 部署套件的作業輔助](https://microsoft.com/download/details.aspx?id=9608)下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，並開啟「網域規劃」（DSSLOGI_5 .doc）。

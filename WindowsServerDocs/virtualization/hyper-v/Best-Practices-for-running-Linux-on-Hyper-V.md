@@ -8,13 +8,13 @@ ms.topic: article
 ms.assetid: a08648eb-eea0-4e2b-87fb-52bfe8953491
 author: shirgall
 ms.author: kathydav
-ms.date: 3/1/2019
-ms.openlocfilehash: 7baf71af401b8318ccd136fe12d6eb810cf9434e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.date: 04/15/2020
+ms.openlocfilehash: d8861369abe24ea0d34dce209a5d98e854c4c95d
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853301"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82072234"
 ---
 # <a name="best-practices-for-running-linux-on-hyper-v"></a>在 Hyper-v 上執行 Linux 的最佳做法
 
@@ -49,7 +49,7 @@ PS > New-VHD -Path C:\MyVHDs\test.vhdx -SizeBytes 127GB -Dynamic -BlockSizeBytes
 
 因為第2代虛擬機器中的 PIT 計時器不存在，所以與 PxE TFTP 伺服器的網路連線可能會提前終止，並防止開機載入器讀取 Grub 設定並從伺服器載入核心。
 
-在 RHEL 6.x 上，您可以使用舊版 grub v 0.97 EFI 開機載入器，而不是 grub2，如下所述： [https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html)
+在 RHEL 6.x 上，您可以使用舊版 grub v 0.97 EFI 開機載入器，而不是 grub2，如下所述：[https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html)
 
 在 RHEL 6.x 以外的 Linux 散發套件上，可以遵循類似的步驟，將 grub v 0.97 設定為從 PxE 伺服器載入 Linux 核心。
 
@@ -74,13 +74,15 @@ Set-VMComPort -VMName <Name> -Number 2 -Path \\.\pipe\dbg1
 
 設定和使用虛擬 Ethernet 介面卡，這是一種具有增強效能的 Hyper-v 專用網路介面卡。 如果舊版和 Hyper-v 特有的網路介面卡都連接到虛擬機器， **ifconfig**輸出中的網路名稱可能會顯示隨機值，例如 **_tmp12000801310**。 若要避免此問題，請在 Linux 虛擬機器中使用 Hyper-v 特定的網路介面卡時，移除所有傳統網路介面卡。
 
-## <a name="use-io-scheduler-noop-for-better-disk-io-performance"></a>使用 i/o 排程器 NOOP，以獲得更好的磁片 i/o 效能
+## <a name="use-io-scheduler-noopnone-for-better-disk-io-performance"></a>使用 i/o 排程器 noop/none 以獲得更好的磁片 i/o 效能
 
-Linux 核心有四個不同的 i/o 排程器，可使用不同的演算法來重新排序要求。 NOOP 是先進先出佇列，可通過由管理者所進行的排程決策。 建議在 Hyper-v 上執行 Linux 虛擬機器時，使用 NOOP 做為排程器。 若要變更特定裝置的排程器，請在開機載入器的設定（例如/etc/grub.conf）中，將**電梯 = noop**新增至核心參數，然後重新開機。
+Linux 核心提供兩組磁片 i/o 排程器來重新排序要求。  其中一個集合適用于較舊的 ' blk ' 子系統，而另一個集合則適用于較新的 ' blk-mq ' 子系統。 不論是哪一種情況，使用今天的固態硬碟時，建議使用排程器，將排程決策傳遞給基礎的 Hyper-v 虛擬程式。 針對使用 ' blk ' 子系統的 Linux 核心，這是「noop」排程器。 針對使用 ' blk-mq ' 子系統的 Linux 核心，這是「無」排程器。
+
+針對特定磁片，可在此檔案系統位置看到可用的排程器：/sys/class/block/`<diskname>`/queue/scheduler，並以方括弧括住目前選取的排程器。 您可以藉由寫入此檔案系統位置來變更排程器。 必須將變更新增至初始化腳本，才能在重新開機期間保存。 如需詳細資訊，請參閱您的 Linux 散發版本檔。
 
 ## <a name="numa"></a>NUMA
 
-早于2.6.37 的 Linux 核心版本不支援具有較大 VM 大小的 Hyper-v 上的 NUMA。 此問題主要會影響使用上游 Red Hat 2.6.32 核心的舊散發套件，並已在 Red Hat Enterprise Linux （RHEL）6.6 （2.6.32-504）中修正。 執行早于2.6.37 的自訂核心，或早于 2.6.32-504 的 RHEL 型核心的系統，必須在 grub 的內核命令列上設定開機參數 `numa=off`。 如需詳細資訊，請參閱[Red HAT KB 436883](https://access.redhat.com/solutions/436883)。
+早於 2.6.37 的 Linux 核心版本不支援具較大 VM 大小之 Hyper-V 上的 NUMA。 這個問題主要會影響使用上游 Red Hat 2.6.32 核心的較舊發行版本，而且已在 Red Hat Enterprise Linux (RHEL) 6.6 (kernel-2.6.32-504) 中加以修正。 執行的自訂核心是 2.6.37 以前版本的系統，或 2.6.32-504 以前的 RHEL 型核心必須在 grub.conf 的核心命令列上設定開機參數 `numa=off`。 如需詳細資訊，請參閱 [Red Hat KB 436883](https://access.redhat.com/solutions/436883) \(英文\)。
 
 ## <a name="reserve-more-memory-for-kdump"></a>為 kdump 保留更多記憶體
 
@@ -98,8 +100,8 @@ Hyper-v 允許壓縮虛擬磁片（VHDX）檔案，而不考慮磁片上可能�
 
 * [在 Hyper-v 上執行 FreeBSD 的最佳做法](Best-practices-for-running-FreeBSD-on-Hyper-V.md)
 
-* [部署 Hyper-v 叢集](https://technet.microsoft.com/library/jj863389.aspx)
+* [部署 Hyper-V 叢集](https://technet.microsoft.com/library/jj863389.aspx)
 
 * [建立適用于 Azure 的 Linux 映射](https://docs.microsoft.com/azure/virtual-machines/linux/create-upload-generic)
 
-* [在 Azure 上優化 Linux VM](https://docs.microsoft.com/azure/virtual-machines/linux/optimization)
+* [在 Azure 上最佳化 Linux VM](https://docs.microsoft.com/azure/virtual-machines/linux/optimization)

@@ -8,12 +8,12 @@ ms.date: 05/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 28f7fc4a8c7129d9f88cc030b1b150db44321bf9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 843ed0b3ebf25d662d0b90c17f8fe23548829a7e
+ms.sourcegitcommit: 371e59315db0cca5bdb713264a62b215ab43fd0f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859941"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82192596"
 ---
 # <a name="ad-fs-extranet-lockout-and-extranet-smart-lockout"></a>AD FS 外部網路鎖定和外部網路智慧鎖定
 
@@ -34,11 +34,11 @@ ESL 僅適用于透過外部網路使用 Web 應用程式 Proxy 或協力廠商 
 ### <a name="configuration-information"></a>組態資訊
 啟用 ESL 時，會建立成品資料庫 AdfsArtifactStore. AccountActivity 中的新資料表，並在 AD FS 伺服器陣列中選取節點做為「使用者活動」主機。 在 WID 設定中，此節點一律是主要節點。 在 SQL 設定中，會選取一個節點做為使用者活動主機。  
 
-以使用者活動主機的形式來查看選取的節點。 AdfsFarmInformation. FarmRoles
+以使用者活動主機的形式來查看選取的節點。 （AdfsFarmInformation）。FarmRoles
 
 所有次要節點都會透過埠80，與每個全新登入的主要節點聯繫，以瞭解錯誤密碼計數和新熟悉位置值的最新值，並在處理登入之後更新該節點。
 
-![設定](media/configure-ad-fs-extranet-smart-lockout-protection/esl1.png)
+![組態](media/configure-ad-fs-extranet-smart-lockout-protection/esl1.png)
 
  如果次要節點無法連上主機，它會將錯誤事件寫入 AD FS 的系統管理員記錄中。 系統會繼續處理驗證，但是 AD FS 只會在本機寫入已更新的狀態。 AD FS 將會每隔10分鐘重試一次主機，並在主要複本可供使用之後，切換回主要主機。
 
@@ -57,13 +57,13 @@ ESL 僅適用于透過外部網路使用 Web 應用程式 Proxy 或協力廠商 
 支援 IPv4 和 IPv6 位址。
 
 ### <a name="anatomy-of-a-transaction"></a>交易的剖析
-- **預先驗證檢查**：在驗證要求期間，ESL 會檢查所有顯示的 ip。 這些 ip 會結合網路 IP、轉送的 IP 和選擇性的 x 轉送-作為 IP。 在 audit 記錄中，這些 Ip 會列在 [<IpAddress>] 欄位中，以 x 毫秒轉送------------------x------------------
+- **預先驗證檢查**：在驗證要求期間，ESL 會檢查所有顯示的 ip。 這些 ip 會結合網路 IP、轉送的 IP 和選擇性的 x 轉送-作為 IP。 在 audit 記錄中，這些 Ip 會<IpAddress>依照 x 毫秒轉送-用戶端 ip、x 轉送-------------------------------------
 
   根據這些 Ip，ADFS 會判斷要求是否來自熟悉或不熟悉的位置，然後檢查個別的 badPwdCount 是否小於設定的臨界值限制，或上次**失敗**的嘗試時間是否超過觀察視窗的時間範圍。 如果其中一個條件為 true，ADFS 會允許此交易進行進一步的處理和認證驗證。 如果這兩個條件都為 false，則帳戶已處於鎖定狀態，直到觀察視窗通過為止。 在觀察時間範圍通過之後，使用者就可以嘗試驗證一次。 請注意，在2019中，ADFS 會根據是否有符合熟悉位置的 IP 位址，檢查適當的閾值限制。
 - **成功登**入：如果登入成功，則會將要求中的 ip 新增至使用者的熟悉位置 IP 清單。  
 - **登入失敗**：如果登入失敗，則會增加 badPwdCount。 如果攻擊者將更不正確的密碼傳送給系統，則使用者會進入鎖定狀態，而不是允許的閾值。 （badPwdCount > ExtranetLockoutThreshold）  
 
-![設定](media/configure-ad-fs-extranet-smart-lockout-protection/esl2.png)
+![組態](media/configure-ad-fs-extranet-smart-lockout-protection/esl2.png)
 
 當帳戶被鎖定時，"UnknownLockout" 值會等於 true。這表示使用者的 badPwdCount 超過閾值，也就是有人嘗試的密碼多於系統允許的數目。 在此狀態下，有2種方式可讓有效的使用者登入。
 - 使用者必須等候 ObservationWindow 時間，或
@@ -143,10 +143,10 @@ AccountActivity 資料表會在「僅限記錄」模式和「強制」模式期�
 ### <a name="ensure-ad-fs-security-audit-logging-is-enabled"></a>確定已啟用 AD FS 安全性審核記錄
 這項功能會使用安全性 Audit 記錄，因此必須在 AD FS 中啟用審核功能，以及在所有 AD FS 伺服器上的本機原則。
 
-### <a name="configuration-instructions"></a>設定指示
-外部網路智慧鎖定會使用 ADFS 屬性**ExtranetLockoutEnabled**。 這個屬性先前是用來控制伺服器2012R2 中的「外部網路虛鎖定」。 如果已啟用外部網路虛鎖定，若要查看目前的屬性設定，請執行 ` Get-AdfsProperties`。
+### <a name="configuration-instructions"></a>組態指示
+外部網路智慧鎖定會使用 ADFS 屬性**ExtranetLockoutEnabled**。 這個屬性先前是用來控制伺服器2012R2 中的「外部網路虛鎖定」。 如果已啟用外部網路虛鎖定，若要查看目前的屬性設定` Get-AdfsProperties` ，請執行。
 
-### <a name="configuration-recommendations"></a>設定建議
+### <a name="configuration-recommendations"></a>組態建議
 設定外部網路智慧鎖定時，請遵循設定閾值的最佳做法：  
 
 `ExtranetObservationWindow (new-timespan -Minutes 30)`
@@ -212,7 +212,7 @@ AD FS 提供三個 Cmdlet 來管理帳戶活動資料。 這些 Cmdlet 會自動
 
 `Get-ADFSAccountActivity user@contoso.com`
 
-  屬性:
+  內容：
     - BadPwdCountFamiliar：當從已知位置成功驗證時，會遞增。
     - BadPwdCountUnknown：當驗證從未知位置失敗時遞增
     - LastFailedAuthFamiliar：如果從熟悉的位置驗證失敗，LastFailedAuthUnknown 會設定為不成功驗證的時間
@@ -236,9 +236,13 @@ AD FS 提供三個 Cmdlet 來管理帳戶活動資料。 這些 Cmdlet 會自動
 ## <a name="event-logging--user-activity-information-for-ad-fs-extranet-lockout"></a>事件記錄 & AD FS 外部網路鎖定的使用者活動資訊
 
 ### <a name="connect-health"></a>Connect Health
-監視使用者帳戶活動的建議方式是透過 Connect Health。 Connect Health 會針對有風險的 Ip 和不正確的密碼嘗試，產生可下載的報告。 有風險的 IP 報告中的每個專案，都會顯示超過指定閾值之失敗 AD FS 登入活動的匯總資訊。 透過可自訂的電子郵件設定，您可以將電子郵件通知設定為警示系統管理員。 如需其他資訊和設定指示，請流覽[Connect Health 檔](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-health-adfs)。
+監視使用者帳戶活動的建議方式是透過 Connect Health。 Connect Health 會針對有風險的 Ip 和不正確的密碼嘗試，產生可下載的報告。 「具風險的 IP 報告」中的每個項目會顯示有關已超過指定閾值之失敗 AD FS 登入活動的彙總資訊。 透過可自訂的電子郵件設定，您可以將電子郵件通知設定為警示系統管理員。 如需其他資訊和設定指示，請流覽[Connect Health 檔](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-health-adfs)。
 
 ### <a name="ad-fs-extranet-smart-lockout-events"></a>AD FS 外部網路智慧鎖定事件。
+
+>[!NOTE]
+> 使用[AD FS 協助外部網路鎖定疑難排解指南](https://adfshelp.microsoft.com/TroubleshootingGuides/Workflow/a73d5843-9939-4c03-80a1-adcbbf3ccec8)疑難排解外部網路智慧鎖定
+
 針對要寫入的外部網路智慧鎖定事件，必須在 [僅限記錄] 或 [強制] 模式中啟用 ESL，並啟用 ADFS 安全性審核。
 AD FS 會將外部網路鎖定事件寫入至安全性審核記錄：
 - 當使用者遭到鎖定時（達到嘗試登入失敗的鎖定閾值）
@@ -266,11 +270,11 @@ AD FS 會將外部網路鎖定事件寫入至安全性審核記錄：
 
 **啟用 ESL 會發生什麼情況，而不良執行者會有使用者密碼？** 
 
-答：暴力密碼破解攻擊案例的典型目標，就是猜出密碼並成功登入。  如果使用者誘騙或密碼被猜測，ESL 功能就不會封鎖存取，因為登入會符合正確密碼的「成功」準則加上新的 IP。 錯誤的執行者 IP 會以「熟悉」的方式顯示。 在此案例中，最好的緩和措施是清除使用者在 ADFS 中的活動，並要求使用者進行多重要素驗證。 強烈建議您安裝 AAD 密碼保護，以確保猜到密碼不會進入系統中。
+答：暴力密碼破解攻擊案例的典型目標，就是猜出密碼並成功登入。如果使用者誘騙或密碼被猜測，ESL 功能就不會封鎖存取，因為登入會符合正確密碼的「成功」準則加上新的 IP。 錯誤的執行者 IP 會以「熟悉」的方式顯示。在此案例中，最好的緩和措施是清除使用者在 ADFS 中的活動，並要求使用者進行多重要素驗證。 強烈建議您安裝 AAD 密碼保護，以確保猜到密碼不會進入系統中。
 
 **如果我的使用者從未從 IP 成功登入，然後嘗試使用錯誤的密碼幾次，他們就能在最後正確輸入密碼之後，就能夠登入了嗎？** 
 
-答：如果使用者提交多個不正確的密碼（也就是合法的錯誤輸入），而且在下列嘗試中，密碼會正確無誤，使用者就會立即成功登入。  這會清除不正確的密碼計數，並將該 IP 新增至 FamiliarIPs 清單。  不過，如果它們超過未知位置的失敗登入閾值，則會進入鎖定狀態，而且需要等候觀察時間範圍，並使用有效的密碼登入，或要求系統管理員介入以重設其帳戶。  
+答：如果使用者提交多個不正確的密碼（也就是合法的錯誤輸入），而且在下列嘗試中，密碼會正確無誤，使用者就會立即成功登入。 這會清除不正確的密碼計數，並將該 IP 新增至 FamiliarIPs 清單。不過，如果它們超過未知位置的失敗登入閾值，則會進入鎖定狀態，而且需要等候觀察時間範圍，並使用有效的密碼登入，或要求系統管理員介入以重設其帳戶。  
  
 **ESL 也能在內部網路上運作嗎？**
 
@@ -278,10 +282,10 @@ AD FS 會將外部網路鎖定事件寫入至安全性審核記錄：
 
 **我在 [用戶端 IP] 欄位中看到 Microsoft IP 位址。ESL block 會 EXO proxy 的暴力密碼破解攻擊嗎？**  
 
-答： ESL 將能妥善預防 Exchange Online 或其他舊版驗證暴力密碼破解攻擊案例。 舊版驗證的「活動識別碼」為00000000-0000-0000-0000-000000000000。 在這些攻擊中，不良的執行者會利用 Exchange Online 基本驗證（也稱為舊版驗證），讓用戶端 IP 位址顯示為 Microsoft 帳戶。 雲端 proxy 中的 Exchange online 伺服器代表 Outlook 用戶端進行驗證驗證。 在這些情況下，惡意提交者的 IP 位址將會在 x 毫秒轉送的用戶端 ip 中，而 Microsoft Exchange Online server IP 則會在 [x-ms-用戶端-ip] 值中。
+答： ESL 將能妥善預防 Exchange Online 或其他舊版驗證暴力密碼破解攻擊案例。 舊版驗證的「活動識別碼」為00000000-0000-0000-0000-000000000000。在這些攻擊中，不良的執行者會利用 Exchange Online 基本驗證（也稱為舊版驗證），讓用戶端 IP 位址顯示為 Microsoft 帳戶。 雲端 proxy 中的 Exchange online 伺服器代表 Outlook 用戶端進行驗證驗證。 在這些情況下，惡意提交者的 IP 位址將會在 x 毫秒轉送的用戶端 ip 中，而 Microsoft Exchange Online server IP 則會在 [x-ms-用戶端-ip] 值中。
 外部網路智慧鎖定會檢查網路 Ip、轉送的 Ip、x 轉送的用戶端 IP 和 x 毫秒-用戶端 ip 值。 如果要求成功，則所有 Ip 都會新增至熟悉的清單。 如果要求傳入，而任何顯示的 Ip 不在熟悉的清單中，則要求將會標示為不熟悉。 熟悉的使用者將能夠順利登入，而來自不熟悉位置的要求將會遭到封鎖。  
 
-\* * 問：我可以在啟用 ESL 之前，先估計 ADFSArtifactStore 的大小嗎？
+* * 問：我可以在啟用 ESL 之前，先估計 ADFSArtifactStore 的大小嗎？
 
 答：已啟用 ESL，AD FS 追蹤 ADFSArtifactStore 資料庫中使用者的帳戶活動和已知位置。 此資料庫的大小會隨著所追蹤的使用者數目和已知位置數目而相對調整。 規劃要啟用 ESL 時，您可以估計 ADFSArtifactStore 資料庫的大小，以每 10 萬個使用者最多 1GB 的速率成長。 如果 AD FS 伺服器陣列使用 Windows 內部資料庫（WID），則資料庫檔案的預設位置是 C:\Windows\WID\Data\。 若要避免填滿此磁碟機，請在啟用 ESL 之前，先確定您至少有 5GB 的可用儲存體。 除了磁碟儲存體以外，請在啟用 ESL 之後，針對總處理序記憶體進行規劃，50 萬或更少使用者人口數最多可成長額外 1GB 的 RAM。
 

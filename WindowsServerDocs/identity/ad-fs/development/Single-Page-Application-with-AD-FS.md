@@ -8,18 +8,18 @@ ms.date: 06/13/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: f7e68558945fcd26d5e8ab405f39e86266beeea8
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f62b6ad288e2733083d535260f0b3f5ffb5b50bf
+ms.sourcegitcommit: f829a48b9b0c7b9ed6e181b37be828230c80fb8a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853861"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82173620"
 ---
 # <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>使用 OAuth 和 ADAL 建立單一頁面 web 應用程式。JS 與 AD FS 2016 或更新版本
 
 本逐步解說提供的指示，說明如何使用適用于 JavaScript 的 ADAL 來驗證 AD FS，以保護 AngularJS 為基礎的單一頁面應用程式，並以 ASP.NET Web API 後端執行。
 
-在此案例中，當使用者登入時，JavaScript 前端會使用[javascript 的 Active Directory 驗證程式庫（ADAL）。JS）](https://github.com/AzureAD/azure-activedirectory-library-for-js)和隱含授權授與，以從 Azure AD 取得識別碼權杖（id_token）。 系統會快取權杖，而且用戶端會在呼叫其 Web API 後端（使用 OWIN 中介軟體來保護）時，將其附加至要求做為持有人權杖。
+在此案例中，當使用者登入時，JavaScript 前端會使用 [Active Directory Authentication Library for JavaScript (ADAL.JS)](https://github.com/AzureAD/azure-activedirectory-library-for-js) 和隱含授權授與，從 Azure AD 取得的識別碼權杖 (id_token)。 權杖會留在快取中，而用戶端呼叫 Web API 後端時會將權杖附加至要求做為持有人權杖，並使用 OWIN 中介軟體來保護。
 
 >[!IMPORTANT]
 >您可以在這裡建立的範例僅供教育目的之用。 這些指示適用于公開模型所需元素的最簡單且最基本的執行方式。 此範例可能不包含錯誤處理和其他相關功能的所有層面。
@@ -59,7 +59,7 @@ ms.locfileid: "80853861"
 ## <a name="clone-or-download-this-repository"></a>複製或下載此存放庫
 我們將使用為了將 Azure AD 整合到 AngularJS 單頁應用程式中所建立的範例應用程式，並將它修改為使用 AD FS 來保護後端資源。
 
-從您的 shell 或命令列：
+從殼層或命令列：
 
     git clone https://github.com/Azure-Samples/active-directory-angularjs-singlepageapp.git
 
@@ -77,7 +77,7 @@ ms.locfileid: "80853861"
 **Startup.Auth.cs** -包含 WebAPI 的設定，以使用 Active Directory 持有人驗證的同盟服務。
 
 ## <a name="registering-the-public-client-in-ad-fs"></a>在 AD FS 中註冊公用用戶端
-在範例中，會將 WebAPI 設定為在 https://localhost:44326/接聽。 **存取 web 應用程式**的應用程式群組網頁瀏覽器可以用來設定隱含授與流程應用程式。
+在範例中，會將 WebAPI 設定為接聽https://localhost:44326/。 **存取 web 應用程式**的應用程式群組網頁瀏覽器可以用來設定隱含授與流程應用程式。
 
 1. 開啟 AD FS 管理主控台，然後按一下 [**新增應用程式群組**]。 在 [**新增應用程式組嚮導]** 中，輸入應用程式的名稱、描述，然後從 [**用戶端-伺服器應用程式**] 區段中選取 [**存取 web 應用程式] 範本的網頁瀏覽器**，如下所示
 
@@ -108,11 +108,11 @@ ms.locfileid: "80853861"
             //cacheLocation: 'localStorage', // enable this for IE, as sessionStorage does not work for localhost.
         },
         $httpProvider
-        );
+    );
 
 |組態|描述|
 |--------|--------|
-|執行個體|您的 STS URL，例如 https://fs.contoso.com/|
+|instance|您的 STS URL，例如https://fs.contoso.com/|
 |tenant|將其保留為 ' adfs '|
 |clientID|這是您在設定單一頁面應用程式的公用用戶端時所指定的用戶端識別碼。|
 
@@ -123,28 +123,29 @@ ms.locfileid: "80853861"
 
 取消
 
-                app.UseWindowsAzureActiveDirectoryBearerAuthentication(
-    new WindowsAzureActiveDirectoryBearerAuthenticationOptions
-    {
-    Audience = ConfigurationManager.AppSettings["ida:Audience"],
-    Tenant = ConfigurationManager.AppSettings["ida:Tenant"]
-    });
+    app.UseWindowsAzureActiveDirectoryBearerAuthentication(
+        new WindowsAzureActiveDirectoryBearerAuthenticationOptions
+        {
+            Audience = ConfigurationManager.AppSettings["ida:Audience"],
+            Tenant = ConfigurationManager.AppSettings["ida:Tenant"]
+        }
+    );
 
 並新增：
 
     app.UseActiveDirectoryFederationServicesBearerAuthentication(
-    new ActiveDirectoryFederationServicesBearerAuthenticationOptions
-    {
-    MetadataEndpoint = ConfigurationManager.AppSettings["ida:AdfsMetadataEndpoint"],
-    TokenValidationParameters = new TokenValidationParameters()
-    {
-    ValidAudience = ConfigurationManager.AppSettings["ida:Audience"],
-    ValidIssuer = ConfigurationManager.AppSettings["ida:Issuer"]
-    }
-    }
+        new ActiveDirectoryFederationServicesBearerAuthenticationOptions
+        {
+            MetadataEndpoint = ConfigurationManager.AppSettings["ida:AdfsMetadataEndpoint"],
+            TokenValidationParameters = new TokenValidationParameters()
+            {
+                ValidAudience = ConfigurationManager.AppSettings["ida:Audience"],
+                ValidIssuer = ConfigurationManager.AppSettings["ida:Issuer"]
+            }
+        }
     );
 
-|參數|描述|
+|參數|說明|
 |--------|--------|
 |ValidAudience|這會設定將在權杖中進行檢查的「物件」的值|
 |ValidIssuer|這會設定將在權杖中檢查的「簽發者」值|
@@ -152,31 +153,32 @@ ms.locfileid: "80853861"
 
 ## <a name="add-application-configuration-for-ad-fs"></a>新增 AD FS 的應用程式設定
 變更 appsettings，如下所示：
-
+```xml
     <appSettings>
-    <add key="ida:Audience" value="https://localhost:44326/" />
-    <add key="ida:AdfsMetadataEndpoint" value="https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml" />
-    <add key="ida:Issuer" value="https://fs.contoso.com/adfs" />
-      </appSettings>
+        <add key="ida:Audience" value="https://localhost:44326/" />
+        <add key="ida:AdfsMetadataEndpoint" value="https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml" />
+        <add key="ida:Issuer" value="https://fs.contoso.com/adfs" />
+    </appSettings>
+    ```
 
-## <a name="running-the-solution"></a>正在執行解決方案
-清除方案，重建解決方案並加以執行。 如果您想要查看詳細的追蹤，請啟動 Fiddler，並啟用 HTTPS 解密。
+## Running the solution
+Clean the solution, rebuild the solution and run it. If you want to see detailed traces, launch Fiddler and enable HTTPS decryption.
 
-瀏覽器（使用 Chrome 瀏覽器）會載入 SPA，而您會看到下列畫面：
+The browser (use Chrome browser) will load the SPA and you will be presented with the following screen:
 
-![註冊用戶端](media/Single-Page-Application-with-AD-FS/singleapp3.PNG)
+![Register the client](media/Single-Page-Application-with-AD-FS/singleapp3.PNG)
 
-按一下 [登入]。  待辦事項清單會觸發驗證流程，而 ADAL JS 會將驗證導向至 AD FS
+Click on Login.  The ToDo List will trigger the authentication flow and ADAL JS will direct the authentication to AD FS
 
-![登入](media/Single-Page-Application-with-AD-FS/singleapp4a.PNG)
+![Login](media/Single-Page-Application-with-AD-FS/singleapp4a.PNG)
 
-在 Fiddler 中，您可以看到權杖會在 # 片段中當做 URL 的一部分傳回。
+In Fiddler you can see the token being returned as part of the URL in the # fragment.
 
 ![Fiddler](media/Single-Page-Application-with-AD-FS/singleapp5a.PNG)
 
-您現在將能夠呼叫後端 API，為已登入的使用者新增 ToDo 清單專案：
+You will be able to now call the backend API to add ToDo List items for the logged-in user:
 
 ![Fiddler](media/Single-Page-Application-with-AD-FS/singleapp6.PNG)
 
-## <a name="next-steps"></a>後續步驟
-[AD FS 開發](../../ad-fs/AD-FS-Development.md)  
+## Next Steps
+[AD FS Development](../../ad-fs/AD-FS-Development.md)  

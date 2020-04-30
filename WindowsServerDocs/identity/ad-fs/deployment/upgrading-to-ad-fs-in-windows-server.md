@@ -1,6 +1,6 @@
 ---
 ms.assetid: 7671e0c9-faf0-40de-808a-62f54645f891
-title: 升級為 Windows Server 2016 的 AD FS
+title: 升級為 Windows Server 2016 的 AD FS
 author: billmath
 manager: femila
 ms.date: 04/09/2018
@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 4c13a3ecbcc6ade1455c10dde5f6a89e0303e161
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9389d1565462572a5617856f0f2531580b069745
+ms.sourcegitcommit: 074b59341640a8ae0586d6b37df7ba256e03a0c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857631"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81650068"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-using-a-wid-database"></a>升級至使用 WID 資料庫的 Windows Server 2016 AD FS
 
@@ -33,7 +33,7 @@ ms.locfileid: "80857631"
 | ------------- | ------------- | ------------- |
 | 2012 R2  | 1  | AdfsConfiguration |
 | 2016  | 3  | AdfsConfigurationV3 |
-| WIN ENT LTSB 2016 Spanish 64 Bits  | 4  | AdfsConfigurationV4 |
+| 2019  | 4  | AdfsConfigurationV4 |
 
 > [!NOTE]
 > 升級 FBL 會建立新的 AD FS 設定資料庫。  如需每個 Windows Server 的設定資料庫名稱 AD FS 版本和 FBL 值，請參閱上表
@@ -56,11 +56,14 @@ ms.locfileid: "80857631"
 > [!NOTE]
 > 您必須先移除所有 Windows Server 2016 或 2012 R2 節點，才能移至 Windows Server 2019 FBL 中的 AD FS。 您不能只是將 Windows Server 2016 或 2012 R2 作業系統升級到 Windows Server 2019，並讓它成為一個2019節點。 您必須將它移除，並將它取代為新的2019節點。
 
+> [!NOTE]
+> 如果 AD FS 中設定 AlwaysOnAvailability 群組或合併式複寫，請在升級之前移除任何 ADFS 資料庫的所有複寫，並將所有節點指向主要 SQL 資料庫。 執行此工作之後，請依記載執行伺服器陣列升級。 升級之後，請將 AlwaysOnAvailability 群組或合併式複寫新增至新的資料庫。
+
 ##### <a name="to-upgrade-your-ad-fs-farm-to-windows-server-2019-farm-behavior-level"></a>將您的 AD FS 伺服器陣列升級至 Windows Server 2019 伺服器陣列行為層級
 
 1. 使用伺服器管理員，在 Windows Server 2019 上安裝 Active Directory 同盟服務角色
 
-2. 使用 AD FS 設定 wizard，將新的 Windows Server 2019 伺服器加入現有的 AD FS 伺服器陣列。
+2. 使用 AD FS 設定] wizard，將新的 Windows Server 2019 伺服器加入現有的 AD FS 伺服器陣列。
 
 ![升級](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_1.png)
 
@@ -84,15 +87,15 @@ Set-AdfsSyncProperties -Role SecondaryComputer -PrimaryComputerName {FQDN}
 
 ![升級](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_5.png)
 
-6. 現在，在 Windows Server 2016 同盟伺服器上開啟 AD FS 管理。 請注意，由於主要角色已轉移到這部伺服器，因此現在會顯示所有的系統管理功能。
+6. 現在，在 Windows Server 2016 同盟伺服器上開啟 AD FS 管理]。 請注意，由於主要角色已轉移到這部伺服器，因此現在會顯示所有的系統管理功能。
 
 ![升級](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_6.png)
 
-7. 如果您要將 AD FS 2012 R2 伺服器陣列升級為2016或2019，伺服器陣列升級會要求 AD 架構至少為層級85。  若要使用 Windows Server 2016 安裝媒體升級架構，請開啟命令提示字元，並流覽至 support\adprep 目錄。 執行下列動作： `adprep /forestprep`
+7. 如果您要將 AD FS 2012 R2 伺服器陣列升級為2016或2019，伺服器陣列升級會要求 AD 架構至少為層級85。  若要使用 Windows Server 2016 安裝媒體升級架構，請開啟命令提示字元，並流覽至 support\adprep 目錄。 執行下列動作：`adprep /forestprep`
 
 ![升級](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_7.png)
 
-完成執行後 `adprep/domainprep`
+完成執行之後`adprep/domainprep`
 
 > [!NOTE]
 > 執行下一個步驟之前，請先從 [設定] 執行 Windows Update，以確定 Windows Server 為最新狀態。 繼續此程序，直到不需要進一步更新。
@@ -119,7 +122,7 @@ Invoke-AdfsFarmBehaviorLevelRaise
 
 ![升級](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_12.png)
 
-11. 同樣地，您可以使用 PowerShell Cmdlet： `Get-AdfsFarmInformation` 來顯示目前的 FBL。
+11. 同樣地，您可以使用 PowerShell Cmdlet： `Get-AdfsFarmInformation`來顯示目前的 FBL。
 
 ![升級](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_13.png)
 
@@ -151,7 +154,7 @@ Set-WebApplicationProxyConfiguration -UpgradeConfigurationVersion
 
 
 > [!NOTE] 
-> 如果執行具有混合式憑證信任的 Windows Hello 企業版，則 AD FS 2019 中存在已知的 PRT 問題。 您可能會在 ADFS 系統管理員事件記錄檔中遇到此錯誤：已收到不正確 Oauth 要求。 已禁止用戶端 'NAME' 存取範圍為 'ugs' 的資源。 若要補救此錯誤： 
+> 如果執行具有混合式憑證信任的 Windows Hello 企業版，則 AD FS 2019 中存在已知的 PRT 問題。 您可能會在 ADFS 系統管理員事件記錄檔中遇到此錯誤：收到不正確 Oauth 要求。 已禁止用戶端 'NAME' 存取範圍為 'ugs' 的資源。 若要補救此錯誤： 
 > 1. 啟動 AD FS 管理主控台。 瀏覽至「服務 > 範圍描述」
 > 2. 以滑鼠右鍵按一下 [範圍描述]，然後選取 [新增範圍描述]
 > 3. 在名稱下輸入 "ugs"，然後按一下 [套用] > [確定]
@@ -159,5 +162,5 @@ Set-WebApplicationProxyConfiguration -UpgradeConfigurationVersion
 > 5. 執行 "Get-AdfsApplicationPermission" 命令。 尋找具有 ClientRoleIdentifier 的 ScopeNames :{openid, aza}。 記下 ObjectIdentifier。
 > 6. 執行命令 "Set-AdfsApplicationPermission -TargetIdentifier <步驟 5 的 ObjectIdentifier> -AddScope 'ugs'
 > 7. 重新啟動 ADFS 服務。
-> 8. 在用戶端上：重新開機用戶端。 系統應該會提示使用者佈建 WHFB。
+> 8. 在用戶端上：重新啟動用戶端。 系統應該會提示使用者佈建 WHFB。
 > 9. 如果 [佈建] 視窗未出現，則需要收集 NGC 追蹤記錄並執行進一步的疑難排解。
