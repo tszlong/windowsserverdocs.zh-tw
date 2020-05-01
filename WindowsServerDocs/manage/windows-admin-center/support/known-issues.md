@@ -8,12 +8,12 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 5c9e8b7e1e11deaa82fbec6f451b4f194609c299
-ms.sourcegitcommit: 1d83ca198c50eef83d105151551c6be6f308ab94
+ms.openlocfilehash: d7dc3455c5d7c6b00940008ceea646436b40bed0
+ms.sourcegitcommit: e51dd9dabec82c59e805e7a04c27e56c83773857
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/30/2020
-ms.locfileid: "82605548"
+ms.locfileid: "82613730"
 ---
 # <a name="windows-admin-center-known-issues"></a>Windows Admin Center 已知問題
 
@@ -28,6 +28,8 @@ ms.locfileid: "82605548"
 - 不支援使用低於1024的埠。 在服務模式中，您可以選擇性地將埠80設定為重新導向至指定的埠。
 
 ## <a name="general"></a>一般
+
+- 在1910.2 版的 Windows 系統管理中心內，您可能無法連線到特定硬體上的 Hyper-v 伺服器。 如果您在此問題遭到封鎖，[請下載先前的組建](https://aka.ms/wacprevious)。 
 
 - 如果您將 Windows 系統管理中心安裝為**Windows Server 2016**上的閘道，請使用 [繁重]，此服務可能會在包含```Faulting application name: sme.exe```和```Faulting module name: WsmSvc.dll```的事件記錄檔中發生錯誤時損毀。 這是因為 Windows Server 2019 已修正的錯誤。 Windows Server 2016 的修補程式隨附于2月2019累積更新（ [KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977)）。
 
