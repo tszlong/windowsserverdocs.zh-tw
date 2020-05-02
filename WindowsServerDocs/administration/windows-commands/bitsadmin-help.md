@@ -1,6 +1,6 @@
 ---
 title: bitsadmin help
-description: '**Bitsadmin**說明的 Windows 命令主題，它會顯示命令列使用方式。'
+description: Bitsadmin help 命令的參考主題，它會顯示命令列使用方式。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 95bc71c058ee1b20f86202198b1c176744ee403d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d899ab94101505b69ac5cc4d86a612a4bbb91348
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850421"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717442"
 ---
 # <a name="bitsadmin-help"></a>bitsadmin help
 
@@ -26,14 +26,16 @@ ms.locfileid: "80850421"
 bitsadmin /help | /?
 ```
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
-下列範例會抓取命令列說明。
+以取得命令列說明。
 
 ```
-C:\>bitsadmin /help
+bitsadmin /help
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getproxylist-抓取指定之作業的 proxy 清單。
-description: 適用于**bitsadmin getproxylist**的 Windows 命令主題，它會抓取指定之作業的 proxy 清單。
+description: Bitsadmin getproxylist 命令的參考主題，它會抓取指定之作業的 proxy 清單。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0c0d26fb074bd1b792caa7fe2ce8fd31b64365e2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a92703d83cc872204d3dc488c15d703dfd50a780
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850521"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717660"
 ---
 # <a name="bitsadmin-getproxylist"></a>bitsadmin getproxylist
 
@@ -30,16 +30,18 @@ bitsadmin /getproxylist <job>
 
 | 參數 | 描述 |
 | -------------- | -------------- |
-| 工作 | 作業的顯示名稱或 GUID。 |
+| 作業 | 作業的顯示名稱或 GUID。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
-下列範例會抓取名為*myDownloadJob*之作業的 proxy 清單。
+若要取得名為*myDownloadJob*之作業的 proxy 清單：
 
 ```
-C:\>bitsadmin /getproxylist myDownloadJob
+bitsadmin /getproxylist myDownloadJob
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

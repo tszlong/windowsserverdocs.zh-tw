@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getfilestotal
-description: '**Bitsadmin getfilestotal**的 Windows 命令主題，它會抓取指定之作業中的檔案數目。'
+description: Bitsadmin getfilestotal 命令的參考主題，它會抓取指定之作業中的檔案數目。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bad42a8bef57ca4c4a1411a12f20979e4a95d178
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5cf3b33c15bb18c8a141408f82fdd72a6e710817
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850681"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717980"
 ---
 # <a name="bitsadmin-getfilestotal"></a>bitsadmin getfilestotal
 
@@ -30,16 +30,18 @@ bitsadmin /getfilestotal <job>
 
 | 參數 | 描述 |
 | -------------- | -------------- |
-| 工作 | 作業的顯示名稱或 GUID。 |
+| 作業 | 作業的顯示名稱或 GUID。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
-下列範例會抓取名為*myDownloadJob*之作業中包含的檔案數目。
+若要取出包含在名為*myDownloadJob*之作業中的檔案數目：
 
 ```
-C:\>bitsadmin /getfilestotal myDownloadJob
+bitsadmin /getfilestotal myDownloadJob
 ```
 
 ## <a name="see-also"></a>另請參閱
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

@@ -1,6 +1,6 @@
 ---
 title: bitsadmin gethelpertokensid
-description: 適用于**bitsadmin gethelpertokensid**的 Windows 命令主題，它會傳回 BITS 傳送作業的協助程式權杖的 SID （如果有設定的話）。
+description: Bitsadmin gethelpertokensid 命令的參考主題，它會傳回 BITS 傳送作業的協助程式權杖 SID （如果有設定的話）。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -8,12 +8,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: a2e26ff459b068595529fbd24e6165c130660570
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c45bf86d8a7364289db41fa390f319270a2a8386
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850641"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717898"
 ---
 # <a name="bitsadmin-gethelpertokensid"></a>bitsadmin gethelpertokensid
 
@@ -32,8 +32,18 @@ bitsadmin /gethelpertokensid <job>
 
 | 參數 | 描述 |
 | -------------- | -------------- |
-| 工作 | 作業的顯示名稱或 GUID。 |
+| 作業 | 作業的顯示名稱或 GUID。 |
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="examples"></a>範例
+
+若要取出名為*myDownloadJob*的 BITS 傳送工作的 SID：
+
+```
+bitsadmin /gethelpertokensid myDownloadJob
+```
+
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

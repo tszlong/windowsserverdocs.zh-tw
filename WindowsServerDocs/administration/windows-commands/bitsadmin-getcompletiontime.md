@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getcompletiontime
-description: '**Bitsadmin getcompletiontime**的 Windows 命令主題，它會抓取作業完成傳輸資料的時間。'
+description: Bitsadmin getcompletiontime 命令的參考主題，它會抓取作業完成傳輸資料的時間。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5408e7e8c35135601a4a0af0ab7e9c55cea4c8dd
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9b3721401e450ae60fb77534f8eb845ff5ac3443
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850751"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718112"
 ---
 # <a name="bitsadmin-getcompletiontime"></a>bitsadmin getcompletiontime
 
@@ -30,16 +30,18 @@ bitsadmin /getcompletiontime <job>
 
 | 參數 | 描述 |
 | -------------- | -------------- |
-| 工作 | 作業的顯示名稱或 GUID。 |
+| 作業 | 作業的顯示名稱或 GUID。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
-下列範例會抓取名為*myDownloadJob*的作業完成傳輸資料的時間。
+若要取出名為*myDownloadJob*的作業完成傳輸資料的時間：
 
 ```
-C:\>bitsadmin /getcompletiontime myDownloadJob
+bitsadmin /getcompletiontime myDownloadJob
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

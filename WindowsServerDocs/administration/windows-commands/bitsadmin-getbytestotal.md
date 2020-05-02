@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getbytestotal
-description: '**Bitsadmin getbytestotal**的 Windows 命令主題，它會抓取指定工作的大小。'
+description: Bitsadmin getbytestotal 命令的參考主題，它會抓取指定之作業的大小。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 84e3e0311ead0eb79f9247d4f06844ece5f20fa2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f844e1d3689c42a2c533921797d15dbb946b551e
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850781"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718156"
 ---
 # <a name="bitsadmin-getbytestotal"></a>bitsadmin getbytestotal
 
@@ -30,16 +30,18 @@ bitsadmin /getbytestotal <job>
 
 | 參數 | 描述 |
 | -------------- | -------------- |
-| 工作 | 作業的顯示名稱或 GUID。 |
+| 作業 | 作業的顯示名稱或 GUID。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
-下列範例會捕獲名為*myDownloadJob*的作業大小。
+若要取出名為*myDownloadJob*的作業大小：
 
 ```
-C:\>bitsadmin /getbytestotal myDownloadJob
+bitsadmin /getbytestotal myDownloadJob
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

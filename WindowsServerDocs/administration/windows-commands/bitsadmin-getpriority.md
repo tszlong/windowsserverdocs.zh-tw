@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getpriority
-description: 適用于**bitsadmin getpriority**的 Windows 命令主題，它會抓取指定之作業的優先順序。
+description: Bitsadmin getpriority 命令的參考主題，它會抓取指定之作業的優先順序。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -8,12 +8,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: b27829a0fb852abb88c88a65e61e8d7693ca2df2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 38f92e83ccf5b048d168ce6a21c6026f490b18bf
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850541"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717681"
 ---
 # <a name="bitsadmin-getpriority"></a>bitsadmin getpriority
 
@@ -29,30 +29,32 @@ bitsadmin /getpriority <job>
 
 | 參數 | 描述 |
 | -------------- | -------------- |
-| 工作 | 作業的顯示名稱或 GUID。 |
+| 作業 | 作業的顯示名稱或 GUID。 |
 
-## <a name="remarks"></a>備註
+#### <a name="output"></a>輸出
 
-此命令的優先順序可以是：
+此命令傳回的優先順序可以是：
 
 - **提到**
 
-- **更**
+- **HIGH**
 
 - **一般**
 
-- **量**
+- **LOW**
 
 - **未知**
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
-下列範例會抓取名為*myDownloadJob*之作業的優先順序。
+若要取得名為*myDownloadJob*之作業的優先順序：
 
 ```
-C:\>bitsadmin /getpriority myDownloadJob
+bitsadmin /getpriority myDownloadJob
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

@@ -1,6 +1,6 @@
 ---
 title: bitsadmin info
-description: '**Bitsadmin info**的 Windows 命令主題，它會顯示指定作業的摘要資訊。'
+description: Bitsadmin info 命令的參考主題，它會顯示指定之作業的摘要資訊。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 20b8358caba3e0c07b0c985cb24e8f7bde43b06c
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 904f70c82ab4bcc4fb25f759898674cc719b1954
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81123112"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717432"
 ---
 # <a name="bitsadmin-info"></a>bitsadmin info
 
@@ -30,18 +30,18 @@ bitsadmin /info <job> [/verbose]
 
 | 參數 | 描述 |
 | -------------- | -------------- |
-| 工作 | 作業的顯示名稱或 GUID。 |
+| 作業 | 作業的顯示名稱或 GUID。 |
 | /verbose | 選擇性。 提供有關每項作業的詳細資訊。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
-下列範例會捕獲名為*myDownloadJob*之作業的相關資訊。
+若要取得名為*myDownloadJob*之作業的相關資訊：
 
 ```
-C:\>bitsadmin /info myDownloadJob
+bitsadmin /info myDownloadJob
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

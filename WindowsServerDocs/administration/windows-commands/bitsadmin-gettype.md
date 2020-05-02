@@ -1,6 +1,6 @@
 ---
 title: bitsadmin gettype
-description: '**Bitsadmin gettype**的 Windows 命令主題，它會抓取所指定工作的工作類型。'
+description: Bitsadmin gettype 命令的參考主題，它會抓取指定之作業的工作類型。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 66a1fc5b0478e1eec26557dc9a7f76d50abcb8b6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 151f9b8e81229a666111ebcd20f060d84160445a
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850441"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717481"
 ---
 # <a name="bitsadmin-gettype"></a>bitsadmin gettype
 
@@ -30,27 +30,29 @@ bitsadmin /gettype <job>
 
 | 參數 | 描述 |
 | -------------- | -------------- |
-| 工作 | 作業的顯示名稱或 GUID。 |
+| 作業 | 作業的顯示名稱或 GUID。 |
 
-## <a name="output"></a>輸出
+#### <a name="output"></a>輸出
 
-輸出值包括：
+傳回的輸出值可以是：
 
-| 類型 | 描述 |
+| 類型 | 說明 |
 | --------------- | ----------- |
 | 下載 | 此作業為下載。 |
 | 上傳 | 作業是上傳。 |
 | 上傳-回復 | 作業是上傳-回復。 |
-| 未知 | 作業的類型不明。 |
+| Unknown | 作業的類型不明。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
-下列範例會抓取名為*myDownloadJob*之作業的工作類型。
+若要取得名為*myDownloadJob*之作業的作業類型：
 
 ```
-C:\>bitsadmin /gettype myDownloadJob
+bitsadmin /gettype myDownloadJob
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

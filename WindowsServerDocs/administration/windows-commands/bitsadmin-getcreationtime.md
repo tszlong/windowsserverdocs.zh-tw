@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getcreationtime
-description: 適用于**bitsadmin getcreationtime**的 Windows 命令主題，它會抓取指定工作的建立時間。
+description: Bitsadmin getcreationtime 命令的參考主題，它會抓取指定工作的建立時間。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cd8f718e53cc44dc5f4c6f5ff09c9a5c201e0564
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: dc6ca5ad23730e9f57d58e069e0a2daf961930e8
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850741"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718108"
 ---
 # <a name="bitsadmin-getcreationtime"></a>bitsadmin getcreationtime
 
@@ -30,16 +30,18 @@ bitsadmin /getcreationtime <job>
 
 | 參數 | 描述 |
 | -------------- | -------------- |
-| 工作 | 作業的顯示名稱或 GUID。 |
+| 作業 | 作業的顯示名稱或 GUID。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
-下列範例會抓取名為*myDownloadJob*之作業的建立時間。
+若要取得名為*myDownloadJob*之作業的建立時間：
 
 ```
-C:\>bitsadmin /getcreationtime myDownloadJob
+bitsadmin /getcreationtime myDownloadJob
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

@@ -1,6 +1,6 @@
 ---
 title: bitsadmin geterrorcount
-description: 適用于**bitsadmin geterrorcount**的 Windows 命令主題，它會抓取指定之作業產生暫時性錯誤的次數計數。
+description: Bitsadmin geterrorcount 命令的參考主題，它會抓取指定之作業產生暫時性錯誤的次數計數。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ef0bf043517d4edfa8d72888746ca5d9c92ecc21
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 516bd02ed296a2eba75e174c6f084926bde63e90
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81123130"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718002"
 ---
 # <a name="bitsadmin-geterrorcount"></a>bitsadmin geterrorcount
 
@@ -30,16 +30,18 @@ bitsadmin /geterrorcount <job>
 
 | 參數 | 描述 |
 | -------------- | -------------- |
-| 工作 | 作業的顯示名稱或 GUID。 |
+| 作業 | 作業的顯示名稱或 GUID。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
-下列範例會抓取名為*myDownloadJob*之作業的錯誤計數資訊。
+若要取得名為*myDownloadJob*之作業的錯誤計數資訊：
 
 ```
-C:\>bitsadmin /geterrorcount myDownloadJob
+bitsadmin /geterrorcount myDownloadJob
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

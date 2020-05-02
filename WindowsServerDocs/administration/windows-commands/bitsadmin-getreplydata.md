@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getreplydata
-description: 適用于**bitsadmin getreplydata**的 Windows 命令主題，它會以十六進位格式抓取工作的伺服器上傳回復資料。
+description: Bitsadmin getreplydata 命令的參考主題，它會以十六進位格式抓取工作的伺服器上傳-回復資料。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fb83ca93f8e73445788d926e0d5e6db4c774d759
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ea2a82403fe05776abbbf65e87a4b6e72c8767b8
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850501"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717623"
 ---
 # <a name="bitsadmin-getreplydata"></a>bitsadmin getreplydata
 
-針對作業，以十六進位格式抓取伺服器的上傳回復資料。
+針對作業，以十六進位格式抓取伺服器的上傳-回復資料。
 
 > [!NOTE]
 > BITS 1.2 和更早版本不支援此命令。
@@ -33,16 +33,18 @@ bitsadmin /getreplydata <job>
 
 | 參數 | 描述 |
 | -------------- | -------------- |
-| 工作 | 作業的顯示名稱或 GUID。 |
+| 作業 | 作業的顯示名稱或 GUID。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
-下列範例會針對名為*myDownloadJob*的作業，抓取上傳回復資料。
+若要取得名為*myDownloadJob*之作業的上傳-回復資料：
 
 ```
-C:\>bitsadmin /getreplydata myDownloadJob
+bitsadmin /getreplydata myDownloadJob
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

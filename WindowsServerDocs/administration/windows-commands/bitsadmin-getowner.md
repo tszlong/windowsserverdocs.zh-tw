@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getowner
-description: Bitsadmin **getowner**的 Windows 命令主題，它會抓取指定之作業的擁有者。
+description: Bitsadmin getowner 命令的參考主題，它會抓取指定之作業的擁有者。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3e622c3759c9ec20867c693539c4481c70aa4f26
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2a345ea47232f1f4d6340e1341747c9dad92382b
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850561"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717712"
 ---
 # <a name="bitsadmin-getowner"></a>bitsadmin getowner
 
@@ -30,16 +30,18 @@ bitsadmin /getowner <job>
 
 | 參數 | 描述 |
 | -------------- | -------------- |
-| 工作 | 作業的顯示名稱或 GUID。 |
+| 作業 | 作業的顯示名稱或 GUID。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
-下列範例會顯示名為*myDownloadJob*之作業的擁有者。
+若要顯示名為*myDownloadJob*之作業的擁有者：
 
 ```
-C:\>bitsadmin /getowner myDownloadJob
+bitsadmin /getowner myDownloadJob
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

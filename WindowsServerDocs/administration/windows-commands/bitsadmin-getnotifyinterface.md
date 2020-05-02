@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getnotifyinterface
-description: 適用于**bitsadmin getnotifyinterface**的 Windows 命令主題，可判斷另一個程式是否已為指定的作業註冊 COM 回呼介面。
+description: Bitsadmin getnotifyinterface 命令的參考主題，可判斷另一個程式是否已為指定的作業註冊 COM 回呼介面。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5eb5aee42446c70f16fd6785a3645f42c1987e4d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2158759067010292ca213f97014857354247b9c7
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850571"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717732"
 ---
 # <a name="bitsadmin-getnotifyinterface"></a>bitsadmin getnotifyinterface
 
@@ -30,7 +30,7 @@ bitsadmin /getnotifyinterface <job>
 
 | 參數 | 描述 |
 | -------------- | -------------- |
-| 工作 | 作業的顯示名稱或 GUID。 |
+| 作業 | 作業的顯示名稱或 GUID。 |
 
 #### <a name="output"></a>輸出
 
@@ -39,14 +39,16 @@ bitsadmin /getnotifyinterface <job>
 > [!NOTE]
 > 您無法判斷註冊回呼介面的程式。
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
-下列範例會針對名為*myDownloadJob*的作業，抓取通知介面。
+若要取得名為*myDownloadJob*之作業的通知介面：
 
 ```
-C:\>bitsadmin /getnotifyinterface myDownloadJob
+bitsadmin /getnotifyinterface myDownloadJob
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)
