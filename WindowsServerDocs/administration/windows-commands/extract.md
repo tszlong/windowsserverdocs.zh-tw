@@ -1,6 +1,6 @@
 ---
 title: extract
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d66682126f1cc3c924c42b4605a537a997e8ac52
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1cca89a356530e49fbf2b0610ff3ced1c5733847
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844771"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725649"
 ---
 # <a name="extract"></a>extract
 
@@ -34,7 +34,7 @@ EXTRACT [/Y] /C source destination
 |---------|-----------|
 |檔案櫃|檔案包含兩個或多個檔案。|
 |filename|要從封包檔解壓縮的檔案名。 您可以使用萬用字元和多個檔案名（以空格分隔）。|
-|來源|壓縮檔案（只有一個檔案的封包）。|
+|source|壓縮檔案（只有一個檔案的封包）。|
 |newname|要提供解壓縮檔案的新檔案名。 如果未提供，則會使用原始名稱。|
 |/A|處理所有的封包。 遵循第一個封包中所述的機櫃鏈。|
 |/C|將來源檔案複製到目的地（以從 DMF 磁碟複製）。|
@@ -43,6 +43,6 @@ EXTRACT [/Y] /C source destination
 |/L dir|要放置解壓縮檔案的位置（預設為目前的目錄）。|
 |/Y|覆寫現有檔案之前不提示。|
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

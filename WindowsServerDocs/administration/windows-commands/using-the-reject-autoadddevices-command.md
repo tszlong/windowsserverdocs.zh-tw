@@ -1,6 +1,6 @@
 ---
 title: 拒絕-AutoaddDevices
-description: 拒絕 AutoaddDevices 的 Windows 命令主題，這會拒絕擱置系統管理核准的電腦。
+description: 拒絕 AutoaddDevices 的參考主題，這會拒絕等待系統管理核准的電腦。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 39bdddbbc169a0a0810fcc67e95224360858b728
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7e377d4e2d4aecea2e0ba3af023af39ab7695c0a
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80830651"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725920"
 ---
 # <a name="reject-autoadddevices"></a>拒絕-AutoaddDevices
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 拒絕正在等待系統管理核准的電腦。 啟用自動新增原則時，必須先進行系統管理核准，才會有未知的電腦（未預先設置的電腦）可以安裝映射。 您可以使用 [伺服器] 屬性頁的 [ **PXE 回應**] 索引標籤來啟用此原則。
 ## <a name="syntax"></a>語法
@@ -29,8 +29,8 @@ wdsutil [Options] /Reject-AutoaddDevices [/Server:<Server name>] /RequestId:<Req
 |參數|描述|
 |-------|--------|
 |[/Server：<Server name>]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。|
-|/RequestId： < 要求識別碼&#124;全部 >|指定指派給擱置電腦的要求識別碼。 若要拒絕所有擱置中的電腦，請指定**all**。|
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+|/RequestId： <要求識別碼 &#124; 所有>|指定指派給擱置電腦的要求識別碼。 若要拒絕所有擱置中的電腦，請指定**all**。|
+## <a name="examples"></a>範例
 若要拒絕單一電腦，請輸入：
 ```
 wdsutil /Reject-AutoaddDevices /RequestId:12
@@ -39,8 +39,8 @@ wdsutil /Reject-AutoaddDevices /RequestId:12
 ```
 wdsutil /verbose /Reject-AutoaddDevices /Server:MyWDSServer /RequestId:ALL
 ```
-## <a name="additional-references"></a>其他參考資料
-- [命令列語法索引鍵](command-line-syntax-key.md)
+## <a name="additional-references"></a>其他參考
+- [Command-Line Syntax Key](command-line-syntax-key.md) 
 [使用 AutoaddDevices 命令](using-the-approve-autoadddevices-command.md)
-使用[AutoaddDevices 命令](using-the-delete-autoadddevices-command.md)
-[使用 AutoaddDevices 命令](using-the-get-autoadddevices-command.md)
+的命令列語法索引鍵使用[AutoaddDevices 命令](using-the-get-autoadddevices-command.md)的[AutoaddDevices 命令](using-the-delete-autoadddevices-command.md)
+

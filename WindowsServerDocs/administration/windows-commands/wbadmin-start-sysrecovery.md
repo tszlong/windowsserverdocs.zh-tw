@@ -1,6 +1,6 @@
 ---
 title: wbadmin start sysrecovery
-description: Wbadmin start sysrecovery 的 Windows 命令主題，它會使用您指定的參數執行系統復原（裸機復原）。
+description: Wbadmin start sysrecovery 的參考主題，它會使用您指定的參數執行系統復原（裸機復原）。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4e0f1f79f35678b5c4a50022adf3413f3de217a7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ba3d826b0312091f00ef01d2efe9ee63572fade1
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829591"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725898"
 ---
 # <a name="wbadmin-start-sysrecovery"></a>wbadmin start sysrecovery
 
@@ -26,8 +26,6 @@ ms.locfileid: "80829591"
 > 這個子命令只能從 Windows 修復環境執行，而且預設不會列在**Wbadmin**的使用方式文字中。 如需詳細資訊，請參閱[Windows 修復環境（WINDOWS RE）總覽](https://technet.microsoft.com/library/hh825173.aspx)。
 
 若要使用這個子命令執行系統復原，您必須是**Backup Operators**群組或**Administrators**群組的成員，或者必須已被委派適當的許可權。
-
-如需如何使用此子命令的範例，請參閱[範例](#BKMK_examples)。
 
 ## <a name="syntax"></a>語法
 
@@ -56,18 +54,18 @@ wbadmin start sysrecovery
 |-skipBadClusterCheck|略過檢查復原磁片是否有錯誤的叢集資訊。 如果您要還原至替代的伺服器或硬體，建議您不要使用此參數。 您可以隨時在復原磁片上手動執行**chkdsk/b** ，以檢查是否有錯誤的叢集，然後據此更新檔案系統資訊。</br>警告：在您依照所述執行**Chkdsk**之前，已復原的系統上報告的錯誤叢集可能不正確。|
 |-quiet|以不提示使用者的方式執行命令。|
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 若要開始復原在2013年3月31日（位於上午9:00，位於磁片磁碟機 d：）上執行的備份資訊，請輸入：
 ```
 wbadmin start sysrecovery -version:03/31/2013-09:00 -backupTarget:d:
 ```
-若要開始從2013年4月30日上午9:00 執行的備份復原資訊，位於共用資料夾 \\\\servername\shared：若是 server01，請輸入：
+若要開始復原從2013年4月30日上午9:00 日執行的備份資訊，位於共用資料夾\\ \\servername\shared：若是 server01，請輸入：
 ```
 wbadmin start sysrecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 -   - [命令列語法關鍵](command-line-syntax-key.md)
 -   [Restore](wbadmin.md)

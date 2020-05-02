@@ -1,6 +1,6 @@
 ---
 title: wbadmin start recovery
-description: 適用于 wbadmin start recovery 的 Windows 命令主題，它會根據您指定的參數執行復原操作。
+description: Wbadmin start recovery 的參考主題，它會根據您指定的參數執行復原作業。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,22 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6b5a65e67e7a34ca5263c85c1038820e0a4fc1ed
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ec116bb69dd70cb58f6cb71ccf9ccfa04dea2e54
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829611"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725881"
 ---
 # <a name="wbadmin-start-recovery"></a>wbadmin start recovery
 
-
-
 根據您指定的參數執行復原操作。
 
-若要使用這個子命令執行復原，您必須是**Backup Operators**群組或**Administrators**群組的成員，或者必須已被委派適當的許可權。 此外，您必須從提升許可權的命令提示字元執行**wbadmin** 。 （若要開啟提升許可權的命令提示字元，請按一下 **開始**，以滑鼠右鍵按一下 **命令提示**字元，然後按一下 以**系統管理員身分執行**
-
-如需如何使用此子命令的範例，請參閱[範例](#BKMK_Examples)。
+若要使用這個子命令執行復原，您必須是**Backup Operators**群組或**Administrators**群組的成員，或者必須已被委派適當的許可權。 此外，您必須從提升許可權的命令提示字元執行**wbadmin** 。 （若要開啟提升許可權的命令提示字元，請按一下 [**開始**]，以滑鼠右鍵按一下 [**命令提示**字元]，然後按一下 [以**系統管理員身分執行**
 
 ## <a name="syntax"></a>語法
 
@@ -50,13 +46,13 @@ wbadmin start recovery
 |---------|-----------|
 |-version|以 MM/DD/YYYY-HH： MM 格式指定要復原之備份的版本識別碼。 如果您不知道版本識別碼，請輸入**wbadmin get 版本**。|
 |-items|指定要復原的磁片區、應用程式、檔案或資料夾清單（以逗號分隔）。</br>-如果 **-itemtype**是**volume**，您可以藉由提供磁片區磁碟機號、磁片區掛接點或以 GUID 為基礎的磁片區名稱來指定單一磁片區。</br>-如果 **-itemtype**是**App**，您只能指定單一應用程式。 若要復原，應用程式必須已向 Windows Server Backup 註冊。 您也可以使用 [值**ADIFM** ] 來復原 Active Directory 的安裝。 如需詳細資訊，請參閱中的備註。</br>-如果 **-itemtype**是**File**，您可以指定檔案或資料夾，但它們應該是同一個磁片區的一部分，而且它們應該位於相同的父資料夾底下。|
-|-itemtype|指定要復原的專案類型。 必須是**磁片**區、**應用程式** **或檔案**。|
+|-itemtype|指定要復原的專案類型。 必須是**磁片**區、**應用程式****或檔案**。|
 |-backupTarget|指定包含您要復原之備份的存放位置。 當位置不同于通常儲存此電腦的備份時，此參數會很有用。|
 |-機器|指定您想要復原備份的電腦名稱稱。 當多部電腦已備份到相同的位置時，這個參數很有用。 當指定 **-backupTarget**參數時，應該使用它。|
 |-recoveryTarget|指定要還原的位置。 如果這個位置與先前備份的位置不同，這個參數就很有用。 它也可以用來復原磁碟區、檔案或應用程式。 如果您要復原磁碟區，可以指定替代磁片區的磁片區磁碟機號。 如果您要還原檔案或應用程式，您可以指定替代的復原位置。|
 |-遞迴|只有在復原檔案時才有效。 將資料夾和所有檔案中的檔案復原到指定的資料夾。 根據預設，只會復原直接位於指定資料夾中的檔案。|
-|-覆寫|只有在復原檔案時才有效。 指定正在復原的檔案已存在於相同位置時所要採取的動作。</br>-   **skip**會導致 Windows Server Backup 略過現有的檔案，並繼續復原下一個檔案。</br>-   **CreateCopy**會導致 Windows Server Backup 建立現有檔案的複本，如此一來，就不會修改現有的檔案。</br>-   **覆寫**會導致 Windows Server Backup 以備份中的檔案覆寫現有的檔案。|
-|-notRestoreAcl|只有在復原檔案時才有效。 指定不要還原從備份復原之檔案的安全性存取控制清單（Acl）。 根據預設，系統會還原安全性 Acl （預設值為**true）** 。 如果使用此參數，還原之檔案的 Acl 會繼承自檔案還原的目標位置。|
+|-覆寫|只有在復原檔案時才有效。 指定正在復原的檔案已存在於相同位置時所要採取的動作。</br>-   **Skip**會使 Windows Server Backup 略過現有的檔案，並繼續復原下一個檔案。</br>-   **CreateCopy**會導致 Windows Server Backup 建立現有檔案的複本，而不會修改現有的檔案。</br>-   [**覆寫**] 會導致 Windows Server Backup 以備份中的檔案覆寫現有的檔案。|
+|-notRestoreAcl|只有在復原檔案時才有效。 指定不要還原從備份復原之檔案的安全性存取控制清單（Acl）。 根據預設，系統會還原安全性 Acl （預設值為**true）**。 如果使用此參數，還原之檔案的 Acl 會繼承自檔案還原的目標位置。|
 |-skipBadClusterCheck|只有在復原磁片區時才有效。 略過檢查您要復原的磁片是否有錯誤的叢集資訊。 如果您要復原到替代的伺服器或硬體，建議您不要使用此參數。 您可以隨時在這些磁片上手動執行 [ **chkdsk/b** ] 命令，以檢查是否有錯誤的叢集，然後據此更新檔案系統資訊。</br>重要事項：在您依照所述執行**Chkdsk**之前，已復原的系統上報告的錯誤叢集可能不正確。|
 |-noRollForward|只有在復原應用程式時才有效。 如果選取了備份的最新版本，則允許應用程式先前的時間點復原。 對於其他不是最新版本的應用程式，先前的時間點恢復會以預設值來完成。|
 |-quiet|執行子命令，而不提示使用者。|
@@ -69,7 +65,7 @@ wbadmin start recovery
 >     [!NOTE]
 >     Before using **wbadmin** to perform an install from media operation, you should consider using the **ntdsutil** command because **ntdsutil** only copies the minimum amount of data needed, and it uses a more secure data transport method.
 
-## <a name="examples"></a><a name=BKMK_Examples></a>典型
+## <a name="examples"></a>範例
 
 若要從2013年3月31日（上午9:00）執行備份復原，請在磁片區 d：上輸入：
 ```
@@ -83,19 +79,19 @@ wbadmin start recovery -version:03/31/2013-09:00 -itemType:App -items:Registry -
 ```
 wbadmin start recovery -version:03/31/2013-09:00 -itemType:File -items:d:\folder -recursive
 ```
-若要從2013年3月31日（上午9:00）執行備份復原，請在磁片區 \\\\？ \Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\, 類型：
+若要從2013年3月31日（上午9:00）執行備份復原，請在 [磁片\\ \\區]\, \Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963} 類型：
 ```
 wbadmin start recovery -version:03/31/2013-09:00 -itemType:Volume 
 -items:\\?\Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
 ```
-若要從2013年4月30日（上午9:00）執行備份復原，請在共用資料夾 \\\\servername\share，請輸入：
+若要從 9:00 2013 年4月30日（從 server01 開始的共用資料夾\\ \\servername\share）執行備份復原，請輸入：
 ```
 wbadmin start recovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
--   - [命令列語法關鍵](command-line-syntax-key.md)
+-   [命令列語法關鍵](command-line-syntax-key.md)
 -   [Restore](wbadmin.md)
 -   [WBFileRecovery](https://technet.microsoft.com/library/jj902457.aspx) Cmdlet
 -   [WBHyperVRecovery](https://technet.microsoft.com/library/jj902463.aspx) Cmdlet

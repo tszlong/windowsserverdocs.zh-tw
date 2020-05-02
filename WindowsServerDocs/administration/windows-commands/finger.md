@@ -1,6 +1,6 @@
 ---
 title: finger
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 78313fc4980b32e3aeb6d1611ef80d7eb6831fc1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ec8040480a7cb75a5a42e051393e3db4a47f8e2f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844601"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725606"
 ---
 # <a name="finger"></a>finger
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 顯示執行手指服務或背景程式之指定遠端電腦（通常是執行 UNIX 的電腦）上的使用者或使用者的相關資訊。 遠端電腦會指定使用者資訊顯示的格式和輸出。 使用時不含參數，**手指**會顯示說明。 
 ## <a name="syntax"></a>語法
@@ -35,11 +35,11 @@ finger [-l] [<User>] [@<Host>] [...]
 |    /?     |                                                               在命令提示字元顯示說明。                                                                |
 
 ## <a name="remarks"></a>備註
-可以指定多個 User@Host 參數。
+可以User@Host指定多個參數。
 您必須在**手指**參數前面加上連字號（-），而不是斜線（/）。
 只有當網際網路通訊協定（TCP/IP）通訊協定是在網路連線的網路介面卡內容中安裝為元件時，才可以使用此命令。
 Windows Server 2003 不提供手指服務。
-## <a name="examples"></a><a name=BKMK_Examples></a>典型
+## <a name="examples"></a>範例
 若要在電腦 users.microsoft.com 上顯示 user1 的資訊，請輸入：
 ```
 finger user1@users.microsoft.com
@@ -48,5 +48,5 @@ finger user1@users.microsoft.com
 ```
 finger @users.microsoft.com
 ```
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 -   - [命令列語法關鍵](command-line-syntax-key.md)

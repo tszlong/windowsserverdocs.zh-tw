@@ -1,6 +1,6 @@
 ---
 title: wbadmin start systemstaterecovery
-description: 適用于 wbadmin start systemstaterecovery 的 Windows 命令主題，它會執行系統狀態復原至某個位置，以及從您指定的備份。
+description: Wbadmin start systemstaterecovery 的參考主題，它會執行系統狀態復原至某個位置，以及您指定的備份。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 581ad6fe3591e549c3f89e4c95d2f8ab0cde059c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fa111934f93bf7fea5aade1f39b4fc6a014d6c9e
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829491"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725869"
 ---
 # <a name="wbadmin-start-systemstaterecovery"></a>wbadmin start systemstaterecovery
 
@@ -27,7 +27,7 @@ ms.locfileid: "80829491"
 
 若要使用這個子命令來執行系統狀態復原，您必須是**Backup Operators**群組或**Administrators**群組的成員，或者必須已被委派適當的許可權。 此外，您必須從提升許可權的命令提示字元執行**wbadmin** 。 （若要開啟提升許可權的命令提示字元，請以滑鼠右鍵按一下**命令提示**字元，然後按一下 [以**系統管理員身分執行**]）。
 
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>語法
 
@@ -68,18 +68,18 @@ wbadmin start systemstaterecovery
 |-autoReboot|指定在系統狀態復原操作結束時重新開機系統。 此參數僅適用于復原到原始位置。 如果您需要在復原操作之後執行步驟，則不建議使用此參數。|
 |-quiet|執行子命令，而不提示使用者。|
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 - 若要在上午9:00 從03/31/2013 執行備份的系統狀態復原，請輸入：  
   ```
   wbadmin start systemstaterecovery -version:03/31/2013-09:00
   ```  
-- 若要在上午9:00 從04/30/2013 執行備份的系統狀態復原 這會儲存在共用資源 \\\\servername\share 以進行 server01，請輸入：  
+- 若要在上午9:00 從04/30/2013 執行備份的系統狀態復原 這會儲存在 server01 的共用\\ \\資源 servername\share 上，請輸入：  
   ```
   wbadmin start systemstaterecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
   ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 -   - [命令列語法關鍵](command-line-syntax-key.md)
 -   [Restore](wbadmin.md)

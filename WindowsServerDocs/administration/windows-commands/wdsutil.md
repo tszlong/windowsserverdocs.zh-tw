@@ -1,6 +1,6 @@
 ---
 title: wdsutil
-description: Wdsutil 的 Windows 命令主題，這是用來管理您的 Windows 部署服務伺服器的命令列公用程式。
+description: Wdsutil 的參考主題，這是用來管理您的 Windows 部署服務伺服器的命令列公用程式。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f57411c1b000355940772003c7ac5343c82838cd
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d2acd720b21346836cfdd6a5eb24e9f8cae2dbef
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829434"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725858"
 ---
 # <a name="wdsutil"></a>wdsutil
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-wdsutil 是一種命令列公用程式，用來管理您的 Windows 部署服務伺服器。 若要執行這些命令，請按一下 **開始**，以滑鼠右鍵按一下 **命令提示**字元，然後按一下 以**系統管理員**身分  
+wdsutil 是一種命令列公用程式，用來管理您的 Windows 部署服務伺服器。 若要執行這些命令，請按一下 [**開始**]，以滑鼠右鍵按一下 [**命令提示**字元]，然後按一下 [以**系統管理員**身分  
 ## <a name="commands"></a>命令  
-|命令|描述|  
+|Command|描述|  
 |------|--------|  
 |[使用 add 命令](using-the-add-command.md)|新增物件或將預先設置電腦。|  
 |[使用 AutoaddDevices 命令](using-the-approve-autoadddevices-command.md)|核准等待系統管理員核准的電腦。|  

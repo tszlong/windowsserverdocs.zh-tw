@@ -9,19 +9,19 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 0b819f15e473738996484283bceac439f482a13d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 05c203ef610dda0443ddc845245a4072e617f7a6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844151"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725431"
 ---
 # <a name="fsutil-reparsepoint"></a>Fsutil reparsepoint
->適用于： Windows Server （半年通道）、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7、Windows 2008、Windows Vista
+> 適用于： Windows Server （半年通道）、Windows server 2019、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7、Windows 2008、Windows Vista
 
 查詢或刪除重新分析點。  **Fsutil reparsepoint**命令通常是由支援專業人員所使用。
 
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>語法
 
@@ -34,8 +34,8 @@ fsutil reparsepoint [delete] <FileName>
 
 | 參數  |                                                                描述                                                                |
 |------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-|   query    |            抓取與指定的控制碼所識別之檔案或目錄相關聯的重新分析點資料。             |
-|   [刪除]   | 從指定的控制碼所識別的檔案或目錄中刪除重新分析點，但不會刪除檔案或目錄。 |
+|   查詢    |            抓取與指定的控制碼所識別之檔案或目錄相關聯的重新分析點資料。             |
+|   delete   | 從指定的控制碼所識別的檔案或目錄中刪除重新分析點，但不會刪除檔案或目錄。 |
 | <FileName> |             指定檔案的完整路徑，包括檔案名和副檔名，例如 C:\documents\filename.txt。             |
 
 ## <a name="remarks"></a>備註
@@ -46,7 +46,7 @@ fsutil reparsepoint [delete] <FileName>
 
 -   當程式設定重新分析點時，它會儲存此資料，再加上可唯一識別所儲存資料的重新分析標記。 當檔案系統以重新分析點開啟檔案時，它會嘗試尋找相關聯的檔案系統篩選器。 如果找到檔案系統篩選器，篩選器會依照重新分析資料的指示來處理檔案。 如果找不到任何檔案系統篩選器，則檔案開啟作業會失敗。
 
-## <a name="examples"></a><a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name="BKMK_examples"></a>範例
 若要取得與 C:\Server 相關聯的重新分析點資料，請輸入：
 
 ```
@@ -59,7 +59,7 @@ fsutil reparsepoint query c:\server
 fsutil reparsepoint delete c:\server
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 - [命令列語法關鍵](command-line-syntax-key.md)
 
 [Fsutil](Fsutil.md)

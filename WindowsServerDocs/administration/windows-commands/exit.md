@@ -1,6 +1,6 @@
 ---
 title: exit
-description: Exit 的 Windows 命令主題，它會結束 DiskPart 命令直譯器。
+description: Exit 的參考主題，會結束 DiskPart 命令直譯器。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bfeab25017617ea425c2211c0b310c11aade3bf1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c36d0f7f6770ead39a6b31919fc1ae34a8af205b
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844921"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725727"
 ---
 # <a name="exit"></a>exit
 
@@ -26,7 +26,7 @@ ms.locfileid: "80844921"
 exit
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

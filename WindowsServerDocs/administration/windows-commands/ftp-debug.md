@@ -1,6 +1,6 @@
 ---
 title: ftp： debug
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 16a7a19b61099b036947cf133d8ad3ce6a54faea
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 32b079f54969a6a4286af1a98e779b997f48eae3
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80843671"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725349"
 ---
 # <a name="ftpdebug"></a>ftp： debug
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 切換偵錯模式。   
 ## <a name="syntax"></a>語法  
@@ -30,10 +30,10 @@ debug
 ## <a name="remarks"></a>備註  
 - 根據預設，會關閉偵錯工具。  
 - 當偵錯工具開啟時，會顯示傳送到遠端電腦的每個命令，並在前面加上大於（>）字元。  
-  ## <a name="examples"></a><a name=BKMK_Examples></a>典型  
+  ## <a name="examples"></a>範例  
   切換開啟和關閉的偵錯模式。  
   ```  
   debug  
   ```  
-  ## <a name="additional-references"></a>其他參考資料  
+  ## <a name="additional-references"></a>其他參考  
 - - [命令列語法關鍵](command-line-syntax-key.md)  

@@ -1,6 +1,6 @@
 ---
 title: wbadmin 停止作業
-description: Wbadmin stop job 的 Windows 命令主題，它會取消目前正在執行的備份或復原操作。 無法重新開機已取消的作業-您必須從頭重新執行已取消的備份或復原操作。
+description: Wbadmin stop job 的參考主題，它會取消目前正在執行的備份或復原操作。 無法重新開機已取消的作業-您必須從頭重新執行已取消的備份或復原操作。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4a00b4a93e0aaa954f8f07adae825a4f582c5581
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3133688ac0d60d97d80192611c9b561c53a74c35
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829481"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725842"
 ---
 # <a name="wbadmin-stop-job"></a>wbadmin 停止作業
 
@@ -37,7 +37,7 @@ wbadmin stop job
 |---------|-----------|
 |-quiet|執行子命令，而不提示使用者。|
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 -   - [命令列語法關鍵](command-line-syntax-key.md)
 -   [Restore](wbadmin.md)

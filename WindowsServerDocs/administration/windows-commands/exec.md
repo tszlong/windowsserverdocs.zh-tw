@@ -1,6 +1,6 @@
 ---
 title: exec
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d39fbf948050dd00f329e461c34c2365030cb05d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f10e28a8da96bc7228af4561fb36824899f2d7a4
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844991"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725729"
 ---
 # <a name="exec"></a>exec
 
@@ -32,13 +32,13 @@ exec <ScriptFile.cmd>
 
 |參數|描述|
 |---------|-----------|
-|\<ScriptFile .cmd >|指定要執行的腳本檔案。|
+|\<ScriptFile .cmd>|指定要執行的腳本檔案。|
 
 ## <a name="remarks"></a>備註
 
 -   此命令是用來複製或還原資料，做為備份或還原順序的一部分。
 -   如果腳本失敗，則會傳回錯誤並結束 DiskShadow。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

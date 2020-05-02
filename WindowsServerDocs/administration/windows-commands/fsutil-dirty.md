@@ -9,19 +9,19 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: cf3685bae9ed76ede4da6df244139437d92250c0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3b35938c21180199aabb74431d20a31167aea706
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844331"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725534"
 ---
 # <a name="fsutil-dirty"></a>Fsutil dirty
->適用于： Windows Server （半年通道）、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7
 
 查詢或設定磁片區的中途位。 設定磁片區的中途位時， **autochk**會在下一次電腦重新開機時，自動檢查磁片區是否有錯誤。
 
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>語法
 
@@ -33,9 +33,9 @@ fsutil dirty {query | set} <VolumePath>
 
 |   參數   |                                                 描述                                                  |
 |---------------|--------------------------------------------------------------------------------------------------------------|
-|     query     |                                  查詢指定的磁片區的中途位。                                   |
-|      設定      |                                    設定指定磁片區的中途位。                                    |
-| \<VolumePath > | 以下列格式指定磁片磁碟機名稱，後面接著冒號或 GUID：**磁片區 {** <em>GUID</em> **}** 。 |
+|     查詢     |                                  查詢指定的磁片區的中途位。                                   |
+|      set      |                                    設定指定磁片區的中途位。                                    |
+| \<VolumePath> | 以下列格式指定磁片磁碟機名稱，後面接著冒號或 GUID：**磁片區 {**<em>GUID</em>**}**。 |
 
 ## <a name="remarks"></a>備註
 
@@ -49,7 +49,7 @@ fsutil dirty {query | set} <VolumePath>
 
 -   如果重新開機電腦時設定了中途的位， **chkdsk**就會執行以驗證檔案系統完整性，並嘗試修正磁片區的任何問題。
 
-## <a name="examples"></a><a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name="BKMK_examples"></a>範例
 若要查詢磁片磁碟機 C 上的中途位，請輸入：
 
 ```
@@ -70,7 +70,7 @@ fsutil dirty query c:
 fsutil dirty set C:
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 - [命令列語法關鍵](command-line-syntax-key.md)
 
 [Fsutil](Fsutil.md)

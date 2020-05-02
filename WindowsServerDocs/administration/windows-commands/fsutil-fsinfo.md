@@ -9,19 +9,19 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 56e27c386451c561de8f62e523e2d1e59a8ce84c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b7af3859cd16b89587a86e3436d5c832620c4e22
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844301"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725489"
 ---
 # <a name="fsutil-fsinfo"></a>Fsutil fsinfo
->適用于： Windows Server （半年通道）、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7
 
 列出所有磁片磁碟機、查詢磁片磁碟機類型、查詢磁片區資訊、查詢 NTFS 特定磁片區資訊，或查詢檔案系統統計資料。
 
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>語法
 
@@ -41,12 +41,12 @@ fsutil fsinfo [volumeinfo] <RootPath>
 |drivetype|查詢磁片磁碟機並列出其類型，例如 CD-ROM 光碟機。|
 |ntfsinfo|列出指定磁片區的 NTFS 特定磁片區資訊，例如磁區數目、叢集總計、可用叢集，以及 MFT 區域的開始和結束。|
 |sectorinfo|列出硬體磁區大小和對齊的相關資訊。|
-|數位|列出指定磁片區（例如中繼資料、記錄檔和 MFT 讀取和寫入）的檔案系統統計資料。|
+|統計資料|列出指定磁片區（例如中繼資料、記錄檔和 MFT 讀取和寫入）的檔案系統統計資料。|
 |volumeinfo|列出指定磁片區的資訊（例如檔案系統），以及該磁片區是否支援區分大小寫的檔案名、檔案名中的 unicode、磁片配額，或為 DirectAccess （DAX）磁片區。|
 |< "VolumePath" >|指定磁碟機號（後面接著冒號）。|
 |< "RootPathname" >|指定根磁片磁碟機的磁碟機號（後面接著冒號）。|
 
-## <a name="examples"></a><a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name="BKMK_examples"></a>範例
 若要列出電腦中的所有磁片磁碟機，請輸入：
 
 ```
@@ -153,8 +153,8 @@ UserFileReadBytes :    1305244512
 LogFileWriteBytes :    180936704       
 ```
 
-## <a name="additional-references"></a>其他參考資料
-- [命令列語法索引鍵](command-line-syntax-key.md)
+## <a name="additional-references"></a>其他參考
+- [命令列語法的索引鍵](command-line-syntax-key.md)
 [Fsutil](Fsutil.md)
 
 

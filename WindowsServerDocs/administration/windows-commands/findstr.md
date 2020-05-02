@@ -1,6 +1,6 @@
 ---
 title: findstr
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dbdc1b741b5934f53340bda773909fb5035e449b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 97cc58d2b87190c43137e8b193f0217fb98c006c
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844631"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725607"
 ---
 # <a name="findstr"></a>findstr
 
@@ -35,7 +35,7 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] 
 |/b|符合文字模式（如果它位於行首）。|
 |/e|符合文字模式（如果它位於行尾）。|
 |/l|逐文書處理搜尋字串。|
-|/r|將搜尋字串當做正則運算式處理。 此為預設設定。|
+|/r|將搜尋字串當做正則運算式處理。 這是預設值。|
 |/s|搜尋目前目錄和所有子目錄。|
 |/i|搜尋字串時，忽略字元的大小寫。|
 |/x|列印完全相符的行。|
@@ -45,14 +45,14 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] 
 |/o|在每個相符的行之前列印字元位移。|
 |/p|略過具有不可列印字元的檔案。|
 |/off [行]|不會略過已設定離線屬性的檔案。|
-|/f：\<檔案 >|從指定的檔案取得檔案清單。|
-|/c：\<字串 >|使用指定的文字做為常值搜尋字串。|
-|/g：\<檔案 >|從指定的檔案取得搜尋字串。|
-|/d：\<DirList >|搜尋指定的目錄清單。 每個目錄都必須以分號分隔（;)，例如 `dir1;dir2;dir3`。|
-|/a：\<ColorAttribute >|指定具有兩個十六進位數位的色彩屬性。 如需其他資訊，請輸入 `color /?`。|
-|\<字串 >|指定要在*FileName*中搜尋的文字。 必要。|
-|[\<磁片磁碟機 >：][<Path>]<FileName>[...]|指定要搜尋的位置和檔案。 至少需要一個檔案名。|
-|/?|在命令提示字元中顯示說明。|
+|/f：\<File>|從指定的檔案取得檔案清單。|
+|/c：\<字串>|使用指定的文字做為常值搜尋字串。|
+|/g：\<File>|從指定的檔案取得搜尋字串。|
+|/d：\<DirList>|搜尋指定的目錄清單。 每個目錄都必須以分號分隔（例如`dir1;dir2;dir3`，;)。|
+|/a：\<ColorAttribute>|指定具有兩個十六進位數位的色彩屬性。 如`color /?`需其他資訊，請輸入。|
+|\<字串>|指定要在*FileName*中搜尋的文字。 必要。|
+|[\<磁片磁碟機>：][<Path>]<FileName>[ ...]|指定要搜尋的位置和檔案。 至少需要一個檔案名。|
+|/?|在命令提示字元顯示 [說明]。|
 
 ## <a name="remarks"></a>備註
 
@@ -63,7 +63,7 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] 
 
   |元字元|值|
   |-------------|-----|
-  |。|萬用字元：任何字元|
+  |.|萬用字元：任何字元|
   |*|重複：上一個或多個字元或類別出現零次以上|
   |^|行位置：行首|
   |$|行位置：行尾|
@@ -71,8 +71,8 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] 
   |[^ 類別]|反向類別：不在集合中的任何一個字元|
   |[x-y]|範圍：指定範圍內的任何字元|
   |\x|Escape：使用元字元 x 的常值|
-  |\\< 字串|文字位置：字組開頭|
-  |字串\>|文字位置：字尾|
+  |\\<字串|文字位置：字組開頭|
+  |string\>|文字位置：字尾|
 
   當您一起使用時，正則運算式語法中的特殊字元具有最大的功能。 例如，使用下列萬用字元組合（.）並重複（*）字元來比對任何字元字串：
 
@@ -138,6 +138,6 @@ findstr /s /i /m \<computer\> *.*
 findstr /s /i /m \<comp.* *.*
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

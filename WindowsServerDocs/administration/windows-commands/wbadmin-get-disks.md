@@ -1,6 +1,6 @@
 ---
 title: wbadmin get disks
-description: 適用于 wbadmin get 磁片的 Windows 命令主題，其中列出本機電腦目前在線上的內部和外部磁片。
+description: Wbadmin get 磁片的參考主題，其中列出本機電腦目前在線上的內部和外部磁片。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0243edce77febddccc3497df34685113f2a1b48f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 42c96ab4ca57f07f180a24da4991e6491f26ff64
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829761"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725940"
 ---
 # <a name="wbadmin-get-disks"></a>wbadmin get disks
 
@@ -34,7 +34,7 @@ wbadmin get disks
 
 這個子命令沒有任何參數。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 -   - [命令列語法關鍵](command-line-syntax-key.md)
 -   [Restore](wbadmin.md)

@@ -1,6 +1,6 @@
 ---
 title: wbadmin
-description: 適用于 wbadmin 的 Windows 命令主題，可讓您從命令提示字元備份和還原作業系統、磁片區、檔案、資料夾和應用程式。
+description: Wbadmin 的參考主題，可讓您從命令提示字元備份和還原作業系統、磁片區、檔案、資料夾和應用程式。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0ca9bdc54cd77f11239d0a61cf052e7b12b02b22
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 94f07d17d46dad4e5301ba3ea6be94b10f26a3af
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829471"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725829"
 ---
 # <a name="wbadmin"></a>wbadmin
 
@@ -28,7 +28,7 @@ ms.locfileid: "80829471"
 
 ## <a name="subcommands"></a>子
 
-|來|描述|
+|子命令|描述|
 |----------|-----------|
 |[Wbadmin enable backup](wbadmin-enable-backup.md)|設定並啟用定期排程的備份。|
 |[Wbadmin disable backup](wbadmin-disable-backup.md)|停用您的每日備份。|
@@ -46,7 +46,7 @@ ms.locfileid: "80829471"
 |[Wbadmin restore catalog](wbadmin-restore-catalog.md)|當本機電腦上的備份類別目錄已損毀時，從指定的儲存位置復原備份類別目錄。|
 |[Wbadmin delete catalog](wbadmin-delete-catalog.md)|刪除本機電腦上的備份類別目錄。 只有當這部電腦上的備份類別目錄已損毀，而且您沒有將備份儲存在另一個可用來還原類別目錄的位置時，才使用此子命令。|
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 -   [備份和復原](https://go.microsoft.com/fwlink/?LinkID=195054)
 -   [Windows PowerShell 中的 Windows Server Backup Cmdlet](https://technet.microsoft.com/library/jj902428.aspx)

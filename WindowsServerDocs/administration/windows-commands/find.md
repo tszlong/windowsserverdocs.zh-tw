@@ -1,6 +1,6 @@
 ---
-title: find
-description: '\* * * * 的 Windows 命令主題'
+title: 尋找
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 82b966db4117e9273ae6aed8d30baec76362de2f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3cd731ef64912644965ef6bb96d060a46f0a6067
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844691"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725628"
 ---
-# <a name="find"></a>find
+# <a name="find"></a>尋找
 
 
 
 搜尋檔案中的文字字串，並顯示包含指定字串的文字行。
 
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>語法
 
@@ -34,13 +34,13 @@ find [/v] [/c] [/n] [/i] [/off[line]] <String> [[<Drive>:][<Path>]<FileName>[...
 
 |           參數           |                                              描述                                               |
 |-------------------------------|--------------------------------------------------------------------------------------------------------|
-|              /v               |                    顯示不包含指定 \<字串 > 的所有行。                     |
-|              /c               |              計算包含指定 \<字串 > 的行，並顯示總計。              |
+|              /v               |                    顯示不包含指定\<字串> 的所有行。                     |
+|              /C               |              計算包含指定\<字串>的行數，並顯示總計。              |
 |              /n               |                            在每一行前面加上檔案的行號。                             |
 |              /i               |                            指定搜尋不區分大小寫。                            |
 |         [/off [行]]          |                        不會略過已設定離線屬性的檔案。                        |
-|          \<字串 >          | 必要。 指定您想要搜尋的字元群組（以引號括住）。 |
-| [\<磁片磁碟機 >：][<Path>]<FileName> |        指定要在其中搜尋指定之字串的檔案位置和名稱。        |
+|          \<字串>          | 必要。 指定您想要搜尋的字元群組（以引號括住）。 |
+| [\<磁片磁碟機>：][<Path>]<FileName> |        指定要在其中搜尋指定之字串的檔案位置和名稱。        |
 |              /?               |                                  在命令提示字元顯示說明。                                  |
 
 ## <a name="remarks"></a>備註
@@ -58,7 +58,7 @@ find [/v] [/c] [/n] [/i] [/off[line]] <String> [[<Drive>:][<Path>]<FileName>[...
     您可以依任何順序輸入 [**尋找**] 命令的參數和命令列選項。
 -   使用萬用字元
 
-    您不能在使用 **&#42;** [**尋找**] 命令所指定的檔案名或副檔名中使用萬用字元（和 **？** ）。 若要搜尋您以萬用字元指定的一組檔案中的字串，您可以在**for**命令中使用 [**尋找**] 命令。
+    您不能在使用 [**尋找**] 命令所指定的檔案名或副檔名中使用萬用字元（**&#42;** 和 **？**）。 若要搜尋您以萬用字元指定的一組檔案中的字串，您可以在**for**命令中使用 [**尋找**] 命令。
 -   使用 **/v**或 **/n**搭配 **/c**
 
     如果您在相同的命令列中使用 **/c**和 **/v** ，[**尋找**] 會顯示不包含指定字串的行計數。 如果您在相同的命令列中指定 **/c**和 **/n** ， **find**會忽略 **/n**。
@@ -66,7 +66,7 @@ find [/v] [/c] [/n] [/i] [/off[line]] <String> [[<Drive>:][<Path>]<FileName>[...
 
     [**尋找**] 命令無法辨識回車。 當您使用 [**尋找**] 來搜尋包含回車的檔案中的文字時，您必須將搜尋字串限制為可在換行字元（也就是不可能因回車符而中斷的字串）之間找到的文字。 例如，如果在稅務和 file 這兩個字之間發生了回車，**尋找**就不會報告字串稅務檔案的相符。
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 若要顯示 Pencil.ad 中包含字串鉛筆 C-sharpener 的所有行，請輸入：
 ```
@@ -86,6 +86,6 @@ dir c:\ /s /b | find CPU
 ```
 由於**尋找**搜尋會區分大小寫，而**dir**會產生大寫輸出，因此您必須以大寫字母輸入字串 CPU，或使用 **/i**命令列選項搭配**find**。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

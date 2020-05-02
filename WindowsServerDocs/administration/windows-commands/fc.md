@@ -1,6 +1,6 @@
 ---
 title: fc
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4b358b8c1bf44b5b7942cef05bd09fa8cac850a3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 372e8b6a605bd96f6287a005004fd2f1532dfe4f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844741"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725639"
 ---
 # <a name="fc"></a>fc
 
@@ -22,7 +22,7 @@ ms.locfileid: "80844741"
 
 比較兩個檔案或一組檔案，並顯示兩者之間的差異。
 
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>語法
 
@@ -37,17 +37,17 @@ fc /b [<Drive1:>][<Path1>]<FileName1> [<Drive2:>][<Path2>]<FileName2>
 |----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                /a                |                                                 縮寫 ASCII 比較的輸出。 **Fc**不會顯示不同的所有線條，而是只會針對每一組差異顯示第一個和最後一行。                                                  |
 |                /b                |             比較兩個二進位模式的檔案（以位元組為單位），而且不會在發現不相符的情況下嘗試重新同步處理檔案。 這是比較具有下列副檔名之檔案的預設模式： .exe、.com、sys.databases、.obj、.lib 或 bin。              |
-|                /c                |                                                                                                                               忽略字母大小寫。                                                                                                                               |
+|                /C                |                                                                                                                               忽略字母大小寫。                                                                                                                               |
 |                /l                |               比較 ASCII 模式中的檔案，逐行，並嘗試在發現不相符的情況下重新同步處理檔案。 這是比較檔案的預設模式，但副檔名為下列的檔案除外： .exe、.com、sys.databases、.obj、.lib 或 bin。                |
-|             /lb\<N >              |                         將內部行緩衝區的行數設定為*N*。行緩衝區的預設長度為100行。 如果您要比較的檔案超過100個連續的不同行， **fc**會取消比較。                         |
+|             /lb\<N>              |                         將內部行緩衝區的行數設定為*N*。行緩衝區的預設長度為100行。 如果您要比較的檔案超過100個連續的不同行， **fc**會取消比較。                         |
 |                /n                |                                                                                                                在 ASCII 比較期間顯示行號。                                                                                                                 |
 |            /off [行]            |                                                                                                               不會略過已設定離線屬性的檔案。                                                                                                               |
 |                /t                |                                                                    防止**fc**將索引標籤轉換為空格。 預設行為是將定位字元視為空格，並在每個第八個字元位置停止。                                                                    |
-|                /u                |                                                                                                                        將檔案與 Unicode 文字檔做比較。                                                                                                                         |
-|                /w                |         在比較期間壓縮空白字元（也就是定位字元和空格）。 如果一行包含多個連續的空格或索引標籤，則 **/w**會將這些字元視為單一空格。 與 **/w**搭配使用時， **fc**會忽略行開頭和結尾的空白字元。         |
-|             /\<NNNN >             | 指定遵循不相符時必須符合的連續行數， **fc**會考慮重新同步處理檔案。 如果檔案中相符的行數小於*NNNN*， **fc**會顯示相符的行做為差異。 預設值為2。 |
-| [\<Drive1 >：][<Path1>]<FileName1> |                                                                                        指定要比較之第一個檔案或一組檔案的位置和名稱。 *FileName1*是必要的。                                                                                        |
-| [\<Drive2 >：][<Path2>]<FileName2> |                                                                                       指定要比較的第二個檔案或一組檔的位置和名稱。 *FileName2*是必要的。                                                                                        |
+|                /U                |                                                                                                                        將檔案與 Unicode 文字檔做比較。                                                                                                                         |
+|                /W                |         在比較期間壓縮空白字元（也就是定位字元和空格）。 如果一行包含多個連續的空格或索引標籤，則 **/w**會將這些字元視為單一空格。 與 **/w**搭配使用時， **fc**會忽略行開頭和結尾的空白字元。         |
+|             /\<NNNN>             | 指定遵循不相符時必須符合的連續行數， **fc**會考慮重新同步處理檔案。 如果檔案中相符的行數小於*NNNN*， **fc**會顯示相符的行做為差異。 預設值為 2。 |
+| [\<Drive1>：][<Path1>]<FileName1> |                                                                                        指定要比較之第一個檔案或一組檔案的位置和名稱。 *FileName1*是必要的。                                                                                        |
+| [\<Drive2>：][<Path2>]<FileName2> |                                                                                       指定要比較的第二個檔案或一組檔的位置和名稱。 *FileName2*是必要的。                                                                                        |
 |                /?                |                                                                                                                         在命令提示字元顯示說明。                                                                                                                         |
 
 ## <a name="remarks"></a>備註
@@ -72,7 +72,7 @@ fc /b [<Drive1:>][<Path1>]<FileName1> [<Drive2:>][<Path2>]<FileName2>
     *Xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx*的值會指定位元組配對的相對十六進位位址，從檔案的開頭開始測量。 位址開始于00000000。 *YY*和*ZZ*的十六進位值分別代表*FileName1*和*FileName2*中不相符的位元組。
 -   使用萬用字元
 
-    您可以在 **&#42;** *FileName1*和*FileName2*中使用萬用字元（和 **？** ）。 如果您在*FileName1*中使用萬用字元， **fc**會將所有指定的檔案與*FileName2*所指定的檔案或一組檔案進行比較。 如果您在*FileName2*中使用萬用字元， **Fc**會使用*FileName1*中的對應值。
+    您可以在*FileName1*和*FileName2*中使用萬用字元（**&#42;** 和 **？**）。 如果您在*FileName1*中使用萬用字元， **fc**會將所有指定的檔案與*FileName2*所指定的檔案或一組檔案進行比較。 如果您在*FileName2*中使用萬用字元， **Fc**會使用*FileName1*中的對應值。
 -   使用記憶體
 
     比較 ASCII 檔案時， **fc**會使用內部緩衝區（夠大，足以容納100行）做為儲存空間。 如果檔案大於緩衝區， **fc**會比較它可以載入到緩衝區的內容。 如果**fc**在檔案載入的部分中找不到相符項，它會停止並顯示下列訊息：
@@ -81,7 +81,7 @@ fc /b [<Drive1:>][<Path1>]<FileName1> [<Drive2:>][<Path2>]<FileName2>
 
     比較大於可用記憶體的二進位檔案時， **fc**會完全比較這兩個檔案，並將記憶體中的部分與磁片中的下一個部分覆迭。 輸出與完全符合記憶體的檔案相同。
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 若要進行兩個文字檔的 ASCII 比較（每月 rpt 和 rpt），並以縮寫的格式顯示結果，請輸入：
 ```
@@ -120,6 +120,6 @@ fc c:new.bat d:*.bat
 fc c:*.bat d:*.bat
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
