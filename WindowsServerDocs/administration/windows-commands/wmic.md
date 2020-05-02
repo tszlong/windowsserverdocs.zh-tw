@@ -1,6 +1,6 @@
 ---
 title: wmic
-description: 適用于 wmic 的 Windows 命令主題，它會在互動式命令 shell 內顯示 WMI 資訊。
+description: Wmic 的參考主題，它會在互動式命令 shell 內顯示 WMI 資訊。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 03ba4ecb4b12b03e010318bf6ca260dec00f28f3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 252ba6b59c29378dd1f5e437de21a2ec4f5ec5c8
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829051"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720650"
 ---
 # <a name="wmic"></a>wmic
 
@@ -22,7 +22,7 @@ ms.locfileid: "80829051"
 
 在互動式命令 shell 內顯示 WMI 資訊。
 
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>語法
 
@@ -36,12 +36,12 @@ wmic </parameter>
 
 |子命令|描述|
 |-----------|-----------|
-|class|從 WMIC 的預設別名模式 esc，以直接存取 WMI 架構中的類別。|
-|path|從 WMIC 的預設別名模式 esc，以直接存取 WMI 架構中的實例。|
+|Class - 類別|從 WMIC 的預設別名模式 esc，以直接存取 WMI 架構中的類別。|
+|路徑|從 WMIC 的預設別名模式 esc，以直接存取 WMI 架構中的實例。|
 |內容|顯示所有全域參數的目前值。|
 |[quit \| exit]|結束 WMIC 命令 shell。|
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 若要顯示所有全域參數的目前值，請輸入：
 ```
@@ -71,6 +71,6 @@ AGGREGATE    : ON
 wmic /locale:ms_409
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

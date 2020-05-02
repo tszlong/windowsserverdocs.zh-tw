@@ -1,6 +1,6 @@
 ---
-title: Windows Server Backup 命令參考資料
-description: 備份命令參考的 Windows 命令主題。
+title: Windows Server Backup 命令參考資料
+description: Backup 命令參考的參考主題。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ca6a2e17c68e362d8b3d26f67ab3b7e4c7bf86d4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 69121e445e5c7a967c30b0a911c639431c7dd74a
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829202"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720722"
 ---
-# <a name="windows-server-backup-command-reference"></a>Windows Server Backup 命令參考資料
+# <a name="windows-server-backup-command-reference"></a>Windows Server Backup 命令參考資料
 
 
 
@@ -24,9 +24,9 @@ ms.locfileid: "80829202"
 
 若要設定備份排程，您必須是**Administrators**群組的成員。 若要使用此命令執行所有其他工作，您必須是**Backup Operators**或**Administrators**群組的成員，或者必須已被委派適當的許可權。
 
-您必須從提升許可權的命令提示字元執行**wbadmin** 。 （若要開啟提升許可權的命令提示字元，請按一下 **開始**，以滑鼠右鍵按一下 **命令提示**字元，然後按一下 以**系統管理員身分執行**
+您必須從提升許可權的命令提示字元執行**wbadmin** 。 （若要開啟提升許可權的命令提示字元，請按一下 [**開始**]，以滑鼠右鍵按一下 [**命令提示**字元]，然後按一下 [以**系統管理員身分執行**
 
-|來|描述|
+|子命令|描述|
 |----------|-----------|
 |[Wbadmin enable backup](wbadmin-enable-backup.md)|設定並啟用每日備份排程。|
 |[Wbadmin disable backup](wbadmin-disable-backup.md)|停用您的每日備份。|

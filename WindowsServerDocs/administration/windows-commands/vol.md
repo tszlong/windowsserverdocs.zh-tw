@@ -1,6 +1,6 @@
 ---
 title: vol
-description: Vol 的 Windows 命令主題，會顯示磁片區標籤和序號（如果有的話）。
+description: '[Vol] 的參考主題，其中會顯示磁片區標籤和序號（如果有的話）。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fbf55bad619379005d7ed8044277d3a2759dde10
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: aa900ade6f434a53ac940d097407aa90509e9141
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80830101"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720282"
 ---
 # <a name="vol"></a>vol
 
@@ -32,9 +32,9 @@ vol [<Drive>:]
 
 |參數|描述|
 |---------|-----------|
-|\<磁片磁碟機 >：|指定包含您要顯示其磁片區標籤和序號的磁片磁碟機。|
+|\<磁片磁碟機>：|指定包含您要顯示其磁片區標籤和序號的磁片磁碟機。|
 |/?|在命令提示字元顯示說明。|
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

@@ -7,15 +7,16 @@ ms.technology: storage-health-service
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: 913a596a46720718a165295345cb02e3e2baa1de
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5fe2f98c89d97325c1f59dc6ba292831e0ffa5ff
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827561"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720556"
 ---
 # <a name="health-service-faults"></a>健全狀況服務錯誤
-> 適用于： Windows Server 2019、Windows Server 2016
+
+> 適用於：Windows Server 2019、Windows Server 2016
 
 ## <a name="what-are-faults"></a>什麼是錯誤
 
@@ -46,7 +47,7 @@ Location: Seattle DC, Rack B07, Node 4, Slot 11
 
 健全狀況服務可以評估錯誤實體之間的潛在因果，以識別併合並因相同基礎問題而產生的錯誤。 藉由辨識相關聯的影響，可以讓報告較為簡潔。 例如，如果伺服器已關閉，則預期伺服器中的任何磁片磁碟機也不會有連線能力。 因此，根本原因只會引發一個錯誤，在此案例中為伺服器。  
 
-## <a name="usage-in-powershell"></a>在 PowerShell 中的使用方式
+## <a name="usage-in-powershell"></a>PowerShell 中的使用方式
 
 若要查看 PowerShell 中的任何目前錯誤，請執行此 Cmdlet：
 
@@ -69,14 +70,13 @@ Get-FileShare -Name <Name> | Debug-FileShare
 
 這會傳回只影響特定磁片區或檔案共用的任何錯誤。 這些錯誤通常與容量規劃、資料復原，或儲存體服務品質或儲存體複本等功能有關。 
 
-## <a name="usage-in-net-and-c"></a>.NET 和中的使用方式C#
+## <a name="usage-in-net-and-c"></a>.NET 和 C 中的使用方式#
 
-### <a name="connect"></a>連接
+### <a name="connect"></a>連線
 
-為了查詢健全狀況服務，您必須建立叢集的**CimSession** 。 若要這麼做，您將需要一些只在完整 .NET 中提供的專案，這表示您無法直接從 web 或行動裝置應用程式進行這項操作。 這些程式碼範例將使用 C\#，這是最直接的此資料存取層選擇。
+為了查詢健全狀況服務，您必須建立叢集的**CimSession** 。 若要這麼做，您將需要一些只在完整 .NET 中提供的專案，這表示您無法直接從 web 或行動裝置應用程式進行這項操作。 這些程式碼範例會使用\#C，這是最直接的資料存取層選擇。
 
-``` 
-...
+```
 using System.Security;
 using Microsoft.Management.Infrastructure;
 
@@ -105,7 +105,7 @@ public CimSession Connect(string Domain = "...", string Computer = "...", string
 
 建立**CimSession**之後，您就可以查詢叢集上的 WINDOWS MANAGEMENT INSTRUMENTATION （WMI）。
 
-在您取得錯誤或計量之前，您必須取得數個相關物件的實例。 首先， **MSFT\_StorageSubSystem** ，代表叢集上的儲存空間直接存取。 使用這種方式，您就可以取得叢集中的每個**msft\_StorageNode** ，以及每個**msft\_磁片**區的資料磁片區。 最後，您還需要**MSFT\_StorageHealth**，也就是健全狀況服務本身。
+在您取得錯誤或計量之前，您必須取得數個相關物件的實例。 首先， **MSFT\_StorageSubSystem**代表叢集儲存空間直接存取。 使用這種方式，您可以取得叢集中的每個**msft\_StorageNode** ，以及每個**msft\_磁片**區（資料磁片區）。 最後，您還需要**MSFT\_StorageHealth**，也就是健全狀況服務本身。
 
 ```
 CimInstance Cluster;
@@ -138,7 +138,6 @@ public void DiscoverObjects(CimSession Session)
 您可以存取[儲存管理 API 類別](https://msdn.microsoft.com/library/windows/desktop/hh830612(v=vs.85).aspx)中記載的所有相同屬性。
 
 ```
-...
 using System.Diagnostics;
 
 foreach (CimInstance Node in Nodes)
@@ -286,7 +285,7 @@ class FaultsObserver : IObserver
 
 下表提供錯誤物件的數個重要屬性。 如需完整的架構，請檢查*storagewmi*中的**MSFT\_StorageDiagnoseResult**類別。
 
-| **Property**              | **範例**                                                     |
+| **屬性**              | **範例**                                                     |
 |---------------------------|-----------------------------------------------------------------|
 | FaultId                   | {12345-12345-12345-12345-12345}                                 |
 | FaultType                 | FaultType. Volume. 容量                      |
@@ -312,7 +311,7 @@ class FaultsObserver : IObserver
 
 請注意**ChangeType**，它會指出是否正在建立、移除或更新錯誤，以及**FaultId**。 事件也包含受影響之錯誤的所有屬性。
 
-| **Property**              | **範例**                                                     |
+| **屬性**              | **範例**                                                     |
 |---------------------------|-----------------------------------------------------------------|
 | ChangeType                | 0                                                               |
 | FaultId                   | {12345-12345-12345-12345-12345}                                 |
@@ -374,7 +373,7 @@ class FaultsObserver : IObserver
 ### <a name="virtual-disk-2"></a>**虛擬磁片（2）**
 
 #### <a name="faulttype-microsofthealthfaulttypevirtualdisksneedsrepair"></a>FaultType： FaultType. VirtualDisks. NeedsRepair
-* 嚴重性：資訊
+* 嚴重性：告知性
 * 原因：「*這個磁片區上的某些資料不是完全復原的。它仍然可供存取。* 」
 * RecommendedAction：「*還原資料的復原」。*
 
@@ -390,7 +389,7 @@ class FaultsObserver : IObserver
 * 原因：「*存放集區沒有最小的建議保留容量。這可能會限制您在發生磁片磁碟機失敗時還原資料復原的能力。* 」
 * RecommendedAction：「*將額外的容量新增至存放集區，或釋放容量。最小的建議保留會因部署而有所不同，但大約是2個磁片磁碟機的容量。* 」
 
-### <a name="volume-capacity-2sup1sup"></a>**磁片區容量（2）** <sup>1</sup>
+### <a name="volume-capacity-2sup1sup"></a>**磁片區容量（2）**<sup>1</sup>
 
 #### <a name="faulttype-microsofthealthfaulttypevolumecapacity"></a>FaultType： FaultType. Volume. 容量
 * 嚴重性：警告
@@ -497,7 +496,7 @@ class FaultsObserver : IObserver
 * 原因：「*因為有太多實體磁片導致固件更新嘗試失敗，所以已取消固件推出。* 」
 * RecommendedAction：「*一旦固件問題解決，即重新開機固件」。*
 
-### <a name="storage-qos-3sup2sup"></a>**存放裝置 QoS （3）** <sup>2</sup>
+### <a name="storage-qos-3sup2sup"></a>**存放裝置 QoS （3）**<sup>2</sup>
 
 #### <a name="faulttype-microsofthealthfaulttypestorqosinsufficientthroughput"></a>FaultType： FaultType. StorQos. InsufficientThroughput
 * 嚴重性：警告

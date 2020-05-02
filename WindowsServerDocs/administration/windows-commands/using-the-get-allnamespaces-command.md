@@ -1,6 +1,6 @@
 ---
 title: AllNamespaces
-description: AllNamespaces 的 Windows 命令主題，它會顯示伺服器上所有命名空間的相關資訊。
+description: AllNamespaces 的參考主題，它會顯示伺服器上所有命名空間的相關資訊。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,21 +9,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bbdba81f68f609c6ed7ba740b68b1ac1123913ab
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 710918eb11ef7a746716a1a2bff9200cfa1d98c1
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80831251"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720001"
 ---
 # <a name="get-allnamespaces"></a>AllNamespaces
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 顯示伺服器上所有命名空間的相關資訊。
 
 ## <a name="syntax"></a>語法
-Windows Server 2008：
+Windows Server 2008：
 ```
 wdsutil /Get-AllNamespaces [/Server:<Server name>] [/ContentProvider:<name>] [/Show:Clients] [/ExcludedeletePending]
 ```
@@ -41,7 +41,7 @@ wdsutil /Get-AllNamespaces [/Server:<Server name>] [/ContentProvider:<name>] [/d
 |    [/details：用戶端]     |                           僅支援 Windows Server 2008 R2。 顯示連接到命名空間之用戶端電腦的相關資訊。                           |                        |
 |  [/ExcludedeletePending]  |                                                              排除清單中任何已停用的傳輸。                                                              |                        |
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 若要查看所有命名空間，請輸入：
 ```
 wdsutil /Get-AllNamespaces
@@ -55,8 +55,8 @@ wdsutil /Get-AllNamespaces
   ```
   wdsutil /Get-AllNamespaces /Server:MyWDSServer /ContentProvider:MyContentProv /details:Clients /ExcludedeletePending
   ```
-  ## <a name="additional-references"></a>其他參考資料
+  ## <a name="additional-references"></a>其他參考
   - [命令列語法索引鍵](command-line-syntax-key.md)
-  [使用新的命名空間命令](using-the-new-namespace-command.md)
-  [使用 Remove-namespace 命令](using-the-remove-namespace-command.md)
+  使用[新的-namespace](using-the-new-namespace-command.md)
+  命令，並[使用 remove-namespace 命令](using-the-remove-namespace-command.md)
   [子命令： start-namespace](subcommand-start-namespace.md)

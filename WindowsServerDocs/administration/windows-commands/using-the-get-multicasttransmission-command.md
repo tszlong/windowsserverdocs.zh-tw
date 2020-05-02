@@ -1,6 +1,6 @@
 ---
 title: MulticastTransmission
-description: MulticastTransmission 的 Windows 命令主題，它會顯示指定映射之多播傳輸的相關資訊。
+description: MulticastTransmission 的參考主題，它會顯示指定映射之多播傳輸的相關資訊。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,21 +9,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ec66107452be86423a4d542ee3999e86f1446656
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a848a4aceb41b4da679d9182459df29c89008fea
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80830941"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719752"
 ---
 # <a name="get-multicasttransmission"></a>MulticastTransmission
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 顯示指定映射之多播傳輸的相關資訊。
 
 ## <a name="syntax"></a>語法
-**Windows Server 2008**
+**Windows Server 2008**
 ```
 wdsutil [Options] /Get-MulticastTransmissiomedia:<Image name> [/Server:<Server name>mediatype:InstallmediaGroup:<Image group name>] 
 [/Filename:<File name>] [/Show:Clients]
@@ -49,14 +49,14 @@ wdsutil [Options] /Get-MulticastTransmissiomedia:<Image name>
 ### <a name="parameters"></a>參數
 |參數|描述|
 |-------|--------|
-媒體：<Image name>|顯示與此映射相關聯的多播傳輸。|
+媒介<Image name>|顯示與此映射相關聯的多播傳輸。|
 |[/Server：<Server name>]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。|
 媒體：安裝|指定映射類型。 請注意，此選項必須設定為 [**安裝**]。|
 |\mediaGroup：<Image group name>]|指定包含影像的映射群組。 如果未指定映射組名，且伺服器上只存在一個映射群組，則會使用該映射群組。 如果伺服器上有一個以上的映射群組，您就必須使用這個選項來指定映射群組。|
 |/Architecture： {x86 &#124; ia64 &#124; x64}|指定與傳輸相關聯之開機映射的架構。 由於不同架構中的開機映射可能會有相同的映射名稱，因此您應該指定架構，以確保使用正確的映射。|
 |[/Filename：<File name>]|指定包含影像的檔案。 如果無法以名稱唯一識別映射，您就必須使用這個選項來指定檔案名。|
 |[/Show：用戶端]<p>或<p>[/details：用戶端]|顯示連線到多播傳輸的用戶端電腦的相關資訊。|
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 **Windows Server 2008**若要查看名為 Vista 與 Office 之映射傳輸的相關資訊，請輸入下列其中一項：
 ```
 wdsutil /Get-MulticastTransmissiomedia:Vista with Officemediatype:Install
@@ -73,9 +73,9 @@ wdsutil /Get-MulticastTransmission /Server:MyWDSServemedia:Vista with Officemedi
 ```
 wdsutil /Get-MulticastTransmission /Server:MyWDSServemedia:X64 Boot Imagemediatype:Boot /Architecture:x64 /Filename:boot.wim /details:Clients
 ```
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 - [命令列語法索引鍵](command-line-syntax-key.md)
 [使用 AllMulticastTransmissions 命令](using-the-get-allmulticasttransmissions-command.md)
-使用[MulticastTransmission 命令](using-the-new-multicasttransmission-command.md)，
-[使用 MulticastTransmission 命令](using-the-remove-multicasttransmission-command.md)
+使用[MulticastTransmission 命令](using-the-new-multicasttransmission-command.md)
+使用[MulticastTransmission 命令](using-the-remove-multicasttransmission-command.md)
 [子命令： start-MulticastTransmission](subcommand-start-multicasttransmission.md)

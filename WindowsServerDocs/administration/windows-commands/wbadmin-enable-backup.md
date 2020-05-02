@@ -1,6 +1,6 @@
 ---
 title: wbadmin 啟用備份
-description: 適用于 wbadmin 的 Windows 命令主題 [啟用備份]，這會建立並啟用每日備份排程，或修改現有的備份排程。
+description: Wbadmin 「啟用備份」的參考主題，它會建立並啟用每日備份排程，或修改現有的備份排程。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f4c5abdec29ed519a2894a26814711e32e3b8672
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a44cfca936e5349e1757d66a4b7b6a8195b44228
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829791"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720184"
 ---
 # <a name="wbadmin-enable-backup"></a>wbadmin 啟用備份
 
@@ -23,8 +23,6 @@ ms.locfileid: "80829791"
 建立並啟用每日備份排程，或修改現有的備份排程。 若未指定任何參數，則會顯示目前排定的備份設定。
 
 若要設定或修改每日備份排程，您必須是**Administrators**或**backup Operators**群組的成員。 此外，您必須從提升許可權的命令提示字元執行**wbadmin** 。 （若要開啟提升許可權的命令提示字元，以滑鼠右鍵按一下**命令提示**字元，然後按一下 [以**系統管理員身分執行**]）
-
-如需如何使用此子命令的範例，請參閱[範例](#BKMK_examples)。
 
 ## <a name="syntax"></a>語法
 
@@ -78,7 +76,7 @@ wbadmin enable backup
 
 |參數|描述|
 |---------|-----------|
-|-addtarget|針對 Windows Server 2008，指定備份的儲存位置。 需要您指定備份的目的地做為磁片識別碼（請參閱備註）。 磁片在使用前會先格式化，並會永久清除其上的任何現有資料。</br>針對 Windows Server 2008 R2 和更新版本，指定備份的儲存位置。 需要您將位置指定為遠端共用資料夾的磁片、磁片區或通用命名慣例（UNC）路徑（\\\\\<servername >\<共用名稱 >\)。 根據預設，備份將會儲存在： \\\\<servername>\<共用名稱 > \WindowsImageBackup\<ComputerBackedUp >\. 如果您指定磁片，則會在使用之前先格式化磁片，而且會永久清除其上的任何現有資料。 如果您指定共用資料夾，就無法加入更多位置。 您一次只能指定一個共用資料夾做為儲存位置。</br>重要事項：如果您將備份儲存到遠端共用資料夾，當您再次使用相同的資料夾來備份相同的電腦時，將會覆寫該備份。 此外，如果備份作業失敗，因為舊備份被覆寫，但新備份無法使用，您最後可能沒有任何備份。 在遠端共用資料夾中建立子資料夾以組織備份，可以避免此狀況。 如果您這樣做，子資料夾將需要上層資料夾空間的兩倍。</br>只能在單一命令中指定一個位置。 您可以再次執行命令來新增多個磁片區和磁片備份儲存位置。|
+|-addtarget|針對 Windows Server 2008，指定備份的儲存位置。 需要您指定備份的目的地做為磁片識別碼（請參閱備註）。 磁片在使用前會先格式化，並會永久清除其上的任何現有資料。</br>針對 Windows Server 2008 R2 和更新版本，指定備份的儲存位置。 需要您將位置指定為遠端共用資料夾的磁片、磁片區或通用命名慣例（UNC）路徑（\\\\\<servername>\<共用名稱>。 \) 根據預設，備份會儲存在： \\ \\ <servername> \<共用名稱> \windowsimagebackup\<ComputerBackedUp>\. 如果您指定磁片，則會在使用之前先格式化磁片，而且會永久清除其上的任何現有資料。 如果您指定共用資料夾，就無法加入更多位置。 您一次只能指定一個共用資料夾做為儲存位置。</br>重要事項：如果您將備份儲存到遠端共用資料夾，當您再次使用相同的資料夾來備份相同的電腦時，將會覆寫該備份。 此外，如果備份作業失敗，因為舊備份被覆寫，但新備份無法使用，您最後可能沒有任何備份。 在遠端共用資料夾中建立子資料夾以組織備份，可以避免此狀況。 如果您這樣做，子資料夾將需要上層資料夾空間的兩倍。</br>只能在單一命令中指定一個位置。 您可以再次執行命令來新增多個磁片區和磁片備份儲存位置。|
 |-removetarget|指定您想要從現有的備份排程中移除的儲存位置。 需要您將位置指定為磁片識別碼（請參閱備註）。|
 |-schedule|指定建立備份的當日時間，格式為 HH： MM 並以逗號分隔。|
 |-include|針對 Windows Server 2008，指定要包含在備份中的磁片區磁碟機號、磁片區掛接點或以 GUID 為基礎的磁片區名稱清單（以逗號分隔）。</br>針對 Windows Server 2008 R2and 之後，指定要包含在備份中的專案清單（以逗號分隔）。 您可以包含多個檔案、資料夾或磁片區。 您可以使用磁片區磁碟機號、磁片區掛接點或以 GUID 為基礎的磁片區名稱來指定磁片區路徑。 如果您使用以 GUID 為基礎的磁片區名稱，則應該以反斜線（\)來結束。 指定檔案的路徑時，您可以在檔案名中使用萬用字元（*）。|
@@ -99,33 +97,33 @@ wbadmin enable backup
 
 若要查看磁片的磁片識別碼值，請輸入**wbadmin 取得磁片**。
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 下列範例會示範如何在不同的備份案例中使用**wbadmin enable backup**命令：
 
 案例 #1
-- 排程硬碟磁碟機 e：、d:\mountpoint 和 \\\\的備份？ \Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
+- 排程硬碟磁片磁碟機 e：、d:\mountpoint 和\\ \\？ \Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\ 的備份
 - 將檔案儲存至磁片 DiskID
-- 每天上午9:00 執行備份 和下午6:00
+- 每天上午9:00 執行備份 和 06:00:00 執行報表，
   ```
   wbadmin enable backup -addtarget:DiskID -schedule:09:00,18:00 -include:e:,d:\mountpoint,\\?\Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
   ```
   案例 #2
-- 將資料夾 d:\documents 的備份排程到網路位置 \\\\backupshare\backup1
+- 將資料夾 d:\documents 的備份排程到網路位置\\ \\backupshare\backup1
 - 使用備份管理員 Aaren Ekelund （aekel）的網路認證，其為網域 CONTOSOEAST 的成員，以驗證網路共用的存取權。 Aaren 的密碼為 *$ 3hM9 ^ 5lp*。
 - 每天上午12:00 執行備份 和下午7:00
   ```
   wbadmin enable backup –addtarget:\\backupshare\backup1 –include: d:\documents –user:CONTOSOEAST\aekel –password:$3hM9^5lp –schedule:00:00,19:00
   ```
   案例 #3
-- 將磁片區 t：和資料夾 d:\documents 的備份排程到磁片磁碟機 h：，但將資料夾 d:\documents 排除\~tmp
+- 將磁片區 t：和資料夾 d:\documents 的備份排程到磁片磁碟機 h：，但排除資料夾\~d:\documents tmp
 - 使用磁碟區陰影複製服務執行完整備份。
 - 每天上午1:00 執行備份
   ```
   wbadmin enable backup –addtarget:H: –include T:,D:\documents –exclude D:\documents\~tmp –vssfull –schedule:01:00
   ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 -   - [命令列語法關鍵](command-line-syntax-key.md)
 -   [Restore](wbadmin.md)

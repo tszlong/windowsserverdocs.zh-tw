@@ -1,6 +1,6 @@
 ---
 title: ver
-description: 適用于 ver 的 Windows 命令主題，它會顯示作業系統版本號碼。
+description: Ver 的參考主題，會顯示作業系統版本號碼。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d0d0676dcfa6546e4bbf74c4c58a24f51744d00f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7050dddda6cc27c50980f2e44f40e1f682c1d375
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80830191"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720306"
 ---
 # <a name="ver"></a>ver
 
@@ -24,7 +24,7 @@ ms.locfileid: "80830191"
 
 Windows 命令提示字元（Cmd.exe）中支援此命令，但在 PowerShell 中則否。
 
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>語法
 
@@ -38,7 +38,7 @@ ver
 |---------|-----------|
 |/?|在命令提示字元顯示說明。|
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 若要從命令 shell （cmd.exe）取得作業系統的版本號碼，請輸入：
 
@@ -53,6 +53,6 @@ $PSVersionTable.BuildVersion
 ````
 
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

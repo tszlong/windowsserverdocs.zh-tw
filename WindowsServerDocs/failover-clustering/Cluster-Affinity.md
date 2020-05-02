@@ -1,5 +1,5 @@
 ---
-title: 叢集親和性
+title: 叢集同質
 ms.prod: windows-server
 manager: eldenc
 ms.technology: failover-clustering
@@ -8,22 +8,22 @@ author: johnmarlin-msft
 ms.author: johnmar
 ms.date: 03/07/2019
 description: 本文說明容錯移轉叢集親和性和 antiAffinity 層級
-ms.openlocfilehash: c9910cac602802b753391fad1009fb7f1fa3d2f2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b0c2209680f3c34ac8376d5662620595aff92c0b
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80828281"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720608"
 ---
-# <a name="cluster-affinity"></a>叢集親和性
+# <a name="cluster-affinity"></a>叢集同質
 
-> 適用于： Windows Server 2019、Windows Server 2016
+> 適用於：Windows Server 2019、Windows Server 2016
 
-容錯移轉叢集可以保存許多可在節點之間移動並執行的角色。  有些時候，某些角色（例如虛擬機器、資源群組等）不應該在相同的節點上執行。  這可能是因為資源耗用量、記憶體使用量等。 例如，有兩部虛擬機器耗用記憶體和 CPU，而且如果兩部虛擬機器在相同的節點上執行，則其中一部或兩部虛擬機器可能會影響效能問題。  本文將說明叢集 antiaffinity 層級，以及您可以如何使用它們。
+容錯移轉叢集可以保存許多可在節點之間移動並執行的角色。 有些時候，某些角色（例如虛擬機器、資源群組等）不應該在相同的節點上執行。  這可能是因為資源耗用量、記憶體使用量等。 例如，有兩部虛擬機器耗用記憶體和 CPU，而且如果兩部虛擬機器在相同的節點上執行，則其中一部或兩部虛擬機器可能會影響效能問題。  本文將說明叢集 antiaffinity 層級，以及您可以如何使用它們。
 
 ## <a name="what-is-affinity-and-antiaffinity"></a>什麼是親和性和 AntiAffinity？
 
-[相似性] 是您設定的規則，可在兩個或多個角色（i、e、虛擬機器、資源群組等）之間建立關聯性，以將它們保持在一起。  AntiAffinity 是相同的，但用於嘗試並讓指定的角色彼此分開。  容錯移轉叢集會使用 AntiAffinity 作為其角色。  更明確地說，在角色上定義的[AntiAffinityClassNames](https://docs.microsoft.com/previous-versions/windows/desktop/mscs/groups-antiaffinityclassnames)參數，因此不會在相同的節點上執行。  
+[相似性] 是您設定的規則，可在兩個或多個角色（i、e、虛擬機器、資源群組等）之間建立關聯性，以將它們保持在一起。  AntiAffinity 是相同的，但用於嘗試並讓指定的角色彼此分開。 容錯移轉叢集會使用 AntiAffinity 作為其角色。  更明確地說，在角色上定義的[AntiAffinityClassNames](https://docs.microsoft.com/previous-versions/windows/desktop/mscs/groups-antiaffinityclassnames)參數，因此不會在相同的節點上執行。  
 
 ## <a name="antiaffinityclassnames"></a>AntiAffinityClassnames
 
@@ -81,13 +81,10 @@ AntiAffinityClassName 參數是「軟性」區塊。  也就是說，它會嘗�
     Group1     Offline(Anti-Affinity Conflict)
     Group2     Online
 
-## <a name="additional-comments"></a>其他批註
+## <a name="additional-comments"></a>其他註解
 
 - 請確定您使用的是適當的 AntiAffinity 設定（視需求而定）。
 - 請記住，在雙節點案例和 ClusterEnforcedAntiAffinity 中，如果某個節點已關閉，這兩個群組將不會執行。  
 
 - 在群組上使用慣用的擁有者，可以在三個或更多節點叢集中與 AntiAffinity 結合。
 - 只有在資源回收之後，才會發生 AntiAffinityClassNames 和 ClusterEnforcedAntiAffinity 設定。 亦即. 您可以設定它們，但如果兩個群組在設定的相同節點上都處於線上狀態，則兩者都會繼續保持線上狀態。
-
-
-

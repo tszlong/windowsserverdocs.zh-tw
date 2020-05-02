@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setproxysettings
-description: 適用于**bitsadmin setproxysettings**的 Windows 命令主題，其會設定指定之作業的 proxy 設定。
+description: Bitsadmin setproxysettings 命令的參考主題，其會設定指定之作業的 proxy 設定。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0ea92383d9bd09372d21d3c1da84db060b0a9958
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 7f7c54b3081c85756735d921fb70f726ba60d833
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122759"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720495"
 ---
 # <a name="bitsadmin-setproxysettings"></a>bitsadmin setproxysettings
 
@@ -30,17 +30,17 @@ bitsadmin /setproxysettings <job> <usage> [list] [bypass]
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| 工作 | 作業的顯示名稱或 GUID。 |
+| 作業 | 作業的顯示名稱或 GUID。 |
 | usage | 設定 proxy 使用方式，包括：<ul><li>**LNK-WHAT-ARE-PRECONFIG-SOLUTIONS.** 使用擁有者的 Internet Explorer 預設值。</li><li>**NO_PROXY。** 不要使用 proxy 伺服器。</li><li>**覆寫.** 使用明確的 proxy 清單和略過清單。 Proxy 清單和 proxy 略過資訊必須遵循。</li><li>**檢測.** 會自動偵測 proxy 設定。</li></ul> |
 | list | 當*Usage*參數設定為 OVERRIDE 時使用。 必須包含要使用的 proxy 伺服器清單（以逗號分隔）。 |
-| 不必 | 當*Usage*參數設定為 OVERRIDE 時使用。 必須包含以空格分隔的主機名稱或 IP 位址清單，或兩者都不會透過 proxy 路由傳送。 這可以 `<local>` 來參考相同 LAN 上的所有伺服器。 Null 的值可用於空的 proxy 略過清單。 |
+| 略過 | 當*Usage*參數設定為 OVERRIDE 時使用。 必須包含以空格分隔的主機名稱或 IP 位址清單，或兩者都不會透過 proxy 路由傳送。 這可能是`<local>`指在相同 LAN 上的所有伺服器。 Null 的值可用於空的 proxy 略過清單。 |
 
 ## <a name="examples"></a>範例
 
-下列範例會設定名為*myDownloadJob*之作業的 proxy 設定。
+若要使用名為*myDownloadJob*之作業的各種使用方式選項來設定 proxy 設定：
 
 ```
-C:\>bitsadmin /setproxysettings myDownloadJob PRECONFIG
+bitsadmin /setproxysettings myDownloadJob PRECONFIG
 ```
 
 ```
@@ -54,6 +54,8 @@ bitsadmin /setproxysettings myDownloadJob OVERRIDE proxy1:80
 bitsadmin /setproxysettings myDownloadJob OVERRIDE proxy1,proxy2,proxy3 NULL
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

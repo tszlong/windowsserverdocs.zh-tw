@@ -1,6 +1,6 @@
 ---
 title: winpop
-description: 適用于 winpop 的 windows 命令主題，其已被取代，而且不保證在未來的 Windows 版本中受到支援。
+description: Winpop 的參考主題，其已被取代，而且不保證在未來的 Windows 版本中受到支援。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0bd75eb6072cc1999ef849b43009cae8e8133592
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b7b9077e0d0194e86200ab3710babb23bc308d83
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829221"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720692"
 ---
 # <a name="winpop"></a>winpop
 

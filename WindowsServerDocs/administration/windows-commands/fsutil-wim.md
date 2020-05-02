@@ -9,15 +9,15 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: d4a8f2c008c1a28e498edb7726a8c209e91f41af
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 12a9965515ef26e0cbccb2d20d25f66b54b23b8a
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80843921"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720056"
 ---
 # <a name="fsutil-wim"></a>Fsutil wim
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows 10
+> 適用於：Windows Server (半年通道)、Windows Server 2019、Windows Server 2016、Windows 10
 
 提供探索和管理 Windows 映像（WIM）支援之檔案的功能。
 
@@ -35,11 +35,11 @@ fsutil wim [removewim] <drive name> <data source>
 |參數|描述|
 |-------------|---------------|
 |enumfiles|列舉支援 WIM 的檔案。|
-|\<磁片磁碟機名稱 >|指定磁片磁碟機名稱。|
-|\<資料來源 >|指定資料來源。|
+|\<磁片磁碟機名稱>|指定磁片磁碟機名稱。|
+|\<資料來源>|指定資料來源。|
 |enumwims|列舉支援的 WIM 檔案。|
 |queryfile|查詢檔案是否受到 WIM 的支援，如果是，則會顯示 WIM 檔案的詳細資料。|
-|\<filename >|指定檔案名。|
+|\<檔案名>|指定檔案名。|
 |removewim|從備份檔案移除 WIM。|
 
 

@@ -1,6 +1,6 @@
 ---
 title: winnt
-description: Winnt 的 Windows 命令主題已被取代，在未來的 Windows 版本中不保證會受到支援。
+description: Winnt 的參考主題已被取代，不保證在未來的 Windows 版本中受到支援。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ee7fdccef796ececf5464fb5cefe64c93c6509d7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: df6a933d54e4600b2ae220841d86c82b768074fd
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829181"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720707"
 ---
 # <a name="winnt"></a>winnt
 

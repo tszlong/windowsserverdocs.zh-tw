@@ -1,6 +1,6 @@
 ---
 title: 移除-DriverGroupPackage
-description: DriverGroupPackage 的 Windows 命令主題，這會移除伺服器上驅動程式群組中的驅動程式套件。
+description: DriverGroupPackage 的參考主題，它會從伺服器上的驅動程式群組移除驅動程式套件。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9dd30f430bd91bf2680cd1138270526bce965f9d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c63c6ef0ed9af49506d80a715f23111bfd62070f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80830461"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720405"
 ---
 # <a name="remove-drivergrouppackage"></a>移除-DriverGroupPackage
 
@@ -32,11 +32,11 @@ WDSUTIL /Remove-DriverGroupPackage /DriverGroup:<Group Name> [/Server:<Server Na
 
 |參數|描述|
 |---------|-----------|
-|[/Server：\<伺服器名稱 >]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或 FQDN。 如果未指定伺服器名稱，則會使用本機伺服器。|
-|[/DriverPackage：\<名稱 >]|指定要移除之驅動程式套件的名稱。|
-|[/PackageId：\<識別碼 >]|指定要移除之驅動程式套件的 Windows 部署服務識別碼。 如果驅動程式套件無法以名稱唯一識別，您就必須指定此選項。|
+|[/Server：\<伺服器名稱>]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或 FQDN。 如果未指定伺服器名稱，則會使用本機伺服器。|
+|[/DriverPackage：\<Name>]|指定要移除之驅動程式套件的名稱。|
+|[/PackageId：\<ID>]|指定要移除之驅動程式套件的 Windows 部署服務識別碼。 如果驅動程式套件無法以名稱唯一識別，您就必須指定此選項。|
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 ```
 WDSUTIL /Remove-DriverGroupPackage /DriverGroup:PrinterDrivers /PackageId:{4D36E972-E325-11CE-BFC1-08002BE10318}
@@ -45,6 +45,6 @@ WDSUTIL /Remove-DriverGroupPackage /DriverGroup:PrinterDrivers /PackageId:{4D36E
 WDSUTIL /Remove-DriverGroupPackage /DriverGroup:PrinterDrivers /DriverPackage:XYZ
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

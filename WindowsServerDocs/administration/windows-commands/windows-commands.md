@@ -1,6 +1,6 @@
 ---
 title: Windows 命令
-description: Windows 命令
+description: 參考
 ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c703d07c-8227-4e86-94a6-8ef390f94cdc
@@ -9,12 +9,12 @@ ms.author: jgerend
 manager: dongill
 ms.date: 06/26/2019
 ms.prod: windows-server
-ms.openlocfilehash: 9d68e2becbf9c6522be7e1ff6e6742d44f3a8247
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7baec3bbe532bbcedb8c17628fd88d2c8eac34c6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829231"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720726"
 ---
 # <a name="windows-commands"></a>Windows 命令
 
@@ -25,37 +25,37 @@ ms.locfileid: "80829231"
 若要尋找特定命令的相關資訊，請在下列 a-z 功能表中，按一下命令開頭的字母，然後按一下命令名稱。
 
 [A](#a) |
-[B](#b) | 
-[C](#c) | 
-[D](#d) | 
-[E](#e) | 
-[F](#f) | 
-[G](#g) | 
-[H](#h) | 
-[ |
-](#i) [J](#j) | 
-[K](#k) | 
-[L](#l) | 
-[M](#m) | 
-[N](#n) | 
-[O](#o) | 
-[P](#p) [ | 
-](#u) [Q](#q) [ | 
-](#v) [R](#r) | 
- | 
-[S](#s) [ | 
-](#t) [X](#x) | [W](#w)Y |Z | 
- | 
- | 
+[B](#b)  | 
+ [ ](#v) [ ](#c)  | 
+ [ ](#r) [ ](#d)  | 
+ [ ](#i)  | 
+ [ ](#u) [ ](#f)  | 
+ [ ](#t) [ ](#e)  | 
+ [ ](#q) [ ](#g)  | 
+ [ ](#s) [ ](#h)  | 
+ [ ](#p) [ ](#j)  | 
+ [ ](#x) [ ](#k)  | 
+ [ ](#w) [ ](#o) [ ](#m) [ ](#n) [ ](#l)C D E F G H I | 
+J K L M | 
+N | 
+O P Q R S T U W X | | 
+  | 
+  |
+  | 
+  | 
+  | 
+  | 
+  | 
+  | 
+Y |Z
 
-
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>Prerequisites
 
 本主題所包含的資訊適用于：
 
 -   Windows Server 2019
 -   Windows Server (半年通道)
--   Windows Server 2016
+-   Windows Server 2016
 -   Windows Server 2012 R2
 -   Windows Server 2012 
 -   Windows Server 2008 R2
@@ -76,7 +76,7 @@ PowerShell 的設計目的是要擴充命令 shell 的功能，以執行稱為 C
 >您也可以下載並安裝 powershell [Core](https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6)，也就是 powershell 的開放原始碼版本。 
 
 > [!CAUTION]
-> 不當編輯登錄可能會造成系統嚴重受損。 在對登錄進行下列變更之前，您應該先備份電腦上任何重要的資料。
+> 不正確地編輯登錄可能會對系統造成嚴重的損害。 在對登錄進行下列變更之前，您應該先備份電腦上任何重要的資料。
 
 > [!NOTE]
 > 若要在電腦或使用者登入會話的命令 shell 中啟用或停用檔案和目錄名稱自動完成，請執行**regedit.exe** ，並設定下列**reg_DWOrd 值**：
@@ -90,29 +90,29 @@ PowerShell 的設計目的是要擴充命令 shell 的功能，以執行稱為 C
 若要尋找特定 Windows 命令的相關資訊，請在下列 a-z 功能表中，按一下命令開頭的字母，然後按一下命令名稱。
 
 [A](#a) |
-[B](#b) | 
-[C](#c) | 
-[D](#d) | 
-[E](#e) | 
-[F](#f) | 
-[G](#g) | 
-[H](#h) | 
-[ |
-](#i) [J](#j) | 
-[K](#k) | 
-[L](#l) | 
-[M](#m) | 
-[N](#n) | 
-[O](#o) | 
-[P](#p) [ | 
-](#u) [Q](#q) [ | 
-](#v) [R](#r) | 
- | 
-[S](#s) [ | 
-](#t) [X](#x) | [W](#w)Y |Z | 
- | 
- | 
-
+[B](#b)  | 
+ [ ](#v) [ ](#c)  | 
+ [ ](#r) [ ](#d)  | 
+ [ ](#i)  | 
+ [ ](#u) [ ](#f)  | 
+ [ ](#t) [ ](#e)  | 
+ [ ](#q) [ ](#g)  | 
+ [ ](#s) [ ](#h)  | 
+ [ ](#p) [ ](#j)  | 
+ [ ](#x) [ ](#k)  | 
+ [ ](#w) [ ](#o) [ ](#m) [ ](#n) [ ](#l)C D E F G H I | 
+J K L M | 
+N | 
+O P Q R S T U W X | | 
+  | 
+  |
+  | 
+  | 
+  | 
+  | 
+  | 
+  | 
+Y |Z
 
 ### <a name="a"></a>A
 -   [append](append.md)
@@ -155,7 +155,7 @@ PowerShell 的設計目的是要擴充命令 shell 的功能，以執行稱為 C
   -   [bitsadmin getnotifyflags](bitsadmin-getnotifyflags.md)
   -   [bitsadmin getnotifyinterface](bitsadmin-getnotifyinterface.md)
   -   [bitsadmin getowner](bitsadmin-getowner.md)
-  -   [bitsadmin 取得優先順序](bitsadmin-getpriority.md)
+  -   [bitsadmin get priority](bitsadmin-getpriority.md)
   -   [bitsadmin getproxybypasslist](bitsadmin-getproxybypasslist.md)
   -   [bitsadmin getproxylist](bitsadmin-getproxylist.md)
   -   [bitsadmin getproxyusage](bitsadmin-getproxyusage.md)
@@ -270,7 +270,7 @@ PowerShell 的設計目的是要擴充命令 shell 的功能，以執行稱為 C
 -   [expand](expand.md)
 -   [extract](extract.md)
 
-### <a name="f"></a>華氏 (F)
+### <a name="f"></a>F
 - [fc](fc.md)
 - [find](find.md)
 - [findstr](findstr.md)
@@ -361,10 +361,10 @@ PowerShell 的設計目的是要擴充命令 shell 的功能，以執行稱為 C
 - [logman](logman.md)
   -   [logman create](logman-create.md)
   -   [logman query](logman-query.md)
-  -   [logman start & 124;停止](logman-start-stop.md)
+  -   [logman 開始 &124;停止](logman-start-stop.md)
   -   [logman delete](logman-delete.md)
   -   [logman update](logman-update.md)
-  -   [logman 匯入 & 124;進出口](logman-import-export.md)
+  -   [logman 匯入 &124;進出口](logman-import-export.md)
 - [logoff](logoff.md)
 - [lpq](lpq.md)
 - [lpr](lpr.md)

@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setreplyfilename
-description: 適用于**bitsadmin setreplyfilename**的 Windows 命令主題，其指定包含伺服器上傳-回復之檔案的路徑。
+description: Bitsadmin setreplyfilename 命令的參考主題，其指定包含伺服器上傳-回復之檔案的路徑。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6c476073cb22ff66bcefc75a45fcd0526cdf3d25
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 2f0bd184db274dc915817ff3e26ae2c686190c27
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122730"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720482"
 ---
 # <a name="bitsadmin-setreplyfilename"></a>bitsadmin setreplyfilename
 
@@ -33,17 +33,19 @@ bitsadmin /setreplyfilename <job> <file_path>
 
 | 參數 | 描述 |
 | -------------- | -------------- |
-| 工作 | 作業的顯示名稱或 GUID。 |
+| 作業 | 作業的顯示名稱或 GUID。 |
 | file_path | 放置伺服器上傳-回復的位置。 |
 
 ## <a name="examples"></a>範例
 
-下列範例會設定名為*myDownloadJob*之作業的上傳-回復檔案名檔案路徑。
+若要設定名為*myDownloadJob*之作業的上傳-回復檔案名檔案路徑：
 
 ```
-C:\>bitsadmin /setreplyfilename myDownloadJob c:\upload-reply
+bitsadmin /setreplyfilename myDownloadJob c:\upload-reply
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

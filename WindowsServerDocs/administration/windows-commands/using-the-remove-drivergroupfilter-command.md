@@ -1,6 +1,6 @@
 ---
 title: 移除-DriverGroupFilter
-description: DriverGroupFilter 的 Windows 命令主題，它會從伺服器上的驅動程式群組移除篩選規則。
+description: DriverGroupFilter 的參考主題，它會從伺服器上的驅動程式群組移除篩選規則。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 08914b66c37d327ddef2a50d2f98adcfdbb88ffe
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: dd6fcbc8f87539ac687927b9e58ed15edb524ef6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80830491"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720407"
 ---
 # <a name="remove-drivergroupfilter"></a>移除-DriverGroupFilter
 
@@ -32,11 +32,11 @@ WDSUTIL /Remove-DriverGroupFilter /DriverGroup:<Group Name> [/Server:<Server nam
 
 |參數|描述|
 |---------|-----------|
-|/DriverGroup：\<組名 >|指定驅動程式群組的名稱。|
-|[/Server：\<伺服器名稱 >]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或 FQDN。 如果未指定伺服器名稱，則會使用本機伺服器。|
-|[/FilterType：\<FilterType >]|指定要從群組中移除的篩選準則類型。 \<FilterType > 可以是下列其中一項：</br>**BiosVendor**</br>**BiosVersion**</br>**ChassisType**</br>**製造商**</br>**Uuid**</br>**OsVersion**</br>**OsEdition**</br>**OsLanguage**|
+|/DriverGroup：\<組名>|指定驅動程式群組的名稱。|
+|[/Server：\<伺服器名稱>]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或 FQDN。 如果未指定伺服器名稱，則會使用本機伺服器。|
+|[/FilterType：\<FilterType>]|指定要從群組中移除的篩選準則類型。 \<FilterType> 可以是下列其中一項：</br>**BiosVendor**</br>**BiosVersion**</br>**ChassisType**</br>**製造商**</br>**Uuid**</br>**OsVersion**</br>**OsEdition**</br>**OsLanguage**|
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 若要移除篩選，請輸入下列其中一項：
 ```
@@ -46,6 +46,6 @@ WDSUTIL /Remove-DriverGroupFilter /DriverGroup:PrinterDrivers /FilterType:Manufa
 WDSUTIL /Remove-DriverGroupFilter /DriverGroup:PrinterDrivers /FilterType:Manufacturer /FilterType:OSLanguage
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

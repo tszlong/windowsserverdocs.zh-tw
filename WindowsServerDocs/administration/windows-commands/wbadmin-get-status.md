@@ -1,6 +1,6 @@
 ---
 title: wbadmin get 狀態
-description: 適用于 wbadmin get status 的 Windows 命令主題，它會報告目前正在執行之備份或復原作業的狀態。
+description: Wbadmin get status 的參考主題，它會報告目前正在執行之備份或復原作業的狀態。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f8ebf1a078632f78dc8d58c232550345f0de78f2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1e8e5194cd49770f72ce810f4652d9bc98af75e2
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829741"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720162"
 ---
 # <a name="wbadmin-get-status"></a>wbadmin get 狀態
 
@@ -39,7 +39,7 @@ wbadmin get status
 -   在目前的備份或復原作業完成之前，這個子命令不會停止，即使您關閉命令視窗，子命令仍會繼續執行。
 -   如果您想要停止目前的備份或復原作業，請使用**wbadmin stop job**子命令。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 -   - [命令列語法關鍵](command-line-syntax-key.md)
 -   [Restore](wbadmin.md)

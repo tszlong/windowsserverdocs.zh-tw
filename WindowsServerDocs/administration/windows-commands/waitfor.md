@@ -1,6 +1,6 @@
 ---
 title: waitfor
-description: Waitfor 的 Windows 命令主題，它會傳送或等候系統上的信號。 **Waitfor**是用來同步處理網路上的電腦。
+description: Waitfor 的參考主題，它會傳送或等候系統上的信號。 **Waitfor**是用來同步處理網路上的電腦。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4542fc9d231b8150ab89e07e173d9671d6b7a3f3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1264fa3bffde303577bd56a0f1f68a6d7b2d98c2
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829931"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720217"
 ---
 # <a name="waitfor"></a>waitfor
 
@@ -22,7 +22,7 @@ ms.locfileid: "80829931"
 
 在系統上傳送或等候信號。 **Waitfor**是用來同步處理網路上的電腦。
 
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>語法
 
@@ -35,12 +35,12 @@ waitfor [/t <Timeout>] <SignalName>
 
 |       參數       |                                                                                         描述                                                                                          |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    /s \<電腦 >     | 指定遠端電腦的名稱或 IP 位址（請勿使用反斜線）。 預設是本機電腦。 這個參數會套用至命令中指定的所有檔案和資料夾。 |
-| /u [\<Domain >\]<User> |                              使用指定之使用者帳戶的認證來執行腳本。 根據預設， **waitfor**會使用目前使用者的認證。                               |
-|   /p [\<密碼 >]    |                                                    指定 **/u**參數中指定之使用者帳戶的密碼。                                                     |
+|    /s \<Computer>     | 指定遠端電腦的名稱或 IP 位址（請勿使用反斜線）。 預設是本機電腦。 這個參數會套用至命令中指定的所有檔案和資料夾。 |
+| /u [\<Domain>\]<User> |                              使用指定之使用者帳戶的認證來執行腳本。 根據預設， **waitfor**會使用目前使用者的認證。                               |
+|   /p [\<Password>]    |                                                    指定 **/u**參數中指定之使用者帳戶的密碼。                                                     |
 |          /si          |                                                                        透過網路傳送指定的信號。                                                                        |
-|     /t \<Timeout >     |                                              指定等候信號的秒數。 根據預設， **waitfor**會無限期地等候。                                               |
-|     \<SignalName >     |                                                指定**waitfor**等候或傳送的信號。 *SignalName*不區分大小寫。                                                 |
+|     /t \<Timeout>     |                                              指定等候信號的秒數。 根據預設， **waitfor**會無限期地等候。                                               |
+|     \<SignalName>     |                                                指定**waitfor**等候或傳送的信號。 *SignalName*不區分大小寫。                                                 |
 |          /?           |                                                                             在命令提示字元顯示說明。                                                                             |
 
 ## <a name="remarks"></a>備註
@@ -53,7 +53,7 @@ waitfor [/t <Timeout>] <SignalName>
 -   只有當電腦與傳送信號的電腦位於相同網域時，才會收到信號。
 -   當您測試軟體組建時，可以使用**waitfor** 。 例如，編譯電腦可以在編譯成功完成之後，傳送信號給執行**waitfor**的數部電腦。 收到信號時，包含**waitfor**的批次檔可指示電腦立即開始安裝軟體，或在已編譯的組建上執行測試。
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 若要等到收到 espresso\build007 信號，請輸入：
 ```
@@ -70,6 +70,6 @@ waitfor /t 10 espresso\build007
 waitfor /si espresso\build007
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

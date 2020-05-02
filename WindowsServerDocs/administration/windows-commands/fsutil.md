@@ -9,20 +9,20 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 08/21/2018
-ms.openlocfilehash: 717c287995be2ab56bd49f2f24d46001f77e0e68
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a12647908811066293772ab1e9354a0d67874d88
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80843901"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720053"
 ---
 # <a name="fsutil"></a>Fsutil
 
->適用于： Windows Server （半年通道）、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7
 
 執行與檔案配置表（FAT）和 NTFS 檔案系統相關的工作，例如管理重新分析點、管理稀疏檔案或卸載磁片區。 如果使用時不含參數， **Fsutil**會顯示一份支援的子命令清單。 
 
-> [!Note] 
+> [!NOTE] 
 > 您必須以系統管理員或 Administrators 群組成員的身分登入，才能使用 Fsutil。 Fsutil 命令的功能非常強大，只應供具備 Windows 作業系統全面知識的先進使用者使用。
 >
 >您必須先啟用適用于 Linux 的 Windows 子系統，才能執行**Fsutil**。 以系統管理員身分在 PowerShell 中執行下列命令，以啟用此選擇性功能：
@@ -34,7 +34,7 @@ ms.locfileid: "80843901"
 
 ### <a name="parameters"></a>參數
 
-|來 |描述|
+|子命令 |描述|
 |---|---|
 |[Fsutil 8dot3name](fsutil-8dot3name.md) | 例如，查詢或變更系統上的簡短名稱行為設定時，會產生8.3 字元長度的檔案名。 移除目錄中所有檔案的簡短名稱。 掃描目錄，並識別從目錄中的檔案移除簡短名稱時可能會受到影響的登錄機碼。|
 |[Fsutil 行為](fsutil-behavior.md) |查詢或設定磁片區行為。|
