@@ -1,6 +1,6 @@
 ---
 title: tsecimp
-description: 適用于 tsecimp 的 Windows 命令主題，它會將可延伸標記語言 (XML) （XML）檔案中的指派資訊匯入至 TAPI 伺服器安全性檔案（Tsec）。
+description: Tsecimp 的參考主題，它會將指派資訊從可延伸標記語言 (XML) （XML）檔案匯入到 TAPI 伺服器安全性檔案（Tsec）。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 30a097bcd25e981f72a421b81b80b595343404ba
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: afd38f7081a9b4674eb6cac26f52849794b8d5e6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80832501"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721247"
 ---
 # <a name="tsecimp"></a>tsecimp
 
@@ -31,9 +31,9 @@ tsecimp /d
 
 |參數|描述|
 |---------|-----------|
-|/f \<Filename >|必要。 指定需匯入其指派資訊的 XML 檔案名稱。|
+|/f \<Filename>|必要。 指定需匯入其指派資訊的 XML 檔案名稱。|
 |/v|驗證 XML 檔案結構，而不要將資訊匯入 Tsec.ini 檔案。|
-|/u|檢查每位使用者是否是 XML 檔案中指定的網域成員。 使用此參數的電腦必須連線到網路。 如果您正在處理大量的使用者指派資訊，此參數可能會大幅降低效能。|
+|/U|檢查每位使用者是否是 XML 檔案中指定的網域成員。 使用此參數的電腦必須連線到網路。 如果您正在處理大量的使用者指派資訊，此參數可能會大幅降低效能。|
 |/d|顯示已安裝的電話語音提供者清單。 對於每個電話語音提供者，會列出相關聯的線路裝置，也會列出與每個線路裝置相關聯的位址和使用者。|
 |/?|在命令提示字元顯示說明。|
 
@@ -152,7 +152,7 @@ tsecimp /d
 
     ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

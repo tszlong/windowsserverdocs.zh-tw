@@ -1,6 +1,6 @@
 ---
-title: 新增
-description: 適用于各種新增命令的 Windows 命令主題。
+title: add
+description: 各種 add 命令的參考主題。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 057db2ece58b2b02adc138bc2645489c47ebe258
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3320a6074a1eb385eeca36207ac699287b0258f9
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80832211"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721150"
 ---
-# <a name="add"></a>新增
+# <a name="add"></a>add
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 ## <a name="subcommands"></a>子
-|來|描述|
+|子命令|描述|
 |-------|--------|
 |[使用 [新增裝置] 命令](using-the-add-device-command.md)|在 active directory 中將預先設置電腦。|
 |[使用新增映射命令](using-the-add-image-command.md)|新增開機或安裝映射。|

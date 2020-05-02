@@ -1,6 +1,6 @@
 ---
-title: 設定
-description: 適用于 set 的 Windows 命令主題，設定 Windows 部署服務伺服器、預先設置的電腦、映射、映射群組和傳輸伺服器的屬性和屬性。
+title: set
+description: Set 的參考主題，設定 Windows 部署服務伺服器、預先設置的電腦、映射、映射群組和傳輸伺服器的屬性和屬性。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,21 +9,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2e47a90137a94d4ada149135ee0b593e0ade0ae3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: dd406a04fdb704ec8e2ee1e9aa3548c130e1089c
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80833051"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721417"
 ---
-# <a name="set"></a>設定
+# <a name="set"></a>set
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 設定 Windows 部署服務伺服器、預先設置的電腦、映射、映射群組和傳輸伺服器的內容和屬性。
 
 ## <a name="subcommands"></a>子
-|來|描述|
+|子命令|描述|
 |-------|--------|
 |[子命令：設定-裝置](subcommand-set-device.md)|變更預先設置之電腦的屬性。 預先設置的電腦是指已連結到 active directory 網域伺服器（AD DS）中電腦帳戶物件的電腦。 預先設置的用戶端也稱為已知的電腦。|
 |[子命令：設定-影像](subcommand-set-image.md)|變更現有影像的屬性。|

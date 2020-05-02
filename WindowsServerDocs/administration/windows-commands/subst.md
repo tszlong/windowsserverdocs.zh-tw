@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 43cbc57aba29ea0b9150dccdfc566a93017a09a5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 62ba0de33e69998e7d3e343b1e53c1de7e630e10
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80833641"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721614"
 ---
 # <a name="subst"></a>subst
 
@@ -22,7 +22,7 @@ ms.locfileid: "80833641"
 
 建立路徑與磁碟機號的關聯。 如果使用時不含參數， **subst**會顯示作用中虛擬磁片磁碟機的名稱。
 
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>語法
 
@@ -35,8 +35,8 @@ subst <Drive1>: /d
 
 |參數|描述|
 |---------|-----------|
-|\<Drive1 >：|指定您要指派路徑的虛擬磁片磁碟機。|
-|[\<Drive2 >：]\<路徑 >|指定您要指派給虛擬磁片磁碟機的實體磁片磁碟機和路徑。|
+|\<Drive1>：|指定您要指派路徑的虛擬磁片磁碟機。|
+|[\<Drive2>：]\<路徑>|指定您要指派給虛擬磁片磁碟機的實體磁片磁碟機和路徑。|
 |/d|刪除替代的（虛擬）磁片磁碟機。|
 |/?|在命令提示字元顯示說明。|
 
@@ -59,7 +59,7 @@ subst <Drive1>: /d
 
     `Invalid parameter - drive1:`
 
-## <a name="examples"></a><a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name="BKMK_examples"></a>範例
 
 若要建立路徑 B:\User\Betty\Forms 的虛擬磁片磁碟機 Z，請輸入：
 ```
@@ -70,6 +70,6 @@ subst z: b:\user\betty\forms
 z: 
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
 title: tpmtool
-description: 適用于 tpmtool 的 Windows 命令主題，可取得信賴平臺模組的相關資訊。
+description: Tpmtool 的參考主題，可取得信賴平臺模組的相關資訊。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -8,19 +8,19 @@ author: ashleytqy
 ms.author: ashleytqy
 manager: ronaldai
 ms.date: 05/07/2019
-ms.openlocfilehash: 14a2401fae008c9749f33b076346fe8df7794d3e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f2e283dd20d22418416958686d77605976923eaf
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80832741"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721334"
 ---
 # <a name="tpmtool"></a>tpmtool
 
 這個公用程式可以用來取得[信賴平臺模組（TPM）](https://docs.microsoft.com/windows/security/information-protection/tpm/trusted-platform-module-overview)的相關資訊。
 
 >[!IMPORTANT]
->預先發行的產品在正式發行前可能會大幅度修改，本文提供有關該產品的一些資訊。 Microsoft 對此處提供的資訊，不做任何明確或隱含的瑕疵擔保。
+>預先發行的產品在正式發行前可能會大幅度修改，本文提供有關該產品的一些資訊。 Microsoft 對本文提供之資訊，不作任何明示或暗示之保證。
 
 如需如何使用此命令的範例，請參閱[範例](#tpmtool_examples)。
 
@@ -36,10 +36,10 @@ tpmtool /parameter [<arguments>]
 |getdeviceinformation|顯示 TPM 的基本資訊。 資訊旗標值的意義可以在[這裡](https://docs.microsoft.com/windows/desktop/SecProv/win32-tpm-isreadyinformation#parameters)找到。|
 |gatherlogs [輸出目錄路徑]|會收集 TPM 記錄，並將它們放在指定的目錄中。 如果該目錄不存在，則會建立它。 根據預設，它們會放在目前的目錄中。 可能產生的檔案包括： </br>-TpmEvents .evtx</br>-TpmInformation .txt</br>-SRTMBoot .dat</br>-SRTMResume .dat</br>-DRTMBoot .dat</br>-DRTMResume .dat</br>|
 |drivertracing [啟動/停止]|啟動/停止收集 TPM 驅動程式追蹤。 追蹤記錄 TPMTRACE 會產生並放在目前的目錄中。|
-|parsetcglogs [-validate （-v）]|顯示已剖析的 TCG 記錄檔（也稱為 Windows 開機設定記錄檔（WBCL））。 您可以在[TCG 網站](https://trustedcomputinggroup.org/resource/pc-client-specific-platform-firmware-profile-specification/)的**事件描述**下找到最新的事件描述。 如果設定了 `-validate` 旗標，會驗證 TPM 上的平臺設定暫存器（PCR）值是否符合記錄檔中的值。|
+|parsetcglogs [-validate （-v）]|顯示已剖析的 TCG 記錄檔（也稱為 Windows 開機設定記錄檔（WBCL））。 您可以在[TCG 網站](https://trustedcomputinggroup.org/resource/pc-client-specific-platform-firmware-profile-specification/)的**事件描述**下找到最新的事件描述。 如果設定`-validate`了旗標，則會驗證 TPM 上的平臺設定暫存器（PCR）值是否符合記錄檔中的值。|
 |/?|在命令提示字元顯示說明。|
 
-## <a name="examples"></a><a name=tpmtool_examples></a>典型
+## <a name="examples"></a><a name=tpmtool_examples></a>範例
 
 若要顯示 TPM 的基本資訊，請輸入：
 ```
@@ -49,7 +49,7 @@ tpmtool getdeviceinformation
 ```
 tpmtool gatherlogs
 ```
-若要收集 TPM 記錄檔，並將它們放在 `C:\Users\Public`中，請輸入：
+若要收集 TPM 記錄並將它們`C:\Users\Public`放入，請輸入：
 ```
 tpmtool gatherlogs C:\Users\Public
 ```

@@ -1,6 +1,6 @@
 ---
-title: 複製
-description: 複製的 Windows 命令主題，它會複製映射或驅動程式群組。
+title: copy
+description: 複製的參考主題，其會複製映射或驅動程式群組。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,21 +9,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8bb5e03a067b5f3d64364001264525a33ba921a5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7c6e5d28f4af5f3e5e4d8496f5abba1b441e9ec3
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80831791"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721025"
 ---
-# <a name="copy"></a>複製
+# <a name="copy"></a>copy
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 複製映射或驅動程式群組。
 
 ## <a name="subcommands"></a>子
-|來|描述|
+|子命令|描述|
 |-------|--------|
 |[使用複製映射命令](using-the-copy-image-command.md)|複製位於相同映射群組內的影像。|
 |[使用 DriverGroup 命令](using-the-copy-drivergroup-command.md)|複製伺服器上現有的驅動程式群組。|

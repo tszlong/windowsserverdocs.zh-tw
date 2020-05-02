@@ -1,6 +1,6 @@
 ---
 title: setx
-description: Setx 的 Windows 命令主題，它會在使用者或系統內容中建立或修改環境變數，而不需要程式設計或編寫腳本。
+description: Setx 的參考主題，它會在使用者或系統內容中建立或修改環境變數，而不需要程式設計或編寫腳本。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 19f6625ffaaf745ae2af26e52986e97382f42702
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 63cfb28770f635f97c8f3c7a701d9e959cee4a05
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834341"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721846"
 ---
 # <a name="setx"></a>setx
 
 在使用者或系統內容中建立或修改環境變數，而不需要程式設計或編寫腳本。 **Setx**命令也會抓取登錄機碼的值，並將它們寫入文字檔。
 
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>語法
 
@@ -34,18 +34,18 @@ setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <FileName>
 
 |         參數          |                                                                                                                                              描述                                                                                                                                              |
 |----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|       /s \<電腦 >       |                                                                                  指定遠端電腦的名稱或 IP 位址。 請勿使用反斜線。 預設值是本機電腦的名稱。                                                                                  |
-| /u [\<Domain >\]<User name> |                                                                                           使用指定之使用者帳戶的認證執行腳本。 預設值是系統許可權。                                                                                            |
-|      /p [\<密碼 >]      |                                                                                                         指定 **/u**參數中指定之使用者帳戶的密碼。                                                                                                         |
-|        \<變數 >         |                                                                                                                 指定您想要設定的環境變數名稱。                                                                                                                  |
-|          \<值 >          |                                                                                                                指定您要設定環境變數的值。                                                                                                                 |
-|         /k \<路徑 >         | 指定根據登錄機碼中的資訊來設定變數。 P*路徑 a)* 會使用下列語法：</br>`\\<HIVE>\<KEY>\...\<Value>`</br>例如，您可以指定下列路徑：</br>`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName` |
-|      /f \<檔案名 >       |                                                                                                                               指定您想要使用的檔案。                                                                                                                                |
-|        /a \<X >，<Y>         |                                                                                                                    指定絕對座標和位移作為搜尋參數。                                                                                                                    |
-|   /r \<X >，<Y> <String>   |                                                                                                            指定**字串**的相對座標和位移作為搜尋參數。                                                                                                            |
+|       /s \<Computer>       |                                                                                  指定遠端電腦的名稱或 IP 位址。 請勿使用反斜線。 預設值是本機電腦的名稱。                                                                                  |
+| /u [\<Domain>\]<User name> |                                                                                           使用指定之使用者帳戶的認證執行腳本。 預設值是系統許可權。                                                                                            |
+|      /p [\<Password>]      |                                                                                                         指定 **/u**參數中指定之使用者帳戶的密碼。                                                                                                         |
+|        \<變數>         |                                                                                                                 指定您想要設定的環境變數名稱。                                                                                                                  |
+|          \<值>          |                                                                                                                指定您要設定環境變數的值。                                                                                                                 |
+|         /k \<路徑>         | 指定根據登錄機碼中的資訊來設定變數。 P*路徑 a)* 會使用下列語法：</br>`\\<HIVE>\<KEY>\...\<Value>`</br>例如，您可以指定下列路徑：</br>`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName` |
+|      /f \<檔案名>       |                                                                                                                               指定您想要使用的檔案。                                                                                                                                |
+|        /a \<X>，<Y>         |                                                                                                                    指定絕對座標和位移作為搜尋參數。                                                                                                                    |
+|   /r \<X>，<Y><String>   |                                                                                                            指定**字串**的相對座標和位移作為搜尋參數。                                                                                                            |
 |             /m             |                                                                                                指定在系統內容中設定變數。 預設設定是本機環境。                                                                                                 |
 |             /x             |                                                                                                       顯示檔案座標，忽略 **/a**、 **/r**和 **/d**命令列選項。                                                                                                        |
-|      /d \<分隔符號 >      |                    除了四個內建分隔符號（空格、TAB、ENTER 和換行字元）之外，指定要使用的分隔符號 **，** 或 **\\** 。 有效的分隔符號包含任何 ASCII 字元。 分隔符號的最大數目為15，包括內建的分隔符號。                    |
+|      /d \<分隔符號>      |                    指定分隔符號（例如 **），** 或**\\**除了四個內建分隔符號（空格、TAB、ENTER 和換行字元）以外使用。 有效的分隔符號包含任何 ASCII 字元。 分隔符號的最大數目為15，包括內建的分隔符號。                    |
 |             /?             |                                                                                                                                 在命令提示字元顯示說明。                                                                                                                                  |
 
 ## <a name="remarks"></a>備註
@@ -60,7 +60,7 @@ setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <FileName>
 -   REG_DWORD 登錄值會解壓縮並在十六進位模式中使用。
 -   [檔案模式] 僅支援剖析 [回車] 和 [換行字元（CRLF）] 文字檔。
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 若要將本機環境中的電腦環境變數設定為 Brand1 值，請輸入：
 ```
@@ -74,7 +74,7 @@ setx MACHINE Brand1 Computer /m
 ```
 setx MYPATH %PATH%
 ```
-若要在本機環境中設定 MYPATH 環境變數，以在以 **%** 取代 **~** 之後，使用 path 環境變數中定義的搜尋路徑，請輸入：
+若要在本機環境中設定 MYPATH 環境變數，以在以取代**~** with **%** 之後使用 path 環境變數中定義的搜尋路徑，請輸入：
 ```
 setx MYPATH ~PATH~ 
 ```
@@ -110,7 +110,7 @@ setx /f ipconfig.out /x
 ```
 setx IPADDR /f ipconfig.out /a 5,11
 ```
-若要將本機環境中的 OCTET1 環境變數設定為在座標5中找到的值，請在檔案 Ipconfig 中使用分隔符號 **#$\*。** 輸入：
+若要將本機環境中的 OCTET1 環境變數設定為在座標5中找到的值，請在檔案 Ipconfig. out 加上分隔符號** #$ \*。** 輸入：
 ```
 setx OCTET1 /f ipconfig.out /a 5,3 /d #$*. 
 ```
@@ -123,6 +123,6 @@ setx IPGATEWAY /f ipconfig.out /r 0,7 Gateway
 setx /s computer1 /u maindom\hiropln /p p@ssW23 /f ipconfig.out /x 
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

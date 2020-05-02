@@ -1,6 +1,6 @@
 ---
 title: typeperf
-description: 適用于 typeperf 的 Windows 命令主題，它會將效能資料寫入至命令視窗或記錄檔。
+description: Typeperf 的參考主題，它會將效能資料寫入至命令視窗或記錄檔。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ac5f7def37939a472eb8f47cf65edf184a2fe2fc
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a996abc1417fdb6aa50370a942433716d8df2cbe
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80832361"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721212"
 ---
 # <a name="typeperf"></a>typeperf
 
 **Typeperf**命令會將效能資料寫入至命令視窗或記錄檔。 若要停止**typeperf**，請按 CTRL + C。
-
-如需如何使用**typeperf**的範例，請參閱[範例](#BKMK_EXAMPLES)。
 
 ## <a name="syntax"></a>語法
 
@@ -35,38 +33,38 @@ typeperf -qx [object] [options]
 
 |參數|描述|
 |---------|-----------|
-|\<計數器 [counter [...]]>|指定要監視的效能計數器。|
+|\<counter [counter [...]]>|指定要監視的效能計數器。|
 
 > [!NOTE]
-> **\<counter >** 是 *\\\\Computer\Object （實例） \Counter*格式之效能計數器的完整名稱，例如 **\\\\Server1\Processor （0）\% 使用者時間**。
+> * \\ \\ * ** \\ \\ \% ** ** \<counter>** 是效能計數器的完整名稱，Computer\Object （Instance） \Counter 格式，例如 Server1\Processor （0） User Time。
 
-## <a name="options"></a>選項
+## <a name="options"></a>選項。
 
-|                   選項                   |                                                         描述                                                          |
+|                   選項                   |                                                         說明                                                          |
 |--------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
 |                     -?                     |                                               顯示即時線上說明。                                               |
-| -f \<CSV&verbar;TSV&verbar;BIN&verbar;SQL > |                                    指定輸出檔案格式。 預設值為 CSV。                                     |
-|              -cf \<filename >               |              指定包含要監視之效能計數器清單的檔案，每行一個計數器。               |
-|             -si < [[hh：] mm：] ss >             |                                  指定取樣間隔。 預設值為一秒。                                   |
-|               -o \<檔案名 >               |     指定輸出檔或 SQL 資料庫的路徑。 預設值為 STDOUT （寫入至命令視窗）。      |
-|                -q [物件]                 | 顯示已安裝的計數器清單（沒有實例）。 若要列出一個物件的計數器，請包含物件名稱。 \*\*\*範例 |
+| -f \<CSV&verbar;TSV&verbar;BIN&verbar;SQL> |                                    指定輸出檔案格式。 預設值為 CSV。                                     |
+|              -cf \<filename>               |              指定包含要監視之效能計數器清單的檔案，每行一個計數器。               |
+|             -si < [[hh：] mm：] ss>             |                                  指定取樣間隔。 預設值為一秒。                                   |
+|               -o \<filename>               |     指定輸出檔或 SQL 資料庫的路徑。 預設值為 STDOUT （寫入至命令視窗）。      |
+|                -q [物件]                 | 顯示已安裝的計數器清單（沒有實例）。 若要列出一個物件的計數器，請包含物件名稱。 \*\*\*實例 |
 |                -qx [物件]                |        顯示已安裝的計數器清單和實例。 若要列出一個物件的計數器，請包含物件名稱。        |
-|               -sc \<範例 >               |             指定要收集的樣本數。 預設為收集資料，直到按下 CTRL + C 為止。              |
-|            -config \<檔案名 >             |                                    指定包含命令選項的設定檔案。                                     |
-|            -s \<computer_name >             |                   指定在計數器路徑中未指定電腦時要監視的遠端電腦。                    |
+|               -sc \<範例>               |             指定要收集的樣本數。 預設為收集資料，直到按下 CTRL + C 為止。              |
+|            -config \<檔案名>             |                                    指定包含命令選項的設定檔案。                                     |
+|            -s \<computer_name>             |                   指定在計數器路徑中未指定電腦時要監視的遠端電腦。                    |
 |                     -y                     |                                        對所有問題回答 [是] 而不提示。                                        |
 
-## <a name="examples"></a><a name=BKMK_EXAMPLES></a>典型
+## <a name="examples"></a>範例
 
-- 下列範例會將本機電腦之效能計數器的值 **\\\\processor （_Total）\% 處理器時間**寫入命令視窗的預設取樣間隔1秒，直到按下 CTRL + C 為止。  
+- 若要將本機電腦效能計數器** \\ \\處理器（_Total）\%處理器時間**的值，寫入預設取樣間隔1秒的命令視窗，直到按下 CTRL + C 為止。  
   ```
   typeperf \Processor(_Total)\% Processor Time
   ```  
-- 下列範例會以5秒的取樣間隔，將檔案**計數器**中的計數器清單值寫入至 tab 鍵分隔的檔案**domain2> ...** ，直到收集50樣本為止。  
+- 將檔案**計數器 .txt**中的計數器清單值寫入至 tab 鍵分隔檔案**domain2> ...** ，在5秒的取樣間隔中，直到收集50樣本為止。  
   ```
   typeperf -cf counters.txt -si 5 -sc 50 -f TSV -o domain2.tsv
   ```  
-- 下列範例會查詢已安裝的計數器，其中包含 counter 物件**PhysicalDisk**的實例，並將產生的清單寫入檔案**計數器 .txt**。  
+- 查詢已安裝的計數器，其中包含 counter 物件**PhysicalDisk**的實例，並將產生的清單寫入檔案**計數器 .txt**。  
   ```
   typeperf -qx PhysicalDisk -o counters.txt
   ```

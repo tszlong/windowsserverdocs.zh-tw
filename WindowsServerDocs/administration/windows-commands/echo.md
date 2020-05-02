@@ -1,6 +1,6 @@
 ---
-title: echo
-description: '\* * * * 的 Windows 命令主題'
+title: 回應
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5e6e9c3c79cc8006efba0c97a574e3d6d94a6f7e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 05b42e4df38c3eafd3dcf3a92ced7b7b2c088e2b
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80845241"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720871"
 ---
-# <a name="echo"></a>echo
+# <a name="echo"></a>回應
 
 
 
@@ -35,8 +35,8 @@ echo [on | off]
 
 |參數|描述|
 |---------|-----------|
-|[on \| off]|開啟或關閉命令回顯功能。 命令回顯預設為開啟。|
-|\<訊息 >|指定要在螢幕上顯示的文字。|
+|[ \|關閉]|開啟或關閉命令回顯功能。 命令回顯預設為開啟。|
+|\<訊息>|指定要在螢幕上顯示的文字。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
@@ -45,7 +45,7 @@ echo [on | off]
 -   當**echo**關閉時，命令提示字元就不會出現在 [命令提示字元] 視窗中。 若要顯示命令提示字元，請**在上輸入 echo。**
 -   如果在批次檔中使用， **echo on**和**echo**不會影響命令提示字元的設定。
 -   若要避免回應批次檔中的特定命令，請在命令前面插入 @ 符號。 若要避免回應批次檔中的所有命令，請在檔案的開頭包含**echo off**命令。
--   當您使用**echo**時，若要顯示管道（ **|** ）或重新導向字元（ **<** 或 **>** ），請在管道或重新導向字元之前使用插入號（^）（例如， **^|** 、 **^>** 或 **^<** ）。 若要顯示插入號，請連續輸入兩個插入號（ **^^** ）。
+-   若要在使用**echo**時顯示管道（**|**）**<** 或**>** 重新導向字元（或），請在管道或重新導向字元之前使用插入號（^）（ **^|** **^>** 例如，、或**^<**）。 若要顯示插入號，請連續輸入兩個**^^** 插入號（）。
 
 ## <a name="examples"></a>範例
 
@@ -113,6 +113,6 @@ File2.txt
 File3.txt
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

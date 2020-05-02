@@ -1,6 +1,6 @@
 ---
 title: 轉換-RiprepImage
-description: RiprepImage 的 Windows 命令主題，可將現有的遠端安裝準備（RIPrep）映射轉換成 Windows 映像（.wim）格式。
+description: RiprepImage 的參考主題，可將現有的遠端安裝準備（RIPrep）映射轉換為 Windows 映像（.wim）格式。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 01e33580a6d2da55df15fabde70697c22f894f7c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 12bdd6c49b5fdec0c0e4980a1abf7e21cefc538e
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80831811"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721029"
 ---
 # <a name="convert-riprepimage"></a>轉換-RiprepImage
 
@@ -36,10 +36,10 @@ WDSUTIL [Options] /Convert-RIPrepImage /FilePath:<File path and name>
 
 |            參數            |                                                                                                                                                                                                                                                                                                               描述                                                                                                                                                                                                                                                                                                                |
 |---------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| /FilePath：\<檔案路徑和名稱 > |                                                                                                                                                                                                       指定對應于 RIPrep 映射之 .sif 檔案的完整路徑和檔案名。 這個檔案通常稱為 Riprep，在包含 RIPrep 映射的資料夾的 \Templates 子資料夾中找到。                                                                                                                                                                                                       |
-|        /DestinationImage        | 使用下列選項指定目的地映射的設定。</br>-/FilePath：\<檔案路徑和名稱 >-設定新檔案的完整檔案路徑。 例如： **C:\Temp\convert.wim**</br>-[/Name：\<名稱 >]-設定影像的顯示名稱。 如果未指定顯示名稱，則會使用來源影像的顯示名稱。</br>-[/Description： \<Description >]-設定影像的描述。</br>-[/InPlace]-指定應該在原始 RIPrep 映射上進行轉換，而不是在原始映射的複本上進行，這是預設行為。</br>-[/Overwrite： {Yes |
+| /FilePath：\<檔案路徑和名稱> |                                                                                                                                                                                                       指定對應于 RIPrep 映射之 .sif 檔案的完整路徑和檔案名。 這個檔案通常稱為 Riprep，在包含 RIPrep 映射的資料夾的 \Templates 子資料夾中找到。                                                                                                                                                                                                       |
+|        /DestinationImage        | 使用下列選項指定目的地映射的設定。</br>-/FilePath：\<檔案路徑和名稱>-設定新檔案的完整檔案路徑。 例如： **C:\Temp\convert.wim**</br>-[/Name：\<Name>]-設定影像的顯示名稱。 如果未指定顯示名稱，則會使用來源影像的顯示名稱。</br>-[/Description： \<Description>]-設定影像的描述。</br>-[/InPlace]-指定應該在原始 RIPrep 映射上進行轉換，而不是在原始映射的複本上進行，這是預設行為。</br>-[/Overwrite： {Yes |
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 若要將指定的 RIPrep 映射轉換為 RIPREP .wim，請輸入：
 ```
@@ -56,6 +56,6 @@ WDSUTIL /Verbose /Progress /Convert-RiPrepImage /FilePath:\\Server
 /Overwrite:Append
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

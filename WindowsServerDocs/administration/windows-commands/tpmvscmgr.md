@@ -1,6 +1,6 @@
 ---
 title: tpmvscmgr
-description: 適用于 tpmvscmgr 的 Windows 命令主題，這是一種命令列工具，可讓具有系統管理認證的使用者建立和刪除電腦上的 TPM 虛擬智慧卡。
+description: Tpmvscmgr 的參考主題，這是一種命令列工具，可讓具有系統管理認證的使用者建立和刪除電腦上的 TPM 虛擬智慧卡。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4411e0ec3c75cd768b2fe32ad26b17331328e3ca
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ab0419060121033571eeba643cc0e2d42b45c743
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80832731"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721299"
 ---
 # <a name="tpmvscmgr"></a>tpmvscmgr
 
-Tpmvscmgr 命令列工具可讓具有系統管理認證的使用者建立和刪除電腦上的 TPM 虛擬智慧卡。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
+Tpmvscmgr 命令列工具可讓具有系統管理認證的使用者建立和刪除電腦上的 TPM 虛擬智慧卡。
 
 ## <a name="syntax"></a>語法
 
@@ -61,7 +61,7 @@ Create 命令會在使用者的系統上設定新的虛擬智慧卡。 如果需
 
 針對英數位元輸入，允許使用完整127字元的 ASCII 集。
 
-## <a name="examples"></a><a name=BKMK_Examples></a>典型
+## <a name="examples"></a>範例
 
 下列命令示範如何建立可在稍後由另一部電腦啟動之智慧卡管理工具管理的虛擬智慧卡。
 ```
@@ -79,8 +79,8 @@ tpmvscmgr.exe create /name VirtualSmartCardForCorpAccess /AdminKey RANDOM /PIN P
 ```
 tpmvscmgr.exe destroy /instance <instance ID> 
 ```
-其中 \<實例識別碼 > 是使用者建立卡片時，在螢幕上列印的值。 具體而言，針對第一個建立的卡片，實例識別碼為 ROOT\SMARTCARDREADER\0000。
+其中\<，實例識別碼> 是使用者建立卡片時，在螢幕上列印的值。 具體而言，針對第一個建立的卡片，實例識別碼為 ROOT\SMARTCARDREADER\0000。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 -   - [命令列語法關鍵](command-line-syntax-key.md)

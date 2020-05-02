@@ -1,6 +1,6 @@
 ---
 title: 模擬還原
-description: 適用于模擬還原的 Windows 命令主題，其會測試作者參與電腦上還原會話的工作，而不會對寫入器發出 PreRestore 或 PostRestore 事件。
+description: 模擬還原的參考主題，其會測試作者參與電腦上還原會話的工作，而不會對寫入器發出 PreRestore 或 PostRestore 事件。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 024d654864c000e44bccb9ddb167c6147444cc00
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1bab6c56cddc1d2ac95dc70205b0990b82fbfd12
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834101"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721782"
 ---
 # <a name="simulate-restore"></a>模擬還原
 
@@ -31,6 +31,6 @@ simulate restore
 -   [**模擬還原**] 用來測試寫入器是否可以成功進行還原。
 -   在您可以使用 [**模擬還原**] 之前，您必須使用 [**載入中繼資料**] 命令來載入 DiskShadow 中繼資料檔案。 這會載入選取的寫入器和還原的元件。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

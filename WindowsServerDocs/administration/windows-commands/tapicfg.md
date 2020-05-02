@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: e57826b0997f2cde1dc437ea171d93eb6fc8dd15
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 694c32d9bbb8a873f34132e90c7201d3c9fe5132
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80833451"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721558"
 ---
 # <a name="tapicfg"></a>tapicfg
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 建立、移除或顯示 TAPI 應用程式目錄分割，或設定預設的 TAPI 應用程式目錄分割。 TAPI 3.1 用戶端可以使用此應用程式目錄分割中的資訊搭配目錄服務定位器服務，尋找並與 TAPI 目錄通訊。您也可以使用**tapicfg**來建立或移除服務連接點，讓 TAPI 用戶端有效率地找出網域中的 tapi 應用程式目錄分割。 如需詳細資訊，請參閱備註。 若要查看命令語法，請按一下命令。 
 -   [tapicfg 安裝](#BKMK_install)
@@ -38,8 +38,8 @@ tapicfg install /directory:<PartitionName> [/server:<DCName>] [/forcedefault]
 #### <a name="parameters"></a>參數
 |參數|描述|
 |-------|--------|
-|安裝/目錄：\<PartitionName >|必要。 指定要建立之 TAPI 應用程式目錄分割的 DNS 名稱。 此名稱必須是完整功能變數名稱。|
-|/server： \<DCName >|指定在其中建立 TAPI 應用程式目錄分割之網域控制站的 DNS 名稱。 如果未指定網域控制站名稱，則會使用本機電腦的名稱。|
+|安裝/目錄：\<PartitionName>|必要。 指定要建立之 TAPI 應用程式目錄分割的 DNS 名稱。 此名稱必須是完整功能變數名稱。|
+|/server： \<DCName>|指定在其中建立 TAPI 應用程式目錄分割之網域控制站的 DNS 名稱。 如果未指定網域控制站名稱，則會使用本機電腦的名稱。|
 |/forcedefault|指定此目錄為網域的預設 TAPI 應用程式目錄分割。 網域中可以有多個 TAPI 應用程式目錄分割。<p>如果此目錄是在網域上建立的第一個 TAPI 應用程式目錄分割，不論您是否使用 **/forcedefault**選項，它都會自動設定為預設值。|
 |/?|在命令提示字元顯示說明。|
 
@@ -53,7 +53,7 @@ tapicfg remove /directory:<PartitionName>
 #### <a name="parameters"></a>參數
 |參數|描述|
 |-------|--------|
-|移除/目錄：\<PartitionName >|必要。 指定要移除之 TAPI 應用程式目錄分割的 DNS 名稱。 請注意，此名稱必須是完整功能變數名稱。|
+|移除/目錄：\<PartitionName>|必要。 指定要移除之 TAPI 應用程式目錄分割的 DNS 名稱。 請注意，此名稱必須是完整功能變數名稱。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="tapicfg-publishscp"></a><a name="BKMK_publishscp"></a>tapicfg publishscp
@@ -66,8 +66,8 @@ tapicfg publishscp /directory:<PartitionName> [/domain:<DomainName>] [/forcedefa
 #### <a name="parameters"></a>參數
 |參數|描述|
 |-------|--------|
-|publishscp/目錄：\<PartitionName >|必要。 指定服務連接點將發佈之 TAPI 應用程式目錄分割的 DNS 名稱。|
-|/domain：\<DomainName >|指定用來建立服務連接點之網域的 DNS 名稱。 如果未指定功能變數名稱，則會使用本機網域的名稱。|
+|publishscp/目錄：\<PartitionName>|必要。 指定服務連接點將發佈之 TAPI 應用程式目錄分割的 DNS 名稱。|
+|/domain：\<DomainName>|指定用來建立服務連接點之網域的 DNS 名稱。 如果未指定功能變數名稱，則會使用本機網域的名稱。|
 |/forcedefault|指定此目錄為網域的預設 TAPI 應用程式目錄分割。 網域中可以有多個 TAPI 應用程式目錄分割。|
 |/?|在命令提示字元顯示說明。|
 
@@ -81,8 +81,8 @@ tapicfg removescp /directory:<PartitionName> [/domain:<DomainName>]
 #### <a name="parameters"></a>參數
 |參數|描述|
 |-------|--------|
-|removescp/目錄：\<PartitionName >|必要。 指定要移除其服務連接點之 TAPI 應用程式目錄分割的 DNS 名稱。|
-|/domain： \<DomainName >|指定移除服務連接點之網域的 DNS 名稱。 如果未指定功能變數名稱，則會使用本機網域的名稱。|
+|removescp/目錄：\<PartitionName>|必要。 指定要移除其服務連接點之 TAPI 應用程式目錄分割的 DNS 名稱。|
+|/domain： \<DomainName>|指定移除服務連接點之網域的 DNS 名稱。 如果未指定功能變數名稱，則會使用本機網域的名稱。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="tapicfg-show"></a><a name="BKMK_show"></a>tapicfg show
@@ -96,7 +96,7 @@ tapicfg show [/defaultonly][ /domain:<DomainName>]
 |參數|描述|
 |-------|--------|
 |/defaultonly|只顯示網域中預設 TAPI 應用程式目錄分割的名稱和位置。|
-|/domain： \<DomainName >|指定要顯示其 TAPI 應用程式目錄分割之網域的 DNS 名稱。 如果未指定功能變數名稱，則會使用本機網域的名稱。|
+|/domain： \<DomainName>|指定要顯示其 TAPI 應用程式目錄分割之網域的 DNS 名稱。 如果未指定功能變數名稱，則會使用本機網域的名稱。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="tapicfg-makedefault"></a><a name="BKMK_makedefault"></a>tapicfg makedefault
@@ -109,7 +109,7 @@ tapicfg makedefault /directory:<PartitionName> [/domain:<DomainName>]
 #### <a name="parameters"></a>參數
 |參數|描述|
 |-------|--------|
-|makedefault/目錄：\<PartitionName >|必要。 將 TAPI 應用程式目錄分割集的 DNS 名稱指定為網域的預設磁碟分割。 請注意，此名稱必須是完整功能變數名稱。 指定將 TAPI 應用程式目錄分割設定為預設之網域的 DNS 名稱。 如果未指定功能變數名稱，則會使用本機網域的名稱。|
+|makedefault/目錄：\<PartitionName>|必要。 將 TAPI 應用程式目錄分割集的 DNS 名稱指定為網域的預設磁碟分割。 請注意，此名稱必須是完整功能變數名稱。 指定將 TAPI 應用程式目錄分割設定為預設之網域的 DNS 名稱。 如果未指定功能變數名稱，則會使用本機網域的名稱。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註

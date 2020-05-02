@@ -1,6 +1,6 @@
 ---
-title: 移位
-description: 適用于 shift 的 Windows 命令主題，會變更批次檔中批次參數的位置。
+title: shift
+description: Shift 的參考主題，會變更批次檔中批次參數的位置。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9c242fe90a8bf32eda5a3db511910e3d7aa4610f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 617d7f712ccae13c522bc65db147c12c526b4efb
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834261"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721835"
 ---
-# <a name="shift"></a>移位
+# <a name="shift"></a>shift
 
 變更批次檔中批次參數的位置。
 
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>語法
 
@@ -32,18 +32,18 @@ shift [/n <N>]
 
 |參數|描述|
 |---------|-----------|
-|/n \<N >|指定在第*N*個引數開始轉移，其中*N*是0到8之間的任何值。 需要預設啟用的命令延伸模組。|
+|/n \<n>|指定在第*N*個引數開始轉移，其中*N*是0到8之間的任何值。 需要預設啟用的命令延伸模組。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
 
 - **Shift**命令會藉由將每個參數複製到前一個參數來變更批次參數 **%0**到 **%9**的值- **%1**的值會複製到 **%0**，而 **%2**的值會複製到 **%1**，依此類推。 這適用于撰寫在任何數目的參數上執行相同作業的批次檔。
 - 如果已啟用命令延伸模組， **shift**命令會支援 **/n**命令列選項。 **/N**選項指定在第 n 個引數開始轉移，其中**n**是0到8之間的任何值。 例如， **shift/2**會將 **%3**改成% **2**， **%4**到 **%3**，依此類推，而不會影響 **%0**和 **%1** 。 預設會啟用命令延伸模組。
-- 您可以使用**shift**命令來建立可接受10個以上批次參數的批次檔。 如果您在命令列上指定超過10個參數，則在第十個（ **%9**）之後出現的參數，將會一次移位一個到 **%9**。
-- **Shift**命令對 **%\\** * batch 參數不會有任何影響。
-- 沒有回溯**shift**命令。 在您執行**shift**命令之後，就無法復原在轉移之前已存在的批次參數（ **%0**）。
+- 您可以使用**shift**命令來建立可接受10個以上批次參數的批次檔。 如果您在命令列上指定超過10個參數，則在第十個（**%9**）之後出現的參數，將會一次移位一個到 **%9**。
+- **Shift**命令對** % *** batch 參數不會有任何作用。
+- 沒有回溯**shift**命令。 在您執行**shift**命令之後，就無法復原在轉移之前已存在的批次參數（**%0**）。
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 來自名為 Mycopy 之範例批次檔的下列幾行會示範如何搭配使用**shift**與任意數目的批次參數。 在此範例中，Mycopy 會將檔案清單複製到特定目錄。 批次參數是以目錄和檔案名引數來表示。
 ```
@@ -63,6 +63,6 @@ set todir=
 echo All done
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

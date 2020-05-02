@@ -1,6 +1,6 @@
 ---
 title: start
-description: Start 的 Windows 命令主題，它會啟動個別的命令提示字元視窗來執行指定的程式或命令。
+description: Start 的參考主題，它會啟動個別的 [命令提示字元] 視窗，以執行指定的程式或命令。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6ab8fc07923a2396a173803264d54a036983fb71
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 388a6b0871382c7704813298e6978a40cadeb709
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834071"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721757"
 ---
 # <a name="start"></a>start
 
 啟動個別的 [命令提示字元] 視窗，以執行指定的程式或命令。
 
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>語法
 
@@ -32,18 +32,18 @@ start [<Title>] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/low 
 
 |參數|描述|
 |---------|-----------|
-|\<標題 >|指定要在 [命令提示字元] 視窗標題列中顯示的標題。|
-|/d \<路徑 >|指定啟動目錄。|
+|\<標題>|指定要在 [命令提示字元] 視窗標題列中顯示的標題。|
+|/d \<路徑>|指定啟動目錄。|
 |/i|將 Cmd.exe 啟動環境傳遞至新的命令提示字元視窗。 如果未指定 **/i** ，則會使用目前的環境。|
-|/min \|/max|指定以最小化（ **/min**）或最大化（ **/max**）新的命令提示字元視窗。|
-|/separate \|/shared|在個別的記憶體空間（ **/separate**）或共用記憶體空間（ **/shared**）中啟動16位程式。 64位平臺上不支援這些選項。|
-|/low \|/normal \|/high ... program.exe \|/realtime \|/abovenormal \|/belownormal|以指定的優先權類別啟動應用程式。 有效的優先權類別值為 **/low**、 **/normal**、 **/high ... program.exe**、 **/realtime**、 **/abovenormal**和 **/belownormal**。|
-|/affinity \<HexAffinity >|將指定的處理器親和性遮罩（以十六進位數表示）套用至新的應用程式。|
+|/min \| /max|指定以最小化（**/min**）或最大化（**/max**）新的命令提示字元視窗。|
+|/separate \| /shared|在個別的記憶體空間（**/separate**）或共用記憶體空間（**/shared**）中啟動16位程式。 64位平臺上不支援這些選項。|
+|/low \| /normal \| /high ... program.exe \| /realtime \| /abovenormal \| /belownormal|以指定的優先權類別啟動應用程式。 有效的優先權類別值為 **/low**、 **/normal**、 **/high ... program.exe**、 **/realtime**、 **/abovenormal**和 **/belownormal**。|
+|/affinity \<HexAffinity>|將指定的處理器親和性遮罩（以十六進位數表示）套用至新的應用程式。|
 |/wait|啟動應用程式，並等候它結束。|
 |/elevate|以系統管理員身分執行應用程式。|
 |/b|啟動應用程式，而不開啟新的命令提示字元視窗。 除非應用程式啟用 CTRL + C 處理，否則會忽略 CTRL + C 處理。 使用 CTRL + BREAK 來中斷應用程式。|
-|\<命令 > \| \<程式 >|指定要啟動的命令或程式。|
-|\<參數 > 。|指定要傳遞給命令或程式的參數。|
+|\<命令> \| \<程式>|指定要啟動的命令或程式。|
+|\<參數> .。。|指定要傳遞給命令或程式的參數。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
@@ -58,7 +58,7 @@ start [<Title>] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/low 
   請注意，語法與 PATH 變數相同，以分號分隔每個副檔名。
 - 當它搜尋可執行檔時，如果有任何延伸模組沒有相符專案，就會**開始**檢查名稱是否符合目錄名稱。 如果**有，就會開啟**該路徑上的 Explorer。
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 若要在命令提示字元中啟動 Myapp 程式，並繼續使用目前的命令提示字元視窗，請輸入：
 ```
@@ -69,6 +69,6 @@ start myapp
 start /max start /?
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

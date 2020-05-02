@@ -1,6 +1,6 @@
 ---
 title: shrink
-description: 適用于 DiskPart 的 Windows 命令主題會壓縮，這會依您指定的數量減少所選磁片區的大小。
+description: 適用于 DiskPart shrink 的參考主題，可依您指定的數量減少所選磁片區的大小。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2afdaf4ac27ef0c4378d6ae34d959dc81e63bc18
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 357a2320bf8b26130c9aa148d513edff6f1e85db
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834201"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721805"
 ---
 # <a name="shrink"></a>shrink
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Diskpart shrink 命令會依您指定的數量減少所選磁片區的大小。 此命令可從磁片區結尾的未使用空間中取得可用的磁碟空間。
 
@@ -46,7 +46,7 @@ shrink querymax [noerr]
 - 如果指定了最小金額，但沒有足夠的可用空間，則此命令將會失敗。
 - 必須選取一個磁碟區，這項操作才能繼續。 使用 [**選取磁片**區] 命令來選取磁片區，並將焦點移至該磁片區。
 - 此命令不會在原始設備製造商（OEM）磁碟分割、可延伸韌體介面（EFI）系統磁碟分割或復原磁碟分割上操作。
-  ## <a name="examples"></a><a name=BKMK_examples></a>典型
+  ## <a name="examples"></a>範例
   若要減少所選磁片區的大小（以250到 500 mb 的最大可能數量為限），請輸入：
   ```
   shrink desired=500 minimum=250
