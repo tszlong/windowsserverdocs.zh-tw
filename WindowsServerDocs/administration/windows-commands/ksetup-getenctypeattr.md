@@ -1,6 +1,6 @@
 ---
 title: ksetup： getenctypeattr
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 60de138ac73140c69e9a863083e01a51c0e13ca3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f8363113d4fbb310d98b40d852b36a00f20320e6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841531"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724638"
 ---
 # <a name="ksetupgetenctypeattr"></a>ksetup： getenctypeattr
 
 
 
-抓取網域的加密類型屬性。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
+抓取網域的加密類型屬性。
 
 ## <a name="syntax"></a>語法
 
@@ -32,7 +32,7 @@ ksetup /getenctypeattr <DomainName>
 
 |參數|描述|
 |---------|-----------|
-|\<DomainName >|您想要建立連接的網功能變數名稱稱。 使用完整功能變數名稱或簡單格式的名稱，例如 corp.contoso.com 或 contoso。|
+|\<DomainName>|您想要建立連接的網功能變數名稱稱。 使用完整功能變數名稱或簡單格式的名稱，例如 corp.contoso.com 或 contoso。|
 
 ## <a name="remarks"></a>備註
 
@@ -40,16 +40,16 @@ ksetup /getenctypeattr <DomainName>
 
 如果命令成功或失敗，則會在成功或失敗完成時顯示狀態訊息。
 
-若要設定您想要連接並使用的網域，請執行**ksetup/domain \<DomainName >** 命令。
+若要設定您想要連接並使用的網域，請執行**ksetup/Domain \<DomainName>** 命令。
 
-## <a name="examples"></a><a name=BKMK_Examples></a>典型
+## <a name="examples"></a>範例
 
 確認網域的 [加密類型] 屬性：
 ```
 ksetup /getenctypeattr mit.contoso.com
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 -   [Klist](klist.md)
 -   [Ksetup:domain](ksetup-domain.md)

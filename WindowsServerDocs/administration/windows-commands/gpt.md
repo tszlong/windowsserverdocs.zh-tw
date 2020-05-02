@@ -1,6 +1,6 @@
 ---
 title: gpt
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1db2a3fe21b0343c23bbc2432d4d07a500b72e8e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5eaa52329a08f85a2a97d89ff178039c5b883017
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80842451"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724941"
 ---
 # <a name="gpt"></a>gpt
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 在基本 GUID 磁碟分割表格（gpt）磁片上，以焦點將 gpt 屬性指派給分割區。  gpt 磁碟分割屬性提供有關使用資料分割的其他資訊。 某些屬性是磁碟分割類型 GUID 所特有的。
 
@@ -42,7 +42,7 @@ gpt attributes=<n>
 - EFI 系統磁碟分割僅包含啟動作業系統所需的二進位檔。 這可讓作業系統特定的 OEM 二進位檔或二進位檔可以放在其他磁碟分割中。
 - 必須選取基本 gpt 磁碟分割，此作業才會成功。 使用 [**選取資料分割**] 命令來選取基本 gpt 磁碟分割，並將焦點移至該分割區。
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
   如果您要將 gpt 磁片移到新電腦，而且想要防止該電腦自動將磁碟機號指派給具有焦點的磁碟分割，請輸入：
   ```

@@ -1,6 +1,6 @@
 ---
-title: 說明
-description: '\* * * * 的 Windows 命令主題'
+title: help
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 404cefe879e8f63678f2cba90516fad9c216eb23
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6887edfd41895bb151c5aaebb88d8b72198f4dbf
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80842311"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724903"
 ---
-# <a name="help"></a>說明
+# <a name="help"></a>help
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 顯示指定命令的可用命令或詳細說明資訊的清單。  
   
@@ -40,7 +40,7 @@ help [<command>]
   
 -   如果未指定任何命令，[說明] 將會顯示所有**可能的命令**。  
   
-## <a name="examples"></a><a name=BKMK_examples></a>典型  
+## <a name="examples"></a>範例  
 若要顯示 DiskPart 中所有可用命令的清單，請輸入：  
   
 ```  
@@ -53,7 +53,7 @@ help
 help create partition primary  
 ```  
   
-## <a name="additional-references"></a>其他參考資料  
+## <a name="additional-references"></a>其他參考  
 - [命令列語法關鍵](command-line-syntax-key.md)  
   
 

@@ -1,6 +1,6 @@
 ---
 title: ksetup
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b3c61fd81691f9db44330eddbf40d4212d1786ff
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2f3fde0ada4ab8bcbe52eccf22b959f99f91319f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841251"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724544"
 ---
 # <a name="ksetup"></a>ksetup
 
@@ -64,7 +64,7 @@ ksetup
 |[Ksetup:server](ksetup-server.md)|可讓您指定要套用變更的 Windows 電腦名稱稱。|
 |[Ksetup:setcomputerpassword](ksetup-setcomputerpassword.md)|設定電腦網域帳戶（或主機主體）的密碼。|
 |[Ksetup:removerealm](ksetup-removerealm.md)|從登錄中刪除指定領域的所有資訊。|
-|[Ksetup:domain](ksetup-domain.md)|可讓您指定網域（如果 \<DomainName > 尚未使用 [ **/domain**] 設定）。|
+|[Ksetup:domain](ksetup-domain.md)|可讓您指定網域（如果\<DomainName> 尚未使用 [ **/domain**] 設定）。|
 |[Ksetup:changepassword](ksetup-changepassword.md)|可讓您使用 Kpasswd 來變更登入使用者的密碼。|
 |[Ksetup:listrealmflags](ksetup-listrealmflags.md)|列出**ksetup**可以偵測到的可用領域旗標。|
 |[Ksetup:setrealmflags](ksetup-setrealmflags.md)|設定特定領域的領域旗標。|
@@ -77,7 +77,7 @@ ksetup
 |[Ksetup:getenctypeattr](ksetup-getenctypeattr.md)|取得網域的加密類型信任屬性。|
 |[Ksetup:addenctypeattr](ksetup-addenctypeattr.md)|將加密類型新增至網域的加密類型信任屬性。|
 |[Ksetup:delenctypeattr](ksetup-delenctypeattr.md)|刪除網域的加密類型信任屬性。|
-|/?|在命令提示字元中顯示說明。|
+|/?|在命令提示字元顯示 [說明]。|
 
 ## <a name="remarks"></a>備註
 
@@ -87,6 +87,6 @@ ksetup
 
 Kerberos 第5版通訊協定是執行 Windows XP Professional、Windows Vista 和 Windows 7 之電腦上的網路驗證預設值。 Kerberos SSP 會在登錄中搜尋使用者領域的功能變數名稱，然後藉由查詢 DNS 伺服器，將名稱解析成 IP 位址。 Kerberos 通訊協定可以使用 DNS 來尋找 Kdc，方法是只使用領域名稱，但必須特別設定才能執行這項操作。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 -   - [命令列語法關鍵](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
 title: logman
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bb6654cce0e23ac08a2fa6334d6144b08c8b65f3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9aed5a83c503c03f52757abf525aa5d122f41466
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80840401"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724277"
 ---
 # <a name="logman"></a>logman
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 **logman**會建立和管理事件追蹤會話和效能記錄檔，並從命令列支援效能監視器的許多功能。
 ## <a name="syntax"></a>語法

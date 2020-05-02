@@ -1,6 +1,6 @@
 ---
 title: ftp remotehelp_1
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3c4a4ffec01fce5cde8b2aa9dd1fa0704f3a85ff
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: dc4affb3f04eadaa4e0005e5edce0f564156f64a
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80843051"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725137"
 ---
 # <a name="ftp-remotehelp_1"></a>ftp： remotehelp_1
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 顯示遠端命令的說明。   
 ## <a name="syntax"></a>語法  
@@ -31,7 +31,7 @@ remotehelp [<Command>]
 |[<Command>]|指定您想要協助的命令名稱。 如果未指定*Command* ， **ftp**會顯示所有遠端命令的清單。|  
 ## <a name="remarks"></a>備註  
 您可以使用**引號**或**常**值來執行遠端命令。  
-## <a name="examples"></a><a name=BKMK_Examples></a>典型  
+## <a name="examples"></a>範例  
 顯示遠端命令的清單。  
 ```  
 remotehelp  
@@ -40,6 +40,6 @@ remotehelp
 ```  
 remotehelp feat  
 ```  
-## <a name="additional-references"></a>其他參考資料  
+## <a name="additional-references"></a>其他參考  
 -   [ftp：引號](ftp-quote.md)  
 -   - [命令列語法關鍵](command-line-syntax-key.md)  

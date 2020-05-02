@@ -1,6 +1,6 @@
 ---
 title: ksetup： addkpasswd
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 73abfff54ecfcd31ebbd7469c12228fff850fbf1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c260c711ae87f88be8b9466e73afaf3fe1c83a1e
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841821"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724730"
 ---
 # <a name="ksetupaddkpasswd"></a>ksetup： addkpasswd
 
 
 
-新增領域的 Kerberos 密碼（Kpasswd）伺服器位址。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
+新增領域的 Kerberos 密碼（Kpasswd）伺服器位址。
 
 ## <a name="syntax"></a>語法
 
@@ -34,8 +34,8 @@ ksetup /addkpasswd <RealmName> [<KpasswdName>]
 
 |參數|描述|
 |---------|-----------|
-|\<RealmName >|領域名稱會指定為大寫 DNS 名稱，例如 CORP。CONTOSO.COM，且在執行**ksetup**時列為預設領域或領域 =。|
-|\<KpasswdName >|作為 Kerberos 密碼伺服器使用的 KDC 名稱會被視為不區分大小寫的完整功能變數名稱，例如 mitkdc.microsoft.com。 如果省略 KDC 名稱，則可能會使用 DNS 來尋找 Kdc。|
+|\<RealmName>|領域名稱會指定為大寫 DNS 名稱，例如 CORP。CONTOSO.COM，且在執行**ksetup**時列為預設領域或領域 =。|
+|\<KpasswdName>|作為 Kerberos 密碼伺服器使用的 KDC 名稱會被視為不區分大小寫的完整功能變數名稱，例如 mitkdc.microsoft.com。 如果省略 KDC 名稱，則可能會使用 DNS 來尋找 Kdc。|
 
 ## <a name="remarks"></a>備註
 
@@ -45,7 +45,7 @@ ksetup /addkpasswd <RealmName> [<KpasswdName>]
 
 您可以一次新增一個額外的 KDC 名稱。
 
-## <a name="examples"></a><a name=BKMK_Examples></a>典型
+## <a name="examples"></a>範例
 
 設定領域 CORP。CONTOSO.COM，使其使用非 Windows KDC 伺服器 mitkdc.contoso.com，做為密碼伺服器：
 ```
@@ -53,7 +53,7 @@ ksetup /addkpasswd CORP.CONTOSO.COM mitkdc.contoso.com
 ```
 這會導致非 Windows Kerberos 密碼伺服器，以控制它與領域之間驗證的所有密碼。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 -   [Ksetup](ksetup.md)
 -   [Ksetup:delkpasswd](ksetup-delkpasswd.md)

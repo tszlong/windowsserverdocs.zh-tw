@@ -1,6 +1,6 @@
 ---
 title: 清單寫入器
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1e12c4f36c3fd840b7b37b12d9f4171429e5a52d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ef7fa0bd6e9857e22994178849e49afeb3305a2a
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841111"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724480"
 ---
 # <a name="list-writers"></a>清單寫入器
 
@@ -22,7 +22,7 @@ ms.locfileid: "80841111"
 
 列出系統上的寫入器。 如果使用時不含參數，[**清單**] 預設會顯示**清單中繼資料**的輸出。
 
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>語法
 
@@ -38,7 +38,7 @@ list writers [metadata | detailed | status]
 |詳細|會列出與**中繼資料**相同的資訊，但**詳細**說明包含所有元件的完整檔案清單。|
 |status|只會列出已註冊的寫入器的身分識別與狀態。|
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 若只要列出寫入器的身分識別和狀態，請輸入：
 ```
@@ -68,6 +68,6 @@ Listing writer status ...
 8 writers listed. 
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

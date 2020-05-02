@@ -1,6 +1,6 @@
 ---
 title: ftp open_1
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8bd3063a52908d65f336afcda6b6982d5bc9bf94
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 15a27d2f7512da352a0f4ddf02fa2511ffce7c1d
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80843181"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725189"
 ---
 # <a name="ftp-open_1"></a>ftp： open_1
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 連接到指定的 ftp 伺服器。   
 ## <a name="syntax"></a>語法  
@@ -34,7 +34,7 @@ open <computer> [<Port>]
 
 ## <a name="remarks"></a>備註  
 您可以使用 IP 位址或電腦名稱稱（在此情況下，必須要有 DNS 伺服器或 Hosts 檔案）來指定**電腦**。  
-## <a name="examples"></a><a name=BKMK_Examples></a>典型  
+## <a name="examples"></a>範例  
 連接到 ftp 伺服器，網址為**ftp.microsoft.com**。  
 ```  
 Open ftp.microsoft.com  
@@ -43,5 +43,5 @@ Open ftp.microsoft.com
 ```  
 open ftp.microsoft.com 755  
 ```  
-## <a name="additional-references"></a>其他參考資料  
+## <a name="additional-references"></a>其他參考  
 -   - [命令列語法關鍵](command-line-syntax-key.md)  

@@ -1,6 +1,6 @@
 ---
 title: ksetup： delenctypeattr
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c650b973ac34e28394d5b6ec38142a058ad76338
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2908cc0a095a6985c11f7885766926b7f0354ab0
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841761"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724707"
 ---
 # <a name="ksetupdelenctypeattr"></a>ksetup： delenctypeattr
 
 
 
-移除網域的加密類型屬性。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
+移除網域的加密類型屬性。
 
 ## <a name="syntax"></a>語法
 
@@ -32,7 +32,7 @@ ksetup /delenctypeattr <DomainName>
 
 |參數|描述|
 |---------|-----------|
-|\<DomainName >|您想要建立連接的網功能變數名稱稱。 使用完整功能變數名稱或簡單格式的名稱，例如 corp.contoso.com 或 contoso。|
+|\<DomainName>|您想要建立連接的網功能變數名稱稱。 使用完整功能變數名稱或簡單格式的名稱，例如 corp.contoso.com 或 contoso。|
 
 ## <a name="remarks"></a>備註
 
@@ -40,9 +40,9 @@ ksetup /delenctypeattr <DomainName>
 
 成功或失敗完成時，會顯示狀態訊息。
 
-若要設定您想要連接並使用的網域，請執行**ksetup/domain \<DomainName >** 命令。
+若要設定您想要連接並使用的網域，請執行**ksetup/Domain \<DomainName>** 命令。
 
-## <a name="examples"></a><a name=BKMK_Examples></a>典型
+## <a name="examples"></a>範例
 
 判斷這部電腦上設定的目前加密類型：
 ```
@@ -61,7 +61,7 @@ ksetup /getenctypeattr mit.contoso.com
 ksetup /delenctypeattr mit.contoso.com
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 -   [Klist](klist.md)
 -   [Ksetup:domain](ksetup-domain.md)

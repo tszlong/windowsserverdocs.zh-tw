@@ -1,6 +1,6 @@
 ---
 title: ftp trace_1
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a96bb33b457e073b8e4625f5269cd00facf39073
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 50eb401540549387c78718b930b31f1f465d3e1e
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80842892"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725077"
 ---
 # <a name="ftp-trace_1"></a>ftp： trace_1
 
@@ -36,13 +36,13 @@ trace
 
 **追蹤**會顯示執行**ftp**命令時的內部 FTP 函數呼叫系列。
 
-## <a name="examples"></a><a name=BKMK_Examples></a>典型
+## <a name="examples"></a>範例
 
 切換開啟和關閉追蹤。
 ```
 trace
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 -   - [命令列語法關鍵](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
 title: ksetup： delkdc
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 63b264da227d51b6f47f982c66828536bd677920
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 19ebe322d414d1ae9007275772ccd747f6f0ff8d
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841691"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724666"
 ---
 # <a name="ksetupdelkdc"></a>ksetup： delkdc
 
 
 
-刪除 Kerberos 領域金鑰發佈中心（KDC）名稱的實例。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
+刪除 Kerberos 領域金鑰發佈中心（KDC）名稱的實例。
 
 ## <a name="syntax"></a>語法
 
@@ -32,8 +32,8 @@ ksetup /delkdc <RealmName> <KDCName>
 
 |參數|描述|
 |---------|-----------|
-|\<RealmName >|領域名稱會指定為大寫 DNS 名稱，例如 CORP。CONTOSO.COM，在執行**ksetup**時，它會列為預設領域。 這是您嘗試刪除其他 KDC 的領域。|
-|\<KDCName >|KDC 名稱會指定為不區分大小寫的完整功能變數名稱，例如 mitkdc.contoso.com。|
+|\<RealmName>|領域名稱會指定為大寫 DNS 名稱，例如 CORP。CONTOSO.COM，在執行**ksetup**時，它會列為預設領域。 這是您嘗試刪除其他 KDC 的領域。|
+|\<KDCName>|KDC 名稱會指定為不區分大小寫的完整功能變數名稱，例如 mitkdc.contoso.com。|
 
 ## <a name="remarks"></a>備註
 
@@ -43,7 +43,7 @@ ksetup /delkdc <RealmName> <KDCName>
 
 若要驗證電腦的預設領域名稱，或確認此命令是否如預期運作，請在命令提示字元中執行**ksetup** ，並確認已移除的 KDC 不存在於清單中。
 
-## <a name="examples"></a><a name=BKMK_Examples></a>典型
+## <a name="examples"></a>範例
 
 這部電腦的安全性需求已變更，因此必須移除 Windows 領域和非 Windows 領域之間的連結。 首先，判斷要移除哪一個關聯，並產生現有關聯的輸出：
 ```
@@ -54,7 +54,7 @@ ksetup
 Ksetup /delkdc CORP.CONTOSO.COM mitkdc.contoso.com
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 -   [Ksetup](ksetup.md)
 -   - [命令列語法關鍵](command-line-syntax-key.md)

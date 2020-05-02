@@ -1,6 +1,6 @@
 ---
 title: ipconfig
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1c93b75d6518746df7ef936c7059bd03fcf96ab6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a4098da4e2ffb94db8cc1fa65b1cec69f5233f05
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80842071"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724828"
 ---
 # <a name="ipconfig"></a>ipconfig
 
@@ -37,19 +37,19 @@ ipconfig [/allcompartments] [/all] [/renew [<Adapter>]] [/release [<Adapter>]] [
 |/displaydns|顯示 DNS 用戶端解析程式快取的內容，其中包括從本機主機檔案預先載入的專案，以及電腦已解析之名稱查詢最近取得的資源記錄。 DNS 用戶端服務會使用此資訊來快速解析經常查詢的名稱，然後再查詢其設定的 DNS 伺服器。|
 |/flushdns|排清並重設 DNS 用戶端解析程式快取的內容。 在 DNS 疑難排解期間，您可以使用此程式來捨棄快取中的負快取專案，以及已動態新增的任何其他專案。|
 |/registerdns|針對電腦上設定的 DNS 名稱和 IP 位址，起始手動動態註冊。 您可以使用此參數來疑難排解失敗的 DNS 名稱註冊，或解決用戶端與 DNS 伺服器之間的動態更新問題，而不需要重新開機用戶端電腦。 TCP/IP 通訊協定之 advanced 屬性中的 DNS 設定會決定哪些名稱會在 DNS 中註冊。|
-|/release [\<Adapter >]|將 DHCPRELEASE 訊息傳送至 DHCP 伺服器以釋放目前的 DHCP 設定，並捨棄所有介面卡（如果未指定介面卡）的 IP 位址設定，或如果包含*介面卡*參數，則為特定介面卡。 此參數會針對設定為自動取得 IP 位址的介面卡停用 TCP/IP。 若要指定介面卡名稱，請輸入當您使用不含參數的**ipconfig**時，所顯示的介面卡名稱。|
-|/release6 [\<Adapter >]|將 DHCPRELEASE 訊息傳送到 DHCPv6 伺服器以釋放目前的 DHCP 設定，並捨棄所有介面卡（如果未指定介面卡）或特定介面卡的 IPv6 位址設定（如果包含*適配*卡參數）。 此參數會針對設定為自動取得 IP 位址的介面卡停用 TCP/IP。 若要指定介面卡名稱，請輸入當您使用不含參數的**ipconfig**時，所顯示的介面卡名稱。|
-|/renew [\<Adapter >]|更新所有介面卡的 DHCP 設定（如果未指定介面卡），或如果包含*介面卡*參數，則為特定介面卡。 只有在已設定為自動取得 IP 位址的介面卡電腦上，才能使用此參數。 若要指定介面卡名稱，請輸入當您使用不含參數的**ipconfig**時，所顯示的介面卡名稱。|
-|/renew6 [\<Adapter >]|針對所有介面卡（如果未指定介面卡）或特定介面卡（如果*包含介面卡參數）* ，更新 DHCPv6 設定。 只有在已設定為自動取得 IPv6 位址的介面卡電腦上，才能使用此參數。 若要指定介面卡名稱，請輸入當您使用不含參數的**ipconfig**時，所顯示的介面卡名稱。|
-|/setclassid \<介面卡 > [<ClassID>]|設定指定介面卡的 DHCP 類別識別碼。 若要設定所有介面卡的 DHCP 類別識別碼，請使用星號 **&#42;** （）萬用字元來取代*介面卡*。 只有在已設定為自動取得 IP 位址的介面卡電腦上，才能使用此參數。 如果未指定 DHCP 類別識別碼，則會移除目前的類別識別碼。|
-|/showclassid \<介面卡 >|顯示指定介面卡的 DHCP 類別識別碼。 若要查看所有介面卡的 DHCP 類別識別碼，請使用星號 **&#42;** （）萬用字元來取代*介面卡*。 只有在已設定為自動取得 IP 位址的介面卡電腦上，才能使用此參數。|
-|/?|在命令提示字元中顯示說明。|
+|/release [\<介面卡>]|將 DHCPRELEASE 訊息傳送至 DHCP 伺服器以釋放目前的 DHCP 設定，並捨棄所有介面卡（如果未指定介面卡）的 IP 位址設定，或如果包含*介面卡*參數，則為特定介面卡。 此參數會針對設定為自動取得 IP 位址的介面卡停用 TCP/IP。 若要指定介面卡名稱，請輸入當您使用不含參數的**ipconfig**時，所顯示的介面卡名稱。|
+|/release6 [\<介面卡>]|將 DHCPRELEASE 訊息傳送到 DHCPv6 伺服器以釋放目前的 DHCP 設定，並捨棄所有介面卡（如果未指定介面卡）或特定介面卡的 IPv6 位址設定（如果包含*適配*卡參數）。 此參數會針對設定為自動取得 IP 位址的介面卡停用 TCP/IP。 若要指定介面卡名稱，請輸入當您使用不含參數的**ipconfig**時，所顯示的介面卡名稱。|
+|/renew [\<介面卡>]|更新所有介面卡的 DHCP 設定（如果未指定介面卡），或如果包含*介面卡*參數，則為特定介面卡。 只有在已設定為自動取得 IP 位址的介面卡電腦上，才能使用此參數。 若要指定介面卡名稱，請輸入當您使用不含參數的**ipconfig**時，所顯示的介面卡名稱。|
+|/renew6 [\<介面卡>]|針對所有介面卡（如果未指定介面卡）或特定介面卡（如果*包含介面卡參數）* ，更新 DHCPv6 設定。 只有在已設定為自動取得 IPv6 位址的介面卡電腦上，才能使用此參數。 若要指定介面卡名稱，請輸入當您使用不含參數的**ipconfig**時，所顯示的介面卡名稱。|
+|/setclassid \<介面卡> <ClassID>[]|設定指定介面卡的 DHCP 類別識別碼。 若要設定所有介面卡的 DHCP 類別識別碼，請使用星號（**&#42;**）萬用字元來取代*介面卡*。 只有在已設定為自動取得 IP 位址的介面卡電腦上，才能使用此參數。 如果未指定 DHCP 類別識別碼，則會移除目前的類別識別碼。|
+|/showclassid \<介面卡>|顯示指定介面卡的 DHCP 類別識別碼。 若要查看所有介面卡的 DHCP 類別識別碼，請使用星號（**&#42;**）萬用字元來取代*介面卡*。 只有在已設定為自動取得 IP 位址的介面卡電腦上，才能使用此參數。|
+|/?|在命令提示字元顯示 [說明]。|
 
 ## <a name="remarks"></a>備註
 
 - 此命令最適用于設定為自動取得 IP 位址的電腦。 這可讓使用者判斷哪些 TCP/IP 設定值已由 DHCP、自動私人 IP 位址（APIPA）或替代設定進行設定。
 - 如果您為*介面卡*提供的名稱包含任何空格，請使用引號括住介面卡名稱（例如： * * * *<em>介面卡名稱</em>* * * *）。
-- 對於介面卡名稱， **ipconfig**支援使用星號（\*）萬用字元來指定名稱開頭為指定字串的介面卡，或名稱包含指定字串的介面卡。 例如，**本機\*** 符合所有以本機字串開頭的介面卡，而 **\*con\*** 符合包含字串 Con 的所有介面卡。
+- 對於介面卡名稱， **ipconfig**支援使用星號（\*）萬用字元來指定名稱開頭為指定字串的介面卡，或名稱包含指定字串的介面卡。 例如，[**本機\* ** ] 會比對開頭為 [本機] 的所有介面卡** \*，並\*符合**包含字串 Con 的所有介面卡。
 
 ## <a name="examples"></a>範例
 
@@ -78,6 +78,6 @@ ipconfig /showclassid Local*
 ipconfig /setclassid Local Area Connection TEST
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 -   - [命令列語法關鍵](command-line-syntax-key.md)

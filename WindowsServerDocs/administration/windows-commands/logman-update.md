@@ -1,6 +1,6 @@
 ---
 title: logman update
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 77eb7232bde12076903ab9da3bd379a6968cca45
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: cc226d4b9044eaa966725f3bf1329ed6a1eecd62
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80840421"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724288"
 ---
 # <a name="logman-update"></a>logman update
 
@@ -38,6 +38,6 @@ logman update <counter | trace | alert | cfg | api> <[-n] <name>> [options]
 |[logman 更新 cfg](logman-update-cfg.md)|更新設定資料收集器。|
 |[logman 更新 api](logman-update-api.md)|更新 API 追蹤資料收集器。|
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 [Logman](logman.md)

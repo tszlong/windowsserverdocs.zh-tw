@@ -1,6 +1,6 @@
 ---
 title: ftp 接收
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7fec409741e00bb3e6f61808630e5141ce4ec78f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5ece259f2d48e18f6a789d51b1df7089490f2fa1
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80842961"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725122"
 ---
 # <a name="ftp-recv"></a>ftp：接收
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 使用目前的檔案傳輸類型，將遠端檔案複製到本機電腦。   
 ## <a name="syntax"></a>語法  
@@ -35,7 +35,7 @@ recv <remoteFile> [<LocalFile>]
 ## <a name="remarks"></a>備註  
 - [**接收**] 命令等同于**get**命令。  
 - 如果未指定*LocalFile* ，則會為檔案提供*remoteFile*名稱。  
-  ## <a name="examples"></a><a name=BKMK_Examples></a>典型  
+  ## <a name="examples"></a>範例  
   使用目前的檔案傳輸類型，將**test.txt**複製到本機電腦。  
   ```  
   recv test.txt  
@@ -44,7 +44,7 @@ recv <remoteFile> [<LocalFile>]
   ```  
   recv test.txt test1.txt  
   ```  
-  ## <a name="additional-references"></a>其他參考資料  
+  ## <a name="additional-references"></a>其他參考  
 - [ftp： ascii](ftp-ascii.md)  
 - [ftp： binary](ftp-binary.md)  
 - [ftp： get](ftp-get.md)  

@@ -1,6 +1,6 @@
 ---
 title: klist
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b693e4496f4fc1275e1f2b364900564ce86e97cb
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f83a46f158cd83aa8393630aa0138271e8868575
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841961"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724758"
 ---
 # <a name="klist"></a>klist
 
 
 
-顯示目前快取的 Kerberos 票證清單。 這套資訊適用于 Windows Server 2012。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
+顯示目前快取的 Kerberos 票證清單。 這套資訊適用于 Windows Server 2012。
 
 ## <a name="syntax"></a>語法
 
@@ -34,12 +34,12 @@ klist [-lh <LogonId.HighPart>] [-li <LogonId.LowPart>] tickets | tgt | purge | s
 |---------|-----------|
 |-lh|表示使用者的本機唯一識別碼（LUID）的最高部分，以十六進位表示。 如果-lh 或– li 皆不存在，此命令會預設為目前登入之使用者的 LUID。|
 |-li|表示使用者的本機唯一識別碼（LUID）的低部分，以十六進位表示。 如果-lh 或– li 皆不存在，此命令會預設為目前登入之使用者的 LUID。|
-|票證|列出目前快取的票證授權票證（Tgt），以及指定登入會話的服務票證。 此為預設選項。|
+|票證|列出目前快取的票證授權票證（Tgt），以及指定登入會話的服務票證。 這是預設選項。|
 |tgt|顯示初始 Kerberos TGT。|
-|清除|可讓您刪除指定登入會話的所有票證。|
+|清理|可讓您刪除指定登入會話的所有票證。|
 |工作階段|顯示這部電腦上的登入會話清單。|
 |kcd_cache|顯示 Kerberos 限制委派快取資訊。|
-|取得|可讓您向服務主體名稱（SPN）所指定的目的電腦要求票證。|
+|get|可讓您向服務主體名稱（SPN）所指定的目的電腦要求票證。|
 |add_bind|可讓您指定 Kerberos 驗證慣用的網域控制站。|
 |query_bind|顯示 Kerberos 已連線之每個網域的快取慣用網域控制站清單。|
 |purge_bind|移除指定網域的快取慣用網域控制站。|
@@ -70,7 +70,7 @@ klist [-lh <LogonId.HighPart>] [-li <LogonId.LowPart>] tickets | tgt | purge | s
     列出目前快取票證的初始 Kerberos TGT 和下列屬性：  
     -   LogonID：以十六進位識別
     -   ServiceName： krbtgt
-    -   TargetName \<SPN >： krbtgt
+    -   TargetName \<SPN>： krbtgt
     -   DomainName：發行 TGT 的網功能變數名稱稱
     -   TargetDomainName： TGT 發出的網域
     -   AltTargetDomainName： TGT 發出的網域
@@ -93,7 +93,7 @@ klist [-lh <LogonId.HighPart>] [-li <LogonId.LowPart>] tickets | tgt | purge | s
 
     可讓您顯示 Kerberos 限制委派快取資訊。  
     -   LogonID：如果指定，會依指定的值顯示登入會話的快取資訊。 如果未指定，則會顯示目前使用者登入會話的快取資訊。
--   **獲取**
+-   **get**
 
     可讓您向 SPN 指定的目標要求票證。  
     -   LogonID：如果指定，則會依指定的值使用登入會話來要求票證。 如果未指定，則會使用目前使用者的登入會話來要求票證。
@@ -111,10 +111,10 @@ klist [-lh <LogonId.HighPart>] [-li <LogonId.LowPart>] tickets | tgt | purge | s
 
     如需目前的選項清單及其說明，請參閱[RFC 4120](http://www.ietf.org/rfc/rfc4120.txt)。
 
-**其他考慮**
+**其他考量**
 -   Klist 可在 Windows Server 2012 和 Windows 8 中使用，而且不需要進行任何特殊安裝。
 
-## <a name="examples"></a><a name=BKMK_Examples></a>典型
+## <a name="examples"></a>範例
 
 1. 當您在處理目標伺服器的票證授權服務（TGS）要求時診斷事件識別碼27時，該帳戶沒有適當的金鑰可產生 Kerberos 票證。 您可以使用 Klist 來查詢 Kerberos 票證快取，以判斷是否有任何票證遺失、目標伺服器或帳戶是否有錯誤，或加密類型不受支援。  
    ```
@@ -162,6 +162,6 @@ klist [-lh <LogonId.HighPart>] [-li <LogonId.LowPart>] tickets | tgt | purge | s
    klist purge_bind
    ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 -   - [命令列語法關鍵](command-line-syntax-key.md)

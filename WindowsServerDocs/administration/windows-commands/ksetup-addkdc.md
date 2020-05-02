@@ -1,6 +1,6 @@
 ---
 title: ksetup： addkdc
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3bb31cbc8ba7920c4ba609f86202e2e62a705078
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 76d592e4f1c32305d6f939a66a6ad42cd582b032
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841831"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724759"
 ---
 # <a name="ksetupaddkdc"></a>ksetup： addkdc
 
 
 
-為指定的 Kerberos 領域新增金鑰發佈中心（KDC）位址。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
+為指定的 Kerberos 領域新增金鑰發佈中心（KDC）位址。
 
 ## <a name="syntax"></a>語法
 
@@ -32,8 +32,8 @@ ksetup /addkdc <RealmName> [<KDCName>]
 
 |參數|描述|
 |---------|-----------|
-|\<RealmName >|領域名稱會指定為大寫 DNS 名稱，例如 CORP。CONTOSO.COM，在執行**ksetup**時，它會列為預設領域。 這是您嘗試新增其他 KDC 的領域。|
-|\<KDCName >|KDC 名稱會指定為不區分大小寫的完整功能變數名稱，例如 mitkdc.microsoft.com。 如果省略 KDC 名稱，DNS 將會找出 Kdc。|
+|\<RealmName>|領域名稱會指定為大寫 DNS 名稱，例如 CORP。CONTOSO.COM，在執行**ksetup**時，它會列為預設領域。 這是您嘗試新增其他 KDC 的領域。|
+|\<KDCName>|KDC 名稱會指定為不區分大小寫的完整功能變數名稱，例如 mitkdc.microsoft.com。 如果省略 KDC 名稱，DNS 將會找出 Kdc。|
 
 ## <a name="remarks"></a>備註
 
@@ -43,18 +43,18 @@ ksetup /addkdc <RealmName> [<KDCName>]
 
 若要驗證電腦的預設領域名稱，或確認此命令是否如預期運作，請在命令提示字元中執行**ksetup** ，並確認已新增 KDC 的輸出。
 
-## <a name="examples"></a><a name=BKMK_Examples></a>典型
+## <a name="examples"></a>範例
 
 設定非 Windows KDC 伺服器和工作站應使用的領域：
 ```
 ksetup /addkdc CORP.CONTOSO.COM mitkdc.contoso.com
 ```
-在與前一個命令相同的電腦命令列中執行 Ksetup 工具，將本機電腦帳戶密碼設定為 p@sswrd1%。 然後重新開機電腦。
+在與前一個命令相同的電腦命令列中執行 Ksetup 工具，將本機電腦帳戶密碼設定為p@sswrd1%。 然後重新啟動電腦。
 ```
 Ksetup /setcomputerpassword p@sswrd1%
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 -   [Ksetup](ksetup.md)
 -   [Ksetup:setcomputerpassword](ksetup-setcomputerpassword.md)

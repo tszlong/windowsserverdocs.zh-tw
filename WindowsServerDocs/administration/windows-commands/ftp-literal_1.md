@@ -1,6 +1,6 @@
 ---
 title: ftp literal_1
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f502bb56c94734870962f56cfb85dcc17ddc3f93
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fc4f8aff5a22da93330a12a75e5f368285366216
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80843391"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725251"
 ---
 # <a name="ftp-literal_1"></a>ftp： literal_1
 
->適用于： Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012 會將逐字引數傳送到遠端 ftp 伺服器。 會傳回單一 ftp 回復碼。   
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012 會將逐字引數傳送到遠端 ftp 伺服器。 會傳回單一 ftp 回復碼。   
 
 ## <a name="syntax"></a>語法  
 ```  
@@ -32,11 +32,11 @@ literal <Argument> [ ]
 
 ## <a name="remarks"></a>備註  
 **常**值命令與**引號**命令相同。  
-## <a name="examples"></a><a name=BKMK_Examples></a>典型  
+## <a name="examples"></a>範例  
 將**quit**命令傳送到遠端 ftp 伺服器。  
 ```  
 literal quit  
 ```  
-## <a name="additional-references"></a>其他參考資料  
+## <a name="additional-references"></a>其他參考  
 -   [ftp：引號](ftp-quote.md)  
 -   - [命令列語法關鍵](command-line-syntax-key.md)  

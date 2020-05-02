@@ -1,6 +1,6 @@
 ---
-title: 說明
-description: '\* * * * 的 Windows 命令主題'
+title: help
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f7b6f3a563c59a55ff92b38f0854437b96478f6c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9d3a16c2534934a7bc8126b0a775ec7aa08462b3
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80842341"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724918"
 ---
-# <a name="help"></a>說明
+# <a name="help"></a>help
 
 
 
 提供有關系統命令的線上資訊（也就是非網路命令）。 如果在沒有**參數的情況**下使用，說明會列出並簡短地描述每個系統命令。
 
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>語法
 
@@ -35,9 +35,9 @@ help [<Command>]
 
 |參數|描述|
 |---------|-----------|
-|\<命令 >|指定您想要其相關資訊的命令名稱。|
+|\<命令>|指定您想要其相關資訊的命令名稱。|
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 若要查看**robocopy**命令的相關資訊，請輸入下列其中一項：
 ```
@@ -45,6 +45,6 @@ help robocopy
 robocopy /? 
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

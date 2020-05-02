@@ -1,6 +1,6 @@
 ---
-title: label
-description: '\* * * * 的 Windows 命令主題'
+title: 標籤
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7ccb86e2167682e1048161f2d5f5386a8b5cf6ed
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 63603eda8d23b6f7b89b8d1ba858575a60e3c65c
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841171"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724510"
 ---
-# <a name="label"></a>label
+# <a name="label"></a>標籤
 
 
 
 建立、變更或刪除磁片的磁片區標籤（也就是名稱）。 如果使用時不含參數， **label**命令會變更目前的磁片區標籤，或刪除現有的標籤。
 
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>語法
 
@@ -35,8 +35,8 @@ label [/mp] [<Volume>] [<Label>]
 |參數|描述|
 |---------|-----------|
 |/mp|指定應該將磁片區視為掛接點或磁片區名稱。|
-|\<磁片區 >|指定磁碟機號（後面接著冒號）、掛接點或磁片區名稱。 如果指定了磁片區名稱， **/mp**參數就是不必要的。|
-|\<標籤 >|指定磁片區的標籤。|
+|\<磁片區>|指定磁碟機號（後面接著冒號）、掛接點或磁片區名稱。 如果指定了磁片區名稱， **/mp**參數就是不必要的。|
+|\<標籤>|指定磁片區的標籤。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
@@ -55,7 +55,7 @@ label [/mp] [<Volume>] [<Label>]
   ```  
   按 Y 刪除標籤，或按 N 以保留標籤。
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 若要將磁片磁碟機 A 中包含七月銷售資訊的磁片加上標籤，請輸入：
 ```
@@ -72,12 +72,12 @@ label a:sales-july
    Volume Serial Number is 6789-ABCD
    Volume label (32 characters, ENTER for none)?
    ```  
-2. 按 ENTER。 應該會顯示下列提示：  
+2. 按 ENTER 鍵。 應該會顯示下列提示：  
    ```
    Delete current volume label (Y/N)?
    ```  
 3. 按 Y 以刪除目前的標籤。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

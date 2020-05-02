@@ -1,6 +1,6 @@
 ---
 title: 清單提供者
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: df58eb8383378e8cfbe44db286e5f2a116d52a88
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 761099e3b399aeb9e6a3fe1ddd53ed1a667a4ccb
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841181"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724505"
 ---
 # <a name="list-providers"></a>清單提供者
 
@@ -22,7 +22,7 @@ ms.locfileid: "80841181"
 
 列出目前已在系統上註冊的陰影複製提供者。
 
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>語法
 
@@ -30,7 +30,7 @@ ms.locfileid: "80841181"
 list providers
 ```
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 若要列出目前已註冊的陰影複製提供者，請輸入：
 ```
@@ -46,6 +46,6 @@ list providers
 1 provider registered.
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
 title: graftabl
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d55df814cb962e82775a86e154a024c579987cf2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b3815b85da163c03dea7bd2619d4647454d3ebd7
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80842411"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724920"
 ---
 # <a name="graftabl"></a>graftabl
 
@@ -22,7 +22,7 @@ ms.locfileid: "80842411"
 
 可讓 Windows 作業系統以圖形模式顯示擴充字元集。 如果使用時不含參數， **graftabl**會顯示上一個和目前的字碼頁。
 
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>語法
 
@@ -35,7 +35,7 @@ graftabl /status
 
 |參數|描述|
 |---------|-----------|
-|\<字碼頁 >|指定字碼頁，以定義圖形模式中擴充字元的外觀。</br>有效的字碼頁識別編號為：</br>437：美國</br>850：多語系（拉丁 I）</br>852：斯拉夫語（拉丁 II）</br>855：斯拉夫文（俄文）</br>857：土耳其文</br>860：葡萄牙文</br>861：冰島文</br>863：加拿大-法文</br>865：北歐</br>866：俄文</br>869：新式希臘文|
+|\<字碼頁>|指定字碼頁，以定義圖形模式中擴充字元的外觀。</br>有效的字碼頁識別編號為：</br>437：美國</br>850：多語系（拉丁 I）</br>852：斯拉夫語（拉丁 II）</br>855：斯拉夫文（俄文）</br>857：土耳其文</br>860：葡萄牙文</br>861：冰島文</br>863：加拿大-法文</br>865：北歐</br>866：俄文</br>869：新式希臘文|
 |/status|顯示**graftabl**目前使用的字碼頁。|
 |/?|在命令提示字元顯示說明。|
 
@@ -50,7 +50,7 @@ graftabl /status
     |2|發生檔案錯誤。|
 -   您可以在 batch 程式中使用 ERRORLEVEL 環境變數來處理**graftabl**所傳回的結束代碼。
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 若要查看**graftabl**所使用的目前字碼頁，請輸入：
 ```
@@ -65,7 +65,7 @@ graftabl 437
 graftabl 850
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

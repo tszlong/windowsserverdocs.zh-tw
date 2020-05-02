@@ -1,6 +1,6 @@
 ---
 title: ksetup： dumpstate
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 46f827d26d867392db4cbef92cf5be496aee8d74
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 27a7e3154b9dfa663b88b04857ea7650995613c6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841511"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724645"
 ---
 # <a name="ksetupdumpstate"></a>ksetup： dumpstate
 
 
 
-顯示電腦上定義之所有領域的領域設定目前狀態。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
+顯示電腦上定義之所有領域的領域設定目前狀態。
 
 ## <a name="syntax"></a>語法
 
@@ -30,7 +30,7 @@ ksetup /dumpstate
 
 #### <a name="parameters"></a>參數
 
-無
+None
 
 ## <a name="remarks"></a>備註
 
@@ -45,14 +45,14 @@ ksetup /dumpstate
 
 **Ksetup**會產生與**Ksetup/dumpstate**相同的輸出。
 
-## <a name="examples"></a><a name=BKMK_Examples></a>典型
+## <a name="examples"></a>範例
 
 在電腦上尋找大部分的 Kerberos 領域設定：
 ```
 ksetup /dumpstate
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 -   [Ksetup](ksetup.md)
 -   - [命令列語法關鍵](command-line-syntax-key.md)

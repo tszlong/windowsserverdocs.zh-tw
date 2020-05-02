@@ -1,6 +1,6 @@
 ---
 title: jetpack
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 008e9dd4d41fe270d775b1c44d799dd16429046f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ec29a1fd48fdba72f07fe5d00de7730d93434105
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841971"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724791"
 ---
 # <a name="jetpack"></a>jetpack
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 壓縮 Windows 網際網路名稱服務（WINS）或動態主機設定通訊協定（DHCP）資料庫。 Microsoft 建議您在 WINS 資料庫接近 30 MB 時，將其壓縮。 
 
@@ -34,7 +34,7 @@ jetpack.EXE <database name> <temp database name>
 |<temp database name>|指定暫存資料庫檔案。|
 |/?|在命令提示字元顯示說明。|
 
-## <a name="examples"></a><a name=BKMK_Examples></a>典型
+## <a name="examples"></a>範例
 若要壓縮 WINS 資料庫：
 ```
 cd %SYSTEMROOT%\SYSTEM32\WINS
@@ -58,5 +58,5 @@ jetpack 會藉由執行下列動作來壓縮 WINS 或 DHCP 資料庫：
 > [!NOTE]
 > 在 compact 程式期間，jetpack 會使用*temp 資料庫名稱*參數所指定的名稱來建立暫存檔案。 當 compact 程式完成時，就會移除暫存檔案。 請確定您的 WINS 或 DHCP 資料夾中沒有已存在的檔案，其名稱與*temp 資料庫名稱*參數中指定的相同。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 -   - [命令列語法關鍵](command-line-syntax-key.md)

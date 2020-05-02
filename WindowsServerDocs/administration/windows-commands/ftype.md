@@ -1,6 +1,6 @@
 ---
 title: ftype
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f982f68f25a4decbc9c572b533fa1ecc5e893a8c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 43108fad0e1981bffd110264809acf30c1c12ba1
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80842701"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725009"
 ---
 # <a name="ftype"></a>ftype
 
 
 
-顯示或修改副檔名關聯中所使用的檔案類型。 如果使用時沒有指派運算子（ **=** ）， **ftype**會針對指定的檔案類型顯示目前開啟的命令字串。 如果在沒有參數的情況下使用， **ftype**會顯示已定義 open 命令字串的檔案類型。
+顯示或修改副檔名關聯中所使用的檔案類型。 如果在沒有指派運算子（**=**）的情況下使用， **ftype**會針對指定的檔案類型顯示目前開啟的命令字串。 如果在沒有參數的情況下使用， **ftype**會顯示已定義 open 命令字串的檔案類型。
 
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>語法
 
@@ -34,8 +34,8 @@ ftype [<FileType>[=[<OpenCommandString>]]]
 
 |參數|描述|
 |---------|-----------|
-|\<的類型 >|指定要顯示或變更的檔案類型。|
-|\<OpenCommandString >|指定開啟指定檔案類型的檔案時，所要使用的 open 命令字串。|
+|\<類型>|指定要顯示或變更的檔案類型。|
+|\<OpenCommandString>|指定開啟指定檔案類型的檔案時，所要使用的 open 命令字串。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
@@ -46,10 +46,10 @@ ftype [<FileType>[=[<OpenCommandString>]]]
 |--------|-----------------|
 |%0或 %1|會以透過關聯啟動的檔案名取代。|
 |%*|取得所有參數。|
-|%2，%3，。|取得第一個參數（%2）、第二個參數（%3）等等。|
-|%~\<N >|取得所有開頭為第*N*個參數的剩餘參數，其中*N*可以是介於2到9之間的任何數位。|
+|%2，%3，.。。|取得第一個參數（%2）、第二個參數（%3）等等。|
+|%~\<N>|取得所有開頭為第*N*個參數的剩餘參數，其中*N*可以是介於2到9之間的任何數位。|
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 若要顯示目前已定義 open 命令字串的檔案類型，請輸入：
 ```
@@ -59,7 +59,7 @@ ftype
 ```
 ftype txtfile
 ```
-此命令會產生類似下列的輸出：
+這個命令產生的輸出類似下面所述：
 ```
 txtfile=%SystemRoot%\system32\NOTEPAD.EXE %1
 ```
@@ -77,6 +77,6 @@ ftype PerlScript=perl.exe %1 %*
 set PATHEXT=.pl;%PATHEXT%
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

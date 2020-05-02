@@ -1,6 +1,6 @@
 ---
 title: ksetup： changepassword
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 68b14388ff3c33458873b494c8d5a770b44f7545
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 32c48e896b77043820eea42159e20c089bd69fb8
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841781"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724728"
 ---
 # <a name="ksetupchangepassword"></a>ksetup： changepassword
 
 
 
-會使用金鑰發佈中心（KDC）密碼（kpasswd）值來變更已登入使用者的密碼。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
+會使用金鑰發佈中心（KDC）密碼（kpasswd）值來變更已登入使用者的密碼。
 
 ## <a name="syntax"></a>語法
 
@@ -32,8 +32,8 @@ ksetup /changepassword <OldPasswd> <NewPasswd>
 
 |參數|描述|
 |---------|-----------|
-|\<OldPasswd >|指出登入使用者的現有密碼。|
-|\<NewPasswd >|指出登入使用者的新密碼。|
+|\<OldPasswd>|指出登入使用者的現有密碼。|
+|\<NewPasswd>|指出登入使用者的新密碼。|
 
 ## <a name="remarks"></a>備註
 
@@ -47,7 +47,7 @@ ksetup /changepassword <OldPasswd> <NewPasswd>
 
 命令的輸出會通知您「成功」或「失敗」狀態。
 
-## <a name="examples"></a><a name=BKMK_Examples></a>典型
+## <a name="examples"></a>範例
 
 將目前登入此電腦的使用者密碼變更為此網域：
 ```
@@ -62,6 +62,6 @@ ksetup /domain CONTOSO /changepassword Pas$w0rd Pa$$w0rd
 ksetup /changepassword Pas$w0rd *
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 -   - [命令列語法關鍵](command-line-syntax-key.md)

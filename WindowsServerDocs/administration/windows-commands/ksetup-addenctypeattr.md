@@ -1,6 +1,6 @@
 ---
 title: ksetup： addenctypeattr
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 217e8a707c0af23901da3f433f630b253360f093
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 26441f739979cde31715e5fb06b5f3ab59845d97
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841941"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724742"
 ---
 # <a name="ksetupaddenctypeattr"></a>ksetup： addenctypeattr
 
 
 
-將 [加密類型] 屬性加入至網域的可能類型清單。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
+將 [加密類型] 屬性加入至網域的可能類型清單。
 
 ## <a name="syntax"></a>語法
 
@@ -32,7 +32,7 @@ ksetup /addenctypeattr <DomainName> {DES-CBC-CRC | DES-CBC-MD5 | RC4-HMAC-MD5 | 
 
 |參數|描述|
 |---------|-----------|
-|\<DomainName >|您想要建立連接的網功能變數名稱稱。 使用完整功能變數名稱或簡單格式的名稱，例如 corp.contoso.com 或 contoso。|
+|\<DomainName>|您想要建立連接的網功能變數名稱稱。 使用完整功能變數名稱或簡單格式的名稱，例如 corp.contoso.com 或 contoso。|
 |加密類型|必須是下列其中一種支援的加密類型：</br>-DES-CBC-CRC</br>-DES-CBC-MD5</br>-RC4-HMAC-MD5</br>-AES128-CTS-HMAC-SHA1-96</br>-AES256-CTS-HMAC-SHA1-96|
 
 ## <a name="remarks"></a>備註
@@ -43,9 +43,9 @@ ksetup /addenctypeattr <DomainName> {DES-CBC-CRC | DES-CBC-MD5 | RC4-HMAC-MD5 | 
 
 如果命令成功或失敗，則會顯示狀態訊息。
 
-若要設定您想要連接並使用的網域，請執行**ksetup/domain \<DomainName >** 命令。
+若要設定您想要連接並使用的網域，請執行**ksetup/Domain \<DomainName>** 命令。
 
-## <a name="examples"></a><a name=BKMK_Examples></a>典型
+## <a name="examples"></a>範例
 
 判斷這部電腦上設定的目前加密類型：
 ```
@@ -59,7 +59,7 @@ ksetup /domain corp.contoso.com
 ```
 ksetup /addenctypeattr corp.contoso.com AES-256-CTS-HMAC-SHA1-96
 ```
-針對網域 corp.contoso.com，將 加密類型 屬性設定為 AES-256-
+針對網域 corp.contoso.com，將 [加密類型] 屬性設定為 [AES-256-
 ```
 ksetup /setenctypeattr corp.contoso.com AES-256-CTS-HMAC-SHA1-96
 ```
@@ -68,7 +68,7 @@ ksetup /setenctypeattr corp.contoso.com AES-256-CTS-HMAC-SHA1-96
 ksetup /getenctypeattr corp.contoso.com
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 -   [Klist](klist.md)
 -   [Ksetup:domain](ksetup-domain.md)
