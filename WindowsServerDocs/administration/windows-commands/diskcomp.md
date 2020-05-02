@@ -1,6 +1,6 @@
 ---
 title: diskcomp
-description: 適用于 diskcomp 的 Windows 命令主題，它會比較兩個磁片的內容。
+description: Diskcomp 的參考主題，它會比較兩個磁片的內容。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,17 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e36e644616e25659c1a2a5ca684e975fd06fc19f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e1b15e9b6669a22ac95693e635bae1642c307e09
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80845551"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719488"
 ---
 # <a name="diskcomp"></a>diskcomp
 
 比較兩個磁片磁碟機的內容。 如果在沒有參數的情況下使用， **diskcomp**會使用目前的磁片磁碟機來比較這兩個磁片。
 
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
 ## <a name="syntax"></a>語法
 
@@ -32,8 +31,8 @@ diskcomp [<Drive1>: [<Drive2>:]]
 
 |參數|描述|
 |---------|-----------|
-|\<Drive1 >|指定包含其中一個軟碟的磁片磁碟機。|
-|\<Drive2 >|指定包含其他軟碟的磁片磁碟機。|
+|\<Drive1>|指定包含其中一個軟碟的磁片磁碟機。|
+|\<Drive2>|指定包含其他軟碟的磁片磁碟機。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
@@ -103,7 +102,7 @@ diskcomp [<Drive1>: [<Drive2>:]]
 
   若要處理**diskcomp**傳回的結束代碼，您可以在 batch 程式的**if**命令列上使用 ERRORLEVEL 環境變數。
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 如果您的電腦只有一個磁片磁碟機（例如磁片磁碟機 A），而您想要比較兩個磁片，請輸入：
 ```
@@ -111,7 +110,7 @@ diskcomp a: a:
 ```
 **Diskcomp**會提示您視需要插入每個磁片。
 
-下列範例說明如何在使用**if**命令列上 ERRORLEVEL 環境變數的 batch 程式中處理**diskcomp**結束代碼：
+說明如何處理在**if**命令列上使用 ERRORLEVEL 環境變數的 batch 程式中的**diskcomp**結束代碼：
 ```
 rem Checkout.bat compares the disks in drive A and B 
 echo off 
@@ -138,6 +137,6 @@ goto exit
 :exit
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
-title: bitsadmin setHTTPmethod
-description: 適用于**bitsadmin setHTTPmethod**的 Windows 命令主題，其會設定要使用的 HTTP 指令動詞。
+title: bitsadmin sethttpmethod
+description: Bitsadmin setHTTPmethod 命令的參考主題，其會設定要使用的 HTTP 指令動詞。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -8,14 +8,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: d349dcad7bdf6a6fc566ed961c3160836d7f49da
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: daf1c23565bc4f398fd29e51aaaeef23b3b0d018
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122960"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719352"
 ---
-# <a name="bitsadmin-sethttpmethod"></a>bitsadmin setHTTPmethod
+# <a name="bitsadmin-sethttpmethod"></a>bitsadmin sethttpmethod
 
 設定要使用的 HTTP 指令動詞。
 
@@ -29,9 +29,11 @@ bitsadmin /sethttpmethod <job> <httpmethod>
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| 工作 | 作業的顯示名稱或 GUID。 |
+| 作業 | 作業的顯示名稱或 GUID。 |
 | HTTPmethod | 要使用的 HTTP 指令動詞。 如需可用動詞的詳細資訊，請參閱[方法定義](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)。 |
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

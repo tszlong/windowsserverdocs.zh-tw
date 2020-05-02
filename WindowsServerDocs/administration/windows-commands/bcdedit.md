@@ -1,6 +1,6 @@
 ---
 title: bcdedit
-description: '**Bcdedit**的 Windows 命令主題，它會建立新的存放區、修改現有的存放區，以及新增開機功能表參數。'
+description: Bcdedit 命令的參考主題，它會建立新的存放區、修改現有的存放區，以及新增開機功能表參數。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/27/2018
-ms.openlocfilehash: f5bd39fa29dc99bba0d3600fc8609a355ffe540c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: df68c2c1b1087f7e32dbe270657a54e072261c46
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851071"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718701"
 ---
 # <a name="bcdedit"></a>bcdedit
 
@@ -29,27 +29,27 @@ BCDEdit 為命令列工具，可用於管理 BCD 存放區。 它可用於各種
 > [!NOTE]
 > 需要系統管理權限，才可使用 BCDEdit 來修改 BCD。
 
-BCDEdit 是編輯 Windows Vista 和更新版本之 Windows 開機設定的主要工具。 它隨附于 Windows Vista 散發套件的%WINDIR%\System32 資料夾中。
+BCDEdit 是用於編輯 Windows Vista 和更新版 Windows 之開機設定的主要工具。 其隨附於 Windows Vista 的發佈版本的 %WINDIR%\System32 資料夾中。
 
 BCDEdit 受限於標準的資料型態，主要是設計來執行對 BCD 之單一且常見的變更。 如為更複雜的操作或非標準的資料型態，請考慮使用 BCD Windows Management Instrumentation (WMI) 應用程式發展介面 (API)，來建立更強大且更有彈性的自訂工具。
 
 ## <a name="syntax"></a>語法
 
 ```
-BCDEdit /Command [<Argument1>] [<Argument2>] ...
+bcdedit /command [<argument1>] [<argument2>] ...
 ```
 
 ### <a name="parameters"></a>參數
 
-### <a name="general-bcdedit-command-line-option"></a>一般 BCDEdit 命令列選項
+### <a name="general-bcdedit-command-line-options"></a>一般 BCDEdit 命令列選項
 
-| 選項 | 描述 |
+| 選項 | 說明 |
 | ------ | ----------- |
-| /? | 顯示 BCDEdit 命令清單。 若執行此命令時未加上引數，則會顯示可用命令的摘要。 若要顯示特定命令的詳細說明，請執行**bcdedit/？** `<command>`，其中 `<command>` 是您要搜尋的命令名稱，以取得的詳細資訊。 例如， **bcdedit/？ createstore**會顯示 createstore 命令的詳細說明。 |
+| /? | 顯示 BCDEdit 命令清單。 若執行此命令時未加上引數，則會顯示可用命令的摘要。 若要顯示特定命令的詳細說明，請執行**bcdedit/？** `<command>`，其中`<command>`是您要搜尋的命令名稱，以取得的詳細資訊。 例如， **bcdedit/？ createstore**會顯示 createstore 命令的詳細說明。 |
 
 #### <a name="parameters-that-operate-on-a-store"></a>在存放區上操作的參數
 
-| 選項 | 描述 |
+| 選項 | 說明 |
 | ------ | ----------- |
 | /createstore | 建立新的且空的開機設定資料存放區。 建立的存放區並非系統存放區。 |
 | /export | 將系統存放區的內容匯出至檔案。 這個檔案稍後可用於還原系統存放區的狀態。 這個命令僅對系統存放區有效。 |
@@ -76,7 +76,7 @@ BCDEdit /Command [<Argument1>] [<Argument2>] ...
 | 參數 | 描述 |
 | ------ | ----------- |
 | /enum | 列出存放區中的項目。 **/Enum**選項是 BCEdit 的預設值，因此在沒有參數的情況下執行**bcdedit**命令相當於執行**bcdedit/enum active**命令。 |
-| /v | 詳細資料模式。 通常任何通用的項目識別元都會以好記的簡短形式呈現。 指定 **/v**做為命令列選項會顯示完整的所有識別碼。 執行**bcdedit/v**命令本身相當於執行**bcdedit/enum active/v**命令。 |
+| /v | 詳細資訊模式。 通常任何通用的項目識別元都會以好記的簡短形式呈現。 指定 **/v**做為命令列選項會顯示完整的所有識別碼。 執行**bcdedit/v**命令本身相當於執行**bcdedit/enum active/v**命令。 |
 
 #### <a name="parameters-that-control-the-boot-manager"></a>控制開機管理程式的參數
 
@@ -101,13 +101,13 @@ BCDEdit /Command [<Argument1>] [<Argument2>] ...
 | 參數 | 描述 |
 | ------ | ----------- |
 | /bootdebug | 啟用或停用指定之開機項目的開機偵錯工具。 雖然這個命令可用於任何的開機項目，但它僅對開機應用程式有效。 |
-| /dbgsettings | 指定或顯示系統的全域偵錯工具設定。 此命令不會 enablepose。 若要設定個別的全域偵錯工具設定，請使用**bcdedit/set** `<dbgsettings> <type> <value>` 命令。 |
+| /dbgsettings | 指定或顯示系統的全域偵錯工具設定。 此命令不會 enablepose。 若要設定個別的全域偵錯工具設定，請使用**bcdedit/set** `<dbgsettings> <type> <value>`命令。 |
 | /debug | 啟用或停用指定之開機項目的核心偵錯工具。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="additional-references"></a>其他參考
 
 如需如何使用 BCDEdit 的範例，請參閱[BCDEdit 選項參考](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcd-boot-options-reference)文章。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

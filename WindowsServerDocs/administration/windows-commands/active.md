@@ -1,6 +1,6 @@
 ---
 title: 作用中
-description: '**Active**的 Windows 命令主題（在基本磁碟上）會將具有焦點的磁碟分割標示為作用中。'
+description: 作用中命令的參考主題（在基本磁碟上）會將具有焦點的磁碟分割標示為作用中。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,41 +9,36 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 42f2e0d367344355e8f9a570f37cfbdc5dfc4590
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 997c57b93434738c87396812c9b5e5b12d7a8e89
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851371"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719020"
 ---
 # <a name="active"></a>作用中
 
-在基本磁碟上，將帶有焦點的磁碟分割標記為啟動。
+在基本磁碟上，將帶有焦點的磁碟分割標記為啟動。 只有資料分割可以標示為使用中。 必須選取一個磁碟分割，這項操作才能繼續。 使用 [**選取資料分割**] 命令來選取磁碟分割，並將焦點移至該資料分割。
 
 > [!CAUTION]
-> DiskPart 只會驗證磁碟分割是否能夠包含作業系統啟動檔案。 DiskPart 不檢查磁碟分割的內容。 如果您不小心將磁碟分割標示為使用中，而且它不包含作業系統啟動檔案，則您的電腦可能無法啟動。
+> DiskPart 只會通知基本輸入/輸出系統（BIOS）或可延伸韌體介面（EFI），磁碟分割或磁片區是有效的系統磁碟分割或系統磁碟區，而且能夠包含作業系統啟動檔案。 DiskPart 不檢查磁碟分割的內容。 如果您不小心將磁碟分割標示為使用中，而且它不包含作業系統啟動檔案，則您的電腦可能無法啟動。
 
 ## <a name="syntax"></a>語法
 
 ```
 active
-```- 
+```
 
-## Remarks
+## <a name="examples"></a>範例
 
--   This informs the basic input/output system (BIOS) or Extensible Firmware Interface (EFI) that the partition or volume is a valid system partition or system volume.
-
--   Only partitions can be marked as active.
-
--   A partition must be selected for this operation to succeed. Use the **select partition** command to select a partition and shift the focus to it.
-
-## <a name=BKMK_examples></a>Examples
-
-To mark the partition with focus as the active partition, type:
+若要將具有焦點的資料分割標示為使用中的資料分割，請輸入：
 
 ```
-作用中
+active
 ```
-## Additional References
 
-- [Command-Line Syntax Key](command-line-syntax-key.md)
+## <a name="additional-references"></a>其他參考
+
+- [命令列語法關鍵](command-line-syntax-key.md)
+
+- [選取資料分割命令](select-partition.md)

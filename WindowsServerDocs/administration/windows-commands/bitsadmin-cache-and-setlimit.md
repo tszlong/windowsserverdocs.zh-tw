@@ -1,6 +1,6 @@
 ---
-title: bitsadmin cache 和 setlimit
-description: 適用于**bitsadmin cache 和 setlimit**的 Windows 命令主題，其會設定快取大小限制。
+title: bitsadmin cache and setlimit
+description: Bitsadmin cache 和 setlimit 命令的參考主題，其會設定快取大小限制。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 746ee0b69da8f5bd22fec2ccbd432126cc25d94d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a4c41102bfb87ff6d48113c4e85a821b821b5b01
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850871"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718282"
 ---
-# <a name="bitsadmin-cache-and-setlimit"></a>bitsadmin cache 和 setlimit
+# <a name="bitsadmin-cache-and-setlimit"></a>bitsadmin cache and setlimit
 
 設定快取大小限制。
 
@@ -32,14 +32,16 @@ bitsadmin /cache /setlimit percent
 | -------------- | -------------- |
 | percent | 快取限制定義為總硬碟空間的百分比。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
-下列範例會將快取大小限制為50%。
+若要將快取大小限制設定為50%：
 
 ```
-C:\>bitsadmin /cache /setlimit 50
+bitsadmin /cache /setlimit 50
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin cache 命令](bitsadmin-cache.md)

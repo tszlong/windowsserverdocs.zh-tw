@@ -1,6 +1,6 @@
 ---
-title: bitsadmin 快取與清單
-description: Bitsadmin 快取**和清單**的 Windows 命令主題，其中列出所有快取專案。
+title: bitsadmin cache and list
+description: Bitsadmin cache 和 list 命令的參考主題，其中列出所有快取專案。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8400c0111f88f9f20a0766bbeb682db76b9d1444
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6c621e4ae85d24cbadcec009b60c68ecc4c8ac18
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850861"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718325"
 ---
-# <a name="bitsadmin-cache-and-list"></a>bitsadmin 快取與清單
+# <a name="bitsadmin-cache-and-list"></a>bitsadmin cache and list
 
 列出所有快取專案。
 
@@ -26,14 +26,16 @@ ms.locfileid: "80850861"
 bitsadmin /cache /list [/verbose]
 ```
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
-下列範例會列出詳細資訊格式的所有快取專案。
+以詳細格式列出所有快取專案。
 
 ```
-C:\> bitsadmin /cache /list /verbose
+bitsadmin /cache /list /verbose
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin cache 命令](bitsadmin-cache.md)

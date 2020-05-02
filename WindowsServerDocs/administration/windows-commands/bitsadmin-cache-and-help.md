@@ -1,6 +1,6 @@
 ---
-title: bitsadmin 快取與協助
-description: 適用于**bitsadmin**快取和說明的 Windows 命令主題，其會顯示快**取參數的**命令列使用方式。
+title: bitsadmin cache and help
+description: Bitsadmin cache 和 help 命令的參考主題，其會顯示快**取參數的**命令列使用方式。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c636210d9c4631bd82028e681274e67d16a81931
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 79d8dd2ce5af1e1160692f13974c56842fb163cd
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850911"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718357"
 ---
-# <a name="bitsadmin-cache-and-help"></a>bitsadmin 快取與協助
+# <a name="bitsadmin-cache-and-help"></a>bitsadmin cache and help
 
 顯示快**取參數的**命令列使用方式。
 
@@ -26,14 +26,16 @@ ms.locfileid: "80850911"
 bitsadmin /cache /help
 ```
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
-下列命令會顯示快**取參數的**命令列說明。
+以顯示快**取參數的**命令列說明。
 
 ```
 bitsadmin /cache /help
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin cache 命令](bitsadmin-cache.md)

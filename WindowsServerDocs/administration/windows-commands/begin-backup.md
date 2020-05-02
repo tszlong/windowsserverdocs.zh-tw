@@ -1,6 +1,6 @@
 ---
 title: 開始備份
-description: '**開始備份**的 Windows 命令主題，它會啟動完整的備份會話。'
+description: 開始備份命令的參考主題，其會啟動完整的備份會話。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8ed942dfac0851e2750722f639babb9329b162ab
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ecb5d83170d248089e5293ebb8557e7ae0854fac
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850991"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718530"
 ---
 # <a name="begin-backup"></a>開始備份
 
-啟動完整備份會話。
+> 適用目標︰Windows Server 2012 R2、Windows Server 2012
+
+啟動完整備份會話。 此命令會覆寫預設的複本備份設定。
 
 ## <a name="syntax"></a>語法
 
@@ -26,10 +28,8 @@ ms.locfileid: "80850991"
 begin backup
 ```
 
-## <a name="remarks"></a>備註
-
-此命令會覆寫預設的複本備份設定。
-
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+  
+- [開始還原命令](begin-restore.md)

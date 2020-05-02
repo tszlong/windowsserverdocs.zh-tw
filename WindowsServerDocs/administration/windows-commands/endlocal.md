@@ -1,6 +1,6 @@
 ---
 title: endlocal
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4958c5419ed4f6374f7c6ecf09bdf67f61134d93
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f007a9ec1e86093192630011c5197740dfefe922
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80845111"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719374"
 ---
 # <a name="endlocal"></a>endlocal
 
@@ -22,7 +22,7 @@ ms.locfileid: "80845111"
 
 結束批次檔中環境變更的當地語系化，並在執行對應的**setlocal**命令之前，將環境變數還原到其值。
 
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>語法
 
@@ -45,7 +45,7 @@ endlocal
 > [!NOTE]
 > 如需啟用和停用命令延伸的詳細資訊，請參閱[Cmd](cmd.md)。
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 您可以將批次檔中的環境變數當地語系化。 例如，下列程式會在網路上啟動 superapp batch 程式、將輸出導向至檔案，然後在 [記事本] 中顯示檔案：
 ```
@@ -57,6 +57,6 @@ endlocal
 start notepad c:\superapp.out
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

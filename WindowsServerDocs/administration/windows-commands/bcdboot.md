@@ -1,6 +1,6 @@
 ---
 title: bcdboot
-description: 適用于**bcdboot**的 Windows 命令主題，可快速設定系統磁碟分割，或修復位於系統磁碟分割上的開機環境。
+description: Bcdboot 命令的參考主題，可快速設定系統磁碟分割，或修復位於系統磁碟分割上的開機環境。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 637170cbd8ee4f3c11ee1dc77a0cd49b5dfa3038
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: cde91738f524350f72f0278495e4bd46a3960e6f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851081"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718704"
 ---
 # <a name="bcdboot"></a>bcdboot
 
@@ -30,14 +30,14 @@ bcdboot <source> [/l] [/s]
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| 來源 | 指定要做為複製開機環境檔案之來源的 Windows 目錄位置。 |
+| source | 指定要做為複製開機環境檔案之來源的 Windows 目錄位置。 |
 | /l | 指定地區設定。 預設地區設定為美式英文。 |
-| /s | 指定系統磁碟分割的磁碟區代號。 預設值是由固件識別的系統磁碟分割。 |
+| /s | 指定系統磁碟分割的磁片區代號。 預設值是由固件識別的系統磁碟分割。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 如需有關如何尋找 BCDboot 的詳細資訊，以及如何使用此命令的範例，請參閱[BCDboot 命令列選項](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh824874(v=win.10)x)主題。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

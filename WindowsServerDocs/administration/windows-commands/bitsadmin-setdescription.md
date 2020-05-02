@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setdescription
-description: 適用于**bitsadmin setdescription**的 Windows 命令主題，其會設定指定之作業的描述。
+description: Bitsadmin setdescription 命令的參考主題，其會設定指定之作業的描述。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0b62e6b030c23c475418cd6f2c63f04edba1acff
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: dc76da7cbe348461a79984b8061767711e090da7
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81123011"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719303"
 ---
 # <a name="bitsadmin-setdescription"></a>bitsadmin setdescription
 
@@ -30,17 +30,19 @@ bitsadmin /setdescription <job> <description>
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| 工作 | 作業的顯示名稱或 GUID。 |
+| 作業 | 作業的顯示名稱或 GUID。 |
 | description | 用來描述作業的文字。 |
 
 ## <a name="examples"></a>範例
 
-下列範例會抓取名為*myDownloadJob*之作業的描述。
+若要取得名為*myDownloadJob*之作業的描述：
 
 ```
-C:\>bitsadmin /setdescription myDownloadJob music_downloads
+bitsadmin /setdescription myDownloadJob music_downloads
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

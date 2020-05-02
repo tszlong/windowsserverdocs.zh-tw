@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setdisplayname
-description: 適用于**bitsadmin setdisplayname**的 Windows 命令主題，其會設定指定之作業的顯示名稱。
+description: Bitsadmin setdisplayname 命令的參考主題，其會設定指定之作業的顯示名稱。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0b1086903dd130392800f325c451bb4750fbf8fa
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 382cb2f20f0374c2d2787c4c3d88670b4f7260cd
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81123008"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719382"
 ---
 # <a name="bitsadmin-setdisplayname"></a>bitsadmin setdisplayname
 
@@ -30,17 +30,19 @@ bitsadmin /setdisplayname <job> <display_name>
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| 工作 | 作業的顯示名稱或 GUID。 |
+| 作業 | 作業的顯示名稱或 GUID。 |
 | display_name | 用來做為特定工作之顯示名稱的文字。 |
 
 ## <a name="examples"></a>範例
 
-下列範例會將作業的顯示名稱設定為*myDownloadJob*。
+若要將作業的顯示名稱設定為*myDownloadJob*：
 
 ```
-C:\>bitsadmin /setdisplayname myDownloadJob
+bitsadmin /setdisplayname myDownloadJob
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

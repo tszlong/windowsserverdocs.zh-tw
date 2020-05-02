@@ -1,6 +1,6 @@
 ---
 title: detail partition
-description: 詳細資料分割的 Windows 命令主題，會顯示選取之分割區的屬性。
+description: 詳細資料分割的參考主題，其會顯示選取之分割區的屬性。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ac4c5886dc24a2cf36fcbe0d7a4744bad6f5aa68
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9ac71e27f5008d6eda0f4c67a7a8129a3bea6365
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846441"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719632"
 ---
 # <a name="detail-partition"></a>detail partition
 
@@ -30,14 +30,14 @@ detail partition
 
 -   必須選取一個磁碟分割，這項操作才能繼續。 使用 [**選取資料分割**] 命令來選取磁碟分割，並將焦點移至該資料分割。
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 若要查看選取之分割區的屬性，請輸入：
 ```
 detail partition
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
-title: bitsadmin cache 和 setexpirationtime
-description: 適用于**bitsadmin cache 和 setexpirationtime**的 Windows 命令主題，可設定快取到期時間。
+title: bitsadmin cache and setexpirationtime
+description: Bitsadmin cache 和 setexpirationtime 命令的參考主題，其會設定快取到期時間。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bf283a0a8b94fd55c591609e3dcd1d127a2be81a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 84679eadc750637fb720a458d9663219dc1492a4
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850881"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718302"
 ---
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-# <a name="bitsadmin-cache-and-setexpirationtime"></a>bitsadmin cache 和 setexpirationtime
+# <a name="bitsadmin-cache-and-setexpirationtime"></a>bitsadmin cache and setexpirationtime
 
 設定快取到期時間。
 
@@ -34,14 +34,16 @@ bitsadmin /cache /setexpirationtime secs
 | -------------- | -------------- |
 | secs | 快取到期之前的秒數。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
-下列範例會在60秒內過期快取。
+若要將快取設定為在60秒後過期：
 
 ```
-C:\>bitsadmin /cache / setexpirationtime 60
+bitsadmin /cache / setexpirationtime 60
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin cache 命令](bitsadmin-cache.md)

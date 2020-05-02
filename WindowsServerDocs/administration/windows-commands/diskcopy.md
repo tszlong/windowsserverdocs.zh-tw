@@ -1,6 +1,6 @@
 ---
 title: diskcopy
-description: 適用于 diskcopy 的 Windows 命令主題，它會將來源磁片磁碟機中的軟碟內容複寫到目的地磁片磁碟機中格式化或未格式化的磁片。
+description: Diskcopy 的參考主題，它會將來源磁片磁碟機中的軟碟內容複寫到目的地磁片磁碟機中格式化或未格式化的磁片。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/07/2018
-ms.openlocfilehash: 675694503cab207f05fd6b48e0d17c23196f85d0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b5c9186a539a58ed0d3362ba83d7a3bcedcaabad
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80845541"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719463"
 ---
 # <a name="diskcopy"></a>diskcopy
 
 將來源磁片磁碟機中的軟碟內容複寫到目的地磁片磁碟機中已格式化或未格式化的軟碟。 如果使用時不含參數，則**diskcopy**會使用來源磁片和目的地磁片的目前磁片磁碟機。
 
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+
 
 > [!NOTE]
 > 此命令不包含在 Windows 10 中。
@@ -35,8 +35,8 @@ diskcopy [<Drive1>: [<Drive2>:]] [/v]
 
 |參數|描述|
 |---------|-----------|
-|\<Drive1 >|指定包含來源磁片的磁片磁碟機。|
-|\<Drive2 >|指定包含目的地磁片的磁片磁碟機。|
+|\<Drive1>|指定包含來源磁片的磁片磁碟機。|
+|\<Drive2>|指定包含目的地磁片的磁片磁碟機。|
 |/v|確認已正確複製資訊。 此選項會使複製程式變慢。|
 |/?|在命令提示字元顯示說明。|
 
@@ -92,7 +92,7 @@ diskcopy [<Drive1>: [<Drive2>:]] [/v]
 
     To process the exit codes that are returned by **diskcomp**, you can use the *ERRORLEVEL* environment variable on the **if** command line in a batch program.
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 若要將磁片磁碟機 B 中的磁碟複製到磁片磁碟機 A 中的磁片，請輸入：
 ```
@@ -102,6 +102,6 @@ diskcopy b: a:
 
 diskcopy a： a：
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

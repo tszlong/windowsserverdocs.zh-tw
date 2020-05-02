@@ -1,6 +1,6 @@
 ---
 title: auditpol get
-description: '**Auditpol get**的 Windows 命令主題，它會抓取系統原則、每個使用者的原則、審核選項和 audit 安全描述項物件。'
+description: Auditpol get 命令的參考主題，它會抓取系統原則、每個使用者的原則、審核選項和 audit 安全描述項物件。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,23 +9,25 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fe2b1bd060f128e39fa1c687ec963c964798fe1b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 859ea9e2e42af0fe7f34f4e378166685f8316b9e
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851191"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719141"
 ---
 # <a name="auditpol-get"></a>auditpol get
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server、2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 抓取系統原則、每個使用者的原則、審核選項和 audit 安全描述項物件。
+
+若要對*每個使用者*和*系統*策略執行*取得*作業，您必須擁有安全描述項中該物件集的 [**讀取**] 許可權。 如果您有 [**管理審核和安全性記錄檔**] （SeSecurityPrivilege）使用者權限，也可以執行*取得*作業。 不過，此許可權允許執行整體*get*作業所需的額外存取權。
 
 ## <a name="syntax"></a>語法
 
 ```
-auditpol /get 
+auditpol /get
 [/user[:<username>|<{sid}>]]
 [/category:*|<name>|<{guid}>[,:<name|<{guid}> ]]
 [/subcategory:*|<name>|<{guid}>[,:<name|<{guid}> ]]
@@ -39,19 +41,18 @@ auditpol /get
 | 參數 | 描述 |
 | --------- | ----------- |
 | /user | 顯示查詢每個使用者稽核原則的安全性主體。 必須指定/category 或/subcategory 參數。 使用者可指定為安全識別碼（SID）或名稱。 如果未指定任何使用者帳戶，則會查詢系統稽核原則。 |
-| /category | 全域唯一識別碼（GUID）或名稱所指定的一或多個 audit 分類。 您可以使用星號（*）來表示應該查詢所有的 audit 分類。 |
+| /類別 | 全域唯一識別碼（GUID）或名稱所指定的一或多個 audit 分類。 您可以使用星號（*）來表示應該查詢所有的 audit 分類。 |
 | /subcategory | GUID 或名稱所指定的一或多個 audit 子類別。 |
 | /sd | 抓取用來將存取權委派給稽核原則的安全描述項。 |
 | /option | 抓取 CrashOnAuditFail、FullprivilegeAuditing、AuditBaseObjects 或 AuditBasedirectories 選項的現有原則。 |
 | /r | 以報表格式顯示以逗號分隔值（CSV）的輸出。 |
 | /? | 在命令提示字元顯示說明。 |
 
-## <a name="remarks"></a>備註
+### <a name="remarks"></a>備註
 
 所有分類和子類別皆可由以引號（"）括住的 GUID 或名稱指定。 使用者可以透過 SID 或名稱來指定。
-針對每個使用者原則和系統原則的所有 get 作業，您必須擁有安全描述項中該物件集的 [讀取] 許可權。 您也可以透過擁有「**管理審核及安全性記錄檔**」（SeSecurityPrivilege）使用者權限來執行「取得」作業。 不過，此許可權允許執行「取得」作業所需的其他存取權。
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 若要抓取來賓帳戶的每個使用者稽核原則，並顯示 [系統]、[詳細追蹤] 和 [物件存取] 類別的輸出，請輸入：
 
@@ -60,7 +61,7 @@ auditpol /get /user:{S-1-5-21-1443922412-3030960370-963420232-51} /category:Syst
 ```
 
 > [!NOTE]
-> 在兩種情況下，此命令很有用。 監視特定使用者帳戶的可疑活動時，您可以使用/get 命令，透過包含原則來啟用額外的審核，以取得特定類別的結果。 或者，如果帳戶上的 audit 設定正在記錄許多但多餘的事件，您可以使用/get 命令，針對該帳戶使用排除原則來篩選掉無關的事件。 如需所有類別目錄的清單，請使用 auditpol/list/category 命令。
+> 在兩種情況下，此命令很有用。 1）監視特定使用者帳戶的可疑活動時，您可以使用此`/get`命令來取得特定類別的結果，方法是使用包含原則來啟用額外的審核。 2）如果帳戶的 audit 設定正在記錄許多但多餘的事件，您可以使用`/get`命令，針對該帳戶使用排除原則來篩選掉無關的事件。 如需所有類別目錄的清單，請`auditpol /list /category`使用命令。
 
 若要抓取分類和特定子類別的每個使用者稽核原則，以報告來賓帳戶的系統類別下該子類別的內含和排除設定，請輸入：
 
@@ -104,5 +105,8 @@ auditpol /get /option:AuditBaseObjects
 auditpol /get /option:CrashOnAuditFail /r
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
+
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [auditpol 命令](auditpol.md)

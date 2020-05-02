@@ -1,6 +1,6 @@
 ---
 title: auditpol resourceSACL
-description: '**Auditpol resourceSACL**的 Windows 命令主題，會設定全域資源系統存取控制清單（sacl）。'
+description: Auditpol resourceSACL 命令的參考主題，其會設定全域資源系統存取控制清單（Sacl）。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,21 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b004be6f21cd076fe20e73c45268731c35d654e5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: befb76a21880171740b051c987dfd4d9329ecc9e
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851151"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719043"
 ---
 # <a name="auditpol-resourcesacl"></a>auditpol resourceSACL
 
+> 適用于： Windows 7 和 Windows Server 2008 R2
+
 設定全域資源系統存取控制清單（Sacl）。
 
-> [!NOTE]
-> 僅適用于 Windows 7 和 Windows Server 2008 R2。
-
-如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
+若要執行*resourceSACL*作業，您必須在安全描述項中擁有該物件集的**寫入**或**完整控制**許可權。 如果您有 [**管理審核和安全性記錄檔**] （SeSecurityPrivilege）使用者權限，也可以執行*resourceSACL*作業。
 
 ## <a name="syntax"></a>語法
 
@@ -37,7 +36,7 @@ auditpol /resourceSACL
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | /set | 針對指定的資源類型，將新專案新增至或更新資源 SACL 中的現有專案。 |
 | /remove | 移除全域物件存取審核清單中指定使用者的所有專案。 |
@@ -45,21 +44,17 @@ auditpol /resourceSACL
 | /view | 列出資源 SACL 中的全域物件存取審核專案。 使用者和資源類型都是選擇性的。 |
 | /? | 在命令提示字元顯示說明。 |
 
-## <a name="arguments"></a>引數
+### <a name="arguments"></a>引數
 
 | 引數 | 描述 |
-| -------- | ----------- | 
-| /type | 正在設定其物件存取審核的資源。 支援的區分大小寫、引數值為檔案（適用于目錄和檔案）和金鑰（適用于登錄機碼）。 |
+| -------- | ----------- |
+| /type | 正在設定其物件存取審核的資源。 支援的區分大小寫、引數值為*檔案（適用*于目錄和檔案）和*金鑰*（適用于登錄機碼）。 |
 | /success | 指定成功的審核。 |
 | /failure | 指定失敗的審核。 |
-| /user | 以下列其中一種形式指定使用者：<ul><li> DomainName\Account （例如 DOM\Administrators）</li><li>StandaloneServer\Group 帳戶（請參閱[LookupAccountName 函數](https://msdn.microsoft.com/library/windows/desktop/aa379159(v=vs.85).aspx)）</li><li>{S-1-x-x-x-x}（x 以十進位表示，整個 SID 必須以大括弧括住）。 例如： {S-1-5-21-5624481-130208933-164394174-1001}<p>**注意：** 如果使用 SID 表單，則不會進行檢查以確認此帳戶是否存在。</li></ul> |
-| /access | 指定可透過下列指定的許可權遮罩：<p>一般存取權限，包括：<ul><li>GA-全部通用</li><li>GR-一般讀取</li><li>GW-一般寫入</li><li>GX-一般執行</li></ul><p>檔案的存取權限，包括：<ul><li>FA-檔案所有存取</li><li>FR-檔案一般讀取</li><li>FW-檔案一般寫入</li><li>FX-檔案一般執行</li></ul><p>登錄機碼的存取權限，包括：<ul><li>KA-金鑰所有存取</li><li>KR-金鑰讀取</li><li>KW-金鑰寫入</li><li>KX-金鑰執行</li></ul><p>例如： `/access:FRFW` 將會啟用讀取和寫入作業的 audit 事件。<p>代表存取遮罩的十六進位值（例如0x1200a9）<p>    當您使用不屬於安全描述項定義語言（SDDL）標準的資源特定位元遮罩時，這會很有用。 如果省略，則會使用完整存取權。 |
+| /user | 以下列其中一種形式指定使用者：<ul><li> DomainName\Account （例如 DOM\Administrators）</li><li>StandaloneServer\Group 帳戶（請參閱[LookupAccountName 函數](https://docs.microsoft.com/windows/win32/api/winbase/nf-winbase-lookupaccountnamea)）</li><li>{S-1-x-x-x-x}（x 以十進位表示，整個 SID 必須以大括弧括住）。 例如： {S-1-5-21-5624481-130208933-164394174-1001}<p>**注意：** 如果使用 SID 表單，則不會進行檢查以確認此帳戶是否存在。</li></ul> |
+| /access | 指定可透過下列指定的許可權遮罩：<p>一般存取權限，包括：<ul><li>GA-全部通用</li><li>GR-一般讀取</li><li>GW-一般寫入</li><li>GX-一般執行</li></ul><p>檔案的存取權限，包括：<ul><li>FA-檔案所有存取</li><li>FR-檔案一般讀取</li><li>FW-檔案一般寫入</li><li>FX-檔案一般執行</li></ul><p>登錄機碼的存取權限，包括：<ul><li>KA-金鑰所有存取</li><li>KR-金鑰讀取</li><li>KW-金鑰寫入</li><li>KX-金鑰執行</li></ul><p>例如： `/access:FRFW`啟用讀取和寫入作業的 audit 事件。<p>代表存取遮罩的十六進位值（例如0x1200a9）<p>當您使用不屬於安全描述項定義語言（SDDL）標準的資源特定位元遮罩時，這會很有用。 如果省略，則會使用完整存取權。 |
 
-## <a name="remarks"></a>備註
-
-針對 resourceSACL 作業，您必須在安全描述項中設定該物件的寫入或完整控制許可權。 您也可以透過擁有 [管理] [**審核及安全性記錄檔**] （SeSecurityPrivilege）使用者權限來執行 resourceSACL 作業。 不過，此許可權允許執行移除作業所不需要的其他存取權。
-
-## <a name="examples"></a><a name=BKMK_Examples></a>典型
+## <a name="examples"></a>範例
 
 若要設定全域資源 SACL，以在登錄機碼上對使用者進行成功的存取嘗試：
 
@@ -97,6 +92,8 @@ auditpol /resourceSACL /type:File /view
 auditpol /resourceSACL /type:File /view /user:MYDOMAIN\myuser
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [auditpol 命令](auditpol.md)

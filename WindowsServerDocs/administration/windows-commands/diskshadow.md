@@ -1,6 +1,6 @@
 ---
 title: diskshadow
-description: 適用于 diskshadow 的 Windows 命令主題，這是一種可公開磁片區陰影複製服務（VSS）所提供之功能的工具。
+description: Diskshadow 的參考主題，這是一種可公開磁片區陰影複製服務（VSS）所提供之功能的工具。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,24 +9,23 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5ded552394b7cf6001929ad4a639e89a660bb09c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: db1b1602bcbde41c2d92af925ff819ef390220e1
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80845391"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719428"
 ---
 # <a name="diskshadow"></a>diskshadow
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 diskshadow 是一種工具，可公開磁片區陰影複製服務（VSS）所提供的功能。 根據預設，diskshadow 會使用類似于 diskraid 或 DiskPart 的互動式命令直譯器。 diskshadow 也包含可編寫腳本的模式。  
   
 > [!NOTE]  
 > 若要執行 diskshadow，至少需要本機 Administrators 群組的成員資格或同等許可權。  
   
-如需如何使用 diskshadow 命令的範例，請參閱[範例](#BKMK_examples)。  
-  
+
 ## <a name="syntax"></a>語法  
 針對互動模式，請在命令提示字元中輸入下列命令，以啟動 diskshadow 命令直譯器：  
   
@@ -40,7 +39,7 @@ diskshadow
 diskshadow -s script.txt  
 ```  
   
-## <a name="diskshadow-commands"></a>diskshadow 命令  
+### <a name="parameters"></a>參數  
 您可以在 diskshadow 命令直譯器中或透過腳本檔案執行下列命令：  
   
 |參數|描述|  
@@ -57,12 +56,12 @@ diskshadow -s script.txt
 |[開始還原](begin-restore.md)|啟動還原會話，並將**PreRestore**事件發出至相關的寫入器。|  
 |[結束還原](end-restore.md)|結束還原會話，並向相關的寫入器發出**PostRestore**事件。|  
 |[reset](reset.md)|將 diskshadow 重設為預設狀態。|  
-|[名單](list.md)|列出系統上的寫入器、陰影複製或目前已註冊的陰影複製提供者。|  
+|list|列出系統上的寫入器、陰影複製或目前已註冊的陰影複製提供者。|  
 |[刪除陰影](delete-shadows.md)|刪除陰影複製。|  
-|[導](import.md)|從載入的中繼資料檔案，將可轉移的陰影複製匯入到系統中。|  
+|[import](import.md)|從載入的中繼資料檔案，將可轉移的陰影複製匯入到系統中。|  
 |[遮罩](mask.md)|移除使用匯**入**命令匯入的硬體陰影複製。|  
 |[向](expose.md)|將持續性陰影複製公開為磁碟機號、共用或掛接點。|  
-|[diskshadow.exe 取消公開](unexpose.md)|Unexposes 使用**公開**命令公開的陰影複製。|  
+|[diskshadow.exe 取消公開](unexpose.md)|unexposes 使用**公開**命令公開的陰影複製。|  
 |[break_2](break_2.md)|將陰影複製磁片區與 VSS 解除。|  
 |[還原](revert.md)|將磁片區還原回指定的陰影複製。|  
 |[exit_1](exit_1.md)|結束 diskshadow。|  
@@ -71,7 +70,7 @@ diskshadow -s script.txt
   
 -   至少要有**add**和**create** ，才可建立陰影複製。 不過，這會要略過內容和選項設定，將會是複本備份，而且只會建立沒有備份執行腳本的陰影複製。  
   
-## <a name="examples"></a><a name=BKMK_examples></a>典型  
+## <a name="examples"></a>範例  
 這是命令的範例順序，會建立備份的陰影複製。 它可以儲存為 dsh 檔案，並以 diskshadow \/s 腳本執行。 dsh  
   
 假設下列各項：  
@@ -80,7 +79,7 @@ diskshadow -s script.txt
   
 -   您的系統磁碟區是 C：，而您的資料磁片區是 d：  
   
--   您在 c：\\diskshadowdata 中有一個 backupscript .cmd 檔案。  
+-   您在 c：\\diskshadowdata 中有 backupscript .cmd 檔案。  
   
 -   您的 backupscript .cmd 檔案會將陰影資料 p：和 q：的複本執行到您的備份磁片磁碟機。  
   
@@ -104,7 +103,7 @@ end backup
 #End of script  
 ```  
   
-## <a name="additional-references"></a>其他參考資料  
+## <a name="additional-references"></a>其他參考  
 - [命令列語法關鍵](command-line-syntax-key.md)  
   
 

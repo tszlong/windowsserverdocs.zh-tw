@@ -1,6 +1,6 @@
 ---
 title: atmadm
-description: 適用于**atmadm**的 Windows 命令主題，它會監視在非同步傳輸模式（atm）網路上由 AtM 呼叫管理員註冊的連接和位址。
+description: Atmadm 命令的參考主題，它會監視在非同步傳輸模式（atM）網路上由 atM 呼叫管理員註冊的連接和位址。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cbfb787c472eaad4cbef5f86e7546f7b6f1da305
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 32dad00e5a4d03c905f95c48e112f512a9dbc2e5
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851271"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718912"
 ---
 # <a name="atmadm"></a>atmadm
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-監視在非同步傳輸模式（atM）網路上由 atM 呼叫管理員註冊的連接和位址。 您可以使用**atmadm**來顯示 atM 介面卡上的傳入和撥出電話統計資料。 使用時不含參數， **atmadm**會顯示監視作用中 atM 線上狀態的統計資料。 
+監視在非同步傳輸模式（atM）網路上由 atM 呼叫管理員註冊的連接和位址。 您可以使用**atmadm**來顯示 atM 介面卡上的傳入和撥出電話統計資料。 使用時不含參數， **atmadm**會顯示監視作用中 atM 線上狀態的統計資料。
 
 ## <a name="syntax"></a>語法
 
@@ -32,12 +32,12 @@ atmadm [/c][/a][/s]
 
 | 參數 | 描述 |
 | ------- | -------- |
-| /c | 顯示這部電腦上所安裝之 atM 網路介面卡的所有目前連線的呼叫資訊。 |
+| /C | 顯示這部電腦上所安裝之 atM 網路介面卡的所有目前連線的呼叫資訊。 |
 | /a | 針對安裝在這部電腦上的每個介面卡，顯示已註冊的 atM 網路服務存取點（NSAP）位址。 |
 | /s | 顯示監視作用中 atM 線上狀態的統計資料。 |
 | /? | 在命令提示字元顯示說明。 |
 
-## <a name="remarks"></a>備註
+### <a name="remarks"></a>備註
 
 - **Atmadm/c**命令會產生類似下列的輸出：
 
@@ -79,12 +79,12 @@ atmadm [/c][/a][/s]
     | 連接資訊 | 輸入/輸出 | 呼叫的方向。 **中**的是來自另一個裝置的 atM 網路介面卡。  **從 atM**網路介面卡到另一個裝置。 |
     | PMP | 點對多點呼叫。 |
     | P-P | 點對點呼叫。 |
-    | .SVC | 連接是在切換的虛擬電路上。 |
+    | SVC | 連接是在切換的虛擬電路上。 |
     | PVC | 連接是在永久的虛擬電路上。 |
     | VPI/VCI 資訊 | VPI/VCI | 傳入或撥出電話的虛擬路徑和虛擬通道。 |
     | 遠端位址/媒體參數 | 47000580FFE1000000F21A2E180000C110081500 | 呼叫 **（在中）** 或呼叫 **（Out）** atM 裝置的 NSAP 位址。 |
-    | 德克薩斯 | **Tx**參數包含下列三個元素：<p>-預設值或指定的位元速率類型（UBR、CBR、VBR 或 ABR）<p>-預設或指定的行速度<p>-指定的服務資料單位（SDU）大小。 |
-    | 接收 | **Rx**參數包含下列三個元素：<p>-預設值或指定的位元速率類型（UBR、CBR、VBR 或 ABR）<p>-預設或指定的行速度<p>-指定的 SDU 大小。 |
+    | 德克薩斯 | **Tx**參數包含下列三個元素：<ul><li>預設或指定的位元速率類型（UBR、CBR、VBR 或 ABR）</li><li>預設或指定的線路速度</li><li>指定的服務資料單位（SDU）大小。</li></ul> |
+    | Rx | **Rx**參數包含下列三個元素：<ul><li>預設或指定的位元速率類型（UBR、CBR、VBR 或 ABR）</li><li>預設或指定的線路速度</li><li>指定的 SDU 大小。</li></ul> |
 
 - **Atmadm/a**命令會產生類似下列的輸出：
 
@@ -124,7 +124,7 @@ atmadm [/c][/a][/s]
     | 已傳送信號和 ILMI 封包 | 傳送到此電腦嘗試連線之交換器的整合式本機管理介面（ILMI）封包數目。 |
     | 收到的信號和 ILMI 封包數 | 從 atM 交換器接收的 ILMI 封包數目。 |
 
-## <a name="examples"></a><a name=BKMK_Examples></a>典型
+## <a name="examples"></a>範例
 
 若要顯示這部電腦上安裝之 atM 網路介面卡的所有目前連線的呼叫資訊，請輸入：
 
@@ -144,6 +144,6 @@ atmadm /a
 atmadm /s
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
 title: bitsadmin cancel
-description: '**Bitsadmin cancel**的 Windows 命令主題，這會從傳送佇列中移除作業，並刪除與作業相關聯的所有暫存檔案。'
+description: Bitsadmin cancel 命令的參考主題，它會從傳送佇列中移除工作，並刪除與作業相關聯的所有暫存檔案。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5c2bdeef824bc269671cc5ae926fb77cd5726c58
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 95fefbc4a9731c2ccbac22adc27f8231a7f36138
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850831"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718258"
 ---
 # <a name="bitsadmin-cancel"></a>bitsadmin cancel
 
@@ -30,16 +30,18 @@ bitsadmin /cancel <job>
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| 工作 | 作業的顯示名稱或 GUID。 |
+| 作業 | 作業的顯示名稱或 GUID。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
-下列範例會從傳送佇列中移除*myDownloadJob*作業。
+若要從傳送佇列中移除*myDownloadJob*作業：
 
 ```
-C:\>bitsadmin /cancel myDownloadJob
+bitsadmin /cancel myDownloadJob
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

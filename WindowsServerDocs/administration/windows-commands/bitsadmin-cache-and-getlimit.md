@@ -1,6 +1,6 @@
 ---
-title: bitsadmin cache 和 getlimit
-description: 適用于**bitsadmin cache 和 getlimit**的 Windows 命令主題，可抓取快取限制。
+title: bitsadmin cache and getlimit
+description: Bitsadmin cache 和 getlimit 命令的參考主題，它會抓取快取限制。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: de657e9be91ab09c284760a35bd0e4f3b6b94f63
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 17ee6b792727f613d6038cdf489bc62577f2e900
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850901"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718385"
 ---
-# <a name="bitsadmin-cache-and-getlimit"></a>bitsadmin cache 和 getlimit
+# <a name="bitsadmin-cache-and-getlimit"></a>bitsadmin cache and getlimit
 
 抓取快取限制。
 
@@ -26,14 +26,16 @@ ms.locfileid: "80850901"
 bitsadmin /cache /getlimit
 ```
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
-下列範例會抓取快取限制。
+若要取得快取限制：
 
 ```
-C:\>bitsadmin /cache /getlimit
+bitsadmin /cache /getlimit
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin cache 命令](bitsadmin-cache.md)

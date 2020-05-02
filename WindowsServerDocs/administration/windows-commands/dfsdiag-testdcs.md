@@ -1,6 +1,6 @@
 ---
 title: dfsdiag TestDCs
-description: 適用于 dfsdiag TestDCs 的 Windows 命令主題，它會檢查指定網域中的網域控制站設定。
+description: Dfsdiag TestDCs 的參考主題，它會檢查指定網域中的網域控制站設定。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 092ce3710eb6d209f596683bd4ad054dadd11aa3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6ac7fe1a7bae6a7b3dab9004b6212b7d93774ade
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846313"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719598"
 ---
 # <a name="dfsdiag-testdcs"></a>dfsdiag TestDCs
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 藉由在指定網域中的每個網域控制站上執行下列測試，檢查網域控制站的設定：  
   
@@ -38,20 +38,20 @@ dfsdiag /TestDCs [/Domain:<Domain name>]
   
 |參數|描述|  
 |-------|--------|  
-|[/Domain]：`<domain_name>`|您想要檢查的網域。|  
+|Domain`<domain_name>`|您想要檢查的網域。|  
   
 ## <a name="remarks"></a>備註  
 
 [/Domain] 是選擇性參數。 預設值是本機主機加入的本機網域。  
   
-## <a name="examples"></a><a name=BKMK_Examples></a>典型  
+## <a name="examples"></a>範例  
 若要確認 Contoso.com 網域中的網域控制站設定，請輸入：  
   
 ```  
 dfsdiag /TestDCs /Domain:Contoso.com  
 ```  
   
-## <a name="additional-references"></a>其他參考資料  
+## <a name="additional-references"></a>其他參考  
   
 -   - [命令列語法關鍵](command-line-syntax-key.md)  
   

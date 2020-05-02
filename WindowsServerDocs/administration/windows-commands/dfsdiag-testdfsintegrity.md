@@ -1,6 +1,6 @@
 ---
 title: dfsdiag TestDFSIntegrity
-description: 適用于**Dfsdiag TestDFSIntegrity**的 Windows 命令主題，它會檢查分散式檔案系統（DFS）命名空間的完整性。
+description: '**Dfsdiag TestDFSIntegrity**的參考主題，它會檢查分散式檔案系統（DFS）命名空間的完整性。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 714b79369898338a4e4a6e4fad8487709ab4fc60
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 21aa6ef3d7d4a7b4a9c64fc51aec77f49f1e0a0c
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846271"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719581"
 ---
 # <a name="dfsdiag-testdfsintegrity"></a>dfsdiag TestDFSIntegrity
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 藉由執行下列測試，檢查分散式檔案系統（DFS）命名空間的完整性：
 
@@ -38,17 +38,17 @@ dfsdiag /TestDFSIntegrity /DFSRoot: <DFS root path> [/Recurse] [/Full]
 
 | 參數 | 描述 |
 |-------|--------|
-| /DFSRoot： `<DFS root path>`| 要診斷的 DFS 命名空間。 |
+| /DFSRoot:`<DFS root path>`| 要診斷的 DFS 命名空間。 |
 | /Recurse | 執行測試，包括命名空間連結。 |
 | /Full | 在所有資料夾目標上驗證共用和 NTFS Acl 和用戶端設定的一致性。 它也會驗證 online 屬性是否已設定。 |
 
-## <a name="examples"></a><a name=BKMK_Examples></a>典型
+## <a name="examples"></a>範例
 
 ```
 dfsdiag /TestDFSIntegrity /DFSRoot:\\Contoso.com\MyNamespace /Recurse /Full
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 -   - [命令列語法關鍵](command-line-syntax-key.md)
 

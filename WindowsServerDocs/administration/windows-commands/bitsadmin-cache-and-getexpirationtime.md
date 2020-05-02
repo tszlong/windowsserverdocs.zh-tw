@@ -1,6 +1,6 @@
 ---
-title: bitsadmin cache 和 getexpirationtime
-description: 適用于**bitsadmin cache 和 getexpirationtime**的 Windows 命令主題，其可抓取快取到期時間。
+title: bitsadmin cache and getexpirationtime
+description: Bitsadmin cache 和 getexpirationtime 命令的參考主題，它會抓取快取到期時間。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 44e54e29865f67b2bed22d30871e8810a0b55587
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ecd20a6f35637be3d2f1cad08cf2d060c944857c
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850921"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718423"
 ---
-# <a name="bitsadmin-cache-and-getexpirationtime"></a>bitsadmin cache 和 getexpirationtime
+# <a name="bitsadmin-cache-and-getexpirationtime"></a>bitsadmin cache and getexpirationtime
 
 抓取快取到期時間。
 
@@ -26,14 +26,16 @@ ms.locfileid: "80850921"
 bitsadmin /cache /getexpirationtime
 ```
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
-以下會抓取快取到期時間。
+若要取得快取到期時間：
 
 ```
-C:\>bitsadmin /cache /getexpirationtime
+bitsadmin /cache /getexpirationtime
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin cache 命令](bitsadmin-cache.md)

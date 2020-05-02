@@ -1,6 +1,6 @@
 ---
 title: auditpol
-description: '**Auditpol**的 Windows 命令主題，它會顯示和執行函式以操作稽核原則的相關資訊。'
+description: Auditpol 命令的參考主題，它會顯示和執行函式來操作稽核原則的相關資訊。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,30 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 00365b0e46b8bff761cf991dbdbd09d8f5e9c687
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 89fee7ccd3b6671a6f2633c3b5d15d0cbee261fa
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851131"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718822"
 ---
 # <a name="auditpol"></a>auditpol
 
-顯示和執行函式的相關資訊，以操作稽核原則。
+顯示和執行功能的相關資訊，以操作稽核原則，包括：
 
-如需如何使用此命令的範例，請參閱每個主題中的範例一節。
+- 設定和查詢系統稽核原則。
+
+- 設定和查詢每個使用者的稽核原則。
+
+- 設定和查詢審核選項。
+
+- 設定和查詢用來將存取權委派給稽核原則的安全描述項。
+
+- 將稽核原則報告或備份至逗號分隔值（CSV）文字檔。
+
+- 從 CSV 文字檔載入稽核原則。
+
+- 設定全域資源 Sacl。
 
 ## <a name="syntax"></a>語法
 
@@ -28,7 +40,7 @@ ms.locfileid: "80851131"
 auditpol command [<sub-command><options>]
 ```
 
-#### <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
 | 子命令 | 描述 |
 | ----------- | ----------- |
@@ -42,24 +54,6 @@ auditpol command [<sub-command><options>]
 | /resourceSACL | 設定全域資源系統存取控制清單（Sacl）。 **注意：** 僅適用于 Windows 7 和 Windows Server 2008 R2。 如需詳細資訊，請參閱[Auditpol resourceSACL](auditpol-resourcesacl.md)。 |
 | /?| 在命令提示字元顯示說明。 |
 
-## <a name="remarks"></a>備註
-
-稽核原則命令列工具可以用來：
-
-- 設定並查詢系統稽核原則。
-
-- 設定並查詢每個使用者的稽核原則。
-
-- 設定和查詢的審核選項。
-
-- 設定並查詢用來委派稽核原則存取權的安全描述項。
-
-- 將稽核原則報告或備份至逗號分隔值（CSV）文字檔。
-
-- 從 CSV 文字檔載入稽核原則。
-
-- 設定全域資源 Sacl。
-
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

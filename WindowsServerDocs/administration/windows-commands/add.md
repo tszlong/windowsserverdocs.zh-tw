@@ -1,6 +1,6 @@
 ---
-title: 新增
-description: 適用于**add**的 Windows 命令主題，其會將磁片區新增至要陰影複製的磁片區集合，或將別名新增至別名環境。
+title: add
+description: Add 命令的參考主題，其會將磁片區新增至要陰影複製的磁片區集合，或將別名新增至別名環境。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,39 +9,37 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9895082cc10223fd08cff6916c20c3af5613e947
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9b621a3061c4e3366085c5cc44f91f26dd33d4e3
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851341"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719011"
 ---
-# <a name="add"></a>新增
+# <a name="add"></a>add
 
 將磁片區新增至要陰影複製的磁片區集合，或將別名新增至別名環境。 如果使用時不含子命令， **add**會列出目前的磁片區和別名。
 
 > [!NOTE]
 > 在建立陰影複製之前，別名不會新增至別名環境。 您應該立即使用 [新增**別名**] 來新增您需要的別名。
 
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
-
 ## <a name="syntax"></a>語法
 
 ```
-add 
-add volume <Volume> [provider <ProviderID>] 
-add alias <AliasName> <AliasValue>
+add
+add volume <volume> [provider <providerid>]
+add alias <aliasname> <aliasvalue>
 ```
 
-## <a name="add-subcommands"></a>新增子命令
+### <a name="parameters"></a>參數
 
-| 來 | 描述 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | 磁碟區 | 將磁片區新增至陰影複製組，這是要陰影複製的一組磁片區。 如需語法和參數，請參閱[新增磁片](add-volume.md)區。 |
-| Alias - 別名 | 將指定的名稱和值加入至別名環境。 如需語法和參數，請參閱[Add alias](add-alias.md) 。 |
-| `/?` | 在命令列中顯示說明。 |
+| alias | 將指定的名稱和值加入至別名環境。 如需語法和參數，請參閱[add alias](add-alias.md) 。 |
+| /? | 在命令列中顯示說明。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 若要顯示新增的磁片區和目前在環境中的別名，請輸入：
 
@@ -57,6 +55,6 @@ Volume c: alias System1    GUID \\?\Volume{XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX}
 No Diskshadow aliases in the environment.
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

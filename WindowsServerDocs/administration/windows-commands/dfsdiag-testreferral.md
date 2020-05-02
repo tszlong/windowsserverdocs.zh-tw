@@ -1,6 +1,6 @@
 ---
 title: dfsdiag TestReferral
-description: 適用于 dfsdiag TestReferral 的 Windows 命令主題，它會檢查分散式檔案系統（DFS）參照。
+description: Dfsdiag TestReferral 的參考主題，它會檢查分散式檔案系統（DFS）參照。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d5c0a75d557d816ac9e19a1e22b3273195b93f53
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6b4c616181d367a8a95efe6484f74af0ff88cc5f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846242"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719562"
 ---
 # <a name="dfsdiag-testreferral"></a>dfsdiag TestReferral
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 藉由執行下列測試來檢查分散式檔案系統（DFS）的參考：
 
@@ -42,10 +42,10 @@ dfsdiag /TestReferral /DFSpath:<DFS path for getting referrals> [/Full]
 
 |參數|描述|
 |-------|--------|
-| /DFSpath：<path for getting referrals>|這個 DFS 路徑可以是下列其中一項：<p>-   \(空白\)：測試受信任的網域。<br />-   \\\\網域：網域控制站的參考。<br />-   \\\\網域\\SYSvol： SYSvol 的參照。<br />\\NETLOGON 中的 -   \\\\功能變數名稱 i： NETLOGON 參考。<br />-   \\\\<Domain or server>\\<Namespace Root>：命名空間的根參考。<br />-   \\\\<Domain or server>\\<Namespace root>\\<DFS folder>： DFS 資料夾 \(連結\) 的參考。|
-|/Full|僅適用于網域和根參照。 確認登錄與 active directory 網域服務 \(AD DS\)之間的網站關聯資訊是否一致。|
+| /DFSpath:<path for getting referrals>|這個 DFS 路徑可以是下列其中一項：<p>-   \(空白\)：測試受信任的網域。<br />-   \\\\網域：網域控制站的參考。<br />-   \\\\網域\\SYSvol： sysvol 的參照。<br />-   \\\\Netlogon 中\\的功能變數名稱 I： netlogon 參考。<br />-   \\\\<Domain or server>\\<Namespace Root>：命名空間的根參考。<br />-   \\\\<Domain or server>\\<Namespace root>\\<DFS folder>： DFS 資料夾\(連結\)的參照。|
+|/Full|僅適用于網域和根參照。 確認登錄與 active directory 網域服務\(AD DS\)之間的網站關聯資訊是否一致。|
 
-## <a name="examples"></a><a name=BKMK_Examples></a>典型
+## <a name="examples"></a>範例
 
 ```
 dfsdiag /TestReferral /DFSpath:\\Contoso.com\MyNamespace
@@ -55,7 +55,7 @@ dfsdiag /TestReferral /DFSpath:\\Contoso.com\MyNamespace
 dfsdiag /TestReferral /DFSpath:
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 -   - [命令列語法關鍵](command-line-syntax-key.md)
 

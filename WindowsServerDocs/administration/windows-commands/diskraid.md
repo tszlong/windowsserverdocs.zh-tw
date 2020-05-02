@@ -1,6 +1,6 @@
 ---
 title: diskraid
-description: 適用于 diskraid 的 Windows 命令主題，這是一種命令列工具，可讓您設定和管理獨立（或便宜）磁片（RAID）儲存子系統的重複陣列。
+description: Diskraid 的參考主題，這是一種命令列工具，可讓您設定和管理獨立（或便宜）磁片（RAID）儲存子系統的重複陣列。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ea71fc67420700527a3a14494c947aed7a2ec747
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 25a6a0315b74e948fd23ac1257072ac583f311d0
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80845401"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719435"
 ---
 # <a name="diskraid"></a>diskraid
 
@@ -39,19 +39,19 @@ RAID 是一種用來標準化和分類容錯磁片系統的方法。 RAID 層級
 -   [dh-chap](#BKMK_5)
 -   [建立](#BKMK_6)
 -   [delete](#BKMK_7)
--   [資訊](#BKMK_8)
+-   [詳細資料](#BKMK_8)
 -   [中斷關聯](#BKMK_9)
 -   [exit](#BKMK_10)
--   [extend](#BKMK_11)
+-   [延遲](#BKMK_11)
 -   [flushcache](#BKMK_12)
 -   [說明](#BKMK_13)
 -   [importtarget](#BKMK_14)
 -   [啟動器](#BKMK_15)
 -   [invalidatecache](#BKMK_16)
 -   [lbpolicy](#BKMK_18)
--   [名單](#BKMK_19)
--   [登入](#BKMK_20)
--   [登出](#BKMK_21)
+-   list
+-   [login](#BKMK_20)
+-   [logout](#BKMK_21)
 -   [保養](#BKMK_22)
 -   [name](#BKMK_23)
 -   [離線](#BKMK_24)
@@ -60,7 +60,7 @@ RAID 是一種用來標準化和分類容錯磁片系統的方法。 RAID 層級
 -   [reenumerate](#BKMK_27)
 -   [恢復](#BKMK_28)
 -   [rem](#BKMK_29)
--   [取消](#BKMK_30)
+-   [移除](#BKMK_30)
 -   [replace](#BKMK_31)
 -   [reset](#BKMK_32)
 -   [請](#BKMK_33)
@@ -89,7 +89,7 @@ add tpgroup tportal=n [noerr]
 > [!CAUTION]
 > 將會刪除 LUN 上新增為 plex 的所有資料。
 
-**tpgroup 管理入口網站 =** <em>n</em>
+**tpgroup 管理入口網站 =**<em>n</em>
 
 指定要新增至目前所選取 iSCSI 目標入口網站群組的 iSCSI 目標入口網站編號。
 
@@ -139,7 +139,7 @@ associate targets [add] <n>[,<n> [,…]]
 
 #### <a name="example"></a>範例
 
-下列範例示範如何將埠關聯並新增至使用 VDS 1.1 提供者的 LUN：
+說明如何將埠關聯並新增至使用 VDS 1.1 提供者的 LUN：
 ```
 DISKRAID> SEL LUN 5
 LUN 5 is now the selected LUN.
@@ -177,11 +177,11 @@ automagic {set | clear | apply} all <flag=value> [<flag=value> [...]]
 
 將目前的旗標套用至選取的 LUN。
 
-\<旗標 >
+\<旗標>
 
 旗標是以三個字母的縮寫來識別。
 
-|Flag|描述|
+|旗標|描述|
 |----|-----------|
 |FCR|需要快速損毀復原|
 |FTL|容錯|
@@ -201,7 +201,7 @@ automagic {set | clear | apply} all <flag=value> [<flag=value> [...]]
 |WTC|已啟用寫入快取|
 |YNK|卸除式|
 
-### <a name="break"></a><a name=BKMK_4></a>崩潰
+### <a name="break"></a><a name=BKMK_4></a>break
 
 從目前選取的 LUN 移除 plex。 並不會保留該 plex 和其包含的資料，而且可能會回收磁片區範圍。
 
@@ -267,7 +267,7 @@ chap target remember secret=[<secret>] initiator=<initiatorname>
 
 指定要使用的密碼。 如果空白，將會清除密碼。
 
-**設定**
+**目標**
 
 指定目前所選子系統中與密碼相關聯的目標。 這是在啟動者上設定密碼時的選擇性選項，並將其登出指出將會針對所有尚未擁有相關聯秘密的目標使用該密碼。
 
@@ -297,11 +297,11 @@ create tpgroup [noerr]
 
 建立簡單的 LUN。
 
-**stripe**
+**帶狀線**
 
 建立等量 LUN。
 
-**陣列**
+**RAID**
 
 建立具有同位的等量 LUN。
 
@@ -313,7 +313,7 @@ create tpgroup [noerr]
 
 使用目前作用中的*automagic*提示，建立 LUN。 如需詳細資訊，請參閱**automagic**子命令。
 
-**大小**=
+**容量**=
 
 指定 LUN 總大小（以 mb 為單位）。 如果未指定**size =** 參數，則建立的 LUN 會是所有指定磁片磁碟機所允許的最大可能大小。
 
@@ -327,7 +327,7 @@ create tpgroup [noerr]
 -   **Tb** ，用於 tb。
 -   **Pb （pb** ）。
 
-**磁片磁碟機**=
+**硬**=
 
 指定要用來建立 LUN 之磁片磁碟機的*drive_number* 。 如果未指定**size =** 參數，則建立的 LUN 會是所有指定磁片磁碟機所允許的最大可能大小。 如果已指定**size =** 參數，提供者會從指定的磁片磁碟機清單中選取磁片磁碟機，以建立 LUN。 提供者會嘗試依照指定的順序來使用磁片磁碟機。
 
@@ -343,7 +343,7 @@ create tpgroup [noerr]
 -   **Tb** ，用於 tb。
 -   **Pb （pb** ）。
 
-**設定**
+**目標**
 
 在目前選取的子系統上建立新的 iSCSI 目標。
 
@@ -390,7 +390,7 @@ delete tpgroup [noerr]
 
 指定在刪除 LUN 之前，會清除與 LUN 相關聯之本機系統上的磁片。
 
-**設定**
+**目標**
 
 如果沒有與目標相關聯的 Lun，則刪除目前選取的 iSCSI 目標。
 
@@ -402,7 +402,7 @@ delete tpgroup [noerr]
 
 指定在執行此作業時所發生的任何失敗都會被忽略。 這在腳本模式中很有用。
 
-### <a name="detail"></a><a name=BKMK_8></a>資訊
+### <a name="detail"></a><a name=BKMK_8></a>詳細資料
 
 顯示指定類型之目前選取物件的詳細資訊。
 
@@ -454,7 +454,7 @@ Detail {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 
 列出目前選取的 iSCSI 目標入口網站的詳細資訊。
 
-**設定**
+**目標**
 
 列出目前選取的 iSCSI 目標的詳細資訊。
 
@@ -555,7 +555,7 @@ extend lun [size=<LUN_size>] [drives=<drive_number>, [<drive_number>, ...]] [noe
 
 **磁片磁碟機 =**
 
-指定建立 LUN 時要使用之磁片磁碟機的 \<drive_number >。 如果未指定**size =** 參數，則建立的 LUN 會是所有指定磁片磁碟機所允許的最大可能大小。 提供者會盡可能以指定的順序使用磁片磁碟機。
+指定建立\<LUN 時要使用之磁片磁碟機的 drive_number>。 如果未指定**size =** 參數，則建立的 LUN 會是所有指定磁片磁碟機所允許的最大可能大小。 提供者會盡可能以指定的順序使用磁片磁碟機。
 
 **noerr**
 
@@ -563,7 +563,7 @@ extend lun [size=<LUN_size>] [drives=<drive_number>, [<drive_number>, ...]] [noe
 
 #### <a name="remarks"></a>備註
 
-必須指定*大小*或 \<磁片磁碟機 > 參數。 它們也可以一起使用。
+必須指定*大小*或\<磁片磁碟機> 參數。 它們也可以一起使用。
 
 ### <a name="flushcache"></a><a name=BKMK_12></a>flushcache
 
@@ -636,7 +636,7 @@ lbpolicy set lun paths=<path>-{primary | <weight>}[,<path>-{primary | <weight>}[
 
 **type**
 
-指定負載平衡原則。 如果未指定類型，則必須指定**path**參數。 類型可以是下列其中一項：
+指定負載平衡原則。 如果未指定類型，則必須指定**path**參數。 Type 可以是下列其中之一：
 
 **容錯移轉**：使用一個主要路徑搭配其他路徑作為備份路徑。
 
@@ -654,7 +654,7 @@ lbpolicy set lun paths=<path>-{primary | <weight>}[,<path>-{primary | <weight>}[
 
 **路線圖**
 
-指定路徑為**主要**或具有特定的 \<權數 >。 未指定的任何路徑都會隱含地設定為備份。 列出的任何路徑都必須是目前所選取 LUN 的其中一個路徑。
+指定路徑為**主要**或具有特定\<權數>。 未指定的任何路徑都會隱含地設定為備份。 列出的任何路徑都必須是目前所選取 LUN 的其中一個路徑。
 
 ### <a name="list"></a><a name=BKMK_19></a>名單
 
@@ -680,7 +680,7 @@ List {hbaports | iadapters | iportals | providers | subsystems | controllers | p
 
 列出目前所選啟動器介面卡中所有 iSCSI 啟動器入口網站的摘要資訊。 目前選取的啟動器入口網站會以星號（*）標示。
 
-**提供者**
+**都會**
 
 列出有關 VDS 已知的每個提供者的摘要資訊。 目前選取的提供者會以星號（*）標示。
 
@@ -716,7 +716,7 @@ List {hbaports | iadapters | iportals | providers | subsystems | controllers | p
 
 列出目前所選目標中所有 iSCSI 目標入口網站群組的摘要資訊。 目前選取的入口網站群組會以星號（*）標示。
 
-### <a name="login"></a><a name=BKMK_20></a>登入
+### <a name="login"></a><a name=BKMK_20></a>login
 
 將指定的 iSCSI 啟動器介面卡記錄到目前選取的 iSCSI 目標。
 
@@ -750,7 +750,7 @@ login target iadapter=<iadapter> [type={manual | persistent | boot}] [chap={none
 
 在指定的啟動器介面卡中，指定要用於登入的選用啟動器入口網站。
 
-\<旗標 >
+\<旗標>
 
 由三個字母的縮寫所識別：
 
@@ -762,7 +762,7 @@ login target iadapter=<iadapter> [type={manual | persistent | boot}] [chap={none
 
 **EDD**：啟用資料摘要
 
-### <a name="logout"></a><a name=BKMK_21></a>登出
+### <a name="logout"></a><a name=BKMK_21></a>logout
 
 從目前選取的 iSCSI 目標記錄指定的 iSCSI 啟動器介面卡。
 
@@ -790,11 +790,11 @@ maintenance <object operation> [count=<iteration>]
 
 ##### <a name="parameters"></a>參數
 
-\<物件 >
+\<物件>
 
 指定要在其上執行作業的物件類型。 *物件*類型可以是**子系統**、**控制器**、**埠、磁片磁碟機**或**LUN**。
 
-\<作業 >
+\<作業>
 
 指定要執行的維護作業。 *操作*類型可以是**spinup**、 **spindown**、**閃爍**、**嗶聲**或**ping**。 必須*指定*作業。
 
@@ -802,7 +802,7 @@ maintenance <object operation> [count=<iteration>]
 
 指定重複*作業的次數。* 這通常與**閃爍**、**嗶聲**或**ping**搭配使用。
 
-### <a name="name"></a><a name=BKMK_23></a>檔案名
+### <a name="name"></a><a name=BKMK_23></a>NAME
 
 將目前選取的子系統、LUN 或 iSCSI 目標的易記名稱設定為指定的名稱。
 
@@ -814,7 +814,7 @@ name {subsystem | lun | target} [<name>]
 
 #### <a name="parameter"></a>參數
 
-\<名稱 >
+\<名稱>
 
 指定子系統、LUN 或目標的名稱。 名稱的長度必須少於64個字元。 如果未提供任何名稱，則會刪除現有的名稱（如果有的話）。
 
@@ -830,9 +830,9 @@ offline <object>
 
 #### <a name="parameter"></a>參數
 
-\<物件 >
+\<物件>
 
-指定要在其上執行這項作業的物件類型。 \<物件 >
+指定要在其上執行這項作業的物件類型。 \<物件>
 
 類型可以是**子系統**、**控制器**、**磁片磁碟機**、 **LUN**或**管理入口網站**。
 
@@ -848,9 +848,9 @@ online <object>
 
 #### <a name="parameter"></a>參數
 
-\<物件 >
+\<物件>
 
-指定要在其上執行這項作業的物件類型。 \<物件 >
+指定要在其上執行這項作業的物件類型。 \<物件>
 
 類型可以是**hbaport**、**子系統**、**控制器**、**磁片磁碟機**、 **LUN**或**管理入口網站**。
 
@@ -916,7 +916,7 @@ remove tpgroup tportal=<tportal> [noerr]
 
 #### <a name="parameter"></a>參數
 
-**tpgroup 管理入口網站 =** \<管理入口網站 >
+**tpgroup 管理入口網站 =** \<管理入口網站>
 
 指定要移除的 iSCSI 目標入口網站。
 
@@ -938,7 +938,7 @@ replace drive=<drive_number>
 
 **磁片磁碟機 =**
 
-指定要取代之磁片磁碟機的 \<drive_number >。
+指定要\<取代之磁片磁碟機的 drive_number>。
 
 #### <a name="remarks"></a>備註
 
@@ -978,59 +978,59 @@ Select {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 
 **目標**
 
-指定要選取的物件類型。 \<物件 > 類型可以是**提供者**、**子系統**、**控制器**、**磁片磁碟機**或**LUN**。
+指定要選取的物件類型。 \<物件> 類型可以是**提供者**、**子系統**、**控制器**、**磁片磁碟機**或**LUN**。
 
-**hbaport** [\<n >]
+**hbaport** [\<n>]
 
 將焦點設定為指定的本機 HBA 埠。 如果未指定 HBA 埠，此命令會顯示目前選取的 HBA 埠（如果有的話）。 指定不正確 HBA 埠索引會導致沒有焦點的 HBA 埠。 選取 HBA 埠會取消選取任何所選的啟動器介面卡和啟動器入口網站。
 
-**iadapter** [\<n >]
+**iadapter** [\<n>]
 
 將焦點設定為指定的本機 iSCSI 啟動器介面卡。 如果未指定啟動器介面卡，此命令會顯示目前選取的啟動器介面卡（如果有的話）。 指定不正確啟動器介面卡索引會導致沒有焦點的啟動器介面卡。 選取啟動器介面卡，會取消選取任何所選的 HBA 埠和啟動器入口網站。
 
-**iportal** [\<n >]
+**iportal** [\<n>]
 
 將焦點設定為所選 iSCSI 啟動器介面卡內指定的本機 iSCSI 啟動器入口網站。 如果未指定啟動器入口網站，此命令會顯示目前選取的啟動器入口網站（如果有的話）。 指定不正確啟動器入口網站索引會導致沒有選取的啟動器入口網站。
 
-**提供者**[\<n >]
+**提供者**[\<n>]
 
 將焦點設定為指定的提供者。 如果未指定提供者，此命令會顯示目前選取的提供者（如果有的話）。 指定不正確提供者索引會導致沒有焦點提供者。
 
-**子系統**[\<n >]
+**子系統**[\<n>]
 
 將焦點設定為指定的子系統。 如果未指定任何子系統，此命令會顯示具有焦點的子系統（如果有的話）。 指定不正確子系統索引會導致沒有焦點子系統。 選取子系統會隱含地選取其相關聯的提供者。
 
-**控制器**[\<n >]
+**控制器**[\<n>]
 
 將焦點設定為目前所選子系統內的指定控制器。 如果未指定任何控制器，此命令會顯示目前選取的控制器（如果有的話）。 指定不正確控制器索引會導致沒有焦點控制器。 選取控制器會取消選取任何所選的控制器埠、磁片磁碟機、Lun、目標入口網站、目標和目標入口網站群組。
 
-**埠**[\<n >]
+**埠**[\<n>]
 
 將焦點設定為目前所選控制器內的指定控制器埠。 如果未指定埠，此命令會顯示目前選取的埠（如果有的話）。 指定不正確埠索引會導致沒有選取的埠。
 
-**磁片磁碟機**[\<n >]
+**磁片磁碟機**[\<n>]
 
 將焦點設定到目前所選子系統內的指定磁片磁碟機或實體主軸。 如果未指定任何磁片磁碟機，此命令會顯示目前選取的磁片磁碟機（如果有的話）。 指定不正確磁片磁碟機索引會導致沒有焦點磁片磁碟機。 選取磁片磁碟機會取消選取任何所選的控制器、控制器埠、Lun、目標入口網站、目標和目標入口網站群組。
 
-**lun** [\<n >]
+**lun** [\<n>]
 
 將焦點設定為目前所選子系統內的指定 LUN。 如果未指定任何 LUN，此命令會顯示目前選取的 LUN （如果有的話）。 指定不正確 LUN 索引會導致沒有選取的 LUN。 選取 LUN 會取消選取任何所選的控制器、控制器埠、磁片磁碟機、目標入口網站、目標和目標入口網站群組。
 
-**管理入口網站**[\<n >]
+**管理入口網站**[\<n>]
 
 將焦點設定為目前所選子系統中指定的 iSCSI 目標入口網站。 如果未指定目標入口網站，此命令會顯示目前選取的目標入口網站（如果有的話）。 指定不正確目標入口網站索引會導致沒有選取的目標入口網站。 選取目標入口網站會將任何控制器、控制器埠、磁片磁碟機、Lun、目標和目標入口網站群組取消選取。
 
-**目標**[\<n >]
+**目標**[\<n>]
 
 將焦點設定為目前所選子系統內的指定 iSCSI 目標。 如果未指定任何目標，此命令會顯示目前選取的目標（如果有的話）。 指定不正確目標索引會導致沒有選取的目標。 選取目標會取消選取任何控制器、控制器埠、磁片磁碟機、Lun、目標入口網站和目標入口網站群組。
 
-**tpgroup** [\<n >]
+**tpgroup** [\<n>]
 
 將焦點設定為目前所選取 iSCSI 目標內的指定 iSCSI 目標入口網站群組。 如果未指定目標入口網站群組，此命令會顯示目前選取的目標入口網站群組（如果有的話）。 指定不正確目標入口網站群組索引會導致沒有焦點的目標入口網站群組。
 
-[\<n >]
+[\<n>]
 
-指定要選取的 \<物件編號 >。 如果指定的 <object number> 無效，則會清除指定類型之物件的任何現有選取專案。 如果未指定 <object number>，則會顯示目前的物件。
+指定要\<選取> 的物件編號。 如果指定<object number>的無效，則會清除指定類型之物件的任何現有選取專案。 <object number>如果未指定，則會顯示目前的物件。
 
 ### <a name="setflag"></a><a name=BKMK_34></a>setflag
 
@@ -1144,7 +1144,7 @@ diskraid /s <script.txt>
 
 ### <a name="diskraid-error-codes"></a>DiskRAID 錯誤碼
 
-|錯誤 碼|錯誤描述。|
+|錯誤碼|錯誤說明|
 |----------|-----------------|
 |0|未發生任何錯誤。 執行整個指令檔過程中未發生失敗。|
 |1|發生嚴重例外狀況。|
@@ -1159,7 +1159,7 @@ diskraid /s <script.txt>
 ```
 diskraid
 ```
-按 ENTER。 隨即顯示下列內容：
+按 ENTER 鍵。 顯示的內容如下：
 ```
 Microsoft Diskraid version 5.2.xxxx
 Copyright (©) 2003 Microsoft Corporation
@@ -1169,7 +1169,7 @@ On computer: COMPUTER_NAME
 ```
 select subsystem 0
 ```
-按 ENTER。 會顯示類似下列的輸出：
+按 ENTER 鍵。 會顯示類似下列的輸出：
 ```
 Subsystem 0 is now the selected subsystem.
 

@@ -1,6 +1,6 @@
 ---
-title: 資訊
-description: Windows 命令主題：詳細資料，它會顯示所選磁片、分割區、磁片區或虛擬硬碟（VHD）的相關資訊。
+title: 詳細資料
+description: 詳細資訊的參考主題，它會顯示所選磁片、分割區、磁片區或虛擬硬碟（VHD）的相關資訊。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 71f4f72b5a11e7af9c245b0491902687cb352b66
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4601e637f9e087dfa9647d633cee6a1dbc80638f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846371"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719611"
 ---
-# <a name="detail"></a>資訊
+# <a name="detail"></a>詳細資料
 
 顯示所選磁片、磁碟分割、磁片區或虛擬硬碟（VHD）的相關資訊。
 
@@ -33,12 +33,12 @@ detail vdisk
 
 |參數|描述|
 |---------|-----------|
-|[詳細資料磁片](detail-disk.md)|顯示選定磁碟的內容及該磁碟上的磁碟區。|
+|[詳細資料磁片](detail-disk.md)|顯示所選磁碟的內容以及該磁碟上磁碟區。|
 |[詳細資料分割](detail-partition.md)|顯示所選磁碟分割的內容。|
 |[詳細資料量](detail-volume.md)|顯示目前磁碟區所位於的磁碟。|
 |[詳細資料 vdisk](detail-vdisk.md)|顯示所選取 VHD 的屬性。|
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
