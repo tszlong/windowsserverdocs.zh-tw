@@ -1,6 +1,6 @@
 ---
 title: Scwcmd
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 014bb8b26f6eebaefa3a9997a71fbaaf543a75dc
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f08a8396219924ac6660828464e035c7744729b1
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80835041"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722101"
 ---
 # <a name="scwcmd"></a>Scwcmd
 
-> 適用目標︰Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server 2012 R2、Windows Server 2012
 
 安全性設定 Wizard （SCW）隨附的 Scwcmd 命令列工具可用來執行下列工作：
 -   使用 SCW 產生的原則設定一或多部伺服器。
@@ -38,7 +38,7 @@ scwcmd <command> [<subcommand>]
 
 ### <a name="parameters"></a>參數
 
-|來|描述|
+|子命令|描述|
 |----------|-----------|
 |/analyze|判斷電腦是否符合原則。</br>如需語法和選項，請參閱[Scwcmd：分析](scwcmd-analyze.md)。|
 |/configure|將 SCW 產生的安全性原則套用至電腦。</br>如需語法和選項，請參閱[Scwcmd： configure](scwcmd-configure.md) 。|
@@ -48,6 +48,6 @@ scwcmd <command> [<subcommand>]
 |/view|使用指定的 .xsl 轉換來呈現 .xml 檔案。</br>如需語法和選項，請參閱[Scwcmd： view](scwcmd-view.md) 。|
 |/?|在命令提示字元顯示說明。|
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 -   - [命令列語法關鍵](command-line-syntax-key.md)

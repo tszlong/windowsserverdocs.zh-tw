@@ -1,6 +1,6 @@
 ---
 title: Set 選項
-description: 設定選項的 Windows 命令主題，可設定陰影複製的建立選項。
+description: Set 選項的參考主題，可設定陰影複製的建立選項。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a956c74619f3a6c33dfcaa62ee4c810cd93b21f1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a4aba049e29cd74450467cf28057a2ff4e4a7094
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834491"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721905"
 ---
 # <a name="set-option"></a>Set 選項
 
@@ -36,6 +36,6 @@ set option {[differential | plex] [transportable] [[rollbackrecover] [txfrecover
 |   [txfrecover]    |                                                               要求 VSS 在建立期間讓陰影複製保持一致。                                                                |
 |  [noautorecover]  | 停止寫入器和檔案系統，將陰影複製的任何復原變更執行到交易一致的狀態。 **Noautorecover**不能與**txfrecover**或**rollbackrecover**搭配使用。 |
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

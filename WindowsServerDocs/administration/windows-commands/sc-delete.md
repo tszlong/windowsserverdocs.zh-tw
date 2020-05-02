@@ -1,6 +1,6 @@
 ---
 title: Sc delete
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 05b276de04d4250cc03e4b2976bf8c1330ef82ce
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: dd40b5eb82def3b3c437cbdb5b60d279529d25a0
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80835381"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722195"
 ---
 # <a name="sc-delete"></a>Sc delete
 
@@ -34,8 +34,8 @@ sc [<ServerName>] delete [<ServiceName>]
 
 |參數|描述|
 |---------|-----------|
-|\<ServerName >|指定服務所在的遠端伺服器名稱。 名稱必須使用通用命名慣例（UNC）格式（例如，\\\\myserver）。 若要在本機執行 SC.EXE，請省略此參數。|
-|\<ServiceName >|指定**getkeyname**作業所傳回的服務名稱。|
+|\<ServerName>|指定服務所在的遠端伺服器名稱。 名稱必須使用通用命名慣例（UNC）格式（ \\ \\例如 myserver）。 若要在本機執行 SC.EXE，請省略此參數。|
+|\<ServiceName>|指定**getkeyname**作業所傳回的服務名稱。|
 |?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
@@ -49,6 +49,6 @@ sc [<ServerName>] delete [<ServiceName>]
 sc delete newserv
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

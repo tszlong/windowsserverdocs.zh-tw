@@ -1,6 +1,6 @@
 ---
 title: 列印命令參考
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 009400fd2afe1e1e5cea6baa9abec1b89b59df7f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 236c394119fe12b713f179807f951007b81ead13
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837381"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722866"
 ---
 # <a name="print-command-reference"></a>列印命令參考
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 以下是列印命令列工具的清單。
 
-|                         命令                          |                                                                描述                                                                 |
+|                         Command                          |                                                                描述                                                                 |
 |----------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
 |                       [lpq](lpq.md)                       |                           顯示執行線上印表機 Daemon （LPD）之電腦上的列印佇列狀態。                            |
 |                      [lpr](lpr.md)                       |      將檔案傳送到執行線上印表機 Daemon （LPD）服務的電腦或印表機共用裝置，以準備進行列印。       |

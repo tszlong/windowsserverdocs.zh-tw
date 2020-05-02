@@ -1,6 +1,6 @@
 ---
-title: 查詢進程
-description: '\* * * * 的 Windows 命令主題'
+title: 查詢處理序
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5ee42286691444c3a667801be3174514a81441c6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 81132ebf6b75115086ed7cc2ab9f73d9d06e65e4
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80836961"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722723"
 ---
-# <a name="query-process"></a>查詢進程
+# <a name="query-process"></a>查詢處理序
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 顯示在遠端桌面工作階段主機（rd 工作階段主機）伺服器上執行之處理常式的相關資訊。
 您可以使用此命令來找出特定使用者正在執行的程式，以及哪些使用者正在執行特定程式。
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+
 > [!NOTE]
 > 在 Windows Server 2008 R2 中，終端機服務已重新命名為遠端桌面服務。 若要瞭解最新版本的新功能，請參閱 Windows Server TechNet Library 中的[Windows server 2012 遠端桌面服務的新功能](https://technet.microsoft.com/library/hh831527)。
 > ## <a name="syntax"></a>語法
@@ -37,14 +37,14 @@ ms.locfileid: "80836961"
 > |     <ProcessID>      |                                   指定識別您想要查詢之進程的數位識別碼。                                   |
 > |      <UserName>      |                                       指定您要列出其進程之使用者的名稱。                                       |
 > |    <SessionName>     |                                     指定您想要列出其進程的會話名稱。                                      |
-> |       /id：<nn>       |                                      指定您要列出其進程之會話的識別碼。                                       |
+> |       /id<nn>       |                                      指定您要列出其進程之會話的識別碼。                                       |
 > |    <ProgramName>     |                     指定您想要查詢其進程的程式名稱。 需要 .exe 副檔名。                     |
 > | /server:<ServerName> | 指定要列出其進程的 rd 工作階段主機伺服器。 如果未指定，則會使用您目前登入的伺服器。 |
 > |          /?          |                                                     在命令提示字元顯示說明。                                                     |
 > 
 > ## <a name="remarks"></a>備註
 > - 系統管理員具有所有**查詢處理**函式的完整存取權。
-> - 如果您未指定 <*UserName*>、<*SessionName*>、 **/id：** <*nn*>、<*ProgramName*> 或 **\\** * 參數，**查詢進程**只會顯示屬於目前使用者的進程。
+> - 如果您未指定 <*UserName*>、<*SessionName*>、 **/id：**<*nn*>、<*ProgramName*> 或**\\*** 參數，**查詢進程**只會顯示屬於目前使用者的進程。
 > - 如果指定了會話，它就必須識別使用中的會話。
 > - **查詢處理**程式會傳回下列資訊：
 >   -   擁有該進程的使用者
@@ -53,7 +53,7 @@ ms.locfileid: "80836961"
 >   -   進程的名稱
 >   -   進程的識別碼
 > - 當**查詢進程**傳回信息時，會在屬於目前會話的每個進程之前顯示大於（>）符號。
->   ## <a name="examples"></a><a name=BKMK_examples></a>典型
+>   ## <a name="examples"></a>範例
 > - 若要顯示所有會話正在使用之進程的相關資訊，請輸入：
 >   ```
 >   query process *
@@ -62,7 +62,7 @@ ms.locfileid: "80836961"
 >   ```
 >   query process /ID:2
 >   ```
->   ## <a name="additional-references"></a>其他參考資料
+>   ## <a name="additional-references"></a>其他參考
 >   - [命令列語法索引鍵](command-line-syntax-key.md)
 >   [查詢](query.md)
 >   [遠端桌面服務（終端機服務）命令參考](remote-desktop-services-terminal-services-command-reference.md)

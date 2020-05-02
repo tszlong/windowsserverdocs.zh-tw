@@ -1,6 +1,6 @@
 ---
 title: rsh
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 888582f6b52a51f60b73299528b2fc4d31932321
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 61239f64a7470ede96a4d3b26ca465c97ed2b697
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80835461"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722262"
 ---
 # <a name="rsh"></a>rsh
 

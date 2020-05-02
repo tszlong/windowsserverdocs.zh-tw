@@ -1,6 +1,6 @@
 ---
 title: repair-bde
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2107e5b7ef0339fc4f682632f3ef5a593578680a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 501ab801e76980f7e94e88213dd3aa42ee04d4d7
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80835961"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722402"
 ---
 # <a name="repair-bde"></a>repair-bde
 
@@ -29,7 +29,7 @@ Repair 命令列工具有下列限制：
 -   Repair 無法修復加密或解密過程中失敗的磁片磁碟機。
 -   Repair 假設如果磁片磁碟機具有任何加密，則磁片磁碟機已完全加密。
 
-如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
+
 
 ## <a name="syntax"></a>語法
 
@@ -41,39 +41,39 @@ repair-bde <InputVolume> <OutputVolumeorImage> [-rk] [–rp] [-pw] [–kp] [–l
 
 |參數|描述|
 |---------|-----------|
-|\<InputVolume >|識別您想要修復的 BitLocker 加密磁片磁碟機的磁碟機號。 磁碟機號必須包含冒號;例如： **C：** 。|
-|\<OutputVolumeorImage >|識別用來儲存修復的磁片磁碟機內容的磁片磁碟機。 輸出磁片磁碟機上的所有資訊都會遭到覆寫。|
+|\<InputVolume>|識別您想要修復的 BitLocker 加密磁片磁碟機的磁碟機號。 磁碟機號必須包含冒號;例如： **C：**。|
+|\<OutputVolumeorImage>|識別用來儲存修復的磁片磁碟機內容的磁片磁碟機。 輸出磁片磁碟機上的所有資訊都會遭到覆寫。|
 |-rk|識別應用來解除鎖定磁片區的修復金鑰位置。 此命令也可以指定為 **-recoverykey**。|
 |-rp|識別用來解除鎖定磁片區的數值修復密碼。 此命令也可以指定為 **-msfve-recoverypassword**。|
 |-pw|識別用來解除鎖定磁片區的密碼。 此命令也可以指定為 **-password**|
 |-kp|識別可用於解除鎖定磁片區的修復金鑰封裝。 此命令也可以指定為 **-keypackage**。|
 |-lf|指定檔案的路徑，該檔案會儲存 Repair-manage-bde 錯誤、警告和資訊訊息。 此命令也可以指定為 **-logfile**。|
 |-f|強制卸載磁片區，即使它無法鎖定也一樣。 此命令也可以指定為 **-force**。|
-|-? 或/？|在命令提示字元中顯示說明。|
+|-? 或/？|在命令提示字元顯示 [說明]。|
 
 ## <a name="remarks"></a>備註
 
 如果未指定金鑰封裝的路徑，則**repair**會在磁片磁碟機中搜尋金鑰套件。 不過，如果硬碟已損毀，則**repair**可能找不到套件，並會提示您提供路徑。
 
-## <a name="examples"></a><a name=BKMK_Examples></a>典型
+## <a name="examples"></a>範例
 
-下列範例會嘗試修復 C 磁片磁碟機，並使用儲存在磁片磁碟機 F 的修復金鑰檔案（RecoveryKey. bek）將內容從 C 磁片磁碟機寫入磁片磁碟機 D，然後將此嘗試的結果寫入磁片磁碟機 Z 上的記錄檔（.log）。
+若要嘗試修復 C 磁片磁碟機，並使用儲存在磁片磁碟機 F 的修復金鑰檔（RecoveryKey. bek）將內容從 C 磁片磁碟機寫入磁片磁碟機 D，請將此嘗試的結果寫入磁片磁碟機 Z 上的記錄檔（.log）。
 ```
 repair-bde C: D: -rk F:\RecoveryKey.bek –lf Z:\log.txt
 ```
-下列範例會嘗試修復 C 磁片磁碟機，並使用指定的 48-數位修復密碼將磁片磁碟機 C 的內容寫入磁片磁碟機 D。 修復密碼應輸入六個數字的八個區塊中，並以連字號分隔每個區塊。
+若要嘗試修復 C 磁片磁碟機，並使用指定的48位數的修復密碼，將磁片磁碟機 C 的內容寫入磁片磁碟機 D。 修復密碼應輸入六個數字的八個區塊中，並以連字號分隔每個區塊。
 ```
 repair-bde C: D: -rp 111111-222222-333333-444444-555555-666666-777777-888888
 ```
-下列範例會強制卸載磁片磁碟機 C，然後嘗試修復磁片磁碟機 C，並使用儲存在磁片磁碟機 F 上的修復金鑰套件和修復金鑰檔案（RecoveryKey. bek）將磁片磁碟機 c 的內容寫入磁片磁碟機 D。
+若要強制卸載磁片磁碟機 C，然後嘗試修復 C 磁片磁碟機，並使用儲存在磁片磁碟機 F 上的復原金鑰封裝和修復金鑰檔案（RecoveryKey. bek）將磁片磁碟機 c 的內容寫入磁片磁碟機 D。
 ```
 repair-bde C: D: -kp F:\RecoveryKeyPackage -rk F:\RecoveryKey.bek -f
 ```
-下列範例會嘗試修復 C 磁片磁碟機，並將磁片磁碟機 c 的內容寫入磁片磁碟機 D，而當出現提示時，您必須輸入密碼來解除鎖定磁片磁碟機 C：
+若要嘗試修復 C 磁片磁碟機，並將磁片磁碟機 c 的內容寫入磁片磁碟機 D，當出現提示時，您必須輸入密碼來解除鎖定磁片磁碟機 C：
 ```
 repair-bde C: D: -pw
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 -   - [命令列語法關鍵](command-line-syntax-key.md)

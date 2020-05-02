@@ -1,6 +1,6 @@
 ---
 title: serverweroptin
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 18b4a56888b3f23bf3bac4a12b2dba7079b50923
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a3acba57aa012c57c5c6109ed948ce6bb5b28078
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834631"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721946"
 ---
 # <a name="serverweroptin"></a>serverweroptin
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 可讓您啟用錯誤報表。
 ## <a name="syntax"></a>語法
@@ -32,7 +32,7 @@ serverweroptin [/query] [/detailed] [/summary]
 |/detailed|自動傳送詳細報告。|
 |/summary|自動傳送摘要報告。|
 |/?|在命令提示字元顯示說明。|
-## <a name="examples"></a><a name=BKMK_Examples></a>典型
+## <a name="examples"></a>範例
 若要確認目前的設定，請輸入：
 ```
 serverweroptin /query
@@ -45,6 +45,6 @@ serverweroptin /detailed
 ```
 serverweroptin /summary
 ```
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 -   - [命令列語法關鍵](command-line-syntax-key.md)
 

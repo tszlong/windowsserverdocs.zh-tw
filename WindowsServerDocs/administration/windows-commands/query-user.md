@@ -1,6 +1,6 @@
 ---
 title: query user
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6624c559bc85263da955f993ae7e4ad7e8b9ee2d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e8c095226a5445e976e47e461044ec002dc007fe
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80836801"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722686"
 ---
 # <a name="query-user"></a>query user
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 顯示遠端桌面工作階段主機（rd 工作階段主機）伺服器上的使用者會話相關資訊。
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+
 > [!NOTE]
 > 在 Windows Server 2008 R2 中，終端機服務已重新命名為遠端桌面服務。 若要瞭解最新版本的新功能，請參閱 Windows Server TechNet Library 中的[Windows server 2012 遠端桌面服務的新功能](https://technet.microsoft.com/library/hh831527)。
 > ## <a name="syntax"></a>語法
@@ -50,7 +50,7 @@ ms.locfileid: "80836801"
 > - 如果您使用**查詢使用者**，但未指定 <*UserName*>、<*SessionName*> 或 <*SessionID*>，則會傳回所有登入伺服器的使用者清單。 或者，您也可以使用 [**查詢會話**] 顯示伺服器上所有會話的清單。
 > - 當**查詢使用者**傳回信息時，會在目前的會話之前顯示大於（>）符號。
 > - 只有當您使用遠端伺服器的**查詢使用者**時，才需要 **/server**參數。
->   ## <a name="examples"></a><a name=BKMK_examples></a>典型
+>   ## <a name="examples"></a>範例
 > - 若要顯示所有登入系統之使用者的相關資訊，請輸入：
 >   ```
 >   query user
@@ -59,7 +59,7 @@ ms.locfileid: "80836801"
 >   ```
 >   query user USER1 /server:SERver1
 >   ```
->   ## <a name="additional-references"></a>其他參考資料
+>   ## <a name="additional-references"></a>其他參考
 >   - [命令列語法索引鍵](command-line-syntax-key.md)
 >   [查詢](query.md)
 >   [遠端桌面服務（終端機服務）命令參考](remote-desktop-services-terminal-services-command-reference.md)

@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: c9df46ab09b758cbd86334d5b418c876c41f0eff
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4245ea533238d31457563f4d3521fdb09ff1f255
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80836671"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722632"
 ---
 # <a name="rdpsign"></a>rdpsign
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 可讓您以數位方式簽署遠端桌面通訊協定（.rdp）檔案。
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+
 
 > [!NOTE]
 > 在 Windows Server 2008 R2 中，終端機服務已重新命名為遠端桌面服務。 若要瞭解最新版本的新功能，請參閱 Windows Server TechNet Library 中的[Windows server 2012 遠端桌面服務的新功能](https://technet.microsoft.com/library/hh831527)。
@@ -35,8 +35,8 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
 
 |參數|描述|
 |-------|--------|
-|/sha1 \<雜湊 >|指定指紋，這是憑證存放區中所包含之簽署憑證的安全雜湊演算法1（SHA1）雜湊。 在 Windows Server 2012 R2 和更舊版本中使用。|
-|/sha256 \<雜湊 >|指定指紋，這是憑證存放區中所包含之簽署憑證的安全雜湊演算法256（SHA256）雜湊。 取代 Windows Server 2016 和更新版本中的/sha1。|
+|/sha1 \<雜湊>|指定指紋，這是憑證存放區中所包含之簽署憑證的安全雜湊演算法1（SHA1）雜湊。 在 Windows Server 2012 R2 和更舊版本中使用。|
+|/sha256 \<雜湊>|指定指紋，這是憑證存放區中所包含之簽署憑證的安全雜湊演算法256（SHA256）雜湊。 取代 Windows Server 2016 和更新版本中的/sha1。|
 |/q|無訊息模式。 當命令成功時沒有輸出，而如果命令失敗，則會產生最少的輸出。|
 |/v|詳細資訊模式。 顯示所有警告、訊息和狀態。|
 |/l|測試簽署和輸出結果，而不實際取代任何輸入檔。|
@@ -52,7 +52,7 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
 -   已簽署的輸出檔案將會覆寫輸入檔。
 -   如果無法讀取或寫入任何 .rdp 檔案，此工具將會繼續進行下一個檔案（如果有指定多個檔案）。
 
-## <a name="examples"></a><a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name="BKMK_examples"></a>範例
 - 若要簽署名為 File1 的 .rdp 檔案，請流覽至儲存 .rdp 檔案的資料夾，然後輸入下列內容：
   ```
   rdpsign /sha1 hash file1.rdp

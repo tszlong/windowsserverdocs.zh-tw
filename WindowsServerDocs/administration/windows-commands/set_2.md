@@ -1,6 +1,6 @@
 ---
 title: set_2
-description: 適用于 set_2 的 Windows 命令主題，用於設定陰影複製建立的內容、選項、詳細資訊模式和中繼資料檔案。
+description: Set_2 的參考主題，其會設定用於陰影複製建立的內容、選項、詳細資訊模式和中繼資料檔案。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fa467625997824a11b2303572a063d591f59bdd6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 655f379dd8c2d633aad0cbb470b17c6ccb90c4f7
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834381"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721874"
 ---
 # <a name="set_2"></a>set_2
 
@@ -35,11 +35,11 @@ set metadata <MetaData.cab>
 |子命令|描述|
 |-----------|-----------|
 |內容|設定陰影複製建立的內容。 請參閱設定語法和參數的[內容](set-context.md)。|
-|替代|設定陰影複製建立的選項。 如需語法和參數，請參閱[Set 選項](set-option.md)。|
-|詳細資訊|開啟或關閉詳細資訊輸出模式。 請參閱設定語法和參數的[詳細](set-verbose.md)資訊。|
+|選項|設定陰影複製建立的選項。 如需語法和參數，請參閱[Set 選項](set-option.md)。|
+|verbose|開啟或關閉詳細資訊輸出模式。 請參閱設定語法和參數的[詳細](set-verbose.md)資訊。|
 |中繼資料|設定陰影建立中繼資料檔案的名稱和位置。 請參閱設定語法和參數的[中繼資料](set-metadata.md)。|
 |/?|在命令提示字元顯示說明。|
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

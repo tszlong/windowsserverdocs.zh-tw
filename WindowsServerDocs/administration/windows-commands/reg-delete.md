@@ -1,6 +1,6 @@
 ---
 title: reg delete
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 726a3c700a9278dbc7abb1873aae7ea3c957bbb5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a4ff643970bac021a6b7dcb731e64c412deb8df3
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80836501"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722569"
 ---
 # <a name="reg-delete"></a>reg delete
 
@@ -22,7 +22,7 @@ ms.locfileid: "80836501"
 
 從登錄中刪除子機碼或專案。
 
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>語法
 
@@ -34,8 +34,8 @@ Reg delete <KeyName> [{/v ValueName | /ve | /va}] [/f]
 
 |參數|描述|
 |---------|-----------|
-|\<KeyName >|指定要刪除之子機碼或專案的完整路徑。 若要指定遠端電腦，請包含電腦名稱稱（格式為 \\\\ComputerName\) 作為*KeyName*的一部分。 省略 \\\\ComputerName \ 會使操作預設為本機電腦。 *KeyName*必須包含有效的根金鑰。 本機電腦的有效根金鑰為： HKLM、HKCU、HKCR、HKU 和 HKCC。 如果指定遠端電腦，有效的根金鑰為： HKLM 和 HKU。|
-|/v \<ValueName >|刪除子機碼下的特定專案。 如果未指定任何專案，則會刪除子機碼下的所有專案和子機碼。|
+|\<KeyName>|指定要刪除之子機碼或專案的完整路徑。 若要指定遠端電腦，請將電腦名稱稱\\ \\（格式為\) *ComputerName 的一部分*）包含在內。 省略\\ \\ComputerName \ 會使此操作預設為本機電腦。 *KeyName*必須包含有效的根金鑰。 本機電腦的有效根金鑰為： HKLM、HKCU、HKCR、HKU 和 HKCC。 如果指定遠端電腦，有效的根金鑰為： HKLM 和 HKU。|
+|/v \<ValueName>|刪除子機碼下的特定專案。 如果未指定任何專案，則會刪除子機碼下的所有專案和子機碼。|
 |/ve|指定只會刪除沒有值的專案。|
 |/va|刪除指定子機碼下的所有專案。 不會刪除指定子機碼下的子機碼。|
 |/f|刪除現有的登錄子機碼或專案，而不要求確認。|
@@ -47,10 +47,10 @@ Reg delete <KeyName> [{/v ValueName | /ve | /va}] [/f]
 
 |值|描述|
 |-----|-----------|
-|0|成功|
+|0|Success|
 |1|失敗|
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 若要刪除登錄機碼的 Timeout 和其所有子機碼和值，請輸入：
 ```
@@ -61,6 +61,6 @@ REG DELETE HKLM\Software\MyCo\MyApp\Timeout
 REG DELETE \\ZODIAC\HKLM\Software\MyCo /v MTU
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

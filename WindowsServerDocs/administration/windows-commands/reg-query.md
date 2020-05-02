@@ -1,6 +1,6 @@
 ---
 title: reg 查詢
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bf21933e1ce9928048f0f07ed502dfcab75d1783
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ea66a7d96435309a3b30b67f45bc68200f30dd2f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80836391"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722535"
 ---
 # <a name="reg-query"></a>reg 查詢
 
@@ -22,7 +22,7 @@ ms.locfileid: "80836391"
 
 傳回位於登錄中指定子機碼下的下一層子機碼和專案的清單。
 
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>語法
 
@@ -34,30 +34,30 @@ reg query <KeyName> [{/v <ValueName> | /ve}] [/s] [/se <Separator>] [/f <Data>] 
 
 |參數|描述|
 |---------|-----------|
-|\<KeyName >|指定子機碼的完整路徑。 若要指定遠端電腦，請包含電腦名稱稱（格式為 \\\\ComputerName\) 作為*KeyName*的一部分。 省略 \\\\ComputerName \ 會使操作預設為本機電腦。 *KeyName*必須包含有效的根金鑰。 本機電腦的有效根金鑰為： HKLM、HKCU、HKCR、HKU 和 HKCC。 如果指定遠端電腦，有效的根金鑰為： HKLM 和 HKU。|
-|/v \<ValueName >|指定要查詢的登錄值名稱。 如果省略，則會傳回*KeyName*的所有值名稱。 如果也使用 **/f**選項，此參數的*ValueName*是選擇性的。|
+|\<KeyName>|指定子機碼的完整路徑。 若要指定遠端電腦，請包含電腦名稱稱\\ \\（格式為 ComputerName\) *的一部分）。* 省略\\ \\ComputerName \ 會使此操作預設為本機電腦。 *KeyName*必須包含有效的根金鑰。 本機電腦的有效根金鑰為： HKLM、HKCU、HKCR、HKU 和 HKCC。 如果指定遠端電腦，有效的根金鑰為： HKLM 和 HKU。|
+|/v \<ValueName>|指定要查詢的登錄值名稱。 如果省略，則會傳回*KeyName*的所有值名稱。 如果也使用 **/f**選項，此參數的*ValueName*是選擇性的。|
 |/ve|針對空白的值名稱執行查詢。|
 |/s|指定以遞迴方式查詢所有子機碼和值名稱。|
-|/se \<分隔符號 >|指定要在值名稱類型 REG_MULTI_SZ 中搜尋的單一值分隔符號。 如果未指定*Separator* ，則會使用 **\ 0** 。|
-|/f \<資料 >|指定要搜尋的資料或模式。 如果字串包含空格，請使用雙引號。 如果未指定，則會使用 **&#42;** 萬用字元（）做為搜尋模式。|
+|/se \<分隔符號>|指定要在值名稱類型 REG_MULTI_SZ 中搜尋的單一值分隔符號。 如果未指定*Separator* ，則會使用**\ 0** 。|
+|/f \<資料>|指定要搜尋的資料或模式。 如果字串包含空格，請使用雙引號。 如果未指定，則會使用萬用字元（**&#42;**）做為搜尋模式。|
 |/k|指定只搜尋索引鍵名稱。|
 |/d|指定只搜尋資料。|
-|/c|指定查詢區分大小寫。 根據預設，查詢不會區分大小寫。|
+|/C|指定查詢區分大小寫。 根據預設，查詢不會區分大小寫。|
 |/e|指定只傳回完全相符的專案。 根據預設，會傳回所有相符專案。|
-|/t \<類型 >|指定要搜尋的登錄類型。 有效的類型為： REG_SZ、REG_MULTI_SZ、REG_EXPAND_SZ、REG_DWORD、REG_BINARY、REG_NONE。 如果未指定，則會搜尋所有類型。|
+|/t \<類型>|指定要搜尋的登錄類型。 有效的類型為： REG_SZ、REG_MULTI_SZ、REG_EXPAND_SZ、REG_DWORD、REG_BINARY、REG_NONE。 如果未指定，則會搜尋所有類型。|
 |/z|指定在搜尋結果中包含登錄類型的對等數值。|
 |/?|在命令提示字元中顯示**reg 查詢**的說明。|
 
-## <a name="remarks-optional-section"></a>\<選擇性區段的備註 >
+## <a name="remarks-optional-section"></a>備註\<選擇性區段>
 
 下表列出**reg 查詢**作業的傳回值。
 
 |值|描述|
 |-----|-----------|
-|0|成功|
+|0|Success|
 |1|失敗|
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 若要在 HKLM\Software\Microsoft\ResKit 索引鍵中顯示 name 值版本的值，請輸入：
 ```
@@ -67,7 +67,7 @@ REG QUERY HKLM\Software\Microsoft\ResKit /v Version
 ```
 REG QUERY \\ABC\HKLM\Software\Microsoft\ResKit\Nt\Setup /s
 ```
-若要顯示使用 **#** 做為分隔符號 REG_MULTI_SZ 類型的所有子機碼和值，請輸入：
+若要顯示 REG_MULTI_SZ 使用**#** 做為分隔符號之類型的所有子機碼和值，請輸入：
 ```
 REG QUERY HKLM\Software\Microsoft\ResKit\Nt\Setup /se #
 ```
@@ -84,6 +84,6 @@ REG QUERY HKCU /f 0F /d /t REG_BINARY
 REG QUERY HKLM\SOFTWARE /ve
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

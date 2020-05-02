@@ -1,6 +1,6 @@
 ---
 title: qappsrv
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 96d9f020742e1bc4909931d38448f0761d5d7b0c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f2757797e4f2177adf295618dbe7fa1080513888
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837031"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722742"
 ---
 # <a name="qappsrv"></a>qappsrv
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 顯示網路上所有遠端桌面工作階段主機（RD 工作階段主機）伺服器的清單。
 
@@ -28,7 +28,7 @@ ms.locfileid: "80837031"
 ## <a name="remarks"></a>備註
 此命令與**查詢 termserver**命令相同。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 [查詢 termserver](query-termserver.md)
 - [命令列語法金鑰](command-line-syntax-key.md)
 [遠端桌面服務（終端機服務）命令參考](remote-desktop-services-terminal-services-command-reference.md)

@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 334a7abc6e8b80127f18d74a634c03572857da7e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d2c85bd48adafb7e171754aad9682e89020b95d0
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80835411"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722235"
 ---
 # <a name="rwinsta"></a>rwinsta
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 可讓您重設（刪除）遠端桌面工作階段主機（rd 工作階段主機）伺服器上的會話。
 
@@ -28,7 +28,7 @@ ms.locfileid: "80835411"
 ## <a name="remarks"></a>備註
 此命令與 [**重設會話**] 命令相同。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 [reset session](reset-session.md)
 - [命令列語法金鑰](command-line-syntax-key.md)
 [遠端桌面服務（終端機服務）命令參考](remote-desktop-services-terminal-services-command-reference.md)

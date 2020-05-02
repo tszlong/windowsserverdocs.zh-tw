@@ -1,6 +1,6 @@
 ---
 title: recover
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4c9b691b2f0cbad101f7caeb63011724dcf7594d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3a77e83f1a7143a82fd626390c7373dc87afdb17
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80836571"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722614"
 ---
 # <a name="recover"></a>recover
 
@@ -44,14 +44,14 @@ recover [noerr]
 -   此命令會在失敗或失敗的磁片上操作。 它也會在失敗、失敗或處於失敗的冗余狀態的磁片區上運作。
 -   必須選取屬於磁片群組一部分的磁片，此命令才會成功。 使用 [**選取磁片**] 命令來選取磁片，並將焦點移至它。
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 若要復原包含具有焦點之磁片的磁片群組，請輸入：
 ```
 recover
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

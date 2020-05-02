@@ -1,6 +1,6 @@
 ---
 title: 設定詳細資訊
-description: 設定詳細資訊的 Windows 命令主題，指定是否在建立陰影複製時提供詳細資訊輸出。
+description: 設定詳細資訊的參考主題，指定是否在建立陰影複製時提供詳細資訊輸出。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f06400259004095fcc4ec81b2ed3cb25678a4b7d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: db31192037e57ee471d04480e0c9333b39e44980
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834461"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721886"
 ---
 # <a name="set-verbose"></a>設定詳細資訊
 
@@ -36,6 +36,6 @@ set verbose {on | off}
 
 -   如果 verbose 模式是 on，則**set**會提供寫入器包含或排除的詳細資料，以及中繼資料壓縮與解壓縮的詳細資訊。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

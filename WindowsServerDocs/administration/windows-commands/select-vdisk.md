@@ -1,6 +1,6 @@
 ---
 title: 選取 vdisk
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 65e186413bebbf467cd4c2033d274badd1fbea80
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 68f60f8f43a33d498c40daa3b9994887f12037bb
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834741"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721997"
 ---
 # <a name="select-vdisk"></a>選取 vdisk
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-\(VHD\) 選取指定的虛擬硬碟，並將焦點移至該磁片。  
+選取指定的虛擬硬碟\(VHD\) ，並將焦點轉移到其上。  
   
 > [!NOTE]  
 > 此命令僅適用于 Windows 7 和 Windows Server 2008 R2。  
@@ -35,17 +35,17 @@ select vdisk file=<full path> [noerr]
   
 |參數|描述|  
 |-------|--------|  
-|檔案\=<full path>|指定現有 VHD 檔案的完整路徑和檔案名。|  
+|文字檔\=<full path>|指定現有 VHD 檔案的完整路徑和檔案名。|  
 |noerr|僅用於腳本。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。|  
   
-## <a name="examples"></a><a name=BKMK_examples></a>典型  
+## <a name="examples"></a>範例  
 若要將焦點移至名為 Test .vhd 的 VHD，請輸入：  
   
 ```  
 select vdisk file=c:\test\test.vhd  
 ```  
   
-## <a name="additional-references"></a>其他參考資料  
+## <a name="additional-references"></a>其他參考  
   
 -   - [命令列語法關鍵](command-line-syntax-key.md)  
   

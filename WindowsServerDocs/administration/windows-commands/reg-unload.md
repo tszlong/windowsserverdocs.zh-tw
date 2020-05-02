@@ -1,6 +1,6 @@
 ---
 title: reg unload
-description: '\* * * * 的 Windows 命令主題'
+description: Reg unload 命令的參考主題，其會移除使用 reg 載入作業載入的登錄區段。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e5fd1436ed1122a09eea11d358a3711aedddf2c1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 029b9225f8a437be18c3056d97e153075d9df7c9
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80836271"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722496"
 ---
 # <a name="reg-unload"></a>reg unload
 
@@ -22,7 +22,7 @@ ms.locfileid: "80836271"
 
 移除使用**reg 載入**作業載入的登錄區段。
 
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>語法
 
@@ -34,7 +34,7 @@ reg unload <KeyName>
 
 |參數|描述|
 |---------|-----------|
-|\<KeyName >|指定要卸載之子機碼的完整路徑。 若要指定遠端電腦，請包含電腦名稱稱（格式為 \\\\ComputerName\) 作為*KeyName*的一部分。 省略 \\\\ComputerName \ 會使操作預設為本機電腦。 *KeyName*必須包含有效的根金鑰。 本機電腦的有效根金鑰為 HKLM、HKCU、HKCR、HKU 和 HKCC。 如果指定遠端電腦，有效的根金鑰就是 HKLM 和 HKU。|
+|\<KeyName>|指定要卸載之子機碼的完整路徑。 若要指定遠端電腦，請包含電腦名稱稱\\ \\（格式為 ComputerName\) *的一部分）。* 省略\\ \\ComputerName \ 會使此操作預設為本機電腦。 *KeyName*必須包含有效的根金鑰。 本機電腦的有效根金鑰為 HKLM、HKCU、HKCR、HKU 和 HKCC。 如果指定遠端電腦，有效的根金鑰就是 HKLM 和 HKU。|
 |/?|在命令提示字元中顯示**reg unload**的說明。|
 
 ## <a name="remarks"></a>備註
@@ -43,10 +43,10 @@ reg unload <KeyName>
 
 |值|描述|
 |-----|-----------|
-|0|成功|
+|0|Success|
 |1|失敗|
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 若要卸載 file HKLM 中的 hive TempHive，請輸入：
 ```
@@ -56,6 +56,8 @@ REG UNLOAD HKLM\TempHive
 > [!CAUTION]
 > 請勿直接編輯登錄，除非您沒有替代方案。 登錄編輯程式會略過標準保護，允許降低效能、損毀您的系統，甚至要求您重新安裝 Windows 的設定。 您可以使用 [控制台] 或 Microsoft Management Console （MMC）中的程式，安全地改變大部分的登錄設定。 如果您必須直接編輯登錄，請先備份。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [reg load 命令](reg-load.md)

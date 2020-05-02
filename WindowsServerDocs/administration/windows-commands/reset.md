@@ -1,6 +1,6 @@
 ---
-title: 重設
-description: '\* * * * 的 Windows 命令主題'
+title: reset
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5c27ddd93d06670a30f797bd58dd396a9e7ce70a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0701324ad1ee94cc645c7519d81fef7357b6a34a
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80835781"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722349"
 ---
-# <a name="reset"></a>重設
+# <a name="reset"></a>reset
 
 
 
@@ -32,6 +32,6 @@ reset
 
 -   當您使用 [**重設**] 命令時，您會從 [**新增**]、[**設定**]、[**載入**] 或 [**寫入器**] 等命令遺失狀態 **Reset**也會釋放 IVssBackupComponent 介面，並失去非持續性陰影複製。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
