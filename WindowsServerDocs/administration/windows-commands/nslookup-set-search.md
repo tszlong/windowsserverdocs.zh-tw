@@ -1,6 +1,6 @@
 ---
 title: nslookup set search
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9972919eae1be21d5dd30820d64dd1576b935666
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2e3f5bce42d3614b535b2dfb00c4c9ea9cac2346
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80838301"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723559"
 ---
 # <a name="nslookup-set-search"></a>nslookup set search
 
@@ -36,6 +36,6 @@ set [no]search
 |  **search**  | 將 DNS 網域搜尋清單中的網域名稱系統（DNS）功能變數名稱附加至要求，直到收到回應為止。 預設語法為 [**搜尋**]。 |
 |    {說明     |                                                                              ?}                                                                               |
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

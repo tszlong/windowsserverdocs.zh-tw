@@ -1,6 +1,6 @@
 ---
 title: manage-bde 升級
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0bca75e78ac5b6fec432fa93eadfd9bde795ee9a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ce7d1805a98a3029ce9b83a1b475ecd8bdb0a4ab
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839781"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724049"
 ---
 # <a name="manage-bde-upgrade"></a>manage-bde： upgrade
 
 
 
-升級 BitLocker 版本。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
+升級 BitLocker 版本。
 
 ## <a name="syntax"></a>語法
 
@@ -32,20 +32,20 @@ manage-bde -upgrade [<Drive>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
 
 |參數|描述|
 |---------|-----------|
-|\<磁片磁碟機 >|表示後面接著冒號的磁碟機號。|
+|\<磁片磁碟機>|表示後面接著冒號的磁碟機號。|
 |-computername|指定 Manage-bde.wsf 將用來修改另一部電腦上的 BitLocker 保護。 您也可以使用 **-cn**做為此命令的縮寫版本。|
-|\<名稱 >|代表要修改 BitLocker 保護的電腦名稱稱。 接受的值包括電腦的 NetBIOS 名稱和電腦的 IP 位址。|
+|\<Name>|代表要修改 BitLocker 保護的電腦名稱稱。 接受的值包括電腦的 NetBIOS 名稱和電腦的 IP 位址。|
 |-? 或/？|在命令提示字元中顯示簡短說明。|
 |-help 或-h|在命令提示字元中顯示完整的說明。|
 
-## <a name="examples"></a><a name=BKMK_Examples></a>典型
+## <a name="examples"></a>範例
 
-下列範例說明如何使用 **-upgrade**命令升級 C 磁片磁碟機上的 BitLocker 加密。
+說明如何使用 **-upgrade**命令升級 C 磁片磁碟機上的 BitLocker 加密。
 ```
 manage-bde –upgrade C:
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 -   - [命令列語法關鍵](command-line-syntax-key.md)
 -   [Manage-bde](manage-bde.md)

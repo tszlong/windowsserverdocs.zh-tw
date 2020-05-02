@@ -1,6 +1,6 @@
 ---
 title: netcfg
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4895928ffdd5d923d370f82e699d69f42c0f81a5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a5945da45ee01fd5bf5f89a7835c4bae0b5534c4
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80838931"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723799"
 ---
 # <a name="netcfg"></a>netcfg
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 會安裝 Windows 預先安裝環境（WinPE），這是用來部署工作站的輕量版本 Windows。
 ## <a name="syntax"></a>語法
@@ -32,13 +32,13 @@ netcfg [/v] [/e] [/winpe] [/l ] /c /i
 |/e|在安裝和卸載期間使用服務**環境**變數|
 |/winpe|安裝 TCP/IP、NetBIOS 和 Microsoft Client for Windows 預先安裝環境（WinPE）|
 |/l|提供 INF 的**位置**|
-|/c|提供要安裝之元件的**類別**;通訊協定、服務或用戶端|
+|/C|提供要安裝之元件的**類別**;通訊協定、服務或用戶端|
 |/i|提供元件**識別碼**|
 |/s|提供要**顯示**的元件類型。<p>\ta = 介面卡，n = net 元件|
 |/b|顯示系結**路徑**，後面接著包含路徑名稱的字串。|
 |/?|在命令提示字元**中顯示說明**。|
 
-## <a name="examples"></a><a name=BKMK_Examples></a>典型
+## <a name="examples"></a>範例
 
 若要使用 c:\oemdir\example.inf 安裝通訊協定*範例*：
 ```
@@ -68,5 +68,5 @@ netcfg /s n
 ```
 netcfg /b ms_tcpip
 ```
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 -   - [命令列語法關鍵](command-line-syntax-key.md)

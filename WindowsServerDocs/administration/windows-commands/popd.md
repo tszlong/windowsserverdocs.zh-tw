@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: b66b5edd2fa068923650f578d13f30631a8602ad
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a1638f8d0d62b730578cb21fac5a74e58ad06b74
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837471"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723292"
 ---
 # <a name="popd"></a>popd
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 將目前的目錄變更為由**pushd**命令最近儲存的目錄。
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>語法
 ```
@@ -39,8 +39,8 @@ popd
     您可以使用**popd**命令，將目前的目錄變更為由**pushd**命令最近儲存的目錄。 如果您使用**popd**命令，堆疊頂端的目錄會從堆疊中移除，而目前的目錄則會變更為該目錄。 如果您再次使用**popd**命令，則會移除堆疊上的下一個目錄。
 -   啟用命令延伸模組時， **popd**命令會移除由**pushd**所建立的任何磁碟機號 assignations。
 
-## <a name="examples"></a><a name="BKMK_examples"></a>典型
-下列範例顯示如何在 batch 程式中使用**pushd**命令和**popd**命令，以變更執行 batch 程式的目錄，然後將它變更回來：
+## <a name="examples"></a><a name="BKMK_examples"></a>範例
+若要示範如何在 batch 程式中使用**pushd**命令和**popd**命令，以從執行批次程式的帳戶變更目前的目錄，然後將它變更回來：
 
 ```
 @echo off
@@ -52,7 +52,7 @@ cls
 echo All text files deleted in the %1 directory
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 -   [pushd](pushd.md)
 -   - [命令列語法關鍵](command-line-syntax-key.md)
 

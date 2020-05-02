@@ -1,6 +1,6 @@
 ---
-title: online
-description: '\* * * * 的 Windows 命令主題'
+title: 線上
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7b77e123a6e99c857ddb18cd0f2e2ccc6a4d6d42
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a0e7582bdaebb5f3e5180d1baace980d3006b2e9
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837831"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723399"
 ---
-# <a name="online"></a>online
+# <a name="online"></a>線上
 
 
 
@@ -34,7 +34,7 @@ Offline volume
 |參數|描述|
 |---------|-----------|
 |[離線磁片](offline-disk.md)|將具有焦點的離線磁片帶到線上狀態。|
-|[離線磁片區](offline-volume.md)|將具有焦點的離線磁片區帶到線上狀態。|
+|[讓磁碟區離線](offline-volume.md)|將具有焦點的離線磁片區帶到線上狀態。|
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 

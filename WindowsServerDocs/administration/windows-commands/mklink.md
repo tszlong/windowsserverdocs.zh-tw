@@ -1,6 +1,6 @@
 ---
 title: mklink
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,17 +9,17 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3d6328d972b07b1bebd272788b896fd491e47380
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 83a607711f0abe51810aa5abf4eb731206d810c2
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839551"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723978"
 ---
 # <a name="mklink"></a>mklink
 建立符號連結。
 
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>語法
 
@@ -34,13 +34,13 @@ mklink [[/d] | [/h] | [/j]] <Link> <Target>
 |/d|建立目錄符號連結。 根據預設， **mklink**會建立檔案符號連結。|
 |/h|建立硬式連結，而不是符號連結。|
 |/j|建立目錄連接點。|
-|\<連結 >|指定正在建立之符號連結的名稱。|
-|\<目標 >|指定新符號連結所參考的路徑（相對或絕對）。|
+|\<連結>|指定正在建立之符號連結的名稱。|
+|\<Target>|指定新符號連結所參考的路徑（相對或絕對）。|
 |/?|在命令提示字元顯示說明。|
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
-下列範例示範如何建立和移除名為 MyFolder 和 Myfile.txt 的符號連結，從根目錄到 \Users\User1\Documents 目錄，以及位於目錄中的範例檔案：
+示範如何建立和移除名為 MyFolder 和 Myfile.txt 的符號連結，從根目錄到 \Users\User1\Documents 目錄，以及位於目錄中的範例檔案：
 ```
 mklink /d \MyFolder \Users\User1\Documents
 mklink /h \MyFile.file \User1\Documents\example.file

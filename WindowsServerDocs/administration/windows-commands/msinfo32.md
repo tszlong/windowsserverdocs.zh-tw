@@ -1,6 +1,6 @@
 ---
 title: msinfo32
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5a77cf9ae4c5f054e66839ff5b5b057e031b36ff
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0db8a4549ac26ef61d4aa8f435a01d3224501a77
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839111"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723839"
 ---
 # <a name="msinfo32"></a>msinfo32
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 開啟 [系統資訊] 工具，以顯示本機電腦上硬體、系統元件和軟體環境的完整觀點。 
 ## <a name="syntax"></a>語法
@@ -37,13 +37,13 @@ msinfo32 [/pch] [/nfo <path>] [/report <path>] [/computer <computerName>] [/show
 |     /report     |                                               將檔案以文字檔的形式儲存在*路徑*中。 檔案名的儲存方式會與*path*中的名稱完全相同。 .Txt 副檔名不會附加至檔案，除非在 path 中指定。                                                |
 |    /computer    |                                                                啟動指定遠端電腦的系統資訊工具。 您必須具有適當的許可權，才能存取遠端電腦。                                                                |
 | /showcategories |                         啟動系統資訊工具，並顯示所有可用的類別 Id，而不是顯示易記或當地語系化的名稱。 例如，[軟體環境] 分類會顯示為 [ **SWEnv** ] 類別。                         |
-|    /category    |                                                                     啟動已選取指定分類的系統資訊。 使用 **/showcategories**顯示可用類別目錄識別碼的清單。                                                                     |
+|    /類別    |                                                                     啟動已選取指定分類的系統資訊。 使用 **/showcategories**顯示可用類別目錄識別碼的清單。                                                                     |
 |   /categories   |                          僅顯示指定的分類或分類的系統資訊。 它也會將輸出限制為選取的類別目錄或類別目錄。 使用 **/showcategories**顯示可用類別目錄識別碼的清單。                          |
 |       /?        |                                                                                                                     在命令提示字元顯示說明。                                                                                                                     |
 
 ## <a name="remarks"></a>備註
 某些系統資訊分類包含大量資料。 您可以使用 [**開始/wait** ] 命令，將這些類別的報告效能優化。 如需詳細資訊，請參閱[系統資訊](https://technet.microsoft.com/library/cc783305(v=ws.10).aspx)。
-## <a name="examples"></a><a name=BKMK_Examples></a>典型
+## <a name="examples"></a>範例
 若要列出可用的分類識別碼，請輸入：
 ```
 msinfo32 /showcategories
@@ -60,6 +60,6 @@ msinfo32 /nfo syssum.nfo /categories +systemsummary
 ```
 msinfo32 /nfo conflicts.nfo /categories    +componentsproblemdevices+resourcesconflicts+resourcesforcedhardware
 ```
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 -   - [命令列語法關鍵](command-line-syntax-key.md)
 

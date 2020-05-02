@@ -1,6 +1,6 @@
 ---
 title: 線上磁片區
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 476dd893e7899a2bd58336546a7881934f415f92
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bb2ee396e4fa8a2e61001df0d979d85dabe1aa32
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837841"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723425"
 ---
 # <a name="online-volume"></a>線上磁片區
 
@@ -45,14 +45,14 @@ online volume [noerr]
 -   此命令會在故障、失敗或處於失敗的冗余狀態的磁片區上運作。
 -   必須選取磁片區，此命令才會成功。 使用 [**選取磁片**區] 命令來選取磁片區，並將焦點移至該磁片區。
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 若要讓磁片區與焦點上線，請輸入：
 ```
 online volume
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

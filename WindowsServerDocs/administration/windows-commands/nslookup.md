@@ -1,6 +1,6 @@
 ---
 title: nslookup
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 15062d81992ee1b6e55d47cb9e49822350e4f2bc
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 35f790a3a537959501afe7c3173317f22b934ec6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80838091"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723494"
 ---
 # <a name="nslookup"></a>nslookup
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 顯示您可以用來診斷網域名稱系統（DNS）基礎結構的資訊。 使用此工具之前，您應該先熟悉 DNS 的運作方式。 只有當您已安裝 TCP/IP 通訊協定時，才能使用 nslookup 命令列工具。
 ## <a name="syntax"></a>語法
@@ -96,7 +96,7 @@ nslookup /view <FileName>
   -   若要將內建命令視為電腦名稱稱，請在其前面加上 escape 字元（\\）。
   -   無法辨識的命令會被視為電腦名稱稱。
 - 如果查閱要求失敗， **nslookup**會列印錯誤訊息。 下表列出可能的錯誤訊息。
-  |**錯誤訊息**|**描述**|
+  |**錯誤訊息**|**說明**|
   |-----------|----------|
   |`timed out`|伺服器在一段時間內未回應要求，而且有一定的重試次數。 您可以使用**set timeout**子命令來設定超時時間。 您可以使用**設定重試**子命令來設定重試次數。|
   |`No response from server`|伺服器電腦上沒有正在執行的 DNS 名稱伺服器。|

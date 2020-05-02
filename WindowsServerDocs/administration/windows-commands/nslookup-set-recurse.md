@@ -1,6 +1,6 @@
 ---
 title: nslookup set recurse
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bdcdaecdfc6923584a53bc09f985a16ff9b76126
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c4386bd5738806016b9ec15802faebf3efdcedf0
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80838391"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723595"
 ---
 # <a name="nslookup-set-recurse"></a>nslookup set recurse
 
@@ -36,6 +36,6 @@ set [no]recurse
 |  **遞迴**  | 告訴網域名稱系統（DNS）名稱伺服器在沒有資訊的情況之下查詢其他伺服器。 預設語法為**遞迴**。 |
 |     {說明     |                                                                      ?}                                                                       |
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

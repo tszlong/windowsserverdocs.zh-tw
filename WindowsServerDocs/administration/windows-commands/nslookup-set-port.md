@@ -1,6 +1,6 @@
 ---
 title: nslookup set port
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2fcd20a4a7866a830284d0c858bf17668228fb0c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 148137d11f6fc145e57caca4f60e5f6355fa5504
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80838441"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723628"
 ---
 # <a name="nslookup-set-port"></a>nslookup set port
 
@@ -32,9 +32,9 @@ set port=<Port>
 
 | 參數 |                                          描述                                          |
 |-----------|-----------------------------------------------------------------------------------------------|
-|  \<埠 >  | 指定預設 TCP/UDP DNS 名稱伺服器埠的新值。 預設通訊埠為53。 |
+|  \<埠>  | 指定預設 TCP/UDP DNS 名稱伺服器埠的新值。 預設通訊埠為53。 |
 |   {說明   |                                              ?}                                               |
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
 title: 離線磁片區
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 821132b41b55410223c0310f283b076526c9fbc4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d17295f3367fed054a7f6a245bae44ea3494a4a8
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837971"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723456"
 ---
 # <a name="offline-volume"></a>離線磁片區
 
@@ -41,14 +41,14 @@ offline volume [noerr]
 
 -   必須選取磁片區才能成功。 使用 [**選取**磁片區] 命令來選取磁片，並將焦點移至它。
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 若要讓磁片具有離線焦點，請輸入：
 ```
 offline volume
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

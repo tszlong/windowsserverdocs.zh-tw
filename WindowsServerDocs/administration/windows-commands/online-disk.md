@@ -1,6 +1,6 @@
 ---
 title: 線上磁片
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c61d852ba71329c3d7345d74fd352a6c19436cec
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 110a73a46712e3cbe5b5ff22b7e4343afb103966
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837891"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723417"
 ---
 # <a name="online-disk"></a>線上磁片
 
@@ -28,7 +28,7 @@ ms.locfileid: "80837891"
 > [!IMPORTANT]
 > 如果用於唯讀磁片，此命令將會失敗。
 
-如需有關如何使用此命令的指示，請參閱[重新啟用遺失或離線的動態磁碟](https://go.microsoft.com/fwlink/?LinkId=207046)（ https://go.microsoft.com/fwlink/?LinkId=207046)。
+如需有關如何使用此命令的指示，請參閱[重新啟用遺失或離線的動態磁碟](https://go.microsoft.com/fwlink/?LinkId=207046)（https://go.microsoft.com/fwlink/?LinkId=207046)。
 
 ## <a name="syntax"></a>語法
 
@@ -51,14 +51,14 @@ online disk [noerr]
 -   如果所選磁片的群組包含鏡像或 RAID-5 磁片區，則此命令也會重新同步這些磁片區。
 -   必須選取磁片，此命令才會成功。 使用 [**選取磁片**] 命令來選取磁片，並將焦點移至它。
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 若要讓磁片上線，請輸入：
 ```
 online disk
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

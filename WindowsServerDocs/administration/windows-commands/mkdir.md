@@ -1,6 +1,6 @@
 ---
 title: mkdir
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5f1c37d95f604357071e7c509c259e00e509ad25
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3330674fb3f5c89b8e8c43ec589ea7a1fb80af07
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839561"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723983"
 ---
 # <a name="mkdir"></a>mkdir
 

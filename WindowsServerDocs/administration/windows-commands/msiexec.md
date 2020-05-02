@@ -1,6 +1,6 @@
 ---
 title: msiexec
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5c4532e8a36c5f8bd6f9b271849b023e621c66bb
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 49ce8fd328ffcc4c494902afdfedf23c3376a346
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839091"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723855"
 ---
 # <a name="msiexec"></a>msiexec
 

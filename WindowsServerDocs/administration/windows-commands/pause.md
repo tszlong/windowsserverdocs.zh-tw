@@ -1,6 +1,6 @@
 ---
 title: pause
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 135d074a71c7153cc1665ad7b543bdba56ed66e8
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 89e76c4f45f59c32ef879fb518a1a92c973f5cdf
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837681"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723357"
 ---
 # <a name="pause"></a>pause
 
@@ -24,7 +24,7 @@ ms.locfileid: "80837681"
 ```
 Press any key to continue . . .
 ```
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>語法
 
@@ -51,7 +51,7 @@ pause
   如果您按 Y （為 [是]）來回應此訊息，則 batch 程式會結束，且控制權會回到作業系統。
 - 您可以在可能不想要處理的批次檔區段之前，插入**pause**命令。 **暫停**batch 程式的處理時，您可以按下 CTRL + C，然後按 Y 以停止 batch 程式。
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 若要建立批次程式，以提示使用者變更其中一個磁片磁碟機中的磁片，請輸入：
 ```
@@ -64,6 +64,6 @@ goto begin
 ```
 在此範例中，磁片磁碟機 A 中磁片上的所有檔案都會複製到目前的目錄。 當訊息提示您將新磁片放在磁片磁碟機 A 之後， **pause**命令就會暫停處理，讓您可以變更磁片，然後按任意鍵繼續處理。 此批次程式會在無止盡的迴圈中執行， **goto begin**命令會將命令直譯器傳送至批次檔的開始標籤。 若要停止此 batch 程式，請按 CTRL + C，然後按下 Y 鍵。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

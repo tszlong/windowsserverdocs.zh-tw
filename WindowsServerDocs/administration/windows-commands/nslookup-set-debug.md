@@ -1,6 +1,6 @@
 ---
 title: nslookup set debug
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6a960be031dd5259906ba53c43c57f29b1a7b300
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 92a6f53105c682500d68fa7bf07fdcbacea75f34
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80838541"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723636"
 ---
 # <a name="nslookup-set-debug"></a>nslookup set debug
 
@@ -40,6 +40,6 @@ set [no]debug
 
 -   開啟 [偵錯模式] 時，會列印有關傳送到伺服器的封包和產生的答案的詳細資訊。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

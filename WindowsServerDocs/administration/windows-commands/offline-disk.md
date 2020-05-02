@@ -1,6 +1,6 @@
 ---
 title: 離線磁片
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bd7991f1f5967970690c7051612395fb47a764ec
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3a00b7f51bc950c3737ba6350fe15a7a4c6cc45e
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837981"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723439"
 ---
 # <a name="offline-disk"></a>離線磁片
 
@@ -43,14 +43,14 @@ offline disk [noerr]
 -   如果磁片群組中的動態磁碟已離線，則磁片的狀態會變更為 [**遺失**]，而群組會顯示離線的磁片。 遺失的磁片會移至不正確群組。 如果動態磁碟是群組中的最後一個磁片，則磁片的狀態會變更為 [**離線**]，而空的群組則會被移除。
 -   必須選取磁片，[**離線磁片**] 命令才會成功。 使用 [**選取磁片**] 命令來選取磁片，並將焦點移至它。
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 若要讓磁片具有離線焦點，請輸入：
 ```
 offline disk
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

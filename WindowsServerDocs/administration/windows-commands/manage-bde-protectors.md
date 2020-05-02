@@ -1,6 +1,6 @@
 ---
 title: manage-bde 保護裝置
-description: '\* * * * 的 Windows 命令主題'
+description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/06/2018
-ms.openlocfilehash: 1a2e2c851ec9bc93ec434a35f14c6f92ec831876
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e01049a5fb3dc419e219fe4ec8b11dcdc790f919
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839951"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724112"
 ---
 # <a name="manage-bde-protectors"></a>manage-bde：保護裝置
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+> 適用於：Windows Server (半年度管道)、Windows Server 2016
 
-管理用於 BitLocker 加密金鑰的保護方法。 如需如何使用此命令的範例，請參閱[範例](#BKMK_Examples)。
+管理用於 BitLocker 加密金鑰的保護方法。
 ## <a name="syntax"></a>語法
 ```
 manage-bde -protectors [{-get|-add|-delete|-disable|-enable|-adbackup|-aadbackup}] <Drive> [-computername <Name>] [{-?|/?}] [{-help|-h}]
@@ -84,13 +84,13 @@ manage-bde  -protectors  -delete <Drive> [-type {recoverypassword|externalkey|ce
 |         -類型          |                               識別要刪除的金鑰保護裝置。 您也可以使用 **-t**做為此命令的縮寫版本。                               |
 |    msfve-recoverypassword    |                                                 指定應刪除任何修復密碼金鑰保護裝置。                                                 |
 |      externalkey       |                                        指定應刪除與磁片磁碟機相關聯的任何外部金鑰保護裝置。                                         |
-|      證書       |                                       指定應刪除與磁片磁碟機相關聯的任何憑證金鑰保護裝置。                                       |
-|          tmp           |                                        指定應刪除與磁片磁碟機相關聯的任何僅 TPM 金鑰保護裝置。                                         |
+|      憑證 (certificate)       |                                       指定應刪除與磁片磁碟機相關聯的任何憑證金鑰保護裝置。                                       |
+|          tpm           |                                        指定應刪除與磁片磁碟機相關聯的任何僅 TPM 金鑰保護裝置。                                         |
 |    tpmandstartupkey    |                                指定應刪除與磁片磁碟機相關聯的任何 TPM 和啟動金鑰保護裝置。                                |
 |       tpmanDPIn        |                                    指定應刪除與磁片磁碟機相關聯的任何 TPM 和 PIN 型金鑰保護裝置。                                    |
 | tpmanDPInandstartupkey |                             指定應刪除與磁片磁碟機相關聯的任何 TPM、PIN 和啟動金鑰保護裝置。                             |
-|        密碼        |                                        指定應刪除與磁片磁碟機相關聯的任何密碼金鑰保護裝置。                                         |
-|        識別        |                                        指定應刪除與磁片磁碟機相關聯的任何身分識別金鑰保護裝置。                                         |
+|        password        |                                        指定應刪除與磁片磁碟機相關聯的任何密碼金鑰保護裝置。                                         |
+|        身分識別        |                                        指定應刪除與磁片磁碟機相關聯的任何身分識別金鑰保護裝置。                                         |
 |          -id           |                使用金鑰識別碼來識別要刪除的金鑰保護裝置。 這個參數是 **-type**參數的替代選項。                 |
 |    <KeyProtectorID>    |        識別要刪除之磁片磁碟機上的個別金鑰保護裝置。 您可以使用**manage-bde-保護裝置-get**命令來顯示金鑰保護裝置識別碼。         |
 |     -computername      | 指定 manage-bde.wsf 將用來修改另一部電腦上的 BitLocker 保護。 您也可以使用 **-cn**做為此命令的縮寫版本。 |
@@ -112,27 +112,27 @@ manage-bde  -protectors  -disable <Drive> [-RebootCount <integer 0 - 15>] [-comp
 |   -? 或/？    |                                                                                                                                                                                                    在命令提示字元中顯示簡短說明。                                                                                                                                                                                                    |
 |  -help 或-h  |                                                                                                                                                                                                  在命令提示字元中顯示完整的說明。                                                                                                                                                                                                   |
 
-## <a name="examples"></a><a name=BKMK_Examples></a>典型
-下列範例說明如何使用 **-保護**裝置命令，將憑證檔案所識別的憑證金鑰保護裝置新增至磁片磁碟機 E。
+## <a name="examples"></a>範例
+說明如何使用 **-保護**裝置命令，將憑證檔案所識別的憑證金鑰保護裝置新增至磁片磁碟機 E。
 ```
 manage-bde  -protectors  -add E: -certificate  -cf c:\File Folder\Filename.cer
 ```
-下列範例說明如何使用 **-保護**裝置命令，將網域和使用者名稱所識別的**adaccountorgroup**金鑰保護裝置新增至磁片磁碟機 E。
+說明如何使用 **-保護**裝置命令，將網域和使用者名稱所識別的**adaccountorgroup**金鑰保護裝置新增至磁片磁碟機 E。
 ```
 manage-bde  -protectors  -add E: -sid DOMAIN\user
 ```
-下列範例說明**使用保護裝置命令來**停用保護，直到電腦重新開機3次為止。
+說明如何**使用保護裝置命令來**停用保護，直到電腦重新開機3次為止。
 ```
 manage-bde  -protectors  -disable C: -rc 3
 ```
-下列範例說明如何使用 **-保護**裝置命令來刪除磁片磁碟機 C 上所有 TPM 和啟動金鑰的金鑰保護裝置。
+說明如何使用 **-保護**裝置命令來刪除磁片磁碟機 C 上所有 TPM 和啟動金鑰的金鑰保護裝置。
 ```
 manage-bde  -protectors -delete C: -type tpmandstartupkey
 ```
-下列範例說明如何使用 **-保護**裝置命令，將磁片磁碟機 C 的所有修復資訊備份到 AD DS。
+說明如何使用 **-保護**裝置命令，將磁片磁碟機 C 的所有修復資訊備份到 AD DS。
 ```
 manage-bde  -protectors  -adbackup C:
 ```
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 -   - [命令列語法關鍵](command-line-syntax-key.md)
 -   [manage-bde](manage-bde.md)

@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 3f853ef430207c08e78e0446ce67c6b5bec4c1db
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 05675e4764c4c3e135647a1185da05634ee7264f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837692"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723362"
 ---
 # <a name="pathping"></a>pathping
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 提供來源與目的地之間中繼躍點的網路延遲和網路遺失的相關資訊。 **pathping**會在一段時間內，將多個 echo 要求訊息傳送至來源與目的地之間的每個路由器，然後根據每個路由器傳回的封包來計算結果。 因為**pathping**會在任何指定的路由器或連結上顯示封包遺失的程度，您可以判斷哪些路由器或子網可能有網路問題。 
 
@@ -32,15 +32,15 @@ pathping [/n] [/h] [/g <Hostlist>] [/p <Period>] [/q <NumQueries> [/w <timeout>]
 |參數|描述|
 |-------|--------|
 |/n|防止**pathping**嘗試將中繼路由器的 IP 位址解析為其名稱。 這可能會加快顯示**pathping**結果的速度。|
-|/h \<MaximumHops >|指定路徑中用來搜尋目標（目的地）的躍點數目上限。 預設值為30個躍點。|
-|/g \<Hostlist >|指定 echo 要求訊息使用 IP 標頭中的鬆散來源路由選項，並搭配*Hostlist*中指定的中繼目的地集合。 使用鬆散來源路由，連續的中繼目的地可以由一或多個路由器隔開。 主機清單中的位址或名稱數目上限為9。 *Hostlist*是一系列以空格分隔的 IP 位址（小數點十進位標記法）。|
-|/p \<期間 >|指定連續 ping 之間要等候的毫秒數。 預設值為250毫秒（1/4 秒）。|
-|/q \<NumQueries >|指定傳送至路徑中每個路由器的 echo 要求訊息數目。 預設值為100查詢。|
-|/w \<timeout >|指定等待每個回復的毫秒數。 預設值為3000毫秒（3秒）。|
-|/i \<IPaddress >|指定來源地址。|
-|/4 \<IPv4 >|指定 pathping 僅使用 IPv4。|
-|/6 \<IPv6 >|指定 pathping 僅使用 IPv6。|
-|\<TargetName >|指定以 IP 位址或主機名稱識別的目的地。|
+|/h \<MaximumHops>|指定路徑中用來搜尋目標（目的地）的躍點數目上限。 預設值為30個躍點。|
+|/g \<Hostlist>|指定 echo 要求訊息使用 IP 標頭中的鬆散來源路由選項，並搭配*Hostlist*中指定的中繼目的地集合。 使用鬆散來源路由，連續的中繼目的地可以由一或多個路由器隔開。 主機清單中的位址或名稱數目上限為9。 *Hostlist*是一系列以空格分隔的 IP 位址（小數點十進位標記法）。|
+|/p \<Period>|指定連續 ping 之間要等候的毫秒數。 預設值為250毫秒（1/4 秒）。|
+|/q \<NumQueries>|指定傳送至路徑中每個路由器的 echo 要求訊息數目。 預設值為100查詢。|
+|/w \<timeout>|指定等待每個回復的毫秒數。 預設值為3000毫秒（3秒）。|
+|/i \<IPaddress>|指定來源地址。|
+|/4 \<IPv4>|指定 pathping 僅使用 IPv4。|
+|/6 \<IPv6>|指定 pathping 僅使用 IPv6。|
+|\<TargetName>|指定以 IP 位址或主機名稱識別的目的地。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
@@ -51,9 +51,9 @@ pathping [/n] [/h] [/g <Hostlist>] [/p <Period>] [/q <NumQueries> [/w <timeout>]
 -   使用 **/w**參數時，可以平行傳送多個 ping。 因此， *timeout*參數中指定的時間量不會受*Period*參數中指定的時間長度限制，以等待 ping 之間的等候。
 -   只有當網際網路通訊協定（TCP/IP）通訊協定是在網路連線的網路介面卡內容中安裝為元件時，才可以使用此命令。
 
-## <a name="examples"></a><a name=BKMK_Examples></a>典型
+## <a name="examples"></a>範例
 
-下列範例顯示**pathping**命令輸出：
+若要顯示**pathping**命令輸出：
 
 ```
 D:\>pathping /n corp1
@@ -85,7 +85,7 @@ Trace complete.
 
 在上述的範例報表中，**此節點/連結**[**遺失/傳送 = 百分比**] 和 [**位址**] 資料行顯示172.16.87.218 和192.168.52.1 之間的連結正在卸載13% 的封包。 躍點2和4的路由器也會捨棄處理的封包，但這種遺失並不會影響其轉送未定址流量的能力。
 
-針對連結顯示的遺失率（識別為 [**位址**] 欄中的分隔號（ **|** ））表示連結擁塞，這會導致在路徑上轉送的封包遺失。 針對路由器顯示的遺失率（由其 IP 位址識別）表示這些路由器可能超載。
+針對連結顯示的遺失率（在 [**位址**] 欄中識別**|** 為分隔號（））表示連結擁塞，這會導致在路徑上轉送的封包遺失。 針對路由器顯示的遺失率（由其 IP 位址識別）表示這些路由器可能超載。
 
 ## <a name="additional-references"></a>其他參考資料
 -   - [命令列語法關鍵](command-line-syntax-key.md)
