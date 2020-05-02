@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getnoprogresstimeout
-description: 適用于**bitsadmin getnoprogresstimeout**的 Windows 命令主題，它會抓取在暫時性錯誤發生之後，服務會嘗試傳輸檔案的時間長度（以秒為單位）。
+description: Bitsadmin getnoprogresstimeout 命令的參考主題，它會抓取服務在發生暫時性錯誤後，會嘗試傳輸檔案的時間長度（以秒為單位）。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cf2cfd77b494e221b60c8816ff46eed5f9252f39
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3ee0377bde8a438f23ca571bc9859deef92f18fb
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850601"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717816"
 ---
 # <a name="bitsadmin-getnoprogresstimeout"></a>bitsadmin getnoprogresstimeout
 
@@ -30,16 +30,18 @@ bitsadmin /getnoprogresstimeout <job>
 
 | 參數 | 描述 |
 | -------------- | -------------- |
-| 工作 | 作業的顯示名稱或 GUID。 |
+| 作業 | 作業的顯示名稱或 GUID。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
-下列範例會抓取名為*myDownloadJob*之作業的進度時間輸出值。
+若要取得名為*myDownloadJob*之作業的進度超時值：
 
 ```
-C:\>bitsadmin /getnoprogresstimeout myDownloadJob
+bitsadmin /getnoprogresstimeout myDownloadJob
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

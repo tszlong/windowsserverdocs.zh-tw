@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getmodificationtime
-description: 適用于**bitsadmin getmodificationtime**的 Windows 命令主題，它會抓取上次修改作業的時間，或資料已成功傳輸。
+description: Bitsadmin getmodificationtime 命令的參考主題，它會抓取上次修改作業或成功傳輸資料的時間。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ace0f64b1fbe7ba72174bb3df2bd4dd65e929769
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6bab8c317917894a351c03df1efefb17842ecb7d
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850611"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717832"
 ---
 # <a name="bitsadmin-getmodificationtime"></a>bitsadmin getmodificationtime
 
@@ -30,16 +30,18 @@ bitsadmin /getmodificationtime <job>
 
 | 參數 | 描述 |
 | -------------- | -------------- |
-| 工作 | 作業的顯示名稱或 GUID。 |
+| 作業 | 作業的顯示名稱或 GUID。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
-下列範例會針對名為*myDownloadJob*的作業，抓取上次修改時間。
+若要取得名為*myDownloadJob*之作業的上次修改時間：
 
 ```
-C:\>bitsadmin /getmodificationtime myDownloadJob
+bitsadmin /getmodificationtime myDownloadJob
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

@@ -1,6 +1,6 @@
 ---
 title: bitsadmin complete
-description: '**Bitsadmin complete**的 Windows 命令主題會完成作業。'
+description: 完成作業的 bitsadmin complete 命令參考主題。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 847f6e298ff9701064ce4e577c785f7fc78ea22c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6b61f3475afdb0e29e5777940e6426a04fe33e78
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850821"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718222"
 ---
 # <a name="bitsadmin-complete"></a>bitsadmin complete
 
-完成作業。 您必須先使用此交換器，才可取得下載的檔案。 在作業移至已轉移狀態之後，使用此參數。 否則，只有已成功傳輸的檔案才可使用。
+完成作業。 在作業移至已轉移狀態之後，使用此參數。 否則，只有已成功傳輸的檔案才可供使用。
 
 ## <a name="syntax"></a>語法
 
@@ -30,18 +30,20 @@ bitsadmin /complete <job>
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| 工作 | 作業的顯示名稱或 GUID。 |
+| 作業 | 作業的顯示名稱或 GUID。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="example"></a>範例
 
-當作業的狀態為「已傳輸」時，BITS 已成功傳送作業中的所有檔案。 不過，除非您使用 **/complete**參數，否則無法使用這些檔案。 
-
-如果多個作業使用*myDownloadJob*作為其名稱，您必須將*myDownloadJob*取代為作業的 GUID，以唯一識別作業。
+若要完成*myDownloadJob*作業，請在達到`TRANSFERRED`狀態之後：
 
 ```
-C:\>bitsadmin /complete myDownloadJob
+bitsadmin /complete myDownloadJob
 ```
 
-## <a name="additional-references"></a>其他參考資料
+如果有多個作業使用*myDownloadJob*作為其名稱，您必須使用作業的 GUID 來唯一識別它以完成。
+
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)
