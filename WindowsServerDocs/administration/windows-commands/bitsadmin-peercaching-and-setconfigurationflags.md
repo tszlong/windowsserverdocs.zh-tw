@@ -1,6 +1,6 @@
 ---
-title: bitsadmin 對等和 setconfigurationflags
-description: 適用于**bitsadmin**對等互連和**Setconfigurationflags**的 Windows 命令主題，其會設定決定電腦是否可以將內容提供給對等，以及是否可以從對等下載內容的設定旗標。
+title: bitsadmin peercaching and setconfigurationflags
+description: Bitsadmin 對等互連和 setconfigurationflags 命令的參考主題，其會設定決定電腦是否可以將內容提供給對等，以及是否可以從對等下載內容的設定旗標。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ebaa09da2d4594d2762e67dc5884dd15cf4d1da8
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3c3ce69ce7a372311ce0c30e9b3a391ea33f45ce
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850131"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717241"
 ---
-# <a name="bitsadmin-peercaching-and-setconfigurationflags"></a>bitsadmin 對等和 setconfigurationflags
+# <a name="bitsadmin-peercaching-and-setconfigurationflags"></a>bitsadmin peercaching and setconfigurationflags
 
 設定決定電腦是否可以將內容提供給對等，以及是否可以從對等下載內容的設定旗標。
 
@@ -30,17 +30,21 @@ bitsadmin /peercaching /setconfigurationflags <job> <value>
 
 | 參數 | 描述 |
 | -------------- | -------------- |
-| 工作 | 作業的顯示名稱或 GUID。 |
-| 值 | 不帶正負號的整數，具有二進位標記法中的位的下列解讀：<ul><li> 若要允許從對等體下載作業的資料，請設定最不重要的位。</li><li>若要允許將作業的資料提供給對等，請從右邊設定第二個位。</li></ul>|
+| 作業 | 作業的顯示名稱或 GUID。 |
+| value | 不帶正負號的整數，具有二進位標記法中的位的下列解讀：<ul><li>若要允許從對等體下載作業的資料，請設定最不重要的位。</li><li>若要允許將作業的資料提供給對等，請從右邊設定第二個位。</li></ul>|
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
-下列範例會針對名為*myDownloadJob*的作業，指定要從對等下載的作業資料。
+針對名為*myDownloadJob*的作業，指定要從對等電腦下載的作業資料：
 
 ```
-C:\> bitsadmin /peercaching /setconfigurationflags myDownloadJob 1
+bitsadmin /peercaching /setconfigurationflags myDownloadJob 1
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)
+
+- [bitsadmin 對等命令](bitsadmin-peercaching.md)

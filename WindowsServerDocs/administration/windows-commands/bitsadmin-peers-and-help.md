@@ -1,6 +1,6 @@
 ---
-title: bitsadmin 對等和協助
-description: '**Bitsadmin 對等**和說明的 Windows 命令**主題，其**會顯示/peers 參數的命令列使用方式。'
+title: bitsadmin peers and help
+description: Bitsadmin 對等和 help 命令的參考主題，其會顯示/peers 參數的命令列使用方式。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9f1eee039830fce2fc311afaf782b97ddd641c70
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 405bf6d0641d46a9e7d365bbd9742633df403020
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850081"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717152"
 ---
-# <a name="bitsadmin-peers-and-help"></a>bitsadmin 對等和協助
+# <a name="bitsadmin-peers-and-help"></a>bitsadmin peers and help
 
 顯示 **/peers**參數的命令列使用方式。
 
@@ -26,14 +26,18 @@ ms.locfileid: "80850081"
 bitsadmin /peers /help
 ```
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
-下列命令會顯示 **/peers**參數的命令列說明。
+若要顯示 **/peers**參數的命令列使用方式：
 
 ```
-C:\>bitsadmin /peers /help
+bitsadmin /peers /help
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)
+
+- [bitsadmin 對等命令](bitsadmin-peers.md)

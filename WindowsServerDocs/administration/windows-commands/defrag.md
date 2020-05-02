@@ -1,6 +1,6 @@
 ---
 title: defrag
-description: 重組的 Windows 命令主題，它會在本機磁片區上尋找併合並分散的檔案，以改善系統效能。
+description: 重組的參考主題，它會在本機磁片區上尋找併合並分散的檔案，以改善系統效能。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f8723afc936fa1ea311e275a58a85b20988f92a2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 47a19ec697da29b1eff152de8fc5930516d5b806
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846711"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82716763"
 ---
 # <a name="defrag"></a>defrag
 
->適用于： Windows 10、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows 10、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 尋找併合並本機磁片區上的分散檔案，以改善系統效能。
 
@@ -61,15 +61,15 @@ defrag <volume> [/<Parameter>]*
   -   您無法重組 cdROMs。
   -   您無法重組非**NTFS**、 **ReFS**、 **Fat**或**Fat32**的檔案系統磁片區。
 - 有了 Windows Server 2008 R2、Windows Server 2008 和 Windows Vista，您可以排程來重組磁片區。 不過，您無法排程在位於 SSD 上的虛擬硬碟（VHD）上重組固態硬碟（SSD）或磁片區。
-- 若要執行這項程序，您必須是本機電腦的 Administrators 群組成員，或者必須委派有適當的授權。 如果電腦已加入網域中，那麼只有 Domain Admins 群組成員才能執行這項程序。 作為安全性最佳作法，請考慮使用 [**執行**身分] 來執行此程式。
+- 若要執行此程序，您必須是本機電腦上的 Administrators 群組成員或是已經委派您適當的權限。 如果該電腦已加入網域，則 Domain Admins 群組的成員便可以執行這項程序。 作為安全性最佳作法，請考慮使用 [**執行**身分] 來執行此程式。
 - 磁片區必須至少有15% 的可用空間，才能完整重組並適當**地進行碎片**整理。 **磁碟重組**會使用此空間做為檔案片段的排序區域。 如果磁片區的可用空間少於15%，**磁碟重組**只會部分重組。 若要增加磁片區上的可用空間，請刪除不需要的檔案，或將它們移至另一個磁片。
 - 當**磁碟重組**正在分析並重組磁片區時，它會顯示閃爍的游標。 當重組完成分析並重組磁片區時，**它會顯示**分析報表、磁碟重組報告或這兩個報表，然後結束到命令提示字元。
 - 根據預設，如果您未指定 **/a**或 **/v** **參數，重組會同時顯示分析**和磁碟重組報告的摘要。
-- 您可以輸入 **>** <em>檔案名 .txt</em>，將報告傳送到文字檔，其中*FileName*是您指定的檔案名。 例如：`defrag volume /v > FileName.txt`
+- 您可以輸入**>** <em>filename .txt</em>，將報表傳送至文字檔，其中*filename*是您指定的檔案名。 例如： `defrag volume /v > FileName.txt`
 - 若要中斷磁碟重組程式，請在命令列中按**CTRL + C**。
 - 執行**磁碟重組**命令和磁碟重組工具是互斥的。 如果您使用磁碟重組工具來重組磁片區，而您在命令列執行**磁碟重組**命令，則**磁碟重組**命令會失敗。 相反地，如果您執行**碎片**整理命令並開啟磁碟重組工具，磁碟重組工具中的重組選項將無法使用。
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 若要重組磁片磁碟機 C 上的磁片區，同時提供進度和詳細資訊輸出，請輸入：
 ```
 defrag C: /U /V
@@ -99,7 +99,7 @@ defrag /C /H /V
    - 只有在電腦使用 AC 電源時才會啟動，並在電腦切換到電池電源時停止
    - 如果電腦停止閒置，則停止
 
-## <a name="additional-references"></a><a name=BKMK_additionalRef></a>其他參考
+## <a name="additional-references"></a><a name=BKMK_additionalRef></a>其他參考資料
 -   [chkdsk](chkdsk.md)
 -   [fsutil](fsutil.md)
 -   [fsutil dirty](fsutil-dirty.md)

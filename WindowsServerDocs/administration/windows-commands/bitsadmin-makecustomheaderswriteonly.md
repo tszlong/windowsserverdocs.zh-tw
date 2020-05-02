@@ -1,6 +1,6 @@
 ---
 title: bitsadmin makecustomheaderswriteonly
-description: 適用于**bitsadmin makecustomheaderswriteonly**的 Windows 命令主題，這會使作業的自訂 HTTP 標頭變成隻讀。
+description: Bitsadmin makecustomheaderswriteonly 命令的參考主題，這會使作業的自訂 HTTP 標頭變成隻讀。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -8,18 +8,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: 9183b1b5de51020c5c6d2efad2c0a788d158a183
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2aeab7e0ee7797b3e0be7be1156920f3bafc84dc
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850241"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717408"
 ---
 # <a name="bitsadmin-makecustomheaderswriteonly"></a>bitsadmin makecustomheaderswriteonly
 
 將作業的自訂 HTTP 標頭設為僅限寫入。
 
-> [!Important]
+> [!IMPORTANT]
 > 此動作無法復原。
 
 ## <a name="syntax"></a>語法
@@ -32,16 +32,18 @@ bitsadmin /makecustomheaderswriteonly <job>
 
 | 參數 | 描述 |
 | -------------- | -------------- |
-| 工作 | 作業的顯示名稱或 GUID。 |
+| 作業 | 作業的顯示名稱或 GUID。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
-下列範例會針對名為*myDownloadJob*的作業，讓自訂 HTTP 標頭僅限寫入。
+若要讓自訂 HTTP 標頭僅針對名為*myDownloadJob*的作業進行寫入：
 
 ```
-C:\>bitsadmin /makecustomheaderswriteonly myDownloadJob
+bitsadmin /makecustomheaderswriteonly myDownloadJob
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

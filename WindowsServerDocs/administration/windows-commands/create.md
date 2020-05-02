@@ -1,6 +1,6 @@
 ---
 title: 建立
-description: 適用于 create 的 Windows 命令主題，它會在磁片、一或多個磁片上的磁片區，或虛擬硬碟（VHD）上建立分割區。
+description: Create 的參考主題，它會在磁片上建立分割區、在一或多個磁片上建立磁片區，或虛擬硬碟（VHD）。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 76ff641757de78a10980b10a1ba4921dd2a57f0c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8d1e0f11a2e7011792da9c9d81d592fcfd7aa307
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846841"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82716851"
 ---
 # <a name="create"></a>建立
 

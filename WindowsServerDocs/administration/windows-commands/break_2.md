@@ -1,6 +1,6 @@
 ---
 title: break
-description: 適用于 break_2 的 Windows 命令主題，這會解除陰影複製磁片區與 VSS 的對應，並使其可做為一般磁片區存取。
+description: '[中斷] 命令的參考主題，這會將陰影複製磁片區與 VSS 解除對應，使其可做為一般磁片區存取。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6683c44c84f4baae5f016f7df62d5bd6591cff70
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7e8789ab68ecb98d190a79c3f1088aad05b83562
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80848251"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82707779"
 ---
 # <a name="break"></a>break
 
@@ -22,37 +22,30 @@ ms.locfileid: "80848251"
 
 > [!NOTE]
 > 此命令只與匯入後的硬體陰影複製相關。
-
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+>
+> 公開的磁片區（例如它們源自的陰影複製）預設為唯讀。 磁片區的存取權會直接對硬體提供者進行，而不會記錄具有陰影複製的磁片區。
 
 ## <a name="syntax"></a>語法
 
 ```
-break [writable] <SetID>
+break [writable] <setid>
 ```
 
 ### <a name="parameters"></a>參數
 
-|參數|描述|
-|---------|-----------|
-|314.cs|啟用磁片區上的讀取/寫入存取。|
-|\<SetID >|指定陰影複製組的識別碼。|
+| 參數 | 描述 |
+| --------- | ----------- |
+| 314.cs | 啟用磁片區上的讀取/寫入存取。 |
+| \<setid> | 指定陰影複製組的識別碼。 「**載入中繼資料**」命令儲存為環境變數的陰影複製識別碼別名，可用於*SetID*參數。 |
 
-## <a name="remarks"></a>備註
+## <a name="examples"></a>範例
 
--   公開的磁片區（例如它們源自的陰影複製）預設為唯讀。
--   「**載入中繼資料**」命令儲存為環境變數的陰影複製識別碼別名，可用於*SetID*參數。
+若要使用別名名稱 Alias1 來建立陰影複製，可在作業系統中作為可寫入的磁片區：
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
-
-若要在作業系統中，以可寫入磁片區的別名名稱 Alias1 來進行陰影複製，請輸入：
 ```
 break writable %Alias1%
 ```
 
-> [!NOTE]
-> 磁片區的存取權會直接對硬體提供者進行，而不會記錄具有陰影複製的磁片區。
-
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

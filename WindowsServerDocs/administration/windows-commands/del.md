@@ -1,6 +1,6 @@
 ---
 title: del
-description: Del 的 Windows 命令主題，會刪除一個或多個檔案。
+description: Del 的參考主題，會刪除一個或多個檔案。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7069ee50a810296d31e1a034b24955299918020a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 703597ae422518a5b401b656ace0b4cd73418be8
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846661"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82716751"
 ---
 # <a name="del"></a>del
 
 刪除一或多個檔案。 此命令與 [**清除**] 命令相同。
 
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>語法
 
@@ -33,12 +33,12 @@ erase [/p] [/f] [/s] [/q] [/a[:]<Attributes>] <Names>
 
 |參數|描述|
 |---------|-----------|
-|\<名稱 >|指定一或多個檔案或目錄的清單。 萬用字元可用來刪除多個檔案。 如果指定目錄，則會刪除目錄中的所有檔案。|
+|\<名稱>|指定一或多個檔案或目錄的清單。 萬用字元可用來刪除多個檔案。 如果指定目錄，則會刪除目錄中的所有檔案。|
 |/p|在刪除指定的檔案之前提示您確認。|
 |/f|強制刪除唯讀檔案。|
 |/s|從目前的目錄和所有子目錄中刪除指定的檔案。 顯示刪除檔案時的名稱。|
 |/q|指定無訊息模式。 系統不會提示您進行刪除確認。|
-|/a [：]\<屬性 >|根據下列檔案屬性刪除檔案：</br>**r**唯讀檔案</br>**h**隱藏的檔案</br>**我**不是內容索引檔案</br>**s**系統檔案</br>準備**封存的檔案**</br>**l**重新分析點</br>-前置詞意義 ' not '|
+|/a [：]\<屬性>|根據下列檔案屬性刪除檔案：</br>**r**唯讀檔案</br>**h**隱藏的檔案</br>**我**不是內容索引檔案</br>**s**系統檔案</br>準備**封存的檔案**</br>**l**重新分析點</br>-前置詞意義 ' not '|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
@@ -56,7 +56,7 @@ erase [/p] [/f] [/s] [/q] [/a[:]<Attributes>] <Names>
   ```
   del \work
   ```  
-- 您可以使用萬用字元（ **&#42;** 和 **？** ）一次刪除一個以上的檔案。 不過，若要避免不慎刪除檔案，您應該使用**del**命令來謹慎使用萬用字元。 例如，如果您輸入下列命令：  
+- 您可以使用萬用字元（**&#42;** 和 **？**）一次刪除一個以上的檔案。 不過，若要避免不慎刪除檔案，您應該使用**del**命令來謹慎使用萬用字元。 例如，如果您輸入下列命令：  
   ```
   del *.*
   ```  
@@ -71,7 +71,7 @@ erase [/p] [/f] [/s] [/q] [/a[:]<Attributes>] <Names>
 
 -   具有不同參數的**del**命令可從 [修復主控台] 取得。
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 若要刪除磁片磁碟機 C 上名為 Test 的資料夾中的所有檔案，請輸入下列其中一項：
 ```
@@ -87,6 +87,6 @@ del *.bat
 del /a:r *.*
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

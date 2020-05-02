@@ -1,6 +1,6 @@
 ---
-title: bitsadmin 對等與協助
-description: 適用于**bitsadmin**對等和說明的 Windows 命令**主題，其**會顯示/peercaching 參數的命令列使用方式。
+title: bitsadmin peercaching and help
+description: '**Bitsadmin**對等和說明的參考**主題，其**會顯示/peercaching 參數的命令列使用方式。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 29d530d721b9e82eff180abcbed8cf60bf8c9281
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 08cb792989470d7492ff2da4b63ddd686b35b232
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850161"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717242"
 ---
-# <a name="bitsadmin-peercaching-and-help"></a>bitsadmin 對等與協助
+# <a name="bitsadmin-peercaching-and-help"></a>bitsadmin peercaching and help
 
 顯示 **/peercaching**參數的命令列使用方式。
 
@@ -26,14 +26,18 @@ ms.locfileid: "80850161"
 bitsadmin /peercaching /help
 ```
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
-下列命令會**顯示對等切換參數**的命令列說明。
+若要顯示 **/peercaching**參數的命令列說明：
 
 ```
-C:\> bitsadmin /peercaching /help
+bitsadmin /peercaching /help
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)
+
+- [bitsadmin 對等命令](bitsadmin-peercaching.md)

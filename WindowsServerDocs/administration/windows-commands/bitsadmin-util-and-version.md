@@ -1,6 +1,6 @@
 ---
-title: bitsadmin util 和版本
-description: 適用于**bitsadmin util 和 version**的 Windows 命令主題，其會顯示 BITS 服務的版本。
+title: bitsadmin util and version
+description: Bitsadmin util 和 version 命令的參考主題，其會顯示 BITS 服務的版本。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2c2518eb7a8f15d9a592ed9a77dd67a6f8d8afac
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 20c3db6e6fcd5ef3d00287f36c9f9624ab5224dd
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122460"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82707597"
 ---
-# <a name="bitsadmin-util-and-version"></a>bitsadmin util 和版本
+# <a name="bitsadmin-util-and-version"></a>bitsadmin util and version
 
 顯示 BITS 服務的版本（例如，2.0）。
 
@@ -37,12 +37,16 @@ bitsadmin /util /version [/verbose]
 
 ## <a name="examples"></a>範例
 
-下列範例是 BITS 服務的版本。
+以顯示 BITS 服務的版本。
 
 ```
-C:\>bitsadmin /util /version
+bitsadmin /util /version
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin util 命令](bitsadmin-util.md)
+
+- [bitsadmin 命令](bitsadmin.md)

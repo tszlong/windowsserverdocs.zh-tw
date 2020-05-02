@@ -1,6 +1,6 @@
 ---
 title: bitsadmin util
-description: '**Bitsadmin util**的 Windows 命令主題，其中列出 util 參數。'
+description: Bitsadmin util 命令的參考主題，其中列出 Util 參數。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0982bd02001bc6168f13255a7e785905f617db3f
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 0fa7e8f67dd1c7c77ac489b38aa967e55f0e3506
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122573"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82707580"
 ---
 # <a name="bitsadmin-util"></a>bitsadmin util
 
-> 適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+
+列出 **/util**參數。
 
 列出**util**參數。
 
@@ -42,6 +44,8 @@ bitsadmin /util /version
 | [bitsadmin util and setieproxy](bitsadmin-util-and-setieproxy.md) | 指定使用服務帳戶傳輸檔案時所要使用的 proxy 設定。 |
 | [bitsadmin util and version](bitsadmin-util-and-version.md) | 顯示 BITS 服務的版本。 |
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

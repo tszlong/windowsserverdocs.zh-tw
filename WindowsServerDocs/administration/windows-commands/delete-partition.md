@@ -1,6 +1,6 @@
 ---
 title: delete partition
-description: 刪除磁碟分割的 Windows 命令主題，這會刪除具有焦點的資料分割。
+description: 刪除資料分割的參考主題，這會刪除具有焦點的資料分割。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a24c18cf98f2899fbb57f1f5f2d2776824d637b7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 259abdfc6e3ba8db22d5582bff08d7a4bc8b807b
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846571"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82716722"
 ---
 # <a name="delete-partition"></a>delete partition
 
@@ -30,7 +30,7 @@ delete partition [noerr] [override]
 
 |參數|描述|
 |---------|-----------|
-|覆寫|啟用 DiskPart 來刪除各種類型的磁碟分割。 一般來說，DiskPart 只允許您刪除已知的資料磁碟分割。|
+|override|啟用 DiskPart 來刪除各種類型的磁碟分割。 一般來說，DiskPart 只允許您刪除已知的資料磁碟分割。|
 |noerr|僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。|
 
 ## <a name="remarks"></a>備註
@@ -40,14 +40,14 @@ delete partition [noerr] [override]
 > -   您無法刪除系統磁碟分割、開機磁碟分割，或包含作用中分頁檔案或損毀傾印資訊的任何磁碟分割。
 > -   必須選取一個磁碟分割，這項操作才能繼續。 使用 [**選取資料分割**] 命令來選取磁碟分割，並將焦點移至該資料分割。
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 若要刪除具有焦點的資料分割，請輸入：
 ```
 delete partition
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

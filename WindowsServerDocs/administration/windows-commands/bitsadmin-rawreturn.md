@@ -1,6 +1,6 @@
 ---
 title: bitsadmin rawreturn
-description: 適用于**bitsadmin rawreturn**的 Windows 命令主題，它會傳回適合用於剖析的資料。
+description: Bitsadmin rawreturn 命令的參考主題，其會傳回適用于剖析的資料。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e8cd84b6082b1fda8061ee7b324dd66991d3b206
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: af465bb9f51ab6f43980c43bf2be1f5158429a82
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80849881"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717088"
 ---
 # <a name="bitsadmin-rawreturn"></a>bitsadmin rawreturn
 
 傳回適用于剖析的資料。 一般來說，您會搭配使用此命令與 **/create**和 **/get*** 參數，只接收值。 您必須在其他參數之前指定此參數。
+
+> [!NOTE]
+> 此命令會從輸出中去除分行符號和格式。
 
 ## <a name="syntax"></a>語法
 
@@ -26,18 +29,16 @@ ms.locfileid: "80849881"
 bitsadmin /rawreturn
 ```
 
-## <a name="remarks"></a>備註
+## <a name="examples"></a>範例
 
-- 從輸出中去除分行符號和格式。
-
-## <a name="examples"></a><a name=BKMK_examples></a>典型
-
-下列範例會抓取名為*myDownloadJob*之作業狀態的原始資料。
+若要取得名為*myDownloadJob*之作業狀態的原始資料：
 
 ```
-C:\>bitsadmin /rawreturn /getstate myDownloadJob
+bitsadmin /rawreturn /getstate myDownloadJob
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

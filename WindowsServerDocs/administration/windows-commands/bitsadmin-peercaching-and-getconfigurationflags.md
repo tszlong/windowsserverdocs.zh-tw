@@ -1,6 +1,6 @@
 ---
-title: bitsadmin 對等和 getconfigurationflags
-description: 適用于**bitsadmin**對等互連和**Getconfigurationflags**的 Windows 命令主題，可取得設定旗標來判斷電腦是否將內容提供給對等，以及是否可以從對等下載內容。
+title: bitsadmin peercaching and getconfigurationflags
+description: Bitsadmin 對等互連和 getconfigurationflags 命令的參考主題，可取得設定旗標來判斷電腦是否將內容提供給對等，以及是否可以從對等下載內容。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: be8d6a719d63c8e9c6250320560b6ce21274c680
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 62b6848dec30a9a9fef401b1b2372605dbb9934a
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850171"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717329"
 ---
-# <a name="bitsadmin-peercaching-and-getconfigurationflags"></a>bitsadmin 對等和 getconfigurationflags
+# <a name="bitsadmin-peercaching-and-getconfigurationflags"></a>bitsadmin peercaching and getconfigurationflags
 
 取得設定旗標，以判斷電腦是否將內容提供給對等，以及是否可以從對等下載內容。
 
@@ -30,16 +30,20 @@ bitsadmin /peercaching /getconfigurationflags <job>
 
 | 參數 | 描述 |
 | -------------- | -------------- |
-| 工作 | 作業的顯示名稱或 GUID。 |
+| 作業 | 作業的顯示名稱或 GUID。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
-下列範例會取得名為*myDownloadJob*之作業的設定旗標。
+若要取得名為*myDownloadJob*之作業的設定旗標：
 
 ```
-C:\> bitsadmin /peercaching /getconfigurationflags myDownloadJob
+bitsadmin /peercaching /getconfigurationflags myDownloadJob
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)
+
+- [bitsadmin 對等命令](bitsadmin-peercaching.md)

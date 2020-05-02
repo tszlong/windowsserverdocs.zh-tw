@@ -1,6 +1,6 @@
 ---
 title: bitsadmin wrap
-description: 適用于**bitsadmin wrap**的 Windows 命令主題，它會將任何行的輸出文字包裝到命令視窗的最右邊邊緣以外的下一行。
+description: Bitsadmin wrap 命令的參考主題，它會將任何行的輸出文字包裝到命令視窗的最右邊邊緣以外的下一行。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e754a765d94661baf24190431b455584d29991ec
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 8c1c2c78fd3cc78674ef497526ba236ad058fe83
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122568"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82707568"
 ---
 # <a name="bitsadmin-wrap"></a>bitsadmin wrap
 
->適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 將延伸到命令視窗最右邊邊緣以外的任何一行輸出文字包裝到下一行。 您必須在任何其他參數之前指定此參數。
 
@@ -34,16 +34,18 @@ bitsadmin /wrap <job>
 
 | 參數 | 描述 |
 | --------- | ---------- |
-| Job | 作業的顯示名稱或 GUID。 |
+| 作業 | 作業的顯示名稱或 GUID。 |
 
 ## <a name="examples"></a>範例
 
-下列範例會抓取名為*myDownloadJob*之作業的資訊，並包裝輸出。
+若要取得名為*myDownloadJob*之作業的資訊，並將輸出文字包裝起來：
 
 ```
-C:\>bitsadmin /wrap /info myDownloadJob /verbose
+bitsadmin /wrap /info myDownloadJob /verbose
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

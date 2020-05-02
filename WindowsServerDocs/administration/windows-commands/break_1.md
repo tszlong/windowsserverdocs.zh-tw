@@ -1,6 +1,6 @@
 ---
 title: break
-description: Break_1 的 Windows 命令主題，它會在 MS-DOS 系統上設定或清除擴充的 CTRL + C 檢查。
+description: Break 命令的參考主題。 此命令不再使用。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,19 +9,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 809a9321b8b4f8b2d201582f767da132076826d4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 301c526903c95dec90c4883a54713eee20f516d2
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80848361"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82708786"
 ---
 # <a name="break"></a>break
 
-設定或清除 MS-DOS 系統上的擴充 CTRL + C 檢查。 如果在沒有參數的情況下使用， **break**會顯示目前的設定。
+> [!IMPORTANT]
+> 此命令不再使用。 而僅是為了維持與現有 MS-DOS 檔案的相容性才將此命令包含在內，而且因為功能是自動的，它在命令列並不會有任何作用。
 
-> [!NOTE]
-> 此命令不再使用。 這個命令只是為了保留與現有 MS-DOS 檔案之間的相容性而存在，但是在命令列執行時並沒有作用，因為這是自動執行的功能。
+設定或清除 MS-DOS 系統上的擴充 CTRL + C 檢查。 如果在沒有參數的情況下使用， **break**會顯示現有的設定值。
+
+如果命令延伸模組已在 Windows 平臺上啟用並執行，則將**break**命令插入批次檔時，如果偵錯工具正在進行調試，則會進入硬式編碼的中斷點。
 
 ## <a name="syntax"></a>語法
 
@@ -29,10 +31,8 @@ ms.locfileid: "80848361"
 break=[on|off]
 ```
 
-## <a name="remarks"></a>備註
-
-如果命令延伸模組已在 Windows 平臺上啟用並執行，則將**break**命令插入批次檔時，如果偵錯工具正在進行調試，則會進入硬式編碼的中斷點。
-
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+  
+- [break 命令](break.md)

@@ -1,6 +1,6 @@
 ---
-title: bitsadmin 對等和清除
-description: 適用于**bitsadmin 對**等的 Windows 命令主題和**clear**，會清除對等清單。
+title: bitsadmin peers and clear
+description: Bitsadmin 對等和 clear 命令的參考主題，會清除對等清單。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 87c33d011f38e0ebda2383fc468cad9b30ab22c5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 445ce0db00abb3d46f2dc7379c066624cef7afae
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850021"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717210"
 ---
-# <a name="bitsadmin-peers-and-clear"></a>bitsadmin 對等和清除
+# <a name="bitsadmin-peers-and-clear"></a>bitsadmin peers and clear
 
 清除對等清單。
 
@@ -26,14 +26,18 @@ ms.locfileid: "80850021"
 bitsadmin /peers /clear
 ```
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
-下列範例會清除對等清單。
+以清除對等清單。
 
 ```
-C:\>bitsadmin /peers /clear
+bitsadmin /peers /clear
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)
+
+- [bitsadmin 對等命令](bitsadmin-peers.md)

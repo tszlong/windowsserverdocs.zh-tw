@@ -1,6 +1,6 @@
 ---
 title: cls
-description: Cls 的 Windows 命令主題，它會清除 [命令提示字元] 視窗。
+description: Cls 命令的參考主題，它會清除 [命令提示字元] 視窗。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1c00c97ff8d703f30c17c9d3f126a1711d951da1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a30c48bb95f2a8f95acd10c9cdea1a90d324e674
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80847631"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82712651"
 ---
 # <a name="cls"></a>cls
 
 清除 [命令提示字元] 視窗。
-
-如需如何使用此命令的範例，請參閱[範例](#BKMK_examples)。
 
 ## <a name="syntax"></a>語法
 
@@ -30,17 +28,18 @@ cls
 
 ### <a name="parameters"></a>參數
 
-|參數|描述|
-|---------|-----------|
-|/?|在命令提示字元顯示說明。|
+| 參數 | 描述 |
+| --------- | ----------- |
+| /? | 在命令提示字元顯示說明。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
 若要清除出現在 [命令提示字元] 視窗中並返回空白視窗的所有資訊，請輸入：
+
 ```
-cls 
+cls
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
 title: bitsadmin list
-description: '**Bitsadmin 清單**的 Windows 命令主題，其中列出目前使用者擁有的傳送作業。'
+description: Bitsadmin list 命令的參考主題，其中列出目前使用者擁有的傳送作業。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1883da7bfa71a41952f6f67e25eca4dbbdd3353c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 262589293a147cc1bae98da8fdca047c5f914094
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850321"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717428"
 ---
 # <a name="bitsadmin-list"></a>bitsadmin list
 
@@ -33,14 +33,16 @@ bitsadmin /list [/allusers][/verbose]
 | /allusers | 選擇性。 列出所有使用者的作業。 您必須具有系統管理員許可權，才能使用此參數。 |
 | /verbose | 選擇性。 提供有關每項作業的詳細資訊。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>典型
+## <a name="examples"></a>範例
 
-下列範例會抓取目前使用者所擁有之作業的相關資訊。
+取得目前使用者所擁有之作業的相關資訊。
 
 ```
-C:\>bitsadmin /list
+bitsadmin /list
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

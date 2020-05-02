@@ -1,6 +1,6 @@
 ---
 title: bitsadmin removecredentials
-description: 適用于 bitsadmin **removecredentials**的 Windows 命令主題，可從作業中移除認證。
+description: Bitsadmin removecredentials 命令的參考主題，它會從作業中移除認證。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1dbb25f0b0a19358b83a610c4684a3eb647c8232
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: e4dcfaa55847e531871c6a7ad9fd84c3861c4cd9
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81123090"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717051"
 ---
 # <a name="bitsadmin-removecredentials"></a>bitsadmin removecredentials
 
@@ -33,18 +33,20 @@ bitsadmin /removecredentials <job> <target> <scheme>
 
 | 參數 | 描述 |
 | -------------- | -------------- |
-| 工作 | 作業的顯示名稱或 GUID。 |
+| 作業 | 作業的顯示名稱或 GUID。 |
 | 目標 | 請使用**伺服器**或**PROXY**。 |
-| scheme (結構描述) | 使用下列其中一項：<ul><li>**基本.** 將使用者名稱和密碼以純文字傳送到伺服器或 proxy 的驗證配置。</li><li>**希.** 挑戰回應驗證配置，使用伺服器指定的資料字串來因應挑戰。</li><li>**NTLM.** 一種挑戰-回應驗證配置，會使用使用者的認證在 Windows 網路環境中進行驗證。</li><li>**NEGOTIATE （也稱為簡單且受保護的協商通訊協定）。** 一種挑戰-回應驗證配置，會與伺服器或 proxy 協調以判斷要使用哪種配置來進行驗證。 範例包括 Kerberos 通訊協定與 NTLM。</li><li>**通行證.** 由 Microsoft 提供的集中式驗證服務，提供成員網站的單一登入。</li></ul> |
+| scheme | 您可以使用下列其中一項：<ul><li>**基本.** 將使用者名稱和密碼以純文字傳送到伺服器或 proxy 的驗證配置。</li><li>**希.** 挑戰回應驗證配置，使用伺服器指定的資料字串來因應挑戰。</li><li>**NTLM.** 一種挑戰-回應驗證配置，會使用使用者的認證在 Windows 網路環境中進行驗證。</li><li>**NEGOTIATE （也稱為簡單且受保護的協商通訊協定）。** 一種挑戰-回應驗證配置，會與伺服器或 proxy 協調以判斷要使用哪種配置來進行驗證。 範例包括 Kerberos 通訊協定與 NTLM。</li><li>**通行證.** 由 Microsoft 提供的集中式驗證服務，提供成員網站的單一登入。</li></ul> |
 
 ## <a name="examples"></a>範例
 
-下列範例會從名為*myDownloadJob*的作業中移除認證。
+若要從名為*myDownloadJob*的作業中移除認證：
 
 ```
-C:\>bitsadmin /removecredentials myDownloadJob SERVER BASIC
+bitsadmin /removecredentials myDownloadJob SERVER BASIC
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)
