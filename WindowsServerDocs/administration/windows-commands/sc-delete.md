@@ -1,6 +1,6 @@
 ---
-title: Sc delete
-description: '* * * * 的參考主題'
+title: Sc .exe delete
+description: 瞭解如何使用 sc.exe 公用程式取消註冊服務
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dd40b5eb82def3b3c437cbdb5b60d279529d25a0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 284012cf6799df52832e62c3eea1b2f0fcd84805
+ms.sourcegitcommit: 95b60384b0b070263465eaffb27b8e3bb052a4de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722195"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82850109"
 ---
-# <a name="sc-delete"></a>Sc delete
-
-
+# <a name="scexe-delete"></a>Sc .exe delete
 
 從登錄中刪除服務子機碼。 如果服務正在執行，或有其他進程具有服務的開啟控制碼，服務就會標示為要刪除。
 
@@ -27,7 +25,7 @@ ms.locfileid: "82722195"
 ## <a name="syntax"></a>語法
 
 ```
-sc [<ServerName>] delete [<ServiceName>]
+sc.exe [<ServerName>] delete [<ServiceName>]
 ```
 
 ### <a name="parameters"></a>參數
@@ -40,13 +38,13 @@ sc [<ServerName>] delete [<ServiceName>]
 
 ## <a name="remarks"></a>備註
 
-使用 [**控制台**] 上的 [**新增或移除程式**] 來刪除 DHCP、DNS 或任何其他內建的作業系統服務。 請注意，[**新增或移除程式**] 不只會移除服務的登錄子機碼，也會卸載服務並刪除其任何快捷方式。
+不建議使用 sc.exe 來刪除內建的作業系統服務，例如 DHCP、DNS 或 Internet Information Services。 若要安裝、移除或重新設定作業系統角色、服務和元件，請參閱[安裝或卸載角色、角色服務或功能](/WindowsServerDocs/administration/server-manager/install-or-uninstall-roles-role-services-or-features.md)
 
 ## <a name="examples"></a>範例
 
 若要從本機電腦上的登錄中刪除服務子機碼**NewServ** ，請輸入：
 ```
-sc delete newserv
+sc.exe delete newserv
 ```
 
 ## <a name="additional-references"></a>其他參考

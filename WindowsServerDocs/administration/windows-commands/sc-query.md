@@ -1,6 +1,6 @@
 ---
-title: Sc 查詢
-description: '* * * * 的參考主題'
+title: Sc.exe 查詢
+description: 瞭解如何使用 sc.exe 公用程式取得服務、驅動程式、服務類型或驅動程式類型的相關資訊
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,25 +9,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6a6b4555790a8f9bb1149531251e724189177975
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 86aabbbc42c965b72f317a3bfaa99acc99c46f3b
+ms.sourcegitcommit: 95b60384b0b070263465eaffb27b8e3bb052a4de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722177"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82850039"
 ---
-# <a name="sc-query"></a>Sc 查詢
-
-
+# <a name="scexe-query"></a>Sc.exe 查詢
 
 取得並顯示指定之服務、驅動程式、服務類型或驅動程式類型的相關資訊。
-
-
 
 ## <a name="syntax"></a>語法
 
 ```
-sc [<ServerName>] query [<ServiceName>] [type= {driver | service | all}] [type= {own | share | interact | kernel | filesys | rec | adapt}] [state= {active | inactive | all}] [bufsize= <BufferSize>] [ri= <ResumeIndex>] [group= <GroupName>]
+sc.exe [<ServerName>] query [<ServiceName>] [type= {driver | service | all}] [type= {own | share | interact | kernel | filesys | rec | adapt}] [state= {active | inactive | all}] [bufsize= <BufferSize>] [ri= <ResumeIndex>] [group= <GroupName>]
 ```
 
 ### <a name="parameters"></a>參數
@@ -55,43 +51,43 @@ sc [<ServerName>] query [<ServiceName>] [type= {driver | service | all}] [type= 
   ```  
   若要顯示其餘的**查詢**資訊，請重新執行**查詢**，將**bufsize =** 設定為位元組數目，並將**ri =** 設定為指定的索引。 例如，在命令提示字元中輸入下列內容，就會顯示其餘的輸出：  
   ```
-  sc query bufsize= 1822 ri= 79
+  sc.exe query bufsize= 1822 ri= 79
   ```
 
 ## <a name="examples"></a>範例
 
 若只要顯示作用中服務的資訊，請輸入下列其中一個命令：
 ```
-sc query
-sc query type= service
+sc.exe query
+sc.exe query type= service
 ```
 若要顯示作用中服務的資訊，並指定2000個位元組的緩衝區大小，請輸入：
 ```
-sc query type= all bufsize= 2000
+sc.exe query type= all bufsize= 2000
 ```
 若要顯示 WUAUSERV 服務的資訊，請輸入：
 ```
-sc query wuauserv
+sc.exe query wuauserv
 ```
 若要顯示所有服務（作用中和非作用中）的資訊，請輸入：
 ```
-sc query state= all
+sc.exe query state= all
 ```
 若要顯示所有服務（作用中和非作用中）的資訊，請從第56行開始，輸入：
 ```
-sc query state= all ri= 56
+sc.exe query state= all ri= 56
 ```
 若要顯示互動式服務的資訊，請輸入：
 ```
-sc query type= service type= interact
+sc.exe query type= service type= interact
 ```
 若只要顯示驅動程式的資訊，請輸入：
 ```
-sc query type= driver
+sc.exe query type= driver
 ```
 若要顯示 [網路驅動程式介面規格（NDIS）] 群組中驅動程式的資訊，請輸入：
 ```
-sc query type= driver group= ndis
+sc.exe query type= driver group= ndis
 ```
 
 ## <a name="additional-references"></a>其他參考

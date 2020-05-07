@@ -1,6 +1,6 @@
 ---
-title: Sc 建立
-description: '* * * * 的參考主題'
+title: Sc .exe 建立
+description: 瞭解如何使用 sc.exe 公用程式向 Windows Service Manager 註冊新服務
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,25 +9,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0406e82afbe1f70dc27236a29c3c20489f46f44e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9e1a581273def291502bf01e3fc9acf0c296707b
+ms.sourcegitcommit: 95b60384b0b070263465eaffb27b8e3bb052a4de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722202"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82850099"
 ---
-# <a name="sc-create"></a>Sc 建立
-
-
+# <a name="scexe-create"></a>Sc .exe 建立
 
 在登錄和服務控制管理員資料庫中，建立服務的子機碼和專案。
-
-
 
 ## <a name="syntax"></a>語法
 
 ```
-sc [<ServerName>] create [<ServiceName>] [type= {own | share | kernel | filesys | rec | interact type= {own | share}}] [start= {boot | system | auto | demand | disabled | delayed-auto }] [error= {normal | severe | critical | ignore}] [binpath= <BinaryPathName>] [group= <LoadOrderGroup>] [tag= {yes | no}] [depend= <dependencies>] [obj= {<AccountName> | <ObjectName>}] [displayname= <DisplayName>] [password= <Password>]
+sc.exe [<ServerName>] create [<ServiceName>] [type= {own | share | kernel | filesys | rec | interact type= {own | share}}] [start= {boot | system | auto | demand | disabled | delayed-auto }] [error= {normal | severe | critical | ignore}] [binpath= <BinaryPathName>] [group= <LoadOrderGroup>] [tag= {yes | no}] [depend= <dependencies>] [obj= {<AccountName> | <ObjectName>}] [displayname= <DisplayName>] [password= <Password>]
 ```
 
 ### <a name="parameters"></a>參數
@@ -55,10 +51,10 @@ sc [<ServerName>] create [<ServiceName>] [type= {own | share | kernel | filesys 
 
 ## <a name="examples"></a>範例
 
-下列範例會示範如何使用**sc create**命令：
+下列範例會示範如何使用**sc.exe create**命令：
 ```
-sc \\myserver create NewService binpath= c:\windows\system32\NewServ.exe
-sc create NewService binpath= c:\windows\system32\NewServ.exe type= share start= auto depend= +TDI NetBIOS
+sc.exe \\myserver create NewService binpath= c:\windows\system32\NewServ.exe
+sc.exe create NewService binpath= c:\windows\system32\NewServ.exe type= share start= auto depend= +TDI NetBIOS
 ```
 
 ## <a name="additional-references"></a>其他參考
