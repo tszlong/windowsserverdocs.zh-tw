@@ -8,12 +8,12 @@ ms.date: 08/17/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: bad6ad9a95618239825366187c8083c1fe77ae94
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: cdd35ccc7800616f7803937738c942e68bf04c00
+ms.sourcegitcommit: 67116322915066b85decb4261d47cedec2cfe12f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860081"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82903443"
 ---
 # <a name="ad-fs-single-sign-on-settings"></a>AD FS 單一登入設定
 
@@ -47,7 +47,7 @@ AD FS 支援數種類型的單一登入體驗：
  
  針對 Windows Server 2012 R2，若要啟用「讓我保持登入」案例的 PSSO，您必須安裝此[修補程式](https://support.microsoft.com/kb/2958298/)，這也是[windows RT 8.1、Windows 8.1 和 Windows Server 2012 R2 的2014年8月更新彙總套件](https://support.microsoft.com/kb/2975719)的一部分。   
 
-工作 | PowerShell | 描述
+Task | PowerShell | 描述
 ------------ | ------------- | -------------
 啟用/停用持續性 SSO | ```` Set-AdfsProperties –EnablePersistentSso <Boolean> ````| 預設會啟用持續性 SSO。 如果已停用，則不會寫入任何 PSSO cookie。
 [啟用/停用] [讓我保持登入] | ```` Set-AdfsProperties –EnableKmsi <Boolean> ```` | 預設會停用 [讓我保持登入] 功能。 如果已啟用，終端使用者會在 AD FS 登入頁面上看到 [讓我保持登入] 選項
@@ -155,11 +155,11 @@ c:[Type == "https://schemas.microsoft.com/2014/03/psso"]
     <th></th>
     <th>否</th>
     <th>否，但 KMSI</th>
-    <th>是</th>
+    <th>YES</th>
     <th></th>
     <th>否</th>
     <th>否，但 KMSI</th>
-    <th>是</th>
+    <th>YES</th>
   </tr>
  <tr align="center">
     <td>SSO =&gt;設定重新整理權杖 =&gt;</td>
@@ -201,6 +201,10 @@ c:[Type == "https://schemas.microsoft.com/2014/03/psso"]
 只有
  - [x] 系統管理員已啟用 KMSI 功能 [和]
  - [x] 使用者按一下表單登入頁面上的 [KMSI] 核取方塊
+ 
+  
+只有在較新的重新整理權杖的有效性超過先前的權杖時，ADFS 才會發出新的重新整理權杖。 權杖的最長存留期為84天，但 AD FS 會在14天的滑動時間範圍內保持有效的權杖。 如果重新整理權杖的有效時間為8小時，這是一般的 SSO 時間，則不會發行新的重新整理權杖。 
+ 
  
 **好知道：** <br>
 未同步處理**LastPasswordChangeTimestamp**屬性的同盟使用者會發行會話 cookie，並將**最大存留期值為12小時**的重新整理權杖。<br>
