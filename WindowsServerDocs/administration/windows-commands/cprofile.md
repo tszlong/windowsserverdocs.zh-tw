@@ -9,15 +9,15 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1b1103286859f1ab7c790ed20ae14f034d4030bb
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 4f1262952cc8a3c33e6fce3cd5287bb6797bc611
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719259"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82993304"
 ---
 # <a name="cprofile"></a>cprofile
 
 Cprofile 已被取代，在未來的 Windows 版本中不保證會受到支援。
 
-Cprofile .exe：清理設定檔。 終端機服務已更新為遠端桌面服務。 如需詳細資訊，請參閱[歡迎使用遠端桌面服務](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/welcome-to-rds)。
+終端機服務已更新為遠端桌面服務。 如需詳細資訊，請參閱[歡迎使用遠端桌面服務](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/welcome-to-rds)。

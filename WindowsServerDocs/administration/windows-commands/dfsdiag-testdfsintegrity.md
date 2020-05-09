@@ -1,6 +1,6 @@
 ---
-title: dfsdiag TestDFSIntegrity
-description: '**Dfsdiag TestDFSIntegrity**的參考主題，它會檢查分散式檔案系統（DFS）命名空間的完整性。'
+title: dfsdiag testdfsintegrity
+description: Dfsdiag testdfsintegrity 命令的參考主題，它會檢查分散式檔案系統（DFS）命名空間的完整性。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 21aa6ef3d7d4a7b4a9c64fc51aec77f49f1e0a0c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b54c7f597926abc91bb9201dfec1a04f44e04ecb
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719581"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82992963"
 ---
-# <a name="dfsdiag-testdfsintegrity"></a>dfsdiag TestDFSIntegrity
+# <a name="dfsdiag-testdfsintegrity"></a>dfsdiag testdfsintegrity
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -31,27 +31,27 @@ ms.locfileid: "82719581"
 ## <a name="syntax"></a>語法
 
 ```
-dfsdiag /TestDFSIntegrity /DFSRoot: <DFS root path> [/Recurse] [/Full]
+dfsdiag /testdfsintegrity /DFSroot: <DFS root path> [/recurse] [/full]
 ```
 
-#### <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
 | 參數 | 描述 |
-|-------|--------|
-| /DFSRoot:`<DFS root path>`| 要診斷的 DFS 命名空間。 |
-| /Recurse | 執行測試，包括命名空間連結。 |
-| /Full | 在所有資料夾目標上驗證共用和 NTFS Acl 和用戶端設定的一致性。 它也會驗證 online 屬性是否已設定。 |
+| --------- | ----------- |
+| /DFSroot:`<DFS root path>` | 要診斷的 DFS 命名空間。 |
+| /recurse | 執行測試，包括任何命名空間連結。 |
+| /full | 會驗證共用和 NTFS Acl 的一致性，以及所有資料夾目標上的用戶端設定。 它也會驗證 online 屬性是否已設定。 |
 
 ## <a name="examples"></a>範例
 
+若要確認*com\MyNamespace*（包括任何連結）中分散式檔案系統（DFS）命名空間的完整性和一致性，請輸入：
+
 ```
-dfsdiag /TestDFSIntegrity /DFSRoot:\\Contoso.com\MyNamespace /Recurse /Full
+dfsdiag /testdfsintegrity /DFSRoot:\contoso.com\MyNamespace /recurse /full
 ```
 
 ## <a name="additional-references"></a>其他參考
 
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)
 
--   [dfsdiag](dfsdiag.md)
-
-
+- [dfsdiag 命令](dfsdiag.md)

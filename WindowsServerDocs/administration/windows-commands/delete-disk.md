@@ -1,6 +1,6 @@
 ---
 title: delete disk
-description: 刪除磁片的參考主題，這會從磁片清單刪除遺失的動態磁碟。
+description: 刪除磁片命令的參考主題，這會從磁片清單刪除遺失的動態磁碟。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ad4888835c0bb1862344f104099b8b59027d1de9
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 5c8076f486251e428bce8805e15c2aa74caaf834
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82716758"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82993135"
 ---
 # <a name="delete-disk"></a>delete disk
 
 從磁片清單刪除遺失的動態磁碟。
 
-如需有關如何使用此命令的指示，請參閱[移除遺失的動態磁碟](https://go.microsoft.com/fwlink/?LinkId=207055)（https://go.microsoft.com/fwlink/?LinkId=207055)。
+> [!NOTE]
+> 如需如何使用此命令的詳細指示，請參閱[移除遺失的動態磁碟](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753029(v=ws.11))。
 
 ## <a name="syntax"></a>語法
 
@@ -30,14 +31,15 @@ delete disk [noerr] [override]
 
 ### <a name="parameters"></a>參數
 
-|參數|描述|
-|---------|-----------|
-|noerr|僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。|
-|override|啟用 DiskPart 來刪除磁碟上的全部簡單磁碟區。 如果磁碟包含鏡像磁碟區的一半，則會刪除磁碟上的一半鏡像。 如果磁碟屬於 RAID-5 磁碟區，則 delete disk override 命令失敗。|
+| 參數 | 描述 |
+| --------- | ----------- |
+| noerr | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
+| override | 啟用 DiskPart 來刪除磁碟上的全部簡單磁碟區。 如果磁碟包含鏡像磁碟區的一半，則會刪除磁碟上的一半鏡像。 如果磁碟屬於 RAID-5 磁碟區，則 delete disk override 命令失敗。 |
 
 ## <a name="examples"></a>範例
 
 若要從磁片清單中刪除遺失的動態磁碟，請輸入：
+
 ```
 delete disk
 ```
@@ -46,3 +48,4 @@ delete disk
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
+- [delete 命令](delete.md)

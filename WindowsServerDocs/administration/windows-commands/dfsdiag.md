@@ -1,6 +1,6 @@
 ---
 title: dfsdiag
-description: Dfsdiag 的參考主題，其提供 DFS 命名空間的診斷資訊。
+description: Dfsdiag 命令的參考主題，其提供 DFS 命名空間的診斷資訊。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2d5a9b147994628ccad6a723311decbccbe82ec6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 7e9e0de18b48a4233b950ad6aa8f1e450a99da62
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719545"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82992831"
 ---
 # <a name="dfsdiag"></a>dfsdiag
 
@@ -23,21 +23,24 @@ ms.locfileid: "82719545"
 ## <a name="syntax"></a>語法
 
 ```
-dfsdiag [ /TestDCs [/Domain:<Domain name>]| /TestSites </Machine:<server name>| /DFSPath:<namespace root or DFS folder> [/Recurse]> [/Full] | /TestDFSConfig /DFSRoot:<namespace> | /TestDFSIntegrity /DFSRoot:<DFS root path> [/Recurse] [/Full] | /TestReferral /DFSPath:<DFS path for getting referrals> [/Full] | /?] 
-
+dfsdiag /testdcs [/domain:<domain name>]
+dfsdiag /testsites </machine:<server name>| /DFSPath:<namespace root or DFS folder> [/recurse]> [/full]
+dfsdiag /testdfsconfig /DFSRoot:<namespace>
+dfsdiag /testdfsintegrity /DFSRoot:<DFS root path> [/recurse] [/full]
+dfsdiag /testreferral /DFSpath:<DFS path to get referrals> [/full]
 ```
 
-#### <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
-|參數|描述|
-|---------|-----------|
-|[Dfsdiag TestDCs](dfsdiag-testdcs.md)|檢查網域控制站設定。|
-|[Dfsdiag TestSites](dfsdiag-testsites.md)|檢查網站關聯。|
-|[Dfsdiag TestDFSConfig](dfsdiag-testdfsconfig.md)|檢查 DFS 命名空間設定。|
-|[Dfsdiag TestDFSIntegrity](dfsdiag-testdfsintegrity.md)|檢查 DFS 命名空間的完整性。|
-|[Dfsdiag TestReferral](dfsdiag-testreferral.md)|檢查參照回應。|
-|/?|在命令提示字元顯示說明。|
+| 參數 | 描述 |
+| --------- | ----------- |
+| [dfsdiag testdcs](dfsdiag-testdcs.md) | 檢查網域控制站設定。 |
+| [dfsdiag testsites](dfsdiag-testsites.md) | 檢查網站關聯。 |
+| [dfsdiag testdfsconfig](dfsdiag-testdfsconfig.md) | 檢查 DFS 命名空間設定。 |
+| [dfsdiag testdfsintegrity](dfsdiag-testdfsintegrity.md) | 檢查 DFS 命名空間的完整性。 |
+| [dfsdiag testreferral](dfsdiag-testreferral.md) | 檢查參照回應。 |
+| /? | 在命令提示字元顯示說明。 |
 
 ## <a name="additional-references"></a>其他參考
 
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

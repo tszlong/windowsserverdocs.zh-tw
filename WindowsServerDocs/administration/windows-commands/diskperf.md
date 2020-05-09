@@ -1,6 +1,6 @@
 ---
 title: diskperf
-description: Diskperf 的參考主題，可以用來從遠端啟用或停用執行 Windows 2000 之電腦上的實體或邏輯磁片效能計數器。
+description: Diskperf 命令的參考主題，可以用來從遠端啟用或停用執行 Windows 之電腦上的實體或邏輯磁片效能計數器。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,34 +9,36 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c8f505d924ee1de311f2f2736ff65be844c3f2ea
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 092518f414d6e27436c46ffd6f9f15b6e6c0407e
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719450"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82992432"
 ---
 # <a name="diskperf"></a>diskperf
 
-在 Windows 2000 中，預設不會啟用實體和邏輯磁片效能計數器。
-
-**Diskperf**包含在 windows XP、windows server 2003、windows server 2008、windows Vista、windows Server 2008 R2 和 Windows 7 中，因此可用來從遠端啟用或停用執行 Windows 2000 之電腦上的實體或邏輯磁片效能計數器。
+**Diskperf**命令會從遠端在執行 Windows 的電腦上啟用或停用實體或邏輯磁片效能計數器。
 
 ## <a name="syntax"></a>語法
 
 ```
-diskperf [-Y[D|V] | -N[D|V]] [\\computername]
+diskperf [-y[d|v] | -n[d|v]] [\\computername]
 ```
 
-## <a name="options"></a>選項。
+## <a name="options"></a>選項
 
-|選項|描述|
-|------|-----------|
-|-?|顯示即時線上說明。|
-|-y|當電腦重新開機時，啟動所有磁片效能計數器。|
-|-YD|當電腦重新開機時，啟用實體磁片磁碟機的磁片效能計數器。|
-|-YV|當電腦重新開機時，為邏輯磁碟機或存放磁片區啟用磁片效能計數器。|
-|-N|當電腦重新開機時，停用所有磁片效能計數器。|
-|-ND|當電腦重新開機時，停用實體磁片磁碟機的磁片效能計數器。|
-|-NV|當電腦重新開機時，請停用邏輯磁碟機或存放磁片區的磁片效能計數器。|
-|\\\\*\<computername>*|指定您要啟用或停用磁片效能計數器的電腦名稱稱。|
+| 選項 | 描述 |
+| ------ | ----------- |
+| -y | 當電腦重新開機時，啟動所有磁片效能計數器。 |
+| -yd | 當電腦重新開機時，啟用實體磁片磁碟機的磁片效能計數器。 |
+| -yv | 當電腦重新開機時，會啟用邏輯磁碟機或存放磁片區的磁片效能計數器。 |
+| -n | 當電腦重新開機時，停用所有磁片效能計數器。 |
+| -nd | 當電腦重新開機時，停用實體磁片磁碟機的磁片效能計數器。 |
+| -nv | 當電腦重新開機時，請停用邏輯磁碟機或存放磁片區的磁片效能計數器。 |
+| `\\<computername>` | 指定您要啟用或停用磁片效能計數器之電腦的名稱。 |
+| -? | 顯示即時線上說明。 |
+
+## <a name="additional-references"></a>其他參考
+
+- [命令列語法關鍵](command-line-syntax-key.md)

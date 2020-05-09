@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cee18dad2a1ec0aa92e34beca540579d2a568708
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 74accc6a1551530eaa967cc5896fc3bfe5f168bf
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723381"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82993385"
 ---
 # <a name="pagefileconfig"></a>pagefileconfig
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-pagefileconfig 已被取代，在未來的 Windows 版本中不保證會受到支援。  
-此工具組含在 Windows Server 2003 中。 如需詳細資訊，請參閱[pagefileconfig](https://technet.microsoft.com/library/cc772827.aspx)。  
+pagefileconfig 已被取代，在未來的 Windows 版本中不保證會受到支援。
+此工具組含在 Windows Server 2003 中。 如需詳細資訊，請參閱[pagefileconfig](https://technet.microsoft.com/library/cc772827.aspx)。

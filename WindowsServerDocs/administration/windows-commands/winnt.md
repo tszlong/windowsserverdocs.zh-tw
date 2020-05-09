@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: df6a933d54e4600b2ae220841d86c82b768074fd
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 24cf05f9a7d36e05b22abd77ff49a8b42607cf15
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720707"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82993395"
 ---
 # <a name="winnt"></a>winnt
 

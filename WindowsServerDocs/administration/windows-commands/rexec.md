@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5104752edde20b04815b55557b15be7b6add084e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: bae58ac6d52a761981aa24bf25b8f3e19b547180
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722325"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82993384"
 ---
 # <a name="rexec"></a>rexec
 

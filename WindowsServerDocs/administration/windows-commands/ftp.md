@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8fa956124e0c227d048d4c6eec844154187d5861
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 4878377225f9c58e40256a3d151d0d8f3761afca
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725058"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82993343"
 ---
 # <a name="ftp"></a>ftp
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-在執行檔案傳輸通訊協定（ftp）伺服器服務的電腦之間傳輸檔案。 您可以藉由處理 ASCII 文字檔，以互動方式或在批次模式中使用**ftp** 。 
+在執行檔案傳輸通訊協定（ftp）伺服器服務的電腦之間傳輸檔案。 您可以藉由處理 ASCII 文字檔，以互動方式或在批次模式中使用**ftp** 。
 ## <a name="syntax"></a>語法
 ```
 ftp [-v] [-d] [-i] [-n] [-g] [-s:<FileName>] [-a] [-A] [-x:<SendBuffer>] [-r:<RecvBuffer>] [-b:<AsyncBuffers>][-w:<WindowsSize>]  [-?] [<Host>]

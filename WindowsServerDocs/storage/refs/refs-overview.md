@@ -7,12 +7,12 @@ ms.technology: storage-file-systems
 ms.topic: article
 author: gawatu
 ms.date: 06/17/2019
-ms.openlocfilehash: 8d32ef6bc4ce169ff73f9ab147783ac0607617f2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: daa766b63cd99b86abb5a9fad791061c21aba766
+ms.sourcegitcommit: be4f67ae8e40a0bf1086881ba8963c69d7ea889f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857541"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82986024"
 ---
 # <a name="resilient-file-system-refs-overview"></a>復原檔案系統 (ReFS) 概觀
 
@@ -20,9 +20,9 @@ ms.locfileid: "80857541"
 
 復原檔案系統 (ReFS) 是 Microsoft 最新的檔案系統，設計用來將資料可用性最大化、在各種工作負載間有效率地調整為極大型的資料集，以及透過復原損毀來提供資料完整性。 其會設法因應一組擴充的儲存體案例，並建立基礎供未來創新所用。
 
-## <a name="key-benefits"></a>主要優點
+## <a name="key-benefits"></a>主要權益
 
-### <a name="resiliency"></a>復原
+### <a name="resiliency"></a>災害復原
 
 ReFS 所引入的新功能可精準偵測損毀，並在維持上線狀態時修正該類損毀，進而協助提升您資料的完整性及可用性： 
 
@@ -35,11 +35,11 @@ ReFS 所引入的新功能可精準偵測損毀，並在維持上線狀態時修
 
 ReFS 除了提供復原改善外，還引入了供重視效能的虛擬工作負載所用的新功能。 即時階層最佳化、區塊複製及疏鬆 VDL 為 ReFS 功能演化的最佳範例，設計用來支援動態及多種工作負載：
 
-- **[鏡像加速](./mirror-accelerated-parity.md)** 同位檢查-鏡像加速同位會為您的資料提供高效能和容量有效率的儲存空間。 
+- **[鏡像加速的同位](./mirror-accelerated-parity.md)** - 鏡像加速的同位為您的資料提供不僅效能高，而且容量也很有效率的儲存體。 
 
     - 為了提供效能高且容量有效率的儲存體，ReFS 將磁碟區分為兩個邏輯儲存群組，稱為階層。 這些階層可具備自己專屬的磁碟機及復原類型，讓各個階層針對效能或容量進行最佳化。 部分範例設定包括： 
     
-      | 效能層 | 容量層 |
+      | 效能層級 | 容量層 |
       | ---------------- | ----------------- |
       | 鏡像 SSD | 鏡像 HDD |
       | 鏡像 SSD | 同位 SSD |
@@ -92,7 +92,7 @@ Microsoft 已特別針對一般用途搭配各種設定和工作負載開發 NTF
 - 自行導入復原及可用性軟體解決方案的應用程式可以善加利用完整性資料流、區塊複製，以及擴充和支援大型資料集的功能。 
 
 > [!NOTE]
-> 基本磁碟包含透過 BusTypes SATA、SAS、NVME 或 RAID 的本機非卸載式直接連接。 
+> 基本磁碟包含透過 BusTypes SATA、SAS、NVME 或 RAID 的本機非卸載式直接連接。 基本磁碟不包含儲存空間。
 
 ### <a name="backup-target"></a>備份目標
 
@@ -132,7 +132,7 @@ Microsoft 已特別針對一般用途搭配各種設定和工作負載開發 NTF
 | 重新分析點 | 是 | 是 |
 | 磁碟區快照 | 是 | 是 |
 | 檔案識別碼 | 是 | 是 |
-| Oplocks | 是 | 是 |
+| Oplock | 是 | 是 |
 | 疏鬆檔案 | 是 | 是 |
 | 已命名的資料流 | 是 | 是 |
 | 精簡佈建 | 是<sup>3</sup> | 是 |
@@ -171,4 +171,4 @@ Microsoft 已特別針對一般用途搭配各種設定和工作負載開發 NTF
 - [ReFS 和 NTFS 的叢集大小建議](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/Cluster-size-recommendations-for-ReFS-and-NTFS/ba-p/425960)
 - [儲存空間直接存取總覽](../storage-spaces/storage-spaces-direct-overview.md)
 - [ReFS 區塊複製](block-cloning.md)
-- [ReFS 完整性資料流程](integrity-streams.md)
+- [ReFS 完整性資料流](integrity-streams.md)

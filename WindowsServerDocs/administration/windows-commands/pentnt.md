@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 066ba6b847085cb84c1868758187b808ef0e2538
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a9d637df1207aa4b2bcc0e044029d61cfe370dc5
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723329"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82993356"
 ---
 # <a name="pentnt"></a>pentnt
 

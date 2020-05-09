@@ -1,6 +1,6 @@
 ---
 title: 卸離 vdisk
-description: 卸離 vdisk 的參考主題，這會停止選取的虛擬硬碟（VHD），使其不會顯示為主電腦上的本機硬碟。
+description: 卸離 vdisk 命令的參考主題，這會停止選取的虛擬硬碟（VHD），使其不會顯示為主電腦上的本機硬碟。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,61 +9,54 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e5e64559650597eb8d15e28075f74704fdf338a6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 427b27630341589f3ff6dd422667e1247f5b64ec
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82716663"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82993076"
 ---
 # <a name="detach-vdisk"></a>卸離 vdisk
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-停止選取的虛擬硬碟（VHD），使其不會顯示為主電腦上的本機硬碟。 卸離 VHD 之後，您可以將它複製到其他位置。  
-  
-> [!NOTE]  
-> 此命令僅適用于 Windows 7 和 Windows Server 2008 R2。  
-  
-## <a name="syntax"></a>語法  
-  
-```  
-detach vdisk [noerr]  
-```  
-  
-#### <a name="parameters"></a>參數  
-  
-|參數|描述|  
-|-------|--------|  
-|noerr|僅用於腳本。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。|  
-  
-## <a name="remarks"></a>備註  
-  
--   必須選取並卸離 VHD，此作業才能成功。 使用 [**選取 vdisk** ] 命令來選取 VHD，並將焦點移至它。  
-  
-## <a name="examples"></a>範例  
-若要卸離選取的 VHD，請輸入：  
-  
-```  
-detach vdisk  
-```  
-  
-## <a name="additional-references"></a>其他參考  
-  
--   - [命令列語法關鍵](command-line-syntax-key.md)  
-  
--   [附加 vdisk](attach-vdisk.md)  
-  
--   [compact vdisk](compact-vdisk.md)  
+停止選取的虛擬硬碟（VHD），使其不會顯示為主電腦上的本機硬碟。 卸離 VHD 之後，您可以將它複製到其他位置。 開始之前，您必須選取 VHD，此作業才會成功。 使用 [[選取 vdisk](select-vdisk.md) ] 命令來選取 VHD，並將焦點移至它。
 
--   [詳細資料 vdisk](detail-vdisk.md)  
-  
--   [展開 vdisk](expand-vdisk.md)  
-  
--   [合併 vdisk](merge-vdisk.md)  
-  
--   [選取 vdisk](select-vdisk.md)  
-  
--   [list_1](list_1.md)  
-  
 
+## <a name="syntax"></a>語法
+
+```
+detach vdisk [noerr]
+```
+
+### <a name="parameters"></a>參數
+
+| 參數 | 描述 |
+| --------- | ----------- |
+| noerr | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
+
+## <a name="examples"></a>範例
+
+若要卸離選取的 VHD，請輸入：
+
+```
+detach vdisk
+```
+
+## <a name="additional-references"></a>其他參考
+
+- [命令列語法關鍵](command-line-syntax-key.md)
+
+- [附加 vdisk 命令](attach-vdisk.md)
+
+- [compact vdisk 命令](compact-vdisk.md)
+
+- [detail vdisk 命令](detail-vdisk.md)
+
+- [展開 vdisk 命令](expand-vdisk.md)
+
+- [Merge vdisk 命令](merge-vdisk.md)
+
+- [選取 vdisk 命令](select-vdisk.md)
+
+- [list 命令](list.md)
