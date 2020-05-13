@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dougkim
 ms.date: 07/25/2018
-ms.openlocfilehash: 8d38833170aae5e13f9d42b726d7cb0b3c12de56
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7238d71ed35b5c9645e6b4061717011cc2a02820
+ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80828451"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83203568"
 ---
->適用于： Windows Server 2012、Windows Server 2012 R2、Windows Server 2016
-
 # <a name="migrating-the-wsus-database-from-wid-to-sql"></a>將 WSUS 資料庫從 WID 遷移至 SQL
+
+> 適用于： Windows Server 2012、Windows Server 2012 R2、Windows Server 2016
 
 使用下列步驟，將 WSUS 資料庫（SUSDB）從 Windows 內部資料庫實例遷移到 SQL Server 的本機或遠端實例。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 - SQL 實例。 這可以是預設的**MSSQLServer**或自訂的實例。
 - SQL Server Management Studio
@@ -44,9 +44,9 @@ ms.locfileid: "80828451"
 
 #### <a name="using-sql-management-studio"></a>使用 SQL Management Studio
 
-1. 以滑鼠右鍵**SUSDB**按一下 [SUSDB **-&gt; 工作**] -&gt; 按一下 [卸**離**]： ![image1](images/image1.png)
+1. 以滑鼠右鍵按一下 [ **SUSDB**工作]，按一下 [卸 - &gt; **Tasks** - &gt; **離**]： ![ image1](images/image1.png)
 2. 核取 [卸載**現有的連接**]，然後按一下 **[確定]** （如果有作用中連線存在，則為選擇性
-    ![image2)](images/image2.png)
+    ![image2](images/image2.png)
 
 #### <a name="using-command-prompt"></a>使用 [命令提示字元]
 
@@ -67,7 +67,7 @@ ms.locfileid: "80828451"
 
 ### <a name="copy-the-susdb-files-to-the-sql-server"></a>將 SUSDB 檔案複製到 SQL Server
 
-1. 將 **\_** **SUSDB**從 WID Data 資料夾（ **% SystemDrive%** \** WINDOWS\WID\DATA * *）複製到 SQL 實例資料檔案夾。
+1. **從 WID \_ ** data 資料夾（**% SystemDrive%** **SUSDB.mdf** \* * WINDOWS\WID\DATA * *）將 SUSDB 複製到 SQL 實例資料檔案夾。
 
 > [!TIP]
 > 例如，如果您的 SQL 實例資料夾是**C:\Program FILES\MICROSOFT sql Server\MSSQL12。MSSQLSERVER\MSSQL**，並將 WID Data 資料夾**C:\Windows\WID\Data，** 將 SUSDB 檔案從**C:\Windows\WID\Data**複製到**C:\Program Files\Microsoft SQL Server\MSSQL12。MSSQLSERVER\MSSQL\Data**
@@ -76,8 +76,8 @@ ms.locfileid: "80828451"
 
 1. 在**SQL Server Management Studio**的**實例**節點底下，以滑鼠右鍵按一下 [**資料庫**]，然後按一下 [**附加**]。
     ![image3](images/image3.png)
-2. 在 [**附加資料庫**] 方塊的 [**要附加的資料庫**] 底下，按一下 [**新增**] 按鈕，然後找出**SUSDB** （從 WID 資料夾複製），再按一下 **[確定]** 。
-    ![image4.jpg](images/image4.png) ![image5](images/image5.png)
+2. 在 [**附加資料庫**] 方塊的 [**要附加的資料庫**] 底下，按一下 [**新增**] 按鈕，然後找出**SUSDB** （從 WID 資料夾複製），再按一下 **[確定]**。
+    ![image4.jpg ](images/image4.png) ![ image5](images/image5.png)
 
 > [!TIP]
 > 這也可以使用 Transact-sql 來完成。  請參閱[SQL 檔，以瞭解如何附加資料庫](https://docs.microsoft.com/sql/relational-databases/databases/attach-a-database)以取得其指示。
@@ -108,7 +108,7 @@ ms.locfileid: "80828451"
 應該會列出**NT AUTHORITY\NETWORK 服務**帳戶。 如果不是，您需要加入新的登入名稱來新增它。
 
 > [!IMPORTANT]
-> 如果 SQL 實例與 WSUS 位於不同的電腦上，WSUS 伺服器的電腦帳戶應會以 **[FQDN]\\[WSUSComputerName] $** 的格式列出。  如果沒有，您可以使用下列步驟來新增它，將**nt AUTHORITY\NETWORK 服務**取代為 WSUS 伺服器的電腦帳戶（ **[FQDN]\\[WSUSComputerName] $** ），這是除了將許可權授與**NT AUTHORITY\NETWORK SERVICE** ***之外***
+> 如果 SQL 實例與 WSUS 位於不同的電腦上，WSUS 伺服器的電腦帳戶應會以 **[FQDN] \\ [WSUSComputerName] $** 格式列出。  如果沒有，您可以使用下列步驟來新增它，將**nt AUTHORITY\NETWORK 服務**取代為 WSUS 伺服器的電腦帳戶（**[FQDN] \\ [WSUSComputerName] $**），這是除了將許可權授與**NT AUTHORITY\NETWORK SERVICE** ***之外***
 
 ##### <a name="adding-nt-authoritynetwork-service-and-granting-it-rights"></a>新增 NT AUTHORITY\NETWORK 服務並授與 it 權利
 
@@ -123,12 +123,12 @@ ms.locfileid: "80828451"
     - 在 [**資料庫角色成員資格： SUSDB**] 底下，確定已核取下列各項：
         - **公立**
         - **webService** ![image9](images/image9.png)
-5. 按一下 [確定]。
+5. 按一下 [檔案] &gt; [新增] &gt; [專案] 
 
 您現在應該會在 [登入] 下看到**NT AUTHORITY\NETWORK SERVICE** 。
 ![image10](images/image10.png)
 
-#### <a name="database-permissions"></a>資料庫許可權
+#### <a name="database-permissions"></a>資料庫權限
 
 1. 以滑鼠右鍵按一下 SUSDB
 2. 選取**屬性**
@@ -138,7 +138,7 @@ ms.locfileid: "80828451"
 
 1. 如果不是，請新增帳戶。
 2. 在 [登入名稱] 文字方塊中，以下列格式輸入 WSUS 機器：
-    > [**FQDN]\\[WSUSComputerName] $**
+    > [**FQDN] \\[WSUSComputerName] $**
 3. 確認 [**預設資料庫**] 已設定為 [ **SUSDB**]。
 
     > [!TIP]
@@ -147,7 +147,7 @@ ms.locfileid: "80828451"
     > ![image11](images/image11.png)
 
 4. 在 [**使用者對應**] 頁面上，選取 [**對應到此登**入的使用者] 底下的 [ **SUSDB** ] 資料庫
-5. 檢查**資料庫角色成員資格**下的**webservice** ： SUSDB： ![image12](images/image12.png)
+5. 檢查**資料庫角色成員資格**下的**webservice** ： SUSDB： ![ image12](images/image12.png)
 6. 按一下 **[確定]** 以儲存設定。
     > [!NOTE]
     > 您可能需要重新開機 SQL 服務，變更才會生效。
@@ -155,13 +155,13 @@ ms.locfileid: "80828451"
 ### <a name="edit-the-registry-to-point-wsus-to-the-sql-server-instance"></a>編輯登錄以將 WSUS 指向 SQL Server 實例
 
 > [!IMPORTANT]
-> 請仔細依循本節中的步驟。 若您不正確地修改登錄，可能會發生嚴重的問題。 在修改之前，[備份登錄以供還原](https://support.microsoft.com/help/322756)，以免發生問題。
+> 請仔細依循本節中的步驟。 如果您未正確修改登錄，可能會發生嚴重問題。 在修改之前，[備份登錄以供還原](https://support.microsoft.com/help/322756)，以免發生問題。
 
-1. 依序按一下 [開始] 和 [執行]、輸入 **regedit**，然後按一下 [確定]。
+1. 依序按一下 [開始]  、[執行]  ，輸入 **regedit&** ，然後按一下 [確定]  。
 2. 找出下列機碼： **HKEY_LOCAL_MACHINE \software\microsoft\updateservices\server\setup\sqlservername**
-3. 在 [**值**] 文字方塊中，輸入 **[ServerName]\\[InstanceName]** ，然後按一下 [**確定**]。 如果實例名稱是預設實例，請輸入 **[ServerName]** 。
-4. 找出下列機碼： **HKEY_LOCAL_MACHINE \Software\microsoft\update Services\Server\Setup\Installed Role Services\UpdateServices-WidDatabase** ![image13](images/image13.png)
-5. 將金鑰重新命名為**UpdateServices-Database** ![image41](images/image14.png)
+3. 在 [**值**] 文字方塊中，輸入 **[ServerName] \\ [InstanceName]**，然後按一下 [**確定**]。 如果實例名稱是預設實例，請輸入 **[ServerName]**。
+4. 找出下列機碼： **HKEY_LOCAL_MACHINE \Software\microsoft\update Services\Server\Setup\Installed Role Services\UpdateServices-WidDatabase** ![ image13](images/image13.png)
+5. 將金鑰重新命名為**UpdateServices-資料庫** ![ image41](images/image14.png)
 
     > [!NOTE]
     > 如果您未更新此金鑰，則**WsusUtil**會嘗試服務 WID，而不是您已遷移的 SQL 實例。
@@ -181,7 +181,7 @@ ms.locfileid: "80828451"
 ## <a name="uninstalling-the-wid-role-not-recommended"></a>卸載 WID 角色（不建議）
 
 > [!WARNING]
-> 移除 WID 角色也會移除資料庫檔案夾（ **%SystemDrive%\Program Files\Update Services\Database**），其中包含 WSUSUtil 針對後續安裝工作所需的腳本。 如果您選擇卸載 WID 角色，請務必事先備份 **%SystemDrive%\Program Files\Update Services\Database**資料夾。
+> 移除 WID 角色也會移除資料庫檔案夾（**%SystemDrive%\Program Files\Update Services\Database**），其中包含 WSUSUtil 針對後續安裝工作所需的腳本。 如果您選擇卸載 WID 角色，請務必事先備份 **%SystemDrive%\Program Files\Update Services\Database**資料夾。
 
 使用 PowerShell：
 

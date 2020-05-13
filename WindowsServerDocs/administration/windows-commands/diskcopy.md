@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/07/2018
-ms.openlocfilehash: b8fd482d7c2e5933f269320df2bff75f65195bc2
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 99d1007a7c6f154b621e43d674d06f25b2911f00
+ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82992529"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235176"
 ---
 # <a name="diskcopy"></a>diskcopy
 
@@ -28,7 +28,7 @@ diskcopy [<drive1>: [<drive2>:]] [/v]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `<drive1>` | 指定包含來源磁片的磁片磁碟機。 |
 | /v | 確認已正確複製資訊。 此選項會使複製程式變慢。 |
@@ -74,7 +74,7 @@ diskcopy [<drive1>: [<drive2>:]] [/v]
 
 - **diskcopy**結束代碼：
 
-    | 結束代碼 | 描述 |
+    | 結束代碼 | 說明 |
     | --------- | ----------- |
     | 0 | 複製操作成功 |
     | 1 | 發生非嚴重的讀取/寫入錯誤 |
@@ -93,7 +93,9 @@ diskcopy b: a:
 
 若要使用軟碟磁碟機 A 將磁碟複製到另一張軟碟，請先切換至 C 磁片磁碟機，然後輸入：
 
-diskcopy a： a：
+```
+diskcopy a: a:
+```
 
 ## <a name="additional-references"></a>其他參考
 

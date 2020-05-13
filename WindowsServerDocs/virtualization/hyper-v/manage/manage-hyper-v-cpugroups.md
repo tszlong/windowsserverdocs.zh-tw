@@ -7,16 +7,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.service: windows-10-hyperv
 ms.assetid: cc7bb88e-ae75-4a54-9fb4-fc7c14964d67
-ms.openlocfilehash: fcf61c22a24abb6b16baf75b4846cc188dcecd49
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ebb5f9a0ca9c50a5e5357e3dd2c755095da98d11
+ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860791"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83203541"
 ---
->適用于： Windows Server 2016、Microsoft Hyper-v Server 2016、Windows Server 2019、Microsoft Hyper-v Server 2019
-
 # <a name="virtual-machine-resource-controls"></a>虛擬機器資源控制
+
+> 適用於：Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
 本文說明虛擬機器的 Hyper-v 資源和隔離控制。  這些功能（我們將稱之為虛擬機器 CPU 群組，或只是「CPU 群組」）是在 Windows Server 2016 中引進。  CPU 群組可讓 Hyper-v 系統管理員更有效地管理和配置跨來賓虛擬機器的主機 CPU 資源。  使用 CPU 群組時，Hyper-v 系統管理員可以：
 
@@ -30,7 +30,7 @@ ms.locfileid: "80860791"
 
 CPU 群組是透過 Hyper-v 主機計算服務或 HCS 來管理。 如需 HCS、其創世、HCS Api 連結等等的絕佳說明，請前往《[主機計算服務（HCS）簡介](https://blogs.technet.microsoft.com/virtualization/2017/01/27/introducing-the-host-compute-service-hcs/)中的 Microsoft 虛擬化小組的 blog。
 
->[!NOTE] 
+>[!NOTE]
 >只有 HCS 可以用來建立和管理 CPU 群組;Hyper-v 管理員 applet、WMI 和 PowerShell 管理介面不支援 CPU 群組。
 
 Microsoft 會在[Microsoft 下載中心](https://go.microsoft.com/fwlink/?linkid=865968)提供命令列公用程式 cpugroups，其使用 HCS 介面來管理 CPU 群組。  此公用程式也可以顯示主機的 CPU 拓撲。
@@ -51,7 +51,7 @@ CPU 群組上限的計算方式為 G = *n* x *C*，其中：
     G = 4 * 50%
     G = 2 LP's worth of CPU time for the entire group
 
-在此範例中，CPU 群組 G 會配置2個 LP 的 CPU 時間。  
+在此範例中，CPU 群組 G 會配置2個 LP 的 CPU 時間。
 
 請注意，不論已指派給該群組的虛擬機器或虛擬處理器數目為何，不論是否已指派給 CPU 群組的虛擬機器的狀態（例如關閉或啟動）為何，群組上限都會套用。 因此，系結至相同 CPU 群組的每個 VM 都會收到群組的總 CPU 配置，而這會隨著系結至 CPU 群組的 Vm 數目而變更。 因此，當 Vm 是從 CPU 群組系結或解除系結 Vm 時，整體 CPU 群組上限必須是進行調整並設定，以維持所需的每個 VM 上限。 VM 主機管理員或虛擬化管理軟體層負責視需要管理群組上限，以達到所需的每個 VM CPU 資源配置。
 
@@ -120,7 +120,7 @@ Hyper-v 主機系統管理員可能也想要能夠將計算資源專用於 VM。
 
 讓我們看看一些如何使用 CpuGroups 工具的範例。
 
->[!NOTE] 
+>[!NOTE]
 >CpuGroups 工具的命令列參數只會使用空格做為分隔符號來傳遞。 沒有 '/' 或 '-' 字元應該繼續所需的命令列參數。
 
 ### <a name="discovering-the-cpu-topology"></a>探索 CPU 拓撲
@@ -128,7 +128,7 @@ Hyper-v 主機系統管理員可能也想要能夠將計算資源專用於 VM。
 使用 GetCpuTopology 執行 CpuGroups 會傳回目前系統的相關資訊，如下所示，包括 LP 索引、LP 所屬的 NUMA 節點、封裝和核心識別碼，以及根 VP 索引。
 
 下列範例顯示的系統具有2個 CPU 通訊端和 NUMA 節點、總計 32 LPs 和多執行緒啟用，並已設定為啟用具有8個根 VPs 的 Minroot，每個 NUMA 節點4個。
-具有根 VPs 的 LPs 具有 RootVpIndex > = 0;根磁碟分割無法使用 RootVpIndex 為-1 的 LPs，但仍受限於虛擬程式管理，並會執行其他設定的允許來賓 VPs。
+具有根 VPs 的 LPs 具有 RootVpIndex >= 0;根磁碟分割無法使用 RootVpIndex 為-1 的 LPs，但仍受限於虛擬程式管理，並會執行其他設定的允許來賓 VPs。
 
 ```console
 C:\vm\tools>CpuGroups.exe GetCpuTopology
@@ -342,7 +342,7 @@ CpuGroupId                           VmName                                VmId
 C:\vm\tools>CpuGroups.exe SetVmGroup /VmName:g1 /GroupId:00000000-0000-0000-0000-000000000000
 ```
 
-並驗證我們的變更 。
+並驗證我們的變更 .。。
 
 ```console
 C:\vm\tools>CpuGroups.exe GetVmGroup /VmName:g1

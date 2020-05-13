@@ -27,12 +27,12 @@
 
 ## <a name="markdown-info"></a>Markdown 資訊
 
-如需如何在 Docs.microsoft.com 主題上使用 Markdown 的資訊，請參閱檔[Markdown 參考](https://review.docs.microsoft.com/help/contribute/markdown-reference?branch=master)。 此內容的可公開存取版本如下：[公用檔 markdown 參考](https://docs.microsoft.com/contribute/how-to-write-use-markdown)。
+如需如何在 Docs.microsoft.com 主題上使用 Markdown 的資訊，請參閱檔[Markdown 參考](https://review.docs.microsoft.com/help/contribute/markdown-reference?branch=master)。 此內容的可公開存取版本如下：[公用檔 markdown 參考](https://docs.microsoft.com/contribute/markdown-reference)。
 
-## <a name="license"></a>使用權
+## <a name="license"></a>授權
 
 請參閱 [LICENSE](https://github.com/MicrosoftDocs/windowsserverdocs-pr/blob/master/LICENSE)、[LICENSE-CODE](https://github.com/MicrosoftDocs/windowsserverdocs-pr/blob/master/LICENSE-CODE)和 [ThirdPartyNotices](https://github.com/MicrosoftDocs/windowsserverdocs-pr/blob/master/ThirdPartyNotices) 以取得所有授權資訊。
 
 ## <a name="code-of-conduct"></a>管理辦法
 
-此專案已採用 [Microsoft 開放原始碼管理辦法](https://opensource.microsoft.com/codeofconduct/)。 如需詳細資訊，請參閱[管理辦法常見問題集](https://opensource.microsoft.com/codeofconduct/faq/)，任何其他問題或意見請連絡 [opencode@microsoft.com](mailto:opencode@microsoft.com)。
+此專案採用 [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/) (Microsoft 開放原始碼管理辦法)。 如需詳細資訊，請參閱 [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) (管理辦法常見問題) 或連絡 [opencode@microsoft.com](mailto:opencode@microsoft.com)，提出任何其他問題或意見。

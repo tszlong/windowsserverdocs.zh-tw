@@ -8,23 +8,23 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 06/21/2019
-ms.openlocfilehash: f9a0ee9cb78a89b20140e40a2bd3ae42da56c84f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f1c25cc88c577ccb1bc0e8cc690114471e86b6ba
+ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856931"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83203398"
 ---
->適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
-
 # <a name="add-host-information-for-tpm-trusted-attestation"></a>新增 TPM 信任證明的主機資訊
+
+> 適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
 
 針對 TPM 模式，網狀架構系統管理員會捕獲三種主機資訊，每個都必須新增至 HGS 設定：
 
 - 每部 Hyper-v 主機的 TPM 識別碼（EKpub）
-- 程式碼完整性原則，這是 Hyper-v 主機允許之二進位檔的允許清單
+- 程式碼完整性原則，這是 Hyper-v 主機允許之二進位檔的白名單
 - TPM 基準（開機測量），代表在相同硬體類別上執行的一組 Hyper-v 主機
-    
+
 Af er：網狀架構系統管理員會捕捉資訊，將其新增至 HGS 設定，如下列程式所述。
 
 1. 取得包含 EKpub 資訊的 XML 檔案，並將其複製到 HGS 伺服器。 每一部主機會有一個 XML 檔案。 然後，在 HGS 伺服器上提高許可權的 Windows PowerShell 主控台中，執行下列命令。 針對每個 XML 檔案重複此命令。
@@ -46,7 +46,7 @@ Af er：網狀架構系統管理員會捕捉資訊，將其新增至 HGS 設定�
     ```powershell
     Add-HgsAttestationCIPolicy -Path <Path> -Name '<PolicyName>'
        ```
-    
+
     > [!NOTE]
     > If you're using a signed code integrity policy, register an unsigned copy of the same policy with HGS.
     > The signature on code integrity policies is used to control updates to the policy, but is not measured into the host TPM and therefore cannot be attested to by HGS.
