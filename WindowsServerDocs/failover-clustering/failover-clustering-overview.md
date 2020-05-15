@@ -9,12 +9,12 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 06/06/2019
 ms.localizationpriority: high
-ms.openlocfilehash: b646890ebc8b8e64d84e6d448ce4acb393422009
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 5b0193f18fe94f391f1bbbc41280c16e4a1bcd0c
+ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80827711"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83203500"
 ---
 # <a name="failover-clustering-in-windows-server"></a>Windows Server 中的容錯移轉叢集
 
@@ -32,7 +32,7 @@ ms.locfileid: "80827711"
 | **了解**                                                               |  **規劃**                          |  **部署**       |
 | -------------                                                                |  --------------                        | --------------------- |
 | [容錯移轉叢集中的新功能](whats-new-in-failover-clustering.md)    | [規劃容錯移轉叢集硬體需求及存放選項](clustering-requirements.md)  | [建立容錯移轉叢集](create-failover-cluster.md) |
-| [針對應用程式資料向外延展檔案伺服器](sofs-overview.md)               | [使用叢集共用磁碟區 (CSV)](failover-cluster-csvs.md) | [部署雙節點檔案伺服器](../storage/storage-spaces/storage-spaces-direct-in-vm.md) |
+| [針對應用程式資料向外延展檔案伺服器](sofs-overview.md)               | [使用叢集共用磁碟區 (CSV)](failover-cluster-csvs.md) | [部署雙節點檔案伺服器](deploy-two-node-clustered-file-server.md) |
 |  [叢集和集區仲裁](../storage/storage-spaces/understand-quorum.md)   |  [使用客體虛擬機器叢集搭配儲存空間直接存取](../storage/storage-spaces/storage-spaces-direct-in-vm.md)       | [在 Active Directory Domain Services 中預先設置叢集電腦物件](prestage-cluster-adds.md) |
 | [容錯網域感知](fault-domains.md)                                 |                                 | [在 Active Directory 中設定叢集帳戶](configure-ad-accounts.md) |
 | [簡化的 SMB 多重通道和多 NIC 叢集網路](smb-multichannel.md) |                       | [管理仲裁和見證](manage-cluster-quorum.md) |
