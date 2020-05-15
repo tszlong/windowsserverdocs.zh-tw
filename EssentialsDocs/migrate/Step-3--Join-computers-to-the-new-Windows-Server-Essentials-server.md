@@ -8,16 +8,16 @@ ms.assetid: a0e07d1a-8409-429b-87d7-0f4a7e14d668
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 3d004d89f6606c8b38360c9139f882f087b7c554
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8efb8251bd85638b8ad4b760a5292a2b6d6681fd
+ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852361"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83404546"
 ---
 # <a name="step-3-join-computers-to-the-new-windows-server-essentials-server"></a>步驟 3：將電腦加入新的 Windows Server Essentials 伺服器
 
->適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials
 
 遷移程式的下一個步驟是將用戶端電腦連線到執行 Windows Server Essentials 的新伺服器。  
   
@@ -28,14 +28,14 @@ ms.locfileid: "80852361"
   
 ### <a name="to-uninstall-windows-server-connector-on-a-client-computer"></a>解除安裝用戶端電腦上的 Windows Server 連接器  
   
-1.  從用戶端電腦開啟 [控制台]，然後開啟 [程式和功能]。  
+1.  從用戶端電腦開啟 [控制台]，然後開啟 [程式和功能]****。  
   
 2.  在程式清單中，以滑鼠右鍵按一下在電腦上執行的連接器應用程式。  
   
     > [!NOTE]
     >  連接器應用程式可以是**Windows Small Business Server 2011 Essentials 連接器**或**Windows server Essentials 連接器**，視用戶端電腦連線到的 windows Server essentials 版本而定。  
   
-3.  按一下 [解除安裝]。  
+3.  按一下 [解除安裝]****。  
   
 ### <a name="to-reconnect-a-client-computer-to-the-server"></a>將用戶端電腦重新連線至伺服器  
   
@@ -46,7 +46,7 @@ ms.locfileid: "80852361"
   
 2.  開啟網際網路瀏覽器，例如 Internet Explorer。  
   
-3.  在網址列中，輸入**HTTP：//< servername\>/Connect**，然後按 enter。  
+3.  在網址列中，輸入**HTTP://<servername \> /Connect**，然後按 enter。  
   
 4.  依照畫面上的指示將用戶端電腦加入新的 Windows Server Essentials 伺服器。  
   

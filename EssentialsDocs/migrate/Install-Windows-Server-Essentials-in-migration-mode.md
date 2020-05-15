@@ -8,16 +8,16 @@ ms.assetid: fd7196ac-cfa6-46a5-ba77-6962b47a825e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d253a550763f34409f25223e6319607b9abcd8e6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 977922d8f2af23afc058162e7455ac5099e4325b
+ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852581"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83404560"
 ---
 # <a name="install-windows-server-essentials-in-migration-mode1"></a>在遷移 mode1 中安裝 Windows Server Essentials
 
->適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用于： Windows Server 2012 Essentials
 
 您的網路上只能有一部執行 Windows Server Essentials 的伺服器，而且該伺服器必須是網路的網域控制站。  
   
@@ -49,17 +49,17 @@ ms.locfileid: "80852581"
    >  如果目的地伺服器支援從 USB 快閃磁片磁碟機開機，您可以使用**windows 7 USB/DVD 下載工具**，從 Windows SERVER Essentials ISO 檔案建立可開機的 Usb 快閃磁片磁碟機。 使用 USB 快閃磁碟機可以明顯加速安裝程序，因為快閃磁碟機讀取資料比 DVD-ROM 光碟機更快。 建立可開機的 USB 快閃磁碟機之後，您可以將回應檔案新增到快閃磁碟機。 您可以在 Microsoft Store 網站免費[下載 Windows 7 USB/DVD 下載工具](https://go.microsoft.com/fwlink/p/?LinkId=248282)。  
   
    > [!NOTE]
-   >  如果目的地伺服器不會從 DVD 開機，請重新啟動電腦並檢查 BIOS 設定，以確保開機順序中會先列出 [DVD-ROM]。 如需如何變更 BIOS 設定開機順序的相關詳細資訊，請參閱硬體製造商的說明文件。  
+   >  如果目的地伺服器不會從 DVD 開機，請重新啟動電腦並檢查 BIOS 設定，以確保開機順序中會先列出 [DVD-ROM]****。 如需如何變更 BIOS 設定開機順序的相關詳細資訊，請參閱硬體製造商的說明文件。  
   
-2. 按一下 [新的安裝]。  
+2. 按一下 [新的安裝]****。  
   
-3. 如果您有未顯示在清單中的內部硬碟，請按一下 [載入驅動程式]，並在繼續前先安裝必要的驅動程式。  
+3. 如果您有未顯示在清單中的內部硬碟，請按一下 [載入驅動程式]****，並在繼續前先安裝必要的驅動程式。  
   
-4. 選取核取方塊，確認主要硬碟上所有的檔案與資料夾都會被刪除，然後按一下 [安裝]。  
+4. 選取核取方塊，確認主要硬碟上所有的檔案與資料夾都會被刪除，然後按一下 [安裝]****。  
   
-5. 在 [選擇伺服器的安裝模式] 頁面上，按一下 [伺服器移轉]，然後提供必要的移轉資訊。  
+5. 在 [選擇伺服器的安裝模式]**** 頁面上，按一下 [伺服器移轉]****，然後提供必要的移轉資訊。  
   
-6. 當 [已成功移轉您的伺服器] 訊息出現，請按一下 [關閉]。  
+6. 當 [已成功移轉您的伺服器]**** 訊息出現，請按一下 [關閉]****。  
   
    安裝完成後，會自動以您在移轉回應檔案中提供的系統管理員使用者帳戶與密碼登入。  
   

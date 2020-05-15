@@ -8,18 +8,18 @@ ms.assetid: 2974fb3a-5150-43fd-a73f-3e5074eb5d03
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 55b31785de6e17232a717d534fcb21a24d9052bd
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 5c73714dff2d89201ac93704105038c604f12e06
+ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318890"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83404574"
 ---
 # <a name="migrate-from-previous-versions-to-windows-server-essentials-or-windows-server-essentials-experience"></a>從舊版移轉到 Windows Server Essentials 或 Windows Server Essentials 體驗
 
->適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用于： Windows Server 2012 R2 Essentials
 
-本指南說明如何從舊版的 Windows Small Business Server 和 Windows Server Essentials 進行遷移（包括 Windows Server Essentials、Windows Small Business Server 2011 Standard、Windows Small Business Server 2011 Essentials、WindowsSmall Business Server 2008 和 Windows Small Business Server 2003）到 Windows Server Essentials 或已安裝 Windows Server Essentials 體驗角色的 Windows Server 2012 R2。  
+本指南說明如何從舊版的 Windows Small Business Server 和 Windows Server Essentials （包括 Windows Server Essentials、Windows Small Business Server 2011 Standard、Windows Small Business Server 2011 Essentials、Windows Small Business Server 2008 和 Windows Small Business Server 2003）遷移至 Windows Server Essentials 或已安裝 Windows Server Essentials 體驗角色的 Windows Server 2012 R2。  
   
  **對於多達25位使用者和50裝置的環境**，您可以依照本指南中的步驟，從舊版的 windows SBS 遷移到 Windows Server Essentials。  
   
@@ -28,7 +28,7 @@ ms.locfileid: "80318890"
 > [!NOTE]
 >  為了避免在移轉期間發生問題， Windows Server Essentials 產品開發團隊強烈建議您在開始移轉之前先閱讀此文件。  
   
-## <a name="terms-and-definitions"></a>術語與定義  
+## <a name="terms-and-definitions"></a>詞彙和定義  
  **來源伺服器** 您要從這裡移轉設定和資料的現有伺服器。  
   
  **目的地伺服器** 您要將設定和資料移轉到這裡的新伺服器。  
@@ -56,17 +56,17 @@ ms.locfileid: "80318890"
   
 ###  <a name="to-open-a-command-prompt-window-on-the-source-server-as-an-administrator"></a><a name="BKMK_OpenACommandPromptAsAdmin"></a>以系統管理員身分在來源伺服器上開啟 [命令提示字元] 視窗  
   
-1.  按一下 **[開始]** 。  
+1.  按一下 [啟動]  。  
   
 2.  在搜尋方塊中，輸入 **cmd**。  
   
-3.  在結果清單中，以滑鼠右鍵按一下 cmd，然後按一下 [以系統管理員身分執行]。  
+3.  在結果清單中，以滑鼠右鍵按一下 cmd****，然後按一下 [以系統管理員身分執行]****。  
   
 #### <a name="to-open-a-command-prompt-window-on-the-destination-server-as-an-administrator"></a>以系統管理員身分在目的地伺服器上開啟命令提示字元視窗  
   
-1.  在 [開始] 畫面的搜尋方塊中，輸入 **cmd**。  
+1.  在 [開始]**** 畫面的搜尋方塊中，輸入 **cmd**。  
   
-2.  在結果清單中，以滑鼠右鍵按一下 cmd，然後按一下 [以系統管理員身分執行]。  
+2.  在結果清單中，以滑鼠右鍵按一下 cmd****，然後按一下 [以系統管理員身分執行]****。  
   
 ## <a name="see-also"></a>另請參閱  
   

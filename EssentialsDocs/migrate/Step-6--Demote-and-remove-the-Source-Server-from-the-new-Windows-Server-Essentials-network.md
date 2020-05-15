@@ -8,16 +8,16 @@ ms.assetid: 86244c66-2c5e-488d-adb8-112e1ca3e2e1
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b1b7836e976ef35aec66e206ec8b1de0e2150d62
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 406010234528a094bfb36a606072f98c043c397a
+ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852331"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83404516"
 ---
 # <a name="step-6-demote-and-remove-the-source-server-from-the-new-windows-server-essentials-network"></a>步驟 6：從新的 Windows Server Essentials 網路降級和移除來源伺服器
 
->適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials
 
 當您完成安裝 Windows Server Essentials 並完成遷移之後，您必須執行下列工作：  
   
@@ -38,23 +38,23 @@ ms.locfileid: "80852331"
   
 1.  以網域系統管理員身分登入來源伺服器。  
   
-2.  依序按一下 [開始]、[系統管理工具]，然後按一下 [伺服器管理員]。  
+2.  依序按一下 [開始]****、[系統管理工具]****，然後按一下 [伺服器管理員]****。  
   
-3.  按一下 **[使用者帳戶控制]** 對話方塊的 **[繼續]** 。  
+3.  按一下 **[使用者帳戶控制]** 對話方塊的 **[繼續]**。  
   
-4.  在 [角色摘要] 區段中，按一下 [移除角色]。  
+4.  在 [角色摘要]**** 區段中，按一下 [移除角色]****。  
   
-5.  在 [移除角色精靈] 中，按一下 [下一步]。  
+5.  在 [移除角色精靈] 中，按一下 [下一步]****。  
   
-6.  清除 [Active Directory 憑證服務] 核取方塊，然後按一下 [下一步]。  
+6.  清除 [Active Directory 憑證服務]**** 核取方塊，然後按一下 [下一步]****。  
   
-7.  檢視 [確認移除選項] 頁面上的資訊，然後按一下 [移除]。  
-  
-    > [!NOTE]
-    >  如果網際網路資訊服務 (IIS) 正在執行，會提示您停止服務才能繼續。 按一下 [確定]。  
+7.  檢視 [確認移除選項]**** 頁面上的資訊，然後按一下 [移除]****。  
   
     > [!NOTE]
-    >  首先，您可能需要移除 [憑證授權單位網頁註冊] (如果已安裝)。  
+    >  如果網際網路資訊服務 (IIS) 正在執行，會提示您停止服務才能繼續。 按一下 [確定]  。  
+  
+    > [!NOTE]
+    >  首先，您可能需要移除 [憑證授權單位網頁註冊]**** (如果已安裝)。  
   
 8.  當 [移除角色精靈] 完成時，重新啟動伺服器以完成解除安裝程序。  
   
@@ -74,11 +74,11 @@ ms.locfileid: "80852331"
   
 1. 以系統管理員身分登入用戶端電腦。  
   
-2. 開啟命令提示字元視窗，以系統管理員身分執行。  
+2. 以系統管理員身分開啟 [命令提示字元] 視窗。  
   
 3. 在命令提示字元中，輸入 **gpupdate /force**，然後按 ENTER。  
   
-4. 可能需要您登出再重新登入，以完成處理程序。 按一下 [是] 以確認。  
+4. 可能需要您登出再重新登入，以完成處理程序。 按一下 [是]**** 以確認。  
   
    如果您要從 Windows Server Essentials 或其舊版進行遷移，請參閱[移除 Active Directory Domain Services](https://technet.microsoft.com/library/hh472163.aspx)。 在將來源伺服器新增為工作群組成員，並中斷其網路連線之後，您必須將它從目的地伺服器上的 AD DS 中移除。  
   
@@ -86,13 +86,13 @@ ms.locfileid: "80852331"
   
 #### <a name="to-remove-the-source-server-from-active-directory"></a>從 Active Directory 中移除來源伺服器  
   
-1.  在目的地伺服器上，開啟 [Active Directory 使用者和電腦]。  
+1.  在目的地伺服器上，開啟 [Active Directory 使用者和電腦]****。  
   
-2.  在 [Active Directory 使用者和電腦] 瀏覽窗格中，展開網域名稱，然後再展開 [電腦]。  
+2.  在 [Active Directory 使用者和電腦]**** 瀏覽窗格中，展開網域名稱，然後再展開 [電腦]****。  
   
-3.  如果來源伺服器仍然在伺服器清單中，以滑鼠右鍵按一下來源伺服器名稱，按一下 [刪除]，然後按一下 [是]。  
+3.  如果來源伺服器仍然在伺服器清單中，以滑鼠右鍵按一下來源伺服器名稱，按一下 [刪除]****，然後按一下 [是]****。  
   
-4.  請確認沒有列出來源伺服器，並關閉 [Active Directory 使用者和電腦]。  
+4.  請確認沒有列出來源伺服器，並關閉 [Active Directory 使用者和電腦]****。  
   
 ##  <a name="remove-and-repurpose-the-source-server"></a><a name="BKMK_RemoveTheSourceServer"></a>移除和重新規劃來源伺服器  
  關閉來源伺服器，並中斷其網路連線。 建議您至少一週不要重新格式化來源伺服器，以確保所有必要的資料都移轉到目的地伺服器。 確認已移轉所有資料後，如有必要，您可以在網路上重新安裝這部伺服器，作為其他工作的次要伺服器。  

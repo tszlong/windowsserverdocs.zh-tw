@@ -8,16 +8,16 @@ ms.assetid: d3925f80-552d-431f-b2a6-2af202e50ca4
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 710522f52791f3ee6c1c453c883f4265d08023be
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9f698111bd88619406e47db9d484c2197e91dd83
+ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852341"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83404530"
 ---
 # <a name="step-5-enable-folder-redirection-on-the-destination-server-for-windows-server-essentials-migration"></a>步驟 5：在進行 Windows Server Essentials 移轉的目的地伺服器上啟用資料夾重新導向
 
->適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials
 
 如果來源伺服器上已啟用資料夾重新導向，您可以在目的地伺服器啟用資料夾重新導向，然後刪除舊的資料夾重新導向群組原則設定。  
   
@@ -27,25 +27,25 @@ ms.locfileid: "80852341"
   
 1.  在目的地伺服器上，開啟 [Windows Server Essentials 儀表板]。  
   
-2.  在瀏覽列中，按一下 [裝置]。  
+2.  在瀏覽列中，按一下 [裝置]****。  
   
-3.  在 [裝置工作] 窗格中，按一下 [實作群組原則]。  
+3.  在 [裝置工作]**** 窗格中，按一下 [實作群組原則]****。  
   
-4.  在 [啟用資料夾重新導向群組原則] 頁面上，選取要重新導向的資料夾，然後按一下 [下一步]。  
+4.  在 [啟用資料夾重新導向群組原則]**** 頁面上，選取要重新導向的資料夾，然後按一下 [下一步]****。  
   
-5.  在 [啟用安全性原則設定] 頁面上，按一下 [完成]。  
+5.  在 [啟用安全性原則設定]**** 頁面上，按一下 [完成]****。  
   
 ### <a name="to-delete-the-old-folder-redirection-group-policy-setting"></a>刪除舊的「資料夾重新導向群組原則」設定  
   
-1. 在目的地伺服器上，開啟 [群組原則管理] 系統管理工具。  
+1. 在目的地伺服器上，開啟 [群組原則管理]**** 系統管理工具。  
   
-2. 在**群組原則管理** 中，展開 **樹系：** <em>YourNetworkDomainName</em>，展開 **網域**，展開  *YourNetworkDomainName*，然後展開 **群組原則物件**。  
+2. 在**群組原則管理**] 中，展開 [**樹系：**<em>YourNetworkDomainName</em>]，展開 [**網域**]，展開 [ *YourNetworkDomainName*]，然後展開 [**群組原則物件**]。  
   
-3. 以滑鼠右鍵按一下您想要刪除的原則，然後按一下 [刪除]。  
+3. 以滑鼠右鍵按一下您想要刪除的原則，然後按一下 [刪除]****。  
   
-4. 閱讀警告，然後按一下 [是]。  
+4. 閱讀警告，然後按一下 [是]****。  
   
-5. 關閉 [群組原則管理]。  
+5. 關閉 [群組原則管理]  。  
   
    若要套用資料夾重新導向的變更，網路使用者必須登出電腦，然後再重新登入。 這可確保將所有重新導向資料夾都傳輸到目的地伺服器。  
   
