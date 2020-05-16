@@ -8,16 +8,16 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 05/21/2019
-ms.openlocfilehash: a10cb3b27e3434ab818b41e051edb38ab77626db
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 0190fc05a7bf82e35339d93accae3a998babe166
+ms.sourcegitcommit: 7116460855701eed4e09d615693efa4fffc40006
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80827131"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83433132"
 ---
 # <a name="windows-server-servicing-channels-ltsc-and-sac"></a>Windows Server 維護通道：LTSC 和 SAC
 
->適用於：Windows Server 2019、Windows Server 2016、Windows Server (半年通道)
+> 適用於：Windows Server 2019、Windows Server 2016、Windows Server (半年通道)
 
 Windows Server 客戶有兩個適用的主要發行通道：長期維護通道和半年通道。
 
@@ -27,7 +27,7 @@ Windows Server 客戶有兩個適用的主要發行通道：長期維護通道�
 
 這是您已經熟悉的發行模型 (先前稱為「長期維護*分支*」)，Windows Server 依此模型每隔 2-3 年發行一次新的主要版本。 使用者有權接受 5 年的主要支援和 5 年的延伸支援。 此通道適用於需要較長期維護選項及功能穩定性的系統。 Windows Server 2016 及舊版 Windows Server 的部署不會受到新的半年通道發行影響。 長期維護通道仍將繼續收到安全性及非安全性更新，但無法獲得新特色與新功能。
 
-> [!Note]  
+> [!Note]
 > **目前的長期維護通道 (LTSC) 產品是 Windows Server 2019**。 如果您想要繼續留在這個通道中，就必須安裝 (或繼續使用) Windows Server 2019，而這可使用 [Server Core] 安裝選項或 [含桌面體驗的伺服器] 安裝選項來安裝。
 
 ## <a name="semi-annual-channel"></a>半年通道
@@ -38,7 +38,7 @@ Windows Server 客戶有兩個適用的主要發行通道：長期維護通道�
 
 半年通道可供大量授權客戶搭配[軟體保證](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx)，以及透過 Azure Marketplace 或其他雲端/主機服務提供者和忠誠度方案 (例如 Visual Studio 訂閱) 來享用。
 
-> [!Note]  
+> [!Note]
 > **目前的半年通道版本是 Windows Server 版本 1903**。 如果您想將伺服器加入這個通道，就應該安裝 Windows Server 版本 1903，而您可以在 Server Core 模式下進行安裝，或是將其安裝成執行於容器中的 Nano 伺服器。 不支援從長期維護通道版本中進行就地升級，因為這些升級位在**不同的發行管道**。 半年通道版本未更新 – 這是半年通道中的下一個 Windows Server 版本。
 
 在此模型中，Windows Server 版本可依發行年份及月份來識別：例如，2017 年 9 月發行的版本會以**版本 1709** 做為識別。 半年通道中的 Windows Server 全新版本會每年發行兩次。 每個發行版本的支援週期為 18 個月。
@@ -48,7 +48,7 @@ Windows Server 客戶有兩個適用的主要發行通道：長期維護通道�
 以下是要考慮的關鍵差異：
 
 - 您需要迅速創新嗎？ 您需要優先取得最新的 Windows Server 功能嗎？ 您需要支援快節奏的混合式應用程式、DevOps 和 Hyper-V 網狀架構嗎？ 若是，您應該考慮透過安裝 **Windows Server 版本 1903** 來**加入半年通道**。 如本主題所述，您將會每年收到兩次新版本，每個版本各有 18 個月的主要生產環境支援。 您可以透過大量授權、Azure 或 Visual Studio 訂閱服務取得項目。 目前，如果您想在生產環境中執行產品，半年通道發行需要大量授權和軟體保證。
-- 您需要穩定性與可預測性嗎？ 您需要在實體伺服器上執行虛擬機器和傳統工作負載嗎？ 若是，您應該考慮**將那些伺服器保持在長期維護通道**。 目前的 LTSC 版本是 **Windows Server 2019**。 如本主題所述，您可以每 2-3 年存取新版本，每個版本具備 5 年主要支援外加 5 年延伸支援。 LTSC 版本可透過所有發行機制提供。 無論使用何種授權模型，任何人都能取得 LTSC 中的發行版本。 
+- 您需要穩定性與可預測性嗎？ 您需要在實體伺服器上執行虛擬機器和傳統工作負載嗎？ 若是，您應該考慮**將那些伺服器保持在長期維護通道**。 目前的 LTSC 版本是 **Windows Server 2019**。 如本主題所述，您可以每 2-3 年存取新版本，每個版本具備 5 年主要支援外加 5 年延伸支援。 LTSC 版本可透過所有發行機制提供。 無論使用何種授權模型，任何人都能取得 LTSC 中的發行版本。
 
 下表摘要說明通道間的主要差異：
 
@@ -84,13 +84,13 @@ IT 專業人員有許多工具可以維護 Windows Server。 每個選項都有�
 
 半年通道版本應該安裝為全新安裝。
 
-- 大量授權服務中心 (VLSC)：有[軟體保證](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx)的大量授權客戶可以取得此版本，方式為前往[大量授權服務中心](https://www.microsoft.com/Licensing/servicecenter/default.aspx)並按一下 [登入]  。 然後按一下 [下載和金鑰]  並搜尋此版本。 
+- 大量授權服務中心 (VLSC)：有[軟體保證](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx)的大量授權客戶可以取得此版本，方式為前往[大量授權服務中心](https://www.microsoft.com/Licensing/servicecenter/default.aspx)並按一下 [登入]  。 然後按一下 [下載和金鑰]  並搜尋此版本。
 
 - 半年通道版本也可從 [Microsoft Azure](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.WindowsServer?tab=Overview) 中取得。
 
 - Visual Studio 訂閱：Visual Studio 訂閱者可從 [Visual Studio 訂閱者下載頁面](https://my.visualstudio.com/downloads?pid=2347)中下載半年通道版本。 如果您還不是訂閱者，請前往 [Visual Studio 訂閱](https://www.visualstudio.com/subscriptions/)註冊，然後依上述方式瀏覽 [Visual Studio 訂閱者下載頁面](https://my.visualstudio.com/downloads?pid=2347)。 透過 Visual Studio 訂閱取得的版本僅供開發和測試用途。
 
-- 透過 Windows 測試人員計畫取得預覽版：測試 Windows Server 的早期組建對 Microsoft 及其客戶都有幫助，因為這樣就有機會在發行前發現可能的問題。 同時也能讓客戶把握絕佳機會直接影響產品中的功能。   
+- 透過 Windows 測試人員計畫取得預覽版：測試 Windows Server 的早期組建對 Microsoft 及其客戶都有幫助，因為這樣就有機會在發行前發現可能的問題。 同時也能讓客戶把握絕佳機會直接影響產品中的功能。
 Microsoft 對接收整個開發流程的意見反應有所依賴，藉此可以盡快進行調整。 早期測試和意見反應對快速發行模型極其重要，缺一不可。 若要加入 Windows 測試人員計畫，請參閱[伺服器用 Windows 測試人員計畫文件](https://docs.microsoft.com/windows-insider/at-work/) (英文)。
 
 ## <a name="activating-semi-annual-channel-releases"></a>啟用半年通道版本
@@ -114,15 +114,15 @@ Windows Server 2019 之前發行的半年通道版本使用 Windows Server 2016 
 
 一般而言，Windows Server 2019 之類的長期維護通道版本會與半年通道 (例如 Windows Server 1809 版) 同時發行。 這會讓人難以判斷伺服器是否正在執行半年通道版本。 您必須查看產品名稱，而不是查看組建編號：半年通道版本會使用沒有版本號碼的 Windows Server Standard 或 Windows Server Datacenter 產品名稱，而長期維護通道版本會包含版本號碼，例如 Windows Server 2019 Datacenter。
 
->[!Note]  
+> [!Note]
 > 下列指導方針旨在協助識別和區分 LTSC 以及 SAC，但僅適用於生命週期和一般清查目的。  它不適用於應用程式相容性，也不代表特定的 API 介面。  由於元件、API 和功能在系統的整個生命週期都可以加入或不加入，因此應用程式開發人員應該使用其他地方的指導方針以正確地確保相容性。 [作業系統版本](https://docs.microsoft.com/windows/desktop/SysInfo/operating-system-version)是適用於應用程式開發人員的更好起始點。
 
-開啟 Powershell，然後使用 Get-ItemProperty Cmdlet 或 Get-ComputerInfo Cmdlet 來檢查登錄中的這些內容。  除了組建編號，這也會透過品牌年份的存在 (或缺乏) 來指出 LTSC 或 SAC，也就是 2019。  LTSC 有這個項目，SAC 沒有。  這也會透過 ReleaseId 或 WindowsVersion 傳回發行時間，也就是 1809，以及安裝的是 Server Core 或是具備桌面體驗的伺服器。 
+開啟 Powershell，然後使用 Get-ItemProperty Cmdlet 或 Get-ComputerInfo Cmdlet 來檢查登錄中的這些內容。  除了組建編號，這也會透過品牌年份的存在 (或缺乏) 來指出 LTSC 或 SAC，也就是 2019。  LTSC 有這個項目，SAC 沒有。  這也會透過 ReleaseId 或 WindowsVersion 傳回發行時間，也就是 1809，以及安裝的是 Server Core 或是具備桌面體驗的伺服器。
 
 **具備桌面體驗的 Windows Server 2019 Datacenter Edition (LTSC) 範例：**
 
 ````PowerShell
-Get-ItemProperty -Path HKLM:\Software\Microsoft\Windows NT\CurrentVersion | Select ProductName, ReleaseId, InstallationType, CurrentMajorVersionNumber,CurrentMinorVersionNumber,CurrentBuild
+Get-ItemProperty -Path "HKLM:\Software\Microsoft\Windows NT\CurrentVersion" | Select ProductName, ReleaseId, InstallationType, CurrentMajorVersionNumber,CurrentMinorVersionNumber,CurrentBuild
 ````
 
 ````
@@ -137,7 +137,7 @@ CurrentBuild              : 17763
 **Windows Server 版本 1809 (SAC) Standard Edition Server Core 範例：**
 
 ````PowerShell
-Get-ItemProperty -Path HKLM:\Software\Microsoft\Windows NT\CurrentVersion | Select ProductName, ReleaseId, InstallationType, CurrentMajorVersionNumber,CurrentMinorVersionNumber,CurrentBuild
+Get-ItemProperty -Path "HKLM:\Software\Microsoft\Windows NT\CurrentVersion" | Select ProductName, ReleaseId, InstallationType, CurrentMajorVersionNumber,CurrentMinorVersionNumber,CurrentBuild
 ````
 
 ````
