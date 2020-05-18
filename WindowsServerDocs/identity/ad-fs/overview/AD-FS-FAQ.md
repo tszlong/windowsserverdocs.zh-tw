@@ -5,16 +5,16 @@ description: AD FS 常見問題集
 author: billmath
 ms.author: billmath
 manager: mtillman
-ms.date: 04/17/2019
+ms.date: 04/29/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a1041bdc189238c7da32896e6f867f730e392d24
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: b1b6f7d38c4474ba3f69c4eac0c4569375185eb8
+ms.sourcegitcommit: 6d3f8780b67aa7865a9372cf2c1e10c79ebea8b1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80814428"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82587663"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>AD FS 常見問題集 (FAQ)
 
@@ -72,6 +72,9 @@ AD FS 支援多樹系設定，且依賴基礎 AD DS 信任網路來驗證橫跨�
 
 >[!NOTE]  
 >如果選用驗證搭配雙向信任設定使用，請確定呼叫端使用者已獲得目標服務帳戶的「允許驗證」權限。 
+
+### <a name="does-ad-fs-extranet-smart-lockout-support-ipv6"></a>AD FS 外部網路智慧鎖定是否支援 IPv6？
+是，您可以考慮為熟悉/未知的位置使用 IPv6 位址。
 
 
 ## <a name="design"></a>設計
@@ -310,3 +313,11 @@ ADFS 和 Web 應用程式伺服器支援任何不會在端點上執行 SSL 終�
 
 ### <a name="can-i-estimate-the-size-of-the-adfsartifactstore-before-enabling-esl"></a>我可以在啟用 ESL 之前，先估計 ADFSArtifactStore 的大小嗎？
 若啟用 ESL，AD FS 會追蹤 ADFSArtifactStore 資料庫中使用者的帳戶活動和已知位置。 此資料庫的大小會隨著所追蹤的使用者數目和已知位置數目而相對調整。 規劃要啟用 ESL 時，您可以估計 ADFSArtifactStore 資料庫的大小，以每 10 萬個使用者最多 1GB 的速率成長。 如果 AD FS 伺服器陣列使用 Windows 內部資料庫 (WID)，則資料庫檔案的預設位置為 C:\Windows\WID\Data。 若要避免填滿此磁碟機，請在啟用 ESL 之前，先確定您至少有 5GB 的可用儲存體。 除了磁碟儲存體以外，請在啟用 ESL 之後，針對總處理序記憶體進行規劃，50 萬或更少使用者人口數最多可成長額外 1GB 的 RAM。
+
+### <a name="i-am-seeing-event-570-active-directory-trust-enumeration-was-unable-to-enumerate-one-of-more-domains-due-to-the-following-error-enumeration-will-continue-but-the-active-directory-identifier-list-may-not-be-correct-validate-that-all-expected-active-directory-identifiers-are-present-by-running-get-adfsdirectoryproperties-on-ad-fs-2019-what-is-the-mitigation-for-this-event"></a>我在 AD FS 2019 上看到「事件 570」(Active Directory 信任列舉因下列錯誤而無法列舉一或多個網域。 列舉將會繼續，但 Active Directory 識別碼清單可能不正確。 請執行 Get-ADFSDirectoryProperties 來驗證所有預期的 Active Directory 識別碼都已存在)。 要如何緩解此事件？
+當 AD FS 嘗試列舉受信任樹系鏈結中的所有樹系並連結所有樹系，但樹系卻不受信任時，就會發生此事件。 例如，如果 AD FS 樹系 A 和樹系 B 受信任，而樹系 B 和樹系 C 受信任，則 AD FS 會將這三個樹系全都列舉出來，並嘗試尋找樹系 A 和 C 之間的信任。如果失敗樹系中的使用者應由 AD FS 進行驗證，則請設定 AD FS 樹系與失敗樹系之間的信任。 如果失敗樹系中的使用者不應由 AD FS 驗證，則請忽略此錯誤。
+
+### <a name="i-am-seeing-an-event-id-364-microsoftidentityserverauthenticationfailedexception-msis5015-authentication-of-the-presented-token-failed-token-binding-claim-in-token-must-match-the-binding-provided-by-the-channel-what-should-i-do-to-resolve-this"></a>我看到「事件識別碼 364：Microsoft.IdentityServer.AuthenticationFailedException：MSIS5015：所出示的權杖驗證失敗。 權杖中的權杖繫結宣告必須符合通道所提供的繫結。」 我該怎麼做才能解決此問題？
+在 AD FS 2016 中，權杖繫結會自動啟用，並導致造成此錯誤的 Proxy 和同盟案例發生多個已知問題。 若要解決此問題，請執行下列 Powershell 命令，並移除權杖繫結支援。
+
+`Set-AdfsProperties -IgnoreTokenBinding $true`

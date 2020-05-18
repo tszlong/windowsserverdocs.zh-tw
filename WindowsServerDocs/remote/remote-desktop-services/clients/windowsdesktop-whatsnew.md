@@ -7,14 +7,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 04/14/2020
+ms.date: 05/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 016a88999b93d686faff73134a660014fd602765
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: de7c685e544fd0bb193f995aeff3a20a29bd6db5
+ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81279694"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235047"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面用戶端的新功能
 
@@ -26,14 +26,32 @@ ms.locfileid: "81279694"
 
 |使用者群組 |版本  |
 |-----------|---------|
-|公用     |1.2.790  |
-|Insider    |1.2.940  |
+|公用     |1.2.945  |
+|Insider    |1.2.1009 |
 
-## <a name="updates-for-version-12940"></a>1\.2.940 版的更新
+## <a name="updates-for-version-121009"></a>1\.2.1009 版的更新
 
-*發行日期：* 04/14/2020
+*發行日期：2020/05/12*
 
-下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4txZU)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4txZV)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4tM6I)
+下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wseE)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wnf3)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wCIB)
+
+- 已新增新的 [連線資訊]  對話方塊，以提供桌面和應用程式工作階段的用戶端、網路和伺服器詳細資料。 在全螢幕模式下，您可以從連線列存取此對話方塊，而在視窗模式下，則可以從 [系統] 功能表存取。
+- 在視窗模式下啟動的桌面工作階段現在一律會最大化，而不是在視窗最大化時進入全螢幕模式。 使用 [系統] 功能表中的 [全螢幕]  選項，即可進入全螢幕模式。
+- 取消訂閱提示現在會顯示警告圖示，並以項目符號清單的方式顯示工作區名稱。
+- 已在其他錯誤對話方塊中新增 [詳細資料] 區段，以協助診斷問題。
+- 已在錯誤對話方塊的 [詳細資料] 區段中新增時間戳記。
+- 已修正下列問題：RDP 檔案設定 **desktop size id** 無法正常運作。
+- 已修正下列問題：在啟動工作階段之後未套用 [調整大小時更新解析度]  顯示器設定。
+- 已修正 [桌面設定] 面板中的當地語系化問題。
+- 已修正在 [桌面設定] 面板上透過 Tab 鍵瀏覽控制項時的焦點方塊大小。
+- 已修正會導致資源名稱在高對比模式下不易辨識的問題。
+- 已修正會導致動作中心內的更新通知每天顯示多次的問題。
+
+## <a name="updates-for-version-12945"></a>1\.2.945 版的更新
+
+*發行日期：2020/04/28*
+
+下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4vhNM)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4vhNO)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4vuSV)
 
 - 當您以滑鼠右鍵按一下連線中心上的桌面圖示時，就可以新增桌面連線的 [顯示設定] 選項。
   - 現在有三個顯示組態選項：**所有顯示**、**單一顯示**，以及**選取 顯示**。
@@ -42,8 +60,11 @@ ms.locfileid: "81279694"
   - 我們已在所有顯示的中新增新的**使用視窗型時單一顯示**選項，並選取顯示模式。 當您結束全螢幕模式時，這個選項會自動將您的工作階段切換為單一顯示，當您將視窗最大化時，會自動返回多個顯示。
 - 我們已將新的**顯示設定**群組新增至系統功能表；以滑鼠右鍵按一下視窗型桌面工作階段的標題列時即會顯示。 這可讓您在工作階段期間動態變更一些設定。 例如，您可以變更新的**使用視窗型時單一顯示模式**和**將目前顯示最大化**設定。
 - 結束全螢幕並第一次進入全螢幕時，工作階段視窗會回到其原始位置。
+- 工作區的背景重新整理已變更為每四小時一次，而不是每小時一次。 現在會在啟動用戶端時自動重新整理。
 - 從「關於」頁面重設使用者資料時，現在會在完成時將您重新導向至「連線中心」，而不是關閉用戶端。
+- 桌面連線的 [系統] 功能表項目已重新排序，而且 [說明] 主題現在會指向用戶端文件。
 - 使用 Tab 鍵瀏覽和螢幕讀取器解決了一些協助工具問題。
+- 已修正下列問題：[Azure Active Directory 驗證] 對話方塊出現在工作階段視窗後面。
 - 已修正在不同縮放比例的顯示之間拖曳桌面工作階段視窗時，發生閃爍和壓縮的問題。
 - 已修正重新導向相機時發生的錯誤。
 - 已修正多個損毀問題以改善可靠性。

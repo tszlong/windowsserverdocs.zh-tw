@@ -8,14 +8,14 @@ ms.date: 12/12/2019
 ms.topic: article
 author: Heidilohr
 manager: lizross
-ms.openlocfilehash: 79db56d467ae0913446faebffc5a9598aae0b767
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: ba084c58e725627e838c07b5b5b9849d131b2038
+ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80852991"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83203542"
 ---
-# <a name="network-guidance"></a>網路指導方針
+# <a name="network-guidelines"></a>網路指導方針
 
 使用遠端 Windows 工作階段時，您網路的可用頻寬會大幅影響您的體驗品質。 不同的應用程式和顯示器解析度需要不同的網路組態，因此請務必確定您的網路已妥善設定而符合您的需求。
 

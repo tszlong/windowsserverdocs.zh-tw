@@ -7,21 +7,44 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 04/03/2020
+ms.date: 05/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 69e33ef5f187672d948b6734a9ae7f68b54b7608
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 0943379b8f251d1548a0aa920a95931dc39a0624
+ms.sourcegitcommit: 67116322915066b85decb4261d47cedec2cfe12f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80854651"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82903453"
 ---
 # <a name="whats-new-in-the-ios-client"></a>iOS 用戶端中的新功能
 
 我們會定期更新[適用於 iOS 的遠端桌面用戶端](remote-desktop-ios.md)，並新增功能和修正問題。 您可以在此頁面上找到最新的更新。
 
->[!IMPORTANT]
->我們致力於讓此應用程式成為 iOS 最佳的遠端桌面用戶端，並且非常重視您的意見反應。 您可以在 [說明]   > [報告問題]  中回報任何問題。
+## <a name="how-to-report-issues"></a>如何回報問題
+
+我們致力於讓 iOS 的遠端桌面用戶端發揮出最佳效果，因此我們非常重視您的意見反應。 您可以在 [說明]   > [報告問題]  中回報任何問題。
+
+## <a name="updates-for-version-1007"></a>10.0.7 版的更新
+
+*發行日期：2020/4/29*
+
+在此更新中，我們新增了依名稱或上次連線時間來排序電腦清單檢視的功能 (適用於 iPhone)。
+
+## <a name="updates-for-version-1006"></a>10.0.6 版的更新
+
+*發行日期：2020/3/31*
+
+是時候快速更新某些錯誤修正了。 以下是此版本的新功能：
+
+- 已修正一些 VoiceOver 協助工具問題。
+- 已修正使用者無法使用土耳其文認證來連線的問題。
+- 切換器 UI 中顯示的工作階段現在會依啟動時間來排序。
+- 現在，選取 [連線中心] 中的 [上一頁] 按鈕會帶您回到上一個使用中的工作階段。
+- 現在當您透過切換從用戶端離開並前往另一個應用程式時，便會釋放 Swiftpoint 滑鼠。
+- 已改善與 Windows 虛擬桌面服務的互通性。
+- 已修正在報告錯誤時所出現的當機情形。
+
+我們感謝您透過 App Store、應用程式內意見反應，以及電子郵件傳送給我們的所有意見。 此外，特別感謝大家與我們一同合作來診斷問題。
 
 ## <a name="updates-for-version-1005"></a>10.0.5 版的更新
 

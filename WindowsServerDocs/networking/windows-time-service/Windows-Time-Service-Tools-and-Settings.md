@@ -7,12 +7,12 @@ ms.date: 02/24/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 7e7a233d17d8f2e32286a0869b283e450a34bbbc
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 2f6ba34381e813247d0838853f688abf13fbd2fa
+ms.sourcegitcommit: 1d83ca198c50eef83d105151551c6be6f308ab94
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80860141"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82605538"
 ---
 # <a name="windows-time-service-tools-and-settings"></a>Windows 時間服務工具和設定
 
@@ -307,7 +307,7 @@ Windows 時間服務會將資訊儲存在下列登錄子機碼下：
 |**LargeSampleSkew** |所有版本 |指定用於記錄的大型樣本誤差 (以秒為單位)。 為了遵守美國證券交易委員會 (SEC) 的規範，此值應設為三秒。 只有在已為 0x2 大型樣本誤差明確設定 **EventLogFlags** 時，才會記錄此設定的事件。 網域成員上的預設值是 3。 獨立用戶端和伺服器上的預設值是 3。 |
 |**ResolvePeerBackOffMaxTimes** |所有版本 |指定當為了找到要與其同步的對等所做的嘗試重複失敗時，要將等候間隔加倍的失敗次數上限。 值為 0 表示等候間隔一律為最小值。 網域成員上的預設值是 **7**。 獨立用戶端和伺服器上的預設值是 **7**。 |
 |**ResolvePeerBackoffMinutes** |所有版本 |指定一開始要等候多久的間隔 (以分鐘為單位)，才嘗試找出要與其同步的對等。 網域成員上的預設值是 **15**。 獨立用戶端和伺服器上的預設值是 **15**。  |
-|**SpecialPollInterval** |所有版本 |指定手動對等的特殊輪詢間隔 (以秒為單位)。 已啟用 **SpecialInterval** 0x1 旗標時，W32Time 將會使用此輪詢間隔，而不是作業系統所決定的輪詢間隔。 網域成員上的預設值是 **3,600**。 獨立用戶端和伺服器上的預設值是 **604,800**。<br/><br/>**SpecialPollInterval** 對組建 1702 來說是新項目，會包含在 **MinPollInterval** 和 **MaxPollInterval** 設定的登錄值中。|
+|**SpecialPollInterval** |所有版本 |指定手動對等的特殊輪詢間隔 (以秒為單位)。 已啟用 **SpecialInterval** 0x1 旗標時，W32Time 將會使用此輪詢間隔，而不是作業系統所決定的輪詢間隔。 網域成員上的預設值是 **3,600**。 獨立用戶端和伺服器上的預設值是 **604,800**。<br/><br/>**SpecialPollInterval** 對組建 1703 來說是新項目，會包含在 **MinPollInterval** 和 **MaxPollInterval** 設定的登錄值中。|
 |**SpecialPollTimeRemaining** |所有版本 |由 W32Time 維護。 其包含 Windows 作業系統所使用的保留資料。 其會指定 W32Time 要在電腦重新啟動後多久 (以秒為單位) 才會重新同步。 對此設定所做的任何變更都會導致無法預期的結果。 網域成員和獨立用戶端與伺服器上的預設值會保留空白。 |
 
 ### <a name="hklmsystemcurrentcontrolsetservicesw32timetimeprovidersntpserver-subkey-entries"></a><a id="ntpserver"></a>"HKLM\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpServer" 子機碼項目

@@ -8,14 +8,14 @@ ms.date: 12/02/2019
 ms.topic: article
 author: Heidilohr
 manager: lizross
-ms.openlocfilehash: 1d6a7daa3966488c951117b083411587d13be56b
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: beacd246639b5586c071a24bdd7b09c6aceeadab
+ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857101"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83203390"
 ---
-# <a name="virtual-machine-sizing-guidance"></a>虛擬機器大小指引
+# <a name="virtual-machine-sizing-guidelines"></a>虛擬機器縮放指導方針
 
 無論您是在遠端桌面服務或 Windows 虛擬桌面上執行虛擬機器，不同類型的工作負載需要不同的工作階段主機虛擬機器 (VM) 設定。 為了獲得最佳體驗，請根據您的使用者需求來調整部署。
 

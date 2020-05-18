@@ -8,12 +8,12 @@ ms.assetid: d54a1f5e-af68-497e-99be-97775769a7a7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimp
-ms.openlocfilehash: 510ad2cb1449f161658684eeceec4dbbb7ce6699
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 307da083db2e5cc76c4eda825f0e080d7f026821
+ms.sourcegitcommit: 7288aca86fc76b9ff6177a17027118d1f21707a9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857091"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83380691"
 ---
 # <a name="remote-server-administration-tools"></a>遠端伺服器管理工具
 
@@ -48,11 +48,11 @@ RSAT 可讓 IT 系統管理員從 Windows 10 電腦管理 Windows Server 的角�
 
 若要使用此版本的伺服器管理員存取和管理執行 Windows Server 2012 R2、Windows Server 2012 或 Windows Server 2008 R2 的遠端伺服器，您必須安裝數個更新，才能使用伺服器管理員來管理這些舊版的 Windows Server 作業系統。 如需如何準備 Windows Server 2012 R2、Windows Server 2012 和 Windows Server 2008 R2，以便在適用於 WIndows 10 的遠端伺服器管理工具中使用伺服器管理員加以管理的相關資訊，請參閱[使用伺服器管理員管理多部遠端伺服器](https://technet.microsoft.com/library/hh831456.aspx)。
         
-您必須在遠端伺服器上啟用 Windows PowerShell 和伺服器管理員遠端管理，才能使用屬於適用於 Windows 10 的遠端伺服器管理工具來加以管理。 在執行 Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 的伺服器上，預設會啟用遠端管理。 如需遠端管理停用時如何啟用的詳細資訊，請參閱＜ [使用伺服器管理員管理多部遠端伺服器](https://go.microsoft.com/fwlink/p/?LinkId=241358)＞。
+您必須在遠端伺服器上啟用 Windows PowerShell 和伺服器管理員遠端管理，才能使用屬於適用於 Windows 10 的遠端伺服器管理工具的工具來管理它們。 在執行 Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 的伺服器上，預設會啟用遠端管理。 如需遠端管理停用時如何啟用的詳細資訊，請參閱＜ [使用伺服器管理員管理多部遠端伺服器](https://go.microsoft.com/fwlink/p/?LinkId=241358)＞。
         
 ## <a name="install-uninstall-and-turn-offon-rsat-tools"></a>安裝、解除安裝和關閉/開啟 RSAT 工具        
 
-### <a name="use-features-on-demand-fod-to-install-specific-rsat-tools-on-windows-10-october-2018-update-----r-l----ter"></a>使用功能隨選安裝 (FoD) 在 Windows 10 2018 年 10 月更新或更高版本上安裝特定的 RSAT 工具
+### <a name="use-features-on-demand-fod-to-install-specific-rsat-tools-on-windows-10-october-2018-update-or-later"></a>使用功能隨選安裝 (FoD) 在 Windows 10 2018 年 10 月更新或更高版本上安裝特定的 RSAT 工具。
 
 從 Windows 10 2018 年 10 月更新開始，RSAT 會以一組**功能隨選安裝**的形式納入 Windows 10。 現在，您無需下載 RSAT 套件，只需移至 [設定]  中的 [管理選用功能]  ，然後按一下 [新增功能]  ，就能查看可用的 RSAT 工具清單。 選取並安裝所需的特定 RSAT 工具。 若要查看安裝進度，請按一下 [返回]  按鈕，以在 [管理選用功能]  頁面上查看狀態。
         
@@ -91,7 +91,7 @@ RSAT 可讓 IT 系統管理員從 Windows 10 電腦管理 Windows Server 的角�
 
 5.  安裝需要數分鐘的時間才會完成。    
         
-##### <a name="to-uninstall-remote-server-administration-tools-for-windows-10-----aft----r-rsat-package-install"></a>將適用於 Windows 10 的遠端伺服器管理工具解除安裝 (安裝 RSAT 套件之後)
+##### <a name="to-uninstall-remote-server-administration-tools-for-windows-10-after-rsat-package-install"></a>將適用於 Windows 10 的遠端伺服器管理工具解除安裝 (安裝 RSAT 套件之後)
         
 1. 在桌面上依序按一下 [開始]  、[所有應用程式]  、[Windows 系統]  ，然後按 [控制台]  。
 
@@ -103,9 +103,9 @@ RSAT 可讓 IT 系統管理員從 Windows 10 電腦管理 Windows Server 的角�
 
 5. 當詢問您是否確定要解除安裝更新時，按一下 [是]  。
    S
-   ##### <a name="to-turn----off-specific-tools-after-rsat-package-in----tall"></a>關閉特定工具 (安裝 RSAT 套件之後)
+   ##### <a name="to-turn-off-specific-tools-after-rsat-package-install"></a>關閉特定工具 (安裝 RSAT 套件之後)
         
-6. 在桌面上依序按一下 [開始]  、[所有應用程式]  、[Windows 系統]  ，然後按一下 [控制台]  。
+6. 在桌面上依序按一下 [開始]  、[所有應用程式]  、[Windows 系統]  ，然後按 [控制台]  。
 
 7. 按一下 [程式集]  ，然後按一下 [程式和功能]  中的 [開啟或關閉 Windows 功能]  。
 
@@ -131,7 +131,7 @@ RSAT 可讓 IT 系統管理員從 Windows 10 電腦管理 Windows Server 的角�
 
 在適用於 Windows 10 的遠端伺服器管理工具中，所有 GUI 型伺服器管理工具 (例如 MMC 嵌入式管理單元和對話方塊) 都可由伺服器管理員主控台的 [工具]  功能表存取。 雖然執行「適用於 Windows 10 的遠端伺服器管理工具」的電腦執行的是用戶端型作業系統，但在安裝這些工具之後，預設會在用戶端電腦自動開啟「適用於 Windows 10 的遠端伺服器管理工具」隨附的伺服器管理員。 請注意，在用戶端電腦上執行的伺服器管理員主控台中沒有 [本機伺服器]  頁面。
 
-##### <a name="to-start-server-manager-on-a-clien-----co----puter"></a>在用戶端電腦上啟動伺服器管理員
+##### <a name="to-start-server-manager-on-a-client-computer"></a>在用戶端電腦上啟動伺服器管理員
 
 1.  在 [開始]  功能表上，按一下 [所有應用程式]  ，然後按 [管理工具]  。
 

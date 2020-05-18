@@ -1,6 +1,6 @@
 ---
 title: 用於取得大量啟用資訊的 Slmgr.vbs 選項
-description: 列出 Slmg.vbs 指令碼可用的選項並說明其使用方式
+description: 列出 Slmgr.vbs 指令碼可用的選項並說明其使用方式
 ms.date: 09/24/2019
 ms.technology: server-general
 ms.topic: article
@@ -12,12 +12,12 @@ appliesto:
 - Windows Server 2012 R2
 - Windows 10
 - Windows 8.1
-ms.openlocfilehash: e3e4b4d236672ce310c8a0eb038d0e19f936a5d2
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 25c12322ef648655a301931c9273e8d941ebe62e
+ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826341"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235226"
 ---
 # <a name="slmgrvbs-options-for-obtaining-volume-activation-information"></a>用於取得大量啟用資訊的 Slmgr.vbs 選項
 
