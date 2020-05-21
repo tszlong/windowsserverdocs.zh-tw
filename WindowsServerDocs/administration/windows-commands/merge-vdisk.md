@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1bfcdde34d2c7dd6146222d04e982aa1ec8009c2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: cec8eeaa80436dbb34eb055950169b6895efa544
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723995"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83437143"
 ---
 # <a name="merge-vdisk"></a>合併 vdisk
 
@@ -28,12 +28,12 @@ ms.locfileid: "82723995"
 > merge vdisk depth=<n>
 > ```
 > #### <a name="parameters"></a>參數
-> 
+>
 > | 參數 |                                                                                    描述                                                                                    |
 > |-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 > | 深度 =<n> | 指出要合併在一起的父系 VHD 檔案數目。 例如，**深度 = 1**表示差異 VHD 將與差異鏈的一個層級合併。 |
-> 
-> ## <a name="remarks"></a>備註
+>
+>#### <a name="remarks"></a>備註
 > - 必須選取並卸離 VHD，此作業才能成功。 使用 [**選取 vdisk** ] 命令來選取 VHD，並將焦點移至它。
 > - 此參數會修改父 VHD。 因此，相依于父系的其他差異 Vhd 將不再有效。
 >   ## <a name="examples"></a>範例

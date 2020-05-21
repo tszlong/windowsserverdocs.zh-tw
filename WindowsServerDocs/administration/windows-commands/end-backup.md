@@ -1,6 +1,6 @@
 ---
 title: 結束備份
-description: '* * * * 的參考主題'
+description: End backup 命令的參考主題，它會結束完整的備份會話，並在必要時，以適當的寫入器狀態發出**BackupComplete**事件。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,17 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 941ab648c4811facd284d49a4797e50ba5241ee6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 6d9cb3cbf474b5306a1cac7df4516f0492740591
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720852"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436903"
 ---
 # <a name="end-backup"></a>結束備份
-
-
-
 
 結束完整的備份會話，並視需要發出具有適當寫入器狀態的**BackupComplete**事件。
 
@@ -28,10 +25,6 @@ ms.locfileid: "82720852"
 ```
 end backup
 ```
-
-## <a name="remarks"></a>備註
-
--   此命令應該用於所有完整備份。
 
 ## <a name="additional-references"></a>其他參考
 

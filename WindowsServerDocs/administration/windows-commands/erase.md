@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0ec812e9a455cc0060a3f0a6be4d0e7227821a0b
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 96e0f97e27de8933de44c437508ef59803765771
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82992382"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83437123"
 ---
 # <a name="erase"></a>erase
 
@@ -44,7 +44,7 @@ del [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
 
 #### <a name="remarks"></a>備註
 
-- 如果您使用`erase /p`命令，您會看到下列訊息：
+- 如果您使用 `erase /p` 命令，您會看到下列訊息：
 
     `FileName, Delete (Y/N)?`
 
@@ -52,7 +52,7 @@ del [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
 
 - 如果您停用命令延伸模組， **/s**參數會顯示找不到的任何檔案名，而不是顯示正在刪除之檔案的名稱。
 
-- 如果您在`<names>`參數中指定特定的資料夾，則也會一併刪除所有包含的檔案。 例如，如果您想要刪除*\work*資料夾中的所有檔案，請輸入：
+- 如果您在參數中指定特定 `<names>` 的資料夾，則也會一併刪除所有包含的檔案。 例如，如果您想要刪除*\work*資料夾中的所有檔案，請輸入：
 
   ```
   erase \work
@@ -73,7 +73,7 @@ del [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
   > [!NOTE]
   > 使用萬用字元搭配**清除**命令之前，請使用相同的萬用字元與**dir**命令，列出將要刪除的所有檔案。
 
-## <a name="examples"></a>範例
+### <a name="examples"></a>範例
 
 若要刪除磁片磁碟機 C 上名為 Test 的資料夾中的所有檔案，請輸入下列其中一項：
 

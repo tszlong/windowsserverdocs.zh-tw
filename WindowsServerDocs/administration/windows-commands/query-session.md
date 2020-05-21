@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a7a119cda5fad594638211bfcdbdc269fff13d20
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 6b0d122beac43abfd826cb406adac4aa277fc72e
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722708"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436273"
 ---
 # <a name="query-session"></a>query session
 
@@ -30,7 +30,7 @@ ms.locfileid: "82722708"
 > query session [<SessionName> | <UserName> | <SessionID>] [/server:<ServerName>] [/mode] [/flow] [/connect] [/counter]
 > ```
 > ### <a name="parameters"></a>參數
-> 
+>
 > |      參數       |                                                      描述                                                      |
 > |----------------------|-----------------------------------------------------------------------------------------------------------------------|
 > |    <SessionName>     |                               指定您想要查詢之會話的名稱。                               |
@@ -42,8 +42,8 @@ ms.locfileid: "82722708"
 > |       /connect       |                                          顯示目前的連接設定。                                           |
 > |       /counter       | 顯示目前的計數器資訊，包括建立、中斷連線和重新連線的會話總數。 |
 > |          /?          |                                         在命令提示字元顯示說明。                                          |
-> 
-> ## <a name="remarks"></a>備註
+>
+>#### <a name="remarks"></a>備註
 > - 使用者一律可以查詢使用者目前登入的會話。 若要查詢其他會話，使用者必須擁有「查詢資訊」特殊存取權限。
 > - 如果您未使用 <*SessionName*>、<使用者*名稱*> 或 <*SessionID*> 指定會話，則**查詢會話**會顯示系統中所有使用中會話的相關資訊。
 > - 當**查詢會話**傳回信息時，會在目前的會話之前顯示大於（>）符號。 以下是**查詢會話**的範例輸出：
@@ -67,6 +67,6 @@ ms.locfileid: "82722708"
 >   query session modeM02
 >   ```
 >   ## <a name="additional-references"></a>其他參考
->   - [命令列語法索引鍵](command-line-syntax-key.md)
->   [查詢](query.md)
+>   - [命令列語法索引鍵](command-line-syntax-key.md) 
+>   [查詢](query.md) 
 >   [遠端桌面服務（終端機服務）命令參考](remote-desktop-services-terminal-services-command-reference.md)

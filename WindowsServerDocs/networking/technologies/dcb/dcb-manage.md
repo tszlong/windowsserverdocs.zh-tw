@@ -8,18 +8,18 @@ ms.assetid: 1575cc7c-62a7-4add-8f78-e5d93effe93f
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d61287b82cd6d3b869b1120d3cb21b3c8792bd1e
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: cdfcf65f762015ceeaa20b99543ffb772e60d1a6
+ms.sourcegitcommit: 29f7a4811b4d36d60b8b7c55ce57d4ee7d52e263
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312755"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83716863"
 ---
 # <a name="manage-data-center-bridging-dcb"></a>管理資料中心橋接（DCB）
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-本主題提供有關如何使用 Windows PowerShell 命令，在執行 Windows Server 2016 或 Windows 10 的電腦上安裝的 DCB\-相容網路介面卡上設定資料中心橋接 \(DCB\) 的指示。
+本主題提供有關如何在執行 \( \) \- windows Server 2016 或 windows 10 的電腦上安裝的 DCB 相容網路介面卡上，使用 Windows PowerShell 命令來設定資料中心橋接 DCB 的指示。
 
 ## <a name="install-dcb-in-windows-server-2016-or-windows-10"></a>在 Windows Server 2016 或 Windows 10 中安裝 DCB
 
@@ -30,7 +30,7 @@ ms.locfileid: "80312755"
 
 在 Windows Server 2016 之前，所有 DCB 設定都會通用套用到支援 DCB 的所有網路介面卡。 
 
-在 Windows Server 2016 中，您可以將 DCB 設定套用至全域原則存放區，或套用至個別原則存放區\(\)。 套用個別原則時，它們會覆寫所有全域原則設定。
+在 Windows Server 2016 中，您可以將 DCB 設定套用至全域原則存放區，或套用至個別的原則存放區 \( \) 。 套用個別原則時，它們會覆寫所有全域原則設定。
 
 流量類別、PFC 和應用程式優先順序指派在系統層級的設定，在您執行下列動作之前，都不會套用在網路介面卡上。
 
@@ -109,7 +109,7 @@ DCB 設定包括下列步驟。
     SMB  ETS   30   4Global
       
 
-根據預設，所有 802.1 p 值都會對應至預設流量類別，其具有100% 的實體連結頻寬。 **Get-netqostrafficclass**命令會建立新的流量類別，以對應標記為 802.1 p 優先順序值4的任何封包。 \(\) 的傳輸選擇演算法已 ETS，且有30% 的頻寬。
+根據預設，所有 802.1 p 值都會對應至預設流量類別，其具有100% 的實體連結頻寬。 **Get-netqostrafficclass**命令會建立新的流量類別，以對應標記為 802.1 p 優先順序值4的任何封包。 會 ETS 傳輸選取 \( 演算法 \) ，並具有30% 的頻寬。
 
 您最多可以建立7個新的流量類別。 包括預設的流量類別，系統中最多可以有8個流量類別。 不過，具備 DCB 功能的網路介面卡可能不支援硬體中的許多流量類別。 如果您建立的流量類別比可容納在網路介面卡上的更多，而且您在該網路介面卡上啟用 DCB，則迷你埠驅動程式會向作業系統報告錯誤。 錯誤會記錄在事件記錄檔中。
 
@@ -144,11 +144,11 @@ DCB 設定包括下列步驟。
 
 建立流量類別之後，您可以單獨變更其設定。 您可以變更的設定包括：
 
-1. 頻寬配置 \(-BandwidthPercentage\)
+1. 頻寬配置 \( -BandwidthPercentage\)
 
-2. TSA （\-演算法\)
+2. TSA （ \- 演算法\)
 
-3. 優先順序對應 \(-優先順序\)
+3. 優先順序對應 \( -優先順序\)
 
 ### <a name="remove-a-traffic-class"></a>移除流量類別
 
@@ -175,7 +175,7 @@ DCB 設定包括下列步驟。
 
 上述所有範例都會設定全域原則。 以下範例說明如何設定及取得每個 NIC 的原則。 
 
-"PolicySet" 欄位會從 Global 變更為 AdapterSpecific。 顯示 AdapterSpecific 原則時，也會顯示介面索引 \(ifIndex\) 和介面名稱 \(ifAlias\)。
+"PolicySet" 欄位會從 Global 變更為 AdapterSpecific。 顯示 AdapterSpecific 原則時， \( 也會顯示 [介面索引 ifIndex] \) 和 [介面名稱] \( ifAlias \) 。
 
 ```
 PS C:\> Get-NetQosTrafficClass
@@ -304,13 +304,13 @@ Priority   Enabled    PolicySet        IfIndex IfAlias
 ### <a name="create-qos-policy"></a>建立 QoS 原則
 
 ```
-PS C:\> New-NetQosPolicy -Name "SMB Policy" -PriorityValue8021Action 4
+PS C:\> New-NetQosPolicy -Name "SMB Policy" -SMB -PriorityValue8021Action 4
 
 Name           : SMB Policy
 Owner          : Group Policy (Machine)
 NetworkProfile : All
 Precedence     : 127
-JobObject      :
+Template       : SMB
 PriorityValue  : 4
 
 ```
@@ -381,6 +381,7 @@ Name           : SMB Policy
 Owner          : Group Policy (Machine)
 NetworkProfile : All
 Precedence     : 127
+Template       : SMB
 JobObject      :
 PriorityValue  : 4
 
@@ -476,12 +477,12 @@ Windows Server 2016 和 Windows Server 2012 R2 都有 DCB 的 Windows PowerShell
 
 ### <a name="windows-server-2016-windows-powershell-commands-for-dcb"></a>適用于 DCB 的 windows Server 2016 Windows PowerShell 命令
 
-下列適用于 Windows Server 2016 的主題提供 Windows PowerShell Cmdlet 描述和語法，適用于所有資料中心橋接 \(DCB\) 服務品質 \(QoS\)\-特定 Cmdlet。 也依 Cmdlet 開頭的動詞，按字母順序列出 Cmdlets。
+下列適用于 Windows Server 2016 的主題提供 Windows PowerShell Cmdlet 的說明和語法，適用于所有的資料中心橋接 \( DCB \) 服務 \( QoS \) \- 特定 Cmdlet 的品質。 Cmdlet 清單以 Cmdlet 開頭動詞的字母順序排列。
 
 - [DcbQoS 模組](https://technet.microsoft.com/itpro/powershell/windows/dcbqos/dcbqos)
 
 ### <a name="windows-server-2012-r2-windows-powershell-commands-for-dcb"></a>適用于 DCB 的 windows Server 2012 R2 Windows PowerShell 命令
 
-下列適用于 Windows Server 2012 R2 的主題提供 Windows PowerShell Cmdlet 描述和語法，適用于所有資料中心橋接 \(DCB\) 服務品質 \(QoS\)\-特定 Cmdlet。 也依 Cmdlet 開頭的動詞，按字母順序列出 Cmdlets。
+下列適用于 Windows Server 2012 R2 的主題提供 Windows PowerShell Cmdlet 的說明和語法，適用于所有資料中心橋接 \( DCB \) 服務 \( QoS \) \- 特定 Cmdlet 的品質。 Cmdlet 清單以 Cmdlet 開頭動詞的字母順序排列。
 
-- [Windows PowerShell 中的資料中心橋接（DCB）服務品質（QoS） Cmdlet](https://technet.microsoft.com/library/hh967440.aspx)
+- [Windows PowerShell 中的資料中心橋接 (DCB) 服務品質 (QoS) Cmdlet](https://technet.microsoft.com/library/hh967440.aspx)

@@ -9,19 +9,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 43108fad0e1981bffd110264809acf30c1c12ba1
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: eb4a9fa3105247695f1a50e5fc483ce608cd4816
+ms.sourcegitcommit: 7116460855701eed4e09d615693efa4fffc40006
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725009"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83433122"
 ---
 # <a name="ftype"></a>ftype
 
 
 
-顯示或修改副檔名關聯中所使用的檔案類型。 如果在沒有指派運算子（**=**）的情況下使用， **ftype**會針對指定的檔案類型顯示目前開啟的命令字串。 如果在沒有參數的情況下使用， **ftype**會顯示已定義 open 命令字串的檔案類型。
+顯示或修改副檔名關聯中所使用的檔案類型。 如果在沒有指派運算子（）的情況 **=** 下使用， **ftype**會針對指定的檔案類型顯示目前開啟的命令字串。 如果在沒有參數的情況下使用， **ftype**會顯示已定義 open 命令字串的檔案類型。
 
+> [!NOTE]
+> 只有在 CMD 中才支援此命令。EXE 和無法從 PowerShell 使用。  
+> 雖然您可以使用 `cmd /c ftype` 做為因應措施。
 
 
 ## <a name="syntax"></a>語法

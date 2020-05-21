@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 83a607711f0abe51810aa5abf4eb731206d810c2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e4bfa1c928b5bc5f4c5a885378f0f1d1c9b99cf5
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723978"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83437133"
 ---
 # <a name="mklink"></a>mklink
 建立符號連結。
@@ -47,7 +47,7 @@ mklink /h \MyFile.file \User1\Documents\example.file
 rd \MyFolder
 del \MyFile.file
 ```
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 -   [新專案](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-item?view=powershell-6)
 -   [del](https://docs.microsoft.com/windows-server/administration/windows-commands/del)
 -   [rmdir](https://docs.microsoft.com/windows-server/administration/windows-commands/rd)

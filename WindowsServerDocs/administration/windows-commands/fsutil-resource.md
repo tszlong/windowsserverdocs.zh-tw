@@ -1,78 +1,80 @@
 ---
-ms.assetid: b198d8ca-a5b7-430f-8911-5cbb9f50484c
-title: Fsutil 資源
+title: fsutil resource
+description: Fsutil resource 命令的參考主題，它會管理交易式 Resource Manager 及其行為。
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
 ms.technology: storage
-audience: IT Pro
+ms.assetid: b198d8ca-a5b7-430f-8911-5cbb9f50484c
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 678f3f98a96f44c146b73e9b6081884f8547373c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b64dab3a0d0e772f067b0d3fa548692aad38a4c5
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725448"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83435733"
 ---
-# <a name="fsutil-resource"></a>Fsutil 資源
-> 適用于： Windows Server （半年通道）、Windows server 2019、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7、Windows 2008、Windows Vista
+# <a name="fsutil-resource"></a>fsutil resource
 
-建立次要交易式 Resource Manager、啟動或停止交易式 Resource Manager，或顯示交易式 Resource Manager 的相關資訊，並修改下列行為：
+> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8
 
--   預設的交易 Resource Manager 是否會在下一次掛接時清除其交易中繼資料
+建立次要交易式 Resource Manager、啟動或停止交易式 Resource Manager，或顯示交易式 Resource Manager 的相關資訊，以及修改下列行為：
 
--   指定的交易 Resource Manager，以優先使用可用性
+- 預設的交易式 Resource Manager 是否會在下一次掛接時清除其交易中繼資料。
 
--   指定的交易 Resource Manager，以優先使用一致的可用性
+- 指定的交易 Resource Manager，以優先使用可用性。
 
--   執行中交易式 Resource Manager 的特性
+- 指定的交易 Resource Manager，以優先使用一致的可用性。
+
+- 執行中交易式 Resource Manager 的特性。
 
 ## <a name="syntax"></a>語法
 
 ```
-fsutil resource [create] <RmRootPathname>
-fsutil resource [info] <RmRootPathname>
-fsutil resource [setautoreset] {true|false} <DefaultRmRootPathname>
-fsutil resource [setavailable] <RmRootPathname>
-fsutil resource [setconsistent] <RmRootPathname>
-fsutil resource [setlog] [growth {<Containers> containers|<Percent> percent} <RmRootPathname>] [maxextents <Containers> <RmRootPathname>] [minextents <Containers> <RmRootPathname>] [mode {full|undo} <RmRootPathname>] [rename <RmRootPathname>] [shrink <percent> <RmRootPathname>] [size <Containers> <RmRootPathname>]
-fsutil resource [start] <RmRootPathname> [<RmLogPathname> <TmLogPathname>
-fsutil resource [stop] <RmRootPathname>
+fsutil resource [create] <rmrootpathname>
+fsutil resource [info] <rmrootpathname>
+fsutil resource [setautoreset] {true|false} <Defaultrmrootpathname>
+fsutil resource [setavailable] <rmrootpathname>
+fsutil resource [setconsistent] <rmrootpathname>
+fsutil resource [setlog] [growth {<containers> containers|<percent> percent} <rmrootpathname>] [maxextents <containers> <rmrootpathname>] [minextents <containers> <rmrootpathname>] [mode {full|undo} <rmrootpathname>] [rename <rmrootpathname>] [shrink <percent> <rmrootpathname>] [size <containers> <rmrootpathname>]
+fsutil resource [start] <rmrootpathname> [<rmlogpathname> <tmlogpathname>
+fsutil resource [stop] <rmrootpathname>
 ```
 
-#### <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
-|        參數        |                                                                                                                                                                                                                                        描述                                                                                                                                                                                                                                         |
-|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|         建立          |                                                                                                                                                                                                                    建立次要交易式 Resource Manager。                                                                                                                                                                                                                     |
-|    <RmRootPathname>     |                                                                                                                                                                                                        指定交易式 Resource Manager 根目錄的完整路徑。                                                                                                                                                                                                         |
-|          info           |                                                                                                                                                                                                            顯示指定的交易式 Resource Manager 資訊。                                                                                                                                                                                                            |
-|      setautoreset       | 指定預設的交易式 Resource Manager 是否會在下一次掛接時清除交易式中繼資料。<p>-將**setautoreset**參數設定為**true** ，以指定交易 Resource Manager 將會在下一次掛接時清除事務中繼資料（預設為）。<br />-將**setautoreset**參數設定為**false** ，以指定交易 Resource Manager 不會在下一次掛接時清除事務中繼資料（預設為）。 |
-| <DefaultRmRootPathname> |                                                                                                                                                                                                                       指定磁片磁碟機名稱，後面接著冒號。                                                                                                                                                                                                                        |
-|      setavailable       |                                                                                                                                                                                                 指定交易式 Resource Manager 會偏好一致性的可用性。                                                                                                                                                                                                 |
-|      setconsistent      |                                                                                                                                                                                                 指定交易式 Resource Manager 會優先使用一致性而不是可用性。                                                                                                                                                                                                 |
-|         setlog          |                                                                                                                                                                                                  變更已在執行中之交易式 Resource Manager 的特性。                                                                                                                                                                                                  |
-|         growth          |                                                                                                  指定交易 Resource Manager 記錄可成長的數量。<p>成長參數可以指定如下：<p>-使用下列格式的容器數目：_容器_**容器**<br />-_使用下列格式_**的百分比：** 百分比百分比                                                                                                   |
-|      <containers>       |                                                                                                                                                                                                      指定交易 Resource Manager 所使用的資料物件。                                                                                                                                                                                                       |
-|        maxextent        |                                                                                                                                                                                                指定指定交易 Resource Manager 的容器數目上限。                                                                                                                                                                                                |
-|        minextent        |                                                                                                                                                                                                指定指定交易 Resource Manager 的容器數目下限。                                                                                                                                                                                                |
-|  模式 {full&#124;復原}  |                                                                                                                                                                                        指定是否記錄所有交易（ **full**），或只記錄回復事件（**復原**）。                                                                                                                                                                                         |
-|         重新命名          |                                                                                                                                                                                                                  變更交易式 Resource Manager 的 GUID。                                                                                                                                                                                                                  |
-|         shrink          |                                                                                                                                                                                              指定交易 Resource Manager 記錄可自動減少的百分比。                                                                                                                                                                                              |
-|          大小           |                                                                                                                                                                                              將交易 Resource Manager 的大小指定為指定的*容器*數目。                                                                                                                                                                                               |
-|          start          |                                                                                                                                                                                                                    啟動指定的交易式 Resource Manager。                                                                                                                                                                                                                    |
-|          stop           |                                                                                                                                                                                                                    停止指定的交易式 Resource Manager。                                                                                                                                                                                                                     |
+| 參數 | 描述 |
+| --------- | ----------- |
+| 建立 | 建立次要交易式 Resource Manager。 |
+| `<rmrootpathname>` | 指定交易式 Resource Manager 根目錄的完整路徑。 |
+| info | 顯示指定的交易式 Resource Manager 資訊。 |
+| setautoreset | 指定預設的交易式 Resource Manager 是否會在下一次掛接時清除交易式中繼資料。<ul><li>**true** -指定交易 Resource Manager 將會在下一次掛接時清除事務中繼資料（預設為）。</li><li>**false** -指定交易 Resource Manager 不會在下一次掛接時清除事務中繼資料（預設為）。 |
+| `<defaultrmrootpathname>` | 指定磁片磁碟機名稱，後面接著冒號。 |
+| setavailable | 指定交易式 Resource Manager 會偏好一致性的可用性。 |
+| setconsistent | 指定交易式 Resource Manager 會優先使用一致性而不是可用性。 |
+| setlog | 變更已在執行中之交易式 Resource Manager 的特性。 |
+| growth | 指定交易 Resource Manager 記錄可成長的數量。<p>成長參數可以指定如下：<ul><li>容器數目，使用下列格式：`<containers> containers`</li><li>百分比，使用以下格式：`<percent> percent`</li></ul> |
+| `<containers>` | 指定交易 Resource Manager 所使用的資料物件。 |
+| maxextent | 指定指定交易 Resource Manager 的容器數目上限。 |
+| minextent | 指定指定交易 Resource Manager 的容器數目下限。 |
+| 下`{full|undo}` | 指定是否記錄所有交易（ **full**），或只記錄回復事件（**復原**）。 |
+| 重新命名 | 變更交易式 Resource Manager 的 GUID。 |
+| shrink | 指定交易 Resource Manager 記錄可自動減少的百分比。 |
+| 大小 | 將交易 Resource Manager 的大小指定為指定的*容器*數目。 |
+| start | 啟動指定的交易式 Resource Manager。 |
+| stop | 停止指定的交易式 Resource Manager。 |
 
-### <a name="examples"></a><a name="BKMK_examples"></a>範例
-若要設定 c:\test 指定之交易式 Resource Manager 的記錄，使其自動成長為五個容器，請輸入：
+### <a name="examples"></a>範例
+
+若要設定*c:\test*指定之交易式 Resource Manager 的記錄，使其自動成長為五個容器，請輸入：
 
 ```
 fsutil resource setlog growth 5 containers c:test
 ```
 
-若要設定 c:\test 指定之交易式 Resource Manager 的記錄，使其自動成長為兩%，請輸入：
+若要設定*c:\test*指定之交易式 Resource Manager 的記錄，使其自動成長為兩%，請輸入：
 
 ```
 fsutil resource setlog growth 2 percent c:test
@@ -81,14 +83,13 @@ fsutil resource setlog growth 2 percent c:test
 若要指定預設的交易 Resource Manager 將在磁片磁碟機 C 上的下一個掛接中清除交易中繼資料，請輸入：
 
 ```
-fsutil resource setautoreset true c:\  
+fsutil resource setautoreset true c:\
 ```
 
-### <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
+
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-[Fsutil](Fsutil.md)
+- [fsutil](fsutil.md)
 
-[交易式 NTFS](https://go.microsoft.com/fwlink/?LinkID=165402)
-
-
+- [交易式 NTFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730726(v=ws.10))

@@ -9,16 +9,16 @@ ms.assetid: 7f899e62-6e5b-4fca-9a59-130d4766ee2f
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/10/2018
-ms.openlocfilehash: da9164eea4ab7e2fb38864fb69c47252448b77b6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f5a7ec331c9d70214cbd0a772de6e2b2c7f4f58e
+ms.sourcegitcommit: 7116460855701eed4e09d615693efa4fffc40006
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854421"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83433172"
 ---
 # <a name="requirements-for-deploying-network-controller"></a>部署網路控制站的需求
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 準備您的資料中心以進行網路控制站部署，這需要一或多部電腦或 vm，以及一部電腦或 VM。 您必須先設定安全性群組、記錄檔位置（如有需要）和動態 DNS 註冊，才能部署網路控制站。
 
@@ -32,11 +32,11 @@ ms.locfileid: "80854421"
 - 網路控制卡的管理用戶端電腦或 VM 必須執行 Windows 10。 
 
 
-## <a name="configuration-requirements"></a>設定需求
+## <a name="configuration-requirements"></a>組態需求
 
 部署網路控制站之前，您必須設定安全性群組、記錄檔位置（如有需要），以及動態 DNS 註冊。
 
-### <a name="step-1-configure-your-security-groups"></a>步驟 1. 設定安全性群組
+### <a name="step-1-configure-your-security-groups"></a>步驟 1： 設定安全性群組
 
 您想要做的第一件事是建立兩個安全性群組來進行 Kerberos 驗證。 
 
@@ -48,7 +48,7 @@ ms.locfileid: "80854421"
 >[!NOTE]
 >您新增的所有使用者都必須是 Active Directory [使用者和電腦] 中的 [網域使用者] 群組的成員。
 
-### <a name="step-2-configure-log-file-locations-if-needed"></a>步驟 2. 視需要設定記錄檔位置
+### <a name="step-2-configure-log-file-locations-if-needed"></a>步驟 2： 視需要設定記錄檔位置
 
 您要做的下一件事，就是將檔案位置設定為在網路控制站電腦或 VM 上，或是在遠端檔案共用上儲存網路控制站的 debug 記錄檔。 
 
@@ -61,7 +61,7 @@ ms.locfileid: "80854421"
 最後，您要做的下一件事，就是在相同的子網或不同的子網上部署網路控制站叢集節點。 
 
 
-|         假設狀況         |                                                                                                                                                         結果                                                                                                                                                         |
+|         如果...         |                                                                                                                                                         則...                                                                                                                                                         |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |  在相同的子網上，  |                                                                                                                                您必須提供網路控制卡的 REST IP 位址。                                                                                                                                 |
 | 在不同的子網上， | 您必須提供在部署過程中建立的網路控制站 REST DNS 名稱。 您也必須執行下列動作：<ul><li>在 DNS 伺服器上設定網路控制站 DNS 名稱的 DNS 動態更新。</li><li>僅限制網路控制站節點的 DNS 動態更新。</li></ul> |
@@ -77,32 +77,32 @@ ms.locfileid: "80854421"
 
    b. 在 [**一般**] 索引標籤上，確認區欄位型別為 [**主要**] 或 [ **Active Directory 整合**]。
 
-   c. 在 [**動態更新**] 中，確認已選取 [**僅安全**]，然後按一下 **[確定]** 。
+   c. 在 [**動態更新**] 中，確認已選取 [**僅安全**]，然後按一下 **[確定]**。
 
 2. 設定網路控制站節點的 DNS 區域安全性許可權
 
-   a.  按一下 [安全性] 索引標籤，然後按一下 [進階]。 
+   a.  按一下 [安全性]**** 索引標籤，然後按一下 [進階]****。 
 
    b. 在 [**高級安全性設定**] 中，按一下 [**新增**]。 
 
-   c. 按一下 [選取主體]。 
+   c. 按一下 [選取主體]****。 
 
    d. 在 [**選取使用者、電腦、服務帳戶或群組**] 對話方塊中，按一下 [**物件類型**]。 
 
-   e. 在 [**物件類型**] 中，選取 [**電腦**]，然後按一下 **[確定]** 。
+   e. 在 [**物件類型**] 中，選取 [**電腦**]，然後按一下 **[確定]**。
 
-   f. 在 [**選取使用者、電腦、服務帳戶或群組**] 對話方塊中，輸入您的部署中其中一個網路控制卡節點的 NetBIOS 名稱，然後按一下 **[確定]** 。
+   f. 在 [**選取使用者、電腦、服務帳戶或群組**] 對話方塊中，輸入您的部署中其中一個網路控制卡節點的 NetBIOS 名稱，然後按一下 **[確定]**。
 
    g. 在 [**許可權專案**] 中，確認下列值：
 
       - **類型**= 允許
       - **適用于**= 此物件和所有子系物件
 
-   h. 在 [**許可權**] 中，選取 [**寫入所有屬性**] 和 [**刪除**]，然後按一下 **[確定]** 。
+   h. 在 [**許可權**] 中，選取 [**寫入所有屬性**] 和 [**刪除**]，然後按一下 **[確定]**。
 
 3. 針對網路控制卡叢集中的所有電腦和 Vm 重複此動作。
 
-### <a name="step-4-configure-service-principal-name-if-using-kerberos-based-authentication"></a>步驟 4. 設定服務主體名稱（如果使用 Kerberos 型驗證）
+### <a name="step-4-configure-service-principal-name-if-using-kerberos-based-authentication"></a>步驟 4： 設定服務主體名稱（如果使用 Kerberos 型驗證）
 
 如果網路控制卡使用 Kerberos 驗證來與管理用戶端通訊，您必須在 Active Directory 中設定網路控制卡的服務主體名稱（SPN）。 網路控制站會自動設定 SPN。 您只需要提供網路控制站電腦的許可權，就可以註冊和修改 SPN。 如需詳細資訊，請參閱[設定服務主體名稱（SPN）](https://docs.microsoft.com/windows-server/networking/sdn/security/kerberos-with-spn#configure-service-principal-names-spn)。
 
@@ -125,10 +125,6 @@ ms.locfileid: "80854421"
 有三個閘道虛擬機器;兩個作用中，一個是多餘的。
 
 ![SDN NC 規劃](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-GW-Deployment.png)  
-
-
-
-針對 TP5 為基礎的部署自動化，Active Directory 必須可供使用，並可從這些子網存取。 如需 Active Directory 的詳細資訊，請參閱[Active Directory Domain Services 總覽](https://docs.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview)。  
 
 >[!IMPORTANT] 
 >如果您使用 VMM 進行部署，請確定您的基礎結構虛擬機器（VMM 伺服器、AD/DNS、SQL Server 等）並未裝載于圖表中所示的四部主機上。  

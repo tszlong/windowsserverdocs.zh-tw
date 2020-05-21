@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 81132ebf6b75115086ed7cc2ab9f73d9d06e65e4
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9ac3e5a458d88d945e857cd1922783e5b0ff5cf0
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722723"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436283"
 ---
 # <a name="query-process"></a>查詢處理序
 
@@ -30,7 +30,7 @@ ms.locfileid: "82722723"
 > query process [* | <ProcessID> | <UserName> | <SessionName> | /id:<nn> | <ProgramName>] [/server:<ServerName>]
 > ```
 > ### <a name="parameters"></a>參數
-> 
+>
 > |      參數       |                                                                 描述                                                                  |
 > |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
 > |          \*          |                                                    列出所有會話的處理常式。                                                     |
@@ -41,10 +41,10 @@ ms.locfileid: "82722723"
 > |    <ProgramName>     |                     指定您想要查詢其進程的程式名稱。 需要 .exe 副檔名。                     |
 > | /server:<ServerName> | 指定要列出其進程的 rd 工作階段主機伺服器。 如果未指定，則會使用您目前登入的伺服器。 |
 > |          /?          |                                                     在命令提示字元顯示說明。                                                     |
-> 
-> ## <a name="remarks"></a>備註
+>
+>#### <a name="remarks"></a>備註
 > - 系統管理員具有所有**查詢處理**函式的完整存取權。
-> - 如果您未指定 <*UserName*>、<*SessionName*>、 **/id：**<*nn*>、<*ProgramName*> 或**\\*** 參數，**查詢進程**只會顯示屬於目前使用者的進程。
+> - 如果您未指定 <*UserName*>、<*SessionName*>、 **/id：** < *nn*>、<*ProgramName*> 或 **\\** * 參數，**查詢進程**只會顯示屬於目前使用者的進程。
 > - 如果指定了會話，它就必須識別使用中的會話。
 > - **查詢處理**程式會傳回下列資訊：
 >   -   擁有該進程的使用者
@@ -63,6 +63,6 @@ ms.locfileid: "82722723"
 >   query process /ID:2
 >   ```
 >   ## <a name="additional-references"></a>其他參考
->   - [命令列語法索引鍵](command-line-syntax-key.md)
->   [查詢](query.md)
+>   - [命令列語法索引鍵](command-line-syntax-key.md) 
+>   [查詢](query.md) 
 >   [遠端桌面服務（終端機服務）命令參考](remote-desktop-services-terminal-services-command-reference.md)

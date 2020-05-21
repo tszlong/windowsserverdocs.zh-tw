@@ -9,12 +9,12 @@ ms.prod: windows-server-hyper-v
 ms.technology: virtualization
 ms.localizationpriority: low
 ms.assetid: 6cb13f84-cb50-4e60-a685-54f67c9146be
-ms.openlocfilehash: 8ba413b831c7b11780113ee2ffd3cce598781a44
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: f82aab1b3a3af61afa08a1849392297ca5def2ab
+ms.sourcegitcommit: 9889f20270e8eb7508d06cbf844cba9159e39697
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465572"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "83551101"
 ---
 # <a name="managing-hyper-v-hypervisor-scheduler-types"></a>管理 Hyper-v 虛擬程式排程器類型
 
@@ -22,8 +22,8 @@ ms.locfileid: "77465572"
 
 本文說明 Windows Server 2016 中首次引進的虛擬處理器排程邏輯新模式。 這些模式或排程器類型會決定 Hyper-v 虛擬機器如何配置及管理跨來賓虛擬處理器的工作。 Hyper-v 主機系統管理員可以選取最適用于來賓虛擬機器（Vm）的虛擬程式排程器類型，並設定 Vm 以利用排程邏輯。
 
->[!NOTE]
->需要進行更新，才能使用本檔中所述的程式管理器排程器功能。 如需詳細資訊，請參閱[必要的更新](#required-updates)。
+> [!NOTE]
+> 需要進行更新，才能使用本檔中所述的程式管理器排程器功能。 如需詳細資訊，請參閱[必要的更新](#required-updates)。
 
 ## <a name="background"></a>背景
 
@@ -31,7 +31,7 @@ ms.locfileid: "77465572"
 
 ### <a name="understanding-smt"></a>瞭解 SMT
 
-同時執行多執行緒或 SMT，是在新式處理器設計中使用的技術，可讓處理器的資源由個別獨立的執行緒共用。 SMT 通常會在可能的情況下平行處理計算，藉此為大部分的工作負載提供適度的效能提升，而增加指令輸送量，但效能可能會線上程之間競爭發生共用的處理器資源。
+同時執行多執行緒或 SMT，是在新式處理器設計中使用的技術，可讓處理器的資源由個別獨立的執行緒共用。 SMT 通常會在可能的情況下平行處理計算，為大部分的工作負載提供適度的效能提升，即使在共用處理器資源的執行緒發生爭用時，效能也不會稍微降低。
 Intel 和 AMD 皆提供支援 SMT 的處理器。 Intel 是以 Intel 超執行緒技術或 Intel HT 的形式，將其 SMT 供應專案。
 
 基於本文的目的，Hyper-v 的 SMT 和其使用方式的描述同樣適用于 Intel 和 AMD 系統。
@@ -48,7 +48,7 @@ Intel 和 AMD 皆提供支援 SMT 的處理器。 Intel 是以 Intel 超執行�
 
 * 根磁碟分割本身是虛擬機器磁碟分割，雖然它具有與來賓虛擬機器不同的唯一屬性和更高的許可權。 根磁碟分割提供管理服務，可控制所有來賓虛擬機器、提供來賓的虛擬裝置支援，以及管理來賓虛擬機器的所有裝置 i/o。 Microsoft 強烈建議您不要在根磁碟分割中執行任何應用程式工作負載。
 
-* 根磁碟分割的每個虛擬處理器（VP）都會將1:1 對應到基礎邏輯處理器（LP）。 主機副總一律會在相同的基礎 LP 上執行–不會遷移根磁碟分割的 VPs。
+* 根磁碟分割的每個虛擬處理器（VP）都會將1:1 對應到基礎邏輯處理器（LP）。 主機 VP 一律會在相同的基礎 LP 上執行–不會遷移根磁碟分割的 VPs。
 
 * 根據預設，主機 VPs 執行所在的 LPs 也可以執行來賓 VPs。
 
@@ -58,15 +58,11 @@ Intel 和 AMD 皆提供支援 SMT 的處理器。 Intel 是以 Intel 超執行�
 
 從 Windows Server 2016 開始，Hyper-v 虛擬機器支援數種排程器邏輯模式，可決定程式管理者如何排定基礎邏輯處理器上的虛擬處理器。 這些排程器類型如下：
 
-- [傳統的公平共用排程器](#the-classic-scheduler)
-- [核心排程器](#the-core-scheduler)
-- [根排程器](#the-root-scheduler)
-
 ### <a name="the-classic-scheduler"></a>傳統排程器
 
 傳統排程器是自其開始後所有版本的 Windows Hyper-v 虛擬機器的預設值，包括 Windows Server 2016 Hyper-v。 傳統排程器會為來賓虛擬處理器提供公平共用、搶先式迴圈配置資源排程模型。
 
-傳統的排程器類型最適合大部分傳統的 Hyper-v 用途–適用于私人雲端、主機服務提供者等等。 效能特性已充分瞭解，且最適合用來支援各種不同的虛擬化案例，例如過度訂閱 VPs 至 LPs、同時執行許多異類 Vm 和工作負載，以及執行較大的規模高效能 Vm，支援不受限制的 Hyper-v 完整功能集等等。
+傳統的排程器類型最適合大部分傳統的 Hyper-v 用途–適用于私人雲端、主機服務提供者等等。 效能特性已充分瞭解，且最適合用來支援各種不同的虛擬化案例，例如過度訂閱 VPs 至 LPs、同時執行許多並存的 Vm 和工作負載、執行較大的大規模高效能 Vm、支援 Hyper-v 的完整功能，而不受限制等等。
 
 ### <a name="the-core-scheduler"></a>核心排程器
 
@@ -91,7 +87,7 @@ Intel 和 AMD 皆提供支援 SMT 的處理器。 Intel 是以 Intel 超執行�
 
 #### <a name="core-scheduler-behavior-with-host-smt-disabled"></a>已停用主機 SMT 的核心排程器行為
 
-如果虛擬機器已設定為使用核心排程器類型，但 SMT 功能已停用或不存在於虛擬化主機上，則不論是否使用「虛擬程式排程器」類型設定，此管理器將會使用傳統排程器行為。
+如果虛擬機器已設定為使用核心排程器類型，但 SMT 功能已停用或不存在於虛擬化主機上，則無論是否使用 [程式管理器排程器] 類型設定，管理器都會使用傳統排程器行為。
 
 ### <a name="the-root-scheduler"></a>根排程器
 
@@ -101,11 +97,11 @@ Intel 和 AMD 皆提供支援 SMT 的處理器。 Intel 是以 Intel 超執行�
 
 #### <a name="root-scheduler-use-on-client-systems"></a>根排程器在用戶端系統上使用
 
-從 Windows 10 1803 版開始，預設會在用戶端系統上使用根排程器，而在此情況下，可以支援以虛擬化為基礎的安全性和 WDAG 工作負載隔離，以及未來系統的適當操作異類核心架構。 這是用戶端系統唯一支援的程式管理器排程器設定。 管理員不應嘗試覆寫 Windows 10 用戶端系統上的預設「虛擬程式管理者」類型。
+從 Windows 10 1803 版開始，預設會在用戶端系統上使用根排程器，在此情況下，系統管理人員可能會啟用以支援虛擬化安全性和 WDAG 工作負載隔離，以及使用異類核心架構進行未來系統的適當操作。 這是用戶端系統唯一支援的程式管理器排程器設定。 管理員不應嘗試覆寫 Windows 10 用戶端系統上的預設「虛擬程式管理者」類型。
 
 #### <a name="virtual-machine-cpu-resource-controls-and-the-root-scheduler"></a>虛擬機器 CPU 資源控制和根排程器
 
-當虛擬機器根排程器因為根作業系統的排程器邏輯以全域方式管理主機資源，且沒有 VM 的知識時，不支援 Hyper-v 所提供的虛擬機器處理器資源控制特定的設定。 Hyper-v 每個 VM 的處理器資源控制，例如 cap、權數和保留，僅適用于管理者直接控制 VP 排程的情況，例如使用傳統和核心排程器類型。
+當虛擬機器根排程器因為根作業系統的排程器邏輯以全域方式管理主機資源，且不知道 VM 的特定設定時，不支援 Hyper-v 所提供的虛擬機器處理器資源控制。 Hyper-v 每個 VM 的處理器資源控制，例如 cap、權數和保留，僅適用于管理者直接控制 VP 排程的情況，例如使用傳統和核心排程器類型。
 
 #### <a name="root-scheduler-use-on-server-systems"></a>根排程器在伺服器系統上使用
 
@@ -122,11 +118,11 @@ PowerShell 必須用來在來賓虛擬機器中啟用 SMT;Hyper-v 管理員中�
 Set-VMProcessor -VMName <VMName> -HwThreadCountPerCore <n>
 ```
 
-其中 <n> 是來賓 VM 將會看到的每個核心 SMT 執行緒數目。  
-請注意，<n> = 0 會將 HwThreadCountPerCore 值設定為符合主機的每個核心值的 SMT 執行緒計數。
+其中 <n> 是來賓 VM 所看到之每個核心的 SMT 執行緒數目。
+請注意， <n> = 0 會將 HwThreadCountPerCore 值設定為符合主機的每個核心值的 SMT 執行緒計數。
 
->[!NOTE] 
->從 Windows Server 2019 開始支援設定 HwThreadCountPerCore = 0。
+> [!NOTE]
+> 從 Windows Server 2019 開始支援設定 HwThreadCountPerCore = 0。
 
 以下是從在虛擬機器中執行且已啟用2個虛擬處理器和 SMT 的客體作業系統所取得的系統資訊範例。 客體作業系統偵測到屬於相同核心的2個邏輯處理器。
 
@@ -136,8 +132,8 @@ Set-VMProcessor -VMName <VMName> -HwThreadCountPerCore <n>
 
 Windows Server 2016 Hyper-v 預設會使用傳統的虛擬程式管理器排程器模型。 您可以選擇性地將管理程式設定為使用核心排程器，藉由限制來賓 VPs 在對應的實體 SMT 組上執行，以及支援使用虛擬機器與其來賓 VPs 的 SMT 排程，來提高安全性。
 
->[!NOTE]
->Microsoft 建議所有執行 Windows Server 2016 Hyper-v 的客戶選取核心排程器，以確保其虛擬化主機能以最佳的方式受到保護，以防止潛在的惡意來賓 Vm。
+> [!NOTE]
+> Microsoft 建議所有執行 Windows Server 2016 Hyper-v 的客戶選取核心排程器，以確保其虛擬化主機能以最佳的方式受到保護，以防止潛在的惡意來賓 Vm。
 
 ## <a name="windows-server-2019-hyper-v-defaults-to-using-the-core-scheduler"></a>Windows Server 2019 Hyper-v 預設為使用核心排程器
 
@@ -145,15 +141,15 @@ Windows Server 2016 Hyper-v 預設會使用傳統的虛擬程式管理器排程�
 
 ### <a name="required-updates"></a>必要的更新
 
->[!NOTE]
->若要使用本檔中所述的程式管理器排程器功能，必須進行下列更新。 這些更新包含變更，以支援主機設定所需的新 ' hypervisorschedulertype ' BCD 選項。
+> [!NOTE]
+> 若要使用本檔中所述的程式管理器排程器功能，必須進行下列更新。 這些更新包含變更，以支援 `hypervisorschedulertype` 主機設定所需的新 BCD 選項。
 
-| 版本 | 發行  | 需要更新 | 知識庫文章 |
+| 版本 | 版本  | 需要更新 | 知識庫文章 |
 |--------------------|------|---------|-------------:|
 |Windows Server 2016 | 1607 | 2018.07 C | [KB4338822](https://support.microsoft.com/help/4338822/windows-10-update-kb4338822) |
 |Windows Server 2016 | 1703 | 2018.07 C | [KB4338827](https://support.microsoft.com/help/4338827/windows-10-update-kb4338827) |
 |Windows Server 2016 | 1709 | 2018.07 C | [KB4338817](https://support.microsoft.com/help/4338817/windows-10-update-kb4338817) |
-|Windows Server 2019 | 1804 | 無 | 無 |
+|Windows Server 2019 | 1804 | None | None |
 
 ## <a name="selecting-the-hypervisor-scheduler-type-on-windows-server"></a>選取 Windows Server 上的虛擬程式排程器類型
 
@@ -161,20 +157,20 @@ Windows Server 2016 Hyper-v 預設會使用傳統的虛擬程式管理器排程�
 
 若要選取排程器類型，請使用系統管理員許可權開啟命令提示字元：
 
-``` command
-     bcdedit /set hypervisorschedulertype type
+```
+bcdedit /set hypervisorschedulertype type
 ```
 
 其中 `type` 是下列其中一個：
 
 * 傳統
-* Core
-* 根目錄
+* 核心
+* Root
 
 系統必須重新開機，程式管理器排程器類型的任何變更才會生效。
 
->[!NOTE]
->Windows Server Hyper-v 目前不支援虛擬程式根排程器。 Hyper-v 系統管理員不應嘗試設定根排程器來與伺服器虛擬化案例搭配使用。
+> [!NOTE]
+> Windows Server Hyper-v 目前不支援虛擬程式根排程器。 Hyper-v 系統管理員不應嘗試設定根排程器來與伺服器虛擬化案例搭配使用。
 
 ## <a name="determining-the-current-scheduler-type"></a>判斷目前的排程器類型
 
@@ -182,13 +178,13 @@ Windows Server 2016 Hyper-v 預設會使用傳統的虛擬程式管理器排程�
 
 「虛擬程式啟動事件識別碼2」代表「管理器排程器」類型，其中：
 
-    1 = Classic scheduler, SMT disabled
+- 1 = 傳統排程器，SMT 已停用
 
-    2 = Classic scheduler
+- 2 = 傳統排程器
 
-    3 = Core scheduler
+- 3 = 核心排程器
 
-    4 = Root scheduler
+- 4 = 根排程器
 
 ![顯示管理程式啟動事件識別碼2詳細資料的螢幕擷取畫面](media/Hyper-V-CoreScheduler-EventID2-Details.png)
 

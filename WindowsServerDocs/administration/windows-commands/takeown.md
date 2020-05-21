@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 99ebdcc3a888a19793892a4a014707db61b92736
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: da43b13f0333f3a12a8763db4cad31e12283bb8b
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721568"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436193"
 ---
 # <a name="takeown"></a>takeown
 
@@ -32,10 +32,10 @@ takeown [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <File n
 
 |參數|描述|
 |---------|-----------|
-|/s \<Computer>|指定遠端電腦的名稱或 IP 位址（請勿使用反斜線）。 預設值為本機電腦。 這個參數會套用至命令中指定的所有檔案和資料夾。|
-|/u [\<Domain>\]<User name>|以指定之使用者帳戶的許可權執行腳本。 預設值為 [系統許可權]。|
-|/p [\<Password>]|指定 **/u**參數中指定之使用者帳戶的密碼。|
-|/f \<檔案名>|指定檔案名或目錄名稱模式。 指定模式時，您可以使用萬用字元 *。 您也可以使用語法*共用名稱*\*FileName *。|
+|/s \< Computer>|指定遠端電腦的名稱或 IP 位址（請勿使用反斜線）。 預設值為本機電腦。 這個參數會套用至命令中指定的所有檔案和資料夾。|
+|/u [ \< Domain>\]<User name>|以指定之使用者帳戶的許可權執行腳本。 預設值為 [系統許可權]。|
+|/p [ \< Password>]|指定 **/u**參數中指定之使用者帳戶的密碼。|
+|/f \< 檔案名>|指定檔案名或目錄名稱模式。 指定模式時，您可以使用萬用字元 *。 您也可以使用語法*共用名稱* \* FileName *。|
 |/a|提供系統管理員群組的擁有權，而不是目前的使用者。|
 |/r|對指定目錄和子目錄中的所有檔案執行遞迴操作。|
 |/d {Y \| N}|抑制當目前使用者沒有指定目錄的「列出資料夾」許可權，而改為使用指定的預設值時，所顯示的確認提示。 **/D**選項的有效值如下所示：</br>-Y：取得目錄的擁有權。</br>-N：略過目錄。</br>請注意，您必須搭配使用此選項與 **/r**選項。|

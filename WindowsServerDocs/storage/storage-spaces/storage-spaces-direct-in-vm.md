@@ -1,5 +1,6 @@
 ---
 title: 在虛擬機器中使用儲存空間直接存取
+description: 如何在虛擬機器來賓叢集中部署儲存空間直接存取-例如，在 Microsoft Azure 中。
 ms.prod: windows-server
 ms.author: eldenc
 manager: eldenc
@@ -7,18 +8,17 @@ ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
 ms.date: 10/25/2017
-description: 如何在虛擬機器來賓叢集中部署儲存空間直接存取-例如，在 Microsoft Azure 中。
 ms.localizationpriority: medium
-ms.openlocfilehash: 74b1b90a780a0b238a356e942f8348e2a483d94a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 816e589cbb7ed4196411b8f5bab740c7ee5f7595
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856111"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436763"
 ---
 # <a name="using-storage-spaces-direct-in-guest-virtual-machine-clusters"></a>使用來賓虛擬機器叢集中的儲存空間直接存取
 
-> 適用于： Windows Server 2019、Windows Server 2016
+> 適用於：Windows Server 2019、Windows Server 2016
 
 您可以將儲存空間直接存取部署在實體伺服器或虛擬機器來賓叢集的叢集上，如本主題中所述。 這種類型的部署會在私人或公用雲端上的一組 Vm 之間提供虛擬共用存放裝置，讓應用程式的高可用性解決方案得以用來提高應用程式的可用性。
 
@@ -33,39 +33,39 @@ ms.locfileid: "80856111"
 ## <a name="requirements"></a>需求
 
 在虛擬化環境中部署儲存空間直接存取時，適用下列考慮事項。
-       
->        !TIP]
->        zure templates will automatically configure the below considerations for you and are the recommended solution when deploying in Azure IaaS VMs.
 
--   最少2個節點和最多3個節點
+> [!TIP]
+> Azure 範本會自動為您設定下列考慮，而且是在 Azure IaaS Vm 中部署時的建議解決方案。
 
--   2-節點部署必須設定見證（雲端見證或檔案共用見證）
+- 最少2個節點和最多3個節點
 
--   3節點部署可容忍1個節點，並在另一個節點上遺失一或多個磁片。  如果關閉2個節點，則虛擬磁片會離線，直到其中一個節點返回為止。  
+- 2-節點部署必須設定見證（雲端見證或檔案共用見證）
 
--   設定要跨容錯網域部署的虛擬機器
+- 3節點部署可容忍1個節點，並在另一個節點上遺失一或多個磁片。  如果關閉2個節點，則虛擬磁片會離線，直到其中一個節點返回為止。
 
-    -   Azure –設定可用性設定組
+- 設定要跨容錯網域部署的虛擬機器
 
-    -   Hyper-v –在 Vm 上設定 AntiAffinityClassNames，以將 Vm 分散到不同的節點
+    - Azure –設定可用性設定組
 
-    -   VMware –藉由建立「個別虛擬機器」類型的 DRS 規則來設定 VM VM 反親和性規則，以將 Vm 分散到 ESX 主機。 提供給儲存空間直接存取使用的磁片應該使用 Paravirtual SCSI （PVSCSI）介面卡。 如需 Windows Server 的 PVSCSI 支援，請參閱 https://kb.vmware.com/s/article/1010398。
+    - Hyper-v –在 Vm 上設定 AntiAffinityClassNames，以將 Vm 分散到不同的節點
 
--   利用低延遲/高效能儲存體-需要 Azure 進階儲存體受控磁片
+    - VMware –藉由建立「個別虛擬機器」類型的 DRS 規則來設定 VM VM 反親和性規則，以將 Vm 分散到 ESX 主機。 提供給儲存空間直接存取使用的磁片應該使用 Paravirtual SCSI （PVSCSI）介面卡。 如需 Windows Server 的 PVSCSI 支援，請參閱 https://kb.vmware.com/s/article/1010398 。
 
--   部署未設定快取裝置的平面儲存設計
+- 利用低延遲/高效能儲存體-需要 Azure 進階儲存體受控磁片
 
--   最少2個虛擬資料磁片呈現給每個 VM （VHD/VHDX/VMDK）
+- 部署未設定快取裝置的平面儲存設計
+
+- 最少2個虛擬資料磁片呈現給每個 VM （VHD/VHDX/VMDK）
 
     此數目與裸機部署不同，因為虛擬磁片可以實作為不容易受到實體失敗影響的檔案。
 
--   藉由執行下列 PowerShell Cmdlet，在健全狀況服務中停用自動磁片磁碟機取代 "apab" lities：
+- 藉由執行下列 PowerShell Cmdlet，在健全狀況服務中停用自動磁片磁碟機更換功能：
 
     ```powershell
           Get-storagesubsystem clus* | set-storagehealthsetting -name "System.Storage.PhysicalDisk.AutoReplace.Enabled" -value "False"
           ```
 
--   To give greater resiliency to possible VHD / VHDX / VMDK storage latency in guest clusters, increase the Storage Spaces I/O timeout value:
+- To give greater resiliency to possible VHD / VHDX / VMDK storage latency in guest clusters, increase the Storage Spaces I/O timeout value:
 
     `HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\spaceport\\Parameters\\HwTimeout`
 
@@ -75,17 +75,16 @@ ms.locfileid: "80856111"
 
 ## Not supported
 
--   Host level virtual disk snapshot/restore
+- Host level virtual disk snapshot/restore
 
     Instead use traditional guest level backup solutions to backup and restore the data on the Storage Spaces Direct volumes.
 
--   Host level virtual disk size change
+- Host level virtual disk size change
 
     The virtual disks exposed through the virtual machine must retain the same size and characteristics. Adding more capacity to the storage pool can be accomplished by adding more virtual disks to each of the virtual machines and adding them to the pool. It's highly recommended to use virtual disks of the same size and characteristics as the current virtual disks.
 
 ## See also
 
-[Additional Azure Iaas VM templates for deploying Storage Spaces Direct, videos, and step-by-step guides](https://techcommunity.microsoft.com/t5/Failover-Clustering/Deploying-IaaS-VM-Guest-Clusters-in-Microsoft-Azure/ba-p/372126).
+- [Additional Azure Iaas VM templates for deploying Storage Spaces Direct, videos, and step-by-step guides](https://techcommunity.microsoft.com/t5/Failover-Clustering/Deploying-IaaS-VM-Guest-Clusters-in-Microsoft-Azure/ba-p/372126).
 
-[Additional Storage Spaces Direct Overview](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)
-""""""''''                                                                                                                                                                        """"""''''                                                                                                                                                                        
+- [Additional Storage Spaces Direct Overview](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)

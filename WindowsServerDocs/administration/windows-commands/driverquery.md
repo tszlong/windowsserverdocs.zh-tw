@@ -1,6 +1,6 @@
 ---
 title: driverquery
-description: '* * * * 的參考主題'
+description: Driverquery 命令的參考主題，可讓系統管理員顯示已安裝的設備磁碟機及其屬性的清單。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,59 +9,66 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 993c05a930a7702880af23fcfa7c19a43aa8b22b
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f4754cba8cf4cb3a5f01b0aeb0095f727a072a5c
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720826"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436933"
 ---
 # <a name="driverquery"></a>driverquery
 
-
-
 可讓系統管理員顯示已安裝的設備磁碟機及其內容的清單。 如果在沒有參數的情況下使用， **driverquery**會在本機電腦上執行。
-
-
 
 ## <a name="syntax"></a>語法
 
 ```
-driverquery [/s <System> [/u [<Domain>\]<Username> [/p <Password>]]] [/fo {table | list | csv}] [/nh] [/v | /si]
+driverquery [/s <system> [/u [<domain>\]<username> [/p <password>]]] [/fo {table | list | csv}] [/nh] [/v | /si]
 ```
 
 ### <a name="parameters"></a>參數
 
-|         參數         |                                                                                                                                         描述                                                                                                                                          |
-|---------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|       /s \<System>        |                                                                                      指定遠端電腦的名稱或 IP 位址。 請勿使用反斜線。 預設是本機電腦。                                                                                       |
-| /u [\<Domain>\]<Username> | 使用使用者或*網域*\*使用者所指定之使用者帳戶的*認證來執行*命令<em>。根據預設， \* \*/s</em> \*會使用目前登入發出命令之電腦的使用者認證。 除非指定了 **/s** ，否則無法使用 **/u** 。 |
-|      /p \<密碼>       |                                                                           指定 **/u**參數中指定之使用者帳戶的密碼。 除非指定 **/u** ，否則無法使用 **/p** 。                                                                            |
-|        /fo {資料表         |                                                                                                                                             list                                                                                                                                             |
-|            /nh            |                                                                                      省略顯示的驅動程式資訊中的標頭資料列。 如果 **/fo**參數設定為**list**，則無效。                                                                                      |
-|            /v             |                                                                                                               顯示詳細資訊輸出。 **/v**對已簽署的驅動程式無效。                                                                                                               |
-|            /si            |                                                                                                                          提供已簽署驅動程式的相關資訊。                                                                                                                          |
-|            /?             |                                                                                                                             在命令提示字元顯示說明。                                                                                                                             |
+| 參數 | 描述 |
+| --------- |------------ |
+| /s`<system>` | 指定遠端電腦的名稱或 IP 位址。 請勿使用反斜線。 預設是本機電腦。 |
+| u`[<domain>]<username>` | 以*user*或*domain\user*所指定的使用者帳號憑證來執行命令。 根據預設， */s*會使用目前登入發出命令之電腦的使用者認證。 除非指定了 **/s** ，否則無法使用 **/u** 。 |
+| /p`<password>` | 指定 **/u**參數中指定之使用者帳戶的密碼。 除非指定 **/u** ，否則無法使用 **/p** 。 |
+| /fo 資料表 | 將輸出格式化為表格。 此為預設值。 |
+| /fo 清單 | 將輸出格式化為清單。 |
+| /fo csv | 使用逗號分隔值來格式化輸出。 |
+| /nh | 省略顯示的驅動程式資訊中的標頭資料列。 如果 **/fo**參數設定為**list**，則無效。 |
+| /v | 顯示詳細資訊輸出。 **/v**對已簽署的驅動程式無效。 |
+| /si | 提供已簽署驅動程式的相關資訊。 |
+| /? | 在命令提示字元顯示說明。 |
 
-## <a name="examples"></a>範例
+### <a name="examples"></a>範例
 
 若要顯示本機電腦上已安裝的設備磁碟機清單，請輸入：
+
 ```
-driverquery 
+driverquery
 ```
+
 若要以逗號分隔值（CSV）格式顯示輸出，請輸入：
+
 ```
-driverquery /fo csv 
+driverquery /fo csv
 ```
+
 若要隱藏輸出中的標頭資料列，請輸入：
+
 ```
-driverquery /nh 
+driverquery /nh
 ```
-若要在本機電腦上使用目前的認證，在名為**server1**的遠端伺服器上使用**driverquery**命令，請輸入：
+
+若要在本機電腦上使用目前的認證，在名為*server1*的遠端伺服器上使用**driverquery**命令，請輸入：
+
 ```
 driverquery /s server1
 ```
-若要在名為**server1**的遠端伺服器上使用**driverquery**命令，並使用 domain **maindom**上**user1**的認證，請輸入：
+
+若要在名為*server1*的遠端伺服器上使用**driverquery**命令，並使用 domain *maindom*上*user1*的認證，請輸入：
+
 ```
 driverquery /s server1 /u maindom\user1 /p p@ssw3d
 ```

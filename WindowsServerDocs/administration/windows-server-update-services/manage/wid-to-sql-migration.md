@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dougkim
 ms.date: 07/25/2018
-ms.openlocfilehash: 7238d71ed35b5c9645e6b4061717011cc2a02820
-ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
+ms.openlocfilehash: facd846dd0c20ee2e5001b0592651ce310e19097
+ms.sourcegitcommit: 29f7a4811b4d36d60b8b7c55ce57d4ee7d52e263
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83203568"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83716883"
 ---
 # <a name="migrating-the-wsus-database-from-wid-to-sql"></a>將 WSUS 資料庫從 WID 遷移至 SQL
 
@@ -22,7 +22,7 @@ ms.locfileid: "83203568"
 
 使用下列步驟，將 WSUS 資料庫（SUSDB）從 Windows 內部資料庫實例遷移到 SQL Server 的本機或遠端實例。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 - SQL 實例。 這可以是預設的**MSSQLServer**或自訂的實例。
 - SQL Server Management Studio
@@ -67,7 +67,7 @@ ms.locfileid: "83203568"
 
 ### <a name="copy-the-susdb-files-to-the-sql-server"></a>將 SUSDB 檔案複製到 SQL Server
 
-1. **從 WID \_ ** data 資料夾（**% SystemDrive%** **SUSDB.mdf** \* * WINDOWS\WID\DATA * *）將 SUSDB 複製到 SQL 實例資料檔案夾。
+1. **從 WID \_ ** data 資料夾（**% SystemDrive%** **SUSDB.mdf** \\ **Windows \\ WID \\ Data**）將 SUSDB 複製到 SQL 實例資料檔案夾。
 
 > [!TIP]
 > 例如，如果您的 SQL 實例資料夾是**C:\Program FILES\MICROSOFT sql Server\MSSQL12。MSSQLSERVER\MSSQL**，並將 WID Data 資料夾**C:\Windows\WID\Data，** 將 SUSDB 檔案從**C:\Windows\WID\Data**複製到**C:\Program Files\Microsoft SQL Server\MSSQL12。MSSQLSERVER\MSSQL\Data**

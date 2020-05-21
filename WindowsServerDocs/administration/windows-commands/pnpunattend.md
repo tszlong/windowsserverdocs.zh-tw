@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 569b879caf29aac6d1592d822072f35021cec9d3
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: d62edde425a00db23f150246df65166234604cef
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723308"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436463"
 ---
 # <a name="pnpunattend"></a>pnpunattend
 
@@ -43,17 +43,17 @@ PnPUnattend.exe auditSystem [/help] [/?] [/h] [/s] [/L]
 2. 下載並解壓縮您裝置的驅動程式套件。 將包含您作業系統版本之 INF 檔案的子資料夾內容，以及您所建立之 [video] 資料夾的任何子資料夾複製到其中。 例如，將影片驅動程式檔案複製到 C:\Drivers\Video。
 3. 將系統內容路徑變數新增至您在步驟1中建立的資料夾。例如， **C:\Drivers\Video**。
 4. 建立下列登錄機碼，然後針對您建立的**DriverPaths**金鑰，將**值資料**設定為**1**。
-5. 若為 Windows®7，請流覽登錄路徑： **HKEY_LOCAL_Machine\\\software\microsoft\windows server\ NT\CurrentVersion**，然後建立金鑰： **UnattendSettings\PnPUnattend\DriverPaths\\ **
-6. 針對 Windows Vista，流覽至登錄路徑： **HK_LM \software\microsoft\windows server\ NT\CurrentVersion\\**，然後建立金鑰 = **\UnattendSettings\PnPUnattend\DriverPaths**。
+5. 若為 Windows®7，請流覽登錄路徑： **HKEY_LOCAL_Machine \\ \software\microsoft\windows server\ NT\CurrentVersion**，然後建立金鑰： **UnattendSettings\PnPUnattend\DriverPaths \\ **
+6. 針對 Windows Vista，流覽至登錄路徑： **HK_LM \Software\microsoft\windows server\ NT\CurrentVersion \\ **，然後建立金鑰 = **\UnattendSettings\PnPUnattend\DriverPaths**。
 
 ## <a name="examples"></a>範例
 
 To 命令會顯示如何使用**PNPUnattend**來審核電腦是否有可能的驅動程式更新，然後將結果報告到命令提示字元。
 
 ```
-pnpunattend auditsystem /s /l 
+pnpunattend auditsystem /s /l
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 134e6ce4b1fc44450047de3287b7daac67da4b6a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4c6bcb138e8bd7308c01c2c53fba83b69362298a
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837511"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436363"
 ---
 # <a name="pnputil"></a>pnputil
 
@@ -32,7 +32,7 @@ pnputil.exe [-f | -i] [ -? | -a | -d | -e ] <INF name>
 |---------|-----------|
 |-a|指定要新增已識別的 INF 檔案。|
 |-d|指定刪除已識別的 INF 檔案。|
-|-e|指定列舉所有協力廠商 INF 檔案。|
+|-E|指定列舉所有協力廠商 INF 檔案。|
 |-f|指定強制刪除已識別的 INF 檔案。 不能與 **– i**參數一起使用。|
 |-i|指定安裝已識別的 INF 檔案。 不能與 **-f**參數一起使用。|
 |/?|在命令提示字元顯示說明。|
@@ -41,13 +41,13 @@ pnputil.exe [-f | -i] [ -? | -a | -d | -e ] <INF name>
 ## <a name="examples"></a>範例
 
 -   pnputil .exe-a a:\usbcam\USBCAM。INF 會新增 USBCAM 所指定的 INF 檔案。份
--   pnputil .exe-a c:\drivers\*.inf 會在 c:\drivers\ 中新增所有 INF 檔案
+-   pnputil .exe-c:\drivers 會 \* 在 c:\drivers\ 中新增所有 inf 檔案
 -   pnputil .exe-i-a a:\usbcam\USBCAM。INF 會新增並安裝指定的驅動程式。
 -   pnputil-e 列舉所有協力廠商驅動程式。
 -   pnputil： d oem0.inf 會刪除指定的。
 -   pnputil-f-d oem0.inf 會強制刪除指定的 INF 檔案。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

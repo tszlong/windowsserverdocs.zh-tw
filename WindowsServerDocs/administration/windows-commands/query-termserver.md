@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c8a0a4608a16df0336b90ea5df281278ae47a503
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9b3ae6858a70d22b3ad928474648a3b2ee156235
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722704"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436233"
 ---
 # <a name="query-termserver"></a>查詢 termserver
 
@@ -29,7 +29,7 @@ ms.locfileid: "82722704"
 > query termserver [<ServerName>] [/domain:<Domain>] [/address] [/continue]
 > ```
 > ### <a name="parameters"></a>參數
-> 
+>
 > |    參數     |                                                                        描述                                                                         |
 > |------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
 > |   <ServerName>   |                                               指定識別 rd 工作階段主機伺服器的名稱。                                               |
@@ -37,8 +37,8 @@ ms.locfileid: "82722704"
 > |     /address     |                                                  顯示每部伺服器的網路和節點位址。                                                  |
 > |    /continue     |                                              防止在每個資訊畫面顯示之後暫停。                                               |
 > |        /?        |                                                            在命令提示字元顯示說明。                                                            |
-> 
-> ## <a name="remarks"></a>備註
+>
+>#### <a name="remarks"></a>備註
 > - [**查詢 termserver** ] 會在網路中搜尋所有連接的 Rd 工作階段主機伺服器，並傳回下列資訊：
 >   - 伺服器的名稱
 >   - 網路（以及使用/address 選項時的節點位址）
@@ -60,6 +60,6 @@ ms.locfileid: "82722704"
 >   query termserver Server3 /address
 >   ```
 >   ## <a name="additional-references"></a>其他參考
->   - [命令列語法索引鍵](command-line-syntax-key.md)
->   [查詢](query.md)
+>   - [命令列語法索引鍵](command-line-syntax-key.md) 
+>   [查詢](query.md) 
 >   [遠端桌面服務（終端機服務）命令參考](remote-desktop-services-terminal-services-command-reference.md)

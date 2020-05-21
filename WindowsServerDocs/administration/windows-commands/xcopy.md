@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 01/05/2019
-ms.openlocfilehash: d0ee0a9f87eacefad619e82aa28f5fcf8419ed09
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 0145de2828c1d33cf1b82f595dd6c00812ace54e
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720616"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436783"
 ---
 # <a name="xcopy"></a>xcopy
 
@@ -33,7 +33,7 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 |參數|描述|
 |---------|-----------|
 |\<來源>|必要。 指定您想要複製之檔案的位置和名稱。 這個參數必須包含磁片磁碟機或路徑。|
-|[\<目的地>]|指定您想要複製之檔案的目的地。 這個參數可以包含磁碟機號和冒號、目錄名稱、檔案名或這些的組合。|
+|[ \< 目的地>]|指定您想要複製之檔案的目的地。 這個參數可以包含磁碟機號和冒號、目錄名稱、檔案名或這些的組合。|
 |/W|會顯示下列訊息，並在開始複製檔案之前等候您的回應：</br>**按任意鍵以開始複製檔案**|
 |/p|提示您確認是否要建立每個目的地檔案。|
 |/C|忽略錯誤。|
@@ -56,7 +56,7 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 |/n|使用 NTFS 短檔案或目錄名稱來建立複本。 當您從 NTFS 磁片區將檔案或目錄複寫到 FAT 磁片區，或*目的地*檔案系統上需要 FAT 檔案系統命名慣例（也就是8.3 字元）時，就需要 **/n** 。 *目的地*檔案系統可以是 FAT 或 NTFS。|
 |/o|複製檔案擁有權和任意存取控制清單（DACL）資訊。|
 |/x|複製檔案 audit 設定和系統存取控制清單（SACL）資訊（意指 **/o**）。|
-|/exclude： FileName1 [+ [FileName2] [+ [FileName3] （ \)]|指定檔案的清單。 至少必須指定一個檔案。 每個檔案都會包含搜尋字串，其中每個字串都位於檔案中的個別行上。</br>當任何字串符合要複製之檔案絕對路徑的任何部分時，該檔案將會被排除而無法複製。 例如，指定字串**obj**將會排除目錄**obj**底下的所有檔案，或包含 **.obj**副檔名的所有檔案。|
+|/exclude： FileName1 [+ [FileName2] [+ [FileName3] （ \) ]|指定檔案的清單。 至少必須指定一個檔案。 每個檔案都會包含搜尋字串，其中每個字串都位於檔案中的個別行上。</br>當任何字串符合要複製之檔案絕對路徑的任何部分時，該檔案將會被排除而無法複製。 例如，指定字串**obj**將會排除目錄**obj**底下的所有檔案，或包含 **.obj**副檔名的所有檔案。|
 |/y|隱藏提示確認您想要覆寫現有的目的檔案。|
 |/-y|提示確認您想要覆寫現有的目的檔案。|
 |/z|在可重新開機的模式下透過網路複製。|
@@ -88,12 +88,12 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 
 - 指定*目的地*是否為檔案或目錄
 
-  如果*目的地*不包含現有的目錄，而且結尾不是反斜線（\)，則會出現下列訊息：
-  
+  如果*目的地*不包含現有的目錄，而且結尾不是反斜線（ \) ，則會出現下列訊息：
+
   ```
   Does <Destination> specify a file name or directory name on the target(F = file, D = directory)?
-  ```  
-  
+  ```
+
 如果您想要將檔案複製到檔案，請按 F。 如果您想要將檔案複製到目錄，請按 D。
 
   您可以使用 **/i**命令列選項來隱藏此訊息，這會導致**xcopy**假設目的地是一個目錄（如果來源是一個以上的檔案或目錄）。
@@ -107,7 +107,7 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 
 - **Xcopy**的結束代碼
 
-  若要處理**xcopy**傳回的結束代碼，請在 batch 程式中的**if**命令列上使用**ErrorLevel**參數。 如需使用**if**處理結束代碼的 batch 程式範例，請參閱[其他參考](#additional-references)。 下表列出每個結束代碼和描述。  
+  若要處理**xcopy**傳回的結束代碼，請在 batch 程式中的**if**命令列上使用**ErrorLevel**參數。 如需使用**if**處理結束代碼的 batch 程式範例，請參閱[其他參考](#additional-references)。 下表列出每個結束代碼和描述。
 
   |結束代碼|描述|
   |---------|-----------|
@@ -122,7 +122,7 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 **1.** 若要將磁片磁碟機 A 中的所有檔案和子目錄（包括任何空白子目錄）複製到磁片磁碟機 B，請輸入：
 
 ```
-xcopy a: b: /s /e 
+xcopy a: b: /s /e
 ```
 
 **2.** 若要在上述範例中包含任何系統或隱藏的檔案，請新增<strong>/h</strong>命令列選項，如下所示：
@@ -151,7 +151,7 @@ xcopy \rawdata \reports /d:12-29-1993 /l > xcopy.out
 
 檔案 xcopy 會列出要複製的每個檔案。
 
-**6.** 若要將 \Customer 目錄和所有子目錄複寫到網路\\ \\磁碟機 h：上的目錄 Public\Address，請保留唯讀屬性，並在 H：上建立新檔案時提示您輸入：
+**6.** 若要將 \Customer 目錄和所有子目錄複寫到 \\ \\ 網路磁碟機 h：上的目錄 Public\Address，請保留唯讀屬性，並在 H：上建立新檔案時提示您輸入：
 
 ```
 xcopy \customer h:\public\address /s /e /k /p
@@ -181,7 +181,7 @@ goto exit
 :abort
 echo You pressed CTRL+C to end the copy operation.
 goto exit
-:exit 
+:exit
 ```
 
 若要使用上述的 batch 程式將 C:\Prgmcode 目錄及其子目錄中的所有檔案複製到磁片磁碟機 B，請輸入：
@@ -204,7 +204,7 @@ rem  .\d2\toc.yml
 rem  3 File(s) copied
 ```
 
-在上述範例中，這個特定的來源參數**值\\ 。yml\*** 會複製相同的3個檔案，即使已移除它的兩個路徑字元 **。\\ ** 不過，如果已從來源參數中移除星號萬用字元，則不會複製任何檔案，而是只會將它設為 **。\\yml**。
+在上述範例中，這個特定的來源參數值 **。 \\\*yml**會複製相同的3個檔案，即使已移除它的兩個路徑字元 **。 \\ ** 不過，如果已從來源參數中移除星號萬用字元，則不會複製任何檔案，而是只會將它設為 **。 \\yml**。
 
 ## <a name="additional-references"></a>其他參考
 
