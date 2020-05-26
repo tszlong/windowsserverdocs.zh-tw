@@ -1,40 +1,49 @@
 ---
 title: ftp 刪除
-description: Ftp 刪除的參考主題
+description: Ftp delete 命令的參考主題，它會刪除遠端電腦上的檔案。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: 067c45f3-e4e8-4450-b8b6-836994f6adfe vhorne
+ms.assetid: 067c45f3-e4e8-4450-b8b6-836994f6adfe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 14e4e870bb7f0f384e3803d75021298d04a8ca4d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 43ea2ef90f29970a42b0196717ce4d2d3552a32c
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725325"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83819949"
 ---
-# <a name="ftp-delete"></a>ftp： delete
+# <a name="ftp-delete"></a>ftp 刪除
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-刪除遠端電腦上的檔案。   
-## <a name="syntax"></a>語法  
-```  
-delete <remoteFile>  
-```  
-#### <a name="parameters"></a>參數  
+刪除遠端電腦上的檔案。
 
-|  參數   |          描述          |
-|--------------|-------------------------------|
-| <remoteFile> | 指定要刪除的檔案。 |
+## <a name="syntax"></a>語法
 
-## <a name="examples"></a>範例  
-刪除遠端電腦上的 file test.txt。  
-```  
-delete test.txt  
-```  
-## <a name="additional-references"></a>其他參考  
--   - [命令列語法關鍵](command-line-syntax-key.md)  
+```
+delete <remotefile>
+```
+
+### <a name="parameters"></a>參數
+
+| 參數 | 說明 |
+| --------- | ----------- |
+| `<remotefile>` | 指定要刪除的檔案。 |
+
+### <a name="examples"></a>範例
+
+若要刪除遠端電腦上的*test.txt*檔案，請輸入：
+
+```
+delete test.txt
+```
+
+## <a name="additional-references"></a>其他參考
+
+- [命令列語法關鍵](command-line-syntax-key.md)
+
+- [其他 FTP 指引](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

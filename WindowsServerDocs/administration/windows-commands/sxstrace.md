@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e56b190c96633c5f9ee62328429abdbbf181434f
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 88ea6ba9d7a8f9744997eb78be2309693a6267b5
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436943"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821148"
 ---
 # <a name="sxstrace"></a>sxstrace
 
@@ -28,7 +28,7 @@ sxstrace [{[trace -logfile:<FileName> [-nostop]|[parse -logfile:<FileName> -outf
 ```
 
 #### <a name="parameters"></a>參數
-|參數|描述|
+|參數|說明|
 |-------|--------|
 |追蹤|啟用 sxs 的追蹤（並存）|
 |-logfile|指定原始檔案的原始記錄檔。|
@@ -53,5 +53,5 @@ sxstrace parse -logfile:sxstrace.etl -outfile:sxstrace.txt
 ```
 
 ## <a name="additional-references"></a>其他參考
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)
 

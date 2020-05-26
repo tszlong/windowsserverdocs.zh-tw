@@ -1,5 +1,5 @@
 ---
-title: 新增別名
+title: add alias
 description: Add alias 命令的參考主題，其會將別名新增至別名環境。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
@@ -9,30 +9,30 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 807981c3581eea328291f2389e08065edbd280d3
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 66301a39a1e969e270b42b5ce92a73392a134357
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719024"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83819658"
 ---
-# <a name="add-alias"></a>新增別名
+# <a name="add-alias"></a>add alias
 
 將別名新增至別名環境。 如果在沒有參數的情況下使用， **add alias**會在命令提示字元中顯示說明。 別名會儲存在中繼資料檔案中，並且會使用 [**載入中繼資料**] 命令載入。
 
 ## <a name="syntax"></a>語法
 
 ```
-add alias <AliasName> <AliasValue>
+add alias <aliasname> <aliasvalue>
 ```
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
-| `<AliasName>` | 指定別名。 |
-| `<AliasValue>` | 指定別名的值。 |
-| `/?` | 在命令提示字元顯示說明。 |
+| `<aliasname>` | 指定別名。 |
+| `<aliasvalue>` | 指定別名的值。 |
+| `? | 在命令提示字元顯示說明。 |
 
 ## <a name="examples"></a>範例
 
@@ -42,14 +42,14 @@ add alias <AliasName> <AliasValue>
 list shadows all
 ```
 
-下列摘錄顯示已指派預設別名 VSS_SHADOW_x 的陰影複製：
+下列摘錄顯示已指派預設別名*VSS_SHADOW_x*的陰影複製：
 
 ```
 * Shadow Copy ID = {ff47165a-1946-4a0c-b7f4-80f46a309278}
 %VSS_SHADOW_1%
 ```
 
-若要將名稱為 System1 的新別名指派給此陰影複製，請輸入：
+若要將名稱為*System1*的新別名指派給此陰影複製，請輸入：
 
 ```
 add alias System1 %VSS_SHADOW_1%

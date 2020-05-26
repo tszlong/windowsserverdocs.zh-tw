@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 70b40b6fe16ce37f6fe7cb64c09463db8db4b47c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: fdbb9fe636bb30be90164d9a2163c495a9c2e704
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718973"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83819648"
 ---
 # <a name="arp"></a>arp
 
@@ -30,7 +30,7 @@ arp [/a [<inetaddr>] [/n <ifaceaddr>]] [/g [<inetaddr>] [-n <ifaceaddr>]] [/d <i
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `[/a [<inetaddr>] [/n <ifaceaddr>]` | 顯示所有介面的目前 arp 快取資料表。 **/N**參數會區分大小寫。 若要顯示特定 IP 位址的 arp 快取專案，請搭配**inetaddr**參數使用**arp/a** ，其中**inetaddr**是 IP 位址。 如果未指定**inetaddr** ，則會使用第一個適用的介面。 若要顯示特定介面的 arp 快取資料表，請使用 **/n ifaceaddr**參數搭配 **/a**參數，其中**inetaddr**是指派給介面的 IP 位址。 |
 | `[/g [<inetaddr>] [/n <ifaceaddr>]` | 與 **/a**相同。 |
@@ -54,13 +54,13 @@ arp [/a [<inetaddr>] [/n <ifaceaddr>]] [/g [<inetaddr>] [-n <ifaceaddr>]] [/d <i
 arp /a
 ```
 
-若要顯示已指派 IP 位址為10.0.0.99 之介面的 arp 快取表格，請輸入：
+若要顯示已指派 IP 位址為*10.0.0.99*之介面的 arp 快取表格，請輸入：
 
 ```
 arp /a /n 10.0.0.99
 ```
 
-若要新增可將 IP 位址10.0.0.80 解析為實體位址 00-AA-00-4F-2A-9C 的靜態 arp 快取專案，請輸入：
+若要新增可將 IP 位址*10.0.0.80*解析為實體位址*00-AA-00-4F-2a-9C*的靜態 arp 快取專案，請輸入：
 
 ```
 arp /s 10.0.0.80 00-AA-00-4F-2A-9C

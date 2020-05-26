@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ba3d826b0312091f00ef01d2efe9ee63572fade1
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a7c32818461c46a7d582029ec127c574d6a8f3e3
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725898"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83819108"
 ---
 # <a name="wbadmin-start-sysrecovery"></a>wbadmin start sysrecovery
 
@@ -43,7 +43,7 @@ wbadmin start sysrecovery
 
 ### <a name="parameters"></a>參數
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
 |-version|以 MM/DD/YYYY-HH： MM 格式指定要復原之備份的版本識別碼。 如果您不知道版本識別碼，請輸入**wbadmin get 版本**。|
 |-backupTarget|指定含有您要復原的備份的存放位置。 當儲存位置不同于通常儲存此電腦的備份時，此參數會很有用。|
@@ -60,13 +60,13 @@ wbadmin start sysrecovery
 ```
 wbadmin start sysrecovery -version:03/31/2013-09:00 -backupTarget:d:
 ```
-若要開始復原從2013年4月30日上午9:00 日執行的備份資訊，位於共用資料夾\\ \\servername\shared：若是 server01，請輸入：
+若要開始復原從2013年4月30日上午9:00 日執行的備份資訊，位於共用資料夾 \\ \\ servername\shared：若是 server01，請輸入：
 ```
 wbadmin start sysrecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```
 
 ## <a name="additional-references"></a>其他參考
 
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)
 -   [Restore](wbadmin.md)
 -   [WBBareMetalRecovery](https://technet.microsoft.com/library/jj902461.aspx) Cmdlet

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5c13502145d80693a64b284bf480fabfd03af0db
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 012377013ace07a2b90597c708847062e6923b2f
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724168"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820668"
 ---
 # <a name="manage-bde-keypackage"></a>manage-bde： KeyPackage
 
@@ -30,7 +30,7 @@ manage-bde -KeyPackage [<Drive>] [-ID <KeyProtectoryID>] [-path <PathToExternalK
 
 #### <a name="parameters"></a>參數
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
 |\<磁片磁碟機>|表示後面接著冒號的磁碟機號。|
 |-ID|使用金鑰保護裝置建立金鑰封裝，此識別碼是由此 ID 值所指定。|
@@ -52,5 +52,5 @@ manage-bde -KeyPackage C: -id {84E151C1...7A62067A512} -path f:\Folder
 
 ## <a name="additional-references"></a>其他參考
 
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)
 -   [Manage-bde](manage-bde.md)

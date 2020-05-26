@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 8be1897b241871bcb65126b39f201769f82f50bf
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 6943a9762aed0a6c2ac71c73565ab49811a8e307
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436813"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821168"
 ---
 # <a name="pathping"></a>pathping
 
@@ -29,7 +29,7 @@ ms.locfileid: "83436813"
 pathping [/n] [/h] [/g <Hostlist>] [/p <Period>] [/q <NumQueries> [/w <timeout>] [/i <IPaddress>] [/4 <IPv4>] [/6 <IPv6>][<TargetName>]
 ```
 #### <a name="parameters"></a>參數
-|參數|描述|
+|參數|說明|
 |-------|--------|
 |/n|防止**pathping**嘗試將中繼路由器的 IP 位址解析為其名稱。 這可能會加快顯示**pathping**結果的速度。|
 |/h \< MaximumHops>|指定路徑中用來搜尋目標（目的地）的躍點數目上限。 預設值為30個躍點。|
@@ -88,4 +88,4 @@ Trace complete.
 針對連結顯示的遺失率（ **|** 在 [**位址**] 欄中識別為分隔號（））表示連結擁塞，這會導致在路徑上轉送的封包遺失。 針對路由器顯示的遺失率（由其 IP 位址識別）表示這些路由器可能超載。
 
 ## <a name="additional-references"></a>其他參考
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

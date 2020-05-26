@@ -1,41 +1,45 @@
 ---
 title: ftp ascii
-description: Ftp ascii 的參考主題
+description: Ftp ascii 命令的參考主題，其會將檔案傳輸類型設定為 ASCII。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: 523be48e-eab0-4237-8fb5-ca222824f0b6 vhorne
+ms.assetid: 523be48e-eab0-4237-8fb5-ca222824f0b6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aa33637f43ef8d26635f36b40dbd21cfe2bff42e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f9bf3f278bb478c7244f90533a689f41fd910783
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725397"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820038"
 ---
-# <a name="ftp-ascii"></a>ftp： ascii
+# <a name="ftp-ascii"></a>ftp ascii
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-將檔案傳輸類型設定為 ASCII。   
-## <a name="syntax"></a>語法  
-```  
-ascii  
-```  
-#### <a name="parameters"></a>參數  
-無  
-## <a name="remarks"></a>備註  
-- 預設的檔案傳輸類型為 ASCII。  
-- 在 ASCII 模式中，會執行與網路標準字元集之間的字元轉換。 例如，根據目標作業系統，會視需要轉換行尾字元。  
-- **ftp**同時支援 ASCII 和二進位圖像檔案傳輸類型。 傳送文字檔時，請使用 ASCII。 如需二進位檔案傳輸的詳細資訊，請參閱其他參考中的**ftp： binary** 。  
-  ## <a name="examples"></a>範例  
-  將檔案傳輸類型設定為 ASCII。  
-  ```  
-  ascii  
-  ```  
-  ## <a name="additional-references"></a>其他參考  
-- [ftp： binary](ftp-binary.md)  
-- - [命令列語法關鍵](command-line-syntax-key.md)  
+將檔案傳輸類型設定為 ASCII。 **Ftp**命令同時支援 ASCII （預設值）和二進位圖像檔案傳輸類型，但我們建議您在傳輸文字檔時使用 ascii。 在 ASCII 模式中，會執行與網路標準字元集之間的字元轉換。 例如，根據目標作業系統，會視需要轉換行尾字元。
+
+## <a name="syntax"></a>語法
+
+```
+ascii
+```
+
+### <a name="examples"></a>範例
+
+若要將檔案傳輸類型設定為 ASCII，請輸入：
+
+```
+ascii
+```
+
+## <a name="additional-references"></a>其他參考
+
+- [命令列語法關鍵](command-line-syntax-key.md)
+
+- [ftp 二進位命令](ftp-binary.md)
+
+- [其他 FTP 指引](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

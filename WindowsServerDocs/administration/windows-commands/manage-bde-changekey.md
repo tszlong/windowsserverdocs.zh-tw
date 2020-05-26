@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6b5f152e4e98387adb7e7780f8458edd409b1a9d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 6d50abbe40232987045713c5eadf43607aeb6a81
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724205"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820708"
 ---
 # <a name="manage-bde-changekey"></a>manage-bde： changekey
 
@@ -30,7 +30,7 @@ manage-bde -changekey [<Drive>] [<PathToExternalKeyDirectory>] [-computername <N
 
 #### <a name="parameters"></a>參數
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
 |\<磁片磁碟機>|表示後面接著冒號的磁碟機號。|
 |\<PathToExternalKeyDirectory>|代表用來儲存外部啟動金鑰檔案的目錄位置，此檔案可用來解除鎖定磁片磁碟機。|
@@ -48,5 +48,5 @@ manage-bde -changekey C: E:\
 
 ## <a name="additional-references"></a>其他參考
 
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)
 -   [Manage-bde](manage-bde.md)

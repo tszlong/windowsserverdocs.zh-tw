@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 96f70e0f4130b0bc2c2d85462ee0d2eabb7a7888
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 8cc81d813f1e7d0474337adc1afa22a0cf1040c5
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722406"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820118"
 ---
 # <a name="rename"></a>重新命名
 
@@ -23,5 +23,5 @@ ms.locfileid: "82722406"
 這與**ren**命令相同。
 如需語法和參數，請參閱[ren](ren.md) 。
 ## <a name="additional-references"></a>其他參考
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)
 

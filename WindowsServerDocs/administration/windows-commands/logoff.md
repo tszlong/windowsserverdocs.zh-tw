@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 86acf174bfdebdeab6db7476713dd2d91f21b1a0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 3daecbc2f4034070a5b805c75a6b647ba168e2c5
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724259"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820538"
 ---
 # <a name="logoff"></a>登出
 
@@ -32,7 +32,7 @@ logoff [<SessionName> | <SessionID>] [/server:<ServerName>] [/v]
 ```
 ### <a name="parameters"></a>參數
 
-|      參數       |                                                                             描述                                                                              |
+|      參數       |                                                                             說明                                                                              |
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    <SessionName>     |                                                                  指定會話的名稱。                                                                  |
 |     <SessionID>      |                                                 指定識別伺服器會話的數值識別碼。                                                 |
@@ -61,5 +61,5 @@ logoff [<SessionName> | <SessionID>] [/server:<ServerName>] [/v]
   ```
 
 ## <a name="additional-references"></a>其他參考
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)
 -   [遠端桌面服務 (終端機服務) 命令參考資料](remote-desktop-services-terminal-services-command-reference.md)

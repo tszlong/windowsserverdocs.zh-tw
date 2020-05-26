@@ -1,6 +1,6 @@
 ---
-title: 入口
-description: '* * * * 的參考主題'
+title: 匯入 diskpart
+description: 匯入命令的參考主題，它會將外部磁片群組匯入到本機電腦的磁片群組。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 569d986c57ae8b3d7253c050146ac0583c7c92df
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 6912aa9698d484501cad5f3cdfb5b19955bb4931
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724839"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83818448"
 ---
-# <a name="import"></a>入口
+# <a name="import-diskpart"></a>匯入（diskpart）
 
+將外部磁片群組匯入本機電腦的磁片群組。 此命令會匯入與具有焦點的磁片位於相同群組中的每個磁片。
 
-
-將外部磁片群組匯入本機電腦的磁片群組。
+> 重大在您可以使用此命令之前，您必須使用 [[選取磁片] 命令](select-disk.md)來選取外部磁片群組中的動態磁碟，並將焦點移至它。
 
 ## <a name="syntax"></a>語法
 
@@ -30,18 +30,14 @@ import [noerr]
 
 ### <a name="parameters"></a>參數
 
-|參數|描述|
-|---------|-----------|
-|noerr|僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。|
+| 參數 | 說明 |
+| --------- | ----------- |
+| noerr | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
 
-## <a name="remarks"></a>備註
-
--   Import 命令會匯入與具有焦點的磁片位於相同群組中的每個磁片。
--   必須選取外部磁片群組中的動態磁碟，此操作才會成功。 使用 [**選取磁片**] 命令來選取磁片，並將焦點移至它。
-
-## <a name="examples"></a>範例
+### <a name="examples"></a>範例
 
 若要匯入相同磁片群組中的每個磁片，並將焦點放入本機電腦的磁片群組，請輸入：
+
 ```
 import
 ```
@@ -50,3 +46,4 @@ import
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
+- [diskpart 命令](diskpart.md)

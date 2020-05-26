@@ -1,6 +1,6 @@
 ---
 title: ipconfig
-description: '* * * * 的參考主題'
+description: Ipconfig 命令的參考主題，它會顯示所有目前的 TCP/IP 網路設定值，並重新整理動態主機設定通訊協定（DHCP）和網域名稱系統（DNS）設定。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,75 +9,85 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a4098da4e2ffb94db8cc1fa65b1cec69f5233f05
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e08e8c493b40475ba61ea76be6b49b9c4e21c1cf
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724828"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83818388"
 ---
 # <a name="ipconfig"></a>ipconfig
-
-
 
 顯示所有目前的 TCP/IP 網路設定值，並重新整理動態主機設定通訊協定（DHCP）和網域名稱系統（DNS）設定。 使用時不含參數， **ipconfig**會顯示所有介面卡的網際網路通訊協定第4版（IPv4）和 IPv6 位址、子網路遮罩和預設閘道。
 
 ## <a name="syntax"></a>語法
 
 ```
-ipconfig [/allcompartments] [/all] [/renew [<Adapter>]] [/release [<Adapter>]] [/renew6[<Adapter>]] [/release6 [<Adapter>]] [/flushdns] [/displaydns] [/registerdns] [/showclassid <Adapter>] [/setclassid <Adapter> [<ClassID>]]
+ipconfig [/allcompartments] [/all] [/renew [<adapter>]] [/release [<adapter>]] [/renew6[<adapter>]] [/release6 [<adapter>]] [/flushdns] [/displaydns] [/registerdns] [/showclassid <adapter>] [/setclassid <adapter> [<classID>]]
 ```
 
-#### <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
-|參數|描述|
-|---------|-----------|
-|/all|顯示所有介面卡的完整 TCP/IP 設定。 介面卡可以是實體介面，例如已安裝的網路介面卡，亦可以是邏輯介面，例如撥號連線。|
-|/allcompartments|顯示所有區間的完整 TCP/IP 設定。|
-|/displaydns|顯示 DNS 用戶端解析程式快取的內容，其中包括從本機主機檔案預先載入的專案，以及電腦已解析之名稱查詢最近取得的資源記錄。 DNS 用戶端服務會使用此資訊來快速解析經常查詢的名稱，然後再查詢其設定的 DNS 伺服器。|
-|/flushdns|排清並重設 DNS 用戶端解析程式快取的內容。 在 DNS 疑難排解期間，您可以使用此程式來捨棄快取中的負快取專案，以及已動態新增的任何其他專案。|
-|/registerdns|針對電腦上設定的 DNS 名稱和 IP 位址，起始手動動態註冊。 您可以使用此參數來疑難排解失敗的 DNS 名稱註冊，或解決用戶端與 DNS 伺服器之間的動態更新問題，而不需要重新開機用戶端電腦。 TCP/IP 通訊協定之 advanced 屬性中的 DNS 設定會決定哪些名稱會在 DNS 中註冊。|
-|/release [\<介面卡>]|將 DHCPRELEASE 訊息傳送至 DHCP 伺服器以釋放目前的 DHCP 設定，並捨棄所有介面卡（如果未指定介面卡）的 IP 位址設定，或如果包含*介面卡*參數，則為特定介面卡。 此參數會針對設定為自動取得 IP 位址的介面卡停用 TCP/IP。 若要指定介面卡名稱，請輸入當您使用不含參數的**ipconfig**時，所顯示的介面卡名稱。|
-|/release6 [\<介面卡>]|將 DHCPRELEASE 訊息傳送到 DHCPv6 伺服器以釋放目前的 DHCP 設定，並捨棄所有介面卡（如果未指定介面卡）或特定介面卡的 IPv6 位址設定（如果包含*適配*卡參數）。 此參數會針對設定為自動取得 IP 位址的介面卡停用 TCP/IP。 若要指定介面卡名稱，請輸入當您使用不含參數的**ipconfig**時，所顯示的介面卡名稱。|
-|/renew [\<介面卡>]|更新所有介面卡的 DHCP 設定（如果未指定介面卡），或如果包含*介面卡*參數，則為特定介面卡。 只有在已設定為自動取得 IP 位址的介面卡電腦上，才能使用此參數。 若要指定介面卡名稱，請輸入當您使用不含參數的**ipconfig**時，所顯示的介面卡名稱。|
-|/renew6 [\<介面卡>]|針對所有介面卡（如果未指定介面卡）或特定介面卡（如果*包含介面卡參數）* ，更新 DHCPv6 設定。 只有在已設定為自動取得 IPv6 位址的介面卡電腦上，才能使用此參數。 若要指定介面卡名稱，請輸入當您使用不含參數的**ipconfig**時，所顯示的介面卡名稱。|
-|/setclassid \<介面卡> <ClassID>[]|設定指定介面卡的 DHCP 類別識別碼。 若要設定所有介面卡的 DHCP 類別識別碼，請使用星號（**&#42;**）萬用字元來取代*介面卡*。 只有在已設定為自動取得 IP 位址的介面卡電腦上，才能使用此參數。 如果未指定 DHCP 類別識別碼，則會移除目前的類別識別碼。|
-|/showclassid \<介面卡>|顯示指定介面卡的 DHCP 類別識別碼。 若要查看所有介面卡的 DHCP 類別識別碼，請使用星號（**&#42;**）萬用字元來取代*介面卡*。 只有在已設定為自動取得 IP 位址的介面卡電腦上，才能使用此參數。|
-|/?|在命令提示字元顯示 [說明]。|
+| 參數 | 說明 |
+| --------- | ----------- |
+| /all | 顯示所有介面卡的完整 TCP/IP 設定。 介面卡可以是實體介面，例如已安裝的網路介面卡，亦可以是邏輯介面，例如撥號連線。 |
+| /displaydns | 顯示 DNS 用戶端解析程式快取的內容，其中包括從本機主機檔案預先載入的專案，以及電腦已解析之名稱查詢最近取得的資源記錄。 DNS 用戶端服務會使用此資訊來快速解析經常查詢的名稱，然後再查詢其設定的 DNS 伺服器。 |
+| /flushdns | 排清並重設 DNS 用戶端解析程式快取的內容。 在 DNS 疑難排解期間，您可以使用此程式來捨棄快取中的負快取專案，以及已動態新增的任何其他專案。 |
+| /registerdns | 針對電腦上設定的 DNS 名稱和 IP 位址，起始手動動態註冊。 您可以使用此參數來疑難排解失敗的 DNS 名稱註冊，或解決用戶端與 DNS 伺服器之間的動態更新問題，而不需要重新開機用戶端電腦。 TCP/IP 通訊協定之 advanced 屬性中的 DNS 設定會決定哪些名稱會在 DNS 中註冊。 |
+| /release`[<adapter>]` | 將 DHCPRELEASE 訊息傳送至 DHCP 伺服器以釋放目前的 DHCP 設定，並捨棄所有介面卡（如果未指定介面卡）的 IP 位址設定，或如果包含*介面卡*參數，則為特定介面卡。 此參數會針對設定為自動取得 IP 位址的介面卡停用 TCP/IP。 若要指定介面卡名稱，請輸入當您使用不含參數的**ipconfig**時，所顯示的介面卡名稱。 |
+| /release6`[<adapter>]` | 將 DHCPRELEASE 訊息傳送到 DHCPv6 伺服器以釋放目前的 DHCP 設定，並捨棄所有介面卡（如果未指定介面卡）或特定介面卡的 IPv6 位址設定（如果包含*適配*卡參數）。 此參數會針對設定為自動取得 IP 位址的介面卡停用 TCP/IP。 若要指定介面卡名稱，請輸入當您使用不含參數的**ipconfig**時，所顯示的介面卡名稱。 |
+| /renew`[<adapter>]` | 更新所有介面卡的 DHCP 設定（如果未指定介面卡），或如果包含*介面卡*參數，則為特定介面卡。 只有在已設定為自動取得 IP 位址的介面卡電腦上，才能使用此參數。 若要指定介面卡名稱，請輸入當您使用不含參數的**ipconfig**時，所顯示的介面卡名稱。 |
+| /renew6`[<adapter>]` | 針對所有介面卡（如果未指定介面卡）或特定介面卡（如果*包含介面卡參數）* ，更新 DHCPv6 設定。 只有在已設定為自動取得 IPv6 位址的介面卡電腦上，才能使用此參數。 若要指定介面卡名稱，請輸入當您使用不含參數的**ipconfig**時，所顯示的介面卡名稱。 |
+| /setclassid`<adapter>[<classID>]` | 設定指定介面卡的 DHCP 類別識別碼。 若要設定所有介面卡的 DHCP 類別識別碼，請使用星號（**&#42;**）萬用字元來取代*介面卡*。 只有在已設定為自動取得 IP 位址的介面卡電腦上，才能使用此參數。 如果未指定 DHCP 類別識別碼，則會移除目前的類別識別碼。 |
+| /showclassid`<adapter>` | 顯示指定介面卡的 DHCP 類別識別碼。 若要查看所有介面卡的 DHCP 類別識別碼，請使用星號（**&#42;**）萬用字元來取代*介面卡*。 只有在已設定為自動取得 IP 位址的介面卡電腦上，才能使用此參數。 |
+| /? | 在命令提示字元顯示 [說明]。 |
 
-## <a name="remarks"></a>備註
+#### <a name="remarks"></a>備註
 
 - 此命令最適用于設定為自動取得 IP 位址的電腦。 這可讓使用者判斷哪些 TCP/IP 設定值已由 DHCP、自動私人 IP 位址（APIPA）或替代設定進行設定。
-- 如果您為*介面卡*提供的名稱包含任何空格，請使用引號括住介面卡名稱（例如： * * * *<em>介面卡名稱</em>* * * *）。
-- 對於介面卡名稱， **ipconfig**支援使用星號（\*）萬用字元來指定名稱開頭為指定字串的介面卡，或名稱包含指定字串的介面卡。 例如，[**本機\* ** ] 會比對開頭為 [本機] 的所有介面卡** \*，並\*符合**包含字串 Con 的所有介面卡。
 
-## <a name="examples"></a>範例
+- 如果您為*介面卡*提供的名稱包含任何空格，請使用引號括住介面卡名稱（例如，「介面卡名稱」）。
+
+- 對於介面卡名稱， **ipconfig**支援使用星號（*）萬用字元來指定名稱開頭為指定字串的介面卡，或名稱包含指定字串的介面卡。 例如， `Local*` 會比對開頭為字串 Local 的所有介面卡，並 `*Con*` 符合包含字串 Con 的所有介面卡。
+
+### <a name="examples"></a>範例
 
 若要顯示所有介面卡的基本 TCP/IP 設定，請輸入：
+
 ```
 ipconfig
 ```
+
 若要顯示所有介面卡的完整 TCP/IP 設定，請輸入：
+
 ```
 ipconfig /all
 ```
+
 若只要針對本機區域連線介面卡更新 DHCP 指派的 IP 位址設定，請輸入：
+
 ```
 ipconfig /renew Local Area Connection
 ```
+
 若要在針對 DNS 名稱解析問題進行疑難排解時排清 DNS 解析程式快取，請輸入：
+
 ```
 ipconfig /flushdns
 ```
+
 若要顯示名稱開頭為 Local 的所有介面卡的 DHCP 類別識別碼，請輸入：
+
 ```
 ipconfig /showclassid Local*
 ```
+
 若要將本機區域連線介面卡的 DHCP 類別識別碼設定為測試，請輸入：
+
 ```
 ipconfig /setclassid Local Area Connection TEST
 ```
 
 ## <a name="additional-references"></a>其他參考
 
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

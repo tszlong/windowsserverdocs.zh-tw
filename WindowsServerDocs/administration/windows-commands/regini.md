@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 632573f317eafa254f6c434f959a06f2c24f7353
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 33e0dcaa59be3c1748763cce5c9979fe318b271a
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80836241"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820148"
 ---
 # <a name="regini"></a>regini
 
@@ -32,11 +32,11 @@ regini [-m \\machinename | -h hivefile hiveroot][-i n] [-o outputWidth][-b] text
 
 |參數 |描述 |
 
-|-m \<\\\\ComputerName >|指定包含要修改之登錄的遠端電腦名稱稱。 使用 **\\\\ComputerName**格式。|
+|-m \< \\ \\ ComputerName>|指定包含要修改之登錄的遠端電腦名稱稱。 使用** \\ \\ ComputerName**格式。|
 |---------------------|-|
-|-h \<hivefile hiveroot >|指定要修改的本機登錄 hive。 您必須以**hivefile hiveroot**的格式指定 hive 檔案的名稱和 hive 的根目錄。|
-|-i \<n >|指定要用來表示命令輸出中登錄機碼樹狀結構的縮排層級。 **Regdmp .exe**工具（以二進位格式取得登錄機碼的目前許可權）會使用四倍的縮排，因此預設值為**4**。|
-|-o \<outputwidth >|指定命令輸出的寬度（以字元為單位）。 如果輸出會出現在 [命令] 視窗中，則預設值為視窗的寬度。 如果將輸出導向至檔案，預設值為**240**個字元。|
+|-h \< hivefile hiveroot>|指定要修改的本機登錄 hive。 您必須以**hivefile hiveroot**的格式指定 hive 檔案的名稱和 hive 的根目錄。|
+|-i \< n>|指定要用來表示命令輸出中登錄機碼樹狀結構的縮排層級。 **Regdmp .exe**工具（以二進位格式取得登錄機碼的目前許可權）會使用四倍的縮排，因此預設值為**4**。|
+|-o \< outputwidth>|指定命令輸出的寬度（以字元為單位）。 如果輸出會出現在 [命令] 視窗中，則預設值為視窗的寬度。 如果將輸出導向至檔案，預設值為**240**個字元。|
 |-b|指定**regini.exe regedit.exe**的輸出與舊版的**regini.exe regedit.exe**回溯相容。 如需詳細資訊，請參閱＜備註＞一節。|
 |textfiles|指定包含登錄資料的一或多個文字檔的名稱。 可以列出任何數目的 ANSI 或 Unicode 文字檔。|
 
@@ -47,6 +47,6 @@ regini [-m \\machinename | -h hivefile hiveroot][-i n] [-o outputWidth][-b] text
 -   使用反斜線表示行接續。 此命令將會忽略反斜線的所有字元，直到下一行的第一個非空白字元為止（但不包括在內）。 如果您在反斜線前面加上一個以上的空格，則會以單一空格取代。
 -   使用 [硬式] 索引標籤字元來控制縮排。 此縮排表示登錄機碼的樹狀結構;不過，這些字元會轉換成單一空格，而不論其位置為何。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

@@ -9,26 +9,26 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f523c55f5974599c152f4fbae7d8143d5362af62
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 0a63c74e3d25e11ccc8129a6ce28fd505e9227eb
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724248"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820528"
 ---
 # <a name="lpr"></a>lpr
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-將檔案傳送到執行線上印表機 Daemon （LPD）服務的電腦或印表機共用裝置，以準備進行列印。  
+將檔案傳送到執行線上印表機 Daemon （LPD）服務的電腦或印表機共用裝置，以準備進行列印。
 
-## <a name="syntax"></a>語法  
-```  
-lpr [-S <ServerName>] -P <printerName> [-C <BannerContent>] [-J <JobName>] [-o | -o l] [-x] [-d] <filename>  
-```  
-### <a name="parameters"></a>參數  
+## <a name="syntax"></a>語法
+```
+lpr [-S <ServerName>] -P <printerName> [-C <BannerContent>] [-J <JobName>] [-o | -o l] [-x] [-d] <filename>
+```
+### <a name="parameters"></a>參數
 
-|     參數      |                                                                                                           描述                                                                                                           |
+|     參數      |                                                                                                           說明                                                                                                           |
 |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |  -S<ServerName>   |                                    指定以您要顯示的狀態裝載 LPD 列印佇列的電腦或印表機共用裝置（依名稱或 IP 位址）。 必要。                                    |
 |  -P<printerName>  |                                                              以您想要顯示之狀態的列印佇列指定（依名稱）印表機。 必要。                                                              |
@@ -40,19 +40,19 @@ lpr [-S <ServerName>] -P <printerName> [-C <BannerContent>] [-J <JobName>] [-o |
 |     <FileName>     |                                                                                      指定要列印的檔案（依名稱）。 必要。                                                                                      |
 |         /?         |                                                                                              在命令提示字元顯示說明。                                                                                               |
 
-## <a name="remarks"></a>備註  
-- 若要尋找印表機的名稱，請開啟 [印表機] 資料夾。  
-- **-S**、 **-P**、 **-C**和 **-J**參數會區分大小寫，而且必須以大寫字母輸入。  
-  ## <a name="examples"></a>範例  
-  這個範例示範如何在10.0.0.45 上將檔 .txt 文字檔列印至 LPD 主機上的 Laserprinter1 印表機佇列：  
-  ```  
-  lpr -S 10.0.0.45 -P Laserprinter1 -o Document.txt  
-  ```  
-  這個範例示範如何在10.0.0.45 上，將 PostScript_file ps Adobe PostScript 檔案列印到 LPD 主機上的 Laserprinter1 印表機佇列：  
-  ```  
-  lpr -S 10.0.0.45 -P Laserprinter1 -o l PostScript_file.ps  
-  ```  
+## <a name="remarks"></a>備註
+- 若要尋找印表機的名稱，請開啟 [印表機] 資料夾。
+- **-S**、 **-P**、 **-C**和 **-J**參數會區分大小寫，而且必須以大寫字母輸入。
+  ## <a name="examples"></a>範例
+  這個範例示範如何在10.0.0.45 上將檔 .txt 文字檔列印至 LPD 主機上的 Laserprinter1 印表機佇列：
+  ```
+  lpr -S 10.0.0.45 -P Laserprinter1 -o Document.txt
+  ```
+  這個範例示範如何在10.0.0.45 上，將 PostScript_file ps Adobe PostScript 檔案列印到 LPD 主機上的 Laserprinter1 印表機佇列：
+  ```
+  lpr -S 10.0.0.45 -P Laserprinter1 -o l PostScript_file.ps
+  ```
 
-## <a name="additional-references"></a>其他參考  
--   - [命令列語法關鍵](command-line-syntax-key.md)  
--   [列印命令參考](print-command-reference.md)  
+## <a name="additional-references"></a>其他參考
+- [命令列語法關鍵](command-line-syntax-key.md)
+-   [列印命令參考](print-command-reference.md)

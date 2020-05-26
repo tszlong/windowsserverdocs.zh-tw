@@ -9,26 +9,26 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 432401bbe2050a7954967a73b5ba8abeee5bb1d3
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 5dd4bf9828c4b71e7b2291dfd5d453c43679e059
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721492"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821068"
 ---
 # <a name="telnet-send"></a>telnet：傳送
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-將 telnet 命令傳送到 telnet 伺服器。   
+將 telnet 命令傳送到 telnet 伺服器。
 
-## <a name="syntax"></a>語法  
-```  
-sen[d] {ao | ayt | brk | esc | ip | synch | <string>} [?]  
-```  
-#### <a name="parameters"></a>參數  
+## <a name="syntax"></a>語法
+```
+sen[d] {ao | ayt | brk | esc | ip | synch | <string>} [?]
+```
+#### <a name="parameters"></a>參數
 
-| 參數 |                     描述                      |
+| 參數 |                     說明                      |
 |-----------|------------------------------------------------------|
 |    ao     |       傳送 telnet 命令中止輸出。        |
 |    ayt    |       傳送 telnet 命令給您。       |
@@ -39,10 +39,10 @@ sen[d] {ao | ayt | brk | esc | ip | synch | <string>} [?]
 | <string>  | 將您輸入的任何字串傳送到 telnet 伺服器。 |
 |     ?     |     顯示與此命令相關聯的說明。      |
 
-## <a name="examples"></a>範例  
-傳送到 telnet 伺服器。  
-```  
-sen ayt  
-```  
-## <a name="additional-references"></a>其他參考  
--   - [命令列語法關鍵](command-line-syntax-key.md)  
+## <a name="examples"></a>範例
+傳送到 telnet 伺服器。
+```
+sen ayt
+```
+## <a name="additional-references"></a>其他參考
+- [命令列語法關鍵](command-line-syntax-key.md)

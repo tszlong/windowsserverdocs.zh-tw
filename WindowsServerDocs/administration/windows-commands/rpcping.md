@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cd23d15560c7ae1e4e199aa79c3abbe8772ea61b
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 1edd4628f8f5b4b88c44e689ac9c1f7277cafad9
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436753"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820078"
 ---
 # <a name="rpcping"></a>rpcping
 
@@ -38,7 +38,7 @@ rpcping [/t <protseq>] [/s <server_addr>] [/e <endpoint>
 
 #### <a name="parameters"></a>參數
 
-|            參數             |                                                                                                                                                                                                                                                                                                                                               描述                                                                                                                                                                                                                                                                                                                                               |
+|            參數             |                                                                                                                                                                                                                                                                                                                                               說明                                                                                                                                                                                                                                                                                                                                               |
 |----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |          /t \< protseq>           |                                                                                                                                                                                                                                                  指定要使用的通訊協定順序。 可以是其中一個標準 RPC 通訊協定序列，例如： ncacn_ip_tcp、ncacn_np 或 ncacn_HTTP。<p>如果未指定，則預設值為 ncacn_ip_tcp。                                                                                                                                                                                                                                                   |
 |        /s \< server_addr>         |                                                                                                                                                                                                                                                                                                            指定伺服器位址。 如果未指定，將會 ping 本機電腦。                                                                                                                                                                                                                                                                                                            |
@@ -79,4 +79,4 @@ rpcping /t ncacn_http /s exchange_server /o RpcProxy=front_end_proxy /P username
 ```
 
 ## <a name="additional-references"></a>其他參考
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

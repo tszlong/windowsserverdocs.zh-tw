@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 30655cae3ef737b10d266a894b0bfb6d76ffe87e
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: fb9977d0bc4f45b610d8bf3409c6beeadfaf7ee5
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436667"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821018"
 ---
 # <a name="tftp"></a>tftp
 
@@ -28,7 +28,7 @@ tftp [-i] [<Host>] [{get | put}] <Source> [<Destination>]
 ```
 
 #### <a name="parameters"></a>參數
-|參數|描述|
+|參數|說明|
 |-------|--------|
 |-i|指定二進位影像傳輸模式（也稱為「八位模式」）。 在二進位影像模式中，檔案是以一個位元組的單位傳輸。 傳送二進位檔案時，請使用此模式。 如果省略 **-i** ，則會以 ASCII 模式傳送檔案。 這是預設的傳輸模式。 此模式會將指定電腦的行尾（EOL）字元轉換為適當的格式。 傳送文字檔時，請使用此模式。 如果檔案傳輸成功，則會顯示資料傳送速率。|
 |\<主控件\>|指定本機或遠端電腦。|
@@ -49,4 +49,4 @@ tftp  -i Host1 get boot.img
 ```
 
 ## <a name="additional-references"></a>其他參考
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

@@ -8,16 +8,16 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: b9e8d4d2169ef1af5406dc3d6a7deff9828ee501
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4880145d385498e6191937272495ddf8def07ba5
+ms.sourcegitcommit: 599162b515c50106fd910f5c180e1a30bbc389b9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80825591"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83775330"
 ---
 # <a name="ad-ds-getting-started"></a>AD DS 快速入門
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Active Directory 會將物件的相關資訊儲存在網路上，並讓系統管理員和使用者輕鬆地尋找和使用此資訊。 Active Directory 使用結構化資料存放區作為目錄資訊的邏輯階層式組織基礎。  
   

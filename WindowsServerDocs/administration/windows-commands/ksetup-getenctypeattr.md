@@ -1,6 +1,6 @@
 ---
-title: ksetup： getenctypeattr
-description: '* * * * 的參考主題'
+title: ksetup getenctypeattr
+description: Ksetup getenctypeattr 命令的參考主題，它會抓取網域的加密類型屬性。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,51 +9,51 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f8363113d4fbb310d98b40d852b36a00f20320e6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 2acead4ff1179002303c18d4feff262080203a28
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724638"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817698"
 ---
-# <a name="ksetupgetenctypeattr"></a>ksetup： getenctypeattr
+# <a name="ksetup-getenctypeattr"></a>ksetup getenctypeattr
 
+抓取網域的加密類型屬性。 成功或失敗完成時，會顯示狀態訊息。
 
-
-抓取網域的加密類型屬性。
+您可以藉由執行**klist**命令並查看輸出，來查看 Kerberos 票證授權票證（TGT）和工作階段金鑰的加密類型。 您可以藉由執行命令來設定要連接及使用的網域 `ksetup /domain <domainname>` 。
 
 ## <a name="syntax"></a>語法
 
 ```
-ksetup /getenctypeattr <DomainName> 
+ksetup /getenctypeattr <domainname>
 ```
 
-#### <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
-|參數|描述|
-|---------|-----------|
-|\<DomainName>|您想要建立連接的網功能變數名稱稱。 使用完整功能變數名稱或簡單格式的名稱，例如 corp.contoso.com 或 contoso。|
+| 參數 | 說明 |
+| --------- | ----------- |
+| `<domainname>` | 您想要建立連接的網功能變數名稱稱。 使用完整功能變數名稱或簡單格式的名稱，例如 corp.contoso.com 或 contoso。 |
 
-## <a name="remarks"></a>備註
+### <a name="examples"></a>範例
 
-若要查看 Kerberos 票證授權票證（TGT）和工作階段金鑰的加密類型，請執行**klist**命令並查看輸出。
+若要驗證網域的 [加密類型] 屬性，請輸入：
 
-如果命令成功或失敗，則會在成功或失敗完成時顯示狀態訊息。
-
-若要設定您想要連接並使用的網域，請執行**ksetup/Domain \<DomainName>** 命令。
-
-## <a name="examples"></a>範例
-
-確認網域的 [加密類型] 屬性：
 ```
 ksetup /getenctypeattr mit.contoso.com
 ```
 
 ## <a name="additional-references"></a>其他參考
 
--   [Klist](klist.md)
--   [Ksetup:domain](ksetup-domain.md)
--   [Ksetup:addenctypeattr](ksetup-addenctypeattr.md)
--   [Ksetup:setenctypeattr](ksetup-setenctypeattr.md)
--   [Ksetup:delenctypeattr](ksetup-delenctypeattr.md)
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)
+
+- [klist 命令](klist.md)
+
+- [ksetup 命令](ksetup.md)
+
+- [ksetup 網域命令](ksetup-domain.md)
+
+- [ksetup addenctypeattr 命令](ksetup-addenctypeattr.md)
+
+- [ksetup setenctypeattr 命令](ksetup-setenctypeattr.md)
+
+- [ksetup delenctypeattr 命令](ksetup-delenctypeattr.md)

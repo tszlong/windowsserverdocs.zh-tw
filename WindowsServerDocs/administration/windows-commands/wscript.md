@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/21/2018
-ms.openlocfilehash: cf2d23c7d5773662f679a9a20b0aaba118f35548
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9b4727e985070e2e76fd53038d33148003d87ebb
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720633"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820888"
 ---
 # <a name="wscript"></a>wscript
 
@@ -30,7 +30,7 @@ wscript [<scriptname>] [/b] [/d] [/e:<engine>] [{/h:cscript|/h:wscript}] [/i] [/
 
 #### <a name="parameters"></a>參數
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
 |scriptname|指定腳本檔案的路徑和檔案名。|
 |/b|指定不會顯示警示、腳本錯誤或輸入提示的批次模式。 這與 **/i**相反。|
@@ -39,11 +39,11 @@ wscript [<scriptname>] [/b] [/d] [/e:<engine>] [{/h:cscript|/h:wscript}] [/i] [/
 |/h： cscript|將**cscript.exe**註冊為執行腳本的預設腳本主機。|
 |/h： wscript.echo|將**wscript.echo**註冊為執行腳本的預設腳本主機。 這是省略 **/h**選項時的預設值。|
 |/i|指定互動模式，以顯示警示、腳本錯誤和輸入提示。</br>這是預設值，與 **/b**相反。|
-|/工作 x：\<識別碼>|執行**manage-bde.wsf**腳本檔案中的*識別碼*所識別的作業。|
+|/工作 x： \< 識別碼>|執行**manage-bde.wsf**腳本檔案中的*識別碼*所識別的作業。|
 |/logo|指定在執行腳本之前，主控台中顯示 Windows 腳本主機橫幅。</br>這是預設值，與 **/nologo**相反。|
 |/nologo|指定在腳本執行之前，不顯示 Windows Script 主機橫幅。 這與 **/logo**相反。|
 |/s|儲存目前使用者的目前命令提示字元選項。|
-|/t：\<number>|指定腳本可執行檔時間上限（以秒為單位）。 您最多可以指定32767秒。</br>預設值為 [無時間限制]。|
+|/t： \< number>|指定腳本可執行檔時間上限（以秒為單位）。 您最多可以指定32767秒。</br>預設值為 [無時間限制]。|
 |/x|啟動偵錯工具中的腳本。|
 |ScriptArguments|指定傳遞至腳本的引數。 每個腳本引數前面必須加上斜線（/）。|
 |/?|在命令提示字元顯示 [說明]。|
@@ -61,4 +61,4 @@ wscript [<scriptname>] [/b] [/d] [/e:<engine>] [{/h:cscript|/h:wscript}] [/i] [/
 
 ## <a name="additional-references"></a>其他參考
 
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

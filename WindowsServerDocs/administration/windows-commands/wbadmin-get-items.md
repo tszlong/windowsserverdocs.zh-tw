@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d6305c9036b611f879608386dbf71398e993ea03
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9987a3628682c47cde53433558ef89c01684ccf5
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720167"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821198"
 ---
 # <a name="wbadmin-get-items"></a>wbadmin 取得專案
 
@@ -35,7 +35,7 @@ wbadmin get items
 
 ### <a name="parameters"></a>參數
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
 |-version|以 MM/DD/YYYY-HH： MM 格式指定備份的版本。 如果您不知道版本資訊，請輸入**wbadmin get 版本**。|
 |-backupTarget|指定包含您想要其詳細資料之備份的儲存位置。 用於列出儲存于該目標位置的備份。 備份目標位置可以是本機連接的磁片磁碟機或遠端共用資料夾。 如果在建立備份的同一部電腦上執行**wbadmin get items**，則不需要此參數。 不過，若要取得從另一部電腦建立之備份的相關資訊，則需要此參數。|
@@ -47,13 +47,13 @@ wbadmin get items
 ```
 wbadmin get items -version:03/31/2013-09:00
 ```
-列出從2013年4月30日上午9:00 點執行的 server01 備份中的專案 並儲存在\\ \\servername\share 上，輸入：
+列出從2013年4月30日上午9:00 點執行的 server01 備份中的專案 並儲存在 \\ \\ servername\share 上，輸入：
 ```
 wbadmin get items -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```
 
 ## <a name="additional-references"></a>其他參考
 
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)
 -   [Restore](wbadmin.md)
 -   [WBBackupSet](https://technet.microsoft.com/library/jj902473.aspx) Cmdlet

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e3355aa310bb9919b5218052878d94416f577381
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: bee9dabe0e9344c7870e53ed34e4c9dd057cfc42
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723835"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820838"
 ---
 # <a name="mstsc"></a>mstsc
 
@@ -34,10 +34,10 @@ mstsc.exe /migrate
 
 ### <a name="parameters"></a>參數
 
-|        參數        |                                                         描述                                                         |
+|        參數        |                                                         說明                                                         |
 |-------------------------|-----------------------------------------------------------------------------------------------------------------------------|
 |    <Connection File>    |                                   指定連接的 .rdp 檔案名。                                    |
-|  /v： <伺服器\>[： <埠\>] |                指定遠端電腦，以及您想要連接的埠號碼（選擇性）。                 |
+|  /v： <伺服器 \> [： <埠 \> ] |                指定遠端電腦，以及您想要連接的埠號碼（選擇性）。                 |
 |         /admin          |                                   將您連接到管理伺服器的會話。                                   |
 |           /f            |                                    以全螢幕模式啟動遠端桌面連線。                                    |
 |       /w<Width>        |                                      指定遠端桌面視窗的寬度。                                      |
@@ -63,5 +63,5 @@ mstsc.exe /migrate
     ```
 
 ## <a name="additional-references"></a>其他參考
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)
 -   [遠端桌面服務 (終端機服務) 命令參考資料](remote-desktop-services-terminal-services-command-reference.md)

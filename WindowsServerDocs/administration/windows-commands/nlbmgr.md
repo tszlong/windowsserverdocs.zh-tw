@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 59ec2ad6b4614f89f9c1c3cbda97d5283a2374bd
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a055eb30984bd1832d84bce40607eb0722b175b2
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723745"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820848"
 ---
 # <a name="nlbmgr"></a>nlbmgr
 
@@ -27,14 +27,14 @@ nlbmgr [/help] [/noping] [/hostlist <filename>] [/autorefresh <interval>]
 ```
 #### <a name="parameters"></a>參數
 
-|        參數        |                                                                                                                                                                                                描述                                                                                                                                                                                                |
+|        參數        |                                                                                                                                                                                                說明                                                                                                                                                                                                |
 |-------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |          /help          |                                                                                                                                                                                   在命令提示字元顯示說明。                                                                                                                                                                                    |
 |         /noping         | 防止「網路負載平衡管理員」在嘗試透過 Windows Management Instrumentation （WMI）連線之前 ping 主機。 如果您已在所有可用的網路介面卡上停用網際網路控制訊息通訊協定（ICMP），請使用此選項。 如果「網路負載平衡管理員」嘗試連線到無法使用的主機，您會在使用此選項時遇到延遲。 |
 |  /hostlist<filename>   |                                                                                                                                                                將 filename 中指定的主機載入「網路負載平衡管理員」。                                                                                                                                                                 |
-| /autorefresh<interval> |                                                                                                          使「網路負載平衡管理員」每<interval>秒重新整理其主機和叢集資訊。 如果未指定間隔，則會每隔60秒重新整理一次資訊。                                                                                                          |
+| /autorefresh<interval> |                                                                                                          使「網路負載平衡管理員」每秒重新整理其主機和叢集資訊 <interval> 。 如果未指定間隔，則會每隔60秒重新整理一次資訊。                                                                                                          |
 |           /?            |                                                                                                                                                                                   在命令提示字元顯示說明。                                                                                                                                                                                    |
 
 ## <a name="additional-references"></a>其他參考
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)
 

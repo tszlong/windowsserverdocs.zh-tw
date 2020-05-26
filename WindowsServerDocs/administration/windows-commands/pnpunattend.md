@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: d62edde425a00db23f150246df65166234604cef
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 5feafc4d99d4fdea2a7da888c8e818088dd7f6e0
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436463"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821208"
 ---
 # <a name="pnpunattend"></a>pnpunattend
 
@@ -28,7 +28,7 @@ PnPUnattend.exe auditSystem [/help] [/?] [/h] [/s] [/L]
 
 ### <a name="parameters"></a>參數
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
 |auditSystem|指定線上驅動程式安裝。</br>必要項，但使用 **/help**或 **/？** 來執行**pnpunattend**時除外 參數。|
 |/s|選擇性。 指定不安裝就搜尋驅動程式。|

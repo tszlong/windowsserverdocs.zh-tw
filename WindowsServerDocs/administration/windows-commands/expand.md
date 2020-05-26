@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a25507b83c17100c579f00d10c94e20c6be2aa4e
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 1204f3db338f835b47db03eab3d178544a6acc85
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437213"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83819118"
 ---
 # <a name="expand"></a>expand
 
@@ -36,7 +36,7 @@ expand <source>.cab /f:<files> <destination>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | /r | 重新命名展開的檔案。 |
 | 來源 | 指定要展開的檔案。 *來源*可以包含磁碟機號和冒號、目錄名稱、檔案名或這些的組合。 您可以使用萬用字元（**&#42;** 或 **？**）。 |
@@ -49,4 +49,3 @@ expand <source>.cab /f:<files> <destination>
 ## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
-

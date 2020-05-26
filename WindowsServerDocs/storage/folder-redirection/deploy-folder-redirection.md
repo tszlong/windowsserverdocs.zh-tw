@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e8e6e5a29c75c117f6faa3c1d1b3f288582d81a2
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4a53f28867904c163346fb7943790ff0659ab006
+ms.sourcegitcommit: 29f7a4811b4d36d60b8b7c55ce57d4ee7d52e263
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80855881"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83716873"
 ---
 # <a name="deploy-folder-redirection-with-offline-files"></a>使用離線檔案部署資料夾重新導向
 
@@ -199,6 +199,6 @@ ms.locfileid: "80855881"
 * [資料夾重新導向、離線檔案及漫遊使用者設定檔](folder-redirection-rup-overview.md)
 * [部署資料夾重新導向及漫遊使用者設定檔的主要電腦](deploy-primary-computers.md)
 * [啟用進階離線檔案功能](enable-always-offline.md)
-* [Microsoft 對於複寫使用者設定檔資料的支援聲明](https://blogs.technet.microsoft.com/askds/2010/09/01/microsofts-support-statement-around-replicated-user-profile-data/)
+* [Microsoft 對於複寫使用者設定檔資料的支援聲明](https://docs.microsoft.com/archive/blogs/askds/microsofts-support-statement-around-replicated-user-profile-data)
 * [使用 DISM 側載應用程式](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh852635(v=win.10)>)
 * [封裝、部署及查詢 Windows 執行階段型應用程式疑難排解](https://msdn.microsoft.com/library/windows/desktop/hh973484.aspx)

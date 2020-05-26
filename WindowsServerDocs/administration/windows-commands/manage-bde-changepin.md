@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bbf53372488db76689be9d2a4d513553f4ad0de3
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9656fe3b58aabb35be28626e54b1a5870ef51fec
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724180"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820688"
 ---
 # <a name="manage-bde-changepin"></a>manage-bde： changepin
 
@@ -30,7 +30,7 @@ manage-bde -changepin [<Drive>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
 
 #### <a name="parameters"></a>參數
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
 |\<磁片磁碟機>|表示後面接著冒號的磁碟機號。|
 |-computername|指定 Manage-bde.wsf 將用來修改另一部電腦上的 BitLocker 保護。 您也可以使用 **-cn**做為此命令的縮寫版本。|
@@ -47,5 +47,5 @@ manage-bde –changepin C:
 
 ## <a name="additional-references"></a>其他參考
 
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)
 -   [Manage-bde](manage-bde.md)

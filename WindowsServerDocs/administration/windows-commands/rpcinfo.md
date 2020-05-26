@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 4f9effa0955247ac87301f3a3933d080f7a34863
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: d25a806c63f959ec659a6dd692d9efd5b394a64c
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436223"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820088"
 ---
 # <a name="rpcinfo"></a>rpcinfo
 
@@ -28,7 +28,7 @@ rpcinfo [/p [<Node>]] [/b <Program version>] [/t <Node Program> [<version>]] [/u
 ```
 
 #### <a name="parameters"></a>參數
-|參數|描述|
+|參數|說明|
 |-------|--------|
 |/p [ \< Node>]|列出所有使用指定主機上的通訊埠對應程式註冊的程式。 如果您未指定節點（電腦）名稱，程式會查詢本機主機上的埠對應程式。|
 |/b \< 程式版本>|要求所有網路節點的回應，其中已向通訊埠對應工具註冊指定的程式和版本。 您必須同時指定程式名稱或號碼和版本號碼。|
@@ -55,4 +55,4 @@ rpcinfo /u <Node Program> [<version>]
 ```
 
 ## <a name="additional-references"></a>其他參考
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

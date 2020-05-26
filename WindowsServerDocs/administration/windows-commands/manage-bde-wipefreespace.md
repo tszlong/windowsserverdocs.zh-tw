@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8f1e0f99c226edae467ecb09222b18098ac399ee
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: fc252bd0d9d8227badb35bafea96575e37fca243
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724039"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820788"
 ---
 # <a name="manage-bde-wipefreespace"></a>manage-bde： WipeFreeSpace
 
@@ -30,7 +30,7 @@ manage-bde -WipeFreeSpace|-w [<Drive>] [-Cancel] [-computername <Name>] [{-?|/?}
 
 #### <a name="parameters"></a>參數
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
 |\<磁片磁碟機>|代表磁碟機號，後面接著冒號、磁片區 GUID 路徑或掛接的磁片區。|
 |-取消|取消清除正在處理的可用空間。|
@@ -52,5 +52,5 @@ manage-bde -w -Cancel C:
 
 ## <a name="additional-references"></a>其他參考
 
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)
 -   [Manage-bde](manage-bde.md)

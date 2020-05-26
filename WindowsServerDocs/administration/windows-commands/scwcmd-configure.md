@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6ffaff594a8927b3fcdfc871ec380fd5f134ce90
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 54f488eea2478c0b38f7ed9bea5ec15c0db3538f
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722152"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820978"
 ---
 # <a name="scwcmd-configure"></a>Scwcmd: configure
 
@@ -30,15 +30,15 @@ scwcmd configure [[[/m:<ComputerName> | /ou:<OuName>] /p:<Policy>] | /i:<Compute
 
 #### <a name="parameters"></a>參數
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
-|/m：\<ComputerName>|指定要設定之電腦的 NetBIOS 名稱、DNS 名稱或 IP 位址。 如果指定 **/m**參數，則也必須指定 **/p**參數。|
-|/ou：\<OuName>|在 Active Directory Domain Services 中指定組織單位（OU）的完整功能變數名稱（FQDN）。 如果指定 **/ou**參數，則也必須指定 **/p**參數。 OU 中的所有電腦都會根據指定的原則進行分析。|
-|/p：\<原則>|指定要用來執行設定之 .xml 原則檔案的路徑和檔案名。|
-|/i：\<ComputerList>|指定 .xml 檔案的路徑和檔案名，其中包含一份電腦清單及其預期的原則檔案。 .Xml 檔案中的所有電腦都將根據其對應的原則檔案進行設定。 範例 .xml 檔案為%windir%\security\SampleMachineList.xml。|
-|/u：\<UserName>|指定設定遠端電腦時要使用的替代使用者認證。 預設為登入的使用者。|
-|/pw：\<密碼>|指定設定遠端電腦時要使用的替代使用者認證。 預設值為登入使用者的密碼。|
-|/t：\<執行緒>|指定在設定程式期間應維持的同時未處理設定作業數目（DefaultValue = 40，MinValue = 1，int32.maxvalue = 1000）。|
+|/m： \< ComputerName>|指定要設定之電腦的 NetBIOS 名稱、DNS 名稱或 IP 位址。 如果指定 **/m**參數，則也必須指定 **/p**參數。|
+|/ou： \< OuName>|在 Active Directory Domain Services 中指定組織單位（OU）的完整功能變數名稱（FQDN）。 如果指定 **/ou**參數，則也必須指定 **/p**參數。 OU 中的所有電腦都會根據指定的原則進行分析。|
+|/p： \< 原則>|指定要用來執行設定之 .xml 原則檔案的路徑和檔案名。|
+|/i： \< ComputerList>|指定 .xml 檔案的路徑和檔案名，其中包含一份電腦清單及其預期的原則檔案。 .Xml 檔案中的所有電腦都將根據其對應的原則檔案進行設定。 範例 .xml 檔案為%windir%\security\SampleMachineList.xml。|
+|/u： \< UserName>|指定設定遠端電腦時要使用的替代使用者認證。 預設為登入的使用者。|
+|/pw： \< 密碼>|指定設定遠端電腦時要使用的替代使用者認證。 預設值為登入使用者的密碼。|
+|/t： \< 執行緒>|指定在設定程式期間應維持的同時未處理設定作業數目（DefaultValue = 40，MinValue = 1，int32.maxvalue = 1000）。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
@@ -66,4 +66,4 @@ scwcmd configure /ou:OU=WebServers,DC=Marketing,DC=ABCCompany,DC=com /p:webpolic
 
 ## <a name="additional-references"></a>其他參考
 
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

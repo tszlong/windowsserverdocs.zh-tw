@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 017363ff2a60f9348290813c357560fe9fe3ba2a
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 13e33329c399a77c1dd9b2e6ff63de6196c30420
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722164"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820988"
 ---
 # <a name="scwcmd-analyze"></a>Scwcmd: analyze
 
@@ -31,16 +31,16 @@ scwcmd analyze [[[/m:<ComputerName> | /ou:<Ou>] /p:<Policy>] | /i:<ComputerList>
 
 #### <a name="parameters"></a>參數
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
-|/m：\<ComputerName>|指定要分析之電腦的 NetBIOS 名稱、DNS 名稱或 IP 位址。 如果指定 **/m**參數，則也必須指定 **/p**參數。|
-|/ou：\<OuName>|在 Active Directory Domain Services 中指定組織單位（OU）的完整功能變數名稱（FQDN）。 如果指定 **/ou**參數，則也必須指定 **/p**參數。 OU 中的所有電腦都會針對指定的原則進行分析。|
-|/p：\<原則>|指定要用來執行分析之 .xml 原則檔案的路徑和檔案名。|
-|/i：\<ComputerList>|指定 .xml 檔案的路徑和檔案名，其中包含一份電腦清單及其預期的原則檔案。 .Xml 檔案中的所有電腦都會根據其對應的原則檔案進行分析。 範例 .xml 檔案為%windir%\security\SampleMachineList.xml。|
-|/o：\<ResultDir>|指定應儲存分析結果檔案的路徑和目錄。 預設值是目前的目錄。|
-|/u：\<UserName>|指定在遠端電腦上執行分析時要使用的替代使用者認證。 預設為登入的使用者。|
-|/pw：\<密碼>|指定在遠端電腦上執行分析時要使用的替代使用者認證。 預設值為登入使用者的密碼。|
-|/t：\<執行緒>|指定在分析期間應維持的同時未完成分析作業數目（DefaultValue = 40，MinValue = 1，int32.maxvalue = 1000）。|
+|/m： \< ComputerName>|指定要分析之電腦的 NetBIOS 名稱、DNS 名稱或 IP 位址。 如果指定 **/m**參數，則也必須指定 **/p**參數。|
+|/ou： \< OuName>|在 Active Directory Domain Services 中指定組織單位（OU）的完整功能變數名稱（FQDN）。 如果指定 **/ou**參數，則也必須指定 **/p**參數。 OU 中的所有電腦都會針對指定的原則進行分析。|
+|/p： \< 原則>|指定要用來執行分析之 .xml 原則檔案的路徑和檔案名。|
+|/i： \< ComputerList>|指定 .xml 檔案的路徑和檔案名，其中包含一份電腦清單及其預期的原則檔案。 .Xml 檔案中的所有電腦都會根據其對應的原則檔案進行分析。 範例 .xml 檔案為%windir%\security\SampleMachineList.xml。|
+|/o： \< ResultDir>|指定應儲存分析結果檔案的路徑和目錄。 預設值是目前的目錄。|
+|/u： \< UserName>|指定在遠端電腦上執行分析時要使用的替代使用者認證。 預設為登入的使用者。|
+|/pw： \< 密碼>|指定在遠端電腦上執行分析時要使用的替代使用者認證。 預設值為登入使用者的密碼。|
+|/t： \< 執行緒>|指定在分析期間應維持的同時未完成分析作業數目（DefaultValue = 40，MinValue = 1，int32.maxvalue = 1000）。|
 |/l|會記錄分析進程。 系統會為每一部要分析的電腦產生一個記錄檔。 記錄檔將會儲存在與結果檔案相同的目錄中。 使用 **/o**選項來指定結果檔案的目錄。|
 |/e|如果找到不相符的專案，請將事件記錄至應用程式事件記錄檔。|
 |/?|在命令提示字元顯示說明。|
@@ -73,4 +73,4 @@ scwcmd analyze /ou:OU=WebServers,DC=Marketing,DC=ABCCompany,DC=com /p:webpolicy.
 
 ## <a name="additional-references"></a>其他參考
 
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)
