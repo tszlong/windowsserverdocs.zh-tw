@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c87a6cb5e3fb52af9a13a7be35218e35b24d7ddc
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: ca2a10a5d52c9d175d453a164f3ab4f47ca0841d
+ms.sourcegitcommit: 430c6564c18f89eecb5bbc39cfee1a6f1d8ff85b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436923"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83855662"
 ---
 # <a name="echo"></a>回應
 
@@ -31,7 +31,7 @@ echo [on | off]
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| 的 | 停止 | 開啟或關閉命令回顯功能。 命令回顯預設為開啟。 |
+| [ \| 關閉] | 開啟或關閉命令回顯功能。 命令回顯預設為開啟。 |
 | `<message>` | 指定要在螢幕上顯示的文字。 |
 | /? | 在命令提示字元顯示說明。 |
 
