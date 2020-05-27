@@ -9,12 +9,12 @@ ms.date: 04/29/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b1b6f7d38c4474ba3f69c4eac0c4569375185eb8
-ms.sourcegitcommit: 6d3f8780b67aa7865a9372cf2c1e10c79ebea8b1
+ms.openlocfilehash: 947c34e6c3a3b9a26a225221bbf29e46343b25df
+ms.sourcegitcommit: f22e4d67dd2a153816acf8355e50319dbffc5acf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82587663"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "83546557"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>AD FS 常見問題集 (FAQ)
 
@@ -85,7 +85,7 @@ AD FS 會提供一個可延伸的機制，以供第三方 MFA 提供者進行整
 已通知 Microsoft 的廠商清單會發佈於 [AD FS 的 MFA 提供者](../operations/Configure-Additional-Authentication-Methods-for-AD-FS.md)。  永遠都可能有我們不知道的提供者可用，我們將會在得知時更新清單。
 
 ### <a name="are-third-party-proxies-supported-with-ad-fs"></a>AD FS 是否支援第三方 Proxy？
-是，第三方 Proxy 可以放在 Web 應用程式 Proxy 前面，但所有第三方 Proxy 都必須支援 [ 通訊協定](https://msdn.microsoft.com/library/dn392811.aspx)，才能用來取代 Web 應用程式 Proxy。
+是，第三方 Proxy 可以放在 AD FS 前面，但所有第三方 Proxy 都必須支援 [ 通訊協定](https://msdn.microsoft.com/library/dn392811.aspx)，才能用來取代 Web 應用程式 Proxy。
 
 以下是我們所知道的第三方提供者清單。  永遠都可能有我們不知道的提供者可用，我們將會在得知時更新清單。
 
@@ -234,14 +234,14 @@ AD FS UserInfo 端點一律會傳回 OpenID 標準中所指定的主體宣告。
 
 ### <a name="why-am-i-seeing-a-warning-for-failure-to-add-the-ad-fs-service-account-to-the-enterprise-key-admins-group"></a>為何我會看到無法將 AD FS 服務帳戶新增至 Enterprise Key Admins 群組的警告？
 只有當網域中存在具有 FSMO PDC 角色的 Windows 2016 網域控制站時，才會建立此群組。 若要解決此錯誤，您可以手動建立群組，並遵循下列步驟，在將服務帳戶新增為群組成員之後，提供必要的權限。
-1.    開啟 [Active Directory 使用者和電腦]  。
-2.    在導覽窗格中您的網域名稱上**按一下滑鼠右鍵**，然後按一下 [屬性]  。
-3.    按一下 [安全性]  (如果沒看見 [安全性] 索引標籤，請從 [檢視] 功能表開啟 [進階功能])。
-4.    按一下 [進階]  。 按一下 [新增]  。 按一下 [選取主體]  。
+1.    開啟 [Active Directory 使用者和電腦] 。
+2.    在導覽窗格中您的網域名稱上**按一下滑鼠右鍵**，然後按一下 [屬性]。
+3.    按一下 [安全性] (如果沒看見 [安全性] 索引標籤，請從 [檢視] 功能表開啟 [進階功能])。
+4.    按一下 [進階]。 按一下 [新增]。 按一下 [選取主體]。
 5.    [選取使用者、電腦、服務帳戶或群組] 對話方塊隨即出現。  在 [輸入物件名稱來選取] 文字方塊中，鍵入 Key Admin Group。  按一下 [確定]。
-6.    在 [適用對象] 清單方塊中，選取 [子系使用者物件]  。
-7.    使用捲軸捲動到頁面底部，然後按一下 [全部清除]  。
-8.    在 [屬性]  區段中，選取 [讀取 msDS-KeyCredentialLink]  和 [寫入 msDS-KeyCrendentialLink]  。
+6.    在 [適用對象] 清單方塊中，選取 [子系使用者物件]。
+7.    使用捲軸捲動到頁面底部，然後按一下 [全部清除]。
+8.    在 [屬性] 區段中，選取 [讀取 msDS-KeyCredentialLink] 和 [寫入 msDS-KeyCrendentialLink]。
 
 ### <a name="why-does-modern-authentication-from-android-devices-fail-if-the-server-does-not-send-all-the-intermediate-certificates-in-the-chain-with-the-ssl-cert"></a>當伺服器未使用 SSL 憑證傳送憑證鏈中的所有中繼憑證時，Android 裝置的新式驗證為何會失敗？
 
@@ -251,9 +251,9 @@ Android (橫跨所有版本和所有裝置) 不支援從憑證的 **authorityInf
 
 此問題的適當解決方式是設定 AD FS 和 WAP 伺服器，以傳送必要的中繼憑證與 SSL 憑證。
 
-從一部電腦匯出 SSL 憑證時，若要匯入到 AD FS 和 WAP 伺服器的電腦個人存放區，請務必匯出私密金鑰，然後選取 [個人資訊交換 - PKCS #12]  。
+從一部電腦匯出 SSL 憑證時，若要匯入到 AD FS 和 WAP 伺服器的電腦個人存放區，請務必匯出私密金鑰，然後選取 [個人資訊交換 - PKCS #12]。
 
-請務必勾選 [盡可能包含憑證路徑中的所有憑證]  核取方塊，以及 [匯出所有擴充屬性]  。  
+請務必勾選 [盡可能包含憑證路徑中的所有憑證] 核取方塊，以及 [匯出所有擴充屬性]。  
 
 在 Windows 伺服器上執行 certlm.msc，並將 *.PFX 匯入到電腦的個人憑證存放區中。 這會導致伺服器將整個憑證鏈傳遞至 ADAL 程式庫。
 

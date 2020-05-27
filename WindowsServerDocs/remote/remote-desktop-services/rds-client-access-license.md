@@ -9,12 +9,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 02/12/2020
 manager: dongill
-ms.openlocfilehash: 295536afc77d0559fd7d2d4a22f555231a1aab75
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: a11820b9c75bbcb928da562f3f74e4130e9c8096
+ms.sourcegitcommit: 599162b515c50106fd910f5c180e1a30bbc389b9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80858071"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83775316"
 ---
 # <a name="license-your-rds-deployment-with-client-access-licenses-cals"></a>使用用戶端存取使用權 (CAL) 授權您的 RDS 部署
 
@@ -24,7 +24,7 @@ ms.locfileid: "80858071"
 
 當使用者或裝置連線到 RD 工作階段主機伺服器時，RD 工作階段主機伺服器會判斷是否需要 RDS CAL。 接著，RD 工作階段主機伺服器會向遠端桌面授權伺服器要求 RDS CAL。 如果授權伺服器可提供適當的 RDS CAL，就會發出 RDS CAL 給用戶端，用戶端即可連線到 RD 工作階段主機伺服器，並從該伺服器連線到其嘗試使用的桌面或應用程式。
 
-雖然系統會提供不需要任何授權伺服器的授權寬限期，不過當寬限期結束之後，用戶端就必須具有授權伺服器所發行的有效 RDS CAL，然後才能登入RD 工作階段主機伺服器。
+有 180 天的授權寬限期，在此期間不需要授權伺服器。 寬限期結束之後，用戶端必須具備授權伺服器所發出的有效 RDS CAL，才能登入 RD 工作階段主機伺服器。
 
 使用下列資訊以了解用戶端存取使用權在遠端桌面服務的運作方式，並部署和管理您的授權：
 
@@ -53,6 +53,8 @@ ms.locfileid: "80858071"
 當您使用每一裝置模型時，臨時的授權會在裝置第一次連線到 RD 工作階段主機時發出。 該裝置第二次連線時，只要授權伺服器已啟用且有可用的 RDS CAL，授權伺服器即會發出永久性 RDS 每一裝置的 CAL。
 
 使用每位使用者模型時不會施行授權，且每位使用者都會獲得授權，可從任何數量的裝置連線到 RD 工作階段主機。 授權伺服器會從可用 RDS CAL 集區或超量使用的 RDS CAL 集區發出授權。 您必須負責確保所有使用者都具備有效的授權，且不超量使用 CAL，否則即會違反遠端桌面服務授權條款。
+
+其中一個範例是使用「每一裝置」模型的環境中，有兩個以上的轉移使用同一部電腦來存取 RD 工作階段主機。 「每個使用者」模型最適合用於使用者擁有專屬 Windows 裝置來存取 RD 工作階段主機的環境。
 
 若要確保遵循遠端桌面服務授權條款，請追蹤組織中所使用 RDS 每位使用者的 CAL，並確定在授權伺服器上為所有使用者安裝足夠的 RDS 每位使用者的 CAL。
 

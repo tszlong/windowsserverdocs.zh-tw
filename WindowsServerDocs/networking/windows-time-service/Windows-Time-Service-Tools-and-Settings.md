@@ -7,12 +7,12 @@ ms.date: 02/24/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 2f6ba34381e813247d0838853f688abf13fbd2fa
-ms.sourcegitcommit: 1d83ca198c50eef83d105151551c6be6f308ab94
+ms.openlocfilehash: 76ec8a817f0c500380c9bef6fc1ee7eb8dddc105
+ms.sourcegitcommit: 319796ec327530c9656ac103b89bd48cc8d373f6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82605538"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83790566"
 ---
 # <a name="windows-time-service-tools-and-settings"></a>Windows 時間服務工具和設定
 
@@ -88,6 +88,15 @@ W32tm /query /computer:contosoW1 /configuration
 
 此命令的輸出是針對 Windows 時間用戶端所設定的設定參數清單。
 
+> [!IMPORTANT]  
+> [Windows Server 2016 已改善同步處理演算法的時間](https://aka.ms/WS2016Time)，與 RFC 規格一致。 因此，如果您想要將本機 Windows 時間用戶端設定為指向多個對等互連，則強烈建議您準備三個以上不同的時間伺服器。
+>  
+> 如果您只有兩部時間伺服器，您應該指定 **UseAsFallbackOnly** 旗標 (0x2) 來取消設定其中一個優先順序。 例如，如果您想要在 clock.adatum.com 上設定 ntpserver.contoso.com 的優先順序，請執行下列命令。
+> ```cmd
+> w32tm /config /manualpeerlist:"ntpserver.contoso.com,0x8 clock.adatum.com,0xa" /syncfromflags:manual /update
+> ```
+> 如需指定旗標的意義，請參閱 ["HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Parameters" subkey entries](#parameters)。
+
 ## <a name="using-group-policy-to-configure-the-windows-time-service"></a>使用群組原則設定 Windows 時間服務
 
 Windows 時間服務會將一些設定屬性儲存為登錄項目。 您可以使用群組原則物件來設定這項資訊的大部分內容。 例如，您可以使用群組原則物件 (GPO) 將電腦設定為 NTPServer 或 NTPClient、設定時間同步機制，或將電腦設定為可靠的時間來源。  
@@ -156,7 +165,7 @@ Windows 會將這些設定載入下列子機碼下的登錄原則區域中：
 
 **CurrentTimeOffset** 值會以時鐘刻度為單位來進行測量，在 Windows 系統上，1 毫秒 = 10,000 時鐘刻度。  
 
-**SystemClockRate** 和 **PhaseCorrectRate** 也會以時鐘刻度為單位來進行測量。 若要取得 **SystemClockRate** 值，您可以使用下列命令，並使用公式 (秒數  &times;1000 &times; 10000) 將其從秒數轉換成時鐘刻度：  
+**SystemClockRate** 和 **PhaseCorrectRate** 也會以時鐘刻度為單位來進行測量。 若要取得 **SystemClockRate** 值，您可以使用下列命令，並使用公式 (秒數 &times;1000 &times; 10000) 將其從秒數轉換成時鐘刻度：  
 
 ```cmd
 W32tm /query /status /verbose  
@@ -368,4 +377,4 @@ Windows Time 遵循 NTP 規範，因此必須使用 UDP 連接埠 123 來進行�
 
 下列資源包含與本節相關的其他資訊。  
 
-- IETF RFC 資料庫中的 RFC 1305   
+- IETF RFC 資料庫中的 RFC 1305  
