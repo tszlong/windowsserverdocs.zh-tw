@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0cd4eeec1113717a40dca43f0320f2db3c4c414e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 288c5bb14602e895648cfdc1535b734a823b7233
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722126"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820958"
 ---
 # <a name="scwcmd-rollback"></a>Scwcmd: rollback
 
@@ -30,11 +30,11 @@ scwcmd rollback /m:<ComputerName> [/u:<UserName>] [/pw:<Password>]
 
 #### <a name="parameters"></a>參數
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
-|/m：\<ComputerName>|指定應執行復原作業之電腦的 NetBIOS 名稱、DNS 名稱或 IP 位址。|
-|/u：\<UserName>|指定執行遠端復原時要使用的替代使用者帳戶。 預設為登入的使用者。|
-|/pw：\<密碼>|指定執行遠端復原時要使用的替代使用者認證。 預設為登入的使用者。|
+|/m： \< ComputerName>|指定應執行復原作業之電腦的 NetBIOS 名稱、DNS 名稱或 IP 位址。|
+|/u： \< UserName>|指定執行遠端復原時要使用的替代使用者帳戶。 預設為登入的使用者。|
+|/pw： \< 密碼>|指定執行遠端復原時要使用的替代使用者認證。 預設為登入的使用者。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
@@ -50,4 +50,4 @@ scwcmd rollback /m:172.16.0.0
 
 ## <a name="additional-references"></a>其他參考
 
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

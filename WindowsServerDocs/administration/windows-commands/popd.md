@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: a1638f8d0d62b730578cb21fac5a74e58ad06b74
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a9cf2814afcab3e6d7373642ad5bf8bc828bf07b
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723292"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821218"
 ---
 # <a name="popd"></a>popd
 
@@ -29,7 +29,7 @@ popd
 ```
 
 #### <a name="parameters"></a>參數
-|參數|描述|
+|參數|說明|
 |-------|--------|
 |/?|在命令提示字元顯示說明。|
 
@@ -54,5 +54,5 @@ echo All text files deleted in the %1 directory
 
 ## <a name="additional-references"></a>其他參考
 -   [pushd](pushd.md)
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)
 

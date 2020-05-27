@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3fd303116e101c8c8503d220ba382d6cdd994ad3
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: cb1fc1c14a29b8fed515adb0f74ae99ff5d76cf4
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724061"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820738"
 ---
 # <a name="manage-bde-unlock"></a>manage-bde：解除鎖定
 
@@ -30,7 +30,7 @@ manage-bde -unlock {-recoverypassword <Password>|-recoverykey <PathToExternalKey
 
 #### <a name="parameters"></a>參數
 
-|參數|值|描述|
+|參數|值|說明|
 |---------|-----|-----------|
 |-msfve-recoverypassword||指定將使用修復密碼來解除鎖定磁片磁碟機。縮寫：-rp|
 ||\<密碼>|代表可以用來解除鎖定磁片磁碟機的修復密碼。|
@@ -55,5 +55,5 @@ manage-bde –unlock E: -recoverykey F:\Backupkeys\recoverykey.bek
 
 ## <a name="additional-references"></a>其他參考
 
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)
 -   [Manage-bde](manage-bde.md)

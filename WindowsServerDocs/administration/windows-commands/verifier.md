@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d98ebf3f6de9a5fbac33d983ebda581b0c6c385b
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 679681593ba8c94db8462f54cdccf976700debce
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437073"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821408"
 ---
 # <a name="verifier"></a>verifier
 
@@ -38,7 +38,7 @@ verifier /query
 verifier /log <LogFileName> [/interval <seconds>]
 ```
 #### <a name="parameters"></a>參數
-|參數|描述|
+|參數|說明|
 |-------|--------|
 |\<旗標>|必須是十進位或十六進位（位的組合）中的數位：<p>-   **值：描述**<br />-   **位0：** 特殊集區檢查<br />-   **bit 1：** 強制 irql 檢查<br />-   **位2：** 低資源模擬<br />-   **位3：** 集區追蹤<br />-   **位4：** I/o 驗證<br />-   **bit 5：** 鎖死偵測<br />-   **位6：** 未使用<br />-   **位7：** DMA 驗證<br />-   **位8：** 安全性檢查<br />-   **位9：強制執行**暫止的 i/o 要求<br />-   **位10：** IRP 記錄<br />-   **位11：** 其他檢查<p>例如， **/flags 27**等同于 **/flags 0x1b**|
 |/volatile|用來動態變更驗證器設定，而不需要重新開機系統。 系統重新開機時，將會遺失任何新的設定。|
@@ -49,4 +49,4 @@ verifier /log <LogFileName> [/interval <seconds>]
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="additional-references"></a>其他參考
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

@@ -1,39 +1,45 @@
 ---
-title: ftp 中斷連線
-description: Ftp disconnect 命令的參考主題，這會中斷與遠端電腦的連線並保留 ftp 提示。
+title: ftp rmdir
+description: Ftp rmdir 命令的參考主題，它會刪除根目錄。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: f91ac304-f126-49df-9ab9-b8fa2ea515fd
+ms.assetid: cf4778a4-9534-49c7-a061-850dc3504a67
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 151ffa7d54fda13a87dedc98806150f31587867a
+ms.openlocfilehash: 1abbc66ee470d7939f45e7e961c502a3b4689f7b
 ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819769"
+ms.locfileid: "83821448"
 ---
-# <a name="ftp-disconnect"></a>ftp 中斷連線
+# <a name="ftp-rmdir"></a>ftp rmdir
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-中斷與遠端電腦的連線，並在出現提示時繼續進行 `ftp>` 。
+刪除遠端目錄。
 
 ## <a name="syntax"></a>語法
 
 ```
-disconnect
+rmdir <directory>
 ```
+
+### <a name="parameters"></a>參數
+
+| 參數 | 說明 |
+| --------- | ----------- |
+| `<directory>` | 指定要刪除之遠端目錄的名稱。 |
 
 ### <a name="examples"></a>範例
 
-若要中斷與遠端電腦的連線，並在出現提示時繼續進行 `ftp>` ，請輸入：
+若要刪除 [*圖片*] 遠端目錄，請輸入：
 
 ```
-disconnect
+rmdir pictures
 ```
 
 ## <a name="additional-references"></a>其他參考

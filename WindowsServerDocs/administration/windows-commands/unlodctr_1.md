@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d4d81acd98a280ce110c5677f627fee8a9394e1a
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 8551b6fc76984b06f28bdda92dcd63791721ec90
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436953"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821288"
 ---
 # <a name="unlodctr"></a>unlodctr
 
@@ -27,7 +27,7 @@ ms.locfileid: "83436953"
 Unlodctr <DriverName>
 ```
 #### <a name="parameters"></a>參數
-|參數|描述|
+|參數|說明|
 |-------|--------|
 |\<DriverName>|從 Windows Server 2003 登錄中移除效能計數器名稱設定，並說明驅動程式或服務的文字 <DriverName> 。|
 |/?|在命令提示字元顯示說明。|
@@ -44,5 +44,5 @@ Unlodctr <DriverName>
 unlodctr SMTPSVC
 ```
 ## <a name="additional-references"></a>其他參考
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)
 

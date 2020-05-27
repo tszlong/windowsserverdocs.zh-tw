@@ -1,6 +1,6 @@
 ---
 title: inuse
-description: '* * * * 的參考主題'
+description: Inuse 命令的參考主題。 此命令已被取代，在未來的 Windows 版本中不保證會受到支援。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,17 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6413fe21f4b7da464347e49910fbf6cd649b319d
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: b25750c8ad57c3b1a795830b743f679e7fce88b5
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993306"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83818428"
 ---
 # <a name="inuse"></a>inuse
 
+Inuse 命令已被取代，並不保證在未來的 Windows 版本中受到支援。
 
+此工具組含在 Windows Server 2003 中。 如需詳細資訊，請參閱[Inuse](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/dd996699(v=ws.10))。
 
-Inuse 已被取代，在未來的 Windows 版本中不保證會受到支援。
+## <a name="additional-references"></a>其他參考
 
-此工具組含在 Windows Server 2003 中。 如需詳細資訊，請參閱[Inuse](https://technet.microsoft.com/library/dd996699(v=ws.10).aspx)。
+- [命令列語法關鍵](command-line-syntax-key.md)

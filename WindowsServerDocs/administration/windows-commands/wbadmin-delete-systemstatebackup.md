@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 12d8ba6ff24e338c6afa5556d7a60e2157156acc
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a84112191ad1b5873ad09c467fb3668107f2b24e
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720202"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821428"
 ---
 # <a name="wbadmin-delete-systemstatebackup"></a>wbadmin delete systemstatebackup
 
@@ -44,7 +44,7 @@ wbadmin delete systemstatebackup
 
 ### <a name="parameters"></a>參數
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
 |-keepVersions|指定要保留的最新系統狀態備份數目。 其值必須為正整數。 參數值 **-keepVersions： 0**會刪除所有系統狀態備份。|
 |-version|以 MM/DD/YYYY-HH： MM 格式指定備份的版本識別碼。 如果您不知道版本識別碼，請輸入**wbadmin get 版本**。</br>您可以使用此命令來刪除獨佔系統狀態備份的版本。 使用**wbadmin get items**來查看版本類型。|
@@ -70,5 +70,5 @@ wbadmin delete systemstatebackup -backupTarget:f -deleteOldest
 
 ## <a name="additional-references"></a>其他參考
 
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)
 -   [Restore](wbadmin.md)

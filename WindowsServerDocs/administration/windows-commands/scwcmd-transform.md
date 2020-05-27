@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1f1116b42d356cc36f478089cdf487a38e792e87
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 86c88f0207a53da813f5d4eaed399375bfc5bc02
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722118"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820948"
 ---
 # <a name="scwcmd-transform"></a>Scwcmd: transform
 
@@ -37,10 +37,10 @@ scwcmd transform /p:<Policyfile.xml> /g:<GPODisplayName>
 
 #### <a name="parameters"></a>參數
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
-|/p：\<Policyfile>|指定應套用之 .xml 原則檔的路徑和檔案名。 必須指定這個參數。|
-|/g：\<GPODisplayName>|指定 GPO 的顯示名稱。 必須指定這個參數。|
+|/p： \< Policyfile>|指定應套用之 .xml 原則檔的路徑和檔案名。 必須指定這個參數。|
+|/g： \< GPODisplayName>|指定 GPO 的顯示名稱。 必須指定這個參數。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
@@ -56,4 +56,4 @@ scwcmd transform /p:FileServerPolicy.xml /g:FileServerSecurity
 
 ## <a name="additional-references"></a>其他參考
 
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

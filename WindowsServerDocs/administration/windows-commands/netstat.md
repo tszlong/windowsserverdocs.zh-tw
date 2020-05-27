@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7b1dbe232ce297e987118616681b82332e81e930
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 4daea8d096e6063b984a4657536c8a2b043b5025
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723785"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820858"
 ---
 # <a name="netstat"></a>netstat
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-顯示使用中的 TCP 連線、電腦正在接聽的埠、乙太網路統計資料、IP 路由表、IPv4 統計資料（適用于 IP、ICMP、TCP 和 UDP 通訊協定），以及 IPv6 統計資料（適用于 IPv6、ICMPv6、透過 IPv6 的 TCP 和 UDP 通訊協定）。 使用時不含參數， **netstat**會顯示作用中的 TCP 連接。 
+顯示使用中的 TCP 連線、電腦正在接聽的埠、乙太網路統計資料、IP 路由表、IPv4 統計資料（適用于 IP、ICMP、TCP 和 UDP 通訊協定），以及 IPv6 統計資料（適用于 IPv6、ICMPv6、透過 IPv6 的 TCP 和 UDP 通訊協定）。 使用時不含參數， **netstat**會顯示作用中的 TCP 連接。
 
 ## <a name="syntax"></a>語法
 ```
@@ -29,7 +29,7 @@ netstat [-a] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<Interval>]
 
 #### <a name="parameters"></a>參數
 
-|   參數   |                                                                                                                                              描述                                                                                                                                              |
+|   參數   |                                                                                                                                              說明                                                                                                                                              |
 |---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |      -a       |                                                                                                   顯示所有作用中的 TCP 連線，以及電腦在其上接聽的 TCP 和 UDP 埠。                                                                                                   |
 |      -E       |                                                                                 顯示乙太網路統計資料，例如傳送和接收的位元組數目和封包數。 這個參數可以與 **-s**結合。                                                                                  |
@@ -42,7 +42,7 @@ netstat [-a] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<Interval>]
 |      /?       |                                                                                                                                 在命令提示字元顯示說明。                                                                                                                                  |
 
 ## <a name="remarks"></a>備註
--   與此命令搭配使用的參數前面必須加上連**-** 字元（），而不**/** 是斜線（）。
+-   與此命令搭配使用的參數前面必須加上連字號（ **-** ），而不是斜線（ **/** ）。
 -   **netstat**提供下列各項的統計資料：
     -   Proto 通訊協定（TCP 或 UDP）的名稱。
     -   [本機位址] 本機電腦的 IP 位址，以及所使用的埠號碼。 除非指定 **-n**參數，否則會顯示對應至 IP 位址和埠名稱的本機電腦名稱稱。 如果尚未建立埠，埠號碼會顯示為星號（*）。
@@ -69,4 +69,4 @@ netstat -n -o
 ```
 
 ## <a name="additional-references"></a>其他參考
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

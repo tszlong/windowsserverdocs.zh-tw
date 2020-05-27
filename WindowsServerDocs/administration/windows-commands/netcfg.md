@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a5945da45ee01fd5bf5f89a7835c4bae0b5534c4
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 2c636b9a14d9dcee6f37409557ed2bcb87b1087d
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723799"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820868"
 ---
 # <a name="netcfg"></a>netcfg
 
@@ -26,7 +26,7 @@ ms.locfileid: "82723799"
 netcfg [/v] [/e] [/winpe] [/l ] /c /i
 ```
 #### <a name="parameters"></a>參數
-|參數|描述|
+|參數|說明|
 |-------|--------|
 |/v|以**詳細**資訊（詳細）模式執行|
 |/e|在安裝和卸載期間使用服務**環境**變數|
@@ -69,4 +69,4 @@ netcfg /s n
 netcfg /b ms_tcpip
 ```
 ## <a name="additional-references"></a>其他參考
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

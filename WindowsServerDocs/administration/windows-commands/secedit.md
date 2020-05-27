@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 89405e767e3fa06dbe0caf742fc898974b217552
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 56c9cdecfe2a5553230f1c8120c827e7f05d0ba9
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722034"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821089"
 ---
 # <a name="secedit"></a>secedit
 
@@ -25,7 +25,7 @@ ms.locfileid: "82722034"
 ## <a name="syntax"></a>語法
 
 ```
-secedit 
+secedit
 [/analyze /db <database file name> /cfg <configuration file name> [/overwrite] /log <log file name> [/quiet]]
 [/configure /db <database file name> [/cfg <configuration filename>] [/overwrite] [/areas [securitypolicy | group_mgmt | user_rights | regkeys | filestore | services]] [/log <log file name>] [/quiet]]
 [/export /db <database file name> [/mergedpolicy] /cfg <configuration file name> [/areas [securitypolicy | group_mgmt | user_rights | regkeys | filestore | services]] [/log <log file name>]]
@@ -55,9 +55,9 @@ secedit
 |           檔案           |                                                                                                                                                                                                                                                               描述                                                                                                                                                                                                                                                                |
 |--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |        Scesrv.dll .log        |                                                                                                                             **位置**：%windir%\security\logs</br>**建立者**：作業系統</br>**檔案類型**：文字</br>重新整理**頻率**：在執行 secedit/analyze、/configure、/export 或/Import 時覆寫。</br>**Content**：包含依原則類型分組的分析結果。                                                                                                                             |
-| *使用者選取的名稱*。 sdb |                                                                                    **位置**：% windir%\*使用者帳戶<em>\Documents\Security\Database</br></em>*建立者*<em>：執行 [安全性設定及分析] 嵌入式管理單元</br></em>*檔案類型*<em>：專屬</br></em>*Refresh rate* <em>重新整理頻率：每當建立新的安全性範本時，就會更新。</br></em>*內容*\*：本機安全性原則和使用者建立的安全性範本。                                                                                    |
-| *使用者選取的名稱*.log | **位置**：使用者定義，但預設為% windir%\*使用者帳戶<em>\Documents\Security\Logs</br></em>*建立者*<em>：執行/analyze 和/configure 子命令（或使用 [安全性設定及分析] 嵌入式管理單元）</br></em>*檔案類型*<em>：文字</br></em>*Refresh rate* <em>重新整理頻率：執行/analyze 和/configure 子命令（或使用 [安全性設定及分析] 嵌入式管理單元）;重.</br></em>*內容*\*：</br>1. 記錄檔名稱</br>2. 日期和時間</br>3. 分析或調查的結果。 |
-| *使用者選取的名稱*.inf |                                                                                     **位置**：% windir%\*使用者帳戶<em>\Documents\Security\Templates</br></em>*建立者*<em>：執行安全性範本嵌入式管理單元</br></em>*檔案類型*<em>：文字</br></em>*Refresh rate* <em>重新整理頻率：每次更新安全性範本時</br></em>*內容*\*：包含使用嵌入式管理單元選取之每個原則的範本設定資訊。                                                                                     |
+| *使用者選取的名稱*。 sdb |                                                                                    **位置**：% windir% \* 使用者帳戶 <em> \Documents\Security\Database</br></em>*建立者* <em> ：執行 [安全性設定及分析] 嵌入式管理單元</br></em>*檔案類型* <em> ：專屬</br></em>重新整理*頻率* <em> ：每當建立新的安全性範本時，就會更新。</br></em>*內容* \* ：本機安全性原則和使用者建立的安全性範本。                                                                                    |
+| *使用者選取的名稱*.log | **位置**：使用者定義，但預設為% windir% \* 使用者帳戶 <em> \Documents\Security\Logs</br></em>*建立者* <em> ：執行/analyze 和/configure 子命令（或使用 [安全性設定及分析] 嵌入式管理單元）</br></em>*檔案類型* <em> ：文字</br></em>重新整理*頻率* <em> ：執行/analyze 和/configure 子命令（或使用 [安全性設定及分析] 嵌入式管理單元）; 覆寫。</br></em>*內容* \* ：</br>1. 記錄檔名稱</br>2. 日期和時間</br>3. 分析或調查的結果。 |
+| *使用者選取的名稱*.inf |                                                                                     **位置**：% windir% \* 使用者帳戶 <em> \Documents\Security\Templates</br></em>*建立者* <em> ：執行安全性範本嵌入式管理單元</br></em>*檔案類型* <em> ：文字</br></em>重新整理*頻率* <em> ：每次更新安全性範本時</br></em>*內容* \* ：包含使用嵌入式管理單元選取之每個原則的範本設定資訊。                                                                                     |
 
 > [!NOTE]
 > Microsoft Management Console （MMC）和 [安全性設定及分析] 嵌入式管理單元無法在 Server Core 上使用。
@@ -65,4 +65,4 @@ secedit
 ## <a name="additional-references"></a>其他參考
 
 如需如何使用此命令的範例，請參閱任何子命令檔案中的範例一節。
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

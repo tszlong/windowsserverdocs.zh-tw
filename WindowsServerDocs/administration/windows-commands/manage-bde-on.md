@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 55f9dc446b17b8e61655686b9f4b6259b12dafc9
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 471bea3946aff39689ad219585d10c2d43f99a93
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724129"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820648"
 ---
 # <a name="manage-bde-on"></a>manage-bde： on
 
@@ -27,13 +27,13 @@ ms.locfileid: "82724129"
 ```
 manage-bde –on <Drive> {[-recoveryPassword <NumericalPassword>]|[-recoverykey <PathToExternalDirectory>]|[-startupkey <PathToExternalKeyDirectory>]|[-certificate]|
 [-tpmandpin]|[-tpmandpinandstartupkey <PathToExternalKeyDirectory>]|[-tpmandstartupkey <PathToExternalKeyDirectory>]|[-password]|[-ADAccountOrGroup <Domain\Account>]}
-[-UsedSpaceOnly][-encryptionmethod {aes128_diffuser|aes256_diffuser|aes128|aes256}] [-skiphardwaretest] [-discoveryvolumetype <FileSystemType>] [-ForceEncryptionType <type>] [-RemoveVolumeShadowCopies][-computername <Name>] 
+[-UsedSpaceOnly][-encryptionmethod {aes128_diffuser|aes256_diffuser|aes128|aes256}] [-skiphardwaretest] [-discoveryvolumetype <FileSystemType>] [-ForceEncryptionType <type>] [-RemoveVolumeShadowCopies][-computername <Name>]
 [{-?|/?}] [{-help|-h}]
 ```
 
 #### <a name="parameters"></a>參數
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
 |\<磁片磁碟機>|表示後面接著冒號的磁碟機號。|
 |-msfve-recoverypassword|新增數位密碼保護裝置。 您也可以使用 **-rp**做為此命令的縮寫版本。|
@@ -47,7 +47,7 @@ manage-bde –on <Drive> {[-recoveryPassword <NumericalPassword>]|[-recoverykey 
 |-tpmandstartupkey|新增作業系統磁片磁碟機的 TPM 和啟動金鑰保護裝置。 您也可以使用 **-嘖**做為此命令的縮寫版本。|
 |-tpmanDPInandstartupkey|新增作業系統磁片磁碟機的 TPM、PIN 和啟動金鑰保護裝置。 您也可以使用 **-tpsk**做為此命令的縮寫版本。|
 |-password|新增資料磁片磁碟機的密碼金鑰保護裝置。 您也可以使用 **-pw**做為此命令的縮寫版本。|
-|-ADAccountOrGroup|新增磁片區以 SID 為基礎的身分識別保護裝置。 如果使用者或電腦具有適當的認證，磁片區將會自動解除鎖定。 指定電腦帳戶時，請將附加**$** 至電腦名稱稱，並指定 **– service** ，以指出解除鎖定應出現在 BitLocker 伺服器的內容中，而不是使用者。 您也可以使用 **-sid**作為此命令的縮寫版本。|
+|-ADAccountOrGroup|新增磁片區以 SID 為基礎的身分識別保護裝置。 如果使用者或電腦具有適當的認證，磁片區將會自動解除鎖定。 指定電腦帳戶時，請將附加 **$** 至電腦名稱稱，並指定 **– service** ，以指出解除鎖定應出現在 BitLocker 伺服器的內容中，而不是使用者。 您也可以使用 **-sid**作為此命令的縮寫版本。|
 |-UsedSpaceOnly|將加密模式設定為 [僅加密已使用的空間]。 包含已使用空間的磁片區區段將會加密，但可用空間將不會。 如果未指定此選項，磁片區上所有已使用的空間和可用空間將會加密。 您也可以使用**來**做為此命令的縮寫版本。|
 |-encryptionMethod|設定加密演算法和金鑰大小。 您也可以使用 **-em**作為此命令的縮寫版本。|
 |-skiphardwaretest|在不進行硬體測試的情況下開始加密。 您也可以使用 **-s**作為此命令的縮寫版本。|
@@ -85,5 +85,5 @@ manage-bde –on C: -fet Hardware
 
 ## <a name="additional-references"></a>其他參考
 
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)
 -   [Manage-bde](manage-bde.md)

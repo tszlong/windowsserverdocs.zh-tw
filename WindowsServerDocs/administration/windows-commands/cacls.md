@@ -1,6 +1,6 @@
 ---
 title: cacls
-description: Cacls 命令的參考主題，它會顯示或修改指定檔案上的任意存取控制清單（DACL）。
+description: Cacls 命令的參考主題。 此命令已被取代，在未來的 Windows 版本中不保證會受到支援。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,29 +9,29 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d827199ea319bd41511f9abadfde8c6e8949976e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 8602157bf87e523d6d842d5636031c61b52e8ef4
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82726020"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83819248"
 ---
 # <a name="cacls"></a>cacls
 
 >[!IMPORTANT]
-> 此命令已被取代。 請改用[icacls](icacls.md) 。  
+> 此命令已被取代。 請改用[icacls](icacls.md) 。
 
-顯示或修改指定檔案上的任意存取控制清單（DACL）。  
+顯示或修改指定檔案上的任意存取控制清單（DACL）。
 
 ## <a name="syntax"></a>語法
 
-```  
-cacls <filename> [/t] [/m] [/l] [/s[:sddl]] [/e] [/c] [/g user:<perm>] [/r user [...]] [/p user:<perm> [...]] [/d user [...]]  
+```
+cacls <filename> [/t] [/m] [/l] [/s[:sddl]] [/e] [/c] [/g user:<perm>] [/r user [...]] [/p user:<perm> [...]] [/d user [...]]
 ```
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `<filename>` | 必要。 顯示指定檔案的 Acl。 |
 | /t | 變更目前目錄和所有子目錄中指定檔案的 Acl。 |
@@ -63,7 +63,7 @@ cacls <filename> [/t] [/m] [/l] [/s[:sddl]] [/e] [/c] [/g user:<perm>] [/r user 
 
 - 您可以使用萬用字元（**？** 和 **&#42;**）來指定多個檔案。
 
-- 您可以指定一個以上的使用者。  
+- 您可以指定一個以上的使用者。
 
 ## <a name="additional-references"></a>其他參考
 

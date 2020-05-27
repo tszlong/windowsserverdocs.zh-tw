@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a3acba57aa012c57c5c6109ed948ce6bb5b28078
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 6329552d3525a1330286e04c6400378b14039fbf
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721946"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821268"
 ---
 # <a name="serverweroptin"></a>serverweroptin
 
@@ -26,7 +26,7 @@ ms.locfileid: "82721946"
 serverweroptin [/query] [/detailed] [/summary]
 ```
 #### <a name="parameters"></a>參數
-|參數|描述|
+|參數|說明|
 |-------|--------|
 |/query|驗證目前的設定。|
 |/detailed|自動傳送詳細報告。|
@@ -46,5 +46,5 @@ serverweroptin /detailed
 serverweroptin /summary
 ```
 ## <a name="additional-references"></a>其他參考
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: a10d36c92da9fb27281a0137fbfd01e4098f51d5
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: c9b73a7b5d3a24e4fda34b772239fb987b671d06
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437083"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821308"
 ---
 # <a name="tapicfg"></a>tapicfg
 
@@ -36,7 +36,7 @@ ms.locfileid: "83437083"
 tapicfg install /directory:<PartitionName> [/server:<DCName>] [/forcedefault]
 ```
 #### <a name="parameters"></a>參數
-|參數|描述|
+|參數|說明|
 |-------|--------|
 |安裝/目錄： \< PartitionName>|必要。 指定要建立之 TAPI 應用程式目錄分割的 DNS 名稱。 此名稱必須是完整功能變數名稱。|
 |/server： \< DCName>|指定在其中建立 TAPI 應用程式目錄分割之網域控制站的 DNS 名稱。 如果未指定網域控制站名稱，則會使用本機電腦的名稱。|
@@ -51,7 +51,7 @@ tapicfg install /directory:<PartitionName> [/server:<DCName>] [/forcedefault]
 tapicfg remove /directory:<PartitionName>
 ```
 #### <a name="parameters"></a>參數
-|參數|描述|
+|參數|說明|
 |-------|--------|
 |移除/目錄： \< PartitionName>|必要。 指定要移除之 TAPI 應用程式目錄分割的 DNS 名稱。 請注意，此名稱必須是完整功能變數名稱。|
 |/?|在命令提示字元顯示說明。|
@@ -64,7 +64,7 @@ tapicfg remove /directory:<PartitionName>
 tapicfg publishscp /directory:<PartitionName> [/domain:<DomainName>] [/forcedefault]
 ```
 #### <a name="parameters"></a>參數
-|參數|描述|
+|參數|說明|
 |-------|--------|
 |publishscp/目錄： \< PartitionName>|必要。 指定服務連接點將發佈之 TAPI 應用程式目錄分割的 DNS 名稱。|
 |/domain： \< DomainName>|指定用來建立服務連接點之網域的 DNS 名稱。 如果未指定功能變數名稱，則會使用本機網域的名稱。|
@@ -79,7 +79,7 @@ tapicfg publishscp /directory:<PartitionName> [/domain:<DomainName>] [/forcedefa
 tapicfg removescp /directory:<PartitionName> [/domain:<DomainName>]
 ```
 #### <a name="parameters"></a>參數
-|參數|描述|
+|參數|說明|
 |-------|--------|
 |removescp/目錄： \< PartitionName>|必要。 指定要移除其服務連接點之 TAPI 應用程式目錄分割的 DNS 名稱。|
 |/domain： \< DomainName>|指定移除服務連接點之網域的 DNS 名稱。 如果未指定功能變數名稱，則會使用本機網域的名稱。|
@@ -93,7 +93,7 @@ tapicfg removescp /directory:<PartitionName> [/domain:<DomainName>]
 tapicfg show [/defaultonly][ /domain:<DomainName>]
 ```
 #### <a name="parameters"></a>參數
-|參數|描述|
+|參數|說明|
 |-------|--------|
 |/defaultonly|只顯示網域中預設 TAPI 應用程式目錄分割的名稱和位置。|
 |/domain： \< DomainName>|指定要顯示其 TAPI 應用程式目錄分割之網域的 DNS 名稱。 如果未指定功能變數名稱，則會使用本機網域的名稱。|
@@ -107,7 +107,7 @@ tapicfg show [/defaultonly][ /domain:<DomainName>]
 tapicfg makedefault /directory:<PartitionName> [/domain:<DomainName>]
 ```
 #### <a name="parameters"></a>參數
-|參數|描述|
+|參數|說明|
 |-------|--------|
 |makedefault/目錄： \< PartitionName>|必要。 將 TAPI 應用程式目錄分割集的 DNS 名稱指定為網域的預設磁碟分割。 請注意，此名稱必須是完整功能變數名稱。 指定將 TAPI 應用程式目錄分割設定為預設之網域的 DNS 名稱。 如果未指定功能變數名稱，則會使用本機網域的名稱。|
 |/?|在命令提示字元顯示說明。|
@@ -133,4 +133,4 @@ tapicfg install /directory:tapifiction.testdom.microsoft.com /server:testdc.test
 tapicfg show /defaultonly
 ```
 ## <a name="additional-references"></a>其他參考
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

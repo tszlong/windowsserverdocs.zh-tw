@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1e8e5194cd49770f72ce810f4652d9bc98af75e2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 0e41c54b9f916f0032a4976cdfa6d3ca101fb744
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720162"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821188"
 ---
 # <a name="wbadmin-get-status"></a>wbadmin get 狀態
 
@@ -41,6 +41,6 @@ wbadmin get status
 
 ## <a name="additional-references"></a>其他參考
 
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)
 -   [Restore](wbadmin.md)
 -   [Get-wbjob](https://technet.microsoft.com/library/jj902426.aspx) Cmdlet

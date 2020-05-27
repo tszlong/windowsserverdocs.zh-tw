@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6b62558b1a2959fd441c246159c14daf0a1e9ca5
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 25dafb691513eae38dd99aef6288ee1bfb2d80be
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437243"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821398"
 ---
 # <a name="tracert"></a>tracert
 
@@ -27,7 +27,7 @@ ms.locfileid: "83437243"
 tracert [/d] [/h <MaximumHops>] [/j <Hostlist>] [/w <timeout>] [/R] [/S <Srcaddr>] [/4][/6] <TargetName>
 ```
 #### <a name="parameters"></a>參數
-|參數|描述|
+|參數|說明|
 |-------|--------|
 |/d|防止**tracert**嘗試將中繼路由器的 IP 位址解析為其名稱。 這可以加速顯示**tracert**結果。|
 |/h \< MaximumHops>|指定路徑中用來搜尋目標（目的地）的躍點數目上限。 預設值為30個躍點。|
@@ -59,4 +59,4 @@ tracert /d corp7.microsoft.com
 tracert /j 10.12.0.1 10.29.3.1 10.1.44.1 corp7.microsoft.com
 ```
 ## <a name="additional-references"></a>其他參考
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

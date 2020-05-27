@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c1361cded9ebf26eeaea7abcaba1b1f3ca1428ac
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 1d3be185c49ce9f20964005cd9074e4f51fee3d4
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436793"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820908"
 ---
 # <a name="winrs"></a>winrs
 
@@ -27,7 +27,7 @@ winrs [/<parameter>[:<value>]] <command>
 ```
 #### <a name="parameters"></a>參數
 
-|           參數            |                                                                                                                                                                                    描述                                                                                                                                                                                     |
+|           參數            |                                                                                                                                                                                    說明                                                                                                                                                                                     |
 |--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |      /remote： \< 端點>       |                                                                                          使用 NetBIOS 名稱或標準連接來指定目標端點：<p>-   <url>： [ \< transport>：//] \< 目標> [： \< port>]<p>如果未指定，則會使用 **/r： localhost** 。                                                                                          |
 |          /unencrypted          | 指定不會加密遠端 shell 的訊息。 這適用于疑難排解，或當網路流量已經使用**ipsec**加密或強制執行實體安全性時。<p>根據預設，訊息會使用 Kerberos 或 NTLM 金鑰進行加密。<p>選取 [HTTPS 傳輸] 時，會忽略此命令列選項。 |
@@ -84,5 +84,5 @@ winrs /r:myserver /ad /u:administrator /p:$%fgh7 dir \\anotherserver\share
 ```
 
 ## <a name="additional-references"></a>其他參考
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)
 

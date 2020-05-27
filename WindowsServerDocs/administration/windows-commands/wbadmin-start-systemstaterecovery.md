@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fa111934f93bf7fea5aade1f39b4fc6a014d6c9e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: edbd6acefe2ef921b9325de4808753d5929efd1e
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725869"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821378"
 ---
 # <a name="wbadmin-start-systemstaterecovery"></a>wbadmin start systemstaterecovery
 
@@ -57,7 +57,7 @@ wbadmin start systemstaterecovery
 
 ### <a name="parameters"></a>參數
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
 |-version|以 MM/DD/YYYY-HH： MM 格式指定要復原之備份的版本識別碼。 如果您不知道版本識別碼，請輸入**wbadmin get 版本**。|
 |-showsummary|報告上一次系統狀態復原的摘要（完成作業所需的重新開機之後）。 此參數不可搭配任何其他參數使用。|
@@ -70,17 +70,17 @@ wbadmin start systemstaterecovery
 
 ## <a name="examples"></a>範例
 
-- 若要在上午9:00 從03/31/2013 執行備份的系統狀態復原，請輸入：  
+- 若要在上午9:00 從03/31/2013 執行備份的系統狀態復原，請輸入：
   ```
   wbadmin start systemstaterecovery -version:03/31/2013-09:00
-  ```  
-- 若要在上午9:00 從04/30/2013 執行備份的系統狀態復原 這會儲存在 server01 的共用\\ \\資源 servername\share 上，請輸入：  
+  ```
+- 若要在上午9:00 從04/30/2013 執行備份的系統狀態復原 這會儲存在 server01 的共用資源 \\ \\ servername\share 上，請輸入：
   ```
   wbadmin start systemstaterecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
   ```
 
 ## <a name="additional-references"></a>其他參考
 
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)
 -   [Restore](wbadmin.md)
 -   [WBSystemStateRecovery](https://technet.microsoft.com/library/jj902449.aspx) Cmdlet

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 94ba2d09a3e67248a393350e46e971aa8b24b00d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 55294b27ec51edb7083debf15e332117b9b4e1df
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722760"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821228"
 ---
 # <a name="pushprinterconnections"></a>pushprinterconnections
 
@@ -30,7 +30,7 @@ pushprinterconnections <-log> <-?>
 
 #### <a name="parameters"></a>參數
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
 |<-記錄>|將每個使用者的 debug 記錄檔寫入% temp，或將每個機器的 debug 記錄檔寫入%windir%\temp|
 |<-？ >|在命令提示字元顯示 [說明]。|
@@ -41,5 +41,5 @@ pushprinterconnections <-log> <-?>
 
 ## <a name="additional-references"></a>其他參考
 
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)
 -   [使用群組原則部署印表機](https://go.microsoft.com/fwlink/?LinkId=230627)

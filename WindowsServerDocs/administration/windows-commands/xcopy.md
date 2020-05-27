@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 01/05/2019
-ms.openlocfilehash: 0145de2828c1d33cf1b82f595dd6c00812ace54e
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: eba7092a9a26b25b1fe77b39b8098d117b38981a
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436783"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820998"
 ---
 # <a name="xcopy"></a>xcopy
 
@@ -30,7 +30,7 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 
 ### <a name="parameters"></a>參數
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
 |\<來源>|必要。 指定您想要複製之檔案的位置和名稱。 這個參數必須包含磁片磁碟機或路徑。|
 |[ \< 目的地>]|指定您想要複製之檔案的目的地。 這個參數可以包含磁碟機號和冒號、目錄名稱、檔案名或這些的組合。|
@@ -109,7 +109,7 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 
   若要處理**xcopy**傳回的結束代碼，請在 batch 程式中的**if**命令列上使用**ErrorLevel**參數。 如需使用**if**處理結束代碼的 batch 程式範例，請參閱[其他參考](#additional-references)。 下表列出每個結束代碼和描述。
 
-  |結束代碼|描述|
+  |結束代碼|說明|
   |---------|-----------|
   |0|檔案已複製而不發生錯誤。|
   |1|找不到要複製的檔案。|
@@ -214,4 +214,4 @@ rem  3 File(s) copied
 -   [Attrib](attrib.md)
 -   [Diskcopy](diskcopy.md)
 -   [只有](if.md)
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

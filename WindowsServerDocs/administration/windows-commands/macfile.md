@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a4384ce8d4f23966aea278e90b9ddddc42da6e77
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: bf914e4e7da4f00c547353da4fc8d04ad6828646
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724238"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820518"
 ---
 # <a name="macfile"></a>macfile
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-管理適用于 Macintosh 伺服器、磁片區、目錄和檔案的檔案伺服器。 您可以在批次檔中包含一系列命令，並以手動方式或在預先定義的時間啟動它們，來自動化管理工作。 
+管理適用于 Macintosh 伺服器、磁片區、目錄和檔案的檔案伺服器。 您可以在批次檔中包含一系列命令，並以手動方式或在預先定義的時間啟動它們，來自動化管理工作。
 -   [修改 Macintosh 可存取磁片區中的目錄](#BKMK_Moddirs)
 -   [加入 Macintosh 檔案的資料和資源分支](#BKMK_Joinforks)
 -   [變更登入訊息和限制會話](#BKMK_LogonLimit)
@@ -34,11 +34,11 @@ macfile directory[/server:\\<computerName>] /path:<directory> [/owner:<OwnerName
 ```
 
 #### <a name="parameters"></a>參數
--   /server：\\ \\ <computerName>指定要在其上變更目錄的伺服器。 如果省略，則會在本機電腦上執行此操作。
--   /path：<directory>必要。 指定您要變更之目錄的路徑。 此目錄必須已存在。 **macfile 目錄**不會建立目錄。
--   /owner：<OwnerName>變更目錄的擁有者。 如果省略，則擁有者會保持不變。
--   /group：<GroupName>指定或變更與目錄相關聯的 Macintosh 主要群組。 如果省略，主要群組會保持不變。
--   /permissions：<Permissions>設定擁有者、主要群組和世界（everyone）目錄的許可權。 使用11位數的數位來設定許可權。 數位1會授與許可權，0則會撤銷許可權（例如，11111011000）。 如果省略，許可權會維持不變。
+-   /server： \\ \\ <computerName> 指定要在其上變更目錄的伺服器。 如果省略，則會在本機電腦上執行此操作。
+-   /path： <directory> 必要。 指定您要變更之目錄的路徑。 此目錄必須已存在。 **macfile 目錄**不會建立目錄。
+-   /owner： <OwnerName> 變更目錄的擁有者。 如果省略，則擁有者會保持不變。
+-   /group： <GroupName> 指定或變更與目錄相關聯的 Macintosh 主要群組。 如果省略，主要群組會保持不變。
+-   /permissions： <Permissions> 設定擁有者、主要群組和世界（everyone）目錄的許可權。 使用11位數的數位來設定許可權。 數位1會授與許可權，0則會撤銷許可權（例如，11111011000）。 如果省略，許可權會維持不變。
     數位的位置會決定要設定的許可權，如下表所述。
 
     |位置|設定許可權|
@@ -76,7 +76,7 @@ macfile forkize[/server:\\<computerName>] [/creator:<CreatorName>] [/type:<typeN
 
 #### <a name="parameters"></a>參數
 
-|         參數          |                                                                                                           描述                                                                                                            |
+|         參數          |                                                                                                           說明                                                                                                            |
 |----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | /server\\\\<computerName> |                                                            指定要聯結檔案的伺服器。 如果省略，則會在本機電腦上執行此操作。                                                            |
 |   創<CreatorName>   |                                      指定檔案的建立者。 Macintosh 搜尋工具會使用 **/creator**命令列選項來判斷建立檔案的應用程式。                                       |
@@ -94,7 +94,7 @@ macfile forkize[/server:\\<computerName>] [/creator:<CreatorName>] [/type:<typeN
 ```
 macfile forkize /resourcefork:c:\cross\mac\appcode /type:APPL /creator:MAGNOLIA /targetfile:D:\Release\treeapp
 ```
-若要將檔案建立者變更為 Microsoft Word 5.1，請針對目錄 D:\Word documents\Group 檔中的檔案單字，在伺服器\\\SERverA 上輸入：
+若要將檔案建立者變更為 Microsoft Word 5.1，請針對目錄 D:\Word documents\Group 檔中的檔案單字，在伺服器 \\ \SERverA 上輸入：
 ```
 macfile forkize /server:\\servera /creator:MSWD /type:TEXT /targetfile:d:\Word documents\Group files\Word.txt
 ```
@@ -107,7 +107,7 @@ macfile server [/server:\\<computerName>] [/maxsessions:{Number | unlimited}] [/
 
 #### <a name="parameters"></a>參數
 
-|               參數                |                                                                                                                                                                           描述                                                                                                                                                                            |
+|               參數                |                                                                                                                                                                           說明                                                                                                                                                                            |
 |----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       /server\\\\<computerName>       |                                                                                                                        指定要在其上變更參數的伺服器。 如果省略，則會在本機電腦上執行此操作。                                                                                                                         |
 | /maxsessions： {Number &#124; 無限制} |                                                                                         指定可以同時使用 Macintosh 檔案和列印伺服器的最大使用者數目。 如果省略，伺服器的**maxsessions**設定會維持不變。                                                                                         |
@@ -132,7 +132,7 @@ macfile volume /remove[/server:\\<computerName>] /name:<volumeName>
 
 #### <a name="parameters"></a>參數
 
-|              參數               |                                                                                                                                                                       描述                                                                                                                                                                        |
+|              參數               |                                                                                                                                                                       說明                                                                                                                                                                        |
 |--------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |          {/add &#124;/set}          |                                                                                                                      當您新增或變更 Macintosh 可存取的磁片區時，這是必要的。 新增或變更指定的磁片區。                                                                                                                       |
 |      /server\\\\<computerName>      |                                                                                                             指定要在其上新增、變更或移除磁片區的伺服器。 如果省略，則會在本機電腦上執行此操作。                                                                                                              |
@@ -141,7 +141,7 @@ macfile volume /remove[/server:\\<computerName>] /name:<volumeName>
 |    /readonly： {true &#124; false}     | 指定使用者是否可以變更磁片區中的檔案。 輸入 true，指定使用者無法變更磁片區中的檔案。 輸入 false 以指定使用者可以變更磁片區中的檔案。 如果在新增磁片區時省略，則允許變更檔案。 如果在變更磁片區時省略，則磁片區的**readonly**設定會保持不變。 |
 |  /guestsallowed： {true &#124; false}  |      指定以來賓身分登入的使用者是否可以使用該磁片區。 輸入 true，指定來賓可以使用磁片區。 輸入 false 以指定來賓無法使用磁片區。 如果在新增磁片區時省略，來賓可以使用磁片區。 如果在變更磁片區時省略，磁片區的**guestsallowed**設定會維持不變。       |
 |         /password<Password>         |                                                                               指定存取磁片區時所需的密碼。 新增磁片區時若省略此參數，則不會建立任何密碼。 如果在變更磁片區時省略，密碼會保持不變。                                                                               |
-| /maxusers： {<Number>>&#124;無限制} |                                                 指定可以同時使用磁片區上之檔案的最大使用者數目。 如果在新增磁片區時省略，則不限數目的使用者可以使用該磁片區。 如果在變更磁片區時省略， **maxusers**值會維持不變。                                                 |
+| /maxusers： { <Number>>&#124;無限制} |                                                 指定可以同時使用磁片區上之檔案的最大使用者數目。 如果在新增磁片區時省略，則不限數目的使用者可以使用該磁片區。 如果在變更磁片區時省略， **maxusers**值會維持不變。                                                 |
 |               /remove                |                                                                                                                                當您移除 Macintosh 存取磁片區時，這是必要的。 移除指定的磁片區。                                                                                                                                |
 |                  /?                  |                                                                                                                                                           在命令提示字元顯示說明。                                                                                                                                                           |
 
@@ -157,7 +157,7 @@ macfile volume /add /name:US Marketing Statistics /guestsallowed:false /path:e:\
 ```
 macfile volume /set /name:US Marketing Statistics /readonly:true /password:saturn /maxusers:5
 ```
-若要新增名為 [橫向設計] 的磁片\\區，請在伺服器 \Magnolia 上，使用 E 磁片磁碟機中的樹狀目錄，並指定來賓可以存取該磁片區，請輸入：
+若要新增名為 [橫向設計] 的磁片區，請在伺服器 \\ \Magnolia 上，使用 E 磁片磁碟機中的樹狀目錄，並指定來賓可以存取該磁片區，請輸入：
 ```
 macfile volume /add /server:\\Magnolia /name:Landscape Design /path:e:\trees
 ```
@@ -167,4 +167,4 @@ macfile volume /remove /name:Sales Reports
 ```
 
 ## <a name="additional-references"></a>其他參考
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

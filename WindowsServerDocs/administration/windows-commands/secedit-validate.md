@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3043a4af6c2ac4a6c58b973cca5abd066109eac5
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b93ad6ceadb08f6df8390edc3fc454d951519aad
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722042"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821092"
 ---
 # <a name="seceditvalidate"></a>secedit：驗證
 
@@ -25,13 +25,13 @@ ms.locfileid: "82722042"
 ## <a name="syntax"></a>語法
 
 ```
-Secedit /validate <configuration file name>  
+Secedit /validate <configuration file name>
 
 ```
 
 #### <a name="parameters"></a>參數
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
 |組態檔名稱|必要。</br>指定要驗證之安全性範本的路徑和檔案名。|
 
@@ -43,7 +43,7 @@ Secedit /validate <configuration file name>
 
 記錄檔將不會更新。
 
-在 Windows Server 2008 中`Secedit /refreshpolicy` ，已取代為`gpupdate`。 如需有關如何重新整理安全性設定的詳細資訊，請參閱[Gpupdate](gpupdate.md)。
+在 Windows Server 2008 中，已 `Secedit /refreshpolicy` 取代為 `gpupdate` 。 如需有關如何重新整理安全性設定的詳細資訊，請參閱[Gpupdate](gpupdate.md)。
 
 ## <a name="examples"></a>範例
 
@@ -56,4 +56,4 @@ Secedit /validate secRBKcontoso.inf
 
 -   [Secedit:generaterollback](secedit-generaterollback.md)
 -   [Secedit](secedit.md)
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

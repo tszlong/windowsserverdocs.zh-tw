@@ -1,49 +1,59 @@
 ---
 title: ftp 類型
-description: '* * * * 的參考主題'
+description: Ftp type 命令的參考主題，其會設定或顯示檔案傳輸類型。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: 6e96dcd4-08f8-4e7b-90b7-1e1761fea4c7 vhorne
+ms.assetid: 6e96dcd4-08f8-4e7b-90b7-1e1761fea4c7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5531da30118914599ed0f85bfd10bd02ae89ffcf
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 02b6d5b4bd7944c9f4126ba4877360de02586cfb
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725081"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820268"
 ---
-# <a name="ftp-type"></a>ftp：類型
+# <a name="ftp-type"></a>ftp 類型
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-設定或顯示檔案傳輸類型。   
-## <a name="syntax"></a>語法  
-```  
-type [<typeName>]  
-```  
-#### <a name="parameters"></a>參數  
+設定或顯示檔案傳輸類型。 **Ftp**命令同時支援 ASCII （預設）和二進位圖像檔案傳輸類型：
 
-|  參數   |            描述            |
-|--------------|-----------------------------------|
-| [<typeName>] | 指定檔案傳輸類型。 |
+- 我們建議您在傳輸文字檔時使用 ASCII。 在 ASCII 模式中，會執行與網路標準字元集之間的字元轉換。 例如，根據目標作業系統，會視需要轉換行尾字元。
 
-## <a name="remarks"></a>備註  
-- 如果未指定*typeName* ，則會顯示目前的類型。  
-- **ftp**支援兩種檔案傳輸類型： ASCII 和二進位檔。  
-  預設的檔案傳輸類型為 ASCII。  傳送文字檔時，應該使用**ascii**命令。 在 ASCII 模式中，會執行與網路標準字元集之間的字元轉換。 例如，會根據目的地的作業系統，將行尾字元轉換為必要。  
-  傳輸可執行檔時，應該使用**二進位**命令。 在二進位模式中，檔案會以一個位元組的單位移動。  
-  ## <a name="examples"></a>範例  
-  將檔案傳輸類型設定為 ASCII。  
-  ```  
-  type ascii  
-  ```  
-  將 [傳輸檔案類型] 設定為 [二進位]。  
-  ```  
-  type binary  
-  ```  
-  ## <a name="additional-references"></a>其他參考  
-- - [命令列語法關鍵](command-line-syntax-key.md)  
+- 我們建議您在傳輸可執行檔時使用 binary。 在二進位模式中，檔案會以一個位元組的單位傳輸。
+
+## <a name="syntax"></a>語法
+
+```
+type [<typename>]
+```
+
+### <a name="parameters"></a>參數
+
+| 參數 | 說明 |
+| --------- | ----------- |
+| `[<typename>]` | 指定檔案傳輸類型。 如果您未指定此參數，則會顯示目前的類型。|
+
+### <a name="examples"></a>範例
+
+若要將檔案傳輸類型設定為 ASCII，請輸入：
+
+```
+type ascii
+```
+
+若要將傳輸檔案類型設定為 binary，請輸入：
+
+```
+type binary
+```
+
+## <a name="additional-references"></a>其他參考
+
+- [命令列語法關鍵](command-line-syntax-key.md)
+
+- [其他 FTP 指引](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

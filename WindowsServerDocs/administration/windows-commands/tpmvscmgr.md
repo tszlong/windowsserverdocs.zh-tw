@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ab0419060121033571eeba643cc0e2d42b45c743
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 60c824de891917a2652776ee86b389f04d8eada8
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721299"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821368"
 ---
 # <a name="tpmvscmgr"></a>tpmvscmgr
 
@@ -33,7 +33,7 @@ Tpmvscmgr destroy [/instance <instance ID>] [/?]
 
 Create 命令會在使用者的系統上設定新的虛擬智慧卡。 如果需要刪除，它會傳回新建立之卡片的實例識別碼，以供日後參考。 實例識別碼的格式為**ROOT\SMARTCARDREADER\000n** ，其中**n**是從0開始，每次建立新的虛擬智慧卡時，都會增加1。
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
 |/name|必要。 表示新虛擬智慧卡的名稱。|
 |/AdminKey|指出當使用者忘記 PIN 時，可以用來重設卡片 PIN 的所需系統管理員金鑰。</br>**預設值**指定010203040506070801020304050607080102030405060708的預設值。</br>**提示**提示使用者輸入系統管理員金鑰的值。</br>**隨機**導致卡片的系統管理員金鑰隨機設定不會傳回給使用者。 這會建立可能無法使用智慧卡管理工具來管理的卡片。 以隨機產生時，系統管理員金鑰必須輸入為48的十六進位字元。|
@@ -50,7 +50,7 @@ Create 命令會在使用者的系統上設定新的虛擬智慧卡。 如果需
 > [!WARNING]
 > 當虛擬智慧卡被刪除時，就無法復原。
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
 |/instance|指定要移除之虛擬智慧卡的實例識別碼。 InstanceID 是在建立卡片時，以 Tpmvscmgr 輸出的形式產生。 /Instance 參數是摧毀命令的必要欄位。|
 |/?|顯示此命令的說明。|
@@ -77,10 +77,10 @@ tpmvscmgr.exe create /name VirtualSmartCardForCorpAccess /AdminKey RANDOM /PIN P
 ```
 下列命令會建立具有隨機系統管理員金鑰的虛擬智慧卡。 金鑰會在 cardis 建立之後自動捨棄。 這表示，如果使用者忘記 PIN 或想要變更 PIN，使用者必須刪除卡片並重新建立。 若要刪除卡片，使用者可以執行下列命令。
 ```
-tpmvscmgr.exe destroy /instance <instance ID> 
+tpmvscmgr.exe destroy /instance <instance ID>
 ```
-其中\<，實例識別碼> 是使用者建立卡片時，在螢幕上列印的值。 具體而言，針對第一個建立的卡片，實例識別碼為 ROOT\SMARTCARDREADER\0000。
+其中， \< 實例識別碼> 是使用者建立卡片時，在螢幕上列印的值。 具體而言，針對第一個建立的卡片，實例識別碼為 ROOT\SMARTCARDREADER\0000。
 
 ## <a name="additional-references"></a>其他參考
 
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)

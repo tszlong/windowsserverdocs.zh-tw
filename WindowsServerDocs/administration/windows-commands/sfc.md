@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8e0b6fc2563566485a15ba7168b864a8abc888f3
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: af2167e1e23b0698c17159b1ae6b1970a06219d4
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436723"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821260"
 ---
 # <a name="sfc"></a>sfc
 
@@ -29,7 +29,7 @@ sfc [/scannow] [/verifyonly] [/scanfile=<file>] [/verifyfile=<file>] [/offwindir
 ```
 
 #### <a name="parameters"></a>參數
-|參數|描述|
+|參數|說明|
 |-------|--------|
 |/scannow|會掃描所有受保護系統檔案的完整性，並在可能時修復有問題的檔案。|
 |/verifyonly|掃描所有受保護系統檔案的完整性。 不會執行任何修復操作。|
@@ -58,5 +58,5 @@ sfc /scanfile=d:\windows\system32\kernel32.dll /offbootdir=d:\ /offwindir=d:\win
 ```
 
 ## <a name="additional-references"></a>其他參考
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)
 

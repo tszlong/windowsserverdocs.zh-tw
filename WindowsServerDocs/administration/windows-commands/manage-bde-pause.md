@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6bf13d8e328831df8e7dfc0cdc46ec18572ee52d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c2bd5b9fd0eccc491378164efc1f98cb6afb0aa8
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724125"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820638"
 ---
 # <a name="manage-bde-pause"></a>manage-bde： pause
 
@@ -30,7 +30,7 @@ manage-bde -pause <Volume> [-computername <Name>] [{-?|/?}] [{-help|-h}]
 
 #### <a name="parameters"></a>參數
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
 |\<磁片區>|磁碟機號，後面接著冒號、磁片區 GUID 路徑或裝載的磁片區。|
 |-computername|指定 Manage-bde.wsf 將用來修改另一部電腦上的 BitLocker 保護。 您也可以使用 **-cn**做為此命令的縮寫版本。|
@@ -47,5 +47,5 @@ manage-bde –pause C:
 
 ## <a name="additional-references"></a>其他參考
 
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)
 -   [Manage-bde](manage-bde.md)

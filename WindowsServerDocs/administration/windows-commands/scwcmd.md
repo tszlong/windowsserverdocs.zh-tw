@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f08a8396219924ac6660828464e035c7744729b1
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9a8c002aa735b188fdd9ad75b0db7dbe06053516
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722101"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821158"
 ---
 # <a name="scwcmd"></a>Scwcmd
 
@@ -38,7 +38,7 @@ scwcmd <command> [<subcommand>]
 
 ### <a name="parameters"></a>參數
 
-|子命令|描述|
+|子命令|說明|
 |----------|-----------|
 |/analyze|判斷電腦是否符合原則。</br>如需語法和選項，請參閱[Scwcmd：分析](scwcmd-analyze.md)。|
 |/configure|將 SCW 產生的安全性原則套用至電腦。</br>如需語法和選項，請參閱[Scwcmd： configure](scwcmd-configure.md) 。|
@@ -50,4 +50,4 @@ scwcmd <command> [<subcommand>]
 
 ## <a name="additional-references"></a>其他參考
 
--   - [命令列語法關鍵](command-line-syntax-key.md)
+- [命令列語法關鍵](command-line-syntax-key.md)
