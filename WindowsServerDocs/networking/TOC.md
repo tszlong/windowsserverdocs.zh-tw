@@ -93,6 +93,12 @@
 #### [DHCP 子網路選擇選項](technologies/dhcp/dhcp-subnet-options.md)
 #### [DNS 記錄註冊的 DHCP 記錄事件](technologies/dhcp/dhcp-dns-events.md)
 ### [使用 Windows PowerShell 部署 AD DHCP](technologies/dhcp/dhcp-deploy-wps.md)
+### [針對 DHCP 問題進行疑難排解](../troubleshoot/troubleshoot-dhcp-issue.md)
+#### [動態主機設定通訊協定 (DHCP) 基本概念](../troubleshoot/dynamic-host-configuration-protocol-basics.md)
+#### [針對 DHCP 進行疑難排解的一般指導方針](../troubleshoot/general-guidance-to-troubleshoot-dhcp.md)
+##### [如何在沒有 DHCP 伺服器的情況下使用自動 TCP/IP 定址](../troubleshoot/how-to-use-automatic-tcpip-addressing-without-a-dh.md)
+#### [針對 DHCP 用戶端上的問題進行疑難排解](../troubleshoot/troubleshoot-problems-on-dhcp-client.md)
+#### [針對 DHCP 伺服器上的問題進行疑難排解](../troubleshoot/troubleshoot-problems-on-dhcp-server.md)
 
 ## [高效能網路功能 (HPN)](technologies/hpn/hpn-top.md)
 ### [網路卸載和最佳化技術](technologies/hpn/network-offload-and-optimization.md)
