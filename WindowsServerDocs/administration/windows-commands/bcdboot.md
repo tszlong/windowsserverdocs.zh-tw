@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cde91738f524350f72f0278495e4bd46a3960e6f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 67aacb3a575e0cdd08af5372b403916961d223c6
+ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718704"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84149771"
 ---
 # <a name="bcdboot"></a>bcdboot
 
@@ -30,13 +30,13 @@ bcdboot <source> [/l] [/s]
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| source | 指定要做為複製開機環境檔案之來源的 Windows 目錄位置。 |
+| 來源 | 指定要做為複製開機環境檔案之來源的 Windows 目錄位置。 |
 | /l | 指定地區設定。 預設地區設定為美式英文。 |
 | /s | 指定系統磁碟分割的磁片區代號。 預設值是由固件識別的系統磁碟分割。 |
 
 ## <a name="examples"></a>範例
 
-如需有關如何尋找 BCDboot 的詳細資訊，以及如何使用此命令的範例，請參閱[BCDboot 命令列選項](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh824874(v=win.10)x)主題。
+如需有關如何尋找 BCDboot 的詳細資訊，以及如何使用此命令的範例，請參閱[BCDboot 命令列選項](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh824874(v=win.10))主題。
 
 ## <a name="additional-references"></a>其他參考
 
