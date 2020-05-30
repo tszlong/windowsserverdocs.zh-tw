@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 08a9b0a74c6da894eeadef8aef86f25761d6616e
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 015fb7842146e372b36c71fe95a3598bdfa48676
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820448"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222989"
 ---
 # <a name="logman-create-trace"></a>logman 建立追蹤
 
@@ -30,7 +30,7 @@ logman create trace <[-n] <name>> [options]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | -s`<computer name>` | 在指定的遠端電腦上執行命令。 |
 | -config`<value>` | 指定包含命令選項的設定檔案。 |
@@ -69,7 +69,7 @@ logman create trace <[-n] <name>> [options]
 
 ### <a name="examples"></a>範例
 
-若要建立名為 trace_log 的事件追蹤資料收集器，但使用不小於16且不超過256的緩衝區，而且每個緩衝區的大小都是64kb，將結果放在 c:\logfile 中，請輸入：
+若要建立名為*trace_log*的事件追蹤資料收集器，但使用不小於16且不超過256的緩衝區，而且每個緩衝區的大小都是64kb，將結果放在 c:\logfile 中，請輸入：
 
 ```
 logman create trace trace_log -nb 16 256 -bs 64 -o c:\logfile
@@ -79,4 +79,6 @@ logman create trace trace_log -nb 16 256 -bs 64 -o c:\logfile
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [logman](logman.md)
+- [logman 更新追蹤命令](logman-update-trace.md)
+
+- [logman 命令](logman.md)

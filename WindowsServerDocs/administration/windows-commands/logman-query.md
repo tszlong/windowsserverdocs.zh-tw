@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2179604bdc581fe24fa4d702ca5e223dc11579be
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: f37b78023fd12c1d58234cdecdb69af8a1c6002d
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820558"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222801"
 ---
 # <a name="logman-query"></a>logman query
 
@@ -30,7 +30,7 @@ logman query [providers|Data Collector Set name] [options]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | -s`<computer name>` | 在指定的遠端電腦上執行命令。 |
 | -config`<value>` | 指定包含命令選項的設定檔案。 |
@@ -62,4 +62,4 @@ logman query providers
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [logman](logman.md)
+- [logman 命令](logman.md)

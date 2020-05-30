@@ -4,17 +4,17 @@ description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: e2daaab7-12db-4e36-b70c-db8906d084f7 vhorne
+ms.assetid: e2daaab7-12db-4e36-b70c-db8906d084f7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2c636b9a14d9dcee6f37409557ed2bcb87b1087d
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: dee1a5efd0459f68f31d739741062dc964b88d41
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820868"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84223032"
 ---
 # <a name="netcfg"></a>netcfg
 
@@ -26,7 +26,7 @@ ms.locfileid: "83820868"
 netcfg [/v] [/e] [/winpe] [/l ] /c /i
 ```
 #### <a name="parameters"></a>參數
-|參數|說明|
+|參數|描述|
 |-------|--------|
 |/v|以**詳細**資訊（詳細）模式執行|
 |/e|在安裝和卸載期間使用服務**環境**變數|

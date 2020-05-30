@@ -4,17 +4,17 @@ description: 在遠端電腦之間傳輸檔案。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: 772f19a8-dafe-45cd-878a-f5691f6568ef vhorne
+ms.assetid: 772f19a8-dafe-45cd-878a-f5691f6568ef
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fb9977d0bc4f45b610d8bf3409c6beeadfaf7ee5
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 8b3674cbfdbc01811ece57e2f9cbbea3aa31251d
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821018"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84223042"
 ---
 # <a name="tftp"></a>tftp
 
@@ -28,14 +28,14 @@ tftp [-i] [<Host>] [{get | put}] <Source> [<Destination>]
 ```
 
 #### <a name="parameters"></a>參數
-|參數|說明|
+|參數|描述|
 |-------|--------|
 |-i|指定二進位影像傳輸模式（也稱為「八位模式」）。 在二進位影像模式中，檔案是以一個位元組的單位傳輸。 傳送二進位檔案時，請使用此模式。 如果省略 **-i** ，則會以 ASCII 模式傳送檔案。 這是預設的傳輸模式。 此模式會將指定電腦的行尾（EOL）字元轉換為適當的格式。 傳送文字檔時，請使用此模式。 如果檔案傳輸成功，則會顯示資料傳送速率。|
-|\<主控件\>|指定本機或遠端電腦。|
+|\<Host\>|指定本機或遠端電腦。|
 |put|將本機電腦上的檔案*來源*傳送到遠端電腦上的檔案*目的地*。 因為 tftp 通訊協定不支援使用者驗證，所以使用者必須登入遠端電腦，而且檔案必須可在遠端電腦上寫入。|
 |get|將遠端電腦上的檔案*目的地*傳送到本機電腦上的檔案*來源*。|
 |\<Source\>|指定要傳送的檔案。|
-|\<目的地\>|指定要將檔案傳送到何處。|
+|\<Destination\>|指定要將檔案傳送到何處。|
 
 ## <a name="remarks"></a>備註
 -   您可以使用 [新增功能] [Wizard] 來安裝 tftp 用戶端。

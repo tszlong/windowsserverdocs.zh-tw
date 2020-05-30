@@ -4,17 +4,17 @@ description: Telnet send 的參考主題，它會將 telnet 命令傳送到 teln
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: 7c217abc-1182-466e-914c-1ff16755021b vhorne
+ms.assetid: 7c217abc-1182-466e-914c-1ff16755021b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5dd4bf9828c4b71e7b2291dfd5d453c43679e059
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 36feeff49c3b139de8ec05b075571bae2539ddd1
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821068"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222684"
 ---
 # <a name="telnet-send"></a>telnet：傳送
 
@@ -28,7 +28,7 @@ sen[d] {ao | ayt | brk | esc | ip | synch | <string>} [?]
 ```
 #### <a name="parameters"></a>參數
 
-| 參數 |                     說明                      |
+| 參數 |                     描述                      |
 |-----------|------------------------------------------------------|
 |    ao     |       傳送 telnet 命令中止輸出。        |
 |    ayt    |       傳送 telnet 命令給您。       |

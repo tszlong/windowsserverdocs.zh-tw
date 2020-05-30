@@ -4,17 +4,17 @@ description: Tlntadmn 的參考主題，其可管理本機或遠端電腦，並�
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: 78b61e8d-b953-44bb-8d57-f3b42da9e7a8 vhorne
+ms.assetid: 78b61e8d-b953-44bb-8d57-f3b42da9e7a8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 273381fa62f42e9cf084c2b7dbf30ed7211295fb
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: fcade72f7170e94463abb9b473d4c6bd2251f086
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821008"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222641"
 ---
 # <a name="tlntadmn"></a>tlntadmn
 
@@ -28,23 +28,23 @@ tlntadmn [<computerName>] [-u <UserName>] [-p <Password>] [{start | stop | pause
 ```
 #### <a name="parameters"></a>參數
 
-|                   參數                    |                                                                                                                                                       說明                                                                                                                                                        |
+|                   參數                    |                                                                                                                                                       描述                                                                                                                                                        |
 |------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                \<computerName>                 |                                                                                                                    指定要連接的伺服器名稱。 預設是本機電腦。                                                                                                                    |
-|         -u 使用者 \< 名稱>-p \< 密碼>          |                                                指定您要管理之遠端伺服器的系統管理認證。 如果您想要管理您未使用系統管理認證登入的遠端伺服器，則需要此參數。                                                |
+|         -u \<UserName> -p\<Password>          |                                                指定您要管理之遠端伺服器的系統管理認證。 如果您想要管理您未使用系統管理認證登入的遠端伺服器，則需要此參數。                                                |
 |                     start                      |                                                                                                                                            啟動 telnet 伺服器服務。                                                                                                                                             |
 |                      stop                      |                                                                                                                                             停止 telnet 伺服器服務                                                                                                                                              |
 |                     pause                      |                                                                                                                          暫停 telnet 伺服器服務。 不接受任何新的連接。                                                                                                                          |
 |                    continue                    |                                                                                                                                            繼續 telnet 伺服器服務。                                                                                                                                            |
-|          -s { \< SessionID> &#124; all}          |                                                                                                                                             顯示作用中的 telnet 會話。                                                                                                                                             |
-|          -k { \< SessionID> &#124; all}          |                                                                                                        結束 telnet 會話。 輸入會話識別碼以結束特定會話，或輸入 all 以結束所有會話。                                                                                                         |
-|    -m { \< SessionID> &#124; all}<Message>     |                                                   將訊息傳送至一或多個會話。 輸入會話識別碼以傳送訊息至特定會話，或輸入 all 以傳送訊息至所有會話。 輸入您想要在引號之間傳送的訊息。                                                   |
-|             config dom = \< 網域>             |                                                                                                                                      設定伺服器的預設網域。                                                                                                                                       |
+|          -s { \<SessionID> &#124; 全部}          |                                                                                                                                             顯示作用中的 telnet 會話。                                                                                                                                             |
+|          -k { \<SessionID> &#124; 全部}          |                                                                                                        結束 telnet 會話。 輸入會話識別碼以結束特定會話，或輸入 all 以結束所有會話。                                                                                                         |
+|    -m { \<SessionID> &#124; 全部}<Message>     |                                                   將訊息傳送至一或多個會話。 輸入會話識別碼以傳送訊息至特定會話，或輸入 all 以傳送訊息至所有會話。 輸入您想要在引號之間傳送的訊息。                                                   |
+|             設定 dom =\<Domain>             |                                                                                                                                      設定伺服器的預設網域。                                                                                                                                       |
 |      config ctrlakeymap = {yes &#124; 否}      |                                                                                     指定您是否要讓 telnet 伺服器解讀 CTRL + A 做為 ALT。 輸入 **[是]** 以對應快速鍵，或輸入 [**否**] 以防止對應。                                                                                     |
-|       config timeout = \< hh>： \< mm>： \< ss>       |                                                                                                                                 設定以小時、分鐘和秒為單位的超時時間。                                                                                                                                 |
+|       config timeout = \<hh> ： \<mm> ：\<ss>       |                                                                                                                                 設定以小時、分鐘和秒為單位的超時時間。                                                                                                                                 |
 |     config timeoutactive = {yes &#124; 否      |                                                                                                                                            啟用閒置會話超時。                                                                                                                                             |
-|          config maxfail = \< 嘗試>          |                                                                                                                          設定中斷連線前的失敗登入嘗試次數上限。                                                                                                                          |
-|        config maxconn = \< Connections>         |                                                                                                                                         設定連接的最大數目。                                                                                                                                          |
+|          config maxfail =\<attempts>          |                                                                                                                          設定中斷連線前的失敗登入嘗試次數上限。                                                                                                                          |
+|        config maxconn =\<Connections>         |                                                                                                                                         設定連接的最大數目。                                                                                                                                          |
 |            config port = < \Number of>             |                                                                                                                    設定 telnet 通訊埠。 您必須使用小於1024的整數來指定埠。                                                                                                                    |
 | config sec {+ &#124;-} NTLM {+ &#124;-} passwd | 指定您要使用 NTLM 還是密碼，或兩者都用來驗證登入嘗試。 若要使用特定類型的驗證，請 **+** 在該類型的驗證之前輸入加號（）。 若要避免使用特定類型的驗證，請 **-** 在該類型的驗證之前輸入減號（）。 |
 |     config mode = {console &#124; stream}      |                                                                                                                                             指定操作的模式。                                                                                                                                             |

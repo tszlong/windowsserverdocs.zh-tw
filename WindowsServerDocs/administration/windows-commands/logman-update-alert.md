@@ -1,68 +1,79 @@
 ---
 title: logman 更新警示
-description: '* * * * 的參考主題'
+description: Logman 更新警示命令的參考主題，它會更新現有警示資料收集器的屬性。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: ede94a76-931c-40ed-9fda-6766bed8ff72 britw
+ms.assetid: ede94a76-931c-40ed-9fda-6766bed8ff72
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b7486b24b230f771130241147ea360f394db15fe
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 49d07744df911b054c9c9235b297090e8c39019b
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724329"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222792"
 ---
 # <a name="logman-update-alert"></a>logman 更新警示
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-更新現有警示資料收集器的屬性。  
+更新現有警示資料收集器的屬性。
 
-## <a name="syntax"></a>語法  
-```  
-logman update alert <[-n] <name>> [options]  
-```  
-### <a name="parameters"></a>參數  
+## <a name="syntax"></a>語法
 
-|                 參數                  |                                                                               描述                                                                               |
-|--------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                     /?                     |                                                                    顯示即時線上說明。                                                                     |
-|             -s<computer name>             |                                                          在指定的遠端電腦上執行命令。                                                          |
-|              -config <value>               |                                                         指定包含命令選項的設定檔案。                                                         |
-|                [-n]<name>                 |                                                                       目標物件的名稱。                                                                        |
-|          -[-] u <使用者 [password] >           | 指定要當做執行身分的使用者。 \*輸入密碼時，會產生密碼的提示。 當您在密碼提示字元中輸入密碼時，不會顯示它。 |
-| -m < [start] [stop] [[start] [stop] [...]]> |                                                變更為 [手動啟動] 或 [停止]，而不是排程的開始或結束時間。                                                 |
-|             -rf < [[hh：] mm：] ss>             |                                                        在指定的時間內執行資料收集器。                                                         |
-|     -b <M/d/yyyy h:mm： ss [AM&#124;PM] >      |                                                              在指定的時間開始收集資料。                                                               |
-|     -e <M/d/yyyy h:mm： ss [AM&#124;PM] >      |                                                               在指定的時間結束資料收集。                                                                |
-|             -si < [[hh：] mm：] ss>             |                                                 指定效能計數器資料收集器的取樣間隔。                                                  |
-|           -o <路徑&#124;dsn！ log>           |                                              指定 SQL 資料庫中的輸出記錄檔或 DSN 和記錄集名稱。                                               |
-|                   -[-] r                    |                                                  在指定的開始和結束時間，每日重複資料收集器。                                                  |
-|                   -[-] a                    |                                                                     附加至現有的記錄檔。                                                                     |
-|                   -[-] 允許                   |                                                                     覆寫現有的記錄檔。                                                                     |
-|        -[-] v <nnnnnn&#124;mmddhhmm>        |                                                   將檔案版本設定資訊附加至記錄檔名稱的結尾。                                                   |
-|               -[-] rc<task>                |                                                         每次關閉記錄檔時，執行指定的命令。                                                          |
-|              -[-] max <value>               |                                                 最大記錄檔大小（MB）或 SQL 記錄檔的最大記錄數目。                                                  |
-|           -[-] my.cnf < [[hh：] mm：] ss>           |     當指定時間時，請在指定的時間已過時建立新的檔案。 未指定時間時，請在超過最大大小時建立新的檔案。     |
-|                     -y                     |                                                             對所有問題回答 [是] 而不提示。                                                              |
-|               -cf<filename>               |                       指定要收集的效能計數器清單。 檔案每行應該包含一個效能計數器名稱。                        |
-|                   -[-] el                   |                                                                啟用或停用事件記錄檔報告。                                                                 |
-|     -第 <閾值 [閾值 [...]]>      |                                                        指定警示的計數器及其臨界值。                                                        |
-|              -[-]rdcs<name>               |                                                     指定在引發警示時要啟動的資料收集器集合。                                                      |
-|               -[-] tn<task>                |                                                             指定警示引發時要執行的工作。                                                              |
-|            -[-]targ<argument>             |                                               指定要與使用-tn 指定的工作搭配使用的工作引數。                                                |
+```
+logman update alert <[-n] <name>> [options]
+```
 
-## <a name="remarks"></a>備註  
-其中列出 [-]，此選項會有額外的否定。  
-## <a name="examples"></a>範例  
-若要更新現有的資料收集器 new_alert，請將處理器（_Total）計數器群組中計數器% Processor time 的臨界值設定為40%。  
-```  
-logman update alert new_alert -th \Processor(_Total)\% Processor time>40  
-```  
-## <a name="additional-references"></a>其他參考  
-[logman](logman.md)  
-[logman 建立警示](logman-create-alert.md)  
+### <a name="parameters"></a>參數
+
+| 參數 | 描述 |
+| --------- | ----------- |
+| -s`<computer name>` | 在指定的遠端電腦上執行命令。 |
+| -config`<value>` | 指定包含命令選項的設定檔案。 |
+| [-n]`<name>` | 目標物件的名稱。 |
+| -[-] u`<user [password]>` | 指定要當做執行身分的使用者。 輸入密碼時，會 `*` 產生密碼的提示。 當您在密碼提示字元中輸入密碼時，不會顯示該密碼。 |
+| -m`<[start] [stop] [[start] [stop] [...]]>` | 手動啟動或停止的變更，而不是排程的開始或結束時間。 |
+| -rf`<[[hh:]mm:]ss>` | 在指定的時間內執行資料收集器。 |
+| -b`<M/d/yyyy h:mm:ss[AM|PM]>` | 在指定的時間開始收集資料。 |
+| -e `<M/d/yyyy h:mm:ss[AM|PM]>` | 在指定的時間結束資料收集。 |
+| -si`<[[hh:]mm:]ss>` | 指定效能計數器資料收集器的取樣間隔。 |
+| -o`<path|dsn!log>` | 指定 SQL 資料庫中的輸出記錄檔或 DSN 和記錄集名稱。 |
+| -[-] r | 每日在指定的開始和結束時間重複資料收集器。 |
+| -[-] a | 附加現有的記錄檔。 |
+| -[-] 允許 | 覆寫現有的記錄檔。 |
+| -[-] v`<nnnnnn|mmddhhmm>` | 將檔案版本設定資訊附加至記錄檔名稱的結尾。 |
+| -[-] rc`<task>` | 每次關閉記錄檔時，執行指定的命令。 |
+| -[-] max`<value>` | 最大記錄檔大小（MB）或 SQL 記錄檔的最大記錄數目。 |
+| -[-] my.cnf`<[[hh:]mm:]ss>` | 當指定時間時，會在指定的時間已過時建立新的檔案。 未指定時間時，會在超過最大大小時建立新的檔案。 |
+| -y | 對所有問題回答 [是] 而不提示。 |
+| -cf`<filename>` | 指定要收集的效能計數器清單。 檔案每行應該包含一個效能計數器名稱。 |
+| -[-] el | 啟用或停用事件記錄檔報告。 |
+| -th`<threshold [threshold [...]]>` | 指定警示的計數器及其臨界值。 |
+| -[-]rdcs`<name>` | 指定在引發警示時要啟動的資料收集器集合。 |
+| -[-] tn`<task>` | 指定警示引發時要執行的工作。 |
+| -[-]targ`<argument>` | 指定要與使用-tn 指定的工作搭配使用的工作引數。 |
+| /? | 顯示即時線上說明。 |
+
+#### <a name="remarks"></a>備註
+
+- 其中列出 [-]，加入額外的連字號（-）會否定選項。
+
+### <a name="examples"></a>範例
+
+若要更新稱為*new_alert*的現有警示，請在 [處理器（_Total）] 計數器群組中，將計數器% Processor time 的臨界值設定為40%，輸入：
+
+```
+logman update alert new_alert -th \Processor(_Total)\% Processor time>40
+```
+
+## <a name="additional-references"></a>其他參考
+
+- [命令列語法關鍵](command-line-syntax-key.md)
+
+- [logman 建立警示命令](logman-create-alert.md)
+
+- [logman 命令](logman.md)

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: af13e802a1b11636a3cbfe7c908f6d26497cf506
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 18739f3d7ab5af38dbe369e45aca8393ba3a3152
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820578"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222949"
 ---
 # <a name="logman-delete"></a>logman delete
 
@@ -30,7 +30,7 @@ logman delete <[-n] <name>> [options]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | -s`<computer name>` | 在指定的遠端電腦上執行命令。 |
 | -config`<value>` | 指定包含命令選項的設定檔案。 |
@@ -51,4 +51,4 @@ logman delete perf_log
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [logman](logman.md)
+- [logman 命令](logman.md)

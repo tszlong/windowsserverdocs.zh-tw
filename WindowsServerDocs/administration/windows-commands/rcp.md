@@ -4,17 +4,17 @@ description: '* * * * 的參考主題'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: 83ad713c-63c9-458c-8ad8-39a6ddeb1690 vhorne
+ms.assetid: 83ad713c-63c9-458c-8ad8-39a6ddeb1690
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1fd3daac59410b7d86c5a052e5ecadcbb668cde7
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 52728f144c8fd8688514bbef659e276ef06c185c
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722653"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222831"
 ---
 # <a name="rcp"></a>rcp
 

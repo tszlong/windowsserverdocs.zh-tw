@@ -1,6 +1,6 @@
 ---
-title: manage-bde KeyPackage
-description: '* * * * 的參考主題'
+title: manage-bde keypackage
+description: Keypackage 命令的參考主題，它會產生磁片磁碟機的金鑰封裝。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,48 +9,45 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 012377013ace07a2b90597c708847062e6923b2f
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: c4d0956154d6b20d5ceedb44d0781614f8da5fb1
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820668"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222883"
 ---
-# <a name="manage-bde-keypackage"></a>manage-bde： KeyPackage
-
-
+# <a name="manage-bde-keypackage"></a>manage-bde keypackage
 
 產生磁片磁碟機的金鑰封裝。 金鑰套件可以與修復工具搭配使用，以修復損毀的磁片磁碟機。
 
 ## <a name="syntax"></a>語法
 
 ```
-manage-bde -KeyPackage [<Drive>] [-ID <KeyProtectoryID>] [-path <PathToExternalKeyDirectory>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
+manage-bde -keypackage [<drive>] [-ID <keyprotectoryID>] [-path <pathtoexternalkeydirectory>] [-computername <name>] [{-?|/?}] [{-help|-h}]
 ```
 
-#### <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
-|參數|說明|
-|---------|-----------|
-|\<磁片磁碟機>|表示後面接著冒號的磁碟機號。|
-|-ID|使用金鑰保護裝置建立金鑰封裝，此識別碼是由此 ID 值所指定。|
-|-path|要在其中儲存所建立之金鑰封裝的位置。|
-|-computername|指定 Manage-bde.wsf 將用來修改另一部電腦上的 BitLocker 保護。 您也可以使用 **-cn**做為此命令的縮寫版本。|
-|\<Name>|代表要修改 BitLocker 保護的電腦名稱稱。 接受的值包括電腦的 NetBIOS 名稱和電腦的 IP 位址。|
-|-? 或/？|在命令提示字元中顯示簡短說明。|
-|-help 或-h|在命令提示字元中顯示完整的說明。|
+| 參數 | 描述 |
+| --------- | ----------- |
+| `<drive>` | 表示後面接著冒號的磁碟機號。 |
+| -ID | 使用金鑰保護裝置，並搭配此識別碼值所指定的識別碼，建立金鑰封裝。 **秘訣：** 使用 manage-bde **–保護裝置– get**命令，以及您要為其建立金鑰套件的磁碟機號，以取得可用的 guid 清單做為識別碼值。 |
+| -path | 指定要儲存所建立金鑰封裝的位置。 |
+| -computername | 指定 manage-bde.wsf 將用來修改另一部電腦上的 BitLocker 保護。 您也可以使用 **-cn**做為此命令的縮寫版本。 |
+| `<name>` | 代表要修改 BitLocker 保護的電腦名稱稱。 接受的值包括電腦的 NetBIOS 名稱和電腦的 IP 位址。 |
+| -? 或/？ | 在命令提示字元中顯示簡短說明。 |
+| -help 或-h | 在命令提示字元中顯示完整的說明。 |
 
-## <a name="examples"></a>範例
+### <a name="examples"></a>範例
 
-說明如何使用 **-KeyPackage**命令，根據 GUID 所識別的金鑰保護裝置來建立磁片磁碟機 C 的金鑰封裝，並將金鑰套件儲存至 F:\Folder。
+若要根據 GUID 所識別的金鑰保護裝置來建立磁片磁碟機 C 的金鑰封裝，並將金鑰套件儲存至 F:\Folder，請輸入：
+
 ```
-manage-bde -KeyPackage C: -id {84E151C1...7A62067A512} -path f:\Folder
+manage-bde -keypackage C: -id {84E151C1...7A62067A512} -path f:\Folder
 ```
-
-> [!TIP]
-> 使用 manage-bde **–保護裝置–取得**您想要建立金鑰套件的磁碟機號，以取得可用的 guid 清單做為識別碼值。
 
 ## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
--   [Manage-bde](manage-bde.md)
+
+- [manage-bde 命令](manage-bde.md)

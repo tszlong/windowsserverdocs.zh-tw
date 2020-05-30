@@ -1,6 +1,6 @@
 ---
 title: manage-bde 鎖定
-description: '* * * * 的參考主題'
+description: Manage-bde lock 命令的參考主題，它會鎖定受 BitLocker 保護的磁片磁碟機以防止其存取，除非提供解除鎖定金鑰。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,38 +9,37 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 84d883ddbf75c2e605afcbb761a54fcb5b0d7713
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 340dc7eb07eaab2583e8b325042803fd8fc82184
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820728"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222872"
 ---
-# <a name="manage-bde-lock"></a>manage-bde： lock
-
-
+# <a name="manage-bde-lock"></a>manage-bde 鎖定
 
 鎖定受 BitLocker 保護的磁片磁碟機以防止其存取，除非提供解除鎖定金鑰。
 
 ## <a name="syntax"></a>語法
 
 ```
-manage-bde -lock [<Drive>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
+manage-bde -lock [<drive>] [-computername <name>] [{-?|/?}] [{-help|-h}]
 ```
 
-#### <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
-|參數|說明|
-|---------|-----------|
-|\<磁片磁碟機>|表示後面接著冒號的磁碟機號。|
-|-computername|指定 Manage-bde.wsf 將用來修改另一部電腦上的 BitLocker 保護。 您也可以使用 **-cn**做為此命令的縮寫版本。|
-|\<Name>|代表要修改 BitLocker 保護的電腦名稱稱。 接受的值包括電腦的 NetBIOS 名稱和電腦的 IP 位址。|
-|-? 或/？|在命令提示字元中顯示簡短說明。|
-|-help 或-h|在命令提示字元中顯示完整的說明。|
+| 參數 | 描述 |
+| --------- | ----------- |
+| `<drive>` | 表示後面接著冒號的磁碟機號。 |
+| -computername | 指定 manage-bde.wsf 將用來修改另一部電腦上的 BitLocker 保護。 您也可以使用 **-cn**做為此命令的縮寫版本。 |
+| `<name>` | 代表要修改 BitLocker 保護的電腦名稱稱。 接受的值包括電腦的 NetBIOS 名稱和電腦的 IP 位址。 |
+| -? 或/？ | 在命令提示字元中顯示簡短說明。 |
+| -help 或-h | 在命令提示字元中顯示完整的說明。 |
 
-## <a name="examples"></a>範例
+### <a name="examples"></a>範例
 
-說明如何使用 **-lock**命令來鎖定資料磁片磁碟機 D。
+若要鎖定資料磁片磁碟機 D，請輸入：
+
 ```
 manage-bde –lock D:
 ```
@@ -48,4 +47,5 @@ manage-bde –lock D:
 ## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
--   [Manage-bde](manage-bde.md)
+
+- [manage-bde 命令](manage-bde.md)

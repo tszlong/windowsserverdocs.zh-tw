@@ -4,29 +4,29 @@ description: Telnet set 的參考主題，可設定選項。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: 67316b5f-9c6f-43e3-86d5-dcff9ae2ac3e vhorne
+ms.assetid: 67316b5f-9c6f-43e3-86d5-dcff9ae2ac3e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5a785a9448860752c79dc1c2369b8dd870409990
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 477c2ee259301af26870339a2c329c2c3502963b
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721476"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222679"
 ---
 # <a name="telnet-set"></a>telnet：設定
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-設定選項。   
+設定選項。
 
-## <a name="syntax"></a>語法  
-```  
-set [bsasdel] [crlf] [delasbs] [escape <Char>] [localecho] [logfile <FileName>] [logging] [mode {console | stream}] [ntlm] [term {ansi | vt100 | vt52 | vtnt}] [?]  
-```  
-#### <a name="parameters"></a>參數  
+## <a name="syntax"></a>語法
+```
+set [bsasdel] [crlf] [delasbs] [escape <Char>] [localecho] [logfile <FileName>] [logging] [mode {console | stream}] [ntlm] [term {ansi | vt100 | vt52 | vtnt}] [?]
+```
+#### <a name="parameters"></a>參數
 
 |                    參數                     |                                                                                                                                              描述                                                                                                                                              |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -42,13 +42,13 @@ set [bsasdel] [crlf] [delasbs] [escape <Char>] [localecho] [logfile <FileName>] 
 | 詞彙 {ansi &#124; vt100 &#124; vt52 &#124; vtnt} |                                                                                                                                        設定終端機類型。                                                                                                                                        |
 |                        ?                         |                                                                                                                                    顯示此命令的說明。                                                                                                                                    |
 
-## <a name="remarks"></a>備註  
-1. 您可以使用 [取消設定] 命令來關閉先前**設定的選項**。  
-2. 在非英文版的 telnet 上，可使用**codeset** <option> 。 **Codeset** <option>會將目前的程式碼設定為選項，可以是下列任何一項： **shift JIS**、**日文 EUC**、 **jis 漢字**、 **jis 漢字（78）**、 **DEC 漢字**、 **NEC 漢字**。 您應該在遠端電腦上設定相同的程式碼。  
-   ## <a name="examples"></a>範例  
-   設定記錄檔，並開始記錄到本機檔案 tnlog .txt  
-   ```  
-   set logfile tnlog.txt  
-   ```  
-   ## <a name="additional-references"></a>其他參考  
-3. - [命令列語法關鍵](command-line-syntax-key.md)  
+## <a name="remarks"></a>備註
+1. 您可以使用 [取消設定] 命令來關閉先前**設定的選項**。
+2. 在非英文版的 telnet 上， **codeset** <option> 可使用 codeset。 **Codeset** <option>將目前的程式碼設定為選項，可以是下列任何一項： **SHIFT JIS**、**日文 EUC**、 **jis 漢字**、 **Jis 漢字（78）**、 **DEC 漢字**、 **NEC 漢字**。 您應該在遠端電腦上設定相同的程式碼。
+   ## <a name="examples"></a>範例
+   設定記錄檔，並開始記錄到本機檔案 tnlog .txt
+   ```
+   set logfile tnlog.txt
+   ```
+   ## <a name="additional-references"></a>其他參考
+3. - [命令列語法關鍵](command-line-syntax-key.md)

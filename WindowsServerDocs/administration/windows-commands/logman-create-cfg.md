@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 38d6b02351e515230a0041369217ba248ada4793
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 518b0c7bddf1d74522a376aafb7da85abb849ac4
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820458"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222971"
 ---
 # <a name="logman-create-cfg"></a>logman 建立 cfg
 
@@ -30,7 +30,7 @@ logman create cfg <[-n] <name>> [options]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | -s`<computer name>` | 在指定的遠端電腦上執行命令。 |
 | -config`<value>` | 指定包含命令選項的設定檔案。 |
@@ -78,4 +78,6 @@ logman create cfg cfg_log -mgt root\wmi:select * FROM MSNdis_Vendordriverversion
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [logman](logman.md)
+- [logman 更新 cfg 命令](logman-update-cfg.md)
+
+- [logman 命令](logman.md)

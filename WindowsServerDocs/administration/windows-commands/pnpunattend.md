@@ -4,17 +4,17 @@ description: 瞭解如何在電腦上審核設備磁碟機，以及如何執行�
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: 4fa88932-cff0-4dfc-936c-98c0e3dfbeb8 britw
+ms.assetid: 4fa88932-cff0-4dfc-936c-98c0e3dfbeb8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 5feafc4d99d4fdea2a7da888c8e818088dd7f6e0
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: e79dd4869a88dc48e579451bfdf2f8fecc55e4f9
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821208"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222021"
 ---
 # <a name="pnpunattend"></a>pnpunattend
 
@@ -28,7 +28,7 @@ PnPUnattend.exe auditSystem [/help] [/?] [/h] [/s] [/L]
 
 ### <a name="parameters"></a>參數
 
-|參數|說明|
+|參數|描述|
 |---------|-----------|
 |auditSystem|指定線上驅動程式安裝。</br>必要項，但使用 **/help**或 **/？** 來執行**pnpunattend**時除外 參數。|
 |/s|選擇性。 指定不安裝就搜尋驅動程式。|

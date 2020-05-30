@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 60700190146a3a8b84e1121f01d9168196dad888
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 63fd94fb32fe27b48460922818d1a7220f7f5d7a
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820438"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222962"
 ---
 # <a name="logman-create-counter"></a>logman 建立計數器
 
@@ -30,7 +30,7 @@ logman create counter <[-n] <name>> [options]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | -s`<computer name>` | 在指定的遠端電腦上執行命令。 |
 | -config`<value>` | 指定包含命令選項的設定檔案。 |
@@ -78,4 +78,6 @@ logman create counter perf_log -c \Processor(_Total)\% Processor time -max 10 -r
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [logman](logman.md)
+- [logman update counter 命令](logman-update-counter.md)
+
+- [logman 命令](logman.md)
