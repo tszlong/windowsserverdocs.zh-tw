@@ -7,14 +7,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 05/12/2020
+ms.date: 05/27/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: de7c685e544fd0bb193f995aeff3a20a29bd6db5
-ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
+ms.openlocfilehash: 0d49c49def8b110f42a6d56354c73e5a75b04b7e
+ms.sourcegitcommit: 4fec7d82f0772d03a9e8cac20092a4309b0f796e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235047"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84025509"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面用戶端的新功能
 
@@ -26,22 +26,25 @@ ms.locfileid: "83235047"
 
 |使用者群組 |版本  |
 |-----------|---------|
-|公用     |1.2.945  |
-|Insider    |1.2.1009 |
+|公用     |1.2.1026 |
+|Insider    |1.2.1026 |
 
-## <a name="updates-for-version-121009"></a>1\.2.1009 版的更新
+## <a name="updates-for-version-121026"></a>1\.2.1026 版的更新
 
-*發行日期：2020/05/12*
+*發行日期：2020/05/27*
 
-下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wseE)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wnf3)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wCIB)
+下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xsGB)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xd8P)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xq7m)
 
-- 已新增新的 [連線資訊]  對話方塊，以提供桌面和應用程式工作階段的用戶端、網路和伺服器詳細資料。 在全螢幕模式下，您可以從連線列存取此對話方塊，而在視窗模式下，則可以從 [系統] 功能表存取。
-- 在視窗模式下啟動的桌面工作階段現在一律會最大化，而不是在視窗最大化時進入全螢幕模式。 使用 [系統] 功能表中的 [全螢幕]  選項，即可進入全螢幕模式。
+- 訂閱時，您現在可以選擇您的帳戶，而不用輸入電子郵件地址。
+- 新增一個新的**使用 URL 訂閱**選項，您可以使用該選項指定要訂閱的工作區 URL，或當無法自動找到您的資源時利用[電子郵件探索](../rds-email-discovery.md) (如果有的話)。 這類似於其他遠程桌面用戶端中的訂用帳戶處理程序。 這可以用來直接訂閱 WVD 2020 年春季更新工作區。
+- 新增了對使用新的 [URI 配置](remote-desktop-uri.md)來訂閱工作區的支援，其可透過電子郵件傳送給使用者或新增至支援網站。
+- 已新增新的 [連線資訊] 對話方塊，以提供桌面和應用程式工作階段的用戶端、網路和伺服器詳細資料。 在全螢幕模式下，您可以從連線列存取此對話方塊，而在視窗模式下，則可以從 [系統] 功能表存取。
+- 在視窗模式下啟動的桌面工作階段現在一律會最大化，而不是在視窗最大化時進入全螢幕模式。 使用 [系統] 功能表中的 [全螢幕] 選項，即可進入全螢幕模式。
 - 取消訂閱提示現在會顯示警告圖示，並以項目符號清單的方式顯示工作區名稱。
 - 已在其他錯誤對話方塊中新增 [詳細資料] 區段，以協助診斷問題。
 - 已在錯誤對話方塊的 [詳細資料] 區段中新增時間戳記。
 - 已修正下列問題：RDP 檔案設定 **desktop size id** 無法正常運作。
-- 已修正下列問題：在啟動工作階段之後未套用 [調整大小時更新解析度]  顯示器設定。
+- 已修正下列問題：在啟動工作階段之後未套用 [調整大小時更新解析度] 顯示器設定。
 - 已修正 [桌面設定] 面板中的當地語系化問題。
 - 已修正在 [桌面設定] 面板上透過 Tab 鍵瀏覽控制項時的焦點方塊大小。
 - 已修正會導致資源名稱在高對比模式下不易辨識的問題。
@@ -56,7 +59,7 @@ ms.locfileid: "83235047"
 - 當您以滑鼠右鍵按一下連線中心上的桌面圖示時，就可以新增桌面連線的 [顯示設定] 選項。
   - 現在有三個顯示組態選項：**所有顯示**、**單一顯示**，以及**選取 顯示**。
   - 我們現在只會在選取顯示組態時顯示可用的設定。
-  - 在選取顯示模式中，新的 [將目前的顯示最大化]  選項可讓您以動態方式變更用於工作階段的顯示，而不需要重新連線。 啟用時，將工作階段最大化會讓工作階段視窗觸及的所有顯示上的畫面全滿。
+  - 在選取顯示模式中，新的 [將目前的顯示最大化] 選項可讓您以動態方式變更用於工作階段的顯示，而不需要重新連線。 啟用時，將工作階段最大化會讓工作階段視窗觸及的所有顯示上的畫面全滿。
   - 我們已在所有顯示的中新增新的**使用視窗型時單一顯示**選項，並選取顯示模式。 當您結束全螢幕模式時，這個選項會自動將您的工作階段切換為單一顯示，當您將視窗最大化時，會自動返回多個顯示。
 - 我們已將新的**顯示設定**群組新增至系統功能表；以滑鼠右鍵按一下視窗型桌面工作階段的標題列時即會顯示。 這可讓您在工作階段期間動態變更一些設定。 例如，您可以變更新的**使用視窗型時單一顯示模式**和**將目前顯示最大化**設定。
 - 結束全螢幕並第一次進入全螢幕時，工作階段視窗會回到其原始位置。
@@ -102,7 +105,7 @@ ms.locfileid: "83235047"
 
 下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oHrD)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oJZs)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oXhD)
 
-- 您現在可以選取要用於桌面連線的顯示器。 若要變更此設定，請在桌面連線的圖示上按一下滑鼠右鍵，然後選取 [設定]  。
+- 您現在可以選取要用於桌面連線的顯示器。 若要變更此設定，請在桌面連線的圖示上按一下滑鼠右鍵，然後選取 [設定]。
 - 已修正連線設定未顯示正確可用的縮放比例問題。
 - 已修正 [朗讀程式] 無法讀取連線起始時顯示的對話方塊問題。
 - 已修正當 Azure Active Directory 和 Active Directory 名稱不相符時，所顯示錯誤使用者名稱的問題。

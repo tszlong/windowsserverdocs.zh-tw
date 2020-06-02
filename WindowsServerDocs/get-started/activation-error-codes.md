@@ -7,12 +7,12 @@ ms.technology: server-general
 author: kaushika-msft
 ms.author: kaushika-msft; v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: 50c50353316db4288f01893125ecd651db63cbb7
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 8a550ddd72dcdf8c1967fe4740dc0fe5f2ad93e7
+ms.sourcegitcommit: df94dac422d13566c32e1cdb8c6e7a4e82747947
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826351"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84205629"
 ---
 # <a name="resolve-windows-activation-error-codes"></a>解決 Windows 啟用錯誤碼
 
@@ -33,7 +33,7 @@ Microsoft 支援及修復小幫手 (SaRA) 可簡化 Windows KMS 啟動的疑難�
 
 此工具會嘗試啟動 Windows。 如果傳回啟動錯誤碼，此工具會顯示已知錯誤碼的目標解決方案。
 
-以下是支援的錯誤碼：0xC004F038、0xC004F039、0xC004F041、0xC004F074、0xC004C008。
+以下是支援的錯誤碼：0xC004F038、0xC004F039、0xC004F041、0xC004F074、0xC004C008、0x8007007b、0xC004C003、0x8007232B。
 
 ## <a name="summary-of-error-codes"></a>錯誤碼摘要
 
@@ -99,7 +99,7 @@ Microsoft 支援及修復小幫手 (SaRA) 可簡化 Windows KMS 啟動的疑難�
 
 #### <a name="resolution"></a>解決方法
 
-從提升權限的命令提示字元執行 **slmgr.vbs**。 若要這麼做，請在 [開始]  功能表上，以滑鼠右鍵按一下 **cmd.exe**，然後選取 [以系統管理員身分執行]  。  
+從提升權限的命令提示字元執行 **slmgr.vbs**。 若要這麼做，請在 [開始] 功能表上，以滑鼠右鍵按一下 **cmd.exe**，然後選取 [以系統管理員身分執行]。  
 
 ### <a name="0x8007007b-dns-name-does-not-exist"></a>0x8007007b DNS 名稱不存在
 
