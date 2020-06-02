@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 01/05/2019
-ms.openlocfilehash: eba7092a9a26b25b1fe77b39b8098d117b38981a
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: c55d6ae5ff701555eb9bfb7135ffa28692bd4391
+ms.sourcegitcommit: 4894649cc47dfa535306cc334871f81155198f76
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820998"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84254721"
 ---
 # <a name="xcopy"></a>xcopy
 
@@ -30,10 +30,10 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 
 ### <a name="parameters"></a>參數
 
-|參數|說明|
+|參數|描述|
 |---------|-----------|
-|\<來源>|必要。 指定您想要複製之檔案的位置和名稱。 這個參數必須包含磁片磁碟機或路徑。|
-|[ \< 目的地>]|指定您想要複製之檔案的目的地。 這個參數可以包含磁碟機號和冒號、目錄名稱、檔案名或這些的組合。|
+|\<Source>|必要。 指定您想要複製之檔案的位置和名稱。 這個參數必須包含磁片磁碟機或路徑。|
+|[\<Destination>]|指定您想要複製之檔案的目的地。 這個參數可以包含磁碟機號和冒號、目錄名稱、檔案名或這些的組合。|
 |/W|會顯示下列訊息，並在開始複製檔案之前等候您的回應：</br>**按任意鍵以開始複製檔案**|
 |/p|提示您確認是否要建立每個目的地檔案。|
 |/C|忽略錯誤。|
@@ -109,7 +109,7 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 
   若要處理**xcopy**傳回的結束代碼，請在 batch 程式中的**if**命令列上使用**ErrorLevel**參數。 如需使用**if**處理結束代碼的 batch 程式範例，請參閱[其他參考](#additional-references)。 下表列出每個結束代碼和描述。
 
-  |結束代碼|說明|
+  |結束代碼|描述|
   |---------|-----------|
   |0|檔案已複製而不發生錯誤。|
   |1|找不到要複製的檔案。|
@@ -192,7 +192,7 @@ copyit c:\prgmcode b:
 
 命令直譯器會替代 *%1*的**C:\Prgmcode**和**B：** *%2*，然後使用**xcopy**搭配 **/e**和 **/s**命令列選項。 如果**xcopy**遇到錯誤，則 batch 程式會讀取結束代碼，並移至適當的**IF ERRORLEVEL**語句中所指出的標籤，然後顯示適當的訊息並從 batch 程式結束。
 
-**9.** 此範例所有非空白的目錄，加上其名稱符合以星號符號指定之模式的檔案。
+**9.** 這個範例會複製所有非空白的目錄，加上名稱符合以星號符號指定之模式的檔案。
 
 ```
 xcopy .\toc*.yml ..\..\Copy-To\ /S /Y
@@ -208,10 +208,10 @@ rem  3 File(s) copied
 
 ## <a name="additional-references"></a>其他參考
 
--   [複製](copy.md)
--   [移動](move.md)
--   [Dir](dir.md)
--   [Attrib](attrib.md)
--   [Diskcopy](diskcopy.md)
--   [只有](if.md)
+- [複製](copy.md)
+- [移動](move.md)
+- [Dir](dir.md)
+- [Attrib](attrib.md)
+- [Diskcopy](diskcopy.md)
+- [只有](if.md)
 - [命令列語法關鍵](command-line-syntax-key.md)
