@@ -2,18 +2,16 @@
 title: 針對事件識別碼1135的叢集問題進行疑難排解
 description: 說明如何針對事件識別碼1135的叢集服務啟動問題進行疑難排解。
 ms.date: 05/28/2020
-ms.openlocfilehash: 73357cc5b696a969de82123d3ca2a6fbb36fdc40
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: d59f8b89e89ea7ff42aecd79670465aee8d63524
+ms.sourcegitcommit: 5fac756c2c9920757e33ef0a68528cda0c85dd04
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84150456"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84306527"
 ---
 # <a name="troubleshooting-cluster-issue-with-event-id-1135"></a>針對事件識別碼1135的叢集問題進行疑難排解
 
 本文可協助您診斷和解決事件識別碼1135，這可能會在容錯移轉叢集環境中的叢集服務啟動時記錄下來。
-
-本文提供解析的相關資訊
 
 ## <a name="start-page"></a>起始頁
 
@@ -154,7 +152,7 @@ Cluster node ' **NODE A** ' was removed from the active failover cluster members
 
 系統服務名稱： **ClusSvc**  
 
-|應用程式|通訊協定|連接埠|
+|Application|通訊協定|連接埠|
 |---|---|---|
 |叢集服務|UDP|3343|
 |叢集服務|TCP|3343（節點聯結作業期間需要此埠）。|

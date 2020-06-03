@@ -4,16 +4,16 @@ description: 關於儲存體遷移服務的常見問題，例如從一部伺服�
 author: nedpyle
 ms.author: nedpyle
 manager: siroy
-ms.date: 08/19/2019
+ms.date: 06/02/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: a28b25c55b9ad66cd16f3d9e370fec22ec0f2a5d
-ms.sourcegitcommit: f0fcfee992b76f1ad5dad460d4557f06ee425083
+ms.openlocfilehash: 19f114dc663351f1b5d071340acf9c8a3de41617
+ms.sourcegitcommit: 5fac756c2c9920757e33ef0a68528cda0c85dd04
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77125139"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84306507"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>儲存體遷移服務常見問題（FAQ）
 
@@ -38,7 +38,7 @@ ms.locfileid: "77125139"
 
 ## <a name="are-clusters-supported-as-sources-or-destinations"></a>叢集是否支援做為來源或目的地？
 
-儲存體遷移服務支援在安裝累計更新[KB4513534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)或後續更新之後，從叢集遷移到叢集。 這包括從來源叢集遷移至目的地叢集，以及從獨立來源伺服器遷移至目的地叢集，以進行裝置合併的目的。 
+儲存體遷移服務支援在安裝累計更新[KB4513534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)或後續更新之後，從叢集遷移到叢集。 這包括從來源叢集遷移至目的地叢集，以及從獨立來源伺服器遷移至目的地叢集，以進行裝置合併的目的。 但是，您無法將叢集遷移至獨立伺服器。 
 
 ## <a name="do-local-groups-and-local-users-migrate"></a>本機群組和本機使用者是否遷移？
 
@@ -62,22 +62,22 @@ ms.locfileid: "77125139"
     - CA 超時
     - 並行使用者限制
     - 持續可用
-    - 描述           
+    - 說明           
     - 加密資料
     - 身分識別遠端
-    - 基礎架構
-    - 名稱
+    - 基礎結構
+    - Name
     - 路徑
-    - 範圍
+    - 具範圍
     - 領域名稱
     - 安全性描述元
     - 陰影複製
     - 特殊
-    - 臨時性
+    - 暫存
 
 ## <a name="can-i-consolidate-multiple-servers-into-one-server"></a>我可以將多部伺服器合併成一部伺服器嗎？
 
-Windows Server 2019 隨附的儲存體遷移服務版本不支援將多部伺服器合併成一部伺服器。 合併的範例是將三個不同的來源伺服器（可能具有相同的共用名稱和本機檔案路徑）遷移到單一新伺服器上，將這些路徑和共用虛擬化，以防止任何重迭或衝突，然後全部回答三個先前的伺服器名稱和 IP 位址。 不過，您可以將獨立伺服器遷移至單一叢集上的多個檔案伺服器資源。 
+Windows Server 2019 隨附的儲存體遷移服務版本不支援將多部伺服器合併成一部伺服器。 合併的範例是將三個不同的來源伺服器（可能具有相同的共用名稱和本機檔案路徑）遷移到單一新伺服器上，將這些路徑和共用虛擬化，以防止任何重迭或衝突，然後回答所有三個先前的伺服器名稱和 IP 位址。 不過，您可以將獨立伺服器遷移至單一叢集上的多個檔案伺服器資源。 
 
 ## <a name="can-i-migrate-from-sources-other-than-windows-server"></a>我可以從 Windows Server 以外的來源進行遷移嗎？
 
@@ -99,11 +99,21 @@ Windows Server 2019 隨附的儲存體遷移服務版本不支援將檔案的先
     
     FileTransferThreadCount
 
-   在 Windows Server 2019 中，有效範圍是1到128。 變更之後，您必須在參與遷移的所有電腦上重新開機儲存體遷移服務 Proxy 服務。 請謹慎使用此設定;將它設定為較高可能需要額外的核心、儲存體效能和網路頻寬。 若設定太高，可能會導致效能降低，相較于預設設定。
+   在 Windows Server 2019 中，有效範圍是1到512。 只要建立新的作業，您就不需要重新開機服務，就可以開始使用此設定。 請謹慎使用此設定;將它設定為較高可能需要額外的核心、儲存體效能和網路頻寬。 若設定太高，可能會導致效能降低，相較于預設設定。
+
+- **改變預設平行共用執行緒。** 儲存體遷移服務 Proxy 服務會在指定的工作中同時複製8個共用。 您可以在儲存體遷移服務 orchestrator 伺服器上調整下列登錄 REG_DWORD 值的十進位數，以增加同時共用執行緒的數目：
+
+    HKEY_Local_Machine \Software\Microsoft\SMS
+    
+    EndpointFileTransferTaskCount 
+
+   在 Windows Server 2019 中，有效範圍是1到512。 只要建立新的作業，您就不需要重新開機服務，就可以開始使用此設定。 請謹慎使用此設定;將它設定為較高可能需要額外的核心、儲存體效能和網路頻寬。 若設定太高，可能會導致效能降低，相較于預設設定。 
+   
+    FileTransferThreadCount 和 EndpointFileTransferTaskCount 的總和是儲存體遷移服務可以從工作中的一個來源節點同時複製的檔案數目。 若要新增更多平行來源節點，請建立並執行更多的同步作業。
 
 - **新增核心和記憶體。**  我們強烈建議來源、orchestrator 和目的地電腦至少要有兩個處理器核心或兩個個 vcpu，而更多可以大幅協助清查和傳輸效能，特別是在與 FileTransferThreadCount （上方）結合時。 當傳輸的檔案大於一般的 Office 格式（gb 或以上）時，傳輸效能會從比預設2GB 最小值更多的記憶體獲益。
 
-- **建立多個作業。** 建立具有多個伺服器來源的作業時，會以序列方式來連接每部伺服器，以進行清查、傳輸和轉換。 這表示每一部伺服器都必須在另一部伺服器啟動之前完成其階段。 若要平行執行更多伺服器，只需建立多個作業，每個作業只包含一部伺服器。 SMS 最多支援100同時執行作業，這表示單一協調器可以平行處理許多 Windows Server 2019 目的地電腦。 如果您的目的地電腦是 Windows Server 2016 或 Windows Server 2012 R2，而不是在目的地上執行 SMS proxy 服務，則不建議執行多個並行作業，協調器必須自行執行所有傳輸，而且可能會變成成為. 在單一作業內平行執行伺服器的功能，是我們打算在較新版本的 SMS 中新增的功能。
+- **建立多個作業。** 建立具有多個伺服器來源的作業時，會以序列方式來連接每部伺服器，以進行清查、傳輸和轉換。 這表示每一部伺服器都必須在另一部伺服器啟動之前完成其階段。 若要平行執行更多伺服器，只需要建立多個作業，每個作業只包含一部伺服器。 SMS 最多支援100同時執行作業，這表示單一協調器可以平行處理許多 Windows Server 2019 目的地電腦。 如果您的目的地電腦是 Windows Server 2016 或 Windows Server 2012 R2，而不是在目的地上執行 SMS proxy 服務，則不建議執行多個並行作業，協調器必須自行執行所有傳輸，而且可能會成為瓶頸。 在單一作業內平行執行伺服器的功能，是我們打算在較新版本的 SMS 中新增的功能。
 
 - **搭配使用 SMB 3 與 RDMA 網路。** 如果是從 Windows Server 2012 或更新版本的來源電腦傳輸，SMB 3.x 支援 SMB 直接傳輸模式和 RDMA 網路。 RDMA 會將大部分的 CPU 成本從主機板 Cpu 轉移到上架 NIC 處理器，以降低延遲和伺服器 CPU 使用率。 此外，ROCE 和 iWARP 這類 RDMA 網路的頻寬通常會比一般 TCP/ethernet 高，包括25、50，以及每個介面100Gb 的速度。 使用 SMB 直接傳輸時，通常會將從網路到儲存體本身的傳送速率限制往上移動。   
 
@@ -133,12 +143,13 @@ Windows Server 2019 隨附的儲存體遷移服務版本不支援從 NTFS 遷移
 儲存體遷移服務會使用依預設安裝在隱藏的 c:\programdata\microsoft\storagemigrationservice 資料夾中的可擴充儲存引擎（ESE）資料庫。 此資料庫會隨著作業的新增和傳輸完成而成長，如果您未刪除作業，則在遷移數百萬個檔案之後，可能會耗用大量的磁碟空間。 如果需要移動資料庫，請執行下列步驟：
 
 1. 停止 orchestrator 電腦上的「儲存體遷移服務」服務。
-2. 取得 `%programdata%/Microsoft/StorageMigrationService` 資料夾的擁有權
+2. 取得資料夾的擁有權 `%programdata%/Microsoft/StorageMigrationService`
 3. 新增您的使用者帳戶，以對該共用及其所有檔案和子資料夾擁有完整控制權。
 4. 將資料夾移至 orchestrator 電腦上的另一個磁片磁碟機。
 5. 設定下列登錄 REG_SZ 值：
 
-    HKEY_Local_Machine \Software\Microsoft\SMS DatabasePath =*不同磁片區上新資料庫檔案夾的路徑*。 
+    HKEY_Local_Machine \Software\Microsoft\SMS DatabasePath =*不同磁片區上新資料庫檔案夾的路徑*
+    
 6. 確定系統對該資料夾的所有檔案和子資料夾具有完全控制權
 7. 移除您自己的帳戶許可權。
 8. 啟動「儲存體遷移服務」服務。
@@ -155,7 +166,7 @@ Windows Server 2019 隨附的儲存體遷移服務版本不支援從 NTFS 遷移
 
 在傳輸 CSV 檔案中找到的大部分錯誤都是 Windows 系統錯誤碼。 您可以查看[Win32 錯誤碼檔](https://docs.microsoft.com/windows/win32/debug/system-error-codes)，瞭解每個錯誤的意義。 
 
-## <a name="give-feedback"></a>我有哪些選項可以提供意見反應、提出 bug，或取得支援？
+## <a name="what-are-my-options-to-give-feedback-file-bugs-or-get-support"></a><a name="give-feedback"></a>我有哪些選項可以提供意見反應、提出 bug，或取得支援？
 
 若要提供儲存體遷移服務的意見反應：
 

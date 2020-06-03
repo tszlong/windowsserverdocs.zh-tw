@@ -4,16 +4,16 @@ description: 儲存體遷移服務的已知問題和疑難排解支援，例如�
 author: nedpyle
 ms.author: nedpyle
 manager: tiaascs
-ms.date: 02/10/2020
+ms.date: 06/02/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: f8a1e70bba740875e19660d5a729a952c9fae8f2
-ms.sourcegitcommit: d56c042c58833bdaa9a6fe54dd68f540af12fc6e
+ms.openlocfilehash: 5a4a99434d67c08551d97589f8f2638e1024754d
+ms.sourcegitcommit: 5fac756c2c9920757e33ef0a68528cda0c85dd04
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/04/2020
-ms.locfileid: "80661074"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84306497"
 ---
 # <a name="storage-migration-service-known-issues"></a>儲存體遷移服務的已知問題
 
@@ -40,7 +40,7 @@ ms.locfileid: "80661074"
 
 使用1809版的 Windows 管理中心來管理 Windows Server 2019 orchestrator 時，您看不到儲存體遷移服務的工具選項。 
 
-Windows 系統管理中心儲存體遷移服務延伸模組的版本系結只會管理 Windows Server 2019 1809 版或更新版本的作業系統。 如果您使用它來管理舊版的 Windows Server 作業系統或 insider preview，則不會顯示此工具。 此行為是設計使然。 
+Windows 系統管理中心儲存體遷移服務延伸模組的版本系結只會管理 Windows Server 2019 1809 版或更新版本的作業系統。 如果您使用它來管理舊版的 Windows Server 作業系統或 insider preview，則不會顯示此工具。 這是設計的行為。 
 
 若要解決此問題，請使用或升級至 Windows Server 2019 build 1809 或更新版本。
 
@@ -64,7 +64,7 @@ Windows 系統管理中心儲存體遷移服務延伸模組的版本系結只會
 
 使用 Windows Admin Center 或 PowerShell 下載傳輸作業詳細的錯誤-僅限 CSV 記錄檔時，您會收到錯誤：
 
- >   傳輸記錄檔-請檢查防火牆中允許的檔案共用。 ：傳送到 net.tcp：//localhost： 28940/sms/service/1/transfer 的此要求作業未在設定的超時時間內收到回復（00:01:00）。 分配給此作業的時間，可能是較長逾時的一部分。 這可能是因為服務仍然在處理作業，或服務無法傳送回覆訊息。 請考慮增加作業超時（藉由將通道/proxy 轉換成 IcoNtextchannel.localaddress 並設定 OperationTimeout 屬性），並確定服務能夠連接到用戶端。
+ >   傳輸記錄檔-請檢查防火牆中允許的檔案共用。 ：傳送到 net.tcp：//localhost： 28940/sms/service/1/transfer 的此要求作業未在設定的超時時間內收到回復（00:01:00）。 分配給此作業的時間可能是較長逾時的一部分。 這可能是因為服務仍然在處理作業，或服務無法傳送回覆訊息。 請考慮增加作業超時（藉由將通道/proxy 轉換成 IcoNtextchannel.localaddress 並設定 OperationTimeout 屬性），並確定服務能夠連接到用戶端。
 
 此問題是因為儲存體遷移服務所允許的預設一分鐘時間內，無法篩選出的傳輸檔案數量非常大。 
 
@@ -90,7 +90,7 @@ Windows 系統管理中心儲存體遷移服務延伸模組的版本系結只會
 7. 在 [WcfOperationTimeoutInMinutes] 上按一下滑鼠右鍵，然後按一下 [修改]。 
 8. 在 [基本資料] 方塊中，按一下 [十進位]
 9. 在 [數值資料] 方塊中，輸入 "10"，然後按一下 [確定]。
-10. 結束 [登錄編輯程式]。
+10. 結束 [登錄編輯器]。
 11. 嘗試再次下載僅限錯誤的 CSV 檔案。 
 
 我們想要在較新版本的 Windows Server 2019 中變更此行為。  
@@ -136,7 +136,7 @@ Windows 系統管理中心儲存體遷移服務延伸模組的版本系結只會
 
 ## <a name="dfsr-hashes-mismatch-when-using-storage-migration-service-to-preseed-data"></a>使用儲存體遷移服務預置資料時，DFSR 雜湊不相符
 
-當使用儲存體遷移服務將檔案傳輸到新的目的地，然後將 DFS 複寫（DFSR）設定為透過 preseeded 複寫或 DFSR 資料庫複製來複寫該資料與現有的 DFSR 伺服器時，所有檔案都會遇到雜湊不相符，而且會重新複寫。 在使用 SMS 傳送資料流程、安全性資料流程、大小和屬性之後，這些資料流程會完全相符。 使用 ICACLS 或 DFSR 資料庫複製 debug 記錄來檢查檔案會顯示：
+當使用儲存體遷移服務將檔案傳輸到新的目的地，然後將 DFS 複寫設定為透過 preseeded 複寫或 DFS 複寫資料庫複製來複寫該資料與現有的伺服器時，所有檔案都會發生雜湊不相符的情況，而且會重新複寫。 資料流程、安全性資料流程、大小和屬性，在使用儲存體遷移服務來傳輸它們之後，全都看起來完全相符。 使用 ICACLS 或 DFS 複寫資料庫複製調試記錄來檢查檔案，會顯示：
 
 來源檔案：
 
@@ -260,7 +260,7 @@ DFSR Debug 記錄檔：
     Description:
     02/14/2020-13:18:21.097 [Erro] Failed device discovery stage SystemInfo with error: (0x80005000) Unknown error (0x80005000)   
   
-當您以使用者主體名稱（UPN）的形式提供遷移認證（例如 'meghan@contoso.com'）時，儲存體遷移服務中的程式碼缺失會導致此錯誤。 儲存體遷移服務協調器服務無法正確剖析此格式，這會導致在 KB4512534 和19H1 中針對叢集遷移支援新增的網域查閱發生失敗。
+當您以使用者主體名稱（UPN）的形式提供遷移認證（例如 ' '）時，儲存體遷移服務中的程式碼缺失會導致此錯誤 meghan@contoso.com 。 儲存體遷移服務協調器服務無法正確剖析此格式，這會導致在 KB4512534 和19H1 中針對叢集遷移支援新增的網域查閱發生失敗。
 
 若要解決此問題，請以 domain\user 格式提供認證，例如 ' Contoso\Meghan '。
 
@@ -301,7 +301,7 @@ DFSR Debug 記錄檔：
 
 [KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818)更新已解決此問題。
 
-## <a name="uninstalling-a-cumulutative-update-prevents-storage-migration-service-from-starting"></a>卸載 cumulutative 更新可防止儲存體遷移服務啟動
+## <a name="uninstalling-a-cumulative-update-prevents-storage-migration-service-from-starting"></a>卸載累計更新可防止儲存體遷移服務啟動
 
 卸載 Windows Server 累積更新可能會導致儲存體遷移服務無法啟動。 若要解決此問題，您可以備份和刪除儲存體遷移服務資料庫：
 
@@ -343,11 +343,11 @@ DFSR Debug 記錄檔：
        at Microsoft.FailoverClusters.Framework.ClusterUtils.RenameFSNetName(SafeClusterHandle ClusterHandle, String clusterName, String FsResourceId, String NetNameResourceId, String newDnsName, CancellationToken ct)
        at Microsoft.StorageMigration.Proxy.Cutover.CutoverUtils.RenameFSNetName(NetworkCredential networkCredential, Boolean isLocal, String clusterName, String fsResourceId, String nnResourceId, String newDnsName, CancellationToken ct)    [d:\os\src\base\dms\proxy\cutover\cutoverproxy\CutoverUtils.cs::RenameFSNetName::1510]
 
-這個問題是由舊版 Windows Server 中遺失的 API 所造成。 目前沒有任何方法可以遷移 Windows Server 2008 和 Windows Server 2003 叢集。 您可以在 Windows Server 2008 R2 叢集上執行清查和傳輸，而不會發生問題，然後以手動方式變更叢集的來源檔案伺服器資源的網路名稱和 IP 位址，然後將目的地叢集的網路名稱和 IP 位址變更為符合原始來源，以手動執行轉換。 
+這個問題是由舊版 Windows Server 中遺失的 API 所造成。 目前沒有任何方法可以遷移 Windows Server 2008 和 Windows Server 2003 叢集。 您可以在 Windows Server 2008 R2 叢集上執行清查和傳輸，而不會發生問題，然後手動變更叢集的來源檔案伺服器資源網路名稱和 IP 位址，然後將目的地叢集的網路名稱和 IP 位址變更為符合原始來源，以手動執行轉換。 
 
-## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer-when-using-dhcp"></a>在來源電腦上的「38% 對應網路介面已停止回應」使用 DHCP 時 
+## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer-when-using-static-ips"></a>在來源電腦上的「38% 對應網路介面已停止回應」使用靜態 Ip 時 
 
-當嘗試在來源電腦上執行剪下時，將來源電腦設定為在一或多個網路介面上使用新的靜態（而非 DHCP） IP 位址時，剪下會停滯在「來源 comnputer 上的「38% 對應網路介面」階段 ...」而且您會在 SMS 事件記錄檔中收到下列錯誤：
+嘗試在來源電腦上執行剪下時，將來源電腦設定為在一或多個網路介面上使用新的靜態（而非 DHCP） IP 位址時，剪下會停滯在來源電腦上的「38% 對應網路介面 ...」而且您會在儲存體遷移服務事件記錄檔中收到下列錯誤：
 
     Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Admin
     Source:        Microsoft-Windows-StorageMigrationService-Proxy
@@ -372,9 +372,13 @@ DFSR Debug 記錄檔：
 
 檢查來源電腦顯示原始 IP 位址無法變更。 
 
-如果您在 Windows 系統管理中心的 [設定轉換] 畫面上選取 [使用 DHCP]，則只有在指定新的靜態 IP 位址、子網和閘道時，才會發生此問題。 
+如果您在 Windows 系統管理中心的 [設定轉換] 畫面上選取 [使用 DHCP]，則只有在指定新的靜態 IP 位址時，才會發生此問題。 
 
-[KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818)更新已解決此問題。
+此問題有兩個解決方案： 
+
+1. [KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818)更新會先解決此問題。 先前的程式碼缺失導致無法使用靜態 IP 位址。
+
+2. 如果您尚未在來源電腦的網路介面上指定預設閘道 IP 位址，即使 KB4537818 更新，仍會發生此問題。 若要解決此問題，請使用網路連線 applet （NCPA）在網路介面上設定有效的預設 IP 位址。CPL）或 New-netroute Powershell Cmdlet。   
 
 ## <a name="slower-than-expected-re-transfer-performance"></a>比預期的重新傳輸效能慢
 
@@ -389,7 +393,7 @@ DFSR Debug 記錄檔：
  1. 不會遷移任何資料，也不會在目的地上建立任何共用。
  2. Windows 系統管理中心顯示紅色錯誤符號，沒有錯誤訊息
  3. 一或多個 AD 使用者和網域本機群組已變更其名稱和/或 Windows 前2000的登入屬性
- 4. 您會在 SMS orchestrator 上看到事件3509：
+ 4. 您會在儲存體遷移服務協調器上看到事件3509：
  
         Log Name:      Microsoft-Windows-StorageMigrationService/Admin
         Source:        Microsoft-Windows-StorageMigrationService
@@ -415,7 +419,7 @@ DFSR Debug 記錄檔：
 
 如果您已多次執行轉移，請執行下列動作：
 
- 1. 對 DC 使用下列 AD PowerShell 命令，以找出任何已修改的使用者或群組（變更 SearchBase 以符合您的網域 dinstringuished 名稱）： 
+ 1. 對 DC 使用下列 AD PowerShell 命令，以找出任何已修改的使用者或群組（變更 SearchBase 以符合您的網域辨別名稱）： 
 
     ```PowerShell
     Get-ADObject -Filter 'Description -like "*storage migration service renamed*"' -SearchBase 'DC=<domain>,DC=<TLD>' | ft name,distinguishedname
@@ -479,7 +483,7 @@ DFSR Debug 記錄檔：
        at Microsoft.Win32.RegistryKey.Win32ErrorStatic(Int32 errorCode, String str)
        at Microsoft.Win32.RegistryKey.OpenRemoteBaseKey(RegistryHive hKey, String machineName, RegistryView view)
 
-在這個階段，儲存體遷移服務協調器正在嘗試進行遠端登入讀取以判斷來源電腦設定，但來源伺服器拒絕，指出登錄路徑不存在。 這可能是由以下原因所造成：
+在這個階段，儲存體遷移服務協調器正在嘗試進行遠端登入讀取以判斷來源電腦設定，但來源伺服器拒絕，指出登錄路徑不存在。 可能的原因如下：
 
  - 來源電腦上沒有執行遠端登入服務。
  - 防火牆不允許從 Orchestrator 對來源伺服器進行遠端登入連線。
@@ -488,7 +492,7 @@ DFSR Debug 記錄檔：
  
  ## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer"></a>在來源電腦上的「38% 對應網路介面已停止回應」 
 
-嘗試在來源電腦上執行剪下時，切換會停滯在來源 comnputer 上的「38% 對應網路介面」階段 ...」而且您會在 SMS 事件記錄檔中收到下列錯誤：
+嘗試在來源電腦上執行剪下時，切換會停滯在來源電腦上的「38% 對應網路介面 ...」而且您會在儲存體遷移服務事件記錄檔中收到下列錯誤：
 
     Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Admin
     Source:        Microsoft-Windows-StorageMigrationService-Proxy
