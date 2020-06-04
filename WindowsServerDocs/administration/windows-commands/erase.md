@@ -9,19 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 96e0f97e27de8933de44c437508ef59803765771
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 1525f20549b6571975cb622534f8504eb4fa1f79
+ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437123"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84354678"
 ---
 # <a name="erase"></a>erase
 
-刪除一或多個檔案。 此命令會執行與**del**命令相同的動作。
+刪除一或多個檔案。 如果您使用 **[清除**] 從磁片刪除檔案，就無法抓取檔案。
 
-> [!WARNING]
-> 如果您使用 **[清除**] 從磁片刪除檔案，就無法抓取檔案。
+> [!NOTE]
+> 此命令與[del 命令](del.md)相同。
+
 
 ## <a name="syntax"></a>語法
 
@@ -97,3 +98,5 @@ erase /a:r *.*
 ## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [del 命令](del.md)

@@ -1,6 +1,6 @@
 ---
 title: msiexec
-description: '* * * * 的參考主題'
+description: Msiexec 命令的參考主題，提供從命令列安裝、修改和執行 Windows Installer 作業的方法。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,19 +9,228 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 49ce8fd328ffcc4c494902afdfedf23c3376a346
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f84df28104f581873fe1fd86a3abd6a51532b020
+ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723855"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84354338"
 ---
 # <a name="msiexec"></a>msiexec
 
-
-
-## <a name="msiexec"></a>Msiexec
-
 提供從命令列安裝、修改和執行 Windows Installer 作業的方法。
 
-如需如何使用此命令的語法和範例，請參閱[Msiexec](https://go.microsoft.com/fwlink/?LinkId=94329)。
+## <a name="install-options"></a>安裝選項
+
+設定用於啟動安裝套件的安裝類型。
+
+### <a name="syntax"></a>語法
+
+```
+msiexec.exe [/i][/a][/j{u|m|/g|/t}][/x] <path_to_package>
+```
+
+#### <a name="parameters"></a>參數
+
+| 參數 | 描述 |
+| ------- | -------- |
+| /i | 指定一般安裝。 |
+| /a | 指定系統管理安裝。 |
+| /ju | 將產品公告給目前的使用者。 |
+| /jm | 向所有使用者公告產品。 |
+| /j/g | 指定所公告封裝所使用的語言識別項。 |
+| /j/t | 將轉換套用至已公告的封裝。 |
+| /x | 卸載封裝。 |
+| `<path_to_package>` | 指定安裝套件檔案的位置和名稱。 |
+
+#### <a name="examples"></a>範例
+
+若要從 C：磁片磁碟機使用一般安裝程式來安裝名為*範例 .msi*的套件，請輸入：
+
+```
+msiexec.exe /i "C:\example.msi"
+```
+
+## <a name="display-options"></a>顯示選項
+
+您可以根據目標環境，設定使用者在安裝過程中看到的內容。 例如，如果您要將套件散發到所有用戶端進行手動安裝，應該會有完整的 UI。 不過，如果您要使用群組原則來部署套件，而這不需要使用者互動，則不應該包含任何 UI。
+
+### <a name="syntax"></a>語法
+
+```
+msiexec.exe /i <path_to_package> [/quiet][/passive][/q{n|b|r|f}]
+```
+
+#### <a name="parameters"></a>參數
+
+| 參數 | 描述 |
+| ------- | -------- |
+| `<path_to_package>` | 指定安裝套件檔案的位置和名稱。 |
+| /quiet | 指定無訊息模式，這表示不需要任何使用者互動。 |
+| /passive | 指定自動模式，這表示安裝只會顯示進度列。 |
+| /qn | 指定在安裝過程中沒有任何 UI。 |
+| /qn + | 指定在安裝過程中沒有任何 UI，但結尾的最後一個對話方塊除外。 |
+| /qb | 指定在安裝過程中有基本的 UI。 |
+| /qb + | 指定在安裝過程中有基本的 UI，包括結尾的最後一個對話方塊。 |
+| /qr | 指定在安裝過程中縮減的 UI 體驗。 |
+| /qf | 指定在安裝過程中的完整 UI 體驗。 |
+
+##### <a name="remarks"></a>備註
+
+- 如果使用者取消了安裝，則不會顯示 [模式] 方塊。 您可以使用**qb +！** 或 [ **qb！ +** ] 以隱藏 [**取消**] 按鈕。
+
+#### <a name="examples"></a>範例
+
+若要安裝封裝*C:\example.msi*，請使用正常的安裝程式，而且沒有 UI，請輸入：
+
+```
+msiexec.exe /i "C:\example.msi" /qn
+```
+
+## <a name="restart-options"></a>重新開機選項
+
+如果您的安裝套件會覆寫檔案或嘗試變更使用中的檔案，則在安裝完成之前可能需要重新開機。
+
+### <a name="syntax"></a>語法
+
+```
+msiexec.exe /i <path_to_package> [/norestart][/promptrestart][/forcerestart]
+```
+
+#### <a name="parameters"></a>參數
+
+| 參數 | 描述 |
+| ------- | -------- |
+| `<path_to_package>` | 指定安裝套件檔案的位置和名稱。 |
+| /norestart | 在安裝完成之後，停止裝置重新開機。 |
+| /promptrestart | 如果需要重新開機，則提示使用者。 |
+| /forcerestart | 在安裝完成後重新開機裝置。 |
+
+#### <a name="examples"></a>範例
+
+若要安裝封裝*C:\example.msi*，請使用正常安裝程式，而不在結尾重新開機，請輸入：
+
+```
+msiexec.exe /i "C:\example.msi" /norestart
+```
+
+## <a name="logging-options"></a>記錄選項
+
+如果您需要對安裝套件進行偵錯工具，您可以設定參數來建立具有特定資訊的記錄檔。
+
+### <a name="syntax"></a>語法
+
+```
+msiexec.exe [/i][/x] <path_to_package> [/L{i|w|e|a|r|u|c|m|o|p|v|x+|!|*}] <path_to_log>
+```
+
+#### <a name="parameters"></a>參數
+
+| 參數 | 描述 |
+| ------- | -------- |
+| /i | 指定一般安裝。 |
+| /x | 卸載封裝。 |
+| `<path_to_package>` | 指定安裝套件檔案的位置和名稱。 |
+| /li | 開啟記錄功能，並在輸出記錄檔中包含狀態訊息。 |
+| /lw | 開啟記錄功能，並在輸出記錄檔中包含非嚴重警告。 |
+| /le | 開啟記錄功能，並在輸出記錄檔中包含所有錯誤訊息。 |
+| /la | 開啟記錄功能，並包含在輸出記錄檔中開始執行動作的相關資訊。 |
+| /lr | 開啟記錄功能，並在輸出記錄檔中包含動作特有的記錄。 |
+| /lu | 開啟記錄功能，並在輸出記錄檔中包含使用者要求資訊。 |
+| /lc | 開啟記錄功能，並在輸出記錄檔中包含初始的 UI 參數。 |
+| /lm | 開啟記錄功能，並在輸出記錄檔中包含記憶體不足或嚴重的結束資訊。 |
+| /lo | 開啟記錄功能，並在輸出記錄檔中包含磁碟空間不足的訊息。 |
+| /lp | 開啟記錄功能，並在輸出記錄檔中包含終端機屬性。 |
+| /lp | 開啟記錄功能，並在輸出記錄檔中包含終端機屬性。 |
+| /lv | 開啟記錄功能，並在輸出記錄檔中包含詳細資訊輸出。 |
+| /lp | 開啟記錄功能，並在輸出記錄檔中包含終端機屬性。 |
+| /lx | 開啟記錄功能，並在輸出記錄檔中包含額外的調試資訊。 |
+| /l + | 開啟記錄功能，並將資訊附加至現有的記錄檔。 |
+| /l! | 開啟記錄，並將每一行排清到記錄檔。 |
+| /l | 開啟記錄並記錄所有資訊，但詳細資訊（**/lv**）或額外的調試資訊（**/lx**）除外。 |
+| `<path_to_logfile>` | 指定輸出記錄檔的位置和名稱。 |
+
+#### <a name="examples"></a>範例
+
+若要安裝封裝*C:\example.msi*，請使用一般安裝程式搭配提供的所有記錄資訊，包括詳細資訊輸出，並在*C:\package.log*儲存輸出記錄檔，請輸入：
+
+```
+msiexec.exe /i "C:\example.msi" /L*V "C:\package.log"
+```
+
+## <a name="update-options"></a>更新選項
+
+您可以使用安裝套件來套用或移除更新。
+
+### <a name="syntax"></a>語法
+
+```
+msiexec.exe [/p][/update][/uninstall[/package<product_code_of_package>]] <path_to_package>
+```
+
+#### <a name="parameters"></a>參數
+
+| 參數 | 描述 |
+| ------- | -------- |
+| /p | 安裝修補程式。 如果您要以無訊息方式安裝，您也必須將 REINSTALLMODE 屬性設定為*ecmus* ，並重新安裝為*ALL*。 否則，修補程式只會更新目標裝置上快取的 MSI。 |
+| /update | [安裝修補程式] 選項。 如果您要套用多個更新，您必須使用分號來分隔它們（;)。 |
+| /package | 安裝或設定產品。 |
+
+#### <a name="examples"></a>範例
+
+```
+msiexec.exe /p "C:\MyPatch.msp"
+msiexec.exe /p "C:\MyPatch.msp" /qb REINSTALLMODE="ecmus" REINSTALL="ALL"
+msiexec.exe /update "C:\MyPatch.msp"
+```
+
+```
+msiexec.exe /uninstall {1BCBF52C-CD1B-454D-AEF7-852F73967318} /package {AAD3D77A-7476-469F-ADF4-04424124E91D}
+```
+
+其中第一個 GUID 是修補程式 GUID，第二個是套用修補程式的 MSI 產品代碼。
+
+## <a name="repair-options"></a>修復選項
+
+您可以使用此命令修復已安裝的套件。
+
+### <a name="syntax"></a>語法
+
+```
+msiexec.exe [/f{p|o|e|d|c|a|u|m|s|v}] <product_code>
+```
+
+#### <a name="parameters"></a>參數
+
+| 參數 | 描述 |
+| ------- | -------- |
+| /fp | 如果檔案遺失，則修復套件。 |
+| /fo | 如果檔案遺失或已安裝較舊的版本，則修復套件。 |
+| /fe | 如果檔案遺失，或安裝了相等或較舊的版本，則修復套件。 |
+| /fd | 如果檔案遺失或安裝了不同的版本，則修復套件。 |
+| /fc | 如果檔案遺失，或總和檢查碼不符合計算的值，則修復封裝。 |
+| /fa | 強制重新安裝所有檔案。 |
+| /fu | 修復所有必要的使用者特定登錄專案。 |
+| /fm | 修復所有必要的電腦特定登錄專案。 |
+| /fs | 修復所有現有的快捷方式。 |
+| /fc | 從來源執行，然後重新快取本機封裝。 |
+
+#### <a name="examples"></a>範例
+
+若要強制重新安裝所有檔案，根據要修復的 MSI 產品代碼， *{AAD3D77A-7476-469F-ADF4-04424124E91D}*，請輸入：
+
+```
+msiexec.exe /fa {AAD3D77A-7476-469F-ADF4-04424124E91D}
+```
+
+## <a name="set-public-properties"></a>設定公用屬性
+
+您可以透過此命令設定公用屬性。 如需可用屬性和其設定方式的詳細資訊，請參閱[公用屬性](https://docs.microsoft.com/windows/win32/msi/public-properties)。
+
+## <a name="additional-references"></a>其他參考
+
+- [命令列語法關鍵](command-line-syntax-key.md)
+
+- [Msiexec .exe 命令列選項](https://docs.microsoft.com/windows/win32/msi/command-line-options)
+
+- [標準安裝程式命令列選項](https://docs.microsoft.com/windows/win32/msi/standard-installer-command-line-options)
