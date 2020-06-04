@@ -8,12 +8,12 @@ ms.date: 05/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 843ed0b3ebf25d662d0b90c17f8fe23548829a7e
-ms.sourcegitcommit: 371e59315db0cca5bdb713264a62b215ab43fd0f
+ms.openlocfilehash: 13f25252d60cb0bde67cca1e1aa5106435c3f361
+ms.sourcegitcommit: 2cc251eb5bc3069bf09bc08e06c3478fcbe1f321
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82192596"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84333911"
 ---
 # <a name="ad-fs-extranet-lockout-and-extranet-smart-lockout"></a>AD FS 外部網路鎖定和外部網路智慧鎖定
 
@@ -42,7 +42,7 @@ ESL 僅適用于透過外部網路使用 Web 應用程式 Proxy 或協力廠商 
 
  如果次要節點無法連上主機，它會將錯誤事件寫入 AD FS 的系統管理員記錄中。 系統會繼續處理驗證，但是 AD FS 只會在本機寫入已更新的狀態。 AD FS 將會每隔10分鐘重試一次主機，並在主要複本可供使用之後，切換回主要主機。
 
-### <a name="terminology"></a>詞彙
+### <a name="terminology"></a>術語
 - **FamiliarLocation**：在驗證要求期間，ESL 會檢查所有顯示的 ip。 這些 ip 會結合網路 IP、轉送的 IP 和選擇性的 x 轉送-作為 IP。 如果要求成功，則所有 Ip 都會新增至 [帳戶活動] 資料表中做為「熟悉的 Ip」。 如果要求的所有 Ip 都出現在「熟悉的 Ip」中，則會將要求視為「熟悉的」位置。
 - **Unknownlocation.xsd**：如果傳入的要求至少有一個 IP 不存在於現有的 "FamiliarLocation" 清單中，則會將要求視為「不明」位置。 這是為了處理代理案例，例如 Exchange online 傳統驗證，其中 Exchange Online 位址會處理成功和失敗的要求。  
 - **badPwdCount**：代表提交不正確密碼和驗證失敗次數的值。 針對每個使用者，會針對熟悉的位置和未知位置保留個別的計數器。
@@ -57,7 +57,7 @@ ESL 僅適用于透過外部網路使用 Web 應用程式 Proxy 或協力廠商 
 支援 IPv4 和 IPv6 位址。
 
 ### <a name="anatomy-of-a-transaction"></a>交易的剖析
-- **預先驗證檢查**：在驗證要求期間，ESL 會檢查所有顯示的 ip。 這些 ip 會結合網路 IP、轉送的 IP 和選擇性的 x 轉送-作為 IP。 在 audit 記錄中，這些 Ip 會<IpAddress>依照 x 毫秒轉送-用戶端 ip、x 轉送-------------------------------------
+- **預先驗證檢查**：在驗證要求期間，ESL 會檢查所有顯示的 ip。 這些 ip 會結合網路 IP、轉送的 IP 和選擇性的 x 轉送-作為 IP。 在 audit 記錄中，這些 Ip 會依照 <IpAddress> x 毫秒轉送-用戶端 ip、x 轉送-------------------------------------
 
   根據這些 Ip，ADFS 會判斷要求是否來自熟悉或不熟悉的位置，然後檢查個別的 badPwdCount 是否小於設定的臨界值限制，或上次**失敗**的嘗試時間是否超過觀察視窗的時間範圍。 如果其中一個條件為 true，ADFS 會允許此交易進行進一步的處理和認證驗證。 如果這兩個條件都為 false，則帳戶已處於鎖定狀態，直到觀察視窗通過為止。 在觀察時間範圍通過之後，使用者就可以嘗試驗證一次。 請注意，在2019中，ADFS 會根據是否有符合熟悉位置的 IP 位址，檢查適當的閾值限制。
 - **成功登**入：如果登入成功，則會將要求中的 ip 新增至使用者的熟悉位置 IP 清單。  
@@ -144,14 +144,14 @@ AccountActivity 資料表會在「僅限記錄」模式和「強制」模式期�
 這項功能會使用安全性 Audit 記錄，因此必須在 AD FS 中啟用審核功能，以及在所有 AD FS 伺服器上的本機原則。
 
 ### <a name="configuration-instructions"></a>組態指示
-外部網路智慧鎖定會使用 ADFS 屬性**ExtranetLockoutEnabled**。 這個屬性先前是用來控制伺服器2012R2 中的「外部網路虛鎖定」。 如果已啟用外部網路虛鎖定，若要查看目前的屬性設定` Get-AdfsProperties` ，請執行。
+外部網路智慧鎖定會使用 ADFS 屬性**ExtranetLockoutEnabled**。 這個屬性先前是用來控制伺服器2012R2 中的「外部網路虛鎖定」。 如果已啟用外部網路虛鎖定，若要查看目前的屬性設定，請執行 ` Get-AdfsProperties` 。
 
 ### <a name="configuration-recommendations"></a>組態建議
 設定外部網路智慧鎖定時，請遵循設定閾值的最佳做法：  
 
 `ExtranetObservationWindow (new-timespan -Minutes 30)`
 
-`ExtranetLockoutThreshold: – 2x AD Threshold Value`
+`ExtranetLockoutThreshold: Half of AD Threshold Value`
 
 AD 值：20，ExtranetLockoutThreshold：10
 

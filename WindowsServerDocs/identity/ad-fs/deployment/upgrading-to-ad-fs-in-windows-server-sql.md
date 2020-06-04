@@ -8,12 +8,12 @@ ms.prod: windows-server
 ms.assetid: 70f279bf-aea1-4f4f-9ab3-e9157233e267
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: e9488357eecb4a2093d6989e4ebfcc195ce68567
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 090e5c9ffbbaaa6720eb8e938019c08baff681cf
+ms.sourcegitcommit: 2cc251eb5bc3069bf09bc08e06c3478fcbe1f321
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854001"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84333929"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-with-sql-server"></a>使用 SQL Server 升級至 Windows Server 2016 中的 AD FS
 
@@ -52,15 +52,15 @@ Windows Server 2016 AD FS 伺服器可以新增至 Windows Server 2012 R2 陣列
 
 1.  使用伺服器管理員在 Windows Server 2016 上安裝 Active Directory 同盟服務角色  
 
-2.  使用 AD FS 設定 wizard，將新的 Windows Server 2016 伺服器加入現有的 AD FS 伺服器陣列。  在 [**歡迎使用**] 畫面上按 **[下一步]** 。
+2.  使用 AD FS 設定] wizard，將新的 Windows Server 2016 伺服器加入現有的 AD FS 伺服器陣列。  在 [**歡迎使用**] 畫面上按 **[下一步]**。
  ![加入伺服器陣列](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure1.png)  
-3.  在 [**連接到 Active Directory Domain Services]** 畫面上，指定 p) 具有執行同盟服務設定許可權的**系統管理員帳戶**，然後按 **[下一步]** 。
-4.  在 [**指定伺服器**陣列] 畫面上，輸入 SQL server 和實例的名稱，然後按 **[下一步]** 。
+3.  在 [**連接到 Active Directory Domain Services]** 畫面上，指定 p) 具有執行同盟服務設定許可權的**系統管理員帳戶**，然後按 **[下一步]**。
+4.  在 [**指定伺服器**陣列] 畫面上，輸入 SQL server 和實例的名稱，然後按 **[下一步]**。
 ![加入伺服器陣列](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure3.png)
-5.  在 [**指定 SSL 憑證**] 畫面上，指定憑證，然後按 **[下一步]** 。
+5.  在 [**指定 SSL 憑證**] 畫面上，指定憑證，然後按 **[下一步]**。
 ![加入伺服器陣列](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure4.png)
-6.  在 [**指定服務帳戶**] 畫面上，指定服務帳戶，然後按 **[下一步]** 。
-7.  在 [**審核選項**] 畫面上，檢查選項，然後按 **[下一步]** 。
+6.  在 [**指定服務帳戶**] 畫面上，指定服務帳戶，然後按 **[下一步]**。
+7.  在 [**審核選項**] 畫面上，檢查選項，然後按 **[下一步]**。
 8.  在 [必要條件**檢查**] 畫面上，確定已通過所有先決條件檢查，然後按一下 [**設定**]。
 9.  在 [**結果**] 畫面上，確認伺服器已成功設定，然後按一下 [**關閉**]。
 
@@ -72,11 +72,11 @@ Windows Server 2016 AD FS 伺服器可以新增至 Windows Server 2012 R2 陣列
 
 1.  在 Windows Server 2012 R2 的 AD FS 伺服器上伺服器管理員使用 [**管理**] 底下的 [**移除角色及功能**]。
 ![移除伺服器](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/remove1.png)
-2.  在 [在您開始前] 畫面上，按 [下一步]。
-3.  在 [**伺服器選取**] 畫面上，按 **[下一步]** 。
-4.  在 [**伺服器角色**] 畫面上，移除**Active Directory 同盟服務**旁的核取記號，然後按 **[下一步]** 。
+2.  在 [在您開始前]**** 畫面上，按 [下一步]****。
+3.  在 [**伺服器選取**] 畫面上，按 **[下一步]**。
+4.  在 [**伺服器角色**] 畫面上，移除**Active Directory 同盟服務**旁的核取記號，然後按 **[下一步]**。
 ![移除伺服器](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/remove2.png)
-5.  在 [**功能**] 畫面上，按 **[下一步]** 。
+5.  在 [**功能**] 畫面上，按 **[下一步]**。
 6.  在 [**確認**] 畫面上，按一下 [**移除**]。
 7.  完成後，請重新開機伺服器。
 
@@ -84,7 +84,7 @@ Windows Server 2016 AD FS 伺服器可以新增至 Windows Server 2012 R2 陣列
 在此步驟之前，您必須確定已在 Active Directory 環境上執行 forestprep 和「工作」，而且 Active Directory 具有 Windows Server 2016 架構。  本檔是從 Windows 2016 網域控制站開始，而且不需要執行這些作業，因為它們是在安裝 AD 時執行。
 
 >[!NOTE]
->開始下列程式之前，請從 [設定] 執行 Windows Update，確定 Windows Server 2016 是最新的。  繼續此程序，直到不需要進一步更新。
+>開始下列程式之前，請從 [設定] 執行 Windows Update，確定 Windows Server 2016 是最新的。  繼續此程序，直到不需要進一步更新。 此外，請確定 ADFS 服務帳戶帳戶具有 SQL server 的系統管理許可權，以及 ADFS 伺服器陣列中的每部伺服器。
 
 1. 現在，在 Windows Server 2016 伺服器上開啟 PowerShell，並執行下列動作： **$cred = Get-Credential** ，然後按 enter 鍵。
 2. 輸入在 SQL Server 上具有系統管理員許可權的認證。

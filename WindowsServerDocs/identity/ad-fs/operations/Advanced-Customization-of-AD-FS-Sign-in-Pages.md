@@ -8,20 +8,20 @@ ms.date: 01/16/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: ea149e6b9a5fbf5c0671991a61f9bcda35656022
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a4a70632ea4c1db39c020327bbe135f4798e6970
+ms.sourcegitcommit: 2cc251eb5bc3069bf09bc08e06c3478fcbe1f321
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859981"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84333889"
 ---
 # <a name="advanced-customization-of-ad-fs-sign-in-pages"></a>AD FS 登入頁面的自訂
 
   
-## <a name="advanced-customization-of-ad-fs-sign-in-pages"></a>在頁面中自訂 AD FS Sign\-  
-Windows Server 2012 R2 中的 AD FS 提供內建\-支援自訂登入\-體驗。 在大部分的情況下，Windows PowerShell Cmdlet 中的內建\-都是必要的。  建議您在 Windows PowerShell 命令中使用內建\-，以自訂適用于 AD FS 簽署\-的標準元素（如果可能的話）。  如需詳細資訊，請參閱[AD-FS 使用者登入自訂](AD-FS-user-sign-in-customization.md)。  
+## <a name="advanced-customization-of-ad-fs-sign-in-pages"></a>AD FS 登入頁面的自訂 \-  
+Windows Server 2012 R2 中的 AD FS 提供 \- 自訂登入體驗的內建支援 \- 。 在大部分的情況下， \- 都需要內建的 Windows PowerShell Cmdlet。  建議您盡可能使用內建的 \- Windows PowerShell 命令，針對 AD FS 登入體驗自訂標準元素 \- 。  如需詳細資訊，請參閱[AD-FS 使用者登入自訂](AD-FS-user-sign-in-customization.md)。  
   
-在某些情況下，AD FS 系統管理員可能會想要提供其他的登入\-，而不是透過 AD FS 隨附\-box 的現有 PowerShell 命令。 在某些情況下，\(在下面提供的指導方針中，\) 系統管理員藉由將額外邏輯新增至由 AD FS 所提供的**onload** ，並會在所有 AD FS 頁面上執行，以進一步自訂登入\-的經驗。  
+在某些情況下，AD FS 系統管理員可能會想要 \- 透過 AD FS 隨附的現有 PowerShell 命令，提供無法進行的其他登入體驗 \- 。 在某些情況下，在下面提供的指導方針中，這是可行的， \( \) 讓系統管理員可以藉 \- 由將額外邏輯新增至 AD FS 所提供的**onload .js** ，進一步自訂登入體驗，並將在所有 AD FS 頁面上執行。  
   
 ## <a name="things-to-know-before-you-start"></a>開始之前要知道的事項  
   
@@ -29,20 +29,20 @@ Windows Server 2012 R2 中的 AD FS 提供內建\-支援自訂登入\-體驗。 
   
 -   原始的 onload，這是預設 web 主題隨附的，其中包含處理不同外型規格之頁面轉譯的程式碼。 建議您不要修改原始的 onload 內容，只是將您的程式碼附加至現有的 onload 來處理自訂邏輯。  
   
--   AD FS 隨附 web 主題中的內建\-，稱為「預設」。 您無法修改預設 web 主題的 onload。 若要更新 onload，您必須建立並使用自訂 web 主題，以在頁面中 AD FS sign\-。  如需如何建立自訂 web 主題的相關資訊，請參閱[AD-FS 使用者登入自訂](AD-FS-user-sign-in-customization.md)。  
+-   AD FS 隨附內建的 \- web 主題，稱為「預設」。 您無法修改預設 web 主題的 onload。 若要更新 onload，您必須建立並使用 AD FS 登入頁面的自訂 web 主題 \- 。  如需如何建立自訂 web 主題的相關資訊，請參閱[AD-FS 使用者登入自訂](AD-FS-user-sign-in-customization.md)。  
   
--   相同的 onload 會在所有 ADFS 頁面上執行 \(例如。 以\-為基礎的登入頁面、主領域探索頁面等等，\)。 您必須確保腳本中的程式碼只會在設計時執行，而且不會意外執行。  
+-   相同的 onload 會在所有 ADFS 頁面上執行， \( 例如 以表單為 \- 基礎的登入頁面、主領域探索頁面等等 \) 。 您必須確保腳本中的程式碼只會在設計時執行，而且不會意外執行。  
   
--   參考任何 HTML 專案時，請務必先檢查項目是否存在，然後再對元素採取行動。 這會提供健全性，並確保不會在不包含此元素的頁面上執行自訂邏輯。 您可以直接在頁面的 AD FS sign\-上查看 HTML 來源，以查看現有的元素。  
+-   參考任何 HTML 專案時，請務必先檢查項目是否存在，然後再對元素採取行動。 這會提供健全性，並確保不會在不包含此元素的頁面上執行自訂邏輯。 您可以直接在 [AD FS 登入] 頁面上查看 HTML 來源 \- ，以查看現有的元素。  
   
 -   強烈建議您在替代環境中驗證您的自訂，並在將其推出至生產 AD FS 伺服器之前先進行測試。 這可降低使用者在驗證之前暴露于這些自訂的機會。  
   
-## <a name="customizing-the-ad-fs-sign-in-experience-by-using-onloadjs"></a>使用 onload 自訂 AD FS sign\-體驗  
+## <a name="customizing-the-ad-fs-sign-in-experience-by-using-onloadjs"></a>使用 onload 自訂 AD FS 登 \- 入體驗  
 自訂 AD FS 服務的 onload 時，請使用下列步驟。  
   
 #### <a name="customizing-onloadjs-for-the-ad-fs-service"></a>為 AD FS 服務自訂 onload  
   
-1.  若要將您的自訂邏輯新增至 onload，您必須先建立自訂的 web 主題。 \-\-\-方塊中的主題稱為「預設」。 您可以匯出預設佈景主題，並利用它加快開始的過程。 下列 Cmdlet 會建立可複製預設 web 主題的自訂 web 主題：  
+1.  若要將您的自訂邏輯新增至 onload，您必須先建立自訂的 web 主題。 現成推出的主題 \- \- \- 稱為預設值。 您可以匯出預設佈景主題，並利用它加快開始的過程。 下列 Cmdlet 會建立可複製預設 web 主題的自訂 web 主題：  
   
     ```  
     New-AdfsWebTheme –Name custom –SourceName default  
@@ -56,7 +56,7 @@ Windows Server 2012 R2 中的 AD FS 提供內建\-支援自訂登入\-體驗。 
   
     ```  
   
-    您會在上述匯出 Cmdlet 中指定的目錄中，找到 [腳本] 資料夾底下的 [onload]，並將您的自訂邏輯新增至腳本 \(請參閱下面的範例一節中的使用案例\)。  
+    您會在上述匯出 Cmdlet 中指定的目錄中，找到 [腳本] 資料夾底下的 [onload]，並將您的自訂邏輯新增至腳本， \( 請參閱下面的範例一節中的使用案例 \) 。  
   
 3.  進行必要的修改，以根據您的需求自訂 onload。  
   
@@ -71,7 +71,7 @@ Windows Server 2012 R2 中的 AD FS 提供內建\-支援自訂登入\-體驗。 
     針對 Windows Server 2016 上的 AD FS：
 
      ```  
-    Set-AdfsWebTheme -TargetName custom -OnLoadScriptPath "c:\ADFStheme\script\onload.js"   
+    Set-AdfsWebTheme -TargetName custom -OnLoadScriptPath "c:\theme\script\onload.js"   
   
     ```  
   
@@ -82,10 +82,10 @@ Windows Server 2012 R2 中的 AD FS 提供內建\-支援自訂登入\-體驗。 
     ```  
   
 ## <a name="additional-customization-examples"></a>其他自訂範例  
-以下是新增至 onload 的自訂程式碼範例，適用于不同的\-微調用途。 新增自訂程式碼時，請一律將您的自訂程式碼附加至 onload 的底部。  
+以下是針對不同微調用途新增至 onload 的自訂程式碼範例 \- 。 新增自訂程式碼時，請一律將您的自訂程式碼附加至 onload 的底部。  
   
 ### <a name="example-1-change-sign-in-with-organizational-account-string"></a>範例1：變更「使用組織帳戶登入」字串  
-頁面中以\-為基礎的預設 AD FS 表單的登入\-的標題為「使用您的組織帳戶登入」使用者輸入方塊。  
+預設 AD FS 表單型登 \- \- 入頁面的標題為 [使用您的組織帳戶登入]，上方的使用者輸入方塊。  
   
 如果您想要將此字串取代為您自己的字串，您可以將下列程式碼加入至 onload。  
   
@@ -102,8 +102,8 @@ if (loginMessage)
   
 ```  
   
-### <a name="example-2-accept-sam-account-name-as-a-login-format-on-an-ad-fs-form-based-sign-in-page"></a>範例2：在頁面中以\-為\-基礎的 AD FS 形式，接受 SAM\-帳戶名稱作為登入格式  
-頁面中以\-為\-基礎的預設 AD FS 表單支援使用者主體名稱的登入格式 \(Upn\) \(例如<strong>johndoe@contoso.com</strong>\) 或網域限定的 sam\-\(**contoso\\johndoe**或**contoso.com\\johndoe**\)的帳戶名稱。 如果您的所有使用者都來自相同的網域，而他們只知道 sam\-帳戶名稱，您可能會想要支援案例，讓使用者只能使用 sam\-帳戶名稱登入。 您可以將下列程式碼新增至 onload 以支援此案例，只需將下列範例中的網域 "contoso.com" 取代為您想要使用的網域。  
+### <a name="example-2-accept-sam-account-name-as-a-login-format-on-an-ad-fs-form-based-sign-in-page"></a>範例2： \- 在 AD FS 形式的登入頁面上，接受 SAM 帳戶名稱作為登 \- \- 入格式  
+預設的 AD FS 表單型登 \- \- 入頁面支援使用者主要名稱 upn 的登入格式 \( \) \( ，例如， <strong>johndoe@contoso.com</strong> \) 或網域限定的 sam \- 帳戶名稱 \( **contoso \\ johndoe**或**contoso.com \\ johndoe** \) 。 如果您的所有使用者都是來自相同的網域，而他們只知道 sam \- 帳戶名稱，您可能會想要支援案例，讓使用者只能使用 sam \- 帳戶名稱登入。 您可以將下列程式碼新增至 onload 以支援此案例，只需將下列範例中的網域 "contoso.com" 取代為您想要使用的網域。  
   
 ```  
 if (typeof Login != 'undefined'){  
