@@ -7,17 +7,21 @@ ms.technology: server-general
 author: kaushika-msft
 ms.author: kaushika-msft; v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a550ddd72dcdf8c1967fe4740dc0fe5f2ad93e7
-ms.sourcegitcommit: df94dac422d13566c32e1cdb8c6e7a4e82747947
+ms.custom:
+- CI ID 116803
+- CSSTroubleshoot
+manager: dcscontentpm
+ms.openlocfilehash: fe07636908dffc6bb59c544d512b132e7640bf51
+ms.sourcegitcommit: 75b4cf49dd918ff98258dcae6e6e8d7825c9adec
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84205629"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84269227"
 ---
 # <a name="resolve-windows-activation-error-codes"></a>解決 Windows 啟用錯誤碼
 
-> **家庭用戶**  
-> 本文適用於支援專員和 IT 專業人員。 如需 Windows 啟用錯誤訊息的詳細資訊，請參閱[取得 Windows 啟用錯誤的說明](https://support.microsoft.com/help/10738/windows-10-get-help-with-activation-errors)。  
+> [!NOTE]  
+> 本文適用於技術支援專員和 IT 專業人員。 如需 Windows 啟用錯誤訊息的詳細資訊，請參閱[取得 Windows 啟用錯誤的說明](https://support.microsoft.com/help/10738/windows-10-get-help-with-activation-errors)。  
 
 本文提供疑難排解資訊，協助您回應在嘗試使用多次啟用金鑰 (MAK) 或金鑰管理服務 (KMS) 在一或多部 Windows 電腦上執行大量啟用時，您會收到的錯誤訊息。 在下表中尋找錯誤碼，然後選取連結，以查看有關該錯誤碼及其解決方式的詳細資訊。
 
@@ -28,6 +32,10 @@ ms.locfileid: "84205629"
 如需舊版 Windows 的大量啟用詳細資訊，請參閱 KB 929712  [Windows Vista、Windows Server 2008、Windows Server 2008 R2 和 Windows 7 的大量啟用資訊](https://support.microsoft.com/help/929712/volume-activation-information-for-windows-vista-windows-server-2008-wi)。
 
 ## <a name="diagnostic-tool"></a>診斷工具
+
+> [!NOTE]  
+> 此工具的目的是為了在執行 Windows 企業版、專業版或伺服器版本的電腦上，協助修正 Windows 啟用問題。
+
 
 Microsoft 支援及修復小幫手 (SaRA) 可簡化 Windows KMS 啟動的疑難排解。 從[這裡](https://aka.ms/SaRA-WindowsActivation)下載診斷工具。
 

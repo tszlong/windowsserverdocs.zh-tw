@@ -7,18 +7,63 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 09/11/2019
+ms.date: 06/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c0c5be0c4cf274224d25b62f7553ae49f8219b2
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 176c601d98ebc743e455c5f83efe2c10267a38ba
+ms.sourcegitcommit: 5fac756c2c9920757e33ef0a68528cda0c85dd04
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80854671"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84306447"
 ---
 # <a name="whats-new-in-the-android-client"></a>Android 用戶端中的新功能
 
 我們會定期更新[適用於 Android 的遠端桌面用戶端](remote-desktop-android.md)，進而新增功能並修正問題。 您可以在這裡找到最新的更新。
+
+## <a name="updates-for-version-8180"></a>8\.1.80 版的更新
+
+*發行日期：2020/5/26*
+
+- 已變更用戶端圖示，以與目前處於預覽的新用戶端區別。
+- 已備妥用戶端，可支援對新用戶端傳送設定和連線。
+
+## <a name="updates-for-version-8179"></a>8\.1.79 版的更新
+
+*發行日期：2020/03/24*
+
+- 修正條碼掃描器無法使用的問題。
+
+## <a name="updates-for-version-8177"></a>8\.1.77 版的更新
+
+*發行日期：02/11/2020*
+
+- 改善僅使用鍵盤導覽使用者的協助工具。
+
+## <a name="updates-for-version-8176"></a>8\.1.76 版的更新
+
+*發行日期：2020/1/9*
+
+- 小錯誤修正和改進。
+
+## <a name="updates-for-version-8175"></a>8\.1.75 版的更新
+
+*發行日期：2019/10/31*
+
+- 已修正部分遠端資源摘要 URL 無法載入的問題。
+- 改善僅使用鍵盤導覽和 TalkBack 使用者的協助工具。
+
+## <a name="updates-for-version-8174"></a>8\.1.74 版的更新
+
+*發行日期：2019/8/17*
+
+- 修正連接到會傳送專屬憑證的伺服器時的當機。
+
+## <a name="updates-for-version-8173"></a>8\.1.73 版的更新
+
+*發行日期：2019/6/14*
+
+- 新增 64 位元支援。
+- 解決 CVE-2019-1108 中所述的安全性問題。
 
 ## <a name="updates-for-version-8171"></a>8\.1.71 版的更新
 
@@ -67,7 +112,7 @@ ms.locfileid: "80854671"
 - 已新增對 Samsung DeX 的沈浸式模式支援，進而隱藏底部工作列。
 - 已新增將中繼和 Alt 鍵從實體鍵盤傳送至 Samsung DeX 遠端工作階段的支援。
 - 滑鼠指標現在會根據遠端工作階段的內容更新 (Android 7.0+)
-- 其他 Bug 修正。
+- 其他錯誤修正。
 
 ## <a name="updates-for-version-8161"></a>8\.1.61 版的更新
 
