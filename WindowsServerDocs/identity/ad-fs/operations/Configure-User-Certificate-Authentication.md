@@ -8,12 +8,12 @@ ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 4aa2f219852dc97833365645e7455f8141a0988e
-ms.sourcegitcommit: d23f880e144acf0912831557c70f777d48e3152b
+ms.openlocfilehash: c443d596e8e35f7ccf4aa23b622323122a2778e9
+ms.sourcegitcommit: 76a3b5f66e47e08e8235e2d152185b304d03b68b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84632782"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84663181"
 ---
 # <a name="configuring-ad-fs-for-user-certificate-authentication"></a>設定使用者憑證驗證的 AD FS
 
@@ -22,14 +22,14 @@ ms.locfileid: "84632782"
 * 使用者使用布建到行動裝置的憑證
 
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 1) 使用[本文所](ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md)述的其中一種模式，判斷您想要啟用之 AD FS 使用者憑證驗證的模式
 2) 請確定您的使用者憑證信任鏈已安裝 & 由所有 AD FS 和 WAP 伺服器信任，包括任何中繼憑證授權單位單位。 這通常是透過 AD FS/WAP 伺服器上的 GPO 來完成的
 3)  請確定您的使用者憑證信任鏈的根憑證位於 NTAuth 存放區中的 Active Directory
 4) 如果在替代憑證驗證模式中使用 AD FS，請確定您的 AD FS 和 WAP 伺服器都具有 SSL 憑證，其中包含前面加上 "certauth" （例如 "certauth.fs.contoso.com"）的 AD FS 主機名稱，而且允許此主機名稱的流量通過防火牆
 5) 如果使用外部網路的憑證驗證，請確定您在憑證中指定的清單中，至少有一個 AIA 和至少一個 CDP 或 OCSP 位置可從網際網路存取。
 6) 此外，對於 Exchange ActiveSync 用戶端的 Azure AD 憑證驗證，用戶端憑證必須在 [主體別名] 欄位的 [主體名稱] 或 [RFC822 名稱] 值中，讓使用者可路由傳送的電子郵件地址在 Exchange online 中。 （Azure Active Directory 會將 RFC822 值對應到目錄中的 Proxy 位址屬性）。
-7) 使用智慧卡/憑證型驗證時，憑證上的主體可能不符合 AD 帳戶上的 UserPricipalName。 在此情況下，登入會失敗，並出現「找不到使用者」。
+7) AD FS 不支援以智慧卡/憑證為基礎的驗證的使用者名稱提示。 
 
 
 ## <a name="configure-ad-fs-for-user-certificate-authentication"></a>設定 AD FS 用於使用者憑證驗證  
