@@ -6,12 +6,12 @@ ms.technology: server-general
 ms.date: 1/24/2020
 author: kaushika-msft
 ms.author: kaushika
-ms.openlocfilehash: e5fdae6e005adf6ea221fb3c2bf3ea09bfbfb03a
-ms.sourcegitcommit: 5c93c685dca3cafeea916cedcc0f915c528484ca
+ms.openlocfilehash: f3012f499e67f73ec9e8ab20b24df122492ea0ea
+ms.sourcegitcommit: fa9a8badf4eb366aeeca7d2905e2cad711ee8dae
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "81119260"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84714900"
 ---
 # <a name="troubleshooting-windows-server-components"></a>Windows Server 元件疑難排解
 
@@ -34,19 +34,19 @@ Microsoft 會定期發行 Windows Server 的這兩項更新。 為了確保您�
 - [MAK 啟用的已知問題](https://docs.microsoft.com/windows-server/get-started/activation-troubleshoot-mak-issues)
 - [針對 DNS 相關啟用問題進行疑難排解的指導方針](https://docs.microsoft.com/windows-server/get-started/common-troubleshooting-procedures-kms-dns)
 - [重建 Tokens.dat 檔案](https://docs.microsoft.com/windows-server/get-started/activation-rebuild-tokens-dat-file)
-- [針對 ADBA 用戶端進行疑難排解](https://docs.microsoft.com/windows-server/get-started/activation-troubleshoot-adba-clients)
+- [ADBA 用戶端疑難排解](https://docs.microsoft.com/windows-server/get-started/activation-troubleshoot-adba-clients)
 
 ## <a name="troubleshoot-startup-and-restart"></a>疑難排解啟動和重新開機
 
-- [Windows 啟動的先進疑難排解](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-startup)
-- [如何判斷64位版本 Windows 的適當頁面檔案大小](https://docs.microsoft.com/windows/client-management/determine-appropriate-page-file-size)
+- [Windows 啟動進階疑難排解](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-startup)
+- [如何判斷適用於 64 位元版本 Windows 的適當分頁檔大小](https://docs.microsoft.com/windows/client-management/determine-appropriate-page-file-size)
 - [產生核心或完成損毀傾印](https://docs.microsoft.com/windows/client-management/generate-kernel-or-complete-crash-dump)
 - [分頁檔簡介](https://docs.microsoft.com/windows/client-management/introduction-page-file)
 - [在 Windows 中設定系統失敗和修復選項](https://docs.microsoft.com/windows/client-management/system-failure-recovery-options)
-- [Windows 開機問題的先進疑難排解](https://docs.microsoft.com/windows/client-management/advanced-troubleshooting-boot-problems)
-- [Windows 電腦凍結的 Advanced 疑難排解](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-freeze)
-- [停止錯誤或藍色螢幕錯誤的 Advanced 疑難排解](https://docs.microsoft.com/windows/client-management/troubleshoot-stop-errors)
-- [針對 stop 錯誤7B 或 Inaccessible_Boot_Device 進行先進的疑難排解](https://docs.microsoft.com/windows/client-management/troubleshoot-inaccessible-boot-device)
+- [Windows 開機問題進階疑難排解](https://docs.microsoft.com/windows/client-management/advanced-troubleshooting-boot-problems)
+- [Windows 電腦凍結進階疑難排解](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-freeze)
+- [停止錯誤或藍色當機畫面錯誤進階疑難排解](https://docs.microsoft.com/windows/client-management/troubleshoot-stop-errors)
+- [停止錯誤 7B 或 Inaccessible_Boot_Device 進階疑難排解](https://docs.microsoft.com/windows/client-management/troubleshoot-inaccessible-boot-device)
 - [事件識別碼41的 Advanced 疑難排解「系統已重新開機，但未完全關閉」](https://docs.microsoft.com/windows/client-management/troubleshoot-event-id-41-restart)
 - [當您更新內建的 Broadcom 網路介面卡驅動程式時，發生停止錯誤](https://docs.microsoft.com/windows/client-management/troubleshoot-stop-error-on-broadcom-driver-update)
 
@@ -74,7 +74,7 @@ Microsoft 會定期發行 Windows Server 的這兩項更新。 為了確保您�
 - [AD FS 疑難排解-宣告規則](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-claims-rules)
 - [AD FS 疑難排解-整合式 Windows 驗證](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-iwa)
 - [AD FS 疑難排解-Azure AD](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-azure)
-- [AD FS 常見問題](https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-faq)
+- [AD FS 常見問題集](https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-faq)
 - [AD FS 說明診斷分析器](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-diagnostics-analyzer)
 
 ## <a name="troubleshoot-aovpn"></a>針對 AoVPN 進行疑難排解
@@ -87,7 +87,7 @@ Microsoft 會定期發行 Windows Server 的這兩項更新。 為了確保您�
 
 ## <a name="troubleshoot-dfsr"></a>針對 DFSR 進行疑難排解
 
-- [DFS 複寫：常見問題（FAQ）](https://docs.microsoft.com/windows-server/storage/dfs-replication/dfsr-faq)
+- [DFS 複寫：常見問題集 (FAQ)](https://docs.microsoft.com/windows-server/storage/dfs-replication/dfsr-faq)
 
 ## <a name="troubleshoot-directaccess"></a>針對 DirectAccess 進行疑難排解
 
@@ -108,6 +108,19 @@ Microsoft 會定期發行 Windows Server 的這兩項更新。 為了確保您�
 
 - [使用 Windows 錯誤報告針對容錯移轉叢集進行疑難排解](https://docs.microsoft.com/windows-server/failover-clustering/troubleshooting-using-wer-reports)
 - [叢集感知更新-常見問題](https://docs.microsoft.com/windows-server/failover-clustering/cluster-aware-updating-faq)
+- [針對事件識別碼1135的叢集問題進行疑難排解](https://docs.microsoft.com/windows-server/troubleshoot/troubleshooting-cluster-event-id-1135)
+- [從作用中的容錯移轉叢集成員資格移除節點時發生問題](https://docs.microsoft.com/windows-server/troubleshoot/problem-nodes-failover-cluster)
+- [從 VMWare ESX 上的容錯移轉叢集成員資格移除節點](https://docs.microsoft.com/windows-server/troubleshoot/nodes-failover-cluster-vmware)
+- [IaaS 與 SQL AlwaysOn - 微調容錯移轉叢集網路閾值](https://docs.microsoft.com/windows-server/troubleshoot/iaas-sql-failover-cluster)
+
+## <a name="troubleshoot-dhcp"></a>疑難排解 DHCP
+
+- [動態主機設定通訊協定（DHCP）的疑難排解指南](https://docs.microsoft.com/windows-server/troubleshoot/troubleshoot-dhcp-issue)
+- [DHCP （動態主機設定通訊協定）基本概念](https://docs.microsoft.com/windows-server/troubleshoot/dynamic-host-configuration-protocol-basics)
+- [針對 DHCP 進行疑難排解的一般指導方針](https://docs.microsoft.com/windows-server/troubleshoot/general-guidance-to-troubleshoot-dhcp)
+- [如何在沒有 DHCP 伺服器的情況下使用自動 TCP/IP 定址](https://docs.microsoft.com/windows-server/troubleshoot/how-to-use-automatic-tcpip-addressing-without-a-dh)
+- [針對 DHCP 用戶端上的問題進行疑難排解](https://docs.microsoft.com/windows-server/troubleshoot/troubleshoot-problems-on-dhcp-client)
+- [針對 DHCP 伺服器上的問題進行疑難排解](https://docs.microsoft.com/windows-server/troubleshoot/troubleshoot-problems-on-dhcp-server)
 
 ## <a name="troubleshoot-fsrm"></a>針對 FSRM 進行疑難排解
 
@@ -149,7 +162,7 @@ Microsoft 會定期發行 Windows Server 的這兩項更新。 為了確保您�
 - [儲存空間直接存取的常見問題](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-faq)
 - [儲存空間直接存取健全狀況和操作狀態](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-states)
 - [使用儲存空間直接存取收集診斷資料](https://docs.microsoft.com/windows-server/storage/storage-spaces/data-collection)
-- [Windows 中的存放裝置類別記憶體（NVDIMM-N）健全狀況管理](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-class-memory-health)
+- [Windows 中的存放裝置類別記憶體 (NVDIMM-N) 健全狀況管理](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-class-memory-health)
 
 ## <a name="troubleshoot-sdn"></a>疑難排解 SDN
 
@@ -183,11 +196,11 @@ Microsoft 會定期發行 Windows Server 的這兩項更新。 為了確保您�
 ## <a name="troubleshoot-storage-replica"></a>針對儲存體複本進行疑難排解
 
 - [儲存體複本的已知問題](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-known-issues)
-- [儲存體複本的相關常見問題](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-frequently-asked-questions)
+- [儲存體複本的常見問題集](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-frequently-asked-questions)
 
 ## <a name="troubleshoot-user-profiles"></a>疑難排解使用者設定檔
 
-- [針對具有事件的使用者設定檔進行疑難排解](https://docs.microsoft.com/windows-server/storage/folder-redirection/troubleshoot-user-profiles-events)
+- [透過有事件對使用者設定檔進行疑難排解](https://docs.microsoft.com/windows-server/storage/folder-redirection/troubleshoot-user-profiles-events)
 
 ## <a name="troubleshoot-vrss"></a>針對 vRSS 進行疑難排解
 
@@ -199,6 +212,6 @@ Microsoft 會定期發行 Windows Server 的這兩項更新。 為了確保您�
 
 ## <a name="troubleshoot-windows-admin-center"></a>針對 Windows Admin Center 問題進行疑難排解
 
-- [Windows 系統管理中心一般疑難排解步驟](https://docs.microsoft.com/windows-server/manage/windows-admin-center/support/troubleshooting)
-- [Windows 系統管理中心的已知問題](https://docs.microsoft.com/windows-server/manage/windows-admin-center/support/known-issues)
-- [Windows 系統管理中心常見問題](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/faq)
+- [Windows Admin Center 一般疑難排解步驟](https://docs.microsoft.com/windows-server/manage/windows-admin-center/support/troubleshooting)
+- [Windows Admin Center 已知問題](https://docs.microsoft.com/windows-server/manage/windows-admin-center/support/known-issues)
+- [Windows Admin Center 常見問題集](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/faq)
