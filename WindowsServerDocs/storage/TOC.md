@@ -31,6 +31,8 @@
 ### [將 SYSVOL 複寫移轉至 DFS 複寫](dfs-replication/migrate-sysvol-to-dfsr.md)
 ### [使用 robocopy 來預置 DFS 複寫的檔案](dfs-replication/preseed-dfsr-with-robocopy.md)
 ### [DFS 複寫：常見問題集 (FAQ)](dfs-replication/dfsr-faq.md)
+### [如何判斷複寫資料夾的最小暫存區域 DFSR 需求](../troubleshoot/how-to-determine-the-minimum-staging-area-dfsr-needs-for-a-replicated-folder.md)
+### [了解 DFSR 中 (缺乏) 分散式檔案鎖定 ](../troubleshoot/understanding-the-lack-of-distributed-file-locking-in-dfsr.md)
 ## [磁碟管理](disk-management/overview-of-disk-management.md)
 ## [檔案伺服器和 SMB](file-server/file-server-smb-overview.md)
 ### [SMB 直接傳輸](file-server/smb-direct.md)
