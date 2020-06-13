@@ -1,6 +1,6 @@
 ---
 title: nslookup ls
-description: '* * * * 的參考主題'
+description: Nslookup ls 命令的參考主題，其中列出 DNS 網域資訊。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,33 +9,43 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8357208406c0fca5d68da419baa2092d94fa9ec9
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 87e30ed5d5b44b805c3b3b004feb5ed252b5a760
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723699"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721119"
 ---
 # <a name="nslookup-ls"></a>nslookup ls
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-列出網域名稱系統（DNS）網域的資訊。
+列出 DNS 網域資訊。
+
 ## <a name="syntax"></a>語法
+
 ```
-ls [<Option>] <DNSDomain> [{[>] <FileName>|[>>] <FileName>}]
+ls [<option>] <DNSdomain> [{[>] <filename>|[>>] <filename>}]
 ```
+
 ### <a name="parameters"></a>參數
 
-|    參數    |                                                                                                                                                                                                                                                                                                               描述                                                                                                                                                                                                                                                                                                                |
-|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    <Option>     | 下表列出有效的選項。<p>--t：列出指定之類型的所有記錄。 如需的說明<querytype>，請參閱其他參考中的**setquerytype** 。<br />--a：列出 DNS 網域中電腦的別名。 此參數是 **-t CNAME**的同義字<br />--d：列出 DNS 網域的所有記錄。 此參數是 **-t ANY**的同義字<br />--h：列出 DNS 網域的 CPU 和作業系統資訊。 此參數是 **-t HINFO**的同義字<br />--s：列出 DNS 網域中的知名電腦服務。 此參數是 **-t WKS**的同義字。 |
-|   <DNSDomain>   |                                                                                                                                                                                                                                                                                         指定您想要其資訊的 DNS 網域。                                                                                                                                                                                                                                                                                         |
-|   <FileName>    |                                                                                                                                                                                                                                 指定用來儲存輸出的檔案名。 您可以使用大於（>）和 double 大於（>>）字元，以平常的方式重新導向輸出。                                                                                                                                                                                                                                  |
-| {help &#124;？} |                                                                                                                                                                                                                                                                                          顯示**nslookup**子命令的簡短摘要。                                                                                                                                                                                                                                                                                           |
+| 參數 | 描述 |
+| --------- | ----------- |
+| `<option>` | 有效的選項包括：<ul><li>**-t：** 列出指定之類型的所有記錄。 如需詳細資訊，請參閱[nslookup set querytype](nslookup-set-querytype.md)。</li><li>**-a：** 列出 DNS 網域中的電腦別名。 此參數與 **-t CNAME**相同</li><li>**-d：** 列出 DNS 網域的所有記錄。 這個參數與 **-t ANY**相同</li><li>**-h：** 列出 DNS 網域的 CPU 和作業系統資訊。 此參數與 **-t HINFO**相同</li><li>**-s：** 列出 DNS 網域中的知名電腦服務。 這個參數與 **-t WKS**相同。 |
+| `<DNSdomain>` | 指定您想要其資訊的 DNS 網域。 |
+| `<filename>` | 指定要用於已儲存輸出的檔案名。 您可以使用大於（ `>` ）和 double 大於（ `>>` ）字元，以一般方式重新導向輸出。 |
+| /? | 在命令提示字元顯示說明。 |
+| /help | 在命令提示字元顯示說明。 |
 
-## <a name="remarks"></a>備註
-- 預設輸出包含電腦名稱稱和其 IP 位址。 當輸出導向至檔案時，會針對每個從伺服器接收的50記錄列印雜湊標記
-  ## <a name="additional-references"></a>其他參考
-  - [命令列語法索引鍵](command-line-syntax-key.md)
-  [nslookup set querytype](nslookup-set-querytype.md)
+#### <a name="remarks"></a>備註
+
+- 此命令的預設輸出包括電腦名稱稱及其相關聯的 IP 位址。
+
+- 如果您的輸出導向至檔案，就會為每個從伺服器接收的50記錄新增雜湊標記。
+
+## <a name="additional-references"></a>其他參考
+
+- [命令列語法關鍵](command-line-syntax-key.md)
+
+- [nslookup set querytype](nslookup-set-querytype.md)

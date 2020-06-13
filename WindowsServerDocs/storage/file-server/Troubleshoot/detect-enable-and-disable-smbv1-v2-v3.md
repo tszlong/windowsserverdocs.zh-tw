@@ -6,12 +6,12 @@ manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: d6c47843dedaf45842f70d1bb408b59d63c03eb4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: dd2f4c6b6bb17231ac04b3344e9a39df2cad79d0
+ms.sourcegitcommit: fb808a6fc851a3e5c47e6a7654366145d2f19554
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815501"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84740641"
 ---
 # <a name="how-to-detect-enable-and-disable-smbv1-smbv2-and-smbv3-in-windows"></a>如何偵測、啟用和停用 Windows 中的 SMBv1、SMBv2 和 SMBv3
 
@@ -35,7 +35,7 @@ ms.locfileid: "80815501"
 - 大型 MTU 支援-適用于 10 gigabye （GB） Ethernet 的完整使用    
 - 改良的能源效率-已開啟伺服器的用戶端可以進入睡眠狀態    
 
-在 Windows 8、Windows 8.1、Windows 10、Windows Server 2012 和 Windows Server 2016 中，停用 SMBv3 會停用下列功能（以及前述清單中所述的 SMBv2 功能）： 
+在 Windows 8、Windows 8.1、Windows 10、Windows Server 2012、Windows Server 2012 R2、Windows Server 2016 和 Windows Server 2019 中，停用 SMBv3 會停用下列功能（以及前述清單中所述的 SMBv2 功能）： 
  
 - 透明容錯移轉-在維護或容錯移轉期間，用戶端不會中斷叢集節點的重新連線    
 - Scale Out –所有檔案叢集節點上共用資料的平行存取     
@@ -45,7 +45,7 @@ ms.locfileid: "80815501"
 - 目錄租用-透過快取改善分公司中的應用程式回應時間    
 - 效能優化-針對小型隨機讀取/寫入 i/o 的優化
 
-##  <a name="more-information"></a>詳細資訊
+##  <a name="more-information"></a>相關資訊
 
 SMBv2 通訊協定是在 Windows Vista 和 Windows Server 2008 中引進。
 
@@ -57,11 +57,11 @@ SMBv3 通訊協定是在 Windows 8 和 Windows Server 2012 中引進。
 
 [SMB 的新功能](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff625695(v=ws.10))  
 
-## <a name="how-to-gracefully-remove-smb-v1-in-windows-81-windows-10-windows-2012-r2-and-windows-server-2016"></a>如何在 Windows 8.1、Windows 10、Windows 2012 R2 和 Windows Server 2016 中正常移除 SMB v1
+## <a name="how-to-gracefully-remove-smb-v1-in-windows-81-windows-10-windows-2012-r2-windows-server-2016-and-windows-server-2019"></a>如何在 Windows 8.1、Windows 10、windows 2012 R2、Windows Server 2016 和 Windows Server 2019 中正常地移除 SMB v1
 
-#### <a name="windows-server-2012-r2--2016-powershell-methods"></a>Windows Server 2012 R2 & 2016： PowerShell 方法
+#### <a name="powershell-methods"></a>PowerShell 方法
 
-##### <a name="smb-v1"></a>SMB v1
+##### <a name="smb-v1-client-and-server"></a>SMB v1 （用戶端和伺服器）
 
 - 是否 
 
@@ -75,33 +75,13 @@ SMBv3 通訊協定是在 Windows 8 和 Windows Server 2012 中引進。
   Disable-WindowsOptionalFeature -Online -FeatureName smb1protocol
   ```
 
-- 啟用 
+- 啟用： 
 
   ```PowerShell
   Enable-WindowsOptionalFeature -Online -FeatureName smb1protocol
   ```
 
-##### <a name="smb-v2v3"></a>SMB v2/v3
-
-- 是否
-  
-  ```PowerShell
-  Get-SmbServerConfiguration | Select EnableSMB2Protocol
-  ```
-
-- 啟用
-
-  ```PowerShell
-  Set-SmbServerConfiguration -EnableSMB2Protocol $false
-  ```
-
-- 啟用
-
-  ```PowerShell
-  Set-SmbServerConfiguration -EnableSMB2Protocol $true 
-  ```
-
-#### <a name="windows-server-2012-r2-and-windows-server-2016-server-manager-method-for-disabling-smb"></a>Windows Server 2012 R2 和 Windows Server 2016：用來停用 SMB 的伺服器管理員方法
+#### <a name="windows-server-2012-r2-windows-server-2016-windows-server-2019-server-manager-method-for-disabling-smb"></a>Windows Server 2012 R2、Windows Server 2016、Windows Server 2019：用來停用 SMB 的伺服器管理員方法
 
 ##### <a name="smb-v1"></a>SMB v1
 
@@ -123,13 +103,13 @@ SMBv3 通訊協定是在 Windows 8 和 Windows Server 2012 中引進。
   Disable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol
   ```
 
-- 啟用 
+- 啟用： 
 
   ```PowerShell
   Enable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol
   ```
 
-##### <a name="smb-v2v3protocol"></a>SMB v2/v3 通訊協定
+##### <a name="smb-v2v3protocol-only-disables-smb-v2v3-server"></a>SMB v2/v3 通訊協定（只會停用 SMB v2/v3 伺服器）
 
 - 是否 
   
@@ -143,7 +123,7 @@ SMBv3 通訊協定是在 Windows 8 和 Windows Server 2012 中引進。
   Set-SmbServerConfiguration –EnableSMB2Protocol $false
   ```
 
-- 啟用
+- 啟用：
 
   ```PowerShell
   Set-SmbServerConfiguration –EnableSMB2Protocol $true
@@ -178,7 +158,7 @@ Windows 8 和 Windows Server 2012 引進了新的**SMBServerConfiguration** Wind
   Set-SmbServerConfiguration -EnableSMB1Protocol $false
   ```
 
-- 啟用 
+- 啟用： 
   ```PowerShell
   Set-SmbServerConfiguration -EnableSMB1Protocol $true
   ```
@@ -198,7 +178,7 @@ Windows 8 和 Windows Server 2012 引進了新的**SMBServerConfiguration** Wind
   Set-SmbServerConfiguration -EnableSMB2Protocol $false
   ```
 
-- 啟用
+- 啟用：
   
   ```PowerShell
   Set-SmbServerConfiguration -EnableSMB2Protocol $true
@@ -206,7 +186,7 @@ Windows 8 和 Windows Server 2012 引進了新的**SMBServerConfiguration** Wind
 
 ### <a name="for-windows-7-windows-server-2008-r2-windows-vista-and-windows-server-2008"></a>適用于 Windows 7、Windows Server 2008 R2、Windows Vista 和 Windows Server 2008
 
-若要在 runningWindows 7、Windows Server 2008 R2、Windows Vista 或 Windows Server 2008 的 SMB 伺服器上啟用或停用 SMB 通訊協定，請使用 Windows PowerShell 或登錄編輯程式。 
+若要在執行 Windows 7、Windows Server 2008 R2、Windows Vista 或 Windows Server 2008 的 SMB 伺服器上啟用或停用 SMB 通訊協定，請使用 Windows PowerShell 或登錄編輯程式。 
 
 #### <a name="powershell-methods"></a>PowerShell 方法
 
@@ -229,7 +209,7 @@ Get-Item HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters | ForEa
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 0 –Force
 ```
 
-啟用  
+啟用：  
 
 ```PowerShell
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 1 –Force
@@ -250,7 +230,7 @@ Get-ItemProperty HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB2 -Type DWORD -Value 0 –Force  
 ```
 
-啟用
+啟用：
 
 ```PowerShell
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB2 -Type DWORD -Value 1 –Force 
@@ -259,10 +239,10 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Par
 > [!NOTE]
 > 進行這些變更之後，您必須重新開機電腦。 
 
-#### <a name="registry-editor"></a>登錄編輯程式
+#### <a name="registry-editor"></a>登錄編輯器
 
 > [!IMPORTANT]
-> 請仔細依循本節中的步驟。 若您不正確地修改登錄，可能會發生嚴重的問題。 在修改之前，[備份登錄以供還原](https://support.microsoft.com/help/322756)，以免發生問題。
+> 請仔細依循本節中的步驟。 如果您未正確修改登錄，可能會發生嚴重問題。 在修改之前，[備份登錄以供還原](https://support.microsoft.com/help/322756)，以免發生問題。
  
 若要啟用或停用 SMB 伺服器上的 SMBv1，請設定下列登錄機碼：
 
@@ -287,7 +267,7 @@ Default: 1 = Enabled (No registry key is created)
 ```
 
 > [!NOTE]
-> 您必須在進行這些變更之後重新開機電腦。 
+> 進行這些變更之後，您必須重新開機電腦。 
 
 ## <a name="how-to-detect-status-enable-and-disable-smb-protocols-on-the-smb-client"></a>如何在 SMB 用戶端上偵測狀態、啟用和停用 SMB 通訊協定
 
@@ -311,7 +291,7 @@ Default: 1 = Enabled (No registry key is created)
   sc.exe config mrxsmb10 start= disabled
   ```
 
-- 啟用
+- 啟用：
 
   ```cmd
   sc.exe config lanmanworkstation depend= bowser/mrxsmb10/mrxsmb20/nsi
@@ -334,7 +314,7 @@ Default: 1 = Enabled (No registry key is created)
   sc.exe config mrxsmb20 start= disabled 
   ```
 
-- 啟用
+- 啟用：
 
   ```cmd
   sc.exe config lanmanworkstation depend= bowser/mrxsmb10/mrxsmb20/nsi
@@ -357,7 +337,7 @@ Default: 1 = Enabled (No registry key is created)
 
 若要使用群組原則來進行此設定，請遵循下列步驟：
  
-1. 開啟 [群組原則管理主控台]。 在應包含新的喜好設定項目之群組原則物件 (GPO) 上按一下滑鼠右鍵，然後按一下 [編輯]。
+1. 開啟 [群組原則管理主控台]****。 在應包含新的喜好設定項目之群組原則物件 (GPO) 上按一下滑鼠右鍵，然後按一下 [編輯]****。
 
 2. 在 [**電腦**設定] 底下的主控台樹中，展開 [**喜好**設定] 資料夾，然後展開 [ **Windows 設定**] 資料夾。
 
@@ -403,7 +383,7 @@ Default: 1 = Enabled (No registry key is created)
 
 若要使用群組原則來進行此設定，請遵循下列步驟：
  
-1. 開啟 [群組原則管理主控台]。 在應包含新的喜好設定項目之群組原則物件 (GPO) 上按一下滑鼠右鍵，然後按一下 [編輯]。
+1. 開啟 [群組原則管理主控台]****。 在應包含新的喜好設定項目之群組原則物件 (GPO) 上按一下滑鼠右鍵，然後按一下 [編輯]****。
 
 2. 在 [**電腦**設定] 底下的主控台樹中，展開 [**喜好**設定] 資料夾，然後展開 [ **Windows 設定**] 資料夾。
 

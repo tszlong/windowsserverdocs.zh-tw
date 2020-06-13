@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ce18c615d45d4922c8819d30ff47d54328111170
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 3ad664548dce51d7631a6d1a02d628af91e1921f
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222931"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721135"
 ---
 # <a name="logman-import-and-logman-export"></a>logman 匯入和 logman 匯出
 
@@ -25,8 +25,8 @@ ms.locfileid: "84222931"
 ## <a name="syntax"></a>語法
 
 ```
-logman import <[-n] <name>> <-xml <name>> [options]
-logman export <[-n] <name>> <-xml <name>> [options]
+logman import <[-n] <name> <-xml <name> [options]
+logman export <[-n] <name> <-xml <name> [options]
 ```
 
 ### <a name="parameters"></a>參數
@@ -44,7 +44,7 @@ logman export <[-n] <name>> <-xml <name>> [options]
 
 ### <a name="examples"></a>範例
 
-若要從電腦匯入 XML 檔案*c:\windows\ perf_log .xml* *server_1*作為稱為*perf_log*的資料收集器集合，請輸入：
+若要從電腦匯*c:\windows\perf_log.xml*入 XML 檔案c:\windows\perf_log.xml*server_1*當做名為*perf_log*的資料收集器集合，請輸入：
 
 ```
 logman import perf_log -s server_1 -xml c:\windows\perf_log.xml

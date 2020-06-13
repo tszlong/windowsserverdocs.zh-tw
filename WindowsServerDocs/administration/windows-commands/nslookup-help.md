@@ -1,6 +1,6 @@
 ---
 title: nslookup help
-description: '* * * * 的參考主題'
+description: Nslookup help 命令的參考主題，其會顯示子命令說明內容。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,30 +9,33 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5a967d29486d01ddcd44a9316aa3dbecdd7c95d2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1d9cab0becb33993cd6c517e2aa0f1e26b3839e8
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723709"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721471"
 ---
 # <a name="nslookup-help"></a>nslookup help
 
-
-
-顯示**nslookup**子命令的簡短摘要。
+顯示子命令解說文字。
 
 ## <a name="syntax"></a>語法
 
 ```
-{help | ?}
+help
+```
+
+```
+?
 ```
 
 ### <a name="parameters"></a>參數
 
 | 參數 | 描述 |
-|-----------|-------------|
-|   {說明   |     ?}      |
+| --------- | ----------- |
+| /? | 在命令提示字元顯示說明。 |
+| /help | 在命令提示字元顯示說明。 |
 
 ## <a name="additional-references"></a>其他參考
 

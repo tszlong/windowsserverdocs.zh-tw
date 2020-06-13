@@ -1,6 +1,6 @@
 ---
 title: nslookup set retry
-description: '* * * * 的參考主題'
+description: Nslookup 設定重試命令的參考主題，其會設定嘗試從指定伺服器取得資訊的次數。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,31 +9,38 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1baeeaefedc211434f46bd0cfad713f093a873bf
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 268a9f0023c0e7e19e8ed413895f639444fe3b88
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723588"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721461"
 ---
 # <a name="nslookup-set-retry"></a>nslookup set retry
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-設定重試次數。
+如果在一段時間內未收到回復，則超時時間會加倍，並會重新傳送要求。 此命令會設定要求重新傳送至伺服器以取得資訊的次數，然後再放棄。
+
+> [!NOTE]
+> 若要變更要求超時前的時間長度，請使用[nslookup set timeout](nslookup-set-timeout.md)命令。
+
 ## <a name="syntax"></a>語法
+
 ```
-set retry=<Number>
+set retry=<number>
 ```
+
 ### <a name="parameters"></a>參數
 
-|    參數    |                                      描述                                       |
-|-----------------|----------------------------------------------------------------------------------------|
-|    <Number>     | 指定重試次數的新值。 預設的重試次數為4。 |
-| {help &#124;？} |                 顯示**nslookup**子命令的簡短摘要。                  |
+| 參數 | 描述 |
+| ---------- | ---------- |
+| `<number>` | 指定重試次數的新值。 預設的重試次數為**4**。 |
+| /? | 在命令提示字元顯示說明。 |
+| /help | 在命令提示字元顯示說明。 |
 
-## <a name="remarks"></a>備註
-- 在特定時間內未收到要求的回復時，超時期間會加倍，而且會重新傳送要求。 重試值會控制要求在放棄之前重新傳送的次數。 您可以使用**set timeout**子命令來變更超時時間。
-  ## <a name="additional-references"></a>其他參考
-  - [命令列語法索引鍵](command-line-syntax-key.md)
-  [nslookup 設定 timeout](nslookup-set-timeout.md)
+## <a name="additional-references"></a>其他參考
+
+- [命令列語法關鍵](command-line-syntax-key.md)
+
+- [nslookup set timeout](nslookup-set-timeout.md)

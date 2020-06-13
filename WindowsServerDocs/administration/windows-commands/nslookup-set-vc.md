@@ -1,6 +1,6 @@
 ---
 title: nslookup set vc
-description: '* * * * 的參考主題'
+description: Nslookup set vc 命令的參考主題，其指定將要求傳送至伺服器時是否要使用虛擬電路。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a4cd465ecfbf9da540b8e693a6f0f3938e5752a4
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 49220589de2d2440735e056a8aa3acdd2122a376
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723521"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721201"
 ---
 # <a name="nslookup-set-vc"></a>nslookup set vc
 
-
-
-指定在將要求傳送至伺服器時，使用或不使用虛擬電路。
+指定將要求傳送至伺服器時，是否要使用虛擬電路。
 
 ## <a name="syntax"></a>語法
 
@@ -30,11 +28,13 @@ set [no]vc
 
 ### <a name="parameters"></a>參數
 
-| 參數 |                                              描述                                               |
-|-----------|--------------------------------------------------------------------------------------------------------|
-| **novc**  | 指定將要求傳送至伺服器時，不要使用虛擬電路。 預設值為**novc**。 |
-|  **vc**   |             指定在傳送要求給伺服器時，一律使用虛擬電路。             |
-|   {說明   |                                                   ?}                                                   |
+
+| 參數 | 描述 |
+| ---------- | ---------- |
+| novc | 指定將要求傳送至伺服器時，不要使用虛擬電路。 這是預設值。 |
+| vc | 指定在傳送要求給伺服器時，一律使用虛擬電路。 |
+| /? | 在命令提示字元顯示說明。 |
+| /help | 在命令提示字元顯示說明。 |
 
 ## <a name="additional-references"></a>其他參考
 

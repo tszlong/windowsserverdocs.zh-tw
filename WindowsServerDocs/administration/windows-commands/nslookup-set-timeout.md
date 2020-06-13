@@ -1,6 +1,6 @@
 ---
 title: nslookup set timeout
-description: '* * * * 的參考主題'
+description: Nslookup set timeout 命令的參考主題，它會變更初始秒數，以等候查閱要求的回復。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,36 +9,43 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 68e9630b9690c9b6c9d4c316f8b328897289362c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 0d8fd0d96226e193ba723cc0a726ddf5362a538c
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723548"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721383"
 ---
 # <a name="nslookup-set-timeout"></a>nslookup set timeout
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-變更等候查閱要求回復的初始秒數。
+變更等候查閱要求回復的初始秒數。 如果未在指定的時間內收到回復，則超時期間會加倍，而且會重新傳送要求。 使用[nslookup 設定重試](nslookup-set-retry.md)命令，判斷嘗試傳送要求的次數。
+
 ## <a name="syntax"></a>語法
+
 ```
-set timeout=<Number>
+set timeout=<number>
 ```
+
 ### <a name="parameters"></a>參數
 
-|    參數    |                                           描述                                            |
-|-----------------|--------------------------------------------------------------------------------------------------|
-|    <Number>     | 指定等待回復的秒數。 預設等候的秒數為5。 |
-| {help &#124;？} |                      顯示**nslookup**子命令的簡短摘要。                       |
+| 參數 | 描述 |
+| ---------- | ---------- |
+| `<number>` | 指定等待回復的秒數。 預設等候的秒數為**5**。 |
+| /? | 在命令提示字元顯示說明。 |
+| /help | 在命令提示字元顯示說明。 |
 
-## <a name="remarks"></a>備註
-- 在指定的時段內未收到要求的回復時，會將超時時間加倍，並再次傳送要求。 您可以使用 [**設定重試**] 命令來控制重試次數。
-  ## <a name="examples"></a>範例
-  若要將取得回應的時間設定為2秒：
-  ```
-  set timeout=2
-  ```
-  ## <a name="additional-references"></a>其他參考
-  - [命令列語法索引鍵](command-line-syntax-key.md)
-  [nslookup 設定重試](nslookup-set-retry.md)
+### <a name="examples"></a>範例
+
+若要將取得回應的時間設定為2秒：
+
+```
+set timeout=2
+```
+
+## <a name="additional-references"></a>其他參考
+
+- [命令列語法關鍵](command-line-syntax-key.md)
+
+- [nslookup set retry](nslookup-set-retry.md)

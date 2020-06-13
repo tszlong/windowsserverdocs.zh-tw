@@ -6,12 +6,12 @@ manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: fdc90c6e5d6790348fafc12079eec5ac7e387b3f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a1e1a30530f937289770bcef9e71189bf69719ce
+ms.sourcegitcommit: 7200143aa787c7ac05ae0e012263b1c9a95b87ed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815311"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721756"
 ---
 # <a name="smbv1-is-not-installed-by-default-in-windows-10-version-1709-windows-server-version-1709-and-later-versions"></a>在 Windows 10 1709 版、Windows Server 1709 版和更新版本中，預設不會安裝 SMBv1
 
@@ -30,7 +30,7 @@ SMBv1 在 Windows 10 秋季建立者更新和 Windows Server 版本1709（RS3）
 - Windows 10 企業版和 Windows 10 教育版的就地升級和 Insider 航班不會自動移除 SMBv1。 系統管理員必須決定在這些受管理的環境中卸載 SMBv1。 在 Windows 10 版本1809（RS5）和更新版本中，系統管理員可以藉由開啟「SMB 1.0/CIFS 自動移除」功能來啟用自動移除 SMBv1。    
 - 15天后自動移除 SMBv1 是一次性的作業。 如果系統管理員重新安裝 SMBv1，將不會再嘗試卸載。
 - SMB 版本2.02、2.1、3.0、3.02 和3.1.1 功能仍受到完整支援，且預設會納入為 SMBv2 二進位檔的一部分。    
-- 因為電腦瀏覽器服務依賴 SMBv1，所以如果卸載 SMBv1 用戶端或伺服器，就會卸載服務。 這表示 Explorer Networkcan 不會再透過舊版 NetBIOS 資料包流覽方法來顯示 Windows 電腦。    
+- 因為電腦瀏覽器服務依賴 SMBv1，所以如果卸載 SMBv1 用戶端或伺服器，就會卸載服務。 這表示 Explorer 網路無法再透過舊版 NetBIOS 資料包流覽方法來顯示 Windows 電腦。    
 - 您仍然可以在所有版本的 Windows 10 和 Windows Server 2016 中重新安裝 SMBv1。    
  
   > [!NOTE]
@@ -108,12 +108,12 @@ Guidance:
 The client has SMB1 disabled or uninstalled. For more information: https://go.microsoft.com/fwlink/?linkid=852747.     
 ```
 
-這些裝置不可能執行 Windows。 它們較可能執行較舊版本的 Linux、Samba 或其他類型的協力廠商軟體，以提供 SMB 服務。 這些版本的 Linux 和 Samba 通常已不再受支援。 
+這些裝置不可能執行 Windows。它們較可能執行較舊版本的 Linux、Samba 或其他類型的協力廠商軟體，以提供 SMB 服務。 這些版本的 Linux 和 Samba 通常已不再受支援。 
 
 > [!NOTE]
 > Windows 10 版本1709也稱為「秋季建立者更新」。   
 
-## <a name="more-information"></a>詳細資訊
+## <a name="more-information"></a>相關資訊
 
 若要解決此問題，請洽詢僅支援 SMBv1 的產品製造商，並要求支援 SMBv 2.02 或更新版本的軟體或固件更新。 如需目前已知的廠商清單及其 SMBv1 需求，請參閱下列 Windows 和 Windows Server Storage 工程小組的 Blog 文章： 
 
@@ -122,7 +122,7 @@ The client has SMB1 disabled or uninstalled. For more information: https://go.mi
 
 如果需要 SMBv1 才能為舊版軟體行為提供應用程式相容性（例如停用 oplocks 的需求），Windows 會提供新的 SMB 共用旗標，稱為租用模式。此旗標會指定共用是否停用新式 SMB 的語義，例如租用和 oplocks。
 
-您可以指定不使用 oplocks 或租用的共用，以允許繼承應用程式使用 SMBv2 或更新版本。 若要這麼做，請使用**directorynew-smbshare**或**directorynew-smbshare** PowerShell Cmdlet 搭配 **-LeasingMode None** 參數。
+您可以指定不使用 oplocks 或租用的共用，以允許繼承應用程式使用 SMBv2 或更新版本。 若要這麼做，請使用**directorynew-smbshare**或**directorynew-smbshare** PowerShell Cmdlet 搭配 **-LeasingMode None**   參數。
 
 > [!NOTE]
 > 您應該只在協力廠商應用程式需要的共用上使用此選項，才能取得舊版支援。 請勿在向外延展檔案伺服器所使用的使用者資料共用或 CA 共用上指定租用模式。 這是因為移除 oplocks 和租用會導致大部分應用程式中的不穩定和資料損毀。 租用模式只適用于共用模式。 可供任何用戶端作業系統使用。
@@ -133,14 +133,14 @@ The client has SMB1 disabled or uninstalled. For more information: https://go.mi
 
 不過，如果您仍然需要使用 Explorer 網路輸入家庭和小型企業工作組環境來尋找以 Windows 為基礎的電腦，您可以在不再使用 SMBv1 的 Windows 電腦上執行下列步驟： 
  
-1. 啟動 [函數探索提供者主機] 和 [函數探索資源發行集] 服務，然後將它們設定為 **[自動（延遲啟動）** ]。
+1. 啟動 [函數探索提供者主機] 和 [函數探索資源發行集] 服務，然後將它們設定為 **[自動（延遲啟動）**]。
 
 2. 當您開啟 [Explorer 網路] 時，請在系統提示時啟用網路探索。    
  
 該子網內所有具有這些設定的 Windows 裝置，現在都會出現在 [網路] 中供流覽。 這會使用 WS-DISCOVERY 通訊協定。 當 Windows 裝置出現之後，如果裝置仍未出現在此瀏覽清單中，請洽詢其他廠商和製造商。 這可能是因為已停用此通訊協定，或是僅支援 SMBv1。
 
 > [!NOTE]
-> 建議您對應磁片磁碟機和印表機，而不要啟用這項功能，但仍需要搜尋和流覽其裝置。 對應的資源較容易找到，需要較少的定型，而且更安全地使用。 如果透過群組原則自動提供這些資源，這就更是如此。 系統管理員可以使用 IP 位址、Active Directory Domain Services （AD DS）、Bonjour、Mdn、uPnP 等等，以不同于舊版電腦瀏覽器服務的方法來設定印表機。
+> 我們建議您對應磁片磁碟機和印表機，而不要啟用這項功能，但仍需要搜尋和流覽其裝置。 對應的資源較容易找到，需要較少的定型，而且更安全地使用。 如果透過群組原則自動提供這些資源，這就更是如此。系統管理員可以使用 IP 位址、Active Directory Domain Services （AD DS）、Bonjour、Mdn、uPnP 等等，以不同于舊版電腦瀏覽器服務的方法來設定印表機。
 
 如果您無法使用上述任何因應措施，或如果應用程式製造商無法提供支援的 SMB 版本，您可以遵循[如何在 Windows 中偵測、啟用和停用 SMBv1、SMBv2 和 SMBv3](detect-enable-and-disable-smbv1-v2-v3.md)中的步驟，手動重新啟用 SMBv1。
 
@@ -161,6 +161,6 @@ Windows Server 2012 和更新版本的伺服器作業系統包含適用于檔案
 
 您應該忽略此特定 BPA 規則的指導方針，其已被取代。 我們重複：不要啟用 SMB 1.0。
 
-## <a name="references"></a>參考
+## <a name="references"></a>參考資料
 
 [停止使用 SMB1](https://aka.ms/stopusingsmb1)

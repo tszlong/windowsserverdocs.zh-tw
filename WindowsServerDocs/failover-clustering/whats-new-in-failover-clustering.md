@@ -8,12 +8,12 @@ manager: lizross
 author: JasonGerend
 ms.author: jgerend
 ms.date: 10/18/2018
-ms.openlocfilehash: 926c9c862d77c9fe082274a44af57e3b8339a655
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: cdc9280c4c7129d2e76341bd97b0ae3b8209888f
+ms.sourcegitcommit: 7200143aa787c7ac05ae0e012263b1c9a95b87ed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720498"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721736"
 ---
 # <a name="whats-new-in-failover-clustering"></a>容錯移轉叢集的新功能
 
@@ -76,12 +76,12 @@ ms.locfileid: "82720498"
 
 **這個變更增加了什麼價值？**  
 
-將 Hyper-v 或擴充檔案伺服器叢集從 Windows Server 2012 R2 升級到 Windows Server 2016 不再需要停機。 叢集將繼續在 Windows Server 2012 R2 層級上運作，直到叢集中的所有節點都執行 Windows Server 2016 為止。 叢集功能等級會使用 Windows PowerShell cmdlt `Update-ClusterFunctionalLevel`升級至 windows Server 2016。
+將 Hyper-v 或擴充檔案伺服器叢集從 Windows Server 2012 R2 升級到 Windows Server 2016 不再需要停機。 叢集將繼續在 Windows Server 2012 R2 層級上運作，直到叢集中的所有節點都執行 Windows Server 2016 為止。 叢集功能等級會使用 Windows PowerShell cmdlt 升級至 Windows Server 2016 `Update-ClusterFunctionalLevel` 。
 
 > [!WARNING]  
 > - 更新叢集功能等級之後，您就無法回到 Windows Server 2012 R2 叢集功能等級。
 >
-> - `Update-ClusterFunctionalLevel`在執行指令程式之前，進程是可復原的，而且可以新增 windows Server 2012 R2 節點，而且可以移除 windows server 2016 節點。
+> - 在 `Update-ClusterFunctionalLevel` 執行指令程式之前，進程是可復原的，而且可以新增 Windows server 2012 R2 節點，而且可以移除 Windows server 2016 節點。
 
 **有哪些不同？**  
 
@@ -95,7 +95,7 @@ Hyper-v 或向外延展檔案伺服器容錯移轉叢集現在可以輕鬆地升
 -   此時，叢集會被視為在混合模式中執行，因為叢集節點正在執行 Windows Server 2012 R2 或 Windows Server 2016。 
 -   叢集功能等級會保留在 Windows Server 2012 R2。 在此功能層級，Windows Server 2016 中會影響與舊版作業系統相容性的新功能將無法使用。 
 -   最後，所有節點都會升級至 Windows Server 2016。 
--   然後，使用 Windows PowerShell Cmdlet `Update-ClusterFunctionalLevel`，將叢集功能等級變更為 windows Server 2016。 此時，您可以利用 Windows Server 2016 的功能。 
+-   然後，使用 Windows PowerShell Cmdlet，將叢集功能等級變更為 Windows Server 2016 `Update-ClusterFunctionalLevel` 。 此時，您可以利用 Windows Server 2016 的功能。 
 
 如需詳細資訊，請參閱叢集[作業系統輪流升級](cluster-operating-system-rolling-upgrade.md)。 
 
@@ -176,13 +176,13 @@ Hyper-v 或向外延展檔案伺服器容錯移轉叢集現在可以輕鬆地升
 
 為了協助診斷容錯移轉叢集的問題，Windows Server 2016 包括下列各項：  
 
-- 叢集記錄檔的幾項增強功能（例如時區資訊和 DiagnosticVerbose 記錄），可讓您更輕鬆地針對容錯移轉叢集問題進行疑難排解。 如需詳細資訊，請參閱[Windows Server 2016 容錯移轉叢集疑難排解增強功能-叢集記錄](https://blogs.msdn.com/b/clustering/archive/2015/05/15/10614930.aspx)檔。 
+- 叢集記錄檔的幾項增強功能（例如時區資訊和 DiagnosticVerbose 記錄），可讓您更輕鬆地針對容錯移轉叢集問題進行疑難排解。 如需詳細資訊，請參閱[Windows Server 2016 容錯移轉叢集疑難排解增強功能-叢集記錄](https://techcommunity.microsoft.com/t5/failover-clustering/windows-server-2016-failover-cluster-troubleshooting/ba-p/372005)檔。
 
-- 一種新的「使用中**記憶體傾印**」類型，可篩選出配置給虛擬機器的大部分記憶體頁面，因而使記憶體的 dmp 變得更小且更容易儲存或複製。 如需詳細資訊，請參閱[Windows Server 2016 容錯移轉叢集疑難排解增強功能-Active Dump](https://blogs.msdn.com/b/clustering/archive/2015/05/18/10615526.aspx)。 
+- 一種新的「使用中**記憶體傾印**」類型，可篩選出配置給虛擬機器的大部分記憶體頁面，因而使記憶體的 dmp 變得更小且更容易儲存或複製。 如需詳細資訊，請參閱[Windows Server 2016 容錯移轉叢集疑難排解增強功能-Active Dump](https://techcommunity.microsoft.com/t5/failover-clustering/windows-server-2016-failover-cluster-troubleshooting/ba-p/372008)。
 
 ### <a name="site-aware-failover-clusters"></a><a name="BKMK_SiteAware"></a>網站感知容錯移轉叢集
 
-Windows Server 2016 包含網站感知的容錯移轉叢集，可根據實體位置（網站）在延展的叢集中啟用群組節點。 叢集網站感知會增強叢集生命週期期間的關鍵作業，例如容錯移轉行為、放置原則、節點之間的心跳，以及仲裁行為。 如需詳細資訊，請參閱[Windows Server 2016 中的網站感知容錯移轉](https://blogs.msdn.com/b/clustering/archive/2015/08/19/10636304.aspx)叢集。 
+Windows Server 2016 包含網站感知的容錯移轉叢集，可根據實體位置（網站）在延展的叢集中啟用群組節點。 叢集網站感知會增強叢集生命週期期間的關鍵作業，例如容錯移轉行為、放置原則、節點之間的信號，以及仲裁行為。 如需詳細資訊，請參閱[Windows Server 2016 中的網站感知容錯移轉](https://techcommunity.microsoft.com/t5/failover-clustering/site-aware-failover-clusters-in-windows-server-2016/ba-p/372060)叢集。
 
 ### <a name="workgroup-and-multi-domain-clusters"></a><a name="BKMK_multidomainclusters"></a>工作群組和多網域叢集
 
@@ -194,7 +194,7 @@ Windows Server 2016 包含網站感知的容錯移轉叢集，可根據實體位
 
 -   **工作組叢集。** 節點為成員伺服器/工作組（未加入網域）的叢集。 
 
-如需詳細資訊，請參閱[Windows Server 2016 中的工作組和多網域](https://blogs.msdn.com/b/clustering/archive/2015/08/17/10635825.aspx)叢集
+如需詳細資訊，請參閱[Windows Server 2016 中的工作組和多網域](https://techcommunity.microsoft.com/t5/failover-clustering/workgroup-and-multi-domain-clusters-in-windows-server-2016/ba-p/372059)叢集
 
 ### <a name="virtual-machine-load-balancing"></a><a name="BKMK_VMLoadBalancing"></a>虛擬機器負載平衡  
 
@@ -212,5 +212,5 @@ Windows Server 2016 包含網站感知的容錯移轉叢集，可根據實體位
 
 ## <a name="see-also"></a>另請參閱
 
-* [儲存體](../storage/storage.md)  
+* [Storage](../storage/storage.md)  
 * [Windows Server 2016 中存放裝置的新功能](../storage/whats-new-in-storage.md)  

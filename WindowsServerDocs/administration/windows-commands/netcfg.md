@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6910f7e3f3d2f100942897bd9712293f7eb0f4d9
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 5a308441df55873b205972d703ec52f53345beb5
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354258"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721551"
 ---
 # <a name="netcfg"></a>netcfg
 
@@ -40,7 +40,7 @@ netcfg [/v] [/e] [/winpe] [/l ] /c /i
 | /i | 提供元件識別碼。 |
 | /s | 提供要顯示的元件類型，包括介面卡的**\ta**或 net 元件的**n** 。 |
 | /b | 顯示系結路徑，後面接著包含路徑名稱的字串。 |
-| /? | 在命令提示字元顯示說明。 |                                                    |
+| /? | 在命令提示字元顯示說明。 |
 
 ### <a name="examples"></a>範例
 

@@ -1,6 +1,6 @@
 ---
 title: nslookup root
-description: '* * * * 的參考主題'
+description: Nslookup 根命令的參考主題，它會將伺服器的預設伺服器變更為網域名稱系統（DNS）功能變數名稱空間的根目錄。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,30 +9,37 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bdfbe40443cf8f2fec2f81608bb93603cd74937f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 0f1f2bbe3b71660d079a0b7c87f5be487e0ff437
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723695"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721651"
 ---
 # <a name="nslookup-root"></a>nslookup root
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-將伺服器的預設伺服器變更為網域名稱系統（DNS）功能變數名稱空間的根目錄。
+將伺服器的預設伺服器變更為網域名稱系統（DNS）功能變數名稱空間的根目錄。 目前會使用 ns.nic.ddn.mil 名稱伺服器。 您可以使用[nslookup set root](nslookup-set-root.md)命令來變更根功能變數名稱伺服器的名稱。
+
+> [!NOTE]
+> 此命令與相同 `lserver ns.nic.ddn.mil` 。
+
 ## <a name="syntax"></a>語法
+
 ```
-root 
+root
 ```
+
 ### <a name="parameters"></a>參數
 
-|    參數    |                      描述                      |
-|-----------------|-------------------------------------------------------|
-| {help &#124;？} | 顯示**nslookup**子命令的簡短摘要。 |
+| 參數 | 描述 |
+| --------- | ----------- |
+| /? | 在命令提示字元顯示說明。 |
+| /help | 在命令提示字元顯示說明。 |
 
-## <a name="remarks"></a>備註
-- 目前會使用 ns.nic.ddn.mil 名稱伺服器。 此命令是 lserver ns.nic.ddn.mil 的同義字。 您可以使用 [**設定根**] 命令來變更根功能變數名稱伺服器的名稱。
-  ## <a name="additional-references"></a>其他參考
-  - [命令列語法索引鍵](command-line-syntax-key.md)
-  [nslookup 設定根](nslookup-set-root.md)
+## <a name="additional-references"></a>其他參考
+
+- [命令列語法關鍵](command-line-syntax-key.md)
+
+- [nslookup set root](nslookup-set-root.md)

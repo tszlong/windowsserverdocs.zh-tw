@@ -1,6 +1,6 @@
 ---
 title: nslookup set domain
-description: '* * * * 的參考主題'
+description: Nslookup set domain 命令的參考主題，會將預設網域名稱系統（DNS）功能變數名稱變更為指定的名稱。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,32 +9,45 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f6ee52cd5ad35dcfc6da1cd3885f66124338d62f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e672bf53e655ef12cadb2a30aaa377b24e49afec
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723611"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721631"
 ---
 # <a name="nslookup-set-domain"></a>nslookup set domain
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 將預設網域名稱系統（DNS）功能變數名稱變更為指定的名稱。
+
 ## <a name="syntax"></a>語法
+
 ```
-set domain=<DomainName>
+set domain=<domainname>
 ```
+
 ### <a name="parameters"></a>參數
 
-|    參數    |                                           描述                                           |
-|-----------------|-------------------------------------------------------------------------------------------------|
-|  <DomainName>   | 指定預設 DNS 功能變數名稱的新名稱。 預設的功能變數名稱是主機名稱。 |
-| {help &#124;？} |                      顯示**nslookup**子命令的簡短摘要。                      |
+| 參數 | 描述 |
+| --------- | ----------- |
+| `<domainname>` | 指定預設 DNS 功能變數名稱的新名稱。 預設值是主機的名稱。 |
+| /? | 在命令提示字元顯示說明。 |
+| /help | 在命令提示字元顯示說明。 |
 
-## <a name="remarks"></a>備註
-- 預設 DNS 功能變數名稱會附加至查閱要求，視**defname**和**搜尋**選項的狀態而定。 如果 DNS 網域搜尋清單的名稱中至少有兩個元件，則會包含預設 DNS 網域的父系。 例如，如果預設的 DNS 網域是 mfg.widgets.com，搜尋清單會同時命名為 mfg.widgets.com 和 widgets.com。 使用**set srchlist**命令來指定不同的清單，以及**設定 all**命令以顯示清單。
-  ## <a name="additional-references"></a>其他參考
-  - [命令列語法索引鍵](command-line-syntax-key.md)
-  [nslookup set srchlist](nslookup-set-srchlist.md)
-  [nslookup set all](nslookup-set-all.md)
+#### <a name="remarks"></a>備註
+
+- 預設 DNS 功能變數名稱會附加至查閱要求，視**defname**和**搜尋**選項的狀態而定。
+
+- 如果 DNS 網域搜尋清單的名稱中至少有兩個元件，則會包含預設 DNS 網域的父系。 例如，如果預設的 DNS 網域是 mfg.widgets.com，搜尋清單會同時命名為 mfg.widgets.com 和 widgets.com。
+
+- 使用[nslookup set srchlist](nslookup-set-srchlist.md)命令來指定不同的清單和[nslookup set all](nslookup-set-all.md)命令，以顯示清單。
+
+## <a name="additional-references"></a>其他參考
+
+- [命令列語法關鍵](command-line-syntax-key.md)
+
+- [nslookup set srchlist](nslookup-set-srchlist.md)
+
+- [nslookup set all](nslookup-set-all.md)

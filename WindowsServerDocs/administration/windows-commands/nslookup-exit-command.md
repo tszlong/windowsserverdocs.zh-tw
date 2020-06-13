@@ -1,6 +1,6 @@
 ---
-title: nslookup exit 命令
-description: '* * * * 的參考主題'
+title: nslookup 結束
+description: Nslookup exit 命令的參考主題，它會結束 nslookup 命令列工具。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,30 +9,29 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 25696b5889d4b430586285de1f4d6471f9e28b27
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c233e39d711c37540c30bc64296c6b24b57689c8
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723729"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721481"
 ---
-# <a name="nslookup-exit-command"></a>nslookup exit 命令
+# <a name="nslookup-exit"></a>nslookup/exit
 
-
-
-結束**nslookup**。
+結束 nslookup 命令列工具。
 
 ## <a name="syntax"></a>語法
 
 ```
-Nslookup /exit
+nslookup /exit
 ```
 
 ### <a name="parameters"></a>參數
 
 | 參數 | 描述 |
-|-----------|-------------|
-|   {說明   |     ?}      |
+| --------- | ----------- |
+| /? | 在命令提示字元顯示說明。 |
+| /help | 在命令提示字元顯示說明。 |
 
 ## <a name="additional-references"></a>其他參考
 
