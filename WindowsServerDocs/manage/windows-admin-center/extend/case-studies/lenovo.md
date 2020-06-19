@@ -8,12 +8,12 @@ ms.author: jol
 ms.date: 1/7/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 812091715ed6541294650ba7e6ddde9ab1f2fecb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a51b4bb5f6dc7dcd002b8e7a8998ce731fa374ed
+ms.sourcegitcommit: fe89b8001ad664b3618708b013490de93501db05
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407028"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84942321"
 ---
 # <a name="lenovo-xclarity-integrator-extension"></a>聯想 XClarity 整合器擴充功能
 
@@ -33,9 +33,19 @@ XClarity 整合器延伸模組中包含的解決方案延伸模組，可讓您�
 
 ![聯想延伸模組](../../media/extend-case-study-lenovo/lenovo-3.png)
 
-容錯移轉叢集和超交集叢集的工具擴充功能提供儀表板，顯示整體叢集硬體健全狀況狀態、狀態警示、固件一致性狀態和報告、耗電量和溫度，以及風扇和電源供應器健全狀況狀態。
+容錯移轉叢集和超交集叢集的工具擴充功能，提供顯示整體叢集硬體健全狀況狀態、狀態警示、固件一致性狀態和報告、耗電量和溫度，以及風扇和電源供應器健康狀態的儀表板。
 
-![聯想延伸模組](../../media/extend-case-study-lenovo/lenovo-4.png)
-![聯想延伸模組](../../media/extend-case-study-lenovo/lenovo-5.png)
+![聯想延伸模組 ](../../media/extend-case-study-lenovo/lenovo-4.png)
+ ![ 聯想延伸模組](../../media/extend-case-study-lenovo/lenovo-5.png)
+
+Windows 伺服器和叢集的解決方案延伸模組和工具擴充提供了輪流（叢集感知）伺服器更新功能。 這有助於防止任何工作負載在伺服器更新期間中斷。 目前，延伸模組支援任何聯想伺服器的個別固件更新和合規性政策固件更新。 它們也支援聯想 ThinkAgile MX HCI 叢集伺服器的最佳規格固件/驅動程式更新。
+
+![聯想延伸模組](../../media/extend-case-study-lenovo/lenovo-6-fwupdate.png)
+
+適用于超大範圍叢集的工具擴充功能會為已 ThinkAgile 的 MX HCI 叢集伺服器提供磁片/存放集區管理函式。 這些功能包括伺服器後端/front 圖形視圖，以呈現伺服器和磁片狀態。 透過 wizard 和圖形視圖的協助，將磁片新增至存放集區、從存放集區移除磁片、更換磁片，或在伺服器/磁片位置 Led 上依光源尋找伺服器/磁片等作業，變得更容易。
+
+![聯想延伸模組](../../media/extend-case-study-lenovo/lenovo-7-diskmgr.png)
+
+在2.1 版中，聯想延伸模組引進了角色型存取控制功能。 如果已針對硬體管理套用「聯想 XClarity 系統管理員」，則會啟用這些功能。
 
 在[聯想網站](https://support.lenovo.com/us/en/solutions/ht507549)上深入瞭解 Windows 系統管理中心的聯想 XClarity 整合器供應專案。

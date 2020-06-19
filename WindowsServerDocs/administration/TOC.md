@@ -1,4 +1,4 @@
-# [管理](manage-windows-server.md)
+# [管理](manage-windows-server.yml)
 ## [使用 Windows Admin Center 管理您的環境 (新增！)](../manage/windows-admin-center/overview.md)
 ## 管理 Windows Server 系統和環境
 ### [管理 Windows Server 混合式雲端列印](hybrid-cloud-print/hybrid-cloud-print-overview.md)

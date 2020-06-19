@@ -1,0 +1,120 @@
+### YamlMime:Landing
+title: 網路功能文件
+summary: 網路功能是軟體定義資料中心 (SDDC) 平台的一個基本組件，而 Windows Server 2016 提供新的和改進的軟體定義網路 (SDN) 技術，可協助您針對整個組織移至可完全實現的 SDDC 解決方案。
+metadata:
+  title: 網路功能文件
+  description: 本主題提供 Windows Server 2016 中可用的「軟體定義網路」和「網路平台」技術概觀。
+  layout: LandingPage
+  ms.technology: networking
+  ms.topic: landing-page
+  manager: dougkim
+  author: AnirbanPaul
+  ms.author: anpaul
+  ms.date: 06/11/2020
+  ms.assetid: daaf6b61-5953-4c2d-b6b8-7c885b552646
+  ms.localizationpriority: medium
+  ms.openlocfilehash: 9b419210689e0ca11bfc2c285cd6669d3a883679
+  ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+  ms.translationtype: HT
+  ms.contentlocale: zh-TW
+  ms.lasthandoff: 06/18/2020
+  ms.locfileid: "85070997"
+landingContent:
+- title: 關於網路功能
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Windows Server 支援的網路功能案例
+      url: windows-server-supported-networking-scenarios.md
+  - linkListType: whats-new
+    links:
+    - text: 網路的新功能
+      url: What-s-New-in-Networking.md
+  - linkListType: reference
+    links:
+    - text: Windows Server 程式庫
+      url: /previous-versions/windows/
+    - text: Windows Server 2003/2003 R2 退場內容
+      url: https://www.microsoft.com/download/details.aspx?id=53314
+- title: 軟體定義的網路功能
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 軟體定義網路 (SDN)
+      url: sdn/index.yml
+    - text: 網路控制站
+      url: sdn/technologies/network-controller/Network-Controller.md
+    - text: SDN 的軟體負載平衡 (SLB)
+      url: sdn/technologies/network-function-virtualization/software-load-balancing-for-sdn.md
+    - text: 適用於 SDN 的 RAS 閘道
+      url: sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md
+    - text: 網路函式虛擬化
+      url: sdn/technologies/network-function-virtualization/Network-Function-Virtualization.md
+    - text: 資料中心防火牆概觀
+      url: sdn/technologies/network-function-virtualization/Datacenter-Firewall-Overview.md
+  - linkListType: deploy
+    links:
+    - text: 使用指令碼部署 SDN 基礎結構
+      url: sdn/deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md
+- title: 網路技術
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: BranchCache
+      url: branchcache/BranchCache.md
+    - text: 核心網路指南
+      url: core-network-guide/core-network-guide-windows-server.md
+    - text: DirectAccess
+      url: ../remote/remote-access/da-stub.md
+    - text: 網域名稱系統 (DNS)
+      url: dns/dns-top.md
+    - text: 動態主機設定通訊協定 (DHCP)
+      url: technologies/dhcp/dhcp-top.md
+    - text: Hyper-V 網路虛擬化
+      url: sdn/technologies/hyper-v-network-virtualization/Hyper-V-Network-Virtualization.md
+    - text: Hyper-V 虛擬交換器
+      url: ../virtualization/hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md
+    - text: IP 位址管理 (IPAM)
+      url: technologies/ipam/ipam-top.md
+    - text: 網路負載平衡 (NLB)
+      url: technologies/Network-Load-Balancing.md
+- title: 網路技術
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 網路原則伺服器
+      url: technologies/nps/nps-top.md
+    - text: 網路殼層 (Netsh)
+      url: technologies/netsh/netsh.md
+    - text: 網路子系統效能調整
+      url: technologies/network-subsystem/net-sub-performance-top.md
+    - text: NIC 小組
+      url: technologies/nic-teaming/NIC-Teaming.md
+    - text: 服務品質 (QoS) 原則
+      url: technologies/qos/qos-policy-top.md
+    - text: Windows 網際網路名稱服務 (WINS)
+      url: technologies/wins/wins-top.md
+    - text: 遠端存取
+      url: ../remote/remote-access/remote-access.md
+    - text: Windows 容器的網路功能
+      url: /virtualization/windowscontainers/container-networking/architecture
+    - text: 虛擬私人網路 (VPN)
+      url: ../remote/remote-access/vpn/vpn-top.md
+  - linkListType: reference
+    links:
+    - text: Windows Server 2016 中的 Web 應用程式 Proxy
+      url: /windows-server/remote/remote-access/web-application-proxy/web-application-proxy-windows-server
+    - text: 遠端存取 Always On VPN 部署指南
+      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy
+- title: 高效能網路功能
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 高效能網路功能
+      url: technologies/hpn/hpn-top.md
+    - text: 聚合式網路介面卡 (NIC)
+      url: technologies/conv-nic/cnic-top.md
+    - text: 資料中心橋接 (DCB)
+      url: technologies/dcb/dcb-top.md
+    - text: 虛擬接收端調整 (vRSS)
+      url: technologies/vrss/vrss-top.md
