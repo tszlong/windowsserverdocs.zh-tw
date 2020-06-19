@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5ae082ebd2b5cf98be891d8f557f9e42d7724d22
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: de96280f42f1e3002c4379390367856dcdcb885a
+ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82716090"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85070184"
 ---
 # <a name="change-user"></a>change user
 
@@ -50,7 +50,7 @@ change user {/execute | /install | /query}
 
 - 當系統執行**變更使用者/install**時，會發生幾件事。 所有建立的登錄專案都會以**HKEY_LOCAL_MACHINE \Software\microsoft\windows server\ NT\Currentversion\Terminal Server\Install**為依據，在**\SOFTWARE**子機碼或**\MACHINE**子機碼中。 新增至**HKEY_CURRENT_USER**的子機碼會在**\SOFTWARE**子機碼下複製，而新增至**HKEY_LOCAL_MACHINE**的子機碼會複製到**\MACHINE**子機碼下。 如果應用程式使用系統呼叫（例如 GetWindowsdirectory）來查詢 Windows 目錄，rd 工作階段主機伺服器會傳回 systemroot 目錄。 如果使用系統呼叫（例如 WritePrivateProfileString）新增任何 .ini 檔案專案，則會將它們新增至 systemroot 目錄底下的 .ini 檔案。
 
-- 當系統返回**變更使用者/execute**，而應用程式嘗試讀取**HKEY_CURRENT_USER**不存在的登錄專案時，遠端桌面服務檢查是否有金鑰複本存在於**\Terminal Server\Install**子機碼底下。 如果有，子機碼就會複製到**HKEY_CURRRENT_USER**底下的適當位置。 如果應用程式嘗試從不存在的 .ini 檔案讀取，遠端桌面服務會在系統根目錄下搜尋該 .ini 檔案。 如果 .ini 檔案位於系統根目錄中，它會複製到使用者主目錄的 \Windows 子目錄中。 如果應用程式查詢 Windows 目錄，rd 工作階段主機伺服器會傳回使用者主目錄的 \Windows 子目錄。
+- 當系統返回**變更使用者/execute**，而應用程式嘗試讀取**HKEY_CURRENT_USER**不存在的登錄專案時，遠端桌面服務檢查是否有金鑰複本存在於**\Terminal Server\Install**子機碼底下。 如果有，子機碼就會複製到**HKEY_CURRENT_USER**底下的適當位置。 如果應用程式嘗試從不存在的 .ini 檔案讀取，遠端桌面服務會在系統根目錄下搜尋該 .ini 檔案。 如果 .ini 檔案位於系統根目錄中，它會複製到使用者主目錄的 \Windows 子目錄中。 如果應用程式查詢 Windows 目錄，rd 工作階段主機伺服器會傳回使用者主目錄的 \Windows 子目錄。
 
 - 當您登入時，遠端桌面服務會檢查其 system .ini 檔案是否比您電腦上的 .ini 檔案更新。 如果系統版本較新，則您的 .ini 檔案會被取代或與較新的版本合併。 這取決於是否為這個 .ini 檔案設定 INISYNC 位0x40。 您先前版本的 .ini 檔案已重新命名為 Inifile. ctx。 如果**\Terminal Server\Install**子機碼下的系統登錄值比**HKEY_CURRENT_USER**下的版本還新，則會刪除您的子機碼版本，並以**\Terminal Server\Install**中的新子機碼取代。
 

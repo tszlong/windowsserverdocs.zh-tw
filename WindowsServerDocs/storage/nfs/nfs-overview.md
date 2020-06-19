@@ -8,20 +8,20 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 72f71bc6605103f8240bcd531da3a5b58d470181
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2589e21c54fa864629f81b5889d0442c6f0de254
+ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403047"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85070559"
 ---
 # <a name="network-file-system-overview"></a>網路檔案系統概觀
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用于： Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 本主題說明 Windows Server 中的檔案和存放服務伺服器角色所包含的網路檔案系統角色服務和功能。 網路檔案系統（NFS）為具有同時包含 Windows 和非 Windows 電腦的異類環境的企業，提供檔案共用解決方案。
 
-## <a name="feature-description"></a>功能描述
+## <a name="feature-description"></a>功能說明
 
 使用 NFS 通訊協定，您可以在執行 Windows 的電腦與其他非 Windows 作業系統（例如 Linux 或 UNIX）之間傳輸檔案。
 
@@ -51,7 +51,7 @@ Windows 支援多個版本的 NFS 用戶端和伺服器，視作業系統版本�
 
 |特色/功能|新功能或更新功能|描述|
 |---|---|---|
-|[NFS 版本4。1](#nfs-version-41)|新的|相較于 NFS 第3版，提高安全性、效能和互通性。|
+|[NFS 版本4。1](#nfs-version-41)|新增|相較于 NFS 第3版，提高安全性、效能和互通性。|
 |[NFS 基礎結構](#nfs-infrastructure)|已更新|改善部署和管理性，並提高安全性。|
 |[NFS 第3版持續可用性](#nfs-version-3-continuous-availability)|已更新|改善 NFS 第3版用戶端的持續可用性。|
 |[部署和管理能力改善](#deployment-and-manageability-improvements)|已更新|可讓您使用新的 Windows PowerShell Cmdlet 和新的 WMI 提供者，輕鬆部署及管理 NFS。|
@@ -117,5 +117,5 @@ Windows Server 2012 中的 NFS 引進了適用于 Windows PowerShell 的 NFS 模
 |內容類型|參考|
 |---|---|
 |部署|[部署網路檔案系統](deploy-nfs.md)|
-|作業|[Windows PowerShell 中的 NFS Cmdlet](https://docs.microsoft.com/powershell/module/nfs/?view=win10-ps)|
-|相關技術|[Windows Server 的儲存空間](../storage.md)|
+|Operations|[Windows PowerShell 中的 NFS Cmdlet](https://docs.microsoft.com/powershell/module/nfs/?view=win10-ps)|
+|相關技術|[Windows Server 的儲存空間](../storage.yml)|

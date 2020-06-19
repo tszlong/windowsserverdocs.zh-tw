@@ -1,0 +1,89 @@
+### YamlMime:Landing
+title: Windows Server Storage 檔
+summary: Windows Server 中的儲存空間可以提供新功能和改進功能，讓軟體定義資料中心 (SDDC) 的客戶可以專注處理虛擬化工作負載。 Windows Server 也會為使用檔案伺服器搭配現有工作負載的企業客戶提供廣泛的支援。 適用于： Windows Server 2019、Windows Server 2016、Windows Server （半年通道）。
+metadata:
+  title: Windows Server Storage 檔
+  description: Windows Server 中的儲存空間可以提供新功能和改進功能，讓軟體定義資料中心 (SDDC) 的客戶可以專注處理虛擬化工作負載。
+  ms.topic: landing-page
+  author: JasonGerend
+  ms.author: jgerend
+  ms.date: 06/09/2020
+  ms.openlocfilehash: 288c6da7afdd2b218227af0db83c487053a11d58
+  ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+  ms.translationtype: MT
+  ms.contentlocale: zh-TW
+  ms.lasthandoff: 06/18/2020
+  ms.locfileid: "85070964"
+landingContent:
+- title: 關於 Windows Server Storage
+  linkLists:
+  - linkListType: whats-new
+    links:
+    - text: 新功能
+      url: whats-new-in-storage.md
+- title: 適用於虛擬化工作負載的軟體定義存放裝置
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 儲存空間 Direct
+      url: storage-spaces/overview.md
+    - text: 儲存體複本
+      url: storage-replica/storage-replica-overview.md
+    - text: 存放裝置服務品質 (QoS)
+      url: storage-qos/storage-qos-overview.md
+    - text: 重複資料刪除
+      url: data-deduplication/overview.md
+- title: 一般用途的檔案伺服器
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 存放裝置移轉服務
+      url: storage-migration-service/overview.md
+    - text: 工作資料夾
+      url: work-folders/work-folders-overview.md
+    - text: 離線檔案與資料夾重新導向
+      url: folder-redirection/folder-redirection-rup-overview.md
+    - text: 漫遊使用者設定檔
+      url: folder-redirection/deploy-roaming-user-profiles.md
+    - text: DFS 命名空間
+      url: dfs-namespaces/dfs-overview.md
+    - text: DFS 複寫
+      url: dfs-replication/dfsr-overview.md
+    - text: File Server Resource Manager
+      url: fsrm/fsrm-overview.md
+    - text: iSCSI Target Server
+      url: iscsi/iscsi-target-server.md
+    - text: iSCSI 目標開機
+      url: iscsi/iscsi-boot-overview.md
+- title: 檔案系統、通訊協定等
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: ReFS
+      url: refs/refs-overview.md
+    - text: 伺服器訊息區 (SMB) 通訊協定
+      url: file-server/file-server-smb-overview.md
+    - text: 存放裝置類別記憶體
+      url: storage-spaces/Storage-class-memory-health.md
+    - text: BitLocker 磁碟機加密
+      url: https://technet.microsoft.com/library/cc766295(v=ws.10).aspx
+    - text: NTFS
+      url: https://technet.microsoft.com/library/dn466522(v=ws.11).aspx
+    - text: 網路檔案系統 (NFS)
+      url: https://technet.microsoft.com/library/jj592688(v=ws.11).aspx
+- title: 在 Azure 中
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Azure 儲存體
+      url: https://azure.microsoft.com/documentation/services/storage/
+    - text: Azure StorSimple
+      url: https://www.microsoft.com/cloud-platform/azure-storsimple
+- title: 較舊版本的 Windows Server
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Windows 舊版檔
+      url: https://docs.microsoft.com/previous-versions/windows/
+    - text: 搜尋特定資訊
+      url: https://docs.microsoft.com/search/?search=Windows+Server&dataSource=previousVersions

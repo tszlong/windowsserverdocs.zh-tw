@@ -1,5 +1,5 @@
 ---
-title: 為 Hyper-v 虛擬機器建立虛擬交換器
+title: 為 Hyper-V 虛擬機器建立虛擬交換器
 description: 提供使用 Hyper-v 管理員或 Windows PowerShell 建立虛擬交換器的指示
 ms.prod: windows-server
 manager: dongill
@@ -9,26 +9,26 @@ ms.assetid: fdc8063c-47ce-4448-b445-d7ff9894dc17
 author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: e27d1286945671d3f44fe2fa3220a2e223ad7c4f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 654e574ffd44e7bbc7712defe165d75e4eae5663
+ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860841"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85070513"
 ---
-# <a name="create-a-virtual-switch-for-hyper-v-virtual-machines"></a>為 Hyper-v 虛擬機器建立虛擬交換器
+# <a name="create-a-virtual-switch-for-hyper-v-virtual-machines"></a>為 Hyper-V 虛擬機器建立虛擬交換器
 
 >適用于： Windows 10、Windows Server 2016、Microsoft Hyper-v Server 2016、Windows Server 2019、Microsoft Hyper-v Server 2019
   
 虛擬交換器可讓在 Hyper-v 主機上建立的虛擬機器與其他電腦通訊。 當您第一次在 Windows Server 上安裝 Hyper-v 角色時，可以建立虛擬交換器。 若要建立額外的虛擬交換器，請使用 Hyper-v 管理員或 Windows PowerShell。 若要深入瞭解虛擬交換器，請參閱[Hyper-v 虛擬交換器](../../hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md)。  
   
-虛擬機器的網路功能可能是一個複雜的主題。 另外還有幾個您可能想要使用的新虛擬交換器功能，例如[交換器內嵌小組（SET）](../../hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md#switch-embedded-teaming-set)。 但基本網路功能相當容易。 本主題只涵蓋足夠的內容，讓您可以在 Hyper-v 中建立網路虛擬機器。 若要深入瞭解如何設定您的網路基礎結構，請參閱[網路](../../../networking/Networking.md)功能檔。   
+虛擬機器的網路功能可能是一個複雜的主題。 另外還有幾個您可能想要使用的新虛擬交換器功能，例如[交換器內嵌小組（SET）](../../hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md#switch-embedded-teaming-set)。 但基本網路功能相當容易。 本主題只涵蓋足夠的內容，讓您可以在 Hyper-v 中建立網路虛擬機器。 若要深入瞭解如何設定您的網路基礎結構，請參閱[網路](../../../networking/index.yml)功能檔。   
   
 ## <a name="create-a-virtual-switch-by-using-hyper-v-manager"></a>使用 Hyper-v 管理員建立虛擬交換器  
   
 1.  開啟 [Hyper-v 管理員]，選取 Hyper-v 主電腦名稱稱。  
   
-2.  選取 [**動作**] > [**虛擬交換器管理員**]。  
+2.  選取 [**動作**] [  >  **虛擬交換器管理員**]。  
   
     ![顯示功能表選項動作 > 虛擬交換器管理員的螢幕擷取畫面](../media/Hyper-V-Action-VSwitchManager.png)  
   
@@ -38,7 +38,7 @@ ms.locfileid: "80860841"
     |-------------------|---------------|  
     |外部|可讓虛擬機器存取實體網路，以與外部網路上的伺服器和用戶端進行通訊。 允許同一部 Hyper-v 伺服器上的虛擬機器彼此通訊。|  
     |內部|允許在相同 Hyper-v 伺服器上的虛擬機器之間，以及虛擬機器與管理主機作業系統之間進行通訊。|  
-    |私人|只允許在相同 Hyper-v 伺服器上的虛擬機器之間進行通訊。 私人網路會與 Hyper-v 伺服器上的所有外部網路流量隔離。 當您必須建立隔離的網路環境（例如隔離的測試網域）時，這種類型的網路很有用。|  
+    |Private|只允許在相同 Hyper-v 伺服器上的虛擬機器之間進行通訊。 私人網路會與 Hyper-v 伺服器上的所有外部網路流量隔離。 當您必須建立隔離的網路環境（例如隔離的測試網域）時，這種類型的網路很有用。|  
   
 4.  選取 [**建立虛擬交換器**]。  
   
@@ -59,13 +59,13 @@ ms.locfileid: "80860841"
   
 8.  按一下 [確定]。  
   
-9. 按一下 [是]。  
+9. 按一下 [是] 。  
   
     ![顯示 [暫止的變更可能會中斷網路連線] 訊息的螢幕擷取畫面](../media/Hyper-V-NewVSwitch-DisruptNetwork.png)  
   
 ## <a name="create-a-virtual-switch-by-using-windows-powershell"></a>使用 Windows PowerShell 建立虛擬交換器  
   
-1.  在 Windows 桌面上，按一下 \[開始\] 按鈕，然後輸入 **Windows PowerShell** 名稱的任何一部分。  
+1.  在 Windows 桌面上，按一下 [開始] 按鈕，然後輸入 **Windows PowerShell** 名稱的任何一部分。  
   
 2.  以滑鼠右鍵按一下 [Windows PowerShell]，然後選取 [**以系統管理員身分執行**]。  
   

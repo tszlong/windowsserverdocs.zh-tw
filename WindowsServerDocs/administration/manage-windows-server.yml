@@ -1,0 +1,71 @@
+### YamlMime:Landing
+title: Windows Server 管理檔
+summary: 在您的環境中部署 Windows Server，包括您所需特性和功能的角色後，接下來就是管理這些伺服器。 Windows Server 包含數個工具，可協助您了解您的 Windows Server 環境、管理特定伺服器、微調效能，以及最終自動化許多管理工作。
+metadata:
+  title: Windows Server 管理檔
+  description: 瞭解管理 Windows Server 的相關工具、建議和指引。
+  ms.topic: landing-page
+  author: lizap
+  ms.author: elizapo
+  ms.date: 06/09/2020
+  ms.openlocfilehash: a115a703071b52e7a27d925578d7703f270b925b
+  ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+  ms.translationtype: MT
+  ms.contentlocale: zh-TW
+  ms.lasthandoff: 06/18/2020
+  ms.locfileid: "85070960"
+landingContent:
+- title: 管理 Windows Server 系統和環境
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 使用 Windows Admin Center 管理管理內部部署系統、遠端系統以及沒有 UI 的系統
+      url: ../manage/windows-admin-center/overview.md
+    - text: 使用伺服器管理員管理內部部署系統
+      url: server-manager/server-manager.md
+    - text: 使用遠端伺服器管理工具 (RSAT) 管理遠端系統和不顯示 UI 的系統
+      url: ../remote/remote-server-administration-tools.md
+    - text: 管理 Windows Server 系統更新
+      url: windows-server-update-services/get-started/windows-server-update-services-wsus.md
+- title: 收集有關環境的資訊
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 安裝並啟動事件收集
+      url: get-started-with-setup-and-boot-event-collection.md
+    - text: 軟體清查記錄 (SIL)
+      url: software-inventory-logging/get-started-with-software-inventory-logging.md
+    - text: 使用者存取記錄 (UAL)
+      url: user-access-logging/get-started-with-user-access-logging.md
+- title: 調整 Windows Server 環境的效能
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 效能調整指導方針
+      url: performance-tuning/index.md
+    - text: Microsoft Server Performance Advisor
+      url: server-performance-advisor/microsoft-server-performance-advisor.md
+- title: 自動化 Windows Server 管理
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Windows PowerShell
+      url: https://docs.microsoft.com/powershell/scripting/overview
+    - text: Windows 命令
+      url: windows-commands/windows-commands.md
+    - text: 系統深入解析
+      url: ..\manage\system-insights\overview.md
+- title: 存取內部部署、遠端和虛擬伺服器
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 遠端桌面服務
+      url: ../remote/remote-desktop-services/welcome-to-rds.md
+- title: 較舊版本的 Windows Server
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Windows 舊版檔
+      url: https://docs.microsoft.com/previous-versions/windows/
+    - text: 搜尋特定資訊
+      url: https://docs.microsoft.com/search/?search=Windows+Server&dataSource=previousVersions

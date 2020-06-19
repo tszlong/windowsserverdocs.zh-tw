@@ -1,0 +1,53 @@
+### YamlMime:Landing
+title: 身分識別與存取檔
+summary: 存取和身分識別技術可保護內部部署和僅限雲端以及混合式部署 (其中有些應用程式與服務會裝載於雲端，而其他則會裝載於內部部署上) 的 Active Directory 環境。
+metadata:
+  title: 身分識別與存取檔
+  description: 存取和身分識別技術可保護內部部署和僅限雲端以及混合式部署 (其中有些應用程式與服務會裝載於雲端，而其他則會裝載於內部部署上) 的 Active Directory 環境。
+  ms.topic: landing-page
+  author: billmath
+  ms.author: billmath
+  ms.date: 5/18/2020
+  ms.openlocfilehash: 10723952ab4b146c491f469e6569670ad0f1c5e1
+  ms.sourcegitcommit: 5bc5aaf341c711113ca03d1482f933b05b146007
+  ms.translationtype: MT
+  ms.contentlocale: zh-TW
+  ms.lasthandoff: 06/19/2020
+  ms.locfileid: "85095677"
+landingContent:
+- title: 關於身分識別與存取技術
+  linkLists:
+  - linkListType: whats-new
+    links:
+    - text: 新功能
+      url: ad-fs/overview/whats-new-active-directory-federation-services-windows-server.md
+  - linkListType: overview
+    links:
+    - text: Active Directory Domain Services 和 AD DS 的 Privileged Access Management
+      url: https://technet.microsoft.com/library/dn903243.aspx
+    - text: Windows 10 企業版：用裝置來工作的方式
+      url: https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-windows10-devices-overview/?rnd=1
+    - text: Active Directory Domain Services
+      url: ../identity/ad-ds/Active-Directory-Domain-Services.md
+    - text: Active Directory Federation Services
+      url: Active-Directory-Federation-Services.md
+- title: 解決方案和案例指南
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: 保護從任何裝置的任何位置存取公司資源
+      url: https://technet.microsoft.com/library/dn550982.aspx
+    - text: 從任何裝置加入工作地點網路，並在公司的各個應用程式提供 SSO 和無縫式的次要因素驗證
+      url: https://technet.microsoft.com/library/dn280945.aspx
+    - text: 透過其他多因素驗證管理機密應用程式的風險
+      url: https://technet.microsoft.com/library/dn280949.aspx
+    - text: 使用條件式存取控制管理風險
+      url: https://technet.microsoft.com/library/dn280937.aspx
+- title: 較舊版本的 Windows Server
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Windows 舊版檔
+      url: https://docs.microsoft.com/previous-versions/windows/
+    - text: 搜尋特定資訊
+      url: https://docs.microsoft.com/search/?search=Windows+Server&dataSource=previousVersions
