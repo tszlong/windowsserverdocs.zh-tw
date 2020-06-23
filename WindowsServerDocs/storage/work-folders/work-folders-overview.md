@@ -9,12 +9,12 @@ manager: dougkim
 ms.author: jgerend
 ms.date: 06/15/2020
 description: 工作資料夾概觀 - 這是 Windows Server 中的一種伺服器角色，可提供使用者一致的方式來存取電腦和裝置中的工作檔案。
-ms.openlocfilehash: 4e670d61729d35ee9569b09e91ef5a953961241e
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: f48c03d97cab94f836ef6fafa77fccf07a04331b
+ms.sourcegitcommit: 44a96d505b5c96da62937f5dd2d724342ee9d835
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070091"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141027"
 ---
 # <a name="work-folders-overview"></a>工作資料夾概觀
 
@@ -140,9 +140,9 @@ ms.locfileid: "85070091"
 | | 工作資料夾 | 離線檔案 | OneDrive for Business | OneDrive |
 | - | ------------------ | ------------------- | -------------------------- | -------------- |
 | **技術摘要** | 同步處理儲存在檔案伺服器與電腦和裝置上的檔案 | 同步處理儲存在可存取企業網路的檔案伺服器與電腦上的檔案 (可由工作資料夾取代) | 同步處理儲存在 Office 365 或 SharePoint 與電腦和裝置 (位於企業網路內部或外部) 中的檔案，並提供文件共同作業功能 | 同步處理儲存在 OneDrive 與 PC、Mac 電腦和裝置上的個人檔案 |
-| **其目的在於提供使用者工作檔案的存取權** | 是 | 是 | 是 | 否 |
+| **其目的在於提供使用者工作檔案的存取權** | Yes | 是 | 是 | 否 |
 | **雲端服務** | None | None | Office 365 | Microsoft OneDrive |
-| **內部網路伺服器** | 執行 Windows Server 2012 R2 或 Windows Server 2016 的檔案伺服器 | 檔案伺服器 | SharePoint 伺服器 (選擇性) | None |
+| **內部網路伺服器** | 執行 Windows Server 2012 R2、Windows Server 2016 和 Windows Server 2019 的檔案伺服器 | 檔案伺服器 | SharePoint 伺服器 (選擇性) | None |
 | **支持的用戶端** | PC、iOS、Android | 位於企業網路內，或透過 DirectAccess、VPN 或其他遠端存取技術連接的電腦 | PC、iOS、Android、Windows Phone | PC、Mac 電腦、Windows Phone、iOS、Android |
   
 > [!NOTE]
@@ -160,7 +160,7 @@ ms.locfileid: "85070091"
   
 ## <a name="interoperability-with-windows-azure-virtual-machines"></a>與 Windows Azure 虛擬機器的互通性
 
- 您可以在 Windows Azure 的虛擬機器上執行此 Windows Server 角色服務。 此案例已透過 Windows Server 2012 R2 和 Windows Server 2016 進行測試。  
+ 您可以在 Windows Azure 的虛擬機器上執行此 Windows Server 角色服務。 此案例已經過 Windows Server 2012 R2、Windows Server 2016 和 Windows Server 2019 的測試。  
   
 若要深入瞭解如何開始使用 Windows Azure 虛擬機器，請造訪 [Windows Azure 網站](http://www.windowsazure.com/documentation/services/virtual-machines)。  
   
