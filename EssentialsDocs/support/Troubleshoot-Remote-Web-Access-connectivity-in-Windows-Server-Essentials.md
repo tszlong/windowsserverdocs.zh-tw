@@ -8,12 +8,12 @@ ms.assetid: d3642575-b3ee-4488-b654-5bf9d3b8c935
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 62f3bf875b03328b0016261bf6aff7a39c4b65bc
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9fb3628ed519d5faae04787dbb84da37f27d96fb
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852231"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217488"
 ---
 # <a name="troubleshoot-remote-web-access-connectivity-in-windows-server-essentials"></a>Windows Server Essentials 的遠端 Web 存取連線問題疑難排解
  
@@ -53,7 +53,7 @@ ms.locfileid: "80852231"
   
   - 請針對下列連接埠，在路由器上設定連接埠轉送：  
   
-    |服務或通訊協定|Port|  
+    |服務或通訊協定|連接埠|  
     |-------------------------|----------|  
     |HTTP|TCP 80|  
     |HTTPS|TCP 443|  
@@ -86,9 +86,6 @@ ms.locfileid: "80852231"
 -   [管理隨處存取](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
   
 -   [管理 Windows Server Essentials](../manage/Manage-Windows-Server-Essentials.md)  
-  
-
--   [支援 Windows Server Essentials](Support-Windows-Server-Essentials.md)
 
 -   [支援 Windows Server Essentials](../support/Support-Windows-Server-Essentials.md)
 

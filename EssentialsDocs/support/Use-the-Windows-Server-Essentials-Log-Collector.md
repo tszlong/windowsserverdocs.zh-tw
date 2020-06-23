@@ -8,12 +8,12 @@ ms.assetid: c6985518-b42d-4cfb-9761-eaa75306b6d7
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: fa7ad24eec7c2732ee1c840aae678e3b0bff768c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 16fc2c8b6029a4793eafd5ca7c51e66d6bc36d80
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852161"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217428"
 ---
 # <a name="use-the-windows-server-essentials-log-collector"></a>使用 Windows Server Essentials 記錄檔收集器
 
@@ -30,15 +30,10 @@ ms.locfileid: "80852161"
 >[下載 Windows Server Essentials 記錄檔收集器安裝套件](https://www.microsoft.com/download/details.aspx?id=34821)。  
   
  如果要安裝並執行記錄檔收集器，請執行下列主題中的步驟：  
-  
 
-1. [安裝記錄檔收集器](Install-the-Windows-Server-Essentials-Log-Collector.md)  
+1. [安裝記錄檔收集器](../support/Install-the-Windows-Server-Essentials-Log-Collector.md)  
   
-2. [執行記錄檔收集器](Run-the-Windows-Server-Essentials-Log-Collector.md)  
-
-3. [安裝記錄檔收集器](../support/Install-the-Windows-Server-Essentials-Log-Collector.md)  
-  
-4. [執行記錄檔收集器](../support/Run-the-Windows-Server-Essentials-Log-Collector.md)  
+2. [執行記錄檔收集器](../support/Run-the-Windows-Server-Essentials-Log-Collector.md)  
 
 
 ## <a name="environment-information-collected"></a>收集的環境資訊  
@@ -52,11 +47,11 @@ ms.locfileid: "80852161"
   
 -   繫結至 TCP/IP 的網路介面卡  
   
--   地區設定  
+-   Locale  
   
 -   處理序  
   
--   存放裝置設定  
+-   儲存體組態  
   
 -   主機檔案資訊  
   
@@ -109,7 +104,7 @@ ms.locfileid: "80852161"
   
 ### <a name="server-logs-and-registry-information"></a>伺服器記錄檔和登錄資訊  
   
--   伺服器產品記錄檔，從 < ProgramData\>\Microsoft\Windows Server\Logs  
+-   伺服器產品記錄檔，來自 <ProgramData \> \Microsoft\Windows Server\Logs  
   
 -   排定的工作  
   
@@ -137,9 +132,9 @@ ms.locfileid: "80852161"
   
 ### <a name="network-computer-logs-and-registry-information"></a>網路電腦記錄檔和登錄資訊  
   
--   < ProgramData\>\Microsoft\Windows Server\Logs 的網路電腦產品記錄檔  
+-   網路電腦產品記錄檔，位於 <ProgramData \> \Microsoft\Windows Server\Logs  
   
--   健康狀態警示檔案位於 < ProgramData\>\Microsoft\Windows Server\Data  
+-   健康狀態警示檔案位於 <ProgramData \> \Microsoft\Windows Server\Data  
   
 -   Windows Update 記錄檔  
   
@@ -147,7 +142,7 @@ ms.locfileid: "80852161"
   
 -   排定的工作資訊  
   
--   來自 \\\ HKEY_LOCAL_MACHINE \Software\microsoft\windows server\ 伺服器 \ 的登錄機碼  
+-   來自 \\ \ HKEY_LOCAL_MACHINE \Software\microsoft\windows server\ 伺服器 \ 的登錄機碼  
   
 ## <a name="logs-for-computers-that-do-not-run-a-version-of-the-windows-operating-system"></a>不是執行 Windows 作業系統版本的電腦的記錄檔  
  記錄檔收集器不會從不是執行 Windows 作業系統版本的電腦收集記錄檔 對於非 Windows 電腦，請以手動方式將下列記錄檔複製到您儲存記錄檔收集器檔案的相同位置。  
@@ -156,14 +151,11 @@ ms.locfileid: "80852161"
   
 -   Library/Logs/Windows Server.log  
   
--   Library/Logs/CrashReporter/啟動列-< nnn\> （複製所有 [啟動列-< nnn]\>[損毀檔案]）  
+-   Library/Logs/CrashReporter/啟動列-<nnn \> （複製所有的啟動控制板-<nnn \> . 損毀檔案）  
   
--   Library/Logs/DiagnosticReports/啟動列-< nnn\> （複製所有 [啟動列-< nnn]\>[損毀檔案]）  
+-   Library/Logs/DiagnosticReports/啟動列-<nnn \> （複製所有的啟動控制板-<nnn \> . 損毀檔案）  
   
 ## <a name="see-also"></a>另請參閱  
-  
 
--   [針對記錄收集器錯誤進行疑難排解](Troubleshoot-Windows-Server-Essentials-Log-Collector-Errors.md)
-
--   [針對記錄收集器錯誤進行疑難排解](../support/Troubleshoot-Windows-Server-Essentials-Log-Collector-Errors.md)
+-   [疑難排解記錄檔收集器錯誤](../support/Troubleshoot-Windows-Server-Essentials-Log-Collector-Errors.md)
 

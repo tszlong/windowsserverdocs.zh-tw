@@ -8,12 +8,12 @@ ms.assetid: 5f570492-ee21-471b-92c1-3fd9bfb84f55
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ad75f815173c53ca40fdc5146f6f27fbc1e2740b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3f2cd1a9746b03ba7642e78c468dafd718f84959
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852141"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217608"
 ---
 # <a name="play-digital-media-in-windows-server-essentials"></a>在 Windows Server Essentials 中播放數位媒體
 
@@ -24,33 +24,19 @@ ms.locfileid: "80852141"
  下列主題提供有關存取和播放儲存在 Windows Server Essentials 上之數位媒體檔案的資訊：  
   
 
--   [數位媒體總覽](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_1)  
+-   [數位媒體概觀](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_1)  
   
 -   [播放和共用數位媒體](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_2)  
   
--   [從遠端位置播放共用的數位媒體檔案](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_3)  
+-   [從遠端位置播放共用數位媒體檔案](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_3)  
   
--   [將數位媒體檔案新增至伺服器](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_4)  
+-   [將數位媒體檔案新增到伺服器](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_4)  
   
 -   [下載格式選項](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_5)  
   
 -   [簡易檔案上傳工具](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_6)  
   
--   [查看和流覽共用數位媒體](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_7)  
-
--   [數位媒體總覽](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_1)  
-  
--   [播放和共用數位媒體](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_2)  
-  
--   [從遠端位置播放共用的數位媒體檔案](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_3)  
-  
--   [將數位媒體檔案新增至伺服器](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_4)  
-  
--   [下載格式選項](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_5)  
-  
--   [簡易檔案上傳工具](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_6)  
-  
--   [查看和流覽共用數位媒體](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_7)  
+-   [檢視和瀏覽共用數位媒體](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_7)  
 
   
 ##  <a name="digital-media-overview"></a><a name="BKMK_1"></a>數位媒體總覽  
@@ -63,9 +49,9 @@ ms.locfileid: "80852141"
   
 -   **觀賞視訊**。 您的伺服器可用來儲存大量的視訊和錄製的電視節目，並透過串流處理將其傳送到您的電腦或您網路上的其他播放裝置。 您可以使用 Windows Media Player，將視訊透過串流處理傳送到 Xbox 360 或電腦。  
   
--   **播放音樂**。 當您開啟 [音樂] 共用資料夾的「媒體共用」時，便可以從支援 Windows Media Connect 的裝置存取您的音樂。 在開啟共用之後，您不需要啟用或設定任何使用者帳戶，即可以從 [音樂] 共用資料夾進行串流處理。  
+-   **播放音樂**。 當您開啟 [音樂]**** 共用資料夾的「媒體共用」時，便可以從支援 Windows Media Connect 的裝置存取您的音樂。 在開啟共用之後，您不需要啟用或設定任何使用者帳戶，即可以從 [音樂]**** 共用資料夾進行串流處理。  
   
--   **顯示相片投影片放映**。 您可以將數位相片儲存在您伺服器上的 [相片] 共用資料夾中，然後從任何電腦或從連接到您住家或辦公室中電視的 Xbox 360 存取這些相片。 您可以觀賞相片投影片放映，就像將電視變成大型相框一樣。  
+-   **顯示相片投影片放映**。 您可以將數位相片儲存在您伺服器上的 [相片] **** 共用資料夾中，然後從任何電腦或從連接到您住家或辦公室中電視的 Xbox 360 存取這些相片。 您可以觀賞相片投影片放映，就像將電視變成大型相框一樣。  
   
 ### <a name="sharing-copy-protected-media"></a>共用禁止複製的媒體  
   Windows Server Essentials 不支援共用受禁止複製的媒體。 這包括透過線上音樂商店購買的音樂。  
@@ -85,9 +71,6 @@ ms.locfileid: "80852141"
   
 -   [將 Windows Server Essentials 上的媒體檔案傳送到 Windows 媒體播放機、Xbox 360，或網路中的網路數位媒體播放機](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_SendToDevice)  
 
--   [從網路上的電腦或數位媒體播放機搜尋和播放 Windows Server Essentials 上的媒體檔案](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_2.1)  
-  
--   [將 Windows Server Essentials 上的媒體檔案傳送到 Windows 媒體播放機、Xbox 360，或網路中的網路數位媒體播放機](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_SendToDevice)  
 
   
 ###  <a name="search-for-and-play-media-files-on-windows-server-essentials-from-a-computer-or-digital-media-player-on-the-network"></a><a name="BKMK_2.1"></a>從網路上的電腦或數位媒體播放機搜尋和播放 Windows Server Essentials 上的媒體檔案  
@@ -96,42 +79,31 @@ ms.locfileid: "80852141"
 
 -   [從執行 Windows Media Center 的電腦搜尋和播放媒體檔案](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_WMC)  
   
--   [使用 Windows 媒體播放機從執行 Windows 的電腦搜尋和播放媒體檔案](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_MWP)  
+-   [從執行 Windows 的電腦使用 Windows Media Center 來搜尋和播放媒體檔案](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_MWP)  
   
--   [使用 Xbox 360 搜尋和播放媒體檔案](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_Xbox)  
+-   [使用 Xbox 360 來搜尋和播放媒體檔案](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_Xbox)  
   
 -   [使用與 Windows Server Essentials 相容的其他數位媒體播放機或接收者來搜尋和播放媒體檔案](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_Other)  
   
--   [使用 [啟動列] 的 [共用資料夾] 功能來搜尋和播放媒體檔案](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_SharedFolders)  
+-   [使用啟動列的共用資料夾功能來搜尋和播放媒體檔案](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_SharedFolders)  
   
--   [使用遠端 Web 存取搜尋和播放共用媒體](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_RWA2)  
+-   [使用遠端 Web 存取來搜尋和播放共用媒體](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_RWA2)  
 
--   [從執行 Windows Media Center 的電腦搜尋和播放媒體檔案](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_WMC)  
-  
--   [使用 Windows 媒體播放機從執行 Windows 的電腦搜尋和播放媒體檔案](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_MWP)  
-  
--   [使用 Xbox 360 搜尋和播放媒體檔案](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_Xbox)  
-  
--   [使用與 Windows Server Essentials 相容的其他數位媒體播放機或接收者來搜尋和播放媒體檔案](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_Other)  
-  
--   [使用 [啟動列] 的 [共用資料夾] 功能來搜尋和播放媒體檔案](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_SharedFolders)  
-  
--   [使用遠端 Web 存取搜尋和播放共用媒體](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_RWA2)  
 
   
 ####  <a name="search-for-and-play-media-files-from-a-computer-that-is-running-windows-media-center"></a><a name="BKMK_WMC"></a>從執行 Windows Media Center 的電腦搜尋和播放媒體檔案  
   
-1.  依序按一下 [開始]、[所有程式]，然後按一下 [Windows Media Center]。  
+1.  依序按一下 [開始]****、[所有程式]****，然後按一下 [Windows Media Center]****。  
   
-2.  在 [Windows Media Center] 頁面上，捲動到您要搜尋的媒體類型，然後按一下媒體櫃。  
+2.  在 [Windows Media Center]**** 頁面上，捲動到您要搜尋的媒體類型，然後按一下媒體櫃。  
   
-3.  手動搜尋您感興趣的檔案，或按一下 [搜尋]，然後輸入您想要尋找的檔案名稱。  
+3.  手動搜尋您感興趣的檔案，或按一下 [搜尋]****，然後輸入您想要尋找的檔案名稱。  
   
 4.  按一下媒體檔案影像以檢視或播放檔案。  
   
 ####  <a name="search-for-and-play-media-files-from-a-computer-that-is-running-windows-by-using-windows-media-player"></a><a name="BKMK_MWP"></a>使用 Windows 媒體播放機從執行 Windows 的電腦搜尋和播放媒體檔案  
   
--   從電腦或媒體裝置，開啟 [Windows Media Player]，然後搜尋您的媒體櫃。  
+-   從電腦或媒體裝置，開啟 [Windows Media Player]****，然後搜尋您的媒體櫃。  
   
     > [!NOTE]
     >  搜尋步驟會依您使用的 Windows Media Player 版本而有所不同。 如需詳細資訊，請參閱您版本的說明。  
@@ -144,12 +116,12 @@ ms.locfileid: "80852141"
   
 3.  使用您的 Xbox 360 主機來播放數位媒體檔案：  
   
-    1.  前往 [我的 Xbox]，然後依據你想要檢視或播放的媒體類型，選取 [視訊媒體櫃]、[音樂媒體櫃] 或 [圖片媒體櫃]。  
+    1.  前往 [我的 Xbox]****，然後依據你想要檢視或播放的媒體類型，選取 [視訊媒體櫃]****、[音樂媒體櫃]**** 或 [圖片媒體櫃]****。  
   
     2.  選取您伺服器的名稱。  
   
         > [!NOTE]
-        >  如果未列出您伺服器的名稱，請選取 [電腦]，然後按一下 [測試連線]。  
+        >  如果未列出您伺服器的名稱，請選取 [電腦]****，然後按一下 [測試連線]****。  
   
     3.  瀏覽檔案清單並選取您想要播放的項目。  
   
@@ -163,9 +135,9 @@ ms.locfileid: "80852141"
   
 1.  登入 [Windows Server Essentials 啟動列]。  
   
-2.  從 [啟動列] 中，按一下 [共用資料夾]。 這會開啟 [Windows 檔案總管] 視窗，並顯示伺服器上的共用資料夾。  
+2.  從 [啟動列] 中，按一下 [共用資料夾]****。 這會開啟 [Windows 檔案總管] 視窗，並顯示伺服器上的共用資料夾。  
   
-3.  在 [搜尋] 方塊中，輸入媒體檔案的名稱。 搜尋查詢的結果隨即顯示。  
+3.  在 [搜尋]**** 方塊中，輸入媒體檔案的名稱。 搜尋查詢的結果隨即顯示。  
   
     > [!NOTE]
     >  您也可以選擇按兩下共用資料夾來瀏覽資料夾內容。  
@@ -174,12 +146,12 @@ ms.locfileid: "80852141"
   
 1.  登入 [遠端 Web 存取]。  
   
-2.  按一下 [共用資料夾]。 網頁的 [共用資料夾] 區段會顯示伺服器上的共用資料夾清單。  
+2.  按一下 [共用資料夾]。 網頁的 [共用資料夾]**** 區段會顯示伺服器上的共用資料夾清單。  
   
 3.  按兩下資料夾來檢視該資料夾的內容。  
   
 ###  <a name="send-media-files-on-windows-server-essentials-to-windows-media-player-xbox-360-or-to-a-networked-digital-media-player-in-the-network"></a><a name="BKMK_SendToDevice"></a>將 Windows Server Essentials 上的媒體檔案傳送到 Windows 媒體播放機、Xbox 360，或網路中的網路數位媒體播放機  
- 請使用 [Windows Media Player] 來搜尋您想要的媒體檔案。 在媒體檔案上按一下滑鼠右鍵，然後按一下 [播放至] 將媒體檔案傳送到網路媒體裝置。  
+ 請使用 [Windows Media Player]**** 來搜尋您想要的媒體檔案。 在媒體檔案上按一下滑鼠右鍵，然後按一下 [播放至]**** 將媒體檔案傳送到網路媒體裝置。  
   
 ##  <a name="play-shared-digital-media-files-from-a-remote-location"></a><a name="BKMK_3"></a>從遠端位置播放共用的數位媒體檔案  
  當您離開 Windows Server Essentials 網路時，可以使用遠端 Web 存取來播放媒體檔案。 您可以使用行動電話、遠端電腦或數位媒體播放機，來搜尋和播放您儲存在伺服器上的共用媒體檔案。  
@@ -188,10 +160,10 @@ ms.locfileid: "80852141"
   
 1. 開啟網際網路瀏覽器。  
   
-2. 前往「遠端 Web 存取」網站。 在網際網路瀏覽器的網址列中輸入**HTTPs：//< 您功能變數名稱\>/remote** ，然後按 enter。  
+2. 前往「遠端 Web 存取」網站。 在網際網路瀏覽器的網址列中輸入**HTTPs://<您功能變數名稱 \> /remote** ，然後按 enter。  
   
    > [!NOTE]
-   >  *< 您功能變數名稱\>* 是一個預留位置。 它會是您的伺服器特有的名稱，因此您輸入的位址看起來會像 **https://contoso.com/remote** 。 如果您不知道您的網域名稱，請詢問在伺服器上設定「遠端存取」功能時選擇網域名稱的系統管理員。 如需詳細資訊，請參閱[開啟遠端 Web 存取](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_TurnOnRWA)。  
+   >  *<您功能變數名稱 \> *這是一個預留位置。 它會是您的伺服器特有的名稱，因此您輸入的位址看起來會像這樣 **https://contoso.com/remote** 。 如果您不知道您的網域名稱，請詢問在伺服器上設定「遠端存取」功能時選擇網域名稱的系統管理員。 如需詳細資訊，請參閱[開啟遠端 Web 存取](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_TurnOnRWA)。  
   
 3. 在 [遠端 Web 存取] 登入頁面上，輸入您的使用者帳戶名稱和密碼，然後按一下箭號。  
   
@@ -237,14 +209,14 @@ ms.locfileid: "80852141"
   
  請從以下選擇符合您下載需求的選項：  
   
-- **壓縮的 ZIP 檔案（.zip）**  
+- **壓縮的 ZIP 檔 (.zip)**  
   
    壓縮檔案會建立比原始檔案小的檔案壓縮版本。 檔案的壓縮版本具有.zip 副檔名。 壓縮後縮減最多的檔案類型是文字導向的檔案類型 (例如 .txt、.doc 及 .xls) 和使用非壓縮檔案類型的圖形檔案 (例如 .bmp)。 有些圖形檔案 (例如 .jpg 和 .gif 檔案) 已經使用壓縮，因此壓縮後檔案大小縮減很少。 此外，包含大量圖形的 Word 文件縮減程度也不如大部份是文字的文件。  
   
   > [!NOTE]
   >  這個選項對國際檔案名稱僅提供有限的支援。  
   
-- **自我解壓縮的可執行檔（.exe）**  
+- **自我解壓縮的執行檔 (.exe)**  
   
    自我解壓縮的執行檔是一種您可下載且結合了壓縮檔之解壓縮 (可執行) 程式的檔案。 當您執行可執行程式時，它會自動將壓縮檔解壓縮。 這是一種散佈壓縮資料的常見方式，可不需擔心接收者是否具有正確的解壓縮公用程式。  
   
@@ -263,7 +235,7 @@ ms.locfileid: "80852141"
   
 1.  開啟伺服器 [儀表板]。  
   
-2.  在主瀏覽列上，按一下 [存放]。  
+2.  在主瀏覽列上，按一下 [存放]****。  
   
 3.  按一下 [**伺服器資料夾**] 索引標籤。伺服器資料夾的清單隨即出現。  
   
@@ -281,7 +253,7 @@ ms.locfileid: "80852141"
   
 1.  登入 [遠端 Web 存取]。  
   
-2.  按一下 [共用資料夾]。 網頁的 [共用資料夾] 區段會顯示伺服器上的共用資料夾清單。  
+2.  按一下 [共用資料夾]。 網頁的 [共用資料夾]**** 區段會顯示伺服器上的共用資料夾清單。  
   
 3.  按兩下資料夾來檢視該資料夾的內容。  
   
@@ -295,10 +267,4 @@ ms.locfileid: "80852141"
 -   [使用共用資料夾](Use-Shared-Folders-in-Windows-Server-Essentials.md)  
   
 -   [遠端工作](Work-Remotely-in-Windows-Server-Essentials.md)
-
--   [取得連線](../use/Get-Connected-in-Windows-Server-Essentials.md)  
-  
--   [使用共用資料夾](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md)  
-  
--   [遠端工作](../use/Work-Remotely-in-Windows-Server-Essentials.md)
 

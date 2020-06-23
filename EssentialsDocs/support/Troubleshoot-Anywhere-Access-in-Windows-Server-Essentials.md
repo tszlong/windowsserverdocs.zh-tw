@@ -8,12 +8,12 @@ ms.assetid: 68f2b05c-09eb-4cba-8db4-a91353b513c6
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 9ebb4f27201e7cdb8e412bc35b217185616df3cb
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 313b4fae48a5b70cb16cae0cfb3a7bc048ef97a3
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852251"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217558"
 ---
 # <a name="troubleshoot-anywhere-access-in-windows-server-essentials"></a>Windows Server 2012 Essentials 中的隨處存取問題疑難排解
 
@@ -30,13 +30,13 @@ ms.locfileid: "80852251"
   
 1.  登入伺服器，然後開啟儀表板。  
   
-2.  按一下 [設定]，然後按一下 [隨處存取] 索引標籤。  
+2.  按一下 [設定]****，然後按一下 [隨處存取]**** 索引標籤。  
   
-3.  按一下 [修復]。 此時會啟動「修復隨處存取」精靈。  
+3.  按一下 [修復]****。 此時會啟動「修復隨處存取」精靈。  
   
-4.  按 [下一步]。 精靈會分析隨處存取、識別問題，並嘗試修復問題。  
+4.  按 [下一步] 。 精靈會分析隨處存取、識別問題，並嘗試修復問題。  
   
-5.  如果您在精靈完成時收到警示，您可以按一下 [重試] 來重新嘗試修復問題。 如果您持續收到警示，請查看警示以了解問題和疑難排解步驟的其他相關資訊。  
+5.  如果您在精靈完成時收到警示，您可以按一下 [重試]**** 來重新嘗試修復問題。 如果您持續收到警示，請查看警示以了解問題和疑難排解步驟的其他相關資訊。  
   
 ### <a name="to-get-more-information-about-an-alert"></a>取得有關警示的詳細資訊  
   
@@ -48,13 +48,8 @@ ms.locfileid: "80852251"
  如果「修復隨處存取」精靈無法修復隨處存取，請查看下列疑難排解資源瞭解遠端 Web 存取、VPN 和 DirectAccess 的相關問題：  
   
 
--   [疑難排解遠端 Web 存取連線能力](Troubleshoot-Remote-Web-Access-connectivity-in-Windows-Server-Essentials.md)  
+-   [遠端 Web 存取連線問題疑難排解](Troubleshoot-Remote-Web-Access-connectivity-in-Windows-Server-Essentials.md)  
   
--   [針對您的防火牆進行疑難排解](Troubleshoot-your-firewall-in-Windows-Server-Essentials.md)  
-
--   [疑難排解遠端 Web 存取連線能力](../support/Troubleshoot-Remote-Web-Access-connectivity-in-Windows-Server-Essentials.md)  
-  
--   [針對您的防火牆進行疑難排解](../support/Troubleshoot-your-firewall-in-Windows-Server-Essentials.md)  
-
+-   [疑難排解您的防火牆](Troubleshoot-your-firewall-in-Windows-Server-Essentials.md)
   
 -   查看[windows Server Essentials 論壇](https://social.technet.microsoft.com/Forums/winserveressentials/threads)，瞭解 Windows server essentials 社區回報的最新問題。

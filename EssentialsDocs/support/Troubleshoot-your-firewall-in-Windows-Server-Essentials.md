@@ -8,12 +8,12 @@ ms.assetid: 51d94b67-8b9b-4159-80dd-f652d73a43cb
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 1ff27915f3d6c92416ed22b7e143bdc1cf3b385f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6764645182a6f31c0aec4b5d9b9963d64500ea9a
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853181"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217438"
 ---
 # <a name="troubleshoot-your-firewall-in-windows-server-essentials"></a>疑難排解 Windows Server Essentials 的防火牆
  
@@ -25,7 +25,7 @@ ms.locfileid: "80853181"
   
 1. 開啟 [儀表板]。  
   
-2. 按一下 [設定]，再按一下 [隨處存取] 索引標籤，然後按一下 [修復]。  
+2. 按一下 [設定]****，再按一下 [隨處存取]**** 索引標籤，然後按一下 [修復]****。  
   
 3. 請遵循 [修復隨處存取精靈] 中的指示。  
   
@@ -48,9 +48,6 @@ ms.locfileid: "80853181"
 -   [管理隨處存取](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
   
 -   [管理 Windows Server Essentials](../manage/Manage-Windows-Server-Essentials.md)  
-  
-
--   [支援 Windows Server Essentials](Support-Windows-Server-Essentials.md)
 
 -   [支援 Windows Server Essentials](../support/Support-Windows-Server-Essentials.md)
 

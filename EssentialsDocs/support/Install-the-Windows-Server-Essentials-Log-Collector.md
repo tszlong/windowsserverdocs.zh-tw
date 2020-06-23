@@ -8,12 +8,12 @@ ms.assetid: d271c54f-1ffa-464e-afa5-27b8df61854e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 4ea922142b43e35d6f17207d448c48b2da52ebc8
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ecffbfd3157720ad2762ba77d528af05e5abf53f
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852281"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217538"
 ---
 # <a name="install-the-windows-server-essentials-log-collector"></a>安裝 Windows Server Essentials 記錄檔收集器
 
@@ -34,9 +34,9 @@ Windows Server Essentials 記錄檔收集器安裝精靈會將記錄檔收集器
   
 4.  選擇接受 Microsoft 軟體授權合約。  
   
-5.  如果只要在伺服器上安裝記錄檔收集器，請選取 [僅在伺服器上] 核取方塊。 如果要在所有網路電腦上安裝記錄檔收集器，請選取 [在伺服器與網路的所有電腦上] 核取方塊。  
+5.  如果只要在伺服器上安裝記錄檔收集器，請選取 [僅在伺服器上]**** 核取方塊。 如果要在所有網路電腦上安裝記錄檔收集器，請選取 [在伺服器與網路的所有電腦上]**** 核取方塊。  
   
-6.  按一下 [安裝增益集]。  
+6.  按一下 [安裝增益集]****。  
   
 ###  <a name="reinstalling-the-log-collector"></a><a name="BKMK_Reinstall"></a>重新安裝記錄檔收集器  
  如果需要重新安裝記錄檔收集器，您必須在伺服器和網路電腦上解除安裝記錄檔收集器後再重新安裝。 透過從儀表板解除安裝伺服器上的記錄檔收集器，所有網路電腦都將自動解除安裝記錄檔收集器。  
@@ -45,13 +45,9 @@ Windows Server Essentials 記錄檔收集器安裝精靈會將記錄檔收集器
   
 1.  開啟 [儀表板]。  
   
-2.  按一下 [增益集] 索引標籤，從清單中選取 [記錄檔收集器]，然後按一下 [解除安裝]。  
-  
+2.  按一下 [增益集]**** 索引標籤，從清單中選取 [記錄檔收集器]****，然後按一下 [解除安裝]****。
 
-3.  執行先前的程序[安裝記錄檔收集器](Install-the-Windows-Server-Essentials-Log-Collector.md#BKMK_ToInstall)中的步驟以下載並安裝記錄檔收集器。  
-
-3.  執行先前的程序[安裝記錄檔收集器](../support/Install-the-Windows-Server-Essentials-Log-Collector.md#BKMK_ToInstall)中的步驟以下載並安裝記錄檔收集器。  
-
+3.  執行先前的程序[安裝記錄檔收集器](Install-the-Windows-Server-Essentials-Log-Collector.md#BKMK_ToInstall)中的步驟以下載並安裝記錄檔收集器。   
   
 ### <a name="manually-install-the-log-collector"></a>手動安裝記錄檔收集器  
  如果安裝精靈無法安裝記錄檔收集器，您可以使用下列程序以在單一電腦上安裝記錄檔收集器。  
@@ -62,7 +58,7 @@ Windows Server Essentials 記錄檔收集器安裝精靈會將記錄檔收集器
   
 2.  按兩下安裝檔案名稱。  
   
-3.  在系統提示時按一下 [確定]。  
+3.  在系統提示時按一下 [確定]****。  
   
 4.  按兩下以 ' .msi ' 結尾的檔案名，然後選取要在其中解壓縮的資料夾。  
   

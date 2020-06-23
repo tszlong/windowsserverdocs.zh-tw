@@ -8,12 +8,12 @@ ms.assetid: ed062945-27e9-4572-b1bb-6c8cf1b9c2f4
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 7ef53e350c999206c074fa0d9633947a32d0f9ac
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fbdc74b8c0d2ce6db619e4d4ad646a92eb859bc3
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852236"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217478"
 ---
 # <a name="troubleshoot-file-history-in-windows-server-essentials"></a>Windows Server Essentials 中的檔案歷程記錄問題疑難排解
 
@@ -43,7 +43,7 @@ ms.locfileid: "80852236"
   
     -   若要刪除使用者的檔案歷程記錄，請刪除具有使用者名稱的檔案歷程記錄備份子資料夾。  
   
-    -   若要刪除電腦的檔案歷程記錄，請刪除具有電腦名稱的檔案歷程記錄備份子資料夾。 例如，如果使用者在開始使用新的膝上型電腦後 < MyComputer01\>，< MyComputer02\>，您會在確認使用者是否已將所有檔案和資料夾傳送到新的膝上型電腦，並在未來不需要檔案歷程記錄之後，刪除 C:\ServerFolders\File 的歷程記錄備份\\< 我的帳戶\>\\< MyComputer01\>。  
+    -   若要刪除電腦的檔案歷程記錄，請刪除具有電腦名稱的檔案歷程記錄備份子資料夾。 例如，如果使用者 \> 在開始使用新的膝上型電腦後 <MyComputer01 淘汰，<MyComputer02 \> ，您會在 \\ \> \\ \> 驗證使用者是否已將所有檔案和資料夾傳輸到新的膝上型電腦，而且未來不需要檔案歷程記錄之後，刪除<我的帳戶<MyComputer01 的 C:\ServerFolders\File 歷程記錄備份。  
   
 ### <a name="cannot-apply-file-history-setting-to-a-new-user"></a>無法將檔案歷程記錄設定套用至新使用者  
  如果您新增的使用者與已從 Windows Server Essentials 中刪除的使用者具有相同的使用者名稱，由於 Windows Server Essentials 嘗試建立用於儲存新使用者之檔案歷程記錄的資料夾時發生命名衝突，因此新使用者的檔案歷程記錄設定可能會失敗。 若要解決這個問題，您可以重新命名已刪除使用者的 File History 資料夾。  
@@ -52,9 +52,9 @@ ms.locfileid: "80852236"
   
 1.  以系統管理員身分登入伺服器。  
   
-2.  在 [Windows Server Essentials 儀表板] 上，按一下 [存放裝置]。  
+2.  在 [Windows Server Essentials 儀表板] 上，按一下 [存放裝置]****。  
   
-3.  在 [伺服器資料夾] 索引標籤上，記下 File History Backups 資料夾的位置。 預設位置為%SystemDrive%\ServerFolders\File 歷程記錄備份\\。  
+3.  在 [伺服器資料夾]**** 索引標籤上，記下 File History Backups 資料夾的位置。 預設位置是%SystemDrive%\ServerFolders\File 歷程記錄備份 \\ 。  
   
 ##### <a name="to-resolve-file-history-issues-for-a-new-user-with-a-name-conflict"></a>解決發生名稱衝突之新使用者的檔案歷程記錄問題  
   
@@ -66,13 +66,7 @@ ms.locfileid: "80852236"
   
      檔案歷程記錄備份資料夾針對已新增至 Windows Server Essentials 的每個使用者帳戶，各包含一個子資料夾。 例如，使用者 John Smith 的檔案歷程記錄會儲存在子資料夾 File History Backups\JohnSmith 中。  
   
-4.  為您刪除的使用者重新命名子資料夾，例如， **<*UserName*> _Deleted**。 如果您不再需要使用者的檔案歷程記錄，您可以刪除該資料夾。  
-  
-
-5.  您現在可以新增使用者。 如需指示，請參閱新增使用者帳戶？在 [[管理使用者帳戶](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md)] 中。  
-  
-### <a name="a-user-account-was-removed-but-the-users-file-history-remains"></a>已移除使用者帳戶，但保留使用者的檔案歷程記錄  
- 在某些情況下，網路管理員可選擇從伺服器移除使用者或電腦，但保留檔案歷程記錄備份供未來使用。 當您不再需要檔案歷程記錄時，請從伺服器上的共用資料夾，移除使用者或電腦的 File History Backups 資料夾。 若要執行這項作業，請參閱 [To manually delete File History backups for a user or a computer](Troubleshoot-File-History-in-Windows-Server-Essentials.md#BKMK_manuallyDelete)。  
+4.  為您刪除的使用者重新命名子資料夾，例如** < *UserName*>_Deleted**。 如果您不再需要使用者的檔案歷程記錄，您可以刪除該資料夾。  
 
 5. 您現在可以新增使用者。 如需指示，請參閱新增使用者帳戶？在 [[管理使用者帳戶](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md)] 中。  
   
@@ -83,9 +77,6 @@ ms.locfileid: "80852236"
 ## <a name="see-also"></a>另請參閱  
   
 -   [管理用戶端備份](../manage/Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md)  
-  
-
--   [支援 Windows Server Essentials](Support-Windows-Server-Essentials.md)
 
 -   [支援 Windows Server Essentials](../support/Support-Windows-Server-Essentials.md)
 
