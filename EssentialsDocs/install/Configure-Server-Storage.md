@@ -8,12 +8,12 @@ ms.assetid: ef7ddcdd-3a74-40ca-9487-c3a6fc5155a5
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b543e473c545f9446ab33b8f81d5b2e5fa4ed877
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: cc76e39e84e78d210287f96353e4e4b68178f63e
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80817221"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267429"
 ---
 # <a name="configure-server-storage"></a>設定伺服器儲存體
 
@@ -27,7 +27,7 @@ ms.locfileid: "80817221"
   
 |伺服器層級|磁碟設定|  
 |------------------|------------------------|  
-|項目|-兩個實體磁片<br /><br /> -設定為 RAID 1 鏡像集，其中包含下列各項：<br /><br /> -C：磁片區？ 60 GB<br /><br /> -D： volume？ 1000 GB|  
+|進入|-兩個實體磁片<br /><br /> -設定為 RAID 1 鏡像集，其中包含下列各項：<br /><br /> -C：磁片區？ 60 GB<br /><br /> -D： volume？ 1000 GB|  
 |中|-三個實體磁片<br /><br /> -設定為 RAID 5 集合，其中包含下列各項：<br /><br /> -C：磁片區？ 60 GB<br /><br /> -D： volume？ 1500 GB|  
 |高|-五個以上的實體磁片總計<br /><br /> -RAID 1 鏡像集內的兩個磁片，其中包含 C： volume？ 100 GB<br /><br /> -RAID 5 集合中的所有剩餘磁片，其中包含下列各項：<br /><br /> -D： volume？ 1500 GB<br /><br /> -E：磁片區？ 1500 GB|  
   
@@ -41,15 +41,9 @@ ms.locfileid: "80817221"
   
 ## <a name="see-also"></a>另請參閱  
 
- [消費者入門與 Windows Server ESSENTIALS ADK](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [使用 Windows Server Essentials ADK 消費者入門](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
  [建立和自訂映射](Creating-and-Customizing-the-Image.md)   
  [其他自訂](Additional-Customizations.md)   
- [準備映射以進行部署](Preparing-the-Image-for-Deployment.md)   
+ [準備要部署的映射](Preparing-the-Image-for-Deployment.md)   
  [測試客戶經驗](Testing-the-Customer-Experience.md)
-
- [消費者入門與 Windows Server ESSENTIALS ADK](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
- [建立和自訂映射](../install/Creating-and-Customizing-the-Image.md)   
- [其他自訂](../install/Additional-Customizations.md)   
- [準備映射以進行部署](../install/Preparing-the-Image-for-Deployment.md)   
- [測試客戶經驗](../install/Testing-the-Customer-Experience.md)
 

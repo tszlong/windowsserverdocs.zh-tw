@@ -8,12 +8,12 @@ ms.assetid: 9860a6b9-baea-4bf0-9a9f-6f1a288f996e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: a517fd56c16860b0c3bfeeaf5cac0d4049b9041e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 10f7e58aad26f85455388654c65b73fd72f9ae13
+ms.sourcegitcommit: fdc3ce1992f4dd6ea1771479d525126abbbcfa72
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80819871"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256648"
 ---
 # <a name="replace-o365-integration-module-buy-try-endpoint-url-in-support-of-microsoft-online-service-reseller-agreement"></a>在 Microsoft Online Service 經銷商合約的支援下，取代 O365 整合模組並購買/嘗試端點 URL
 
@@ -32,7 +32,7 @@ ms.locfileid: "80819871"
   
     -   機碼名稱 = MOSRASTDBUY  
   
-    -   值 = *xxxxx*，其中 xxxxx 是您的企業訂閱購買 URL。 例如，值 = http://syndicatepartner.office365.com/enterprisebuy.html  
+    -   值 = *xxxxx*，其中 xxxxx 是您的企業訂閱購買 URL。 例如，值 =http://syndicatepartner.office365.com/enterprisebuy.html  
   
 2.  Office 365 Enterprise 訂閱試用端點。  
   
@@ -42,7 +42,7 @@ ms.locfileid: "80819871"
   
     -   機碼名稱 = MOSRASTDTRY  
   
-    -   值 = *xxxxx*，其中 xxxxx 是您的企業訂閱購買 URL。 例如，值 = http://syndicatepartner.office365.com/enterprisetry.html  
+    -   值 = *xxxxx*，其中 xxxxx 是您的企業訂閱購買 URL。 例如，值 =http://syndicatepartner.office365.com/enterprisetry.html  
   
 3.  Office 365 Small Business Premium 訂閱購買端點。  
   
@@ -52,7 +52,7 @@ ms.locfileid: "80819871"
   
     -   機碼名稱 = MOSRALITEBUY  
   
-    -   值 = *xxxxx*，其中 xxxxx 是您的企業訂閱購買 URL。 例如，值 = http://syndicatepartner.office365.com/smallbizbuy.html  
+    -   值 = *xxxxx*，其中 xxxxx 是您的企業訂閱購買 URL。 例如，值 =http://syndicatepartner.office365.com/smallbizbuy.html  
   
 4.  Office 365 Small Business Premium 訂用帳戶試用端點。  
   
@@ -62,17 +62,17 @@ ms.locfileid: "80819871"
   
     -   機碼名稱 = MOSRALITETRY  
   
-    -   值 = *xxxxx*，其中 xxxxx 是您的企業訂閱購買 URL。 例如，值 = http://syndicatepartner.office365.com/smallbiztry.html  
+    -   值 = *xxxxx*，其中 xxxxx 是您的企業訂閱購買 URL。 例如，值 =http://syndicatepartner.office365.com/smallbiztry.html  
   
 #### <a name="to-add-an-endpoint-url-key-to-the-registry"></a>將端點 URL 機碼新增到登錄  
   
-1.  在參照電腦上，按一下 [開始]，輸入 **regedit**，然後按 ENTER。  
+1.  在參照電腦上，按一下 [開始]****，輸入 **regedit**，然後按 ENTER。  
   
 2.  在左窗格中，依序展開 **HKEY_LOCAL_MACHINE**、**SOFTWARE**、**Microsoft**、**Windows Server** 及 **MSO**。  
   
-3.  如果 MSO 不存在，請在 [Windows Server] 上按一下滑鼠右鍵，指向 [新增]，按一下 [機碼]，然後輸入 **MSO** 作為機碼的名稱。  
+3.  如果 MSO 不存在，請在 [Windows Server]**** 上按一下滑鼠右鍵，指向 [新增]****，按一下 [機碼]****，然後輸入 **MSO** 作為機碼的名稱。  
   
-4.  以滑鼠右鍵按一下 MSO，然後按一下 **[字串值]** 。 輸入下列其中一個端點字串名稱，當做字串的名稱：  
+4.  以滑鼠右鍵按一下 MSO，然後按一下 **[字串值]**。 輸入下列其中一個端點字串名稱，當做字串的名稱：  
   
     -   MOSRASTDBUY  
   
@@ -82,9 +82,9 @@ ms.locfileid: "80819871"
   
     -   MOSRALITETRY  
   
-5.  在右窗格中，以滑鼠右鍵按一下新的字串，然後按一下 **[修改]** 。  
+5.  在右窗格中，以滑鼠右鍵按一下新的字串，然後按一下 **[修改]**。  
   
-6.  在 **[數值資料]** 文字方塊中輸入您的新端點 URL，然後按一下 **[確定]** 。  
+6.  在 **[數值資料]** 文字方塊中輸入您的新端點 URL，然後按一下 **[確定]**。  
   
 7.  針對在步驟 4 中列出的每個字串名稱重複步驟 4-6。  
   
@@ -92,9 +92,6 @@ ms.locfileid: "80819871"
 
  [建立和自訂映射](Creating-and-Customizing-the-Image.md)   
  [其他自訂](Additional-Customizations.md)   
- [準備映射以進行部署](Preparing-the-Image-for-Deployment.md)   
- [測試客戶體驗](Testing-the-Customer-Experience.md)[建立和自訂映射](../install/Creating-and-Customizing-the-Image.md)   
- [其他自訂](../install/Additional-Customizations.md)   
- [準備映射以進行部署](../install/Preparing-the-Image-for-Deployment.md)   
- [測試客戶經驗](../install/Testing-the-Customer-Experience.md)
-
+ [準備要部署的映射](Preparing-the-Image-for-Deployment.md)   
+ [測試客戶經驗](Testing-the-Customer-Experience.md)
+ 

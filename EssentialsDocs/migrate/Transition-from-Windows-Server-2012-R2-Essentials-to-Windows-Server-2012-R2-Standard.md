@@ -8,12 +8,12 @@ ms.assetid: a14689e3-2310-4229-bd3e-dafc0e739e02
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f7914ff205382ed2c74cb130061f850e2c0675f5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 145d4ef1039093f224e1dc73cb5d8286ddd8e494
+ms.sourcegitcommit: fdc3ce1992f4dd6ea1771479d525126abbbcfa72
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852291"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256478"
 ---
 # <a name="transition-from-windows-server-essentials-to-windows-server-2012-r2-standard"></a>從 Windows Server 2012 Essentials 轉換到 Windows Server 2012 R2 Standard
 
@@ -39,9 +39,9 @@ Windows Server 2016 是雲端就緒的作業系統，可支援您目前的工作
   
     1.  以系統管理員身分開啟命令視窗。  
   
-    2.  執行下列命令：  
+    2.  執行以下命令：  
   
-         **dism/online/set-edition： ServerStandard/geteula：** *eula 路徑*（其中*eula 路徑*代表您要儲存 eula 檔案的位置，例如： c：\ ws8std_eula .rtf）。 務必使用 .rtf 做為副檔名。  
+         **dism /online /set-edition:ServerStandard /geteula:** *eula 路徑* (其中 *eula 路徑* 代表您要儲存 EULA 檔案的位置，例如：C:\ws8std_eula.rtf)。 務必使用 .rtf 做為副檔名。  
   
     3.  開啟您儲存檔案的位置，然後按兩下檔案將它開啟。  
   
@@ -71,6 +71,4 @@ Windows Server 2016 是雲端就緒的作業系統，可支援您目前的工作
   
 
 -   [移轉伺服器資料到 Windows Server Essentials](Migrate-Server-Data-to-Windows-Server-Essentials.md)
-
--   [移轉伺服器資料到 Windows Server Essentials](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)
 

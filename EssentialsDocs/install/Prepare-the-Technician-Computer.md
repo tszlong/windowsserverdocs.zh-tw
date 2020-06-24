@@ -8,12 +8,12 @@ ms.assetid: 8841c3aa-7aaa-4cc0-b1e1-ab0643f29586
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 0976028d743b70fe3e8c527903bbbe3d1197e13f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8c6e72be42672cff246beec54f7a47865da146f0
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80819911"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267539"
 ---
 # <a name="prepare-the-technician-computer"></a>準備技術人員電腦
 
@@ -27,15 +27,9 @@ ms.locfileid: "80819911"
   
 ## <a name="see-also"></a>另請參閱  
 
- [消費者入門與 Windows Server ESSENTIALS ADK](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [使用 Windows Server Essentials ADK 消費者入門](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
  [建立和自訂映射](Creating-and-Customizing-the-Image.md)   
  [其他自訂](Additional-Customizations.md)   
- [準備映射以進行部署](Preparing-the-Image-for-Deployment.md)   
+ [準備要部署的映射](Preparing-the-Image-for-Deployment.md)   
  [測試客戶經驗](Testing-the-Customer-Experience.md)
-
- [消費者入門與 Windows Server ESSENTIALS ADK](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
- [建立和自訂映射](../install/Creating-and-Customizing-the-Image.md)   
- [其他自訂](../install/Additional-Customizations.md)   
- [準備映射以進行部署](../install/Preparing-the-Image-for-Deployment.md)   
- [測試客戶經驗](../install/Testing-the-Customer-Experience.md)
 

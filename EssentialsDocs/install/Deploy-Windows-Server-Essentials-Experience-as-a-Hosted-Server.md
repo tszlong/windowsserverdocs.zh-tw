@@ -8,18 +8,18 @@ ms.assetid: a455c6b4-b29f-4f76-8c6b-1578b6537717
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 9ddeaedb09346216585b2eb1237ed9340da59756
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4066e003e2b32ddf746b9a37a10ebecfa3c50851
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80817971"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267619"
 ---
 # <a name="deploy-windows-server-essentials-experience-as-a-hosted-server"></a>部署 Windows Server Essentials 體驗做為託管伺服器
 
 >適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-本檔包含主控者的專屬資訊，其適用于想要使用 Windows Server Essentials 體驗角色（在檔其餘部分中稱為 Windows Server Essentials）來部署 Microsoft Windows Server 16 的使用者，並于其實驗室中安裝打算將 Windows Server Essentials 體驗作為服務提供給客戶。 本文件包含下列章節：  
+本檔包含主控者的專屬資訊，其適用于想要部署 Windows server Essentials 體驗角色（在檔其餘部分中稱為「Windows Server Essentials」）的 Microsoft Windows Server 16，並打算以服務的形式提供給客戶的 Windows Server Essentials 體驗。 本文件包含下列各節：  
   
 
 -   [Windows Server Essentials 體驗總覽](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_WSEEOverview)  
@@ -30,43 +30,19 @@ ms.locfileid: "80817971"
   
 -   [支援的網路拓撲](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_SupportedToplogy)  
   
--   [自訂 Windows Server Essentials 體驗角色的映射](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_CustomizeImage)  
+-   [自訂 Windows Server Essentials 體驗角色的映像](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_CustomizeImage)  
   
 -   [自動部署 Windows Server Essentials 體驗](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_AutomateDeployment)  
   
--   [將資料從 Windows Small Business Server 遷移到 Windows Server Essentials 體驗](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Migrate)  
+-   [將資料從 Windows Small Business Server 移轉到 Windows Server Essentials 體驗](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Migrate)  
   
 -   [使用 Windows PowerShell 執行一般工作](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_PowerShell)  
   
--   [與 Windows Server Essentials 整合的電子郵件](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_EmailIntegration)  
+-   [整合電子郵件與 Windows Server Essentials](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_EmailIntegration)  
   
--   [使用原生工具進行監視和管理](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Monitoring)  
+-   [使用原生工具監視和管理](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Monitoring)  
   
--   [測試案例](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Scenarios)  
-  
--   [支援資訊](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Support)  
-
--   [Windows Server Essentials 體驗總覽](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_WSEEOverview)  
-  
--   [裝載 Windows Server Essentials 體驗的優點](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Benefits)  
-  
--   [支援的部署選項](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_SupportedDeployment)  
-  
--   [支援的網路拓撲](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_SupportedToplogy)  
-  
--   [自訂 Windows Server Essentials 體驗角色的映射](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_CustomizeImage)  
-  
--   [自動部署 Windows Server Essentials 體驗](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_AutomateDeployment)  
-  
--   [將資料從 Windows Small Business Server 遷移到 Windows Server Essentials 體驗](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Migrate)  
-  
--   [使用 Windows PowerShell 執行一般工作](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_PowerShell)  
-  
--   [與 Windows Server Essentials 整合的電子郵件](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_EmailIntegration)  
-  
--   [使用原生工具進行監視和管理](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Monitoring)  
-  
--   [測試案例](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Scenarios)  
+-   [測試情節](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Scenarios)  
   
 -   [支援資訊](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Support)  
 
@@ -175,11 +151,11 @@ Install-WssVpnServer -IPv4AddressRange ('192.168.0.160','192.168.0.240') -ApplyT
   
 - **用戶端備份** 新加入的用戶端電腦預設會關閉用戶端備份。  
   
-- **用戶端還原服務** 用戶端還原服務 will be disabled, and the UI will be hidden from the Dashboard.  
+- **用戶端還原服務** 用戶端還原服務將會停用，儀表板也不會顯示 UI。  
   
 - **檔案歷程記錄** 伺服器不會自動管理新建立的使用者帳戶的檔案歷程記錄設定。  
   
-- **伺服器備份** 伺服器備份 service will be disabled, and the 伺服器備份 UI will be hidden from the Dashboard.  
+- **伺服器備份** 伺服器備份服務將會停用，儀表板也不會顯示伺服器備份 UI。  
   
 - **儲存空間** 儀表板不會顯示建立或管理儲存空間的 UI。  
   
@@ -195,7 +171,7 @@ Install-WssVpnServer -IPv4AddressRange ('192.168.0.160','192.168.0.240') -ApplyT
 -   若要瞭解如何使用 Windows PowerShell 安裝 Windows Server Essentials 體驗角色，請參閱[安裝和設定 Windows Server essentials](https://technet.microsoft.com/library/dn281793.aspx)。  
   
 > [!NOTE]
->  請確定主機虛擬機器和 Windows Server Essentials 體驗的時區設定相同。 否則，您可能會遇到幾個錯誤。 這些包括：伺服器的初始設定可能不會在憑證相關工作上成功，憑證可能會在 Windows Server Essentials 體驗角色安裝後的幾個小時內無法使用，且裝置資訊將不會更新。正確.  
+>  請確定主機虛擬機器和 Windows Server Essentials 體驗的時區設定相同。 否則，您可能會遇到幾個錯誤。 這些包括：伺服器的初始設定可能不會在憑證相關工作上成功，憑證可能會在安裝 Windows Server Essentials 體驗角色後的幾個小時內無法運作，且裝置資訊將無法正確更新。  
   
  部署之後，請使用 Windows PowerShell Cmdlet **Get-WssConfigurationStatus** 確認初始設定是否成功。 傳回的狀態應為下列其中一項： **Notstarted**、 **FinishedWithWarning**、 **Running**、 **Finished**、 **Failed**或 **PendingReboot**。  
   
@@ -233,10 +209,10 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
   
  該命令會使用自動設定的路由器啟用遠端 Web 存取，並變更所有現有使用者的預設存取權限。  
   
-### <a name="add-user"></a>加入使用者  
+### <a name="add-user"></a>新增使用者  
  **語法**：  
   
- Add-wssuser [-Name] < string\> [-Password] < securestring\> [-AccessLevel < string\> {User &#124; Administrator}] [-FirstName < string\>] [-LastName < string\>] [-AllowRemoteAccess] [-AllowVpnAccess] [< CommonParameters\>]  
+ Add-wssuser [-Name] <string \> [-Password] <securestring \> [-AccessLevel <字串 \> {使用者 &#124; 系統管理員}] [-FirstName <字串 \> ] [-LastName <string \> ] [-AllowRemoteAccess] [-AllowVpnAccess] [<CommonParameters \> ]  
   
  **範例**：  
   
@@ -247,7 +223,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 ### <a name="add-server-folder"></a>新增伺服器資料夾  
  **語法**：  
   
- Add-wssfolder [-Name] < 字串\> [-Path] < 字串\> [[-Description] < string\>] [-KeepPermissions] [< CommonParameters\>]  
+ Add-wssfolder [-Name] <string \> [-Path] <string \> [[-Description] <string \> ] [-KeepPermissions] [<CommonParameters \> ]  
   
  **範例**：  
   
@@ -302,15 +278,15 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
   
  以下是完整用戶端備份的一些考量：  
   
--   **效能** 初始的用戶端備份可能需要花費很多時間來上傳大量資料。  
+-   **效能**初始的用戶端備份可能需要花費很長的時間，因為要上傳的資料量。  
   
--   **穩定性** 有時候用戶端的網際網路連線可能會不穩定。 用戶端備份設計為自動繼續進行，而且用戶端備份資料庫會在每次備份 40 GB 的資料時建立檢查點。 如果您認為網際網路連線不夠穩定，也可以將該值變更為較小的數字。  
+-   **穩定性**有時候用戶端上的網際網路連線並不穩定。 用戶端備份設計為自動繼續進行，而且用戶端備份資料庫會在每次備份 40 GB 的資料時建立檢查點。 如果您認為網際網路連線不夠穩定，也可以將該值變更為較小的數字。  
   
-    -   啟用檢查點工作：在伺服器上，將登錄機碼 **HKLM\Software\Microsoft\Windows Server\Backup\GetCheckPointJobs** 設定為 1。  
+    -   若要啟用檢查點工作：在伺服器上，將登錄機碼**HKLM\Software\Microsoft\Windows server\backup\getcheckpointjobs 設定**設定為1。  
   
     -   變更檢查點閾值：在用戶端上，變更 **HKLM\Software\Microsoft\Windows Server\Backup\CheckPointThreshold** 的預設值 40 GB。  
   
--   **用戶端裸機還原** 由於 Windows 預先安裝環境不支援 VPN 連線，因此也不支援用戶端裸機還原。 您必須遵循 [自訂和部署 Windows Server 2012 R2 中的 Windows Server Essentials](https://technet.microsoft.com/library/dn293241.aspx)之步驟來隱藏用戶端還原服務工作。  
+-   **用戶端裸機還原** 由於 Windows 預先安裝環境不支援 VPN 連線，因此也不支援用戶端裸機還原。 您應遵循在[Windows server 2012 R2 中自訂和部署 Windows Server Essentials](https://technet.microsoft.com/library/dn293241.aspx)中的步驟來隱藏用戶端還原服務工作。  
   
 ##### <a name="file-history"></a>檔案歷程記錄  
  檔案歷程記錄是 Windows 8.1 和 Windows 8 中將設定檔資料 (媒體櫃、桌面、連絡人和我的最愛) 備份到網路共用的功能。 您可以為所有執行 Windows 8.1 或 Windows 8 且加入 Windows Server Essentials 網路的電腦，集中管理檔案歷程記錄設定。 備份資料會儲存在執行 Windows Server Essentials 的伺服器上。 您必須遵循 [自訂和部署 Windows Server 2012 R2 中的 Windows Server Essentials](https://technet.microsoft.com/library/dn293241.aspx)之步驟來隱藏用戶端還原服務工作。  
@@ -400,7 +376,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
   
 ## <a name="see-also"></a>另請參閱  
   
--   [Windows Server Essentials 的新功能](../get-started/what-s-new.md)  
+-   [Windows Server Essentials 中的新功能](../get-started/what-s-new.md)  
 
 -   [安裝 Windows Server Essentials](Install-Windows-Server-Essentials.md)  
 

@@ -8,12 +8,12 @@ ms.assetid: 2fdbc016-d464-43cb-bd75-8a63e61588a2
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c47b77e30aafdf6d882bb0d6af4777c7417acba9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 57bf1d35e817be57b8d23e520568961aef3ee557
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80817341"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267439"
 ---
 # <a name="build-multi-language-client-restore-media"></a>建立多語言用戶端還原媒體
 
@@ -89,11 +89,6 @@ ms.locfileid: "80817341"
 
  [建立和自訂映射](Creating-and-Customizing-the-Image.md)   
  [其他自訂](Additional-Customizations.md)   
- [準備映射以進行部署](Preparing-the-Image-for-Deployment.md)   
+ [準備要部署的映射](Preparing-the-Image-for-Deployment.md)   
  [測試客戶經驗](Testing-the-Customer-Experience.md)
-
- [建立和自訂映射](../install/Creating-and-Customizing-the-Image.md)   
- [其他自訂](../install/Additional-Customizations.md)   
- [準備映射以進行部署](../install/Preparing-the-Image-for-Deployment.md)   
- [測試客戶經驗](../install/Testing-the-Customer-Experience.md)
 

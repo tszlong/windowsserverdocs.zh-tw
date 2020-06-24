@@ -8,18 +8,18 @@ ms.assetid: 51bcf124-c215-4e9d-9fa8-a90fa2c2fa22
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: aace7849244bb65ec0042971e6ec899f554a62d2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 20b38be01d091f5dfeb819712c57c1f87eaf770f
+ms.sourcegitcommit: fdc3ce1992f4dd6ea1771479d525126abbbcfa72
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852301"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256627"
 ---
 # <a name="transition-from-windows-server-essentials-to-windows-server-2012-standard"></a>從 Windows Server Essentials 轉換到 Windows Server 2012 Standard
 
 >適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
- Windows Server&reg; 2012 Essentials 最多可支援25位使用者和50裝置。 當您的業務需求超過限制時，您可以執行從 Windows Server Essentials 到 Windows Server 2012 Standard 的就地授權轉換，以維持與授權相容。  
+ Windows Server &reg; 2012 Essentials 最多可支援25位使用者和50裝置。 當您的業務需求超過限制時，您可以執行從 Windows Server Essentials 到 Windows Server 2012 Standard 的就地授權轉換，以維持與授權相容。  
   
 ## <a name="how-the-transition-affects-user-and-device-limits"></a>這個轉換對使用者和裝置限制有什麼影響  
  轉換到 Windows Server 2012 Standard 之後，會移除使用者帳戶和裝置限制，但 Windows Server Essentials 特有的功能（例如儀表板、遠端 Web 存取和用戶端電腦備份）仍會繼續使用。 不過，這些功能的技術限制最多支援 75 個使用者帳戶和 75 個裝置。 如果需要新增75個以上的使用者帳戶或裝置，您應該關閉 Windows Server Essentials 功能，並使用 Windows Server 2012 標準原生工具來管理使用者帳戶和裝置。  
@@ -38,7 +38,7 @@ ms.locfileid: "80852301"
   
     1.  以系統管理員身分開啟命令視窗。  
   
-    2.  執行下列命令：  
+    2.  執行以下命令：  
   
          **dism/online/set-edition： ServerStandard/geteula： eula 路徑**  
   
@@ -62,7 +62,7 @@ ms.locfileid: "80852301"
   
 2. 以系統管理員身分開啟 Windows PowerShell，然後執行下列命令。  
   
-    **dism/online/set-edition： ServerStandard/accepteula/productkey：** *產品金鑰*  
+    **dism /online /set-edition:ServerStandard /accepteula /productkey:** *產品金鑰*  
   
     其中*產品金鑰*是您的 Windows Server 2012 Standard 複本的產品金鑰。  
   
@@ -95,7 +95,7 @@ ms.locfileid: "80852301"
   
 1. 在 [首頁] 頁面上，按一下 [取得說明與支援]。  
   
-2. 按一下 [**關閉 Windows Server Essentials 功能嚮導]** 。  
+2. 按一下 [**關閉 Windows Server Essentials 功能嚮導]**。  
   
    [**關閉 Windows Server Essentials 功能嚮導]** 執行的某些工作可能會無法順利完成。 在某些情況下，可能會使儀表板無法執行。 若發生這種情況，您可以執行以下檔案，手動啟動精靈：  
   
@@ -104,11 +104,7 @@ ms.locfileid: "80852301"
 ## <a name="see-also"></a>另請參閱  
   
 
--   [轉換至 Windows Server 2012 R2 Standard](Transition-from-Windows-Server-2012-R2-Essentials-to-Windows-Server-2012-R2-Standard.md)  
+-   [轉換到 Windows Server 2012 R2 Standard](Transition-from-Windows-Server-2012-R2-Essentials-to-Windows-Server-2012-R2-Standard.md)  
   
 -   [移轉伺服器資料到 Windows Server Essentials](Migrate-Server-Data-to-Windows-Server-Essentials.md)
-
--   [轉換至 Windows Server 2012 R2 Standard](../migrate/Transition-from-Windows-Server-2012-R2-Essentials-to-Windows-Server-2012-R2-Standard.md)  
-  
--   [移轉伺服器資料到 Windows Server Essentials](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)
 

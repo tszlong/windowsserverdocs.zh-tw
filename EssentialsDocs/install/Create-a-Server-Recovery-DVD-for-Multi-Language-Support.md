@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: c7da0f6c-9732-4784-9c28-7dad72c4071d
 author: daveba
 ms.author: daveba
-ms.openlocfilehash: b71fc748f7cc8d82420b7a62fe502135036db727
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 9cafaf25a18ffe17894e11ff0676e492656e5831
+ms.sourcegitcommit: fdc3ce1992f4dd6ea1771479d525126abbbcfa72
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312118"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256667"
 ---
 # <a name="create-a-server-recovery-dvd-for-multi-language-support"></a>針對多語言支援建立伺服器復原 DVD
 
@@ -66,7 +66,7 @@ ms.locfileid: "80312118"
 > [!NOTE]
 >  確認您已安裝 Windows Server 2012 的語言套件。 如此可確保您會有適當的商標。 Windows Server 2012 多語系使用者介面語言套件可在[Microsoft.com](https://www.microsoft.com/OEM/en/installation/downloads/Pages/technical-downloads.aspx)上取得。 請依照[逐步解說：](https://technet.microsoft.com/library/jj126995.aspx)在建立多語系 windows 映射時建立多語系 windows 映射中所述的指示，將 Windows Server Essentials 語言套件新增至 install .wim。  
 >   
->  Windows Server Essentials 語言套件可在 \Language Pack\\< CultureName\>的語言套件媒體中取得。  
+>  Windows Server Essentials 語言套件可在 \Language Pack<CultureName 的語言套件媒體中取得 \\ \> 。  
   
 > [!NOTE]
 >  在 Windows Server 2012 發行之前，並非所有語言套件都可能無法使用。  
@@ -106,11 +106,6 @@ ms.locfileid: "80312118"
 
  [建立和自訂映射](Creating-and-Customizing-the-Image.md)   
  [其他自訂](Additional-Customizations.md)   
- [準備映射以進行部署](Preparing-the-Image-for-Deployment.md)   
+ [準備要部署的映射](Preparing-the-Image-for-Deployment.md)   
  [測試客戶經驗](Testing-the-Customer-Experience.md)
-
- [建立和自訂映射](../install/Creating-and-Customizing-the-Image.md)   
- [其他自訂](../install/Additional-Customizations.md)   
- [準備映射以進行部署](../install/Preparing-the-Image-for-Deployment.md)   
- [測試客戶經驗](../install/Testing-the-Customer-Experience.md)
 

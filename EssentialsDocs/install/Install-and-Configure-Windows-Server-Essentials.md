@@ -8,12 +8,12 @@ ms.assetid: e95cf219-46a4-4041-bd81-0c4c2a0622cf
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 65d3f3f30a69e9879e722cbdab260fb9715af545
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 46ee8e19f50b1bce48bd1e7c773bbd802d85b550
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820031"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267568"
 ---
 # <a name="install-and-configure-windows-server-essentials"></a>安裝和設定 Windows Server Essentials
 
@@ -31,10 +31,6 @@ ms.locfileid: "80820031"
 1.  [步驟1：安裝 Windows Server Essentials 作業系統](Install-and-Configure-Windows-Server-Essentials.md#BKMK_ManualInstallation)在此步驟中，您會在伺服器上安裝作業系統。  
   
 2.  [步驟2：設定 Windows Server Essentials 作業系統](Install-and-Configure-Windows-Server-Essentials.md#BKMK_Step2Configure)在此步驟中，您將提供公司、網域設定和網路系統管理員的相關資訊，以完成安裝。 使用此資訊是為了取得供您使用的伺服器。  
-
-1.  [步驟1：安裝 Windows Server Essentials 作業系統](../install/Install-and-Configure-Windows-Server-Essentials.md#BKMK_ManualInstallation)在此步驟中，您會在伺服器上安裝作業系統。  
-  
-2.  [步驟2：設定 Windows Server Essentials 作業系統](../install/Install-and-Configure-Windows-Server-Essentials.md#BKMK_Step2Configure)在此步驟中，您將提供公司、網域設定和網路系統管理員的相關資訊，以完成安裝。 使用此資訊是為了取得供您使用的伺服器。  
 
   
 ###  <a name="step-1-install-the-windows-server-essentials-operating-system"></a><a name="BKMK_ManualInstallation"></a>步驟1：安裝 Windows Server Essentials 作業系統  
@@ -86,14 +82,14 @@ ms.locfileid: "80820031"
   
      如果您需要刪除和/或建立分割區，請請參照以下步驟：  
   
-    1.  若要刪除分割區，請選取分割區，按一下 **磁碟機選項 (進階)** ，然後按一下 **刪除**。 在您刪除系統分割區之後，請使用步驟 **b** 或者步驟 **c** 中的說明建立新的分割區。  
+    1.  若要刪除分割區，請選取分割區，按一下 **磁碟機選項 (進階)**，然後按一下 **刪除**。 在您刪除系統分割區之後，請使用步驟 **b** 或者步驟 **c** 中的說明建立新的分割區。  
   
         > [!NOTE]
         >  在您按下 **磁碟機選項 (進階)** 之後，該選項就不會再出現。 在此情形下，請略過與磁碟機選項有關的步驟。  
   
-    2.  若要在尚未分割的空間建立分割區，按一下您要分割的硬碟，按下 **磁碟機選項 (進階)** ，按下 **新增**然後在 **大小** 文字方塊中，鍵入您想要建立的分割區大小。 例如，如果您使用建立的分割區大小 120 gigabytes (GB)，請鍵入 **122880**，然後按一下 **套用**。 建立分割區之後，按一下 **下一步**。 分割區在繼續安裝之前已經格式化。  
+    2.  若要在尚未分割的空間建立分割區，按一下您要分割的硬碟，按下 **磁碟機選項 (進階)**，按下 **新增**然後在 **大小** 文字方塊中，鍵入您想要建立的分割區大小。 例如，如果您使用建立的分割區大小 120 gigabytes (GB)，請鍵入 **122880**，然後按一下 **套用**。 建立分割區之後，按一下 **下一步**。 分割區在繼續安裝之前已經格式化。  
   
-    3.  若要用所有尚未分割的空間建立分割區，按一下您要分割的硬碟，按下 **磁碟機選項 (進階)** ，按下 **新增**，然後按下 **套用** 即可接受預設分割區大小。 建立分割區之後，按一下 **下一步**。 分割區在繼續安裝之前已經格式化。  
+    3.  若要用所有尚未分割的空間建立分割區，按一下您要分割的硬碟，按下 **磁碟機選項 (進階)**，按下 **新增**，然後按下 **套用** 即可接受預設分割區大小。 建立分割區之後，按一下 **下一步**。 分割區在繼續安裝之前已經格式化。  
   
         > [!IMPORTANT]
         >  在您完成此步驟後就不能將作業系統移動到不同的分割區。  
@@ -105,19 +101,19 @@ ms.locfileid: "80820031"
 > [!IMPORTANT]
 >  如果您要從舊版的 Windows Small Business Server 遷移到 Windows Server Essentials，您必須遵循不同的程式。 如需有關移轉安裝的詳細資訊，請參閱：  
 > 
-> - [從 Windows SBS 2003 進行遷移](../migrate/Migrate-Windows-Small-Business-Server-2003-to-Windows-Server-Essentials.md)  
->   -   [從 Windows SBS 2008 進行遷移](../migrate/Migrate-Windows-Small-Business-Server-2008-to-Windows-Server-Essentials.md)  
+> - [從 Windows SBS 2003 移轉](../migrate/Migrate-Windows-Small-Business-Server-2003-to-Windows-Server-Essentials.md)  
+>   -   [從 Windows SBS 2008 移轉](../migrate/Migrate-Windows-Small-Business-Server-2008-to-Windows-Server-Essentials.md)  
   
  在此階段的安裝期間，系統會提示您回答幾個有關您的組織的問題。 這是用於設定作業系統的資訊。  
   
 > [!IMPORTANT]
 >  開始此步驟之前，請確認區域網路介面卡連線至已開啟的路由器或交換器並且正常作用。  
   
- **估計的完成時間：** 大約 30 分鐘  
+ **預估完成時間：** 大約30分鐘  
   
 ##### <a name="to-configure-the-operating-system"></a>設定作業系統  
   
-1.  在 **確認日期和時間設定** 頁面, 按一下 **變更系統日期和時間設定** 以選擇伺服器的日期、時間以及時區設定。 完成後，請按 **[下一步]** 。  
+1.  在 **確認日期和時間設定** 頁面, 按一下 **變更系統日期和時間設定** 以選擇伺服器的日期、時間以及時區設定。 完成後，請按 [下一步]  。  
   
     > [!IMPORTANT]
     >  如果您要在虛擬機器上安裝 Windows Server Essentials，請確定您選擇的時區設定與主機作業系統所使用的相同。 如果時區設定不同，可能會無法成功安裝伺服器。  
@@ -133,7 +129,7 @@ ms.locfileid: "80820031"
     > [!IMPORTANT]
     >  伺服器名稱必須是在您的網路中未被使用的名稱。 在您完成此步驟後就無法變更伺服器名稱或者內部網域名稱。  
   
-4.  按 [下一步]。  
+4.  按 [下一步] 。  
   
 5.  在 **提供您的系統管理員帳戶資訊** 頁面，鍵入新系統管理員帳戶的資訊。  
   
@@ -146,7 +142,7 @@ ms.locfileid: "80820031"
   
 8.  **正在更新及準備您的伺服器** 頁面顯示最後安裝程序的進度。 這需要花費一些時間完成，您的電腦將會重新啟動數次。  
   
-9. 在伺服器最後一次重新啟動後會出現 **您的伺服器已可以使用** 頁面。 按一下 **關閉**。  
+9. 在伺服器最後一次重新啟動後會出現 **您的伺服器已可以使用** 頁面。 按一下 [關閉] 。  
   
 10. Click the Dashboard tile on the按一下 **開始** 畫面的儀表板圖標，然後在儀表板上，完成 **首頁** 頁面上的 **設定我的伺服器** 工作。 在 Windows Server Essentials 安裝完成後，您應該立即完成這些工作。  
   
@@ -162,15 +158,15 @@ ms.locfileid: "80820031"
   
  以下表格為會出現在設定工作清單中的項目。  
   
-|工作|描述
+|Task|描述
 |----------|-----------------|  
 |取得其他 Microsoft 產品的更新|按一下此工作以存取執行工具的連結，可讓您指定是否要使用 Microsoft Update 自動取得 Windows Server Essentials 和其他 Microsoft 產品（例如 Office）的更新。  
 |新增使用者帳戶|按一下此工作以檢視有關新增使用者帳戶的簡短資訊。 提供用來執行 **[新增使用者帳戶精靈]** 的連結。 如需詳細資訊，請參閱[新增使用者帳戶](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage1)。  
 |新增伺服器帳戶|按一下此工作以檢視有關新增伺服器資料夾的簡短資訊。 提供用來執行 **[新增資料夾精靈]** 的連結。 此外也提供有關「伺服器資料夾」的線上說明主題。 如需詳細資訊，請參閱[新增或移動伺服器資料夾](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5)。 
 |設定伺服器備份|按一下此工作以檢視有關使用伺服器資料夾保護資料的簡短資訊。 提供用來執行 **[設定伺服器備份精靈]** 的連結。 如需詳細資訊，請參閱[設定或自訂伺服器備份](../manage/Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_1)。 
-|設定 Anywhere 存取|按一下此工作以查看 Windows Server Essentials 中的「隨處存取」功能的簡短資訊。 提供前往 **[隨處存取設定]** 頁面的連結。 如需詳細資訊，請參閱[管理隨處存取](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)。 
+|設定隨處存取|按一下此工作以查看 Windows Server Essentials 中的「隨處存取」功能的簡短資訊。 提供前往 **[隨處存取設定]** 頁面的連結。 如需詳細資訊，請參閱[管理隨處存取](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)。 
 |設定電子郵件警示通知|按一下此工作以檢視有關電子郵件警示通知的簡短資訊。 提供用來執行 **[設定警示的電子郵件通知]** 工具的連結。 如需詳細資訊，請參閱[設定警示的電子郵件通知](../manage/Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Email)。  
-|設定媒體伺服器|按一下此工作以檢視有關使用媒體伺服器分享音樂、影片與影像檔案的簡短資訊。 提供前往 [媒體設定] 頁面的連結。 也提供前往關於媒體伺服器詳細資訊的線上說明主題連結。 如需詳細資訊，請參閱[管理數位媒體](../manage/Manage-Digital-Media-in-Windows-Server-Essentials.md)。 
+|設定媒體伺服器|按一下此工作以檢視有關使用媒體伺服器分享音樂、影片與影像檔案的簡短資訊。 提供前往 [媒體設定]  **** 頁面的連結。 也提供前往關於媒體伺服器詳細資訊的線上說明主題連結。 如需詳細資訊，請參閱[管理數位媒體](../manage/Manage-Digital-Media-in-Windows-Server-Essentials.md)。 
 |連線電腦|按一下此工作以檢視有關將網路電腦連線到伺服器的簡短資訊。 如需詳細資訊，請參閱[將電腦連線到伺服器](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)。
   
 ## <a name="see-also"></a>另請參閱  

@@ -8,12 +8,12 @@ ms.assetid: 2974fb3a-5150-43fd-a73f-3e5074eb5d03
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 5c73714dff2d89201ac93704105038c604f12e06
-ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
+ms.openlocfilehash: 6af10244f0413204f6ee6d168e3db2d24e75747c
+ms.sourcegitcommit: fdc3ce1992f4dd6ea1771479d525126abbbcfa72
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83404574"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256588"
 ---
 # <a name="migrate-from-previous-versions-to-windows-server-essentials-or-windows-server-essentials-experience"></a>從舊版移轉到 Windows Server Essentials 或 Windows Server Essentials 體驗
 
@@ -56,7 +56,7 @@ ms.locfileid: "83404574"
   
 ###  <a name="to-open-a-command-prompt-window-on-the-source-server-as-an-administrator"></a><a name="BKMK_OpenACommandPromptAsAdmin"></a>以系統管理員身分在來源伺服器上開啟 [命令提示字元] 視窗  
   
-1.  按一下 [啟動]  。  
+1.  按一下 [啟動] 。  
   
 2.  在搜尋方塊中，輸入 **cmd**。  
   
@@ -71,6 +71,4 @@ ms.locfileid: "83404574"
 ## <a name="see-also"></a>另請參閱  
   
 -   [移轉伺服器資料到 Windows Server Essentials](Migrate-Server-Data-to-Windows-Server-Essentials.md)
-
--   [移轉伺服器資料到 Windows Server Essentials](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)
 

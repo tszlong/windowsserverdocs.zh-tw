@@ -8,12 +8,12 @@ ms.assetid: c20b06b9-ce0d-4c20-bf49-257c3f5dc01b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: a566a8f342ba076ee402d1f19e35f99c58b931e4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c4a2a6f0c19425103c96a3eb69fd8531ec7a122b
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80817871"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267599"
 ---
 # <a name="hardware-requirements-for-the-target-computer"></a>目標電腦的硬體需求
 
@@ -26,21 +26,21 @@ ms.locfileid: "80817871"
   
 ### <a name="table-1--system-requirements-for-windows-server-essentials"></a>表1： Windows Server Essentials 的系統需求  
   
-|Component|最低|建議需求*|最大需求|  
+|元件|最小值|建議需求*|最大值|  
 |---------------|-------------|-------------------|-------------|  
 |CPU 通訊端|單一核心的需求為 1.4 GHz (64 位元處理器) 或更快速度<br /><br /> 多個核心的需求為 1.3 GHz (64 位元處理器) 或更快速度|多個核心的需求為 3.1 GHz (64 位元處理器) 或更快速度|2 個通訊端|  
 |記憶體 (RAM)|2 GB|16 GB|64 GB|  
-|硬碟和可用的儲存空間|160 GB 硬碟 (含一個 60 GB 系統磁碟分割)||無限制|  
+|硬碟和可用的儲存空間|160 GB 硬碟 (含一個 60 GB 系統磁碟分割)||沒有限制|  
   
- \* 支援 Windows Server Essentials 最大使用者和裝置限制的建議硬體需求。  
+ * 支援 Windows Server Essentials 最大使用者和裝置限制的建議硬體需求。  
   
 ## <a name="additional-hardware-and-software-requirements"></a>其他硬體和軟體需求  
  下表列出其他硬體和軟體需求。  
   
-|Component|描述|  
+|元件|描述|  
 |---------------|-----------------|  
 |網路介面卡|Gigabit Ethernet 介面卡 (10/100/1000baseT PHY/MAC)|  
-|網際網路|某些功能可能需要存取網際網路（可能須支付費用）或 Windows Live&reg; 識別碼帳戶|  
+|Internet|某些功能可能需要存取網際網路（可能須收取費用）或 Windows Live &reg; ID 帳戶|  
 |支援的用戶端作業系統|-Windows 7<br />-Windows 8<br />-Macintosh OS X 10.5 至10.8。<br /><br /> **注意：** 某些功能需要專業版或更高版本。<br /><br /> 1 GB 的可用硬碟空間 (安裝之後將會釋放此磁碟的某一部分)|  
 |路由器|支援 IPv4 NAT 的路由器或防火牆|  
 |其他需求|DVD-ROM 光碟機|  
@@ -53,15 +53,9 @@ ms.locfileid: "80817871"
   
 ## <a name="see-also"></a>另請參閱  
 
- [消費者入門與 Windows Server ESSENTIALS ADK](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [使用 Windows Server Essentials ADK 消費者入門](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
  [建立和自訂映射](Creating-and-Customizing-the-Image.md)   
  [其他自訂](Additional-Customizations.md)   
- [準備映射以進行部署](Preparing-the-Image-for-Deployment.md)   
+ [準備要部署的映射](Preparing-the-Image-for-Deployment.md)   
  [測試客戶經驗](Testing-the-Customer-Experience.md)
-
- [消費者入門與 Windows Server ESSENTIALS ADK](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
- [建立和自訂映射](../install/Creating-and-Customizing-the-Image.md)   
- [其他自訂](../install/Additional-Customizations.md)   
- [準備映射以進行部署](../install/Preparing-the-Image-for-Deployment.md)   
- [測試客戶經驗](../install/Testing-the-Customer-Experience.md)
 

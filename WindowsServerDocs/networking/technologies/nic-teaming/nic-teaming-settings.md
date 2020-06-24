@@ -9,12 +9,12 @@ ms.assetid: a4caaa86-5799-4580-8775-03ee213784a3
 ms.author: lizross
 author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: 8ae461f8e9236451e9a6b442cafecee4981ed8ce
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 133e44c83032976f08819529508b3990b6e78596
+ms.sourcegitcommit: fdc3ce1992f4dd6ea1771479d525126abbbcfa72
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853711"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256678"
 ---
 # <a name="nic-teaming-settings"></a>NIC 小組設定
 在本主題中，我們將概述 NIC 小組的屬性，例如團隊和負載平衡模式。 我們也會提供有關待命介面卡設定和主要小組介面屬性的詳細資料。 如果您的 NIC 小組中至少有兩張網路介面卡，則不需要指定待命介面卡來容錯。
@@ -24,12 +24,12 @@ ms.locfileid: "80853711"
 ![NIC 小組屬性](../../media/Create-a-New-NIC-Team-on-a-Host-Computer-or-VM/nict_06_properties.jpg)  
 
 ## <a name="teaming-modes"></a>小組模式 
-小組模式的選項與交換器**無關**，而且**切換相依**。 交換器相依模式包含**靜態**小組和**連結匯總控制通訊協定（LACP）** 。 
+小組模式的選項與交換器**無關**，而且**切換相依**。 交換器相依模式包含**靜態**小組和**連結匯總控制通訊協定（LACP）**。 
 
 >[!TIP]
 >為了獲得最佳的 NIC 小組效能，我們建議您使用動態散發的負載平衡模式。  
   
-### <a name="switch-independent"></a>獨立交換器
+### <a name="switch-independent"></a>交換器獨立
   
 [!INCLUDE [switch-independent-shortdesc-include](../../includes/switch-independent-shortdesc-include.md)] 
   
@@ -70,7 +70,7 @@ ms.locfileid: "80853711"
   
 TCP 埠雜湊會建立最細微的流量串流散發，產生可在 NIC 小組成員之間獨立移動的較小串流。 不過，您不能將 TCP 埠雜湊用於不是 TCP 或 UDP 型的流量，或從堆疊隱藏 TCP 和 UDP 埠，例如與受 IPsec 保護的流量。 在這些情況下，雜湊會自動使用 IP 位址雜湊，如果流量不是 IP 流量，則會使用 MAC 位址雜湊。  
   
-### <a name="hyper-v-port"></a>Hyper-v 埠
+### <a name="hyper-v-port"></a>Hyper-V 通訊埠
   
 [!INCLUDE [hyper-v-port-shortdesc-include](../../includes/hyper-v-port-shortdesc-include.md)]  
   
@@ -108,7 +108,7 @@ TCP 埠雜湊會建立最細微的流量串流散發，產生可在 NIC 小組�
   
 如果您使用 Vlan，可以使用此對話方塊來指定 VLAN 號碼。  
   
-無論您是否使用 Vlan，都可以指定 NIC 小組的 tNIC 名稱。  
+無論您是否使用 Vlan，都可以為 NIC 小組指定 NIC 名稱。  
   
 
 

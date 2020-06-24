@@ -8,33 +8,31 @@ ms.assetid: 71e3243e-2da9-409a-ae1f-813d4c9062e1
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 6a8c8a142cb40b8211450d16753ec9796987d208
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3a64bbb83f416d6791abbb51f3fc000b418bc0e4
+ms.sourcegitcommit: fdc3ce1992f4dd6ea1771479d525126abbbcfa72
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852511"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256540"
 ---
 # <a name="migrate-windows-small-business-server-2008-to-windows-server-essentials"></a>將 Windows Small Business Server 2008 移轉到 Windows Server Essentials
 
 >適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-本指南說明如何將現有的 Windows SBS 2008 網域遷移至新硬體上的 Windows Server&reg; 2012 Essentials，然後遷移設定和資料。 本指南也說明如何在完成遷移之後，從 Windows Server Essentials 網路移除現有的伺服器。  
+本指南說明如何在新的硬體上將現有的 Windows SBS 2008 網域遷移至 Windows Server &reg; 2012 Essentials，然後遷移設定和資料。 本指南也說明如何在完成遷移之後，從 Windows Server Essentials 網路移除現有的伺服器。  
   
 > [!NOTE]
 >  為了避免在遷移期間發生問題，Windows Server Essentials 產品開發小組強烈建議您先閱讀這份檔，再開始進行遷移。  
 > 
 > [!NOTE]
 > 
->  若要將您的伺服器資料移轉到最新版本的 Windows Server Essentials，請參閱[遷移至 Windows Server essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。  
-> 
->  若要將您的伺服器資料移轉到最新版本的 Windows Server Essentials，請參閱[遷移至 Windows Server essentials](../migrate/Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。  
+>  若要將您的伺服器資料移轉到最新版本的 Windows Server Essentials，請參閱[遷移至 Windows Server essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。
 
   
 ## <a name="additional-resources"></a>其他資源  
  如需可協助引導您進行移轉程序的其他資訊、工具和社群資源的連結，請造訪 [Windows Small Business Server 移轉](https://go.microsoft.com/fwlink/?LinkId=217520) 網站。  
   
-## <a name="terms-and-definitions"></a>術語與定義  
+## <a name="terms-and-definitions"></a>詞彙和定義  
  **來源伺服器：** 您要從中遷移設定和資料的現有伺服器。  
   
  **目的地伺服器：** 您要將設定和資料移轉至其中的新伺服器。  
@@ -72,6 +70,6 @@ ms.locfileid: "80852511"
   
 #### <a name="to-open-a-command-prompt-window-on-the-destination-server-as-an-administrator"></a>以系統管理員身分在目的地伺服器上開啟命令提示字元視窗  
   
-1.  在 [開始] 畫面的搜尋方塊中，輸入 **cmd**。  
+1.  在 [開始]**** 畫面的搜尋方塊中，輸入 **cmd**。  
   
-2.  在結果清單中，以滑鼠右鍵按一下 cmd，然後按一下 [以系統管理員身分執行]。
+2.  在結果清單中，以滑鼠右鍵按一下 cmd****，然後按一下 [以系統管理員身分執行]****。
