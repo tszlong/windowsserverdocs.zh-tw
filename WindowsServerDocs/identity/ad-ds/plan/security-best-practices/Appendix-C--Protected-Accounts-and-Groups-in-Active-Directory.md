@@ -8,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 3036176127cbb5401c582d81ddb2704d790a209a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 18a293f4ec7d96516bd89396c13562ba68dc471f
+ms.sourcegitcommit: a1641b80c88205c0253f354f2d427d77bb879643
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80821681"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85345432"
 ---
 # <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>附錄 C︰Active Directory 中受保護的帳戶和群組
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 ## <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>附錄 C︰Active Directory 中受保護的帳戶和群組
 
@@ -31,18 +31,16 @@ ms.locfileid: "80821681"
 
 #### <a name="protected-accounts-and-groups-in-active-directory-by-operating-system"></a>Active Directory 中受保護的帳戶和群組（依作業系統）
 
-| Windows Server 2003 RTM | Windows Server 2003 SP1 + | Windows Server 2012、 <br> Windows Server 2008 R2、 <br> Windows Server 2008 | Windows Server 2016 |
+| Windows Server 2003 RTM | Windows Server 2003 SP1 + | Windows Server 2012、 <br> Windows Server 2008 R2、 <br> Windows Server 2008 | Windows Server 2016 |
 | --- | --- | --- | --- |
 |Account Operators|Account Operators|Account Operators|Account Operators|
 |系統管理員|系統管理員|系統管理員|系統管理員|
-|Administrators|Administrators|Administrators|Administrators|
+|系統管理員|系統管理員|系統管理員|系統管理員|
 |Backup Operators|Backup Operators|Backup Operators|Backup Operators|
 |Cert Publishers|||
-|Domain Admins|Domain Admins|Domain Admins|Domain Admins|
+|網域管理員|網域管理員|網域管理員|網域管理員|
 |網域控制站|網域控制站|網域控制站|網域控制站|
-|Enterprise Admins|Enterprise Admins|Enterprise Admins|Enterprise Admins|
-||||企業金鑰管理員|
-||||金鑰管理員|
+|企業系統管理員|企業系統管理員|企業系統管理員|企業系統管理員|
 |Krbtgt|Krbtgt|Krbtgt|Krbtgt|
 |Print Operators|Print Operators|Print Operators|Print Operators|
 |||Read-only Domain Controllers|Read-only Domain Controllers|
@@ -52,7 +50,7 @@ ms.locfileid: "80821681"
 
 #### <a name="adminsdholder"></a>AdminSDHolder
 
-AdminSDHolder 物件的目的是要為網域中受保護的帳戶和群組提供「範本」許可權。 AdminSDHolder 會自動建立為每個 Active Directory 網域之系統容器中的物件。 其路徑為： **cn = AdminSDHolder，cn = System，dc = < domain_component >，dc = < domain_component >？。**  
+AdminSDHolder 物件的目的是要為網域中受保護的帳戶和群組提供「範本」許可權。 AdminSDHolder 會自動建立為每個 Active Directory 網域之系統容器中的物件。 其路徑為： **cn = AdminSDHolder，cn = System，dc =<domain_component>，dc =<domain_component>？。**  
 
 不同于系統管理員群組所擁有之 Active Directory 網域中的大部分物件，AdminSDHolder 是由 Domain Admins 群組所擁有。 根據預設，EAs 可以對任何網域的 AdminSDHolder 物件進行變更，就像網域的 Domain Admins 和 Administrators 群組一樣。 此外，雖然 AdminSDHolder 的預設擁有者是網域的 Domain Admins 群組，但系統管理員或企業系統管理員的成員可以取得物件的擁有權。  
 
@@ -76,26 +74,26 @@ SDProp 是在保存網域 PDC 模擬器（PDCE）的網域控制站上每60分�
 
 ###### <a name="running-sdprop-manually-in-windows-server-2008-or-earlier"></a>在 Windows Server 2008 或更早版本中手動執行 SDProp
 
-您可以使用 Ldp.exe 或藉由執行 LDAP 修改腳本，強制執行 SDProp。 若要使用 Ldp.exe 執行 SDProp，請在對網域中的 AdminSDHolder 物件進行變更之後，執行下列步驟：  
+您可以使用 Ldp.exe 或執行 LDAP 修改腳本，強制執行 SDProp。 若要使用 Ldp.exe 執行 SDProp，請在對網域中的 AdminSDHolder 物件進行變更之後，執行下列步驟：  
 
-1. 啟動**ldp.exe**。  
-2. 按一下 [Ldp] 對話方塊上的 [**連接**]，然後按一下 **[連接]** 。  
+1. 啟動**Ldp.exe**。  
+2. 按一下 [Ldp] 對話方塊上的 [**連接**]，然後按一下 **[連接]**。  
 
    ![受保護的帳戶和群組](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_9.gif)  
 
-3. 在 [**連接**] 對話方塊中，輸入保留 PDC 模擬器（PDCE）角色之網域的網域控制站名稱，然後按一下 **[確定]** 。  
+3. 在 [**連接**] 對話方塊中，輸入保留 PDC 模擬器（PDCE）角色之網域的網域控制站名稱，然後按一下 **[確定]**。  
 
    ![受保護的帳戶和群組](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_10.png)  
 
-4. 請確認您已成功連線，如下列螢幕擷取畫面中的**Dn：（RootDSE）** 所指示 **，按一下 [** **連接**]，然後按一下 [系結]。  
+4. 請確認您已成功連線，如下列螢幕擷取畫面中的**Dn：（RootDSE）** 所指示 **，按一下 [****連接**]，然後按一下 [系結]。  
 
    ![受保護的帳戶和群組](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_11.png)  
 
-5. **在 [系**結] 對話方塊中，輸入具有修改 rootDSE 物件使用權限之使用者帳戶的認證。 （如果您是以該使用者的身分登入，則可以選取 [系結**為**目前登入的使用者]）。按一下 **[確定]** 。  
+5. **在 [系**結] 對話方塊中，輸入具有修改 rootDSE 物件使用權限之使用者帳戶的認證。 （如果您是以該使用者的身分登入，則可以選取 [系結**為**目前登入的使用者]）。按一下 **[確定]**。  
 
    ![受保護的帳戶和群組](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_12.png)  
 
-6. 完成系結操作之後，請按一下 **[流覽]** ，然後按一下 [**修改**]。  
+6. 完成系結操作之後，請按一下 **[流覽]**，然後按一下 [**修改**]。  
 
    ![受保護的帳戶和群組](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_13.png)  
 
@@ -116,25 +114,25 @@ SDProp 是在保存網域 PDC 模擬器（PDCE）的網域控制站上每60分�
 
 您也可以使用 Ldp.exe 或藉由執行 LDAP 修改腳本，強制執行 SDProp。 若要使用 Ldp.exe 執行 SDProp，請在對網域中的 AdminSDHolder 物件進行變更之後，執行下列步驟：  
 
-1. 啟動**ldp.exe**。  
+1. 啟動**Ldp.exe**。  
 
-2. 在 [ **Ldp** ] 對話方塊中，按一下 [**連接**]，然後按一下 **[連接]** 。  
+2. 在 [ **Ldp** ] 對話方塊中，按一下 [**連接**]，然後按一下 **[連接]**。  
 
    ![受保護的帳戶和群組](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_16.gif)  
 
-3. 在 [**連接**] 對話方塊中，輸入保留 PDC 模擬器（PDCE）角色之網域的網域控制站名稱，然後按一下 **[確定]** 。  
+3. 在 [**連接**] 對話方塊中，輸入保留 PDC 模擬器（PDCE）角色之網域的網域控制站名稱，然後按一下 **[確定]**。  
 
    ![受保護的帳戶和群組](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_17.gif)  
 
-4. 請確認您已成功連線，如下列螢幕擷取畫面中的**Dn：（RootDSE）** 所指示 **，按一下 [** **連接**]，然後按一下 [系結]。  
+4. 請確認您已成功連線，如下列螢幕擷取畫面中的**Dn：（RootDSE）** 所指示 **，按一下 [****連接**]，然後按一下 [系結]。  
 
    ![受保護的帳戶和群組](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_18.gif)  
 
-5. **在 [系**結] 對話方塊中，輸入具有修改 rootDSE 物件使用權限之使用者帳戶的認證。 （如果您是以該使用者的身分登入，則可以選取 [系結**為目前登入的使用者**]）。按一下 **[確定]** 。  
+5. **在 [系**結] 對話方塊中，輸入具有修改 rootDSE 物件使用權限之使用者帳戶的認證。 （如果您是以該使用者的身分登入，則可以選取 [系結**為目前登入的使用者**]）。按一下 **[確定]**。  
 
    ![受保護的帳戶和群組](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_19.gif)  
 
-6. 完成系結操作之後，請按一下 **[流覽]** ，然後按一下 [**修改**]。  
+6. 完成系結操作之後，請按一下 **[流覽]**，然後按一下 [**修改**]。  
 
    ![受保護的帳戶和群組](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_20.gif)  
 
