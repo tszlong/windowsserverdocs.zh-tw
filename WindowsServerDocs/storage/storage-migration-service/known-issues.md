@@ -8,12 +8,12 @@ ms.date: 06/02/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 5a4a99434d67c08551d97589f8f2638e1024754d
-ms.sourcegitcommit: 5fac756c2c9920757e33ef0a68528cda0c85dd04
+ms.openlocfilehash: 638f4d122b25c870ed323b94d32b6cefca4be5ff
+ms.sourcegitcommit: fea590c092d7abcb55be2b424458faa413795f5c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84306497"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85372195"
 ---
 # <a name="storage-migration-service-known-issues"></a>儲存體遷移服務的已知問題
 
@@ -70,7 +70,7 @@ Windows 系統管理中心儲存體遷移服務延伸模組的版本系結只會
 
 若要解決這個問題：
 
-1. 在 orchestrator 電腦上，使用 Notepad.exe 編輯 *%SYSTEMROOT%\SMS\Microsoft.StorageMigration.Service.exe.config*檔案，將 "sendTimeout" 從其1分鐘的預設值變更為10分鐘
+1. 在 orchestrator 電腦上，使用 Notepad.exe 來編輯 *% SYSTEMROOT% \SMS\Microsoft.StorageMigration.Service.exe.config*檔案，將 "sendTimeout" 從預設的1分鐘變更為10分鐘
 
    ```
      <bindings>
@@ -142,11 +142,11 @@ Windows 系統管理中心儲存體遷移服務延伸模組的版本系結只會
 
   icacls d:\test\Source：
 
-  icacls d:\test\thatcher.png/save out .txt/t thatcher .png D:AI （A;;FA;;;BA）（A;; 0x1200a9;;;DD）（A;; 0x1301bf;;;DU）（A; ID; FA;;;BA）（A; ID; FA;;;SY）（A; ID; 0x1200a9;;;BU
+  icacls d:\test\thatcher.png/save out.txt/t thatcher.png D:AI （A;;FA;;;BA）（A;; 0x1200a9;;;DD）（A;; 0x1301bf;;;DU）（A; ID; FA;;;BA）（A; ID; FA;;;SY）（A; ID; 0x1200a9;;;BU
 
 目的地檔案：
 
-  icacls d:\test\thatcher.png/save out .txt/t thatcher .png D:AI （A;;FA;;;BA）（A;; 0x1301bf;;;DU）（A;; 0x1200a9;;;DD）（A; ID; FA;;;BA）（A; ID; FA;;;SY）（A; ID; 0x1200a9;;;BU）**S： PAINO_ACCESS_CONTROL**
+  icacls d:\test\thatcher.png/save out.txt/t thatcher.png D:AI （A;;FA;;;BA）（A;; 0x1301bf;;;DU）（A;; 0x1200a9;;;DD）（A; ID; FA;;;BA）（A; ID; FA;;;SY）（A; ID; 0x1200a9;;;BU）**S： PAINO_ACCESS_CONTROL**
 
 DFSR Debug 記錄檔：
 
@@ -378,7 +378,7 @@ DFSR Debug 記錄檔：
 
 1. [KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818)更新會先解決此問題。 先前的程式碼缺失導致無法使用靜態 IP 位址。
 
-2. 如果您尚未在來源電腦的網路介面上指定預設閘道 IP 位址，即使 KB4537818 更新，仍會發生此問題。 若要解決此問題，請使用網路連線 applet （NCPA）在網路介面上設定有效的預設 IP 位址。CPL）或 New-netroute Powershell Cmdlet。   
+2. 如果您尚未在來源電腦的網路介面上指定預設閘道 IP 位址，即使 KB4537818 更新，仍會發生此問題。 若要解決此問題，請使用網路連線 applet （NCPA.CPL）或 New-netroute Powershell Cmdlet，在網路介面上設定有效的預設 IP 位址。   
 
 ## <a name="slower-than-expected-re-transfer-performance"></a>比預期的重新傳輸效能慢
 
@@ -431,7 +431,7 @@ DFSR Debug 記錄檔：
  
  如果您想要使用儲存體遷移服務搭配網域控制站來進行傳輸，請務必在 Windows 系統管理中心的 [傳輸設定] 頁面上，選取 [不要傳輸使用者和群組]。
  
- ## <a name="error-53-failed-to-inventory-all-specified-devices-when-running-inventory"></a>執行清查時，發生錯誤53「無法清查所有指定的裝置」 
+## <a name="error-53-failed-to-inventory-all-specified-devices-when-running-inventory"></a>執行清查時，發生錯誤53「無法清查所有指定的裝置」 
 
 嘗試執行清查時，您會收到：
 
@@ -490,7 +490,7 @@ DFSR Debug 記錄檔：
  - 來源遷移帳戶沒有連接到來源電腦的遠端登入權利。
  - 來源遷移帳戶在來源電腦的登錄中，沒有 [HKEY_LOCAL_MACHINE \Software\microsoft\windows server\ NT\CurrentVersion] 或 [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\LanmanServer] 底下的 [讀取] 許可權
  
- ## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer"></a>在來源電腦上的「38% 對應網路介面已停止回應」 
+## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer"></a>在來源電腦上的「38% 對應網路介面已停止回應」 
 
 嘗試在來源電腦上執行剪下時，切換會停滯在來源電腦上的「38% 對應網路介面 ...」而且您會在儲存體遷移服務事件記錄檔中收到下列錯誤：
 
@@ -531,6 +531,16 @@ DFSR Debug 記錄檔：
 1. 暫時將來源電腦從套用此衝突 GPO 的 Active Directory OU 中移出。 
 2. 暫時停用套用此衝突原則的 GPO。
 3. 暫時建立新的 GPO，將此設定設為停用，並套用至來源伺服器的特定 OU，其優先順序高於任何其他 Gpo。
+
+## <a name="inventory-or-transfer-fail-when-using-credentials-from-a-different-domain"></a>使用來自不同網域的認證時，清查或傳輸失敗
+
+當您嘗試使用儲存體遷移服務執行清查或轉移，並以 Windows Server 為目標，而同時從目標伺服器以外的其他網域使用遷移認證時，您會收到下列錯誤 
+
+    The server was unable to process the request due to an internal error
+    
+    04/28/2020-11:31:01.169 [Erro] Failed device discovery stage SystemInfo with error: (0x490) Could not find computer object 'myserver' in Active Directory    [d:\os\src\base\dms\proxy\discovery\discoveryproxy\DeviceDiscoveryOperation.cs::TryStage::1042]
+
+此問題是由儲存體遷移服務中的程式碼脫離所造成。 若要解決此問題，請使用來源與目的地電腦所屬的相同網域中的遷移認證。 例如，如果來源和目的地電腦屬於 "contoso.com" 樹系中的 "corp.contoso.com" 網域，請使用 ' corp\myaccount ' 來執行遷移，而不是 ' contoso\myaccount ' 認證。
 
 ## <a name="see-also"></a>另請參閱
 

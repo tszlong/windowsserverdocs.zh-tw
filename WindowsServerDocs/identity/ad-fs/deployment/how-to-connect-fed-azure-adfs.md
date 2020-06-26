@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.date: 10/28/2018
 ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: 16bf61ae4601848f12d7ecd56d751837dd153408
-ms.sourcegitcommit: 2cc251eb5bc3069bf09bc08e06c3478fcbe1f321
+ms.openlocfilehash: 1786b7c9a10e11e95f736d1db20bdc12eb4844b7
+ms.sourcegitcommit: fea590c092d7abcb55be2b424458faa413795f5c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84333959"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85372215"
 ---
 # <a name="deploying-active-directory-federation-services-in-azure"></a>在 Azure 中部署 Active Directory 同盟服務
 AD FS 提供簡化、安全的身分識別同盟和 Web 單一登入 (SSO) 功能。 與 Azure AD 或 O365 同盟可讓使用者使用內部部署認證進行驗證，並存取雲端中的所有資源。 如此一來，就一定要有高可用性的 AD FS 基礎結構，以確保能夠存取內部部署和雲端中的資源。 在 Azure 中部署 AD FS 有助於達成執行最低限度的工作所需要的高可用性。
@@ -198,8 +198,13 @@ AD FS 提供簡化、安全的身分識別同盟和 Web 單一登入 (SSO) 功�
 
 **6.5.更新 ILB 的 DNS**
 
-移至 DNS 伺服器，為 ILB 建立 CNAME。 CNAME 應適用於 IP 位址指向 ILB 的 IP 位址的同盟服務。 例如，如果 ILB DIP 位址是 10.3.0.8，而所安裝的同盟服務是 fs.contoso.com，則請為指向 10.3.0.8 的 fs.contoso.com 建立 CNAME。
-這可確保所有與 fs.contoso.com 有關的通訊都在 ILB 結束，並且會受到適當路由處理。
+使用您的內部 DNS 伺服器，建立 ILB 的 A 記錄。 A 記錄應該是同盟服務的，其 IP 位址指向 ILB 的 IP 位址。 例如，如果 ILB IP 位址是10.3.0.8，且安裝的 federation service 是 fs.contoso.com，則請為指向10.3.0.8 的 fs.contoso.com 建立 A 記錄。
+這可確保 trasmitted 至 fs.contoso.com 的所有資料最後都會在 ILB，並適當地路由傳送。 
+
+> [!NOTE]
+>如果您的部署也使用 IPv6，請務必建立對應的 AAAA 記錄。
+>
+>
 
 ### <a name="7-configuring-the-web-application-proxy-server"></a>7. 設定 Web 應用程式 Proxy 伺服器
 **7.1.設定 Web 應用程式 Proxy 伺服器以連線到 AD FS 伺服器**
@@ -333,14 +338,14 @@ AD FS 提供簡化、安全的身分識別同盟和 Web 單一登入 (SSO) 功�
 
 ## <a name="additional-resources"></a>其他資源
 * [可用性設定組](https://aka.ms/Azure/Availability) 
-* [Azure 負載平衡器](https://aka.ms/Azure/ILB)
+* [Azure Load Balancer](https://aka.ms/Azure/ILB)
 * [內部負載平衡器](https://aka.ms/Azure/ILB/Internal)
 * [網際網路對向負載平衡器](https://aka.ms/Azure/ILB/Internet)
 * [儲存體帳戶](https://aka.ms/Azure/Storage)
 * [Azure 虛擬網路](https://aka.ms/Azure/VNet)
 * [AD FS 和 Web 應用程式 Proxy 連結](https://aka.ms/ADFSLinks) 
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>接下來的步驟
 * [整合內部部署身分識別與 Azure Active Directory](https://docs.microsoft.com/azure/active-directory/hybrid/whatis-hybrid-identity)
 * [使用 Azure AD Connect 設定和管理 AD FS](/azure/active-directory/hybrid/how-to-connect-fed-whatis)
 * [使用 Azure 流量管理員在 Azure 中部署高可用性跨地區 AD FS](active-directory-adfs-in-azure-with-azure-traffic-manager.md)
