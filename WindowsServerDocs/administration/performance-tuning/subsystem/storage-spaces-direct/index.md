@@ -8,12 +8,12 @@ ms.assetid: 15a519fa-37cc-4d84-a9fe-097d33bb71ea
 author: phstee
 ms.author: vshankar; danlo; clausjor; stevenek
 ms.date: 4/14/2017
-ms.openlocfilehash: a24bbdb83ec1b08f56989368a4831549c594f6c0
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 42d05529aed6f1c5f9c5247a143e256fd52d056a
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80851601"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471193"
 ---
 # <a name="performance-tuning-for-storage-spaces-direct"></a>儲存空間直接存取的效能調整
 
@@ -31,12 +31,12 @@ ms.locfileid: "80851601"
 
 請注意，SSD 或 NVMe 裝置上的快取預設只會寫入快取。 目的是既然容量裝置夠快，將讀取內容移至快取裝置只能帶來有限的價值。 在有些情況中則不是這樣，雖然您必須注意一些事項，因未啟用讀取快取可能會意外取用快取裝置耐力，但效能並未提高。 範例可能包括：
 
-* **NVme+SSD** 啟用讀取快取將會允許讀取 IO 利用 PCIe 連線的優點和/或 NVMe 裝置的較高 IOPS 效能 (相較於彙總的 SSD)。 <br>由於 NVMe 裝置相較於連線到 SSD 之 HBA 的相對頻寬容量，這對頻寬導向案例而言可能  也成立。 這對在實現提高的效能之前 IOPS 的 CPU 成本可能限制系統的 IOPS 導向案例而言可能  不成立。
+* **NVme+SSD** 啟用讀取快取將會允許讀取 IO 利用 PCIe 連線的優點和/或 NVMe 裝置的較高 IOPS 效能 (相較於彙總的 SSD)。 <br>由於 NVMe 裝置相較於連線到 SSD 之 HBA 的相對頻寬容量，這對頻寬導向案例而言可能也成立。 這對在實現提高的效能之前 IOPS 的 CPU 成本可能限制系統的 IOPS 導向案例而言可能不成立。
 * **NVMe+NVMe** 同樣地，若快取 NVMe 的讀取容量大於結合容量 NVMe，啟用讀取快取或許可以帶來價值。 <br>這些設定中讀取快取的良好案例不常見。
 
 若要檢視並修改快取設定，請使用 [Get-ClusterStorageSpacesDirect](https://technet.microsoft.com/library/mt634616.aspx) 與 [Set-ClusterStorageSpacesDirect](https://technet.microsoft.com/library/mt763265.aspx) Cmdlet。 `CacheModeHDD` 與 `CacheModeSSD` 屬性定義快取如何在指定類型的容量媒體上作業。
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考資料
 
 - [了解儲存空間直接存取](../../../../storage/storage-spaces/understand-storage-spaces-direct.md)
 - [規劃儲存空間直接存取](../../../../storage/storage-spaces/plan-storage-spaces-direct.md)

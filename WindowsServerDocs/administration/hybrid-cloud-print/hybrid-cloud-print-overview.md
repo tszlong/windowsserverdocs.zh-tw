@@ -3,15 +3,16 @@ title: Windows Server 混合式雲端列印總覽
 description: 混合式雲端列印可讓 IT 專業人員支援 BYOD 或已加入網域之裝置的列印需求。
 ms.prod: windows-server
 ms.technology: server-general
+ms.topic: conceptual
 author: trudyha
 ms.author: trudyha
 ms.date: 10/16/2017
-ms.openlocfilehash: f448e8709f9e73165ba1a477c59567fcff4a2008
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2585037412dd77435ec056336509dbf9c47c7dd2
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852001"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85469823"
 ---
 # <a name="windows-server-hybrid-cloud-print-overview"></a>Windows Server 混合式雲端列印總覽
 
@@ -26,7 +27,7 @@ ms.locfileid: "80852001"
 **混合式雲端列印**可讓組織中的人員從他們用來完成工作的裝置進行列印，即使他們離開桌上型電腦或工作場所也一樣。
 
 Windows 10 建立者更新和 Windows 10 S 支援**混合式雲端列印**。
- 
+
 ## <a name="feature-summary"></a>功能摘要
 **混合式雲端列印**包含兩個主要的伺服器端元件：**探索**服務和**Windows 列印**服務。
 - 在支援 Mopria 聯盟產業標準的 IIS 服務上執行的**探索**服務端點，用於在雲端中進行印表機探索。
@@ -40,11 +41,11 @@ Windows 10 建立者更新和 Windows 10 S 支援**混合式雲端列印**。
 *混合式雲端列印解決方案圖表*
 
 此圖顯示：
-- 使用 Azure Active Directory 做為使用者識別提供者的**混合式雲端列印**。 
-- **Windows 列印**服務和**探索**服務端點會向 Azure Active Directory 註冊，讓用戶端裝置能夠抓取所需的使用者驗證權杖，以用於這些服務。 
+- 使用 Azure Active Directory 做為使用者識別提供者的**混合式雲端列印**。
+- **Windows 列印**服務和**探索**服務端點會向 Azure Active Directory 註冊，讓用戶端裝置能夠抓取所需的使用者驗證權杖，以用於這些服務。
 - MDM 服務（例如**Microsoft Intune**）會使用將 Azure Active Directory 連線到**Windows 列印**服務和**探索**服務所需的原則，來布建用戶端裝置。
 
-此資料表包含圖表中元素的詳細資訊。  
+此資料表包含圖表中元素的詳細資訊。
 
 | 元素 | 描述 |
 | ------- | ----------- |
@@ -57,8 +58,8 @@ Windows 10 建立者更新和 Windows 10 S 支援**混合式雲端列印**。
 | BYOD 裝置/Windows 列印伺服器多工緩衝處理器/印表機 | 這些都是現成的。 部署中的功能沒有任何變更。 |
 
 有兩種方式可安裝**混合式雲端列印**：
-- \* * 依需求提供的功能，請參閱在[Windows Server 中設定隨選功能](https://docs.microsoft.com/windows-server/administration/server-manager/configure-features-on-demand-in-windows-server)，以深入瞭解如何新增和移除角色和功能檔案。 
-- \* * Windows Server 2016 設定，讓系統管理員可以前往 [**設定**] -> **應用程式** -> **管理選用功能** -> **新增功能**並搜尋功能隨選套件 
+- * * 依需求提供的功能，請參閱在[Windows Server 中設定隨選功能](https://docs.microsoft.com/windows-server/administration/server-manager/configure-features-on-demand-in-windows-server)，以深入瞭解如何新增和移除角色和功能檔案。
+- * * Windows Server 2016 設定，系統管理員可以前往 [**設定**] [  ->  **應用程式**] [  ->  **管理選擇性功能**]  ->  [**新增功能**]，並搜尋 [隨選功能] 套件
 - PowerShell 命令-在 PowerShell 系統管理員視窗中，執行下列命令：
 
 ```PowerShell

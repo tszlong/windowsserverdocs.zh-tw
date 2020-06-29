@@ -4,26 +4,27 @@ description: 如何設定 Microsoft 混合式雲端列印
 ms.prod: windows-server
 ms.technology: windows server 2016
 ms.assetid: fc239aec-e719-47ea-92fc-d82a7247c5e9
+ms.topic: how-to
 author: msjimwu
 ms.author: coreyp
 manager: dongill
 ms.date: 3/15/2018
-ms.openlocfilehash: c06aafb015b065f307eca02abc7a6adaa8ba763c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fe1f2b11921950ea725cb996ce58e75033aaae4a
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852111"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85470203"
 ---
 # <a name="deploy-windows-server-hybrid-cloud-print"></a>部署 Windows Server 混合式雲端列印
 
->適用於︰Windows Server 2016
+>適用於：Windows Server 2016
 
 本主題適用于 IT 系統管理員，說明 Microsoft 混合式雲端列印（HCP）解決方案的端對端部署。 此解決方案會在現有的 Windows Server （以列印伺服器執行）之上進行分層，並啟用 Azure Active Directory （Azure AD）聯結和 MDM 管理的裝置，以探索並列印到組織管理的印表機。
 
 ## <a name="pre-requisites"></a>必要條件
 
-在開始此安裝之前，您必須先取得一些訂用帳戶、服務和電腦。 分別為：
+在開始此安裝之前，您必須先取得一些訂用帳戶、服務和電腦。 如下所示：
 
 - Azure AD premium 訂用帳戶。
 
@@ -68,7 +69,7 @@ ms.locfileid: "80852111"
 若要啟用與 HCP 服務的驗證通訊，我們需要建立3個應用程式：2個 Web 應用程式來表示兩個 HCP 服務，以及1個原生應用程式來與這些服務通訊。
 
 1. 登入 Azure 入口網站以註冊 web 應用程式。
-    - 在 Azure Active Directory 底下，移至**應用程式註冊** > **新增註冊**。
+    - 在 [Azure Active Directory] 底下，移至**應用程式註冊**  >  **新增註冊**]。
 
     ![AAD 應用程式註冊1](../media/hybrid-cloud-print/AAD-AppRegistration.png)
 
@@ -103,8 +104,8 @@ ms.locfileid: "80852111"
 
     ![AAD 公開 API 5](../media/hybrid-cloud-print/AAD-AppRegistration-ECP-ExposeAPI-ScopeName.png)
 
-3. 新增 API 許可權
-    - 返回應用程式註冊 分頁。 按一下 [原生應用程式]，然後選取 [API 許可權]。 按一下 [**新增許可權**]。
+3. 新增 API 權限
+    - 返回應用程式註冊] 分頁。 按一下 [原生應用程式]，然後選取 [API 許可權]。 按一下 [新增權限]****。
 
     ![AAD API 許可權1](../media/hybrid-cloud-print/AAD-AppRegistration-APIPermission.png)
 
@@ -133,33 +134,33 @@ ms.locfileid: "80852111"
     ![AAD API 許可權7](../media/hybrid-cloud-print/AAD-AppRegistration-APIPermission-Verify.png)
 
 4. 設定 Web 應用程式的應用程式 Proxy
-    - 請移至**Azure Active Directory** > **企業應用**程式 > **所有應用程式**。 搜尋 Mopria 探索服務，並按一下它。
+    - 移至**Azure Active Directory**  >  **企業應用**程式] [  >  **所有應用程式**]。 搜尋 Mopria 探索服務，並按一下它。
 
     ![AAD 應用程式 Proxy 1](../media/hybrid-cloud-print/AAD-EnterpriseApp-AllApps.png)
 
-    - 按一下 [**應用程式 proxy**]。 使用 `https://<fully qualified domain name of the Print Server>/mcs/`格式輸入內部 Url。 按一下 [**儲存**] 完成。
+    - 按一下 [**應用程式 proxy**]。 使用格式輸入內部 Url `https://<fully qualified domain name of the Print Server>/mcs/` 。 按一下 [**儲存**] 完成。
 
     ![AAD 應用程式 Proxy 2](../media/hybrid-cloud-print/AAD-EnterpriseApp-Mopria-AppProxy.png)
 
-    - 針對「企業雲端列印服務」重複此動作。 請注意，內部 URL 為 `https://<fully qualified domain name of the Print Server>/ecp/`。
+    - 針對「企業雲端列印服務」重複此動作。 請注意，內部 URL 是 `https://<fully qualified domain name of the Print Server>/ecp/` 。
 
     ![AAD 應用程式 Proxy 3](../media/hybrid-cloud-print/AAD-EnterpriseApp-ECP-AppProxy.png)
 
-    - 移至**Azure Active Directory** > **應用程式註冊**。 按一下 [Mopria 探索服務]。 請注意，在 **[總覽**] 底下，應用程式識別碼 URI 已從預設值變更為 [**應用程式 proxy**] 底下的 [外部 URL]。 在列印伺服器安裝期間、在用戶端 MDM 原則中，以及用於發佈印表機時，將會使用此 URI。
+    - 移至**Azure Active Directory**  >  **應用程式註冊**。 按一下 [Mopria 探索服務]。 請注意，在 **[總覽**] 底下，應用程式識別碼 URI 已從預設值變更為 [**應用程式 proxy**] 底下的 [外部 URL]。 在列印伺服器安裝期間、在用戶端 MDM 原則中，以及用於發佈印表機時，將會使用此 URI。
 
     ![AAD 應用程式 Proxy 4](../media/hybrid-cloud-print/AAD-AppRegistration-Mopria-Overview.png)
 
 5. 將使用者指派給應用程式
-    - 請移至**Azure Active Directory** > **企業應用**程式 > **所有應用程式**。 搜尋 Mopria 探索服務並按一下它
+    - 移至**Azure Active Directory**  >  **企業應用**程式] [  >  **所有應用程式**]。 搜尋 Mopria 探索服務並按一下它
     - 按一下 [**使用者和群組**] 並指派使用者，或按一下 [內容] **，然後變更**需要的**使用者指派？** 設為 [**否**]
     - 針對「企業雲端列印服務」重複此動作。
 
 6. 設定原生應用程式中的重新導向 URI
-    - 移至**Azure Active Directory** > **應用程式註冊**。 按一下 [原生應用程式]。 移至 **[總覽**] 並複製**應用程式（用戶端）識別碼**。
+    - 移至**Azure Active Directory**  >  **應用程式註冊**。 按一下 [原生應用程式]。 移至 **[總覽**] 並複製**應用程式（用戶端）識別碼**。
 
     ![AAD 重新導向 URI 1](../media/hybrid-cloud-print/AAD-AppRegistration-Native-Overview.png)
 
-    - 移至 [**驗證**]。 將 [**類型**] 下拉式清單方塊變更為 [`Public...`]，然後使用下列格式輸入兩個重新導向 uri，其中 `<NativeClientAppID>` 是來自上一個步驟：
+    - 移至 [**驗證**]。 將 [**類型**] 下拉式清單方塊變更為 `Public...` ，然後使用下列格式輸入兩個重新導向 uri，其中 `<NativeClientAppID>` 是上一個步驟：
 
         `ms-appx-web://Microsoft.AAD.BrokerPlugin/<NativeClientAppID>`
 
@@ -174,7 +175,7 @@ ms.locfileid: "80852111"
 1. 請確定列印伺服器已安裝所有可用的 Windows Update。 注意：伺服器2019必須修補為組建17763.165 或更新版本。
     - 安裝下列伺服器角色：
         - 列印伺服器角色
-        - 網際網路資訊服務（IIS）
+        - Internet Information Service (IIS)
     - 如需如何安裝伺服器角色的詳細資訊，請參閱[使用新增角色及功能嚮導來安裝角色、角色服務和功能](https://docs.microsoft.com/windows-server/administration/server-manager/install-or-uninstall-roles-role-services-or-features#BKMK_installarfw)。
 
     ![列印伺服器角色](../media/hybrid-cloud-print/PrintServer-Roles.png)
@@ -182,7 +183,7 @@ ms.locfileid: "80852111"
 2. 安裝混合式雲端列印 PowerShell 模組。
     - 從提高許可權的 PowerShell 命令提示字元執行下列命令：
 
-        `find-module -Name PublishCloudPrinter` 確認機器可以觸達 PowerShell 資源庫（PSGallery）
+        `find-module -Name PublishCloudPrinter`確認電腦可以觸達 PowerShell 資源庫（PSGallery）
 
         `install-module -Name PublishCloudPrinter`
 
@@ -211,7 +212,7 @@ ms.locfileid: "80852111"
 
     ![列印伺服器雲端列印部署](../media/hybrid-cloud-print/PrintServer-CloudPrintDeploy.png)
 
-    - 檢查記錄檔以查看是否有任何錯誤： `C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0\CloudPrintDeploy.log`
+    - 檢查記錄檔以查看是否有任何錯誤：`C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0\CloudPrintDeploy.log`
 
 4. 在提高許可權的命令提示字元中執行**RegitEdit** 。 前往 Computer \ HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows\CurrentVersion\CloudPrint\EnterpriseCloudPrintService。
     - 請確定 [AzureAudience] 設定為 [企業雲端列印應用程式] 的 [應用程式識別碼 URI]。
@@ -234,7 +235,7 @@ ms.locfileid: "80852111"
     - 如果您向協力廠商提供者註冊您的網域，您將需要使用 SSL 憑證來設定 IIS 端點。 如需詳細資訊，請參閱本[指南](https://www.sslsupportdesk.com/microsoft-server-2016-iis-10-10-5-ssl-installation/)。
 
 8. 安裝 SQLite 套件。
-   - 開啟已提升許可權的 PowerShell 命令提示字元。
+   - 開啟已提高權限的 PowerShell 命令提示字元。
    - 執行下列命令以下載 system.string nuget 套件。
 
         `Register-PackageSource -Name nuget.org -ProviderName NuGet -Location https://www.nuget.org/api/v2/ -Trusted -Force`
@@ -267,7 +268,7 @@ ms.locfileid: "80852111"
     xcopy /y $source\$ef6.$version\lib\net46\System.Data.SQLite.EF6.dll $target\
     ```
 
-10. 更新 c:\inetpub\wwwroot\MopriaCloudService\web.config 檔案，以在下列 `<runtime>/<assemblyBinding>` 區段中包含 SQLite 版本 x.x. x。 這是上一個步驟中使用的相同版本。
+10. 在下列各節中，更新 c:\inetpub\wwwroot\MopriaCloudService\web.config 檔案以包含 SQLite 版本 x.x. x。 `<runtime>/<assemblyBinding>` 這是上一個步驟中使用的相同版本。
 
     ```xml
     ...
@@ -291,7 +292,7 @@ ms.locfileid: "80852111"
     ```
 
 11. 建立 SQLite 資料庫。
-    - 從 `https://www.sqlite.org/`下載並安裝 SQLite 工具二進位檔。
+    - 從下載並安裝 SQLite 工具二進位檔 `https://www.sqlite.org/` 。
     - 移至 `c:\inetpub\wwwroot\MopriaCloudService\Database` 目錄。
     - 執行下列命令，在此目錄中建立資料庫：
 
@@ -302,14 +303,14 @@ ms.locfileid: "80852111"
 
     ![列印伺服器 Mopria 登錄機碼](../media/hybrid-cloud-print/PrintServer-SQLiteDB.png)
 
-### <a name="step-5-optional---configure-pre-authentication-with-azure-ad"></a>步驟 5 \[選擇性\]-使用 Azure AD 設定預先驗證
+### <a name="step-5-optional---configure-pre-authentication-with-azure-ad"></a>步驟 5 \[ 選擇性 \] -使用 Azure AD 設定預先驗證
 
 1. 請參閱檔[Kerberos 限制委派，以使用應用程式 Proxy 單一登入您的應用程式](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-configure-single-sign-on-with-kcd)。
 
 2. 設定內部部署 Active Directory。
-    - 在 Active Directory 機上，開啟伺服器管理員並移至 [ **工具**] > **Active Directory [使用者和電腦**]。
+    - 在 Active Directory 機上，開啟伺服器管理員並移至 [ **工具**] [  >  **Active Directory 使用者和電腦**]。
     - 流覽至 [**電腦**] 節點，然後選取連接器伺服器。
-    - 以滑鼠右鍵按一下，然後選取  **屬性** -> **委派**  索引標籤。
+    - 按一下滑鼠右鍵，然後選取 [ **屬性**  ->  ] [**委派**] 索引標籤   。
     - 選取 [ **信任這台電腦，但只委派指定的服務**]。
     - 選取 [ **使用任何驗證通訊協定**]。
     - 在 [ **此帳戶可以顯示委派認證的服務**] 下。
@@ -325,10 +326,10 @@ ms.locfileid: "80852111"
     ![列印伺服器 IIS 驗證](../media/hybrid-cloud-print/PrintServer-IIS-Authentication.png)
 
 4. 設定單一登入。
-    - 在 Azure 入口網站上，移至**Azure Active Directory** > 的**企業應用程式** > **所有應用程式**。
+    - 在 Azure 入口網站上，移至**Azure Active Directory**  >  **企業應用程式**] [  >  **所有應用程式**]。
     - 選取 [MopriaDiscoveryService 應用程式]。
     - 移至 [**應用程式 proxy**]。 將 [預先驗證方法] 變更為**Azure Active Directory**。
-    - 移至 [**單一登入**]。 選取 [整合式 Windows 驗證] 做為單一登入方法。
+    - 移至 [單一登入]****。 選取 [整合式 Windows 驗證] 做為單一登入方法。
     - 將 [**內部應用程式 spn** ] 設定為列印伺服器電腦的 spn。
     - 將 **[委派的登**入身分識別] 設定為 [使用者主體名稱]。
     - 針對 EntperiseCloudPrint 應用程式重複此步驟。
@@ -338,16 +339,16 @@ ms.locfileid: "80852111"
 
 1. 登入您的 MDM 提供者。
 2. 尋找「企業雲端列印原則」群組，並遵循下列指導方針來設定原則：
-    - CloudPrintOAuthAuthority = `https://login.microsoftonline.com/<Azure AD Directory ID>`。 您可以在 Azure Active Directory > 屬性 下找到目錄識別碼。
-    - CloudPrintOAuthClientId = 應用程式 \(原生應用程式的用戶端\) 識別碼值。 您可以在 Azure Active Directory > 應用程式註冊中找到此，> 選取原生應用程式 > 總覽。
-    - CloudPrinterDiscoveryEndPoint = Mopria 探索服務應用程式的外部 URL。 您可以在 Azure Active Directory > 企業應用程式 下找到此 > 選取 Mopria 探索服務應用程式 > 應用程式 proxy。 **它必須完全相同，但不含尾端/** 。
+    - CloudPrintOAuthAuthority = `https://login.microsoftonline.com/<Azure AD Directory ID>` 。 您可以在 Azure Active Directory > 屬性] 下找到目錄識別碼。
+    - CloudPrintOAuthClientId = 原生應用程式的應用程式 \( 用戶端 \) 識別碼值。 您可以在 Azure Active Directory > 應用程式註冊中找到此，> 選取原生應用程式 > 總覽。
+    - CloudPrinterDiscoveryEndPoint = Mopria 探索服務應用程式的外部 URL。 您可以在 Azure Active Directory > 企業應用程式] 下找到此 > 選取 Mopria 探索服務應用程式 > 應用程式 proxy。 **它必須完全相同，但不含尾端/**。
     - MopriaDiscoveryResourceId = Mopria 探索服務應用程式的應用程式識別碼 URI。 您可以在 Azure Active Directory > 應用程式註冊中找到此，> 選取 [Mopria 探索服務] 應用程式 > [總覽]。 **它必須與尾端/完全相同**。
     - CloudPrintResourceId = 企業雲端列印應用程式的應用程式識別碼 URI。 您可以在 Azure Active Directory > 應用程式註冊中找到此 > 選取 [企業雲端列印應用程式] > 總覽。 **它必須與尾端/完全相同**。
-    - DiscoveryMaxPrinterLimit = \<正整數\>。
+    - DiscoveryMaxPrinterLimit = \<a positive integer\> 。
 
 > 注意：如果您使用 Microsoft Intune 服務，您可以在 [雲端印表機] 類別下找到這些設定。
 
-|Intune 顯示名稱                     |Policy(Windows Intune 說明：原則)                         |
+|Intune 顯示名稱                     |原則                         |
 |----------------------------------------|-------------------------------|
 |印表機探索 URL                   |CloudPrinterDiscoveryEndpoint  |
 |印表機存取授權 URL            |CloudPrintOAuthAuthority       |
@@ -360,9 +361,9 @@ ms.locfileid: "80852111"
 
     - OMA-URI 的值
         - CloudPrintOAuthAuthority =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthAuthority
-            - 值 = https://login.microsoftonline.com/<Azure AD Directory ID>
+            - 值 =https://login.microsoftonline.com/<Azure AD Directory ID>
         - CloudPrintOAuthClientId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthClientId
-            - 值 = < Azure AD 原生應用程式的應用程式識別碼 >
+            - 值 = <Azure AD 原生應用程式的應用程式識別碼>
         - CloudPrinterDiscoveryEndPoint =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrinterDiscoveryEndPoint
             - 值 = Mopria 探索服務應用程式的外部 URL （必須完全相同，但不含尾端/）
         - MopriaDiscoveryResourceId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/MopriaDiscoveryResourceId
@@ -371,7 +372,7 @@ ms.locfileid: "80852111"
             - 值 = 企業雲端列印應用程式的應用程式識別碼 URI
         - DiscoveryMaxPrinterLimit =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/DiscoveryMaxPrinterLimit
             - 值 = 正整數
-    
+
 ### <a name="step-7---publish-the-shared-printer"></a>步驟 7-發佈共用印表機
 
 1. 在列印伺服器上安裝所需的印表機。
@@ -381,7 +382,7 @@ ms.locfileid: "80852111"
 5. 準備 Windows 10 秋季建立者更新或更新版本的電腦。 將電腦加入 Azure AD，並以與內部部署 Active Directory 同步處理的使用者身分登入，並已獲得 MopriaDeviceDb 檔案的適當許可權。
 6. 從 Windows 10 電腦，開啟提升許可權的 Windows PowerShell 命令提示字元。
     - 執行下列命令。
-        - `find-module -Name PublishCloudPrinter` 確認機器可以觸達 PowerShell 資源庫（PSGallery）
+        - `find-module -Name PublishCloudPrinter`確認電腦可以觸達 PowerShell 資源庫（PSGallery）
         - `install-module -Name PublishCloudPrinter`
 
             > 注意：您可能會看到訊息，指出 ' PSGallery ' 是不受信任的存放庫。  輸入 ' y ' 以繼續安裝。
@@ -398,7 +399,7 @@ ms.locfileid: "80852111"
             `{attrs: [{category:country, vs:USA, depth:0}, {category:organization, vs:Microsoft, depth:1}, {category:site, vs:Redmond, WA, depth:2}, {category:building, vs:Building 1, depth:3}, {category:floor_number, vs:1, depth:4}, {category:room_name, vs:1111, depth:5}]}`
 
         - Sddl = 代表印表機權限的 SDDL 字串。
-            - 以系統管理員身分登入列印伺服器，然後針對您要發佈的印表機執行下列 PowerShell 命令： `(Get-Printer PrinterName -full).PermissionSDDL`。
+            - 以系統管理員身分登入列印伺服器，然後針對您要發佈的印表機執行下列 PowerShell 命令： `(Get-Printer PrinterName -full).PermissionSDDL` 。
             - 在上述命令的結果中，將**O:BA**新增為前置詞。 例如 如果上一個命令所傳回的字串是 G:DUD：（A; OICI; FA;;;WD），然後 SDDL = O:BAG： DUD：（A; OICI; FA;;;WD）。
         - DiscoveryEndpoint = 登入 Azure 入口網站，然後從企業應用程式 > Mopria 探索服務應用程式 > 應用程式 proxy > 外部 URL 取得字串。 省略尾端/。
         - PrintServerEndpoint = 登入 Azure 入口網站，然後從企業應用程式 > 企業雲端列印應用程式 > 應用程式 proxy > 外部 URL 取得字串。 省略尾端/。
@@ -422,12 +423,12 @@ ms.locfileid: "80852111"
 
         `Publish-CloudPrinter -Query -DiscoveryEndpoint https://mopriadiscoveryservice-contoso.msappproxy.net/mcs -AzureClientId dbe4feeb-cb69-40fc-91aa-73272f6d8fe1 -AzureTenantGuid 8de6a14a-5a23-4c1c-9ae4-1481ce356034 -DiscoveryResourceId https://mopriadiscoveryservice-contoso.msappproxy.net/mcs/`
 
-## <a name="verify-the-deployment"></a>檢查部署
+## <a name="verify-the-deployment"></a>驗證部署
 
 在已設定 MDM 原則的 Azure AD 聯結裝置上：
-- 開啟網頁瀏覽器，並移至 https://mopriadiscoveryservice-*的*msappproxy.net/mcs/services。
+- 開啟網頁瀏覽器，並移至 [ https://mopriadiscoveryservice- *租使用者名稱*. msappproxy.net/mcs/services]。
 - 您應該會看到描述此端點功能集的 JSON 文字。
-- 移至 [**設定**] [ > **印表機 & 掃描器**] > [**裝置**]。
+- 前往 [**設定**] [裝置] [印表機] [  >  **Devices**  >  **& 掃描器**]。
     - 按一下 [**新增印表機] 或 [掃描器**]。
     - 您應該會看到 [搜尋雲端印表機] （或在較新的 Windows 10 電腦上搜尋我組織中的印表機）連結。
     - 按一下連結。
@@ -437,7 +438,7 @@ ms.locfileid: "80852111"
     - 選取 [印表機]，然後按一下 [**新增裝置**] 按鈕。
     - 成功安裝印表機之後，請從您最愛的應用程式列印到印表機。
 
-> 注意：如果使用 EcpPrintTest 印表機，您可以在列印伺服器電腦的 C：\\ECPTestOutput\\EcpTestPrint. xps location 底下找到輸出檔案。
+> 注意：如果使用 EcpPrintTest 印表機，您可以在列印伺服器電腦的 C： \\ ECPTestOutput \\ EcpTestPrint. xps location 底下找到輸出檔案。
 
 ## <a name="troubleshooting"></a>疑難排解
 
@@ -452,7 +453,7 @@ ms.locfileid: "80852111"
 
 以下是可協助疑難排解的記錄檔位置
 
-|Component |記錄檔位置 |
+|元件 |記錄檔位置 |
 |------|------|
 |Windows 10 用戶端 | <ul><li>使用事件檢視器查看 Azure AD 作業的記錄。 按一下 [**開始**]，然後輸入事件檢視器。 流覽至 [應用程式及服務記錄檔] > Microsoft > Windows > AAD > 作業。</li><li>使用意見反應中樞來收集記錄。 請參閱[使用意見反應中樞應用程式將意見反應傳送給 Microsoft](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app)</li></ul> |
 |連接器伺服器 | 使用事件檢視器查看應用程式 Proxy 的記錄檔。 按一下 [**開始**]，然後輸入事件檢視器。 流覽至 [應用程式及服務記錄檔] > Microsoft > AadApplicationProxy > 連接器 > 系統管理員。 |

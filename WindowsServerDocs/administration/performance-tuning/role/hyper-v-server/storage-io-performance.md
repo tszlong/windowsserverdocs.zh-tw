@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 83b22c47cb23b02bb9984e03d78fcae93be1ca0a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c77f084e06e71c9aafd658b59ff385af85ef0b9d
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851811"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471313"
 ---
 # <a name="hyper-v-storage-io-performance"></a>Hyper-v 存放裝置 i/o 效能
 
@@ -160,7 +160,7 @@ VHD 會指向父 VHD 檔案。 對區塊的任何寫入都不會寫入，因而�
 
 ## <a name="block-size-considerations"></a>區塊大小考慮
 
-區塊大小可能會大幅影響效能。 將區塊大小與使用磁片的工作負載配置模式進行比對，是最佳做法。 例如，如果應用程式是以 16 MB 的區塊進行配置，則虛擬硬碟區塊大小最好是 16 MB。 只有在具有 VHDX 格式的虛擬硬碟上，才可以使用 &gt;2 MB 的區塊大小。 如果區塊大小大於隨機 i/o 工作負載的配置模式，將會大幅增加主機上的空間使用量。
+區塊大小可能會大幅影響效能。 將區塊大小與使用磁片的工作負載配置模式進行比對，是最佳做法。 例如，如果應用程式是以 16 MB 的區塊進行配置，則虛擬硬碟區塊大小最好是 16 MB。 &gt;只有在具有 VHDX 格式的虛擬硬碟上，才能有 2 MB 的區塊大小。 如果區塊大小大於隨機 i/o 工作負載的配置模式，將會大幅增加主機上的空間使用量。
 
 ## <a name="sector-size-implications"></a>磁區大小的影響
 
@@ -176,7 +176,7 @@ VHD 會指向父 VHD 檔案。 對區塊的任何寫入都不會寫入，因而�
 
 -   4 KB 緩衝區中的資料會修改成包含更新的 512 位元組磁區。
 
--   磁片會將更新的 4 KB 緩衝區寫回磁片上的實體磁區。
+-   磁碟會執行將已更新的 4 KB 緩衝區寫回到其磁碟上的實體磁區。
 
 此程式稱為讀取-修改-寫入（RMW）。 RMW 程式的整體效能影響取決於工作負載。 RMW 程式會導致虛擬硬碟的效能降低，原因如下：
 
@@ -244,7 +244,7 @@ Windows Server 2012 儲存堆疊和 Hyper-v 中首次引進的下列主要改良
 
 -   更有效率的 i/o 完成機制，涉及虛擬處理器之間的中斷分佈，以避免耗費資源的 interprocessor 中斷。
 
-在 Windows Server 2012 中引進了一些登錄專案，位於 HKLM\\系統\\CurrentControlSet\\Enum\\VMBUS\\{device id}\\{instance id}\\StorChannel，可讓您調整頻道數目。 它們也會將處理 i/o 完成的虛擬處理器，與應用程式指派給 i/o 處理器的虛擬 Cpu 對齊。 登錄設定會根據裝置的硬體機碼，以每個介面卡為基礎進行設定。
+Windows Server 2012 中引進了一些登錄專案，位於 HKLM \\ System \\ CurrentControlSet \\ Enum \\ VMBUS \\ {device id} \\ {instance id} \\ StorChannel，可讓您調整通道數目。 它們也會將處理 i/o 完成的虛擬處理器，與應用程式指派給 i/o 處理器的虛擬 Cpu 對齊。 登錄設定會根據裝置的硬體機碼，以每個介面卡為基礎進行設定。
 
 -   **ChannelCount （DWORD）** 要使用的通道總數，最大值為16。 其預設值為上限，這是虛擬處理器/16 的數目。
 
@@ -270,7 +270,7 @@ Windows Server 2012 和以上的 hyper-v 支援卸載資料傳輸（ODX）作業
 
 基於這些理由，建議您在不使用虛擬光纖通道磁片的情況下，使用連接到 SCSI 控制器的 VHDX 檔案。
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 -   [Hyper-V 術語](terminology.md)
 

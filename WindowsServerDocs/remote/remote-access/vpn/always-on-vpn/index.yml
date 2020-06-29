@@ -1,94 +1,76 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: 遠端存取 Always On VPN
+### YamlMime:Landing
+title: Always On VPN 文件
+summary: 了解軟體定義網路 (SDN) 的功能、技術和 Always On VPN 的部署。
 metadata:
-  document_id: null
-  title: 遠端存取 Always On VPN
+  title: Always On VPN 文件
   description: 了解軟體定義網路 (SDN) 的功能、技術和 Always On VPN 的部署。
-  text: Always On VPN 為所有連接的裝置 (甚至是個人擁有的裝置) 提供單一且一致的解決方案，以進行遠端存取。 使用 Always On VPN，連線類型不必是專用使用者或裝置，但可以是兩者的組合。 例如，您可以為遠端裝置管理啟用裝置驗證，然後再啟用使用者驗證以連線到內部公司站台及服務。
-  keywords: 'Windows 10, Windows Server, Windows Server 2016, 遠端存取, VPN'
-  ms.localizationpriority: high
+  ms.service: help
+  ms.topic: landing-page
   author: eross-msft
   ms.author: lizross
-  ms.date: 11/05/2018
-  ms.topic: article
-  ms.devlang: na
-sections:
-  - title: 深入了解
-  - items:
-      - type: markdown
-        text: 準備好將遠端存取部署為點對站 VPN 連線的單一租用戶 VPN RAS 閘道，針對執行 Windows 10 的遠端用戶端電腦使用下面提到之四種方案中的任何一種。  如果您目前使用 DirectAccess，我們建議您在從 DirectAccess 移轉到 Always On VPN 之前仔細調查 Always On VPN 功能，以確定它是否滿足您的所有遠端存取需求。
-  - items:
-      - type: list
-        style: cards
-        className: cardsE
-        columns: 3
-        items:
-          - href: \windows-server\remote\remote-access\vpn\always-on-vpn\deploy\always-on-vpn-deploy
-            html: <p>了解 Always On VPN 部署以及從何處著手。</p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
-            title: 開始您的旅程
-          - href: \windows-server\remote\remote-access\vpn\vpn-map-da
-            html: <p>了解 Always On VPN 的特色和功能。</p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_quick-start.svg'
-            title: Alwayson VPN 特色和功能
-          - href: \windows-server\remote\remote-access\vpn\always-on-vpn\always-on-vpn-enhancements
-            html: <p>了解整合、安全性、連線、網路控制和相容性的重要改良功能。</p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_whats-new.svg'
-            title: Always On VPN 增強功能
-          - href: \windows-server\remote\remote-access\vpn\always-on-vpn\always-on-vpn-technology-overview
-            html: <p>了解 Always On VPN 部署中使用的技術。</p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_overview.svg'
-            title: 技術概觀
-          - href: \windows-server\remote\remote-access\vpn\always-on-vpn\deploy\always-on-vpn-adv-options
-            html: <p>了解可新增的進階 VPN 功能，以提升 VPN 連線的安全性和可用性。</p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_advanced.svg'
-            title: 使用進階功能擴充 Always On VPN
-  - title: 入門
-    items:
-      - type: paragraph
-        text: 為已加入網域的 Windows 10 用戶端電腦部署 Always On VPN 連線。 您也可以從 DirectAccess 移轉至 Always On VPN 並使用 Azure AD 條件式存取。
-      - type: list
-        style: cards
-        className: cardsE
-        columns: 3
-        items:
-          - href: \windows-server\remote\remote-access\vpn\always-on-vpn\deploy\always-on-vpn-deploy-deployment
-            html: <p>了解部署 VPN 連線所需的內容。</p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_architecture.svg'
-            title: 部署工作流程和案例
-          - href: \windows-server\remote\remote-access\vpn\always-on-vpn\deploy\always-on-vpn-deploy-planning
-            html: <p>開始規劃和準備 Always On VPN 部署。</p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_guidelines.svg'
-            title: 規劃 Always On VPN 部署
-          - href: \windows-server\remote\remote-access\vpn\always-on-vpn\deploy\vpn-deploy-server-infrastructure
-            html: <p>開始安裝和設定 VPN 基礎結構，以及 Windows 10 用戶端的 VPN 連線。</p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_setup.svg'
-            title: 部署 VPN 基礎結構
-          - href: \windows-server\remote\remote-access\vpn\ad-ca-vpn-connectivity-windows10
-            html: <p>使用 Azure AD 條件式存取微調 VPN 使用者存取資源的方式。</p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_setup.svg'
-            title: 設定條件式存取
-  - items:
-      - type: list
-        style: cards
-        className: cardsL
-        items:
-          - title: Always On VPN 疑難排解
-            html: |-
-              <p><a class="barLink" href="/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#vpnprofileps1-script-issues">VPN_Profile.ps1 指令碼問題</a></p>
-              <p><a class="barLink" href="/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#always-on-vpn-client-connection-issues">Always On VPN 用戶端連線問題</a></p>
-              <p><a class="barLink" href="/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#azure-ad-conditional-access-connection-issues">Azure AD 條件式存取連線問題</a></p>
-              <p><a class="barLink" href="/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#error-codes">錯誤碼</a></p><br>
-              <p><a class="barLink" href="/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#logs">記錄檔</a></p></div>
-          - title: 其他資源
-            html: "<p><a class=\"barLink\" href=\"https://docs.microsoft.com/windows/access-protection/vpn/vpn-guide\">Windows\_10 VPN 技術指南</a></p>\n<p><a class=\"barLink\" href=\"https://msdn.microsoft.com/windows/hardware/commercialize/customize/mdm/vpnv2-csp\">VPNv2 CSP</a></p>\n<p><a class=\"barLink\" href=\"https://technet.microsoft.com/library/hh831740.aspx\">Active Directory 憑證服務概觀</a></p>\n<p><a class=\"barLink\" href=\"https://technet.microsoft.com/library/cc730705.aspx\">憑證範本</a></p>\n<p><a class=\"barLink\" href=\"https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx\">公開金鑰基礎結構設計指導方針</a></p><p></p>\n<p><a class=\"barLink\" href=\"https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx\">AD CS 逐步指南 - 兩層式 PKI 階層部署</a></p>"
+  ms.date: 06/10/2020
+  ms.openlocfilehash: 2196c278e66adbf910646ab1c080efe39e2a4fe7
+  ms.sourcegitcommit: 1c9cb4be74d92afb938cad870c0b4bf506b89e98
+  ms.translationtype: HT
+  ms.contentlocale: zh-TW
+  ms.lasthandoff: 06/24/2020
+  ms.locfileid: "85332617"
+landingContent:
+- title: 關於 Always On VPN
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Alwayson VPN 特色和功能
+      url: /windows-server/remote/remote-access/vpn/vpn-map-da
+    - text: 技術概觀
+      url: /windows-server/remote/remote-access/vpn/always-on-vpn/always-on-vpn-technology-overview
+    - text: Always On VPN 增強功能
+      url: /windows-server/remote/remote-access/vpn/always-on-vpn/always-on-vpn-technology-overview
+    - text: Always On VPN 進階功能
+      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-adv-options
+    - text: Windows Server 和 Windows 10 的 Always On VPN 部署
+      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy
+- title: 部署 Always On VPN
+  linkLists:
+  - linkListType: deploy
+    links:
+    - text: 部署工作流程和案例
+      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-deployment
+    - text: 規劃 Always On VPN 部署
+      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-planning
+    - text: 部署 VPN 基礎結構
+      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/vpn-deploy-server-infrastructure
+    - text: 設定條件式存取
+      url: /windows-server/remote/remote-access/vpn/ad-ca-vpn-connectivity-windows10
+- title: 疑難排解
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: VPN_Profile.ps1 指令碼問題
+      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#vpnprofileps1-script-issues
+    - text: Always On VPN 用戶端連線問題
+      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#always-on-vpn-client-connection-issues
+    - text: Azure AD 條件式存取連線問題
+      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#azure-ad-conditional-access-connection-issues
+  - linkListType: reference
+    links:
+    - text: 錯誤碼
+      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#error-codes
+    - text: 記錄檔
+      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#logs
+- title: 其他資源
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Windows 10 VPN 技術指南
+      url: https://docs.microsoft.com/windows/access-protection/vpn/vpn-guide
+    - text: VPNv2 CSP
+      url: https://msdn.microsoft.com/windows/hardware/commercialize/customize/mdm/vpnv2-csp
+    - text: Active Directory 憑證服務
+      url: https://technet.microsoft.com/library/hh831740.aspx
+    - text: 憑證範本
+      url: https://technet.microsoft.com/library/cc730705.aspx
+    - text: 公開金鑰基礎結構設計指導方針
+      url: https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx
+    - text: AD CS 逐步指南 - 兩層式 PKI 階層部署
+      url: https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx

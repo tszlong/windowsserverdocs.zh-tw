@@ -7,14 +7,14 @@ ms.topic: article
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: aac7b8f37de2132778bd681d2f2e29ad0ad0810d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 19574c859e038374a4cf3fe1e452adae0891e067
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851871"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471483"
 ---
-# <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>適當位置的網域控制站和網站考慮
+# <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>適當地放置網域控制站與站台考量
 
 適當的網站定義對於效能很重要。 失去網站的用戶端可能會遇到效能不佳的驗證和查詢。 此外，在用戶端上引進 IPv6 之後，要求可能來自 IPv4 或 IPv6 位址，Active Directory 必須為 IPv6 正確定義網站。 當設定兩者時，作業系統偏好 IPv6 到 IPv4。
 
@@ -25,7 +25,7 @@ ms.locfileid: "80851871"
 -   可能需要可寫入的網域控制站。  將讀寫網域控制站放在中央位置，以將延遲降到最低。
 
 如需進一步資訊，請參閱：
--   [Rodc 的應用程式相容性](https://technet.microsoft.com/library/cc772597.aspx)
+-   [應用程式和 RODC 的相容性](https://technet.microsoft.com/library/cc772597.aspx)
 -   [Active Directory 服務介面（ADSI）和唯讀網域控制站（RODC）–避免效能問題](https://blogs.technet.microsoft.com/fieldcoding/2012/06/24/active-directory-service-interface-adsi-and-the-read-only-domain-controller-rodc-avoiding-performance-issues/)
 
 ## <a name="optimize-for-referrals"></a>針對參考優化
@@ -34,7 +34,7 @@ ms.locfileid: "80851871"
 
 ## <a name="optimization-considerations-for-trusts"></a>信任的優化考慮
 
-在樹系內案例中，會根據下列網域階層來處理信任：&gt; 子域&gt; 樹系根域&gt; 子域&gt; 的單一子域。 這表示在樹系根節點和每個父系上的安全通道可能會因為驗證要求的匯總而超載，傳輸信任階層中的 Dc。 當驗證也必須傳輸高度潛在的連結來影響上述流程時，這也可能會導致大型地理散佈的 Active Directory 延遲。 多載可能發生在樹系和下層信任案例中。 下列建議適用于所有案例：
+在樹系內的案例中，會根據下列網域階層來處理信任：上層子域-子域-網域 &gt; 樹系 &gt; 根域- &gt; 子域-子網域 &gt; 。 這表示在樹系根節點和每個父系上的安全通道可能會因為驗證要求的匯總而超載，傳輸信任階層中的 Dc。 當驗證也必須傳輸高度潛在的連結來影響上述流程時，這也可能會導致大型地理散佈的 Active Directory 延遲。 多載可能發生在樹系和下層信任案例中。 下列建議適用于所有案例：
 
 -   適當地調整 MaxConcurrentAPI，以支援跨安全通道的負載。 如需詳細資訊，請參閱[如何使用 MaxConcurrentApi 設定進行 NTLM 驗證的效能微調](https://support.microsoft.com/kb/2688798/EN-US)。
 
@@ -67,7 +67,7 @@ ms.locfileid: "80851871"
         > [!NOTE]
         > 用戶端可以使用的網域控制站數目有大約50的實際限制。 這些應該是最理想的網站和最高容量網域控制站。
 
-    
+
     -  請考慮將網域控制站放在同一個實體位置中受信任和信任的網域。
 
 在所有信任案例中，認證會根據驗證要求中指定的網域來路由傳送。 這也適用于 LookupAccountName 和 LsaLookupNames 的查詢（以及其他專案，這些只是最常使用的） Api。 當這些 Api 的網域參數傳遞 Null 值時，網域控制站會嘗試尋找每個可用信任網域中指定的帳號名稱。
@@ -76,9 +76,9 @@ ms.locfileid: "80851871"
 
 -   停用在所有可用的信任上指定 Null 網域的傳遞驗證要求。 [如果 Active Directory 網域控制站上有許多外部信任，Lsass.exe 進程可能會停止回應](https://support.microsoft.com/kb/923241/EN-US)
 
-## <a name="see-also"></a>另請參閱
-- [Active Directory 伺服器的效能微調](index.md)
+## <a name="additional-references"></a>其他參考
+- [Active Directory 伺服器的效能調整](index.md)
 - [硬體考量](hardware-considerations.md)
 - [LDAP 考量](ldap-considerations.md)
-- [針對 ADDS 效能問題進行疑難排解](troubleshoot.md) 
+- [針對 ADDS 效能問題進行疑難排解](troubleshoot.md)
 - [Active Directory Domain Services 的容量規劃](https://go.microsoft.com/fwlink/?LinkId=324566)

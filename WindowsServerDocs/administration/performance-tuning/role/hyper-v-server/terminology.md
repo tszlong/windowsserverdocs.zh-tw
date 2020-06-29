@@ -1,5 +1,5 @@
 ---
-title: Hyper-v 術語
+title: Hyper-V 術語
 description: Hyper-v 效能微調中有用的 hyper-v 術語
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 88aaebaac9161849fefe8116a1115eb628bcbf9e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bba2ef96be812c930fbf0c93d3c3c612fa9c9c5a
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851761"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471263"
 ---
 # <a name="hyper-v-terminology"></a>Hyper-v 術語
 本節將摘要說明在此效能微調主題中使用的虛擬機器技術的主要術語：
@@ -31,13 +31,13 @@ ms.locfileid: "80851761"
 |*Hyper-v 特定裝置*|不具實體硬體類比的虛擬化裝置，因此來賓可能需要驅動程式（虛擬化服務用戶端），才能使用該 Hyper-v 特定的裝置。 此驅動程式可以使用虛擬機器匯流排（VMBus）與根磁碟分割中的虛擬化裝置軟體進行通訊。|
 |*虛擬機器*|由軟體模擬所建立並具有與實際電腦相同特性的虛擬電腦。|
 | *虛擬網路交換器*|（也稱為虛擬交換器）實體網路交換器的虛擬版本。 您可以將虛擬網路設定成可以存取一或多部虛擬機器的本機或外部網路資源。|
-|*虛擬處理器*|已排程在邏輯處理器上執行之處理器的虛擬抽象概念。 虛擬機器可以有一或多個虛擬處理器。|
+|*Virtual Processor - 虛擬處理器*|已排程在邏輯處理器上執行之處理器的虛擬抽象概念。 虛擬機器可以有一或多個虛擬處理器。|
 |*虛擬化服務用戶端（VSC）*|來賓載入以取用資源或服務的軟體模組。 就 i/o 裝置而言，虛擬化服務用戶端可以是作業系統核心載入的設備磁碟機。|
 | *虛擬化服務提供者（VSP）*|  根磁碟分割中的虛擬化堆疊所公開的提供者，可提供資源或服務，例如 i/o 到子磁碟分割。|
 | *虛擬化堆疊*|根磁碟分割中的軟體元件集合，可搭配使用以支援虛擬機器。 虛擬化堆疊適用于和位於虛擬程式之上。 它也提供管理功能。|
 |*VMBus*|以通道為基礎的通訊機制，用於具有多個作用中虛擬化磁碟分割之系統上的分割區通訊和裝置列舉。 VMBus 會隨著 Hyper-V 整合服務一起安裝。|
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 -   [Hyper-V 架構](architecture.md)
 

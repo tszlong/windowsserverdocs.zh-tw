@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 7abc1ef5473365dd26dce1167bb685f116822a7d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1109eb50bbe052b39fe7a91903fa0aea58b6e4f1
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851741"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471383"
 ---
 # <a name="linux-virtual-machine-considerations"></a>Linux 虛擬機器考慮
 
@@ -24,9 +24,9 @@ ms.locfileid: "80851741"
 
 ## <a name="linux-network-performance"></a>Linux 網路效能
 
-Linux 預設會啟用硬體加速和卸載。 如果在主機上的 NIC 屬性中啟用了 vRSS，而 Linux 來賓具有使用 vRSS 的功能，將會啟用此功能。 在 Powershell 中，您可以使用 `EnableNetAdapterRSS` 命令來變更相同的參數。
+Linux 預設會啟用硬體加速和卸載。 如果在主機上的 NIC 屬性中啟用了 vRSS，而 Linux 來賓具有使用 vRSS 的功能，將會啟用此功能。 在 Powershell 中，您可以使用命令來變更相同的參數 `EnableNetAdapterRSS` 。
 
-同樣地，您可以在來賓**屬性**所使用的實體 NIC 上啟用 VMMQ （虛擬交換器 rss）**功能 > [設定]**  > [ **Advanced** ] 索引標籤 > 將**虛擬交換器 RSS**設定為 [**啟用**]，或使用下列命令在 Powershell 中啟用 VMMQ：
+同樣地，您可以在 [來賓**屬性**  >  **設定**  >  ] 所使用的實體 NIC 上啟用 VMMQ （虛擬交換器 RSS）功能 .。。[ **Advanced** ] 索引標籤 > 將**虛擬交換器 RSS**設定為 [**啟用**]，或使用下列命令在 Powershell 中啟用 VMMQ：
 
 ```PowerShell
  Set-VMNetworkAdapter -VMName **$VMName** -VmmqEnabled $True
@@ -49,15 +49,15 @@ net.ipv4.ip_local_port_range = 10240 65535
 net.ipv4.tcp_abort_on_overflow = 1
 ```
 
-適用于網路 microbenchmarks 的公用程式是 ntttcp，其適用于 Linux 和 Windows。 Linux 版本是開放原始碼，可從[github.com 上的 ntttcp for linux 取得](https://github.com/Microsoft/ntttcp-for-linux)。 您可以在[下載中心](https://gallery.technet.microsoft.com/NTttcp-Version-528-Now-f8b12769)找到 Windows 版本。 微調工作負載時，最好盡可能使用所需數量的資料流程來取得最佳的輸送量。 使用 ntttcp 來建立流量模型時，`-P` 參數會設定所使用的平行連接數目。
+適用于網路 microbenchmarks 的公用程式是 ntttcp，其適用于 Linux 和 Windows。 Linux 版本是開放原始碼，可從[github.com 上的 ntttcp for linux 取得](https://github.com/Microsoft/ntttcp-for-linux)。 您可以在[下載中心](https://gallery.technet.microsoft.com/NTttcp-Version-528-Now-f8b12769)找到 Windows 版本。 微調工作負載時，最好盡可能使用所需數量的資料流程來取得最佳的輸送量。 使用 ntttcp 來建立流量模型時， `-P` 參數會設定所使用的平行連接數目。
 
 ## <a name="linux-storage-performance"></a>Linux 儲存體效能
 
-在[hyper-v 上執行 Linux 的最佳作法](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/best-practices-for-running-linux-on-hyper-v)中列出一些最佳做法，如下所示。 Linux 核心具有不同的 i/o 排程器，可使用不同的演算法重新排序要求。 NOOP 是先進先出佇列，可通過由管理者所進行的排程決策。 建議在 Hyper-v 上執行 Linux 虛擬機器時，使用 NOOP 做為排程器。 若要變更特定裝置的排程器，請在開機載入器的設定（例如/etc/grub.conf）中，將 `elevator=noop` 新增至核心參數，然後重新開機。
+在[hyper-v 上執行 Linux 的最佳作法](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/best-practices-for-running-linux-on-hyper-v)中列出一些最佳做法，如下所示。 Linux 核心具有不同的 i/o 排程器，可使用不同的演算法重新排序要求。 NOOP 是先進先出佇列，可通過由管理者所進行的排程決策。 建議在 Hyper-v 上執行 Linux 虛擬機器時，使用 NOOP 做為排程器。 若要變更特定裝置的排程器，請在開機載入器的設定（例如/etc/grub.conf）中，將新增 `elevator=noop` 至核心參數，然後重新開機。
 
 與網路類似，Linux 的來賓效能與存放裝置的優點是多個佇列的深度，足以讓主機保持忙碌。 使用 libaio 引擎的 fio 基準測試，Microbenchmarking 儲存體效能可能最佳。
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 -   [Hyper-V 術語](terminology.md)
 

@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a7c37638e25fc0d16447ab57bf369255dab9c859
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 5f2e8a0816fdd78491c18e196a57a38734e3368e
+ms.sourcegitcommit: 5bc5aaf341c711113ca03d1482f933b05b146007
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "75950251"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85094507"
 ---
 # <a name="folder-redirection-offline-files-and-roaming-user-profiles-overview"></a>資料夾重新導向、離線檔案及漫遊使用者設定檔概觀
 
@@ -135,4 +135,4 @@ ms.locfileid: "75950251"
 | 部署 | [部署資料夾重新導向、離線檔案及漫遊使用者設定檔](deploy-folder-redirection.md)<br>[實作使用者資料集中化解決方案：資料夾重新導向和離線檔案技術驗證與部署](https://download.microsoft.com/download/3/0/1/3019A3DA-2F41-4F2D-BBC9-A6D24C4C68C4/Implementing%20an%20End-User%20Data%20Centralization%20Solution.docx)<br>[管理漫遊使用者資料部署指南](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc766489(v=ws.10)>)<br>[設定 Windows 7 電腦之新離線檔案功能的逐步指南](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff633429(v=ws.10)>)<br>[使用資料夾重新導向](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753996(v=ws.11)>)<br>[實作資料夾重新導向](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc737434(v=ws.10)>) (Windows Server 2003) |
 | 工具及設定 | [MSDN 上的離線檔案](https://msdn.microsoft.com/library/cc296092.aspx)<br>[離線檔案群組原則參考](https://msdn.microsoft.com/library/ms878937.aspx) (Windows 2000) |
 | 社群資源 | [檔案服務和儲存體論壇](https://social.technet.microsoft.com/forums/windowsserver/home?forum=winserverfiles)<br>[指令碼高手您好：我要如何在 Windows 中使用離線檔案功能？](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>)<br>[指令碼高手您好：如何啟用和停用離線檔案？](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>) |
-| 相關技術|[Windows Server 中的身分識別與存取](../../identity/identity-and-access.md)<br>[Windows Server 的儲存空間](../storage.md)<br>[遠端存取和伺服器管理](../../remote/index.md) |
+| 相關技術|[Windows Server 中的身分識別與存取](../../identity/identity-and-access.yml)<br>[Windows Server 的儲存空間](../storage.yml)<br>[遠端存取和伺服器管理](../../remote/index.md) |

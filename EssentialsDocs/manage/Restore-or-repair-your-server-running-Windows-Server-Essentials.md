@@ -8,241 +8,241 @@ ms.assetid: 27bf6f24-30c4-4935-9b24-069eb43e22f4
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 89220092746b29a2bd45a906c93aa85abe045319
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: cfb78f6b451783bec4cc6f20f36a65f0731162e2
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852631"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85470353"
 ---
 # <a name="restore-or-repair-your-server-running-windows-server-essentials"></a>還原或修復執行 Windows Server Essentials 的伺服器
 
 >適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
- 
- 本主題提供還原或修復執行 Windows Server Essentials 之伺服器的總覽和支援程式，並包含下列各節：  
-  
--   [伺服器系統還原的總覽](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_Overview)  
-  
--   [還原或修復系統磁片磁碟機](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_Restore)  
-  
--   [還原伺服器上的檔案和資料夾](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_RestoreFilesAndFolders)  
-  
-##  <a name="overview-of-server-system-restores"></a><a name="BKMK_Overview"></a>伺服器系統還原的總覽  
- 當您執行還原時伺服器所處的狀態會影響可用的還原方法，以及您可以執行多齊全的還原。  
-  
- 還原伺服器最常見的原因如下：  
-  
-- 伺服器上的病毒無法防護或刪除。  
-  
-- 伺服器組態設定值不正確，且無法啟動伺服器。  
-  
-- 您更換了系統磁碟機。  
-  
-- 您正在淘汰伺服器，而您想要還原至新的伺服器。  
-  
-  您可以從備份來還原伺服器，或者可以將伺服器還原為原廠預設設定。  
-  
-- [從備份還原伺服器](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_RestoreFromBackup)  
-  
-- [將伺服器重設為原廠預設設定](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_FactoryReset)  
-  
-###  <a name="restoring-the-server-from-a-backup"></a><a name="BKMK_RestoreFromBackup"></a>從備份還原伺服器  
- 本節提供要選擇何種備份類型的指引。  
-  
- 如果有備份可用，您還原伺服器的最佳選擇是使用製造商的安裝媒體從外部備份進行還原。 還原過程將會從您所選擇的備份復原伺服器設定及資料夾。 您只需要設定設定值，並且還原備份之後建立的資料。  
-  
- 當您選擇從先前的備份還原來復原您的伺服器時，您必須選擇您想要還原的特定備份，而且您在直接連接到伺服器的外部硬碟上必須擁有有效的備份檔案：  
-  
-- **如果您有伺服器的最新成功備份**，而且您知道備份中包含所有重要資料，您的選擇就相當簡單。 您只需要重新建立您上次良好備份之後所建立的資料，以及重新設定備份之後變更的設定。  
-  
-- **如果您因病毒而還原伺服器**，則選取在收到病毒前所進行備份。 您可能需要返回幾天前選取乾淨的備份。  
-  
-- **如果您因為組態設定不正確而還原伺服器**，則選取在造成伺服器發生問題的組態設定變更前所進行的備份。  
-  
-  當您從備份還原時，確切的程序與必要的後續工作會根據伺服器上的硬碟數目和是否更換系統磁碟機而不同：  
-  
-- **如果伺服器只有一個硬碟，而且不更換磁碟機**，當您還原伺服器時，磁碟機的磁碟分割資訊會保留不變。 系統磁碟區會進行還原，並保留其他磁碟區上的資料。  
-  
-- **如果伺服器只有一個硬碟，而且要更換磁碟機**，則系統磁碟區會進行還原，然後您必須手動將資料夾還原到資料磁碟區。 您必須建立任何非預設的共用資料夾，因為重建伺服器儲存體時不會建立這些資料夾。  
-  
-- **如果伺服器有多個硬碟，而且不更換磁碟機 0 (包含系統磁碟區)** ，當您還原伺服器時，磁碟機的磁碟分割資訊會保留不變。 系統磁碟區會進行還原，並保留所有其他磁碟區上的資料。  
-  
-- **如果伺服器有多個硬碟，而且要更換磁碟機 0 (包含系統磁碟區)** ，系統磁碟區會進行還原，然後您必須手動還原先前儲存在磁碟機 0 的任何共用資料夾。  
-  
-###  <a name="resetting-the-server-to-factory-default-settings"></a><a name="BKMK_FactoryReset"></a>將伺服器重設為原廠預設設定  
- 如果您沒有可供還原的備份，或者因為某些其他原因，您想要或需要執行完整系統還原而不還原先前的伺服器設定，您可以使用伺服器硬體製造商的安裝或復原媒體執行還原，將伺服器重設為原廠預設設定。  
-  
- 當您藉由重設為原廠預設設定來還原伺服器時，會刪除伺服器上所有現有的設定及安裝的應用程式，您也必須重新設定伺服器。 原廠重設之後，伺服器會重新啟動。  
-  
- 當您執行原廠重設時，可以選擇保留或刪除您的資料，但會發生下列結果：  
-  
--   如果您選擇要保留您所有的資料，則系統磁碟區上的所有資料都會被刪除，但其他磁碟區上的資料則會被保留。  
-  
+
+ 本主題提供還原或修復執行 Windows Server Essentials 之伺服器的總覽和支援程式，並包含下列各節：
+
+-   [伺服器系統還原的概觀](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_Overview)
+
+-   [還原或修復系統磁碟機](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_Restore)
+
+-   [還原伺服器上的檔案和資料夾](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_RestoreFilesAndFolders)
+
+##  <a name="overview-of-server-system-restores"></a><a name="BKMK_Overview"></a>伺服器系統還原的總覽
+ 當您執行還原時伺服器所處的狀態會影響可用的還原方法，以及您可以執行多齊全的還原。
+
+ 還原伺服器最常見的原因如下：
+
+- 伺服器上的病毒無法防護或刪除。
+
+- 伺服器組態設定值不正確，且無法啟動伺服器。
+
+- 您更換了系統磁碟機。
+
+- 您正在淘汰伺服器，而您想要還原至新的伺服器。
+
+  您可以從備份來還原伺服器，或者可以將伺服器還原為原廠預設設定。
+
+- [從備份還原伺服器](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_RestoreFromBackup)
+
+- [將伺服器重設為原廠預設設定](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_FactoryReset)
+
+###  <a name="restoring-the-server-from-a-backup"></a><a name="BKMK_RestoreFromBackup"></a>從備份還原伺服器
+ 本節提供要選擇何種備份類型的指引。
+
+ 如果有備份可用，您還原伺服器的最佳選擇是使用製造商的安裝媒體從外部備份進行還原。 還原過程將會從您所選擇的備份復原伺服器設定及資料夾。 您只需要設定設定值，並且還原備份之後建立的資料。
+
+ 當您選擇從先前的備份還原來復原您的伺服器時，您必須選擇您想要還原的特定備份，而且您在直接連接到伺服器的外部硬碟上必須擁有有效的備份檔案：
+
+- **如果您有伺服器的最新成功備份**，而且您知道備份中包含所有重要資料，您的選擇就相當簡單。 您只需要重新建立您上次良好備份之後所建立的資料，以及重新設定備份之後變更的設定。
+
+- **如果您因病毒而還原伺服器**，則選取在收到病毒前所進行備份。 您可能需要返回幾天前選取乾淨的備份。
+
+- **如果您因為組態設定不正確而還原伺服器**，則選取在造成伺服器發生問題的組態設定變更前所進行的備份。
+
+  當您從備份還原時，確切的程序與必要的後續工作會根據伺服器上的硬碟數目和是否更換系統磁碟機而不同：
+
+- **如果伺服器只有一個硬碟，而且不更換磁碟機**，當您還原伺服器時，磁碟機的磁碟分割資訊會保留不變。 系統磁碟區會進行還原，並保留其他磁碟區上的資料。
+
+- **如果伺服器只有一個硬碟，而且要更換磁碟機**，則系統磁碟區會進行還原，然後您必須手動將資料夾還原到資料磁碟區。 您必須建立任何非預設的共用資料夾，因為重建伺服器儲存體時不會建立這些資料夾。
+
+- **如果伺服器有多個硬碟，而且不更換磁碟機 0 (包含系統磁碟區)**，當您還原伺服器時，磁碟機的磁碟分割資訊會保留不變。 系統磁碟區會進行還原，並保留所有其他磁碟區上的資料。
+
+- **如果伺服器有多個硬碟，而且要更換磁碟機 0 (包含系統磁碟區)**，系統磁碟區會進行還原，然後您必須手動還原先前儲存在磁碟機 0 的任何共用資料夾。
+
+###  <a name="resetting-the-server-to-factory-default-settings"></a><a name="BKMK_FactoryReset"></a>將伺服器重設為原廠預設設定
+ 如果您沒有可供還原的備份，或者因為某些其他原因，您想要或需要執行完整系統還原而不還原先前的伺服器設定，您可以使用伺服器硬體製造商的安裝或復原媒體執行還原，將伺服器重設為原廠預設設定。
+
+ 當您藉由重設為原廠預設設定來還原伺服器時，會刪除伺服器上所有現有的設定及安裝的應用程式，您也必須重新設定伺服器。 原廠重設之後，伺服器會重新啟動。
+
+ 當您執行原廠重設時，可以選擇保留或刪除您的資料，但會發生下列結果：
+
+-   如果您選擇要保留您所有的資料，則系統磁碟區上的所有資料都會被刪除，但其他磁碟區上的資料則會被保留。
+
     > [!CAUTION]
-    >  如果磁碟設定不符合預設設定，磁碟上的所有資料都將會刪除。 如果您更換了系統磁片，新的磁片必須大於原始磁片的系統磁碟區。  
-    >   
-    >  如果系統磁碟機的磁碟分割資訊無法讀取，或如果您更換系統磁碟機，則系統磁碟機上的所有資料都會移除，即使您選擇要保留您所有的資料。  
-  
--   如果您打算解除委任或重新安排伺服器，請選擇要刪除所有資料。 除了伺服器設定、其他設定和系統磁碟區上的資料，所有其他資料都會刪除，伺服器上的所有硬碟也都會重新格式化。  
-  
+    >  如果磁碟設定不符合預設設定，磁碟上的所有資料都將會刪除。 如果您更換了系統磁片，新的磁片必須大於原始磁片的系統磁碟區。
+    >
+    >  如果系統磁碟機的磁碟分割資訊無法讀取，或如果您更換系統磁碟機，則系統磁碟機上的所有資料都會移除，即使您選擇要保留您所有的資料。
+
+-   如果您打算解除委任或重新安排伺服器，請選擇要刪除所有資料。 除了伺服器設定、其他設定和系統磁碟區上的資料，所有其他資料都會刪除，伺服器上的所有硬碟也都會重新格式化。
+
 > [!NOTE]
->  如果要在執行原廠重設之前先在伺服器上設定儲存空間，您要使用 [管理儲存空間] 主控台的 [進階] 區段，手動移除所有的儲存空間。  
-  
- 原廠重設之後，您必須執行下列工作：  
-  
--   **重新設定伺服器。** 在伺服器上，使用「設定伺服器精靈」重新輸入組態設定。 若要從用戶端電腦設定遠端系統管理的 Windows Server Essentials 伺服器，請開啟網頁瀏覽器，然後在網址列中輸入**HTTP://** _< 您伺服器名稱\>_ 。  
-  
--   **將用戶端電腦重新連線到伺服器。** 如果電腦先前已連線到伺服器，您必須先從電腦卸載 Windows Server Essentials 連接器軟體，然後再將電腦連接到伺服器。 如需詳細資訊，請參閱[解除安裝連接器軟體](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_13)和[將電腦連線到伺服器](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)。  
-  
-##  <a name="restore-or-repair-the-system-drive"></a><a name="BKMK_Restore"></a>還原或修復系統磁片磁碟機  
- 還原伺服器的第一個步驟是要還原或修復伺服器系統磁碟機。 還原系統磁碟機之後，您要盡可能執行任何方法以還原伺服器上的資料磁碟機，以及還原在還原時遺失的任何共用。  
-  
- 以下三種方法可供執行還原：  
-  
--   [使用安裝媒體還原或修復您的伺服器](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_Restore_1)。 您可以使用伺服器製造商的安裝媒體從備份還原。  
-  
--   **使用安裝媒體將伺服器還原為預設原廠設定**。 若要瞭解如何在您的伺服器上執行這項操作，請參閱伺服器製造商的說明文件。  
-  
--   [使用復原 DVD 從用戶端電腦還原或重設您的伺服器](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_Restore_2)。 如果您需要還原執行 Windows Server Essentials 的遠端管理伺服器，您必須從伺服器製造商使用還原 DVD，以從用戶端電腦進行還原。  
-  
-###  <a name="restore-or-repair-your-server-using-installation-media"></a><a name="BKMK_Restore_1"></a>使用安裝媒體還原或修復您的伺服器  
- 下列程式說明如何使用 Windows Server Essentials 安裝媒體從備份還原伺服器系統磁片磁碟機。 (若要瞭解如何使用安裝媒體來還原為原廠預設設定，請參閱伺服器製造商的說明文件)。  
-  
+>  如果要在執行原廠重設之前先在伺服器上設定儲存空間，您要使用 [管理儲存空間]**** 主控台的 [進階]**** 區段，手動移除所有的儲存空間。
+
+ 原廠重設之後，您必須執行下列工作：
+
+-   **重新設定伺服器。** 在伺服器上，使用「設定伺服器精靈」重新輸入組態設定。 若要從用戶端電腦設定遠端系統管理的 Windows Server Essentials 伺服器，請開啟網頁瀏覽器，然後在網址列中輸入**HTTP://** _<您伺服器名稱 \> _ 。
+
+-   **將用戶端電腦重新連線到伺服器。** 如果電腦先前已連線到伺服器，您必須先從電腦卸載 Windows Server Essentials 連接器軟體，然後再將電腦連接到伺服器。 如需詳細資訊，請參閱[解除安裝連接器軟體](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_13)和[將電腦連線到伺服器](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)。
+
+##  <a name="restore-or-repair-the-system-drive"></a><a name="BKMK_Restore"></a>還原或修復系統磁片磁碟機
+ 還原伺服器的第一個步驟是要還原或修復伺服器系統磁碟機。 還原系統磁碟機之後，您要盡可能執行任何方法以還原伺服器上的資料磁碟機，以及還原在還原時遺失的任何共用。
+
+ 以下三種方法可供執行還原：
+
+-   [使用安裝媒體還原或修復您的伺服器](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_Restore_1)。 您可以使用伺服器製造商的安裝媒體從備份還原。
+
+-   **使用安裝媒體將伺服器還原為預設原廠設定**。 若要瞭解如何在您的伺服器上執行這項操作，請參閱伺服器製造商的說明文件。
+
+-   [使用復原 DVD 從用戶端電腦還原或重設您的伺服器](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_Restore_2)。 如果您需要還原執行 Windows Server Essentials 的遠端管理伺服器，您必須從伺服器製造商使用還原 DVD，以從用戶端電腦進行還原。
+
+###  <a name="restore-or-repair-your-server-using-installation-media"></a><a name="BKMK_Restore_1"></a>使用安裝媒體還原或修復您的伺服器
+ 下列程式說明如何使用 Windows Server Essentials 安裝媒體從備份還原伺服器系統磁片磁碟機。 (若要瞭解如何使用安裝媒體來還原為原廠預設設定，請參閱伺服器製造商的說明文件)。
+
 > [!NOTE]
->  如果伺服器使用儲存空間，而且您要將資料還原到新的伺服器，您應該先復原系統磁片磁碟機，然後登入 Windows Server Essentials 儀表板，使用與舊伺服器相同的方式來設定儲存空間，然後復原資料磁片區。  
-  
-##### <a name="to-restore-the-server-system-drive-from-a-backup-using-installation-media"></a>使用安裝媒體從備份還原伺服器系統磁碟機  
-  
-1.  在伺服器 DVD 光碟機中插入 Windows Server Essentials 安裝 DVD，重新開機伺服器，然後按任意鍵從 DVD 開機。  
-  
+>  如果伺服器使用儲存空間，而且您要將資料還原到新的伺服器，您應該先復原系統磁片磁碟機，然後登入 Windows Server Essentials 儀表板，使用與舊伺服器相同的方式來設定儲存空間，然後再復原資料磁片區。
+
+##### <a name="to-restore-the-server-system-drive-from-a-backup-using-installation-media"></a>使用安裝媒體從備份還原伺服器系統磁碟機
+
+1.  在伺服器 DVD 光碟機中插入 Windows Server Essentials 安裝 DVD，重新開機伺服器，然後按任意鍵從 DVD 開機。
+
     > [!NOTE]
-    >  如果還原程序沒有自動啟動，請檢查您伺服器的 BIOS 設定，確定 DVD 光碟機出現在開機功能表的第一個。  
-  
-     \- 或者 -  
-  
-     如果製造商預先載入了伺服器上的安裝媒體，請在啟動時按 F8 鍵從安裝媒體啟動。  
-  
-2.  Windows Server 檔案載入之後，選擇您的語言和其他喜好設定，然後按 [下一步]。  
-  
-3.  在精靈的下一頁，按一下 [修復您的電腦]。  
-  
+    >  如果還原程序沒有自動啟動，請檢查您伺服器的 BIOS 設定，確定 DVD 光碟機出現在開機功能表的第一個。
+
+     -或-
+
+     如果製造商預先載入了伺服器上的安裝媒體，請在啟動時按 F8 鍵從安裝媒體啟動。
+
+2.  Windows Server 檔案載入之後，選擇您的語言和其他喜好設定，然後按 [下一步]****。
+
+3.  在精靈的下一頁，按一下 [修復您的電腦]****。
+
     > [!CAUTION]
-    >  請勿選擇 [立即安裝] 選項。 該選項會引導您完成完整的系統安裝，並刪除所有的組態設定和系統磁碟機上的所有資料。  
-  
-4.  在 [選擇選項] 頁面上，按一下 [疑難排解]。  
-  
-5.  在 [**系統映射修復**] 頁面上，選取 [目前的系統]？ [ **windows server essentials** ] 或 [ **windows server essentials**]。  
-  
-     「重新製作電腦映像精靈」便會開啟。  
-  
-6.  在 [選取系統映像備份] 頁面上，您可以選擇使用最新的備份，或者您可以選取較早的備份。 系統將會還原到您選擇備份的時間當時的狀態，以還原或修復您的伺服器。 在備份儲存之後所新增的資料或進行的設定變更必須重新建立。  
-  
-     選取下列其中一個選項，然後按 [下一步]：  
-  
-    -   **使用最新可用的系統映像 (建議選項)**  
-  
-    -   **選取系統映像**  
-  
+    >  請勿選擇 [立即安裝]**** 選項。 該選項會引導您完成完整的系統安裝，並刪除所有的組態設定和系統磁碟機上的所有資料。
+
+4.  在 [選擇選項]**** 頁面上，按一下 [疑難排解]****。
+
+5.  在 [**系統映射修復**] 頁面上，選取 [目前的系統]？ [ **windows server essentials** ] 或 [ **windows server essentials**]。
+
+     「重新製作電腦映像精靈」便會開啟。
+
+6.  在 [選取系統映像備份]**** 頁面上，您可以選擇使用最新的備份，或者您可以選取較早的備份。 系統將會還原到您選擇備份的時間當時的狀態，以還原或修復您的伺服器。 在備份儲存之後所新增的資料或進行的設定變更必須重新建立。
+
+     選取下列其中一個選項，然後按 [下一步]****：
+
+    -   **使用最新可用的系統映像 (建議選項)**
+
+    -   **選取系統映像**
+
     > [!NOTE]
-    >  如果您有伺服器的最新成功備份，而且您知道備份中包含所有重要資料，您的選擇就相當簡單。 您只需要重新建立您上次良好備份之後所建立的資料，以及重新設定備份之後變更的設定。  
-    >   
-    >  如果您因病毒而還原伺服器，則選取在收到病毒前所進行備份。 您可能需要返回幾天前選取乾淨的備份。  
-    >   
-    >  如果您因為組態設定不正確而還原伺服器，則選取在造成伺服器發生問題的組態設定變更前所進行的備份。  
-  
-7.  依照精靈的指示完成系統還原。  
-  
-8.  成功還原伺服器之後，請取出安裝 DVD (如果使用)，然後重新啟動伺服器。  
-  
+    >  如果您有伺服器最新的成功備份，而且您知道備份包含所有重要資料，您的選擇就相當簡單。 您只需要重新建立您上次良好備份之後所建立的資料，以及重新設定備份之後變更的設定。
+    >
+    >  如果您因為病毒而需要還原伺服器，請選取在遭到病毒入侵之前所進行的備份。 您可能需要返回幾天前選取乾淨的備份。
+    >
+    >  如果您因為不正確的組態設定而需要還原伺服器，請選取在導致伺服器發生問題的組態設定變更之前的備份。
+
+7.  依照精靈的指示完成系統還原。
+
+8.  成功還原伺服器之後，請取出安裝 DVD (如果使用)，然後重新啟動伺服器。
+
 > [!NOTE]
->  若要還原並共用伺服器上的資料夾，您可能需要採取額外的步驟。 如需詳細資訊，請參閱[還原伺服器上的檔案和資料夾](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_RestoreFilesAndFolders)。  
-  
-###  <a name="restore-or-reset-your-server-from-a-client-computer-using-the-recovery-dvd"></a><a name="BKMK_Restore_2"></a>使用復原 DVD 從用戶端電腦還原或重設您的伺服器  
- 在 Windows Server Essentials 中，您可以從您建立的可開機 USB 快閃磁片磁碟機啟動伺服器，然後使用您從伺服器製造商收到的復原 DVD，從用戶端電腦復原伺服器。 用戶端電腦必須與伺服器位於相同的網路。 Windows Server Essentials 中無法使用此方法。  
-  
- 下列程序提供執行伺服器還原的一般步驟。 步驟也同樣適用於從備份還原，或還原為原廠預設設定。 如需更多特定指示，請參閱伺服器製造商的說明文件。  
-  
-##### <a name="to-restore-or-reset-the-server-from-a-client-computer-using-the-recovery-dvd"></a>使用復原 DVD 從用戶端電腦還原或重設您的伺服器  
-  
-1.  在用戶端電腦上，插入您從伺服器製造商收到的 Windows Server Essentials 伺服器復原媒體。  
-  
-     「復原您的伺服器精靈」便會開啟。  
-  
-2.  依照精靈中的指示建立可開機的 USB 快閃磁碟機，以便用來啟動伺服器進入修復模式。  
-  
-3.  「復原您的伺服器精靈」準備好可開機的 USB 快閃磁碟機之後，在伺服器中插入快閃磁碟機，然後啟動伺服器進入修復模式。 若要瞭解如何啟動您的伺服器進入修復模式，請參閱伺服器硬體製造商的說明文件。  
-  
-     啟動伺服器進入修復模式之後，「復原您的伺服器精靈」會找出伺服器，然後建立連線。  
-  
-4.  依照精靈中的指示完成還原伺服器。  
-  
+>  若要還原並共用伺服器上的資料夾，您可能需要採取額外的步驟。 如需詳細資訊，請參閱[還原伺服器上的檔案和資料夾](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_RestoreFilesAndFolders)。
+
+###  <a name="restore-or-reset-your-server-from-a-client-computer-using-the-recovery-dvd"></a><a name="BKMK_Restore_2"></a>使用復原 DVD 從用戶端電腦還原或重設您的伺服器
+ 在 Windows Server Essentials 中，您可以從您建立的可開機 USB 快閃磁片磁碟機啟動伺服器，然後使用您從伺服器製造商收到的復原 DVD，從用戶端電腦復原伺服器。 用戶端電腦必須與伺服器位於相同的網路。 Windows Server Essentials 中無法使用此方法。
+
+ 下列程序提供執行伺服器還原的一般步驟。 步驟也同樣適用於從備份還原，或還原為原廠預設設定。 如需更多特定指示，請參閱伺服器製造商的說明文件。
+
+##### <a name="to-restore-or-reset-the-server-from-a-client-computer-using-the-recovery-dvd"></a>使用復原 DVD 從用戶端電腦還原或重設您的伺服器
+
+1.  在用戶端電腦上，插入您從伺服器製造商收到的 Windows Server Essentials 伺服器復原媒體。
+
+     「復原您的伺服器精靈」便會開啟。
+
+2.  依照精靈中的指示建立可開機的 USB 快閃磁碟機，以便用來啟動伺服器進入修復模式。
+
+3.  「復原您的伺服器精靈」準備好可開機的 USB 快閃磁碟機之後，在伺服器中插入快閃磁碟機，然後啟動伺服器進入修復模式。 若要瞭解如何啟動您的伺服器進入修復模式，請參閱伺服器硬體製造商的說明文件。
+
+     啟動伺服器進入修復模式之後，「復原您的伺服器精靈」會找出伺服器，然後建立連線。
+
+4.  依照精靈中的指示完成還原伺服器。
+
 > [!NOTE]
->  這個伺服器復原的方法在復原期間會忽略連接到伺服器的外部儲存裝置。 如果您想要清除外部儲存裝置上的資料，您必須以手動方式執行操作。  
-  
+>  這個伺服器復原的方法在復原期間會忽略連接到伺服器的外部儲存裝置。 如果您想要清除外部儲存裝置上的資料，您必須以手動方式執行操作。
+
 > [!NOTE]
->  如果您在伺服器上建立了其他的共用資料夾，從備份還原資料之後，伺服器可能無法辨識其他的共用資料夾。 您必須再次共用這些資料夾。 如需詳細資訊，請參閱[還原伺服器上的檔案和資料夾](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_RestoreFilesAndFolders)。  
-  
-##  <a name="restore-files-and-folders-on-the-server"></a><a name="BKMK_RestoreFilesAndFolders"></a>還原伺服器上的檔案和資料夾  
- 根據您用來還原或修復您伺服器的方法，以及伺服器使用的儲存類型，您在還原系統磁碟機之後，可能需要復原資料磁碟區。 在某些情況下，您可能需要再次共用現有的資料夾，以便伺服器辨識它們。  
-  
- 以下是一些您可能需要還原檔案和資料夾的範例：  
-  
--   [從伺服器備份還原檔案和資料夾](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_RestoreFilesFromBackup)。 如果您更換了系統磁碟，或者系統磁碟上的磁碟分割資訊無法讀取，您可以還原系統，但您無法從這個磁碟上的其他磁碟區還原資料。 若要從其他資料磁碟區還原檔案和資料夾，您必須使用「還原檔案或資料夾精靈」。  
-  
--   [還原伺服器上的共用資料夾](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_ConfigreSharedFolders)。 如果您在伺服器上建立了其他共用資料夾，從備份還原系統磁碟機之後，共用資料夾仍然會在資料磁碟分割上，或已還原到資料磁碟分割，但伺服器可能無法辨識。 您必須再次共用這些資料夾。  
-  
-###  <a name="restore-files-and-folders-from-a-server-backup"></a><a name="BKMK_RestoreFilesFromBackup"></a>從伺服器備份還原檔案和資料夾  
- 如果您的硬碟停止運作或不慎刪除您的檔案，「還原檔案或資料夾精靈」可協助您保護您的資料。 使用 Windows Server Essentials 備份時，您可以在硬碟上建立所有資料的複本，並將資料儲存在外部存放裝置上。 如果您硬碟上的原始資料無意間被刪除、覆寫或因為故障而無法存取，您可以從備份還原資料。 「還原檔案或資料夾精靈」可協助您從現有的備份還原單一檔案或資料夾、多個檔案或資料夾，或還原整個硬碟。  
-  
- 系統還原之後，您可能需要使用「還原檔案或資料夾精靈」來還原在還原期間未保留的檔案與資料夾。 例如，如果您更換了系統磁碟，或者系統磁碟上的磁碟分割資訊無法讀取，您就無法從系統磁碟上的其他磁碟區還原資料。  
-  
+>  如果您在伺服器上建立了其他的共用資料夾，從備份還原資料之後，伺服器可能無法辨識其他的共用資料夾。 您必須再次共用這些資料夾。 如需詳細資訊，請參閱[還原伺服器上的檔案和資料夾](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_RestoreFilesAndFolders)。
+
+##  <a name="restore-files-and-folders-on-the-server"></a><a name="BKMK_RestoreFilesAndFolders"></a>還原伺服器上的檔案和資料夾
+ 根據您用來還原或修復您伺服器的方法，以及伺服器使用的儲存類型，您在還原系統磁碟機之後，可能需要復原資料磁碟區。 在某些情況下，您可能需要再次共用現有的資料夾，以便伺服器辨識它們。
+
+ 以下是一些您可能需要還原檔案和資料夾的範例：
+
+-   [從伺服器備份還原檔案和資料夾](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_RestoreFilesFromBackup)。 如果您更換了系統磁碟，或者系統磁碟上的磁碟分割資訊無法讀取，您可以還原系統，但您無法從這個磁碟上的其他磁碟區還原資料。 若要從其他資料磁碟區還原檔案和資料夾，您必須使用「還原檔案或資料夾精靈」。
+
+-   [還原伺服器上的共用資料夾](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_ConfigreSharedFolders)。 如果您在伺服器上建立了其他共用資料夾，從備份還原系統磁碟機之後，共用資料夾仍然會在資料磁碟分割上，或已還原到資料磁碟分割，但伺服器可能無法辨識。 您必須再次共用這些資料夾。
+
+###  <a name="restore-files-and-folders-from-a-server-backup"></a><a name="BKMK_RestoreFilesFromBackup"></a>從伺服器備份還原檔案和資料夾
+ 如果您的硬碟停止運作或不慎刪除您的檔案，「還原檔案或資料夾精靈」可協助您保護您的資料。 使用 Windows Server Essentials 備份時，您可以在硬碟上建立所有資料的複本，並將資料儲存在外部存放裝置上。 如果您硬碟上的原始資料無意間被刪除、覆寫或因為故障而無法存取，您可以從備份還原資料。 「還原檔案或資料夾精靈」可協助您從現有的備份還原單一檔案或資料夾、多個檔案或資料夾，或還原整個硬碟。
+
+ 系統還原之後，您可能需要使用「還原檔案或資料夾精靈」來還原在還原期間未保留的檔案與資料夾。 例如，如果您更換了系統磁碟，或者系統磁碟上的磁碟分割資訊無法讀取，您就無法從系統磁碟上的其他磁碟區還原資料。
+
 > [!NOTE]
->  您無法使用「還原檔案或資料夾精靈」來還原完整的系統磁碟機。 如需有關如何還原完整系統的資訊，請參閱[使用安裝媒體還原或修復您的伺服器](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_Restore_1)或[使用復原 DVD 從用戶端電腦還原或重設您的伺服器](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_Restore_2)。  
-  
-##### <a name="to-restore-files-and-folders-from-a-server-backup"></a>從伺服器備份還原檔案和資料夾  
-  
-1.  開啟 [Windows Server Essentials 儀表板]，然後按一下 [**裝置**] 索引標籤。  
-  
-2.  按一下伺服器的名稱，然後按一下 [工作] 窗格中的 [還原伺服器的檔案或資料夾]。  
-  
-     「還原檔案或資料夾精靈」便會開啟。  
-  
-3.  請依照精靈中的指示來還原檔案或資料夾。  
-  
+>  您無法使用「還原檔案或資料夾精靈」來還原完整的系統磁碟機。 如需有關如何還原完整系統的資訊，請參閱[使用安裝媒體還原或修復您的伺服器](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_Restore_1)或[使用復原 DVD 從用戶端電腦還原或重設您的伺服器](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_Restore_2)。
+
+##### <a name="to-restore-files-and-folders-from-a-server-backup"></a>從伺服器備份還原檔案和資料夾
+
+1.  開啟 [Windows Server Essentials 儀表板]，然後按一下 [**裝置**] 索引標籤。
+
+2.  按一下伺服器的名稱，然後按一下 [工作]**** 窗格中的 [還原伺服器的檔案或資料夾]****。
+
+     「還原檔案或資料夾精靈」便會開啟。
+
+3.  請依照精靈中的指示來還原檔案或資料夾。
+
 > [!WARNING]
->  如需備份和還原檔案和資料夾的詳細資訊，請參閱[管理備份與還原](Manage-Backup-and-Restore-in-Windows-Server-Essentials.md)。  
-  
-###  <a name="restore-shared-folders-on-the-server"></a><a name="BKMK_ConfigreSharedFolders"></a>還原伺服器上的共用資料夾  
- 還原伺服器的系統磁片磁碟機之後，如果共用資料夾仍在資料分割上，或已還原到資料分割區，則您可能需要再次設定共用資料夾，伺服器才能辨識資料夾。 下列程序說明如何新增之前已共用的共用資料夾。  
-  
-##### <a name="to-add-an-existing-folder-to-the-server-shared-folders"></a>將現有的資料夾新增至伺服器的共用資料夾  
-  
-1.  在檔案總管中，找出硬碟上的共用資料夾。  
-  
-2.  以滑鼠右鍵按一下共用資料夾，依序按一下 [內容]、[共用] 索引標籤，然後記下資料夾權限。  
-  
-3.  登入 [Windows Server Essentials 儀表板]，按一下 [**存放裝置**] 索引標籤，然後按一下 [**伺服器資料夾**工作] 窗格中的 [**新增資料夾**]。  
-  
-     「新增資料夾精靈」便會開啟。  
-  
-4.  在 [名稱] 方塊中輸入共用的名稱。  
-  
-5.  按一下 **[流覽]** ，流覽至 *< 磁片磁碟機\>\\< ServerName\>* \ServerFolders （例如*d:\Contoso\ServerFolders*），選取您要共用的資料夾，然後按一下 **[確定]** 。  
-  
-6.  按 [下一步]。  
-  
-7.  指定您在步驟 2 中記下的權限，然後按一下 [新增資料夾]。  
-  
+>  如需備份和還原檔案和資料夾的詳細資訊，請參閱[管理備份與還原](Manage-Backup-and-Restore-in-Windows-Server-Essentials.md)。
+
+###  <a name="restore-shared-folders-on-the-server"></a><a name="BKMK_ConfigreSharedFolders"></a>還原伺服器上的共用資料夾
+ 還原伺服器的系統磁片磁碟機之後，如果共用資料夾仍在資料分割上，或已還原到資料分割區，則您可能需要再次設定共用資料夾，伺服器才能辨識資料夾。 下列程序說明如何新增之前已共用的共用資料夾。
+
+##### <a name="to-add-an-existing-folder-to-the-server-shared-folders"></a>將現有的資料夾新增至伺服器的共用資料夾
+
+1.  在檔案總管中，找出硬碟上的共用資料夾。
+
+2.  以滑鼠右鍵按一下共用資料夾，依序按一下 [內容]****、[共用]**** 索引標籤，然後記下資料夾權限。
+
+3.  登入 [Windows Server Essentials 儀表板]，按一下 [**存放裝置**] 索引標籤，然後按一下 [**伺服器資料夾**工作] 窗格中的 [**新增資料夾**]。
+
+     「新增資料夾精靈」便會開啟。
+
+4.  在 [名稱]**** 方塊中輸入共用的名稱。
+
+5.  按一下 **[流覽]**，流覽至 *<磁片磁碟機 \> \\<ServerName \> *\ServerFolders （例如*d:\Contoso\ServerFolders*），選取您要共用的資料夾，然後按一下 **[確定]**。
+
+6.  按 [下一步] 。
+
+7.  指定您在步驟 2 中記下的權限，然後按一下 [新增資料夾] ****。
+
     > [!IMPORTANT]
-    >  這些許可權會使用 [Windows Server Essentials 儀表板] 來取代未新增至資料夾的任何現有許可權。  
-  
+    >  這些許可權會使用 [Windows Server Essentials 儀表板] 來取代未新增至資料夾的任何現有許可權。
+
 > [!IMPORTANT]
->  將資料夾新增至共用資料夾清單之後，請確定伺服器備份中包含這些資料夾。 如需將資料夾新增至伺服器備份的相關資訊，請參閱[設定或自訂伺服器備份](Set-up-or-customize-server-backup.md)。  
-  
-## <a name="see-also"></a>另請參閱  
-  
--   [管理備份與還原](Manage-Backup-and-Restore-in-Windows-Server-Essentials.md)  
-  
--   [管理 Windows Server Essentials](Manage-Windows-Server-Essentials.md)  
-  
+>  將資料夾新增至共用資料夾清單之後，請確定伺服器備份中包含這些資料夾。 如需將資料夾新增至伺服器備份的相關資訊，請參閱[設定或自訂伺服器備份](Set-up-or-customize-server-backup.md)。
+
+## <a name="additional-references"></a>其他參考
+
+-   [管理備份與還原](Manage-Backup-and-Restore-in-Windows-Server-Essentials.md)
+
+-   [管理 Windows Server Essentials](Manage-Windows-Server-Essentials.md)
+
 -   [使用 Windows Server Essentials](../use/Use-Windows-Server-Essentials.md)

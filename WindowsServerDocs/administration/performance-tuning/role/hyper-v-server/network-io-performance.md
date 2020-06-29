@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 17551da6cd270f05cf2d6b1a8147958f82b2c9b3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: dcf43bf41edada0a2e3df6fde825ff128a119a8f
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851801"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471353"
 ---
 # <a name="hyper-v-network-io-performance"></a>Hyper-v 網路 i/o 效能
 
@@ -35,7 +35,7 @@ ms.locfileid: "80851801"
 
 Windows Server 2012 R2 引進了一個選項，可在透過網路傳送或使用遠端直接記憶體存取（RDMA）（如果您的硬體支援）時，藉由壓縮記憶體來加速即時移轉。
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 -   [Hyper-V 術語](terminology.md)
 

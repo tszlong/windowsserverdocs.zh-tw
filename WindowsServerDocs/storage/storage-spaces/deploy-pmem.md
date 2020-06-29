@@ -1,5 +1,5 @@
 ---
-title: 瞭解和部署持續性記憶體
+title: 了解和部署持續性記憶體
 description: 有關什麼是持續性記憶體的詳細資訊，以及如何在 Windows Server 2019 中使用儲存空間直接存取來設定它。
 ms.prod: windows-server
 ms.author: adagashe
@@ -8,16 +8,16 @@ ms.topic: article
 author: adagashe
 ms.date: 1/27/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 43268986f0ef42aabc218062ac19f1d98f27be6d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2f5f88ac2ec728e176735ad58d9d67112583c527
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861031"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85469643"
 ---
-# <a name="understand-and-deploy-persistent-memory"></a>瞭解和部署持續性記憶體
+# <a name="understand-and-deploy-persistent-memory"></a>了解和部署持續性記憶體
 
-> 適用于： Windows Server 2019
+> 適用於：Windows Server 2019
 
 持續性記憶體（或 PMem）是一種新型的記憶體技術，可提供經濟實惠的大型容量和持續性的獨特組合。 本文提供有關 PMem 的背景，以及使用儲存空間直接存取在 Windows Server 2019 中部署它的步驟。
 
@@ -37,15 +37,15 @@ ms.locfileid: "80861031"
 
 如果您仔細觀賞影片，您會發現更多的 jaw 捨棄是延遲。 即使在超過 13.7 M IOPS，Windows 中的檔案系統仍會回報持續低於40μs 的延遲！ （這是毫秒的符號，一秒的百萬分之一秒）。這種速度比平常極光榮公告的一般全 flash 廠商快很多。
 
-儲存空間直接存取在 Windows Server 2019 和 Intel&reg; Optane 中，&trade; DC 持續性記憶體提供突破性的效能。 這項領先業界的 13.7 M IOPS 基準測試，加上可預測且非常低的延遲，而不是我們先前領先的 6.7 M IOPS 基準測試的兩倍。 另外，這次我們只需要12個伺服器節點，&mdash;25% 以上。
+同時，Windows Server 2019 和 Intel Optane DC 持續性記憶體中的儲存空間直接存取會 &reg; &trade; 提供突破性的效能。 這項領先業界的 13.7 M IOPS 基準測試，加上可預測且非常低的延遲，而不是我們先前領先的 6.7 M IOPS 基準測試的兩倍。 更多，這次我們只需要12個伺服器節點， &mdash; 少於兩年前的25%。
 
 ![IOPS 增益](media/deploy-pmem/iops-gains.png)
 
-測試硬體是12部伺服器的叢集，已設定為使用三向鏡像和分隔的 ReFS 磁片區、 **12** x INTEL&reg; S2600WFT、 **384 GiB**記憶體、2 x 28 核心 "CASCADELAKE"、 **1.5 TB** Intel&reg; Optane&trade; DC 持續性記憶體作為快取、 **32 TB** NVME （4 x 8 TB Intel&reg; DC P4510）作為容量， **2** x Mellanox ConnectX-4 25 Gbps。
+測試硬體是12部伺服器的叢集，已設定為使用三向鏡像和分隔的 ReFS 磁片區、 **12** x Intel &reg; S2600WFT、 **384 GiB**記憶體、2 x 28-核心 "CascadeLake"、 **1.5 TB** Intel &reg; Optane &trade; DC 持續性記憶體作為快取、 **32 TB** NVMe （4 x 8 TB Intel &reg; DC P4510）作為容量， **2** x Mellanox ConnectX-4 25 Gbps。
 
-下表顯示完整的效能數位。  
+下表顯示完整的效能數位。
 
-| 測                   | 效能         |
+| 基準測試                   | 效能         |
 |-----------------------------|---------------------|
 | 4K 100% 隨機讀取         | 13800000 IOPS   |
 | 4K 90/10% 隨機讀取/寫入 | 9450000 IOPS   |
@@ -53,24 +53,24 @@ ms.locfileid: "80861031"
 
 ### <a name="supported-hardware"></a>支援的硬體
 
-下表顯示 Windows Server 2019 和 Windows Server 2016 的支援持續性記憶體硬體。  
+下表顯示 Windows Server 2019 和 Windows Server 2016 的支援持續性記憶體硬體。
 
-| 持續性記憶體技術                                      | Windows Server 2016 | Windows Server 2019 |
+| 持續性記憶體技術                                      | Windows Server 2016 | Windows Server 2019 |
 |-------------------------------------------------------------------|--------------------------|--------------------------|
 | 持續模式中**的 nvdimm-n**                                  | 支援                | 支援                |
-| Intel Optane 在應用程式直接模式中 **&trade; DC 持續性記憶體**             | 不支援            | 支援                |
-| **Intel Optane&trade; DC**在記憶體模式中的持續性記憶體 | 支援            | 支援                |
+| **Intel Optane &trade;** 應用程式直接模式中的 DC 持續性記憶體             | 不支援            | 支援                |
+| **Intel Optane &trade;** 記憶體模式中的 DC 持續性記憶體 | 支援            | 支援                |
 
-> [!NOTE]  
+> [!NOTE]
 > Intel Optane 支援*記憶體*（volatile）和*應用程式直接*（持續）模式。
-   
-> [!NOTE]  
-> 當您重新開機具有多個 Intel&reg; Optane 的系統時，&trade; 應用程式直接模式中的 PMem 模組劃分成多個命名空間時，您可能會失去部分或所有相關邏輯儲存體磁片的存取權。 此問題發生在版本1903之前的 Windows Server 2019 版本上。
->   
+
+> [!NOTE]
+> 當您重新開機的系統 &reg; &trade; 在應用程式直接模式中有多個 Intel Optane PMem 模組，分割成多個命名空間時，您可能會失去部分或所有相關邏輯儲存體磁片的存取權。 此問題發生在版本1903之前的 Windows Server 2019 版本上。
+>
 > 因為 PMem 模組未定型，或在系統啟動時失敗，所以會發生這種存取中斷的情況。 在這種情況下，系統上任何 PMem 模組上的所有儲存命名空間都會失敗，包括未實際對應至失敗模組的命名空間。
->   
+>
 > 若要還原所有命名空間的存取權，請更換失敗的模組。
->   
+>
 > 如果 Windows Server 2019 1903 版或更新版本上的模組失敗，您就會失去實體對應至受影響模組的命名空間存取權。 其他命名空間則不會受到影響。
 
 現在，讓我們深入瞭解如何設定持續性記憶體。
@@ -90,7 +90,7 @@ DiskNumber Size   HealthStatus AtomicityType CanBeRemoved PhysicalDeviceIds Unsa
 3          252 GB Healthy      None          True         {1020, 1120}      0
 ```
 
-我們可以看到邏輯 PMem 磁片 #2 使用實體裝置 Id20 和 Id120，而邏輯 PMem 磁片 #3 使用實體裝置 Id1020 和 Id1120。  
+我們可以看到邏輯 PMem 磁片 #2 使用實體裝置 Id20 和 Id120，而邏輯 PMem 磁片 #3 使用實體裝置 Id1020 和 Id1120。
 
 若要取出邏輯磁碟機所使用之交錯集合的進一步資訊，請執行**PmemPhysicalDevice** Cmdlet：
 
@@ -158,9 +158,9 @@ Windows Server 2019 上的儲存空間直接存取支援使用持續性記憶體
 
 ### <a name="understanding-dax"></a>瞭解 DAX
 
-有兩種方法可存取持續性記憶體。 這些系統為：
+有兩種方法可存取持續性記憶體。 其中包括：
 
-1. **直接存取（DAX）** ，其運作方式就像記憶體，以取得最低延遲。 應用程式會直接修改持續性記憶體，略過堆疊。 請注意，您只能搭配使用 DAX 與 NTFS。
+1. **直接存取（DAX）**，其運作方式就像記憶體，以取得最低延遲。 應用程式會直接修改持續性記憶體，略過堆疊。 請注意，您只能搭配使用 DAX 與 NTFS。
 1. **封鎖存取**，其運作方式類似于應用程式相容性的儲存體。 在此組態中，資料會流經堆疊。 您可以搭配使用此設定與 NTFS 和 ReFS。
 
 下圖顯示 DAX 設定的範例：
@@ -253,7 +253,7 @@ SerialNumber               HealthStatus OperationalStatus  OperationalDetails
 802c-01-1602-117cb64f      Warning      Predictive Failure {Threshold Exceeded,NVDIMM_N Error}
 ```
 
-**HealthStatus**顯示 PMem 磁片是否狀況良好。  
+**HealthStatus**顯示 PMem 磁片是否狀況良好。
 
 **UnsafeshutdownCount**值會追蹤可能造成此邏輯磁片遺失資料的關機次數。 這是此磁片的所有基礎 PMem 裝置之不安全關閉計數的總和。 如需健全狀況狀態的詳細資訊，請使用**PmemPhysicalDevice** Cmdlet 來尋找資訊，例如**OperationalStatus**。
 
@@ -289,7 +289,7 @@ Remove the persistent memory disk(s)?
 Removing the persistent memory disk. This may take a few moments.
 ```
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > 移除持續性記憶體磁片會導致該磁片上的資料遺失。
 
 您可能需要的另一個 Cmdlet 是**PmemPhysicalDevice**。 此 Cmdlet 會初始化實體持續性記憶體裝置上的標籤存放區，並可清除在 PMem 裝置上損毀的標籤儲存資訊。
@@ -306,11 +306,11 @@ Initializing the physical persistent memory device. This may take a few moments.
 Initializing the physical persistent memory device. This may take a few moments.
 ```
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > **PmemPhysicalDevice**會導致持續性記憶體中的資料遺失。 使用它做為修正持續性記憶體相關問題的最後手段。
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 - [儲存空間直接存取總覽](storage-spaces-direct-overview.md)
-- [Windows 中的存放裝置類別記憶體（NVDIMM-N）健全狀況管理](storage-class-memory-health.md)
+- [Windows 中的存放裝置類別記憶體 (NVDIMM-N) 健全狀況管理](storage-class-memory-health.md)
 - [了解快取](understand-the-cache.md)

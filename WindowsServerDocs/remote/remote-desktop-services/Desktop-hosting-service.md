@@ -8,12 +8,12 @@ ms.date: 07/06/2018
 ms.topic: article
 author: heidilohr
 manager: lizross
-ms.openlocfilehash: 64e433ed379ca322996bcfe2d0ddd513e074b85e
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 2ee11e40d5fb69141ad5dd5342f8574b22232bbd
+ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80854711"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85070482"
 ---
 # <a name="desktop-hosting-service"></a>桌面主機服務
 
@@ -70,7 +70,7 @@ Active Directory 網域服務 (AD DS) 提供網域和樹系資訊，讓租用戶
 
 如需詳細資訊，請參閱下列文章：
 
-* [Windows Server 的儲存空間](../../storage/storage.md)
+* [Windows Server 的儲存空間](../../storage/storage.yml)
 * [如何將受控資料磁碟連結至 Azure 入口網站中的 Windows VM](https://docs.microsoft.com/azure/virtual-machines/windows/attach-managed-disk-portal?toc=%2Fazure%2Fvirtual-machines%2Fwindows%2Fclassic%2Ftoc.json)
 
 ### <a name="user-profile-disks"></a>使用者設定檔磁碟

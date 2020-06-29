@@ -7,12 +7,12 @@ ms.topic: landing-page
 ms.author: davso; ericam; yashi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: ec36d87957e5bbe897597e330e766c3193cd30d0
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 249500249921d21184dc8cd14993741392927586
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80851691"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471203"
 ---
 # <a name="performance-tuning-web-servers"></a>網頁伺服器的效能調整
 
@@ -57,7 +57,7 @@ ms.locfileid: "80851691"
 >[!Warning]
 > 某些應用程式 (例如增量備份公用程式) 仰賴此更新資訊，而且若沒有此資訊，它們將無法運作。
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考資料
 - [IIS 10.0 效能調整](tuning-iis-10.md)
 - [HTTP 1.1/2 調整](http-performance.md)
 

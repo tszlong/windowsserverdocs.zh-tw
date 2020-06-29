@@ -1,5 +1,5 @@
 ---
-title: 使用 OAuth 和 ADAL 建立單一頁面 web 應用程式。JS 與 AD FS 2016 或更新版本
+title: 使用 OAuth 和 ADAL.JS 搭配 AD FS 2016 或更新版本來建立單一頁面 web 應用程式
 description: 此逐步解說提供的指示，說明如何使用適用于 JavaScript 的 ADAL 保護 AngularJS 的單一頁面應用程式，以進行驗證 AD FS
 author: billmath
 ms.author: billmath
@@ -8,14 +8,14 @@ ms.date: 06/13/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: f62b6ad288e2733083d535260f0b3f5ffb5b50bf
-ms.sourcegitcommit: f829a48b9b0c7b9ed6e181b37be828230c80fb8a
+ms.openlocfilehash: 09b789937c9ff1dad90c3533616a4ed800204267
+ms.sourcegitcommit: 046123d4f2d24dc00b35ea99adee6f8d322c76bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82173620"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85416291"
 ---
-# <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>使用 OAuth 和 ADAL 建立單一頁面 web 應用程式。JS 與 AD FS 2016 或更新版本
+# <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>使用 OAuth 和 ADAL.JS 搭配 AD FS 2016 或更新版本來建立單一頁面 web 應用程式
 
 本逐步解說提供的指示，說明如何使用適用于 JavaScript 的 ADAL 來驗證 AD FS，以保護 AngularJS 為基礎的單一頁面應用程式，並以 ASP.NET Web API 後端執行。
 
@@ -66,18 +66,18 @@ ms.locfileid: "82173620"
 ## <a name="about-the-code"></a>關於程式碼
 包含驗證邏輯的金鑰檔如下所示：
 
-**Node.js** -插入 adal 模組相依性、提供 adal 用來驅動與 AAD 之通訊協定互動的應用程式設定值，並指出在沒有先前驗證的情況下，不應存取哪些路由。
+**App.js** -插入 adal 模組相依性、提供 adal 用來驅動與 AAD 之通訊協定互動的應用程式設定值，並指出在沒有先前驗證的情況下，不應存取哪些路由。
 
-**index .html** -包含 adal 的參考
+**index.html** -包含 adal.js 的參考
 
-**HomeController**-顯示如何利用 ADAL 中的 login （）和登出（）方法。
+**HomeController.js**-顯示如何利用 ADAL 中的 login （）和登出（）方法。
 
-**UserDataController** ：顯示如何從快取的 id_token 中解壓縮使用者資訊。
+**UserDataController.js** -顯示如何從快取的 id_token 解壓縮使用者資訊。
 
 **Startup.Auth.cs** -包含 WebAPI 的設定，以使用 Active Directory 持有人驗證的同盟服務。
 
 ## <a name="registering-the-public-client-in-ad-fs"></a>在 AD FS 中註冊公用用戶端
-在範例中，會將 WebAPI 設定為接聽https://localhost:44326/。 **存取 web 應用程式**的應用程式群組網頁瀏覽器可以用來設定隱含授與流程應用程式。
+在範例中，會將 WebAPI 設定為接聽 https://localhost:44326/ 。 **存取 web 應用程式**的應用程式群組網頁瀏覽器可以用來設定隱含授與流程應用程式。
 
 1. 開啟 AD FS 管理主控台，然後按一下 [**新增應用程式群組**]。 在 [**新增應用程式組嚮導]** 中，輸入應用程式的名稱、描述，然後從 [**用戶端-伺服器應用程式**] 區段中選取 [**存取 web 應用程式] 範本的網頁瀏覽器**，如下所示
 
@@ -98,7 +98,7 @@ ms.locfileid: "82173620"
 ## <a name="modifying-the-sample"></a>修改範例
 設定 ADAL JS
 
-開啟**應用程式 .js**檔案，並將**adalProvider**定義變更為：
+開啟**app.js**檔案，並將**adalProvider.init**定義變更為：
 
     adalProvider.init(
         {
@@ -154,31 +154,31 @@ ms.locfileid: "82173620"
 ## <a name="add-application-configuration-for-ad-fs"></a>新增 AD FS 的應用程式設定
 變更 appsettings，如下所示：
 ```xml
-    <appSettings>
-        <add key="ida:Audience" value="https://localhost:44326/" />
-        <add key="ida:AdfsMetadataEndpoint" value="https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml" />
-        <add key="ida:Issuer" value="https://fs.contoso.com/adfs" />
-    </appSettings>
-    ```
+<appSettings>
+    <add key="ida:Audience" value="https://localhost:44326/" />
+    <add key="ida:AdfsMetadataEndpoint" value="https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml" />
+    <add key="ida:Issuer" value="https://fs.contoso.com/adfs" />
+</appSettings>
+```
 
-## Running the solution
-Clean the solution, rebuild the solution and run it. If you want to see detailed traces, launch Fiddler and enable HTTPS decryption.
+## <a name="running-the-solution"></a>正在執行解決方案
+清除方案，重建解決方案並加以執行。 如果您想要查看詳細的追蹤，請啟動 Fiddler，並啟用 HTTPS 解密。
 
-The browser (use Chrome browser) will load the SPA and you will be presented with the following screen:
+瀏覽器（使用 Chrome 瀏覽器）會載入 SPA，而您會看到下列畫面：
 
-![Register the client](media/Single-Page-Application-with-AD-FS/singleapp3.PNG)
+![註冊用戶端](media/Single-Page-Application-with-AD-FS/singleapp3.PNG)
 
-Click on Login.  The ToDo List will trigger the authentication flow and ADAL JS will direct the authentication to AD FS
+按一下 [登入]。  待辦事項清單會觸發驗證流程，而 ADAL JS 會將驗證導向至 AD FS
 
-![Login](media/Single-Page-Application-with-AD-FS/singleapp4a.PNG)
+![登入](media/Single-Page-Application-with-AD-FS/singleapp4a.PNG)
 
-In Fiddler you can see the token being returned as part of the URL in the # fragment.
+在 Fiddler 中，您可以看到權杖會在 # 片段中當做 URL 的一部分傳回。
 
 ![Fiddler](media/Single-Page-Application-with-AD-FS/singleapp5a.PNG)
 
-You will be able to now call the backend API to add ToDo List items for the logged-in user:
+您現在將能夠呼叫後端 API，為已登入的使用者新增 ToDo 清單專案：
 
 ![Fiddler](media/Single-Page-Application-with-AD-FS/singleapp6.PNG)
 
-## Next Steps
-[AD FS Development](../../ad-fs/AD-FS-Development.md)  
+## <a name="next-steps"></a>後續步驟
+[AD FS 開發](../../ad-fs/AD-FS-Development.md)  

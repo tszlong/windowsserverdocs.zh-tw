@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 01/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: aafcfcd4d0f2f14836c5b7dee2bdbccbf99fa887
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 2c64914e840c4e8a84603144fd499e091f0cb46c
+ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "78169618"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85070538"
 ---
 # <a name="overview-of-file-sharing-using-the-smb-3-protocol-in-windows-server"></a>在 Windows Server 中使用 SMB 3 通訊協定的檔案共用概觀
 
@@ -119,7 +119,7 @@ SMB 直接傳輸具備下列需求：
 
 下列清單提供網路上有關於 Windows Server 2012 R2、Windows Server 2012 和 Windows Server 2016 中的 SMB 和相關技術的資源。
 
-* [Windows Server 的儲存空間](../storage.md)
+* [Windows Server 的儲存空間](../storage.yml)
 * [用於應用程式資料的向外延展檔案伺服器](../../failover-clustering/sofs-overview.md)
 * [使用 SMB 直接傳輸改善檔案伺服器的效能](smb-direct.md)
 * [部署透過 SMB 的 Hyper-V](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)

@@ -7,19 +7,19 @@ ms.topic: article
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 1c41c6cc14f9a35a808eebfe025252090247f8a2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7da3e421dd129e54cb013b91a0fa931cb874e815
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851861"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471473"
 ---
 # <a name="troubleshooting-active-directory-domain-services-performance"></a>Active Directory Domain Services 效能疑難排解
 
 如需新增效能疑難排解的詳細資訊，請參閱[監視您的分公司環境](https://technet.microsoft.com/library/dd736504.aspx)。
 
-## <a name="see-also"></a>另請參閱
-- [Active Directory 伺服器的效能微調](index.md)
+## <a name="additional-references"></a>其他參考
+- [Active Directory 伺服器的效能調整](index.md)
 - [硬體考量](hardware-considerations.md)
 - [LDAP 考量](ldap-considerations.md)
 - [適當地放置網域控制站與站台考量](site-definition-considerations.md)
