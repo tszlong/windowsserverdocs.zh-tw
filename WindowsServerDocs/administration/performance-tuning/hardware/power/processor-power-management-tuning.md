@@ -3,16 +3,16 @@ title: Windows Server 平衡電源計劃的處理器電源管理（PPM）調整
 description: Windows Server 平衡電源計劃的處理器電源管理（PPM）調整
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
-ms.topic: article
+ms.topic: conceptual
 ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 5c7319c843609f8bf846dd6ccf4bc2bf91f3b942
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 25244ecb653f7a1b8461130bba40901b35945765
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851971"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471613"
 ---
 # <a name="processor-power-management-ppm-tuning-for-the-windows-server-balanced-power-plan"></a>Windows Server 平衡電源計劃的處理器電源管理（PPM）調整
 
@@ -25,30 +25,29 @@ ms.locfileid: "80851971"
 
 ## <a name="windows-processor-power-tuning-methodology"></a>Windows 處理器電源微調方法
 
-
 ### <a name="tested-workloads"></a>測試的工作負載
 
 系統會選取工作負載，以涵蓋一組最佳的「一般」 Windows Server 工作負載。 很明顯地，此集不適合用來代表真實世界伺服器環境的整體廣度。
 
 每個電源原則中的微調是由下列五個工作負載所驅動的資料：
 
--   **IIS Web 服務器工作負載**
+- **IIS Web 服務器工作負載**
 
     Microsoft 內部基準測試叫做 Web 基本概念，用來將執行 IIS 網頁伺服器的平臺的能源效率優化。 安裝套裝程式含一部 web 伺服器，以及模擬 web 存取流量的多個用戶端。 動態、靜態熱（記憶體內部）和靜態冷（需要磁片存取）網頁的分佈是以實際執行伺服器的統計研究為基礎。 若要將伺服器的 CPU 核心推送至完整使用率（已測試的頻譜的一端），安裝程式需要足夠的快速網路和磁片資源。
 
--   **SQL Server 資料庫工作負載**
+- **SQL Server 資料庫工作負載**
 
     [TPC-E](http://www.tpc.org/tpce/default.asp)基準測試是適用于資料庫效能分析的熱門基準測試。 它是用來產生 PPM 微調優化的 OLTP 工作負載。 此工作負載具有大量的磁片 i/o，因此對儲存系統和記憶體大小具有高效能的需求。
 
--   **檔案伺服器工作負載**
+- **檔案伺服器工作負載**
 
     Microsoft 開發的基準測試稱為[FSCT](http://www.snia.org/sites/default/files2/sdc_archives/2009_presentations/tuesday/BartoszNyczkowski-JianYan_FileServerCapacityTool.pdf) ，用來產生 SMB 檔案伺服器工作負載。 它會在伺服器上建立大型檔案集，並使用許多用戶端系統（實際或虛擬化）來產生檔案開啟、關閉、讀取和寫入作業。 運算混合是以實際執行伺服器的統計研究為基礎。 它會強調 CPU、磁片和網路資源。
 
--   **SPECpower – JAVA 工作負載**
+- **SPECpower – JAVA 工作負載**
 
-    [SPECpower\_ssj2008](http://spec.org/power_ssj2008/)是第一個產業標準規格基準測試，可共同評估電源和效能特性。 這是具有不同 CPU 負載層級的伺服器端 JAVA 工作負載。 它不需要多個磁片或網路資源，但它有特定的記憶體頻寬需求。 幾乎所有的 CPU 活動都是在使用者模式中執行;核心模式活動對效能評定的能力和效能特性不會有太大的影響，但電源管理決策除外。
+    [SPECpower \_ ssj2008](http://spec.org/power_ssj2008/)是第一個業界標準的規格基準測試，會共同評估電源和效能特性。 這是具有不同 CPU 負載層級的伺服器端 JAVA 工作負載。 它不需要多個磁片或網路資源，但它有特定的記憶體頻寬需求。 幾乎所有的 CPU 活動都是在使用者模式中執行;核心模式活動對效能評定的能力和效能特性不會有太大的影響，但電源管理決策除外。
 
--   **應用程式伺服器工作負載**
+- **應用程式伺服器工作負載**
 
     [SAP-SD](http://global.sap.com/campaigns/benchmark/index.epx)基準測試是用來產生應用程式伺服器工作負載。 會使用兩層式設定，並在相同伺服器主機上的資料庫和應用程式伺服器。 此工作負載也會利用回應時間作為效能計量，這與其他測試的工作負載不同。 因此，它可用來驗證 PPM 參數對回應性的影響。 不過，它並不是要代表所有延遲敏感的生產工作負載。
 
@@ -126,7 +125,7 @@ ms.locfileid: "80851971"
 這就是為什麼 Windows 會在一開始就提供**平衡**的電源計劃，因為在許多情況下，在特定伺服器上的特定工作負載，可能不值得手動調整。
 
 ## <a name="see-also"></a>另請參閱
-- [伺服器硬體效能考慮](../index.md)
+- [伺服器硬體效能考量](../index.md)
 - [伺服器硬體電源的考量](../power.md)
 - [電源與效能調整](power-performance-tuning.md)
 - [處理器電源管理](processor-power-management-tuning.md)

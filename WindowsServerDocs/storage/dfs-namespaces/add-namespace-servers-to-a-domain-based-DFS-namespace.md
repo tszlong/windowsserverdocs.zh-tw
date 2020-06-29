@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: fa28ec06448b67724ce8e3f29894fc70f6a6dae9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ee2ae5ddf40c6d8b49b9fbd40505f4e8c70fd92c
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386252"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473495"
 ---
 # <a name="add-namespace-servers-to-a-domain-based-dfs-namespace"></a>新增命名空間伺服器至網域型 DFS 命名空間
 
-> 適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 您可以藉由指定其他命名空間伺服器來裝載命名空間，提高網域型命名空間的可用性。
 
@@ -25,9 +25,9 @@ ms.locfileid: "71386252"
 
 若要使用 DFS 管理來新增命名空間伺服器至網域型命名空間，請使用下列程序：
 
-1.  按一下 [開始]，指向 [系統管理工具]，然後按一下 [DFS 管理]。
+1.  按一下 [**開始**]，然後指向 [**系統管理工具**]，再按一下 [**DFS 管理**]。
 
-2.  在主控台樹狀目錄的 **\[命名空間\]** 節點下，於網域型命名空間上按一下滑鼠右鍵，再按一下 **\[新增命名空間伺服器\]** 。
+2.  在主控台樹狀目錄的 **\[命名空間\]** 節點下，於網域型命名空間上按一下滑鼠右鍵，再按一下 **\[新增命名空間伺服器\]**。
 
 3.  輸入另一部伺服器的路徑，或按一下 **\[瀏覽\]** 尋找伺服器。
 
@@ -38,10 +38,10 @@ ms.locfileid: "71386252"
 > [!TIP]
 > 若要使用 Windows PowerShell 新增命名空間伺服器，請使用 [New-DfsnRootTarget Cmdlet](https://docs.microsoft.com/powershell/module/dfsn/new-dfsnroottarget)。 DFSN Windows PowerShell 模組於 Windows Server 2012 中引進。
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 -   [部署 DFS 命名空間](deploying-dfs-namespaces.md)
--   [審查 DFS 命名空間伺服器需求](https://technet.microsoft.com/library/cc753448(v=ws.11).aspx)
+-   [檢視 DFS 命名空間伺服器需求](https://technet.microsoft.com/library/cc753448(v=ws.11).aspx)
 -   [建立 DFS 命名空間](create-a-dfs-namespace.md)
 -   [委派 DFS 命名空間的管理權限](delegate-management-permissions-for-dfs-namespaces.md)
 

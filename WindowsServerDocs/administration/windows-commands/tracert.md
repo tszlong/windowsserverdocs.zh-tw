@@ -9,18 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 00ae2f60181126657bfb3fe77144e6bc33167b4d
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: a6ef48350a0b8a4f67f1e564a9ca16db8b4dd5e6
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149751"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472925"
 ---
 # <a name="tracert"></a>tracert
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 藉由將網際網路控制訊息通訊協定（ICMP） echo 要求或 ICMPv6 訊息傳送至目的地，並以累加方式增加存留時間（TTL）域值，來決定目的地所採用的路徑。 顯示的路徑是來源主機與目的地之間路徑中路由器的近/端路由器介面清單。 近端介面是最接近路徑中傳送主機的路由器介面。 使用時不含參數，tracert 會顯示說明。
+
 
 ## <a name="syntax"></a>語法
 
@@ -38,8 +39,8 @@ tracert [/d] [/h <MaximumHops>] [/j <Hostlist>] [/w <timeout>] [/R] [/S <Srcaddr
 |/w\<timeout>|指定所需的時間（以毫秒為單位），等待超過 ICMP 時間，或回應對應至所要接收之指定 echo 要求訊息的回復訊息。 如果未在超時時間內收到，則會顯示星號（*）。 預設的超時時間為4000（4秒）。|
 |/R|指定 IPv6 路由延伸模組標頭用來傳送 echo 要求訊息到本機主機，使用目的地作為中繼目的地並測試反向路由。|
 |/S\<Srcaddr>|指定要在 echo 要求訊息中使用的來源位址。 只有在追蹤 IPv6 位址時，才使用此參數。|
-|/4|指定 tracert 只能針對此追蹤使用 IPv4。|
-|/6|指定 tracert 只能針對此追蹤使用 IPv6。|
+|/4|指定 tracert.exe 只能針對此追蹤使用 IPv4。|
+|/6|指定 tracert.exe 只能針對此追蹤使用 IPv6。|
 |\<TargetName>|指定以 IP 位址或主機名稱識別的目的地。|
 |/?|在命令提示字元顯示說明。|
 

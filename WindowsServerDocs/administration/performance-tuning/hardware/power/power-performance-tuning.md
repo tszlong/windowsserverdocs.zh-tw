@@ -1,18 +1,18 @@
 ---
-title: 電源與效能調整
-description: Windows Server 平衡電源計劃的處理器電源管理（PPM）調整
+title: Windows Server 的電源與效能微調總覽
+description: 適用于 Windows Server 的處理器電源管理（PPM）調整的總覽。
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
-ms.topic: article
+ms.topic: conceptual
 ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 1457328a151c87d2d4cb41c4ee91b4759f4fb8e2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 67e72967d29fc96fe3f57b714bd8aaf19f406565
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851991"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471653"
 ---
 # <a name="power-and-performance-tuning"></a>電源與效能調整
 
@@ -58,20 +58,20 @@ Windows Server 2016 已針對各種客戶工作負載的最小效能影響，優
 
 ## <a name="diagnosing-energy-efficiency-issues"></a>診斷能源效率問題
 
-**PowerCfg**支援命令列選項，可讓您用來分析伺服器的閒置能源效率。 當您使用 **/energy**選項來執行 PowerCfg 時，此工具會執行60秒的測試，以偵測潛在的能源效率問題。 此工具會在目前的目錄中產生簡單的 HTML 報表。
+**PowerCfg.exe**支援命令列選項，可讓您用來分析伺服器的閒置能源效率。 當您使用 **/energy**選項執行 PowerCfg.exe 時，此工具會執行60秒的測試，以偵測潛在的能源效率問題。 此工具會在目前的目錄中產生簡單的 HTML 報表。
 
 > [!Important]
-> 若要確保正確的分析，請確定所有本機應用程式都已關閉，然後再執行**PowerCfg .exe**。 
+> 若要確保正確的分析，請確定所有本機應用程式都已關閉，然後再執行**PowerCfg.exe**。 
 
 縮短計時器滴答率、缺少電源管理支援的驅動程式，以及過多的 CPU 使用率，是**powercfg/energy**命令所偵測到的一些行為問題。 這項工具提供簡單的方式來識別並修正電源管理問題，可能會導致大型資料中心的大量成本節約。
 
-如需 PowerCfg .exe 的詳細資訊，請參閱[使用 Powercfg 評估系統能源效率](https://msdn.microsoft.com/windows/hardware/gg463250.aspx)。
+如需 PowerCfg.exe 的詳細資訊，請參閱[使用 PowerCfg 評估系統能源效率](https://msdn.microsoft.com/windows/hardware/gg463250.aspx)。
 
 ## <a name="using-power-plans-in-windows-server"></a>在 Windows Server 中使用電源計劃
 
 Windows Server 2016 有三個內建的電源計劃，是為了符合不同的商務需求而設計的。 這些方案提供簡單的方式，讓您自訂伺服器以符合電源或效能目標。 下表描述這些計畫、列出使用每個計畫的常見案例，並提供每個計畫的一些執行詳細資料。
 
-| **規劃** | **描述** | **常見的適用案例** | **實現重點** |
+| **規劃** | **說明** | **常見的適用案例** | **實現重點** |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 平衡（建議） | 預設設定。 以最小效能影響的目標為良好的能源效率。 | 一般計算 | 符合需求的容量。 省電功能會平衡電源和效能。 |
 | 高效能 | 以高能源耗用量的成本來增加效能。 適用電源和冷卻限制、營運費用和可靠性考慮。 | 對處理器效能變更敏感的低延遲應用程式和應用程式代碼 | 處理器一律會以最高的效能狀態（包括 "turbo" 頻率）鎖定。 已將所有核心都已離開。 熱輸出可能很重要。 |
@@ -113,12 +113,12 @@ Intel Turbo 加速和 AMD Turbo CORE 技術是一種功能，可讓處理器在�
 | **名稱** | **P-以狀態為基礎的行為** | **CPPC 行為** |
 |--------------------------|------------------------|-------------------|
 | 0（已停用） | 已停用 | 已停用 |
-| 1（已啟用） | 已啟用 | 有效率的啟用 |
-| 2（積極） | 已啟用 | 主動 |
+| 1（已啟用） | 啟用 | 有效率的啟用 |
+| 2（積極） | 啟用 | 主動 |
 | 3（有效率啟用） | 有效率 | 有效率的啟用 |
 | 4（有效率地積極） | 有效率 | 主動 |
 
- 
+
 下列命令可在目前的電源計劃上啟用處理器效能提升模式（使用 GUID 別名指定原則）：
 
 ``` syntax
@@ -129,7 +129,7 @@ Powercfg -setactive scheme_current
 > [!Important]
 > 您必須執行**powercfg-setactive**命令，以啟用新的設定。 您不需要重新開機伺服器。
 
-若要針對目前所選方案以外的電源計劃設定此值，您可以使用像是配置\_MAX （省電）、配置\_最小（高效能）和配置\_平衡（平衡）以取代目前的\_配置。 以所需的別名取代前面所示的 setactive 命令中的「配置目前」，以啟用該電源計劃。
+若要針對目前所選方案以外的電源計劃設定此值，您可以使用別名，例如配置 \_ 上限（省電）、配置 \_ 最小值（高效能）和配置 \_ 平衡（平衡）來取代配置 \_ 目前的。 以所需的別名取代前面所示的 setactive 命令中的「配置目前」，以啟用該電源計劃。
 
 例如，若要調整「省電」計畫中的「提升」模式，並將「省電」功能設為目前的方案，請執行下列命令：
 
@@ -220,8 +220,9 @@ Powercfg -setacvalueindex scheme_current sub_processor DISTRIBUTEUTIL 0
 Powercfg -setactive scheme_current
 ```
 
-## <a name="see-also"></a>另請參閱
-- [伺服器硬體效能考慮](../index.md)
+## <a name="additional-references"></a>其他參考
+
+- [伺服器硬體效能考量](../index.md)
 - [伺服器硬體電源的考量](../power.md)
 - [處理器電源管理](processor-power-management-tuning.md)
 - [建議的平衡方案參數](recommended-balanced-plan-parameters.md)

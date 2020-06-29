@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 05/21/2019
-ms.openlocfilehash: 0190fc05a7bf82e35339d93accae3a998babe166
-ms.sourcegitcommit: 7116460855701eed4e09d615693efa4fffc40006
+ms.openlocfilehash: a4b8f2f21a7d13c31d6c952a74d3026a750466ce
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83433132"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472914"
 ---
 # <a name="windows-server-servicing-channels-ltsc-and-sac"></a>Windows Server 維護通道：LTSC 和 SAC
 
@@ -84,7 +84,7 @@ IT 專業人員有許多工具可以維護 Windows Server。 每個選項都有�
 
 半年通道版本應該安裝為全新安裝。
 
-- 大量授權服務中心 (VLSC)：有[軟體保證](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx)的大量授權客戶可以取得此版本，方式為前往[大量授權服務中心](https://www.microsoft.com/Licensing/servicecenter/default.aspx)並按一下 [登入]  。 然後按一下 [下載和金鑰]  並搜尋此版本。
+- 大量授權服務中心 (VLSC)：有[軟體保證](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx)的大量授權客戶可以取得此版本，方式為前往[大量授權服務中心](https://www.microsoft.com/Licensing/servicecenter/default.aspx)並按一下 [登入]。 然後按一下 [下載和金鑰] 並搜尋此版本。
 
 - 半年通道版本也可從 [Microsoft Azure](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.WindowsServer?tab=Overview) 中取得。
 
@@ -171,7 +171,7 @@ Name    :     ServerCore.AppCompatibility~~~~0.0.1.0
 State   :     Installed
 ````
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考資料
 
 [Nano Server 在 Windows Server 半年通道中的變更](../get-started/nano-in-semi-annual-channel.md)
 

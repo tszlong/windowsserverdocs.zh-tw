@@ -9,22 +9,22 @@ author: eldenchristensen
 ms.date: 10/08/2018
 ms.assetid: 73dd8f9c-dcdb-4b25-8540-1d8707e9a148
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ccf8d809354f96277701cd365966ba5e914f64b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a317f358c37f607475890efe773b57ee8efaeb14
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857531"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473475"
 ---
 # <a name="taking-a-storage-spaces-direct-server-offline-for-maintenance"></a>將儲存空間直接存取伺服器離線以進行維護
 
-> 適用于： Windows Server 2019、Windows Server 2016
+> 適用於：Windows Server 2019、Windows Server 2016
 
 此主題說明如何使用 [直接儲存空間](storage-spaces-direct-overview.md) 正確地重新啟動或關閉伺服器。
 
 透過「儲存空間直接存取」將伺服器離線，也意味著將叢集中所有伺服器共用的儲存空間部分離線。 若要這樣做，您必須先暫停要離線的伺服器、將角色移至叢集中的其他伺服器，並確認叢集中其他伺服器上的所有資料皆可使用，以確保維護期間資料的安全及正常存取。
 
-使用下列程序，在將儲存空間直接存取叢集中的伺服器離線之前，先正確將其暫停。 
+使用下列程序，在將儲存空間直接存取叢集中的伺服器離線之前，先正確將其暫停。
 
    > [!IMPORTANT]
    > 若要在儲存空間直接存取叢集中安裝更新，請使用叢集感知更新 (CAU)，它會自動執行此主題中的程序，因此您不需要在安裝更新時手動執行。 如需詳細資訊，請參閱 [叢集感知更新 (CAU)](https://technet.microsoft.com/library/hh831694.aspx)。
@@ -36,7 +36,7 @@ ms.locfileid: "80857531"
 若要這樣做，請使用系統管理權限開啟 PowerShell 工作階段，並執行下列命令以檢視磁碟區狀態︰
 
 ```PowerShell
-Get-VirtualDisk 
+Get-VirtualDisk
 ```
 
 此輸出可能看起來會像以下的範例：
@@ -48,11 +48,11 @@ MyVolume2    Mirror                OK                Healthy      True          
 MyVolume3    Mirror                OK                Healthy      True           1 TB
 ```
 
-確認每個磁碟區 (虛擬磁碟) 的 **\[HealthStatus\]** 屬性皆為 **\[狀況良好\]** 。
+確認每個磁碟區 (虛擬磁碟) 的 **\[HealthStatus\]** 屬性皆為 **\[狀況良好\]**。
 
-若要在容錯移轉叢集管理員中執行此動作，請移至 **\[儲存\]**  >  **\[磁碟\]** 。
+若要在容錯移轉叢集管理員中執行這項操作，請移至 [**儲存體**  >  **磁片**]。
 
-確認每個磁碟區 (虛擬磁碟) 的 **\[狀態\]** 欄皆顯示 **\[線上\]** 。
+確認每個磁碟區 (虛擬磁碟) 的 **\[狀態\]** 欄皆顯示 **\[線上\]**。
 
 ## <a name="pausing-and-draining-the-server"></a>暫停和清空伺服器
 
@@ -67,11 +67,11 @@ MyVolume3    Mirror                OK                Healthy      True          
 Suspend-ClusterNode -Drain
 ```
 
-若要在容錯移轉叢集管理員中執行此動作，請移至 **\[節點\]** ，在節點上按滑鼠右鍵，然後選取 **\[暫停\]**  >  **\[清空角色\]** 。
+若要在容錯移轉叢集管理員中執行此動作，請移至 **\[節點\]**，在節點上按滑鼠右鍵，然後選取 **\[暫停\]** > **\[清空角色\]**。
 
 ![Pause-Drain](media/maintain-servers/pause-drain.png)
 
-所有虛擬機器都將開始即時移轉至叢集中的其他伺服器。 這可能需要幾分鐘的時間。
+所有虛擬機器都將開始即時移轉至叢集中的其他伺服器。 這可能需要數分鐘的時間。
 
    > [!NOTE]
    > 當您正確暫停並清空叢集結點時，Windows 會執行自動安全檢查以確保該程序可繼續執行。 如果磁碟區狀況不良，它將會停止，並提醒您繼續執行並不安全。
@@ -80,14 +80,14 @@ Suspend-ClusterNode -Drain
 
 ## <a name="shutting-down-the-server"></a>正在關閉伺服器
 
-伺服器完成清空之後，將會在容錯移轉叢集管理員和 PowerShell 中顯示為 **\[已暫停\]** 。
+伺服器完成清空之後，將會在容錯移轉叢集管理員和 PowerShell 中顯示為 **\[已暫停\]**。
 
-![暫停](media/maintain-servers/paused.png)
+![已暫停](media/maintain-servers/paused.png)
 
 您現在可以放心地像平常一樣重新啟動或將它關閉 (例如，使用 Restart-Computer 或 Stop-Computer PowerShell Cmdlet)。
 
 ```PowerShell
-Get-VirtualDisk 
+Get-VirtualDisk
 
 FriendlyName ResiliencySettingName OperationalStatus HealthStatus IsManualAttach Size
 ------------ --------------------- ----------------- ------------ -------------- ----
@@ -114,7 +114,7 @@ Resume-ClusterNode
 Resume-ClusterNode –Failback Immediate
 ```
 
-若要在容錯移轉叢集管理員中執行此動作，請移至 **\[節點\]** ，在節點上按滑鼠右鍵，然後選取 **\[繼續\]**  >  **\[容錯回復角色\]** 。
+若要在容錯移轉叢集管理員中執行此動作，請移至 **\[節點\]**，在節點上按滑鼠右鍵，然後選取 **\[繼續\]** > **\[容錯回復角色\]**。
 
 ![Resume-Failback](media/maintain-servers/resume-failback.png)
 
@@ -143,7 +143,7 @@ Repair True             00:06:52    Running   68              20104802841    221
    > [!WARNING]
    > 請務必等候這些修復工作完成後再將另一部伺服器離線。
 
-在此期間，您的磁碟區將繼續顯示為 **\[Warning\]** ，此為正常現象。 
+在此期間，您的磁碟區將繼續顯示為 **\[Warning\]**，此為正常現象。
 
 例如，如果您使用 `Get-VirtualDisk` Cmdlet，您可能會看到以下輸出︰
 ```
@@ -154,7 +154,7 @@ MyVolume2    Mirror                InService         Warning      True          
 MyVolume3    Mirror                InService         Warning      True           1 TB
 ```
 
-一旦工作完成，請使用 **Cmdlet 以再次確認磁碟區顯示為**\[Healthy\]`Get-VirtualDisk`。 以下是一些輸出範例︰
+一旦工作完成，請使用 `Get-VirtualDisk` Cmdlet 以再次確認磁碟區顯示為 **\[Healthy\]**。 以下是一些輸出範例︰
 
 ```
 FriendlyName ResiliencySettingName OperationalStatus HealthStatus IsManualAttach Size
@@ -173,17 +173,17 @@ MyVolume3    Mirror                OK                Healthy      True          
 2. 讓虛擬磁片離線。
 3. 停止叢集讓存放集區離線。 執行「**停止**叢集」 Cmdlet，或使用容錯移轉叢集管理員來停止叢集。
 4. 將每個節點上 services.msc 中的 [叢集服務] 設定為 [**停用**]。 這可避免叢集服務在修補時啟動。
-5. 將 Windows Server 累計更新和任何必要的服務堆疊更新套用到所有節點。 （您可以同時更新所有節點，而不需要等到叢集關閉後再等待）。  
+5. 將 Windows Server 累計更新和任何必要的服務堆疊更新套用到所有節點。 （您可以同時更新所有節點，而不需要等到叢集關閉後再等待）。
 6. 重新開機節點，並確定一切看起來良好。
 7. 將每個節點上的叢集服務設回 [**自動**]。
-8. 啟動叢集。 執行**啟動**叢集 Cmdlet，或使用容錯移轉叢集管理員。 
+8. 啟動叢集。 執行**啟動**叢集 Cmdlet，或使用容錯移轉叢集管理員。
 
    請提供幾分鐘的時間。  請確定存放集區狀況良好。
 9. 讓虛擬磁片恢復上線。
 10. 執行**取得磁片**區和**VirtualDisk**指令程式，以監視虛擬磁片的狀態。
 
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 - [儲存空間直接存取總覽](storage-spaces-direct-overview.md)
-- [叢集感知更新（CAU）](https://technet.microsoft.com/library/hh831694.aspx)
+- [叢集感知更新 (CAU)](https://technet.microsoft.com/library/hh831694.aspx)

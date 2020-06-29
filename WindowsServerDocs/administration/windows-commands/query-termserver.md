@@ -1,6 +1,6 @@
 ---
-title: 查詢 termserver
-description: '* * * * 的參考主題'
+title: query termserver
+description: 查詢 termserver 命令的參考主題，它會顯示網路上所有遠端桌面工作階段主機伺服器的清單。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,57 +9,72 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9b3ae6858a70d22b3ad928474648a3b2ee156235
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: c41ed824ee0b1e9dc2672646ef0af03e2593ec07
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436233"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471973"
 ---
-# <a name="query-termserver"></a>查詢 termserver
+# <a name="query-termserver"></a>query termserver
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-顯示網路上所有遠端桌面工作階段主機（rd 工作階段主機）伺服器的清單。
+顯示網路上所有遠端桌面工作階段主機伺服器的清單。 此命令會在網路中搜尋所有連接的遠端桌面工作階段主機伺服器，並傳回下列資訊：
+
+- 伺服器的名稱
+
+- 網路（以及使用/address 選項時的節點位址）
 
 > [!NOTE]
-> 在 Windows Server 2008 R2 中，終端機服務已重新命名為遠端桌面服務。 若要瞭解最新版本的新功能，請參閱 Windows Server TechNet Library 中的[Windows server 2012 遠端桌面服務的新功能](https://technet.microsoft.com/library/hh831527)。
-> ## <a name="syntax"></a>語法
-> ```
-> query termserver [<ServerName>] [/domain:<Domain>] [/address] [/continue]
-> ```
-> ### <a name="parameters"></a>參數
->
-> |    參數     |                                                                        描述                                                                         |
-> |------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
-> |   <ServerName>   |                                               指定識別 rd 工作階段主機伺服器的名稱。                                               |
-> | /domain<Domain> | 指定要用來查詢終端機伺服器的網域。 如果您要查詢目前正在使用的網域，則不需要指定網域。 |
-> |     /address     |                                                  顯示每部伺服器的網路和節點位址。                                                  |
-> |    /continue     |                                              防止在每個資訊畫面顯示之後暫停。                                               |
-> |        /?        |                                                            在命令提示字元顯示說明。                                                            |
->
->#### <a name="remarks"></a>備註
-> - [**查詢 termserver** ] 會在網路中搜尋所有連接的 Rd 工作階段主機伺服器，並傳回下列資訊：
->   - 伺服器的名稱
->   - 網路（以及使用/address 選項時的節點位址）
->     ## <a name="examples"></a>範例
-> - 若要顯示網路上所有 rd 工作階段主機伺服器的相關資訊，請輸入：
->   ```
->   query termserver
->   ```
-> - 若要顯示名為 Server3 的 rd 工作階段主機伺服器的相關資訊，請輸入：
->   ```
->   query termserver Server3
->   ```
-> - 若要顯示網域 CONTOSO 中所有 rd 工作階段主機伺服器的相關資訊，請輸入：
->   ```
->   query termserver /domain:CONTOSO
->   ```
-> - 若要顯示名為 Server3 的 rd 工作階段主機伺服器的網路和節點位址，請輸入：
->   ```
->   query termserver Server3 /address
->   ```
->   ## <a name="additional-references"></a>其他參考
->   - [命令列語法索引鍵](command-line-syntax-key.md) 
->   [查詢](query.md) 
->   [遠端桌面服務（終端機服務）命令參考](remote-desktop-services-terminal-services-command-reference.md)
+> 若要瞭解最新版本的新功能，請參閱[Windows Server 中遠端桌面服務的新功能](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11))。
+
+## <a name="syntax"></a>語法
+
+```
+query termserver [<servername>] [/domain:<domain>] [/address] [/continue]
+```
+
+### <a name="parameters"></a>參數
+
+| 參數 | 描述 |
+|--|--|
+| `<servername>` | 指定識別遠端桌面工作階段主機伺服器的名稱。 |
+| /domain`<domain>` | 指定要用來查詢終端機伺服器的網域。 如果您要查詢目前正在使用的網域，則不需要指定網域。 |
+| /address | 顯示每部伺服器的網路和節點位址。 |
+| /continue | 防止在每個資訊畫面顯示之後暫停。 |
+| /? | 在命令提示字元顯示說明。 |
+
+### <a name="examples"></a>範例
+
+若要顯示網路上所有遠端桌面工作階段主機伺服器的相關資訊，請輸入：
+
+```
+query termserver
+```
+
+若要顯示名為*Server3*之遠端桌面工作階段主機伺服器的相關資訊，請輸入：
+
+```
+query termserver Server3
+```
+
+若要顯示網域*CONTOSO*中所有遠端桌面工作階段主機伺服器的相關資訊，請輸入：
+
+```
+query termserver /domain:CONTOSO
+```
+
+若要顯示名為*Server3*的遠端桌面工作階段主機伺服器的網路和節點位址，請輸入：
+
+```
+query termserver Server3 /address
+```
+
+## <a name="additional-references"></a>其他參考
+
+- [命令列語法關鍵](command-line-syntax-key.md)
+
+- [查詢命令](query.md)
+
+- [遠端桌面服務 (終端機服務) 命令參考資料](remote-desktop-services-terminal-services-command-reference.md)

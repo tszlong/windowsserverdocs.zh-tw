@@ -1,6 +1,6 @@
 ---
 title: quser
-description: '* * * * 的參考主題'
+description: Quser 命令的參考主題，它會顯示遠端桌面工作階段主機伺服器上使用者會話的相關資訊。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,26 +9,76 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ef18266a963f4575ce9a4685abcbb31b43fa7b6b
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e51abe030ca0f473246cdc85fd01d89fddf8b056
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722666"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471923"
 ---
 # <a name="quser"></a>quser
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-顯示遠端桌面工作階段主機（rd 工作階段主機）伺服器上的使用者會話相關資訊。  
+顯示遠端桌面工作階段主機伺服器上的使用者會話相關資訊。 您可以使用這個命令來找出特定使用者是否登入特定的遠端桌面工作階段主機伺服器。 此命令會傳回下列資訊：
 
-> [!NOTE]  
-> 在 Windows Server 2008 R2 中，終端機服務已重新命名為遠端桌面服務。 若要瞭解最新版本的新功能，請參閱 Windows Server TechNet Library 中的[Windows server 2012 遠端桌面服務的新功能](https://technet.microsoft.com/library/hh831527)。  
+- 使用者名稱
 
-## <a name="remarks"></a>備註  
-此命令與**查詢使用者**命令相同。  
+- 遠端桌面工作階段主機伺服器上的會話名稱
 
-## <a name="additional-references"></a>其他參考  
-[query user](query-user.md)  
-- [命令列語法關鍵](command-line-syntax-key.md)  
-[遠端桌面服務 (終端機服務) 命令參考資料](remote-desktop-services-terminal-services-command-reference.md)  
+- 工作階段識別碼
+
+- 會話的狀態（作用中或已中斷連線）
+
+- 閒置時間（自上一次按鍵或滑鼠移動到會話之後的分鐘數）
+
+- 使用者登入的日期和時間
+
+> [!NOTE]
+> 此命令與[查詢使用者命令](query-user.md)相同。 若要瞭解最新版本的新功能，請參閱[Windows Server 中遠端桌面服務的新功能](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11))。
+
+## <a name="syntax"></a>語法
+
+```
+quser [<username> | <sessionname> | <sessionID>] [/server:<servername>]
+```
+
+### <a name="parameters"></a>參數
+
+| 參數 | 描述 |
+|--|--|
+| `<username>` | 指定您想要查詢之使用者的登入名稱。 |
+| `<sessionname>` | 指定您想要查詢之會話的名稱。 |
+| `<sessionID>` | 指定您想要查詢之會話的識別碼。 |
+| /server:`<servername>` | 指定您想要查詢的遠端桌面工作階段主機伺服器。 否則，會使用目前的遠端桌面工作階段主機伺服器。 只有當您在遠端伺服器上使用此命令時，才需要此參數。 |
+| /? | 在命令提示字元顯示說明。 |
+
+#### <a name="remarks"></a>備註
+
+- 若要使用此命令，您必須擁有 [完全控制] 許可權或 [特殊存取權限]。
+
+- 如果您未使用 <*username*>、<*Sessionname*> 或*sessionID*參數來指定使用者，則會傳回登入伺服器的所有使用者清單。 或者，您也可以使用 [**查詢會話**] 命令，顯示伺服器上所有會話的清單。
+
+- 當**quser**傳回信息時，大於 `(>)` 符號會顯示在目前的會話之前。
+
+### <a name="examples"></a>範例
+
+若要顯示所有登入系統之使用者的相關資訊，請輸入：
+
+```
+quser
+```
+
+若要顯示伺服器*Server1*上使用者*USER1*的相關資訊，請輸入：
+
+```
+quser USER1 /server:Server1
+```
+
+## <a name="additional-references"></a>其他參考
+
+- [命令列語法關鍵](command-line-syntax-key.md)
+
+- [查詢使用者命令](query-user.md)
+
+- [遠端桌面服務 (終端機服務) 命令參考資料](remote-desktop-services-terminal-services-command-reference.md)

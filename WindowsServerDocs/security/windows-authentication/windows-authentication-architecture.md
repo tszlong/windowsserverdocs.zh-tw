@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: f2a2b9db60842ba7889116cf35163c579d9131d1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: da4f173a5d91f73c73d3f537f58228890f90b136
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861721"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471673"
 ---
 # <a name="windows-authentication-architecture"></a>Windows 驗證架構
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 這個適用于 IT 專業人員的總覽主題說明 Windows 驗證的基本架構配置。
 
@@ -40,7 +40,7 @@ Windows Server 作業系統包含組成 Windows 安全性模型的一組安全�
 
 SSPI 是一般安全性服務 API （GSSAPI）的執行。 SSPI 提供一種機制，讓分散式應用程式可以呼叫其中一個安全性提供者來取得已驗證的連線，而不需要知道安全性通訊協定的詳細資料。
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 -   [安全性支援提供者介面架構](security-support-provider-interface-architecture.md)
 

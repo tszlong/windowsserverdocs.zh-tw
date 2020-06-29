@@ -1,6 +1,6 @@
 ---
 title: 離線
-description: '* * * * 的參考主題'
+description: 離線命令的參考主題，其會將線上磁片或磁片區設為離線狀態。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,32 +9,31 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0be67fbdb84cf2e48e67a617a73e0fb24cc74b67
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f189ba1208e9e9a6769321170d2a9289b10189e8
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723431"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472676"
 ---
 # <a name="offline"></a>離線
-
-
 
 使線上磁片或磁片區處於離線狀態。
 
 ## <a name="syntax"></a>語法
 
 ```
-Offline disk
-Offline volume
+offline disk
+offline volume
 ```
 
 ### <a name="parameters"></a>參數
 
-|參數|描述|
-|---------|-----------|
-|[離線磁片](offline-disk.md)|將具有焦點的線上磁片帶到離線狀態。|
-|[讓磁碟區離線](offline-volume.md)|將線上磁片區的焦點放在離線狀態。|
+| 參數 | 描述 |
+| --------- | ----------- |
+| [offline disk](offline-disk.md) | 將具有焦點的線上磁片帶到離線狀態。 |
+| [offline volume](offline-volume.md) | 將線上磁片區的焦點放在離線狀態。 |
 
 ## <a name="additional-references"></a>其他參考
 
+- [命令列語法關鍵](command-line-syntax-key.md)

@@ -9,23 +9,23 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 07/17/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e1028d294e58bdb37ffbb3f0d75c7a69882b3e0b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f275e7657fc1e5d9ab982726c5b9b9adee381830
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820961"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473465"
 ---
 # <a name="understanding-the-cache-in-storage-spaces-direct"></a>了解儲存空間直接存取中的快取
 
->適用于： Windows Server 2019、Windows Server 2016
+>適用於：Windows Server 2019、Windows Server 2016
 
 [儲存空間直接存取](storage-spaces-direct-overview.md)包含內建的伺服器端快取，可將儲存效能發揮極致。 它是大型持久的即時*讀寫*快取。 啟用儲存空間直接存取時，就會自動設定快取。 大多數的情況下，不需要任何的手動管理。
 快取的運作方式取決於磁碟機呈現的類型。
 
 下列影片深入探討儲存空間直接存取的快取運作方式，以及其他設計考量。
 
-<strong>儲存空間直接存取設計考慮</strong><br>(20 分鐘)<br>
+<strong>儲存空間直接存取設計考量</strong><br>(20 分鐘)<br>
 <iframe src="https://channel9.msdn.com/Blogs/windowsserver/Design-Considerations-for-Storage-Spaces-Direct/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
 
 ## <a name="drive-types-and-deployment-options"></a>磁碟機類型及部署選項
@@ -63,19 +63,19 @@ ms.locfileid: "80820961"
 
 ### <a name="all-flash-deployment-possibilities"></a>全快閃部署可能性
 
-全快閃部署的目標是將儲存效能發揮極致，且不包括旋轉硬碟 (HDD)。
+全快閃部署以盡可能發揮儲存體效能為目標，不包含轉動式硬碟 (HDD)。
 
 ![All-Flash-Deployment-Possibilities](media/understand-the-cache/All-Flash-Deployment-Possibilities.png)
 
 ### <a name="hybrid-deployment-possibilities"></a>混合式部署可能性
 
-混合式部署的目標是平衡效能與容量或將容量發揮極致，且不包括旋轉硬碟 (HDD)。
+混合部署的目標則是要平衡效能與容量或將容量最大化，部署中包含轉動式硬碟 (HDD)。
 
 ![混合式部署可能性](media/understand-the-cache/Hybrid-Deployment-Possibilities.png)
 
 ## <a name="cache-drives-are-selected-automatically"></a>快取磁碟機為自動選取
 
-在多類型磁碟機的部署中，儲存空間直接存取會自動使用所有「最快」類型的磁碟機進行快取。 其餘磁碟機則用於容量。
+在多類型磁碟機的部署中，儲存空間直接存取會自動使用所有「最快」類型的磁碟機進行快取。 其餘磁碟機則作為容量磁碟機。
 
 哪種類型「最快」則交由下列階層決定。
 
@@ -95,7 +95,7 @@ ms.locfileid: "80820961"
 
 ## <a name="cache-behavior-is-set-automatically"></a>快取行為會自動設定
 
-快取行為會根據要進行快取的磁碟機類型自動決定。 快取固態硬碟時 (例如 NVMe 快取 SSD)，只快取寫入。 快取硬碟時 (例如 SSD 快取 HDD)，則會快取讀取和寫入。
+快取的行為會自動取決於所快取的磁碟機類型。 進行固態硬碟的快取時 (例如 NVMe 對 SSD 的快取)，將只會快取寫入。 快取硬碟時 (例如 SSD 快取 HDD)，則會快取讀取和寫入。
 
 ![Cache-Read-Write-Behavior](media/understand-the-cache/Cache-Read-Write-Behavior.png)
 
@@ -115,7 +115,7 @@ ms.locfileid: "80820961"
 
 ### <a name="caching-in-deployments-with-drives-of-all-three-types"></a>三種類型磁碟機都齊全之部署的快取
 
-當三種類型的磁碟機都齊全時，NVMe 磁碟機可以快取 SSD 和 HDD。 此行為如前文所述：SSD 只快取寫入，HDD 則讀取和寫入都快取。 快取 HDD 的負荷會平均分散到快取磁碟。 
+當三種類型的磁碟機都齊全時，NVMe 磁碟機可以快取 SSD 和 HDD。 此行為如前文所述：SSD 只快取寫入，HDD 則讀取和寫入都快取。 快取 HDD 的負荷會平均分散到快取磁碟。
 
 ## <a name="summary"></a>摘要
 
@@ -175,7 +175,7 @@ Windows 軟體定義的儲存堆疊中還有幾種無關聯的快取。 例如�
 
 ## <a name="manual-configuration"></a>手動設定
 
-大部分的部署都不需要手動設定。 如果您需要它，請參閱下列各節。 
+大部分的部署都不需要手動設定。 如果您需要它，請參閱下列各節。
 
 如果您需要在安裝之後對快取裝置模型進行變更，請編輯健全狀況服務的支援元件檔，如[健全狀況服務總覽](../../failover-clustering/health-service-overview.md#supported-components-document)中所述。
 
@@ -211,7 +211,7 @@ Count Name
 Enable-ClusterS2D -CacheDeviceModel "FABRIKAM NVME-1710"
 ```
 
-您可以在 PowerShell 中執行 **Get-PhysicalDisk** 驗證其 **Usage** 屬性是否顯示 **"Journal"** ，檢查您屬意的磁碟機是否用於快取。
+您可以在 PowerShell 中執行 **Get-PhysicalDisk** 驗證其 **Usage** 屬性是否顯示 **"Journal"**，檢查您屬意的磁碟機是否用於快取。
 
 ### <a name="manual-deployment-possibilities"></a>手動部署可能性
 
@@ -242,7 +242,7 @@ CacheModeHDD : ReadWrite
 CacheModeSSD : WriteOnly
 ```
 
-然後，執行下列動作：
+然後執行下列動作：
 
 ```PowerShell
 Set-ClusterStorageSpacesDirect -CacheModeSSD ReadWrite
@@ -263,7 +263,7 @@ CacheModeSSD : ReadWrite
 
 這在硬碟混合式部署中尤其重要。 如果使用中的工作組超過快取大小，或者使用中的工作組漂移太快，讀取快取遺漏會增加，而寫入需要更頻繁地取消暫存，破壞整體效能。
 
-您可以使用 Windows 的內建效能監視器 (PerfMon.exe) 公用程式檢查快取遺漏的比例。 特別是您可以比較 **[Cache Miss Reads/sec]&nbsp;(叢集儲存混合式磁碟)** 計數器集合的 **[Cluster Storage Hybrid Disk]&nbsp;(快取遺漏讀取數/秒)** 和您部署的整體讀取 IOPS。 每個「混合式磁碟」都對應一部容量磁碟機。
+您可以使用 Windows 的內建效能監視器 (PerfMon.exe) 公用程式檢查快取遺漏的比例。 特別是，您可以將 **\[叢集儲存混合式磁碟\]** 計數器集合的 **\[快取遺漏讀取數/秒\]** 與您所部署的整體讀取 IOPS 進行比較。 每個「混合式磁碟」都對應一部容量磁碟機。
 
 例如，2 部快取磁碟機繫結至 4 部容量磁碟機，造成每部伺服器有 4 個「混合式磁碟」物件執行個體。
 
@@ -271,8 +271,8 @@ CacheModeSSD : ReadWrite
 
 規則並無標準，但若讀取有太多快取遺漏，就需要縮減，而您應該考慮增加快取磁碟機擴張快取。 您可以隨時獨立新增快取磁碟機或容量磁碟機。
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
-- [選擇磁片磁碟機和復原類型](choosing-drives.md)
+- [選擇磁碟機及復原類型](choosing-drives.md)
 - [容錯與儲存空間效率](storage-spaces-fault-tolerance.md)
 - [儲存空間直接存取硬體需求](storage-spaces-direct-hardware-requirements.md)

@@ -7,12 +7,12 @@ ms.technology: storage-health-service
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: 5fe2f98c89d97325c1f59dc6ba292831e0ffa5ff
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: de2e9939302c0b9937fb54b4082feeecf6de5295
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720556"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473105"
 ---
 # <a name="health-service-faults"></a>健全狀況服務錯誤
 
@@ -20,9 +20,9 @@ ms.locfileid: "82720556"
 
 ## <a name="what-are-faults"></a>什麼是錯誤
 
-健全狀況服務會持續監視您的儲存空間直接存取叢集，以偵測問題並產生「錯誤」。 其中一個新的 Cmdlet 會顯示任何目前的錯誤，讓您可以輕鬆地驗證部署的健康情況，而不必再查看每個實體或功能。 「錯誤」是以精確、容易理解，及可採取動作為設計目標。  
+健全狀況服務會持續監視您的儲存空間直接存取叢集，以偵測問題並產生「錯誤」。 其中一個新的 Cmdlet 會顯示任何目前的錯誤，讓您可以輕鬆地驗證部署的健康情況，而不必再查看每個實體或功能。 「錯誤」是以精確、容易理解，及可採取動作為設計目標。
 
-每個錯誤都包含五個重要欄位：  
+每個錯誤都包含五個重要欄位：
 
 -   Severity
 -   問題描述
@@ -30,51 +30,51 @@ ms.locfileid: "82720556"
 -   錯誤實體的識別資訊
 -   它的實體位置 (若可用)
 
-例如，以下是一個典型的錯誤︰  
+例如，以下是一個典型的錯誤︰
 
 ```
-Severity: MINOR                                         
-Reason: Connectivity has been lost to the physical disk.                           
-Recommendation: Check that the physical disk is working and properly connected.    
-Part: Manufacturer Contoso, Model XYZ9000, Serial 123456789                        
+Severity: MINOR
+Reason: Connectivity has been lost to the physical disk.
+Recommendation: Check that the physical disk is working and properly connected.
+Part: Manufacturer Contoso, Model XYZ9000, Serial 123456789
 Location: Seattle DC, Rack B07, Node 4, Slot 11
 ```
 
  >[!NOTE]
- > 實體位置是衍伸自您的容錯網域組態。 如需容錯網域的詳細資訊，請參閱[Windows Server 2016 中的容錯網域](fault-domains.md)。 如果您未提供這項資訊，則位置欄位的實用性會較低 - 例如，它可能只會顯示插槽編號。  
+ > 實體位置是衍伸自您的容錯網域組態。 如需容錯網域的詳細資訊，請參閱[Windows Server 2016 中的容錯網域](fault-domains.md)。 如果您未提供這項資訊，則位置欄位的實用性會較低 - 例如，它可能只會顯示插槽編號。
 
 ## <a name="root-cause-analysis"></a>根本原因分析
 
-健全狀況服務可以評估錯誤實體之間的潛在因果，以識別併合並因相同基礎問題而產生的錯誤。 藉由辨識相關聯的影響，可以讓報告較為簡潔。 例如，如果伺服器已關閉，則預期伺服器中的任何磁片磁碟機也不會有連線能力。 因此，根本原因只會引發一個錯誤，在此案例中為伺服器。  
+健全狀況服務可以評估錯誤實體之間的潛在因果，以識別併合並因相同基礎問題而產生的錯誤。 藉由辨識相關聯的影響，可以讓報告較為簡潔。 例如，如果伺服器已關閉，則預期伺服器中的任何磁片磁碟機也不會有連線能力。 因此，根本原因只會引發一個錯誤，在此案例中為伺服器。
 
 ## <a name="usage-in-powershell"></a>PowerShell 中的使用方式
 
 若要查看 PowerShell 中的任何目前錯誤，請執行此 Cmdlet：
 
 ```PowerShell
-Get-StorageSubSystem Cluster* | Debug-StorageSubSystem  
+Get-StorageSubSystem Cluster* | Debug-StorageSubSystem
 ```
 
-這會傳回影響整體儲存空間直接存取叢集的任何錯誤。 這些錯誤通常與硬體或配置有關。 如果沒有任何錯誤，此 Cmdlet 就不會傳回任何內容。  
+這會傳回影響整體儲存空間直接存取叢集的任何錯誤。 這些錯誤通常與硬體或配置有關。 如果沒有任何錯誤，此 Cmdlet 就不會傳回任何內容。
 
 >[!NOTE]
 > 在非生產環境中，以及您自己的風險下，您可以自行觸發錯誤來試驗這項功能-例如，藉由移除一個實體磁片或關閉一個節點。 錯誤出現之後，請重新插入實體磁片或重新開機節點，錯誤就會再次消失。
 
-您也可以使用下列 Cmdlet 來查看只影響特定磁片區或檔案共用的錯誤：  
+您也可以使用下列 Cmdlet 來查看只影響特定磁片區或檔案共用的錯誤：
 
 ```PowerShell
-Get-Volume -FileSystemLabel <Label> | Debug-Volume  
+Get-Volume -FileSystemLabel <Label> | Debug-Volume
 
-Get-FileShare -Name <Name> | Debug-FileShare  
+Get-FileShare -Name <Name> | Debug-FileShare
 ```
 
-這會傳回只影響特定磁片區或檔案共用的任何錯誤。 這些錯誤通常與容量規劃、資料復原，或儲存體服務品質或儲存體複本等功能有關。 
+這會傳回只影響特定磁片區或檔案共用的任何錯誤。 這些錯誤通常與容量規劃、資料復原，或儲存體服務品質或儲存體複本等功能有關。
 
 ## <a name="usage-in-net-and-c"></a>.NET 和 C 中的使用方式#
 
 ### <a name="connect"></a>連線
 
-為了查詢健全狀況服務，您必須建立叢集的**CimSession** 。 若要這麼做，您將需要一些只在完整 .NET 中提供的專案，這表示您無法直接從 web 或行動裝置應用程式進行這項操作。 這些程式碼範例會使用\#C，這是最直接的資料存取層選擇。
+為了查詢健全狀況服務，您必須建立叢集的**CimSession** 。 若要這麼做，您將需要一些只在完整 .NET 中提供的專案，這表示您無法直接從 web 或行動裝置應用程式進行這項操作。 這些程式碼範例會使用 C \# ，這是最直接的資料存取層選擇。
 
 ```
 using System.Security;
@@ -105,7 +105,7 @@ public CimSession Connect(string Domain = "...", string Computer = "...", string
 
 建立**CimSession**之後，您就可以查詢叢集上的 WINDOWS MANAGEMENT INSTRUMENTATION （WMI）。
 
-在您取得錯誤或計量之前，您必須取得數個相關物件的實例。 首先， **MSFT\_StorageSubSystem**代表叢集儲存空間直接存取。 使用這種方式，您可以取得叢集中的每個**msft\_StorageNode** ，以及每個**msft\_磁片**區（資料磁片區）。 最後，您還需要**MSFT\_StorageHealth**，也就是健全狀況服務本身。
+在您取得錯誤或計量之前，您必須取得數個相關物件的實例。 首先， **MSFT \_ StorageSubSystem**代表叢集儲存空間直接存取。 使用這種方式，您可以取得叢集中的每個**msft \_ StorageNode** ，以及每個**msft \_ 磁片**區（資料磁片區）。 最後，您還需要**MSFT \_ StorageHealth**，也就是健全狀況服務本身。
 
 ```
 CimInstance Cluster;
@@ -153,7 +153,7 @@ foreach (CimInstance Node in Nodes)
 
 Windows Server 2016 中每個領域的可用錯誤完整清單記載于下文。
 
-```       
+```
 public void GetFaults(CimSession Session, CimInstance Target)
 {
     // Set Parameters (None)
@@ -176,7 +176,7 @@ public void GetFaults(CimSession Session, CimInstance Target)
 
 您可以建立自己的錯誤表示並加以保存，這是合理的做法。 例如，這個**MyFault**類別會儲存幾個錯誤的索引鍵屬性，包括**FaultId**，稍後可以用來關聯更新或移除通知，或在偵測到相同錯誤多次時刪除重複，而不論原因為何。
 
-```       
+```
 public class MyFault {
     public String FaultId { get; set; }
     public String Reason { get; set; }
@@ -212,9 +212,9 @@ foreach (CimInstance DiagnoseResult in DiagnoseResults)
 
 當您建立、移除或更新錯誤時，健全狀況服務會產生 WMI 事件。 這些是讓應用程式狀態保持同步，而不需要經常輪詢的必要專案，而且有助於判斷傳送電子郵件警示的時機，例如。 為了訂閱這些事件，此範例程式碼會再次使用觀察者設計模式。
 
-首先，訂閱**MSFT\_StorageFaultEvent**事件。
+首先，訂閱**MSFT \_ StorageFaultEvent**事件。
 
-```      
+```
 public void ListenForFaultEvents()
 {
     IObservable<CimSubscriptionResult> Events = Session.SubscribeAsync(
@@ -222,7 +222,7 @@ public void ListenForFaultEvents()
     // Subscribe the Observer
     FaultsObserver<CimSubscriptionResult> Observer = new FaultsObserver<CimSubscriptionResult>(this);
     IDisposable Disposeable = Events.Subscribe(Observer);
-}   
+}
 ```
 
 接下來，執行會在每次產生新事件時叫用**iobserver.onnext （）** 方法的觀察者。
@@ -241,7 +241,7 @@ class FaultsObserver : IObserver
 
         if (SubscriptionResult != null)
         {
-            // Unpack            
+            // Unpack
             CimKeyedCollection<CimProperty> Properties = SubscriptionResult.Instance.CimInstanceProperties;
             String ChangeType = Properties["ChangeType"].Value.ToString();
             String FaultId = Properties["FaultId"].Value.ToString();
@@ -283,7 +283,7 @@ class FaultsObserver : IObserver
 
 ### <a name="properties-of-faults"></a>錯誤的屬性
 
-下表提供錯誤物件的數個重要屬性。 如需完整的架構，請檢查*storagewmi*中的**MSFT\_StorageDiagnoseResult**類別。
+下表提供錯誤物件的數個重要屬性。 如需完整的架構，請檢查*storagewmi*中的**MSFT \_ StorageDiagnoseResult**類別。
 
 | **屬性**              | **範例**                                                     |
 |---------------------------|-----------------------------------------------------------------|
@@ -307,7 +307,7 @@ class FaultsObserver : IObserver
 
 ## <a name="properties-of-fault-events"></a>錯誤事件的屬性
 
-下表提供錯誤事件的數個重要屬性。 如需完整的架構，請檢查*storagewmi*中的**MSFT\_StorageFaultEvent**類別。
+下表提供錯誤事件的數個重要屬性。 如需完整的架構，請檢查*storagewmi*中的**MSFT \_ StorageFaultEvent**類別。
 
 請注意**ChangeType**，它會指出是否正在建立、移除或更新錯誤，以及**FaultId**。 事件也包含受影響之錯誤的所有屬性。
 
@@ -326,7 +326,7 @@ class FaultsObserver : IObserver
 
 ## <a name="coverage"></a>涵蓋範圍
 
-在 Windows Server 2016 中，健全狀況服務提供下列錯誤涵蓋範圍：  
+在 Windows Server 2016 中，健全狀況服務提供下列錯誤涵蓋範圍：
 
 ### <a name="physicaldisk-8"></a>**PhysicalDisk （8）**
 
@@ -513,12 +513,12 @@ class FaultsObserver : IObserver
 * 原因：「*一或多個儲存體取用者（通常虛擬機器）使用識別碼為 {id} 的不存在原則」。*
 * RecommendedAction：「*重新建立任何遺失的儲存體 QoS 原則」。*
 
-<sup>1</sup>表示磁片區已達到80% 的完整（次要嚴重性）或90% 已滿（主要嚴重性）。  
-<sup>2</sup>表示磁片區上的某些 .vhd 並未達到其最小 IOPS （超過10% （次要））、30% （主要）或50% （重大）的輪流24小時時間範圍。  
+<sup>1</sup>表示磁片區已達到80% 的完整（次要嚴重性）或90% 已滿（主要嚴重性）。
+<sup>2</sup>表示磁片區上的某些 .vhd 並未達到其最小 IOPS （超過10% （次要））、30% （主要）或50% （重大）的輪流24小時時間範圍。
 
 >[!NOTE]
-> 存放裝置機箱組件 (如風扇、電源供應器和感應器) 的健康情況是衍生自 SCSI 機箱服務 (SES)。 如果您的廠商沒有提供這項資訊，「健全狀況服務」就無法顯示它。  
+> 存放裝置機箱組件 (如風扇、電源供應器和感應器) 的健康情況是衍生自 SCSI 機箱服務 (SES)。 如果您的廠商沒有提供這項資訊，「健全狀況服務」就無法顯示它。
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 - [Windows Server 2016 中的健全狀況服務](health-service-overview.md)

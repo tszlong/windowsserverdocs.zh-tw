@@ -1,6 +1,6 @@
 ---
 title: ntbackup
-description: '* * * * 的參考主題'
+description: Ntbackup 命令的參考主題，已由 wbadmin 命令取代。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,23 +9,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ba3aaaa192283e0e1dc1777a27fc13973949784b
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9ca42abd326c2d5112e4d4a629f93afd814e7d59
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723488"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472784"
 ---
 # <a name="ntbackup"></a>ntbackup
 
+從命令提示字元備份和還原您的電腦和檔案。 此命令已由[wbadmin 命令](wbadmin.md)取代。
 
-
-Windows Vista 或 Windows Server 2008 不提供**ntbackup**命令。 相反地，您應該使用**wbadmin**命令和子命令，從命令提示字元備份和還原您的電腦和檔案。
-
-您無法使用**wbadmin**復原透過**ntbackup**所建立的備份。 不過，若要復原使用**ntbackup**所建立的備份，windows Server 2008 和 windows Vista 使用者可以下載一版的**ntbackup** 。 這個可下載的**ntbackup**版本可讓您只執行舊版備份的復原，而不能在執行 Windows Server 2008 或 Windows Vista 的電腦上使用它來建立新的備份。 若要下載此版本的**ntbackup**， [https://go.microsoft.com/fwlink/?LinkId=82917](https://go.microsoft.com/fwlink/?LinkId=82917)請參閱。
+> [!IMPORTANT]
+> **Wbadmin**命令無法復原使用**ntbackup**命令所建立的備份。 不過，您可以從[WINDOWS NT 備份-還原公用程式](https://www.microsoft.com/download/details.aspx?id=4220)下載某個版本的**ntbackup** 。 這個可下載的版本可協助您執行舊版備份的復原，但無法建立新的備份。
 
 ## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-[Restore](wbadmin.md)
+- [wbadmin](wbadmin.md)

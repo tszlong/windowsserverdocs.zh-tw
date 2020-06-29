@@ -8,12 +8,12 @@ author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 09/11/2018
-ms.openlocfilehash: 31853f1adaed6794138861da0991aa47e79602bc
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: 6799e0e3b47d6cc98cbb42407ffbed1a9578675a
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070566"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473435"
 ---
 # <a name="iscsi-target-server-scalability-limits"></a>iSCSI 目標伺服器的擴充性限制
 
@@ -32,7 +32,7 @@ ms.locfileid: "85070566"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>Item</p></th>
+<th><p>項目</p></th>
 <th><p>支援限制</p></th>
 <th><p>強行?</p></th>
 <th><p>註解</p></th>
@@ -89,7 +89,7 @@ ms.locfileid: "85070566"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>Item</p></th>
+<th><p>項目</p></th>
 <th><p>支援限制</p></th>
 <th><p>強行?</p></th>
 <th><p>註解</p></th>
@@ -105,7 +105,7 @@ ms.locfileid: "85070566"
 <tr class="even">
 <td><p>多個作用中叢集節點</p></td>
 <td><p>支援</p></td>
-<td> 
+<td>
 <p>N/A</p></td>
 <td><p>容錯移轉叢集中的每個使用中節點，都擁有不同的 iSCSI 目標伺服器叢集實例，而其他節點則擔任可能的擁有者節點。</p></td>
 </tr>
@@ -159,7 +159,7 @@ ms.locfileid: "85070566"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>Item</p></th>
+<th><p>項目</p></th>
 <th><p>支援限制</p></th>
 <th><p>強行?</p></th>
 <th><p>註解</p></th>
@@ -240,7 +240,7 @@ ms.locfileid: "85070566"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>Item</p></th>
+<th><p>項目</p></th>
 <th><p>支援限制</p></th>
 <th><p>強行?</p></th>
 <th><p>註解</p></th>
@@ -374,7 +374,7 @@ ms.locfileid: "85070566"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>Item</p></th>
+<th><p>項目</p></th>
 <th><p>支援限制</p></th>
 <th><p>註解</p></th>
 </tr>
@@ -537,7 +537,7 @@ ISCSI 目標儲存提供者是 Windows Server 2016、Windows Server 2012 R2 和 
 
   - 具有 iPXE 的 CD 或 USB 磁片
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 下列清單提供關於 iSCSI 目標伺服器與相關技術的其他資源。
 

@@ -1,18 +1,18 @@
 ---
 title: 建議的平衡電源計劃參數快速回應時間
-description: 建議的平衡電源計劃參數以快速回應時間
+description: 建議的平衡電源計劃參數快速回應時間
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
-ms.topic: article
+ms.topic: conceptual
 ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 288746b5361c550e167f64886a929c96c81ff8d0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 62dc6168e76bf3951443df0f06c47a8684d2df26
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851961"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471583"
 ---
 # <a name="recommended-balanced-power-plan-parameters-for-workloads-requiring-quick-response-times"></a>針對需要快速回應時間的工作負載，建議的平衡電源計劃參數
 
@@ -45,9 +45,9 @@ Powercfg -setactive scheme_balanced
 
 ## <a name="specpower--java-workload"></a>SPECpower – JAVA 工作負載
 
-[SPECpower\_ssj2008](http://spec.org/power_ssj2008/)，這是最受歡迎的業界標準規格，適用于伺服器電源和效能特性，可用來檢查電源影響。 因為它只會使用**輸送量**做為效能計量，所以預設的**平衡**電源計劃可提供最佳的電源效率。
+[SPECpower \_ ssj2008](http://spec.org/power_ssj2008/)是伺服器電源和效能特性最受歡迎的業界標準規格基準測試，可用來檢查電源影響。 因為它只會使用**輸送量**做為效能計量，所以預設的**平衡**電源計劃可提供最佳的電源效率。
 
-提議的參數變更在光線上耗用稍微高一點的電源（也就是 < = 20%）載入層級。 但是在負載層級較高的情況下，差異會增加，而且開始使用與**高效**能電源計劃在60% 負載層級之後的相同電源。 若要使用提議的變更參數，使用者應該知道在其機架容量規劃期間，以中到高負載層級的電力成本。
+提議的參數變更在光線上耗用稍微高一點的電源（也就是 <= 20%）載入層級。 但是在負載層級較高的情況下，差異會增加，而且開始使用與**高效**能電源計劃在60% 負載層級之後的相同電源。 若要使用提議的變更參數，使用者應該知道在其機架容量規劃期間，以中到高負載層級的電力成本。
 
 ## <a name="geekbench-3"></a>GeekBench 3
 
@@ -65,7 +65,7 @@ Powercfg -setactive scheme_balanced
 >從執行 Windows Server 2016 的 Intel [Broadwell] 處理器開始，大部分的處理器電源管理決策都是在處理器中進行，而不是 OS 層級，以達到更快的工作負載變更音。 OS 使用的舊版 PPM 參數會對實際的頻率決策造成最小的影響，但會告訴處理器其是否應具備電源或效能，或將最小和最大頻率降到最低。 因此，建議的 PPM 參數變更僅以預先 Broadwell 的系統為目標。
 
 ## <a name="see-also"></a>另請參閱
-- [伺服器硬體效能考慮](../index.md)
+- [伺服器硬體效能考量](../index.md)
 - [伺服器硬體電源的考量](../power.md)
 - [電源與效能調整](power-performance-tuning.md)
 - [處理器電源管理](processor-power-management-tuning.md)

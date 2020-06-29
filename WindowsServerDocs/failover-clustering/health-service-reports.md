@@ -7,20 +7,20 @@ ms.technology: storage-health-service
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: 0a03dc5d646d24c9f24f979df36fb3fe1eafe631
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a1aedd4dc48abb38c33679f219a6825c6a9141bb
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720547"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473025"
 ---
 # <a name="health-service-reports"></a>健全狀況服務報表
 
 > 適用於：Windows Server 2019、Windows Server 2016
 
-## <a name="what-are-reports"></a>什麼是報表  
+## <a name="what-are-reports"></a>什麼是報表
 
-健全狀況服務可減少從儲存空間直接存取叢集取得即時效能和容量資訊所需的工作。 其中一個新的 Cmdlet 會提供基本計量的策劃清單，這些度量會在節點之間以動態方式收集和匯總，並具有內建邏輯來偵測叢集成員資格。 所有的值都是即時且為該時間點的值。  
+健全狀況服務可減少從儲存空間直接存取叢集取得即時效能和容量資訊所需的工作。 其中一個新的 Cmdlet 會提供基本計量的策劃清單，這些度量會在節點之間以動態方式收集和匯總，並具有內建邏輯來偵測叢集成員資格。 所有的值都是即時且為該時間點的值。
 
 ## <a name="usage-in-powershell"></a>PowerShell 中的使用方式
 
@@ -30,16 +30,16 @@ ms.locfileid: "82720547"
 Get-StorageSubSystem Cluster* | Get-StorageHealthReport
 ```
 
-選擇性的**Count**參數表示要傳回多少組值（以一秒為間隔）。  
+選擇性的**Count**參數表示要傳回多少組值（以一秒為間隔）。
 
 ```PowerShell
-Get-StorageSubSystem Cluster* | Get-StorageHealthReport -Count <Count>  
+Get-StorageSubSystem Cluster* | Get-StorageHealthReport -Count <Count>
 ```
 
-您也可以取得一個特定磁片區或伺服器的計量：  
+您也可以取得一個特定磁片區或伺服器的計量：
 
 ```PowerShell
-Get-Volume -FileSystemLabel <Label> | Get-StorageHealthReport -Count <Count>  
+Get-Volume -FileSystemLabel <Label> | Get-StorageHealthReport -Count <Count>
 
 Get-StorageNode -Name <Name> | Get-StorageHealthReport -Count <Count>
 ```
@@ -48,7 +48,7 @@ Get-StorageNode -Name <Name> | Get-StorageHealthReport -Count <Count>
 
 ### <a name="connect"></a>連線
 
-為了查詢健全狀況服務，您必須建立叢集的**CimSession** 。 若要這麼做，您將需要一些只在完整 .NET 中提供的專案，這表示您無法直接從 web 或行動裝置應用程式進行這項操作。 這些程式碼範例會使用\#C，這是最直接的資料存取層選擇。
+為了查詢健全狀況服務，您必須建立叢集的**CimSession** 。 若要這麼做，您將需要一些只在完整 .NET 中提供的專案，這表示您無法直接從 web 或行動裝置應用程式進行這項操作。 這些程式碼範例會使用 C \# ，這是最直接的資料存取層選擇。
 
 ```
 using System.Security;
@@ -79,7 +79,7 @@ public CimSession Connect(string Domain = "...", string Computer = "...", string
 
 建立**CimSession**之後，您就可以查詢叢集上的 WINDOWS MANAGEMENT INSTRUMENTATION （WMI）。
 
-在您取得錯誤或計量之前，您必須取得數個相關物件的實例。 首先， **MSFT\_StorageSubSystem**代表叢集儲存空間直接存取。 使用這種方式，您可以取得叢集中的每個**msft\_StorageNode** ，以及每個**msft\_磁片**區（資料磁片區）。 最後，您還需要**MSFT\_StorageHealth**，也就是健全狀況服務本身。
+在您取得錯誤或計量之前，您必須取得數個相關物件的實例。 首先， **MSFT \_ StorageSubSystem**代表叢集儲存空間直接存取。 使用這種方式，您可以取得叢集中的每個**msft \_ StorageNode** ，以及每個**msft \_ 磁片**區（資料磁片區）。 最後，您還需要**MSFT \_ StorageHealth**，也就是健全狀況服務本身。
 
 ```
 CimInstance Cluster;
@@ -207,7 +207,7 @@ public void BeginStreamingMetrics(CimSession Session, CimInstance HealthService,
 
 計量的每個範例都是一個「報表」，其中包含多個對應于個別計量的「記錄」。
 
-如需完整的架構，請檢查*storagewmi*中的**Msft\_StorageHealthReport**和**msft\_HealthRecord**類別。
+如需完整的架構，請檢查*storagewmi*中的**Msft \_ StorageHealthReport**和**msft \_ HealthRecord**類別。
 
 根據此資料表，每個計量都只有三個屬性。
 
@@ -280,6 +280,6 @@ public void BeginStreamingMetrics(CimSession Session, CimInstance HealthService,
 | IOThroughputTotal   | 1         |
 | IOThroughputWrite   | 1         |
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 - [Windows Server 2016 中的健全狀況服務](health-service-overview.md)

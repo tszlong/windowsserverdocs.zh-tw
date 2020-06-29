@@ -8,26 +8,26 @@ ms.topic: article
 author: adagashe
 ms.date: 01/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 1209a3e08922a380ef46d3be6d28ce489b748f22
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 79e5e1e9daba005a086c16dd1d8e3e3f9a28a8a2
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820931"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473415"
 ---
 # <a name="understand-and-monitor-storage-resync"></a>了解和監視存放裝置重新同步
 
->適用于： Windows Server 2019
+>適用於：Windows Server 2019
 
-儲存體重新同步警示是 Windows Server 2019 中[儲存空間直接存取](storage-spaces-direct-overview.md)的新功能，可讓健全狀況服務在 resyncing 儲存體時擲回錯誤。 警示適用于在發生重新同步時通知您，因此您不會意外地將更多的伺服器關機（這可能會導致多個容錯網域受到影響，因而導致叢集停止運作）。 
+儲存體重新同步警示是 Windows Server 2019 中[儲存空間直接存取](storage-spaces-direct-overview.md)的新功能，可讓健全狀況服務在 resyncing 儲存體時擲回錯誤。 警示適用于在發生重新同步時通知您，因此您不會意外地將更多的伺服器關機（這可能會導致多個容錯網域受到影響，因而導致叢集停止運作）。
 
 本主題提供在具有儲存空間直接存取的 Windows Server 容錯移轉叢集中，瞭解和查看存放裝置重新同步的背景和步驟。
 
 ## <a name="understanding-resync"></a>瞭解重新同步
 
-讓我們從一個簡單的範例開始，以瞭解儲存體如何同步。請記住，任何共用的「無」（僅限本機磁片磁碟機）分散式儲存體解決方案都會出現這種行為。 如下所示，如果某個伺服器節點停止運作，其磁片磁碟機將不會更新，直到它恢復上線為止-這適用于任何超融合式架構。 
+讓我們從一個簡單的範例開始，以瞭解儲存體如何同步。請記住，任何共用的「無」（僅限本機磁片磁碟機）分散式儲存體解決方案都會出現這種行為。 如下所示，如果某個伺服器節點停止運作，其磁片磁碟機將不會更新，直到它恢復上線為止-這適用于任何超融合式架構。
 
-假設我們想要儲存字串 "HELLO"。 
+假設我們想要儲存字串 "HELLO"。
 
 ![字串 "hello" 的 ASCII](media/understand-storage-resync/hello.png)
 
@@ -39,7 +39,7 @@ Asssuming，我們有三向鏡像復原，我們有三個此字串的複本。 �
 
 ![字串 "help！" 的 ASCII](media/understand-storage-resync/help.png)
 
-更新字串之後，複製 #2 和 #3 將會成功更新。 不過，仍然無法存取複製 #1，因為伺服器 #1 暫時關閉（適用于維護）。 
+更新字串之後，複製 #2 和 #3 將會成功更新。 不過，仍然無法存取複製 #1，因為伺服器 #1 暫時關閉（適用于維護）。
 
 ![寫入以複製 #2 和 #2 的 Gif」](media/understand-storage-resync/write.gif)
 
@@ -61,7 +61,7 @@ Asssuming，我們有三向鏡像復原，我們有三個此字串的複本。 �
 Get-HealthFault
 ```
 
-這是 Windows Server 2019 中的新錯誤，並會出現在 PowerShell 中、叢集驗證報告中，以及任何在健康情況錯誤上建立的其他位置。 
+這是 Windows Server 2019 中的新錯誤，並會出現在 PowerShell 中、叢集驗證報告中，以及任何在健康情況錯誤上建立的其他位置。
 
 若要取得更深入的觀點，您可以在 PowerShell 中查詢時間序列資料庫，如下所示：
 
@@ -86,7 +86,7 @@ ClusterNode.Storage.Degraded 01/11/2019 16:26:48     214 GB
 
 ![Windows 系統管理中心內的警示影像](media/understand-storage-resync/alert.png)
 
-警示適用于在發生重新同步時通知您，因此您不會意外地將更多的伺服器關機（這可能會導致多個容錯網域受到影響，因而導致叢集停止運作）。 
+警示適用于在發生重新同步時通知您，因此您不會意外地將更多的伺服器關機（這可能會導致多個容錯網域受到影響，因而導致叢集停止運作）。
 
 如果您流覽至 [Windows 系統管理中心] 中的 [*伺服器*] 頁面，按一下 [*清查*]，然後選擇特定的伺服器，您就可以更詳細地瞭解此儲存體重新同步的外觀，以查看每一伺服器。 如果您流覽至您的伺服器，並查看 [*儲存體*] 圖表，您會看到需要修復的資料量，並在前面加上正確數位的*紫色*行。 當伺服器關閉（需要 resynced 更多資料）時，此數量會增加，並在伺服器恢復上線（資料正在進行同步處理）時逐漸降低。 當需要修復的資料量是0時，您的儲存體會 resyncing 完成，您現在可以視需要將伺服器關閉。 Windows 管理中心的此體驗的螢幕擷取畫面如下所示：
 
@@ -111,7 +111,7 @@ Regeneration          00:01:19              Running               50            
 
 此視圖較細微，因為列出的儲存作業是每個磁片區，您可以看到正在執行的作業清單，而且您可以追蹤其個別的進度。 此 Cmdlet 適用于 Windows Server 2016 和2019。
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 - [使伺服器離線以進行維護](maintain-servers.md)
 - [儲存空間直接存取總覽](storage-spaces-direct-overview.md)

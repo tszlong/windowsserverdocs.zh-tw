@@ -7,12 +7,12 @@ ms.topic: landing-page
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab; v-tea
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 643a603e89adeb0c1f3c70b0b0cabbf6bcb54731
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 33dad41e01cab4c36ea55bcb84e8033bd358d617
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80851901"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471563"
 ---
 # <a name="performance-tuning-active-directory-servers"></a>Active Directory 伺服器的效能調整
 
@@ -44,12 +44,12 @@ Active Directory 與用戶端效能最佳化中的大量增強功能在最近數
 
 我們鼓勵您關注我們的小組部落格 [Ask the Directory Services Team](https://techcommunity.microsoft.com/t5/Ask-the-Directory-Services-Team/bg-p/AskDS) (英文)，密切注意有關管理 ADDS 的最新新聞、指導方針與最佳做法。
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考資料
 
 - [AD DS 容量規劃](capacity-planning-for-active-directory-domain-services.md)
 - [硬體考量](hardware-considerations.md)
 - [記憶體使用量考量](memory-usage-considerations.md)
 - [LDAP 考量](ldap-considerations.md)
 - [適當地放置網域控制站與站台考量](site-definition-considerations.md)
-- [針對 AD DS 效能問題進行疑難排解](troubleshoot.md)  
-  
+- [針對 AD DS 效能問題進行疑難排解](troubleshoot.md)
+

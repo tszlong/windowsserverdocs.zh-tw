@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 78c054c5b0c3de19d1f3acd825335eab2f140541
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2acce64aa14d60503a5b443b831a03338c204be2
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394304"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472814"
 ---
 # <a name="file-server-resource-manager-command-line-tools"></a>檔案伺服器資源管理員命令列工具
 
-> 適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用於：Windows Server (半年度管道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 檔案伺服器資源管理員會安裝 [FileServerResourceManager](https://technet.microsoft.com/itpro/powershell/windows/fileserverresourcemanager/fileserverresourcemanager) PowerShell Cmdlet，以及下列命令列工具：
 
@@ -27,9 +27,9 @@ ms.locfileid: "71394304"
 
 您可以使用這些工具，來管理在本機電腦或遠端電腦上的儲存資源。 如需這些命令列工具的詳細資訊，請參閱下列參考資料：
 
--   **Dirquota**： <https://go.microsoft.com/fwlink/?LinkId=92741>
--   **Filescrn**： <https://go.microsoft.com/fwlink/?LinkId=92742>
--   **Storrept**： <https://go.microsoft.com/fwlink/?LinkId=92743>
+-   **Dirquota**：<https://go.microsoft.com/fwlink/?LinkId=92741>
+-   **Filescrn**：<https://go.microsoft.com/fwlink/?LinkId=92742>
+-   **Storrept**：<https://go.microsoft.com/fwlink/?LinkId=92743>
 
 
 > [!Note]
@@ -47,16 +47,16 @@ ms.locfileid: "71394304"
 
 <br />
 
-## <a name="additional-considerations"></a>其他考量 
+## <a name="additional-considerations"></a>其他考量
 
 若要使用命令列工具管理遠端資源：
 
 -   您必須使用屬於本機電腦或遠端電腦中 **\[系統管理員\]** 群組成員的網域帳戶來登入。
--   您必須從提高權限的 [命令提示字元] 視窗執行命令列工具。 若要開啟提升權限的命令提示字元視窗，請按一下 [開始]，依序指向 [所有程式] 及 [附屬應用程式]，以滑鼠右鍵按一下 [命令提示字元]，然後按一下 [以系統管理員身分執行]。
+-   您必須從提高權限的 [命令提示字元] 視窗執行命令列工具。 若要開啟提升權限的命令提示字元視窗，請按一下 [開始]****，依序指向 [所有程式]**** 及 [附屬應用程式]****，以滑鼠右鍵按一下 [命令提示字元]****，然後按一下 [以系統管理員身分執行]****。
 -   遠端電腦必須執行 Windows Server，而系統必須已安裝檔案伺服器資源管理員。
 -   必須啟用遠端電腦上的 **\[遠端檔案伺服器資源管理員管理\]** 例外。 使用 [控制台] 中的 [Windows 防火牆] 來啟用此例外。
 
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 -   [管理遠端存放裝置資源](managing-remote-storage-resources.md)

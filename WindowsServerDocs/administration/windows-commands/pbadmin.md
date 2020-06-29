@@ -1,6 +1,6 @@
 ---
 title: pbadmin
-description: '* * * * 的參考主題'
+description: Pbadmin 命令的參考主題。 此命令已被取代，在未來的 Windows 版本中不保證會受到支援。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,17 +9,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 95308b6098c44cdab7aaae3d8550717e8269fcfc
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 68535895386910a358ee0515dc7f09edb2122be8
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993366"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472494"
 ---
 # <a name="pbadmin"></a>pbadmin
 
+> 適用于： Windows Server 2003、Windows Server 2003 R2、Windows Server 2003 （含 SP1）、Windows Server 2003 （含 SP2）
 
+>[!IMPORTANT]
+> 此命令已被取代。
 
-Pbadmin 已被取代，在未來的 Windows 版本中不保證會受到支援。
+管理電話簿。 使用時不含參數，pbadmin 會啟動電話簿系統管理員。 如需描述和使用方式資訊，請參閱[pbadmin](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc755767(v=ws.10))。
 
-此工具組含在 Windows Server 2003 中。 如需詳細資訊，請參閱[Pbadmin](https://technet.microsoft.com/library/cc755767(v=ws.10).aspx)。
+## <a name="additional-references"></a>其他參考
+
+- [命令列語法關鍵](command-line-syntax-key.md)

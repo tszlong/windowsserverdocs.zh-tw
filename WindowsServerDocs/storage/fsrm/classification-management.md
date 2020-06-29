@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: f87614d5884d25c4e462cdccd8de72a7980368ec
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e742b5f9f94da06d43127c437f6ce693d4bcfc16
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402010"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472884"
 ---
 # <a name="classification-management"></a>分類管理
 
-> 適用於：Windows Server 2019、Windows Server 2016、Windows Server （半年通道）、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用于： Windows Server 2019、Windows Server 2016、Windows Server （半年通道）、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 分類屬性用於將檔案分類，可用來針對已排程的檔案管理工作選取檔案。
 
@@ -33,6 +33,6 @@ ms.locfileid: "71402010"
 > 若要設定電子郵件通知和某些報告功能，您必須先設定檔案伺服器資源管理員的一般選項。
 
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 [設定檔案伺服器資源管理員選項](setting-file-server-resource-manager-options.md)

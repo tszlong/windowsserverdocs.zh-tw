@@ -10,16 +10,16 @@ author: stevenek
 ms.date: 06/07/2019
 description: 使用 Windows Server 中的儲存空間直接存取，將軟體定義的存放裝置部署為超融合基礎結構或聚合式（也稱為分類式）基礎結構的逐步指示。
 ms.localizationpriority: medium
-ms.openlocfilehash: 60b29cbebb19cd8f1ce364d1eb7e920759375285
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 50bcdc175610d6e5c5264f9cb62c7d99d2990ac0
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323290"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472825"
 ---
 # <a name="deploy-storage-spaces-direct"></a>部署儲存空間直接存取
 
-> 適用于： Windows Server 2019、Windows Server 2016
+> 適用於：Windows Server 2019、Windows Server 2016
 
 本主題提供部署[儲存空間直接存取](storage-spaces-direct-overview.md)的逐步指示。
 
@@ -29,7 +29,7 @@ ms.locfileid: "79323290"
 > [!Tip]
 > 您可以使用 Hyper-v 虛擬機器（包括在 Microsoft Azure 中）來[評估沒有硬體的儲存空間直接存取](storage-spaces-direct-in-vm.md)。 您可能也會想要查看[Windows Server 快速實驗室部署腳本](https://aka.ms/wslab)，這是我們用來定型的課程。
 
-## <a name="before-you-start"></a>開始之前
+## <a name="before-you-start"></a>在您開始使用 Intune 之前
 
 請參閱[儲存空間直接存取硬體需求](Storage-Spaces-Direct-Hardware-Requirements.md)並流覽此檔，以熟悉與一些步驟相關的整體方法和重要注意事項。
 
@@ -39,7 +39,7 @@ ms.locfileid: "79323290"
 
 - **伺服器名稱。** 熟悉您組織的電腦、檔案、路徑及其他資源的命名原則。 您必須布建數個伺服器，每個都有唯一的名稱。
 
-- **功能變數名稱。** 熟悉您組織的網域命名和加入網域的原則。  您會將伺服器加入您的網域，而且您必須指定功能變數名稱。 
+- **功能變數名稱。** 熟悉您組織的網域命名和加入網域的原則。  您會將伺服器加入您的網域，而且您必須指定功能變數名稱。
 
 - **RDMA 網路功能。** RDMA 通訊協定有兩種類型： iWarp 和 RoCE。 請注意，您的網路介面卡會使用哪一個，如果 RoCE，也請注意版本（v1 或 v2）。 針對 RoCE，也請記下機架頂端交換器的型號。
 
@@ -51,7 +51,7 @@ ms.locfileid: "79323290"
 
 第一個步驟是在每個將位於叢集中的伺服器上安裝 Windows Server。 儲存空間直接存取需要 Windows Server 2016 Datacenter Edition。 您可以使用 Server Core 安裝選項或具有桌面體驗的伺服器。
 
-當您使用安裝程式來安裝 Windows Server 時，可以選擇*Windows server* （指的是 server Core）和*windows Server （具有桌面體驗的伺服器）* ，這相當於 windows server 2012 R2 中可用的*完全*安裝選項。 如果您沒有選擇，將會取得 Server Core 安裝選項。 如需詳細資訊，請參閱[Windows Server 2016 的安裝選項](../../get-started/Windows-Server-2016.md)。
+當您使用安裝程式來安裝 Windows Server 時，可以選擇*Windows server* （指的是 server Core）和*windows Server （具有桌面體驗的伺服器）*，這相當於 windows server 2012 R2 中可用的*完全*安裝選項。 如果您沒有選擇，將會取得 Server Core 安裝選項。 如需詳細資訊，請參閱[Windows Server 2016 的安裝選項](../../get-started/Windows-Server-2016.md)。
 
 ### <a name="step-12-connect-to-the-servers"></a>步驟1.2：連接到伺服器
 
@@ -62,7 +62,7 @@ ms.locfileid: "79323290"
 - 已加入相同的網域或完全受信任的網域
 - 適用於 Hyper-V 和容錯移轉叢集的遠端伺服器管理工具 (RSAT) 和 PowerShell 模組。 RSAT 工具和 PowerShell 模組可在 Windows Server 上使用，而且可以在不安裝其他功能的情況下安裝。 您也可以在 Windows 10 管理電腦上安裝[遠端伺服器管理工具](https://www.microsoft.com/download/details.aspx?id=45520)。
 
-在管理系統上，安裝容錯移轉叢集與 Hyper-V 管理工具。 這可以透過伺服器管理員使用「新增角色及功能」精靈完成。 在 [功能] 頁面上，選取 [遠端伺服器管理工具]，然後選取要安裝的工具。
+在管理系統上，安裝容錯移轉叢集與 Hyper-V 管理工具。 這可以透過伺服器管理員使用「新增角色及功能」**** 精靈完成。 在 [功能]**** 頁面上，選取 [遠端伺服器管理工具]****，然後選取要安裝的工具。
 
 進入 PS 工作階段，並使用伺服器名稱，或是您要連線之節點的 IP 位址。 當您執行此命令時，系統會提示您輸入密碼，請輸入您在設定 Windows 時指定的系統管理員密碼。
 
@@ -80,26 +80,26 @@ ms.locfileid: "79323290"
    ```
 
 > [!TIP]
-> 如果您是從管理系統遠端部署，您可能會收到如*WinRM 無法處理要求的錯誤。* 若要修正此問題，請使用 Windows PowerShell 將每部伺服器新增至管理電腦上的 [信任的主機] 清單：  
->   
-> `Set-Item WSMAN:\Localhost\Client\TrustedHosts -Value Server01 -Force`
->  
-> 注意： [信任的主機] 清單支援萬用字元，例如 `Server*`。
+> 如果您是從管理系統遠端部署，您可能會收到如*WinRM 無法處理要求的錯誤。* 若要修正此問題，請使用 Windows PowerShell 將每部伺服器新增至管理電腦上的 [信任的主機] 清單：
 >
-> 若要查看信任的主機清單，請輸入 `Get-Item WSMAN:\Localhost\Client\TrustedHosts`。  
->   
-> 若要清空清單，請輸入 `Clear-Item WSMAN:\Localhost\Client\TrustedHost`。  
+> `Set-Item WSMAN:\Localhost\Client\TrustedHosts -Value Server01 -Force`
+>
+> 注意： [信任的主機] 清單支援萬用字元，例如 `Server*` 。
+>
+> 若要查看信任的主機清單，請輸入 `Get-Item WSMAN:\Localhost\Client\TrustedHosts` 。
+>
+> 若要清空清單，請輸入 `Clear-Item WSMAN:\Localhost\Client\TrustedHost` 。
 
 ### <a name="step-13-join-the-domain-and-add-domain-accounts"></a>步驟1.3：加入網域並新增網域帳戶
 
-到目前為止，您已使用本機系統管理員帳戶來設定個別伺服器，`<ComputerName>\Administrator`。
+到目前為止，您已使用本機系統管理員帳戶設定個別伺服器 `<ComputerName>\Administrator` 。
 
 若要管理儲存空間直接存取，您必須將伺服器加入網域，並使用每一部伺服器上的 Administrators 群組中的 Active Directory Domain Services 網域帳戶。
 
-從管理系統中，以系統管理員許可權開啟 PowerShell 主控台。 使用 `Enter-PSSession` 來連線到每部伺服器，然後執行下列 Cmdlet，以您自己的電腦名稱稱、功能變數名稱和網域認證來取代：
+從管理系統中，以系統管理員許可權開啟 PowerShell 主控台。 使用 `Enter-PSSession` 來連線到每部伺服器，並執行下列 Cmdlet，並以您自己的電腦名稱稱、功能變數名稱和網域認證來取代：
 
-```PowerShell  
-Add-Computer -NewName "Server01" -DomainName "contoso.com" -Credential "CONTOSO\User" -Restart -Force  
+```PowerShell
+Add-Computer -NewName "Server01" -DomainName "contoso.com" -Credential "CONTOSO\User" -Restart -Force
 ```
 
 如果您的存放裝置系統管理員帳戶不是 Domain Admins 群組的成員，請將您的儲存體系統管理員帳戶新增至每個節點上的本機 Administrators 群組（或更棒的是）新增用於存放裝置管理者的群組。 您可以使用下列命令（或撰寫 Windows PowerShell 函式來執行此動作-如需詳細資訊，請參閱[使用 PowerShell 將網域使用者新增至本機群組](https://blogs.technet.com/b/heyscriptingguy/archive/2010/08/19/use-powershell-to-add-domain-users-to-a-local-group.aspx)）：
@@ -204,7 +204,7 @@ Count Name                          PSComputerName
 
 ### <a name="step-32-validate-the-cluster"></a>步驟3.2：驗證叢集
 
-在此步驟中，您將執行叢集驗證工具，以確保伺服器節點已正確設定，以使用儲存空間直接存取來建立叢集。 在叢集建立之前執行叢集驗證（`Test-Cluster`）時，它會執行測試，以確認設定是否顯示為可成功做為容錯移轉叢集。 下面的範例會使用 `-Include` 參數，然後指定特定的測試類別。 這可確保驗證中包含與儲存空間直接存取相關的測試。
+在此步驟中，您將執行叢集驗證工具，以確保伺服器節點已正確設定，以使用儲存空間直接存取來建立叢集。 叢集驗證（）在叢集 `Test-Cluster` 建立之前執行時，會執行測試，確認設定是否顯示為可成功做為容錯移轉叢集。 下面的範例 `-Include` 會使用參數，然後指定特定的測試類別。 這可確保驗證中包含與儲存空間直接存取相關的測試。
 
 您可以使用下列 PowerShell 命令驗證一組用來做為儲存空間直接存取叢集的伺服器。
 
@@ -229,18 +229,18 @@ Test-Cluster –Node <MachineName1, MachineName2, MachineName3, MachineName4> �
 
 ### <a name="step-34-configure-a-cluster-witness"></a>步驟3.4：設定叢集見證
 
-我們建議您為叢集設定見證，讓具有三部或以上伺服器的叢集可以承受兩部伺服器故障或離線。 兩部伺服器的部署需要叢集見證，否則伺服器離線也會導致另一個無法使用。 您可以使用檔案共用作為見證，或使用雲端見證來搭配這些系統。 
+我們建議您為叢集設定見證，讓具有三部或以上伺服器的叢集可以承受兩部伺服器故障或離線。 兩部伺服器的部署需要叢集見證，否則伺服器離線也會導致另一個無法使用。 您可以使用檔案共用作為見證，或使用雲端見證來搭配這些系統。
 
 如需詳細資訊，請參閱下列主題：
 
 - [設定和管理仲裁](../../failover-clustering/manage-cluster-quorum.md)
-- [為容錯移轉叢集部署雲端見證](../../failover-clustering/deploy-cloud-witness.md)
+- [部署容錯移轉叢集的雲端見證](../../failover-clustering/deploy-cloud-witness.md)
 
 ### <a name="step-35-enable-storage-spaces-direct"></a>步驟 3.5：啟用儲存空間直接存取
 
 建立叢集之後，請使用 `Enable-ClusterStorageSpacesDirect` PowerShell Cmdlet，這會讓存放裝置系統進入儲存空間直接存取模式，並自動執行下列動作：
 
--   **建立集區**︰建立有類似 "S2D on Cluster1" 名稱的單一大型集區。
+-   **建立集區：** 建立具有類似 "S2D on Cluster1" 名稱的單一大型集區。
 
 -   **設定儲存空間直接存取快取**︰如果有多個媒體 (磁碟機) 類型可供儲存空間直接存取使用，則允許以最快速的快取裝置來執行 (在大部分情況下可讀取和寫入)
 
@@ -268,7 +268,7 @@ Enable-ClusterStorageSpacesDirect –CimSession <ClusterName>
 
 啟用 CSV 快取會減少可在超融合式叢集上執行 Vm 的記憶體數量，因此您必須在儲存體效能與 Vhd 可用的記憶體之間取得平衡。
 
-若要設定 CSV 快取的大小，請使用在存放裝置叢集上具有系統管理員許可權的帳戶開啟管理系統上的 PowerShell 會話，然後使用此腳本，視需要變更 `$ClusterName` 和 `$CSVCacheSize` 變數（此範例會為每部伺服器設定 2 GB CSV 快取）：
+若要設定 CSV 快取的大小，請使用在存放裝置叢集上具有系統管理員許可權的帳戶開啟管理系統上的 PowerShell 會話，然後使用此腳本，視 `$ClusterName` 需要變更和 `$CSVCacheSize` 變數（此範例會為每部伺服器設定 2 GB CSV 快取）：
 
 ```PowerShell
 $ClusterName = "StorageSpacesDirect1"
@@ -287,7 +287,7 @@ Write-Output "$ClusterName CSV cache size: $CSVCurrentCacheSize MB"
 
 如果您要部署超融合式叢集，最後一個步驟是在儲存空間直接存取叢集上布建虛擬機器。
 
-虛擬機器的檔案應該儲存在 systems CSV 命名空間（例如： c：\\ClusterStorage\\Volume1），就像容錯移轉叢集上的叢集 Vm 一樣。
+虛擬機器的檔案應該儲存在 systems CSV 命名空間（例如： c： \\ ClusterStorage \\ Volume1）上，就像容錯移轉叢集上的叢集 vm 一樣。
 
 您可以使用 [內建工具] 或其他工具來管理儲存體和虛擬機器，例如 System Center Virtual Machine Manager。
 
@@ -301,7 +301,7 @@ Write-Output "$ClusterName CSV cache size: $CSVCurrentCacheSize MB"
 
 #### <a name="to-create-a-scale-out-file-server-role-by-using-server-manager"></a>若要使用伺服器管理員建立擴充檔案伺服器角色
 
-1. 在 [容錯移轉叢集管理員] 中，選取叢集，移至 [**角色**]，然後按一下 [**設定角色 ...** ]。<br>[高可用性] 嚮導隨即出現。
+1. 在 [容錯移轉叢集管理員] 中，選取叢集，移至 [**角色**]，然後按一下 [**設定角色 ...**]。<br>[高可用性] 嚮導隨即出現。
 2. 在 [**選取角色**] 頁面上，按一下 [**檔案伺服器**]。
 3. 在 [**檔案伺服器類型**] 頁面上，按一下 [**應用程式資料的向外延展檔案伺服器**]。
 4. 在 [**用戶端存取點**] 頁面上，輸入向外延展檔案伺服器的名稱。
@@ -312,8 +312,8 @@ Write-Output "$ClusterName CSV cache size: $CSVCurrentCacheSize MB"
     **圖 1**顯示具有執行狀態的向外延展檔案伺服器容錯移轉叢集管理員
 
 > [!NOTE]
->  建立叢集角色之後，可能會有一些網路傳播延遲，而可能會讓您無法在幾分鐘內建立檔案共用，或可能需要更久的時間。  
-  
+>  建立叢集角色之後，可能會有一些網路傳播延遲，而可能會讓您無法在幾分鐘內建立檔案共用，或可能需要更久的時間。
+
 #### <a name="to-create-a-scale-out-file-server-role-by-using-windows-powershell"></a>使用 Windows PowerShell 建立擴充檔案伺服器角色
 
  在連線到檔案伺服器叢集的 Windows PowerShell 會話中，輸入下列命令來建立向外延展檔案伺服器角色、變更*FSCLUSTER*以符合您的叢集名稱，以及*SOFS*以符合您想要授與向外延展檔案伺服器角色的名稱：
@@ -337,7 +337,7 @@ Add-ClusterScaleOutFileServerRole -Name SOFS -Cluster FSCLUSTER
 若要使用 PowerShell 腳本建立檔案共用，請執行下列動作：
 
 1. 將[適用于 Hyper-v 工作負載的 SMB 共用](https://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a)設定所包含的腳本下載到檔案伺服器叢集的其中一個節點。
-2. 在管理系統上開啟具有網域系統管理員認證的 Windows PowerShell 會話，然後使用下列腳本建立 Hyper-v 電腦物件的 Active Directory 群組，將變數的值變更為適用于您的環境
+2. 在管理系統上開啟具有網域系統管理員認證的 Windows PowerShell 會話，然後使用下列腳本來建立 Hyper-v 電腦物件的 Active Directory 群組，將變數的值變更為適用于您的環境：
 
     ```PowerShell
     # Replace the values of these variables
@@ -371,7 +371,7 @@ Add-ClusterScaleOutFileServerRole -Name SOFS -Cluster FSCLUSTER
 
 ### <a name="step-43-enable-kerberos-constrained-delegation"></a>步驟4.3 啟用 Kerberos 限制委派
 
-若要針對遠端案例管理設定 Kerberos 限制委派，並提高即時移轉安全性，請在其中一個存放裝置叢集節點上，使用[適用于 Hyper-v 工作負載的 SMB 共用](https://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a)設定所包含的 KCDSetup 腳本。 以下是腳本的小型包裝函式：
+若要針對遠端案例管理設定 Kerberos 限制委派，並提高即時移轉安全性，請在其中一個存放裝置叢集節點上，使用[適用于 Hyper-v 工作負載的 SMB 共用](https://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a)設定所包含的 KCDSetup.ps1 腳本。 以下是腳本的小型包裝函式：
 
 ```PowerShell
 $HyperVClusterName = "Compute01"
@@ -386,11 +386,11 @@ CD $ScriptFolder
 
 部署叢集檔案伺服器之後，我們建議您先使用綜合工作負載測試解決方案的效能，然後再啟動任何實際的工作負載。 這可讓您確認解決方案是否正常執行，並在增加工作負載複雜度之前，先解決任何延遲問題。 如需詳細資訊，請參閱[使用綜合工作負載測試儲存空間效能](https://technet.microsoft.com/library/dn894707.aspx)。
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 -   [Windows Server 2016 中的儲存空間直接存取](storage-spaces-direct-overview.md)
--   [瞭解儲存空間直接存取中的快取](understand-the-cache.md)
--   [規劃儲存空間直接存取中的磁片區](plan-volumes.md)
+-   [了解儲存空間直接存取中的快取](understand-the-cache.md)
+-   [規劃儲存空間直接存取中的磁碟區](plan-volumes.md)
 -   [儲存空間容錯](storage-spaces-fault-tolerance.md)
--   [儲存空間直接存取硬體需求](Storage-Spaces-Direct-Hardware-Requirements.md)
+-   [儲存空間直接存取的硬體需求](Storage-Spaces-Direct-Hardware-Requirements.md)
 -   [要用 RDMA，還是不用 RDMA 呢，這才是問題所在](https://blogs.technet.microsoft.com/filecab/2017/03/27/to-rdma-or-not-to-rdma-that-is-the-question/) (TechNet 部落格)

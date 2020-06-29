@@ -7,14 +7,14 @@ ms.topic: article
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: c40faca06668adf6fd29a5e4e753e5790b8104b7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1fef257f860895b20c1ca1a24b6fa50e16f70c8c
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851911"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471573"
 ---
-# <a name="hardware-considerations-in-adds-performance-tuning"></a>中的硬體考慮新增效能微調 
+# <a name="hardware-considerations-in-adds-performance-tuning"></a>中的硬體考慮新增效能微調
 
 >[!Important]
 > 以下是針對 Active Directory Domain Services 文章的[容量規劃](https://go.microsoft.com/fwlink/?LinkId=324566)中更深入的 Active Directory 工作負載優化伺服器硬體的重要建議和考慮的摘要。 我們強烈鼓勵讀者複習[Active Directory Domain Services 的容量規劃](https://go.microsoft.com/fwlink/?LinkId=324566)，以獲得更深入的技術理解及這些建議的影響。
@@ -25,9 +25,9 @@ Active Directory 會在記憶體允許的情況中快取大部分的資料庫。
 
 -   Active Directory 最佳做法建議放入足夠的 RAM，將整個 DIT 載入記憶體中，並配合作業系統和其他已安裝的應用程式，例如防毒軟體、備份軟體、監視等等。
 
-    -   如需舊版平臺的限制，請參閱在執行[Windows Server 2003 或 Windows 2000 伺服器的網域控制站上，lsass.exe 進程的記憶體使用量](https://support.microsoft.com/kb/308356)。
+    -   如需舊版平臺的限制，請參閱執行[Windows Server 2003 或 Windows 2000 Server 之網域控制站上的 Lsass.exe 進程的記憶體使用量](https://support.microsoft.com/kb/308356)。
 
-    -   使用 記憶體\\長期待命快取存留期 &gt; 30 分鐘 效能計數器。
+    -   使用 [記憶體短期 \\ 待命快取存留期（秒）] &gt; 效能計數器。
 
 -   將作業系統、記錄和資料庫放在不同的磁片區上。 如果可以快取所有或大部分的 DIT，一旦快取準備就緒並處於穩定狀態，這就會變得比較不相關，並在儲存體配置中提供更大的彈性。 在無法快取整個 DIT 的案例中，將作業系統、記錄和資料庫分割在不同的磁片區上的重要性變得更重要。
 
@@ -41,13 +41,13 @@ Active Directory 會在記憶體允許的情況中快取大部分的資料庫。
 
 -   個別檢查每個磁片區的磁片子系統效能。 大部分的 Active Directory 案例主要是以讀取為基礎，因此裝載 DIT 的磁片區上的統計資料是最重要的檢查。 不過，請勿忽略監視其餘的磁片磁碟機，包括作業系統和記錄檔磁片磁碟機。 若要判斷是否已正確設定網域控制站，以避免存放裝置成為效能瓶頸，請參考儲存子系統上的一節，以取得標準儲存體建議。 在許多環境中，其原理在於確保有足夠的前端空間來容納負載中的電湧或尖峰。 這些臨界值是警告臨界值，可容納尖峰或負載突然增加的空間會受到限制，而且用戶端回應會降低。 簡言之，在短期內，超過這些臨界值並不會有任何錯誤（5到15分鐘一天），不過，使用這些統計資料持續執行的系統並不會完全快取資料庫，而且可能會被調查。
 
-    -   Database = =&gt; 實例（lsass/NTDSA）\\i/o 資料庫讀取平均延遲 &lt; 15ms
+    -   Database = = &gt; 實例（lsass/NTDSA） \\ I/o 資料庫讀取平均延遲 &lt; 15ms
 
-    -   Database = =&gt; 實例（lsass/NTDSA）\\i/o 資料庫讀取/秒 &lt; 10
+    -   Database = = &gt; 實例（lsass/NTDSA） \\ I/o 資料庫讀取/秒 &lt; 10
 
-    -   Database = =&gt; 實例（lsass/NTDSA）\\i/o 記錄寫入平均延遲 &lt; 10 毫秒
+    -   Database = = &gt; 實例（lsass/NTDSA） \\ I/o 記錄寫入平均延遲 &lt; 10 毫秒
 
-    -   Database = =&gt; 實例（lsass/NTDSA）\\i/o 記錄檔寫入/秒–僅供參考。
+    -   Database = = &gt; 實例（lsass/NTDSA） \\ i/o 記錄檔寫入/秒–僅供參考。
 
         為了維持資料的一致性，所有變更都必須寫入記錄檔。 此處沒有任何好或壞的數位，只是儲存體所支援的量值。
 
@@ -61,7 +61,7 @@ Active Directory 會在記憶體允許的情況中快取大部分的資料庫。
 
 -   新增硬體、將負載優化、將用戶端導向其他地方，或從環境中移除負載以降低 CPU 負載。
 
--   使用 [處理器資訊（\_總計）]\\[% Processor 使用率] &lt; 60% 效能計數器。
+-   使用 [處理器資訊（ \_ Total） \\ % processor 使用率 &lt; 60%] 效能計數器。
 
 ## <a name="avoid-overloading-the-network-adapter"></a>避免多載網路介面卡
 
@@ -69,11 +69,11 @@ Active Directory 會在記憶體允許的情況中快取大部分的資料庫。
 
 -   如需如何微調網路子系統的詳細資訊，請參閱[網路子系統的效能微調](../../../../networking/technologies/network-subsystem/net-sub-performance-top.md)。
 
--   使用 [比較 NetworkInterface （\*）\\Bytes Sent/Sec] 與 [NetworkInterface （\*）]\\[目前的頻寬] 效能計數器。 比率應小於使用的60%。
+-   使用 [比較 NetworkInterface （ \* ） \\ Bytes Sent/Sec 與 NetworkInterface （ \* ） \\ Current 頻寬] 效能計數器。 比率應小於使用的60%。
 
-## <a name="see-also"></a>另請參閱
-- [Active Directory 伺服器的效能微調](index.md)
+## <a name="additional-references"></a>其他參考
+- [Active Directory 伺服器的效能調整](index.md)
 - [LDAP 考量](ldap-considerations.md)
 - [適當地放置網域控制站與站台考量](site-definition-considerations.md)
-- [針對 ADDS 效能問題進行疑難排解](troubleshoot.md) 
+- [針對 ADDS 效能問題進行疑難排解](troubleshoot.md)
 - [Active Directory Domain Services 的容量規劃](https://go.microsoft.com/fwlink/?LinkId=324566)

@@ -1,6 +1,6 @@
 ---
 title: Ping
-description: 使用 ping 來確認網路連線能力。
+description: Ping 命令的參考主題，其會驗證網路連線能力。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,65 +9,65 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 6e97ed800ab64a9a7ec276ed6bb498ef04139ca6
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 1c1bd15d6536c73feb00decb9ad306f327a6464d
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820768"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472444"
 ---
 # <a name="ping"></a>Ping
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-**Ping**命令會傳送網際網路控制訊息通訊協定（ICMP） echo 要求訊息，以驗證另一個 tcp/ip 電腦的 IP 層級連線能力。 會顯示對應回應回復訊息的回條，以及來回行程時間。 ping 是用來針對連線能力、可連線性和名稱解析進行疑難排解的主要 TCP/IP 命令。 使用時不含參數， **ping**會顯示說明。
+藉由傳送網際網路控制訊息通訊協定（ICMP） echo 要求訊息，驗證另一個 TCP/IP 電腦的 IP 層級連線能力。 會顯示對應回應回復訊息的回條，以及來回行程時間。 ping 是用來針對連線能力、可連線性和名稱解析進行疑難排解的主要 TCP/IP 命令。 使用時不含參數，此命令會顯示說明內容。
+
+您也可以使用此命令來測試電腦名稱稱和電腦的 IP 位址。 如果 ping IP 位址成功，但 ping 不到電腦名稱稱，您可能會有名稱解析問題。 在此情況下，請確定您指定的電腦名稱稱可以透過本機 Hosts 檔案、使用網域名稱系統（DNS）查詢，或透過 NetBIOS 名稱解析技術來解析。
+
+> [!NOTE]
+> 只有當網際網路通訊協定（TCP/IP）通訊協定是在網路連線的網路介面卡內容中安裝為元件時，才可以使用此命令。
 
 ## <a name="syntax"></a>語法
 
 ```
-ping [/t] [/a] [/n <Count>] [/l <Size>] [/f] [/I <TTL>] [/v <TOS>] [/r <Count>] [/s <Count>] [{/j <Hostlist> | /k <Hostlist>}] [/w <timeout>] [/R] [/S <Srcaddr>] [/4] [/6] <TargetName>
+ping [/t] [/a] [/n <count>] [/l <size>] [/f] [/I <TTL>] [/v <TOS>] [/r <count>] [/s <count>] [{/j <hostlist> | /k <hostlist>}] [/w <timeout>] [/R] [/S <Srcaddr>] [/4] [/6] <targetname>
 ```
 
-#### <a name="parameters"></a>參數
+### <a name="parameters"></a>參數
 
-|參數|說明|
-|-------|--------|
-|/t|指定 ping 會繼續傳送 echo 要求訊息到目的地，直到中斷為止。 若要中斷並顯示統計資料，請按 CTRL + break。 若要中斷並結束**ping**，請按 CTRL + C。|
-|/a|指定在目的地 IP 位址上執行反向名稱解析。 如果成功，ping 會顯示對應的主機名稱。|
-|/n \< 計數\>|指定傳送的 echo 要求訊息數目。 預設值為 4。|
-|/l \< 大小\>|指定傳送的 echo 要求訊息中，資料欄位的長度（以位元組為單位）。 預設值為 32。 大小上限為65527。|
-|/f|指定在 IP 標頭設為1（僅適用于 IPv4）的情況中，傳送 echo 要求訊息與「不要片段」旗標。 目的地的路徑中的路由器無法分割 echo 要求訊息。 此參數對於疑難排解路徑最大傳輸單位（PMTU）問題很有用。|
-|/I \< TTL\>|針對傳送的 echo 要求訊息，指定 IP 標頭中的 TTL 欄位的值。 預設值是主機的預設 TTL 值。 *TTL*上限為255。|
-|/v \< TOS\>|針對傳送的 echo 要求訊息，指定 IP 標頭中的服務類型（TOS）欄位的值（僅適用于 IPv4）。 預設值是 0。 *TOS*會指定為從0到255的十進位值。|
-|/r \< 計數\>|指定 IP 標頭中的 [記錄路由] 選項用來記錄 echo 要求訊息和對應的 echo 回復訊息（僅適用于 IPv4）所取得的路徑。 路徑中的每個躍點都會使用 [記錄路由] 選項中的專案。 可能的話，請指定等於或大於來源與目的地之間的躍點數目的*計數*。 *計數*最少必須為1，最大值為9。|
-|/s \< 計數\>|指定 IP 標頭中的 [網際網路時間戳記] 選項用來記錄 echo 要求訊息的抵達時間，以及每個躍點的對應回應訊息。 *計數*最少必須為1，最大值為4。 這是連結-本機目的地位址的必要參數。|
-|/j \< Hostlist\>|指定 echo 要求訊息使用 IP 標頭中的鬆散來源路由選項，並搭配*Hostlist*中指定的中繼目的地集（僅適用于 IPv4）。 使用鬆散來源路由，連續的中繼目的地可以由一或多個路由器隔開。 主機清單中的位址或名稱數目上限為9。 主機清單是一系列以空格分隔的 IP 位址（小數點十進位標記法）。|
-|/k \< Hostlist\>|指定 echo 要求訊息使用 IP 標頭中的「嚴格來源路由」選項搭配*Hostlist*中指定的中繼目的地集（僅適用于 IPv4）。 使用嚴格的來源路由時，必須可直接存取下一個中繼目的地（它必須是路由器介面上的相鄰節點）。 主機清單中的位址或名稱數目上限為9。 主機清單是一系列以空格分隔的 IP 位址（小數點十進位標記法）。|
-|/w \< timeout\>|指定要等候的回應回復訊息對應至所指定 echo 要求訊息的時間量（以毫秒為單位）。 如果未在超時時間內收到回應回復訊息，則會顯示「要求超時」錯誤訊息。 預設的超時時間為4000（4秒）。|
-|/R|指定要追蹤的來回路徑（僅適用于 IPv6）。|
-|/S \< Srcaddr\>|指定要使用的來源位址（僅適用于 IPv6）。|
-|/4|指定使用 IPv4 來進行 ping。 使用 IPv4 位址識別目標主機時，不需要此參數。 只需要依名稱識別目標主機。|
-|/6|指定使用 IPv6 來進行 ping。 不需要使用此參數來識別具有 IPv6 位址的目標主機。 只需要依名稱識別目標主機。|
-|\<TargetName\>|指定目的地的主機名稱或 IP 位址。|
-|/?|在命令提示字元顯示說明。|
+| 參數 | 描述 |
+|--|--|
+| /t | 指定 ping 會繼續傳送 echo 要求訊息到目的地，直到中斷為止。 若要中斷並顯示統計資料，請按 CTRL + ENTER。 若要中斷並結束此命令，請按 CTRL + C。 |
+| /a | 指定在目的地 IP 位址上執行反向名稱解析。 如果成功，ping 會顯示對應的主機名稱。 |
+| /n`<count>` | 指定傳送的 echo 要求訊息數目。 預設值為 4。 |
+| /l`<size>` | 指定傳送的 echo 要求訊息中，**資料**欄位的長度（以位元組為單位）。 預設值為 32。 大小上限為65527。 |
+| /f | 指定在 IP 標頭設為1（僅適用于 IPv4）的情況中，傳送 echo 要求訊息與「**不要片段**」旗標。 目的地的路徑中的路由器無法分割 echo 要求訊息。 此參數對於疑難排解路徑最大傳輸單位（PMTU）問題很有用。 |
+| /I`<TTL>` | 針對傳送的 echo 要求訊息，指定 IP 標頭中的 TTL 欄位的值。 預設值是主機的預設 TTL 值。 *TTL*上限為255。 |
+| 停`<TOS>` | 針對傳送的 echo 要求訊息，指定 IP 標頭中的服務類型（TOS）欄位的值（僅適用于 IPv4）。 預設值是 0。 *TOS*會指定為從0到255的十進位值。 |
+| /r`<count>` | 指定 IP 標頭中的 [**記錄路由**] 選項用來記錄 echo 要求訊息和對應的 echo 回復訊息（僅適用于 IPv4）所取得的路徑。 路徑中的每個躍點都會使用 [**記錄路由**] 選項中的專案。 可能的話，請指定等於或大於來源與目的地之間的躍點數目的*計數*。 *計數*最少必須為1，最大值為9。 |
+| /s`<count>` | 指定 IP 標頭中的 [**網際網路時間戳記]** 選項用來記錄 echo 要求訊息的抵達時間，以及每個躍點的對應回應訊息。 *計數*最少必須為1，最大值為4。 這是連結-本機目的地位址的必要參數。 |
+| /j`<hostlist>` | 指定 echo 要求訊息使用 IP 標頭中的**鬆散來源路由**選項，並搭配*hostlist*中指定的中繼目的地集（僅適用于 IPv4）。 使用鬆散來源路由，連續的中繼目的地可以由一或多個路由器隔開。 主機清單中的位址或名稱數目上限為9。 主機清單是一系列以空格分隔的 IP 位址（小數點十進位標記法）。 |
+| /k`<hostlist>` | 指定 echo 要求訊息使用 IP 標頭中的「**嚴格來源路由**」選項搭配*hostlist*中指定的中繼目的地集（僅適用于 IPv4）。 使用嚴格的來源路由時，必須可直接存取下一個中繼目的地（它必須是路由器介面上的相鄰節點）。 主機清單中的位址或名稱數目上限為9。 主機清單是一系列以空格分隔的 IP 位址（小數點十進位標記法）。 |
+| /w`<timeout>` | 指定要等候的回應回復訊息對應至所指定 echo 要求訊息的時間量（以毫秒為單位）。 如果未在超時時間內收到回應回復訊息，則會顯示「要求超時」錯誤訊息。 預設的超時時間為4000（4秒）。 |
+| /R | 指定要追蹤的來回路徑（僅適用于 IPv6）。 |
+| /S`<Srcaddr>` | 指定要使用的來源位址（僅適用于 IPv6）。 |
+| /4 | 指定使用 IPv4 來進行 ping。 使用 IPv4 位址識別目標主機時，不需要此參數。 只需要依名稱識別目標主機。 |
+| /6 | 指定使用 IPv6 來進行 ping。 不需要使用此參數來識別具有 IPv6 位址的目標主機。 只需要依名稱識別目標主機。 |
+| `<targetname>` | 指定目的地的主機名稱或 IP 位址。 |
+| /? | 在命令提示字元顯示說明。 |
 
-## <a name="remarks"></a>備註
-
--   您可以使用**ping**來測試電腦名稱稱和電腦的 IP 位址。 如果 ping IP 位址成功，但 ping 電腦名稱稱不是，您可能會有名稱解析問題。 在此情況下，請確定您指定的電腦名稱稱可以透過本機 Hosts 檔案、使用網域名稱系統（DNS）查詢，或透過 NetBIOS 名稱解析技術來解析。
--   只有當網際網路通訊協定（TCP/IP）通訊協定是在網路連線的網路介面卡內容中安裝為元件時，才可以使用此命令。
-
-## <a name="examples"></a>範例
-
-若要顯示**ping**命令輸出：
+### <a name="example-of-the-ping-command-output"></a>Ping 命令輸出的範例
 
 ```
 C:\>ping example.microsoft.com
-         pinging example.microsoft.com [192.168.239.132] with 32 bytes of data:
-         Reply from 192.168.239.132: bytes=32 time=101ms TTL=124
-         Reply from 192.168.239.132: bytes=32 time=100ms TTL=124
-         Reply from 192.168.239.132: bytes=32 time=120ms TTL=124
-         Reply from 192.168.239.132: bytes=32 time=120ms TTL=124
+    pinging example.microsoft.com [192.168.239.132] with 32 bytes of data:
+    Reply from 192.168.239.132: bytes=32 time=101ms TTL=124
+    Reply from 192.168.239.132: bytes=32 time=100ms TTL=124
+    Reply from 192.168.239.132: bytes=32 time=120ms TTL=124
+    Reply from 192.168.239.132: bytes=32 time=120ms TTL=124
 ```
+
+### <a name="examples"></a>範例
 
 若要 ping 目的地10.0.99.221 並將10.0.99.221 解析成其主機名稱，請輸入：
 
@@ -94,4 +94,5 @@ ping /j 10.12.0.1 10.29.3.1 10.1.44.1 10.0.99.221
 ```
 
 ## <a name="additional-references"></a>其他參考
+
 - [命令列語法關鍵](command-line-syntax-key.md)

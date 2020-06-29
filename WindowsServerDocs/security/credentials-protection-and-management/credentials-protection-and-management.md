@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: c836da8f83510e6547e0e182ac06fd2151dd9c41
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9eb93e46adb0e8a7c956bd8db2795fe06bc04724
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857061"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472945"
 ---
 # <a name="credentials-protection-and-management"></a>認證保護和管理
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 本主題適用于 IT 專業人員，討論 Windows Server 2012 R2 中引進的功能和方法，以及 Windows 8.1 認證保護和網域驗證控制，以減少認證竊取的情況。
 
@@ -56,7 +56,7 @@ Protected Users 群組的成員進一步受到下列驗證方法的限制：
 
 新的 Active Directory 物件類別「驗證原則」可讓您將驗證設定套用至具有 Windows Server 2012 R2 網域功能等級之網域中的帳戶類別。 Kerberos AS 或 TGS 交換期間會強制執行驗證原則。 Active Directory 帳戶類別包括：
 
--   使用者
+-   User
 
 -   電腦
 
@@ -68,8 +68,8 @@ Protected Users 群組的成員進一步受到下列驗證方法的限制：
 
 如需如何設定受保護帳戶的詳細資訊，請參閱[如何設定受保護帳戶](how-to-configure-protected-accounts.md)。
 
-## <a name="see-also"></a>另請參閱
-如需 LSA 與 LSASS 的詳細資訊，請參閱 [Windows Logon and Authentication Technical Overview](https://technet.microsoft.com/library/dn169029(v=ws.10).aspx)(Windows 登入及驗證技術概觀)。
+## <a name="additional-references"></a>其他參考
+如需 LSA 與 LSASS 的詳細資訊，請參閱 [Windows Logon and Authentication Technical Overview](https://technet.microsoft.com/library/dn169029(v=ws.10).aspx) (Windows 登入及驗證技術概觀)。
 
 
 

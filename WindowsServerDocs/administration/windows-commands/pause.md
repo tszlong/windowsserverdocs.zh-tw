@@ -1,6 +1,6 @@
 ---
 title: pause
-description: '* * * * 的參考主題'
+description: Pause 命令的參考主題，會暫停批次程式的處理。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,22 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 89e76c4f45f59c32ef879fb518a1a92c973f5cdf
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f603802926d0f9418a82e1f4981181889fc573ef
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723357"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472514"
 ---
 # <a name="pause"></a>pause
 
-
-
-暫停 batch 程式的處理，並顯示下列提示：
-```
-Press any key to continue . . .
-```
-
+暫停處理 batch 程式，並顯示提示字元`Press any key to continue . . .`
 
 ## <a name="syntax"></a>語法
 
@@ -34,35 +28,30 @@ pause
 
 ### <a name="parameters"></a>參數
 
-|參數|描述|
-|---------|-----------|
-|/?|在命令提示字元顯示說明。|
+| 參數 | 描述 |
+|--|--|
+| /? | 在命令提示字元顯示說明。 |
 
 ## <a name="remarks"></a>備註
 
-- 當您執行**pause**命令時，會出現下列訊息：  
-  ```
-  Press any key to continue . . .
-  ```  
-- 如果您按下 CTRL + C 來停止 batch 程式，則會出現下列訊息：  
-  ```
-  Terminate batch job (Y/N)?
-  ```  
-  如果您按 Y （為 [是]）來回應此訊息，則 batch 程式會結束，且控制權會回到作業系統。
-- 您可以在可能不想要處理的批次檔區段之前，插入**pause**命令。 **暫停**batch 程式的處理時，您可以按下 CTRL + C，然後按 Y 以停止 batch 程式。
+- 如果您按下 CTRL + C 來停止 batch 程式，則會出現下列訊息： `Terminate batch job (Y/N)?` 。 如果您按**Y** （為 [是]）來回應此訊息，則 batch 程式會結束，且控制權會回到作業系統。
+
+- 您可以在可能不想要處理的批次檔區段之前，插入**pause**命令。 **暫停**batch 程式的處理時，您可以按下 CTRL + C，然後按**Y**以停止 batch 程式。
 
 ## <a name="examples"></a>範例
 
 若要建立批次程式，以提示使用者變更其中一個磁片磁碟機中的磁片，請輸入：
+
 ```
-@echo off 
-:Begin 
-copy a:*.* 
-echo Put a new disk into drive A 
-pause 
+@echo off
+:Begin
+copy a:*.*
+echo Put a new disk into Drive A
+pause
 goto begin
 ```
-在此範例中，磁片磁碟機 A 中磁片上的所有檔案都會複製到目前的目錄。 當訊息提示您將新磁片放在磁片磁碟機 A 之後， **pause**命令就會暫停處理，讓您可以變更磁片，然後按任意鍵繼續處理。 此批次程式會在無止盡的迴圈中執行， **goto begin**命令會將命令直譯器傳送至批次檔的開始標籤。 若要停止此 batch 程式，請按 CTRL + C，然後按下 Y 鍵。
+
+在此範例中，磁片磁碟機 A 中磁片上的所有檔案都會複製到目前的目錄。 當訊息提示您將新磁片放在磁片磁碟機 A 之後， **pause**命令就會暫停處理，讓您可以變更磁片，然後按任意鍵繼續處理。 此批次程式會在無止盡的迴圈中執行， **goto begin**命令會將命令直譯器傳送至批次檔的開始標籤。
 
 ## <a name="additional-references"></a>其他參考
 

@@ -7,16 +7,16 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 10/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b06d69c020ea38a2fb9f23df2cfd9cd4191ae315
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5e7a4469a3f72737801a5110e322533df9764e20
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857551"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473585"
 ---
-# <a name="drive-symmetry-considerations-for-storage-spaces-direct"></a>驅動儲存空間直接存取的對稱考慮 
+# <a name="drive-symmetry-considerations-for-storage-spaces-direct"></a>驅動儲存空間直接存取的對稱考慮
 
-> 適用于： Windows Server 2019、Windows Server 2016
+> 適用於：Windows Server 2019、Windows Server 2016
 
 當每一部伺服器都有完全相同的磁片磁碟機時，[儲存空間直接存取](storage-spaces-direct-overview.md)的效果最佳。
 
@@ -24,7 +24,7 @@ ms.locfileid: "80857551"
 
 本主題說明條件約束，並提供支援和不支援設定的範例。
 
-## <a name="constraints"></a>限制式
+## <a name="constraints"></a>條件約束
 
 ### <a name="type"></a>類型
 
@@ -50,7 +50,7 @@ ms.locfileid: "80857551"
 
 ### <a name="size"></a>大小
 
-我們建議盡可能使用相同大小的磁片磁碟機。 使用不同大小的容量磁片可能會導致一些無法使用的容量，而且使用不同大小的快取磁片磁碟機可能無法改善快取效能。 如需詳細資訊，請參閱下一節。
+我們建議盡可能使用相同大小的磁片磁碟機。 使用不同大小的容量磁片可能會導致一些無法使用的容量，而且使用不同大小的快取磁片磁碟機可能無法改善快取效能。 請參閱下一節以取得詳細資訊。
 
    > [!WARNING]
    > 跨伺服器的容量磁片磁碟機大小不同可能會導致閒置的容量。
@@ -146,7 +146,7 @@ ms.locfileid: "80857551"
 | -                   | 6 x SSD （快取）     | 6 x SSD （快取）     |
 | 18 x HDD （容量） | 18 x HDD （容量） | 18 x HDD （容量） |
 
-這不受支援。 每一部伺服器中的磁片磁碟機類型應該相同。
+不支援此做法。 每一部伺服器中的磁片磁碟機類型應該相同。
 
 ### <a name="unsupported-not-supported-different-number-of-each-type-across-servers"></a>![不支援](media/drive-symmetry-considerations/unsupported.png) 不支援：跨伺服器的每個類型都有不同的數目
 
@@ -157,30 +157,30 @@ ms.locfileid: "80857551"
 | 2 x NVMe （快取）    | 2 x NVMe （快取）    | 4 x NVMe （快取）    |
 | 10 x HDD （容量） | 10 x HDD （容量） | 20 x HDD （容量） |
 
-這不受支援。 每一部伺服器中的每個類型磁片磁碟機數目應該都相同。
+不支援此做法。 每一部伺服器中的每個類型磁片磁碟機數目應該都相同。
 
 ### <a name="unsupported-not-supported-only-hdd-drives"></a>![不支援](media/drive-symmetry-considerations/unsupported.png) 不支援：僅 HDD 磁片磁碟機
 
 所有伺服器都只有 HDD 磁片磁碟機連線。
 
 |伺服器 1|伺服器2|伺服器3|
-|-|-|-| 
+|-|-|-|
 |18 x HDD （容量） |18 x HDD （容量）|18 x HDD （容量）|
 
-這不受支援。 您必須至少新增兩個連接到每部伺服器的快取磁片磁碟機（NvME 或 SSD）。
+不支援此做法。 您必須至少新增兩個連接到每部伺服器的快取磁片磁碟機（NvME 或 SSD）。
 
 ## <a name="summary"></a>摘要
 
 回顧一下，叢集中的每部伺服器都應該有相同類型的磁片磁碟機，而且每種類型都有相同的數目。 根據上述考慮，支援混合和比對磁片磁碟機型號和磁片磁碟機大小。
 
-| constraint                               |               |
+| 條件約束                               |               |
 |------------------------------------------|---------------|
-| 每一部伺服器中的磁片磁碟機類型     | **必填**  |
-| 每一部伺服器中的每個類型都有相同的數目 | **必填**  |
-| 每一部伺服器中的相同磁片磁碟機型號        | 推薦項目   |
-| 每一部伺服器中的相同磁片磁碟機大小         | 推薦項目   |
+| 每一部伺服器中的磁片磁碟機類型     | **必要**  |
+| 每一部伺服器中的每個類型都有相同的數目 | **必要**  |
+| 每一部伺服器中的相同磁片磁碟機型號        | 建議   |
+| 每一部伺服器中的相同磁片磁碟機大小         | 建議   |
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 - [儲存空間直接存取硬體需求](storage-spaces-direct-hardware-requirements.md)
 - [儲存空間直接存取總覽](storage-spaces-direct-overview.md)

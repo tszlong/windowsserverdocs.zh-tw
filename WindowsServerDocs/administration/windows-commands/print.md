@@ -1,6 +1,6 @@
 ---
 title: print
-description: '* * * * 的參考主題'
+description: Print 命令的參考主題，其會將文字檔傳送至印表機。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,63 +9,54 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8937253da730c2ab77ff03cdeb9f31d24e608eab
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 2d9cbb4230976572ddd7a26565d616c87ce2ea8d
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722859"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472313"
 ---
 # <a name="print"></a>print
 
+將文字檔傳送至印表機。 如果您將檔案傳送到連接至本機電腦上序列或平行埠的印表機，檔案就可以在背景列印。
 
-
-將文字檔傳送至印表機。
-
-
+> [!NOTE]
+> 您可以使用 [[模式] 命令](mode.md)，從命令提示字元執行許多設定工作，包括設定連接到平行或序列埠的印表機、顯示印表機狀態，或是準備印表機以進行字碼頁切換。
 
 ## <a name="syntax"></a>語法
 
 ```
-Print [/d:<PrinterName>] [<Drive>:][<Path>]<FileName>[ ...]
+print [/d:<printername>] [<drive>:][<path>]<filename>[ ...]
 ```
 
 ### <a name="parameters"></a>參數
 
-|參數|描述|
-|---------|-----------|
-|/d：\<PrinterName>|指定您要列印工作的印表機。 若要列印到本機連線的印表機，請指定印表機連線所在電腦上的埠。</br>-平行埠的有效值為 LPT1、LPT2 和 LPT3。</br>-有效的序列埠值為 COM1、COM2、COM3 和 COM4。</br>您也可以使用其佇列名稱（\\\\*ServerName*\*PrinterName *）來指定網路印表機。 如果您沒有指定印表機，列印工作預設會傳送至 LPT1。|
-|\<磁片磁碟機>：|指定您要列印之檔案所在的邏輯或實體磁片磁碟機。 如果您要列印的檔案位於目前磁片磁碟機上，則不需要此參數。|
-|\<路徑>|指定您要列印之檔案的位置。 如果您要列印的檔案位於目前目錄中，則不需要這個參數。|
-|\<FileName> [...]|必要。 指定您要列印的檔案。 您可以在一個命令中包含多個檔案。|
-|/?|在命令提示字元顯示說明。|
+| 參數 | 描述 |
+|--|--|
+| /d`<printername>` | 指定您要列印工作的印表機。 若要列印到本機連線的印表機，請指定印表機連線所在電腦上的埠。 平行埠的有效值為**LPT1**、 **LPT2**和**LPT3**。 有效的序列埠值為**COM1**、 **COM2**、 **COM3**和**COM4**。 您也可以使用其佇列名稱（）指定網路印表機 `\\server_name\printer_name` 。 如果您未指定印表機，列印工作預設會傳送至**LPT1** 。 |
+| `<drive>`: | 指定您要列印之檔案所在的邏輯或實體磁片磁碟機。 如果您要列印的檔案位於目前磁片磁碟機上，則不需要此參數。 |
+| `<path>` | 指定您要列印之檔案的位置。 如果您要列印的檔案位於目前目錄中，則不需要此參數。 |
+| `<filename>[ ...]` | 必要。 指定您要列印的檔案。 您可以在一個命令中包含多個檔案。 |
+| /? | 在命令提示字元顯示說明。 |
 
-## <a name="remarks"></a>備註
+### <a name="examples"></a>範例
 
--   如果您將檔案傳送到連接至本機電腦上序列或平行埠的印表機，檔案就可以在背景列印。
--   您可以使用**Mode**命令，從命令提示字元執行許多設定工作。
+若要將位於目前目錄中的**report.txt**檔案，傳送至本機電腦上的**lpt2**連接到的印表機，請輸入：
 
-    如需的詳細資訊，請參閱[模式](mode.md)：  
-    -   設定連接到平行埠的印表機
-    -   設定連接至序列埠的印表機
-    -   顯示印表機的狀態
-    -   準備印表機以進行字碼頁切換
-
-## <a name="examples"></a>範例
-
-若要將目前目錄中的檔案報告 .txt 傳送至本機電腦上的 LPT2，請輸入：
 ```
 print /d:lpt2 report.txt
 ```
-若要將 c:\Accounting 目錄中的檔案報告傳送至\\ \\CopyRoom 伺服器上的 Printer1 列印佇列，請輸入：
+
+若要將位於**c:\accounting**目錄中的**report.txt**檔案傳送至 **/d： \\ copyroom**伺服器上的**printer1**列印佇列，請輸入：
+
 ```
-print /d:\\copyroom\printer1 c:\accounting\report.txt 
+print /d:\\copyroom\printer1 c:\accounting\report.txt
 ```
 
 ## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-[列印命令參考資料](print-command-reference.md)
+- [列印命令參考資料](print-command-reference.md)
 
-[Mode](mode.md)
+- [模式命令](mode.md)
