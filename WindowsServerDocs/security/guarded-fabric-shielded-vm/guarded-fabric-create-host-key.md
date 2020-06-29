@@ -8,16 +8,16 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 664b3cfc1e529fe3591f6477ae0eb0b64e32441a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 24714e7af844116629fa4c0eebf5050f9c150c50
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856731"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475535"
 ---
 # <a name="create-a-host-key-and-add-it-to-hgs"></a>建立主機金鑰並將它新增至 HGS
 
->適用于： Windows Server 2019
+>適用於：Windows Server 2019
 
 
 本主題涵蓋如何使用主機金鑰證明（金鑰模式）準備 Hyper-v 主機成為受防護主機。 您將建立主機金鑰組（或使用現有的憑證），並將金鑰的公用部分新增至 HGS。
@@ -29,7 +29,7 @@ ms.locfileid: "80856731"
 
     ```powershell
     Install-WindowsFeature Hyper-V, HostGuardian -IncludeManagementTools -Restart
-    ``` 
+    ```
 
 3.    自動產生主機金鑰，或選取現有的憑證。 如果您使用自訂憑證，它應該至少有2048位的 RSA 金鑰、用戶端驗證 EKU 和數位簽章金鑰使用方式。
 
@@ -37,7 +37,7 @@ ms.locfileid: "80856731"
     Set-HgsClientHostKey
     ```
 
-    或者，如果您想要使用自己的憑證，可以指定指紋。 
+    或者，如果您想要使用自己的憑證，可以指定指紋。
     如果您想要跨多部電腦共用憑證，或使用系結至 TPM 或 HSM 的憑證，這會很有用。 以下是建立 TPM 系結憑證的範例（這會使私密金鑰無法被盜用，並在另一部電腦上使用，而且只需要 TPM 1.2）：
 
     ```powershell
@@ -59,13 +59,13 @@ ms.locfileid: "80856731"
 
 ```powershell
 Add-HgsAttestationHostKey -Name MyHost01 -Path "C:\temp\MyHost01-HostKey.cer"
-``` 
+```
 
 ## <a name="next-step"></a>後續步驟
 
 > [!div class="nextstepaction"]
 > [確認主機可以成功證明](guarded-fabric-confirm-hosts-can-attest-successfully.md)
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
-- [為受防護主機和受防護的 Vm 部署主機守護者服務](guarded-fabric-deploying-hgs-overview.md)
+- [部署受防護主機和受防護 VM 的主機守護者服務](guarded-fabric-deploying-hgs-overview.md)

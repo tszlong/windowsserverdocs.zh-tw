@@ -10,16 +10,16 @@ ms.date: 10/11/2017
 ms.assetid: 5e1d7ecc-e22e-467f-8142-bad6d82fc5d0
 description: 討論儲存空間直接存取中的復原選項，包括鏡像和同位。
 ms.localizationpriority: medium
-ms.openlocfilehash: b64592bf3cf5659410dcbbeb4c190d2d6a85485a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 540398e78b35d7cd61464e012d0f3ccfa85d7152
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859011"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475485"
 ---
 # <a name="fault-tolerance-and-storage-efficiency-in-storage-spaces-direct"></a>儲存空間直接存取中的容錯和儲存效率
 
->適用於︰Windows Server 2016
+>適用於：Windows Server 2016
 
 本主題介紹[儲存空間直接存取](storage-spaces-direct-overview.md)中可用的復原選項，並概述各選項的規模需求、儲存效率，以及一般的優點和取捨。 文中也會提供一些使用上的指示供您入門，並且會參考一些可讓您進行深入了解的優質文章、部落格和其他內容。
 
@@ -33,15 +33,15 @@ ms.locfileid: "80859011"
 
 ## <a name="mirroring"></a>鏡像
 
-鏡像會藉由為所有資料保留多個複本來提供容錯。 其行為最像 RAID-1。 資料如何等量分割和放置是相當複雜的 (請參閱[這篇部落格文章](https://blogs.technet.microsoft.com/filecab/2016/11/21/deep-dive-pool-in-spaces-direct/)以深入了解)，但絕對正確的說法是：使用鏡像儲存的任何資料都會完整地撰寫多次。 每個複本都會寫入到應該只會個別發生故障的不同實體硬體 (不同伺服器中的不同磁碟機)。
+鏡像可為所有資料保存多個複本，以提供容錯能力。 其行為最像 RAID-1。 該資料的等量和放置方式並不簡單（請參閱[此 blog](https://blogs.technet.microsoft.com/filecab/2016/11/21/deep-dive-pool-in-spaces-direct/)以深入瞭解），但要說的是，使用鏡像儲存的任何資料，都是以完整、多次寫入。 每個複本會寫入至不同的硬體 (不同伺服器中的不同磁碟機)，而理論上其故障只會單獨發生。
 
 在 Windows Server 2016 中，儲存空間會提供兩種鏡像：「雙向」和「三向」。
 
 ### <a name="two-way-mirror"></a>雙向鏡像
 
-雙向鏡像會為所有內容寫入兩個複本。 其儲存效率是 50%，因此若要撰寫 1 TB 的資料，您會需要至少 2 TB 的實體儲存容量。 同樣地，您也需要至少兩個[硬體「容錯網域」](../../failover-clustering/fault-domains.md)，在使用儲存空間直接存取時，這表示需要兩部伺服器。
+雙向鏡像會為所有內容寫入兩個複本。 其儲存效率是 50%，因此若要撰寫 1 TB 的資料，您會需要至少 2 TB 的實體儲存容量。 同樣地，您至少需要兩個[硬體「容錯網域](../../failover-clustering/fault-domains.md)」–儲存空間直接存取，這表示兩部伺服器。
 
-![two-way-mirror](media/Storage-Spaces-Fault-Tolerance/two-way-mirror-180px.png)
+![雙向鏡像](media/Storage-Spaces-Fault-Tolerance/two-way-mirror-180px.png)
 
    >[!WARNING]
    > 如果您有兩個以上伺服器，建議您改為使用三向鏡像。
@@ -50,13 +50,13 @@ ms.locfileid: "80859011"
 
 三向鏡像會為所有內容寫入三個複本。 其儲存效率是 33.3%，因此若要撰寫 1 TB 的資料，您會需要至少 3 TB 的實體儲存容量。 同樣地，您也需要至少三個硬體「容錯網域」，在使用儲存空間直接存取時，這表示需要三部伺服器。
 
-三向鏡像可安全地[一次容許至少兩個硬體問題（磁碟機或伺服器）](#examples)。 例如，如果您重新開機一部伺服器，同時突然另一部磁碟機或伺服器故障，所有資料會保持安全，持續可供存取。
+三向鏡像一次可以安全地容忍至少[兩個硬體問題（磁片磁碟機或伺服器）](#examples)。 例如，如果您在一個磁碟機或伺服器突然故障時重新啟動另一部伺服器，所有資料都將保有安全性，且持續可供存取。
 
 ![three-way-mirror](media/Storage-Spaces-Fault-Tolerance/three-way-mirror-180px.png)
 
 ## <a name="parity"></a>Parity
 
-同位編碼 (通常稱為「清除編碼」) 會使用位元算術提供容錯，而這會變得[非常複雜](https://www.microsoft.com/research/wp-content/uploads/2016/02/LRC12-cheng20webpage.pdf)。 相較於鏡像，同位的運作方式較不容易理解，但有許多絕佳的線上資源 (例如，這個由第三方提供的[清除編碼傻瓜指南](http://smahesh.com/blog/2012/07/01/dummies-guide-to-erasure-coding/)) 可協助您了解。 可以這麼說，它提供更好的儲存效率，卻又不會犧牲容錯能力。
+同位編碼（通常稱為「抹除編碼」）提供使用位運算的容錯功能，這可能會變[得很複雜](https://www.microsoft.com/research/wp-content/uploads/2016/02/LRC12-cheng20webpage.pdf)。 相較於鏡像，同位的運作方式較不容易理解，但有許多絕佳的線上資源 (例如，這個由第三方提供的[清除編碼傻瓜指南](http://smahesh.com/blog/2012/07/01/dummies-guide-to-erasure-coding/)) 可協助您了解。 可以這麼說，它提供更好的儲存效率，卻又不會犧牲容錯能力。
 
 在 Windows Server 2016 中，儲存空間會提供兩種同位：「單同位」和「雙同位」，後者採用稱為「本機重建程式碼」的較大規模進階技術。
 
@@ -89,7 +89,7 @@ Windows Server 2016 的儲存空間引進了 Microsoft Research 所開發的進
 
 ![local-reconstruction-codes](media/Storage-Spaces-Fault-Tolerance/local-reconstruction-codes-180px.png)
 
-建議您閱讀這篇深入淺出的逐步解說：[本機重建程式碼如何處理各種故障案例，以及它們吸引人的原因](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)，作者是我們公司的 [Claus Joergensen](https://twitter.com/clausjor)。
+我們建議您深入[瞭解如何使用本機重建程式碼來處理各種不同的失敗案例，以及為什麼它們是吸引](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)人的[Claus Joergensen](https://twitter.com/clausjor)。
 
 ## <a name="mirror-accelerated-parity"></a>鏡像加速的同位
 
@@ -102,13 +102,13 @@ Windows Server 2016 的儲存空間引進了 Microsoft Research 所開發的進
 > [!IMPORTANT]
 > 我們建議使用鏡像處理大部分易受效能影響的工作負載。 若要深入了解如何根據您的工作負載來平衡效能與產能，請參閱[規劃磁碟區](plan-volumes.md#choosing-the-resiliency-type)。
 
-## <a name="summary"></a><a name="summary"></a>總計
+## <a name="summary"></a><a name="summary"></a>摘要
 
 本節摘要說明儲存空間直接存取中可用的復原類型、使用各種類型的最小規模需求、每種類型可容許多少故障，以及對應的儲存效率。
 
 ### <a name="resiliency-types"></a>復原類型
 
-|    復原          |    容錯       |    儲存效率      |
+|    災害復原          |    容錯       |    儲存效率      |
 |------------------------|----------------------------|----------------------------|
 |    雙向鏡像      |    1                       |    50.0%                   |
 |    三向鏡像    |    2                       |    33.3%                   |
@@ -117,7 +117,7 @@ Windows Server 2016 的儲存空間引進了 Microsoft Research 所開發的進
 
 ### <a name="minimum-scale-requirements"></a>最小規模需求
 
-|    復原          |    最小必要容錯網域   |
+|    災害復原          |    最小必要容錯網域   |
 |------------------------|-------------------------------------|
 |    雙向鏡像      |    2                                |
 |    三向鏡像    |    3                                |
@@ -125,7 +125,7 @@ Windows Server 2016 的儲存空間引進了 Microsoft Research 所開發的進
 |    Mixed               |    4                                |
 
    >[!TIP]
-   > 除非您使用[底座或機架容錯](../../failover-clustering/fault-domains.md)，否則容錯網域的數目就是指伺服器數目。 只要您符合儲存空間直接存取的最小需求，每部伺服器中的磁碟機數目就不會影響您所能使用的復原類型。 
+   > 除非您使用[底座或機架容錯](../../failover-clustering/fault-domains.md)，否則容錯網域的數目就是指伺服器數目。 只要您符合儲存空間直接存取的最小需求，每部伺服器中的磁碟機數目就不會影響您所能使用的復原類型。
 
 ### <a name="dual-parity-efficiency-for-hybrid-deployments"></a>混合式部署的雙同位效率
 
@@ -205,18 +205,18 @@ Windows Server 2016 的儲存空間引進了 Microsoft Research 所開發的進
 
 ![fault-tolerance-examples-7-and-8](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-78.png)
 
-## <a name="usage"></a>使用方式
+## <a name="usage"></a>使用量
 
 請查看[建立儲存空間直接存取中的磁碟區](create-volumes.md)。
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 下列每個連結都內嵌在本主題的內文中。
 
 - [Windows Server 2016 中的儲存空間直接存取](storage-spaces-direct-overview.md)
 - [Windows Server 2016 中的容錯網域感知](../../failover-clustering/fault-domains.md)
-- [在 Azure 中由 Microsoft Research 進行抹除編碼](https://www.microsoft.com/research/publication/erasure-coding-in-windows-azure-storage/)
-- [本機重建代碼和加速同位磁片區](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)
-- [存放裝置管理 API 中的磁片區](https://blogs.technet.microsoft.com/filecab/2016/08/29/deep-dive-volumes-in-spaces-direct/)
-- [Microsoft Ignite 2016 的儲存體效率示範](https://www.youtube.com/watch?v=-LK2ViRGbWs&t=36m55s)
+- [Microsoft Research 所推出的 Azure 中的清除編碼](https://www.microsoft.com/research/publication/erasure-coding-in-windows-azure-storage/)
+- [本機重建程式碼和加速同位磁碟區](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)
+- [存放管理 API 中的磁碟區](https://blogs.technet.microsoft.com/filecab/2016/08/29/deep-dive-volumes-in-spaces-direct/)
+- [Microsoft Ignite 2016 的儲存效率示範](https://www.youtube.com/watch?v=-LK2ViRGbWs&t=36m55s)
 - [儲存空間直接存取的容量計算機預覽](https://aka.ms/s2dcalc)

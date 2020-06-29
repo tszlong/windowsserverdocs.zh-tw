@@ -9,12 +9,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: a5ca3ab29b83d0cb6cb2d55507471790f65800a2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c6753ae5d767f0c71b86fc47c1d8bf9971a2a5cc
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856721"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475525"
 ---
 # <a name="shielded-vms-for-tenants---creating-a-new-shielded-vm-on-premises-and-moving-it-to-a-guarded-fabric"></a>受防護的租使用者 Vm-在內部部署建立新的受防護 VM，並將其移至受保護的網狀架構
 
@@ -28,13 +28,13 @@ ms.locfileid: "80856721"
 
 1.  開始此程式之前，請確定您是在執行 Windows Server 2016 的 Hyper-v 主機上，且已安裝下列角色和功能：
 
-    - [角色]
+    - 角色
 
         - Hyper-V
 
-    - 功能
+    - 特性
 
-        - 遠端伺服器管理工具\\功能管理工具\\受防護的 VM 工具
+        - 遠端伺服器管理工具 \\ 功能管理工具 \\ 受防護的 VM 工具
 
     > [!NOTE]
     > 此處使用的主機*不*應該是受防護網狀架構中的主機。 這是個別的主機，Vm 會在移至受防護網狀架構之前備妥。
@@ -51,9 +51,9 @@ ms.locfileid: "80856721"
 
 4.  若要匯入在稍後的程式中需要的監護人金鑰，請執行下列命令。
 
-    對於 &lt;路徑&gt;&lt;檔案名&gt;，請以您在上一個步驟中儲存的 XML 檔案的路徑和檔案名取代，例如： **C：\\temp\\GuardianKey .xml**
+    針對 [ &lt; 路徑 &gt; &lt; 檔案名] &gt; ，以您在上一個步驟中儲存之 XML 檔案的路徑和檔案名取代，例如： **C： \\ temp \\GuardianKey.xml**
 
-    針對 &lt;GuardianName&gt;，指定主機服務提供者或企業資料中心的名稱，例如**HostingProvider1**。 記錄下一個程式的名稱。
+    針對 &lt; GuardianName &gt; ，指定主機服務提供者或企業資料中心的名稱，例如**HostingProvider1**。 記錄下一個程式的名稱。
 
     只有在 HGS 伺服器已設定自我簽署憑證時，才包含 **-AllowUntrustedRoot** 。 （這些憑證是 HGS 中的金鑰保護服務的一部分）。
 
@@ -73,11 +73,11 @@ ms.locfileid: "80856721"
 
 1. 在租使用者 Hyper-v 主機上，若要建立新的第2代虛擬機器，請執行下列命令。
 
-   針對 &lt;ShieldedVMname&gt;，指定 VM 的名稱，例如： **ShieldVM1**
-    
-   針對 &lt;VHDPath&gt;，請指定存放 VM VHDX 的位置，例如： **C：\\vm\\ShieldVM1\\ShieldVM1。**
-    
-   針對 &lt;nnGB&gt;，指定 VHDX 的大小，例如： **60GB**
+   針對 &lt; ShieldedVMname &gt; ，指定 VM 的名稱，例如： **ShieldVM1**
+
+   針對 &lt; VHDPath &gt; ，指定要儲存 VM VHDX 的位置，例如： **C： \\ vm \\ ShieldVM1 \\ ShieldVM1 .vhdx。**
+
+   針對 &lt; [nnGB] &gt; ，指定 VHDX 的大小，例如： **60GB**
 
        New-VM -Generation 2 -Name "<ShieldedVMname>" -NewVHDPath <VHDPath>.vhdx -NewVHDSizeBytes <nnGB>
 
@@ -87,7 +87,7 @@ ms.locfileid: "80856721"
 
 4. 若要建立新的金鑰保護裝置（如本節開頭所述），請執行下列命令。
 
-   針對 &lt;GuardianName&gt;，請使用您在上一個程式中指定的名稱，例如： **HostingProvider1**
+   針對 &lt; GuardianName &gt; ，請使用您在上一個程式中指定的名稱，例如： **HostingProvider1**
 
    包含 **-AllowUntrustedRoot**可允許自我簽署憑證。
 
@@ -97,9 +97,9 @@ ms.locfileid: "80856721"
 
        $KP = New-HgsKeyProtector -Owner $Owner -Guardian $Guardian -AllowUntrustedRoot
 
-   如果您想要讓一個以上的資料中心能夠執行受防護的 VM （例如，嚴重損壞修復網站和公用雲端提供者），您可以將一份監護人清單提供給 **-監護人**參數。 如需詳細資訊，請參閱 [HgsKeyProtector] （ https://docs.microsoft.com/powershell/module/hgsclient/new-hgskeyprotector?view=win10-ps。
+   如果您想要讓一個以上的資料中心能夠執行受防護的 VM （例如，嚴重損壞修復網站和公用雲端提供者），您可以將一份監護人清單提供給 **-監護人**參數。 如需詳細資訊，請參閱 [新增-HgsKeyProtector] （ https://docs.microsoft.com/powershell/module/hgsclient/new-hgskeyprotector?view=win10-ps 。
 
-5. 若要使用金鑰保護裝置來啟用 vTPM，請執行下列命令。 針對 &lt;ShieldedVMname&gt;，請使用先前步驟中使用的相同 VM 名稱。
+5. 若要使用金鑰保護裝置來啟用 vTPM，請執行下列命令。 針對 &lt; ShieldedVMname &gt; ，請使用先前步驟中使用的相同 VM 名稱。
 
        $VMName="<ShieldedVMname>"
 
@@ -130,7 +130,7 @@ ms.locfileid: "80856721"
 
     使用 Hyper-v 管理員或 Windows PowerShell 匯入受防護的 VM。 您必須從 VM 擁有者匯入 VM 設定檔，才能啟動 VM。 這是因為金鑰保護裝置和 VM 的虛擬 TPM 會儲存在設定檔中。 如果 VM 設定為在受防護網狀架構上執行，則應該能夠順利啟動。
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
-- [適用于受防護主機和受防護 Vm 的主機服務提供者設定步驟](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
+- [適用於受防護主機和受防護 VM 的託管服務提供者設定步驟](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [受防護網狀架構與受防護的 VM](guarded-fabric-and-shielded-vms-top-node.md)

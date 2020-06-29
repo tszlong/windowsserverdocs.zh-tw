@@ -6,20 +6,20 @@ ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/29/2018
-ms.openlocfilehash: 26454881279e1d33392a827f794788370def2cab
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ce3b32bdb0dfb51237f934f23207167a215a0024
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858971"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475605"
 ---
 # <a name="delimit-the-allocation-of-volumes-in-storage-spaces-direct"></a>分隔儲存空間直接存取中的磁片區配置
-> 適用于： Windows Server 2019
+> 適用於：Windows Server 2019
 
 Windows Server 2019 引進了一個選項，可手動將儲存空間直接存取中的磁片區配置加以分隔。 這麼做可以在某些情況下大幅增加容錯能力，但會強加一些額外的管理考慮和複雜度。 本主題說明其運作方式，並提供 PowerShell 中的範例。
 
    > [!IMPORTANT]
-   > 這是 Windows Server 2019 中的新功能。 它在 Windows Server 2016 中無法使用。 
+   > 這是 Windows Server 2019 中的新功能。 它在 Windows Server 2016 中無法使用。
 
 ## <a name="prerequisites"></a>必要條件
 
@@ -68,13 +68,13 @@ Windows Server 2019 引進了一個選項，可手動將儲存空間直接存取
 
 1. 系統管理員會負責分隔每個磁片區的配置，以平衡伺服器間的儲存使用量，並以[最佳做法](#best-practices)一節中所述的方式來維持高機率的生存率。
 
-2. 使用分隔配置時，**每個伺服器保留一個容量磁片磁碟機的對應項（無最大值）** 。 這不是一般配置的[已發佈建議](plan-volumes.md#choosing-the-size-of-volumes)，會到超出出四個容量磁片磁碟機總計。
+2. 使用分隔配置時，**每個伺服器保留一個容量磁片磁碟機的對應項（無最大值）**。 這不是一般配置的[已發佈建議](plan-volumes.md#choosing-the-size-of-volumes)，會到超出出四個容量磁片磁碟機總計。
 
 3. 如果伺服器失敗且需要取代（如[移除伺服器和其磁片磁碟機](remove-servers.md#remove-a-server-and-its-drives)中所述），系統管理員會負責新增新的伺服器並移除失敗的其中一個範例，以更新受影響的磁片區 delimitation。
 
-## <a name="usage-in-powershell"></a>在 PowerShell 中的使用方式
+## <a name="usage-in-powershell"></a>PowerShell 中的使用方式
 
-您可以使用 `New-Volume` Cmdlet，在儲存空間直接存取中建立磁片區。
+您可以使用 `New-Volume` Cmdlet 在儲存空間直接存取中建立磁片區。
 
 例如，若要建立一般的三向鏡像磁片區：
 
@@ -86,7 +86,7 @@ New-Volume -FriendlyName "MyRegularVolume" -Size 100GB
 
 建立三向鏡像磁片區，並將其配置分隔：
 
-1. 首先，將叢集中的伺服器指派給變數 `$Servers`：
+1. 首先，將您叢集中的伺服器指派給變數 `$Servers` ：
 
     ```PowerShell
     $Servers = Get-StorageFaultDomain -Type StorageScaleUnit | Sort FriendlyName
@@ -95,7 +95,7 @@ New-Volume -FriendlyName "MyRegularVolume" -Size 100GB
    > [!TIP]
    > 在儲存空間直接存取中，「存放裝置縮放單位」一詞指的是連接到一部伺服器的所有原始存放裝置，包括直接連接的磁片磁碟機，以及具有磁片磁碟機的直接連接外部主機殼。 在此內容中，它與「伺服器」相同。
 
-2. 指定要搭配新的 `-StorageFaultDomainsToUse` 參數使用的伺服器，以及編制 `$Servers`的索引。 例如，若要將配置分隔到第一個、第二、第三和第四部伺服器（索引0、1、2和3）：
+2. 指定要搭配新參數使用的伺服器 `-StorageFaultDomainsToUse` ，並藉由編制索引 `$Servers` 。 例如，若要將配置分隔到第一個、第二、第三和第四部伺服器（索引0、1、2和3）：
 
     ```PowerShell
     New-Volume -FriendlyName "MyVolume" -Size 100GB -StorageFaultDomainsToUse $Servers[0,1,2,3]
@@ -103,14 +103,14 @@ New-Volume -FriendlyName "MyRegularVolume" -Size 100GB
 
 ### <a name="see-a-delimited-allocation"></a>查看分隔的配置
 
-若要查看*MyVolume*的配置方式，請使用[附錄](#appendix)中的 `Get-VirtualDiskFootprintBySSU.ps1` 腳本：
+若要查看*MyVolume*的配置方式，請使用 `Get-VirtualDiskFootprintBySSU.ps1` [附錄](#appendix)中的腳本：
 
 ```PowerShell
 PS C:\> .\Get-VirtualDiskFootprintBySSU.ps1
 
 VirtualDiskFriendlyName TotalFootprint Server1 Server2 Server3 Server4 Server5 Server6
 ----------------------- -------------- ------- ------- ------- ------- ------- -------
-MyVolume                300 GB         100 GB  100 GB  100 GB  100 GB  0       0      
+MyVolume                300 GB         100 GB  100 GB  100 GB  100 GB  0       0
 ```
 
 請注意，只有 Server1、Server2、Server3 和伺服器4包含*MyVolume*的 slab。
@@ -139,16 +139,16 @@ MyVolume                300 GB         100 GB  100 GB  100 GB  100 GB  0       0
     Get-StoragePool S2D* | Optimize-StoragePool
     ```
 
-您可以使用 `Get-StorageJob`監視重新平衡的進度。
+您可以使用監視重新平衡的進度 `Get-StorageJob` 。
 
-完成後，請再次執行 `Get-VirtualDiskFootprintBySSU.ps1`，以確認*MyVolume*已移動。
+完成後，請再次執行以確認*MyVolume*已移動 `Get-VirtualDiskFootprintBySSU.ps1` 。
 
 ```PowerShell
 PS C:\> .\Get-VirtualDiskFootprintBySSU.ps1
 
 VirtualDiskFriendlyName TotalFootprint Server1 Server2 Server3 Server4 Server5 Server6
 ----------------------- -------------- ------- ------- ------- ------- ------- -------
-MyVolume                300 GB         0       100 GB  100 GB  100 GB  100 GB  0      
+MyVolume                300 GB         0       100 GB  100 GB  100 GB  100 GB  0
 ```
 
 請注意，Server1 不再包含*MyVolume*的 slab，而是 Server5。
@@ -167,11 +167,11 @@ MyVolume                300 GB         0       100 GB  100 GB  100 GB  100 GB  0
 
 ### <a name="stagger-delimited-allocation-volumes"></a>錯開分隔的配置磁片區
 
-若要最大化容錯，請將每個磁片區的配置設為唯一，這表示它不會與另一個磁片區共用其*所有*伺服器（有一些重迭功能）。 
+若要最大化容錯，請將每個磁片區的配置設為唯一，這表示它不會與另一個磁片區共用其*所有*伺服器（有一些重迭功能）。
 
 例如，在八個節點的系統上：磁片區1：伺服器1、2、3、4磁片區2：伺服器5、6、7、8磁片區3：伺服器3、4、5、6磁片區4：伺服器1、2、7、8
 
-## <a name="analysis"></a>Analysis
+## <a name="analysis"></a>分析
 
 這一節衍生的數學機率，是磁片區保持在線上且可存取的（或同等的整體儲存空間，可維持在線上且可供存取）作為失敗次數和叢集大小的功能。
 
@@ -194,13 +194,13 @@ MyVolume                300 GB         0       100 GB  100 GB  100 GB  100 GB  0
 
 ### <a name="can-i-delimit-some-volumes-but-not-others"></a>我可以分隔某些磁片區，而不是其他磁片區嗎？
 
-是的。 您可以選擇每個磁片區是否要分隔配置。
+是。 您可以選擇每個磁片區是否要分隔配置。
 
 ### <a name="does-delimited-allocation-change-how-drive-replacement-works"></a>分隔配置是否會變更磁片磁碟機更換的運作方式？
 
 否，與一般配置相同。
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 - [儲存空間直接存取總覽](storage-spaces-direct-overview.md)
 - [儲存空間直接存取中的容錯](storage-spaces-fault-tolerance.md)
@@ -209,7 +209,7 @@ MyVolume                300 GB         0       100 GB  100 GB  100 GB  100 GB  0
 
 此腳本可協助您查看磁片區的配置方式。
 
-如以上所述使用它，請複製/貼上並另存為 `Get-VirtualDiskFootprintBySSU.ps1`。
+如以上所述使用它，請複製/貼上並另存新檔 `Get-VirtualDiskFootprintBySSU.ps1` 。
 
 ```PowerShell
 Function ConvertTo-PrettyCapacity {

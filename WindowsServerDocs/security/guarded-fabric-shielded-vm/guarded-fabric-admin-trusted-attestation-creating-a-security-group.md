@@ -8,12 +8,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: b6fac7792b91e7415d0714b43201c404da2155bf
-ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
+ms.openlocfilehash: 84bf134ac5224f224339cc1ec216bded8cbcc792
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83203409"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475675"
 ---
 # <a name="create-a-security-group-for-guarded-hosts-and-register-the-group-with-hgs"></a>建立受防護主機的安全性群組，並向 HGS 註冊群組
 
@@ -56,6 +56,6 @@ ms.locfileid: "83203409"
 > [確認證明](guarded-fabric-confirm-hosts-can-attest-successfully.md)
 
 
-## <a name="see-also"></a>請參閱
+## <a name="additional-references"></a>其他參考
 
 - [部署受防護主機和受防護 VM 的主機守護者服務](guarded-fabric-deploying-hgs-overview.md)

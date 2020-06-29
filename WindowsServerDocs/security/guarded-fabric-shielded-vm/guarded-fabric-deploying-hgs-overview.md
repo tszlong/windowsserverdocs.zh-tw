@@ -8,34 +8,34 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 01/14/2020
-ms.openlocfilehash: a74dd84a0dbefa134a7ead6c9296dd00a38b599e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9244dd8c9a567813c5732571de5dddc42d23be2a
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856761"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475585"
 ---
-# <a name="deploying-the-host-guardian-service"></a>部署主機守護者服務 
+# <a name="deploying-the-host-guardian-service"></a>部署主機守護者服務
 
 >適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
 
 提供裝載環境的其中一個最重要的目標，就是保證在環境中執行之虛擬機器的安全性。 身為雲端服務提供者或企業私人雲端系統管理員，您可以使用受防護網狀架構為 VM 提供更安全的環境。 受防護網狀架構包含一個主機守護者服務 (HGS) (通常是有三個節點的叢集)，加上一或多個受防護的主機，以及一組受防護的虛擬機器 (VM)。
 
-## <a name="video-deploying-a-guarded-fabric"></a>影片：部署受防護網狀架構 
+## <a name="video-deploying-a-guarded-fabric"></a>影片：部署受防護網狀架構
 
 > [!VIDEO https://www.microsoft.com/videoplayer/embed/dcd8e99f-36f1-4bc8-b3d2-9576da38d9f1?autoplay=false]
 
 ## <a name="deployment-tasks-for-guarded-fabrics-and-shielded-vms"></a>受保護網狀架構和受防護 Vm 的部署工作
 
-下表會細分部署受防護網狀架構的工作，並根據不同的系統管理員角色建立受防護的 Vm。 請注意，當 HGS 管理員設定 HGS 與已授權的 Hyper-v 主機時，網狀架構系統管理員會同時收集和提供主機的識別資訊。    
+下表會細分部署受防護網狀架構的工作，並根據不同的系統管理員角色建立受防護的 Vm。 請注意，當 HGS 管理員設定 HGS 與已授權的 Hyper-v 主機時，網狀架構系統管理員會同時收集和提供主機的識別資訊。
 
 |<img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-hgs-administrator-tasks.png" alt="Host Guardian Service administrator tasks" width="238" height="62" align="left" /> | <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-fabric-administrator-tasks.png" alt="Fabric administrator tasks" width="300" height="62" align="left" /> | <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-tenant-administrator-tasks.png" alt="Tenant administrator tasks" width="184" height="66" align="left" /> |
 |-------------------------------------|--------------------------------|-----------------------------------------|
 |（1）[確認 HGS 必要條件](guarded-fabric-prepare-for-hgs.md) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-verify.png" alt="Step 1" hspace="8" align="right" />| | |
-|（2）[設定第一個 HGS&nbsp;節點](guarded-fabric-choose-where-to-install-hgs.md)&nbsp;<img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-configure-first-hgs-node.png" alt="Step 2" hspace="8" align="right" />| | |
-|（3）[設定其他 HGS&nbsp;節點](guarded-fabric-configure-additional-hgs-nodes.md) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-configure-secondary-hgs-nodes.png" alt="Step 3" hspace="8" align="right" />| | |
+|（2）[設定第一個 HGS &nbsp; 節點](guarded-fabric-choose-where-to-install-hgs.md)&nbsp;<img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-configure-first-hgs-node.png" alt="Step 2" hspace="8" align="right" />| | |
+|（3）[設定其他 HGS &nbsp; 節點](guarded-fabric-configure-additional-hgs-nodes.md) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-configure-secondary-hgs-nodes.png" alt="Step 3" hspace="8" align="right" />| | |
 | &nbsp; |（4）[設定網狀架構 DNS](guarded-fabric-configuring-fabric-dns.md) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-configure-fabric-dns.png" alt="Step 4" hspace="8" align="right" />| |
-| &nbsp; |（5）[確認主機&nbsp;必要條件（金鑰）](guarded-fabric-guarded-host-prerequisites.md#host-key-attestation)<br>[確認主機&nbsp;必要條件（TPM）](guarded-fabric-guarded-host-prerequisites.md#tpm-trusted-attestation)<img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-verify.png" alt="Step 5" hspace="8" align="right" />| |
+| &nbsp; |（5）[確認主機 &nbsp; 必要條件（金鑰）](guarded-fabric-guarded-host-prerequisites.md#host-key-attestation)<br>[確認主機 &nbsp; 必要條件（TPM）](guarded-fabric-guarded-host-prerequisites.md#tpm-trusted-attestation)<img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-verify.png" alt="Step 5" hspace="8" align="right" />| |
 |（7）[以主機資訊設定 HGS](guarded-fabric-add-host-information-to-hgs.md) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-configure-hgs-with-host-info.png" alt="Step 7" hspace="8" align="right" />|（6）[建立主機金鑰（索引鍵）](guarded-fabric-create-host-key.md)<br>[收集主機資訊（TPM）](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-collect-info-from-hosts.png" alt="Step 6" hspace="8" align="right" />| |
 | &nbsp; |（8）[確認主機可以證明](guarded-fabric-confirm-hosts-can-attest-successfully.md) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-confirm-hosts-attest.png" alt="Step 8" hspace="8" align="right" />| |
 | &nbsp; |（9）[設定 VMM （選擇性）](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-overview) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-configure-vmm.png" alt="Step 9" hspace="8" align="right" />| |
@@ -46,6 +46,6 @@ ms.locfileid: "80856761"
 | &nbsp; | &nbsp; |（14）[使用 Windows Azure 套件建立受防護的 vm](guarded-fabric-shielded-vm-windows-azure-pack.md) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-shielded-vms.png" alt="Step 14" hspace="8" align="right" /><br>[使用 VMM 建立受防護的 Vm](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-vms) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-shielded-vms.png" alt="Step 15" hspace="8" align="right" />|
 
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 - [受防護網狀架構與受防護的 VM](guarded-fabric-and-shielded-vms-top-node.md)

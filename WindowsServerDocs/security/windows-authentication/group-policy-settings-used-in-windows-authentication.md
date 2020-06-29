@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 7acd7439ec2e0382f1e2c725d66363e6b3a50b40
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d5268a5d95dd99bade89015863ea3eadf1b7913a
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857571"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475505"
 ---
 # <a name="group-policy-settings-used-in-windows-authentication"></a>Windows 驗證中使用的群組原則設定
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 這個適用于 IT 專業人員的參考主題說明驗證程式中群組原則設定的使用與影響。
 
@@ -39,7 +39,7 @@ ms.locfileid: "80857571"
 
 下表列出與驗證相關的原則群組，並提供可協助您設定這些原則的檔連結。
 
-|原則群組|位置|描述|
+|原則群組|Location|描述|
 |--------|------|--------|
 |**密碼原則**|本機電腦原則配置 \Windows \Windows \ 原則|密碼原則會影響密碼的特性和行為。 密碼原則會用於網域帳戶或本機使用者帳戶。 它們會決定密碼的設定，例如強制和存留期。<p>如需特定設定的詳細資訊，請參閱[密碼原則](https://technet.microsoft.com/itpro/windows/keep-secure/password-policy)。|
 |**帳戶鎖定原則**|本機電腦原則配置 \Windows \Windows \ 原則|帳戶鎖定原則選項會在設定的登入嘗試失敗次數後停用帳戶。 使用這些選項可協助您偵測及封鎖中斷密碼的嘗試。<p>如需帳戶鎖定原則選項的詳細資訊，請參閱[帳戶鎖定原則](https://technet.microsoft.com/itpro/windows/keep-secure/account-lockout-policy)。|
@@ -49,18 +49,18 @@ ms.locfileid: "80857571"
 |**安全性選項**|本機電腦原則配置 \Windows \ 原則 \ 安全性選項|與驗證相關的原則包括：<p>-裝置<br />-網域控制站<br />-網域成員<br />-互動式登入<br />-Microsoft network server<br />-網路存取<br />-網路安全性<br />-修復主控台<br />-關機<p>|
 |**認證委派**|電腦建構管理的 Templates\System\Credentials 委派|認證的委派是一種機制，可讓您在其他系統上使用本機認證，尤其是網域內的成員伺服器和網域控制站。 這些設定會套用到應用程式，方法是使用認證安全性支援提供者（Credential SSP）。 遠端桌面連線是一個範例。|
 |**KDC**|電腦管理的 Templates\System\KDC|這些原則設定會影響金鑰發佈中心（KDC）（這是網域控制站上的服務）處理 Kerberos 驗證要求的方式。|
-|**V5**|電腦管理的 Templates\System\Kerberos|這些原則設定會影響 Kerberos 的設定方式，以處理對宣告、Kerberos 防護、複合驗證、識別 proxy 伺服器及其他設定的支援。|
+|**Kerberos**|電腦管理的 Templates\System\Kerberos|這些原則設定會影響 Kerberos 的設定方式，以處理對宣告、Kerberos 防護、複合驗證、識別 proxy 伺服器及其他設定的支援。|
 |**登入**|電腦設定\系統管理範本\系統\登入|這些原則設定可控制系統如何呈現使用者的登入體驗。|
 |**Net Logon**|電腦建構管理的 Templates\System\Net 登入|這些原則設定可控制系統處理網路登入要求的方式，包括網域控制站定位器的行為。<p>如需網域控制站定位程式如何融入複寫程式的詳細資訊，請參閱[瞭解網站間](https://technet.microsoft.com/library/cc771251.aspx)的複寫。|
-|**指標**|電腦管理範本 \Windows Components\Biometrics|這些原則設定通常會允許或拒絕使用生物識別做為驗證方法。<p>如需有關生物識別的 Windows 實施的詳細資訊，請參閱 Windows 生物特徵辨識架構總覽。|
+|**生物特徵辨識**|電腦管理範本 \Windows Components\Biometrics|這些原則設定通常會允許或拒絕使用生物識別做為驗證方法。<p>如需有關生物識別的 Windows 實施的詳細資訊，請參閱 Windows 生物特徵辨識架構總覽。|
 |**認證使用者介面**|電腦管理元件範本 Components\Credential 使用者介面|這些原則設定可控制在進入點時如何管理認證。|
-|**密碼同步處理**|電腦管理元件範本 Components\Password 同步處理|這些原則設定會決定系統如何管理 Windows 與 UNIX 作業系統之間的密碼同步處理。<p>如需詳細資訊，請參閱[密碼同步](https://technet.microsoft.com/library/cc732609.aspx)處理。|
+|**密碼同步**|電腦管理元件範本 Components\Password 同步處理|這些原則設定會決定系統如何管理 Windows 與 UNIX 作業系統之間的密碼同步處理。<p>如需詳細資訊，請參閱[密碼同步](https://technet.microsoft.com/library/cc732609.aspx)處理。|
 |**智慧卡**|電腦管理元件範本 Components\Smart 卡|這些原則設定會控制系統管理智慧卡登入的方式。<p>|
 |**Windows 登入選項**|電腦建構管理範本 \windows 登入選項|這些原則設定可控制登入機會的時機與方式。|
 |**Ctrl + Alt + Del 選項**|電腦管理元件範本 Components\Ctrl + Alt + Del 選項|這些原則設定會影響登入 UI （安全桌面）上功能的外觀和可存取性，例如工作管理員和電腦的鍵盤鎖定。|
 |**登入**|電腦管理範本 \Windows Components\Logon|這些原則設定會決定使用者登入時是否可以執行哪些處理常式。|
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 [Windows 驗證技術概觀](windows-authentication-technical-overview.md)
 
 
