@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: d3500f4ea4fc264f3cb663f17c3a50439b9cb454
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 94d1b75bba4edac5ad8df80adb13d95a7b8dec39
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394258"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474155"
 ---
 # <a name="configure-storage-reports"></a>設定存放裝置報告
 
-> 適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用於：Windows Server (半年度管道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 您可以設定存放裝置報告的預設參數。 這些預設參數會用於發生配額或檔案檢測事件時所產生的事件報告， 也會用於排程報告及隨選報告，您可以在定義這些報告的特定屬性時覆寫預設參數。
 
@@ -26,21 +26,21 @@ ms.locfileid: "71394258"
 
 ## <a name="to-configure-the-default-parameters-for-storage-reports"></a>若要設定存放裝置報告的預設參數
 
-1. 在主控台樹狀目錄中，以滑鼠右鍵按一下 **\[檔案伺服器資源管理員\]** ，然後按一下 **\[設定選項\]** 。 [檔案伺服器資源管理員選項] 對話方塊隨即開啟。
+1. 在主控台樹狀目錄中，以滑鼠右鍵按一下 **\[檔案伺服器資源管理員\]**，然後按一下 **\[設定選項\]**。 [檔案伺服器資源管理員選項]**** 對話方塊隨即開啟。
 
 2. 在 **\[存放裝置報告\]** 索引標籤的 **\[設定預設參數\]** 中，選取您要修改之報告的類型。
 
-3. 按一下 **\[編輯參數\]** 。
+3. 按一下 [**編輯參數**]。
 
-4. 視您選取的報告類型而定，可供編輯的報告參數會有所不同。 執行所有必要的修改，然後按一下 **\[確定\]** ，將這些參數儲存為該種類型報告的預設參數。
+4. 視您選取的報告類型而定，可供編輯的報告參數會有所不同。 執行所有必要的修改，然後按一下 **\[確定\]**，將這些參數儲存為該種類型報告的預設參數。
 
 5.  針對您要編輯的每個報告類型重複步驟 2 至 4。
 
-6. 若要查看所有報告的預設參數清單，請按一下 **\[檢閱報告\]** 。 然後按一下 [關閉]。
+6. 若要查看所有報告的預設參數清單，請按一下 **\[檢閱報告\]**。 然後按一下 [關閉]****。
 
-7.  按一下 [確定]。
+7.  按一下 [確定]****。
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 -   [設定檔案伺服器資源管理員選項](setting-file-server-resource-manager-options.md)
 -   [存放裝置報告管理](storage-reports-management.md)

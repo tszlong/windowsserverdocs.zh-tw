@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 246df5b13a1dbea614886ab7fe445dd448ae1763
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7f011bc12c26567ed3a0e912dca3c3a8de9bfff9
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402172"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474925"
 ---
 # <a name="enable-access-based-enumeration-on-a-namespace"></a>在命名空間上啟用存取型列舉
 
@@ -21,12 +21,12 @@ ms.locfileid: "71402172"
 
 存取型列舉可以隱藏使用者沒有存取權限的檔案和資料夾。 預設情況下不會為 DFS 命名空間啟用此功能。 您可以使用 DFS 管理來啟用 DFS 資料夾的存取型列舉。 若要控制資料夾目標中檔案和資料夾的存取型列舉，您必須使用 \[共用與存放管理\]，在每個共用資料夾上啟用存取型列舉。
 
-若要在命名空間上啟用以存取為基礎的列舉，所有命名空間伺服器都必須執行 Windows Server 2008 或更新版本。 此外，網域型命名空間必須使用 Windows Server 2008 模式。 如需 Windows Server 2008 模式需求的相關資訊，請參閱[選擇命名空間類型](choose-a-namespace-type.md)。
+若要在命名空間上啟用存取型列舉，所有命名空間伺服器都必須執行 Windows Server 2008 或更新版本。 此外，網域型命名空間也必須使用 Windows Server 2008 模式。 如需 Windows Server 2008 模式的需求相關資訊，請參閱[選擇命名空間類型](choose-a-namespace-type.md)。
 
 在某些環境中，啟用存取型列舉可能會造成伺服器上 CPU 使用率偏高並減緩使用者的回應時間。
 
 > [!NOTE]
-> 如果您將網域功能等級升級為 Windows Server 2008，但有現有的網域型命名空間，則 DFS 管理可讓您在這些命名空間上啟用以存取為基礎的列舉。 不過，除非您將命名空間遷移至 Windows Server 2008 模式，否則將無法編輯從任何群組或使用者隱藏資料夾的許可權。 如需詳細資訊，請參閱[將網域型命名空間移轉到 Windows Server 2008 模式](migrate-a-domain-based-namespace-to-windows-server-2008-mode.md)。
+> 如果您將網域功能升級到 Windows Server 2008 時仍有現有的網域型命名空間，DFS 管理可讓您在這些命名空間上啟用存取型列舉。 不過，您將無法編輯權限來向任何群組或使用者隱藏資料夾，除非您將命名空間移轉至 Windows Server 2008 模式。 如需詳細資訊，請參閱[將網域型命名空間移轉到 Windows Server 2008 模式](migrate-a-domain-based-namespace-to-windows-server-2008-mode.md)。
 
 
 若要在 DFS 命名空間上使用存取型列舉，您必須執行下列步驟：
@@ -43,17 +43,17 @@ ms.locfileid: "71402172"
 
 ## <a name="to-enable-access-based-enumeration-by-using-the-windows-interface"></a>若要使用 Windows 介面啟用存取型列舉
 
-1.  在主控台樹狀目錄的 **\[命名空間\]** 節點下，於適當的命名空間上按一下滑鼠右鍵，再按一下 **\[內容\]** 。
+1.  在主控台樹狀目錄的 **\[命名空間\]** 節點下，於適當的命名空間上按一下滑鼠右鍵，再按一下 **\[內容\]**。
 
 2.  按一下 **\[進階\]** 索引標籤，然後選取 **\[啟用此命名空間的存取型列舉\]** 核取方塊。
 
 ## <a name="to-enable-access-based-enumeration-by-using-a-command-line"></a>若要使用命令列啟用存取型列舉
 
-1.  在具有 **\[分散式檔案系統\]** 角色服務或已安裝 **\[分散式檔案系統工具\]** 功能的伺服器上，開啟命令提示字元視窗。
+1.  在已安裝 [**分散式檔案系統**角色服務] 或 [**分散式檔案系統工具**] 功能的伺服器上，開啟 [命令提示字元] 視窗。
 
-2.  輸入下列命令，其中 *< 命名空間\_root >* 是命名空間的根目錄：
+2.  輸入下列命令，其中 *<命名空間 \_ 根>* 是命名空間的根目錄：
 
-    ```  
+    ```
     dfsutil property abe enable \\ <namespace_root>
     ```
 
@@ -64,13 +64,13 @@ ms.locfileid: "71402172"
 
 ## <a name="to-control-folder-visibility-by-using-the-windows-interface"></a>若要使用 Windows 介面控制資料夾可見性
 
-1.  在主控台的 **\[命名空間\]** 節點下方，找到您要控制可見性的含目標資料夾，以滑鼠右鍵按一下它，然後按一下 **\[屬性\]** 。
+1.  在主控台的 **\[命名空間\]** 節點下方，找到您要控制可見性的含目標資料夾，以滑鼠右鍵按一下它，然後按一下 **\[屬性\]**。
 
 2.  按一下 [**進階**] 索引標籤。
 
-3.  按一下 **\[設定 DFS 資料夾的明確檢視權限]** ，然後按一下 **\[設定檢視權限\]** 。
+3.  按一下 **\[設定 DFS 資料夾的明確檢視權限]**，然後按一下 **\[設定檢視權限\]**。
 
-4.  按一下 **\[新增\]** 或 **\[移除\]** ，新增或移除群組或使用者。
+4.  按一下 **\[新增\]** 或 **\[移除\]**，新增或移除群組或使用者。
 
 5.  若要允許使用者查看 DFS 資料夾，請選取群組或使用者，然後選取 **\[允許\]** 核取方塊。
 
@@ -80,16 +80,16 @@ ms.locfileid: "71402172"
 
 1. 在具有 **\[分散式檔案系統\]** 角色服務或已安裝 **\[分散式檔案系統工具\]** 功能的伺服器上，開啟命令提示字元視窗。
 
-2. 輸入下列命令，其中 *&lt;DFSPath&gt;* 是 DFS 資料夾（連結）的路徑， *< 網域\\帳戶 >* 是群組或使用者帳戶的名稱，而 *（...）* 會取代為其他存取控制專案（ace）：
+2. 輸入下列命令，其中* &lt; DFSPath &gt; *是 DFS 資料夾（連結）的路徑， *<網域 \\ 帳戶>* 是群組或使用者帳戶的名稱，而 *（...）* 會取代為其他存取控制專案（ace）：
 
    ```
    dfsutil property sd grant <DFSPath> DOMAIN\Account:R (...) Protect Replace
    ```
 
-   例如，若要以允許 Domain Admins 和 CONTOSO\\講師群組的許可權來取代現有許可權 \\office\public\training 資料夾的讀取（R）存取權，請輸入下列命令：
+   例如，若要以允許 Domain Admins 和 CONTOSO \\ 講師群組讀取（R）存取 office\public\training 資料夾的許可權來取代現有許可權 \\ ，請輸入下列命令：
 
    ```
-   dfsutil property sd grant \\contoso.office\public\training "CONTOSO\Domain Admins":R CONTOSO\Trainers:R Protect Replace 
+   dfsutil property sd grant \\contoso.office\public\training "CONTOSO\Domain Admins":R CONTOSO\Trainers:R Protect Replace
    ```
 
 3. 若要從命令提示字元執行其他工作，請使用下列命令：
@@ -97,11 +97,11 @@ ms.locfileid: "71402172"
 
 | 命令 | 描述 |
 |---|---|
-|[Dfsutil 屬性 sd deny](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)|拒絕群組或使用者檢視資料夾的能力。|
-|[Dfsutil 屬性 sd reset](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx) |移除資料夾的所有權限。|
-|[Dfsutil 屬性 sd revoke](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)| 從資料夾移除群組或使用者 ACE。 |
+|[Dfsutil property sd deny](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)|拒絕群組或使用者檢視資料夾的能力。|
+|[Dfsutil property sd reset](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx) |移除資料夾的所有權限。|
+|[Dfsutil property sd revoke](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)| 從資料夾移除群組或使用者 ACE。 |
 
-## <a name="see-also"></a>請參閱
+## <a name="additional-references"></a>其他參考
 
 -   [建立 DFS 命名空間](create-a-dfs-namespace.md)
 -   [委派 DFS 命名空間的管理權限](delegate-management-permissions-for-dfs-namespaces.md)

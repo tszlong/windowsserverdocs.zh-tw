@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: facc816ef46ebeadb30ccabac9c0b3e6a896264d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1411f312def0da79de4c18d6d652e0223ea27b48
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856961"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474445"
 ---
-# <a name="what39s-new-for-managed-service-accounts"></a>受&#39;管理的服務帳戶的新功能
+# <a name="what39s-new-for-managed-service-accounts"></a>受管理的服務帳戶的新功能&#39;
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 本主題適用于 IT 專業人員，說明在 Windows Server 2012 和 Windows 8 中引進群組受管理的服務帳戶（gMSA）時，受管理的服務帳戶的功能變更。
 
@@ -47,12 +47,12 @@ ms.locfileid: "80856961"
 ### <a name="removed-or-deprecated-functionality"></a><a name="interoperability"></a>已移除或過時的功能
 對於 Windows Server 2012，Windows PowerShell Cmdlet 預設為管理群組受管理的服務帳戶，而不是伺服器受管理的服務帳戶。
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
--   [群組受管理的服務帳戶總覽](group-managed-service-accounts-overview.md)
+-   [群組受管理的服務帳戶概觀](group-managed-service-accounts-overview.md) \(機器翻譯\)
 
 -   [Active Directory Domain Services 概觀](active-directory-domain-services-overview.md)
 
--   [受管理的服務帳戶：瞭解、實施、最佳作法和疑難排解](https://blogs.technet.com/b/askds/archive/20../managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)
+-   [受管理的服務帳戶了解、實作、最佳做法以及疑難排解](https://blogs.technet.com/b/askds/archive/20../managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)
 
 

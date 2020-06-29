@@ -8,12 +8,12 @@ ms.author: jol
 ms.date: 03/01/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 6795464bfbadd12fc220e941ad2175eb83d0f050
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 71e45622292f7393b19978ec3235492c5065a8a1
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322860"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474025"
 ---
 # <a name="manage-hyper-converged-infrastructure-with-windows-admin-center"></a>使用 Windows 管理中心管理超融合式基礎結構
 
@@ -35,7 +35,7 @@ ms.locfileid: "79322860"
 
 ![超交集叢集儀表板](../media/manage-hyper-converged/hci-dashboard-v1809.png)
 
-## <a name="key-features"></a>重要功能
+## <a name="key-features"></a>主要功能
 
 適用于超融合式基礎結構的 Windows 系統管理中心重點包括：
 
@@ -46,7 +46,7 @@ ms.locfileid: "79322860"
 
 適用于超融合基礎結構的 Windows 系統管理中心正由 Microsoft 積極開發。 它會接收經常更新，以改善現有的功能並新增功能。
 
-## <a name="before-you-start"></a>開始之前
+## <a name="before-you-start"></a>在您開始使用 Intune 之前
 
 若要在 Windows 管理中心將您的叢集管理為超融合式基礎結構，它必須執行 Windows Server 2016 或 Windows Server 2019，並啟用 Hyper-v 和儲存空間直接存取。 此外，它也可以透過 Windows 管理中心啟用並管理軟體定義的網路功能。
 
@@ -57,7 +57,7 @@ ms.locfileid: "79322860"
 
 超融合式基礎結構的 Windows 系統管理中心取決於 Windows Server 2016 發行後新增的管理 Api。 您必須先執行下列兩個步驟，才能使用 Windows 管理中心管理 Windows Server 2016 叢集：
 
-1. 請確認叢集中的每部伺服器都已安裝[Windows server 2016 （KB4103723）](https://support.microsoft.com/help/4103723/windows-10-update-kb4103723)或更新版本的2018-05 累積更新。 若要下載並安裝此更新，請移至 [**設定**] > **更新 & 安全性** > **Windows Update** ，然後選取 [**從線上檢查來自 Microsoft Update 的更新**]。
+1. 請確認叢集中的每部伺服器都已安裝[Windows server 2016 （KB4103723）](https://support.microsoft.com/help/4103723/windows-10-update-kb4103723)或更新版本的2018-05 累積更新。 若要下載並安裝此更新，請移至 [**設定**] [更新] [  >  **& 安全性**  >  **Windows Update** ]，然後選取 [**線上檢查來自 Microsoft Update 的更新**]
 2. 以系統管理員身分在叢集上執行下列 PowerShell Cmdlet：
 
 ```powershell
@@ -76,7 +76,7 @@ ms.locfileid: "79322860"
 您可以使用下列步驟，將執行 Windows Server 2016 或2019的超融合式基礎結構設定為使用軟體定義網路功能（SDN）：
 
 1. 準備 OS 的 VHD，這是您在超融合式基礎結構主機上安裝的相同作業系統。 此 VHD 將用於所有 NC/SLB/GW Vm。
-2. 從[https://github.com/Microsoft/SDN/tree/master/SDNExpress](https://github.com/Microsoft/SDN/tree/master/SDNExpress)下載 SDN Express 下的所有資料夾和檔案。
+2. 從下載 SDN Express 底下的所有資料夾和檔案 [https://github.com/Microsoft/SDN/tree/master/SDNExpress](https://github.com/Microsoft/SDN/tree/master/SDNExpress) 。
 3. 使用部署主控台準備不同的 VM。 此 VM 應該能夠存取 SDN 主機。 此外，VM 應已安裝 RSAT Hyper-v 工具。
 4. 將您為 SDN Express 下載的所有內容複寫到部署主控台 VM。 並共用此**SDNExpress**資料夾。 請確定每個主機都可以存取**SDNExpress**共用資料夾，如設定檔行8中所定義：
    ```
@@ -87,7 +87,7 @@ ms.locfileid: "79322860"
 7. 以系統管理員許可權執行 PowerShell 以部署 SDN：
 
 ```powershell
-    .\SDNExpress.ps1 -ConfigurationDataFile .\your_fabricconfig.PSD1 -verbose 
+    .\SDNExpress.ps1 -ConfigurationDataFile .\your_fabricconfig.PSD1 -verbose
 ```
 
 部署大約需要30–45分鐘的時間。
@@ -135,7 +135,7 @@ ms.locfileid: "79322860"
 
 ### <a name="are-there-differences-between-managing-windows-server-2016-and-windows-server-2019"></a>管理 Windows Server 2016 和 Windows Server 2019 有何差異？
 
-是的。 適用于超融合基礎結構的 Windows 系統管理中心會接收經常更新，以改善 Windows Server 2016 和 Windows Server 2019 的體驗。 不過，某些新功能僅適用于 Windows Server 2019 –例如，用於重復資料刪除和壓縮的切換參數。
+是。 適用于超融合基礎結構的 Windows 系統管理中心會接收經常更新，以改善 Windows Server 2016 和 Windows Server 2019 的體驗。 不過，某些新功能僅適用于 Windows Server 2019 –例如，用於重復資料刪除和壓縮的切換參數。
 
 ### <a name="can-i-use-windows-admin-center-to-manage-storage-spaces-direct-for-other-use-cases-not-hyper-converged-such-as-converged-scale-out-file-server-sofs-or-microsoft-sql-server"></a>我可以使用 Windows 系統管理中心來管理其他使用案例（非超融合式）的儲存空間直接存取，例如交集向外延展檔案伺服器（SoFS）或 Microsoft SQL Server？
 
@@ -161,15 +161,15 @@ Windows Admin Center 除了 Windows 本身以外，不需另付費用。
 
 ### <a name="does-windows-admin-center-require-system-center"></a>Windows Admin Center 是否需要 System Center？
 
-No。
+不可以。
 
 ### <a name="does-it-require-an-internet-connection"></a>是否需要網際網路連線？
 
-No。
+否。
 
 雖然 Windows 系統管理中心提供與 Microsoft Azure 雲端的強大且便利的整合，但超融合基礎結構的核心管理和監視體驗完全在內部部署。 可以在沒有網際網路連線的情況下安裝及使用。
 
-## <a name="things-to-try"></a>要嘗試的事項
+## <a name="things-to-try"></a>可以嘗試的方法
 
 如果您剛開始使用，以下是一些快速教學課程，可協助您瞭解適用于超融合式基礎結構的 Windows 系統管理中心如何組織和運作。 請執行良好的 judgement，並小心使用生產環境。 這些影片已記錄在 Windows 管理中心1804版和 Windows Server 2019 的 Insider preview 組建中。
 
@@ -187,17 +187,17 @@ No。
 <table>
     <tr style="border: 0;">
         <td style="padding: 5px; border: 0;">
-            <strong>建立磁片區、三向鏡像</strong>
+            <strong>建立磁片區，三向鏡像</strong>
             <iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/o66etKq70N8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
         </td>
         <td style="padding: 5px; border: 0;">
-            <strong>建立磁片區、鏡像加速同位</strong>
+            <strong>建立磁片區，鏡像加速同位</strong>
             <iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/R72QHudqWpE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
         </td>
     </tr>
     <tr style="border: 0;">
         <td style="padding: 5px; border: 0;">
-            <strong>開啟磁片區並新增</strong>檔案
+            <strong>開啟磁片區並新增檔案</strong>
             <iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/j59z7ulohs4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
         </td>
         <td style="padding: 5px; border: 0;">
@@ -207,11 +207,11 @@ No。
     </tr>
     <tr style="border: 0;">
         <td style="padding: 5px; border: 0;">
-            <strong>展開磁片</strong>區
+            <strong>展開磁片區</strong>
             <iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/hqyBzipBoTI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
         </td>
         <td style="padding: 5px; border: 0;">
-            <strong>刪除磁片</strong>區
+            <strong>刪除磁片區</strong>
             <iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/DbjF8r2F6Jo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
         </td>
     </tr>
@@ -223,11 +223,11 @@ No。
 2. 在 [虛擬機器] 工具的頂端，選擇 [**清查**] 索引標籤，然後按一下 [**新增**] 以建立新的虛擬機器。
 3. 輸入虛擬機器名稱，然後選擇 [第1代] 和 [2 部] 虛擬機器。
 4. 您可以接著選擇要一開始建立虛擬機器的主機，或使用建議的主機。
-5. 選擇虛擬機器檔案的路徑。 從下拉式清單中選擇磁片區，或按一下 **[流覽]** 以選擇使用資料夾選擇器的資料夾。 虛擬機器組態檔和虛擬硬碟檔案會儲存在所選磁片區或路徑的 `\Hyper-V\[virtual machine name]` 路徑底下的單一資料夾中。
+5. 選擇虛擬機器檔案的路徑。 從下拉式清單中選擇磁片區，或按一下 **[流覽]** 以選擇使用資料夾選擇器的資料夾。 虛擬機器組態檔和虛擬硬碟檔案會儲存在 `\Hyper-V\[virtual machine name]` 所選磁片區或路徑路徑底下的單一資料夾中。
 6. 選擇虛擬處理器數目，不論您是否要啟用嵌套虛擬化、設定記憶體設定、網路介面卡、虛擬硬碟，以及選擇要從 .iso 映像檔案或從網路安裝作業系統。
-7. 按一下 [建立]，建立虛擬機器。
+7. 按一下 [建立]****，建立虛擬機器。
 8. 一旦建立虛擬機器並出現在虛擬機器清單中，您就可以啟動虛擬機器。
-9. 虛擬機器啟動之後，您可以透過 VMConnect 連線至虛擬機器的主控台，以安裝作業系統。 從清單中選取虛擬機器，按一下 [**更多** > **連接]** 以下載 .rdp 檔案。 在遠端桌面連線應用程式中開啟 .rdp 檔案。 因為這是連接到虛擬機器的主控台，所以您必須輸入 Hyper-v 主機的系統管理員認證。
+9. 虛擬機器啟動之後，您可以透過 VMConnect 連線至虛擬機器的主控台，以安裝作業系統。 從清單中選取虛擬機器，按一下 [**更多**  >  **連接]** 以下載 .rdp 檔案。 在遠端桌面連線應用程式中開啟 .rdp 檔案。 因為這是連接到虛擬機器的主控台，所以您必須輸入 Hyper-v 主機的系統管理員認證。
 
 [深入瞭解 Windows 管理中心的虛擬機器管理](manage-virtual-machines.md)。
 
@@ -238,7 +238,7 @@ No。
 3. 按一下伺服器的名稱以開啟 [**伺服器**詳細資料] 頁面，即可加以選取。
 4. 按一下 [**暫停伺服器以進行維護**]。 如果可以安全地繼續進行，這會將虛擬機器移至叢集中的其他伺服器。 當此情況發生時，伺服器將會清空狀態。 如有需要，您可以觀賞虛擬機器在 [ **> 清查的虛擬機器**] 頁面上移動，其中的主機伺服器會清楚地顯示在方格中。 當所有虛擬機器都移動之後，伺服器狀態將會是 [已**暫停**]。
 5. 按一下 [**管理伺服器**] 以存取 Windows 系統管理中心內的所有伺服器管理工具。
-6. 依序按一下 [**重新開機** **] 和 [是]** 。 您將會回到 [連接] 清單。
+6. 依序按一下 [**重新開機** **] 和 [是]**。 您將會回到 [連接] 清單。
 7. 回到**儀表板**上，伺服器在關閉時，會以紅色標示。
 8. 備份之後，再次流覽**伺服器**頁面，然後按一下 [**從維護繼續伺服器**]，將伺服器狀態設定回簡單的。 虛擬機器會在時間內返回，使用者不必採取任何動作。
 
@@ -278,15 +278,15 @@ No。
 
 ![監視 SDN 基礎結構](../media/manage-hyper-converged/sdn-monitoring.png)
 
-## <a name="feedback"></a>意見
+## <a name="feedback"></a>意見反應
 
 這就是您的意見反應！ 經常更新最重要的好處，就是知道有哪些功能，以及需要改進的功能。 以下是讓我們知道您所想要的一些方法：
 
 - [在 UserVoice 上提交和投票功能要求](https://windowsserver.uservoice.com/forums/295071/category/319162?query=%5Bhci%5D)
 - [加入 Microsoft Tech 社區的 Windows 管理中心論壇](https://techcommunity.microsoft.com/t5/Windows-Server-Management/bd-p/WindowsServerManagement)
-- 推文至 `@servermgmt`
+- 推文至`@servermgmt`
 
-### <a name="see-also"></a>另請參閱
+### <a name="additional-references"></a>其他參考
 
 - [Windows Admin Center](../overview.md)
 - [儲存空間直接存取](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)

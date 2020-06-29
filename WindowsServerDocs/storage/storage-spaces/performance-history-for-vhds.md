@@ -7,16 +7,16 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 02/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d917c2d75c1e4078438b94e8aa4a6f921019af5a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 18694975e48d199f2f690aebe8af2a4613a4b1f0
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856161"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474705"
 ---
 # <a name="performance-history-for-virtual-hard-disks"></a>虛擬硬碟的效能歷程記錄
 
-> 適用于： Windows Server 2019
+> 適用於：Windows Server 2019
 
 [儲存空間直接存取的效能歷程記錄](performance-history.md)的子主題會詳細說明針對虛擬硬碟（VHD）檔案收集的效能歷程記錄。 效能歷程記錄適用于連接至執行中叢集虛擬機器的每個 VHD。 效能歷程記錄適用于 VHD 和 VHDX 格式，但不適用於共用 VHDX 檔案。
 
@@ -55,7 +55,7 @@ ms.locfileid: "80856161"
 
 ## <a name="where-they-come-from"></a>來自何處
 
-`iops.*`、`throughput.*`和 `latency.*` 系列是從執行虛擬機器的伺服器上的 `Hyper-V Virtual Storage Device` 效能計數器集合中收集而來，每個 VHD 或 VHDX 都有一個實例。
+`iops.*`、 `throughput.*` 和 `latency.*` 系列是從執行 `Hyper-V Virtual Storage Device` 虛擬機器的伺服器上的效能計數器集合收集而來，每個 VHD 或 VHDX 一個實例。
 
 | 數列                    | 來源計數器         |
 |---------------------------|------------------------|
@@ -68,9 +68,9 @@ ms.locfileid: "80856161"
 | `vhd.latency.average`     | `Latency`              |
 
    > [!NOTE]
-   > 計數器是以整個間隔來測量，而不是取樣。 例如，如果 VHD 在9秒內處於非使用中狀態，但在第10秒內完成30個 Io，則在此10秒的間隔期間，其 `vhd.iops.total` 會平均記錄為每秒3個 Io。 這可確保其效能歷程會捕捉所有活動，而且健全于雜訊。
+   > 計數器是以整個間隔來測量，而不是取樣。 例如，如果 VHD 處於非使用中狀態9秒，但在第10秒內完成30個 Io，則在 `vhd.iops.total` 此10秒的間隔期間，將會平均將其記錄為每秒3個 io。 這可確保其效能歷程會捕捉所有活動，而且健全于雜訊。
 
-## <a name="usage-in-powershell"></a>在 PowerShell 中的使用方式
+## <a name="usage-in-powershell"></a>PowerShell 中的使用方式
 
 使用[Get-VHD](https://docs.microsoft.com/powershell/module/hyper-v/get-vhd) Cmdlet：
 
@@ -87,6 +87,6 @@ Get-VHD <Path> | Get-ClusterPerf
    > [!NOTE]
    > 取得 VHD Cmdlet 需要提供檔案路徑。 它不支援列舉。
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 - [儲存空間直接存取的效能歷程記錄](performance-history.md)

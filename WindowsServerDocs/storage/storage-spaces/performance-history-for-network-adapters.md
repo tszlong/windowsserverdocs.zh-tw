@@ -7,16 +7,16 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 02/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e2379ce540cb26c02bc79f591d2a597874ab287c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 597abd8e389421eb6875ff3cc94b457f341be3b7
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856211"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474745"
 ---
 # <a name="performance-history-for-network-adapters"></a>網路介面卡的效能歷程記錄
 
-> 適用于： Windows Server 2019
+> 適用於：Windows Server 2019
 
 [儲存空間直接存取的效能歷程記錄](performance-history.md)的子主題會詳細說明針對網路介面卡收集的效能歷程記錄。 網路介面卡效能歷程記錄適用于叢集中每部伺服器的每個實體網路介面卡。 啟用 RDMA 的每個實體網路介面卡都可以使用遠端直接記憶體存取（RDMA）效能歷程記錄。
 
@@ -52,26 +52,26 @@ ms.locfileid: "80856211"
 
 ## <a name="where-they-come-from"></a>來自何處
 
-`bytes.*` 系列是從安裝網路介面卡的伺服器上的 [`Network Adapter`] 效能計數器集合中收集的，每個網路介面卡一個實例。
+此 `bytes.*` 系列會從 `Network Adapter` 已安裝網路介面卡的伺服器上的效能計數器集合收集，每個網路介面卡一個實例。
 
 | 數列                           | 來源計數器           |
 |----------------------------------|--------------------------|
-| `netadapter.bandwidth.inbound`   | 8× `Bytes Received/sec` |
-| `netadapter.bandwidth.outbound`  | 8× `Bytes Sent/sec`     |
-| `netadapter.bandwidth.total`     | 8× `Bytes Total/sec`    |
+| `netadapter.bandwidth.inbound`   | 8×`Bytes Received/sec` |
+| `netadapter.bandwidth.outbound`  | 8×`Bytes Sent/sec`     |
+| `netadapter.bandwidth.total`     | 8×`Bytes Total/sec`    |
 
-`rdma.*` 系列是從安裝網路介面卡的伺服器上的 [`RDMA Activity`] 效能計數器集合中收集的，每個網路介面卡都有一個已啟用 RDMA 的實例。
+此 `rdma.*` 系列會從 `RDMA Activity` 已安裝網路介面卡的伺服器上的效能計數器集合中收集，而每個網路介面卡都有一個已啟用 RDMA 的實例。
 
 | 數列                               | 來源計數器           |
 |--------------------------------------|--------------------------|
-| `netadapter.bandwidth.rdma.inbound`  | 8× `Inbound bytes/sec`  |
-| `netadapter.bandwidth.rdma.outbound` | 8× `Outbound bytes/sec` |
+| `netadapter.bandwidth.rdma.inbound`  | 8×`Inbound bytes/sec`  |
+| `netadapter.bandwidth.rdma.outbound` | 8×`Outbound bytes/sec` |
 | `netadapter.bandwidth.rdma.total`    | *上列的*8 ×總和   |
 
    > [!NOTE]
-   > 計數器是以整個間隔來測量，而不是取樣。 例如，如果網路介面卡閒置了9秒，但在10秒內傳輸200位，則在此10秒的間隔期間，其 `netadapter.bandwidth.total` 會平均記錄為每秒20位。 這可確保其效能歷程會捕捉所有活動，而且健全于雜訊。
+   > 計數器是以整個間隔來測量，而不是取樣。 例如，如果網路介面卡閒置了9秒，但在10秒內傳輸200位，則在 `netadapter.bandwidth.total` 此10秒的間隔期間，平均會將其記錄為每秒20位。 這可確保其效能歷程會捕捉所有活動，而且健全于雜訊。
 
-## <a name="usage-in-powershell"></a>在 PowerShell 中的使用方式
+## <a name="usage-in-powershell"></a>PowerShell 中的使用方式
 
 使用[get-netadapter](https://docs.microsoft.com/powershell/module/netadapter/get-netadapter) Cmdlet：
 
@@ -79,6 +79,6 @@ ms.locfileid: "80856211"
 Get-NetAdapter <Name> | Get-ClusterPerf
 ```
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 - [儲存空間直接存取的效能歷程記錄](performance-history.md)

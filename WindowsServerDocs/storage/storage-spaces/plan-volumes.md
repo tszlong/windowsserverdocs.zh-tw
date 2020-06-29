@@ -9,29 +9,29 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 06/28/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0825c531913d134cc5711e3c8668fd6dedc4998f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d5c45b68f18fe3126867a9b6608b0911bb3f63b2
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856181"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474755"
 ---
 # <a name="planning-volumes-in-storage-spaces-direct"></a>規劃儲存空間直接存取中的磁碟區
 
-> 適用于： Windows Server 2019、Windows Server 2016
+> 適用於：Windows Server 2019、Windows Server 2016
 
 此主題提供如何規劃儲存空間直接存取中的磁碟區，符合您工作負載的效能與容量需要，包括選擇它們的系統、復原類型和大小。
 
 ## <a name="review-what-are-volumes"></a>檢閱：什麼是磁碟區
 
-磁片區是您放置工作負載所需之檔案的位置，例如 Hyper-v 虛擬機器的 VHD 或 VHDX 檔案。 磁碟區結合儲存集區的磁碟機，導入儲存空間直接存取的容錯、延展性和效能好處。
+磁片區是您放置工作負載所需之檔案的位置，例如 Hyper-v 虛擬機器的 VHD 或 VHDX 檔案。 磁碟區會結合存放集區中的磁碟機，而導入儲存空間直接存取的容錯、延展性和效能等效益。
 
    >[!NOTE]
    > 在儲存空間直接存取的文件中，我們將磁碟區和其下的虛擬磁碟，包括提供其他內建 Windows 功能如叢集共用磁碟區 (CSV) 和 ReFS 所提供的功能，合稱為「磁碟區」一詞。 成功計劃及順利部署儲存空間直接存取，不需要了解這些實作層級區別。
 
 ![what-are-volumes](media/plan-volumes/what-are-volumes.png)
 
-所有磁碟區可以由叢集中所有伺服器同時存取。 建立之後，它們會顯示在所有伺服器上的**C:\ClusterStorage\\** 。
+所有磁碟區可以由叢集中所有伺服器同時存取。 建立之後，它們會顯示在所有伺服器上的**C:\ClusterStorage \\ ** 。
 
 ![csv-folder-screenshot](media/plan-volumes/csv-folder-screenshot.png)
 
@@ -41,7 +41,7 @@ ms.locfileid: "80856181"
 
 我們建議您將磁片區總數限制為：
 
-| Windows Server 2016          | Windows Server 2019          |
+| Windows Server 2016          | Windows Server 2019          |
 |------------------------------|------------------------------|
 | 每個叢集最多32個磁片區 | 每個叢集最多64個磁片區 |
 
@@ -56,7 +56,7 @@ ms.locfileid: "80856181"
 
 ## <a name="choosing-the-resiliency-type"></a>選擇復原類型
 
-儲存空間直接存取中的磁碟區提供復原功能，防範硬體問題，例如磁碟機或伺服器故障，以及在整個伺服器維護期間 (例如軟體更新) 啟用持續可用性。
+儲存空間直接存取中的磁碟區可提供復原能力來防範硬體問題 (例如磁碟機或伺服器故障)，以及在整個伺服器維護期間 (例如軟體更新) 支援持續可用性。
 
    > [!NOTE]
    > 可以選擇的復原類型，不受您擁有的磁碟機類型影響。
@@ -67,7 +67,7 @@ ms.locfileid: "80856181"
 
 雙向鏡像會保留兩份資料複本，每個伺服器的磁片磁碟機上都有一個複本。 其儲存效率為 50%-若要寫入 1 TB 的資料，存放集區中至少需要 2 TB 的實體儲存體容量。 雙向鏡像可以安全地容忍一次硬體失敗（一部伺服器或磁片磁碟機）。
 
-![two-way-mirror](media/plan-volumes/two-way-mirror.png)
+![雙向鏡像](media/plan-volumes/two-way-mirror.png)
 
 Nested 復原（僅適用于 Windows Server 2019）提供具有雙向鏡像之伺服器之間的資料復原，然後在具有雙向鏡像或鏡像加速同位的伺服器內新增復原功能。 即使其中一部伺服器正在重新開機或無法使用，嵌套也會提供資料復原。 其儲存效率為25%，具有嵌套的雙向鏡像，以及大約35-40% 的嵌套鏡像加速同位。 Nested 復原可以安全地容忍兩個硬體失敗（兩個磁片磁碟機，或是伺服器和其餘伺服器上的磁片磁碟機）。 基於這項新增的資料恢復功能，如果您執行的是 Windows Server 2019，建議您在兩個伺服器叢集的生產部署上使用嵌套的復原功能。 如需詳細資訊，請參閱[Nested 復原](nested-resiliency.md)。
 
@@ -75,7 +75,7 @@ Nested 復原（僅適用于 Windows Server 2019）提供具有雙向鏡像之�
 
 ### <a name="with-three-servers"></a>具有三部伺服器
 
-有三種伺服器，您應該使用三向鏡像，以取得更好的容錯和效能。 三向鏡像保留所有資料的三份複本，每個伺服器的磁碟機上各有一份複本。 其儲存效率是 33.3%，因此若要撰寫 1 TB 的資料，儲存集區需要至少 3 TB 的實體儲存容量。 三向鏡像可安全地[一次容許至少兩個硬體問題（磁碟機或伺服器）](storage-spaces-fault-tolerance.md#examples)。 如果有2個節點變成無法使用，存放集區將會失去仲裁，因為2/3 的磁片無法使用，而且將會無法存取虛擬磁片。 不過，節點可能會關閉，而且另一個節點上的一或多個磁片可能會失敗，且虛擬磁片仍會保持連線。 例如，如果您重新開機一部伺服器，同時突然另一部磁碟機或伺服器故障，所有資料會保持安全，持續可供存取。
+有三種伺服器，您應該使用三向鏡像，以取得更好的容錯和效能。 三向鏡像保留所有資料的三份複本，每個伺服器的磁碟機上各有一份複本。 其儲存效率是 33.3%，因此若要撰寫 1 TB 的資料，儲存集區需要至少 3 TB 的實體儲存容量。 三向鏡像一次可以安全地容忍[至少兩個硬體問題（磁片磁碟機或伺服器）](storage-spaces-fault-tolerance.md#examples)。 如果有2個節點變成無法使用，存放集區將會失去仲裁，因為2/3 的磁片無法使用，而且將會無法存取虛擬磁片。 不過，節點可能會關閉，而且另一個節點上的一或多個磁片可能會失敗，且虛擬磁片仍會保持連線。 例如，如果您在一個磁碟機或伺服器突然故障時重新啟動另一部伺服器，所有資料都將保有安全性，且持續可供存取。
 
 ![three-way-mirror](media/plan-volumes/three-way-mirror.png)
 
@@ -128,7 +128,7 @@ Nested 復原（僅適用于 Windows Server 2019）提供具有雙向鏡像之�
 
 我們建議您將每個磁片區的大小限制為：
 
-| Windows Server 2016 | Windows Server 2019 |
+| Windows Server 2016 | Windows Server 2019 |
 | ------------------- | ------------------- |
 | 最高 32 TB         | 最高 64 TB         |
 
@@ -193,14 +193,14 @@ Nested 復原（僅適用于 Windows Server 2019）提供具有雙向鏡像之�
    >[!TIP]
    > 您不需要立即建立所有磁碟區。 您隨時可以延伸磁碟區，或稍後建立新的磁碟區。
 
-為了簡化，這整個範例使用十進位 (以 10 為底數) 單位，表示 1 TB = 1,000,000,000,000 位元組。 不過，Windows 中的儲存數量以二進位 (以 2 為底數) 單位表示。 例如，每個 2 TB 磁碟機在 Windows 中顯示為 1.82 TiB。 同樣地，128 TB 儲存集區顯示為 116.41 TiB。 此為預期性行為。
+為了簡化，這整個範例使用十進位 (以 10 為底數) 單位，表示 1 TB = 1,000,000,000,000 位元組。 不過，Windows 中的儲存數量以二進位 (以 2 為底數) 單位表示。 例如，每個 2 TB 磁碟機在 Windows 中顯示為 1.82 TiB。 同樣地，128 TB 儲存集區顯示為 116.41 TiB。 這是預期行為。
 
-## <a name="usage"></a>使用方式
+## <a name="usage"></a>使用量
 
 請參閱[建立儲存空間直接存取中的磁碟區](create-volumes.md)。
 
-### <a name="see-also"></a>另請參閱
+### <a name="additional-references"></a>其他參考
 
 - [儲存空間直接存取總覽](storage-spaces-direct-overview.md)
-- [選擇儲存空間直接存取的磁片磁碟機](choosing-drives.md)
+- [選擇儲存空間直接存取的磁碟機](choosing-drives.md)
 - [容錯與儲存空間效率](storage-spaces-fault-tolerance.md)

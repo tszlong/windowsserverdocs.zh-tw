@@ -8,36 +8,36 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 8b5a80324851674c8d980bc1b6cda3a5ea51483f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ea867cbb36286297ff3c5274d11c36b5815ab9ac
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402160"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475455"
 ---
 # <a name="optimize-namespace-polling"></a>最佳化命名空間輪詢
 
-> 適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
-若要在命名空間伺服器間維護一致的網域型命名空間，命名空間伺服器必須定期輪詢 Active Directory 網域服務 (AD DS) 以取得最新的命名空間資料。 
+若要在命名空間伺服器間維護一致的網域型命名空間，命名空間伺服器必須定期輪詢 Active Directory 網域服務 (AD DS) 以取得最新的命名空間資料。
 
 ## <a name="to-optimize-namespace-polling"></a>最佳化命名空間輪詢
 
 使用下列程序來最佳化命名空間輪詢的發生方式：
 
-1.  按一下 [開始]，指向 [系統管理工具]，然後按一下 [DFS 管理]。
+1.  按一下 [**開始**]，然後指向 [**系統管理工具**]，再按一下 [**DFS 管理**]。
 
-2.  在主控台樹狀目錄的 **\[命名空間\]** 節點下，於網域型命名空間上按一下滑鼠右鍵，再按一下 **\[內容\]** 。
+2.  在主控台樹狀目錄的 **\[命名空間\]** 節點下，於網域型命名空間上按一下滑鼠右鍵，再按一下 **\[內容\]**。
 
 3.  在 **\[進階\]** 索引標籤上，選取您要最佳化命名空間的一致性或延展性。
 
-    -   如果裝載命名空間的伺服器有 16 個或更少，請選擇 **\[最佳化一致性\]** 。
-    -   如果有超過 16 個命名空間伺服器，則選擇 **\[最佳化延展性\]** 。 這樣雖然會減少網域主控站 (PDC) 模擬器的負載，不過卻會增加將命名空間的變更複寫到所有命名空間伺服器的時間。 將變更複寫到所有伺服器之前，使用者可能會看到不一致的命名空間。
+    -   如果裝載命名空間的伺服器有 16 個或更少，請選擇 **\[最佳化一致性\]**。
+    -   如果有超過 16 個命名空間伺服器，則選擇 **\[最佳化延展性\]**。 這樣雖然會減少網域主控站 (PDC) 模擬器的負載，不過卻會增加將命名空間的變更複寫到所有命名空間伺服器的時間。 將變更複寫到所有伺服器之前，使用者可能會看到不一致的命名空間。
 
 > [!NOTE]
-> 若要使用 Windows PowerShell 設定命名空間輪詢模式，請使用 Windows Server 2012 中引進的[DfsnRoot EnableRootScalability](https://technet.microsoft.com/library/jj884281.aspx) Cmdlet。
+> 若要使用 Windows PowerShell 來設定命名空間輪詢模式，請使用 [Set-DfsnRoot EnableRootScalability](https://technet.microsoft.com/library/jj884281.aspx) Cmdlet，此功能已在 Windows Server 2012 中推出。
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 -   [調整 DFS 命名空間](tuning-dfs-namespaces.md)
 -   [委派 DFS 命名空間的管理權限](delegate-management-permissions-for-dfs-namespaces.md)

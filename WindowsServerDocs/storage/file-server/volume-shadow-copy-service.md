@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 1ab941e25da7171349bb24762940af3bf886c165
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: d90030fe183e5cfcb94866e87793c0419b636433
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77675359"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475445"
 ---
 # <a name="volume-shadow-copy-service"></a>磁碟區陰影複製服務
 
@@ -620,6 +620,6 @@ VssAdmin 可在 Windows 用戶端和 Windows Server 作業系統版本上使用�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考資料
 
 [Windows 開發人員中心內的磁碟區陰影複製服務](https://docs.microsoft.com/windows/desktop/vss/volume-shadow-copy-service-overview)

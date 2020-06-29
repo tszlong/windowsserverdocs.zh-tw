@@ -8,12 +8,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 1d759af575f98d305a67734d0e23680f701f6b72
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4632c218f0638885e3094446704a91c442859d4c
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856711"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473965"
 ---
 # <a name="shielded-vms---hosting-service-provider-sets-up-windows-azure-pack"></a>受防護的 VM - 託管服務提供者會設定 Windows Azure Pack
 
@@ -27,7 +27,7 @@ ms.locfileid: "80856711"
 
 1. 針對您的主機網狀架構，完成 System Center 2016-Virtual Machine Manager （VMM）的設定。 這包括設定 VM 範本和 VM 雲端，這會透過 Windows Azure 套件公開：
 
-    [案例-在 VMM 中部署受保護的主機和受防護的虛擬機器](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-overview)
+    [案例 - 在 VMM 中部署受防護主機和受防護的虛擬機器](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-overview)
 
 2. 安裝和設定 System Center 2016-Service Provider Foundation （SPF）。 此軟體可讓 Windows Azure 套件與您的 VMM 伺服器進行通訊：
 
@@ -50,9 +50,9 @@ ms.locfileid: "80856711"
 
 2.  下載並安裝[Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)。 如果電腦未連線到網際網路，請遵循[離線安裝指示](https://www.iis.net/learn/install/web-platform-installer/web-platform-installer-v4-command-line-webpicmdexe-rtw-release)。
 
-3.  開啟 Web Platform Installer 並尋找 **產品** 索引標籤底下的  **Windows Azure 套件：入口網站和 API Express** 。按一下 **新增**，然後在視窗底部**安裝**。
+3.  開啟 [Web Platform Installer 並尋找 [**產品**] 索引標籤底下的 [ **Windows Azure 套件：入口網站和 API Express** ]。按一下 [**新增**]，然後在視窗底部**安裝**。
 
-4.  繼續安裝。 安裝完成之後，就會在您的網頁瀏覽器中開啟設定網站（*HTTPs://&lt;wapserver&gt;： 30101/* ）。 在此網站上，提供 SQL server 的相關資訊，並完成 WAP 的設定。
+4.  繼續安裝。 安裝完成之後，就會在您的網頁瀏覽器中開啟設定網站（*HTTPs:// &lt; wapserver &gt; ： 30101/*）。 在此網站上，提供 SQL server 的相關資訊，並完成 WAP 的設定。
 
 如需設定 Windows Azure 套件的說明，請參閱[安裝 Windows Azure 套件的快速部署](https://technet.microsoft.com/dn296439.aspx)。
 
@@ -63,7 +63,7 @@ ms.locfileid: "80856711"
 
 使用 Windows Azure 套件之前，您應該已經安裝並設定您的基礎結構。
 
-1.  流覽至位於*HTTPs://&lt;wapserver&gt;： 30091*的 Windows Azure 套件系統管理員入口網站，然後使用您的系統管理員認證登入。
+1.  流覽至位於*HTTPs:// &lt; wapserver &gt; ： 30091*的 Windows Azure 套件系統管理員入口網站，然後使用您的系統管理員認證登入。
 
 2.  在左窗格中，按一下 [ **VM**雲端]。
 
@@ -77,7 +77,7 @@ ms.locfileid: "80856711"
 
 為了讓租使用者能夠在 WAP 中建立 Vm，您必須先建立可供租使用者訂閱的主控方案。 方案會為您的租使用者定義允許的 VM 雲端、範本、網路和計費實體。
 
-1. 在入口網站的下方窗格中，按一下  **+ 新增** &gt;**方案**&gt;**建立方案**。
+1. 在入口網站的下方窗格中，按一下 [ **+ 新增** &gt; **方案**] [ &gt; **建立方案**]。
 
 2. 在嚮導的第一個步驟中，為您的方案選擇 [名稱]。 這是您的租使用者在訂閱時將會看到的名稱。
 
@@ -98,7 +98,7 @@ ms.locfileid: "80856711"
 9. 選取您想要在此方案中套用的配額。 （例如，CPU 核心和 RAM 使用量的限制）。 請務必選取 [**允許受防護的虛擬機器**] 核取方塊。
 
    ![Windows Azure 套件中的虛擬機器雲端設定](../media/Guarded-Fabric-Shielded-VM/guarded-host-azure-pack-03-virtual-machine-clouds.png)
-    
+
 10. 向下流覽至標題為 [**範本**] 的區段，然後選取一或多個要提供給您租使用者的範本。 您可以為租使用者提供受防護和非遮罩的範本，但必須提供受防護的範本，以提供租使用者關於 VM 完整性及其秘密的端對端保證。
 
 11. 在 [**網路**] 區段中，為您的租使用者新增一或多個網路。
@@ -113,7 +113,7 @@ ms.locfileid: "80856711"
 
     此時，已設定 Windows Azure 套件，而且租使用者將能夠訂閱您剛建立的方案，並部署受防護的 Vm。 如需租使用者需要完成的其他步驟，請參閱適用于租使用者的[受防護 vm-使用 Windows Azure 套件部署受防護的 vm](guarded-fabric-shielded-vm-windows-azure-pack.md)。
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
-- [適用于受防護主機和受防護 Vm 的主機服務提供者設定步驟](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
+- [適用於受防護主機和受防護 VM 的託管服務提供者設定步驟](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [受防護網狀架構與受防護的 VM](guarded-fabric-and-shielded-vms-top-node.md)

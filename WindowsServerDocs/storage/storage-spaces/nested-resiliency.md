@@ -7,16 +7,16 @@ ms.technology: storagespaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/15/2019
-ms.openlocfilehash: ac4edccf0c1f8882dd2544b2544c3d8555bbc716
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4faf4ade53074677b34b037c5ba6d551beb8542e
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857341"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474905"
 ---
 # <a name="nested-resiliency-for-storage-spaces-direct"></a>儲存空間直接存取的嵌套復原
 
-> 適用于： Windows Server 2019
+> 適用於：Windows Server 2019
 
 Nested 復原是 Windows Server 2019 中[儲存空間直接存取](storage-spaces-direct-overview.md)的新功能，可讓兩部伺服器的叢集同時承受多個硬體失敗，而不會遺失存放裝置的可用性，讓使用者、應用程式和虛擬機器在不中斷的情況下繼續執行。 本主題說明其運作方式、提供開始使用的逐步指示，以及回答最常見問題。
 
@@ -73,7 +73,7 @@ Windows Server 2019 中的儲存空間直接存取提供在軟體中執行的兩
   | 4                          | 35.7%      | 34.1%      | 32.6%      |
   | 5                          | 37.7%      | 35.7%      | 33.9%      |
   | 6                          | 39.1%      | 36.8%      | 34.7%      |
-  | 7 +                         | 40.0%      | 37.5%      | 35.3%      |
+  | 7+                         | 40.0%      | 37.5%      | 35.3%      |
 
   > [!NOTE]
   > **如果您想知道，以下是完整數學運算的範例。** 假設我們在兩部伺服器中都有六個容量磁片磁碟機，而我們想要建立 1 100 GB 的磁片區，其中包含 10 GB 的鏡像和 90 GB 的同位。 伺服器本機雙向鏡像是50.0% 有效率，這表示 10 GB 的鏡像資料會在每部伺服器上儲存 20 GB。 鏡像到這兩部伺服器，其總使用量為 40 GB。 在此情況下，伺服器本機單一同位檢查是 5/6 = 83.3% 有效率，這表示 90 GB 的同位資料會在每部伺服器上儲存 108 GB。 鏡像到這兩部伺服器，其總使用量為 216 GB。 總使用量會因此 [（10 GB/50.0% + （90 GB/83.3%）] × 2 = 256 GB，以達39.1% 的整體容量效率。
@@ -82,36 +82,36 @@ Windows Server 2019 中的儲存空間直接存取提供在軟體中執行的兩
 
 ![折衷](media/nested-resiliency/tradeoff.png)
 
-## <a name="usage-in-powershell"></a>在 PowerShell 中的使用方式
+## <a name="usage-in-powershell"></a>PowerShell 中的使用方式
 
 您可以在 PowerShell 中使用熟悉的儲存體 Cmdlet 來建立具有嵌套復原功能的磁片區。
 
 ### <a name="step-1-create-storage-tier-templates"></a>步驟1：建立儲存層範本
 
-首先，使用 `New-StorageTier` Cmdlet 來建立新的儲存層範本。 您只需要執行這項動作一次，然後您所建立的每個新磁片區都可以參考這些範本。 指定容量磁片的 `-MediaType`，並選擇性地指定您選擇的 `-FriendlyName`。 請勿修改其他參數。
+首先，使用 Cmdlet 來建立新的儲存層範本 `New-StorageTier` 。 您只需要執行這項動作一次，然後您所建立的每個新磁片區都可以參考這些範本。 指定 `-MediaType` 您的容量磁片磁碟機，以及您選擇的（選擇性） `-FriendlyName` 。 請勿修改其他參數。
 
 如果您的容量磁片磁碟機是硬碟機（HDD），請以系統管理員身分啟動 PowerShell 並執行：
 
-```PowerShell 
+```PowerShell
 # For mirror
 New-StorageTier -StoragePoolFriendlyName S2D* -FriendlyName NestedMirror -ResiliencySettingName Mirror -MediaType HDD -NumberOfDataCopies 4
 
 # For parity
-New-StorageTier -StoragePoolFriendlyName S2D* -FriendlyName NestedParity -ResiliencySettingName Parity -MediaType HDD -NumberOfDataCopies 2 -PhysicalDiskRedundancy 1 -NumberOfGroups 1 -FaultDomainAwareness StorageScaleUnit -ColumnIsolation PhysicalDisk 
-``` 
+New-StorageTier -StoragePoolFriendlyName S2D* -FriendlyName NestedParity -ResiliencySettingName Parity -MediaType HDD -NumberOfDataCopies 2 -PhysicalDiskRedundancy 1 -NumberOfGroups 1 -FaultDomainAwareness StorageScaleUnit -ColumnIsolation PhysicalDisk
+```
 
-如果您的容量磁片磁碟機是固態硬碟（SSD），請改為將 `-MediaType` 設定為 `SSD`。 請勿修改其他參數。
+如果您的容量磁片磁碟機是固態硬碟（SSD），請 `-MediaType` 改為將設定為 `SSD` 。 請勿修改其他參數。
 
 > [!TIP]
-> 確認已成功使用 `Get-StorageTier`建立層。
+> 確認已成功建立層 `Get-StorageTier` 。
 
 ### <a name="step-2-create-volumes"></a>步驟2：建立磁片區
 
-然後，使用 `New-Volume` Cmdlet 來建立新的磁片區。
+然後，使用 Cmdlet 建立新的磁片區 `New-Volume` 。
 
 #### <a name="nested-two-way-mirror"></a>嵌套的雙向鏡像
 
-若要使用「嵌套的雙向鏡像」，請參考「`NestedMirror` 層」範本，並指定大小。 例如，
+若要使用「嵌套的雙向鏡像」，請參考「階層」 `NestedMirror` 範本，並指定大小。 例如：
 
 ```PowerShell
 New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume01 -StorageTierFriendlyNames NestedMirror -StorageTierSizes 500GB
@@ -145,7 +145,7 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.N
 
 一旦設定為**True**，快取行為會是：
 
-| 實際                       | 快取行為                           | 可以容許快取磁片磁碟機遺失嗎？ |
+| 情況                       | 快取行為                           | 可以容許快取磁片磁碟機遺失嗎？ |
 |---------------------------------|------------------------------------------|--------------------------------|
 | 兩部伺服器都啟動                 | 快取讀取和寫入，完整效能 | 是                            |
 | 伺服器關閉，前30分鐘   | 快取讀取和寫入，完整效能 | 否（暫時）               |
@@ -159,7 +159,7 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.N
 
 ### <a name="can-i-use-nested-resiliency-with-multiple-types-of-capacity-drives"></a>我可以搭配多種類型的容量磁片使用嵌套的復原嗎？
 
-是，您只需在上述[步驟 1](#step-1-create-storage-tier-templates)中指定每一層的 `-MediaType`。 例如，在相同叢集中使用 NVMe、SSD 和 HDD，NVMe 會提供快取，而後面兩個則提供容量：將 `NestedMirror` 層設定為 `-MediaType SSD`，而 `NestedParity` 層則為 `-MediaType HDD`。 在此情況下，請注意同位檢查容量效率取決於 HDD 磁片磁碟機的數目，而且每個伺服器至少需要4個。
+是，只要 `-MediaType` 在上述[步驟 1](#step-1-create-storage-tier-templates)中指定每一層的。 例如，在相同叢集中使用 NVMe、SSD 和 HDD，NVMe 會提供快取，而後面兩個則提供容量：將 `NestedMirror` 層設定為 `-MediaType SSD` ，並將 `NestedParity` 層設為 `-MediaType HDD` 。 在此情況下，請注意同位檢查容量效率取決於 HDD 磁片磁碟機的數目，而且每個伺服器至少需要4個。
 
 ### <a name="can-i-use-nested-resiliency-with-3-or-more-servers"></a>我可以搭配3部或多部伺服器使用嵌套復原嗎？
 
@@ -171,11 +171,11 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.N
 
 ### <a name="does-nested-resiliency-change-how-drive-replacement-works"></a>Nested 復原是否會變更磁片磁碟機更換的運作方式？
 
-No。
+否。
 
 ### <a name="does-nested-resiliency-change-how-server-node-replacement-works"></a>Nested 復原是否會變更伺服器節點取代的運作方式？
 
-No。 若要取代伺服器節點和其磁片磁碟機，請遵循下列順序：
+否。 若要取代伺服器節點和其磁片磁碟機，請遵循下列順序：
 
 1. 淘汰傳出伺服器中的磁片磁碟機
 2. 將含有其磁片磁碟機的新伺服器新增至叢集
@@ -184,9 +184,9 @@ No。 若要取代伺服器節點和其磁片磁碟機，請遵循下列順序�
 
 如需詳細資訊，請參閱[移除伺服器](remove-servers.md)主題。
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 - [儲存空間直接存取總覽](storage-spaces-direct-overview.md)
 - [瞭解儲存空間直接存取中的容錯](storage-spaces-fault-tolerance.md)
 - [規劃儲存空間直接存取中的磁片區](plan-volumes.md)
-- [在儲存空間直接存取中建立磁片區](create-volumes.md)
+- [建立儲存空間直接存取中的磁碟區](create-volumes.md)

@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 46ed1256ed9039311939f9de12ea46416443be9c
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: e200901d8ddd59f0c0bc45b34681f3aa41b44923
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71402150"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474415"
 ---
 # <a name="overview-of-disk-management"></a>磁碟管理概觀
 
@@ -29,7 +29,7 @@ ms.locfileid: "71402150"
 ![顯示一般磁碟機的 [磁碟管理]，該磁碟機具有三個磁碟分割 - 499 MB 系統磁碟分割、用於 Windows 的較大型 C 磁碟機，以及用於修復的另一個 499 MB 磁碟分割](media/disk-management.png)
 
 > [!TIP]
->  如果您在遵循這些程序時收到錯誤或出現問題，請參閱[針對磁碟管理問題進行疑難排解](troubleshooting-disk-management.md)主題。 如果還是沒有用，別慌張！ [Microsoft 社群](https://answers.microsoft.com/en-us/windows)網站上有大量的資訊，因此請嘗試搜尋[檔案、資料夾與儲存體](https://answers.microsoft.com/en-us/windows/forum/windows_10-files?sort=lastreplydate&dir=desc&tab=All&status=all&mod=&modAge=&advFil=&postedAfter=&postedBefore=&threadType=all&isFilterExpanded=true&tm=1514405359639)一節；如果您還需要協助，請於此處張貼問題，Microsoft 或其他社群成員將會嘗試提供協助。 如果您對改善這些主題有任何意見反應，歡迎與我們分享！ 只要回答「此頁面有所助益嗎？」  提示，並於此處或在本主題底部的公開意見討論區中留下任何意見。
+>  如果您在遵循這些程序時收到錯誤或出現問題，請參閱[針對磁碟管理問題進行疑難排解](troubleshooting-disk-management.md)主題。 如果還是沒有用，別慌張！ [Microsoft 社群](https://answers.microsoft.com/en-us/windows)網站上有大量的資訊，因此請嘗試搜尋[檔案、資料夾與儲存體](https://answers.microsoft.com/en-us/windows/forum/windows_10-files?sort=lastreplydate&dir=desc&tab=All&status=all&mod=&modAge=&advFil=&postedAfter=&postedBefore=&threadType=all&isFilterExpanded=true&tm=1514405359639)一節；如果您還需要協助，請於此處張貼問題，Microsoft 或其他社群成員將會嘗試提供協助。 如果您對改善這些主題有任何意見反應，歡迎與我們分享！ 只要回答「此頁面有所助益嗎？」提示，並於此處或在本主題底部的公開意見討論區中留下任何意見。
 
 以下是您可能想要執行但使用其他 Windows 工具的一些常見工作：
 
@@ -49,7 +49,7 @@ ms.locfileid: "71402150"
 
 雖然 [磁碟管理] 可能顯示 EFI 系統磁碟分割和修復磁碟分割 100% 可用，但並非如此。 這些磁碟分割通常佔滿了電腦正常運作所需的重要檔案。 最好保持原狀，讓它們可以執行啟動電腦和協助從問題中復原等工作。
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考資料
 
 - [管理磁碟](manage-disks.md)
 - [管理基本磁碟區](manage-basic-volumes.md)

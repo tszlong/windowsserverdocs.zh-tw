@@ -9,22 +9,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 4051bfea26d5c96d02132b50373f56b7b17ce5fb
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0b26dca42d64338adeb8d818629e6a5f8b037f30
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857471"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475235"
 ---
 # <a name="windows-authentication-concepts"></a>Windows 驗證概念
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 此參考總覽主題說明 Windows 驗證所依據的概念。
 
-驗證是確認物件或人員識別身分的程序。 驗證物件時，目標是要確認該物件為正版。 當您驗證個人時，目標是要確認該人員不是冒名頂替者。
+驗證是確認物件或個人身分識別的程序。 驗證物件時，目標是要確認該物件為正版。 當您驗證個人時，目標是要確認該人員不是冒名頂替者。
 
-在網路環境中，驗證即是向網路應用程式或資源證明識別身分的動作。 一般而言，身分識別是由密碼編譯作業證明，此作業只會使用使用者知道的金鑰（如同公開金鑰加密）或共用金鑰。 驗證交換的伺服器端會使用已知的密碼編譯金鑰比較簽署的資料，來驗證該驗證嘗試。
+在網路內容中，驗證就是針對網路應用程式或資源提供身分識別的操作。 一般而言，身分識別是由密碼編譯作業證明，此作業只會使用使用者知道的金鑰（如同公開金鑰加密）或共用金鑰。 驗證交換的伺服器端會使用已知的密碼編譯金鑰比較簽署的資料，來驗證該驗證嘗試。
 
 在安全的集中位置儲存密碼編譯金鑰，可以擴充和管理驗證程序。 Active Directory 是儲存身分識別資訊的建議和預設技術，其中包括使用者認證的密碼編譯金鑰。 預設的 NTLM 與 Kerberos 實作需要 Active Directory。
 
@@ -54,7 +54,7 @@ ms.locfileid: "80857471"
 ## <a name="credentials"></a>認證
 Passport 和可能相關的 visas 是用於出差的已接受認證。 不過，這些認證可能不會讓出差人員輸入或存取某個國家/地區內的所有資源。 例如，參與會議需要其他認證。 在 Windows 中，您可以管理認證，讓帳戶持有者能夠透過網路存取資源，而不必重複提供其認證。 這種類型的存取可讓使用者一次通過驗證，以存取他們已獲授權使用的所有應用程式和資料來源，而不需要輸入其他帳戶識別碼或密碼。 Windows 平臺藉由在作業系統的本地安全機構（LSA）中以本機方式快取使用者認證，讓您能夠在網路上使用單一使用者識別（以 Active Directory 維護）。 當使用者登入網域時，Windows 驗證套件會在驗證網路資源的認證時，以透明的方式使用認證來提供單一登入。 如需認證的詳細資訊，請參閱[Windows 驗證中](credentials-processes-in-windows-authentication.md)的認證處理常式。
 
-出差的多重要素驗證形式可能需要攜帶和呈現多份檔，以驗證他的身分識別，例如 passport 和會議註冊資訊。 Windows 透過智慧卡、虛擬智慧卡和生物識別技術來實行此表單或驗證。 
+出差的多重要素驗證形式可能需要攜帶和呈現多份檔，以驗證他的身分識別，例如 passport 和會議註冊資訊。 Windows 透過智慧卡、虛擬智慧卡和生物識別技術來實行此表單或驗證。
 
 ## <a name="security-principals-and-accounts"></a>安全性主體和帳戶
 在 Windows 中，任何可以起始動作的使用者、服務、群組或電腦都是安全性主體。 安全性主體具有可在電腦本機或以網域為基礎的帳戶。 例如，即使沒有任何人為登入，Windows 用戶端已加入網域的電腦也可以與網域控制站通訊來參與網路網域。 若要起始通訊，電腦在網域中必須有使用中的帳戶。 在接受來自電腦的通訊之前，網域控制站上的本地安全機構會驗證電腦的身分識別，然後定義電腦的安全性內容，就像針對人類安全性主體所做的一樣。 此安全性內容會定義特定電腦或網路上的使用者、服務、群組或電腦上的使用者或服務的身分識別和功能。 例如，它會定義可存取的資源（例如檔案共用或印表機），以及可由使用者、服務或電腦在該資源上執行的動作，例如讀取、寫入或修改。 如需詳細資訊，請參閱[安全性主體](https://technet.microsoft.com/itpro/windows/keep-secure/security-principals)。
@@ -77,7 +77,7 @@ Passport 和可能相關的 visas 是用於出差的已接受認證。 不過，
 
 -   [服務帳戶](https://technet.microsoft.com/itpro/windows/keep-secure/service-accounts)
 
--   [特殊身分識別](https://technet.microsoft.com/itpro/windows/keep-secure/special-identities)
+-   [特殊身分](https://technet.microsoft.com/itpro/windows/keep-secure/special-identities)
 
 ## <a name="delegated-authentication"></a>委派的驗證
 若要使用旅遊比喻，國家（地區）可能會對官方政府委派的所有成員發出相同的存取權，只要委派知名就可以了。 此委派可讓一個成員在另一個成員的授權單位上作用。 在 Windows 中，當網路服務接受來自使用者的驗證要求，並採用該使用者的身分識別來起始第二個網路服務的新連線時，就會進行委派的驗證。 若要支援委派的驗證，您必須建立前端或第一層伺服器（例如網頁伺服器），負責處理負責儲存資訊的用戶端驗證要求和後端或多層式伺服器（例如大型資料庫）。 您可以委派許可權來設定委派驗證給組織中的使用者，以降低系統管理員的系統管理負載。
@@ -103,7 +103,7 @@ Passport 和可能相關的 visas 是用於出差的已接受認證。 不過，
 
 如需限制委派的詳細資訊，請參閱[Kerberos 限制委派總覽](../kerberos/kerberos-constrained-delegation-overview.md)。
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 [Windows 登入和驗證技術總覽](https://technet.microsoft.com/library/dn269029.aspx)
 
 

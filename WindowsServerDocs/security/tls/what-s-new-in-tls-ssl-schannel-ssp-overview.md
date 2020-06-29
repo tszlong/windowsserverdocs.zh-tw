@@ -9,12 +9,12 @@ author: justinha
 ms.author: justinha
 manager: brianlic
 ms.date: 05/16/2018
-ms.openlocfilehash: 105225736d6b883e8451aa599af1937068ebe43d
-ms.sourcegitcommit: f22e4d67dd2a153816acf8355e50319dbffc5acf
+ms.openlocfilehash: fac7e780fc584f0ce4dde8bb87ce37035840a40a
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83546558"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474875"
 ---
 # <a name="overview-of-tls---ssl-schannel-ssp"></a>TLS-SSL （安全通道 SSP）的總覽
 
@@ -58,7 +58,7 @@ ms.locfileid: "83546558"
 ### <a name="management-of-trusted-issuers-for-client-authentication"></a><a name="BKMK_TrustedIssuers"></a>用戶端驗證受信任簽發者的管理
 當用戶端電腦的驗證需要使用 SSL 或 TLS 時，您可以設定伺服器傳送受信任的憑證簽發者清單。 這份清單包含伺服器將會信任的一組憑證簽發者，並為用戶端電腦提供出現多個憑證時，應選擇使用之用戶端憑證的提示。 此外，用戶端電腦傳送到伺服器的憑證鏈結必須向設定的信任簽發者清單進行驗證。
 
-在 Windows Server 2012 和 Windows 8 之前，使用安全通道 SSP （包括 HTTP.SYS 和 IIS）的應用程式或進程，可以透過憑證信任清單（CTL）提供支援用戶端驗證的受信任簽發者清單。
+在 Windows Server 2012 和 Windows 8 之前，使用安全通道 SSP （包括 HTTP.sys 和 IIS）的應用程式或進程，可以透過憑證信任清單（CTL）提供支援用戶端驗證的受信任簽發者清單。
 
 在 Windows Server 2012 和 Windows 8 中，對基礎驗證程式進行了變更，讓：
 
@@ -147,7 +147,7 @@ DTLS 版本 1.0 通訊協定已新增到安全通道安全性支援提供者。 
 ### <a name="deprecated-functionality"></a><a name="BKMK_Deprecated"></a>已被取代的功能
 在 Windows Server 2012 和 Windows 8 的安全通道 SSP 中，沒有已淘汰的功能或功能。
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 -   [私人雲端安全性模型 - 包裝函式功能](https://social.technet.microsoft.com/wiki/contents/articles/6756.private-cloud-security-model-wrapper-functionality.aspx)
 
 

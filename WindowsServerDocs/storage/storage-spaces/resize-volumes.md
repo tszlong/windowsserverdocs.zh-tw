@@ -8,15 +8,15 @@ ms.author: cosdar
 manager: eldenc
 ms.technology: storage-spaces
 ms.date: 03/10/2020
-ms.openlocfilehash: 4ce41da1da3dc90f698008902170d7cc1541619c
-ms.sourcegitcommit: bb2eb0b12f2a32113899a59aa5644bc6e8cab3d2
+ms.openlocfilehash: 4526bdc87bfbb8cdaf6cc3b0e8f3cd1cd80f4a9d
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79089347"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474605"
 ---
 # <a name="extending-volumes-in-storage-spaces-direct"></a>延伸儲存空間直接存取中的磁碟區
-> 適用于： Windows Server 2019、Windows Server 2016
+> 適用於：Windows Server 2019、Windows Server 2016
 
 本主題提供使用 Windows 系統管理中心調整[儲存空間直接存取](storage-spaces-direct-overview.md)叢集上磁片區大小的指示。
 
@@ -64,7 +64,7 @@ Get-VirtualDisk
 例如，以下是如何從虛擬磁碟取得，一直到其磁碟區︰
 
 ```PowerShell
-Get-VirtualDisk <FriendlyName> | Get-Disk | Get-Partition | Get-Volume 
+Get-VirtualDisk <FriendlyName> | Get-Disk | Get-Partition | Get-Volume
 ```
 
 ### <a name="step-1--resize-the-virtual-disk"></a>步驟 1 – 調整虛擬磁碟大小
@@ -74,7 +74,7 @@ Get-VirtualDisk <FriendlyName> | Get-Disk | Get-Partition | Get-Volume
 若要檢查，請執行下列 Cmdlet：
 
 ```PowerShell
-Get-VirtualDisk <FriendlyName> | Get-StorageTier 
+Get-VirtualDisk <FriendlyName> | Get-StorageTier
 ```
 
 如果 cmdlet 沒有傳回任何項目，虛擬磁碟不使用儲存層。
@@ -129,7 +129,7 @@ $VirtualDisk = Get-VirtualDisk <FriendlyName>
 # Get its partition
 $Partition = $VirtualDisk | Get-Disk | Get-Partition | Where PartitionNumber -Eq 2
 
-# Resize to its maximum supported size 
+# Resize to its maximum supported size
 $Partition | Resize-Partition -Size ($Partition | Get-PartitionSupportedSize).SizeMax
 ```
 
@@ -137,14 +137,14 @@ $Partition | Resize-Partition -Size ($Partition | Get-PartitionSupportedSize).Si
 
 ![Resize-Partition](media/resize-volumes/Resize-Partition.gif)
 
-就這麼容易！
+大功告成！
 
 > [!TIP]
 > 您可以執行 **Get-Volume** 檢查磁碟區是否有新的大小。
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 - [Windows Server 2016 中的儲存空間直接存取](storage-spaces-direct-overview.md)
-- [規劃儲存空間直接存取中的磁片區](plan-volumes.md)
-- [在儲存空間直接存取中建立磁片區](create-volumes.md)
+- [規劃儲存空間直接存取中的磁碟區](plan-volumes.md)
+- [建立儲存空間直接存取中的磁碟區](create-volumes.md)
 - [刪除儲存空間直接存取中的磁片區](delete-volumes.md)

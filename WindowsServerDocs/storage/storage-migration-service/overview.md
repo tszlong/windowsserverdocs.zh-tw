@@ -8,12 +8,12 @@ ms.date: 03/26/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 0765c43333f23fb09c0f69ceca1ff21cfce25874
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: fab7dff1efc8b21a3b8fdacdeb9d446d7bc0cc30
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310499"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475305"
 ---
 # <a name="storage-migration-service-overview"></a>儲存體遷移服務總覽
 
@@ -44,8 +44,8 @@ ms.locfileid: "80310499"
 2. 將資料從來源伺服器**傳輸（複製）** 到目的地伺服器。
 3. **切換至新的伺服器**（選擇性）。<br>目的地伺服器會假設來源伺服器先前的身分識別，讓應用程式和使用者不必變更任何專案。 <br>來源伺服器會進入維護狀態，其中仍包含它們一律具有的相同檔案（我們絕對不會移除來源伺服器中的檔案），但無法供使用者和應用程式使用。 然後您就可以方便地解除委任伺服器。
 
-![螢幕擷取畫面，顯示已準備好掃描的伺服器](media/migrate/inventory.png)
-**圖2：儲存體遷移服務清查伺服器**
+![螢幕擷取畫面，顯示已準備好要掃描的伺服器 ](media/migrate/inventory.png)
+ **圖2：儲存體遷移服務清查伺服器**
 
 以下影片示範如何使用儲存體遷移服務來採用伺服器，例如現在不支援的 Windows Server 2008 R2 伺服器，以及將存放裝置移至較新的伺服器。
 
@@ -58,7 +58,7 @@ ms.locfileid: "80310499"
 - 用來遷移檔案和資料的**來源伺服器**或**容錯移轉**叢集
 - 執行 Windows Server 2019 （叢集或獨立）以遷移至的**目的地伺服器**。 Windows Server 2016 和 Windows Server 2012 R2 也可以運作，但速度大約是50%
 - 執行 Windows Server 2019 以管理遷移的**協調器伺服器**  <br>如果您只是要遷移少數伺服器，而且其中一部伺服器正在執行 Windows Server 2019，您可以使用它作為協調器。 如果您要遷移更多伺服器，建議使用個別的 orchestrator 伺服器。
-- 除非您偏好使用 PowerShell 來管理遷移，否則執行 **[Windows 系統管理中心](../../manage/windows-admin-center/understand/windows-admin-center.md)的電腦或伺服器**會執行儲存體遷移服務使用者介面。 Windows 管理中心和 Windows Server 2019 版本必須至少為1809版。
+- 除非您偏好使用 PowerShell 來管理遷移，否則執行** [Windows 系統管理中心](../../manage/windows-admin-center/understand/windows-admin-center.md)的電腦或伺服器**會執行儲存體遷移服務使用者介面。 Windows 管理中心和 Windows Server 2019 版本必須至少為1809版。
 
 強烈建議協調器和目的地電腦至少要有兩個核心或兩個個 vcpu，以及至少 2 GB 的記憶體。 使用更多的處理器和記憶體，清查和傳輸作業的速度大幅提升。
 
@@ -70,14 +70,14 @@ ms.locfileid: "80310499"
 - 來源和目的地電腦必須啟用下列防火牆規則（不過您可能*已經啟用）* ：
   - 檔案及印表機共用 (SMB-In)
   - Netlogon 服務（NP-IN）
-  - Windows Management Instrumentation （DCOM）
+  - Windows Management Instrumentation (DCOM-In)
   - Windows Management Instrumentation (WMI-In)
-  
+
   > [!TIP]
-  > 在 Windows Server 2019 電腦上安裝儲存體遷移服務 Proxy 服務時，會自動在該電腦上開啟必要的防火牆埠。 若要這麼做，請連線到 Windows 管理中心的目的地伺服器，然後移至**伺服器管理員**（在 Windows 系統管理中心） >**角色和功能**，選取 儲存體 **遷移服務 Proxy**，然後選取 **安裝**。
+  > 在 Windows Server 2019 電腦上安裝儲存體遷移服務 Proxy 服務時，會自動在該電腦上開啟必要的防火牆埠。 若要這麼做，請連線到 Windows 管理中心的目的地伺服器，然後移至**伺服器管理員**（在 Windows 系統管理中心） >**角色和功能**]，選取 [儲存體] [**遷移服務 Proxy**]，然後選取 [**安裝**]。
 
 
-- 如果電腦屬於 Active Directory Domain Services 網域，它們應該全都屬於相同的樹系。 如果您想要在進行剪下時將來源的功能變數名稱傳輸到目的地，目的地伺服器也必須位於與來源伺服器相同的網域中。 技術上的轉換會跨網域運作，但是目的地的完整功能變數名稱會與來源不同 。
+- 如果電腦屬於 Active Directory Domain Services 網域，它們應該全都屬於相同的樹系。 如果您想要在進行剪下時將來源的功能變數名稱傳輸到目的地，目的地伺服器也必須位於與來源伺服器相同的網域中。 技術上的轉換會跨網域運作，但是目的地的完整功能變數名稱會與來源不同 .。。
 
 ### <a name="requirements-for-source-servers"></a>來源伺服器的需求
 
@@ -105,7 +105,7 @@ ms.locfileid: "80310499"
 - Windows Storage Server 2012 R2
 - Windows Storage Server 2016
 
-注意： Windows Small Business Server 和 Windows Server Essentials 是網域控制站。 儲存體遷移服務無法從網域控制站進行切換，但可以清查和傳輸檔案。   
+注意： Windows Small Business Server 和 Windows Server Essentials 是網域控制站。 儲存體遷移服務無法從網域控制站進行切換，但可以清查和傳輸檔案。
 
 如果協調器執行的是 Windows Server、1903版或更新版本，或如果協調器執行舊版的 Windows Server 並安裝[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) ，您可以遷移下列其他來源類型：
 
@@ -132,10 +132,10 @@ ms.locfileid: "80310499"
 
 ## <a name="azure-vm-migration"></a>Azure VM 遷移
 
-Windows Admin Center 1910 版可讓您部署 Azure 虛擬機器。 這會將 VM 部署整合到儲存體遷移服務。 不要在部署您的工作負載之前以手動方式在 Azure 入口網站中建立新的伺服器和 Vm，而是可能遺失必要的步驟和設定-Windows 管理中心可以部署 Azure VM、設定其儲存體、將其加入您的網域、安裝角色，以及然後設定您的分散式系統。 
+Windows Admin Center 1910 版可讓您部署 Azure 虛擬機器。 這會將 VM 部署整合到儲存體遷移服務。 不是在部署工作負載之前手動在 Azure 入口網站中建立新的伺服器和 Vm，而是可能遺失必要的步驟和設定-Windows 管理中心可以部署 Azure VM、設定其儲存體、將其加入您的網域、安裝角色，然後設定您的分散式系統。
 
    以下影片顯示如何使用儲存體遷移服務來遷移至 Azure Vm。
-   > [!VIDEO https://www.youtube-nocookie.com/embed/k8Z9LuVL0xQ] 
+   > [!VIDEO https://www.youtube-nocookie.com/embed/k8Z9LuVL0xQ]
 
 ## <a name="whats-new-in-storage-migration-service"></a>儲存體遷移服務的新功能
 
@@ -149,7 +149,7 @@ Windows 管理中心1910版新增了部署 Azure 虛擬機器的功能。 這會
 - 使用 Azure 檔案同步，更輕鬆地同步已遷移至 Azure 的共用
 - 遷移新的網路，例如 Azure
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 - [使用儲存體遷移服務遷移檔案伺服器](migrate-data.md)
 - [儲存體遷移服務常見問題（FAQ）](faq.md)

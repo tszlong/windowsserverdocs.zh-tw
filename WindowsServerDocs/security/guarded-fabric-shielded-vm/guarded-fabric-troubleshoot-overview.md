@@ -7,12 +7,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: f55b7a81f57c2f7087f3f236813c3ef3c6508036
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 90803df1ea8ce98ba94b4d1d27ed5678acc33d4d
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856381"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474971"
 ---
 # <a name="troubleshooting-a-guarded-fabric"></a>針對受防護網狀架構進行疑難排解
 
@@ -23,7 +23,7 @@ ms.locfileid: "80856381"
 - [針對受防護主機進行疑難排解](guarded-fabric-troubleshoot-hosts.md)
 - [針對受防護的 Vm 進行疑難排解](guarded-fabric-troubleshoot-shielded-vms.md)
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
-- [為受防護主機和受防護的 Vm 部署主機守護者服務](guarded-fabric-deploying-hgs-overview.md)
+- [部署受防護主機和受防護 VM 的主機守護者服務](guarded-fabric-deploying-hgs-overview.md)
 - [管理受防護網狀架構](guarded-fabric-manage-overview.md)

@@ -8,15 +8,15 @@ ms.topic: article
 author: eldenchristensen
 ms.date: 02/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d9ebc40b69373dafbebdb87f2abe624a5a7a4375
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fff78ddc831ae9f6cba103d7630da3afec2c87d7
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858951"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474235"
 ---
 # <a name="using-storage-spaces-direct-with-the-csv-in-memory-read-cache"></a>使用儲存空間直接存取搭配 CSV 記憶體內部讀取快取
-> 適用于： Windows Server 2016、Windows Server 2019
+> 適用於：Windows Server 2016、Windows Server 2019
 
 本主題描述如何使用系統記憶體來提升[儲存空間直接存取](storage-spaces-direct-overview.md)的效能。
 
@@ -42,7 +42,7 @@ CSV 記憶體內部讀取快取可在 Windows Server 2016 和 Windows Server 201
 
 | 作業系統版本          | 預設 CSV 快取大小 |
 |---------------------|------------------------|
-| Windows Server 2016 | 0（已停用）           |
+| Windows Server 2016 | 0 (停用)           |
 | Windows Server 2019 | 1 GiB                   |
 
 若要查看使用 PowerShell 配置多少記憶體，請執行：
@@ -51,7 +51,7 @@ CSV 記憶體內部讀取快取可在 Windows Server 2016 和 Windows Server 201
 (Get-Cluster).BlockCacheSize
 ```
 
-傳回的值是每一伺服器的數量（MiB）。 例如，`1024` 代表1個 gib （GiB）。
+傳回的值是每一伺服器的數量（MiB）。 例如， `1024` 代表1個 gib （GiB）。
 
 若要變更配置的記憶體數量，請使用 PowerShell 來修改此值。 例如，若要為每部伺服器配置2個 GiB，請執行：
 
@@ -69,6 +69,6 @@ Get-ClusterSharedVolume | ForEach {
 }
 ```
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 - [儲存空間直接存取總覽](storage-spaces-direct-overview.md)

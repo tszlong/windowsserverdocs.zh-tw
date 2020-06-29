@@ -7,12 +7,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: 9b2460a9aa7f85de47e6198bcec2132c437a35c7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0b5711b8c512974d795fa5220c5a4848b3fa726f
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856541"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473745"
 ---
 # <a name="managing-a-guarded-fabric"></a>管理受防護網狀架構
 
@@ -23,6 +23,6 @@ ms.locfileid: "80856541"
 - [管理主機守護者服務](guarded-fabric-manage-hgs.md)
 - [分公司考量](guarded-fabric-manage-branch-office.md)
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 - [部署受防護網狀架構](guarded-fabric-deploying-hgs-overview.md)

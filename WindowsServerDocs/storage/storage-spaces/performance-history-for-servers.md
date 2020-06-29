@@ -7,16 +7,16 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 02/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: cf4bdabb132c832370e5dffec215c24b54aebdd7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7ed910aba376ba7f78c628d7f47bdd21b366459d
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856191"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474735"
 ---
 # <a name="performance-history-for-servers"></a>伺服器的效能歷程記錄
 
-> 適用于： Windows Server 2019
+> 適用於：Windows Server 2019
 
 [儲存空間直接存取的效能歷程記錄](performance-history.md)的子主題詳細說明為伺服器收集的效能歷程記錄。 效能歷程記錄適用于叢集中的每一部伺服器。
 
@@ -38,7 +38,7 @@ ms.locfileid: "80856191"
 | `clusternode.memory.usage.guest` | 位元組   |
 | `clusternode.memory.usage.host`  | 位元組   |
 
-此外，系統會針對所有連接到伺服器的合格磁片磁碟機匯總 `physicaldisk.size.total` 的磁片磁碟機系列，而系統會針對所有附加至伺服器的合格網路介面卡，匯總 `networkadapter.bytes.total` 之類的網路介面卡系列。
+此外，磁片磁碟機系列（例如） `physicaldisk.size.total` 會針對所有附加至伺服器的合格磁片磁碟機進行匯總，而網路介面卡系列（例如） `networkadapter.bytes.total` 會針對附加至伺服器的所有合格網路介面卡進行匯總。
 
 ## <a name="how-to-interpret"></a>如何解讀
 
@@ -55,7 +55,7 @@ ms.locfileid: "80856191"
 
 ## <a name="where-they-come-from"></a>來自何處
 
-根據是否啟用 Hyper-v，會從不同的效能計數器收集 `cpu.*` 系列。
+`cpu.*`系統會根據是否啟用 hyper-v，從不同的效能計數器收集數列。
 
 如果已啟用 Hyper-v：
 
@@ -75,16 +75,16 @@ ms.locfileid: "80856191"
 | `clusternode.cpu.usage.guest`    | *零* |
 | `clusternode.cpu.usage.host`     | *與總使用量相同* |
 
-儘管是完美同步處理，`clusternode.cpu.usage` 一律 `clusternode.cpu.usage.host` 加上 `clusternode.cpu.usage.guest`。
+儘管是完美同步處理， `clusternode.cpu.usage` 一律會 `clusternode.cpu.usage.host` 加上 `clusternode.cpu.usage.guest` 。
 
-請注意，`clusternode.cpu.usage.guest` 一律是主機伺服器上所有虛擬機器的 `vm.cpu.usage` 總和。
+有同樣的警告， `clusternode.cpu.usage.guest` 一律是 `vm.cpu.usage` 主機伺服器上所有虛擬機器的總和。
 
-`memory.*` 系列是（即將推出）。
+此 `memory.*` 系列為（即將推出）。
 
   > [!NOTE]
-  > 計數器是以整個間隔來測量，而不是取樣。 例如，如果伺服器閒置9秒，但尖峰到 100% CPU 的第10秒，其 `clusternode.cpu.usage` 在此10秒的間隔期間，平均會記錄為10%。 這可確保其效能歷程會捕捉所有活動，而且健全于雜訊。
+  > 計數器是以整個間隔來測量，而不是取樣。 例如，如果伺服器閒置9秒，但尖峰到 100% CPU 的第10秒，則在 `clusternode.cpu.usage` 此10秒的間隔期間，平均會將其記錄為10%。 這可確保其效能歷程會捕捉所有活動，而且健全于雜訊。
 
-## <a name="usage-in-powershell"></a>在 PowerShell 中的使用方式
+## <a name="usage-in-powershell"></a>PowerShell 中的使用方式
 
 使用[start-clusternode](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusternode) Cmdlet：
 
@@ -92,6 +92,6 @@ ms.locfileid: "80856191"
 Get-ClusterNode <Name> | Get-ClusterPerf
 ```
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 - [儲存空間直接存取的效能歷程記錄](performance-history.md)

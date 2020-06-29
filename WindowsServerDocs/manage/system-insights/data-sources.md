@@ -8,24 +8,24 @@ author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 7/31/2018
-ms.openlocfilehash: 920c5fa5919fd2c35edb99cc4e724745715091c7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5dc44d9309c25ca1475e512a11d9868d7fa49e97
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858421"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473665"
 ---
 # <a name="system-insights-data-sources"></a>System Insights 資料來源
 
->適用於︰Windows Server 2019
+>適用於：Windows Server 2019
 
 System Insights 引進可擴充的資料收集功能。 撰寫新的功能時，您可以指定要在本機收集的現有或新資料來源，並進行分析。 本主題描述您在註冊新功能時可以選擇的資料來源。
 
 ## <a name="data-sources"></a>資料來源
 撰寫新功能時，您必須識別要針對每項功能收集的特定資料來源。 您指定的資料來源將會直接收集並保存在您的電腦上，而且您可以從三種類型的資料來源中選擇：
 
-- **效能計數器**： 
-    - 指定計數器路徑、名稱和實例，而 System Insights 會收集這些效能計數器所報告的相關資料。 
+- **效能計數器**：
+    - 指定計數器路徑、名稱和實例，而 System Insights 會收集這些效能計數器所報告的相關資料。
 
 - **系統事件**：
     - 指定通道名稱和事件識別碼，系統深入解析會記錄事件發生的次數。
@@ -33,7 +33,7 @@ System Insights 引進可擴充的資料收集功能。 撰寫新的功能時，
 - **知名系列**
     - System Insights 會針對一些定義完善的資源，收集您電腦上的一些基本資訊。 這些數列用於預設功能，但也可供任何自訂功能使用。 這些會收集下列資訊：
 
-        - **磁片**： 
+        - **磁片**：
             - *屬性*： Guid
             - *資料*：大小
         - **磁片**區：
@@ -42,11 +42,11 @@ System Insights 引進可擴充的資料收集功能。 撰寫新的功能時，
         - **網路介面卡**：
             - *屬性*： InterfaceGuid、InterfaceDescription、速度
             - *資料*：接收的位元組數/秒，傳送的位元組數/秒，位元組總計/秒
-        - **CPU**： 
+        - **CPU**：
             - *屬性*：-
             - *資料*：處理器時間百分比
 
-    - 指定已知的數列，系統深入解析會傳回該數列所收集的資料。 
+    - 指定已知的數列，系統深入解析會傳回該數列所收集的資料。
 
 
 ## <a name="retention-timelines-and-collection-intervals"></a>保留時間軸和收集間隔
@@ -54,25 +54,25 @@ System Insights 引進可擴充的資料收集功能。 撰寫新的功能時，
 
 | 資料來源 | 保留時間表 | 收集間隔 |
 | --------------- | --------------- | ----------- |
-| 效能計數器 | 3個月 | 15 分鐘 |
-| 系統事件 | 3個月 | 15 分鐘 |
+| 效能計數器 | 3 個月 | 15 分鐘 |
+| 系統事件 | 3 個月 | 15 分鐘 |
 | 知名系列 | 1 年 | 1 小時 |
 
 
-### <a name="aggregation-types"></a>匯總類型
+### <a name="aggregation-types"></a>彙總類型
 由於每個數列只會記錄每個收集間隔的一個資料點，因此每個數列都有一個匯總類型相關聯。 下表描述資料來源和對應的匯總類型：
 
 >[!NOTE]
 >針對效能計數器，您可以選擇幾種不同的匯總類型。
 
-| 資料來源 | 匯總類型 |
+| 資料來源 | 彙總類型 |
 | --------------- | --------------- |
 | 效能計數器 | 加總、平均、最大值、最小值 |
-| 系統事件 | [計數] |
+| 系統事件 | Count |
 | 磁片知名系列 | Last （收集間隔中的最新值） |
 | 磁片區知名系列 | Last （收集間隔中的最新值） |
-| CPU 已知系列 | 平均 |
-| 網路知名系列 | 平均 |
+| CPU 已知系列 | Average |
+| 網路知名系列 | Average |
 
 ## <a name="data-footprint"></a>資料使用量
 
@@ -88,12 +88,12 @@ System Insights 會收集本機 C 磁片磁碟機（C：）上的所有資料。
 | 網路知名系列 | 每張網路介面卡 300 KB |
 
 >[!NOTE]
->**針對預設的預測功能，大部分的獨立機器的最大使用量應小於 10 MB。** 
+>**針對預設的預測功能，大部分的獨立機器的最大使用量應小於 10 MB。**
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 若要深入瞭解「系統深入解析」，請使用下列資源：
 
-- [System Insights 總覽](overview.md)
+- [系統深入解析概觀](overview.md)
 - [了解功能](understanding-capabilities.md)
 - [管理功能](managing-capabilities.md)
 - [新增與開發功能](adding-and-developing-capabilities.md)

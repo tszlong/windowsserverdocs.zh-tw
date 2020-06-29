@@ -8,19 +8,19 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 9972ec77b78c6c4efa2d52fffd44d27d71a1afe0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 85cfdbe5e95c9177194a2b6ac7b5d22e1fd9fc0e
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856361"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475011"
 ---
 # <a name="shielded-vms---preparing-a-vm-shielding-helper-vhd"></a>受防護的 Vm-準備 VM 防護協助程式 VHD
 
 >適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
 
 > [!IMPORTANT]
-> 開始這些程式之前，請確定您已安裝最新的 Windows Server 2016 累積更新，或使用最新的 Windows 10[遠端伺服器管理工具](https://www.microsoft.com/download/details.aspx?id=45520)。 否則，程式將無法正常執行。 
+> 開始這些程式之前，請確定您已安裝最新的 Windows Server 2016 累積更新，或使用最新的 Windows 10[遠端伺服器管理工具](https://www.microsoft.com/download/details.aspx?id=45520)。 否則，程式將無法正常執行。
 
 本節概述主機服務提供者執行的步驟，以啟用將現有 Vm 轉換為受防護 Vm 的支援。
 
@@ -59,7 +59,7 @@ ms.locfileid: "80856361"
 
 ![VMM-主機守護者服務設定](../media/Guarded-Fabric-Shielded-VM/guarded-host-vmm-hgs-settings-01.png)
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
-- [適用于受防護主機和受防護 Vm 的主機服務提供者設定步驟](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
+- [適用於受防護主機和受防護 VM 的託管服務提供者設定步驟](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [受防護網狀架構與受防護的 VM](guarded-fabric-and-shielded-vms-top-node.md)

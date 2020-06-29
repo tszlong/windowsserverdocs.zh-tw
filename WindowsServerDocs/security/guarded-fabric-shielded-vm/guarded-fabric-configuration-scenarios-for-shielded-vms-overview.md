@@ -8,12 +8,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: f4550f8a92330c8f483e332ab9e4b36fda853b0a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 78d8d76c2d8fc92e7fc5ca070d04942facd97427
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856861"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475355"
 ---
 # <a name="deploy-shielded-vms"></a>部署受防護的 VM
 
@@ -22,18 +22,18 @@ ms.locfileid: "80856861"
 
 下列主題說明租使用者可以如何與受防護的 Vm 搭配使用。
 
-1. 選擇性[建立 Windows 範本磁片](guarded-fabric-create-a-shielded-vm-template.md)或[建立 Linux 範本磁片](guarded-fabric-create-a-linux-shielded-vm-template.md)。 租使用者或主機服務提供者可以建立範本磁片。 
+1. 選擇性[建立 Windows 範本磁片](guarded-fabric-create-a-shielded-vm-template.md)或[建立 Linux 範本磁片](guarded-fabric-create-a-linux-shielded-vm-template.md)。 租使用者或主機服務提供者可以建立範本磁片。
 
-2. 選擇性[將現有的 WINDOWS VM 轉換為受防護的 vm](guarded-fabric-vm-shielding-helper-vhd.md)。 
+2. 選擇性[將現有的 WINDOWS VM 轉換為受防護的 vm](guarded-fabric-vm-shielding-helper-vhd.md)。
 
 3. [建立防護資料以定義受防護的 VM](guarded-fabric-tenant-creates-shielding-data.md)。
 
     如需防護資料檔案的說明和圖表，請參閱[何謂防護資料和為何需要？](guarded-fabric-and-shielded-vms.md#what-is-shielding-data-and-why-is-it-necessary)
-    
+
     如需建立回應檔案以包含在受防護資料檔案中的相關資訊，請參閱[受防護的 vm-使用 ShieldingDataAnswerFile 函式產生回應](guarded-fabric-sample-unattend-xml-file.md)檔案。
 
 4. 建立受防護的 VM：
- 
+
     - 使用**Windows Azure 套件**：[使用 Windows Azure 套件部署受防護的 VM](guarded-fabric-shielded-vm-windows-azure-pack.md)
 
     - 使用**Virtual Machine Manager**：[使用 Virtual Machine Manager 部署受防護的 VM](guarded-fabric-tenant-deploys-shielded-vm-using-vmm.md)
@@ -43,6 +43,6 @@ ms.locfileid: "80856861"
 > [!div class="nextstepaction"]
 > [建立受防護的 VM 範本](guarded-fabric-create-a-shielded-vm-template.md)
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 - [受防護網狀架構與受防護的 VM](guarded-fabric-and-shielded-vms-top-node.md)

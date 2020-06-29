@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 9fef24dccc71eab49fa8c77f0f80d5ec3b3a9327
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b80aef85d6f4a1d6bd8c05b56d7c1a12b456d1ed
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402027"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474185"
 ---
 # <a name="configure-e-mail-notifications"></a>設定電子郵件通知
 
-> 適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用於：Windows Server (半年度管道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 建立配額和檔案檢測時，您可以選擇在使用者接近限制配額時或使用者嘗試儲存已被封鎖的檔案之後，傳送電子郵件通知他們。 產生存放裝置報告時，您可以選擇透過電子郵件將報告傳送給特定收件者。 如果您想要例行性向特定系統管理員提供關於配額及檔案檢測事件的通知，或傳送存放裝置報告時，您可以設定一個或多個預設收件者。
 
@@ -25,21 +25,21 @@ ms.locfileid: "71402027"
 
 ## <a name="to-configure-e-mail-options"></a>若要設定電子郵件選項：
 
-1. 在主控台樹狀目錄中，以滑鼠右鍵按一下 **\[檔案伺服器資源管理員\]** ，然後按一下 **\[設定選項\]** 。 [檔案伺服器資源管理員選項] 對話方塊隨即開啟。
+1. 在主控台樹狀目錄中，以滑鼠右鍵按一下 **\[檔案伺服器資源管理員\]**，然後按一下 **\[設定選項\]**。 [檔案伺服器資源管理員選項]**** 對話方塊隨即開啟。
 
 2. 在 **\[電子郵件通知\]** 索引標籤的 **\[SMTP 伺服器名稱或 IP 位址\]** 下方，輸入要用來轉送電子郵件通知及存放裝置報告的 SMTP 伺服器的主機名稱或 IP 位址。
 
 3. 如果您想要例行性向特定系統管理員提供關於配額及檔案檢測事件的通知，或以電子郵件傳送存放裝置報告時，請在 **\[預設系統管理員收件者\]** 下方輸入每個電子郵件地址。
 
-   使用格式 <em>account@domain</em>。 使用分號隔開多個實作。
+   使用格式 <em>account@domain</em> 。 使用分號隔開多個實作。
 
 4. 若要從檔案伺服器資源管理員，為傳送的電子郵件通知及存放裝置報告指定不同的 \[寄件者\] 地址，請在 **\[預設的 \[寄件者\] 電子郵件地址:\]** 下方輸入您希望在訊息中出現的電子郵件地址。
 
-5. 若要測試您的設定，請按一下 **\[傳送測試電子郵件\]** 。
+5. 若要測試您的設定，請按一下 **\[傳送測試電子郵件\]**。
 
-6. 按一下 [確定]。
+6. 按一下 [確定]****。
 
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 -   [設定檔案伺服器資源管理員選項](setting-file-server-resource-manager-options.md)

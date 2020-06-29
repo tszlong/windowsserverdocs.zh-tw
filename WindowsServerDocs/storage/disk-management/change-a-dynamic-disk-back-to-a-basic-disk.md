@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 8ad14225592d627b6ff88b9e2286b686aa549392
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: f8ad7ca8fedfa3493a7f5369f8f603913879b50d
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "75351946"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475425"
 ---
 # <a name="change-a-dynamic-disk-back-to-a-basic-disk"></a>將動態磁碟變更回基本磁碟
 
@@ -30,11 +30,11 @@ ms.locfileid: "75351946"
 
 2. 使用系統管理員權限開啟 [磁碟管理]。
 
-   執行此動作的簡易方法，是在工作列上的 [搜尋] 方塊中輸入**電腦管理**，選取並按住 (以滑鼠右鍵按一下) [電腦管理]  ，然後選取 [以系統管理員身分執行]   > [是]  。 在開啟 [電腦管理] 後，移至 [存放裝置]   > [磁碟管理]  。
+   執行此動作的簡易方法，是在工作列上的 [搜尋] 方塊中輸入**電腦管理**，選取並按住 (以滑鼠右鍵按一下) [電腦管理]，然後選取 [以系統管理員身分執行] > [是]。 在開啟 [電腦管理] 後，移至 [存放裝置] > [磁碟管理]。
 
-2.  在 [磁碟管理] 中，在要轉換為基本磁碟的動態磁碟上選取並按住 (或以滑鼠右鍵按一下) 每個磁碟區，然後按一下 [刪除磁碟區]  。
+2.  在 [磁碟管理] 中，在要轉換為基本磁碟的動態磁碟上選取並按住 (或以滑鼠右鍵按一下) 每個磁碟區，然後按一下 [刪除磁碟區]。
 
-3.  刪除磁碟上的所有磁碟區後，以滑鼠右鍵按一下磁碟，然後按一下 [轉換成基本磁碟]  。
+3.  刪除磁碟上的所有磁碟區後，以滑鼠右鍵按一下磁碟，然後按一下 [轉換成基本磁碟]。
 
 ## <a name="to-change-a-dynamic-disk-back-to-a-basic-disk-by-using-a-command-line"></a>使用命令列將動態磁碟變更回基本磁碟
 
@@ -68,6 +68,6 @@ ms.locfileid: "75351946"
 -   磁碟必須沒有包含任何磁碟區或資料，才能變更回基本磁碟。 如果想要保留您的資料，請先進行備份或將資料移到其他磁碟區，再將磁碟轉換成基本磁碟。
 -   將動態磁碟變更回基本磁碟後，您在該磁碟上只能建立磁碟分割和邏輯磁碟機。
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考資料
 
 -   [Command-line syntax notation](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx) (命令列語法標記法)

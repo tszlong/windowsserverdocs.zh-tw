@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/16/2018
-ms.openlocfilehash: d0c066b063cbfc8def54c2e0d02cbb0eaf7f1d40
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 79477aa441b82854852fe35a9b45bafdee664532
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852921"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475265"
 ---
 # <a name="datagram-transport-layer-security-protocol"></a>資料包傳輸層安全性通訊協定
 
@@ -29,9 +29,8 @@ DTLS 通訊協定是在 Windows Server 2012 和 Windows 8 中的安全通道 SSP
 
 可供設定使用的加密套件，會在您可以針對 TLS 進行設定的程式之後進行配置。 不允許 RC4。 Schannel 會繼續使用新一代密碼編譯（CNG）。 這會利用 Windows Vista 中引進的 FIPS 140 認證。
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 [IETF RFC 4347 資料包傳輸層安全性](http://tools.ietf.org/html/rfc4347)
 
 
-                                        

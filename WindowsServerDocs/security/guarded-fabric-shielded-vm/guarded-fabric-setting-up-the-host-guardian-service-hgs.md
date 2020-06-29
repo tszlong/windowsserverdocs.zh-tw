@@ -8,14 +8,14 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 01/14/2020
-ms.openlocfilehash: 6301fc930818dbb190c0c9f997af1524c7f41245
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 22097d69185d88366843acc2bb157204401b468b
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856481"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475115"
 ---
-# <a name="deploy-the-host-guardian-service-hgs"></a>部署主機守護者服務（HGS）
+# <a name="deploy-the-host-guardian-service-hgs"></a>部署主機守護者服務 (HGS) /(英文/)
 
 >適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
 
@@ -28,7 +28,7 @@ ms.locfileid: "80856481"
 - [設定 Https （選擇性）](guarded-fabric-configure-hgs-https.md)
 - [新增節點](guarded-fabric-configure-additional-hgs-nodes.md)
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
-- [為受防護主機和受防護的 Vm 部署主機守護者服務](guarded-fabric-deploying-hgs-overview.md)
-- [將成為受防護主機之 Hyper-v 主機的設定步驟](guarded-fabric-configure-hgs-with-authorized-hyper-v-hosts.md)
+- [部署受防護主機和受防護 VM 的主機守護者服務](guarded-fabric-deploying-hgs-overview.md)
+- [將會變成受防護主機的 Hyper-V 主機設定步驟](guarded-fabric-configure-hgs-with-authorized-hyper-v-hosts.md)

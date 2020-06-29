@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: c17fd78a2cf726ab156d3eda09b9c0e2d4ed6a75
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 8164032ff4071facb33c1df0edf44dcc86a6d918
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77520354"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475415"
 ---
 # <a name="dfs-replication-overview"></a>DFS 複寫概觀
 
@@ -65,15 +65,15 @@ DFS 複寫是檔案和存放服務角色的一部分。 DFS 管理工具 (DFS �
 
 ### <a name="to-install-dfs-by-using-server-manager"></a>使用 [伺服器管理員] 安裝 DFS
 
-1. 開啟 [伺服器管理員]，按一下 [管理]  ，然後按一下 [新增角色及功能]  。 [新增角色及功能精靈] 隨即顯示。
+1. 開啟 [伺服器管理員]，按一下 [管理] ，然後按一下 [新增角色及功能] 。 [新增角色及功能精靈] 隨即顯示。
 
 2. 在 [伺服器選取項目]  頁面上，選取想要安裝 DFS 的伺服器或離線虛擬機器的虛擬硬碟 (VHD)。
 
 3. 選取您要安裝的角色服務及功能。
 
-    - 若要安裝 DFS 複寫服務，請在 [伺服器角色]  頁面上，選取 [DFS 複寫]  。
+    - 若要安裝 DFS 複寫服務，請在 [伺服器角色] 頁面上，選取 [DFS 複寫]。
 
-    - 若要只安裝 DFS 管理工具，請在 [功能]  頁面上，依序展開 [遠端伺服器管理工具]  、[角色管理工具]  、[檔案服務工具]  ，然後選取 [DFS 管理工具]  。
+    - 若要只安裝 DFS 管理工具，請在 [功能]  頁面上，依序展開 [遠端伺服器管理工具] 、[角色管理工具] 、[檔案服務工具] ，然後選取 [DFS 管理工具] 。
 
          **DFS 管理工具**會安裝 DFS 管理嵌入式管理單元、適用於 Windows PowerShell 的 DFS 複寫和 DFS 命名空間模組以及命令列工具，但是不會在伺服器上安裝任何 DFS 服務。
 
@@ -102,7 +102,7 @@ Install-WindowsFeature "RSAT-DFS-Mgmt-Con"
 Install-WindowsFeature "FS-DFS-Replication", "RSAT-DFS-Mgmt-Con"
 ```
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考資料
 
 - [DFS 命名空間和 DFS 複寫概觀](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v%3dws.11))
 - [檢查清單：部署 DFS 複寫](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772201(v%3dws.11))

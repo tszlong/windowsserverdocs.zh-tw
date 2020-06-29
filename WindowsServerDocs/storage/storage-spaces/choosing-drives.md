@@ -9,12 +9,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 09/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c623049c33e02dd99974723d4cd257ca9304219
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 19679a6838d583ef93175f5f95aa21e8aeca9b36
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859001"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475255"
 ---
 # <a name="choosing-drives-for-storage-spaces-direct"></a>選擇儲存空間直接存取的磁碟機
 
@@ -40,7 +40,7 @@ ms.locfileid: "80859001"
             <img src="media/understand-the-cache/SSD-100px.png">
         </td>
         <td style="padding: 10px; border: 0;" valign="middle">
-            <b>SSD</b> 指的是透過傳統 SATA 或 SAS 進行連接的固態硬碟。
+            <b>SSD</b>是指透過傳統 SATA 或 SAS 連接的固態硬碟。
         </td>
     </tr>
     <tr style="border: 0;">
@@ -55,7 +55,7 @@ ms.locfileid: "80859001"
 
 ## <a name="built-in-cache"></a>內建快取
 
-儲存空間直接存取有內建的伺服器端快取。 它是大型持久的即時讀寫快取。 在使用多種磁碟機類型的部署，它會自動設定為使用「最快速」類型的所有磁碟機。 其餘磁碟機則用於容量。
+儲存空間直接存取有內建的伺服器端快取。 它是大型持久的即時讀寫快取。 在使用多種磁碟機類型的部署，它會自動設定為使用「最快速」類型的所有磁碟機。 其餘磁碟機則作為容量磁碟機。
 
 如需詳細資訊，請查看[了解儲存空間直接存取中的快取](understand-the-cache.md)。
 
@@ -104,7 +104,7 @@ ms.locfileid: "80859001"
 >[!IMPORTANT]
 >不支援使用 Hdd 進行設定。 不建議將高耐用性 Ssd 快取提升至低耐用性 Ssd。
 
-## <a name="sizing-considerations"></a>大小考量
+## <a name="sizing-considerations"></a>大小調整考量
 
 ### <a name="cache"></a>快取
 
@@ -116,10 +116,10 @@ ms.locfileid: "80859001"
 
 建議您將每部伺服器的儲存容量總計限制為大約 400 tb。 每個伺服器的儲存容量愈多，停機或重新開機後 (如套用軟體更新) 重新同步資料所需花費的時間愈長。 每個存放集區目前的大小上限為 4 pb （PB）（4000 TB）（適用于 Windows Server 2019）或 1 pb （適用于 Windows Server 2016）。
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 - [儲存空間直接存取總覽](storage-spaces-direct-overview.md)
-- [瞭解儲存空間直接存取中的快取](understand-the-cache.md)
+- [了解儲存空間直接存取中的快取](understand-the-cache.md)
 - [儲存空間直接存取硬體需求](storage-spaces-direct-hardware-requirements.md)
-- [規劃儲存空間直接存取中的磁片區](plan-volumes.md)
+- [規劃儲存空間直接存取中的磁碟區](plan-volumes.md)
 - [容錯與儲存空間效率](storage-spaces-fault-tolerance.md)

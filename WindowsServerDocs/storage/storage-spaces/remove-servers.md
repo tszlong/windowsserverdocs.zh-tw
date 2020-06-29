@@ -10,16 +10,16 @@ author: cosmosdarwin
 description: 如何在 Windows Server 移除儲存空間直接存取集區中的伺服器。
 ms.date: 2/5/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cfd12094cb8c5e0fdfb19b1eadb1b303e6b5f6e8
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0dd888048edc96d6001492e92ba6d519c751bdaa
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856121"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474565"
 ---
 # <a name="removing-servers-in-storage-spaces-direct"></a>移除儲存空間直接存取中的伺服器
 
->適用于： Windows Server 2019、Windows Server 2016
+>適用於：Windows Server 2019、Windows Server 2016
 
 本主題說明如何使用 PowerShell 移除[儲存空間直接存取](storage-spaces-direct-overview.md)中的伺服器。
 
@@ -70,7 +70,7 @@ Remove-ClusterNode <Name> -CleanUpDisks
 
 下表顯示每個復原類型所需的最少容錯網域數目。
 
-|    復原          |    最小必要容錯網域   |
+|    災害復原          |    最小必要容錯網域   |
 |------------------------|-------------------------------------|
 |    雙向鏡像      |    2                                |
 |    三向鏡像    |    3                                |
@@ -79,6 +79,6 @@ Remove-ClusterNode <Name> -CleanUpDisks
    >[!NOTE]
    > 短時間像是故障或維護期間可以有較少的伺服器。 不過，若要讓磁碟區恢復完全良好的狀態，您必須有上面所列的伺服器數目下限。
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 - [儲存空間直接存取總覽](storage-spaces-direct-overview.md)

@@ -9,12 +9,12 @@ ms.assetid: a08648eb-eea0-4e2b-87fb-52bfe8953491
 author: shirgall
 ms.author: kathydav
 ms.date: 04/15/2020
-ms.openlocfilehash: d8861369abe24ea0d34dce209a5d98e854c4c95d
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 75b471d4083ef1597d5edcc775ea6fc847992483
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82072234"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474465"
 ---
 # <a name="best-practices-for-running-linux-on-hyper-v"></a>在 Hyper-v 上執行 Linux 的最佳做法
 
@@ -78,7 +78,7 @@ Set-VMComPort -VMName <Name> -Number 2 -Path \\.\pipe\dbg1
 
 Linux 核心提供兩組磁片 i/o 排程器來重新排序要求。  其中一個集合適用于較舊的 ' blk ' 子系統，而另一個集合則適用于較新的 ' blk-mq ' 子系統。 不論是哪一種情況，使用今天的固態硬碟時，建議使用排程器，將排程決策傳遞給基礎的 Hyper-v 虛擬程式。 針對使用 ' blk ' 子系統的 Linux 核心，這是「noop」排程器。 針對使用 ' blk-mq ' 子系統的 Linux 核心，這是「無」排程器。
 
-針對特定磁片，可在此檔案系統位置看到可用的排程器：/sys/class/block/`<diskname>`/queue/scheduler，並以方括弧括住目前選取的排程器。 您可以藉由寫入此檔案系統位置來變更排程器。 必須將變更新增至初始化腳本，才能在重新開機期間保存。 如需詳細資訊，請參閱您的 Linux 散發版本檔。
+針對特定磁片，可在此檔案系統位置看到可用的排程器：/sys/class/block/ `<diskname>` /queue/scheduler，並以方括弧括住目前選取的排程器。 您可以藉由寫入此檔案系統位置來變更排程器。 必須將變更新增至初始化腳本，才能在重新開機期間保存。 如需詳細資訊，請參閱您的 Linux 散發版本檔。
 
 ## <a name="numa"></a>NUMA
 
@@ -94,7 +94,7 @@ Hyper-v 允許壓縮虛擬磁片（VHDX）檔案，而不考慮磁片上可能�
 
 調整 VHD 或 VHDX 的大小之後，系統管理員應該使用像是 fdisk 或 parted 的公用程式來更新分割區、磁片區和檔案系統結構，以反映磁片大小的變更。 壓縮或擴充具有 GUID 磁碟分割表格（GPT）的 VHD 或 VHDX 大小，將會在使用磁碟分割管理工具來檢查磁碟分割配置時產生警告，而且系統管理員會收到警告，以修正第一個和第二個 GPT 標頭。 在不遺失資料的情況下，可以安全地執行此手動步驟。
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 * [Windows 上的 Hyper-v 支援的 Linux 和 FreeBSD 虛擬機器](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
 

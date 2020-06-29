@@ -6,16 +6,16 @@ ms.author: cosdar
 ms.prod: windows-server
 ms.technology: manage
 ms.date: 11/04/2019
-ms.openlocfilehash: 62bf21dd0afcb99aa77cff8a733e80fc4cffe2fb
-ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
+ms.openlocfilehash: 088fb7b8f03ab7e575b562572f2e29e1b5774760
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73587228"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474485"
 ---
 # <a name="deploy-hyperconverged-infrastructure-with-windows-admin-center"></a>使用 Windows 管理中心部署超大範圍基礎結構
 
-> 適用于： Windows 系統管理中心、Windows 系統管理中心預覽
+> 適用於：Windows Admin Center、Windows Admin Center 預覽版
 
 您可以使用 Windows 管理中心[1910 版](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center)或更新版本，使用兩個或更多適合的 Windows 伺服器來部署超大範圍基礎結構。 這項新功能採用多階段工作流程的形式，引導您安裝功能、設定網路、建立叢集，以及部署儲存空間直接存取和/或軟體定義的網路功能（SDN）（若已選取）。
 
@@ -26,12 +26,12 @@ ms.locfileid: "73587228"
 
 ## <a name="preview-the-workflow"></a>預覽工作流程
 
-### <a name="1-prerequisites"></a>1. 必要條件
+### <a name="1-prerequisites"></a>1.Prerequisites
 
 Windows 管理中心的叢集建立工作流程不會執行裸機作業系統安裝，因此您必須先在每部伺服器上安裝 Windows Server。 支援的版本為 Windows Server 2016、Windows Server 2019 和 Windows Server Insider preview。 您也必須將每部伺服器聯結到與 Windows 管理中心執行所在的相同 Active Directory 網域，然後再啟動工作流程。
 
 ### <a name="2-install-windows-admin-center"></a>2. 安裝 Windows 系統管理中心
- 
+
 請依照指示[下載並安裝](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center)最新版的 Windows 管理中心。
 
 ### <a name="3-install-the-cluster-creation-extension"></a>3. 安裝叢集建立擴充功能
@@ -79,7 +79,7 @@ Get-WindowsFeature "Hyper-V", "Failover-Clustering", "Data-Center-Bridging", "Bi
   > [!Note]
   > 安裝的功能取決於您選取的叢集類型。
 
-若要查看網路介面卡及其屬性，例如名稱、IPv4 位址和 VLAN ID：
+若要查看網路介面卡及其屬性 (例如名稱、IPv4 位址和 VLAN 識別碼)：
 
 ```PowerShell
 Get-NetAdapter | Where Status -Eq "Up" | Sort InterfaceAlias | Format-Table Name, InterfaceDescription, Status, LinkSpeed, VLANID, MacAddress
@@ -88,7 +88,7 @@ Get-NetAdapter | Where Status -Eq "Up" | Get-NetIPAddress -AddressFamily IPv4 -E
 
 ![PowerShell 輸出的螢幕擷取畫面](../media/deploy-hyperconverged-infrastructure/script-out-2.png)
 
-若要查看 Hyper-v 虛擬交換器，以及實體網路介面卡的組合方式：
+若要查看 Hyper-V 虛擬交換器，以及實體網路介面卡的組合方式：
 
 ```PowerShell
 Get-VMSwitch
@@ -176,7 +176,7 @@ Get-VMSwitch | Remove-VMSwitch
 ```
 
 > [!Note]
-> `Remove-VMSwitch` Cmdlet 會自動移除任何虛擬配接器，並復原實體介面卡的交換器內嵌小組。
+> `Remove-VMSwitch`Cmdlet 會自動移除任何虛擬配接器，並復原實體介面卡的交換器內嵌小組。
 
 如果您修改了網路介面卡內容，例如 [名稱]、[IPv4 位址] 和 [VLAN ID]：
 
@@ -206,13 +206,13 @@ Get-NetAdapter | Where Name -Ne "Management" | Set-NetAdapter -VlanID 0
 
 可能的話，請包含下列資訊，以協助我們快速重現並解決您的問題：
 
-- 您選取的叢集類型（例如： *"超大範圍"* ）
-- 您遇到此問題的步驟（範例： *"3.2 Create cluster"* ）
-- 叢集建立擴充功能的版本。 移至 [**設定**] > **延伸**模組 > **已安裝的擴充**功能，並查看**版本**資料行（範例： *"1.0.30"* ）。
+- 您選取的叢集類型（例如： *"超大範圍"*）
+- 您遇到此問題的步驟（範例： *"3.2 Create cluster"*）
+- 叢集建立擴充功能的版本。 移至 [**設定**] [擴充功能]  >  **Extensions**  >  [**已安裝的擴充**功能]，並查看 [**版本**] 欄（範例： *"1.0.30*
 - 錯誤訊息，不論是在畫面上，還是在瀏覽器主控台中，您可以按**F12**開啟。
-- 您環境的任何其他相關資訊 
+- 您環境的任何其他相關資訊
 
-## <a name="see-also"></a>請參閱
+## <a name="additional-references"></a>其他參考
 
 - [Hello，Windows 系統管理中心](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center)
 - [部署儲存空間直接存取](https://docs.microsoft.com/windows-server/storage/storage-spaces/deploy-storage-spaces-direct)

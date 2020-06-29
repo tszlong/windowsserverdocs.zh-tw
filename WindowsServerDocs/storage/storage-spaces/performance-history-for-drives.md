@@ -7,16 +7,16 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 02/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a6c6065b8d7963ada5d80844b270fe088eaa6e56
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7e1620f7010d4f37713de20f2b4c12f100be61dc
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859451"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474765"
 ---
 # <a name="performance-history-for-drives"></a>磁片磁碟機的效能歷程記錄
 
-> 適用于： Windows Server 2019
+> 適用於：Windows Server 2019
 
 [儲存空間直接存取的效能歷程記錄](performance-history.md)的子主題會詳細說明針對磁片磁碟機收集的效能歷程記錄。 不論是哪種匯流排或媒體類型，叢集儲存子系統中的每個磁片磁碟機都可以使用效能歷程記錄。 不過，它不適用於 OS 開機磁碟機。
 
@@ -59,7 +59,7 @@ ms.locfileid: "80859451"
 
 ## <a name="where-they-come-from"></a>來自何處
 
-`iops.*`、`throughput.*`和 `latency.*` 系列會從連接磁片磁碟機的伺服器上的 `Physical Disk` 效能計數器集合中收集，每個磁片磁碟機一個實例。 這些計數器是由 `partmgr.sys` 來測量，而且不包含大部分的 Windows 軟體堆疊或任何網路躍點。 它們代表裝置硬體效能。
+`iops.*`、 `throughput.*` 和 `latency.*` 數列會從 `Physical Disk` 連接磁片磁碟機的伺服器上的效能計數器集合中收集，每個磁片磁碟機一個實例。 這些計數器是由測量 `partmgr.sys` ，而且不包含大部分的 Windows 軟體堆疊，也不包括任何網路躍點。 它們代表裝置硬體效能。
 
 | 數列                          | 來源計數器           |
 |---------------------------------|--------------------------|
@@ -74,16 +74,16 @@ ms.locfileid: "80859451"
 | `physicaldisk.latency.average`  | `Avg. Disk sec/Transfer` |
 
    > [!NOTE]
-   > 計數器是以整個間隔來測量，而不是取樣。 例如，如果磁片磁碟機閒置9秒，但在第10秒內完成 30 Io，則在此10秒的間隔期間，其 `physicaldisk.iops.total` 會平均記錄為每秒3個 Io。 這可確保其效能歷程會捕捉所有活動，而且健全于雜訊。
+   > 計數器是以整個間隔來測量，而不是取樣。 例如，如果磁片磁碟機在9秒內閒置，但在第10秒內完成30個 Io，則在 `physicaldisk.iops.total` 此10秒的間隔期間，平均會將其記錄為每秒3個 io。 這可確保其效能歷程會捕捉所有活動，而且健全于雜訊。
 
-`size.*` 系列是從 WMI 中的 `MSFT_PhysicalDisk` 類別收集而來，每個磁片磁碟機一個實例。
+`size.*`系統會從 `MSFT_PhysicalDisk` WMI 中的類別收集數列，每個磁片磁碟機一個實例。
 
 | 數列                          | Source 屬性        |
 |---------------------------------|------------------------|
 | `physicaldisk.size.total`       | `Size`                 |
 | `physicaldisk.size.used`        | `VirtualDiskFootprint` |
 
-## <a name="usage-in-powershell"></a>在 PowerShell 中的使用方式
+## <a name="usage-in-powershell"></a>PowerShell 中的使用方式
 
 使用[PhysicalDisk](https://docs.microsoft.com/powershell/module/storage/get-physicaldisk) Cmdlet：
 
@@ -91,6 +91,6 @@ ms.locfileid: "80859451"
 Get-PhysicalDisk -SerialNumber <SerialNumber> | Get-ClusterPerf
 ```
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 
 - [儲存空間直接存取的效能歷程記錄](performance-history.md)

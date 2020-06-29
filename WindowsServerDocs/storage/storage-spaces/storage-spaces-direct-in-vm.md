@@ -9,12 +9,12 @@ ms.topic: article
 author: eldenchristensen
 ms.date: 10/25/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 816e589cbb7ed4196411b8f5bab740c7ee5f7595
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 77f82023b8ed5db6f329530bebc3162cb8565856
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436763"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474545"
 ---
 # <a name="using-storage-spaces-direct-in-guest-virtual-machine-clusters"></a>使用來賓虛擬機器叢集中的儲存空間直接存取
 
@@ -83,7 +83,7 @@ ms.locfileid: "83436763"
 
     The virtual disks exposed through the virtual machine must retain the same size and characteristics. Adding more capacity to the storage pool can be accomplished by adding more virtual disks to each of the virtual machines and adding them to the pool. It's highly recommended to use virtual disks of the same size and characteristics as the current virtual disks.
 
-## See also
+## Additional References
 
 - [Additional Azure Iaas VM templates for deploying Storage Spaces Direct, videos, and step-by-step guides](https://techcommunity.microsoft.com/t5/Failover-Clustering/Deploying-IaaS-VM-Guest-Clusters-in-Microsoft-Azure/ba-p/372126).
 

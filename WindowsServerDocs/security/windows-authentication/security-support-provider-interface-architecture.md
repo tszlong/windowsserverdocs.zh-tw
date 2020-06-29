@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 89e6696c286cae7c3e89346d2044869082cdd8bc
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2faf67f71d5bb04e23f034e738b64c62a7df4f05
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861731"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475245"
 ---
 # <a name="security-support-provider-interface-architecture"></a>安全性支援提供者介面架構
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 這個適用于 IT 專業人員的參考主題說明安全性支援提供者介面（SSPI）架構中使用的 Windows 驗證通訊協定。
 
@@ -77,7 +77,7 @@ SSPI 是 Windows Server 作業系統中的一般安全性服務 API （GSSAPI）
 
 -   針對網域使用者和電腦 Active Directory 憑證服務的憑證要求
 
-位置：%windir%\Windows\System32\kerberos.dll
+位置：% windir% \Windows\System32\kerberos.dll
 
 此提供者預設包含在本主題開頭的**適用**物件清單中指定的版本，以及 windows Server 2003 和 windows XP。
 
@@ -85,15 +85,15 @@ SSPI 是 Windows Server 作業系統中的一般安全性服務 API （GSSAPI）
 
 -   [Microsoft Kerberos （Windows）](https://msdn.microsoft.com/library/aa378747(VS.85).aspx)
 
--   [\[MS KILE\]： Kerberos 通訊協定延伸模組](https://msdn.microsoft.com/library/cc233855(PROT.10).aspx)
+-   [\[KILE \] ： Kerberos 通訊協定延伸](https://msdn.microsoft.com/library/cc233855(PROT.10).aspx)
 
--   [\[MS-CHAP\]： Kerberos 通訊協定延伸模組：適用于使用者和限制委派通訊協定規格的服務](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx)
+-   [\[MS-CHAP \] ： Kerberos 通訊協定延伸模組：適用于使用者和限制委派通訊協定規格的服務](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx)
 
 -   [Kerberos SSP/AP （Windows）](https://msdn.microsoft.com/library/aa377942(VS.85).aspx)
 
 -   Windows Vista 的[Kerberos 增強功能](https://technet.microsoft.com/library/cc749438(v=ws.10).aspx)
 
--   Windows 7 的[Kerberos 驗證變更](https://technet.microsoft.com/library/dd560670(v=ws.10).aspx) 
+-   Windows 7 的[Kerberos 驗證變更](https://technet.microsoft.com/library/dd560670(v=ws.10).aspx)
 
 -   [Kerberos 驗證技術參考](https://technet.microsoft.com/library/cc739058(v=ws.10).aspx)
 
@@ -110,7 +110,7 @@ NTLM 安全性支援提供者（NTLM SSP）是一種二進位訊息通訊協定�
 
 -   安全遠端程序呼叫服務或 DCOM 服務
 
-位置：%windir%\Windows\System32\ msv1_0 .dll
+位置：% windir% \Windows\System32\msv1_0.dll
 
 此提供者預設包含在本主題開頭的**適用**物件清單中指定的版本，以及 windows Server 2003 和 windows XP。
 
@@ -118,22 +118,22 @@ NTLM 安全性支援提供者（NTLM SSP）是一種二進位訊息通訊協定�
 
 -   [MSV1_0 驗證套件（Windows）](https://msdn.microsoft.com/library/aa378753(VS.85).aspx)
 
--   Windows 7 中[NTLM 驗證的變更](https://technet.microsoft.com/library/dd566199(v=ws.10).aspx) 
+-   Windows 7 中[NTLM 驗證的變更](https://technet.microsoft.com/library/dd566199(v=ws.10).aspx)
 
--   [Microsoft NTLM （Windows）](https://msdn.microsoft.com/library/aa378749(VS.85).aspx)
+-   [Microsoft NTLM (Windows)](https://msdn.microsoft.com/library/aa378749(VS.85).aspx)
 
--   [審核和限制 NTLM 使用方式指南](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx)
+-   [稽核和限制 NTLM 使用量指南](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx)
 
 ### <a name="digest-security-support-provider"></a><a name="BKMK_DigestSSP"></a>摘要式安全性支援提供者
 摘要式驗證是一種業界標準，用於輕量型目錄存取協定（LDAP）和 web 驗證。 摘要式驗證會在網路上以 MD5 雜湊或訊息摘要的方式傳輸認證。
 
-摘要式 SSP （Wdigest .dll）用於下列各項：
+摘要式 SSP （Wdigest.dll）用於下列各項：
 
 -   Internet Explorer 和 Internet Information Services （IIS）存取
 
 -   LDAP 查詢
 
-位置：%windir%\Windows\System32\Digest.dll
+位置：% windir% \Windows\System32\Digest.dll
 
 此提供者預設包含在本主題開頭的**適用**物件清單中指定的版本，以及 windows Server 2003 和 windows XP。
 
@@ -141,7 +141,7 @@ NTLM 安全性支援提供者（NTLM SSP）是一種二進位訊息通訊協定�
 
 -   [Microsoft Digest 驗證（Windows）](https://msdn.microsoft.com/library/aa378745(VS.85).aspx)
 
--   [\[DPSP\]：摘要式通訊協定延伸](https://msdn.microsoft.com/library/cc227906(PROT.13).aspx)
+-   [\[DPSP \] ：摘要式通訊協定延伸](https://msdn.microsoft.com/library/cc227906(PROT.13).aspx)
 
 ### <a name="schannel-security-support-provider"></a><a name="BKMK_SchannelSSP"></a>Schannel 安全性支援提供者
 安全通道（Schannel）用於 web 型伺服器驗證，例如當使用者嘗試存取安全的 web 伺服器時。
@@ -166,7 +166,7 @@ TLS 通訊協定、SSL 通訊協定、私人通訊技術（百分比）通訊協
 
 應用程式明確呼叫時，會使用 DTLS。 如需安全通道提供者所使用之 DTLS 和其他通訊協定的詳細資訊，請參閱[Schannel 安全性支援提供者技術參考](../tls/schannel-security-support-provider-technical-reference.md)。
 
-位置：%windir%\Windows\System32\Schannel.dll
+位置：% windir% \Windows\System32\Schannel.dll
 
 此提供者預設包含在本主題開頭的**適用**物件清單中指定的版本，以及 windows Server 2003 和 windows XP。
 
@@ -179,16 +179,16 @@ TLS 通訊協定、SSL 通訊協定、私人通訊技術（百分比）通訊協
 
 -   [TLS/SSL 技術參考](https://technet.microsoft.com/library/cc784149(v=ws.10).aspx)
 
--   [\[MS TLSP\]：傳輸層安全性（TLS）設定檔](https://msdn.microsoft.com/library/dd207968(PROT.13).aspx)
+-   [\[TLSP \] ：傳輸層安全性（TLS）設定檔](https://msdn.microsoft.com/library/dd207968(PROT.13).aspx)
 
 ### <a name="negotiate-security-support-provider"></a><a name="BKMK_NegoSSP"></a>Negotiate 安全性支援提供者
-簡單且受保護的 GSS-API 協調機制（SPNEGO）會形成 Negotiate SSP 的基礎，whichcan 可用來協調特定的驗證通訊協定。 當應用程式呼叫 SSPI 來登入網路時，它可以指定 SSP 來處理要求。 如果應用程式指定 Negotiate SSP，它會分析要求，並根據客戶設定的安全性原則，挑選適當的提供者來處理要求。
+簡單且受保護的 GSS-API 協調機制（SPNEGO）會形成 Negotiate SSP 的基礎，whichcan 可用來協調特定的驗證通訊協定。 當應用程式呼叫 SSPI 以登入網路時，它可以指定 SSP 來處理要求。 如果應用程式指定 Negotiate SSP，它會分析要求，並根據客戶設定的安全性原則，挑選適當的提供者來處理要求。
 
 SPNEGO 是在 RFC 2478 中指定。
 
 在支援的 Windows 作業系統版本中，「協商安全性支援提供者」會在 Kerberos 通訊協定與 NTLM 之間進行選取。 根據預設，除非其中一個與驗證有關的系統無法使用該通訊協定，或呼叫應用程式未提供足夠的資訊來使用 Kerberos 通訊協定，否則 Negotiate 會選取 Kerberos 通訊協定。
 
-位置：%windir%\Windows\System32\lsasrv.dll
+位置：% windir% \Windows\System32\lsasrv.dll
 
 此提供者預設包含在本主題開頭的**適用**物件清單中指定的版本，以及 windows Server 2003 和 windows XP。
 
@@ -196,20 +196,20 @@ SPNEGO 是在 RFC 2478 中指定。
 
 -   [Microsoft Negotiate （Windows）](https://msdn.microsoft.com/library/aa378748(VS.85).aspx)
 
--   [\[SPNG\]：簡單且受保護的 GSS-API 協調機制（SPNEGO）延伸模組](https://msdn.microsoft.com/library/cc247021(PROT.13).aspx)
+-   [\[SPNG \] ： Simple 和 PROTECTED GSS-API 協調機制（SPNEGO）延伸模組](https://msdn.microsoft.com/library/cc247021(PROT.13).aspx)
 
--   [\[MS N2HT\]： Negotiate 和 Nego2 HTTP 驗證通訊協定規格](https://msdn.microsoft.com/library/dd303576(PROT.13).aspx)
+-   [\[N2HT \] ： Negotiate 和 NEGO2 HTTP 驗證通訊協定規格](https://msdn.microsoft.com/library/dd303576(PROT.13).aspx)
 
 ### <a name="credential-security-support-provider"></a><a name="BKMK_CredSSP"></a>認證安全性支援提供者
 認證安全性服務提供者（CredSSP）可在啟動新的終端機服務和遠端桌面服務會話時，提供單一登入（SSO）使用者體驗。 CredSSP 可讓應用程式根據用戶端的原則，將使用者的認證從用戶端電腦（藉由使用用戶端 SSP）委派給目標伺服器（透過伺服器端 SSP）。 CredSSP 原則是使用群組原則進行設定，而且預設會關閉認證的委派。
 
-位置：%windir%\Windows\System32\credssp.dll
+位置：% windir% \Windows\System32\credssp.dll
 
 此提供者預設會包含在本主題開頭的**適用**物件清單中指定的版本。
 
 **認證 SSP 的其他資源**
 
--   [\[MS CSSP\]：認證安全性支援提供者（CredSSP）通訊協定規格](https://msdn.microsoft.com/library/cc226764(PROT.13).aspx)
+-   [\[CSSP \] ：認證安全性支援提供者（CredSSP）通訊協定規格](https://msdn.microsoft.com/library/cc226764(PROT.13).aspx)
 
 -   [適用于終端機服務登入的認證安全性服務提供者和 SSO](https://technet.microsoft.com/library/cc749211(v=ws.10).aspx)
 
@@ -226,18 +226,18 @@ Negotiate 延伸模組（NegoExts）是一種驗證套件，可針對 Microsoft 
 
 -   **用戶端電腦與伺服器之間的豐富用戶端可用性。** 系統會使用作業系統的網路和驗證元件。
 
-Windows Negotiate 套件會以與 Kerberos 和 NTLM 相同的方式來處理 NegoExts 的 SSP。 NegoExts 會在啟動時載入至本機系統授權單位（LSA）。 收到驗證要求時，會根據要求的來源，NegoExts 會在支援的 Ssp 之間進行協調。 它會收集認證和原則、將其加密，並將該資訊傳送至適當的 SSP，其中會建立安全性權杖。
+Windows Negotiate 套件會以與 Kerberos 和 NTLM 相同的方式來處理 NegoExts 的 SSP。 NegoExts.dll 會在啟動時載入至本機系統授權單位（LSA）。 收到驗證要求時，會根據要求的來源，NegoExts 會在支援的 Ssp 之間進行協調。 它會收集認證和原則、將其加密，並將該資訊傳送至適當的 SSP，其中會建立安全性權杖。
 
 NegoExts 支援的 Ssp 不是獨立的 Ssp，例如 Kerberos 和 NTLM。 因此，在 NegoExts SSP 中，當驗證方法因任何原因而失敗時，將會顯示或記錄驗證失敗訊息。 不可能進行重新協商或回退驗證方法。
 
-位置：%windir%\Windows\System32\negoexts.dll
+位置：% windir% \Windows\System32\negoexts.dll
 
 此提供者預設會包含在本主題開頭的 [**適用于**] 清單中指定的版本中，但不包括 windows Server 2008 和 windows Vista。
 
 ### <a name="pku2u-security-support-provider"></a><a name="BKMK_PKU2USSP"></a>PKU2U 安全性支援提供者
 PKU2U 通訊協定已引進並實作為 Windows 7 和 Windows Server 2008 R2 中的 SSP。 這個 SSP 會啟用對等驗證，特別是透過 Windows 7 中引進的「家庭功能」媒體和「檔案共用」功能。 此功能允許在不屬於網域成員的電腦之間共用。
 
-位置：%windir%\Windows\System32\pku2u.dll
+位置：% windir% \Windows\System32\pku2u.dll
 
 此提供者預設會包含在本主題開頭的 [**適用于**] 清單中指定的版本中，但不包括 windows Server 2008 和 windows Vista。
 
@@ -280,7 +280,7 @@ Windows SSPI 可以使用任何透過已安裝的安全性支援提供者所支�
 
     -   如果用戶端電腦不支援任何列出的通訊協定，驗證交換就會失敗。
 
-## <a name="see-also"></a>另請參閱
+## <a name="additional-references"></a>其他參考
 [Windows 驗證架構](https://technet.microsoft.com/library/dn169024(v=ws.10).aspx)
 
 
