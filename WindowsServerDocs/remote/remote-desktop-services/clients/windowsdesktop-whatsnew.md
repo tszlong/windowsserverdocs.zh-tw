@@ -7,14 +7,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 05/27/2020
+ms.date: 06/23/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d49c49def8b110f42a6d56354c73e5a75b04b7e
-ms.sourcegitcommit: 4fec7d82f0772d03a9e8cac20092a4309b0f796e
+ms.openlocfilehash: 5c3fc20ea42deaa9dd96fd9f7bfabfcb85462bdd
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84025509"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267659"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面用戶端的新功能
 
@@ -26,8 +26,21 @@ ms.locfileid: "84025509"
 
 |使用者群組 |版本  |
 |-----------|---------|
-|公用     |1.2.1026 |
-|Insider    |1.2.1026 |
+|公用     |1.2.1104 |
+|Insider    |1.2.1104 |
+
+## <a name="updates-for-version-121104"></a>1\.2.1104 版的更新
+
+*發行日期：06/23/2020*
+
+下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zeHS)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zrAd)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zeHR)
+
+- 已更新 [訂閱] 選項的自動探索邏輯，以支援 Windows 虛擬桌面 2020 年春季版更新。 只有春季版更新資源的客戶應該不再需要提供 2019 年秋季版的同意。
+- 已改善對高 DPI 裝置的支援，縮放比例最高可達 400%。
+- 已修正未顯示中斷連線對話方塊的問題。
+- 已修正命令列工具提示的顯示期間超出預期的問題。
+- 已修正您嘗試在重新整理之後立即訂閱時發生當機的問題。
+- 已修正在某些語言中無法正確剖析日期和時間所導致的當機。
 
 ## <a name="updates-for-version-121026"></a>1\.2.1026 版的更新
 
@@ -76,8 +89,6 @@ ms.locfileid: "84025509"
 
 *發行日期：2020/03/24*
 
-下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4siSh)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4siSi)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4sllb)
-
 - 為了與其他遠端桌面用戶端保持一致，已將工作區的「更新」動作重新命名為「重新整理」。
 - 您現在可以直接從其操作功能表重新整理工作區。
 - 立即手動重新整理工作區，可確保所有本機內容都會更新。
@@ -90,8 +101,6 @@ ms.locfileid: "84025509"
 
 *發行日期：02/25/2020*
 
-下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qeak)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qm7h)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qm7g)
-
 - 如果 RDP 檔案遺漏簽章，或其中一個 signscope 屬性已修改，則現在會封鎖對 Windows 虛擬桌面的連線。
 - 當工作區是空的或已移除時，連接中心不會再顯示為空白。
 - 已在中斷連線的訊息上新增活動識別碼和錯誤碼，以改善疑難排解。 您可以使用 **Ctrl + C** 複製對話方塊訊息。
@@ -102,8 +111,6 @@ ms.locfileid: "84025509"
 ## <a name="updates-for-version-12605"></a>1\.2.605 版的更新
 
 *發行日期：01/29/2020*
-
-下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oHrD)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oJZs)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oXhD)
 
 - 您現在可以選取要用於桌面連線的顯示器。 若要變更此設定，請在桌面連線的圖示上按一下滑鼠右鍵，然後選取 [設定]。
 - 已修正連線設定未顯示正確可用的縮放比例問題。
@@ -116,8 +123,6 @@ ms.locfileid: "84025509"
 
 *發行日期：12/04/2019*
 
-下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k7jH)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k7jL)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k27O)
-
 - 您現在可以直接從用戶端頂端命令列上的 [更多選項] 按鈕，存取有關更新的資訊。
 - 您現在可以從用戶端的命令列報告意見反應。
 - 現在，只有在意見反應中樞可供使用時，才會顯示 [意見反應] 選項。
@@ -128,8 +133,6 @@ ms.locfileid: "84025509"
 ## <a name="updates-for-version-12431"></a>1\.2.431 版的更新
 
 *發行日期：2019/11/12*
-
-下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48kow)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48koA)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48zYj)
 
 - 現已推出 32 位元和 ARM64 版本的用戶端！
 - 現在，用戶端會儲存您對連線列所做的任何變更 (例如其位置、大小和釘選狀態)，並將這些變更套用至工作階段。
@@ -148,8 +151,6 @@ ms.locfileid: "84025509"
 ## <a name="updates-for-version-12247"></a>1\.2.247 版的更新
 
 *發行日期：09/17/2019*
-
-下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3LkSa)
 
 - 已改善當地語系化版本的遞補語言。 (例如，FR-CA 會正確地以法文顯示，而不是英文。)
 - 移除訂用帳戶時，用戶端現在會正確地從認證管理員移除已儲存的認證。

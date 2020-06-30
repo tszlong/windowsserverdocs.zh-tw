@@ -7,18 +7,18 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 05/08/2020
+ms.date: 06/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 745f911367471d3708c57a3c777743a65c5bd4a8
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 4606938a6c01e20c847b3a6c198de8a1c61c59f0
+ms.sourcegitcommit: 5bc5aaf341c711113ca03d1482f933b05b146007
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993345"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85094525"
 ---
 # <a name="supported-remote-desktop-rdp-file-settings"></a>支援的遠端桌面 RDP 檔案設定
 
-下表包含支援的 RDP 檔案設定清單，您可以搭配遠端桌面用戶端來使用這些設定。
+下表包含支援的 RDP 檔案設定清單，您可以搭配遠端桌面用戶端來使用這些設定。 進行設定時，請檢查[用戶端比較](./remote-desktop-app-compare.md)，已確認每個用戶端支援的重新導向。
 
 這份表格也會點出支援作為 Windows 虛擬桌面自訂屬性的設定。 您可以參閱[此文件](https://go.microsoft.com/fwlink/?linkid=2098243&clcid=0x409)，以了解如何使用 PowerShell 來自訂 Windows 虛擬桌面主機集區的 RDP 屬性。
 
@@ -31,7 +31,7 @@ ms.locfileid: "82993345"
 | username:s:value | 指定將用於登入遠端電腦的使用者帳戶名稱。 | 任何有效的使用者名稱。 | | |
 | domain:s:value | 指定登入遠端電腦時，用於登入的使用者帳戶所在網域名稱。 | 有效的網域名稱，例如 "CONTOSO"。 | | |
 | gatewayhostname:s:value | 指定 RD 閘道主機名稱。 | 有效的名稱、IPv4 位址或 IPv6 位址。 | | |
-| gatewaycredentialssource:i:value | 指定 RD 閘道驗證方法。 | - 0：詢問密碼 (NTLM)</br>- 1：使用智慧卡</br>- 4：允許使用者稍後再選取 | 0 | |
+| gatewaycredentialssource:i:value | 指定 RD 閘道驗證方法。 | - 0：詢問密碼 (NTLM)</br>- 1：使用智慧卡</br>- 2：使用目前登入之使用者的認證。</br>- 3：提示使用者輸入其認證並使用基本驗證</br>- 4：允許使用者稍後再選取</br>- 5：使用以 Cookie 為基礎的驗證 | 0 | |
 | gatewayprofileusagemethod:i:value | 指定是否使用預設的 RD 閘道設定。 | - 0：使用由系統管理員指定的預設設定檔模式</br>- 1：使用由使用者指定的明確設定 | 0 | |
 | gatewayusagemethod:i:value | 指定何時要在連線中使用 RD 閘道。 | - 0：不使用 RD 閘道</br>- 1：一律使用 RD 閘道</br>- 2：如果無法直接與 RD 工作階段主機連線，就使用 RD 閘道</br>- 3：使用預設的 RD 閘道設定</br>- 4：不使用 RD 閘道，略過本機位址的閘道</br>將此屬性值設定為 0 或 4 會有同等效果，但將此屬性設定為 4 會啟用略過本機位址的選項。 | 0 | |
 | promptcredentialonce:i:value | 決定是否儲存使用者的認證以同時用於 RD 閘道和遠端電腦。 | - 0：遠端工作階段不會使用相同的認證</br>- 1：遠端工作階段會使用相同的認證 | 1 | |
@@ -87,7 +87,7 @@ ms.locfileid: "82993345"
 |------------------------------------|------------------------|------------------------|:----------------------:|:-----------------------:|
 | remoteapplicationcmdline:s:value | RemoteApp 的選擇性命令列參數。 | 有效的命令列參數。 | | |
 | remoteapplicationexpandcmdline:i:value | 決定 RemoteApp 命令列參數內含的環境變數是否應該在本機或遠端擴充。 | - 0：環境變數應該擴充為本機電腦的值</br>- 1：環境變數應該擴充為遠端電腦的值 | 1 | |
-| remoteapplicationexpandworkingdir | 決定 RemoteApp 工作目錄參數內含的環境變數是否應該在本機或遠端擴充。 | - 0：環境變數應該擴充為本機電腦的值</br> - 1：環境變數應該擴充為遠端電腦的值。</br>RemoteApp 工作目錄是透過殼層工作目錄參數指定。 | 1 | |
+| remoteapplicationexpandworkingdir:i:value | 決定 RemoteApp 工作目錄參數內含的環境變數是否應該在本機或遠端擴充。 | - 0：環境變數應該擴充為本機電腦的值</br> - 1：環境變數應該擴充為遠端電腦的值。</br>RemoteApp 工作目錄是透過殼層工作目錄參數指定。 | 1 | |
 | remoteapplicationfile:s:value | 指定 RemoteApp 要在遠端電腦上開啟的檔案。</br>若要開啟本機檔案，您還必須啟用來源磁碟機的磁碟機重新導向。 | 有效的檔案路徑。 | | |
 | remoteapplicationicon:s:value | 指定當啟動 RemoteApp 時要顯示在用戶端 UI 中的圖示檔。 如果未指定檔案名稱，用戶端會使用標準遠端桌面圖示。 僅支援 ".ico" 檔案。 | 有效的檔案路徑。 | | |
 | remoteapplicationmode:i:value | 決定是否以 RemoteApp 工作階段啟動連線。 | - 0：不要啟動 RemoteApp 工作階段</br>- 1：啟動 RemoteApp 工作階段 | 1 | |

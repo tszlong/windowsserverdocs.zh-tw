@@ -1,25 +1,29 @@
 ---
+title: 概述適用於 Windows 的 OpenSSH
+description: 概述由 Linux 系統管理員和其他非 Windows 的系統管理員用於跨平台遠端系統管理的 OpenSSH 工具。
 ms.date: 01/07/2019
 contributor: damaerteMSFT
 author: maertendmsft
-title: Windows 的 OpenSSH
 ms.product: windows-server
-ms.openlocfilehash: 57126f38245f4547a04ea3a51f58aee865b5eb97
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.type: conceptual
+ms.openlocfilehash: a045e2b2d262df2a19d910b54c8e2a6db9f55362
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80852031"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85469743"
 ---
 # <a name="openssh-in-windows"></a>Windows 的 OpenSSH
 
-OpenSSH 是由 Linux 和其他非 Windows 系統管理員使用的安全殼層 (SSH) 工具的開放原始碼版本，用於跨平台管理遠端系統。 2018 年秋天時，OpenSSH 已新增到 Windows，並包含在 Windows 10 和 Windows Server 2019 中。 
+OpenSSH 是由 Linux 和其他非 Windows 系統管理員使用的安全殼層 (SSH) 工具的開放原始碼版本，用於跨平台管理遠端系統。
+2018 年秋天時，OpenSSH 已新增到 Windows，並包含在 Windows 10 和 Windows Server 2019 中。
 
-SSH 是以用戶端伺服器架構為基礎，其中使用者所使用的系統是用戶端，而受管理的遠端系統則是伺服器。 OpenSSH 包含一系列的元件和工具，其設計目的是為了提供安全且直接的遠端系統管理方法，包括：
+SSH 是以用戶端伺服器架構為基礎，其中使用者所使用的系統是用戶端，而受管理的遠端系統則是伺服器。
+OpenSSH 包含一系列的元件和工具，其設計目的是為了提供安全且直接的遠端系統管理方法，包括：
 
-* sshd.exe，這是在被遠端管理的系統上必須執行的 SSH 伺服器元件 
+* sshd.exe，這是在被遠端管理的系統上必須執行的 SSH 伺服器元件
 * ssh.exe，這是在使用者的本機系統上執行的 SSH 用戶端元件
-* ssh-keygen.exe 可產生、管理及轉換 SSH 的驗證金鑰 
+* ssh-keygen.exe 可產生、管理及轉換 SSH 的驗證金鑰
 * ssh-agent.exe 會儲存公開金鑰驗證所使用的私密金鑰
 * ssh-add.exe 會將私密金鑰新增至伺服器允許的清單
 * ssh-keyscan.exe 協助從許多主機收集公用 SSH 主機金鑰
@@ -27,9 +31,9 @@ SSH 是以用戶端伺服器架構為基礎，其中使用者所使用的系統�
 * scp.exe 是在 SSH 上執行的檔案複製公用程式
 
 本節的文件著重於如何在 Windows 上使用 OpenSSH (包括安裝)，以及 Windows 特定的設定和使用案例。 主題如下：
-* 安裝及解除安裝適於 Windows Server 2019 和 Windows 10 的 OpenSSH
 
-其他有關一般 OpenSSH 功能的詳細文件可以從 [OpenSSH.com](https://www.openssh.com/manual.html) 線上取得。 
+其他有關一般 OpenSSH 功能的詳細文件可以從 [OpenSSH.com](https://www.openssh.com/manual.html) 線上取得。
 
-主要 [OpenSSH 開放原始碼專案](https://www.openssh.com) 是由開發人員在 OpenBSD 專案中管理。 此專案的 Microsoft 分支是 [GitHub](https://github.com/PowerShell/openssh-portable)。
-我們很歡迎您對 Windows OpenSSH 的意見反應，您可以在我們的 [OpenSSH GitHub 存放庫](https://github.com/PowerShell/openssh-portable)中建立 GitHub 問題來提出意見。 
+主要 [OpenSSH 開放原始碼專案](https://www.openssh.com) 是由開發人員在 OpenBSD 專案中管理。
+此專案的 Microsoft 分支是 [GitHub](https://github.com/PowerShell/openssh-portable)。
+我們很歡迎您對 Windows OpenSSH 的意見反應，您可以在我們的 [OpenSSH GitHub 存放庫](https://github.com/PowerShell/openssh-portable)中建立 GitHub 問題來提出意見。

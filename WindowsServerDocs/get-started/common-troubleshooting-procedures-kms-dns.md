@@ -6,12 +6,12 @@ ms.technology: server-general
 author: Teresa-Motiv
 ms.author: v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: 76665d91cc1e2997a837721ffbc51b0513dd7c1a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: f6e600b41e4a485084bd0622c2be0753d0b11c0c
+ms.sourcegitcommit: 6d7a394edefba684f7b6983c65026679c1b7a485
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81524933"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84776710"
 ---
 # <a name="guidelines-for-troubleshooting-dns-related-activation-issues"></a>針對 DNS 相關啟用問題進行疑難排解的指導方針
 
@@ -29,7 +29,7 @@ ms.locfileid: "81524933"
    - Windows 8
 - 啟用精靈無法連線至 KMS 主機電腦。
 
-當您嘗試啟動用戶端系統時，啟用精靈會使用 DNS 來尋找執行 KMS 軟體的對應電腦。 如果此精靈查詢 DNS，但找不到 KMS 主機電腦的 DNS 專案，則會回報錯誤。   
+當您嘗試啟動用戶端系統時，啟用精靈會使用 DNS 來尋找執行 KMS 軟體的對應電腦。 如果此精靈查詢 DNS，但找不到 KMS 主機電腦的 DNS 專案，則會回報錯誤。
 
 <a id="list"></a>請檢閱下列清單，尋找符合您情況的方法：
 
@@ -37,7 +37,7 @@ ms.locfileid: "81524933"
 - 如果您必須安裝和設定 KMS 主機，請使用[針對要啟用得用戶端設定 KMS 主機](#configure-a-kms-host-for-the-clients-to-activate-against)程序。
 - 如果用戶端找不到您現有的 KMS 主機，請使用下列程式針對您的路由組態進行疑難排解。 這些程序會從最簡單到最複雜的方式排列。
   - [確認 DNS 伺服器的基本 IP 連線能力](#verify-basic-ip-connectivity-to-the-dns-server)
-  - [確認 KMS 主機設定](#verify-the-configuration-of-the-kms-host)  
+  - [確認 KMS 主機設定](#verify-the-configuration-of-the-kms-host)
   - [判斷路由問題的類型](#determine-the-type-of-routing-issue)
   - [確認 DNS 設定](#verify-the-dns-configuration)
   - [手動建立 KMS SRV 記錄](#manually-create-a-kms-srv-record)
@@ -50,13 +50,13 @@ ms.locfileid: "81524933"
 
 若要將產品金鑰變更為 MAK，請遵循下列步驟：
 
-1. 開啟提高權限的命令提示字元視窗。 若要這麼做，請按 Windows 標誌鍵+X，以滑鼠右鍵按一下 [命令提示字元]  ，然後選取 [以系統管理員身分執行]  。 如果系統提示您輸入系統管理員密碼或進行確認，請輸入密碼或提供確認。
+1. 開啟提高權限的命令提示字元視窗。 若要這麼做，請按 Windows 標誌鍵+X，以滑鼠右鍵按一下 [命令提示字元]，然後選取 [以系統管理員身分執行]。 如果系統提示您輸入系統管理員密碼或進行確認，請輸入密碼或提供確認。
 2. 在命令提示字元中執行以下命令：
    ```cmd
     slmgr -ipk xxxxx-xxxxx-xxxxx-xxxxx-xxxxx
    ```
    > [!NOTE]
-   > **xxxxx-xxxxx-xxxxx-xxxxx-xxxxx**預留位置代表您的 MAK產品金鑰。  
+   > **xxxxx-xxxxx-xxxxx-xxxxx-xxxxx**預留位置代表您的 MAK產品金鑰。
 
 [返回程式清單。](#list)
 
@@ -84,33 +84,33 @@ KMS 啟用要求針對要啟動的用戶端設定 KMS 主機。 如果您的環�
 
 ## <a name="verify-the-configuration-of-the-kms-host"></a>確認 KMS 主機的設定
 
-檢查 KMS 主機伺服器的登錄，以判斷它是否向 DNS 登錄。 根據預設，KMS 主機伺服器會每隔 24小時動態登錄一次 DNS SRV 記錄。 
+檢查 KMS 主機伺服器的登錄，以判斷它是否向 DNS 登錄。 根據預設，KMS 主機伺服器會每隔 24小時動態登錄一次 DNS SRV 記錄。
 > [!IMPORTANT]
-> 請仔細依循本節中的步驟。 如果您未正確修改登錄，可能會發生嚴重問題。 在修改之前，[備份登錄以供還原](https://support.microsoft.com/help/322756)，以免發生問題。  
+> 請仔細依循本節中的步驟。 如果您未正確修改登錄，可能會發生嚴重問題。 在修改之前，[備份登錄以供還原](https://support.microsoft.com/help/322756)，以免發生問題。
 
 若要檢查此設定，請遵循下列步驟：
-1. 啟動 [登錄編輯程式]。 若要這麼做，請以滑鼠右鍵按一下 [開始]  、選取 [執行]  輸入 **regedit**，然後按 Enter。
+1. 啟動 [登錄編輯程式]。 若要這麼做，請以滑鼠右鍵按一下 [開始]、選取 [執行]輸入 **regedit**，然後按 Enter。
 1. 找出 **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SL** 子機碼，並檢查 **DisableDnsPublishing** 項目的值。 此項目具有下列可能的值：
    - **0** 或未定義 (預設值)：KMS 主機伺服器會每隔 24 小時登錄一次 SRV 記錄。
-   - **1**：KMS 主機伺服器不會自動登錄 SRV 記錄。 如果您的實作不支援動態更新，請參閱[手動建立 KMS SRV 記錄](#manually-create-a-kms-srv-record)。  
+   - **1**：KMS 主機伺服器不會自動登錄 SRV 記錄。 如果您的實作不支援動態更新，請參閱[手動建立 KMS SRV 記錄](#manually-create-a-kms-srv-record)。
 1. 如果遺漏 **DisableDnsPublishing**項目，請加以建立 (類型為 DWORD)。 如果可接受動態登錄，請將值保持未定義狀態，或將其設定為 **0**。
 
 [返回程式清單。](#list)
 
 ## <a name="determine-the-type-of-routing-issue"></a>判斷路由問題的類型
 
-您可以使用下列命令來判斷這是名稱解析問題或 SRV 記錄問題。  
+您可以使用下列命令來判斷這是名稱解析問題或 SRV 記錄問題。
 
-1. 在 KMS 用戶端上，開啟提升權限的 [命令提示字元] 視窗。  
+1. 在 KMS 用戶端上，開啟提升權限的 [命令提示字元] 視窗。
 1. 在命令提示字元中執行以下命令：
    ```cmd
    cscript \windows\system32\slmgr.vbs -skms <KMS_FQDN>:<port>
    cscript \windows\system32\slmgr.vbs -ato
    ```
    > [!NOTE]
-   > 在此命令中，<KMS_FQDN> 代表 KMS 主機電腦的完整網域名稱 (FQDN)，而 \<port\> 代表 KMS 使用的 TCP 連接埠。  
+   > 在此命令中，<KMS_FQDN> 代表 KMS 主機電腦的完整網域名稱 (FQDN)，而 \<port\> 代表 KMS 使用的 TCP 連接埠。
 
-   如果這些命令解決了問題，這就是 SRV 記錄問題。 您可以使用[手動將 KMS 主機指派給 KMS 用戶端](#manually-assign-a-kms-host-to-a-kms-client)程序中記載的其中一個命令，對其進行疑難排解。  
+   如果這些命令解決了問題，這就是 SRV 記錄問題。 您可以使用[手動將 KMS 主機指派給 KMS 用戶端](#manually-assign-a-kms-host-to-a-kms-client)程序中記載的其中一個命令，對其進行疑難排解。
 
 1. 如果問題持續發生，請執行下列命令：
    ```cmd
@@ -118,7 +118,7 @@ KMS 啟用要求針對要啟動的用戶端設定 KMS 主機。 如果您的環�
    cscript \windows\system32\slmgr.vbs -ato
    ```
    > [!NOTE]
-   > 在此命令中，\<IP Address\> 代表 KMS 主機電腦的 IP 位址，而 \<port\> 代表 KMS 使用的 TCP 連接埠。  
+   > 在此命令中，\<IP Address\> 代表 KMS 主機電腦的 IP 位址，而 \<port\> 代表 KMS 使用的 TCP 連接埠。
 
    如果這些命令解決了問題，這很可能是名稱解析問題。 如需其他疑難排解資訊，請參閱[驗證 DNS 設定](#verify-the-dns-configuration)程序。
 
@@ -128,7 +128,7 @@ KMS 啟用要求針對要啟動的用戶端設定 KMS 主機。 如果您的環�
 
 ## <a name="verify-the-dns-configuration"></a>確認 DNS 設定
 
->[!NOTE]
+> [!NOTE]
 > 除非另有說明，否則請在發生適用錯誤的 KMS 用戶端上執行下列步驟。
 
 1. 開啟提升權限的 [命令提示字元] 視窗。
@@ -141,7 +141,7 @@ KMS 啟用要求針對要啟動的用戶端設定 KMS 主機。 如果您的環�
    - KMS 用戶端電腦使用的主要 DNS 伺服器 IP 位址
    - KMS 用戶端電腦使用的預設閘道 IP 位址
    - KMS 用戶端電腦使用的 DNS 尾碼搜尋清單
-1. 確認 KMS 主機 SRV 記錄已登錄在 DNS 中。 若要這樣做，請執行下列步驟：  
+1. 確認 KMS 主機 SRV 記錄已登錄在 DNS 中。 若要這樣做，請執行下列步驟：
    1. 開啟提高權限的命令提示字元視窗。
    1. 在命令提示字元中執行以下命令：
       ```cmd
@@ -157,7 +157,7 @@ KMS 啟用要求針對要啟動的用戶端設定 KMS 主機。 如果您的環�
        > [!NOTE]
        > 在此項目中，contoso.com 代表 KMS 主機的網域。
       1. 確認 KMS 主機的 IP 位址、主機名稱、連接埠和網域。
-      1. 如果這些 **_vlmcs** 項目存在，而且它們包含預期的 KMS 主機名稱，請移至[手動將 KMS 主機指派給 KMS 用戶端](#manually-assign-a-kms-host-to-a-kms-client)。  
+      1. 如果這些 **_vlmcs** 項目存在，而且它們包含預期的 KMS 主機名稱，請移至[手動將 KMS 主機指派給 KMS 用戶端](#manually-assign-a-kms-host-to-a-kms-client)。
       > [!NOTE]
       > 如果 [**nslookup**](https://docs.microsoft.com/windows-server/administration/windows-commands/nslookup) 命令找到 KMS 主機，並不表示 DNS 用戶端可找到 KMS 主機。 如果 **nslookup** 命令找到 KMS 主機，但您仍然無法使用 KMS 主機進行啟用，請檢查其他 DNS 設定，例如主要 DNS 尾碼和 DNS 尾碼的搜尋清單。
 1. 確認主要 DNS 尾碼的搜尋清單包含與 KMS 主機相關聯的 DNS 網域尾碼。 如果搜尋清單不包含這項資訊，請移至[將 KMS 主機設定為在多個 DNS 網域中發佈](#configure-the-kms-host-to-publish-in-multiple-dns-domains)程序。
@@ -168,16 +168,16 @@ KMS 啟用要求針對要啟動的用戶端設定 KMS 主機。 如果您的環�
 
 若要手動為使用 Microsoft DNS 伺服器的 KMS 主機建立 SRV 記錄，請遵循下列步驟：
 
-1. 在 DNS 伺服器上開啟 [DNS 管理員]。 若要開啟 DNS 管理員，請選取 [開始]  選取 [系統管理工具]  ，然後選取 [DNS]  。
+1. 在 DNS 伺服器上開啟 [DNS 管理員]。 若要開啟 DNS 管理員，請選取 [開始]選取 [系統管理工具]，然後選取 [DNS]。
 1. 選取您必須在其上建立 SRV 資源記錄的 DNS 伺服器。
-1. 在主控台樹狀目錄中，展開 [正向對應區域]  ，以滑鼠右鍵按一下網域，然後選取 [其他新記錄]  。
-1. 向下捲動清單，選取 [服務位置 (SRV)]  ，然後選取 [建立記錄]  。
+1. 在主控台樹狀目錄中，展開 [正向對應區域]，以滑鼠右鍵按一下網域，然後選取 [其他新記錄]。
+1. 向下捲動清單，選取 [服務位置 (SRV)]，然後選取 [建立記錄]。
 1. 輸入下列資訊：
    - 服務： **_VLMCS**
    - 通訊協定： **_TCP**
    - 連接埠號碼：**1688**
    - 提供這項服務的主機： **&lt;*KMS 主機的 FQDN*&gt;**
-1. 完成後，請選取 [確定]  ，然後選取 [完成]  。
+1. 完成後，請選取 [確定]，然後選取 [完成]。
 
 若要手動為使用 BIND 9.x 相容 DNS 伺服器的 KMS 主機建立 SRV 記錄，請遵循該 DNS 伺服器的指示，並提供 SRV 記錄的下列資訊：
 
@@ -189,7 +189,7 @@ KMS 啟用要求針對要啟動的用戶端設定 KMS 主機。 如果您的環�
 - 主機名稱： **&lt;*KMS 主機的 FQDN 或名稱*&gt;**
 
 > [!NOTE]
-> KMS 不會使用 [優先順序]  或 [權數]  值。 不過，記錄必須包含這些項目。
+> KMS 不會使用 [優先順序] 或 [權數] 值。 不過，記錄必須包含這些項目。
 
 若要設定 BIND 9.x 相容 DNS 伺服器以支援 KMS 自動發佈，請將 DNS 伺服器設定為啟用來自 KMS 主機的資源記錄更新。 例如，將下列一行程式碼新增至 Named.conf 或 Named.conf.local 中的區域定義：
 
@@ -198,7 +198,7 @@ allow-update { any; };
 ```
 ## <a name="manually-assign-a-kms-host-to-a-kms-client"></a>手動將 KMS 主機指派給 KMS 用戶端
 
-根據預設，KMS 用戶端會使用自動探索程序。 根據此程序，KMS 用戶端會查詢 DNS，以取得用戶端的成員資格區域內已發佈 _vlmcs SRV 記錄的伺服器清單。 DNS 會以隨機順序傳回 KMS 主機的清單。 用戶端會挑選 KMS 主機並嘗試在其上建立工作階段。 如果此嘗試可行，用戶端會快取 KMS 主機的名稱，並嘗試將其使用於下一次更新嘗試。 如果工作階段設定失敗，用戶端會隨機挑選另一個 KMS 主機。 我們強烈建議您使用自動探索程序。  
+根據預設，KMS 用戶端會使用自動探索程序。 根據此程序，KMS 用戶端會查詢 DNS，以取得用戶端的成員資格區域內已發佈 `_vlmcs` SRV 記錄的伺服器清單。 DNS 會以隨機順序傳回 KMS 主機的清單。 用戶端會挑選 KMS 主機並嘗試在其上建立工作階段。 如果此嘗試可行，用戶端會快取 KMS 主機的名稱，並嘗試將其使用於下一次更新嘗試。 如果工作階段設定失敗，用戶端會隨機挑選另一個 KMS 主機。 我們強烈建議您使用自動探索程序。
 
 不過，您可以手動將 KMS 主機指派給特定 KMS 用戶端。 若要這樣做，請執行下列步驟。
 
@@ -226,33 +226,33 @@ allow-update { any; };
      ```
      > [!NOTE]
      > 這些命令會使用下列預留位置：
-     >- **<KMS_FQDN>** 代表 KMS 主機電腦的完整網域名稱 (FQDN)
-     >- **\<IPv4Address\>** 代表 KMS 主機電腦的第 4 版 IP 位址
-     >- **\<IPv6Address\>** 代表 KMS 主機電腦的第 6 版 IP 位址
-     >- **\<\> NETBIOSName** 代表 KMS 主機電腦的 NETBIOS 名稱
-     >- **\<port\>** 代表 KMS 使用的 TCP 連接埠。  
+     > - **<KMS_FQDN>** 代表 KMS 主機電腦的完整網域名稱 (FQDN)
+     > - **\<IPv4Address\>** 代表 KMS 主機電腦的第 4 版 IP 位址
+     > - **\<IPv6Address\>** 代表 KMS 主機電腦的第 6 版 IP 位址
+     > - **\<NETBIOSName\>** 代表 KMS 主機電腦的 NETBIOS 名稱
+     > - **\<port\>** 代表 KMS 使用的 TCP 連接埠。
 
 ## <a name="configure-the-kms-host-to-publish-in-multiple-dns-domains"></a>將 KMS 主機設定為在多個 DNS 網域中發佈
 
 > [!IMPORTANT]
 > 請仔細依循本節中的步驟。 如果您未正確修改登錄，可能會發生嚴重問題。 在修改之前，[備份登錄以供還原](https://support.microsoft.com/help/322756)，以免發生問題。
 
-如[手動將 KMS 主機指派給 KMS 用戶端](#manually-assign-a-kms-host-to-a-kms-client)所述，KMS 用戶端通常會使用自動探索程序來識別 KMS 主機。 此程序要求 _vlmcs SRV 記錄必須可在 KMS 用戶端電腦的 DNS 區域中取得。 DNS 區域會對應至電腦的主要 DNS 尾碼或下列其中一項：
+如[手動將 KMS 主機指派給 KMS 用戶端](#manually-assign-a-kms-host-to-a-kms-client)所述，KMS 用戶端通常會使用自動探索程序來識別 KMS 主機。 此程序要求 `_vlmcs` SRV 記錄必須可在 KMS 用戶端電腦的 DNS 區域中取得。 DNS 區域會對應至電腦的主要 DNS 尾碼或下列其中一項：
 - 若為已加入網域的電腦，則為 DNS 系統所指派的電腦網域 (例如 Active Directory Domain Services (AD DS) DNS)。
 - 若為工作群組電腦，這是由動態主機設定通訊協定 (DHCP) 指派的電腦網域。 如要求建議 (RFC) 2132 中所定義，此網域名稱是由代碼值為 15 的選項所定義。
 
-根據預設，KMS 主機會在對應至 KMS 主機電腦網域的 DNS 區域中登錄其 SRV 記錄。 例如，假設 KMS 主機加入 contoso.com 網域。 在此案例中，KMS 主機會在 contoso.com DNS 區域下登錄其 _vmlcs SRV 記錄。 因此，此記錄會將服務識別為 _VLMCS._TCP.CONTOSO.COM。
+根據預設，KMS 主機會在對應至 KMS 主機電腦網域的 DNS 區域中登錄其 SRV 記錄。 例如，假設 KMS 主機加入 contoso.com 網域。 在此案例中，KMS 主機會在 contoso.com DNS 區域下登錄其 `_vlmcs` SRV 記錄。 因此，此記錄會將服務識別為 `_VLMCS._TCP.CONTOSO.COM`。
 
 如果 KMS 主機和 KMS 用戶端使用不同的 DNS 區域，您必須將 KMS 主機設定為在多個 DNS 網域中自動發佈其 SRV 記錄。 若要這樣做，請執行下列步驟：
 
-1. 在 KMS 主機上，啟動 [登錄編輯程式]。 
+1. 在 KMS 主機上，啟動 [登錄編輯程式]。
 1. 找出而後選取 **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SL** 子機碼。
-1. 在 [詳細資料]  窗格中，以滑鼠右鍵按一下空白區域，選取 [新增]  ，然後選取 [多字串值]  。
+1. 在 [詳細資料] 窗格中，以滑鼠右鍵按一下空白區域，選取 [新增]，然後選取 [多字串值]。
 1. 針對新項目的名稱，輸入 **DnsDomainPublishList**。
-1. 以滑鼠右鍵按一下新的 [DnsDomainPublishList]  項目，然後選取 [修改]  。
-1. 在 [編輯多字串]  對話方塊中，輸入 KMS 在個別行上發佈的每個 DNS 網域尾碼，然後選取 [確定]  。
+1. 以滑鼠右鍵按一下新的 [DnsDomainPublishList] 項目，然後選取 [修改]。
+1. 在 [編輯多字串] 對話方塊中，輸入 KMS 在個別行上發佈的每個 DNS 網域尾碼，然後選取 [確定]。
    > [!NOTE]
-   > 對於 Windows Server 2008 R2，[DnsDomainPublishList]  的格式不同。 如需詳細資訊，請參閱《大量啟用技術參考指南》。
+   > 對於 Windows Server 2008 R2，[DnsDomainPublishList] 的格式不同。 如需詳細資訊，請參閱《大量啟用技術參考指南》。
 1. 使用 [服務] 系統管理工具來重新開機軟體授權服務。 此作業會建立 SRV 記錄。
 1. 使用典型方法，確認 KMS 用戶端可連絡您所設定的 KMS 主機。 確認 KMS 用戶端可依名稱和 IP 位址正確地識別 KMS 主機。 如果上述任一項驗證失敗，請調查此 DNS 用戶端解析程式問題。
 1. 若要清除 KMS 用戶端上任何先前快取的 KMS 主機名稱，請在 KMS 用戶端上開啟提升權限的 [命令提示字元] 視窗，然後執行下列命令：
