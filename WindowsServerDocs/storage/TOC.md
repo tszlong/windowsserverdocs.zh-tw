@@ -104,6 +104,7 @@
 ### [鏡像加速的同位](refs/mirror-accelerated-parity.md)
 ### [區塊複製](refs/block-cloning.md)
 ### [完整性資料流](refs/integrity-streams.md)
+### [ReFSUtil](../administration/windows-commands/refsutil.md)
 
 ## 存放裝置移轉服務
 ### [概觀](storage-migration-service/overview.md)

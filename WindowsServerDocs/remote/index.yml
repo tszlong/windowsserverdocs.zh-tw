@@ -1,0 +1,86 @@
+### YamlMime:Landing
+title: 遠端
+summary: 運用遠端存取和伺服器管理的指導方針
+metadata:
+  title: 遠端
+  description: 運用遠端存取和伺服器管理的指導方針
+  ms.service: help
+  ms.prod: windows-server
+  ms.technology: manage-rsat
+  author: coreyp-at-msft
+  ms.author: coreyp
+  manager: dougkim
+  ms.localizationpriority: high
+  ms.topic: landing-page
+  ms.date: 06/29/2020
+  ms.openlocfilehash: e9b87bf12add79075d1999f2b8f048314aad57ed
+  ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
+  ms.translationtype: HT
+  ms.contentlocale: zh-TW
+  ms.lasthandoff: 06/30/2020
+  ms.locfileid: "85549199"
+landingContent:
+- title: MultiPoint 服務
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 規劃 MultiPoint 服務部署
+      url: /windows-server/remote/multipoint-services/planning-a-multipoint-services-deployment
+    - text: MultiPoint 服務移轉
+      url: /windows-server/remote/multipoint-services/multipoint-services-migrate
+    - text: 部署 MultiPoint 服務
+      url: /windows-server/remote/multipoint-services/deploying-multipoint-services
+    - text: 管理 MultiPoint 服務
+      url: /windows-server/remote/multipoint-services/managing-multipoint-services
+- title: 遠端桌面服務
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: 開始使用
+      url: /windows-server/remote/remote-desktop-services/rds-get-started
+  - linkListType: how-to-guide
+    links:
+    - text: 規劃和設計
+      url: /windows-server/remote/remote-desktop-services/rds-plan-and-design
+    - text: 建置和部署
+      url: /windows-server/remote/remote-desktop-services/rds-build-and-deploy
+    - text: 執行並微調
+      url: /windows-server/remote/remote-desktop-services/rds-run-and-tune
+    - text: 存取您的遠端桌面資源
+      url: /windows-server/remote/remote-desktop-services/clients/remote-desktop-clients
+- title: 遠端存取
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Always On VPN
+      url: /windows-server/remote/remote-access/vpn/always-on-vpn
+    - text: 邊界閘道通訊協定 (BGP)
+      url: /windows-server/remote/remote-access/bgp/border-gateway-protocol-bgp
+    - text: RAS 閘道
+      url: /windows-server/remote/remote-access/ras-gateway/ras-gateway
+    - text: 遠端存取伺服器角色
+      url: /windows-server/remote/remote-access/ras/remote-access-server-role-documentation
+    - text: 虛擬私人網路 (VPN)
+      url: /windows-server/remote/remote-access/vpn/vpn-top
+- title: Web 應用程式 Proxy
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Windows Server 2016 中的 Web 應用程式 Proxy
+      url: /windows-server/remote/remote-access/web-application-proxy/web-application-proxy-windows-server
+  - linkListType: how-to-guide
+    links:
+    - text: 使用 AD FS 預先驗證發佈應用程式
+      url: /windows-server/remote/remote-access/web-application-proxy/publishing-applications-using-ad-fs-preauthentication
+    - text: 使用 SharePoint、Exchange 及 RDG 發佈應用程式
+      url: /windows-server/remote/remote-access/web-application-proxy/publishing-applications-with-sharepoint,-exchange-and-rdg
+    - text: 對 Web 應用程式 Proxy 進行疑難排解
+      url: /windows-server/remote/remote-access/web-application-proxy/troubleshooting-web-application-proxy
+- title: 工具
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 遠端伺服器管理工具
+      url: /windows-server/remote/remote-server-administration-tools
+    - text: Windows 的 OpenSSH
+      url: /windows-server/administration/openssh/openssh_overview

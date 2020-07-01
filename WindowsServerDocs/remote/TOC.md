@@ -1,4 +1,4 @@
-# [遠端](index.md)
+# [遠端](index.yml)
 ## [MultiPoint 服務](multipoint-services/MultiPoint-Services.md)
 ### [規劃 MultiPoint 服務部署](multipoint-services/Planning-a-MultiPoint-Services-Deployment.md)
 #### [簡介 MultiPoint 服務](multipoint-services/Introducing-MultiPoint-services.md)
@@ -285,5 +285,5 @@
 ## [ 中的 Web 應用程式 Proxy](remote-access//web-application-proxy/web-application-proxy-windows-server.md)
 ### [使用 AD FS 預先驗證發佈應用程式](remote-access//web-application-proxy/Publishing-Applications-using-AD-FS-Preauthentication.md)
 ### [使用 SharePoint、Exchange 及 RDG 發佈應用程式](remote-access//web-application-proxy/Publishing-Applications-with-SharePoint,-Exchange-and-RDG.md)
-### [對 Web 應用程式 Proxy 進行疑難](remote-access//web-application-proxy/Troubleshooting-Web-Application-Proxy.md)排解
+### [對 Web 應用程式 Proxy 進行疑難排解](remote-access//web-application-proxy/Troubleshooting-Web-Application-Proxy.md)
 
