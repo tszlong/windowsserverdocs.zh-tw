@@ -8,12 +8,12 @@ ms.author: jol
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 0182c4097ec3bc4432e2ba408d701a72d82a7c8d
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 357c37ec395e5c51f3c3f946414f38ea5f95e9e4
+ms.sourcegitcommit: eaf3fb57517b9110082edad356b12daf3345bb2c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950087"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593989"
 ---
 # <a name="publishing-extensions"></a>發行延伸模組
 
@@ -77,15 +77,12 @@ Windows 管理中心會利用 NuGet 套件和摘要來散發和下載延伸模�
 以下是 nuspec 檔案的範例，以及必要或建議屬性的清單。 如需完整的架構，請參閱[nuspec 參考](https://docs.microsoft.com/nuget/reference/nuspec)。 將 nuspec 檔案儲存到您的專案根資料夾中，並使用您選擇的檔案名。
 
 > [!IMPORTANT]
-> Nuspec 檔案中的 ```<id>``` 值必須符合專案 ```manifest.json``` 檔中的 ```"name"``` 值，否則您發行的延伸模組將不會在 Windows 系統管理中心成功載入。
+> ```<id>```Nuspec 檔案中的值必須符合專案檔案中的 ```"name"``` 值 ```manifest.json``` ，否則您發行的延伸模組將不會在 Windows 系統管理中心成功載入。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="https://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <packageTypes>
-      <packageType name="WindowsAdminCenterExtension" />
-    </packageTypes>  
     <id>contoso.project.extension</id>
     <version>1.0.0</version>
     <title>Contoso Hello Extension</title>
@@ -108,24 +105,24 @@ Windows 管理中心會利用 NuGet 套件和摘要來散發和下載延伸模�
 
 #### <a name="required-or-recommended-properties"></a>必要或建議的屬性
 
-| 內容名稱 | 必要/建議 | 說明 |
+| 屬性名稱 | 必要/建議 | 描述 |
 | ---- | ---- | ---- |
 | packageType | 必要 | 使用 "WindowsAdminCenterExtension"，這是針對 Windows 管理中心延伸模組所定義的 NuGet 套件類型。 |
-| id | 必要 | 摘要內的唯一封裝識別碼。 這個值必須符合專案的資訊清單. json 檔案中的 "name" 值。  如需指導方針，請參閱[選擇唯一的套件識別碼](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)。 |
+| id | 必要 | 摘要內的唯一封裝識別碼。 這個值必須符合專案的 manifest.js檔案中的 "name" 值。  如需指導方針，請參閱[選擇唯一的套件識別碼](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)。 |
 | title | 發行至 Windows 系統管理中心摘要所需 | 顯示在 Windows 管理中心擴充管理員中之套件的易記名稱。 |
-| 版本 | 必要 | 延伸模組版本。 建議使用[語義版本設定（SemVer 慣例）](http://semver.org/spec/v1.0.0.html) ，但不是必要的。 |
+| version | 必要 | 延伸模組版本。 建議使用[語義版本設定（SemVer 慣例）](http://semver.org/spec/v1.0.0.html) ，但不是必要的。 |
 | authors | 必要 | 如果代表您的公司發行，請使用您的公司名稱。 |
-| 描述 | 必要 | 提供延伸模組功能的描述。 |
+| description | 必要 | 提供延伸模組功能的描述。 |
 | iconUrl | 發行至 Windows 系統管理中心摘要時建議使用 | 要在擴充管理員中顯示的圖示 URL。 |
 | projectUrl | 發行至 Windows 系統管理中心摘要所需 | 擴充功能網站的 URL。 如果您沒有個別的網站，請使用 NuGet 摘要上封裝網頁的 URL。 |
 | licenseUrl | 發行至 Windows 系統管理中心摘要所需 | 延伸模組之使用者授權合約的 URL。 |
-| 檔案 | 必要 | 這兩個設定會設定 Windows 管理中心所預期的資料夾結構，以供 UI 延伸模組和閘道外掛程式之用。 |
+| files | 必要 | 這兩個設定會設定 Windows 管理中心所預期的資料夾結構，以供 UI 延伸模組和閘道外掛程式之用。 |
 
 ### <a name="3-build-the-extension-nuget-package"></a>3. 建立擴充功能 NuGet 封裝
 
 使用您在上面建立的 nuspec 檔案，您現在將建立 NuGet nupkg 檔案，您可以將其上傳併發布至 NuGet 摘要。
 
-1. 從[nuget 用戶端工具網站](https://docs.microsoft.com/nuget/install-nuget-client-tools)下載 nuget.exe CLI 工具。
+1. 從[NuGet 用戶端工具網站](https://docs.microsoft.com/nuget/install-nuget-client-tools)下載 nuget.exe CLI 工具。
 2. 執行 "nuget.exe pack [. nuspec file name]" 以建立 nupkg 檔案。
 
 ### <a name="4-signing-your-extension-nuget-package"></a>4. 簽署您的擴充功能 NuGet 套件
@@ -148,7 +145,7 @@ Windows 管理中心會利用 NuGet 套件和摘要來散發和下載延伸模�
 
 ### <a name="submit-an-extension-review-request-to-microsoft"></a>提交延伸模組審查要求給 Microsoft
 
-若要提交延伸模組審查要求，請輸入下列資訊，並以電子郵件傳送至[wacextensionrequest@microsoft.com](mailto:wacextensionrequest@microsoft.com?subject=Windows%20Admin%20Center%20Extension%20Review%20Request)。 我們會在一周內回復您的電子郵件。
+若要提交延伸模組審查要求，請輸入下列資訊，並以電子郵件傳送至 [wacextensionrequest@microsoft.com](mailto:wacextensionrequest@microsoft.com?subject=Windows%20Admin%20Center%20Extension%20Review%20Request) 。 我們會在一周內回復您的電子郵件。
 
 ```
 Windows Admin Center Extension Review Request
@@ -167,4 +164,4 @@ Windows Admin Center Extension Review Request
 - 延伸模組的詳細描述，包括螢幕擷取畫面或影片
 - 接收意見反應或問題的電子郵件地址或網站功能
 
-當您準備好要發佈延伸模組時，請傳送電子郵件至[wacextensionrequest@microsoft.com](mailto:wacextensionrequest@microsoft.com?subject=Windows%20Admin%20Center%20Extension%20Package%20Review) ，我們將提供如何將您的延伸模組套件傳送給我們的指示。 當我們收到您的套件之後，我們會進行審查，並在核准後發佈至 Windows 管理中心摘要。
+當您準備好要發佈延伸模組時，請傳送電子郵件至， [wacextensionrequest@microsoft.com](mailto:wacextensionrequest@microsoft.com?subject=Windows%20Admin%20Center%20Extension%20Package%20Review) 我們將提供有關如何將您的延伸模組套件傳送給我們的指示。 當我們收到您的套件之後，我們會進行審查，並在核准後發佈至 Windows 管理中心摘要。
