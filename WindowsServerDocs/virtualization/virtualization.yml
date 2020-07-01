@@ -1,0 +1,75 @@
+### YamlMime:Landing
+title: 虛擬化文件
+summary: Windows Server 中的虛擬化是建立軟體定義基礎結構所需的其中一種基礎技術。 搭配網路功能與儲存空間，虛擬化功能可以賦予為您客戶提供強大工作負載所需的彈性。
+metadata:
+  title: 虛擬化文件
+  description: Windows Server 中的虛擬化是建立軟體定義基礎結構所需的其中一種基礎技術。
+  ms.topic: landing-page
+  author: eross-msft
+  ms.author: lizross
+  ms.prod: windows-server
+  manager: brianlic
+  ms.technology: compute
+  ms.assetid: c248b41f-0de3-7136-9a25-b4b07e41ebf0
+  ms.localizationpriority: high
+  ms.openlocfilehash: 65230ad9d35239a86f5c213807c5f8eed9edfa68
+  ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
+  ms.translationtype: MT
+  ms.contentlocale: zh-TW
+  ms.lasthandoff: 06/30/2020
+  ms.locfileid: "85549155"
+landingContent:
+- title: Windows 容器
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Windows 容器
+      url: /virtualization/windowscontainers
+    - text: 關於視窗容器
+      url: /virtualization/windowscontainers/about/
+    - text: 容器與虛擬機器
+      url: /virtualization/windowscontainers/about/containers-vs-vm
+- title: Windows 10 上的 Hyper-V
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Windows 10 上的 hyper-v 總覽
+      url: /virtualization/hyper-v-on-windows
+    - text: 關於 Windows 10 上的 Hyper-v
+      url: /virtualization/hyper-v-on-windows/about/
+  - linkListType: get-started
+    links:
+    - text: 安裝 Hyper-V
+      url: /virtualization/hyper-v-on-windows/quick-start/enable-hyper-v
+    - text: 建立虛擬機器
+      url: /virtualization/hyper-v-on-windows/quick-start/create-virtual-machine
+- title: Windows Server 上的 Hyper-V
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Windows Server 上的 Hyper-V
+      url: hyper-v/Hyper-V-on-Windows-Server.md
+    - text: Hyper-v 技術總覽
+      url: hyper-v/Hyper-V-Technology-Overview.md
+  - linkListType: reference
+    links:
+    - text: Microsoft Hyper-V Server 2016
+      url: /windows-server/virtualization/hyper-v/hyper-v-server-2016
+    - text: Windows Server 上的 Hyper-v 系統需求
+      url: hyper-v/System-requirements-for-Hyper-V-on-Windows.md
+- title: Hyper-V 虛擬交換器
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Hyper-V 虛擬交換器
+      url: hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md
+  - linkListType: how-to-guide
+    links:
+    - text: 管理 Hyper-V 虛擬交換器
+      url: hyper-v-virtual-switch/Manage-Hyper-V-Virtual-Switch.md
+- title: 使用受防護的網狀架構為 Vm 提供安全的環境
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 受防護網狀架構與受防護的 VM
+      url: ../security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms.md

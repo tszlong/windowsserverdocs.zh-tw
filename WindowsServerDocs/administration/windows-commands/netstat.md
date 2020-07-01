@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6eae779216724d82ef7ca05026bcfd9725e6ea35
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 6e9cd59169922bb6d76b6c65f3381e653df97109
+ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721541"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85548842"
 ---
 # <a name="netstat"></a>netstat
 
@@ -28,7 +28,7 @@ ms.locfileid: "84721541"
 ## <a name="syntax"></a>語法
 
 ```
-netstat [-a] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<interval>]
+netstat [-a] [-b] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<interval>]
 ```
 
 ### <a name="parameters"></a>參數
@@ -36,6 +36,7 @@ netstat [-a] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<interval>]
 | 參數 | 描述 |
 | --------- | ----------- |
 | -a | 顯示所有作用中的 TCP 連線，以及電腦在其上接聽的 TCP 和 UDP 埠。 |
+| -b | 顯示建立每個連接或接聽埠時所牽涉到的可執行檔。 在某些情況下，已知的可執行檔會裝載多個獨立元件，而在這些情況下，會顯示與建立連線或接聽埠相關的元件順序。 在此情況下，可執行檔名稱位於底部的 [] 中，頂端是它所呼叫的元件，依此類推，直到達到 TCP/IP 為止。 請注意，此選項可能非常耗時，除非您有足夠的許可權，否則將會失敗。
 | -E | 顯示乙太網路統計資料，例如傳送和接收的位元組數目和封包數。 這個參數可以與 **-s**結合。 |
 | -n | 顯示使用中的 TCP 連線，但位址和埠號碼會以數位表示，而且不會嘗試判斷名稱。 |
 | -o | 顯示使用中的 TCP 連線，並包含每個連接的處理序識別碼（PID）。 您可以在 Windows 工作管理員的 [進程] 索引標籤上，根據 PID 來尋找應用程式。 這個參數可以與 **-a**、 **-n**和 **-p**結合。 |
@@ -82,6 +83,6 @@ netstat -o 5
 netstat -n -o
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

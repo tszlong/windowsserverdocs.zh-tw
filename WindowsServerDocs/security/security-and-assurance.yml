@@ -1,0 +1,139 @@
+### YamlMime:Landing
+title: Windows Server 安全性檔案
+summary: Windows Server 安全性提供內建于作業系統的保護層，以防範安全性缺口、協助封鎖惡意攻擊，以及強化虛擬機器、應用程式和資料的安全性。
+metadata:
+  title: Windows Server 安全性檔案
+  description: Windows Server 中的安全性總覽。
+  ms.topic: landing-page
+  author: coreyp-at-msft
+  ms.author: coreyp
+  ms.date: 5/19/2020
+  ms.openlocfilehash: 5e20d4eabc7a9630e6a0eb880ddeabff3735f1ab
+  ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
+  ms.translationtype: MT
+  ms.contentlocale: zh-TW
+  ms.lasthandoff: 06/30/2020
+  ms.locfileid: "85549158"
+landingContent:
+- title: Windows Server 的安全性概觀
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Windows Server 安全性部落格文章
+      url: https://blogs.technet.microsoft.com/windowsserver/2016/04/25/ten-reasons-youll-love-windows-server-2016-8-security/
+    - text: 資料中心和私人雲端安全性部落格
+      url: https://blogs.technet.microsoft.com/datacentersecurity/
+    - text: 解決新興威脅和情勢轉移
+      url: https://www.youtube.com/watch?v=B5JMYxYWx1k&feature=youtu.be
+    - text: 保護您的資料中心和雲端免於新興威脅部落格文章
+      url: https://blogs.technet.com/b/windowsserver/archive/2015/11/18/protecting-your-datacenter-and-cloud-november-update.aspx
+    - text: Ignite 的安全性和保證概觀研討會
+      url: https://channel9.msdn.com/events/ignite/2015/brk2482
+- title: 透過受防護的 VM 保護虛擬化
+  linkLists:
+  - linkListType: video
+    links:
+    - text: Channel 9 中的受防護 VM
+      url: https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016
+    - text: 受防護的 VM 示範
+      url: https://www.youtube.com/watch?v=xip5Qtk-7d8
+    - text: Windows Server 中受防護的虛擬機器影片逐步解說
+      url: http://microsoft-cloud.cloudguides.com/Guides/Shielded%Virtual%Machines%in%Windows%Server.htm
+    - text: 強化網狀架構︰保護 Hyper-V 中的租用戶密碼 (Ignite 影片)
+      url: https://channel9.msdn.com/events/ignite/2015/brk3457
+  - linkListType: how-to-guide
+    links:
+    - text: 受防護網狀架構部署指南
+      url: guarded-fabric-shielded-vm/guarded-fabric-deploying-hgs-overview.md
+    - text: 分公司中受訪護 VM 與 Guarded Fabric
+      url: guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office.md
+    - text: 受防護的 VM 與受防護網狀架構疑難排解指南
+      url: guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-overview.md
+- title: 強化作業系統和應用程式
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Windows Defender 應用程式控制 (WDAC) 部署指南
+      url: https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-contro
+    - text: 傳輸層安全性登錄設定
+      url: https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings
+    - text: 控制流程防護
+      url: https://docs.microsoft.com/windows/desktop/SecBP/control-flow-guard
+    - text: Windows Defender
+      url: https://technet.microsoft.com/windows-server-docs/security/windows-defender/windows-defender-overview-windows-server
+  - linkListType: video
+    links:
+    - text: Device Guard 示範影片
+      url: https://www.youtube.com/watch?v=F-pTkesjkhI
+- title: Microsoft Azure Active Directory
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 保護特殊權限存取
+      url: https://technet.microsoft.com/windows-server-docs/security/securing-privileged-access/securing-privileged-access
+    - text: Microsoft Identity Manager 的 Just in Time Administration
+      url: https://technet.microsoft.com/library/mt150258.aspx
+    - text: Just Enough Administration 文章
+      url: https://aka.ms/JEA
+  - linkListType: video
+    links:
+    - text: 使用特殊權限存取管理保護 Windows 和 Microsoft Azure Active Directory
+      url: https://channel9.msdn.com/events/ignite/2015/brk3873
+    - text: Just Enough Administration 示範影片
+      url: https://www.youtube.com/watch?v=xnBrbkY9P20
+- title: 認證保護
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 使用 Credential Guard 保護衍生的網域認證
+      url: https://docs.microsoft.com/windows/security/identity-protection/credential-guard/credential-guard
+    - text: 使用 Remote Credential Guard 保護遠端桌面認證
+      url: https://docs.microsoft.com/windows/security/identity-protection/remote-credential-guard
+  - linkListType: video
+    links:
+    - text: Credential Guard 示範影片
+      url: https://www.youtube.com/watch?v=eUpKOGSl7yk
+- title: 偵測及回應威脅
+  linkLists:
+  - linkListType: video
+    links:
+    - text: 使用 Microsoft Operations Management Suite 的安全性威脅分析
+      url: https://channel9.msdn.com/events/ignite/2015/brk3464
+    - text: Microsoft Operations Management Suite (OMS)
+      url: https://www.youtube.com/watch?v=_SaDw1dRy2k
+    - text: OMS 和 Windows Server
+      url: https://www.youtube.com/watch?v=_SaDw1dRy2k
+  - linkListType: overview
+    links:
+    - text: Microsoft Advanced Threat Analytics
+      url: https://blogs.technet.com/b/ad/archive/2015/07/22/microsoft-advanced-threat-analytics-coming-next-month.aspx
+- title: 網路安全性
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 資料中心防火牆概觀
+      url: https://technet.microsoft.com/library/dn920240.aspx
+    - text: Windows Server DNS 的新功能
+      url: https://technet.microsoft.com/windows-server-docs/networking/dns/what-s-new-in-dns-server
+- title: 將安全性功能對應至相容性規定
+  linkLists:
+  - linkListType: download
+    links:
+    - text: Hyper-V 受防護的 VM 相容性對應白皮書
+      url: https://download.microsoft.com/download/6/D/0/6D06E149-B4C1-4EED-ACD5-DF6066E93CC0/Coalfire_Branded_Hyper_V_Shielded_VMs_Whitepaper_EN_US.pdf
+    - text: JEA 和 JIT 相容性對應白皮書
+      url: https://download.microsoft.com/download/2/7/A/27A2B5BB-6B52-4482-87C1-DA9D6B6D8C8D/Coalfire_Branded_Privileged_Identity_Manager_Whitepaper_EN_US.pdf
+    - text: Credential Guard 相容性對應白皮書
+      url: https://download.microsoft.com/download/6/9/D/69D9E610-D23C-4F7E-A8CC-D65B87CEB4F8/Coalfire_Branded_Device_Guard_Whitepaper_EN_US.pdf
+    - text: Credential Guard 相容性對應白皮書
+      url: https://download.microsoft.com/download/8/1/2/812009C9-E4B8-4D4B-AADD-FDC373D0A076/Coalfire_Branded_Credential_Guard_Whitepaper_EN_US.pdf
+    - text: Windows Defender 相容性對應白皮書
+      url: https://download.microsoft.com/download/C/7/7/C778B7BB-0783-42D7-93A9-B86DFB5A7BAD/Coalfire_Branded_Windows_Defender_Whitepaper_EN_US.pdf
+- title: 較舊版本的 Windows Server
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Windows 舊版檔
+      url: https://docs.microsoft.com/previous-versions/windows/
+    - text: 搜尋特定資訊
+      url: https://docs.microsoft.com/search/?search=Windows+Server&dataSource=previousVersions

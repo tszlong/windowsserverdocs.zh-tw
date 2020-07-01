@@ -8,12 +8,12 @@ ms.assetid: 51bcf124-c215-4e9d-9fa8-a90fa2c2fa22
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e99cceb1acc6df7c9b30cef9f473531a6c35c5c7
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 2477cac206af4e70d10e28d7b1da637b7b7accff
+ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470243"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85548812"
 ---
 # <a name="transition-from-windows-server-essentials-to-windows-server-2012-standard"></a>從 Windows Server Essentials 轉換到 Windows Server 2012 Standard
 
@@ -75,11 +75,13 @@ ms.locfileid: "85470243"
 ## <a name="turn-off--windows-server-essentials-features"></a>關閉 Windows Server Essentials 功能
  如果您不再需要 Windows Server Essentials 儀表板或其他附加功能來管理伺服器，您可以關閉這些功能，並將它們從伺服器中移除。
 
- [**關閉 Windows Server Essentials 功能嚮導]** 可協助您卸載功能。 它也會清除 Windows Server Essentials 伺服器軟體所建立的檔案伺服器。  有些清除作業會立即執行，而其他則會在伺服器重新啟動後才進行。
+ [**關閉 Windows Server Essentials 功能嚮導]：**
+ 
+- 協助您卸載功能。 它也會清除 Windows Server Essentials 伺服器軟體所建立的檔案伺服器。  有些清除作業會立即執行，而其他則會在伺服器重新啟動後才進行。
 
- [關閉**Windows Server Essentials 功能嚮導]** 需要您先手動卸載所有增益集，才能完成嚮導。 若要檢視已安裝的增益集清單，請開啟儀表板中的應用程式頁面。 如果精靈偵測到已安裝的增益集，會發出警告，並提示您將它們解除安裝。
+- 需要您先手動卸載所有增益集，才能完成嚮導。 若要檢視已安裝的增益集清單，請開啟儀表板中的應用程式頁面。 如果精靈偵測到已安裝的增益集，會發出警告，並提示您將它們解除安裝。
 
- [**關閉 Windows Server Essentials 功能] Wizard**可讓您選擇在關閉 Windows server essentials 功能之後，是否要保留用戶端電腦的備份檔案。
+- 可讓您選擇在關閉 Windows Server Essentials 功能之後，是否要保留用戶端電腦的備份檔案。
 
  有兩種方式可從儀表板執行 [**關閉 Windows Server Essentials 功能] 嚮導**：
 
@@ -101,7 +103,7 @@ ms.locfileid: "85470243"
 
    **%systemdrive%\Program Files\Windows Server\Bin\TurnOffFeaturesWizard.exe**
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 
 -   [轉換到 Windows Server 2012 R2 Standard](Transition-from-Windows-Server-2012-R2-Essentials-to-Windows-Server-2012-R2-Standard.md)

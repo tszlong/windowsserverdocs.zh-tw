@@ -6,13 +6,13 @@ manager: mchad
 ms.technology: storage-file-systems
 ms.topic: article
 author: gawatu
-ms.date: 06/17/2019
-ms.openlocfilehash: 7d33f15aafa432cb3f3174087c3b27855b4f35b2
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.date: 06/29/2019
+ms.openlocfilehash: 5bcdbc76259d1dfecaaa5266bb952a21bcbc7825
+ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475135"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85548893"
 ---
 # <a name="resilient-file-system-refs-overview"></a>復原檔案系統 (ReFS) 概觀
 
@@ -166,9 +166,10 @@ Microsoft 已特別針對一般用途搭配各種設定和工作負載開發 NTF
 | 分頁檔案支援 | 否 | 是 |
 | 在抽取式媒體上受支援 | 否 | 是 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [ReFS 和 NTFS 的叢集大小建議](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/Cluster-size-recommendations-for-ReFS-and-NTFS/ba-p/425960)
 - [儲存空間直接存取總覽](../storage-spaces/storage-spaces-direct-overview.md)
 - [ReFS 區塊複製](block-cloning.md)
 - [ReFS 完整性資料流](integrity-streams.md)
+- [使用 ReFSUtil 針對 ReFS 進行疑難排解](../../administration/windows-commands/refsutil.md)
