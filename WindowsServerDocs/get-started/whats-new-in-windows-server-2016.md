@@ -10,12 +10,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: c3eb62d53ef11d5531590e1a6d46cd6cacaf2e4a
-ms.sourcegitcommit: 5bc5aaf341c711113ca03d1482f933b05b146007
+ms.openlocfilehash: 01b06c2869469ee65e23df2b1f5ca35fb266d234
+ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85094543"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85548731"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>Windows Server 2016 的新功能
 
@@ -23,7 +23,7 @@ ms.locfileid: "85094543"
 
 ![顯示報紙的圖示](media/whats-new.png)若要深入了解 Windows 的最新功能，請參閱 [Windows Server 的新功能](whats-new-in-windows-server.md)。 本節內容說明 Windows Server&reg; 2016 的新功能和變更。 此處所列的新功能和變更是您使用這個版本時最可能帶來最大影響的新功能和變更。
 
-## <a name="compute"></a>[Compute](../virtualization/virtualization.md)
+## <a name="compute"></a>[Compute](../virtualization/virtualization.yml)
 
 「虛擬化」領域包含 IT 專業人員可用來設計、部署及維護 Windows Server 的虛擬化產品與功能。  
 
@@ -109,8 +109,8 @@ Windows Server 2016 和 Windows 10 包含新的 PackageManagement 功能 (先前
 
 為了在復原封包遺失時改善 TCP 行為，我們已經實作 TCP 結尾遺失探查 (TLP) 和最新通知 (RACK)。 TLP 有助於將重新傳輸逾時 (RTO) 轉換為快速復原，RACK 則降低快速復原重新傳輸遺失封包所需的時間。 
 
-## <a name="security-and-assurance"></a>[安全性和保證](../security/Security-and-Assurance.md)  
-包含 IT專業人員可用來部署於您的資料中心和雲端環境中的安全性解決方案與功能。 如需 Windows Server 2016 中安全性的基本相關資訊，請參閱[安全性和保證](../security/Security-and-Assurance.md)。  
+## <a name="security-and-assurance"></a>[安全性和保證](../security/Security-and-Assurance.yml)  
+包含 IT專業人員可用來部署於您的資料中心和雲端環境中的安全性解決方案與功能。 如需 Windows Server 2016 中安全性的基本相關資訊，請參閱[安全性和保證](../security/Security-and-Assurance.yml)。  
 
 ### <a name="just-enough-administration"></a>Just Enough Administration  
 Windows Server 2016 中的 Just Enough Administration 是一種安全性技術，能夠針對可使用 Windows PowerShell 管理的所有項目進行委派管理。 功能包括對下列動作的支援：在網路身分識別下執行、透過 PowerShell Direct 連線、安全地將檔案複製到 JEA 端點 (或是從中複製)，以及將 PowerShell 主控台設定為預設在 JEA 內容中啟動。 如需詳細資訊，請參閱 [GitHub 上的 JEA](https://aka.ms/JEA)。

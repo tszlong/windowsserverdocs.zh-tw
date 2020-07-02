@@ -9,12 +9,12 @@ ms.assetid: f8f8c569-8b74-4c19-876e-1c7d00cce308
 author: larsiwer
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: f745ccd9e5a82aa79fb58798f233bf2662b00a70
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 01a4882ec766673af5ff8f57debb829ace743d77
+ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475635"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85548701"
 ---
 # <a name="generation-1-virtual-machine-security-settings"></a>第 1 代虛擬機器安全性設定
 
@@ -39,11 +39,11 @@ ms.locfileid: "85475635"
 - 此虛擬機器已授權的受防護網狀架構一部分，或
 - 從其中一個虛擬機器的守護者獲得私密金鑰。
 
-若要深入了解受防護網狀架構，請參閱[安全性和保證](../../../security/Security-and-Assurance.md)中的＜受防護的 VM 簡介＞一節。
+若要深入了解受防護網狀架構，請參閱[安全性和保證](../../../security/Security-and-Assurance.yml)中的＜受防護的 VM 簡介＞一節。
 
 您可以在其中一個虛擬機器的 IDE 控制器上，將金鑰存放磁碟機新增到空的插槽。 若要這麼做，請按一下 [新增金鑰存放磁碟機] 以將金鑰存放磁碟機新增到此虛擬機器的第一個可用 IDE 控制器插槽。
 
 ## <a name="additional-references"></a>其他參考資料
 
 - [Hyper-V 管理員中的第 2 代虛擬機器安全性設定](Generation-2-virtual-machine-security-settings-for-hyper-v.md)
-- [安全性和保證](../../../security/Security-and-Assurance.md)
+- [安全性和保證](../../../security/Security-and-Assurance.yml)

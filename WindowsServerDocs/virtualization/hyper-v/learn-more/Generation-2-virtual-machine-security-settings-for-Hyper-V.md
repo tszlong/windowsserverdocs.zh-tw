@@ -9,12 +9,12 @@ ms.assetid: 06ab4f5f-6b8e-4058-8108-76785aa93d4c
 author: larsiwer
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 7eb867529d38ab21ee21c19f92c89ed4128b0ea4
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 1b3c7b636d9c93ff0392f266d1e6e18d36dfd15f
+ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80860801"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85548912"
 ---
 # <a name="generation-2-virtual-machine-security-settings-for-hyper-v"></a>Hyper-V 的第 2 代虛擬機器安全性設定
 
@@ -83,4 +83,4 @@ ms.locfileid: "80860801"
 
 您可以在本機執行受防護的虛擬機器，而不需要設定主機守護者服務。 但是，如果您將其移轉至其他主機，就可能無法加以啟動。 您必須更新該虛擬機器的金鑰保護裝置，為新主機授與執行虛擬機器的權限。 如需詳細資訊，請參閱[受防護網狀架構與受防護的 VM](https://go.microsoft.com/fwlink/?LinkId=746381)。  
 
-如需與 Windows Server 中的安全性有關的詳細資訊，請參閱[安全性和保證](../../../security/Security-and-Assurance.md)。  
+如需與 Windows Server 中的安全性有關的詳細資訊，請參閱[安全性和保證](../../../security/Security-and-Assurance.yml)。  
