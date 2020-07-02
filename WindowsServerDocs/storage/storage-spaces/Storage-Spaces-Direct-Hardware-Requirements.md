@@ -7,18 +7,18 @@ manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
-ms.date: 08/05/2019
+ms.date: 06/24/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 42022b6e2e3564d1440e2ba1d45f9f98430242c0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0e34f74226edb56e8db0290fd5dc83f0c6e54221
+ms.sourcegitcommit: c40c29683d25ed75b439451d7fa8eda9d8d9e441
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861051"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85833321"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>儲存空間直接存取的硬體需求
 
-> 適用于： Windows Server 2019、Windows Server 2016
+> 適用於：Windows Server 2019、Windows Server 2016
 
 本主題說明儲存空間直接存取的最低硬體需求。
 
@@ -27,13 +27,13 @@ ms.locfileid: "80861051"
    > [!TIP]
    > 想要評估儲存空間直接存取，但沒有硬體嗎？ 如在[來賓虛擬機器叢集中使用儲存空間直接存取中](storage-spaces-direct-in-vm.md)所述，使用 Hyper-v 或 Azure 虛擬機器。
 
-## <a name="base-requirements"></a>基本需求
+## <a name="base-requirements"></a>基底需求
 
 系統、元件、裝置和驅動程式都必須是 windows server **2016 認證**，每個[windows server Catalog](https://www.windowsservercatalog.com)。 此外，我們建議伺服器、磁片磁碟機、主機匯流排介面卡和網路介面卡具有**軟體定義的資料中心（sddc）標準**和（或）**軟體定義的資料中心（sddc）** 高階額外資格（AQs），如下圖所示。 有超過1000個元件具有 SDDC AQs。
 
 ![顯示 SDDC AQs 之 Windows Server 類別目錄的螢幕擷取畫面](media/hardware-requirements/sddc-aqs.png)
 
-完整設定的叢集（伺服器、網路和存放裝置）必須在容錯移轉叢集管理員中，或使用 PowerShell 中的 `Test-Cluster` [Cmdlet](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps) ，通過每個 wizard 的所有叢集[驗證測試](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx)。
+完整設定的叢集（伺服器、網路和存放裝置）必須在容錯移轉叢集管理員中，或使用 PowerShell 中的 Cmdlet，以在每個 wizard 中傳遞所有叢集[驗證測試](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx) `Test-Cluster` [cmdlet](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps) 。
 
 此外，也適用下列需求：
 
@@ -52,7 +52,7 @@ ms.locfileid: "80861051"
 - 適用于 Windows Server、Vm 和其他應用程式或工作負載的記憶體;增加
 - 每部伺服器上每 tb 的快取磁片磁碟機容量 4 GB RAM，用於儲存空間直接存取中繼資料
 
-## <a name="boot"></a>啟
+## <a name="boot"></a>Boot
 
 - Windows Server 支援的任何開機裝置，[現在包含 SATADOM](https://cloudblogs.microsoft.com/windowsserver/2017/08/30/announcing-support-for-satadom-boot-drives-in-windows-server-2016/)
 - **不**需要 RAID 1 鏡像，但支援開機
@@ -78,15 +78,16 @@ ms.locfileid: "80861051"
 
 ## <a name="drives"></a>磁碟機
 
-儲存空間直接存取適用于直接連接的 SATA、SAS 或 NVMe 磁片磁碟機，它們實際上只會連接到一部伺服器。 如需選擇磁碟機的說明，請參閱[選擇磁碟機](choosing-drives.md)主題。
+儲存空間直接存取適用于直接連接的 SATA、SAS、NVMe 或持續性記憶體（PMem）磁片磁碟機，每個實體只會附加到一部伺服器上。 如需更多有關選擇磁片磁碟機的協助，請參閱[選擇磁片磁碟機](choosing-drives.md)和[瞭解和部署持續性記憶體](deploy-pmem.md)主題。
 
-- 支援 SATA、SAS 和 NVMe （M. 2、U. 2 和增益集卡）磁片磁碟機
+- 支援 SATA、SAS、持續性記憶體和 NVMe （M. 2、U. 2 和附加元件卡）磁片磁碟機
 - 支援512n、512e 和4K 原生磁片磁碟機
 - 固態硬碟必須提供[電源中斷保護](https://blogs.technet.microsoft.com/filecab/2016/11/18/dont-do-it-consumer-ssd/)
 - 每一部伺服器中的磁片磁碟機數目和類型–請參閱[磁片磁碟機對稱考慮](drive-symmetry-considerations.md)
 - 快取裝置必須是 32 GB 或更大
+- 持續性記憶體裝置會在區塊儲存模式中使用
 - 使用持續性記憶體裝置做為快取裝置時，您必須使用 NVMe 或 SSD 容量裝置（您無法使用 Hdd）
-- NVMe 驅動程式是由 Microsoft 所提供，內含在 Windows 中。 （stornvme）
+- NVMe 驅動程式是由 Microsoft 所提供，內含在 Windows 中（stornvme.sys）
 - 建議：容量磁片磁碟機數目是快取磁片磁碟機數目的整數倍數
 - 建議：快取磁片磁碟機應有高寫入耐用：每日至少3個磁片磁碟機寫入（DWPD），或每天至少 4 tb 寫入（TBW）–請參閱[瞭解每天的磁片寫入（DWPD）、tb 寫入的（TBW），以及建議的最小值儲存空間直接存取](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)
 
@@ -129,7 +130,7 @@ ms.locfileid: "80861051"
 
 ### <a name="maximum-capacity"></a>最大容量
 
-| 最                | Windows Server 2019  | Windows Server 2016  |
+| 最                | Windows Server 2019  | Windows Server 2016  |
 | ---                     | ---------            | ---------            |
 | 每一伺服器的原始容量 | 400 TB               | 100 TB               |
 | 集區容量           | 4 PB （4000 TB）      | 1 PB                 |
