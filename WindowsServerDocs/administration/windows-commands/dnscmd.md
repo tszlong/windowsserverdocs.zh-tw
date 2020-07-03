@@ -1,6 +1,6 @@
 ---
 title: dnscmd
-description: Dnscmd 命令的參考主題，這是用來管理 DNS 伺服器的命令列介面。
+description: Dnscmd 命令的參考文章，這是用來管理 DNS 伺服器的命令列介面。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7c279513549ba149974933c33044fa861fa89a62
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 47be29e55c4626f5c05498074f10418730c6a6f3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437033"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931303"
 ---
 # <a name="dnscmd"></a>Dnscmd
 
@@ -30,7 +30,7 @@ dnscmd <servername> <command> [<command parameters>]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | Description |
 | --------- | ----------- |
 | `<servername>` | 遠端或本機 DNS 伺服器的 IP 位址或主機名稱。 |
 
@@ -46,7 +46,7 @@ dnscmd [<servername>] /ageallrecords <zonename>[<nodename>] | [/tree]|[/f]
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | Description |
 | ---------- | ----------- |
 | `<servername>` | 指定系統管理員計畫管理的 DNS 伺服器，以 IP 位址、完整功能變數名稱（FQDN）或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<zonename>` | 指定區域的 FQDN。 |
@@ -355,7 +355,7 @@ dnscmd [<servername>] /enumzones [/primary | /secondary | /forwarder | /stub | /
 
 ## <a name="dnscmd-exportsettings-command"></a>dnscmd/exportsettings 命令
 
-建立文字檔，其中列出 DNS 伺服器的設定詳細資料。 文字檔的名稱是*DnsSettings .txt*。 它位於 `%systemroot%\system32\dns` 伺服器的目錄中。 您可以使用**dnscmd/exportsettings**所建立之檔案中的資訊來疑難排解設定問題，或確保您已將多部伺服器設為相同。
+建立文字檔，其中列出 DNS 伺服器的設定詳細資料。 文字檔的名稱為*DnsSettings.txt*。 它位於 `%systemroot%\system32\dns` 伺服器的目錄中。 您可以使用**dnscmd/exportsettings**所建立之檔案中的資訊來疑難排解設定問題，或確保您已將多部伺服器設為相同。
 
 ### <a name="syntax"></a>語法
 
@@ -1112,6 +1112,6 @@ dnscmd [<servername>] /zonewriteback <zonename>
 dnscmd dnssvr1.contoso.com /zonewriteback test.contoso.com
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

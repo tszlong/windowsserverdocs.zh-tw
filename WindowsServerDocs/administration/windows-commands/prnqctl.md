@@ -1,6 +1,6 @@
 ---
 title: prnqctl
-description: Prnqctl 命令的參考主題，它會列印測試頁，並暫停或繼續印表機。
+description: Prnqctl 命令的參考文章，它會列印測試頁，並暫停或繼續印表機。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: b8a551e34754771a69af1b41e5da3fd726df1185
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7bcc6a36fb2387a82e25afd41be2d22615565bfe
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472193"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931153"
 ---
 # <a name="prnqctl"></a>prnqctl
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-列印測試頁、暫停或繼續印表機，以及清除印表機佇列。 此命令是位於目錄中的 Visual Basic 腳本 `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 若要在命令提示字元中使用此命令，請輸入**cscript** ，後面接著 prnqctl 檔案的完整路徑，或將目錄變更為適當的資料夾。 例如： `cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnqctl` 。
+列印測試頁、暫停或繼續印表機，以及清除印表機佇列。 此命令是位於目錄中的 Visual Basic 腳本 `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 若要在命令提示字元中使用此命令，請輸入**cscript** ，後面接著 prnqctl 檔案的完整路徑，或將目錄變更為適當的資料夾。 例如：`cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnqctl`。
 
 ## <a name="syntax"></a>語法
 
@@ -30,7 +30,7 @@ cscript Prnqctl {-z | -m | -e | -x | -?} [-s <Servername>] [-p <Printername>] [-
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 |--|--|
 | -Z | 在 **-p**參數所指定的印表機上暫停列印。 |
 | -M | 繼續在 **-p**參數所指定的印表機上列印。 |
@@ -65,7 +65,7 @@ cscript prnqctl -z -p Laserprinter1
 cscript prnqctl -x -p Laserprinter1
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

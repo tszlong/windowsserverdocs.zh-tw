@@ -1,6 +1,6 @@
 ---
 title: qwinsta
-description: Qwinsta 命令的參考主題，會顯示遠端桌面工作階段主機伺服器上會話的相關資訊。
+description: Qwinsta 命令的參考文章，它會顯示遠端桌面工作階段主機伺服器上會話的相關資訊。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9122576cc0b972e01a7593fae918aed378297fc8
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: c9b79495d3fa142fd343b9c521563e093d20fc68
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471873"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932000"
 ---
 # <a name="qwinsta"></a>qwinsta
 
@@ -33,7 +33,7 @@ qwinsta [<sessionname> | <username> | <sessionID>] [/server:<servername>] [/mode
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 |--|--|
 | `<sessionname>` | 指定您想要查詢之會話的名稱。 |
 | `<username>` | 指定您想要查詢其會話的使用者名稱。 |
@@ -85,7 +85,7 @@ qwinsta /server:Server2
 qwinsta modeM02
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

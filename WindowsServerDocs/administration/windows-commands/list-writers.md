@@ -1,6 +1,6 @@
 ---
-title: 清單寫入器
-description: '[清單寫入器] 命令的參考主題，其中列出系統上的寫入器。'
+title: list writers
+description: '[清單寫入器] 命令的參考文章，其中列出系統上的寫入器。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 85f351ca20332ad67f24c7d66142f7209c0ec425
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: a3b4334d9f1f1a76b390a29a1b9cfd877da91185
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817158"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931774"
 ---
-# <a name="list-writers"></a>清單寫入器
+# <a name="list-writers"></a>list writers
 
 列出系統上的寫入器。 如果使用時不含參數，[**清單**] 預設會顯示**清單中繼資料**的輸出。
 
@@ -64,6 +64,6 @@ Listing writer status ...
 8 writers listed.
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

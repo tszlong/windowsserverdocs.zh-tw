@@ -1,6 +1,6 @@
 ---
 title: pushprinterconnections
-description: Pushprinterconnections.exe 命令的參考主題，它會從群組原則讀取已部署的印表機連線設定，並視需要部署/移除印表機連接。
+description: Pushprinterconnections.exe 命令的參考文章，它會從群組原則讀取已部署的印表機連線設定，並視需要部署/移除印表機連接。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 701089f2597b1d4e7bc05f7949dbc80dee3535bb
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7b22fd5143a9477b40a515df44c9a0b5663dfd7a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472123"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931382"
 ---
 # <a name="pushprinterconnections"></a>pushprinterconnections
 
@@ -31,12 +31,12 @@ pushprinterconnections <-log> <-?>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 |--|--|
 | <-記錄> | 將每個使用者的 debug 記錄檔寫入 *% temp*，或將每個機器的 debug 記錄檔寫入 *%windir%\temp*。 |
 | <-？ > | 在命令提示字元顯示 [說明]。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

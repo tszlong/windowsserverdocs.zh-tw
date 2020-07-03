@@ -1,6 +1,6 @@
 ---
 title: dir
-description: Dir 命令的參考主題，它會顯示目錄的檔案和子目錄清單。
+description: Dir 命令的參考文章，它會顯示目錄的檔案和子目錄清單。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b6d5b99e905d70d81962f96a303e0bcaae0bd9e9
-ms.sourcegitcommit: 5e10afbd128befb7400a6bcf576f0239cf2ed47f
+ms.openlocfilehash: 2372476e153a6dc37b7d068201a40ba17c11fa54
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84302823"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930824"
 ---
 # <a name="dir"></a>dir
 
@@ -65,7 +65,7 @@ dir [<drive>:][<path>][<filename>] [...] [/p] [/q] [/w] [/d] [/a[[:]<attributes>
 
   - `dir read *.*`列出目前目錄中所有副檔名開頭為 [讀取] 的所有檔案。
 
-  星號萬用字元一律使用簡短的檔案名對應，因此您可能會收到非預期的結果。 例如，下列目錄包含兩個檔案（txt2 和 t97）：
+  星號萬用字元一律使用簡短的檔案名對應，因此您可能會收到非預期的結果。 例如，下列目錄包含兩個檔案（t.txt2 和 t97.txt）：
 
   ```
   C:\test>dir /x
@@ -80,9 +80,9 @@ dir [<drive>:][<path>][<filename>] [...] [/p] [/q] [/w] [/d] [/a[[:]<attributes>
   11/30/2004  01:16 PM 0 t97.txt
   ```
 
-  您可能會預期輸入 `dir t97\*` 會傳回 t97 檔案。 不過，輸入會傳回 `dir t97\*` 這兩個檔案，因為星號萬用字元會使用其簡短名稱對應*T97B4 ~ 1 .txt*來比對 txt2 到 t97。 同樣地，鍵入 `del t97\*` 會同時刪除這兩個檔案。
+  您可能會預期輸入 `dir t97\*` 會傳回 t97.txt 的檔案。 不過，輸入會傳回 `dir t97\*` 這兩個檔案，因為星號萬用字元會使用其簡短名稱對應*T97B4 ~1.TXT*，來比對檔案 t.txt2 t97.txt。 同樣地，鍵入 `del t97\*` 會同時刪除這兩個檔案。
 
-- 您可以使用問號（？）取代名稱中的單一字元。 例如，輸入 `dir read???.txt` 會列出目前目錄中副檔名為 .txt 且開頭為 read 且最多三個字元的任何檔案。 這包括 Read .txt、Read1 .txt、Read12 .txt、Read123 .txt 和 Readme1，但不包含 Readme12 .txt。
+- 您可以使用問號（？）取代名稱中的單一字元。 例如，輸入 `dir read???.txt` 會列出目前目錄中副檔名為 .txt 且開頭為 read 且最多三個字元的任何檔案。 這包括 Read.txt、Read1.txt、Read12.txt、Read123.txt 和 Readme1.txt，但不會 Readme12.txt。
 
 - 如果您在*屬性*中使用具有一個以上值的 **/a** ，此命令只會顯示具有所有指定屬性之檔案的名稱。 例如，如果您使用 **/a**搭配**r**和 **-h**做為屬性（藉由使用 `/a:r-h` 或 `/ar-h` ），此命令只會顯示未隱藏之唯讀檔案的名稱。
 
@@ -114,13 +114,13 @@ dir > prn
 
 當您指定**prn**時，會將目錄清單傳送到連接到 LPT1 埠的印表機。 如果您的印表機已連接到不同的埠，您必須將**prn**取代為正確埠的名稱。
 
-您也可以將**prn**取代為檔案名，將**dir**命令的輸出重新導向至檔案。 您也可以輸入路徑。 例如，若要將**dir**輸出導向記錄目錄中的檔案 dir，請輸入：
+您也可以將**prn**取代為檔案名，將**dir**命令的輸出重新導向至檔案。 您也可以輸入路徑。 例如，若要將**目錄輸出導向**至 [記錄] 目錄中 dir.doc 的檔案，請輸入：
 
 ```
 dir > \records\dir.doc
 ```
 
-如果 dir 不存在， **dir**會建立它，除非**記錄**目錄不存在。 在此情況下，會出現下列訊息：
+如果 dir.doc 不存在， **dir**會建立它，除非**記錄**目錄不存在。 在此情況下，會出現下列訊息：
 
 ```
 File creation error
@@ -134,6 +134,6 @@ dir c:\*.txt /w/o/s/p
 
 **Dir**命令會以寬格式顯示每個目錄中相符檔案名的清單，並在每次螢幕填滿時暫停，直到您按任意鍵繼續。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

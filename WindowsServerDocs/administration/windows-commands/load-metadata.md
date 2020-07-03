@@ -1,6 +1,6 @@
 ---
-title: 載入中繼資料
-description: '[載入中繼資料] 命令的參考主題，它會在匯入可轉移的陰影複製之前載入中繼資料 .cab 檔案，或在還原時載入寫入器中繼資料。'
+title: load metadata
+description: 載入中繼資料命令的參考文章，它會在匯入可轉移的陰影複製之前載入中繼資料 .cab 檔案，或在還原時載入寫入器中繼資料。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c7dc967476412261e7afc228088566f74ec4208c
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 01e782d0214da70f831b81120aff3c5097895036
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820188"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931679"
 ---
 # <a name="load-metadata"></a>載入中繼資料
 
@@ -31,7 +31,7 @@ load metadata [<drive>:][<path>]<metadata.cab>
 | 參數 | 說明 |
 | --------- | ----------- |
 | `[<drive>:][<path>]` | 指定中繼資料檔案的位置。 |
-| 中繼資料 .cab | 指定要載入的中繼資料 .cab 檔案。 |
+| metadata.cab | 指定要載入的中繼資料 .cab 檔案。 |
 
 ## <a name="remarks"></a>備註
 
@@ -41,13 +41,13 @@ load metadata [<drive>:][<path>]<metadata.cab>
 
 ## <a name="examples"></a>範例
 
-若要從預設位置載入名為中繼檔的中繼資料檔案，請輸入：
+若要從預設位置載入名為 metafile.cab 的中繼資料檔案，請輸入：
 
 ```
 load metadata metafile.cab
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: fc
-description: Fc 命令的參考主題，它會比較兩個檔案或一組檔案，並顯示兩者之間的差異。
+description: Fc 命令的參考文章，它會比較兩個檔案或一組檔案，並顯示兩者之間的差異。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 146ae51334f40284e15c2a4564de8dd04660bf25
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 6d9e12853d2634f7e7bcbd976b6c301f8e02c0dc
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437153"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930484"
 ---
 # <a name="fc"></a>fc
 
@@ -29,7 +29,7 @@ fc /b [<drive1:>][<path1>]<filename1> [<drive2:>][<path2>]<filename2>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | /a | 縮寫 ASCII 比較的輸出。 **Fc**不會顯示不同的所有線條，而是只會針對每一組差異顯示第一個和最後一行。 |
 | /b | 比較兩個二進位模式的檔案（以位元組為單位），而且不會在發現不相符的情況下嘗試重新同步處理檔案。 這是比較具有下列副檔名之檔案的預設模式： .exe、.com、sys.databases、.obj、.lib 或 bin。 |
@@ -48,7 +48,7 @@ fc /b [<drive1:>][<path1>]<filename1> [<drive2:>][<path2>]<filename2>
 
 #### <a name="remarks"></a>備註
 
-- 此命令是由 c:\WINDOWS\fc.exe. implemeted 您可以在 PowerShell 中使用此命令，但請務必將完整的可執行檔（eseutil.exe）拼出，因為 ' fc ' 也是格式自訂的別名。
+- 此命令是由 c:\WINDOWS\fc.exe implemeted。 您可以在 PowerShell 中使用此命令，但請務必將完整的可執行檔（fc.exe）拼出，因為 ' fc ' 也是格式自訂的別名。
 
 - 當您使用**fc**進行 ASCII 比較時， **fc**會以下列順序顯示兩個檔案之間的差異：
 
@@ -86,7 +86,7 @@ fc /b [<drive1:>][<path1>]<filename1> [<drive2:>][<path2>]<filename2>
 fc /a monthly.rpt sales.rpt
 ```
 
-若要進行兩個批次處理*檔的二進位比較，請*輸入： *earnings.bat*
+若要進行兩個批次檔的二進位比較， *profits.bat*和*earnings.bat*，請輸入：
 
 ```
 fc /b profits.bat earnings.bat
@@ -102,20 +102,20 @@ fc /b profits.bat earnings.bat
 FC: earnings.bat longer than profits.bat
 ```
 
-如果獲利和收益 .bat 檔案相同， **fc**會顯示下列訊息：
+如果 profits.bat 和 earnings.bat 檔案相同， **fc**會顯示下列訊息：
 
 ```
 Comparing files profits.bat and earnings.bat
 FC: no differences encountered
 ```
 
-若要比較目前目錄中的每個 .bat 檔案與檔案 *.bat*，請輸入：
+若要比較目前目錄中的每個 .bat 檔案與*new.bat*的檔案，請輸入：
 
 ```
 fc *.bat new.bat
 ```
 
-若要將 C 磁片磁碟機上的檔案 *.bat*與磁片磁碟機 D 上的檔案 *.bat*進行比較，請輸入：
+若要比較 C 磁片磁碟機上的檔案*new.bat*與磁片磁碟機 D 上的 file *new.bat* ，請輸入：
 
 ```
 fc c:new.bat d:*.bat
@@ -127,6 +127,6 @@ fc c:new.bat d:*.bat
 fc c:*.bat d:*.bat
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

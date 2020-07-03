@@ -1,6 +1,6 @@
 ---
 title: flattemp
-description: Flattemp 命令的參考主題，可啟用或停用一般暫存資料夾。
+description: Flattemp 命令的參考文章，可啟用或停用一般暫存資料夾。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a30a3f7eb6ec56a499864116debfbb6c09756d34
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 1ec253182ce3071f03ce47e368c6fa87fe58fed0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437223"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932102"
 ---
 # <a name="flattemp"></a>flattemp
 
@@ -33,7 +33,7 @@ flattemp {/query | /enable | /disable}
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | /query | 查詢目前的設定。 |
 | /enable | 啟用單層暫存資料夾。 除非暫存資料夾位於使用者的主資料夾中，否則使用者會共用暫存資料夾。 |
@@ -72,7 +72,7 @@ flattemp /enable
 flattemp /disable
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

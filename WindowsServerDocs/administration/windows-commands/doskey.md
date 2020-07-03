@@ -1,6 +1,6 @@
 ---
 title: doskey
-description: Doskey 命令和 Doskey 的參考主題，其會重新叫用先前輸入的命令列命令、編輯命令行，以及建立宏。
+description: Doskey 命令和 Doskey.exe 的參考文章，會重新叫用先前輸入的命令列命令、編輯命令行，以及建立宏。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 96a47a40463c5cd6af16ab637f96382228f7d0f8
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 4a92c9e1d6ffe1f8d7ace5500179697b2a00df1b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437023"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930548"
 ---
 # <a name="doskey"></a>doskey
 
-呼叫 printbrm.exe，這會重新叫用先前輸入的命令列命令、編輯命令行，以及建立宏。
+呼叫 Doskey.exe，這會重新叫用先前輸入的命令列命令、編輯命令行，以及建立宏。
 
 ## <a name="syntax"></a>語法
 
@@ -30,7 +30,7 @@ doskey [/reinstall] [/listsize=<size>] [/macros:[all | <exename>] [/history] [/i
 
 | 參數 | 說明 |
 | --------- | ----------- |
-| /reinstall | 安裝 Doskey 的新複本，並清除命令歷程記錄緩衝區。 |
+| /reinstall | 安裝 Doskey.exe 的新複本，並清除命令歷程記錄緩衝區。 |
 | /listsize =`<size>` | 指定歷程記錄緩衝區中的命令數目上限。 |
 | /macros | 顯示所有**doskey**宏的清單。 您可以搭配/macros 使用重新 `>` 導向符號（ **/macros** ），將清單重新導向至檔案。 您可以將 **/macros**縮寫為 **/m**。 |
 | /macros：全部 | 顯示所有可執行檔的**doskey**宏。 |
@@ -45,13 +45,13 @@ doskey [/reinstall] [/listsize=<size>] [/macros:[all | <exename>] [/history] [/i
 
 #### <a name="remarks"></a>備註
 
-- 某些以字元為基礎的互動式程式（例如程式偵錯工具或檔案傳輸程式（FTP））會自動使用 printbrm.exe。 若要使用 printbrm.exe，程式必須是主控台進程，並使用緩衝的輸入。 程式金鑰指派會覆寫**doskey**金鑰指派。 例如，如果程式使用函式的 F7 鍵，您就無法在快顯視窗中取得**doskey**命令歷程記錄。
+- 某些以字元為基礎的互動式程式（例如程式偵錯工具或檔案傳輸程式（FTP））會自動使用 Doskey.exe。 若要使用 Doskey.exe，程式必須是主控台進程，並使用緩衝的輸入。 程式金鑰指派會覆寫**doskey**金鑰指派。 例如，如果程式使用函式的 F7 鍵，您就無法在快顯視窗中取得**doskey**命令歷程記錄。
 
-- 您可以使用 printbrm.exe 來編輯目前的命令列，但不能從程式的命令提示字元使用命令列選項。 啟動程式之前，您必須先執行**doskey**命令列選項。 如果您在程式中使用 printbrm.exe，則會優先採用該程式的金鑰指派，而且有些 Doskey .exe 編輯金鑰可能無法使用。
+- 您可以使用 Doskey.exe 來編輯目前的命令列，但不能從程式的命令提示字元使用命令列選項。 啟動程式之前，您必須先執行**doskey**命令列選項。 如果您在程式中使用 Doskey.exe，該程式的金鑰指派會有較高的優先順序，有些 Doskey.exe 編輯金鑰可能無法使用。
 
-- 使用 printbrm.exe 時，您可以為每個啟動或重複的程式維護命令歷程記錄。 您可以在程式的提示字元中編輯先前的命令，並啟動針對程式所建立的**doskey**宏。 如果您從相同的命令提示字元視窗結束並重新啟動程式，則可以使用先前程式會話中的命令歷程記錄。
+- 使用 Doskey.exe，您可以針對啟動或重複的每個程式維護命令歷程記錄。 您可以在程式的提示字元中編輯先前的命令，並啟動針對程式所建立的**doskey**宏。 如果您從相同的命令提示字元視窗結束並重新啟動程式，則可以使用先前程式會話中的命令歷程記錄。
 
-- 若要重新叫用命令，您可以在啟動 printbrm.exe 之後，使用下列任何金鑰：
+- 若要重新叫用命令，您可以在啟動 Doskey.exe 之後，使用下列任何金鑰：
 
   | Key | 描述 |
   | --- | ----------- |
@@ -62,7 +62,7 @@ doskey [/reinstall] [/listsize=<size>] [/macros:[all | <exename>] [/history] [/i
 
 - 下表列出**doskey**編輯金鑰及其功能：
 
-  | 按鍵或按鍵組合 | 描述 |
+  | 按鍵或按鍵組合 | Description |
   | ---------------------- | ----------- |
   | 向左鍵 | 將插入點向後移動一個字元。 |
   | 向右鍵 | 將插入點向後移動一個字元。 |
@@ -72,8 +72,8 @@ doskey [/reinstall] [/listsize=<size>] [/macros:[all | <exename>] [/history] [/i
   | END | 將插入點移到行尾。 |
   | ESC | 從顯示中清除命令。 |
   | F1 | 將一個字元從範本中的資料行複製到命令提示字元視窗中的相同資料行。 （範本是存放您所輸入之最後一個命令的記憶體緩衝區）。 |
-  | F2 | 在範本中向前搜尋，以尋找您在按下 F2 之後輸入的下一個索引鍵。 Printbrm.exe 會從範本插入文字，最多可包含您指定的字元，但不包括在內。 |
-  | F3 | 將範本的其餘部分複製到命令列。 Printbrm.exe 會開始從範本中的位置複製字元，而這個位置會對應到命令列上的插入點所指示的位置。 |
+  | F2 | 在範本中向前搜尋，以尋找您在按下 F2 之後輸入的下一個索引鍵。 Doskey.exe 會從範本中插入文字，最多（但不包括）您指定的字元。 |
+  | F3 | 將範本的其餘部分複製到命令列。 Doskey.exe 會開始從範本中的位置複製字元，這個位置會對應到命令列上的插入點所指示的位置。 |
   | F4 | 刪除目前插入點位置中的所有字元，直到您按下 F4 之後，您輸入的字元之後，才會出現。 |
   | F5 | 將範本複製到目前的命令列。 |
   | F6 | 將檔案結尾字元（CTRL + Z）放在目前的插入點位置。 |
@@ -83,13 +83,13 @@ doskey [/reinstall] [/listsize=<size>] [/macros:[all | <exename>] [/history] [/i
   | F9 | 提示您輸入歷程記錄緩衝區命令編號，然後顯示與您指定的數位相關聯的命令。 按 ENTER 鍵以執行命令。 若要顯示所有數位及其相關聯的命令，請按 F7。 |
   | ALT+F10 | 刪除所有巨集定義。 |
 
-- 如果您按下 INSERT 鍵，就可以在現有文字的過程中，于**doskey**命令列上輸入文字，而不會取代文字。 不過，按下 ENTER 之後，printbrm.exe 會將您的鍵盤重新設為**取代**模式。 您必須再次按下 INSERT 以返回**插入**模式。
+- 如果您按下 INSERT 鍵，就可以在現有文字的過程中，于**doskey**命令列上輸入文字，而不會取代文字。 不過，按下 ENTER 鍵之後，Doskey.exe 會將您的鍵盤返回**取代**模式。 您必須再次按下 INSERT 以返回**插入**模式。
 
 - 當您使用 INSERT 鍵從某個模式變更為另一個模式時，插入點會變更圖形。
 
-- 如果您想要自訂 printbrm.exe 如何與程式搭配使用，以及如何建立該程式的**doskey**宏，您可以建立可修改 printbrm.exe 的 batch 程式，並啟動程式。
+- 如果您想要自訂 Doskey.exe 如何與程式搭配使用，以及如何建立該程式的**doskey**宏，您可以建立一個 batch 程式來修改 Doskey.exe 並啟動程式。
 
-- 您可以使用 printbrm.exe 來建立可執行一或多個命令的宏。 下表列出當您定義宏時，可以用來控制命令作業的特殊字元。
+- 您可以使用 Doskey.exe 來建立可執行一或多個命令的宏。 下表列出當您定義宏時，可以用來控制命令作業的特殊字元。
 
   | 字元 | 描述 |
   |---------- | ----------- |
@@ -124,7 +124,7 @@ doskey /macros > macinit
 doskey /macrofile=macinit
 ```
 
-若要建立名為 Tmp 的 batch 程式，其中包含最近使用的命令，請輸入：
+若要建立名為 Tmp.bat 的 batch 程式，其中包含最近使用的命令，請輸入：
 
 ```
 doskey /history> tmp.bat
@@ -152,7 +152,7 @@ doskey mc=md $1$tcd $1
 mc books
 ```
 
-若要*建立名為*msbuild.exe 的程式的**doskey**宏，請包含 **/exename** ，如下所示：
+若要為稱為*Ftp.exe*的程式建立**doskey**宏，請包含 **/exename** ，如下所示：
 
 ```
 doskey /exename=ftp.exe go=open 172.27.1.100$tmget *.TXT c:\reports$tbye
@@ -184,6 +184,6 @@ qf a:
 doskey vlist =
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

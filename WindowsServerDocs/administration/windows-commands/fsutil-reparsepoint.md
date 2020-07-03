@@ -1,6 +1,6 @@
 ---
 title: fsutil reparsepoint
-description: Fsutil reparsepoint 命令的參考主題，它會查詢或刪除重新分析點。
+description: Fsutil reparsepoint 命令的參考文章，它會查詢或刪除重新分析點。
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: fb95c8ee-a418-4520-a12a-7754ae947c3c
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 56ca18cc4f3b4cdfd9021eb8361d980bb855bdc3
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: edbbc578b6a84ebd4e342493e29cbe2bd5c5a2cd
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83435723"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931212"
 ---
 # <a name="fsutil-reparsepoint"></a>fsutil reparsepoint
 
@@ -39,7 +39,7 @@ fsutil reparsepoint [delete] <filename>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | 查詢 | 抓取與指定的控制碼所識別之檔案或目錄相關聯的重新分析點資料。 |
 | delete | 從指定的控制碼所識別的檔案或目錄中刪除重新分析點，但不會刪除檔案或目錄。 |
@@ -63,7 +63,7 @@ fsutil reparsepoint query c:\server
 fsutil reparsepoint delete c:\server
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
-title: reg 儲存
-description: '* * * * 的參考主題'
+title: reg save
+description: Reg save 命令的參考文章，會將登錄的指定子機碼、專案和值的複本儲存在指定的檔案中。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,53 +9,53 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1dd3e932e67df7eb972bd625ecec24f986cf3f3d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 4051d69819cfd3550d094de8e9d4bc73f77c4e4b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722506"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931032"
 ---
-# <a name="reg-save"></a>reg 儲存
-
-
+# <a name="reg-save"></a>reg save
 
 將登錄的指定子機碼、專案和值的複本儲存在指定的檔案中。
-
-
 
 ## <a name="syntax"></a>語法
 
 ```
-reg save <KeyName> <FileName> [/y]
+reg save <keyname> <filename> [/y]
 ```
 
 ### <a name="parameters"></a>參數
 
-|參數|描述|
-|---------|-----------|
-|\<KeyName>|指定子機碼的完整路徑。 若要指定遠端電腦，請包含電腦名稱稱\\ \\（格式為 ComputerName\) *的一部分）。* 省略\\ \\ComputerName \ 會使此操作預設為本機電腦。 *KeyName*必須包含有效的根金鑰。 本機電腦的有效根金鑰為： HKLM、HKCU、HKCR、HKU 和 HKCC。 如果指定遠端電腦，有效的根金鑰為： HKLM 和 HKU。|
-|\<檔案名>|指定所建立之檔案的名稱和路徑。 如果未指定路徑，則會使用目前的路徑。|
-|/y|覆寫名稱為*FileName*的現有檔案，而不提示確認。|
-|/?|在命令提示字元中顯示**reg save**的說明。|
+| 參數 | 說明 |
+|--|--|
+| `<keyname>` | 指定子機碼的完整路徑。 若要指定遠端電腦，請將電腦名稱稱（格式為）包含在 `\\<computername>\` *keyname*中。 省略 `\\<computername>\` 會使操作預設為本機電腦。 *Keyname*必須包含有效的根金鑰。 本機電腦的有效根金鑰為： **HKLM**、 **HKCU**、 **HKCR**、 **HKU**和**HKCC**。 如果指定遠端電腦，有效的根金鑰為： **HKLM**和**HKU**。 如果登錄機碼名稱包含空格，請用引號括住機碼名稱。 |
+| `<filename>` | 指定所建立檔案的名稱和路徑。 如果未指定路徑，則會使用目前的路徑。 |
+| /y | 覆寫名稱為*filename*的現有檔案，而不提示確認。 |
+| /? | 在命令提示字元顯示說明。 |
 
-## <a name="remarks-optional-section"></a>備註\<選擇性區段>
+#### <a name="remarks"></a>備註
 
--   下表列出**reg 儲存**作業的傳回值。
+- 在編輯任何登錄專案之前，您必須使用**reg save**命令來儲存父系子機碼。 如果編輯失敗，您可以接著使用**reg 還原**作業來還原原始的子機碼。
 
-|值|描述|
-|-----|-----------|
-|0|Success|
-|1|失敗|
--   在編輯任何登錄專案之前，請使用**reg save**作業來儲存父系子機碼。 如果編輯失敗，請使用**reg restore**作業來還原原始的子機碼。
+- **Reg 儲存**作業的傳回值如下：
 
-## <a name="examples"></a>範例
+    | 值 | 說明 |
+    |--|--|
+    | 0 | 成功 |
+    | 1 | 失敗 |
+
+### <a name="examples"></a>範例
 
 若要將 hive MyApp 儲存至目前的資料夾，做為名為 AppBkUp 的檔案，請輸入：
+
 ```
-REG SAVE HKLM\Software\MyCo\MyApp AppBkUp.hiv
+reg save HKLM\Software\MyCo\MyApp AppBkUp.hiv
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [reg restore 命令](reg-restore.md)

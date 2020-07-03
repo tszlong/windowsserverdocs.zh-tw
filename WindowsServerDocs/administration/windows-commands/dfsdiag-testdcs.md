@@ -1,6 +1,6 @@
 ---
 title: dfsdiag testdcs
-description: Dfsdiag testdcs 命令的參考主題，它會檢查指定網域中的網域控制站設定。
+description: Dfsdiag testdcs 命令的參考文章，它會檢查指定網域中的網域控制站設定。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0bbe47474f99edb1626e61a372b02090d3a45ee3
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 1eca75d233661d51a36b52b79230ad36b704e203
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82992996"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930663"
 ---
 # <a name="dfsdiag-testdcs"></a>dfsdiag testdcs
 
@@ -36,7 +36,7 @@ dfsdiag /testdcs [/domain:<domain_name>]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | /domain`<domain_name>` | 要檢查之網域的名稱。 這是選擇性參數。 預設值是本機主機加入的本機網域。 |
 
@@ -48,7 +48,7 @@ dfsdiag /testdcs [/domain:<domain_name>]
 dfsdiag /testdcs /domain:contoso.com
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

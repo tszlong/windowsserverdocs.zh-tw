@@ -1,6 +1,6 @@
 ---
 title: endlocal
-description: Endlocal 命令的參考主題，它會結束批次檔中環境變更的當地語系化，並在執行對應的 setlocal 命令之前，將環境變數還原至其值。
+description: Endlocal 命令的參考文章，會在批次檔中結束環境變更的當地語系化，並在執行對應的 setlocal 命令之前，將環境變數還原到其值。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 229914ddbfa7361738cad79903630be9e749c795
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: a17ef4b25a0b0bb4d77068aa3bff3d879955aec5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436883"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932125"
 ---
 # <a name="endlocal"></a>endlocal
 
@@ -28,7 +28,7 @@ endlocal
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | /? | 在命令提示字元顯示說明。 |
 
@@ -56,6 +56,6 @@ endlocal
 start notepad c:\superapp.out
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

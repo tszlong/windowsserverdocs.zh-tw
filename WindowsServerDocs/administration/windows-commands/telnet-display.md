@@ -1,6 +1,6 @@
 ---
-title: telnet 顯示
-description: Telnet 顯示的參考主題，會顯示指令引數。
+title: telnet display
+description: Telnet 顯示的參考文章，會顯示指令引數。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b91ab1619404e1cb5d1a2ba4c47282328b9e0920
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: fffee5059172ad0a3f2c14489bda07ce76da9cb8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222708"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930142"
 ---
 # <a name="telnet-display"></a>telnet：顯示
 
@@ -33,5 +33,5 @@ d[isplay]
 ```
 d
 ```
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 - [命令列語法關鍵](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
 title: fsutil tiering
-description: 適用于 [fsutil 階層處理] 命令的參考主題，可啟用儲存層功能的管理，例如設定和停用旗標和層級清單。
+description: 適用于 [fsutil 階層處理] 命令的參考文章，可啟用儲存層功能的管理，例如設定和停用旗標和層級清單。
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: e5f55f3e-8d2a-4526-8d67-36a539126c22
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 4fad2f5a7d868a38e187f49598235c40590e8eeb
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: 1463a6c50d2f735456e0675bdeef235cb5484b3e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149761"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932088"
 ---
 # <a name="fsutil-tiering"></a>fsutil tiering
 
@@ -34,7 +34,7 @@ fsutil tiering [tierlist] <volume>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | clearflags | 停用磁片區的分層行為旗標。 |
 | `<volume>` | 指定磁片區。 |
@@ -76,7 +76,7 @@ fsutil tiering regionlist C:
 fsutil tiering tierlist C:
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

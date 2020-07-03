@@ -1,6 +1,6 @@
 ---
 title: nslookup lserver
-description: Nslookup lserver 命令的參考主題，它會將初始伺服器變更為指定的網域名稱系統（DNS）網域。
+description: Nslookup lserver 命令的參考文章，它會將初始伺服器變更為指定的網域名稱系統（DNS）網域。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 868142f251d62ebc3efd7913aded8e22aa077bd3
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 1f8d40a39abb6f96e900aee6dc029963ed7c0486
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721586"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931274"
 ---
 # <a name="nslookup-lserver"></a>nslookup lserver
 
@@ -32,13 +32,13 @@ lserver <DNSdomain>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `<DNSdomain>` | 指定初始伺服器的 DNS 網域。 |
 | /? | 在命令提示字元顯示說明。 |
 | /help | 在命令提示字元顯示說明。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

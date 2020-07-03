@@ -1,6 +1,6 @@
 ---
 title: tskill
-description: Tskill 的參考主題，它會結束在遠端桌面工作階段主機伺服器上的會話中執行的進程。
+description: Tskill 的參考文章，它會結束在遠端桌面工作階段主機伺服器上的會話中執行的進程。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 13bd18a84dccbbeee88c24b9b07208b3174bc558
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 496d5d4e0002ba2c9f8ae6916aafcd08e686ce99
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721245"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931475"
 ---
 # <a name="tskill"></a>tskill
 
@@ -33,12 +33,12 @@ tskill {<ProcessID> | <ProcessName>} [/server:<ServerName>] [/id:<SessionID> | /
 
 ### <a name="parameters"></a>參數
 
-|參數|描述|
+|參數|說明|
 |-------|--------|
 |\<ProcessID>|指定您想要結束之進程的識別碼。|
 |\<ProcessName>|指定您想要結束之進程的名稱。 這個參數可以包含萬用字元。|
-|/server：\<ServerName>|指定包含您要結束之進程的終端機伺服器。 如果未指定 **/server** ，則會使用目前的 RD 工作階段主機伺服器。|
-|/id：\<SessionID>|結束在指定會話中執行的進程。|
+|/server:\<ServerName>|指定包含您要結束之進程的終端機伺服器。 如果未指定 **/server** ，則會使用目前的 RD 工作階段主機伺服器。|
+|/id\<SessionID>|結束在指定會話中執行的進程。|
 |/a|結束正在所有會話中執行的進程。|
 |/v|顯示正在執行之動作的相關資訊。|
 |/?|在命令提示字元顯示說明。|
@@ -57,6 +57,6 @@ tskill {<ProcessID> | <ProcessName>} [/server:<ServerName>] [/id:<SessionID> | /
   ```
   tskill explorer /id:5
   ```
-  ## <a name="additional-references"></a>其他參考
-  - [命令列語法金鑰](command-line-syntax-key.md)
+  ## <a name="additional-references"></a>其他參考資料
+  - [命令列語法索引鍵](command-line-syntax-key.md) 
   [遠端桌面服務（終端機服務）命令參考](remote-desktop-services-terminal-services-command-reference.md)

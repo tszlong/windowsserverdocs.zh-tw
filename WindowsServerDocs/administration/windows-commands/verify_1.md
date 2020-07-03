@@ -1,6 +1,6 @@
 ---
 title: 驗證
-description: Verify 的參考主題會告訴**cmd** ，是否要確認您的檔案已正確寫入至磁片。
+description: 驗證的參考文章，它會告訴**cmd**是否要確認您的檔案已正確寫入磁片。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f7fc35b37d5e0a429e1ecc2ebefc117804a0c645
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1455705d409e0273e85135a183279835e7238d7a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720286"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931314"
 ---
 # <a name="verify"></a>驗證
 
@@ -32,9 +32,9 @@ verify [on | off]
 
 ### <a name="parameters"></a>參數
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
-|[ \|關閉]|將 [**驗證**] 設定設為 [開啟] 或 [關閉]。|
+|[ \| 關閉]|將 [**驗證**] 設定設為 [開啟] 或 [關閉]。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="examples"></a>範例
@@ -48,6 +48,6 @@ verify
 Verify on
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

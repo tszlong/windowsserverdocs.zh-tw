@@ -1,6 +1,6 @@
 ---
 title: quser
-description: Quser 命令的參考主題，它會顯示遠端桌面工作階段主機伺服器上使用者會話的相關資訊。
+description: Quser 命令的參考文章，它會顯示遠端桌面工作階段主機伺服器上的使用者會話相關資訊。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e51abe030ca0f473246cdc85fd01d89fddf8b056
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7df52ea8d2b30d9e365d6dc79d53aad9bd0782f9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471923"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931113"
 ---
 # <a name="quser"></a>quser
 
@@ -45,7 +45,7 @@ quser [<username> | <sessionname> | <sessionID>] [/server:<servername>]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 |--|--|
 | `<username>` | 指定您想要查詢之使用者的登入名稱。 |
 | `<sessionname>` | 指定您想要查詢之會話的名稱。 |
@@ -75,7 +75,7 @@ quser
 quser USER1 /server:Server1
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

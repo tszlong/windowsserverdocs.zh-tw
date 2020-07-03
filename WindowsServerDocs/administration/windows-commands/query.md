@@ -1,6 +1,6 @@
 ---
 title: 查詢
-description: 查詢命令的參考主題，它會顯示進程、會話和遠端桌面工作階段主機伺服器的相關資訊。
+description: 查詢命令的參考文章，它會顯示進程、會話和遠端桌面工作階段主機伺服器的相關資訊。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ba5785fb37821848f98383da5b972333dfc8a9cc
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a00ef08f72108643a045e5b48ec1c69155dd0fd8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471933"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931130"
 ---
 # <a name="query"></a>查詢
 
@@ -33,14 +33,14 @@ query user
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 |--|--|
 | [query process](query-process.md) | 顯示在遠端桌面工作階段主機伺服器上執行之進程的相關資訊。 |
 | [query session](query-session.md) | 顯示遠端桌面工作階段主機伺服器上會話的相關資訊。 |
 | [query termserver](query-termserver.md) | 顯示網路上所有遠端桌面工作階段主機伺服器的清單。 |
 | [query user](query-user.md) | 顯示遠端桌面工作階段主機伺服器上的使用者會話相關資訊。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

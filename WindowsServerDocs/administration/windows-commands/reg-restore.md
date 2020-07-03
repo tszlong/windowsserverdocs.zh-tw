@@ -1,6 +1,6 @@
 ---
-title: reg 還原
-description: '* * * * 的參考主題'
+title: reg restore
+description: Reg restore 命令的參考文章，其會將已儲存的子機碼和專案寫入登錄。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,52 +9,52 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4d490f99f032b38c8bbbe9352b8571b4a85202e1
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1483fc6998d7b286a81dc3cb1df021afb7e66650
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722525"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931044"
 ---
-# <a name="reg-restore"></a>reg 還原
-
-
+# <a name="reg-restore"></a>reg restore
 
 將已儲存的子機碼和專案寫入登錄。
-
-
 
 ## <a name="syntax"></a>語法
 
 ```
-Reg restore <KeyName> <FileName>
+reg restore <keyname> <filename>
 ```
 
 ### <a name="parameters"></a>參數
 
-|參數|描述|
-|---------|-----------|
-|\<KeyName>|指定要還原之子機碼的完整路徑。 還原作業只適用于本機電腦。 KeyName 必須包含有效的根金鑰。 有效的根金鑰包括： HKLM、HKCU、HKCR、HKU 和 HKCC。|
-|\<檔案名>|指定包含要寫入登錄之內容的檔案名和路徑。 此檔案必須預先建立，並使用 hiv 副檔名來進行**reg save**作業。|
-|/?|在命令提示字元中顯示**reg 還原**的說明。|
+| 參數 | 說明 |
+|--|--|
+| `<keyname>` | 指定要還原之子機碼的完整路徑。 還原作業只適用于本機電腦。 *Keyname*必須包含有效的根金鑰。 本機電腦的有效根金鑰為： **HKLM**、 **HKCU**、 **HKCR**、 **HKU**和**HKCC**。 如果登錄機碼名稱包含空格，請用引號括住機碼名稱。 |
+| `<filename>` | 指定包含要寫入登錄之內容的檔案名和路徑。 此檔案必須使用**reg save**命令事先建立，而且必須具有 hiv 副檔名。 |
+| /? | 在命令提示字元顯示說明。 |
 
-## <a name="remarks"></a>備註
+#### <a name="remarks"></a>備註
 
--   在編輯任何登錄專案之前，請使用**reg save**作業來儲存父系子機碼。 如果編輯失敗，請使用**reg restore**作業來還原原始的子機碼。
--   下表列出**reg 還原**作業的傳回值。
+- 在編輯任何登錄專案之前，您必須使用**reg save**命令來儲存父系子機碼。 如果編輯失敗，您可以接著使用**reg 還原**作業來還原原始的子機碼。
 
-|值|描述|
-|-----|-----------|
-|0|Success|
-|1|失敗|
+- **Reg 還原**作業的傳回值如下：
 
-## <a name="examples"></a>範例
+    | 值 | 說明 |
+    |--|--|
+    | 0 | 成功 |
+    | 1 | 失敗 |
+
+### <a name="examples"></a>範例
 
 若要將名為 NTRKBkUp. hiv 的檔案還原到金鑰 HKLM\Software\Microsoft\ResKit 中，並覆寫現有的金鑰內容，請輸入：
+
 ```
-REG RESTORE HKLM\Software\Microsoft\ResKit NTRKBkUp.hiv
+reg restore HKLM\Software\Microsoft\ResKit NTRKBkUp.hiv
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [reg save 命令](reg-save.md)

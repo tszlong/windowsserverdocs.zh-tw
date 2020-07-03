@@ -1,6 +1,6 @@
 ---
 title: nslookup set srchlist
-description: Nslookup set srchlist 命令的參考主題，它會變更預設的網域名稱系統（DNS）功能變數名稱和搜尋清單。
+description: Nslookup set srchlist 命令的參考文章，它會變更預設的網域名稱系統（DNS）功能變數名稱和搜尋清單。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ed9bbce1910324c4cae5da4228a6d3d1f269d050
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 5d43107ed2c777349a8cac1a0411c035371bc0f7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721398"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930410"
 ---
 # <a name="nslookup-set-srchlist"></a>nslookup set srchlist
 
@@ -30,7 +30,7 @@ set srchlist=<domainname>[/...]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `<domainname>` | 指定預設 DNS 網域和搜尋清單的新名稱。 預設的功能變數名稱值是以主機名稱為基礎。 您最多可以指定六個名稱，並以斜線（/）分隔。 |
 | /? | 在命令提示字元顯示說明。 |
@@ -48,7 +48,7 @@ set srchlist=<domainname>[/...]
 set srchlist=mfg.widgets.com/mrp2.widgets.com/widgets.com
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

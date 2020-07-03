@@ -1,6 +1,6 @@
 ---
 title: fsutil usn
-description: Fsutil usn 命令的參考主題，它會管理更新序號（USN）變更日誌。
+description: 適用于管理更新序號（USN）變更日誌的 fsutil usn 命令參考文章。
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: faad34aa-4ba1-4129-bc1f-08088399e2fa
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: d21de9ecb1d63116ee2d186965f7f47fc3a7235e
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: b3f71588c7221f0ba8e3659d9a1a1dd133971ce9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437113"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930470"
 ---
 # <a name="fsutil-usn"></a>fsutil usn
 
@@ -36,7 +36,7 @@ fsutil usn [readjournal] [c= <chunk-size> s=<file-size-threshold>] <volumepath>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | createjournal | 建立 USN 變更日誌。 |
 | m =`<maxsize>` | 指定 NTFS 為變更日誌配置的大小上限（以位元組為單位）。 |
@@ -116,7 +116,7 @@ fsutil usn readdata c:\temp\sample.txt
 fsutil usn readjournal startusn=0xF00
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

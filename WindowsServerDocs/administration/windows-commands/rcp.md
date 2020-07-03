@@ -1,6 +1,6 @@
 ---
 title: rcp
-description: Rcp 命令的參考主題，會在電腦之間複製檔案。 此命令已被取代，在未來的 Windows 版本中不保證會受到支援。
+description: Rcp 命令的參考文章，會在電腦之間複製檔案。 此命令已被取代，在未來的 Windows 版本中不保證會受到支援。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1e06f9751a690e1593a0fb3e30dc31c14c8f960a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 34e58471a3f79e2f8ae6f060ec945bfc43b004c3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471863"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931993"
 ---
 # <a name="rcp"></a>rcp
 
@@ -25,6 +25,6 @@ ms.locfileid: "85471863"
 
 安裝之後，您可以開啟 C Shell （csh 或 tcsh）或 KornShell 命令視窗，並執行**rcp**。 如需詳細資訊，請在 [C Shell] 或 [KornShell] 提示字元中輸入「**男人**」。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

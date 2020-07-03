@@ -1,6 +1,6 @@
 ---
 title: ver
-description: Ver 的參考主題，會顯示作業系統版本號碼。
+description: Ver 的參考文章，會顯示作業系統版本號碼。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7050dddda6cc27c50980f2e44f40e1f682c1d375
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: bd9b40fa526c2917b6cdcbc8d54da510eb40bc53
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720306"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931346"
 ---
 # <a name="ver"></a>ver
 
@@ -34,7 +34,7 @@ ver
 
 ### <a name="parameters"></a>參數
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
 |/?|在命令提示字元顯示說明。|
 
@@ -53,6 +53,6 @@ $PSVersionTable.BuildVersion
 ````
 
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

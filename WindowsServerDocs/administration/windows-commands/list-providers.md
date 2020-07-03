@@ -1,6 +1,6 @@
 ---
-title: 清單提供者
-description: '[清單提供者] 命令的參考主題，列出目前在系統上註冊的陰影複製提供者。'
+title: list providers
+description: '[清單提供者] 命令的參考文章，其中列出目前在系統上註冊的陰影複製提供者。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 98615dfa92c24b91babb55ae3545065834887e5d
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 64996c7a85fa7ad20a5ffbb1c22ae3396820b676
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817238"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931806"
 ---
-# <a name="list-providers"></a>清單提供者
+# <a name="list-providers"></a>list providers
 
 列出目前已在系統上註冊的陰影複製提供者。
 
@@ -45,6 +45,6 @@ list providers
 1 provider registered.
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

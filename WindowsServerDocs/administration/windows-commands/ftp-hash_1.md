@@ -1,6 +1,6 @@
 ---
-title: ftp 雜湊
-description: Ftp hash 命令的參考主題，它會針對每個傳送的資料區塊切換數位記號（#）列印。
+title: ftp hash
+description: Ftp hash 命令的參考文章，它會針對每個傳送的資料區塊切換數位記號（#）列印。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1aad92feb49e3ce8ab5bc0865c73983edf25e4a9
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 38f53b06b9351c0c5d37c88bc29790767f55a23f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819690"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931291"
 ---
-# <a name="ftp-hash"></a>ftp 雜湊
+# <a name="ftp-hash"></a>ftp hash
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -36,7 +36,7 @@ hash
 hash
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

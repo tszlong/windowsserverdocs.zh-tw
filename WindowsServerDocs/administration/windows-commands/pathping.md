@@ -1,6 +1,6 @@
 ---
 title: pathping
-description: Pathping 命令的參考主題，可取得來源與目的地之間中繼躍點的網路延遲和網路遺失的相關資訊。
+description: Pathping 命令的參考文章，可取得來源與目的地之間中繼躍點的網路延遲和網路遺失的相關資訊。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 6f3f90be7be29f1c50e70fa8ec49685ee1843c45
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 887a819c28d546f8c73d07fedbefbe27b65e7a5a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472554"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931394"
 ---
 # <a name="pathping"></a>pathping
 
@@ -35,7 +35,7 @@ pathping [/n] [/h <maximumhops>] [/g <hostlist>] [/p <Period>] [/q <numqueries> 
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 |--|--|
 | /n | 防止**pathping**嘗試將中繼路由器的 IP 位址解析為其名稱。 這可能會加快顯示**pathping**結果的速度。 |
 | /h`<maximumhops>` | 指定路徑中用來搜尋目標（目的地）的躍點數目上限。 預設值為30個躍點。 |
@@ -90,7 +90,7 @@ Trace complete.
 
 針對連結顯示的遺失率（ **|** 在 [**位址**] 欄中識別為分隔號（））表示連結擁塞，這會導致在路徑上轉送的封包遺失。 針對路由器顯示的遺失率（由其 IP 位址識別）表示這些路由器可能超載。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

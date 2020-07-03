@@ -1,6 +1,6 @@
 ---
 title: nslookup view
-description: Nslookup view 命令的參考主題，它會排序並列出先前的**ls**命令或子命令的輸出。
+description: Nslookup view 命令的參考文章，它會排序並列出先前的**ls**命令或子命令的輸出。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 74ee505a2a84eab23c218c145606d9e58fcd4b5f
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: ef16b03fbf5e109e580d243dfffc3b8f1d5712da
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721161"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930225"
 ---
 # <a name="nslookup-view"></a>nslookup view
 
@@ -30,13 +30,13 @@ view <filename>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `<filename>` | 指定檔案的名稱，該檔案包含前一個**ls**命令或子命令的輸出。 |
 | /? | 在命令提示字元顯示說明。 |
 | /help | 在命令提示字元顯示說明。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

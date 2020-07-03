@@ -1,6 +1,6 @@
 ---
-title: logman 建立 cfg
-description: Logman create cfg 命令的參考主題，它會建立設定資料收集器。
+title: logman create cfg
+description: Logman create cfg 命令的參考文章，它會建立設定資料收集器。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 518b0c7bddf1d74522a376aafb7da85abb849ac4
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: f4ae073561ddfc26f4a6a1af834113cff0cc9e29
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222971"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932087"
 ---
-# <a name="logman-create-cfg"></a>logman 建立 cfg
+# <a name="logman-create-cfg"></a>logman create cfg
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -30,7 +30,7 @@ logman create cfg <[-n] <name>> [options]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | -s`<computer name>` | 在指定的遠端電腦上執行命令。 |
 | -config`<value>` | 指定包含命令選項的設定檔案。 |
@@ -74,7 +74,7 @@ logman create cfg cfg_log -reg HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\
 logman create cfg cfg_log -mgt root\wmi:select * FROM MSNdis_Vendordriverversion
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

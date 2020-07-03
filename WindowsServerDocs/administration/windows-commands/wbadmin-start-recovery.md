@@ -1,6 +1,6 @@
 ---
 title: wbadmin start recovery
-description: Wbadmin start recovery 的參考主題，它會根據您指定的參數執行復原作業。
+description: Wbadmin start recovery 的參考文章，它會根據您指定的參數執行復原作業。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ec116bb69dd70cb58f6cb71ccf9ccfa04dea2e54
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 2a8934d9177d81cd05124175e64746ecdb4a1bc1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725881"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930953"
 ---
 # <a name="wbadmin-start-recovery"></a>wbadmin start recovery
 
@@ -42,7 +42,7 @@ wbadmin start recovery
 
 ### <a name="parameters"></a>參數
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
 |-version|以 MM/DD/YYYY-HH： MM 格式指定要復原之備份的版本識別碼。 如果您不知道版本識別碼，請輸入**wbadmin get 版本**。|
 |-items|指定要復原的磁片區、應用程式、檔案或資料夾清單（以逗號分隔）。</br>-如果 **-itemtype**是**volume**，您可以藉由提供磁片區磁碟機號、磁片區掛接點或以 GUID 為基礎的磁片區名稱來指定單一磁片區。</br>-如果 **-itemtype**是**App**，您只能指定單一應用程式。 若要復原，應用程式必須已向 Windows Server Backup 註冊。 您也可以使用 [值**ADIFM** ] 來復原 Active Directory 的安裝。 如需詳細資訊，請參閱中的備註。</br>-如果 **-itemtype**是**File**，您可以指定檔案或資料夾，但它們應該是同一個磁片區的一部分，而且它們應該位於相同的父資料夾底下。|
@@ -79,17 +79,17 @@ wbadmin start recovery -version:03/31/2013-09:00 -itemType:App -items:Registry -
 ```
 wbadmin start recovery -version:03/31/2013-09:00 -itemType:File -items:d:\folder -recursive
 ```
-若要從2013年3月31日（上午9:00）執行備份復原，請在 [磁片\\ \\區]\, \Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963} 類型：
+若要從2013年3月31日（上午9:00）執行備份復原，請在 [磁片區] \\ \\ \Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963} \, 類型：
 ```
-wbadmin start recovery -version:03/31/2013-09:00 -itemType:Volume 
+wbadmin start recovery -version:03/31/2013-09:00 -itemType:Volume
 -items:\\?\Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
 ```
-若要從 9:00 2013 年4月30日（從 server01 開始的共用資料夾\\ \\servername\share）執行備份復原，請輸入：
+若要從 9:00 2013 年4月30日（從 server01 開始的共用資料夾 servername\share）執行備份復原， \\ \\ 請輸入：
 ```
 wbadmin start recovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [命令列語法關鍵](command-line-syntax-key.md)
 -   [Restore](wbadmin.md)

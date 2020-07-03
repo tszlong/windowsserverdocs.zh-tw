@@ -1,6 +1,6 @@
 ---
 title: findstr
-description: Findstr 命令的參考主題，它會搜尋檔案中的文字模式。
+description: Findstr 命令的參考文章，它會搜尋檔案中的文字模式。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7f8d353b6d3aee77960b208d89372aee5dca07e3
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: f0cf30f19ef23c1b3275b6b7632b03f0dd8e433a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436114"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931433"
 ---
 # <a name="findstr"></a>findstr
 
@@ -28,7 +28,7 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<file>] 
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | /b | 符合文字模式（如果它位於行首）。 |
 | /e | 符合文字模式（如果它位於行尾）。 |
@@ -99,7 +99,7 @@ findstr hello there x.y
 findstr /c:hello there x.y
 ```
 
-若要在檔案*提案 .txt*中尋找所有出現的 word*視窗*（包含初始大寫字母 W），請輸入：
+若要在檔案*proposal.txt*中尋找所有出現的 word*視窗*（包含初始大寫字母 W），請輸入：
 
 ```
 findstr Windows proposal.txt
@@ -117,7 +117,7 @@ findstr /s /i Windows *.*
 findstr /b /n /r /c:^ *FOR *.bas
 ```
 
-若要列出您想要在文字檔中搜尋的確切檔案，請使用*stringlist*檔案中的搜尋條件，以搜尋*filelist*中列出的檔案，然後將結果儲存在檔案*結果中。輸出*，請輸入：
+若要列出您想要在文字檔中搜尋的確切檔案，請使用檔案*stringlist.txt*中的搜尋條件，搜尋*filelist.txt*中列出的檔案，然後將結果儲存在檔案*結果中。輸出*，請輸入：
 
 ```
 findstr /g:stringlist.txt /f:filelist.txt > results.out
@@ -135,6 +135,6 @@ findstr /s /i /m <computer> *.*
 findstr /s /i /m <comp.* *.*
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

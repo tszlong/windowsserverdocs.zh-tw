@@ -1,6 +1,6 @@
 ---
 title: chkntfs
-description: Chkntfs 命令的參考主題，它會在電腦啟動時顯示或修改自動磁片檢查。
+description: Chkntfs 命令的參考文章，它會在電腦啟動時顯示或修改自動磁片檢查。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 69b8e21a7b43538b6296666d813f2b33daa8045f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 4d2a19a479ec3b00bda83ecded91f5fbb7941ca0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82713648"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930713"
 ---
 # <a name="chkntfs"></a>chkntfs
 
@@ -35,11 +35,11 @@ chkntfs [/c <volume> [...]]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `<volume>` [...] | 指定電腦啟動時要檢查的一或多個磁片區。 有效的磁片區包含磁碟機號（後面接著冒號）、掛接點或磁片區名稱。 |
 | /d | 還原所有的**chkntfs**預設設定，但自動檢查檔案的倒數計時時間除外。 根據預設，系統會在電腦啟動時檢查所有磁片區，而**chkdsk**會在那些已變更的磁片區上執行。 |
-| /t [`:<time>`] | 將 [Autochk 起始倒數計時時間] 變更為指定的時間量（以秒為單位）。 如果您沒有輸入時間， **/t**會顯示目前的倒數計時時間。 |
+| /t [ `:<time>` ] | 將 Autochk.exe 起始倒數計時時間變更為指定的時間量（以秒為單位）。 如果您沒有輸入時間， **/t**會顯示目前的倒數計時時間。 |
 | /x `<volume>` [...] | 指定當電腦啟動時要排除的一或多個磁片區，即使磁片區標示為需要**chkdsk**也一樣。 |
 | /c `<volume>` [...] | 排程一或多個要在電腦啟動時檢查的磁片區，並在那些已變更的磁片區上執行**chkdsk** 。 |
 | /? | 在命令提示字元顯示說明。 |
@@ -55,20 +55,20 @@ chkntfs c:
 > [!NOTE]
 > 如果已排程執行自動檔案檢查，則會顯示其他輸出，指出磁片磁碟機是否已變更，或者是否已手動排程在下次啟動電腦時進行檢查。
 
-若要顯示 [Autochk 起始倒數計時時間]，請輸入：
+若要顯示 Autochk.exe 起始倒數計時時間，請輸入：
 
 ```
 chkntfs /t
 ```
 
-若要將 [Autochk 起始倒數計時時間] 變更為30秒，請輸入：
+若要將 Autochk.exe 起始倒數計時時間變更為30秒，請輸入：
 
 ```
 chkntfs /t:30
 ```
 
 > [!NOTE]
-> 雖然您可以將 [Autochk 起始倒數計時時間] 設定為零，但這樣做將會導致您無法取消可能耗費時間的自動檔案檢查。
+> 雖然您可以將 Autochk.exe 起始倒數計時時間設定為零，但這樣做將會導致您無法取消可能耗費時間的自動檔案檢查。
 
 若要排除多個要檢查的磁片區，您必須在單一命令中將它們列出。 例如，若要排除 D 和 E 磁片區，請輸入：
 
@@ -90,6 +90,6 @@ chkntfs /c d:
 > [!IMPORTANT]
 > **/C**命令列選項為累加。 如果您多次輸入 **/c** ，則每個專案都會保留。 若要確保只檢查特定磁片區，請重設預設值以清除所有先前的命令，排除所有磁片區不進行檢查，然後在所需的磁片區上排程自動檔案檢查。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

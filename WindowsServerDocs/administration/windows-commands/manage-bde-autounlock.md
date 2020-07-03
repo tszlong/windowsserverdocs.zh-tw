@@ -1,6 +1,6 @@
 ---
 title: manage-bde 再次
-description: 再次命令的參考主題，它會管理受 BitLocker 保護之資料磁片磁碟機的自動解除鎖定。
+description: 再次命令的參考文章，它會管理受 BitLocker 保護之資料磁片磁碟機的自動解除鎖定。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a214ba868e04a81e6282dc919c93ab626ef26725
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: a81d3e864a33efd5a6a1c81a5a193338d2c25bfa
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84223007"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931636"
 ---
 # <a name="manage-bde-autounlock"></a>manage-bde 再次
 
@@ -28,13 +28,13 @@ manage-bde -autounlock [{-enable|-disable|-clearallkeys}] <drive> [-computername
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | -enable | 啟用資料磁片磁碟機的自動解除鎖定。 |
 | -disable | 停用資料磁片磁碟機的自動解除鎖定。 |
 | -clearallkeys | 移除作業系統磁片磁碟機上的所有已儲存的外部金鑰。 |
 | `<drive>` | 表示後面接著冒號的磁碟機號。 |
-| -computername | 指定 manage-bde.wsf 將用來修改另一部電腦上的 BitLocker 保護。 您也可以使用 **-cn**做為此命令的縮寫版本。 |
+| -computername | 指定 manage-bde.exe 將用來修改另一部電腦上的 BitLocker 保護。 您也可以使用 **-cn**做為此命令的縮寫版本。 |
 | `<name>` | 代表要修改 BitLocker 保護的電腦名稱稱。 接受的值包括電腦的 NetBIOS 名稱和電腦的 IP 位址。 |
 | -? 或/？ | 在命令提示字元中顯示簡短說明。 |
 | -help 或-h | 在命令提示字元中顯示完整的說明。 |
@@ -47,7 +47,7 @@ manage-bde -autounlock [{-enable|-disable|-clearallkeys}] <drive> [-computername
 manage-bde –autounlock -enable E:
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

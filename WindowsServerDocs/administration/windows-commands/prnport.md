@@ -1,6 +1,6 @@
 ---
 title: prnport
-description: Prnport 命令的參考主題，它會建立、刪除和列出標準 TCP/IP 印表機埠，以及顯示和變更埠設定。
+description: Prnport 命令的參考文章，它會建立、刪除和列出標準 TCP/IP 印表機埠，以及顯示和變更埠設定。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9c209c06c2253e924e5a71753fec0b8ab0ee158d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4b373547050d3d3dfb1d64160959c8dbb9e6f5c5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472203"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931163"
 ---
 # <a name="prnport"></a>prnport
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-除了顯示和變更埠設定之外，還會建立、刪除及列出標準 TCP/IP 印表機埠。 此命令是位於目錄中的 Visual Basic 腳本 `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 若要在命令提示字元中使用此命令，請輸入**cscript** ，後面接著 prnport 檔案的完整路徑，或將目錄變更為適當的資料夾。 例如： `cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnport` 。
+除了顯示和變更埠設定之外，還會建立、刪除及列出標準 TCP/IP 印表機埠。 此命令是位於目錄中的 Visual Basic 腳本 `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 若要在命令提示字元中使用此命令，請輸入**cscript** ，後面接著 prnport 檔案的完整路徑，或將目錄變更為適當的資料夾。 例如：`cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnport`。
 
 ## <a name="syntax"></a>語法
 
@@ -30,7 +30,7 @@ cscript prnport {-a | -d | -l | -g | -t | -?} [-r <portname>] [-s <Servername>] 
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 |--|--|
 | -a | 建立標準 TCP/IP 印表機埠。 |
 | -d | 刪除標準 TCP/IP 印表機埠。 |
@@ -86,7 +86,7 @@ cscript prnport -t -s Server1 -r IP_10.2.3.4 -me -y public -i 1 -n 9100
 cscript prnport -a -r IP_10.2.3.4 -h 10.2.3.4
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

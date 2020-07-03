@@ -1,6 +1,6 @@
 ---
-title: 結束還原
-description: 「結束還原」命令的參考主題，它會結束還原會話，併發出**PostRestore**事件給相關的寫入器。
+title: end restore
+description: 「結束還原」命令的參考文章，它會結束還原會話併發出**PostRestore**事件給相關的寫入器。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,23 +9,23 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1fc76727a4c668c7440fefe9dfc3ceaa08ee7cd4
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 9bf5cb35617a64e07d830fd322b985c89663d2f4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436893"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930808"
 ---
-# <a name="end-restore"></a>結束還原
+# <a name="end-restore"></a>end restore
 
 結束還原會話，並向相關的寫入器發出**PostRestore**事件。
 
-## <a name="syntax"></a>語法
+## <a name="syntax"></a>Syntax
 
 ```
 end restore
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

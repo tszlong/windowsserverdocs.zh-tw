@@ -1,6 +1,6 @@
 ---
 title: PowerShell
-description: PowerShell 命令的參考主題，它會從命令提示字元開啟 PowerShell 主控台。
+description: PowerShell 命令的參考文章，它會從命令提示字元開啟 PowerShell 主控台。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: e38684943c6c0c9a4371803d7e473c14cbef7a91
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 8a252efe57cec1e77bd4d814ced75decb1f2ceb7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472343"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931368"
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -62,7 +62,7 @@ Windows PowerShell 是以工作為基礎的命令列 shell 與指令碼語言，
 
 - Windows PowerShell 會在 Windows Server 作業系統的 Server Core 安裝選項上執行。 不過，需要圖形使用者介面的功能（例如[Windows PowerShell 整合式腳本環境（ISE）](https://docs.microsoft.com/previous-versions//hh849182(v=technet.10))，以及[Out-GridView](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-gridview)和[Show 命令](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Show-Command)Cmdlet）不會在 Server Core 安裝上執行。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [about_PowerShell.Exe](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_exe)
 

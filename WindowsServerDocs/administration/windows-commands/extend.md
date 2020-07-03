@@ -1,6 +1,6 @@
 ---
 title: extend
-description: 擴充命令的參考主題，它會將具有焦點的磁片區或磁碟分割，以及其檔案系統延伸到磁片上的可用（未配置）空間。
+description: '[擴充] 命令的參考文章，它會將具有焦點的磁片區或磁碟分割，以及其檔案系統延伸到磁片上的可用（未配置）空間。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fd10e2ad4d6d647f37e1ad113f1516104e66315f
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 4749b2ddcd47aa5445d9d77ff86c3473ae37b355
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437193"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931438"
 ---
 # <a name="extend"></a>extend
 
@@ -31,11 +31,11 @@ extend filesystem [noerr]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | 大小 =`<n>` | 指定要新增到目前磁片區或磁碟分割的空間量（以 mb 為單位）。 如果未指定大小，則會使用磁片上可用的所有連續可用空間。 |
 | 磁片 =`<n>` | 指定擴充磁片區或分割區的磁片。 如果未指定磁片，磁片區或磁碟分割會在目前的磁片上擴充。 |
-| 內 | 以焦點擴充磁片區的檔案系統。 僅適用于未使用磁片區擴充檔案系統的磁片。 |
+| filesystem | 以焦點擴充磁片區的檔案系統。 僅適用于未使用磁片區擴充檔案系統的磁片。 |
 | noerr | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
 
 #### <a name="remarks"></a>備註
@@ -66,6 +66,6 @@ extend size=500 disk=3
 extend filesystem
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

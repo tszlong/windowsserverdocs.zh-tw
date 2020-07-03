@@ -1,6 +1,6 @@
 ---
 title: logman delete
-description: Logman delete 命令的參考主題，它會刪除現有的資料收集器。
+description: Logman delete 命令的參考文章，它會刪除現有的資料收集器。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 18739f3d7ab5af38dbe369e45aca8393ba3a3152
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 505cd8a09bcbb1e46f16242818825f3c504955b9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222949"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930421"
 ---
 # <a name="logman-delete"></a>logman delete
 
@@ -30,7 +30,7 @@ logman delete <[-n] <name>> [options]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | -s`<computer name>` | 在指定的遠端電腦上執行命令。 |
 | -config`<value>` | 指定包含命令選項的設定檔案。 |
@@ -47,7 +47,7 @@ logman delete <[-n] <name>> [options]
 logman delete perf_log
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

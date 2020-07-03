@@ -1,6 +1,6 @@
 ---
 title: nfsshare
-description: Nfsshare 命令的參考主題，可控制網路檔案系統（NFS）共用。
+description: Nfsshare 命令的參考文章，可控制網路檔案系統（NFS）共用。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4774d5ce929de5e79e2cde78e45b0cd9bdca163c
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 4901e0c9ee0701261dc6abb8cfd69cc02d4dd02e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721521"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932038"
 ---
 # <a name="nfsshare"></a>nfsshare
 
@@ -29,7 +29,7 @@ nfsshare {<sharename> | <drive>:<path> | * } /delete
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | -o anon =`{yes|no}` | 指定匿名（未對應的）使用者是否可以存取共用目錄。 |
 | -o rw =`[<host>[:<host>]...]` | 提供由*host*指定的主機或用戶端群組對共用目錄的讀寫存取。 您必須以冒號（**：**）分隔主機和組名。 如果未指定*host* ，所有主機和用戶端群組（除了以**ro**選項指定的主機和用戶端群組）都會取得讀寫存取權。 如果**ro**或**rw**選項皆未設定，則所有用戶端都具有共用目錄的讀寫存取權。 |
@@ -47,7 +47,7 @@ nfsshare {<sharename> | <drive>:<path> | * } /delete
 
 - 如果使用了*共用名稱*和 `<drive>:<path>` ，此命令會將所識別的資料夾匯出 `<drive>:<path>` 為「*共用名稱*」。 如果您使用 **/delete**選項，指定的資料夾將會停止供 NFS 用戶端使用。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

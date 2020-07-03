@@ -1,6 +1,6 @@
 ---
 title: dispdiag
-description: Dispdiag 命令的參考主題，其會將顯示資訊記錄到檔案中。
+description: Dispdiag 命令的參考文章，其會將顯示資訊記錄到檔案中。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ff4e3690ec3b2c9d473f05027d5637eda124d0ba
-ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
+ms.openlocfilehash: d95a53f60aa7e51450a640d5ec9c5a5e6ccb41a6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235224"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931218"
 ---
 # <a name="dispdiag"></a>dispdiag
 
@@ -36,6 +36,6 @@ dispdiag [-testacpi] [-d] [-delay <seconds>] [-out <filepath>]
 | -out`<filepath>`  | 指定路徑和檔案名，以儲存收集的資料。 這必須是最後一個參數。 |
 | -? | 顯示可用的命令參數，並提供使用它們的協助。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

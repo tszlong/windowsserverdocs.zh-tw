@@ -1,6 +1,6 @@
 ---
 title: pnputil
-description: Pnputil 命令的參考主題，這會新增驅動程式套件、移除驅動程式套件，並使用 pnputil.exe 公用程式列出驅動程式存放區中的驅動程式套件。
+description: Pnputil 命令的參考文章，可新增驅動程式套件、移除驅動程式套件，以及列出驅動程式存放區中的驅動程式套件（使用 pnputil.exe 公用程式）。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 6484a3e55c6e5f3b4cb51119ead5cb488dca0721
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 01b8aee1aa4dfb85b590c9d4abbec471fc437da8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472395"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930240"
 ---
 # <a name="pnputil"></a>pnputil
 
@@ -28,7 +28,7 @@ pnputil.exe [-f | -i] [ -? | -a | -d | -e ] <INF name>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 |--|--|
 | -a | 指定要新增已識別的 INF 檔案。 |
 | -d | 指定刪除已識別的 INF 檔案。 |
@@ -69,7 +69,7 @@ pnputil.exe –e
 pnputil.exe -d oem0.inf
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: TransportServer
-description: TransportServer 的參考主題，它會顯示指定之傳輸伺服器的相關資訊。
+description: TransportServer 的參考文章，它會顯示指定之傳輸伺服器的相關資訊。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 82ab5f901240f964bd22e7fb8053ed95b1c6fe51
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 115942290679decd8b8c660e4113576efb30123d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719728"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932169"
 ---
 # <a name="get-transportserver"></a>TransportServer
 
@@ -27,9 +27,9 @@ ms.locfileid: "82719728"
 wdsutil [Options] /Get-TransportServer [/Server:<Server name>] /Show:{Config}
 ```
 ### <a name="parameters"></a>參數
-|參數|描述|
+|參數|說明|
 |-------|--------|
-|[/Server：<Server name>]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。|
+|[/Server： <Server name> ]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。|
 |/Show： {Config}|傳回指定之傳輸伺服器的相關設定資訊。|
 ## <a name="examples"></a>範例
 若要查看伺服器的相關資訊，請輸入：
@@ -40,10 +40,10 @@ wdsutil /Get-TransportServer /Show:Config
 ```
 wdsutil /Get-TransportServer /Server:MyWDSServer /Show:Config
 ```
-## <a name="additional-references"></a>其他參考
-- [Command-Line Syntax Key](command-line-syntax-key.md) 
-使用[TransportServer 命令](using-the-disable-transportserver-command.md)
-的命令列語法金鑰[使用 TransportServer 命令](using-the-enable-transportserver-command.md)
-[子命令： set-TransportServer](subcommand-set-transportserver.md)
-[子](subcommand-start-transportserver.md)
-命令： TransportServer[子命令： stop-TransportServer](subcommand-stop-transportserver.md)
+## <a name="additional-references"></a>其他參考資料
+- [命令列語法索引鍵](command-line-syntax-key.md) 
+[使用 TransportServer 命令](using-the-disable-transportserver-command.md) 
+[使用 TransportServer 命令](using-the-enable-transportserver-command.md) 
+[子命令： set-TransportServer](subcommand-set-transportserver.md) 
+[子命令： start-TransportServer](subcommand-start-transportserver.md) 
+[子命令： stop-TransportServer](subcommand-stop-transportserver.md)

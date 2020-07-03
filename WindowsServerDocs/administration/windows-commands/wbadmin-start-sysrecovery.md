@@ -1,6 +1,6 @@
 ---
 title: wbadmin start sysrecovery
-description: Wbadmin start sysrecovery 的參考主題，它會使用您指定的參數執行系統復原（裸機復原）。
+description: Wbadmin start sysrecovery 的參考文章，它會使用您指定的參數執行系統復原（裸機復原）。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a7c32818461c46a7d582029ec127c574d6a8f3e3
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 2f7e23a82afba85ea8a670c636e0f700cb7def2e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819108"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930926"
 ---
 # <a name="wbadmin-start-sysrecovery"></a>wbadmin start sysrecovery
 
@@ -65,7 +65,7 @@ wbadmin start sysrecovery -version:03/31/2013-09:00 -backupTarget:d:
 wbadmin start sysrecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 -   [Restore](wbadmin.md)

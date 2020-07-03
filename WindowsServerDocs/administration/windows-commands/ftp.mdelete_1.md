@@ -1,6 +1,6 @@
 ---
 title: ftp mdelete
-description: Ftp mdelete 命令的參考主題，它會刪除遠端電腦上的檔案。
+description: Ftp mdelete 命令的參考文章，它會刪除遠端電腦上的檔案。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8ee1882878ce06a16bd6ff6f0dcaa512d6d8b56a
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 720ae8b5ebb0ef380f6547a85913cd84c6d98c7e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820228"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931177"
 ---
 # <a name="ftp-mdelete"></a>ftp mdelete
 
@@ -35,13 +35,13 @@ mdelete <remotefile>[...]
 
 ### <a name="examples"></a>範例
 
-若要刪除遠端檔案 *.exe*和*b.*，請輸入：
+若要刪除*a.exe*和*b.exe*的遠端檔案，請輸入：
 
 ```
 mdelete a.exe b.exe
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

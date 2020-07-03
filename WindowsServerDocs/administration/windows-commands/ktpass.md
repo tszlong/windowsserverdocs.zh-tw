@@ -1,6 +1,6 @@
 ---
 title: ktpass
-description: Ktpass 命令的參考主題，它會在 AD DS 中設定主機或服務的伺服器主體名稱，並產生 keytab 檔案，其中包含服務的共用秘密金鑰。
+description: Ktpass 命令的參考文章，它會在 AD DS 中設定主機或服務的伺服器主體名稱，並產生 keytab 檔案，其中包含服務的共用秘密金鑰。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 432918343ccee70f0c30d294a349fb721f18f705
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: fbf7b47f4f21a2c964d14dd1200b15ad635d7471
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817228"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931821"
 ---
 # <a name="ktpass"></a>ktpass
 
@@ -47,8 +47,8 @@ ktpass
 | 參數 | 說明 |
 | --------- | ------------|
 | /out`<filename>` | 指定要產生的 Kerberos 版本 5. keytab 檔案的名稱。 **注意：** 這是您傳輸到不是執行 Windows 作業系統之電腦的 keytab 檔案，然後以您現有的 keytab 檔案（ */Etc/Krb5.keytab*）取代或合併。 |
-| /princ`<principalname>` | 在表單中指定主體名稱 host/computer.contoso.com@CONTOSO.COM 。 **警告：** 這個參數會區分大小寫。 |
-| /mapuser`<useraccount>` | 將**princ**參數所指定的 Kerberos 主體名稱對應至指定的網域帳戶。 |
+| /princ `<principalname>` | 在表單中指定主體名稱 host/computer.contoso.com@CONTOSO.COM 。 **警告：** 這個參數會區分大小寫。 |
+| /mapuser `<useraccount>` | 將**princ**參數所指定的 Kerberos 主體名稱對應至指定的網域帳戶。 |
 | /mapop`{add|set}` | 指定如何設定對應屬性。<ul><li>**Add** -新增指定之本機使用者名稱的值。 此為預設值。</li><li>**Set** -針對指定的本機使用者名稱，設定僅限資料加密標準（DES）加密的值。</li></ul> |
 | `{-|+}`desonly | 預設會設定 [僅限 DES 加密]。<ul><li>**+** 設定僅限 DES 加密的帳戶。</li><li>**-** 針對僅限 DES 加密的帳戶釋放限制。 **重要事項：** Windows 預設不支援 DES。</li></ul> |
 | /in`<filename>` | 指定要從不是執行 Windows 作業系統的主機電腦讀取的 keytab 檔案。 |
@@ -61,7 +61,7 @@ ktpass
 | /kvno`<keyversionnum>` | 指定金鑰版本號碼。 預設值為 1。 |
 | /answer`{-|+}` | 設定背景回應模式：<ul><li>**-** 自動使用 [**否**] 回應重設密碼提示。</li><li>**+** 使用 **[是]** 自動回答 [重設密碼] 提示。</li></ul> |
 | /target | 設定要使用的網域控制站。 預設值是根據主體名稱來偵測網域控制站。 如果網域控制站名稱無法解析，則會出現一個對話方塊，提示您輸入有效的網域控制站。 |
-| /rawsalt | 強制 ktpass 在產生金鑰時使用 rawsalt 演算法。 此為選擇性參數。 |
+| /rawsalt | 強制 ktpass 在產生金鑰時使用 rawsalt 演算法。 這是選擇性參數。 |
 | `{-|+}dumpsalt` | 此參數的輸出會顯示用來產生金鑰的 MIT salt 演算法。 |
 | `{-|+}setupn` | 除了服務主體名稱（SPN）之外，設定使用者主體名稱（UPN）。 預設值是在 keytab 檔案中設定兩者。 |
 | `{-|+}setpass <password>` | 在提供時設定使用者的密碼。 如果使用 rndpass，則會改為產生隨機密碼。 |
@@ -94,6 +94,6 @@ ktpass
 
 3. 在不是執行 Windows 作業系統的主機電腦上，將 keytab 檔案與 */Etc/Krb5.keytab*檔案合併。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

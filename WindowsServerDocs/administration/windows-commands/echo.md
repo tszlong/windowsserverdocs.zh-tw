@@ -1,6 +1,6 @@
 ---
 title: 回應
-description: Echo 命令的參考主題，它會顯示訊息，或開啟或關閉命令回顯功能。
+description: Echo 命令的參考文章，它會顯示訊息，或開啟或關閉命令回顯功能。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ca2a10a5d52c9d175d453a164f3ab4f47ca0841d
-ms.sourcegitcommit: 430c6564c18f89eecb5bbc39cfee1a6f1d8ff85b
+ms.openlocfilehash: bc463efef38e07c1ce8b9ebee1ddd7bdfd7d3066
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83855662"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930522"
 ---
 # <a name="echo"></a>回應
 
@@ -29,7 +29,7 @@ echo [on | off]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | [ \| 關閉] | 開啟或關閉命令回顯功能。 命令回顯預設為開啟。 |
 | `<message>` | 指定要在螢幕上顯示的文字。 |
@@ -104,7 +104,7 @@ echo This directory contains no text files.
 This directory contains no text files.
 ```
 
-當批次檔執行時，如果找到 .txt 檔案，就會顯示下列輸出（在此範例中，假設檔案 File1 .txt、File2 .txt 和 File3 存在）：
+當批次檔執行時，如果找到 .txt 檔案，就會顯示下列輸出（在此範例中，假設檔案 File1.txt、File2.txt 和 File3.txt 存在）：
 
 ```
 This directory contains the following text files:
@@ -113,6 +113,6 @@ File2.txt
 File3.txt
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

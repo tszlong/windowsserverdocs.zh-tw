@@ -1,6 +1,6 @@
 ---
 title: nslookup set timeout
-description: Nslookup set timeout 命令的參考主題，它會變更初始秒數，以等候查閱要求的回復。
+description: Nslookup set timeout 命令的參考文章，會變更等候查閱要求回復的初始秒數。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0d8fd0d96226e193ba723cc0a726ddf5362a538c
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 6df8d1229dd57a84cb0dced3829bb328e41f092c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721383"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930341"
 ---
 # <a name="nslookup-set-timeout"></a>nslookup set timeout
 
@@ -30,7 +30,7 @@ set timeout=<number>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | ---------- | ---------- |
 | `<number>` | 指定等待回復的秒數。 預設等候的秒數為**5**。 |
 | /? | 在命令提示字元顯示說明。 |
@@ -44,7 +44,7 @@ set timeout=<number>
 set timeout=2
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

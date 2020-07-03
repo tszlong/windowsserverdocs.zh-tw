@@ -1,6 +1,6 @@
 ---
 title: lodctr
-description: Lodctr 命令的參考主題，可讓您在檔案中註冊或儲存效能計數器名稱和登錄設定，並指定信任的服務。
+description: Lodctr 命令的參考文章，可讓您在檔案中註冊或儲存效能計數器名稱和登錄設定，並指定信任的服務。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 221737d68280dabf34c270fccff02071ebf9b5a2
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: e8b1cae87818d3f77474e4193b03836bf1c84990
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820178"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931655"
 ---
 # <a name="lodctr"></a>lodctr
 
@@ -45,12 +45,12 @@ lodctr <filename> [/s:<filename>] [/r:<filename>] [/t:<servicename>]
 
 ### <a name="examples"></a>範例
 
-若要將目前的效能登錄設定和解說文字儲存到 file *perf 備份 1*，請輸入：
+若要將目前的效能登錄設定和解說文字儲存到 file *perf backup1.txt*，請輸入：
 
 ```
 lodctr /s:perf backup1.txt
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

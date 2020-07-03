@@ -1,6 +1,6 @@
 ---
 title: recover
-description: '* * * * 的參考主題'
+description: 復原命令的參考文章，可從損壞或損毀的磁片復原可讀取的資訊。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,48 +9,40 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b316ed26f008a62f88aaeb4a7a7f3030d08f1588
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: ab7f502b046bf30a40b1fdd386c7faddc5c8f15a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722619"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931932"
 ---
 # <a name="recover"></a>recover
 
+從損壞或損壞的磁片復原可讀取的資訊。 此命令會逐磁區讀取檔案，並從良好的磁區復原資料。 損毀的磁區中的資料會遺失。 因為當您復原檔案時，錯誤磁區中的所有資料都會遺失，所以您應該一次只復原一個檔案。
 
-
-從損壞或損壞的磁片復原可讀取的資訊。
-
-
+當您的磁片已準備好進行作業時， **chkdsk**命令回報的錯誤磁區會標示為「錯誤」。 它們不會造成任何危險，而且**復原**也不會影響它們。
 
 ## <a name="syntax"></a>語法
 
 ```
-recover [<Drive>:][<Path>]<FileName>
+recover [<drive>:][<path>]<filename>
 ```
 
 ### <a name="parameters"></a>參數
 
-|           參數           |                                          描述                                          |
-|-------------------------------|-----------------------------------------------------------------------------------------------|
-| [\<磁片磁碟機>：][<Path>]<FileName> | 指定您要復原之檔案的位置和名稱。 需要*FileName* 。 |
-|              /?               |                             在命令提示字元顯示說明。                              |
+| 參數 | 說明 |
+|--|--|
+| `[<drive>:][<path>]<filename>` | 指定您想要復原之檔案的檔案名（如果檔案不在目前目錄中，則為該檔案的位置）。 *Filename*是必要的，而且不支援萬用字元。 |
+| /? | 在命令提示字元顯示說明。 |
 
-## <a name="remarks"></a>備註
+### <a name="examples"></a>範例
 
--   **Recover**命令會逐磁區讀取檔案，並從良好的磁區復原資料。 損毀的磁區中的資料會遺失。
--   當您的磁片已準備好進行作業時， **chkdsk**所報告的錯誤磁區會標示為「錯誤」。 它們不會造成任何危險，而且**復原**也不會影響它們。
--   因為當您復原檔案時，錯誤磁區中的所有資料都會遺失，所以您應該一次只復原一個檔案。
--   您不能使用萬用字元（**&#42;** 和 **？**）搭配**recover**命令。 您必須指定檔案（如果檔案不在目前目錄中，則為檔案的位置）。
+若要復原磁片磁碟機 D 上*\fiction*目錄中的檔案*story.txt* ，請輸入：
 
-## <a name="examples"></a>範例
-
-若要在磁片磁碟機 D 的 \Fiction 目錄中復原檔案故事 .txt，請輸入：
 ```
-recover d:\fiction\story.txt 
+recover d:\fiction\story.txt
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

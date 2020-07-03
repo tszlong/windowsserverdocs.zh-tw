@@ -1,6 +1,6 @@
 ---
 title: ftype
-description: Ftype 命令的參考主題，它會顯示或修改副檔名關聯中所使用的檔案類型。
+description: Ftype 命令的參考文章，它會顯示或修改副檔名關聯中所使用的檔案類型。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a1387a9f8cb607d3563a381c757ea237104e6032
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 0ab401c4dd4707cf05c69c1746368927c0bfaa83
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820208"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930461"
 ---
 # <a name="ftype"></a>ftype
 
 顯示或修改副檔名關聯中所使用的檔案類型。 如果在沒有指派運算子（=）的情況下使用，此命令會顯示指定檔案類型目前開啟的命令字串。 如果使用時不含參數，此命令會顯示已定義 open 命令字串的檔案類型。
 
 > [!NOTE]
-> 只有在 cmd.exe 中才支援此命令，而且無法從 PowerShell 使用。
+> 只有 cmd.exe 中才支援此命令，而且無法從 PowerShell 使用。
 > 雖然您可以使用 `cmd /c ftype` 做為因應措施。
 
 ## <a name="syntax"></a>語法
@@ -73,7 +73,7 @@ ftype txtfile
 ftype example=
 ```
 
-將 pl 副檔名與 PerlScript 檔案類型產生關聯，並啟用 PerlScript 檔案類型以執行 PERL。EXE，輸入下列命令：
+若要將 pl 副檔名與 PerlScript 檔案類型產生關聯，並讓 PerlScript 檔案類型 PERL.EXE 執行，請輸入下列命令：
 
 ```
 assoc .pl=PerlScript
@@ -86,6 +86,6 @@ ftype PerlScript=perl.exe %1 %*
 set PATHEXT=.pl;%PATHEXT%
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

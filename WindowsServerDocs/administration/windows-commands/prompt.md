@@ -1,6 +1,6 @@
 ---
 title: Prompt
-description: 提示命令的參考主題，可自訂您的 Cmd.exe 命令提示字元。
+description: 提示命令的參考文章，可自訂您的 Cmd.exe 命令提示字元。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 91146bd075097e54f6aff2fb204feae6a387848a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 72ed82c316faddba9486649497c8c48f88e6da81
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472153"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931139"
 ---
 # <a name="prompt"></a>Prompt
 
@@ -92,6 +92,6 @@ prompt --$g
 prompt $p$g
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
 title: driverquery
-description: Driverquery 命令的參考主題，可讓系統管理員顯示已安裝的設備磁碟機及其屬性的清單。
+description: Driverquery 命令的參考文章，可讓系統管理員顯示已安裝的設備磁碟機及其屬性的清單。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f4754cba8cf4cb3a5f01b0aeb0095f727a072a5c
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 8ad0a028217e07d8c15b59dc96e31c8f236dd743
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436933"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931465"
 ---
 # <a name="driverquery"></a>driverquery
 
@@ -28,7 +28,7 @@ driverquery [/s <system> [/u [<domain>\]<username> [/p <password>]]] [/fo {table
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- |------------ |
 | /s`<system>` | 指定遠端電腦的名稱或 IP 位址。 請勿使用反斜線。 預設是本機電腦。 |
 | u`[<domain>]<username>` | 以*user*或*domain\user*所指定的使用者帳號憑證來執行命令。 根據預設， */s*會使用目前登入發出命令之電腦的使用者認證。 除非指定了 **/s** ，否則無法使用 **/u** 。 |
@@ -73,6 +73,6 @@ driverquery /s server1
 driverquery /s server1 /u maindom\user1 /p p@ssw3d
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

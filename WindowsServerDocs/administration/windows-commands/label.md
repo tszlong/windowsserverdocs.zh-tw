@@ -1,6 +1,6 @@
 ---
-title: label
-description: 標籤命令的參考主題，它會建立、變更或刪除磁片的磁片區標籤（也就是名稱）。
+title: 標籤
+description: 標籤命令的參考文章，會建立、變更或刪除磁片的磁片區標籤（也就是名稱）。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f2d09328f79215c497bcb0ea4549b1f6ac227994
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: f8c13285c5dc5030e96d7d334bb65d15f04dff86
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817258"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931814"
 ---
-# <a name="label"></a>label
+# <a name="label"></a>標籤
 
 建立、變更或刪除磁片的磁片區標籤（也就是名稱）。 如果使用時不含參數， **label**命令會變更目前的磁片區標籤，或刪除現有的標籤。
 
@@ -73,6 +73,6 @@ label a:sales-july
 
 3. 按**Y**以刪除目前的標籤，如果您想要保留現有的標籤，則按**N** 。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

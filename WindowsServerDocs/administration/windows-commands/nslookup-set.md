@@ -1,6 +1,6 @@
 ---
 title: nslookup set
-description: Nslookup set 命令的參考主題，其會變更影響查閱行為的設定值。
+description: Nslookup set 命令的參考文章，其會變更影響查閱行為的設定值。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 579334b3b6b0cd5e9373876144f46fa21d57c745
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 4b8b8fc0c27f283d88ca6645ffd92704c34eba9d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721181"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930263"
 ---
 # <a name="nslookup-set"></a>nslookup set
 
@@ -30,7 +30,7 @@ set all [class | d2 | debug | domain | port | querytype | recurse | retry | root
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | [nslookup set all](nslookup-set-all.md) | 列出所有目前的設定。 |
 | [nslookup set class](nslookup-set-class.md) | 變更查詢類別，以指定資訊的通訊協定群組。 |
@@ -48,6 +48,6 @@ set all [class | d2 | debug | domain | port | querytype | recurse | retry | root
 | [nslookup set type](nslookup-set-type.md) | 變更查詢的資源記錄類型。 |
 | [nslookup set vc](nslookup-set-vc.md) | 指定將要求傳送至伺服器時，是否要使用虛擬電路。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

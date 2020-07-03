@@ -1,6 +1,6 @@
 ---
 title: 子命令開始-命名空間
-description: 子命令開始-命名空間的參考主題，它會啟動已排程的轉換命名空間。
+description: 子命令啟動的參考文章-命名空間，它會啟動已排程的轉換命名空間。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1562fcb6c61533fcc9994e9011bf7d61154c06f7
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: d2d9bcd58a0a99d98d8679b84c223cfa42a67778
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721662"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931527"
 ---
 # <a name="subcommand-start-namespace"></a>子命令： start-Namespace
 
@@ -28,10 +28,10 @@ wdsutil /start-Namespace /Namespace:<Namespace name[/Server:<Server name>]
 ```
 ### <a name="parameters"></a>參數
 
-|          參數          |                                                                                                                                                                                             描述                                                                                                                                                                                             |
+|          參數          |                                                                                                                                                                                             說明                                                                                                                                                                                             |
 |-----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| /Namespace： <命名空間名稱| 指定命名空間的名稱。 請注意，這不是易記的名稱，而且必須是唯一的。<p>-   **部署伺服器**：命名空間名稱的語法是/NAMSPACE： WDS：<Image group>/<Image name>/<Index>。 例如： **WDS： ImageGroup1/install .wim/1**<br />-   **傳輸伺服器**：此名稱必須符合在伺服器上建立命名空間時所指定的名稱。 |
-|   [/Server：<Server name>]   |                                                                                                           指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。                                                                                                           |
+| /Namespace： <命名空間名稱| 指定命名空間的名稱。 請注意，這不是易記的名稱，而且必須是唯一的。<p>-   **部署伺服器**：命名空間名稱的語法是/NAMSPACE： WDS： <Image group> / <Image name> / <Index> 。 例如： **WDS： ImageGroup1/install .wim/1**<br />-   **傳輸伺服器**：此名稱必須符合在伺服器上建立命名空間時所指定的名稱。 |
+|   [/Server： <Server name> ]   |                                                                                                           指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。                                                                                                           |
 
 ## <a name="examples"></a>範例
 若要啟動命名空間，請輸入下列其中一項：
@@ -39,8 +39,8 @@ wdsutil /start-Namespace /Namespace:<Namespace name[/Server:<Server name>]
 wdsutil /start-Namespace /Namespace:Custom Auto 1
 wdsutil /start-Namespace /Server:MyWDSServer /Namespace:Custom Auto 1
 ```
-## <a name="additional-references"></a>其他參考
-- [使用](command-line-syntax-key.md)
-[AllNamespaces 命令](using-the-get-allnamespaces-command.md)
-的命令列語法索引鍵使用[new-](using-the-new-namespace-command.md)
-[namespace 命令](using-the-remove-namespace-command.md)
+## <a name="additional-references"></a>其他參考資料
+- [命令列語法索引鍵](command-line-syntax-key.md) 
+[使用 AllNamespaces 命令](using-the-get-allnamespaces-command.md) 
+[使用新的-Namespace 命令](using-the-new-namespace-command.md) 
+[使用 remove-Namespace 命令](using-the-remove-namespace-command.md)

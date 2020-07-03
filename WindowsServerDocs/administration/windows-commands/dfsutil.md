@@ -1,6 +1,6 @@
 ---
 title: dfsutil
-description: 用於管理 DFS 命名空間、伺服器和用戶端之 dfsutil 命令的參考主題。
+description: 用於管理 DFS 命名空間、伺服器和用戶端之 dfsutil 命令的參考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d6905d90ee42958e47dfed4869520000a4fd3ddf
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: c741635b2566a7bec7775de691105c15591caa62
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82992615"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930610"
 ---
 # <a name="dfsutil"></a>dfsutil
 
@@ -26,7 +26,7 @@ Dfsutil 命令會管理 DFS 命名空間、伺服器和用戶端。
 
 [DFSN](https://docs.microsoft.com/powershell/module/dfsn/?view=win10-ps) PowerShell 模組為下列的 dfsutil 參數提供對等的功能。
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | root | 顯示、建立、移除、匯入、匯出命名空間根。 |
 | link | 顯示、建立、移除或移動資料夾（連結）。 |
@@ -39,14 +39,14 @@ Dfsutil 命令會管理 DFS 命名空間、伺服器和用戶端。
 
 下列功能僅適用于 dfsutil 參數：
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | 用戶端 | 顯示或修改用戶端資訊或登錄機碼。 |
 | diag | 執行診斷或 view dfsdirs/dfspath。 |
 | 快取 | 顯示或排清用戶端快取。 |
 
-如需每個命令的詳細資訊，請在已安裝 DFS 命名空間管理工具的伺服器上開啟命令提示字元，然後`dfsutil client /?`輸入`dfsutil diag /?`、或`dfsutil cache /?`。
+如需每個命令的詳細資訊，請在已安裝 DFS 命名空間管理工具的伺服器上開啟命令提示字元，然後輸入 `dfsutil client /?` 、 `dfsutil diag /?` 或 `dfsutil cache /?` 。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

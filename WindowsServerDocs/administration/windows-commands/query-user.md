@@ -1,6 +1,6 @@
 ---
 title: query user
-description: 查詢使用者命令的參考主題，其會顯示遠端桌面工作階段主機伺服器上的使用者會話相關資訊。
+description: 查詢使用者命令的參考文章，其會顯示遠端桌面工作階段主機伺服器上的使用者會話相關資訊。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7885df2287134cca9935926abd926a077ac8fdb3
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 8c186e0945612bf7c84637f6b039dcdbac3d68f1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471943"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930214"
 ---
 # <a name="query-user"></a>query user
 
@@ -45,7 +45,7 @@ query user [<username> | <sessionname> | <sessionID>] [/server:<servername>]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 |--|--|
 | `<username>` | 指定您想要查詢之使用者的登入名稱。 |
 | `<sessionname>` | 指定您想要查詢之會話的名稱。 |
@@ -75,7 +75,7 @@ query user
 query user USER1 /server:Server1
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
