@@ -1,6 +1,6 @@
 ---
 title: pwlauncher
-description: Pwlauncher 命令的參考主題，可啟用或停用 Windows To Go 啟動選項（pwlauncher）。
+description: Pwlauncher 命令的參考文章，可啟用或停用 Windows To Go 啟動選項（pwlauncher）。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4b6793dead3a41abb82bc3940d0314bcd7610418
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 29e7434731bc89dff9bddbaedb8a6179f266fa28
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472113"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936706"
 ---
 # <a name="pwlauncher"></a>pwlauncher
 
@@ -30,7 +30,7 @@ pwlauncher {/enable | /disable}
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 |--|--|
 | /enable | 啟用 Windows To Go 啟動選項，因此電腦會在出現時從 USB 裝置自動開機。 |
 | /disable | 停用 Windows To Go 啟動選項，因此除非在固件中手動設定，否則無法從 USB 裝置啟動電腦。 |
@@ -44,6 +44,6 @@ pwlauncher {/enable | /disable}
 pwlauncher /enable
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

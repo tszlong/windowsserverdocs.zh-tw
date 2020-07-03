@@ -1,6 +1,6 @@
 ---
 title: mqbkup
-description: Mqbkup 命令的參考主題，它會將 MSMQ 訊息檔案和登錄設定備份到存放裝置，並還原先前儲存的訊息和設定。
+description: Mqbkup 命令的參考文章，它會將 MSMQ 訊息檔案和登錄設定備份到存放裝置，並還原先前儲存的訊息和設定。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1c07dd5f912a70157052017fc17875c00eaedd3b
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 131d80f32a3c3324dad08b876dd4f4f8610b93e2
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354419"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936298"
 ---
 # <a name="mqbkup"></a>mqbkup
 
@@ -34,7 +34,7 @@ mqbkup {/b | /r} <folder path_to_storage_device>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | ------- | -------- |
 | /b | 指定備份作業。 |
 | /r | 指定還原作業。 |
@@ -69,7 +69,7 @@ mqbkup /b /y c:\oldbkup
 mqbkup /r c:\msmqbkup
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

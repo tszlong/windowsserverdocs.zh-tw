@@ -1,6 +1,6 @@
 ---
 title: 設定中繼資料
-description: 設定中繼資料的參考主題，設定用來將陰影複製從一部電腦傳輸到另一部電腦的陰影建立中繼資料檔案的名稱和位置。
+description: 設定中繼資料的參考文章，設定用來將陰影複製從一部電腦傳輸到另一部電腦的陰影建立中繼資料檔案的名稱和位置。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 683e54a7efc072d8709d6257771ba6bc5bde206e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 50c9ceebf072db2e7cefada1601accc97b5d0f7f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721908"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937088"
 ---
 # <a name="set-metadata"></a>設定中繼資料
 
@@ -28,11 +28,11 @@ set metadata [<Drive>:][<Path>]<MetaData.cab>
 
 ### <a name="parameters"></a>參數
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
-|[\<磁片磁碟機>：][<Path>]|指定要建立中繼資料檔案的位置。|
-|\<> 的中繼資料 .cab|指定要儲存陰影建立中繼資料的 cab 檔案名稱。|
+|[\<Drive>:][<Path>]|指定要建立中繼資料檔案的位置。|
+|\<MetaData.cab>|指定要儲存陰影建立中繼資料的 cab 檔案名稱。|
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

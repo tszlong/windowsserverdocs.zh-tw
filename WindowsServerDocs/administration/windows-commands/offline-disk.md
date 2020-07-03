@@ -1,6 +1,6 @@
 ---
 title: offline disk
-description: '[離線磁片] 命令的參考主題，其會將具有焦點的線上磁片帶到離線狀態。'
+description: 離線磁片命令的參考文章，這會將線上磁片的焦點放在離線狀態。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1c62a79db39a7c36e14a8430b47c634f80c0c0c8
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: cc8a746e09e5756eec1890d1715a88e60696cd49
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472744"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936755"
 ---
 # <a name="offline-disk"></a>offline disk
 
@@ -33,7 +33,7 @@ offline disk [noerr]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | noerr | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
 
@@ -45,6 +45,6 @@ offline disk [noerr]
 offline disk
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

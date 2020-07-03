@@ -1,6 +1,6 @@
 ---
 title: 查詢處理序
-description: 查詢程式命令的參考主題，它會顯示在遠端桌面工作階段主機伺服器上執行之進程的相關資訊。
+description: 查詢程式命令的參考文章，它會顯示在遠端桌面工作階段主機伺服器上執行之進程的相關資訊。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 32f755fe3e275f2f1adccffacaf2a6999d46298a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a11177ad62e83efd9dbe5da844b159b40266837d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472023"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936991"
 ---
 # <a name="query-process"></a>查詢處理序
 
@@ -43,7 +43,7 @@ query process [*|<processID>|<username>|<sessionname>|/id:<nn>|<programname>] [/
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 |--|--|
 | * | 列出所有會話的處理常式。 |
 | `<processID>` | 指定識別您想要查詢之進程的數位識別碼。 |
@@ -76,7 +76,7 @@ query process *
 query process /ID:2
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

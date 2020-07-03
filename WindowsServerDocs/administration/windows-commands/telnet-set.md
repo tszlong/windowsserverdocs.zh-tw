@@ -1,6 +1,6 @@
 ---
-title: telnet 集合
-description: Telnet set 的參考主題，可設定選項。
+title: telnet set
+description: Telnet set 的參考文章，可設定選項。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 477c2ee259301af26870339a2c329c2c3502963b
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 7415f084e73d87eb767ed0b487f42e103b998c23
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222679"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937366"
 ---
 # <a name="telnet-set"></a>telnet：設定
 
@@ -28,7 +28,7 @@ set [bsasdel] [crlf] [delasbs] [escape <Char>] [localecho] [logfile <FileName>] 
 ```
 #### <a name="parameters"></a>參數
 
-|                    參數                     |                                                                                                                                              描述                                                                                                                                              |
+|                    參數                     |                                                                                                                                              說明                                                                                                                                              |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                     bsasdel                      |                                                                                                                                 將**倒退鍵**當做**刪除**傳送。                                                                                                                                  |
 |                       crlf                       |                                                                                                        當按下**Enter**鍵時，傳送 CR & LF （0x0D，0x 0A）。 所謂的新行模式。                                                                                                        |
@@ -46,9 +46,9 @@ set [bsasdel] [crlf] [delasbs] [escape <Char>] [localecho] [logfile <FileName>] 
 1. 您可以使用 [取消設定] 命令來關閉先前**設定的選項**。
 2. 在非英文版的 telnet 上， **codeset** <option> 可使用 codeset。 **Codeset** <option>將目前的程式碼設定為選項，可以是下列任何一項： **SHIFT JIS**、**日文 EUC**、 **jis 漢字**、 **Jis 漢字（78）**、 **DEC 漢字**、 **NEC 漢字**。 您應該在遠端電腦上設定相同的程式碼。
    ## <a name="examples"></a>範例
-   設定記錄檔，並開始記錄到本機檔案 tnlog .txt
+   設定記錄檔，並開始記錄到本機檔案 tnlog.txt
    ```
    set logfile tnlog.txt
    ```
-   ## <a name="additional-references"></a>其他參考
+   ## <a name="additional-references"></a>其他參考資料
 3. - [命令列語法關鍵](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
 title: wevtutil
-description: Wevtutil 的參考主題，可讓您取得事件記錄檔和發行者的相關資訊。
+description: Wevtutil 的參考文章，可讓您取得事件記錄檔和發行者的相關資訊。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 22195f3a163e1a4123b51d005b0367cc61411651
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: f87ab51c0e24f9df421d7540e85d05a534635947
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222618"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936645"
 ---
 # <a name="wevtutil"></a>wevtutil
 
@@ -53,7 +53,7 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
 |{al 封存 \| -記錄檔} \<Logpath>[/l： \<Locale> ]|以獨立格式封存指定的記錄檔。 會建立具有地區設定名稱的子目錄，並將所有地區設定特定資訊儲存在該子目錄中。 藉由執行**wevtutil al**建立目錄和記錄檔之後，不論是否已安裝發行者，都可以讀取檔案中的事件。|
 |{cl \| clear-log} \<Logname> [/bu： \<Backup> ]|從指定的事件記錄檔清除事件。 您可以使用 **/bu**選項來備份已清除的事件。|
 
-## <a name="options"></a>選項。
+## <a name="options"></a>選項
 
 |       選項       |                                                                                                                                                                                                                                                                 說明                                                                                                                                                                                                                                                                  |
 |--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -124,11 +124,11 @@ wevtutil sl /c:config.xml
 ```
 wevtutil gp Microsoft-Windows-Eventlog /ge:true
 ```
-從 myManifest 資訊清單檔案安裝發行者和記錄檔：
+從 myManifest.xml 資訊清單檔案安裝發行者和記錄檔：
 ```
 wevtutil im myManifest.xml
 ```
-從 myManifest 資訊清單檔案卸載發行者和記錄檔：
+從 myManifest.xml 資訊清單檔案卸載發行者和記錄檔：
 ```
 wevtutil um myManifest.xml
 ```
@@ -149,6 +149,6 @@ wevtutil epl System C:\backup\system0506.evtx
 wevtutil cl Application /bu:C:\admin\backups\a10306.evtx
 ```
 
-#### <a name="additional-references"></a>其他參考
+#### <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

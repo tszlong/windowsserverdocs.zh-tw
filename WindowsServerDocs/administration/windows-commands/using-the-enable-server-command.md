@@ -1,6 +1,6 @@
 ---
 title: 啟用-伺服器
-description: 啟用-伺服器的參考主題，這會啟用所有服務以進行 Windows 部署服務。
+description: 啟用-伺服器的參考文章，這會啟用所有服務以進行 Windows 部署服務。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bf7bf57c0784fa16719b9f77da50212bca0ef850
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a0c82614049540e658061bd55bf40f0d0b3beb16
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720927"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936827"
 ---
 # <a name="enable-server"></a>啟用-伺服器
 
@@ -27,21 +27,21 @@ ms.locfileid: "82720927"
 wdsutil [Options] /Enable-Server [/Server:<Server name>]
 ```
 ### <a name="parameters"></a>參數
-|參數|描述|
+|參數|說明|
 |-------|--------|
-|[/Server：<Server name>]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。|
+|[/Server： <Server name> ]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。|
 ## <a name="examples"></a>範例
 若要啟用伺服器上的服務，請執行下列其中一項：
 ```
 wdsutil /Enable-Server
 wdsutil /verbose /Enable-Server /Server:MyWDSServer
 ```
-## <a name="additional-references"></a>其他參考
-- [Command-Line Syntax Key](command-line-syntax-key.md) 
-使用[停](using-the-disable-server-command.md)
- 
- 
- 
- [ ](using-the-get-server-command.md) [ ](using-the-initialize-server-command.md) [ ](subcommand-start-server.md) [ ](the-uninitialize-server-option.md) [ ](subcommand-set-server.md) [Subcommand: stop-Server](subcommand-stop-server.md)用伺服器命令的命令列語法索引鍵使用 Initialize-server 命令子命令： set-server 子命令： start-server 子命令： stop-server 解除初始化-伺服器選項
- 
-
+## <a name="additional-references"></a>其他參考資料
+- [命令列語法索引鍵](command-line-syntax-key.md) 
+[使用 disable-Server 命令](using-the-disable-server-command.md) 
+[使用 get-Server 命令](using-the-get-server-command.md) 
+[使用 Initialize-Server 命令](using-the-initialize-server-command.md) 
+[子命令： set-Server](subcommand-set-server.md) 
+[子命令： start-Server](subcommand-start-server.md) 
+[子命令： stop-Server](subcommand-stop-server.md) 
+解除[初始化-伺服器選項](the-uninitialize-server-option.md)

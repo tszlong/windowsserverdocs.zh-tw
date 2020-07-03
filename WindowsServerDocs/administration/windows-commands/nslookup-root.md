@@ -1,6 +1,6 @@
 ---
 title: nslookup root
-description: Nslookup 根命令的參考主題，它會將伺服器的預設伺服器變更為網域名稱系統（DNS）功能變數名稱空間的根目錄。
+description: Nslookup 根命令的參考文章，它會將伺服器的預設伺服器變更為網域名稱系統（DNS）功能變數名稱空間的根目錄。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0f1f2bbe3b71660d079a0b7c87f5be487e0ff437
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 07dbfcf401314145cb0e7553d71480072da4b574
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721651"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936282"
 ---
 # <a name="nslookup-root"></a>nslookup root
 
@@ -33,12 +33,12 @@ root
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | /? | 在命令提示字元顯示說明。 |
 | /help | 在命令提示字元顯示說明。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

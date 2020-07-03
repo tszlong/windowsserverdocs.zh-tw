@@ -1,6 +1,6 @@
 ---
 title: taskkill
-description: Taskkill 的參考主題，其會結束一或多個工作或處理常式。
+description: Taskkill 的參考文章，其會結束一或多個工作或處理常式。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 425133f0ec4a9410a83e800f7c252326c9b2f459
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 061fd33e44f207b835987d35a812426899e6dd35
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721552"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936682"
 ---
 # <a name="taskkill"></a>taskkill
 
@@ -32,14 +32,14 @@ taskkill [/s <computer> [/u [<Domain>\]<UserName> [/p [<Password>]]]] {[/fi <Fil
 
 ### <a name="parameters"></a>參數
 
-|         參數         |                                                                                                                                        描述                                                                                                                                        |
+|         參數         |                                                                                                                                        說明                                                                                                                                        |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|      /s \<computer>       |                                                                                    指定遠端電腦的名稱或 IP 位址（請勿使用反斜線）。 預設是本機電腦。                                                                                     |
-| /u \<網域>\\ \<使用者名稱> | 使用 [使用者*名稱*] 或 [*網域*\\使用者*名稱*] 所指定的帳號許可權來執行命令。 只有在指定 **/s**時，才可以指定 **/u** 。 預設為目前登入發出命令之電腦的使用者許可權。 |
-|      /p \<密碼>       |                                                                                                   指定 **/u**參數中指定之使用者帳戶的密碼。                                                                                                   |
-|       /fi \<篩選>       |          套用篩選以選取一組工作。 您可以使用一個以上的篩選準則，或使用萬用字元（**\\**\*）來指定所有工作或映射名稱。 請參閱下[表以取得有效的篩選器名稱](#filter-names-operators-and-values)、運算子和值。           |
-|     /pid \<ProcessID>     |                                                                                                                 指定要終止之進程的處理序識別碼。                                                                                                                 |
-|     /im \<ImageName>      |                                                                                指定要終止之進程的映射名稱。 使用萬用字元（**\\**\*）來指定所有映射名稱。                                                                                |
+|      /s\<computer>       |                                                                                    指定遠端電腦的名稱或 IP 位址（請勿使用反斜線）。 預設是本機電腦。                                                                                     |
+| u\<Domain>\\\<UserName> | 使用 [使用者*名稱*] 或 [*網域*使用者名稱] 所指定的帳號許可權來執行命令 \\ * *。 只有在指定 **/s**時，才可以指定 **/u** 。 預設為目前登入發出命令之電腦的使用者許可權。 |
+|      /p\<Password>       |                                                                                                   指定 **/u**參數中指定之使用者帳戶的密碼。                                                                                                   |
+|       /fi\<Filter>       |          套用篩選以選取一組工作。 您可以使用一個以上的篩選準則，或使用萬用字元（ **\\** \* ）來指定所有工作或映射名稱。 請參閱下[表以取得有效的篩選器名稱](#filter-names-operators-and-values)、運算子和值。           |
+|     /pid\<ProcessID>     |                                                                                                                 指定要終止之進程的處理序識別碼。                                                                                                                 |
+|     /im\<ImageName>      |                                                                                指定要終止之進程的映射名稱。 使用萬用字元（ **\\** \* ）來指定所有映射名稱。                                                                                |
 |            /f             |                                                                    指定強制終止進程。 遠端進程會忽略此參數;所有遠端進程都會強制終止。                                                                     |
 |            /t             |                                                                                                          終止指定的進程和其啟動的任何子進程。                                                                                                          |
 
@@ -53,14 +53,14 @@ taskkill [/s <computer> [/u [<Domain>\]<UserName> [/p [<Password>]]]] {[/fi <Fil
 |   SESSION   | eq, ne, gt, lt, ge, le |                                                                工作階段編號                                                                |
 |   CPUtime   | eq, ne, gt, lt, ge, le | CPU 時間，格式為<em>HH</em>**：**<em>MM</em>**：**<em>SS</em>，其中*MM*和*SS*介於0到59之間，而*HH*則為任何不帶正負號的數位 |
 |  MEMUSAGE   | eq, ne, gt, lt, ge, le |                                                              記憶體使用量（KB）                                                              |
-|  USERNAME   |         eq、ne         |                                               任何有效的使用者名稱（*使用者*或*網域*\\*使用者*）                                               |
+|  USERNAME   |         eq、ne         |                                               任何有效的使用者名稱（*使用者*或*網域* \\ *使用者*）                                               |
 |  伺服器   |         eq、ne         |                                                                 服務名稱                                                                 |
 | SYSTEM.WINDOWS.CONTROLS.PAGE.WINDOWTITLE |         eq、ne         |                                                                 視窗標題                                                                 |
 |   模組   |         eq、ne         |                                                                   DLL 名稱                                                                   |
 
 ## <a name="remarks"></a>備註
 * 當指定遠端系統時，不支援 SYSTEM.WINDOWS.CONTROLS.PAGE.WINDOWTITLE 和 STATUS 篩選。
-* 只有在套用篩選**\\**時，才<em>會接受 **/im</em> *選項的萬用字元（）。
+* 只有在套用 **\\** 篩選時，才<em>會接受 **/im</em> *選項的萬用字元（）。
 * 無論是否已指定 **/f**選項，一律會強制執行遠端進程終止。
 * 將電腦名稱稱提供給主機名稱篩選器會導致關機，並停止所有進程。
 * 您可以使用**tasklist**來判斷要終止之進程的處理序識別碼（PID）。
@@ -73,7 +73,7 @@ taskkill [/s <computer> [/u [<Domain>\]<UserName> [/p [<Password>]]]] {[/fi <Fil
 taskkill /pid 1230 /pid 1241 /pid 1253
 ```
 
-若要強制結束系統啟動的進程，請輸入：
+若要強制結束進程 Notepad.exe 如果系統啟動程式，請輸入：
 
 ```
 taskkill /f /fi USERNAME eq NT AUTHORITY\SYSTEM /im notepad.exe
@@ -97,5 +97,5 @@ taskkill /pid 2134 /t /fi username eq administrator
 taskkill /f /fi PID ge 1000 /im *
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 - [命令列語法關鍵](command-line-syntax-key.md)

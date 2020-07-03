@@ -1,6 +1,6 @@
 ---
 title: winnt
-description: Winnt 的參考主題已被取代，不保證在未來的 Windows 版本中受到支援。
+description: Winnt 的參考文章已被取代，不保證在未來的 Windows 版本中受到支援。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 24cf05f9a7d36e05b22abd77ff49a8b42607cf15
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: c59cfb1174199eb499942f16f7e621437c8fab4f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993395"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936205"
 ---
 # <a name="winnt"></a>winnt
 

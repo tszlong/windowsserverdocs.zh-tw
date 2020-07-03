@@ -1,6 +1,6 @@
 ---
-title: 選取 vdisk
-description: '* * * * 的參考主題'
+title: select vdisk
+description: '* * * * 的參考文章'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 23741d9211ebdf98ac198af2ae1c562724a1955b
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 734b31d9c9bcf174bf4617418978935bc49ad6da
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821078"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936433"
 ---
-# <a name="select-vdisk"></a>選取 vdisk
+# <a name="select-vdisk"></a>select vdisk
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -45,7 +45,7 @@ select vdisk file=<full path> [noerr]
 select vdisk file=c:\test\test.vhd
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
@@ -57,9 +57,9 @@ select vdisk file=c:\test\test.vhd
 
 -   [卸離 vdisk](detach-vdisk.md)
 
--   [詳細資料 vdisk](detail-vdisk.md)
+-   [detail vdisk](detail-vdisk.md)
 
--   [展開 vdisk](expand-vdisk.md)
+-   [expand vdisk](expand-vdisk.md)
 
 -   [合併 vdisk](merge-vdisk.md)
 

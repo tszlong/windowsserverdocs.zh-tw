@@ -1,6 +1,6 @@
 ---
 title: secedit
-description: '* * * * 的參考主題'
+description: '* * * * 的參考文章'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 56c9cdecfe2a5553230f1c8120c827e7f05d0ba9
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 8e5918265feb7dc72759ea22d2f582e4754df96c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821089"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936493"
 ---
 # <a name="secedit"></a>secedit
 
@@ -62,7 +62,7 @@ secedit
 > [!NOTE]
 > Microsoft Management Console （MMC）和 [安全性設定及分析] 嵌入式管理單元無法在 Server Core 上使用。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 如需如何使用此命令的範例，請參閱任何子命令檔案中的範例一節。
 - [命令列語法關鍵](command-line-syntax-key.md)

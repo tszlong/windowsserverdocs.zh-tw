@@ -1,6 +1,6 @@
 ---
 title: openfiles
-description: Openfiles 命令的參考主題，可讓系統管理員查詢、顯示或中斷已在系統上開啟的檔案和目錄。
+description: Openfiles 命令的參考文章，可讓系統管理員查詢、顯示或中斷已在系統上開啟的檔案和目錄。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e55dd88052f1bbfdebb02d1fb6d6f48261643c5c
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 1c1683bb916e068d83ab30e03fdd76e35abb77df
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472594"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936797"
 ---
 # <a name="openfiles"></a>openfiles
 
@@ -32,7 +32,7 @@ openfiles /disconnect [/s <system> [/u [<domain>\]<username> [/p [<password>]]]]
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 |--|--|
 | /s`<system>` | 指定要連接的遠端系統（依名稱或 IP 位址）。 請勿使用反斜線。 如果您不使用 **/s**選項，預設會在本機電腦上執行命令。 這個參數會套用至命令中指定的所有檔案和資料夾。 |
 | u`[<domain>\]<username>` | 使用指定之使用者帳戶的許可權來執行命令。 如果您不使用 **/u**選項，預設會使用系統許可權。 |
@@ -88,7 +88,7 @@ openfiles /query [/s <system> [/u [<domain>\]<username> [/p [<password>]]]] [/fo
 #### <a name="parameters"></a>參數
 
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 |--|--|
 | /s`<system>` | 指定要連接的遠端系統（依名稱或 IP 位址）。 請勿使用反斜線。 如果您不使用 **/s**選項，預設會在本機電腦上執行命令。 這個參數會套用至命令中指定的所有檔案和資料夾。 |
 | u`[<domain>\]<username>` | 使用指定之使用者帳戶的許可權來執行命令。 如果您不使用 **/u**選項，預設會使用系統許可權。 |
@@ -142,7 +142,7 @@ openfiles /local [on | off]
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 |--|--|
 | `[on | off]` | 啟用或停用 [系統**維護物件清單**] 全域旗標，它會追蹤本機檔案控制代碼。 |
 | /? | 在命令提示字元顯示說明。 |
@@ -171,6 +171,6 @@ openfiles /local on
 openfiles /local off
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

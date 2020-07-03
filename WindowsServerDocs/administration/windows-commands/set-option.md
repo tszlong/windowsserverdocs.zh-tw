@@ -1,6 +1,6 @@
 ---
 title: Set 選項
-description: Set 選項的參考主題，可設定陰影複製的建立選項。
+description: Set 選項的參考文章，可設定陰影複製的建立選項。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a4aba049e29cd74450467cf28057a2ff4e4a7094
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b7944cd51adffabdc85bc6d419b527b1b643d4a8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721905"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937085"
 ---
 # <a name="set-option"></a>Set 選項
 
@@ -28,7 +28,7 @@ set option {[differential | plex] [transportable] [[rollbackrecover] [txfrecover
 
 ### <a name="parameters"></a>參數
 
-|     參數     |                                                                                                  描述                                                                                                  |
+|     參數     |                                                                                                  說明                                                                                                  |
 |-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   [差異   |                                                                                                     複雜                                                                                                     |
 |  以往容易  |                       指定陰影複製尚未匯入。 中繼資料 .cab 檔案稍後可以用來將陰影複製匯入相同或不同的電腦。                       |
@@ -36,6 +36,6 @@ set option {[differential | plex] [transportable] [[rollbackrecover] [txfrecover
 |   [txfrecover]    |                                                               要求 VSS 在建立期間讓陰影複製保持一致。                                                                |
 |  [noautorecover]  | 停止寫入器和檔案系統，將陰影複製的任何復原變更執行到交易一致的狀態。 **Noautorecover**不能與**txfrecover**或**rollbackrecover**搭配使用。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

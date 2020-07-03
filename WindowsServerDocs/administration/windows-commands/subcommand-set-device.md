@@ -1,6 +1,6 @@
 ---
 title: 子命令組-裝置
-description: 子命令集的參考主題-裝置會變更預先設置電腦的屬性。
+description: 子命令集的參考文章-裝置會變更預先設置電腦的屬性。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a587b809b02da775594e795730799bf9af578bc2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 2e75e0a2a4011e171fa548954bce2bbe942379c0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721752"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937198"
 ---
 # <a name="subcommand-set-device"></a>子命令：設定-裝置
 
@@ -24,22 +24,22 @@ ms.locfileid: "82721752"
 
 ## <a name="syntax"></a>語法
 ```
-wdsutil [Options] /Set-Device /Device:<Device name> [/ID:<UUID | MAC address>] [/ReferralServer:<Server name>] [/BootProgram:<Relative path>] 
+wdsutil [Options] /Set-Device /Device:<Device name> [/ID:<UUID | MAC address>] [/ReferralServer:<Server name>] [/BootProgram:<Relative path>]
 [/WdsClientUnattend:<Relative path>] [/User:<Domain\User | User@Domain>] [/JoinRights:{JoinOnly | Full}] [/JoinDomain:{Yes | No}] [/BootImagepath:<Relative path>] [/Domain:<Domain>] [/resetAccount]
 ```
 ### <a name="parameters"></a>參數
-|參數|描述|
+|參數|說明|
 |-------|--------|
 |主設備<computer name>|指定電腦的名稱（SAM 帳戶名稱）。|
 |[/ID： <UUID &#124; MAC 位址>]|指定電腦的 GUID/UUID 或 MAC 位址。 此值必須是下列三種格式的其中一種：<p>-二進位字串： **/id： ACEFA3E81F20694E953EB2DAA1E8B1B6**<br />-GUID/UUID 字串：/ID：**E8A3EFAC-201F-4E69-953E-B2DAA1E8B1B6**<br />-MAC 位址： **00B056882FDC** （無破折號）或**00-B0-56-88-2f-** （含破折號）|
-|[/ReferralServer：<Server name>]|指定要連線的伺服器名稱，以使用簡單的檔案傳輸通訊協定（tftp）下載網路開機程式和開機映射。|
-|[/BootProgram：<Relative path>]|指定從 remoteInstall 資料夾到指定電腦將接收之網路開機程式的相對路徑。 例如： **boot\x86\pxeboot.com**|
-|[/WdsClientUnattend：<Relative path>]|指定從 remoteInstall 資料夾到自動安裝檔案的相對路徑，該檔案會將 Windows 部署服務用戶端的安裝畫面自動化。|
+|[/ReferralServer： <Server name> ]|指定要連線的伺服器名稱，以使用簡單的檔案傳輸通訊協定（tftp）下載網路開機程式和開機映射。|
+|[/BootProgram： <Relative path> ]|指定從 remoteInstall 資料夾到指定電腦將接收之網路開機程式的相對路徑。 例如： **boot\x86\pxeboot.com**|
+|[/WdsClientUnattend： <Relative path> ]|指定從 remoteInstall 資料夾到自動安裝檔案的相對路徑，該檔案會將 Windows 部署服務用戶端的安裝畫面自動化。|
 |[/User： <Domain\User &#124; User@Domain>]|設定電腦帳戶物件的許可權，授與指定的使用者將電腦加入網域所需的許可權。|
 |[/JoinRights： {JoinOnly &#124; Full}]|指定要指派給使用者的許可權類型。<p>-   **JoinOnly**需要系統管理員先重設電腦帳戶，使用者才能將電腦加入網域。<br />-   **Full**會提供使用者的完整存取權，包括將電腦加入網域的許可權。|
-|[/JoinDomain： {Yes &#124; No}]|指定在 Windows 部署服務安裝期間，是否應將電腦加入網域做為此電腦帳戶。 預設設定為 **[是]**。|
-|[/BootImagepath：<Relative path>]|指定從 remoteInstall 資料夾到電腦將使用之開機映射的相對路徑。|
-|[/Domain：<Domain>]|指定要搜尋預先設置電腦的網域。 預設值為本機網域。|
+|[/JoinDomain： {Yes &#124; No}]|指定在 Windows 部署服務安裝期間，是否應將電腦加入網域做為此電腦帳戶。 預設值為 [是]。|
+|[/BootImagepath： <Relative path> ]|指定從 remoteInstall 資料夾到電腦將使用之開機映射的相對路徑。|
+|[/Domain： <Domain> ]|指定要搜尋預先設置電腦的網域。 預設值為本機網域。|
 |[/resetAccount]|重設指定電腦上的許可權，讓具有適當許可權的任何人都可以使用此帳戶來加入網域。|
 ## <a name="examples"></a>範例
 若要設定電腦的網路開機程式和參照伺服器，請輸入：
@@ -49,11 +49,11 @@ wdsutil /Set-Device /Device:computer1 /ReferralServer:MyWDSServer
 ```
 若要設定電腦的各種設定，請輸入：
 ```
-wdsutil /verbose /Set-Device /Device:computer2 /ID:00-B0-56-88-2F-DC /WdsClientUnattend:WDSClientUnattend\unattend.xml 
+wdsutil /verbose /Set-Device /Device:computer2 /ID:00-B0-56-88-2F-DC /WdsClientUnattend:WDSClientUnattend\unattend.xml
 /User:Domain\user /JoinRights:JoinOnly /JoinDomain:No /BootImagepath:boot\x86\images\boot.wim /Domain:NorthAmerica /resetAccount
 ```
-## <a name="additional-references"></a>其他參考
-- [命令列語法索引鍵](command-line-syntax-key.md)
-，使用使用[AllDevices 命令](using-the-get-alldevices-command.md)
-的[載入裝置命令](using-the-add-device-command.md)
-，[使用 get-device 命令](using-the-get-device-command.md)
+## <a name="additional-references"></a>其他參考資料
+- [命令列語法索引鍵](command-line-syntax-key.md) 
+[使用 [新增裝置] 命令](using-the-add-device-command.md) 
+[使用 AllDevices 命令](using-the-get-alldevices-command.md) 
+[使用取得裝置命令](using-the-get-device-command.md)

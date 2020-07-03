@@ -1,6 +1,6 @@
 ---
 title: tlntadmn
-description: Tlntadmn 的參考主題，其可管理本機或遠端電腦，並執行 telnet 伺服器服務。
+description: Tlntadmn 的參考文章，可管理本機或遠端電腦，並執行 telnet 伺服器服務。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fcade72f7170e94463abb9b473d4c6bd2251f086
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 602f3aa99f9d0e47fbbde1ab5c09b193446d8a7c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222641"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936913"
 ---
 # <a name="tlntadmn"></a>tlntadmn
 
@@ -28,7 +28,7 @@ tlntadmn [<computerName>] [-u <UserName>] [-p <Password>] [{start | stop | pause
 ```
 #### <a name="parameters"></a>參數
 
-|                   參數                    |                                                                                                                                                       描述                                                                                                                                                        |
+|                   參數                    |                                                                                                                                                       說明                                                                                                                                                        |
 |------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                \<computerName>                 |                                                                                                                    指定要連接的伺服器名稱。 預設是本機電腦。                                                                                                                    |
 |         -u \<UserName> -p\<Password>          |                                                指定您要管理之遠端伺服器的系統管理認證。 如果您想要管理您未使用系統管理認證登入的遠端伺服器，則需要此參數。                                                |
@@ -64,6 +64,6 @@ tlntadmn config timeout=0:30:0
 tlntadmn -s
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 -   [telnet 操作指南](https://technet.microsoft.com/library/cc753164(v=ws.10).aspx)
 - [命令列語法關鍵](command-line-syntax-key.md)

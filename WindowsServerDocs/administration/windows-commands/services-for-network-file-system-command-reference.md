@@ -1,6 +1,6 @@
 ---
 title: 網路檔案系統服務命令參考資料
-description: '* * * * 的參考主題'
+description: '* * * * 的參考文章'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a5a5e68bfd455fae9aa1e6fcb2c9cf1bd8005ea5
-ms.sourcegitcommit: d1fc59d53055952f8e55aacebeb29547eef0bca7
+ms.openlocfilehash: bd729c6d363beaf31e7753ba01622b7ed9b395bf
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83375212"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937123"
 ---
 # <a name="services-for-network-file-system-command-reference"></a>網路檔案系統服務命令參考資料
 
@@ -22,10 +22,10 @@ Services for Network File System （NFS）提供檔案共用解決方案，可�
 以下是 NFS 命令列工具的清單：
 
 
-| Command | 描述 |
+| Command | 說明 |
 | ------- | ----------- |
 | [mapadmin](mapadmin.md) | 管理適用于網路檔案系統的 Microsoft 服務消費者名稱對應。 |
-| [掛接](mount.md) | 掛接網路檔案系統（NFS）網路共用。 |
+| [機架](mount.md) | 掛接網路檔案系統（NFS）網路共用。 |
 | [Nfsadmin](nfsadmin.md) | 管理 Server for NFS 和 Client for NFS。 |
 | [Nfsshare](nfsshare.md) | 控制網路檔案系統（NFS）共用。 |
 | [Nfsstat](nfsstat.md) | 顯示或重設對 Server for NFS 進行的呼叫計數。 |

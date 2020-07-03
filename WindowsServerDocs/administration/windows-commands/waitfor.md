@@ -1,6 +1,6 @@
 ---
 title: waitfor
-description: Waitfor 的參考主題，它會傳送或等候系統上的信號。 **Waitfor**是用來同步處理網路上的電腦。
+description: Waitfor 的參考文章，會在系統上傳送或等候信號。 **Waitfor**是用來同步處理網路上的電腦。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1264fa3bffde303577bd56a0f1f68a6d7b2d98c2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9a80b606fc91ec146a6808bde97a8d7f0081d0ff
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720217"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937011"
 ---
 # <a name="waitfor"></a>waitfor
 
@@ -33,13 +33,13 @@ waitfor [/t <Timeout>] <SignalName>
 
 ### <a name="parameters"></a>參數
 
-|       參數       |                                                                                         描述                                                                                          |
+|       參數       |                                                                                         說明                                                                                          |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    /s \<Computer>     | 指定遠端電腦的名稱或 IP 位址（請勿使用反斜線）。 預設是本機電腦。 這個參數會套用至命令中指定的所有檔案和資料夾。 |
-| /u [\<Domain>\]<User> |                              使用指定之使用者帳戶的認證來執行腳本。 根據預設， **waitfor**會使用目前使用者的認證。                               |
-|   /p [\<Password>]    |                                                    指定 **/u**參數中指定之使用者帳戶的密碼。                                                     |
+|    /s\<Computer>     | 指定遠端電腦的名稱或 IP 位址（請勿使用反斜線）。 預設是本機電腦。 這個參數會套用至命令中指定的所有檔案和資料夾。 |
+| 那麼\<Domain>\]<User> |                              使用指定之使用者帳戶的認證來執行腳本。 根據預設， **waitfor**會使用目前使用者的認證。                               |
+|   /p [ \<Password> ]    |                                                    指定 **/u**參數中指定之使用者帳戶的密碼。                                                     |
 |          /si          |                                                                        透過網路傳送指定的信號。                                                                        |
-|     /t \<Timeout>     |                                              指定等候信號的秒數。 根據預設， **waitfor**會無限期地等候。                                               |
+|     一起\<Timeout>     |                                              指定等候信號的秒數。 根據預設， **waitfor**會無限期地等候。                                               |
 |     \<SignalName>     |                                                指定**waitfor**等候或傳送的信號。 *SignalName*不區分大小寫。                                                 |
 |          /?           |                                                                             在命令提示字元顯示說明。                                                                             |
 
@@ -70,6 +70,6 @@ waitfor /t 10 espresso\build007
 waitfor /si espresso\build007
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

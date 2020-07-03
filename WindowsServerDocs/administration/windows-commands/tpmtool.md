@@ -1,6 +1,6 @@
 ---
 title: tpmtool
-description: Tpmtool 的參考主題，可取得信賴平臺模組的相關資訊。
+description: Tpmtool 的參考文章，可取得信賴平臺模組的相關資訊。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -8,19 +8,19 @@ author: ashleytqy
 ms.author: ashleytqy
 manager: ronaldai
 ms.date: 05/07/2019
-ms.openlocfilehash: 6f529939304cb3992992d9587c2180f80f8a0f01
-ms.sourcegitcommit: 9889f20270e8eb7508d06cbf844cba9159e39697
+ms.openlocfilehash: a6b092f9242f76092cb45e484ef59d8bb29147dc
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83551112"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936904"
 ---
 # <a name="tpmtool"></a>tpmtool
 
 這個公用程式可以用來取得[信賴平臺模組（TPM）](https://docs.microsoft.com/windows/security/information-protection/tpm/trusted-platform-module-overview)的相關資訊。
 
 >[!IMPORTANT]
->預先發行的產品在正式發行前可能會大幅度修改，本文提供有關該產品的一些資訊。 Microsoft 對此處提供的資訊，不做任何明確或隱含的瑕疵擔保。
+>預先發行的產品在正式發行前可能會大幅度修改，本文提供有關該產品的一些資訊。 Microsoft 對於此處提供的資訊不做任何明示或暗示保證。
 
 如需如何使用此命令的範例，請參閱[範例](#tpmtool_examples)。
 
@@ -31,10 +31,10 @@ tpmtool /parameter [<arguments>]
 ```
 ### <a name="parameters"></a>參數
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
 |getdeviceinformation|顯示 TPM 的基本資訊。 資訊旗標值的意義可以在[這裡](https://docs.microsoft.com/windows/desktop/SecProv/win32-tpm-isreadyinformation#parameters)找到。|
-|gatherlogs [輸出目錄路徑]|會收集 TPM 記錄，並將它們放在指定的目錄中。 如果該目錄不存在，則會建立它。 根據預設，它們會放在目前的目錄中。 可能產生的檔案包括： </br>-TpmEvents .evtx</br>-TpmInformation .txt</br>-SRTMBoot .dat</br>-SRTMResume .dat</br>-DRTMBoot .dat</br>-DRTMResume .dat</br>|
+|gatherlogs [輸出目錄路徑]|會收集 TPM 記錄，並將它們放在指定的目錄中。 如果該目錄不存在，則會建立它。 根據預設，它們會放在目前的目錄中。 可能產生的檔案包括： </br>-TpmEvents .evtx</br>-TpmInformation.txt</br>-SRTMBoot .dat</br>-SRTMResume .dat</br>-DRTMBoot .dat</br>-DRTMResume .dat</br>|
 |drivertracing [啟動/停止]|啟動/停止收集 TPM 驅動程式追蹤。 追蹤記錄 TPMTRACE 會產生並放在目前的目錄中。|
 |/?|在命令提示字元顯示說明。|
 

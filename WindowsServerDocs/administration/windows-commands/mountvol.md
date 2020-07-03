@@ -1,6 +1,6 @@
 ---
 title: mountvol
-description: Mountvol 命令的參考主題，它會建立、刪除或列出磁片區掛接點。
+description: Mountvol 命令的參考文章，它會建立、刪除或列出磁片區掛接點。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e024ed1e0684da4e1450343dfd097b43fde5c8f4
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 1617149fac677069d97b5b7c1353e85b4e1fea14
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354548"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936323"
 ---
 # <a name="mountvol"></a>mountvol
 
@@ -34,7 +34,7 @@ mountvol <drive>: /s
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `[<drive>:]<path>` | 指定掛接點所在的現有 NTFS 目錄。 |
 | `<volumename>` | 指定磁片區名稱，此為掛接點的目標。 磁片區名稱會使用下列語法，其中*GUID*是全域唯一識別碼： `\\?\volume\{GUID}\` 。 需要括弧 `{ }` 。 |
@@ -63,6 +63,6 @@ mountvol <drive>: /s
 mountvol \sysmount \\?\volume\{2eca078d-5cbc-43d3-aff8-7e8511f60d0e}\
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

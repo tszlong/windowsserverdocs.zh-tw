@@ -1,6 +1,6 @@
 ---
 title: 移動
-description: Move 命令的參考主題，可將一個或多個檔案從一個目錄移至另一個目錄。
+description: Move 命令的參考文章，可將一個或多個檔案從一個目錄移至另一個目錄。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 283ee793769d991c1932eb2271c5117354bdf6a4
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 4cc1f7c04a54b78da7b24dbedad225a7326766cd
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354499"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936314"
 ---
 # <a name="move"></a>移動
 
@@ -31,7 +31,7 @@ move [{/y|-y}] [<source>] [<target>]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | /y | 停止提示確認您想要覆寫現有的目的地檔案。 在 COPYCMD 環境變數中，此參數可能會預設為預設值。 您可以使用 **-y**參數來覆寫此預設值。 預設值是在覆寫檔案之前先提示，除非命令是從批次腳本中執行。 |
 | -y | 開始提示確認您想要覆寫現有的目的檔案。 |
@@ -47,6 +47,6 @@ move [{/y|-y}] [<source>] [<target>]
 move \data\*.xls \second_q\reports\
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

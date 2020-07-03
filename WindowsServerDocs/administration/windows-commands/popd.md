@@ -1,6 +1,6 @@
 ---
 title: popd
-description: Pnputil 命令的參考主題，這會將目前的目錄變更為由 pushd 命令最近儲存的目錄。
+description: Pnputil 命令的參考文章，它會將目前的目錄變更為由 pushd 命令最近儲存的目錄。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 0784d925eedb1202bf94fbd2951081efcc0c496b
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 002a0d84770738db2b00bedcd1e01df3b1b61b76
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472384"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937003"
 ---
 # <a name="popd"></a>popd
 
@@ -34,7 +34,7 @@ popd
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 |--|--|
 | /? | 在命令提示字元顯示說明。 |
 
@@ -52,7 +52,7 @@ cls
 echo All text files deleted in the %1 directory
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

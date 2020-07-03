@@ -1,6 +1,6 @@
 ---
 title: 新增-DriverGroupPackage
-description: DriverGroupPackage 的參考主題，它會將驅動程式套件新增至驅動程式群組。
+description: DriverGroupPackage 的參考文章，可將驅動程式套件新增至驅動程式群組。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4baf4f16740e65c432cc09ca24270ab479346ac2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 5782fe849669619bf46426ad698866c05007e426
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721106"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937213"
 ---
 # <a name="add-drivergrouppackage"></a>新增-DriverGroupPackage
 
@@ -28,7 +28,7 @@ wdsutil /add-DriverGroupPackage /DriverGroup:<Group Name> [/Server:<Server Name>
 ```
 ### <a name="parameters"></a>參數
 
-|         參數         |                                                                                                                                               描述                                                                                                                                               |
+|         參數         |                                                                                                                                               說明                                                                                                                                               |
 |---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | /DriverGroup:<Group Name> |                                                                                                                                 指定驅動程式群組的名稱。                                                                                                                                 |
 |   伺服器<Server name>   |                                                                                  指定伺服器的名稱。 這可以是 NetBIOS 名稱或 FQDN。 如果未指定伺服器名稱，則會使用本機伺服器。                                                                                  |
@@ -43,8 +43,8 @@ wdsutil /add-DriverGroupPackage /DriverGroup:printerdrivers /PackageId:{4D36E972
 ```
 wdsutil /add-DriverGroupPackage /DriverGroup:printerdrivers /DriverPackage:XYZ
 ```
-## <a name="additional-references"></a>其他參考
-- [Command-Line Syntax Key](command-line-syntax-key.md) 
-[使用 DriverGroupPackages 命令](using-the-add-drivergrouppackages-command.md)
-的命令列語法索引鍵使用[AllDriverPackages 子](using-the-add-alldriverpackages-subcommand.md)命令的[DriverPackage 命令](using-the-add-driverpackage-command.md)
-
+## <a name="additional-references"></a>其他參考資料
+- [命令列語法索引鍵](command-line-syntax-key.md) 
+[使用 DriverGroupPackages 命令](using-the-add-drivergrouppackages-command.md) 
+[使用 DriverPackage 命令](using-the-add-driverpackage-command.md) 
+[使用 AllDriverPackages 子命令](using-the-add-alldriverpackages-subcommand.md)

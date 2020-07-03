@@ -1,6 +1,6 @@
 ---
-title: telnet 傳送
-description: Telnet send 的參考主題，它會將 telnet 命令傳送到 telnet 伺服器。
+title: telnet send
+description: Telnet send 的參考文章，它會將 telnet 命令傳送到 telnet 伺服器。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 36feeff49c3b139de8ec05b075571bae2539ddd1
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 44a0415a3516fcb15cd292c9e4c9c0a4a18e5ad9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222684"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937373"
 ---
 # <a name="telnet-send"></a>telnet：傳送
 
@@ -28,7 +28,7 @@ sen[d] {ao | ayt | brk | esc | ip | synch | <string>} [?]
 ```
 #### <a name="parameters"></a>參數
 
-| 參數 |                     描述                      |
+| 參數 |                     說明                      |
 |-----------|------------------------------------------------------|
 |    ao     |       傳送 telnet 命令中止輸出。        |
 |    ayt    |       傳送 telnet 命令給您。       |
@@ -44,5 +44,5 @@ sen[d] {ao | ayt | brk | esc | ip | synch | <string>} [?]
 ```
 sen ayt
 ```
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 - [命令列語法關鍵](command-line-syntax-key.md)
