@@ -1,6 +1,6 @@
 ---
 title: bitsadmin
-description: Bitsadmin 命令的參考主題，這是用來建立、下載或上傳作業及監視其進度的命令列工具。
+description: Bitsadmin 命令的參考文章，這是用來建立、下載或上傳作業及監視其進度的命令列工具。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 94a829ce21c4571188fb5ffeb9a0a1d991637d07
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e9fd70e4e74dc25c32ff3a74be2fc1c66d697367
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82710039"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926377"
 ---
 # <a name="bitsadmin"></a>bitsadmin
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10
 
-Bitsadmin 是一種命令列工具，可用來建立、下載或上傳作業，以及監視其進度。 Bitsadmin 工具會使用參數來識別要執行的工作。 您可以呼叫`bitsadmin /?`或`bitsadmin /help`來取得參數的清單。
+Bitsadmin 是一種命令列工具，可用來建立、下載或上傳作業，以及監視其進度。 Bitsadmin 工具會使用參數來識別要執行的工作。 您可以呼叫 `bitsadmin /?` 或 `bitsadmin /help` 來取得參數的清單。
 
-大部分的`<job>`交換器都需要參數，您可以將它設定為作業的顯示名稱或 GUID。 作業的顯示名稱不需要是唯一的。 **/Create**和 **/list**參數會傳回作業的 GUID。
+大部分的交換器都需要 `<job>` 參數，您可以將它設定為作業的顯示名稱或 GUID。 作業的顯示名稱不需要是唯一的。 **/Create**和 **/list**參數會傳回作業的 GUID。
 
 根據預設，您可以存取自己作業的相關資訊。 若要存取其他使用者工作的資訊，您必須具有系統管理員許可權。 如果作業是在提高許可權的狀態下建立，則您必須從提高許可權的視窗執行**bitsadmin** ;否則，您將會擁有該作業的唯讀存取權。
 

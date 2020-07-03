@@ -1,6 +1,6 @@
 ---
 title: bitsadmin util and version
-description: Bitsadmin util 和 version 命令的參考主題，其會顯示 BITS 服務的版本。
+description: Bitsadmin util 和 version 命令的參考文章，其會顯示 BITS 服務的版本。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 20c3db6e6fcd5ef3d00287f36c9f9624ab5224dd
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9b0a1a6b6c866acafa8eaccd6ade170abd58bf01
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82707597"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927296"
 ---
 # <a name="bitsadmin-util-and-version"></a>bitsadmin util and version
 
@@ -31,7 +31,7 @@ bitsadmin /util /version [/verbose]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | /verbose | 使用此參數可顯示每個位相關 DLL 的檔案版本，並確認 BITS 服務是否可以啟動。|
 
@@ -43,7 +43,7 @@ bitsadmin /util /version [/verbose]
 bitsadmin /util /version
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

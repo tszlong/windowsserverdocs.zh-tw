@@ -1,6 +1,6 @@
 ---
 title: lpr
-description: Lpr 命令的參考主題，它會將檔案傳送到執行線上印表機 Daemon （LPD）服務的電腦或印表機共用裝置，以準備進行列印。
+description: Lpr 命令的參考文章，它會將檔案傳送到執行線上印表機 Daemon （LPD）服務的電腦或印表機共用裝置，以準備進行列印。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d11b72ee807869613505052cfb51e80a89a80d70
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 9ea40ef71da7804f01c963049f07e1f6b5395354
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84223028"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927113"
 ---
 # <a name="lpr"></a>lpr
 
@@ -30,7 +30,7 @@ lpr [-S <servername>] -P <printername> [-C <bannercontent>] [-J <jobname>] [-o |
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | -S`<servername>` | 指定以您要顯示的狀態裝載 LPD 列印佇列的電腦或印表機共用裝置（依名稱或 IP 位址）。  此為必要參數，且必須為大寫。 |
 | -P`<printername> `| 以您想要顯示之狀態的列印佇列指定（依名稱）印表機。 若要尋找印表機的名稱，請開啟 [**印表機**] 資料夾。 此為必要參數，且必須為大寫。 |
@@ -44,7 +44,7 @@ lpr [-S <servername>] -P <printername> [-C <bannercontent>] [-J <jobname>] [-o |
 
 ### <a name="examples"></a>範例
 
-若要將檔 *.txt*文字檔列印至 LPD 主機上的*Laserprinter1*印表機佇列（位於*10.0.0.45*），請輸入：
+若要在*10.0.0.45*上將*Document.txt*文字檔列印至 LPD 主機上的*Laserprinter1*印表機佇列，請輸入：
 
 ```
 lpr -S 10.0.0.45 -P Laserprinter1 -o Document.txt
@@ -56,7 +56,7 @@ lpr -S 10.0.0.45 -P Laserprinter1 -o Document.txt
 lpr -S 10.0.0.45 -P Laserprinter1 -o l PostScript_file.ps
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

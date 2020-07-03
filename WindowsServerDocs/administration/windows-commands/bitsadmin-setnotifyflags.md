@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setnotifyflags
-description: Bitsadmin setnotifyflags 命令的參考主題，其會設定指定之作業的事件通知旗標。
+description: Bitsadmin setnotifyflags 命令的參考文章，可為指定的作業設定事件通知旗標。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 00b704bf0943790ef01bbfbdbcbbde4dfd1845c6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b4054788bb8c14e4bd9be38296f5c0f933de9462
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717275"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927610"
 ---
 # <a name="bitsadmin-setnotifyflags"></a>bitsadmin setnotifyflags
 
@@ -28,7 +28,7 @@ bitsadmin /setnotifyflags <job> <notifyflags>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | 作業 | 作業的顯示名稱或 GUID。 |
 | notifyflags | 可以包含下列一個或多個通知旗標，包括：<ul><li>**1.** 當作業中的所有檔案都已傳送時，就會產生事件。</li><li>**2.** 在發生錯誤時產生事件。</li><li>**3.** 當所有檔案都已完成傳送或發生錯誤時，就會產生事件。</li><li>**4.** 停用通知。</li></ul> |
@@ -41,7 +41,7 @@ bitsadmin /setnotifyflags <job> <notifyflags>
 bitsadmin /setnotifyflags myDownloadJob 2
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

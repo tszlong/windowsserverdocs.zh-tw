@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setclientcertificatebyid
-description: Bitsadmin setclientcertificatebyid 命令的參考主題，它會指定要在 HTTPS （SSL）要求中用於用戶端驗證的用戶端憑證識別碼
+description: Bitsadmin setclientcertificatebyid 命令的參考文章，它會指定要在 HTTPS （SSL）要求中用於用戶端驗證的用戶端憑證識別碼
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 24f5d0b9cda9fecc70611d8eaa21b0c8976c4c7c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: bfa3a65051cad9ef21f146888fc9d0e3e80f4023
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719335"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927889"
 ---
 # <a name="bitsadmin-setclientcertificatebyid"></a>bitsadmin setclientcertificatebyid
 
@@ -28,7 +28,7 @@ bitsadmin /setclientcertificatebyid <job> <store_location> <store_name> <hexadec
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | -------------- | -------------- |
 | 作業 | 作業的顯示名稱或 GUID。 |
 | store_location | 識別用來查閱憑證之系統存放區的位置，包括：<ul><li>CURRENT_USER</li><li>LOCAL_MACHINE</li><li>CURRENT_SERVICE</li><li>伺服器</li><li>使用者</li><li>CURRENT_USER_GROUP_POLICY</li><li>LOCAL_MACHINE_GROUP_POLICY</li><li>LOCAL_MACHINE_ENTERPRISE。</li></ul> |
@@ -43,7 +43,7 @@ bitsadmin /setclientcertificatebyid <job> <store_location> <store_name> <hexadec
 bitsadmin /setclientcertificatebyid myDownloadJob BG_CERT_STORE_LOCATION_CURRENT_USER MY A106B52356D3FBCD1853A41B619358BD
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

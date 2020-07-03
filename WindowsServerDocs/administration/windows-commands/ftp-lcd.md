@@ -1,6 +1,6 @@
 ---
 title: ftp lcd
-description: Ftp lcd 命令的參考主題，它會變更本機電腦上的工作目錄。
+description: Ftp lcd 命令的參考文章，它會變更本機電腦上的工作目錄。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c941adcc8c56d2598ad4ff56852309a256656878
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 7a325569717cb60ad0750447b2367ad18965d915
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820128"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927221"
 ---
 # <a name="ftp-lcd"></a>ftp lcd
 
@@ -42,7 +42,7 @@ lcd [<directory>]
 lcd c:\dir1
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

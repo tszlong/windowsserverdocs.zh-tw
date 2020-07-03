@@ -1,6 +1,6 @@
 ---
 title: bitsadmin suspend
-description: Bitsadmin 暫止命令的參考主題，它會暫停指定的工作。
+description: Bitsadmin 暫止命令的參考文章，它會暫停指定的工作。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8117cf9f4286994847e53dca8065da6821d47c5d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 42257d31dbada2badc12b44b6375702ac41a91ca
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720454"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927470"
 ---
 # <a name="bitsadmin-suspend"></a>bitsadmin suspend
 
@@ -30,7 +30,7 @@ bitsadmin /suspend <job>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ---------- |
 | 作業 | 作業的顯示名稱或 GUID。 |
 
@@ -43,7 +43,7 @@ bitsadmin /suspend <job>
 bitsadmin /suspend myDownloadJob
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

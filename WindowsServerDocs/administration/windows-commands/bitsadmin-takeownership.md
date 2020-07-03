@@ -1,6 +1,6 @@
 ---
 title: bitsadmin takeownership
-description: Bitsadmin takeownership 命令的參考主題，可讓具有系統管理許可權的使用者取得指定工作的擁有權。
+description: Bitsadmin takeownership 命令的參考文章，可讓具有系統管理許可權的使用者取得指定工作的擁有權。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5369cb3fa143ebde77ae8cabf04b9a38eed5b9c5
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: bc406d1d5f7c9553082f85f3315ab7622f6bc7db
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720436"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927469"
 ---
 # <a name="bitsadmin-takeownership"></a>bitsadmin takeownership
 
@@ -28,7 +28,7 @@ bitsadmin /takeownership <job>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ---------- |
 | 作業 | 作業的顯示名稱或 GUID。 |
 
@@ -40,7 +40,7 @@ bitsadmin /takeownership <job>
 bitsadmin /takeownership myDownloadJob
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

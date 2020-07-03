@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getnotifyflags
-description: Bitsadmin getnotifyflags 命令的參考主題，它會抓取指定之作業的通知旗標。
+description: Bitsadmin getnotifyflags 命令的參考文章，它會抓取指定之作業的通知旗標。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 36e4c3584b2e3be9c9985756aeaec08b40e74b0c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 0ea97c039f372a2211b1e2a6c640c4499a38dfe4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717769"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926920"
 ---
 # <a name="bitsadmin-getnotifyflags"></a>bitsadmin getnotifyflags
 
@@ -28,7 +28,7 @@ bitsadmin /getnotifyflags <job>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | -------------- | -------------- |
 | 作業 | 作業的顯示名稱或 GUID。 |
 
@@ -36,7 +36,7 @@ bitsadmin /getnotifyflags <job>
 
 作業可以包含下列一個或多個通知旗標：
 
-| 旗標 | 描述 |
+| 旗標 | Description |
 | ----- | ----- |
 | 0x001 | 當作業中的所有檔案都已轉移時，產生事件。 |
 | 0x002 | 發生錯誤時產生事件。 |
@@ -51,7 +51,7 @@ bitsadmin /getnotifyflags <job>
 bitsadmin /getnotifyflags myDownloadJob
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: ftp mdir
-description: Ftp mdir 命令的參考主題，會在遠端目錄中顯示檔案和子目錄的目錄清單。
+description: Ftp mdir 命令的參考文章，它會在遠端目錄中顯示檔案和子目錄的目錄清單。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b192e6de23105fcc696d8369ce0280167a201e20
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 5a4d1b00941d350776fd953607a5cc5da433993c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820218"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926154"
 ---
 # <a name="ftp-mdir"></a>ftp mdir
 
@@ -43,13 +43,13 @@ mdir <remotefile>[...] <localfile>
 mdir dir1 dir2 -
 ```
 
-若要將*dir1*和*dir2*的合併目錄清單儲存在名為*dirlist*的本機檔案中，請輸入：
+若要將*dir1*和*dir2*的合併目錄清單儲存在名為*dirlist.txt*的本機檔案中，請輸入：
 
 ```
 mdir dir1 dir2 dirlist.txt
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

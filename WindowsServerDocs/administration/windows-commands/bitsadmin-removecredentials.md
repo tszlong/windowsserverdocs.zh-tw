@@ -1,6 +1,6 @@
 ---
 title: bitsadmin removecredentials
-description: Bitsadmin removecredentials 命令的參考主題，它會從作業中移除認證。
+description: Bitsadmin removecredentials 命令的參考文章，可從作業中移除認證。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e4dcfaa55847e531871c6a7ad9fd84c3861c4cd9
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: cebfac50504a02cd98ea94d9f0611f804148feac
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717051"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926436"
 ---
 # <a name="bitsadmin-removecredentials"></a>bitsadmin removecredentials
 
@@ -31,7 +31,7 @@ bitsadmin /removecredentials <job> <target> <scheme>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | -------------- | -------------- |
 | 作業 | 作業的顯示名稱或 GUID。 |
 | 目標 | 請使用**伺服器**或**PROXY**。 |
@@ -45,7 +45,7 @@ bitsadmin /removecredentials <job> <target> <scheme>
 bitsadmin /removecredentials myDownloadJob SERVER BASIC
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

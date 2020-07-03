@@ -1,6 +1,6 @@
 ---
 title: bitsadmin addfile
-description: Bitsadmin addfile 命令的參考主題，它會將檔案新增至指定的作業。
+description: Bitsadmin addfile 命令的參考文章，它會將檔案新增至指定的作業。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: eaa7d77c9d6160bbd2bdf6a1431232af22bc3e37
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 817a6d3af81d88e571db17c3f57dc129130b2783
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718501"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927104"
 ---
 # <a name="bitsadmin-addfile"></a>bitsadmin addfile
 
@@ -28,7 +28,7 @@ bitsadmin /addfile <job> <remoteURL> <localname>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | 作業 | 作業的顯示名稱或 GUID。 |
 | remoteURL | 伺服器上檔案的 URL。 |
@@ -44,7 +44,7 @@ bitsadmin /addfile myDownloadJob http://downloadsrv/10mb.zip c:\10mb.zip
 
 針對要新增的每個檔案重複此呼叫。 如果多個作業使用*myDownloadJob*作為其名稱，您必須將*myDownloadJob*取代為作業的 GUID，以唯一識別作業。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

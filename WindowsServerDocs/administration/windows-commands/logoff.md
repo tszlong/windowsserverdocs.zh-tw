@@ -1,6 +1,6 @@
 ---
 title: 登出
-description: 登出命令的參考主題，會將使用者從遠端桌面工作階段主機伺服器上的會話登出，並刪除會話。
+description: 登出命令的參考文章，它會將使用者從遠端桌面工作階段主機伺服器上的會話登出，並刪除會話。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 636591843ce878bc85c5cccf6faece6652e25424
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: d154b767302f5c536e0a7efb30d99ac0a8e087d5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222732"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927165"
 ---
 # <a name="logoff"></a>登出
 
@@ -29,7 +29,7 @@ logoff [<sessionname> | <sessionID>] [/server:<servername>] [/v]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `<sessionname>` | 指定會話的名稱。 這必須是使用中的會話。|
 | `<sessionID>` | 指定識別伺服器會話的數值識別碼。 |
@@ -69,7 +69,7 @@ logoff 12
 logoff TERM04 /server:Server1
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

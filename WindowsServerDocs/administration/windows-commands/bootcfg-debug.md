@@ -1,6 +1,6 @@
 ---
 title: bootcfg debug
-description: Bootcfg debug 命令的參考主題，它會加入或變更指定之作業系統專案的偵錯工具設定。
+description: 適用于 bootcfg debug 命令的參考文章，它會加入或變更指定之作業系統專案的偵錯工具設定。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c8059aaefd1b23b3e74f4c27ba96e322c44b5cb6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: da4179d85d4e84918e75fb4c8490e229230412eb
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82709712"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926322"
 ---
 # <a name="bootcfg-debug"></a>bootcfg debug
 
@@ -33,11 +33,11 @@ bootcfg /debug {on | off | edit}[/s <computer> [/u <domain>\<user> /p <password>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
-| `{on | off | edit}` | 指定埠偵錯工具的值，包括：<ul><li>**的.** 藉由將/debug 選項加入至指定`<osentrylinenum>`的，啟用遠端偵錯程式支援。</li><li>**停止.** 從指定<osentrylinenum>的移除/debug 選項，以停用遠端偵錯程式支援。</li><li>**編輯.** 藉由變更與指定<osentrylinenum>之/debug 選項關聯的值，允許變更埠和傳輸速率設定。</li></ul> |
+| `{on | off | edit}` | 指定埠偵錯工具的值，包括：<ul><li>**的.** 藉由將/debug 選項加入至指定的，啟用遠端偵錯程式支援 `<osentrylinenum>` 。</li><li>**停止.** 從指定的移除/debug 選項，以停用遠端偵錯程式支援 <osentrylinenum> 。</li><li>**編輯.** 藉由變更與指定之/debug 選項關聯的值，允許變更埠和傳輸速率設定 <osentrylinenum> 。</li></ul> |
 | `/s <computer>` | 指定遠端電腦的名稱或 IP 位址（不要使用反斜線）。 預設是本機電腦。 |
-| `/u <domain>\<user>`  | 以`<user>`或`<domain>\<user>`指定之使用者的帳戶許可權來執行命令。 預設為發出命令之電腦上目前登入使用者的許可權。 |
+| `/u <domain>\<user>`  | 以或指定之使用者的帳戶許可權來執行命令 `<user>` `<domain>\<user>` 。 預設為發出命令之電腦上目前登入使用者的許可權。 |
 | `/p <password>` | 指定 **/u**參數中指定之使用者帳戶的密碼。 |
 | `/port {COM1 | COM2 | COM3 | COM4}` |  指定要用於進行偵錯工具的 COM 埠。 如果停用調試功能，請勿使用此參數。 |
 | `/baud {9600 | 19200 | 38400 | 57600 | 115200}` | 指定用於進行偵錯工具的傳輸速率。 如果停用調試功能，請勿使用此參數。 |
@@ -54,7 +54,7 @@ bootcfg /debug edit /port com2 /baud 19200 /id 2
 bootcfg /s srvmain /u maindom\hiropln /p p@ssW23 /debug off /id 2
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

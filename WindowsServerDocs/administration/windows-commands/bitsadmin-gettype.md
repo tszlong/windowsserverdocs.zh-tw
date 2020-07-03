@@ -1,6 +1,6 @@
 ---
 title: bitsadmin gettype
-description: Bitsadmin gettype 命令的參考主題，它會抓取指定之作業的工作類型。
+description: Bitsadmin gettype 命令的參考文章，它會抓取指定工作的工作類型。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 151f9b8e81229a666111ebcd20f060d84160445a
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c7224add1b503d9ec50e84879a47442c12447e5d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717481"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926643"
 ---
 # <a name="bitsadmin-gettype"></a>bitsadmin gettype
 
@@ -36,7 +36,7 @@ bitsadmin /gettype <job>
 
 傳回的輸出值可以是：
 
-| 類型 | 說明 |
+| 類型 | Description |
 | --------------- | ----------- |
 | 下載 | 此作業為下載。 |
 | 上傳 | 作業是上傳。 |
@@ -51,7 +51,7 @@ bitsadmin /gettype <job>
 bitsadmin /gettype myDownloadJob
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

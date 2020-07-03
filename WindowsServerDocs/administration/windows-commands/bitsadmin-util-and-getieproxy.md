@@ -1,6 +1,6 @@
 ---
 title: bitsadmin util and getieproxy
-description: Bitsadmin util 和 getieproxy 命令的參考主題，其可抓取指定服務帳戶的 proxy 使用方式。
+description: Bitsadmin util 和 getieproxy 命令的參考文章，可抓取指定服務帳戶的 proxy 使用方式。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 576f308bc7fb9a4e448638d06621f95eebef0cd0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 15093341ef2dcaca6dd0f5efb4c48d4b9d1934a1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82707665"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927400"
 ---
 # <a name="bitsadmin-util-and-getieproxy"></a>bitsadmin util and getieproxy
 
@@ -30,7 +30,7 @@ bitsadmin /util /getieproxy <account> [/conn <connectionname>]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ---------- |
 | account | 指定您想要取得其 proxy 設定的服務帳戶。 可能的值包括：<ul><li>LOCALSYSTEM</li><li>   NETWORKSERVICE</li><li>LOCALSERVICE.</li></ul> |
 | connectionname | 選擇性。 與 **/conn**參數搭配使用，以指定要使用的數據機連接。 如果您未指定 **/conn**參數，BITS 會使用 LAN 連接。 |
@@ -43,7 +43,7 @@ bitsadmin /util /getieproxy <account> [/conn <connectionname>]
 bitsadmin /util /getieproxy NETWORKSERVICE
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

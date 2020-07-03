@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getproxylist-抓取指定之作業的 proxy 清單。
-description: Bitsadmin getproxylist 命令的參考主題，它會抓取指定之作業的 proxy 清單。
+description: Bitsadmin getproxylist 命令的參考文章，它會抓取指定工作的 proxy 清單。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a92703d83cc872204d3dc488c15d703dfd50a780
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 60c66db909b9b62d33ffda09e3b696362b6a65a0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717660"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926813"
 ---
 # <a name="bitsadmin-getproxylist"></a>bitsadmin getproxylist
 
@@ -28,7 +28,7 @@ bitsadmin /getproxylist <job>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | -------------- | -------------- |
 | 作業 | 作業的顯示名稱或 GUID。 |
 
@@ -40,7 +40,7 @@ bitsadmin /getproxylist <job>
 bitsadmin /getproxylist myDownloadJob
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

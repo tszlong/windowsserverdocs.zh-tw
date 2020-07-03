@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getreplydata
-description: Bitsadmin getreplydata 命令的參考主題，它會以十六進位格式抓取工作的伺服器上傳-回復資料。
+description: Bitsadmin getreplydata 命令的參考文章，它會以十六進位格式抓取工作的伺服器上傳-回復資料。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ea2a82403fe05776abbbf65e87a4b6e72c8767b8
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 86c8a57664d6f90980212766e8e2bd2df6d95181
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717623"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926740"
 ---
 # <a name="bitsadmin-getreplydata"></a>bitsadmin getreplydata
 
@@ -31,7 +31,7 @@ bitsadmin /getreplydata <job>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | -------------- | -------------- |
 | 作業 | 作業的顯示名稱或 GUID。 |
 
@@ -43,7 +43,7 @@ bitsadmin /getreplydata <job>
 bitsadmin /getreplydata myDownloadJob
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: bitsadmin gettemporaryname
-description: Bitsadmin gettemporaryname 命令的參考主題，它會報告作業中指定檔案的暫存檔案。
+description: Bitsadmin gettemporaryname 命令的參考文章，它會報告作業中指定檔案的暫存檔案。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f7780691f37fb78f1553fa993fd408d224be39ff
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 0b5dab756856f0c0905d7e3b523a2ec4f3d7cad6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717487"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926655"
 ---
 # <a name="bitsadmin-gettemporaryname"></a>bitsadmin gettemporaryname
 
@@ -28,7 +28,7 @@ bitsadmin /gettemporaryname <job> <file_index>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | -------------- | -------------- |
 | 作業 | 作業的顯示名稱或 GUID。 |
 | file_index | 從0開始。 |
@@ -41,7 +41,7 @@ bitsadmin /gettemporaryname <job> <file_index>
 bitsadmin /gettemporaryname myDownloadJob 1
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

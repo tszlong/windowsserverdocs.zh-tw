@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setcustomheaders
-description: Bitsadmin setcustomheaders 命令的參考主題，其會將自訂 HTTP 標頭新增至 GET 要求。
+description: Bitsadmin setcustomheaders 命令的參考文章，它會將自訂 HTTP 標頭新增至 GET 要求。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 92728f8d63a22cf9d13d6c02a69359583a9fc5cc
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 74a8c5f4aa464aa9f362a9761c9f1c449fbaad00
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719328"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927845"
 ---
 # <a name="bitsadmin-setcustomheaders"></a>bitsadmin setcustomheaders
 
@@ -28,7 +28,7 @@ bitsadmin /setcustomheaders <job> <header1> <header2> <...>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | 作業 | 作業的顯示名稱或 GUID。 |
 | `<header1> <header2>`以此類推 | 作業的自訂標頭。 |
@@ -41,7 +41,7 @@ bitsadmin /setcustomheaders <job> <header1> <header2> <...>
 bitsadmin /setcustomheaders myDownloadJob accept-encoding:deflate/gzip
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

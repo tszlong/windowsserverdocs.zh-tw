@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getvalidationstate
-description: Bitsadmin getvalidationstate 命令的參考主題，它會報告作業中指定檔案的內容驗證狀態。
+description: Bitsadmin getvalidationstate 命令的參考文章，它會報告作業中指定檔案的內容驗證狀態。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ca753b20a1b7834d2e05d4ff8729a08332256f8c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 72d53572411a33259467fa8023b9ef08fe4a5595
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717454"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926621"
 ---
 # <a name="bitsadmin-getvalidationstate"></a>bitsadmin getvalidationstate
 
@@ -28,7 +28,7 @@ bitsadmin /getvalidationstate <job> <file_index>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | -------------- | -------------- |
 | 作業 | 作業的顯示名稱或 GUID。 |
 | file_index | 從0開始。 |
@@ -41,7 +41,7 @@ bitsadmin /getvalidationstate <job> <file_index>
 bitsadmin /getvalidationstate myDownloadJob 1
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

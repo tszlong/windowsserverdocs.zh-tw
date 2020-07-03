@@ -1,6 +1,6 @@
 ---
 title: bitsadmin peercaching
-description: Bitsadmin 對等命令的參考主題，其中列出/peercaching 參數。
+description: Bitsadmin 對等命令的參考文章，其中列出/peercaching 參數。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a70ad9927a77c07fa4fd638d359cfcfda53d4005
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 57c0ab442c65494bbaf5c0ab6b6668dfa67b48ac
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717220"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928105"
 ---
 # <a name="bitsadmin-peercaching"></a>bitsadmin peercaching
 
@@ -34,13 +34,13 @@ bitsadmin /peercaching /getconfigurationflags
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | -------------- | -------------- |
 | [bitsadmin peercaching and help](bitsadmin-peercaching-and-help.md) | 顯示/peercaching 參數的命令列使用方式。|
 | [bitsadmin peercaching and setconfigurationflags](bitsadmin-peercaching-and-setconfigurationflags.md) | 設定決定電腦是否可以將內容提供給對等，以及是否可以從對等下載內容的設定旗標。 |
 | [bitsadmin peercaching and getconfigurationflags](bitsadmin-peercaching-and-getconfigurationflags.md) | 取得設定旗標，以判斷電腦是否將內容提供給對等，以及是否可以從對等下載內容。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

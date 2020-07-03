@@ -1,6 +1,6 @@
 ---
-title: logman 建立計數器
-description: Logman create counter 命令的參考主題，它會建立計數器資料收集器。
+title: logman create counter
+description: Logman create counter 命令的參考文章，它會建立計數器資料收集器。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 63fd94fb32fe27b48460922818d1a7220f7f5d7a
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 80ea79eb8c286a8dbe7c020b4c23ae1483d2cb9b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222962"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927194"
 ---
-# <a name="logman-create-counter"></a>logman 建立計數器
+# <a name="logman-create-counter"></a>logman create counter
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -30,7 +30,7 @@ logman create counter <[-n] <name>> [options]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | -s`<computer name>` | 在指定的遠端電腦上執行命令。 |
 | -config`<value>` | 指定包含命令選項的設定檔案。 |
@@ -74,7 +74,7 @@ logman create counter perf_log -c \Processor(_Total)\% Processor time
 logman create counter perf_log -c \Processor(_Total)\% Processor time -max 10 -rf 01:00
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

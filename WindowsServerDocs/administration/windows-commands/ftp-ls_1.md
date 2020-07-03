@@ -1,6 +1,6 @@
 ---
 title: ftp ls
-description: Ftp ls 命令的參考主題，它會從遠端電腦顯示檔案和子目錄的縮寫清單。
+description: Ftp ls 命令的參考文章，它會從遠端電腦顯示檔案和子目錄的縮寫清單。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9ae913f001c3ddffce9ff81c9c5c5fd32f436da5
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 1e4bd476f87487e400751b7173f0c670867de54c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820168"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927201"
 ---
 # <a name="ftp-ls"></a>ftp ls
 
@@ -43,13 +43,13 @@ ls [<remotedirectory>] [<localfile>]
 ls
 ```
 
-若要取得遠端電腦上*dir1*的縮寫目錄清單，並將它儲存在名為*dirlist*的本機檔案中，請輸入：
+若要取得遠端電腦上*dir1*的縮寫目錄清單，並將它儲存在名為*dirlist.txt*的本機檔案中，請輸入：
 
 ```
 ls dir1 dirlist.txt
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

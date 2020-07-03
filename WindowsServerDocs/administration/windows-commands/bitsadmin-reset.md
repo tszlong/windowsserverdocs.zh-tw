@@ -1,6 +1,6 @@
 ---
 title: bitsadmin reset
-description: Bitsadmin reset 命令的參考主題，它會取消目前使用者所擁有之傳送佇列中的所有工作。
+description: Bitsadmin reset 命令的參考文章，它會取消目前使用者擁有之傳送佇列中的所有工作。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a6aea1d3cb0a89def1e23f42272bf0503022ac54
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: bc8faf10f991f06609d653c8cb7a1dc89de2fa8a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717010"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926399"
 ---
 # <a name="bitsadmin-reset"></a>bitsadmin reset
 
@@ -31,7 +31,7 @@ bitsadmin /reset [/allusers]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | -------------- | -------------- |
 | /allusers | 選擇性。 取消目前使用者擁有之佇列中的所有工作。 您必須具有系統管理員許可權，才能使用此參數。 |
 
@@ -43,7 +43,7 @@ bitsadmin /reset [/allusers]
 bitsadmin /reset
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

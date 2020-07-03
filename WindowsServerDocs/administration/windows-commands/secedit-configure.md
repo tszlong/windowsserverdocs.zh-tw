@@ -1,6 +1,6 @@
 ---
 title: secedit：設定
-description: '* * * * 的參考主題'
+description: '* * * * 的參考文章'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dda26f5f610c86b04d042d4428a3a2e88d8161bd
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: f2ab11a62d3c3b14be0d91345e6e18cc895d2c64
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821128"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926205"
 ---
 # <a name="seceditconfigure"></a>secedit：設定
 
@@ -56,7 +56,7 @@ Secedit /analyze /db C:\Security\FY11\SecDbContoso.sdb /log C:\Security\FY11\Sec
 Secedit /configure /db C:\Security\FY11\SecDbContoso.sdb /cfg SecContoso.inf /overwrite /log C:\Security\FY11\SecAnalysisContosoFY11.xml /quiet
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [Secedit](secedit.md)
 -   [Secedit:analyze](secedit-analyze.md)

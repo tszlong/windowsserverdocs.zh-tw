@@ -1,6 +1,6 @@
 ---
 title: bitsadmin peers
-description: Bitsadmin 對等命令的參考主題，其會列出/peers 參數。
+description: Bitsadmin 對等命令的參考文章，其中列出/peers 參數。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fa2929b842b64841b7b2d50578133dd040475c80
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 3e01a02c2615d353cbdaaa6980e86a965edce018
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717103"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927993"
 ---
 # <a name="bitsadmin-peers"></a>bitsadmin peers
 
@@ -32,14 +32,14 @@ bitsadmin /peers /list
 ```
 
 ### <a name="parameters"></a>參數
-| 參數 | 描述 |
+| 參數 | 說明 |
 | -------------- | -------------- |
 | [bitsadmin peers and help](bitsadmin-peers-and-help.md) | 顯示/peers 參數的命令列使用方式。 |
 | [bitsadmin peers and discover](bitsadmin-peers-and-discover.md) | 再次探索對等。 |
 | [bitsadmin peers and clear](bitsadmin-peers-and-clear.md) | 清除對等清單。 |
 | [bitsadmin peers and list](bitsadmin-peers-and-list.md) | 列出所有對等。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

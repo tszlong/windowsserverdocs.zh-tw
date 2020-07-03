@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setaclflag
-description: Bitsadmin setaclflag 命令的參考主題，其會設定存取控制清單（ACL）傳播旗標。
+description: Bitsadmin setaclflag 命令的參考文章，其會設定存取控制清單（ACL）傳播旗標。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1852bd267fe22825d55f7522a81179e9290e2a00
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: dcf07f944813c0c8d7a4ff4c4f52c598c0f3bf47
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82716991"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927956"
 ---
 # <a name="bitsadmin-setaclflag"></a>bitsadmin setaclflag
 
-設定作業的存取控制清單（ACL）傳播旗標。 旗標指出您想要使用所要下載的檔案來維護擁有者和 ACL 資訊。 例如，若要使用檔案來維護擁有者和群組，請將 **flags**參數設`og`為。
+設定作業的存取控制清單（ACL）傳播旗標。 旗標指出您想要使用所要下載的檔案來維護擁有者和 ACL 資訊。 例如，若要使用檔案來維護擁有者和群組，請將 **flags**參數設為 `og` 。
 
 ## <a name="syntax"></a>語法
 
@@ -28,7 +28,7 @@ bitsadmin /setaclflag <job> <flags>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | 作業 | 作業的顯示名稱或 GUID。 |
 | flags | 指定一或多個值，包括：<ul><li>**o** -使用 file 複製擁有者資訊。</li><li>**g** -使用 file 複製群組資訊。</li><li>**d** -使用檔案複製任意存取控制清單（DACL）資訊。</li><li>**s** -使用檔案複製系統存取控制清單（SACL）資訊。</li></ul> |
@@ -41,7 +41,7 @@ bitsadmin /setaclflag <job> <flags>
 bitsadmin /setaclflags myDownloadJob og
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

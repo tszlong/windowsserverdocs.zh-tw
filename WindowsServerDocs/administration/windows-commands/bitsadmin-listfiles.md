@@ -1,6 +1,6 @@
 ---
 title: bitsadmin listfiles
-description: Bitsadmin listfile 命令的參考主題，其中列出指定之作業中的檔案。
+description: Bitsadmin listfile 命令的參考文章，其中列出指定之作業中的檔案。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6826c1ec2f624a06d11fedcb8ca9f14d86b7ec27
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 2702fbaec76aac666d931264c9855017b602e8ea
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717421"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926534"
 ---
 # <a name="bitsadmin-listfiles"></a>bitsadmin listfiles
 
@@ -28,7 +28,7 @@ bitsadmin /listfiles <job>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | -------------- | -------------- |
 | 作業 | 作業的顯示名稱或 GUID。 |
 
@@ -40,7 +40,7 @@ bitsadmin /listfiles <job>
 bitsadmin /listfiles myDownloadJob
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: bitsadmin wrap
-description: Bitsadmin wrap 命令的參考主題，它會將任何行的輸出文字包裝到命令視窗的最右邊邊緣以外的下一行。
+description: Bitsadmin wrap 命令的參考文章，它會將任何行的輸出文字包裝到命令視窗的最右邊邊緣以外的下一行。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8c1c2c78fd3cc78674ef497526ba236ad058fe83
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e47f5e38555eb2464d3febf5f958ce5a6af20452
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82707568"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927256"
 ---
 # <a name="bitsadmin-wrap"></a>bitsadmin wrap
 
@@ -32,7 +32,7 @@ bitsadmin /wrap <job>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ---------- |
 | 作業 | 作業的顯示名稱或 GUID。 |
 
@@ -44,7 +44,7 @@ bitsadmin /wrap <job>
 bitsadmin /wrap /info myDownloadJob /verbose
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

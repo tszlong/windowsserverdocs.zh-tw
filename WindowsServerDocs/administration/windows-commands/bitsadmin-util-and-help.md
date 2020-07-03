@@ -1,6 +1,6 @@
 ---
 title: bitsadmin util and help
-description: Bitsadmin util 和 help 命令的參考主題，其會顯示/util 參數的命令列使用方式。
+description: Bitsadmin util 和 help 命令的參考文章，其會顯示/util 參數的命令列使用方式。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a4f43e35242627cb66156e839722aea2e2078118
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 54c17d580481cbc054b05a1d0b743f60f2a687f1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82707636"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927388"
 ---
 # <a name="bitsadmin-util-and-help"></a>bitsadmin util and help
 
@@ -34,7 +34,7 @@ bitsadmin /util /help
 bitsadmin /util /help
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
