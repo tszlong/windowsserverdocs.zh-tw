@@ -1,6 +1,6 @@
 ---
 title: fsutil transaction
-description: 用於管理 NTFS 交易之 fsutil transaction 命令的參考主題。
+description: 適用于管理 NTFS 交易之 fsutil transaction 命令的參考文章。
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: f2eefaaf-2817-4ac7-abac-d2b65fa971dc
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: fc81934c5838fd81722b27a7b7e57b14709ed26a
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 95cd9a8f62aa9dd64d46a875a90847a65589b447
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437043"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922340"
 ---
 # <a name="fsutil-transaction"></a>fsutil transaction
 
@@ -34,7 +34,7 @@ fsutil transaction [rollback] <GUID>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | 認可 | 標示成功的隱含或明確指定交易的結尾。 |
 | `<GUID>` | 指定代表交易的 GUID 值。 |
@@ -46,13 +46,13 @@ fsutil transaction [rollback] <GUID>
 
 ### <a name="examples"></a>範例
 
-若要顯示檔案*c:\test.txt*的交易資訊，請輸入：
+若要顯示檔*c:\test.txt*的交易資訊，請輸入：
 
 ```
 fsutil transaction fileinfo c:\test.txt
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

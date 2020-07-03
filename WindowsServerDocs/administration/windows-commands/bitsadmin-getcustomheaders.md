@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getcustomheaders
-description: Bitsadmin getcustomheaders 命令的參考主題，它會從作業中抓取自訂 HTTP 標頭。
+description: Bitsadmin getcustomheaders 命令的參考文章，它會從作業中抓取自訂 HTTP 標頭。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7fe839cd0e629af88b3ee3642abcce339442d03a
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 7482c3eb4b259051ebd63677c70dbaabfb013314
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718093"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923076"
 ---
 # <a name="bitsadmin-getcustomheaders"></a>bitsadmin getcustomheaders
 
@@ -28,7 +28,7 @@ bitsadmin /getcustomheaders <job>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | -------------- | -------------- |
 | 作業 | 作業的顯示名稱或 GUID。 |
 
@@ -40,7 +40,7 @@ bitsadmin /getcustomheaders <job>
 bitsadmin /getcustomheaders myDownloadJob
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

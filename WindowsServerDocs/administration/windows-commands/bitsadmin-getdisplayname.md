@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getdisplayname
-description: Bitsadmin getdisplayname 命令的參考主題，它會抓取指定之作業的顯示名稱。
+description: Bitsadmin getdisplayname 命令的參考文章，它會抓取指定之作業的顯示名稱。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0d47a70d34dbff0249a9d69f1db1deaa879c76c8
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 4b0e768f377b9faa23eb59645cbecdc129f1e573
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437063"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923043"
 ---
 # <a name="bitsadmin-getdisplayname"></a>bitsadmin getdisplayname
 
@@ -28,7 +28,7 @@ bitsadmin /getdisplayname <job>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | -------------- | -------------- |
 | 作業 | 作業的顯示名稱或 GUID。 |
 
@@ -40,7 +40,7 @@ bitsadmin /getdisplayname <job>
 bitsadmin /getdisplayname myDownloadJob
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

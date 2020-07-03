@@ -1,6 +1,6 @@
 ---
 title: change user
-description: 變更使用者命令的參考主題，這會變更遠端桌面工作階段主機伺服器的安裝模式。
+description: 變更使用者命令的參考文章，這會變更遠端桌面工作階段主機伺服器的安裝模式。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: de96280f42f1e3002c4379390367856dcdcb885a
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: 42d6a5575ebf732a91477a425d93b10f3293e89e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070184"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922496"
 ---
 # <a name="change-user"></a>change user
 
@@ -33,7 +33,7 @@ change user {/execute | /install | /query}
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | /execute | 讓 .ini 檔案能夠對應到主目錄。 這是預設值。 |
 | /install | 停用 .ini 檔案與主目錄的對應。 所有 .ini 檔案都會讀取並寫入至系統目錄。 在遠端桌面工作階段主機伺服器上安裝應用程式時，您必須停用 .ini 檔案對應。 |
@@ -74,7 +74,7 @@ change user {/execute | /install | /query}
   change user /query
   ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

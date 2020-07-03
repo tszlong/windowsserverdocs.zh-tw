@@ -1,6 +1,6 @@
 ---
 title: manage-bde
-description: Manage-bde 命令的參考主題，它會開啟或關閉 BitLocker、指定解除鎖定機制、更新修復方法，以及解除鎖定受 BitLocker 保護的資料磁片磁碟機。
+description: Manage-bde 命令的參考文章，可開啟或關閉 BitLocker、指定解除鎖定機制、更新修復方法，以及解除鎖定受 BitLocker 保護的資料磁片磁碟機。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 84788315a65b32b29a1992580bc6152d15ad02f7
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 480f44c6467587918ad347413315b208c874f8cd
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222061"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922125"
 ---
 # <a name="manage-bde"></a>manage-bde
 
@@ -32,7 +32,7 @@ manage-bde [-status] [–on] [–off] [–pause] [–resume] [–lock] [–unloc
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- |------------ |
 | [manage-bde 狀態](manage-bde-status.md) | 提供電腦上所有磁片磁碟機的相關資訊，不論它們是否受到 BitLocker 保護。 |
 | [管理-manage-bde on](manage-bde-on.md) | 加密磁片磁碟機並開啟 BitLocker。 |
@@ -55,7 +55,7 @@ manage-bde [-status] [–on] [–off] [–pause] [–resume] [–lock] [–unloc
 | -? 或/？ | 在命令提示字元中顯示簡短說明。 |
 | -help 或-h | 在命令提示字元中顯示完整的說明。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

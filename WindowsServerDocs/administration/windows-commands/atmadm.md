@@ -1,6 +1,6 @@
 ---
 title: atmadm
-description: Atmadm 命令的參考主題，它會監視在非同步傳輸模式（atM）網路上由 atM 呼叫管理員註冊的連接和位址。
+description: Atmadm 命令的參考文章，它會監視在非同步傳輸模式（atM）網路上由 atM 呼叫管理員註冊的連接和位址。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 32dad00e5a4d03c905f95c48e112f512a9dbc2e5
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1985634cdbaff0dfe0dcefd53395bc4f62614f2a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718912"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923923"
 ---
 # <a name="atmadm"></a>atmadm
 
@@ -30,7 +30,7 @@ atmadm [/c][/a][/s]
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | ------- | -------- |
 | /C | 顯示這部電腦上所安裝之 atM 網路介面卡的所有目前連線的呼叫資訊。 |
 | /a | 針對安裝在這部電腦上的每個介面卡，顯示已註冊的 atM 網路服務存取點（NSAP）位址。 |
@@ -74,7 +74,7 @@ atmadm [/c][/a][/s]
 
     下表包含**atmadm/c**範例輸出中每個元素的描述。
 
-    | 資料類型 | 螢幕顯示 | 描述 |
+    | 資料類型 | 螢幕顯示 | Description |
     | -------- | --------- | -------- |
     | 連接資訊 | 輸入/輸出 | 呼叫的方向。 **中**的是來自另一個裝置的 atM 網路介面卡。  **從 atM**網路介面卡到另一個裝置。 |
     | PMP | 點對多點呼叫。 |
@@ -112,7 +112,7 @@ atmadm [/c][/a][/s]
 
     下表包含**atmadm/s**範例輸出中每個元素的描述。
 
-    | 呼叫管理員統計資料 | 描述 |
+    | 呼叫管理員統計資料 | Description |
     | ------------- | -------- |
     | 目前使用中的呼叫 | 這部電腦上所安裝之 atM 介面卡上目前作用中的呼叫。 |
     | 成功的撥入電話總數 | 已成功接收來自此 atM 網路上其他裝置的呼叫。 |
@@ -144,6 +144,6 @@ atmadm /a
 atmadm /s
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

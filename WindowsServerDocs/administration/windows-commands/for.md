@@ -1,6 +1,6 @@
 ---
 title: 對象
-description: For 命令的參考主題，它會針對一組檔案中的每個檔案執行指定的命令。
+description: For 命令的參考文章，它會針對一組檔案中的每個檔案執行指定的命令。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 24ef5bc159e67862d419bd2728b14585f8b095d4
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 44b6497af626079b05768fd245c1b86693bdfe61
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437013"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922410"
 ---
 # <a name="for"></a>對象
 
@@ -117,7 +117,7 @@ for {%% | %}<variable> in (<set>) do <command> [<commandlineoptions>]
 
   - **變數替代：** 下表列出選擇性語法（適用于任何變數**I**）：
 
-    | 具有修飾詞的變數 | 描述 |
+    | 具有修飾詞的變數 | Description |
     | ---------------------- | ----------- |
     |` %~I` | 展開 `%I` 以移除任何前後的引號。 |
     | `%~fI `| 展開 `%I` 為完整路徑名稱。 |
@@ -133,7 +133,7 @@ for {%% | %}<variable> in (<set>) do <command> [<commandlineoptions>]
 
     下表列出您可以用來取得複合結果的輔助按鍵組合。
 
-    | 具有結合修飾詞的變數 | 描述 |
+    | 具有結合修飾詞的變數 | Description |
     | -------------------------------- | ----------- |
     | `%~dpI `| 只會展開 `%I` 為磁碟機號和路徑。 |
     | `%~nxI` | 只會展開 `%I` 至檔案名和副檔名。 |
@@ -147,7 +147,7 @@ for {%% | %}<variable> in (<set>) do <command> [<commandlineoptions>]
 
 - **剖析字串：** 您可以使用 `for /f` 直接字串的剖析邏輯，方法是 `<literalstring>` 以雙引號（*不含*usebackq）或單引號（*含*usebackq）括住，例如（MyString）或（' MyString '）。 `<literalstring>`會被視為來自檔案的一行輸入。 `<literalstring>`在以雙引號剖析時，會將命令符號（例如 `\ & | > < ^` ）視為一般字元。
 
-- **剖析輸出：** 您可以使用 `for /f` 命令來剖析命令的輸出，方法是在括弧之間放上引號 `<command>` 。 它會被視為命令列，它會傳遞至子 Cmd.exe。 輸出會捕獲到記憶體中，並剖析成檔案。
+- **剖析輸出：** 您可以使用 `for /f` 命令來剖析命令的輸出，方法是在括弧之間放上引號 `<command>` 。 它會被視為命令列，它會傳遞給子 Cmd.exe。 輸出會捕獲到記憶體中，並剖析成檔案。
 
 ## <a name="examples"></a>範例
 
@@ -181,6 +181,6 @@ for /f eol=; tokens=2,3* delims=, %i in (myfile.txt) do @echo %i %j %k
 for /f usebackq delims== %i in ('set') do @echo %i
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

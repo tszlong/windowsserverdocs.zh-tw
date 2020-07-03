@@ -1,6 +1,6 @@
 ---
 title: bcdedit
-description: Bcdedit 命令的參考主題，它會建立新的存放區、修改現有的存放區，以及新增開機功能表參數。
+description: Bcdedit 命令的參考文章，它會建立新的存放區、修改現有的存放區，以及新增開機功能表參數。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/27/2018
-ms.openlocfilehash: df68c2c1b1087f7e32dbe270657a54e072261c46
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 2e49ed45875b79dfc4d8bbbdad8a1221000bf2b5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718701"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923513"
 ---
 # <a name="bcdedit"></a>bcdedit
 
@@ -22,7 +22,7 @@ ms.locfileid: "82718701"
 
 BCDEdit 為命令列工具，可用於管理 BCD 存放區。 它可用於各種用途，包括建立新的存放區、修改現有的存放區、新增開機功能表參數等等。 BCDEdit 本質上可提供與舊版 Windows 上之 Bootcfg.exe 相同的目的，但有兩項重大改進：
 
-- 會公開比 Bootcfg 更廣範圍的開機參數。
+- 公開比 Bootcfg.exe 更廣泛的開機參數範圍。
 
 - 已改善腳本支援。
 
@@ -45,7 +45,7 @@ bcdedit /command [<argument1>] [<argument2>] ...
 
 | 選項 | 說明 |
 | ------ | ----------- |
-| /? | 顯示 BCDEdit 命令清單。 若執行此命令時未加上引數，則會顯示可用命令的摘要。 若要顯示特定命令的詳細說明，請執行**bcdedit/？** `<command>`，其中`<command>`是您要搜尋的命令名稱，以取得的詳細資訊。 例如， **bcdedit/？ createstore**會顯示 createstore 命令的詳細說明。 |
+| /? | 顯示 BCDEdit 命令清單。 若執行此命令時未加上引數，則會顯示可用命令的摘要。 若要顯示特定命令的詳細說明，請執行**bcdedit/？** `<command>`，其中 `<command>` 是您要搜尋的命令名稱，以取得的詳細資訊。 例如， **bcdedit/？ createstore**會顯示 createstore 命令的詳細說明。 |
 
 #### <a name="parameters-that-operate-on-a-store"></a>在存放區上操作的參數
 
@@ -101,13 +101,13 @@ bcdedit /command [<argument1>] [<argument2>] ...
 | 參數 | 描述 |
 | ------ | ----------- |
 | /bootdebug | 啟用或停用指定之開機項目的開機偵錯工具。 雖然這個命令可用於任何的開機項目，但它僅對開機應用程式有效。 |
-| /dbgsettings | 指定或顯示系統的全域偵錯工具設定。 此命令不會 enablepose。 若要設定個別的全域偵錯工具設定，請使用**bcdedit/set** `<dbgsettings> <type> <value>`命令。 |
+| /dbgsettings | 指定或顯示系統的全域偵錯工具設定。 此命令不會 enablepose。 若要設定個別的全域偵錯工具設定，請使用**bcdedit/set** `<dbgsettings> <type> <value>` 命令。 |
 | /debug | 啟用或停用指定之開機項目的核心偵錯工具。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 如需如何使用 BCDEdit 的範例，請參閱[BCDEdit 選項參考](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcd-boot-options-reference)文章。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

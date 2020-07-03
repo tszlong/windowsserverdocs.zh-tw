@@ -1,6 +1,6 @@
 ---
 title: fsutil 8dot3name
-description: Fsutil 8dot3name 命令的參考主題，其會查詢或變更簡短名稱（8.3 名稱）行為的設定。
+description: Fsutil 8dot3name 命令的參考文章，它會查詢或變更簡短名稱（8.3 名稱）行為的設定。
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: a0c6dbfe-d898-496d-9356-825f7fbd90ec
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 02977a33c21560fd2078f0f596f312f4ab4bc408
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 069f7fed72cfe50ef15c869b129dbf98363d9111
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436053"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922383"
 ---
 # <a name="fsutil-8dot3name"></a>fsutil 8dot3name
 
@@ -44,7 +44,7 @@ fsutil 8dot3name [strip] [/t] [/s] [/f] [/l [<log file.] ] [/v] <directorypath>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | 查詢`[<volumepath>]` | 在檔案系統中查詢8.3 簡短名稱建立行為的狀態。<p>如果未將*volumepath*指定為參數，則會顯示所有磁片區的預設 [8dot3name 建立行為] 設定。 |
 | 搜索`<directorypath>` | 掃描位於指定*directorypath*中的登錄機碼檔案，這些檔案可能會在從檔案名中移除8.3 簡短名稱時受到影響。 |
@@ -73,7 +73,7 @@ fsutil 8dot3name query volume{928842df-5a01-11de-a85c-806e6f6e6963}
 fsutil 8dot3name strip /l mylogfile.log /s d:\MyData
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

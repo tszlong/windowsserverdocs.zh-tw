@@ -1,6 +1,6 @@
 ---
 title: logman query
-description: Logman 查詢命令的參考主題，其會查詢資料收集器或資料收集器集合屬性。
+description: Logman 查詢命令的參考文章，它會查詢資料收集器或資料收集器集合屬性。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f37b78023fd12c1d58234cdecdb69af8a1c6002d
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: ea436ec676ee8097a0df80467744b76f2deeca42
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222801"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922318"
 ---
 # <a name="logman-query"></a>logman query
 
@@ -30,7 +30,7 @@ logman query [providers|Data Collector Set name] [options]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | -s`<computer name>` | 在指定的遠端電腦上執行命令。 |
 | -config`<value>` | 指定包含命令選項的設定檔案。 |
@@ -58,7 +58,7 @@ logman query perf_log
 logman query providers
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

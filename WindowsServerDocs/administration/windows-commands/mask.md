@@ -1,6 +1,6 @@
 ---
 title: 遮罩
-description: Mask 命令的參考主題，其會移除使用匯入命令匯入的硬體陰影複製。
+description: Mask 命令的參考文章，其會移除使用匯入命令匯入的硬體陰影複製。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ee01bb74b1fef1bb31a266c01a9e9bde7743691d
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 2839fce0a64f187c1445a5f6a4af6c5f0ebc9fb8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354628"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922101"
 ---
 # <a name="mask"></a>遮罩
 
@@ -28,7 +28,7 @@ mask <shadowsetID>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | shadowsetID | 移除屬於指定陰影複製組識別碼的陰影複製。 |
 
@@ -44,6 +44,6 @@ mask <shadowsetID>
 mask %Import_1%
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
 title: format
-description: Format 命令的參考主題，其格式化磁片以接受 Windows 檔案。
+description: Format 命令的參考文章，其格式化磁片以接受 Windows 檔案。
 ms.prod: windows-server
 manager: dongill
 ms.author: jgerend
@@ -9,12 +9,12 @@ ms.topic: article
 ms.assetid: 51ec7423-9a01-4219-868a-25d69cdcc832
 author: jasongerend
 ms.date: 10/16/2017
-ms.openlocfilehash: abe05c4bf8174fd76cedc29f2bce1c83587c3d8a
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 1ce046cf3bdce046a86d98228223cc2bc03b7c31
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436983"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922677"
 ---
 # <a name="format"></a>格式
 
@@ -37,7 +37,7 @@ format <volume> [/q]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `<volume>` | 指定您想要格式化之磁片磁碟機的掛接點、磁片區名稱或磁碟機號（後面接著冒號）。 如果您未指定下列任何命令列選項， **format**會使用磁片區類型來判斷磁片的預設格式。 |
 | /fs： {FAT | FAT32 | 格式化 | 指定檔案系統的類型（FAT、FAT32、NTFS）。 |
@@ -87,7 +87,7 @@ format <volume> [/q]
 
 - 下表列出每個結束代碼及其意義的簡短描述。
 
-  | 結束代碼 | 描述 |
+  | 結束碼 | 說明 |
   | --------- | ----------- |
   | 0 | 格式化作業成功。 |
   | 1 | 提供的參數不正確。 |
@@ -116,6 +116,6 @@ format a: /q
 format a: /v:DATA
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](https://technet.microsoft.com/library/cc771080.aspx)

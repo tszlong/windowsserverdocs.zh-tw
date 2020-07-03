@@ -1,6 +1,6 @@
 ---
 title: set
-description: Set 的參考主題，會顯示、設定或移除 cmd.exe 環境變數。
+description: Set 的參考文章，可顯示、設定或移除 cmd.exe 環境變數。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5de835dd591e1f70acc896772df501d5ddbdf237
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 002ac4624d9ed501fab7816a83c2a0c5fc6a2bce
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819388"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922826"
 ---
 # <a name="set"></a>set
 
-顯示、設定或移除 cmd.exe 環境變數。 如果使用時不含參數，**設定**會顯示目前的環境變數設定。
+顯示、設定或移除 cmd.exe 的環境變數。 如果使用時不含參數，**設定**會顯示目前的環境變數設定。
 
 
 
@@ -34,12 +34,12 @@ set /a <Variable>=<Expression>
 
 |參數|說明|
 |---------|-----------|
-|\<變數>|指定要設定或修改的環境變數。|
-|\<字串>|指定要與指定的環境變數產生關聯的字串。|
+|\<Variable>|指定要設定或修改的環境變數。|
+|\<String>|指定要與指定的環境變數產生關聯的字串。|
 |/p|將*變數*的值設定為使用者輸入的一行。|
 |\<PromptString>|選擇性。 指定訊息以提示使用者輸入。 這個參數會與 **/p**命令列選項搭配使用。|
 |/a|將*字串*設定為已評估的數值運算式。|
-|\<運算式>|指定數值運算式。 如需可在*運算式*中使用的有效運算子，請參閱備註。|
+|\<Expression>|指定數值運算式。 如需可在*運算式*中使用的有效運算子，請參閱備註。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
@@ -145,6 +145,6 @@ set p
 > [!NOTE]
 > 此命令需要預設啟用的命令延伸模組。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

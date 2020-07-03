@@ -1,6 +1,6 @@
 ---
 title: CD
-description: Cd 命令的參考主題，它會顯示或變更目前的目錄的名稱。
+description: Cd 命令的參考文章，它會顯示或變更目前的目錄的名稱。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7c9ee57590cf165ba46f394cab06817c7c13f0a9
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 37ce63cd4fce871c615ac64756f8fc17f1d28460
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719661"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922912"
 ---
 # <a name="cd"></a>CD
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-顯示目前目錄的名稱，或變更目前的目錄。 如果只搭配磁碟機號使用（例如， `cd C:`）， **cd**會顯示指定磁片磁碟機中目前目錄的名稱。 如果在沒有參數的情況下使用， **cd**會顯示目前的磁片磁碟機和目錄。
+顯示目前目錄的名稱，或變更目前的目錄。 如果只搭配磁碟機號使用（例如， `cd C:` ）， **cd**會顯示指定磁片磁碟機中目前目錄的名稱。 如果在沒有參數的情況下使用， **cd**會顯示目前的磁片磁碟機和目錄。
 
 > [!NOTE]
 > 此命令與[chdir 命令](chdir.md)相同。
@@ -36,7 +36,7 @@ chdir [..]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | /d | 變更目前的磁片磁碟機以及磁片磁碟機的目前目錄。 |
 | `<drive>:` | 指定要顯示或變更的磁片磁碟機（如果不同于目前的磁片磁碟機）。 |
@@ -48,16 +48,16 @@ chdir [..]
 
 如果已啟用命令延伸模組，則下列條件適用于**cd**命令：
 
-- 目前的目錄字串會轉換成使用與磁片上的名稱相同的大小寫。 例如，如果`cd c:\temp`磁片上發生這種情況，則會將目前的目錄設為 C：\Temp。
+- 目前的目錄字串會轉換成使用與磁片上的名稱相同的大小寫。 例如， `cd c:\temp` 如果磁片上發生這種情況，則會將目前的目錄設為 C：\Temp。
 
-- 空格不會被視為分隔符號， `<path>`因此可以包含空格，而不需要括住引號。 例如：
+- 空格不會被視為分隔符號，因此 `<path>` 可以包含空格，而不需要括住引號。 例如：
 
   ```
   cd username\programs\start menu
   ```
 
-  就如同：  
-  
+  就如同：
+
   ```
   cd "username\programs\start menu"
   ```
@@ -90,7 +90,7 @@ cd [<drive>:[<directory>]]
 cd [<drive>:]
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

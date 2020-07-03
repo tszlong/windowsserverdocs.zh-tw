@@ -1,6 +1,6 @@
 ---
 title: auditpol clear
-description: Auditpol clear 命令的參考主題，它會刪除所有使用者的每個使用者稽核原則，重設（停用）所有子類別的系統稽核原則，並將所有的審核選項設定為 [停用]。
+description: Auditpol clear 命令的參考文章，它會刪除所有使用者的每個使用者稽核原則，重設（停用）所有子類別的系統稽核原則，並將所有的審核選項設定為 [停用]。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a3d4765907f1dd614f5d0a61585ea09069652ecb
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 797f26ab9e191176808bbce917ca5ac0fa3d73a3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719142"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923794"
 ---
 # <a name="auditpol-clear"></a>auditpol clear
 
@@ -32,7 +32,7 @@ auditpol /clear [/y]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | ----------- | --------------- |
 | /y | 抑制確認是否應清除所有稽核原則設定的提示。 |
 | /? | 在命令提示字元顯示說明。 |
@@ -54,7 +54,7 @@ auditpol /clear /y
 > [!NOTE]
 > 使用腳本來執行此作業時，上述範例會很有用。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

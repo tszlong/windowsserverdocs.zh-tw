@@ -1,6 +1,6 @@
 ---
 title: bdehdcfg
-description: Bdehdcfg 命令的參考主題，它會準備硬碟，其中包含 BitLocker 磁碟機加密所需的分割區。
+description: Bdehdcfg 命令的參考文章，它會使用 BitLocker 磁碟機加密所需的磁碟分割來準備硬碟。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3bcc901847bb8d687d59bc3270dab39de0af8d60
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 0a8b926459f2d1fb96b9a48910c163eb9aaab02c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718562"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923356"
 ---
 # <a name="bdehdcfg"></a>bdehdcfg
 
@@ -41,7 +41,7 @@ bdehdcfg [–driveinfo <drive_letter>] [-target {default|unallocated|<drive_lett
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- |----------- |
 | [bdehdcfg： system.io.driveinfo](bdehdcfg-driveinfo.md) | 顯示指定磁片磁碟機上磁碟分割的磁碟機號、總大小、最大可用空間和磁碟分割特性。 只會列出有效的磁碟分割。 如果已有四個主要或擴充分割區，則不會列出未配置的空間。 |
 | [bdehdcfg：目標](bdehdcfg-target.md) | 定義要使用哪一部分的磁片磁碟機做為系統磁片磁碟機，並使部分變成作用中。 |
@@ -51,6 +51,6 @@ bdehdcfg [–driveinfo <drive_letter>] [-target {default|unallocated|<drive_lett
 | [bdehdcfg：重新開機](bdehdcfg-restart.md) | 指示電腦在磁片磁碟機準備完成後重新開機。 |
 | /? | 在命令提示字元顯示 [說明]。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

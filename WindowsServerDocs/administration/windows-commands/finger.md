@@ -1,6 +1,6 @@
 ---
 title: finger
-description: Finger 命令的參考主題，其會顯示執行手指服務或背景程式之指定遠端電腦上的使用者相關資訊。
+description: Finger 命令的參考文章，其會顯示執行手指服務或背景程式之指定遠端電腦上的使用者相關資訊。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a3403e10a1777bc117659eb052958d3a20668557
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: fd629374b601686e91e5238ae8db060e0b6bf0f8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437233"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922420"
 ---
 # <a name="finger"></a>finger
 
@@ -33,7 +33,7 @@ finger [-l] [<user>] [@<host>] [...]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | -l | 以長清單格式顯示使用者資訊。 |
 | `<user>` | 指定您想要其資訊的使用者。 如果您省略*user*參數，此命令會顯示指定電腦上所有使用者的相關資訊。 |
@@ -60,6 +60,6 @@ finger user1@users.microsoft.com
 finger @users.microsoft.com
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

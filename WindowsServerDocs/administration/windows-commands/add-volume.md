@@ -1,6 +1,6 @@
 ---
-title: 新增磁片區
-description: Add volume 命令的參考主題，它會將磁片區新增到陰影複製組，這是要陰影複製的一組磁片區。
+title: add volume
+description: Add volume 命令的參考文章，它會將磁片區新增到陰影複製組，這是要陰影複製的一組磁片區。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a8cfd3d8f7d9f008e3136d8f694dc00370b8b0f2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 3cd80a60fd3215a2234d4eb5be8a62da91e2cba4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719203"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924086"
 ---
-# <a name="add-volume"></a>新增磁片區
+# <a name="add-volume"></a>add volume
 
 將磁片區新增至陰影複製組，這是要陰影複製的一組磁片區。 建立陰影複製時，環境變數會將別名連結到陰影識別碼，因此別名可以用於腳本處理。
 
@@ -32,14 +32,14 @@ add volume <volume> [provider <providerid>]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `<volume>` | 指定要加入陰影複製組的磁片區。 必須至少有一個磁片區，才能建立陰影複製。 |
 | `[provider \<providerid>]` | 指定要用來建立陰影複製之已註冊提供者的提供者識別碼。 如果未指定**provider** ，則會使用預設提供者。 |
 
 ## <a name="examples"></a>範例
 
-若要查看目前已註冊的提供者清單， `diskshadow>`請在命令提示字元中輸入：
+若要查看目前已註冊的提供者清單，請在 `diskshadow>` 命令提示字元中輸入：
 
 ```
 list providers
@@ -62,7 +62,7 @@ list providers
 add volume c: alias System1
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

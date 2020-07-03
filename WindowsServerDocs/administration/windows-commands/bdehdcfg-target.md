@@ -1,6 +1,6 @@
 ---
-title: bdehdcfg 目標
-description: Bdehdcfg target 命令的參考主題，它會準備磁碟分割，以供 BitLocker 和 Windows 復原作為系統磁片磁碟機。
+title: bdehdcfg target
+description: Bdehdcfg target 命令的參考文章，它會準備磁碟分割，以供 BitLocker 和 Windows 復原作為系統磁片磁碟機。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b7f98f42675a49ab34ca1cf759efb9d40a69c38a
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 509c659907878f7b0ddc0b0c601715fa996c5fe7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718601"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923362"
 ---
 # <a name="bdehdcfg-target"></a>bdehdcfg：目標
 
@@ -28,7 +28,7 @@ bdehdcfg -target {default|unallocated|<drive_letter> shrink|<drive_letter> merge
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | default | 表示命令列工具會遵循與 BitLocker 安裝程式嚮導相同的進程。 |
 | 空間 | 從磁片上可用的未配置空間建立系統磁碟分割。 |
@@ -43,7 +43,7 @@ bdehdcfg -target {default|unallocated|<drive_letter> shrink|<drive_letter> merge
 bdehdcfg -target P: merge
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: auditpol restore
-description: Auditpol restore 命令的參考主題，會還原系統稽核原則設定、所有使用者的每個使用者稽核原則設定，以及與/備份選項所使用之逗號分隔值（CSV）檔案格式一致的檔案中的所有審核選項。
+description: Auditpol restore 命令的參考文章，可還原系統稽核原則設定、所有使用者的每一使用者稽核原則設定，以及與/備份選項所使用之逗號分隔值（CSV）檔案格式一致的檔案中的所有審核選項。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 64605a985c1cff13b842a99ae4ea52485bfc8220
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: d7cd9f26189e9237910cfcbe5399c490ddf0c3c0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719052"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923679"
 ---
 # <a name="auditpol-restore"></a>auditpol restore
 
@@ -32,23 +32,23 @@ auditpol /restore /file:<filename>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | ------- | -------- |
 | /file | 指定應該從中還原稽核原則的檔案。 檔案必須已經使用/備份選項建立，或必須與/備份選項所使用的 CSV 檔案格式一致。 |
 | /? |在命令提示字元顯示說明。 |
 
 ## <a name="examples"></a>範例
 
-若要針對所有使用者還原系統稽核原則設定、每個使用者的稽核原則設定，以及使用/備份命令所建立之名為 auditpolicy 之檔案中的所有審核選項，請輸入：
+若要從使用/備份命令建立的檔案中還原系統稽核原則設定、每個使用者的稽核原則設定，以及名為 auditpolicy.csv 的所有審核選項，請輸入：
 
 ```
 auditpol /restore /file:c:\auditpolicy.csv
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [auditpol 備份](auditpol-backup.md)
+- [auditpol backup](auditpol-backup.md)
 
 - [auditpol 命令](auditpol.md)

@@ -1,6 +1,6 @@
 ---
-title: 屬性磁片
-description: 屬性 disk 命令的參考主題，它會顯示、設定或清除磁片的屬性。
+title: attributes disk
+description: 屬性磁片命令的參考文章，它會顯示、設定或清除磁片的屬性。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c3d378439b30328e4df48020fa4b3288f7af31c6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 02ad39b84afb2487b388d046d6409a682b58615b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718901"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923894"
 ---
-# <a name="attributes-disk"></a>屬性磁片
+# <a name="attributes-disk"></a>attributes disk
 
 顯示、設定或清除磁片的屬性。 當此命令用來顯示磁片的目前屬性時，啟動磁片屬性代表用來啟動電腦的磁片。 若為動態鏡像，它會顯示包含開機磁碟區之開機 plex 的磁片。
 
@@ -31,7 +31,7 @@ attributes disk [{set | clear}] [readonly] [noerr]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | set | 設定具有焦點之磁片的指定屬性。 |
 | clear | 清除具有焦點之磁片的指定屬性。 |
@@ -52,7 +52,7 @@ attributes disk
 attributes disk set readonly
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

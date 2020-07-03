@@ -1,6 +1,6 @@
 ---
-title: auditpol 設定
-description: Auditpol set 命令的參考主題，它會設定每個使用者的稽核原則、系統稽核原則或 [審核選項]。
+title: auditpol set
+description: Auditpol set 命令的參考文章，它會設定每個使用者的稽核原則、系統稽核原則或 [審核選項]。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 73868d6044d8742d4d9e0ce76e0668402f230f86
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: bc42168d65116261d57053e0812cbb49e17021d5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718882"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923690"
 ---
-# <a name="auditpol-set"></a>auditpol 設定
+# <a name="auditpol-set"></a>auditpol set
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -38,7 +38,7 @@ auditpol /set
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | /user | 設定類別或子類別所指定之每個使用者稽核原則的安全性主體。 必須指定 [類別] 或 [子類別] 選項，做為安全識別碼（SID）或名稱。 |
 | /include | 使用/user 指定;指出使用者的每個使用者原則，即使系統稽核原則未指定，也會產生 audit。 此設定是預設值，如果未明確指定/include 或/exclude 參數，則會自動套用。 |
@@ -92,7 +92,7 @@ auditpol /set /subcategory:{0ccee9210-69ae-11d9-bed3-505054503030},{0ccee9211-69
 auditpol /set /option:CrashOnAuditFail /value:enable
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

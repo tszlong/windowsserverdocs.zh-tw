@@ -1,6 +1,6 @@
 ---
 title: autochk
-description: '[Autochk] 命令的參考主題，會在電腦啟動時以及 Windows Server 開始驗證檔案系統的邏輯完整性時執行。'
+description: '[Autochk] 命令的參考文章，會在電腦啟動時以及 Windows Server 開始驗證檔案系統的邏輯完整性時執行。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a767e8f6cebee9c946f53e0403198384b7c0b790
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9cfb034f37f85b1e54e0cee2a8a4d128518c775a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718783"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923623"
 ---
 # <a name="autochk"></a>autochk
 
 在電腦啟動時，以及在 Windows Server 開始驗證檔案系統的邏輯完整性之前執行。
 
-**Autochk**是只在 NTFS 磁片上執行，且只在 Windows Server 啟動之前的**chkdsk**版本。 無法直接從命令列執行**autochk** 。 而是在下列情況下執行**autochk** ：
+**Autochk.exe**是只在 NTFS 磁片上執行，且僅在 Windows Server 啟動之前的**chkdsk**版本。 無法直接從命令列執行**autochk** 。 而是在下列情況下執行**autochk** ：
 
 - 如果您嘗試在開機磁碟區上執行**chkdsk** 。
 
@@ -35,9 +35,9 @@ ms.locfileid: "82718783"
 >
 > - 您可以搭配 **/x**參數使用**chkntfs** ，以防止在特定磁片區或多個磁片區上執行**autochk** 。
 >
-> - 使用**chkntfs**命令列工具搭配 **/t**參數，將 autochk 延遲從0秒變更為最多3天（259200秒）。 不過，長時間延遲表示電腦不會啟動到經過的時間，或直到您按下按鍵來取消**autochk**為止。
+> - 使用**chkntfs.exe**命令列工具搭配 **/t**參數，將 autochk 延遲從0秒變更為最多3天（259200秒）。 不過，長時間延遲表示電腦不會啟動到經過的時間，或直到您按下按鍵來取消**autochk**為止。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: logman create
-description: Logman create 命令的參考主題，它會建立計數器、追蹤、設定資料收集器或 API。
+description: Logman create 命令的參考文章，它會建立計數器、追蹤、設定資料收集器或 API。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c4a68be098f868cdd9cd48c1e7c68fc183fa1fab
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 695a101a0aa6a720b64ffee6617085d13b6e83d1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222957"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922328"
 ---
 # <a name="logman-create"></a>logman create
 
@@ -30,15 +30,15 @@ logman create <counter | trace | alert | cfg | api> <[-n] <name>> [options]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
-| [logman 建立計數器](logman-create-counter.md) | 建立計數器資料收集器。 |
-| [logman 建立追蹤](logman-create-trace.md) | 建立追蹤資料收集器。 |
-| [logman 建立警示](logman-create-alert.md) | 建立警示資料收集器。 |
-| [logman 建立 cfg](logman-create-cfg.md) | 建立設定資料收集器。 |
-| [logman 建立 api](logman-create-api.md) | 建立 API 追蹤資料收集器。 |
+| [logman create counter](logman-create-counter.md) | 建立計數器資料收集器。 |
+| [logman create trace](logman-create-trace.md) | 建立追蹤資料收集器。 |
+| [logman create alert](logman-create-alert.md) | 建立警示資料收集器。 |
+| [logman create cfg](logman-create-cfg.md) | 建立設定資料收集器。 |
+| [logman create api](logman-create-api.md) | 建立 API 追蹤資料收集器。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

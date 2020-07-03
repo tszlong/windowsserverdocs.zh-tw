@@ -1,6 +1,6 @@
 ---
 title: manage-bde tpm
-description: Manage-bde tpm 命令的參考主題，其會設定電腦的信賴平臺模組（TPM）。
+description: Manage-bde tpm 命令的參考文章，其會設定電腦的信賴平臺模組（TPM）。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3aa597dbd871c64efc7e718ef70ed0c69b256ab9
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: bed203c5de5351162f4c465e43631a4869f0e9a1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222135"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922196"
 ---
 # <a name="manage-bde-tpm"></a>manage-bde tpm
 
@@ -30,12 +30,12 @@ manage-bde -tpm [-turnon] [-takeownership <ownerpassword>] [-computername <name>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | -homeautomation.turnon | 啟用並啟動 TPM，以允許設定 TPM 擁有者密碼。 您也可以使用 **-t**做為此命令的縮寫版本。 |
 | -takeownership | 藉由設定擁有者密碼來取得 TPM 的擁有權。 您也可以使用 **-o**做為此命令的縮寫版本。 |
 | `<ownerpassword>` | 代表您為 TPM 指定的擁有者密碼。 |
-| -computername | 指定 manage-bde.wsf 將用來修改另一部電腦上的 BitLocker 保護。 您也可以使用 **-cn**做為此命令的縮寫版本。 |
+| -computername | 指定 manage-bde.exe 將用來修改另一部電腦上的 BitLocker 保護。 您也可以使用 **-cn**做為此命令的縮寫版本。 |
 | `<name>` | 代表要修改 BitLocker 保護的電腦名稱稱。 接受的值包括電腦的 NetBIOS 名稱和電腦的 IP 位址。 |
 | -? 或/？ | 在命令提示字元中顯示簡短說明。 |
 | -help 或-h | 在命令提示字元中顯示完整的說明。 |
@@ -54,7 +54,7 @@ manage-bde  tpm -turnon
 manage-bde  tpm  takeownership 0wnerP@ss
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

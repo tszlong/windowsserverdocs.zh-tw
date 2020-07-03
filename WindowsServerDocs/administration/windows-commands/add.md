@@ -1,6 +1,6 @@
 ---
 title: add
-description: Add 命令的參考主題，其會將磁片區新增至要陰影複製的磁片區集合，或將別名新增至別名環境。
+description: Add 命令的參考文章，其會將磁片區新增至要陰影複製的磁片區集合，或將別名新增至別名環境。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9b621a3061c4e3366085c5cc44f91f26dd33d4e3
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 7b409b0355f4e112773c3f847466586fe3c84654
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719011"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924071"
 ---
 # <a name="add"></a>add
 
@@ -33,7 +33,7 @@ add alias <aliasname> <aliasvalue>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | ---------- | ----------- |
 | 磁碟區 | 將磁片區新增至陰影複製組，這是要陰影複製的一組磁片區。 如需語法和參數，請參閱[新增磁片](add-volume.md)區。 |
 | alias | 將指定的名稱和值加入至別名環境。 如需語法和參數，請參閱[add alias](add-alias.md) 。 |
@@ -55,6 +55,6 @@ Volume c: alias System1    GUID \\?\Volume{XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX}
 No Diskshadow aliases in the environment.
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

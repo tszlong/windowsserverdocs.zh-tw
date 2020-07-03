@@ -1,6 +1,6 @@
 ---
 title: 變更
-description: 變更命令的參考主題，這會變更登入、COM 埠對應和安裝模式遠端桌面工作階段主機伺服器設定。
+description: 變更命令的參考文章，這會變更登入、COM 埠對應和安裝模式遠端桌面工作階段主機伺服器設定。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a35bd558898b3991a9e6f847d415a67d70f0d01b
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 4b1350b39633580dd60bbc0eb07e567029447d5f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82715516"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922452"
 ---
 # <a name="change"></a>變更
 
@@ -35,13 +35,13 @@ ms.locfileid: "82715516"
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | [變更登入命令](change-logon.md) | 啟用或停用遠端桌面工作階段主機伺服器上用戶端會話的登入，或顯示目前的登入狀態。 |
 | [變更埠命令](change-port.md) | 列出或變更 COM 埠對應，以與 MS-DOS 應用程式相容。 |
 | [變更使用者命令](change-user.md) | 變更遠端桌面工作階段主機伺服器的安裝模式。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

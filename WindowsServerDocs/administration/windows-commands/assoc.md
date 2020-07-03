@@ -1,6 +1,6 @@
 ---
 title: assoc
-description: '[Assoc] 命令的參考主題，它會顯示或修改副檔名關聯。'
+description: Assoc 命令的參考文章，它會顯示或修改副檔名關聯。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 58735201a1a0711db4d0cee9c292363acf5121f3
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 6e6d72dce2a3e820b52a33bf11dbf38890278fb8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819638"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924045"
 ---
 # <a name="assoc"></a>assoc
 
 顯示或修改副檔名關聯。 如果使用時不含參數， **assoc**會顯示所有目前副檔名關聯的清單。
 
 > [!NOTE]
-> 只有在 cmd.exe 中才支援此命令，而且無法從 PowerShell 使用。
+> 只有 cmd.exe 中才支援此命令，而且無法從 PowerShell 使用。
 
 ## <a name="syntax"></a>語法
 
@@ -68,13 +68,13 @@ assoc .bak=
 assoc | more
 ```
 
-若要將**assoc**的輸出傳送至檔案 assoc，請輸入：
+若要將**assoc**的輸出傳送至 assoc.txt 的檔案，請輸入：
 
 ```
 assoc>assoc.txt
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

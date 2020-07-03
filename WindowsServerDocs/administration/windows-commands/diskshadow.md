@@ -1,6 +1,6 @@
 ---
 title: Diskshadow
-description: Diskshadow 命令的參考主題，這是一種可公開磁片區陰影複製服務（VSS）所提供之功能的工具。
+description: Diskshadow 命令的參考文章，這是一種可公開磁片區陰影複製服務（VSS）所提供之功能的工具。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,23 +9,23 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ae3a4ba57d9c29375c560c300a4e4ead807184fc
-ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
+ms.openlocfilehash: 02e2836cd69b1fe85ea4f86da125c95c9ca1e4ea
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235194"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922797"
 ---
 # <a name="diskshadow"></a>Diskshadow
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-Diskshadow 是一種工具，可公開磁片區陰影複製服務（VSS）所提供的功能。 根據預設，Diskshadow 會使用類似于 Diskraid 或 Diskpart 的互動式命令直譯器。 Diskshadow 也包含可編寫腳本的模式。
+Diskshadow.exe 是一種工具，可公開磁片區陰影複製服務（VSS）所提供的功能。 根據預設，Diskshadow 會使用類似于 Diskraid 或 Diskpart 的互動式命令直譯器。 Diskshadow 也包含可編寫腳本的模式。
 
 > [!NOTE]
 > 若要執行 Diskshadow，至少需要本機 Administrators 群組的成員資格或同等許可權。
 
-## <a name="syntax"></a>語法
+## <a name="syntax"></a>Syntax
 
 針對互動模式，請在命令提示字元中輸入下列命令，以啟動 Diskshadow 命令直譯器：
 
@@ -33,7 +33,7 @@ Diskshadow 是一種工具，可公開磁片區陰影複製服務（VSS）所提
 diskshadow
 ```
 
-針對 [腳本模式]，輸入下列程式碼，其中*script .txt*是包含 Diskshadow 命令的腳本檔案：
+針對 [腳本模式]，輸入下列內容，其中*script.txt*是包含 Diskshadow 命令的腳本檔案：
 
 ```
 diskshadow -s script.txt
@@ -43,7 +43,7 @@ diskshadow -s script.txt
 
 您可以在 Diskshadow 命令直譯器中或透過腳本檔案執行下列命令。 至少要有**add**和**create** ，才可建立陰影複製。 不過，這會 forfeits 內容和選項設定、將會是複本備份，並建立不含備份執行腳本的陰影複製。
 
-| 命令 | 說明 |
+| Command | 說明 |
 | --------- | ----------- |
 | [set 命令](set_2.md) | 設定用來建立陰影複製的內容、選項、詳細資訊模式和中繼資料檔案。 |
 | [載入中繼資料命令](load-metadata.md) | 在匯入可轉移的陰影複製之前載入中繼資料 .cab 檔案，或在還原時載入寫入器中繼資料。 |
@@ -100,6 +100,6 @@ end backup
 #End of script
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

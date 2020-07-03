@@ -1,6 +1,6 @@
 ---
 title: 附加 vdisk
-description: Attach vdisk 命令的參考主題，它會附加（有時候稱為裝載或介面）虛擬硬碟（VHD），使其在主機電腦上顯示為本機硬碟。
+description: Attach vdisk 命令的參考文章，它會附加（有時稱為裝載或介面）虛擬硬碟（VHD），使其在主機電腦上顯示為本機硬碟。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 91f988d1f84869874dbd0d6a25dce43ef5138066
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: d0d07af390a025a60fabf53635ce156cab7b71d6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718902"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923914"
 ---
 # <a name="attach-vdisk"></a>附加 vdisk
 
@@ -33,10 +33,10 @@ attach vdisk [readonly] { [sd=<SDDL>] | [usefilesd] } [noerr]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | readonly | 將 VHD 附加為唯讀。 任何寫入作業都會傳回錯誤。 |
-| `sd=<SDDL string>` | 設定 VHD 上的使用者篩選。 篩選字串必須是安全描述項定義語言（SDDL）格式。 根據預設，使用者篩選允許實體磁片上的存取。 SDDL 字串可能很複雜，但在其最簡單的形式中，保護存取權的安全描述項稱為任意存取控制清單（DACL）。 它會使用以下格式`D:<dacl_flags><string_ace1><string_ace2>`： .。。`<string_acen>`<p>常見的 DACL 旗標如下：<ul><li>**答**： 允許存取</li><li>**D.** 拒絕存取</li></ul>一般許可權如下：<ul><li>**GA**。 所有存取</li><li>**GR**。 讀取存取權</li><li> **GW**。 寫入權限</li></ul>一般使用者帳戶如下：<ul><li>**BA**。 內建系統管理員</li><li>**AU**。 驗證的使用者</li><li>**CO**。 Creator Owner</li><li>**WD**。 所有人</li></ul>範例：<ul><li>**D:P：（A;;）GR;;;AU**。 提供所有已驗證使用者的讀取權限。</li><li>**D:P：（A;;）GA;;;WD**。 提供所有人完整存取權。</li></ul> |
+| `sd=<SDDL string>` | 設定 VHD 上的使用者篩選。 篩選字串必須是安全描述項定義語言（SDDL）格式。 根據預設，使用者篩選允許實體磁片上的存取。 SDDL 字串可能很複雜，但在其最簡單的形式中，保護存取權的安全描述項稱為任意存取控制清單（DACL）。 它會使用以下格式： `D:<dacl_flags><string_ace1><string_ace2>` .。。`<string_acen>`<p>常見的 DACL 旗標如下：<ul><li>**答**： 允許存取</li><li>**D.** 拒絕存取</li></ul>一般許可權如下：<ul><li>**GA**。 所有存取</li><li>**GR**。 讀取存取權</li><li> **GW**。 寫入權限</li></ul>一般使用者帳戶如下：<ul><li>**BA**。 內建系統管理員</li><li>**AU**。 驗證的使用者</li><li>**CO**。 Creator Owner</li><li>**WD**。 所有人</li></ul>範例：<ul><li>**D:P：（A;;）GR;;;AU**。 提供所有已驗證使用者的讀取權限。</li><li>**D:P：（A;;）GA;;;WD**。 提供所有人完整存取權。</li></ul> |
 | usefilesd | 指定應該在 VHD 上使用 .vhd 檔案的安全描述項。 如果未指定**Usefilesd**參數，VHD 將不會有明確的安全描述項，除非以**Sd**參數指定。 |
 | noerr | 僅用於腳本。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
 
@@ -48,20 +48,20 @@ attach vdisk [readonly] { [sd=<SDDL>] | [usefilesd] } [noerr]
 attach vdisk readonly
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [選取 vdisk](select-vdisk.md)
+- [select vdisk](select-vdisk.md)
 
 - [compact vdisk](compact-vdisk.md)
 
-- [詳細資料 vdisk](detail-vdisk.md)
+- [detail vdisk](detail-vdisk.md)
 
-- [卸離 vdisk](detach-vdisk.md)
+- [detach vdisk](detach-vdisk.md)
 
-- [展開 vdisk](expand-vdisk.md)
+- [expand vdisk](expand-vdisk.md)
 
-- [合併 vdisk](merge-vdisk.md)
+- [merge vdisk](merge-vdisk.md)
 
-- list
+- [list](list_1.md)

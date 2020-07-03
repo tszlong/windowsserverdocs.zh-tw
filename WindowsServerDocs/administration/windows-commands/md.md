@@ -1,6 +1,6 @@
 ---
 title: md
-description: Md 命令的參考主題，它會建立目錄或子目錄。
+description: Md 命令的參考文章，它會建立目錄或子目錄。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 928454c406216547783921005c9ff036a2844686
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: e7d5dac14572bfe53f92333cddcdc68bfa0aab1a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354633"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922097"
 ---
 # <a name="md"></a>md
 
@@ -31,7 +31,7 @@ md [<drive>:]<path>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `<drive>`: | 指定您要在其上建立新目錄的磁片磁碟機。 |
 | `<path>` | 指定新目錄的名稱和位置。 任何單一路徑的最大長度都是由檔案系統所決定。 這是必要參數。 |
@@ -59,7 +59,7 @@ md \Taxes\Property
 md \Taxes\Property\Current
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: manage-bde 保護裝置
-description: Manage-bde 保護裝置命令的參考主題，它會管理用於 BitLocker 加密金鑰的保護方法。
+description: Manage-bde 保護裝置命令的參考文章，它會管理用於 BitLocker 加密金鑰的保護方法。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/06/2018
-ms.openlocfilehash: 999c92fd9f2bfedad92a9c68c1528ee66836f315
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: d277c070ff0cdee0d93d7a8be11dc13bea5adb95
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222622"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922305"
 ---
 # <a name="manage-bde-protectors"></a>manage-bde 保護裝置
 
@@ -30,7 +30,7 @@ manage-bde -protectors [{-get|-add|-delete|-disable|-enable|-adbackup|-aadbackup
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | ----------- | ----------- |
 | -get | 顯示磁片磁碟機上已啟用的所有金鑰保護方法，並提供其類型和識別碼（ID）。 |
 | -新增 | 新增使用其他 **-add**參數所指定的金鑰保護方法。 |
@@ -40,7 +40,7 @@ manage-bde -protectors [{-get|-add|-delete|-disable|-enable|-adbackup|-aadbackup
 | -adbackup | 備份指定給 Active Directory Domain Services （AD DS）之磁片磁碟機的所有修復資訊。 若只要備份單一修復金鑰以 AD DS，請附加 **-id**參數，並指定要備份的特定修復金鑰識別碼。 |
 | -aadbackup | 備份指定給 Azure Active Directory （Azure AD）之磁片磁碟機的所有修復資訊。 若只要備份單一修復金鑰以 Azure AD，請附加 **-id**參數，並指定要備份的特定修復金鑰識別碼。 |
 | `<drive>` | 表示後面接著冒號的磁碟機號。 |
-| -computername | 指定 manage-bde.wsf 將用來修改另一部電腦上的 BitLocker 保護。 您也可以使用 **-cn**做為此命令的縮寫版本。 |
+| -computername | 指定 manage-bde.exe 將用來修改另一部電腦上的 BitLocker 保護。 您也可以使用 **-cn**做為此命令的縮寫版本。 |
 | `<name>` | 代表要修改 BitLocker 保護的電腦名稱稱。 接受的值包括電腦的 NetBIOS 名稱和電腦的 IP 位址。 |
 | -? 或/？ | 在命令提示字元中顯示簡短說明。 |
 | -help 或-h | 在命令提示字元中顯示完整的說明。 |
@@ -56,7 +56,7 @@ manage-bde -protectors -add [<drive>] [-forceupgrade] [-recoverypassword <numeri
 [{-?|/?}] [{-help|-h}]
 ```
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `<drive>` | 表示後面接著冒號的磁碟機號。 |
 | -msfve-recoverypassword | 新增數位密碼保護裝置。 您也可以使用 **-rp**做為此命令的縮寫版本。 |
@@ -87,7 +87,7 @@ manage-bde -protectors -delete <drive> [-type {recoverypassword|externalkey|cert
 [-id <keyprotectorID>] [-computername <name>] [{-?|/?}] [{-help|-h}]
 ```
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `<drive>` | 表示後面接著冒號的磁碟機號。 |
 | -類型 | 識別要刪除的金鑰保護裝置。 您也可以使用 **-t**做為此命令的縮寫版本。 |
@@ -102,7 +102,7 @@ manage-bde -protectors -delete <drive> [-type {recoverypassword|externalkey|cert
 | 身分識別 | 指定應刪除與磁片磁碟機相關聯的任何身分識別金鑰保護裝置。 |
 | -ID | 使用金鑰識別碼來識別要刪除的金鑰保護裝置。 這個參數是 **-type**參數的替代選項。 |
 | `<keyprotectorID>` | 識別要刪除之磁片磁碟機上的個別金鑰保護裝置。 您可以使用**manage-bde-保護裝置-get**命令來顯示金鑰保護裝置識別碼。 |
-| -computername | 指定 manage-bde.wsf 將用來修改另一部電腦上的 BitLocker 保護。 您也可以使用 **-cn**做為此命令的縮寫版本。 |
+| -computername | 指定 manage-bde.exe 將用來修改另一部電腦上的 BitLocker 保護。 您也可以使用 **-cn**做為此命令的縮寫版本。 |
 | `<name>` | 代表要修改 BitLocker 保護的電腦名稱稱。 接受的值包括電腦的 NetBIOS 名稱和電腦的 IP 位址。 |
 | -? 或/？ | 在命令提示字元中顯示簡短說明。 |
 | -help 或-h | 在命令提示字元中顯示完整的說明。 |
@@ -113,11 +113,11 @@ manage-bde -protectors -delete <drive> [-type {recoverypassword|externalkey|cert
 manage-bde -protectors -disable <drive> [-rebootcount <integer 0 - 15>] [-computername <name>] [{-?|/?}] [{-help|-h}]
 ```
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `<drive>` | 表示後面接著冒號的磁碟機號。 |
 | rebootcount | 指定作業系統磁片區的保護已暫停，並會在 Windows 重新開機**rebootcount**參數中指定的次數後繼續。 指定**0**會無限期暫停保護。 如果未指定此參數，BitLocker 保護會在 Windows 重新開機之後自動繼續。 您也可以使用 **-rc**做為此命令的縮寫版本。 |
-| -computername | 指定 manage-bde.wsf 將用來修改另一部電腦上的 BitLocker 保護。 您也可以使用 **-cn**做為此命令的縮寫版本。 |
+| -computername | 指定 manage-bde.exe 將用來修改另一部電腦上的 BitLocker 保護。 您也可以使用 **-cn**做為此命令的縮寫版本。 |
 | `<name>` | 代表要修改 BitLocker 保護的電腦名稱稱。 接受的值包括電腦的 NetBIOS 名稱和電腦的 IP 位址。 |
 | -? 或/？ | 在命令提示字元中顯示簡短說明。 |
 | -help 或-h | 在命令提示字元中顯示完整的說明。 |
@@ -154,7 +154,7 @@ manage-bde -protectors -delete C: -type tpmandstartupkey
 manage-bde -protectors -adbackup C:
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

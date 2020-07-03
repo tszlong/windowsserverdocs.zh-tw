@@ -1,6 +1,6 @@
 ---
-title: auditpol 備份
-description: Auditpol backup 命令的參考主題，會備份系統稽核原則設定、所有使用者的每一使用者稽核原則設定，以及逗號分隔值（CSV）文字檔的所有審核選項。
+title: auditpol backup
+description: Auditpol backup 命令的參考文章，會備份系統稽核原則設定、所有使用者的每個使用者稽核原則設定，以及逗號分隔值（CSV）文字檔的所有審核選項。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ddc6bbbc379453c86df27674b57f29f7c0960772
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 8678dbc80b664e3ab667f197f708fbbdbbe40dc7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719164"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923813"
 ---
-# <a name="auditpol-backup"></a>auditpol 備份
+# <a name="auditpol-backup"></a>auditpol backup
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -32,14 +32,14 @@ auditpol /backup /file:<filename>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 |-----------|------------- |
 | /file | 指定將備份稽核原則之檔案的名稱。 |
 | /? | 在命令提示字元顯示說明。 |
 
 ## <a name="examples"></a>範例
 
-若要將所有使用者、系統稽核原則設定和所有審核選項的每個使用者稽核原則設定備份到名為 auditpolicy 的 CSV 格式文字檔，請輸入：
+若要將所有使用者、系統稽核原則設定和所有 [審核選項] 的每個使用者稽核原則設定備份到名為 auditpolicy.csv 的 CSV 格式文字檔中，請輸入：
 
 ```
 auditpol /backup /file:C:\auditpolicy.csv
@@ -48,7 +48,7 @@ auditpol /backup /file:C:\auditpolicy.csv
 > [!NOTE]
 > 如果未指定磁片磁碟機，則會使用目前的目錄。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: 附加
-description: Append 命令的參考主題，可讓程式在指定的目錄中開啟資料檔案，就像是在目前的目錄中一樣。
+description: Append 命令的參考文章，可讓程式在指定的目錄中開啟資料檔案，就像是在目前的目錄中一樣。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 562a13c6b1a47e43bb66548902f0b8e57e789a34
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c8e67c4419b563fdeba156b2bb1f082bf7de834c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719001"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924030"
 ---
 # <a name="append"></a>附加
 
@@ -32,7 +32,7 @@ append ;
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `[\<drive>:]<path>` | 指定要附加的磁片磁碟機和目錄。 |
 | /x： on | 將附加的目錄套用至檔案搜尋和啟動應用程式。 |
@@ -57,6 +57,6 @@ append ;
 append /e
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
 title: bitsadmin cache and setexpirationtime
-description: Bitsadmin cache 和 setexpirationtime 命令的參考主題，其會設定快取到期時間。
+description: Bitsadmin cache 和 setexpirationtime 命令的參考文章，其會設定快取到期時間。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: eeb1dbd0439a1a39711e2a074ada4c772b9ca016
-ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
+ms.openlocfilehash: 60372a74acc6ea5312afb5dafcb3ab7b3299f4d2
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235041"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923257"
 ---
 # <a name="bitsadmin-cache-and-setexpirationtime"></a>bitsadmin cache and setexpirationtime
 
@@ -42,7 +42,7 @@ bitsadmin /cache /setexpirationtime secs
 bitsadmin /cache / setexpirationtime 60
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

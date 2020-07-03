@@ -1,6 +1,6 @@
 ---
 title: ksetup
-description: Ksetup 命令的參考主題，其會執行與設定及維護 Kerberos 通訊協定的相關工作，以及支援 Kerberos 領域的金鑰發佈中心（KDC）。
+description: Ksetup 命令的參考文章，其會執行與設定和維護 Kerberos 通訊協定，以及金鑰發佈中心（KDC）來支援 Kerberos 領域相關的工作。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 82b1627a8ddbc9e51ac32825c5a42c3df9effbf7
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: a0398d53516f81de68a7de5854ed2c996a78d1e5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817348"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922621"
 ---
 # <a name="ksetup"></a>ksetup
 
@@ -63,10 +63,10 @@ ksetup
 | [ksetup delkdc](ksetup-delkdc.md) | 刪除領域的 KDC 專案。 |
 | [ksetup addkpasswd](ksetup-addkpasswd.md) | 新增領域的 kpasswd 伺服器位址。 |
 | [ksetup delkpasswd](ksetup-delkpasswd.md) | 刪除領域的 kpasswd 伺服器位址。 |
-| [ksetup 伺服器](ksetup-server.md) | 可讓您指定要套用變更的 Windows 電腦名稱稱。 |
+| [ksetup server](ksetup-server.md) | 可讓您指定要套用變更的 Windows 電腦名稱稱。 |
 | [ksetup setcomputerpassword](ksetup-setcomputerpassword.md) | 設定電腦網域帳戶（或主機主體）的密碼。 |
 | [ksetup removerealm](ksetup-removerealm.md) | 從登錄中刪除指定領域的所有資訊。 |
-| [ksetup 網域](ksetup-domain.md) | 可讓您指定網域（如果 [ `<domainname>` **/domain** ] 參數尚未設定）。 |
+| [ksetup domain](ksetup-domain.md) | 可讓您指定網域（如果 [ `<domainname>` **/domain** ] 參數尚未設定）。 |
 | [ksetup changepassword](ksetup-changepassword.md) | 可讓您使用 kpasswd 來變更登入使用者的密碼。 |
 | [ksetup listrealmflags](ksetup-listrealmflags.md) | 列出**ksetup**可以偵測到的可用領域旗標。 |
 | [ksetup setrealmflags](ksetup-setrealmflags.md) | 設定特定領域的領域旗標。 |
@@ -81,6 +81,6 @@ ksetup
 | [ksetup delenctypeattr](ksetup-delenctypeattr.md) | 刪除網域的加密類型信任屬性。 |
 | /? | 在命令提示字元顯示 [說明]。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

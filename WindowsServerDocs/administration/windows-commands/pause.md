@@ -1,6 +1,6 @@
 ---
 title: pause
-description: Pause 命令的參考主題，會暫停批次程式的處理。
+description: Pause 命令的參考文章，會暫停批次程式的處理。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f603802926d0f9418a82e1f4981181889fc573ef
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: f604bbd205a074d8966cd2c1a1bc65506e7ca5e0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472514"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922897"
 ---
 # <a name="pause"></a>pause
 
@@ -28,7 +28,7 @@ pause
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 |--|--|
 | /? | 在命令提示字元顯示說明。 |
 
@@ -53,6 +53,6 @@ goto begin
 
 在此範例中，磁片磁碟機 A 中磁片上的所有檔案都會複製到目前的目錄。 當訊息提示您將新磁片放在磁片磁碟機 A 之後， **pause**命令就會暫停處理，讓您可以變更磁片，然後按任意鍵繼續處理。 此批次程式會在無止盡的迴圈中執行， **goto begin**命令會將命令直譯器傳送至批次檔的開始標籤。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

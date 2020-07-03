@@ -1,6 +1,6 @@
 ---
 title: evntcmd
-description: Evntcmd 命令的參考主題，其會根據設定檔中的資訊，將事件的轉譯設定為陷阱、陷阱目的地或兩者。
+description: Evntcmd 命令的參考文章，其會根據設定檔中的資訊，將事件的轉譯設定為陷阱、陷阱目的地或兩者。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e922d7876a8065a0e05e9fa7bf2cf8db45bffd25
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 291b13163f5c5a13442ed6dc80b769d0170df42e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437093"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922789"
 ---
 # <a name="evntcmd"></a>evntcmd
 
@@ -30,7 +30,7 @@ evntcmd [/s <computername>] [/v <verbositylevel>] [/n] <filename>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | /s`<computername>` | 依名稱指定要將事件轉譯成陷阱、陷阱目的地或兩者的電腦。 如果您未指定電腦，則會在本機電腦上進行設定。 |
 | 停`<verbositylevel>` | 指定哪些類型的狀態訊息會顯示為「陷阱」和「設陷目的地」。 這個參數必須是介於0到10之間的整數。 如果您指定10，則會顯示所有類型的訊息，包括追蹤訊息以及是否已成功設定 trap 的警告。 如果您指定0，則不會出現任何訊息。 |
@@ -150,6 +150,6 @@ evntcmd [/s <computername>] [/v <verbositylevel>] [/n] <filename>
 #pragma delete_TRAP_DEST private localhost
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

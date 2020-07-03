@@ -1,6 +1,6 @@
 ---
 title: pbadmin
-description: Pbadmin 命令的參考主題。 此命令已被取代，在未來的 Windows 版本中不保證會受到支援。
+description: Pbadmin 命令的參考文章。 此命令已被取代，在未來的 Windows 版本中不保證會受到支援。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 68535895386910a358ee0515dc7f09edb2122be8
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: da114c6b6501e9a8c305cd416d58ca0396745f27
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472494"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922860"
 ---
 # <a name="pbadmin"></a>pbadmin
 
@@ -25,6 +25,6 @@ ms.locfileid: "85472494"
 
 管理電話簿。 使用時不含參數，pbadmin 會啟動電話簿系統管理員。 如需描述和使用方式資訊，請參閱[pbadmin](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc755767(v=ws.10))。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
 title: change port
-description: '[變更埠] 命令的參考主題，其會列出或變更 COM 埠對應，以與 MS-DOS 應用程式相容。'
+description: '[變更埠] 命令的參考文章，其會列出或變更 COM 埠對應，以與 MS-DOS 應用程式相容。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8dcf1097ea037aff9269edafea6e640054a697e3
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 0735c4c21ae8e321da1cfe31c2874f3dcfc540c7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82716072"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922508"
 ---
 # <a name="change-port"></a>change port
 
@@ -33,9 +33,9 @@ change port [<portX>=<portY| /d <portX | /query]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 |-----------------|----------------------------------------|
-| <portX>=<portY> | 將 COM `<*portX*>`對應至`<*portY*>` |
+| <portX>=<portY> | 將 COM 對應 `<*portX*>` 至`<*portY*>` |
 | /d<portX> | 刪除 COM 的對應`<*portX*>` |
 | /query | 顯示目前的埠對應。 |
 | /? | 在命令提示字元顯示說明。 |
@@ -49,18 +49,18 @@ change port [<portX>=<portY| /d <portX | /query]
 ## <a name="examples"></a>範例
 
 - 若要將 COM12 對應到 COM1 以供以 MS-DOS 為基礎的應用程式使用，請輸入：
-  
+
   ```
   change port com12=com1
   ```
 
 - 若要顯示目前的埠對應，請輸入：
-  
+
   ```
   change port /query
   ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

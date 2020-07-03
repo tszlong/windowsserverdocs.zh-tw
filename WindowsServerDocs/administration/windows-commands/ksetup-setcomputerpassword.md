@@ -1,6 +1,6 @@
 ---
 title: ksetup setcomputerpassword
-description: Ksetup setcomputerpassword 命令的參考主題，其會設定本機電腦的密碼。
+description: Ksetup setcomputerpassword 命令的參考文章，其會設定本機電腦的密碼。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1ec410cd85c13cb3a925c3fc65b8c9f86fba606a
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 70af854838e439532e49d6159b010e453d339244
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817428"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922610"
 ---
 # <a name="ksetup-setcomputerpassword"></a>ksetup setcomputerpassword
 
@@ -43,7 +43,7 @@ ksetup /setcomputerpassword <password>
 ksetup /setcomputerpassword IPop$897!
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

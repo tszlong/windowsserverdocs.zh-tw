@@ -1,6 +1,6 @@
 ---
 title: bdehdcfg newdriveletter
-description: Bdehdcfg newdriveletter 命令的參考主題，它會將新的磁碟機號指派給用來做為系統磁片磁碟機的磁片磁碟機部分。
+description: Bdehdcfg newdriveletter 命令的參考文章，它會將新的磁碟機號指派給用來做為系統磁片磁碟機的磁片磁碟機部分。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: da09ae1469c6fc8370e6bd0f2f7a8f3efd8dc4f0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f210056f74e930ad39361c9fc0cbf05d6e1894f4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718670"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923496"
 ---
 # <a name="bdehdcfg-newdriveletter"></a>bdehdcfg： newdriveletter
 
@@ -28,19 +28,19 @@ bdehdcfg -target {default|unallocated|<drive_letter> shrink|<drive_letter> merge
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | ---------| ----------- |
 | `<drive_letter>` | 定義將指派給指定目標磁片磁碟機的磁碟機號。 |
 
 ## <a name="examples"></a>範例
 
-若要指派預設磁片磁碟機磁碟機號`P`：
+若要指派預設磁片磁碟機磁碟機號 `P` ：
 
 ```
 bdehdcfg -target default -newdriveletter P:
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

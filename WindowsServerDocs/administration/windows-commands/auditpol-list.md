@@ -1,6 +1,6 @@
 ---
-title: auditpol 清單
-description: Auditpol list 命令的參考主題，其中會列出稽核原則類別和子類別，或列出已定義每個使用者稽核原則的使用者。
+title: auditpol list
+description: Auditpol list 命令的參考文章，其中會列出稽核原則類別和子類別，或列出已定義每個使用者稽核原則的使用者。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 96ee4388c716c066a2e9b55b57dd2e70b4b4f69c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a0ce67b9907fa4c5207d75422dc972d70f5e6eea
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719101"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923714"
 ---
-# <a name="auditpol-list"></a>auditpol 清單
+# <a name="auditpol-list"></a>auditpol list
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -34,7 +34,7 @@ auditpol /list
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | ------- | -------- |
 | /user | 抓取已定義每個使用者稽核原則的所有使用者。 如果與/v 參數搭配使用，則也會顯示使用者的安全識別碼（SID）。 |
 | /類別 | 顯示系統所瞭解的類別名稱。 如果與/v 參數搭配使用，則也會顯示類別全域唯一識別碼（GUID）。 |
@@ -69,7 +69,7 @@ auditpol /list /subcategory:* /r
 auditpol /list /subcategory:detailed Tracking,DS Access
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

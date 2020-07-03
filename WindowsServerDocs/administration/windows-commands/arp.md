@@ -1,6 +1,6 @@
 ---
 title: arp
-description: Arp 命令的參考主題，它會顯示及修改用來儲存 IP 位址及其已解析之實體位址的位址解析通訊協定（arp）快取中的專案。
+description: Arp 命令的參考文章，它會顯示及修改用來儲存 IP 位址及其已解析之實體位址的位址解析通訊協定（arp）快取中的專案。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fdbb9fe636bb30be90164d9a2163c495a9c2e704
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 41f9ebde5faa3eda99402aa86a0aef5e55b42eba
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819648"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924008"
 ---
 # <a name="arp"></a>arp
 
@@ -66,6 +66,6 @@ arp /a /n 10.0.0.99
 arp /s 10.0.0.80 00-AA-00-4F-2A-9C
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

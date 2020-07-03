@@ -1,6 +1,6 @@
 ---
 title: 離線
-description: 離線命令的參考主題，其會將線上磁片或磁片區設為離線狀態。
+description: 離線命令的參考文章，其會將線上磁片或磁片區設為離線狀態。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f189ba1208e9e9a6769321170d2a9289b10189e8
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: d1f8f5b7aaab32bcc99cc2b74c8f0e3baf152d80
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472676"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922602"
 ---
 # <a name="offline"></a>離線
 
@@ -29,11 +29,11 @@ offline volume
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | [offline disk](offline-disk.md) | 將具有焦點的線上磁片帶到離線狀態。 |
 | [offline volume](offline-volume.md) | 將線上磁片區的焦點放在離線狀態。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

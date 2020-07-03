@@ -1,6 +1,6 @@
 ---
 title: diskperf
-description: Diskperf 命令的參考主題，可以用來從遠端啟用或停用執行 Windows 之電腦上的實體或邏輯磁片效能計數器。
+description: Diskperf 命令的參考文章，可用來從遠端啟用或停用執行 Windows 之電腦上的實體或邏輯磁片效能計數器。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 092518f414d6e27436c46ffd6f9f15b6e6c0407e
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: e1e33844849993c6d5a9f9330264f31e52af3b29
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82992432"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922818"
 ---
 # <a name="diskperf"></a>diskperf
 
 **Diskperf**命令會從遠端在執行 Windows 的電腦上啟用或停用實體或邏輯磁片效能計數器。
 
-## <a name="syntax"></a>語法
+## <a name="syntax"></a>Syntax
 
 ```
 diskperf [-y[d|v] | -n[d|v]] [\\computername]
@@ -28,7 +28,7 @@ diskperf [-y[d|v] | -n[d|v]] [\\computername]
 
 ## <a name="options"></a>選項
 
-| 選項 | 描述 |
+| 選項 | 說明 |
 | ------ | ----------- |
 | -y | 當電腦重新開機時，啟動所有磁片效能計數器。 |
 | -yd | 當電腦重新開機時，啟用實體磁片磁碟機的磁片效能計數器。 |
@@ -39,6 +39,6 @@ diskperf [-y[d|v] | -n[d|v]] [\\computername]
 | `\\<computername>` | 指定您要啟用或停用磁片效能計數器之電腦的名稱。 |
 | -? | 顯示即時線上說明。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

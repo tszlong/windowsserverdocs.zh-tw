@@ -1,6 +1,6 @@
 ---
 title: forfiles
-description: Forfiles 命令的參考主題，它會在檔案或一組檔案上選取並執行命令。
+description: Forfiles 命令的參考文章，會在檔案或一組檔案上選取並執行命令。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/20/2020
-ms.openlocfilehash: 96ef7d016bd13961a4814ba4cd09095aed4f0e97
-ms.sourcegitcommit: 29f7a4811b4d36d60b8b7c55ce57d4ee7d52e263
+ms.openlocfilehash: 26c443aa05d081fc257dc49d2f2c7f6a9adae865
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83716843"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922398"
 ---
 # <a name="forfiles"></a>forfiles
 
@@ -55,7 +55,7 @@ forfiles [/P pathname] [/M searchmask] [/S] [/C command] [/D [+ | -] [{<date> | 
     | @FDATE | 上次修改檔案的日期戳記。 |
     | @FTIME | 上次修改檔案的時間戳記。 |
 
-- **Forfiles**命令可讓您在上執行命令，或將引數傳遞至多個檔案。 例如，您可以在具有 .txt 副檔名的樹狀目錄中的所有檔案上執行**type**命令。 或者，您可以在磁片磁碟機 C 上執行每個批次檔（* .bat），檔案名 Myinput.x .txt 作為第一個引數。
+- **Forfiles**命令可讓您在上執行命令，或將引數傳遞至多個檔案。 例如，您可以在具有 .txt 副檔名的樹狀目錄中的所有檔案上執行**type**命令。 或者，您可以在磁片磁碟機 C 上執行每個批次檔（* .bat），檔案名 Myinput.txt 做為第一個引數。
 
 - 此命令可以：
 
@@ -101,6 +101,6 @@ forfiles /S /M *.* /D -01/01/2007 /C "cmd /c echo @file is outdated."
 forfiles /S /M *.* /C "cmd /c echo The extension of @file is 0x09@ext"
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

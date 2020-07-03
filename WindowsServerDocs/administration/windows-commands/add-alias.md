@@ -1,6 +1,6 @@
 ---
 title: add alias
-description: Add alias 命令的參考主題，其會將別名新增至別名環境。
+description: 新增別名命令的參考文章，其會將別名新增至別名環境。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 66301a39a1e969e270b42b5ce92a73392a134357
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 405c04b17b32477654f0349c04c6059cf246f804
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819658"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924128"
 ---
 # <a name="add-alias"></a>add alias
 
@@ -61,7 +61,7 @@ add alias System1 %VSS_SHADOW_1%
 add alias System1 {ff47165a-1946-4a0c-b7f4-80f46a309278}
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

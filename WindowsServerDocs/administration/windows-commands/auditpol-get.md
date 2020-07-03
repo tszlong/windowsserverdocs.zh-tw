@@ -1,6 +1,6 @@
 ---
 title: auditpol get
-description: Auditpol get 命令的參考主題，它會抓取系統原則、每個使用者的原則、審核選項和 audit 安全描述項物件。
+description: Auditpol get 命令的參考文章，它會抓取系統原則、每個使用者的原則、審核選項和 audit 安全描述項物件。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 859ea9e2e42af0fe7f34f4e378166685f8316b9e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 698823ae48dd4ca52cb26d583a35d3faf1c1d03a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719141"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923745"
 ---
 # <a name="auditpol-get"></a>auditpol get
 
@@ -38,7 +38,7 @@ auditpol /get
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | /user | 顯示查詢每個使用者稽核原則的安全性主體。 必須指定/category 或/subcategory 參數。 使用者可指定為安全識別碼（SID）或名稱。 如果未指定任何使用者帳戶，則會查詢系統稽核原則。 |
 | /類別 | 全域唯一識別碼（GUID）或名稱所指定的一或多個 audit 分類。 您可以使用星號（*）來表示應該查詢所有的 audit 分類。 |
@@ -61,7 +61,7 @@ auditpol /get /user:{S-1-5-21-1443922412-3030960370-963420232-51} /category:Syst
 ```
 
 > [!NOTE]
-> 在兩種情況下，此命令很有用。 1）監視特定使用者帳戶的可疑活動時，您可以使用此`/get`命令來取得特定類別的結果，方法是使用包含原則來啟用額外的審核。 2）如果帳戶的 audit 設定正在記錄許多但多餘的事件，您可以使用`/get`命令，針對該帳戶使用排除原則來篩選掉無關的事件。 如需所有類別目錄的清單，請`auditpol /list /category`使用命令。
+> 在兩種情況下，此命令很有用。 1）監視特定使用者帳戶的可疑活動時，您可以使用此 `/get` 命令來取得特定類別的結果，方法是使用包含原則來啟用額外的審核。 2）如果帳戶的 audit 設定正在記錄許多但多餘的事件，您可以使用 `/get` 命令，針對該帳戶使用排除原則來篩選掉無關的事件。 如需所有類別目錄的清單，請使用 `auditpol /list /category` 命令。
 
 若要抓取分類和特定子類別的每個使用者稽核原則，以報告來賓帳戶的系統類別下該子類別的內含和排除設定，請輸入：
 
@@ -105,7 +105,7 @@ auditpol /get /option:AuditBaseObjects
 auditpol /get /option:CrashOnAuditFail /r
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

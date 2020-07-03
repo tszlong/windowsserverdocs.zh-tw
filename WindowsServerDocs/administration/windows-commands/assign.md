@@ -1,6 +1,6 @@
 ---
 title: assign
-description: Assign 命令的參考主題，其會將磁碟機號或掛接點指派給具有焦點的磁片區。
+description: 指派命令的參考文章，其會將磁碟機號或掛接點指派給具有焦點的磁片區。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f17c22a0052ade6f16e7842813a04c95e76b57ab
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 8bfcb43b2e42ca65d767f0683bf13dc971073c27
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718990"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923999"
 ---
 # <a name="assign"></a>assign
 
@@ -35,7 +35,7 @@ assign [{letter=<d> | mount=<path>}] [noerr]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `letter=<d>` | 您想要指派給磁片區的磁碟機號。 |
 | `mount=<path>` | 您想要指派給磁片區的掛接點路徑。 如需有關如何使用此命令的指示，請參閱[將掛接點資料夾路徑指派給磁片磁碟機](https://docs.microsoft.com/windows-server/storage/disk-management/assign-a-mount-point-folder-path-to-a-drive)。 |
@@ -49,7 +49,7 @@ assign [{letter=<d> | mount=<path>}] [noerr]
 assign letter=e
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
