@@ -1,6 +1,6 @@
 ---
 title: freedisk
-description: Freedisk 命令的參考主題，在繼續安裝程式之前，會先檢查指定的磁碟空間容量是否可用。
+description: Freedisk 命令的參考文章，在繼續安裝程式之前，會先檢查指定的磁碟空間容量是否可用。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2135bd24e24235de7c687ed58e0603db20c68262
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: d0cfce52c2eaf0917f8169d959b61832bd1779e0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436973"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924749"
 ---
 # <a name="freedisk"></a>freedisk
 
@@ -30,7 +30,7 @@ freedisk [/s <computer> [/u [<domain>\]<user> [/p [<password>]]]] [/d <drive>] [
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | /s`<computer>` | 指定遠端電腦的名稱或 IP 位址（請勿使用反斜線）。 預設是本機電腦。 這個參數會套用至命令中指定的所有檔案和資料夾。 |
 | u`[<domain>\]<user>` | 以指定之使用者帳戶的許可權執行腳本。 預設值為 [系統許可權]。 |
@@ -60,6 +60,6 @@ freedisk 50mb
 INFO: The specified 52,428,800 byte(s) of free space is available on current drive.
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

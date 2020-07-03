@@ -1,6 +1,6 @@
 ---
 title: prnjobs
-description: Prnjobs 命令的參考主題，它會暫停、繼續、取消和列出列印工作。
+description: Prnjobs 命令的參考文章，它會暫停、繼續、取消和列出列印工作。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: e13e217d422aa6d8f2c585c8890915af7e396ddb
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 79ad0631a2d1c871664ecebc11c26f2e005ca772
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472263"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924193"
 ---
 # <a name="prnjobs"></a>prnjobs
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-暫停、繼續、取消和列出列印工作。 此命令是位於目錄中的 Visual Basic 腳本 `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 若要在命令提示字元中使用此命令，請輸入**cscript** ，後面接著 prnjobs 檔案的完整路徑，或將目錄變更為適當的資料夾。 例如： `cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnjobs.vbs` 。
+暫停、繼續、取消和列出列印工作。 此命令是位於目錄中的 Visual Basic 腳本 `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 若要在命令提示字元中使用此命令，請輸入**cscript** ，後面接著 prnjobs 檔案的完整路徑，或將目錄變更為適當的資料夾。 例如：`cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnjobs.vbs`。
 
 ## <a name="syntax"></a>語法
 
@@ -30,7 +30,7 @@ cscript prnjobs {-z | -m | -x | -l | -?} [-s <Servername>] [-p <Printername>] [-
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 |--|--|
 | -Z | 暫停 **-j**參數所指定的列印工作。 |
 | -M | 繼續 **-j**參數所指定的列印工作。 |
@@ -60,7 +60,7 @@ cscript prnjobs.vbs -z -s HRServer -p colorprinter -j 27
 cscript prnjobs.vbs -l -p colorprinter_2
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

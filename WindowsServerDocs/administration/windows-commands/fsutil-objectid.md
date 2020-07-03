@@ -1,6 +1,6 @@
 ---
 title: fsutil objectid
-description: Fsutil objectid 命令的參考主題，它會管理物件識別碼以追蹤其他物件，例如檔案、目錄和連結。
+description: Fsutil objectid 命令的參考文章，它會管理物件識別碼以追蹤其他物件，例如檔案、目錄和連結。
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: 693ab895-9d0c-47c1-9f52-df5cd287842a
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: cdaa3fb0a8a439e568e4b181890db49923e109e7
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 5ab0b95bdcde8bce51e1d5a2c14888229621fcaa
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83435804"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925243"
 ---
 # <a name="fsutil-objectid"></a>fsutil objectid
 
@@ -36,7 +36,7 @@ fsutil objectid [set] <objectID> <birthvolumeID> <birthobjectID> <domainID> <fil
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | 建立 | 如果指定的檔案不存在，則建立物件識別碼。 如果檔案已經有物件識別碼，這個子命令就相當於**查詢**子命令。 |
 | delete | 刪除物件識別碼。 |
@@ -70,7 +70,7 @@ fsutil objectid [set] <objectID> <birthvolumeID> <birthobjectID> <domainID> <fil
 
 `fsutil objectid set 40dff02fc9b4d4118f120090273fa9fc f86ad6865fe8d21183910008c709d19e 40dff02fc9b4d4118f120090273fa9fc 00000000000000000000000000000000 c:\temp\sample.txt`
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: ksetup addhosttorealmmap
-description: Ksetup addhosttorealmmap 命令的參考主題，它會在指定的主機和領域之間新增服務主體名稱（SPN）對應。
+description: Ksetup addhosttorealmmap 命令的參考文章，它會在指定的主機和領域之間新增服務主體名稱（SPN）對應。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ee2639a5bb071bdd3d6ac3f6373e881c18f3bf9a
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 830db84e210b94088e74fd08909f7c47ff84df98
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818108"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925570"
 ---
 # <a name="ksetup-addhosttorealmmap"></a>ksetup addhosttorealmmap
 
@@ -45,7 +45,7 @@ ksetup /addhosttorealmmap IPops897 CONTOSO
 
 請檢查登錄，確定對應是否如預期發生。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

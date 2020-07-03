@@ -1,6 +1,6 @@
 ---
 title: eventcreate
-description: Eventcreate 命令的參考主題，可讓系統管理員在指定的事件記錄檔中建立自訂事件。
+description: Eventcreate 命令的參考文章，可讓系統管理員在指定的事件記錄檔中建立自訂事件。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8348e61f6cd94c9b660d0ad9cac4cb1f96920cad
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 60ed97eeffc8ae2410fdd8f296a0e8348f376652
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436873"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925315"
 ---
 # <a name="eventcreate"></a>eventcreate
 
@@ -31,7 +31,7 @@ eventcreate [/s <computer> [/u <domain\user> [/p <password>]] {[/l {APPLICATION|
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- |------------ |
 | /s`<computer>` | 指定遠端電腦的名稱或 IP 位址（請勿使用反斜線）。 預設是本機電腦。 |
 | u`<domain\user>` | 以或指定之使用者的帳戶許可權來執行命令 `<user>` `<domain\user>` 。 預設為發出命令之電腦上目前登入使用者的許可權。 |
@@ -57,6 +57,6 @@ eventcreate /s server1 /s server2 /u user /p password /id 100 /t error /so winmg
 eventcreate /s server /u user /id 100 /t warning /so winmgmt /d Remote machine with partial user credentials
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

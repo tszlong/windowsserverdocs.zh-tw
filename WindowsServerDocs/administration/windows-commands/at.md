@@ -1,6 +1,6 @@
 ---
 title: at
-description: At 命令的參考主題，會排定在指定的時間和日期，于電腦上執行命令和程式。
+description: At 命令的參考文章，會排定在指定的時間和日期，于電腦上執行命令和程式。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3aafcf4cbc4a6626a3390fe5ad6a305b90dfaec0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1ead4132b70cc98d9bdd7f478a8e3f18ab6da1aa
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718924"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923936"
 ---
 # <a name="at"></a>at
 
@@ -31,7 +31,7 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `\<computername\>` | 指定遠端電腦。 如果您省略此參數，請**在**排程本機電腦上的命令和程式。 |
 | `<id>` | 指定指派給已排程命令的識別碼。 |
@@ -47,7 +47,7 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
 
 ### <a name="remarks"></a>備註
 
-- 此命令不會在執行命令之前自動載入 cmd.exe。 如果您不是執行可執行檔（.exe），您必須在命令開頭明確載入 cmd.exe，如下所示：
+- 執行命令之前，此命令不會自動載入 cmd.exe。 如果您不是執行可執行檔（.exe），您必須在命令開頭明確載入 cmd.exe，如下所示：
 
     ```
     cmd /c dir > c:\test.out
@@ -62,7 +62,7 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
     OK      3    Each F     11:59 PM    backup2.bat
     ```
 
-- 如果使用此命令包含識別碼（*ID*），則只會顯示單一專案的資訊，其格式如下所示：  
+- 如果使用此命令包含識別碼（*ID*），則只會顯示單一專案的資訊，其格式如下所示：
 
     ```
     Task ID: 1
@@ -74,7 +74,7 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
 
 - 在您排程命令之後（尤其是具有命令列選項的命令），請在不使用任何命令列選項的情況下輸入，**以**檢查命令語法是否正確。 如果 [**命令列**] 欄位中的資訊錯誤，請刪除命令並重新輸入。 如果仍然不正確，請使用較少的命令列選項來重新輸入命令。
 
-- **在**執行時，以背景進程來排程的命令。 [輸出] 不會顯示在 [電腦] 畫面上。 若要將輸出重新導向至檔案，請使用`>`重新導向符號。 如果您將輸出重新導向至檔案，不論您是在命令列`^`或批次檔**中使用，** 都必須在重新導向符號之前使用 escape 符號。 例如，若要將輸出重新導向至*輸出 .txt*，請輸入：
+- **在**執行時，以背景進程來排程的命令。 [輸出] 不會顯示在 [電腦] 畫面上。 若要將輸出重新導向至檔案，請使用重新導向符號 `>` 。 如果您將輸出重新導向至檔案， `^` 不論您是在命令列或批次檔中使用，都必須在**at**重新導向符號之前使用 escape 符號。 例如，若要將輸出重新導向至*output.txt*，請輸入：
 
     ```
     at 14:45 c:\test.bat ^>c:\output.txt
@@ -86,13 +86,13 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
 
 - 已排程的命令會儲存在登錄中。 因此，如果您重新開機排程服務，就不會遺失已排程的工作。
 
-- 請不要將重新導向的磁片磁碟機用於存取網路的排程工作。 排程服務可能無法存取重新導向的磁片磁碟機，或者，如果在排程工作執行時有不同的使用者登入，則可能不會出現重新導向的磁片磁碟機。 相反地，請使用排程工作的 UNC 路徑。 例如：  
+- 請不要將重新導向的磁片磁碟機用於存取網路的排程工作。 排程服務可能無法存取重新導向的磁片磁碟機，或者，如果在排程工作執行時有不同的使用者登入，則可能不會出現重新導向的磁片磁碟機。 相反地，請使用排程工作的 UNC 路徑。 例如：
 
     ```
     at 1:00pm my_backup \\server\share
     ```
 
-    請勿使用下列語法，其中**x：** 是使用者所建立的連接：  
+    請勿使用下列語法，其中**x：** 是使用者所建立的連接：
 
     ```
     at 1:00pm my_backup x:
@@ -107,7 +107,7 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
     > [!Caution]
     > 不正確地編輯登錄可能會對系統造成嚴重的損害。 變更登錄之前，您應該先備份電腦所有的重要資料。
 
-    1. 啟動登錄編輯程式（regedit.exe）。
+    1. 啟動 [登錄編輯程式] （regedit.exe）。
 
     2. 在登錄中找出並按一下下列機碼：`HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Schedule`
 
@@ -115,7 +115,7 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
 
         - **值名稱。** atTaskMaxHours
 
-        - **資料類型。** reg_DWOrd 
+        - **資料類型。** reg_DWOrd
 
         - **基.** Decimal
 
@@ -137,7 +137,7 @@ at \\marketing
 at \\corp 3
 ```
 
-若要將 net share 命令排定在 Corp 伺服器上的上午8:00 執行 然後將清單重新導向至維護伺服器、在 [報告] 共用目錄中，以及 Corp 檔案中輸入：
+若要將 net share 命令排定在 Corp 伺服器上的上午8:00 執行 然後將清單重新導向至維護伺服器、在 [報告] 共用目錄中，以及 Corp.txt 檔案中，輸入：
 
 ```
 at \\corp 08:00 cmd /c net share reports=d:\marketing\reports >> \\maintenance\reports\corp.txt
@@ -155,13 +155,13 @@ at \\marketing 00:00 /every:5,10,15,20,25,30 archive
 at /delete
 ```
 
-若要執行不是可執行檔（.exe）的命令，請在命令前面加上**cmd/c** ，以載入 cmd.exe，如下所示：
+若要執行不是可執行檔（.exe）的命令，請在命令前面加上**cmd/c**以載入 cmd.exe，如下所示：
 
 ```
 cmd /c dir > c:\test.out
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

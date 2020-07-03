@@ -1,6 +1,6 @@
 ---
 title: ntfrsutl
-description: Ntfrsutl 命令的參考主題，它會傾印 NT 檔案複寫服務（NTFRS）的內部資料表、執行緒和記憶體資訊。
+description: Ntfrsutl 命令的參考文章，它會傾印 NT 檔案複寫服務（NTFRS）的內部資料表、執行緒和記憶體資訊。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f931d916888a372d66a1cc06cb7543067b9b9d3b
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 56aefc1277f67dc6a06ba4686c26f81592afc2f3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472764"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925338"
 ---
 # <a name="ntfrsutl"></a>ntfrsutl
 
@@ -35,7 +35,7 @@ ntfrsutl poll[/quickly[=[<n>]]][/slowly[=[<n>]]][/now][<computer>]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | idtable | 指定識別碼資料表。 |
 | configtable | 指定 FRS 設定資料表。 |
@@ -65,6 +65,6 @@ C:\Program Files\SupportTools>ntfrsutl poll wrkstn-1
 C:\Program Files\SupportTools>ntfrsutl version
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

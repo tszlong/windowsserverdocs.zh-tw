@@ -1,6 +1,6 @@
 ---
 title: ftp get
-description: Ftp get 命令的參考主題，會使用目前的檔案傳輸類型，將遠端檔案複製到本機電腦。
+description: Ftp get 命令的參考文章，它會使用目前的檔案傳輸類型，將遠端檔案複製到本機電腦。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b7254cac15afc446695f22ee1a63f2f4573d3565
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: de084813ee837ecea2f0871589218d3262b40bba
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819708"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925923"
 ---
 # <a name="ftp-get"></a>ftp get
 
@@ -46,13 +46,13 @@ get <remotefile> [<localfile>]
 get test.txt
 ```
 
-若要使用目前的檔案傳輸將*test.txt*複製到本機電腦做為*test1* ，請輸入：
+若要使用目前的檔案傳輸*test1.txt*將*test.txt*複製到本機電腦，請輸入：
 
 ```
 get test.txt test1.txt
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

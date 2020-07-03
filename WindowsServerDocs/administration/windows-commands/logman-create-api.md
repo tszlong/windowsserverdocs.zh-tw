@@ -1,6 +1,6 @@
 ---
-title: logman 建立 api
-description: Logman create api 命令的參考主題，它會建立 API 追蹤資料收集器。
+title: logman create api
+description: Logman create api 命令的參考文章，它會建立 API 追蹤資料收集器。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f479fcdf3db4bb5a61b0cd0724220d27c934872f
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 2294cb7ba7ab962dbba33b0e2612b8dee2d72004
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222802"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925437"
 ---
-# <a name="logman-create-api"></a>logman 建立 api
+# <a name="logman-create-api"></a>logman create api
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -30,7 +30,7 @@ logman create api <[-n] <name>> [options]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | -s`<computer name>` | 在指定的遠端電腦上執行命令。 |
 | -config`<value>` | 指定包含命令選項的設定檔案。 |
@@ -65,24 +65,24 @@ logman create api <[-n] <name>> [options]
 
 ### <a name="examples"></a>範例
 
-若要建立名為 trace_notepad 的 API 追蹤計數器，針對可執行檔 c:\windows\notepad.exe，並將結果放在檔案 c:\notepad.etl 中，請輸入：
+若要建立名為 trace_notepad 的 API 追蹤計數器，針對可執行檔 c:\windows\notepad.exe，並將結果放在 c:\notepad.etl 檔案中，請輸入：
 
 ```
 logman create api trace_notepad -exe c:\windows\notepad.exe -o c:\notepad.etl
 ```
 
-若要建立名為 trace_notepad 的 API 追蹤計數器，針對可執行檔 c:\windows\notepad.exe，收集模組在 c:\windows\system32\advapi32.dll 所產生的值，請輸入：
+若要建立名為 trace_notepad 的 API 追蹤計數器，針對可執行檔 c:\windows\notepad.exe，在 c:\windows\system32\advapi32.dll 收集模組所產生的值，請輸入：
 
 ```
 logman create api trace_notepad -exe c:\windows\notepad.exe -mods c:\windows\system32\advapi32.dll
 ```
 
-若要建立名為 trace_notepad 的 API 追蹤計數器，針對可執行檔 c:\windows\notepad.exe，排除模組 kernel32.dll 所產生的 API 呼叫 TlsGetValue，請輸入：
+若要建立名為 trace_notepad 的 API 追蹤計數器，針對可執行檔 c:\windows\notepad.exe （不包括由模組 kernel32.dll 產生的 API 呼叫 TlsGetValue），請輸入：
 ```
 logman create api trace_notepad -exe c:\windows\notepad.exe -exapis kernel32.dll!TlsGetValue
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

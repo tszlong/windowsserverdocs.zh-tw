@@ -1,6 +1,6 @@
 ---
 title: 非使用中
-description: 非使用中命令的參考主題，會將主要開機記錄（MBR）磁片上的系統磁碟分割或開機磁碟分割，標示為非作用中。
+description: 非使用中命令的參考文章，它會將主要開機記錄（MBR）磁片上的系統磁碟分割或開機磁碟分割，標示為非作用中。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9861a54c284002e53b0a8fc354aa883d80fff0e7
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: db7d279577b8120137b4397551a480ea2d2a0e8a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818438"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924416"
 ---
 # <a name="inactive"></a>非使用中
 
@@ -39,7 +39,7 @@ inactive
 inactive
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

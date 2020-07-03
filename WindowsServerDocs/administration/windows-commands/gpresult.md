@@ -1,6 +1,6 @@
 ---
 title: gpresult
-description: Gpresult 命令的參考主題，會顯示遠端使用者和電腦的原則結果組（RSoP）資訊。
+description: Gpresult 命令的參考文章，它會顯示遠端使用者和電腦的原則結果組（RSoP）資訊。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e88a75a15168baaf2e49ca08ff20d3a8ffb5620c
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: b55db74c0c8f9c527ade8412f50ef83ea675a5c6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818858"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924632"
 ---
 # <a name="gpresult"></a>gpresult
 
@@ -22,7 +22,7 @@ ms.locfileid: "83818858"
 
 顯示遠端使用者和電腦的原則結果組（RSoP）資訊。 若要透過防火牆針對遠端目的電腦使用 RSoP 報告，您必須具有可在埠上啟用輸入網路流量的防火牆規則。
 
-## <a name="syntax"></a>語法
+## <a name="syntax"></a>Syntax
 
 ```
 gpresult [/s <system> [/u <username> [/p [<password>]]]] [/user [<targetdomain>\]<targetuser>] [/scope {user | computer}] {/r | /v | /z | [/x | /h] <filename> [/f] | /?}
@@ -63,7 +63,7 @@ gpresult [/s <system> [/u <username> [/p [<password>]]]] [/user [<targetdomain>\
 gpresult /s srvmain /u maindom\hiropln /p p@ssW23 /user targetusername /scope user /r
 ```
 
-若要將群組原則的所有可用資訊儲存到名為 maindom\hiropln 的*檔案，請* *maindom\hiropln* *p@ssW23* 在 [電腦*srvmain*] 上輸入：
+若要將群組原則的所有可用資訊儲存至名為的檔案，請*policy.txt*，只針對具有密碼的遠端使用者*maindom\hiropln* ， *p@ssW23* 在 [電腦*srvmain*] 上輸入：
 
 ```
 gpresult /s srvmain /u maindom\hiropln /p p@ssW23 /user targetusername /z > policy.txt
@@ -75,6 +75,6 @@ gpresult /s srvmain /u maindom\hiropln /p p@ssW23 /user targetusername /z > poli
 gpresult /s srvmain /u maindom\hiropln /p p@ssW23 /r
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

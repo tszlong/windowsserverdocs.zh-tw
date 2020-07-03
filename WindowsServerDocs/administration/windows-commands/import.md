@@ -1,6 +1,6 @@
 ---
 title: 匯入 diskshadow
-description: 匯入命令的參考主題，這會將可轉移的陰影複製從載入的中繼資料檔案匯入系統。
+description: 匯入命令的參考文章，它會將可轉移的陰影複製從已載入的中繼資料檔案匯入到系統中。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f4eaf4afcbe2485a893a3e5335c595b3d9b256b5
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: ab1c3c6d324cec939a2529191cbc8ce40165b807
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818508"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924449"
 ---
 # <a name="import-diskshadow"></a>匯入（diskshadow）
 
@@ -53,7 +53,7 @@ IMPORT
 #The shadow copy will now be loaded into the system.
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

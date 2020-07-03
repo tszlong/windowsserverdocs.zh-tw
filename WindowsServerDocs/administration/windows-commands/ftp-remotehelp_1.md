@@ -1,6 +1,6 @@
 ---
 title: ftp remotehelp
-description: Ftp remotehelp 命令的參考主題，會顯示遠端命令的說明。
+description: Ftp remotehelp 命令的參考文章，它會顯示遠端命令的說明。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 659de5487890b50aab9004f650e4584085e7306c
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 54d784751291515a022a561ca9600e3e967a9d8e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820318"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925745"
 ---
 # <a name="ftp-remotehelp"></a>ftp remotehelp
 
@@ -48,12 +48,12 @@ remotehelp
 remotehelp feat
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [ftp 報價](ftp-quote.md)
+- [ftp quote](ftp-quote.md)
 
-- [ftp 常值](ftp-literal_1.md)
+- [ftp literal](ftp-literal_1.md)
 
 - [其他 FTP 指引](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

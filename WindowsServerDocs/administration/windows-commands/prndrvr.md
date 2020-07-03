@@ -1,6 +1,6 @@
 ---
 title: prndrvr
-description: Prndrvr 命令的參考主題，可新增、刪除和列出印表機驅動程式。
+description: Prndrvr 命令的參考文章，可新增、刪除和列出印表機驅動程式。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 62c63819c175f4b3f3770d90da0bd560443ccb77
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4f256d003ac0884b100aedb24bbb55e663444911
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472293"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924206"
 ---
 # <a name="prndrvr"></a>prndrvr
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-新增、刪除和列出印表機驅動程式。 此命令是位於目錄中的 Visual Basic 腳本 `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 若要在命令提示字元中使用此命令，請輸入**cscript** ，後面接著 prndrvr 檔案的完整路徑，或將目錄變更為適當的資料夾。 例如： `cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prndrvr` 。
+新增、刪除和列出印表機驅動程式。 此命令是位於目錄中的 Visual Basic 腳本 `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 若要在命令提示字元中使用此命令，請輸入**cscript** ，後面接著 prndrvr 檔案的完整路徑，或將目錄變更為適當的資料夾。 例如：`cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prndrvr`。
 
 使用時不含參數， **prndrvr**會顯示命令列說明。
 
@@ -32,7 +32,7 @@ cscript prndrvr {-a | -d | -l | -x | -?} [-m <model>] [-v {0|1|2|3}] [-e <enviro
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 |--|--|
 | -a | 安裝驅動程式。 |
 | -d | 刪除驅動程式。 |
@@ -73,7 +73,7 @@ cscript prndrvr -a -m Laser printer model 1 -v 3 -e Windows x64 -i c:\temp\Laser
 cscript prndrvr -a -m Laser printer model 1 -v 3 -e Windows x64
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

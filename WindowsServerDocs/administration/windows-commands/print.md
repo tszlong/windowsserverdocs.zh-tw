@@ -1,6 +1,6 @@
 ---
 title: print
-description: Print 命令的參考主題，其會將文字檔傳送至印表機。
+description: '[列印] 命令的參考文章，其會將文字檔傳送至印表機。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2d9cbb4230976572ddd7a26565d616c87ce2ea8d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a8e8cf07ca19af1cf0a0445b9feed06916be10c0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472313"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926030"
 ---
 # <a name="print"></a>print
 
@@ -31,7 +31,7 @@ print [/d:<printername>] [<drive>:][<path>]<filename>[ ...]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 |--|--|
 | /d`<printername>` | 指定您要列印工作的印表機。 若要列印到本機連線的印表機，請指定印表機連線所在電腦上的埠。 平行埠的有效值為**LPT1**、 **LPT2**和**LPT3**。 有效的序列埠值為**COM1**、 **COM2**、 **COM3**和**COM4**。 您也可以使用其佇列名稱（）指定網路印表機 `\\server_name\printer_name` 。 如果您未指定印表機，列印工作預設會傳送至**LPT1** 。 |
 | `<drive>`: | 指定您要列印之檔案所在的邏輯或實體磁片磁碟機。 如果您要列印的檔案位於目前磁片磁碟機上，則不需要此參數。 |
@@ -53,7 +53,7 @@ print /d:lpt2 report.txt
 print /d:\\copyroom\printer1 c:\accounting\report.txt
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

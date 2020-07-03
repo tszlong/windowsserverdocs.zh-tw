@@ -1,6 +1,6 @@
 ---
 title: inuse
-description: Inuse 命令的參考主題。 此命令已被取代，在未來的 Windows 版本中不保證會受到支援。
+description: Inuse 命令的參考文章。 此命令已被取代，在未來的 Windows 版本中不保證會受到支援。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b25750c8ad57c3b1a795830b743f679e7fce88b5
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 97fb8205c05952326de5e66ff6972e30279930cd
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818428"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924375"
 ---
 # <a name="inuse"></a>inuse
 
@@ -22,6 +22,6 @@ Inuse 命令已被取代，並不保證在未來的 Windows 版本中受到支�
 
 此工具組含在 Windows Server 2003 中。 如需詳細資訊，請參閱[Inuse](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/dd996699(v=ws.10))。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

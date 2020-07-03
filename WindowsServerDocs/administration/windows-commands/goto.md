@@ -1,6 +1,6 @@
 ---
 title: goto
-description: Goto 命令的參考主題，會將 cmd.exe 導向至 batch 程式中的標記行。
+description: Goto 命令的參考文章，會將 cmd.exe 導向至 batch 程式中已標記的行。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1eb1b6b275887de535614fa5df4adabe33406a31
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: afc77f7837ddaeb0552052538537285f0d652682
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818968"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924681"
 ---
 # <a name="goto"></a>goto
 
@@ -35,7 +35,7 @@ goto <label>
 
 #### <a name="remarks"></a>備註
 
--  如果已啟用命令延伸模組（預設值），而且您使用 [ **goto** ] 命令搭配目標標籤 **： EOF**，則您會將控制權轉移到目前批次腳本檔案的結尾，並結束批次腳本檔案，但不定義標籤。 當您使用此命令搭配 **： EOF**標籤時，您必須在標籤之前插入冒號。 例如： `goto:EOF` 。
+-  如果已啟用命令延伸模組（預設值），而且您使用 [ **goto** ] 命令搭配目標標籤 **： EOF**，則您會將控制權轉移到目前批次腳本檔案的結尾，並結束批次腳本檔案，但不定義標籤。 當您使用此命令搭配 **： EOF**標籤時，您必須在標籤之前插入冒號。 例如：`goto:EOF`。
 
 - 您可以使用*標籤*參數中的空格，但不能包含其他分隔符號（例如，分號（;)或等號（=））。
 
@@ -56,7 +56,7 @@ echo An error occurred during formatting.
 echo End of batch program.
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

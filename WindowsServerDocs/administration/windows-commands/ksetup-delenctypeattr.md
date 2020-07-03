@@ -1,6 +1,6 @@
 ---
 title: ksetup delenctypeattr
-description: Ksetup delenctypeattr 的參考主題，它會移除網域的加密類型屬性。
+description: Ksetup delenctypeattr 的參考文章，它會移除網域的加密類型屬性。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b3076a25b619615402a599bd8aaa6ce9d10d4fe0
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 5aabbb99f40d8d22189d6abccc188161b7ee2f5c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817938"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925489"
 ---
 # <a name="ksetup-delenctypeattr"></a>ksetup delenctypeattr
 
@@ -60,7 +60,7 @@ ksetup /getenctypeattr mit.contoso.com
 ksetup /delenctypeattr mit.contoso.com
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

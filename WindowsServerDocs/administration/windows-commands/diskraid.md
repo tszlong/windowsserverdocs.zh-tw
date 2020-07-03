@@ -1,6 +1,6 @@
 ---
 title: Diskraid
-description: Diskraid 命令列工具的參考主題，可讓您設定和管理獨立（或便宜）磁片（RAID）儲存子系統的重複陣列。
+description: Diskraid 命令列工具的參考文章，可讓您設定和管理獨立（或便宜）磁片（RAID）儲存子系統的重複陣列。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ffceb9347921536a1bee59f46a4d5ab4800c1e70
-ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
+ms.openlocfilehash: d0745c708878fa9da6571666b5702b4408976164
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235211"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924761"
 ---
 # <a name="diskraid"></a>Diskraid
 
@@ -185,7 +185,7 @@ create tpgroup [noerr]
 | 磁片磁碟機 = | 指定要用來建立 LUN 之磁片磁碟機的*drive_number* 。 必須指定**size**= 或**磁片磁碟機**= 參數。 它們也可以一起使用。 如果未指定**size =** 參數，則建立的 LUN 會是所有指定磁片磁碟機所允許的最大可能大小。 如果已指定**size =** 參數，提供者會從指定的磁片磁碟機清單中選取磁片磁碟機，以建立 LUN。 提供者會嘗試依照指定的順序來使用磁片磁碟機。 |
 | stripesize = | 指定*stripe*或*raid* LUN 的大小（以 mb 為單位）。 建立 LUN 之後，即無法變更 stripesize。 若要使用其他單位來指定大小，請使用下列其中一個可辨識的尾碼，緊接在大小之後：<ul><li>**B** -位元組</li><li>**Kb** -kb</li><li>**Mb** -mb</li><li>**Gb** -gb</li><li>**Tb** -tb</li><li>**Pb** -pb。</li></ul> |
 | 目標 | 在目前選取的子系統上建立新的 iSCSI 目標。 |
-| name | 提供目標的易記名稱。 |
+| NAME | 提供目標的易記名稱。 |
 | iscsiname | 提供目標的 iSCSI 名稱，而且可以省略，讓提供者產生名稱。 |
 | tpgroup | 在目前選取的目標上建立新的 iSCSI 目標入口網站群組。 |
 | noerr | 僅適合執行指令。 當發生錯誤時，Diskraid 會繼續處理命令，就像未發生錯誤一樣。 |
@@ -244,7 +244,7 @@ detail {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 
 針對目前選取的 LUN，將指定的控制器埠清單設定為非作用中（其他控制器埠不會受到影響），或分離目前所選 LUN 的指定 iSCSI 目標清單。
 
-#### <a name="syntax"></a>語法
+#### <a name="syntax"></a>Syntax
 
 ```
 dissociate controllers <n> [,<n> [,...]]
@@ -285,7 +285,7 @@ Controller port associations changed.
 
 結束 Diskraid。
 
-#### <a name="syntax"></a>語法
+#### <a name="syntax"></a>Syntax
 
 ```
 exit
@@ -313,7 +313,7 @@ extend lun [size=<LUN_size>] [drives=<drive_number>, [<drive_number>, ...]] [noe
 
 清除目前選取的控制器上的快取。
 
-#### <a name="syntax"></a>語法
+#### <a name="syntax"></a>Syntax
 
 ```
 flushcache controller
@@ -323,7 +323,7 @@ flushcache controller
 
 顯示所有 Diskraid 命令的清單。
 
-#### <a name="syntax"></a>語法
+#### <a name="syntax"></a>Syntax
 
 ```
 help
@@ -333,7 +333,7 @@ help
 
 抓取或設定目前所選子系統的目前磁碟區陰影複製服務（VSS）匯入目標。
 
-#### <a name="syntax"></a>語法
+#### <a name="syntax"></a>Syntax
 
 ```
 importtarget subsystem [set target]
@@ -349,7 +349,7 @@ importtarget subsystem [set target]
 
 抓取本機 iSCSI 啟動器的相關資訊。
 
-#### <a name="syntax"></a>語法
+#### <a name="syntax"></a>Syntax
 
 ```
 initiator
@@ -359,7 +359,7 @@ initiator
 
 使目前選取的控制器上的快取失效。
 
-#### <a name="syntax"></a>語法
+#### <a name="syntax"></a>Syntax
 
 ```
 invalidatecache controller
@@ -466,11 +466,11 @@ maintenance <object operation> [count=<iteration>]
 | `<operation>` | 指定要執行的維護作業。 *操作*類型可以是**spinup**、 **spindown**、**閃爍**、**嗶聲**或**ping**。 必須*指定*作業。 |
 | 計數 = | 指定重複*作業的次數。* 這通常與**閃爍**、**嗶聲**或**ping**搭配使用。 |
 
-### <a name="name"></a>name
+### <a name="name"></a>NAME
 
 將目前選取的子系統、LUN 或 iSCSI 目標的易記名稱設定為指定的名稱。
 
-#### <a name="syntax"></a>語法
+#### <a name="syntax"></a>Syntax
 
 ```
 name {subsystem | lun | target} [<name>]
@@ -486,7 +486,7 @@ name {subsystem | lun | target} [<name>]
 
 將指定類型之目前選取物件的狀態設定為 [**離線**]。
 
-#### <a name="syntax"></a>語法
+#### <a name="syntax"></a>Syntax
 
 ```
 offline <object>
@@ -502,7 +502,7 @@ offline <object>
 
 將指定類型之所選物件的狀態設定為 [**線上**]。 如果物件是**hbaport**，則會將目前所選 HBA 埠的路徑狀態變更為 [**線上**]。
 
-#### <a name="syntax"></a>語法
+#### <a name="syntax"></a>Syntax
 
 ```
 online <object>
@@ -518,7 +518,7 @@ online <object>
 
 執行必要的作業，例如重新同步或熱備份，以修復目前選取的容錯 LUN。 例如，復原可能會導致熱備件系結至具有故障磁片或其他磁片區重新配置的 RAID 集。
 
-#### <a name="syntax"></a>語法
+#### <a name="syntax"></a>Syntax
 
 ```
 recover <lun>
@@ -545,7 +545,7 @@ reenumerate {subsystems | drives}
 
 重新整理目前所選提供者的內部資料。
 
-#### <a name="syntax"></a>語法
+#### <a name="syntax"></a>Syntax
 
 ```
 refresh provider
@@ -555,7 +555,7 @@ refresh provider
 
 用來批註腳本。
 
-#### <a name="syntax"></a>語法
+#### <a name="syntax"></a>Syntax
 
 ```
 Rem <comment>
@@ -565,7 +565,7 @@ Rem <comment>
 
 從目前選取的目標入口網站群組移除指定的 iSCSI 目標入口網站。
 
-#### <a name="syntax"></a>語法
+#### <a name="syntax"></a>Syntax
 
 ```
 remove tpgroup tportal=<tportal> [noerr]
@@ -582,7 +582,7 @@ remove tpgroup tportal=<tportal> [noerr]
 
 以目前選取的磁片磁碟機取代指定的磁片磁碟機。 指定的磁片磁碟機可能不是目前選取的磁片磁碟機。
 
-#### <a name="syntax"></a>語法
+#### <a name="syntax"></a>Syntax
 
 ```
 replace drive=<drive_number>
@@ -775,6 +775,6 @@ DISKRAID> list drives
 exit
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

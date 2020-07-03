@@ -1,6 +1,6 @@
 ---
 title: ipxroute
-description: Ipxroute 命令的參考主題，它會顯示及修改 IPX 通訊協定所使用之路由表的相關資訊。
+description: Ipxroute 命令的參考文章，它會顯示及修改 IPX 通訊協定所使用之路由表的相關資訊。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: afcb5064bc8d4eb4a3b4a8920fcfcf71591d7af5
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: a737ede8b56502cfbbf347d9f54fec848922badb
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818318"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924383"
 ---
 # <a name="ipxroute"></a>ipxroute
 
@@ -53,6 +53,6 @@ ipxroute config
 ipxroute config
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

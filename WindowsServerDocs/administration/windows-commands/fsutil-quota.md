@@ -1,6 +1,6 @@
 ---
 title: fsutil quota
-description: Fsutil quota 命令的參考主題，它會管理 NTFS 磁片區上的磁片配額，以提供更精確的網路型存放裝置控制。
+description: Fsutil quota 命令的參考文章，它會管理 NTFS 磁片區上的磁片配額，以提供更精確的網路型存放裝置控制。
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: 21225c11-7c72-4ea2-96bd-e63d4beb3be5
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 54c4f6fe5fd5ae7a43d5057cd5837374f1b94ecd
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: f757f822a903f6b5c6d221e17f87cf1e73d1555f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83435811"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925226"
 ---
 # <a name="fsutil-quota"></a>fsutil quota
 
@@ -35,7 +35,7 @@ fsutil quota [violations]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | disable | 在指定的磁片區上停用配額追蹤和強制執行。 |
 | 強制執行 | 在指定的磁片區上強制執行配額使用量。 |
@@ -68,7 +68,7 @@ fsutil quota query volume{928842df-5a01-11de-a85c-806e6f6e6963}
 fsutil quota query C:
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

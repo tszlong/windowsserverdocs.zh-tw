@@ -1,6 +1,6 @@
 ---
 title: ftp quit
-description: Ftp quit 命令的參考主題，它會結束與遠端電腦的 ftp 會話，然後離開。
+description: Ftp quit 命令的參考文章，它會結束與遠端電腦的 ftp 會話，然後離開。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bbe72d02029e50a64eb2c9892ea4d487d6e1c938
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: c63df8c34bca410b9b9e2b77db1cf185cdfe20c8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820348"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925117"
 ---
 # <a name="ftp-quit"></a>ftp quit
 
@@ -39,7 +39,7 @@ quit
 quit
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

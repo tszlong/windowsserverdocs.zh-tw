@@ -1,6 +1,6 @@
 ---
-title: ftp 接收
-description: Ftp 接收命令的參考主題，會使用目前的檔案傳輸類型，將遠端檔案複製到本機電腦。
+title: ftp recv
+description: Ftp 接收命令的參考文章，它會使用目前的檔案傳輸類型，將遠端檔案複製到本機電腦。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 011a42d3279a2fa26202d7d886a992956e70f6a1
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 01f9fc1d8e233d8e2c38f606dea12f5d342d5e44
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820328"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925783"
 ---
-# <a name="ftp-recv"></a>ftp 接收
+# <a name="ftp-recv"></a>ftp recv
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -46,13 +46,13 @@ recv <remotefile> [<localfile>]
 recv test.txt
 ```
 
-若要使用目前的檔案傳輸將*test.txt*複製到本機電腦做為*test1* ，請輸入：
+若要使用目前的檔案傳輸*test1.txt*將*test.txt*複製到本機電腦，請輸入：
 
 ```
 recv test.txt test1.txt
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

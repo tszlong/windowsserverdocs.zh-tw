@@ -1,6 +1,6 @@
 ---
 title: pnpunattend
-description: Pnpunattend 命令的參考主題，它會審核計算機上的設備磁碟機，以及執行無提示驅動程式安裝。
+description: Pnpunattend 命令的參考文章，它會審核計算機上的設備磁碟機，以及執行無提示驅動程式安裝。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 23456ec8f8fda5f84819a7105ee1f46814d2f806
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: cb01e2afa763d3e2c906d1b3ac5f194143caf114
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472398"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924248"
 ---
 # <a name="pnpunattend"></a>pnpunattend
 
@@ -42,7 +42,7 @@ PnPUnattend.exe auditsystem [/help] [/?] [/h] [/s] [/l]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 |--|--|
 | auditsystem | 指定線上驅動程式安裝。<p>必要項，但使用 **/help**或 **/？** 執行此命令時除外 參數。 |
 | /s | 選擇性。 指定不安裝就搜尋驅動程式。 |
@@ -57,6 +57,6 @@ PnPUnattend.exe auditsystem [/help] [/?] [/h] [/s] [/l]
 pnpunattend auditsystem /s /l
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

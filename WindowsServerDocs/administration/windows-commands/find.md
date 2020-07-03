@@ -1,6 +1,6 @@
 ---
 title: 尋找
-description: Find 命令的參考主題，它會搜尋檔案中的文字字串，並在檔案中顯示指定的文字字串。
+description: 尋找命令的參考文章，它會搜尋檔案中的文字字串，並在檔案中顯示指定的文字字串。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0273405ce5e5b4958a347cd1eaddee0a38897f0c
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 8ebebcd29faad50aec84dd464ff0f745d2ddf52c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437003"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925254"
 ---
 # <a name="find"></a>尋找
 
@@ -28,7 +28,7 @@ find [/v] [/c] [/n] [/i] [/off[line]] <string> [[<drive>:][<path>]<filename>[...
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | /v | 顯示不包含指定之的所有行 `<string>` 。 |
 | /C | 計算包含指定之的行數 `<string>` ，並顯示總計。 |
@@ -63,7 +63,7 @@ find [/v] [/c] [/n] [/i] [/off[line]] <string> [[<drive>:][<path>]<filename>[...
 find pencil sharpener pencil.ad
 ```
 
-若要尋找文字，「科學家將其論文標示為僅供討論。 這不是最後的報告。」 在*報表 .doc*檔案中，輸入：
+若要尋找文字，「科學家將其論文標示為僅供討論。 這不是最後的報告。」 在*report.doc*檔案中，輸入：
 
 ```
 find ""The scientists labeled their paper for discussion only. It is not a final report."" report.doc
@@ -83,7 +83,7 @@ dir c:\ /s /b | find CPU
 
 由於**尋找**搜尋會區分大小寫，而**dir**會產生大寫輸出，因此您必須以大寫字母輸入字串 CPU，或使用 **/i**命令列選項搭配**find**。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

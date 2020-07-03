@@ -1,6 +1,6 @@
 ---
 title: ipconfig
-description: Ipconfig 命令的參考主題，它會顯示所有目前的 TCP/IP 網路設定值，並重新整理動態主機設定通訊協定（DHCP）和網域名稱系統（DNS）設定。
+description: Ipconfig 命令的參考文章，它會顯示所有目前的 TCP/IP 網路設定值，並重新整理動態主機設定通訊協定（DHCP）和網域名稱系統（DNS）設定。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e08e8c493b40475ba61ea76be6b49b9c4e21c1cf
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 3567f855a6066ed318f10daa22f1ca8de0d565c4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818388"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924356"
 ---
 # <a name="ipconfig"></a>ipconfig
 
@@ -88,6 +88,6 @@ ipconfig /showclassid Local*
 ipconfig /setclassid Local Area Connection TEST
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
 title: ksetup delhosttorealmmap
-description: Ksetup delhosttorealmmap 命令的參考主題，它會移除所指定主機與領域之間的服務主體名稱（SPN）對應。
+description: Ksetup delhosttorealmmap 命令的參考文章，它會移除指定主機與領域之間的服務主體名稱（SPN）對應。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 17fc30e76247c570c653d5ec38501a2199435c7f
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: c55fe25a147c23026ddf97900d6da856f04314a3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817858"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925490"
 ---
 # <a name="ksetup-delhosttorealmmap"></a>ksetup delhosttorealmmap
 
@@ -43,7 +43,7 @@ ksetup /delhosttorealmmap <hostname> <realmname>
 ksetup /delhosttorealmmap IPops897 CONTOSO
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

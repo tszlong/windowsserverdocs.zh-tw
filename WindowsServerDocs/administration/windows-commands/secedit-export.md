@@ -1,6 +1,6 @@
 ---
 title: secedit：匯出
-description: '* * * * 的參考主題'
+description: '* * * * 的參考文章'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6a78e45bda707b946c152bd965bf9d12c4ce151b
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: d2093b813a6aca5b03bf94c6f0943bc9ffa00346
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821118"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924167"
 ---
 # <a name="seceditexport"></a>secedit：匯出
 
@@ -58,7 +58,7 @@ Secedit /export /db C:\Security\FY11\SecDbContoso.sdb /mergedpolicy /cfg SecCont
 Secedit /import /db C:\Security\FY12\SecDbContoso.sdb /cfg SecContoso.inf /log C:\Security\FY11\SecAnalysisContosoFY12.log /quiet
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [Secedit:import](secedit-import.md)
 -   [Secedit](secedit.md)

@@ -1,6 +1,6 @@
 ---
 title: msdt
-description: Msdt 命令的參考主題，它會在命令列中叫用疑難排解套件，或做為自動化腳本的一部分，並啟用其他選項而不需要使用者輸入。
+description: Msdt 命令的參考文章，它會在命令列中叫用疑難排解套件或做為自動化腳本的一部分，並在沒有使用者輸入的情況下啟用其他選項。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 47eaf859c86a939777ce8878937d36f2c581ab31
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 99ba1320171e4e305209f06fbee617e54c979d30
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354369"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925028"
 ---
 # <a name="msdt"></a>msdt
 
@@ -28,7 +28,7 @@ msdt </id <name> | /path <name> | /cab < name>> <</parameter> [options] … <par
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | /id`<packagename>` | 指定要執行的診斷封裝。 如需可用套件的清單，請參閱[可用的疑難排解套件](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/ee424379(v=ws.11)#available-troubleshooting-packs)。 |
 | /path`<directory|.diagpkg file|.diagcfg file>` | 指定診斷封裝的完整路徑。 如果您指定目錄，目錄必須包含診斷套件。 您不能將 **/path**參數與 * */id * *、 **/dci**或 **/cab**參數搭配使用。 |                                                                                   |
@@ -52,7 +52,7 @@ msdt </id <name> | /path <name> | /cab < name>> <</parameter> [options] … <par
 | 1 | **存在，但不是固定的：** 疑難排解員已識別出一個或多個根本原因，而此問題仍處於非固定狀態。 即使已修正另一個根本原因，也會傳回此程式碼。 |
 | 2 | **找不到：** 疑難排解員並未識別任何根本原因。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

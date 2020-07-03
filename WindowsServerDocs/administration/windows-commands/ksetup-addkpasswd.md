@@ -1,6 +1,6 @@
 ---
 title: ksetup addkpasswd
-description: Ksetup addkpasswd 命令的參考主題，它會新增領域的 Kerberos 密碼（kpasswd）伺服器位址。
+description: Ksetup addkpasswd 命令的參考文章，它會新增領域的 Kerberos 密碼（kpasswd）伺服器位址。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e0cff2f3d74e6d862bbdd000602a1d03312373d2
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 2db728684e713df35a39995c8ca95196f0b745ed
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818068"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925558"
 ---
 # <a name="ksetup-addkpasswd"></a>ksetup addkpasswd
 
@@ -49,7 +49,7 @@ ksetup /addkpasswd CORP.CONTOSO.COM mitkdc.contoso.com
 
 若要確認已設定 KDC 名稱，請輸入， `ksetup` 然後再查看輸出，尋找文字**kpasswd =**。 如果您看不到文字，表示尚未設定對應。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

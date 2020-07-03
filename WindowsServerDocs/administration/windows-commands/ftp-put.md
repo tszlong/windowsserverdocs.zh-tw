@@ -1,6 +1,6 @@
 ---
 title: ftp put
-description: Ftp put 命令的參考主題，會使用目前的檔案傳輸類型，將本機檔案複製到遠端電腦。
+description: Ftp put 命令的參考文章，它會使用目前的檔案傳輸類型，將本機檔案複製到遠端電腦。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/30/2020
-ms.openlocfilehash: aee76b95ac538868122d5137958723326575eb18
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 7b382673be838af739c29ffa294e3d853f0507c2
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820368"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925159"
 ---
 # <a name="ftp-put"></a>ftp put
 
@@ -40,19 +40,19 @@ put <localfile> [<remotefile>]
 
 ### <a name="examples"></a>範例
 
-若要複製本機檔案*test.txt* ，並在遠端電腦上將它命名為*test1* ，請輸入：
+若要複製本機檔案*test.txt*並將它命名為*test1.txt*在遠端電腦上，請輸入：
 
 ```
 put test.txt test1.txt
 ```
 
-若要將本機檔案*program*複製到遠端電腦，請輸入：
+若要將本機檔案*program.exe*複製到遠端電腦，請輸入：
 
 ```
 put program.exe
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

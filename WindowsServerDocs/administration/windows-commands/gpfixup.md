@@ -1,6 +1,6 @@
 ---
 title: gpfixup
-description: Gpfixup 命令的參考主題，它會在網域重新命名作業之後，修正群組原則物件和群組原則連結中的功能變數名稱相依性。
+description: Gpfixup 命令的參考文章，它會在網域重新命名作業之後，修正群組原則物件和群組原則連結中的功能變數名稱相依性。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 14a225209e719707093ddd87918587e24e4572a6
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: c09efb2fc8b1de124cbefc1b2dff73df29d2a4f1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818868"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924658"
 ---
 # <a name="gpfixup"></a>gpfixup
 
@@ -61,7 +61,7 @@ gpfixup /olddns: MyOldDnsName /newdns:MyNewDnsName /oldnb:MyOldNetBIOSName /newn
 gpfixup /olddns: MyOldDnsName /newdns:MyNewDnsName /dc:MyDcDnsName 2>&1 >gpfixup.log
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

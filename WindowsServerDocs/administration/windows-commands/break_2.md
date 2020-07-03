@@ -1,6 +1,6 @@
 ---
 title: break
-description: '[中斷] 命令的參考主題，這會將陰影複製磁片區與 VSS 解除對應，使其可做為一般磁片區存取。'
+description: '[中斷] 命令的參考文章，這會解除陰影複製磁片區與 VSS 的對應，並使其可做為一般磁片區存取。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7e8789ab68ecb98d190a79c3f1088aad05b83562
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 7f3974f183215a42920f7406a62ab335eb101f56
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82707779"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924890"
 ---
 # <a name="break"></a>break
 
@@ -33,7 +33,7 @@ break [writable] <setid>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | 314.cs | 啟用磁片區上的讀取/寫入存取。 |
 | \<setid> | 指定陰影複製組的識別碼。 「**載入中繼資料**」命令儲存為環境變數的陰影複製識別碼別名，可用於*SetID*參數。 |
@@ -46,6 +46,6 @@ break [writable] <setid>
 break writable %Alias1%
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
 title: if
-description: If 命令的參考主題，它會在 batch 程式中執行條件式處理。
+description: If 命令的參考文章，它會在 batch 程式中執行條件式處理。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d6f73e784d6fb394db258a056f38045b6a545469
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: dd55ebb6ae3562906efdc710f7a067a7e7514e59
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818548"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924470"
 ---
 # <a name="if"></a>if
 
 在 batch 程式中執行條件式處理。
 
-## <a name="syntax"></a>語法
+## <a name="syntax"></a>Syntax
 
 ```
 if [not] ERRORLEVEL <number> <command> [else <expression>]
@@ -40,8 +40,8 @@ if defined <variable> <command> [else <expression>]
 
 | 參數 | 說明 |
 | --------- |------------ |
-| not | 指定只有在條件為 false 時，才執行命令。 |
-| errorlevel`<number>` | 只有在 Cmd.exe 執行的先前程式傳回的結束代碼等於或大於*數位*時，才指定 true 條件。 |
+| 否 | 指定只有在條件為 false 時，才執行命令。 |
+| errorlevel`<number>` | 只有在前一個程式執行時，才會指定 true 條件，Cmd.exe 傳回等於或大於*數位*的結束代碼。 |
 | `<command>` | 指定在符合前述條件時應執行的命令。 |
 | `<string1>==<string2>` | 只有在*string1*和*string2*相同時，才指定 true 條件。 這些值可以是常值字串或批次變數（例如 `%1` ）。 您不需要將常值字串括在引號中。 |
 | 有`<filename>` | 如果指定的檔案名存在，則指定 true 條件。 |
@@ -62,7 +62,7 @@ if defined <variable> <command> [else <expression>]
 
   - **% errorlevel%**：展開為 errorlevel 環境變數目前值的字串表示。 此變數假設尚未有名稱為 ERRORLEVEL 的現有環境變數。 如果有，您會改為取得該 ERRORLEVEL 值。
 
-  - **% cmdcmdline%**：擴充到在 cmd.exe 進行任何處理之前傳遞至 cmd.exe 的原始命令列。 這會假設尚未有名稱為 CMDCMDLINE 的現有環境變數。 如果有，您會改為取得該 CMDCMDLINE 值。
+  - **% cmdcmdline%**：在 Cmd.exe 進行任何處理之前，展開至原始命令列以傳遞至 Cmd.exe。 這會假設尚未有名稱為 CMDCMDLINE 的現有環境變數。 如果有，您會改為取得該 CMDCMDLINE 值。
 
   - **% cmdextversion%**：展開為目前**cmdextversion**值的字串表示。 這會假設尚未有名稱為 CMDEXTVERSION 的現有環境變數。 如果有，您會改為取得該 CMDEXTVERSION 值。
 
@@ -124,7 +124,7 @@ echo Done!
 if %errorlevel% LEQ 1 goto okay
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

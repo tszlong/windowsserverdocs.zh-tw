@@ -1,6 +1,6 @@
 ---
 title: ftp mput
-description: Ftp mput 命令的參考主題，會使用目前的檔案傳輸類型，將本機檔案複製到遠端電腦。
+description: Ftp mput 命令的參考文章，它會使用目前的檔案傳輸類型，將本機檔案複製到遠端電腦。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5006c1ba19f0e017dea377b47bd0d89a68266382
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 506a4d9a64f1dd9b4b37088a30926190d7675695
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820408"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925808"
 ---
 # <a name="ftp-mput"></a>ftp mput
 
@@ -36,13 +36,13 @@ mput <localfile>[ ]
 
 ### <a name="examples"></a>範例
 
-若要使用目前的檔案傳輸類型，將*Program1*和*program2.c*複製到遠端電腦，請輸入：
+若要使用目前的檔案傳輸類型，將*Program1.exe*和*Program2.exe*複製到遠端電腦，請輸入：
 
 ```
 mput Program1.exe Program2.exe
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: jetpack
-description: Jetpack 命令的參考主題，它會壓縮 Windows 網際網路名稱服務（WINS）或動態主機設定通訊協定（DHCP）資料庫。
+description: Jetpack 命令的參考文章，它會壓縮 Windows 網際網路名稱服務（WINS）或動態主機設定通訊協定（DHCP）資料庫。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6d77f9c964f5820fc7a44b803bb765e94cb35637
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: b0aa52bad06865641da5fabf25c27ceb8c7a0bbd
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818248"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924321"
 ---
 # <a name="jetpack"></a>jetpack
 
@@ -22,7 +22,7 @@ ms.locfileid: "83818248"
 
 壓縮 Windows 網際網路名稱服務（WINS）或動態主機設定通訊協定（DHCP）資料庫。 我們建議您在 WINS 資料庫接近 30 MB 時，將其壓縮。
 
-Jetpack 會壓縮資料庫，方法如下：
+Jetpack.exe 壓縮資料庫的方式如下：
 
 1. 將資料庫資訊複製到暫存資料庫檔案。
 
@@ -41,7 +41,7 @@ jetpack.exe <database_name> <temp_database_name>
 | 參數 | 說明 |
 | ------- | -------- |
 | `<database_name>` | 指定原始資料庫檔案的名稱。 |
-| `<temp_database_name>` | 指定 jetpack 要建立之暫存資料庫檔案的名稱。<p>注意： compact 程式完成時，會移除此暫存檔案。 若要讓此命令正常運作，您必須確定暫存檔案名稱是唯一的，而且具有該名稱的檔案尚未存在。 |
+| `<temp_database_name>` | 指定 jetpack.exe 要建立之暫存資料庫檔案的名稱。<p>注意： compact 程式完成時，會移除此暫存檔案。 若要讓此命令正常運作，您必須確定暫存檔案名稱是唯一的，而且具有該名稱的檔案尚未存在。 |
 | /? | 在命令提示字元顯示說明。 |
 
 ### <a name="examples"></a>範例
@@ -64,6 +64,6 @@ jetpack Dhcp.mdb Tmp.mdb
 NET start DHCPSERVER
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

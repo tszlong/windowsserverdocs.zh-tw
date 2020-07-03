@@ -1,6 +1,6 @@
 ---
 title: Fsutil fsinfo
-description: Fsutil fsinfo 命令的參考主題，其中會列出所有磁片磁碟機、查詢磁片磁碟機類型、查詢磁片區資訊、查詢 NTFS 特定磁片區資訊，或查詢檔案系統統計資料。
+description: 適用于 fsutil fsinfo 命令的參考文章，其中會列出所有磁片磁碟機、查詢磁片磁碟機類型、查詢磁片區資訊、查詢 NTFS 特定磁片區資訊，或查詢檔案系統統計資料。
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: 7787a72e-a26b-415f-b700-a32806803478
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 04d64bf0d7d29290cfc5e1ca88a013432322dbc1
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 0cb4e5b747e07c9409c7dbb80ac9950e765617bc
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83435823"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924739"
 ---
 # <a name="fsutil-fsinfo"></a>fsutil fsinfo
 
@@ -34,7 +34,7 @@ fsutil fsinfo [volumeinfo] <rootpath>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- |------------ |
 | 磁碟機 | 列出電腦中的所有磁片磁碟機。 |
 | drivetype | 查詢磁片磁碟機並列出其類型，例如 CD-ROM 光碟機。 |
@@ -141,7 +141,7 @@ UserFileReadBytes : 1305244512
 LogFileWriteBytes : 180936704
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

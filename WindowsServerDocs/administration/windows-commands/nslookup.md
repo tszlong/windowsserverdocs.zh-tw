@@ -1,6 +1,6 @@
 ---
 title: nslookup
-description: Nslookup 命令的參考主題，它會顯示可用來診斷網域名稱系統（DNS）基礎結構的資訊。
+description: Nslookup 命令的參考文章，它會顯示可用來診斷網域名稱系統（DNS）基礎結構的資訊。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 589b8dd5e1244a5aeb27f33b4985f07b776bc7bd
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 87f973349426016b6d62bd1f018f268d4e873c51
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721151"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925385"
 ---
 # <a name="nslookup"></a>nslookup
 
@@ -42,7 +42,7 @@ nslookup [exit | finger | help | ls | lserver | root | server | set | view] [opt
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | [nslookup 結束](nslookup-exit-command.md) | 結束 nslookup 命令列工具。 |
 | [nslookup 手指](nslookup-finger-command.md) | 連接目前電腦上的 finger 伺服器。 |
@@ -79,7 +79,7 @@ nslookup [exit | finger | help | ls | lserver | root | server | set | view] [opt
 
 - 如果查閱要求失敗，命令列工具會提供錯誤訊息，包括：
 
-  | 錯誤訊息 | 描述 |
+  | 錯誤訊息 | Description |
   | ------------- | ----------- |
   | 超時 |伺服器不會在一段時間後回應要求，而且一定會重試次數。 您可以使用[nslookup set timeout](nslookup-set-timeout.md)命令來設定超時時間。 您可以使用[nslookup 設定重試](nslookup-set-retry.md)命令來設定重試次數。 |
   | 伺服器沒有回應 | 伺服器電腦上沒有正在執行的 DNS 名稱伺服器。 |
@@ -90,6 +90,6 @@ nslookup [exit | finger | help | ls | lserver | root | server | set | view] [opt
   | 拒絕 | DNS 名稱伺服器已拒絕服務要求。 |
   | 格式錯誤 | DNS 名稱伺服器發現要求封包的格式不正確。 這可能表示**nslookup**中發生錯誤。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

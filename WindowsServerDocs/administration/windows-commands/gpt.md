@@ -1,6 +1,6 @@
 ---
 title: gpt
-description: Gpt 命令的參考主題，其會將 gpt 屬性指派給具有焦點的磁碟分割。
+description: Gpt 命令的參考文章，它會將 gpt 屬性指派給具有焦點的磁碟分割。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b1e33b89c1918fcb83dd9d42c155f845805307d9
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 40d3536f5a6be0bf520095e3ba61f75b7a2addc7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818798"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924615"
 ---
 # <a name="gpt"></a>gpt
 
@@ -51,7 +51,7 @@ gpt attributes=<n>
 gpt attributes=0x8000000000000000
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

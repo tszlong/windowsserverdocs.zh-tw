@@ -1,6 +1,6 @@
 ---
 title: ftp
-description: Ftp 命令的參考主題，它會在執行檔案傳輸通訊協定（ftp）伺服器服務的電腦上來回傳輸檔案。
+description: Ftp 命令的參考文章，它會在執行檔案傳輸通訊協定（ftp）伺服器服務的電腦上來回傳輸檔案。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3920306ce05aeb1b1e364c8146c461ea187f6560
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: e78148e1e7dc4f402d80bb4ebfbcbdac52249407
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820238"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925616"
 ---
 # <a name="ftp"></a>ftp
 
@@ -65,13 +65,13 @@ ftp [-v] [-d] [-i] [-n] [-g] [-s:<filename>] [-a] [-A] [-x:<sendbuffer>] [-r:<re
 ftp ftp.example.microsoft.com
 ```
 
-若要登入名為的 ftp 伺服器， `ftp.example.microsoft.com` 並執行包含在名為*resync*之檔案中的**ftp**命令，請輸入：
+若要登入名為的 ftp 伺服器， `ftp.example.microsoft.com` 並執行包含在名為*resync.txt*之檔案中的**ftp**命令，請輸入：
 
 ```
 ftp -s:resync.txt ftp.example.microsoft.com
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

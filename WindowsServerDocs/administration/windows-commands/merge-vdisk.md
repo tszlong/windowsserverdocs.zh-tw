@@ -1,6 +1,6 @@
 ---
-title: 合併 vdisk
-description: Merge vdisk 命令的參考主題，它會合並差異虛擬硬碟（VHD）與其對應的父 VHD。
+title: merge vdisk
+description: Merge vdisk 命令的參考文章，它會合並差異虛擬硬碟（VHD）與其對應的父 VHD。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ccd288baff691576c15c3e9c686b6708d1c45ee8
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 41201885861b7084fa7b49be8b5bf5a0e7394981
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354618"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925036"
 ---
-# <a name="merge-vdisk"></a>合併 vdisk
+# <a name="merge-vdisk"></a>merge vdisk
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -33,7 +33,7 @@ merge vdisk depth=<n>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | 深度 =`<n>` | 指出要合併在一起的父系 VHD 檔案數目。 例如， `depth=1` 表示差異 VHD 將與差異鏈的一個層級合併。 |
 
@@ -45,7 +45,7 @@ merge vdisk depth=<n>
 merge vdisk depth=1
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: prncnfg
-description: Prncnfg 命令的參考主題，其會設定或顯示印表機的設定資訊。
+description: Prncnfg 命令的參考文章，它會設定或顯示印表機的設定資訊。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: b60faaa5537ebdf8860c9b0471cf879677b80f1d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 11eb66c3e1d4fb457f9655750d92ab90ad9b473b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472303"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924230"
 ---
 # <a name="prncnfg"></a>prncnfg
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-設定或顯示印表機的設定資訊。 此命令是位於目錄中的 Visual Basic 腳本 `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 若要在命令提示字元中使用此命令，請輸入**cscript** ，後面接著 prncnfg 檔案的完整路徑，或將目錄變更為適當的資料夾。 例如： `cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prncnfg` 。
+設定或顯示印表機的設定資訊。 此命令是位於目錄中的 Visual Basic 腳本 `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 若要在命令提示字元中使用此命令，請輸入**cscript** ，後面接著 prncnfg 檔案的完整路徑，或將目錄變更為適當的資料夾。 例如：`cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prncnfg`。
 
 ## <a name="syntax"></a>語法
 
@@ -30,7 +30,7 @@ cscript prncnfg {-g | -t | -x | -?} [-S <Servername>] [-P <Printername>] [-z <ne
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 |--|--|
 | -g | 顯示印表機的設定資訊。 |
 | -t | 設定印表機。 |
@@ -82,7 +82,7 @@ cscript prncnfg -t -S HRServer -P colorprinter_2 +keepprintedjobs
 cscript prncnfg -x -S HRServer -P colorprinter_2 -z "colorprinter 3"
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

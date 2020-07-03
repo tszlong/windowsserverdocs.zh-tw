@@ -1,6 +1,6 @@
 ---
-title: ftp 重新命名
-description: Ftp rename 命令的參考主題，會重新命名遠端檔案。
+title: ftp rename
+description: Ftp rename 命令的參考文章，會重新命名遠端檔案。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a8d3ea25e48266db6a4a282f2ea395bd8b8d5fd9
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: f46caa4394be9edc80da018d88809a0dd6e91862
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820308"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925730"
 ---
-# <a name="ftp-rename"></a>ftp 重新命名
+# <a name="ftp-rename"></a>ftp rename
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -37,13 +37,13 @@ rename <filename> <newfilename>
 
 ### <a name="examples"></a>範例
 
-若要將遠端檔案*範例 .txt*重新命名為*example1 .txt*，請輸入：
+若要將遠端檔案*example.txt*重新命名為*example1.txt*，請輸入：
 
 ```
 rename example.txt example1.txt
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

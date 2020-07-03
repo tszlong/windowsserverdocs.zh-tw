@@ -1,6 +1,6 @@
 ---
 title: call
-description: 呼叫命令的參考主題，會呼叫另一個 batch 程式，而不會停止父批次程式。
+description: 呼叫命令的參考文章，會呼叫另一個 batch 程式，而不會停止父批次程式。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 06/05/2018
-ms.openlocfilehash: 64c4b89d18ab869a7e6c8b1ee8537c4f808bce8f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e73199b9d5633d5b3f1f7b8afd2bd35eb826bfd7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719662"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924838"
 ---
 # <a name="call"></a>call
 
@@ -31,12 +31,12 @@ call [drive:][path]<filename> [<batchparameters>] [:<label> [<arguments>]]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
-| `[<drive>:][<path>]<filename>` | 指定您想要呼叫的批次程式的位置和名稱。 參數`<filename>`是必要的，而且必須具有 .bat 或 .cmd 副檔名。 |
+| `[<drive>:][<path>]<filename>` | 指定您想要呼叫的批次程式的位置和名稱。 `<filename>`參數是必要的，而且必須具有 .bat 或 .cmd 副檔名。 |
 | `<batchparameters>` | 指定 batch 程式所需的任何命令列資訊。 |
 | `:<label>` | 指定您想要讓 batch 程式控制項跳到的標籤。 |
-| `<arguments>` | 指定要傳遞給 batch 程式之新實例的命令列資訊，從開始`:<label>`。|
+| `<arguments>` | 指定要傳遞給 batch 程式之新實例的命令列資訊，從開始 `:<label>` 。|
 | /? | 在命令提示字元顯示說明。 |
 
 ## <a name="batch-parameters"></a>批次參數
@@ -47,7 +47,7 @@ call [drive:][path]<filename> [<batchparameters>] [:<label> [<arguments>]]
 
 您可以使用下列選擇性語法做為批次參數的替代（**% n**）：
 
-| Batch 參數 | 描述 |
+| Batch 參數 | Description |
 | --------------- | ----------- |
 | % ~ 1 | 展開 **%1** ，並移除前後的引號。 |
 | % ~ f1 | 將 **%1**展開為完整路徑。 |
@@ -63,14 +63,14 @@ call [drive:][path]<filename> [<batchparameters>] [:<label> [<arguments>]]
 
 下表顯示如何將修飾詞與複合結果的批次參數結合：
 
-| 具有修飾詞的批次參數 | 描述 |
+| 具有修飾詞的批次參數 | Description |
 | ----------------------------- | ----------- |
 | % ~ dp1 | 僅將 **%1**擴充到磁碟機號和路徑。 |
 | % ~ nx1 | 僅將 **%1**擴充到檔案名和副檔名。 |
 | % ~ dp $ 路徑：1 | 搜尋 **%1**的 PATH 環境變數中所列的目錄，然後展開至找到的第一個目錄的磁碟機號和路徑。 |
 | % ~ ftza1 | 展開 **%1**以顯示類似**dir**命令的輸出。 |
 
-在上述範例中， **%1**和 PATH 可以由其他有效的值取代。 **%~** 語法會以有效的引數編號結束。 **%~** 修飾詞不能與 **% &#42;** 搭配使用。
+在上述範例中， **%1**和 PATH 可以由其他有效的值取代。 **%~** 語法會以有效的引數編號結束。 修飾詞 **%~** 不能與 **% &#42;** 搭配使用。
 
 ### <a name="remarks"></a>備註
 
@@ -78,13 +78,13 @@ call [drive:][path]<filename> [<batchparameters>] [:<label> [<arguments>]]
 
     批次參數可以包含您可以傳遞給 batch 程式的任何資訊，包括命令列選項、檔案名、批次參數 **%0**到 **%9**和變數（例如 **% 波特%**）。
 
-- 使用`<label>`參數：
+- 使用 `<label>` 參數：
 
-    藉由使用**call**搭配`<label>`參數，您可以建立新的批次檔內容，並將控制權傳遞至指定之標籤之後的語句。 第一次遇到批次檔的結尾時（也就是在跳到標籤之後），控制權會回到**call**語句之後的語句。 第二次遇到批次檔的結尾時，就會結束批次腳本。
+    藉由使用**call**搭配 `<label>` 參數，您可以建立新的批次檔內容，並將控制權傳遞至指定之標籤之後的語句。 第一次遇到批次檔的結尾時（也就是在跳到標籤之後），控制權會回到**call**語句之後的語句。 第二次遇到批次檔的結尾時，就會結束批次腳本。
 
 - 使用管道和重新導向符號：
 
-    請勿使用 [管道`(|)` ] 或 [重新`<`導向`>`符號] （或）搭配 [**呼叫**]。
+    請勿使用 [管道] `(|)` 或 [重新導向符號] （ `<` 或）搭配 [ `>` **呼叫**]。
 
 - 進行遞迴呼叫
 
@@ -92,22 +92,22 @@ call [drive:][path]<filename> [<batchparameters>] [:<label> [<arguments>]]
 
 - 使用命令延伸模組
 
-    如果已啟用命令延伸模組**call** ，請`<label>`呼叫接受做為呼叫的目標。 正確的語法為`call :<label> <arguments>`
+    如果已啟用命令延伸模組，請**呼叫**接受 `<label>` 做為呼叫的目標。 正確的語法為`call :<label> <arguments>`
 
 ## <a name="examples"></a>範例
 
-若要從另一個 batch 程式執行 checknew 程式，請在父批次程式中輸入下列命令：
+若要從另一個 batch 程式執行 checknew.bat 程式，請在父批次程式中輸入下列命令：
 
 ```
 call checknew
 ```
 
-如果父批次程式接受兩個批次參數，而您想要將這些參數傳遞至 checknew，請在父批次程式中輸入下列命令：
+如果父批次程式接受兩個批次參數，而您想要將這些參數傳遞給 checknew.bat，請在父批次程式中輸入下列命令：
 
 ```
 call checknew %1 %2
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
