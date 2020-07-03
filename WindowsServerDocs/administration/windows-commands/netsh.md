@@ -1,6 +1,6 @@
 ---
 title: netsh
-description: Netsh 命令的參考主題，這是一種命令列腳本公用程式，可讓您在本機或遠端，顯示或修改目前執行中電腦的網路設定。
+description: Netsh 命令的參考文章，這是一種命令列腳本公用程式，可讓您在本機或遠端，顯示或修改目前執行中電腦的網路設定。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c538dd10f86d252390a4e862e7b97204d1c945c9
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 4d39b891b9a8b6e313121756aa8266c79b5bfaca
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721101"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934778"
 ---
 # <a name="netsh"></a>netsh
 
@@ -30,7 +30,7 @@ netsh [-a <Aliasfile>][-c <Context>][-r <Remotecomputer>][-u [<domainname>\<user
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | -a`<Aliasfile>` | 指定在執行 Aliasfile 之後，傳回至 netsh 提示字元，以及包含一或多個 netsh 命令的文字檔名稱。 |
 | -c`<Context>` | 指定 netsh 輸入指定的 netsh 內容和要輸入的 netsh 內容。 |
@@ -47,6 +47,6 @@ netsh [-a <Aliasfile>][-c <Context>][-r <Remotecomputer>][-u [<domainname>\<user
 
 - 如果您的字串值包含字元之間的空格，您必須將字串值括在引號中。 例如， `-r "contoso remote device"`
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

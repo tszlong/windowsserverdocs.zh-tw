@@ -1,6 +1,6 @@
 ---
-title: wbadmin 取得專案
-description: Wbadmin get items 的參考主題，其中列出特定備份中包含的專案。
+title: wbadmin get items
+description: Wbadmin get items 的參考文章，其中列出特定備份中包含的專案。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9987a3628682c47cde53433558ef89c01684ccf5
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: d69ac0aa200a694b94d8428e4ae333ae21ed20e1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821198"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934363"
 ---
-# <a name="wbadmin-get-items"></a>wbadmin 取得專案
+# <a name="wbadmin-get-items"></a>wbadmin get items
 
 
 
@@ -52,7 +52,7 @@ wbadmin get items -version:03/31/2013-09:00
 wbadmin get items -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 -   [Restore](wbadmin.md)

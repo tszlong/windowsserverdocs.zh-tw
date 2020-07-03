@@ -1,6 +1,6 @@
 ---
 title: nslookup set search
-description: Nslookup 設定搜尋命令的參考主題，其會將 DNS 網域搜尋清單中的網域名稱系統（DNS）功能變數名稱附加至要求，直到收到回應為止。
+description: Nslookup 設定搜尋命令的參考文章，其會將 DNS 網域搜尋清單中的網域名稱系統（DNS）功能變數名稱附加至要求，直到收到回應為止。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c3219434f768a573c9e433c44b6b38bc9dc75f14
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 7b1740dd9bb3eb35c4cd1ef4890fcb977b2dc1ff
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721423"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935500"
 ---
 # <a name="nslookup-set-search"></a>nslookup set search
 
@@ -28,13 +28,13 @@ set [no]search
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | nosearch | 停止在要求的 DNS 網域搜尋清單中附加網域名稱系統（DNS）功能變數名稱。 |
 | 搜尋 | 在收到回應之前，在要求的 DNS 網域搜尋清單中附加網域名稱系統（DNS）功能變數名稱。 這是預設值。 |
 | /? | 在命令提示字元顯示說明。 |
 | /help | 在命令提示字元顯示說明。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

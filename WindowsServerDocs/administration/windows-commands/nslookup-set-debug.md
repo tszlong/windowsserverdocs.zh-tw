@@ -1,6 +1,6 @@
 ---
 title: nslookup set debug
-description: Nslookup set debug 命令的參考主題，這會開啟和關閉偵錯工具模式。
+description: Nslookup set debug 命令的參考文章，它會開啟和關閉偵錯工具模式。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 910dd197fe756e733b61318243130e85b4410eb1
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 2c16bde1a702f43ae047aa9839ba7a63a4cce8ae
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721171"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934443"
 ---
 # <a name="nslookup-set-debug"></a>nslookup set debug
 
@@ -28,13 +28,13 @@ set [no]debug
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | ---------- | ---------- |
 | nodebug | 關閉偵錯模式。 這是預設值。 |
 | debug | 開啟 [偵錯模式]。 藉由開啟的「偵錯工具模式」，您可以查看傳送至伺服器的封包和所產生答案的詳細資訊。 |
 | /? | 在命令提示字元顯示說明。 |
 | /help | 在命令提示字元顯示說明。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

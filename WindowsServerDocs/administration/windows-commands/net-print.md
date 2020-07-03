@@ -1,6 +1,6 @@
 ---
 title: net print
-description: Net print 命令的參考主題。 此命令已被取代，在未來的 Windows 版本中不保證會受到支援。
+description: Net print 命令的參考文章。 此命令已被取代，在未來的 Windows 版本中不保證會受到支援。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2d8744c3ef4540652b495aea0037e97f433238f2
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: af02ca14156c8a85ee54700983e2af6807752f91
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354308"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934826"
 ---
 # <a name="net-print"></a>net print
 
@@ -93,7 +93,7 @@ net print \\Production 263 /hold
 net print \\Production 263 /release
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
-title: logman 匯入和 logman 匯出
-description: Logman 匯入和 logman 匯出的參考主題，可從 XML 檔案匯入資料收集器集合，或將資料收集器集合匯出至 XML 檔案。
+title: logman import and logman export
+description: Logman 匯入和 logman 匯出的參考文章，它會從 XML 檔案匯入資料收集器集合，或將資料收集器集合匯出至 XML 檔案。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3ad664548dce51d7631a6d1a02d628af91e1921f
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: d5fbe0139a1c320056e4ba80a845b43755fc0026
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721135"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934396"
 ---
-# <a name="logman-import-and-logman-export"></a>logman 匯入和 logman 匯出
+# <a name="logman-import-and-logman-export"></a>logman import and logman export
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -31,7 +31,7 @@ logman export <[-n] <name> <-xml <name> [options]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | -s`<computer name>` | 在指定的遠端電腦上執行命令。 |
 | -config`<value>` | 指定包含命令選項的設定檔案。 |
@@ -50,7 +50,7 @@ logman export <[-n] <name> <-xml <name> [options]
 logman import perf_log -s server_1 -xml c:\windows\perf_log.xml
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: 寫入器
-description: 寫入器的參考主題，它會驗證寫入器或元件是否包含在備份或還原程式中，或排除寫入器或元件。
+description: 寫入器的參考發行項，它會確認寫入器或元件是否包含在備份或還原程式中，或排除寫入器或元件。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aed202ac774b17041f48df24333565727b110c53
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 16746f2f070b87e0c287f3a49b19a480ba5399c9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720637"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936088"
 ---
 # <a name="writer"></a>寫入器
 
@@ -31,11 +31,11 @@ writer exclude [<Writer> | <Component>]
 
 ### <a name="parameters"></a>參數
 
-| 參數  |                                                                                      描述                                                                                      |
+| 參數  |                                                                                      說明                                                                                      |
 |------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   驗證   | 驗證指定的寫入器或元件是否包含在備份或還原程式中。 如果未包含寫入器或元件，備份或還原程式將會失敗。 |
-|  exclude   |                                                   從備份或還原程式中排除指定的寫入器或元件。                                                    |
-| [\<寫入器> |                                                                                     <Component>]                                                                                      |
+|  排除   |                                                   從備份或還原程式中排除指定的寫入器或元件。                                                    |
+| [\<Writer> |                                                                                     <Component>]                                                                                      |
 
 ## <a name="examples"></a>範例
 
@@ -48,6 +48,6 @@ writer verify {4dc3bdd4-ab48-4d07-adb0-3bee2926fd7f}
 writer exclude System Writer
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

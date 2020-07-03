@@ -1,6 +1,6 @@
 ---
 title: 管理-manage-bde on
-description: 適用于 manage-bde on 命令的參考主題，它會將磁片磁碟機加密並開啟 BitLocker。
+description: 適用于 manage-bde on 命令的參考文章，它會加密磁片磁碟機並開啟 BitLocker。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bad56c9ade19d94fc5acc9b34a8cc42fe43b7c0d
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: b06c8a37524544201bf9f37a446a8d227f878ee4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222851"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935453"
 ---
 # <a name="manage-bde-on"></a>管理-manage-bde on
 
@@ -31,7 +31,7 @@ manage-bde –on <drive> {[-recoverypassword <numericalpassword>]|[-recoverykey 
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `<drive>` | 表示後面接著冒號的磁碟機號。 |
 | -msfve-recoverypassword | 新增數位密碼保護裝置。 您也可以使用 **-rp**做為此命令的縮寫版本。 |
@@ -93,7 +93,7 @@ manage-bde –on E: -pw
 manage-bde –on C: -fet hardware
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

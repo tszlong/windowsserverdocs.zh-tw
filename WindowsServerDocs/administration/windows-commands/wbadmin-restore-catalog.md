@@ -1,6 +1,6 @@
 ---
 title: wbadmin restore catalog
-description: Wbadmin restore catalog 的參考主題，它會從您指定的儲存位置復原本機電腦的備份類別目錄。
+description: Wbadmin restore catalog 的參考文章，它會從您指定的儲存位置復原本機電腦的備份類別目錄。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 82a399284862ef59f417efa0b6f17ab6e8c4cb71
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 2584dde27560b5b8f28fb51b8fb5c2cf92a2d805
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820488"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934313"
 ---
 # <a name="wbadmin-restore-catalog"></a>wbadmin restore catalog
 
@@ -54,7 +54,7 @@ wbadmin restore catalog -backupTarget:d
 wbadmin restore catalog -backupTarget:\\servername\share -machine:server01
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 -   [Restore](wbadmin.md)

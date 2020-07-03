@@ -1,6 +1,6 @@
 ---
 title: xcopy
-description: Xcopy 的參考主題，其會複製檔案和目錄，包括子目錄。
+description: Xcopy 的參考文章，其會複製檔案和目錄，包括子目錄。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 01/05/2019
-ms.openlocfilehash: c55d6ae5ff701555eb9bfb7135ffa28692bd4391
-ms.sourcegitcommit: 4894649cc47dfa535306cc334871f81155198f76
+ms.openlocfilehash: e33450cd330ac962c111b145d71c2595f926da2c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84254721"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936066"
 ---
 # <a name="xcopy"></a>xcopy
 
@@ -109,7 +109,7 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 
   若要處理**xcopy**傳回的結束代碼，請在 batch 程式中的**if**命令列上使用**ErrorLevel**參數。 如需使用**if**處理結束代碼的 batch 程式範例，請參閱[其他參考](#additional-references)。 下表列出每個結束代碼和描述。
 
-  |結束代碼|描述|
+  |結束碼|說明|
   |---------|-----------|
   |0|檔案已複製而不發生錯誤。|
   |1|找不到要複製的檔案。|
@@ -206,7 +206,7 @@ rem  3 File(s) copied
 
 在上述範例中，這個特定的來源參數值 **。 \\\*yml**會複製相同的3個檔案，即使已移除它的兩個路徑字元 **。 \\ ** 不過，如果已從來源參數中移除星號萬用字元，則不會複製任何檔案，而是只會將它設為 **。 \\yml**。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [複製](copy.md)
 - [移動](move.md)

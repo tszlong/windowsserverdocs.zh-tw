@@ -1,6 +1,6 @@
 ---
 title: mstsc
-description: Mstsc 命令的參考主題，會建立遠端桌面工作階段主機伺服器或其他遠端電腦的連接、編輯現有的遠端桌面連線（.rdp）設定檔，並將使用用戶端連接管理員建立的舊版連接檔案，遷移至新的 .rdp 連接檔案。
+description: Mstsc 命令的參考文章，會建立遠端桌面工作階段主機伺服器或其他遠端電腦的連線、編輯現有的遠端桌面連線（.rdp）設定檔，並將使用用戶端連接管理員建立的舊版連接檔案遷移至新的 .rdp 連接檔案。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a6620cc2f954e43a6e68369f9b1f3480c1fc508c
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: cec9ef281c886964163c233022466d8478d65c79
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354348"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934843"
 ---
 # <a name="mstsc"></a>mstsc
 
@@ -32,7 +32,7 @@ mstsc.exe /migrate
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ------------|
 | `<connectionfile>` | 指定連接的 .rdp 檔案名。 |
 | /v:`<server>[:<port>]` | 指定遠端電腦，以及您想要連接的埠號碼（選擇性）。 |
@@ -68,6 +68,6 @@ mstsc /f
 mstsc /edit filename.rdp
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

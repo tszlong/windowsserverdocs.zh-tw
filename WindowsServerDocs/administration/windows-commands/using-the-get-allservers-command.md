@@ -1,6 +1,6 @@
 ---
 title: AllServers
-description: AllServers 的參考主題，它會抓取所有 Windows 部署服務伺服器的相關資訊。
+description: AllServers 的參考文章，它會抓取所有 Windows 部署服務伺服器的相關資訊。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b623b5e95e2a57147b7d9d191d42556191dd8e4d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a02515b138c9db6a1d320a4ad466700c15b84749
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719976"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935064"
 ---
 # <a name="get-allservers"></a>AllServers
 
@@ -31,9 +31,9 @@ WDSUTIL [Options] /Get-AllServers /Show:{Config | Images | All} [/Detailed] [/Fo
 
 ### <a name="parameters"></a>參數
 
-|   參數   |                                                                                                                 描述                                                                                                                  |
+|   參數   |                                                                                                                 說明                                                                                                                  |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| /Show： {Config |                                                                                                                    映像                                                                                                                    |
+| /Show： {Config |                                                                                                                    影像                                                                                                                    |
 |  [/Detailed]  | 與 **/show： Images**或 **/show： All**一起使用時，會傳回每個影像中的所有影像中繼資料。 如果未指定 **/Detailed**選項，則預設行為是傳回映射名稱、描述和檔案名。 |
 | [/Forest： {Yes |                                                                                                                     否}]                                                                                                                     |
 
@@ -48,6 +48,6 @@ WDSUTIL /Get-AllServers /Show:Config
 WDSUTIL /Verbose /Get-AllServers /Show:All /Detailed /Forest:Yes
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

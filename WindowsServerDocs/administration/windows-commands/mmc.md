@@ -1,6 +1,6 @@
 ---
 title: mmc
-description: Mmc 命令的參考主題，可讓您開啟特定 mmc 主控台、在作者模式中開啟 mmc，或指定以開啟32位或64位版本的 mmc。
+description: Mmc 命令的參考文章，可讓您開啟特定 mmc 主控台、在作者模式中開啟 mmc，或指定以開啟32位或64位版本的 mmc。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1de1bc7912b995bf7df0e1acb50cfee18747b700
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 8c93416c9939d37e8d672a7e8d52d01ddfebd48e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354588"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935765"
 ---
 # <a name="mmc"></a>mmc
 
@@ -30,7 +30,7 @@ mmc <path>\<filename>.msc [/a] [/64] [/32]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `<path>\<filename>.msc` | 啟動**mmc**並開啟儲存的主控台。 您必須指定已儲存主控台檔案的完整路徑及檔名。 如果您未指定主控台檔案， **mmc**會開啟新的主控台。 |
 | /a | 在作者模式中開啟已儲存的主控台。  用來對已儲存的主控台進行變更。 |
@@ -48,6 +48,6 @@ mmc <path>\<filename>.msc [/a] [/64] [/32]
 
 - 您可以使用命令列來建立開啟**mmc**和已儲存主控台的快捷方式。 命令列命令適用于 [**開始**] 功能表上的 [**執行**] 命令、任何命令提示字元視窗、快捷方式，或是呼叫命令的任何批次檔或程式。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

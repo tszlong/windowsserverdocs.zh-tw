@@ -1,6 +1,6 @@
 ---
 title: tsdiscon
-description: Tsdiscon 的參考主題，這會中斷會話與遠端桌面工作階段主機伺服器的連線。
+description: Tsdiscon 的參考文章，它會中斷會話與遠端桌面工作階段主機伺服器的連線。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e2a97d1b157445fd43acce5a80f3d793ed5ae5af
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 05bf4e05648b0e5dd87657396df763432fab38f0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721256"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934193"
 ---
 # <a name="tsdiscon"></a>tsdiscon
 
@@ -34,11 +34,11 @@ tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
 
 ### <a name="parameters"></a>參數
 
-|參數|描述|
+|參數|說明|
 |-------|--------|
 |\<SessionId>|指定要中斷連線之會話的識別碼。|
 |\<SessionName>|指定要中斷連線之會話的名稱。|
-|/server：\<ServerName>|指定包含您要中斷連線之會話的終端機伺服器。 否則，會使用目前的 rd 工作階段主機伺服器。|
+|/server:\<ServerName>|指定包含您要中斷連線之會話的終端機伺服器。 否則，會使用目前的 rd 工作階段主機伺服器。|
 |/v|顯示正在執行之動作的相關資訊。|
 |/?|在命令提示字元顯示說明。|
 
@@ -62,6 +62,6 @@ tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
   ```
   tsdiscon TERM04
   ```
-  ## <a name="additional-references"></a>其他參考
-  - [命令列語法金鑰](command-line-syntax-key.md)
+  ## <a name="additional-references"></a>其他參考資料
+  - [命令列語法索引鍵](command-line-syntax-key.md) 
   [遠端桌面服務（終端機服務）命令參考](remote-desktop-services-terminal-services-command-reference.md)

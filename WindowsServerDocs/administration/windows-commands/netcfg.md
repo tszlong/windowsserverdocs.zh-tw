@@ -1,6 +1,6 @@
 ---
 title: netcfg
-description: Netcfg 命令的參考主題，它會安裝 Windows 預先安裝環境（WinPE），這是用來部署工作站的輕量版本 Windows。
+description: Netcfg 命令的參考文章，它會安裝 Windows 預先安裝環境（WinPE），這是用來部署工作站的輕量版本 Windows。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5a308441df55873b205972d703ec52f53345beb5
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 0f9ed2dde5d85be5432fb7b3af8279b2e71e9db0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721551"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934815"
 ---
 # <a name="netcfg"></a>netcfg
 
@@ -30,7 +30,7 @@ netcfg [/v] [/e] [/winpe] [/l ] /c /i
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | /v | 以詳細（詳細）模式執行。 |
 | /e | 在安裝和卸載期間使用服務環境變數。 |
@@ -86,6 +86,6 @@ netcfg /s n
 netcfg /b ms_tcpip
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

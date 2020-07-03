@@ -1,6 +1,6 @@
 ---
 title: qprocess
-description: Qprocess 命令的參考主題，它會顯示在遠端桌面工作階段主機伺服器上執行之進程的相關資訊。
+description: Qprocess 命令的參考文章，它會顯示在遠端桌面工作階段主機伺服器上執行之進程的相關資訊。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e27902e363f067619543252552fd2f9ede906b62
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 2c7c62c4beb3d501fc6ff4926a054e2ae0bad043
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472033"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934385"
 ---
 # <a name="qprocess"></a>qprocess
 
@@ -25,7 +25,7 @@ ms.locfileid: "85472033"
 > [!NOTE]
 > 此命令與[查詢處理命令](query-process.md)相同。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: 等等
-description: '[更多] 命令的參考主題，一次會顯示一個輸出畫面。'
+description: '[更多] 命令的參考文章，一次會顯示一個輸出畫面。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/26/2019
-ms.openlocfilehash: 042669aa638990375157d08d9e12840ade486165
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: fec0ffbd7f2ce5d1efe1953cb4ab283d33f06ec8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354568"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935736"
 ---
 # <a name="more"></a>等等
 
@@ -33,7 +33,7 @@ more [/c] [/p] [/s] [/t<n>] [+<n>] [<files>]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `<command>` | 指定您想要顯示輸出的命令。 |
 | /C | 在顯示頁面之前清除畫面。 |
@@ -49,7 +49,7 @@ more [/c] [/p] [/s] [/t<n>] [+<n>] [<files>]
 
 - 在**更多**提示（）中可接受下列子命令 `-- More --` ，包括：
 
-    | 答案 | 動作 |
+    | Key | 動作 |
     | --- | ------ |
     | 空白鍵 | 按**空格鍵**以顯示下一個畫面。 |
     | ENTER | 按**enter**鍵，一次顯示一行檔案。 |
@@ -106,7 +106,7 @@ more s
 
 [**更多**] 提示會詢問您要略過的行數，如下所示： `-- More -- Lines:` 。 輸入要略過的行數，然後按 ENTER 鍵。 畫面會變更，以顯示這些線條會略過。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

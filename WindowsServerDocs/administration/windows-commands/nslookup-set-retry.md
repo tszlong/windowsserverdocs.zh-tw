@@ -1,6 +1,6 @@
 ---
 title: nslookup set retry
-description: Nslookup 設定重試命令的參考主題，其會設定嘗試從指定伺服器取得資訊的次數。
+description: Nslookup 設定重試命令的參考文章，其會設定嘗試從指定伺服器取得資訊的次數。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 268a9f0023c0e7e19e8ed413895f639444fe3b88
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 9ef38be2abfd423bb093ccf2b2ee6d701df28df3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721461"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935701"
 ---
 # <a name="nslookup-set-retry"></a>nslookup set retry
 
@@ -33,13 +33,13 @@ set retry=<number>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | ---------- | ---------- |
 | `<number>` | 指定重試次數的新值。 預設的重試次數為**4**。 |
 | /? | 在命令提示字元顯示說明。 |
 | /help | 在命令提示字元顯示說明。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

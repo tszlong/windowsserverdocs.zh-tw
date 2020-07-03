@@ -1,6 +1,6 @@
 ---
 title: mount
-description: 掛接命令的參考主題，它會裝載網路檔案系統（NFS）網路共用。
+description: 掛接命令的參考文章，它會裝載網路檔案系統（NFS）網路共用。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 823b88b8ab1168776c25e05e3dbf5ec08d784724
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 505094251ab6b0053cc3d46801ba5f6170201ecd
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354558"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935718"
 ---
 # <a name="mount"></a>mount
 
@@ -31,7 +31,7 @@ mount [-o <option>[...]] [-u:<username>] [-p:{<password> | *}] {\\<computername>
 
 ### <a name="parameters"></a>參數
 
-| 參數  | 描述 |
+| 參數  | 說明 |
 | ---------- | ----------- |
 | -o rsize =`<buffersize>` | 設定讀取緩衝區的大小（以 kb 為單位）。 可接受的值為1、2、4、8、16和 32;預設值為 32 KB。 |
 | -o wsize =`<buffersize>` | 設定寫入緩衝區的大小（以 kb 為單位）。 可接受的值為1、2、4、8、16和 32;預設值為 32 KB。 |
@@ -49,6 +49,6 @@ mount [-o <option>[...]] [-u:<username>] [-p:{<password> | *}] {\\<computername>
 | `<sharename>` | 指定檔案系統的名稱。 |
 | `<devicename>` | 指定裝置的磁碟機號和名稱。 如果您使用星號（**&#42;**），此值代表第一個可用的驅動程式字母。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

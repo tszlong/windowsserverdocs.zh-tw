@@ -1,6 +1,6 @@
 ---
 title: mode
-description: Mode 命令的參考主題，它會顯示系統狀態、變更系統設定，或重新設定埠或裝置。
+description: 模式命令的參考文章，可顯示系統狀態、變更系統設定，或重新設定埠或裝置。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f4c895c59bb527b8bfb6973a72d0d4e163cb2ace
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 5794b80f7457b133d3e5b599cb12613469ad58eb
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354578"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936056"
 ---
 # <a name="mode"></a>mode
 
@@ -32,7 +32,7 @@ mode com<m>[:] [baud=<b>] [parity=<p>] [data=<d>] [stop=<s>] [to={on|off}] [xon=
 
 #### <a name="parameters"></a>參數
 
-| 參數  | 描述 |
+| 參數  | 說明 |
 | ---------- | ----------- |
 | `com<m>[:]` | 指定非同步 Prncnfg vbshronous 通訊埠的編號。 |
 | `baud=<b>`  | 指定傳輸速率（以每秒位數為單位）。 有效值包括：<ul><li>**11** -110 波特</li><li>**15** -150 波特</li><li>**30** -300 波特</li><li>**60** -600 波特</li><li>**12** -1200 波特</li><li>**24** -2400 波特</li><li>**48** -4800 波特</li><li>**96** -9600 波特</li><li>**19** -19200 波特</li></ul> |
@@ -60,7 +60,7 @@ mode [<device>] [/status]
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `<device>` | 指定您想要顯示其狀態之裝置的名稱。 標準名稱包括、LPT1：至 LPT3：、COM1：到 COM9：，以及 CON。 |
 | /status | 要求任何重新導向之平行印表機的狀態。 您也可以使用 **/sta**做為此命令的縮寫版本。 |
@@ -81,7 +81,7 @@ mode LPT<n>[:]=COM<m>[:]
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | LPT `<n>` [：] | 指定要設定的 LPT 編號。 一般來說，這表示提供來自 LTP1 的值 **：到 LTP3：**，除非您的系統包含特殊的平行埠支援。 此為必要參數。|
 | COM `<m>` [：] | 指定要設定的 COM 埠。 一般來說，這表示從**COM1：到 COM9：** 提供值，除非您的系統具有其他 COM 埠的特殊硬體。 此為必要參數。 |
@@ -117,7 +117,7 @@ mode <device> codepage [/status]
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `<device>` |指定您要選取字碼頁的裝置。 CON 是唯一有效的裝置名稱。 此為必要參數。 |
 | codepage | 指定要搭配指定裝置使用的字碼頁。 您也可以使用**cp**作為此命令的縮寫版本。 此為必要參數。 |
@@ -137,7 +137,7 @@ mode con[:] [cols=<c>] [lines=<n>]
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | con [：] | 指出變更適用于 [命令提示字元] 視窗。 此為必要參數。 |
 | cols =`<c>` | 指定命令提示字元螢幕緩衝區中的資料行數目。 預設值為80個數據行，但您可以將此設定為任何值。 如果您不使用預設值，一般的值是40和135資料行。 使用非標準值可能會導致命令提示應用程式發生問題。 |
@@ -159,13 +159,13 @@ mode con[:] [rate=<r> delay=<d>]
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | con [：] | 指定鍵盤。 此為必要參數。 |
 | 速率 =`<r>` | 指定當您按住按鍵時，在螢幕上重複字元的速率。 針對 IBM 的相容鍵盤，預設值為每秒20個字元，而 IBM PS/2 相容鍵盤則為21個，但您可以使用1到32的任何值。 如果您設定此參數，您也必須設定**delay**參數。|
 | delay =`<d>` | 指定在字元輸出重複之前，按住按鍵後所經過的時間量。 預設值為2（50秒），但您也可以使用1（25秒）、3（75秒）或4（1秒）。 如果您設定此參數，您也必須設定**rate**參數。 |
 | /? | 在命令提示字元顯示說明。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

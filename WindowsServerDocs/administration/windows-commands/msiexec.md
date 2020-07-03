@@ -1,6 +1,6 @@
 ---
 title: msiexec
-description: Msiexec 命令的參考主題，提供從命令列安裝、修改和執行 Windows Installer 作業的方法。
+description: Msiexec 命令的參考文章，提供從命令列安裝、修改和執行 Windows Installer 作業的方法。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f84df28104f581873fe1fd86a3abd6a51532b020
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: aacdc55ac3895efad7dd9499ea1402b538fb8a9b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354338"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934965"
 ---
 # <a name="msiexec"></a>msiexec
 
@@ -32,7 +32,7 @@ msiexec.exe [/i][/a][/j{u|m|/g|/t}][/x] <path_to_package>
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | ------- | -------- |
 | /i | 指定一般安裝。 |
 | /a | 指定系統管理安裝。 |
@@ -45,7 +45,7 @@ msiexec.exe [/i][/a][/j{u|m|/g|/t}][/x] <path_to_package>
 
 #### <a name="examples"></a>範例
 
-若要從 C：磁片磁碟機使用一般安裝程式來安裝名為*範例 .msi*的套件，請輸入：
+若要使用標準安裝程式從 C：磁片磁碟機安裝名為*example.msi*的套件，請輸入：
 
 ```
 msiexec.exe /i "C:\example.msi"
@@ -63,7 +63,7 @@ msiexec.exe /i <path_to_package> [/quiet][/passive][/q{n|b|r|f}]
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | ------- | -------- |
 | `<path_to_package>` | 指定安裝套件檔案的位置和名稱。 |
 | /quiet | 指定無訊息模式，這表示不需要任何使用者互動。 |
@@ -99,7 +99,7 @@ msiexec.exe /i <path_to_package> [/norestart][/promptrestart][/forcerestart]
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | ------- | -------- |
 | `<path_to_package>` | 指定安裝套件檔案的位置和名稱。 |
 | /norestart | 在安裝完成之後，停止裝置重新開機。 |
@@ -126,7 +126,7 @@ msiexec.exe [/i][/x] <path_to_package> [/L{i|w|e|a|r|u|c|m|o|p|v|x+|!|*}] <path_
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | ------- | -------- |
 | /i | 指定一般安裝。 |
 | /x | 卸載封裝。 |
@@ -152,7 +152,7 @@ msiexec.exe [/i][/x] <path_to_package> [/L{i|w|e|a|r|u|c|m|o|p|v|x+|!|*}] <path_
 
 #### <a name="examples"></a>範例
 
-若要安裝封裝*C:\example.msi*，請使用一般安裝程式搭配提供的所有記錄資訊，包括詳細資訊輸出，並在*C:\package.log*儲存輸出記錄檔，請輸入：
+若要安裝封裝*C:\example.msi*，請使用一般安裝程式搭配提供的所有記錄資訊，包括詳細資訊輸出，並將輸出記錄檔儲存在*C:\package.log*，輸入：
 
 ```
 msiexec.exe /i "C:\example.msi" /L*V "C:\package.log"
@@ -170,7 +170,7 @@ msiexec.exe [/p][/update][/uninstall[/package<product_code_of_package>]] <path_t
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | ------- | -------- |
 | /p | 安裝修補程式。 如果您要以無訊息方式安裝，您也必須將 REINSTALLMODE 屬性設定為*ecmus* ，並重新安裝為*ALL*。 否則，修補程式只會更新目標裝置上快取的 MSI。 |
 | /update | [安裝修補程式] 選項。 如果您要套用多個更新，您必須使用分號來分隔它們（;)。 |
@@ -202,7 +202,7 @@ msiexec.exe [/f{p|o|e|d|c|a|u|m|s|v}] <product_code>
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | ------- | -------- |
 | /fp | 如果檔案遺失，則修復套件。 |
 | /fo | 如果檔案遺失或已安裝較舊的版本，則修復套件。 |
@@ -227,10 +227,10 @@ msiexec.exe /fa {AAD3D77A-7476-469F-ADF4-04424124E91D}
 
 您可以透過此命令設定公用屬性。 如需可用屬性和其設定方式的詳細資訊，請參閱[公用屬性](https://docs.microsoft.com/windows/win32/msi/public-properties)。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [Msiexec .exe 命令列選項](https://docs.microsoft.com/windows/win32/msi/command-line-options)
+- [Msiexec.exe 命令列選項](https://docs.microsoft.com/windows/win32/msi/command-line-options)
 
 - [標準安裝程式命令列選項](https://docs.microsoft.com/windows/win32/msi/standard-installer-command-line-options)

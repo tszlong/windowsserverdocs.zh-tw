@@ -1,6 +1,6 @@
 ---
 title: AllDevices
-description: AllDevices 的參考主題，它會顯示所有預先設置電腦的 Windows 部署服務屬性。
+description: AllDevices 的參考文章，它會顯示所有預先設置電腦的 Windows 部署服務屬性。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 26e114be7ecf104687da237636b54b79e4114591
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b5eae53c2dcd39a7f3587f4c3c6bf96d4782ea05
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720896"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935221"
 ---
 # <a name="get-alldevices"></a>AllDevices
 
@@ -27,18 +27,18 @@ ms.locfileid: "82720896"
 wdsutil [Options] /Get-AllDevices [/forest:{Yes | No}] [/ReferralServer:<Server name>]
 ```
 ### <a name="parameters"></a>參數
-|參數|描述|
+|參數|說明|
 |-------|--------|
 |[/forest： {Yes &#124; No}]|指定 Windows 部署服務是否應傳回整個樹系或本機網域中的電腦。 預設設定為 [**否**]，表示只會傳回本機網域中的電腦。|
-|[/ReferralServer：<Server name>]|只傳回針對指定伺服器預先設置的電腦。|
+|[/ReferralServer： <Server name> ]|只傳回針對指定伺服器預先設置的電腦。|
 ## <a name="examples"></a>範例
 若要查看所有電腦，請輸入下列其中一項：
 ```
 wdsutil /Get-AllDevices
 wdsutil /verbose /Get-AllDevices /forest:Yes /ReferralServer:MyWDSServer
 ```
-## <a name="additional-references"></a>其他參考
-- [命令列語法按鍵](command-line-syntax-key.md)
-子命令：[使用 [取得裝置] 命令](using-the-get-device-command.md)[，透過 [新增裝置] 命令](using-the-add-device-command.md)
-[設定裝置](subcommand-set-device.md)
-
+## <a name="additional-references"></a>其他參考資料
+- [命令列語法索引鍵](command-line-syntax-key.md) 
+[子命令：設定-裝置](subcommand-set-device.md) 
+[使用 [新增裝置] 命令](using-the-add-device-command.md) 
+[使用取得裝置命令](using-the-get-device-command.md)

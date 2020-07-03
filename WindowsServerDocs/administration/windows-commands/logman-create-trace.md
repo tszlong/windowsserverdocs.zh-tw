@@ -1,6 +1,6 @@
 ---
-title: logman 建立追蹤
-description: Logman create trace 命令的參考主題，它會建立事件追蹤資料收集器。
+title: logman create trace
+description: Logman create trace 命令的參考文章，它會建立事件追蹤資料收集器。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 015fb7842146e372b36c71fe95a3598bdfa48676
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 2e4d824bbdba93f220b744c334381a2751f11476
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222989"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934293"
 ---
-# <a name="logman-create-trace"></a>logman 建立追蹤
+# <a name="logman-create-trace"></a>logman create trace
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -30,7 +30,7 @@ logman create trace <[-n] <name>> [options]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | -s`<computer name>` | 在指定的遠端電腦上執行命令。 |
 | -config`<value>` | 指定包含命令選項的設定檔案。 |
@@ -75,7 +75,7 @@ logman create trace <[-n] <name>> [options]
 logman create trace trace_log -nb 16 256 -bs 64 -o c:\logfile
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

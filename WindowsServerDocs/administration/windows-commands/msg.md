@@ -1,6 +1,6 @@
 ---
 title: msg
-description: Msg 命令的參考主題，它會將訊息傳送給遠端桌面工作階段主機伺服器上的使用者
+description: Msg 命令的參考文章，它會將訊息傳送給遠端桌面工作階段主機伺服器上的使用者
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5eca19eee696e7a45cec2f16398055a7b06d00d6
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 6eff557b1fb7eb2c5f67b2902762786bbfc839c1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354358"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934968"
 ---
 # <a name="msg"></a>msg
 
@@ -33,7 +33,7 @@ msg {<username> | <sessionname> | <sessionID>| @<filename> | *} [/server:<server
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `<username>` | 指定您想要接收訊息的使用者名稱。 如果您未指定使用者或會話，此命令會顯示錯誤訊息。 指定會話時，它必須是作用中的會話。 |
 | `<sessionname>` | 指定您想要接收訊息的會話名稱。 如果您未指定使用者或會話，此命令會顯示錯誤訊息。 指定會話時，它必須是作用中的會話。 |
@@ -79,6 +79,6 @@ msg * Let's meet at 1PM today
 msg * /time:10 Let's meet at 1PM today
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

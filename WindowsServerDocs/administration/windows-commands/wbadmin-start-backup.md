@@ -1,6 +1,6 @@
 ---
-title: wbadmin 開始備份
-description: Wbadmin start backup 的參考主題，這會使用指定的參數來建立備份。
+title: wbadmin start backup
+description: Wbadmin start backup 的參考文章，它會使用指定的參數來建立備份。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9057baf3d4208fe7a0a4e4e60b9029a504724744
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: b3d819b8c3d6ba0b188b11d7fc1db7f1536a844c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820498"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935007"
 ---
-# <a name="wbadmin-start-backup"></a>wbadmin 開始備份
+# <a name="wbadmin-start-backup"></a>wbadmin start backup
 
 使用指定的參數建立備份。 如果未指定任何參數，而且您已建立排程的每日備份，則此子命令會使用排程備份的設定來建立備份。 如果指定了參數，它會建立磁碟區陰影複製服務（VSS）複本備份，而且不會更新正在備份之檔案的歷程記錄。
 
 若要使用這個子命令建立一次性備份，您必須是**Backup Operators**群組或**Administrators**群組的成員，或者必須已被委派適當的許可權。 此外，您必須從提升許可權的命令提示字元執行**wbadmin** 。 （若要開啟提升許可權的命令提示字元，以滑鼠右鍵按一下**命令提示**字元，然後按一下 [以**系統管理員身分執行**]）
 
-## <a name="syntax"></a>語法
+## <a name="syntax"></a>Syntax
 
 Windows Vista 和 Windows Server 2008 的語法：
 ```
@@ -59,7 +59,7 @@ Wbadmin start backup
 
 |參數|說明|
 |---------|-----------|
-|-backupTarget|指定此備份的存放位置。 需要硬碟磁碟機號（f：）、磁片區 GUID 路徑，格式為 \\ \\ ？ \\磁片區 {GUID} 或遠端共用資料夾的通用命名慣例（UNC）路徑（ \\ \\ \< servername>\\ \< 共用名稱>\\ ）。 根據預設，備份將會儲存在： \\ \\ \< servername>\\ \< 共用名稱>\\ **WindowsImageBackup** \\ \< ComputerBackedUp>\\ 。</br>重要事項：如果您將備份儲存到遠端共用資料夾，當您再次使用相同的資料夾來備份相同的電腦時，將會覆寫該備份。 此外，如果備份作業失敗，因為舊備份被覆寫，但新備份無法使用，您最後可能沒有任何備份。 在遠端共用資料夾中建立子資料夾以組織備份，可以避免此狀況。 如果這麼做，子資料夾需要兩倍的上層資料夾空間。|
+|-backupTarget|指定此備份的存放位置。 需要硬碟磁碟機號（f：）、磁片區 GUID 路徑，格式為 \\ \\ ？ \\磁片區 {GUID}，或遠端共用資料夾的通用命名慣例（UNC）路徑（ \\ \\ \<servername> \\ \<sharename> \\ ）。 根據預設，備份會儲存在： \\ \\ \<servername> \\ \<sharename> \\ **WindowsImageBackup** \\ \<ComputerBackedUp> \\ 。</br>重要事項：如果您將備份儲存到遠端共用資料夾，當您再次使用相同的資料夾來備份相同的電腦時，將會覆寫該備份。 此外，如果備份作業失敗，因為舊備份被覆寫，但新備份無法使用，您最後可能沒有任何備份。 在遠端共用資料夾中建立子資料夾以組織備份，可以避免此狀況。 如果這麼做，子資料夾需要兩倍的上層資料夾空間。|
 |-include|針對 Windows Vista 和 Windows Server 2008，指定要包含在備份中的磁片區磁碟機號、磁片區掛接點或以 GUID 為基礎的磁片區名稱清單（以逗號分隔）。 只有在使用 **-backupTarget**參數時，才應該使用這個參數。</br>若是 Windows 7 和 Windows Server 2008 R2 和更新版本，請指定要包含在備份中的專案清單（以逗號分隔）。 您可以包含多個檔案、資料夾或磁片區。 您可以使用磁片區磁碟機號、磁片區掛接點或以 GUID 為基礎的磁片區名稱來指定磁片區路徑。 如果您使用以 GUID 為基礎的磁片區名稱，則應該以反斜線（ \\ ）結束。 指定檔案的路徑時，您可以 \* 在檔案名中使用萬用字元（）。 只有在使用 **-backupTarget**參數時，才應該使用。|
 |-排除|針對 Windows 7 和 Windows Server 2008 R2 和更新版本，指定要從備份中排除的專案清單（以逗號分隔）。 您可以排除檔案、資料夾或磁片區。 您可以使用磁片區磁碟機號、磁片區掛接點或以 GUID 為基礎的磁片區名稱來指定磁片區路徑。 如果您使用以 GUID 為基礎的磁片區名稱，則應該以反斜線（ \\ ）結束。 指定檔案的路徑時，您可以 \* 在檔案名中使用萬用字元（）。 只有在使用 **-backupTarget**參數時，才應該使用。|
 |-nonRecurseInclude|針對 Windows 7 和 Windows Server 2008 R2 和更新版本，指定要包含在備份中的非遞迴、以逗號分隔的專案清單。 您可以包含多個檔案、資料夾或磁片區。 您可以使用磁片區磁碟機號、磁片區掛接點或以 GUID 為基礎的磁片區名稱來指定磁片區路徑。 如果您使用以 GUID 為基礎的磁片區名稱，則應該以反斜線（ \\ ）結束。 指定檔案的路徑時，您可以 \* 在檔案名中使用萬用字元（）。 只有在使用 **-backupTarget**參數時，才應該使用。|
@@ -69,7 +69,7 @@ Wbadmin start backup
 |-noVerify|指定儲存到卸載式媒體（例如 DVD）的備份不會驗證是否有錯誤。 如果您未使用此參數，則會驗證儲存到卸載式媒體的備份是否有錯誤。|
 |-使用者|如果將備份儲存到遠端共用資料夾，請指定具有資料夾寫入權限的使用者名稱。|
 |-password|指定參數**使用者**所提供之使用者名稱的密碼。|
-|-noInheritAcl|將對應至 **-user**和 **-password**參數提供之認證的存取控制清單（ACL）許可權套用至 \\ \\ \< servername>共用名稱， \\ \<>\\ WindowsImageBackup \\ \< ComputerBackedUp>\\ （包含備份的資料夾）。 若要稍後存取備份，您必須使用這些認證，或在具有共用資料夾的電腦上，是 Administrators 群組或 Backup Operators 群組的成員。 如果未使用 **-noInheritAcl** ，則遠端共用資料夾的 ACL 許可權預設會套用至 \\ \< ComputerBackedUp> 資料夾，讓具有遠端共用資料夾存取權的任何人都可以存取備份。|
+|-noInheritAcl|將對應至 **-user**和 **-password**參數提供之認證的存取控制清單（ACL）許可權套用至 \\ \\ \<servername> \\ \<sharename> \\ WindowsImageBackup \\ \<ComputerBackedUp> \\ （包含備份的資料夾）。 若要稍後存取備份，您必須使用這些認證，或在具有共用資料夾的電腦上，是 Administrators 群組或 Backup Operators 群組的成員。 如果未使用 **-noInheritAcl** ，則遠端共用資料夾的 ACL 許可權預設會套用至資料夾， \\ \<ComputerBackedUp> 讓具有遠端共用資料夾存取權的任何人都可以存取備份。|
 |-vssFull|使用磁碟區陰影複製服務（VSS）執行完整備份。 所有檔案都會進行備份，每個檔案的歷程記錄都會更新以反映它已備份，而先前備份的記錄可能會被截斷。 如果未使用此參數，則**wbadmin start backup**會進行複本備份，但不會更新所備份之檔案的歷程記錄。</br>注意：如果您使用 Windows Server Backup 以外的產品來備份目前備份所包含之磁片區上的應用程式，請勿使用此參數。 這麼做可能會中斷其他備份產品所建立的增量、差異或其他類型的備份，因為它們所依賴的歷程記錄會決定要備份的資料量可能會遺失，而且可能會不必要地執行完整備份。|
 |-vssCopy|對於 Windows 7 和 Windows Server 2008 R2 和更新版本，會使用 VSS 執行複本備份。 所有檔案都會進行備份，但是要備份的檔案歷程記錄並不會更新，因此您可以保留變更、刪除等檔案的所有資訊，以及任何應用程式記錄檔。 使用這種類型的備份並不會影響與此複本備份無關的增量和差異備份順序。 這是預設值。</br>警告：複本備份無法用於增量或差異備份或還原。|
 |-quiet|執行子命令，而不提示使用者。|
@@ -99,7 +99,7 @@ Wbadmin start backup
   wbadmin start backup –backupTarget: \\backupshare\backup1 -noinheritacl -nonrecurseinclude:d:\folder1
   ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 -   [Restore](wbadmin.md)

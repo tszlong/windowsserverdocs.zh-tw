@@ -1,6 +1,6 @@
 ---
 title: nlbmgr
-description: Nlbmgr 命令的參考主題，可協助您使用網路負載平衡管理員，從單一電腦設定和管理您的網路負載平衡叢集和所有叢集主機。
+description: Nlbmgr 命令的參考文章，可協助您使用網路負載平衡管理員，從單一電腦設定和管理您的網路負載平衡叢集和所有叢集主機。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2eb7f802944260f7274e7ace30b7b55e9c4b27ad
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 882d3540897214db2f3fa9d04a6f11fc76a76502
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721501"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935534"
 ---
 # <a name="nlbmgr"></a>nlbmgr
 
@@ -32,7 +32,7 @@ nlbmgr [/noping][/hostlist <filename>][/autorefresh <interval>][/help | /?]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | /noping | 防止「網路負載平衡管理員」在嘗試透過 Windows Management Instrumentation （WMI）連線之前 ping 主機。 如果您已在所有可用的網路介面卡上停用網際網路控制訊息通訊協定（ICMP），請使用此選項。 如果「網路負載平衡管理員」嘗試連線到無法使用的主機，您會在使用此選項時遇到延遲。 |
 | /hostlist`<filename>` | 將 filename 中指定的主機載入到網路負載平衡管理員。 |
@@ -40,7 +40,7 @@ nlbmgr [/noping][/hostlist <filename>][/autorefresh <interval>][/help | /?]
 | /? | 在命令提示字元顯示說明。 |
 | /help | 在命令提示字元顯示說明。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

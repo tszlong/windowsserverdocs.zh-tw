@@ -1,6 +1,6 @@
 ---
 title: nfsstat
-description: Nfsstat 命令的參考主題，它會顯示有關網路檔案系統（NFS）和遠端程序呼叫（RPC）呼叫的統計資訊。
+description: Nfsstat 命令的參考文章，它會顯示有關網路檔案系統（NFS）和遠端程序呼叫（RPC）呼叫的統計資訊。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 85eb1184d3eb8ee731cf698a6d805e3f11d878ce
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 833081baa3ae9a0c2493623a7d015334087ee26d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721511"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934793"
 ---
 # <a name="nfsstat"></a>nfsstat
 
@@ -28,7 +28,7 @@ nfsstat [-c][-s][-n][-r][-z][-m]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | -c | 只顯示用戶端所傳送和拒絕的用戶端 NFS 和 RPC 和 NFS 呼叫。 若只要顯示 NFS 或 RPC 資訊，請將此旗標與 **-n**或 **-r**參數結合。 |
 | -S | 只顯示伺服器所傳送和拒絕的伺服器端 NFS 和 RPC 和 NFS 呼叫。 若只要顯示 NFS 或 RPC 資訊，請將此旗標與 **-n**或 **-r**參數結合。 |
@@ -69,7 +69,7 @@ nfsstat -s
 nfsstat -z
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: repair-bde
-description: '* * * * 的參考主題'
+description: '* * * * 的參考文章'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 235640cacc6c0cca5ee9e820606082afe5d39d41
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: a2ba82708acd9c5830e2dc8a09cd804ade342066
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820108"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935644"
 ---
 # <a name="repair-bde"></a>repair-bde
 
@@ -57,7 +57,7 @@ repair-bde <InputVolume> <OutputVolumeorImage> [-rk] [–rp] [-pw] [–kp] [–l
 
 ## <a name="examples"></a>範例
 
-若要嘗試修復 C 磁片磁碟機，並使用儲存在磁片磁碟機 F 的修復金鑰檔（RecoveryKey. bek）將內容從 C 磁片磁碟機寫入磁片磁碟機 D，請將此嘗試的結果寫入磁片磁碟機 Z 上的記錄檔（.log）。
+若要嘗試修復 C 磁片磁碟機，並使用儲存在磁片磁碟機 F 的修復金鑰檔（RecoveryKey. bek）將內容從 C 磁片磁碟機寫入磁片磁碟機 D，請將此嘗試的結果寫入磁片磁碟機 Z 上的記錄檔（log.txt）。
 ```
 repair-bde C: D: -rk F:\RecoveryKey.bek –lf Z:\log.txt
 ```
@@ -74,6 +74,6 @@ repair-bde C: D: -kp F:\RecoveryKeyPackage -rk F:\RecoveryKey.bek -f
 repair-bde C: D: -pw
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

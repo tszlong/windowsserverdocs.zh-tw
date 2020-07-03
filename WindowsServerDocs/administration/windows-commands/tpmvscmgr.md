@@ -1,6 +1,6 @@
 ---
 title: tpmvscmgr
-description: Tpmvscmgr 的參考主題，這是一種命令列工具，可讓具有系統管理認證的使用者建立和刪除電腦上的 TPM 虛擬智慧卡。
+description: Tpmvscmgr 的參考文章，這是一種命令列工具，可讓具有系統管理認證的使用者建立和刪除電腦上的 TPM 虛擬智慧卡。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 60c824de891917a2652776ee86b389f04d8eada8
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 8741c947220ce2a3f6852c7374bf0817323bb632
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821368"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935589"
 ---
 # <a name="tpmvscmgr"></a>tpmvscmgr
 
 Tpmvscmgr 命令列工具可讓具有系統管理認證的使用者建立和刪除電腦上的 TPM 虛擬智慧卡。
 
-## <a name="syntax"></a>語法
+## <a name="syntax"></a>Syntax
 
 ```
 Tpmvscmgr create [/name] [/AdminKey DEFAULT | PROMPT | RANDOM] [/PIN DEFAULT | PROMPT] [/PUK DEFAULT | PROMPT] [/generate] [/machine] [/?]
@@ -52,7 +52,7 @@ Create 命令會在使用者的系統上設定新的虛擬智慧卡。 如果需
 
 |參數|說明|
 |---------|-----------|
-|/instance|指定要移除之虛擬智慧卡的實例識別碼。 InstanceID 是在建立卡片時，以 Tpmvscmgr 輸出的形式產生。 /Instance 參數是摧毀命令的必要欄位。|
+|/instance|指定要移除之虛擬智慧卡的實例識別碼。 InstanceID 是在建立卡片時 Tpmvscmgr.exe 產生為輸出。 /Instance 參數是摧毀命令的必要欄位。|
 |/?|顯示此命令的說明。|
 
 ## <a name="remarks"></a>備註
@@ -79,8 +79,8 @@ tpmvscmgr.exe create /name VirtualSmartCardForCorpAccess /AdminKey RANDOM /PIN P
 ```
 tpmvscmgr.exe destroy /instance <instance ID>
 ```
-其中， \< 實例識別碼> 是使用者建立卡片時，在螢幕上列印的值。 具體而言，針對第一個建立的卡片，實例識別碼為 ROOT\SMARTCARDREADER\0000。
+其中 \<instance ID> 是使用者建立卡片時，在螢幕上列印的值。 具體而言，針對第一個建立的卡片，實例識別碼為 ROOT\SMARTCARDREADER\0000。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

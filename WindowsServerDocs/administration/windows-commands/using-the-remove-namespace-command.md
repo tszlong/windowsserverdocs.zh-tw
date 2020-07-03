@@ -1,6 +1,6 @@
 ---
 title: 移除-Namespace
-description: 移除命名空間的參考主題，這會移除自訂命名空間。
+description: 移除-Namespace 的參考文章，它會移除自訂命名空間。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2ef329a53a7f212c1810af2e4ced11a2abf76840
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a4b0920e5f42f40b1f0cdce0ffcc3a09bf19b0d2
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720329"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935405"
 ---
 # <a name="using-the-remove-namespace-command"></a>使用 remove-Namespace 命令
 
@@ -27,10 +27,10 @@ ms.locfileid: "82720329"
 wdsutil /remove-Namespace /Namespace:<Namespace name> [/Server:<Server name>] [/force]
 ```
 ### <a name="parameters"></a>參數
-|參數|描述|
+|參數|說明|
 |-------|--------|
-|命名空間<Namespace name>|指定命名空間的名稱。 這不是易記的名稱，而且必須是唯一的。<p>-   **部署伺服器角色服務**：命名空間名稱的語法是/NAMESPACE： WDS：<ImageGroup>/<ImageName>/<Index>。 例如： **WDS： ImageGroup1/install .wim/1**<br />-   **傳輸伺服器角色服務**：此值必須符合在伺服器上建立命名空間時所提供的名稱。|
-|[/Server：<Server name>]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。|
+|命名空間<Namespace name>|指定命名空間的名稱。 這不是易記的名稱，而且必須是唯一的。<p>-   **部署伺服器角色服務**：命名空間名稱的語法是/NAMESPACE： WDS： <ImageGroup> / <ImageName> / <Index> 。 例如： **WDS： ImageGroup1/install .wim/1**<br />-   **傳輸伺服器角色服務**：此值必須符合在伺服器上建立命名空間時所提供的名稱。|
+|[/Server： <Server name> ]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。|
 |/force|立即移除命名空間，並終止所有用戶端。 請注意，除非您指定 **/force**，否則現有的用戶端可以完成轉移，但新的用戶端無法加入。|
 ## <a name="examples"></a>範例
 若要停止命名空間（目前的用戶端可以完成轉移，但新的用戶端無法加入），請輸入：
@@ -41,8 +41,8 @@ wdsutil /remove-Namespace /Namespace:Custom Auto 1
 ```
 wdsutil /remove-Namespace /Server:MyWDSServer /Namespace:Custom Auto 1 /force
 ```
-## <a name="additional-references"></a>其他參考
-- [命令列語法索引鍵](command-line-syntax-key.md)
-[AllNamespaces 命令](using-the-get-allnamespaces-command.md)
-，並[使用新的-namespace 命令](using-the-new-namespace-command.md)
-[子命令： start-namespace](subcommand-start-namespace.md)
+## <a name="additional-references"></a>其他參考資料
+- [命令列語法索引鍵](command-line-syntax-key.md) 
+[使用 AllNamespaces 命令](using-the-get-allnamespaces-command.md) 
+[使用新的-Namespace 命令](using-the-new-namespace-command.md) 
+[子命令： start-Namespace](subcommand-start-namespace.md)

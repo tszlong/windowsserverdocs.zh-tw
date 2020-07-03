@@ -1,6 +1,6 @@
 ---
 title: nslookup set root
-description: Nslookup set root 命令的參考主題，它會變更用於查詢的根功能變數名稱伺服器名稱。
+description: Nslookup set root 命令的參考文章，它會變更用於查詢的根功能變數名稱伺服器名稱。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1271dbeb0381d01e70380bded82a94ba20163853
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 866cc0f9c7c7e4ea99416c1be1fd8de3d374ca64
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721451"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935673"
 ---
 # <a name="nslookup-set-root"></a>nslookup set root
 
@@ -33,13 +33,13 @@ set root=<rootserver>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | ---------- | ---------- |
 | `<rootserver>` | 指定根功能變數名稱伺服器的新名稱。 預設值為**ns.nic.ddn.mil**。 |
 | /? | 在命令提示字元顯示說明。 |
 | /help | 在命令提示字元顯示說明。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -8,12 +8,12 @@ ms.date: 05/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 13f25252d60cb0bde67cca1e1aa5106435c3f361
-ms.sourcegitcommit: 2cc251eb5bc3069bf09bc08e06c3478fcbe1f321
+ms.openlocfilehash: 77e3b48874d2b8898b7510ff04ebb133b9358a73
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84333911"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935541"
 ---
 # <a name="ad-fs-extranet-lockout-and-extranet-smart-lockout"></a>AD FS 外部網路鎖定和外部網路智慧鎖定
 
@@ -42,7 +42,7 @@ ESL 僅適用于透過外部網路使用 Web 應用程式 Proxy 或協力廠商 
 
  如果次要節點無法連上主機，它會將錯誤事件寫入 AD FS 的系統管理員記錄中。 系統會繼續處理驗證，但是 AD FS 只會在本機寫入已更新的狀態。 AD FS 將會每隔10分鐘重試一次主機，並在主要複本可供使用之後，切換回主要主機。
 
-### <a name="terminology"></a>術語
+### <a name="terminology"></a>詞彙
 - **FamiliarLocation**：在驗證要求期間，ESL 會檢查所有顯示的 ip。 這些 ip 會結合網路 IP、轉送的 IP 和選擇性的 x 轉送-作為 IP。 如果要求成功，則所有 Ip 都會新增至 [帳戶活動] 資料表中做為「熟悉的 Ip」。 如果要求的所有 Ip 都出現在「熟悉的 Ip」中，則會將要求視為「熟悉的」位置。
 - **Unknownlocation.xsd**：如果傳入的要求至少有一個 IP 不存在於現有的 "FamiliarLocation" 清單中，則會將要求視為「不明」位置。 這是為了處理代理案例，例如 Exchange online 傳統驗證，其中 Exchange Online 位址會處理成功和失敗的要求。  
 - **badPwdCount**：代表提交不正確密碼和驗證失敗次數的值。 針對每個使用者，會針對熟悉的位置和未知位置保留個別的計數器。
@@ -251,7 +251,7 @@ AD FS 會將外部網路鎖定事件寫入至安全性審核記錄：
 在 [僅記錄模式] 中，您可以檢查安全性 audit 記錄中的鎖定事件。 針對找到的任何事件，您可以使用 ADFSAccountActivity 指令程式來檢查使用者狀態，以判斷鎖定是否來自熟悉或不熟悉的 IP 位址，以及是否要再次檢查該使用者熟悉的 IP 位址清單。
 
 
-|事件識別碼|描述|
+|事件識別碼|Description|
 |-----|-----|
 |1203|這個事件會針對每個不正確的密碼嘗試而撰寫。 一旦 badPwdCount 到達 ExtranetLockoutThreshold 中指定的值，就會在 ADFS 中針對 ExtranetObservationWindow 中指定的持續時間鎖定帳戶。</br>活動識別碼： %1</br>XML： %2|
 |1201|每次鎖定使用者時，就會寫入這個事件。 </br>活動識別碼： %1</br>XML： %2|
@@ -285,12 +285,12 @@ AD FS 會將外部網路鎖定事件寫入至安全性審核記錄：
 答： ESL 將能妥善預防 Exchange Online 或其他舊版驗證暴力密碼破解攻擊案例。 舊版驗證的「活動識別碼」為00000000-0000-0000-0000-000000000000。在這些攻擊中，不良的執行者會利用 Exchange Online 基本驗證（也稱為舊版驗證），讓用戶端 IP 位址顯示為 Microsoft 帳戶。 雲端 proxy 中的 Exchange online 伺服器代表 Outlook 用戶端進行驗證驗證。 在這些情況下，惡意提交者的 IP 位址將會在 x 毫秒轉送的用戶端 ip 中，而 Microsoft Exchange Online server IP 則會在 [x-ms-用戶端-ip] 值中。
 外部網路智慧鎖定會檢查網路 Ip、轉送的 Ip、x 轉送的用戶端 IP 和 x 毫秒-用戶端 ip 值。 如果要求成功，則所有 Ip 都會新增至熟悉的清單。 如果要求傳入，而任何顯示的 Ip 不在熟悉的清單中，則要求將會標示為不熟悉。 熟悉的使用者將能夠順利登入，而來自不熟悉位置的要求將會遭到封鎖。  
 
-* * 問：我可以在啟用 ESL 之前，先估計 ADFSArtifactStore 的大小嗎？
+**我可以在啟用 ESL 之前，先估計 ADFSArtifactStore 的大小嗎？**
 
 答：已啟用 ESL，AD FS 追蹤 ADFSArtifactStore 資料庫中使用者的帳戶活動和已知位置。 此資料庫的大小會隨著所追蹤的使用者數目和已知位置數目而相對調整。 規劃要啟用 ESL 時，您可以估計 ADFSArtifactStore 資料庫的大小，以每 10 萬個使用者最多 1GB 的速率成長。 如果 AD FS 伺服器陣列使用 Windows 內部資料庫（WID），則資料庫檔案的預設位置是 C:\Windows\WID\Data\。 若要避免填滿此磁碟機，請在啟用 ESL 之前，先確定您至少有 5GB 的可用儲存體。 除了磁碟儲存體以外，請在啟用 ESL 之後，針對總處理序記憶體進行規劃，50 萬或更少使用者人口數最多可成長額外 1GB 的 RAM。
 
 
-## <a name="additional-references"></a>其他參考資料  
+## <a name="additional-references"></a>其他參考  
 [保護 Active Directory 同盟服務的最佳做法](../../ad-fs/deployment/best-practices-securing-ad-fs.md)
 
 [設定-Set-adfsproperties](https://technet.microsoft.com/itpro/powershell/windows/adfs/set-adfsproperties)

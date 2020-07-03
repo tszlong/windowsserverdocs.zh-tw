@@ -1,6 +1,6 @@
 ---
-title: telnet 開啟
-description: Telnet 開啟的參考主題，會連線到 telnet 伺服器。
+title: telnet open
+description: Telnet 開啟的參考文章，它會連線到 telnet 伺服器。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 s.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0be8aca4cb061df55674a405eb1cf2a5e643cb4f
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: f3b27088d464e62b24479eaa87f44b91f7d95d12
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222712"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935328"
 ---
 # <a name="telnet-open"></a>telnet：開啟
 
@@ -28,7 +28,7 @@ o[pen] <hostname> [<Port>]
 ```
 #### <a name="parameters"></a>參數
 
-| 參數  |                                        描述                                         |
+| 參數  |                                        說明                                         |
 |------------|--------------------------------------------------------------------------------------------|
 | <hostname> |                         指定電腦名稱稱或 IP 位址。                         |
 |  [<Port>]  | 指定 telnet 伺服器正在接聽的 TCP 通訊埠。 預設值為 TCP 埠23。 |
@@ -38,5 +38,5 @@ o[pen] <hostname> [<Port>]
 ```
 o telnet.microsoft.com
 ```
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 - [命令列語法關鍵](command-line-syntax-key.md)

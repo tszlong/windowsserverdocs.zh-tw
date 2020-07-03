@@ -1,6 +1,6 @@
 ---
 title: query termserver
-description: 查詢 termserver 命令的參考主題，它會顯示網路上所有遠端桌面工作階段主機伺服器的清單。
+description: 查詢 termserver 命令的參考文章，它會顯示網路上所有遠端桌面工作階段主機伺服器的清單。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c41ed824ee0b1e9dc2672646ef0af03e2593ec07
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: c7f4ca42cc053e943d89f40a71eb24372c0399e5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471973"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934228"
 ---
 # <a name="query-termserver"></a>query termserver
 
@@ -37,7 +37,7 @@ query termserver [<servername>] [/domain:<domain>] [/address] [/continue]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 |--|--|
 | `<servername>` | 指定識別遠端桌面工作階段主機伺服器的名稱。 |
 | /domain`<domain>` | 指定要用來查詢終端機伺服器的網域。 如果您要查詢目前正在使用的網域，則不需要指定網域。 |
@@ -71,7 +71,7 @@ query termserver /domain:CONTOSO
 query termserver Server3 /address
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

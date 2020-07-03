@@ -1,6 +1,6 @@
 ---
 title: msinfo32
-description: '[Msinfo32] 命令的參考主題，它會開啟 [系統資訊] 工具，以顯示本機電腦上硬體、系統元件和軟體環境的完整觀點。'
+description: '[Msinfo32] 命令的參考文章，這會開啟 [系統資訊] 工具，以顯示本機電腦上硬體、系統元件和軟體環境的完整觀點。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d6a97902d9988260a840d236e197d7361bcd3882
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: c6506ba51c768f92a19deb1627f5456231cee3f6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354430"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934858"
 ---
 # <a name="msinfo32"></a>msinfo32
 
@@ -32,7 +32,7 @@ msinfo32 [/pch] [/nfo <path>] [/report <path>] [/computer <computername>] [/show
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `<path>` | 指定要以*C:\Folder1\File1.xxx*格式開啟的檔案，其中*C*是磁碟機號， *Folder1*是資料夾， *File1*是檔案名， *xxx*則是副檔名。<p>這個檔案可以是 **.nfo**、 **.xml**、 **.txt**或 **.cab**檔案。 |
 | `<computername>` | 指定目標或本機電腦的名稱。 這可以是 UNC 名稱、IP 位址或完整的電腦名稱稱。 |
@@ -72,6 +72,6 @@ msinfo32 /nfo syssum.nfo /categories +systemsummary
 msinfo32 /nfo conflicts.nfo /categories +componentsproblemdevices+resourcesconflicts+resourcesforcedhardware
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

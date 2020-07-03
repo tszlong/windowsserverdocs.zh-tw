@@ -1,6 +1,6 @@
 ---
 title: netstat
-description: Netstat 命令的參考主題，會顯示作用中的 TCP 連線、電腦正在接聽的埠、乙太網路統計資料、IP 路由表、IPv4 統計資料，以及 IPv6 統計資料。
+description: Netstat 命令的參考文章，會顯示作用中的 TCP 連線、電腦正在接聽的埠、乙太網路統計資料、IP 路由表、IPv4 統計資料，以及 IPv6 統計資料。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6e9cd59169922bb6d76b6c65f3381e653df97109
-ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
+ms.openlocfilehash: c53ac83c1037d5f4998bb6efa43d66b418119df8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85548842"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934799"
 ---
 # <a name="netstat"></a>netstat
 
@@ -33,7 +33,7 @@ netstat [-a] [-b] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<interval>]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | -a | 顯示所有作用中的 TCP 連線，以及電腦在其上接聽的 TCP 和 UDP 埠。 |
 | -b | 顯示建立每個連接或接聽埠時所牽涉到的可執行檔。 在某些情況下，已知的可執行檔會裝載多個獨立元件，而在這些情況下，會顯示與建立連線或接聽埠相關的元件順序。 在此情況下，可執行檔名稱位於底部的 [] 中，頂端是它所呼叫的元件，依此類推，直到達到 TCP/IP 為止。 請注意，此選項可能非常耗時，除非您有足夠的許可權，否則將會失敗。
@@ -50,7 +50,7 @@ netstat [-a] [-b] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<interval>]
 
 - **Netstat**命令提供下列各項的統計資料：
 
-    | 參數 | 描述 |
+    | 參數 | 說明 |
     | --------- | ----------- |
     | Proto | 通訊協定（TCP 或 UDP）的名稱。 |
     | 本機位址 | 本機電腦的 IP 位址，以及所使用的埠號碼。 除非指定 **-n**參數，否則會顯示對應至 IP 位址和埠名稱的本機電腦名稱稱。 如果尚未建立埠，埠號碼會顯示為星號（*）。 |
