@@ -1,6 +1,6 @@
 ---
 title: cmd
-description: Cmd 命令的參考主題，它會啟動新的命令直譯器（Cmd.exe）實例。
+description: Cmd 命令的參考文章，它會啟動新的命令直譯器實例，Cmd.exe。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8d381dd56d6648f749cd4a19d71422897e4b9b05
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 69176c69434813745f6039b607f2992675df879c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82712583"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929860"
 ---
 # <a name="cmd"></a>cmd
 
-啟動新的命令直譯器（Cmd.exe）實例。 如果使用時不含參數， **cmd**會顯示作業系統的版本和著作權資訊。
+啟動新的命令直譯器實例，Cmd.exe。 如果使用時不含參數， **cmd**會顯示作業系統的版本和著作權資訊。
 
 ## <a name="syntax"></a>語法
 
@@ -28,7 +28,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<b><f> | <f>}] [/e:{on | off}] [/f:{on |
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | /C | 執行*string*所指定的命令，然後停止。 |
 | /k | 執行*字串*所指定的命令，並繼續進行。 |
@@ -47,7 +47,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<b><f> | <f>}] [/e:{on | off}] [/f:{on |
 | `<string>` | 指定您想要執行的命令。 |
 | /? | 在命令提示字元顯示說明。 |
 
-下表列出可用來做為`<b>`和`<f>`值的有效十六進位數位：
+下表列出可用來做為和值的有效十六進位數位 `<b>` `<f>` ：
 
 | 值 | Color |
 | ----- | ----- |
@@ -70,7 +70,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<b><f> | <f>}] [/e:{on | off}] [/f:{on |
 
 ## <a name="remarks"></a>備註
 
-- 若要針對`<string>`使用多個命令，請以命令分隔符號**&&** 加以分隔，並以引號括住。 例如：
+- 若要針對使用多個命令 `<string>` ，請以命令分隔符號加以分隔， **&&** 並以引號括住。 例如：
 
     ```
     "<command1>&&<command2>&&<command3>"
@@ -90,7 +90,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<b><f> | <f>}] [/e:{on | off}] [/f:{on |
 
     如果不符合先前的條件，則會藉由檢查第一個字元來驗證*字串*是否為左引號來處理。 如果第一個字元是左引號，則會與右引號一起移除。 結尾引號後面的任何文字都會保留下來。
 
-- 如果您未在*字串*中指定 **/d** ，cmd.exe 會尋找下列登錄子機碼：
+- 如果您未在*字串*中指定 **/d** ，Cmd.exe 會尋找下列登錄子機碼：
 
     - **HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\AutoRun\ REG_SZ**
 
@@ -112,7 +112,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<b><f> | <f>}] [/e:{on | off}] [/f:{on |
     > [!CAUTION]
     > 不正確地編輯登錄可能會對系統造成嚴重的損害。 變更登錄之前，您應該先備份電腦所有的重要資料。
 
-    當您啟用命令延伸模組時，下列命令會受到影響：  
+    當您啟用命令延伸模組時，下列命令會受到影響：
     - **assoc**
 
     - **call**
@@ -151,7 +151,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<b><f> | <f>}] [/e:{on | off}] [/f:{on |
 
 - 如果您啟用延遲的環境變數擴充，您可以在執行時間使用驚嘆號字元來取代環境變數的值。
 
-- 檔案和目錄名稱的自動完成預設為不啟用。 您可以使用 **/f：**{**on** | **off**} 來啟用或停用**cmd**命令之特定進程的檔案名完成。 您可以藉由設定下列**REG_DWORD**值，針對電腦上**cmd**命令的所有進程或使用者登入會話，啟用或停用檔案和目錄名稱完成：
+- 檔案和目錄名稱的自動完成預設為不啟用。 您可以使用 **/f：**{**on**off} 來啟用或停用**cmd**命令之特定進程的檔案名完成  |  ** **。 您可以藉由設定下列**REG_DWORD**值，針對電腦上**cmd**命令的所有進程或使用者登入會話，啟用或停用檔案和目錄名稱完成：
 
     - **HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\CompletionChar\ REG_DWORD**
 
@@ -161,7 +161,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<b><f> | <f>}] [/e:{on | off}] [/f:{on |
 
     - **HKEY_CURRENT_USER \Software\Microsoft\Command Processor\PathCompletionChar\ REG_DWORD**
 
-    若要設定**REG_DWORD**值，請執行 regedit.exe，並針對特定函式使用控制字元的十六進位值（例如， **0 × 9**是 TAB， **0 × 08**是倒退鍵）。 使用者指定的設定會優先于電腦設定，而命令列選項的優先順序高於登錄設定。
+    若要設定**REG_DWORD**值，請執行 Regedit.exe，並針對特定函式使用控制字元的十六進位值（例如， **0 × 9**是索引標籤， **0 × 08**為倒退鍵）。 使用者指定的設定會優先于電腦設定，而命令列選項的優先順序高於登錄設定。
 
     > [!CAUTION]
     > 不正確地編輯登錄可能會對系統造成嚴重的損害。 變更登錄之前，您應該先備份電腦所有的重要資料。
@@ -178,6 +178,6 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<b><f> | <f>}] [/e:{on | off}] [/f:{on |
 
   - 如果您從*字串*內處理檔案和目錄名稱自動完成，則會捨棄游標右邊*路徑*的任何部分（在*字串*中處理完成的位置）。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
 title: chcp
-description: Chcp 命令的參考主題，會變更作用中的主控台字碼頁。
+description: Chcp 命令的參考文章，其會變更作用中的主控台字碼頁。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0f1291176ed5245b06c68491f0d5cb0ae9b0b600
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a07d439a4738053ea9a76b4ca68fadec2a215ff0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82715323"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930020"
 ---
 # <a name="chcp"></a>chcp
 
@@ -28,7 +28,7 @@ chcp [<nnn>]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `<nnn>` | 指定字碼頁。 |
 | /? | 在命令提示字元顯示說明。 |
@@ -76,6 +76,6 @@ chcp 850
 
 如果指定的字碼頁無效，則會出現下列錯誤訊息：`Invalid code page`
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

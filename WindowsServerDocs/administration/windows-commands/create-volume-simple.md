@@ -1,6 +1,6 @@
 ---
 title: create volume simple
-description: Create volume simple 命令的參考主題，它會在指定的動態磁碟上建立簡單磁片區。
+description: Create volume simple 命令的參考文章，它會在指定的動態磁碟上建立簡單磁片區。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: eb5aeebbcbde581fe3259d6cb5aca6445a3b27aa
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 1e7924ca4394a64fd5a8d92577a3f3f62b917461
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993215"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929515"
 ---
 # <a name="create-volume-simple"></a>create volume simple
 
@@ -30,7 +30,7 @@ create volume simple [size=<n>] [disk=<n>] [align=<n>] [noerr]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | 大小 =`<n>`  | 磁碟區大小以 MB 表示。 如果未指定大小，則新磁碟區會佔用磁碟上剩餘的空間。 |
 | 磁片 =`<n>`  | 要在其上建立磁片區的動態磁碟。 如果未指定任何磁片，則會使用目前的磁片。 |
@@ -45,7 +45,7 @@ create volume simple [size=<n>] [disk=<n>] [align=<n>] [noerr]
 create volume simple size=1000 disk=1
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

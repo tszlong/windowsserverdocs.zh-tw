@@ -1,6 +1,6 @@
 ---
 title: cmstp
-description: Cmstp 的參考主題，它會安裝或移除連線管理員服務設定檔。
+description: Cmstp 的參考文章，它會安裝或移除連線管理員服務設定檔。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 11d2ec5b09cfd9440eb22d66578061ddfb157539
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 8f7bc7bc4b90dced8074fa685ad79c65747e0ded
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82712090"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929819"
 ---
 # <a name="cmstp"></a>cmstp
 
@@ -22,9 +22,9 @@ ms.locfileid: "82712090"
 
 安裝或移除連線管理員服務設定檔。 使用時不含選擇性參數， **cmstp**會使用適用于作業系統的預設設定和使用者的許可權來安裝服務設定檔。
 
-## <a name="syntax"></a>語法
+## <a name="syntax"></a>Syntax
 
-語法 1-這是自訂安裝應用程式中所使用的一般語法。 若要使用此語法，您必須**cmstp**從包含`<serviceprofilefilename>.exe`檔案的目錄執行 cmstp。
+語法 1-這是自訂安裝應用程式中所使用的一般語法。 若要使用此語法，您必須**cmstp**從包含檔案的目錄執行 cmstp `<serviceprofilefilename>.exe` 。
 
 ```
 <serviceprofilefilename>.exe /q:a /c:cmstp.exe <serviceprofilefilename>.inf [/nf] [/s] [/u]
@@ -36,7 +36,7 @@ cmstp.exe [/nf] [/s] [/u] [drive:][path]serviceprofilefilename.inf
 ```
 
 #### <a name="parameters"></a>參數
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `<serviceprofilefilename>.exe` | 依名稱指定包含您要安裝之設定檔的安裝套件。<p>在語法1中是必要的，但對語法2而言是不正確。 |
 | /q： a | 指定應該在不提示使用者的情況下安裝設定檔。 安裝已成功的驗證訊息仍然會出現。<p>在語法1中是必要的，但對語法2而言是不正確。 |
@@ -66,6 +66,6 @@ fiction.exe /c:cmstp.exe fiction.inf /s /su
 fiction.exe /c:cmstp.exe fiction.inf /s /u
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

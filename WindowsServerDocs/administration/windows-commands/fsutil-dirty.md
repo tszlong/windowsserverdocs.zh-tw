@@ -1,6 +1,6 @@
 ---
 title: fsutil dirty
-description: Fsutil dirty 命令的參考主題，它會查詢或設定磁片區的中途位。
+description: Fsutil dirty 命令的參考文章，它會查詢或設定磁片區的中途位。
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: 385a2a7c-d6bd-4f11-9c18-fca0413f9e97
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 72defd974177675f53e89fb8570f028580b7e167
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: c61ab5405fb5b469b6f4513459e4096524f4b7fe
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83435863"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929269"
 ---
 # <a name="fsutil-dirty"></a>fsutil dirty
 
@@ -30,7 +30,7 @@ fsutil dirty {query | set} <volumepath>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | 查詢 | 查詢指定的磁片區的中途位。 |
 | set | 設定指定磁片區的中途位。 |
@@ -70,7 +70,7 @@ fsutil dirty query c:
 fsutil dirty set C:
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

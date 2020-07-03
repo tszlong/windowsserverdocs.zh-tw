@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getaclflags
-description: Bitsadmin getaclflags 命令的參考主題，它會抓取存取控制清單（ACL）傳播旗標。
+description: Bitsadmin getaclflags 命令的參考文章，它會抓取存取控制清單（ACL）傳播旗標。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a9ca541b488c3c83e7a64a138bae0914001778e3
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 0a05a0ed1c29e7cf1b0583ce9a0fcfdbe73e7a12
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718178"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928331"
 ---
 # <a name="bitsadmin-getaclflags"></a>bitsadmin getaclflags
 
@@ -28,7 +28,7 @@ bitsadmin /getaclflags <job>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | 作業 | 作業的顯示名稱或 GUID。 |
 
@@ -52,7 +52,7 @@ bitsadmin /getaclflags <job>
 bitsadmin /getaclflags myDownloadJob
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

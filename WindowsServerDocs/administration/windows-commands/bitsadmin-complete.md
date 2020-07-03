@@ -1,6 +1,6 @@
 ---
 title: bitsadmin complete
-description: 完成作業的 bitsadmin complete 命令參考主題。
+description: 完成作業的 bitsadmin complete 命令參考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6b61f3475afdb0e29e5777940e6426a04fe33e78
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 08fb74690f5a8f70611bb6ca52a291bec89d81e8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718222"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928359"
 ---
 # <a name="bitsadmin-complete"></a>bitsadmin complete
 
@@ -28,13 +28,13 @@ bitsadmin /complete <job>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | 作業 | 作業的顯示名稱或 GUID。 |
 
 ## <a name="example"></a>範例
 
-若要完成*myDownloadJob*作業，請在達到`TRANSFERRED`狀態之後：
+若要完成*myDownloadJob*作業，請在達到 `TRANSFERRED` 狀態之後：
 
 ```
 bitsadmin /complete myDownloadJob
@@ -42,7 +42,7 @@ bitsadmin /complete myDownloadJob
 
 如果有多個作業使用*myDownloadJob*作為其名稱，您必須使用作業的 GUID 來唯一識別它以完成。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

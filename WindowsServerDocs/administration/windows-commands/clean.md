@@ -1,6 +1,6 @@
 ---
 title: clean
-description: '[Diskpart clean] 命令的參考主題，會從磁片中移除具有焦點的所有分割區或磁片區格式。'
+description: 適用于 Diskpart clean 命令的參考文章，它會從磁片中移除具有焦點的所有分割區或磁片區格式。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 45a23919dc07c8c1525808859471fdcb9f9e9403
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 7a30e1f765959ed60efa662301f95defc21d6587
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82712881"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929903"
 ---
 # <a name="clean"></a>clean
 
@@ -33,7 +33,7 @@ clean [all]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | all | 指定磁片上的每個和每個磁區都設定為零，這會完全刪除磁片上包含的所有資料。 |
 
@@ -53,7 +53,7 @@ clean [all]
 clean
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [清除磁片命令](https://docs.microsoft.com/powershell/module/storage/clear-disk)
 

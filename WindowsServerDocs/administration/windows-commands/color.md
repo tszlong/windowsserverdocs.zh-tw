@@ -1,6 +1,6 @@
 ---
 title: color
-description: Color 命令的參考主題，這會在目前會話的 [命令提示字元] 視窗中變更前景和背景色彩。
+description: Color 命令的參考文章，這會在目前會話的 [命令提示字元] 視窗中變更前景和背景色彩。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 94b5a1e4ca4d4a01ea714adc45e64a6efaa32aa6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 93c51fdbf1909adfda06730c3a517f602f8024b8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82711939"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929800"
 ---
 # <a name="color"></a>color
 
@@ -28,7 +28,7 @@ color [[<b>]<f>]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `<b>` | 指定背景色彩。 |
 | `<f>` | 指定前景色彩。 |
@@ -36,7 +36,7 @@ color [[<b>]<f>]
 
 其中：
 
-下表列出可用來做為`<b>`和`<f>`值的有效十六進位數位：
+下表列出可用來做為和值的有效十六進位數位 `<b>` `<f>` ：
 
 | 值 | Color |
 | ----- | ----- |
@@ -59,13 +59,13 @@ color [[<b>]<f>]
 
 #### <a name="remarks"></a>備註
 
-- 請勿在和`<b>` `<f>`之間使用空白字元。
+- 請勿在和之間使用空白字元 `<b>` `<f>` 。
 
 - 如果您只指定一個十六進位數位，則會使用對應的色彩做為前景色彩，並將背景色彩設定為預設色彩。
 
 - 若要設定預設的 [命令提示字元] 視窗色彩，請選取 [**命令提示**字元] 視窗的左上角，選取 [**預設值**]，選取 [**色彩**] 索引標籤，然後選取要用於**螢幕文字**和**螢幕背景**的色彩。
 
-- 如果`<b>`和`<f>`都是相同的色彩值，則 ERRORLEVEL 會設定`1`為，而且前景或背景色彩都不會進行任何變更。
+- 如果 `<b>` 和 `<f>` 都是相同的色彩值，則 ERRORLEVEL 會設定為 `1` ，而且前景或背景色彩都不會進行任何變更。
 
 ## <a name="examples"></a>範例
 
@@ -84,6 +84,6 @@ color e
 > [!NOTE]
 > 在此範例中，背景設定為預設色彩，因為只指定一個十六進位數位。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

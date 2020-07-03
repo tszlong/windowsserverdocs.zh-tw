@@ -1,6 +1,6 @@
 ---
 title: delete partition
-description: 刪除資料分割命令的參考主題，這會刪除具有焦點的資料分割。
+description: 刪除資料分割命令的參考文章，這會刪除具有焦點的資料分割。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 13c79b826480171af578334942af8f73b77d796b
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: b45cb060a5d82e254fe371269dbdbcb9d46fee92
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993117"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928726"
 ---
 # <a name="delete-partition"></a>delete partition
 
@@ -33,7 +33,7 @@ delete partition [noerr] [override]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | noerr | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
 | override | 啟用 DiskPart 來刪除各種類型的磁碟分割。 一般來說，DiskPart 只允許您刪除已知的資料磁碟分割。 |
@@ -52,7 +52,7 @@ delete partition [noerr] [override]
 delete partition
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: chglogon
-description: Chglogon 命令的參考主題，可啟用或停用遠端桌面工作階段主機伺服器上用戶端會話的登入，或顯示目前的登入狀態。
+description: Chglogon 命令的參考文章，可啟用或停用遠端桌面工作階段主機伺服器上用戶端會話的登入，或顯示目前的登入狀態。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ ms.date: 10/16/2017
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f232439e51f2d32f1ef4834a3bba7f4428cce093
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 582dc84e54b491f7deb92c249a258d7f321b3f9c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82714542"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929090"
 ---
 # <a name="chglogon"></a>chglogon
 
@@ -25,7 +25,7 @@ ms.locfileid: "82714542"
 > [!NOTE]
 > 此命令已由 [**變更記錄**檔] 命令取代。 如需詳細資訊，包括語法和參數詳細資料，請參閱[變更登入命令](change-logon.md)。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

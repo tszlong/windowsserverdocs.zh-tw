@@ -1,6 +1,6 @@
 ---
 title: create partition logical
-description: 建立資料分割邏輯命令的參考主題，它會在現有的擴展資料分割中建立邏輯分割區。
+description: 建立資料分割邏輯命令的參考文章，它會在現有的擴展資料分割中建立邏輯分割區。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 99b8c837fe5da295087f9b146bf429d91ebc8693
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 4860f61d23c9ae51732c1fb0e127047c4944d2ed
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993271"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929677"
 ---
 # <a name="create-partition-logical"></a>create partition logical
 
@@ -35,10 +35,10 @@ create partition logical [size=<n>] [offset=<n>] [align=<n>] [noerr]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | 大小 =`<n>` | 指定邏輯分割區的大小（以 mb 為單位），其必須小於延伸磁碟分割。 如果沒有指定大小，磁碟分割會繼續進行，直到延伸磁碟分割中沒有其他可用空間為止。 |
-| offset =`<n>` | 指定分割區的建立位移（以 kb 為單位）。 位移會向上舍入，以完全填滿使用的任何圓柱大小。 如果沒有指定位移的話，則磁碟分割會置於足夠容納它的第一個磁碟範圍內。 資料分割的長度至少為**size =`<n>`** 所指定的數位。 如果您指定了邏輯分割區的大小，它必須小於延伸磁碟分割。 |
+| offset =`<n>` | 指定分割區的建立位移（以 kb 為單位）。 位移會向上舍入，以完全填滿使用的任何圓柱大小。 如果沒有指定位移的話，則磁碟分割會置於足夠容納它的第一個磁碟範圍內。 資料分割的長度至少為**size = `<n>` **所指定的數位。 如果您指定了邏輯分割區的大小，它必須小於延伸磁碟分割。 |
 | align =`<n>` | 將所有磁片區或資料分割範圍對齊最接近的對齊界限。 通常與硬體 RAID 邏輯單元編號（LUN）陣列搭配使用，以改善效能。 `<n>`這是從磁片開始到最接近對齊界限的 kb 數（KB）。 |
 | noerr | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
 
@@ -54,7 +54,7 @@ create partition logical [size=<n>] [offset=<n>] [align=<n>] [noerr]
 create partition logical size=1000
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

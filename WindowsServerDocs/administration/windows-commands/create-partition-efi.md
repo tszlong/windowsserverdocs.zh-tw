@@ -1,6 +1,6 @@
 ---
 title: create partition efi
-description: Create partition efi 命令的參考主題，它會在 Itanium 型電腦上的 GUID 磁碟分割表格（gpt）磁片上建立可擴充固件介面（EFI）系統磁碟分割。
+description: 建立磁碟分割 efi 命令的參考文章，它會在 Itanium 型電腦上的 GUID 磁碟分割表格（gpt）磁片上建立可擴充固件介面（EFI）系統磁碟分割。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8c314d756bebd0d0ec2ed9c844f714f395d04c6b
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 05c811e7be32ed9e73b352161ef1e6f043f27048
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993287"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928886"
 ---
 # <a name="create-partition-efi"></a>create partition efi
 
@@ -33,7 +33,7 @@ create partition efi [size=<n>] [offset=<n>] [noerr]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | 大小 =`<n>` | 分割區的大小（以 mb 為單位）。 如果沒有指定大小的話，則磁碟分割會繼續，直到目前的區域中沒有多餘的可用空間為止。 |
 | offset =`<n>` | 分割區的建立位移（以 kb 為單位）。 如果沒有指定位移的話，則磁碟分割會置於足夠容納它的第一個磁碟範圍內。 |
@@ -55,7 +55,7 @@ create partition efi [size=<n>] [offset=<n>] [noerr]
 create partition efi size=1000
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

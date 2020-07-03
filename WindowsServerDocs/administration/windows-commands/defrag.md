@@ -1,6 +1,6 @@
 ---
 title: defrag
-description: 重組命令的參考主題，它會在本機磁片區上尋找和合併分散的檔案，以改善系統效能。
+description: 重組命令的參考文章，它會在本機磁片區上尋找和合併分散的檔案，以改善系統效能。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bf3ca6febfa07c7780b959389ff57fe4f3a0018b
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: c952ff78147d3b4c6097aaf9dd87e55ecc7911ad
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993154"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928795"
 ---
 # <a name="defrag"></a>defrag
 
@@ -35,7 +35,7 @@ defrag <volume> [<parameters>]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `<volume>` | 指定要進行磁碟重組或分析之磁片區的磁碟機號或掛接點路徑。 |
 | /a | 在指定的磁片區上執行分析。 |
@@ -61,7 +61,7 @@ defrag <volume> [<parameters>]
 
   - 檔案系統鎖定的磁片區。
 
-  - 磁片區檔案系統標示為已中途，表示可能有損毀。<br>您必須先`chkdsk`執行，才能重組此磁片區或磁片磁碟機。 您可以使用`fsutil dirty`命令來判斷磁片區是否已變更。
+  - 磁片區檔案系統標示為已中途，表示可能有損毀。<br>您必須先執行， `chkdsk` 才能重組此磁片區或磁片磁碟機。 您可以使用命令來判斷磁片區是否已變更 `fsutil dirty` 。
 
   - 網路磁碟機機。
 
@@ -79,7 +79,7 @@ defrag <volume> [<parameters>]
 
 - 根據預設，如果您未指定 **/a**或 **/v** **參數，重組會同時顯示分析**和磁碟重組報告的摘要。
 
-- 您可以輸入**>** <em>filename .txt</em>，將報表傳送至文字檔，其中*filename*是您指定的檔案名。 例如： `defrag volume /v > FileName.txt`
+- 您可以輸入FileName.txt，將報表傳送至文字檔 **>** <em> </em>，其中*FileName.txt*是您指定的檔案名。 例如： `defrag volume /v > FileName.txt`
 
 - 若要中斷磁碟重組程式，請在命令列中按**CTRL + C**。
 
@@ -131,7 +131,7 @@ defrag /c /h /v
 
     - 電腦已啟動備份（從閒置狀態恢復）。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

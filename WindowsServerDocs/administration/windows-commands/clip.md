@@ -1,6 +1,6 @@
 ---
 title: clip
-description: 剪輯命令的參考主題，它會從命令列將命令輸出重新導向至 Windows 剪貼簿。
+description: 剪輯命令的參考文章，它會從命令列將命令輸出重新導向至 Windows 剪貼簿。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 61c905e3dcce52f3a3d35adeac55fc5df574f664
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 3c0e23c18d356740a639af760fc7433db59d012a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82712784"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929895"
 ---
 # <a name="clip"></a>clip
 
@@ -29,7 +29,7 @@ clip < <filename>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `<command>` | 指定要傳送至 Windows 剪貼簿之輸出的命令。 |
 | `<filename>` | 指定您想要傳送至 Windows 剪貼簿之內容的檔案。 |
@@ -49,12 +49,12 @@ dir | clip
 awk -f generic.awk input.txt | clip
 ```
 
-*若要將稱為 readme.txt*的檔案內容複寫到 Windows 剪貼簿，請輸入：
+若要將稱為*readme.txt*的檔案內容複寫到 Windows 剪貼簿，請輸入：
 
 ```
 clip < readme.txt
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

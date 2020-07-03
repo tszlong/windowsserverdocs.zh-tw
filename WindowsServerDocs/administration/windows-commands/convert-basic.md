@@ -1,6 +1,6 @@
 ---
 title: convert basic
-description: Convert basic 命令的參考主題，可將空的動態磁碟轉換為基本磁碟。
+description: Convert basic 命令的參考文章，可將空的動態磁碟轉換為基本磁碟。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e44ecc9f5d18bbe426c63f8854e7c3347f418bb2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a61c3d9fd8d708a41347f0bcf46aa627e960153c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720786"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928982"
 ---
 # <a name="convert-basic"></a>convert basic
 
@@ -34,7 +34,7 @@ convert basic [noerr]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | noerr | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
 
@@ -46,7 +46,7 @@ convert basic [noerr]
 convert basic
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

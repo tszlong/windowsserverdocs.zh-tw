@@ -8,12 +8,12 @@ ms.date: 03/26/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: fab7dff1efc8b21a3b8fdacdeb9d446d7bc0cc30
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 6ec1093a77b036cada9e54c82234d653362ce4d3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475305"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930101"
 ---
 # <a name="storage-migration-service-overview"></a>儲存體遷移服務總覽
 
@@ -51,7 +51,7 @@ ms.locfileid: "85475305"
 
 > [!VIDEO https://www.youtube.com/embed/h-Xc9j1w144]
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
 若要使用儲存體遷移服務，您需要下列各項：
 
@@ -136,6 +136,8 @@ Windows Admin Center 1910 版可讓您部署 Azure 虛擬機器。 這會將 VM 
 
    以下影片顯示如何使用儲存體遷移服務來遷移至 Azure Vm。
    > [!VIDEO https://www.youtube-nocookie.com/embed/k8Z9LuVL0xQ]
+   
+如果您想要將虛擬機器隨即轉移至 Azure，而不需要遷移至較新的作業系統，請考慮使用 Azure Migrate。 如需詳細資訊，請參閱[Azure Migrate 總覽](https://go.microsoft.com/fwlink/?linkid=2056064)。
 
 ## <a name="whats-new-in-storage-migration-service"></a>儲存體遷移服務的新功能
 
@@ -149,7 +151,7 @@ Windows 管理中心1910版新增了部署 Azure 虛擬機器的功能。 這會
 - 使用 Azure 檔案同步，更輕鬆地同步已遷移至 Azure 的共用
 - 遷移新的網路，例如 Azure
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [使用儲存體遷移服務遷移檔案伺服器](migrate-data.md)
 - [儲存體遷移服務常見問題（FAQ）](faq.md)

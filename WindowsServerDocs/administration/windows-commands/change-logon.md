@@ -1,6 +1,6 @@
 ---
 title: change logon
-description: '[變更登入] 命令的參考主題，可啟用或停用用戶端會話的登入，或顯示目前的登入狀態。'
+description: 變更登入命令的參考文章，可啟用或停用用戶端會話的登入，或顯示目前的登入狀態。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4a2ebe75f6efa8c3bcfc0018d1f4e6051bb9ebb7
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1561434347bc6a56e628f185e0984e33587bd999
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82716125"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929127"
 ---
 # <a name="change-logon"></a>change logon
 
@@ -33,7 +33,7 @@ change logon {/query | /enable | /disable | /drain | /drainuntilrestart}
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | /query | 顯示目前的登入狀態，無論是已啟用或已停用。 |
 | /enable | 允許來自用戶端會話的登入，但無法從主控台進行登入。 |
@@ -51,7 +51,7 @@ change logon {/query | /enable | /disable | /drain | /drainuntilrestart}
 ### <a name="examples"></a>範例
 
 - 若要顯示目前的登入狀態，請輸入：
-  
+
   ```
   change logon /query
   ```
@@ -67,8 +67,8 @@ change logon {/query | /enable | /disable | /drain | /drainuntilrestart}
   ```
   change logon /disable
   ```
-  
-## <a name="additional-references"></a>其他參考
+
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

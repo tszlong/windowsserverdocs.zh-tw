@@ -1,6 +1,6 @@
 ---
 title: convert gpt
-description: Convert gpt 命令的參考主題，其會將具有主開機記錄（MBR）磁碟分割樣式的空白基本磁碟轉換成具有 GUID 磁碟分割表格（GPT）磁碟分割樣式的基本磁碟。
+description: Convert gpt 命令的參考文章，其會將具有主開機記錄（MBR）磁碟分割樣式的空白基本磁碟轉換成具有 GUID 磁碟分割表格（GPT）磁碟分割樣式的基本磁碟。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 25b28473716037235a70e05835e23790f93164a1
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: d8025e897a8ce7083b938e984f9a11b6c32ed312
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720771"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928956"
 ---
 # <a name="convert-gpt"></a>convert gpt
 
@@ -34,7 +34,7 @@ convert gpt [noerr]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | noerr | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
 
@@ -46,7 +46,7 @@ convert gpt [noerr]
 convert gpt
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

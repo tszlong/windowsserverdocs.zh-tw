@@ -1,6 +1,6 @@
 ---
 title: 建立
-description: Create 命令的參考主題，它會在磁片上建立分割區或陰影分割區、在一或多個磁片上的磁片區，或虛擬硬碟（VHD）。
+description: Create 命令的參考文章，它會在磁片上建立分割區或陰影分割區、在一或多個磁片上的磁片區，或虛擬硬碟（VHD）。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f371bee591e29a45b1488b2c36112b55ed54d3f8
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 0b5b31f43e58b9e2eddb18f624c1054c9d028f4c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993186"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929534"
 ---
 # <a name="create"></a>建立
 
@@ -29,7 +29,7 @@ create volume
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | [建立分割區主要命令](create-partition-primary.md) | 在基本磁碟上建立具有焦點的主要磁碟分割。 |
 | [建立資料分割 efi 命令](create-partition-efi.md) | 在 Itanium 型電腦上的 GUID 磁碟分割表格（gpt）磁片上建立可延伸韌體介面（EFI）系統磁碟分割。 |
@@ -41,6 +41,6 @@ create volume
 | [建立磁片區 raid 命令](create-volume-raid.md) | 使用三個或多個指定的動態磁碟，建立 RAID-5 磁片區。 |
 | [建立磁片區 stripe 命令](create-volume-stripe.md) | 使用兩個或多個指定的動態磁碟建立等量磁片區。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

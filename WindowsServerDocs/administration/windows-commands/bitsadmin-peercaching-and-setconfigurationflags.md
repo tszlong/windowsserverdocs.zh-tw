@@ -1,6 +1,6 @@
 ---
 title: bitsadmin peercaching and setconfigurationflags
-description: Bitsadmin 對等互連和 setconfigurationflags 命令的參考主題，其會設定決定電腦是否可以將內容提供給對等，以及是否可以從對等下載內容的設定旗標。
+description: Bitsadmin 對等互連和 setconfigurationflags 命令的參考文章，其會設定決定電腦是否可以將內容提供給對等，以及是否可以從對等下載內容的設定旗標。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3c3ce69ce7a372311ce0c30e9b3a391ea33f45ce
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 868ef39104f1d16c760d91eee401c0d48b27ea1f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717241"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928125"
 ---
 # <a name="bitsadmin-peercaching-and-setconfigurationflags"></a>bitsadmin peercaching and setconfigurationflags
 
@@ -28,7 +28,7 @@ bitsadmin /peercaching /setconfigurationflags <job> <value>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | -------------- | -------------- |
 | 作業 | 作業的顯示名稱或 GUID。 |
 | value | 不帶正負號的整數，具有二進位標記法中的位的下列解讀：<ul><li>若要允許從對等體下載作業的資料，請設定最不重要的位。</li><li>若要允許將作業的資料提供給對等，請從右邊設定第二個位。</li></ul>|
@@ -41,7 +41,7 @@ bitsadmin /peercaching /setconfigurationflags <job> <value>
 bitsadmin /peercaching /setconfigurationflags myDownloadJob 1
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

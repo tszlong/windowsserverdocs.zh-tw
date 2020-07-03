@@ -1,6 +1,6 @@
 ---
 title: detail partition
-description: 詳細資料分割命令的參考主題，它會顯示所選取之分割區的屬性。
+description: 詳細資料分割命令的參考文章，它會顯示所選取之分割區的屬性。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 28a5730fc035dab86c4f0f6b28ea2fca47e37d04
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 2df0a5fe9af0c7856298786a6783d6af715766be
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993064"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929397"
 ---
 # <a name="detail-partition"></a>detail partition
 
@@ -34,7 +34,7 @@ detail partition
 detail partition
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: diskcomp
-description: Diskcomp 命令的參考主題，它會比較兩個磁片的內容。
+description: Diskcomp 命令的參考文章，它會比較兩個磁片的內容。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fcb810f4cd18d51f8151b27a6f447c86130624fd
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: efd935d4630d9397d97863d6d373db3801a97b17
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82992524"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929356"
 ---
 # <a name="diskcomp"></a>diskcomp
 
@@ -28,7 +28,7 @@ diskcomp [<drive1>: [<drive2>:]]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `<drive1>` | 指定包含其中一個軟碟的磁片磁碟機。 |
 | /? | 在命令提示字元顯示說明。 |
@@ -91,7 +91,7 @@ diskcomp [<drive1>: [<drive2>:]]
 
 - **diskcomp**結束代碼：
 
-  | 結束代碼 | 描述 |
+  | 結束碼 | 說明 |
   | --------- | ----------- |
   | 0 | 磁片相同 |
   | 1 | 發現差異 |
@@ -138,6 +138,6 @@ goto exit
 :exit
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

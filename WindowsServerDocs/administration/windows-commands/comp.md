@@ -1,6 +1,6 @@
 ---
 title: comp
-description: Comp 命令的參考主題，它會逐位元組比較兩個檔案或一組檔案的內容。
+description: Comp 命令的參考文章，它會逐位元組比較兩個檔案或一組檔案的內容。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c2939ee2166d961cae8ae0699c130e91117dd8a6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 65008945e2994b9040fcac663185d0526910b8bc
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82711470"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929715"
 ---
 # <a name="comp"></a>comp
 
@@ -28,7 +28,7 @@ comp [<data1>] [<data2>] [/d] [/a] [/l] [/n=<number>] [/c]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `<data1>` | 指定您想要比較的第一個檔案或一組檔案的位置和名稱。 您可以使用萬用字元（**&#42;** 和 **？**）來指定多個檔案。 |
 | `<data2>` | 指定您想要比較的第二個檔案或一組檔案的位置和名稱。 您可以使用萬用字元（**&#42;** 和 **？**）來指定多個檔案。 |
@@ -81,7 +81,7 @@ comp [<data1>] [<data2>] [/d] [/a] [/l] [/n=<number>] [/c]
 
 ## <a name="examples"></a>範例
 
-若要比較目錄*c:\reports*與備份目錄`\\sales\backup\april`的內容，請輸入：
+若要比較目錄*c:\reports*與備份目錄的內容 `\\sales\backup\april` ，請輸入：
 
 ```
 comp c:\reports \\sales\backup\april
@@ -93,6 +93,6 @@ comp c:\reports \\sales\backup\april
 comp \invoice\*.txt \invoice\backup\*.txt /n=10 /d
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

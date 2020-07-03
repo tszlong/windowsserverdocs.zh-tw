@@ -1,6 +1,6 @@
 ---
 title: bitsadmin cache and clear
-description: Bitsadmin cache 和 clear 命令的參考主題，會清除本機快取。
+description: Bitsadmin cache 和 clear 命令的參考文章，會清除本機快取。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6195bfc28c59fe7609f4a8164fa080ff7f7b977d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 624045036cae03e790c93a03be1007a8140f8d6a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718278"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928430"
 ---
 # <a name="bitsadmin-cache-and-clear"></a>bitsadmin cache and clear
 
@@ -34,7 +34,7 @@ bitsadmin /cache /clear
 bitsadmin /cache /clear
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

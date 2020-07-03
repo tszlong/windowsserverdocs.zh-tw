@@ -1,6 +1,6 @@
 ---
 title: 選項
-description: '[選擇] 命令的參考主題，會提示使用者從 batch 程式中的單一字元選項清單中選取一個專案，然後傳回所選選擇的索引。'
+description: '[選擇] 命令的參考文章，會提示使用者從 batch 程式中的單一字元選項清單中選取一個專案，然後傳回所選選擇的索引。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 32c0daa680178c1952015c62c6c6749acf5f6143
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 745321c6388e6faa9de1ce1a8a24afe66514d259
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82713538"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929981"
 ---
 # <a name="choice"></a>選項
 
@@ -28,9 +28,9 @@ choice [/c [<choice1><choice2><…>]] [/n] [/cs] [/t <timeout> /d <choice>] [/m 
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
-| /c`<choice1><choice2><…>` | 指定要建立的選項清單。 有效的選項包括 a-z、a-z、0-9 和擴充的 ASCII 字元（128-254）。 預設清單是 [YN]，它會顯示`[Y,N]?`為。 |
+| /c`<choice1><choice2><…>` | 指定要建立的選項清單。 有效的選項包括 a-z、a-z、0-9 和擴充的 ASCII 字元（128-254）。 預設清單是 [YN]，它會顯示為 `[Y,N]?` 。 |
 | /n | 隱藏選項清單，雖然仍會啟用選項，而且仍然會顯示郵件內文（如 **/m**所指定）。 |
 | /cs | 指定選擇是否區分大小寫。 根據預設，這些選項不區分大小寫。 |
 | 一起`<timeout>` | 指定在使用 **/d**所指定的預設選項之前，要暫停的秒數。 可接受的值為**0**到**9999**。 如果 **/t**設定為**0**，則在傳回預設選項之前，**選擇**不會暫停。 |
@@ -40,9 +40,9 @@ choice [/c [<choice1><choice2><…>]] [/n] [/cs] [/t <timeout> /d <choice>] [/m 
 
 ## <a name="remarks"></a>備註
 
-- **ERRORLEVEL**環境變數會設定為使用者從選項清單中選取之索引鍵的索引。 清單中的第一個選擇會傳回的值`1`，第二個是的`2`值，依此類推。 如果使用者按下不是有效選擇的機碼，則**選擇**會發出警告嗶聲。 
+- **ERRORLEVEL**環境變數會設定為使用者從選項清單中選取之索引鍵的索引。 清單中的第一個選擇會傳回的值 `1` ，第二個是的值 `2` ，依此類推。 如果使用者按下不是有效選擇的機碼，則**選擇**會發出警告嗶聲。
 
-- 如果**選擇**偵測到錯誤狀況，則會傳回**ERRORLEVEL**的`255`ERRORLEVEL 值。 如果使用者按下 CTRL + BREAK 或 CTRL + C， **choice**會傳回**ERRORLEVEL**的`0`ERRORLEVEL 值。
+- 如果**選擇**偵測到錯誤狀況，則會傳回的**ERRORLEVEL**值 `255` 。 如果使用者按下 CTRL + BREAK 或 CTRL + C， **choice**會傳回的**ERRORLEVEL**值 `0` 。
 
 > [!NOTE]
 > 當您在 batch 程式中使用**ERRORLEVEL**值時，您必須以遞減順序列出它們。
@@ -83,8 +83,8 @@ choice /c ync /t 5 /d n
 ```
 
 > [!NOTE]
-> 在此範例中，如果使用者未在五秒內按下按鍵，**選擇**預設會選取**N** ，並傳回的`2`錯誤值。 否則， **choice**會傳回對應于使用者選擇的值。
+> 在此範例中，如果使用者未在五秒內按下按鍵，**選擇**預設會選取**N** ，並傳回的錯誤值 `2` 。 否則， **choice**會傳回對應于使用者選擇的值。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

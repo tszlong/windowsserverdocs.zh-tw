@@ -1,6 +1,6 @@
 ---
 title: diskpart 腳本和範例
-description: 適用于 diskpart 腳本的參考主題，以及有關如何自動執行磁片相關工作的範例，例如建立磁片區或將磁片轉換成動態磁碟。
+description: 適用于 diskpart 腳本的參考文章，以及有關如何自動執行磁片相關工作的範例，例如建立磁片區或將磁片轉換成動態磁碟。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 546f867b2cde199f54975a127b0faf11130996d2
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: f2715332a8a6adff29f31a4dbd7d3e7a27a4a6f2
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354668"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929325"
 ---
 # <a name="diskpart-scripts-and-examples"></a>diskpart 腳本和範例
 
@@ -53,7 +53,7 @@ ms.locfileid: "84354668"
 
 - 當 diskpart 啟動時，會在命令提示字元中顯示 diskpart 版本和電腦名稱稱。 根據預設，如果 diskpart 在嘗試執行腳本工作時遇到錯誤，則 diskpart 會停止處理腳本並顯示錯誤碼（除非您已指定**noerr**參數）。 不過，不論您是否使用了**noerr**參數，diskpart 一律會在遇到語法錯誤時傳回錯誤。 **Noerr**參數可讓您執行有用的工作，例如使用單一腳本刪除所有磁片上的所有分割區，而不論磁片總數為何。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

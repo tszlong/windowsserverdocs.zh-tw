@@ -1,6 +1,6 @@
 ---
 title: timeout
-description: Timeout 的參考主題，會在指定的秒數內暫停命令處理器。
+description: Timeout 的參考文章，會在指定的秒數內暫停命令處理器。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ed66342c4f0bbe22e9d2dc6440d291941c769cd7
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 62ead9473a9034c02fab18f2318ecb5162511922
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721352"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930095"
 ---
 # <a name="timeout"></a>timeout
 
@@ -25,14 +25,14 @@ ms.locfileid: "82721352"
 ## <a name="syntax"></a>語法
 
 ```
-timeout /t <TimeoutInSeconds> [/nobreak] 
+timeout /t <TimeoutInSeconds> [/nobreak]
 ```
 
 ### <a name="parameters"></a>參數
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
-|/t \<TimeoutInSeconds>|指定命令處理器繼續處理之前，要等候的秒數（介於-1 到99999之間）。 值-1 會使電腦無限期地等待按鍵。|
+|一起\<TimeoutInSeconds>|指定命令處理器繼續處理之前，要等候的秒數（介於-1 到99999之間）。 值-1 會使電腦無限期地等待按鍵。|
 |/nobreak|指定忽略使用者金鑰筆劃。|
 |/?|在命令提示字元顯示說明。|
 
@@ -57,6 +57,6 @@ timeout /t 100 /nobreak
 timeout /t -1
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

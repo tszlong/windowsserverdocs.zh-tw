@@ -1,6 +1,6 @@
 ---
 title: ksetup delrealmflags
-description: Ksetup delrealmflags 命令的參考主題，它會從指定的領域移除領域旗標。
+description: Ksetup delrealmflags 命令的參考文章，它會從指定的領域移除領域旗標。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a8d983a00683fec0fa1bb9801caabe226a4ffeb9
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 9d3c81d1b034f6c53c33271c1c9e61a0fc5d4893
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817828"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929170"
 ---
 # <a name="ksetup-delrealmflags"></a>ksetup delrealmflags
 
@@ -36,7 +36,7 @@ ksetup /delrealmflags <realmname> [sendaddress] [tcpsupported] [delegate] [ncsup
 
 - 領域旗標會指定不是以 Windows 伺服器作業系統為基礎的 Kerberos 領域的其他功能。 執行 Windows Server 的電腦可以使用 Kerberos 伺服器來管理 Kerberos 領域中的驗證，而不是使用執行 Windows Server 作業系統的網域。 此專案會建立領域的功能，如下所示：
 
-| 值 | 領域旗標 | 說明 |
+| 值 | 領域旗標 | Description |
 | ----- | ---------- | ----------- |
 | 0xF | 全部 | 所有領域旗標都已設定。 |
 | 0x00 | None | 未設定領域旗標，且未啟用任何其他功能。 |
@@ -66,7 +66,7 @@ ksetup /delrealmflags CONTOSO ncsupported delegate
 
 若要確認已移除領域旗標，請輸入， `ksetup` 然後再查看輸出，尋找 [**領域旗標 =**] 文字。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

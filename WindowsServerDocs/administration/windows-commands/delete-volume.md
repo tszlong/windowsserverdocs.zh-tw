@@ -1,6 +1,6 @@
 ---
 title: delete volume
-description: 刪除磁片區命令的參考主題，這會刪除選取的磁片區。
+description: 刪除磁片區命令的參考文章，這會刪除選取的磁片區。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 59856e89ff96d2881040365d157540dc62c1aeb0
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 217e9ff1ccb470b5431143360286d312b09a1951
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993101"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928711"
 ---
 # <a name="delete-volume"></a>delete volume
 
@@ -31,7 +31,7 @@ delete volume [noerr]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | noerr | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
 
@@ -43,7 +43,7 @@ delete volume [noerr]
 delete volume
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: dfsdiag testsites
-description: Dfsdiag testsites 的參考主題，它會確認做為命名空間伺服器或資料夾（連結）目標的伺服器在所有網域控制站上都有相同的網站關聯，藉此檢查 active directory 網域服務（AD DS）網站的設定。
+description: Dfsdiag testsites 的參考文章，它會確認做為命名空間伺服器或資料夾（連結）目標的伺服器在所有網域控制站上都有相同的網站關聯，藉此檢查 active directory 網域服務（AD DS）網站的設定。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 54eb7c7ec44d7cd4872960ca29cd3146b710f472
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 7942b1535957366af9485580d75c9eec17120f4d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82992845"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928688"
 ---
 # <a name="dfsdiag-testsites"></a>dfsdiag testsites
 
@@ -30,7 +30,7 @@ dfsdiag /testsites </machine:<server name>| /DFSpath:<namespace root or DFS fold
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `/machine:<server name>` | 要驗證其網站關聯的伺服器名稱。 |
 | `/DFSpath:<namespace root or DFS folder>` | 命名空間根或分散式檔案系統（DFS）資料夾（連結），具有要驗證其網站關聯的目標。 |
@@ -57,7 +57,7 @@ dfsdiag /TestSites /DFSpath:\\contoso.com\namespace1\folder1 /full
 dfsdiag /testsites /DFSpath:\\contoso.com\namespace2 /recurse /full
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: break
-description: Break 命令的參考主題。 此命令不再使用。
+description: Break 命令的參考文章。 此命令不再使用。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 301c526903c95dec90c4883a54713eee20f516d2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 77cf4baa0e0343294e85318015942b39b6d6bfce
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82708786"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928485"
 ---
 # <a name="break"></a>break
 
@@ -25,14 +25,14 @@ ms.locfileid: "82708786"
 
 如果命令延伸模組已在 Windows 平臺上啟用並執行，則將**break**命令插入批次檔時，如果偵錯工具正在進行調試，則會進入硬式編碼的中斷點。
 
-## <a name="syntax"></a>語法
+## <a name="syntax"></a>Syntax
 
 ```
 break=[on|off]
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
-  
+
 - [break 命令](break.md)

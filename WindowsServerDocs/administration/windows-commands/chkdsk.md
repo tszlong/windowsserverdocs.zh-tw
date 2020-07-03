@@ -1,6 +1,6 @@
 ---
 title: chkdsk
-description: Chkdsk 命令的參考主題，它會檢查磁片區的檔案系統和檔案系統中繼資料是否有邏輯和實體的錯誤。
+description: Chkdsk 命令的參考文章，它會檢查磁片區的檔案系統和檔案系統中繼資料是否有邏輯和實體的錯誤。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: jasongerend
 ms.author: jgerend
 manager: lizapo
 ms.date: 10/09/2019
-ms.openlocfilehash: 4843624337e031f81453def78e4df97bdbfe821e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b98699b7e0925b43c15a602b9c193be9301a14ce
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82714402"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929996"
 ---
 # <a name="chkdsk"></a>chkdsk
 
@@ -32,12 +32,12 @@ ms.locfileid: "82714402"
 ## <a name="syntax"></a>語法
 
 ```
-chkdsk [<volume>[[<path>]<filename>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<size>]] [/b]  
+chkdsk [<volume>[[<path>]<filename>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<size>]] [/b]
 ```
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `<volume>` | 指定磁碟機號（後面接著冒號）、掛接點或磁片區名稱。 |
 | [ `[<path>]<filename>` | 僅與檔案分配表（FAT）和 FAT32 搭配使用。 指定您想要**chkdsk**檢查片段的檔案或一組檔案的位置和名稱。 您可以使用 **？** 和 **&#42;** 萬用字元來指定多個檔案。 |
@@ -47,10 +47,10 @@ chkdsk [<volume>[[<path>]<filename>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<size>]
 | /x | 必要時，強制先卸載磁片區。 磁片磁碟機所有開啟的控制碼都將失效。 **/x**也包括 **/f**的功能。  |
 | /i | 僅使用 NTFS。 對索引項目執行較少的 vigorous 檢查，這可減少執行**chkdsk**所需的時間量。 |
 | /C | 僅使用 NTFS。 不會檢查資料夾結構內的迴圈，這會減少執行**chkdsk**所需的時間量。  |
-| /l [：`<size>`] | 僅使用 NTFS。 將記錄檔大小變更為您輸入的大小。 如果您省略 size 參數， **/l**會顯示目前的大小。 |
+| /l [： `<size>` ] | 僅使用 NTFS。 將記錄檔大小變更為您輸入的大小。 如果您省略 size 參數， **/l**會顯示目前的大小。 |
 | /b | 僅使用 NTFS。 清除磁片區上的錯誤叢集清單，並重新掃描所有已配置和可用的叢集是否有錯誤。 **/b**包含 **/r**的功能。 將磁片區映射處理到新的硬碟之後，請使用此參數。 |
 | /scan | 僅使用 NTFS。 在磁片區上執行線上掃描。 |
-| /forceofflinefix | 僅搭配 NTFS 使用（必須搭配 **/scan**使用）。 略過所有線上修復;所有找到的缺失都會排入離線修復的佇列（ `chkdsk /spotfix`例如）。 |
+| /forceofflinefix | 僅搭配 NTFS 使用（必須搭配 **/scan**使用）。 略過所有線上修復;所有找到的缺失都會排入離線修復的佇列（例如 `chkdsk /spotfix` ）。 |
 | /perf | 僅搭配 NTFS 使用（必須搭配 **/scan**使用）。 使用更多系統資源，盡可能快速完成掃描。 對於在系統上執行的其他工作，這可能會對效能造成負面影響。 |
 | /spotfix | 僅使用 NTFS。 在磁片區上執行點修正。 |
 | /sdcleanup | 僅使用 NTFS。 垃圾收集不必要的安全描述項資料（隱含 **/f**）。 |
@@ -66,12 +66,12 @@ chkdsk [<volume>[[<path>]<filename>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<size>]
 - 如果您想要讓**chkdsk**更正磁片錯誤，您就不能在磁片磁碟機上開啟檔案。 如果檔案已開啟，則會出現下列錯誤訊息：
 
   ```
-  Chkdsk cannot run because the volume is in use by another process. Would you like to schedule this volume to be checked the next time the system restarts? (Y/N)  
+  Chkdsk cannot run because the volume is in use by another process. Would you like to schedule this volume to be checked the next time the system restarts? (Y/N)
   ```
 
 - 如果您在下次重新開機電腦時選擇檢查磁片磁碟機， **chkdsk**會檢查磁片磁碟機，並在重新開機電腦時自動校正錯誤。 如果磁片磁碟機磁碟分割是開機磁碟分割， **chkdsk**會在檢查磁片磁碟機之後自動重新開機電腦。
 
-- 您也可以使用`chkntfs /c`命令，在下次電腦重新開機時，排程要檢查的磁片區。 使用`fsutil dirty set`命令來設定磁片區的中途位（表示損毀），讓 Windows 在電腦重新開機時執行**chkdsk** 。
+- 您也可以使用 `chkntfs /c` 命令，在下次電腦重新開機時，排程要檢查的磁片區。 使用 `fsutil dirty set` 命令來設定磁片區的中途位（表示損毀），讓 Windows 在電腦重新開機時執行**chkdsk** 。
 
 - 您應該偶爾在 FAT 和 NTFS 檔案系統上使用**chkdsk**來檢查磁片錯誤。 **Chkdsk**會檢查磁碟空間和磁片使用量，並提供每個檔案系統的特定狀態報表。 狀態報表會顯示在檔案系統中找到的錯誤。 如果您在使用中的磁碟分割上執行**chkdsk**但沒有 **/f**參數，它可能會報告虛假的錯誤，因為它無法鎖定磁片磁碟機。
 
@@ -80,17 +80,17 @@ chkdsk [<volume>[[<path>]<filename>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<size>]
   因為在 FAT 檔案系統上的修復通常會變更磁片的檔案配置表，有時會造成資料遺失，所以**chkdsk**可能會顯示類似下列的確認訊息：
 
   ```
-  10 lost allocation units found in 3 chains.  
-  Convert lost chains to files?  
+  10 lost allocation units found in 3 chains.
+  Convert lost chains to files?
   ```
 
-    - 如果您按下**Y**，Windows 會將根目錄中的每個遺失鏈儲存為檔案，其名稱格式`<nnnn>`為檔案 .chk。 當**chkdsk**完成時，您可以檢查這些檔案，以查看它們是否包含您所需的任何資料。
+    - 如果您按下**Y**，Windows 會將根目錄中的每個遺失鏈儲存為檔案，其名稱格式為檔案 `<nnnn>` .chk。 當**chkdsk**完成時，您可以檢查這些檔案，以查看它們是否包含您所需的任何資料。
 
     - 如果您按**N**，Windows 會修正磁片，但不會儲存遺失配置單位的內容。
 
 - 如果您不使用 **/f**參數， **chkdsk**會顯示一則訊息，指出需要修正該檔案，但不會修正任何錯誤。
 
-- 如果您在`chkdsk /f*`非常大的磁片或磁片上使用非常大量的檔案（例如，數百萬個檔案）， `chkdsk /f`則可能需要很長的時間才能完成。
+- 如果您 `chkdsk /f*` 在非常大的磁片或磁片上使用非常大量的檔案（例如，數百萬個檔案），則 `chkdsk /f` 可能需要很長的時間才能完成。
 
 - 使用 **/r**參數尋找檔案系統中的實體磁片錯誤，並嘗試從任何受影響的磁片磁區復原資料。
 
@@ -100,13 +100,13 @@ chkdsk [<volume>[[<path>]<filename>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<size>]
 
 - 您可以從修復主控台使用具有不同參數的**chkdsk**命令。
 
-- 在不常重新開機的伺服器上，您可能會想**chkntfs**要使用 chkntfs `fsutil dirty query`或命令來判斷是否已在執行 chkdsk 之前設定磁片區的中途位。
+- 在不常重新開機的伺服器上，您可能會想要使用**chkntfs**或 `fsutil dirty query` 命令來判斷是否已在執行 chkdsk 之前設定磁片區的中途位。
 
 ### <a name="understanding-exit-codes"></a>瞭解結束代碼
 
-下表列出**chkdsk**完成後所報告的結束代碼。  
+下表列出**chkdsk**完成後所報告的結束代碼。
 
-  | 結束代碼 | 描述 |
+  | 結束碼 | 說明 |
   | --------- | ----------- |
   | 0 | 找不到任何錯誤。 |
   | 1 | 發現並修正錯誤。 |
@@ -118,7 +118,7 @@ chkdsk [<volume>[[<path>]<filename>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<size>]
 若要檢查磁片磁碟機 D 中的磁片並讓 Windows 修正錯誤，請輸入：
 
 ```
-chkdsk d: /f  
+chkdsk d: /f
 ```
 
 如果遇到錯誤， **chkdsk**就會暫停並顯示訊息。 **Chkdsk**會藉由顯示列出磁片狀態的報表來完成。 在**chkdsk**完成之前，您無法開啟指定磁片磁碟機上的任何檔案。
@@ -126,11 +126,11 @@ chkdsk d: /f
 若要檢查目前目錄中的 FAT 磁片上是否有非連續區塊的所有檔案，請輸入：
 
 ```
-chkdsk *.*  
+chkdsk *.*
 ```
 
 **Chkdsk**會顯示狀態報表，然後列出符合具有非連續區塊之檔案規格的檔案。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

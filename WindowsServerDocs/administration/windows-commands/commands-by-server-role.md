@@ -1,6 +1,6 @@
 ---
 title: 依伺服器角色的命令
-description: 依伺服器角色列出命令的參考主題，其描述伺服器的主要功能。
+description: 依伺服器角色的命令參考文章，其描述伺服器的主要功能。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bd52887c00933304678119068eb90d1e902acc4b
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 8d2bbaf00591e4bcc1d607a8309f5cd6688d75fe
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82712018"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929730"
 ---
 # <a name="commands-by-server-role"></a>依伺服器角色的命令
 

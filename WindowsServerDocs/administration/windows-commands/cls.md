@@ -1,6 +1,6 @@
 ---
 title: cls
-description: Cls 命令的參考主題，它會清除 [命令提示字元] 視窗。
+description: Cls 命令的參考文章，它會清除 [命令提示字元] 視窗。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a30c48bb95f2a8f95acd10c9cdea1a90d324e674
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 2fd589f5c77a287bae8925ae94c00bfb92a42549
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82712651"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929887"
 ---
 # <a name="cls"></a>cls
 
@@ -28,7 +28,7 @@ cls
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | /? | 在命令提示字元顯示說明。 |
 
@@ -40,6 +40,6 @@ cls
 cls
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

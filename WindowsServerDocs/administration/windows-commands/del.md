@@ -1,6 +1,6 @@
 ---
 title: del
-description: Del 命令的參考主題，會刪除一個或多個檔案。
+description: Del 命令的參考文章，它會刪除一個或多個檔案。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f32efd6e29a715cdc67b5a1ddcb166922d1cfcc9
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 57f0026aebd7ff2119c7de49a03679792c3e5f0c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993131"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928770"
 ---
 # <a name="del"></a>del
 
@@ -34,7 +34,7 @@ erase [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `<names>` | 指定一或多個檔案或目錄的清單。 萬用字元可用來刪除多個檔案。 如果指定目錄，則會刪除目錄中的所有檔案。 |
 | /p | 在刪除指定的檔案之前提示您確認。 |
@@ -46,7 +46,7 @@ erase [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
 
 #### <a name="remarks"></a>備註
 
-- 如果您使用`del /p`命令，您會看到下列訊息：
+- 如果您使用 `del /p` 命令，您會看到下列訊息：
 
     `FileName, Delete (Y/N)?`
 
@@ -54,7 +54,7 @@ erase [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
 
 - 如果您停用命令延伸模組， **/s**參數會顯示找不到的任何檔案名，而不是顯示正在刪除之檔案的名稱。
 
-- 如果您在`<names>`參數中指定特定的資料夾，則也會一併刪除所有包含的檔案。 例如，如果您想要刪除*\work*資料夾中的所有檔案，請輸入：
+- 如果您在參數中指定特定 `<names>` 的資料夾，則也會一併刪除所有包含的檔案。 例如，如果您想要刪除*\work*資料夾中的所有檔案，請輸入：
 
   ```
   del \work
@@ -96,7 +96,7 @@ del *.bat
 del /a:r *.*
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
-title: 卸離 vdisk
-description: 卸離 vdisk 命令的參考主題，這會停止選取的虛擬硬碟（VHD），使其不會顯示為主電腦上的本機硬碟。
+title: detach vdisk
+description: 卸離 vdisk 命令的參考文章，這會停止選取的虛擬硬碟（VHD），使其不會顯示為主電腦上的本機硬碟。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 427b27630341589f3ff6dd422667e1247f5b64ec
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: bce18dcf55940ca8529e4bee21af2f09282d0e00
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993076"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928709"
 ---
-# <a name="detach-vdisk"></a>卸離 vdisk
+# <a name="detach-vdisk"></a>detach vdisk
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -31,7 +31,7 @@ detach vdisk [noerr]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | noerr | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
 
@@ -43,7 +43,7 @@ detach vdisk [noerr]
 detach vdisk
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

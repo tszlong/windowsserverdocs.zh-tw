@@ -1,6 +1,6 @@
 ---
 title: dcgpofix
-description: Dcgpofix 命令的參考主題，會重新建立網域的預設群組原則物件（Gpo）。
+description: Dcgpofix 命令的參考文章，它會重新建立網域的預設群組原則物件（Gpo）。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f11b7db8110cd2d7dcf08cd250eba411e7ff21a8
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: cf9e3c37c054c34d602e472a2c5f83e9a8b284b9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993172"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928805"
 ---
 # <a name="dcgpofix"></a>dcgpofix
 
@@ -31,7 +31,7 @@ dcgpofix [/ignoreschema] [/target: {domain | dc | both}] [/?]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | /ignoreschema | 當您執行此命令時，會忽略 Active Directory 架構的版本。 否則，此命令僅適用于隨附命令之 Windows 版本的相同架構版本。 |
 | `/target {domain | dc | both` | 指定是以預設網域原則、預設網域控制站原則或兩種原則類型為目標。 |
@@ -51,6 +51,6 @@ dcgpofix /ignoreschema /target:domain
 dcgpofix /ignoreschema /target:dc
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

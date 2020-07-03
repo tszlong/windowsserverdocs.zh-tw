@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getmaxdownloadtime
-description: Bitsadmin getmaxdownloadtime 命令的參考主題，它會抓取下載超時（以秒為單位）。
+description: Bitsadmin getmaxdownloadtime 命令的參考文章，它會抓取下載超時（以秒為單位）。
 ms.prod: windows-servemr
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c63acee7629267ed10df11fb8cf4eeb0c911e118
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9737e25e05b372cb6bb1057cc3a60fd5e2cf0ca8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717870"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928177"
 ---
 # <a name="bitsadmin-getmaxdownloadtime"></a>bitsadmin getmaxdownloadtime
 
@@ -30,7 +30,7 @@ bitsadmin /getmaxdownloadtime <job>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | -------------- | -------------- |
 | 作業 | 作業的顯示名稱或 GUID。 |
 
@@ -42,7 +42,7 @@ bitsadmin /getmaxdownloadtime <job>
 bitsadmin /getmaxdownloadtime myDownloadJob
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

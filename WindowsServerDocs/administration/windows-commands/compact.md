@@ -1,6 +1,6 @@
 ---
 title: compact
-description: Compact 命令的參考主題，它會顯示或變更 NTFS 磁碟分割上的檔案或目錄壓縮。
+description: Compact 命令的參考文章，它會顯示或變更 NTFS 磁碟分割上的檔案或目錄壓縮。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 52830530fa281025fcfd970b7675b98004e2a918
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c17f7c934ecd4b6988b3ab606059a2acd31b852b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82710942"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929004"
 ---
 # <a name="compact"></a>compact
 
@@ -28,11 +28,11 @@ compact [/c | /u] [/s[:<dir>]] [/a] [/i] [/f] [/q] [<filename>[...]]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | /C | 壓縮指定的目錄或檔案。 |
 | /U | Uncompresses 指定的目錄或檔案。 |
-| /s [：`<dir>`] | 將**compact**命令套用至指定目錄（如果未指定，則為目前的目錄）的所有子目錄。 |
+| /s [： `<dir>` ] | 將**compact**命令套用至指定目錄（如果未指定，則為目前的目錄）的所有子目錄。 |
 | /a | 顯示隱藏或系統檔案。 |
 | /i | 忽略錯誤。 |
 | /f | 強制壓縮或解壓縮指定的目錄或檔案。 如果檔案在系統損毀中斷時被部分壓縮，則會使用 **/f** 。 若要強制完整壓縮檔案，請使用 **/c**和 **/f**參數，並指定部分壓縮檔案。 |
@@ -75,7 +75,7 @@ compact /c /i /s:\
 compact /c /s:\tmp *.bmp
 ```
 
-若要強制執行在系統損毀期間部分壓縮的檔案*zebra*的完整壓縮，請輸入：
+若要強制完整壓縮檔案*zebra.bmp*（在系統損毀期間部分壓縮），請輸入：
 
 ```
 compact /c /f zebra.bmp
@@ -87,6 +87,6 @@ compact /c /f zebra.bmp
 compact /u c:\tmp
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
 title: 命令列語法索引鍵
-description: 命令列語法索引鍵的參考主題，其描述用來表示命令列語法的標記法。
+description: 命令列語法索引鍵的參考文章，其描述用來表示命令列語法的標記法。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3a3c78b6081733164be3a656e67c35dd3e2b5e2d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 7beaab6b6ac05f8e440276424d2cbdb81ddc73b4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82711944"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929721"
 ---
 # <a name="command-line-syntax-key"></a>命令列語法索引鍵
 
 下表說明用來指出命令列語法的表示法。
 
-| 表示法 | 描述 |
+| 表示法 | Description |
 | -------- | ----------- |
 | 不含括弧或大括弧的文字 | 您必須輸入的專案，如下所示。 |
 | `<Text inside angle brackets>` | 您必須為其提供值的預留位置。 |

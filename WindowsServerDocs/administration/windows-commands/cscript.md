@@ -1,6 +1,6 @@
 ---
 title: cscript
-description: Cscript 命令的參考主題，它會啟動腳本，使其在命令列環境中執行。
+description: Cscript 命令的參考文章，它會啟動腳本，使其在命令列環境中執行。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 24d5d46a0a994ca44230076786fbd59c00cbdc57
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: e7f6731c264fc5a22bee2d94b41a555431e48b42
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437053"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928836"
 ---
 # <a name="cscript"></a>cscript
 
@@ -33,14 +33,14 @@ cscript <scriptname.extension> [/b] [/d] [/e:<engine>] [{/h:cscript | /h:wscript
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | scriptname 擴充功能 | 指定具有選擇性副檔名之腳本檔案的路徑和檔案名。 |
 | /b | 指定不會顯示警示、腳本錯誤或輸入提示的批次模式。 |
 | /d | 啟動偵錯工具。 |
 | /e:`<engine>` | 指定用來執行腳本的引擎。 |
-| /h： cscript | 將 cscript.exe 註冊為執行腳本的預設腳本主機。 |
-| /h： wscript.echo | 將 wscript.echo 註冊為執行腳本的預設腳本主機。 此為預設值。 |
+| /h： cscript | 註冊 cscript.exe 做為執行腳本的預設腳本主機。 |
+| /h： wscript.echo | 註冊 wscript.exe 做為執行腳本的預設腳本主機。 此為預設值。 |
 | /i | 指定互動模式，以顯示警示、腳本錯誤和輸入提示。 這是的預設值，相反的 `/b` 。 |
 | /工作 x<identifier> | 執行 manage-bde.wsf 腳本檔案中的*識別碼*所識別的作業。 |
 | /logo | 指定在執行腳本之前，主控台中顯示 Windows 腳本主機橫幅。 這是的預設值，相反的 `/nologo` 。 |
@@ -49,7 +49,7 @@ cscript <scriptname.extension> [/b] [/d] [/e:<engine>] [{/h:cscript | /h:wscript
 | /t:<seconds> | 指定腳本可執行檔時間上限（以秒為單位）。 您最多可以指定32767秒。 預設值為 [無時間限制]。 |
 | /U | 針對從主控台重新導向的輸入和輸出，指定 Unicode。 |
 | /x | 啟動偵錯工具中的腳本。 |
-| /? | 顯示可用的命令參數，並提供使用它們的協助。 這與輸入不含參數且沒有腳本的**cscript.exe**相同。 |
+| /? | 顯示可用的命令參數，並提供使用它們的協助。 這等同于輸入沒有參數的**cscript.exe** ，而且沒有任何腳本。 |
 | scriptarguments | 指定傳遞至腳本的引數。 每個腳本引數前面必須加上斜線（ **/** ）。 |
 
 #### <a name="remarks"></a>備註
@@ -60,8 +60,8 @@ cscript <scriptname.extension> [/b] [/d] [/e:<engine>] [{/h:cscript | /h:wscript
 
 - Windows 腳本檔案通常會有下列其中一個副檔名： manage-bde.wsf、.vbs、.js。 Windows Script Host 可以使用 manage-bde.wsf 腳本檔案。 每個 manage-bde.wsf 檔案都可以使用多個腳本引擎並執行多個作業。
 
-- 如果您按兩下副檔名沒有關聯的腳本檔案，[**開啟方式**] 對話方塊隨即出現。 選取 [wscript.echo] 或 [cscript]，然後選取 [**一律使用此程式] 來開啟此檔案類型**。 這會為此檔案類型的檔案註冊 wscript.echo 或 cscript 做為預設的腳本主機。
+- 如果您按兩下副檔名沒有關聯的腳本檔案，[**開啟方式**] 對話方塊隨即出現。 選取 [wscript.echo] 或 [cscript]，然後選取 [**一律使用此程式] 來開啟此檔案類型**。 這會針對此檔案類型的檔案，註冊 wscript.exe 或 cscript 做為預設的腳本主機。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

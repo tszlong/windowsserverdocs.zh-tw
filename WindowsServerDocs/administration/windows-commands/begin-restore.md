@@ -1,6 +1,6 @@
 ---
-title: 開始還原
-description: 「開始還原」命令的參考主題，它會啟動還原會話，併發出 PreRestore 事件給相關的寫入器。
+title: begin restore
+description: 開始還原命令的參考文章，它會啟動還原會話，併發出 PreRestore 事件給相關的寫入器。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,26 +9,26 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 98967290bd7f15a518848b53b43e8c9daeb8b860
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 6f97c35eb8a98aedecfd2f5a8dc87d4ddc3a3cd6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718504"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928522"
 ---
-# <a name="begin-restore"></a>開始還原
+# <a name="begin-restore"></a>begin restore
 
 > 適用目標︰Windows Server 2012 R2、Windows Server 2012
 
 啟動還原會話，並將**PreRestore**事件發出至相關的寫入器。
 
-## <a name="syntax"></a>語法
+## <a name="syntax"></a>Syntax
 
 ```
 begin restore
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

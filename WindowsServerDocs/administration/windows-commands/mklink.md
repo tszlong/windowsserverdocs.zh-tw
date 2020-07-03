@@ -1,6 +1,6 @@
 ---
 title: mklink
-description: Mklink 命令的參考主題，它會建立目錄或檔案符號或硬式連結。
+description: Mklink 命令的參考文章，它會建立目錄或檔案符號或硬式連結。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2f998533ce3184213786a341c2413e7323496e96
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: cb8339f7dcb2f397d6b90105e2ccd9bdc8cc07a5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354608"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928530"
 ---
 # <a name="mklink"></a>mklink
 
@@ -28,7 +28,7 @@ mklink [[/d] | [/h] | [/j]] <link> <target>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | /d | 建立目錄符號連結。 根據預設，此命令會建立檔案符號連結。 |
 | /h | 建立硬式連結，而不是符號連結。 |
@@ -48,7 +48,7 @@ rd \MyFolder
 del \MyFile.file
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

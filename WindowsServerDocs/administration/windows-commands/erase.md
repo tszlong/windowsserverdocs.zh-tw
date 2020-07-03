@@ -1,6 +1,6 @@
 ---
 title: erase
-description: 清除命令的參考主題，會刪除一個或多個檔案。
+description: 清除命令的參考文章，會刪除一個或多個檔案。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1525f20549b6571975cb622534f8504eb4fa1f79
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 0a22c738215671096373a7077fc89ac87fe03597
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354678"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929317"
 ---
 # <a name="erase"></a>erase
 
@@ -33,7 +33,7 @@ del [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `<names>` | 指定一或多個檔案或目錄的清單。 萬用字元可用來刪除多個檔案。 如果指定目錄，則會刪除目錄中的所有檔案。 |
 | /p | 在刪除指定的檔案之前提示您確認。 |
@@ -95,7 +95,7 @@ erase *.bat
 erase /a:r *.*
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

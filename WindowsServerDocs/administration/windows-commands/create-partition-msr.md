@@ -1,6 +1,6 @@
 ---
 title: create partition msr
-description: 建立分割區 msr 的參考主題，它會在 GUID 磁碟分割表格（gpt）磁片上建立 Microsoft Reserved （MSR）分割區。
+description: 建立分割區 msr 的參考文章，它會在 GUID 磁碟分割表格（gpt）磁片上建立 Microsoft Reserved （MSR）分割區。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d427e9f96023f8b66f72e3895b30519ab7cd2de1
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 2714c47c467fda9c6ca3451331ab9bc7991d4591
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993255"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929648"
 ---
 # <a name="create-partition-msr"></a>create partition msr
 
@@ -35,9 +35,9 @@ create partition msr [size=<n>] [offset=<n>] [noerr]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
-| 大小 =`<n>` | 分割區的大小（以 mb 為單位）。 資料分割至少是以位元組為單位，與所指定的數位`<n>`相同。 如果沒有指定大小的話，則磁碟分割會繼續，直到目前的區域中沒有多餘的可用空間為止。 |
+| 大小 =`<n>` | 分割區的大小（以 mb 為單位）。 資料分割至少是以位元組為單位，與所指定的數位相同 `<n>` 。 如果沒有指定大小的話，則磁碟分割會繼續，直到目前的區域中沒有多餘的可用空間為止。 |
 | offset =`<n>` | 指定分割區的建立位移（以 kb 為單位）。 位移會無條件進位，以完全填滿所使用的任何磁區大小。 如果沒有指定位移的話，則磁碟分割會置於足夠容納它的第一個磁碟範圍內。 |
 | noerr | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
 
@@ -55,7 +55,7 @@ create partition msr [size=<n>] [offset=<n>] [noerr]
 create partition msr size=1000
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: diskcopy
-description: Diskcopy 命令的參考主題，它會將來源磁片磁碟機中的軟碟內容複寫到目的地磁片磁碟機中格式化或未格式化的磁片。
+description: Diskcopy 命令的參考文章，它會將來源磁片磁碟機中的軟碟內容複寫到目的地磁片磁碟機中格式化或未格式化的磁片。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/07/2018
-ms.openlocfilehash: 99d1007a7c6f154b621e43d674d06f25b2911f00
-ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
+ms.openlocfilehash: 7b29e81dc1befff8cd90b460b1117207146fa191
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235176"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929345"
 ---
 # <a name="diskcopy"></a>diskcopy
 
@@ -74,7 +74,7 @@ diskcopy [<drive1>: [<drive2>:]] [/v]
 
 - **diskcopy**結束代碼：
 
-    | 結束代碼 | 說明 |
+    | 結束碼 | 說明 |
     | --------- | ----------- |
     | 0 | 複製操作成功 |
     | 1 | 發生非嚴重的讀取/寫入錯誤 |
@@ -97,7 +97,7 @@ diskcopy b: a:
 diskcopy a: a:
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

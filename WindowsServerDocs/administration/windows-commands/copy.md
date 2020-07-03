@@ -1,6 +1,6 @@
 ---
 title: copy
-description: 複製命令的參考主題，可將一個或多個檔案從一個位置複製到另一個位置。
+description: 複製命令的參考文章，可將一或多個檔案從一個位置複製到另一個位置。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 909bcdf83c87440dafe2653711c4d7e215f8d66b
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 6ea742ab8fce296a88c8c9e6a41262c7aef88813
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719292"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928897"
 ---
 # <a name="copy"></a>copy
 
@@ -31,7 +31,7 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <source> [/a | /b] [+<source> [/a 
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | /d | 允許複製加密的檔案，以在目的地上儲存為解密的檔案。 |
 | /v | 驗證是否已正確寫入新檔案。 |
@@ -65,8 +65,8 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <source> [/a | /b] [+<source> [/a 
 - 如果無法驗證寫入作業，則會出現錯誤訊息。 雖然**copy**命令很少發生記錄錯誤，但是您可以使用 **/v**來驗證是否已正確記錄重要資料。 **/V**命令列選項也會減緩**複製**命令的速度，因為必須檢查磁片上所記錄的每個磁區。
 
 - 如果在**COPYCMD**環境變數中預設為 **/y** ，您可以在命令列中使用 **/-y**來覆寫此設定。 根據預設，除非在批次腳本中執行**copy**命令，否則當您取代此設定時，系統會提示您。
-  
-- 若要附加檔案，請針對 [*目的地*] 指定單一檔案，但為 [*來源*] 輸入多個檔案（使用萬用字元或*file1*+*file2*+*file3*格式）。
+
+- 若要附加檔案，請針對 [*目的地*] 指定單一檔案，但為 [*來源*] 輸入多個檔案（使用萬用字元或*file1* + *file2* + *file3*格式）。
 
 - 如果在複製階段期間中斷連接（例如，如果伺服器離線中斷連線），您可以在重新建立連接之後，使用**copy/z**繼續。 **/Z**選項也會顯示針對每個檔案完成的複製作業百分比。
 
@@ -85,7 +85,7 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <source> [/a | /b] [+<source> [/a 
 
 - 若要複製長度為0個位元組的檔案，或複製目錄的所有檔案和子目錄，請使用[xcopy 命令](xcopy.md)。
 
-- 若要在不修改檔案的情況下將目前的時間和日期指派給檔案，請使用下列語法：  
+- 若要在不修改檔案的情況下將目前的時間和日期指派給檔案，請使用下列語法：
 
     ```
     copy /b <source> +,,
@@ -95,7 +95,7 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <source> [/a | /b] [+<source> [/a 
 
 ## <a name="examples"></a>範例
 
-若要將稱為*備忘*檔案的檔案複製到目前磁片磁碟機中的*letter* ，並確定檔案結尾字元（CTRL + Z）位於複製檔案的結尾，請輸入：
+若要將名為*memo.doc*的檔案複製到目前磁片磁碟機中的*letter.doc* ，並確定檔案結尾字元（CTRL + Z）位於複製檔案的結尾，請輸入：
 
 ```
 copy memo.doc letter.doc /a
@@ -125,7 +125,7 @@ copy mar89.rpt + apr89.rpt + may89.rpt Report
 copy report + mar89.rpt + apr89.rpt + may89.rpt
 ```
 
-若要將目前目錄中副檔名為 .txt 的所有檔案合併成一個名為*組合式*的單一檔案，請輸入：
+若要將目前目錄中副檔名為 .txt 的所有檔案合併成名為*Combined.doc*的單一檔案，請輸入：
 
 ```
 copy *.txt Combined.doc
@@ -140,19 +140,19 @@ copy /b *.exe Combined.exe
 > [!CAUTION]
 > 如果您合併二進位檔案，產生的檔案可能會因為內部格式而無法使用。
 
-- 將副檔名為 .txt 的每個檔案與對應的 ref 檔案結合，會建立具有相同檔案名但副檔名為 .doc 的檔案。 **Copy**命令會將*file1*和*file1*結合成表單*file1*，然後命令會將*file2*與*file2*結合，以形成*file2*，依此類推。 例如，輸入：
+- 將副檔名為 .txt 的每個檔案與對應的 ref 檔案結合，會建立具有相同檔案名但副檔名為 .doc 的檔案。 **Copy**命令會將*file1.txt*和*file1*結合成表單*file1.doc*，然後命令會將*file2.txt*與*file2*結合成表單*file2.doc*等等。 例如，輸入：
 
 ```
 copy *.txt + *.ref *.doc
 ```
 
-若要結合所有副檔名為 .txt 的檔案，然後將所有副檔名為. ref 的檔案結合成一個名為*組合式*的檔案，請輸入：
+若要結合所有副檔名為 .txt 的檔案，然後將所有副檔名為. ref 的檔案結合成一個名為*Combined.doc*的檔案，請輸入：
 
 ```
 copy *.txt + *.ref Combined.doc
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

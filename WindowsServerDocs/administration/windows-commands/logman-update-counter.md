@@ -1,6 +1,6 @@
 ---
-title: logman 更新計數器
-description: Logman update counter 命令的參考主題，可更新現有的計數器資料收集器的屬性。
+title: logman update counter
+description: Logman update counter 命令的參考文章，可更新現有的計數器資料收集器的屬性。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f482e58417e5e3246989169bbb01917fcb6503b0
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 4bfeb3bf8e0bc88bdefcee308d5c77121477b095
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222770"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928584"
 ---
-# <a name="logman-update-counter"></a>logman 更新計數器
+# <a name="logman-update-counter"></a>logman update counter
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -31,7 +31,7 @@ logman update counter <[-n] <name>> [options]
 ### <a name="parameters"></a>參數
 
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | -s`<computer name>` | 在指定的遠端電腦上執行命令。 |
 | -config`<value>` | 指定包含命令選項的設定檔案。 |
@@ -75,7 +75,7 @@ logman create counter perf_log -c \Processor(_Total)\% Processor time
 logman update counter perf_log -si 10 -f csv -v mmddhhmm
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

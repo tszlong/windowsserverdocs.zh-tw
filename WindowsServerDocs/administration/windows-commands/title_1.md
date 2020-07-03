@@ -1,6 +1,6 @@
 ---
 title: title
-description: 標題的參考主題，會建立 [命令提示字元] 視窗的標題。
+description: 標題的參考文章，會建立 [命令提示字元] 視窗的標題。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a94fe033bfd43d825c5beb7c915937bc4419b18f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 732a0de30b9495e6281248120d2a90f85734ad8b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721340"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930062"
 ---
 # <a name="title"></a>title
 
@@ -30,9 +30,9 @@ title [<String>]
 
 ### <a name="parameters"></a>參數
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
-|\<字串>|指定 [命令提示字元] 視窗的標題。|
+|\<String>|指定 [命令提示字元] 視窗的標題。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
@@ -42,7 +42,7 @@ title [<String>]
 
 ## <a name="examples"></a>範例
 
-在下列範例腳本中，[命令提示字元] 視窗的標題會變更為 [更新檔案]，而批次檔會執行 [**複製**] 命令。 執行命令之後，會顯示文字， `Files Updated`而且 [命令提示字元] 視窗的標題會變更回 [命令提示字元]。
+在下列範例腳本中，[命令提示字元] 視窗的標題會變更為 [更新檔案]，而批次檔會執行 [**複製**] 命令。 執行命令之後， `Files Updated` 會顯示文字，而且 [命令提示字元] 視窗的標題會變更回 [命令提示字元]。
 ```
 @echo off
 title Updating Files
@@ -51,6 +51,6 @@ echo Files Updated.
 title Command Prompt
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

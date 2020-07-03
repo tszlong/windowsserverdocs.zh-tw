@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getfilestotal
-description: Bitsadmin getfilestotal 命令的參考主題，它會抓取指定之作業中的檔案數目。
+description: Bitsadmin getfilestotal 命令的參考文章，它會抓取指定之作業中的檔案數目。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5cf3b33c15bb18c8a141408f82fdd72a6e710817
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 7592f783d17e31fe8a1e7fbf82cb41e20171c9fd
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717980"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928280"
 ---
 # <a name="bitsadmin-getfilestotal"></a>bitsadmin getfilestotal
 
@@ -28,7 +28,7 @@ bitsadmin /getfilestotal <job>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | -------------- | -------------- |
 | 作業 | 作業的顯示名稱或 GUID。 |
 

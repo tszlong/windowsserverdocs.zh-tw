@@ -1,6 +1,6 @@
 ---
 title: create partition extended
-description: 建立分割區擴充命令的參考主題，它會在磁片上建立具有焦點的延伸磁碟分割。
+description: 建立分割區擴充命令的參考文章，它會在磁片上建立具有焦點的延伸磁碟分割。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9d2cc591dca276f70b3ddda1827607d5e2953ed2
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 6acc766a6d9e2fd51bc9c6726d5dec2168ec7eef
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993275"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929689"
 ---
 # <a name="create-partition-extended"></a>create partition extended
 
@@ -35,7 +35,7 @@ create partition extended [size=<n>] [offset=<n>] [align=<n>] [noerr]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | 大小 =`<n>` | 指定磁碟分割大小為 MB。 如果沒有指定大小，磁碟分割會繼續進行，直到延伸磁碟分割中沒有其他可用空間為止。 |
 | offset =`<n>` | 指定分割區的建立位移（以 kb 為單位）。 如果沒有指定位移，分割區會從磁片上可用空間的開頭開始，夠大而足以容納新的資料分割。 |
@@ -50,7 +50,7 @@ create partition extended [size=<n>] [offset=<n>] [align=<n>] [noerr]
 create partition extended size=1000
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

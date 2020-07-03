@@ -1,6 +1,6 @@
 ---
 title: dfsdiag
-description: Dfsdiag 命令的參考主題，其提供 DFS 命名空間的診斷資訊。
+description: Dfsdiag 命令的參考文章，其提供 DFS 命名空間的診斷資訊。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7e9e0de18b48a4233b950ad6aa8f1e450a99da62
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 97f39d740bc321ebcece69ff0690dfac7aab6567
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82992831"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928663"
 ---
 # <a name="dfsdiag"></a>dfsdiag
 
@@ -32,7 +32,7 @@ dfsdiag /testreferral /DFSpath:<DFS path to get referrals> [/full]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | [dfsdiag testdcs](dfsdiag-testdcs.md) | 檢查網域控制站設定。 |
 | [dfsdiag testsites](dfsdiag-testsites.md) | 檢查網站關聯。 |
@@ -41,6 +41,6 @@ dfsdiag /testreferral /DFSpath:<DFS path to get referrals> [/full]
 | [dfsdiag testreferral](dfsdiag-testreferral.md) | 檢查參照回應。 |
 | /? | 在命令提示字元顯示說明。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

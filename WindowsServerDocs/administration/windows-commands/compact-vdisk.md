@@ -1,6 +1,6 @@
 ---
 title: compact vdisk
-description: Compact vdisk 命令的參考主題，可減少動態擴充虛擬硬碟（VHD）檔案的實體大小。
+description: Compact vdisk 命令的參考文章，可減少動態擴充虛擬硬碟（VHD）檔案的實際大小。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c4ae5c653645c9f6f3ef97501a59932682c24be3
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 7379975981c2df386b7180c814799f7129eee7da
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82711143"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929051"
 ---
 # <a name="compact-vdisk"></a>compact vdisk
 
@@ -34,7 +34,7 @@ compact vdisk
 
 - 您只能使用以唯讀方式卸離或附加的 compact 動態擴充 Vhd。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
