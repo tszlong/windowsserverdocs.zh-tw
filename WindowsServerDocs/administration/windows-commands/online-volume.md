@@ -1,6 +1,6 @@
 ---
 title: online volume
-description: 線上磁片區命令的參考主題，其會將離線磁片區帶到線上狀態。
+description: 線上磁片區命令的參考文章，它會將離線磁片區帶到線上狀態。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 83a1e4bf1d6afe9485ab71c9af372166797900b3
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 2378b4cbc4f0624a0f1d65c62337d4c1a856648c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472664"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933525"
 ---
 # <a name="online-disk"></a>online disk
 
@@ -34,7 +34,7 @@ online volume [noerr]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 |--|--|
 | noerr | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
 
@@ -46,6 +46,6 @@ online volume [noerr]
 online volume
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

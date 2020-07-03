@@ -1,6 +1,6 @@
 ---
 title: nfsadmin
-description: Nfsadmin 命令的參考主題，它會管理 Server for NFS 和 Client for NFS。
+description: Nfsadmin 命令的參考文章，它會管理 Server for NFS 和 Client for NFS。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c122577758dd28d11d25445ca9dc98ed03024c77
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: ad88594d534c64c0651fcc4e094fef669a02f16c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721531"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932330"
 ---
 # <a name="nfsadmin"></a>nfsadmin
 
@@ -22,7 +22,7 @@ ms.locfileid: "84721531"
 
 一種命令列公用程式，可在執行 Microsoft Services for Network File System （NFS）的本機或遠端電腦上，管理 Server for NFS 或 Client for NFS。 使用不含參數的情況下，nfsadmin 伺服器會顯示目前的 NFS 伺服器設定設定，而 nfsadmin 用戶端會顯示目前的 NFS 用戶端設定。
 
-## <a name="syntax"></a>語法
+## <a name="syntax"></a>Syntax
 
 ```
 nfsadmin server [computername] [-u Username [-p Password]] -l
@@ -42,7 +42,7 @@ nfsadmin client [computername] [-u Username [-p Password]] config option[...]
 
 ### <a name="general-parameters"></a>一般參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | computername | 指定您要管理的遠端電腦。 您可以使用 Windows 網際網路名稱服務（WINS）名稱或網域名稱系統（DNS）名稱或網際網路通訊協定（IP）位址來指定電腦。 |
 | -u 使用者名稱 | 指定要使用其認證之使用者的使用者名稱。 可能需要將功能變數名稱新增至使用者名稱，格式為「網域*\*使用者名稱」。 |
@@ -50,7 +50,7 @@ nfsadmin client [computername] [-u Username [-p Password]] config option[...]
 
 ### <a name="server-for-nfs-related-parameters"></a>Server for NFS 相關參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | -l | 列出用戶端持有的所有鎖定。 |
 | -r`{client|all}` | 釋放用戶端所持有的鎖定，如果所有用戶端已指定 all，則為。 |
@@ -67,7 +67,7 @@ nfsadmin client [computername] [-u Username [-p Password]] config option[...]
 
 ### <a name="client-for-nfs-related-parameters"></a>NFS 相關的用戶端參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | start | 啟動 Client for NFS 服務。 |
 | stop | 停止 NFS 用戶端服務。 |
@@ -108,7 +108,7 @@ nfsadmin server config
 nfsadmin client config
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: 停用-TransportServer
-description: 停用-TransportServer 的參考主題，這會停用傳輸伺服器的所有服務。
+description: 停用-TransportServer 的參考文章，這會停用傳輸伺服器的所有服務。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 81ae150b4f8e4de577e377a2d10a7a69675adac7
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e9d25159cb81408b5a8085fb830eec4479d953f4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720962"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933937"
 ---
 # <a name="disable-transportserver"></a>停用-TransportServer
 
@@ -27,19 +27,19 @@ ms.locfileid: "82720962"
 wdsutil [Options] /Disable-TransportServer [/Server:<Server name>]
 ```
 ### <a name="parameters"></a>參數
-|參數|描述|
+|參數|說明|
 |-------|--------|
-|[/Server：<Server name>]|指定要停用之傳輸伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定傳輸伺服器名稱，則會使用本機伺服器。|
+|[/Server： <Server name> ]|指定要停用之傳輸伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定傳輸伺服器名稱，則會使用本機伺服器。|
 ## <a name="examples"></a>範例
 若要停用伺服器，請輸入：
 ```
 wdsutil /Disable-TransportServer
 wdsutil /verbose /Disable-TransportServer /Server:MyWDSServer
 ```
-## <a name="additional-references"></a>其他參考
-- [命令列語法索引鍵](command-line-syntax-key.md)
-使用[TransportServer 命令](using-the-enable-transportserver-command.md)
-[使用 TransportServer 命令](using-the-get-transportserver-command.md)
-[子命令： set-TransportServer](subcommand-set-transportserver.md)
-[子命令： start-TransportServer](subcommand-start-transportserver.md)
+## <a name="additional-references"></a>其他參考資料
+- [命令列語法索引鍵](command-line-syntax-key.md) 
+[使用 TransportServer 命令](using-the-enable-transportserver-command.md) 
+[使用 TransportServer 命令](using-the-get-transportserver-command.md) 
+[子命令： set-TransportServer](subcommand-set-transportserver.md) 
+[子命令： start-TransportServer](subcommand-start-transportserver.md) 
 [子命令： stop-TransportServer](subcommand-stop-transportserver.md)

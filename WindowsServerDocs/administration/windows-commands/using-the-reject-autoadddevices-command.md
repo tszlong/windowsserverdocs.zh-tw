@@ -1,6 +1,6 @@
 ---
 title: 拒絕-AutoaddDevices
-description: 拒絕 AutoaddDevices 的參考主題，這會拒絕等待系統管理核准的電腦。
+description: 拒絕 AutoaddDevices 的參考文章，它會拒絕等待系統管理核准的電腦。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7e377d4e2d4aecea2e0ba3af023af39ab7695c0a
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 2b678f7a9fc875dfeebf735475db3adfb7ad9ae7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725920"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932426"
 ---
 # <a name="reject-autoadddevices"></a>拒絕-AutoaddDevices
 
@@ -26,9 +26,9 @@ ms.locfileid: "82725920"
 wdsutil [Options] /Reject-AutoaddDevices [/Server:<Server name>] /RequestId:<Request ID or ALL>
 ```
 ### <a name="parameters"></a>參數
-|參數|描述|
+|參數|說明|
 |-------|--------|
-|[/Server：<Server name>]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。|
+|[/Server： <Server name> ]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。|
 |/RequestId： <要求識別碼 &#124; 所有>|指定指派給擱置電腦的要求識別碼。 若要拒絕所有擱置中的電腦，請指定**all**。|
 ## <a name="examples"></a>範例
 若要拒絕單一電腦，請輸入：
@@ -39,8 +39,8 @@ wdsutil /Reject-AutoaddDevices /RequestId:12
 ```
 wdsutil /verbose /Reject-AutoaddDevices /Server:MyWDSServer /RequestId:ALL
 ```
-## <a name="additional-references"></a>其他參考
-- [Command-Line Syntax Key](command-line-syntax-key.md) 
-[使用 AutoaddDevices 命令](using-the-approve-autoadddevices-command.md)
-的命令列語法索引鍵使用[AutoaddDevices 命令](using-the-get-autoadddevices-command.md)的[AutoaddDevices 命令](using-the-delete-autoadddevices-command.md)
-
+## <a name="additional-references"></a>其他參考資料
+- [命令列語法索引鍵](command-line-syntax-key.md) 
+[使用 AutoaddDevices 命令](using-the-approve-autoadddevices-command.md) 
+[使用 AutoaddDevices 命令](using-the-delete-autoadddevices-command.md) 
+[使用 AutoaddDevices 命令](using-the-get-autoadddevices-command.md)

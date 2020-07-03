@@ -1,6 +1,6 @@
 ---
 title: macfile
-description: 用於管理 Macintosh 伺服器、磁片區、目錄和檔案之檔案伺服器的 macfile 命令參考主題。
+description: 用於管理 Macintosh 伺服器、磁片區、目錄和檔案之檔案伺服器的 macfile 命令的參考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 740044088bef1537b5b41493f46be9275be84874
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 6937e8bbf40ec9ce908be095e5de0e04f793f40e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84223013"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933656"
 ---
 # <a name="macfile"></a>macfile
 
@@ -34,7 +34,7 @@ macfile directory[/server:\\<computername>] /path:<directory> [/owner:<ownername
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | /server:`\\<computername>` | 指定要變更目錄的伺服器。 如果省略，則會在本機電腦上執行此操作。 |
 | /path`<directory>` | 指定您要變更之目錄的路徑。 此為必要參數。 **注意：** 目錄必須存在，使用**macfile 目錄**將不會建立目錄。 |
@@ -91,7 +91,7 @@ macfile forkize[/server:\\<computername>] [/creator:<creatorname>] [/type:<typen
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | /server:`\\<computername>` | 指定要聯結檔案的伺服器。 如果省略，則會在本機電腦上執行此操作。 |
 | 創`<creatorname>` | 指定檔案的建立者。 Macintosh 搜尋工具會使用 **/creator**命令列選項來判斷建立檔案的應用程式。 |
@@ -113,7 +113,7 @@ macfile forkize[/server:\\<computername>] [/creator:<creatorname>] [/type:<typen
 macfile forkize /resourcefork:c:\cross\mac\appcode /type:APPL /creator:MAGNOLIA /targetfile:D:\Release\tree_app
 ```
 
-若要將檔案建立者變更為*Microsoft Word 5.1*，請針對目錄*D:\Word documents\Group*檔中的檔案*單字*，在伺服器* \\ ServerA*上輸入：
+若要將檔案建立者變更為*Microsoft Word 5.1*，請針對目錄*D:\Word documents\Group*檔中的檔案*Word.txt* ，在伺服器* \\ ServerA*上輸入：
 
 ```
 macfile forkize /server:\\ServerA /creator:MSWD /type:TEXT /targetfile:d:\Word documents\Group files\Word.txt
@@ -131,7 +131,7 @@ macfile server [/server:\\<computername>] [/maxsessions:{number | unlimited}] [/
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- |------------ |
 | /server:`\\<computername>` | 指定要在其上變更參數的伺服器。 如果省略，則會在本機電腦上執行此操作。 |
 | maxsessions`{number | unlimited}` | 指定可以同時使用 Macintosh 檔案和列印伺服器的最大使用者數目。 如果省略，伺服器的**maxsessions**設定會維持不變。 |
@@ -163,7 +163,7 @@ macfile volume /remove[/server:\\<computername>] /name:<volumename>
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `{/add | /set}` | 新增或變更 Macintosh 可存取磁片區時的必要。 新增或變更指定的磁片區。 |
 | /server:`\\<computername>` | 指定要在其上新增、變更或移除磁片區的伺服器。 如果省略，則會在本機電腦上執行此操作。 |
@@ -206,6 +206,6 @@ macfile volume /add /server:\\Magnolia /name:Landscape Design /path:e:\trees
 macfile volume /remove /name:Sales Reports
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

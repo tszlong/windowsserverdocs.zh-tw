@@ -1,6 +1,6 @@
 ---
 title: ksetup setrealm
-description: Ksetup setrealm 命令的參考主題，其會設定 Kerberos 領域的名稱。
+description: Ksetup setrealm 命令的參考文章，其會設定 Kerberos 領域的名稱。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 03b33977f57e187a8bea69be78c1e9c094b9a73e
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: c6fa5573322237dfee5909d9afc2e99696ac82b3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817278"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933128"
 ---
 # <a name="ksetup-setrealm"></a>ksetup setrealm
 
@@ -43,7 +43,7 @@ ksetup /setrealm <DNSdomainname>
 ksetup /setrealm CONTOSO
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

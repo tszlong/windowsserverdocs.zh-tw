@@ -1,6 +1,6 @@
 ---
 title: fsutil resource
-description: Fsutil resource 命令的參考主題，它會管理交易式 Resource Manager 及其行為。
+description: Fsutil resource 命令的參考文章，它會管理交易式 Resource Manager 及其行為。
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: b198d8ca-a5b7-430f-8911-5cbb9f50484c
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: b64dab3a0d0e772f067b0d3fa548692aad38a4c5
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 75037d39a070f8c7391df4136ab958f671732e09
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83435733"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933338"
 ---
 # <a name="fsutil-resource"></a>fsutil resource
 
@@ -45,7 +45,7 @@ fsutil resource [stop] <rmrootpathname>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | 建立 | 建立次要交易式 Resource Manager。 |
 | `<rmrootpathname>` | 指定交易式 Resource Manager 根目錄的完整路徑。 |
@@ -86,7 +86,7 @@ fsutil resource setlog growth 2 percent c:test
 fsutil resource setautoreset true c:\
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

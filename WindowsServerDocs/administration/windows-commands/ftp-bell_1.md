@@ -1,6 +1,6 @@
 ---
-title: ftp 鐘
-description: Ftp 鐘命令的參考主題，它會在每個檔案傳輸命令完成之後，切換發聲聲音。
+title: ftp bell
+description: Ftp 鐘命令的參考文章，它會在每個檔案傳輸命令完成之後，切換發聲聲音。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c445e929c9d3adad2bfa620b522e4befbb7c1cff
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 9481911f9de9eb62baea492964987908daa94ce1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820018"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933305"
 ---
-# <a name="ftp-bell"></a>ftp 鐘
+# <a name="ftp-bell"></a>ftp bell
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -36,7 +36,7 @@ bell
 bell
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

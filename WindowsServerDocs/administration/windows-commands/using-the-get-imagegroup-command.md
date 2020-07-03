@@ -1,6 +1,6 @@
 ---
 title: ImageGroup
-description: ImageGroup 的參考主題，它會抓取映射群組和其中影像的相關資訊。
+description: ImageGroup 的參考文章，它會抓取映射群組和其中影像的相關資訊。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 30a87085cb935f95a209ffdd78ecf2b9fb45dc15
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 32ca965981b02bd951a0cc84160a2c5ea0643ae0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719904"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932214"
 ---
 # <a name="get-imagegroup"></a>ImageGroup
 
@@ -27,10 +27,10 @@ ms.locfileid: "82719904"
 wdsutil [Options] /Get-ImageGroumediaGroup:<Image group name> [/Server:<Server name>] [/detailed]
 ```
 ### <a name="parameters"></a>參數
-|參數|描述|
+|參數|說明|
 |-------|--------|
 mediaGroup:<Image group name>|指定映射群組的名稱。|
-|[/Server：<Server name>]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。|
+|[/Server： <Server name> ]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。|
 |[/detailed]|傳回每個影像的影像中繼資料。 如果此參數不是使用，則預設行為是只傳回映射名稱、描述和檔案名。|
 ## <a name="examples"></a>範例
 若要查看映射群組的相關資訊，請輸入：
@@ -41,9 +41,9 @@ wdsutil /Get-ImageGroumediaGroup:ImageGroup1
 ```
 wdsutil /verbose /Get-ImageGroumediaGroup:ImageGroup1 /Server:MyWDSServer /detailed
 ```
-## <a name="additional-references"></a>其他參考
-- [命令列語法索引鍵](command-line-syntax-key.md)
-[ImageGroup 命令](using-the-add-imagegroup-command.md)
-使用[AllImageGroups 命令](using-the-get-allimagegroups-command.md)
-，並[使用 ImageGroup 命令](using-the-remove-imagegroup-command.md)
+## <a name="additional-references"></a>其他參考資料
+- [命令列語法索引鍵](command-line-syntax-key.md) 
+[使用 ImageGroup 命令](using-the-add-imagegroup-command.md) 
+[使用 AllImageGroups 命令](using-the-get-allimagegroups-command.md) 
+[使用 ImageGroup 命令](using-the-remove-imagegroup-command.md) 
 [子命令： set-ImageGroup](subcommand-set-imagegroup.md)

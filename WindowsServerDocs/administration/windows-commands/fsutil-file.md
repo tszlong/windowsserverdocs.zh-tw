@@ -1,6 +1,6 @@
 ---
 title: fsutil file
-description: Fsutil file 命令的參考主題，它會依使用者名稱尋找檔案、針對檔案配置查詢範圍、設定檔案的簡短名稱、設定檔案的有效資料長度、為檔案設定零個數據，或建立新的檔案。
+description: Fsutil file 命令的參考文章，它會依使用者名稱尋找檔案、針對檔案配置查詢範圍、設定檔案的簡短名稱、設定檔案的有效資料長度、為檔案設定零個數據，或建立新的檔案。
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: 9f3dc104-dd69-4b03-b824-a29896780164
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: e9be8f6d21b89d1017371b9697e1227122826a7d
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 6909d381ef5dfebb343e70ad117a1a5b400481fa
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83435873"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932290"
 ---
 # <a name="fsutil-file"></a>fsutil file
 
@@ -42,7 +42,7 @@ fsutil file [setzerodata] offset=<offset> length=<length> <filename>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | createnew | 建立具有指定之名稱和大小的檔案，其內容包含零。 |
 | `<length>` | 指定檔案的有效資料長度。 |
@@ -116,13 +116,13 @@ fsutil file queryextents C:\Temp\sample.txt
 fsutil file seteof C:\testfile.txt 1000
 ```
 
-若要將檔案的簡短名稱*longfilename* （磁片磁碟機 C）設定為*longfile*，請輸入：
+若要設定檔案的簡短名稱，請在磁片磁碟機 C 上*longfilename.txt*以*longfile.txt*，請輸入：
 
 ```
 fsutil file setshortname c:\longfilename.txt longfile.txt
 ```
 
-若要針對 NTFS 磁片區上名為*testfile.txt*的檔案，將有效的資料長度設定為*4096 個位元組*，請輸入：
+若要為 NTFS 磁片區上名為*testfile.txt*的檔案，將有效的資料長度設定為*4096 個位元組*，請輸入：
 
 ```
 fsutil file setvaliddata c:\testfile.txt 4096
@@ -134,7 +134,7 @@ fsutil file setvaliddata c:\testfile.txt 4096
 fsutil file setzerodata offset=100 length=150 c:\temp\sample.txt
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

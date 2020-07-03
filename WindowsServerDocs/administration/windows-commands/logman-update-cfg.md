@@ -1,6 +1,6 @@
 ---
-title: logman 更新 cfg
-description: Logman update cfg 命令的參考主題，可更新現有設定資料收集器的屬性。
+title: logman update cfg
+description: Logman update cfg 命令的參考文章，可更新現有設定資料收集器的屬性。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: af4d61372aa5b10d5bb2a5c93e16df391eadfd2f
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 6e2d50504d8d4b9a92d36e4279a10526ddbd7877
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222782"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933890"
 ---
-# <a name="logman-update-cfg"></a>logman 更新 cfg
+# <a name="logman-update-cfg"></a>logman update cfg
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -31,7 +31,7 @@ logman update cfg <[-n] <name>> [options]
 ### <a name="parameters"></a>參數
 
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | -s`<computer name>` | 在指定的遠端電腦上執行命令。 |
 | -config`<value>` | 指定包含命令選項的設定檔案。 |
@@ -69,7 +69,7 @@ logman update cfg <[-n] <name>> [options]
 logman update cfg cfg_log -reg HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\Currentverion\
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

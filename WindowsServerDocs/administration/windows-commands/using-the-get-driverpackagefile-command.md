@@ -1,6 +1,6 @@
 ---
 title: DriverPackageFile
-description: DriverPackageFile 的參考主題，它會顯示驅動程式套件的相關資訊，包括其內含的驅動程式和檔案。
+description: DriverPackageFile 的參考文章，它會顯示驅動程式套件的相關資訊，包括其內含的驅動程式和檔案。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 71fc38e31471a1deb9d6be29b04d3cd911be1bd6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1daa93cb8976229c4c847390416f9332769c5ff5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719927"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932246"
 ---
 # <a name="get-driverpackagefile"></a>DriverPackageFile
 
@@ -28,11 +28,11 @@ WDSUTIL /Get-DriverPackageFile /InfFile:<Inf File path> [/Architecture:{x86 | ia
 
 ### <a name="parameters"></a>參數
 
-|         參數         |                              描述                               |
+|         參數         |                              說明                               |
 |---------------------------|------------------------------------------------------------------------|
-| /InfFile：\<Inf 檔案路徑> | 指定驅動程式套件 .inf 檔案的完整路徑和檔案名。 |
+| /InfFile:\<Inf File path> | 指定驅動程式套件 .inf 檔案的完整路徑和檔案名。 |
 |    [/Architecture： {x86    |                                  ia64                                  |
-|     [/Show： {驅動程式      |                                 檔案                                  |
+|     [/Show： {驅動程式      |                                 檔案儲存體                                  |
 
 ## <a name="examples"></a>範例
 
@@ -41,6 +41,6 @@ WDSUTIL /Get-DriverPackageFile /InfFile:<Inf File path> [/Architecture:{x86 | ia
 WDSUTIL /Get-DriverPackageFile /InfFile:C:\temp\1394.inf /Architecture:x86
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

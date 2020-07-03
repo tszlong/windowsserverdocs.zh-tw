@@ -1,6 +1,6 @@
 ---
 title: shift
-description: Shift 的參考主題，會變更批次檔中批次參數的位置。
+description: Shift 的參考文章，這會變更批次檔中批次參數的位置。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 870bda19de3426fd7007020efb2f3db39bf654c8
-ms.sourcegitcommit: 7116460855701eed4e09d615693efa4fffc40006
+ms.openlocfilehash: c72f1f2390a1adaa993be2caa7954d72dede51e9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83433162"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932584"
 ---
 # <a name="shift"></a>shift
 
@@ -30,9 +30,9 @@ shift [/n <N>]
 
 ### <a name="parameters"></a>參數
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
-|/n \< n>|指定在第*N*個引數開始轉移，其中*N*是0到8之間的任何值。 需要預設啟用的命令延伸模組。|
+|/n\<N>|指定在第*N*個引數開始轉移，其中*N*是0到8之間的任何值。 需要預設啟用的命令延伸模組。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
@@ -45,13 +45,13 @@ shift [/n <N>]
 
 ## <a name="examples"></a>範例
 
-來自名為 Mycopy 之範例批次檔的下列幾行會示範如何搭配使用**shift**與任意數目的批次參數。 在此範例中，Mycopy 會將檔案清單複製到特定目錄。 批次參數是以目錄和檔案名引數來表示。
+來自稱為的範例批次檔的下列幾行 Mycopy.bat 示範如何使用**shift**搭配任意數目的批次參數。 在此範例中，Mycopy.bat 會將檔案清單複製到特定目錄。 批次參數是以目錄和檔案名引數來表示。
 ```
-@echo off 
+@echo off
 rem MYCOPY.BAT copies any number of files
 rem to a directory.
 rem The command uses the following syntax:
-rem mycopy dir file1 file2 ... 
+rem mycopy dir file1 file2 ...
 set todir=%1
 :getfile
 shift
@@ -63,6 +63,6 @@ set todir=
 echo All done
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

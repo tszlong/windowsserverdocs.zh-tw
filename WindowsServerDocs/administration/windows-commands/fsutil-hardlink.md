@@ -1,6 +1,6 @@
 ---
 title: fsutil hardlink
-description: Fsutil hard hard 命令的參考主題，它會在現有檔案和新檔案之間建立永久連結。
+description: Fsutil hard hard 命令的參考文章，它會在現有檔案和新檔案之間建立永久連結。
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: 835fc6f1-cc84-4189-b29a-dde90792469e
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: ef0f8347a73a2522f6c4b9298799ad2e3536c4c9
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: b4cbc3912339464a061c027234d0d22b2d73ea09
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83435923"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932280"
 ---
 # <a name="fsutil-hardlink"></a>fsutil hardlink
 
@@ -33,14 +33,14 @@ fsutil hardlink list <filename>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | 建立 | 在現有檔案和新檔案之間建立 NTFS 永久連結。 （NTFS 硬連結類似 POSIX 硬連結）。 |
 | \<newfilename> | 指定您想要建立硬連結的檔案。 |
 | \<existingfilename> | 指定您想要建立硬連結的檔案。 |
 | list | 列出*檔案名*的永久連結。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

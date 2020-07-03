@@ -1,6 +1,6 @@
 ---
 title: secedit：分析
-description: '* * * * 的參考主題'
+description: '* * * * 的參考文章'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 42c92bb55ea451087fd6f506e8c8b58263fccfd3
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 4514d4f98aca2d697dbbab9005020ef06e1878b6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821138"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932601"
 ---
 # <a name="seceditanalyze"></a>secedit：分析
 
@@ -57,7 +57,7 @@ Secedit /analyze /db C:\Security\FY11\SecDbContoso.sdb /log C:\Security\FY11\Sec
 Secedit /analyze /db C:\Security\FY11\SecDbContoso.sdb /cfg SecContoso.inf /overwrite /log C:\Security\FY11\SecAnalysisContosoFY11.xml /quiet
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [Secedit](secedit.md)
 - [命令列語法關鍵](command-line-syntax-key.md)

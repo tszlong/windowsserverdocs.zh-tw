@@ -1,6 +1,6 @@
 ---
 title: pushd
-description: Pushd 命令的參考主題，它會儲存目前目錄以供 popd 命令使用，然後變更為指定的目錄。
+description: Pushd 命令的參考文章，它會儲存目前目錄以供 popd 命令使用，然後變更為指定的目錄。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ca15d4279c65164c385ce3dce57d0420ad5aace3
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 871834ae1ac29eb53be982831e7ede93d9d309cf
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472133"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933751"
 ---
 # <a name="pushd"></a>pushd
 
@@ -32,7 +32,7 @@ pushd [<path>]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 |--|--|
 | `<path>` | 指定要做為目前的目錄的目錄。 此命令支援相對路徑。 |
 | /? | 在命令提示字元顯示說明。 |
@@ -57,7 +57,7 @@ cls
 echo All text files deleted in the %1 directory
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

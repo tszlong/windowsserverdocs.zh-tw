@@ -1,6 +1,6 @@
 ---
 title: ksetup mapuser
-description: Ksetup mapuser 命令的參考主題，其會將 Kerberos 主體的名稱對應至帳戶。
+description: Ksetup mapuser 命令的參考文章，其會將 Kerberos 主體的名稱對應至帳戶。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0ac2f3e30b3057ceea4376d7ffe8286875d5301d
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: f387b8c3ff7cf7515a4f2ed9b8ea62d379332ec7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817668"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933692"
 ---
 # <a name="ksetup-mapuser"></a>ksetup mapuser
 
@@ -30,7 +30,7 @@ ksetup /mapuser <principal> <account>
 
 | 參數 | 說明 |
 | --------- | ----------- |
-| `<principal>` | 指定任何主體使用者的完整功能變數名稱。 例如： mike@corp.CONTOSO.COM 。 如果您未指定帳戶參數，則會刪除指定主體的對應。 |
+| `<principal>` | 指定任何主體使用者的完整功能變數名稱。 例如 mike@corp.CONTOSO.COM。 如果您未指定帳戶參數，則會刪除指定主體的對應。 |
 | `<account>` | 指定存在於此電腦上的任何帳戶或安全性群組名稱，例如 [**來賓**]、[**網域使用者**] 或 [**系統管理員**]。 如果省略此參數，則會刪除指定主體的對應。 |
 
 #### <a name="remarks"></a>備註
@@ -76,7 +76,7 @@ ksetup /mapuser mike@corp.CONTOSO.COM *
 ksetup /mapuser * *
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: Scwcmd 復原
-description: '* * * * 的參考主題'
+description: '* * * * 的參考文章'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 288c5bb14602e895648cfdc1535b734a823b7233
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: b329791b16e333e38669258eeeedfa8d65f334db
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820958"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932649"
 ---
 # <a name="scwcmd-rollback"></a>Scwcmd: rollback
 
@@ -32,14 +32,14 @@ scwcmd rollback /m:<ComputerName> [/u:<UserName>] [/pw:<Password>]
 
 |參數|說明|
 |---------|-----------|
-|/m： \< ComputerName>|指定應執行復原作業之電腦的 NetBIOS 名稱、DNS 名稱或 IP 位址。|
-|/u： \< UserName>|指定執行遠端復原時要使用的替代使用者帳戶。 預設為登入的使用者。|
-|/pw： \< 密碼>|指定執行遠端復原時要使用的替代使用者認證。 預設為登入的使用者。|
+|/m\<ComputerName>|指定應執行復原作業之電腦的 NetBIOS 名稱、DNS 名稱或 IP 位址。|
+|u\<UserName>|指定執行遠端復原時要使用的替代使用者帳戶。 預設為登入的使用者。|
+|/pw\<Password>|指定執行遠端復原時要使用的替代使用者認證。 預設為登入的使用者。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
 
-Scwcmd 只能在執行 Windows Server 2008 R2、Windows Server 2008 或 Windows Server 2003 的電腦上使用。
+Scwcmd.exe 只能在執行 Windows Server 2008 R2、Windows Server 2008 或 Windows Server 2003 的電腦上使用。
 
 ## <a name="examples"></a>範例
 
@@ -48,6 +48,6 @@ Scwcmd 只能在執行 Windows Server 2008 R2、Windows Server 2008 或 Windows 
 scwcmd rollback /m:172.16.0.0
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

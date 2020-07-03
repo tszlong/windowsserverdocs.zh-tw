@@ -1,6 +1,6 @@
 ---
-title: logman 更新 api
-description: Logman update api 命令的參考主題，其會更新現有 API 追蹤資料收集器的屬性。
+title: logman update api
+description: Logman update api 命令的參考文章，它會更新現有 API 追蹤資料收集器的屬性。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0087edc7cd96bf2bf7611d9a3975d97384c02949
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 40575772e5f82474c4afbd4809773f47d7e4e075
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222772"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933875"
 ---
-# <a name="logman-update-api"></a>logman 更新 api
+# <a name="logman-update-api"></a>logman update api
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -30,7 +30,7 @@ logman update api <[-n] <name>> [options]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | -s`<computer name>` | 在指定的遠端電腦上執行命令。 |
 | -config`<value>` | 指定包含命令選項的設定檔案。 |
@@ -65,13 +65,13 @@ logman update api <[-n] <name>> [options]
 
 ### <a name="examples"></a>範例
 
-若要更新名為*trace_notepad*的現有 API 追蹤計數器，請在 [可執行檔 c:\windows\notepad.exe] 中排除模組 kernel32.dll 所產生的 Api 呼叫 TlsGetValue，然後輸入：
+若要針對可執行檔 c:\windows\notepad.exe 更新名為*trace_notepad*的現有 api 追蹤計數器，請排除模組 kernel32.dll 所產生的 Api 呼叫 TlsGetValue，然後輸入：
 
 ```
 logman update api trace_notepad -exe c:\windows\notepad.exe -exapis kernel32.dll!TlsGetValue
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

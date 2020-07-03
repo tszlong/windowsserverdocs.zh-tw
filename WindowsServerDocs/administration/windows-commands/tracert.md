@@ -1,6 +1,6 @@
 ---
 title: tracert
-description: Tracert 的參考主題，其會藉由將網際網路控制訊息通訊協定（ICMP） echo 要求或 ICMPv6 訊息傳送至目的地，並以累加方式增加存留時間（TTL）域值，來決定目的地所採用的路徑。
+description: Tracert 的參考文章，其會藉由將網際網路控制訊息通訊協定（ICMP） echo 要求或 ICMPv6 訊息傳送至目的地，並以累加方式增加存留時間（TTL）域值，來決定目的地所採用的路徑。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a6ef48350a0b8a4f67f1e564a9ca16db8b4dd5e6
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: adc73fdd646b3a9f7202f286912b5295f0c4e140
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472925"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933737"
 ---
 # <a name="tracert"></a>tracert
 
@@ -31,7 +31,7 @@ tracert [/d] [/h <MaximumHops>] [/j <Hostlist>] [/w <timeout>] [/R] [/S <Srcaddr
 
 #### <a name="parameters"></a>參數
 
-|參數|描述|
+|參數|說明|
 |-------|--------|
 |/d|防止**tracert**嘗試將中繼路由器的 IP 位址解析為其名稱。 這可以加速顯示**tracert**結果。|
 |/h\<MaximumHops>|指定路徑中用來搜尋目標（目的地）的躍點數目上限。 預設值為30個躍點。|
@@ -65,6 +65,6 @@ tracert /d corp7.microsoft.com
 tracert /j 10.12.0.1 10.29.3.1 10.1.44.1 corp7.microsoft.com
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

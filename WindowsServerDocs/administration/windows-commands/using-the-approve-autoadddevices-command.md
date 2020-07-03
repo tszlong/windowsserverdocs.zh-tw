@@ -1,6 +1,6 @@
 ---
 title: 核准-AutoaddDevices
-description: 核准的參考主題-AutoaddDevices，可核准擱置系統管理核准的電腦。
+description: 核准的參考文章-AutoaddDevices，可核准擱置系統管理核准的電腦。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0143c9ab6221eb5633284bd3f2982312bbcda15c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 8c7a4756a90c329ba6cccd1c1b7c1b93d58d06b4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721036"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934134"
 ---
 # <a name="approve-autoadddevices"></a>核准-AutoaddDevices
 
@@ -24,23 +24,23 @@ ms.locfileid: "82721036"
 
 ## <a name="syntax"></a>語法
 ```
-wdsutil [Options] /Approve-AutoaddDevices [/Server:<Server name>] /RequestId:{<Request ID>| ALL} [/MachineName:<Device name>] [/OU:<DN of OU>] 
+wdsutil [Options] /Approve-AutoaddDevices [/Server:<Server name>] /RequestId:{<Request ID>| ALL} [/MachineName:<Device name>] [/OU:<DN of OU>]
 [/User:<Domain\User | User@Domain>] [/JoinRights:{JoinOnly | Full}] [/JoinDomain:{Yes | No}] [/ReferralServer:<Server name>] [/BootProgram:<Relative path>] [/WdsClientUnattend:<Relative path>] [/BootImagepath:<Relative path>]
 ```
 ### <a name="parameters"></a>參數
-|參數|描述|
+|參數|說明|
 |-------|--------|
-|[/Server：<Server name>]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。|
+|[/Server： <Server name> ]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。|
 |/RequestId： {要求識別碼 &#124; 全部}|指定指派給擱置電腦的要求識別碼。 指定 [**全部**] 以核准所有擱置中的電腦。|
-|[/MachineName：<Device name>]|指定要新增之電腦的名稱。 核准所有電腦時，您無法使用此選項。|
-|[/OU：<DN of OU>]|指定應該在其中建立電腦帳戶物件的組織單位（OU）的辨別名稱。 例如： **OU = MyOU，CN = Test，dc = Domain，DC = com**。 預設位置是預設電腦的容器。|
+|[/MachineName： <Device name> ]|指定要新增之電腦的名稱。 核准所有電腦時，您無法使用此選項。|
+|[/OU： <DN of OU> ]|指定應該在其中建立電腦帳戶物件的組織單位（OU）的辨別名稱。 例如： **OU = MyOU，CN = Test，dc = Domain，DC = com**。 預設位置是預設電腦的容器。|
 |[/User： <Domain\User &#124; User@Domain>]|設定電腦帳戶物件的許可權，將所需的許可權指派給指定的使用者。|
 |[/JoinRights： {JoinOnly &#124; Full}]|指定要指派給指定使用者的許可權類型。<p>-   **JoinOnly**需要系統管理員先重設電腦帳戶，使用者才能將電腦加入網域。<br />-   **Full**會提供使用者的完整存取權，包括將電腦加入網域的許可權。|
 |[/JoinDomain： {Yes &#124; No}]|指定是否應該在作業系統安裝期間，將電腦加入網域做為此電腦帳戶。 預設值為 **[是]**。|
-|[/ReferralServer：<Server name>]|指定要連接的伺服器名稱，以使用簡單的檔案傳輸通訊協定（tftp）下載網路開機程式和開機映射。|
-|[/BootProgram：<Relative path>]|指定從 remoteInstall 資料夾到這部電腦應接收之網路開機程式的相對路徑。 例如： **boot\x86\pxeboot.com**。|
-|[/WdsClientUnattend：<Relative path>]|指定從 remoteInstall 資料夾到自動執行 Windows 部署服務用戶端的自動安裝檔案的相對路徑。|
-|[/BootImagepath：<Relative path>]|指定從 remoteInstall 資料夾到這部電腦應接收之開機映射的相對路徑。|
+|[/ReferralServer： <Server name> ]|指定要連接的伺服器名稱，以使用簡單的檔案傳輸通訊協定（tftp）下載網路開機程式和開機映射。|
+|[/BootProgram： <Relative path> ]|指定從 remoteInstall 資料夾到這部電腦應接收之網路開機程式的相對路徑。 例如： **boot\x86\pxeboot.com**。|
+|[/WdsClientUnattend： <Relative path> ]|指定從 remoteInstall 資料夾到自動執行 Windows 部署服務用戶端的自動安裝檔案的相對路徑。|
+|[/BootImagepath： <Relative path> ]|指定從 remoteInstall 資料夾到這部電腦應接收之開機映射的相對路徑。|
 ## <a name="examples"></a>範例
 若要核准 RequestId 為12的電腦，請輸入：
 ```
@@ -48,15 +48,15 @@ wdsutil /Approve-AutoaddDevices /RequestId:12
 ```
 若要核准 RequestID 為20的電腦，並使用指定的設定來部署映射，請輸入：
 ```
-wdsutil /Approve-AutoaddDevices /RequestId:20 /MachineName:computer1 /OU:OU=Test,CN=company,DC=Domain,DC=Com /User:Domain\User1 
+wdsutil /Approve-AutoaddDevices /RequestId:20 /MachineName:computer1 /OU:OU=Test,CN=company,DC=Domain,DC=Com /User:Domain\User1
 /JoinRights:Full /ReferralServer:MyWDSServer /BootProgram:boot\x86\pxeboot.n12 /WdsClientUnattend:WDSClientUnattend\Unattend.xml /BootImagepath:boot\x86\images\boot.wim
 ```
 若要核准所有擱置中的電腦，請輸入：
 ```
 wdsutil /verbose /Approve-AutoaddDevices /RequestId:ALL
 ```
-## <a name="additional-references"></a>其他參考
-- [Command-Line Syntax Key](command-line-syntax-key.md) 
-[使用 AutoaddDevices 命令](using-the-delete-autoadddevices-command.md)
-的命令列語法索引鍵使用[AutoaddDevices 命令](using-the-reject-autoadddevices-command.md)的[AutoaddDevices 命令](using-the-get-autoadddevices-command.md)
-
+## <a name="additional-references"></a>其他參考資料
+- [命令列語法索引鍵](command-line-syntax-key.md) 
+[使用 AutoaddDevices 命令](using-the-delete-autoadddevices-command.md) 
+[使用 AutoaddDevices 命令](using-the-get-autoadddevices-command.md) 
+[使用 AutoaddDevices 命令](using-the-reject-autoadddevices-command.md)

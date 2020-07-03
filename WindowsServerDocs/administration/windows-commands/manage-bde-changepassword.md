@@ -1,6 +1,6 @@
 ---
 title: manage-bde changepassword
-description: Manage-bde changepassword 命令的參考主題，可修改資料磁片磁碟機的密碼。
+description: Manage-bde changepassword 命令的參考文章，可修改資料磁片磁碟機的密碼。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 28cc97165bfc33809c187630e37ad9b9bd24d7c6
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: dcac8ca0f62a34f8f436d4fb0dba822ffbfab4d7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222923"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933864"
 ---
 # <a name="manage-bde-changepassword"></a>manage-bde changepassword
 
@@ -28,10 +28,10 @@ manage-bde -changepassword [<drive>] [-computername <name>] [{-?|/?}] [{-help|-h
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `<drive>` | 表示後面接著冒號的磁碟機號。 |
-| -computername | 指定 manage-bde.wsf 將用來修改另一部電腦上的 BitLocker 保護。 您也可以使用 **-cn**做為此命令的縮寫版本。 |
+| -computername | 指定 manage-bde.exe 將用來修改另一部電腦上的 BitLocker 保護。 您也可以使用 **-cn**做為此命令的縮寫版本。 |
 | `<name>` | 代表要修改 BitLocker 保護的電腦名稱稱。 接受的值包括電腦的 NetBIOS 名稱和電腦的 IP 位址。 |
 | -? 或/？ | 在命令提示字元中顯示簡短說明。 |
 | -help 或-h | 在命令提示字元中顯示完整的說明。 |
@@ -44,7 +44,7 @@ manage-bde -changepassword [<drive>] [-computername <name>] [{-?|/?}] [{-help|-h
 manage-bde –changepassword D:
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

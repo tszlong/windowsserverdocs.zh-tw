@@ -1,6 +1,6 @@
 ---
 title: 複製映射
-description: 複製映射的參考主題，它會複製相同映射群組內的影像。
+description: 複製映射的參考文章，它會複製相同映射群組內的影像。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b3ffd590682ec36f78d3cbd53fd67fe3b5981e4c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 04af31680a99c5da60b721ad5dc31cbd3851538d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721003"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933993"
 ---
 # <a name="copy-image"></a>複製映射
 
@@ -34,14 +34,14 @@ wdsutil [Options] /copy-Imagmedia:<Image name> [/Server:<Server name>]
          [/Description:<Description>]
 ```
 ### <a name="parameters"></a>參數
-|參數|描述|
+|參數|說明|
 |-------|--------|
 媒介<Image name>|指定要複製之影像的名稱。|
-|[/Server：<Server name>]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。|
+|[/Server： <Server name> ]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。|
 媒體：安裝|指定要複製的影像類型。 此選項必須設定為 [**安裝**]。|
-|\mediaGroup：<Image group name>]|指定包含要複製之影像的映射群組。 如果未指定映射群組，而且伺服器上只存在一個群組，則預設會使用該映射群組。 如果伺服器上有一個以上的映射群組，您就必須指定映射群組。|
-|[/Filename：<Filename>]|指定要複製之影像的檔案名。 如果來源映射無法以名稱唯一識別，您就必須指定檔案名。|
-|/DestinationImage|指定目的地映射的設定，如下表所述。<p>-/Name：<Name> -設定要複製之影像的顯示名稱。<br />-/Filename：<Filename> -設定將包含影像複製之目的地影像檔的名稱。<br />-[/Description： <Description>]-設定影像複製的描述。|
+|\mediaGroup： <Image group name> ]|指定包含要複製之影像的映射群組。 如果未指定映射群組，而且伺服器上只存在一個群組，則預設會使用該映射群組。 如果伺服器上有一個以上的映射群組，您就必須指定映射群組。|
+|[/Filename： <Filename> ]|指定要複製之影像的檔案名。 如果來源映射無法以名稱唯一識別，您就必須指定檔案名。|
+|/DestinationImage|指定目的地映射的設定，如下表所述。<p>-/Name： <Name> -設定要複製之影像的顯示名稱。<br />-/Filename： <Filename> -設定將包含影像複製之目的地影像檔的名稱。<br />-[/Description： <Description>]-設定影像複製的描述。|
 ## <a name="examples"></a>範例
 若要建立指定映射的複本，並將它命名為 WindowsVista，請輸入：
 ```
@@ -49,14 +49,14 @@ wdsutil /copy-Imagmedia:Windows Vista with Officemediatype:Install /DestinationI
 ```
 若要建立指定映射的複本，請套用指定的設定，並將複本命名為 WindowsVista，輸入：
 ```
-wdsutil /verbose /Progress /copy-Imagmedia:Windows Vista with Office /Server:MyWDSServemediatype:InstalmediaGroup:ImageGroup1 
+wdsutil /verbose /Progress /copy-Imagmedia:Windows Vista with Office /Server:MyWDSServemediatype:InstalmediaGroup:ImageGroup1
 /Filename:install.wim /DestinationImage /Name:copy of Windows Vista with Office /Filename:WindowsVista.wim /Description:This is a copy of the original Windows image with Office installed
 ```
-## <a name="additional-references"></a>其他參考
-- [命令列語法索引鍵](command-line-syntax-key.md)
-[Using the add-Image Command](using-the-add-image-command.md)
-：使用使用 [[匯出](using-the-export-image-command.md)
-[Using the get-Image Command](using-the-get-image-command.md)
-[Using the remove-Image Command](using-the-remove-image-command.md)
--映射] 命令的 [匯入映射] 命令，並使用 [以映射命令[取代](using-the-replace-image-command.md)
-映射] 命令 ..[設定-[映射](subcommand-set-image.md)]
+## <a name="additional-references"></a>其他參考資料
+- [命令列語法索引鍵](command-line-syntax-key.md) 
+[使用新增映射命令](using-the-add-image-command.md) 
+[使用匯出-映射命令](using-the-export-image-command.md) 
+[使用取得映射命令](using-the-get-image-command.md) 
+[使用移除映射命令](using-the-remove-image-command.md) 
+[使用取代映射命令](using-the-replace-image-command.md) 
+[子命令：設定-影像](subcommand-set-image.md)

@@ -1,6 +1,6 @@
 ---
 title: online disk
-description: 線上磁片命令的參考主題，它會將離線磁片設為線上狀態。
+description: 線上磁片命令的參考文章，它會將離線磁片設為線上狀態。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 954e52788f3236cb9b2898a23edae25d5b22deb8
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7313f5b5b8c0594e0706555a203248d760028806
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472681"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933553"
 ---
 # <a name="online-disk"></a>online disk
 
@@ -38,7 +38,7 @@ online disk [noerr]
 
 如需使用此命令的指示，請參閱[重新啟用遺失或離線的動態磁碟](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732026(v=ws.11))。
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 |--|--|
 | noerr | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
 
@@ -50,6 +50,6 @@ online disk [noerr]
 online disk
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

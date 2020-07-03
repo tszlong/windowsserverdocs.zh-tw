@@ -1,6 +1,6 @@
 ---
 title: retain
-description: '* * * * 的參考主題'
+description: '* * * * 的參考文章'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7391c0b60d07cc2eb5a6230b283ac180cc028508
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 958ee0de7bd69c9391407ec6f4a832e1262746a2
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722344"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933076"
 ---
 # <a name="retain"></a>retain
 
@@ -33,5 +33,5 @@ retain
 -   在主開機記錄（MBR）動態磁碟上，此命令會在主開機記錄中建立磁碟分割專案。
 -   在 GUID 磁碟分割表格（GPT）動態磁碟上，此命令會在 GUID 磁碟分割表格中建立磁碟分割專案。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 

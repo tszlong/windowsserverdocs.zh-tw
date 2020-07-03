@@ -1,6 +1,6 @@
 ---
 title: makecab
-description: Makecab.exe 命令的參考主題，會將現有的檔案封裝成封包檔（.cab）。
+description: Makecab.exe 命令的參考文章，會將現有的檔案封裝成封包檔（.cab）。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 192471e6045a530e9deedec70cc957b9362b3ae7
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 60203390ab0955e3f8a2c52887b21192d1ec32f2
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354658"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933542"
 ---
 # <a name="makecab"></a>makecab
 
@@ -35,7 +35,7 @@ makecab [/v[<n>]] [/d var=<value> ...] /f <directives_file> [...]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | --------- | ----------- |
 | `<source>` | 要壓縮的檔案。 |
 | `<destination>` | 要提供壓縮檔案的檔案名。 如果省略，則會以底線（_）取代原始程式檔名稱的最後一個字元，並使用做為目的地。 |
@@ -45,7 +45,7 @@ makecab [/v[<n>]] [/d var=<value> ...] /f <directives_file> [...]
 | /v [ `<n>` ] | 設定調試層級的詳細等級（0 = 無,..., 3 = 完整）。 |
 | /? | 在命令提示字元顯示說明。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

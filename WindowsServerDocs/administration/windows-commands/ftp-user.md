@@ -1,6 +1,6 @@
 ---
-title: ftp 使用者
-description: Ftp 使用者命令的參考主題，其指定遠端電腦的使用者。
+title: ftp user
+description: Ftp 使用者命令的參考文章，其指定遠端電腦的使用者。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f0773084ee718db37d6c79009d66d754283f94c8
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: e6a01cbea0de80bfa78194d5b2d559a894d4ed77
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820258"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932364"
 ---
-# <a name="ftp-user"></a>ftp 使用者
+# <a name="ftp-user"></a>ftp user
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -44,7 +44,7 @@ user <username> [<password>] [<account>]
 user User1 Password1
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

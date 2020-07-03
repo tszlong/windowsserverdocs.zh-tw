@@ -1,6 +1,6 @@
 ---
 title: schtasks
-description: '* * * * 的參考主題'
+description: '* * * * 的參考文章'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a723025846a0e1725c72d5880d1ecc97579e1a69
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 7f631a0b156d78365f2c2038bec49062a5892214
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722172"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932808"
 ---
 # <a name="schtasks"></a>schtasks
 
@@ -32,20 +32,20 @@ ms.locfileid: "82722172"
 
 ## <a name="remarks"></a>備註
 
-- **Schtasks.exe**執行的作業與 [**控制台**] 中的 [**排程**工作] 相同。 您可以將這些工具一起和交替使用。
-- **Schtasks**取代了舊版 Windows 中包含的工具 **。** 雖然**在 .exe**仍包含在 Windows Server 2003 系列中，但**schtasks**是建議的命令列工作排程工具。
+- **SchTasks.exe**與 [**控制台**] 中的 [**排程**工作] 執行相同的作業。 您可以將這些工具一起和交替使用。
+- **Schtasks**取代了舊版 Windows 所包含的工具**At.exe**。 雖然 Windows Server 2003 系列仍然包含**At.exe** ，但**schtasks**是建議的命令列工作排程工具。
 - **Schtasks**命令中的參數可以依任何順序出現。 輸入**schtasks**而不使用任何參數，會執行查詢。
-- **Schtasks**的許可權  
+- **Schtasks**的許可權
   -   您必須具有執行命令的許可權。 任何使用者都可以在本機電腦上排程工作，也可以查看和變更排程的工作。 Administrators 群組的成員可以排程、查看和變更本機電腦上的所有工作。
   -   若要在遠端電腦上排程、查看或變更工作，您必須是遠端電腦上 Administrators 群組的成員，或者必須使用 **/u**參數來提供遠端電腦之系統管理員的認證。
   -   只有當本機和遠端電腦位於相同網域，或本機電腦位於遠端電腦網域所信任的網域中時，您才可以在 **/create**或 **/change**作業中使用 **/u**參數。 否則，遠端電腦就無法驗證指定的使用者帳戶，也無法確認帳戶是否為系統管理員群組的成員。
   -   工作必須具有執行的許可權。 所需的許可權會因工作而異。 根據預設，工作會以本機電腦目前使用者的許可權執行，或使用 **/u**參數所指定之使用者的許可權（如果包含的話）。 若要執行具有不同使用者帳戶或具有系統許可權之許可權的工作，請使用 **/ru**參數。
-- 若要確認排定的工作是否已執行，或找出排程工作未執行的原因，請參閱工作排程器服務交易記錄檔、 *SystemRoot*\SchedLgU.txt。 此記錄會記錄所有使用服務的工具所起始的執行，包括**排程**的工作和**schtasks.exe**。
-- 在罕見的情況下，工作檔案會變成損毀。 損毀的工作不會執行。 當您嘗試對損毀的工作執行作業時， **schtasks.exe**會顯示下列錯誤訊息：  
+- 若要確認排定的工作是否已執行，或找出排程工作未執行的原因，請參閱工作排程器服務交易記錄檔， *SystemRoot*\SchedLgU.txt。 此記錄會記錄所有使用服務的工具所起始的執行，包括**排程**的工作和**SchTasks.exe**。
+- 在罕見的情況下，工作檔案會變成損毀。 損毀的工作不會執行。 當您嘗試對損毀的工作執行作業時， **SchTasks.exe**會顯示下列錯誤訊息：
   ```
   ERROR: The data is invalid.
-  ```  
-  您無法復原損毀的工作。 若要還原系統的工作排程功能，請使用**schtasks.exe**或**排程**的工作來刪除系統中的工作，然後重新排定它們。
+  ```
+  您無法復原損毀的工作。 若要還原系統的工作排程功能，請使用**SchTasks.exe**或**排程**工作，從系統中刪除工作，然後重新排定。
 
 ## <a name="schtasks-create"></a><a name=BKMK_create></a>schtasks 建立
 
@@ -82,11 +82,11 @@ schtasks /create /sc <ScheduleType> /tn <TaskName> /tr <TaskRun> [/s <Computer> 
 
 ##### <a name="parameters"></a>參數
 
-##### <a name="sc-scheduletype"></a>/sc \<ScheduleType>
+##### <a name="sc-scheduletype"></a>/sc\<ScheduleType>
 
 指定排程類型。 有效值為 MINUTE、每小時、每天、每週、每月、一次、ONSTART、整理、ONIDLE。
 
-|排程類型|描述|
+|排程類型|Description|
 |-------------|-----------|
 |分鐘、每小時、每天、每週、每月|指定排程的時間單位。|
 |即可|工作會在指定的日期和時間執行一次。|
@@ -94,19 +94,19 @@ schtasks /create /sc <ScheduleType> /tn <TaskName> /tr <TaskRun> [/s <Computer> 
 |整理|每當使用者（任何使用者）登入時，就會執行此工作。 您可以指定日期，或在使用者下一次登入時執行工作。|
 |ONIDLE|此工作會在系統閒置一段指定的時間時執行。 您可以指定日期，或在下一次系統閒置時執行工作。|
 
-##### <a name="tn-taskname"></a>/tn \<TaskName>
+##### <a name="tn-taskname"></a>/tn\<TaskName>
 
 指定工作的名稱。 系統上的每個工作都必須有唯一的名稱。 名稱必須符合檔案名的規則，而且不得超過238個字元。 使用引號括住包含空格的名稱。
 
-##### <a name="tr-taskrun"></a>/tr \</tr u n>
+##### <a name="tr-taskrun"></a>/tr\<TaskRun>
 
 指定工作執行的程式或命令。 輸入可執行檔、指令檔或批次檔的完整路徑和檔案名。 路徑名稱不能超過262個字元。 如果您省略路徑，則**schtasks**會假設檔案位於*SystemRoot*\System32 目錄中。
 
-##### <a name="s-computer"></a>/s \<Computer>
+##### <a name="s-computer"></a>/s\<Computer>
 
 在指定的遠端電腦上排定工作。 輸入遠端電腦的名稱或 IP 位址（包含或不含反斜線）。 預設是本機電腦。 只有當您使用 **/s**時， **/u**和 **/p**參數才有效。
 
-##### <a name="u-domainuser"></a>/u [\<Domain>\]<User>
+##### <a name="u-domainuser"></a>那麼\<Domain>\]<User>
 
 以指定之使用者帳戶的許可權執行此命令。 預設值是本機電腦目前使用者的許可權。 **/U**和 **/p**參數僅適用于在遠端電腦上排程工作（**/s**）。
 
@@ -114,95 +114,95 @@ schtasks /create /sc <ScheduleType> /tn <TaskName> /tr <TaskRun> [/s <Computer> 
 
 使用者帳戶必須是遠端電腦上 Administrators 群組的成員。 此外，本機電腦必須位於與遠端電腦相同的網域中，或必須位於遠端電腦網域所信任的網域中。
 
-##### <a name="p-password"></a>/p \<密碼>
+##### <a name="p-password"></a>/p\<Password>
 
 提供 **/u**參數中指定之使用者帳戶的密碼。 如果您使用 **/u**參數，但省略 **/p**參數或 password 引數，則**schtasks**會提示您輸入密碼，並遮蔽您輸入的文字。
 
 **/U**和 **/p**參數僅適用于在遠端電腦上排程工作（**/s**）。
 
-##### <a name="ru-domainuser--system"></a>/ru {[\<Domain>\] <User> |筆記本電腦
+##### <a name="ru-domainuser--system"></a>/ru {[ \<Domain> \] <User> |筆記本電腦
 
 以指定之使用者帳戶的許可權執行工作。 根據預設，工作會以本機電腦目前使用者的許可權執行，或使用 **/u**參數所指定之使用者的許可權（如果包含的話）。 在本機或遠端電腦上排程工作時， **/ru**參數是有效的。
 
 
-|       值        |                                                    描述                                                    |
+|       值        |                                                    說明                                                    |
 |--------------------|-------------------------------------------------------------------------------------------------------------------|
-| [\<網域>\]<User> |                                       指定替代的使用者帳戶。                                        |
+| [\<Domain>\]<User> |                                       指定替代的使用者帳戶。                                        |
 |    系統或     | 指定本機系統帳戶，這是作業系統和系統服務所使用的高許可權帳戶。 |
 
-##### <a name="rp-password"></a>/rp \<密碼>
+##### <a name="rp-password"></a>/rp\<Password>
 
-提供在 **/ru**參數中指定之使用者帳戶的密碼。 如果您在指定使用者帳戶時省略此參數，則**schtasks.exe**會提示您輸入密碼，並遮蔽您鍵入的文字。
+提供在 **/ru**參數中指定之使用者帳戶的密碼。 如果您在指定使用者帳戶時省略此參數， **SchTasks.exe**會提示您輸入密碼，並遮蔽您鍵入的文字。
 
-請勿針對以系統帳號憑證（**/Ru 系統**）執行的工作使用 **/rp**參數。 系統帳戶沒有密碼，而且**schtasks.exe**不會提示您輸入密碼。
+請勿針對以系統帳號憑證（**/Ru 系統**）執行的工作使用 **/rp**參數。 系統帳戶沒有密碼， **SchTasks.exe**不會提示您輸入密碼。
 
-##### <a name="mo-modifier"></a>/mo \<修飾詞>
+##### <a name="mo-modifier"></a>/mo\<Modifier>
 
 指定工作在其排程類型內執行的頻率。 此參數有效，但為選擇性，一分鐘、每小時、每天、每週和每月排程。 預設值為 1。
 
-|排程類型|修飾詞值|描述|
+|排程類型|修飾詞值|Description|
 |-------------|---------------|-----------|
-|MINUTE|1 - 1439|工作會每隔\<N> 分鐘執行一次。|
-|次|1 - 23|工作會每隔\<N> 小時執行一次。|
-|每天|1 - 365|工作會每隔\<N> 天執行一次。|
-|提交|1 - 52|工作會每隔\<N> 周執行一次。|
+|MINUTE|1 - 1439|工作會每分鐘執行一次 \<N> 。|
+|次|1 - 23|工作會每小時執行一次 \<N> 。|
+|每天|1 - 365|工作會每日執行一次 \<N> 。|
+|提交|1 - 52|工作會每週執行一次 \<N> 。|
 |即可|沒有修飾詞。|此工作會執行一次。|
 |ONSTART|沒有修飾詞。|工作會在啟動時執行。|
 |整理|沒有修飾詞。|當 **/u**參數所指定的使用者登入時，就會執行此工作。|
 |ONIDLE|沒有修飾詞。|此工作會在系統閒置了 **/i**參數所指定的分鐘數之後執行，這是與 ONIDLE 搭配使用的必要條件。|
-|每月|1 - 12|工作會每隔\<N> 個月執行一次。|
+|每月|1 - 12|工作會每個月執行一次 \<N> 。|
 |每月|LASTDAY|工作會在當月的最後一天執行。|
-|每月|第一、第二、第三、第四、最後|使用搭配 **/d**\<Day> 參數，在特定一周和每天執行工作。 例如，在當月的第三個星期三。|
+|每月|第一、第二、第三、第四、最後|使用搭配 **/d** \<Day> 參數，在特定的一周和每天執行工作。 例如，在當月的第三個星期三。|
 
 ##### <a name="d-dayday--"></a>/d Day [，Day ...] |*
 
 指定一周中的一天（或幾天），或一個月的一天（或幾天）。 僅適用于每週或每月排程。
 
 
-| 排程類型 |              修飾詞              |     日期值（/d）      |                                                                                                 描述                                                                                                 |
+| 排程類型 |              修飾詞              |     日期值（/d）      |                                                                                                 Description                                                                                                 |
 |---------------|------------------------------------|--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    提交     |               1 - 52               | 週一-SUN [，週一至周日 ...] |                                                                                                     \*                                                                                                      |
 |    每月    | 第一、第二、第三、第四、最後 |        週一-周日         |                                                                                   特定周排程所需。                                                                                    |
-|    每月    |          無或 {1-12}          |          1 - 31          | 選擇性且僅適用于沒有修飾詞（**/mo**）參數（特定日期排程），或當 **/mo**為 1-12 時（每\<隔 N> 個月的排程）。 預設值為第1天（當月的第一天）。 |
+|    每月    |          無或 {1-12}          |          1 - 31          | 選擇性且僅適用于沒有修飾詞（**/mo**）參數（特定日期排程），或當 **/mo**為 1-12 時（每 \<N> 月排程）。 預設值為第1天（當月的第一天）。 |
 
 ##### <a name="m-monthmonth"></a>/m Month [，Month ...]
 
 指定排程工作應在一年中執行的月份或月份。 有效值為 JAN-DEC 和 * （每月）。 **/M**參數只適用于每月排程。 使用 LASTDAY 修飾詞時，這是必要的。 否則，它是選擇性的，而且預設值是 * （每月）。
 
-##### <a name="i-idletime"></a>/i \<IdleTime>
+##### <a name="i-idletime"></a>/i\<IdleTime>
 
 指定在工作開始之前，電腦閒置的分鐘數。 有效的值是從1到999的整數。 此參數只有在使用 ONIDLE 排程時才有效，而且是必要的。
 
-##### <a name="st-starttime"></a>/st \<StartTime>
+##### <a name="st-starttime"></a>/st\<StartTime>
 
-指定工作一開始的時間（每次啟動時），以\<HH： MM> 24 小時制。 預設值是本機電腦上的目前時間。 **/St**參數的有效時間為 MINUTE、每小時、每天、每週、每月和一次排程。 需要一次排程。
+指定工作啟動的時間（每次啟動時）（以 \<HH:MM> 24 小時制）。 預設值是本機電腦上的目前時間。 **/St**參數的有效時間為 MINUTE、每小時、每天、每週、每月和一次排程。 需要一次排程。
 
-##### <a name="ri-interval"></a>/ri \<間隔>
+##### <a name="ri-interval"></a>/ri\<Interval>
 
 指定以分鐘為單位的重複間隔。 這不適用於排程類型： MINUTE、每小時、ONSTART、整理和 ONIDLE。 有效範圍為1到599940分鐘（599940分鐘 = 9999 小時）。 如果指定了/ET 或/DU，則重複間隔會預設為10分鐘。
 
-##### <a name="et-endtime"></a>/et \<EndTime>
+##### <a name="et-endtime"></a>/et\<EndTime>
 
-指定以\<HH： MM> 24 小時制的時間（分鐘）或每小時工作排程結束的日期。 在指定的結束時間之後， **schtasks**就不會再次啟動工作，直到開始時間重複為止。 根據預設，工作排程沒有結束時間。 這個參數是選擇性的，而且只有分鐘或每小時的排程才有效。
-
-如需範例，請參閱：
--   若要在中排程在非上班時間100執行的工作，以排程每**隔** \<N 分鐘>**分鐘**執行一次的工作。
-
-##### <a name="du-duration"></a>/du \<Duration>
-
-指定以\<HHHH HHHH： MM> 24 小時格式的分鐘或每小時排程的最大時間長度。 經過指定的時間之後， **schtasks**就不會再次啟動工作，直到開始時間重複為止。 根據預設，工作排程沒有最長的持續時間。 這個參數是選擇性的，而且只有分鐘或每小時的排程才有效。
+指定分鐘或每小時工作排程以24小時制結束的時間 \<HH:MM> 。 在指定的結束時間之後， **schtasks**就不會再次啟動工作，直到開始時間重複為止。 根據預設，工作排程沒有結束時間。 這個參數是選擇性的，而且只有分鐘或每小時的排程才有效。
 
 如需範例，請參閱：
--   將每3小時執行一次的工作排程為，以**排程每隔** \<N>**小時**執行一次的工作。
+-   若要排程在非上班時間內每隔100分鐘執行一次的工作，**以排程每分鐘執行一次的工作** \<N> **minutes** 。
+
+##### <a name="du-duration"></a>/du\<Duration>
+
+以24小時制的格式指定分鐘或每小時排程的最大時間長度 \<HHHH:MM> 。 經過指定的時間之後， **schtasks**就不會再次啟動工作，直到開始時間重複為止。 根據預設，工作排程沒有最長的持續時間。 這個參數是選擇性的，而且只有分鐘或每小時的排程才有效。
+
+如需範例，請參閱：
+-   將每3小時執行一次的工作排程在中，**以排程每小時執行一次的工作** \<N> **hours** 。
 
 ##### <a name="k"></a>/k
 
 停止在 **/et**或 **/du**指定的時間執行工作的程式。 如果沒有 **/k**，則**schtasks**在到達 **/et**或 **/du**所指定的時間之後，不會再啟動程式，但如果程式仍在執行中，則不會將它停止。 這個參數是選擇性的，而且只有分鐘或每小時的排程才有效。
 
 如需範例，請參閱：
--   若要在中排程在非上班時間100執行的工作，以排程每**隔** \<N 分鐘>**分鐘**執行一次的工作。
+-   若要排程在非上班時間內每隔100分鐘執行一次的工作，**以排程每分鐘執行一次的工作** \<N> **minutes** 。
 
-##### <a name="sd-startdate"></a>/sd \<起始>
+##### <a name="sd-startdate"></a>/sd\<StartDate>
 
 指定工作排程開始的日期。 預設值是本機電腦上的目前日期。 **/Sd**參數對所有排程類型而言都是有效的，而且是選擇性的。
 
@@ -211,13 +211,13 @@ schtasks /create /sc <ScheduleType> /tn <TaskName> /tr <TaskRun> [/s <Computer> 
 有效的日期格式會列在下表中。 使用與本機電腦 [**控制台**] 的 [**地區及語言選項**] 中為 [**簡短日期**] 選取的格式最相似的格式。
 
 
-|       值       |                                        描述                                         |
+|       值       |                                        說明                                         |
 |-------------------|--------------------------------------------------------------------------------------------|
 | \<MM>/<DD>/<YYYY> | 用於月優先的格式，例如**英文（美國）** 和**西班牙文（巴拿馬）**。 |
 | \<DD>/<MM>/<YYYY> |       用於第一天的格式，例如**保加利亞**文和**荷蘭文（荷蘭）**。        |
 | \<YYYY>/<MM>/<DD> |          用於年份優先的格式，例如**瑞典**文和**法文（加拿大）**。          |
 
-/ed \<結束日期>
+/ed\<EndDate>
 
 指定排程結束的日期。 這是選擇性參數。 它在一次、ONSTART、整理或 ONIDLE 排程中無效。 根據預設，排程沒有結束日期。
 
@@ -226,7 +226,7 @@ schtasks /create /sc <ScheduleType> /tn <TaskName> /tr <TaskRun> [/s <Computer> 
 有效的日期格式會列在下表中。 使用與本機電腦 [**控制台**] 的 [**地區及語言選項**] 中為 [**簡短日期**] 選取的格式最相似的格式。
 
 
-|       值       |                                        描述                                         |
+|       值       |                                        說明                                         |
 |-------------------|--------------------------------------------------------------------------------------------|
 | \<MM>/<DD>/<YYYY> | 用於月優先的格式，例如**英文（美國）** 和**西班牙文（巴拿馬）**。 |
 | \<DD>/<MM>/<YYYY> |       用於第一天的格式，例如**保加利亞**文和**荷蘭文（荷蘭）**。        |
@@ -386,9 +386,9 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc weekly [/mo {1 - 52}] [/d {<MO
 
 下列命令會排定 MyApp 程式在遠端電腦上每隔六周執行一次。 此命令會使用 **/mo**參數來指定間隔。 因為命令會省略 **/d**參數，所以工作會在星期一執行。
 
-此命令也會使用 **/s**參數來指定遠端電腦和 **/u**參數，以使用使用者的系統管理員帳戶許可權來執行命令。 因為省略了 **/p**參數，所以**schtasks.exe**會提示使用者輸入系統管理員帳戶密碼。
+此命令也會使用 **/s**參數來指定遠端電腦和 **/u**參數，以使用使用者的系統管理員帳戶許可權來執行命令。 因為省略了 **/p**參數， **SchTasks.exe**會提示使用者輸入系統管理員帳戶密碼。
 
-此外，因為命令是從遠端執行，所以命令中的所有路徑（包括 MyApp 的路徑）都是指遠端電腦上的路徑。
+此外，因為命令是從遠端執行，所以命令中的所有路徑（包括 MyApp.exe 的路徑）都是指遠端電腦上的路徑。
 ```
 schtasks /create /tn My App /tr c:\apps\myapp.exe /sc weekly /mo 6 /s Server16 /u Admin01
 ```
@@ -434,7 +434,7 @@ schtasks /create /tn My App /tr c:\apps\myapp.exe /sc monthly /mo 3
 
 此命令會使用 **/mo**參數來指定每月間隔（每兩個月）、指定日期的 **/d**參數，以及用來指定時間的 **/st** 。 它也會使用 **/sd**和 **/ed**參數來分別指定開始日期和結束日期。 因為本機電腦是在 [**控制台**] 的 [**地區及語言選項**] 中設定為 [**英文（南非）** ] 選項，所以會以本機格式（YYYY/MM/DD）來指定日期。
 ```
-schtasks /create /tn My App /tr c:\apps\myapp.exe /sc monthly /mo 2 /d 21 /st 00:00 /sd 2002/07/01 /ed 2003/06/30 
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc monthly /mo 2 /d 21 /st 00:00 /sd 2002/07/01 /ed 2003/06/30
 ```
 
 ### <a name="to-schedule-a-task-that-runs-on-a-specific-day-of-the-week"></a><a name=BKMK_spec_day></a>若要排程在一周的特定一天執行的工作
@@ -447,7 +447,7 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc weekly [/d {<MON - SUN>[,MON -
 
 #### <a name="remarks"></a>備註
 
-每週排程的日期是每週排程的變化。 在每週排程中，需要 **/sc 每週**參數。 **/Mo** （修飾詞）參數是選擇性的，而且會指定每次執行工作之間的周數。 [ **/Mo** ] 的預設值為1（每週）。 **/D**參數是選擇性的，它會將工作排程在一周指定的日子執行，或在所有的日子（\*）。 預設值為 [週一（星期一）]。 [每日] 選項 **（ \*/d **）相當於排程每日工作。
+每週排程的日期是每週排程的變化。 在每週排程中，需要 **/sc 每週**參數。 **/Mo** （修飾詞）參數是選擇性的，而且會指定每次執行工作之間的周數。 [ **/Mo** ] 的預設值為1（每週）。 **/D**參數是選擇性的，它會將工作排程在一周指定的日子執行，或在所有的日子（ \* ）。 預設值為 [週一（星期一）]。 [每日] 選項 **（ \* /d **）相當於排程每日工作。
 
 #### <a name="examples"></a>範例
 
@@ -475,7 +475,7 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc monthly /mo {FIRST | SECOND | 
 
 #### <a name="remarks"></a>備註
 
-在此排程類型中，需要 **/sc 每月**參數、 **/mo** （修飾詞）參數和 **/d** （day）參數。 **/Mo** （修飾詞）參數會指定工作執行的周。 **/D**參數會指定一周中的哪幾天。 （您只能針對此排程類型指定一周中的一天）。此排程也有選擇性的 **/m** （month）參數，可讓您針對特定月份或每月（\*）排定工作。 **/M**參數的預設值是每個月（\*）。
+在此排程類型中，需要 **/sc 每月**參數、 **/mo** （修飾詞）參數和 **/d** （day）參數。 **/Mo** （修飾詞）參數會指定工作執行的周。 **/D**參數會指定一周中的哪幾天。 （您只能針對此排程類型指定一周中的一天）。此排程也有選擇性的 **/m** （month）參數，可讓您針對特定月份或每月（）排定工作 \* 。 **/M**參數的預設值是每個月（ \* ）。
 
 #### <a name="examples"></a>範例
 
@@ -553,7 +553,7 @@ schtasks /create /tn My App /tr c:\apps\myapp.exe /sc monthly /mo lastday /m FEB
 
 ### <a name="to-schedule-a-task-that-runs-once"></a><a name=BKMK_once></a>排程執行一次的工作
 
-#### <a name="syntax"></a>語法
+#### <a name="syntax"></a>Syntax
 
 ```
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc once /st <HH:MM> [/sd <StartDate>] [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
@@ -578,7 +578,7 @@ schtasks /create /tn My App /tr c:\apps\myapp.exe /sc once /sd 01/01/2003 /st 00
 
 ### <a name="to-schedule-a-task-that-runs-every-time-the-system-starts"></a><a name=BKMK_startup></a>若要排程每次系統啟動時執行的工作
 
-#### <a name="syntax"></a>語法
+#### <a name="syntax"></a>Syntax
 
 ```
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc onstart [/sd <StartDate>] [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
@@ -601,7 +601,7 @@ schtasks /create /tn My App /tr c:\apps\myapp.exe /sc onstart /sd 03/15/2001
 
 ### <a name="to-schedule-a-task-that-runs-when-a-user-logs-on"></a><a name=BKMK_logon></a>若要排程在使用者登入時執行的工作
 
-#### <a name="syntax"></a>語法
+#### <a name="syntax"></a>Syntax
 
 ```
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc onlogon [/sd <StartDate>] [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
@@ -622,7 +622,7 @@ schtasks /create /tn Start Web Site /tr c:\myiis\webstart.bat /sc onlogon /s Ser
 
 ### <a name="to-schedule-a-task-that-runs-when-the-system-is-idle"></a><a name=BKMK_idle></a>若要排程在系統閒置時執行的工作
 
-#### <a name="syntax"></a>語法
+#### <a name="syntax"></a>Syntax
 
 ```
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc onidle /i {1 - 999} [/sd <StartDate>] [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
@@ -674,7 +674,7 @@ schtasks /create /tn My App /tr c:\apps\myapp.exe /sc once /st 14:18 /sd 11/13/2
 ```
 schtasks /create /tn My App /tr myapp.exe /sc weekly /d TUE /ru Admin06
 ```
-在回應中， **schtasks.exe**會提示您輸入 Admin06 帳戶的 [執行身分] 密碼，然後顯示成功訊息。
+在 [回應] 中， **SchTasks.exe**會提示您輸入 Admin06 帳戶的 [執行身分] 密碼，然後顯示成功訊息。
 ```
 Please enter the run as password for Admin06: ********
 SUCCESS: The scheduled task My App has successfully been created.
@@ -701,7 +701,7 @@ SUCCESS: The scheduled task My App has successfully been created.
 
 #### <a name="to-run-a-task-only-when-a-particular-user-is-logged-on"></a>只有在特定使用者登入時才執行工作
 
-下列命令會將 AdminCheck 程式排程為在每星期五 4:00 A.M. 的公用電腦上執行，但僅限於電腦的系統管理員登入。
+下列命令會將 AdminCheck.exe 程式排程在每星期五 4:00 A.M. 的公用電腦上執行，但僅限於電腦的系統管理員登入。
 
 此命令會使用 **/sc**參數來指定每週排程、指定日期的 **/d**參數，以及用來指定開始時間的 **/st**參數。
 
@@ -734,7 +734,7 @@ schtasks /create /tn Check Admin /tr AdminCheck.exe /sc weekly /d FRI /st 04:00 
 ```
 schtasks /create /tn My App /tr c:\apps\myapp.exe /sc monthly /d 15 /ru System
 ```
-在回應中， **schtasks.exe**會顯示參考用訊息和成功訊息。 它不會提示輸入密碼。
+在 [回應] 中， **SchTasks.exe**會顯示參考用訊息和成功訊息。 它不會提示輸入密碼。
 ```
 INFO: The task will be created under user name (NT AUTHORITY\SYSTEM).
 SUCCESS: The Scheduled task My App has successfully been created.
@@ -764,20 +764,20 @@ SUCCESS: The scheduled task My App has successfully been created.
 每個工作只會執行一個程式。 不過，您可以建立執行多個程式的批次檔，然後排程執行批次檔的工作。 下列程式示範此方法：
 1. 建立可啟動您要執行之程式的批次檔。
 
-   在此範例中，您會建立一個啟動事件檢視器（Eventvwr.msc）和「系統監視器」（Perfmon）的批次檔。  
+   在此範例中，您會建立一個可啟動事件檢視器（Eventvwr.exe）和「系統監視器」（Perfmon.exe）的批次檔。
    - 開啟文字編輯器，例如 [記事本]。
-   - 輸入每個程式之可執行檔的名稱和完整路徑。 在此情況下，檔案包含下列語句。  
+   - 輸入每個程式之可執行檔的名稱和完整路徑。 在此情況下，檔案包含下列語句。
      ```
-     C:\Windows\System32\Eventvwr.exe 
+     C:\Windows\System32\Eventvwr.exe
      C:\Windows\System32\Perfmon.exe
-     ```  
-   - 將檔案儲存為 MyApps。
-2. 使用**schtasks.exe**建立執行 MyApps 的工作。
+     ```
+   - 將檔案儲存為 MyApps.bat。
+2. 使用**Schtasks.exe**建立 MyApps.bat 執行的工作。
 
-   下列命令會建立監視工作，每當有人登入時就會執行。 它會使用 **/tn**參數來命名工作，並使用 **/tr**參數來執行 MyApps。 它會使用 **/sc**參數來指示整理排程類型，以及用來以使用者的系統管理員帳戶許可權執行工作的 **/ru**參數。  
+   下列命令會建立監視工作，每當有人登入時就會執行。 它會使用 **/tn**參數來命名工作，並使用 **/tr**參數來執行 MyApps.bat。 它會使用 **/sc**參數來指示整理排程類型，以及用來以使用者的系統管理員帳戶許可權執行工作的 **/ru**參數。
    ```
    schtasks /create /tn Monitor /tr C:\MyApps.bat /sc onlogon /ru Reskit\Administrator
-   ```  
+   ```
    由於此命令的結果，每當使用者登入電腦時，工作都會啟動事件檢視器和系統監視器。
 
 ### <a name="to-schedule-a-task-that-runs-on-a-remote-computer"></a><a name=BKMK_remote></a>若要排程在遠端電腦上執行的工作
@@ -793,7 +793,7 @@ SUCCESS: The scheduled task My App has successfully been created.
 
 下列命令會排程 MyApp 程式在 SRV01 遠端電腦上每隔10天立即開始執行。 此命令會使用 **/s**參數來提供遠端電腦的名稱。 因為本機目前的使用者是遠端電腦的系統管理員，所以不需要使用 **/u**參數來提供排程工作的替代許可權。
 
-請注意，在遠端電腦上排程工作時，所有參數都會參考遠端電腦。 因此， **/tr**參數所指定的可執行檔是指遠端電腦上的 MyApp 複本。
+請注意，在遠端電腦上排程工作時，所有參數都會參考遠端電腦。 因此， **/tr**參數所指定的可執行檔是指遠端電腦上的 MyApp.exe 複本。
 ```
 schtasks /create /s SRV01 /tn My App /tr c:\program files\corpapps\myapp.exe /sc daily /mo 10
 ```
@@ -871,7 +871,7 @@ Power Management: Disabled
 -   **Schtasks**不會驗證程式檔案位置或使用者帳戶密碼。 如果您沒有為使用者帳戶輸入正確的檔案位置或正確的密碼，則會建立工作，但不會執行。 此外，如果帳戶的密碼變更或過期，而且您沒有變更儲存在工作中的密碼，則工作不會執行。
 -   系統帳戶沒有互動式登入許可權。 使用者看不到，也無法與以系統許可權執行的程式互動。
 -   每個工作只會執行一個程式。 不過，您可以建立一個批次檔來啟動多個工作，然後排程執行批次檔的工作。
--   您可以在建立工作之後立即進行測試。 使用**執行**作業來測試工作，然後檢查 SchedLgU 檔案（*SystemRoot*\SchedLgU.txt）是否有錯誤。
+-   您可以在建立工作之後立即進行測試。 使用**執行**作業來測試工作，然後檢查 SchedLgU.txt 檔案（*SystemRoot*\SchedLgU.txt）是否有錯誤。
 
 ## <a name="schtasks-change"></a><a name=BKMK_change></a>schtasks 變更
 
@@ -891,20 +891,20 @@ schtasks /change /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Passwo
 
 |          詞彙           |                                                                                                                                                                                                                                                                                                                                     定義                                                                                                                                                                                                                                                                                                                                      |
 |-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|     /tn \<TaskName>     |                                                                                                                                                                                                                                                                                                               識別要變更的工作。 輸入工作名稱。                                                                                                                                                                                                                                                                                                               |
-|     /s \<Computer>      |                                                                                                                                                                                                                                                                               指定遠端電腦的名稱或 IP 位址（不含反斜線）。 預設是本機電腦。                                                                                                                                                                                                                                                                               |
-|  /u [\<Domain>\]<User>  |                                                                                                                                                                 以指定之使用者帳戶的許可權執行此命令。 預設值是本機電腦目前使用者的許可權。 指定的使用者帳戶必須是遠端電腦上 Administrators 群組的成員。 **/U**和 **/p**參數只有在遠端電腦上變更工作（**/s**）時才有效。                                                                                                                                                                  |
-|     /p \<密碼>      |                                                                                                                                                                                              指定 **/u**參數中指定之使用者帳戶的密碼。 如果您使用 **/u**參數，但省略 **/p**參數或 password 引數，則**schtasks**會提示您輸入密碼。</br>只有當您使用 **/s**時， **/u**和 **/p**參數才有效。                                                                                                                                                                                               |
+|     /tn\<TaskName>     |                                                                                                                                                                                                                                                                                                               識別要變更的工作。 輸入工作名稱。                                                                                                                                                                                                                                                                                                               |
+|     /s\<Computer>      |                                                                                                                                                                                                                                                                               指定遠端電腦的名稱或 IP 位址（不含反斜線）。 預設是本機電腦。                                                                                                                                                                                                                                                                               |
+|  那麼\<Domain>\]<User>  |                                                                                                                                                                 以指定之使用者帳戶的許可權執行此命令。 預設值是本機電腦目前使用者的許可權。 指定的使用者帳戶必須是遠端電腦上 Administrators 群組的成員。 **/U**和 **/p**參數只有在遠端電腦上變更工作（**/s**）時才有效。                                                                                                                                                                  |
+|     /p\<Password>      |                                                                                                                                                                                              指定 **/u**參數中指定之使用者帳戶的密碼。 如果您使用 **/u**參數，但省略 **/p**參數或 password 引數，則**schtasks**會提示您輸入密碼。</br>只有當您使用 **/s**時， **/u**和 **/p**參數才有效。                                                                                                                                                                                               |
 | /ru {[\<Domain>\]<User> |                                                                                                                                                                                                                                                                                                                                       筆記本電腦                                                                                                                                                                                                                                                                                                                                       |
-|     /rp \<密碼>     |                                                                                                                                                                                                                                                 指定現有使用者帳戶的新密碼，或為 **/ru**參數所指定的使用者帳戶。 使用搭配本機系統帳戶時，會忽略這個參數。                                                                                                                                                                                                                                                  |
-|     /tr \</tr u n>      |                                                                                                                                                                                  變更工作執行的程式。 輸入可執行檔、指令檔或批次檔的完整路徑和檔案名。 如果您省略路徑，則**schtasks**會假設檔案位於\<systemroot> \system32 目錄中。 指定的程式會取代工作所執行的原始程式。                                                                                                                                                                                  |
-|    /st \<Starttime>     |                                                                                                                                                                                                                                                              使用24小時制時間格式（HH： mm），指定工作的開始時間。 例如，14:30 的值相當於12小時的 2:30 PM 時間。                                                                                                                                                                                                                                                               |
-|     /ri \<間隔>     |                                                                                                                                                                                                                                                                           指定排程工作的重複間隔（以分鐘為單位）。 有效範圍是 1-599940 （599940分鐘 = 9999 小時）。                                                                                                                                                                                                                                                                            |
-|     /et \<EndTime>      |                                                                                                                                                                                                                                                               使用24小時制時間格式（HH： mm），指定工作的結束時間。 例如，14:30 的值相當於12小時的 2:30 PM 時間。                                                                                                                                                                                                                                                                |
-|     /du \<Duration>     |                                                                                                                                                                                                                                                                                                     指定以關閉\<EndTime> 的工作<Duration>，如果已指定，則為。                                                                                                                                                                                                                                                                                                      |
+|     /rp\<Password>     |                                                                                                                                                                                                                                                 指定現有使用者帳戶的新密碼，或為 **/ru**參數所指定的使用者帳戶。 使用搭配本機系統帳戶時，會忽略這個參數。                                                                                                                                                                                                                                                  |
+|     /tr\<TaskRun>      |                                                                                                                                                                                  變更工作執行的程式。 輸入可執行檔、指令檔或批次檔的完整路徑和檔案名。 如果您省略路徑，則**schtasks**會假設檔案位於 \<systemroot> \System32 目錄中。 指定的程式會取代工作所執行的原始程式。                                                                                                                                                                                  |
+|    /st\<Starttime>     |                                                                                                                                                                                                                                                              使用24小時制時間格式（HH： mm），指定工作的開始時間。 例如，14:30 的值相當於12小時的 2:30 PM 時間。                                                                                                                                                                                                                                                               |
+|     /ri\<Interval>     |                                                                                                                                                                                                                                                                           指定排程工作的重複間隔（以分鐘為單位）。 有效範圍是 1-599940 （599940分鐘 = 9999 小時）。                                                                                                                                                                                                                                                                            |
+|     /et\<EndTime>      |                                                                                                                                                                                                                                                               使用24小時制時間格式（HH： mm），指定工作的結束時間。 例如，14:30 的值相當於12小時的 2:30 PM 時間。                                                                                                                                                                                                                                                                |
+|     /du\<Duration>     |                                                                                                                                                                                                                                                                                                     指定在或關閉工作 \<EndTime> <Duration> （若已指定）。                                                                                                                                                                                                                                                                                                      |
 |           /k            |                                                                                                                                                                   停止在 **/et**或 **/du**指定的時間執行工作的程式。 如果沒有 **/k**，則**schtasks**在到達 **/et**或 **/du**所指定的時間之後，不會再啟動程式，但如果程式仍在執行中，則不會將它停止。 這個參數是選擇性的，而且只有分鐘或每小時的排程才有效。                                                                                                                                                                   |
-|    /sd \<起始>     |                                                                                                                                                                                                                                                                                              指定應該執行工作的第一個日期。 日期格式為 MM/DD/YYYY。                                                                                                                                                                                                                                                                                               |
-|     /ed \<結束日期>      |                                                                                                                                                                                                                                                                                                 指定工作應該執行的最後一個日期。 格式為 MM/DD/YYYY。                                                                                                                                                                                                                                                                                                  |
+|    /sd\<StartDate>     |                                                                                                                                                                                                                                                                                              指定應該執行工作的第一個日期。 日期格式為 MM/DD/YYYY。                                                                                                                                                                                                                                                                                               |
+|     /ed\<EndDate>      |                                                                                                                                                                                                                                                                                                 指定工作應該執行的最後一個日期。 格式為 MM/DD/YYYY。                                                                                                                                                                                                                                                                                                  |
 |         /ENABLE         |                                                                                                                                                                                                                                                                                                                       指定以啟用排程工作。                                                                                                                                                                                                                                                                                                                       |
 |        /DISABLE         |                                                                                                                                                                                                                                                                                                                      指定停用排程工作。                                                                                                                                                                                                                                                                                                                       |
 |           /it           | 指定只有在執行身分使用者（執行工作的使用者帳戶）登入電腦時，才執行排程工作。</br>這個參數不會影響以系統許可權執行的工作，或是已經設定了互動式屬性的工作。 您不能使用 change 命令從工作中移除僅限互動式的屬性。</br>根據預設，當工作已排程時，[執行身分] 使用者是本機電腦的目前使用者，如果使用的是 **/u**參數所指定的帳號，則為該使用者。 不過，如果命令包含 **/ru**參數，則「執行身分」使用者就是 **/ru**參數所指定的帳號。 |
@@ -924,25 +924,25 @@ schtasks /change /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Passwo
 
 ### <a name="to-change-the-program-that-a-task-runs"></a>變更工作執行的程式
 
-下列命令會將「病毒檢查」工作執行的程式從 VirusCheck 變更為 VirusCheck2。 此命令會使用 **/tn**參數來識別工作和 **/tr**參數，以指定工作的新程式。 （您無法變更工作名稱）。
+下列命令會將「病毒檢查」工作執行的程式從 VirusCheck.exe 變更為 VirusCheck2.exe。 此命令會使用 **/tn**參數來識別工作和 **/tr**參數，以指定工作的新程式。 （您無法變更工作名稱）。
 ```
 schtasks /change /tn Virus Check /tr C:\VirusCheck2.exe
 ```
-在回應中， **schtasks.exe**會顯示下列成功訊息：
+在 [回應] 中， **SchTasks.exe**會顯示下列成功訊息：
 ```
 SUCCESS: The parameters of the scheduled task Virus Check have been changed.
 ```
-此命令的結果是，「病毒檢查」工作現在會執行 VirusCheck2。
+由於此命令的結果，「病毒檢查」工作現在會 VirusCheck2.exe 執行。
 
 ### <a name="to-change-the-password-for-a-remote-task"></a>若要變更遠端工作的密碼
 
-下列命令會針對遠端電腦 Woodgrove-svr01 上的 RemindMe 工作變更使用者帳戶的密碼。 此命令會使用 **/tn**參數來識別工作，並使用 **/s**參數來指定遠端電腦。 它會使用 **/rp**參數來指定新的密碼p@ssWord3。
+下列命令會針對遠端電腦 Woodgrove-svr01 上的 RemindMe 工作變更使用者帳戶的密碼。 此命令會使用 **/tn**參數來識別工作，並使用 **/s**參數來指定遠端電腦。 它會使用 **/rp**參數來指定新的密碼 p@ssWord3 。
 
 每當使用者帳戶的密碼過期或變更時，就需要此程式。 如果工作中儲存的密碼不再有效，則工作不會執行。
 ```
 schtasks /change /tn RemindMe /s Svr01 /rp p@ssWord3
 ```
-在回應中， **schtasks.exe**會顯示下列成功訊息：
+在 [回應] 中， **SchTasks.exe**會顯示下列成功訊息：
 ```
 SUCCESS: The parameters of the scheduled task RemindMe have been changed.
 ```
@@ -950,21 +950,21 @@ SUCCESS: The parameters of the scheduled task RemindMe have been changed.
 
 ### <a name="to-change-the-program-and-user-account-for-a-task"></a>變更工作的程式和使用者帳戶
 
-下列命令會變更工作執行的程式，並變更執行工作所使用的使用者帳戶。 基本上，它會針對新的工作使用舊的排程。 此命令會變更 ChkNews 工作，在每天早上9:00 啟動 Notepad.exe，改為啟動 Internet Explorer。
+下列命令會變更工作執行的程式，並變更執行工作所使用的使用者帳戶。 基本上，它會針對新的工作使用舊的排程。 此命令會變更 ChkNews 工作，這會在每天早上9:00 開始 Notepad.exe，以便改為啟動 Internet Explorer。
 
 此命令會使用 **/tn**參數來識別工作。 它會使用 **/tr**參數來變更工作執行的程式，以及使用 **/ru**參數來變更工作執行時所用的使用者帳戶。
 
-會省略用來提供使用者帳戶密碼的 **/ru**和 **/rp**參數。 您必須提供帳戶的密碼，但您可以使用 **/ru**和 **/rp**參數，並以純文字輸入密碼，或等候**schtasks.exe**提示您輸入密碼，然後在 [遮蔽文字] 中輸入密碼。
+會省略用來提供使用者帳戶密碼的 **/ru**和 **/rp**參數。 您必須提供帳戶的密碼，但您可以使用 **/ru**和 **/rp**參數，並以純文字輸入密碼，或等待**SchTasks.exe**提示您輸入密碼，然後在 [遮蔽文字] 中輸入密碼。
 ```
 schtasks /change /tn ChkNews /tr c:\program files\Internet Explorer\iexplore.exe /ru DomainX\Admin01
 ```
-在回應中， **schtasks.exe**會要求使用者帳戶的密碼。 它會遮蔽您輸入的文字，因此不會顯示密碼。
+在 [回應] 中， **SchTasks.exe**會要求使用者帳戶的密碼。 它會遮蔽您輸入的文字，因此不會顯示密碼。
 ```
-Please enter the password for DomainX\Admin01: 
+Please enter the password for DomainX\Admin01:
 ```
 請注意， **/tn**參數會識別工作，而且 **/tr**和 **/ru**參數會變更工作的屬性。 您不能使用其他參數來識別工作，也無法變更工作名稱。
 
-在回應中， **schtasks.exe**會顯示下列成功訊息：
+在 [回應] 中， **SchTasks.exe**會顯示下列成功訊息：
 ```
 SUCCESS: The parameters of the scheduled task ChkNews have been changed.
 ```
@@ -974,14 +974,14 @@ SUCCESS: The parameters of the scheduled task ChkNews have been changed.
 
 下列命令會變更 SecurityScript 工作，使其以系統帳戶的許可權執行。 它會使用 * */ru * * 參數來表示系統帳戶。
 ```
-schtasks /change /tn SecurityScript /ru 
+schtasks /change /tn SecurityScript /ru
 ```
-在回應中， **schtasks.exe**會顯示下列成功訊息：
+在 [回應] 中， **SchTasks.exe**會顯示下列成功訊息：
 ```
 INFO: The run as user name for the scheduled task SecurityScript will be changed to NT AUTHORITY\SYSTEM.
 SUCCESS: The parameters of the scheduled task SecurityScript have been changed.
 ```
-因為以系統帳戶許可權執行的工作不需要密碼，所以**schtasks.exe**不會提示您輸入。
+因為以系統帳戶許可權執行的工作不需要密碼， **SchTasks.exe**不會提示您輸入密碼。
 
 ### <a name="to-run-a-program-only-when-i-am-logged-on"></a>只有在我登入時才執行程式
 
@@ -991,7 +991,7 @@ SUCCESS: The parameters of the scheduled task SecurityScript have been changed.
 ```
 schtasks /change /tn MyApp /it
 ```
-在回應中， **schtasks.exe**會顯示下列成功訊息。
+在 [回應] 中， **SchTasks.exe**會顯示下列成功訊息。
 ```
 SUCCESS: The parameters of the scheduled task MyApp have been changed.
 ```
@@ -1010,17 +1010,17 @@ schtasks /run /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Password>
 
 |         詞彙          |                                                                                                                                                                 定義                                                                                                                                                                  |
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    /tn \<TaskName>    |                                                                                                                                                       必要。 識別工作。                                                                                                                                                        |
-|    /s \<Computer>     |                                                                                                           指定遠端電腦的名稱或 IP 位址（不含反斜線）。 預設是本機電腦。                                                                                                           |
-| /u [\<Domain>\]<User> | 以指定之使用者帳戶的許可權執行此命令。 根據預設，此命令會以本機電腦目前使用者的許可權執行。</br>指定的使用者帳戶必須是遠端電腦上 Administrators 群組的成員。 只有當您使用 **/s**時， **/u**和 **/p**參數才有效。 |
-|    /p \<密碼>     |                          指定 **/u**參數中指定之使用者帳戶的密碼。 如果您使用 **/u**參數，但省略 **/p**參數或 password 引數，則**schtasks**會提示您輸入密碼。</br>只有當您使用 **/s**時， **/u**和 **/p**參數才有效。                           |
+|    /tn\<TaskName>    |                                                                                                                                                       必要。 識別工作。                                                                                                                                                        |
+|    /s\<Computer>     |                                                                                                           指定遠端電腦的名稱或 IP 位址（不含反斜線）。 預設是本機電腦。                                                                                                           |
+| 那麼\<Domain>\]<User> | 以指定之使用者帳戶的許可權執行此命令。 根據預設，此命令會以本機電腦目前使用者的許可權執行。</br>指定的使用者帳戶必須是遠端電腦上 Administrators 群組的成員。 只有當您使用 **/s**時， **/u**和 **/p**參數才有效。 |
+|    /p\<Password>     |                          指定 **/u**參數中指定之使用者帳戶的密碼。 如果您使用 **/u**參數，但省略 **/p**參數或 password 引數，則**schtasks**會提示您輸入密碼。</br>只有當您使用 **/s**時， **/u**和 **/p**參數才有效。                           |
 |          /?           |                                                                                                                                                    在命令提示字元顯示說明。                                                                                                                                                     |
 
 ### <a name="remarks"></a>備註
 
--   使用此作業來測試您的工作。 如果工作未執行，請檢查工作排程器服務交易記錄檔、 \<Systemroot> \schedlgu.txt，以找出錯誤。
+-   使用此作業來測試您的工作。 如果工作未執行，請檢查工作排程器服務交易記錄檔（ \<Systemroot>\SchedLgU.txt）是否有錯誤。
 -   執行工作不會影響工作排程，也不會變更排程工作的下一個執行時間。
--   若要從遠端執行工作，必須在遠端電腦上排程工作。 當您執行它時，此工作只會在遠端電腦上執行。 若要確認工作是否正在遠端電腦上執行，請使用 [工作管理員] 或工作排程器事務\<歷史記錄檔，Systemroot> \schedlgu.txt。
+-   若要從遠端執行工作，必須在遠端電腦上排程工作。 當您執行它時，此工作只會在遠端電腦上執行。 若要確認工作是否正在遠端電腦上執行，請使用 [工作管理員] 或 [工作排程器交易記錄] \<Systemroot>\SchedLgU.txt。
 
 ### <a name="examples"></a>範例
 
@@ -1030,7 +1030,7 @@ schtasks /run /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Password>
 ```
 schtasks /run /tn Security Script
 ```
-在回應中， **schtasks.exe**會啟動與工作相關聯的腳本，並顯示下列訊息：
+在 [回應] 中， **SchTasks.exe**啟動與工作相關聯的腳本，並顯示下列訊息：
 ```
 SUCCESS: Attempted to run the scheduled task Security Script.
 ```
@@ -1042,11 +1042,11 @@ SUCCESS: Attempted to run the scheduled task Security Script.
 ```
 schtasks /run /tn Update /s Svr01
 ```
-在此情況下， **schtasks.exe**會顯示下列錯誤訊息：
+在此情況下， **SchTasks.exe**會顯示下列錯誤訊息：
 ```
 ERROR: Unable to run the scheduled task Update.
 ```
-若要找出錯誤的原因，請查看 Woodgrove-svr01 上的「排程的工作」交易記錄檔 C:\Windows\SchedLgU.txt。 在此情況下，記錄檔中會出現下列專案：
+若要找出錯誤的原因，請查看 [排定的工作] [交易記錄]，C:\Windows\SchedLgU.txt Woodgrove-svr01。 在此情況下，記錄檔中會出現下列專案：
 ```
 Update.job (update.exe) 3/26/2001 1:15:46 PM ** ERROR **
 The attempt to log on to the account associated with the task failed, therefore, the task did not run.
@@ -1058,7 +1058,7 @@ Verify that the task's Run-as name and password are valid and try again.
 ```
 schtasks /change /tn Update /s Svr01 /ru Administrator /rp PassW@rd3
 ```
-在**變更**命令完成之後，就會重複**執行**命令。 這次，update.exe 程式會啟動，而**schtasks.exe**會顯示下列訊息：
+在**變更**命令完成之後，就會重複**執行**命令。 此時，Update.exe 程式會啟動，並**SchTasks.exe**顯示下列訊息：
 ```
 SUCCESS: Attempted to run the scheduled task Update.
 ```
@@ -1078,25 +1078,25 @@ schtasks /end /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Password>
 
 |         詞彙          |                                                                                                                                                               定義                                                                                                                                                                |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    /tn \<TaskName>    |                                                                                                                                         必要。 識別啟動程式的工作。                                                                                                                                         |
-|    /s \<Computer>     |                                                                                                                        指定遠端電腦的名稱或 IP 位址。 預設是本機電腦。                                                                                                                        |
-| /u [\<Domain>\]<User> | 以指定之使用者帳戶的許可權執行此命令。 根據預設，此命令會以本機電腦目前使用者的許可權執行。 指定的使用者帳戶必須是遠端電腦上 Administrators 群組的成員。 只有當您使用 **/s**時， **/u**和 **/p**參數才有效。 |
-|    /p \<密碼>     |                        指定 **/u**參數中指定之使用者帳戶的密碼。 如果您使用 **/u**參數，但省略 **/p**參數或 password 引數，則**schtasks**會提示您輸入密碼。</br>只有當您使用 **/s**時， **/u**和 **/p**參數才有效。                         |
+|    /tn\<TaskName>    |                                                                                                                                         必要。 識別啟動程式的工作。                                                                                                                                         |
+|    /s\<Computer>     |                                                                                                                        指定遠端電腦的名稱或 IP 位址。 預設是本機電腦。                                                                                                                        |
+| 那麼\<Domain>\]<User> | 以指定之使用者帳戶的許可權執行此命令。 根據預設，此命令會以本機電腦目前使用者的許可權執行。 指定的使用者帳戶必須是遠端電腦上 Administrators 群組的成員。 只有當您使用 **/s**時， **/u**和 **/p**參數才有效。 |
+|    /p\<Password>     |                        指定 **/u**參數中指定之使用者帳戶的密碼。 如果您使用 **/u**參數，但省略 **/p**參數或 password 引數，則**schtasks**會提示您輸入密碼。</br>只有當您使用 **/s**時， **/u**和 **/p**參數才有效。                         |
 |          /?           |                                                                                                                                                             顯示說明。                                                                                                                                                              |
 
 ### <a name="remarks"></a>備註
 
-**Schtasks.exe**只會結束已排程工作啟動之程式的實例。 若要停止其他進程，請使用 TaskKill。 如需詳細資訊，請參閱[Taskkill](taskkill.md)。
+**SchTasks.exe**只會結束已排程工作啟動之程式的實例。 若要停止其他進程，請使用 TaskKill。 如需詳細資訊，請參閱[Taskkill](taskkill.md)。
 
 ### <a name="examples"></a>範例
 
 ### <a name="to-end-a-task-on-a-local-computer"></a>若要在本機電腦上結束工作
 
-下列命令會停止「我的記事本」工作啟動的 Notepad.exe 實例：
+下列命令會停止「我的記事本」工作所啟動 Notepad.exe 的實例：
 ```
 schtasks /end /tn My Notepad
 ```
-在回應中， **schtasks.exe**會停止工作已啟動的 notepad.exe 實例，並顯示下列成功訊息：
+在 [回應] 中， **SchTasks.exe**會停止工作啟動 Notepad.exe 的實例，並顯示下列成功訊息：
 ```
 SUCCESS: The scheduled task My Notepad has been terminated successfully.
 ```
@@ -1107,7 +1107,7 @@ SUCCESS: The scheduled task My Notepad has been terminated successfully.
 ```
 schtasks /end /tn InternetOn /s Svr01
 ```
-在回應中， **schtasks.exe**會停止工作已啟動的 Internet Explorer 實例，並顯示下列成功訊息：
+在 [回應] 中， **SchTasks.exe**會停止工作已啟動的 Internet Explorer 實例，並顯示下列成功訊息：
 ```
 SUCCESS: The scheduled task InternetOn has been terminated successfully.
 ```
@@ -1126,11 +1126,11 @@ schtasks /delete /tn {<TaskName> | *} [/f] [/s <Computer> [/u [<Domain>\]<User> 
 
 |         詞彙          |                                                                                                                                                                 定義                                                                                                                                                                  |
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|   /tn {\<TaskName>    |                                                                                                                                                                     \*}                                                                                                                                                                     |
+|   tn\<TaskName>    |                                                                                                                                                                     \*}                                                                                                                                                                     |
 |          /f           |                                                                                                                                  抑制確認訊息。 工作會在不發出警告的情況下刪除。                                                                                                                                  |
-|    /s \<Computer>     |                                                                                                           指定遠端電腦的名稱或 IP 位址（不含反斜線）。 預設是本機電腦。                                                                                                           |
-| /u [\<Domain>\]<User> | 以指定之使用者帳戶的許可權執行此命令。 根據預設，此命令會以本機電腦目前使用者的許可權執行。</br>指定的使用者帳戶必須是遠端電腦上 Administrators 群組的成員。 只有當您使用 **/s**時， **/u**和 **/p**參數才有效。 |
-|    /p \<密碼>     |                          指定 **/u**參數中指定之使用者帳戶的密碼。 如果您使用 **/u**參數，但省略 **/p**參數或 password 引數，則**schtasks**會提示您輸入密碼。</br>只有當您使用 **/s**時， **/u**和 **/p**參數才有效。                           |
+|    /s\<Computer>     |                                                                                                           指定遠端電腦的名稱或 IP 位址（不含反斜線）。 預設是本機電腦。                                                                                                           |
+| 那麼\<Domain>\]<User> | 以指定之使用者帳戶的許可權執行此命令。 根據預設，此命令會以本機電腦目前使用者的許可權執行。</br>指定的使用者帳戶必須是遠端電腦上 Administrators 群組的成員。 只有當您使用 **/s**時， **/u**和 **/p**參數才有效。 |
+|    /p\<Password>     |                          指定 **/u**參數中指定之使用者帳戶的密碼。 如果您使用 **/u**參數，但省略 **/p**參數或 password 引數，則**schtasks**會提示您輸入密碼。</br>只有當您使用 **/s**時， **/u**和 **/p**參數才有效。                           |
 |          /?           |                                                                                                                                                    在命令提示字元顯示說明。                                                                                                                                                     |
 
 ### <a name="remarks"></a>備註
@@ -1146,9 +1146,9 @@ schtasks /delete /tn {<TaskName> | *} [/f] [/s <Computer> [/u [<Domain>\]<User> 
 ```
 schtasks /delete /tn Start Mail /s Svr16
 ```
-在回應中， **schtasks.exe**會顯示下列確認訊息。 若要刪除工作，請按下 Y<strong>。</strong>若要取消命令，請輸入**n**：
+在 [回應] 中， **SchTasks.exe**會顯示下列確認訊息。 若要刪除工作，請按下 Y<strong>。</strong>若要取消命令，請輸入**n**：
 ```
-WARNING: Are you sure you want to remove the task Start Mail (Y/N )? 
+WARNING: Are you sure you want to remove the task Start Mail (Y/N )?
 SUCCESS: The scheduled task Start Mail was successfully deleted.
 ```
 
@@ -1158,7 +1158,7 @@ SUCCESS: The scheduled task Start Mail was successfully deleted.
 ```
 schtasks /delete /tn * /f
 ```
-在回應中， **schtasks.exe**會顯示下列成功訊息，指出已排程唯一的工作 SecureScript。
+在 [回應] 中， **SchTasks.exe**會顯示下列成功訊息，指出已排程唯一的工作 SecureScript。
 
 `SUCCESS: The scheduled task SecureScript was successfully deleted.`
 
@@ -1177,17 +1177,17 @@ schtasks [/query] [/fo {TABLE | LIST | CSV}] [/nh] [/v] [/s <Computer> [/u [<Dom
 |         詞彙          |                                                                                                                                                                 定義                                                                                                                                                                  |
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       /query        |                                                                                                                        作業名稱是選擇性的。 輸入**schtasks**而不使用任何參數，會執行查詢。                                                                                                                         |
-|      /fo \<格式>    |  指定輸出格式。 有效值為 TABLE、LIST 和 CSV                                                                                                                                 |
+|      /fo\<format>    |  指定輸出格式。 有效值為 TABLE、LIST 和 CSV                                                                                                                                 |
 |          /nh          |                                                                                                            省略資料表顯示中的資料行標題。 此參數適用于**資料表**和**CSV**輸出格式。                                                                                                             |
 |          /v           |                                                                                                         將工作的「先進屬性」新增至顯示畫面。</br>使用 **/v**的查詢應格式化為**LIST**或**CSV**。                                                                                                          |
-|    /s \<Computer>     |                                                                                                           指定遠端電腦的名稱或 IP 位址（不含反斜線）。 預設是本機電腦。                                                                                                           |
-| /u [\<Domain>\]<User> | 以指定之使用者帳戶的許可權執行此命令。 根據預設，此命令會以本機電腦目前使用者的許可權執行。</br>指定的使用者帳戶必須是遠端電腦上 Administrators 群組的成員。 只有當您使用 **/s**時， **/u**和 **/p**參數才有效。 |
-|    /p \<密碼>     |                                        指定 **/u**參數中指定之使用者帳戶的密碼。 如果您使用 **/u**，但省略 **/p**或 password 引數，則**schtasks**會提示您輸入密碼。</br>只有當您使用 **/s**時， **/u**和 **/p**參數才有效。                                         |
+|    /s\<Computer>     |                                                                                                           指定遠端電腦的名稱或 IP 位址（不含反斜線）。 預設是本機電腦。                                                                                                           |
+| 那麼\<Domain>\]<User> | 以指定之使用者帳戶的許可權執行此命令。 根據預設，此命令會以本機電腦目前使用者的許可權執行。</br>指定的使用者帳戶必須是遠端電腦上 Administrators 群組的成員。 只有當您使用 **/s**時， **/u**和 **/p**參數才有效。 |
+|    /p\<Password>     |                                        指定 **/u**參數中指定之使用者帳戶的密碼。 如果您使用 **/u**，但省略 **/p**或 password 引數，則**schtasks**會提示您輸入密碼。</br>只有當您使用 **/s**時， **/u**和 **/p**參數才有效。                                         |
 |          /?           |                                                                                                                                                    在命令提示字元顯示說明。                                                                                                                                                     |
 
 ### <a name="remarks"></a>備註
 
-**Schtasks.exe**只會結束已排程工作啟動之程式的實例。 若要停止其他進程，請使用 TaskKill。 如需詳細資訊，請參閱[Taskkill](taskkill.md)。
+**SchTasks.exe**只會結束已排程工作啟動之程式的實例。 若要停止其他進程，請使用 TaskKill。 如需詳細資訊，請參閱[Taskkill](taskkill.md)。
 
 ### <a name="examples"></a>範例
 
@@ -1198,7 +1198,7 @@ schtasks [/query] [/fo {TABLE | LIST | CSV}] [/nh] [/v] [/s <Computer> [/u [<Dom
 schtasks
 schtasks /query
 ```
-在回應中， **schtasks.exe**會以預設的簡單資料表格式顯示工作，如下表所示：
+在 [回應] 中， **SchTasks.exe**會以預設的簡單資料表格式來顯示工作，如下表所示：
 ```
 TaskName Next Run Time Status
 ========================= ======================== ==============
@@ -1212,7 +1212,7 @@ SecureScript 14:42:00 PM , 2/4/2001
 
 **schtasks/query/fo LIST/v**
 
-在回應中， **schtasks.exe**會顯示所有工作的詳細屬性清單。 以下顯示的工作清單會顯示已排定在上午4:00 執行的任務。 在每個月的最後一個星期五：
+在 [回應] 中， **SchTasks.exe**會顯示所有工作的詳細屬性清單。 以下顯示的工作清單會顯示已排定在上午4:00 執行的任務。 在每個月的最後一個星期五：
 ```
 HostName: RESKIT01
 TaskName: SecureScript
@@ -1252,12 +1252,12 @@ Power Mgmt: Stop On Battery Mode: Disabled
 
 下列命令會要求針對遠端電腦排程的工作清單，並將工作新增至本機電腦上以逗號分隔的記錄檔。 您可以使用此命令格式來收集和追蹤針對多部電腦排程的工作。
 
-此命令會使用 **/s**參數來識別遠端電腦 Reskit16、指定格式的 **/fo**參數，以及用來隱藏欄位標題的 **/nh**參數。 **>>** 附加符號會將輸出重新導向至本機電腦上的工作記錄檔 P0102 （woodgrove-svr01）。 因為此命令是在遠端電腦上執行，所以本機電腦路徑必須是完整的。
+此命令會使用 **/s**參數來識別遠端電腦 Reskit16、指定格式的 **/fo**參數，以及用來隱藏欄位標題的 **/nh**參數。 **>>** 附加符號會將輸出重新導向至 woodgrove-svr01 本機電腦上的工作記錄檔（p0102.csv）。 因為此命令是在遠端電腦上執行，所以本機電腦路徑必須是完整的。
 ```
 schtasks /query /s Reskit16 /fo csv /nh >> \\svr01\data\tasklogs\p0102.csv
 ```
-在回應中， **schtasks.exe**會將針對 Reskit16 電腦排程的工作新增至本機電腦 woodgrove-svr01 上的 p0102。
+在 [回應] 中， **SchTasks.exe**會將 Reskit16 電腦排程的工作新增至本機電腦 woodgrove-svr01 上的 p0102.csv 檔案。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

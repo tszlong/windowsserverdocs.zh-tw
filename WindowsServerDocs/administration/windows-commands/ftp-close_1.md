@@ -1,6 +1,6 @@
 ---
-title: ftp 關閉
-description: Ftp close 命令的參考主題，它會結束遠端伺服器的 ftp 會話，並保留在 ftp 提示字元中。
+title: ftp close
+description: Ftp close 命令的參考文章，它會結束遠端伺服器的 ftp 會話，並保留在 ftp 提示字元中。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 12b8ef1dd750da0f40279088be66b8249c0d78f4
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 7123a0aaa26d9b7cc046f0b045e5d1219827d7c9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819988"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933281"
 ---
-# <a name="ftp-close"></a>ftp 關閉
+# <a name="ftp-close"></a>ftp close
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -36,7 +36,7 @@ close
 close
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
