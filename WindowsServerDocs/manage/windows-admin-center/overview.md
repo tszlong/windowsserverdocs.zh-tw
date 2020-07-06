@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 01/07/2020
 ms.localizationpriority: high
 ms.prod: windows-server
-ms.openlocfilehash: 1094072935d463aa57eb6d44d14d008067745f03
-ms.sourcegitcommit: 599162b515c50106fd910f5c180e1a30bbc389b9
+ms.openlocfilehash: cb91b884edfbd105bc9e88a9d11b3b96055247c9
+ms.sourcegitcommit: c40c29683d25ed75b439451d7fa8eda9d8d9e441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83775322"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85833331"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -25,7 +25,7 @@ Windows Admin Center 是以瀏覽器為基礎在本機部署的應用程式，�
 
 ## <a name="download-now"></a>立即下載
 
-請從 Microsoft 評估中心下載 [Windows Admin Center](https://www.microsoft.com/evalcenter/evaluate-windows-admin-center)。  雖然其會顯示「開始評估」，但這是正式運作的生產環境使用版本，內含為 Windows 或 Windows Server 授權的一部分。
+請從 Microsoft 評估中心下載 [Windows Admin Center](https://www.microsoft.com/evalcenter/evaluate-windows-admin-center)。 雖然其會顯示「開始評估」，但這是正式運作的生產環境使用版本。
 
 如需安裝的說明，請參閱＜[安裝](deploy/install.md)＞。 如需開始使用 Windows Admin Center 的提示，請參閱＜[快速入門](use/get-started.md)＞。
 
