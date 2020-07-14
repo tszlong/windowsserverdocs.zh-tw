@@ -10,12 +10,12 @@ manager: lizross
 ms.author: helohr
 date: 06/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 978c42b70f1c74a009640f7feda8dee7a82c9cff
-ms.sourcegitcommit: 75b4cf49dd918ff98258dcae6e6e8d7825c9adec
+ms.openlocfilehash: 4eae1c991b3ce418f95b6b47eda485845a336e2f
+ms.sourcegitcommit: 9a72fa784206a4b780d6d1d630ec6f21fecb8db3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84269230"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86052583"
 ---
 # <a name="get-started-with-the-ios-client"></a>開始使用 iOS 用戶端
 
@@ -23,7 +23,7 @@ ms.locfileid: "84269230"
 
 您可以使用適用於 iOS 的遠端桌面用戶端，從您的 iOS 裝置 (iPhone 和 iPad) 使用 Windows 應用程式、資源及桌面。
 
-使用下列資訊立即開始。 如果您有任何問題，請務必查看[常見問題集](remote-desktop-client-faq.md)。
+請使用下列資訊立即開始。 如果您有任何問題，請務必查看[常見問題集](remote-desktop-client-faq.md)。
 
 > [!NOTE]
 > - 想知道適用於 iOS 用戶端的新版本嗎？ 請參閱 [iOS 上的遠端桌面有什麼新功能？](ios-whatsnew.md)。
@@ -167,7 +167,7 @@ ms.locfileid: "84269230"
 | 滑鼠指標 | 以滑鼠右鍵按一下          | 使用兩指點選                                              |
 | 滑鼠指標 | 按滑鼠右鍵並拖曳 | 使用兩指點兩下並按住，然後拖曳                    |
 | 滑鼠指標 | 滑鼠滾輪          | 使用兩指點兩下並按住，然後向上或向下拖曳                |
-| 滑鼠指標 | 縮放                 | 利用兩個手指，捏合以放大，將手指分開以縮小 |
+| 滑鼠指標 | 縮放                 | 利用兩個手指，捏合以縮小，將手指分開以放大 |
 
 ## <a name="supported-input-devices"></a>支援的輸入裝置
 
