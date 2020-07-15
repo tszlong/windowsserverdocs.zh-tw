@@ -7,17 +7,20 @@ author: rick-man
 ms.author: rickman
 manager: stevelee
 ms.topic: article
-ms.date: 08/21/2019
-ms.openlocfilehash: 4ae185232ec39d92997929f8f916ff49caf26dcf
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.date: 07/14/2020
+ms.openlocfilehash: ab16dcdc8ce29f2440207ea5bbc7c421f171ed4a
+ms.sourcegitcommit: f81aa22739d818382d314561dece59a9341dfb6f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310515"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86390085"
 ---
 # <a name="deploy-graphics-devices-using-remotefx-vgpu"></a>使用 RemoteFX vGPU 部署圖形裝置
 
 > 適用于： Windows Server 2016、Microsoft Hyper-v Server 2016
+
+> [!NOTE]
+> 基於安全性考慮，自2020年7月14日起，預設會在所有 Windows 版本上停用 RemoteFX vGPU。 若要深入瞭解，請參閱[KB 4570006](https://support.microsoft.com/help/4570006)。
 
 RemoteFX 的 vGPU 功能可以讓多部虛擬機器共用實體 GPU。 轉譯和計算資源會在虛擬機器之間動態共用，使 RemoteFX vGPU 適用于不需要專用 GPU 資源的高載工作負載。 例如，在 VDI 服務中，您可以使用 RemoteFX vGPU 將應用程式轉譯成本卸載至 GPU，其效果是減少 CPU 負載並改善服務的擴充性。
 
@@ -50,7 +53,7 @@ RemoteFX 的 vGPU 功能可以讓多部虛擬機器共用實體 GPU。 轉譯和
 
 1. 瀏覽至 Hyper-V 管理員中的 Hyper-V 設定。
 2. 選取 [Hyper-v 設定] 中的 [**實體 gpu** ]。
-3. 選取您不想要使用的 GPU，然後清除 [使用含有 RemoteFX 的這個 GPU]。
+3. 選取您不想要使用的 GPU，然後清除 [使用含有 RemoteFX 的這個 GPU]****。
 
 ### <a name="configure-the-remotefx-vgpu-3d-adapter"></a>設定 RemoteFX vGPU 3D 介面卡
 
@@ -78,15 +81,15 @@ RemoteFX 的 vGPU 功能可以讓多部虛擬機器共用實體 GPU。 轉譯和
 - [設定-VMRemoteFx3dVideoAdapter](https://docs.microsoft.com/powershell/module/hyper-v/set-vmremotefx3dvideoadapter?view=win10-ps)
 - [Microsoft.hyperv.powershell.vmremotefxphysicalvideoadapter](https://docs.microsoft.com/powershell/module/hyper-v/get-vmremotefxphysicalvideoadapter?view=win10-ps)
 
-## <a name="monitor-performance"></a>監視器效能
+## <a name="monitor-performance"></a>監視效能
 
-已啟用 RemoteFX vGPU 之服務的效能和規模取決於各種因素，例如系統上的 Gpu 數目、GPU 記憶體總計、系統記憶體數量和記憶體速度、CPU 核心數目和 CPU 頻率、儲存速度，以及 NUMA實作.
+已啟用 RemoteFX vGPU 之服務的效能和規模取決於各種因素，例如系統上的 Gpu 數目、GPU 記憶體總計、系統記憶體數量和記憶體速度、CPU 核心數目和 CPU 頻率頻率、儲存速度，以及 NUMA 實施。
 
 ### <a name="host-system-memory"></a>主機系統記憶體
 
 針對以 vGPU 啟用的每個 VM，RemoteFX 會在客體作業系統和主機伺服器上使用系統記憶體。 虛擬程式保證系統記憶體的可用性可供客體作業系統使用。 在主機上，每個啟用 vGPU 的虛擬桌面都必須將其系統記憶體需求通告給虛擬程式。 當已啟用 vGPU 的虛擬桌面啟動時，管理程式會在主機中保留額外的系統記憶體。
 
-已啟用 RemoteFX 之伺服器的記憶體需求是動態的，因為已啟用 RemoteFX 之伺服器上所耗用的記憶體數量取決於與已啟用 vGPU 之虛擬桌面相關聯的監視器數目，以及的最大解析度這些監視器。
+啟用 RemoteFX 之伺服器的記憶體需求是動態的，因為啟用 RemoteFX 的伺服器上所耗用的記憶體數量取決於與已啟用 vGPU 的虛擬桌面相關聯的監視器數目，以及這些監視器的最大解析度。
 
 ### <a name="host-gpu-video-memory"></a>主機 GPU 視訊記憶體
 
@@ -94,7 +97,7 @@ RemoteFX 的 vGPU 功能可以讓多部虛擬機器共用實體 GPU。 轉譯和
 
 ### <a name="host-cpu"></a>主機 CPU
 
-虛擬程式會將主機和 Vm 排定在 CPU 上。 已啟用 RemoteFX 的主機會增加額外負荷，因為系統會針對每個已啟用 vGPU 的虛擬桌面執行額外的進程（rdvgm）。 此程式會使用圖形設備磁碟機在 GPU 上執行命令。 編解碼器也會使用 CPU 來壓縮需要傳送回用戶端的螢幕資料。
+虛擬程式會將主機和 Vm 排定在 CPU 上。 已啟用 RemoteFX 的主機上會增加額外負荷，因為系統會針對每個啟用 vGPU 的虛擬桌面執行額外的進程（rdvgm.exe）。 此程式會使用圖形設備磁碟機在 GPU 上執行命令。 編解碼器也會使用 CPU 來壓縮需要傳送回用戶端的螢幕資料。
 
 更多虛擬處理器表示更好的使用者體驗。 建議您為每個啟用 vGPU 的虛擬桌面配置至少兩個虛擬 Cpu。 我們也建議將 x64 架構用於已啟用 vGPU 的虛擬桌面，因為與 x86 虛擬機器相比，x64 虛擬機器上的效能比較好。
 

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 1411f312def0da79de4c18d6d652e0223ea27b48
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 0932493c157bc9de39d3b3c819fa03b9a760a059
+ms.sourcegitcommit: 102a929be3523dbd6523079f0a5738844cef81b4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474445"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86384648"
 ---
 # <a name="what39s-new-for-managed-service-accounts"></a>受管理的服務帳戶的新功能&#39;
 
@@ -53,6 +53,6 @@ ms.locfileid: "85474445"
 
 -   [Active Directory Domain Services 概觀](active-directory-domain-services-overview.md)
 
--   [受管理的服務帳戶了解、實作、最佳做法以及疑難排解](https://blogs.technet.com/b/askds/archive/20../managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)
+-   [受管理的服務帳戶了解、實作、最佳做法以及疑難排解](https://techcommunity.microsoft.com/t5/ask-the-directory-services-team/managed-service-accounts-understanding-implementing-best/ba-p/397009)
 
 

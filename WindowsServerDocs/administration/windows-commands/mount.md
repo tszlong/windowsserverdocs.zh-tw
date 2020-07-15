@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 505094251ab6b0053cc3d46801ba5f6170201ecd
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a81e5d6583eeb6859d5c82065b5bab5fff7c6c9f
+ms.sourcegitcommit: 102a929be3523dbd6523079f0a5738844cef81b4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935718"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86384638"
 ---
 # <a name="mount"></a>mount
 
@@ -31,7 +31,7 @@ mount [-o <option>[...]] [-u:<username>] [-p:{<password> | *}] {\\<computername>
 
 ### <a name="parameters"></a>參數
 
-| 參數  | 說明 |
+| 參數  | 描述 |
 | ---------- | ----------- |
 | -o rsize =`<buffersize>` | 設定讀取緩衝區的大小（以 kb 為單位）。 可接受的值為1、2、4、8、16和 32;預設值為 32 KB。 |
 | -o wsize =`<buffersize>` | 設定寫入緩衝區的大小（以 kb 為單位）。 可接受的值為1、2、4、8、16和 32;預設值為 32 KB。 |
@@ -43,12 +43,12 @@ mount [-o <option>[...]] [-u:<username>] [-p:{<password> | *}] {\\<computername>
 | -o casesensitive | 強制在伺服器上進行檔案查閱，以區分大小寫。 |
 | -o fileaccess =`<mode>` | 指定在 NFS 共用上建立之新檔案的預設許可權模式。 將*模式*指定為*ogw*格式的三位數數位，其中*o*、 *g*和*w*分別代表授與檔案擁有者、群組和世界的存取權。 數位必須在0-7 範圍內，包括：<ul><li>**0：** 無存取權</li><li>**1：** x （執行存取）</li><li>**2：** w （寫入權限）</li><li>**3：** wx （寫入和執行存取權）</li><li>**4：** r （讀取權限）</li><li>**5：** rx （讀取和執行存取權）</li><li>**6：** rw （讀取和寫入存取權）</li><li>**7：** rwx （讀取、寫入和執行存取權）</li></ul> |
 | -o lang =`{euc-jp|euc-tw|euc-kr|shift-jis|Big5|Ksc5601|Gb2312-80|Ansi)` | 指定要在 NFS 共用上設定的語言編碼。 您只能在共用上使用一種語言。 此值可以包含下列任何值：<ul><li>**euc-jp：** 日語</li><li>**euc-幼圓：** 中文</li><li>**euc-kr：** 朝鮮語</li><li>**shift-jis：** 日語</li><li>**Big5：** 中文</li><li>**Ksc5601：** 朝鮮語</li><li>**Gb2312-80：** 簡體中文</li><li>**Ansi：** ANSI 編碼</li></ul> |
-| 那麼`<username>` | 指定要用來裝載共用的使用者名稱。 如果*username*前面沒有加上反斜線（* *\** ），則會將它視為 UNIX 使用者名稱。 |
+| 那麼`<username>` | 指定要用來裝載共用的使用者名稱。 如果*username*前面沒有加上反斜線（ **\\** ），則會將它視為 UNIX 使用者名稱。 |
 | p&id`<password>` | 要用來裝載共用的密碼。 如果您使用星號（**&#42;**），系統會提示您輸入密碼。 |
 | `<computername>` | 指定 NFS 伺服器的名稱。 |
 | `<sharename>` | 指定檔案系統的名稱。 |
 | `<devicename>` | 指定裝置的磁碟機號和名稱。 如果您使用星號（**&#42;**），此值代表第一個可用的驅動程式字母。 |
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

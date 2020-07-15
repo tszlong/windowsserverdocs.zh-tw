@@ -7,13 +7,13 @@ author: rick-man
 ms.author: rickman
 manager: stevelee
 ms.topic: article
-ms.date: 08/21/2019
-ms.openlocfilehash: 7ca8d29b58dc8682575d9cb8b0f26aa49b257335
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.date: 07/14/2020
+ms.openlocfilehash: c8e0e8798da9cb4a2b3ca317d9632450ade82504
+ms.sourcegitcommit: f81aa22739d818382d314561dece59a9341dfb6f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80307860"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86390095"
 ---
 # <a name="plan-for-gpu-acceleration-in-windows-server"></a>在 Windows Server 中規劃 GPU 加速
 
@@ -46,7 +46,7 @@ GPU 虛擬化技術可在虛擬化環境中啟用 GPU 加速，通常是在虛�
 
 因為每個實體 GPU 最多可以為一部 VM 提供加速，所以一次部署的虛擬機器只可加速數量有限。 如果您正在開發架構支援共用虛擬機器的服務，請考慮為每個 VM 裝載多個加速的工作負載。 例如，如果您要使用 RDS 建立桌面遠端服務，您可以利用 Windows Server 的多會話功能，在每部 VM 上裝載多個使用者桌面，來改善使用者規模。 這些使用者會分享 GPU 加速的優點。
 
-如需詳細資訊，請參閱這些主題：
+如需詳細資訊，請參閱下列主題：
 
 - [規劃部署離散裝置指派](plan-for-deploying-devices-using-discrete-device-assignment.md)
 - [使用離散裝置指派來部署圖形裝置](../deploy/Deploying-graphics-devices-using-dda.md)
@@ -54,14 +54,14 @@ GPU 虛擬化技術可在虛擬化環境中啟用 GPU 加速，通常是在虛�
 ## <a name="remotefx-vgpu"></a>RemoteFX vGPU
 
 > [!NOTE]
-> Windows Server 2016 完全支援 RemoteFX vGPU，但 Windows Server 2019 並不支援。
+> 基於安全性考慮，自2020年7月14日起，預設會在所有 Windows 版本上停用 RemoteFX vGPU。 若要深入瞭解，請參閱[KB 4570006](https://support.microsoft.com/help/4570006)。
 
 RemoteFX vGPU 是一種圖形虛擬化技術，可讓單一實體 GPU 在多部虛擬機器之間共用。 在 RemoteFX vGPU 部署中，虛擬化工作負載會在 Microsoft 的 RemoteFX 3D 介面卡上執行，這會協調主機和來賓之間的 GPU 處理要求。 RemoteFX vGPU 最適合知識工作者和高載的工作負載，而不需要專用的 GPU 資源。 RemoteFX vGPU 只能提供 GPU 加速給 Windows Vm。
 
-如需詳細資訊，請參閱這些主題：
+如需詳細資訊，請參閱下列主題：
 
 - [使用 RemoteFX vGPU 部署圖形裝置](../deploy/deploy-graphics-devices-using-remotefx-vgpu.md)
-- [RemoteFX 3D 視訊卡（vGPU）支援](../../../remote/remote-desktop-services/rds-supported-config.md#remotefx-3d-video-adapter-vgpu-support)
+- [RemoteFX 3D 視訊卡 (vGPU) 支援](../../../remote/remote-desktop-services/rds-supported-config.md#remotefx-3d-video-adapter-vgpu-support)
 
 ## <a name="comparing-dda-and-remotefx-vgpu"></a>比較 DDA 和 RemoteFX vGPU
 
@@ -72,11 +72,11 @@ RemoteFX vGPU 是一種圖形虛擬化技術，可讓單一實體 GPU 在多部�
 | GPU 資源模型    | 專用或共用                                                                 | 僅限專用                                                                      |
 | VM 密度            | 高（一或多個 Gpu 到多個 Vm）                                                 | 低（一或多個 Gpu 到一個 VM）                                                    |
 | 應用程式相容性     | DX 11.1、OpenGL 4.4、OpenCL 1.1                                                     | 廠商提供的所有 GPU 功能 (DX 12、OpenGL、CUDA)                       |
-| AVC444                | 預設啟用                                                                  | 可透過群組原則                                                      |
+| AVC444                | 預設為啟用                                                                  | 可透過群組原則                                                      |
 | GPU VRAM              | 最多 1 GB 專用 VRAM                                                           | 最多 GPU 支援的 VRAM                                                     |
 | 畫面播放速率            | 最多 30 fps                                                                         | 最多 60 fps                                                                         |
 | 客體中的 GPU 驅動程式   | RemoteFX 3D 介面卡顯示器驅動程式 (Microsoft)                                      | GPU 廠商驅動程式（NVIDIA、AMD、Intel）                                              |
-| 主機 OS 支援       | Windows Server 2016                                                                 | Windows Server 2016;Windows Server 2019                                            |
+| 主機 OS 支援       | Windows Server 2016                                                                 | Windows Server 2016;Windows Server 2019                                            |
 | 客體 OS 支援      | Windows Server 2012 R2;Windows Server 2016;Windows 7 SP1;Windows 8.1;Windows 10 | Windows Server 2012 R2;Windows Server 2016;Windows Server 2019;Windows 10;廠商 |
 | Hypervisor            | Microsoft Hyper-V                                                                   | Microsoft Hyper-V                                                                   |
 | GPU 硬體          | 企業 GPU (例如 Nvidia Quadro/GRID 或 AMD FirePro)                         | 企業 GPU (例如 Nvidia Quadro/GRID 或 AMD FirePro)                         |
