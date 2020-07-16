@@ -7,20 +7,22 @@ manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
-ms.date: 10/25/2017
+ms.date: 07/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 77f82023b8ed5db6f329530bebc3162cb8565856
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 581b80fe07043314e573261a6735f121bc30e2e3
+ms.sourcegitcommit: a5badf6b08ec0b25ec73df4b827c4e40b5ccd974
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474545"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86410362"
 ---
 # <a name="using-storage-spaces-direct-in-guest-virtual-machine-clusters"></a>使用來賓虛擬機器叢集中的儲存空間直接存取
 
 > 適用於：Windows Server 2019、Windows Server 2016
 
-您可以將儲存空間直接存取部署在實體伺服器或虛擬機器來賓叢集的叢集上，如本主題中所述。 這種類型的部署會在私人或公用雲端上的一組 Vm 之間提供虛擬共用存放裝置，讓應用程式的高可用性解決方案得以用來提高應用程式的可用性。
+您可以在實體伺服器或虛擬機器來賓叢集的叢集上部署儲存空間直接存取（有時稱為 S2D），如本主題中所述。 這種類型的部署會在私人或公用雲端上的一組 Vm 之間提供虛擬共用存放裝置，讓應用程式的高可用性解決方案得以用來提高應用程式的可用性。
+
+若要改為針對來賓虛擬機器使用 Azure 共用磁片，請參閱[Azure 共用磁片](/azure/virtual-machines/windows/disks-shared)。
 
 ![](media/storage-spaces-direct-in-vm/storage-spaces-direct-in-vm.png)
 
@@ -30,7 +32,7 @@ ms.locfileid: "85474545"
 
 <iframe src="https://channel9.msdn.com/Series/Microsoft-Hybrid-Cloud-Best-Practices-for-IT-Pros/Step-by-Step-Deploy-Windows-Server-2016-Storage-Spaces-Direct-S2D-Cluster-in-Microsoft-Azure/player" width="960" height="540" allowfullscreen></iframe>
 
-## <a name="requirements"></a>需求
+## <a name="requirements-for-guest-clusters"></a>來賓叢集的需求
 
 在虛擬化環境中部署儲存空間直接存取時，適用下列考慮事項。
 
@@ -62,29 +64,29 @@ ms.locfileid: "85474545"
 - 藉由執行下列 PowerShell Cmdlet，在健全狀況服務中停用自動磁片磁碟機更換功能：
 
     ```powershell
-          Get-storagesubsystem clus* | set-storagehealthsetting -name "System.Storage.PhysicalDisk.AutoReplace.Enabled" -value "False"
-          ```
+    Get-storagesubsystem clus* | set-storagehealthsetting -name "System.Storage.PhysicalDisk.AutoReplace.Enabled" -value "False"
+    ```
 
-- To give greater resiliency to possible VHD / VHDX / VMDK storage latency in guest clusters, increase the Storage Spaces I/O timeout value:
+- 若要為來賓叢集中可能的 VHD/VHDX/VMDK 儲存延遲提供更高的復原能力，請增加儲存空間 i/o 超時值：
 
     `HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\spaceport\\Parameters\\HwTimeout`
 
     `dword: 00007530`
 
-    The decimal equivalent of Hexadecimal 7530 is 30000, which is 30 seconds. Note that the default value is 1770 Hexadecimal, or 6000 Decimal, which is 6 seconds.
+    十六進位7530的十進位對等是30000，也就是30秒。 請注意，預設值為1770十六進位，或 6000 Decimal，其為6秒。
 
-## Not supported
+## <a name="not-supported"></a>不支援
 
-- Host level virtual disk snapshot/restore
+- 主機層級虛擬磁片快照集/還原
 
-    Instead use traditional guest level backup solutions to backup and restore the data on the Storage Spaces Direct volumes.
+    相反地，請使用傳統來賓層級備份解決方案來備份和還原儲存空間直接存取磁片區上的資料。
 
-- Host level virtual disk size change
+- 主機層級的虛擬磁片大小變更
 
-    The virtual disks exposed through the virtual machine must retain the same size and characteristics. Adding more capacity to the storage pool can be accomplished by adding more virtual disks to each of the virtual machines and adding them to the pool. It's highly recommended to use virtual disks of the same size and characteristics as the current virtual disks.
+    透過虛擬機器公開的虛擬磁片必須保留相同的大小和特性。 將更多虛擬磁片新增至每部虛擬機器，並將其新增至集區，即可完成將更多的容量新增至存放集區。 強烈建議使用與目前虛擬磁片相同大小和特性的虛擬磁片。
 
-## Additional References
+## <a name="additional-references"></a>其他參考
 
-- [Additional Azure Iaas VM templates for deploying Storage Spaces Direct, videos, and step-by-step guides](https://techcommunity.microsoft.com/t5/Failover-Clustering/Deploying-IaaS-VM-Guest-Clusters-in-Microsoft-Azure/ba-p/372126).
+- [用於部署儲存空間直接存取、影片和逐步指南的其他 Azure IAAS VM 範本](https://techcommunity.microsoft.com/t5/Failover-Clustering/Deploying-IaaS-VM-Guest-Clusters-in-Microsoft-Azure/ba-p/372126)。
 
-- [Additional Storage Spaces Direct Overview](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)
+- [其他儲存空間直接存取總覽](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)
