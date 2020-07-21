@@ -8,14 +8,14 @@ ms.assetid: 7afc65f8-3158-49c9-9d48-4dab1c69afba
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 05/06/2020
+ms.date: 07/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c219a6dbc5922e9d7240b3004c1dd92eb7d057a
-ms.sourcegitcommit: 67116322915066b85decb4261d47cedec2cfe12f
+ms.openlocfilehash: 7be6b7542ca77c80a638df6404aefe77d8d7d19c
+ms.sourcegitcommit: b363d8ceed863c8fd5a464bc8afdc4ef1af9a6f8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82903456"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86445702"
 ---
 # <a name="get-started-with-the-macos-client"></a>開始使用 macOS 用戶端
 
@@ -38,9 +38,9 @@ ms.locfileid: "82903456"
 
 ## <a name="what-about-the-mac-beta-client"></a>Mac Beta 用戶端呢？
 
-我們正在 AppCenter 的預覽通道上測試新功能。 想一探究竟嗎？ 請前往[適用於 Mac 的 Microsoft 遠端桌面](https://aka.ms/rdmacbeta)，然後選取 [下載]  。 您不需要建立帳戶或登入 AppCenter，即可下載 Beta 用戶端。
+我們正在 AppCenter 的預覽通道上測試新功能。 想一探究竟嗎？ 請前往[適用於 Mac 的 Microsoft 遠端桌面](https://aka.ms/rdmacbeta)，然後選取 [下載]。 您不需要建立帳戶或登入 AppCenter，即可下載 Beta 用戶端。
 
-如果您已有用戶端，您可以檢查更新，以確定您擁有最新版本。 在 Beta 用戶端中，選取頂端的 [Microsoft 遠端桌面 Beta 版]  ，然後選取 [檢查更新]  。 
+如果您已有用戶端，您可以檢查更新，以確定您擁有最新版本。 在 Beta 用戶端中，選取頂端的 [Microsoft 遠端桌面 Beta 版]，然後選取 [檢查更新]。 
 
 ## <a name="add-a-workspace"></a>新增工作區
 
@@ -48,11 +48,13 @@ ms.locfileid: "82903456"
 
 若要訂閱摘要：
 
-1. 選取主頁面上的 [新增摘要]  ，以連線至服務並擷取您的資源。
+1. 選取主頁面上的 [新增摘要]，以連線至服務並擷取您的資源。
 2. 輸入摘要 URL。 這可以是 URL 或電子郵件地址：
-   - 如果您使用 URL，請使用系統管理員提供給您的帳戶。 此 URL 通常是 <https://rdweb.wvd.microsoft.com>。
+   - 此 URL 通常是 Windows 虛擬桌面 URL。 您要使用的版本取決於正在使用的 Windows 虛擬桌面版本。
+      - 若為 2019 秋季版，請使用 `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`。
+      - 若為 2020 春季版，請使用 `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`。
    - 若要使用電子郵件，請輸入您的電子郵件地址。 這會告訴用戶端搜尋與您的電子郵件地址相關聯的 URL (如果系統管理員是這樣設定伺服器的話)。
-3. 選取 [訂閱]  。
+3. 選取 [訂閱]。
 4. 出現提示時，使用您的使用者帳戶登入。
 
 登入之後，您應該會看到可用資源的清單。
@@ -61,18 +63,20 @@ ms.locfileid: "82903456"
 
 ### <a name="export-and-import-connections"></a>匯出和匯入連線
 
-您可以匯出遠端桌面連線定義，並在不同的裝置上加以使用。 遠端桌面會儲存在個別的 .RDP 檔案中。
+您可以匯出遠端桌面連線定義，並在不同的裝置上加以使用。 遠端桌面會儲存在個別的 RDP 檔案中。
+
+若要匯出 RDP 檔案：
 
 1. 在連線中心，以滑鼠右鍵按一下遠端桌面。
-2. 選取 [匯出]  。
-3. 瀏覽至要儲存遠端桌面 .RDP 檔案的位置。
-4. 選取 [確定]  。
+2. 選取 [匯出]。
+3. 瀏覽至要儲存遠端桌面 RDP 檔案的位置。
+4. 選取 [確定]。
 
-使用下列步驟匯入遠端桌面 .RDP 檔案。
+若要匯入 RDP 檔案：
 
-1. 在功能表列中，選取 [檔案]   > [匯入]  。
-2. 瀏覽至 .RDP 檔案。
-3. 選取 [開啟]  。
+1. 在功能表列中，選取 [檔案] > [匯入]。
+2. 瀏覽至 RDP 檔案。
+3. 選取 [開啟]。
 
 ## <a name="add-a-remote-resource"></a>新增遠端資源
 
@@ -83,12 +87,12 @@ ms.locfileid: "82903456"
 
 若要新增遠端資源：
 
-1. 在 [連線中心] 中，選取 [+]  ，然後選取 [新增遠端資源]  。 
+1. 在 [連線中心] 中，選取 [+]，然後選取 [新增遠端資源]。
 2. 輸入遠端資源的資訊：
    - **摘要 URL** - RD Web 存取伺服器的 URL。 您也可以在此欄位中輸入您的公司電子郵件帳戶，如此會告訴用戶端搜尋與您電子郵件地址相關聯的 RD Web 存取伺服器。
    - **使用者名稱** - 您要連線的 RD Web 存取伺服器所要使用的使用者名稱。
    - **密碼** - 您要連線的 RD Web 存取伺服器所要使用的密碼。
-3. 選取 \[儲存\]  。
+3. 選取 \[儲存\]。
 
 遠端資源將會顯示於連線中心。
 
@@ -98,10 +102,10 @@ ms.locfileid: "82903456"
 
 若要在喜好設定中設定新的閘道：
 
-1. 在連線中心，選取 [喜好設定 > 閘道]  。 
+1. 在連線中心，選取 [喜好設定 > 閘道]。 
 2. 選取表格底部的 **+** 按鈕，並輸入下列資訊：
    - **伺服器名稱** - 您想要用來作為閘道的電腦名稱。 這可以是 Windows 電腦名稱、網際網路網域名稱或 IP 位址。 您也可以將連接埠資訊新增至伺服器名稱 (例如：**RDGateway:443** 或 **10.0.0.1:443**)。
-   - **使用者名稱** - 您要連線的遠端桌面閘道所要使用的使用者名稱和密碼。 您也可以選取 [使用連線認證]  ，以使用針對遠端桌面連線而使用的相同使用者名稱和密碼。
+   - **使用者名稱** - 您要連線的遠端桌面閘道所要使用的使用者名稱和密碼。 您也可以選取 [使用連線認證]，以使用針對遠端桌面連線而使用的相同使用者名稱和密碼。
 
 ## <a name="manage-your-user-accounts"></a>管理您的使用者帳戶
 
@@ -109,26 +113,28 @@ ms.locfileid: "82903456"
 
 若要建立新的使用者帳戶：
 
-1. 在連線中心選取 [設定]   > [帳戶]  。
-2. 選取 [新增使用者帳戶]  。
+1. 在連線中心選取 [設定] > [帳戶]。
+2. 選取 [新增使用者帳戶]。
 3. 輸入下列資訊：
    - **使用者名稱** - 要儲存以用於遠端連線的使用者名稱。 您可以使用下列任何一種格式輸入使用者名稱：user_name、domain\user_name 或 user_name@domain.com。
    - **密碼** - 您指定的使用者所使用的密碼。 您想要儲存以用於遠端連線的每個使用者帳戶都必須有相關聯的密碼。
    - **易記名稱** - 如果您使用具有不同密碼的相同使用者帳戶，請設定易記名稱以區別這些使用者帳戶。
-4. 選取 [儲存]  ，然後選取 [設定]  。
+4. 選取 [儲存]，然後選取 [設定]。
 
 ## <a name="customize-your-display-resolution"></a>自訂顯示器解析度
 
 您可以指定遠端桌面工作階段的顯示器解析度。
 
-1. 在連線中心選取 [喜好設定]  。
-2. 選取 [解析度]  。
-3. 選取 [+]  。
-4. 輸入解析度的高度和寬度，然後選取 [確定]  。
+1. 在連線中心選取 [喜好設定]。
+2. 選取 [解析度]。
+3. 選取 [+]。
+4. 輸入解析度的高度和寬度，然後選取 [確定]。
 
-若要刪除解析度，請加以選取，然後選取 [-]  。
+若要刪除解析度，請加以選取，然後選取 [-]。
 
-**顯示器有個別空間** 如果您執行 Mac OS X 10.9，並且在 Mavericks 中 ([系統喜好設定 > 任務控制項]  ) 停用了 [顯示器有個別空間]  ，則必須在遠端桌面用戶端中使用相同選項設定這項設定。
+## <a name="displays-have-separate-spaces"></a>顯示器有個別空間
+
+如果您正在執行 Mac OS X 10.9，並且在 Mavericks 中 ([系統喜好設定] > [任務控制項]) 停用了 [顯示器有個別空間]，則必須在遠端桌面用戶端中使用相同選項設定這項設定。
 
 ### <a name="drive-redirection-for-remote-resources"></a>遠端資源的磁碟機重新導向
 
@@ -139,18 +145,18 @@ ms.locfileid: "82903456"
 
 ## <a name="use-a-keyboard-in-a-remote-session"></a>在遠端工作階段中使用鍵盤
 
-Mac 的鍵盤配置與 Windows 的鍵盤配置不同。 
+Mac 的鍵盤配置與 Windows 的鍵盤配置不同。
 
 - Mac 鍵盤上的 Command 鍵等同於 Windows 鍵。
-- 若要執行在 Mac 上使用 Command 按鈕的動作，您必須使用 Windows 中的 Control 按鈕 (例如：複製 = Ctrl + C)。
-- 同時按住 FN 鍵可在工作階段中啟用功能鍵 (例如：FN + F1)。
+- 若要在 Mac 上執行使用 Command 按鈕的動作，則必須使用 Windows 中的 Control 按鈕 (例如：Copy = Ctrl+C)。
+- 同時按下 FN 鍵 (例如：FN+F1) 則可在工作階段中啟用功能鍵。
 - 在 Mac 鍵盤上，空格鍵右側的 Alt 鍵等同於 Windows 中的 Alt Gr/右 Alt 鍵。
 
 根據預設，遠端工作階段會使用與您執行用戶端所在的 OS 相同的鍵盤地區設定。 (如果您的 Mac 執行 en-us OS，則遠端工作階段也會使用 en-us。)如果未使用 OS 鍵盤地區設定，請檢查遠端電腦上的鍵盤設定，並手動進行變更。 如需鍵盤和地區設定的詳細資訊，請參閱[遠端桌面用戶端常見問題集](remote-desktop-client-faq.md)。
 
 ## <a name="support-for-remote-desktop-gateway-pluggable-authentication-and-authorization"></a>支援遠端桌面閘道插入式驗證和授權
 
-Windows Server 2012 R2 導入了新式驗證方法的支援，也就是遠端桌面閘道插入式驗證和授權，可為自訂驗證常式提供更大的彈性。 現在，您可以在 Mac 用戶端試用此驗證模型。 
+Windows Server 2012 R2 導入了新式驗證方法的支援，也就是遠端桌面閘道插入式驗證和授權，可為自訂驗證常式提供更大的彈性。 現在，您可以在 Mac 用戶端試用此驗證模型。
 
 > [!IMPORTANT]
 > 雖然本文的前半段有所討論，但 Windows 8.1 之前的自訂驗證和授權模型不受支援。
