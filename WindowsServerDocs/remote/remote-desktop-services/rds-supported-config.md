@@ -4,17 +4,17 @@ description: 提供 Windows Server 2016 和 Windows Server 2019 中支援 RDS �
 ms.prod: windows-server
 ms.technology: remote-desktop-services
 ms.author: elizapo
-ms.date: 10/22/2019
+ms.date: 07/14/2020
 ms.topic: article
 ms.assetid: c925c7eb-6880-411f-8e59-bd0f57cc5fc3
 author: lizap
 manager: dongill
-ms.openlocfilehash: dae6c00bd09e9c10e32932701095244a75f9ca7a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 406112eae884b1e34d54eb18700c3ad28c3f52c6
+ms.sourcegitcommit: f81aa22739d818382d314561dece59a9341dfb6f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80860111"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86390075"
 ---
 # <a name="supported-configurations-for-remote-desktop-services"></a>支援遠端桌面服務的設定
 
@@ -53,7 +53,7 @@ ms.locfileid: "80860111"
 
 遠端桌面服務支援已安裝 GPU 的系統。 可以透過遠端連線來使用需要 GPU 的應用程式。 此外，也可以啟用 GPU 加速轉譯和編碼，以改善應用程式效能和擴充性。
 
-遠端桌面服務工作階段裝載和單一工作階段的用戶端作業系統，可以透過許多方式利用提供給作業系統的實體或虛擬 GPU，其中包含 [Azure GPU 最佳化的虛擬機器大小](/en-us/azure/virtual-machines/windows/sizes-gpu)、實體 RDSH 伺服器可用的 GPU、RemoteFX vGPU (僅適用於 Windows Server 2016) 以及由支援的 Hypervisor 提供給 VM 的 GPU。
+遠端桌面服務工作階段裝載和單一工作階段的用戶端作業系統，可以透過許多方式利用提供給作業系統的實體或虛擬 GPU，其中包含 [Azure GPU 最佳化的虛擬機器大小](/en-us/azure/virtual-machines/windows/sizes-gpu)、實體 RDSH 伺服器可用的 GPU 以及由支援的 Hypervisor 提供給 VM 的 GPU。
 
 請參閱[哪一種圖形虛擬化技術適合您？](rds-graphics-virtualization.md)以協助找出您所需的技術。 如需 DDA 的特定資訊，請參閱[規劃部署離散裝置指派](../../virtualization/hyper-v/plan/plan-for-deploying-devices-using-discrete-device-assignment.md)。
 
@@ -87,13 +87,15 @@ GPU 廠商對於 RDSH 案例可能會有個別的授權配置，或限制伺服�
 
 ### <a name="remotefx-3d-video-adapter-vgpu-support"></a>RemoteFX 3D 視訊卡 (vGPU) 支援
 
+> [!NOTE]
+> 基於安全性考量，自 2020 年 7 月 14 日的安全性更新開始，預設會停用所有 Windows 版本上的 RemoteFX vGPU。 若要深入了解，請參閱 [KB 4570006](https://support.microsoft.com/help/4570006)。
+
 當 VM 在 Windows Server 2012 R2 或 Windows Server 2016 上以 Hyper-V 客體執行時，遠端桌面服務支援 RemoteFX vGPU。 下列客體作業系統具有 RemoteFX vGPU 支援：
 
 - Windows 7 SP1
 - Windows 8.1
 - Windows 10 版本 1703 或更新版本
 - 僅限單一工作階段部署中的 Windows Server 2016
-- 僅限單一工作階段部署中的 Windows Server 2019
 
 ### <a name="discrete-device-assignment-support"></a>離散裝置指派支援
 
