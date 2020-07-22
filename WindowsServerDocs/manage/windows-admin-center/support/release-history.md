@@ -7,18 +7,19 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 01/06/2020
 ms.prod: windows-server
-ms.openlocfilehash: 3976761836e4bbec2a3d06d56220066a595046b4
-ms.sourcegitcommit: 074b59341640a8ae0586d6b37df7ba256e03a0c6
+ms.openlocfilehash: a047965c260198336d3a34386cb5dc72094e7a16
+ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81650088"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86891333"
 ---
 # <a name="windows-admin-center-release-history"></a>Windows Admin Center 發行歷程記錄
 
 以下是我們最新發行的功能清單：
 
-- [1910.2](https://aka.ms/wac1910.2)版是最新的 GA 版本-它包含平臺存取範圍的更新，以及許多 bug 修正
+- [2007](https://aka.ms/wac2007)版是最新的 GA 版本，其中包括支援新的 Azure Stack HCI 和數個工具的新功能。
+- [1910.2](https://aka.ms/wac1910.2)版包含平臺存取範圍的更新，以及許多 bug 修正
 - [1910](https://aka.ms/wac1910)版引進了數個新的 Azure 混合式服務，並將先前處於預覽狀態的功能帶入 GA 頻道。
 - 版本 [1909](https://aka.ms/wac1909) 引進了 Azure VM 特定的連線類型，並將傳統容錯移轉叢集和 HCI 叢集的連線類型統一。
 - 版本 [1908](https://aka.ms/wac1908) 新增了視覺更新、Packetmon、FlowLog Audit、叢集的 Azure 監視器上架，以及透過 HTTPS 支援 WinRM (連接埠 5986)。

@@ -8,12 +8,12 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: d7dc3455c5d7c6b00940008ceea646436b40bed0
-ms.sourcegitcommit: e51dd9dabec82c59e805e7a04c27e56c83773857
+ms.openlocfilehash: f7e62f05a340a2186a012d7ed99e3ecc46654256
+ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82613730"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86891397"
 ---
 # <a name="windows-admin-center-known-issues"></a>Windows Admin Center 已知問題
 
@@ -31,7 +31,7 @@ ms.locfileid: "82613730"
 
 - 在1910.2 版的 Windows 系統管理中心內，您可能無法連線到特定硬體上的 Hyper-v 伺服器。 如果您在此問題遭到封鎖，[請下載先前的組建](https://aka.ms/wacprevious)。 
 
-- 如果您將 Windows 系統管理中心安裝為**Windows Server 2016**上的閘道，請使用 [繁重]，此服務可能會在包含```Faulting application name: sme.exe```和```Faulting module name: WsmSvc.dll```的事件記錄檔中發生錯誤時損毀。 這是因為 Windows Server 2019 已修正的錯誤。 Windows Server 2016 的修補程式隨附于2月2019累積更新（ [KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977)）。
+- 如果您將 Windows 系統管理中心安裝為**Windows Server 2016**上的閘道，請使用 [繁重]，此服務可能會在包含和的事件記錄檔中發生錯誤時損毀 ```Faulting application name: sme.exe``` ```Faulting module name: WsmSvc.dll``` 。 這是因為 Windows Server 2019 已修正的錯誤。 Windows Server 2016 的修補程式隨附于2月2019累積更新（ [KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977)）。
 
 - 如果您已將 Windows 系統管理中心安裝為閘道，且您的連線清單似乎已損毀，請執行下列步驟：
 
@@ -55,7 +55,7 @@ ms.locfileid: "82613730"
 
 ### <a name="microsoft-edge"></a>Microsoft Edge
 
-- 如果您已將 Windows 系統管理中心部署為服務，而且您使用 Microsoft Edge 作為瀏覽器，則在建立新的瀏覽器視窗之後，將閘道連線至 Azure 可能會失敗。 嘗試解決此問題，方法是在https://login.microsoftonline.com客戶https://login.live.com端瀏覽器上新增、和閘道的 URL 作為 [受信任的網站] 和 [允許的網站] 快顯封鎖程式設定。 如需修正此問題的詳細指引，請[參考疑難排解指南](troubleshooting.md#azure-features-dont-work-properly-in-edge)。 [17990376]
+- 如果您已將 Windows 系統管理中心部署為服務，而且您使用 Microsoft Edge 作為瀏覽器，則在建立新的瀏覽器視窗之後，將閘道連線至 Azure 可能會失敗。 嘗試解決此問題，方法是在 https://login.microsoftonline.com https://login.live.com 用戶端瀏覽器上新增、和閘道的 URL 作為 [受信任的網站] 和 [允許的網站] 快顯封鎖程式設定。 如需修正此問題的詳細指引，請[參考疑難排解指南](troubleshooting.md#azure-features-dont-work-properly-in-edge)。 [17990376]
 
 ### <a name="google-chrome"></a>Google Chrome
 
@@ -69,7 +69,7 @@ ms.locfileid: "82613730"
 
 Windows Admin Center 未使用 Mozilla Firefox 來測試，但大部分功能應該都能運作。
 
-- Windows 10 安裝： Mozilla Firefox 有自己的憑證存放區，因此您必須將```Windows Admin Center Client```憑證匯入 Firefox，才能在 windows 10 上使用 Windows 系統管理中心。
+- Windows 10 安裝： Mozilla Firefox 有自己的憑證存放區，因此您必須將憑證匯入 ```Windows Admin Center Client``` Firefox，才能在 windows 10 上使用 windows 系統管理中心。
 
 ## <a name="websocket-compatibility-when-using-a-proxy-service"></a>使用 Proxy 服務時的 WebSocket 相容性
 
@@ -106,9 +106,9 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 
   - 若要解決此問題，請在閘道電腦上以提高許可權的命令提示字元中使用下列命令：```winrm set winrm/config @{MaxEnvelopeSizekb="8192"}```
 
-### <a name="files"></a>檔案
+### <a name="files"></a>檔案儲存體
 
-- 尚未支援上傳或下載大型檔案。 （\~100mb 限制）[12524234]
+- 尚未支援上傳或下載大型檔案。 （ \~ 100mb 限制） [12524234]
 
 ### <a name="powershell"></a>PowerShell
 
@@ -130,9 +130,9 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 
 - 管理 Windows Server 2012 時，遠端桌面工具可能無法連接。 [20258278]
 
-- 使用遠端桌面連線到未加入網域的電腦時，您必須以格式輸入您的```MACHINENAME\USERNAME```帳戶。
+- 使用遠端桌面連線到未加入網域的電腦時，您必須以格式輸入您的帳戶 ```MACHINENAME\USERNAME``` 。
 
-- 有些設定可以封鎖 Windows Admin Center 的遠端桌面用戶端與群組原則。 如果您遇到這種情況```Allow users to connect remotely by using Remote Desktop Services``` ，請在下啟用```Computer Configuration/Policies/Administrative Templates/Windows Components/Remote Desktop Services/Remote Desktop Session Host/Connections```
+- 有些設定可以封鎖 Windows Admin Center 的遠端桌面用戶端與群組原則。 如果您遇到這種情況，請 ```Allow users to connect remotely by using Remote Desktop Services``` 在下啟用```Computer Configuration/Policies/Administrative Templates/Windows Components/Remote Desktop Services/Remote Desktop Session Host/Connections```
 
 - 遠端桌面受到[websocket 相容性](#websocket-compatibility-when-using-a-proxy-service)的影響。
 
@@ -154,7 +154,7 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 
 - 如果您選擇要自動重新開機，將會在狀態更新進度達 100% 之前發生重新開機。 [13098852]
 
-### <a name="storage"></a>存放裝置
+### <a name="storage"></a>儲存體
 
 - 下層：DVD/CD/軟碟機不會顯示為下層的磁碟區。
 
@@ -199,6 +199,82 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 
   - 您可能還需要使用 ```Set-NetFirewallRule -Name WINRM-HTTP-In-TCP -RemoteAddress Any``` 更新防火牆，以允許來自外部本機子網路的連線。 如需更多嚴格網路案例，請參閱[此文件](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-5.1)。
 
+## <a name="cluster-deployment"></a>叢集部署
+
+### <a name="step-12"></a>步驟1。2
+新增伺服器時，目前不支援混合的工作組電腦。 用於叢集化的所有電腦都必須屬於相同的工作組。 如果不是，[下一步] 按鈕將會停用，而且會出現下列錯誤：「無法在不同的 Active Directory 網域中建立具有伺服器的叢集。 請確認伺服器名稱是否正確。 請將所有伺服器移入相同的網域，然後再試一次。」
+
+### <a name="step-14"></a>步驟1。4
+Hyper-v 必須安裝在執行 Azure Stack HCI OS 的虛擬機器上。 嘗試啟用這些虛擬機器的 Hyper-v 功能將會失敗，並出現下列錯誤： 
+
+![Hyper-v 啟用錯誤的螢幕擷取畫面](../media/cluster-create-install-hyperv.png)
+
+若要在執行 Azure Stack HCI OS 的虛擬機器上安裝 Hyper-v，請執行下列命令： 
+
+```PowerShell
+Enable-windowsoptionalfeature -online -featurename Microsoft-hyper-v 
+```
+
+### <a name="step-17"></a>步驟1。7
+在安裝更新之後，伺服器可能會花費比預期更長的時間來重新開機。 Windows 管理中心叢集部署嚮導會定期檢查伺服器重新開機狀態，以得知伺服器是否已成功重新開機。 不過，如果使用者以手動方式在嚮導外部重新開機伺服器，則 wizard 不會有適當的方式來捕捉伺服器狀態。 
+
+如果您想要手動重新開機伺服器，請結束目前的 wizard 會話。 重新開機伺服器之後，您可以重新啟動精靈。 
+
+### <a name="stretch-cluster-creation"></a>延展叢集建立
+建議您在建立延展式叢集時，使用已加入網域的伺服器。 因為 WinRM 限制，所以嘗試使用工作組電腦進行延展叢集部署時，發生網路分割問題。
+
+### <a name="undo-and-start-over"></a>復原並從頭開始
+重複使用相同的電腦進行叢集部署時，清除先前的叢集實體對於在同一組機器中成功部署叢集而言非常重要。 如需如何清理叢集的指示，請參閱[部署超融合基礎結構](https://docs.microsoft.com/windows-server/manage/windows-admin-center/use/deploy-hyperconverged-infrastructure#undo-and-start-over)的頁面。 
+
+### <a name="credssp"></a>CredSSP
+Windows 管理中心叢集部署嚮導會在數個地方使用 CredSSP。 您會在嚮導期間遇到此錯誤訊息（這最常發生于 [驗證叢集] 步驟）：
+
+![叢集建立 CredSSP 錯誤的螢幕擷取畫面](../media/cluster-create-credssp-error.jpg)
+
+您可以使用下列步驟進行疑難排解： 
+
+1. 停用所有節點和 Windows 管理中心閘道電腦上的 CredSSP 設定。 在您的閘道電腦上執行第一個命令，然後在叢集中的所有節點上執行第二個命令： 
+
+```PowerShell
+Disable-WsmanCredSSP -Role Client
+```
+```PowerShell
+Disable-WsmanCredSSP -Role Server
+```
+2. 修復所有節點上的信任。 在所有節點上執行下列命令： 
+```PowerShell
+Test-ComputerSecureChannel -Verbose -Repair -Credential <account name>
+```
+
+3. 使用命令重設群組原則傳播資料
+```Command Line
+gpupdate /force
+```
+
+4. 重新開機節點。 重新開機之後，請使用下列命令來測試您的閘道電腦與目標節點之間的連線，以及節點之間的連線能力： 
+```PowerShell
+Enter-PSSession -computername <node fqdn>
+```
+
+### <a name="nested-virtualization"></a>巢狀虛擬化
+在虛擬機器上驗證 Azure Stack HCI OS 叢集部署時，必須先開啟嵌套的虛擬化，才能使用下列 powershell 命令啟用角色/功能：
+
+```PowerShell
+Set-VMProcessor -VMName <VMName> -ExposeVirtualizationExtensions $true 
+```
+
+  > [!Note]
+  > 若要在虛擬機器環境中成功執行虛擬交換器小組，必須在建立虛擬機器之後，立即在主機的 PowerShell 中執行下列命令： Get-vm |% {set-VMNetworkAdapter-VMName $ _。名稱-MacAddressSpoofing On-AllowTeaming on} 
+
+如果您是使用 Azure Stack HCI OS 部署叢集，則會有額外的需求。 VM 開機虛擬硬碟必須預先安裝 Hyper-v 功能。 若要這麼做，請在建立虛擬機器之前，執行下列命令： 
+
+```PowerShell
+Install-WindowsFeature –VHD <Path to the VHD> -Name Hyper-V, RSAT-Hyper-V-Tools, Hyper-V-PowerShell
+```
+
+### <a name="support-for-rdma"></a>支援 RDMA
+Windows 系統管理中心2007版中的叢集部署嚮導不支援 RDMA 設定。   
+
 ## <a name="failover-cluster-manager-solution"></a>容錯移轉叢集管理員解決方案
 
 - 管理叢集時，(超融合式或傳統式？) 可能會發生**找不到命令介面**錯誤。 如果發生這種情況，請重新載入瀏覽器，或往外瀏覽至其他工具，然後再瀏覽器回來。 [13882442]
@@ -220,8 +296,8 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 Azure 檔案同步需要 Azure 中 Windows 系統管理中心未提供1910版之前的許可權。 如果您使用早于 Windows 管理中心版本1910的版本向 Azure 註冊您的 Windows 管理中心閘道，您將需要更新 Azure Active Directory 應用程式，以取得在最新版本的 Windows 管理中心內使用 Azure 檔案同步的正確許可權。 其他許可權可讓 Azure 檔案同步執行自動設定儲存體帳戶存取權，如這篇文章中所述：[確定 Azure 檔案同步有權存取儲存體帳戶](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#tabpanel_CeZOj-G++Q-5_azure-portal)。
 
 若要更新您的 Azure Active Directory 應用程式，您可以執行兩個動作的其中一項
-1. 移至 [**設定** > ] [**Azure** > ] [**取消註冊**]，然後再次向 azure 註冊 Windows 系統管理中心，並確定您選擇建立新的 Azure Active Directory 應用程式。 
-2. 移至您的 Azure Active Directory 應用程式，並手動將您現有 Azure Active Directory 應用程式所需的許可權新增到已向 Windows 系統管理中心註冊。 若要這麼做，請移至**azure 中的**[**設定** > ] [**azure** > View]。 從 Azure 的 [**應用程式註冊**] 分頁中，移至 [ **API 許可權**]，選取 [**新增許可權**]。 依序選取 [ **Azure Active Directory 圖形]**、[**委派的許可權**] 和 [**目錄**]，然後選取 [ **AccessAsUser**]。 按一下 [**新增許可權**]，將更新儲存至應用程式。
+1. 移至 [**設定**] [  >  **Azure**]  >  [**取消註冊**]，然後再次向 azure 註冊 Windows 系統管理中心，並確定您選擇建立新的 Azure Active Directory 應用程式。 
+2. 移至您的 Azure Active Directory 應用程式，並手動將您現有 Azure Active Directory 應用程式所需的許可權新增到已向 Windows 系統管理中心註冊。 若要這麼做，請**Settings**移至  >  **Azure**  >  **azure 中的**[設定] [azure View]。 從 Azure 的 [**應用程式註冊**] 分頁中，移至 [ **API 許可權**]，選取 [**新增許可權**]。 依序選取 [ **Azure Active Directory 圖形]**、[**委派的許可權**] 和 [**目錄**]，然後選取 [ **AccessAsUser**]。 按一下 [**新增許可權**]，將更新儲存至應用程式。
 
 ### <a name="options-for-setting-up-azure-management-services"></a>設定 Azure 管理服務的選項
 
