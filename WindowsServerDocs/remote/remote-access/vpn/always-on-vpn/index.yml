@@ -9,67 +9,67 @@ metadata:
   author: eross-msft
   ms.author: lizross
   ms.date: 06/10/2020
-  ms.openlocfilehash: 2196c278e66adbf910646ab1c080efe39e2a4fe7
-  ms.sourcegitcommit: 1c9cb4be74d92afb938cad870c0b4bf506b89e98
+  ms.openlocfilehash: c07ada45d2bb1c1d95901bd493754c93ae75d3d4
+  ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 06/24/2020
-  ms.locfileid: "85332617"
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "86955090"
 landingContent:
 - title: 關於 Always On VPN
   linkLists:
   - linkListType: overview
     links:
     - text: Alwayson VPN 特色和功能
-      url: /windows-server/remote/remote-access/vpn/vpn-map-da
+      url: ../vpn-map-da.md
     - text: 技術概觀
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/always-on-vpn-technology-overview
+      url: ./always-on-vpn-technology-overview.md
     - text: Always On VPN 增強功能
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/always-on-vpn-technology-overview
+      url: ./always-on-vpn-technology-overview.md
     - text: Always On VPN 進階功能
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-adv-options
+      url: ./deploy/always-on-vpn-adv-options.md
     - text: Windows Server 和 Windows 10 的 Always On VPN 部署
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy
+      url: ./deploy/always-on-vpn-deploy.md
 - title: 部署 Always On VPN
   linkLists:
   - linkListType: deploy
     links:
     - text: 部署工作流程和案例
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-deployment
+      url: ./deploy/always-on-vpn-deploy-deployment.md
     - text: 規劃 Always On VPN 部署
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-planning
+      url: ./deploy/always-on-vpn-deploy-planning.md
     - text: 部署 VPN 基礎結構
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/vpn-deploy-server-infrastructure
+      url: ./deploy/vpn-deploy-server-infrastructure.md
     - text: 設定條件式存取
-      url: /windows-server/remote/remote-access/vpn/ad-ca-vpn-connectivity-windows10
+      url: ../ad-ca-vpn-connectivity-windows10.md
 - title: 疑難排解
   linkLists:
   - linkListType: how-to-guide
     links:
     - text: VPN_Profile.ps1 指令碼問題
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#vpnprofileps1-script-issues
+      url: ./deploy/always-on-vpn-deploy-troubleshooting.md#vpn_profileps1-script-issues
     - text: Always On VPN 用戶端連線問題
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#always-on-vpn-client-connection-issues
+      url: ./deploy/always-on-vpn-deploy-troubleshooting.md#always-on-vpn-client-connection-issues
     - text: Azure AD 條件式存取連線問題
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#azure-ad-conditional-access-connection-issues
+      url: ./deploy/always-on-vpn-deploy-troubleshooting.md#azure-ad-conditional-access-connection-issues
   - linkListType: reference
     links:
     - text: 錯誤碼
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#error-codes
+      url: ./deploy/always-on-vpn-deploy-troubleshooting.md#error-codes
     - text: 記錄檔
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#logs
+      url: ./deploy/always-on-vpn-deploy-troubleshooting.md#logs
 - title: 其他資源
   linkLists:
   - linkListType: overview
     links:
     - text: Windows 10 VPN 技術指南
-      url: https://docs.microsoft.com/windows/access-protection/vpn/vpn-guide
+      url: /windows/access-protection/vpn/vpn-guide
     - text: VPNv2 CSP
-      url: https://msdn.microsoft.com/windows/hardware/commercialize/customize/mdm/vpnv2-csp
+      url: /windows/client-management/mdm/vpnv2-csp
     - text: Active Directory 憑證服務
-      url: https://technet.microsoft.com/library/hh831740.aspx
+      url: /previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11)
     - text: 憑證範本
-      url: https://technet.microsoft.com/library/cc730705.aspx
+      url: /previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11)
     - text: 公開金鑰基礎結構設計指導方針
       url: https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx
     - text: AD CS 逐步指南 - 兩層式 PKI 階層部署

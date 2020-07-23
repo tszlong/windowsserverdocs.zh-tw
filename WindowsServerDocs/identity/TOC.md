@@ -275,7 +275,7 @@
 #### [在 Azure 中部署 AD FS](ad-fs/deployment/how-to-connect-fed-azure-adfs.md)
 #### [Azure 中的 AD FS 搭配使用 Azure 流量管理員](ad-fs/deployment/active-directory-adfs-in-azure-with-azure-traffic-manager.md)  
 #### [升級至使用 SQL 資料庫的 Windows Server 2016 AD FS](ad-fs/deployment/Upgrading-to-AD-FS-in-Windows-Server-SQL.md)
-#### [部署 Azure AD Connect Health 以監控雲端中的內部部署身分識別基礎結構](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-health)
+#### [部署 Azure AD Connect Health 以監控雲端中的內部部署身分識別基礎結構](/azure/active-directory/hybrid/whatis-hybrid-identity)
 
 
 #### [Windows Server 2016 和 2012 R2 AD FS 部署指南](ad-fs/deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)
@@ -330,8 +330,8 @@
 ##### [部署同盟伺服器 Proxy](ad-fs/deployment/Deploying-Federation-Server-Proxies.md)
 ###### [檢查清單：設定同盟伺服器 Proxy](ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server-Proxy.md)
 ###### [將電腦加入網域](ad-fs/deployment/Join-a-computer-to-a-Domain.md)
-###### [在僅適用於周邊網路的 DNS 區域中設定同盟伺服器 Proxy 的名稱解析](ad-fs/deployment/Configure-Name-Resolution-for-a-Federation-Server-Proxy-in-a-DNS-Zone-That-Serves-Only-the-Perimeter-Network.md)
-###### [僅適用於周邊網路及網際網路用戶端的 DNS 區域中設定同盟伺服器 Proxy 的名稱解析](ad-fs/deployment/Configure-Name-Resolution-for-a-Federation-Server-Proxy-in-a-DNS-Zone-That-Serves-Both-the-Perimeter-Network-and-Internet-Clients.md)
+###### [在僅適用於周邊網路的 DNS 區域中設定同盟伺服器 Proxy 的名稱解析](./ad-fs/deployment/configure-name-resolution-for-federation-server-proxy-in-dns-zone-serving-only-perimeter-network.md)
+###### [僅適用於周邊網路及網際網路用戶端的 DNS 區域中設定同盟伺服器 Proxy 的名稱解析](./ad-fs/deployment/configure-name-resolution-for-federation-server-proxy-in-dns-zone-serving-only-perimeter-network.md)
 ###### [匯出伺服器驗證憑證的私密金鑰部分](ad-fs/deployment/Export-the-Private-Key-Portion-of-a-Server-Authentication-Certificate.md)
 ###### [將伺服器驗證憑證匯入預設的網站中](ad-fs/deployment/import-a-Server-Authentication-Certificate-to-the-Default-Web-Site.md)
 ###### [安裝同盟服務角色服務](ad-fs/deployment/Install-the-Federation-Service-Proxy-Role-Service.md)
@@ -345,7 +345,7 @@
 ###### [手動建立信賴憑證者信任](ad-fs/operations/create-a-Relying-Party-Trust.md)
 ###### [手動建立宣告提供者信任](ad-fs/operations/create-a-Claims-Provider-Trust.md)
 ###### [建立規則傳送 AD FS 1.x 相容宣告](ad-fs/operations/create-a-Rule-to-Send-an-AD-FS-1x-compatible-Claim.md)
-#### [部署 Azure AD Connect Health](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-health/)
+#### [部署 Azure AD Connect Health](/azure/active-directory/hybrid/whatis-hybrid-identity)
 #### [將 Active Directory Federation Services 角色服務移轉到 Windows Server 2012 R2](ad-fs/deployment/migrate-ad-fs-service-role-to-windows-server-r2.md)
 ##### [準備移轉 AD FS 同盟伺服器](ad-fs/deployment/prepare-migrate-ad-fs-server-r2.md)
 #####[移轉 AD FS 同盟伺服器](ad-fs/deployment/migrate-ad-fs-fed-server-r2.md)
