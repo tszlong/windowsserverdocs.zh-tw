@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/26/2019
-ms.openlocfilehash: fec0ffbd7f2ce5d1efe1953cb4ab283d33f06ec8
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ec7f8c29f71389a6b583fda805c32ddf872321b4
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935736"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956950"
 ---
 # <a name="more"></a>等等
 
@@ -106,8 +106,8 @@ more s
 
 [**更多**] 提示會詢問您要略過的行數，如下所示： `-- More -- Lines:` 。 輸入要略過的行數，然後按 ENTER 鍵。 畫面會變更，以顯示這些線條會略過。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [Windows 修復環境（WinRE）](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)
+- [Windows 修復環境（WinRE）](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)
