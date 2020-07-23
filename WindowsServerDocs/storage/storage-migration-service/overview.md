@@ -8,12 +8,12 @@ ms.date: 03/26/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 6ec1093a77b036cada9e54c82234d653362ce4d3
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1403e0ecd12c4c15924781d75bd9127874018451
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930101"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953890"
 ---
 # <a name="storage-migration-service-overview"></a>儲存體遷移服務總覽
 
@@ -58,7 +58,7 @@ ms.locfileid: "85930101"
 - 用來遷移檔案和資料的**來源伺服器**或**容錯移轉**叢集
 - 執行 Windows Server 2019 （叢集或獨立）以遷移至的**目的地伺服器**。 Windows Server 2016 和 Windows Server 2012 R2 也可以運作，但速度大約是50%
 - 執行 Windows Server 2019 以管理遷移的**協調器伺服器**  <br>如果您只是要遷移少數伺服器，而且其中一部伺服器正在執行 Windows Server 2019，您可以使用它作為協調器。 如果您要遷移更多伺服器，建議使用個別的 orchestrator 伺服器。
-- 除非您偏好使用 PowerShell 來管理遷移，否則執行** [Windows 系統管理中心](../../manage/windows-admin-center/understand/windows-admin-center.md)的電腦或伺服器**會執行儲存體遷移服務使用者介面。 Windows 管理中心和 Windows Server 2019 版本必須至少為1809版。
+- 除非您偏好使用 PowerShell 來管理遷移，否則執行** [Windows 系統管理中心](../../manage/windows-admin-center/overview.md)的電腦或伺服器**會執行儲存體遷移服務使用者介面。 Windows 管理中心和 Windows Server 2019 版本必須至少為1809版。
 
 強烈建議協調器和目的地電腦至少要有兩個核心或兩個個 vcpu，以及至少 2 GB 的記憶體。 使用更多的處理器和記憶體，清查和傳輸作業的速度大幅提升。
 
@@ -151,7 +151,7 @@ Windows 管理中心1910版新增了部署 Azure 虛擬機器的功能。 這會
 - 使用 Azure 檔案同步，更輕鬆地同步已遷移至 Azure 的共用
 - 遷移新的網路，例如 Azure
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [使用儲存體遷移服務遷移檔案伺服器](migrate-data.md)
 - [儲存體遷移服務常見問題（FAQ）](faq.md)
