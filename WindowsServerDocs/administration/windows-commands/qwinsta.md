@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c9b79495d3fa142fd343b9c521563e093d20fc68
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 45590cf9b6fdb5de40e4ab25bd444f847d203670
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932000"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956370"
 ---
 # <a name="qwinsta"></a>qwinsta
 
@@ -23,7 +23,7 @@ ms.locfileid: "85932000"
 顯示遠端桌面工作階段主機伺服器上會話的相關資訊。 此清單不僅包含作用中會話的資訊，還包括伺服器執行的其他會話。
 
 > [!NOTE]
-> 此命令與[查詢會話命令](query-session.md)相同。 若要瞭解最新版本的新功能，請參閱[Windows Server 中遠端桌面服務的新功能](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11))。
+> 此命令與[查詢會話命令](query-session.md)相同。 若要瞭解最新版本的新功能，請參閱[Windows Server 中遠端桌面服務的新功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
 
 ## <a name="syntax"></a>語法
 
@@ -33,7 +33,7 @@ qwinsta [<sessionname> | <username> | <sessionID>] [/server:<servername>] [/mode
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 |--|--|
 | `<sessionname>` | 指定您想要查詢之會話的名稱。 |
 | `<username>` | 指定您想要查詢其會話的使用者名稱。 |
@@ -85,7 +85,7 @@ qwinsta /server:Server2
 qwinsta modeM02
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

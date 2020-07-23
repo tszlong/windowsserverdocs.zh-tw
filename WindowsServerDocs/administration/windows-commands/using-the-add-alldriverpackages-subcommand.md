@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a505175b1b2efc56c9be6d77384c71f8c1db7392
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 277053d48ce8ed853ccd41659af0a8f2418400cf
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937264"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954820"
 ---
 # <a name="add-alldriverpackages"></a>新增-AllDriverPackages
 
@@ -28,7 +28,7 @@ WDSUTIL /Add-AllDriverPackages /FolderPath:<Folder Path> [/Server:<Server name>]
 
 ### <a name="parameters"></a>參數
 
-|          參數           |                                                              說明                                                              |
+|          參數           |                                                              描述                                                              |
 |------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
 |  FolderPath\<Folder Path>  |                      指定資料夾的完整路徑，其中包含驅動程式套件的 .inf 檔案。                      |
 |   [/Server： \<Server name> ]   | 指定伺服器的名稱。 這可以是 NetBIOS 名稱或 FQDN。 如果未指定伺服器名稱，則會使用本機伺服器。 |
@@ -45,8 +45,8 @@ WDSUTIL /verbose /Add-AllDriverPackages /FolderPath:C:\Temp\Drivers /Architectur
 WDSUTIL /Add-AllDriverPackages /FolderPath:C:\Temp\Drivers\Printers /DriverGroup:Printer Drivers
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-[新增-WdsDriverPackage](https://technet.microsoft.com/library/dn283440.aspx)
+[新增-WdsDriverPackage](/previous-versions/windows/powershell-scripting/dn283440(v=wps.630))

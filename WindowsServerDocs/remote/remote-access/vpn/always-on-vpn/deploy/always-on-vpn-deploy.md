@@ -9,14 +9,14 @@ ms.localizationpriority: medium
 ms.date: 12/20/2018
 ms.author: v-tea
 author: Teresa-MOTIV
-ms.openlocfilehash: e107ba0d36a1b59d4bc1bb365fb98aa9285677ba
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bab89611932316d165e805e96f0a6d2d357c0780
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860121"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959179"
 ---
-# <a name="always-on-vpn-deployment-for-windows-server-and-windows-10"></a>適用于 Windows Server 和 Windows 10 的 Always On VPN 部署
+# <a name="always-on-vpn-deployment-for-windows-server-and-windows-10"></a>Windows Server 和 Windows 10 的 Always On VPN 部署
 
 >適用于： Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
@@ -25,7 +25,7 @@ ms.locfileid: "80860121"
 
 Always On VPN 為遠端存取提供單一且一致的解決方案，並支援已加入網域、未加入網域（工作組）或已加入 Azure AD 的裝置，甚至是個人擁有的裝置。 使用 Always On VPN，連線類型不必是專用使用者或裝置，但可以是兩者的組合。 例如，您可以為遠端裝置管理啟用裝置驗證，然後再啟用使用者驗證以連線到內部公司站台及服務。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 您很有可能已部署可用於部署 Always On VPN 的技術。 除了 DC/DNS 伺服器以外，Always On VPN 部署需要 NPS （RADIUS）伺服器、憑證授權單位單位（CA）伺服器和遠端存取（路由/VPN）伺服器。 設定基礎結構之後，您必須註冊用戶端，然後透過數個網路變更，安全地將用戶端連線到內部部署。
 
@@ -65,9 +65,9 @@ Always On VPN 為遠端存取提供單一且一致的解決方案，並支援已
 - 動態主機設定通訊協定（DHCP）。
 - 網路硬體，例如 Ethernet 纜線、防火牆、交換器和集線器。
 - 遠端使用者可以透過 Always On VPN 連線存取的其他網路資源，例如應用程式和檔案伺服器。
-- 網際網路連線能力，或使用 Azure AD 網際網路連線的條件式存取。 如需詳細資訊，請參閱[Azure Active Directory 中的條件式存取](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal)。
+- 網際網路連線能力，或使用 Azure AD 網際網路連線的條件式存取。 如需詳細資訊，請參閱[Azure Active Directory 中的條件式存取](/azure/active-directory/active-directory-conditional-access-azure-portal)。
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>接下來的步驟
 
 - [深入瞭解 Always On VPN 特性和功能](../../vpn-map-da.md)
 

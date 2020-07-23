@@ -8,12 +8,12 @@ metadata:
   author: JasonGerend
   ms.author: jgerend
   ms.date: 07/15/2020
-  ms.openlocfilehash: 0a26ee716f1308451f695843243a71002dfa5ca1
-  ms.sourcegitcommit: a5badf6b08ec0b25ec73df4b827c4e40b5ccd974
+  ms.openlocfilehash: 412ce70a27604b4a710376315f869baf8519d352
+  ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
   ms.translationtype: MT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 07/16/2020
-  ms.locfileid: "86410372"
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "86965860"
 landingContent:
 - title: 關於 Windows Server Storage
   linkLists:
@@ -25,7 +25,7 @@ landingContent:
   linkLists:
   - linkListType: overview
     links:
-    - text: 儲存空間 Direct
+    - text: 儲存空間直接存取
       url: storage-spaces/overview.md
     - text: 儲存體複本
       url: storage-replica/storage-replica-overview.md
@@ -66,11 +66,11 @@ landingContent:
     - text: 存放裝置類別記憶體
       url: storage-spaces/Storage-class-memory-health.md
     - text: BitLocker 磁碟機加密
-      url: https://technet.microsoft.com/library/cc766295(v=ws.10).aspx
+      url: /previous-versions/windows/it-pro/windows-vista/cc766295(v=ws.10)
     - text: NTFS
-      url: https://technet.microsoft.com/library/dn466522(v=ws.11).aspx
+      url: /previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn466522(v=ws.11)
     - text: 網路檔案系統 (NFS)
-      url: https://technet.microsoft.com/library/jj592688(v=ws.11).aspx
+      url: /previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj592688(v=ws.11)
 - title: 在 Azure 中
   linkLists:
   - linkListType: overview
@@ -86,6 +86,6 @@ landingContent:
   - linkListType: overview
     links:
     - text: Windows 舊版檔
-      url: https://docs.microsoft.com/previous-versions/windows/
+      url: /previous-versions/windows/
     - text: 搜尋特定資訊
-      url: https://docs.microsoft.com/search/?search=Windows+Server&dataSource=previousVersions
+      url: /search/?dataSource=previousVersions&search=Windows Server

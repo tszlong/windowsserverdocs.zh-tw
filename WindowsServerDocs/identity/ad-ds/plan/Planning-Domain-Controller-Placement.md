@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: bb68a3551b362f0beb5d42a92a7c18d0913e47bc
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: b98fd29a979527b6477afea97c624504d11b3e7e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624086"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966570"
 ---
 # <a name="planning-domain-controller-placement"></a>規劃設置網域控制站
 
@@ -23,7 +23,7 @@ ms.locfileid: "81624086"
 
 在 Windows Server 2008 中，您也可以利用唯讀網域控制站（Rodc）。 RODC 是新型的網域控制站，裝載 Active Directory 資料庫的唯讀分割。 除了帳戶密碼，RODC 還會保有可寫入網域控制站所保有的所有 Active Directory 物件及屬性。 不過，您無法對儲存於 RODC 上的資料庫進行變更。 變更必須在可寫入的網域控制站上進行，然後複寫回 RODC。
 
-RODC 的設計主要是部署在遠端或分公司環境中，這通常會有相對較少的使用者、實體安全性不佳、中樞網站的網路頻寬相對較差，以及對資訊技術（IT）的知識有所限制的人員。 部署 Rodc 可提升安全性，並更有效率地存取網路資源。 如需 RODC 功能的詳細資訊，請參閱[AD DS：唯讀網域控制站](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732801(v=ws.10))。 如需有關如何部署 RODC 的詳細資訊，請參閱《[唯讀網域控制站逐步指南》](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772234(v=ws.10))
+RODC 的設計主要是部署在遠端或分公司環境中，這通常會有相對較少的使用者、實體安全性不佳、中樞網站的網路頻寬相對較差，以及對資訊技術（IT）的知識有所限制的人員。 部署 Rodc 可提升安全性，並更有效率地存取網路資源。 如需 RODC 功能的詳細資訊，請參閱[AD DS：唯讀網域控制站](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc732801(v=ws.10))。 如需有關如何部署 RODC 的詳細資訊，請參閱《[唯讀網域控制站逐步指南》](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc772234(v=ws.10))
 
 > [!NOTE]
 > 本指南不會說明如何判斷適當的網域控制站數目，以及每個網站中所代表每個網域的網域控制站硬體需求。
@@ -37,4 +37,3 @@ RODC 的設計主要是部署在遠端或分公司環境中，這通常會有相
 - [規劃設置通用類別目錄伺服器](../../ad-ds/plan/Planning-Global-Catalog-Server-Placement.md)
 
 - [規劃設置操作主機角色](../../ad-ds/plan/Planning-Operations-Master-Role-Placement.md)
-

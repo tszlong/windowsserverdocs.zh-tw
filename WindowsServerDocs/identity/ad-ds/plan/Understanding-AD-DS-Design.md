@@ -8,12 +8,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 734d5eaef97b23b774eb286134d07a17dc380da1
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 72abc2b5b45ec1eefbff3ca82b619649ffd0fda9
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623906"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959760"
 ---
 # <a name="understanding-ad-ds-design"></a>了解 AD DS 設計
 
@@ -25,6 +25,6 @@ AD DS 部署專案包含三個階段：設計階段、部署階段和作業階�
 
 雖然本指南中所提供的 Windows Server AD DS 設計和部署策略是以廣泛的實驗室和試驗程式測試為基礎，而且在客戶環境中成功執行，但您可能必須自訂您的 AD DS 設計和部署，以更符合特定、複雜的環境。
 
-- 如需在分公司環境中部署 AD DS 的詳細資訊，請參閱[唯讀網域控制站（RODC）分公司規劃指南](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd734758(v=ws.10))。
-- 如需在 Exchange 環境中部署 AD DS 的詳細資訊，請參閱[Exchange Server 組織中的 Active Directory](https://docs.microsoft.com/Exchange/plan-and-deploy/active-directory/active-directory)一文。
-- 如需在多個樹系環境中部署 AD DS 的詳細資訊，請參閱[windows 2000 和 Windows Server 2003 中的多樹系考慮](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc739395(v=ws.10))一文。
+- 如需在分公司環境中部署 AD DS 的詳細資訊，請參閱[唯讀網域控制站（RODC）分公司規劃指南](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd734758(v=ws.10))。
+- 如需在 Exchange 環境中部署 AD DS 的詳細資訊，請參閱[Exchange Server 組織中的 Active Directory](/exchange/plan-and-deploy/active-directory/active-directory)一文。
+- 如需在多個樹系環境中部署 AD DS 的詳細資訊，請參閱[windows 2000 和 Windows Server 2003 中的多樹系考慮](/previous-versions/windows/it-pro/windows-server-2003/cc739395(v=ws.10))一文。

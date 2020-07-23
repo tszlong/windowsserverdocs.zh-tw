@@ -8,15 +8,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 266f46ef30082541d49bf62d933c551f00fa08da
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 43d9e8767c0a179a23d015484b09a0228829870b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853791"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966480"
 ---
 # <a name="when-to-use-a-send-group-membership-as-a-claim-rule"></a>使用「以宣告方式傳送群組成員資格」規則的時機
-當您想要只針對屬於指定 Active Directory 安全性群組成員的使用者發出新的傳出宣告值時，可以在 Active Directory 同盟服務 \(AD FS\) 中使用此規則。 使用這項規則時，您只需針對您指定且符合規則邏輯的群組發出單一宣告，如下表所述。  
+\( \) 當您想要只針對屬於指定之 Active Directory 安全性群組成員的使用者發出新的傳出宣告值時，可以在 Active Directory 同盟服務 AD FS 中使用此規則。 使用這項規則時，您只需針對您指定且符合規則邏輯的群組發出單一宣告，如下表所述。  
   
 |規則選項|規則邏輯|  
 |---------------|--------------|  
@@ -25,11 +25,11 @@ ms.locfileid: "80853791"
 下列各節提供宣告規則的基本介紹。 另還針對使用「以宣告方式傳送群組成員資格」規則的時機提供詳細資料。  
   
 ## <a name="about-claim-rules"></a>關於宣告規則  
-宣告規則代表會接受傳入宣告的商務邏輯實例、將條件套用至其 \(如果 x then y\) 並根據條件參數產生傳出宣告。 在您進一步閱讀本主題之前，請先閱讀下列清單，其中會概述關於宣告規則您應該知道的重要秘訣：  
+宣告規則代表會接受傳入宣告的商務邏輯實例， \( 如果 x then y 則套用條件， \) 並根據條件參數產生傳出宣告。 在您進一步閱讀本主題之前，請先閱讀下列清單，其中會概述關於宣告規則您應該知道的重要秘訣：  
   
--   在的 [AD FS 管理] 嵌入式管理單元\-中，只能使用宣告規則範本建立宣告規則  
+-   在 [AD FS 管理] 嵌入式管理單元中 \- ，只能使用宣告規則範本建立宣告規則  
   
--   宣告規則會直接從宣告 \(提供者（例如 Active Directory 或其他同盟服務\)，或從宣告提供者信任的接受轉換規則輸出）處理傳入宣告。  
+-   宣告規則會直接從宣告提供者 \( （例如 Active Directory 或另一個同盟服務， \) 或從宣告提供者信任的接受轉換規則輸出）處理傳入宣告。  
   
 -   宣告規則的處理方式，是由宣告發行引擎依時間先後順序按照指定的規則集處理。 藉由設定規則優先順序，您可以進一步精簡或篩選由特定規則集內的上一個規則所產生的宣告。  
   
@@ -40,7 +40,7 @@ ms.locfileid: "80853791"
 ## <a name="outgoing-claim-value"></a>傳出宣告值  
 使用「以宣告方式傳送群組成員資格」規則範本，您可以發出視使用者是否為您指定群組成員而定的宣告。  
   
-換句話說，只有當使用者具有與系統管理員指定的 Active Directory 群組相符的群組安全識別碼 \(SID\) 時，此規則範本才會發出宣告。 針對 Active Directory Domain Services \(AD DS\) 進行驗證的所有使用者，都會有其所屬之每個群組的傳入群組 SID 宣告。 根據預設，Active Directory 宣告提供者信任中的接受轉換規則會傳遞這些群組 SID 宣告。 使用這些群組 Sid 做為發行宣告的基礎，比在 AD DS 中查閱使用者的群組快很多。  
+換句話說，只有當使用者的群組安全識別碼 \( SID \) 符合系統管理員指定的 Active Directory 群組時，此規則範本才會發出宣告。 針對 Active Directory Domain Services AD DS 進行驗證的所有使用者， \( \) 都會有其所屬之每個群組的傳入群組 SID 宣告。 根據預設，Active Directory 宣告提供者信任中的接受轉換規則會傳遞這些群組 SID 宣告。 使用這些群組 Sid 做為發行宣告的基礎，比在 AD DS 中查閱使用者的群組快很多。  
   
 使用這項規則時，根據您選取的 Active Directory 群組，只會傳送一個宣告。 比方說，您可以使用這個規則範本建立以下規則：如果使用者是 Domain Admins 安全性群組的成員，則會傳送值為 "Admin" 的群組宣告。  
   
@@ -48,7 +48,7 @@ ms.locfileid: "80853791"
 只有當從宣告提供者收到群組 SID 時 (這個情況對任何宣告提供者而言並不常見，Active Directory 或 AD DS 除外)，系統管理員應該在宣告提供者信任的接受轉換規則中使用這個規則類型。  
   
 ## <a name="how-to-create-this-rule"></a>如何建立此規則  
-您可以使用宣告規則語言，或使用中的 [AD FS 管理] 嵌入式\-管理單元中的 [以宣告方式傳送 LDAP 群組成員資格] 規則範本來建立此規則。 這個規則範本提供下列設定選項：  
+您可以使用宣告規則語言，或使用 [AD FS 管理] 嵌入式管理單元中的 [以宣告方式傳送 LDAP 群組成員資格] 規則範本來建立此規則 \- 。 此規則範本提供以下設定選項：  
   
 -   指定宣告規則名稱  
   
@@ -56,11 +56,11 @@ ms.locfileid: "80853791"
   
 -   選取傳出宣告類型  
   
--   選取 [外寄名稱識別碼格式] \(只有從 [傳出宣告類型] 欄位中選擇 [名稱識別碼] 時，才可以使用它\)  
+-   選取 [外寄名稱識別碼] 格式， \( 只有在從 [傳出宣告類型] 欄位中選擇 [名稱識別碼] 時才能使用\)  
   
 -   指定傳出宣告值  
   
-如需有關如何建立此規則的詳細資訊，請參閱[建立規則以宣告方式傳送群組成員資格](https://technet.microsoft.com/library/ee913569.aspx)。  
+如需有關如何建立此規則的詳細資訊，請參閱[建立規則以宣告方式傳送群組成員資格](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/ee913569(v=ws.11))。  
   
 ## <a name="using-the-claim-rule-language"></a>使用宣告規則語言  
 如果您想要根據傳入 SID (而不是群組 SID) 發行宣告，請使用「轉換傳入宣告」規則範本。 如果系統管理員想要擷取使用者為其成員的所有群組名稱，請使用「以宣告方式傳送 LDAP 屬性」規則範本，而不是使用 **tokenGroups** 屬性。  
@@ -73,7 +73,6 @@ c:[Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", 
 => issue(Type = "http://schemas.xmlsoap.org/claims/Group", Value = "administrators", Issuer = c.Issuer, OriginalIssuer = c.OriginalIssuer, ValueType = c.ValueType);  
 ```  
   
-## <a name="additional-references"></a>其他參考資料  
-[建立規則來以宣告方式傳送 LDAP 屬性](https://technet.microsoft.com/library/dd807115.aspx)  
+## <a name="additional-references"></a>其他參考  
+[建立規則來以宣告方式傳送 LDAP 屬性](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dd807115(v=ws.11))  
   
-

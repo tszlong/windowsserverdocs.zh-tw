@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a00ef08f72108643a045e5b48ec1c69155dd0fd8
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d00a0e3433b196db62599c628c8485032a82d54b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931130"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956390"
 ---
 # <a name="query"></a>查詢
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-顯示進程、會話和遠端桌面工作階段主機伺服器的相關資訊。 若要瞭解最新版本的新功能，請參閱[Windows Server 中遠端桌面服務的新功能](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11))。
+顯示進程、會話和遠端桌面工作階段主機伺服器的相關資訊。 若要瞭解最新版本的新功能，請參閱[Windows Server 中遠端桌面服務的新功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
 
 ## <a name="syntax"></a>語法
 
@@ -33,14 +33,14 @@ query user
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 |--|--|
 | [query process](query-process.md) | 顯示在遠端桌面工作階段主機伺服器上執行之進程的相關資訊。 |
 | [query session](query-session.md) | 顯示遠端桌面工作階段主機伺服器上會話的相關資訊。 |
 | [query termserver](query-termserver.md) | 顯示網路上所有遠端桌面工作階段主機伺服器的清單。 |
 | [query user](query-user.md) | 顯示遠端桌面工作階段主機伺服器上的使用者會話相關資訊。 |
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

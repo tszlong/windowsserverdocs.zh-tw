@@ -8,12 +8,12 @@ ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 27a99696f575afa61d3e39aff13fb58cc955936b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: cc3e96ff0ea98acbfafef5aba37f4e20a103f029
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80818781"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959660"
 ---
 # <a name="step-74-deploy-conditional-access-root-certificates-to-on-premises-ad"></a>步驟 7.4. 將條件式存取根憑證部署到內部部署 AD
 
@@ -54,6 +54,6 @@ ms.locfileid: "80818781"
       - AIA 容器
       - 憑證授權單位單位容器
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>接下來的步驟
 
-[步驟7.5。建立以 OMA-URI 為基礎的 VPNv2 設定檔到 Windows 10 裝置](vpn-create-oma-dm-based-vpnv2-profiles.md)：在此步驟中，您可以使用 Intune 建立 oma-uri 型的 VPNv2 設定檔，以部署 VPN 裝置設定原則。 如果您想要使用 Microsoft Endpoint Configuration Manager 或 PowerShell 腳本來建立 VPNv2 設定檔，請參閱[VPNV2 CSP 設定](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp)以取得更多詳細資料。
+[步驟7.5。建立以 OMA-URI 為基礎的 VPNv2 設定檔到 Windows 10 裝置](vpn-create-oma-dm-based-vpnv2-profiles.md)：在此步驟中，您可以使用 Intune 建立 oma-uri 型的 VPNv2 設定檔，以部署 VPN 裝置設定原則。 如果您想要使用 Microsoft Endpoint Configuration Manager 或 PowerShell 腳本來建立 VPNv2 設定檔，請參閱[VPNV2 CSP 設定](/windows/client-management/mdm/vpnv2-csp)以取得更多詳細資料。

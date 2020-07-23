@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 35925ab90fea5f3740a8fd7c6a086ff357feb9ba
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e8edd2bc1a46532dc7542cdf03ca7c076da1dbcc
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932907"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956190"
 ---
 # <a name="rmdir"></a>rmdir
 
 刪除目錄。
 
-您也可以使用不同的參數，從 Windows 修復主控台執行**rmdir**命令。 如需詳細資訊，請參閱[Windows 修復環境（WinRE）](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)。
+您也可以使用不同的參數，從 Windows 修復主控台執行**rmdir**命令。 如需詳細資訊，請參閱[Windows 修復環境（WinRE）](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)。
 
 > [!NOTE]
 > 此命令與[rd 命令](rd.md)相同。
@@ -33,7 +33,7 @@ rmdir [<drive>:]<path> [/s [/q]]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 |--|--|
 | `[<drive>:]<path>` | 指定您想要刪除之目錄的位置和名稱。 *Path*是必要的。 如果您在 \) 指定*路徑*的開頭包含反斜線（，則*路徑*會從根目錄開始（不論目前目錄為何）。 |
 | /s | 刪除樹狀目錄（指定的目錄及其所有子目錄，包括所有檔案）。 |
@@ -74,6 +74,6 @@ rmdir /s test
 rmdir /s /q test
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

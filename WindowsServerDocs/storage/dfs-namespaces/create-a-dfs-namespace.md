@@ -8,18 +8,18 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 90a6c0f72fc1a11d9070fa7866c0b64044131a07
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 60b31b90ed54137898043e79c3c6504afb3f4b7f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469713"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953360"
 ---
 # <a name="create-a-dfs-namespace"></a>建立 DFS 命名空間
 
 > 適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
-若要建立新的命名空間，您可以在安裝 DFS 命名空間角色服務時，使用伺服器管理員來建立命名空間。 您也可以在 Windows PowerShell 工作階段中使用 [New-DfsnRoot Cmdlet](https://docs.microsoft.com/powershell/module/dfsn/new-dfsnroot)。
+若要建立新的命名空間，您可以在安裝 DFS 命名空間角色服務時，使用伺服器管理員來建立命名空間。 您也可以在 Windows PowerShell 工作階段中使用 [New-DfsnRoot Cmdlet](/powershell/module/dfsn/new-dfsnroot)。
 
 DFSN Windows PowerShell 模組於 Windows Server 2012 中引進。
 
@@ -44,5 +44,3 @@ DFSN Windows PowerShell 模組於 Windows Server 2012 中引進。
 -   [選擇命名空間類型](choose-a-namespace-type.md)
 -   [新增命名空間伺服器至網域型 DFS 命名空間](add-namespace-servers-to-a-domain-based-dfs-namespace.md)
 -   [委派 DFS 命名空間的管理許可權](delegate-management-permissions-for-dfs-namespaces.md)。
-
-

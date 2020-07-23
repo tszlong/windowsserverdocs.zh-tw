@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: b198d8ca-a5b7-430f-8911-5cbb9f50484c
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 75037d39a070f8c7391df4136ab958f671732e09
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: c0be84f00df2e0010f6c2a318f605532a3bc4d23
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933338"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958180"
 ---
 # <a name="fsutil-resource"></a>fsutil resource
 
@@ -45,7 +45,7 @@ fsutil resource [stop] <rmrootpathname>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | 建立 | 建立次要交易式 Resource Manager。 |
 | `<rmrootpathname>` | 指定交易式 Resource Manager 根目錄的完整路徑。 |
@@ -63,7 +63,7 @@ fsutil resource [stop] <rmrootpathname>
 | 重新命名 | 變更交易式 Resource Manager 的 GUID。 |
 | shrink | 指定交易 Resource Manager 記錄可自動減少的百分比。 |
 | 大小 | 將交易 Resource Manager 的大小指定為指定的*容器*數目。 |
-| start | 啟動指定的交易式 Resource Manager。 |
+| 開始 | 啟動指定的交易式 Resource Manager。 |
 | stop | 停止指定的交易式 Resource Manager。 |
 
 ### <a name="examples"></a>範例
@@ -86,10 +86,10 @@ fsutil resource setlog growth 2 percent c:test
 fsutil resource setautoreset true c:\
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
 - [fsutil](fsutil.md)
 
-- [交易式 NTFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730726(v=ws.10))
+- [交易式 NTFS](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc730726(v=ws.10))

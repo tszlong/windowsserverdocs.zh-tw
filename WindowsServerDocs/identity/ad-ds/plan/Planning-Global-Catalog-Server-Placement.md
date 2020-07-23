@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: b424d758d98315ff63f05926880a23970f54e49c
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 5a67e85a239036851d628ad1c261a21f6fbc4566
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623966"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959430"
 ---
 # <a name="planning-global-catalog-server-placement"></a>規劃設置通用類別目錄伺服器
 
@@ -49,6 +49,6 @@ ms.locfileid: "81623966"
 
 ## <a name="enabling-universal-group-membership-caching"></a>啟用萬用群組成員資格快取
 
-對於包含少於100個使用者，且不包含大量漫遊使用者或需要通用類別目錄伺服器之應用程式的位置，您可以部署執行 Windows Server 2008 的網域控制站，並啟用萬用群組成員資格快取。 確定通用類別目錄伺服器不是來自已啟用萬用群組成員資格快取之網域控制站的一個以上複寫躍點，因此可以重新整理快取中的萬用群組資訊。 如需萬用群組快取運作方式的相關資訊，請參閱[通用類別目錄的運作方式](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc737410(v=ws.10))一文。
+對於包含少於100個使用者，且不包含大量漫遊使用者或需要通用類別目錄伺服器之應用程式的位置，您可以部署執行 Windows Server 2008 的網域控制站，並啟用萬用群組成員資格快取。 確定通用類別目錄伺服器不是來自已啟用萬用群組成員資格快取之網域控制站的一個以上複寫躍點，因此可以重新整理快取中的萬用群組資訊。 如需萬用群組快取運作方式的相關資訊，請參閱[通用類別目錄的運作方式](/previous-versions/windows/it-pro/windows-server-2003/cc737410(v=ws.10))一文。
 
-如需協助您記載在啟用萬用群組快取的情況下，您打算放置通用類別目錄伺服器和網域控制站的工作表，請參閱[Windows Server 2003 部署套件的工作輔助工具](https://microsoft.com/download/details.aspx?id=9608)、下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，以及開啟網域控制站放置（DSSTOPO_4 .doc）。 當您部署樹系根域和地區網域時，請參閱您需要放置通用類別目錄伺服器之位置的相關資訊。
+如需協助您記載規劃放置萬用群組快取之通用類別目錄伺服器和網域控制站的工作表，請參閱[Windows Server 2003 部署套件的工作輔助工具](https://microsoft.com/download/details.aspx?id=9608)、下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，以及開啟網域控制站放置（DSSTOPO_4.doc）。 當您部署樹系根域和地區網域時，請參閱您需要放置通用類別目錄伺服器之位置的相關資訊。

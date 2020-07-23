@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a5f073941fa0d336e513c8de7502a601f1de5711
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a9a2a71ed8477722b32b06f37c88b373d6889568
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934328"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954620"
 ---
 # <a name="wbadmin-get-status"></a>wbadmin get status
 
@@ -39,8 +39,8 @@ wbadmin get status
 -   在目前的備份或復原作業完成之前，這個子命令不會停止，即使您關閉命令視窗，子命令仍會繼續執行。
 -   如果您想要停止目前的備份或復原作業，請使用**wbadmin stop job**子命令。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 -   [Restore](wbadmin.md)
--   [Get-wbjob](https://technet.microsoft.com/library/jj902426.aspx) Cmdlet
+-   [Get-wbjob](/powershell/module/windowserverbackup/?view=winserver2012r2-ps) Cmdlet

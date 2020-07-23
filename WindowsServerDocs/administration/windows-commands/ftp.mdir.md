@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5a4d1b00941d350776fd953607a5cc5da433993c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 0dc8e5d3eb7ab6f8f2034be03b5fdd65122921ec
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926154"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957200"
 ---
 # <a name="ftp-mdir"></a>ftp mdir
 
@@ -30,7 +30,7 @@ mdir <remotefile>[...] <localfile>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<remotefile>` | 指定您要查看其清單的目錄或檔案。 您可以指定多個*remotefiles*。 輸入連字號（-），以使用遠端電腦上目前的工作目錄。 |
 | `<localfile>` | 指定用來儲存清單的本機檔案。 此為必要參數。 輸入連字號（-）以在螢幕上顯示清單。 |
@@ -49,8 +49,8 @@ mdir dir1 dir2 -
 mdir dir1 dir2 dirlist.txt
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [其他 FTP 指引](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [其他 FTP 指引](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

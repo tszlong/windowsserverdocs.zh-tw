@@ -8,18 +8,18 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f5b88afe50e9cb498eacf1bbc872718d50cd64da
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 574c5a4c0d009a34b1d327ac4aef3b9f5210b0bf
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623919"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959390"
 ---
 # <a name="planning-regional-domain-controller-placement"></a>規劃區域網域控制站放置
 
 > 適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-若要確保成本效率，請盡可能將最少的地區網域控制站放在其中。 首先，請參閱用來[收集網路資訊](../../ad-ds/plan/Collecting-Network-Information.md)的「地理位置和通訊連結」（DSSTOPO_1 .doc）工作表，以判斷某個位置是否為中樞。
+若要確保成本效率，請盡可能將最少的地區網域控制站放在其中。 首先，請參閱用來[收集網路資訊](../../ad-ds/plan/Collecting-Network-Information.md)的「地理位置和通訊連結」（DSSTOPO_1.doc）工作表，以判斷某個位置是否為中樞。
 
 規劃放置每個中樞位置中所代表每個網域的地區網域控制站。 將區域網域控制站放在所有中樞位置之後，請評估將區域網域控制站放在附屬位置的需求。 從附屬位置排除不必要的區域網域控制站，可減少維護遠端伺服器基礎結構所需的支援成本。
 
@@ -79,6 +79,6 @@ ms.locfileid: "81623919"
 
 如果降低維護網域控制站的成本比網路流量更重要，請將該網域的網域控制站集中化，而不要將任何地區網域控制站放在該位置，或考慮將 Rodc 放在該位置。
 
-如需協助您記錄地區網域控制站位置的工作表，以及每個位置中所代表每個網域的使用者數目，請參閱[Windows Server 2003 部署套件的工作輔助工具](https://microsoft.com/download/details.aspx?id=9608)、下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，然後開啟「網域控制站位置」（DSSTOPO_4 .doc）。
+如需協助您記錄地區網域控制站位置的工作表，以及每個位置中所代表每個網域的使用者數目，請參閱[適用于 Windows Server 2003 部署套件的工作輔助工具](https://microsoft.com/download/details.aspx?id=9608)、下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，以及開啟「網域控制站位置」（DSSTOPO_4.doc）。
 
-當您部署地區網域時，您必須參考您需要放置區域網域控制站之位置的相關資訊。 如需部署地區網域的詳細資訊，請參閱[部署 Windows Server 2008 地區網域](https://technet.microsoft.com/library/cc755118.aspx)。
+當您部署地區網域時，您必須參考您需要放置區域網域控制站之位置的相關資訊。 如需部署地區網域的詳細資訊，請參閱[部署 Windows Server 2008 地區網域](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755118(v=ws.10))。

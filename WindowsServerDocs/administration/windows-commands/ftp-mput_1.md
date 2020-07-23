@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 506a4d9a64f1dd9b4b37088a30926190d7675695
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ca0b72fce2ce9408fa04e948c8116a0b9e153268
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925808"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957640"
 ---
 # <a name="ftp-mput"></a>ftp mput
 
@@ -30,7 +30,7 @@ mput <localfile>[ ]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<localfile>` | 指定要複製到遠端電腦的本機檔案。 |
 
@@ -42,7 +42,7 @@ mput <localfile>[ ]
 mput Program1.exe Program2.exe
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
@@ -50,4 +50,4 @@ mput Program1.exe Program2.exe
 
 - [ftp 二進位命令](ftp-binary.md)
 
-- [其他 FTP 指引](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [其他 FTP 指引](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

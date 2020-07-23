@@ -9,12 +9,12 @@ ms.topic: article
 author: eldenchristensen
 ms.date: 07/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 581b80fe07043314e573261a6735f121bc30e2e3
-ms.sourcegitcommit: a5badf6b08ec0b25ec73df4b827c4e40b5ccd974
+ms.openlocfilehash: 50aba2d8edfe74bf6ca51d7c390f2cfc4ead0048
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86410362"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961220"
 ---
 # <a name="using-storage-spaces-direct-in-guest-virtual-machine-clusters"></a>使用來賓虛擬機器叢集中的儲存空間直接存取
 
@@ -89,4 +89,4 @@ ms.locfileid: "86410362"
 
 - [用於部署儲存空間直接存取、影片和逐步指南的其他 Azure IAAS VM 範本](https://techcommunity.microsoft.com/t5/Failover-Clustering/Deploying-IaaS-VM-Guest-Clusters-in-Microsoft-Azure/ba-p/372126)。
 
-- [其他儲存空間直接存取總覽](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)
+- [其他儲存空間直接存取總覽](./storage-spaces-direct-overview.md)

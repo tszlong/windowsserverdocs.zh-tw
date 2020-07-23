@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7d20120bf4c6ec76fa6ba040141afadea2a748d5
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: c6a04b4f7c04174158a165cf0d41493078af0056
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922256"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957040"
 ---
 # <a name="manage-bde-setidentifier"></a>manage-bde setidentifier
 
@@ -28,7 +28,7 @@ manage-bde –setidentifier <drive> [-computername <name>] [{-?|/?}] [{-help|-h}
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<drive>` | 表示後面接著冒號的磁碟機號。 |
 | -computername | 指定 manage-bde.exe 將用來修改另一部電腦上的 BitLocker 保護。 您也可以使用 **-cn**做為此命令的縮寫版本。 |
@@ -44,10 +44,10 @@ manage-bde –setidentifier <drive> [-computername <name>] [{-?|/?}] [{-help|-h}
 manage-bde –setidentifier C:
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
 - [manage-bde 命令](manage-bde.md)
 
-- [BitLocker 修復指南](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-recovery-guide-plan)
+- [BitLocker 修復指南](/windows/security/information-protection/bitlocker/bitlocker-recovery-guide-plan)

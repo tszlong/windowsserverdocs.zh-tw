@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: f2eefaaf-2817-4ac7-abac-d2b65fa971dc
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 95cd9a8f62aa9dd64d46a875a90847a65589b447
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 776903b820c7d7381aff61bb754446b5682f88db
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922340"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958170"
 ---
 # <a name="fsutil-transaction"></a>fsutil transaction
 
@@ -34,7 +34,7 @@ fsutil transaction [rollback] <GUID>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | 認可 | 標示成功的隱含或明確指定交易的結尾。 |
 | `<GUID>` | 指定代表交易的 GUID 值。 |
@@ -52,10 +52,10 @@ fsutil transaction [rollback] <GUID>
 fsutil transaction fileinfo c:\test.txt
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
 - [fsutil](fsutil.md)
 
-- [交易式 NTFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730726(v=ws.10))
+- [交易式 NTFS](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc730726(v=ws.10))

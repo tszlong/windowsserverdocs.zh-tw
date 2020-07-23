@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a11177ad62e83efd9dbe5da844b159b40266837d
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 548be2874bf79aab88abd53f0303096a82486fd0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936991"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956520"
 ---
 # <a name="query-process"></a>查詢處理序
 
@@ -33,7 +33,7 @@ ms.locfileid: "85936991"
 - 進程的識別碼
 
 > [!NOTE]
-> 若要瞭解最新版本的新功能，請參閱[Windows Server 中遠端桌面服務的新功能](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11))。
+> 若要瞭解最新版本的新功能，請參閱[Windows Server 中遠端桌面服務的新功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
 
 ## <a name="syntax"></a>語法
 
@@ -43,7 +43,7 @@ query process [*|<processID>|<username>|<sessionname>|/id:<nn>|<programname>] [/
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 |--|--|
 | * | 列出所有會話的處理常式。 |
 | `<processID>` | 指定識別您想要查詢之進程的數位識別碼。 |
@@ -76,7 +76,7 @@ query process *
 query process /ID:2
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

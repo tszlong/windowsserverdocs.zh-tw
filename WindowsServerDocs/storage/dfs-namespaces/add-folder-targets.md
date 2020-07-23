@@ -8,12 +8,12 @@ ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms-date: 06/05/2017
-ms.openlocfilehash: 2f4e0deb82f16c905f580c13115a5214556d4f5f
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: e5a81f2967953b985028407d53d6a039fd8990eb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475555"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961270"
 ---
 # <a name="add-folder-targets"></a>新增資料夾目標
 
@@ -34,7 +34,7 @@ ms.locfileid: "85475555"
 4.  如果資料夾是使用 DFS 複寫來複寫的，您可以指定是否將新資料夾目標新增至複寫群組。
 
 > [!TIP]
-> 若要使用 Windows PowerShell 新增資料夾目標，請使用 [New-DfsnFolderTarget](https://docs.microsoft.com/powershell/module/dfsn/new-dfsnfoldertarget) Cmdlet。 DFSN Windows PowerShell 模組於 Windows Server 2012 中引進。
+> 若要使用 Windows PowerShell 新增資料夾目標，請使用 [New-DfsnFolderTarget](/powershell/module/dfsn/new-dfsnfoldertarget) Cmdlet。 DFSN Windows PowerShell 模組於 Windows Server 2012 中引進。
 
 > [!NOTE]
 > 資料夾可以在同一個資料夾階層中包含資料夾目標或其他 DFS 資料夾，但不能同時包含兩者。

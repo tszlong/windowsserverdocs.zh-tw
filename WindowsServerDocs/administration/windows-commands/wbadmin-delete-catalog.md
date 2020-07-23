@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ec2c35fc8a279c604f76c71dc6ed9aeb50a0ffd7
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: cc64ac7537ee97c763410639870083712ec31ee4
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933718"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954680"
 ---
 # <a name="wbadmin-delete-catalog"></a>wbadmin delete catalog
 
@@ -33,7 +33,7 @@ wbadmin delete catalog
 
 ### <a name="parameters"></a>參數
 
-|參數|說明|
+|參數|描述|
 |---------|-----------|
 |-quiet|執行子命令，而不提示使用者。|
 
@@ -41,8 +41,8 @@ wbadmin delete catalog
 
 如果您刪除電腦的備份類別目錄，就無法使用 [Windows Server Backup] 嵌入式管理單元來存取該電腦所建立的備份。 在此情況下，如果您可以存取其他備份位置，請使用**wbadmin restore catalog**從該位置還原備份類別目錄。 刪除備份類別目錄後，您應該建立新的備份。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 -   [Restore](wbadmin.md)
--   [移除-WBCatalog](https://technet.microsoft.com/library/jj902445.aspx)
+-   [移除-WBCatalog](/powershell/module/windowserverbackup/?view=winserver2012r2-ps)

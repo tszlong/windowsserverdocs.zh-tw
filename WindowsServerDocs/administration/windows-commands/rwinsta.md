@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d2c85bd48adafb7e171754aad9682e89020b95d0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 99fabb870fecb0957968d2a0e1fd30512b6d0013
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722235"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956170"
 ---
 # <a name="rwinsta"></a>rwinsta
 
@@ -23,12 +23,12 @@ ms.locfileid: "82722235"
 可讓您重設（刪除）遠端桌面工作階段主機（rd 工作階段主機）伺服器上的會話。
 
 > [!NOTE]
-> 在 Windows Server 2008 R2 中，終端機服務已重新命名為遠端桌面服務。 若要瞭解最新版本的新功能，請參閱 Windows Server TechNet Library 中的[Windows server 2012 中遠端桌面服務的新功能](https://technet.microsoft.com/library/hh831527)。
+> 在 Windows Server 2008 R2 中，終端機服務已重新命名為遠端桌面服務。 若要瞭解最新版本的新功能，請參閱 Windows Server TechNet Library 中的[Windows server 2012 中遠端桌面服務的新功能](/previous-versions/orphan-topics/ws.11/hh831527(v=ws.11))。
 
 ## <a name="remarks"></a>備註
 此命令與 [**重設會話**] 命令相同。
 
 ## <a name="additional-references"></a>其他參考
 [reset session](reset-session.md)
-- [命令列語法金鑰](command-line-syntax-key.md)
+- [命令列語法索引鍵](command-line-syntax-key.md) 
 [遠端桌面服務（終端機服務）命令參考](remote-desktop-services-terminal-services-command-reference.md)

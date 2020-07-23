@@ -6,12 +6,12 @@ manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: af05daa164b5b2c5eca73eff51d97d4c25ba1ca3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: cb575015ea8a8fc6cbc35358103774a931b0b749
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815391"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958860"
 ---
 # <a name="slow-smb-files-transfer-speed"></a>緩慢的 SMB 檔案傳送速率
 
@@ -29,7 +29,7 @@ ms.locfileid: "80815391"
     
   - 這通常發生于快取或緩衝處理初始複本（在記憶體中或在 RAID 控制器的記憶體快取中），且快取執行時。這會強制將資料直接寫入磁片（寫入）。 這是較慢的進程。
     
-  - 使用存放裝置效能監控計數器來判斷儲存體效能是否會隨著時間而降低。 如需詳細資訊，請參閱[SMB 檔案伺服器的效能微調](https://docs.microsoft.com/windows-server/administration/performance-tuning/role/file-server/smb-file-server)。
+  - 使用存放裝置效能監控計數器來判斷儲存體效能是否會隨著時間而降低。 如需詳細資訊，請參閱[SMB 檔案伺服器的效能微調](../../../administration/performance-tuning/role/file-server/smb-file-server.md)。
 
 - 使用 RAMMap （SysInternals）來判斷記憶體中的「對應檔案」使用量是否因為可用記憶體耗盡而增加。
 
@@ -37,7 +37,7 @@ ms.locfileid: "80815391"
 
 - 針對 SMBv3 和更新版本，請確定 SMB 多重通道已啟用且正常運作。
 
-- 在 SMB 用戶端上，啟用 SMB 中的大型 MTU，並停用頻寬節流設定。 若要這樣做，請執行以下命令：  
+- 在 SMB 用戶端上，啟用 SMB 中的大型 MTU，並停用頻寬節流設定。 若要這樣做，請執行下列命令：  
   
   ```PowerShell
   Set-SmbClientConfiguration -EnableBandwidthThrottling 0 -EnableLargeMtu 1
@@ -45,7 +45,7 @@ ms.locfileid: "80815391"
 
 ## <a name="small-file-transfer-is-slow"></a>小型檔案傳輸速度緩慢
 
-透過 SMB 進行小型檔案的緩慢傳輸，最常見的原因是有許多檔案。 這是預期的行為。
+透過 SMB 進行小型檔案的緩慢傳輸，最常見的原因是有許多檔案。 這是預期中的行為。
 
 檔案傳輸期間，檔案建立會導致高通訊協定額外負荷和高檔案系統額外負荷。 對於大型檔案傳輸，這些成本只會發生一次。 當傳送大量小型檔案時，成本會重複，並導致傳送速率變慢。
 
@@ -65,7 +65,7 @@ ms.locfileid: "80815391"
 
 此問題通常發生在 WAN 連線上。 這種情況很常見，通常是由 Office 應用程式（特別是 Microsoft Excel）存取和讀取資料的方式所造成。
 
-我們建議您確定 Office 和 SMB 二進位檔都是最新的，然後透過在 SMB 伺服器上停用租用來進行測試。 若要這樣做，請執行下列步驟：
+我們建議您確定 Office 和 SMB 二進位檔都是最新的，然後透過在 SMB 伺服器上停用租用來進行測試。 若要這樣做，請遵循下列步驟：
    
 1. 在 Windows 8 和 Windows Server 2012 或更新版本的 Windows 中執行下列 PowerShell 命令：
       
@@ -89,4 +89,4 @@ ms.locfileid: "80815391"
    NET START SERVER
    ```
 
-若要避免這個問題，您也可以將檔案複寫到本機檔案伺服器。 如需詳細資訊，請參閱[使用 EFS 時將 Office 檔 aving 到網路伺服器的速度很慢](https://docs.microsoft.com/office/troubleshoot/office/saving-file-to-network-server-slow)。
+若要避免這個問題，您也可以將檔案複寫到本機檔案伺服器。 如需詳細資訊，請參閱[使用 EFS 時將 Office 檔 aving 到網路伺服器的速度很慢](/office/troubleshoot/office/saving-file-to-network-server-slow)。

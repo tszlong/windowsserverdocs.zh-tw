@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 720ae8b5ebb0ef380f6547a85913cd84c6d98c7e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 0e763a1989ba820e4a4bb19842432368e17f1044
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931177"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957280"
 ---
 # <a name="ftp-mdelete"></a>ftp mdelete
 
@@ -29,7 +29,7 @@ mdelete <remotefile>[...]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<remotefile>` | 指定要刪除的遠端檔案。 |
 
@@ -41,8 +41,8 @@ mdelete <remotefile>[...]
 mdelete a.exe b.exe
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [其他 FTP 指引](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [其他 FTP 指引](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a2ba82708acd9c5830e2dc8a09cd804ade342066
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5aaa915ef416130dd2017b8f0f35cd255d207678
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935644"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956280"
 ---
 # <a name="repair-bde"></a>repair-bde
 
 
 
-如果使用 BitLocker 加密磁片磁碟機，則會在嚴重損壞的硬碟上存取加密的資料。 只要有效的修復密碼或復原金鑰用來解密資料，Repair 就可以重建磁片磁碟機的重要部分，並回收可復原的資料。 如果磁片磁碟機上的 BitLocker 中繼資料已損毀，除了修復密碼或修復金鑰以外，您還必須能夠提供備份金鑰封裝。 如果您使用 AD DS 備份的預設設定，則會在 Active Directory Domain Services （AD DS）中備份此金鑰套件。 使用此金鑰套件和修復密碼或修復金鑰，您可以在磁片損毀時，解密受 BitLocker 保護之磁片磁碟機的某些部分。 每個金鑰封裝僅適用于具有對應磁片磁碟機識別碼的磁片磁碟機。 您可以使用[BitLocker 修復密碼檢視器來進行 Active Directory](https://technet.microsoft.com/library/dd875531(v=ws.10).aspx) ，以從 AD DS 取得此金鑰封裝。
+如果使用 BitLocker 加密磁片磁碟機，則會在嚴重損壞的硬碟上存取加密的資料。 只要有效的修復密碼或復原金鑰用來解密資料，Repair 就可以重建磁片磁碟機的重要部分，並回收可復原的資料。 如果磁片磁碟機上的 BitLocker 中繼資料已損毀，除了修復密碼或修復金鑰以外，您還必須能夠提供備份金鑰封裝。 如果您使用 AD DS 備份的預設設定，則會在 Active Directory Domain Services （AD DS）中備份此金鑰套件。 使用此金鑰套件和修復密碼或修復金鑰，您可以在磁片損毀時，解密受 BitLocker 保護之磁片磁碟機的某些部分。 每個金鑰封裝僅適用于具有對應磁片磁碟機識別碼的磁片磁碟機。 您可以使用[BitLocker 修復密碼檢視器來進行 Active Directory](/previous-versions/windows/it-pro/windows-7/dd875531(v=ws.10)) ，以從 AD DS 取得此金鑰封裝。
 
 > [!NOTE]
 > BitLocker 修復密碼檢視器包含在 Windows Server 2012 上，可使用伺服器管理安裝的選用管理功能之一。
@@ -39,7 +39,7 @@ repair-bde <InputVolume> <OutputVolumeorImage> [-rk] [–rp] [-pw] [–kp] [–l
 
 #### <a name="parameters"></a>參數
 
-|參數|說明|
+|參數|描述|
 |---------|-----------|
 |\<InputVolume>|識別您想要修復的 BitLocker 加密磁片磁碟機的磁碟機號。 磁碟機號必須包含冒號;例如： **C：**。|
 |\<OutputVolumeorImage>|識別用來儲存修復的磁片磁碟機內容的磁片磁碟機。 輸出磁片磁碟機上的所有資訊都會遭到覆寫。|
@@ -74,6 +74,6 @@ repair-bde C: D: -kp F:\RecoveryKeyPackage -rk F:\RecoveryKey.bek -f
 repair-bde C: D: -pw
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

@@ -8,26 +8,26 @@ ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 149e3d3fc4d4eee22fa9330475f0eed9d945f8b9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 785a2a7c425e80b8f41e2c567826c34471cce9e9
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359315"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959810"
 ---
 # <a name="prepare-to-migrate-the-ad-fs-20-federation-server-to-ad-fs-on-windows-server-2012-r2"></a>準備將 AD FS 2.0 同盟伺服器遷移至 Windows Server 2012 R2 上的 AD FS
 
 本檔說明如何將 AD FS 2.0 或 Windows Server 2012 同盟伺服器陣列遷移至 Windows Server 2012 R2 AD FS 伺服器陣列。  這些步驟可搭配使用 WID 或 SQL Server 作為基礎資料庫的 AD FS 伺服器陣列使用。  
   
--   [遷移流程大綱](prepare-migrate-ad-fs-server-r2.md#migration-process-outline)  
+-   [移轉程序概述](prepare-migrate-ad-fs-server-r2.md#migration-process-outline)  
   
--   [Windows Server 2012 R2 中新的 AD FS 功能](prepare-migrate-ad-fs-server-r2.md#new-ad-fs-functionality-in-windows-server-2012-r2)  
+-   [Windows Server 2012 R2 中 AD FS 的新功能](prepare-migrate-ad-fs-server-r2.md#new-ad-fs-functionality-in-windows-server-2012-r2)  
   
 -   [Windows Server 2012 R2 中的 AD FS 需求](prepare-migrate-ad-fs-server-r2.md#ad-fs-requirements-in-windows-server-2012-r2)  
   
 -   [增加您的 Windows PowerShell 限制](prepare-migrate-ad-fs-server-r2.md#increasing-your-windows-powershell-limits)  
   
--   [其他遷移工作和考慮](prepare-migrate-ad-fs-server-r2.md#other-migration-tasks-and-considerations)  
+-   [其他移轉工作和考量](prepare-migrate-ad-fs-server-r2.md#other-migration-tasks-and-considerations)  
   
 ##  <a name="migration-process-outline"></a>移轉程序概述
 
@@ -55,7 +55,7 @@ ms.locfileid: "71359315"
   
     -   任何 Federation Service 屬性的非預設值，例如 AutoCertificateRollover 或 SSO 存留期。  
   
-    -   非預設 AD FS 端點設定和宣告描述。  
+    -   非預設 AD FS 端點設定和宣告描述。  
   
 -   Active Directory 宣告提供者信任的自訂宣告規則。  
   
@@ -86,7 +86,7 @@ ms.locfileid: "71359315"
         -   略過內部網路的主領域探索。  
         -   建立自訂 Web 佈景主題。  
   
-如需設定 AD FS 登入頁面外觀與風格的詳細指示，請參閱[自訂 AD FS 登入頁面](../operations/AD-FS-Customization-in-Windows-Server-2016.md)。  
+如需設定 AD FS 登入頁面外觀與風格的詳細指示，請參閱[自訂 AD FS 登入頁面](../operations/ad-fs-customization-in-windows-server.md)。  
   
 如果您在現有 AD FS 伺服器陣列中有要遷移到 Windows Server 2012 R2 的網頁自訂，您可以使用 Windows Server 2012 R2 中的新自訂功能，在遷移程式中重新建立它們。  
   
@@ -129,7 +129,7 @@ ms.locfileid: "71359315"
   
 在安裝網域控制站期間，您可能需要指定其他認證才能執行 adprep /forestprep。  
   
-3. 在執行 Windows Server 2012 R2 的伺服器上安裝 AD DS，以建立新的 Active Directory 樹系。 在此情況下，不需要執行 adprep/forestprep，因為架構一開始會建立為所有必要的容器和物件，以支援 DRS。  
+3. 在執行 Windows Server 2012 R2 的伺服器上安裝 AD DS，以建立新的 Active Directory 樹系。 在這種情況下，不需要執行 adprep /forestprep，因為一開始會使用支援 DRS 的所有必要容器和物件建立結構描述。  
   
 ### <a name="sql-server-support-for-ad-fs-in-windows-server-2012-r2"></a>SQL Server 支援 Windows Server 2012 R2 的 AD FS  
  如果您要建立一個 AD FS 陣列並使用 SQL Server 儲存您的設定資料，可以使用 SQL Server 2008 和更新版本，包括 SQL Server 2012。  
@@ -146,7 +146,7 @@ ms.locfileid: "71359315"
 ## <a name="other-migration-tasks-and-considerations"></a>其他移轉工作和考量  
  為了將 AD FS 陣列成功移轉到 Windows Server 2012 R2，務必注意下列事項：  
   
--   位於 Windows Server 2012 R2 安裝光碟上 \support\adfs 資料夾中的遷移腳本，會要求您保留相同的同盟伺服器陣列名稱和服務帳戶身分識別名稱，以供您將它遷移至 Windows 時在舊版 AD FS 伺服器陣列中使用伺服器 2012 R2。  
+-   位於 Windows Server 2012 R2 安裝光碟上 \support\adfs 資料夾中的遷移腳本，會要求您保留相同的同盟伺服器陣列名稱和服務帳戶身分識別名稱，以供您將它遷移至 Windows Server 2012 R2 時在舊版 AD FS 伺服器陣列中使用。  
   
 -   如果您要移轉 SQL Server AD FS 陣列，請注意，移轉程序包含建立一個新的 SQL 資料庫執行個體，您必須將原始設定資料匯入其中。  
   
@@ -154,4 +154,4 @@ ms.locfileid: "71359315"
  [將 Active Directory 同盟服務角色服務遷移至 Windows Server 2012 R2](migrate-ad-fs-service-role-to-windows-server-r2.md)   
  [遷移 AD FS 同盟伺服器](migrate-ad-fs-fed-server-r2.md)   
  [遷移 AD FS 同盟伺服器 Proxy](migrate-fed-server-proxy-r2.md)   
- [確認 AD FS 遷移至 Windows Server 2012 R2](verify-ad-fs-migration.md)
+ [確認將 AD FS 移轉到 Windows Server 2012 R2](verify-ad-fs-migration.md)

@@ -8,12 +8,12 @@ ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 57367cadd3c7ce3d031c6eb3a53c333422543dae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9a9b5f6454ec93ec27f557588016295935827c18
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359367"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966210"
 ---
 # <a name="migrate-the-active-directory-federation-services-proxy-server-to-windows-server-2012-r2"></a>將 Active Directory 同盟服務 Proxy 伺服器遷移至 Windows Server 2012 R2
 
@@ -26,19 +26,18 @@ ms.locfileid: "71359367"
   
 若要規劃 Web Application Proxy部署，您可以檢閱下列主題的資訊：  
   
-- [規劃 Web 應用程式 Proxy 基礎結構](https://technet.microsoft.com/library/dn383648.aspx)  
+- [規劃 Web 應用程式 Proxy 基礎結構](/previous-versions/orphan-topics/ws.11/dn383648(v=ws.11))  
   
-- [規劃 Web 應用程式 Proxy 伺服器](https://technet.microsoft.com/library/dn383647.aspx)  
+- [規劃 Web 應用程式 Proxy 伺服器](/previous-versions/orphan-topics/ws.11/dn383647(v=ws.11))  
   
   若要部署 Web Application Proxy，您可以依照下列主題的程序：  
   
-- [設定 Web 應用程式 Proxy 基礎結構](https://technet.microsoft.com/library/dn383644.aspx)  
+- [設定 Web 應用程式 Proxy 基礎結構](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383644(v=ws.11))  
   
-- [安裝和設定 Web 應用程式 Proxy 伺服器](https://technet.microsoft.com/library/dn383662.aspx)  
+- [安裝和設定 Web 應用程式 Proxy 伺服器](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383662(v=ws.11))  
   
 ## <a name="next-steps"></a>後續步驟
  [將 Active Directory 同盟服務角色服務遷移至 Windows Server 2012 R2](migrate-ad-fs-service-role-to-windows-server-r2.md)   
  [準備遷移 AD FS 同盟伺服器](prepare-migrate-ad-fs-server-r2.md)   
  [遷移 AD FS 同盟伺服器](migrate-ad-fs-fed-server-r2.md)    
- [確認 AD FS 遷移至 Windows Server 2012 R2](verify-ad-fs-migration.md)
-
+ [確認將 AD FS 移轉到 Windows Server 2012 R2](verify-ad-fs-migration.md)

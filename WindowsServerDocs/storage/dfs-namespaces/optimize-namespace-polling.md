@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: ea867cbb36286297ff3c5274d11c36b5815ab9ac
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4ffcf974bd809d1692e16d632153c213081041c4
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475455"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961230"
 ---
 # <a name="optimize-namespace-polling"></a>最佳化命名空間輪詢
 
@@ -35,7 +35,7 @@ ms.locfileid: "85475455"
     -   如果有超過 16 個命名空間伺服器，則選擇 **\[最佳化延展性\]**。 這樣雖然會減少網域主控站 (PDC) 模擬器的負載，不過卻會增加將命名空間的變更複寫到所有命名空間伺服器的時間。 將變更複寫到所有伺服器之前，使用者可能會看到不一致的命名空間。
 
 > [!NOTE]
-> 若要使用 Windows PowerShell 來設定命名空間輪詢模式，請使用 [Set-DfsnRoot EnableRootScalability](https://technet.microsoft.com/library/jj884281.aspx) Cmdlet，此功能已在 Windows Server 2012 中推出。
+> 若要使用 Windows PowerShell 來設定命名空間輪詢模式，請使用 [Set-DfsnRoot EnableRootScalability](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771913(v=ws.11)) Cmdlet，此功能已在 Windows Server 2012 中推出。
 
 ## <a name="additional-references"></a>其他參考
 

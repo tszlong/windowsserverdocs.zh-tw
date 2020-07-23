@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6729189bb15fd3aeb10172288504e9809b082edb
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6d122176e37d7c49f9193477e348e44e039e9ac9
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932321"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954610"
 ---
 # <a name="wbadmin-get-versions"></a>wbadmin get versions
 
@@ -34,7 +34,7 @@ wbadmin get versions
 
 ### <a name="parameters"></a>參數
 
-|參數|說明|
+|參數|描述|
 |---------|-----------|
 |-backupTarget|指定包含您想要其詳細資料之備份的儲存位置。 用於列出儲存于該目標位置的備份。 備份目標位置可以是本機連接的磁片磁碟機、磁片區、遠端共用資料夾、卸載式媒體（例如 DVD 光碟機或其他光學媒體）。 如果**wbadmin get 版本**是在建立備份的同一部電腦上執行，則不需要此參數。 不過，若要取得從另一部電腦建立之備份的相關資訊，則需要此參數。|
 |-機器|指定您想要備份詳細資料的電腦。 當多部電腦的備份儲存在相同的位置時，請使用。 當指定 **-backupTarget**時，應該使用。|
@@ -54,8 +54,8 @@ wbadmin get versions -backupTarget:h:
 wbadmin get versions -backupTarget:\\servername\share -machine:server01
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 -   [Restore](wbadmin.md)
--   [WBBackupTarget](https://technet.microsoft.com/library/jj902447.aspx) Cmdlet
+-   [WBBackupTarget](/powershell/module/windowserverbackup/?view=winserver2012r2-ps) Cmdlet

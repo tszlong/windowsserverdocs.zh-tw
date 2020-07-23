@@ -8,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: a6418f7ac317f060adb72f32e231e1577a5f8b92
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2d3f0f7f0fa611ab34145aa35291ff9d07b0b205
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861141"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955950"
 ---
 # <a name="scenario-access-denied-assistance"></a>案例：拒絕存取時的協助
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 使用者在檔案伺服器上嘗試存取沒有權限的共用檔案和資料夾時，會收到拒絕存取的訊息。 系統管理員通常沒有適當的關聯內容來疑難排解存取問題，因此很難解決問題。  
   
@@ -32,7 +32,7 @@ ms.locfileid: "80861141"
   
 Windows Server 2012 中的拒絕存取時的協助為檔案伺服器系統管理員提供相關的存取詳細資料，讓他們能夠判斷問題和適當的工具，讓他們能夠進行設定變更以滿足存取要求。 例如，使用者可能遵循此程序存取目前並沒有存取權的檔案：  
   
--   使用者嘗試讀取 \\\financeshares 共用資料夾中的檔案，但伺服器顯示拒絕存取的訊息。  
+-   使用者嘗試讀取 \financeshares 共用資料夾中的檔案 \\ ，但伺服器顯示拒絕存取的訊息。  
   
 -    Windows Server 2012 會向使用者顯示拒絕存取時的協助資訊，並提供要求協助的選項。  
   
@@ -40,23 +40,21 @@ Windows Server 2012 中的拒絕存取時的協助為檔案伺服器系統管理
   
 您可以在[規劃拒絕存取時的協助](assetId:///b169f0a4-8b97-4da8-ae4a-c8f1986d19e1)中找到設定拒絕存取時的協助的規劃資訊。  
   
-您可以在[部署拒絕存取時的協助&#40;示範步驟&#41;](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md)中找到設定拒絕存取時的協助步驟。  
+您可以在部署拒絕存取時的協助中找到設定拒絕存取時的協助[&#40;示範步驟&#41;](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md)的相關步驟。  
   
 ## <a name="in-this-scenario"></a>在這個案例中  
 此案例是動態存取控制案例的一部分。 如需動態存取控制的其他資訊，請參閱：  
   
--   [動態存取控制：案例總覽](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [動態存取控制：案例概觀](Dynamic-Access-Control--Scenario-Overview.md)  
   
 ## <a name="practical-applications"></a>實際應用  
 Windows Server 2012 中的拒絕存取時的協助讓使用者能夠直接從拒絕存取訊息要求存取共用檔案和資料夾，藉此提供動態存取控制。  
   
-## <a name="features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>此案例中包含的功能  
+## <a name="features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>這個案例包含的功能  
 下表列出這個案例中的功能，並說明它們如何支援這個案例。  
   
 |功能|如何支援本案例|  
 |-----------|---------------------------------|  
-|[檔案伺服器 Resource Manager 總覽](https://technet.microsoft.com/library/hh831701.aspx)|在檔案伺服器上使用 [檔案伺服器資源管理員] 主控台，可以設定拒絕存取時的協助。|  
-|[檔案和存放服務概觀](https://technet.microsoft.com/library/hh831487.aspx)|[檔案伺服器資源管理員] 為 [檔案和存放服務] 角色服務，它包含一組可以用來管理網路上檔案伺服器的功能。|  
+|[File Server Resource Manager Overview](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831701(v=ws.11))|在檔案伺服器上使用 [檔案伺服器資源管理員] 主控台，可以設定拒絕存取時的協助。|  
+|[檔案和存放服務概觀](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831487(v=ws.11))|[檔案伺服器資源管理員] 為 [檔案和存放服務] 角色服務，它包含一組可以用來管理網路上檔案伺服器的功能。|  
   
-
-

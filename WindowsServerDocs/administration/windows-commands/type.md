@@ -8,18 +8,18 @@ ms.assetid: c44fe905-a865-4c97-8cc5-fb95fec7d4d5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimp
-ms.openlocfilehash: f3cf9c784c35f04f9232bb05e79acdbd8ed7a09a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 4b79cf89c1363ba35ba6567139e119e0afeec905
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937321"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954855"
 ---
 # <a name="type"></a>類型
 
 在 Windows 命令 shell 中，**輸入**是一個內建的命令，它會顯示文字檔的內容。 使用 [**類型**] 命令來查看文字檔，而不進行修改。
 
-在 PowerShell 中，**輸入**為**[Get Content](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-content)** Cmdlet 的內建別名，這也會顯示檔案的內容，但使用不同的語法。
+在 PowerShell 中，**輸入**為**[Get Content](/powershell/module/microsoft.powershell.management/get-content)** Cmdlet 的內建別名，這也會顯示檔案的內容，但使用不同的語法。
 
 ## <a name="syntax"></a>語法
 
@@ -29,7 +29,7 @@ type [<Drive>:][<Path>]<FileName>
 
 ### <a name="parameters"></a>參數
 
-|參數|說明|
+|參數|描述|
 |---------|-----------|
 |[\<Drive>:][\<Path>]\<FileName>|指定您想要查看之檔案的位置和名稱。 以空格分隔多個檔案名。|
 |/?|在命令提示字元顯示說明。|
@@ -50,6 +50,6 @@ type holiday.mar
 type holiday.mar | more
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

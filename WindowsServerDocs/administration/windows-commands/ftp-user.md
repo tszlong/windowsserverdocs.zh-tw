@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e6a01cbea0de80bfa78194d5b2d559a894d4ed77
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 9b1eea449765b58461d410f0e015d4978c3ad016
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932364"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957350"
 ---
 # <a name="ftp-user"></a>ftp user
 
@@ -30,7 +30,7 @@ user <username> [<password>] [<account>]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<username>` | 指定用來登入遠端電腦的使用者名稱。 |
 | `[<password>]` | 指定使用者*名稱*的密碼。 如果未指定密碼，但這是必要的， **ftp**命令會提示您輸入密碼。 |
@@ -44,8 +44,8 @@ user <username> [<password>] [<account>]
 user User1 Password1
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [其他 FTP 指引](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [其他 FTP 指引](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e9a479b3509939c17ab986ce68c9a057ac3e773c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 8b42deb873613a03e985fc9d54f954c4fd6bfb97
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932137"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954650"
 ---
 # <a name="wbadmin-get-disks"></a>wbadmin get disks
 
@@ -34,8 +34,8 @@ wbadmin get disks
 
 這個子命令沒有任何參數。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 -   [Restore](wbadmin.md)
--   [WBDisk](https://technet.microsoft.com/library/jj902446.aspx) Cmdlet
+-   [WBDisk](/powershell/module/windowserverbackup/?view=winserver2012r2-ps) Cmdlet

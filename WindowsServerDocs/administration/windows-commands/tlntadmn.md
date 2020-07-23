@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 602f3aa99f9d0e47fbbde1ab5c09b193446d8a7c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 995b2332f98906a1a5b9cb53f504a87fb831c3e0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936913"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958800"
 ---
 # <a name="tlntadmn"></a>tlntadmn
 
@@ -28,11 +28,11 @@ tlntadmn [<computerName>] [-u <UserName>] [-p <Password>] [{start | stop | pause
 ```
 #### <a name="parameters"></a>參數
 
-|                   參數                    |                                                                                                                                                       說明                                                                                                                                                        |
+|                   參數                    |                                                                                                                                                       描述                                                                                                                                                        |
 |------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                \<computerName>                 |                                                                                                                    指定要連接的伺服器名稱。 預設是本機電腦。                                                                                                                    |
 |         -u \<UserName> -p\<Password>          |                                                指定您要管理之遠端伺服器的系統管理認證。 如果您想要管理您未使用系統管理認證登入的遠端伺服器，則需要此參數。                                                |
-|                     start                      |                                                                                                                                            啟動 telnet 伺服器服務。                                                                                                                                             |
+|                     開始                      |                                                                                                                                            啟動 telnet 伺服器服務。                                                                                                                                             |
 |                      stop                      |                                                                                                                                             停止 telnet 伺服器服務                                                                                                                                              |
 |                     pause                      |                                                                                                                          暫停 telnet 伺服器服務。 不接受任何新的連接。                                                                                                                          |
 |                    continue                    |                                                                                                                                            繼續 telnet 伺服器服務。                                                                                                                                            |
@@ -64,6 +64,6 @@ tlntadmn config timeout=0:30:0
 tlntadmn -s
 ```
 
-## <a name="additional-references"></a>其他參考資料
--   [telnet 操作指南](https://technet.microsoft.com/library/cc753164(v=ws.10).aspx)
+## <a name="additional-references"></a>其他參考
+-   [telnet 操作指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753164(v=ws.10))
 - [命令列語法關鍵](command-line-syntax-key.md)

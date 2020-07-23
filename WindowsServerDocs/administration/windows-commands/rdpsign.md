@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 2aefbc144820d0132bd4993d150dec955e22e01d
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5769e568d6cee062b354b4d8c7284808968a2b02
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931968"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956310"
 ---
 # <a name="rdpsign"></a>rdpsign
 
@@ -23,7 +23,7 @@ ms.locfileid: "85931968"
 可讓您以數位方式簽署遠端桌面通訊協定（.rdp）檔案。
 
 > [!NOTE]
-> 若要瞭解最新版本的新功能，請參閱[Windows Server 中遠端桌面服務的新功能](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11))。
+> 若要瞭解最新版本的新功能，請參閱[Windows Server 中遠端桌面服務的新功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
 
 ## <a name="syntax"></a>語法
 
@@ -33,7 +33,7 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 |--|--|
 | /sha1`<hash>` | 指定指紋，這是憑證存放區中所包含之簽署憑證的安全雜湊演算法1（SHA1）雜湊。 在 Windows Server 2012 R2 和更舊版本中使用。 |
 | /sha256`<hash>` | 指定指紋，這是憑證存放區中所包含之簽署憑證的安全雜湊演算法256（SHA256）雜湊。 取代 Windows Server 2016 和更新版本中的/sha1。 |

@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cd5222623931bbd940c7ff6e8c6285874c89a385
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 4081a0e34911ef3b80d988fdb333c8b88e6fb982
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932059"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956900"
 ---
 # <a name="mqtgsvc"></a>mqtgsvc
 
-當觸發程式的規則評估為 true 時，會監視傳入訊息的佇列，並以可執行檔或 COM 元件的形式執行動作。 如需如何使用訊息佇列觸發程式服務的範例，請參閱[訊息佇列觸發](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ms703197(v=vs.85))程式。
+當觸發程式的規則評估為 true 時，會監視傳入訊息的佇列，並以可執行檔或 COM 元件的形式執行動作。 如需如何使用訊息佇列觸發程式服務的範例，請參閱[訊息佇列觸發](/previous-versions/windows/desktop/legacy/ms703197(v=vs.85))程式。
 
 ## <a name="syntax"></a>Syntax
 
@@ -26,8 +26,8 @@ ms.locfileid: "85932059"
 mqtgsvc.exe
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [MSMQ Powershell 參考](https://docs.microsoft.com/powershell/module/msmq/?view=win10-ps)
+- [MSMQ Powershell 參考](/powershell/module/msmq/?view=win10-ps)

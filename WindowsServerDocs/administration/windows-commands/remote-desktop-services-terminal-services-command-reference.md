@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 55466409517b63c52f88a7acec3a8f4aba7d258d
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: dd054e59c7245eddfb66725bd5d95333f602b2c6
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933473"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956300"
 ---
 # <a name="remote-desktop-services-terminal-services-command-reference"></a>遠端桌面服務 (終端機服務) 命令參考資料
 
@@ -22,9 +22,9 @@ ms.locfileid: "85933473"
 
 以下是遠端桌面服務命令列工具的清單。
 > [!NOTE]
-> 在 Windows Server 2008 R2 中，終端機服務已重新命名為遠端桌面服務。 若要瞭解最新版本的新功能，請參閱 Windows Server TechNet Library 中的[Windows server 2012 遠端桌面服務的新功能](https://technet.microsoft.com/library/hh831527)。
+> 在 Windows Server 2008 R2 中，終端機服務已重新命名為遠端桌面服務。 若要瞭解最新版本的新功能，請參閱 Windows Server TechNet Library 中的[Windows server 2012 遠端桌面服務的新功能](/previous-versions/orphan-topics/ws.11/hh831527(v=ws.11))。
 >
-> |                 Command                 |                                                      說明                                                       |
+> |                 命令                 |                                                      描述                                                       |
 > |-----------------------------------------|------------------------------------------------------------------------------------------------------------------------|
 > |           [change](change.md)           | 變更登入、COM 埠對應和安裝模式遠端桌面工作階段主機（rd 工作階段主機）伺服器設定。 |
 > |     [change logon](change-logon.md)     |    在 rd 工作階段主機伺服器上啟用或停用來自用戶端會話的登入，或顯示目前的登入狀態。     |

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8c186e0945612bf7c84637f6b039dcdbac3d68f1
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6929f7828f82c50723ae0a8c658ee2c79e1f1499
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930214"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956450"
 ---
 # <a name="query-user"></a>query user
 
@@ -35,7 +35,7 @@ ms.locfileid: "85930214"
 - 使用者登入的日期和時間
 
 > [!NOTE]
-> 若要瞭解最新版本的新功能，請參閱[Windows Server 中遠端桌面服務的新功能](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11))。
+> 若要瞭解最新版本的新功能，請參閱[Windows Server 中遠端桌面服務的新功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
 
 ## <a name="syntax"></a>語法
 
@@ -45,7 +45,7 @@ query user [<username> | <sessionname> | <sessionID>] [/server:<servername>]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 |--|--|
 | `<username>` | 指定您想要查詢之使用者的登入名稱。 |
 | `<sessionname>` | 指定您想要查詢之會話的名稱。 |
@@ -75,7 +75,7 @@ query user
 query user USER1 /server:Server1
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

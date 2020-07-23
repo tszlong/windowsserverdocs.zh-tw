@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f2715332a8a6adff29f31a4dbd7d3e7a27a4a6f2
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 64355bd452934909d0600fa791e7a4c2d2066b6f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929325"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958290"
 ---
 # <a name="diskpart-scripts-and-examples"></a>diskpart 腳本和範例
 
@@ -53,12 +53,12 @@ ms.locfileid: "85929325"
 
 - 當 diskpart 啟動時，會在命令提示字元中顯示 diskpart 版本和電腦名稱稱。 根據預設，如果 diskpart 在嘗試執行腳本工作時遇到錯誤，則 diskpart 會停止處理腳本並顯示錯誤碼（除非您已指定**noerr**參數）。 不過，不論您是否使用了**noerr**參數，diskpart 一律會在遇到語法錯誤時傳回錯誤。 **Noerr**參數可讓您執行有用的工作，例如使用單一腳本刪除所有磁片上的所有分割區，而不論磁片總數為何。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [範例：使用 Windows PE 和 DiskPart 設定以 UEFI/GPT 為基礎的硬碟磁碟分割](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh825686(v=win.10))
+- [範例：使用 Windows PE 和 DiskPart 設定以 UEFI/GPT 為基礎的硬碟磁碟分割](/previous-versions/windows/it-pro/windows-8.1-and-8/hh825686(v=win.10))
 
-- [範例：使用 Windows PE 和 DiskPart 設定以 BIOS/MBR 為基礎的硬碟磁碟分割](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh825677(v=win.10))
+- [範例：使用 Windows PE 和 DiskPart 設定以 BIOS/MBR 為基礎的硬碟磁碟分割](/previous-versions/windows/it-pro/windows-8.1-and-8/hh825677(v=win.10))
 
-- [Windows PowerShell 中的儲存體 Cmdlet](https://docs.microsoft.com/powershell/module/storage/?view=win10-ps)
+- [Windows PowerShell 中的儲存體 Cmdlet](/powershell/module/storage/?view=win10-ps)

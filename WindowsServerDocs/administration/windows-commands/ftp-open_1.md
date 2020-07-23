@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 888b8f917d82d72f47a737c2f0edc42451de7164
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 265668809040d7644d698c8b9bc0da5371fb5499
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925795"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957630"
 ---
 # <a name="ftp-open"></a>ftp open
 
@@ -30,7 +30,7 @@ open <computer> [<port>]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<computer>` | 指定您嘗試連接的遠端電腦。 您可以使用 IP 位址或電腦名稱稱（在此情況下，DNS 伺服器或主機檔案必須可以使用）。 |
 | `[<port>]` | 指定要用來連接到 ftp 伺服器的 TCP 通訊埠編號。 預設會使用 TCP 埠21。 |
@@ -49,8 +49,8 @@ open ftp.microsoft.com
 open ftp.microsoft.com 755
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [其他 FTP 指引](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [其他 FTP 指引](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

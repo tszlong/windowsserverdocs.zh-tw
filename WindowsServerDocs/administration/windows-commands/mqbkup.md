@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 131d80f32a3c3324dad08b876dd4f4f8610b93e2
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 00518ab36f1886ccb3a1221a065715668fb02f47
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936298"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956920"
 ---
 # <a name="mqbkup"></a>mqbkup
 
@@ -34,7 +34,7 @@ mqbkup {/b | /r} <folder path_to_storage_device>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ------- | -------- |
 | /b | 指定備份作業。 |
 | /r | 指定還原作業。 |
@@ -69,8 +69,8 @@ mqbkup /b /y c:\oldbkup
 mqbkup /r c:\msmqbkup
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [MSMQ Powershell 參考](https://docs.microsoft.com/powershell/module/msmq/?view=win10-ps)
+- [MSMQ Powershell 參考](/powershell/module/msmq/?view=win10-ps)

@@ -8,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e6142d3facb32a81d8d7c54afe9c2f60fc9eb674
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: ad4e89be7eeb6190d27ee0e15e370bcaa1806cb8
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623806"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959370"
 ---
 # <a name="planning-operations-master-role-placement"></a>規劃設置操作主機角色
 
@@ -55,9 +55,9 @@ PDC 模擬器會處理用戶端密碼變更。 只有一個網域控制站會作
 
 如有需要，請將 PDC 模擬器放在包含來自該網域之大量使用者的位置，以進行密碼轉送作業。 此外，請確定該位置已妥善連接到其他位置，以將複寫延遲降到最低。
 
-如需可協助您記錄有關放置 PDC 模擬器之位置的資訊，以及每個位置所代表每個網域的使用者數目，請參閱[Windows Server 2003 部署套件的工作輔助工具](https://microsoft.com/download/details.aspx?id=9608)、下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，以及開啟網域控制站放置（DSSTOPO_4 .doc）。
+如需協助您記錄規劃放置 PDC 模擬器之位置的相關資訊，以及每個位置所代表每個網域的使用者數目，請參閱[Windows Server 2003 部署套件的工作輔助工具](https://microsoft.com/download/details.aspx?id=9608)、下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，以及開啟網域控制站放置（DSSTOPO_4.doc）。
 
-當您部署地區網域時，您必須參考需要放置 PDC 模擬器之位置的相關資訊。 如需部署地區網域的詳細資訊，請參閱[部署 Windows Server 2008 地區網域](https://technet.microsoft.com/library/cc755118.aspx)。
+當您部署地區網域時，您必須參考需要放置 PDC 模擬器之位置的相關資訊。 如需部署地區網域的詳細資訊，請參閱[部署 Windows Server 2008 地區網域](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755118(v=ws.10))。
 
 ## <a name="requirements-for-infrastructure-master-placement"></a>基礎結構主機位置的需求
 
@@ -82,10 +82,10 @@ PDC 模擬器會處理用戶端密碼變更。 只有一個網域控制站會作
 - 網站 C 和 D 中的網域控制站無法新增或移除目錄、DNS 或自訂的應用程式磁碟分割。
 - 網站 C 和 D 中的網域控制站無法進行架構變更。
 
-如需協助您規劃操作主機角色位置的工作表，請參閱[Windows Server 2003 部署套件的工作輔助工具](https://microsoft.com/download/details.aspx?id=9608)、下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，以及開啟網域控制站位置（DSSTOPO_4 .doc）。
+如需協助您規劃操作主機角色位置的工作表，請參閱[Windows Server 2003 部署套件的工作輔助工具](https://microsoft.com/download/details.aspx?id=9608)、下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，以及開啟網域控制站位置（DSSTOPO_4.doc）。
 
-當您建立樹系根域和地區網域時，您將需要參考這則資訊。 如需部署樹系根域的詳細資訊，請參閱部署[部署 Windows Server 2008 樹系根域](https://technet.microsoft.com/library/cc731174.aspx)。 如需部署地區網域的詳細資訊，請參閱[部署 Windows Server 2008 地區網域](https://technet.microsoft.com/library/cc755118.aspx)。
+當您建立樹系根域和地區網域時，您將需要參考這則資訊。 如需部署樹系根域的詳細資訊，請參閱部署[部署 Windows Server 2008 樹系根域](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731174(v=ws.10))。 如需部署地區網域的詳細資訊，請參閱[部署 Windows Server 2008 地區網域](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755118(v=ws.10))。
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>接下來的步驟
 
 如需有關 FSMO 角色位置的詳細資訊，請參閱[Active Directory 網域控制站上的 fsmo 位置和優化](https://support.microsoft.com/help/223346)支援主題

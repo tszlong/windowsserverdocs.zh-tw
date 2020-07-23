@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: 00dbf709139ef245b94a3f083ab83a12503131c2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ad806577c1daa46ba77895b6a422c6fdace23c98
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856291"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966810"
 ---
 # <a name="cluster-to-cluster-storage-replica-within-the-same-region-in-azure"></a>Azure 中相同區域內的叢集對叢集儲存體複本
 
@@ -75,13 +75,13 @@ ms.locfileid: "80856291"
 11. 為每個叢集建立內部標準 SKU [Load Balancer](https://ms.portal.azure.com/#create/Microsoft.LoadBalancer-ARM) （**azlbr1**、**azlbr2**）。 
    
     提供叢集 IP 位址做為負載平衡器的靜態私人 IP 位址。
-    - azlbr1 = > 前端 IP：10.3.0.100 （從虛擬網路（**az2az-Vnet**）子網挑選未使用的 ip 位址）
+    - azlbr1 => 前端 IP：10.3.0.100 （從虛擬網路（**az2az-Vnet**）子網挑選未使用的 ip 位址）
     - 為每個負載平衡器建立後端集區。 新增相關聯的叢集節點。
     - 建立健康情況探查：埠59999
     - 建立負載平衡規則：允許 HA 埠，並啟用浮動 IP。 
    
     提供叢集 IP 位址做為負載平衡器的靜態私人 IP 位址。
-    - azlbr2 = > 前端 IP：10.3.0.101 （從虛擬網路（**az2az-Vnet**）子網挑選未使用的 ip 位址）
+    - azlbr2 => 前端 IP：10.3.0.101 （從虛擬網路（**az2az-Vnet**）子網挑選未使用的 ip 位址）
     - 為每個負載平衡器建立後端集區。 新增相關聯的叢集節點。
     - 建立健康情況探查：埠59999
     - 建立負載平衡規則：允許 HA 埠，並啟用浮動 IP。 
@@ -95,7 +95,7 @@ ms.locfileid: "80856291"
 13. 指示叢集接聽埠59999上的健康情況探查訊息，並從目前擁有此資源的節點回應。 
     針對每個叢集，從叢集的任何一個節點執行一次。 
     
-    在我們的範例中，請務必根據您的設定值來變更 "ILBIP"。 從任何一個節點**az2az1**/**az2az2**執行下列命令：
+    在我們的範例中，請務必根據您的設定值來變更 "ILBIP"。 從任何一個節點**az2az1** / **az2az2**執行下列命令：
 
     ```PowerShell
      $ClusterNetworkName = "Cluster Network 1" # Cluster network name (Use Get-ClusterNetwork on Windows Server 2012 or higher to find the name. And use Get-ClusterResource to find the IPResourceName).
@@ -105,7 +105,7 @@ ms.locfileid: "80856291"
      Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"ProbeFailureThreshold"=5;"EnableDhcp"=0}
     ```
 
-14. 從任何一個節點**az2az3**/**az2az4**執行下列命令。 
+14. 從任何一個節點**az2az3** / **az2az4**執行下列命令。 
 
     ```PowerShell
     $ClusterNetworkName = "Cluster Network 1" # Cluster network name (Use Get-ClusterNetwork on Windows Server 2012 or higher to find the name. And use Get-ClusterResource to find the IPResourceName).
@@ -132,7 +132,7 @@ ms.locfileid: "80856291"
 
 16. 請先執行叢集[驗證測試](../../failover-clustering/create-failover-cluster.md#validate-the-configuration)，再繼續進行下一個步驟。
 
-17. 啟動 Windows PowerShell，然後使用 [Test-SRTopology](https://docs.microsoft.com/powershell/module/storagereplica/test-srtopology?view=win10-ps) Cmdlet 來判斷您是否符合所有儲存體複本需求。 您可以使用僅限需求模式的 Cmdlet 來進行快速測試，以及長時間執行的效能評估模式。
+17. 啟動 Windows PowerShell，然後使用 [Test-SRTopology](/powershell/module/storagereplica/test-srtopology?view=win10-ps) Cmdlet 來判斷您是否符合所有儲存體複本需求。 您可以使用僅限需求模式的 Cmdlet 來進行快速測試，以及長時間執行的效能評估模式。
 
 18. 設定叢集對叢集儲存體複本。
    

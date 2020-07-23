@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 833081baa3ae9a0c2493623a7d015334087ee26d
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 0eb2836b15c24dc946953c0c82c4b3586971c5bc
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934793"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956730"
 ---
 # <a name="nfsstat"></a>nfsstat
 
@@ -28,7 +28,7 @@ nfsstat [-c][-s][-n][-r][-z][-m]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | -c | 只顯示用戶端所傳送和拒絕的用戶端 NFS 和 RPC 和 NFS 呼叫。 若只要顯示 NFS 或 RPC 資訊，請將此旗標與 **-n**或 **-r**參數結合。 |
 | -S | 只顯示伺服器所傳送和拒絕的伺服器端 NFS 和 RPC 和 NFS 呼叫。 若只要顯示 NFS 或 RPC 資訊，請將此旗標與 **-n**或 **-r**參數結合。 |
@@ -69,10 +69,10 @@ nfsstat -s
 nfsstat -z
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
 - [網路檔案系統服務命令參考資料](services-for-network-file-system-command-reference.md)
 
-- [NFS Cmdlet 參考](https://docs.microsoft.com/powershell/module/nfs)
+- [NFS Cmdlet 參考](/powershell/module/nfs)

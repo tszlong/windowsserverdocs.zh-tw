@@ -9,12 +9,12 @@ ms.assetid: e4331370-ba07-4529-92ab-db14a41bfc3b
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: f8fe5ac8b57105d421af431b12c8dc17250b622d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7aa2c422151247d13dcb1dafd474fb70873f54e1
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820331"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966910"
 ---
 # <a name="install-server-backup-on-your-multipoint-server"></a>在 MultiPoint 伺服器上安裝伺服器備份
 建議您考慮 MultiPoint 伺服器的備份和復原計畫。
@@ -33,13 +33,13 @@ Windows Server Backup 的一項主要功能是能夠排程自動執行備份。
   
 2.  按一下 [**新增角色及功能**] 以啟動 [新增角色嚮導]。 然後在您完成筆記**之前**，按一下 [**下一步]** 。  
   
-3.  選取 [以**角色為基礎] 或 [功能**型] 安裝選項，然後按 **[下一步]** 。  
+3.  選取 [以**角色為基礎] 或 [功能**型] 安裝選項，然後按 **[下一步]**。  
   
-4.  選取您要管理的本機電腦，然後按 **[下一步]** 。  
+4.  選取您要管理的本機電腦，然後按 **[下一步]**。  
   
     此時會開啟 [新增功能精靈]。  
   
-5.  在 [**選取功能**] 頁面上，展開 [Windows Server Backup 功能]，選取**Windows Server Backup**和**命令列工具**的核取方塊，然後按 **[下一步]** 。  
+5.  在 [**選取功能**] 頁面上，展開 [Windows Server Backup 功能]，選取**Windows Server Backup**和**命令列工具**的核取方塊，然後按 **[下一步]**。  
   
     > [!NOTE]  
     > 或者，如果您只想要安裝嵌入式管理單元和 Wbadmin 命令列工具，請展開 [ **Windows Server Backup 功能**]，然後只選取 [ **Windows Server Backup** ] 核取方塊，確認 [**命令列工具**] 核取方塊是清除的。  
@@ -56,4 +56,4 @@ Windows Server Backup 的一項主要功能是能夠排程自動執行備份。
   
 ## <a name="configure-backups-using-windows-server-backup"></a>使用 Windows Server Backup 設定備份  
   
--   請遵循[備份伺服器](https://technet.microsoft.com/library/cc753528.aspx)中的指引。 
+-   請遵循[備份伺服器](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753528(v=ws.11))中的指引。 

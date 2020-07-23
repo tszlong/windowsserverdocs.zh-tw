@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aa032953255b3731f500bfb4d78eaca0d772d1d8
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 918d629ea0d3d87ea42184580c1be84740d4f79d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922720"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958230"
 ---
 # <a name="expand"></a>expand
 
@@ -22,7 +22,7 @@ ms.locfileid: "85922720"
 
 展開一或多個壓縮檔案。 您也可以使用此命令，從散發磁片取出壓縮檔案。
 
-**Expand**命令也可以從 Windows 修復主控台使用不同的參數執行。 如需詳細資訊，請參閱[Windows 修復環境（WinRE）](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)。
+**Expand**命令也可以從 Windows 修復主控台使用不同的參數執行。 如需詳細資訊，請參閱[Windows 修復環境（WinRE）](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)。
 
 ## <a name="syntax"></a>語法
 
@@ -36,7 +36,7 @@ expand <source>.cab /f:<files> <destination>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | /r | 重新命名展開的檔案。 |
 | source | 指定要展開的檔案。 *來源*可以包含磁碟機號和冒號、目錄名稱、檔案名或這些的組合。 您可以使用萬用字元（**&#42;** 或 **？**）。 |
@@ -46,6 +46,6 @@ expand <source>.cab /f:<files> <destination>
 | /f`<files>` | 指定您想要展開之封包檔（.cab）中的檔案。 您可以使用萬用字元（**&#42;** 或 **？**）。 |
 | /? | 在命令提示字元顯示說明。 |
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

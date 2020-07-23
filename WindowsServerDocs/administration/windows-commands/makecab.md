@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 60203390ab0955e3f8a2c52887b21192d1ec32f2
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2364ebc2de3a0be1051a4450ebf60214986bd6e9
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933542"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957080"
 ---
 # <a name="makecab"></a>makecab
 
@@ -35,7 +35,7 @@ makecab [/v[<n>]] [/d var=<value> ...] /f <directives_file> [...]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<source>` | 要壓縮的檔案。 |
 | `<destination>` | 要提供壓縮檔案的檔案名。 如果省略，則會以底線（_）取代原始程式檔名稱的最後一個字元，並使用做為目的地。 |
@@ -45,10 +45,10 @@ makecab [/v[<n>]] [/d var=<value> ...] /f <directives_file> [...]
 | /v [ `<n>` ] | 設定調試層級的詳細等級（0 = 無,..., 3 = 完整）。 |
 | /? | 在命令提示字元顯示說明。 |
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
 - [diantz 命令](diantz.md)
 
-- [Microsoft 封包格式](https://docs.microsoft.com/previous-versions/bb417343(v=msdn.10))
+- [Microsoft 封包格式](/previous-versions/bb417343(v=msdn.10))

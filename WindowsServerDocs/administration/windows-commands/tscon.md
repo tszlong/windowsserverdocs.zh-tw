@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5679af2a53e28b91712a373e8d3c5d63850efbe1
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 83f8778d73d022ed41fcab14795eb3cdf41dc6cf
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934209"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954940"
 ---
 # <a name="tscon"></a>tscon
 
@@ -25,7 +25,7 @@ ms.locfileid: "85934209"
 
 
 > [!NOTE]
-> 在 Windows Server 2008 R2 中，終端機服務已重新命名為遠端桌面服務。 若要瞭解最新版本的新功能，請參閱 Windows Server TechNet Library 中的[Windows server 2012 遠端桌面服務的新功能](https://technet.microsoft.com/library/hh831527)。
+> 在 Windows Server 2008 R2 中，終端機服務已重新命名為遠端桌面服務。 若要瞭解最新版本的新功能，請參閱 Windows Server TechNet Library 中的[Windows server 2012 遠端桌面服務的新功能](/previous-versions/orphan-topics/ws.11/hh831527(v=ws.11))。
 
 ## <a name="syntax"></a>語法
 ```
@@ -33,7 +33,7 @@ tscon {<SessionID> | <SessionName>} [/dest:<SessionName>] [/password:<pw> | /pas
 ```
 ### <a name="parameters"></a>參數
 
-|參數|說明|
+|參數|描述|
 |-------|--------|
 |\<SessionID>|指定您要連接之會話的識別碼。 如果您使用選擇性的 **/dest：** < *SessionName*> 參數，這就是您要連接之會話的識別碼。|
 |\<SessionName>|指定您要連接之會話的名稱。|
@@ -62,6 +62,6 @@ tscon {<SessionID> | <SessionName>} [/dest:<SessionName>] [/password:<pw> | /pas
   ```
   tscon TERM03 /v /dest:TERM05
   ```
-  ## <a name="additional-references"></a>其他參考資料
+  ## <a name="additional-references"></a>其他參考
   - [命令列語法索引鍵](command-line-syntax-key.md) 
   [遠端桌面服務（終端機服務）命令參考](remote-desktop-services-terminal-services-command-reference.md)

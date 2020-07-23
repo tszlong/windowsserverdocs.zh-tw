@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 07ebe7220ec2624dd0dee5e5302be9c98fbd7fa0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 14ef7bdcb8490787b3fadff0cb842070f7a71446
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933098"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956230"
 ---
 # <a name="reset-session"></a>reset session
 
@@ -24,7 +24,7 @@ ms.locfileid: "85933098"
 
 
 > [!NOTE]
-> 在 Windows Server 2008 R2 中，終端機服務已重新命名為遠端桌面服務。 若要瞭解最新版本的新功能，請參閱 Windows Server TechNet Library 中的[Windows server 2012 遠端桌面服務的新功能](https://technet.microsoft.com/library/hh831527)。
+> 在 Windows Server 2008 R2 中，終端機服務已重新命名為遠端桌面服務。 若要瞭解最新版本的新功能，請參閱 Windows Server TechNet Library 中的[Windows server 2012 遠端桌面服務的新功能](/previous-versions/orphan-topics/ws.11/hh831527(v=ws.11))。
 
 ## <a name="syntax"></a>語法
 ```
@@ -33,7 +33,7 @@ reset session {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
 
 ### <a name="parameters"></a>參數
 
-|參數|說明|
+|參數|描述|
 |-------|--------|
 |\<SessionName>|指定您想要重設的會話名稱。 若要判斷會話的名稱，請使用**查詢會話**命令。|
 |\<SessionID>|指定要重設之會話的識別碼。|
@@ -57,6 +57,6 @@ reset session {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
   reset session 3
   ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 - [命令列語法索引鍵](command-line-syntax-key.md) 
 [遠端桌面服務（終端機服務）命令參考](remote-desktop-services-terminal-services-command-reference.md)

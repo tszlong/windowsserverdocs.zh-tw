@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/30/2020
-ms.openlocfilehash: 7b382673be838af739c29ffa294e3d853f0507c2
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5a1a262957177efd6e393f22c9fd9b5541650666
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925159"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957580"
 ---
 # <a name="ftp-put"></a>ftp put
 
@@ -33,7 +33,7 @@ put <localfile> [<remotefile>]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<localfile>` | 指定要複製的本機檔案。 |
 | `[<remotefile>]` | 指定要在遠端電腦上使用的名稱。 如果您未指定*remotefile*，檔案就會提供*localfile*名稱。|
@@ -52,7 +52,7 @@ put test.txt test1.txt
 put program.exe
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
@@ -60,4 +60,4 @@ put program.exe
 
 - [ftp 二進位命令](ftp-binary.md)
 
-- [其他 FTP 指引](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [其他 FTP 指引](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c6506ba51c768f92a19deb1627f5456231cee3f6
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e43ed2680c099ca97a0074d5f460f504b3edb298
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934858"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956810"
 ---
 # <a name="msinfo32"></a>msinfo32
 
@@ -22,7 +22,7 @@ ms.locfileid: "85934858"
 
 開啟 [系統資訊] 工具，以顯示本機電腦上硬體、系統元件和軟體環境的完整觀點。
 
-某些系統資訊分類包含大量資料。 您可以使用 [**開始/wait** ] 命令，將這些類別的報告效能優化。 如需詳細資訊，請參閱[系統資訊](https://technet.microsoft.com/library/cc783305(v=ws.10).aspx)。
+某些系統資訊分類包含大量資料。 您可以使用 [**開始/wait** ] 命令，將這些類別的報告效能優化。 如需詳細資訊，請參閱[系統資訊](/previous-versions/windows/it-pro/windows-server-2003/cc783305(v=ws.10))。
 
 ## <a name="syntax"></a>語法
 
@@ -32,7 +32,7 @@ msinfo32 [/pch] [/nfo <path>] [/report <path>] [/computer <computername>] [/show
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<path>` | 指定要以*C:\Folder1\File1.xxx*格式開啟的檔案，其中*C*是磁碟機號， *Folder1*是資料夾， *File1*是檔案名， *xxx*則是副檔名。<p>這個檔案可以是 **.nfo**、 **.xml**、 **.txt**或 **.cab**檔案。 |
 | `<computername>` | 指定目標或本機電腦的名稱。 這可以是 UNC 名稱、IP 位址或完整的電腦名稱稱。 |
@@ -72,6 +72,6 @@ msinfo32 /nfo syssum.nfo /categories +systemsummary
 msinfo32 /nfo conflicts.nfo /categories +componentsproblemdevices+resourcesconflicts+resourcesforcedhardware
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

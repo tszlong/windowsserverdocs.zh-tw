@@ -8,12 +8,12 @@ ms.date: 03/01/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 293618b3fe2a24caff8fd6b52c5528cc699f93de
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5e90ad9fbd2ae9dbb08d2137ead0705556184858
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407282"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966900"
 ---
 # <a name="ad-fs-troubleshooting---azure-ad"></a>AD FS 疑難排解-Azure AD
 隨著雲端的成長，許多公司都已繼續為其各種應用程式和服務使用 Azure AD。  與 Azure AD 的聯盟已成為許多組織的標準實務。  本檔將涵蓋此同盟所引發之問題的一些疑難排解部分。  一般疑難排解檔中的數個主題仍屬於與 Azure 的同盟，因此本檔僅著重于 Azure AD 和 AD FS 互動方面的細節。
@@ -59,15 +59,15 @@ ms.locfileid: "71407282"
 
 |需要驗證的方法|wauth URI|
 |-----|-----|
-|使用者名稱和密碼驗證|urn： oasis： names： tc： SAML：1.0： am： password|
-|SSL 用戶端驗證|urn:ietf:rfc:2246|
+|使用者名稱和密碼驗證|urn:oasis:names:tc:SAML:1.0:am:password|
+|SSL 用戶端驗證|urn： ietf： rfc：2246|
 |Windows 整合式驗證|urn：同盟：驗證： windows|
 
 支援的 SAML 驗證內容類別
 
 |驗證方法|驗證內容類別 URI|
 |-----|-----| 
-|使用者名稱和密碼|urn： oasis： names： tc： SAML：2.0： ac： class： Password|
+|使用者名稱和密碼|urn:oasis:names:tc:SAML:2.0:ac:classes:Password|
 |受密碼保護的傳輸|urn： oasis： names： tc： SAML：2.0： ac：類別： PasswordProtectedTransport|
 |傳輸層安全性（TLS）用戶端|urn： oasis： names： tc： SAML：2.0： ac：類別： TLSClient
 |X.509 憑證|urn： oasis： names： tc： SAML：2.0： ac：類別： X509
@@ -76,7 +76,7 @@ ms.locfileid: "71407282"
 
 若要確保 AD FS 層級支援驗證方法，請檢查下列各項。
 
-#### <a name="ad-fs-20"></a>AD FS 2。0 
+#### <a name="ad-fs-20"></a>AD FS 2.0 
 
 在 [ **/adfs/ls/web.config**] 底下，確認 [驗證類型] 的專案存在。
 
@@ -98,7 +98,7 @@ ms.locfileid: "71407282"
 
 在 [編輯全域驗證原則] 視窗的 [主要] 索引標籤上，您可以將設定設為全域驗證原則的一部分。 例如，在主要驗證中，您可以選取 [外部網路和內部網路] 底下可用的驗證方法。
 
-\* * 請確定已選取 [必要的驗證方法] 核取方塊。 
+* * 請確定已選取 [必要的驗證方法] 核取方塊。 
 
 #### <a name="ad-fs-2016"></a>AD FS 2016
 
@@ -117,18 +117,18 @@ AD FS 發出權杖之後，Azure AD 可能會擲回錯誤。 在此情況下，�
 - AD FS 在權杖中發出的宣告，應符合 Azure AD 中使用者的個別屬性。
 - Azure AD 的權杖應該包含下列必要的宣告：
     - WSFED 
-        - UPN此宣告的值應該符合 Azure AD 中使用者的 UPN。
-        - ImmutableID此宣告的值應該符合 Azure AD 中使用者的 sourceAnchor 或 ImmutableID。
+        - UPN：此宣告的值應該符合 Azure AD 中使用者的 UPN。
+        - ImmutableID：此宣告的值應該符合使用者在 Azure AD 中的 sourceAnchor 或 ImmutableID。
 
-若要取得 Azure AD 中的使用者屬性值，請執行下列命令列： `Get-AzureADUser –UserPrincipalName <UPN>`
+若要取得 Azure AD 中的使用者屬性值，請執行下列命令列：`Get-AzureADUser –UserPrincipalName <UPN>`
 
 ![](media/ad-fs-tshoot-azure/azure5.png)
 
    - SAML 2.0：
-       - IDPEmail此宣告的值應該符合 Azure AD 中使用者的使用者主體名稱。
-       - NAMEID此宣告的值應該符合 Azure AD 中使用者的 sourceAnchor 或 ImmutableID。
+       - IDPEmail：此宣告的值應該符合 Azure AD 中使用者的使用者主體名稱。
+       - NAMEID：此宣告的值應該符合 Azure AD 中使用者的 sourceAnchor 或 ImmutableID。
 
-如需詳細資訊，請參閱[使用 SAML 2.0 身分識別提供者來執行單一登入](https://technet.microsoft.com/library/dn641269.aspx)。
+如需詳細資訊，請參閱[使用 SAML 2.0 身分識別提供者來執行單一登入](/previous-versions/azure/azure-services/dn641269(v=azure.100))。
 
 ### <a name="token-signing-certificate-mismatch-between-ad-fs-and-azure-ad"></a>AD FS 和 Azure AD 之間的權杖簽署憑證不相符。
 
@@ -136,7 +136,7 @@ AD FS 使用權杖簽署憑證來簽署傳送給使用者或應用程式的權�
 
 不過，如果 AD FS 端上的權杖簽署憑證因為自動憑證變換或部分介入而變更，則必須在同盟網域的 Azure AD 端更新新憑證的詳細資料。 當 AD FS 上的主要權杖簽署憑證與 Azure ADs 不同時，AD FS 所簽發的權杖不會受到 Azure AD 的信任。 因此，不允許同盟使用者登入。
 
-若要修正此問題，您可以使用[更新 Office 365 和 Azure Active Directory 的同盟憑證](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-o365-certs)中的步驟概述。
+若要修正此問題，您可以使用[更新 Office 365 和 Azure Active Directory 的同盟憑證](/azure/active-directory/connect/active-directory-aadconnect-o365-certs)中的步驟概述。
 
 ## <a name="other-common-things-to-check"></a>其他常見的檢查事項
 以下是您在 AD FS 和 Azure AD 互動方面遇到問題時，要檢查的快速清單。

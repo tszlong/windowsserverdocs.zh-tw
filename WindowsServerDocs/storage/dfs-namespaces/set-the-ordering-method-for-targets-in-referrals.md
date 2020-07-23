@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 9b420e311c98477d369c81f10eca274e665dae3a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a993d53611382dcd0007bfecae95da6221cf6016
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475155"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966800"
 ---
 # <a name="set-the-ordering-method-for-targets-in-referrals"></a>設定轉介中目標的排序方法
 
@@ -35,7 +35,7 @@ ms.locfileid: "85475155"
 3.  在 **\[轉介\]** 索引標籤上，選取排序方法。
 
 > [!NOTE]
-> 若要使用 Windows PowerShell 來設定命名空間根目錄轉介中的目標排序方法，請使用 [Set-DfsnRoot](https://technet.microsoft.com/library/jj884281.aspx) Cmdlet 並搭配下列其中一個參數：
+> 若要使用 Windows PowerShell 來設定命名空間根目錄轉介中的目標排序方法，請使用 [Set-DfsnRoot](/powershell/module/dfsr/update-dfsrconfigurationfromad?view=win10-ps) Cmdlet 並搭配下列其中一個參數：
 >    -   **EnableSiteCosting** 指定**最低成本排序**方法
 >    -   **EnableInsiteReferrals** 指定**排除用戶端站台外的目標**排序方法。
 >    -   省略任一參數則指定**隨機順序**轉介排序方法。
@@ -53,7 +53,7 @@ DFSN Windows PowerShell 模組於 Windows Server 2012 中引進。
 3.  在 **\[轉介\]** 索引標籤上，選取 **\[排除用戶端站台外的目標\]** 核取方塊。
 
 > [!NOTE]
-> 若要使用 Windows PowerShell 來排除用戶端站台外的資料夾目標，請使用 [Set-DfsnFolder –EnableInsiteReferrals](https://technet.microsoft.com/library/jj884283.aspx) Cmdlet。
+> 若要使用 Windows PowerShell 來排除用戶端站台外的資料夾目標，請使用 [Set-DfsnFolder –EnableInsiteReferrals](/powershell/module/dfsr/update-dfsrconfigurationfromad?view=win10-ps) Cmdlet。
 
 ## <a name="target-referral-ordering-methods"></a>目標轉介排序方法
 

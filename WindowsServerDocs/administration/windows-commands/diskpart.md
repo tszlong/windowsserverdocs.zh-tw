@@ -6,12 +6,12 @@ ms.technology: storage
 author: jasongerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 87fc3a2e91b2f5ac22e87485d9258ef369ff0da0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1df6abc3ab3ef99139ca50701bd45feab1e28f42
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929307"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958270"
 ---
 # <a name="diskpart"></a>diskpart
 
@@ -58,7 +58,7 @@ diskpart <parameter>
 
 您可以從 Diskpart 命令直譯器執行下列命令：
 
-| Command | 說明 |
+| 命令 | 描述 |
 | ------- | ----------- |
 | [active](active.md) | 將具有焦點的磁碟分割標示為作用中。 |
 | [add](add.md) | 將具有焦點的簡單磁碟區鏡像到指定的磁碟。 |
@@ -99,10 +99,10 @@ diskpart <parameter>
 | [shrink](shrink.md) | 依據您指定的數量減少所選磁片區的大小。 |
 | [uniqueid](uniqueid.md) | 顯示或設定具有焦點之磁片的 GUID 磁碟分割表格（GPT）識別碼或主要開機記錄（MBR）簽章。 |
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [磁碟管理概觀](https://docs.microsoft.com/windows-server/storage/disk-management/overview-of-disk-management)
+- [磁碟管理概觀](../../storage/disk-management/overview-of-disk-management.md)
 
-- [Windows PowerShell 中的儲存體 Cmdlet](https://docs.microsoft.com/powershell/module/storage/)
+- [Windows PowerShell 中的儲存體 Cmdlet](/powershell/module/storage/)

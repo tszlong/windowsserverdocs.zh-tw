@@ -8,18 +8,18 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 2acce64aa14d60503a5b443b831a03338c204be2
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 793c9d705cc225de2372d65bf92ce924b498032a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472814"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961540"
 ---
 # <a name="file-server-resource-manager-command-line-tools"></a>檔案伺服器資源管理員命令列工具
 
 > 適用於：Windows Server (半年度管道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
-檔案伺服器資源管理員會安裝 [FileServerResourceManager](https://technet.microsoft.com/itpro/powershell/windows/fileserverresourcemanager/fileserverresourcemanager) PowerShell Cmdlet，以及下列命令列工具：
+檔案伺服器資源管理員會安裝 [FileServerResourceManager](/powershell/module/fileserverresourcemanager/?view=win10-ps) PowerShell Cmdlet，以及下列命令列工具：
 
 -   **Dirquota.exe**。 用於建立和管理配額，自動套用配額及配額範本。
 -   **Filescrn.exe**。 用於建立和管理檔案檢測、檔案檢測範本、檔案檢測例外及檔案群組。

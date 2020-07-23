@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 496d5d4e0002ba2c9f8ae6916aafcd08e686ce99
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b5e4e32bada68b8c7d931b8603fbf09eba45791d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931475"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954880"
 ---
 # <a name="tskill"></a>tskill
 
@@ -24,7 +24,7 @@ ms.locfileid: "85931475"
 
 
 > [!NOTE]
-> 在 Windows Server 2008 R2 中，終端機服務已重新命名為遠端桌面服務。 若要瞭解最新版本的新功能，請參閱 Windows Server TechNet Library 中的[Windows server 2012 遠端桌面服務的新功能](https://technet.microsoft.com/library/hh831527)。
+> 在 Windows Server 2008 R2 中，終端機服務已重新命名為遠端桌面服務。 若要瞭解最新版本的新功能，請參閱 Windows Server TechNet Library 中的[Windows server 2012 遠端桌面服務的新功能](/previous-versions/orphan-topics/ws.11/hh831527(v=ws.11))。
 
 ## <a name="syntax"></a>語法
 ```
@@ -33,7 +33,7 @@ tskill {<ProcessID> | <ProcessName>} [/server:<ServerName>] [/id:<SessionID> | /
 
 ### <a name="parameters"></a>參數
 
-|參數|說明|
+|參數|描述|
 |-------|--------|
 |\<ProcessID>|指定您想要結束之進程的識別碼。|
 |\<ProcessName>|指定您想要結束之進程的名稱。 這個參數可以包含萬用字元。|
@@ -57,6 +57,6 @@ tskill {<ProcessID> | <ProcessName>} [/server:<ServerName>] [/id:<SessionID> | /
   ```
   tskill explorer /id:5
   ```
-  ## <a name="additional-references"></a>其他參考資料
+  ## <a name="additional-references"></a>其他參考
   - [命令列語法索引鍵](command-line-syntax-key.md) 
   [遠端桌面服務（終端機服務）命令參考](remote-desktop-services-terminal-services-command-reference.md)

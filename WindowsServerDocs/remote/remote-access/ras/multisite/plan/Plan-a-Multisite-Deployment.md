@@ -8,20 +8,20 @@ ms.topic: article
 ms.assetid: 8387eabe-7363-4367-b5b1-03c67baa2933
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 507dae03ca13f4d485d6d1db0676f9d3c7b057bc
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6a0679ba548aabd9ea83f886e5e8db79480c819e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858331"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958710"
 ---
 # <a name="plan-a-multisite-deployment"></a>規劃多站台部署
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
  Windows server 2016、Windows Server 2012 將 DirectAccess 與路由及遠端存取服務（RRAS） VPN 合併成一個遠端存取角色。 本總覽提供在多網站設定中部署 Windows Server 2016 或 Windows Server 2012 遠端存取所需之規劃步驟的簡介。  
   
-1.  [使用 [Advanced] 設定部署單一 DirectAccess 伺服器](https://technet.microsoft.com/library/hh831436(v=ws.11).aspx)。 此步驟包含規劃部署單一伺服器所需的基礎結構。 其中包含規劃網路和伺服器設定、憑證需求、DNS 設定、網路位置伺服器部署、DirectAccess 管理伺服器、Active Directory 設定，以及群組原則物件（Gpo）。  
+1.  [使用 [Advanced] 設定部署單一 DirectAccess 伺服器](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831436(v=ws.11))。 此步驟包含規劃部署單一伺服器所需的基礎結構。 其中包含規劃網路和伺服器設定、憑證需求、DNS 設定、網路位置伺服器部署、DirectAccess 管理伺服器、Active Directory 設定，以及群組原則物件（Gpo）。  
   
 2.  [步驟2：規劃多網站基礎結構](Step-2-Plan-the-Multisite-Infrastructure.md)。 此步驟包括 Active Directory 和 GPO 規劃，以及 DNS 設定。  
   
@@ -32,5 +32,3 @@ ms.locfileid: "80858331"
   
 完成這些規劃步驟之後，請參閱設定[多網站部署](../configure/Configure-a-Multisite-Deployment.md)。  
   
-
-

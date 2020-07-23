@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 69405e7eda6b7565e9c8effe6639b6ba4dc9e4c2
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 68848976b80dc2fe18ac57011c47a935db2d44e2
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932588"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956160"
 ---
 # <a name="shrink"></a>shrink
 
@@ -29,7 +29,7 @@ shrink querymax [noerr]
 ```
 ### <a name="parameters"></a>參數
 
-|  參數  |                                                                                             說明                                                                                              |
+|  參數  |                                                                                             描述                                                                                              |
 |-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | desired =<n> |                                                     指定要縮減磁碟區大小的空間量，以 MB 為單位。                                                     |
 | 最小值 =<n> |                                                           指定要縮減磁碟區大小的最小空間量，以 MB 為單位。                                                           |
@@ -56,4 +56,4 @@ shrink querymax [noerr]
   shrink querymax
   ```
 
-[Resize-Partition](https://technet.microsoft.com/library/hh848680.aspx)
+[Resize-Partition](/powershell/module/storage/resize-partition?view=win10-ps)

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a5f588328deb51109ee9139b6e7dfaad8f0166dc
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 70c4eb44a654094410432dd9d37d0ad0082f5874
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934218"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958810"
 ---
 # <a name="telnet"></a>telnet
 
@@ -27,7 +27,7 @@ ms.locfileid: "85934218"
 telnet [/a] [/e <EscapeChar>] [/f <FileName>] [/l <UserName>] [/t {vt100 | vt52 | ansi | vtnt}] [<Host> [<Port>]] [/?]
 ```
 #### <a name="parameters"></a>參數
-|參數|說明|
+|參數|描述|
 |-------|--------|
 |/a|嘗試自動登入。 與/l 選項相同，但會使用目前登入的使用者名稱。|
 |/e\<EscapeChar>|用來輸入 telnet 用戶端提示的 Escape 字元。|
@@ -38,7 +38,7 @@ telnet [/a] [/e <EscapeChar>] [/f <FileName>] [/l <UserName>] [/t {vt100 | vt52 
 |/?|在命令提示字元顯示說明。 或者，您也可以輸入/h。|
 
 ## <a name="remarks"></a>備註
--   您必須先安裝 telnet 用戶端軟體，才能執行此命令。 如需詳細資訊，請參閱[安裝 telnet](https://technet.microsoft.com/library/cc754293(v=ws.10).aspx)。
+-   您必須先安裝 telnet 用戶端軟體，才能執行此命令。 如需詳細資訊，請參閱[安裝 telnet](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754293(v=ws.10))。
 -   您可以不使用參數來執行 telnet，以輸入 telnet 內容，如 telnet 提示（**Microsoft telnet>**）所示。 從 telnet 提示字元，您可以使用 telnet 命令來管理執行 telnet 用戶端的電腦。
 
 ## <a name="examples"></a>範例
@@ -51,7 +51,7 @@ telnet telnet.microsoft.com
 telnet /f telnetlog.txt telnet.microsoft.com 44
 ```
 
-## <a name="additional-references"></a>其他參考資料
--   [安裝 telnet](https://technet.microsoft.com/library/cc754293(v=ws.10).aspx)
--   [telnet 技術參考](https://technet.microsoft.com/library/cc754987(v=ws.10).aspx)
+## <a name="additional-references"></a>其他參考
+-   [安裝 telnet](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754293(v=ws.10))
+-   [telnet 技術參考](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754987(v=ws.10))
 - [命令列語法關鍵](command-line-syntax-key.md)

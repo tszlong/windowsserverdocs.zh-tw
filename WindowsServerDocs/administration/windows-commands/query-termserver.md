@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c7f4ca42cc053e943d89f40a71eb24372c0399e5
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e751ad4c229faf2e4dbd74ab216ee855023c858a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934228"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956480"
 ---
 # <a name="query-termserver"></a>query termserver
 
@@ -27,7 +27,7 @@ ms.locfileid: "85934228"
 - 網路（以及使用/address 選項時的節點位址）
 
 > [!NOTE]
-> 若要瞭解最新版本的新功能，請參閱[Windows Server 中遠端桌面服務的新功能](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11))。
+> 若要瞭解最新版本的新功能，請參閱[Windows Server 中遠端桌面服務的新功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
 
 ## <a name="syntax"></a>語法
 
@@ -37,7 +37,7 @@ query termserver [<servername>] [/domain:<domain>] [/address] [/continue]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 |--|--|
 | `<servername>` | 指定識別遠端桌面工作階段主機伺服器的名稱。 |
 | /domain`<domain>` | 指定要用來查詢終端機伺服器的網域。 如果您要查詢目前正在使用的網域，則不需要指定網域。 |
@@ -71,7 +71,7 @@ query termserver /domain:CONTOSO
 query termserver Server3 /address
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

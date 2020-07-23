@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d53d46b5d7f5a06f389fc665d69508122bd679d9
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 784521c99e3fc0cf8d372f95424af785636a0687
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928949"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958510"
 ---
 # <a name="convert-mbr"></a>convert mbr
 
@@ -24,7 +24,7 @@ ms.locfileid: "85928949"
 > 磁碟必須是空的，才能轉換成基本磁蹀。 在轉換磁碟之前，先備份您的資料，然後刪除全部磁碟分割或磁碟區。
 
 > [!NOTE]
-> 如需有關如何使用此命令的指示，請參閱[將 GUID 磁碟分割表格磁片變更為主開機記錄磁片](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc725797(v=ws.11))。
+> 如需有關如何使用此命令的指示，請參閱[將 GUID 磁碟分割表格磁片變更為主開機記錄磁片](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc725797(v=ws.11))。
 
 ## <a name="syntax"></a>語法
 
@@ -34,7 +34,7 @@ convert mbr [noerr]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | noerr | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
 
@@ -46,7 +46,7 @@ convert mbr [noerr]
 convert mbr
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

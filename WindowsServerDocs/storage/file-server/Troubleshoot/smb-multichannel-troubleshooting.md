@@ -6,12 +6,12 @@ manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 210bc2057f25dc196fe9d76495c42f76c8b36311
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 662a58fdeb3cda14a0e54c8d0ab7bd0b85387fd7
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815341"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960130"
 ---
 # <a name="smb-multichannel-troubleshooting"></a>SMB 多重通道疑難排解
 
@@ -19,7 +19,7 @@ ms.locfileid: "80815341"
 
 ## <a name="check-the-network-interface-status"></a>檢查網路介面狀態
 
-請確定在 SMB 用戶端（MS\_用戶端）和 SMB 伺服器（MS\_伺服器）上，網路介面的系結已設定為**True** 。 當您執行下列命令時，輸出應該會在 [**已啟用**] 的兩個網路介面底下顯示 [ **True** ]：
+請確定在 SMB 用戶端（MS **True** \_ 用戶端）和 SMB 伺服器（ms 伺服器）上，網路介面的系結已設定為 True \_ 。 當您執行下列命令時，輸出應該會在 [**已啟用**] 的兩個網路介面底下顯示 [ **True** ]：
 
 ```PowerShell
 Get-NetAdapterBinding -ComponentID ms_server,ms_msclient
@@ -51,7 +51,7 @@ Get-SmbClientNetworkInterface
 
 您也可以在 [**網路和共用中心**] 視窗中啟用 [檔案**及印表機共用**]。 若要這麼做，請選取左側功能表中的 [**變更 advanced 共用設定**]，然後選取 [開啟設定檔的檔案**及印表機共用**]。 此選項會啟用檔案和印表機共用防火牆規則。
 
-![[變更進階共用設定]](media/smb-multichannel-troubleshooting-2.png)
+![變更 advanced 共用設定](media/smb-multichannel-troubleshooting-2.png)
 
 ## <a name="capture-client-and-server-sided-traffic-for-troubleshooting"></a>捕捉用戶端和伺服器側邊流量以進行疑難排解
 
@@ -59,23 +59,23 @@ Get-SmbClientNetworkInterface
 
 請確定 SMBv3 連線正在進行*x*協商，而且伺服器與用戶端之間的任何內容都不會影響方言的協商。 SMBv2 和較早的版本不支援多重通道。
 
-尋找網路\_介面\_資訊封包。 這是 SMB 用戶端向 SMB 伺服器要求介面卡清單的位置。 如果未交換這些封包，則多重通道無法使用。
+尋找網路 \_ 介面資訊封 \_ 包。 這是 SMB 用戶端向 SMB 伺服器要求介面卡清單的位置。 如果未交換這些封包，則多重通道無法使用。
 
 伺服器會傳回有效的網路介面清單來回應。 然後，SMB 用戶端會將它們新增至多重通道的可用介面卡清單。 此時，多重通道應該會啟動，而且至少會嘗試啟動連接。
 
 如需詳細資訊，請參閱下列文章：
 
-- [3.2.4.20.10 應用程式要求查詢伺服器的網路介面](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/147adde4-d936-4597-924a-8caa3429c6b0)
+- [3.2.4.20.10 應用程式要求查詢伺服器的網路介面](/openspecs/windows_protocols/ms-smb2/147adde4-d936-4597-924a-8caa3429c6b0)
 
-- [2.2.32.5 網路\_介面\_資訊回應](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/fcd862d1-1b85-42df-92b1-e103199f531f)
+- [2.2.32.5 網路 \_ 介面 \_ 資訊回應](/openspecs/windows_protocols/ms-smb2/fcd862d1-1b85-42df-92b1-e103199f531f)
 
-- [3.2.5.14.11 處理網路介面回應](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/5459722b-1eaa-4ead-b465-284363264cad)
+- [3.2.5.14.11 處理網路介面回應](/openspecs/windows_protocols/ms-smb2/5459722b-1eaa-4ead-b465-284363264cad)
 
 在下列案例中，無法使用介面卡：
 
 - 用戶端上有路由問題。 這通常是由不正確的路由表所造成，該資料表會強制流量超過錯誤的介面。
 
-- 已設定多重通道條件約束。 如需詳細資訊，請參閱[SmbMultichannelConstraint](https://docs.microsoft.com/powershell/module/smbshare/new-smbmultichannelconstraint)。
+- 已設定多重通道條件約束。 如需詳細資訊，請參閱[SmbMultichannelConstraint](/powershell/module/smbshare/new-smbmultichannelconstraint)。
 
 - 封鎖了網路介面要求和回應封包。
 

@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 7f011bc12c26567ed3a0e912dca3c3a8de9bfff9
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 04b023a931f8d66205a07f05bb8d3e955f8b83ca
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474925"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964070"
 ---
 # <a name="enable-access-based-enumeration-on-a-namespace"></a>在命名空間上啟用存取型列舉
 
@@ -36,7 +36,7 @@ ms.locfileid: "85474925"
 
 
 > [!WARNING]
-> 存取型列舉無法防止使用者轉介至他們已知其 DFS 路徑的資料夾目標。 只有資料夾目標 (共用資料夾) 本身的共用權限或 NTFS 檔案系統權限才能防止使用者存取資料夾目標。 DFS 資料夾權限僅能用來顯示或隱藏 DFS 資料夾，不能用於在 DFS 資料夾層級控制存取、設定相關權限的讀取存取權。 如需詳細資訊，請參閱[使用繼承的權限搭配存取型列舉](https://technet.microsoft.com/library/dd834874(v=ws.11).aspx)
+> 存取型列舉無法防止使用者轉介至他們已知其 DFS 路徑的資料夾目標。 只有資料夾目標 (共用資料夾) 本身的共用權限或 NTFS 檔案系統權限才能防止使用者存取資料夾目標。 DFS 資料夾權限僅能用來顯示或隱藏 DFS 資料夾，不能用於在 DFS 資料夾層級控制存取、設定相關權限的讀取存取權。 如需詳細資訊，請參閱[使用繼承的權限搭配存取型列舉](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd834874(v=ws.11))
 
 <br />
 您可以使用 Windows 介面或使用命令列，來啟用命名空間的存取型列舉。
@@ -58,7 +58,7 @@ ms.locfileid: "85474925"
     ```
 
 > [!TIP]
-> 若要使用 Windows PowerShell 來管理命名空間上的存取型列舉，請使用 [Set-DfsnRoot](https://technet.microsoft.com/library/jj884281.aspx)、[Grant-DfsnAccess](https://technet.microsoft.com/library/jj884272.aspx) 和 [Revoke-DfsnAccess](https://technet.microsoft.com/library/jj884273.aspx) Cmdlet。 DFSN Windows PowerShell 模組於 Windows Server 2012 中引進。
+> 若要使用 Windows PowerShell 來管理命名空間上的存取型列舉，請使用 [Set-DfsnRoot](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd834874(v=ws.11))、[Grant-DfsnAccess](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd834874(v=ws.11)) 和 [Revoke-DfsnAccess](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd834874(v=ws.11)) Cmdlet。 DFSN Windows PowerShell 模組於 Windows Server 2012 中引進。
 
 您可以使用 Windows 介面或使用命令列，來控制哪些使用者和群組可以檢視哪些 DFS 資料夾。
 
@@ -66,7 +66,7 @@ ms.locfileid: "85474925"
 
 1.  在主控台的 **\[命名空間\]** 節點下方，找到您要控制可見性的含目標資料夾，以滑鼠右鍵按一下它，然後按一下 **\[屬性\]**。
 
-2.  按一下 [**進階**] 索引標籤。
+2.  按一下 [進階] 索引標籤。
 
 3.  按一下 **\[設定 DFS 資料夾的明確檢視權限]**，然後按一下 **\[設定檢視權限\]**。
 
@@ -97,13 +97,13 @@ ms.locfileid: "85474925"
 
 | 命令 | 描述 |
 |---|---|
-|[Dfsutil property sd deny](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)|拒絕群組或使用者檢視資料夾的能力。|
-|[Dfsutil property sd reset](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx) |移除資料夾的所有權限。|
-|[Dfsutil property sd revoke](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)| 從資料夾移除群組或使用者 ACE。 |
+|[Dfsutil property sd deny](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759150(v=ws.11))|拒絕群組或使用者檢視資料夾的能力。|
+|[Dfsutil property sd reset](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759150(v=ws.11)) |移除資料夾的所有權限。|
+|[Dfsutil property sd revoke](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759150(v=ws.11))| 從資料夾移除群組或使用者 ACE。 |
 
 ## <a name="additional-references"></a>其他參考
 
 -   [建立 DFS 命名空間](create-a-dfs-namespace.md)
 -   [委派 DFS 命名空間的管理權限](delegate-management-permissions-for-dfs-namespaces.md)
--   [安裝 DFS](https://technet.microsoft.com/library/cc731089(v=ws.11).aspx)
+-   [安裝 DFS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731089(v=ws.11))
 -   [使用繼承的許可權搭配以存取為基礎的列舉](using-inherited-permissions-with-access-based-enumeration.md)

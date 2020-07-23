@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2584dde27560b5b8f28fb51b8fb5c2cf92a2d805
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 8a31fb2a49e5a85f7fdb4b8b5a7becc8ea57e13d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934313"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954595"
 ---
 # <a name="wbadmin-restore-catalog"></a>wbadmin restore catalog
 
@@ -33,7 +33,7 @@ wbadmin restore catalog
 
 ### <a name="parameters"></a>參數
 
-|參數|說明|
+|參數|描述|
 |---------|-----------|
 |-backupTarget|指定在建立備份之後，系統備份類別目錄的位置。|
 |-機器|指定您想要復原備份類別目錄之電腦的名稱。 當多部電腦的備份儲存在相同的位置時，請使用。 當指定 **-backupTarget**時，應該使用。|
@@ -54,8 +54,8 @@ wbadmin restore catalog -backupTarget:d
 wbadmin restore catalog -backupTarget:\\servername\share -machine:server01
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 -   [Restore](wbadmin.md)
--   [Restore-WBCatalog](https://technet.microsoft.com/library/jj902437.aspx) Cmdlet
+-   [Restore-WBCatalog](/powershell/module/windowserverbackup/?view=winserver2012r2-ps) Cmdlet

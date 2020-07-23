@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/21/2018
-ms.openlocfilehash: bfa92f7e80bbf89fac615a3cd6ddf7057c0d6a4c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a07ad9b33000b17f5c6f41835a1a36531b3945af
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936077"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958880"
 ---
 # <a name="wscript"></a>wscript
 
@@ -30,7 +30,7 @@ wscript [<scriptname>] [/b] [/d] [/e:<engine>] [{/h:cscript|/h:wscript}] [/i] [/
 
 #### <a name="parameters"></a>參數
 
-|參數|說明|
+|參數|描述|
 |---------|-----------|
 |scriptname|指定腳本檔案的路徑和檔案名。|
 |/b|指定不會顯示警示、腳本錯誤或輸入提示的批次模式。 這與 **/i**相反。|
@@ -56,9 +56,9 @@ wscript [<scriptname>] [/b] [/d] [/e:<engine>] [{/h:cscript|/h:wscript}] [/i] [/
 -   **/T**參數會藉由設定計時器來防止過多的腳本執行。 當時間超過指定的值時， **wscript.echo**會中斷腳本引擎並結束進程。
 -   Windows 腳本檔案通常會有下列其中一個副檔名： **manage-bde.wsf**、 **.vbs**、 **.js**。
 -   如果您按兩下副檔名沒有關聯的腳本檔案，[**開啟方式**] 對話方塊隨即出現。 選取 [ **wscript.echo** ] 或 [ **cscript**]，然後選取 [**一律使用此程式] 來開啟此檔案類型**。 這會針對此檔案類型的檔案，註冊**wscript.exe**或**cscript.exe**做為預設的腳本主機。
--   您可以設定個別腳本的屬性。 如需詳細資訊，請參閱[Windows Script Host 總覽](https://technet.microsoft.com/library/cc738350(v=ws.10).aspx)。
+-   您可以設定個別腳本的屬性。 如需詳細資訊，請參閱[Windows Script Host 總覽](/previous-versions/windows/it-pro/windows-server-2003/cc738350(v=ws.10))。
 -   Windows Script Host 可以使用**manage-bde.wsf**腳本檔案。 每個**manage-bde.wsf**檔案都可以使用多個腳本引擎並執行多個作業。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

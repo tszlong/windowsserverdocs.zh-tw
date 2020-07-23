@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 9c5293dc6070c9483054ce1dd827a20ec377573b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a022ec618c7255021cd424120330671e007a658a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859711"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962700"
 ---
 # <a name="add-a-claim-description"></a>新增宣告描述
 
@@ -24,11 +24,11 @@ ms.locfileid: "80859711"
 
 您可以使用下列程式來新增宣告。
 
-若要完成此程序，至少需要本機電腦之 **Administrators** 群組的成員資格或同等權限。  請參閱[本機與網域的預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中關於使用適當帳戶和群組成員資格的詳細資料。
+若要完成此程序，至少需要本機電腦之 **Administrators** 群組的成員資格或同等權限。  請參閱在[本機與網域預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中使用適當帳戶和群組成員資格的詳細資料。
 
 ## <a name="to-add-a-claim-description"></a>新增宣告描述
 
-1. 在伺服器管理員中，按一下 [**工具**]，然後選取 [ **AD FS 管理**]。 
+1. 在 [伺服器管理員]**** 中按一下 [工具]****，然後選取 [AD FS 管理]。 
 
 2. 展開 [**服務**]，然後在右側按一下 [**新增宣告描述**]。
    ![新增宣告描述](media/Add-a-Claim-Description/claimdesc1.png)
@@ -55,4 +55,4 @@ ms.locfileid: "80859711"
 
 
 ## <a name="see-also"></a>另請參閱  
-[AD FS 操作](../../ad-fs/AD-FS-2016-Operations.md) 
+[AD FS 操作](../ad-fs-operations.md) 

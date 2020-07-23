@@ -9,24 +9,24 @@ ms.date: 11/22/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: b9e1cf812234bc3b0bd81db7045ed83208f3a0ff
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0cd49e4eee2d68209fa016547cdd2d0626128204
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80824361"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961290"
 ---
 # <a name="ad-ds-troubleshooting"></a>對 AD DS 進行疑難排解
 
 >適用于： Windows Server 2019、Windows Server 2016、Windows Server 2012 R2
 
-本節包含診斷和修正 Active Directory 複寫期間可能發生之問題的疑難排解建議和程式。 它著重于如何回應目錄服務事件記錄檔專案，以及如何解讀如 Repadmin 和 Dcdiag.exe 等工具可能會報告的訊息。
+本節包含診斷和修正 Active Directory 複寫期間可能發生之問題的疑難排解建議和程式。 它著重于如何回應目錄服務事件記錄檔專案，以及如何解讀如 Repadmin.exe 和 Dcdiag.exe 等工具可能報告的訊息。
 
-在執行 Windows Server 2012 R2 或更新版本的所有網域控制站上都可使用 Repadmin 和 Dcdiag.exe。 如需有關如何使用這些工具來疑難排解問題的詳細資訊，請參閱下列文章。
+在執行 Windows Server 2012 R2 或更新版本的所有網域控制站上都可使用 Repadmin.exe 和 Dcdiag.exe。 如需有關如何使用這些工具來疑難排解問題的詳細資訊，請參閱下列文章。
 
 - [設定電腦進行疑難排解 Active Directory](../manage/troubleshoot/Configuring-a-Computer-for-Troubleshooting.md)
 - [進行 Active Directory 複寫問題疑難排解](../manage/troubleshoot/Troubleshooting-Active-Directory-Replication-Problems.md)
 
 另一個有用的技術是 Windows 事件追蹤（ETW）。 您可以使用 ETW 來疑難排解網域控制站之間的 LDAP 通訊。 如需詳細資訊，請參閱[使用 ETW 針對 LDAP 連接進行疑難排解](../manage/troubleshoot/troubleshoot-ldap-using-etw.md)。
 
-您也可以在執行 Windows 10 的成員伺服器上安裝遠端伺服器管理工具（RSAT）。 如需有關如何安裝 RSAT 的詳細資訊，請參閱[遠端伺服器管理工具](https://docs.microsoft.com/windows-server/remote/remote-server-administration-tools)。
+您也可以在執行 Windows 10 的成員伺服器上安裝遠端伺服器管理工具（RSAT）。 如需有關如何安裝 RSAT 的詳細資訊，請參閱[遠端伺服器管理工具](../../../remote/remote-server-administration-tools.md)。
