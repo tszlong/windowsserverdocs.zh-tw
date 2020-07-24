@@ -9,12 +9,12 @@ ms.author: jgerend
 manager: dongill
 ms.date: 06/29/2020
 ms.prod: windows-server
-ms.openlocfilehash: 8984f20bbd5690abf914a932925218f961212e7c
-ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
+ms.openlocfilehash: bd2d1f9baa17581cb43ae383c260c938f302a73c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85548721"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958980"
 ---
 # <a name="windows-commands"></a>Windows 命令
 
@@ -67,14 +67,14 @@ ms.locfileid: "85548721"
 
 命令 shell 是 Windows 內建的第一個 shell，可使用 batch （.bat）檔案，將例行工作（例如使用者帳戶管理或夜間備份）自動化。 使用 Windows Script Host，您可以在命令 shell 中執行更複雜的腳本。 如需詳細資訊，請參閱[cscript](cscript.md)或[wscript.echo](wscript.md)。 您可以使用腳本，而不是使用使用者介面來更有效率地執行作業。 腳本會接受命令列上可用的所有命令。
 
-Windows 有兩個命令執行介面：命令 shell 和[PowerShell](https://docs.microsoft.com/powershell/scripting/powershell-scripting?view=powershell-6)。 每個 shell 都是一種軟體程式，可提供您與作業系統或應用程式之間的直接通訊，並提供環境來自動化 IT 作業。
+Windows 有兩個命令執行介面：命令 shell 和[PowerShell](/powershell/scripting/powershell-scripting?view=powershell-6)。 每個 shell 都是一種軟體程式，可提供您與作業系統或應用程式之間的直接通訊，並提供環境來自動化 IT 作業。
 
 PowerShell 的設計目的是要擴充命令 shell 的功能，以執行稱為 Cmdlet 的 PowerShell 命令。 Cmdlet 類似于 Windows 命令，但提供更可擴充的指令碼語言。 您可以在 Powershell 中執行 Windows 命令和 PowerShell Cmdlet，但命令 shell 只能執行 Windows 命令，而不是 PowerShell Cmdlet。
 
 為了充分發揮最新的 Windows 自動化功能，我們建議您針對 Windows 自動化使用 PowerShell，而不是 Windows 命令或 Windows Script Host。
 
 > [!NOTE]
->您也可以下載並安裝 powershell [Core](https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6)，也就是 powershell 的開放原始碼版本。
+>您也可以下載並安裝 powershell [Core](/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6)，也就是 powershell 的開放原始碼版本。
 
 > [!CAUTION]
 > 不正確地編輯登錄可能會對系統造成嚴重的損害。 在對登錄進行下列變更之前，您應該先備份電腦上任何重要的資料。

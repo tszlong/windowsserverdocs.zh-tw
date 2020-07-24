@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 47be29e55c4626f5c05498074f10418730c6a6f3
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 8c8d865643c12377a3f4b14250f9d3dbead1e2ac
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931303"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958240"
 ---
 # <a name="dnscmd"></a>Dnscmd
 
@@ -30,7 +30,7 @@ dnscmd <servername> <command> [<command parameters>]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | Description |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<servername>` | 遠端或本機 DNS 伺服器的 IP 位址或主機名稱。 |
 
@@ -46,7 +46,7 @@ dnscmd [<servername>] /ageallrecords <zonename>[<nodename>] | [/tree]|[/f]
 
 #### <a name="parameters"></a>參數
 
-| 參數 | Description |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定系統管理員計畫管理的 DNS 伺服器，以 IP 位址、完整功能變數名稱（FQDN）或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<zonename>` | 指定區域的 FQDN。 |
@@ -68,7 +68,7 @@ dnscmd [<servername>] /ageallrecords <zonename>[<nodename>] | [/tree]|[/f]
 
 ### <a name="examples"></a>範例
 
-[範例1：將時間戳記的目前時間設定為資源記錄](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-1-set-the-current-time-on-a-time-stamp-to-resource-records)
+[範例1：將時間戳記的目前時間設定為資源記錄](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-1-set-the-current-time-on-a-time-stamp-to-resource-records)
 
 ## <a name="dnscmd-clearcache-command"></a>dnscmd/clearcache 命令
 
@@ -82,7 +82,7 @@ dnscmd [<servername>] /clearcache
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 
@@ -107,7 +107,7 @@ dnscmd [<servername>] /config <parameter>
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定您打算管理的 DNS 伺服器，以本機電腦語法、IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<parameter>` | 指定一個設定和一個值做為選項。 參數值使用此語法：*參數*[*值*]。 |
@@ -166,7 +166,7 @@ dnscmd /config <parameters>
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<parameter>` | 指定設定、區功能變數名稱稱，以及做為選項（值）。 參數值使用此語法： `zonename parameter [value]` 。 |
 | /aging`<zonename>`| 啟用或停用特定區域中的清除。 |
@@ -190,7 +190,7 @@ dnscmd [<servername>] /createbuiltindirectorypartitions [/forest] [/alldomains]
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | /forest | 建立樹系的 DNS 目錄分割。 |
@@ -208,7 +208,7 @@ dnscmd [<servername>] /createdirectorypartition <partitionFQDN>
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<partitionFQDN>` | 將建立的 DNS 應用程式目錄分割的 FQDN。 |
@@ -225,7 +225,7 @@ dnscmd [<servername>] /deletedirectorypartition <partitionFQDN>
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<partitionFQDN>` | 將移除之 DNS 應用程式目錄分割的 FQDN。 |
@@ -242,7 +242,7 @@ dnscmd [<servername>] /directorypartitioninfo <partitionFQDN> [/detail]
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<partitionFQDN>` | DNS 應用程式目錄分割的 FQDN。 |
@@ -260,7 +260,7 @@ dnscmd [<servername>] /enlistdirectorypartition <partitionFQDN>
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<partitionFQDN>` | DNS 應用程式目錄分割的 FQDN。 |
@@ -277,7 +277,7 @@ dnscmd [<servername>] /enumdirectorypartitions [/custom]
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | /custom | 只列出使用者建立的目錄分割。 |
@@ -294,7 +294,7 @@ dnscmd [<servername>] /enumrecords <zonename> <nodename> [/type <rrtype> <rrdata
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | /enumrecords | 列出指定區域中的資源記錄。 |
@@ -328,7 +328,7 @@ dnscmd [<servername>] /enumzones [/primary | /secondary | /forwarder | /stub | /
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | /primary | 列出所有的區域，也就是標準主要區域或 active directory 整合區域。 |
@@ -349,9 +349,9 @@ dnscmd [<servername>] /enumzones [/primary | /secondary | /forwarder | /stub | /
 
 #### <a name="examples"></a>範例
 
-- [範例2：顯示 DNS 伺服器上的完整區域清單](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-2-display-a-complete-list-of-zones-on-a-dns-server)）
+- [範例2：顯示 DNS 伺服器上的完整區域清單](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-2-display-a-complete-list-of-zones-on-a-dns-server)）
 
-- [範例3：顯示 DNS 伺服器上的由區域清單](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-3-display-a-list-of-autocreated-zones-on-a-dns-server)
+- [範例3：顯示 DNS 伺服器上的由區域清單](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-3-display-a-list-of-autocreated-zones-on-a-dns-server)
 
 ## <a name="dnscmd-exportsettings-command"></a>dnscmd/exportsettings 命令
 
@@ -365,7 +365,7 @@ dnscmd [<servername>] /exportsettings
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 
@@ -381,16 +381,16 @@ dnscmd [<servername>] /info [<settings>]
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<settings>` | 您可以個別指定**info**命令所傳回的任何設定。 如果未指定設定，則會傳回一般設定的報告。 |
 
 #### <a name="example"></a>範例
 
-- [範例4：顯示來自 DNS 伺服器的 IsSlave 設定](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-4-display-the-isslave-setting-from-a-dns-server)
+- [範例4：顯示來自 DNS 伺服器的 IsSlave 設定](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-4-display-the-isslave-setting-from-a-dns-server)
 
-- [範例5：顯示來自 DNS 伺服器的 RecursionTimeout 設定](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-5-display-the-recursiontimeout-setting-from-a-dns-server)
+- [範例5：顯示來自 DNS 伺服器的 RecursionTimeout 設定](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-5-display-the-recursiontimeout-setting-from-a-dns-server)
 
 ## <a name="dnscmd-ipvalidate-command"></a>dnscmd/ipvalidate 命令
 
@@ -404,7 +404,7 @@ dnscmd [<servername>] /ipvalidate <context> [<zonename>] [[<IPaddress>]]
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<context>` | 指定要執行的測試類型。 您可以指定下列任何一項測試：<ul><li>**/dnsservers** -測試具有您所指定位址的電腦是否為正常運作的 DNS 伺服器。</li><li>**/forwarders** -測試您指定的位址是否可識別可作為轉寄站的 DNS 伺服器。</li><li>**/roothints** -測試您指定的位址是否識別可作為根提示名稱伺服器的 DNS 伺服器。</li><li>**/zonemasters** -測試您指定的位址識別屬於*zonename*之主伺服器的 DNS 伺服器。 |
@@ -430,7 +430,7 @@ dnscmd [<servername>] /nodedelete <zonename> <nodename> [/tree] [/f]
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<zonename>` | 指定區域的名稱。 |
@@ -440,7 +440,7 @@ dnscmd [<servername>] /nodedelete <zonename> <nodename> [/tree] [/f]
 
 #### <a name="example"></a>範例
 
-[範例6：刪除節點中的記錄](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-6-delete-the-records-from-a-node)
+[範例6：刪除節點中的記錄](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-6-delete-the-records-from-a-node)
 
 ## <a name="dnscmd-recordadd-command"></a>dnscmd/recordadd 命令
 
@@ -454,7 +454,7 @@ dnscmd [<servername>] /recordadd <zonename> <nodename> <rrtype> <rrdata>
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<zonename>` | 指定記錄所在的區域。 |
@@ -463,7 +463,7 @@ dnscmd [<servername>] /recordadd <zonename> <nodename> <rrtype> <rrdata>
 | `<rrdata>` | 指定預期的資料類型。 |
 
 > [!NOTE]
-> 加入記錄之後，請確定您使用正確的資料類型和資料格式。 如需資源記錄類型和適當資料類型的清單，請參閱[Dnscmd 範例](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10))。
+> 加入記錄之後，請確定您使用正確的資料類型和資料格式。 如需資源記錄類型和適當資料類型的清單，請參閱[Dnscmd 範例](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10))。
 
 #### <a name="examples"></a>範例
 
@@ -484,7 +484,7 @@ dnscmd [<servername>] /recorddelete <zonename> <nodename> <rrtype> <rrdata> [/f]
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<zonename>` | 指定資源記錄所在的區域。 |
@@ -511,7 +511,7 @@ dnscmd [<servername>] /resetforwarders <IPaddress> [,<IPaddress>]...][/timeout <
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<IPaddress>` | 列出 DNS 伺服器轉送未解析查詢的 IP 位址。 |
@@ -549,7 +549,7 @@ dnscmd [<servername>] /resetlistenaddresses <listenaddress>
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<listenaddress>` | 指定 DNS 伺服器上接聽 DNS 用戶端要求的 IP 位址。 如果未指定接聽位址，伺服器上的所有 IP 位址都會接聽用戶端要求。 |
@@ -572,7 +572,7 @@ dnscmd [<servername>] /startscavenging
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 
@@ -614,16 +614,16 @@ dnscmd [<servername>] /statistics [<statid>] [/clear]
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<statid>` | 指定要顯示的統計資料或統計資料的組合。 **Statistics**命令會顯示啟動或繼續時，在 DNS 伺服器上開始的計數器。 識別編號是用來識別統計資料。 如果未指定統計資料識別碼編號，則會顯示所有統計資料。 可以指定的數位以及顯示的對應統計資料可以包括：<ul><li>**00000001**時間</li><li>**00000002** -查詢</li><li>**00000004** -查詢2</li><li>**00000008** -遞迴</li><li>**00000010** -主要</li><li>**00000020** -次要</li><li>**00000040** -WINS</li><li>**00000100** -更新</li><li>**00000200** -SkwanSec</li><li>**00000400** -Ds</li><li>**00010000** -記憶體</li><li>**00100000** -PacketMem</li><li>**00040000** -Dbase</li><li>**00080000** -筆記錄</li><li>**00200000** -NbstatMem</li><li>**/clear** -將指定的統計資料計數器重設為零。</li></ul> |
 
 #### <a name="examples"></a>範例
 
-- [範例7：](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-7-display-time-statistics-for-a-dns-server)
+- [範例7：](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-7-display-time-statistics-for-a-dns-server)
 
-- [範例8：顯示 DNS 伺服器的 NbstatMem 統計資料](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-8-display-nbstatmem-statistics-for-a-dns-server)
+- [範例8：顯示 DNS 伺服器的 NbstatMem 統計資料](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-8-display-nbstatmem-statistics-for-a-dns-server)
 
 ## <a name="dnscmd-unenlistdirectorypartition-command"></a>dnscmd/unenlistdirectorypartition 命令
 
@@ -637,7 +637,7 @@ dnscmd [<servername>] /unenlistdirectorypartition <partitionFQDN>
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<partitionFQDN>` | 將移除之 DNS 應用程式目錄分割的 FQDN。 |
@@ -654,7 +654,7 @@ dnscmd [<servername>] /writebackfiles <zonename>
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<zonename>` | 指定要更新之區域的名稱。 |
@@ -677,7 +677,7 @@ dnscmd [<servername>] /zoneadd <zonename> <zonetype> [/dp <FQDN> | {/domain | en
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<zonename>` | 指定區域的名稱。 |
@@ -706,7 +706,7 @@ dnscmd [<servername>] /zonechangedirectorypartition <zonename> {[<newpartitionna
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<zonename>` | 區域所在的目前目錄分割的 FQDN。 |
@@ -728,7 +728,7 @@ dnscmd [<servername>] /zonedelete <zonename> [/dsdel] [/f]
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<zonename>` | 指定要刪除之區域的名稱。 |
@@ -737,7 +737,7 @@ dnscmd [<servername>] /zonedelete <zonename> [/dsdel] [/f]
 
 #### <a name="examples"></a>範例
 
-- [範例9：從 DNS 伺服器刪除區域](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-9-delete-a-zone-from-a-dns-server)
+- [範例9：從 DNS 伺服器刪除區域](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-9-delete-a-zone-from-a-dns-server)
 
 ## <a name="dnscmd-zoneexport-command"></a>dnscmd/zoneexport 命令
 
@@ -751,7 +751,7 @@ dnscmd [<servername>] /zoneexport <zonename> <zoneexportfile>
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<zonename>` | 指定區域的名稱。 |
@@ -759,7 +759,7 @@ dnscmd [<servername>] /zoneexport <zonename> <zoneexportfile>
 
 #### <a name="examples"></a>範例
 
-- [範例10：將區域資源記錄清單匯出至檔案](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-10-export-zone-resource-records-list-to-a-file)
+- [範例10：將區域資源記錄清單匯出至檔案](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-10-export-zone-resource-records-list-to-a-file)
 
 ## <a name="dnscmd-zoneinfo"></a>dnscmd/zoneinfo z
 
@@ -773,7 +773,7 @@ dnscmd [<servername>] /zoneinfo <zonename> [<setting>]
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<zonename>` | 指定區域的名稱。 |
@@ -787,9 +787,9 @@ dnscmd [<servername>] /zoneinfo <zonename> [<setting>]
 
 #### <a name="examples"></a>範例
 
-- [範例11：顯示登錄中的 RefreshInterval 設定](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-11-display-refreshinterval-setting-from-the-registry)
+- [範例11：顯示登錄中的 RefreshInterval 設定](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-11-display-refreshinterval-setting-from-the-registry)
 
-- [範例12：顯示登錄中的過時設定](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-12-display-aging-setting-from-the-registry)
+- [範例12：顯示登錄中的過時設定](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-12-display-aging-setting-from-the-registry)
 
 ## <a name="dnscmd-zonepause-command"></a>dnscmd/zonepause 命令
 
@@ -803,7 +803,7 @@ dnscmd [<servername>] /zonepause <zonename>
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<zonename>` | 指定要暫停之區域的名稱。 |
@@ -830,7 +830,7 @@ dnscmd [<servername>] /zoneprint <zonename>
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<zonename>` | 指定要列出的區功能變數名稱稱。 |
@@ -853,7 +853,7 @@ dnscmd [<servername>] /zonerefresh <zonename>
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<zonename>` | 指定要重新整理的區功能變數名稱稱。 |
@@ -882,7 +882,7 @@ dnscmd [<servername>] /zonereload <zonename>
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<zonename>` | 指定要重載之區域的名稱。 |
@@ -911,7 +911,7 @@ dnscmd [<servername>] /zoneresetmasters <zonename> [/local] [<IPaddress> [<IPadd
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<zonename>` | 指定要重設的區功能變數名稱稱。 |
@@ -941,7 +941,7 @@ dnscmd [<servername>] /zoneresetscavengeservers <zonename> [/local] [<IPaddress>
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<zonename>` | 指定要清除的區域。 |
@@ -974,7 +974,7 @@ dnscmd [<servername>] /zoneresetsecondaries <zonename> {/noxfr | /nonsecure | /s
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<zonename>` | 指定將會重設其次要伺服器的區功能變數名稱稱。 |
@@ -1012,7 +1012,7 @@ dnscmd [<servername>] /zoneresettype <zonename> <zonetype> [/overwrite_mem | /ov
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<zonename>` | 識別將變更類型的區域。 |
@@ -1043,7 +1043,7 @@ dnscmd [<servername>] /zoneresume <zonename>
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<zonename>` | 指定要繼續的區功能變數名稱稱。 |
@@ -1070,7 +1070,7 @@ dnscmd [<servername>] /zoneupdatefromds <zonename>
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<zonename>` | 指定要更新之區域的名稱。 |
@@ -1097,7 +1097,7 @@ dnscmd [<servername>] /zonewriteback <zonename>
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<zonename>` | 指定要更新之區域的名稱。 |
@@ -1112,6 +1112,6 @@ dnscmd [<servername>] /zonewriteback <zonename>
 dnscmd dnssvr1.contoso.com /zonewriteback test.contoso.com
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

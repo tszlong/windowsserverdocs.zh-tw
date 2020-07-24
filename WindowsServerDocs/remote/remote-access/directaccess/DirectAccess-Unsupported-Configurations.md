@@ -8,16 +8,16 @@ ms.topic: article
 ms.assetid: 23d05e61-95c3-4e70-aa83-b9a8cae92304
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 3908989b02f6388c994664aa8679c9198da4eea7
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: e59fd85fae3333ec3a5751ba611b615f4af92cb0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309390"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960240"
 ---
 # <a name="directaccess-unsupported-configurations"></a>DirectAccess 不支援的設定
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 開始部署之前，請先參閱下列不支援的 DirectAccess 設定清單，以避免再次啟動部署。  
 
@@ -30,13 +30,13 @@ ms.locfileid: "80309390"
   
 如果您打算部署 DirectAccess，您必須使用執行作業系統的網域控制站，而不是 Windows Server 2003 R2，而且您必須使用 DFS-R。  
   
-如需從 FRS 遷移至 DFS-R 的相關資訊，請參閱[SYSVOL 複寫遷移指南： FRS to DFS 複寫](https://technet.microsoft.com/library/dd640019(v=ws.10).aspx)。  
+如需從 FRS 遷移至 DFS-R 的相關資訊，請參閱[SYSVOL 複寫遷移指南： FRS to DFS 複寫](../../../storage/dfs-replication/migrate-sysvol-to-dfsr.md)。  
   
 ## <a name="network-access-protection-for-directaccess-clients"></a><a name="bkmk_nap"></a>DirectAccess 用戶端的網路存取保護  
 網路存取保護（NAP）是用來判斷遠端用戶端電腦是否符合 IT 原則，然後才被授與公司網路的存取權。 Windows Server 2012 R2 中的 NAP 已淘汰，不包含在 Windows Server 2016 中。 基於這個理由，不建議使用 NAP 來啟動新的 DirectAccess 部署。 建議針對 DirectAccess 用戶端的安全性使用不同的端點控制方法。  
   
 ## <a name="multisite-support-for-windows-7-clients"></a><a name="bkmk_multi"></a>Windows 7 用戶端的多網站支援  
-在多網站部署中設定 DirectAccess 時，Windows 10&reg;、Windows&reg; 8.1 和 Windows&reg; 8 用戶端都可以連接到最接近的網站。  Windows 7&reg; 用戶端電腦沒有相同的功能。 Windows 7 用戶端的網站選擇會在原則設定時設為特定網站，而且這些用戶端一律會連線到該指定的網站，而不論其位置為何。  
+在多網站部署中設定 DirectAccess 時，Windows 10 &reg; 、windows &reg; 8.1 和 windows &reg; 8 用戶端都可以連接到最接近的網站。  Windows 7 &reg; 用戶端電腦沒有相同的功能。 Windows 7 用戶端的網站選擇會在原則設定時設為特定網站，而且這些用戶端一律會連線到該指定的網站，而不論其位置為何。  
   
 ## <a name="user-based-access-control"></a><a name="bkmk_user"></a>以使用者為基礎的存取控制  
 DirectAccess 原則是以電腦為基礎，而不是以使用者為基礎。 不支援指定 DirectAccess 使用者原則來控制對公司網路的存取。  
@@ -45,7 +45,7 @@ DirectAccess 原則是以電腦為基礎，而不是以使用者為基礎。 不
 您可以使用 DirectAccess 安裝程式、[遠端存取管理] 主控台或 [遠端存取] Windows PowerShell Cmdlet 來設定 DirectAccess。 不支援使用 DirectAccess 設定向導以外的任何方式來設定 DirectAccess，例如直接修改 DirectAccess 群組原則物件，或手動修改伺服器或用戶端上的預設原則設定。 這些修改可能會導致無法使用的設定。  
   
 ## <a name="kerbproxy-authentication"></a><a name="bkmk_kerb"></a>KerbProxy authentication  
-當您使用消費者入門 Wizard 設定 DirectAccess 伺服器時，DirectAccess 伺服器會自動設定為使用 KerbProxy authentication 進行電腦和使用者驗證。 因此，您應該只將消費者入門 Wizard 用於僅部署 Windows 10&reg;、Windows 8.1 或 Windows 8 用戶端的單一網站部署。  
+當您使用消費者入門 Wizard 設定 DirectAccess 伺服器時，DirectAccess 伺服器會自動設定為使用 KerbProxy authentication 進行電腦和使用者驗證。 因此，您應該只將消費者入門 Wizard 用於僅部署 Windows 10 &reg; 、Windows 8.1 或 windows 8 用戶端的單一網站部署。  
   
 此外，下列功能不應該與 KerbProxy authentication 搭配使用：  
   
@@ -91,5 +91,3 @@ DirectAccess 伺服器必須具有讀寫網域控制站的存取權，而且無�
   
 基於這些需求，請勿使用 RODC 部署 DirectAccess。  
   
-
-

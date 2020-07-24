@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 06/25/2019
 ms.assetid: ceddb0fa-e800-42b6-b4c6-c06eb1d4bc55
-ms.openlocfilehash: 1ab4c0946c1081019747420448a0217359282bf1
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b00eb8a4c282cc8bafa9459b319c5c47f2d8c460
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469723"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960340"
 ---
 # <a name="known-issues-with-storage-replica"></a>儲存體複本的已知問題
 
@@ -356,7 +356,7 @@ Windows Server 版本1709中的這項行為已變更，可根據客戶的意見�
 如果 ClusterFunctionalLevel = 9，表示要在此節點實作儲存體複本需要 Windows 2016 ClusterFunctionalLevel 版本。
 如果 ClusterFunctionalLevel 不是 9，ClusterFunctionalLevel 將需要進行更新，才能在此節點實作儲存體複本。
 
-若要解決此問題，請執行 PowerShell Cmdlet 來提高叢集功能等級： [ClusterFunctionalLevel](https://docs.microsoft.com/powershell/module/failoverclusters/update-clusterfunctionallevel)
+若要解決此問題，請執行 PowerShell Cmdlet 來提高叢集功能等級： [ClusterFunctionalLevel](/powershell/module/failoverclusters/update-clusterfunctionallevel)
 
 ## <a name="small-unknown-partition-listed-in-diskmgmt-for-each-replicated-volume"></a>每個複寫的磁碟區都有小型不明磁碟分割在 DISKMGMT 中列出
 
@@ -384,7 +384,7 @@ Windows Server 版本1709中的這項行為已變更，可根據客戶的意見�
 
 搭配 Hdd 使用儲存空間直接存取時，您無法停用或避免快取。 因應措施是，如果只使用 SSD 和 NVME，您可以只設定效能和容量層。 如果使用該設定，而且只將 SR 記錄放在效能層，而只將其服務在容量層上的資料磁片區，您就可以避免上述的高延遲問題。 這種做法可以混合使用更快速且更慢的 Ssd，而且沒有 NVME。
 
-這種因應措施並非理想，而且有些客戶可能無法使用它。 儲存體複本小組正致力於優化和更新的記錄機制，以供未來減少這些人為的瓶頸。 此 v1.1 記錄檔第一次變成可在 Windows Server 2019 中使用，而其改善的效能則在[伺服器存放裝置的 Blog](https://blogs.technet.microsoft.com/filecab/2018/12/13/chelsio-rdma-and-storage-replica-perf-on-windows-server-2019-are-💯/)中有所說明。
+這種因應措施並非理想，而且有些客戶可能無法使用它。 儲存體複本小組正致力於優化和更新的記錄機制，以供未來減少這些人為的瓶頸。 此 v1.1 記錄檔第一次變成可在 Windows Server 2019 中使用，而其改善的效能則在[伺服器存放裝置的 Blog](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)中有所說明。
 
 ## <a name="error-could-not-find-file-when-running-test-srtopology-between-two-clusters"></a>在兩個叢集之間執行 Test-srtopology 時發生「找不到檔案」錯誤
 

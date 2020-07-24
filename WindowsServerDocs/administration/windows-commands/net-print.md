@@ -9,17 +9,17 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: af02ca14156c8a85ee54700983e2af6807752f91
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6ac91d2226e9a5394d6f7ea00ab6f268eb99015b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934826"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956800"
 ---
 # <a name="net-print"></a>net print
 
 > [!IMPORTANT]
-> 此命令已被取代。 不過，您可以使用[prnjobs 命令](prnjobs.md)、 [Windows Management Instrumentation （WMI）](https://docs.microsoft.com/windows/win32/wmisdk/wmi-start-page)、 [Powershell 中的 PRINTMANAGEMENT.MSC](https://docs.microsoft.com/powershell/module/printmanagement)，或[適用于 IT 專業人員的腳本資源](https://gallery.technet.microsoft.com/ScriptCenter/site/search?f%5B0%5D.Type=RootCategory&f%5B0%5D.Value=printing&f%5B0%5D.Text=Printing)，來執行許多相同的工作。
+> 此命令已被取代。 不過，您可以使用[prnjobs 命令](prnjobs.md)、 [Windows Management Instrumentation （WMI）](/windows/win32/wmisdk/wmi-start-page)、 [Powershell 中的 PRINTMANAGEMENT.MSC](/powershell/module/printmanagement)，或[適用于 IT 專業人員的腳本資源](https://gallery.technet.microsoft.com/ScriptCenter/site/search?f%5B0%5D.Type=RootCategory&f%5B0%5D.Value=printing&f%5B0%5D.Text=Printing)，來執行許多相同的工作。
 
 顯示指定之印表機佇列或指定之列印工作的相關資訊，或控制指定的列印工作。
 
@@ -31,7 +31,7 @@ net print {\\<computername>\<sharename> | \\<computername> <jobnumber> [/hold | 
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | `\\<computername>\<sharename>` | 指定您要顯示資訊的電腦和列印佇列（依名稱）。 |
 | `\\<computername>` | 指定主控您想要控制之列印工作的電腦（依名稱）。 如果您未指定電腦，則會假設使用本機電腦。 需要 `<jobnumber>` 參數。 |
@@ -93,7 +93,7 @@ net print \\Production 263 /hold
 net print \\Production 263 /release
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
@@ -101,8 +101,8 @@ net print \\Production 263 /release
 
 - [prnjobs 命令](prnjobs.md)
 
-- [Windows Management Instrumentation (WMI)](https://docs.microsoft.com/windows/win32/wmisdk/wmi-start-page)
+- [Windows Management Instrumentation (WMI)](/windows/win32/wmisdk/wmi-start-page)
 
-- [Powershell 中的 Printmanagement.msc](https://docs.microsoft.com/powershell/module/printmanagement)
+- [Powershell 中的 Printmanagement.msc](/powershell/module/printmanagement)
 
 - [適用于 IT 專業人員的腳本資源](https://gallery.technet.microsoft.com/ScriptCenter/site/search?f%5B0%5D.Type=RootCategory&f%5B0%5D.Value=printing&f%5B0%5D.Text=Printing)

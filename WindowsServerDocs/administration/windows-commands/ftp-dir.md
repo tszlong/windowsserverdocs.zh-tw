@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b1234b11beb61027a8e56f713f76d2c2bdcc4618
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1c3ec103797a1683c6f2810da375b00b56b87414
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933148"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957870"
 ---
 # <a name="ftp-dir"></a>ftp dir
 
@@ -30,7 +30,7 @@ dir [<remotedirectory>] [<localfile>]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ------- | -------- |
 | `[<remotedirectory>]` | 指定您要查看其清單的目錄。 如果未指定任何目錄，則會使用遠端電腦上的目前工作目錄。 |
 | `[<localfile>]` | 指定用來儲存目錄清單的本機檔案。 如果未指定本機檔案，結果會顯示在畫面上。 |
@@ -49,8 +49,8 @@ dir dir1
 dir . dirlist.txt
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [其他 FTP 指引](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [其他 FTP 指引](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

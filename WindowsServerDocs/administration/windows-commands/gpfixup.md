@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c09efb2fc8b1de124cbefc1b2dff73df29d2a4f1
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 15bef10afa49fafebfad485836bd6f9cdd5f496e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924658"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957170"
 ---
 # <a name="gpfixup"></a>gpfixup
 
@@ -32,7 +32,7 @@ gpfixup [/v]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- |------------ |
 | /v | 顯示詳細的狀態訊息。 如果未使用此參數，則只會顯示錯誤訊息或摘要狀態訊息，指出、**成功**或**失敗**。 |
 | /olddns:`<olddnsname>` | 指定網域 `<olddnsname>` 重新命名作業變更網域的 dns 名稱時，已重新命名之網域的舊 DNS 名稱。 只有當您也使用 **/newdns**參數指定新的網域 DNS 名稱時，才可以使用此參數。 |
@@ -61,8 +61,8 @@ gpfixup /olddns: MyOldDnsName /newdns:MyNewDnsName /oldnb:MyOldNetBIOSName /newn
 gpfixup /olddns: MyOldDnsName /newdns:MyNewDnsName /dc:MyDcDnsName 2>&1 >gpfixup.log
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [管理 Active Directory 網域重新命名](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc794869(v=ws.10))
+- [管理 Active Directory 網域重新命名](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc794869(v=ws.10))

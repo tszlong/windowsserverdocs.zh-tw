@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bed203c5de5351162f4c465e43631a4869f0e9a1
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 4eacf664a372d178a6391c8fa2359d2301484c36
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922196"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957030"
 ---
 # <a name="manage-bde-tpm"></a>manage-bde tpm
 
@@ -30,7 +30,7 @@ manage-bde -tpm [-turnon] [-takeownership <ownerpassword>] [-computername <name>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | -homeautomation.turnon | 啟用並啟動 TPM，以允許設定 TPM 擁有者密碼。 您也可以使用 **-t**做為此命令的縮寫版本。 |
 | -takeownership | 藉由設定擁有者密碼來取得 TPM 的擁有權。 您也可以使用 **-o**做為此命令的縮寫版本。 |
@@ -54,10 +54,10 @@ manage-bde  tpm -turnon
 manage-bde  tpm  takeownership 0wnerP@ss
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [適用于 Windows PowerShell 的 TPM 管理 Cmdlet](https://docs.microsoft.com/powershell/module/trustedplatformmodule/)
+- [適用于 Windows PowerShell 的 TPM 管理 Cmdlet](/powershell/module/trustedplatformmodule/)
 
 - [manage-bde 命令](manage-bde.md)

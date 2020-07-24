@@ -8,12 +8,12 @@ ms.date: 11/14/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 7e7a881a2e6bae499ed7d4713bd70a804c3412e6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0872131de7ba2a201b0a0e70fb6157b0e2706def
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80816961"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958630"
 ---
 # <a name="configuring-alternate-login-id"></a>設定替代登入識別碼
 
@@ -24,20 +24,20 @@ ms.locfileid: "80816961"
 >[!NOTE]
 >Microsoft 建議的最佳作法是將 UPN 與主要 SMTP 位址比對。 本文說明無法補救 UPN 以符合的少數客戶。
 
-例如，他們可以使用其電子郵件識別碼來進行登入，而且其 UPN 可能不同。 這在其 UPN 無法路由傳送的情況下特別常見。 請考慮使用 UPN jdoe@contoso.local 和電子郵件地址 jdoe@contoso.com的使用者 Jane Doe。 Jane 可能甚至不知道 UPN，因為她一直使用她的電子郵件識別碼進行登入。 使用任何其他登入方法，而不是 UPN 構成替代識別碼。 如需如何建立 UPN 的詳細資訊，請參閱[Azure AD UserPrincipalName 填入](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-userprincipalname)。
+例如，他們可以使用其電子郵件識別碼來進行登入，而且其 UPN 可能不同。 這在其 UPN 無法路由傳送的情況下特別常見。 請考慮使用 UPN jdoe@contoso.local 和電子郵件地址的使用者 Jane Doe jdoe@contoso.com 。 Jane 可能甚至不知道 UPN，因為她一直使用她的電子郵件識別碼進行登入。 使用任何其他登入方法，而不是 UPN 構成替代識別碼。 如需如何建立 UPN 的詳細資訊，請參閱[Azure AD UserPrincipalName 填入](/azure/active-directory/connect/active-directory-aadconnect-userprincipalname)。
 
 Active Directory 同盟服務（AD FS）可讓使用 AD FS 的同盟應用程式使用替代識別碼進行登入。 這可讓系統管理員指定預設 UPN 的替代方式，以用於登入。 AD FS 已經支援使用 Active Directory Domain Services （AD DS）接受的任何形式的使用者識別碼。 針對替代識別碼進行設定時，AD FS 可讓使用者使用設定的替代識別碼值（例如電子郵件識別碼）進行登入。使用替代識別碼可讓您採用 SaaS 提供者（例如 Office 365），而不需要修改您的內部部署 Upn。 它也可讓您使用取用者布建的身分識別來支援企業營運服務應用程式。
 
 ## <a name="alternate-id-in-azure-ad"></a>Azure AD 中的替代識別碼
 在下列案例中，組織可能必須使用替代識別碼：
-1. 內部部署功能變數名稱無法路由傳送，例如 Contoso。因此，預設的使用者主體名稱是不可路由傳送的（jdoe@contoso.local）。 因為本機應用程式相依性或公司原則，所以無法變更現有的 UPN。 Azure AD 和 Office 365 需要與 Azure AD 目錄相關聯的所有網域尾碼，才能完全可進行網際網路路由傳送。 
+1. 內部部署功能變數名稱無法路由傳送，例如 Contoso。因此，預設的使用者主體名稱是不可路由傳送的（ jdoe@contoso.local ）。 因為本機應用程式相依性或公司原則，所以無法變更現有的 UPN。 Azure AD 和 Office 365 需要與 Azure AD 目錄相關聯的所有網域尾碼，才能完全可進行網際網路路由傳送。 
 2. 內部部署 UPN 與使用者的電子郵件地址和登入 Office 365 不相同，因為組織的限制，使用者使用電子郵件地址和 UPN 時無法使用。
    在上述案例中，具有 AD FS 的替代識別碼可讓使用者登入 Azure AD，而不需要修改您的內部部署 Upn。 
 
 ## <a name="end-user-experience-with-alternate-login-id"></a>具有替代登入識別碼的終端使用者體驗
-使用者體驗會根據搭配替代登入識別碼使用的驗證方法而有所不同。 目前有三種不同的方式可以達到使用替代登入識別碼。  這些系統為：
+使用者體驗會根據搭配替代登入識別碼使用的驗證方法而有所不同。 目前有三種不同的方式可以達到使用替代登入識別碼。  其中包括：
 
-- **一般驗證（舊版）** -使用基本驗證通訊協定。
+- **一般驗證（舊版）**-使用基本驗證通訊協定。
 - **新式驗證**-將以 ACTIVE DIRECTORY 驗證程式庫（ADAL）為基礎的登入帶入應用程式。 這可讓登入功能（例如多重要素驗證（MFA）、以 SAML 為基礎的協力廠商身分識別提供者）搭配 Office 用戶端應用程式、智慧卡和憑證型驗證。
 - **混合式新式驗證**-提供新式驗證的所有優點，並讓使用者能夠使用從雲端取得的授權權杖來存取內部部署應用程式。
 
@@ -131,14 +131,14 @@ Office 1712 版（組建無8827.2148）和更新版本已更新驗證邏輯，�
 ##### <a name="step-2-update-to-required-windows-version"></a>步驟 2. 更新為所需的 Windows 版本
 Windows 1709 和更新版本已更新驗證邏輯，以處理替代識別碼案例。 若要利用新邏輯，用戶端電腦必須更新為 Windows 1709 版和更高版本。
 
-##### <a name="step-3-configure-registry-for-impacted-users-using-group-policy"></a>步驟 3： 使用群組原則為受影響的使用者設定登錄
+##### <a name="step-3-configure-registry-for-impacted-users-using-group-policy"></a>步驟 3. 使用群組原則為受影響的使用者設定登錄
 Office 應用程式會依賴目錄系統管理員所推送的資訊來識別替代識別碼環境。 必須設定下列登錄機碼，以協助 office 應用程式使用替代識別碼來驗證使用者，而不會顯示任何額外的提示
 
 |要新增的 Regkey|Regkey 資料名稱、類型和值|Windows 7/8|Windows 10|描述|
 |-----|-----|-----|-----|-----|
-|HKEY_CURRENT_USER \Software\Microsoft\AuthN|DomainHint</br>REG_SZ</br>contoso.com|必要項|必要項|此 regkey 的值是組織租使用者中已驗證的自訂功能變數名稱。 例如，如果 Contoso.com 是租使用者 Contoso.onmicrosoft.com 中其中一個已驗證的自訂功能變數名稱，則 Contoso corp 可以在此 regkey 中提供 Contoso.com 的值。|
+|HKEY_CURRENT_USER \Software\Microsoft\AuthN|DomainHint</br>REG_SZ</br>contoso.com|必要|必要|此 regkey 的值是組織租使用者中已驗證的自訂功能變數名稱。 例如，如果 Contoso.com 是租使用者 Contoso.onmicrosoft.com 中其中一個已驗證的自訂功能變數名稱，則 Contoso corp 可以在此 regkey 中提供 Contoso.com 的值。|
 HKEY_CURRENT_USER \Software\Microsoft\Office\16.0\Common\Identity|EnableAlternateIdSupport</br>REG_DWORD</br>1|Outlook 2016 ProPlus 的必要|Outlook 2016 ProPlus 的必要|此 regkey 的值可以是 1/0，向 Outlook 應用程式表示它是否應該參與改良的替代識別碼驗證邏輯。|
-HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\contoso.com\sts|&#42;</br>REG_DWORD</br>1|必要項|必要項|此 regkey 可以用來將 STS 設定為網際網路設定中的信任區域。 標準 ADFS 部署建議將 ADFS 命名空間新增至 Internet Explorer 的近端內部網路區域|
+HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\contoso.com\sts|&#42;</br>REG_DWORD</br>1|必要|必要|此 regkey 可以用來將 STS 設定為網際網路設定中的信任區域。 標準 ADFS 部署建議將 ADFS 命名空間新增至 Internet Explorer 的近端內部網路區域|
 
 ## <a name="new-authentication-flow-after-additional-configuration"></a>其他設定之後的新驗證流程
 
@@ -168,7 +168,7 @@ HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\Z
 | ----- |----- | ----- |
 |Outlook|支援，無額外提示|支援</br></br>Exchange Online 的**新式驗證**：支援</br></br>使用 Exchange Online 的**一般驗證**：支援下列注意事項：</br><li>您必須在已加入網域的電腦上，並聯機到公司網路 </li><li>您只能在不允許對信箱使用者進行外部存取的環境中使用替代識別碼。 這表示使用者只能在連線並加入公司網路、VPN 或透過直接存取電腦連線時，以支援的方式向信箱進行驗證，但在設定 Outlook 設定檔時，您會收到幾個額外的提示。| 
 |混合式公用資料夾|支援，不會有額外的提示。|Exchange Online 的**新式驗證**：支援</br></br>Exchange Online 的**一般驗證**：不支援</br></br><li>如果使用替代識別碼，就無法擴充混合式公用資料夾，因此現在不應該搭配一般驗證方法來使用。|
-|跨單位委派|請參閱[在混合式部署中設定 Exchange 支援委派的信箱許可權](https://technet.microsoft.com/library/mt784505.aspx)|請參閱[在混合式部署中設定 Exchange 支援委派的信箱許可權](https://technet.microsoft.com/library/mt784505.aspx)|
+|跨單位委派|請參閱[在混合式部署中設定 Exchange 支援委派的信箱許可權](/exchange/hybrid-deployment/set-up-delegated-mailbox-permissions)|請參閱[在混合式部署中設定 Exchange 支援委派的信箱許可權](/exchange/hybrid-deployment/set-up-delegated-mailbox-permissions)|
 |封存信箱存取（信箱內部部署-在雲端中封存）|支援，無額外提示|支援-使用者在存取封存時，會收到額外的認證提示，他們必須在出現提示時提供其替代識別碼。| 
 |Outlook Web Access|支援|支援|
 |適用于 Android、IOS 和 Windows Phone 的 Outlook Mobile Apps|支援|支援|
@@ -194,7 +194,7 @@ HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\Z
 
 -   如果系統管理員所設定的其中一個樹系已關閉，AD FS 會繼續在已設定的其他樹系中查詢具有替代登入識別碼的使用者帳戶。 如果 AD FS server 在其搜尋的樹系中找到唯一的使用者物件，則使用者會成功登入。
 
--   您可能需要自訂 AD FS 登入頁面，以提供使用者有關替代登入識別碼的一些提示。 若要這麼做，您可以新增自訂的登入頁面描述（如需詳細資訊，請參閱[自訂 AD FS 登入頁面](https://technet.microsoft.com/library/dn280950.aspx)，或自訂 [以組織帳戶登入] 的 [使用者名稱] 欄位（如需詳細資訊，請參閱[AD FS 登入頁面的 Advanced 自訂](https://technet.microsoft.com/library/dn636121.aspx)。
+-   您可能需要自訂 AD FS 登入頁面，以提供使用者有關替代登入識別碼的一些提示。 若要這麼做，您可以新增自訂的登入頁面描述（如需詳細資訊，請參閱[自訂 AD FS 登入頁面](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280950(v=ws.11))，或自訂 [以組織帳戶登入] 的 [使用者名稱] 欄位（如需詳細資訊，請參閱[AD FS 登入頁面的 Advanced 自訂](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn636121(v=ws.11))。
 
 -   包含替代登入識別碼值的新宣告類型為**HTTP: schemas.microsoft.com。 microsoft .com/ws/2013/11/alternateloginid**
 
@@ -211,14 +211,12 @@ HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\Z
 
 
 
-|                       **錯誤案例**                        | **對登入體驗的影響** |                                                              **發生**                                                              |
+|                       **錯誤案例**                        | **對登入體驗的影響** |                                                              **事件**                                                              |
 |--------------------------------------------------------------|----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-| 無法取得使用者物件的 SAMAccountName 值 |          登入失敗           |                  事件識別碼364，例外狀況訊息 MSIS8012：找不到使用者的 samAccountName： '{0}'。                   |
-|        無法存取 CanonicalName 屬性         |          登入失敗           |               事件識別碼364，例外狀況訊息 MSIS8013： CanonicalName：使用者的 '{0}'： '{1}' 格式不正確。                |
-|        在一個樹系中找到多個使用者物件        |          登入失敗           | 事件識別碼364，例外狀況訊息 MSIS8015：在樹系 '{1}' 中找到多個身分識別為 '{0}' 的使用者帳戶，具有身分識別： {2} |
-|   在多個樹系中找到多個使用者物件    |          登入失敗           |           事件識別碼364，例外狀況訊息 MSIS8014：在樹系中找到多個身分識別為 '{0}' 的使用者帳戶： {1}            |
+| 無法取得使用者物件的 SAMAccountName 值 |          登入失敗           |                  事件識別碼364，例外狀況訊息 MSIS8012：找不到使用者的 samAccountName： ' {0} '。                   |
+|        無法存取 CanonicalName 屬性         |          登入失敗           |               事件識別碼364，例外狀況訊息 MSIS8013：使用者 ' {0} ' 的 CanonicalName： ' ' {1} 格式不正確。                |
+|        在一個樹系中找到多個使用者物件        |          登入失敗           | 事件識別碼364，例外狀況訊息 MSIS8015：在樹系 ' ' 中找到多個身分識別為 ' {0} ' 的使用者帳戶 {1} ，具有身分識別：{2} |
+|   在多個樹系中找到多個使用者物件    |          登入失敗           |           事件識別碼364，例外狀況訊息 MSIS8014：在樹系中找到多個身分識別為 ' ' 的使用者帳戶 {0} ：{1}            |
 
 ## <a name="see-also"></a>另請參閱
-[AD FS 操作](../../ad-fs/AD-FS-2016-Operations.md)
-
-
+[AD FS 操作](../ad-fs-operations.md)

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f87ab51c0e24f9df421d7540e85d05a534635947
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 0f76f04e54f1b502f3e816e4f547873d2ac6e1b4
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936645"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958720"
 ---
 # <a name="wevtutil"></a>wevtutil
 
@@ -45,8 +45,8 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
 |{sl \| set-log} \<Logname>[/e： \<Enabled> ][/i： \<Isolation> ][/lfn： \<Logpath> ][/rt： \<Retention> ][/ab： \<Auto> ][/ms： \<MaxSize> ][/l： \<Level> ][/k： \<Keywords> ][/ca： \<Channel> ][/c： \<Config> ]|修改指定之記錄檔的設定。|
 |{ep \| 列舉-發行者}|顯示本機電腦上的事件發行者。|
 |{gp \| get-publisher} \<Publishername>[/ge： \<Metadata> ][/gm： \<Message> ][/f： \<Format> ]]|顯示指定之事件發行者的設定資訊。|
-|{im \| 安裝-資訊清單}\<Manifest>|從資訊清單安裝事件發行者和記錄。 如需事件資訊清單和使用此參數的詳細資訊，請參閱 Microsoft 開發人員網路（MSDN）網站（）上的 Windows 事件記錄檔 SDK [https://msdn.microsoft.com](https://msdn.microsoft.com) 。|
-|{um \| 卸載-資訊清單}\<Manifest>|從資訊清單中卸載所有發行者和記錄。 如需事件資訊清單和使用此參數的詳細資訊，請參閱 Microsoft 開發人員網路（MSDN）網站（）上的 Windows 事件記錄檔 SDK [https://msdn.microsoft.com](https://msdn.microsoft.com) 。|
+|{im \| 安裝-資訊清單}\<Manifest>|從資訊清單安裝事件發行者和記錄。 如需事件資訊清單和使用此參數的詳細資訊，請參閱 Microsoft 開發人員網路（MSDN）網站（）上的 Windows 事件記錄檔 SDK [https://msdn.microsoft.com](../../index.yml) 。|
+|{um \| 卸載-資訊清單}\<Manifest>|從資訊清單中卸載所有發行者和記錄。 如需事件資訊清單和使用此參數的詳細資訊，請參閱 Microsoft 開發人員網路（MSDN）網站（）上的 Windows 事件記錄檔 SDK [https://msdn.microsoft.com](../../index.yml) 。|
 |{qe \| 查詢-事件} \<Path>[/lf： \<Logfile> ][/sq： \<Structquery> ][/q： \<Query> ][/bm： \<Bookmark> ][/sbm： \<Savebm> ][/rd： \<Direction> ][/f： \<Format> ][/l： \<Locale> ][/c： \<Count> ][/e： \<Element> ]|從事件記錄檔、記錄檔或使用結構化查詢讀取事件。 根據預設，您會提供的記錄檔名稱 \<Path> 。 不過，如果您使用 **/lf**選項，則 \<Path> 必須是記錄檔的路徑。 如果您使用 **/sq**參數， \<Path> 必須是包含結構化查詢之檔案的路徑。|
 |{gli \| get-loginfo} \<Logname>[/lf： \<Logfile> ]|顯示事件記錄檔或記錄檔的狀態資訊。 如果使用 **/lf**選項， \<Logname> 就是記錄檔的路徑。 您可以執行**wevtutil el**來取得記錄檔名稱的清單。|
 |{epl \| 匯出-記錄} \<Path> \<Exportfile>[/lf： \<Logfile> ][/sq： \<Structquery> ][/q： \<Query> ][/ow： \<Overwrite> ]|從事件記錄檔、記錄檔或使用結構化查詢，將事件匯出至指定的檔案。 根據預設，您會提供的記錄檔名稱 \<Path> 。 不過，如果您使用 **/lf**選項，則 \<Path> 必須是記錄檔的路徑。 如果您使用 **/sq**選項， \<Path> 必須是包含結構化查詢之檔案的路徑。 \<Exportfile>這是將儲存已匯出事件之檔案的路徑。|
@@ -66,7 +66,7 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
 |   /ms\<MaxSize>   |                                                                                                                                                                        設定記錄檔的大小上限（以位元組為單位）。 記錄大小的最小值是1048576個位元組（1024KB），而記錄檔一律是64KB 的倍數，因此您輸入的值將會相應地四捨五入。                                                                                                                                                                         |
 |    /l:\<Level>     |                                                                                                                                                                     定義記錄檔的層級篩選。 \<Level>可以是任何有效的層級值。 此選項只適用于具有專用會話的記錄。 您可以藉由將設定為0來移除層級篩選 <Level> 。                                                                                                                                                                      |
 |   /k\<Keywords>   |                                                                                                                                                                                         指定記錄檔的關鍵字篩選準則。 \<Keywords>可以是任何有效的64位關鍵字遮罩。 此選項只適用于具有專用會話的記錄。                                                                                                                                                                                         |
-|   /ca\<Channel>   |                                                                                                                   設定事件記錄檔的存取權限。 \<Channel>這是使用安全描述項定義語言（SDDL）的安全描述項。 如需 SDDL 格式的詳細資訊，請參閱 Microsoft 開發人員網路（MSDN）網站（ [https://msdn.microsoft.com](https://msdn.microsoft.com) ）。                                                                                                                    |
+|   /ca\<Channel>   |                                                                                                                   設定事件記錄檔的存取權限。 \<Channel>這是使用安全描述項定義語言（SDDL）的安全描述項。 如需 SDDL 格式的詳細資訊，請參閱 Microsoft 開發人員網路（MSDN）網站（ [https://msdn.microsoft.com](../../index.yml) ）。                                                                                                                    |
 |    /c\<Config>    |                                                                                                                                  指定設定檔案的路徑。 此選項將會從中定義的設定檔讀取記錄檔屬性 \<Config> 。 如果您使用此選項，則不得指定 <Logname> 參數。 記錄檔名稱會從設定檔案中讀取。                                                                                                                                   |
 |  /ge\<Metadata>   |                                                                                                                                                                                                                 取得此發行者可以引發之事件的中繼資料資訊。 \<Metadata>可以是 true 或 false。                                                                                                                                                                                                                 |
 |   /gm\<Message>   |                                                                                                                                                                                                                       顯示實際的訊息，而不是數值訊息識別碼。 \<Message>可以是 true 或 false。                                                                                                                                                                                                                        |
@@ -149,6 +149,6 @@ wevtutil epl System C:\backup\system0506.evtx
 wevtutil cl Application /bu:C:\admin\backups\a10306.evtx
 ```
 
-#### <a name="additional-references"></a>其他參考資料
+#### <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

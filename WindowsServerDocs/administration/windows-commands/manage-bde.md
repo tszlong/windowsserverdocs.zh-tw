@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 480f44c6467587918ad347413315b208c874f8cd
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e7e248f507ca6d38248bc931cb3d1b98aa385c88
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922125"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956990"
 ---
 # <a name="manage-bde"></a>manage-bde
 
@@ -32,7 +32,7 @@ manage-bde [-status] [–on] [–off] [–pause] [–resume] [–lock] [–unloc
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- |------------ |
 | [manage-bde 狀態](manage-bde-status.md) | 提供電腦上所有磁片磁碟機的相關資訊，不論它們是否受到 BitLocker 保護。 |
 | [管理-manage-bde on](manage-bde-on.md) | 加密磁片磁碟機並開啟 BitLocker。 |
@@ -55,8 +55,8 @@ manage-bde [-status] [–on] [–off] [–pause] [–resume] [–lock] [–unloc
 | -? 或/？ | 在命令提示字元中顯示簡短說明。 |
 | -help 或-h | 在命令提示字元中顯示完整的說明。 |
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [使用命令列啟用 BitLocker](https://technet.microsoft.com/library/dd894351(v=ws.10).aspx)
+- [使用命令列啟用 BitLocker](/previous-versions/windows/it-pro/windows-7/dd894351(v=ws.10))

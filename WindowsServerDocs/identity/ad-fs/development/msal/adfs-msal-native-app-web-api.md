@@ -8,12 +8,12 @@ ms.date: 08/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 8b27097ac64f981343c1d455c826fa1b9004133e
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: bd4752f95fbe483cf4c706acfd8766ce18aa8be9
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949587"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960430"
 ---
 # <a name="scenario-native-app-calling-web-api"></a>案例：原生應用程式呼叫 Web API 
 >適用于： AD FS 2019 和更新版本 
@@ -26,7 +26,7 @@ ms.locfileid: "75949587"
  
  ![概觀](media/adfs-msal-native-app-web-api/native1.png)
 
-在此流程中，您會將驗證新增至您的原生應用程式（公用用戶端），進而登入使用者並呼叫 Web API。 若要從登入使用者的原生應用程式呼叫 Web API，您可以使用 MSAL 的[AcquireTokenInteractive](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.ipublicclientapplication.acquiretokeninteractive?view=azure-dotnet#Microsoft_Identity_Client_IPublicClientApplication_AcquireTokenInteractive_System_Collections_Generic_IEnumerable_System_String__) token 取得方法。 為啟用此互動，MSAL 會利用網頁瀏覽器。 
+在此流程中，您會將驗證新增至您的原生應用程式（公用用戶端），進而登入使用者並呼叫 Web API。 若要從登入使用者的原生應用程式呼叫 Web API，您可以使用 MSAL 的[AcquireTokenInteractive](/dotnet/api/microsoft.identity.client.ipublicclientapplication.acquiretokeninteractive?view=azure-dotnet#Microsoft_Identity_Client_IPublicClientApplication_AcquireTokenInteractive_System_Collections_Generic_IEnumerable_System_String__) token 取得方法。 為啟用此互動，MSAL 會利用網頁瀏覽器。 
 
  
 若要進一步瞭解如何在 ADFS 中設定原生應用程式以互動方式取得存取權杖，讓我們使用[這裡](https://github.com/microsoft/adfs-sample-msal-dotnet-native-to-webapi)提供的範例，並逐步解說應用程式註冊和程式碼設定步驟。  
@@ -43,17 +43,17 @@ ms.locfileid: "75949587"
 ## <a name="app-registration-in-ad-fs"></a>AD FS 中的應用程式註冊 
 本節說明如何在 AD FS 中，將原生應用程式註冊為公用用戶端和 Web API 做為信賴憑證者（RP） 
 
-  1. 在**AD FS 管理** 中，以滑鼠右鍵按一下 **應用程式群組**，然後選取 **新增應用程式群組**。   
+  1. 在**AD FS 管理**] 中，以滑鼠右鍵按一下 [**應用程式群組**]，然後選取 [**新增應用程式群組**]。   
   
-  2. 在 [應用程式群組] 上，針對 [**名稱**] 輸入**NativeAppToWebApi** ，然後在 [**用戶端-伺服器應用程式**] 下，選取**存取 Web API 範本的原生應用程式**。 按一下 **\[下一步\]** 。  
+  2. 在 [應用程式群組] 上，針對 [**名稱**] 輸入**NativeAppToWebApi** ，然後在 [**用戶端-伺服器應用程式**] 下，選取**存取 Web API 範本的原生應用程式**。 按 [下一步]  。  
   
       ![應用程式 Reg](media/adfs-msal-native-app-web-api/native2.png)  
 
-  3. 複製 [**用戶端識別碼**] 值。 稍後**在應用程式的 app.config**檔案中，將會使用它做為**ClientId**的值。 針對 [重新導向 URI] 輸入下列**內容：** https://ToDoListClient 。 按一下 **[新增]** 。 按一下 **\[下一步\]** 。  
+  3. 複製 [**用戶端識別碼**] 值。 稍後在應用程式的**App.config**檔中，將會使用它做為**ClientId**的值。 針對 [重新導向 URI] 輸入下列**內容：** https://ToDoListClient 。 按一下 [新增] 。 按 [下一步]  。  
  
      ![應用程式 Reg](media/adfs-msal-native-app-web-api/native3.png) 
 
-  4. 在 [設定 Web API] 畫面上，輸入**識別碼：** https://localhost:44321/ 。 按一下 **[新增]** 。 按一下 **\[下一步\]** 。 稍後會在**應用程式的 app.config 和 web.config**檔案中使用此值 **。**
+  4. 在 [設定 Web API] 畫面上，輸入**識別碼：** https://localhost:44321/ 。 按一下 [新增] 。 按 [下一步]  。 稍後在應用程式的**App.config**和**Web.config**檔案中將會用到此值。
  
      ![應用程式 Reg](media/adfs-msal-native-app-web-api/native4.png)   
   
@@ -61,15 +61,15 @@ ms.locfileid: "75949587"
   
      ![應用程式 Reg](media/adfs-msal-native-app-web-api/native5.png)   
   
-  6. 在 [設定應用程式許可權] 畫面上，確認已選取 [ **Openid** ]，然後按 **[下一步]** 。  
+  6. 在 [設定應用程式許可權] 畫面上，確認已選取 [ **Openid** ]，然後按 **[下一步]**。  
      
      ![應用程式 Reg](media/adfs-msal-native-app-web-api/native6.png) 
 
-  7. 在 [摘要] 畫面上，按 **[下一步]** 。
+  7. 在 [摘要] 畫面上，按 **[下一步]**。
   
   8. 在 [完成] 畫面上，按一下 [**關閉**]。 
   
-  9. 在 AD FS 管理 中，按一下 **應用程式群組**，然後選取  **NativeAppToWebApi**應用程式群組。 按一下滑鼠右鍵並選取 [內容]。
+  9. 在 AD FS 管理] 中，按一下 [**應用程式群組**]，然後選取 [ **NativeAppToWebApi**應用程式群組]。 按一下滑鼠右鍵並選取 [內容]****。
   
       ![應用程式 Reg](media/adfs-msal-native-app-web-api/native7.png)
 
@@ -81,11 +81,11 @@ ms.locfileid: "75949587"
   
       ![應用程式 Reg](media/adfs-msal-native-app-web-api/native9.png) 
 
-  12. 在 [新增轉換宣告規則嚮導] 上，選取 [從宣告**規則範本** **轉換傳入**宣告：] 下拉式清單，然後按 **[下一步]** 。  
+  12. 在 [新增轉換宣告規則嚮導] 上，選取 [從宣告**規則範本****轉換傳入**宣告：] 下拉式清單，然後按 **[下一步]**。  
   
       ![應用程式 Reg](media/adfs-msal-native-app-web-api/native10.png) 
 
-  13. 在 [宣告**規則名稱：** ] 欄位中輸入**NameID** 。 選取 [**傳入宣告類型**的**名稱**：]、[**傳出宣告類型**的**名稱識別碼**] 和 [**外寄名稱識別碼格式**的**一般名稱**]：。 按一下 **[完成]** 。
+  13. 在 [宣告**規則名稱：** ] 欄位中輸入**NameID** 。 選取 [**傳入宣告類型**的**名稱**：]、[**傳出宣告類型**的**名稱識別碼**] 和 [**外寄名稱識別碼格式**的**一般名稱**]：。 按一下 **[完成]**。
   
       ![應用程式 Reg](media/adfs-msal-native-app-web-api/native11.png) 
 
@@ -107,7 +107,7 @@ ms.locfileid: "75949587"
  
      ![程式碼設定](media/adfs-msal-native-app-web-api/native12.png)
 
- 4. 開啟 web.config 檔案。 修改下列各項： 
+ 4. 開啟 Web.config 檔案。 修改下列各項： 
     - ida：物件-在上述 AD FS 區段中，從應用程式註冊 #4 輸入**識別碼**值 
     - ida： AdfsMetadataEndpoint-輸入 HTTPs：//[您的 AD FS hostname]/federationmetadata/2007-06/federationmetadata.xml 
     

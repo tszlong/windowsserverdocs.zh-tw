@@ -8,12 +8,12 @@ ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 9e947f1894516de232a0db50bcbb56c7452098cd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ce88d20e967211b4d5ea4ef98143bfc43c1e433d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359418"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960280"
 ---
 # <a name="migrate-the-ad-fs-20-federation-server-to-ad-fs-on-windows-server-2012-r2"></a>將 AD FS 2.0 同盟伺服器遷移至 Windows Server 2012 R2 上的 AD FS
 
@@ -23,7 +23,7 @@ ms.locfileid: "71359418"
   
 2.  [建立 Windows Server 2012 R2 同盟伺服器陣列](migrate-ad-fs-fed-server-r2.md#create-a-windows-server-2012-r2-federation-server-farm)  
   
-3.  [將原始設定資料匯入 Windows Server 2012 R2 AD FS 伺服器陣列](migrate-ad-fs-fed-server-r2.md#import-the-original-configuration-data-into-the-windows-server-2012-r2-ad-fs-farm)  
+3.  [將原始設定資料匯入 Windows Server 2012 R2 AD FS 陣列](migrate-ad-fs-fed-server-r2.md#import-the-original-configuration-data-into-the-windows-server-2012-r2-ad-fs-farm)  
   
 ##  <a name="export-and-backup-the-ad-fs-configuration-data"></a>匯出和備份 AD FS 設定資料  
  若要匯出 AD FS 設定，請執行下列程序：  
@@ -40,7 +40,7 @@ ms.locfileid: "71359418"
   
 若要尋找 SSL 憑證，請開啟 Internet Information Services （IIS）管理主控台，選取左窗格中的 [**預設的網站**]，然後按一下 [系結 **...** ] 在 [**動作**] 窗格中，尋找並選取 HTTPs 系結，按一下 [**編輯**]，然後按一下 [ **View**]。  
   
-您必須將 Federation Service 所使用的 SSL 憑證以及其私密金鑰匯出至 .pfx 檔案。 如需詳細資訊，請參閱＜ [匯出伺服器驗證憑證的私密金鑰部分](export-the-private-key-portion-of-a-server-authentication-certificate.md)＞。  
+您必須將 Federation Service 所使用的 SSL 憑證以及其私密金鑰匯出至 .pfx 檔案。 如需詳細資訊，請參閱 [Export the Private Key Portion of a Server Authentication Certificate](export-the-private-key-portion-of-a-server-authentication-certificate.md)。  
   
 > [!NOTE]
 >  如果您打算在 Windows Server 2012 R2 中執行 AD FS 的過程中部署裝置註冊服務，則必須取得新的 SSL 憑證。如需詳細資訊，請參閱[註冊 AD FS 的 SSL 憑證](enroll-an-ssl-certificate-for-ad-fs.md)和[使用裝置註冊服務設定同盟伺服器](configure-a-federation-server-with-device-registration-service.md)。  
@@ -61,7 +61,7 @@ Get-ADFSProperties | Out-File “.\properties.txt”`.
 
 輸出檔案將包含下列重要的設定值：  
  
-|**同盟服務 Set-adfsproperties 所報告的屬性名稱**|**AD FS 管理主控台中的同盟服務屬性名稱**|
+|**Get-ADFSProperties 報告的 Federation Service 屬性名稱**|**AD FS 管理主控台中的 Federation Service 屬性名稱**|
 |-----|-----|  
 |HostName|Federation Service 名稱|  
 |識別碼|Federation Service 識別碼|  
@@ -74,11 +74,11 @@ Get-ADFSProperties | Out-File “.\properties.txt”`.
 > [!NOTE]
 >  記下這個檔案中的資料庫連接字串，該字串緊接在 “policystore connectionstring=” 之後。 如果連接字串指定了某個 SQL Server 資料庫，還原同盟伺服器上的原始 AD FS 設定時就需要這個值。  
 >   
->  以下是 WID 連接字串的範例：`“Data Source=\\.\pipe\mssql$microsoft##ssee\sql\query;Initial Catalog=AdfsConfiguration;Integrated Security=True"`。 以下是 SQL Server 連接字串的範例： `"Data Source=databasehostname;Integrated Security=True"`。  
+>  以下是 WID 連接字串的範例： `“Data Source=\\.\pipe\mssql$microsoft##ssee\sql\query;Initial Catalog=AdfsConfiguration;Integrated Security=True"`。 以下是 SQL Server 連接字串的範例： `"Data Source=databasehostname;Integrated Security=True"`。  
   
 4. 記錄 AD FS Federation Service 帳戶的身分識別和此帳戶的密碼。  
   
-若要尋找識別值，請檢查 [服務] 主控台中 [AD FS 2.0 Windows 服務] 的 [登入身分] 欄位，然後手動記錄這個值。  
+若要尋找識別值，請檢查 [服務] **** 主控台中 [AD FS 2.0 Windows 服務] **** 的 [登入身分] **** 欄位，然後手動記錄這個值。  
   
 > [!NOTE]
 >  若為獨立 Federation Service，則會使用內建的網路服務帳戶。  在這種情況下，您不需要密碼。  
@@ -99,18 +99,18 @@ Get-ADFSEndpoint | Out-File “.\endpoints.txt”`.
 Get-ADFSClaimDescription | Out-File “.\claimtypes.txt”`.  
  ```
 
-7. 如果您在 web.config 檔案中設定自訂設定 (例如 useRelayStateForIdpInitiatedSignOn)，請記得備份 web.config 檔案以供參考。 您可以從對應到 IIS 中虛擬路徑 **“/adfs/ls”** 的目錄中複製檔案。 根據預設，它在 **%systemdrive%\inetpub\adfs\ls** 目錄中。  
+7. 如果您在 web.config 檔案中設定自訂設定 (例如 useRelayStateForIdpInitiatedSignOn)，請記得備份 web.config 檔案以供參考。 您可以從對應到 IIS 中虛擬路徑 **“/adfs/ls”** 的目錄中複製檔案。 根據預設，該檔案位於 **%systemdrive%\inetpub\adfs\ls** 目錄。  
   
 ###  <a name="to-export-claims-provider-trusts-and-relying-party-trusts"></a>匯出宣告提供者信任和信賴憑證者信任  
   
-1.  若要匯出 AD FS 宣告提供者信任和信賴憑證者信任，您必須以系統管理員身分（而不是網域系統管理員）登入到您的同盟伺服器，然後執行位於 Windows Server 2012 R2 安裝光碟的**media/server_support/adfs**資料夾中的下列 windows PowerShell 腳本： `export-federationconfiguration.ps1`。  
+1.  若要匯出 AD FS 宣告提供者信任和信賴憑證者信任，您必須以系統管理員身分（而不是網域系統管理員）登入到您的同盟伺服器，然後執行位於 Windows Server 2012 R2 安裝光碟的**media/server_support/adfs**資料夾中的下列 windows PowerShell 腳本： `export-federationconfiguration.ps1` 。  
   
 > [!IMPORTANT]
 >  匯出指令碼採用下列參數：  
 > 
-> - Export-federationconfiguration.ps1： Path < 字串\> [-ComputerName < string\>] [-Credential < pscredential\>] [-Force] [-CertificatePassword < securestring\>]  
->   -   Export-federationconfiguration.ps1 的路徑 < 字串\> [-ComputerName < 字串\>] [-Credential < pscredential\>] [-Force] [-CertificatePassword < securestring\>] [-RelyingPartyTrustIdentifier < string [] >] [-ClaimsProviderTrustIdentifier < string [] >]  
->   -   Export-federationconfiguration.ps1 的路徑 < 字串\> [-ComputerName < 字串\>] [-Credential < pscredential\>] [-Force] [-CertificatePassword < securestring\>] [-RelyingPartyTrustName < string [] >] [-ClaimsProviderTrustName < string [] >]  
+> - Export-FederationConfiguration.ps1 路徑 <字串 \> [-ComputerName <string \> ] [-Credential <pscredential \> ] [-Force] [-CertificatePassword <securestring \> ]  
+>   -   Export-FederationConfiguration.ps1 路徑 <字串 \> [-ComputerName <string \> ] [-Credential <pscredential \> ] [-Force] [-CertificatePassword <securestring \> ] [-RelyingPartyTrustIdentifier <string [] >] [-ClaimsProviderTrustIdentifier <string [] >]  
+>   -   Export-FederationConfiguration.ps1 路徑 <字串 \> [-ComputerName <string \> ] [-Credential <pscredential \> ] [-Force] [-CertificatePassword <securestring \> ] [-RelyingPartyTrustName <string [] >] [-ClaimsProviderTrustName <string [] >]  
 > 
 >   **-RelyingPartyTrustIdentifier <string[]>** - Cmdlet 只能針對字串陣列中指定的識別碼匯出信賴憑證者信任。 預設不會匯出信賴憑證者信任。 如果未指定 RelyingPartyTrustIdentifier、ClaimsProviderTrustIdentifier、RelyingPartyTrustName 和 ClaimsProviderTrustName，指令碼會匯出所有信賴憑證者信任和宣告提供者信任。  
 > 
@@ -118,17 +118,17 @@ Get-ADFSClaimDescription | Out-File “.\claimtypes.txt”`.
 > 
 >   **-RelyingPartyTrustName <string[]>** - Cmdlet 只能針對字串陣列中指定的名稱匯出信賴憑證者信任。 預設不會匯出信賴憑證者信任。  
 > 
->   **-ClaimsProviderTrustName <string[]>** - Cmdlet 只能針對字串陣列中指定的名稱匯出宣告提供者信任。 預設不會匯出宣告提供者信任。  
+>   **-ClaimsProviderTrustName &lt;string[]&gt;** - Cmdlet 只能針對字串陣列中指定的名稱匯出宣告提供者信任。 預設不會匯出宣告提供者信任。  
 > 
->   **-Path < 字串\>** -將包含匯出檔案的資料夾路徑。  
+>   **-Path <字串 \> **-將包含匯出檔案的資料夾路徑。  
 > 
->   **-ComputerName < string\>** -指定 STS 伺服器主機名稱。 預設是本機電腦。 如果您將 Windows Server 2012 的 AD FS 2.0 或 AD FS 移轉到 Windows Server 2012 R2 的 AD FS，此為舊版 AD FS 伺服器的主機名稱。  
+>   **-ComputerName <字串 \> **-指定 STS 伺服器主機名稱。 預設是本機電腦。 如果您將 Windows Server 2012 的 AD FS 2.0 或 AD FS 移轉到 Windows Server 2012 R2 的 AD FS，此為舊版 AD FS 伺服器的主機名稱。  
 > 
->   **-Credential < PSCredential\>** -指定具有執行此動作之許可權的使用者帳戶。 預設為目前使用者。  
+>   **-Credential <PSCredential \> **-指定具有執行此動作之許可權的使用者帳戶。 預設為目前使用者。  
 > 
 >   **-Force** – 指定不提示使用者確認。  
 > 
->   **-CertificatePassword < SecureString\>** -指定用來匯出 AD FS 憑證私密金鑰的密碼。 如果未指定，若需要匯出具有私密金鑰的 AD FS 憑證，指令碼會提示輸入密碼。  
+>   **-CertificatePassword <SecureString \> **-指定用來匯出 AD FS 憑證私密金鑰的密碼。 如果未指定，若需要匯出具有私密金鑰的 AD FS 憑證，指令碼會提示輸入密碼。  
 > 
 >   **輸入**：無  
 > 
@@ -174,7 +174,7 @@ Get-ADFSAttributeStore
   
 1.  匯入和設定其他自訂 AD FS 憑證，包括外部註冊的權杖簽署和權杖解密/加密憑證，以及服務通訊憑證 (如果與 SSL 憑證不同)。  
   
-在 AD FS 管理主控台，選取 [憑證]。 檢查服務通訊、權杖加密/解密憑證和權杖簽署憑證，將每個值與移轉準備期間匯入 certificates.txt 檔案的值進行比對。  
+在 AD FS 管理主控台，選取 [憑證]****。 檢查服務通訊、權杖加密/解密憑證和權杖簽署憑證，將每個值與移轉準備期間匯入 certificates.txt 檔案的值進行比對。  
   
 若要將權杖解密或權杖簽署憑證從預設的自我簽署憑證變更為外部憑證，您必須先停用預設啟用的自動憑證變換功能。 若要這樣做，您可使用下列 Windows PowerShell 命令：  
   
@@ -184,7 +184,7 @@ Set-ADFSProperties –AutoCertificateRollover $false
   
 2. 使用 Set-AdfsProperties Cmdlet 設定任何自訂 AD FS 服務設定，例如 AutoCertificateRollover 或 SSO 存留期。  
   
-3. 若要匯入 AD FS 信賴憑證者信任和宣告提供者信任，您必須以系統管理員身分（而不是網域系統管理員）登入到您的同盟伺服器，然後執行位於 \support\adfs 資料夾中的下列 Windows PowerShell 腳本。Windows Server 2012 R2 安裝光碟：  
+3. 若要匯入 AD FS 信賴憑證者信任和宣告提供者信任，您必須以系統管理員身分（而不是網域系統管理員）登入到您的同盟伺服器，然後執行位於 Windows Server 2012 R2 安裝光碟的 \support\adfs 資料夾中的下列 Windows PowerShell 腳本：  
   
 ``` powershell 
 import-federationconfiguration.ps1  
@@ -193,29 +193,29 @@ import-federationconfiguration.ps1
 > [!IMPORTANT]
 >  匯入指令碼採用下列參數：  
 > 
-> - Import-federationconfiguration.ps1 的路徑 < 字串\> [-ComputerName < 字串\>] [-Credential < pscredential\>] [-Force] [-LogPath < string\>] [-CertificatePassword < securestring\>]  
->   -   Import-federationconfiguration.ps1： Path < 字串\> [-ComputerName < string\>] [-Credential < pscredential\>] [-Force] [-LogPath < string\>] [-CertificatePassword < securestring\>] [-RelyingPartyTrustIdentifier < string [] >] [-ClaimsProviderTrustIdentifier < string [] >  
->   -   Import-federationconfiguration.ps1： Path < 字串\> [-ComputerName < string\>] [-Credential < pscredential\>] [-Force] [-LogPath < string\>] [-CertificatePassword < securestring\>] [-RelyingPartyTrustName < string [] >] [-ClaimsProviderTrustName < string [] >]  
+> - Import-FederationConfiguration.ps1 路徑 <字串 \> [-ComputerName <string \> ] [-Credential <pscredential \> ] [-Force] [-LogPath <string \> ] [-CertificatePassword <securestring \> ]  
+>   -   Import-FederationConfiguration.ps1 路徑 <字串 \> [-ComputerName <string \> ] [-Credential <pscredential \> ] [-Force] [-LogPath <string \> ] [-CertificatePassword <securestring \> ] [-RelyingPartyTrustIdentifier <string [] >] [-ClaimsProviderTrustIdentifier <string [] >  
+>   -   Import-FederationConfiguration.ps1 路徑 <字串 \> [-ComputerName <string \> ] [-Credential <pscredential \> ] [-Force] [-LogPath <string \> ] [-CertificatePassword <securestring \> ] [-RelyingPartyTrustName <string [] >] [-ClaimsProviderTrustName <string [] >]  
 > 
 >   **-RelyingPartyTrustIdentifier <string[]>** - Cmdlet 只能針對字串陣列中指定的識別碼匯入信賴憑證者信任。 預設不會匯入信賴憑證者信任。 如果未指定 RelyingPartyTrustIdentifier、ClaimsProviderTrustIdentifier、RelyingPartyTrustName 和 ClaimsProviderTrustName，指令碼會匯入所有信賴憑證者信任和宣告提供者信任。  
 > 
->   **-ClaimsProviderTrustIdentifier <string[]>** - Cmdlet 只能針對字串陣列中指定的識別碼匯入宣告提供者信任。 預設不會匯入宣告提供者信任。  
+>   **-ClaimsProviderTrustIdentifier &lt;string[]&gt;** - Cmdlet 只能針對字串陣列中指定的識別碼匯入宣告提供者信任。 預設不會匯入宣告提供者信任。  
 > 
->   **-RelyingPartyTrustName <string[]>** - Cmdlet 只能針對字串陣列中指定的名稱匯入信賴憑證者信任。 預設不會匯入信賴憑證者信任。  
+>   **-RelyingPartyTrustName &lt;string[]&gt;** - Cmdlet 只能針對字串陣列中指定的名稱匯入信賴憑證者信任。 預設不會匯入信賴憑證者信任。  
 > 
->   **-ClaimsProviderTrustName <string[]>** - Cmdlet 只能針對字串陣列中指定的名稱匯入宣告提供者信任。 預設不會匯入宣告提供者信任。  
+>   **-ClaimsProviderTrustName &lt;string[]&gt;** - Cmdlet 只能針對字串陣列中指定的名稱匯入宣告提供者信任。 預設不會匯入宣告提供者信任。  
 > 
->   **-Path < 字串\>** -包含要匯入之設定檔案的資料夾路徑。  
+>   **-Path <字串 \> **-包含要匯入之設定檔案的資料夾路徑。  
 > 
->   **-LogPath < 字串\>** -將包含匯入記錄檔的資料夾路徑。 此資料夾將會建立名為 “import.log” 的記錄檔。  
+>   **-LogPath <字串 \> **-將包含匯入記錄檔的資料夾路徑。 此資料夾將會建立名為 “import.log” 的記錄檔。  
 > 
->   **-ComputerName < string\>** -指定 STS 伺服器的主機名稱。 預設是本機電腦。 如果您正在將 Windows Server 2012 的 AD FS 2.0 或 AD FS 移轉到 Windows Server 2012 R2 的 AD FS，此參數應設為舊版 AD FS 伺服器的主機名稱。  
+>   **-ComputerName <字串 \> **-指定 STS 伺服器的主機名稱。 預設是本機電腦。 如果您正在將 Windows Server 2012 的 AD FS 2.0 或 AD FS 移轉到 Windows Server 2012 R2 的 AD FS，此參數應設為舊版 AD FS 伺服器的主機名稱。  
 > 
->   **-Credential < PSCredential\>** -指定具有執行此動作之許可權的使用者帳戶。 預設為目前使用者。  
+>   **-Credential <PSCredential \> **-指定具有執行此動作之許可權的使用者帳戶。 預設為目前使用者。  
 > 
 >   **-Force** – 指定不提示使用者確認。  
 > 
->   **-CertificatePassword < SecureString\>** -指定用來匯入 AD FS 憑證私密金鑰的密碼。 如果未指定，若需要匯入具有私密金鑰的 AD FS 憑證，指令碼會提示輸入密碼。  
+>   **-CertificatePassword <SecureString \> **-指定用來匯入 AD FS 憑證私密金鑰的密碼。 如果未指定，若需要匯入具有私密金鑰的 AD FS 憑證，指令碼會提示輸入密碼。  
 > 
 >   **輸入：** 字串 - 此命令會以匯入資料夾路徑做為輸入。 您可以透過管道將 Export-FederationConfiguration 傳送給此命令。  
 > 
@@ -243,34 +243,34 @@ import-federationconfiguration.ps1
 > [!IMPORTANT]
 >  如果來源系統的 Active Directory 宣告提供者信任中有任何自訂宣告規則 (AD FS 預設規則以外的規則)，指令碼不會移轉這些規則。 這是因為 Windows Server 2012 R2 有新的預設值。 任何自訂規則都必須藉由手動新增至新 Windows Server 2012 R2 伺服器陣列中的 Active Directory 宣告提供者信任來進行合併。  
   
-4. 設定所有自訂 AD FS 端點設定。 在 AD FS 管理主控台，選取 [端點]。 將啟用的 AD FS 端點清單與 AD FS 移轉準備期間匯出至檔案的啟用 AD FS 端點清單進行比對。  
+4. 設定所有自訂 AD FS 端點設定。 在 AD FS 管理主控台，選取 [端點]****。 將啟用的 AD FS 端點清單與 AD FS 移轉準備期間匯出至檔案的啟用 AD FS 端點清單進行比對。  
   
-    \- 和-  
+    \-和  
   
-    設定任何自訂宣告描述。 在 AD FS 管理主控台，選取 [宣告描述]。 將 AD FS 宣告描述清單與 AD FS 移轉準備期間匯出至檔案的宣告描述清單進行比對。 新增任何包含於您的檔案但未包含於 AD FS 中預設清單的自訂宣告描述。 請注意，管理主控台的宣告識別碼會對應至檔案的 ClaimType。  
+    設定任何自訂宣告描述。 在 AD FS 管理主控台，選取 [宣告描述]****。 將 AD FS 宣告描述清單與 AD FS 移轉準備期間匯出至檔案的宣告描述清單進行比對。 新增任何包含於您的檔案但未包含於 AD FS 中預設清單的自訂宣告描述。 請注意，管理主控台的宣告識別碼會對應至檔案的 ClaimType。  
   
 5. 安裝並設定所有備份自訂屬性存放區。 身為系統管理員，請確定所有自訂屬性存放區二進位檔都已升級為 .NET Framework 4.0 或更高版本，然後再更新 AD FS 設定以指向這些檔案。  
   
 6. 設定對應至舊版 web.config 檔案參數的服務屬性。  
   
-   -   如果**useRelayStateForIdpInitiatedSignOn**已新增至 AD FS 2.0**中的 Web.config**檔案或 windows server 2012 伺服器陣列中的 AD FS，則您必須在 windows server 2012 R2 伺服器陣列的 AD FS 中設定下列服務屬性：  
+   -   如果已將**useRelayStateForIdpInitiatedSignOn**新增至 AD FS 2.0 中的**web.config**檔案或 windows server 2012 伺服器陣列中的 AD FS，則您必須在 windows server 2012 R2 伺服器陣列的 AD FS 中設定下列服務屬性：  
   
-       -   Windows Server 2012 R2 中的 AD FS 包含 **%systemroot%\ADFS\Microsoft.IdentityServer.Servicehost.exe.config**檔案。 使用**與 web.config 檔案**元素相同的語法來建立元素： `<useRelayStateForIdpInitiatedSignOn enabled="true" />`。 請將這個元素包含在**identityserver**的 **< 的 identityserver**部分中，> 區段中。  
+       -   Windows Server 2012 R2 中的 AD FS 包含 **% systemroot% \ADFS\Microsoft.IdentityServer.Servicehost.exe.config**檔案。 使用與**web.config** file 元素相同的語法來建立元素： `<useRelayStateForIdpInitiatedSignOn enabled="true" />` 。 將此元素包含在**Microsoft.IdentityServer.Servicehost.exe.config**檔案的 **<identityserver>** 區段中。  
   
-   -   如果 **< persistIdentityProviderInformation enabled = "true&#124;false" lifetimeInDays = "90" enablewhrPersistence = "true&#124;false"/\>** 已新增至 AD FS 2.0 中的 web.config 檔案或 windows server 2012 伺服器陣列中的 AD FS，則您必須在 windows server 2012 R2 伺服器陣列**中的 AD FS**中設定下列服務屬性：  
+   -   如果 **<persistIdentityProviderInformation enabled = "true&#124;false" lifetimeInDays = "90" enablewhrPersistence = "true&#124;false"/ \> **已新增至 AD FS 2.0 中的**web.config**檔案或 windows server 2012 伺服器陣列中的 AD FS，則您必須在 windows server 2012 R2 伺服器陣列中的 AD FS 中設定下列服務屬性：  
   
-       1.  在 Windows Server 2012 R2 的 AD FS 中，執行下列 Windows PowerShell 命令： `Set-AdfsWebConfig –HRDCookieEnabled –HRDCookieLifetime`。  
+       1.  在 Windows Server 2012 R2 的 AD FS 中，執行下列 Windows PowerShell 命令： `Set-AdfsWebConfig –HRDCookieEnabled –HRDCookieLifetime` 。  
   
-   -   如果 **< singleSignOn enabled = "true&#124;false"/\>** 已新增至 AD FS 2.0 中的 Web.config 檔案或 windows server 2012 伺服器陣列中的 AD FS，您就不需要在 windows server 2012 R2 伺服器**陣列的 AD FS**中設定任何其他服務屬性。 Windows Server 2012 R2 伺服器陣列中的 AD FS 預設會啟用單一登入。  
+   -   如果 **<singleSignOn enabled = "true&#124;false"/ \> **已新增至 windows server 2012 伺服器陣列中 AD FS 2.0 或 AD FS 中的**web.config**檔案，您就不需要在 windows server 2012 R2 伺服器陣列的 AD FS 中設定任何其他服務屬性。 Windows Server 2012 R2 伺服器陣列中的 AD FS 預設會啟用單一登入。  
   
-   -   如果已將 localauthenticationtypes 設定已新增至 AD FS 2.0 中的 web.config 檔案或 Windows Server 2012 伺服器陣列**中的 AD FS** ，則您必須在 windows Server 2012 R2 伺服器陣列的 AD FS 中設定下列服務屬性：  
+   -   如果已將已將 localauthenticationtypes 設定新增至 AD FS 2.0 中的**web.config**檔案或 windows server 2012 伺服器陣列中的 AD FS，則您必須在 windows Server 2012 R2 伺服器陣列的 AD FS 中設定下列服務屬性：  
   
-       -   Windows Server 2012 R2 中的 [整合式]、[表單]、[TlsClient]、[基本] 轉換清單為對等的 AD FS 具有全域驗證原則設定，可同時支援 federation service 和 proxy 驗證類型 這些設定可以在 AD FS [驗證原則] 下的管理嵌入式管理單元中加以設定。  
+       -   Windows Server 2012 R2 中的 [整合式]、[表單]、[TlsClient]、[基本] 轉換清單為對等的 AD FS 具有全域驗證原則設定，可同時支援 federation service 和 proxy 驗證類型 這些設定可以在 AD FS [驗證原則]**** 下的管理嵌入式管理單元中加以設定。  
   
-   匯入原始設定資料之後，您可以視需要自訂 AD FS 登入頁面。 如需詳細資訊，請參閱 [Customizing the AD FS Sign-in Pages](../operations/AD-FS-Customization-in-Windows-Server-2016.md)。  
+   匯入原始設定資料之後，您可以視需要自訂 AD FS 登入頁面。 如需詳細資訊，請參閱[自訂 AD FS 登入頁面](../operations/ad-fs-customization-in-windows-server.md)。  
   
 ## <a name="next-steps"></a>後續步驟
  [將 Active Directory 同盟服務角色服務遷移至 Windows Server 2012 R2](migrate-ad-fs-service-role-to-windows-server-r2.md)   
  [準備遷移 AD FS 同盟伺服器](prepare-migrate-ad-fs-server-r2.md)   
  [遷移 AD FS 同盟伺服器 Proxy](migrate-fed-server-proxy-r2.md)   
- [確認 AD FS 遷移至 Windows Server 2012 R2](verify-ad-fs-migration.md)
+ [確認將 AD FS 移轉到 Windows Server 2012 R2](verify-ad-fs-migration.md)

@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2372476e153a6dc37b7d068201a40ba17c11fa54
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6abc9e1e760502047c5c740c72b79e302dd19249
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930824"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958310"
 ---
 # <a name="dir"></a>dir
 
 顯示目錄的檔案和子目錄清單。 如果使用時不含參數，此命令會顯示磁片的磁片區標籤和序號，後面接著磁片上的目錄和檔案清單（包括其名稱和每個上次修改的日期和時間）。 若為檔案，此命令會顯示名稱延伸和大小（以位元組為單位）。 此命令也會顯示所列的檔案和目錄總數、其累計大小，以及磁片上剩餘的可用空間（以位元組為單位）。
 
-**Dir**命令也可以從 Windows 修復主控台使用不同的參數執行。 如需詳細資訊，請參閱[Windows 修復環境（WinRE）](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)。
+**Dir**命令也可以從 Windows 修復主控台使用不同的參數執行。 如需詳細資訊，請參閱[Windows 修復環境（WinRE）](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)。
 
 ## <a name="syntax"></a>語法
 
@@ -30,7 +30,7 @@ dir [<drive>:][<path>][<filename>] [...] [/p] [/q] [/w] [/d] [/a[[:]<attributes>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `[<drive>:][<path>]` | 指定您要查看其清單的磁片磁碟機和目錄。 |
 | `[<filename>]` | 指定您想要查看清單的特定檔案或檔案群組。 |
@@ -134,6 +134,6 @@ dir c:\*.txt /w/o/s/p
 
 **Dir**命令會以寬格式顯示每個目錄中相符檔案名的清單，並在每次螢幕填滿時暫停，直到您按任意鍵繼續。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

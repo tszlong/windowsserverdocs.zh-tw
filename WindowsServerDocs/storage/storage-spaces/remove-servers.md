@@ -10,12 +10,12 @@ author: cosmosdarwin
 description: 如何在 Windows Server 移除儲存空間直接存取集區中的伺服器。
 ms.date: 2/5/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0dd888048edc96d6001492e92ba6d519c751bdaa
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4fa3fe64cb5d7448a7e71eb344309ecb9990ebcd
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474565"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960020"
 ---
 # <a name="removing-servers-in-storage-spaces-direct"></a>移除儲存空間直接存取中的伺服器
 
@@ -27,7 +27,7 @@ ms.locfileid: "85474565"
 
 如果您想要很快將伺服器加回至叢集，或如果您想要保留其磁碟機來將它們移到另一個伺服器，您可以從集區中移除伺服器，但*不*從儲存集區中移除其磁碟機。 如果您使用容錯移轉叢集管理員移除伺服器，這是預設行為。
 
-使用 PowerShell 中的 [Remove-ClusterNode](https://technet.microsoft.com/library/hh847251.aspx) cmdlet：
+使用 PowerShell 中的 [Remove-ClusterNode](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831694(v=ws.11)) cmdlet：
 
 ```PowerShell
 Remove-ClusterNode <Name>
@@ -70,7 +70,7 @@ Remove-ClusterNode <Name> -CleanUpDisks
 
 下表顯示每個復原類型所需的最少容錯網域數目。
 
-|    災害復原          |    最小必要容錯網域   |
+|    復原          |    最小必要容錯網域   |
 |------------------------|-------------------------------------|
 |    雙向鏡像      |    2                                |
 |    三向鏡像    |    3                                |

@@ -9,12 +9,12 @@ manager: dongill
 ms.author: jgerend
 ms.date: 4/5/2017
 description: 如何規劃工作資料夾的部署，包括系統需求以及如何準備您的網路環境。
-ms.openlocfilehash: 1453ff54c2213445f6f443d34d21747eb875412b
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 603711676aa5f35047b0623694f3a16922a2b240
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475595"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960000"
 ---
 # <a name="planning-a-work-folders-deployment"></a>工作資料夾部署的規劃
 
@@ -139,9 +139,9 @@ ms.locfileid: "85475595"
 
 工作資料夾支援使用 Web 應用程式 Proxy、Azure AD 應用程式 Proxy 或協力廠商反向 Proxy 解決方案：
 
--  Web 應用程式 Proxy 是內部部署反向 Proxy 解決方案。 若要深入了解，請參閱 [Windows Server 2016 的 Web 應用程式 Proxy](https://technet.microsoft.com/windows-server-docs/identity/web-application-proxy/web-application-proxy-windows-server)。
+-  Web 應用程式 Proxy 是內部部署反向 Proxy 解決方案。 若要深入了解，請參閱 [Windows Server 2016 的 Web 應用程式 Proxy](../../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md)。
 
--  Azure AD 應用程式 Proxy 是雲端反向 Proxy 解決方案。 若要深入了解，請參閱[如何提供內部部署應用程式的安全遠端存取](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-get-started)
+-  Azure AD 應用程式 Proxy 是雲端反向 Proxy 解決方案。 若要深入了解，請參閱[如何提供內部部署應用程式的安全遠端存取](/azure/active-directory/active-directory-application-proxy-get-started)
 
 ## <a name="additional-design-considerations"></a>其他設計考量
  除了了解以上所述的每個元件以外，客戶還需要花時間在設計上，思考運作的同步伺服器和同步共用的數量，以及是否要利用容錯移轉叢集，以便在這些同步伺服器上提供容錯。
@@ -155,7 +155,7 @@ ms.locfileid: "85475595"
 
 - 負載平衡 – 在大型環境中，將使用者資料存放於多個伺服器可能會增加伺服器的效能和執行時間。
 
-  如需工作資料夾伺服器擴充和效能的相關資訊，請參閱[工作資料夾部署的效能考量](https://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx) (英文)。
+  如需工作資料夾伺服器擴充和效能的相關資訊，請參閱[工作資料夾部署的效能考量](../../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md) (英文)。
 
 > [!NOTE]
 >  使用多個同步伺服器時，建議為使用者設定自動伺服器探索。 這個程序需要設定 AD DS 中每個使用者帳戶上的屬性。 這個屬性的名稱為 **msDS-SyncServerURL**，將 Windows Server 2012 R2 網域控制站新增到網域或套用 Active Directory 架構更新之後，使用者帳戶上即可使用該屬性。 您應該為每個使用者設定這個屬性，以確保使用者連線至適當的同步伺服器。 藉由使用自動伺服器探索，組織可以發佈「易記」 URL 後方的工作資料夾（例如 *https://workfolders.contoso.com* ），而不論操作中的同步伺服器數目為何。
@@ -247,7 +247,7 @@ ms.locfileid: "85475595"
 
     -   裝置需要裝置註冊才能連線嗎？
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>接下來的步驟
  設計工作資料夾實作之後，就該部署工作資料夾了。 如需詳細資訊，請參閱[部署工作資料夾](deploy-work-folders.md)。
 
 ## <a name="additional-references"></a>其他參考
@@ -255,5 +255,5 @@ ms.locfileid: "85475595"
 
 |內容類型|參考|
 |------------------|----------------|
-|**產品評估**|-   [工作資料夾](work-folders-overview.md)<br />-   [適用於 Windows 7 的工作資料夾](https://blogs.technet.com/b/filecab/archive/2014/04/24/work-folders-for-windows-7.aspx) (部落格文章) (英文)|
-|**部署**|-   [設計工作資料夾的執行](plan-work-folders.md)<br />-   [部署工作資料夾](deploy-work-folders.md)<br />-   [使用 AD FS 和 Web 應用程式 Proxy （WAP）部署工作資料夾](deploy-work-folders-adfs-overview.md)<br />- [搭配 Azure AD 應用程式 Proxy 部署工作資料夾](https://blogs.technet.microsoft.com/filecab/2017/05/31/enable-remote-access-to-work-folders-using-azure-active-directory-application-proxy/)<br />-   [工作資料夾部署的效能考量](https://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx)<br />-   [適用於 Windows 7 的工作資料夾 (64 位元下載)](https://www.microsoft.com/download/details.aspx?id=42558)<br />-   [適用於 Windows 7 的工作資料夾 (32 位元下載)](https://www.microsoft.com/download/details.aspx?id=42559)<br />-   [工作資料夾測試實驗室部署](https://blogs.technet.com/b/filecab/archive/2013/07/10/work-folders-test-lab-deployment.aspx) (部落格文章)|
+|**產品評估**|-   [工作資料夾](work-folders-overview.md)<br />-   [適用於 Windows 7 的工作資料夾](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (部落格文章) (英文)|
+|**部署**|-   [設計工作資料夾的執行](plan-work-folders.md)<br />-   [部署工作資料夾](deploy-work-folders.md)<br />-   [使用 AD FS 和 Web 應用程式 Proxy （WAP）部署工作資料夾](deploy-work-folders-adfs-overview.md)<br />- [搭配 Azure AD 應用程式 Proxy 部署工作資料夾](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />-   [工作資料夾部署的效能考量](../../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md)<br />-   [適用於 Windows 7 的工作資料夾 (64 位元下載)](https://www.microsoft.com/download/details.aspx?id=42558)<br />-   [適用於 Windows 7 的工作資料夾 (32 位元下載)](https://www.microsoft.com/download/details.aspx?id=42559)<br />-   [工作資料夾測試實驗室部署](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (部落格文章)|

@@ -8,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: de5a38ff6f811046d06c52a1ca4598f9650b3cfe
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ae7106e0c0fc1d9caca58b3a9a435886fc56b6f7
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823011"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959940"
 ---
 # <a name="tpm-key-attestation"></a>TPM 金鑰證明
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 **作者**： Justin Turner，具備 Windows 群組的資深支援提升工程師  
   
@@ -28,7 +28,7 @@ ms.locfileid: "80823011"
 雖然從 Windows 8 開始支援 TPM 保護的金鑰已經存在，但 Ca 無法以密碼編譯方式證明憑證要求者私密金鑰實際上是由信賴平臺模組（TPM）所保護。 此更新可讓 CA 執行該證明，並在已發行的憑證中反映該證明。  
   
 > [!NOTE]  
-> 本文假設讀者熟悉憑證範本概念（如需參考，請參閱[憑證範本](https://technet.microsoft.com/library/cc730705.aspx)）。 它也假設讀者熟悉如何設定企業 Ca，以根據憑證範本來頒發證書（如需參考，請參閱[檢查清單：設定 ca 以發行和管理憑證](https://technet.microsoft.com/library/cc771533.aspx)）。  
+> 本文假設讀者熟悉憑證範本概念（如需參考，請參閱[憑證範本](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11))）。 它也假設讀者熟悉如何設定企業 Ca，以根據憑證範本來頒發證書（如需參考，請參閱[檢查清單：設定 ca 以發行和管理憑證](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771533(v=ws.11))）。  
   
 ### <a name="terminology"></a>詞彙  
   
@@ -83,7 +83,7 @@ TPM 金鑰證明可讓要求憑證的實體以密碼編譯方式向 CA 證明，
   
     請注意，您可以選擇 TPM 信任模型的組合。 在此情況下，CA 將會接受任何證明方法，而發佈原則 Oid 會反映所有成功的證明方法。  
   
-2.  **設定憑證範本：** 設定憑證範本的說明請參閱本主題中的[部署詳細資料](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md#BKMK_DeploymentDetails)一節。 本文不涵蓋如何將此憑證範本指派給企業 CA，或如何將註冊存取權提供給一組使用者。 如需詳細資訊，請參閱[檢查清單：設定 ca 以發行和管理憑證](https://technet.microsoft.com/library/cc771533.aspx)。  
+2.  **設定憑證範本：** 設定憑證範本的說明請參閱本主題中的[部署詳細資料](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md#BKMK_DeploymentDetails)一節。 本文不涵蓋如何將此憑證範本指派給企業 CA，或如何將註冊存取權提供給一組使用者。 如需詳細資訊，請參閱[檢查清單：設定 ca 以發行和管理憑證](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771533(v=ws.11))。  
   
 3.  **設定 TPM 信任模型的 CA**  
   
@@ -98,14 +98,14 @@ TPM 金鑰證明可讓要求憑證的實體以密碼編譯方式向 CA 證明，
     > -   不支援協力廠商智慧卡 Ksp 的 TPM 金鑰證明。 必須使用 Microsoft 平臺密碼編譯提供者 KSP。  
     > -   TPM 金鑰證明僅適用于 RSA 金鑰。  
     > -   獨立 CA 不支援 TPM 金鑰證明。  
-    > -   TPM 金鑰證明不支援[非持續性憑證處理](https://technet.microsoft.com/library/ff934598)。  
+    > -   TPM 金鑰證明不支援[非持續性憑證處理](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff934598(v=ws.10))。  
   
 ## <a name="deployment-details"></a><a name="BKMK_DeploymentDetails"></a>部署詳細資料  
   
 ### <a name="configure-a-certificate-template"></a><a name="BKMK_ConfigCertTemplate"></a>設定憑證範本  
 若要設定 TPM 金鑰證明的憑證範本，請執行下列設定步驟：  
   
-1.  **相容性**索引標籤  
+1.  [相容性]**** 索引標籤  
   
     在 [**相容性設定**] 區段中：  
   
@@ -115,7 +115,7 @@ TPM 金鑰證明可讓要求憑證的實體以密碼編譯方式向 CA 證明，
   
     ![TPM 金鑰證明](media/TPM-Key-Attestation/GTR_ADDS_CompatibilityTab.gif)  
   
-2.  **密碼**編譯索引標籤  
+2.  [密碼編譯]**** 索引標籤  
   
     確定已針對 [**提供者] 類別**選取 [**金鑰儲存提供者**]，並已針對 [**演算法名稱]** 選取 [ **RSA** ]。 確定 [**要求必須使用下列其中一個提供者**]，而且已選取 [**提供者**] 底下的 [ **Microsoft 平臺密碼編譯提供者**] 選項。  
   
@@ -193,14 +193,14 @@ TPM 金鑰證明可讓要求憑證的實體以密碼編譯方式向 CA 證明，
   
         |操作|命令語法|  
         |-------------|------------------|  
-        |新增資料夾位置|certutil-setreg CA\EndorsementKeyListDirectories + "<folder>"|  
-        |移除資料夾位置|certutil-setreg CA\EndorsementKeyListDirectories-"<folder>"|  
+        |新增資料夾位置|certutil.exe-setreg CA\EndorsementKeyListDirectories + " <folder> "|  
+        |移除資料夾位置|certutil.exe-setreg CA\EndorsementKeyListDirectories-" <folder> "|  
   
         Certutil 命令中的 EndorsementKeyListDirectories 是一項登錄設定，如下表所述。  
   
-        |值名稱|類型|Data|  
+        |值名稱|類型|資料|  
         |--------------|--------|--------|  
-        |EndorsementKeyListDirectories|REG_MULTI_SZ|< 本機或 UNC 路徑 EKPUB 允許清單 ><p>範例：<p>*\\\blueCA.contoso.com\ekpub*<p>*\\\bluecluster1.contoso.com\ekpub*<p>D:\ekpub|  
+        |EndorsementKeyListDirectories|REG_MULTI_SZ|<本機或 UNC 路徑 EKPUB 允許清單 ><p>範例：<p>*\\\blueCA.contoso.com\ekpub*<p>*\\\bluecluster1.contoso.com\ekpub*<p>D:\ekpub|  
   
         HKLM\SYSTEM\CurrentControlSet\Services\CertSvc\Configuration\\<CA Sanitized Name>  
   
@@ -275,5 +275,5 @@ TPM 金鑰證明可讓要求憑證的實體以密碼編譯方式向 CA 證明，
         ```  
   
 ## <a name="see-also"></a>另請參閱  
-[信賴平臺模組技術總覽](https://technet.microsoft.com/library/jj131725.aspx)  
+[信賴平台模組技術概觀](/previous-versions/windows/it-pro/windows-8.1-and-8/jj131725(v=ws.11))  
 [外部資源：信賴平臺模組](http://www.cs.unh.edu/~it666/reading_list/Hardware/tpm_fundamentals.pdf)  

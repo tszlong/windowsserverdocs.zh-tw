@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 882d3540897214db2f3fa9d04a6f11fc76a76502
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 19aca0285eca202b4e43a15b8e880f3672f0c846
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935534"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956710"
 ---
 # <a name="nlbmgr"></a>nlbmgr
 
@@ -32,7 +32,7 @@ nlbmgr [/noping][/hostlist <filename>][/autorefresh <interval>][/help | /?]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | /noping | 防止「網路負載平衡管理員」在嘗試透過 Windows Management Instrumentation （WMI）連線之前 ping 主機。 如果您已在所有可用的網路介面卡上停用網際網路控制訊息通訊協定（ICMP），請使用此選項。 如果「網路負載平衡管理員」嘗試連線到無法使用的主機，您會在使用此選項時遇到延遲。 |
 | /hostlist`<filename>` | 將 filename 中指定的主機載入到網路負載平衡管理員。 |
@@ -40,8 +40,8 @@ nlbmgr [/noping][/hostlist <filename>][/autorefresh <interval>][/help | /?]
 | /? | 在命令提示字元顯示說明。 |
 | /help | 在命令提示字元顯示說明。 |
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [NetworkLoadBalancingClusters Cmdlet 參考](https://docs.microsoft.com/powershell/module/networkloadbalancingclusters)
+- [NetworkLoadBalancingClusters Cmdlet 參考](/powershell/module/networkloadbalancingclusters)

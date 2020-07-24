@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 40d3536f5a6be0bf520095e3ba61f75b7a2addc7
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2357f9916aba2eaba6a226fc8addbb13bf5f2f37
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924615"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957140"
 ---
 # <a name="gpt"></a>gpt
 
@@ -35,9 +35,9 @@ gpt attributes=<n>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
-| 屬性 =`<n>` | 指定您想要套用至具有焦點之資料分割的屬性值。 [Gpt 屬性] 欄位是包含兩個子欄位的64位欄位。 較高的欄位僅在磁碟分割識別碼的內容中有解譯，而較低的欄位則在所有磁碟分割識別碼中都有解譯。 接受的值包括：<ul><li>**0x0000000000000001** -指定電腦必須要有磁碟分割，才能正常運作。</li><li>**0x8000000000000000** -指定當磁片移至另一部電腦，或是電腦第一次看到磁片時，分割區預設不會收到磁碟機號。</li><li>**0x4000000000000000** -隱藏分割區的磁片區，使其不會被掛接管理員偵測到。</li><li>**0x2000000000000000** -指定分割區是另一個分割區的陰影複製。</li><li>**0x1000000000000000** -指定分割區是唯讀的。 這個屬性會防止將磁片區寫入。</li></ul><p>如需這些屬性的詳細資訊，請參閱[Create_PARTITION_PARAMETERS 結構](https://docs.microsoft.com/windows/win32/api/vds/ns-vds-create_partition_parameters)的屬性一節。 |
+| 屬性 =`<n>` | 指定您想要套用至具有焦點之資料分割的屬性值。 [Gpt 屬性] 欄位是包含兩個子欄位的64位欄位。 較高的欄位僅在磁碟分割識別碼的內容中有解譯，而較低的欄位則在所有磁碟分割識別碼中都有解譯。 接受的值包括：<ul><li>**0x0000000000000001** -指定電腦必須要有磁碟分割，才能正常運作。</li><li>**0x8000000000000000** -指定當磁片移至另一部電腦，或是電腦第一次看到磁片時，分割區預設不會收到磁碟機號。</li><li>**0x4000000000000000** -隱藏分割區的磁片區，使其不會被掛接管理員偵測到。</li><li>**0x2000000000000000** -指定分割區是另一個分割區的陰影複製。</li><li>**0x1000000000000000** -指定分割區是唯讀的。 這個屬性會防止將磁片區寫入。</li></ul><p>如需這些屬性的詳細資訊，請參閱[Create_PARTITION_PARAMETERS 結構](/windows/win32/api/vds/ns-vds-create_partition_parameters)的屬性一節。 |
 
 #### <a name="remarks"></a>備註
 
@@ -51,10 +51,10 @@ gpt attributes=<n>
 gpt attributes=0x8000000000000000
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
 - [選取資料分割命令](select-partition.md)
 
-- [create_PARTITION_PARAMETERS 結構](https://docs.microsoft.com/windows/win32/api/vds/ns-vds-create_partition_parameters)
+- [create_PARTITION_PARAMETERS 結構](/windows/win32/api/vds/ns-vds-create_partition_parameters)

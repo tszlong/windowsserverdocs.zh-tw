@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 69c3b20ed0b555e781fcf93dc830075b3150ef88
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: be3b1180549688ec7c75c893700a6614322f99ce
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931187"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957190"
 ---
 # <a name="gettype"></a>gettype
 
 **Gettype**命令已被取代，並不保證在未來的 Windows 版本中受到支援。
 
-此工具組含在 Windows Server 2003 中。 如需詳細資訊，請參閱[gettype](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc773104(v=ws.10))。
+此工具組含在 Windows Server 2003 中。 如需詳細資訊，請參閱[gettype](/previous-versions/orphan-topics/ws.10/cc773104(v=ws.10))。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

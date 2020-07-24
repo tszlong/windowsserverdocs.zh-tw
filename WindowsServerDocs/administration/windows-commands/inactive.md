@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: db7d279577b8120137b4397551a480ea2d2a0e8a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: f7e9679dee2bb8a75da14e1d7ee6c75b80bb1ef1
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924416"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957130"
 ---
 # <a name="inactive"></a>非使用中
 
@@ -39,10 +39,10 @@ inactive
 inactive
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
 - [選取資料分割命令](select-partition.md)
 
-- [Windows 開機問題進階疑難排解](https://docs.microsoft.com/windows/client-management/advanced-troubleshooting-boot-problems)
+- [Windows 開機問題進階疑難排解](/windows/client-management/advanced-troubleshooting-boot-problems)

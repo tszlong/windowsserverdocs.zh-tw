@@ -10,18 +10,18 @@ ms.date: 08/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 53626c4cfac17cb11402ada9ce3397c487cd0720
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3ad6658c504cc90eedef2c1cb6688c6f12233b3c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389849"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959870"
 ---
 # <a name="winlogon-automatic-restart-sign-on-arso"></a>Winlogon 自動重新開機登入（ARSO）
 
 在 Windows Update 期間，必須進行使用者特定進程，才能完成更新。 這些進程需要使用者登入其裝置。 在起始更新後的第一次登入時，使用者必須等到這些使用者特定的進程完成後，才能開始使用其裝置。
 
-## <a name="how-does-it-work"></a>它如何運作？
+## <a name="how-does-it-work"></a>如何運作？
 
 當 Windows Update 起始自動重新開機時，ARSO 會將目前登入之使用者的衍生認證解壓縮，並將其保存在磁片中，並為使用者設定自動登入。 Windows Update 以 TCB 許可權執行為系統時，將會起始 RPC 呼叫來進行此動作。
 
@@ -33,7 +33,7 @@ ARSO 會以不同方式來處理非受控和受管理的裝置。 若為未受�
 
 |   | Windows Update| shutdown-g-t 0  | 使用者起始的重新開機 | 具有 SHUTDOWN_ARSO/EWX_ARSO 旗標的 Api |
 | --- | :---: | :---: | :---: | :---: |
-| 受管理的裝置 | :heavy_check_mark:  | :heavy_check_mark: |   | :heavy_check_mark: |
+| 受控裝置 | :heavy_check_mark:  | :heavy_check_mark: |   | :heavy_check_mark: |
 | 未受管理的裝置 | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 
 > [!NOTE]
@@ -51,7 +51,7 @@ ARSO 會以不同方式來處理非受控和受管理的裝置。 若為未受�
 
 **Intune 原則：**
 
-- Platform.objectWindows 10 和更新版本
+- 平台：Windows 10 及以上版本
 - 配置檔案類型：系統管理範本
 - 路徑： \Windows \Windows 登入選項
 
@@ -73,14 +73,14 @@ ARSO 會以不同方式來處理非受控和受管理的裝置。 若為未受�
 
 **登錄編輯程式：**
 
-| 值名稱 | Type | Data |
+| 值名稱 | 類型 | 資料 |
 | --- | --- | --- |
 | DisableAutomaticRestartSignOn | DWORD | 0（啟用 ARSO） |
 |   |   | 1（停用 ARSO） |
 
 **原則登錄位置：** HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
 
-**類型：** DWORD
+**類型：** 值
 
 ![winlogon](media/Winlogon-Automatic-Restart-Sign-On--ARSO-/gtr-adds-signinpolicy.png)
 
@@ -92,7 +92,7 @@ ARSO 會以不同方式來處理非受控和受管理的裝置。 若為未受�
 
 **Intune 原則：**
 
-- Platform.objectWindows 10 和更新版本
+- 平台：Windows 10 及以上版本
 - 配置檔案類型：系統管理範本
 - 路徑： \Windows \Windows 登入選項
 
@@ -114,14 +114,14 @@ ARSO 會以不同方式來處理非受控和受管理的裝置。 若為未受�
 
 **登錄編輯程式**
 
-| 值名稱 | Type | Data |
+| 值名稱 | 類型 | 資料 |
 | --- | --- | --- |
 | AutomaticRestartSignOnConfig | DWORD | 0（啟用 ARSO （如果安全）） |
 |   |   | 1（啟用一律為 ARSO） |
 
 **原則登錄位置：** HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
 
-**類型：** DWORD
+**類型：** 值
 
 ![winlogon](media/Winlogon-Automatic-Restart-Sign-On--ARSO-/arso-policy-setting.png)
 
@@ -172,4 +172,4 @@ ARSO 會以不同方式來處理非受控和受管理的裝置。 若為未受�
 
 ## <a name="additional-resources"></a>其他資源
 
-自動登入功能是已在 Windows 中針對數個版本而呈現的功能。 這是 Windows 的已記載功能，甚至有 Windows [HTTP：/technet. .com/sysinternals/bb963905](https://technet.microsoft.com/sysinternals/bb963905.aspx)的自動登出等工具。 它允許裝置的單一使用者自動登入，而不需要輸入認證。 認證會以加密的 LSA 秘密設定並儲存在登錄中。 這可能會對許多子案例造成問題，其中的帳戶鎖定可能會在床時間和喚醒之間發生，特別是在這段期間通常是在維護期間。
+自動登入功能是已在 Windows 中針對數個版本而呈現的功能。 這是 Windows 的已記載功能，甚至有 Windows [HTTP：/technet. .com/sysinternals/bb963905](/sysinternals/downloads/autologon)的自動登出等工具。 它允許裝置的單一使用者自動登入，而不需要輸入認證。 認證會以加密的 LSA 秘密設定並儲存在登錄中。 這可能會對許多子案例造成問題，其中的帳戶鎖定可能會在床時間和喚醒之間發生，特別是在這段期間通常是在維護期間。

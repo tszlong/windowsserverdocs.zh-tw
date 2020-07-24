@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0442e2ad6070b84e84632bc6d8646b979d7f948b
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 0676021eb923ef3f1c9225de624bb58e47a70c3c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933288"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957980"
 ---
 # <a name="ftp-cd"></a>ftp cd
 
@@ -30,7 +30,7 @@ cd <remotedirectory>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | <remotedirectory> | 指定您要變更的遠端電腦上的目錄。 |
 
@@ -48,8 +48,8 @@ cd Docs
 cd  May Videos
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [其他 FTP 指引](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [其他 FTP 指引](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

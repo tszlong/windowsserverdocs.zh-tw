@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c952ff78147d3b4c6097aaf9dd87e55ecc7911ad
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 65c1d22bd45734a667bfc46840fe652e3f2f5314
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928795"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958430"
 ---
 # <a name="defrag"></a>defrag
 
@@ -35,7 +35,7 @@ defrag <volume> [<parameters>]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<volume>` | 指定要進行磁碟重組或分析之磁片區的磁碟機號或掛接點路徑。 |
 | /a | 在指定的磁片區上執行分析。 |
@@ -79,7 +79,7 @@ defrag <volume> [<parameters>]
 
 - 根據預設，如果您未指定 **/a**或 **/v** **參數，重組會同時顯示分析**和磁碟重組報告的摘要。
 
-- 您可以輸入FileName.txt，將報表傳送至文字檔 **>** <em> </em>，其中*FileName.txt*是您指定的檔案名。 例如： `defrag volume /v > FileName.txt`
+- 您可以輸入FileName.txt，將報表傳送至文字檔 **>** <em> </em>，其中*FileName.txt*是您指定的檔案名。 例如：`defrag volume /v > FileName.txt`
 
 - 若要中斷磁碟重組程式，請在命令列中按**CTRL + C**。
 
@@ -131,7 +131,7 @@ defrag /c /h /v
 
     - 電腦已啟動備份（從閒置狀態恢復）。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
@@ -141,4 +141,4 @@ defrag /c /h /v
 
 - [fsutil dirty](fsutil-dirty.md)
 
-- [優化-磁片區 Powershell](https://docs.microsoft.com/powershell/module/storage/optimize-volume?view=win10-ps)
+- [優化-磁片區 Powershell](/powershell/module/storage/optimize-volume?view=win10-ps)

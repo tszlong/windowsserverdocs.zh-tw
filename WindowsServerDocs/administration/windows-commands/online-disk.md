@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7313f5b5b8c0594e0706555a203248d760028806
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b8b5dc2ec454cd98eb4b03952a400815f4e7ea3b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933553"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956700"
 ---
 # <a name="online-disk"></a>online disk
 
@@ -36,9 +36,9 @@ online disk [noerr]
 
 ### <a name="parameters"></a>參數
 
-如需使用此命令的指示，請參閱[重新啟用遺失或離線的動態磁碟](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732026(v=ws.11))。
+如需使用此命令的指示，請參閱[重新啟用遺失或離線的動態磁碟](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc732026(v=ws.11))。
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 |--|--|
 | noerr | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
 
@@ -50,6 +50,6 @@ online disk [noerr]
 online disk
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

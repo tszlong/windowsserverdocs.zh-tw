@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 54d784751291515a022a561ca9600e3e967a9d8e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7edfcdadf777dbff062665831fdc2aee3139ec6e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925745"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957483"
 ---
 # <a name="ftp-remotehelp"></a>ftp remotehelp
 
@@ -30,7 +30,7 @@ remotehelp [<command>]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ------- | -------- |
 | `[<command>]` | 指定您想要協助的命令名稱。 如果 `<command>` 未指定，此命令會顯示所有遠端命令的清單。 您也可以使用 [ [ftp 引號](ftp-quote.md)] 或 [ [ftp 常](ftp-literal_1.md)值] 來執行遠端命令。 |
 
@@ -48,7 +48,7 @@ remotehelp
 remotehelp feat
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
@@ -56,4 +56,4 @@ remotehelp feat
 
 - [ftp literal](ftp-literal_1.md)
 
-- [其他 FTP 指引](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [其他 FTP 指引](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

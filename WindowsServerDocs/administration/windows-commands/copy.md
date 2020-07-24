@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6ea742ab8fce296a88c8c9e6a41262c7aef88813
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3e15db58ab8fa8c3a0114b695cb85eec7684039e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928897"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958470"
 ---
 # <a name="copy"></a>copy
 
 將一個或多個檔案從一個位置複製到另一個位置。
 
 > [!NOTE]
-> 您也可以從修復主控台使用具有不同參數的**copy**命令。 如需有關修復主控台的詳細資訊，請參閱[Windows 修復環境（WINDOWS RE）](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)。
+> 您也可以從修復主控台使用具有不同參數的**copy**命令。 如需有關修復主控台的詳細資訊，請參閱[Windows 修復環境（WINDOWS RE）](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)。
 
 ## <a name="syntax"></a>語法
 
@@ -31,7 +31,7 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <source> [/a | /b] [+<source> [/a 
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | /d | 允許複製加密的檔案，以在目的地上儲存為解密的檔案。 |
 | /v | 驗證是否已正確寫入新檔案。 |
@@ -152,7 +152,7 @@ copy *.txt + *.ref *.doc
 copy *.txt + *.ref Combined.doc
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
