@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 64bfd5ceed29bff5d9ae39e03a99aba2f7a2f39e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2f31e5b0ee1252bf015c964fa76dd2852df3515b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936382"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956120"
 ---
 # <a name="shutdown"></a>shutdown
 
@@ -30,7 +30,7 @@ shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t 
 
 ### <a name="parameters"></a>參數
 
-|參數|說明|
+|參數|描述|
 |---------|-----------|
 |/i|顯示 [**遠端關機] 對話方塊**。 **/I**選項必須是命令後面的第一個參數。 如果指定了 **/i** ，則會忽略所有其他選項。|
 |/l|立即登出目前的使用者，而不會有超時時間。 您不能將 **/l**與 **/m**或 **/t**搭配使用。|
@@ -50,9 +50,9 @@ shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t 
 ## <a name="remarks"></a>備註
 
 -   使用者必須被指派 [**關閉系統**] 使用者權限，才能關閉使用 [**關機**] 命令的本機或遠端系統管理電腦。
--   使用者必須是 Administrators 群組的成員，才能在本機或遠端系統管理的電腦上標注非預期的關機。 如果目的電腦已加入網域，則 Domain Admins 群組的成員可能可以執行此程式。 如需詳細資訊，請參閱：
-    -   [預設本機群組](https://technet.microsoft.com/library/cc785098(v=ws.10).aspx)
-    -   [預設群組](https://technet.microsoft.com/library/cc756898(v=ws.10).aspx)
+-   使用者必須是 Administrators 群組的成員，才能在本機或遠端系統管理的電腦上標注非預期的關機。 如果目的電腦已加入網域，則 Domain Admins 群組的成員可能可以執行此程式。 如需詳細資訊，請參閱
+    -   [預設本機群組](/previous-versions/windows/it-pro/windows-server-2003/cc785098(v=ws.10))
+    -   [預設群組](/previous-versions/windows/it-pro/windows-server-2003/cc756898(v=ws.10))
 -   如果您想要一次關閉一部以上的電腦，可以使用腳本來呼叫每部電腦的**關機**，或者可以使用**shutdown** **/I**來顯示 [遠端關機] 對話方塊。
 -   如果您指定主要和次要原因代碼，您必須先在您打算使用原因的每部電腦上定義這些原因代碼。 如果目的電腦上未定義原因代碼，關機事件追蹤器就無法記錄正確的原因文字。
 -   請記得使用**p：** 參數來表示已規劃關機。 省略**p：** 表示關機未計畫。 如果您輸入**p：** ，後面接著未規劃關機的原因代碼，則此命令不會執行關機。 相反地，如果您省略**p：** ，並輸入計畫關閉的原因代碼，則此命令不會執行關機。
@@ -68,6 +68,6 @@ shutdown /r /t 60 /c Reconfiguring myapp.exe /f /d p:4:1
 shutdown /r /m \\servername /t 60 /c Reconfiguring myapp.exe /f /d p:4:1
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

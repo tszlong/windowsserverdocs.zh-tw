@@ -9,21 +9,21 @@ ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: b1316fe2feba674beb915b6ea22b1c0361ae1243
-ms.sourcegitcommit: 7116460855701eed4e09d615693efa4fffc40006
+ms.openlocfilehash: a98ed0d8436b057c63b08c1f1476b4392f7911fc
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83433152"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953930"
 ---
 # <a name="step-75-create-oma-dm-based-vpnv2-profiles-to-windows-10-devices"></a>步驟 7.5. 建立以 OMA DM 為基礎的 VPNv2 設定檔到 Windows 10 裝置
 
 >適用于： Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
 - [**上一步：** 步驟7.4。將條件式存取根憑證部署到內部部署 AD](vpn-deploy-cond-access-root-cert-to-on-premise-ad.md)
-- [**下一步：** 瞭解 VPN 的條件式存取如何運作](https://docs.microsoft.com/windows/access-protection/vpn/vpn-conditional-access)
+- [**下一步：** 瞭解 VPN 的條件式存取如何運作](/windows/access-protection/vpn/vpn-conditional-access)
 
-在此步驟中，您可以使用 Intune 建立 OMA DM 型 VPNv2 設定檔，以部署 VPN 裝置設定原則。 如果您想要使用 Microsoft Endpoint Configuration Manager 或 PowerShell 腳本來建立 VPNv2 設定檔，請參閱[VPNV2 CSP 設定](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp)以取得更多詳細資料。 
+在此步驟中，您可以使用 Intune 建立 OMA DM 型 VPNv2 設定檔，以部署 VPN 裝置設定原則。 如果您想要使用 Microsoft Endpoint Configuration Manager 或 PowerShell 腳本來建立 VPNv2 設定檔，請參閱[VPNV2 CSP 設定](/windows/client-management/mdm/vpnv2-csp)以取得更多詳細資料。 
 
 ## <a name="managed-deployment-using-intune"></a>使用 Intune 的受控部署
 
@@ -45,7 +45,7 @@ Windows 10 用戶端電腦已使用 Intune 設定 VPN 連線。
 
     ![Intune 入口網站](../../media/Always-On-Vpn/intune-eap-xml.png)
 
-3. 找出以** \< /AcceptServerName>\< /EapType>** 結尾的區段，並在這兩個值之間插入下列字串，以提供 VPN 用戶端選取 AAD 條件式存取憑證的邏輯：
+3. 找出以結尾的區段 **\</AcceptServerName>\</EapType>** ，並在這兩個值之間插入下列字串，以提供 VPN 用戶端選取 AAD 條件式存取憑證的邏輯：
 
     ```XML
     <TLSExtensions xmlns="http://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV2"><FilteringInfo xmlns="http://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV3"><EKUMapping><EKUMap><EKUName>AAD Conditional Access</EKUName><EKUOID>1.3.6.1.4.1.311.87</EKUOID></EKUMap></EKUMapping><ClientAuthEKUList Enabled="true"><EKUMapInList><EKUName>AAD Conditional Access</EKUName></EKUMapInList></ClientAuthEKUList></FilteringInfo></TLSExtensions>
@@ -53,7 +53,7 @@ Windows 10 用戶端電腦已使用 Intune 設定 VPN 連線。
 
 4. 選取 [**條件式存取**] 分頁，並切換**此 VPN**連線的 [條件式存取] 以**啟用**。
    
-   啟用此設定會變更 VPNv2 設定檔 XML 中** \< \< 已啟用>true \< /Enabled>設定的 DeviceCompliance>** 。
+   啟用此設定會變更 VPNv2 設定檔 XML 中的** \<DeviceCompliance> \<Enabled> true \</Enabled> **設定。
 
     ![Always On VPN 的條件式存取-屬性](../../media/Always-On-Vpn/vpn-conditional-access-azure-ad.png)
 
@@ -80,20 +80,20 @@ Windows 10 用戶端電腦已使用 Intune 設定 VPN 連線。
 5. 選取 [**同步**]，並確認 VPN 設定檔出現在 [設定] [ \\ 網路 & 網際網路 VPN] 底下 \\ 。
 
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>接下來的步驟
 
 您已完成設定 VPN 設定檔，以使用 Azure AD 條件式存取。 
 
 |如果您想要...  |然後查看 .。。  |
 |---------|---------|
-|深入瞭解條件式存取如何搭配 Vpn 運作  |[VPN 和條件式存取](https://docs.microsoft.com/windows/access-protection/vpn/vpn-conditional-access)：此頁面提供有關條件式存取如何搭配 vpn 運作的詳細資訊。      |
+|深入瞭解條件式存取如何搭配 Vpn 運作  |[VPN 和條件式存取](/windows/access-protection/vpn/vpn-conditional-access)：此頁面提供有關條件式存取如何搭配 vpn 運作的詳細資訊。      |
 |深入瞭解 advanced VPN 功能  |[ADVANCED VPN 功能](always-on-vpn/deploy/always-on-vpn-adv-options.md#advanced-vpn-features)：此頁面提供如何啟用 Vpn 流量篩選器、如何使用應用程式觸發程式來設定自動 VPN 連線，以及如何設定 NPS 只允許使用 Azure AD 所發行之憑證的 vpn 連線的指引。        |
 
 
 ## <a name="related-topics"></a>相關主題
 
-- [VPNV2 csp](https://msdn.microsoft.com/windows/hardware/commercialize/customize/mdm/vpnv2-csp)：本主題提供 VPNv2 CSP 的總覽。 「VPNv2 設定服務提供者」可讓行動裝置管理（MDM）伺服器設定裝置的 VPN 設定檔。
+- [VPNV2 csp](/windows/client-management/mdm/vpnv2-csp)：本主題提供 VPNv2 CSP 的總覽。 「VPNv2 設定服務提供者」可讓行動裝置管理（MDM）伺服器設定裝置的 VPN 設定檔。
 
-- [設定 Windows 10 用戶端 ALWAYS ON VPN](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/vpn-deploy-client-vpn-connections)連線：本主題提供 ProfileXML 選項和架構的相關資訊，以及如何建立 ProfileXML VPN。 設定伺服器基礎結構之後，您必須將 Windows 10 用戶端電腦設定為使用 VPN 連線與該基礎結構進行通訊。 
+- [設定 Windows 10 用戶端 ALWAYS ON VPN](./always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)連線：本主題提供 ProfileXML 選項和架構的相關資訊，以及如何建立 ProfileXML VPN。 設定伺服器基礎結構之後，您必須將 Windows 10 用戶端電腦設定為使用 VPN 連線與該基礎結構進行通訊。 
 
-- [使用 Intune 設定 VPN 用戶端](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/vpn-deploy-client-vpn-connections#configure-the-vpn-client-by-using-intune)：本主題提供如何部署 Windows 10 遠端存取 Always On VPN 設定檔的相關資訊。 Intune 現在會使用 Azure AD 群組。 如果 Azure AD Connect 將 VPN 使用者群組從內部部署同步處理到 Azure AD，則不需要使用 Intune 設定 VPN 用戶端。
+- [使用 Intune 設定 VPN 用戶端](./always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md#configure-the-vpn-client-by-using-intune)：本主題提供如何部署 Windows 10 遠端存取 Always On VPN 設定檔的相關資訊。 Intune 現在會使用 Azure AD 群組。 如果 Azure AD Connect 將 VPN 使用者群組從內部部署同步處理到 Azure AD，則不需要使用 Intune 設定 VPN 用戶端。

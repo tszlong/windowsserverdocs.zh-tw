@@ -10,12 +10,12 @@ author: stevenek
 ms.date: 06/07/2019
 description: 使用 Windows Server 中的儲存空間直接存取，將軟體定義的存放裝置部署為超融合基礎結構或聚合式（也稱為分類式）基礎結構的逐步指示。
 ms.localizationpriority: medium
-ms.openlocfilehash: 50bcdc175610d6e5c5264f9cb62c7d99d2990ac0
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: c18d3edc57ab04c9f9487bc39b52325fa1eb0ba9
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472825"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955110"
 ---
 # <a name="deploy-storage-spaces-direct"></a>部署儲存空間直接存取
 
@@ -29,7 +29,7 @@ ms.locfileid: "85472825"
 > [!Tip]
 > 您可以使用 Hyper-v 虛擬機器（包括在 Microsoft Azure 中）來[評估沒有硬體的儲存空間直接存取](storage-spaces-direct-in-vm.md)。 您可能也會想要查看[Windows Server 快速實驗室部署腳本](https://aka.ms/wslab)，這是我們用來定型的課程。
 
-## <a name="before-you-start"></a>在您開始使用 Intune 之前
+## <a name="before-you-start"></a>開始之前
 
 請參閱[儲存空間直接存取硬體需求](Storage-Spaces-Direct-Hardware-Requirements.md)並流覽此檔，以熟悉與一些步驟相關的整體方法和重要注意事項。
 
@@ -102,7 +102,7 @@ ms.locfileid: "85472825"
 Add-Computer -NewName "Server01" -DomainName "contoso.com" -Credential "CONTOSO\User" -Restart -Force
 ```
 
-如果您的存放裝置系統管理員帳戶不是 Domain Admins 群組的成員，請將您的儲存體系統管理員帳戶新增至每個節點上的本機 Administrators 群組（或更棒的是）新增用於存放裝置管理者的群組。 您可以使用下列命令（或撰寫 Windows PowerShell 函式來執行此動作-如需詳細資訊，請參閱[使用 PowerShell 將網域使用者新增至本機群組](https://blogs.technet.com/b/heyscriptingguy/archive/2010/08/19/use-powershell-to-add-domain-users-to-a-local-group.aspx)）：
+如果您的存放裝置系統管理員帳戶不是 Domain Admins 群組的成員，請將您的儲存體系統管理員帳戶新增至每個節點上的本機 Administrators 群組（或更棒的是）新增用於存放裝置管理者的群組。 您可以使用下列命令（或撰寫 Windows PowerShell 函式來執行此動作-如需詳細資訊，請參閱[使用 PowerShell 將網域使用者新增至本機群組](https://devblogs.microsoft.com/scripting/use-powershell-to-add-domain-users-to-a-local-group/)）：
 
 ```
 Net localgroup Administrators <Domain\Account> /add
@@ -119,7 +119,7 @@ Net localgroup Administrators <Domain\Account> /add
 - RSAT-Clustering-PowerShell
 - Hyper-V-PowerShell
 
-若要透過 PowerShell 安裝，請使用[install-add-windowsfeature](https://docs.microsoft.com/powershell/module/microsoft.windows.servermanager.migration/install-windowsfeature) Cmdlet。 您可以在單一伺服器上使用它，如下所示：
+若要透過 PowerShell 安裝，請使用[install-add-windowsfeature](/powershell/module/microsoft.windows.servermanager.migration/install-windowsfeature) Cmdlet。 您可以在單一伺服器上使用它，如下所示：
 
 ```PowerShell
 Install-WindowsFeature -Name "Hyper-V", "Failover-Clustering", "Data-Center-Bridging", "RSAT-Clustering-PowerShell", "Hyper-V-PowerShell", "FS-FileServer"
@@ -382,9 +382,9 @@ CD $ScriptFolder
 .\KCDSetup.ps1 -HyperVClusterName $HyperVClusterName -ScaleOutFSName $ScaleOutFSName -EnableLM
 ```
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>接下來的步驟
 
-部署叢集檔案伺服器之後，我們建議您先使用綜合工作負載測試解決方案的效能，然後再啟動任何實際的工作負載。 這可讓您確認解決方案是否正常執行，並在增加工作負載複雜度之前，先解決任何延遲問題。 如需詳細資訊，請參閱[使用綜合工作負載測試儲存空間效能](https://technet.microsoft.com/library/dn894707.aspx)。
+部署叢集檔案伺服器之後，我們建議您先使用綜合工作負載測試解決方案的效能，然後再啟動任何實際的工作負載。 這可讓您確認解決方案是否正常執行，並在增加工作負載複雜度之前，先解決任何延遲問題。 如需詳細資訊，請參閱[使用綜合工作負載測試儲存空間效能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn894707(v=ws.11))。
 
 ## <a name="additional-references"></a>其他參考
 
@@ -393,4 +393,4 @@ CD $ScriptFolder
 -   [規劃儲存空間直接存取中的磁碟區](plan-volumes.md)
 -   [儲存空間容錯](storage-spaces-fault-tolerance.md)
 -   [儲存空間直接存取的硬體需求](Storage-Spaces-Direct-Hardware-Requirements.md)
--   [要用 RDMA，還是不用 RDMA 呢，這才是問題所在](https://blogs.technet.microsoft.com/filecab/2017/03/27/to-rdma-or-not-to-rdma-that-is-the-question/) (TechNet 部落格)
+-   [要用 RDMA，還是不用 RDMA 呢，這才是問題所在](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (TechNet 部落格)

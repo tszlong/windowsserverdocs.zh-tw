@@ -8,16 +8,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: 62c5678c1af22b5970d1367aa514033ab7269148
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1a3cd9e69c696dc00cb597ae1f60747518d8600f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928239"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955720"
 ---
 # <a name="bitsadmin-gethelpertokenflags"></a>bitsadmin gethelpertokenflags
 
-傳回 [helper token](https://docs.microsoft.com/windows/win32/bits/helper-tokens-for-bits-transfer-jobs)   與 BITS 傳送工作相關聯之 helper token 的使用旗標。
+傳回 [helper token](/windows/win32/bits/helper-tokens-for-bits-transfer-jobs)   與 BITS 傳送工作相關聯之 helper token 的使用旗標。
 
 > [!NOTE]
 > BITS 3.0 和更早版本不支援此命令。
@@ -30,7 +30,7 @@ bitsadmin /gethelpertokenflags <job>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | -------------- | -------------- |
 | 作業 | 作業的顯示名稱或 GUID。 |
 
@@ -50,7 +50,7 @@ bitsadmin /gethelpertokenflags <job>
 bitsadmin /gethelpertokenflags myDownloadJob
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

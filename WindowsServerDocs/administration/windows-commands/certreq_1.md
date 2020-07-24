@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 22fc496eddc17f4e6a1a5f02321c921009f9fd95
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5d51cc178ee5b689071336b0dabd1e8d3565bcd2
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924812"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955360"
 ---
 # <a name="certreq"></a>certreq
 
@@ -42,7 +42,7 @@ certreq –enroll –cert certId [options] renew [reusekeys]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | -------- | ----------- |
 | -提交 | 將要求提交給憑證授權單位單位。 |
 | -取出`<requestid>` | 從憑證授權單位單位抓取先前要求的回應。 |
@@ -101,7 +101,7 @@ subject = CN=W2K8-BO-DC.contoso2.com
 
 這個 INF 檔案的區域對於任何新的憑證要求範本都是必要的，而且必須包含至少一個具有值的參數。
 
-| 金鑰<sup>1</sup> | Description | 值<sup>2</sup> | 範例 |
+| 金鑰<sup>1</sup> | 描述 | 值<sup>2</sup> | 範例 |
 | --- | ---------- | ----- | ------- |
 | 主體 | 有數個應用程式依賴憑證中的主體資訊。 我們建議您為此金鑰指定一個值。 如果此處未設定主旨，建議您在主體別名憑證延伸中包含主體名稱。 | 相對辨別名稱字串值 | Subject = CN = computer1。 contoso .com Subject = CN = John Smith，CN = Users，DC = Contoso，DC = com |
 | Exportable | 如果設定為 TRUE，就可以使用憑證來匯出私密金鑰。 為了確保高層級的安全性，私密金鑰不能匯出;不過，在某些情況下，如果有數部電腦或使用者必須共用相同的私密金鑰，可能就會需要此金鑰。 | `true | false` | `Exportable = TRUE`. CNG 金鑰可以區分此和純文字匯出。 CAPI1 索引鍵不能。 |
@@ -111,7 +111,7 @@ subject = CN=W2K8-BO-DC.contoso2.com
 | KeyContainer | 我們不建議針對產生新金鑰材料的新要求，設定此參數。 金鑰容器是由系統自動產生和維護。<p>對於應該使用現有金鑰材料的要求，此值可以設定為現有金鑰的金鑰容器名稱。 使用 `certutil –key` 命令來顯示機器內容可用的金鑰容器清單。 `certutil –key –user`針對目前使用者的內容使用命令。| 隨機字串值<p>**秘訣：** 使用雙引號括住具有空白或特殊字元的任何 INF 金鑰值，以避免可能的 INF 剖析問題。 | `KeyContainer = {C347BD28-7F69-4090-AA16-BC58CF4D749C}` |
 | KeyLength | 定義公開和私密金鑰的長度。 金鑰長度會影響憑證的安全性層級。 較大的金鑰長度通常會提供較高的安全性層級;不過，某些應用程式可能會有關于金鑰長度的限制。 | 密碼編譯服務提供者所支援的任何有效金鑰長度。 | `KeyLength = 2048` |
 | KeySpec | 決定金鑰是否可用於簽章、Exchange （加密）或兩者。 | `AT_NONE, AT_SIGNATURE, AT_KEYEXCHANGE` | `KeySpec = AT_KEYEXCHANGE` |
-| KeyUsage | 定義應使用的憑證金鑰。 | <ul><li>`CERT_DIGITAL_SIGNATURE_KEY_USAGE -- 80 (128)`</li><li>`CERT_NON_REPUDIATION_KEY_USAGE -- 40 (64)`</li><li>`CERT_KEY_ENCIPHERMENT_KEY_USAGE -- 20 (32)`</li><li>`CERT_DATA_ENCIPHERMENT_KEY_USAGE -- 10 (16)`</li><li>`CERT_KEY_AGREEMENT_KEY_USAGE -- 8`</li><li>`CERT_KEY_CERT_SIGN_KEY_USAGE -- 4`</li><li>`CERT_OFFLINE_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_ENCIPHER_ONLY_KEY_USAGE -- 1`</li><li>`CERT_DECIPHER_ONLY_KEY_USAGE -- 8000 (32768)`</li></ul> | `KeyUsage = CERT_DIGITAL_SIGNATURE_KEY_USAGE | CERT_KEY_ENCIPHERMENT_KEY_USAGE`<p>**秘訣：** 多個值使用分隔號（|）符號分隔符號。 使用多個值時，請確定您使用雙引號來避免 INF 剖析問題。 所顯示的值是每個位定義的十六進位（十進位）值。 也可以使用較舊的語法：已設定多個位的單一十六進位值，而不是符號標記法。 例如 `KeyUsage = 0xa0`。 |
+| KeyUsage | 定義應使用的憑證金鑰。 | <ul><li>`CERT_DIGITAL_SIGNATURE_KEY_USAGE -- 80 (128)`</li><li>`CERT_NON_REPUDIATION_KEY_USAGE -- 40 (64)`</li><li>`CERT_KEY_ENCIPHERMENT_KEY_USAGE -- 20 (32)`</li><li>`CERT_DATA_ENCIPHERMENT_KEY_USAGE -- 10 (16)`</li><li>`CERT_KEY_AGREEMENT_KEY_USAGE -- 8`</li><li>`CERT_KEY_CERT_SIGN_KEY_USAGE -- 4`</li><li>`CERT_OFFLINE_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_ENCIPHER_ONLY_KEY_USAGE -- 1`</li><li>`CERT_DECIPHER_ONLY_KEY_USAGE -- 8000 (32768)`</li></ul> | `KeyUsage = CERT_DIGITAL_SIGNATURE_KEY_USAGE | CERT_KEY_ENCIPHERMENT_KEY_USAGE`<p>**秘訣：** 多個值使用分隔號（|）符號分隔符號。 使用多個值時，請確定您使用雙引號來避免 INF 剖析問題。 所顯示的值是每個位定義的十六進位（十進位）值。 也可以使用較舊的語法：已設定多個位的單一十六進位值，而不是符號標記法。 例如： `KeyUsage = 0xa0` 。 |
 | KeyUsageProperty | 抓取值，識別可使用私密金鑰的特定目的。 | <ul><li>`NCRYPT_ALLOW_DECRYPT_FLAG -- 1`</li><li>`NCRYPT_ALLOW_SIGNING_FLAG -- 2`</li><li>`NCRYPT_ALLOW_KEY_AGREEMENT_FLAG -- 4`</li><li>`NCRYPT_ALLOW_ALL_USAGES -- ffffff (16777215)`</li></ul> | `KeyUsageProperty = NCRYPT_ALLOW_DECRYPT_FLAG | NCRYPT_ALLOW_SIGNING_FLAG` |
 | MachineKeySet | 當您需要建立由電腦所擁有而不是使用者所擁有的憑證時，此金鑰很重要。 產生的金鑰內容會保留在已建立要求之安全性主體（使用者或電腦帳戶）的安全性內容中。 當系統管理員代表電腦建立憑證要求時，必須在電腦的安全性內容中建立金鑰內容，而不是系統管理員的安全性內容。 否則，電腦無法存取其私密金鑰，因為它會在系統管理員的安全性內容中。 | `true | false`. 預設值為 false。 | `MachineKeySet = true` |
 | NotBefore | 指定無法發出要求的日期或日期和時間。 `NotBefore`可以與和搭配 `ValidityPeriod` 使用 `ValidityPeriodUnits` 。 | 日期或日期和時間 | `NotBefore = 7/24/2012 10:31 AM`<p>**秘訣：** `NotBefore`和 `NotAfter` 僅適用于 R `equestType=cert` 。 日期剖析嘗試區分地區設定。 使用月份名稱會區分其意義，且應該在每個地區設定中使用。 |
@@ -124,7 +124,7 @@ subject = CN=W2K8-BO-DC.contoso2.com
 | RenewalCert | 如果您需要更新存在於產生憑證要求之系統上的憑證，您必須將其憑證雜湊指定為此金鑰的值。 | 在建立憑證要求的電腦上可用之任何憑證的憑證雜湊。 如果您不知道憑證雜湊，請使用 [憑證] MMC 嵌入式管理單元，並查看應更新的憑證。 開啟憑證屬性，並查看 `Thumbprint` 憑證的屬性。 憑證更新需要或要求 `PKCS#7` `CMC` 格式。 | `RenewalCert = 4EDF274BD2919C6E9EC6A522F0F3B153E9B1582D` |
 | RequesterName | 提出要求以代表另一個使用者要求進行註冊。您也必須使用註冊代理程式憑證來簽署要求，否則 CA 將會拒絕要求。 使用 `-cert` 選項來指定註冊代理程式憑證。 如果設定為或，則可以指定憑證要求的要求者名稱 `RequestType` `PKCS#7` `CMC` 。 如果 `RequestType` 設定為，則 `PKCS#10` 會忽略此索引鍵。 只能 `Requestername` 設定為要求的一部分。 您無法 `Requestername` 在擱置中的要求中操作。 | `Domain\User` | `Requestername = Contoso\BSmith` |
 | RequestType | 決定用來產生和傳送憑證要求的標準。 | <ul><li>`PKCS10 -- 1`</li><li>`PKCS7 -- 2`</li><li>`CMC -- 3`</li><li>`Cert -- 4`</li><li>`SCEP -- fd00 (64768)`</li></ul>**秘訣：** 此選項表示自我簽署或自我頒發證書。 它不會產生要求，而是會產生新的憑證，然後安裝憑證。 [自我簽署] 是預設值。 使用– cert 選項指定簽署憑證，以建立未自我簽署的自我發行憑證。 | `RequestType = CMC` |
-| SecurityDescriptor | 包含與安全物件相關聯的安全性資訊。 對於大部分的安全物件，您可以在建立物件的函式呼叫中指定物件的安全描述項。以[安全描述項定義語言](https://msdn.microsoft.com/library/aa379567(v=vs.85).aspx)為基礎的字串。<p>**秘訣：** 這僅與電腦內容非智慧卡金鑰有關。 | `SecurityDescriptor = D:P(A;;GA;;;SY)(A;;GA;;;BA)` |
+| SecurityDescriptor | 包含與安全物件相關聯的安全性資訊。 對於大部分的安全物件，您可以在建立物件的函式呼叫中指定物件的安全描述項。以[安全描述項定義語言](/windows/win32/secauthz/security-descriptor-definition-language)為基礎的字串。<p>**秘訣：** 這僅與電腦內容非智慧卡金鑰有關。 | `SecurityDescriptor = D:P(A;;GA;;;SY)(A;;GA;;;BA)` |
 | AlternateSignatureAlgorithm | 指定並抓取布林值，指出 PKCS # 10 要求或憑證簽章的簽章演算法物件識別元（OID）是否為離散或結合。 | `true | false` | `AlternateSignatureAlgorithm = false`<p>針對 RSA 簽章， `false` 表示 `Pkcs1 v1.5` ，而則 `true` 表示簽章 `v2.1` 。 |
 | 無訊息 | 根據預設，此選項可讓 CSP 存取互動式使用者桌面，並向使用者要求資訊，例如智慧卡 PIN。 如果此金鑰設定為 TRUE，CSP 就不能與桌面互動，而且將會遭到封鎖而無法向使用者顯示任何使用者介面。 | `true | false` | `Silent = true` |
 | SMIME | 如果此參數設定為 TRUE，則會將具有物件識別碼值1.2.840.113549.1.9.15 的延伸加入至要求中。 物件識別碼的數目取決於 [已安裝的作業系統版本] 和 [CSP] 功能，這是指安全多用途網際網路郵件延伸（S/MIME）應用程式（如 Outlook）可能使用的對稱式加密演算法。 | `true | false` | `SMIME = true` |
@@ -248,7 +248,7 @@ certreq -policy certsrv.req policy.inf newcertsrv.req
 
 #### <a name="examples"></a>範例
 
-在[capolicy.inf](https://docs.microsoft.com/windows-server/networking/core-network-guide/cncg/server-certs/prepare-the-capolicy-inf-file)中尋找原則 .inf 檔案的範例。
+在[capolicy.inf](../../networking/core-network-guide/cncg/server-certs/prepare-the-capolicy-inf-file.md)中尋找原則 .inf 檔案的範例。
 
 ### <a name="certreq--sign"></a>certreq-sign
 
@@ -294,7 +294,7 @@ certreq –enroll -machine –cert 61 2d 3c fe 00 00 00 00 00 05 renew
 
 ## <a name="options"></a>選項
 
-| 選項 | Description |
+| 選項。 | 描述 |
 | ------- | ----------- |
 | -任何 | `Force ICertRequest::Submit`判斷編碼類型。|
 | -attrib`<attributestring>` | 指定**名稱**和**值**字串配對，並以冒號分隔。<p>使用分隔**名稱**和**值**字串配對 `\n` （例如，Name1： value1\nName2： value2）。 |
@@ -311,7 +311,7 @@ certreq –enroll -machine –cert 61 2d 3c fe 00 00 00 00 00 05 renew
 | -crl | 在所指定的 base64 編碼 PKCS #7 檔案的輸出中，包含憑證撤銷清單（Crl）， `certchainfileout` 或是所指定的 base64 編碼檔案 `requestfileout` 。 |
 | -rpc | 指示 Active Directory 憑證服務（AD CS）使用遠端程序呼叫（RPC）伺服器連接，而不是分散式 COM。 |
 | -adminforcemachine | 使用金鑰服務或模擬，從本機系統內容提交要求。 需要叫用此選項的使用者必須是本機系統管理員的成員。 |
-| -renewonbehalfof | 代表簽署憑證中識別的主旨提交更新。 這會在呼叫[ICertRequest：： Submit 方法](https://docs.microsoft.com/windows/win32/api/certcli/nf-certcli-icertrequest-submit)時設定 CR_IN_ROBO |
+| -renewonbehalfof | 代表簽署憑證中識別的主旨提交更新。 這會在呼叫[ICertRequest：： Submit 方法](/windows/win32/api/certcli/nf-certcli-icertrequest-submit)時設定 CR_IN_ROBO |
 | -f | 強制覆寫現有的檔案。 這也會略過快取範本和原則。 |
 | -Q | 使用無訊息模式;隱藏所有互動式提示。 |
 | -unicode | 當標準輸出重新導向或輸送至另一個命令時，寫入 Unicode 輸出，這有助於從 Windows PowerShell 腳本叫用。 |
@@ -319,7 +319,7 @@ certreq –enroll -machine –cert 61 2d 3c fe 00 00 00 00 00 05 renew
 
 ## <a name="formats"></a>格式
 
-| 格式 | Description |
+| 格式 | 描述 |
 | ------- | ----------- |
 | requestfilein | Base64 編碼或二進位輸入檔名稱： PKCS #10 憑證要求、CMS 憑證要求、PKCS #7 憑證更新要求、x.509 憑證，以進行交叉認證，或 KeyGen 的標記格式憑證要求。 |
 | requestfileout | Base64 編碼的輸出檔名稱。 |
@@ -335,9 +335,9 @@ certreq –enroll -machine –cert 61 2d 3c fe 00 00 00 00 00 05 renew
 
 - [如何將主體替代名稱新增至安全的 LDAP 憑證](https://support.microsoft.com/help/931351/how-to-add-a-subject-alternative-name-to-a-secure-ldap-certificate)
 
-- [Test Lab Guide: Deploying an AD CS Two-Tier PKI Hierarchy](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831348(v=ws.11))
+- [Test Lab Guide: Deploying an AD CS Two-Tier PKI Hierarchy](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831348(v=ws.11))
 
-- [附錄3： Certreq.exe 語法](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc736326(v=ws.10))
+- [附錄3： Certreq.exe 語法](/previous-versions/windows/it-pro/windows-server-2003/cc736326(v=ws.10))
 
 - [如何手動建立網頁伺服器 SSL 憑證](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/how-to-create-a-web-server-ssl-certificate-manually/ba-p/1128529)
 

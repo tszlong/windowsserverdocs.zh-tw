@@ -6,12 +6,12 @@ ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/29/2018
-ms.openlocfilehash: ce3b32bdb0dfb51237f934f23207167a215a0024
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ccce763b437b461d33dd72cb3d656b825746e6da
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475605"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953841"
 ---
 # <a name="delimit-the-allocation-of-volumes-in-storage-spaces-direct"></a>分隔儲存空間直接存取中的磁片區配置
 > 適用於：Windows Server 2019
@@ -37,7 +37,7 @@ Windows Server 2019 引進了一個選項，可手動將儲存空間直接存取
 
 ### <a name="review-regular-allocation"></a>審查：一般配置
 
-使用一般的三向鏡像時，磁片區會分割成多個小型的「slab」，並複製三次，並平均分散到叢集中每部伺服器上的每個磁片磁碟機。 如需詳細資訊，請閱讀[這篇深入探討的 blog](https://blogs.technet.microsoft.com/filecab/2016/11/21/deep-dive-pool-in-spaces-direct/)。
+使用一般的三向鏡像時，磁片區會分割成多個小型的「slab」，並複製三次，並平均分散到叢集中每部伺服器上的每個磁片磁碟機。 如需詳細資訊，請閱讀[這篇深入探討的 blog](https://techcommunity.microsoft.com/t5/storage-at-microsoft/deep-dive-the-storage-pool-in-storage-spaces-direct/ba-p/425959)。
 
 ![此圖顯示分割成三個 slab 堆疊，並在每部伺服器上平均散發的磁片區。](media/delimit-volume-allocation/regular-allocation.png)
 

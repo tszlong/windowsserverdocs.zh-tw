@@ -8,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 1abf845ce69b395bf46a0f155db2c683c359207c
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 451a0b46cd45d0dd28ceb3634da9d847864bd519
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623876"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953770"
 ---
 # <a name="selecting-the-forest-root-domain"></a>選取樹系根網域
 
@@ -25,7 +25,7 @@ ms.locfileid: "81623876"
 
 選取樹系根域包含判斷網域設計中的其中一個 Active Directory 網域是否可以做為樹系根域，或者您是否需要部署專用樹系根域。
 
-如需部署樹系根域的相關資訊，請參閱[部署 Windows Server 2008 樹系根域](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731174(v=ws.10))。
+如需部署樹系根域的相關資訊，請參閱[部署 Windows Server 2008 樹系根域](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc731174(v=ws.10))。
 
 ## <a name="choosing-a-regional-or-dedicated-forest-root-domain"></a>選擇區域或專用樹系根域
 
@@ -88,4 +88,4 @@ Active Directory DNS 擁有者必須與組織的 DNS 擁有者合作，才能取
 
 ## <a name="documenting-the-forest-root-domain-name"></a>記載樹系根功能變數名稱稱
 
-記錄您為樹系根域選取的 DNS 前置詞和尾碼。 此時，請識別哪個網域會是樹系根目錄。 您可以將樹系根功能變數名稱資訊新增至您所建立的「網域規劃」工作表，以記載新網域和升級網域的計畫，以及您的功能變數名稱。 若要開啟它，請從[適用于 Windows Server 2003 部署套件的作業輔助](https://microsoft.com/download/details.aspx?id=9608)下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，並開啟「網域規劃」（DSSLOGI_5 .doc）。
+記錄您為樹系根域選取的 DNS 前置詞和尾碼。 此時，請識別哪個網域會是樹系根目錄。 您可以將樹系根功能變數名稱資訊新增至您所建立的「網域規劃」工作表，以記載新網域和升級網域的計畫，以及您的功能變數名稱。 若要開啟它，請從[適用于 Windows Server 2003 部署套件的工作輔助](https://microsoft.com/download/details.aspx?id=9608)下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，並開啟「網域規劃」（DSSLOGI_5.doc）。

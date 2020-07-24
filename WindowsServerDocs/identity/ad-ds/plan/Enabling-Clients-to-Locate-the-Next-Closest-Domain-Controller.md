@@ -8,16 +8,16 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 75e31a435e8d8411fbe4db242e6d31fd7676fe4e
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: ce946fb0fe581a66f4a4e29cf8491f00294b5bcb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624246"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953580"
 ---
 # <a name="enabling-clients-to-locate-the-next-closest-domain-controller"></a>讓用戶端找出下一個最近的網域控制站
 
-> 適用于： Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用於：Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 如果您的網域控制站執行 Windows Server 2008 或更新版本，您可以藉由啟用 [**嘗試下一個最接近的網站]** 群組原則設定，讓執行 windows Vista 或更新版本或 Windows Server 2008 或更新版本的用戶端電腦更有效率地找出網域控制站。 這項設定藉由協助簡化網路流量（特別是在有許多分公司和網站的大型企業），藉此改善網域控制站定位器（DC 定位程式）。
 
@@ -31,7 +31,7 @@ ms.locfileid: "81624246"
 - 如果相同網站中沒有可用的網域控制站，請嘗試尋找網域中的任何網域控制站。
 
 > [!NOTE]
-> 這是 DC 定位器在舊版 Active Directory 中使用的相同演算法。 如需詳細資訊，請參閱[Active Directory 的 DNS 支援的運作方式](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc759550(v=ws.10))一文。
+> 這是 DC 定位器在舊版 Active Directory 中使用的相同演算法。 如需詳細資訊，請參閱[Active Directory 的 DNS 支援的運作方式](/previous-versions/windows/it-pro/windows-server-2003/cc759550(v=ws.10))一文。
 
 如果您啟用 [**嘗試下一個最接近的網站**] 設定，DC 定位程式會使用下列演算法來尋找網域控制站：
 
@@ -54,4 +54,4 @@ ms.locfileid: "81624246"
 > [!NOTE]
 > [**嘗試下一個最接近的網站]** 設定會與自動網站涵蓋範圍協調運作。 例如，如果下一個最接近的網站沒有網域控制站，DC 定位程式會嘗試找出執行網站自動網站涵蓋範圍的網域控制站。
 
-若要套用 [**嘗試下一個最接近的網站]** 設定，您可以建立群組原則物件（GPO），並將它連結到您組織的適當物件，也可以修改預設網域原則，讓它影響網域中執行 Windows Vista 或更新版本和 Windows Server 2008 或更新版本的所有用戶端。 如需有關如何設定 [**嘗試下一個最接近的網站]** 設定的詳細資訊，請參閱在[下一個最接近的網站中啟用用戶端以尋找網域控制站](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772592(v=ws.10))。
+若要套用 [**嘗試下一個最接近的網站]** 設定，您可以建立群組原則物件（GPO），並將它連結到您組織的適當物件，也可以修改預設網域原則，讓它影響網域中執行 Windows Vista 或更新版本和 Windows Server 2008 或更新版本的所有用戶端。 如需有關如何設定 [**嘗試下一個最接近的網站]** 設定的詳細資訊，請參閱在[下一個最接近的網站中啟用用戶端以尋找網域控制站](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc772592(v=ws.10))。

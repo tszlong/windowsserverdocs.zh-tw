@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0a2cea23d96c4cb438a2acac6d14c1bd37c67b56
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 159a3d2eb54d6a3040c4a22864a1c90e16bf2247
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922648"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955330"
 ---
 # <a name="certutil"></a>certutil
 
@@ -1964,7 +1964,7 @@ certutil -? -v
 
 此區段會根據命令定義您可以指定的所有選項。 每個參數都包含哪些選項可供使用的相關資訊。
 
-| 選項 | Description |
+| 選項。 | 描述 |
 | ------- | ----------- |
 | -nullsign | 使用資料的雜湊做為簽章。 |
 | -f | 強制覆寫。 |
@@ -1999,13 +1999,13 @@ certutil -? -v
 | -t timeout | URL 提取超時（以毫秒為單位）。 |
 | -symkeyalg symmetrickeyalgorithm [，keylength] | 具有選擇性金鑰長度之對稱金鑰演算法的名稱。 例如：`AES,128` 或 `3DES` |
 
-### <a name="additional-references"></a>其他參考資料
+### <a name="additional-references"></a>其他參考
 
 如需有關如何使用此命令的其他範例，請參閱
 
 - [從命令列管理 Active Directory 憑證服務（AD CS）的 Certutil 範例](https://social.technet.microsoft.com/wiki/contents/articles/3063.certutil-examples-for-managing-active-directory-certificate-services-ad-cs-from-the-command-line.aspx)
 
-- [管理憑證的 Certutil 工作](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc772898(v=ws.10))
+- [管理憑證的 Certutil 工作](/previous-versions/orphan-topics/ws.10/cc772898(v=ws.10))
 
 - [使用 certutil.exe 命令列工具的二進位要求匯出逐步解說](https://social.technet.microsoft.com/wiki/contents/articles/7573.active-directory-certificate-services-pki-key-archival-and-management.aspx)
 

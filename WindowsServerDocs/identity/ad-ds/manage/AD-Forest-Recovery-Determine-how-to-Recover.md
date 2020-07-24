@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: fea55dc5551198f7bc06afb2ec38077398b9cf77
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fbb1f0f0f1b21c626f344bb01b793211586c7cf3
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80824051"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953970"
 ---
 # <a name="determine-how-to-recover-the-forest"></a>決定如何復原樹系
 
@@ -44,19 +44,19 @@ ms.locfileid: "80824051"
 > 從 Windows Server 2008 開始，不支援將系統狀態備份還原至新硬體或相同硬體上的新 Windows Server 安裝。 如果在同一個硬體上重新安裝 Windows Server，如本指南稍後所建議，您可以依照下列順序還原網域控制站：
 >
 > 1. 執行完整伺服器還原，以便還原作業系統和所有檔案和應用程式。
-> 2. 使用 wbadmin 執行系統狀態還原，以將 SYSVOL 標示為授權。
+> 2. 使用 wbadmin.exe 執行系統狀態還原，以便將 SYSVOL 標示為授權。
 >
 > 如需詳細資訊，請參閱 Microsoft 知識庫文章[249694](https://support.microsoft.com/kb/249694)。
 
 如果發生失敗的時間不明，請進一步調查，以找出保留樹系最後安全狀態的備份。 這種方法比較不理想。 因此，我們強烈建議您每日保留有關 AD DS 健全狀況狀態的詳細記錄，如此一來，如果發生全樹系失敗，則可以識別大約失敗的時間。 您也應該保留備份的本機複本，以加快復原的速度。
 
-如果已啟用 Active Directory 回收站，則備份存留期會等於**msds-deletedobjectlifetime**值或**tombstoneLifetime**值（取兩者中較小者）。 如需詳細資訊，請參閱[Active Directory 回收站逐步指南](https://go.microsoft.com/fwlink/?LinkId=178657)（ https://go.microsoft.com/fwlink/?LinkId=178657)。
+如果已啟用 Active Directory 回收站，則備份存留期會等於**msds-deletedobjectlifetime**值或**tombstoneLifetime**值（取兩者中較小者）。 如需詳細資訊，請參閱[Active Directory 回收站逐步指南](https://go.microsoft.com/fwlink/?LinkId=178657)（） https://go.microsoft.com/fwlink/?LinkId=178657) 。
 
 或者，您也可以使用 Active Directory 資料庫掛接工具（Dsamain.exe）和輕量型目錄存取協定（LDAP）工具（例如 Ldp.exe 或 Active Directory 使用者和電腦）來識別哪個備份具有樹系的最後安全狀態。 Windows Server 2008 和更新版本的 Windows Server 作業系統中包含的 Active Directory 資料庫掛接工具，會將儲存在備份或快照中的 Active Directory 資料公開為 LDAP 伺服器。 然後，您可以使用 LDAP 工具來流覽資料。 這種方法的優點是不需要您重新開機任何目錄服務還原模式（DSRM）中的 DC 來檢查 AD DS 備份的內容。
 
-如需有關使用 Active Directory 資料庫掛接工具的詳細資訊，請參閱[Active Directory 資料庫掛接工具逐步指南](https://technet.microsoft.com/library/cc753609\(WS.10\).aspx)。
+如需有關使用 Active Directory 資料庫掛接工具的詳細資訊，請參閱[Active Directory 資料庫掛接工具逐步指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771232(v=ws.10))。
 
-您也可以使用**ntdsutil snapshot**命令來建立 Active Directory 資料庫的快照集。 藉由排程工作定期建立快照集，您可以在一段時間內取得 Active Directory 資料庫的其他複本。 您可以使用這些複本來更清楚地識別整個樹系失敗發生的時間，然後選擇要還原的最佳備份。 若要建立快照集，請使用 Windows Server 2008 隨附的**ntdsutil**版本，或適用于 windows Vista 或更新版本的遠端伺服器管理工具（RSAT）。 目標 DC 可以執行任何版本的 Windows Server。 如需使用**ntdsutil snapshot**命令的詳細資訊，請參閱[快照](https://technet.microsoft.com/library/cc731620\(WS.10\).aspx)集。
+您也可以使用**ntdsutil snapshot**命令來建立 Active Directory 資料庫的快照集。 藉由排程工作定期建立快照集，您可以在一段時間內取得 Active Directory 資料庫的其他複本。 您可以使用這些複本來更清楚地識別整個樹系失敗發生的時間，然後選擇要還原的最佳備份。 若要建立快照集，請使用 Windows Server 2008 隨附的**ntdsutil**版本，或適用于 windows Vista 或更新版本的遠端伺服器管理工具（RSAT）。 目標 DC 可以執行任何版本的 Windows Server。 如需使用**ntdsutil snapshot**命令的詳細資訊，請參閱[快照](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771232(v=ws.10))集。
 
 ## <a name="determining-which-domain-controllers-to-restore"></a>判斷要還原的網域控制站
 
@@ -81,7 +81,7 @@ ms.locfileid: "80824051"
 
    HKEY_LOCAL_MACHINESoftwarePoliciesMicrosoftSystemCertificatesFVE_NKP
 
-維護安全性程式，以處理或還原包含 Active Directory 的備份檔案。 隨附樹系復原的緊急程度可能會不小心導致忽略的安全性最佳作法。 如需詳細資訊，請參閱[保護 Active Directory 安裝和日常作業的最佳作法指南](https://technet.microsoft.com/library/bb727066.aspx)中的「建立網域控制站備份和還原策略」一節：第二部分。
+維護安全性程式，以處理或還原包含 Active Directory 的備份檔案。 隨附樹系復原的緊急程度可能會不小心導致忽略的安全性最佳作法。 如需詳細資訊，請參閱[保護 Active Directory 安裝和日常作業的最佳作法指南](/previous-versions/windows/it-pro/windows-2000-server/bb727066(v=technet.10))中的「建立網域控制站備份和還原策略」一節：第二部分。
 
 ## <a name="identify-the-current-forest-structure-and-dc-functions"></a>識別目前的樹系結構和 DC 函數
 

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8bfcb43b2e42ca65d767f0683bf13dc971073c27
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 41c6194b68414be65fcf6b93b662e25ae80e0309
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923999"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955500"
 ---
 # <a name="assign"></a>assign
 
@@ -35,10 +35,10 @@ assign [{letter=<d> | mount=<path>}] [noerr]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `letter=<d>` | 您想要指派給磁片區的磁碟機號。 |
-| `mount=<path>` | 您想要指派給磁片區的掛接點路徑。 如需有關如何使用此命令的指示，請參閱[將掛接點資料夾路徑指派給磁片磁碟機](https://docs.microsoft.com/windows-server/storage/disk-management/assign-a-mount-point-folder-path-to-a-drive)。 |
+| `mount=<path>` | 您想要指派給磁片區的掛接點路徑。 如需有關如何使用此命令的指示，請參閱[將掛接點資料夾路徑指派給磁片磁碟機](../../storage/disk-management/assign-a-mount-point-folder-path-to-a-drive.md)。 |
 | noerr | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
 
 ## <a name="examples"></a>範例
@@ -49,7 +49,7 @@ assign [{letter=<d> | mount=<path>}] [noerr]
 assign letter=e
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

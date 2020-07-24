@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.date: 10/28/2018
 ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: eaad015d0097d9b65a4aba8a5846c7782b6966d1
-ms.sourcegitcommit: 4af8ab2e5c199ecff0697e5331fa7f61f2556a8f
+ms.openlocfilehash: 5db03a2d275dc4a02295c588bd0789fa757b8503
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86866037"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956211"
 ---
 # <a name="deploying-active-directory-federation-services-in-azure"></a>在 Azure 中部署 Active Directory 同盟服務
 AD FS 提供簡化、安全的身分識別同盟和 Web 單一登入 (SSO) 功能。 與 Azure AD 或 O365 同盟可讓使用者使用內部部署認證進行驗證，並存取雲端中的所有資源。 如此一來，就一定要有高可用性的 AD FS 基礎結構，以確保能夠存取內部部署和雲端中的資源。 在 Azure 中部署 AD FS 有助於達成執行最低限度的工作所需要的高可用性。
@@ -232,7 +232,7 @@ AD FS 提供簡化、安全的身分識別同盟和 Web 單一登入 (SSO) 功�
 **7.2.安裝 Web 應用程式 Proxy 角色**
 
 在確定 Web 應用程式 Proxy 伺服器能夠連線到 ILB 背後的 AD FS 伺服器之後，您可以接著安裝 Web 應用程式 Proxy 伺服器。 Web 應用程式 Proxy 伺服器不必加入網域。 請選取「遠端存取」角色，將 Web 應用程式 Proxy 角色安裝在兩個 Web 應用程式 Proxy 伺服器上。 伺服器管理員會引導您完成 WAP 安裝。
-如需如何部署 WAP 的詳細資訊，請閱讀 [安裝和設定 Web 應用程式 Proxy 伺服器](https://technet.microsoft.com/library/dn383662.aspx)。
+如需如何部署 WAP 的詳細資訊，請閱讀 [安裝和設定 Web 應用程式 Proxy 伺服器](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383662(v=ws.11))。
 
 ### <a name="8--deploying-the-internet-facing-public-load-balancer"></a>8. 部署網際網路對向（公用） Load Balancer
 **8.1. 建立網際網路對向（公用） Load Balancer**
@@ -363,7 +363,7 @@ AD FS 提供簡化、安全的身分識別同盟和 Web 單一登入 (SSO) 功�
 * [Azure 虛擬網路](https://aka.ms/Azure/VNet)
 * [AD FS 和 Web 應用程式 Proxy 連結](https://aka.ms/ADFSLinks) 
 
-## <a name="next-steps"></a>後續步驟
-* [整合內部部署身分識別與 Azure Active Directory](https://docs.microsoft.com/azure/active-directory/hybrid/whatis-hybrid-identity)
+## <a name="next-steps"></a>接下來的步驟
+* [整合內部部署身分識別與 Azure Active Directory](/azure/active-directory/hybrid/whatis-hybrid-identity)
 * [使用 Azure AD Connect 設定和管理 AD FS](/azure/active-directory/hybrid/how-to-connect-fed-whatis)
 * [使用 Azure 流量管理員在 Azure 中部署高可用性跨地區 AD FS](active-directory-adfs-in-azure-with-azure-traffic-manager.md)

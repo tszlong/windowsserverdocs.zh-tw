@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 897927c48a1ba2c2023e35ff1f4c93e6c33fb291
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 297a6592dad6a70aae218b5f1e8426fe0c855e63
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923549"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955860"
 ---
 # <a name="automount"></a>自動掛接
 
@@ -31,7 +31,7 @@ ms.locfileid: "85923549"
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | enable | 可讓 Windows 自動掛接新增至系統的新基本和動態磁碟區，並將它們指派給磁碟機號。 |
 | disable | 防止 Windows 自動裝載新增至系統的任何新的基本和動態磁碟區。<p>**注意**：停用自動掛接可能會導致容錯移轉叢集無法通過 [驗證設定] Wizard 的儲存部分。 |
@@ -58,8 +58,8 @@ automount enable
 automount disable
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [diskpart 命令](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc770877(v%3dws.11))
+- [diskpart 命令](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc770877(v%3dws.11))

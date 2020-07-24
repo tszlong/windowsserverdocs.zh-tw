@@ -9,12 +9,12 @@ ms.author: johnmar
 ms.date: 01/30/2019
 description: 本文說明叢集集合案例
 ms.localizationpriority: medium
-ms.openlocfilehash: 64aeda27d5554e3f348a77b0ae785ddcf05dee00
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 06cf798a5adfeee1279f564df63c431a77affd18
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436613"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955030"
 ---
 # <a name="cluster-sets"></a>叢集集合
 
@@ -287,7 +287,7 @@ WARNING: Report file location: C:\Windows\Cluster\Reports\Update-ClusterVirtualM
 
 您可以忽略此警告，因為警告是「偵測不到虛擬機器角色存放裝置設定中的變更」。 警告的原因是實際實體位置不會變更;僅限設定路徑。
 
-如需有關移動 VMStorage 的詳細資訊，請參閱此[連結](https://docs.microsoft.com/powershell/module/hyper-v/move-vmstorage?view=win10-ps)。
+如需有關移動 VMStorage 的詳細資訊，請參閱此[連結](/powershell/module/hyper-v/move-vmstorage?view=win10-ps)。
 
 在不同叢集集叢集之間即時移轉虛擬機器的方式與過去的相同。 在非叢集集案例中，步驟如下：
 
@@ -379,7 +379,7 @@ Remove-ClusterSetMember -ClusterName CLUSTER1 -CimSession CSMASTER
 ## <a name="frequently-asked-questions-faq"></a>常見問題集 (FAQ)
 
 **問題：** 在我的叢集集合中，我是否僅限於使用超融合叢集？ <br>
-**答：** 不。 您可以使用傳統叢集來混合儲存空間直接存取。
+**答：** 不會。 您可以使用傳統叢集來混合儲存空間直接存取。
 
 **問題：** 我可以透過 System Center Virtual Machine Manager 來管理叢集集嗎？ <br>
 **答：** System Center Virtual Machine Manager 目前不支援叢集集 <br><br> **問題：** Windows Server 2012 R2 或2016叢集是否可以並存存在於相同的叢集集合中？ <br>
@@ -420,13 +420,13 @@ Remove-ClusterSetMember -ClusterName CLUSTER1 -CimSession CSMASTER
 **答：** 在 Windows Server 2019 中，已測試並支援最多64個叢集節點的叢集集。 不過，叢集集架構會調整為更大的限制，而不是硬式編碼的限制。 請讓 Microsoft 知道，如果規模較大，您和計畫使用的方式都很重要。
 
 **問題：** 叢集集合中的所有儲存空間直接存取叢集都會形成單一存放集區嗎？ <br>
-**答：** 不。 儲存空間直接存取技術仍然會在單一叢集內運作，而不是在叢集集合中的成員叢集。
+**答：** 不會。 儲存空間直接存取技術仍然會在單一叢集內運作，而不是在叢集集合中的成員叢集。
 
 **問題：** 叢集集合命名空間是否具有高可用性？ <br>
 **答：** 是，叢集集命名空間是透過在管理叢集上執行的持續可用（CA）參照 SOFS 命名空間伺服器提供。 Microsoft 建議從成員叢集擁有足夠數量的虛擬機器，讓它能夠從當地語系化的全叢集失敗中復原。 不過，為了說明未預期的重大失敗（例如，管理叢集中的所有虛擬機器同時關閉），會在每個叢集集節點中額外持續快取參照資訊，甚至是在重新開機時。
 
 **問題：** 叢集設定以命名空間為基礎的存放裝置存取會使叢集集合中的存放裝置效能變慢嗎？ <br>
-**答：** 不。 叢集集命名空間提供叢集集合內的重迭參考命名空間–概念上就像分散式檔案系統命名空間（DFSN）。 與 DFSN 不同的是，所有叢集集命名空間的參考中繼資料都會自動填入並自動更新所有節點，而不需要系統管理員介入，因此在儲存體存取路徑中幾乎不會產生任何效能負擔。
+**答：** 不會。 叢集集命名空間提供叢集集合內的重迭參考命名空間–概念上就像分散式檔案系統命名空間（DFSN）。 與 DFSN 不同的是，所有叢集集命名空間的參考中繼資料都會自動填入並自動更新所有節點，而不需要系統管理員介入，因此在儲存體存取路徑中幾乎不會產生任何效能負擔。
 
 **問題：** 如何備份叢集設定中繼資料？ <br>
 **答：** 此指導方針與容錯移轉叢集相同。 系統狀態備份也會備份叢集狀態。 透過 Windows Server Backup，您可以只還原節點的叢集資料庫（因為我們有一堆自我修復邏輯，所以絕對不需要這麼做），或執行授權還原，在所有節點上回複整個叢集資料庫。 就叢集集而言，Microsoft 建議先在成員叢集上進行這類的授權還原，然後再進行管理叢集（如有需要）。

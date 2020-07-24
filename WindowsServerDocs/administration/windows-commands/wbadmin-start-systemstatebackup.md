@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1e92c508d2c9ca9ae759d81292ec3d511144dbd7
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 355dcff0f2b5ef3adc4f064651f0cea23a92d48f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930913"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954470"
 ---
 # <a name="wbadmin-start-systemstatebackup"></a>wbadmin start systemstatebackup
 
@@ -37,7 +37,7 @@ wbadmin start systemstatebackup
 
 ### <a name="parameters"></a>參數
 
-|   參數   |                                                                                                                                                                                                                      說明                                                                                                                                                                                                                      |
+|   參數   |                                                                                                                                                                                                                      描述                                                                                                                                                                                                                      |
 |---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | -backupTarget | 指定您要儲存備份的位置。 儲存位置需要磁碟機號或以 GUID 為基礎的磁片區，格式為： \\ \\ ？ \Volume{*guid*}。</br>執行 Windows Server 2008 的電腦不支援系統狀態備份到共用網路資料夾。 如果您的伺服器執行的是 Windows Server 2008 R2 或更新版本，您可以使用命令**backuptarget： \\ \\ servername\sharedFolder \\ **來儲存系統狀態備份。 |
 |    -quiet     |                                                                                                                                                                                                   執行子命令，而不提示使用者。                                                                                                                                                                                                    |
@@ -53,8 +53,8 @@ wbadmin start systemstatebackup
 wbadmin start systemstatebackup -backupTarget:f:
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 -   [Restore](wbadmin.md)
--   [WBBackup](https://technet.microsoft.com/library/jj902459.aspx) Cmdlet
+-   [WBBackup](/previous-versions/windows/it-pro/windows-8.1-and-8/hh825173(v=win.10)) Cmdlet

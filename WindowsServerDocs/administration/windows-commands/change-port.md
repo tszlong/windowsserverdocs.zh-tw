@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0735c4c21ae8e321da1cfe31c2874f3dcfc540c7
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1ee3305ff1b8e9ecf82126bd16e6c2c15bb27b26
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922508"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955310"
 ---
 # <a name="change-port"></a>change port
 
@@ -23,7 +23,7 @@ ms.locfileid: "85922508"
 列出或變更 COM 埠對應，以與 MS-DOS 應用程式相容。
 
 > [!NOTE]
-> 在 Windows Server 2008 R2 中，終端機服務已重新命名為遠端桌面服務。 若要瞭解最新版本的新功能，請參閱[Windows Server 中遠端桌面服務的新功能](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11))。
+> 在 Windows Server 2008 R2 中，終端機服務已重新命名為遠端桌面服務。 若要瞭解最新版本的新功能，請參閱[Windows Server 中遠端桌面服務的新功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
 
 ## <a name="syntax"></a>語法
 
@@ -33,7 +33,7 @@ change port [<portX>=<portY| /d <portX | /query]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 |-----------------|----------------------------------------|
 | <portX>=<portY> | 將 COM 對應 `<*portX*>` 至`<*portY*>` |
 | /d<portX> | 刪除 COM 的對應`<*portX*>` |
@@ -60,7 +60,7 @@ change port [<portX>=<portY| /d <portX | /query]
   change port /query
   ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/27/2018
-ms.openlocfilehash: 2e49ed45875b79dfc4d8bbbdad8a1221000bf2b5
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 59d6a4eafe2eb3383cfeed9e1cbcb9d3e10fe376
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923513"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955810"
 ---
 # <a name="bcdedit"></a>bcdedit
 
@@ -104,10 +104,10 @@ bcdedit /command [<argument1>] [<argument2>] ...
 | /dbgsettings | 指定或顯示系統的全域偵錯工具設定。 此命令不會 enablepose。 若要設定個別的全域偵錯工具設定，請使用**bcdedit/set** `<dbgsettings> <type> <value>` 命令。 |
 | /debug | 啟用或停用指定之開機項目的核心偵錯工具。 |
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
-如需如何使用 BCDEdit 的範例，請參閱[BCDEdit 選項參考](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcd-boot-options-reference)文章。
+如需如何使用 BCDEdit 的範例，請參閱[BCDEdit 選項參考](/windows-hardware/drivers/devtest/bcd-boot-options-reference)文章。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

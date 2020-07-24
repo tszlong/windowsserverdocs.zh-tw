@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3f983ea5b8464748d86264108a2ee8660ca0e3f2
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 24fc3c6dca5ba3fea872f625b2ef81f1c78f59fb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926053"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956570"
 ---
 # <a name="powershell_ise"></a>PowerShell_ise
 
@@ -58,16 +58,12 @@ Windows PowerShell 整合式腳本環境（ISE）是一個圖形化主機應用�
 
 ### <a name="remarks"></a>備註
 
-- 如需**PowerShell_ISE.exe**命令列參數的完整清單，請參閱[about_PowerShell_Ise.Exe](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_ise_exe)。
+- 如需**PowerShell_ISE.exe**命令列參數的完整清單，請參閱[about_PowerShell_Ise.Exe](/powershell/module/microsoft.powershell.core/about/about_powershell_ise_exe)。
 
-- 如需啟動 Windows PowerShell 的其他方式的詳細資訊，請參閱[啟動 Windows powershell](https://docs.microsoft.com/powershell/scripting/windows-powershell/starting-windows-powershell)。
+- 如需啟動 Windows PowerShell 的其他方式的詳細資訊，請參閱[啟動 Windows powershell](/powershell/scripting/windows-powershell/starting-windows-powershell)。
 
 - Windows PowerShell 會在 Windows Server 作業系統的 Server Core 安裝選項上執行。 不過，由於 Windows PowerShell ISE 需要圖形使用者介面，因此不會在 Server Core 安裝上執行。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
-- [about_PowerShell_Ise.exe](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_ise_exe
-
-- [about_PowerShell.Exe](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_exe)
-
-- [Windows PowerShell](https://docs.microsoft.com/powershell/)
+- [about_PowerShell_Ise.exe](/powershell/module/microsoft.powershell.core/about/about_powershell_exe)

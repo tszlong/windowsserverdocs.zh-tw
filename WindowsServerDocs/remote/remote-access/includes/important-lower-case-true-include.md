@@ -1,5 +1,5 @@
 >[!IMPORTANT]
->任何其他的組合或 'true'，以下列標記的大小寫會導致部分設定的 VPN 設定檔：
+>下列標記中 ' true ' 的任何其他大寫或小寫組合都會產生 VPN 設定檔的部分設定：
 >
->\<AlwaysOn\>**true**\</AlwaysOn><br>
->\<RememberCredentials\>**，則為 true**\</RememberCredentials >
+>\<AlwaysOn \> **true** \< /AlwaysOn><br>
+>\<RememberCredentials \> **true** \< /RememberCredentials>

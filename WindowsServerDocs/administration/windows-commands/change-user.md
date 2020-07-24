@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 42d6a5575ebf732a91477a425d93b10f3293e89e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5b17ba6f6245176f09eca301a7b2f44a8f439def
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922496"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955280"
 ---
 # <a name="change-user"></a>change user
 
@@ -23,7 +23,7 @@ ms.locfileid: "85922496"
 變更遠端桌面工作階段主機伺服器的安裝模式。
 
 > [!NOTE]
-> 在 Windows Server 2008 R2 中，終端機服務已重新命名為遠端桌面服務。 若要瞭解最新版本的新功能，請參閱[Windows Server 中遠端桌面服務的新功能](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11))。
+> 在 Windows Server 2008 R2 中，終端機服務已重新命名為遠端桌面服務。 若要瞭解最新版本的新功能，請參閱[Windows Server 中遠端桌面服務的新功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
 
 ## <a name="syntax"></a>語法
 
@@ -33,7 +33,7 @@ change user {/execute | /install | /query}
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | /execute | 讓 .ini 檔案能夠對應到主目錄。 這是預設值。 |
 | /install | 停用 .ini 檔案與主目錄的對應。 所有 .ini 檔案都會讀取並寫入至系統目錄。 在遠端桌面工作階段主機伺服器上安裝應用程式時，您必須停用 .ini 檔案對應。 |
@@ -74,7 +74,7 @@ change user {/execute | /install | /query}
   change user /query
   ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

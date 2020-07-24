@@ -8,12 +8,12 @@ ms.date: 06/13/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: 09b789937c9ff1dad90c3533616a4ed800204267
-ms.sourcegitcommit: 046123d4f2d24dc00b35ea99adee6f8d322c76bf
+ms.openlocfilehash: 1bd5d95739bc1c975f5f0c4d7efb8dc6f91e0412
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85416291"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954400"
 ---
 # <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>使用 OAuth 和 ADAL.JS 搭配 AD FS 2016 或更新版本來建立單一頁面 web 應用程式
 
@@ -38,7 +38,7 @@ ms.locfileid: "85416291"
 如果 ADAL 看到驗證的觸發程式，它會使用應用程式所提供的資訊，並將驗證導向您的 AD FS STS。  在 AD FS 中註冊為公用用戶端的單一頁面應用程式，會自動設定為隱含授與流程。 授權要求會產生一個識別碼權杖，其會透過 #fragment 傳回給應用程式。 後續對後端 WebAPI 的呼叫會將此識別碼權杖當做標頭中的持有人權杖，以取得 WebAPI 的存取權。
 
 ## <a name="setting-up-the-development-box"></a>設定開發箱
-本逐步解說會使用 Visual Studio 2015。 專案會使用 ADAL JS 程式庫。 若要瞭解 ADAL，請參閱[Active Directory 驗證程式庫 .net。](https://msdn.microsoft.com/library/azure/mt417579.aspx)
+本逐步解說會使用 Visual Studio 2015。 專案會使用 ADAL JS 程式庫。 若要瞭解 ADAL，請參閱[Active Directory 驗證程式庫 .net。](/dotnet/api/microsoft.identitymodel.clients.activedirectory?view=azure-dotnet)
 
 ## <a name="setting-up-the-environment"></a>設定環境
 在此逐步解說中，我們將使用的基本設定：

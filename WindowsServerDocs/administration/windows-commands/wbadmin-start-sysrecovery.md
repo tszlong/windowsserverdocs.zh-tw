@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2f7e23a82afba85ea8a670c636e0f700cb7def2e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a3d7be286e124af9e31c8607827a97f967b907ae
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930926"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954500"
 ---
 # <a name="wbadmin-start-sysrecovery"></a>wbadmin start sysrecovery
 
@@ -23,7 +23,7 @@ ms.locfileid: "85930926"
 使用您指定的參數執行系統復原（裸機復原）。
 
 > [!NOTE]
-> 這個子命令只能從 Windows 修復環境執行，而且預設不會列在**Wbadmin**的使用方式文字中。 如需詳細資訊，請參閱[Windows 修復環境（WINDOWS RE）總覽](https://technet.microsoft.com/library/hh825173.aspx)。
+> 這個子命令只能從 Windows 修復環境執行，而且預設不會列在**Wbadmin**的使用方式文字中。 如需詳細資訊，請參閱[Windows 修復環境（WINDOWS RE）總覽](/previous-versions/windows/it-pro/windows-8.1-and-8/hh825173(v=win.10))。
 
 若要使用這個子命令執行系統復原，您必須是**Backup Operators**群組或**Administrators**群組的成員，或者必須已被委派適當的許可權。
 
@@ -43,7 +43,7 @@ wbadmin start sysrecovery
 
 ### <a name="parameters"></a>參數
 
-|參數|說明|
+|參數|描述|
 |---------|-----------|
 |-version|以 MM/DD/YYYY-HH： MM 格式指定要復原之備份的版本識別碼。 如果您不知道版本識別碼，請輸入**wbadmin get 版本**。|
 |-backupTarget|指定含有您要復原的備份的存放位置。 當儲存位置不同于通常儲存此電腦的備份時，此參數會很有用。|
@@ -65,8 +65,8 @@ wbadmin start sysrecovery -version:03/31/2013-09:00 -backupTarget:d:
 wbadmin start sysrecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 -   [Restore](wbadmin.md)
--   [WBBareMetalRecovery](https://technet.microsoft.com/library/jj902461.aspx) Cmdlet
+-   [WBBareMetalRecovery](/previous-versions/windows/it-pro/windows-8.1-and-8/hh825173(v=win.10)) Cmdlet

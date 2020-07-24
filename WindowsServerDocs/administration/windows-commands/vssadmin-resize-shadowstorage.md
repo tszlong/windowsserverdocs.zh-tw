@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 03/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e32fe419899c0f553f36976ecee95fb3a922f1a6
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 8b723fd3768561da7d636dd1724bd0c75ee2ee85
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436623"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954700"
 ---
 # <a name="vssadmin-resize-shadowstorage"></a>Vssadmin resize shadowstorage
 
@@ -21,7 +21,7 @@ ms.locfileid: "83436623"
 
 調整可用於陰影複製儲存體的最大儲存空間量。
 
-您可以使用**MinDiffAreaFileSize**登錄值，指定可用於陰影複製儲存體的最小儲存空間數量。 如需詳細資訊，請參閱[MinDiffAreaFileSize](https://docs.microsoft.com/windows/win32/backup/registry-keys-for-backup-and-restore#mindiffareafilesize)。
+您可以使用**MinDiffAreaFileSize**登錄值，指定可用於陰影複製儲存體的最小儲存空間數量。 如需詳細資訊，請參閱[MinDiffAreaFileSize](/windows/win32/backup/registry-keys-for-backup-and-restore#mindiffareafilesize)。
 
 > [!WARNING]
 > 調整儲存體關聯的大小可能會導致陰影複製消失。
@@ -50,5 +50,5 @@ vssadmin Resize ShadowStorage /For=C: /On=C: /MaxSize=20%
 
 ## <a name="additional-references"></a>其他參考
 
-* [命令列語法索引鍵](https://docs.microsoft.com/windows-server/administration/windows-commands/command-line-syntax-key)
+* [命令列語法索引鍵](./command-line-syntax-key.md)
 * [Vssadmin](vssadmin.md)

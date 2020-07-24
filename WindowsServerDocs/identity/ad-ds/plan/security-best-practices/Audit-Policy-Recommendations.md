@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c25df61246bf6a7c731e08e11cee54fd87d6ae4c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5a5af1691cdfec41cc4f821943b9b849c8822057
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80821341"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953950"
 ---
 # <a name="audit-policy-recommendations"></a>稽核原則建議
 
@@ -21,19 +21,19 @@ ms.locfileid: "80821341"
 
 本節說明 Windows 預設稽核原則設定、基準建議的稽核原則設定，以及 Microsoft 針對工作站和伺服器產品提供的更積極建議。  
 
-此處顯示的 SCM 基準建議，以及我們建議用來協助偵測危害的設定，僅供系統管理員開始使用基準指南。 每個組織都必須自行決定其所面臨的威脅、其可接受的風險承受度，以及應啟用的稽核原則類別或子類別。 如需有關威脅的進一步資訊，請參閱[威脅和對策指南](https://technet.microsoft.com/library/hh125921(v=ws.10).aspx)。 如果系統管理員沒有仔細的稽核原則，建議您先從此處建議的設定開始著手，然後再進行修改和測試，再于其生產環境中執行。  
+此處顯示的 SCM 基準建議，以及我們建議用來協助偵測危害的設定，僅供系統管理員開始使用基準指南。 每個組織都必須自行決定其所面臨的威脅、其可接受的風險承受度，以及應啟用的稽核原則類別或子類別。 如需有關威脅的進一步資訊，請參閱[威脅和對策指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/hh125921(v=ws.10))。 如果系統管理員沒有仔細的稽核原則，建議您先從此處建議的設定開始著手，然後再進行修改和測試，再于其生產環境中執行。  
 
 這些建議適用于企業級電腦，Microsoft 會將其定義為具有平均安全性需求的電腦，而且需要高層級的操作功能。 需要較高安全性需求的實體應該考慮更嚴格的稽核原則。  
 
 > [!NOTE]  
-> Microsoft Windows 預設值和基準建議取自[Microsoft 安全性合規性管理員工具](https://technet.microsoft.com/library/cc677002.aspx)。  
+> Microsoft Windows 預設值和基準建議取自[Microsoft 安全性合規性管理員工具](/previous-versions/tn-archive/cc677002(v=technet.10))。  
 
 下列基準稽核原則設定建議用於不知道作用中、透過判斷敵人或惡意程式碼而成功攻擊的一般安全性電腦。  
 
 ## <a name="recommended-audit-policies-by-operating-system"></a>依作業系統建議的稽核原則  
 本節包含的資料表會列出適用于下列作業系統的審核設定建議：  
 
--   Windows Server 2016 
+-   Windows Server 2016 
 
 -   Windows Server 2012  
 
@@ -53,12 +53,12 @@ ms.locfileid: "80821341"
 
 |||  
 |-|-|  
-|**萬用字元**|**建議**|  
-|是|在一般案例中啟用|  
+|**表示法**|**建議**|  
+|YES|在一般案例中啟用|  
 |否|在一般案例中**不**啟用|  
 |IF|視需要針對特定案例啟用，或如果電腦上已安裝所需的審核角色或功能，則為|  
 |DC|在網域控制站上啟用|  
-|著|沒有建議|  
+|著|不推薦|  
 
 **Windows 10、Windows 8 和 Windows 7 Audit 設定建議**  
 
@@ -68,7 +68,7 @@ ms.locfileid: "80821341"
 |----------------------------------------|------------------------------------------|--------------------------------------------------|--------------------------------------------------|  
 |**帳戶登入**||||  
 |稽核認證驗證|不 不|是否|是的|  
-|稽核 Kerberos 驗證服務|||是的|  
+|Kerbero 驗證的新功能|||是的|  
 |稽核 Kerberos 服務票證作業|||是的|  
 |稽核其他帳戶登入事件|||是的|  
 |**帳戶管理**||||  
@@ -80,8 +80,8 @@ ms.locfileid: "80821341"
 |稽核使用者帳戶管理|是否|是否|是的|  
 |**詳細追蹤**||||  
 |稽核 DPAPI 活動|||是的|  
-|建立稽核程序||是否|是的|  
-|終止稽核程序||||  
+|稽核程序建立||是否|是的|  
+|稽核程序終止||||  
 |稽核 RPC 事件||||  
 |**DS 存取**||||  
 |稽核詳細目錄服務複寫||||  
@@ -100,14 +100,14 @@ ms.locfileid: "80821341"
 |稽核其他登入/登出事件||||  
 |稽核特殊登入|是否|是否|是的|  
 |**物件存取**||||  
-|已產生稽核應用程式||||  
+|稽核已產生的應用程式||||  
 |稽核憑證服務||||  
 |稽核詳細檔案共用||||  
 |稽核檔案共用||||  
 |稽核檔案系統||||  
 |稽核篩選平台連線||||  
 |稽核篩選平台封包丟棄||||  
-|稽核控點操作||||  
+|稽核控制碼操作||||  
 |稽核核心物件||||  
 |稽核其他物件存取事件||||  
 |稽核登錄||||  
@@ -124,15 +124,15 @@ ms.locfileid: "80821341"
 |**許可權使用**||||  
 |稽核非機密特殊權限使用情況||||  
 |稽核其他特殊權限使用事件||||  
-|稽核機密特殊權限使用情況||||  
-|**筆記本電腦**||||  
-|稽核 IPsec 驅動程式||是的|是的|  
+|稽核機密特殊權限使用||||  
+|**系統**||||  
+|稽核 IPSec 驅動程式||是的|是的|  
 |稽核其他系統事件|是的|||  
 |稽核安全性狀態變更|是否|是的|是的|  
 |稽核安全性系統延伸||是的|是的|  
 |稽核系統整合性|是的|是的|是的|  
 |**全域物件存取的審核**||||  
-|稽核 IPsec 驅動程式||||  
+|稽核 IPSec 驅動程式||||  
 |稽核其他系統事件||||  
 |稽核安全性狀態變更||||  
 |稽核安全性系統延伸||||  
@@ -146,7 +146,7 @@ ms.locfileid: "80821341"
 |----------------------------------------|------------------------------------------|--------------------------------------------------|--------------------------------------------------|  
 |**帳戶登入**||||  
 |稽核認證驗證|不 不|是的|是的|  
-|稽核 Kerberos 驗證服務|||是的|  
+|Kerbero 驗證的新功能|||是的|  
 |稽核 Kerberos 服務票證作業|||是的|  
 |稽核其他帳戶登入事件|||是的|  
 |**帳戶管理**||||  
@@ -158,8 +158,8 @@ ms.locfileid: "80821341"
 |稽核使用者帳戶管理|是否|是的|是的|  
 |**詳細追蹤**||||  
 |稽核 DPAPI 活動|||是的|  
-|建立稽核程序||是否|是的|  
-|終止稽核程序||||  
+|稽核程序建立||是否|是的|  
+|稽核程序終止||||  
 |稽核 RPC 事件||||  
 |**DS 存取**||||  
 |稽核詳細目錄服務複寫||||  
@@ -178,14 +178,14 @@ ms.locfileid: "80821341"
 |稽核其他登入/登出事件|||是的|  
 |稽核特殊登入|是否|是否|是的|  
 |**物件存取**||||  
-|已產生稽核應用程式||||  
+|稽核已產生的應用程式||||  
 |稽核憑證服務||||  
 |稽核詳細檔案共用||||  
 |稽核檔案共用||||  
 |稽核檔案系統||||  
 |稽核篩選平台連線||||  
 |稽核篩選平台封包丟棄||||  
-|稽核控點操作||||  
+|稽核控制碼操作||||  
 |稽核核心物件||||  
 |稽核其他物件存取事件||||  
 |稽核登錄||||  
@@ -202,15 +202,15 @@ ms.locfileid: "80821341"
 |**許可權使用**||||  
 |稽核非機密特殊權限使用情況||||  
 |稽核其他特殊權限使用事件||||  
-|稽核機密特殊權限使用情況||||  
-|**筆記本電腦**||||  
-|稽核 IPsec 驅動程式||是的|是的|  
+|稽核機密特殊權限使用||||  
+|**系統**||||  
+|稽核 IPSec 驅動程式||是的|是的|  
 |稽核其他系統事件|是的|||  
 |稽核安全性狀態變更|是否|是的|是的|  
 |稽核安全性系統延伸||是的|是的|  
 |稽核系統整合性|是的|是的|是的|  
 |**全域物件存取的審核**||||  
-|稽核 IPsec 驅動程式||||  
+|稽核 IPSec 驅動程式||||  
 |稽核其他系統事件||||  
 |稽核安全性狀態變更||||  
 |稽核安全性系統延伸||||  
@@ -284,15 +284,15 @@ ms.locfileid: "80821341"
 ## <a name="additional-information-for-monitoring-active-directory-domain-services"></a>監視 Active Directory Domain Services 的其他資訊  
 請參閱下列連結，以取得有關監視 AD DS 的其他資訊：  
   
--   [全域物件存取審核非常神奇](https://blogs.technet.com/b/askds/archive/2011/03/10/global-object-access-auditing-is-magic.aspx)-提供有關設定和使用已新增至 windows 7 和 windows Server 2008 R2 之 Advanced Audit Policy Configuration 的資訊。  
+-   [全域物件存取審核非常神奇](/archive/blogs/askds/global-object-access-auditing-is-magic)-提供有關設定和使用已新增至 windows 7 和 windows Server 2008 R2 之 Advanced Audit Policy Configuration 的資訊。  
 
--   [Windows 2008 中的「審核」變更簡介](https://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx)-引進 windows 2008 中所做的審核變更。  
+-   [Windows 2008 中的「審核」變更簡介](/archive/blogs/askds/introducing-auditing-changes-in-windows-2008)-引進 windows 2008 中所做的審核變更。  
 
--   [Vista 和2008中](https://blogs.technet.com/b/askds/archive/2007/11/16/cool-auditing-tricks-in-vista-and-2008.aspx)的非經常性的審核技巧-說明 Windows Vista 和 windows Server 2008 中的有趣新功能，可用於疑難排解問題或查看環境中發生的狀況。  
+-   [Vista 和2008中](/archive/blogs/askds/cool-auditing-tricks-in-vista-and-2008)的非經常性的審核技巧-說明 Windows Vista 和 windows Server 2008 中的有趣新功能，可用於疑難排解問題或查看環境中發生的狀況。  
 
--   [Windows server 2008 和 Windows vista 中的一次性審核](https://blogs.technet.com/b/askds/archive/2008/03/27/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista.aspx)-包含 windows server 2008 和 windows vista 中包含的審核功能和資訊的編譯。  
+-   [Windows server 2008 和 Windows vista 中的一次性審核](/archive/blogs/askds/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista)-包含 windows server 2008 和 windows vista 中包含的審核功能和資訊的編譯。  
 
--   [AD DS 審核逐步指南](https://technet.microsoft.com/library/a9c25483-89e2-4202-881c-ea8e02b4b2a5.aspx)-說明 Windows Server 2008 中的新 Active Directory Domain Services （AD DS）審核功能。 它也會提供執行這項新功能的程式。  
+-   [AD DS 審核逐步指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731607(v=ws.10))-說明 Windows Server 2008 中的新 Active Directory Domain Services （AD DS）審核功能。 它也會提供執行這項新功能的程式。  
 
 ## <a name="general-list-of-security-event-id-recommendation-criticalities"></a>安全性事件識別碼建議嚴重性的一般清單  
 所有事件識別碼建議都會伴隨著重要性評等，如下所示：  

@@ -8,20 +8,20 @@ ms.topic: article
 ms.assetid: 3c8feff2-cae1-4376-9dfa-21ad3e4d5d99
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: f4675e8f465cc44597e16b0312911cae28bd7a1a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 226277b1247a365e3d46190b8ff3ae361f295204
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860491"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954171"
 ---
 # <a name="configure-a-multi-forest-deployment"></a>Configure a Multi-Forest Deployment
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 本主題說明如何在數個潛在案例中設定遠端存取多樹系部署。 所有案例均假設 DirectAccess 目前已部署於名為 Forest1 的單一樹系上，而您正在設定 DirectAccess 以便與名為 Forest2 的新樹系一起運作。  
   
-## <a name="access-resources-from-forest2"></a><a name="AccessForest2"></a>從 Forest2 存取資源  
+## <a name="access-resources-from-forest2"></a><a name="AccessForest2"></a>存取 Forest2 的資源  
 在這個案例中，DirectAccess 已經部署於 Forest1，而且已設定為允許 Forest1 的用戶端存取公司網路。 根據預設，透過 DirectAccess 連線的用戶端只能存取 Forest1 中的資源，無法存取 Forest2 中的任何伺服器。  
   
 #### <a name="to-enable-directaccess-clients-to-access-resources-from-forest2"></a>讓 DirectAccess 用戶端可以存取 Forest2 的資源  
@@ -30,14 +30,14 @@ ms.locfileid: "80860491"
   
 2.  如果 IPv6 已部署於內部網路中，請在 Forest2 中新增相關的內部 IPv6 首碼。  
   
-## <a name="enable-clients-from-forest2-to-connect-via-directaccess"></a><a name="EnableForest2DA"></a>允許來自 Forest2 的用戶端透過 DirectAccess 連線  
+## <a name="enable-clients-from-forest2-to-connect-via-directaccess"></a><a name="EnableForest2DA"></a>讓 Forest2 的用戶端可以透過 DirectAccess 連線  
 在這個案例中，您可以設定遠端存取部署，以允許 Forest2 的用戶端存取公司網路。 假設您已針對 Forest2 中的用戶端電腦建立必要的安全性群組。   
   
 #### <a name="to-allow-clients-from-forest2-to-access-the-corporate-network"></a>允許 Forest2 的用戶端存取公司網路  
   
 1.  新增 Forest2 的用戶端的安全性群組。  
   
-2.  如果 Forest2 的 DNS 尾碼不是 Forest1 DNS 尾碼的一部分，請在 Forest2 中新增具有用戶端網域尾碼的 NRPT 規則，以啟用網域控制站的存取權以進行驗證，並選擇性地將 Forest2 中網域的尾碼新增至 DNS尾碼搜尋清單。 
+2.  如果 Forest2 的 DNS 尾碼不是 Forest1 DNS 尾碼的一部分，請在 Forest2 中新增具有用戶端網域尾碼的 NRPT 規則，以啟用網域控制站的存取權以進行驗證，並選擇性地將 Forest2 中網域的尾碼新增至 DNS 尾碼搜尋清單。 
   
 3.  在 Forest2 中新增內部 IPv6 首碼，啟用 DirectAccess 來建立網域控制站的 IPsec 通道以進行驗證。  
   
@@ -69,12 +69,12 @@ ms.locfileid: "80860491"
   
 -   帳戶樹系-拓撲中的所有其他樹系。  
   
-PowerShell 指令碼 PKISync.ps1 為此程序的必要指令碼。 請參閱 [AD CS：適用於跨樹系憑證註冊的 PKISync.ps1 指令碼](https://technet.microsoft.com/library/ff961506.aspx)。  
+PowerShell 指令碼 PKISync.ps1 為此程序的必要指令碼。 請參閱 [AD CS：適用於跨樹系憑證註冊的 PKISync.ps1 指令碼](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff961506(v=ws.10))。  
   
 > [!NOTE]  
-> 本主題包含可讓您用以自動化文中所述部分程序的範例 Windows PowerShell 指令程式。 如需詳細資訊，請參閱[使用 Cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693).  
+> 本主題包含可讓您用來將部分所述的程序自動化的 Windows PowerShell Cmdlet 範例。 如需詳細資訊，請參閱[使用 Cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
-### <a name="configure-cas-as-certificate-publishers"></a><a name="BKMK_CertPub"></a>將 Ca 設定為憑證發行者  
+### <a name="configure-cas-as-certificate-publishers"></a><a name="BKMK_CertPub"></a>設定 CA 做為憑證發行者  
   
 1.  從提升權限的命令提示字元執行下列命令，在所有樹系的所有企業 CA 中啟用 LDAP 轉介支援：  
   
@@ -96,7 +96,7 @@ PowerShell 指令碼 PKISync.ps1 為此程序的必要指令碼。 請參閱 [AD
     certutil -config <Computer-Name>\<Root-CA-Name> -ca.cert <root-ca-cert-filename.cer>  
     ```  
   
-    （如果您在根 CA 上執行命令，您可以省略連線資訊-config < 電腦名稱稱 >\\< 根 CA 名稱 >）  
+    （如果您在根 CA 上執行命令，您可以省略連線資訊-config <電腦名稱稱>\\<根 Ca 名稱>）  
   
     1.  從提升權限的命令提示字元執行下列命令，在帳戶樹系 CA 上匯入上一個步驟的根 CA 憑證：  
   
@@ -104,7 +104,7 @@ PowerShell 指令碼 PKISync.ps1 為此程序的必要指令碼。 請參閱 [AD
         certutil -dspublish -f <root-ca-cert-filename.cer> RootCA  
         ```  
   
-    2.  將資源樹系憑證範本的讀取/寫入權限授與 \<帳戶樹系\>\\< 系統管理員帳戶\>。  
+    2.  將資源樹系憑證範本的讀取/寫入權限授與 \<Account Forest\> \\<系統管理員帳戶 \> 。  
   
     3.  從提升權限的命令提示字元執行下列命令，以擷取所有資源樹系企業 CA 憑證：  
   
@@ -112,7 +112,7 @@ PowerShell 指令碼 PKISync.ps1 為此程序的必要指令碼。 請參閱 [AD
         certutil -config <Computer-Name>\<Enterprise-CA-Name> -ca.cert <enterprise-ca-cert-filename.cer>  
         ```  
   
-        （如果您在根 CA 上執行命令，您可以省略連線資訊-config < 電腦名稱稱 >\\< 根 CA 名稱 >）  
+        （如果您在根 CA 上執行命令，您可以省略連線資訊-config <電腦名稱稱>\\<根 Ca 名稱>）  
   
     4.  從提升權限的命令提示字元執行下列命令，在帳戶樹系 CA 上匯入上一個步驟的企業 CA 憑證：  
   
@@ -139,7 +139,7 @@ PowerShell 指令碼 PKISync.ps1 為此程序的必要指令碼。 請參閱 [AD
   
 -   在所有帳戶樹系 CA 上發行最新匯入的憑證範本。  
   
-### <a name="extract-and-synchronize-the-ca"></a><a name="BKMK_Extract"></a>將 CA 解壓縮並同步處理  
+### <a name="extract-and-synchronize-the-ca"></a><a name="BKMK_Extract"></a>擷取與同步 CA  
   
 1.  從提升權限的命令提示字元執行下列命令，從帳戶樹系擷取所有企業 CA 憑證：  
   
@@ -169,21 +169,21 @@ DNS 尾碼搜尋清單允許用戶端使用簡短標籤名稱，而不需使用 
   
 ##### <a name="to-add-a-dns-suffix-to-the-nrpt-table-and-domain-suffixes-to-the-dns-suffix-search-list"></a>將 DNS 尾碼新增到 NRPT 表格並將網域尾碼新增到 DNS 尾碼搜尋清單  
   
-1.  在 [遠端存取管理] 主控台中間窗格的 [步驟 3 基礎結構伺服器] 區域中，按一下 [編輯]。  
+1.  在 [遠端存取管理] 主控台中間窗格的 [步驟 3 基礎結構伺服器]**** 區域中，按一下 [編輯]****。  
   
-2.  在 [網路位置伺服器] 頁面上，按 [下一步]。  
+2.  在 [網路位置伺服器]**** 頁面上，按 [下一步]****。  
   
-3.  在 [DNS] 頁面的表格中，輸入屬於 Forest 2 中公司網路一部分的任何其他名稱尾碼。 在 [DNS 伺服器位址] 中，手動輸入 DNS 伺服器位址，或者按一下 [偵測]。 如果您未輸入位址，新的專案會套用為 NRPT 豁免。 然後按 **[下一步]** 。  
+3.  在 [DNS]**** 頁面的表格中，輸入屬於 Forest 2 中公司網路一部分的任何其他名稱尾碼。 在 [DNS 伺服器位址]**** 中，手動輸入 DNS 伺服器位址，或者按一下 [偵測]****。 如果您未輸入位址，新的專案會套用為 NRPT 豁免。 然後按一下 [下一步]。  
   
-4.  選擇性：在 [DNS 尾碼搜尋清單] 頁面的 [新尾碼] 方塊中輸入尾碼，然後按一下 [新增] 來新增任意的 DNS 尾碼。 然後按 **[下一步]** 。  
+4.  選擇性：在 [DNS 尾碼搜尋清單]**** 頁面的 [新尾碼]**** 方塊中輸入尾碼，然後按一下 [新增]**** 來新增任意的 DNS 尾碼。 然後按一下 [下一步]。  
   
-5.  在 [管理] 頁面上，按一下 [完成]。  
+5.  在 [管理]**** 頁面上，按一下 [完成]****。  
   
-6.  在 [遠端存取管理] 主控台的中間窗格中，按一下 [完成]。  
+6.  在 [遠端存取管理] 主控台的中間窗格中，按一下 [完成]****。  
   
-7.  在 [遠端存取檢閱] 對話方塊中，按一下 [套用]。  
+7.  在 [遠端存取檢閱]**** 對話方塊中，按一下 [套用]****。  
   
-8.  在 [套用遠端存取安裝精靈設定] 對話方塊上，按一下 [關閉]。  
+8.  在 [套用遠端存取安裝精靈設定]**** 對話方塊上，按一下 [關閉]****。  
   
 ### <a name="add-internal-ipv6-prefix"></a><a name="IPv6Prefix"></a>新增內部 IPv6 首碼  
   
@@ -194,38 +194,38 @@ DNS 尾碼搜尋清單允許用戶端使用簡短標籤名稱，而不需使用 
   
 ##### <a name="to-add-an-ipv6-prefix"></a>新增 IPv6 首碼  
   
-1.  在 [遠端存取管理] 主控台中間窗格的 [步驟 2 遠端存取伺服器] 區域中，按一下 [編輯]。  
+1.  在 [遠端存取管理] 主控台中間窗格的 [步驟 2 遠端存取伺服器]**** 區域中，按一下 [編輯]****。  
   
-2.  在 [遠端存取伺服器安裝精靈] 中，按一下 [首碼設定]。  
+2.  在 [遠端存取伺服器安裝精靈] 中，按一下 [首碼設定]****。  
   
-3.  在 [首碼設定] 頁面的 [內部網路 IPv6 首碼] 中，新增任何其他的 IPv6 首碼並以分號分隔，例如，2001:db8:1::/64;2001:db8:2::/64。 然後按 **[下一步]** 。  
+3.  在 [首碼設定]**** 頁面的 [內部網路 IPv6 首碼]**** 中，新增任何其他的 IPv6 首碼並以分號分隔，例如，2001:db8:1::/64;2001:db8:2::/64。 然後按一下 [下一步]。  
   
-4.  在 [驗證] 頁面上，按一下 [完成]。  
+4.  在 [驗證]**** 頁面上，按一下 [完成]****。  
   
-5.  在 [遠端存取管理] 主控台的中間窗格中，按一下 [完成]。  
+5.  在 [遠端存取管理] 主控台的中間窗格中，按一下 [完成]****。  
   
-6.  在 [遠端存取檢閱] 對話方塊中，按一下 [套用]。  
+6.  在 [遠端存取檢閱]**** 對話方塊中，按一下 [套用]****。  
   
-7.  在 [套用遠端存取安裝精靈設定] 對話方塊上，按一下 [關閉]。  
+7.  在 [套用遠端存取安裝精靈設定]**** 對話方塊上，按一下 [關閉]****。  
   
 ### <a name="add-client-security-groups"></a><a name="SGs"></a>新增用戶端安全性群組  
 若要從 Forest2 啟用 Windows 8 用戶端電腦以透過 DirectAccess 存取資源，您必須將安全性群組從 Forest2 新增到遠端存取部署。  
   
 ##### <a name="to-add-windows-8-client-security-groups"></a>新增 Windows 8 用戶端安全性群組  
   
-1.  在 [遠端存取管理] 主控台中間窗格的 [步驟 1 遠端用戶端] 區域中，按一下 [編輯]。  
+1.  在 [遠端存取管理] 主控台中間窗格的 [步驟 1 遠端用戶端]**** 區域中，按一下 [編輯]****。  
   
-2.  在 [DirectAccess 用戶端安裝精靈] 中，按一下 [選取群組]，然後在 [選取群組] 頁面上按一下 [新增]。  
+2.  在 [DirectAccess 用戶端安裝精靈] 中，按一下 [選取群組]****，然後在 [選取群組]**** 頁面上按一下 [新增]****。  
   
-3.  在 [選取群組] 對話方塊中，選取包含 DirectAccess 用戶端電腦的安全性群組。 然後按 **[下一步]** 。  
+3.  在 [選取群組]**** 對話方塊中，選取包含 DirectAccess 用戶端電腦的安全性群組。 然後按一下 [下一步]。  
   
-4.  在 [網路連線助理] 頁面上，按一下 [完成]。  
+4.  在 [網路連線助理]**** 頁面上，按一下 [完成]****。  
   
-5.  在 [遠端存取管理] 主控台的中間窗格中，按一下 [完成]。  
+5.  在 [遠端存取管理] 主控台的中間窗格中，按一下 [完成]****。  
   
-6.  在 [遠端存取檢閱] 對話方塊中，按一下 [套用]。  
+6.  在 [遠端存取檢閱]**** 對話方塊中，按一下 [套用]****。  
   
-7.  在 [套用遠端存取安裝精靈設定] 對話方塊上，按一下 [關閉]。  
+7.  在 [套用遠端存取安裝精靈設定]**** 對話方塊上，按一下 [關閉]****。  
   
 若要從 Forest2 啟用 Windows 7 用戶端電腦，以便在啟用多網站時透過 DirectAccess 存取資源，您必須將安全性群組從 Forest2 新增至每個進入點的遠端存取部署。 如需新增 Windows 7 安全性群組的相關資訊，請參閱3.6 中**用戶端支援**頁面的說明。 啟用多網站部署。  
   
@@ -236,9 +236,7 @@ DNS 尾碼搜尋清單允許用戶端使用簡短標籤名稱，而不需使用 
   
 ##### <a name="to-refresh-the-management-servers-list"></a>重新整理管理伺服器清單  
   
-1.  在 [遠端存取管理] 主控台中，按一下 [設定]，然後在 [工作] 窗格中，按一下 [重新整理管理伺服器]。  
+1.  在 [遠端存取管理] 主控台中，按一下 [設定]****，然後在 [工作]**** 窗格中，按一下 [重新整理管理伺服器]****。  
   
-2.  在 [重新整理管理伺服器] 對話方塊上，按一下 [關閉]。  
+2.  在 [重新整理管理伺服器]**** 對話方塊上，按一下 [關閉]****。  
   
-
-

@@ -7,12 +7,12 @@ ms.technology: storage-spaces
 ms.topic: article
 author: adagashe
 ms.date: 01/10/2020
-ms.openlocfilehash: d129772a16301c688c81d3a55f4a60c559fce0c9
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 72d08b3e4461eeea07e161de1073f5320830028c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474055"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953982"
 ---
 # <a name="use-azure-monitor-to-send-emails-for-health-service-faults"></a>使用 Azure 監視器來傳送健全狀況服務錯誤的電子郵件
 
@@ -35,11 +35,11 @@ Azure 監視器可藉由提供全方位的解決方案，以便收集、分析�
 
 Azure 監視器所收集的所有資料均符合下列兩個基本類型之一：計量和記錄。
 
-1. [計量](https://docs.microsoft.com/azure/azure-monitor/platform/data-collection#metrics)為數值，可描述系統在特定時間點的某個方面。 它們屬於輕量型，而且能夠支援近乎即時的案例。 您會在 Azure 入口網站的 [總覽] 頁面中，看到 Azure 監視器所收集的資料。
+1. [計量](/azure/azure-monitor/platform/data-collection#metrics)為數值，可描述系統在特定時間點的某個方面。 它們屬於輕量型，而且能夠支援近乎即時的案例。 您會在 Azure 入口網站的 [總覽] 頁面中，看到 Azure 監視器所收集的資料。
 
 ![計量瀏覽器中的計量內嵌影像](media/configure-azure-monitor/metrics.png)
 
-2. [記錄](https://docs.microsoft.com/azure/azure-monitor/platform/data-collection#logs)包含不同類型的資料，而資料會針對每個類型組織成不同的屬性集。 除了效能資料，還會將事件和追蹤之類的遙測資料儲存為記錄，讓它能夠全部組合在一起進行分析。 可以使用[查詢](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview)分析 Azure 監視器收集的記錄資料，以快速擷取、彙總和分析收集的資料。 您可以在 Azure 入口網站中使用 [Log Analytics](https://docs.microsoft.com/azure/azure-monitor/log-query/portals) 來建立和測試查詢，然後使用這些工具直接分析資料，或儲存查詢以便搭配[視覺效果](https://docs.microsoft.com/azure/azure-monitor/visualizations)或[警示規則](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-overview)使用。
+2. [記錄](/azure/azure-monitor/platform/data-collection#logs)包含不同類型的資料，而資料會針對每個類型組織成不同的屬性集。 除了效能資料，還會將事件和追蹤之類的遙測資料儲存為記錄，讓它能夠全部組合在一起進行分析。 可以使用[查詢](/azure/azure-monitor/log-query/log-query-overview)分析 Azure 監視器收集的記錄資料，以快速擷取、彙總和分析收集的資料。 您可以在 Azure 入口網站中使用 [Log Analytics](/azure/azure-monitor/log-query/portals) 來建立和測試查詢，然後使用這些工具直接分析資料，或儲存查詢以便搭配[視覺效果](/azure/azure-monitor/visualizations)或[警示規則](/azure/azure-monitor/platform/alerts-overview)使用。
 
 ![中內嵌的記錄影像](media/configure-azure-monitor/logs.png)
 
@@ -76,9 +76,9 @@ get-storagesubsystem clus* | Set-StorageHealthSetting -Name "Platform.ETW.MasTyp
 
 既然您已在叢集上設定適當的記錄，下一步就是正確地設定 log analytics。
 
-為了提供總覽， [Azure Log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/agent-windows)可直接從您資料中心或其他雲端環境中的實體或虛擬 Windows 電腦，將資料收集到單一存放庫，以進行詳細的分析和相互關聯。
+為了提供總覽， [Azure Log Analytics](/azure/azure-monitor/platform/agent-windows)可直接從您資料中心或其他雲端環境中的實體或虛擬 Windows 電腦，將資料收集到單一存放庫，以進行詳細的分析和相互關聯。
 
-若要了解支援的組態，請檢閱[支援的 Windows 作業系統](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#supported-windows-operating-systems)和[網路防火牆組態](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#network-firewall-requirements)。
+若要了解支援的組態，請檢閱[支援的 Windows 作業系統](/azure/azure-monitor/platform/log-analytics-agent#supported-windows-operating-systems)和[網路防火牆組態](/azure/azure-monitor/platform/log-analytics-agent#network-firewall-requirements)。
 
 如果您沒有 Azure 訂用帳戶，請在開始前建立[免費帳戶](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)。
 
@@ -88,7 +88,7 @@ get-storagesubsystem clus* | Set-StorageHealthSetting -Name "Platform.ETW.MasTyp
 
 #### <a name="create-a-workspace"></a>建立工作區
 
-如需下面所列步驟的詳細資訊，請參閱 [Azure 監視器文件](https://docs.microsoft.com/azure/azure-monitor/learn/quick-collect-windows-computer)。
+如需下面所列步驟的詳細資訊，請參閱 [Azure 監視器文件](/azure/azure-monitor/learn/quick-collect-windows-computer)。
 
 1. 在 Azure 入口網站中，按一下 [所有服務]。 在資源清單中輸入 **Log Analytics**。 當您開始輸入時，清單會根據您輸入的文字進行篩選。 選取 [Log Analytics]。<br><br>
 
@@ -124,8 +124,8 @@ get-storagesubsystem clus* | Set-StorageHealthSetting -Name "Platform.ETW.MasTyp
 3. 閱讀 [授權條款] 頁面上的授權，然後按一下 [我接受]。
 4. 在 [目的資料夾] 頁面上，變更或保留預設的安裝資料夾，然後按 [下一步]。
 5. 在 [代理程式安裝選項] 頁面上，選擇將代理程式連線到 Azure Log Analytics，然後按 [下一步]。
-6. 在 [Azure Log Analytics]**** 頁面上，執行下列操作：
-   1. 貼上您先前複製的**工作區識別碼**和**工作區金鑰 (主要金鑰)**。
+6. 在 [Azure Log Analytics] 頁面上，執行下列操作：
+   1. 貼上您先前複製的**工作區識別碼**和**工作區金鑰 (主要金鑰)** 。
     a. 如果電腦需要透過 Proxy 伺服器與 Log Analytics 服務進行通訊，請按一下 [進階]，然後提供 Proxy 伺服器的 URL 和連接埠號碼。  如果您的 Proxy 伺服器會要求驗證，請輸入要向 Proxy 伺服器進行驗證的使用者名稱和密碼，然後按 [下一步]。
 7. 提供完必要的組態設定之後，按 [下一步]。<br><br> ![貼上工作區識別碼和主索引鍵](media/configure-azure-monitor/log-analytics-mma-setup-laworkspace.png)<br><br>
 8. 在 [安裝準備就緒] 頁面上，檢閱您的選擇，然後按一下 [安裝]。
@@ -135,7 +135,7 @@ get-storagesubsystem clus* | Set-StorageHealthSetting -Name "Platform.ETW.MasTyp
 
 ![MMA 對 Log Analytics 的連線狀態](media/configure-azure-monitor/log-analytics-mma-laworkspace-status.png)
 
-若要了解支援的組態，請檢閱[支援的 Windows 作業系統](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#supported-windows-operating-systems)和[網路防火牆組態](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#network-firewall-requirements)。
+若要了解支援的組態，請檢閱[支援的 Windows 作業系統](/azure/azure-monitor/platform/log-analytics-agent#supported-windows-operating-systems)和[網路防火牆組態](/azure/azure-monitor/platform/log-analytics-agent#network-firewall-requirements)。
 
 ## <a name="setting-up-alerts-using-windows-admin-center"></a>使用 Windows 管理中心設定警示
 
@@ -164,7 +164,7 @@ get-storagesubsystem clus* | Set-StorageHealthSetting -Name "Platform.ETW.MasTyp
 
 Log Analytics 可以從 Windows 事件記錄檔收集事件，以及收集您針對長期分析和報告指定的效能計數器，並在偵測到特定條件時採取動作。  請依照下列步驟來設定從 Windows 事件記錄檔收集事件，以及收集數個常用的效能計數器，來開始進行作業。
 
-1. 在 Azure 入口網站中，按一下左下角的 [更多服務]。 在資源清單中輸入 **Log Analytics**。 當您開始輸入時，清單會根據您輸入的文字進行篩選。 選取 [Log Analytics]。
+1. 在 Azure 入口網站中，按一下左下角的 [更多服務]。 在資源清單中輸入 **Log Analytics**。 當您開始輸入時，清單會根據您的輸入來篩選。 選取 [Log Analytics]。
 2. 選取 [進階設定]。<br><br> ![Log Analytics 進階設定](media/configure-azure-monitor/log-analytics-advanced-settings-01.png)<br><br>
 3. 選取 [資料]，然後選取 [Windows 事件記錄]。
 4. 在這裡輸入下列名稱來新增健全狀況服務事件通道，然後按一下加號 **+** 。
@@ -206,14 +206,14 @@ Event
 Event | where (EventLevelName == "Error")
 ```
 
-![Filter](media/configure-azure-monitor/log-analytics-portal-eventlist-02.png)
+![篩選](media/configure-azure-monitor/log-analytics-portal-eventlist-02.png)
 
 在您針對所關心的事件進行 approriate 查詢之後，請加以儲存以供下一個步驟使用。
 
 ### <a name="create-alerts"></a>建立警示
 現在，讓我們逐步解說建立警示的範例。
 
-1. 在 Azure 入口網站中，按一下 [所有服務]。 在資源清單中輸入 **Log Analytics**。 當您開始輸入時，清單會根據您輸入的文字進行篩選。 選取 [Log Analytics]。
+1. 在 Azure 入口網站中，按一下 [所有服務]。 在資源清單中輸入 **Log Analytics**。 當您開始輸入時，清單會根據您的輸入來篩選。 選取 [Log Analytics]。
 2. 在左側窗格中選取 [警示]，然後按一下頁面頂端的 [新增警示規則]，即可建立新的警示。<br><br> ![建立新的警示規則](media/configure-azure-monitor/alert-rule-02.png)<br>
 3. 第一步驟，在 [建立警示]**** 區段下選取您的 Log Analytics 工作區作為資源，因為這是以記錄為基礎的警示訊號。  從下拉式清單中選擇特定**訂用帳戶**可篩選結果 (如果您有多個訂用帳戶)，其中包含稍早建立的 Log Analytics 工作區。  從下拉式清單選取 **Log Analytics** 可篩選**資源類型**。  最後，選取**資源** **DefaultLAWorkspace**，然後按一下 [完成]。<br><br> ![建立警示步驟 1 的工作](media/configure-azure-monitor/alert-rule-03.png)<br>
 4. 在 [警示準則] 區段下按一下 [新增準則]，可選取我們已儲存的查詢，然後指定警示規則所遵循的邏輯。
@@ -249,5 +249,5 @@ Azure 中的範例警示會像下面這樣 (僅供參考)。
 ## <a name="additional-references"></a>其他參考
 
 - [儲存空間直接存取總覽](storage-spaces-direct-overview.md)
-- 如需詳細資訊，請閱讀[Azure 監視器檔](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-viewdata)。
+- 如需詳細資訊，請閱讀[Azure 監視器檔](/azure/azure-monitor/learn/tutorial-viewdata)。
 - 如需如何[連接至其他 Azure 混合式服務](../../manage/windows-admin-center/azure/index.md)的總覽，請參閱此。

@@ -8,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 4a36f27bc64e6e135451818b27dc2319f18655f4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e62f64c998e13ca6b64c3a7c89ad8e504ab26e82
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80821181"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953570"
 ---
 # <a name="implementing-secure-administrative-hosts"></a>實作安全的管理主機
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 安全的系統管理主機是已特別針對建立安全平臺所設定的工作站或伺服器，其特殊許可權帳戶可以在 Active Directory 或網域控制站、已加入網域的系統，以及在已加入網域的系統上執行的應用程式，在其中執行系統管理工作。 在此情況下，「特殊許可權帳戶」不僅指的是 Active Directory 中最具特殊許可權群組成員的帳戶，還會參考任何已委派許可權的帳戶，以允許執行系統管理工作。  
   
@@ -69,7 +69,7 @@ ms.locfileid: "80821181"
 如果您在系統管理主機策略中執行跳躍伺服器，就應該使用內建的安全性設定向導來設定服務、登錄、audit 和防火牆設定，以減少伺服器的受攻擊面。 當您收集並設定 [安全性設定] Wizard 設定時，可以將設定轉換成用來在所有跳躍伺服器上強制執行一致基準設定的 GPO。 您可以進一步編輯 GPO 來執行跳躍伺服器特定的安全性設定，並且可以結合所有設定與從 Microsoft 安全性合規性管理員解壓縮的其他基準設定。  
   
 ### <a name="microsoft-security-compliance-manager"></a>Microsoft Security Compliance Manager  
-[Microsoft 安全性合規性管理員](https://technet.microsoft.com/library/cc677002.aspx)是一項免費的工具，可整合 Microsoft 建議的安全性設定（根據作業系統版本和角色設定），並以單一工具和 UI 收集，以用於建立和設定網域控制站的基準安全性設定。 Microsoft 安全性合規性管理員範本可以與 [安全性設定] [Wizard] 設定結合，為在 Active Directory 中跳躍伺服器所在的 Ou 上部署的 Gpo 產生完整的設定基準。  
+[Microsoft 安全性合規性管理員](/previous-versions/tn-archive/cc677002(v=technet.10))是一項免費的工具，可整合 Microsoft 建議的安全性設定（根據作業系統版本和角色設定），並以單一工具和 UI 收集，以用於建立和設定網域控制站的基準安全性設定。 Microsoft 安全性合規性管理員範本可以與 [安全性設定] [Wizard] 設定結合，為在 Active Directory 中跳躍伺服器所在的 Ou 上部署的 Gpo 產生完整的設定基準。  
   
 > [!NOTE]  
 > 在撰寫本文時，Microsoft 安全性合規性管理員不會包含跳躍伺服器或其他安全系統管理主機的特定設定，但仍可使用安全性合規性管理員（SCM）來建立系統管理主機的初始基準。 不過，若要適當地保護主機，您應該將額外的安全性設定套用到高度安全的工作站和伺服器。  
@@ -83,7 +83,7 @@ ms.locfileid: "80821181"
 您應該允許經過授權的使用者進行互動式登入，而且應該移除或甚至封鎖伺服器存取不需要的其他登入類型。  
   
 ### <a name="patch-and-configuration-management"></a>修補和設定管理  
-較小的組織可能會依賴 Windows Update 或[Windows Server Update Services](https://technet.microsoft.com/windowsserver/bb332157) （WSUS）之類的供應專案來管理 Windows 系統更新的部署，而較大型的組織可能會實行企業修補程式和設定管理軟體，例如 Microsoft 端點 Configuration Manager。 無論您用來將更新部署至一般伺服器和工作站擴展的機制為何，您都應該考慮針對高度安全的系統（例如網域控制站、憑證授權單位單位和管理主機）進行個別部署。 藉由將這些系統與一般管理基礎結構隔離，如果您的管理軟體或服務帳戶遭到入侵，就無法輕易地將危害延伸到基礎結構中最安全的系統。  
+較小的組織可能會依賴 Windows Update 或[Windows Server Update Services](/windows/deployment/deploy-whats-new) （WSUS）之類的供應專案來管理 Windows 系統更新的部署，而較大型的組織可能會實行企業修補程式和設定管理軟體，例如 Microsoft 端點 Configuration Manager。 無論您用來將更新部署至一般伺服器和工作站擴展的機制為何，您都應該考慮針對高度安全的系統（例如網域控制站、憑證授權單位單位和管理主機）進行個別部署。 藉由將這些系統與一般管理基礎結構隔離，如果您的管理軟體或服務帳戶遭到入侵，就無法輕易地將危害延伸到基礎結構中最安全的系統。  
   
 雖然您不應該為安全系統執行手動更新程式，但您應該設定不同的基礎結構來更新安全系統。 即使在非常大型的組織中，此基礎結構通常也可以透過專用的 WSUS 伺服器和 Gpo 來執行，以保護系統。  
   
@@ -157,7 +157,7 @@ ms.locfileid: "80821181"
 ### <a name="implementing-secure-administrative-workstations-and-jump-servers"></a>執行安全的系統管理工作站和跳躍伺服器  
 除了保護系統管理工作站或結合它們之外，您還可以執行安全跳躍伺服器，而系統管理使用者可以使用 RDP 和智慧卡連線到跳躍伺服器，以執行系統管理工作。  
   
-跳躍伺服器應該設定為執行遠端桌面閘道角色，讓您能夠對跳躍伺服器和將從它管理的目的地伺服器執行限制。 可能的話，您也應該安裝 Hyper-v 角色，並建立[個人虛擬桌面](https://technet.microsoft.com/library/dd759174.aspx)或其他每一使用者的虛擬機器，以供系統管理使用者用於跳躍伺服器上的工作。  
+跳躍伺服器應該設定為執行遠端桌面閘道角色，讓您能夠對跳躍伺服器和將從它管理的目的地伺服器執行限制。 可能的話，您也應該安裝 Hyper-v 角色，並建立[個人虛擬桌面](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759174(v=ws.11))或其他每一使用者的虛擬機器，以供系統管理使用者用於跳躍伺服器上的工作。  
   
 藉由在跳躍伺服器上提供系統管理使用者的每個使用者虛擬機器，您可以為系統管理工作站提供實體安全性，而且系統管理使用者可以在未使用時重設或關閉其虛擬機器。 如果您不想要在相同的系統管理主機上安裝 Hyper-v 角色和遠端桌面閘道角色，您可以將它們安裝在不同的電腦上。  
   
@@ -179,5 +179,3 @@ ms.locfileid: "80821181"
   
 -   若要執行指定的跳躍伺服器和系統管理工作站，則需要仔細規劃和設定，以對應至環境中設定的任何安全性區域。  
   
-
-

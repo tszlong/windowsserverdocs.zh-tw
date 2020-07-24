@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e410132ea3d7ce151c47d4708f284a8e44448aaf
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 486cd3a567fe8742d680a77378d8f5a933b876ae
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937242"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954801"
 ---
 # <a name="add-device"></a>新增裝置
 
@@ -28,7 +28,7 @@ wdsutil /add-Device /Device:<Device name> /ID:<UUID | MAC address> [/ReferralSer
 [/User:<Domain\User | User@Domain>] [/JoinRights:{JoinOnly | Full}] [/JoinDomain:{Yes | No}] [/BootImagepath:<Relative path>] [/OU:<DN of OU>] [/Domain:<Domain>]
 ```
 ### <a name="parameters"></a>參數
-|參數|說明|
+|參數|描述|
 |-------|--------|
 |主設備<computer name>|指定要新增之電腦的名稱。|
 |/ID： <UUID &#124; MAC 位址>|指定電腦的 GUID/UUID 或 MAC 位址。 GUID/UUID 必須是兩種格式的其中一種：二進位字串或 GUID 字串。 例如：<p>二進位字串： **/id： ACEFA3E81F20694E953EB2DAA1E8B1B6**<p>GUID 字串： **/id： E8A3EFAC-201F-4E69-953E-B2DAA1E8B1B6**<p>MAC 位址的格式必須如下： **00B056882FDC** （無連字號）或**00-B0-56-88-2f-DC** （含破折號）|
@@ -51,9 +51,9 @@ wdsutil /add-Device /Device:computer1 /ID:00-B0-56-88-2F-DC
 wdsutil /add-Device /Device:computer1 /ID:{E8A3EFAC-201F-4E69-953F-B2DAA1E8B1B6} /ReferralServer:WDSServer1 /BootProgram:boot\x86\pxeboot.com
 /WDSClientUnattend:WDSClientUnattend\unattend.xml /User:Domain\MyUser/JoinRights:Full /BootImagepath:boot\x86\images\boot.wim /OU:OU=MyOU,CN=Test,DC=Domain,DC=com
 ```
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 - [命令列語法索引鍵](command-line-syntax-key.md) 
 [使用 AllDevices 命令](using-the-get-alldevices-command.md) 
 [使用取得裝置命令](using-the-get-device-command.md) 
 [子命令：設定-裝置](subcommand-set-device.md) 
-[新的-WdsClient](https://technet.microsoft.com/library/dn283430.aspx)
+[新的-WdsClient](/previous-versions/windows/powershell-scripting/dn283430(v=wps.630))

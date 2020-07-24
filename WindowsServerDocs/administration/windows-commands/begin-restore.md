@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6f97c35eb8a98aedecfd2f5a8dc87d4ddc3a3cd6
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1edfb61880e03399da0c8eae34903789ca230057
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928522"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955770"
 ---
 # <a name="begin-restore"></a>begin restore
 
@@ -28,10 +28,10 @@ ms.locfileid: "85928522"
 begin restore
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
 - [開始備份命令](begin-backup.md)
 
-- [準備進行還原](https://docs.microsoft.com/windows/win32/vss/overview-of-preparing-for-restore)
+- [準備進行還原](/windows/win32/vss/overview-of-preparing-for-restore)

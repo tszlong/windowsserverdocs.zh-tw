@@ -8,16 +8,16 @@ ms.topic: article
 ms.assetid: a1ce7af5-f3fe-4fc9-82e8-926800e37bc1
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 2df4d64727de403264258e2f377e3df94b9b3d25
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ed4975517a98a811713f8c8dc5f6d477408fee26
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860581"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954250"
 ---
 # <a name="step-1-plan-the-remote-access-infrastructure"></a>步驟1規劃遠端存取基礎結構
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 > [!NOTE]
 > Windows Server 2016 將 DirectAccess 與路由及遠端存取服務（RRAS）結合成一個遠端存取角色。  
@@ -52,17 +52,17 @@ ms.locfileid: "80860581"
   
     DirectAccess 使用 IPv6 搭配 IPsec 在 DirectAccess 用戶端電腦與公司內部網路之間建立安全連線。 不過，DirectAccess 不一定需要 IPv6 網際網路的連線能力，或內部網路的原生 IPv6 支援。 相反地，它會自動設定並使用 IPv6 轉換技術，透過 IPv4 網際網路（6to4、Teredo 或 IP-HTTPS）和在僅 IPv4 的內部網路（NAT64 或 ISATAP）建立 IPv6 流量通道。 如需這些轉換技術的概觀，請參閱下列資源：  
   
-    -   [IPv6 轉換技術](https://technet.microsoft.com/library/bb726951.aspx)  
+    -   [IPv6 轉換技術](/previous-versions//bb726951(v=technet.10))  
   
-    -   [IP-HTTPS 通道通訊協定規格](https://msdn.microsoft.com/library/dd358571.aspx)  
+    -   [IP-HTTPS 通道通訊協定規格](/previous-versions//bb726951(v=technet.10))  
   
 3.  根據下表設定所需的介面卡和位址指定。 針對使用單一網路介面卡的 NAT 裝置後方的部署，請只使用 [**內部網路介面卡**] 資料行來設定您的 IP 位址。  
   
     ||外部網路介面卡|內部網路介面卡<sup>1，上方</sup>|路由需求|  
     |-|--------------|------------------------|------------|  
-    |IPv4 網際網路和 IPv4 內部網路|設定下列項目：<br/><br/>-兩個具有適當子網路遮罩的靜態連續公用 IPv4 位址（僅限 Teredo 所需）。<br/>-網際網路防火牆或本機網際網路服務提供者（ISP）路由器的預設閘道 IPv4 位址。 **注意：** 遠端存取服務器需要兩個連續的公用 IPv4 位址，才能作為 Teredo 伺服器，而 Windows 型 Teredo 用戶端可以使用遠端存取服務器來偵測 NAT 裝置的類型。|設定下列項目：<br/><br/>-具有適當子網路遮罩的 IPv4 內部網路位址。<br/>-內部網路命名空間的連線特定 DNS 尾碼。 此外，也應該在內部介面上設定 DNS 伺服器。 **注意：** 請勿在任何內部網路介面上設定預設閘道。|若要將遠端存取服務器設定為連線到內部 IPv4 網路上的所有子網，請執行下列動作：<br/><br/>-列出內部網路上所有位置的 IPv4 位址空間。<br/>-使用 `route add -p` 或 `netsh interface ipv4 add route` 命令，將 IPv4 位址空間新增為遠端存取服務器之 IPv4 路由表中的靜態路由。|  
-    |IPv6 網際網路與 IPv6 內部網路|設定下列項目：<br/><br/>-使用您 ISP 所提供的自動設定位址設定。<br/>-使用 `route print` 命令，以確保指向 ISP 路由器的預設 IPv6 路由存在於 IPv6 路由表中。<br/>-判斷 ISP 和內部網路路由器是否使用預設的路由器喜好設定（如 RFC 4191 中所述），以及其使用的預設喜好設定是否高於您的近端內部網路路由器。 如果這兩項都是肯定的，預設路由就不需要其他設定。 ISP 路由器較高的喜好設定可確保遠端存取伺服器使用中的預設 IPv6 路由指向 IPv6 網際網路。<br/><br/>因為遠端存取伺服器是 IPv6 路由器，如果您有原生的 IPv6 基礎結構，網際網路介面也可以連線到內部網路的網域控制站。 在此情況下，請將封包篩選器新增至周邊網路中的網域控制站，以防止連線到遠端存取服務器的網際網路介面的 IPv6 位址。|設定下列項目：<br/><br/>如果您不是使用預設的喜好設定層級，請使用 `netsh interface ipv6 set InterfaceIndex ignoredefaultroutes=enabled` 命令來設定內部網路介面。 這個命令可確保指向內部網路路由器的其他預設路由將不會新增到 IPv6 路由表。 您可以從 `netsh interface show interface` 命令的顯示中取得內部網路介面的 InterfaceIndex。|如果您有 IPv6 內部網路，要設定遠端存取伺服器以連線到所有 IPv6 位置，請執行下列動作：<br/><br/>-列出內部網路上所有位置的 IPv6 位址空間。<br/>-使用 `netsh interface ipv6 add route` 命令來新增 IPv6 位址空間，做為遠端存取服務器的 IPv6 路由表中的靜態路由。|  
-    |IPv4 網際網路和 IPv6 內部網路|遠端存取服務器會使用 Microsoft 6to4 介面卡介面，將預設的 IPv6 路由流量轉送到 IPv4 網際網路上的6to4 轉送。 當公司網路中沒有部署原生 IPv6 時，您可以使用下列命令，為 IPv4 網際網路上的 Microsoft 6to4 轉送 IPv4 位址設定遠端存取服務器： `netsh interface ipv6 6to4 set relay name=<ipaddress> state=enabled`。|||  
+    |IPv4 網際網路和 IPv4 內部網路|設定下列各項：<br/><br/>-兩個具有適當子網路遮罩的靜態連續公用 IPv4 位址（僅限 Teredo 所需）。<br/>-網際網路防火牆或本機網際網路服務提供者（ISP）路由器的預設閘道 IPv4 位址。 **注意：** 遠端存取服務器需要兩個連續的公用 IPv4 位址，才能作為 Teredo 伺服器，而 Windows 型 Teredo 用戶端可以使用遠端存取服務器來偵測 NAT 裝置的類型。|設定下列各項：<br/><br/>-具有適當子網路遮罩的 IPv4 內部網路位址。<br/>-內部網路命名空間的連線特定 DNS 尾碼。 此外，也應該在內部介面上設定 DNS 伺服器。 **注意：** 請勿在任何內部網路介面上設定預設閘道。|若要將遠端存取服務器設定為連線到內部 IPv4 網路上的所有子網，請執行下列動作：<br/><br/>-列出內部網路上所有位置的 IPv4 位址空間。<br/>-使用 `route add -p` 或 `netsh interface ipv4 add route` 命令，將 ipv4 位址空間新增為遠端存取服務器之 ipv4 路由表中的靜態路由。|  
+    |IPv6 網際網路與 IPv6 內部網路|設定下列各項：<br/><br/>-使用您 ISP 所提供的自動設定位址設定。<br/>-使用 `route print` 命令，以確保指向 ISP 路由器的預設 ipv6 路由存在於 IPv6 路由表中。<br/>-判斷 ISP 和內部網路路由器是否使用預設的路由器喜好設定（如 RFC 4191 中所述），以及其使用的預設喜好設定是否高於您的近端內部網路路由器。 如果這兩項都是肯定的，預設路由就不需要其他設定。 ISP 路由器較高的喜好設定可確保遠端存取伺服器使用中的預設 IPv6 路由指向 IPv6 網際網路。<br/><br/>因為遠端存取伺服器是 IPv6 路由器，如果您有原生的 IPv6 基礎結構，網際網路介面也可以連線到內部網路的網域控制站。 在此情況下，請將封包篩選器新增至周邊網路中的網域控制站，以防止連線到遠端存取服務器的網際網路介面的 IPv6 位址。|設定下列各項：<br/><br/>如果您不是使用預設的喜好設定層級，請使用命令來設定內部網路介面 `netsh interface ipv6 set InterfaceIndex ignoredefaultroutes=enabled` 。 這個命令可確保指向內部網路路由器的其他預設路由將不會新增到 IPv6 路由表。 您可以從命令的顯示中取得內部網路介面的 InterfaceIndex `netsh interface show interface` 。|如果您有 IPv6 內部網路，要設定遠端存取伺服器以連線到所有 IPv6 位置，請執行下列動作：<br/><br/>-列出內部網路上所有位置的 IPv6 位址空間。<br/>-使用 `netsh interface ipv6 add route` 命令將 ipv6 位址空間新增為遠端存取服務器的 ipv6 路由表中的靜態路由。|  
+    |IPv4 網際網路和 IPv6 內部網路|遠端存取服務器會使用 Microsoft 6to4 介面卡介面，將預設的 IPv6 路由流量轉送到 IPv4 網際網路上的6to4 轉送。 當原生 IPv6 未部署在公司網路中時，您可以使用下列命令，為 IPv4 網際網路上的 Microsoft 6to4 轉送 IPv4 位址設定遠端存取服務器： `netsh interface ipv6 6to4 set relay name=<ipaddress> state=enabled` 。|||  
   
     > [!NOTE]  
     > -   如果已將公用 IPv4 位址指派給 DirectAccess 用戶端，則會使用6to4 轉送技術來連線到內部網路。 如果已將私人 IPv4 位址指派給用戶端，則會使用 Teredo。 如果 DirectAccess 用戶端無法使用 6to4 或 Teredo 連線到 DirectAccess 伺服器，則會使用 IP-HTTPS。  
@@ -75,9 +75,9 @@ DirectAccessclients 遠端系統管理需要 ISATAP，讓 DirectAccess 管理伺
   
 |ISATAP 部署案例|需求|  
 |---------------|--------|  
-|現有的原生 IPv6 內部網路（不需要 ISATAP）|使用現有的原生 IPv6 基礎結構，您可以在遠端存取部署期間指定組織的首碼，而遠端存取服務器則不會將自己設定為 ISATAP 路由器。 請執行下列動作：<br/><br/>1. 若要確保可以從內部網路連線到 DirectAccess 用戶端，您必須修改 IPv6 路由，以便將預設路由流量轉送至遠端存取服務器。 如果您的內部網路 IPv6 位址空間使用單一48位 IPv6 位址首碼以外的位址，您必須在部署期間指定相關的組織 IPv6 首碼。<br/>2. 如果您目前已連線到 IPv6 網際網路，您必須設定預設路由流量，使其轉送至遠端存取服務器，然後在遠端存取服務器上設定適當的連線和路由，讓預設路由流量會轉送到連接到 IPv6 網際網路的裝置。|  
+|現有的原生 IPv6 內部網路（不需要 ISATAP）|使用現有的原生 IPv6 基礎結構，您可以在遠端存取部署期間指定組織的首碼，而遠端存取服務器則不會將自己設定為 ISATAP 路由器。 執行下列動作：<br/><br/>1. 若要確保可以從內部網路連線到 DirectAccess 用戶端，您必須修改 IPv6 路由，以便將預設路由流量轉送至遠端存取服務器。 如果您的內部網路 IPv6 位址空間使用單一48位 IPv6 位址首碼以外的位址，您必須在部署期間指定相關的組織 IPv6 首碼。<br/>2. 如果您目前已連線到 IPv6 網際網路，您必須設定預設路由流量，使其轉送至遠端存取服務器，然後在遠端存取服務器上設定適當的連線和路由，以便將預設路由流量轉送至連線到 IPv6 網際網路的裝置。|  
 |現有的 ISATAP 部署|如果您有現有的 ISATAP 基礎結構，在部署期間，系統會提示您輸入組織的48位首碼，而遠端存取服務器不會將自己設定為 ISATAP 路由器。 若要確保可以從內部網路連線到 DirectAccess 用戶端，您必須修改 IPv6 路由基礎結構，以便將預設路由流量轉送至遠端存取服務器。 這種變更必須在內部網路用戶端必須已經轉送預設流量的現有 ISATAP 路由器上完成。|  
-|沒有現有的 IPv6 連線能力|當「遠端存取」安裝程式偵測到伺服器沒有以原生或 ISATAP 為基礎的 IPv6 連線時，它會自動為內部網路衍生以6to4 為基礎的48位首碼，並將遠端存取服務器設定為 ISATAP 路由器以提供 IPv6內部網路上的 ISATAP 主機連線能力。 （只有當伺服器具有公用位址時，才會使用以6to4 為基礎的前置詞，否則會自動從唯一的本機位址範圍產生前置詞）。<br/><br/>若要使用 ISATAP，請執行下列動作：<br/><br/>1. 針對您要啟用 ISATAP 型連線的每個網域，在 DNS 伺服器上註冊 ISATAP 名稱，讓內部 DNS 伺服器可以將 ISATAP 名稱解析成遠端存取服務器的內部 IPv4 位址。<br/>2. 根據預設，使用全域查詢封鎖清單執行 Windows Server 2012、Windows Server 2008 R2、Windows Server 2008 或 Windows Server 2003 解析 ISATAP 名稱的 DNS 伺服器。 若要啟用 ISATAP，您必須從封鎖清單中移除 ISATAP 名稱。 如需詳細資訊，請參閱[從 DNS 全域查詢封鎖清單中移除 ISATAP](https://go.microsoft.com/fwlink/p/?LinkId=168593)。<br/><br/>以 Windows 為基礎的 ISATAP 主機若可以解析 ISATAP 名稱，會自動以遠端存取服務器設定位址，如下所示：<br/><br/>1. ISATAP 通道介面上以 ISATAP 為基礎的 IPv6 位址<br/>2. 64 位路由，可提供與內部網路上其他 ISATAP 主機的連線能力<br/>3. 指向遠端存取服務器的預設 IPv6 路由。 預設路由可確保內部網路 ISATAP 主機可以連接到 DirectAccess 用戶端<br/><br/>當以 Windows 為基礎的 ISATAP 主機取得 ISATAP 型 IPv6 位址時，如果目的地也是 ISATAP 主機，它們就會開始使用 ISATAP 封裝的流量來進行通訊。 由於 ISATAP 會針對整個內部網路使用單一64位子網，因此您的通訊會從分割的 IPv4 通訊模型傳送到具有 IPv6 的單一子網通訊模型。 這可能會影響某些 Active Directory Domain Services （AD DS）和依賴您 Active Directory 網站和服務設定之應用程式的行為。 例如，如果您使用 [Active Directory 網站和服務] 嵌入式管理單元來設定網站、以 IPv4 為基礎的子網，以及用來將要求轉送到網站內伺服器的站對端傳輸，則 ISATAP 主機不會使用此設定。<br/><br/><ol><li>若要設定在 ISATAP 主機的網站內轉送 Active Directory 網站和服務，您必須針對每個 IPv4 子網物件設定對等的 IPv6 子網物件，其中子網的 IPv6 位址首碼會表示相同的 ISATAP 主機範圍作為 IPv4 子網的位址。 例如，對於 IPv4 子網 192.168.99.0/24 和64位 ISATAP 位址首碼2002：836b：1：8000：：/64，IPv6 子網物件的對等 IPv6 位址首碼為2002：836b：1：8000：0：5efe： 192.168.99.0/120。 針對任意的 IPv4 前置長度（在範例中設為24），您可以從公式 96 + IPv4PrefixLength 判斷對應的 IPv6 前置長度。</li><li>針對 DirectAccess 用戶端的 IPv6 位址，請新增下列內容：<br/><br/><ul><li>針對以 Teredo 為基礎的 DirectAccess 用戶端：範圍為2001：0： WWXX： YYZZ：：/64 的 IPv6 子網，其中 WWXX： YYZZ 是遠端存取服務器第一個網際網路對向 IPv4 位址的冒號-十六進位版本。 。</li><li>針對以 ip-HTTPs 為基礎的 DirectAccess 用戶端：適用于2002： WWXX： YYZZ：8100：：/56 範圍的 IPv6 子網，其中 WWXX： YYZZ 是遠端存取服務器第一個網際網路對應 IPv4 位址（w.x.y.z. x. z. z. z. z. z. z. z. y. z. z. z. z. z. z. z 。</li><li>對於6to4 型 DirectAccess 用戶端：一系列以2002開頭的6to4 型 IPv6 首碼，分別代表由網際網路指派的數位授權單位（IANA）和地區登錄所管理的地區、公用 IPv4 位址首碼。 公用 IPv4 位址首碼 w.x.y.z/n 的6to4 首碼是2002： WWXX： YYZZ：/[16 + n]，其中 WWXX： YYZZ 是冒號-十六進位版本的 w.x.y.z。<br/><br/>        例如，7.0.0.0/8 範圍是由美國登錄所管理，用於北美洲的網際網路號碼（ARIN）。 此公用 IPv6 位址範圍的對應6to4 首碼為2002:700::/24。 如需有關 IPv4 公用位址空間的詳細資訊，請參閱[IANA Ipv4 位址空間](https://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xml)登錄。 。</li></ul></li></ol>|  
+|沒有現有的 IPv6 連線能力|當「遠端存取」安裝程式偵測到伺服器沒有任何原生或 ISATAP 型 IPv6 連線時，它會自動為內部網路衍生以6to4 為基礎的48位首碼，並將遠端存取服務器設定為 ISATAP 路由器，以提供 IPv6 連線到內部網路上的 ISATAP 主機。 （只有當伺服器具有公用位址時，才會使用以6to4 為基礎的前置詞，否則會自動從唯一的本機位址範圍產生前置詞）。<br/><br/>若要使用 ISATAP，請執行下列動作：<br/><br/>1. 針對您要啟用 ISATAP 型連線的每個網域，在 DNS 伺服器上註冊 ISATAP 名稱，讓內部 DNS 伺服器可以將 ISATAP 名稱解析成遠端存取服務器的內部 IPv4 位址。<br/>2. 根據預設，使用全域查詢封鎖清單執行 Windows Server 2012、Windows Server 2008 R2、Windows Server 2008 或 Windows Server 2003 解析 ISATAP 名稱的 DNS 伺服器。 若要啟用 ISATAP，您必須從封鎖清單中移除 ISATAP 名稱。 如需詳細資訊，請參閱[從 DNS 全域查詢封鎖清單中移除 ISATAP](https://go.microsoft.com/fwlink/p/?LinkId=168593)。<br/><br/>以 Windows 為基礎的 ISATAP 主機若可以解析 ISATAP 名稱，會自動以遠端存取服務器設定位址，如下所示：<br/><br/>1. ISATAP 通道介面上以 ISATAP 為基礎的 IPv6 位址<br/>2. 64 位路由，可提供與內部網路上其他 ISATAP 主機的連線能力<br/>3. 指向遠端存取服務器的預設 IPv6 路由。 預設路由可確保內部網路 ISATAP 主機可以連接到 DirectAccess 用戶端<br/><br/>當以 Windows 為基礎的 ISATAP 主機取得 ISATAP 型 IPv6 位址時，如果目的地也是 ISATAP 主機，它們就會開始使用 ISATAP 封裝的流量來進行通訊。 由於 ISATAP 會針對整個內部網路使用單一64位子網，因此您的通訊會從分割的 IPv4 通訊模型傳送到具有 IPv6 的單一子網通訊模型。 這可能會影響某些 Active Directory Domain Services （AD DS）和依賴您 Active Directory 網站和服務設定之應用程式的行為。 例如，如果您使用 [Active Directory 網站和服務] 嵌入式管理單元來設定網站、以 IPv4 為基礎的子網，以及用來將要求轉送到網站內伺服器的站對端傳輸，則 ISATAP 主機不會使用此設定。<br/><br/><ol><li>若要設定在 ISATAP 主機的網站內轉送 Active Directory 網站和服務，您必須針對每個 IPv4 子網物件設定對等的 IPv6 子網物件，其中子網的 IPv6 位址首碼會表示與 IPv4 子網相同的 ISATAP 主機位址範圍。 例如，對於 IPv4 子網 192.168.99.0/24 和64位 ISATAP 位址首碼2002：836b：1：8000：：/64，IPv6 子網物件的對等 IPv6 位址首碼為2002：836b：1：8000：0：5efe： 192.168.99.0/120。 針對任意的 IPv4 前置長度（在範例中設為24），您可以從公式 96 + IPv4PrefixLength 判斷對應的 IPv6 前置長度。</li><li>針對 DirectAccess 用戶端的 IPv6 位址，請新增下列內容：<br/><br/><ul><li>針對以 Teredo 為基礎的 DirectAccess 用戶端：範圍為2001：0： WWXX： YYZZ：：/64 的 IPv6 子網，其中 WWXX： YYZZ 是遠端存取服務器第一個網際網路對向 IPv4 位址的冒號-十六進位版本。 .</li><li>針對以 ip-HTTPs 為基礎的 DirectAccess 用戶端：適用于2002： WWXX： YYZZ：8100：：/56 範圍的 IPv6 子網，其中 WWXX： YYZZ 是遠端存取服務器第一個網際網路對應 IPv4 位址（w.x.y.z. x. z. z. z. z. z. z. z. y. z. z. z. z. z. z. z .</li><li>對於6to4 型 DirectAccess 用戶端：一系列以2002開頭的6to4 型 IPv6 首碼，分別代表由網際網路指派的數位授權單位（IANA）和地區登錄所管理的地區、公用 IPv4 位址首碼。 公用 IPv4 位址首碼 w.x.y.z/n 的6to4 首碼是2002： WWXX： YYZZ：/[16 + n]，其中 WWXX： YYZZ 是冒號-十六進位版本的 w.x.y.z。<br/><br/>        例如，7.0.0.0/8 範圍是由美國登錄所管理，用於北美洲的網際網路號碼（ARIN）。 此公用 IPv6 位址範圍的對應6to4 首碼為2002:700::/24。 如需有關 IPv4 公用位址空間的詳細資訊，請參閱[IANA Ipv4 位址空間](https://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xml)登錄。 .</li></ul></li></ol>|  
   
 > [!IMPORTANT]  
 > 請確定您在 DirectAccess 伺服器的內部介面上沒有公用 IP 位址。 如果您在內部介面上有公用 IP 位址，透過 ISATAP 的連線可能會失敗。  
@@ -137,7 +137,7 @@ DirectAccessclients 遠端系統管理需要 ISATAP，讓 DirectAccess 管理伺
 ||公用 CA：建議您使用公用 CA 來簽發 IP-HTTPS 憑證，這可確保 CRL 發佈點可在外部使用。||  
   
 #### <a name="plan-computer-certificates-for-ipsec-authentication"></a>規劃用於 IPsec 驗證的電腦憑證  
-如果您使用以憑證為基礎的 IPsec 驗證，則需要遠端存取服務器和用戶端來取得電腦憑證。 安裝憑證最簡單的方式是使用群組原則來設定電腦憑證的自動註冊。 這可確保所有網域成員都會從企業 CA 取得憑證。 如果您的組織中並未設定企業 CA，請參閱 [Active Directory 憑證服務](https://technet.microsoft.com/library/cc770357.aspx)。  
+如果您使用以憑證為基礎的 IPsec 驗證，則需要遠端存取服務器和用戶端來取得電腦憑證。 安裝憑證最簡單的方式是使用群組原則來設定電腦憑證的自動註冊。 這可確保所有網域成員都會從企業 CA 取得憑證。 如果您的組織中並未設定企業 CA，請參閱 [Active Directory 憑證服務](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770357(v=ws.10))。  
   
 這個憑證具有下列需求：  
   
@@ -156,7 +156,7 @@ DirectAccessclients 遠端系統管理需要 ISATAP，讓 DirectAccess 管理伺
   
 -   在 [**增強金鑰使用**方法] 欄位中，使用伺服器驗證物件識別碼（OID）。  
   
--   在 [CRL 發佈點] 欄位中，指定連線到網際網路的 DirectAccess 用戶端可存取的 CRL 發佈點。  
+-   在 [CRL 發佈點]**** 欄位中，指定連線到網際網路的 DirectAccess 用戶端可存取的 CRL 發佈點。  
   
     > [!NOTE]  
     > 只有執行 Windows 7 的用戶端才需要此參數。  
@@ -170,7 +170,7 @@ DirectAccessclients 遠端系統管理需要 ISATAP，讓 DirectAccess 管理伺
 #### <a name="plan-website-certificates-for-the-network-location-server"></a>規劃網路位置伺服器的網站憑證  
 當您規劃網路位置伺服器網站時，請考慮下列事項：  
   
--   在 [主體] 欄位中，指定網路位置伺服器之內部網路介面的 IP 位址，或網路位置 URL 的 FQDN。  
+-   在 [主體]**** 欄位中，指定網路位置伺服器之內部網路介面的 IP 位址，或網路位置 URL 的 FQDN。  
   
 -   在 [**增強金鑰使用**方法] 欄位中，使用伺服器驗證 OID。  
   
@@ -189,7 +189,7 @@ DNS 會被用來解析來自不位於內部網路上的 DirectAccess 用戶端�
   
 -   如果連線不成功，用戶端會被認為位於網際網路上。 DirectAccess 用戶端會使用名稱解析原則表格 (NRPT) 來決定解析名稱要求時要使用的 DNS 伺服器。 您可以指定用戶端應使用 DirectAccess DNS64 或替代的內部 DNS 伺服器來解析名稱。  
   
-執行名稱解析時，DirectAccess 用戶端會使用 NRPT 來識別如何處理要求。 用戶端會要求 FQDN 或單一標籤名稱，例如 <https://internal>。 如果要求的是單一標籤名稱，系統就會附加 DNS 尾碼來建立 FQDN。 如果 DNS 查詢符合 NRPT 和 DNS4 中的專案，或為該專案指定了內部網路 DNS 伺服器，則會使用指定的伺服器，傳送查詢進行名稱解析。 如果相符項存在，但是未指定任何 DNS 伺服器，則會套用豁免規則和一般名稱解析。  
+執行名稱解析時，DirectAccess 用戶端會使用 NRPT 來識別如何處理要求。 用戶端會要求 FQDN 或單一標籤名稱，例如 <https://internal> 。 如果要求的是單一標籤名稱，系統就會附加 DNS 尾碼來建立 FQDN。 如果 DNS 查詢符合 NRPT 和 DNS4 中的專案，或為該專案指定了內部網路 DNS 伺服器，則會使用指定的伺服器，傳送查詢進行名稱解析。 如果相符項存在，但是未指定任何 DNS 伺服器，則會套用豁免規則和一般名稱解析。  
   
 在 [遠端存取管理] 主控台中將新的尾碼新增至 NRPT 時，按一下 [偵測] 按鈕，即可自動**探索到尾碼**的預設 DNS 伺服器。 自動偵測的運作方式如下：  
   
@@ -205,7 +205,7 @@ DNS 會被用來解析來自不位於內部網路上的 DirectAccess 用戶端�
   
     -   根域的 DNS 尾碼規則或遠端存取服務器的功能變數名稱，以及對應至遠端存取服務器上所設定之內部網路 DNS 伺服器的 IPv6 位址。 例如，如果遠端存取伺服器是 corp.contoso.com 網域的成員，就會為 corp.contoso.com DNS 尾碼建立規則。  
   
-    -   網路位置伺服器之 FQDN 的豁免規則。 例如，如果網路位置伺服器 URL <https://nls.corp.contoso.com>，就會為 FQDN nls.corp.contoso.com 建立豁免規則。  
+    -   網路位置伺服器之 FQDN 的豁免規則。 例如，如果網路位置伺服器 URL 是 <https://nls.corp.contoso.com> ，就會為 FQDN nls.corp.contoso.com 建立豁免規則。  
   
 -   **IP-HTTPS 伺服器**  
   
@@ -229,7 +229,7 @@ DNS 會被用來解析來自不位於內部網路上的 DirectAccess 用戶端�
   
 -   您應該使用支援動態更新的 DNS 伺服器。 您可以使用不支援動態更新的 DNS 伺服器，但必須手動更新專案。  
   
--   您必須使用網際網路 DNS 伺服器來解析 CRL 發佈點的 FQDN。 例如，如果 URL <https://crl.contoso.com/crld/corp-DC1-CA.crl> 位於遠端存取服務器 IP-HTTPS 憑證的 [ **CRL 發佈點**] 欄位中，您必須使用網際網路 DNS 伺服器確保 FQDN crld.contoso.com 可解析。  
+-   您必須使用網際網路 DNS 伺服器來解析 CRL 發佈點的 FQDN。 例如，如果 URL <https://crl.contoso.com/crld/corp-DC1-CA.crl> 位於遠端存取服務器 ip-HTTPs 憑證的 [ **CRL 發佈點**] 欄位中，您必須使用網際網路 DNS 伺服器確保 FQDN crld.contoso.com 可解析。  
   
 #### <a name="plan-for-local-name-resolution"></a>規劃本機名稱解析  
 當您規劃本機名稱解析時，請考慮下列事項：  
@@ -248,7 +248,7 @@ DNS 會被用來解析來自不位於內部網路上的 DirectAccess 用戶端�
     例如，假設您要測試名為 test.contoso.com 的外部網站。 這個名稱無法透過網際網路 DNS 伺服器解析，但是 Contoso Web Proxy server 知道如何解析名稱，以及如何將網站的要求導向外部 web 伺服器。 為了防止不在 Contoso 內部網路的使用者存取站台，該外部網站只會允許來自 Contoso Web Proxy 之 IPv4 網際網路位址的要求。 因此，內部網路使用者可以存取網站，因為他們使用 Contoso Web Proxy，但 DirectAccess 使用者無法使用 Contoso Web Proxy。 藉由為使用 Contoso Web Proxy 的 test.contoso.com 設定 NRPT 豁免規則，即可透過 IPv4 網際網路將 test.contoso.com 的網頁要求路由傳送到內部網路 Web Proxy 伺服器。  
   
 ##### <a name="single-label-names"></a>單一標籤名稱  
-單一標籤名稱（例如 <https://paycheck>）有時候會用於內部網路伺服器。 如果要求的是單一標籤名稱，而且已設定 DNS 尾碼搜尋清單，則清單中的 DNS 尾碼會附加至單一標籤名稱。 例如，當使用者在屬於 corp.contoso.com 網欄位型別成員的電腦上 <https://paycheck> 在網頁瀏覽器中時，視為名稱的 FQDN 是 paycheck.corp.contoso.com。 根據預設，附加的尾碼會以用戶端電腦的主要 DNS 尾碼為基礎。  
+單一標籤名稱（例如 <https://paycheck> ）有時候會用於內部網路伺服器。 如果要求的是單一標籤名稱，而且已設定 DNS 尾碼搜尋清單，則清單中的 DNS 尾碼會附加至單一標籤名稱。 例如，當使用者在網頁瀏覽器中屬於 corp.contoso.com 網欄位型別成員的電腦上時， <https://paycheck> 視為名稱的 FQDN 是 paycheck.corp.contoso.com。 根據預設，附加的尾碼會以用戶端電腦的主要 DNS 尾碼為基礎。  
   
 > [!NOTE]  
 > 在脫離的命名空間案例中（其中一或多個網域電腦的 DNS 尾碼不符合電腦所屬的 Active Directory 網域），您應該確定搜尋清單已自訂為包含所有必要的尾碼。 根據預設，[遠端存取] 嚮導會將 Active Directory DNS 名稱設定為用戶端上的主要 DNS 尾碼。 請務必新增用戶端用來進行名稱解析的 DNS 尾碼。  
@@ -257,7 +257,7 @@ DNS 會被用來解析來自不位於內部網路上的 DirectAccess 用戶端�
   
 -   藉由在 DNS 中部署 WINS 正向對應區域。 嘗試解析 computername.dns.zone1.corp.contoso.com 時，會將要求導向僅使用電腦名稱稱的 WINS 伺服器。 用戶端會認為它正在發出一般的 DNS A 記錄要求，但實際上是 NetBIOS 要求。  
   
-    如需詳細資訊，請參閱[管理正向對應區域](https://technet.microsoft.com/library/cc816891(WS.10).aspx)。  
+    如需詳細資訊，請參閱[管理正向對應區域](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc816891(v=ws.10))。  
   
 -   藉由將 DNS 尾碼（例如，dns.zone1.corp.contoso.com）新增至預設網域 GPO。  
   
@@ -266,20 +266,20 @@ DNS 會被用來解析來自不位於內部網路上的 DirectAccess 用戶端�
   
 針對分裂式 DNS 部署，您必須列出在網際網路和內部網路上重複的 Fqdn，並決定 DirectAccess 用戶端應連線的資源-內部網路或網際網路版本。 當您想要 DirectAccess 用戶端連線到網際網路版本時，您必須將對應的 FQDN 當做豁免規則新增至每個資源的 NRPT。  
   
-在分裂式 DNS 環境中，如果您想要使用這兩個版本的資源，請設定您的內部網路資源，其名稱不會與網際網路上使用的名稱重複。 然後指示使用者在存取內部網路上的資源時，使用替代名稱。 例如，針對 www\.contoso.com 的內部名稱設定 www\.internal.contoso.com。  
+在分裂式 DNS 環境中，如果您想要使用這兩個版本的資源，請設定您的內部網路資源，其名稱不會與網際網路上使用的名稱重複。 然後指示使用者在存取內部網路上的資源時，使用替代名稱。 例如，設定 www \. internal.contoso.com 以取得 www contoso.com 的內部名稱 \. 。  
   
 在非拆分式 DNS 環境中，網際網路命名空間會與內部網路命名空間不同。 例如，Contoso 公司在網際網路上使用 contoso.com，在內部網路上使用 corp.contoso.com。 由於所有內部網路資源都使用 corp.contoso.com DNS 尾碼，因此 corp.contoso.com 的 NRPT 規則會將內部網路資源的所有 DNS 名稱查詢都路由傳送到內部網路 DNS 伺服器。 具有 contoso.com 尾碼之名稱的 DNS 查詢不符合 NRPT 中的 corp.contoso.com 內部網路命名空間規則，而且會傳送至網際網路 DNS 伺服器。 使用非拆分式 DNS 部署時，由於內部網路和網際網路資源的 FQDN 不會重複，因此不需要為 NRPT 進行任何額外的設定。 DirectAccess 用戶端可以存取其組織的網際網路和內部網路資源。  
   
 ##### <a name="plan-local-name-resolution-behavior-for-directaccess-clients"></a>規劃 DirectAccess 用戶端的本機名稱解析行為  
 如果無法使用 DNS 解析名稱，Windows Server 2012、Windows 8、Windows Server 2008 R2 和 Windows 7 中的 DNS 用戶端服務可以使用本機名稱解析，並搭配連結本機多播名稱解析（LLMNR）和 NetBIOS over TCP/IP 通訊協定，以解析本機子網上的名稱。 當電腦位於私人網路 (例如單一子網路的家用網路) 時，通常需要本機名稱解析，才能進行對等連線。  
   
-當 DNS 用戶端服務執行內部網路伺服器名稱的本機名稱解析，而電腦連線到網際網路上的共用子網時，惡意使用者可以透過 TCP/IP 訊息來捕捉 LLMNR 和 NetBIOS，以判斷內部網路伺服器名稱。 在 [基礎結構伺服器安裝程式] 的 [DNS] 頁面上，您可以根據從內部網路 DNS 伺服器收到的回應類型，設定本機名稱解析行為。 可用的選項如下：  
+當 DNS 用戶端服務執行內部網路伺服器名稱的本機名稱解析，而電腦連線到網際網路上的共用子網時，惡意使用者可以透過 TCP/IP 訊息來捕捉 LLMNR 和 NetBIOS，以判斷內部網路伺服器名稱。 在 [基礎結構伺服器安裝程式] 的 [DNS] 頁面上，您可以根據從內部網路 DNS 伺服器收到的回應類型，設定本機名稱解析行為。 有下列選項可供使用：  
   
 -   **如果名稱不存在於 DNS 中，請使用本機名稱解析**：此選項最安全，因為 DirectAccess 用戶端只會針對無法由內部網路 DNS 伺服器解析的伺服器名稱執行本機名稱解析。 如果可以連線到內部網路 DNS 伺服器，就會解析內部網路伺服器的名稱。 如果無法連線到內部網路 DNS 伺服器，或是有其他類型的 DNS 錯誤，也不會透過本機名稱解析將內部網路伺服器名稱遺漏到子網路。  
   
 -   **如果用戶端電腦位於私人網路（建議）時無法連線到 dns 中的名稱或 dns 伺服器無法連線，請使用本機名稱解析**：建議使用此選項，因為只有在無法連線到內部網路 DNS 伺服器時，才允許在私人網路上使用本機名稱解析。  
   
--   **針對任何類型的 DNS 解析錯誤使用本機名稱解析（最不安全）** ：這是最不安全的選項，因為內部網路伺服器的名稱可以透過本機名稱解析洩漏給本機子網。  
+-   **針對任何類型的 DNS 解析錯誤使用本機名稱解析（最不安全）**：這是最不安全的選項，因為內部網路伺服器的名稱可以透過本機名稱解析洩漏給本機子網。  
   
 #### <a name="plan-the-network-location-server-configuration"></a>規劃網路位置伺服器設定  
 網路位置伺服器是一個用來偵測 DirectAccess 用戶端是否位於公司網路中的網站。 公司網路中的用戶端不會使用 DirectAccess 來觸及內部資源;相反地，它們會直接連接。  
@@ -305,7 +305,7 @@ DNS 會被用來解析來自不位於內部網路上的 DirectAccess 用戶端�
 ##### <a name="plan-certificates-for-the-network-location-server"></a>規劃網路位置伺服器的憑證  
 當您取得要用於網路位置伺服器的網站憑證時，請考慮下列事項：  
   
--   在 [主體] 欄位中，指定網路位置伺服器之內部網路介面的 IP 位址，或網路位置 URL 的 FQDN。  
+-   在 [主體]**** 欄位中，指定網路位置伺服器之內部網路介面的 IP 位址，或網路位置 URL 的 FQDN。  
   
 -   在 [**增強金鑰使用**方法] 欄位中，使用伺服器驗證 OID。  
   
@@ -439,7 +439,7 @@ DirectAccess 用戶端會起始與提供服務（例如 Windows Update 和防病
 -   針對整個網域中的 GPO 連結進行搜尋。 如果 GPO 在網域中並沒有被連結，系統就會在網域根目錄中自動建立一個連結。 如果沒有可建立連結的必要權限，系統就會發出警告。  
   
 #### <a name="recovering-from-a-deleted-gpo"></a>從已刪除的 GPO 復原  
-如果遠端存取服務器、用戶端或應用程式伺服器上的 GPO 遭到意外刪除，則會出現下列錯誤訊息：**找不到 gpo （gpo 名稱）** 。  
+如果遠端存取服務器、用戶端或應用程式伺服器上的 GPO 遭到意外刪除，則會出現下列錯誤訊息：**找不到 gpo （gpo 名稱）**。  
   
 如果有備份可用，您便可以從備份還原 GPO。 如果沒有可用的備份，您必須移除設定，然後重新設定它們。  
   
@@ -449,7 +449,5 @@ DirectAccess 用戶端會起始與提供服務（例如 Windows Update 和防病
   
 2.  開啟 [**遠端存取管理**]。  
   
-3.  您將會看到找不到 GPO 的錯誤訊息。 按一下 [移除組態設定]。 完成後，伺服器將會還原為未設定的狀態，您可以重新設定。  
+3.  您將會看到找不到 GPO 的錯誤訊息。 按一下 [移除組態設定]****。 完成後，伺服器將會還原為未設定的狀態，您可以重新設定。  
   
-
-
