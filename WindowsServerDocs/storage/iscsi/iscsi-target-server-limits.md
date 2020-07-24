@@ -8,12 +8,12 @@ author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 09/11/2018
-ms.openlocfilehash: 6799e0e3b47d6cc98cbb42407ffbed1a9578675a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7a6d23ebd82afc192a9c306420811860d74cf469
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473435"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961360"
 ---
 # <a name="iscsi-target-server-scalability-limits"></a>iSCSI 目標伺服器的擴充性限制
 
@@ -106,7 +106,7 @@ ms.locfileid: "85473435"
 <td><p>多個作用中叢集節點</p></td>
 <td><p>支援</p></td>
 <td>
-<p>N/A</p></td>
+<p>不適用</p></td>
 <td><p>容錯移轉叢集中的每個使用中節點，都擁有不同的 iSCSI 目標伺服器叢集實例，而其他節點則擔任可能的擁有者節點。</p></td>
 </tr>
 <tr class="odd">
@@ -130,7 +130,7 @@ ms.locfileid: "85473435"
 <tr class="even">
 <td><p>多重路徑輸入/輸出（MPIO）</p></td>
 <td><p>支援</p></td>
-<td><p>N/A</p></td>
+<td><p>不適用</p></td>
 <td></td>
 </tr>
 <tr class="odd">
@@ -187,43 +187,43 @@ ms.locfileid: "85473435"
 <tr class="even">
 <td><p>IPv4</p></td>
 <td><p>支援</p></td>
-<td><p>N/A</p></td>
+<td><p>不適用</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>IPv6</p></td>
 <td><p>支援</p></td>
-<td><p>N/A</p></td>
+<td><p>不適用</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>TCP 卸載</p></td>
 <td><p>支援</p></td>
-<td><p>N/A</p></td>
+<td><p>不適用</p></td>
 <td><p>運用大型傳送（分割）、總和檢查碼、中斷仲裁和 RSS 卸載</p></td>
 </tr>
 <tr class="odd">
 <td><p>iSCSI 卸載</p></td>
 <td><p>不支援</p></td>
-<td><br/><p>N/A</p></td>
+<td><br/><p>不適用</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>大型訊框</p></td>
 <td><p>支援</p></td>
-<td><p>N/A</p></td>
+<td><p>不適用</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>IPsec</p></td>
 <td><p>支援</p></td>
-<td><p>N/A</p></td>
+<td><p>不適用</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>CRC 卸載</p></td>
 <td><p>支援</p></td>
-<td><p>N/A</p></td>
+<td><p>不適用</p></td>
 <td></td>
 </tr>
 </tbody>
@@ -328,13 +328,13 @@ ms.locfileid: "85473435"
 <tr class="odd">
 <td><p>ReFS</p></td>
 <td><p>支援</p></td>
-<td><p>N/A</p></td>
+<td><p>不適用</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>NTFS</p></td>
 <td><p>支援</p></td>
-<td><p>N/A</p></td>
+<td><p>不適用</p></td>
 <td></td>
 </tr>
 <tr class="odd">
@@ -352,13 +352,13 @@ ms.locfileid: "85473435"
 <tr class="odd">
 <td><p>邏輯單元壓縮</p></td>
 <td><p>是（僅限 Windows Server 2012 R2 和更新版本）</p></td>
-<td><p>N/A</p></td>
+<td><p>不適用</p></td>
 <td><p>使用 [重<a href="https://docs.microsoft.com/powershell/module/iscsitarget/resize-iscsivirtualdisk">設大小-convert-iscsivirtualdisk 功能</a>] 來壓縮 LUN。</p></td>
 </tr>
 <tr class="even">
 <td><p>邏輯單元複製</p></td>
 <td><p>不支援</p></td>
-<td><p>N/A</p></td>
+<td><p>不適用</p></td>
 <td><p>您可以使用差異 Vhd 快速複製磁片資料。</p></td>
 </tr>
 </tbody>
@@ -444,7 +444,7 @@ ISCSI 目標儲存提供者是 Windows Server 2016、Windows Server 2012 R2 和 
 
 請注意，如果 iSCSI 目標伺服器是由執行 Windows Server 2012 R2 或更新版本的伺服器所主控，而您想要從遠端伺服器使用 VSS 或 VDS，則遠端伺服器也必須執行相同版本的 Windows Server 並安裝 iSCSI 目標儲存提供者角色服務。 另請注意，在所有版本的 Windows 上，您應該只安裝一個版本的 iSCSI 目標儲存提供者角色服務。
 
-如需 iSCSI 目標儲存提供者的詳細資訊，請參閱[Iscsi 目標儲存體（VDS/VSS）提供者](https://blogs.technet.com/b/filecab/archive/2012/10/08/iscsi-target-storage-vds-vss-provider.aspx)。
+如需 iSCSI 目標儲存提供者的詳細資訊，請參閱[Iscsi 目標儲存體（VDS/VSS）提供者](/powershell/module/iscsi/?view=win10-ps)。
 
 ## <a name="tested-compatibility-with-iscsi-initiators"></a>已測試與 iSCSI 啟動器的相容性
 
@@ -546,4 +546,3 @@ ISCSI 目標儲存提供者是 Windows Server 2016、Windows Server 2012 R2 和 
 - [iSCSI Target Boot Overview](iscsi-boot-overview.md)
 
 - [Windows Server 的儲存空間](../storage.yml)
-

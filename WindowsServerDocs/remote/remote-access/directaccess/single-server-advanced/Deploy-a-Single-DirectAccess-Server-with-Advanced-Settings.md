@@ -1,5 +1,5 @@
 ---
-title: 使用進階設定部署單一 DirectAccess 伺服器
+title: Deploy a Single DirectAccess Server with Advanced Settings
 description: 本主題是使用 Windows Server 2016 部署單一 DirectAccess 伺服器與 Advanced Settings 指南的一部分
 manager: brianlic
 ms.prod: windows-server
@@ -8,16 +8,16 @@ ms.topic: article
 ms.assetid: b211a9ca-1208-4e1f-a0fe-26a610936c30
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 7f6a6724a2ab7bb6da48a11d31fb04461912e388
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 199d4ce3ebb3c9cbc6ec1b8574133104b8129312
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859521"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964620"
 ---
-# <a name="deploy-a-single-directaccess-server-with-advanced-settings"></a>使用進階設定部署單一 DirectAccess 伺服器
+# <a name="deploy-a-single-directaccess-server-with-advanced-settings"></a>Deploy a Single DirectAccess Server with Advanced Settings
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 本主題提供使用單一 DirectAccess 伺服器的 DirectAccess 案例簡介，並可讓您使用 advanced 設定部署 DirectAccess。  
   
@@ -37,7 +37,7 @@ ms.locfileid: "80859521"
 ## <a name="in-this-scenario"></a>在這個案例中  
 若要使用進階設定來設定單一 DirectAccess 伺服器，您必須完成數個規劃和部署步驟。  
   
-### <a name="prerequisites"></a>必要條件  
+### <a name="prerequisites"></a>先決條件  
 在開始之前，您可以先檢閱下列需求。  
   
 -   必須在所有設定檔啟用 Windows 防火牆。  
@@ -76,7 +76,7 @@ ms.locfileid: "80859521"
   
 -   **容易管理**。 「遠端存取」系統管理員可以透過 DirectAccess，從遠端管理網際網路上的 DirectAccess 用戶端電腦，即使用戶端電腦不位於公司內部網路上也可以。 管理伺服器可以自動修復不符合公司規定的用戶端電腦。 DirectAccess 和 VPN 都是在同一個主控台以及使用相同的一組精靈進行管理。 此外，只要單一的「遠端存取管理主控台」就可以管理一或多部 DirectAccess 伺服器。  
   
-## <a name="roles-and-features-required-for-this-scenario"></a><a name="BKMK_NEW"></a>此案例所需的角色和功能  
+## <a name="roles-and-features-required-for-this-scenario"></a><a name="BKMK_NEW"></a>本案例所需的角色與功能  
 下表列出本案例所需的角色與功能：  
   
 |角色/功能|如何支援本案例|  
@@ -145,9 +145,7 @@ ms.locfileid: "80859521"
 |內容類型|參考|  
 |--------|-------|  
 |**部署**|[Windows Server 中的 DirectAccess 部署路徑](../../../remote-access/directaccess/DirectAccess-Deployment-Paths-in-Windows-Server.md)<p>[使用消費者入門 Wizard 部署單一 DirectAccess 伺服器](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md)|  
-|**工具及設定**|[遠端存取 PowerShell Cmdlet](https://technet.microsoft.com/library/hh918399.aspx)|  
-|**社群資源**|[DirectAccess 生存指南](https://social.technet.microsoft.com/wiki/contents/articles/23210.directaccess-survival-guide.aspx)<p>[DirectAccess Wiki 專案](https://go.microsoft.com/fwlink/?LinkId=236871)|  
-|**相關技術**|[IPv6 的運作方式](https://technet.microsoft.com/library/cc781672(v=WS.10).aspx)|  
+|**工具及設定**|[遠端存取 PowerShell Cmdlet](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831379(v=ws.11))|  
+|**社群資源**|[DirectAccess 存續指南](https://social.technet.microsoft.com/wiki/contents/articles/23210.directaccess-survival-guide.aspx)<p>[DirectAccess Wiki 內容](https://go.microsoft.com/fwlink/?LinkId=236871)|  
+|**相關技術**|[IPv6 的運作方式](/previous-versions/windows/it-pro/windows-server-2003/cc781672(v=ws.10))|  
   
-
-

@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: a7e98129c2fb4f2259364c547b426d46f0a24ef3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d9d24f1ce66ca691bfa31479a00b9ecf719abe1e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859461"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961300"
 ---
 # <a name="smb-file-and-printer-sharing-ports-should-be-open"></a>SMB：檔案和印表機共用連接埠應該開啟
 
@@ -38,7 +38,7 @@ ms.locfileid: "80859461"
 <td><p>檔案服務</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>低於</strong></p></td>
+<td><p><strong>嚴重性</strong></p></td>
 <td><p>錯誤</p></td>
 </tr>
 <tr class="even">
@@ -56,7 +56,7 @@ ms.locfileid: "80859461"
 
 > *電腦將無法存取此伺服器上的共用資料夾和其他伺服器訊息區（SMB）型網路服務。*
 
-## <a name="resolution"></a>解析度
+## <a name="resolution"></a>解決方案
 
 > *啟用 [檔案及印表機共用] 以透過電腦的防火牆進行通訊。*
 
@@ -68,11 +68,10 @@ ms.locfileid: "80859461"
 
 2.  在左窗格中，按一下 [ **Advanced settings**]，然後在主控台樹中，按一下 [**輸入規則**]。
 
-3.  在 [**輸入規則**] 底下，找出 [檔案**及印表機共用（NB-會話）** ] 和 [檔案**及印表機共用（SMB）** ] 規則。
+3.  在 [**輸入規則**] 底下，找出 [檔案**及印表機共用（NB-會話）** ] 和 [檔案**及印表機共用（SMB）**] 規則。
 
-4.  針對每個規則，以滑鼠右鍵按一下規則，然後按一下 [**啟用規則**]。
+4.  針對每個規則，以滑鼠右鍵按一下該規則，然後按一下 [啟用規則]****。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
-[瞭解共用資料夾與 Windows 防火牆](https://technet.microsoft.com/library/cc731402.aspx)（ https://technet.microsoft.com/library/cc731402.aspx)
-
+[瞭解共用資料夾與 Windows 防火牆](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731402(v=ws.11))（https://technet.microsoft.com/library/cc731402.aspx)

@@ -7,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 02/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 597abd8e389421eb6875ff3cc94b457f341be3b7
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 0b4391812c89a193113fcd442d220e45fbb8c257
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474745"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964480"
 ---
 # <a name="performance-history-for-network-adapters"></a>網路介面卡的效能歷程記錄
 
@@ -73,7 +73,7 @@ ms.locfileid: "85474745"
 
 ## <a name="usage-in-powershell"></a>PowerShell 中的使用方式
 
-使用[get-netadapter](https://docs.microsoft.com/powershell/module/netadapter/get-netadapter) Cmdlet：
+使用[get-netadapter](/powershell/module/netadapter/get-netadapter) Cmdlet：
 
 ```PowerShell
 Get-NetAdapter <Name> | Get-ClusterPerf

@@ -9,12 +9,12 @@ ms.assetid: 834e8542-a67a-4ba0-9841-8a57727ef876
 author: nedpyle
 ms.date: 04/26/2019
 description: 如何使用儲存體複本將一個叢集中的磁片區複寫到另一個執行 Windows Server 的叢集。
-ms.openlocfilehash: 21e054d42d0264bb22fbd0e02382ee429958a597
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: d99a7ebf933427e8e065f72261816610e62a433d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475665"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961240"
 ---
 # <a name="cluster-to-cluster-storage-replication"></a>叢集對叢集儲存體複寫
 
@@ -140,7 +140,7 @@ ms.locfileid: "85475665"
 2. 確定 SR 記錄檔磁碟區一定位在最快速的快閃存放裝置，而資料磁碟區位在較慢的高容量存放裝置上。
 
 3. 啟動 Windows PowerShell，然後使用 `Test-SRTopology` Cmdlet 來判斷您是否符合所有儲存體複本需求。 您可以在僅查看需求的模式中，使用此 Cmdlet 進行快速測試，還可以在評估長時間執行效能的模式中使用。
-   例如，
+   例如
 
    ```PowerShell
    MD c:\temp
@@ -172,11 +172,11 @@ ms.locfileid: "85475665"
     > WIndows Server 現在包含以雲端（Azure）為基礎的見證選項。 您可以選擇此仲裁選項，而不是檔案共用見證。
 
     > [!WARNING]
-    > 如需仲裁設定的詳細資訊，請參閱[設定和管理仲裁](../../failover-clustering/manage-cluster-quorum.md)中的**見證**設定一節。 如需 `Set-ClusterQuorum` Cmdlet 的詳細資訊，請參閱 [Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum)。
+    > 如需仲裁設定的詳細資訊，請參閱[設定和管理仲裁](../../failover-clustering/manage-cluster-quorum.md)中的**見證**設定一節。 如需 `Set-ClusterQuorum` Cmdlet 的詳細資訊，請參閱 [Set-ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum)。
 
 5.  在 **Redmond** 網站中將一部磁碟新增至叢集 CSV。 若要這樣做，在 [存放裝置]**** 區段的 [磁碟]**** 節點中，使用滑鼠右鍵按一下來源磁碟，然後按一下 [新增至叢集共用磁碟區]****。
 
-6.  使用[設定向外延展檔案伺服器](https://technet.microsoft.com/library/hh831718.aspx)中的指示，在兩個叢集上建立叢集向外延展檔案伺服器
+6.  使用[設定向外延展檔案伺服器](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831718(v=ws.11))中的指示，在兩個叢集上建立叢集向外延展檔案伺服器
 
 ### <a name="windows-powershell-method"></a>Windows PowerShell 方法
 
@@ -204,9 +204,9 @@ ms.locfileid: "85475665"
     > WIndows Server 現在包含以雲端（Azure）為基礎的見證選項。 您可以選擇此仲裁選項，而不是檔案共用見證。
 
     > [!WARNING]
-    > 如需仲裁設定的詳細資訊，請參閱[設定和管理仲裁](../../failover-clustering/manage-cluster-quorum.md)中的**見證**設定一節。 如需 `Set-ClusterQuorum` Cmdlet 的詳細資訊，請參閱 [Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum)。
+    > 如需仲裁設定的詳細資訊，請參閱[設定和管理仲裁](../../failover-clustering/manage-cluster-quorum.md)中的**見證**設定一節。 如需 `Set-ClusterQuorum` Cmdlet 的詳細資訊，請參閱 [Set-ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum)。
 
-4.  使用[設定向外延展檔案伺服器](https://technet.microsoft.com/library/hh831718.aspx)中的指示，在兩個叢集上建立叢集向外延展檔案伺服器
+4.  使用[設定向外延展檔案伺服器](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831718(v=ws.11))中的指示，在兩個叢集上建立叢集向外延展檔案伺服器
 
 ## <a name="step-3-set-up-cluster-to-cluster-replication-using-windows-powershell"></a>步驟 3：使用 Windows PowerShell 設定叢集對叢集複寫
 現在您將使用 Windows PowerShell 來設定叢集對叢集複寫。 您可以直接在節點上，或從包含 Windows Server 的遠端系統管理電腦執行下列所有步驟遠端伺服器管理工具
@@ -355,7 +355,7 @@ ms.locfileid: "85475665"
 
     -   \Storage Replica Statistics(*)\Number of Messages Sent
 
-    如需 Windows PowerShell 中效能計數器的詳細資訊，請參閱 [Get-Counter](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Diagnostics/Get-Counter)。
+    如需 Windows PowerShell 中效能計數器的詳細資訊，請參閱 [Get-Counter](/powershell/module/microsoft.powershell.diagnostics/get-counter)。
 
 3.  若要移動一個網站的複寫方向，請使用 **Set-SRPartnership** Cmdlet。
 

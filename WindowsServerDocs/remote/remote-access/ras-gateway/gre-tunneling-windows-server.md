@@ -8,18 +8,18 @@ ms.topic: article
 ms.assetid: df2023bf-ba64-481e-b222-6f709edaa5c1
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d246f0e56681f75e4336ed225d1557a0e05c581b
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: dfa0d2df7ee18835542970cb9e185b5c8f4945ae
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308550"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961060"
 ---
 # <a name="gre-tunneling-in-windows-server-2016"></a>Windows Server 2016 中的 GRE 通道
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-Windows Server 2016 為 RAS 閘道 \(GRE\) 通道功能提供一般路由封裝的更新。  
+Windows Server 2016 提供對 \( RAS 閘道的一般路由封裝 GRE 通道 \) 功能的更新。  
   
 GRE 是輕量級的通道通訊協定，可透過網際網路通訊協定網路封裝各種不同的虛擬點對點連結內的網路層通訊協定。 Microsoft GRE 實行可以封裝 IPv4 和 IPv6。  
   
@@ -27,11 +27,11 @@ GRE 通道在許多情況下很有用，因為：
   
 -   它們是輕量和 RFC 2890 相容，使其可與各種廠商裝置互通  
   
--   您可以使用邊界閘道協定 \(BGP\) 來進行動態路由  
+-   您可以使用邊界閘道協定 \( BGP \) 進行動態路由  
   
--   您可以設定 GRE 多租使用者 RAS 閘道，以搭配使用軟體定義網路 \(SDN\)
+-   您可以設定 GRE 多租使用者 RAS 閘道，以搭配軟體定義網路 \( SDN 使用\)
   
--   您可以使用 System Center Virtual Machine Manager 來管理 GRE\-型 RAS 閘道
+-   您可以使用 System Center Virtual Machine Manager 來管理以 GRE 為 \- 基礎的 RAS 閘道
   
 -   在設定為 GRE RAS 閘道的6核心虛擬機器上，您最多可以達到 2.0 Gbps 輸送量
   
@@ -104,11 +104,11 @@ GRE 通道功能可啟用或增強數個主要案例，以使用 Microsoft 技�
   
 ## <a name="configuration-and-deployment"></a>設定和部署
 
-GRE 通道會公開為 S2S 介面中的其他通訊協定。 它的執行方式類似于下列網路日誌中所述的 IPSec S2S 通道： [Windows Server 2012 R2 的多租使用者站對站（S2S） VPN 閘道](https://blogs.technet.com/b/networking/archive/2013/09/29/multi-tenant-site-to-site-s2s-vpn-gateway-with-windows-server-2012-r2.aspx)  
+GRE 通道會公開為 S2S 介面中的其他通訊協定。 它的執行方式類似于下列網路日誌中所述的 IPSec S2S 通道： [Windows Server 2012 R2 的多租使用者站對站（S2S） VPN 閘道](https://techcommunity.microsoft.com/t5/networking-blog/bg-p/NetworkingBlog)  
   
 如需部署閘道（包括 GRE 通道閘道）的範例，請參閱下列主題：  
   
-[使用腳本部署軟體定義的網路基礎結構](../../../networking/sdn/deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)
+[使用指令碼部署軟體定義網路的基礎結構](../../../networking/sdn/deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)
   
 ## <a name="more-information"></a>詳細資訊
 
@@ -116,11 +116,9 @@ GRE 通道會公開為 S2S 介面中的其他通訊協定。 它的執行方式�
   
 -   [RAS 閘道](RAS-Gateway.md)  
   
--   [邊界閘道協定&#40;BGP&#41;](../bgp/Border-Gateway-Protocol-BGP.md)  
+-   [邊界閘道協定 &#40;BGP&#41;](../bgp/Border-Gateway-Protocol-BGP.md)  
   
--   [新增功能！Windows Server 2012 R2 RAS 多租使用者閘道部署指南](https://blogs.technet.com/b/wsnetdoc/archive/2014/03/26/new-windows-server-2012-r2-RAS-multitenant-gateway-deployment-guide.aspx)  
+-   [新增功能！Windows Server 2012 R2 RAS 多租使用者閘道部署指南](https://techcommunity.microsoft.com/t5/networking-blog/bg-p/NetworkingBlog)  
   
--   [使用 RAS 多租使用者閘道部署邊界閘道協定（BGP）](https://blogs.technet.com/b/wsnetdoc/archive/2014/04/03/deploy-border-gateway-protocol-bgp-with-the-RAS-multitenant-gateway.aspx)  
+-   [使用 RAS 多租使用者閘道部署邊界閘道協定（BGP）](https://techcommunity.microsoft.com/t5/networking-blog/bg-p/NetworkingBlog)  
   
-
-

@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: adae586c67a34912ea34dca5749d8c69856033d0
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 389d02ae7269ef48ef77d066db3064759d9253c1
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473505"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961960"
 ---
 # <a name="checklist-deploy-dfs-namespaces"></a>檢查清單：部署 DFS 命名空間
 
@@ -38,8 +38,6 @@ ms.locfileid: "85473505"
 
 ## <a name="additional-references"></a>其他參考
 
--   [命名空間](https://technet.microsoft.com/library/cc771914(v=ws.11).aspx)
+-   [命名空間](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771914(v=ws.11))
 -   [檢查清單：調整 DFS 命名空間](checklist-tune-a-dfs-namespace.md)
--   [複寫](https://technet.microsoft.com/library/cc770278(v=ws.11).aspx)
-
-
+-   [複寫](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770278(v=ws.11))

@@ -8,12 +8,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 5f88458c8e3f50853229f6f8f9c74fa4b8feba40
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 929530b8ee7dbb7b0486f3eb80a642cc5fdab20e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624416"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962460"
 ---
 # <a name="ad-ds-design-and-planning"></a>AD DS 設計與規劃
 
@@ -29,7 +29,7 @@ ms.locfileid: "81624416"
 
 雖然本指南中所提供的策略適用于幾乎所有的伺服器作業系統部署，但已針對包含少於100000個使用者和少於1000個網站的環境進行測試和驗證，且網路連線最少為每秒 28.8 kb （Kbps）。 如果您的環境不符合這些準則，請考慮使用有經驗在更複雜的環境中部署 AD DS 的諮詢公司。
 
-如需測試 AD DS 部署程式的詳細資訊，請參閱[測試和驗證部署](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc772722(v=ws.10))程式一文。
+如需測試 AD DS 部署程式的詳細資訊，請參閱[測試和驗證部署](/previous-versions/windows/it-pro/windows-server-2003/cc772722(v=ws.10))程式一文。
 
 ## <a name="in-this-guide"></a>本指南內容
 

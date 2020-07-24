@@ -8,16 +8,16 @@ ms.topic: article
 ms.assetid: e5ea9d22-a503-4ed4-96b3-0ee2ccf4fd17
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 97705e3d6f5a4300c32ec98cc59e849862381607
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1d59e97453e4ecc4cd63a85368c6ea9566677029
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858321"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963720"
 ---
 # <a name="step-3-plan-the-multisite-deployment"></a>步驟3規劃多網站部署
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 規劃多網站基礎結構之後，請規劃任何額外的憑證需求、用戶端電腦如何選取進入點，以及在您的部署中指派的 IPv6 位址。  
 
@@ -75,9 +75,9 @@ ms.locfileid: "80858321"
 3.  在 [CRL 發佈點] 欄位中，使用連線到內部網路的 DirectAccess 用戶端可存取的 CRL 發佈點。  
   
 ### <a name="322dns-for-the-network-location-server"></a>網路位置伺服器的 3.2.2 DNS  
-如果您將網路位置伺服器裝載在遠端存取服務器上，您必須為部署中的每個進入點新增網路位置伺服器網站的 DNS 專案。 請注意下列事項：  
+如果您將網路位置伺服器裝載在遠端存取服務器上，您必須為部署中的每個進入點新增網路位置伺服器網站的 DNS 專案。 請注意：  
   
--   在多網站部署中，第一個網路位置伺服器憑證的主體名稱會當做所有進入點的網路位置伺服器 URL 使用，因此，主體名稱和網路位置伺服器 URL 不能與電腦名稱稱相同。部署中的第一部遠端存取服務器。 它必須是專用於網路位置伺服器的 FQDN。  
+-   在多網站部署中，第一個網路位置伺服器憑證的主體名稱會當做所有進入點的網路位置伺服器 URL 使用，因此主體名稱和網路位置伺服器 URL 不能與部署中第一部遠端存取服務器的電腦名稱稱相同。 它必須是專用於網路位置伺服器的 FQDN。  
   
 -   網路位置伺服器流量提供的服務會使用 DNS 在進入點之間達到平衡，因此，每個進入點都應該有一個具有相同 URL 的 DNS 專案，並以進入點的內部 IP 位址進行設定。  
   
@@ -88,7 +88,7 @@ ms.locfileid: "80858321"
 ## <a name="33-plan-the-ipsec-root-certificate-for-all-remote-access-servers"></a><a name="bkmk_3_3_IPsec"></a>3.3 規劃所有遠端存取服務器的 IPsec 根憑證  
 規劃多網站部署中的 IPsec 用戶端驗證時，請注意下列事項：  
   
-1.  如果您在設定單一遠端存取服務器時選擇使用內建的 Kerberos proxy 進行電腦驗證，您必須將設定變更為 [使用由內部 CA 發行的電腦憑證]，因為多網站不支援 Kerberos proxy部署.  
+1.  如果您在設定單一遠端存取服務器時選擇使用內建的 Kerberos proxy 進行電腦驗證，您必須將設定變更為 [使用由內部 CA 發行的電腦憑證]，因為多網站部署不支援 Kerberos proxy。  
   
 2.  如果您使用自我簽署憑證，則必須重新設定單一伺服器部署，才能使用由內部 CA 所發行的憑證。  
   
@@ -103,12 +103,12 @@ ms.locfileid: "80858321"
   
 2.  Windows 10 或 Windows 8 用戶端電腦會嘗試將公用 DNS 中全域伺服器負載平衡器的 FQDN 解析為 IP 位址。 如果已解析的 IP 位址列為進入點的全域伺服器負載平衡器 IP 位址，則用戶端電腦會自動選取該進入點，並連接到其 IP-HTTPS URL （ConnectTo 位址）或其 Teredo 伺服器 IP 位址。 請注意，全域伺服器負載平衡器的 IP 位址不需要與 ConnectTo 位址或進入點的 Teredo 伺服器位址相同，因為用戶端電腦永遠不會嘗試連線到全域伺服器負載平衡器 IP 位址。  
   
-3.  如果用戶端電腦位於 Web Proxy 後方（而且無法使用 DNS 解析），或全域伺服器負載平衡器 FQDN 未解析為任何已設定的全域伺服器負載平衡器 IP 位址，則會使用 HTTPS 探查自動選取進入點所有進入點的 ip-HTTPs Url。 用戶端將會連接到先回應的伺服器。  
+3.  如果用戶端電腦位於 Web Proxy （且無法使用 DNS 解析），或如果全域伺服器負載平衡器 FQDN 未解析為任何已設定的全域伺服器負載平衡器 IP 位址，則會使用 HTTPS 探查自動選取進入點，並將所有進入點的 ip-HTTPs Url 進行。 用戶端將會連接到先回應的伺服器。  
   
 如需支援遠端存取之全域伺服器負載平衡裝置的清單，請移至在[Microsoft 伺服器和雲端平臺](https://www.microsoft.com/server-cloud/)尋找合作夥伴頁面。  
   
 ## <a name="35-plan-directaccess-client-entry-point-selection"></a><a name="bkmk_3_5_EP_Selection"></a>3.5 規劃 DirectAccess 用戶端進入點選擇  
-當您設定多網站部署時，根據預設，Windows 10 和 Windows 8 用戶端電腦會設定為連線至部署中所有進入點所需的資訊，並根據選取專案自動連線到單一進入點演算法. 您也可以將部署設定為允許 Windows 10 和 Windows 8 用戶端電腦手動選取要連線的進入點。 如果 Windows 10 或 Windows 8 用戶端電腦目前已連線到美國進入點，並已啟用自動進入點選取，則在幾分鐘後，用戶端電腦會嘗試連線透過歐洲進入點。 建議使用自動進入點選取;不過，允許手動進入點選擇可讓使用者根據目前的網路狀況，連接到不同的進入點。 例如，如果電腦連接到美國進入點，而與內部網路的連線速度會比預期慢很多。 在此情況下，終端使用者可以手動選取以連線到歐洲進入點，以改善內部網路的連線。  
+當您設定多網站部署時，根據預設，Windows 10 和 Windows 8 用戶端電腦會使用連線至部署中所有進入點所需的資訊來設定，並根據選取演算法自動連線到單一進入點。 您也可以將部署設定為允許 Windows 10 和 Windows 8 用戶端電腦手動選取要連線的進入點。 如果 Windows 10 或 Windows 8 用戶端電腦目前已連線到美國進入點，而且已啟用自動進入點選取，則在幾分鐘後，用戶端電腦會嘗試透過歐洲進入點連接。 建議使用自動進入點選取;不過，允許手動進入點選擇可讓使用者根據目前的網路狀況，連接到不同的進入點。 例如，如果電腦連接到美國進入點，而與內部網路的連線速度會比預期慢很多。 在此情況下，終端使用者可以手動選取以連線到歐洲進入點，以改善內部網路的連線。  
   
 > [!NOTE]  
 > 使用者手動選取進入點之後，用戶端電腦將不會還原為自動進入點選取。 也就是說，如果手動選取的進入點變成無法連線，則使用者必須還原為自動進入點選取專案，或手動選取另一個進入點。  
@@ -158,11 +158,11 @@ ms.locfileid: "80858321"
   
    3. Teredo 首碼（選擇性）。 只有在外部介面卡上使用兩個連續的公用 IPv4 位址設定遠端存取服務器時，這個前置詞才會相關。 前置詞是以位址配對的第一個公用 IPv4 位址為基礎。 例如，如果外部地址為：  
   
-      1. www\.xxx. yyy. zzz  
+      1. www \. xxx. yyy. zzz  
   
-      2. www\.xxx. zzz + 1  
+      2. www \. xxx. zzz + 1  
   
-      然後，要設定的 Teredo 首碼是2001：0： WWXX： YYZZ：：/64，其中 WWXX： YYZZ 是 IPv4 位址 www\.xxx. zzz 的十六進位標記法。  
+      然後，要設定的 Teredo 首碼是2001：0： WWXX： YYZZ：：/64，其中 WWXX： YYZZ 是 IPv4 位址 www xxx 的十六進位表示 \. 。  
   
       請注意，您可以使用下列腳本來計算 Teredo 首碼：  
   
@@ -181,12 +181,12 @@ ms.locfileid: "80858321"
    4. 所有上述路由都必須路由傳送至遠端存取服務器的內部介面卡上的 IPv6 位址（或負載平衡進入點的內部虛擬 IP （VIP）位址）。  
   
 > [!NOTE]  
-> 在公司網路中部署 IPv6，且遠端存取服務器管理是透過 DirectAccess 從遠端執行時，必須將所有其他進入點的 Teredo 和 IP-HTTPS 首碼的路由新增至每部遠端存取服務器，這樣流量才會是轉送到內部網路。  
+> 在公司網路中部署 IPv6，並透過 DirectAccess 從遠端執行遠端存取服務器管理時，必須將所有其他進入點的 Teredo 和 IP-HTTPS 首碼的路由新增至每部遠端存取服務器，以便將流量轉送到內部網路。  
   
 ### <a name="active-directory-site-specific-ipv6-prefixes"></a>Active Directory 網站特定 IPv6 首碼  
 當執行 Windows 10 或 Windows 8 的用戶端電腦連線到進入點時，用戶端電腦會立即與進入點的 Active Directory 網站相關聯，並使用與該進入點相關聯的 IPv6 首碼進行設定。 喜好設定是讓用戶端電腦使用這些 IPv6 首碼來連線到資源，因為它們是在連接到進入點時，以較高的優先順序，在 IPv6 首碼原則表格中以動態方式設定。  
   
-如果您的組織使用含有網站特定 IPv6 首碼的 Active Directory 拓撲（例如，內部資源 FQDN app.corp.com 同時裝載于北美洲和歐洲，且每個位置都有網站特定的 IP 位址），則不會設定此項預設會使用遠端存取主控台，而且不會針對每個進入點設定網站特定的 IPv6 首碼。 如果您想要啟用此選擇性案例，您必須使用特定的 IPv6 首碼來設定每個進入點，用戶端電腦應該將這些前置詞連接到特定的進入點。 執行此動作，如下所示：  
+如果您的組織使用具有網站特定 IPv6 首碼的 Active Directory 拓撲（例如，內部資源 FQDN app.corp.com 同時裝載于北美洲和歐洲，且每個位置都有網站特定的 IP 位址），則預設不會使用遠端存取主控台來設定此功能，也不會針對每個進入點設定網站特定的 IPv6 首碼。 如果您想要啟用此選擇性案例，您必須使用特定的 IPv6 首碼來設定每個進入點，用戶端電腦應該將這些前置詞連接到特定的進入點。 以下列方式來執行此動作：  
   
 1.  針對 Windows 10 或 Windows 8 用戶端電腦所使用的每個 GPO，執行 DAEntryPointTableItem PowerShell Cmdlet  
   
@@ -243,7 +243,7 @@ ms.locfileid: "80858321"
     > [!NOTE]  
     > 當您同時安裝其他 DirectAccess 部署時，請確定沒有任何兩個進入點共用相同的用戶端前置詞。  
     >   
-    > 如果您使用消費者入門 Wizard 或 Cmdlet `Install-RemoteAccess`來安裝 DirectAccess，遠端存取會自動將部署中第一個進入點的用戶端首碼設定為預設值 < IPv6 子網\_首碼 >：1000：：/64。 如有需要，您必須變更前置詞。  
+    > 如果您使用消費者入門 Wizard 或 Cmdlet 來安裝 DirectAccess `Install-RemoteAccess` ，遠端存取會自動將部署中第一個進入點的用戶端首碼設定為預設值 <IPv6 子網 \_ 首碼>：1000::/64。 如有需要，您必須變更前置詞。  
   
 2.  從第一個部署中移除選擇的用戶端安全性群組。  
   
@@ -256,7 +256,7 @@ ms.locfileid: "80858321"
   
 當您完成轉換時，可以卸載第一個 DirectAccess 部署。 卸載時，可能會發生下列問題：  
   
--   如果部署已設定為僅支援行動電腦上的用戶端，則會刪除 WMI 篩選器。 如果第二個部署的用戶端安全性群組包含桌上型電腦，DirectAccess 用戶端 GPO 將不會篩選桌上型電腦，而且可能會造成問題。 如果需要行動電腦篩選器，請遵循[建立 GPO 的 WMI 篩選器](https://technet.microsoft.com/library/cc947846.aspx)上的指示來加以重建。  
+-   如果部署已設定為僅支援行動電腦上的用戶端，則會刪除 WMI 篩選器。 如果第二個部署的用戶端安全性群組包含桌上型電腦，DirectAccess 用戶端 GPO 將不會篩選桌上型電腦，而且可能會造成問題。 如果需要行動電腦篩選器，請遵循[建立 GPO 的 WMI 篩選器](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc947846(v=ws.10))上的指示來加以重建。  
   
 -   如果這兩個部署最初都是在相同的 Active Directory 網域上建立，則會刪除指向 localhost 的 DNS 探查專案，而且可能會導致用戶端連線問題。 例如，用戶端可以使用 IP-HTTPS 而不是 Teredo 來連線，或在 DirectAccess 多網站進入點之間切換。 在此情況下，您必須將下列 DNS 專案新增至公司 DNS：  
   
@@ -270,5 +270,3 @@ ms.locfileid: "80858321"
   
   
   
-
-

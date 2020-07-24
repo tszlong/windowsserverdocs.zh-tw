@@ -8,20 +8,20 @@ ms.topic: article
 ms.assetid: cb84920e-7cf5-4266-b071-d09e3d5e1f10
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 2c2d044c02673d74d7aa8ec076aeac7e2f1aebdb
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 473d90c08e2183f32409630b698d20f79f567016
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858381"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964590"
 ---
 # <a name="configure-a-multisite-deployment"></a>設定多站台部署
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
  Windows Server 2016 將 DirectAccess 與遠端存取服務（RAS） VPN 結合成一個遠端存取角色。 本總覽提供部署單一 Windows Server 2016 或 Windows Server 2012 遠端存取多網站部署所需之設定步驟的簡介。  
   
--   步驟1：[使用 [高級設定] 部署單一 DirectAccess 伺服器](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/single-server-advanced/deploy-a-single-directaccess-server-with-advanced-settings)。 安裝和設定單一遠端存取服務器。 多網站部署會要求您先安裝單一伺服器，再設定多網站部署。  
+-   步驟1：[使用 [高級設定] 部署單一 DirectAccess 伺服器](../../../directaccess/single-server-advanced/deploy-a-single-directaccess-server-with-advanced-settings.md)。 安裝和設定單一遠端存取服務器。 多網站部署會要求您先安裝單一伺服器，再設定多網站部署。  
   
 -   [步驟2：設定多網站基礎結構](Step-2-Configure-the-Multisite-Infrastructure.md)。 針對多網站部署，您必須設定額外的 Active Directory 網站和網域控制站。 如果您未使用自動設定的 Gpo，則也需要額外的安全性群組和群組原則物件（Gpo）。  
   
@@ -29,5 +29,3 @@ ms.locfileid: "80858381"
   
 -   [步驟4：驗證多網站部署](Step-4-Verify-the-Multisite-Deployment.md) 
   
-
-

@@ -1,19 +1,19 @@
 ---
-title: 在自訂埠上設定以憑證金鑰為基礎之更新的憑證註冊 Web 服務
+title: 在自訂埠上為憑證金鑰型更新設定憑證註冊 Web 服務
 author: Deland-Han
 ms.author: delhan
 manager: dcscontentpm
 ms.date: 11/12/2019
 ms.topic: article
 ms.prod: windows-server
-ms.openlocfilehash: a21a34448248658d2ceffcad07d2a4e6e17b9348
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5b2da1858a7f0a3669accfdb2dda88a23f64edc0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856341"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964250"
 ---
-# <a name="configuring-certificate-enrollment-web-service-for-certificate-key-based-renewal-on-a-custom-port"></a>在自訂埠上設定以憑證金鑰為基礎之更新的憑證註冊 Web 服務
+# <a name="configuring-certificate-enrollment-web-service-for-certificate-key-based-renewal-on-a-custom-port"></a>在自訂埠上為憑證金鑰型更新設定憑證註冊 Web 服務
 
 > 作者： Jitesh Thakur、Meera Mohideen、Windows Group 的技術顧問。
 Windows 群組的 Ankit Tyagi 支援工程師
@@ -45,7 +45,7 @@ Windows 群組的 Ankit Tyagi 支援工程師
 
 ![部署](media/certificate-enrollment-certificate-key-based-renewal-1.png)
 
-## <a name="configuration-instructions"></a>組態指示
+## <a name="configuration-instructions"></a>設定指示
 
 ### <a name="overview"></a>概觀 
 
@@ -93,18 +93,18 @@ Windows 群組的 Ankit Tyagi 支援工程師
 
 若要安裝 CEPCES01 實例，請使用下列其中一種方法。
 
-**方法1**
+**方法 1**
 
 如需針對使用者名稱和密碼驗證啟用 CEP 和 CES 的逐步指引，請參閱下列文章：
 
-[憑證註冊原則 Web 服務指導方針](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831625(v=ws.11))
+[憑證註冊原則 Web 服務指導方針](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831625(v=ws.11))
 
-[憑證註冊 Web 服務指導方針](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831822(v=ws.11)#configure-a-ca-for-the-certificate-enrollment-web-service)
+[憑證註冊 Web 服務指導方針](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831822(v=ws.11)#configure-a-ca-for-the-certificate-enrollment-web-service)
 
 > [!Note]
 > 如果您同時設定 CEP 和 CES 實例的使用者名稱和密碼驗證，請確定您未選取 [啟用金鑰型更新] 選項。
 
-**方法2**
+**方法 2**
 
 您可以使用下列 PowerShell Cmdlet 來安裝 CEP 和 CES 實例：
 
@@ -121,7 +121,7 @@ Install-AdcsEnrollmentPolicyWebService -AuthenticationType Username -SSLCertThum
 此命令會藉由指定使用者名稱和密碼來進行驗證，以安裝憑證註冊原則 Web 服務（CEP）。 
 
 > [!Note]
-> 在此命令中，\<**SSLCertThumbPrint**\> 是將用來系結 IIS 之憑證的指紋。
+> 在此命令中， \<**SSLCertThumbPrint**\> 是將用來系結 IIS 之憑證的指紋。
 
 ```PowerShell
 Install-AdcsEnrollmentWebService -ApplicationPoolIdentity -CAConfig "CA1.contoso.com\contoso-CA1-CA" -SSLCertThumbprint "sslCertThumbPrint" -AuthenticationType Username
@@ -151,7 +151,7 @@ Install-AdcsEnrollmentPolicyWebService -AuthenticationType Certificate -SSLCertT
 此命令會安裝憑證註冊原則 Web 服務（CEP），並指定使用憑證進行驗證。 
 
 > [!Note]
-> 在此命令中，\<SSLCertThumbPrint\> 是將用來系結 IIS 之憑證的指紋。 
+> 在此命令中， \<SSLCertThumbPrint\> 是將用來系結 IIS 之憑證的指紋。 
 
 金鑰型更新可讓憑證用戶端使用其現有憑證的金鑰來更新憑證，以進行驗證。 在以金鑰為基礎的更新模式中，服務只會傳回針對金鑰型更新所設定的憑證範本。
 
@@ -189,7 +189,7 @@ Install-AdcsEnrollmentWebService -CAConfig "CA1.contoso.com\contoso-CA1-CA" -SSL
 > [!Note]
 > 您不需要加入用戶端電腦的網域。 在 KBR for dsmapper 服務中進行憑證型驗證時，此帳戶會進入圖片。
 
-![新物件](media/certificate-enrollment-certificate-key-based-renewal-6.png) 
+![New Object](media/certificate-enrollment-certificate-key-based-renewal-6.png) 
  
 ##### <a name="step-2-configure-the-service-account-for-constrained-delegation-s4u2self"></a>步驟2：設定限制委派的服務帳戶（S4U2Self）
 
@@ -201,7 +201,7 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
 ```
 
 > [!Note]
-> 在此命令中，\<cepcessvc\> 是服務帳戶，而 < > CA1 則是憑證授權單位單位。
+> 在此命令中， \<cepcessvc\> 是服務帳戶，而 <CA1.contoso.com >是憑證授權單位單位。
 
 > [!Important]
 > 我們不會在此設定中于 CA 上啟用 RENEWALONBEHALOF 旗標，因為我們使用限制委派來為我們執行相同的工作。 這可讓我們避免將服務帳戶的許可權新增至 CA 的安全性。
@@ -219,11 +219,11 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
 
 1. 在網域控制站上，開啟 [adsiedit]。
 
-2. [連接到設定磁碟分割](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/ff730188(v=ws.10))，並流覽至您的 CA 註冊服務物件：
+2. [連接到設定磁碟分割](/previous-versions/windows/it-pro/windows-server-2003/ff730188(v=ws.10))，並流覽至您的 CA 註冊服務物件：
    
    CN = ENTCA，CN = 註冊服務，CN = Public Key Services，CN = Services，CN = Configuration，DC = contoso，DC = com
 
-3. 以滑鼠右鍵按一下並編輯 CA 物件。 使用自訂埠搭配您在 [應用程式設定] 中找到的 CEP 和 CES 伺服器 Uri，以變更 [ **mspki-site-name-註冊-伺服器**] 屬性。 例如，
+3. 以滑鼠右鍵按一下並編輯 CA 物件。 使用自訂埠搭配您在 [應用程式設定] 中找到的 CEP 和 CES 伺服器 Uri，以變更 [ **mspki-site-name-註冊-伺服器**] 屬性。 例如：
 
    ```
    140https://cepces.contoso.com:49999/ENTCA_CES_UsernamePassword/service.svc/CES0   
@@ -234,11 +234,11 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
 
 #### <a name="configure-the-client-computer"></a>設定用戶端電腦
 
-在用戶端電腦上，設定註冊原則和自動註冊原則。 若要這樣做，請執行下列步驟：
+在用戶端電腦上，設定註冊原則和自動註冊原則。 若要這樣做，請遵循下列步驟：
 
-1. 選取 **開始** > **執行**，然後輸入**gpedit.msc**。
+1. 選取 [**開始**  >  **執行**]，然後輸入**gpedit.msc**。
 
-2. 移至 [**電腦**設定] > [ **Windows 設定**] > [**安全性設定**]，然後按一下 [**公開金鑰原則**]。
+2. 移至 [**電腦**設定] [  >  **Windows 設定**] [  >  **安全性設定**]，然後按一下 [**公開金鑰原則**]。
 
 3. 啟用 [**憑證服務用戶端-自動註冊] 原則**，以符合下列螢幕擷取畫面中的設定。
    ![憑證群組原則](media/certificate-enrollment-certificate-key-based-renewal-9.png)
@@ -276,7 +276,7 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
 
 若要確定自動續約運作正常，請使用 mmc 更新具有相同金鑰的憑證，以確認手動更新是否正常運作。 此外，在更新時，系統應該會提示您選取憑證。 您可以選擇我們稍早註冊的憑證。 需要提示。
 
-開啟 [電腦個人] 憑證存放區，然後新增 [封存的憑證] 視圖。 若要這麼做，請將 [本機電腦帳戶] 嵌入式管理單元新增至 mmc.exe，按一下 [**憑證（本機電腦）** ]，按一下右邊的 [**動作]** 索引標籤或 mmc 頂端的 [**流覽**]，按一下 [**流覽選項**]，選取 [封存的**憑證**]，然後按一下 **[確定]** 。
+開啟 [電腦個人] 憑證存放區，然後新增 [封存的憑證] 視圖。 若要這麼做，請將 [本機電腦帳戶] 嵌入式管理單元新增至 mmc.exe，按一下 [**憑證（本機電腦）** ]，按一下右邊的 [**動作]** 索引標籤或 mmc 頂端的 [**流覽**]，按一下 [**流覽選項**]，選取 [封存的**憑證**]，然後按一下 **[確定]**。
 
 ### <a name="method-1"></a>方法 1 
 
@@ -288,7 +288,7 @@ certreq -machine -q -enroll -cert <thumbprint> renew
 
 ![命令](media/certificate-enrollment-certificate-key-based-renewal-14.png)
 
-### <a name="method-2"></a>Method 2
+### <a name="method-2"></a>方法 2
 
 將用戶端電腦上的時間和日期前移到憑證範本的更新時間。
 
@@ -303,24 +303,24 @@ certreq -machine -q -enroll -cert <thumbprint> renew
 > [!Note]
 > 先前的螢幕擷取畫面是示範自動註冊引擎如預期般運作的範例，因為 CA 日期仍然設定為18。 因此，它會繼續發行憑證。 在實際情況下，將不會進行這項大量的更新。
 
-## <a name="references"></a>參考
+## <a name="references"></a>參考資料
 
-[測試實驗室指南：示範以憑證金鑰為基礎的更新](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj590165(v%3Dws.11))
+[測試實驗室指南：示範憑證金鑰型更新](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj590165(v%3dws.11))
 
 [憑證註冊 Web 服務](https://techcommunity.microsoft.com/t5/Ask-the-Directory-Services-Team/Certificate-Enrollment-Web-Services/ba-p/397385)
 
-[安裝-AdcsEnrollmentPolicyWebService](https://docs.microsoft.com/powershell/module/adcsdeployment/install-adcsenrollmentpolicywebservice?view=win10-ps)
+[安裝-AdcsEnrollmentPolicyWebService](/powershell/module/adcsdeployment/install-adcsenrollmentpolicywebservice?view=win10-ps)
 
-[安裝-AdcsEnrollmentWebService](https://docs.microsoft.com/powershell/module/adcsdeployment/install-adcsenrollmentwebservice?view=win10-ps)
+[安裝-AdcsEnrollmentWebService](/powershell/module/adcsdeployment/install-adcsenrollmentwebservice?view=win10-ps)
 
 另請參閱
 
 [Windows Server 安全性論壇](https://aka.ms/adcsforum)
 
-[Active Directory 憑證服務（AD CS）公開金鑰基礎結構（PKI）常見問題（FAQ）](https://aka.ms/adcsfaq)
+[Active Directory 憑證服務 (AD CS) 公開金鑰基礎結構 (PKI) 常見問題集 (FAQ)](https://aka.ms/adcsfaq)
 
-[Windows PKI 文件參考資料與文件庫](https://social.technet.microsoft.com/wiki/contents/articles/987.windows-pki-documentation-reference-and-library.aspx)
+[Windows PKI 文件參考和程式庫](https://social.technet.microsoft.com/wiki/contents/articles/987.windows-pki-documentation-reference-and-library.aspx)
 
-[Windows PKI 部落格](https://blogs.technet.com/b/pki/)
+[Windows PKI 部落格](/archive/blogs/pki/)
 
 [如何在網頁註冊 proxy 頁面的自訂服務帳戶上設定 Kerberos 限制委派（僅限 S4U2Proxy 或 Kerberos）](https://support.microsoft.com/help/4494313/configuring-web-enrollment-proxy-for-s4u2proxy-constrained-delegation)

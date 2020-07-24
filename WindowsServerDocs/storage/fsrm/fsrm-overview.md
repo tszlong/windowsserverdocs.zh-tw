@@ -8,12 +8,12 @@ ms.topic: article
 author: jasongerend
 ms.date: 5/14/2018
 description: 檔案伺服器 Resource Manager （FSRM）是一種工具，可讓您管理和分類 Windows Server 檔案伺服器上的資料。
-ms.openlocfilehash: af54f08f8acc491553a4d42c1aabe8ea7e26fadd
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 58b410e51dae3ea102bb1a15f5bb60f00ab702fa
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473935"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964560"
 ---
 # <a name="file-server-resource-manager-fsrm-overview"></a>檔案伺服器資源管理員 (FSRM) 概觀
 
@@ -23,7 +23,7 @@ ms.locfileid: "85473935"
 
 這是個小點，但我們也新增了在 Windows Server 版本1803中[停用變更日誌的功能](#whats-new)。
 
-## <a name="features"></a>特性
+## <a name="features"></a>功能
 
 檔案伺服器資源管理員包含下列功能：
 
@@ -57,7 +57,7 @@ ms.locfileid: "85473935"
 
 從 Windows Server 版本1803開始，您現在可以在服務啟動時，防止檔案伺服器 Resource Manager 服務在磁片區上建立變更日誌（也稱為 USN 日誌）。 這可以節省每個磁片區上的空間，但會停用即時檔案分類。
 
-如需舊版的新功能，請參閱[檔案伺服器 Resource Manager 的新](https://technet.microsoft.com/library/dn383587.aspx)功能。
+如需舊版的新功能，請參閱[檔案伺服器 Resource Manager 的新](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383587(v=ws.11))功能。
 
 若要防止檔案伺服器 Resource Manager 在服務啟動時于部分或所有磁片區上建立變更日誌，請使用下列步驟：
 
@@ -106,4 +106,4 @@ ms.locfileid: "85473935"
 
 ## <a name="additional-references"></a>其他參考
 
-- [動態存取控制](https://technet.microsoft.com/library/dn408191(v=ws.11).aspx)
+- [動態存取控制](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn408191(v=ws.11))

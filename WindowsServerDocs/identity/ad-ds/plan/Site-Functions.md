@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 41fe13a5083a855a597a693f8cd707e3e211966a
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 70dc69812ae6806c58affdd3961c3ec8f9afd0bc
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623886"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963540"
 ---
 # <a name="site-functions"></a>站台功能
 
@@ -31,7 +31,7 @@ Active Directory Domain Services （AD DS）使用複寫的多宿主、儲存後
 
 藉由尋找相同網站中的網域控制站，用戶端可避免透過 WAN 連結進行通訊。 如果在用戶端網站上找不到網域控制站，則與其他連線的網站相對的最低成本連接的網域控制站會在沒有網域控制站的網站中，向其註冊網站特定服務（SRV）資源記錄。 在 DNS 中發佈的網域控制站，是來自網站拓撲所定義的最接近網站。 此程式可確保每個網站都有慣用的網域控制站來進行驗證。
 
-如需尋找網域控制站之程式的詳細資訊，請參閱[Active Directory 集合](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc780036(v=ws.10))。
+如需尋找網域控制站之程式的詳細資訊，請參閱[Active Directory 集合](/previous-versions/windows/it-pro/windows-server-2003/cc780036(v=ws.10))。
 
 ## <a name="sysvol-replication"></a>SYSVOL 複寫
 SYSVOL 是檔案系統中，位於網域中每個網域控制站上的資料夾集合。 SYSVOL 資料夾會針對必須在整個網域中複寫的檔案提供預設 Active Directory 位置，包括群組原則物件（Gpo）、啟動和關機腳本，以及登入和登出腳本。  Windows Server 2008 可以使用檔案複寫服務（FRS）或分散式檔案系統複寫（DFSR），將 SYSVOL 資料夾所做的變更，從一個網域控制站複寫到其他網域控制站。 FRS 和 DFSR 會根據您在網站拓撲設計期間所建立的排程來複寫這些變更。
@@ -40,4 +40,4 @@ SYSVOL 是檔案系統中，位於網域中每個網域控制站上的資料夾�
 DFSN 會使用網站資訊，將用戶端導向至裝載網站中所要求資料的伺服器。 如果 DFSN 在與用戶端相同的網站中找不到資料的複本，DFSN 會使用 AD DS 中的網站資訊來判斷哪個檔案伺服器的 DFSN 共用資料最接近用戶端。
 
 ## <a name="service-location"></a>服務位置
-藉由在 AD DS 中發佈檔案和列印服務等服務，可讓 Active Directory 用戶端在相同或最接近的網站中找到要求的服務。 列印服務會使用儲存在 AD DS 中的 location 屬性，讓使用者能夠依位置流覽印表機，而不需要知道它們的確切位置。 如需設計和部署列印伺服器的詳細資訊，請參閱[設計和部署列印伺服器](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc785842(v=ws.10))。
+藉由在 AD DS 中發佈檔案和列印服務等服務，可讓 Active Directory 用戶端在相同或最接近的網站中找到要求的服務。 列印服務會使用儲存在 AD DS 中的 location 屬性，讓使用者能夠依位置流覽印表機，而不需要知道它們的確切位置。 如需設計和部署列印伺服器的詳細資訊，請參閱[設計和部署列印伺服器](/previous-versions/windows/it-pro/windows-server-2003/cc785842(v=ws.10))。

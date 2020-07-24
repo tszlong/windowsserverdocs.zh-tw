@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 4ab00fe1fa3a40511ba60234025202e9303455f0
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 228d4d1644c3bae60dcf293540ad764fb511922a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624426"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962500"
 ---
 # <a name="ad-ds-deployment-requirements"></a>AD DS 部署需求
 
@@ -28,21 +28,21 @@ ms.locfileid: "81624426"
 
 ![AD DS 需求](media/AD-DS-Deployment-Requirements/033aad0b-25ff-4793-8825-88a6daa01a55.gif)
 
-如需詳細資訊，請參閱[部署 Windows Server 2008 樹系根域](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731174(v=ws.10))。
+如需詳細資訊，請參閱[部署 Windows Server 2008 樹系根域](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc731174(v=ws.10))。
 
 ## <a name="deploying-windows-server-2008-regional-domains"></a>部署 Windows Server 2008 地區網域
 完成樹系根域的部署之後，您就可以開始部署您的設計所指定的任何新的 Windows Server 2008 地區網域。 若要這樣做，您必須為每個地區網域部署網域控制站。 下圖顯示部署地區網域的程式。
 
 ![AD DS 需求](media/AD-DS-Deployment-Requirements/89a878c8-9a94-4180-ad43-ca75316a6318.gif)
 
-如需詳細資訊，請參閱[部署 Windows Server 2008 地區網域](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755118(v=ws.10))。
+如需詳細資訊，請參閱[部署 Windows Server 2008 地區網域](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc755118(v=ws.10))。
 
 ## <a name="upgrading-active-directory-domains-to-windows-server-2008"></a>將 Active Directory 網域升級至 Windows Server 2008
-將您的 Windows 2000 或 Windows Server 2003 網域升級至 Windows Server 2008 網域，是利用額外的 Windows Server 2008 特性和功能的有效率且簡單的方式。 您可以升級網域以維護目前的網路和網域設定，同時改善網路基礎結構的安全性、擴充性和管理性。 從 Windows 2000 或 Windows Server 2003 升級至 Windows Server 2008 需要最少的網路設定。 升級也對使用者作業沒有太大的影響。 如需詳細資訊，請參閱[將 Active Directory 網域升級至 Windows server 2008 和 Windows server 2008 R2 AD DS 網域](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731188(v=ws.10))。
+將您的 Windows 2000 或 Windows Server 2003 網域升級至 Windows Server 2008 網域，是利用額外的 Windows Server 2008 特性和功能的有效率且簡單的方式。 您可以升級網域以維護目前的網路和網域設定，同時改善網路基礎結構的安全性、擴充性和管理性。 從 Windows 2000 或 Windows Server 2003 升級至 Windows Server 2008 需要最少的網路設定。 升級也對使用者作業沒有太大的影響。 如需詳細資訊，請參閱[將 Active Directory 網域升級至 Windows server 2008 和 Windows server 2008 R2 AD DS 網域](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc731188(v=ws.10))。
 
 ## <a name="restructuring-ad-ds-domains"></a>重建 AD DS 網域
 當您在 Windows Server 2008 樹系（樹系重建）之間重建網域時，您可以減少環境中的網域數目，進而降低系統管理的複雜性和額外負荷。 當您在此重組程式中遷移樹系之間的物件時，來源網域和目標網域環境同時存在。 如有需要，您可以在遷移期間回復至來源環境。
 
 當您在 Windows Server 2008 樹系（林內重建）中重建 Windows Server 2008 網域時，可以合併您的網域結構，因而降低系統管理的複雜性和額外負荷。 當您在樹系中重建網域時，已遷移的帳戶已不存在於來源網域中。
 
-如需如何使用 Active Directory 遷移工具（ADMT）3.1 版（ADMT 3.1）來重建網域的詳細資訊，請參閱[ADMT 指南：遷移和重建 Active Directory 網域](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc974332(v=ws.10))。
+如需如何使用 Active Directory 遷移工具（ADMT）3.1 版（ADMT 3.1）來重建網域的詳細資訊，請參閱[ADMT 指南：遷移和重建 Active Directory 網域](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc974332(v=ws.10))。

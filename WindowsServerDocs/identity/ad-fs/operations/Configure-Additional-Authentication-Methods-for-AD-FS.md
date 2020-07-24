@@ -8,12 +8,12 @@ ms.date: 07/26/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b9bef61382812372f966cd6771c39d6a8ebbdd7a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5a7279416746269a3886fe929d066a6397be838a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859871"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962520"
 ---
 # <a name="configure-additional-authentication-methods-for-ad-fs"></a>Configure Additional Authentication Methods for AD FS
 
@@ -22,7 +22,7 @@ ms.locfileid: "80859871"
 > [!NOTE]
 > 如果您選取憑證驗證，請確定已經安全佈建智慧卡憑證，且具有 PIN 要求。
 
-您知道 Microsoft Azure 在雲端中提供類似的功能嗎？ 深入了解 [Microsoft Azure 身分識別解決方案](https://aka.ms/m2w274)。<p>在 Microsoft Azure 中建立混合式身分識別解決方案：<br /> - [瞭解 Azure 多重要素驗證。](https://aka.ms/ey6o9r)<br /> - [使用雲端驗證來管理單一樹系混合式環境的](https://aka.ms/g1jat8)身分識別。<br /> - 透過[其他多因素驗證管理機密應用程式的風險。](https://aka.ms/kt1bbm)
+您知道 Microsoft Azure 在雲端也提供類似功能嗎？ 深入了解 [Microsoft Azure 身分識別解決方案](https://aka.ms/m2w274)。<p>在 Microsoft Azure 中建立混合式身分識別解決方案：<br /> - [瞭解 Azure 多重要素驗證。](https://aka.ms/ey6o9r)<br /> - [使用雲端驗證管理單一樹系混合式環境的身分識別。](https://aka.ms/g1jat8)<br /> - [透過其他多因素驗證管理機密應用程式的風險。](https://aka.ms/kt1bbm)
 
 ## <a name="microsoft-and-third-party-additional-authentication-methods"></a>Microsoft 和協力廠商其他驗證方法
 您也可以在 Windows Server 2012 R2 的 AD FS 中設定及啟用 Microsoft 和協力廠商驗證方法。 一旦安裝並向 AD FS 註冊後，您就可以在全域或每一方信賴憑證者驗證原則中強制執行 MFA。
@@ -33,22 +33,22 @@ ms.locfileid: "80859871"
 |-|-|-| 
 |aPersona|aPersona 適用于 Microsoft ADFS SSO 的彈性多重要素驗證|[aPersona ASM ADFS 介面卡](https://www.apersona.com/adfs)|
 |Cyphercor Inc。|AD FS 的 LoginTC 多重要素驗證|[LoginTC AD FS 連接器](https://www.logintc.com/docs/connectors/adfs.html)|
-|雙核安全性|適用于 AD FS 的雙核 MFA 介面卡|[AD FS 的雙核驗證](https://duo.com/docs/adfs)|
+|Duo Security|適用于 AD FS 的雙核 MFA 介面卡|[AD FS 的雙核驗證](https://duo.com/docs/adfs)|
 |Futurae|AD FS 的 Futurae Authentication Suite|[Futurae 增強式驗證](https://futurae.com)|
 |Gemalto|Gemalto Identity & Security Services|[http://www.gemalto.com/identity](http://www.gemalto.com/identity)|
-|inWebo Technologies|inWebo Enterprise Authentication service|[inWebo 企業驗證](http://www.inwebo.com)|
+|inWebo Technologies|inWebo Enterprise Authentication service|[inWebo Enterprise Authentication](http://www.inwebo.com)|
 |Login People|適用於 AD FS 2012 R2 的 Login People MFA API 連接器 (Public Beta)|[https://www.loginpeople.com](https://www.loginpeople.com)|
-|Microsoft Corp.|Microsoft Azure MFA|[逐步解說指南：透過其他多因素驗證管理機密應用程式的風險](https://technet.microsoft.com/library/dn280946.aspx) (請參閱步驟 3)|
+|Microsoft Corp.|Microsoft Azure MFA|[逐步解說指南：透過其他多因素驗證管理機密應用程式的風險](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280946(v=ws.11)) (請參閱步驟 3)|
 Mideye | ADFS 的 Mideye Authentication 提供者 | [使用 Microsoft Active Directory 同盟服務 Mideye 雙因素驗證](https://www.mideye.com/support/administrators/documentation/integration/microsoft-adfs/)|
 |Okta | Active Directory 同盟服務的 Okta MFA | [Active Directory 同盟服務（ADFS）的 Okta MFA](https://help.okta.com/en/prod/Content/Topics/integrations/adfs-okta-int.htm)|
-|一個身分識別| Starling 2FA AD FS|[Starling 2FA AD FS 介面卡](https://www.oneidentity.com/products/starling-two-factor-authentication/)|
-|一個身分識別| Defender AD FS|[Defender AD FS 介面卡](https://www.oneidentity.com/products/defender/)|
+|One Identity| Starling 2FA AD FS|[Starling 2FA AD FS 介面卡](https://www.oneidentity.com/products/starling-two-factor-authentication/)|
+|One Identity| Defender AD FS|[Defender AD FS 介面卡](https://www.oneidentity.com/products/defender/)|
 |Ping 身分識別|PingID MFA Adapter for AD FS|[PingID MFA Adapter for AD FS](https://documentation.pingidentity.com/pingid/pingidAdminGuide/index.shtml#pid_c_PingIDforADFSSSO.html)|
-|RSA, The Security Division of EMC|RSA SecurID Authentication Agent for Microsoft Active Directory Federation Services|[適用于 Microsoft Active Directory 同盟服務的 RSA SecurID 驗證代理程式](http://www.emc.com/security/rsa-securid/rsa-authentication-agents/microsoft-ad-fs.htm)|
-|SafeNet，Inc.|SafeNet Authentication Service (SAS) Agent for AD FS|[SafeNet Authentication 服務： AD FS 代理程式設定指南](http://www.safenet-inc.com/resources/integration-guide/data-protection/Safenet_Authentication_Service/SafeNet_Authentication_Service__AD_FS_Agent_Configuration_Guide/?langtype=1033)|
+|RSA, The Security Division of EMC|RSA SecurID Authentication Agent for Microsoft Active Directory Federation Services|[RSA SecurID Authentication Agent for Microsoft Active Directory Federation Services](http://www.emc.com/security/rsa-securid/rsa-authentication-agents/microsoft-ad-fs.htm)|
+|SafeNet，Inc.|SafeNet Authentication Service (SAS) Agent for AD FS|[SafeNet 驗證服務: AD FS 代理程式設定指南](http://www.safenet-inc.com/resources/integration-guide/data-protection/Safenet_Authentication_Service/SafeNet_Authentication_Service__AD_FS_Agent_Configuration_Guide/?langtype=1033)|
 |SecureMFA|SecureMFA OTP 提供者| [ADFS 多重要素驗證提供者](https://www.securemfa.com/)|
-|Swisscom|Mobile ID Authentication Service and Signature Services|[Mobile ID 驗證服務](http://swisscom.ch/mid)|
-|Symantec|Symantec Validation and ID Protection Service (VIP)|[Symantec 驗證與識別碼保護服務（VIP）](http://www.symantec.com/vip-authentication-service)|
+|Swisscom|Mobile ID Authentication Service and Signature Services|[Mobile ID Authentication Service](http://swisscom.ch/mid)|
+|Symantec|Symantec Validation and ID Protection Service (VIP)|[Symantec Validation and ID Protection Service (VIP)](http://www.symantec.com/vip-authentication-service)|
 |Trusona|基本（無密碼 MFA）和主管（重要 + 身分識別的校對）| [Trusona 多重要素驗證](https://www.trusona.com/solution-overview/)|
 
 
@@ -57,5 +57,3 @@ Mideye | ADFS 的 Mideye Authentication 提供者 | [使用 Microsoft Active Dir
 
 ## <a name="see-also"></a>另請參閱
 [透過其他多重要素驗證管理機密應用程式的風險](Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
-
-

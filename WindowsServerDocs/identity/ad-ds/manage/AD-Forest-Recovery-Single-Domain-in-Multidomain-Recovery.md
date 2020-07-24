@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 267541be-2ea7-4af6-ab34-8b5a3fedee2d
 ms.technology: identity-adds
-ms.openlocfilehash: 13153358f50302de722109bfe101911e3bac4708
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 84ce874ea85cce7ea562fcd5169902086732b4c4
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823441"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960840"
 ---
 # <a name="ad-forest-recovery---recovering-a-single-domain-in-a-multidomain-forest"></a>AD 樹系復原-修復多網域樹系中的單一網域
 
@@ -45,7 +45,7 @@ ms.locfileid: "80823441"
 
 移除延遲物件對於不會造成與其他選項相關聯之停機時間的大型組織很有利。  
 
-如需詳細資訊，請參閱[使用 Repadmin 移除延遲物件](https://technet.microsoft.com/library/cc785298.aspx)。
+如需詳細資訊，請參閱[使用 Repadmin 移除延遲物件](/previous-versions/windows/it-pro/windows-server-2003/cc785298(v=ws.10))。
 
 ## <a name="next-steps"></a>後續步驟
 

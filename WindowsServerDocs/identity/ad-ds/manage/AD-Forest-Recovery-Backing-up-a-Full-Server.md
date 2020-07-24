@@ -8,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 398918dc-c8ab-41a6-a377-95681ec0b543
 ms.technology: identity-adds
-ms.openlocfilehash: 1579f8e88ea852ddf3f973b51b1b6ceed7c50a00
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e95c11007548c0e1db77132b6e872b88569d3b47
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80824271"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963000"
 ---
 # <a name="ad-forest-recovery---backing-up-a-full-server"></a>AD 樹系復原-備份完整伺服器  
 
->適用於：Windows Server 2016、Windows Server 2012 及 2012 R2、Windows Server 2008 和 2008 R2
+>適用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
 建議使用完整伺服器備份來準備樹系復原，因為它可以還原到不同的硬體或不同的作業系統實例。  使用 Windows Server Backup 您可以執行伺服器的完整備份。 
 
@@ -28,18 +28,18 @@ ms.locfileid: "80824271"
 >[!NOTE]
 >請注意，Windows Server 2016 和 Windows Server 2012 R2 之間的步驟可能稍有不同。
 
-如需在 Windows Server 2008 和 Windows Server 2008 R2 中安裝它的步驟，請參閱[安裝 Windows Server Backup](https://technet.microsoft.com/library/cc771232.aspx)。  
+如需在 Windows Server 2008 和 Windows Server 2008 R2 中安裝它的步驟，請參閱[安裝 Windows Server Backup](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771232(v=ws.10))。  
 
 ### <a name="to-install-windows-server-backup"></a>若要安裝 Windows Server Backup
 
 1. 開啟**伺服器管理員**，然後按一下 [**新增角色及功能**]。
-2. 在 [**新增角色及功能]** 上，按 **[下一步]** 。
-3. 在 [**安裝類型**] 畫面上，保留預設的 [**角色型] 或 [功能型安裝**]，然後按 **[下一步]** 。
-4. 在 [**伺服器選取**] 畫面上，按 **[下一步]** 。
-5. 在 [**伺服器角色**] 畫面上，按 **[下一步]** 。
-6. 在 [**功能**] 畫面上，選取**Windows Server Backup** ，然後按 **[下一步]** 
-   ![安裝備份](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup2.png)
-7. 按一下 [安裝]。
+2. 在 [**新增角色及功能]** 上，按 **[下一步]**。
+3. 在 [**安裝類型**] 畫面上，保留預設的 [**角色型] 或 [功能型安裝**]，然後按 **[下一步]**。
+4. 在 [**伺服器選取**] 畫面上，按 **[下一步]**。
+5. 在 [**伺服器角色**] 畫面上，按 **[下一步]**。
+6. 在 [**功能**] 畫面上，選取**Windows Server Backup** ，然後按 **[下一步** 
+    ![ 安裝備份]](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup2.png)
+7. 按一下 [安裝] 。
 8. 安裝完成後，按一下 [**關閉**]。
 
 ### <a name="to-perform-a-backup-with-windows-server-backup"></a>若要使用 Windows Server Backup 執行備份
@@ -49,15 +49,15 @@ ms.locfileid: "80824271"
 
    ![安裝備份](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup1.png) 
 
-2. 如果系統提示您，請在 [**使用者帳戶控制**] 對話方塊中，提供備份操作員認證，然後按一下 **[確定]** 。
+2. 如果系統提示您，請在 [**使用者帳戶控制**] 對話方塊中，提供備份操作員認證，然後按一下 **[確定]**。
 3. 按一下 [**本機備份**]。
-4. 在 [執行] 功能表上按一下 [一次性備份]。
-5. 在 [一次性備份] 嚮導的 [**備份選項**] 頁面上，按一下 [**其他選項**]，然後按 **[下一步]** 。
+4. 在 [執行]**** 功能表上按一下 [一次性備份]****。
+5. 在 [一次性備份] 嚮導的 [**備份選項**] 頁面上，按一下 [**其他選項**]，然後按 **[下一步]**。
 
    ![安裝備份](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup3.png)
 
-6. 在 [**選取備份**設定] 頁面上，按一下 [**完整伺服器（建議選項）** ]，然後按 **[下一步]** 。
-7. 按一下 [**指定目的地類型**] 頁面上的 [**本機磁片磁碟機**] 或 [**遠端共用資料夾**]，然後按 **[下一步]** 。
+6. 在 [**選取備份**設定] 頁面上，按一下 [**完整伺服器（建議選項）**]，然後按 **[下一步]**。
+7. 按一下 [**指定目的地類型**] 頁面上的 [**本機磁片磁碟機**] 或 [**遠端共用資料夾**]，然後按 **[下一步]**。
 8. 在 [**選取備份目的地**] 頁面上，選擇備份位置。  如果您選取 [本機磁片磁碟機]，請選擇本機磁片磁碟機，或如果您選取 [遠端共用]，請選擇網路共用。
 9. 在 [確認] 畫面上，按一下 [**備份**]。
 
@@ -68,13 +68,13 @@ ms.locfileid: "80824271"
 
 >[!NOTE]
 >如果您收到錯誤，指出沒有可用的備份儲存位置，您將需要排除已選取的其中一個磁片區，或新增新的磁片區或遠端共用。
->如果您收到一則警告，指出選取的磁片區也包含在要備份的專案清單中，請決定是否要移除，然後按一下 **[確定]** 。
+>如果您收到一則警告，指出選取的磁片區也包含在要備份的專案清單中，請決定是否要移除，然後按一下 **[確定]**。
 
-## <a name="using-wbadminexe-to-backup-a-windows-server"></a>使用 Wbadmin 來備份 windows server
+## <a name="using-wbadminexe-to-backup-a-windows-server"></a>使用 Wbadmin.exe 來備份 windows server
 
-Wbadmin 是一種命令列公用程式，可讓您從命令提示字元備份和還原作業系統、磁片區、檔案、資料夾和應用程式。
+Wbadmin.exe 是一種命令列公用程式，可讓您從命令提示字元備份和還原作業系統、磁片區、檔案、資料夾和應用程式。
 
-### <a name="to-perform-a-full-server-backup-using-wbadminexe"></a>使用 Wbadmin 執行完整伺服器備份
+### <a name="to-perform-a-full-server-backup-using-wbadminexe"></a>若要使用 Wbadmin.exe 執行完整伺服器備份
   
 - 開啟提升許可權的命令提示字元，輸入下列命令，然後按 ENTER 鍵：  
 

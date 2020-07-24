@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: c37bc129-a5e0-4219-9ba7-b4cf3a9fc9a4
 ms.technology: identity-adds
-ms.openlocfilehash: 308dce9be53194eb7db91944964ae5de03345ab6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d3f05774881f7ea475fd811aa9c8801c15f9ca81
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823851"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962990"
 ---
 # <a name="ad-forest-recovery---raising-the-value-of-available-rid-pools"></a>AD 樹系復原-提高可用 RID 集區的值 
 
@@ -23,10 +23,10 @@ ms.locfileid: "80823851"
 
 ## <a name="about-active-directory-rid-pools-and-ridavailablepool"></a>關於 Active Directory RID 集區和 rIDAvailablePool
 
-每個網域都有物件**CN = RID 管理員 $，CN = System，DC**=<*domain_name*>。 此物件具有名為**rIDAvailablePool**的屬性。 這個屬性值會維護整個網域的全域 RID 空間。 值是具有上半部和較低部分的大整數。 上半部會定義可為每個網域配置的安全性主體數目（0x3FFFFFFF 或僅限1000000000）。 下半部是已在網域中配置的 Rid 數目。 
+每個網域都有物件**CN = RID 管理員 $，CN = System，DC** =< *domain_name*>。 此物件具有名為**rIDAvailablePool**的屬性。 這個屬性值會維護整個網域的全域 RID 空間。 值是具有上半部和較低部分的大整數。 上半部會定義可為每個網域配置的安全性主體數目（0x3FFFFFFF 或僅限1000000000）。 下半部是已在網域中配置的 Rid 數目。 
   
 > [!NOTE]
-> 在 Windows Server 2016 和2012中，可以配置的安全性主體數目會增加到僅超過2000000000。 如需詳細資訊，請參閱[管理 RID 發行](https://technet.microsoft.com/library/jj574229.aspx)。 
+> 在 Windows Server 2016 和2012中，可以配置的安全性主體數目會增加到僅超過2000000000。 如需詳細資訊，請參閱[管理 RID 發行](./managing-rid-issuance.md)。 
   
 - 範例值：4611686014132422708  
 - 低部分：2100（要配置的下一個 RID 集區開始）  
@@ -39,12 +39,12 @@ ms.locfileid: "80823851"
 1. 開啟伺服器管理員，按一下 [**工具**]，然後按一下 [ **ADSI 編輯器**]。
 2. 按一下滑鼠右鍵，選取 **[連線到**]，然後執行預設命名內容，再按一下 **[確定**]。
    ![ADSI 編輯器](media/AD-Forest-Recovery-Raise-RID-Pool/adsi1.png) 
-3. 流覽至下列辨別名稱路徑： **CN = RID Manager $，cn = System，DC =<domain name>** 。
+3. 流覽至下列辨別名稱路徑： **CN = RID Manager $，cn = System，DC = <domain name> **。
    ![ADSI 編輯器](media/AD-Forest-Recovery-Raise-RID-Pool/adsi2.png) 
 3. 以滑鼠右鍵按一下並選取 [CN = RID 管理員 $] 的屬性。 
 4. 選取 [屬性] **rIDAvailablePool**，按一下 [**編輯**]，然後將大整數值複製到剪貼簿。
    ![ADSI 編輯器](media/AD-Forest-Recovery-Raise-RID-Pool/adsi3.png)  
-5. 啟動 [計算機]，然後從 [ **View** ] 功能表選取 [**科學模式]** 。 
+5. 啟動 [計算機]，然後從 [ **View** ] 功能表選取 [**科學模式]**。 
 6. 將100000新增至目前的值。
    ![ADSI 編輯器](media/AD-Forest-Recovery-Raise-RID-Pool/adsi4.png) 
 7. 使用 ctrl-c，或從 [**編輯**] 功能表中的 [**複製**] 命令，將值複製到剪貼簿。 
@@ -54,21 +54,21 @@ ms.locfileid: "80823851"
   
 ### <a name="to-raise-the-value-of-available-rid-pools-using-ldp"></a>使用 LDP 提高可用 RID 集區的值  
   
-1. 在命令提示字元，輸入下列命令，然後按 ENTER：  
+1. 在命令提示字元中輸入下列命令，然後按 ENTER：  
    **ldp**  
-2. 按一下 [**連接**]，按一下 **[連線]** ，輸入 RID 管理員的名稱，然後按一下 **[確定]** 。 
+2. 按一下 [**連接**]，按一下 **[連線]**，輸入 RID 管理員的名稱，然後按一下 **[確定]**。 
    ![LDP](media/AD-Forest-Recovery-Raise-RID-Pool/ldp1.png)
-3. 按一下 [連線] **，按一下**[系結]，選取 [**使用認證**系結 **]，然後**輸入系統管理認證，再按一下 **[確定]** 。 
+3. 按一下 [連線] **，按一下**[系結]，選取 [**使用認證**系結 **]，然後**輸入系統管理認證，再按一下 **[確定]**。 
    ![LDP](media/AD-Forest-Recovery-Raise-RID-Pool/ldp2.png)
 4. 依序按一下 [ **View**]、[ **Tree** ]，然後輸入下列辨別名稱路徑： CN = RID Manager $，CN = System，DC =*domain name*  
    ![LDP](media/AD-Forest-Recovery-Raise-RID-Pool/ldp3.png)
-5. 按一下 **[流覽]** ，然後按一下 [**修改**]。 
+5. 按一下 **[流覽]**，然後按一下 [**修改**]。 
 6. 將100000新增至目前的**rIDAvailablePool**值，然後在**值**中輸入總和。 
-7. 在 [ **Dn**] 中，輸入 `cn=RID Manager$,cn=System,dc=` *< 功能變數名稱\>* 。 
-8. 在 [**編輯專案] 屬性**中，輸入 `rIDAvailablePool`。 
+7. 在 [ **Dn**] 中，輸入 `cn=RID Manager$,cn=System,dc=` * \><功能變數名稱*。 
+8. 在 [**編輯專案] 屬性**中，輸入 `rIDAvailablePool` 。 
 9. 選取 [**取代**為作業]，然後按一下**Enter**。
    ![LDP](media/AD-Forest-Recovery-Raise-RID-Pool/ldp4.png) 
-10. 按一下 [**執行**] 以執行作業。 按一下 **關閉**。
+10. 按一下 [**執行**] 以執行作業。 按一下 [關閉] 。
 11. 若要驗證變更，請依序按一下 [ **View**]、[ **Tree**]，然後輸入下列辨別名稱路徑： CN = RID Manager $，CN = System，DC =*domain name*。   檢查**rIDAvailablePool**屬性。 
    ![LDP](media/AD-Forest-Recovery-Raise-RID-Pool/ldp5.png)
 

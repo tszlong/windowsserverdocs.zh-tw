@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 18e0f1ad19e8c6ce2b6dbffe0d25c940c4f8f985
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4034c3b40a6b409f295875e424668e68bce24cdb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474275"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962860"
 ---
 # <a name="create-a-folder-in-a-dfs-namespace"></a>在 DFS 命名空間中建立資料夾
 
@@ -35,12 +35,10 @@ ms.locfileid: "85474275"
 
 
 > [!TIP]
-> 若要使用 Windows PowerShell 在命名空間中建立資料夾，請使用 [New-DfsnFolder](https://docs.microsoft.com/powershell/module/dfsn/new-dfsnfolder) Cmdlet。 DFSN Windows PowerShell 模組於 Windows Server 2012 中引進。
+> 若要使用 Windows PowerShell 在命名空間中建立資料夾，請使用 [New-DfsnFolder](/powershell/module/dfsn/new-dfsnfolder) Cmdlet。 DFSN Windows PowerShell 模組於 Windows Server 2012 中引進。
 
 
 ## <a name="additional-references"></a>其他參考
 
 -   [部署 DFS 命名空間](deploying-dfs-namespaces.md)
 -   [委派 DFS 命名空間的管理權限](delegate-management-permissions-for-dfs-namespaces.md)
-
-

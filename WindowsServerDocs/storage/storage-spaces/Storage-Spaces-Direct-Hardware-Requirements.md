@@ -9,12 +9,12 @@ ms.topic: article
 author: eldenchristensen
 ms.date: 06/24/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e34f74226edb56e8db0290fd5dc83f0c6e54221
-ms.sourcegitcommit: c40c29683d25ed75b439451d7fa8eda9d8d9e441
+ms.openlocfilehash: 108e5a65b78370c40ba02da677e953eb2b122288
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85833321"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964580"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>儲存空間直接存取的硬體需求
 
@@ -33,7 +33,7 @@ ms.locfileid: "85833321"
 
 ![顯示 SDDC AQs 之 Windows Server 類別目錄的螢幕擷取畫面](media/hardware-requirements/sddc-aqs.png)
 
-完整設定的叢集（伺服器、網路和存放裝置）必須在容錯移轉叢集管理員中，或使用 PowerShell 中的 Cmdlet，以在每個 wizard 中傳遞所有叢集[驗證測試](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx) `Test-Cluster` [cmdlet](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps) 。
+完整設定的叢集（伺服器、網路和存放裝置）必須在容錯移轉叢集管理員中，或使用 PowerShell 中的 Cmdlet，以在每個 wizard 中傳遞所有叢集[驗證測試](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732035(v=ws.10)) `Test-Cluster` [cmdlet](/powershell/module/failoverclusters/test-cluster?view=win10-ps) 。
 
 此外，也適用下列需求：
 
@@ -47,12 +47,12 @@ ms.locfileid: "85833321"
 - Intel Nehalem 或更新版本相容處理器;或
 - AMD EPYC 或更新版本相容處理器
 
-## <a name="memory"></a>記憶體
+## <a name="memory"></a>Memory
 
 - 適用于 Windows Server、Vm 和其他應用程式或工作負載的記憶體;增加
 - 每部伺服器上每 tb 的快取磁片磁碟機容量 4 GB RAM，用於儲存空間直接存取中繼資料
 
-## <a name="boot"></a>Boot
+## <a name="boot"></a>開機
 
 - Windows Server 支援的任何開機裝置，[現在包含 SATADOM](https://cloudblogs.microsoft.com/windowsserver/2017/08/30/announcing-support-for-satadom-boot-drives-in-windows-server-2016/)
 - **不**需要 RAID 1 鏡像，但支援開機
@@ -82,14 +82,14 @@ ms.locfileid: "85833321"
 
 - 支援 SATA、SAS、持續性記憶體和 NVMe （M. 2、U. 2 和附加元件卡）磁片磁碟機
 - 支援512n、512e 和4K 原生磁片磁碟機
-- 固態硬碟必須提供[電源中斷保護](https://blogs.technet.microsoft.com/filecab/2016/11/18/dont-do-it-consumer-ssd/)
+- 固態硬碟必須提供[電源中斷保護](https://techcommunity.microsoft.com/t5/storage-at-microsoft/don-t-do-it-consumer-grade-solid-state-drives-ssd-in-storage/ba-p/425914)
 - 每一部伺服器中的磁片磁碟機數目和類型–請參閱[磁片磁碟機對稱考慮](drive-symmetry-considerations.md)
 - 快取裝置必須是 32 GB 或更大
 - 持續性記憶體裝置會在區塊儲存模式中使用
 - 使用持續性記憶體裝置做為快取裝置時，您必須使用 NVMe 或 SSD 容量裝置（您無法使用 Hdd）
 - NVMe 驅動程式是由 Microsoft 所提供，內含在 Windows 中（stornvme.sys）
 - 建議：容量磁片磁碟機數目是快取磁片磁碟機數目的整數倍數
-- 建議：快取磁片磁碟機應有高寫入耐用：每日至少3個磁片磁碟機寫入（DWPD），或每天至少 4 tb 寫入（TBW）–請參閱[瞭解每天的磁片寫入（DWPD）、tb 寫入的（TBW），以及建議的最小值儲存空間直接存取](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)
+- 建議：快取磁片磁碟機應有高寫入耐用：每日至少3個磁片磁碟機寫入（DWPD），或每天至少 4 tb 寫入（TBW）–請參閱[瞭解每天的磁片寫入（DWPD）、tb 寫入的（TBW），以及建議的最小值儲存空間直接存取](https://techcommunity.microsoft.com/t5/storage-at-microsoft/understanding-ssd-endurance-drive-writes-per-day-dwpd-terabytes/ba-p/426024)
 
 以下是連接磁片磁碟機以進行儲存空間直接存取的方式：
 

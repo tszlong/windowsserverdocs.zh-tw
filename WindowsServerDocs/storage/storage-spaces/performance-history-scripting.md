@@ -7,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 05/15/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 53a5f2aa403c83d24acde1fc57e793141175d9b6
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7f3274210ea6c08d63862551570096ab10aa878e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474715"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961810"
 ---
 # <a name="scripting-with-powershell-and-storage-spaces-direct-performance-history"></a>使用 PowerShell 編寫腳本，並儲存空間直接存取效能歷程記錄
 
@@ -485,10 +485,10 @@ $Output = Invoke-Command (Get-ClusterNode).Name {
 $Output | Sort-Object RawAvgMemoryUsage -Descending | Select-Object -First 10 | Format-Table PsComputerName, VM, AvgMemoryUsage
 ```
 
-大功告成！ 希望這些範例可以讓您激發，並協助您開始使用。 有了儲存空間直接存取的效能歷程記錄，以及功能強大、腳本易懂的 `Get-ClusterPerf` Cmdlet，您都可以問與答！ –管理和監視 Windows Server 2019 基礎結構時的複雜問題。
+就這麼簡單！ 希望這些範例可以讓您激發，並協助您開始使用。 有了儲存空間直接存取的效能歷程記錄，以及功能強大、腳本易懂的 `Get-ClusterPerf` Cmdlet，您都可以問與答！ –管理和監視 Windows Server 2019 基礎結構時的複雜問題。
 
 ## <a name="additional-references"></a>其他參考
 
-- [Windows PowerShell 使用者入門](https://docs.microsoft.com/powershell/scripting/getting-started/getting-started-with-windows-powershell)
+- [Windows PowerShell 使用者入門](/powershell/scripting/getting-started/getting-started-with-windows-powershell)
 - [儲存空間直接存取總覽](storage-spaces-direct-overview.md)
 - [效能歷程記錄](performance-history.md)

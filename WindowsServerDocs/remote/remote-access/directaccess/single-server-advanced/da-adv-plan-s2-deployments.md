@@ -8,23 +8,23 @@ ms.topic: article
 ms.assetid: 3bba28d4-23e2-449f-8319-7d2190f68d56
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: cf17c7f1349d5b3ee5b3efe0a872dd433ecbfe8d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 694260d58c8dda136318cd21f553a4b6b2fd31e0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80819572"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963640"
 ---
 # <a name="step-2-plan-advanced-directaccess-deployments"></a>步驟2規劃 Advanced DirectAccess 部署
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 在規劃 DirectAccess 基礎結構之後，使用 IPv4 和 IPv6 在單一伺服器上部署進階 DirectAccess 的下一步，就是規劃「遠端存取安裝精靈」的設定。  
   
 |工作|描述|  
 |----|--------|  
-|[2.1 規劃用戶端部署](#21-plan-for-client-deployment)|規劃如何讓用戶端電腦使用 DirectAccess 進行連線。 決定哪些受管理的電腦將被設定為 DirectAccess 用戶端，以及計劃在用戶端電腦上部署「網路連線助理」或「DirectAccess 連線助理」。|  
-|[2.2 規劃 DirectAccess 伺服器部署](#22-plan-for-directaccess-server-deployment)|規劃如何部署 DirectAccess 伺服器。|  
+|[2.1 為用戶端部署做規劃](#21-plan-for-client-deployment)|規劃如何讓用戶端電腦使用 DirectAccess 進行連線。 決定哪些受管理的電腦將被設定為 DirectAccess 用戶端，以及計劃在用戶端電腦上部署「網路連線助理」或「DirectAccess 連線助理」。|  
+|[2.2 為 DirectAccess 伺服器部署做規劃](#22-plan-for-directaccess-server-deployment)|規劃如何部署 DirectAccess 伺服器。|  
 |[2.3 規劃基礎結構伺服器](#23-plan-infrastructure-servers)|為您的 DirectAccess 部署規劃基礎結構伺服器，包括 DirectAccess 網路位置伺服器、「網域名稱系統」(DNS) 伺服器，以及 DirectAccess 管理伺服器。|  
 |[2.4 規劃應用程式伺服器](#24-plan-application-servers)|為 IPv4 和 IPv6 應用程式伺服器做規劃，並視需要考量 DirectAccess 用戶端電腦與內部應用程式伺服器之間是否需要端對端驗證。|  
 |[2.5 規劃 DirectAccess 和協力廠商 VPN 用戶端](#25-plan-directaccess-and-third-party-vpn-clients)|部署 DirectAccess 搭配協力廠商 VPN 用戶端時，可能必須設定登錄值，才能讓兩個遠端存取解決方案緊密並存。|  
@@ -54,11 +54,11 @@ ms.locfileid: "80819572"
   
         應該以手動方式在 DNS 中登錄這個名稱。 您可以透過 HTTP 使用其他網址或使用 **ping**，來建立其他連線能力檢查器。 每個連線能力檢查器都必須有一個 DNS 項目。  
   
-    -   **技術支援中心的電子郵件地址**  
+    -   **「技術服務人員」電子郵件地址**  
   
         如果使用者遇到 DirectAccess 連線問題，他們可以傳送包含診斷資訊的電子郵件給 DirectAccess 系統管理員，以進行問題疑難排解。  
   
-    -   **DirectAccess 連接名稱**  
+    -   **DirectAccess 連線名稱**  
   
         指定一個 DirectAccess 連線名稱，以協助使用者識別其電腦上的 DirectAccess 連線。  
   
@@ -95,11 +95,11 @@ ms.locfileid: "80819572"
   
     如果「遠端存取伺服器安裝精靈」偵測到網路介面卡上已部署 IPv6，它就會自動填入內部網路的 IPv6 首碼、要指派給 DirectAccess 用戶端電腦的 IPv6 首碼，以及要指派給 VPN 用戶端電腦的 IPv6 首碼。 如果自動產生的首碼對您的原生 IPv6 基礎結構來說不正確，您就必須手動變更它們。 如需詳細資訊，請參閱[1.1 規劃網路拓朴和設定](da-adv-plan-s1-infrastructure.md#11-plan-network-topology-and-settings)。  
   
--   [驗證]  
+-   **驗證**  
   
     決定 DirectAccess 用戶端將如何向 DirectAccess 伺服器進行驗證：  
   
-    -   **使用者驗證**。 您可以讓使用者使用 Active Directory 認證或雙因素驗證來進行驗證。 如需使用雙因素驗證進行驗證的詳細資訊，請參閱[使用 OTP 驗證部署遠端存取](https://technet.microsoft.com/library/hh831379.aspx)。  
+    -   **使用者驗證**。 您可以讓使用者使用 Active Directory 認證或雙因素驗證來進行驗證。 如需使用雙因素驗證進行驗證的詳細資訊，請參閱[使用 OTP 驗證部署遠端存取](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831379(v=ws.11))。  
   
     -   **電腦驗證**。 您可以設定讓電腦驗證使用憑證，或使用 DirectAccess 伺服器做為  Kerberos Proxy 來代表用戶端。 如需詳細資訊，請參閱[1.3 規劃憑證需求](da-adv-plan-s1-infrastructure.md#13-plan-certificate-requirements)。  
   
@@ -134,7 +134,7 @@ DirectAccess 需要三種類型的基礎結構伺服器：
 ## <a name="25-plan-directaccess-and-third-party-vpn-clients"></a>2.5 規劃 DirectAccess 和協力廠商 VPN 用戶端  
 有些協力廠商 VPN 用戶端不會在 [網路連線] 資料夾中建立連線。 這可能導致在已建立 VPN 連線且有內部網路連線能力時，DirectAccess 將它判斷為沒有內部網路連線能力。 當協力廠商 VPN 用戶端藉由將其介面定義為「網路裝置介面規格」(NDIS) 端點類型來登錄這些介面時，就會發生這種情況。 您可以藉由在 DirectAccess 用戶端上將下列登錄值設定為 1，讓這些類型的 VPN 用戶端並存：  
   
-**HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\ShowDomainEndpointInterfaces （REG_DWORD）**  
+**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\ShowDomainEndpointInterfaces (REG_DWORD)**  
   
 有些協力廠商 VPN 用戶端使用分割通道設定，此設定會允許 VPN 用戶端電腦直接存取網際網路，而不需要透過 VPN 連線將流量傳送到內部網路。  
   
@@ -142,11 +142,9 @@ DirectAccess 需要三種類型的基礎結構伺服器：
   
 如果 VPN 連線列出的預設閘道為空白或全部為零 (0.0.0.0)，即表示您的 VPN 用戶端就是以這種方式設定的。 根據預設，DirectAccess 用戶端無法識別分割通道設定。 若要設定 DirectAccess 用戶端來偵測這些類型的 VPN 用戶端設定，並與其並存，請將下列登錄值設定為 1：  
   
-**HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\Internet\ EnableNoGatewayLocationDetection （REG_DWORD）**  
+**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\Internet\ EnableNoGatewayLocationDetection (REG_DWORD)**  
   
-## <a name="previous-step"></a>上一步  
+## <a name="previous-step"></a>上一個步驟  
   
--   [步驟1：規劃 DirectAccess 基礎結構](da-adv-plan-s1-infrastructure.md)  
+-   [步驟 1：規劃 DirectAccess 基礎結構](da-adv-plan-s1-infrastructure.md)  
   
-
-

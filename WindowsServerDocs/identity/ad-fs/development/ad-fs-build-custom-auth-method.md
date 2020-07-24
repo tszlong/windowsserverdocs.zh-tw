@@ -8,20 +8,20 @@ ms.date: 05/23/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 53bbc2bd30f7ede3fc9e4f3580a96514068a7d5f
-ms.sourcegitcommit: d669d4af166b9018bcf18dc79cb621a5fee80042
+ms.openlocfilehash: cde04573b9317a3e597ada3a87042d77e2336255
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82037157"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964500"
 ---
 # <a name="build-a-custom-authentication-method-for-ad-fs-in-windows-server"></a>在 Windows Server 中建立 AD FS 的自訂驗證方法
 
-本逐步解說提供在 Windows Server 2012 R2 中為 AD FS 執行自訂驗證方法的指示。 如需詳細資訊，請參閱[其他驗證方法](https://msdn.microsoft.com/library/dn758113\(v=msdn.10\))。
+本逐步解說提供在 Windows Server 2012 R2 中為 AD FS 執行自訂驗證方法的指示。 如需詳細資訊，請參閱[其他驗證方法](/previous-versions/orphan-topics/ws.11/dn383648(v=ws.11))。
 
 
 > [!WARNING]
-> 您可以在這裡建立的範例僅&nbsp;供教育目的之用。 &nbsp;這些指示適用于公開模型所需元素的最簡單且最基本的執行方式。&nbsp;沒有驗證後端、錯誤處理或設定資料。 
+> 您可以在這裡建立的範例 &nbsp; 僅供教育目的之用。 &nbsp;這些指示適用于公開模型所需元素的最簡單且最基本的執行方式。 &nbsp;沒有驗證後端、錯誤處理或設定資料。 
 > <P></P>
 
 
@@ -41,10 +41,10 @@ ms.locfileid: "82037157"
 <tr class="odd">
 <td><p><strong>參考 dll</strong></p></td>
 <td><p><strong>所在位置</strong></p></td>
-<td><p><strong>必要項目</strong></p></td>
+<td><p><strong>必須用於</strong></p></td>
 </tr>
 <tr class="even">
-<td><p>IdentityServer. Web .dll</p></td>
+<td><p>Microsoft.IdentityServer.Web.dll</p></td>
 <td><p>Dll 位於已安裝 AD FS 之 Windows Server 2012 R2 伺服器上的%windir%\ADFS 中。</p>
 <p></p>
 <p>此 dll 必須複製到開發電腦，以及在專案中建立的明確參考。</p></td>
@@ -56,17 +56,17 @@ ms.locfileid: "82037157"
 
 ## <a name="create-the-provider"></a>建立提供者
 
-1.  在 Visual Studio 2012：選擇 [檔案\>-新增\>-專案 ...]
+1.  在 Visual Studio 2012：選擇 [檔案- \> 新增- \> 專案 ...]
 
 2.  選取 [類別庫]，並確定您的目標是 .NET 4.5。
 
     ![建立提供者](media/ad-fs-build-custom-auth-method/Dn783423.71a57ae1-d53d-462b-a846-5b3c02c7d3f2(MSDN.10).jpg "建立提供者")
 
-3.  從已安裝 AD FS **Microsoft.IdentityServer.Web.dll**的 Windows Server 2012 R2 伺服器上的% windir%\\ADFS 複製 IdentityServer，並將它貼入開發電腦上的專案資料夾中。
+3.  從已**Microsoft.IdentityServer.Web.dll** \\ 安裝 AD FS 的 Windows server 2012 R2 伺服器上的% windir% ADFS 複製Microsoft.IdentityServer.Web.dll，並將它貼入開發電腦上的專案資料夾中。
 
 4.  在**方案總管**中，以滑鼠右鍵按一下 [**參考**] 並**新增參考 ...**
 
-5.  流覽至您的**IdentityServer**本機複本，然後**新增 ...**
+5.  流覽至您**Microsoft.IdentityServer.Web.dll**的本機複本，然後**新增 ...**
 
 6.  按一下 **[確定]** 以確認新的參考：
 
@@ -277,7 +277,7 @@ ms.locfileid: "82037157"
 
    您可以在一分鐘內修正此問題，但首先我們要根據新實的型別，將最後必要的 return 語句加入至您的初始 MyAdapter 類別。  若要這樣做，請*將下方的*專案新增至您現有的 IAuthenticationAdapter 執行：
 
-       類別 MyAdapter： IAuthenticationAdapter {public IAuthenticationAdapterMetadata Metadata {//get {return new <instance of IAuthenticationAdapterMetadata derived class>;}    get {return new MyMetadata （）;}    }
+       類別 MyAdapter： IAuthenticationAdapter {public IAuthenticationAdapterMetadata Metadata {//get {return new <instance of IAuthenticationAdapterMetadata derived class> ;}    get {return new MyMetadata （）;}    }
 
         public IAdapterPresentation BeginAuthentication(Claim identityClaim, HttpListenerRequest request, IAuthenticationContext authContext)
         {
@@ -341,7 +341,7 @@ ms.locfileid: "82037157"
         //]]>
         </script></div>
 
-14. 然後，選取 [**專案\>-新增元件 ...]資源**檔並將檔案命名為**資源**，然後按一下 [**新增]：**
+14. 然後，選取 [**專案- \> 新增元件 ...]資源**檔並將檔案命名為**資源**，然後按一下 [**新增]：**
 
    ![建立提供者](media/ad-fs-build-custom-auth-method/Dn783423.3369ad8f-f65f-4f36-a6d5-6a3edbc1911a(MSDN.10).jpg "建立提供者")
 
@@ -359,7 +359,7 @@ ms.locfileid: "82037157"
 
 1.  在方案總管中，以滑鼠右鍵按一下您的專案名稱，然後按一下 [**屬性**]。
 
-2.  在 [**簽署**] 索引標籤上，核取 **[簽署元件**]，然後選擇 [ ** \<新增 ...]\> **在 **[選擇強式名稱金鑰檔：** 輸入金鑰檔名稱和密碼]，然後按一下 **[確定]**。  然後，確定已核取 **[簽署元件**]，而且未選取 [**延遲簽**章]。  [屬性**簽署**] 頁面看起來應該像這樣：
+2.  在 [**簽署**] 索引標籤上，核取 [**簽署元件**]，然後選擇 [ **\<New...\>** **選擇強式名稱金鑰**檔]：輸入金鑰檔名稱和密碼，然後按一下 **[確定]**。  然後，確定已核取 **[簽署元件**]，而且未選取 [**延遲簽**章]。  [屬性**簽署**] 頁面看起來應該像這樣：
 
     ![建置您的提供者](media/ad-fs-build-custom-auth-method/Dn783423.0b1a1db2-d64e-4bb8-8c01-ef34296a2668(MSDN.10).jpg "建置您的提供者")
 
@@ -377,17 +377,17 @@ ms.locfileid: "82037157"
 
 2.  安裝 AD FS 角色服務，並使用至少一個節點來設定伺服器陣列。
 
-    如需在實驗室環境中設定同盟伺服器的詳細步驟，請參閱《 [Windows server 2012 R2 AD FS 部署指南》](https://msdn.microsoft.com/library/dn486820\(v=msdn.10\))。
+    如需在實驗室環境中設定同盟伺服器的詳細步驟，請參閱《 [Windows server 2012 R2 AD FS 部署指南》](/previous-versions/orphan-topics/ws.11/dn383648(v=ws.11))。
 
-3.  將 Gacutil 工具複製到伺服器。
+3.  將 Gacutil.exe 工具複製到伺服器。
 
-    Gacutil 可在 **%\\homedrive% Program Files （x86）\\Microsoft sdk\\windows\\v4.0 8.0 a Windows 8 電腦上\\的\\bin NETFX 4.0\\工具**中找到。  您需要**gacutil**檔案本身以及**1033**、 **en-us**和其他當地語系化資源資料夾，位於**NETFX 4.0 工具**位置底下。
+    Gacutil.exe 可以在 **% homedrive% \\ Program Files （x86） Microsoft sdk windows V4.0 8.0 windows 8 電腦上 \\ \\ \\ 的 \\ bin \\ NETFX \\ 4.0 工具**中找到。  您將需要**gacutil.exe**檔案本身以及**1033**、 **En-us**，以及**NETFX 4.0 工具**位置底下的其他當地語系化資源資料夾。
 
-4.  將您的提供者檔案（一個或多個強式名稱簽署的 .dll 檔案）複製到與**gacutil**相同的資料夾位置（此位置只是為了方便起見）
+4.  將您的提供者檔案（一或多個強式名稱簽署的 .dll 檔案）複製到與**gacutil.exe**相同的資料夾位置（此位置只是為了方便起見）
 
 5.  將您的 .dll 檔案加入至伺服器陣列中每部 AD FS 同盟伺服器上的 GAC：
 
-    範例：使用命令列工具 GACutil 將 dll 新增至 GAC：`C:\>.\gacutil.exe /if .\<yourdllname>.dll`
+    範例：使用命令列工具 GACutil.exe 將 dll 新增至 GAC：`C:\>.\gacutil.exe /if .\<yourdllname>.dll`
 
     若要在 GAC 中查看產生的專案：`C:\>.\gacutil.exe /l <yourassemblyname>`
 
@@ -418,7 +418,7 @@ ms.locfileid: "82037157"
 
     如果您已在 AD FS 環境中啟用裝置註冊服務，請同時執行下列步驟：`PS C:\>net start drs`
 
-    若要確認已註冊的提供者，請使用`PS C:\>Get-AdfsAuthenticationProvider`下列命令：。
+    若要確認已註冊的提供者，請使用下列命令： `PS C:\>Get-AdfsAuthenticationProvider` 。
 
     這會將您的提供者顯示為系統中的其中一個提供者。
 
@@ -432,15 +432,15 @@ ms.locfileid: "82037157"
 
 3.  在中央窗格的 [**多重要素驗證**] 底下，按一下 [**全域設定**] 右邊的 [**編輯**] 連結。
 
-4.  在頁面底部的 [**選取其他驗證方法**] 底下，選取提供者 AdminName 的方塊。 按一下 [套用]  。
+4.  在頁面底部的 [**選取其他驗證方法**] 底下，選取提供者 AdminName 的方塊。 按一下 [套用]。
 
 5.  若要提供「觸發程式」以使用介面卡叫用 MFA，請在 [**位置**] 底下檢查**外部**網路和**內部**網路，例如。 按一下 [確定]  。 （若要設定每個信賴憑證者的觸發程式，請參閱下方的「使用 Windows PowerShell 建立驗證原則」）。
 
 6.  使用下列命令來檢查結果：
 
-    第一`Get-AdfsGlobalAuthenticationPolicy`次使用。 您應該會看到提供者名稱做為其中一個 AdditionalAuthenticationProvider 值。
+    第一次使用 `Get-AdfsGlobalAuthenticationPolicy` 。 您應該會看到提供者名稱做為其中一個 AdditionalAuthenticationProvider 值。
 
-    然後使用`Get-AdfsAdditionalAuthenticationRule`。 您應該會看到外部網路和內部網路的規則，設定為系統管理員 UI 中的原則選取結果。
+    然後使用 `Get-AdfsAdditionalAuthenticationRule` 。 您應該會看到外部網路和內部網路的規則，設定為系統管理員 UI 中的原則選取結果。
 
 #### <a name="create-the-authentication-policy-using-windows-powershell"></a>使用 Windows PowerShell 建立驗證原則
 
@@ -479,7 +479,7 @@ Example:`PS C:\>Set-AdfsGlobalAuthenticationPolicy –AdditionalAuthenticationPr
 
 2.  確定 [**表單驗**證] 是同時檢查外部網路和內部網路驗證方法的唯一選項。  按一下 [確定]  。
 
-3.  開啟 IDP 起始的登入 html 頁面（HTTPs://\<fsname\>/adfs/ls/iDPInitiatedsignon.htm），然後在您的測試環境中以有效的 AD 使用者身分登入。
+3.  開啟 IDP 起始的登入 html 頁面（HTTPs:// \<fsname\> /adfs/ls/idpinitiatedsignon.htm），然後在您的測試環境中以有效的 AD 使用者身分登入。
 
 4.  輸入認證以進行主要驗證。
 
@@ -607,7 +607,7 @@ Example:`PS C:\>Set-AdfsGlobalAuthenticationPolicy –AdditionalAuthenticationPr
 
 3.  在 [**多重要素驗證**] 底下，按一下 [**全域設定**] 右邊的 [**編輯**] 連結。
 
-4.  在 [**選取其他驗證方法**] 底下，勾選提供者 AdminName 的方塊。 按一下 [套用]  。
+4.  在 [**選取其他驗證方法**] 底下，勾選提供者 AdminName 的方塊。 按一下 [套用]。
 
 5.  若要提供「觸發程式」以使用介面卡叫用 MFA，請在 [位置] 底下檢查**外部**網路和**內部**網路，例如。 按一下 [確定]  。
 
@@ -623,7 +623,7 @@ Example:`PS C:\>Set-AdfsGlobalAuthenticationPolicy –AdditionalAuthenticationPr
 
 2.  確定 [**表單驗**證] 是同時檢查**外部**網路和**內部**網路驗證方法的唯一選項。  按一下 [確定]  。
 
-3.  開啟 IDP 起始的登入 html 頁面（HTTPs://\<fsname\>/adfs/ls/iDPInitiatedsignon.htm），然後在您的測試環境中以有效的 AD 使用者身分登入。
+3.  開啟 IDP 起始的登入 html 頁面（HTTPs:// \<fsname\> /adfs/ls/idpinitiatedsignon.htm），然後在您的測試環境中以有效的 AD 使用者身分登入。
 
 4.  輸入主要驗證的認證。
 
@@ -641,6 +641,5 @@ Example:`PS C:\>Set-AdfsGlobalAuthenticationPolicy –AdditionalAuthenticationPr
 
 #### <a name="other-resources"></a>其他資源
 
-[其他驗證方法](https://msdn.microsoft.com/library/dn758113\(v=msdn.10\))  
-[透過其他多重要素驗證管理機密應用程式的風險](https://msdn.microsoft.com/library/dn280949\(v=msdn.10\))
-
+[其他驗證方法](/previous-versions/orphan-topics/ws.11/dn383648(v=ws.11))  
+[透過其他多重要素驗證管理機密應用程式的風險](/previous-versions/orphan-topics/ws.11/dn383648(v=ws.11))

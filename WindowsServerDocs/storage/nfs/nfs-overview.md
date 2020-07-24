@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2589e21c54fa864629f81b5889d0442c6f0de254
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: f18c880dd673b17f53815a57fa2fcc66558dad71
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070559"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961320"
 ---
 # <a name="network-file-system-overview"></a>網路檔案系統概觀
 
@@ -33,7 +33,7 @@ Windows 支援多個版本的 NFS 用戶端和伺服器，視作業系統版本�
 
 | 作業系統 | NFS 伺服器版本 |NFS 用戶端版本|
 | ----------------- | ------------------- | ----------------- |
-| Windows 7、Windows 8.1、Windows 10 | N/A | NFSv2、NFSv3 |
+| Windows 7、Windows 8.1、Windows 10 | 不適用 | NFSv2、NFSv3 |
 | Windows Server 2008、Windows Server 2008 R2 | NFSv2、NFSv3 | NFSv2、NFSv3 |
 | Windows Server 2012、Windows Server 2012 R2、Windows Server 2016、Windows Server 2019 | NFSv2、NFSv3、NFSv 4。1  | NFSv2、NFSv3 |
 
@@ -91,7 +91,7 @@ NFS 第3版用戶端可以有快速且透明的規劃容錯移轉，並具有更
 
 部署和管理 NFS 已透過下列方式改善：
 
-- 超過40的新 Windows PowerShell Cmdlet 可讓您更輕鬆地設定及管理 NFS 檔案共用。 如需詳細資訊，請參閱[Windows PowerShell 中的 NFS Cmdlet](https://docs.microsoft.com/powershell/module/nfs/?view=win10-ps)。
+- 超過40的新 Windows PowerShell Cmdlet 可讓您更輕鬆地設定及管理 NFS 檔案共用。 如需詳細資訊，請參閱[Windows PowerShell 中的 NFS Cmdlet](/powershell/module/nfs/?view=win10-ps)。
 - 識別對應已透過本機一般檔案對應存放區，以及用於設定身分識別對應的新 Windows PowerShell Cmdlet 來改善。
 - 伺服器管理員圖形化使用者介面較容易使用。
 - 新的 WMI 第2版提供者可讓您更輕鬆地進行管理。
@@ -99,7 +99,7 @@ NFS 第3版用戶端可以有快速且透明的規劃容錯移轉，並具有更
 
 ## <a name="server-manager-information"></a>伺服器管理員資訊
 
-在伺服器管理員或較新的[Windows 管理中心](../../manage/windows-admin-center/understand/windows-admin-center.md)-使用 [新增角色及功能] 嚮導來新增 SERVER for NFS 角色服務（在 [檔案] 和 [ISCSI 服務] 角色底下）。 如需安裝功能的一般資訊，請參閱 [安裝或解除安裝角色、角色服務或功能](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831809(v=ws.11)>)。 Server for NFS 工具組含適用于網路檔案系統的服務 MMC 嵌入式管理單元，可用來管理 Server for NFS 和 Client for NFS 元件。 使用嵌入式管理單元，您可以管理安裝在電腦上的 Server for NFS 元件。 Server for NFS 也包含數個 Windows 命令列管理工具：
+在伺服器管理員或較新的[Windows 管理中心](../../manage/windows-admin-center/overview.md)-使用 [新增角色及功能] 嚮導來新增 SERVER for NFS 角色服務（在 [檔案] 和 [ISCSI 服務] 角色底下）。 如需安裝功能的一般資訊，請參閱 [安裝或解除安裝角色、角色服務或功能](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831809(v=ws.11)>)。 Server for NFS 工具組含適用于網路檔案系統的服務 MMC 嵌入式管理單元，可用來管理 Server for NFS 和 Client for NFS 元件。 使用嵌入式管理單元，您可以管理安裝在電腦上的 Server for NFS 元件。 Server for NFS 也包含數個 Windows 命令列管理工具：
 
 - **Mount**會在本機掛接遠端 NFS 共用（也稱為匯出），並將它對應至 Windows 用戶端電腦上的本機磁碟機號。
 - **Nfsadmin**會管理 SERVER for Nfs 和 CLIENT for nfs 元件的設定。
@@ -108,7 +108,7 @@ NFS 第3版用戶端可以有快速且透明的規劃容錯移轉，並具有更
 - **Showmount –** 顯示 SERVER for NFS 所匯出的已掛接檔案系統。
 - **Umount**會移除裝載 NFS 的磁片磁碟機。
 
-Windows Server 2012 中的 NFS 引進了適用于 Windows PowerShell 的 NFS 模組，其中有數個專門用於 NFS 的新 Cmdlet。 這些 Cmdlet 可讓您輕鬆地將 NFS 管理工作自動化。 如需詳細資訊，請參閱[Windows PowerShell 中的 NFS Cmdlet](https://docs.microsoft.com/powershell/module/nfs/?view=win10-ps)。
+Windows Server 2012 中的 NFS 引進了適用于 Windows PowerShell 的 NFS 模組，其中有數個專門用於 NFS 的新 Cmdlet。 這些 Cmdlet 可讓您輕鬆地將 NFS 管理工作自動化。 如需詳細資訊，請參閱[Windows PowerShell 中的 NFS Cmdlet](/powershell/module/nfs/?view=win10-ps)。
 
 ## <a name="additional-information"></a>其他資訊
 
@@ -117,5 +117,5 @@ Windows Server 2012 中的 NFS 引進了適用于 Windows PowerShell 的 NFS 模
 |內容類型|參考|
 |---|---|
 |部署|[部署網路檔案系統](deploy-nfs.md)|
-|Operations|[Windows PowerShell 中的 NFS Cmdlet](https://docs.microsoft.com/powershell/module/nfs/?view=win10-ps)|
+|作業|[Windows PowerShell 中的 NFS Cmdlet](/powershell/module/nfs/?view=win10-ps)|
 |相關技術|[Windows Server 的儲存空間](../storage.yml)|

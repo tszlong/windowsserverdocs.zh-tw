@@ -1,19 +1,19 @@
 ---
-title: Negotiate、會話設定和樹狀連接失敗
+title: 交涉、工作階段設定和樹狀連接失敗
 description: 介紹如何針對 Negotiate、會話設定和樹狀結構連接失敗進行疑難排解。
 author: Deland-Han
 manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 13124176e530aa7b74d18a38c906bf5297be511e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2bad602f934d844074ee96df06bf9234fdbf943f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815381"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961160"
 ---
-# <a name="negotiate-session-setup-and-tree-connect-failures"></a>Negotiate、會話設定和樹狀連接失敗
+# <a name="negotiate-session-setup-and-tree-connect-failures"></a>交涉、工作階段設定和樹狀連接失敗
 
 本文說明如何針對 SMB 協商、會話設定和樹狀 Connect 要求期間發生的失敗進行疑難排解。
 
@@ -27,7 +27,7 @@ SMB 伺服器會從 SMB 用戶端接收 SMB NEGOTIATE 要求。 連接逾時，�
 
 ## <a name="session-setup-fails"></a>會話設定失敗
 
-SMB 伺服器會從 SMB 用戶端收到 SMB 會話\_安裝要求，但無法回應。
+SMB 伺服器 \_ 從 smb 用戶端接收 SMB 會話設定要求，但無法回應。
 
 如果伺服器的完整功能變數名稱（FQDN）或網路基本輸入/輸出系統（NetBIOS）名稱在通用命名慣例（UNC）路徑中是 ' sed，Windows 就會使用 Kerberos 進行驗證。
 
@@ -38,7 +38,7 @@ SMB 伺服器會從 SMB 用戶端收到 SMB 會話\_安裝要求，但無法回�
 
 此外，請進行下列檢查：
 
-- 查看 SMB 會話中的安全性 blob\_安裝要求，以確保傳送正確的認證。
+- 查看 SMB 會話設定要求中的安全性 blob \_ ，以確保傳送正確的認證。
 
 - 嘗試停用 SMB 伺服器名稱強化（**SmbServerNameHardeningLevel = 0**）。
 
@@ -50,17 +50,17 @@ SMB 伺服器會從 SMB 用戶端收到 SMB 會話\_安裝要求，但無法回�
 
 請確定使用者帳號憑證同時具有資料夾的共用和 NT 檔案系統（NTFS）許可權。
 
-常見樹狀結構連接錯誤的原因可以在[3.3.5.7 接收 SMB2 樹狀結構\_連接要求](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/652e0c14-5014-4470-999d-b174d7b2da87)中找到。 以下是兩個常見狀態碼的解決方案。
+常見樹狀結構連接錯誤的原因可在[3.3.5.7 接收 SMB2 樹狀結構 \_ 連接要求](/openspecs/windows_protocols/ms-smb2/652e0c14-5014-4470-999d-b174d7b2da87)中找到。 以下是兩個常見狀態碼的解決方案。
 
-\[狀態\_不正確的\_網路\_名稱\]
+\[狀態不 \_ 正確的 \_ 網路 \_ 名稱\]
 
 請確定該共用存在於伺服器上，而且在 SMB 用戶端要求中的拼寫正確。
 
-\[狀態\_拒絕存取\_\]
+\[\_拒絕存取 \_ 狀態\]
 
 確認共用所使用的磁片和資料夾存在且可存取。
 
-如果您使用 SMBv3 或更新版本，請檢查伺服器和共用是否需要加密，但用戶端不支援加密。 若要這麼做，請採取下列動作：
+如果您使用 SMBv3 或更新版本，請檢查伺服器和共用是否需要加密，但用戶端不支援加密。 若要這麼做，請執行下列動作：
 
 - 執行下列命令來檢查伺服器。
 
@@ -86,12 +86,12 @@ SMB 伺服器會從 SMB 用戶端收到 SMB 會話\_安裝要求，但無法回�
 
 - Samba 和協力廠商裝置可能不支援加密。 您可能必須參閱產品檔以取得詳細資訊。
 
-## <a name="references"></a>參考
+## <a name="references"></a>參考資料
 
 如需詳細資訊，請參閱下列文章。
 
-[3.3.5.4 接收 SMB2 NEGOTIATE 要求](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/b39f253e-4963-40df-8dff-2f9040ebbeb1)
+[3.3.5.4 接收 SMB2 NEGOTIATE 要求](/openspecs/windows_protocols/ms-smb2/b39f253e-4963-40df-8dff-2f9040ebbeb1)
 
-[3.3.5.5 接收 SMB2 會話\_安裝要求](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/e545352b-9f2b-4c5e-9350-db46e4f6755e)
+[3.3.5.5 接收 SMB2 會話 \_ 安裝要求](/openspecs/windows_protocols/ms-smb2/e545352b-9f2b-4c5e-9350-db46e4f6755e)
 
-[3.3.5.7 接收 SMB2 樹狀結構\_連接要求](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/652e0c14-5014-4470-999d-b174d7b2da87?redirectedfrom=MSDN)
+[3.3.5.7 接收 SMB2 樹狀結構 \_ 連接要求](/openspecs/windows_protocols/ms-smb2/652e0c14-5014-4470-999d-b174d7b2da87)

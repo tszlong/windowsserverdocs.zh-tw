@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: 17e5ceec74277c888232d17adca5c2bbb305af97
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e85cc72d2452f7bc9c63bc715339184e612e789f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823621"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960860"
 ---
 # <a name="ad-forest-recovery---redeploy-remaining-dcs"></a>AD 樹系復原-重新部署剩餘的 Dc
 
@@ -29,20 +29,20 @@ ms.locfileid: "80823621"
   
 - 複製  
    - 對於執行 Windows Server 2012 的虛擬化環境，複製是復原大量 Dc 的最快速且最簡單的方式。 從備份還原單一虛擬化 DC 之後，您可以自動復原網域中所有虛擬化的 dc。  
-   - 如需複製和必要條件的詳細資訊，請參閱[Active Directory Domain Services （AD DS）虛擬化的簡介（層級100）](https://technet.microsoft.com/library/hh831734.aspx)。  
-- 在執行 Windows Server 2012 （或執行舊版 Windows Server 的伺服器上的 Dcpromo.exe）或使用使用者介面的伺服器上，使用 Windows PowerShell 重新安裝 AD DS  
-   - 若要加速重新安裝 AD DS，您可以使用 [從媒體安裝（IFM）] 選項來減少安裝期間的複寫流量。 如需使用**ntdsutil ifm**命令建立安裝媒體的詳細資訊，請參閱[從媒體安裝 AD DS](https://technet.microsoft.com/library/cc770654\(WS.10\).aspx)。  
+   - 如需複製和必要條件的詳細資訊，請參閱[Active Directory Domain Services （AD DS）虛擬化的簡介（層級100）](./managing-rid-issuance.md)。  
+- 在執行 Windows Server 2012 （或在執行舊版 Windows Server 的伺服器上 Dcpromo.exe）或使用使用者介面的伺服器上，使用 Windows PowerShell 重新安裝 AD DS  
+   - 若要加速重新安裝 AD DS，您可以使用 [從媒體安裝（IFM）] 選項來減少安裝期間的複寫流量。 如需使用**ntdsutil ifm**命令建立安裝媒體的詳細資訊，請參閱[從媒體安裝 AD DS](./managing-rid-issuance.md)。  
 
 藉由虛擬化的 DC 複製或安裝 AD DS （而不是從備份還原），針對每個在樹系中復原的複本 DC 考慮下列額外的點：  
   
 - DC 上用來作為複製來源的所有軟體都必須能夠複製。 在開始複製之前，應該先移除無法複製的應用程式和服務。 如果無法這麼做，則應該選擇替代的虛擬化 DC 做為來源。  
 - 如果您從第一個要還原的虛擬化 DC 複製其他虛擬化 dc，則在複製其 VHDX 檔案時，來源 DC 將需要關閉。 然後，在第一次啟動複製虛擬 Dc 時，它就必須在執行中並可供線上使用。 如果第一個復原的 DC 無法接受關機所需的停機時間，請安裝 AD DS 作為複製的來源，以部署額外的虛擬化 DC。  
-- 複製的虛擬化 DC 的主機名稱或您想要安裝 AD DS 的伺服器不會有任何限制。 您可以使用先前使用的新主機名稱或主機名稱。 如需 DNS 主機名稱語法的詳細資訊，請參閱[建立 Dns 電腦名稱稱](https://technet.microsoft.com/library/cc785282.aspx)（[https://go.microsoft.com/fwlink/?LinkId=74564](https://go.microsoft.com/fwlink/?LinkId=74564)）。  
-- 使用樹系中的第一部 DNS 伺服器（在根域中還原的第一個 DC）來設定每部伺服器，做為其網路介面卡的 TCP/IP 屬性中慣用的 DNS 伺服器。 如需詳細資訊，請參閱[CONFIGURE tcp/ip to USE DNS](https://technet.microsoft.com/library/cc779282.aspx)。  
+- 複製的虛擬化 DC 的主機名稱或您想要安裝 AD DS 的伺服器不會有任何限制。 您可以使用先前使用的新主機名稱或主機名稱。 如需 DNS 主機名稱語法的詳細資訊，請參閱[建立 Dns 電腦名稱稱](/previous-versions/windows/it-pro/windows-server-2003/cc785282(v=ws.10))（ [https://go.microsoft.com/fwlink/?LinkId=74564](https://go.microsoft.com/fwlink/?LinkId=74564) ）。  
+- 使用樹系中的第一部 DNS 伺服器（在根域中還原的第一個 DC）來設定每部伺服器，做為其網路介面卡的 TCP/IP 屬性中慣用的 DNS 伺服器。 如需詳細資訊，請參閱[CONFIGURE tcp/ip to USE DNS](/previous-versions/windows/it-pro/windows-server-2003/cc779282(v=ws.10))。  
 - 如果在中央位置部署了數個 Rodc，或藉由移除並重新安裝 AD DS，如果將它們個別部署在獨立的位置（例如分公司），請在網域中重新部署所有 Rodc （藉由虛擬化 DC 複製）。  
    - 重建 Rodc 可確保它們不包含任何延遲物件，並有助於防止複寫衝突之後發生。 當您從 RODC 移除 AD DS 時，請*選擇保留 DC 中繼資料的選項*。 使用此選項會保留 RODC 的 krbtgt 帳戶，並保留委派的 RODC 系統管理員帳戶和密碼複寫原則（PRP）的許可權，並防止您必須使用網域系統管理員認證來移除和重新安裝 RODC 上的 AD DS。 它也會保留 DNS 伺服器和通用類別目錄角色（如果原先是安裝在 RODC 上）。  
-   - 當您重建 Dc （Rodc 或可寫入的 Dc）時，可能會在重新安裝時增加複寫流量。 為協助降低這項影響，您可以錯開 RODC 安裝的排程，而且可以使用 [從媒體安裝（IFM）] 選項。 如果您使用 IFM 選項，請在您信任的可寫入 DC 上執行**ntdsutil IFM**命令，以釋放損毀的資料。 這有助於防止在 AD DS 重新安裝完成後，可能會出現在 RODC 上的損毀。 如需 IFM 的詳細資訊，請參閱[從媒體安裝 AD DS](https://technet.microsoft.com/library/cc770654\(WS.10\).aspx)。  
-   - 如需重建 Rodc 的詳細資訊，請參閱[Rodc 移除和重新安裝](https://technet.microsoft.com/library/cc835490\(WS.10\).aspx)。  
+   - 當您重建 Dc （Rodc 或可寫入的 Dc）時，可能會在重新安裝時增加複寫流量。 為協助降低這項影響，您可以錯開 RODC 安裝的排程，而且可以使用 [從媒體安裝（IFM）] 選項。 如果您使用 IFM 選項，請在您信任的可寫入 DC 上執行**ntdsutil IFM**命令，以釋放損毀的資料。 這有助於防止在 AD DS 重新安裝完成後，可能會出現在 RODC 上的損毀。 如需 IFM 的詳細資訊，請參閱[從媒體安裝 AD DS](./managing-rid-issuance.md)。  
+   - 如需重建 Rodc 的詳細資訊，請參閱[Rodc 移除和重新安裝](/previous-versions/windows/it-pro/windows-server-2003/cc779282(v=ws.10))。  
 - 如果 DC 在樹系故障前執行 DNS 伺服器服務，請在安裝 AD DS 期間安裝和設定 DNS 伺服器服務。 否則，請使用其他 DNS 伺服器設定其先前的 DNS 用戶端。  
 - 如果您需要額外的通用類別目錄來共用使用者或應用程式的驗證或查詢負載，您可以在複製之前將通用類別目錄新增至來源虛擬化 DC，或在安裝 AD DS 期間，讓 DC 成為通用類別目錄伺服器。  
   

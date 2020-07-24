@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 680d0435d77164e101f045b439be6ccb6601dfef
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3b9f727107ac9d392b52ab683aca510849fc534a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855731"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964690"
 ---
 # <a name="use-software-restriction-policies-to-help-protect-your-computer-against-an-email-virus"></a>使用軟體限制原則來協助保護電腦免於電子郵件病毒
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 本主題提供的資訊說明如何使用軟體限制原則（SRP）來設定應用程式控制原則，以協助保護您的電腦免于從 Windows Server 2008 和 Windows Vista 開始的電子郵件病毒。
 
@@ -31,13 +31,13 @@ ms.locfileid: "80855731"
 
 1.  請參閱軟體限制原則的最佳作法，以瞭解 SRP 的運作方式。
 
-    -   [最佳作法](software-restriction-policies-technical-overview.md#BKMK_Best_Practices)
+    -   [最佳做法](software-restriction-policies-technical-overview.md#BKMK_Best_Practices)
 
-    -   [軟體限制原則的工作方式](https://technet.microsoft.com/library/cc786941(v=WS.10).aspx)
+    -   [軟體限制原則的工作方式](/previous-versions/windows/it-pro/windows-server-2003/cc786941(v=ws.10))
 
 2.  開啟 [軟體限制原則]。
 
-    -   [針對您的本機電腦](administer-software-restriction-policies.md#BKMK_1)
+    -   [針對本機電腦](administer-software-restriction-policies.md#BKMK_1)
 
     -   [適用于網域、網站或組織單位，而且您位於已加入網域的成員伺服器或工作站上。](administer-software-restriction-policies.md#BKMK_2)
 
@@ -62,5 +62,3 @@ ms.locfileid: "80855731"
         -   [防止軟體限制原則套用至本機系統管理員](administer-software-restriction-policies.md#BKMK_Prevent_Admin)
 
 7.  測試原則。
-
-

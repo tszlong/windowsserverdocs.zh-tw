@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/15/2020
 ms.assetid: 12bc8e11-d63c-4aef-8129-f92324b2bf1b
-ms.openlocfilehash: 9978fd3e926ade4680ca6563d9d39b0851d893e9
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: d9e0a3855c324ca9b5c7de90d78535024a0a7a9d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070487"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964050"
 ---
 # <a name="frequently-asked-questions-about-storage-replica"></a>儲存體複本的常見問題集
 
@@ -35,7 +35,7 @@ ms.locfileid: "85070487"
 
 1. Azure 不支援共用 VHDX 來賓叢集，因此 Windows 容錯移轉叢集虛擬機器必須針對傳統共用儲存體的持續性磁片保留叢集或儲存空間直接存取使用 iSCSI 目標。
 2. 在[建立儲存空間直接存取 SOFS 叢集與儲存體複本，以在跨 Azure 區域進行](https://aka.ms/azure-storage-replica-cluster)嚴重損壞修復時，儲存空間直接存取型儲存體複本叢集有 Azure Resource Manager 範本。  
-3. Azure 中的叢集對叢集 RPC 通訊（叢集 Api 所需，以授與叢集之間的存取權）需要設定 CNO 的網路存取。 您必須允許 TCP 埠135和 TCP 埠49152以上的動態範圍。 [在 AZURE IAAS VM 上建立 Windows Server 容錯移轉叢集的參考–第2部分網路和建立](https://blogs.technet.microsoft.com/askcore/2015/06/24/building-windows-server-failover-cluster-on-azure-iaas-vm-part-2-network-and-creation/)。  
+3. Azure 中的叢集對叢集 RPC 通訊（叢集 Api 所需，以授與叢集之間的存取權）需要設定 CNO 的網路存取。 您必須允許 TCP 埠135和 TCP 埠49152以上的動態範圍。 [在 AZURE IAAS VM 上建立 Windows Server 容錯移轉叢集的參考–第2部分網路和建立](/archive/blogs/askcore/building-windows-server-failover-cluster-on-azure-iaas-vm-part-2-network-and-creation)。  
 4. 您可以使用雙節點的來賓叢集，其中每個節點都會針對儲存體複本所複寫的非對稱叢集使用回送 iSCSI。 但這可能會有非常不佳的效能，而且應該僅用於非常有限的工作負載或測試。  
 
 ## <a name="how-do-i-see-the-progress-of-replication-during-initial-sync"></a><a name="FAQ2"></a>如何? 在初始同步期間查看複寫的進度嗎？  
@@ -112,7 +112,7 @@ Update-SmbMultichannelConnection
 如果設定叢集對叢集複寫，在兩個叢集之間進行複寫時，「儲存體複本」可完全支援「向外延展檔案伺服器」，包括使用「儲存空間直接存取」。  
 
 ## <a name="is-csv-required-to-replicate-in-a-stretch-cluster-or-between-clusters"></a><a name="FAQ7.5"></a>CSV 是否需要在延展叢集或叢集之間進行複寫？  
-否。 您可以使用叢集資源所擁有的 CSV 或持續性磁片保留（PDR）（例如檔案伺服器角色）進行複寫。 
+不可以。 您可以使用叢集資源所擁有的 CSV 或持續性磁片保留（PDR）（例如檔案伺服器角色）進行複寫。 
 
 如果設定叢集對叢集複寫，在兩個叢集之間進行複寫時，「儲存體複本」可完全支援「向外延展檔案伺服器」，包括使用「儲存空間直接存取」。  
 
@@ -235,7 +235,7 @@ Update-SmbMultichannelConnection
 - Server1 來源磁片磁碟機 M：使用來源記錄磁片磁碟機 L：複寫到 Server2 目的地磁片磁碟機 M：使用目的地記錄磁片磁碟機 L：
 - Server2 來源磁片磁碟機 O：使用來源記錄磁片磁碟機 N：複寫到 Server1 目的地磁片磁碟機 O：目的地記錄磁片磁碟機 N：
 
-## <a name="related-topics"></a>[相關主題]  
+## <a name="related-topics"></a>相關主題  
 - [儲存體複本總覽](storage-replica-overview.md) 
 - [使用共用存放裝置的延展叢集複寫](stretch-cluster-replication-using-shared-storage.md)  
 - [伺服器對伺服器儲存體複寫](server-to-server-storage-replication.md)  

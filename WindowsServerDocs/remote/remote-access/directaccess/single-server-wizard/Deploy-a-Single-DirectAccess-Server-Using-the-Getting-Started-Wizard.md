@@ -8,16 +8,16 @@ ms.topic: article
 ms.assetid: eb0cf464-0668-40f8-8222-feb6bae6d3d5
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 13b3fdea120a857cc0c8e890bba87c13823c3a38
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 141c8ad17bd1c58d2bbe729aeacc88f498c8c619
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80819561"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962870"
 ---
 # <a name="deploy-a-single-directaccess-server-using-the-getting-started-wizard"></a>使用快速入門精靈部署單一 DirectAccess 伺服器
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 本主題提供使用單一 DirectAccess 伺服器並可讓您使用一些簡單的步驟部署 DirectAccess 的 DirectAccess 案例簡介。  
   
@@ -29,7 +29,7 @@ ms.locfileid: "80819561"
 -   [部署 DirectAccess 的必要條件](../../../remote-access/directaccess/Prerequisites-for-Deploying-DirectAccess.md)  
   
 ## <a name="scenario-description"></a><a name="BKMK_OVER"></a>案例描述  
-在此案例中，執行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的單一電腦會在幾個簡單的 wizard 步驟中設定為具有預設設定的 DirectAccess 伺服器，而不需要設定基礎結構設定，例如作為憑證授權單位單位（CA）或 Active Directory 安全性群組。  
+在此案例中，執行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的單一電腦會在幾個簡單的 wizard 步驟中設定為具有預設設定的 DirectAccess 伺服器，而不需要設定基礎結構設定，例如憑證授權單位單位（CA）或 Active Directory 安全性群組。  
   
 > [!NOTE]  
 > 如果您想要利用自訂設定來設定進階部署，請參閱 [Deploy a Single DirectAccess Server with Advanced Settings](../../../remote-access/directaccess/single-server-advanced/../../../remote-access/directaccess/single-server-advanced/../../../remote-access/directaccess/single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md)  
@@ -65,18 +65,18 @@ ms.locfileid: "80819561"
 ### <a name="planning-steps"></a>規劃步驟  
 規劃可以分成兩個階段：  
   
-1.  規劃 DirectAccess 基礎結構。 這個階段描述在開始 DirectAccess 部署之前設定網路基礎結構所需的規劃。 其中包含規劃網路和伺服器拓撲，以及 DirectAccess 網路位置伺服器。  
+1.  為 DirectAccess 基礎結構做規劃。 這個階段描述在開始 DirectAccess 部署之前設定網路基礎結構所需的規劃。 其中包含規劃網路和伺服器拓撲，以及 DirectAccess 網路位置伺服器。  
   
-2.  規劃 DirectAccess 部署。 這個階段描述為 DirectAccess 部署做準備所需的規劃步驟。 它包含為 DirectAccess 用戶端電腦、伺服器和用戶端驗證需求、VPN 設定、基礎結構伺服器，以及管理和應用程式伺服器做規劃。  
+2.  為 DirectAccess 部署做規劃。 這個階段描述為 DirectAccess 部署做準備所需的規劃步驟。 它包含為 DirectAccess 用戶端電腦、伺服器和用戶端驗證需求、VPN 設定、基礎結構伺服器，以及管理和應用程式伺服器做規劃。  
   
 如需詳細的規劃步驟，請參閱[規劃先進的 DirectAccess 部署](../../../remote-access/directaccess/single-server-advanced/Plan-an-Advanced-DirectAccess-Deployment.md)。  
   
 ### <a name="deployment-steps"></a>部署步驟  
 部署可以分成三個階段：  
   
-1.  設定 DirectAccess 基礎結構-這個階段包含設定網路和路由、視需要設定防火牆設定、設定憑證、DNS 伺服器、Active Directory 和 GPO 設定，以及 DirectAccess 網路位置伺服器.  
+1.  設定 DirectAccess 基礎結構-這個階段包含設定網路和路由、視需要設定防火牆設定、設定憑證、DNS 伺服器、Active Directory 和 GPO 設定，以及 DirectAccess 網路位置伺服器。  
   
-2.  正在進行 DirectAccess 伺服器設定。 這個階段包含設定 DirectAccess 用戶端電腦、DirectAccess 伺服器、基礎結構伺服器、管理和應用程式伺服器的步驟。  
+2.  設定 DirectAccess 伺服器設定。 這個階段包含設定 DirectAccess 用戶端電腦、DirectAccess 伺服器、基礎結構伺服器、管理和應用程式伺服器的步驟。  
   
 3.  正在驗證部署。 這個階段包含驗證部署是否如所需運作的步驟。  
   
@@ -89,7 +89,7 @@ ms.locfileid: "80819561"
   
 -   易於管理。 「遠端存取」系統管理員可以透過 DirectAccess，從遠端管理網際網路上的 DirectAccess 用戶端電腦，即使用戶端電腦不位於公司內部網路上也可以。 管理伺服器可以自動修復不符合公司規定的用戶端電腦。 DirectAccess 和 VPN 都是在同一個主控台以及使用相同的一組精靈進行管理。 此外，只要一部遠端存取管理主控台就可以管理一或多部遠端存取伺服器。  
   
-## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>此案例中包含的角色和功能  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>這個案例包含的角色與功能  
 下表列出本案例必備的角色和功能：  
   
 |角色/功能|如何支援本案例|  
@@ -116,7 +116,7 @@ ms.locfileid: "80819561"
         > 如果您的部分或所有用戶端電腦執行的是 Windows 7，您就必須使用 [Advanced 安裝程式]。 本檔中所述的消費者入門安裝程式嚮導不支援執行 Windows 7 的用戶端電腦。 如需如何搭配使用 Windows 7 用戶端與 DirectAccess 的指示，請參閱使用[Advanced Settings 部署單一 DirectAccess 伺服器](../../../remote-access/directaccess/single-server-advanced/../../../remote-access/directaccess/single-server-advanced/../../../remote-access/directaccess/single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md)。  
   
         > [!NOTE]  
-        > 只有下列作業系統可以用來做為 DirectAccess 用戶端： Windows 10 企業版、Windows 8.1 Enterprise、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 8 Enterprise、Windows Server 2008 R2、Windows 7 Enterprise 和Windows 7 旗艦版。  
+        > 只有下列作業系統可以用來做為 DirectAccess 用戶端： Windows 10 企業版、Windows 8.1 Enterprise、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 8 Enterprise、Windows Server 2008 R2、Windows 7 Enterprise 和 Windows 7 旗艦版。  
   
 -   基礎結構和管理伺服器需求：  
   
@@ -146,10 +146,8 @@ ms.locfileid: "80819561"
   
 |內容類型|參考|  
 |--------|-------|  
-|**TechNet 上的遠端存取**|[遠端存取技術中心](https://technet.microsoft.com/network/bb545655.aspx)|  
-|**工具及設定**|[遠端存取 PowerShell Cmdlet](https://technet.microsoft.com/library/hh918399.aspx)|  
-|**社群資源**|[DirectAccess Wiki 專案](https://go.microsoft.com/fwlink/?LinkId=236871)|  
-|**相關技術**|[IPv6 的運作方式](https://technet.microsoft.com/library/cc781672(v=WS.10).aspx)|  
+|**TechNet 的遠端存取**|[遠端存取 TechCenter](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn756544(v=ws.11))|  
+|**工具及設定**|[遠端存取 PowerShell Cmdlet](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn756544(v=ws.11))|  
+|**社群資源**|[DirectAccess Wiki 內容](https://go.microsoft.com/fwlink/?LinkId=236871)|  
+|**相關技術**|[IPv6 的運作方式](/previous-versions/windows/it-pro/windows-server-2003/cc781672(v=ws.10))|  
   
-
-

@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 18a293f4ec7d96516bd89396c13562ba68dc471f
-ms.sourcegitcommit: a1641b80c88205c0253f354f2d427d77bb879643
+ms.openlocfilehash: cfee6eedd1582c3df960cca1c32fce27c74f82cb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85345432"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963230"
 ---
 # <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>附錄 C︰Active Directory 中受保護的帳戶和群組
 
@@ -35,7 +35,7 @@ ms.locfileid: "85345432"
 | --- | --- | --- | --- |
 |Account Operators|Account Operators|Account Operators|Account Operators|
 |系統管理員|系統管理員|系統管理員|系統管理員|
-|系統管理員|系統管理員|系統管理員|系統管理員|
+|Administrators|Administrators|Administrators|Administrators|
 |Backup Operators|Backup Operators|Backup Operators|Backup Operators|
 |Cert Publishers|||
 |網域管理員|網域管理員|網域管理員|網域管理員|
@@ -70,7 +70,7 @@ SDProp 是在保存網域 PDC 模擬器（PDCE）的網域控制站上每60分�
 
 測試 AdminSDHolder 變更的更好方法是手動執行 SDProp，這會導致工作立即執行，但不會影響排程的執行。 在執行 Windows Server 2008 和更早版本的網域控制站上，會以手動方式執行 SDProp，而不是在執行 Windows Server 2012 或 Windows Server 2008 R2 的網域控制站上執行。  
 
-[Microsoft 支援服務文章 251343](https://support.microsoft.com/kb/251343)中提供了在舊版作業系統上手動執行 SDProp 的程式，以下是舊版和較新作業系統的逐步指示。 不論是哪一種情況，您都必須連接到 Active Directory 中的 rootDSE 物件，並對 rootDSE 物件執行含有 null DN 的修改作業，將作業的名稱指定為要修改的屬性。 如需 rootDSE 物件之可修改作業的詳細資訊，請參閱 MSDN 網站上的[RootDSE 修改作業](https://msdn.microsoft.com/library/cc223297.aspx)。  
+[Microsoft 支援服務文章 251343](https://support.microsoft.com/kb/251343)中提供了在舊版作業系統上手動執行 SDProp 的程式，以下是舊版和較新作業系統的逐步指示。 不論是哪一種情況，您都必須連接到 Active Directory 中的 rootDSE 物件，並對 rootDSE 物件執行含有 null DN 的修改作業，將作業的名稱指定為要修改的屬性。 如需 rootDSE 物件之可修改作業的詳細資訊，請參閱 MSDN 網站上的[RootDSE 修改作業](/openspecs/windows_protocols/ms-adts/fc74972f-b267-4c1a-8716-0f5b48cf52b9)。  
 
 ###### <a name="running-sdprop-manually-in-windows-server-2008-or-earlier"></a>在 Windows Server 2008 或更早版本中手動執行 SDProp
 

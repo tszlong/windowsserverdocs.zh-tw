@@ -7,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 09/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c8adf5f5586bd9f86ed3c4cd42b6172ff3f91e7
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ce984d3a88f46b77773c524e5b75135930e1bb03
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474695"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961790"
 ---
 # <a name="performance-history-for-storage-spaces-direct"></a>儲存空間直接存取的效能歷程記錄
 
@@ -27,7 +27,7 @@ ms.locfileid: "85474695"
 
 預設會使用 Windows Server 2019 中的儲存空間直接存取來收集效能歷程記錄。 您不需要安裝、設定或啟動任何專案。 不需要網際網路連線，系統中心不是必要的，而且不需要外部資料庫。
 
-若要以圖形方式查看叢集的效能歷程記錄，請使用[Windows 系統管理中心](../../manage/windows-admin-center/understand/windows-admin-center.md)：
+若要以圖形方式查看叢集的效能歷程記錄，請使用[Windows 系統管理中心](../../manage/windows-admin-center/overview.md)：
 
 ![Windows 系統管理中心的效能歷程記錄](media/performance-history/perf-history-in-wac.png)
 

@@ -8,12 +8,12 @@ ms.date: 10/18/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 7b1d2a5f5c32d55e482f5f53a04668b34fc9aece
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8c478e31c3a86203f6c5f249185659caf9881723
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815991"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963470"
 ---
 # <a name="walkthrough-workplace-join-with-an-ios-device"></a>逐步解說：將 iOS 裝置加入工作地點網路
 
@@ -38,31 +38,28 @@ ms.locfileid: "80815991"
 
 1. -   **當 Azure Active Directory 裝置註冊服務是已設定的 DRS 時：** 開啟 Apple Safari 並流覽至適用于 iOS 裝置的 Azure Active Directory 裝置註冊服務的無線設定檔端點，<`https://enterpriseregistration.windows.net/enrollmentserver/otaprofile/<yourdomainname` > 其中 <`yourdomainname`> 是您使用 Azure Active Directory 設定的功能變數名稱。 例如，如果您的網域名稱是 contoso.com，URL 將是：`https://enterpriseregistration.windows.net/enrollmentserver/otaprofile/contoso.com`
 
-   -   **當內部部署 drs 是設定的 Drs 時**：開啟 Apple Safari，並流覽至 iOS 裝置的「裝置註冊服務」（Drs）無線設定檔端點，`https://adf1s.contoso.com/enrollmentserver/otaprofile`
+   -   **當內部部署 drs 是設定的 Drs 時**：開啟 Apple Safari，並流覽至 iOS 裝置的「裝置註冊服務」（Drs）無線設定檔端點。`https://adf1s.contoso.com/enrollmentserver/otaprofile`
 
-   有很多種方式可將此 URL 提供給您的使用者。 建議的方式之一，是在 AD FS 的自訂應用程式存取拒絕訊息中發佈此 URL。 這點會在後續章節中說明： [建立應用程式存取原則和自訂存取拒絕訊息](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup#create-an-application-access-policy-and-custom-access-denied-message)
+   有很多種方式可將此 URL 提供給您的使用者。 其中一個建議方式是在 AD FS 中的自訂應用程式拒絕存取訊息發佈此 URL。 這會在即將推出的章節中說明：[建立應用程式存取原則和自訂拒絕存取訊息](/azure/active-directory/active-directory-device-registration-on-premises-setup#create-an-application-access-policy-and-custom-access-denied-message)
 
-2. 使用公司網域帳戶登入網頁： <strong>roberth@contoso.com</strong>和密碼： <strong>P@ssword</strong>。
+2. 使用公司網域帳戶登入網頁： <strong>roberth@contoso.com</strong> 和密碼： <strong>P@ssword</strong> 。
 
-3. 系統會提示您安裝設定檔。 在 [安裝設定檔] 畫面上，按一下 [安裝]。
+3. 系統會提示您安裝設定檔。 在 [安裝設定檔]**** 畫面上，按一下 [安裝]****。
 
-4. 當系統提示您確認安裝設定檔時，請按一下 [立即安裝]。
+4. 當系統提示您確認安裝設定檔時，請按一下 [立即安裝]****。
 
 5. 若您的裝置要求您輸入 PIN 以解除鎖定裝置，系統會提示您輸入 PIN。
 
-6. 當您看到 [設定檔已安裝] 畫面時，表示設定檔已安裝完成。 按一下 [完成]。
+6. 當您看到 [設定檔已安裝]**** 畫面時，表示設定檔已安裝完成。 按一下 [完成] 。
 
    返回到 Safari。 會顯示一個訊息通知您您可以關閉或離開 Safari。
 
 > [!TIP]
-> 若要檢視或移除「加入工作地點網路」設定檔，請在您的 iOS 裝置上瀏覽到 [設定]，按一下 [一般]，然後按一下 [設定檔]。
+> 若要檢視或移除「加入工作地點網路」設定檔，請在您的 iOS 裝置上瀏覽到 [設定]****，按一下 [一般]****，然後按一下 [設定檔]****。
 
 ## <a name="see-also"></a>另請參閱
 
 
 - [從任何裝置加入工作地點網路，並在公司的各個應用程式提供 SSO 和無縫式的次要因素驗證](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
 - [在 Windows Server 2012 R2 設定 AD FS 實驗室環境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
-- [逐步解說：使用 Windows 裝置 Workplace Join](Walkthrough--Workplace-Join-with-a-Windows-Device.md)
-
-
-
+- [逐步解說：將 Windows 裝置加入工作地點網路](Walkthrough--Workplace-Join-with-a-Windows-Device.md)

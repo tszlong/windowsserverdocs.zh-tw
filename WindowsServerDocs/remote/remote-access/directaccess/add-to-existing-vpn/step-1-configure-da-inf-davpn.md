@@ -8,16 +8,16 @@ ms.topic: article
 ms.assetid: 5dc529f7-7bc3-48dd-b83d-92a09e4055c4
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d40a7bff2b726f1fa1ee768c677e0f9fa1658c6b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fced7d169cb5222e039be89953e7875bc138b86c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858021"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963780"
 ---
 # <a name="step-1-configure-the-directaccess-infrastructure"></a>步驟1設定 DirectAccess 基礎結構
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 本主題說明如何在現有 VPN 部署中設定啟用 DirectAccess 所需的基礎結構。 開始部署步驟之前，請確定您已完成[步驟1：規劃 DirectAccess 基礎結構](Step-1-Plan-DirectAccess-Infrastructure.md)中所述的規劃步驟。  
   
@@ -34,7 +34,7 @@ ms.locfileid: "80858021"
 |設定網路位置伺服器|啟用 DirectAccess 精靈會在 DirectAccess 伺服器上設定網路位置伺服器。|  
   
 ## <a name="configure-server-network-settings"></a><a name="ConfigNetworkSettings"></a>設定伺服器網路設定  
-在 IPv4 和 IPv6 同時存在的環境中，單一伺服器部署需要下列網路介面設定。 您可以使用 [Windows 網路和共用中心] 中的 [變更介面卡設定] 設定所有 IP 位址。  
+在 IPv4 和 IPv6 同時存在的環境中，單一伺服器部署需要下列網路介面設定。 您可以使用 [Windows 網路和共用中心]**** 中的 [變更介面卡設定]**** 設定所有 IP 位址。  
   
 -   邊緣拓撲  
   
@@ -88,7 +88,7 @@ ms.locfileid: "80858021"
   
 -   適用於所有 IPv4/IPv6 流量的 TCP/UDP  
   
-## <a name="configure-cas-and-certificates"></a><a name="ConfigCAs"></a>設定 Ca 和憑證  
+## <a name="configure-cas-and-certificates"></a><a name="ConfigCAs"></a>設定 CA 和憑證  
 啟用 DirectAccess 精靈會設定一種利用使用者名稱和密碼進行驗證的內建 Kerberos Proxy。 也會在遠端存取伺服器上設定 IP-HTTPS 憑證。  
   
 ### <a name="configure-certificate-templates"></a><a name="ConfigCertTemp"></a>設定憑證範本  
@@ -96,9 +96,9 @@ ms.locfileid: "80858021"
   
 ##### <a name="to-configure-a-certificate-template"></a>設定憑證範本  
   
-1.  在內部 CA 上，使用 [建立憑證範本](https://technet.microsoft.com/library/cc731705.aspx)中所述的方式建立憑證範本。  
+1.  在內部 CA 上，使用 [建立憑證範本](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731705(v=ws.10))中所述的方式建立憑證範本。  
   
-2.  使用 [部署憑證範本](https://technet.microsoft.com/library/cc770794.aspx)中所述的方式部署憑證範本。  
+2.  使用 [部署憑證範本](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770794(v=ws.10))中所述的方式部署憑證範本。  
   
 ### <a name="configure-the-ip-https-certificate"></a>設定 IP-HTTPS 憑證  
 遠端存取需要 IP-HTTPS 憑證來驗證遠端存取伺服器的 IP-HTTPS 連線。 有三種 IP-HTTPS 憑證的憑證選項：  
@@ -142,52 +142,52 @@ ms.locfileid: "80858021"
   
 1.  在 [遠端存取] 伺服器上：在 [**開始**] 畫面上，輸入**mmc.exe**，然後按 enter。  
   
-2.  在 MMC 主控台中，按一下 [檔案] 功能表上的 [新增/移除嵌入式管理單元]。  
+2.  在 MMC 主控台的 [檔案] 功能表上，按一下 [新增/移除嵌入式管理單元]。  
   
-3.  在 [新增或移除嵌入式管理單元] 對話方塊中，依序按一下 [憑證]、[新增]、[電腦帳戶]、[下一步]、[本機電腦]、[完成]，然後按一下 [確定]。  
+3.  在 [新增或移除嵌入式管理單元]**** 對話方塊中，依序按一下 [憑證]****、[新增]****、[電腦帳戶]****、[下一步]****、[本機電腦]****、[完成]****，然後按一下 [確定]****。  
   
-4.  在 [憑證] 嵌入式管理單元的主控台樹狀目錄中，開啟 [憑證 (本機電腦)\個人\憑證]。  
+4.  在 [憑證] 嵌入式管理單元的主控台樹狀目錄中，開啟 [憑證 (本機電腦)\個人\憑證]****。  
   
-5.  在 [憑證] 上按一下滑鼠右鍵，指向 [所有工作]，然後按一下 [要求新憑證]。  
+5.  在 [憑證]**** 上按一下滑鼠右鍵，指向 [所有工作]****，然後按一下 [要求新憑證]****。  
   
-6.  按兩次 [下一步]。  
+6.  按兩次 [下一步]****。  
   
 7.  在 [**要求憑證**] 頁面上，選取憑證範本的核取方塊，如有需要，請按一下 [**需要更多資訊才能註冊此憑證**]。  
   
-8.  在 [憑證內容] 對話方塊的 [主體] 索引標籤上，在 [主體名稱] 區域的 [類型] 中選取 [一般名稱]。  
+8.  在 [憑證內容]**** 對話方塊的 [主體]**** 索引標籤上，在 [主體名稱]**** 區域的 [類型]**** 中選取 [一般名稱]****。  
   
-9. 在 [值]中，指定遠端存取伺服器之外部對向介面卡的 IPv4 位址或 IP-HTTPS URL 的 FQDN，然後按一下 [新增]。  
+9. 在 [值] **** 中，指定遠端存取伺服器之外部對向介面卡的 IPv4 位址或 IP-HTTPS URL 的 FQDN，然後按一下 [新增]****。  
   
-10. 在 [別名] 區域的 [類型] 中，選取 [DNS]。  
+10. 在 [別名]**** 區域的 [類型]**** 中，選取 [DNS]****。  
   
-11. 在 [值]中，指定遠端存取伺服器之外部對向介面卡的 IPv4 位址或 IP-HTTPS URL 的 FQDN，然後按一下 [新增]。  
+11. 在 [值] **** 中，指定遠端存取伺服器之外部對向介面卡的 IPv4 位址或 IP-HTTPS URL 的 FQDN，然後按一下 [新增]****。  
   
-12. 在 [一般] 索引標籤的 [易記名稱] 中，您可以輸入可協助您識別憑證的名稱。  
+12. 在 [一般]**** 索引標籤的 [易記名稱]**** 中，您可以輸入可協助您識別憑證的名稱。  
   
-13. 在 [擴充功能] 索引標籤的 [擴充金鑰使用方法] 旁邊，按一下箭號，確認伺服器驗證在 [選取的選項] 清單中。  
+13. 在 [擴充功能]**** 索引標籤的 [擴充金鑰使用方法]**** 旁邊，按一下箭號，確認伺服器驗證在 [選取的選項]**** 清單中。  
   
-14. 依序按一下 [確定]、[註冊]，然後按一下 [完成]。  
+14. 依序按一下 [確定]****、[註冊]****，然後按一下 [完成]****。  
   
 15. 在 [憑證] 嵌入式管理單元的詳細資料窗格中，確認已註冊新憑證且「使用目的」為「伺服器驗證」。  
   
 ## <a name="configure-the-dns-server"></a><a name="ConfigDNS"></a>設定 DNS 伺服器  
 您必須為部署中內部網路的網路位置伺服器網站手動設定 DNS 項目。  
   
-### <a name="to-create-the-network-location-server-and-web-probe-dns-records"></a><a name="NLS_DNS"></a>建立網路位置伺服器和 web 探查 DNS 記錄  
+### <a name="to-create-the-network-location-server-and-web-probe-dns-records"></a><a name="NLS_DNS"></a>建立網路位置伺服器與 Web 探查 DNS 記錄  
   
 1.  在內部網路 DNS 伺服器上：在 [**開始**] 畫面上，輸入 * * dnsmgmt.msc * *，然後按 enter。  
   
-2.  在 [DNS 管理員] 主控台的左窗格中，展開您網域的正向對應區域。 在網域上按一下滑鼠右鍵，按一下 [新增主機 (A 或 AAAA)]。  
+2.  在 [DNS 管理員]**** 主控台的左窗格中，展開您網域的正向對應區域。 在網域上按一下滑鼠右鍵，按一下 [新增主機 (A 或 AAAA)]****。  
   
-3.  在 [新增主機] 對話方塊的 [名稱 (如果空白就使用父系網域名稱)] 方塊中，輸入網路位置伺服器網站的 DNS 名稱 (這是 DirectAccess 用戶端用來連線到網路位置伺服器的名稱)。 在 [IP 位址] 方塊中，輸入網路位置伺服器的 IPv4 位址，然後按一下 [新增主機]。 在 [DNS] 對話方塊中，按一下 [確定]。  
+3.  在 [新增主機]**** 對話方塊的 [名稱 (如果空白就使用父系網域名稱)]**** 方塊中，輸入網路位置伺服器網站的 DNS 名稱 (這是 DirectAccess 用戶端用來連線到網路位置伺服器的名稱)。 在 [IP 位址]**** 方塊中，輸入網路位置伺服器的 IPv4 位址，然後按一下 [新增主機]****。 在 [DNS]**** 對話方塊中，按一下 [確定]****。  
   
-4.  在 [新增主機] 對話方塊的 [名稱 (如果空白就使用父系網域名稱)] 方塊中，輸入 Web 探查的 DNS 名稱 (預設 Web 探查的名稱是 directaccess-webprobehost)。 在 [IP 位址] 方塊中，輸入 Web 探查的 IPv4 位址，然後按一下 [新增主機]。 針對 directaccess-corpconnectivityhost 和任何手動建立的連線能力檢查器重複此程序。 在 [DNS] 對話方塊中，按一下 [確定]。  
+4.  在 [新增主機]**** 對話方塊的 [名稱 (如果空白就使用父系網域名稱)]**** 方塊中，輸入 Web 探查的 DNS 名稱 (預設 Web 探查的名稱是 directaccess-webprobehost)。 在 [IP 位址]**** 方塊中，輸入 Web 探查的 IPv4 位址，然後按一下 [新增主機]****。 為 directaccess-corpconnectivityhost 和任何手動建立的連線能力檢查器重複此程序。 在 [DNS]**** 對話方塊中，按一下 [確定]****。  
   
-5.  按一下 [完成]。  
+5.  按一下 [完成] 。  
 
 ![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
-下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
+下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
 ```  
 Add-DnsServerResourceRecordA -Name <network_location_server_name> -ZoneName <DNS_zone_name> -IPv4Address <network_location_server_IPv4_address>  
@@ -211,27 +211,27 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 #### <a name="to-join-client-computers-to-the-domain"></a>將用戶端電腦加入網域  
   
-1.  在 [**開始**] 畫面上，輸入**explorer .exe**，然後按 enter。  
+1.  在 [**開始**] 畫面上，輸入**explorer.exe**，然後按 enter。  
   
-2.  在 [電腦] 圖示上按一下滑鼠右鍵，然後按一下 [內容]。  
+2.  在 [電腦] 圖示上按一下滑鼠右鍵，然後按一下 [內容]****。  
   
-3.  在 [系統] 頁面上，按一下 [進階系統設定]。  
+3.  在 [系統]**** 頁面上，按一下 [進階系統設定]****。  
   
-4.  在 [系統內容] 的 [電腦名稱] 索引標籤上，按一下 [變更]。  
+4.  在 [系統內容]**** 的 [電腦名稱]**** 索引標籤上，按一下 [變更]****。  
   
-5.  在 [電腦名稱] 中，如果您將伺服器加入網域時也要變更電腦名稱，請輸入該電腦名稱。 在 [隸屬於]下面，按一下 [網域]，然後輸入要加入伺服器的網域名稱，例如，corp.contoso.com，然後按一下 [確定]。  
+5.  在 [電腦名稱]**** 中，如果您將伺服器加入網域時也要變更電腦名稱，請輸入該電腦名稱。 在 [隸屬於]**** 下面，按一下 [網域]****，然後輸入要加入伺服器的網域名稱，例如，corp.contoso.com，然後按一下 [確定]****。  
   
-6.  提示您輸入使用者名稱和密碼時，輸入有權將電腦加入至網域的使用者名稱及密碼，然後按一下 [確定]。  
+6.  提示您輸入使用者名稱和密碼時，輸入有權將電腦加入至網域的使用者名稱及密碼，然後按一下 [確定]****。  
   
-7.  在出現對話方塊並顯示您的網域的歡迎頁面時，按一下 [確定]。  
+7.  在出現對話方塊並顯示您的網域的歡迎頁面時，按一下 [確定]****。  
   
-8.  當提示您必須重新啟動電腦時，按一下 [確定]。  
+8.  當提示您必須重新啟動電腦時，按一下 [確定]****。  
   
-9. 按一下 [系統內容] 對話方塊中的 [關閉]。 出現提示時，按一下 [立即重新啟動]。  
+9. 按一下 [系統內容]**** 對話方塊中的 [關閉]。 出現提示時，按一下 [立即重新啟動]****。  
   
 ![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)***<em>windows powershell 對等命令</em>***  
   
-下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
+下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
 請注意，在您輸入下方的 Add-Computer 命令後，必須提供網域認證。  
   
@@ -240,10 +240,10 @@ Add-Computer -DomainName <domain_name>
 Restart-Computer  
 ```  
   
-## <a name="configure-gpos"></a><a name="ConfigGPOs"></a>設定 Gpo  
+## <a name="configure-gpos"></a><a name="ConfigGPOs"></a>設定 GPO  
 若要部署遠端存取，您至少需要兩個群組原則物件：一個群組原則物件包含遠端存取服務器的設定，一個包含 DirectAccess 用戶端電腦的設定。 當您設定「遠端存取」時，嚮導會自動建立必要的群組原則物件。 不過，如果您的組織強制執行命名慣例，或您沒有建立或編輯群組原則物件的必要許可權，則必須在設定遠端存取之前先建立它們。  
   
-若要建立群組原則物件，請參閱[建立和編輯群組原則物件](https://technet.microsoft.com/library/cc754740.aspx)。  
+若要建立群組原則物件，請參閱[建立和編輯群組原則物件](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754740(v=ws.11))。  
   
 > [!IMPORTANT]  
 > 系統管理員可以使用下列步驟，手動將 DirectAccess 群組原則物件連結到組織單位：  
@@ -251,7 +251,7 @@ Restart-Computer
 > 1.  設定 DirectAccess 之前，請先將建立的 GPO 連結到個別的組織單位。  
 > 2.  為用戶端電腦指定安全性群組來設定 DirectAccess。  
 > 3.  「遠端存取」系統管理員不一定擁有將群組原則物件連結到網域的許可權。 在這兩種情況下，都會自動設定群組原則物件。 如果 GPO 已經連結到 OU，該連結將不會被移除，而 GPO 將不會被連結到網域。 以伺服器 GPO 來說，OU 必須包含伺服器電腦物件，否則 GPO 就會被連結到網域的根目錄。  
-> 4.  如果在執行 DirectAccess wizard 之前尚未連結到 OU，則在設定完成之後，網域系統管理員可以將 DirectAccess 群組原則物件連結到所需的組織單位。 您可以移除網域的連結。 在[這裡](https://technet.microsoft.com/library/cc732979.aspx)可以找到將群組原則物件連結到組織單位的步驟。  
+> 4.  如果在執行 DirectAccess wizard 之前尚未連結到 OU，則在設定完成之後，網域系統管理員可以將 DirectAccess 群組原則物件連結到所需的組織單位。 您可以移除網域的連結。 在[這裡](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732979(v=ws.11))可以找到將群組原則物件連結到組織單位的步驟。  
   
 > [!NOTE]  
 > 如果群組原則物件是以手動方式建立，則在 DirectAccess 設定期間可能會無法使用群組原則物件。 群組原則物件可能尚未複寫到最接近管理電腦的網域控制站。 在此情況下，系統管理員可以等候複寫完成，或強制複寫。  
@@ -259,23 +259,23 @@ Restart-Computer
 ## <a name="configure-security-groups"></a><a name="ConfigSGs"></a>設定安全性群組  
 用戶端電腦中包含的 DirectAccess 設定群組原則物件，只會套用到您在設定遠端存取時所指定之安全性群組的成員電腦。 此外，如果您使用安全性群組來管理應用程式伺服器，請為這些伺服器建立安全性群組。  
   
-### <a name="to-create-a-security-group-for-directaccess-clients"></a><a name="Sec_Group"></a>建立 DirectAccess 用戶端的安全性群組  
+### <a name="to-create-a-security-group-for-directaccess-clients"></a><a name="Sec_Group"></a>為 DirectAccess 用戶端建立安全性群組  
   
-1.  在 [**開始**] 畫面上，輸入**dsa.msc**，然後按 enter。 在 [Active Directory 使用者和電腦] 主控台的左窗格中，展開將包含安全性群組的網域，在 [使用者] 上按一下滑鼠右鍵，指向 [新增]，然後按一下 [群組]。  
+1.  在 [**開始**] 畫面上，輸入**dsa.msc**，然後按 enter。 在 [Active Directory 使用者和電腦]**** 主控台的左窗格中，展開將包含安全性群組的網域，在 [使用者]**** 上按一下滑鼠右鍵，指向 [新增]****，然後按一下 [群組]****。  
   
-2.  在 [新增物件 - 群組] 對話方塊中的 [群組名稱] 之下，輸入安全性群組的名稱。  
+2.  在 [新增物件 - 群組]**** 對話方塊中的 [群組名稱]**** 之下，輸入安全性群組的名稱。  
   
-3.  在 [群組領域] 之下按一下 [全域]，在 [群組類型] 之下按一下 [安全性]，然後按一下 [確定]。  
+3.  在 [群組領域]**** 之下按一下 [全域]****，在 [群組類型]**** 之下按一下 [安全性]****，然後按一下 [確定]****。  
   
-4.  連按兩下 DirectAccess 用戶端電腦安全性群組，然後在 [內容] 對話方塊中，按一下 [成員] 索引標籤。  
+4.  連按兩下 DirectAccess 用戶端電腦安全性群組，然後在 [內容] 對話方塊中，按一下 [成員]**** 索引標籤。  
   
-5.  在 [成員] 索引標籤上，按一下 [新增]。  
+5.  在 [成員]**** 索引標籤上，按一下 [新增]****。  
   
-6.  在 [選取使用者、連絡人、電腦或服務帳戶] 對話方塊中，選取您想要啟用 DirectAccess 的用戶端電腦，然後按一下 [確定]。  
+6.  在 [選取使用者、連絡人、電腦或服務帳戶]**** 對話方塊中，選取您想要啟用 DirectAccess 的用戶端電腦，然後按一下 [確定]****。  
   
 ![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)**Windows powershell 對等命令**  
   
-下列 Windows PowerShell 指令程式會執行與前述程序相同的功能。 請逐行各輸入一個指令程式，儘管有些指令程式可能因為受制於內文格式而自動換行拆成好幾行。  
+下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。  
   
 ```  
 New-ADGroup -GroupScope global -Name <DirectAccess_clients_group_name>  
@@ -305,33 +305,31 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
 1.  在將裝載網路位置伺服器網站的伺服器上：在 [**開始**] 畫面上，輸入**mmc.exe**，然後按 enter。  
   
-2.  在 MMC 主控台中，按一下 [檔案] 功能表上的 [新增/移除嵌入式管理單元]。  
+2.  在 MMC 主控台的 [檔案] 功能表上，按一下 [新增/移除嵌入式管理單元]。  
   
-3.  在 [新增或移除嵌入式管理單元] 對話方塊中，依序按一下 [憑證]、[新增]、[電腦帳戶]、[下一步]、[本機電腦]、[完成]，然後按一下 [確定]。  
+3.  在 [新增或移除嵌入式管理單元]**** 對話方塊中，依序按一下 [憑證]****、[新增]****、[電腦帳戶]****、[下一步]****、[本機電腦]****、[完成]****，然後按一下 [確定]****。  
   
-4.  在 [憑證] 嵌入式管理單元的主控台樹狀目錄中，開啟 [憑證 (本機電腦)\個人\憑證]。  
+4.  在 [憑證] 嵌入式管理單元的主控台樹狀目錄中，開啟 [憑證 (本機電腦)\個人\憑證]****。  
   
-5.  在 [憑證] 上按一下滑鼠右鍵，指向 [所有工作]，然後按一下 [要求新憑證]。  
+5.  在 [憑證]**** 上按一下滑鼠右鍵，指向 [所有工作]****，然後按一下 [要求新憑證]****。  
   
-6.  按兩次 [下一步]。  
+6.  按兩次 [下一步]****。  
   
 7.  在 [**要求憑證**] 頁面上，選取憑證範本的核取方塊，如有需要，請按一下 [**需要更多資訊才能註冊此憑證**]。  
   
-8.  在 [憑證內容] 對話方塊的 [主體] 索引標籤上，在 [主體名稱] 區域的 [類型] 中選取 [一般名稱]。  
+8.  在 [憑證內容]**** 對話方塊的 [主體]**** 索引標籤上，在 [主體名稱]**** 區域的 [類型]**** 中選取 [一般名稱]****。  
   
-9. 在 [值] 中，輸入網路位置伺服器網站的 FQDN，然後按一下 [新增]。  
+9. 在 [值]**** 中，輸入網路位置伺服器網站的 FQDN，然後按一下 [新增]****。  
   
-10. 在 [別名] 區域的 [類型] 中，選取 [DNS]。  
+10. 在 [別名]**** 區域的 [類型]**** 中，選取 [DNS]****。  
   
-11. 在 [值] 中，輸入網路位置伺服器網站的 FQDN，然後按一下 [新增]。  
+11. 在 [值]**** 中，輸入網路位置伺服器網站的 FQDN，然後按一下 [新增]****。  
   
-12. 在 [一般] 索引標籤的 [易記名稱] 中，您可以輸入可協助您識別憑證的名稱。  
+12. 在 [一般]**** 索引標籤的 [易記名稱]**** 中，您可以輸入可協助您識別憑證的名稱。  
   
-13. 依序按一下 [確定]、[註冊]，然後按一下 [完成]。  
+13. 依序按一下 [確定]****、[註冊]****，然後按一下 [完成]****。  
   
 14. 在 [憑證] 嵌入式管理單元的詳細資料窗格中，確認已註冊新憑證且「使用目的」為「伺服器驗證」。  
   
 
   
-
-

@@ -8,18 +8,18 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c8655c7bac977bf94add1531d299e2fa17ef530d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d6a740f0fdc76698114cace8ded8533cebffc5cb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80821241"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964030"
 ---
 # <a name="implementing-least-privilege-administrative-models"></a>實作最低權限管理模型
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-下列摘錄是來自[系統管理員帳戶安全性規劃指南](https://technet.microsoft.com/library/cc162797.aspx)，第一次發行于1999年4月1日：
+下列摘錄是來自[系統管理員帳戶安全性規劃指南](/previous-versions/tn-archive/cc162797(v=technet.10))，第一次發行于1999年4月1日：
 
 > 「大部分的安全性相關訓練課程和檔會討論最低許可權原則的執行，但組織很少會遵循它。 此原則很簡單，而且套用它的影響會大幅增加您的安全性並降低您的風險。 原則規定，所有使用者都應該以具有完成目前工作所需之絕對最低許可權的使用者帳戶登入，而不需要進行其他動作。 這麼做可提供保護，防止惡意程式碼在其他攻擊中。 此原則適用于電腦和這些電腦的使用者。   
 > 「這個原則的運作原因之一，就是它會強制您進行一些內部研究。 例如，您必須判斷電腦或使用者真正需要的存取權限，然後加以執行。 對於許多組織而言，這項工作一開始可能就好像很棒，不過，若要成功保護您的網路環境，這是必要的步驟。
@@ -90,9 +90,9 @@ ms.locfileid: "80821241"
 
 ##### <a name="configuring-gpos-to-restrict-administrator-accounts-on-domain-joined-systems"></a>設定 Gpo 來限制已加入網域之系統上的系統管理員帳戶
 
-在您建立的一或多個 Gpo 中，以及連結至每個網域中的工作站和成員伺服器 Ou，將系統管理員帳戶新增至**電腦設定 \ \windows 設定 \** 使用者權限 \ 許可權指派中的下列使用者權限：  
+在您建立的一或多個 Gpo 中，以及連結至每個網域中的工作站和成員伺服器 Ou，將系統管理員帳戶新增至**電腦設定 \ \windows 設定 \**使用者權限 \ 許可權指派中的下列使用者權限：  
 
-- 拒絕從網路存取這台電腦
+- 拒絕從網路存取這部電腦
 - 拒絕以批次工作登入
 - 拒絕以服務方式登入
 - 拒絕透過遠端桌面服務登入
@@ -108,7 +108,7 @@ ms.locfileid: "80821241"
 
 ### <a name="securing-local-privileged-accounts-and-groups-in-active-directory"></a>保護 Active Directory 中的本機特殊許可權帳戶和群組
 
-*第六條法則：電腦的安全，只有系統管理員值得信任。* - [十個不變的安全性法則（版本2.0）](https://technet.microsoft.com/security/hh278941.aspx)  
+*第六條法則：電腦的安全，只有系統管理員值得信任。* - [十個不變的安全性法則（版本2.0）](https://www.microsoft.com/en-us/msrc?rtc=1)  
 
 此處提供的資訊旨在提供一般指導方針來保護 Active Directory 中的最高許可權內建帳戶和群組。 如需詳細的逐步指示，請參閱附錄[D：保護內建的系統管理員帳戶 Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)中的附錄[E：保護 Active Directory 中的 Enterprise admins 群組](../../../ad-ds/plan/security-best-practices/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory.md)、[附錄 F：保護 Active Directory 中的 Domain admins 群組](../../../ad-ds/plan/security-best-practices/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory.md)和[附錄 G：在 Active Directory 中保護系統管理員群組](../../../ad-ds/plan/security-best-practices/Appendix-G--Securing-Administrators-Groups-in-Active-Directory.md)。  
 
@@ -138,7 +138,7 @@ ms.locfileid: "80821241"
 
 在您建立的一或多個 Gpo 中，並連結到每個網域中的工作站和成員伺服器 Ou，請將每個網域的系統管理員帳戶新增至**電腦設定 \ \windows 設定 \ 使用者權限 \ 使用授權指派**中的下列使用者權利：  
 
-- 拒絕從網路存取這台電腦  
+- 拒絕從網路存取這部電腦  
 - 拒絕以批次工作登入  
 - 拒絕以服務方式登入  
 - 拒絕透過遠端桌面服務登入  
@@ -152,7 +152,7 @@ ms.locfileid: "80821241"
 
 在樹系中的每個網域中，應修改預設網域控制站原則或連結至網域控制站 OU 的原則，以將每個網域的系統管理員帳戶新增至**電腦設定 \ \windows 設定 \ 使用者權限 \ 許可權指派**中的下列使用者權利：  
 
-- 拒絕從網路存取這台電腦  
+- 拒絕從網路存取這部電腦  
 - 拒絕以批次工作登入  
 - 拒絕以服務方式登入  
 - 拒絕透過遠端桌面服務登入  
@@ -176,7 +176,7 @@ ms.locfileid: "80821241"
 
 - 如先前所述，Enterprise Admins 群組不應每天包含任何使用者，但樹系根域的系統管理員帳戶可能例外，這應該會受到保護，如[Active Directory 中的內建系統管理員帳戶的保護](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)中所述。  
 - 在連結到包含每個網域中成員伺服器和工作站之 Ou 的 Gpo 中，EA 群組應新增至下列使用者權限：  
-   - 拒絕從網路存取這台電腦  
+   - 拒絕從網路存取這部電腦  
    - 拒絕以批次工作登入  
    - 拒絕以服務方式登入  
    - 拒絕本機登入  
@@ -198,7 +198,7 @@ ms.locfileid: "80821241"
 
 1. 從 DA 群組移除所有成員，但網域內建的系統管理員帳戶可能有例外，前提是它已受到保護，如 Active Directory 中的內[建系統管理員帳戶的保護](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)中所述。  
 2. 在連結到包含每個網域中成員伺服器和工作站之 Ou 的 Gpo 中，必須將 DA 群組新增至下列使用者權限：  
-   - 拒絕從網路存取這台電腦  
+   - 拒絕從網路存取這部電腦  
    - 拒絕以批次工作登入  
    - 拒絕以服務方式登入  
    - 拒絕本機登入  
@@ -208,7 +208,7 @@ ms.locfileid: "80821241"
 
 3. 如果對此 DA 群組的屬性或成員資格進行任何修改，則應該將審核設定為傳送警示。 這些警示應至少傳送給負責 AD DS 系統管理和事件回應的使用者或小組。 您也應該定義暫時填入 DA 群組的進程和程式，包括執行群組的合法擴展時的通知程式。  
 
-#### <a name="securing-administrators-groups-in-active-directory"></a>保護 Active Directory 中的系統管理員群組
+#### <a name="securing-administrators-groups-in-active-directory"></a>保護 Active Directory 中的 Administrators 群組
 
 就像 EA 和 DA 群組一樣，只有在組建或嚴重損壞修復的情況下，才需要 Administrators （BA）群組中的成員資格。 除了網域的本機系統管理員帳戶（如[Active Directory 中的內建系統管理員帳戶保護中](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)所述），系統管理員群組中應該不會有每日的使用者帳戶。  
 
@@ -218,7 +218,7 @@ ms.locfileid: "80821241"
 
 1. 移除 Administrators 群組中的所有成員，但網域的本機系統管理員帳戶可能有例外，前提是它已受到保護，如[Active Directory 中的內建系統管理員帳戶的保護](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)中所述。  
 2. 網域系統管理員群組的成員永遠不需要登入成員伺服器或工作站。 在每個網域中連結到工作站和成員伺服器 Ou 的一或多個 Gpo 中，系統管理員群組應新增至下列使用者權限：  
-   - 拒絕從網路存取這台電腦  
+   - 拒絕從網路存取這部電腦  
    - 拒絕以批次工作登入，  
    - 拒絕以服務方式登入  
    - 這將導致系統管理員群組的成員無法用來登入或連線到成員伺服器或工作站（除非第一次違反多個控制項），其中的認證可能會被快取，因而遭到入侵。 許可權帳戶永遠不能用來登入較低許可權的系統，而且強制這些控制措施會針對一些攻擊提供保護。  
@@ -260,7 +260,7 @@ ms.locfileid: "80821241"
 2. IT 環境的組成：如果您的環境主要是由 Windows 系統所組成，或者您已經利用 Active Directory 管理非 Windows 系統和帳戶，自訂的原生解決方案可能會為您的需求提供最佳解決方案。 如果您的基礎結構包含許多不是執行 Windows 且不受 Active Directory 管理的系統，您可能需要考慮從 Active Directory 環境，分別管理非 Windows 系統的選項。  
 3. 解決方案中的許可權模式：如果產品將其服務帳戶放置在 Active Directory 中的高許可權群組中，而且未提供不需要將過多許可權授與 RBAC 軟體的選項，您就不會真正降低 Active Directory 攻擊面，只是在目錄中變更了最具特殊許可權的群組組合。 除非應用程式廠商可以提供服務帳戶的控制項，以將帳戶遭到入侵和惡意使用的機率降到最低，您可能會想要考慮其他選項。  
 
-### <a name="privileged-identity-management"></a>權限身分管理
+### <a name="privileged-identity-management"></a>Privileged Identity Management
 
 特殊許可權身分識別管理（PIM），有時也稱為特殊許可權帳戶管理（PAM）或特殊許可權認證管理（PCM），這是在您的基礎結構中管理特殊許可權帳戶的設計、結構和執行方法。 一般來說，PIM 提供的機制會授與許可權給帳戶，以執行組建或中斷修正功能，而不是讓許可權永久附加到帳戶。 無論是手動建立 PIM 功能，或是透過部署協力廠商軟體，都可以使用下列一或多項功能：  
   
@@ -279,7 +279,7 @@ ms.locfileid: "80821241"
 
 ### <a name="implementing-robust-authentication-controls"></a>執行穩健的驗證控制項
 
-*第六條法則：有人嘗試猜出您的密碼。* - [安全性管理的10個不可變法則](https://technet.microsoft.com/library/cc722488.aspx)  
+*第六條法則：有人嘗試猜出您的密碼。* - [10個不變的安全性管理法則](/previous-versions//cc722488(v=technet.10))  
 
 傳遞雜湊和其他認證竊取攻擊並不是 Windows 作業系統特有的，也不是新的。 第一次傳遞雜湊攻擊是在1997中建立。 不過，在過去，這些攻擊需要自訂的工具、達到或遺漏成功，以及必要的攻擊者擁有相當高的技能。 引進了可自由使用且便於使用的工具，以原生方式解壓縮認證，最近幾年來增加認證竊取攻擊的數量和成功。 不過，認證竊取攻擊也不是用來做為認證目標和遭到入侵的唯一機制。  
 
@@ -297,7 +297,7 @@ ms.locfileid: "80821241"
 
 執行智慧卡或其他憑證型驗證機制的另一個優點是能夠利用驗證機制保證來保護 VIP 使用者可存取的機密資料。 在功能等級設定為 Windows Server 2012 或 Windows Server 2008 R2 的網域中，會提供驗證機制保證。 啟用時，當使用者的認證在使用以憑證為基礎的登入方法登入時進行驗證時，驗證機制保證會將系統管理員指定的全域群組成員資格新增至使用者的 Kerberos 權杖。  
 
-這可讓資源管理員根據使用者是否使用以憑證為基礎的登入方法，以及使用的憑證類型，來控制對資源的存取，例如，檔案、資料夾和印表機。 例如，當使用者使用智慧卡登入時，可以指定使用者對網路上資源的存取權，與使用者未使用智慧卡（也就是使用者藉由輸入使用者名稱和密碼登入時的存取權）不同。 如需驗證機制保證的詳細資訊，請參閱[Windows Server 2008 R2 逐步指南中的 AD DS 的驗證機制保證](https://technet.microsoft.com/library/dd378897.aspx)。  
+這可讓資源管理員根據使用者是否使用以憑證為基礎的登入方法，以及使用的憑證類型，來控制對資源的存取，例如，檔案、資料夾和印表機。 例如，當使用者使用智慧卡登入時，可以指定使用者對網路上資源的存取權，與使用者未使用智慧卡（也就是使用者藉由輸入使用者名稱和密碼登入時的存取權）不同。 如需驗證機制保證的詳細資訊，請參閱[Windows Server 2008 R2 逐步指南中的 AD DS 的驗證機制保證](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378897(v=ws.10))。  
 
 #### <a name="configuring-privileged-account-authentication"></a>設定特殊許可權帳戶驗證
 

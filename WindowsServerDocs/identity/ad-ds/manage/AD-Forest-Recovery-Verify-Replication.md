@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 302e522a-fb40-43bc-bc63-83dcc87ebde5
 ms.technology: identity-adds
-ms.openlocfilehash: af0946674d9185651c7b22a822dcc3a2dd5a1c5d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c44f7abd14a65178b84194f43dad829df81fa77b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823391"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960830"
 ---
 # <a name="resources-to-verify-replication-is-working"></a>確認複寫正在運作的資源 
 
@@ -28,10 +28,10 @@ ms.locfileid: "80823391"
 
 如果第一個復原的 DC 記錄事件識別碼4614（「網域控制站正在等候執行初始複寫。 在 DFS 複寫記錄檔中，複寫的資料夾會維持在初始同步處理狀態，直到其與合作夥伴複寫為止」），然後事件識別碼4602不會出現，而且您必須執行下列手動步驟來復原 SYSVOL （如果它是由 DFSR 複寫）：  
 
-1. 當第一個還原的 DC 上出現 DFSR 事件4612時，請執行手動授權還原，如[2218556：如何強制對 DFSR 複寫的 SYSVOL 進行授權和非權威同步處理（如 FRS 的 "D4/D2"）](https://support.microsoft.com/kb/2218556) （ https://support.microsoft.com/kb/2218556)。  
+1. 當第一個還原的 DC 上出現 DFSR 事件4612時，請執行手動授權還原，如[2218556：如何強制對 DFSR 複寫的 SYSVOL 進行授權和非權威同步處理（例如 FRS 的 "D4/D2"）](https://support.microsoft.com/kb/2218556)中所述 https://support.microsoft.com/kb/2218556) 。  
 2. 以手動方式將**SysvolReady 旗**標設定為1，如947022中所述，[當您在新的完整或唯讀 Windows Server 2008 架構的網域控制站上安裝 ACTIVE DIRECTORY DOMAIN SERVICES 之後，NETLOGON 共用不存在](https://support.microsoft.com/kb/947022)。  
 
-您也可以建立 DFS 複寫的診斷報告。 如需詳細資訊，請參閱[建立適用于 DFS 複寫的診斷報告](https://technet.microsoft.com/library/cc754227.aspx)和[Windows Server 2008 的 DFS 逐步指南](https://technet.microsoft.com/library/cc732863\(WS.10\).aspx)。 如果伺服器正在執行 Windows Server 2008 R2，您可以使用[Dfsrdiag ReplicationState 命令列參數](https://blogs.technet.com/b/filecab/archive/2009/05/28/dfsrdiag-exe-replicationstate-what-s-dfsr-up-to.aspx)。  
+您也可以建立 DFS 複寫的診斷報告。 如需詳細資訊，請參閱[建立適用于 DFS 複寫的診斷報告](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754227(v=ws.11))和[Windows Server 2008 的 DFS 逐步指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754227(v=ws.11))。 如果伺服器正在執行 Windows Server 2008 R2，您可以使用[dfsrdiag.exe ReplicationState 命令列參數](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754227(v=ws.11))。  
 
 您也可以使用 dcdiag.exe 執行複寫測試，以檢查複寫錯誤。 如需詳細資訊，請參閱知識庫[文章 249256](https://support.microsoft.com/kb/249256)。
 

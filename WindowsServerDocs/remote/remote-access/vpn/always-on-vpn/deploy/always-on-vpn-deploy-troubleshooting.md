@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 ms.date: 06/11/2018
 ms.author: v-tea
 author: Teresa-MOTIV
-ms.openlocfilehash: 209567ccd88f4b20f98caecc2a13cc671ef09072
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bbb614886099bf2adc1239a699ef8d904e71be7b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854021"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961780"
 ---
 # <a name="troubleshoot-always-on-vpn"></a>Always On VPN 疑難排解 
 
@@ -28,7 +28,7 @@ ms.locfileid: "80854021"
 
 ### <a name="error-code-800"></a>錯誤碼：800
 
-- **錯誤描述。** 因為嘗試的 VPN 通道失敗，所以未建立遠端連線。 可能無法連上 VPN 伺服器。 如果此連線嘗試使用 L2TP/IPsec 通道，則 IPsec 協商所需的安全性參數可能未正確設定。
+- **錯誤描述。** 因為嘗試的 VPN 通道失敗，未建立遠端連線。 可能無法連上 VPN 伺服器。 如果此連線嘗試使用 L2TP/IPsec 通道，則 IPsec 協商所需的安全性參數可能未正確設定。
 
 - **可能的原因。** 當 VPN 通道類型為 [**自動**]，且所有 VPN 通道的連線嘗試失敗時，就會發生此錯誤。
 
@@ -40,7 +40,7 @@ ms.locfileid: "80854021"
 
     - 當無法連線到 VPN 伺服器，或通道連線失敗時，也會發生此錯誤。
 
-- **確保：**
+- **請確定：**
 
     - IKE 埠（UDP 埠500和4500）不會遭到封鎖。
 
@@ -56,7 +56,7 @@ ms.locfileid: "80854021"
 
 ### <a name="error-code-812"></a>錯誤碼：812
 
-- **錯誤描述。** 無法連接到 Always On VPN。 因為您 RAS/VPN 伺服器上設定了原則，所以無法連線。 具體而言，伺服器用來驗證您的使用者名稱和密碼的驗證方法可能與連線設定檔中設定的驗證方法不相符。 請洽詢 RAS 伺服器的系統管理員，並通知他或她這項錯誤。
+- **錯誤描述。** 無法連接到 Always On VPN。 因為您 RAS/VPN 伺服器設定的原則，連線被禁止。 具體而言，伺服器用來驗證您的使用者名稱和密碼的驗證方法可能與連線設定檔中設定的驗證方法不相符。 請洽詢 RAS 伺服器的系統管理員，並通知他或她這項錯誤。
 
 - **可能的原因：**
 
@@ -108,17 +108,17 @@ ms.locfileid: "80854021"
 
 - **可能的解決方案。** 確定 [信任的根憑證授權單位] 存放區中的用戶端電腦上已安裝根憑證。
 
-## <a name="logs"></a>記錄檔
+## <a name="logs"></a>記錄
 
-### <a name="application-logs"></a>應用程式記錄檔
+### <a name="application-logs"></a>應用程式記錄
 
 用戶端電腦上的應用程式記錄檔會記錄 VPN 線上活動的大部分較高層級詳細資料。
 
-尋找來自來源 RasClient 的事件。 所有錯誤訊息都會在訊息結尾傳回錯誤碼。 以下詳述一些較常見的錯誤碼，但完整清單可在[路由及遠端存取錯誤碼](https://msdn.microsoft.com/library/windows/desktop/bb530704.aspx)中取得。
+尋找來自來源 RasClient 的事件。 所有錯誤訊息都會在訊息結尾傳回錯誤碼。 以下詳述一些較常見的錯誤碼，但完整清單可在[路由及遠端存取錯誤碼](/previous-versions//mt728163(v=technet.10))中取得。
 
 ## <a name="nps-logs"></a>NPS 記錄檔
 
-NPS 會建立並儲存 NPS 帳戶處理記錄。 根據預設，這些檔案會儲存在% SYSTEMROOT%\\System32\\記錄檔\\ 在以*XXXX*命名的檔案中，其中*xxxx*是建立檔案的日期。
+NPS 會建立並儲存 NPS 帳戶處理記錄。 根據預設，這些檔案會以 Xxxx 中名為的檔案儲存在% SYSTEMROOT% System32 記錄檔中 \\ \\ \\ ，其中*xxxx*是檔案的建立日期。* *
 
 根據預設，這些記錄是以逗點分隔值格式，但不包含標題資料列。 標題資料列為：
 
@@ -128,15 +128,15 @@ ComputerName,ServiceName,Record-Date,Record-Time,Packet-Type,User-Name,Fully-Qua
 
 如果您將此標題列貼入記錄檔的第一行，然後將該檔案匯入 Microsoft Excel 中，資料行會適當地加上標籤。
 
-NPS 記錄檔有助於診斷與原則相關的問題。 如需 NPS 記錄的詳細資訊，請參閱[解讀 Nps 資料庫格式記錄](https://technet.microsoft.com/library/cc771748.aspx)檔。
+NPS 記錄檔有助於診斷與原則相關的問題。 如需 NPS 記錄的詳細資訊，請參閱[解讀 Nps 資料庫格式記錄](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771748(v=ws.10))檔。
 
-## <a name="vpn_profileps1-script-issues"></a>VPN_Profile ps1 腳本問題
+## <a name="vpn_profileps1-script-issues"></a>VPN_Profile.ps1 指令碼問題
 
-手動執行 VPN_ 設定檔時最常遇到的問題。 ps1 腳本包括：
+手動執行 VPN_ Profile.ps1 腳本時最常見的問題包括：
 
 - 您是否使用遠端連線工具？  請確定不使用 RDP 或其他遠端連線方法，因為它混亂使用者登入偵測。
 
-- 使用者是該本機電腦的系統管理員嗎？  請確定在執行 VPN_Profile 的腳本時，使用者具有系統管理員許可權。
+- 使用者是該本機電腦的系統管理員嗎？  請確定在執行 VPN_Profile.ps1 腳本時，使用者具有系統管理員許可權。
 
 - 您是否已啟用額外的 PowerShell 安全性功能？ 請確定 PowerShell 執行原則不會封鎖腳本。 執行腳本之前，您可以考慮關閉限制語言模式（如果已啟用）。 您可以在腳本順利完成後啟動限制語言模式。
 
@@ -146,7 +146,7 @@ NPS 記錄檔有助於診斷與原則相關的問題。 如需 NPS 記錄的詳�
 
 1. 範本機器是否已外部連線？ **Whatismyip**掃描應該會顯示不屬於您的公用 IP 位址。
 
-2. 您可以將遠端存取/VPN 伺服器名稱解析成 IP 位址嗎？ 在 **控制台** 中 > **網路**和網際網路 > **網路** **連線** 中，開啟您的 VPN 配置檔案屬性。 [**一般**] 索引標籤中的值應該可透過 DNS 公開解析。
+2. 您可以將遠端存取/VPN 伺服器名稱解析成 IP 位址嗎？ 在 [**控制台**] 的  >  [**網路**和網際網路網路**連線**] 中  >  ** **，開啟您的 VPN 設定檔的屬性。 [**一般**] 索引標籤中的值應該可透過 DNS 公開解析。
 
 3. 您可以從外部網路存取 VPN 伺服器嗎？ 請考慮開啟外部介面的網際網路控制訊息通訊協定（ICMP），並從遠端用戶端 ping 名稱。 Ping 成功之後，您可以移除 ICMP 允許規則。
 
@@ -160,7 +160,7 @@ NPS 記錄檔有助於診斷與原則相關的問題。 如需 NPS 記錄的詳�
 
 8. 您是否連線並擁有有效的內部 IP，但沒有本機資源的存取權？  確認用戶端知道如何取得這些資源。 您可以使用 VPN 伺服器來路由傳送要求。
 
-## <a name="azure-ad-conditional-access-connection-issues"></a>Azure AD 條件式存取連接問題
+## <a name="azure-ad-conditional-access-connection-issues"></a>Azure AD 條件式存取連線問題
 
 ### <a name="oops---you-cant-get-to-this-yet"></a>糟糕-您還無法進入此
 
@@ -170,14 +170,14 @@ NPS 記錄檔有助於診斷與原則相關的問題。 如需 NPS 記錄的詳�
 
   - 使用者的個人憑證存儲中具有有效的用戶端驗證憑證，但 Azure AD 不發出。
 
-  - VPN 設定檔 \<TLSExtensions\> 區段遺失，或未包含 **\<EKUName\>AAD 條件式存取\</EKUName\>\<EKUOID\>1.3.6.1.4.1.311.87 </EKUOID\>\<EKUName > AAD 條件式存取 </EKUName\>\<EKUOID\>1.3.6.1.4.1.311.87 </EKUOID\>** 專案。 \<EKUName > 和 \<EKUOID > 專案會告訴 VPN 用戶端，在將憑證傳遞給 VPN 伺服器時，要從使用者的憑證存放區中取出哪一個憑證。 如果沒有這麼做，VPN 用戶端會使用使用者憑證存放區中任何有效的用戶端驗證憑證，而且驗證會成功。 
+  - [VPN 設定檔] \<TLSExtensions\> 區段遺失，或未包含** \<EKUName\> Aad 條件式存取 \</EKUName\> \<EKUOID\> 1.3.6.1.4.1.311.87，</Ekuoid \> \<EKUName> aad 條件存取</ekuname \> \<EKUOID\> 1.3.6.1.4.1.311.87< \> /ekuoid**專案。 \<EKUName>和 \<EKUOID> 專案會告訴 vpn 用戶端，在將憑證傳遞給 vpn 伺服器時，要從使用者的憑證存放區中取出哪一個憑證。 如果沒有這麼做，VPN 用戶端會使用使用者憑證存放區中任何有效的用戶端驗證憑證，而且驗證會成功。 
 
   - RADIUS 伺服器（NPS）尚未設定為只接受包含**AAD 條件式存取**OID 的用戶端憑證。
 
 - **可能的解決方案。** 若要取消此迴圈，請執行下列動作：
 
   1. 在 Windows PowerShell 中，執行**WmiObject** Cmdlet 來傾印 VPN 設定檔設定。 
-  2. 確認 **\<TLSExtensions >** 、 **\<EKUName >** 和 **\<EKUOID >** 區段是否存在，並顯示正確的名稱和 OID。
+  2. 確認 **\<TLSExtensions>** 、 **\<EKUName>** 和 **\<EKUOID>** 區段存在，並顯示正確的名稱和 OID。
       
       ```powershell
       PS C:\> Get-WmiObject -Class MDM_VPNv2_01 -Namespace root\cimv2\mdm\dmmap
@@ -279,7 +279,7 @@ NPS 記錄檔有助於診斷與原則相關的問題。 如需 NPS 記錄的詳�
      >[!NOTE]
      >如果使用者的個人存放區中有來自簽發者**CN = MICROSOFT VPN 根 CA gen 1**的憑證，但是使用者藉由選取**X**以關閉糟糕訊息來取得存取權，請收集 CAPI2 事件記錄檔，以確認用來驗證的憑證是否為不是從 Microsoft VPN 根 CA 發行的有效用戶端驗證憑證。
 
-  4. 如果使用者的個人存放區中有有效的用戶端驗證憑證，在使用者選取**X**之後，如果 **\<TLSExtensions >** 、 **\<EKUName >** 和 **\<EKUOID >** 區段存在且包含正確的資訊，連接就會失敗（如其所示）。
+  4. 如果使用者的個人存放區中有有效的用戶端驗證憑證，則在使用者選取**X**之後，如果 **\<TLSExtensions>** 、 **\<EKUName>** 和 **\<EKUOID>** 區段存在且包含正確的資訊，連接就會失敗（如其所示）。
    
      此時會出現一個錯誤訊息，指出「找不到可以搭配可延伸驗證通訊協定使用的憑證」。
 
@@ -294,4 +294,4 @@ NPS 記錄檔有助於診斷與原則相關的問題。 如需 NPS 記錄的詳�
     1. 在 [VPN 連線] 分頁中，選取憑證。
     2. 在 [**主要**] 底下，選取 [**否**]，然後選取 [**儲存**]。
     3. 在 [VPN 連線] 分頁中，再次選取憑證。
-    4. 選取 [**刪除**]。
+    4. 選取 [刪除]。

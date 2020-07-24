@@ -9,16 +9,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: a3a91034-a4da-4ad7-93f8-0cd2ec3e7824
 ms.technology: identity-adds
-ms.openlocfilehash: e7bacf4f238144fca26776a729a5e4d5bf3444ab
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0dfb108067bee1a5f276963116e2a72b99f6aec2
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389955"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961120"
 ---
 # <a name="active-directory-domain-services-component-updates"></a>Active Directory 網域服務元件更新
 
->適用於：Windows Server 2016、Windows Server 2012 R2
+>適用于： Windows Server 2016、Windows Server 2012 R2
 
 本單元介紹目錄服務和身分識別領域中收到小幅更新的元件。  
 
@@ -40,7 +40,7 @@ ms.locfileid: "71389955"
 
     -   [SPN 和 UPN 的唯一性](../../../ad-ds/manage/component-updates/SPN-and-UPN-uniqueness.md)  
 
-    -   [Winlogon 自動重新開機登入&#40;ARSO&#41;](../../../ad-ds/manage/component-updates/Winlogon-Automatic-Restart-Sign-On--ARSO-.md)  
+    -   [Winlogon 自動重新開機登入 &#40;ARSO&#41;](../../../ad-ds/manage/component-updates/Winlogon-Automatic-Restart-Sign-On--ARSO-.md)  
 
     -   [TPM 金鑰證明](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md)  
 
@@ -48,7 +48,7 @@ ms.locfileid: "71389955"
 
     -   [命令列程序稽核](../../../ad-ds/manage/component-updates/Command-line-process-auditing.md)  
 
-    -   [認證保護和管理](https://technet.microsoft.com/library/dn408190.aspx)  
+    -   [認證保護和管理](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn408190(v=ws.11))  
 
     -   [目錄服務元件更新](../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md)  
 
@@ -61,6 +61,3 @@ ms.locfileid: "71389955"
         -   [1644 事件改進](../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_1644)  
 
         -   [Active Directory 複寫輸送量改進](../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_ADRepl)  
-
-
-

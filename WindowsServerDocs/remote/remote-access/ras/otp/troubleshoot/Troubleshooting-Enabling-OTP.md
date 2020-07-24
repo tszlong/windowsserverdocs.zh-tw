@@ -8,21 +8,21 @@ ms.topic: article
 ms.assetid: b58252ca-4c1d-4664-a3c4-7301e2121517
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 9be7ef4c4d07b522f683a403e46a11e109dbd226
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0ee3e30699c920a252646de67005675bdaeb849d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853641"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964290"
 ---
 # <a name="troubleshooting-enabling-otp"></a>疑難排解啟用 OTP
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 本主題包含有關使用**DAOtpAuthentication** PowerShell Cmdlet 或遠端存取管理主控台啟用 DirectAccess OTP 驗證之問題的疑難排解資訊。
   
 ## <a name="failed-to-enroll-the-otp-signing-certificate"></a>無法註冊 OTP 簽署憑證  
-**收到的錯誤**（伺服器事件記錄檔）。 無法使用憑證範本 < OTP_signing_template_name 註冊 OTP 簽署憑證 >  
+**收到的錯誤**（伺服器事件記錄檔）。 無法使用憑證範本 <OTP_signing_template_name 註冊 OTP 簽署憑證>  
   
 **原因**  
   
@@ -34,7 +34,7 @@ ms.locfileid: "80853641"
   
 -   沒有與頒發證書授權單位（CA）的網路連線。  
   
-**解決方法**  
+**方案**  
   
 1.  請確定具有指定名稱的 OTP 簽署憑證範本：  
   
@@ -45,7 +45,7 @@ ms.locfileid: "80853641"
 2.  如果範本不存在，請依照3.3 規劃登錄授權單位憑證中所述的方式加以建立，或者如果另一個相符的範本存在，請使用新的範本名稱重新設定 DirectAccess OTP。  
   
 ## <a name="failed-to-enable-directaccess-otp-when-webdav-is-installed"></a>安裝 WebDAV 時無法啟用 DirectAccess OTP  
-**案例**。 嘗試在 [遠端存取管理] 主控台中或藉由使用 `Enable-DAOtpAuthentication` PowerShell Cmdlet 來套用 DirectAccess OTP 設定時，作業會失敗。  
+**案例**。 嘗試在 [遠端存取管理] 主控台中或使用 PowerShell Cmdlet 來套用 DirectAccess OTP 設定時 `Enable-DAOtpAuthentication` ，作業會失敗。  
   
 **收到的錯誤**（伺服器事件記錄檔）。 因為 WebDAV IIS 擴充功能正在伺服器上執行，所以無法套用 DirectAccess OTP 設定。 請移除 WebDAV，然後再次套用設定。  
   
@@ -53,7 +53,7 @@ ms.locfileid: "80853641"
   
 DirectAccess OTP 服務與 WebDAV 發行功能不相容，而且在安裝 WebDAV 時無法啟用。  
   
-**解決方法**  
+**方案**  
   
 卸載 WebDAV 角色：  
   
@@ -78,7 +78,7 @@ DirectAccess OTP 服務與 WebDAV 發行功能不相容，而且在安裝 WebDAV
   
 -   在**OTP CA 伺服器**底下選取的 ca 未設定為發出所需的範本。  
   
-**解決方法**  
+**方案**  
   
 1.  請確定 OTP 登入範本和 OTP 簽署憑證範本已正確設定，如3.2 規劃 OTP 憑證範本和3.3 規劃登錄授權單位憑證中所述。  
   
@@ -97,9 +97,7 @@ DirectAccess OTP 服務與 WebDAV 發行功能不相容，而且在安裝 WebDAV
   
 Windows Server 2003 中的 [憑證範本] MMC 嵌入式管理單元不允許您將範本的更新期間設定為1小時。  
   
-**解決方法**  
+**方案**  
   
-在 Windows Server 2003 伺服器後安裝憑證範本嵌入式管理單元，並使用它來設定 OTP 登入範本，請參閱[安裝憑證範本嵌入式管理](https://technet.microsoft.com/library/cc732445.aspx)單元。  
+在 Windows Server 2003 伺服器後安裝憑證範本嵌入式管理單元，並使用它來設定 OTP 登入範本，請參閱[安裝憑證範本嵌入式管理](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732445(v=ws.11))單元。  
   
-
-

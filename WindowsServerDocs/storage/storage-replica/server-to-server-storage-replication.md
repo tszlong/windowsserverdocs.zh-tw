@@ -9,12 +9,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 03/26/2020
 ms.assetid: 61881b52-ee6a-4c8e-85d3-702ab8a2bd8c
-ms.openlocfilehash: 9873378d62ccc7b53dcc6fc629651df2aa1c6708
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: b49c626bd5b8630d375c2984eac96a32b703cd2c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308110"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964100"
 ---
 # <a name="server-to-server-storage-replication-with-storage-replica"></a>使用儲存體複本進行伺服器對伺服器儲存體複寫
 
@@ -28,16 +28,16 @@ ms.locfileid: "80308110"
 > [!video https://www.microsoft.com/videoplayer/embed/3aa09fd4-867b-45e9-953e-064008468c4b?autoplay=false]
 
 
-## <a name="prerequisites"></a>必要條件  
+## <a name="prerequisites"></a>先決條件  
 
 * Active Directory Domain Services 樹系（不需要執行 Windows Server 2016）。  
 * 兩部執行 Windows Server 2019 或 Windows Server 2016 Datacenter Edition 的伺服器。 如果您執行的是 Windows Server 2019，如果您確定只複寫最多 2 TB 大小的單一磁片區，就可以改用 Standard Edition。  
-* 使用 SAS JBOD、光纖通道 SAN、iSCSI 目標，或本機 SCSI/SATA 儲存體的兩組儲存體。 儲存體應包含 HDD 和 SSD 兩者混合的媒體。 您必須設定每組儲存體只能供各自的伺服器使用，不得共用存取。  
+* 使用 SAS JBOD、光纖通道 SAN、iSCSI 目標，或本機 SCSI/SATA 儲存體的兩組儲存體。 存放裝置應包含 HDD 和 SSD 兩者混合的媒體。 您必須設定每組儲存體只能供各自的伺服器使用，不得共用存取。  
 * 每組存放裝置必須允許建立至少兩個虛擬磁碟，一個供複寫的資料使用，另一個供記錄檔使用。 實體存放裝置的所有資料磁碟上，必須都要有相同的磁區大小。 實體存放裝置的所有記錄檔磁碟上，必須都要有相同的磁區大小。  
 * 每部伺服器上至少要有一個乙太網路/TCP 連線，以進行同步複寫，但最好是 RDMA。   
 * 適當的防火牆與路由器規則，以允許在所有節點之間提供 ICMP、SMB (連接埠 445，若為 SMB 直接傳輸，需再加上 5445) 以及 WS-MAN (連接埠 5985) 雙向流量。  
 * 針對同步複寫，伺服器間的網路頻寬必須足以容納您的 IO 寫入工作負載，以及平均 =5ms 的來回延遲。 非同步複寫沒有延遲建議。<br>
-如果您要在內部部署伺服器與 Azure Vm 之間進行複寫，您必須在內部部署伺服器與 Azure Vm 之間建立網路連結。 若要這麼做，請使用[Express Route](#add-azure-vm-expressroute)、[站對站 VPN 閘道聯](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)機，或在您的 AZURE vm 中安裝 VPN 軟體，以將它們與您的內部部署網路連線。
+如果您要在內部部署伺服器與 Azure Vm 之間進行複寫，您必須在內部部署伺服器與 Azure Vm 之間建立網路連結。 若要這麼做，請使用[Express Route](#add-azure-vm-expressroute)、[站對站 VPN 閘道聯](/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)機，或在您的 AZURE vm 中安裝 VPN 軟體，以將它們與您的內部部署網路連線。
 * 複寫的儲存體不可位於包含 Windows 作業系統資料夾的磁碟機上。
 
 > [!IMPORTANT]
@@ -50,16 +50,16 @@ ms.locfileid: "80308110"
 
 若要搭配使用「儲存體複本」和「Windows 管理中心」，您需要下列各項：
 
-| System                        | 作業系統                                            | 需要     |
+| 系統                        | 作業系統                                            | 必須用於     |
 |-------------------------------|-------------------------------------------------------------|------------------|
-| 兩部伺服器 <br>（任何混合的內部部署硬體、Vm 和雲端 Vm，包括 Azure Vm）| Windows Server 2019、Windows Server 2016 或 Windows Server （半年通道） | 儲存體複本  |
+| 兩個伺服器 <br>（任何混合的內部部署硬體、Vm 和雲端 Vm，包括 Azure Vm）| Windows Server 2019、Windows Server 2016 或 Windows Server （半年通道） | 儲存體複本  |
 | 一部電腦                     | Windows 10                                                  | Windows Admin Center |
 
 > [!NOTE]
 > 目前您無法在伺服器上使用 Windows 系統管理中心來管理儲存體複本。
 
 ## <a name="terms"></a>詞彙  
-本逐步解說使用下列環境做為範例：  
+本逐步解說使用下列環境做為範例︰  
 
 -   兩部伺服器，名為 **SR SRV05** 和 **SR SRV06**。  
 
@@ -67,7 +67,7 @@ ms.locfileid: "80308110"
 
 ![這個圖表顯示與建築物 9 的伺服器進行複寫之建築物 5 的伺服器](media/Server-to-Server-Storage-Replication/Storage_SR_ServertoServer.png)  
 
-**圖1：伺服器對伺服器複寫**  
+**圖 1：伺服器對伺服器複寫**  
 
 ## <a name="step-1-install-and-configure-windows-admin-center-on-your-pc"></a>步驟1：在您的電腦上安裝和設定 Windows 系統管理中心
 
@@ -114,13 +114,13 @@ ms.locfileid: "80308110"
     -   **Windows 系統管理中心方法**
         1. 在 Windows 管理中心中，流覽至 [伺服器管理員]，然後選取其中一部伺服器。
         2. 流覽至 [角色] [&] [**功能**]。
-        3. 選取 [**功能** > **儲存體複本**]，然後按一下 [**安裝**]。
+        3. 選取 [**功能**] [  >  **存放裝置複本**]，然後按一下 [**安裝**]。
         4. 在另一台伺服器上重複執行。
     -   **伺服器管理員方法**  
 
-        1.  執行 **ServerManager.exe**，並新增所有伺服器節點以建立伺服器群組。  
+        1.  執行**ServerManager.exe**並建立伺服器群組，並新增所有伺服器節點。  
 
-        2.  在每個節點上安裝 [檔案伺服器] 和 [儲存體複本] 角色和功能，然後予以重新啟動。  
+        2.  在每個節點上安裝 [檔案伺服器]**** 和 [儲存體複本]**** 角色和功能，然後予以重新啟動。  
 
     -   **Windows PowerShell 方法**  
 
@@ -132,7 +132,7 @@ ms.locfileid: "80308110"
         $Servers | ForEach { Install-WindowsFeature -ComputerName $_ -Name Storage-Replica,FS-FileServer -IncludeManagementTools -restart }  
         ```  
 
-        如需這些步驟的詳細資訊，請參閱[安裝或解除安裝角色、角色服務或功能](../../administration/server-manager/install-or-uninstall-roles-role-services-or-features.md)  
+        如需這些步驟的詳細資訊，請參閱[安裝或卸載角色、角色服務或功能](../../administration/server-manager/install-or-uninstall-roles-role-services-or-features.md)  
 
 8.  如下所示設定儲存體：  
 
@@ -148,19 +148,19 @@ ms.locfileid: "80308110"
     > -   記錄磁碟區預設必須至少有 9 GB，而且根據記錄需求，可能會更大或更小。  
     > -   檔案伺服器角色只有在操作 Test-SRTopology 時才需要，因為它會開啟必要的防火牆連接埠進行測試。
     
-    - **針對 JBOD 主機殼：**  
+    - **對於 JBOD 機箱：**  
 
         1.  請確定每部伺服器只能看到該網站的儲存體機箱，同時已正確設定 SAS 連線。  
 
-        2.  遵循**在獨立伺服器上部署儲存空間**中提供的[步驟 1-3](../storage-spaces/deploy-standalone-storage-spaces.md)，使用 Windows PowerShell 或伺服器管理員，使用儲存空間佈建儲存體。  
+        2.  遵循[在獨立伺服器上部署儲存空間](../storage-spaces/deploy-standalone-storage-spaces.md)中提供的**步驟 1-3**，使用 Windows PowerShell 或伺服器管理員，使用儲存空間佈建儲存體。  
 
-    - **針對 iSCSI 儲存體：**  
+    - **對於 iSCSI 儲存體：**  
 
-        1.  請確定每個叢集只能看到該網站的儲存體機箱。 如果使用 iSCSI，您應該使用一張以上的網路介面卡。    
+        1.  請確定每個叢集只能看到該網站的存放裝置機箱。 如果使用 iSCSI，您應該使用一張以上的網路介面卡。    
 
         2.  使用廠商的文件來佈建儲存體。 如果使用 Windows iSCSI 目標，請參閱 [iSCSI 目標區塊儲存體，作法](../iscsi/iscsi-target-server.md)。  
 
-    - **針對 FC SAN 存放裝置：**  
+    - **對於 FC SAN 存放裝置：**  
 
         1.  請確定每個叢集只能看到該網站的儲存體機箱，同時您已將主機適當地分區。   
 
@@ -183,11 +183,11 @@ ms.locfileid: "80308110"
     ```
 
     > [!IMPORTANT]
-      > 在指定的來源磁碟區上，若在評估期間使用的測試伺服器沒有任何寫入 IO 負載，請考慮新增工作負載，否則不會產生有用的報告。 您應該使用和實際執行類似的工作負載來測試，才能看出實際的數字與建議的記錄檔大小。 或者，只要在測試期間，將一些檔案複製到來源磁碟區，或下載並執行 [DISKSPD](https://gallery.technet.microsoft.com/DiskSpd-a-robust-storage-6cd2f223)，就可以產生寫入 IO。 例如，會寫入 D: 磁碟區長達十分鐘的少量 IO 工作負載範例：  
+      > 在指定的來源磁碟區上，若在評估期間使用的測試伺服器沒有任何寫入 IO 負載，請考慮新增工作負載，否則不會產生有用的報告。 您應該使用和實際執行類似的工作負載來測試，才能看出實際的數字與建議的記錄檔大小。 或者，只要在測試期間將一些檔案複製到來源磁片區，或下載並執行[DISKSPD](https://gallery.technet.microsoft.com/DiskSpd-a-robust-storage-6cd2f223)以產生寫入 io 即可。 例如，會寫入 D: 磁碟區長達十分鐘的少量 IO 工作負載範例：  
       >
       > `Diskspd.exe -c1g -d600 -W5 -C5 -b8k -t2 -o2 -r -w5 -i100 -j100 d:\test` 
 
-10. 檢查如 [圖 2] 所示的**TestSrTopologyReport**報告，以確保您符合儲存體複本需求。  
+10. 檢查如 [圖 2] 所示的**TestSrTopologyReport.html**報告，以確保您符合儲存體複本需求。  
 
     ![這個畫面顯示拓撲報告](media/Server-to-Server-Storage-Replication/SRTestSRTopologyReport.png)
 
@@ -197,15 +197,15 @@ ms.locfileid: "80308110"
 ### <a name="using-windows-admin-center"></a>使用 Windows 管理中心
 
 1. 新增來源伺服器。
-    1. 選取 [**新增**] 按鈕。
+    1. 選取 [新增] 按鈕。
     2. 選取 [**新增伺服器連接**]。
     3. 輸入伺服器的名稱，然後選取 [**提交**]。
 2. 在 [**所有連接**] 頁面上，選取來源伺服器。
 3. 從 [工具] 面板中選取 [**儲存體複本**]。
 4. 選取 [**新增**] 以建立新的合作關係。 若要建立新的 Azure VM 作為合作關係的目的地：
    
-    1. 在 [**使用其他伺服器**複寫] 底下，選取 [**使用新的 Azure VM** ] 然後選取 **[下一步]** 。 如果您沒有看到此選項，請確定您使用的是 Windows 系統管理中心1910版或更新版本。
-    2. 指定來源伺服器資訊和複寫組名，然後選取 **[下一步]** 。<br><br>這會開始一種程式，自動選取 Windows Server 2019 或 Windows Server 2016 Azure VM 作為遷移來源的目的地。 儲存體遷移服務會建議 VM 大小以符合您的來源，但您可以選取 [**查看所有大小**] 來覆寫。 清查資料是用來自動設定您的受控磁片和其檔案系統，以及將您的新 Azure VM 加入您的 Active Directory 網域。
+    1. 在 [**使用其他伺服器**複寫] 底下，選取 [**使用新的 Azure VM** ] 然後選取 **[下一步]**。 如果您沒有看到此選項，請確定您使用的是 Windows 系統管理中心1910版或更新版本。
+    2. 指定來源伺服器資訊和複寫組名，然後選取 **[下一步]**。<br><br>這會開始一種程式，自動選取 Windows Server 2019 或 Windows Server 2016 Azure VM 作為遷移來源的目的地。 儲存體遷移服務會建議 VM 大小以符合您的來源，但您可以選取 [**查看所有大小**] 來覆寫。 清查資料是用來自動設定您的受控磁片和其檔案系統，以及將您的新 Azure VM 加入您的 Active Directory 網域。
     3. 在 Windows 系統管理中心建立 Azure VM 之後，請提供複寫組名，然後選取 [**建立**]。 接著，Windows 管理中心會開始正常的儲存體複本初始同步處理常式，以開始保護您的資料。
     
     以下影片顯示如何使用儲存體複本來遷移至 Azure Vm。
@@ -213,7 +213,7 @@ ms.locfileid: "80308110"
     > [!VIDEO https://www.youtube-nocookie.com/embed/_VqD7HjTewQ] 
 
 5. 提供合作關係的詳細資料，然後選取 [**建立**] （如 [圖 3] 所示）。 <br>
-   ![新的合作關係畫面，顯示合作關係詳細資料，例如 8 GB 的記錄檔大小。](media/Storage-Replica-UI/Honolulu_SR_Create_Partnership.png)
+   ![新的合作關係畫面會顯示合作關係詳細資料，例如 8 GB 的記錄大小。](media/Storage-Replica-UI/Honolulu_SR_Create_Partnership.png)
 
     **圖3：建立新的合作關係**
 
@@ -299,9 +299,9 @@ ms.locfileid: "80308110"
         ```  
 
         > [!NOTE]
-        > 儲存體複本會將目的地磁碟區與其磁碟機代號或掛接點卸載。 這是設計的做法。  
+        > 儲存體複本會將目的地磁碟區與其磁碟機代號或掛接點卸載。 這是原廠設定。  
 
-    3.  或者，複本的目的地伺服器群組會隨時說明待複製的位元組數目，並可透過 PowerShell 進行查詢。 例如，  
+    3.  或者，複本的目的地伺服器群組會隨時說明待複製的位元組數目，並可透過 PowerShell 進行查詢。 例如：  
 
         ```PowerShell  
         (Get-SRGroup).Replicas | Select-Object numofbytesremaining  
@@ -330,7 +330,7 @@ ms.locfileid: "80308110"
 
 1.  使用 `Get-SRPartnership` 和 `Get-SRGroup` 來判斷目前的複寫來源與目的地及其狀態。  
 
-2.  若要測量複寫效能，請在來源和目的地節點上使用 `Get-Counter` Cmdlet。 計數器名稱如下：  
+2.  若要測量複寫效能，請在來源和目的地節點上使用 `Get-Counter` Cmdlet。 計數器名稱如下︰  
 
     -   \Storage Replica Partition I/O Statistics(*)\Number of times flush paused  
 
@@ -384,7 +384,7 @@ ms.locfileid: "80308110"
 
     -   \Storage Replica Statistics(*)\Number of Messages Sent  
 
-    如需 Windows PowerShell 中效能計數器的詳細資訊，請參閱 [Get-Counter](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Diagnostics/Get-Counter)。  
+    如需 Windows PowerShell 中效能計數器的詳細資訊，請參閱 [Get-Counter](/powershell/module/microsoft.powershell.diagnostics/get-counter)。  
 
 3.  若要移動一個網站的複寫方向，請使用 `Set-SRPartnership` Cmdlet。  
 
@@ -442,19 +442,19 @@ ms.locfileid: "80308110"
 
 ## <a name="adding-an-azure-vm-connected-to-your-network-via-expressroute"></a><a name="add-azure-vm-expressroute"></a>透過 ExpressRoute 新增連線到您網路的 Azure VM
 
-1. [在 Azure 入口網站中建立 ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-howto-circuit-portal-resource-manager)。<br>ExpressRoute 經核准之後，會將資源群組新增至訂用帳戶-流覽至 [**資源群組**] 以查看這個新群組。 記下 [虛擬網路名稱]。
-![Azure 入口網站顯示隨 ExpressRoute 新增的資源群組](media/Server-to-Server-Storage-Replication/express-route-resource-group.png)
+1. [在 Azure 入口網站中建立 ExpressRoute](/azure/expressroute/expressroute-howto-circuit-portal-resource-manager)。<br>ExpressRoute 經核准之後，會將資源群組新增至訂用帳戶-流覽至 [**資源群組**] 以查看這個新群組。 記下 [虛擬網路名稱]。
+![Azure 入口網站顯示新增至 ExpressRoute 的資源群組](media/Server-to-Server-Storage-Replication/express-route-resource-group.png)
     
     **圖4：與 ExpressRoute 相關聯的資源-記下虛擬網路名稱**
-1. [建立新的資源群組](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)。
-1. [新增網路安全性群組](https://docs.microsoft.com/azure/virtual-network/virtual-networks-create-nsg-arm-pportal)。 建立時，請選取與您所建立之 ExpressRoute 相關聯的訂用帳戶識別碼，並選取您剛才建立的資源群組。
+1. [建立新的資源群組](/azure/azure-resource-manager/resource-group-portal)。
+1. [新增網路安全性群組](/azure/virtual-network/virtual-networks-create-nsg-arm-pportal)。 建立時，請選取與您所建立之 ExpressRoute 相關聯的訂用帳戶識別碼，並選取您剛才建立的資源群組。
 <br><br>將您需要的任何輸入和輸出安全性規則新增至網路安全性群組。 例如，您可能想要允許遠端桌面存取 VM。
-1. 使用下列設定[建立 AZURE VM](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-portal) （如 [圖 5] 所示）：
+1. 使用下列設定[建立 AZURE VM](/azure/virtual-machines/windows/quick-create-portal) （如 [圖 5] 所示）：
     - **公用 IP 位址**：無
     - **虛擬網路**：從新增 ExpressRoute 的資源群組中，選取您所記下的虛擬網路。
-    - **網路安全性群組（防火牆）** ：選取您先前建立的網路安全性群組。
-    ![建立顯示 ExpressRoute 網路設定的虛擬機器](media/Server-to-Server-Storage-Replication/azure-vm-express-route.png)
-    **圖5：選取 expressroute 網路設定時建立 VM**
+    - **網路安全性群組（防火牆）**：選取您先前建立的網路安全性群組。
+    ![建立顯示 ExpressRoute 網路設定的虛擬機器 ](media/Server-to-Server-Storage-Replication/azure-vm-express-route.png)
+     **圖5：選取 expressroute 網路設定時建立 VM**
 1. 建立 VM 之後，請參閱[步驟2：布建作業系統、功能、角色、儲存體和網路](#provision-os)。
 
 
@@ -463,5 +463,5 @@ ms.locfileid: "80308110"
 - [使用共用存放裝置的延展叢集複寫](stretch-cluster-replication-using-shared-storage.md)  
 - [叢集對叢集儲存體複寫](cluster-to-cluster-storage-replication.md)
 - [儲存體複本：已知問題](storage-replica-known-issues.md)  
-- [儲存體複本：常見問題](storage-replica-frequently-asked-questions.md)
+- [儲存體複本：常見問題集](storage-replica-frequently-asked-questions.md)
 - [Windows Server 2016 中的儲存空間直接存取](../storage-spaces/storage-spaces-direct-overview.md)  

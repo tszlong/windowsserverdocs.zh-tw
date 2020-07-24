@@ -8,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 37115e79044c9ddfd55e646fcde868ad6ac7048f
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 244444cc773e3b69ba09a2050ebaefa11ea9edef
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624336"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962280"
 ---
 # <a name="creating-a-site-link-bridge-design"></a>建立站台連結橋接器設計
 
@@ -26,7 +26,7 @@ ms.locfileid: "81624336"
 - 您的 IP 網路未完全路由。 當您停用**橋接所有站台連結**時，所有站台連結都會被視為非轉移，而您可以建立並設定站台連結橋物件，以模型出網路的實際路由行為。
 - 您必須控制在 Active Directory Domain Services （AD DS）中所做變更的複寫流程。 藉由停用 [橋接] 站台連結 IP 傳輸和設定站台連結橋的**所有網站**連結，站台連結橋就等同于脫離的網路。 站台連結橋接中的所有站台連結都可以進行可轉移的路由，但不會在站台連結橋的外部路由。
 
-如需如何使用 [Active Directory 的網站和服務] 嵌入式管理單元來停用 [**橋接所有站台連結**] 設定的詳細資訊，請參閱[啟用或停用站台連結橋](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc738789(v=ws.10))文章。
+如需如何使用 [Active Directory 的網站和服務] 嵌入式管理單元來停用 [**橋接所有站台連結**] 設定的詳細資訊，請參閱[啟用或停用站台連結橋](/previous-versions/windows/it-pro/windows-server-2003/cc738789(v=ws.10))文章。
 
 ## <a name="controlling-ad-ds-replication-flow"></a>控制 AD DS 複寫流程
 

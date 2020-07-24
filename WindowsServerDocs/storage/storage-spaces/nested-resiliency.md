@@ -7,12 +7,12 @@ ms.technology: storagespaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/15/2019
-ms.openlocfilehash: 4faf4ade53074677b34b037c5ba6d551beb8542e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 6c3e16f0965be5fc7de4bdc7bd751fb1dd193556
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474905"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962200"
 ---
 # <a name="nested-resiliency-for-storage-spaces-direct"></a>儲存空間直接存取的嵌套復原
 
@@ -56,7 +56,7 @@ Windows Server 2019 中的儲存空間直接存取提供在軟體中執行的兩
 
   ![嵌套的雙向鏡像](media/nested-resiliency/nested-two-way-mirror.png)
 
-- **嵌套的鏡像加速同位。** 結合上述的嵌套雙向鏡像與嵌套的同位。 在每個伺服器內，大部分資料的本機復原是由單一[位同位](storage-spaces-fault-tolerance.md#parity)檢查所提供，但新的最近寫入會使用雙向鏡像。 然後，伺服器之間的雙向鏡像會提供所有資料的進一步復原。 如需有關鏡像加速同位檢查如何運作的詳細資訊，請參閱[鏡像加速同位](https://docs.microsoft.com/windows-server/storage/refs/mirror-accelerated-parity)。
+- **嵌套的鏡像加速同位。** 結合上述的嵌套雙向鏡像與嵌套的同位。 在每個伺服器內，大部分資料的本機復原是由單一[位同位](storage-spaces-fault-tolerance.md#parity)檢查所提供，但新的最近寫入會使用雙向鏡像。 然後，伺服器之間的雙向鏡像會提供所有資料的進一步復原。 如需有關鏡像加速同位檢查如何運作的詳細資訊，請參閱[鏡像加速同位](../refs/mirror-accelerated-parity.md)。
 
   ![嵌套鏡像加速同位](media/nested-resiliency/nested-mirror-accelerated-parity.png)
 
@@ -127,7 +127,7 @@ New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume02 -StorageTierFrie
 
 ### <a name="step-3-continue-in-windows-admin-center"></a>步驟3：在 Windows 系統管理中心內繼續
 
-使用嵌套復原的磁片區會以明確標籤出現在[Windows 系統管理中心](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center)，如下列螢幕擷取畫面所示。 建立之後，您就可以使用 Windows 管理中心來管理和監視它們，就像儲存空間直接存取中的任何其他磁片區一樣。
+使用嵌套復原的磁片區會以明確標籤出現在[Windows 系統管理中心](../../manage/windows-admin-center/overview.md)，如下列螢幕擷取畫面所示。 建立之後，您就可以使用 Windows 管理中心來管理和監視它們，就像儲存空間直接存取中的任何其他磁片區一樣。
 
 ![](media/nested-resiliency/windows-admin-center.png)
 
@@ -171,11 +171,11 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.N
 
 ### <a name="does-nested-resiliency-change-how-drive-replacement-works"></a>Nested 復原是否會變更磁片磁碟機更換的運作方式？
 
-否。
+不可以。
 
 ### <a name="does-nested-resiliency-change-how-server-node-replacement-works"></a>Nested 復原是否會變更伺服器節點取代的運作方式？
 
-否。 若要取代伺服器節點和其磁片磁碟機，請遵循下列順序：
+不可以。 若要取代伺服器節點和其磁片磁碟機，請遵循下列順序：
 
 1. 淘汰傳出伺服器中的磁片磁碟機
 2. 將含有其磁片磁碟機的新伺服器新增至叢集

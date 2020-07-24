@@ -8,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 2e63d177abd0a6880c1825b821d265c8fa233a22
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ca7ab368c9e15de15f733070a5bcb06584956500
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823161"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961130"
 ---
 # <a name="replication-error-1753-there-are-no-more-endpoints-available-from-the-endpoint-mapper"></a>複寫錯誤 1753：端點對應表中無更多可用的端點
 
->適用於︰Windows Server
+>適用於：Windows Server
 
 本文說明因 Win32 錯誤1753而失敗之 Active Directory 作業的徵兆、原因和解決步驟：「端點對應程式中沒有其他可用的端點。」
 
@@ -95,7 +95,7 @@ Active Directory 網站和服務中的 [**立即**複寫] 命令會傳回「端�
 以滑鼠右鍵按一下來源 DC 中的連線物件，然後選擇 [**立即**複寫失敗]，並出現「端點對應程式中沒有其他可用的端點。」
 螢幕上的錯誤訊息如下所示：
 
-對話方塊標題文字：立即複寫對話方塊郵件內文：嘗試同步處理命名內容 \<% 目錄磁碟分割名稱% > （從網域控制站 \<來源 DC > 到網域控制站 \<目的地 DC >）時發生下列錯誤：
+對話方塊標題文字：立即複寫對話方塊郵件內文：嘗試將命名內容 \<%directory partition name%> 從網域控制站同步處理 \<Source DC> 至網域控制站時發生下列錯誤 \<Destination DC> ：
 
 端點對應程式中沒有其他可用的端點。
 作業將不會繼續
@@ -149,7 +149,7 @@ NTDS KCC、NTDS General 或 Microsoft-Windows ActiveDirectory_DomainService 事�
 
 確認 RPC 用戶端（目的地 DC）已連線到預期的 RPC 伺服器（來源 DC）
 
-通用 Active Directory 樹系中的所有 Dc 都會在 _msdcs 中註冊網域控制站 CNAME 記錄。 \<樹系根域 > DNS 區域，不論其位於樹系中的網域為何。 DC CNAME 記錄是從每個網域控制站的 [NTDS 設定] 物件的 objectGUID 屬性衍生而來。
+通用 Active Directory 樹系中的所有 Dc 都會在 _msdcs 中註冊網域控制站 CNAME 記錄。 \<forest root domain>DNS 區域，不論其位於樹系中的網域為何。 DC CNAME 記錄是從每個網域控制站的 [NTDS 設定] 物件的 objectGUID 屬性衍生而來。
 
 執行以複寫為基礎的作業時，目的地 DC 會查詢來源 Dc CNAME 記錄的 DNS。 CNAME 記錄包含來源 DC 完整的電腦名稱稱，其可用來透過 DNS 用戶端快取查閱、主機/LMHost 檔查閱、在 DNS 中裝載 A/AAAA 記錄或 WINS 來衍生來源 Dc 的 IP 位址。
 
@@ -239,7 +239,7 @@ ncacn_http:CONTOSO-DC01[6004]
 * 針對 RPC 用戶端（目的地 DC）和 RPC 伺服器（來源 DC）的 OS 版本，確認 [RPC 服務] 和 [RPC 定位器] 的啟動值和 [服務狀態] 是正確的。 如果服務目前已停止或未設定預設的啟動值，請重設預設的啟動值，重新開機修改過的 DC，然後重試一次作業。
    * 此外，請確定服務內容符合下表所列的預設設定。
 
-      | Service | Windows Server 2003 和更新版本中的預設狀態（啟動類型） | Windows Server 2000 中的預設狀態（啟動類型） |
+      | 服務 | Windows Server 2003 和更新版本中的預設狀態（啟動類型） | Windows Server 2000 中的預設狀態（啟動類型） |
       | --- | --- | --- |
       | 遠端程序呼叫 | 已啟動（自動） | 已啟動（自動） |
       | 遠端程序呼叫定位器 | Null 或已停止（手動） | 已啟動（自動） |
@@ -286,15 +286,15 @@ F# SRC    DEST    Operation
 11 x.x.1.2 x.x.1.1 EPM:Response: ept_map: 0x16C9A0D6 - EP_S_NOT_REGISTERED
 ```
 
-在畫面格**10**上，目的地 dc 會透過埠135查詢來源 dc 端點對應程式，以取得 Active Directory 複寫服務類別 UUID E351 。
+在畫面格**10**上，目的地 dc 會透過埠135查詢來源 dc 端點對應程式，以取得 Active Directory 複寫服務類別 UUID E351 .。。
 
 在框架**11**中，來源 DC，在此案例中，尚未裝載 DC 角色，因而尚未註冊 E351 ... 的成員電腦。複寫服務的 UUID，其本機 EPM 會以符號錯誤來回應，EP_S_NOT_REGISTERED 這會對應到十進位錯誤1753、十六進位錯誤0x6d9 和易記錯誤「端點對應程式中沒有其他可用的端點」。
 
-之後，IP 位址為 x. 1.2 的成員電腦會升級為 contoso.com 網域中的複本 "MayberryDC"。 同樣地，會使用 [**立即**複寫] 命令來觸發複寫，但這次會失敗，並出現螢幕錯誤「目標主體名稱不正確」。 已指派網路介面卡的電腦 IP 位址為 x. 1.2 是網域控制站，目前正在開機進入正常模式，並已註冊 E351 。複寫服務 UUID 與其本機 EPM，但它並未擁有 DC2 的名稱或安全性身分識別，也無法從 DC1 解密 Kerberos 要求，因此要求現在會失敗，並出現「目標主體名稱不正確」錯誤。 錯誤對應到十進位錯誤-2146893022/十六進位錯誤0x80090322。
+之後，IP 位址為 x. 1.2 的成員電腦會升級為 contoso.com 網域中的複本 "MayberryDC"。 同樣地，會使用 [**立即**複寫] 命令來觸發複寫，但這次會失敗，並出現螢幕錯誤「目標主體名稱不正確」。 已指派網路介面卡的電腦 IP 位址為 x. 1.2 是網域控制站，目前正在開機進入正常模式，並已註冊 E351 .。。複寫服務 UUID 與其本機 EPM，但它並未擁有 DC2 的名稱或安全性身分識別，也無法從 DC1 解密 Kerberos 要求，因此要求現在會失敗，並出現「目標主體名稱不正確」錯誤。 錯誤對應到十進位錯誤-2146893022/十六進位錯誤0x80090322。
 
 這類不正確主機對 IP 對應可能是因為主機/lmhost 檔中的過時專案、在 DNS 中裝載 A/AAAA 註冊，或是 WINS。
 
-摘要：此範例失敗，因為不正確主機對 IP 對應（在此案例中為主機檔案）導致目的地 DC 解析為沒有執行 Active Directory Domain Services 服務的「來源」 DC （或甚至是已安裝），因此複寫 SPN 尚未註冊，且來源 DC 傳回錯誤1753。 在第二個案例中，不正確主機對 IP 對應（同樣在主機檔案中）導致目的地 DC 連接到已註冊 E351 的 DC 。複寫 SPN 但該來源的主機名稱和安全性識別與預期的來源 DC 不同，因此嘗試失敗，錯誤為-2146893022：目標主體名稱不正確。
+摘要：此範例失敗，因為不正確主機對 IP 對應（在此案例中為主機檔案）導致目的地 DC 解析為沒有執行 Active Directory Domain Services 服務的「來源」 DC （或甚至是已安裝），因此複寫 SPN 尚未註冊，且來源 DC 傳回錯誤1753。 在第二個案例中，不正確主機對 IP 對應（同樣在主機檔案中）導致目的地 DC 連接到已註冊 E351 的 DC .。。複寫 SPN 但該來源的主機名稱和安全性識別與預期的來源 DC 不同，因此嘗試失敗，錯誤為-2146893022：目標主體名稱不正確。
 
 ## <a name="related-topics"></a>相關主題
 
@@ -303,13 +303,13 @@ F# SRC    DEST    Operation
 * [知識庫文章832017服務總覽和 Windows Server 系統的網路埠需求](https://support.microsoft.com/kb/832017/)
 * [知識庫文章224196限制特定埠的 Active Directory 複寫流量和用戶端 RPC 流量](https://support.microsoft.com/kb/224196/)
 * [知識庫文章154596如何設定 RPC 動態埠配置以使用防火牆](https://support.microsoft.com/kb/154596)
-* [RPC 的運作方式](https://msdn.microsoft.com/library/aa373935(VS.85).aspx)
-* [伺服器如何準備連接](https://msdn.microsoft.com/library/aa373938(VS.85).aspx)
-* [用戶端建立連接的方式](https://msdn.microsoft.com/library/aa373937(VS.85).aspx)
-* [註冊介面](https://msdn.microsoft.com/library/aa375357(VS.85).aspx)
-* [讓伺服器可在網路上使用](https://msdn.microsoft.com/library/aa373974(VS.85).aspx)
-* [註冊端點](https://msdn.microsoft.com/library/aa375255(VS.85).aspx)
-* [接聽用戶端呼叫](https://msdn.microsoft.com/library/aa373966(VS.85).aspx)
-* [用戶端建立連接的方式](https://msdn.microsoft.com/library/aa373937(VS.85).aspx)
+* [RPC 的運作方式](/windows/win32/rpc/how-rpc-works)
+* [伺服器如何準備連接](/windows/win32/rpc/how-the-server-prepares-for-a-connection)
+* [用戶端建立連接的方式](/windows/win32/rpc/how-the-client-establishes-a-connection)
+* [註冊介面](/windows/win32/rpc/registering-the-interface)
+* [讓伺服器可在網路上使用](/windows/win32/rpc/making-the-server-available-on-the-network)
+* [註冊端點](/windows/win32/rpc/registering-endpoints)
+* [接聽用戶端呼叫](/windows/win32/rpc/listening-for-client-calls)
+* [用戶端建立連接的方式](/windows/win32/rpc/how-the-client-establishes-a-connection)
 * [限制特定埠的 Active Directory 複寫流量和用戶端 RPC 流量](https://support.microsoft.com/kb/224196)
-* [AD DS 中目標 DC 的 SPN](https://msdn.microsoft.com/library/dd207688(PROT.13).aspx)
+* [AD DS 中目標 DC 的 SPN](/openspecs/windows_protocols/ms-drsr/41efc56e-0007-4e88-bafe-d7af61efd91f)

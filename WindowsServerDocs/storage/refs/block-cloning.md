@@ -8,12 +8,12 @@ ms.date: 10/17/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-file-systems
-ms.openlocfilehash: c74e8744c22e2be174c1f1297e0472e5f32e1fe8
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: cd74468029ff973846ddfd10cce8ba0e26a607e9
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475405"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961390"
 ---
 # <a name="block-cloning-on-refs"></a>ReFS 上的區塊複製
 
@@ -53,12 +53,12 @@ ReFS 透過保留各個邏輯叢集的參考計數，讓檔案間的隔離不中
 - 來源與目的地區域必須以叢集界限作為開頭與結尾。
 - 複製的區域長度必須小於 4GB。
 - 可對應至相同實體區域的檔案區域數上限為 8175。
-- 目的地區域不得延伸超過檔案結尾。 若應用程式要使用複製的資料延伸目的地，其必須先呼叫 [SetEndOfFile](https://msdn.microsoft.com/library/windows/desktop/aa365531(v=vs.85).aspx)。
+- 目的地區域不得延伸超過檔案結尾。 若應用程式要使用複製的資料延伸目的地，其必須先呼叫 [SetEndOfFile](/windows/win32/api/fileapi/nf-fileapi-setendoffile)。
 - 若來源與目的地區域位於相同檔案，其不得重疊。 (應用程式可繼續，方法是將區塊複製作業分割為多個不再重疊的多個區塊複製)。
 - 來源與目的檔案必須位於相同的 ReFS 磁碟區。
-- 來源與目的檔案必須具有相同的[完整性資料流](https://msdn.microsoft.com/library/windows/desktop/gg258117(v=vs.85).aspx)設定。
+- 來源與目的檔案必須具有相同的[完整性資料流](/windows/win32/fileio/file-attribute-constants)設定。
 - 若來源檔案為疏鬆，目的檔案也必須為疏鬆。
-- 區塊複製作業會中斷「共用伺服器用戶端檔案鎖」(也稱為[層級 2 伺服器用戶端檔案鎖](https://msdn.microsoft.com/library/windows/desktop/aa365713(v=vs.85).aspx))。
+- 區塊複製作業會中斷「共用伺服器用戶端檔案鎖」(也稱為[層級 2 伺服器用戶端檔案鎖](/windows/win32/fileio/types-of-opportunistic-locks))。
 - ReFS 磁碟區必須使用 Windows Server 2016 格式化，且若正在使用容錯移轉叢集，叢集功能等級的格式時間必須為 Windows Server 2016 或更新版本。
 
 ## <a name="additional-references"></a>其他參考
@@ -66,5 +66,5 @@ ReFS 透過保留各個邏輯叢集的參考計數，讓檔案間的隔離不中
 -   [ReFS 概觀](refs-overview.md)
 -   [ReFS 完整性資料流](integrity-streams.md)
 -   [儲存空間直接存取總覽](../storage-spaces/storage-spaces-direct-overview.md)
--   [DUPLICATE_EXTENTS_DATA](https://msdn.microsoft.com/library/windows/desktop/mt590821(v=vs.85).aspx)
--   [FSCTL_DUPLICATE_EXTENTS_TO_FILE](https://msdn.microsoft.com/library/windows/desktop/mt590823(v=vs.85).aspx)
+-   [DUPLICATE_EXTENTS_DATA](/windows/win32/api/winioctl/ns-winioctl-duplicate_extents_data)
+-   [FSCTL_DUPLICATE_EXTENTS_TO_FILE](/windows/win32/api/winioctl/ni-winioctl-fsctl_duplicate_extents_to_file)

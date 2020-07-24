@@ -8,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f90f53763e7a31ffed1fd820061910742e5cf98a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: aa7d30d17d6e7a44daf2c5a65a4e173f25160456
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823231"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960770"
 ---
 # <a name="how-ldap-server-cookies-are-handled"></a>如何處理 LDAP 伺服器 Cookie
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 在 LDAP 中，某些查詢會產生大型結果集。 此類查詢會對 Windows Server 帶來一些挑戰。  
   
@@ -123,13 +123,11 @@ The client should consider a more efficient search filter.  The limit for Maximu
   
 事件 2898 和 2899 是唯一可得知 LDAP 伺服器是否已達到系統管理員限制的方式。 如果您的 LDAP 查詢錯誤是由於上述控制項處理錯誤而發生，您應根據所取得的事件，查看第 4 節所述的「提高一或多個 LDAP 原則設定的限制」。  
   
-如果您的 DC/LDAP 伺服器上出現事件 2898，建議您將 MaxResultSetsPerConn 設為 25。 單一 LDAP 連線中超過 25 個並行分頁搜尋並不常見。 如果您持續看到事件 2898，請調查發生錯誤的 LDAP 用戶端應用程式。 有可能在擷取其他分頁結果時停滯住了，因而讓 Cookie 擱置，並重新啟動一個新查詢。 所以請查看應用程式在某個時候是否具有足夠的 Cookie 可供使用，您也可以將 MaxResultSetsPerConn 的值提高到 25 以上。如果是網域控制站上記錄了事件 2899，處理方法將有所不同。 如果 DC/LDAP 伺服器在具有足夠記憶體 (數 GB 可用記憶體) 的機器上執行，建議您將 LDAP 伺服器的 MaxResultsetSize 設定為 >=250MB。 此上限已夠大，足以容納在極大目錄上進行的大量 LDAP 頁面搜尋。  
+如果您的 DC/LDAP 伺服器上出現事件 2898，建議您將 MaxResultSetsPerConn 設為 25。 單一 LDAP 連線中超過 25 個並行分頁搜尋並不常見。 如果您持續看到事件 2898，請調查發生錯誤的 LDAP 用戶端應用程式。 有可能在擷取其他分頁結果時停滯住了，因而讓 Cookie 擱置，並重新啟動一個新查詢。 所以請查看應用程式在某個時候是否具有足夠的 Cookie 可供使用，您也可以將 MaxResultSetsPerConn 的值提高到 25 以上。如果是網域控制站上記錄了事件 2899，處理方法將有所不同。 如果您的 DC/LDAP 伺服器在具有足夠記憶體的電腦（數 Gb 的可用記憶體）上執行，建議您將 LDAP 伺服器上的 MaxResultsetSize 設定為 >= 250MB。 此上限已夠大，足以容納在極大目錄上進行的大量 LDAP 頁面搜尋。  
   
-如果在 250MB 以上的集區中仍然出現事件 2899，則您可能有許多用戶端以很頻繁的方式進行查詢，並傳回極大量物件。 您可以使用[Active Directory 資料收集器集合](https://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx)檔收集的資料，可以協助您尋找重複的分頁查詢，讓您的 LDAP 伺服器忙碌。 這些查詢都會顯示一些符合所用頁面大小的「傳回的專案」。  
+如果在 250MB 以上的集區中仍然出現事件 2899，則您可能有許多用戶端以很頻繁的方式進行查詢，並傳回極大量物件。 您可以使用[Active Directory 資料收集器集合](/archive/blogs/askds/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond)檔收集的資料，可以協助您尋找重複的分頁查詢，讓您的 LDAP 伺服器忙碌。 這些查詢都會顯示一些符合所用頁面大小的「傳回的專案」。  
   
-可能的話，您應該檢查應用程式設計，並以較低的頻率、資料量及/或較少的用戶端實例查詢此資料來執行不同的方法。如果您有原始程式碼存取權的應用程式，本指南可讓您瞭解應用程式存取 AD 的最佳方式，以[建立有效率的啟用 Ad 應用程式](https://msdn.microsoft.com/library/ms808539.aspx)。  
+可能的話，您應該檢查應用程式設計，並以較低的頻率、資料量及/或較少的用戶端實例查詢此資料來執行不同的方法。如果您有原始程式碼存取權的應用程式，本指南可讓您瞭解應用程式存取 AD 的最佳方式，以[建立有效率的啟用 Ad 應用程式](/previous-versions/ms808539(v=msdn.10))。  
   
 如果無法變更查詢行為，其中一種方法也會為所需的命名內容加入更多複寫的實例，並重新發佈用戶端，最後減少個別 LDAP 伺服器上的負載。  
   
-
-

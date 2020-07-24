@@ -7,12 +7,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: f9939662c22e9500235bae014b7fb9064afd911b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6d049175c7d89670f82bb45addc929d57b60b7b0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858111"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960740"
 ---
 # <a name="controlling-access-to-organizational-data-with-active-directory-federation-services"></a>使用 Active Directory 同盟服務控制組織資料的存取
 
@@ -26,7 +26,7 @@ ms.locfileid: "80858111"
 
 ## <a name="ad-fs-and-conditional-access-in-a-hybrid-organization"></a>混合式組織中的 AD FS 和條件式存取  
 
-AD FS 在混合式案例中提供條件式存取原則的內部部署元件。 以 AD FS 為基礎的授權規則應用於非 Azure AD 資源，例如直接同盟至 AD FS 的內部部署應用程式。  雲端元件是由 Azure AD 的[條件式存取](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access)所提供。  Azure AD Connect 提供連接這兩者的控制平面。
+AD FS 在混合式案例中提供條件式存取原則的內部部署元件。 以 AD FS 為基礎的授權規則應用於非 Azure AD 資源，例如直接同盟至 AD FS 的內部部署應用程式。  雲端元件是由 Azure AD 的[條件式存取](/azure/active-directory/active-directory-conditional-access)所提供。  Azure AD Connect 提供連接這兩者的控制平面。
 
 例如，當您使用 Azure AD 對雲端資源的條件式存取註冊裝置時，Azure AD Connect 裝置回寫功能會讓裝置註冊資訊可供內部部署使用，以供 AD FS 原則使用並強制執行。  如此一來，您就可以使用一致的方法來存取內部部署和雲端資源的控制原則。  
 
@@ -48,12 +48,12 @@ AD FS 在混合式案例中提供條件式存取原則的內部部署元件。 �
 
 為了解決這些限制，並提供更健全的方式來使用原則來管理 Office 365 中商務資料的存取權，或其他以 Azure AD 為基礎的資源，Microsoft 引進 Azure AD 條件式存取。  您可以針對特定資源或 Azure AD 中 Office 365、SaaS 或自訂應用程式內的任何或所有資源，設定條件式存取原則 Azure AD。  這些原則會在裝置信任、位置和其他因素上轉動。
 
-若要深入瞭解 Azure AD 條件式存取，請參閱[Azure Active Directory 中的條件式存取](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access)
+若要深入瞭解 Azure AD 條件式存取，請參閱[Azure Active Directory 中的條件式存取](/azure/active-directory/active-directory-conditional-access)
 
 啟用這些案例的一項重要變更是[新式驗證](https://blogs.office.com/2015/11/19/updated-office-365-modern-authentication-public-preview/)，這是一種新方法，用來驗證在 Office 用戶端、Skype、Outlook 和瀏覽器上運作方式相同的使用者和裝置。
 
 ## <a name="next-steps"></a>後續步驟
 如需控制跨雲端和內部部署存取的詳細資訊，請參閱：
 
-- [Azure Active Directory 中的條件式存取](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access)
+- [Azure Active Directory 中的條件式存取](/azure/active-directory/active-directory-conditional-access)
 - [AD FS 2016 中的存取控制原則](Access-Control-Policies-in-AD-FS.md)

@@ -8,16 +8,16 @@ ms.topic: article
 ms.assetid: 4ca50ea8-6987-4081-acd5-5bf9ead62acd
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: be4d7028f1922152b2779e82a7c78d9b3a5b753a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3042b6782ad8d9e0a03a43c1e21c8fe41583f967
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859551"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963520"
 ---
 # <a name="step-1-plan-directaccess-infrastructure"></a>步驟1規劃 DirectAccess 基礎結構
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 在單一伺服器上規劃基本遠端存取部署的第一步，是規劃部署所需的基礎結構。 本主題描述基礎結構規劃步驟：  
   
@@ -38,7 +38,7 @@ ms.locfileid: "80859551"
   
 1. 識別您想要使用的網路介面卡拓撲。 您可以使用下列其中一項設定遠端存取：  
   
-    - 使用兩張網路介面卡：在邊緣有一個連線到網際網路的網路介面卡，另一個連接到內部網路，或位於 NAT、防火牆或路由器裝置後面，其中一張網路介面卡連線到周邊網路，另一個連接到內部網路.  
+    - 使用兩張網路介面卡：在邊緣有一個連線到網際網路的網路介面卡，另一個連接到內部網路，或位於 NAT、防火牆或路由器裝置後面，其中一張網路介面卡連線到周邊網路，另一個連接到內部網路。  
   
     - 在具有一張網路介面卡的 NAT 裝置後方：遠端存取服務器安裝在 NAT 裝置後方，而單一網路介面卡連線到內部網路。  
   
@@ -46,16 +46,16 @@ ms.locfileid: "80859551"
   
     DirectAccess 使用 IPv6 搭配 IPsec 在 DirectAccess 用戶端電腦與公司內部網路之間建立安全連線。 不過，DirectAccess 不一定需要 IPv6 網際網路的連線能力，或內部網路的原生 IPv6 支援。 取而代之的是，它會自動設定並使用 IPv6 轉換技術，透過 IPv4 網際網路 (6to4、Teredo 或 IP-HTTPS) 及透過僅支援 IPv4 的內部網路 (NAT64 或 ISATAP) 建立 IPv6 流量通道。 如需這些轉換技術的概觀，請參閱下列資源：  
   
-    - [IPv6 轉換技術](https://technet.microsoft.com/library/bb726951.aspx)  
+    - [IPv6 轉換技術](/previous-versions//bb726951(v=technet.10))  
   
-    - [IP-HTTPS 通道通訊協定規格](https://msdn.microsoft.com/library/dd358571.aspx)  
+    - [IP-HTTPS 通道通訊協定規格](/openspecs/windows_protocols/ms-iphttps/f1bf1125-49c2-4246-9c75-5d4fc9706b56)  
   
 3. 根據下表設定所需的介面卡和位址指定。 針對使用單一網路介面卡的 NAT 裝置後方部署，請只使用 [內部網路介面卡] 資料行來設定您的 IP 位址。  
   
     |IP 位址類型|外部網路介面卡|內部網路介面卡|路由需求|  
     |-|--------------|--------------------|------------|  
-    |IPv4 內部網路與 IPv4 網際網路|設定下列項目：<br/><br/>-一個靜態公用 IPv4 位址，具有適當的子網路遮罩。<br/>-網際網路防火牆或本機網際網路服務提供者（ISP）路由器的預設閘道 IPv4 位址。|設定下列項目：<br/><br/>-具有適當子網路遮罩的 IPv4 內部網路位址。<br/>-內部網路命名空間的連線特定 DNS 尾碼。 內部介面也必須設定 DNS 伺服器。<br/>-請勿在任何內部網路介面上設定預設閘道。|若要設定遠端存取伺服器連線到內部 IPv4 網路的所有子網路，請執行下列動作：<br/><br/>1. 列出內部網路上所有位置的 IPv4 位址空間。<br/>2. 使用**route add-p**或**netsh interface ipv4 add route**命令來新增 ipv4 位址空間，做為遠端存取服務器之 ipv4 路由表中的靜態路由。|  
-    |IPv6 網際網路與 IPv6 內部網路|設定下列項目：<br/><br/>-使用您 ISP 所提供的自動設定位址設定。<br/>-使用 [**路由列印**] 命令，以確保指向 ISP 路由器的預設 ipv6 路由存在於 IPv6 路由表中。<br/>-判斷 ISP 和內部網路路由器是否使用 RFC 4191 中所述的預設路由器喜好設定，以及使用高於您近端內部網路路由器的預設喜好設定。 如果這兩項都是肯定的，預設路由就不需要其他設定。 ISP 路由器較高的喜好設定可確保遠端存取伺服器使用中的預設 IPv6 路由指向 IPv6 網際網路。<br/><br/>因為遠端存取伺服器是 IPv6 路由器，如果您有原生的 IPv6 基礎結構，網際網路介面也可以連線到內部網路的網域控制站。 在此情況下，請在周邊網路中的網域控制站新增封包篩選器，防止連線到遠端存取伺服器網際網路對向介面的 IPv6 位址。|設定下列項目：<br/><br/>-如果您不是使用預設的喜好設定層級，請使用**netsh interface ipv6 Set InterfaceIndex ignoredefaultroutes = enabled 命令設定**內部網路介面。 此命令可確保指向內部網路路由器的其他預設路由不會新增至 IPv6 路由表。 您可以從 netsh interface show interface 命令的顯示畫面，取得內部網路介面的 InterfaceIndex。|如果您有 IPv6 內部網路，要設定遠端存取伺服器以連線到所有 IPv6 位置，請執行下列動作：<br/><br/>1. 列出內部網路上所有位置的 IPv6 位址空間。<br/>2. 使用**netsh interface ipv6 add route**命令來新增 ipv6 位址空間，做為遠端存取服務器的 ipv6 路由表中的靜態路由。|  
+    |IPv4 內部網路與 IPv4 網際網路|設定下列各項：<br/><br/>-一個靜態公用 IPv4 位址，具有適當的子網路遮罩。<br/>-網際網路防火牆或本機網際網路服務提供者（ISP）路由器的預設閘道 IPv4 位址。|設定下列各項：<br/><br/>-具有適當子網路遮罩的 IPv4 內部網路位址。<br/>-內部網路命名空間的連線特定 DNS 尾碼。 內部介面也必須設定 DNS 伺服器。<br/>-請勿在任何內部網路介面上設定預設閘道。|若要設定遠端存取伺服器連線到內部 IPv4 網路的所有子網路，請執行下列動作：<br/><br/>1. 列出內部網路上所有位置的 IPv4 位址空間。<br/>2. 使用**route add-p**或**netsh interface ipv4 add route**命令來新增 ipv4 位址空間，做為遠端存取服務器之 ipv4 路由表中的靜態路由。|  
+    |IPv6 網際網路與 IPv6 內部網路|設定下列各項：<br/><br/>-使用您 ISP 所提供的自動設定位址設定。<br/>-使用 [**路由列印**] 命令，以確保指向 ISP 路由器的預設 ipv6 路由存在於 IPv6 路由表中。<br/>-判斷 ISP 和內部網路路由器是否使用 RFC 4191 中所述的預設路由器喜好設定，以及使用高於您近端內部網路路由器的預設喜好設定。 如果這兩項都是肯定的，預設路由就不需要其他設定。 ISP 路由器較高的喜好設定可確保遠端存取伺服器使用中的預設 IPv6 路由指向 IPv6 網際網路。<br/><br/>因為遠端存取伺服器是 IPv6 路由器，如果您有原生的 IPv6 基礎結構，網際網路介面也可以連線到內部網路的網域控制站。 在此情況下，請在周邊網路中的網域控制站新增封包篩選器，防止連線到遠端存取伺服器網際網路對向介面的 IPv6 位址。|設定下列各項：<br/><br/>-如果您不是使用預設的喜好設定層級，請使用**netsh interface ipv6 Set InterfaceIndex ignoredefaultroutes = enabled 命令設定**內部網路介面。 此命令可確保指向內部網路路由器的其他預設路由不會新增至 IPv6 路由表。 您可以從 netsh interface show interface 命令的顯示畫面，取得內部網路介面的 InterfaceIndex。|如果您有 IPv6 內部網路，要設定遠端存取伺服器以連線到所有 IPv6 位置，請執行下列動作：<br/><br/>1. 列出內部網路上所有位置的 IPv6 位址空間。<br/>2. 使用**netsh interface ipv6 add route**命令來新增 ipv6 位址空間，做為遠端存取服務器的 ipv6 路由表中的靜態路由。|  
     |IPv6 網際網路與 IPv4 內部網路|遠端存取伺服器使用 Microsoft 6to4 介面卡的介面將預設的 IPv6 路由流量轉接到 IPv4 網際網路上的 6to4 轉送。 您可以使用下列命令，設定遠端存取伺服器在 IPv4 網際網路上 Microsoft 6to4 轉送的 IPv4 位址 (當公司網路中沒有部署原生 IPv6 時使用)：netsh interface ipv6 6to4 set relay name=192.88.99.1 state=enabled 命令。|||  
   
     > [!NOTE]
@@ -139,9 +139,9 @@ IPsec 的憑證需求包括 DirectAccess 用戶端電腦在建立用戶端與遠
 
 部署遠端存取時，下列項目必須有 DNS：  
   
-- **Directaccess 用戶端要求**： DNS 是用來解析來自不位於內部網路上的 DirectAccess 用戶端電腦所提出的要求。 DirectAccess 用戶端會嘗試連線到 DirectAccess 網路位置伺服器，以判斷它們是否位於網際網路或公司網路上：如果連線成功，用戶端就會被判斷為位於內部網路上，而不使用 DirectAccess，而且用戶端要求是使用在用戶端電腦的網路介面卡上設定的 DNS 伺服器來解決。 如果連線不成功，用戶端會被認為位於網際網路上。 DirectAccess 用戶端會使用名稱解析原則表格 (NRPT) 來決定解析名稱要求時要使用的 DNS 伺服器。 您可以指定用戶端應使用 DirectAccess DNS64 或替代的內部 DNS 伺服器來解析名稱。 執行名稱解析時，DirectAccess 用戶端會使用 NRPT 來識別如何處理要求。 用戶端會要求 FQDN 或單一標籤名稱，例如 <https://internal>。 如果要求的是單一標籤名稱，系統就會附加 DNS 尾碼來建立 FQDN。 如果 DNS 查詢與 NRPT 中的項目相符，而且已為該項目指定 DNS4 或內部網路 DNS 伺服器，系統就會將查詢傳送給指定的伺服器進行名稱解析。 如果有相符的項目存在，但是未指定任何 DNS 伺服器，這即表示有豁免規則，而將會套用一般名稱解析。  
+- **Directaccess 用戶端要求**： DNS 是用來解析來自不位於內部網路上的 DirectAccess 用戶端電腦所提出的要求。 DirectAccess 用戶端會嘗試連線到 DirectAccess 網路位置伺服器，以判斷它們是位於網際網路或公司網路上：如果連線成功，用戶端就會被判斷為內部網路且不會使用 DirectAccess，而且用戶端要求會使用在用戶端電腦的網路介面卡上設定的 DNS 伺服器來解決。 如果連線不成功，用戶端會被認為位於網際網路上。 DirectAccess 用戶端會使用名稱解析原則表格 (NRPT) 來決定解析名稱要求時要使用的 DNS 伺服器。 您可以指定用戶端應使用 DirectAccess DNS64 或替代的內部 DNS 伺服器來解析名稱。 執行名稱解析時，DirectAccess 用戶端會使用 NRPT 來識別如何處理要求。 用戶端會要求 FQDN 或單一標籤名稱，例如 <https://internal> 。 如果要求的是單一標籤名稱，系統就會附加 DNS 尾碼來建立 FQDN。 如果 DNS 查詢與 NRPT 中的項目相符，而且已為該項目指定 DNS4 或內部網路 DNS 伺服器，系統就會將查詢傳送給指定的伺服器進行名稱解析。 如果有相符的項目存在，但是未指定任何 DNS 伺服器，這即表示有豁免規則，而將會套用一般名稱解析。  
   
-    請注意，在遠端存取管理主控台中的 NRPT 加入新的尾碼時，您可以按一下 [偵測] 按鈕自動探索尾碼的預設 DNS 伺服器。 自動偵測的運作方式如下：  
+    請注意，在遠端存取管理主控台中的 NRPT 加入新的尾碼時，您可以按一下 [偵測]**** 按鈕自動探索尾碼的預設 DNS 伺服器。 自動偵測的運作方式如下：  
   
     1. 如果公司網路屬於 IPv4 或 IPv4 與 IPv6，預設位址是遠端存取伺服器上內部介面卡的 DNS64 位址。  
   
@@ -153,7 +153,7 @@ IPsec 的憑證需求包括 DirectAccess 用戶端電腦在建立用戶端與遠
   
         1. 遠端存取伺服器之根網域或網域名稱的 DNS 尾碼規則，以及對應到遠端存取伺服器上設定之內部網路 DNS 伺服器的 IPv6 位址。 例如，如果遠端存取伺服器是 corp.contoso.com 網域的成員，就會為 corp.contoso.com DNS 尾碼建立規則。  
   
-        2. 網路位置伺服器之 FQDN 的豁免規則。 例如，如果網路位置伺服器 URL <https://nls.corp.contoso.com>，就會為 FQDN nls.corp.contoso.com 建立豁免規則。  
+        2. 網路位置伺服器之 FQDN 的豁免規則。 例如，如果網路位置伺服器 URL 是 <https://nls.corp.contoso.com> ，就會為 FQDN nls.corp.contoso.com 建立豁免規則。  
   
         **Ip-HTTPs 伺服器**：遠端存取服務器會做為 ip-HTTPs 接聽程式，並使用其伺服器憑證向 ip-HTTPs 用戶端進行驗證。 IP-HTTPS 名稱必須能夠被使用公用 DNS 伺服器的 DirectAccess 用戶端解析。  
   
@@ -269,11 +269,10 @@ IPsec 的憑證需求包括 DirectAccess 用戶端電腦在建立用戶端與遠
 
 如果遠端存取伺服器、用戶端或應用程式伺服器 GPO 被意外刪除，而且沒有可用的備份，您必須移除組態設定並重新設定一次。 如果有備份可用，您便可以從備份還原 GPO。  
   
-[**遠端存取管理**] 會顯示下列錯誤訊息：**找不到 gpo （gpo 名稱）** 。 若要移除組態設定，請執行下列步驟：  
+[**遠端存取管理**] 會顯示下列錯誤訊息：**找不到 gpo （gpo 名稱）**。 若要移除組態設定，請執行下列步驟：  
   
 1. 執行 PowerShell Cmdlet **Uninstall-remoteaccess**。  
   
 2. 重新開啟 [**遠端存取管理**]。  
   
-3. 您將會看到找不到 GPO 的錯誤訊息。 按一下 [移除組態設定]。 完成之後，伺服器將會還原到未設定的狀態。  
-
+3. 您將會看到找不到 GPO 的錯誤訊息。 按一下 [移除組態設定]****。 完成之後，伺服器將會還原到未設定的狀態。  

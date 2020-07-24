@@ -8,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: bdda28970ed5e94acaff0fd57ae3dc3d4485dc9a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0a78e26b9d633e76fce99c816d700773332e6fdb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80821531"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960780"
 ---
 # <a name="appendix-b-privileged-accounts-and-groups-in-active-directory"></a>附錄 B︰Active Directory 中具特殊權限的帳戶和群組
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 
 ## <a name="appendix-b-privileged-accounts-and-groups-in-active-directory"></a>附錄 B︰Active Directory 中具特殊權限的帳戶和群組  
@@ -35,7 +35,7 @@ Active Directory 中的「特殊許可權」帳戶和群組是授與功能強大
 
 在群組原則物件編輯器之類的介面中，這些可指派的功能都廣泛地被視為使用者權限。 不過事實上，有些使用者權限是以程式設計方式稱為「許可權」，而有些則是以程式設計方式稱為「許可權」。 表 B-1：使用者權限和許可權提供一些最常見的可指派使用者權限及其程式設計常數。 雖然群組原則和其他介面會將這些全都視為使用者權限，但有些是以程式設計方式識別為許可權，而有些則是定義為許可權。  
 
-如需下表所列每個使用者權利的詳細資訊，請使用表格中的連結，或參閱 Microsoft TechNet 網站上的[威脅與對策指南：](https://technet.microsoft.com/library/hh125917(v=ws.10).aspx) Windows Server 2008 R2 的[威脅和弱點緩和](https://technet.microsoft.com/library/cc755181(v=ws.10).aspx)指南中的使用者權限。 如需適用于 Windows Server 2008 的資訊，請參閱 Microsoft TechNet 網站上的[威脅和弱點緩和措施](https://technet.microsoft.com/library/cc755181(v=ws.10).aspx)檔中的[使用者權限](https://technet.microsoft.com/library/dd349804(v=WS.10).aspx)。 在撰寫本檔時，尚未發行 Windows Server 2012 的對應檔。  
+如需下表所列每個使用者權利的詳細資訊，請使用表格中的連結，或參閱 Microsoft TechNet 網站上的[威脅與對策指南：](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/hh125917(v=ws.10)) Windows Server 2008 R2 的[威脅和弱點緩和](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755181(v=ws.10))指南中的使用者權限。 如需適用于 Windows Server 2008 的資訊，請參閱 Microsoft TechNet 網站上的[威脅和弱點緩和措施](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755181(v=ws.10))檔中的[使用者權限](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10))。 在撰寫本檔時，尚未發行 Windows Server 2012 的對應檔。  
 
 > [!NOTE]  
 > 基於本檔的目的，除非另有指定，否則會使用「權利」和「使用者權限」等詞彙來識別許可權和許可權。  
@@ -45,56 +45,56 @@ Active Directory 中的「特殊許可權」帳戶和群組是授與功能強大
 |||  
 |-|-|  
 |**群組原則中的使用者權限**|**常數的名稱**|  
-|[以信任的呼叫者身分存取認證管理員](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_2)|SeTrustedCredManAccessPrivilege|  
-|[從網路存取這部電腦](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_1)|SeNetworkLogonRight|  
-|[作為作業系統的一部分](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_3)|SeTcbPrivilege|  
-|[將工作站新增到網域](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_4)|SeMachineAccountPrivilege|  
-|[調整進程的記憶體配額](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_5)|SeIncreaseQuotaPrivilege|  
-|[允許本機登入](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_6)|SeInteractiveLogonRight|  
-|[允許透過終端機服務登入](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_7)|SeRemoteInteractiveLogonRight|  
-|[備份檔案和目錄](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_8)|SeBackupPrivilege|  
-|[略過遍歷檢查](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_9)|SeChangeNotifyPrivilege|  
-|[變更系統時間](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_10)|SeSystemtimePrivilege|  
-|[變更時區](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_11)|SeTimeZonePrivilege|  
-|[建立分頁檔](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_12)|SeCreatePagefilePrivilege|  
-|[建立 token 物件](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_13)|SeCreateTokenPrivilege|  
-|[建立全域物件](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_14)|SeCreateGlobalPrivilege|  
-|[建立永久共用物件](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_15)|SeCreatePermanentPrivilege|  
-|[建立符號連結](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_16)|SeCreateSymbolicLinkPrivilege|  
-|[偵錯工具](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_17)|SeDebugPrivilege|  
-|[拒絕從網路存取這部電腦](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_18)|SeDenyNetworkLogonRight|  
-|[拒絕以批次工作登入](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_18a)|SeDenyBatchLogonRight|  
-|[拒絕以服務方式登入](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_19)|SeDenyServiceLogonRight|  
-|[拒絕本機登入](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_20)|SeDenyInteractiveLogonRight|  
-|[拒絕透過終端機服務登入](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_21)|SeDenyRemoteInteractiveLogonRight|  
-|[啟用信任的電腦和使用者帳戶以進行委派](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_22)|SeEnableDelegationPrivilege|  
-|[強制從遠端系統關機](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_23)|SeRemoteShutdownPrivilege|  
-|[產生安全性審查](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_24)|SeAuditPrivilege|  
-|[在驗證後模擬用戶端](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_25)|SeImpersonatePrivilege|  
-|[增加處理常式工作集](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_26)|工作組 seincreaseworkingsetprivilege|  
-|[增加排程優先順序](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_27)|SeIncreaseBasePriorityPrivilege|  
-|[載入和卸載設備磁碟機](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_28)|SeLoadDriverPrivilege|  
-|[鎖定記憶體中的分頁](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_29)|分頁 selockmemoryprivilege|  
-|[以批次工作登入](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_30)|登入 sebatchlogonright|  
-|[以服務方式登入](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_31)|SeServiceLogonRight|  
-|[管理審核和安全性記錄檔](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_32)|SeSecurityPrivilege|  
-|[修改物件標籤](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_33)|SeRelabelPrivilege|  
-|[修改固件環境值](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_34)|SeSystemEnvironmentPrivilege|  
-|[執行磁片區維護工作](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_35)|SeManageVolumePrivilege|  
-|[分析單一進程](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_36)|SeProfileSingleProcessPrivilege|  
-|[分析系統效能](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_37)|SeSystemProfilePrivilege|  
-|[從銜接站移除電腦](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_38)|SeUndockPrivilege|  
-|[取代進程層級 token](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_39)|SeAssignPrimaryTokenPrivilege|  
-|[還原檔案和目錄](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_40)|SeRestorePrivilege|  
-|[關閉系統](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_41)|SeShutdownPrivilege|  
-|[同步處理目錄服務資料](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_42)|SeSyncAgentPrivilege|  
-|[取得檔案或其他物件的擁有權](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_43)|SeTakeOwnershipPrivilege|  
+|[存取認證管理員做為信任的呼叫者](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_2)|SeTrustedCredManAccessPrivilege|  
+|[從網路存取這台電腦](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_1)|SeNetworkLogonRight|  
+|[作為作業系統的一部分](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_3)|SeTcbPrivilege|  
+|[將工作站新增至網域](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_4)|SeMachineAccountPrivilege|  
+|[調整處理序的記憶體配額](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_5)|SeIncreaseQuotaPrivilege|  
+|[允許本機登入](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_6)|SeInteractiveLogonRight|  
+|[允許透過終端機服務登入](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_7)|SeRemoteInteractiveLogonRight|  
+|[備份檔案及目錄](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_8)|SeBackupPrivilege|  
+|[略過周遊檢查](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_9)|SeChangeNotifyPrivilege|  
+|[變更系統時間](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_10)|SeSystemtimePrivilege|  
+|[變更時區](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_11)|SeTimeZonePrivilege|  
+|[建立分頁檔](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_12)|SeCreatePagefilePrivilege|  
+|[建立權杖物件](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_13)|SeCreateTokenPrivilege|  
+|[建立通用物件](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_14)|SeCreateGlobalPrivilege|  
+|[建立永久共用物件](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_15)|SeCreatePermanentPrivilege|  
+|[建立符號連結](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_16)|SeCreateSymbolicLinkPrivilege|  
+|[偵錯程式](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_17)|SeDebugPrivilege|  
+|[拒絕從網路存取這部電腦](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_18)|SeDenyNetworkLogonRight|  
+|[拒絕以批次工作登入](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_18a)|SeDenyBatchLogonRight|  
+|[拒絕以服務方式登入](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_19)|SeDenyServiceLogonRight|  
+|[拒絕本機登入](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_20)|SeDenyInteractiveLogonRight|  
+|[拒絕透過終端機服務登入](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_21)|SeDenyRemoteInteractiveLogonRight|  
+|[讓電腦及使用者帳戶受信賴，以進行委派](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_22)|SeEnableDelegationPrivilege|  
+|[強制從遠端系統關機](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_23)|SeRemoteShutdownPrivilege|  
+|[產生安全性審查](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_24)|SeAuditPrivilege|  
+|[在驗證後模擬用戶端](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_25)|SeImpersonatePrivilege|  
+|[增加處理程序工作組](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_26)|工作組 seincreaseworkingsetprivilege|  
+|[增加排程優先順序](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_27)|SeIncreaseBasePriorityPrivilege|  
+|[載入及解除載入裝置驅動程式](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_28)|SeLoadDriverPrivilege|  
+|[在記憶體中鎖定頁面](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_29)|分頁 selockmemoryprivilege|  
+|[以批次工作登入](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_30)|登入 sebatchlogonright|  
+|[登入為服務](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_31)|SeServiceLogonRight|  
+|[管理稽核和安全性記錄檔](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_32)|SeSecurityPrivilege|  
+|[修改物件標籤](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_33)|SeRelabelPrivilege|  
+|[修改韌體環境值](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_34)|SeSystemEnvironmentPrivilege|  
+|[執行磁碟區維護工作](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_35)|SeManageVolumePrivilege|  
+|[監視單一處理程序](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_36)|SeProfileSingleProcessPrivilege|  
+|[監視系統效能](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_37)|SeSystemProfilePrivilege|  
+|[從銜接站移除電腦](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_38)|SeUndockPrivilege|  
+|[取代處理程序等級權杖](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_39)|SeAssignPrimaryTokenPrivilege|  
+|[還原檔案及目錄](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_40)|SeRestorePrivilege|  
+|[關閉系統](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_41)|SeShutdownPrivilege|  
+|[同步處理目錄服務資料](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_42)|SeSyncAgentPrivilege|  
+|[取得檔案或其他物件的擁有權](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_43)|SeTakeOwnershipPrivilege|  
 
 #### <a name="permissions"></a>權限  
 許可權是套用到安全物件（例如檔案系統、登錄、服務和 Active Directory 物件）的存取控制。 每個安全物件都有相關聯的存取控制清單（ACL），其中包含授與或拒絕安全性主體（使用者、服務、電腦或群組）的存取控制專案（Ace），可以在物件上執行各種作業。 例如，Active Directory 中許多物件的 Acl 包含 Ace，可讓已驗證的使用者讀取物件的一般資訊，但不授與他們讀取機密資訊或變更物件的能力。
 除了每個網域的內建來賓帳戶以外，登入並由 Active Directory 樹系或受信任樹系中的網域控制站驗證的每個安全性主體，預設都會將已驗證的使用者安全識別碼（SID）新增至其存取權杖。 因此，無論使用者、服務或電腦帳戶是否嘗試讀取網域中使用者物件的一般屬性，讀取操作都會成功。  
 
-如果安全性主體嘗試存取的物件未定義任何 Ace，而且包含主體的存取權杖中存在的 SID，則主體將無法存取該物件。 此外，如果物件的 ACL 中的 ACE 包含符合使用者存取權杖之 SID 的拒絕專案，則 "deny" ACE 通常會覆寫衝突的 "allow" ACE。 如需 Windows 存取控制的詳細資訊，請參閱 MSDN 網站上的[存取控制](https://msdn.microsoft.com/library/aa374860(v=VS.85).aspx)。  
+如果安全性主體嘗試存取的物件未定義任何 Ace，而且包含主體的存取權杖中存在的 SID，則主體將無法存取該物件。 此外，如果物件的 ACL 中的 ACE 包含符合使用者存取權杖之 SID 的拒絕專案，則 "deny" ACE 通常會覆寫衝突的 "allow" ACE。 如需 Windows 存取控制的詳細資訊，請參閱 MSDN 網站上的[存取控制](/windows/win32/secauthz/access-control)。  
 
 在本檔中，許可權是指對安全物件上的安全性主體授與或拒絕的功能。 每當使用者權限與許可權之間發生衝突時，使用者權限通常會優先使用。 例如，如果 Active Directory 中的物件已設定 ACL，而拒絕系統管理員對物件的所有讀取和寫入權限，則身為網域系統管理員群組成員的使用者將無法查看物件的許多相關資訊。 不過，因為系統管理員群組被授與使用者「取得檔案或其他物件的擁有權」許可權，所以使用者可以只取得有問題之物件的擁有權，然後重寫物件的 ACL，以授與系統管理員對物件的完全控制權。  
 
@@ -111,12 +111,12 @@ Active Directory 旨在促進系統管理委派，以及指派權利和許可權
 
 例如，如果您將 Microsoft Exchange Server 安裝到 Active Directory 樹系，則可以在您網域中的內建和使用者容器中建立其他帳戶和群組。 本附錄僅說明根據原生角色和功能，在 Active Directory 內建和使用者容器中建立的群組和帳戶。 不包含由企業軟體安裝所建立的帳戶和群組。  
 
-#### <a name="enterprise-admins"></a>Enterprise Admins  
+#### <a name="enterprise-admins"></a>企業系統管理員  
 Enterprise Admins （EA）群組位於樹系根域中，根據預設，它是樹系中每個網域內內建系統管理員群組的成員。 樹系根域中的內建 Administrator 帳戶是 EA 群組的唯一預設成員。 EAs 會被授與許可權，使其能夠影響整個樹系的變更。 這些變更會影響樹系中的所有網域，例如新增或移除網域、建立樹系信任，或提高樹系功能等級。 在適當設計和實行的委派模型中，只有在第一次建立樹系或進行特定樹系的變更（例如建立輸出樹系信任）時，才需要 EA 成員資格。  
 
 根據預設，EA 群組位於樹系根域的 [使用者] 容器中，而它是通用安全性群組，除非樹系根域是在 Windows 2000 Server 混合模式下執行，在此情況下，群組是全域安全性群組。 雖然部分許可權會直接授與 EA 群組，但 EA 群組實際上會繼承其中許多許可權，因為它是樹系中每個網域中 Administrators 群組的成員。 企業系統管理員在工作站或成員伺服器上沒有預設許可權。  
 
-#### <a name="domain-admins"></a>Domain Admins  
+#### <a name="domain-admins"></a>網域管理員  
 樹系中的每個網域都有自己的 Domain Admins （DA）群組，這是該網域內建系統管理員（BA）群組的成員，以及每一部加入網域的電腦上本機 Administrators 群組的成員。 網域的 DA 群組唯一的預設成員是該網域的內建系統管理員帳戶。  
 
 DAs 在其網域內具有強大的功能，而 EAs 則具有全樹系許可權。 在適當設計並實行的委派模型中，只有在「中斷玻璃」的情況下才需要 DA 成員資格，這種情況是需要在網域中的每部電腦上具有高層級許可權的帳戶，或是必須進行特定網域變更時。 雖然原生 Active Directory 委派機制允許委派的範圍，只有在緊急情況下才能夠使用 DA 帳戶，而建立有效的委派模型可能相當耗時，而許多組織會使用協力廠商應用程式來加速此流程。  
@@ -150,8 +150,8 @@ Administrators 群組是網域內建容器中的一個網網域本機群組。 �
 |**帳戶或群組**|**預設容器、群組範圍和類型**|**描述和預設使用者權力**|  
 |存取控制協助操作員（Windows Server 2012 中的 Active Directory）|內建容器<p>網域-本機安全性群組|此群組的成員可以從遠端查詢此電腦上資源的授權屬性和許可權。<p>**直接使用者權限：** 無<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  
 |Account Operators|內建容器<p>網域-本機安全性群組|成員可以管理網域使用者和群組帳戶。<p>**直接使用者權限：** 無<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  
-|Administrator 帳戶|使用者容器<p>不是群組|用來管理網域的內建帳戶。<p>**直接使用者權限：** 無<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>調整處理序的記憶體配額<p>允許本機登入<p>允許透過遠端桌面服務登入<p>備份檔案及目錄<p>略過周遊檢查<p>變更系統時間<p>變更時區<p>建立分頁檔<p>建立通用物件<p>建立符號連結<p>偵錯程式<p>讓電腦及使用者帳戶受信賴，以進行委派<p>強制從遠端系統進行關閉<p>在驗證後模擬用戶端<p>增加處理程序工作組<p>增加排程優先順序<p>載入及卸載裝置驅動程式<p>以批次工作登入<p>管理稽核及安全性記錄<p>修改韌體環境值<p>執行磁碟區維護工作<p>設定檔單一處理程序<p>設定檔系統執行效能<p>從銜接站移除電腦<p>還原檔案及目錄<p>關閉系統<p>取得檔案或其他物件的擁有權|  
-|系統管理員群組|內建容器<p>網域-本機安全性群組|系統管理員對網域具有完整且不受限制的存取權。<p>**直接使用者權限：**<p>從網路存取這台電腦<p>調整處理序的記憶體配額<p>允許本機登入<p>允許透過遠端桌面服務登入<p>備份檔案及目錄<p>略過周遊檢查<p>變更系統時間<p>變更時區<p>建立分頁檔<p>建立通用物件<p>建立符號連結<p>偵錯程式<p>讓電腦及使用者帳戶受信賴，以進行委派<p>強制從遠端系統進行關閉<p>在驗證後模擬用戶端<p>增加排程優先順序<p>載入及卸載裝置驅動程式<p>以批次工作登入<p>管理稽核及安全性記錄<p>修改韌體環境值<p>執行磁碟區維護工作<p>設定檔單一處理程序<p>設定檔系統執行效能<p>從銜接站移除電腦<p>還原檔案及目錄<p>關閉系統<p>取得檔案或其他物件的擁有權<p>繼承的使用者權限：<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  
+|系統管理員帳戶|使用者容器<p>不是群組|用來管理網域的內建帳戶。<p>**直接使用者權限：** 無<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>調整處理程序的記憶體配額<p>允許本機登入<p>允許透過遠端桌面服務登入<p>備份檔案及目錄<p>略過周遊檢查<p>變更系統時間<p>變更時區<p>建立分頁檔<p>建立通用物件<p>建立符號連結<p>偵錯程式<p>讓電腦及使用者帳戶受信賴，以進行委派<p>強制從遠端系統關機<p>在驗證後模擬用戶端<p>增加處理程序工作組<p>增加排程優先順序<p>載入及解除載入裝置驅動程式<p>以批次工作登入<p>管理稽核和安全性記錄檔<p>修改韌體環境值<p>執行磁碟區維護工作<p>監視單一處理程序<p>監視系統效能<p>從銜接站移除電腦<p>還原檔案及目錄<p>關閉系統<p>取得檔案或其他物件的擁有權|  
+|系統管理員群組|內建容器<p>網域-本機安全性群組|系統管理員對網域具有完整且不受限制的存取權。<p>**直接使用者權限：**<p>從網路存取這台電腦<p>調整處理程序的記憶體配額<p>允許本機登入<p>允許透過遠端桌面服務登入<p>備份檔案及目錄<p>略過周遊檢查<p>變更系統時間<p>變更時區<p>建立分頁檔<p>建立通用物件<p>建立符號連結<p>偵錯程式<p>讓電腦及使用者帳戶受信賴，以進行委派<p>強制從遠端系統關機<p>在驗證後模擬用戶端<p>增加排程優先順序<p>載入及解除載入裝置驅動程式<p>以批次工作登入<p>管理稽核和安全性記錄檔<p>修改韌體環境值<p>執行磁碟區維護工作<p>監視單一處理程序<p>監視系統效能<p>從銜接站移除電腦<p>還原檔案及目錄<p>關閉系統<p>取得檔案或其他物件的擁有權<p>繼承的使用者權限：<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  
 |允許的 RODC 密碼複寫群組|使用者容器<p>網域-本機安全性群組|此群組中的成員可以將其密碼複寫到網域中的所有唯讀網域控制站。<p>**直接使用者權限：** 無<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  
 |Backup Operators|內建容器<p>網域-本機安全性群組|備份操作員可以針對備份或還原檔案的唯一目的，覆寫安全性限制。<p>**直接使用者權限：**<p>允許本機登入<p>備份檔案及目錄<p>以批次工作登入<p>還原檔案及目錄<p>關閉系統<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  
 |Cert Publishers|使用者容器<p>網域-本機安全性群組|允許此群組的成員將憑證發佈至目錄。<p>**直接使用者權限：** 無<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  
@@ -165,12 +165,12 @@ Administrators 群組是網域內建容器中的一個網網域本機群組。 �
 |Distributed COM Users|內建容器<p>網域-本機安全性群組|此群組的成員可在這部電腦上啟動、啟用及使用分散式 COM 物件。<p>**直接使用者權限：** 無<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  
 |DnsAdmins|使用者容器<p>網域-本機安全性群組|此群組的成員具有 DNS 伺服器服務的系統管理存取權。<p>**直接使用者權限：** 無<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  
 |DnsUpdateProxy|使用者容器<p>全域安全性群組|此群組的成員是允許執行動態更新的 DNS 用戶端，這些用戶端無法自行執行動態更新。 此群組的成員通常是 DHCP 伺服器。<p>**直接使用者權限：** 無<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  
-|Domain Admins|使用者容器<p>全域安全性群組|網域的指定系統管理員;網域系統管理員是每個加入網域之電腦的本機系統管理員群組的成員，除了網域的 Administrators 群組之外，還會接收授與本機 Administrators 群組的許可權。<p>**直接使用者權限：** 無<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>調整處理序的記憶體配額<p>允許本機登入<p>允許透過遠端桌面服務登入<p>備份檔案及目錄<p>略過周遊檢查<p>變更系統時間<p>變更時區<p>建立分頁檔<p>建立通用物件<p>建立符號連結<p>偵錯程式<p>讓電腦及使用者帳戶受信賴，以進行委派<p>強制從遠端系統進行關閉<p>在驗證後模擬用戶端<p>增加處理程序工作組<p>增加排程優先順序<p>載入及卸載裝置驅動程式<p>以批次工作登入<p>管理稽核及安全性記錄<p>修改韌體環境值<p>執行磁碟區維護工作<p>設定檔單一處理程序<p>設定檔系統執行效能<p>從銜接站移除電腦<p>還原檔案及目錄<p>關閉系統<p>取得檔案或其他物件的擁有權|  
+|網域管理員|使用者容器<p>全域安全性群組|網域的指定系統管理員;網域系統管理員是每個加入網域之電腦的本機系統管理員群組的成員，除了網域的 Administrators 群組之外，還會接收授與本機 Administrators 群組的許可權。<p>**直接使用者權限：** 無<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>調整處理程序的記憶體配額<p>允許本機登入<p>允許透過遠端桌面服務登入<p>備份檔案及目錄<p>略過周遊檢查<p>變更系統時間<p>變更時區<p>建立分頁檔<p>建立通用物件<p>建立符號連結<p>偵錯程式<p>讓電腦及使用者帳戶受信賴，以進行委派<p>強制從遠端系統關機<p>在驗證後模擬用戶端<p>增加處理程序工作組<p>增加排程優先順序<p>載入及解除載入裝置驅動程式<p>以批次工作登入<p>管理稽核和安全性記錄檔<p>修改韌體環境值<p>執行磁碟區維護工作<p>監視單一處理程序<p>監視系統效能<p>從銜接站移除電腦<p>還原檔案及目錄<p>關閉系統<p>取得檔案或其他物件的擁有權|  
 |網域電腦|使用者容器<p>全域安全性群組|加入網域的所有工作站和伺服器都是此群組的預設成員。<p>**預設直接使用者權限：** 無<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  
 |網域控制站|使用者容器<p>全域安全性群組|網域中的所有網域控制站。 注意：網域控制站不是網域電腦群組的成員。<p>**直接使用者權限：** 無<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  
 |網域來賓|使用者容器<p>全域安全性群組|網域中的所有來賓<p>**直接使用者權限：** 無<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  
 |網域使用者|使用者容器<p>全域安全性群組|網域中的所有使用者<p>**直接使用者權限：** 無<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  
-|Enterprise Admins （僅存在於樹系根域中）|使用者容器<p>通用安全性群組|企業系統管理員具有變更全樹系設定的許可權;Enterprise Admins 是每個網域之系統管理員群組的成員，並且會接收授與該群組的許可權和許可權。<p>**直接使用者權限：** 無<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>調整處理序的記憶體配額<p>允許本機登入<p>允許透過遠端桌面服務登入<p>備份檔案及目錄<p>略過周遊檢查<p>變更系統時間<p>變更時區<p>建立分頁檔<p>建立通用物件<p>建立符號連結<p>偵錯程式<p>讓電腦及使用者帳戶受信賴，以進行委派<p>強制從遠端系統進行關閉<p>在驗證後模擬用戶端<p>增加處理程序工作組<p>增加排程優先順序<p>載入及卸載裝置驅動程式<p>以批次工作登入<p>管理稽核及安全性記錄<p>修改韌體環境值<p>執行磁碟區維護工作<p>設定檔單一處理程序<p>設定檔系統執行效能<p>從銜接站移除電腦<p>還原檔案及目錄<p>關閉系統<p>取得檔案或其他物件的擁有權|  
+|Enterprise Admins （僅存在於樹系根域中）|使用者容器<p>通用安全性群組|企業系統管理員具有變更全樹系設定的許可權;Enterprise Admins 是每個網域之系統管理員群組的成員，並且會接收授與該群組的許可權和許可權。<p>**直接使用者權限：** 無<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>調整處理程序的記憶體配額<p>允許本機登入<p>允許透過遠端桌面服務登入<p>備份檔案及目錄<p>略過周遊檢查<p>變更系統時間<p>變更時區<p>建立分頁檔<p>建立通用物件<p>建立符號連結<p>偵錯程式<p>讓電腦及使用者帳戶受信賴，以進行委派<p>強制從遠端系統關機<p>在驗證後模擬用戶端<p>增加處理程序工作組<p>增加排程優先順序<p>載入及解除載入裝置驅動程式<p>以批次工作登入<p>管理稽核和安全性記錄檔<p>修改韌體環境值<p>執行磁碟區維護工作<p>監視單一處理程序<p>監視系統效能<p>從銜接站移除電腦<p>還原檔案及目錄<p>關閉系統<p>取得檔案或其他物件的擁有權|  
 |企業唯讀網域控制站|使用者容器<p>通用安全性群組|此群組包含樹系中所有唯讀網域控制站的帳戶。<p>**直接使用者權限：** 無<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  
 |Event Log Readers|內建容器<p>網域-本機安全性群組|中此群組的成員可以讀取網域控制站上的事件記錄檔。<p>**直接使用者權限：** 無<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  
 |Group Policy Creator Owners|使用者容器<p>全域安全性群組|此群組的成員可以建立和修改網域中群組原則物件。<p>**直接使用者權限：** 無<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  
@@ -181,10 +181,10 @@ Administrators 群組是網域內建容器中的一個網網域本機群組。 �
 |連入樹系信任產生器（只存在於樹系根域中）|內建容器<p>網域-本機安全性群組|此群組的成員可以建立對此樹系的連入單向信任。 （建立輸出樹系信任是保留給企業系統管理員。）<p>**直接使用者權限：** 無<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  
 |Krbtgt|使用者容器<p>不是群組|Krbtgt 帳戶是網域中 Kerberos 金鑰發佈中心的服務帳戶。 此帳戶可存取儲存在 Active Directory 中的所有帳號憑證。 此帳戶預設為停用，且永遠不會啟用<p>**使用者權限：** N/A|  
 |Network Configuration Operators|內建容器<p>網域-本機安全性群組|此群組的成員會被授與許可權，讓他們能夠管理網路功能的設定。<p>**直接使用者權限：** 無<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  
-|Performance Log Users|內建容器<p>網域-本機安全性群組|此群組的成員可以排程效能計數器的記錄、啟用追蹤提供者，以及在本機收集事件追蹤，以及透過遠端存取電腦。<p>**直接使用者權限：**<p>以批次工作登入<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  
-|Performance Monitor Users|內建容器<p>網域-本機安全性群組|此群組的成員可以在本機和遠端存取效能計數器資料。<p>**直接使用者權限：** 無<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  
-|Windows 2000 之前的相容存取|內建容器<p>網域-本機安全性群組|此群組存在於 Windows 2000 Server 之前的作業系統回溯相容性，並可讓成員讀取網域中的使用者和群組資訊。<p>**直接使用者權限：**<p>從網路存取這台電腦<p>略過周遊檢查<p>**繼承的使用者權限：**<p>將工作站新增至網域<p>增加處理程序工作組|  
-|Print Operators|內建容器<p>網域-本機安全性群組|此群組的成員可以管理網域印表機。<p>**直接使用者權限：**<p>允許本機登入<p>載入及卸載裝置驅動程式<p>關閉系統<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  
+|效能記錄使用者|內建容器<p>網域-本機安全性群組|此群組的成員可以排程效能計數器的記錄、啟用追蹤提供者，以及在本機收集事件追蹤，以及透過遠端存取電腦。<p>**直接使用者權限：**<p>以批次工作登入<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  
+|效能監視器使用者|內建容器<p>網域-本機安全性群組|此群組的成員可以在本機和遠端存取效能計數器資料。<p>**直接使用者權限：** 無<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  
+|Pre-Windows 2000 Compatible Access|內建容器<p>網域-本機安全性群組|此群組存在於 Windows 2000 Server 之前的作業系統回溯相容性，並可讓成員讀取網域中的使用者和群組資訊。<p>**直接使用者權限：**<p>從網路存取這台電腦<p>略過周遊檢查<p>**繼承的使用者權限：**<p>將工作站新增至網域<p>增加處理程序工作組|  
+|Print Operators|內建容器<p>網域-本機安全性群組|此群組的成員可以管理網域印表機。<p>**直接使用者權限：**<p>允許本機登入<p>載入及解除載入裝置驅動程式<p>關閉系統<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  
 |RAS 與 資訊存取伺服器|使用者容器<p>網域-本機安全性群組|此群組中的伺服器可以讀取網域中使用者帳戶的遠端存取屬性。<p>**直接使用者權限：** 無<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  
 |RDS 端點伺服器（Windows Server 2012）|內建容器<p>網域-本機安全性群組|此群組中的伺服器會執行使用者 RemoteApp 程式和個人虛擬桌面電腦上執行的虛擬機器和主機會話。 此群組必須填入執行 RD 連線代理人的伺服器上。 部署中使用的 RD 工作階段主機伺服器和 RD 虛擬主機伺服器必須在此群組中。<p>**直接使用者權限：** 無<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  
 |RDS 管理伺服器（Windows Server 2012）|內建容器<p>網域-本機安全性群組|此群組中的伺服器可以在執行遠端桌面服務的伺服器上執行例行的系統管理動作。 此群組必須填入遠端桌面服務部署中的所有伺服器上。 執行 RDS 中央管理服務的伺服器必須包含在此群組中。<p>**直接使用者權限：** 無<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  
@@ -194,7 +194,7 @@ Administrators 群組是網域內建容器中的一個網網域本機群組。 �
 |遠端系統管理使用者（Windows Server 2012）|內建容器<p>網域-本機安全性群組|此群組的成員可以透過管理通訊協定（例如透過 Windows 遠端管理服務的 WS-MANAGEMENT）存取 WMI 資源。 這只適用于授與使用者存取權的 WMI 命名空間。<p>**直接使用者權限：** 無<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  
 |Replicator|內建容器<p>網域-本機安全性群組|支援網域中的舊版檔案複寫。<p>**直接使用者權限：** 無<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  
 |架構管理員（只存在於樹系根域中）|使用者容器<p>通用安全性群組|架構管理員是唯一可以對 Active Directory 架構進行修改的使用者，而且只有在架構已啟用寫入的情況下才會進行。<p>**直接使用者權限：** 無<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  
-|Server Operators|內建容器<p>網域-本機安全性群組|此群組的成員可以管理網域伺服器。<p>**直接使用者權限：**<p>允許本機登入<p>備份檔案及目錄<p>變更系統時間<p>變更時區<p>強制從遠端系統進行關閉<p>還原檔案及目錄<p>關閉系統<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  
+|Server Operators|內建容器<p>網域-本機安全性群組|此群組的成員可以管理網域伺服器。<p>**直接使用者權限：**<p>允許本機登入<p>備份檔案及目錄<p>變更系統時間<p>變更時區<p>強制從遠端系統關機<p>還原檔案及目錄<p>關閉系統<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  
 |終端機伺服器授權伺服器|內建容器<p>網域-本機安全性群組|此群組的成員可以使用授權發行的相關資訊來更新 Active Directory 中的使用者帳戶，以便追蹤和報告 TS 每個使用者 CAL 使用量<p>**預設直接使用者權限：** 無<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  
 |使用者|內建容器<p>網域-本機安全性群組|使用者擁有允許他們在 Active Directory 中讀取許多物件和屬性的許可權，雖然它們無法變更。 使用者無法進行意外或刻意的全系統變更，而且可以執行大部分的應用程式。<p>**直接使用者權限：**<p>增加處理程序工作組<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查|  
 |Windows Authorization Access 群組|內建容器<p>網域-本機安全性群組|此群組的成員可以存取使用者物件上的計算 tokenGroupsGlobalAndUniversal 屬性<p>**直接使用者權限：** 無<p>**繼承的使用者權限：**<p>從網路存取這台電腦<p>將工作站新增至網域<p>略過周遊檢查<p>增加處理程序工作組|  

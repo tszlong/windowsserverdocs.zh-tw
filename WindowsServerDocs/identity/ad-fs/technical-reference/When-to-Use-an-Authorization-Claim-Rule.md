@@ -8,30 +8,30 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2e8be891a8f09e38809503c40469e21a7e99687a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c73b68d67742321ddb79d14b1e24eb574bb22b8c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853761"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961610"
 ---
 # <a name="when-to-use-an-authorization-claim-rule"></a>使用授權宣告規則的時機
-當您需要取得傳入宣告類型，然後套用動作來根據您在規則中指定的值來決定要允許或拒絕使用者存取時，您可以在 Active Directory 同盟服務 \(AD FS\) 中使用此規則。 當您使用此規則時，您會根據您在規則中設定的選項之一，傳遞或轉換符合下列規則邏輯的宣告。  
+\( \) 當您需要取得傳入宣告類型，然後套用動作來根據您在規則中指定的值來決定是否允許或拒絕使用者存取時，您可以在 Active Directory 同盟服務 AD FS 中使用此規則。 當您使用此規則時，您會根據您在規則中設定的選項之一，傳遞或轉換符合下列規則邏輯的宣告。  
   
 |規則選項|規則邏輯|  
 |---------------|--------------|  
-|允許所有使用者|如果傳入宣告類型等於「任何宣告類型」 且值等於「任何值」，則會發行值等於「允許」|  
-|允許具有這個傳入宣告的使用者存取|如果傳入宣告類型等於「指定的宣告類型」且值等於「指定的宣告值」，則會發行值等於「允許」的宣告|  
-|拒絕具有這個傳入宣告的使用者的存取|如果傳入宣告類型等於「指定的宣告類型」 且值等於「指定的宣告值」，則會發行值等於「拒絕」|  
+|允許所有使用者|如果傳入宣告類型等於「任何宣告類型」** 且值等於「任何值」**，則會發行值等於「允許」** 的宣告|  
+|允許具有這個傳入宣告的使用者存取|如果傳入宣告類型等於「指定的宣告類型」** 且值等於「指定的宣告值」**，則會發行值等於「允許」** 的宣告|  
+|拒絕具有這個傳入宣告的使用者的存取|如果傳入宣告類型等於「指定的宣告類型」** 且值等於「指定的宣告值」**，則會發行值等於「拒絕」** 的宣告|  
   
 下列章節提供宣告規則的基本介紹，並進一步提供如何使用此規則的詳細資訊。  
   
 ## <a name="about-claim-rules"></a>關於宣告規則  
-宣告規則代表會接受傳入宣告的商務邏輯實例、將條件套用至其 \(如果 x then y\) 並根據條件參數產生傳出宣告。 在您進一步閱讀本主題之前，請先閱讀下列清單，其中會概述關於宣告規則您應該知道的重要秘訣：  
+宣告規則代表會接受傳入宣告的商務邏輯實例， \( 如果 x then y 則套用條件， \) 並根據條件參數產生傳出宣告。 在您進一步閱讀本主題之前，請先閱讀下列清單，其中會概述關於宣告規則您應該知道的重要秘訣：  
   
--   在的 [AD FS 管理] 嵌入式管理單元\-中，只能使用宣告規則範本建立宣告規則  
+-   在 [AD FS 管理] 嵌入式管理單元中 \- ，只能使用宣告規則範本建立宣告規則  
   
--   宣告規則會直接從宣告 \(提供者（例如 Active Directory 或其他同盟服務\)，或從宣告提供者信任的接受轉換規則輸出）處理傳入宣告。  
+-   宣告規則會直接從宣告提供者 \( （例如 Active Directory 或另一個同盟服務， \) 或從宣告提供者信任的接受轉換規則輸出）處理傳入宣告。  
   
 -   宣告規則的處理方式，是由宣告發行引擎依時間先後順序按照指定的規則集處理。 藉由設定規則優先順序，您可以進一步精簡或篩選由特定規則集內的上一個規則所產生的宣告。  
   
@@ -57,7 +57,7 @@ ms.locfileid: "80853761"
 當宣告發行引擎處理規則集時，如果使用者遭到拒絕存取，則會關閉進一步的規則處理，而 AD FS 會對使用者的要求傳回「拒絕存取」錯誤。  
   
 ## <a name="authorizing-users"></a>授權使用者  
-在 AD FS 中，授權規則會用來發出允許或拒絕宣告，以決定使用者或使用者群組是否 \(依據所使用的宣告類型而定\) 將允許存取指定信賴憑證者中的 Web\-資源。 只可以在信賴憑證者信任上設定授權規則。  
+在 AD FS 中，授權規則會用來發出允許或拒絕宣告，以根據所使用的宣告類型來判斷使用者或使用者群組是否 \( \) 可存取指定信賴憑證者中的 Web \- 資源。 只可以在信賴憑證者信任上設定授權規則。  
   
 ### <a name="authorization-rule-sets"></a>授權規則集  
 視您需要設定的允許或拒絕作業類型之不同，會有不同的授權規則集。 這些規則集包括：  
@@ -71,14 +71,14 @@ ms.locfileid: "80853761"
 如需有關如何將授權規則程序融入宣告發行管線中的詳細資訊，請參閱「宣告發行引擎的角色」。  
   
 ### <a name="supported-claim-types"></a>支援的宣告類型  
-AD FS 會定義兩個宣告類型，用來判斷是否允許或拒絕使用者。 這些宣告類型 \(Uri\) 的統一資源識別項如下所示：  
+AD FS 會定義兩個宣告類型，用來判斷是否允許或拒絕使用者。 這些宣告類型的統一資源識別項 uri 如下所示 \( \) ：  
   
-1.  **允許**： HTTP：\/\/schemas.microsoft.com\/授權\/宣告\/允許  
+1.  **允許**： HTTP： \/ \/ schemas.microsoft.com \/ 授權 \/ 宣告 \/ 允許  
   
-2.  **拒絕**： HTTP：\/\/schemas.microsoft.com\/授權\/宣告\/拒絕  
+2.  **拒絕**： HTTP： \/ \/ schemas.microsoft.com \/ 授權 \/ 宣告 \/ 拒絕  
   
 ## <a name="how-to-create-this-rule"></a>如何建立此規則  
-在中，您可以使用宣告規則語言或使用 [**允許所有使用者**] 規則範本或 [**根據傳入宣告允許或拒絕使用者**] 規則\-AD FS 範本來建立這兩個授權規則。 「允許所有使用者」規則範本未提供任何設定選項。 但「根據傳入宣告允許或拒絕使用者」規則範本則提供下列設定選項：  
+您可以使用宣告規則語言，或使用 [AD FS 管理] 嵌入式管理單元中的 [**允許所有使用者**] 規則範本或 [**根據傳入宣告允許或拒絕使用者**] 規則範本來建立這兩個授權規則 \- 。 「允許所有使用者」規則範本未提供任何設定選項。 但「根據傳入宣告允許或拒絕使用者」規則範本則提供下列設定選項：  
   
 -   指定宣告規則名稱  
   
@@ -90,7 +90,7 @@ AD FS 會定義兩個宣告類型，用來判斷是否允許或拒絕使用者�
   
 -   拒絕具有這個傳入宣告的使用者的存取  
   
-如需有關如何建立此範本的詳細指示，請參閱 AD FS 部署指南中的[建立規則以允許所有使用者](https://technet.microsoft.com/library/ee913577.aspx)或[建立規則以根據傳入宣告來允許或拒絕使用者](https://technet.microsoft.com/library/ee913594.aspx)。  
+如需有關如何建立此範本的詳細指示，請參閱 AD FS 部署指南中的[建立規則以允許所有使用者](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/ee913577(v=ws.11))或[建立規則以根據傳入宣告來允許或拒絕使用者](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/ee913594(v=ws.11))。  
   
 ## <a name="using-the-claim-rule-language"></a>使用宣告規則語言  
 如果只有在宣告值符合自訂模式時才應傳送宣告，您必須使用自訂規則。 如需詳細資訊，請參閱 [When to Use a Custom Claim Rule](When-to-Use-a-Custom-Claim-Rule.md)。  
@@ -114,13 +114,13 @@ value == "urn:federation:authentication:windows" ]
   
 當您想要指定哪些使用者可以建立給定同盟服務的 Proxy 信任時，您可以使用下列任何委派方法。 這份方法清單的優先順序是根據 AD FS 產品小組對於最安全且最不有問題的委派方法的建議。 您只需要根據組織的需求使用其中一個方法即可：  
   
-1.  在 Active Directory \(中建立網域安全性群組，例如 FSProxyTrustCreators\)，將此群組新增至伺服器陣列中每部同盟伺服器上的本機系統管理員群組，然後只將您要委派此許可權的使用者帳戶新增至新群組。 這是慣用方法。  
+1.  在 Active Directory 中建立網域安全性群組（ \( 例如 FSProxyTrustCreators \) ），將此群組新增至伺服器陣列中每部同盟伺服器上的本機系統管理員群組，然後只將您要委派此許可權的使用者帳戶新增至新群組。 這是慣用的方法。  
   
 2.  將使用者的網域帳戶新增至伺服器陣列中每部同盟伺服器上的系統管理員群組。  
   
 3.  如果您因故無法使用其中一種方法，您也可以建立符合此用途的授權規則。 您可以使用自訂授權規則，指定哪些 Active Directory 網域使用者帳戶也可以建立、甚至移除與指定的同盟服務相關聯的所有同盟伺服器 Proxy 之間的信任。但我們不建議此做法，因為此規則若未正確撰寫，可能會導致複雜的狀況。  
   
-    如果您選擇 [方法 3]，您可以使用下列規則語法來發出授權宣告，讓指定的使用者 \(在此情況下，contoso\\frankm\)，為同盟服務建立一或多個同盟伺服器 proxy 的信任。 您必須使用 **\-Set-adfsproperties addproxyauthorizationrules 來**的 Windows PowerShell 命令集來套用此規則。  
+    如果您選擇 [方法 3]，您可以使用下列規則語法來發出授權宣告，以便 \( 在此情況下允許指定的使用者，contoso \\ frankm \) 為同盟服務的一個或多個同盟伺服器 proxy 建立信任。 您必須使用 Windows PowerShell 命令**集 \- set-adfsproperties addproxyauthorizationrules 來**來套用此規則。  
   
     ```  
     c:[Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname", issuer=~"^AD AUTHORITY$" value == "contoso\frankm" ] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true")  
@@ -133,7 +133,7 @@ value == "urn:federation:authentication:windows" ]
     c:[Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/proxytrustid", Issuer =~ "^SELF AUTHORITY$" ] => issue(store="_ProxyCredentialStore",types=("https://schemas.microsoft.com/authorization/claims/permit"),query="isProxyTrustProvisioned({0})", param=c.Value );  
     ```  
   
-    如果您後續想要移除使用者，讓該使用者無法再建立 Proxy 信任，您可以還原至預設 Proxy 信任授權規則，以移除使用者建立 Proxy 對同盟服務之信任的權限。 您也必須使用 **\-Set-adfsproperties addproxyauthorizationrules 來**的 Windows PowerShell 命令集來套用此規則。  
+    如果您後續想要移除使用者，讓該使用者無法再建立 Proxy 信任，您可以還原至預設 Proxy 信任授權規則，以移除使用者建立 Proxy 對同盟服務之信任的權限。 您也必須使用 Windows PowerShell 命令**集 \- set-adfsproperties addproxyauthorizationrules 來**來套用此規則。  
   
     ```  
     exists([Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value == "S-1-5-32-544", Issuer =~ "^AD AUTHORITY$"])   
@@ -146,4 +146,3 @@ value == "urn:federation:authentication:windows" ]
   
 如需如何使用宣告規則語言的詳細資訊，請參閱宣告[規則語言的角色](The-Role-of-the-Claim-Rule-Language.md)。  
   
-
