@@ -8,22 +8,22 @@ ms.date: 10/29/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: aa054a024e59e93fabe2089c2fdb2e53f26ab4b9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c299ac7ecaa080ab476a5ce2d14a40f7b8f2207d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80825041"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965710"
 ---
 # <a name="forest-wide-updates"></a>全樹系更新
 
->適用於︰Windows Server
+>適用於：Windows Server
 
 您可以檢查下列變更集，以協助瞭解並準備 Windows Server 2019 中 adprep/forestprep 所執行的架構更新。
 
-從 Windows Server 2012 開始，在 AD DS 安裝期間，會視需要自動執行 Adprep 命令。 它們也可以在 AD DS 安裝之前分別執行。 如需詳細資訊，請參閱[執行 Adprep.exe](https://technet.microsoft.com/library/dd464018(v=ws.10).aspx)。
+從 Windows Server 2012 開始，在 AD DS 安裝期間，會視需要自動執行 Adprep 命令。 它們也可以在 AD DS 安裝之前分別執行。 如需詳細資訊，請參閱[執行 Adprep.exe](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd464018(v=ws.10))。
 
-如需如何解讀存取控制專案（ACE）字串的詳細資訊，請參閱[ACE 字串](https://msdn.microsoft.com/library/aa374928(VS.85).aspx)。 如需有關如何解讀安全識別碼（SID）字串的詳細資訊，請參閱[SID 字串](https://msdn.microsoft.com/library/aa379602(VS.85).aspx)。
+如需如何解讀存取控制專案（ACE）字串的詳細資訊，請參閱[ACE 字串](/windows/win32/secauthz/ace-strings)。 如需有關如何解讀安全識別碼（SID）字串的詳細資訊，請參閱[SID 字串](/windows/win32/secauthz/sid-strings)。
 
 ## <a name="windows-server-2016-forest-wide-updates"></a>Windows Server 2016：全樹系更新
 
@@ -31,13 +31,13 @@ ms.locfileid: "80825041"
 
 |作業編號和 GUID|描述|屬性|權限|
 |-----------------------------|---------------|--------------|---------------|
-|作業**136**： {328092FB-16E7-4453-9AB8-7592DB56E9C4}|將 "CN = Send As，CN = Extended 許可權" 授與 gMSA 帳戶。|N/A|N/A|
-|作業**137**： {3A1C887F-DF0A-489F-B3F2-2D0409095F6E}|將 "CN = Receive-As，CN = Extended 許可權" 授與 gMSA 帳戶。|N/A|N/A|
-|作業**138**： {232E831F-F988-4444-8E3E-8A352E2FD411}|將 "CN = Personal-Information，CN = Extended 許可權" 授與 gMSA 帳戶。|N/A|N/A|
-|作業**139**： {DDDDCF0C-BEC9-4A5A-AE86-3CFE6CC6E110}|將 "CN = Public-Information，CN = Extended 許可權" 授與 gMSA 帳戶。|N/A|N/A|
-|作業**140**： {A0A45AAC-5550-42DF-BB6A-3CC5C46B52F2}|將 "CN = 已驗證-SPN，CN = Extended 許可權" 授與 gMSA 帳戶。|N/A|N/A|
-|作業**141**： {3E7645F3-3EA5-4567-B35A-87630449C70C}|將 "CN = 允許-驗證，CN = Extended 許可權" 授與 gMSA 帳戶。|N/A|N/A|
-|作業**142**： {E634067B-E2C4-4D79-B6E8-73C619324D5E}|將 "CN = MS-TS-GatewayAccess，CN = Extended 許可權" 授與 gMSA 帳戶。|N/A|N/A|
+|作業**136**： {328092FB-16E7-4453-9AB8-7592DB56E9C4}|將 "CN = Send As，CN = Extended 許可權" 授與 gMSA 帳戶。|不適用|不適用|
+|作業**137**： {3A1C887F-DF0A-489F-B3F2-2D0409095F6E}|將 "CN = Receive-As，CN = Extended 許可權" 授與 gMSA 帳戶。|不適用|不適用|
+|作業**138**： {232E831F-F988-4444-8E3E-8A352E2FD411}|將 "CN = Personal-Information，CN = Extended 許可權" 授與 gMSA 帳戶。|不適用|不適用|
+|作業**139**： {DDDDCF0C-BEC9-4A5A-AE86-3CFE6CC6E110}|將 "CN = Public-Information，CN = Extended 許可權" 授與 gMSA 帳戶。|不適用|不適用|
+|作業**140**： {A0A45AAC-5550-42DF-BB6A-3CC5C46B52F2}|將 "CN = 已驗證-SPN，CN = Extended 許可權" 授與 gMSA 帳戶。|不適用|不適用|
+|作業**141**： {3E7645F3-3EA5-4567-B35A-87630449C70C}|將 "CN = 允許-驗證，CN = Extended 許可權" 授與 gMSA 帳戶。|不適用|不適用|
+|作業**142**： {E634067B-E2C4-4D79-B6E8-73C619324D5E}|將 "CN = MS-TS-GatewayAccess，CN = Extended 許可權" 授與 gMSA 帳戶。|不適用|不適用|
 
 ## <a name="windows-server-2012-r2-forest-wide-updates"></a>Windows Server 2012 R2：全樹系更新
 
@@ -49,7 +49,7 @@ ms.locfileid: "80825041"
 |作業**132**： {bbbb9db0-4009-4368-8c40-6674e980d3c3}|已在設定分割區中建立新的驗證原則物件 CN = 驗證原則，CN = 驗證 Policy Configuration，CN = Services。|-objectClass： Msds-authnpolicies<br />-displayName：驗證原則<br />-description：包含驗證原則物件。<br />-showInAdvancedViewOnly： True|（A;;RPWPCRCCDCLCLOLORCWOWDSDDTDTSW;;;中文<br />（A;;RPWPCRCCDCLCLORCWOWDSDDTSW;;;SY<br />（A;;RPLCLORC;;;澳大利亞|
 |作業**133**： {f754861c-3692-4a7b-b2c2-d0fa28ed0b0b}|已在設定分割區中建立新的驗證原則定址接收器物件 CN = 驗證接收器，CN = 驗證 Policy Configuration，CN = Services。|-objectClass： AuthNPolicySilos<br />-displayName：驗證原則定址接收器<br />-description：包含驗證原則定址接收器物件。<br />-showInAdvancedViewOnly： True|（A;;RPWPCRCCDCLCLOLORCWOWDSDDTDTSW;;;中文<br />（A;;RPWPCRCCDCLCLORCWOWDSDDTSW;;;SY<br />（A;;RPLCLORC;;;澳大利亞|
 |作業**134**： {d32f499f-3026-4af0-a5bd-13fe5a331bd2}|已在設定分割區中建立新的驗證定址接收器宣告類型物件 CN = ad：//ext/AuthenticationSilo，CN = Claim 類型，CN = 宣告設定，CN = Services。|-objectClass：通過-ClaimType<br />-displayname： AuthenticationSilo<br />-name： ad://ext/AuthenticationSilo<br />-已啟用： True<br />-ClaimIsValueSpaceRestricted： True<br />-ClaimIsSingleValued： True<br />-ClaimSourceType：已結構化<br />-ClaimValueType：3<br />-ClaimTypeAppliesToClass： CN = User，CN = Schema，% ws<br />-ClaimTypeAppliesToClass： CN = Computer，CN = Schema，% ws<br />-ClaimTypeAppliesToClass： CN = ms-DS 管理-服務帳戶，CN = Schema，% ws<br />-ClaimTypeAppliesToClass： CN = ms-DS-群組管理-服務帳戶，CN = Schema，% ws|（A;;RPWPCRCCDCLCLORCWOWDSDDTSW;;;中文<br />（A;;RPWPCRCCDCLCLORCWOWDSDDTSW;;;SY<br />（A;;RPLCLORC;;;澳大利亞|
-|作業**135**： {38618886-98ee-4e42-8cf1-d9a2cd9edf8b}|將新驗證定址接收器宣告類型上的 ClaimIsValueSpaceRestricted 屬性設定為 false|-ClaimIsValueSpaceRestricted： False|N/A|
+|作業**135**： {38618886-98ee-4e42-8cf1-d9a2cd9edf8b}|將新驗證定址接收器宣告類型上的 ClaimIsValueSpaceRestricted 屬性設定為 false|-ClaimIsValueSpaceRestricted： False|不適用|
 
 ## <a name="windows-server-2012-forest-wide-updates"></a>Windows Server 2012：全樹系更新
 
@@ -61,9 +61,9 @@ ms.locfileid: "80825041"
 |作業**85**： {2972d92d-a07a-44ac-9cb0-bf243356f345}|已在設定分割區中建立新的物件 CN = 宣告類型，CN = Claim 設定，CN = Services。|-objectClass： Claimtype<br />-showInAdvancedViewOnly： True|（A;;RPLCLORC;;;澳大利亞<br />（A;;RPWPCRLCLOCCDCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY|
 |作業**86**： {09a49cb3-6c54-4b83-ab20-8370838ba149}|已在設定分割區中建立新的物件 CN = Resource Properties，CN = 宣告 Configuration，CN = Services。|-objectClass： ResourceProperties<br />-showInAdvancedViewOnly： True|（A;;RPLCLORC;;;澳大利亞<br />（A;;RPWPCRLCLOCCDCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY|
 |作業**87**： {77283e65-ce02-4dc3-8c1e-bf99b22527c2}|已在設定分割區中建立新的容器 CN = Resource 屬性清單，CN = 宣告設定，CN = Services。|-objectClass：容器<br />-showInAdvancedViewOnly： True|（A;;RPLCLORC;;;澳大利亞<br />（A;;RPWPCRLCLOCCDCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY|
-|作業**88**： {0afb7f53-96bd-404b-a659-89e65c269420}|在架構分割區中建立新的物件 CN = Sam-Domain。|N/A|建立下列存取控制專案（ACE），以將 Write 屬性授與物件上的 Principal 本身：<p>OACIIO;WP; ea1b7b93-5e48-46d5-bc6c-4df4fda78a35; bf967a86-0de6-11d0-a285-00aa003049e2; PS）|
-|作業**89**： {c7f717ef-fdbe-4b4b-8dfc-fa8b839fbcfa}|已在架構分割區中建立新的物件 CN = 網域 DNS。|N/A|建立下列存取控制專案（ACE），以將 Write 屬性授與物件上的 Principal 本身：<p>OACIIO;WP; ea1b7b93-5e48-46d5-bc6c-4df4fda78a35; bf967a86-0de6-11d0-a285-00aa003049e2; PS）|
-|作業**90**： {00232167-f3a4-43c6-b503-9acb7a81b01c}|回呼函數以升級顯示規範。|N/A|N/A|
+|作業**88**： {0afb7f53-96bd-404b-a659-89e65c269420}|在架構分割區中建立新的物件 CN = Sam-Domain。|不適用|建立下列存取控制專案（ACE），以將 Write 屬性授與物件上的 Principal 本身：<p>OACIIO;WP; ea1b7b93-5e48-46d5-bc6c-4df4fda78a35; bf967a86-0de6-11d0-a285-00aa003049e2; PS）|
+|作業**89**： {c7f717ef-fdbe-4b4b-8dfc-fa8b839fbcfa}|已在架構分割區中建立新的物件 CN = 網域 DNS。|不適用|建立下列存取控制專案（ACE），以將 Write 屬性授與物件上的 Principal 本身：<p>OACIIO;WP; ea1b7b93-5e48-46d5-bc6c-4df4fda78a35; bf967a86-0de6-11d0-a285-00aa003049e2; PS）|
+|作業**90**： {00232167-f3a4-43c6-b503-9acb7a81b01c}|回呼函數以升級顯示規範。|不適用|不適用|
 |作業**91**： {73a9515b-511c-44d2-822b-444a33d3bd33}|已在設定分割區中建立新的容器 CN = Microsoft SPP，CN = Services。|-objectClass：容器<br />-showInAdvancedViewOnly： True|（A;;RPLCLORC;;;澳大利亞<br />（A;;RPWPCRLCLOCCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY|
 |作業**92**： {e0c60003-2ed7-4fd3-8659-7655a7e79397}|已在設定分割區中建立新的啟用物件容器 CN = Activation 物件，CN = Microsoft SPP，CN = Services。|-objectClass： msSPP-ActivationObjectsContainer<br />-showInAdvancedViewOnly： True|（A;;RPLCLORC;;;澳大利亞<br />（A;;RPWPCRLCLOCCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY|
 |作業**93**： {ed0c8cca-80ab-4b6b-ac5a-59b1d317e11f}|已在設定分割區中建立新的集中存取原則容器 CN = 集中存取原則，CN = 宣告設定，CN = Services。|-objectClass： msAuthz-CentralAccessPolicies<br />-showInAdvancedViewOnly： True|（A;;RPLCLORC;;;澳大利亞<br />（A;;RPWPCRLCLOCCDCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY|
@@ -91,7 +91,7 @@ ms.locfileid: "80825041"
 |作業**115**： {2aea2dc6-d1d3-4f0c-9994-66c1da21de0f}|已在設定分割區中建立新的不可變資源屬性物件 CN = Immutable_MS，CN = Resource Properties，CN = 宣告 Configuration，CN = Services。|-objectClass： ResourceProperty<br />-description：不可變的屬性會指定使用者是否應允許刪除資源或變更其內容。<br />-displayname：不可變<br />-Enabled： False<br />-IsUsedAsResourceSecurityAttribute： True<br />-ValueTypeReference： CN = MS-DS-YesNo，CN = Value Types，CN = 宣告 Configuration，CN = Services，CN = Configuration，CN =<forest root domain>|（D;;SDDT;;;WD<br />（A;;RPLCLORC;;;澳大利亞<br />（A;;RPWPCRLCLOCCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY|
 |作業**116**： {ae78240c-43b9-499e-ae65-2b6e0f0e202a}|已在設定分割區中建立新的智慧財產資源屬性物件 CN = IntellectualProperty_MS，CN = Resource Properties，CN = 宣告 Configuration，CN = Services。|-objectClass： ResourceProperty<br />-描述： [智慧財產（IP）] 屬性會指定資源是否包含 IP，如果是，則是哪種類型。<br />-displayname：智慧財產<br />-Enabled： False<br />-IsUsedAsResourceSecurityAttribute： True<br />-ValueTypeReference： CN = MS-DS-SinglevaluedChoice，CN = Value Types，CN = 宣告 Configuration，CN = Services，CN = Configuration，CN =<forest root domain>|（D;;SDDT;;;WD<br />（A;;RPLCLORC;;;澳大利亞<br />（A;;RPWPCRLCLOCCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY|
 |作業**117**： {261b5bba-3438-4d5c-a3e9-7b871e5f57f0}|已在設定分割區中建立新的部門資源屬性物件 CN = Department_MS，CN = Resource Properties，CN = 宣告 Configuration，CN = Services。|-objectClass： ResourceProperty<br />-description：部門屬性會指定資源所屬的部門名稱。<br />-displayname：部門<br />-Enabled： False<br />-IsUsedAsResourceSecurityAttribute： True<br />-ValueTypeReference： CN = MS-DS-SinglevaluedChoice，CN = Value Types，CN = 宣告 Configuration，CN = Services，CN = Configuration，CN =<forest root domain>|（D;;SDDT;;;WD<br />（A;;RPLCLORC;;;澳大利亞<br />（A;;RPWPCRLCLOCCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY|
-|作業**118**： {3fb79c05-8ea1-438c-8c7a-81f213aa61c2}|已在設定分割區中建立新的影響資源屬性物件 CN = Impact_MS，CN = Resource Properties，CN = 宣告 Configuration，CN = Services。|-objectClass： ResourceProperty<br />-description：影響屬性會指定組織對資源的不當存取或遺失的影響程度。<br />-displayname：影響<br />-Enabled： False<br />-IsUsedAsResourceSecurityAttribute： True<br />-ValueTypeReference： CN = MS-DS-OrderedList，CN = Value Types，CN = 宣告 Configuration，CN = Services，CN = Configuration，CN = < 樹系根域<br />-ClaimPossibleValues：高商業影響（HBI）-3000、中度-中度業務衝擊（MBI）-2000、低-低業務影響（LBI）-1000 >|（D;;SDDT;;;WD<br />（A;;RPLCLORC;;;澳大利亞<br />（A;;RPWPCRLCLOCCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY|
+|作業**118**： {3fb79c05-8ea1-438c-8c7a-81f213aa61c2}|已在設定分割區中建立新的影響資源屬性物件 CN = Impact_MS，CN = Resource Properties，CN = 宣告 Configuration，CN = Services。|-objectClass： ResourceProperty<br />-description：影響屬性會指定組織對資源的不當存取或遺失的影響程度。<br />-displayname：影響<br />-Enabled： False<br />-IsUsedAsResourceSecurityAttribute： True<br />-ValueTypeReference： CN = MS-DS-OrderedList，CN = Value Types，CN = 宣告 Configuration，CN = Services，CN = Configuration，CN =<樹系根域<br />-ClaimPossibleValues：高商業影響（HBI）-3000、中度-中度業務衝擊（MBI）-2000、低-低業務影響（LBI）-1000>|（D;;SDDT;;;WD<br />（A;;RPLCLORC;;;澳大利亞<br />（A;;RPWPCRLCLOCCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY|
 |作業**119**： {0b2be39a-d463-4c23-8290-32186759d3b1}|已在設定分割區中建立新的個人使用資源屬性物件 CN = PersonalUse_MS，CN = Resource Properties，CN = 宣告 Configuration，CN = Services。|-objectClass： ResourceProperty<br />-描述： [個人使用] 屬性會指定檔案是否供個人使用（不是商務相關）。<br />-displayname：個人用途<br />-Enabled： False<br />-IsUsedAsResourceSecurityAttribute： True<br />-ValueTypeReference： CN = MS-DS-YesNo，CN = Value Types，CN = 宣告 Configuration，CN = Services，CN = Configuration，CN =<forest root domain>|（D;;SDDT;;;WD<br />（A;;RPLCLORC;;;澳大利亞<br />（A;;RPWPCRLCLOCCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY|
 |作業**120**： {f0842b44-bc03-46a1-a860-006e8527fccd}|已在設定分割區中建立新的專案資源屬性物件 CN = Project_MS，CN = Resource Properties，CN = 宣告 Configuration，CN = Services。|-objectClass： ResourceProperty<br />-description：專案屬性會指定與資源相關的一或多個專案的名稱。<br />-displayname： Project<br />-Enabled： False<br />-IsUsedAsResourceSecurityAttribute： True<br />-ValueTypeReference： CN = MS-DS-MultivaluedChoice，CN = Value Types，CN = 宣告 Configuration，CN = Services，CN = Configuration，CN =<forest root domain>|（D;;SDDT;;;WD<br />（A;;RPLCLORC;;;澳大利亞<br />（A;;RPWPCRLCLOCCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY|
 |作業**121**： {93efec15-4dd9-4850-bc86-a1f2c8e2ebb9}|已在設定分割區中建立新的保留週期資源屬性物件 CN = RetentionPeriod_MS，CN = Resource Properties，CN = 宣告 Configuration，CN = Services。|-objectClass： ResourceProperty<br />-description： [保留週期] 屬性會指定應保留盤案的最長期間。<br />-displayname：保留期限<br />-Enabled： False<br />-IsUsedAsResourceSecurityAttribute： True<br />-ValueTypeReference： CN = MS-DS-SinglevaluedChoice，CN = Value Types，CN = 宣告 Configuration，CN = Services，CN = Configuration，CN =<forest root domain>|（D;;SDDT;;;WD<br />（A;;RPLCLORC;;;澳大利亞<br />（A;;RPWPCRLCLOCCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY|
@@ -99,7 +99,7 @@ ms.locfileid: "80825041"
 |作業**123**： {1e269508-f862-4c4a-b01f-420d26c4ff8c}|已在設定分割區中建立新的公司資源屬性物件 CN = Company_MS，CN = Resource Properties，CN = 宣告 Configuration，CN = Services。|-objectClass： ResourceProperty<br />-description： Company 屬性會指定資源所屬的公司。<br />-displayname： Company<br />-Enabled： False<br />-IsUsedAsResourceSecurityAttribute： True<br />-ValueTypeReference： CN = MS-DS-SinglevaluedChoice，CN = Value Types，CN = 宣告 Configuration，CN = Services，CN = Configuration，CN =<forest root domain>|（D;;SDDT;;;WD<br />（A;;RPLCLORC;;;澳大利亞<br />（A;;RPWPCRLCLOCCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY|
 |作業**125**： {e1ab17ed-5efb-4691-ad2d-0424592C5755}**注意：** 已刪除作業124。|已在設定分割區中建立新的資料夾使用方式資源屬性物件 CN = FolderUsage_MS，CN = Resource Properties，CN = 宣告 Configuration，CN = Services。|-objectClass： ResourceProperty<br />-description： [資料夾使用方式] 屬性會指定資料夾的用途，以及其中儲存的檔案種類。<br />-displayname：資料夾使用方式<br />-Enabled： False<br />-IsUsedAsResourceSecurityAttribute： False<br />-AppliestoResourceTypes： MS-DS-容器<br />-ValueTypeReference： CN = MS-DS-MultivaluedChoice，CN = Value Types，CN = 宣告 Configuration，CN = Services，CN = Configuration，CN =<forest root domain>|（D;;SDDT;;;WD<br />（A;;RPLCLORC;;;澳大利亞<br />（A;;RPWPCRLCLOCCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY| 
 |作業**126**： {0e848bd4-7c70-48f2-b8fc-00fbaa82e360}|已在設定分割區中建立新的全域資源屬性清單設定物件 CN = Global 資源屬性清單，CN = Resource 屬性清單，CN = 宣告設定，CN = Services。|-objectClass： ResourcePropertyList<br />-description：這是全域現成可用的資源屬性清單，其中包含可供應用程式使用的所有資源屬性。<br />-showInAdvancedViewOnly： True<br />-MembersOfResourcePropertyList： CN = PII_MS，CN = Resource Properties，CN = 宣告 Configuration，CN = Services，CN = Configuration，CN =<forest root domain><br />-MembersOfResourcePropertyList： CN = ProtectedHealthInformation_MS，CN = Resource Properties，CN = 宣告 Configuration，CN = Services，CN = Configuration，CN =<forest root domain><br />-MembersOfResourcePropertyList： CN = RequiredClearance_MS，CN = Resource Properties，CN = 宣告 Configuration，CN = Services，CN = Configuration，CN =<forest root domain><br />-MembersOfResourcePropertyList： CN = Confidentiality_MS，CN = Resource Properties，CN = 宣告 Configuration，CN = Services，CN = Configuration，CN =<forest root domain><br />-MembersOfResourcePropertyList： CN = Compliancy_MS，CN = Resource Properties，CN = 宣告 Configuration，CN = Services，CN = Configuration，CN =<forest root domain><br />-MembersOfResourcePropertyList： CN = Discoverability_MS，CN = Resource Properties，CN = 宣告 Configuration，CN = Services，CN = Configuration，CN =<forest root domain><br />-MembersOfResourcePropertyList： CN = Immutable_MS，CN = Resource Properties，CN = 宣告 Configuration，CN = Services，CN = Configuration，CN =<forest root domain><br />-MembersOfResourcePropertyList： CN = IntellectualProperty_MS，CN = Resource Properties，CN = 宣告 Configuration，CN = Services，CN = Configuration，CN =<forest root domain><br />-MembersOfResourcePropertyList： CN = Department_MS，CN = Resource Properties，CN = 宣告 Configuration，CN = Services，CN = Configuration，CN =<forest root domain><br />-MembersOfResourcePropertyList： CN = Impact_MS，CN = Resource Properties，CN = 宣告 Configuration，CN = Services，CN = Configuration，CN =<forest root domain><br />-MembersOfResourcePropertyList： CN = PersonalUse_MS，CN = Resource Properties，CN = 宣告 Configuration，CN = Services，CN = Configuration，CN =<forest root domain><br />-MembersOfResourcePropertyList： CN = Project_MS，CN = Resource Properties，CN = 宣告 Configuration，CN = Services，CN = Configuration，CN =<forest root domain><br />-MembersOfResourcePropertyList： CN = RetentionPeriod_MS，CN = Resource Properties，CN = 宣告 Configuration，CN = Services，CN = Configuration，CN =<forest root domain><br />-MembersOfResourcePropertyList： CN = RetentionStartDate_MS，CN = Resource Properties，CN = 宣告 Configuration，CN = Services，CN = Configuration，CN =<forest root domain><br />-MembersOfResourcePropertyList： CN = Company_MS，CN = Resource Properties，CN = 宣告 Configuration，CN = Services，CN = Configuration，CN =<forest root domain><br />-MembersOfResourcePropertyList： CN = FolderUsage_MS，CN = Resource Properties，CN = 宣告 Configuration，CN = Services，CN = Configuration，CN =<forest root domain>|（D;;SDDT;;;WD<br />（A;;RPLCLORC;;;澳大利亞<br />（A;;RPWPCRLCLOCCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY|
-|作業**127**： {016f23f7-077d-41fa-a356-de7cfdb01797}|回呼函數以升級顯示規範。|N/A|N/A|
-|作業**128**： {49c140db-2de3-44c2-a99a-bab2e6d2ba81}|已更新資料夾使用資源屬性物件 CN = FolderUsage_MS，CN = Resource Properties，CN = 宣告設定，CN = Services 在設定分割區中的字串。|-description： [資料夾使用方式] 屬性會指定資料夾的用途，以及其中儲存的檔案種類。|N/A|
-|作業**129**： {e0b11c80-62c5-47f7-ad0d-3734a71b8312}|已新增 ACE，以授與 CN = Sam-Domain 物件上的主體自我寫入屬性和讀取屬性。|N/A|OACIOI;RPWP;3f78c3e5-f79a-46bd-a0b8-9d18116ddc79;;專業|
-|作業**130**： {2ada1a2d-b02f-4731-b4fe-59f955e24f71}|已新增 ACE，以授與 CN = 網域 DNS 物件上的主體自我寫入屬性和讀取屬性。|N/A|OACIOI;RPWP;3f78c3e5-f79a-46bd-a0b8-9d18116ddc79;;專業|
+|作業**127**： {016f23f7-077d-41fa-a356-de7cfdb01797}|回呼函數以升級顯示規範。|不適用|不適用|
+|作業**128**： {49c140db-2de3-44c2-a99a-bab2e6d2ba81}|已更新資料夾使用資源屬性物件 CN = FolderUsage_MS，CN = Resource Properties，CN = 宣告設定，CN = Services 在設定分割區中的字串。|-description： [資料夾使用方式] 屬性會指定資料夾的用途，以及其中儲存的檔案種類。|不適用|
+|作業**129**： {e0b11c80-62c5-47f7-ad0d-3734a71b8312}|已新增 ACE，以授與 CN = Sam-Domain 物件上的主體自我寫入屬性和讀取屬性。|不適用|OACIOI;RPWP;3f78c3e5-f79a-46bd-a0b8-9d18116ddc79;;專業|
+|作業**130**： {2ada1a2d-b02f-4731-b4fe-59f955e24f71}|已新增 ACE，以授與 CN = 網域 DNS 物件上的主體自我寫入屬性和讀取屬性。|不適用|OACIOI;RPWP;3f78c3e5-f79a-46bd-a0b8-9d18116ddc79;;專業|

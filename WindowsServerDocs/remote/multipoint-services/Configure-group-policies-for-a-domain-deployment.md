@@ -9,12 +9,12 @@ ms.assetid: 13e5fa90-d330-4155-a6b8-78eb650cbbfa
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: e851d12dad29de8b3498aad220354d31917fadee
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9c01bdd45b5aa88a8ce4f8a5876a0f3cbc3c0cc3
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80862181"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966310"
 ---
 # <a name="configure-group-policies-for-a-domain-deployment"></a>設定網域部署的群組原則
 若要確保 MultiPoint 服務的網域部署正常運作，請將下列群組原則設定套用至 MultiPoint 服務系統上的 WMSshell 使用者帳戶。  
@@ -26,7 +26,7 @@ ms.locfileid: "80862181"
 WMSshell 使用者帳戶是 MultiPoint 服務用來登入主控台的系統帳戶，其中會建立實際的工作站。 此帳戶不應該由 MultiPoint 管理員管理。
   
 > [!NOTE]  
-> 若要瞭解如何更新群組原則，請參閱[本機群組原則編輯器](https://technet.microsoft.com/library/dn265982.aspx)。  
+> 若要瞭解如何更新群組原則，請參閱[本機群組原則編輯器](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265982(v=ws.11))。  
   
 **原則：** 使用者設定 > 系統管理範本 > 控制台 >**個人**化  
   
@@ -38,43 +38,43 @@ WMSshell 使用者帳戶是 MultiPoint 服務用來登入主控台的系統帳�
 |螢幕保護裝置超時|已停用<p>秒數： xxx|  
 |密碼保護螢幕保護裝置|已停用|  
   
-**原則：** 電腦設定 > Windows 設定 > 安全性設定 > 本機原則 > 使用者權限指派 >**允許本機登**入  
+**原則：** 電腦設定 >Windows 設定 >安全性設定 >本機原則 >使用者權限指派 >**允許本機登**入  
   
 |設定|值|  
 |-----------|----------|  
 |允許本機登入|確定帳戶清單包含 WMSshell 帳戶。<p>**注意：** 根據預設，WMSshell 帳戶是 Users 群組的成員。 如果使用者群組在清單中，而 WMSshell 是 Users 群組的成員，您就不需要將 WMSshell 帳戶新增至清單。|  
   
 > [!IMPORTANT]  
-> 當您設定任何群組原則時，請確定原則不會干擾 MultiPoint 伺服器上的自動更新和錯誤 Windows 錯誤報告。 這些設定是由在 Windows MultiPoint Server 安裝期間選取的 **自動安裝更新** 和 **自動 Windows 錯誤報告**設定，在 multipoint 管理員 中使用 **編輯服務器設定** 或設定于 磁片保護 的 已排程的更新 中進行。  
+> 當您設定任何群組原則時，請確定原則不會干擾 MultiPoint 伺服器上的自動更新和錯誤 Windows 錯誤報告。 這些設定是由在 Windows MultiPoint Server 安裝期間選取的 [**自動安裝更新**] 和 [**自動 Windows 錯誤報告**設定，在 [multipoint 管理員] 中使用 [**編輯服務器設定**] 或設定于 [磁片保護] 的 [已排程的更新] 中進行。  
   
 ## <a name="update-the-registry"></a>更新登錄  
 針對 MultiPoint 服務的網域部署，您應該更新下列登錄子機碼。  
   
 > [!IMPORTANT]  
-> 不當編輯登錄可能會造成系統嚴重受損。 變更登錄之前，您應該先備份電腦所有的重要資料。  
+> 不正確地編輯登錄可能會對系統造成嚴重的損害。 變更登錄之前，您應該先備份電腦所有的重要資料。  
   
 #### <a name="to-update-registry-subkeys-for-a-domain-deployment-of-multipoint-services"></a>更新 MultiPoint 服務網域部署的登錄子機碼  
   
-1.  開啟 [登錄編輯程式]。 （在命令提示字元中，輸入**regedit.exe**，然後按 enter 鍵）。  
+1.  開啟 [登錄編輯程式]。 （在命令提示字元中，輸入**regedit.exe**，然後按 enter）。  
   
 2.  在左窗格中，找出並選取下列登錄子機碼：  
   
-    HKEY_USERS\<SIDofWMSshell > \Software\Policies\Microsoft\Windows\Control Panel\Desktop  
+    HKEY_USERS \<SIDofWMSshell> \Software\Policies\Microsoft\Windows\Control Panel\Desktop  
   
-    其中 '<SIDofWMSshell>' 是 WMSshell 帳戶的安全識別碼（SID）。 若要瞭解如何識別 SID，請參閱[如何將使用者名稱與安全識別碼（sid）建立關聯](https://support.microsoft.com/kb/154599)。  
+    其中 ' <SIDofWMSshell> ' 是 WMSshell 帳戶的安全識別碼（SID）。 若要瞭解如何識別 SID，請參閱[如何將使用者名稱與安全識別碼（sid）建立關聯](https://support.microsoft.com/kb/154599)。  
   
 3.  在右邊的清單中，更新下列子機碼。  
   
-    |子機碼|值名稱|[數值資料]|  
+    |子機碼|值名稱|值資料|  
     |----------|--------------|--------------|  
-    |ScreenSaveActive|REG_SZ|0（零）|  
+    |ScreenSaveActive|REG_SZ|0 (零)|  
     |ScreenSaveTimeout|REG_SZ|120|  
-    |ScreenSaverIsSecure|REG_SZ|0（零）|  
+    |ScreenSaverIsSecure|REG_SZ|0 (零)|  
   
     若要更新登錄子機碼：  
   
     1.  在左窗格中選取登錄機碼後，以滑鼠右鍵按一下右窗格中的子機碼，然後按一下 [**修改**]。  
   
-    2.  在 [編輯字串] 對話方塊的 [**數值資料**] 中輸入新值，然後按一下 **[確定]** 。  
+    2.  在 [編輯字串] 對話方塊的 [**數值資料**] 中輸入新值，然後按一下 **[確定]**。  
   
 4.  在您完成更新登錄子機碼之後，請重新開機電腦以啟用變更。 

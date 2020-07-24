@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: dc6cba306a36589d8b585b23ecb43e7d16b7d201
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5ca29f1eef61bd11b2ceede4f335c029412e7331
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823071"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966400"
 ---
 # <a name="command-line-process-auditing"></a>命令列程序稽核
 
@@ -38,9 +38,9 @@ ms.locfileid: "80823071"
   
 ![命令列的審核](media/Command-line-process-auditing/GTR_ADDS_Event4688.gif)  
   
-**圖 SEQ 圖 \\\* 阿拉伯文16事件4688**  
+**圖 SEQ 圖 \\ \* 阿拉伯文16事件4688**  
   
-在 REF _Ref366427278 \h [圖 16] 中查看更新的事件識別碼4688。  在此更新之前，不會記錄**處理常式命令列**的任何資訊。  基於這項額外的記錄，我們現在可以看到 wscript.echo 程式尚未啟動，但也用來執行 VB 腳本。  
+在 REF _Ref366427278 \h [圖 16] 中查看更新的事件識別碼4688。  在此更新之前，不會記錄**處理常式命令列**的任何資訊。  基於這項額外的記錄，我們現在可以看到，這不僅是啟動 wscript.exe 程式，也用來執行 VB 腳本。  
   
 ## <a name="configuration"></a>組態  
 若要查看此更新的效果，您必須啟用兩個原則設定。  
@@ -65,14 +65,14 @@ ms.locfileid: "80823071"
 **預設：** 未設定  
   
 ### <a name="in-order-to-see-the-additions-to-event-id-4688-you-must-enable-the-new-policy-setting-include-command-line-in-process-creation-events"></a>為了查看事件識別碼4688的新增專案，您必須啟用新的原則設定： [在進程建立事件中包含命令列]。  
-**資料表 SEQ 資料表 \\\* 阿拉伯文19命令列程式原則設定**  
+**資料表 SEQ 資料表 \\ \* 阿拉伯文19命令列程式原則設定**  
   
 |原則設定|詳細資料|  
 |------------------------|-----------|  
 |**路徑**|系統管理 Templates\System\Audit 進程的建立|  
-|**設**|**在進程建立事件中包含命令列**|  
+|**設定**|**在進程建立事件中包含命令列**|  
 |**預設設定**|未設定（未啟用）|  
-|**支援于：**|?|  
+|**支援於：**|?|  
 |**描述**|此原則設定可決定在建立新進程時，哪些資訊會記錄在安全性 audit 事件中。<p>此設定只適用于已啟用 Audit 進程建立原則的情況。 如果您啟用此原則設定，在套用此原則設定的工作站和伺服器上，每個處理常式的命令列資訊將會以純文字記錄在安全性事件記錄檔中，做為「建立新進程」的4688一部分。<p>如果您停用或未設定此原則設定，處理常式的命令列資訊將不會包含在 Audit 進程建立事件中。<p>預設值：未設定<p>注意：啟用此原則設定時，任何具有讀取安全性事件存取權的使用者都可以讀取任何已成功建立之進程的命令列引數。 命令列引數可以包含機密或私用資訊，例如密碼或使用者資料。|  
   
 ![命令列的審核](media/Command-line-process-auditing/GTR_ADDS_IncludeCLISetting.gif)  
@@ -96,14 +96,14 @@ ms.locfileid: "80823071"
   
 5.  按兩下 [稽核: 強制執行稽核原則子類別設定 (Windows Vista 或更新的版本) 以覆寫稽核原則類別設定]，然後按一下 [定義這個原則設定]。  
   
-6.  按一下 [已啟用]，然後按一下 [確定]。  
+6.  按一下 [已啟用] ，然後按一下 [確定] 。  
   
 ## <a name="additional-resources"></a>其他資源  
-[建立 Audit 進程](https://technet.microsoft.com/library/dd941613(v=WS.10).aspx)  
+[稽核程序建立](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd941613(v=ws.10))  
   
-[Advanced Security 稽核原則逐步指南](https://technet.microsoft.com/library/dd408940(v=WS.10).aspx)  
+[進階安全性稽核原則逐步指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd408940(v=ws.10))  
   
-[AppLocker：常見問題](https://technet.microsoft.com/library/ee619725(v=ws.10).aspx)  
+[AppLocker：常見問題](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee619725(v=ws.10))  
   
 ## <a name="try-this-explore-command-line-process-auditing"></a>試試看：探索命令列處理常式  
   
@@ -122,5 +122,3 @@ ms.locfileid: "80823071"
   
 4.  執行與之前相同的腳本，並觀察事件  
   
-
-

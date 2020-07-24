@@ -8,18 +8,18 @@ ms.date: 06/18/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 24e5290bcb34860a150c8bb015c3b383c00e34b4
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 1b156701090acc79a63afab26653f42044a23741
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623786"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966540"
 ---
 # <a name="securing-domain-controllers-against-attack"></a>保護網域控制站不受攻擊
 
 > 適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-*第三條法則：如果不良的人員對您的電腦具有不受限制的實體存取權，則不是您的電腦。* - [十個不變的安全性法則（版本2.0）](https://technet.microsoft.com/security/hh278941.aspx)
+*第三條法則：如果不良的人員對您的電腦具有不受限制的實體存取權，則不是您的電腦。* - [十個不變的安全性法則（版本2.0）](https://www.microsoft.com/en-us/msrc?rtc=1)
 
 除了提供可讓企業有效管理其伺服器、工作站、使用者和應用程式的服務和資料以外，網域控制站還提供 AD DS 資料庫的實體儲存體。 如果惡意使用者取得網域控制站的特殊許可權存取權，該使用者就可以修改、損毀或終結 AD DS 資料庫，並根據延伸模組，Active Directory 所管理的所有系統和帳戶。
 
@@ -53,7 +53,7 @@ ms.locfileid: "81623786"
 
 ### <a name="remote-locations-with-limited-space-and-security"></a>空間和安全性有限的遠端位置
 
-如果您的基礎結構包含的位置只能安裝單一實體伺服器，則能夠執行虛擬化工作負載的伺服器應該安裝在遠端位置，而且應該設定 BitLocker 磁碟機加密來保護伺服器中的所有磁片區。 伺服器上的一部虛擬機器應該執行 RODC，而其他伺服器則以主機上的個別虛擬機器的形式執行。 《[唯讀網域控制站規劃與部署指南》](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771744(v=ws.10))中提供規劃 RODC 部署的相關資訊。 如需部署和保護虛擬網域控制站的詳細資訊，請參閱[在 hyper-v 中執行網域控制站](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd363553(v=ws.10))。 如需強化 Hyper-v、委派虛擬機器管理及保護虛擬機器的詳細指引，請參閱 Microsoft 網站上的[Hyper-v 安全性指南](https://www.microsoft.com/download/details.aspx?id=16650)解決方案加速器。
+如果您的基礎結構包含的位置只能安裝單一實體伺服器，則能夠執行虛擬化工作負載的伺服器應該安裝在遠端位置，而且應該設定 BitLocker 磁碟機加密來保護伺服器中的所有磁片區。 伺服器上的一部虛擬機器應該執行 RODC，而其他伺服器則以主機上的個別虛擬機器的形式執行。 《[唯讀網域控制站規劃與部署指南》](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc771744(v=ws.10))中提供規劃 RODC 部署的相關資訊。 如需部署和保護虛擬網域控制站的詳細資訊，請參閱[在 hyper-v 中執行網域控制站](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd363553(v=ws.10))。 如需強化 Hyper-v、委派虛擬機器管理及保護虛擬機器的詳細指引，請參閱 Microsoft 網站上的[Hyper-v 安全性指南](https://www.microsoft.com/download/details.aspx?id=16650)解決方案加速器。
 
 ## <a name="domain-controller-operating-systems"></a>網域控制站作業系統
 

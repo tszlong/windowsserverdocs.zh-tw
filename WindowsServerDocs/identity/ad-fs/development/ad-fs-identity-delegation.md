@@ -8,12 +8,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: c36de1c3565be7f0f0e6c6203a21345f3d227e96
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2162937498a5c16ce33b67ba5e478d2a6bb1a687
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857321"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964980"
 ---
 # <a name="identity-delegation-scenario-with-ad-fs"></a>具有 AD FS 的身分識別委派案例
 
@@ -26,7 +26,7 @@ ms.locfileid: "80857321"
 
 下圖說明典型的身分識別委派案例，其中 Fabrikam 員工會存取 Contoso.com 應用程式中公開的資源。
 
-![相同比較](media/ad-fs-identity-delegation/id1.png)
+![身分識別](media/ad-fs-identity-delegation/id1.png)
 
 參與此案例的虛構使用者包括：
 
@@ -57,7 +57,7 @@ ms.locfileid: "80857321"
 有三個選項可供 Fabrikam.com 系統管理員使用，Frank：
 
 
-1. 購買並安裝 STS 產品，例如 Active Directory&reg; Federation Services （AD FS）。
+1. 購買並安裝 STS 產品，例如 Active Directory &reg; 同盟服務（AD FS）。
 2. 訂閱雲端 STS 產品，例如 LiveID STS。
 3. 使用 WIF 建立自訂的 STS。
 
@@ -99,9 +99,9 @@ if ( claimsPrincipal != null )
     bootstrapToken = claimsIdentity.BootstrapToken;
 }
 ```
-WIF 提供的方法是[CreateChannelActingAs](https://msdn.microsoft.com/library/ee733863.aspx)，它會建立指定類型的通道，以使用指定的安全性權杖，將權杖發行要求擴大為 ActAs 元素。 您可以將啟動載入器 token 傳遞至此方法，然後在傳回的通道上呼叫所需的服務方法。 在此範例案例中，Frank 的身分識別[將動作專案屬性設定](https://msdn.microsoft.com/library/microsoft.identitymodel.claims.iclaimsidentity.actor.aspx)為 web1's identity。
+WIF 提供的方法是[CreateChannelActingAs](/previous-versions/windows-identity-foundation/ee733863(v=msdn.10))，它會建立指定類型的通道，以使用指定的安全性權杖，將權杖發行要求擴大為 ActAs 元素。 您可以將啟動載入器 token 傳遞至此方法，然後在傳回的通道上呼叫所需的服務方法。 在此範例案例中，Frank 的身分識別[將動作專案屬性設定](/previous-versions/windows-identity-foundation/ee766706(v=msdn.10))為 web1's identity。
 
-下列程式碼片段顯示如何使用[CreateChannelActingAs](https://msdn.microsoft.com/library/ee733863.aspx)呼叫 Web 服務，然後在傳回的通道上呼叫其中一個服務的方法 ComputeResponse：
+下列程式碼片段顯示如何使用[CreateChannelActingAs](/previous-versions/windows-identity-foundation/ee733863(v=msdn.10))呼叫 Web 服務，然後在傳回的通道上呼叫其中一個服務的方法 ComputeResponse：
 
 ```
 // Get the channel factory to the backend service from the application state

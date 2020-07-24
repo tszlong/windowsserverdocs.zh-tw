@@ -8,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: cde839feda47d55415b2b6cc1026a7a3e6515a44
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 54a2ef82d5eccabaf8be0971ca0324498e75bb78
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823091"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966410"
 ---
 # <a name="directory-services-component-updates"></a>目錄服務元件更新
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 **作者**： Justin Turner，具備 Windows 群組的資深支援提升工程師  
   
@@ -26,7 +26,7 @@ ms.locfileid: "80823091"
   
 本課程說明 Windows Server 2012 R2 中的目錄服務元件更新。  
   
-## <a name="what-you-will-learn"></a>您將學到  
+## <a name="what-you-will-learn"></a>學習內容  
 說明下列新的目錄服務元件更新：  
   
 -   說明下列新的目錄服務元件更新：  
@@ -138,7 +138,7 @@ Set-ADDomainMode -DomainMode Windows2008Domain -Identity contoso.com
   
 1.  Sch60  
   
-**驗證原則和定址接收器**  
+**驗證原則與定址接收器**  
   
 1.  Sch68  
   
@@ -269,11 +269,11 @@ Log Record Bytes Generated: 0
   
 ### <a name="to-enable-the-stats-control-in-ldp"></a><a name="BKMK_EnableStats"></a>啟用 LDP 中的統計資料控制項  
   
-1.  開啟 LDP.EXE，然後連接並系結至網域控制站。  
+1.  開啟 LDP.exe，並連接並系結至網域控制站。  
   
 2.  在 [**選項**] 功能表上，按一下 [**控制項**]。  
   
-3.  在 [控制項] 對話方塊中，展開 [**載入預先定義**的] 下拉式功能表，按一下 [**搜尋統計**資料]，然後按一下 **[確定]** 。  
+3.  在 [控制項] 對話方塊中，展開 [**載入預先定義**的] 下拉式功能表，按一下 [**搜尋統計**資料]，然後按一下 **[確定]**。  
   
     ![目錄服務更新](media/Directory-Services-component-updates/GTR_ADDS_Controls.gif)  
   
@@ -281,14 +281,14 @@ Log Record Bytes Generated: 0
   
 5.  在 [搜尋] 對話方塊中，選取 [**選項**] 按鈕。  
   
-6.  確定已在 [搜尋選項] 對話方塊中選取 [**延伸**] 核取方塊，然後選取 [**確定]** 。  
+6.  確定已在 [搜尋選項] 對話方塊中選取 [**延伸**] 核取方塊，然後選取 [**確定]**。  
   
     ![目錄服務更新](media/Directory-Services-component-updates/GTR_ADDS_SearchOptions.gif)  
   
 ### <a name="try-this-use-ldp-to-return-query-statistics"></a>試試看：使用 LDP 傳回查詢統計資料  
 在網域控制站上，或從已安裝 AD DS 工具的已加入網域的用戶端或伺服器執行下列操作。  針對您的 Windows Server 2012 DC 和 Windows Server 2012 R2 DC 重複執行下列動作。  
   
-1.  請參閱「[建立更有效率的 MICROSOFT AD 應用程式](https://msdn.microsoft.com/library/ms808539.aspx)」一文，並視需要回頭查看。  
+1.  請參閱「[建立更有效率的 MICROSOFT AD 應用程式](/previous-versions/ms808539(v=msdn.10))」一文，並視需要回頭查看。  
   
 2.  使用 LDP，啟用搜尋統計資料（請參閱[以啟用 LDP 中的統計資料控制項](../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_EnableStats)）  
   
@@ -299,15 +299,15 @@ Log Record Bytes Generated: 0
 5.  嘗試建立需要很長時間才能完成的搜尋（您可能想要增加**時間限制**選項，讓搜尋不會超時）。  
   
 ### <a name="additional-resources"></a>其他資源  
-[什麼是 Active Directory 搜尋？](https://technet.microsoft.com/library/cc783845(v=ws.10).aspx)  
+[什麼是 Active Directory 搜尋？](/previous-versions/windows/it-pro/windows-server-2003/cc783845(v=ws.10))  
   
-[Active Directory 搜尋工作的方式](https://technet.microsoft.com/library/cc755809(v=WS.10).aspx)  
+[Active Directory 搜尋工作的方式](/previous-versions/windows/it-pro/windows-server-2003/cc755809(v=ws.10))  
   
-[建立更有效率的 Microsoft Active Directory 啟用應用程式](https://msdn.microsoft.com/library/ms808539.aspx)  
+[建立更有效率的 Microsoft Active Directory 啟用應用程式](/previous-versions/ms808539(v=msdn.10))  
   
 [951581](https://support.microsoft.com/kb/951581) LDAP 查詢執行速度比預期的 AD 或 LDS/ADAM 目錄服務更慢，而且可能會記錄事件識別碼1644  
   
-## <a name="1644-event-improvements"></a><a name="BKMK_1644"></a>1644事件改進  
+## <a name="1644-event-improvements"></a><a name="BKMK_1644"></a>1644 事件改進  
   
 ### <a name="overview"></a>概觀  
 此更新會將其他 LDAP 搜尋結果統計資料新增至事件識別碼1644，以協助進行疑難排解。  此外，還有一個新的登錄值，可以用來啟用以時間為基礎的閾值記錄。  這些改良功能已在 Windows Server 2012 和 Windows Server 2008 R2 SP1 中透過 KB [2800945](https://support.microsoft.com/kb/2800945)提供使用，而且將可供 windows SERVER 2008 SP2 取得。  
@@ -325,7 +325,7 @@ Log Record Bytes Generated: 0
   
 -   起始節點  
   
--   篩選器  
+-   篩選  
   
 -   搜尋範圍  
   
@@ -367,11 +367,11 @@ Windows Registry Editor Version 5.00
 ```  
   
 #### <a name="comparison-of-the-old-and-new-event-id-1644"></a>舊版和新事件識別碼1644的比較  
-多久  
+OLD  
   
 ![目錄服務更新](media/Directory-Services-component-updates/GTR_ADDS_Event1644_2012.gif)  
   
-新增  
+NEW  
   
 ![目錄服務更新](media/Directory-Services-component-updates/GTR_ADDS_Event1644_2012R2.gif)  
   
@@ -402,7 +402,5 @@ AD 複寫會針對其複寫傳輸使用 RPC。 根據預設，RPC 會使用8K �
 > 沒有可進行的設定可修改此行為。  
   
 ### <a name="additional-resources"></a>其他資源  
-[Active Directory 複寫模型的運作方式](https://technet.microsoft.com/library/cc772726(v=WS.10).aspx)  
+[Active Directory 複寫模型的運作方式](/previous-versions/windows/it-pro/windows-server-2003/cc772726(v=ws.10))  
   
-
-

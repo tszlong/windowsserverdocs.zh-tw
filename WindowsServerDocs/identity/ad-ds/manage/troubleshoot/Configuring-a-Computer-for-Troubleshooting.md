@@ -8,16 +8,16 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: d9d279615dc1f70ffdcff9e49a4aa619f0106a93
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a71e1b92962ae9904262367f2c2697ecaa206ed8
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80822971"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965930"
 ---
 # <a name="configuring-a-computer-for-troubleshooting"></a>設定電腦進行疑難排解
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 使用先進的疑難排解技術識別並修正 Active Directory 問題之前，請先設定您的電腦以進行疑難排解。 您也應該對疑難排解概念、程式和工具有基本瞭解。
 
@@ -31,7 +31,7 @@ ms.locfileid: "80822971"
 
 當您安裝 AD DS 來建立網域控制站時，系統會自動安裝您用來管理 AD DS 的系統管理工具。 如果您想要從不是網域控制站的電腦遠端系統管理網域控制站，您可以在執行支援的 Windows 版本的成員伺服器或工作站上安裝遠端伺服器管理工具（RSAT）。 RSAT 取代 Windows Server 2003 的 Windows 支援工具。
 
-如需安裝 RSAT 的詳細資訊，請參閱[遠端伺服器管理工具](https://docs.microsoft.com/windows-server/remote/remote-server-administration-tools)一文。
+如需安裝 RSAT 的詳細資訊，請參閱[遠端伺服器管理工具](../../../../remote/remote-server-administration-tools.md)一文。
 
 ### <a name="configure-reliability-and-performance-monitor"></a>設定可靠性和效能監視器
 
@@ -48,13 +48,13 @@ Windows Server 包含 Windows 可靠性和效能監視器，這是一個 Microso
 請使用下列程式來變更診斷專案的記錄層級。 至少要有 **Domain Admins** 的成員資格或是對等成員資格，才能完成此程序。
 
 > [!WARNING]
-> 建議您不要直接編輯登錄，除非已沒有其他替代方案。 對登錄所做的修改會不經登錄編輯程式或 Windows 驗證就加以套用，因此可能會儲存不正確的值。 這可能會導致系統發生嚴重錯誤。 可能的話，請使用群組原則或其他 Windows 工具（例如 MMC 嵌入式管理單元）來完成工作，而不是直接編輯登錄。 如果您必須編輯登錄，必須非常小心。
+> 建議您不要直接編輯登錄，除非已沒有其他替代方案。 登錄編輯器或 Windows 不會先對登錄進行修改，也不會在應用程式中進行驗證，因此可能會儲存不正確的值。 這可能會導致系統中發生無法復原的錯誤。 可能的話，請使用群組原則或其他 Windows 工具（例如 MMC 嵌入式管理單元）來完成工作，而不是直接編輯登錄。 如果您必須編輯登錄，必須非常小心。
 >
 
 變更診斷專案的記錄層級
 
-1. 按一下 [**啟動**] > **執行**> 輸入**Regedit** ，> 按一下 **[確定]** 。
+1. 按一下 [**開始**  >  **執行**] > 輸入**regedit** > 按一下 **[確定]**。
 2. 流覽至您要設定登入的專案。
    * 範例： HKEY_LOCAL_MACHINESYSTEMCurrentControlSetServicesNTDSDiagnostics
 3. 按兩下專案，然後在 [**基底**] 中按一下 [ **Decimal**]。
-4. 在 [**值**] 中，輸入從**0**到**5**的整數，然後按一下 **[確定]** 。
+4. 在 [**值**] 中，輸入從**0**到**5**的整數，然後按一下 **[確定]**。

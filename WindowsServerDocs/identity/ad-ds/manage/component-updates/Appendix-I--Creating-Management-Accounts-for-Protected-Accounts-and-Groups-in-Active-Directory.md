@@ -8,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c2141e4fad564579fd687b2dfc7e4a12e1634acb
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fefb0681af818e06ad29d7c9fdf6b690cd993cd2
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823481"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965760"
 ---
 # <a name="appendix-i-creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>附錄 I︰為 Active Directory 中的受保護帳戶和群組建立管理帳戶
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 若不依賴高許可權群組中的永久成員資格，其中一項 Active Directory 挑戰就是在需要群組的暫時成員資格時，必須有一種機制來填入這些群組。 某些特殊許可權身分識別管理解決方案要求軟體的服務帳戶會被授與群組中的永久成員資格，例如在樹系中的每個網域中的 DA 或系統管理員。 不過，在技術上，Privileged Identity Management （PIM）解決方案不需要在這類高許可權的內容中執行其服務。  
   
@@ -26,7 +26,7 @@ ms.locfileid: "80823481"
 > [!NOTE]  
 > 本附錄中所述的程式提供一種方法來管理 Active Directory 中的高許可權群組。 您可以調整這些程式以符合您的需求、新增其他限制，或省略這裡所述的一些限制。  
   
-## <a name="creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>在 Active Directory 中建立受保護帳戶和群組的管理帳戶
+## <a name="creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>為 Active Directory 中的受保護帳戶和群組建立管理帳戶
 
 建立可用來管理許可權群組成員資格的帳戶，而不需要授與管理帳戶過多的許可權和許可權，包括下列的逐步指示所述的四個一般活動：  
   
@@ -38,7 +38,7 @@ ms.locfileid: "80823481"
   
 4.  在每個網域中的 AdminSDHolder 物件上設定許可權，以允許管理帳戶變更網域中特殊許可權群組的成員資格。  
   
-在生產環境中執行這些程式之前，您應該徹底測試所有這些程式，並根據環境的需要加以修改。 您也應該驗證所有設定是否如預期般運作（本附錄中提供一些測試程式），而且您應該測試嚴重損壞修復案例，其中管理帳戶無法用來填入受保護的群組以供復原之用。 如需備份和還原 Active Directory 的詳細資訊，請參閱[AD DS 備份和復原逐步指南](https://technet.microsoft.com/library/cc771290(v=ws.10).aspx)。  
+在生產環境中執行這些程式之前，您應該徹底測試所有這些程式，並根據環境的需要加以修改。 您也應該驗證所有設定是否如預期般運作（本附錄中提供一些測試程式），而且您應該測試嚴重損壞修復案例，其中管理帳戶無法用來填入受保護的群組以供復原之用。 如需備份和還原 Active Directory 的詳細資訊，請參閱[AD DS 備份和復原逐步指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771290(v=ws.10))。  
   
 > [!NOTE]  
 > 藉由執行本附錄所述的步驟，您將會建立帳戶，以管理每個網域中所有受保護群組的成員資格，而不只是最高許可權的 Active Directory 群組，例如 EAs、DAs 和 BAs。 如需 Active Directory 中受保護群組的詳細資訊，請參閱[附錄 C： Active Directory 中的受保護帳戶和群組](../../../ad-ds/plan/security-best-practices/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md)。  
@@ -55,7 +55,7 @@ ms.locfileid: "80823481"
   
     ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_115.png)  
   
-2.  在 [**新增物件-群組**] 對話方塊中，輸入群組的名稱。 如果您打算使用此群組來「啟用」樹系中的所有管理帳戶，請將它設為通用安全性群組。 如果您有單一網域樹系，或您打算在每個網域中建立群組，您可以建立全域安全性群組。 按一下 [確定] 以建立群組。  
+2.  在 [**新增物件-群組**] 對話方塊中，輸入群組的名稱。 如果您打算使用此群組來「啟用」樹系中的所有管理帳戶，請將它設為通用安全性群組。 如果您有單一網域樹系，或您打算在每個網域中建立群組，您可以建立全域安全性群組。 按一下 [確定]**** 以建立群組。  
   
     ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_116.png)  
   
@@ -84,9 +84,9 @@ ms.locfileid: "80823481"
   
     -   系統  
   
-    -   Domain Admins  
+    -   網域管理員  
   
-    -   Enterprise Admins  
+    -   企業系統管理員  
   
     -   Administrators  
   
@@ -116,25 +116,25 @@ ms.locfileid: "80823481"
   
 1. 使用網域的 DA 群組成員的帳戶登入網域控制站。  
 
-2. 啟動**Active Directory 使用者和電腦**，然後流覽至您將在其中建立管理帳戶的 OU。  
+2. 啟動**Active Directory 使用者和電腦**]，然後流覽至您將在其中建立管理帳戶的 OU。  
 
 3. 以滑鼠右鍵按一下 OU，然後按一下 [**新增**]，再按一下 [**使用者**]。  
 
-4. 在 [**新增物件-使用者**] 對話方塊中，輸入您想要的帳戶命名資訊，然後按 **[下一步]** 。  
+4. 在 [**新增物件-使用者**] 對話方塊中，輸入您想要的帳戶命名資訊，然後按 **[下一步]**。  
 
    ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_122.png)  
   
-5. 提供使用者帳戶的初始密碼、 **[清除使用者必須在下次登入時變更密碼]、[** 選取**使用者無法變更密碼**] 和 [**帳戶已停用**]，然後按 **[下一步]** 。  
+5. 提供使用者帳戶的初始密碼、 **[清除使用者必須在下次登入時變更密碼]、[** 選取**使用者無法變更密碼**] 和 [**帳戶已停用**]，然後按 **[下一步]**。  
 
    ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_123.png)  
 
-6. 確認帳戶詳細資料正確無誤，然後按一下 **[完成]** 。  
+6. 確認帳戶詳細資料正確無誤，然後按一下 **[完成]**。  
 
 7. 以滑鼠右鍵按一下您剛建立的使用者物件，然後按一下 [**屬性**]。  
 
-8. 按一下 [**帳戶**] 索引標籤。  
+8. 按一下 [帳戶]  索引標籤。  
 
-9. 在 [**帳戶選項**] 欄位中，選取 [此**帳戶為機密，無法委派**] 旗標，選取 [**此帳戶支援 kerberos aes 128 位加密**] 及/或 [**此帳戶支援 kerberos aes 256 加密**] 旗標，然後按一下 **[確定]** 。  
+9. 在 [**帳戶選項**] 欄位中，選取 [此**帳戶為機密，無法委派**] 旗標，選取 [**此帳戶支援 kerberos aes 128 位加密**] 及/或 [**此帳戶支援 kerberos aes 256 加密**] 旗標，然後按一下 **[確定]**。  
 
    ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_124.png)  
 
@@ -179,13 +179,13 @@ ms.locfileid: "80823481"
     >
     > 雖然應在每次使用後重設帳戶的密碼，且應停用帳戶，但執行此設定並不會對帳戶造成不利影響，而且在系統管理員忘記重設帳戶密碼並加以停用的情況下，可能會有所説明。  
 
-17. 按一下 [隸屬於] 索引標籤。  
+17. 按一下 [隸屬於]**** 索引標籤。  
 
-18. 按一下 [加入]。  
+18. 按一下 [新增] 。  
 
 19. 在 [**選取使用者、連絡人、電腦**] 對話方塊中，輸入**拒絕的 RODC 密碼複寫群組**，然後按一下 [**檢查名稱**]。 當物件選擇器中的群組名稱加上底線時，按一下 **[確定]** ，並確認該帳戶現在是下列螢幕擷取畫面中所顯示的兩個群組的成員。 請勿將帳戶新增至任何受保護的群組。  
 
-20. 按一下 [確定]。  
+20. 按一下 [確定]  。  
 
     ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_129.png)  
 
@@ -220,7 +220,7 @@ ms.locfileid: "80823481"
 
 29. 按一下 [ **advanced** ]，並確認 [Advanced Security Settings] 對話方塊看起來類似下列螢幕擷取畫面。  
 
-30. 按一下 **[確定]** ，然後再按一次 **[確定**] 以關閉帳戶的 [屬性] 對話方塊。  
+30. 按一下 **[確定]**，然後再按一次 **[確定**] 以關閉帳戶的 [屬性] 對話方塊。  
 
     ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_135.png)  
 
@@ -258,12 +258,12 @@ SIEM 解決方案會從相關的安全性來源取得事件資訊（例如，事
   
    ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_137.gif)  
   
-3. 當系統提示您核准提高許可權時，按一下 **[是]** 。  
+3. 當系統提示您核准提高許可權時，按一下 **[是]**。  
   
    ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_138.gif)  
   
    > [!NOTE]  
-   > 如需 Windows 中提高許可權和使用者帳戶控制（UAC）的詳細資訊，請參閱 TechNet 網站上的[UAC 處理常式和互動](https://technet.microsoft.com/library/dd835561(v=WS.10).aspx)。  
+   > 如需 Windows 中提高許可權和使用者帳戶控制（UAC）的詳細資訊，請參閱 TechNet 網站上的[UAC 處理常式和互動](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd835561(v=ws.10))。  
   
 4. 在命令提示字元中，輸入（取代您的網域特定資訊） **Dsacls [網域中 AdminSDHolder 物件的辨別名稱]/g [管理帳戶 UPN]： RPWP; 成員**。  
   
@@ -277,7 +277,7 @@ SIEM 解決方案會從相關的安全性來源取得事件資訊（例如，事
   
    - /G 表示正在設定授與 ACE  
   
-   - PIM001@tailspintoys.msft 是將授與 Ace 之安全性主體的使用者主要名稱（UPN）  
+   - PIM001@tailspintoys.msft這是將授與 Ace 之安全性主體的使用者主體名稱（UPN）  
   
    - RPWP 授與讀取屬性和寫入屬性許可權  
   
@@ -289,13 +289,13 @@ SIEM 解決方案會從相關的安全性來源取得事件資訊（例如，事
   
    當 SDProp 執行時，您可以確認您對 AdminSDHolder 物件所做的變更已套用到網域中的受保護群組。 您無法根據先前所述的原因，在 AdminSDHolder 物件上查看 ACL 來進行驗證，但您可以藉由在受保護的群組上查看 Acl 來確認許可權是否已套用。  
   
-5. 在**Active Directory 使用者和電腦** 中，確認您已啟用  **Advanced 功能**。 若要這麼做，請按一下 [ **View**]，找出 [ **Domain Admins** ] 群組，在群組上按一下滑鼠右鍵，然後按一下 [**屬性**]。  
+5. 在**Active Directory 使用者和電腦**] 中，確認您已啟用 [ **Advanced] 功能**。 若要這麼做，請按一下 [ **View**]，找出 [ **Domain Admins** ] 群組，在群組上按一下滑鼠右鍵，然後按一下 [**屬性**]。  
   
 6. 按一下 [**安全性**] 索引標籤，然後按一下 [ **advanced** ] 以開啟 [ **Domain Admins 的 advanced Security 設定**] 對話方塊。  
   
    ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_140.gif)  
   
-7. **針對管理帳戶選取 [允許 ACE** ]，然後按一下 [**編輯**]。 確認帳戶已僅授與 [**讀取成員**] 和 [**寫入成員**] 許可權，然後按一下 **[確定]** 。  
+7. **針對管理帳戶選取 [允許 ACE** ]，然後按一下 [**編輯**]。 確認帳戶已僅授與 [**讀取成員**] 和 [**寫入成員**] 許可權，然後按一下 **[確定]**。  
   
 8. 在 [**高級安全性設定**] 對話方塊中按一下 **[確定]** ，然後再按一下 **[確定**]，關閉 [DA] 群組的 [內容] 對話方塊。  
   
@@ -320,7 +320,7 @@ SIEM 解決方案會從相關的安全性來源取得事件資訊（例如，事
   
     ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_142.gif)  
   
-2.  開啟**Active Directory 使用者和電腦**，以滑鼠右鍵按一下管理帳戶，然後按一下 **啟用帳戶**。  
+2.  開啟**Active Directory 使用者和電腦**]，以滑鼠右鍵按一下管理帳戶，然後按一下 [**啟用帳戶**]。  
   
     ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_143.gif)  
   
@@ -332,7 +332,7 @@ SIEM 解決方案會從相關的安全性來源取得事件資訊（例如，事
   
     ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_145.gif)  
   
-5.  在 [**新密碼**] 和 [**確認密碼**] 欄位中輸入帳戶的新密碼，然後按一下 **[確定]** 。  
+5.  在 [**新密碼**] 和 [**確認密碼**] 欄位中輸入帳戶的新密碼，然後按一下 **[確定]**。  
   
     ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_146.gif)  
   
@@ -367,7 +367,7 @@ SIEM 解決方案會從相關的安全性來源取得事件資訊（例如，事
   
     ![建立管理帳戶](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_151.gif)  
   
-2.  啟動**Active Directory 使用者和電腦**，並找出 **網域系統管理員 群組**。  
+2.  啟動**Active Directory 使用者和電腦**]，並找出 [**網域系統管理員] 群組**。  
   
 3.  在 [ **Domain Admins** ] 群組上按一下滑鼠右鍵，然後按一下 [**屬性**]。  
   

@@ -8,12 +8,12 @@ ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms.date: 05/29/2019
-ms.openlocfilehash: cae164de90738996a6c4663dfcbde794b6c2a18e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 447c8fe33a0454179d8c9aacc9c324ac7bcf1f49
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473775"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965820"
 ---
 # <a name="whats-new-in-storage-in-windows-server"></a>Windows Server 中存放裝置的新功能
 
@@ -49,7 +49,7 @@ ms.locfileid: "85473775"
 
 ### <a name="windows-admin-center-enhancements"></a>Windows Admin Center 功能強化
 
-新版 Windows Admin Center 已推出，並在 Windows Server 中加入新功能。 如需最新的功能資訊，請參閱 [Windows Admin Center](../manage/windows-admin-center/understand/windows-admin-center.md)。
+新版 Windows Admin Center 已推出，並在 Windows Server 中加入新功能。 如需最新的功能資訊，請參閱 [Windows Admin Center](../manage/windows-admin-center/overview.md)。
 
 ## <a name="whats-new-in-storage-in-windows-server-2019-and-windows-server-version-1809"></a>Windows Server 2019 和 Windows Server （版本1809）中存放裝置的新功能
 
@@ -83,7 +83,7 @@ Windows Server 2019 中的儲存空間直接存取有一些改良功能（儲存
 
 - **使用 USB 快閃磁碟做為見證的兩個伺服器叢集**
 
-    使用插入路由器的低成本 USB 快閃磁片磁碟機，做為兩個伺服器叢集中的見證。 如果伺服器關閉後再備份，則 USB 磁片磁碟機叢集知道哪一台伺服器擁有最新的資料。 如需詳細資訊，請參閱[Microsoft blog 的儲存體](https://blogs.technet.microsoft.com/filecab/2018/06/27/windows-server-summit-recap/)。
+    使用插入路由器的低成本 USB 快閃磁片磁碟機，做為兩個伺服器叢集中的見證。 如果伺服器關閉後再備份，則 USB 磁片磁碟機叢集知道哪一台伺服器擁有最新的資料。 如需詳細資訊，請參閱[Microsoft blog 的儲存體](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)。
 
 - **Windows Admin Center**
 
@@ -95,7 +95,7 @@ Windows Server 2019 中的儲存空間直接存取有一些改良功能（儲存
 
 - **每個叢集可擴充到最多 4 PB**
 
-    達到 PB 等級規模 – 適合用於媒體、備份和保存使用案例。 在 Windows Server 2019 中，儲存空間直接存取支援每個儲存集區高達 4 PB = 4,000 TB 的原始容量。 相關容量指導方針也增加了：例如，您可以建立兩倍數量的磁碟區 (64 個，而不是 32 個)，每個磁碟區也比以前大兩倍 (64 TB，而不是 32 TB)。 將多個叢集結合成一個叢集[集](storage-spaces/cluster-sets.md)，以便在一個儲存體命名空間內進行更大規模的調整。 如需詳細資訊，請參閱[Microsoft blog 的儲存體](https://blogs.technet.microsoft.com/filecab/2018/06/27/windows-server-summit-recap/)。
+    達到 PB 等級規模 – 適合用於媒體、備份和保存使用案例。 在 Windows Server 2019 中，儲存空間直接存取支援每個儲存集區高達 4 PB = 4,000 TB 的原始容量。 相關容量指導方針也增加了：例如，您可以建立兩倍數量的磁碟區 (64 個，而不是 32 個)，每個磁碟區也比以前大兩倍 (64 TB，而不是 32 TB)。 將多個叢集結合成一個叢集[集](storage-spaces/cluster-sets.md)，以便在一個儲存體命名空間內進行更大規模的調整。 如需詳細資訊，請參閱[Microsoft blog 的儲存體](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)。
 
 - **鏡像加速的同位加快 2 倍**
 
@@ -166,7 +166,7 @@ Windows Server 1803 版包含在服務啟動時，防止檔案伺服器 Resource
 
 Windows Server （版本1709）是半年通道中的第一個 Windows Server 版本。 「半年通道」是一項軟體保證權益，在生產環境中完全支援18個月，每六個月有一個新版本。
 
-如需詳細資訊，請參閱 [Windows Server 半年通道概觀](../get-started/semi-annual-channel-overview.md)。
+如需詳細資訊，請參閱 [Windows Server 半年通道概觀](../get-started-19/servicing-channels-19.md)。
 
 ### <a name="storage-replica"></a>儲存體複本
 
@@ -247,13 +247,13 @@ Windows Server （版本1709）是半年通道中的第一個 Windows Server 版
 
 如需詳細資訊，請參閱[存放裝置服務品質](storage-qos/storage-qos-overview.md)
 
-### <a name="data-deduplication"></a><a name="dedup"></a>重複資料刪除
+### <a name="data-deduplication"></a><a name="dedup"></a>重復資料刪除
 | 功能 | 新功能或更新功能 | 描述 |
 |---------------|----------------|-------------|
 | [支援大型磁片區](data-deduplication/whats-new.md#large-volume-support) | 已更新 | 在 Windows Server 2016 之前，使用者必須特別針對預期的變動設定磁碟區大小，而大於 10 TB 的磁碟區並不是重複資料刪除的良好候選項目。 在 Windows Server 2016 中，重復資料刪除支援**最多 64 TB**的磁片區大小。 |
 | [大型檔案的支援](data-deduplication/whats-new.md#large-file-support) | 已更新 | 在 Windows Server 2016 之前，大小接近 1 TB 的檔案並不是重複資料刪除的良好候選項目。 在 Windows Server 2016 中，完全支援**高達 1 TB**的檔案。 |
 | [支援 Nano 伺服器](data-deduplication/whats-new.md#nano-server-support) | 新增 | Windows Server 2016 的新 Nano 伺服器部署選項可以使用並且完全支援重複資料刪除。 |
-| [簡化的備份支援](data-deduplication/whats-new.md#simple-backup-support) | 新增 | 在 Windows Server 2012 R2 中，虛擬備份應用程式 (例如 Microsoft 的 [Data Protection Manager](https://technet.microsoft.com/library/hh758173.aspx)) 必須透過一系列的手動設定步驟來取得支援。 在 Windows Server 2016 中，已加入新的預設使用類型 "Backup"，以無接縫地針對虛擬備份應用程式部署重複資料刪除。 |
+| [簡化的備份支援](data-deduplication/whats-new.md#simple-backup-support) | 新增 | 在 Windows Server 2012 R2 中，虛擬備份應用程式 (例如 Microsoft 的 [Data Protection Manager](/previous-versions/system-center/system-center-2012-R2/hh758173(v=sc.12))) 必須透過一系列的手動設定步驟來取得支援。 在 Windows Server 2016 中，已加入新的預設使用類型 "Backup"，以無接縫地針對虛擬備份應用程式部署重複資料刪除。 |
 | [支援叢集 OS 輪流升級](data-deduplication/whats-new.md#cluster-upgrade-support) | 新增 | 重複資料刪除完整支援 Windows Server 2016 新的[叢集 OS 輪流升級](..//failover-clustering/cluster-operating-system-rolling-upgrade.md)功能。 |
 
 ### <a name="smb-hardening-improvements-for-sysvol-and-netlogon-connections"></a><a name="smb-hardening-improvements"></a>針對 SYSVOL 和 NETLOGON 連線的 SMB 強化功能改進
@@ -268,7 +268,7 @@ Windows Server （版本1709）是半年通道中的第一個 Windows Server 版
 > [!NOTE]
 > 這些設定的登錄值預設將不會顯示，但仍會套用強化原則，直到由群組原則或其他登錄值覆寫為止。
 
-如需這些安全性改進 (也稱為 UNC 強化) 的詳細資訊，請參閱 Microsoft 知識庫文章 [3000483](https://support.microsoft.com/kb/3000483) 和 [MS15-011 與 MS15-014：強化群組原則](https://blogs.technet.microsoft.com/srd/2015/02/10/ms15-011-ms15-014-hardening-group-policy) (英文)。
+如需這些安全性改進 (也稱為 UNC 強化) 的詳細資訊，請參閱 Microsoft 知識庫文章 [3000483](https://support.microsoft.com/kb/3000483) 和 [MS15-011 與 MS15-014：強化群組原則](https://msrc-blog.microsoft.com/2015/02/10/ms15-011-ms15-014-hardening-group-policy) (英文)。
 
 ### <a name="work-folders"></a>工作資料夾
 已改善當工作資料夾伺服器執行 Windows Server 2016 和工作資料夾用戶端為 Windows 10 時的變更通知。
@@ -297,4 +297,4 @@ ReFS 引入下列改善：
 這些為 Windows Server 2016 的新功能。
 
 ## <a name="additional-references"></a>其他參考
-* [Windows Server 2016 中的新功能](../get-started/what-s-new-in-windows-server-2016.md)
+* [Windows Server 2016 中的新功能](../get-started/whats-new-in-windows-server-2016.md)

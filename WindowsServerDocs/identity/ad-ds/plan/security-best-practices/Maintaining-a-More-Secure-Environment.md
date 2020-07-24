@@ -8,18 +8,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: a22b1a0d776540e8ee2f2c223a1087bd88adaa47
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: dd8c2d4635071a199bdeff6a2bd518d746d82bc3
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80821171"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966320"
 ---
 # <a name="maintaining-a-more-secure-environment"></a>維護更安全的環境
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-*第十條法則：技術不是萬靈丹。* - [安全性管理的10個不可變法則](https://technet.microsoft.com/library/cc722488.aspx)  
+*第十條法則：技術不是萬靈丹。* - [10個不變的安全性管理法則](/previous-versions//cc722488(v=technet.10))  
   
 當您為重要的商務資產建立可管理的安全環境時，您的焦點應該轉移以確保其安全地維護。 雖然您已獲得特定的技術控制項來提高 AD DS 安裝的安全性，但技術本身並不會保護無法與企業合作的環境，以維護安全、可用的基礎結構。 本節中的高階建議是用來做為指導方針，讓您不僅可以用來開發有效的安全性，還能提升生命週期管理的效率。  
   
@@ -59,7 +59,7 @@ Active Directory 中的資料應該具有已識別的商務擁有者，也就是
   
 在您的資料分類模型中，您應該包含 AD DS 資料的分類，如下所示。  
   
-### <a name="systems"></a>Systems  
+### <a name="systems"></a>認證的系統  
 您不應該只將資料分類，也應該將其伺服器擴展。 針對每部伺服器，您應該知道安裝的作業系統、伺服器提供的一般角色、伺服器上正在執行哪些應用程式、記錄的 IT 擁有者，以及記錄的商務擁有者（如果適用）。 對於在伺服器上執行的所有資料或應用程式，您應該需要分類，而且應該根據支援的工作負載需求和套用至系統和資料的分類，保護伺服器的安全。 您也可以依工作負載的分類將伺服器分組，讓您能夠快速識別應該是最嚴密監視且最而更加嚴格設定的伺服器。  
   
 ### <a name="applications"></a>應用程式  
@@ -74,5 +74,3 @@ Active Directory 中的資料應該具有已識別的商務擁有者，也就是
   
 假設「Executive A」通常位於芝加哥，並使用受保護的工作站來存取他桌上的業務關鍵資料，而嘗試從位於亞特蘭大的不安全工作站存取資料時，觸發了事件。 如果您能夠確認主管目前是否在亞特蘭大，您可以聯絡主管或主管的小幫手來解決此事件，以判斷存取失敗是否為執行者忘記使用受保護的工作站存取資料的結果。 藉由使用「[規劃危害](../../../ad-ds/plan/security-best-practices/Planning-for-Compromise.md)」中所述的方法來建立程式，您可以開始為 Active Directory 安裝中最重要的帳戶建立預期行為的資料庫，這可能有助於您更快速地探索和回應攻擊。  
   
-
-

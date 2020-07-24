@@ -8,18 +8,17 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6b5b0b4780b88d9dc4bdf905c591fc8b1867aac1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 11f5c5f2fca98512867a7f4cebafee1e4aeb4e2b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80814861"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965130"
 ---
 # <a name="azure-active-directory-connect"></a>Azure Active Directory Connect
 
 
-Azure AD Connect 會將您的內部部署目錄與 Azure Active Directory 整合。 這可讓您為您的使用者提供與 Azure AD 整合之 Office 365、Azure 和 SaaS 應用程式的通用身分識別。 。  
+Azure AD Connect 會整合您的內部部署目錄與 Azure Active Directory。 這可讓您為與 Azure AD 整合之 Office 365、Azure 和 SaaS 應用程式的使用者提供通用身分識別。 .  
   
-如需詳細資訊，請參閱[整合您的內部部署身分識別與 Azure Active Directory](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect/)。  
+如需詳細資訊，請參閱[整合您的內部部署身分識別與 Azure Active Directory](/azure/active-directory/hybrid/whatis-hybrid-identity)。  
   
-

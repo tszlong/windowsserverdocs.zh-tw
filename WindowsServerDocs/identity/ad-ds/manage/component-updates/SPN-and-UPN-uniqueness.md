@@ -8,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f182f79b5bb97e45f1cfd34ad59cf52322f09063
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bca2934b5b691f69fc70cd9d5230a2865b24ac94
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823061"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966420"
 ---
 # <a name="spn-and-upn-uniqueness"></a>SPN 和 UPN 的唯一性
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 **作者**： Justin Turner，具備 Windows 群組的資深支援提升工程師  
   
@@ -32,28 +32,28 @@ ms.locfileid: "80823061"
   
 重複的 UPN 值會中斷內部部署 AD 與 Office 365 之間的同步處理。  
   
-\* Setspn 通常用來建立新的 Spn，而功能內建在 Windows Server 2008 發行的版本中，這會新增重複檢查。  
+* Setspn.exe 通常用來建立新的 Spn，而功能內建在 Windows Server 2008 發行的版本中，這會新增重複檢查。  
   
-**資料表 SEQ 資料表 \\\* 阿拉伯文1： UPN 和 SPN 唯一性**  
+**資料表 SEQ 資料表 \\ \* 阿拉伯文1： UPN 和 SPN 唯一性**  
   
 |功能|註解|  
 |-----------|-----------|  
 |UPN 唯一性|重複的 Upn 會中斷內部部署 AD 帳戶與 Windows Azure AD 型服務（例如 Office 365）的同步處理。|  
 |SPN 唯一性|Kerberos 需要 Spn 以進行相互驗證。  重複的 Spn 會導致驗證失敗。|  
   
-如需 Upn 和 Spn 之唯一性需求的詳細資訊，請參閱[唯一性條件約束](https://msdn.microsoft.com/library/dn392337.aspx)。  
+如需 Upn 和 Spn 之唯一性需求的詳細資訊，請參閱[唯一性條件約束](/openspecs/windows_protocols/ms-adts/3c154285-454c-4353-9a99-fb586e806944)。  
   
-## <a name="symptoms"></a>問題  
+## <a name="symptoms"></a>徵狀  
 錯誤碼8467或8468或其十六進位、符號或字串對等專案會記錄在各種螢幕上的對話中，以及目錄服務事件記錄檔中的事件識別碼2974。 只有在下列情況下，才會封鎖建立重複 UPN 或 SPN 的嘗試：  
   
 -   寫入是由 Windows Server 2012 R2 DC 處理  
   
-**資料表 SEQ 資料表 \\\* 阿拉伯文2： UPN 和 SPN 唯一性錯誤代碼**  
+**資料表 SEQ 資料表 \\ \* 阿拉伯文2： UPN 和 SPN 唯一性錯誤代碼**  
   
-|DECIMAL|Hex|符號|String|  
+|Decimal|Hex|符號|字串|  
 |-----------|-------|------------|----------|  
 |8467|21C7|ERROR_DS_SPN_VALUE_NOT_UNIQUE_IN_FOREST|作業失敗，因為提供給新增/修改的 SPN 值不是唯一全樹系。|  
-|8648|21C8|ERROR_DS_UPN_VALUE_NOT_UNIQUE_IN_FOREST|作業失敗，因為提供給新增/修改的 UPN 值不是唯一全樹系。|  
+|8648|21C8|ERROR_DS_UPN_VALUE_NOT_UNIQUE_IN_FOREST|作業失敗，因為提供來新增/修改的 UPN 值不是全樹系唯一的。|  
   
 ## <a name="new-user-creation-fails-if-upn-is-not-unique"></a>如果 UPN 不是唯一的，新的使用者建立將會失敗  
   
@@ -68,23 +68,23 @@ ms.locfileid: "80823061"
   
 ![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig02_DupUPNMod.gif)  
   
-### <a name="active-directory-administrative-center-dsacexe"></a>Active Directory 管理中心（DSAC.EXE .exe）  
+### <a name="active-directory-administrative-center-dsacexe"></a>Active Directory 管理中心（DSAC.exe）  
 嘗試在 Active Directory 管理中心中使用已經存在的 UPN 來建立新使用者，將會產生下列錯誤。  
   
 ![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig03_DupUPNADAC.gif)  
   
-**圖 SEQ 圖 \\\* 阿拉伯文1當新的使用者建立因 UPN 重複而失敗時，AD 管理中心顯示的錯誤**  
+**圖 SEQ 圖 \\ \* 阿拉伯文1當新的使用者建立因 UPN 重複而失敗時，AD 管理中心顯示的錯誤**  
   
 ### <a name="event-2974-source-activedirectory_domainservice"></a>事件2974來源： ActiveDirectory_DomainService  
 ![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig04_Event2974.gif)  
   
-**圖 SEQ 圖 \\\* 阿拉伯文2事件識別碼2974，錯誤8648**  
+**圖 SEQ 圖 \\ \* 阿拉伯文2事件識別碼2974，錯誤8648**  
   
 事件2974會列出已封鎖的值，以及一或多個已包含該值的物件清單（最多10個）。  在下圖中，您可以看到 UPN 屬性值 **<em>dhunt@blue.contoso.com</em>** 已經存在於其他四個物件上。  由於這是 Windows Server 2012 R2 的新功能，因此當下層 Dc 處理寫入嘗試時，仍然會在混合環境中意外建立重複的 UPN 和 Spn。  
   
 ![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig05_Event2974ShowAllDups.gif)  
   
-**圖 SEQ 圖 \\\* 阿拉伯文3事件2974，顯示包含重複 UPN 的所有物件**  
+**圖 SEQ 圖 \\ \* 阿拉伯文3事件2974顯示包含重複 UPN 的所有物件**  
   
 > [!TIP]  
 > 定期查看事件識別碼2974s：  
@@ -95,7 +95,7 @@ ms.locfileid: "80823061"
 8648 = "作業失敗，因為提供給新增/修改的 UPN 值不是全樹系的唯一。"  
   
 ### <a name="setspn"></a>SetSPN  
-在使用 **"-S"** 選項時，從 Windows Server 2008 版本開始，Setspn 已內建重複的 SPN 偵測。  不過，您可以使用 **"-A"** 選項略過重複的 SPN 偵測。  使用 SetSPN 搭配-A 選項，以目標為 Windows Server 2012 R2 DC 時，會封鎖建立重複的 SPN。  所顯示的錯誤訊息與使用-S 選項時所顯示的相同：「發現重複的 SPN，正在中止操作！」  
+Setspn.exe 自 Windows Server 2008 版本使用 **"-S"** 選項後，已內建重複的 SPN 偵測。  不過，您可以使用 **"-A"** 選項略過重複的 SPN 偵測。  使用 SetSPN 搭配-A 選項，以目標為 Windows Server 2012 R2 DC 時，會封鎖建立重複的 SPN。  所顯示的錯誤訊息與使用-S 選項時所顯示的相同：「發現重複的 SPN，正在中止操作！」  
   
 ### <a name="adsiedit"></a>ADSIEDIT  
   
@@ -107,7 +107,7 @@ The operation failed because UPN value provided for addition/modification is not
   
 ![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig06_ADSI21c8.gif)  
   
-**圖 SEQ 圖 \\當已封鎖重複的 UPN 時，\* 顯示在 ADSIEdit 中的阿拉伯文4錯誤訊息**  
+**圖 SEQ 圖 \\ \* 阿拉伯文4封鎖重複的 UPN 時，在 ADSIEdit 中顯示的錯誤訊息**  
   
 ### <a name="windows-powershell"></a>Windows PowerShell  
 Windows Server 2012 R2：  
@@ -118,15 +118,15 @@ Windows Server 2012 R2：
   
 ![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig08_SetADUser2012R2.gif)  
   
-以 Windows server 2012 R2 DC 為目標的 Windows Server 2012 上執行的 DSAC.EXE：  
+在以 Windows Server 2012 R2 DC 為目標的 Windows Server 2012 上執行 DSAC.exe：  
   
 ![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig09_UserCreateError.gif)  
   
-**圖 SEQ 圖 \\\* 阿拉伯文 5 DSAC.EXE 在非 Windows Server 2012 R2 上的使用者建立錯誤，同時以 Windows Server 2012 R2 DC 為目標**  
+**圖 SEQ 圖 \\ \* 阿拉伯文5在以 windows Server 2012 r2 DC 為目標時，非 Windows Server 2012 R2 上的使用者建立錯誤 dsac.exe**  
   
 ![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig10_UserModError.gif)  
   
-**圖 SEQ 圖 \\\* 阿拉伯文 6 DSAC.EXE 以 Windows server 2012 R2 DC 為目標時的非 Windows Server 2012 R2 使用者修改錯誤**  
+**圖 SEQ 圖 \\ \* 阿拉伯文6在以 windows Server 2012 r2 DC 為目標時，非 Windows Server 2012 R2 上的 dsac.exe 使用者修改錯誤**  
   
 ### <a name="restore-of-an-object-that-would-result-in-a-duplicate-upn-fails"></a>還原會導致重複 UPN 的物件失敗：  
 ![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig11_RestoreDupUPN.gif)  
@@ -143,7 +143,7 @@ Windows Server 2012 R2：
   
 3.  移除重複的 UPN  
   
-### <a name="identify-the-conflicting-upn-on-the-deleted-objectusing-repadminexe"></a>識別已刪除之 objectUsing repadmin 上的衝突 UPN  
+### <a name="identify-the-conflicting-upn-on-the-deleted-objectusing-repadminexe"></a>識別已刪除之 objectUsing 上的衝突 UPN repadmin.exe  
   
 ```  
 Repadmin /showattr DCName "DN of deleted objects container" /subtree /filter:"(msDS-LastKnownRDN=<NAME>)" /deleted /atts:userprincipalname  
@@ -158,7 +158,7 @@ s,DC=blue,DC=contoso,DC=com
     1> userPrincipalName: dhunt@blue.contoso.com  
 ```  
   
-### <a name="to-identify-all-objects-with-the-same-upnusing-repadminexe"></a>識別具有相同 UPN 的所有物件：使用 Repadmin  
+### <a name="to-identify-all-objects-with-the-same-upnusing-repadminexe"></a>識別具有相同 UPN 的所有物件：使用 Repadmin.exe  
   
 ```  
 repadmin /showattr WinBlueDC1 "DC=blue,DC=contoso,DC=com" /subtree /filter:"(userPrincipalName=dhunt@blue.contoso.com)" /deleted /atts:DN  
@@ -173,7 +173,7 @@ DN: CN=Dianne Hunt2\0ADEL:dd3ab8a4-3005-4f2f-814f-d6fc54a1a1c0,CN=Deleted Object
 ```  
   
 > [!TIP]  
-> 在 repadmin .exe 中，先前未記載的 **/deleted**參數是用來在結果集中包含已刪除的物件。  
+> repadmin.exe 中先前未記載的 **/deleted**參數是用來將已刪除的物件包含在結果集中。  
   
 ### <a name="using-global-search"></a>使用全域搜尋  
   
@@ -209,7 +209,7 @@ Get-ADObject -LdapFilter "(userPrincipalName=dhunt@blue.contoso.com)" -IncludeDe
 ### <a name="duplicate-spn"></a>重複的 SPN  
 ![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig16_DupSPN.gif)  
   
-**圖 SEQ 圖 \\當已封鎖重複的 SPN 時，\* 顯示在 ADSIEdit 中的阿拉伯文8錯誤訊息**  
+**圖 SEQ 圖 \\ \* 阿拉伯文8已封鎖重複的 SPN 時，ADSIEdit 中顯示的錯誤訊息**  
   
 [目錄服務] 事件記錄檔是**ActiveDirectory_DomainService**事件識別碼**2974**。  
   
@@ -223,7 +223,7 @@ servicePrincipalName Value=<SPN>
   
 ![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig17_DupSPN2974.gif)  
   
-**圖 SEQ 圖 \\\* 已封鎖建立重複的 SPN 時記錄的阿拉伯文9錯誤**  
+**圖 SEQ 圖 \\ \* 阿拉伯文9已封鎖建立重複的 SPN 時記錄的錯誤**  
   
 ### <a name="workflow"></a>工作流程  
   
@@ -341,7 +341,7 @@ servicePrincipalName Value=<SPN>
   
     1.  以已在使用中的 UPN 填入現有的使用者帳戶  
   
-        1.  使用 PowerShell、ADSIEDIT 或 Active Directory 管理中心（DSAC.EXE .exe）  
+        1.  使用 PowerShell、ADSIEDIT 或 Active Directory 管理中心（DSAC.exe）  
   
     2.  以已在使用中的 SPN 填入現有帳戶  
   
@@ -351,7 +351,7 @@ servicePrincipalName Value=<SPN>
   
 **也**  
   
-1.  向教室講師確認是否可以在 Active Directory 管理中心中啟用 *[AD 回收站](https://technet.microsoft.com/library/jj574144.aspx#BKMK_EnableRecycleBin)* 。  若是如此，請繼續下一個步驟。  
+1.  向教室講師確認是否可以在 Active Directory 管理中心中啟用*[AD 回收站](../../get-started/adac/advanced-ad-ds-management-using-active-directory-administrative-center--level-200-.md#BKMK_EnableRecycleBin)*。  若是如此，請繼續下一個步驟。  
   
 2.  在使用者帳戶上填入 UPN  
   
@@ -363,5 +363,3 @@ servicePrincipalName Value=<SPN>
   
 6.  假設您剛看到您在上一個步驟中看到的錯誤。  （而且沒有您剛執行之步驟的歷程記錄）您的目標是要完成帳戶的還原。  如需範例步驟，請參閱活頁簿。  
   
-
-

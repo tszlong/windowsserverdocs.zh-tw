@@ -9,12 +9,12 @@ ms.assetid: 158b7a62-2c52-448b-9467-c00d5018f65b
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cb02bf2ca6aa254a0f1895367abdb90c5c34e6a
-ms.sourcegitcommit: c1a5e46f64f25e1a0e658721130d87661b1d59a3
+ms.openlocfilehash: 095e40528d27be4509e3235a0ab4c03e59759f99
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86543382"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966760"
 ---
 # <a name="configure-vpn-device-tunnels-in-windows-10"></a>在 Windows 10 中設定 VPN 裝置通道
 
@@ -98,9 +98,9 @@ Set-VpnAuthProtocol -UserAuthProtocolAccepted Certificate, EAP -RootCertificateN
 
 ## <a name="deployment-and-testing"></a>部署及測試
 
-您可以使用 Windows PowerShell 腳本並使用 Windows Management Instrumentation （WMI）橋接器來設定裝置通道。 Always On VPN 裝置通道必須在**本機系統**帳戶的內容中設定。 若要完成這項操作，必須使用[PsExec](https://docs.microsoft.com/sysinternals/downloads/psexec)，這是[Sysinternals](https://docs.microsoft.com/sysinternals/)的公用程式套件中所包含的其中一個[PsTools](https://docs.microsoft.com/sysinternals/downloads/pstools) 。
+您可以使用 Windows PowerShell 腳本並使用 Windows Management Instrumentation （WMI）橋接器來設定裝置通道。 Always On VPN 裝置通道必須在**本機系統**帳戶的內容中設定。 若要完成這項操作，必須使用[PsExec](/sysinternals/downloads/psexec)，這是[Sysinternals](/sysinternals/)的公用程式套件中所包含的其中一個[PsTools](/sysinternals/downloads/pstools) 。
 
-如需有關如何部署每個裝置 `(.\Device)` 和每個使用者設定檔的指導方針 `(.\User)` ，請參閱搭配[使用 POWERSHELL 腳本與 WMI 橋接器提供者](https://docs.microsoft.com/windows/client-management/mdm/using-powershell-scripting-with-the-wmi-bridge-provider)。
+如需有關如何部署每個裝置 `(.\Device)` 和每個使用者設定檔的指導方針 `(.\User)` ，請參閱搭配[使用 POWERSHELL 腳本與 WMI 橋接器提供者](/windows/client-management/mdm/using-powershell-scripting-with-the-wmi-bridge-provider)。
 
 執行下列 Windows PowerShell 命令，以確認您已成功部署裝置設定檔：
 
@@ -173,17 +173,17 @@ Write-Host "$Message"
 
 以下是 VPN 用戶端設定資源。
 
-- [如何在 Configuration Manager 中建立 VPN 設定檔](https://docs.microsoft.com/configmgr/protect/deploy-use/create-vpn-profiles)
+- [如何在 Configuration Manager 中建立 VPN 設定檔](/configmgr/protect/deploy-use/create-vpn-profiles)
 - [設定 Windows 10 用戶端 Always On VPN 連線](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)
-- [VPN 設定檔選項](https://docs.microsoft.com/windows/access-protection/vpn/vpn-profile-options)
+- [VPN 設定檔選項](/windows/access-protection/vpn/vpn-profile-options)
 
 ### <a name="remote-access-server-gateway-resources"></a>遠端存取服務器閘道資源
 
 以下是遠端存取服務器（RAS）閘道資源。
 
-- [使用電腦驗證憑證設定 RRAS](https://technet.microsoft.com/library/dd458982.aspx)
-- [針對 IKEv2 VPN 連線進行疑難排解](https://technet.microsoft.com/library/dd941612.aspx)
-- [設定以 IKEv2 為基礎的遠端存取](https://technet.microsoft.com/library/ff687731.aspx)
+- [使用電腦驗證憑證設定 RRAS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd458982(v=ws.11))
+- [針對 IKEv2 VPN 連線進行疑難排解](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd941612(v=ws.10))
+- [設定以 IKEv2 為基礎的遠端存取](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff687731(v=ws.10))
 
 >[!IMPORTANT]
->搭配使用裝置通道與 Microsoft RAS 閘道時，您必須設定 RRAS 伺服器以支援 IKEv2 電腦憑證驗證，方法是啟用 [**允許對 ikev2 驗證方法進行電腦憑證驗證**]，如[這裡](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee922682%28v=ws.10%29)所述。 一旦啟用此設定，強烈建議使用**VpnAuthProtocol** PowerShell Cmdlet 搭配**RootCertificateNameToAccept**選擇性參數，以確保只有連結至明確定義的內部/私用根憑證授權單位的 VPN 用戶端憑證，才允許 RRAS IKEv2 連接。 或者，應該修改 RRAS 伺服器上的「**受信任的根憑證授權**單位」存放區，以確保它不包含如[這裡](https://blogs.technet.microsoft.com/rrasblog/2009/06/10/what-type-of-certificate-to-install-on-the-vpn-server/)所討論的公開憑證授權單位單位。 類似的方法也可能需要考慮其他 VPN 閘道。
+>搭配使用裝置通道與 Microsoft RAS 閘道時，您必須設定 RRAS 伺服器以支援 IKEv2 電腦憑證驗證，方法是啟用 [**允許對 ikev2 驗證方法進行電腦憑證驗證**]，如[這裡](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/ee922682%28v=ws.10%29)所述。 一旦啟用此設定，強烈建議使用**VpnAuthProtocol** PowerShell Cmdlet 搭配**RootCertificateNameToAccept**選擇性參數，以確保只有連結至明確定義的內部/私用根憑證授權單位的 VPN 用戶端憑證，才允許 RRAS IKEv2 連接。 或者，應該修改 RRAS 伺服器上的「**受信任的根憑證授權**單位」存放區，以確保它不包含如[這裡](/archive/blogs/rrasblog/what-type-of-certificate-to-install-on-the-vpn-server)所討論的公開憑證授權單位單位。 類似的方法也可能需要考慮其他 VPN 閘道。

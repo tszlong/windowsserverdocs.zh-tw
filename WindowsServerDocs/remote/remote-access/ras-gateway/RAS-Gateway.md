@@ -9,16 +9,16 @@ ms.assetid: acaa46b7-09b1-4707-9562-116df8db17eb
 ms.author: lizross
 author: eross-msft
 ms.date: 05/23/2018
-ms.openlocfilehash: 762ba98a57db1411098c6ae6a8394e9a9b063181
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 28f0dabe56ef91068b96cfa1701dbf4b8cceef53
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308527"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965940"
 ---
 # <a name="ras-gateway"></a>RAS 閘道
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 RAS 閘道是一種軟體路由器和閘道，可讓您在單一租使用者模式或多租使用者模式中使用。  
   
@@ -85,7 +85,7 @@ Hyper-v 網路虛擬化讓您能夠部署與基礎實體網路無關的虛擬機
   
 在 Windows Server 2016 中，RAS 閘道會在實體網路與 VM 網路資源之間路由傳送網路流量，而不論資源位於何處。 您可以使用 RAS 閘道，在位於相同實體位置或許多不同實體位置的實體和虛擬網路之間路由傳送網路流量。  
   
-例如，如果您的實體網路和虛擬網路位於相同的實體位置，您可以部署執行 Hyper-v 的電腦，並設定 RAS 閘道 VM 作為轉送閘道，並路由虛擬與實體之間的流量聯網.  
+例如，如果您的實體網路和虛擬網路位於相同的實體位置，您可以部署一部執行 Hyper-v 的電腦，並設定 RAS 閘道 VM 作為轉送閘道，並在虛擬和實體網路之間路由傳送流量。  
   
 在另一個範例中，如果您的虛擬網路存在於雲端中，您的 CSP 可以部署 RAS 閘道，讓您可以在 VPN 伺服器與 CSP 的 RAS 閘道之間建立虛擬私人網路（VPN）站對站連線;建立此連結時，您可以透過 VPN 連線連接到雲端中的虛擬資源。  
   
@@ -105,13 +105,13 @@ RAS 閘道部署在執行 Hyper-v 且設定了一個 VM 的專用電腦上。 �
 ## <a name="ras-gateway-features"></a><a name="bkmk_features"></a>RAS 閘道功能  
 RAS 閘道包含下列功能。  
   
--   **站對站 VPN**。 此 RAS 閘道功能可讓您使用站對站 VPN 連線，透過網際網路連接位於不同實體位置上的兩個網路。 如果您有總公司和多個分公司，您可以在每個位置部署 edge RAS 閘道，並建立站對站連線，以提供位置之間的網路流量。 對於在其資料中心裝載許多租使用者的 Csp，RAS 閘道會提供多租使用者閘道解決方案，讓您的租使用者可透過來自遠端網站的站對站 VPN 連線來存取和管理其資源，並允許其間的網路流量資料中心內的虛擬資源和其實體網路。  
+-   **站對站 VPN**。 此 RAS 閘道功能可讓您使用站對站 VPN 連線，透過網際網路連接位於不同實體位置上的兩個網路。 如果您有總公司和多個分公司，您可以在每個位置部署 edge RAS 閘道，並建立站對站連線，以提供位置之間的網路流量。 對於在其資料中心裝載許多租使用者的 Csp，RAS 閘道提供了多租使用者閘道解決方案，可讓您的租使用者透過來自遠端網站的站對站 VPN 連線來存取和管理其資源，並允許在資料中心的虛擬資源與其實體網路之間流動網路流量。  
   
 -   **點對站 VPN**。 此 RAS 閘道功能可讓組織員工或系統管理員從遠端位置連線到您組織的網路。 對於 RAS 閘道的單一租使用者部署，遠端員工可以使用 VPN 連線來連線到您的組織網路。 此連接可讓他們使用內部網路資源，例如內部網路網站和檔案伺服器。 針對多組織使用者共用部署，租使用者網路系統管理員可以使用點對站 VPN 連線來存取 CSP 資料中心的虛擬網路資源。  
   
 -   **使用邊界閘道協定（BGP）的動態路由**。 BGP 可以降低在路由器上手動路由設定的需求，因為它是動態路由通訊協定，並且會自動學習使用站台對站台 VPN 連線來連接的網站之間的路由。 如果您的組織有多個使用已啟用 BGP 的路由器連線的網站，例如 RAS 閘道，則 BGP 可讓路由器在網路中斷或失敗時，自動計算並使用有效的路由。 如需詳細資訊，請參閱[RFC 4271](https://tools.ietf.org/html/rfc4271)。  
   
--   **網路位址轉譯（NAT）** 。 網路位址轉譯（NAT）可讓您透過單一介面與單一公用 IP 位址，共用與公用網際網路的連線。 私人網路上的電腦會使用私用、無法路由傳送的位址。 NAT 會將私人位址對應至公用位址。 此 RAS 閘道功能可讓具有單一租使用者部署的組織員工從閘道後方存取網際網路資源。 對於 Csp，這項功能可讓在租使用者 Vm 上執行的應用程式存取網際網路。 例如，設定為 Web 服務器的租使用者 VM 可以與外部財務資源連線，以處理信用卡交易。  
+-   **網路位址轉譯（NAT）**。 網路位址轉譯（NAT）可讓您透過單一介面與單一公用 IP 位址，共用與公用網際網路的連線。 私人網路上的電腦會使用私用、無法路由傳送的位址。 NAT 會將私人位址對應至公用位址。 此 RAS 閘道功能可讓具有單一租使用者部署的組織員工從閘道後方存取網際網路資源。 對於 Csp，這項功能可讓在租使用者 Vm 上執行的應用程式存取網際網路。 例如，設定為 Web 服務器的租使用者 VM 可以與外部財務資源連線，以處理信用卡交易。  
 
   
 ## <a name="ras-gateway-deployment-scenarios"></a><a name="bkmk_deploy"></a>RAS 閘道部署案例  
@@ -124,9 +124,9 @@ RAS 閘道包含下列功能。
 ## <a name="ras-gateway-management-tools"></a><a name="bkmk_manage"></a>RAS 閘道管理工具  
 以下是適用于 RAS 閘道的管理工具。  
   
--   在 Windows Server 2016 中，若要部署 RAS 閘道路由器，您必須使用 Windows PowerShell 命令。 如需詳細資訊，請參閱 Windows Server 2016 和 Windows 10 的[遠端存取 Cmdlet](https://docs.microsoft.com/powershell/module/remoteaccess) 。  
+-   在 Windows Server 2016 中，若要部署 RAS 閘道路由器，您必須使用 Windows PowerShell 命令。 如需詳細資訊，請參閱 Windows Server 2016 和 Windows 10 的[遠端存取 Cmdlet](/powershell/module/remoteaccess) 。  
   
--   在 System Center 2012 R2 Virtual Machine Manager （VMM）中，RAS 閘道名為 Windows Server Gateway。 VMM 軟體介面中提供一組有限的邊界閘道協定（BGP）設定選項，包括**本機 BGP Ip 位址**和自發**系統編號（ASN）** 、 **BGP 對等 ip 地址清單**和**ASN 值**。 不過，您可以使用遠端存取 Windows PowerShell BGP 命令來設定 Windows Server 閘道的其他所有功能。 如需詳細資訊，請參閱適用于 Windows Server 2016 和 Windows 10 的[Virtual Machine Manager （VMM）](https://technet.microsoft.com/system-center-docs/vmm/vmm)和[遠端存取 Cmdlet](https://technet.microsoft.com/library/hh918399.aspx) 。  
+-   在 System Center 2012 R2 Virtual Machine Manager （VMM）中，RAS 閘道名為 Windows Server Gateway。 VMM 軟體介面中提供一組有限的邊界閘道協定（BGP）設定選項，包括**本機 BGP Ip 位址**和自發**系統編號（ASN）**、 **BGP 對等 ip 地址清單**和**ASN 值**。 不過，您可以使用遠端存取 Windows PowerShell BGP 命令來設定 Windows Server 閘道的其他所有功能。 如需詳細資訊，請參閱適用于 Windows Server 2016 和 Windows 10 的[Virtual Machine Manager （VMM）](/system-center/vmm/overview?view=sc-vmm-2019)和[遠端存取 Cmdlet](/system-center/vmm/overview?view=sc-vmm-2019) 。  
   
 ## <a name="related-topics"></a>相關主題
 - [RAS 閘道高可用性](../../../networking/sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md)  

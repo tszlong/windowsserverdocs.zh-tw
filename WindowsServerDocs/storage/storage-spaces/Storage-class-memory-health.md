@@ -9,12 +9,12 @@ ms.topic: article
 author: JasonGerend
 ms.date: 06/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 07fdd682683be00ad7643bfa20b6e95270471f62
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 12b2ed2a176167b79596ee398fc43c66d7196a54
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859141"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966430"
 ---
 # <a name="storage-class-memory-nvdimm-n-health-management-in-windows"></a>Windows 中的存放裝置類別記憶體 (NVDIMM-N) 健全狀況管理
 
@@ -23,8 +23,8 @@ ms.locfileid: "80859141"
 本文向系統管理員和 IT 專業人員提供 Windows 中存放裝置類別記憶體 (NVDIMM-N) 裝置特定的錯誤處理與健全狀況管理相關資訊，強調說明存放裝置類別記憶體與傳統存放裝置之間的差異。
 
 如果您不熟悉 Windows 對存放裝置類別記憶體裝置的支援，這些短片可提供概觀：
-- [在 Windows Server 2016 中使用非動態記憶體（NVDIMM-N）做為區塊存放裝置](https://channel9.msdn.com/Events/Build/2016/P466)
-- [在 Windows Server 2016 中使用非動態記憶體（NVDIMM-N）做為位元組可定址的儲存空間](https://channel9.msdn.com/Events/Build/2016/P470)
+- [在 Windows Server 2016 中使用非揮發性記憶體 (NVDIMM-N) 做為區塊存放裝置](https://channel9.msdn.com/Events/Build/2016/P466)
+- [在 Windows Server 2016 中使用非揮發性記憶體 (NVDIMM-N) 做為位元組可定址存放裝置](https://channel9.msdn.com/Events/Build/2016/P470)
 - [以 Windows Server 2016 中的持續性記憶體加速 SQL Server 2016 效能](https://channel9.msdn.com/Shows/Data-Exposed/SQL-Server-2016-and-Windows-Server-2016-SCM--FAST)
 
 另請參閱[瞭解和部署儲存空間直接存取中的持續性記憶體](deploy-pmem.md)。
@@ -33,7 +33,7 @@ ms.locfileid: "80859141"
 
 這裡所列出的所有狀況都預期是非常罕見的，但還是要根據硬體使用的狀況而定。
 
-以下各種案例可能會參考儲存空間組態。 令人感興趣的特定組態是其中使用兩個 NVDIMM-N 裝置做為儲存空間中的鏡像回寫式快取。 若要設定這類組態，請參閱[使用 NVDIMM-N 回寫式快取設定儲存空間](https://msdn.microsoft.com/library/mt650885.aspx)。
+以下各種案例可能會參考儲存空間組態。 令人感興趣的特定組態是其中使用兩個 NVDIMM-N 裝置做為儲存空間中的鏡像回寫式快取。 若要設定這類組態，請參閱[使用 NVDIMM-N 回寫式快取設定儲存空間](/sql/relational-databases/performance/configuring-storage-spaces-with-a-nvdimm-n-write-back-cache?view=sql-server-ver15)。
 
 在 Windows Server 2016 中，儲存空間 GUI 會將 NVDIMM N 匯流排類型顯示為「未知」。 這在建立集區、儲存空間 VD 時不會發生任何功能中斷或失效。 您可以執行下列命令來驗證匯流排類型：
 
@@ -53,21 +53,21 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-| 802c-01-1602-117cb5fc | 狀況良好 | 確定 | |
+| 802c-01-1602-117cb5fc | Healthy | 確定 | |
 | 802c-01-1602-117cb64f | 警告 | 預測性失敗 | {超出閾值，NVDIMM\_N 錯誤} |
 
 > [!NOTE]
-> 若要尋找事件中指定之 NVDIMM-N 裝置的實體位置，請在 [事件檢視器] 中事件的 **\[詳細資料\]** 索引標籤上，移至 **\[EventData\]**  >  **\[位置\]** 。 請注意，Windows Server 2016 會列出不正確的 NVDIMM-N 裝置位置，但這已在 Windows Server 版本 1709 中修正。
+> 若要尋找事件中指定之 NVDIMM-N 裝置的實體位置，請在 [事件檢視器] 中事件的 **\[詳細資料\]** 索引標籤上，移至 **\[EventData\]** > **\[位置\]**。 請注意，Windows Server 2016 會列出不正確的 NVDIMM-N 裝置位置，但這已在 Windows Server 版本 1709 中修正。
 
 如需了解各種健全狀況的說明，請參閱下列各節。
 
 ## <a name="warning-health-status"></a>「警告」健全狀況狀態
 
-這是當您檢查存放裝置類別記憶體裝置的健全狀況，並看到其 [健全狀況狀態] 列為 [警告] 的情況，如下列範例輸出中所示︰
+這是當您檢查存放裝置類別記憶體裝置的健全狀況，並看到其 [健全狀況狀態] 列為 [警告]**** 的情況，如下列範例輸出中所示︰
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-| 802c-01-1602-117cb5fc | 狀況良好 | 確定 | |
+| 802c-01-1602-117cb5fc | Healthy | 確定 | |
 | 802c-01-1602-117cb64f | 警告 | 預測性失敗 | {超出閾值，NVDIMM\_N 錯誤} |
 
 下表列出有關此情況的部分資訊。
@@ -83,12 +83,12 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 ## <a name="writes-to-an-nvdimm-n-fail"></a>寫入 NVDIMM-N 會失敗
 
-這是當您檢查存放裝置類別記憶體裝置的健全狀況，並看到其 [健全狀況狀態] 列為 [狀況不良]，且 [操作狀態] 提及 [IO 錯誤] 的情況，如下列範例輸出中所示︰
+這是當您檢查存放裝置類別記憶體裝置的健全狀況，並看到其 [健全狀況狀態] 列為 [狀況不良]****，且 [操作狀態] 提及 [IO 錯誤]**** 的情況，如下列範例輸出中所示︰
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-| 802c-01-1602-117cb5fc | 狀況良好 | 確定 | |
-| 802c-01-1602-117cb64f | 狀況不良 | {過時的中繼資料、IO 錯誤、暫時性錯誤} | {遺失資料持續性、遺失資料、NV...} |
+| 802c-01-1602-117cb5fc | Healthy | 確定 | |
+| 802c-01-1602-117cb64f | Unhealthy | {過時的中繼資料、IO 錯誤、暫時性錯誤} | {遺失資料持續性、遺失資料、NV...} |
 
 下表列出有關此情況的部分資訊。
 
@@ -103,11 +103,11 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 ## <a name="nvdimm-n-is-shown-with-a-capacity-of-0-bytes-or-as-a-generic-physical-disk"></a>NVDIMM-N 會顯示容量為 '0' 位元組或是「一般實體磁碟」
 
-這是當存放裝置類別記憶體裝置顯示容量為 0 位元組且無法使用，或者公開為「一般實體磁碟」物件且 [操作狀態] 為 [遺失通訊] 的情況，如下列範例輸出中所示︰
+這是當存放裝置類別記憶體裝置顯示容量為 0 位元組且無法使用，或者公開為「一般實體磁碟」物件且 [操作狀態] 為 [遺失通訊]**** 的情況，如下列範例輸出中所示︰
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-|802c-01-1602-117cb5fc|狀況良好|確定||
+|802c-01-1602-117cb5fc|Healthy|確定||
 ||警告|遺失通訊||
 
 下表列出有關此情況的部分資訊。
@@ -123,12 +123,12 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 ## <a name="nvdimm-n-is-shown-as-a-raw-or-empty-disk-after-a-reboot"></a>在重新開機後，NVDIMM-N 會顯示為 RAW 或空的磁碟
 
-這是當您檢查存放裝置類別記憶體裝置的健全狀況，並看到其 [健全狀況狀態] 為 [狀況不良]，且 [操作狀態] 為 [無法識別的中繼資料] 的情況，如下列範例輸出中所示︰
+這是當您檢查存放裝置類別記憶體裝置的健全狀況，並看到其 [健全狀況狀態] 為 [狀況不良]****，且 [操作狀態] 為 [無法識別的中繼資料]**** 的情況，如下列範例輸出中所示︰
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-|802c-01-1602-117cb5fc|狀況良好|確定|{不明}|
-|802c-01-1602-117cb64f|狀況不良|{無法識別的中繼資料、過時的中繼資料}|{不明}|
+|802c-01-1602-117cb5fc|Healthy|確定|{不明}|
+|802c-01-1602-117cb64f|Unhealthy|{無法識別的中繼資料、過時的中繼資料}|{不明}|
 
 下表列出有關此情況的部分資訊。
 
@@ -148,5 +148,3 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 Windows Server 2016 和 Windows 10 Anniversary Edition 不支援 NVDIMM-N 的交錯式集合。
 
 在撰寫本文時，還沒有任何機制可讓主機作業系統正確地識別類似集合中的個別 NVDIMM-N，並清楚地告知使用者哪一個特定裝置造成錯誤或需要維修。
-
-

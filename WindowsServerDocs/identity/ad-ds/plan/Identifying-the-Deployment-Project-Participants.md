@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: efb240fabc4272a4dbef4cb7e86d7058cedb9584
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 9fb864bcf74fb0fee921288165b1e042a34f027e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624166"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965530"
 ---
 # <a name="identifying-the-deployment-project-participants"></a>識別部署專案參與者
 
@@ -201,7 +201,7 @@ Active Directory 的設計小組會負責收集對 Active Directory 邏輯結構
 
 - 與部署小組合作，在實驗室環境中測試設計，以確保其功能如所規劃，並視需要修改設計，以解決發生的任何問題
 
-- 建立符合樹系複寫需求的網站拓朴設計，同時防止可用頻寬超載。 如需設計網站拓撲的詳細資訊，請參閱[設計 Windows Server 2008 的網站拓朴 AD DS](https://technet.microsoft.com/library/cc772013.aspx)。
+- 建立符合樹系複寫需求的網站拓朴設計，同時防止可用頻寬超載。 如需設計網站拓撲的詳細資訊，請參閱[設計 Windows Server 2008 的網站拓朴 AD DS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772013(v=ws.10))。
 
 - 與部署小組合作，以確保設計已正確執行
 
@@ -251,4 +251,4 @@ Active Directory 部署小組包含下列成員：
 部署小組會在部署階段與服務和資料管理員合作，以確保作業小組的成員熟悉新的設計。 這有助於確保在部署作業完成時順暢地轉換擁有權。 完成部署程式時，維護新的 Active Directory 環境的責任會傳遞給作業小組。
 
 ### <a name="documenting-the-design-and-deployment-teams"></a>記載設計和部署小組
-記錄要參與 AD DS 設計和部署之人員的名稱和連絡人資訊。 識別誰負責設計和部署小組的每個角色。 一開始，這份清單包含潛在的樹系擁有者、專案經理和專案架構設計人員。 當您判斷將部署的樹係數目時，可能需要為其他樹系建立新的設計小組。 請注意，當小組成員資格變更時，您將需要更新檔，而且在設計程式期間識別各種 Active Directory 的擁有者。 如需協助您為每個樹系記錄設計和部署小組的工作表，請從[適用于 Windows Server 2003 部署套件的作業輔助](https://microsoft.com/download/details.aspx?id=9608)下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，並開啟「設計和部署小組資訊」（DSSLOGI_1 .doc）。
+記錄要參與 AD DS 設計和部署之人員的名稱和連絡人資訊。 識別誰負責設計和部署小組的每個角色。 一開始，這份清單包含潛在的樹系擁有者、專案經理和專案架構設計人員。 當您判斷將部署的樹係數目時，可能需要為其他樹系建立新的設計小組。 請注意，當小組成員資格變更時，您將需要更新檔，而且在設計程式期間識別各種 Active Directory 的擁有者。 如需協助您為每個樹系記錄設計和部署小組的工作表，請從[適用于 Windows Server 2003 部署套件的工作輔助程式](https://microsoft.com/download/details.aspx?id=9608)下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，並開啟「設計和部署小組資訊」（DSSLOGI_1.doc）。

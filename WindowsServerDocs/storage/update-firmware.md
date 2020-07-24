@@ -8,12 +8,12 @@ ms.technology: storage-spaces
 ms.topic: article
 author: toklima
 ms.date: 10/04/2016
-ms.openlocfilehash: 55a4fc94440b763c48735ffe44099da702857489
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0e117b486fd628397bfe36aa897ff64cdd26f98b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820871"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965830"
 ---
 # <a name="updating-drive-firmware"></a>更新磁碟機韌體
 >適用于： Windows Server 2019、Windows Server 2016、Windows 10
@@ -30,11 +30,11 @@ ms.locfileid: "80820871"
 如需硬體是否支援 Windows 更新磁碟機韌體的相關資訊，請連絡解決方案廠商。
 以下是各種需求的連結︰
 
--   SATA：[Device.Storage.Hd.Sata](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsata) - 在 **[如果已實作\] 韌體下載和啟用**小節
+-   SATA：[Device.Storage.Hd.Sata](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)#devicestoragehdsata) - 在 **[如果已實作\] 韌體下載和啟用**小節
     
--   SAS：[Device.Storage.Hd.Sas](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsas) - 在 **[如果已實作\] 韌體下載和啟用**小節
+-   SAS：[Device.Storage.Hd.Sas](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)#devicestoragehdsas) - 在 **[如果已實作\] 韌體下載和啟用**小節
 
--   NVMe：[Device.Storage.ControllerDrive.NVMe](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragecontrollerdrivenvme) - 在 **5.7** 和 **5.8** 小節。
+-   NVMe：[Device.Storage.ControllerDrive.NVMe](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)#devicestoragecontrollerdrivenvme) - 在 **5.7** 和 **5.8** 小節。
 
 ## <a name="powershell-cmdlets"></a>PowerShell Cmdlet
 
@@ -43,7 +43,7 @@ ms.locfileid: "80820871"
 -   Get-StorageFirmwareInformation
 -   Update-StorageFirmware
 
-第一個 Cmdlet 提供裝置功能、韌體映像和修訂的詳細資訊。 在此情況下，機器只會包含有 1 個韌體插槽的單一 SATA SSD。 以下是範例：
+第一個 Cmdlet 提供裝置功能、韌體映像和修訂的詳細資訊。 在此情況下，機器只會包含有 1 個韌體插槽的單一 SATA SSD。 以下為範例：
 
    ```powershell
    Get-PhysicalDisk | Get-StorageFirmwareInformation
@@ -105,7 +105,7 @@ Measure-Command {$pd | Update-StorageFirmware -ImagePath C:\\Firmware\\J3E16101.
 
 1. 檢閱韌體版本資訊，並確認更新可解決可能會影響您環境的問題，而且韌體不會包含任何可能會對您造成負面影響的已知問題。
 
-2. 在實驗室中於具有相同磁碟機的伺服器上安裝韌體 (如果有相同磁碟機的多個修訂，則包含磁碟機修訂)，並使用新的韌體測試正在進行載入的磁碟機。 如需執行綜合負載測試的相關資訊，請參閱[在 Windows Server 中使用綜合工作負載測試儲存空間效能](https://technet.microsoft.com/library/dn894707.aspx)。
+2. 在實驗室中於具有相同磁碟機的伺服器上安裝韌體 (如果有相同磁碟機的多個修訂，則包含磁碟機修訂)，並使用新的韌體測試正在進行載入的磁碟機。 如需執行綜合負載測試的相關資訊，請參閱[在 Windows Server 中使用綜合工作負載測試儲存空間效能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn894707(v=ws.11))。
 
 ## <a name="automated-firmware-updates-with-storage-spaces-direct"></a>使用儲存空間直接存取的自動化韌體更新
 
@@ -164,7 +164,7 @@ $NewDoc = Get-Content <Path> | Out-String
 $SpacesDirect | Set-StorageHealthSetting -Name "System.Storage.SupportedComponents.Document" -Value $NewDoc
 ```
 
-如果您想要查看作用中的健全狀況服務，並深入瞭解其推出機制，請查看這段影片： https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct
+如果您想要查看作用中的健全狀況服務，並深入瞭解其推出機制，請看一下這段影片：https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct
 
 ## <a name="frequently-asked-questions"></a>常見問題集
 

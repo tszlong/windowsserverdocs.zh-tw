@@ -8,19 +8,19 @@ ms.date: 08/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 26c1635d4218c7d33377b6b8a90bc96ea4ad37b3
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 353546be17f096b692c2429aa65529d302a2df7e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948786"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966850"
 ---
 # <a name="ad-fs-openid-connectoauth-concepts"></a>AD FS OpenID Connect/OAuth 概念
-適用于 AD FS 2016 和更新版本
+適用於 AD FS 2016 和更新版本
  
 ## <a name="modern-authentication-actors"></a>新式驗證執行者 
 
-|執行者| 說明|
+|Actor| 描述|
 |-----|-----|
 |使用者|這是需要存取資源的安全性主體（使用者、應用程式、服務和群組）。|  
 |用戶端|這是您的 web 應用程式，以其用戶端識別碼來識別。 用戶端通常是與使用者互動的合作物件，而且會向授權伺服器要求權杖。
@@ -34,7 +34,7 @@ ms.locfileid: "75948786"
 ## <a name="application-types"></a>應用程式類型 
  
 
-|應用程式類型|說明|[角色]|
+|應用程式類型|描述|角色|
 |-----|-----|-----|
 |原生應用程式|有時也稱為**公用用戶端**，這是要在電腦或裝置上執行的用戶端應用程式，並與使用者互動。|向授權伺服器要求權杖（AD FS），以供使用者存取資源。 使用權杖做為 HTTP 標頭，將 HTTP 要求傳送至受保護的資源。| 
 |伺服器應用程式（Web 應用程式）|在伺服器上執行的 web 應用程式，通常可透過瀏覽器存取使用者。 因為它能夠維護自己的用戶端「秘密」或認證，有時也稱為「**機密用戶端**」。 |向授權伺服器要求權杖（AD FS），以供使用者存取資源。 要求權杖之前，用戶端（Web 應用程式）必須使用其密碼進行驗證。 | 
@@ -55,14 +55,14 @@ ms.locfileid: "75948786"
  
 在 AD FS 中註冊資源時，可以將範圍設定為允許 AD FS 執行特定的動作。 除了設定範圍之外，也必須在要求中傳送範圍值，以執行動作 AD FS。 例如，在資源註冊期間，系統管理員必須將範圍設定為 openid，而應用程式（用戶端）必須在驗證要求中傳送 scope = openid，以 AD FS 發行識別碼權杖。 以下提供 AD FS 中可用範圍的詳細資料 
  
-- aza-如果使用 [適用于訊息代理程式用戶端的 OAuth 2.0 通訊協定延伸](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706) 而且範圍參數包含「aza」範圍，則伺服器會發出新的主要重新整理權杖，並將它設定在回應的 [refresh_token] 欄位中，以及將 [refresh_token_expires_in] 欄位設定為新主要重新整理權杖的存留期（如果有強制執行）。 
-- openid-允許應用程式要求使用 OpenID Connect 授權通訊協定。 
-- logon_cert-logon_cert 範圍可讓應用程式要求登入憑證，以便用來以互動方式登入已驗證的使用者。 AD FS 伺服器會省略回應中的 access_token 參數，並改為提供 base64 編碼的 CMS 憑證鏈或 CMC 完整的 PKI 回應。  [這裡](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e)提供更多詳細資料。
-- user_impersonation-必須有 user_impersonation 範圍，才能成功向 AD FS 要求代理者存取權杖。 如需如何使用此範圍的詳細資訊，請參閱[使用 OAuth 搭配 AD FS 2016，使用代理程式（OBO）建立多層式應用程式](ad-fs-on-behalf-of-authentication-in-windows-server.md)。 
+- aza-如果使用訊息 [代理程式用戶端的 OAuth 2.0 通訊協定延伸](/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706)模組，   且範圍參數包含「aza」範圍，則伺服器會發出新的主要重新整理權杖，並將它設定在回應的 [refresh_token] 欄位中，以及將 [refresh_token_expires_in] 欄位設定為新主要重新整理權杖的存留期（如果有強制執行）。 
+- openid - 可讓應用程式要求使用 OpenID Connect 授權通訊協定。 
+- logon_cert - logon_cert 範圍可讓應用程式要求登入憑證，以便用來以互動方式登入已經過驗證的使用者。 AD FS 伺服器會省略回應中的 access_token 參數，並改為提供 base64 編碼的 CMS 憑證鏈或 CMC 完整 PKI 回應。  [這裡](/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e)提供更多詳細資料。
+- user_impersonation - 必須有 user_impersonation 範圍，才能成功向 AD FS 要求代理者存取權杖。 如需如何使用此範圍的詳細資訊，請參閱[使用 OAuth 搭配 AD FS 2016，使用代理程式（OBO）建立多層式應用程式](ad-fs-on-behalf-of-authentication-in-windows-server.md)。 
 - allatclaims – allatclaims 範圍可讓應用程式要求存取權杖中的宣告，以便在識別碼權杖中新增。   
-- vpn_cert-vpn_cert 範圍可讓應用程式要求 VPN 憑證，其可用來建立使用 EAP-TLS 驗證的 VPN 連線。 這已不再受到支援。 
-- 電子郵件-允許應用程式要求已登入使用者的電子郵件宣告。  
-- 設定檔-允許應用程式要求登入使用者的設定檔相關宣告。  
+- vpn_cert - vpn_cert 範圍可讓應用程式要求 VPN 憑證，其可用來建立使用 EAP-TLS 驗證的 VPN 連線。 不再支援此範圍。 
+- 電子郵件 - 可讓應用程式要求已登入使用者的電子郵件宣告。  
+- 設定檔 - 可讓應用程式要求已登入使用者的設定檔相關宣告。  
 
 ## <a name="claims"></a>宣告 
  
@@ -81,7 +81,7 @@ AD FS 發出的安全性權杖（存取和識別碼權杖）包含宣告或已�
  
  2. AD FS 會在驗證要求中驗證用戶端識別碼，並在 AD FS 中的用戶端和資源註冊期間取得用戶端識別碼。 如果使用的是機密用戶端，則 AD FS 也會驗證驗證要求中提供的用戶端密碼。 AD FS 也會驗證用戶端的重新導向 uri。 
  
- 3. AD FS 會識別用戶端想要透過在驗證要求中傳遞的資源參數來存取的資源。 如果使用 MSAL 用戶端程式庫，則不會傳送資源參數。 相反地，資源 url 會當做範圍參數的一部分來傳送： *scope = [resource url]//[範圍值，例如 openid]* 。 
+ 3. AD FS 會識別用戶端想要透過在驗證要求中傳遞的資源參數來存取的資源。 如果使用 MSAL 用戶端程式庫，則不會傳送資源參數。 相反地，資源 url 會當做範圍參數的一部分來傳送： *scope = [resource url]//[範圍值，例如 openid]*。 
 
     如果資源不是使用資源或範圍參數來傳遞，ADFS 將會使用預設的資源 urn： microsoft：使用者資訊，其原則（例如，MFA、發行或授權原則）無法設定。 
  
@@ -140,7 +140,7 @@ AD FS 發出的安全性權杖（存取和識別碼權杖）包含宣告或已�
 
 ## <a name="ad-fs-endpoints"></a>AD FS 端點
 
-|AD FS 端點|說明|
+|AD FS 端點|描述|
 |-----|-----|
 |/authorize|AD FS 會傳回可用於取得存取權杖的授權碼|
 |/token|AD FS 會傳回存取權杖，可用於存取資源（Web API）|

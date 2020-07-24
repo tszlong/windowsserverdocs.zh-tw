@@ -8,12 +8,12 @@ ms.date: 06/02/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 9ce9aa052290b82b2f085cb4637fcffbdf7b42ce
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: d7f1b5387d82d487e50b217b28367e82617a66ea
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473115"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966250"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>儲存體遷移服務常見問題（FAQ）
 
@@ -128,7 +128,7 @@ Windows Server 2019 隨附的儲存體遷移服務版本不支援將檔案的先
 
 - **啟用高效能處理。** 確定伺服器的 BIOS/UEFI 設定能提供高效能，例如停用 C-State、設定 QPI 速度、啟用 NUMA，以及設定最高的記憶體頻率。 確保 Windows Server 中的電源管理設定為高效能。 視需要重新啟動。 在完成遷移之後，別忘了將這些回復到適當的狀態。
 
-- **微調硬體**請參閱[Windows server 2016 的效能微調指導方針](https://docs.microsoft.com/windows-server/administration/performance-tuning/)，以微調執行 Windows Server 2019 和 Windows server 2016 的 orchestrator 和目的地電腦。 [網路子系統效能調整](https://docs.microsoft.com/windows-server/networking/technologies/network-subsystem/net-sub-performance-tuning-nics)一節包含特別有用的資訊。
+- **微調硬體**請參閱[Windows server 2016 的效能微調指導方針](/windows-server/administration/performance-tuning/)，以微調執行 Windows Server 2019 和 Windows server 2016 的 orchestrator 和目的地電腦。 [網路子系統效能調整](../../networking/technologies/network-subsystem/net-sub-performance-tuning-nics.md)一節包含特別有用的資訊。
 
 - **使用更快速的儲存空間。** 雖然可能難以升級來源電腦儲存速度，但您應該確保目的地儲存體的寫入 IO 效能至少會快上一倍，因為來源會處於讀取 IO 效能，以確保傳輸中沒有任何不必要的瓶頸。 如果目的地是 VM，請確定至少有遷移的目的，它會在您的管理元件主機最快速的儲存層中執行，例如在 flash 層或使用鏡像全部-flash 或混合式空間的儲存空間直接存取 HCI 叢集。 當 SMS 遷移完成時，VM 可以即時移轉至較慢的層或主機。
 
@@ -164,7 +164,7 @@ Windows Server 2019 隨附的儲存體遷移服務版本不支援從 NTFS 遷移
 
 ## <a name="what-do-the-error-numbers-mean-in-the-transfer-csv"></a>錯誤號碼在傳送 CSV 中的意義為何？
 
-在傳輸 CSV 檔案中找到的大部分錯誤都是 Windows 系統錯誤碼。 您可以查看[Win32 錯誤碼檔](https://docs.microsoft.com/windows/win32/debug/system-error-codes)，瞭解每個錯誤的意義。
+在傳輸 CSV 檔案中找到的大部分錯誤都是 Windows 系統錯誤碼。 您可以查看[Win32 錯誤碼檔](/windows/win32/debug/system-error-codes)，瞭解每個錯誤的意義。
 
 ## <a name="what-are-my-options-to-give-feedback-file-bugs-or-get-support"></a><a name="give-feedback"></a>我有哪些選項可以提供意見反應、提出 bug，或取得支援？
 

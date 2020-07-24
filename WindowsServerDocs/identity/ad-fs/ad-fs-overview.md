@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 0258a0f9b697b587f6ea5e5b4b2bc201ef23ddf1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d3209db2551b50c01fb0893a398b49c6078acd9f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815071"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964950"
 ---
 # <a name="ad-fs-overview"></a>AD FS 概觀
 
@@ -26,10 +26,9 @@ Active Directory 同盟服務（AD FS）可安全地跨安全性和企業界限�
   
 * [AD FS OpenID Connect/OAuth 流程和應用程式案例](../ad-fs/overview/ad-fs-openid-connect-oauth-flows-scenarios.md) 
 
-* [AD FS 需求](../ad-fs/overview/AD-FS-2016-Requirements.md)
+* [AD FS 需求](./overview/ad-fs-requirements.md)
 
-* [AD FS 常見問題](../ad-fs/overview/AD-FS-FAQ.md)
+* [AD FS 常見問題集](../ad-fs/overview/AD-FS-FAQ.md)
 
   
   
-

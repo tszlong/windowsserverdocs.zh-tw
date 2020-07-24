@@ -8,12 +8,12 @@ ms.date: 10/24/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: f4dd1d45646475be3788cd6b615b1743976eedae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ce9bddbc9b03a9019860e9b831bb928326098b76
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358409"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965950"
 ---
 # <a name="using-an-azure-ad-ux-web-theme-in-active-directory-federation-services"></a>在 Active Directory 同盟服務中使用 Azure AD UX Web 主題
 AD FS 表單登入目前不會反映 Azure/O365 登入體驗。  為了為使用者提供更一致且流暢的體驗，我們發行了遵循的級聯樣式表 web 主題，可套用至您的 AD FS 伺服器。  目前，Windows Server 2016 上 AD FS 的表單登入如下所示：
@@ -32,29 +32,29 @@ AD FS 表單登入目前不會反映 Azure/O365 登入體驗。  為了為使用
 
 ### <a name="to-enable-the-new-azure-ad-ux-web-theme-in-ad-fs"></a>若要在 AD FS 中啟用新的 Azure AD UX web 主題
 1. 以系統管理員身分啟動 PowerShell
-2. 使用 PowerShell 建立新的 web 主題： `New-AdfsWebTheme –Name custom –StyleSheet @{path="c:\NewTheme.css"}`
-3. 使用 PowerShell 將新主題設定為作用中主題： `Set-AdfsWebConfig -ActiveThemeName custom`
-   ![PowerShell](media/Azure-UX-Web-Theme-in-AD-FS/two.png)
-4. 前往 HTTPs://<AD FS name.domain>/adfs/ls/iDPInitiatedsignon.htm ![登入來測試登入](media/Azure-UX-Web-Theme-in-AD-FS/three.png)
+2. 使用 PowerShell 建立新的 web 主題：`New-AdfsWebTheme –Name custom –StyleSheet @{path="c:\NewTheme.css"}`
+3. 使用 powershell 將新主題設定為作用中主題： `Set-AdfsWebConfig -ActiveThemeName custom` 
+    ![ powershell](media/Azure-UX-Web-Theme-in-AD-FS/two.png)
+4. 前往 HTTPs:///adfs/ls/idpinitiatedsignon.htm 登入來測試登入 <AD FS name.domain> ![](media/Azure-UX-Web-Theme-in-AD-FS/three.png)
 
-> !下您必須確定已啟用 iDPInitiatedsignon.aspx)。  預設不會啟用此功能。  若要啟用 iDPInitiatedsignon.aspx)，請使用下列 PowerShell 命令： `Set-AdfsProperties –EnableIdpInitiatedSignonPage $True`
+> !下您必須確定已啟用 iDPInitiatedsignon.aspx)。  預設不會啟用此記錄。  若要啟用 iDPInitiatedsignon.aspx)，請使用下列 PowerShell 命令：`Set-AdfsProperties –EnableIdpInitiatedSignonPage $True`
 
 ## <a name="image-recommendations"></a>映射建議
 啟用中央 UI 可讓您將相同的影像用於背景和標誌，而您可能已經有 Azure Active Directory 公司商標。 一般來說，大小、比例和格式的相同建議也適用。
 
 ### <a name="logo"></a>標誌
 
-描述 | 限制式 | 建議
+描述 | 條件約束 | 建議
 ------- | ------- | ----------
-標誌會顯示在 [登入] 面板頂端。 | 透明 JPG 或 PNG<br>最大高度： 36 px<br>寬度上限： 245 px | 請在這裡使用您組織的標誌。<br>使用透明影像。 請不要假設背景是白色。<br>請勿在影像中的標誌周圍加上填補，或您的標誌看起來不會太小。
+標誌會顯示在 [登入] 面板頂端。 | 透明 JPG 或 PNG<br>最大高度：36 像素<br>最大寬度：245 像素 | 請在這裡使用您組織的標誌。<br>使用透明的映像。 請不要假設背景是白色。<br>請勿在映像中的標誌周圍加上邊框間距，否則您的標誌會看起來不成比例。
 
 ### <a name="background"></a>背景
 
-描述 | 限制式 | 建議
+描述 | 條件約束 | 建議
 ------- | ------- | ----------
-此選項會出現在登入頁面的背景中，錨定到可查看空間的中央，並縮放和裁剪以填滿瀏覽器視窗。    <br>在行動電話之類的窄螢幕上，不會顯示此影像。<br>載入頁面時，會在此影像上套用具有0.55 不透明度的黑色 mask。 | JPG 或 PNG<br>影像維度： 1920x1080 px<br>檔案大小： &lt; 300 KB | <br>使用沒有強式主體焦點的影像。 不透明的登入表單會出現在此影像的中央，而且可以根據瀏覽器視窗的大小來涵蓋影像的任何部分。<br>將檔案大小保持小，以確保快速載入時間。
+此選項會出現在登入頁面的背景中，錨定至可檢視空間的中心，並且會調整並裁切以填滿瀏覽器視窗。    <br>在手機這類螢幕狹窄的裝置上，不會顯示此映像。<br>載入頁面時，會在這整個影像套用 0.55 不透明度的黑色遮罩。 | JPG 或 PNG<br>映像尺寸：1920 x 1080 像素<br>檔案大小：&lt; 300 KB | <br>使用沒有強烈主題焦點的映像。 不透明的登入表單會出現在此影像的中央，並且可根據瀏覽器視窗的大小來覆蓋此影像的任何部分。<br>請將檔案大小維持在小型，以確保載入時間快速。
 
 ## <a name="next-steps"></a>後續步驟
-- [Windows Server 2016 中的 AD FS 自訂](AD-FS-Customization-in-Windows-Server-2016.md)
-- [Advanced 自訂](Advanced-Customization-of-AD-FS-Sign-in-Pages.md)
+- [Windows Server 2016 中的 AD FS 自訂](./ad-fs-customization-in-windows-server.md)
+- [進階自訂](Advanced-Customization-of-AD-FS-Sign-in-Pages.md)
 - [自訂 web 主題](Custom-Web-Themes-in-AD-FS.md)

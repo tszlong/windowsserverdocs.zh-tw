@@ -8,18 +8,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 1d00ab702ab6b4ff4307f96f9e266a1cb3420197
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2924b04e0853549f86934f0145f2cb46f07a4939
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80821141"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966580"
 ---
 # <a name="monitoring-active-directory-for-signs-of-compromise"></a>監視 Active Directory 遭到危害的徵兆
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-*第五條法則：永久性警覺性來得是安全性的代價。* - [安全性管理的10個不可變法則](https://technet.microsoft.com/library/cc722488.aspx)  
+*第五條法則：永久性警覺性來得是安全性的代價。* - [10個不變的安全性管理法則](/previous-versions//cc722488(v=technet.10))  
   
 穩固的事件記錄檔監視系統是任何安全 Active Directory 設計的重要部分。 如果受害者制訂適當的事件記錄檔監視和警示，可能會提早在事件中發現許多電腦安全性性危害。 這是一段完整支援的獨立報表。 例如， [2009 Verizon 資料缺口報告](http://www.verizonbusiness.com/resources/security/reports/2009_databreach_rp.pdf)指出：  
   
@@ -31,15 +31,15 @@ ms.locfileid: "80821141"
 
 以下是 Microsoft 官方企業支援 blog 的連結。 這些 blog 的內容提供有關審核的建議、指引和建議，可協助您增強 Active Directory 基礎結構的安全性，而且在設計稽核原則時是一項重要的資源。  
   
-* [全域物件存取的審核功能非常神奇](https://blogs.technet.com/b/askds/archive/2011/03/10/global-object-access-auditing-is-magic.aspx)-說明一種稱為「先進的稽核原則設定」的控制機制，已新增至 windows 7 和 Windows Server 2008 R2，讓您能夠輕鬆地設定您想要的資料類型，而不是操控腳本和 auditpol .exe。  
-* [Windows 2008 中的審核變更簡介](https://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx)-引進 windows Server 2008 中的審核功能變更。  
-* [Vista 和2008中](https://blogs.technet.com/b/askds/archive/2007/11/16/cool-auditing-tricks-in-vista-and-2008.aspx)的非經常性的審核技巧-說明 Windows Vista 和 windows Server 2008 的有趣審核功能，可用於疑難排解問題或查看環境中發生的狀況。  
-* [Windows server 2008 和 Windows vista 中的一次性審核](https://blogs.technet.com/b/askds/archive/2008/03/27/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista.aspx)-包含 windows server 2008 和 windows vista 中包含的審核功能和資訊的編譯。  
+* [全域物件存取的審核功能非常神奇](/archive/blogs/askds/global-object-access-auditing-is-magic)-說明一種稱為「先進的稽核原則設定」的控制機制，已新增至 windows 7 和 Windows Server 2008 R2，可讓您設定要輕鬆地進行審核，而不是操控腳本和 auditpol.exe 的資料類型。  
+* [Windows 2008 中的審核變更簡介](/archive/blogs/askds/introducing-auditing-changes-in-windows-2008)-引進 windows Server 2008 中的審核功能變更。  
+* [Vista 和2008中](/archive/blogs/askds/cool-auditing-tricks-in-vista-and-2008)的非經常性的審核技巧-說明 Windows Vista 和 windows Server 2008 的有趣審核功能，可用於疑難排解問題或查看環境中發生的狀況。  
+* [Windows server 2008 和 Windows vista 中的一次性審核](/archive/blogs/askds/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista)-包含 windows server 2008 和 windows vista 中包含的審核功能和資訊的編譯。  
   
 下列連結提供 windows 8 和 Windows Server 2012 中 Windows 審核功能改進的相關資訊，以及 Windows Server 2008 中 AD DS 審核的相關資訊。  
   
-* [安全性審查的新](https://technet.microsoft.com/library/hh849638.aspx)功能-概述 windows 8 和 windows Server 2012 中的新安全性審查功能。  
-* [AD DS 審核逐步指南](https://technet.microsoft.com/library/a9c25483-89e2-4202-881c-ea8e02b4b2a5.aspx)-說明 Windows Server 2008 中的新 Active Directory Domain Services （AD DS）審核功能。 它也會提供執行這項新功能的程式。  
+* [安全性審查的新](/previous-versions/orphan-topics/ws.11/hh849638(v=ws.11))功能-概述 windows 8 和 windows Server 2012 中的新安全性審查功能。  
+* [AD DS 審核逐步指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731607(v=ws.10))-說明 Windows Server 2008 中的新 Active Directory Domain Services （AD DS）審核功能。 它也會提供執行這項新功能的程式。  
   
 ### <a name="windows-audit-categories"></a>Windows Audit 分類
 
@@ -108,12 +108,12 @@ Windows 中有數十種使用者權利和許可權（例如，以批次工作登
   
 `auditpol /get /category:*`
   
-下列螢幕擷取畫面顯示 auditpol 的範例，其中列出目前的稽核原則。  
+下列螢幕擷取畫面顯示 auditpol.exe 列出目前稽核原則的範例。  
   
 ![監視 AD](media/Monitoring-Active-Directory-for-Signs-of-Compromise/SAD_5.gif)  
   
 > [!NOTE]  
-> 群組原則不一定會正確地報告所有已啟用之稽核原則的狀態，而 auditpol 則會執行。 如需詳細資訊，請參閱[在 Windows 7 和 2008 R2 中取得有效的稽核原則](https://blogs.technet.com/b/askds/archive/2011/03/11/getting-the-effective-audit-policy-in-windows-7-and-2008-r2.aspx)。  
+> 群組原則不一定會正確地報告所有已啟用之稽核原則的狀態，而 auditpol.exe 則會。 如需詳細資訊，請參閱[在 Windows 7 和 2008 R2 中取得有效的稽核原則](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731607(v=ws.10))。  
   
 每個主要類別都有多個子類別。 以下是類別目錄、其子類別和其功能的描述清單。  
   
@@ -169,7 +169,7 @@ Windows 中有數十種使用者權利和許可權（例如，以批次工作登
   
 #### <a name="detailed-process-tracking"></a>詳細的進程追蹤  
   
-##### <a name="process-creation"></a>進程建立  
+##### <a name="process-creation"></a>處理序建立  
 這個子類別會報告建立程式的方式，以及建立該進程的使用者或程式的名稱。  
   
 ##### <a name="process-termination"></a>進程終止  
@@ -197,10 +197,10 @@ Windows 中有數十種使用者權利和許可權（例如，以批次工作登
   
 #### <a name="logonlogoff"></a>登入/登出  
   
-##### <a name="logon"></a>Logon  
+##### <a name="logon"></a>登入  
 當使用者嘗試登入系統時，此子類別會報告。 這些事件會發生在存取的電腦上。 若為互動式登入，則會在登入的電腦上產生這些事件。 如果進行網路登入以存取共用，這些事件會在裝載所存取資源的電腦上產生。 如果此設定設為 [**無**]，則很難或無法判斷哪些使用者已存取或嘗試存取組織電腦。  
   
-##### <a name="network-policy-server"></a>Network Policy Server  
+##### <a name="network-policy-server"></a>網路原則伺服器  
 此子類別會報告 RADIUS （IAS）和網路存取保護（NAP）使用者存取要求所產生的事件。 這些要求可以是**Grant**、 **Deny**、**捨棄**、**隔離**、**鎖定**和**解除鎖定**。 此設定會導致 NPS 和 資訊存取伺服器上的記錄量適中或大量。  
   
 ##### <a name="ipsec-main-mode"></a>IPsec 主要模式  
@@ -236,7 +236,7 @@ Windows 中有數十種使用者權利和許可權（例如，以批次工作登
 此子類別會報告授權原則中的變更，包括許可權（DACL）變更。  
   
 ##### <a name="mpssvc-rule-level-policy-change"></a>MPSSVC 規則層級原則變更  
-此子類別會報告 Microsoft 保護服務（MPSSVC）所使用之原則規則中的變更。 Windows 防火牆會使用此服務。  
+此子類別會報告 Microsoft 保護服務（MPSSVC.exe）所使用之原則規則中的變更。 Windows 防火牆會使用此服務。  
   
 ##### <a name="filtering-platform-policy-change"></a>篩選平臺原則變更  
 此子類別會報告從 WFP 新增和移除物件，包括啟動篩選。 這些事件在大量中可能非常高。  
@@ -292,7 +292,7 @@ Windows 中有數十種使用者權利和許可權（例如，以批次工作登
 ##### <a name="other-object-access-events"></a>其他物件存取事件  
 這個子類別會報告其他與物件存取相關的事件，例如工作排程器作業和 COM + 物件。  
   
-#### <a name="system"></a>System  
+#### <a name="system"></a>系統  
   
 ##### <a name="security-state-change"></a>安全性狀態變更  
 此子類別會報告系統安全性狀態的變更，例如安全性子系統啟動和停止的時間。  
@@ -310,13 +310,13 @@ IPsec 驅動程式
 ##### <a name="other-system-events"></a>其他系統事件  
 此子類別會報告其他系統事件。  
   
-如需有關子類別目錄描述的詳細資訊，請參閱[Microsoft 安全性合規性管理員工具](https://technet.microsoft.com/library/cc677002.aspx)。  
+如需有關子類別目錄描述的詳細資訊，請參閱[Microsoft 安全性合規性管理員工具](/previous-versions/tn-archive/cc677002(v=technet.10))。  
   
 每個組織都應該審查先前涵蓋的分類和子類別，並啟用最適合其環境的類別。 在生產環境中部署之前，應一律先測試稽核原則的變更。  
   
 ## <a name="configuring-windows-audit-policy"></a>正在設定 Windows 稽核原則
 
-您可以使用群組原則、auditpol .exe、Api 或登錄編輯來設定 Windows 稽核原則。 為大部分公司設定稽核原則的建議方法是群組原則或 auditpol. exe。 設定系統的稽核原則時，需要有系統管理員層級的帳戶許可權或適當的委派許可權。  
+您可以使用群組原則、auditpol.exe、Api 或登錄編輯來設定 Windows 稽核原則。 為大部分公司設定稽核原則的建議方法是群組原則或 auditpol.exe。 設定系統的稽核原則時，需要有系統管理員層級的帳戶許可權或適當的委派許可權。  
   
 > [!NOTE]  
 > 「**管理」和「安全性記錄**」許可權必須提供給安全性主體（系統管理員預設會有），以允許修改個別資源（例如檔案、Active Directory 物件和登錄機碼）的物件存取審核選項。  
@@ -331,15 +331,15 @@ IPsec 驅動程式
   
 ![監視 AD](media/Monitoring-Active-Directory-for-Signs-of-Compromise/SAD_7.gif)  
   
-### <a name="setting-windows-audit-policy-using-auditpolexe"></a>使用 Auditpol 設定 Windows 稽核原則
+### <a name="setting-windows-audit-policy-using-auditpolexe"></a>使用 Auditpol.exe 設定 Windows 稽核原則
 
-Auditpol （用於設定 Windows 稽核原則）是在 Windows Server 2008 和 Windows Vista 中引進。 一開始，只有 auditpol 可以用來設定 Advanced 稽核原則，但群組原則可以用於 Windows Server 2012、Windows Server 2008 R2 或 Windows Server 2008、Windows 8 和 Windows 7。  
+Auditpol.exe （用於設定 Windows 稽核原則）是在 Windows Server 2008 和 Windows Vista 中引進。 一開始，只有 auditpol.exe 可用來設定 Advanced 稽核原則，但群組原則可用於 Windows Server 2012、Windows Server 2008 R2 或 Windows Server 2008、Windows 8 和 Windows 7。  
   
-Auditpol 是命令列公用程式。 語法如下所示：  
+Auditpol.exe 是命令列公用程式。 語法如下所示：  
   
 `auditpol /set /<Category|Subcategory>:<audit category> /<success|failure:> /<enable|disable>`
   
-Auditpol .exe 語法範例：  
+Auditpol.exe 語法範例：  
   
 `auditpol /set /subcategory:"user account management" /success:enable /failure:enable`
   
@@ -348,17 +348,17 @@ Auditpol .exe 語法範例：
 `auditpol /set /subcategory:"IPSEC Main Mode" /failure:enable`
   
 > [!NOTE]  
-> Auditpol 會在本機設定 Advanced 稽核原則。 如果本機原則與 Active Directory 或本機群組原則衝突，群組原則設定通常會優先于 auditpol. exe 設定。 當有多個群組或本機原則衝突存在時，只會有一個原則（也就是取代）。 稽核原則不會合並。  
+> Auditpol.exe 在本機設定 Advanced Audit Policy。 如果本機原則與 Active Directory 或本機群組原則衝突，群組原則設定通常會超越 auditpol.exe 設定。 當有多個群組或本機原則衝突存在時，只會有一個原則（也就是取代）。 稽核原則不會合並。  
   
 #### <a name="scripting-auditpol"></a>腳本 Auditpol
 
-Microsoft 會針對想要使用腳本設定「高級稽核原則」的系統管理員提供[範例腳本](https://support.microsoft.com/kb/921469)，而不是在每個 printbrm.exe 命令中手動輸入。  
+Microsoft 會針對想要使用腳本設定「高級稽核原則」的系統管理員提供[範例腳本](https://support.microsoft.com/kb/921469)，而不是在每個 auditpol.exe 命令中手動輸入。  
   
-**注意**群組原則不一定會正確地報告所有已啟用之稽核原則的狀態，而 auditpol 則會執行。 如需詳細資訊，請參閱[在 Windows 7 和 windows 2008 R2 中取得有效的稽核原則](https://blogs.technet.com/b/askds/archive/2011/03/11/getting-the-effective-audit-policy-in-windows-7-and-2008-r2.aspx)。  
+**注意**群組原則不一定會正確地報告所有已啟用之稽核原則的狀態，而 auditpol.exe 則會。 如需詳細資訊，請參閱[在 Windows 7 和 windows 2008 R2 中取得有效的稽核原則](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731607(v=ws.10))。  
   
 #### <a name="other-auditpol-commands"></a>其他 Auditpol 命令
 
-Auditpol 可以用來儲存和還原本機稽核原則，以及查看其他的審核相關命令。 以下是其他**auditpol**命令。  
+Auditpol.exe 可用來儲存和還原本機稽核原則，以及查看其他的審核相關命令。 以下是其他**auditpol**命令。  
   
 `auditpol /clear`-用來清除和重設本機稽核原則  
   
@@ -366,16 +366,16 @@ Auditpol 可以用來儲存和還原本機稽核原則，以及查看其他的�
   
 `auditpol /restore /file:<filename>`-用來將先前儲存的稽核原則檔匯入本機稽核原則  
   
-`auditpol /<get/set> /option:<CrashOnAuditFail> /<enable/disable>`-如果已啟用此稽核原則設定，則如果因為任何原因無法記錄安全性 audit，它會導致系統立即停止（使用 STOP： C0000244 {Audit Failed} 訊息）。 一般而言，當安全性審核記錄已滿，而且針對安全性記錄檔指定的保留方法不會依天數**覆寫事件**或**覆寫事件**時，就無法記錄事件。 通常只會由需要更高保證安全性記錄檔正在記錄的環境來啟用。 啟用時，系統管理員必須仔細監看安全性記錄大小，並視需要輪替記錄。 也可以藉由修改安全性選項 [ **Audit：立即關閉系統] （如果無法記錄安全性審核**（預設值 = 已停用）來設定群組原則。  
+`auditpol /<get/set> /option:<CrashOnAuditFail> /<enable/disable>`-如果此稽核原則設定已啟用，如果因為任何原因無法記錄安全性 audit，它會導致系統立即停止（使用 STOP： C0000244 {Audit Failed} 訊息）。 一般而言，當安全性審核記錄已滿，而且針對安全性記錄檔指定的保留方法不會依天數**覆寫事件**或**覆寫事件**時，就無法記錄事件。 通常只會由需要更高保證安全性記錄檔正在記錄的環境來啟用。 啟用時，系統管理員必須仔細監看安全性記錄大小，並視需要輪替記錄。 也可以藉由修改安全性選項 [ **Audit：立即關閉系統] （如果無法記錄安全性審核**（預設值 = 已停用）來設定群組原則。  
   
 `auditpol /<get/set> /option:<AuditBaseObjects> /<enable/disable>`-此稽核原則設定會決定是否要審核全域系統物件的存取權。 如果啟用此原則，則會使用預設的系統存取控制清單（SACL）來建立系統物件，例如 mutex、事件、信號和 DOS 裝置。 大部分的系統管理員會考慮將全域系統物件視為「雜訊」，而只有在懷疑惡意入侵時才會啟用。 只有命名物件會獲得 SACL。 如果也啟用「audit 物件存取稽核原則」（或「核心物件」 audit 子類別），則會對這些系統物件的存取進行審核。 進行此安全性設定時，除非您重新開機 Windows，否則變更不會生效。 這項原則也可以透過下列方式來設定群組原則藉由修改安全性選項 [審查全域系統物件的存取權（預設值 = 停用）]。  
   
-`auditpol /<get/set> /option:<AuditBaseDirectories> /<enable/disable>`-此稽核原則設定指定在建立時，會為 Sacl 提供名為的核心物件（例如 mutex 和信號）。 當 AuditBaseObjects 影響不能包含其他物件的物件時，AuditBaseDirectories 會影響容器物件。  
+`auditpol /<get/set> /option:<AuditBaseDirectories> /<enable/disable>`-此稽核原則設定會指定命名核心物件（例如 mutex 和信號）在建立時提供給 Sacl。 當 AuditBaseObjects 影響不能包含其他物件的物件時，AuditBaseDirectories 會影響容器物件。  
   
 `auditpol /<get/set> /option:<FullPrivilegeAuditing> /<enable/disable>`-此稽核原則設定指定當有一或多個許可權指派給使用者安全性權杖時，用戶端是否會產生事件： AssignPrimaryTokenPrivilege、AuditPrivilege、BackupPrivilege、CreateTokenPrivilege、DebugPrivilege、EnableDelegationPrivilege、ImpersonatePrivilege、LoadDriverPrivilege、RestorePrivilege、SecurityPrivilege、SystemEnvironmentPrivilege、TakeOwnershipPrivilege 和 TcbPrivilege。 如果未啟用此選項（預設值 = 停用），則不會記錄 BackupPrivilege 和 RestorePrivilege 許可權。 啟用此選項可能會在備份作業期間，讓安全性記錄產生極雜訊的事件（有時候會有數百個事件）。 此原則也可以藉由修改安全性選項**Audit： audit 使用備份和還原許可權**來設定群組原則。  
   
 > [!NOTE]  
-> 此處提供的部分資訊是取自 Microsoft [Audit 選項類型](https://msdn.microsoft.com/library/dd973862(prot.20).aspx)和 microsoft SCM 工具。  
+> 此處提供的部分資訊是取自 Microsoft [Audit 選項類型](/openspecs/windows_protocols/ms-gpac/262a2bed-93d4-4c04-abec-cf06e9ec72fd)和 microsoft SCM 工具。  
   
 ## <a name="enforcing-traditional-auditing-or-advanced-auditing"></a>強制執行傳統的審核或先進的審核
 
@@ -385,14 +385,14 @@ Auditpol 可以用來儲存和還原本機稽核原則，以及查看其他的�
   
 我們建議您啟用和設定子類別，而不是9個主要類別。 這需要啟用群組原則設定（以允許子類別覆寫審核類別），以及設定支援稽核原則的不同子類別。  
   
-您可以使用數種方法來設定 [審核子類別]，包括群組原則和命令列程式（auditpol .exe）。  
+您可以使用數種方法來設定 [審核子類別]，包括群組原則和命令列程式 auditpol.exe。  
   
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>接下來的步驟
   
 * [Windows 7 和 Windows Server 2008 R2 中的先進安全性審查](https://social.technet.microsoft.com/wiki/contents/articles/advanced-security-auditing-in-windows-7-and-windows-server-2008-r2.aspx)  
   
-* [Windows Server 2008 中的審核與合規性](https://technet.microsoft.com/magazine/2008.03.auditing.aspx)  
+* [Windows Server 2008 中的審核與合規性](/previous-versions/technet-magazine/cc194392(v=msdn.10))  
   
 * [如何使用群組原則，為 windows Server 2008 網域、windows Server 2003 網域或 Windows 2000 網域中的 Windows Vista 和 Windows Server 2008 電腦設定詳細的安全性審核設定](https://support.microsoft.com/kb/921469)  
   
-* [Advanced Security 稽核原則逐步指南](https://technet.microsoft.com/library/dd408940(WS.10).aspx)  
+* [進階安全性稽核原則逐步指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd408940(v=ws.10))  

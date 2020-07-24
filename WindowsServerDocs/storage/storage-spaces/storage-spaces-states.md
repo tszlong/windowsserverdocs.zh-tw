@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-spaces
 manager: brianlic
-ms.openlocfilehash: e0e763be5691ea7804421ec3ba5ab7882bdb8c3d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 95ccfec436ba4143ea7ec70120878a29289d14f7
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474515"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966790"
 ---
 # <a name="troubleshoot-storage-spaces-and-storage-spaces-direct-health-and-operational-states"></a>針對儲存空間和儲存空間直接存取的健全狀況和操作狀態進行疑難排解
 
@@ -101,7 +101,7 @@ Volume2      Warning      {Degraded, Incomplete} None
 |操作狀態    |描述|
 |---------            |---------          |
 |[確定]    |虛擬磁片狀況良好。|
-|次佳    |資料未平均寫入各個磁碟機。 <br><br>**動作**：執行[StoragePool](https://technet.microsoft.com/itpro/powershell/windows/storage/optimize-storagepool) Cmdlet，以優化存放集區中的磁片磁碟機使用量。|
+|次佳    |資料未平均寫入各個磁碟機。 <br><br>**動作**：執行[StoragePool](/powershell/module/storage/optimize-storagepool?view=win10-ps) Cmdlet，以優化存放集區中的磁片磁碟機使用量。|
 
 ### <a name="virtual-disk-health-state-warning"></a>虛擬磁片健全狀況狀態：警告
 
@@ -110,8 +110,8 @@ Volume2      Warning      {Degraded, Incomplete} None
 |操作狀態    |描述|
 |---------            |---------          |
 |運作中            |Windows 正在修復虛擬磁片，例如新增或移除磁片磁碟機之後。 當修復完成時，虛擬磁片應該會回到 [確定] 健全狀況狀態。|
-|不完整           |因為一或多個磁片磁碟機故障或遺失，虛擬磁片的復原能力會降低。 不過，遺失的磁碟機包含您的資料最新的複本。<br><br> **動作**： <br>1. 重新連接任何遺失的磁片磁碟機，更換任何故障的磁片磁碟機，如果您是使用儲存空間直接存取，請將任何離線的伺服器上線。 <br>2. 如果您不是使用儲存空間直接存取，請使用[VirtualDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk) Cmdlet 來修復虛擬磁片。<br> 儲存空間直接存取在重新連接或更換磁片磁碟機之後，視需要自動啟動修復。|
-|已降級             |虛擬磁片的恢復功能已減少，因為有一或多個磁片磁碟機故障或遺失，而且這些磁片磁碟機上有過時的資料複本。 <br><br>**動作**： <br> 1. 重新連接任何遺失的磁片磁碟機，更換任何故障的磁片磁碟機，如果您是使用儲存空間直接存取，請將任何離線的伺服器上線。 <br> 2. 如果您不是使用儲存空間直接存取，請使用[VirtualDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk) Cmdlet 來修復虛擬磁片。 <br>儲存空間直接存取在重新連接或更換磁片磁碟機之後，視需要自動啟動修復。|
+|不完整           |因為一或多個磁片磁碟機故障或遺失，虛擬磁片的復原能力會降低。 不過，遺失的磁碟機包含您的資料最新的複本。<br><br> **動作**： <br>1. 重新連接任何遺失的磁片磁碟機，更換任何故障的磁片磁碟機，如果您是使用儲存空間直接存取，請將任何離線的伺服器上線。 <br>2. 如果您不是使用儲存空間直接存取，請使用[VirtualDisk](/powershell/module/storage/repair-virtualdisk?view=win10-ps) Cmdlet 來修復虛擬磁片。<br> 儲存空間直接存取在重新連接或更換磁片磁碟機之後，視需要自動啟動修復。|
+|已降級             |虛擬磁片的恢復功能已減少，因為有一或多個磁片磁碟機故障或遺失，而且這些磁片磁碟機上有過時的資料複本。 <br><br>**動作**： <br> 1. 重新連接任何遺失的磁片磁碟機，更換任何故障的磁片磁碟機，如果您是使用儲存空間直接存取，請將任何離線的伺服器上線。 <br> 2. 如果您不是使用儲存空間直接存取，請使用[VirtualDisk](/powershell/module/storage/repair-virtualdisk?view=win10-ps) Cmdlet 來修復虛擬磁片。 <br>儲存空間直接存取在重新連接或更換磁片磁碟機之後，視需要自動啟動修復。|
 
 ### <a name="virtual-disk-health-state-unhealthy"></a>虛擬磁片健全狀況狀態：狀況不良
 
@@ -128,9 +128,9 @@ Volume2      Warning      {Degraded, Incomplete} None
 |操作狀態    |卸離原因 |描述|
 |---------            |---------       |--------   |
 |已卸離             |依原則            |系統管理員將虛擬磁片離線，或將虛擬磁片設定為需要手動附件，在這種情況下，您必須在每次 Windows 重新開機時手動連接虛擬磁片。<br><br>**動作**：讓虛擬磁片恢復上線。 若要在虛擬磁片位於叢集存放集區時執行這項操作，請在容錯移轉叢集管理員選取 [**存放集區**] [  >  **Pools**  >  **虛擬磁片**] 中，選取顯示**離線**狀態的虛擬磁片，然後選取 [**上線**]。 <br><br>若要讓虛擬磁片在不在叢集中時恢復上線，請以系統管理員身分開啟 PowerShell 會話，然後嘗試使用下列命令：<br><br> <code>Get-VirtualDisk \| Where-Object -Filter { $_.OperationalStatus -eq "Detached" } \| Connect-VirtualDisk</code><br><br>若要在 Windows 重新開機之後自動附加所有非叢集虛擬磁片，請以系統管理員身分開啟 PowerShell 會話，然後使用下列命令：<br><br> <code>Get-VirtualDisk \| Set-VirtualDisk -ismanualattach $false</code>|
-|            |多數磁片狀況不良 |此虛擬磁片使用的磁片磁碟機過多失敗、遺失或有過時的資料。   <br><br>**動作**： <br> 1. 重新連接任何遺失的磁片磁碟機，如果您是使用儲存空間直接存取，請將任何離線的伺服器上線。 <br> 2. 在所有磁片磁碟機和伺服器都上線之後，更換任何故障的磁片磁碟機。 如需詳細資訊，請參閱[健全狀況服務](../../failover-clustering/health-service-overview.md)。 <br>儲存空間直接存取在重新連接或更換磁片磁碟機之後，視需要自動啟動修復。<br>3. 如果您不是使用儲存空間直接存取，請使用[VirtualDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk) Cmdlet 來修復虛擬磁片。  <br><br>如果有更多的磁片失敗，但您有資料的複本，而虛擬磁片未在失敗之間修復，則虛擬磁片上的所有資料都會永久遺失。 在這種不幸的情況下，請刪除虛擬磁片、建立新的虛擬磁片，然後從備份還原。|
-|                     |不完整 |磁片磁碟機不足，無法讀取虛擬磁片。    <br><br>**動作**： <br> 1. 重新連接任何遺失的磁片磁碟機，如果您是使用儲存空間直接存取，請將任何離線的伺服器上線。 <br> 2. 在所有磁片磁碟機和伺服器都上線之後，更換任何故障的磁片磁碟機。 如需詳細資訊，請參閱[健全狀況服務](../../failover-clustering/health-service-overview.md)。 <br>儲存空間直接存取在重新連接或更換磁片磁碟機之後，視需要自動啟動修復。<br>3. 如果您不是使用儲存空間直接存取，請使用[VirtualDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk) Cmdlet 來修復虛擬磁片。<br><br>如果有更多的磁片失敗，但您有資料的複本，而虛擬磁片未在失敗之間修復，則虛擬磁片上的所有資料都會永久遺失。 在這種不幸的情況下，請刪除虛擬磁片、建立新的虛擬磁片，然後從備份還原。|
-| |逾時|連接虛擬磁片所花費的時間太長 <br><br> **動作：** 這不應該經常發生，因此您可能會嘗試查看條件是否傳入。 或者，您可以嘗試使用[Disconnect-VirtualDisk](https://docs.microsoft.com/powershell/module/storage/disconnect-virtualdisk?view=win10-ps) Cmdlet 中斷虛擬磁片的連線，然後使用[VirtualDisk](https://docs.microsoft.com/powershell/module/storage/connect-virtualdisk?view=win10-ps) Cmdlet 來重新連接它。 |
+|            |多數磁片狀況不良 |此虛擬磁片使用的磁片磁碟機過多失敗、遺失或有過時的資料。   <br><br>**動作**： <br> 1. 重新連接任何遺失的磁片磁碟機，如果您是使用儲存空間直接存取，請將任何離線的伺服器上線。 <br> 2. 在所有磁片磁碟機和伺服器都上線之後，更換任何故障的磁片磁碟機。 如需詳細資訊，請參閱[健全狀況服務](../../failover-clustering/health-service-overview.md)。 <br>儲存空間直接存取在重新連接或更換磁片磁碟機之後，視需要自動啟動修復。<br>3. 如果您不是使用儲存空間直接存取，請使用[VirtualDisk](/powershell/module/storage/repair-virtualdisk?view=win10-ps) Cmdlet 來修復虛擬磁片。  <br><br>如果有更多的磁片失敗，但您有資料的複本，而虛擬磁片未在失敗之間修復，則虛擬磁片上的所有資料都會永久遺失。 在這種不幸的情況下，請刪除虛擬磁片、建立新的虛擬磁片，然後從備份還原。|
+|                     |不完整 |磁片磁碟機不足，無法讀取虛擬磁片。    <br><br>**動作**： <br> 1. 重新連接任何遺失的磁片磁碟機，如果您是使用儲存空間直接存取，請將任何離線的伺服器上線。 <br> 2. 在所有磁片磁碟機和伺服器都上線之後，更換任何故障的磁片磁碟機。 如需詳細資訊，請參閱[健全狀況服務](../../failover-clustering/health-service-overview.md)。 <br>儲存空間直接存取在重新連接或更換磁片磁碟機之後，視需要自動啟動修復。<br>3. 如果您不是使用儲存空間直接存取，請使用[VirtualDisk](/powershell/module/storage/repair-virtualdisk?view=win10-ps) Cmdlet 來修復虛擬磁片。<br><br>如果有更多的磁片失敗，但您有資料的複本，而虛擬磁片未在失敗之間修復，則虛擬磁片上的所有資料都會永久遺失。 在這種不幸的情況下，請刪除虛擬磁片、建立新的虛擬磁片，然後從備份還原。|
+| |逾時|連接虛擬磁片所花費的時間太長 <br><br> **動作：** 這不應該經常發生，因此您可能會嘗試查看條件是否傳入。 或者，您可以嘗試使用[Disconnect-VirtualDisk](/powershell/module/storage/disconnect-virtualdisk?view=win10-ps) Cmdlet 中斷虛擬磁片的連線，然後使用[VirtualDisk](/powershell/module/storage/connect-virtualdisk?view=win10-ps) Cmdlet 來重新連接它。 |
 
 ## <a name="drive-physical-disk-states"></a>磁片磁碟機（實體磁片）狀態
 
@@ -152,11 +152,11 @@ Volume2      Warning      {Degraded, Incomplete} None
 |中斷通訊|磁片磁碟機遺失。 如果您是使用儲存空間直接存取，這可能是因為伺服器已關閉。<br><br>**動作**：如果您使用儲存空間直接存取，請讓所有伺服器恢復上線。 如果無法修正此問題，請重新連接磁片磁碟機，加以取代，或依照使用 Windows 錯誤報告 >[實體磁片超時](../../failover-clustering/troubleshooting-using-wer-reports.md#physical-disk-timed-out)中的步驟，嘗試取得關於此磁片磁碟機的詳細診斷資訊。|
 |正在從集區移除|儲存空間正在從其存放集區移除磁片磁碟機。 <br><br> 這是暫時性狀態。 移除完成後，如果磁片磁碟機仍連接到系統，則磁片磁碟機會轉換成原創組區中的另一個操作狀態（通常是正常的）。|
 |正在進入維護模式|當系統管理員將磁片磁碟機置於維護模式後，儲存空間正在將磁片磁碟機置於維護模式。 這是暫時性的狀態-磁片磁碟機應該很快就會處於*維護模式*狀態。|
-|處於維護模式|系統管理員將磁片磁碟機置於維護模式，以停止磁片磁碟機的讀取和寫入。 這通常是在更新磁片磁碟機固件之前，或在測試失敗時完成。<br><br>**動作**：若要讓磁片磁碟機離開維護模式，請使用[StorageMaintenanceMode](https://technet.microsoft.com/itpro/powershell/windows/storage/disable-storagemaintenancemode) Cmdlet。|
+|處於維護模式|系統管理員將磁片磁碟機置於維護模式，以停止磁片磁碟機的讀取和寫入。 這通常是在更新磁片磁碟機固件之前，或在測試失敗時完成。<br><br>**動作**：若要讓磁片磁碟機離開維護模式，請使用[StorageMaintenanceMode](/powershell/module/storage/disable-storagemaintenancemode?view=win10-ps) Cmdlet。|
 |正在停止維護模式|系統管理員將磁片磁碟機移出維護模式，而儲存空間正在將磁片磁碟機重新上線。 這是暫時性的狀態-磁片磁碟機應該很快就會處於另一個狀態-理想*狀況良好*。|
 |預期性故障|磁片磁碟機回報其接近失敗。<br><br>**動作**：更換磁片磁碟機。|
-|IO 錯誤|存取磁碟機時會發生暫時性錯誤。<br><br>**動作**： <br>1. 如果磁片磁碟機未轉換回 [**確定]** 狀態，您可以嘗試使用[PhysicalDisk](https://docs.microsoft.com/powershell/module/storage/reset-physicaldisk) Cmdlet 抹除磁片磁碟機。 <br> 2. 使用 [[修復 VirtualDisk](https://docs.microsoft.com/powershell/module/storage/repair-virtualdisk) ] 來還原受影響虛擬磁片的復原。 <br>3. 如果這種情況持續發生，請更換磁片磁碟機。|
-|暫時性錯誤|磁碟機發生暫時性錯誤。 這通常表示磁片磁碟機沒有回應，但也可能表示儲存空間保護磁碟分割已不適當地從磁片磁碟機移除。 <br><br>**動作**： <br>1. 如果磁片磁碟機未轉換回 [**確定]** 狀態，您可以嘗試使用[PhysicalDisk](https://docs.microsoft.com/powershell/module/storage/reset-physicaldisk) Cmdlet 抹除磁片磁碟機。 <br> 2. 使用 [[修復 VirtualDisk](https://docs.microsoft.com/powershell/module/storage/repair-virtualdisk) ] 來還原受影響虛擬磁片的復原。 <br>3. 如果這種情況持續發生，請更換磁片磁碟機，或嘗試遵循使用 Windows 錯誤報告 >[實體磁片無法上線](../../failover-clustering/troubleshooting-using-wer-reports.md#physical-disk-failed-to-come-online)中的步驟來取得有關此磁片磁碟機的詳細診斷資訊。|
+|IO 錯誤|存取磁碟機時會發生暫時性錯誤。<br><br>**動作**： <br>1. 如果磁片磁碟機未轉換回 [**確定]** 狀態，您可以嘗試使用[PhysicalDisk](/powershell/module/storage/reset-physicaldisk) Cmdlet 抹除磁片磁碟機。 <br> 2. 使用 [[修復 VirtualDisk](/powershell/module/storage/repair-virtualdisk) ] 來還原受影響虛擬磁片的復原。 <br>3. 如果這種情況持續發生，請更換磁片磁碟機。|
+|暫時性錯誤|磁碟機發生暫時性錯誤。 這通常表示磁片磁碟機沒有回應，但也可能表示儲存空間保護磁碟分割已不適當地從磁片磁碟機移除。 <br><br>**動作**： <br>1. 如果磁片磁碟機未轉換回 [**確定]** 狀態，您可以嘗試使用[PhysicalDisk](/powershell/module/storage/reset-physicaldisk) Cmdlet 抹除磁片磁碟機。 <br> 2. 使用 [[修復 VirtualDisk](/powershell/module/storage/repair-virtualdisk) ] 來還原受影響虛擬磁片的復原。 <br>3. 如果這種情況持續發生，請更換磁片磁碟機，或嘗試遵循使用 Windows 錯誤報告 >[實體磁片無法上線](../../failover-clustering/troubleshooting-using-wer-reports.md#physical-disk-failed-to-come-online)中的步驟來取得有關此磁片磁碟機的詳細診斷資訊。|
 |異常延遲|磁片磁碟機的執行速度很慢，儲存空間直接存取中的健全狀況服務來測量。<br><br>**動作**：如果這種情況持續發生，請更換磁片磁碟機，讓它不會降低整體儲存空間的效能。
 
 ### <a name="drive-health-state-unhealthy"></a>磁碟機健全狀態：狀況不良
@@ -165,10 +165,10 @@ Volume2      Warning      {Degraded, Incomplete} None
 
 |操作狀態    |描述|
 |---------            |---------          |
-|無法使用|儲存空間無法使用此磁片磁碟機。 如需詳細資訊，請參閱[儲存空間直接存取硬體需求](storage-spaces-direct-hardware-requirements.md);如果您不是使用儲存空間直接存取，請參閱[儲存空間總覽](https://technet.microsoft.com/library/hh831739(v=ws.11).aspx#Requirements)。|
-|Split|磁碟機已與集區分離。<br><br>**動作**：重設磁片磁碟機，清除磁片磁碟機中的所有資料，並將其新增回集區做為空的磁片磁碟機。 若要這麼做，請以系統管理員身分開啟 PowerShell 會話，執行[PhysicalDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/reset-physicaldisk)指令程式，然後執行 [[修復 VirtualDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk)]。 <br><br>若要取得有關此磁片磁碟機的詳細診斷資訊，請遵循使用 Windows 錯誤報告 >[實體磁片無法上線](../../failover-clustering/troubleshooting-using-wer-reports.md#physical-disk-failed-to-come-online)中的步驟進行疑難排解。|
-|過時的中繼資料|儲存空間在磁片磁碟機上找到舊的中繼資料。<br><br>**動作**：這應該是暫時性的狀態。 如果磁片磁碟機未轉換回 [確定]，您可以執行 [[修復 VirtualDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk) ]，以在受影響的虛擬磁片上啟動修復操作。 如果這樣做無法解決問題，您可以使用[PhysicalDisk 指令程式](https://technet.microsoft.com/itpro/powershell/windows/storage/reset-physicaldisk)來重設磁片磁碟機、抹除磁片磁碟機中的所有資料，然後執行[修復 VirtualDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk)。|
-|無法辨識的中繼資料|儲存空間在磁片磁碟機上找到無法辨識的中繼資料，這通常表示磁片磁碟機具有來自其上不同集區的中繼資料。<br><br>**動作**：若要抹除磁片磁碟機，並將它新增至目前的集區，請重設磁片磁碟機。 若要重設磁片磁碟機，請以系統管理員身分開啟 PowerShell 會話，執行[PhysicalDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/reset-physicaldisk)指令程式，然後執行 [[修復 VirtualDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk)]。|
+|無法使用|儲存空間無法使用此磁片磁碟機。 如需詳細資訊，請參閱[儲存空間直接存取硬體需求](storage-spaces-direct-hardware-requirements.md);如果您不是使用儲存空間直接存取，請參閱[儲存空間總覽](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831739(v=ws.11)#Requirements)。|
+|Split|磁碟機已與集區分離。<br><br>**動作**：重設磁片磁碟機，清除磁片磁碟機中的所有資料，並將其新增回集區做為空的磁片磁碟機。 若要這麼做，請以系統管理員身分開啟 PowerShell 會話，執行[PhysicalDisk](/powershell/module/storage/reset-physicaldisk?view=win10-ps)指令程式，然後執行 [[修復 VirtualDisk](/powershell/module/storage/repair-virtualdisk?view=win10-ps)]。 <br><br>若要取得有關此磁片磁碟機的詳細診斷資訊，請遵循使用 Windows 錯誤報告 >[實體磁片無法上線](../../failover-clustering/troubleshooting-using-wer-reports.md#physical-disk-failed-to-come-online)中的步驟進行疑難排解。|
+|過時的中繼資料|儲存空間在磁片磁碟機上找到舊的中繼資料。<br><br>**動作**：這應該是暫時性的狀態。 如果磁片磁碟機未轉換回 [確定]，您可以執行 [[修復 VirtualDisk](/powershell/module/storage/repair-virtualdisk?view=win10-ps) ]，以在受影響的虛擬磁片上啟動修復操作。 如果這樣做無法解決問題，您可以使用[PhysicalDisk 指令程式](/powershell/module/storage/reset-physicaldisk?view=win10-ps)來重設磁片磁碟機、抹除磁片磁碟機中的所有資料，然後執行[修復 VirtualDisk](/powershell/module/storage/repair-virtualdisk?view=win10-ps)。|
+|無法辨識的中繼資料|儲存空間在磁片磁碟機上找到無法辨識的中繼資料，這通常表示磁片磁碟機具有來自其上不同集區的中繼資料。<br><br>**動作**：若要抹除磁片磁碟機，並將它新增至目前的集區，請重設磁片磁碟機。 若要重設磁片磁碟機，請以系統管理員身分開啟 PowerShell 會話，執行[PhysicalDisk](/powershell/module/storage/reset-physicaldisk?view=win10-ps)指令程式，然後執行 [[修復 VirtualDisk](/powershell/module/storage/repair-virtualdisk?view=win10-ps)]。|
 |故障的媒體|磁碟機故障，且儲存空間不會再加以使用。<br><br>**動作**：更換磁片磁碟機。 <br><br>若要取得有關此磁片磁碟機的詳細診斷資訊，請遵循使用 Windows 錯誤報告 >[實體磁片無法上線](../../failover-clustering/troubleshooting-using-wer-reports.md#physical-disk-failed-to-come-online)中的步驟進行疑難排解。|
 |裝置硬體故障|此磁碟機發生硬體故障。 <br><br>**動作**：更換磁片磁碟機。|
 |正在更新韌體|Windows 正在更新磁片磁碟機上的固件。 這是暫時性的狀態，持續時間通常少於一分鐘，且在此期間，集區中的其他磁碟機將會處理所有的讀取和寫入。 如需詳細資訊，請參閱[更新磁片磁碟機固件](../update-firmware.md)。|
@@ -196,12 +196,12 @@ Generic Physical Disk SSD        119990648832   False In a Pool
 
 |原因|描述|
 |---|---|
-|在集區中|磁片磁碟機已屬於存放集區。 <br><br>磁片磁碟機一次只能屬於單一存放集區。 若要在另一個存放集區中使用此磁片磁碟機，請先從現有的集區中移除該磁片磁碟機，這會指示儲存空間將磁片磁碟機上的資料移至集區上的其他磁片磁碟機。 或者，如果磁片磁碟機已從其集區中斷連線，而未通知儲存空間，則重設磁片磁碟機。 <br><br>若要安全地從存放集區移除磁片磁碟機，請使用[PhysicalDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/remove-physicaldisk)，或移至伺服器管理員 > 檔案**和存放服務**  >  **存放集區**，>**實體磁片**]，在磁片磁碟機上按一下滑鼠右鍵，然後選取 [**移除磁片**]。<br><br>若要重設磁片磁碟機，請使用[PhysicalDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/reset-physicaldisk)。|
+|在集區中|磁片磁碟機已屬於存放集區。 <br><br>磁片磁碟機一次只能屬於單一存放集區。 若要在另一個存放集區中使用此磁片磁碟機，請先從現有的集區中移除該磁片磁碟機，這會指示儲存空間將磁片磁碟機上的資料移至集區上的其他磁片磁碟機。 或者，如果磁片磁碟機已從其集區中斷連線，而未通知儲存空間，則重設磁片磁碟機。 <br><br>若要安全地從存放集區移除磁片磁碟機，請使用[PhysicalDisk](/powershell/module/storage/remove-physicaldisk?view=win10-ps)，或移至伺服器管理員 > 檔案**和存放服務**  >  **存放集區**，>**實體磁片**]，在磁片磁碟機上按一下滑鼠右鍵，然後選取 [**移除磁片**]。<br><br>若要重設磁片磁碟機，請使用[PhysicalDisk](/powershell/module/storage/reset-physicaldisk?view=win10-ps)。|
 |狀況不良|磁碟機未處於良好狀態，可能需要更換。|
 |卸除式媒體|磁碟機歸類為卸除式磁碟機。 <br><br>儲存空間不支援 Windows 以可移動方式辨識的媒體，例如藍光磁片磁碟機。 雖然許多固定磁片磁碟機都在卸載式位置中，但在一般情況下，由 Windows*分類*為卸載式的媒體並不適合搭配儲存空間使用。|
 |由叢集使用中|磁碟機目前由容錯移轉叢集使用中。|
 |離線|磁碟機已離線。 <br><br>若要讓所有離線磁片磁碟機上線，並將其設定為讀取/寫入，請以系統管理員身分開啟 PowerShell 會話，並使用下列腳本：<br><br><code>Get-Disk \| Where-Object -Property OperationalStatus -EQ "Offline" \| Set-Disk -IsOffline $false</code><br><br><code>Get-Disk \| Where-Object -Property IsReadOnly -EQ $true \| Set-Disk -IsReadOnly $false</code>|
-|容量不足|當磁碟分割佔用磁片磁碟機上的可用空間時，通常就會發生這種情況。 <br><br>**動作**：刪除磁片磁碟機上的任何磁片區，清除磁片磁碟機上的所有資料。 其中一種方法是使用[純磁片](https://docs.microsoft.com/powershell/module/storage/clear-disk?view=win10-ps)PowerShell Cmdlet。|
+|容量不足|當磁碟分割佔用磁片磁碟機上的可用空間時，通常就會發生這種情況。 <br><br>**動作**：刪除磁片磁碟機上的任何磁片區，清除磁片磁碟機上的所有資料。 其中一種方法是使用[純磁片](/powershell/module/storage/clear-disk?view=win10-ps)PowerShell Cmdlet。|
 |驗證進行中|[健全狀況服務](../../failover-clustering/health-service-overview.md#supported-components-document)正在檢查磁片磁碟機上的磁片磁碟機或固件是否已核准供伺服器系統管理員使用。|
 |驗證失敗|[健全狀況服務](../../failover-clustering/health-service-overview.md#supported-components-document)無法檢查磁片磁碟機上的磁片磁碟機或固件是否已核准供伺服器系統管理員使用。|
 |韌體不符合規範|實體磁片磁碟機上的固件不在伺服器管理員使用[健全狀況服務](../../failover-clustering/health-service-overview.md#supported-components-document)所指定的已核准固件修訂清單中。 |

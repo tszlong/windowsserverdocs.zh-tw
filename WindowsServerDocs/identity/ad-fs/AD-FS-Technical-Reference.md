@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 54d97a0dc9e4c752f4b5141fba015edc4ed4d8b4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 405d0b6e814212df858cadb615f3251fd2168632
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854141"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965030"
 ---
 # <a name="ad-fs-technical-reference"></a>AD FS 技術參考
 
@@ -29,7 +29,4 @@ ms.locfileid: "80854141"
 > 您可以在 Microsoft TechNet Wiki 上的 [AD FS 2.0 內容地圖](https://social.technet.microsoft.com/wiki/contents/articles/2735.ad-fs-2-0-content-map.aspx)頁面找到其他 AD FS 2.0 設計內容。 此頁面由 AD FS 2.0 社群成員負責管理，而 AD FS 產品團隊也會定期監控。
 
 ## <a name="see-also"></a>另請參閱
-[Active Directory Federation Services 概觀](AD-FS-2016-Overview.md)
-
-
-
+[Active Directory Federation Services 概觀](./ad-fs-overview.md)

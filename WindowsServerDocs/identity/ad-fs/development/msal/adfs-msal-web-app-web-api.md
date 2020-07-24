@@ -8,12 +8,12 @@ ms.date: 08/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: f28e5feccb7544046104658585ab3f739f659957
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 700ba841dba8e022f47d906b719f57befafc093c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949499"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966680"
 ---
 # <a name="scenario-web-app-server-app-calling-web-api"></a>案例：呼叫 Web API 的 Web 應用程式（伺服器應用程式） 
 >適用于： AD FS 2019 和更新版本 
@@ -26,7 +26,7 @@ ms.locfileid: "75949499"
  
 ![Web 應用程式呼叫 web api 的總覽](media/adfs-msal-web-app-web-api/webapp1.png)
 
-在此流程中，您會將驗證新增至您的 Web 應用程式（伺服器應用程式），進而登入使用者並呼叫 Web API。 從 Web 應用程式，若要呼叫 Web API，請使用 MSAL 的[AcquireTokenByAuthorizationCode](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.acquiretokenbyauthorizationcodeparameterbuilder?view=azure-dotnet) token 取得方法。 您將使用授權碼流程，將取得的權杖儲存在權杖快取中。 然後，控制器會在需要時以無訊息方式從快取中取得權杖。 MSAL 會視需要重新整理權杖。 
+在此流程中，您會將驗證新增至您的 Web 應用程式（伺服器應用程式），進而登入使用者並呼叫 Web API。 從 Web 應用程式，若要呼叫 Web API，請使用 MSAL 的[AcquireTokenByAuthorizationCode](/dotnet/api/microsoft.identity.client.acquiretokenbyauthorizationcodeparameterbuilder?view=azure-dotnet) token 取得方法。 您將使用授權碼流程，將取得的權杖儲存在權杖快取中。 然後，控制器會在需要時以無訊息方式從快取中取得權杖。 MSAL 會視需要重新整理權杖。 
 
 呼叫 Web Api 的 Web Apps： 
 
@@ -46,20 +46,20 @@ ms.locfileid: "75949499"
 ## <a name="app-registration-in-ad-fs"></a>AD FS 中的應用程式註冊 
 本節說明如何在 AD FS 中，將 Web 應用程式註冊為機密用戶端和 Web API 做為信賴憑證者（RP）。 
 
-  1. 在 AD FS 管理 中，以滑鼠右鍵按一下 **應用程式群組**，然後選取 **新增應用程式群組**。  
-  2. 在 [應用程式組嚮導] 的 [**名稱**] 中，輸入**WebAppToWebApi** ，然後在 [**用戶端-伺服器應用程式**] 下，選取**存取 Web API 範本的伺服器應用程式**。 按一下 **\[下一步\]** 。  
+  1. 在 AD FS 管理] 中，以滑鼠右鍵按一下 [**應用程式群組**]，然後選取 [**新增應用程式群組**]。  
+  2. 在 [應用程式組嚮導] 的 [**名稱**] 中，輸入**WebAppToWebApi** ，然後在 [**用戶端-伺服器應用程式**] 下，選取**存取 Web API 範本的伺服器應用程式**。 按 [下一步]  。  
   
       ![新增應用程式群組](media/adfs-msal-web-app-web-api/webapp2.png)
   
-  3. 複製 [**用戶端識別碼**] 值。 稍後**在應用程式的 web.config 檔案**中，將會使用它做為**ida： ClientId**的值。 針對 [重新導向 URI] 輸入下列**內容：**  - https://localhost:44326 。 按一下新增。 按一下 **\[下一步\]** 。 
+  3. 複製 [**用戶端識別碼**] 值。 稍後在應用程式**Web.config**檔中，將會使用它做為**ida： ClientId**的值。 針對 [重新導向 URI] 輸入下列**內容：**  -  https://localhost:44326 。 按一下 [加入]。 按 [下一步]  。 
   
       ![新增應用程式群組](media/adfs-msal-web-app-web-api/webapp3.png)
   
-  4. 在 [設定應用程式認證] 畫面上，勾選 [**產生共用密碼**] 和 [複製密碼]。 稍後在**應用程式的 web.config 檔案**中，這將會用來當做**ida： ClientSecret**的值。 按一下 **\[下一步\]** 。  
+  4. 在 [設定應用程式認證] 畫面上，勾選 [**產生共用密碼**] 和 [複製密碼]。 稍後在應用程式**Web.config**檔中，將會使用此值做為**ida： ClientSecret**的值。 按 [下一步]  。  
   
       ![新增應用程式群組](media/adfs-msal-web-app-web-api/webapp4.png)
   
-  5. 在 [設定 Web API] 畫面上，輸入**識別碼：** https://webapi 。 按一下 **[新增]** 。 按一下 **\[下一步\]** 。 稍後**在應用程式的 web.config 檔案**中，將會使用此值進行**ida： GraphResourceId** 。 
+  5. 在 [設定 Web API] 畫面上，輸入**識別碼：** https://webapi 。 按一下 [新增] 。 按 [下一步]  。 稍後在應用程式**Web.config**檔中，將會使用此值進行**ida： GraphResourceId** 。 
   
       ![新增應用程式群組](media/adfs-msal-web-app-web-api/webapp5.png)
   
@@ -67,11 +67,11 @@ ms.locfileid: "75949499"
   
       ![新增應用程式群組](media/adfs-msal-web-app-web-api/webapp6.png)
   
-  7. 在 [設定應用程式許可權] 畫面上，確認已選取**openid**和**user_impersonation** ，然後按 **[下一步]** 。 
+  7. 在 [設定應用程式許可權] 畫面上，確認已選取**openid**和**user_impersonation** ，然後按 **[下一步]**。 
   
       ![新增應用程式群組](media/adfs-msal-web-app-web-api/webapp7.png)
   
-  8. 在 [摘要] 畫面上，按 **[下一步]** 。 
+  8. 在 [摘要] 畫面上，按 **[下一步]**。 
   
   9. 在 [完成] 畫面上，按一下 [**關閉**]。
 
@@ -89,7 +89,7 @@ ms.locfileid: "75949499"
        - ida： ClientId-在上述 AD FS 區段中，輸入應用程式註冊 #3 的 [**用戶端識別碼**] 值。 
        - ida： ClientSecret-在上述 AD FS 區段中，從應用程式註冊 #4 輸入**秘密**值。 
        - ida： RedirectUri-在上述 AD FS 區段中，輸入應用程式註冊 #3 的 [重新**導向 URI** ] 值。 
-       - ida：授權單位-輸入 HTTPs：//[您的 AD FS hostname]/adfs。 例如， https://adfs.contoso.com/adfs 
+       - ida：授權單位-輸入 HTTPs：//[您的 AD FS hostname]/adfs。 例如，https://adfs.contoso.com/adfs 
        - ida：資源-在上述 AD FS 區段中，輸入應用程式註冊 #5 的**識別碼**值。 
       
           ![新增應用程式群組](media/adfs-msal-web-app-web-api/webapp8.png)

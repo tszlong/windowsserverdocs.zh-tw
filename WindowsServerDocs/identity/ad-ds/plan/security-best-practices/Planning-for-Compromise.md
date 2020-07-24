@@ -8,18 +8,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 5dcbea1ae0bd84ed517644d7c4fde03852bef304
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 72265f5cb2ff0e1f80d4cca6d789cb2951066557
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80821111"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966550"
 ---
 # <a name="planning-for-compromise"></a>規劃危害因應措施
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-*第一條定律：沒有人認為可能發生的任何錯誤。* - [安全性管理的10個不可變法則](https://technet.microsoft.com/library/cc722488.aspx)  
+*第一條定律：沒有人認為可能發生的任何錯誤。* - [10個不變的安全性管理法則](/previous-versions//cc722488(v=technet.10))  
   
 許多組織中的嚴重損壞修復計畫，著重于從導致計算服務遺失的區域性災難或失敗中復原。 不過，在與遭入侵的客戶合作時，我們通常會發現在其嚴重損壞修復計畫中不會有刻意洩露的復原。 尤其是當洩露會導致使用邏輯界限（例如，終結所有 Active Directory 網域或所有伺服器）而不是實體界限（例如，資料中心的銷毀）的智慧財產權遭竊或刻意終結時，更是如此。 雖然組織可能會有事件回應計畫，以定義在發現洩露時要採取的初始活動，但這些計畫通常會省略會影響整個運算基礎結構的危害復原的步驟。  
   
@@ -34,7 +34,7 @@ ms.locfileid: "80821111"
 Windows Server 2012 中會顯示覆原 Active Directory 樹系的建議[：規劃 Active Directory 樹](https://www.microsoft.com/download/details.aspx?id=16506)系復原。 您可能可以防止新的環境完全遭到入侵，但是即使您無法這樣做，您還是可以使用工具來復原和重新取得環境的控制權。  
   
 ## <a name="rethinking-the-approach"></a>重新思考方法  
-*定律號碼8：網路防禦的困難在於其複雜性。* - [安全性管理的10個不可變法則](https://technet.microsoft.com/library/cc722488.aspx)  
+*定律號碼8：網路防禦的困難在於其複雜性。* - [10個不變的安全性管理法則](/previous-versions//cc722488(v=technet.10))  
   
 一般來說，如果攻擊者已取得電腦的系統、管理員、根目錄或對等的存取權（無論作業系統為何），該電腦就無法再被視為值得信任，無論是多少努力「清理」系統。 Active Directory 並無不同。 如果攻擊者已在 Active Directory 中取得網域控制站或高許可權帳戶的特殊許可權存取權，除非您有一筆記錄，其中包含攻擊者所進行的每項修改或已知良好的備份，否則您絕對無法將目錄還原為完全信任的狀態。  
   
@@ -107,7 +107,7 @@ Windows Server 2012 中會顯示覆原 Active Directory 樹系的建議[：規�
   
 不過，維護 SID 歷程記錄在某些環境中已證明有問題，因為以目前和歷史的 Sid 填入使用者的存取權杖，可能會導致權杖膨脹。 權杖膨脹是一項問題，其中必須儲存在使用者的存取權杖中的 Sid 數目會使用或超過權杖中可用的空間量。  
   
-雖然權杖大小可以增加到有限的範圍，但權杖膨脹的最終解決方案是減少與使用者帳戶相關聯的 Sid 數目，不論是藉由合理化群組成員資格、排除 SID 歷程記錄或兩者的組合。 如需有關權杖膨脹的詳細資訊，請參閱[MaxTokenSize 和 Kerberos 權杖膨脹](https://blogs.technet.com/b/shanecothran/archive/2010/07/16/maxtokensize-and-kerberos-token-bloat.aspx)。  
+雖然權杖大小可以增加到有限的範圍，但權杖膨脹的最終解決方案是減少與使用者帳戶相關聯的 Sid 數目，不論是藉由合理化群組成員資格、排除 SID 歷程記錄或兩者的組合。 如需有關權杖膨脹的詳細資訊，請參閱[MaxTokenSize 和 Kerberos 權杖膨脹](/archive/blogs/shanecothran/maxtokensize-and-kerberos-token-bloat)。  
   
 使用 SID 歷程記錄，而不是從舊版環境（特別是群組成員資格和 SID 歷程記錄可能會遭到入侵的使用者）遷移使用者，請考慮利用中繼目錄應用程式來「遷移」使用者，而不需要將 SID 歷程記錄儲存到新的樹系中。 在新樹系中建立使用者帳戶時，您可以使用中繼目錄應用程式，將帳戶對應至舊版樹系中的對應帳戶。  
   
@@ -143,7 +143,7 @@ Windows Server 2012 中會顯示覆原 Active Directory 樹系的建議[：規�
   
 例如，您可以定義一個原則，讓主管和其他 Vip 需要使用安全的工作站來存取敏感性資料和系統，以使用其他裝置來存取較不敏感的資料。 這是讓使用者記住的簡單原則，但是您可以執行一些後端控制項，以協助強制執行此方法。  
 
-您可以使用[驗證機制保證](https://technet.microsoft.com/library/dd391847(v=WS.10).aspx)，只有在使用者使用智慧卡登入安全系統時，才允許他們存取機密資料，而且可以使用 IPsec 和使用者權限限制來控制可連線到敏感性資料存放庫的系統。 您可以使用[Microsoft 資料分類工具](https://www.microsoft.com/download/details.aspx?id=27123)組來建立健全的檔案分類基礎結構，而且您可以根據存取嘗試的特性來執行[動態存取控制](https://blogs.technet.com/b/windowsserver/archive/2012/05/22/introduction-to-windows-server-2012-dynamic-access-control.aspx)，以限制資料的存取，將商務規則轉譯為技術控制項。  
+您可以使用[驗證機制保證](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd391847(v=ws.10))，只有在使用者使用智慧卡登入安全系統時，才允許他們存取機密資料，而且可以使用 IPsec 和使用者權限限制來控制可連線到敏感性資料存放庫的系統。 您可以使用[Microsoft 資料分類工具](https://www.microsoft.com/download/details.aspx?id=27123)組來建立健全的檔案分類基礎結構，而且您可以根據存取嘗試的特性來執行[動態存取控制](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd391847(v=ws.10))，以限制資料的存取，將商務規則轉譯為技術控制項。  
   
 從使用者的觀點來看，從安全的系統存取機密資料「直接運作」，然後從不安全的系統中嘗試這麼做。」 不過，從監控和管理環境的觀點來看，您可以在使用者如何存取機密資料和系統時，協助您建立可識別的模式，讓您更輕鬆地偵測異常的存取嘗試。  
   

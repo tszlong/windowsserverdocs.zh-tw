@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c402e5519bc0e5c37cb6d3818c8def40d98d49e5
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 6743a5fb902509d24f8f30d42b919e65fa40ccc0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624256"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965690"
 ---
 # <a name="disjoint-namespace"></a>斷續命名空間
 
@@ -77,7 +77,7 @@ ms.locfileid: "81624256"
 - 若要優化名稱解析，您必須執行手動步驟來修改和維護群組原則，以設定具有替代主要 DNS 尾碼的成員電腦。
 
 > [!NOTE]
-> 藉由解析單一標籤名稱，可以使用 Windows 網際網路名稱服務（WINS）來抵銷此缺點。 如需 WINS 的詳細資訊，請參閱[Wins 技術參考](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc736411(v=ws.10))。
+> 藉由解析單一標籤名稱，可以使用 Windows 網際網路名稱服務（WINS）來抵銷此缺點。 如需 WINS 的詳細資訊，請參閱[Wins 技術參考](/previous-versions/windows/it-pro/windows-server-2003/cc736411(v=ws.10))。
 
 - 當您的環境需要多個主要 DNS 尾碼時，您必須適當地設定樹系中所有 Active Directory 網域的 DNS 尾碼搜尋順序。
 
@@ -85,7 +85,7 @@ ms.locfileid: "81624256"
 
 - 您必須仔細測試所有應用程式的相容性問題。
 
-如需您可以採取哪些步驟來解決這些缺點的詳細資訊，請參閱建立脫離的[命名空間](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc755926(v=ws.10))。
+如需您可以採取哪些步驟來解決這些缺點的詳細資訊，請參閱建立脫離的[命名空間](/previous-versions/windows/it-pro/windows-server-2003/cc755926(v=ws.10))。
 
 ### <a name="planning-a-namespace-transition"></a>規劃命名空間轉換
 
@@ -93,11 +93,11 @@ ms.locfileid: "81624256"
 
 - 在命名空間變更之後，手動設定的服務主體名稱（Spn）可能不再符合 DNS 名稱。 這可能會導致驗證失敗。
 
-    如需詳細資訊，請參閱服務登入[因設定不正確的 spn 而失敗](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc772897(v=ws.10))。
+    如需詳細資訊，請參閱服務登入[因設定不正確的 spn 而失敗](/previous-versions/windows/it-pro/windows-server-2003/cc772897(v=ws.10))。
 
     - 如果您使用具有限制委派的 Windows Server 2003 電腦，這些電腦可能需要額外的設定來變更 Spn。 如需詳細資訊，請參閱 Microsoft 知識庫中的文章936628，[當您嘗試在執行 Windows Server 2003 （404）的電腦上設定限制委派時，SPN 不會出現在可委派給帳戶的服務清單中](https://support.microsoft.com/help/936628)。
 
-    - 如果您想要委派許可權來修改次級系統管理員的 Spn，請參閱[委派授權以修改 spn](https://technet.microsoft.com/library/cc772895(WS.10).aspx)。
+    - 如果您想要委派許可權來修改次級系統管理員的 Spn，請參閱[委派授權以修改 spn](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770439(v=ws.10))。
 
 - 如果您在部署中使用輕量型目錄存取協定（LDAP） over 安全通訊端層（SSL）（也就是在具有脫離的命名空間中設定之網域控制站的 CA），則當您設定 LDAPS 憑證時，必須使用適當的 Active Directory 功能變數名稱和主要 DNS 尾碼。
 

@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6ce382f14c8fb6faf24903ad5957e838dcff6849
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f91848be8e2635954f4ee8ca9dfbe61ef9adca09
+ms.sourcegitcommit: f305bc5f1c5a44dac62f4288450af19f351f9576
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853961"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87118538"
 ---
 # <a name="ad-fs-design"></a>AD FS 設計
 
@@ -25,7 +25,7 @@ ms.locfileid: "80853961"
 
   
 ## <a name="see-also"></a>另請參閱  
-如需 Windows Server 2016 中 AD FS 的容量規劃，請參閱[AD FS 容量規劃工作表。](http://adfsdocs.blob.core.windows.net/adfs/ADFSCapacity2016.xlsx)  
+如需 Windows Server 2016 中 AD FS 的容量規劃，請參閱[AD FS 容量規劃工作表。](https://adfsdocs.blob.core.windows.net/adfs/ADFSCapacity2016.xlsx)  
   
 [Active Directory Federation Services 概觀](../Active-Directory-Federation-Services.md)  
   

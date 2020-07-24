@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 15c02897df0710653a6a3663ce6f8e87bfa416b6
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 3896b411ee8b02a0efde6b46484e043b27ffea77
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471803"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966510"
 ---
 # <a name="enable-or-disable-referrals-and-client-failback"></a>啟用或停用轉介和用戶端容錯回復
 
@@ -39,15 +39,15 @@ ms.locfileid: "85471803"
 
 
 > [!TIP]
-> 若要使用 Windows PowerShell 來啟用或停用轉介，請使用 [Set-DfsnRootTarget –State](https://technet.microsoft.com/library/jj884266.aspx) 或 [Set-DfsnServerConfiguration](https://technet.microsoft.com/library/jj884277.aspx) Cmdlet，這些命令已在 Windows Server 2012 中引進。
+> 若要使用 Windows PowerShell 來啟用或停用轉介，請使用 [Set-DfsnRootTarget –State](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731089(v=ws.11)) 或 [Set-DfsnServerConfiguration](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731089(v=ws.11)) Cmdlet，這些命令已在 Windows Server 2012 中引進。
 
 ## <a name="enable-client-failback"></a>啟用用戶端容錯回復
 
-如果目標變得無法使用，則可將用戶端設定成當目標還原後錯誤後回復到該目標。 若要執行容錯回復，用戶端電腦必須符合下列主題中列出的需求：[檢閱 DFS 命名空間用戶端需求](https://technet.microsoft.com/library/cc771913(v=ws.11).aspx)。
+如果目標變得無法使用，則可將用戶端設定成當目標還原後錯誤後回復到該目標。 若要執行容錯回復，用戶端電腦必須符合下列主題中列出的需求：[檢閱 DFS 命名空間用戶端需求](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771913(v=ws.11))。
 
 
 > [!NOTE]
-> 若要使用 Windows PowerShell 來啟用命名空間根目錄上的用戶端容錯回復，請使用 [Set-DfsnRoot](https://technet.microsoft.com/library/jj884281.aspx) Cmdlet。 若要在 DFS 資料夾上啟用用戶端容錯回復，請使用 [Set-DfsnFolder](https://technet.microsoft.com/library/jj884283.aspx) Cmdlet。
+> 若要使用 Windows PowerShell 來啟用命名空間根目錄上的用戶端容錯回復，請使用 [Set-DfsnRoot](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771913(v=ws.11)) Cmdlet。 若要在 DFS 資料夾上啟用用戶端容錯回復，請使用 [Set-DfsnFolder](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771913(v=ws.11)) Cmdlet。
 
 
 ## <a name="to-enable-client-failback-for-a-namespace-root"></a>為命名空間根目錄啟用用戶端容錯回復
@@ -71,5 +71,5 @@ ms.locfileid: "85471803"
 ## <a name="additional-references"></a>其他參考
 
 -   [調整 DFS 命名空間](tuning-dfs-namespaces.md)
--   [檢視 DFS 命名空間用戶端需求](https://technet.microsoft.com/library/cc771913(v=ws.11).aspx)
+-   [檢視 DFS 命名空間用戶端需求](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771913(v=ws.11))
 -   [委派 DFS 命名空間的管理權限](delegate-management-permissions-for-dfs-namespaces.md)

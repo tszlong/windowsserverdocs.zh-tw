@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 661f1b3f227a3e04c1328798a632b10b55df1c20
-ms.sourcegitcommit: 7200143aa787c7ac05ae0e012263b1c9a95b87ed
+ms.openlocfilehash: a7da23b592f495b45e337520179d414900183a1b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721746"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966610"
 ---
 # <a name="the-role-of-claims"></a>宣告的角色
 
@@ -90,7 +90,7 @@ Active Directory 同盟服務 AD FS 中的 \( 同盟服務 \) 會定義同盟夥
 
 - **在同盟中繼資料中發佈此宣告，做為此同盟服務可以傳送** \( 的宣告類型[發行為已傳送] \) —表示此同盟服務所提供的宣告類型。 這些是 Federation Service 發行至其他宣告提供者且其他宣告提供者願意傳送的宣告類型。 此宣告提供者傳送的實際宣告類型通常是此清單的子集。
 
-如需有關如何設定宣告類型之發行狀態的詳細資訊，請參閱 AD FS 部署指南中的[新增宣告描述](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/add-a-claim-description)。
+如需有關如何設定宣告類型之發行狀態的詳細資訊，請參閱 AD FS 部署指南中的[新增宣告描述](../operations/add-a-claim-description.md)。
 
 ### <a name="when-generating-federation-metadata"></a>同盟中繼資料產生時機
 

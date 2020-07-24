@@ -8,16 +8,16 @@ ms.topic: article
 ms.assetid: 4781df0a-158b-4562-b8f5-32b27615a4f8
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6d0a9248865dca4afb3db9609b284048155f9eef
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0cf216cb785d01ed08bb3a4490b25d4c4549b1c4
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857431"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965590"
 ---
 # <a name="deploy-remote-access-in-an-enterprise"></a>在企業中部署遠端存取
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 本主題為企業提供 DirectAccess 案例的簡介。  
   
@@ -27,17 +27,17 @@ ms.locfileid: "80857431"
   
 ## <a name="before-you-begin-deploying-see-the-list-of-unsupported-configurations-known-issues-and-prerequisites"></a>在開始部署之前，請參閱不支援的設定清單、已知問題和先決條件  
   
--   [DirectAccess 不支援的設定](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/directaccess-unsupported-configurations)  
+-   [DirectAccess 不支援的設定](../directaccess/directaccess-unsupported-configurations.md)  
   
--   [DirectAccess 已知問題](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/directaccess-known-issues)  
+-   [DirectAccess 已知問題](../directaccess/directaccess-known-issues.md)  
   
--   [部署 DirectAccess 的必要條件）必要條件](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/prerequisites-for-deploying-directaccess)  
+-   [部署 DirectAccess 的必要條件）必要條件](../directaccess/prerequisites-for-deploying-directaccess.md)  
   
 ## <a name="scenario-description"></a><a name="BKMK_OVER"></a>案例描述  
 「遠端存取」包含一些企業功能，其中包括在利用 Windows 網路負載平衡 (NLB) 或外部負載平衡器平均分攤工作量的叢集中，部署多個遠端存取伺服器、為分散各地的遠端存取伺服器設定多站台部署，以及利用一次性密碼 (OTP) 部署雙因素用戶端驗證的 DirectAccess。  
   
 ## <a name="in-this-scenario"></a>在這個案例中  
-每一個企業案例都會有一份相關文件加以說明並提供計劃和部署步驟。 如需詳細資訊，請參閱：  
+每一個企業案例都會有一份相關文件加以說明並提供計劃和部署步驟。 如需詳細資訊，請參閱  
   
 -   [在叢集中部署遠端存取](cluster/Deploy-Remote-Access-In-Cluster.md)  
   
@@ -58,7 +58,7 @@ ms.locfileid: "80857431"
   
 -   **安全性**。 使用單次密碼（OTP）部署強大的用戶端驗證，而不是標準的 Active Directory 密碼會提高安全性。  
   
-## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>此案例中包含的角色和功能  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>這個案例包含的角色與功能  
 下表列出本企業案例使用的角色和功能：  
   
 |角色/功能|如何支援本案例|  
@@ -69,5 +69,3 @@ ms.locfileid: "80857431"
   
 
   
-
-

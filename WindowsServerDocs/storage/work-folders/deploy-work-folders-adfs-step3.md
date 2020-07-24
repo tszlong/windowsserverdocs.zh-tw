@@ -8,31 +8,31 @@ ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 4/5/2017
 ms.assetid: 5a43b104-4d02-4d73-a385-da1cfb67e341
-ms.openlocfilehash: ef76b87928e696586356c499367051ff0d0e9ab4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 433d981d558cc49cd860a5c05a8d76996d9cdd30
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365766"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965740"
 ---
 # <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-3-set-up-work-folders"></a>搭配 AD FS 與 Web 應用程式 Proxy 部署工作資料夾︰步驟 3 設定工作資料夾
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 本主題說明使用 Active Directory 同盟服務 (AD FS) 和 Web 應用程式 Proxy 部署工作資料夾的第三個步驟。 您可以在這些主題中找到這個程序的其他步驟︰  
   
--   [使用 AD FS 和 Web 應用程式 Proxy 部署工作資料夾：總覽](deploy-work-folders-adfs-overview.md)  
+-   [搭配 AD FS 與 Web 應用程式 Proxy 部署工作資料夾︰概觀](deploy-work-folders-adfs-overview.md)  
   
--   [使用 AD FS 和 Web 應用程式 Proxy 部署工作資料夾：步驟1，設定 AD FS](deploy-work-folders-adfs-step1.md)  
+-   [搭配 AD FS 與 Web 應用程式 Proxy 部署工作資料夾︰步驟 1 設定 AD FS](deploy-work-folders-adfs-step1.md)  
   
--   [使用 AD FS 和 Web 應用程式 Proxy 部署工作資料夾：步驟2，AD FS 設定後的工作](deploy-work-folders-adfs-step2.md)  
+-   [搭配 AD FS 與 Web 應用程式 Proxy 部署工作資料夾︰步驟 2 AD FS 後續設定工作](deploy-work-folders-adfs-step2.md)  
   
--   [使用 AD FS 和 Web 應用程式 Proxy 部署工作資料夾：步驟4，設定 Web 應用程式 Proxy](deploy-work-folders-adfs-step4.md)  
+-   [搭配 AD FS 與 Web 應用程式 Proxy 部署工作資料夾 - 步驟 4 設定 Web 應用程式 Proxy](deploy-work-folders-adfs-step4.md)  
   
--   [使用 AD FS 和 Web 應用程式 Proxy 部署工作資料夾：步驟5，設定用戶端](deploy-work-folders-adfs-step5.md)  
+-   [搭配 AD FS 與 Web 應用程式 Proxy 部署工作資料夾︰步驟 5 設定用戶端](deploy-work-folders-adfs-step5.md)  
   
 > [!NOTE]
->   本節涵蓋的指示適用于 Windows Server 2019 或 Windows Server 2016 環境。 如果您使用 Windows Server 2012 R2，請依照 [Windows Server 2012 R2 指示](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx)。
+>   本節涵蓋的指示適用于 Windows Server 2019 或 Windows Server 2016 環境。 如果您使用 Windows Server 2012 R2，請依照 [Windows Server 2012 R2 指示](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn747208(v=ws.11))。
 
 若要設定工作資料夾，請使用下列程序。  
   
@@ -49,7 +49,7 @@ ms.locfileid: "71365766"
   
 1.  在網域控制站上開啟 **DNS 管理員**。  
   
-2.  展開 \[正向對應區域\] 資料夾，在您的網域上按滑鼠右鍵，再按一下 **\[新增別名 (CNAME)\]** 。  
+2.  展開 \[正向對應區域\] 資料夾，在您的網域上按滑鼠右鍵，再按一下 **\[新增別名 (CNAME)\]**。  
   
 3.  在 **\[新增資源記錄\]** 視窗的 **\[別名名稱\]** 欄位中，輸入工作資料夾的別名。 在測試範例中，此別名為 **workfolders**。  
   
@@ -57,7 +57,7 @@ ms.locfileid: "71365766"
   
 5.  在 **\[目標主機的完整網域名稱\]** 欄位中，輸入工作資料夾伺服器的 FQDN。 在測試範例中，該值為 **2016-WF.contoso.com**。  
   
-6.  按一下 **\[確定\]** 。  
+6.  按一下 [確定]  。  
   
 若要透過 Windows PowerShell 完成相同的步驟，請使用下列命令。 命令必須在網域控制站中執行。  
   
@@ -68,36 +68,36 @@ Add-DnsServerResourceRecord  -ZoneName "contoso.com" -Name workfolders -CName  -
 ### <a name="install-the-ad-fs-certificate"></a>安裝 AD FS 憑證  
 將 AD FS 設定期間建立的 AD FS 憑證安裝至本機電腦憑證存放區，請使用下列步驟：  
   
-1.  按一下 **\[開始\]** ，然後按一下 **\[執行\]** 。  
+1.  按一下 **[開始]** ，然後按一下 **[執行]** 。  
   
 2.  輸入 **MMC**。  
   
-3.  按一下 **[檔案]** 功能表上的 **[新增/移除嵌入式管理單元]** 。  
+3.  在 [檔案] 功能表上，按一下 [新增/移除嵌入式管理單元]。  
   
-4.  在 **\[可用的嵌入式管理單元\]** 清單中，選取 **\[憑證\]** ，然後按一下 **\[新增\]** 。 \[憑證嵌入式管理單元精靈\] 就會啟動。  
+4.  在 **\[可用的嵌入式管理單元\]** 清單中，選取 **\[憑證\]**，然後按一下 **\[新增\]**。 \[憑證嵌入式管理單元精靈\] 就會啟動。  
   
-5.  選取 **\[電腦帳戶\]** ，然後按 **\[下一步\]** 。  
+5.  選取 **[電腦帳戶]**，然後按 **[下一步]**。  
   
-6.  選取 **\[本機電腦 (執行這個主控台的電腦)\]** ，然後按一下 **\[完成\]** 。  
+6.  選取 **\[本機電腦 (執行這個主控台的電腦)\]**，然後按一下 **\[完成\]**。  
   
-7.  按一下 **\[確定\]** 。  
+7.  按一下 [確定]  。  
   
-8.  展開資料夾 **Console Root\Certificates\(Local Computer)\Personal\Certificates**。  
+8.  展開資料夾**主控台 Root\Certificates \( 本機電腦） \Personal\Certificates**。  
   
-9. 以滑鼠右鍵按一下 **\[憑證\]** ，按一下 **\[所有工作\]** ，然後按一下 **\[匯入\]** 。  
+9. 以滑鼠右鍵按一下 **\[憑證\]**，按一下 **\[所有工作\]**，然後按一下 **\[匯入\]**。  
   
 10. 瀏覽至含有 AD FS 憑證的資料夾，然後依照精靈中的指示匯入檔案，並將它放在憑證存放區。
 
-11. 展開資料夾 **Console Root\Certificates\(Local Computer)\Trusted Root Certification Authorities\Certificates**。  
+11. 展開資料夾**主控台 Root\Certificates \( 本機電腦） \Trusted 根憑證 Authorities\Certificates**。  
   
-12. 以滑鼠右鍵按一下 **\[憑證\]** ，按一下 **\[所有工作\]** ，然後按一下 **\[匯入\]** 。  
+12. 以滑鼠右鍵按一下 **\[憑證\]**，按一下 **\[所有工作\]**，然後按一下 **\[匯入\]**。  
   
 13. 瀏覽至含有 AD FS 憑證的資料夾，然後依照精靈中的指示匯入檔案，並將它放在「受信任的根憑證授權單位」存放區。  
   
 ### <a name="create-the-work-folders-self-signed-certificate"></a>建立工作資料夾自我簽署憑證  
 若要建立工作資料夾自我簽署憑證，請依照下列步驟執行︰  
   
-1.  下載 [搭配 AD FS 與 Web 應用程式 Proxy 部署工作資料夾](https://blogs.technet.microsoft.com/filecab/2014/03/03/deploying-work-folders-with-ad-fs-and-web-application-proxy-wap) 部落格文章中提供的指令碼，然後將檔案 makecert.ps1 複製到工作資料夾電腦。  
+1.  下載 [搭配 AD FS 與 Web 應用程式 Proxy 部署工作資料夾](https://techcommunity.microsoft.com/t5/storage-at-microsoft/deploying-work-folders-with-ad-fs-and-web-application-proxy-wap/ba-p/425318) 部落格文章中提供的指令碼，然後將檔案 makecert.ps1 複製到工作資料夾電腦。  
   
 2.  以系統管理員權限開啟 Windows PowerShell 視窗。  
   
@@ -140,42 +140,42 @@ Add-DnsServerResourceRecord  -ZoneName "contoso.com" -Name workfolders -CName  -
 ## <a name="install-work-folders"></a>安裝工作資料夾  
 若要安裝工作資料夾角色，請依照下列步驟執行︰  
   
-1.  開啟 **\[伺服器管理員\]** ，按一下 **\[新增角色及功能\]** ，然後按 **\[下一步\]** 。  
+1.  開啟 **\[伺服器管理員\]**，按一下 **\[新增角色及功能\]**，然後按 **\[下一步\]**。  
   
-2.  在 **\[安裝類型\]** 頁面上，選取 **\[角色型或功能型安裝\]** ，然後按 **\[下一步\]** 。  
+2.  在 [**安裝類型**] 頁面上，選取 [**角色型或功能型安裝**]，然後按 **[下一步]**。  
   
-3.  在 **\[選取伺服器\]** 頁面上，選取您目前的伺服器，然後按 **\[下一步\]** 。  
+3.  在 **\[選取伺服器\]** 頁面上，選取您目前的伺服器，然後按 **\[下一步\]**。  
   
-4.  在 **\[伺服器角色\]** 頁面上，依序展開 **\[檔案和存放服務\]** 、 **\[檔案和 iSCSI 服務\]** ，然後選取 **\[工作資料夾\]** 。  
+4.  在 **\[伺服器角色\]** 頁面上，依序展開 **\[檔案和存放服務\]**、**\[檔案和 iSCSI 服務\]**，然後選取 **\[工作資料夾\]**。  
   
-5.  在 **\[新增角色及功能精靈\]** 頁面上，按一下 **\[新增功能\]** ，然後按 **\[下一步\]** 。  
+5.  在 **\[新增角色及功能精靈\]** 頁面上，按一下 **\[新增功能\]**，然後按 **\[下一步\]**。  
   
-6.  在 **\[功能\]** 頁面上，按 **\[下一步\]** 。  
+6.  在 [**功能**] 頁面上，按 **[下一步]**。  
   
-7.  在 [確認] 頁面上，按一下 [安裝]。  
+7.  在 [確認]**** 頁面上，按一下 [安裝]****。  
   
 ## <a name="configure-work-folders"></a>設定工作資料夾  
 若要設定工作資料夾，請依照下列步驟執行：  
   
-1.  開啟**伺服器管理員**。  
+1.  開啟 **[伺服器管理員]** 。  
   
-2.  選取 **\[檔案和存放服務\]** ，然後選取 **\[工作資料夾\]** 。  
+2.  選取 **\[檔案和存放服務\]**，然後選取 **\[工作資料夾\]**。  
   
-3.  在 **\[工作資料夾\]** 頁面上，啟動 **\[新增同步共用精靈\]** ，然後按 **\[下一步\]** 。  
+3.  在 **\[工作資料夾\]** 頁面上，啟動 **\[新增同步共用精靈\]**，然後按 **\[下一步\]**。  
   
-4.  在 **\[伺服器和路徑\]** 頁面上，選取將建立同步共用的伺服器，輸入要儲存工作資料夾資料的本機路徑，然後按 **\[下一步\]** 。  
+4.  在**\[伺服器和路徑\]** 頁面上，選取將建立同步共用的伺服器，輸入要儲存工作資料夾資料的本機路徑，然後按 **\[下一步\]**。  
   
-    如果路徑不存在，系統將會提示您建立它。 按一下 **\[確定\]** 。  
+    如果路徑不存在，系統將會提示您建立它。 按一下 [確定]  。  
   
-5.  在 **\[使用者資料夾結構\]** 頁面上，選取 **\[使用者別名\]** ，然後按 **\[下一步\]** 。  
+5.  在 **\[使用者資料夾結構\]** 頁面上，選取**\[使用者別名\]**，然後按 **\[下一步\]**。  
   
-6.  在 **\[同步共用名稱\]** 頁面上，輸入同步共用的名稱。 在測試範例中，此別名為 **WorkFolders**。 按一下 **\[下一步\]** 。  
+6.  在 **\[同步共用名稱\]** 頁面上，輸入同步共用的名稱。 在測試範例中，此別名為 **WorkFolders**。 按 [下一步]  。  
   
-7.  在 **\[同步存取\]** 頁面上，新增將具備同步共用存取權限的使用者或群組。 在測試範例中會將存取權限授予所有網域使用者。 按一下 **\[下一步\]** 。  
+7.  在 **\[同步存取\]** 頁面上，新增將具備同步共用存取權限的使用者或群組。 在測試範例中會將存取權限授予所有網域使用者。 按 [下一步]  。  
   
-8.  在 **\[電腦安全性原則\]** 頁面上，選取 **\[加密工作資料夾\]** 和 **\[自動鎖定頁面並要求輸入密碼\]** 。 按一下 **\[下一步\]** 。  
+8.  在 **\[電腦安全性原則\]** 頁面上，選取 **\[加密工作資料夾\]** 和 **\[自動鎖定頁面並要求輸入密碼\]**。 按 [下一步]  。  
   
-9. 在 **\[確認\]** 頁面中，按一下 **\[建立\]** 以完成設定程序。  
+9. 在**\[確認\]** 頁面中，按一下 **\[建立\]** 以完成設定程序。  
   
 ## <a name="work-folders-post-configuration-work"></a>工作資料夾後設定工作  
 若要完成工作資料夾設定，請執行這些額外步驟︰  
@@ -242,15 +242,15 @@ Exit
 ### <a name="set-up-ad-fs-authentication"></a>設定 AD FS 驗證  
 若要設定工作資料夾以使用 AD FS 進行驗證，請依照下列步驟執行：  
   
-1.  開啟**伺服器管理員**。  
+1.  開啟 **[伺服器管理員]** 。  
   
-2.  按一下 **\[伺服器\]** ，然後在清單中選取您的工作資料夾。  
+2.  按一下 **\[伺服器\] **，然後在清單中選取您的工作資料夾。  
   
-3.  在伺服器名稱上按滑鼠右鍵，再按一下 **\[工作資料夾設定\]** 。  
+3.  在伺服器名稱上按滑鼠右鍵，再按一下 **\[工作資料夾設定\]**。  
   
-4.  在 **\[工作資料夾設定\]** 視窗中，選取 **\[Active Directory 同盟服務\]** ，並輸入 Federation Service URL。 按一下 [套用]。  
+4.  在 **\[工作資料夾設定\]** 視窗中，選取 **\[Active Directory 同盟服務\]**，並輸入 Federation Service URL。 按一下 [套用]。  
   
-    在測試範例中，URL 為 **https://blueadfs.contoso.com** 。  
+    在測試範例中，URL 是 **https://blueadfs.contoso.com** 。  
   
 透過 Windows PowerShell 完成相同工作的 Cmdlet 是：  
   
@@ -275,7 +275,6 @@ Set-SyncServerSetting -ADFSUrl "https://blueadfs.contoso.com"
   
 下一個步驟：[搭配 AD FS 與 Web 應用程式 Proxy 部署工作資料夾：步驟 4 設定 Web 應用程式 Proxy](deploy-work-folders-adfs-step4.md)  
   
-## <a name="see-also"></a>請參閱  
-[工作資料夾總覽](Work-Folders-Overview.md)  
+## <a name="see-also"></a>另請參閱  
+[工作資料夾概觀](Work-Folders-Overview.md)  
   
-

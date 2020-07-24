@@ -9,12 +9,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 07/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ffe34097971f4477f0f536637b49b704678c93e
-ms.sourcegitcommit: c40c29683d25ed75b439451d7fa8eda9d8d9e441
+ms.openlocfilehash: bdd5264394c94748b7720842cf8ff7e01e1375e7
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85833360"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965420"
 ---
 # <a name="choosing-drives-for-storage-spaces-direct"></a>選擇儲存空間直接存取的磁碟機
 
@@ -118,13 +118,13 @@ ms.locfileid: "85833360"
 
 每個伺服器都必須具備至少兩個快取磁碟機 (備援所需的下限)。 建議您讓容量磁碟機數為快取磁碟機數的倍數。 例如，若有 4 部快取磁碟機，則 8 部容量磁碟機 (比例為 1:2) 展現的效能會比 7 或 9 部更一致。
 
-快取應該調整大小，以配合您的應用程式和工作負載的工作集，也就是它們在任何指定時間主動讀取和寫入的所有資料。 此外即無其他快取大小需求。 針對具有 Hdd 的部署，合理的起點是容量的10% –例如，如果每部伺服器都有 4 x 4 TB HDD = 16 TB 的容量，則每一部伺服器 2 x 800 GB SSD = 1.6 TB 的快取。 針對所有的 flash 部署（特別是極[高](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)的 ssd），較接近容量的5% （例如，如果每部伺服器具有 24 x 1.2 TB SSD = 28.8 tb 的容量），則 2 x 750 GB NVMe = 每一伺服器的 1.5 TB 快取。 您稍後隨時都可新增或移除快取磁碟機進行調整。
+快取應該調整大小，以配合您的應用程式和工作負載的工作集，也就是它們在任何指定時間主動讀取和寫入的所有資料。 此外即無其他快取大小需求。 針對具有 Hdd 的部署，合理的起點是容量的10% –例如，如果每部伺服器都有 4 x 4 TB HDD = 16 TB 的容量，則每一部伺服器 2 x 800 GB SSD = 1.6 TB 的快取。 針對所有的 flash 部署（特別是極[高](https://techcommunity.microsoft.com/t5/storage-at-microsoft/understanding-ssd-endurance-drive-writes-per-day-dwpd-terabytes/ba-p/426024)的 ssd），較接近容量的5% （例如，如果每部伺服器具有 24 x 1.2 TB SSD = 28.8 tb 的容量），則 2 x 750 GB NVMe = 每一伺服器的 1.5 TB 快取。 您稍後隨時都可新增或移除快取磁碟機進行調整。
 
 ### <a name="general"></a>一般
 
 建議您將每部伺服器的儲存容量總計限制為大約 400 tb。 每個伺服器的儲存容量愈多，停機或重新開機後 (如套用軟體更新) 重新同步資料所需花費的時間愈長。 每個存放集區目前的大小上限為 4 pb （PB）（4000 TB）（適用于 Windows Server 2019）或 1 pb （適用于 Windows Server 2016）。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [儲存空間直接存取總覽](storage-spaces-direct-overview.md)
 - [了解儲存空間直接存取中的快取](understand-the-cache.md)

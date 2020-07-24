@@ -8,12 +8,12 @@ ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 3c43d26868f39896ec8632397dc0fce1dfe2dd2a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9882061aad5ec6620cda5a0a288790d34f25c3f3
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408287"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966670"
 ---
 # <a name="migrate-an-ad-fs-20-wid-farm"></a>遷移 AD FS 2.0 WID 伺服器陣列  
 本檔提供將 AD FS 2.0 SQL 伺服器陣列遷移至 Windows Server 2012 的詳細資訊。
@@ -26,23 +26,23 @@ ms.locfileid: "71408287"
   
 2.  從負載平衡器移除 SQL Server 伺服器陣列中的任何伺服器。  
   
-3.  將 SQL Server 服務器陣列中此伺服器上的作業系統從 Windows Server 2008 R2 或 Windows Server 2008 升級至 Windows Server 2012。 如需相關資訊，請參閱[安裝 Windows Server 2012](https://technet.microsoft.com/library/jj134246.aspx)。  
+3.  將 SQL Server 服務器陣列中此伺服器上的作業系統從 Windows Server 2008 R2 或 Windows Server 2008 升級至 Windows Server 2012。 如需相關資訊，請參閱[安裝 Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134246(v=ws.11))。  
   
 > [!IMPORTANT]
->  作業系統升級的結果會遺失這部伺服器上的 AD FS 設定，並移除 AD FS 2.0 伺服器角色。 系統會改為安裝 Windows Server 2012 AD FS 伺服器角色，但未設定。 您必須手動建立原始的 AD FS 設定，並還原剩餘的 AD FS 設定，以完成同盟伺服器遷移。  
+>  作業系統升級會造成此伺服器上的 AD FS 設定遺失且 AD FS 2.0 伺服器角色會被移除。 系統會改為安裝 Windows Server 2012 AD FS 伺服器角色，但未設定。 您必須手動建立原始 AD FS 設定並還原剩餘的 AD FS 設定，來完成同盟伺服器移轉。  
   
-4. 使用 AD FS Windows PowerShell Cmdlet 將伺服器新增至現有的伺服陣列，以在 SQL Server 服務器陣列中的這部伺服器上建立原始的 AD FS 設定。  
+4. 使用 AD FS Windows PowerShell Cmdlet，在 SQL Server 伺服器陣列中這個伺服器上建立原始 AD FS 設定，將伺服器新增到現有的伺服器陣列。  
   
 > [!IMPORTANT]
->  如果您使用 SQL Server 來儲存 AD FS 設定資料庫，您必須使用 Windows PowerShell 來建立原始的 AD FS 設定。  
+>  如果您使用 SQL Server 儲存 AD FS 設定資料庫，則必須使用 Windows PowerShell 來建立原始 AD FS 設定。  
 
-  - 開啟 Windows PowerShell 並執行下列命令： `$fscredential = Get-Credential`。  
+  - 開啟 Windows PowerShell 並執行下列命令： `$fscredential = Get-Credential` 。  
   - 輸入準備移轉 SQL Server 伺服器陣列時所記錄之服務帳戶的名稱和密碼。  
-  - 執行下列命令： `Add-AdfsFarmNode -ServiceAccountCredential $fscredential -SQLConnectionString "Data Source=<Data Source>;Integrated Security=True"`，其中 `Data Source` 是下列檔案的原則存放區連接字串值中的資料來源值： `%programfiles%\Active Directory Federation Services 2.0\Microsoft.IdentityServer.Servicehost.exe.config`。  
+  - 執行下列命令： `Add-AdfsFarmNode -ServiceAccountCredential $fscredential -SQLConnectionString "Data Source=<Data Source>;Integrated Security=True"` ，其中 `Data Source` 是下列檔案的原則存放區連接字串值中的資料來源值： `%programfiles%\Active Directory Federation Services 2.0\Microsoft.IdentityServer.Servicehost.exe.config` 。  
   
 5. 將您剛升級至 Windows Server 2012 的伺服器新增至負載平衡器。  
   
-6. 針對 SQL Server 服務器陣列中的其餘節點，重複步驟2到6。  
+6. 針對 SQL Server 伺服器陣列中的其餘節點重複步驟 2 到 6。  
   
 7. 當您 SQL Server 服務器陣列中的所有伺服器都升級至 Windows Server 2012 時，請還原任何剩餘的 AD FS 自訂專案，例如自訂屬性存放區。  
 
@@ -52,6 +52,3 @@ ms.locfileid: "71408287"
  [遷移 AD FS 2.0 同盟伺服器](migrate-the-ad-fs-fed-server.md)   
  [遷移 AD FS 2.0 同盟伺服器 Proxy](migrate-the-ad-fs-2-fed-server-proxy.md)   
  [移轉 AD FS 1.1 網路代理程式](migrate-the-ad-fs-web-agent.md)
-
-
-

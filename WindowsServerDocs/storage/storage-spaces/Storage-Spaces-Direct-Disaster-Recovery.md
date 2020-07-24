@@ -9,16 +9,16 @@ ms.author: johnmar
 ms.date: 03/29/2018
 description: 本文說明 Microsoft HCI （儲存空間直接存取）嚴重損壞修復的今日可用案例
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f3159e0c215d898848df71c6488cd491b7ded38
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5c9c36e90f9bfae053197b6a36201748cb7e88d7
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859161"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966450"
 ---
 # <a name="disaster-recovery-with-storage-spaces-direct"></a>使用儲存空間直接存取的嚴重損壞修復
 
-> 適用于： Windows Server 2019、Windows Server 2016
+> 適用於：Windows Server 2019、Windows Server 2016
 
 本主題提供如何設定超融合基礎結構（HCI）以進行嚴重損壞修復的案例。
 
@@ -55,7 +55,7 @@ ms.locfileid: "80859161"
 
 ## <a name="hyper-v-replica"></a>Hyper-V 複本
 
-[Hyper-v 複本](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/set-up-hyper-v-replica)提供虛擬機器層級複寫，以在超融合式基礎結構上進行嚴重損壞修復。 Hyper-v 複本可執行檔動作是將虛擬機器複寫至次要網站或 Azure （複本）。 然後，從次要網站，Hyper-v 複本可以將虛擬機器複寫到第三個（延伸複本）。
+[Hyper-v 複本](../../virtualization/hyper-v/manage/set-up-hyper-v-replica.md)提供虛擬機器層級複寫，以在超融合式基礎結構上進行嚴重損壞修復。 Hyper-v 複本可執行檔動作是將虛擬機器複寫至次要網站或 Azure （複本）。 然後，從次要網站，Hyper-v 複本可以將虛擬機器複寫到第三個（延伸複本）。
 
 ![Hyper-v 複寫圖表](media/storage-spaces-direct-disaster-recovery/Disaster-Recovery-Figure2.png)
 
@@ -77,7 +77,7 @@ ms.locfileid: "80859161"
 - 您想要讓磁碟區陰影複製服務（VSS）複寫增量陰影複製的頻率。
 - 變更複寫的頻率（30秒、5分鐘、15分鐘）。
 
-當 HCI 參與 Hyper-v 複本時，您必須在每個叢集中建立[Hyper-v 複本](https://blogs.technet.microsoft.com/virtualization/2012/03/27/why-is-the-hyper-v-replica-broker-required/)代理人資源。 此資源會執行幾項工作：
+當 HCI 參與 Hyper-v 複本時，您必須在每個叢集中建立[Hyper-v 複本](https://techcommunity.microsoft.com/t5/virtualization/bg-p/Virtualization)代理人資源。 此資源會執行幾項工作：
 
 1.    提供每個叢集的單一命名空間，讓 Hyper-v 複本連接到該叢集。
 2.    決定當複本（或擴充複本）第一次收到複本時，該叢集內的哪個節點會位於該叢集中。
@@ -91,7 +91,7 @@ ms.locfileid: "80859161"
 
 ### <a name="non-authoritative"></a>非權威
 
-您可以使用 Windows NT Backup 來完成非權威還原，這等同于只有叢集節點本身的完整還原。 如果您只需要還原叢集節點（和叢集登錄資料庫）和所有目前的叢集資訊，您會使用非權威還原。 您可以透過 Windows NT 備份介面或命令列 WBADMIN 來完成非權威還原。CONVERT.EXE.
+您可以使用 Windows NT Backup 來完成非權威還原，這等同于只有叢集節點本身的完整還原。 如果您只需要還原叢集節點（和叢集登錄資料庫）和所有目前的叢集資訊，您會使用非權威還原。 您可以透過 Windows NT 備份介面或命令列 WBADMIN.EXE 來完成非權威還原。
 
 還原節點後，讓它加入叢集。 會發生什麼事，那就是它會移至現有的執行中叢集，並使用目前的內容來更新其所有資訊。
 
@@ -103,7 +103,7 @@ ms.locfileid: "80859161"
 
 若要透過授權還原執行，可以完成下列步驟。
 
-1.    執行 WBADMIN。從系統管理命令提示字元，取得您想要安裝的最新備份版本，並確定系統狀態是您可以還原的其中一個元件。
+1.    從系統管理命令提示字元執行 WBADMIN.EXE，以取得您想要安裝的最新備份版本，並確定系統狀態是您可以還原的其中一個元件。
 
     ```powershell
     Wbadmin get versions
@@ -126,5 +126,3 @@ ms.locfileid: "80859161"
 ## <a name="summary"></a>摘要 
 
 為了加總，超交集的嚴重損壞修復是應該仔細規劃的專案。 有幾個案例最適合您的需求，而且應該進行徹底測試。 其中一個要注意的事項是，如果您在過去已熟悉容錯移轉叢集，延展叢集在多年中已經是非常受歡迎的選項。 超融合解決方案有一些設計變更，而它是以復原為基礎。 如果您遺失超交集叢集中的兩個節點，則整個叢集將會關閉。 就這種情況而言，在超融合式環境中，不支援延展案例。
-
-

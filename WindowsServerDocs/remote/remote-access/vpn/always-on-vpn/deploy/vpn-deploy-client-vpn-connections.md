@@ -10,12 +10,12 @@ ms.localizationpriority: medium
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.reviewer: deverette
-ms.openlocfilehash: 9f942d7af5215680cf2707901293161a6208708b
-ms.sourcegitcommit: 599162b515c50106fd910f5c180e1a30bbc389b9
+ms.openlocfilehash: fc8b2646019292576abb638c7abdba1882eeedaa
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83775356"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965440"
 ---
 # <a name="step-6-configure-windows-10-client-always-on-vpn-connections"></a>步驟 6. 設定 Windows 10 用戶端 Always On VPN 連線
 
@@ -41,7 +41,7 @@ ProfileXML 是 VPNv2 CSP 內的 URI 節點。 並不是個別設定每個 VPNv2 
 
 - **Windows Management Instrumentation （WMI）到 CSP 橋接器**。 設定 ProfileXML CSP 節點的第二個方法是使用 WMI 對 CSP 橋接器（稱為**MDM_VPNv2_01**的 wmi 類別），其可存取 VPNv2 CSP 和 ProfileXML 節點。 當您建立該 WMI 類別的新實例時，WMI 會在使用 Windows PowerShell 和 Configuration Manager 時，使用 CSP 來建立 VPN 設定檔。
 
-雖然這些設定方法不同，但兩者都需要格式正確的 XML VPN 設定檔。 若要使用 ProfileXML VPNv2 CSP 設定，您可以使用 ProfileXML 架構來設定簡單部署案例所需的標記，以建立 XML。 如需詳細資訊，請參閱[PROFILEXML XSD](https://msdn.microsoft.com/windows/hardware/commercialize/customize/mdm/vpnv2-profile-xsd)。
+雖然這些設定方法不同，但兩者都需要格式正確的 XML VPN 設定檔。 若要使用 ProfileXML VPNv2 CSP 設定，您可以使用 ProfileXML 架構來設定簡單部署案例所需的標記，以建立 XML。 如需詳細資訊，請參閱[PROFILEXML XSD](/windows/client-management/mdm/vpnv2-profile-xsd)。
 
 在下方，您會找到每個必要的設定及其對應的 ProfileXML 標記。 您可以在 ProfileXML 架構內的特定標籤中設定每個設定，而不是在原生設定檔下找到所有設定。 如需其他標記位置，請參閱 ProfileXML 架構。
 
@@ -100,7 +100,7 @@ ProfileXML 元素：
 
 您可以使用簡單標記來設定某些 VPN 驗證機制。 不過，EAP 和 PEAP 更牽涉到。 建立 XML 標記最簡單的方式，就是使用其 EAP 設定來設定 VPN 用戶端，然後將該設定匯出至 XML。
 
-如需有關 EAP 設定的詳細資訊，請參閱[eap configuration](https://msdn.microsoft.com/windows/hardware/commercialize/customize/mdm/eap-configuration)。
+如需有關 EAP 設定的詳細資訊，請參閱[eap configuration](/windows/client-management/mdm/eap-configuration)。
 
 ## <a name="manually-create-a-template-connection-profile"></a>手動建立範本連線設定檔
 
@@ -160,7 +160,7 @@ ProfileXML 元素：
 
 6.  在 [伺服器名稱或位址] 中，輸入 VPN 伺服器的**外部**FQDN （例如， **vpn.contoso.com**）。
 
-7.  按一下 [檔案]  。
+7.  按一下 [檔案] 。
 
 8.  在 [相關設定] 底下，按一下 [**變更介面卡選項**]。
 
@@ -212,31 +212,31 @@ ProfileXML 元素：
 
 [清單 1] 中的 Windows PowerShell 腳本會在桌面上建立兩個檔案，這兩個檔案都包含以您先前建立的範本連線設定檔為基礎的**new-eapconfiguration**標記：
 
-- **VPN_Profile .xml。** 此檔案包含在 VPNv2 CSP 中設定 ProfileXML 節點所需的 XML 標記。 將此檔案用於與 OMA DM 相容的 MDM 服務，例如 Intune。
+- **VPN_Profile.xml。** 此檔案包含在 VPNv2 CSP 中設定 ProfileXML 節點所需的 XML 標記。 將此檔案用於與 OMA DM 相容的 MDM 服務，例如 Intune。
 
-- **VPN_Profile. ps1。** 此檔案是您可以在用戶端電腦上執行的 Windows PowerShell 腳本，以設定 VPNv2 CSP 中的 ProfileXML 節點。 您也可以透過 Configuration Manager 部署此腳本來設定 CSP。 您無法在遠端桌面會話中執行此腳本，包括 Hyper-v 增強的會話。
+- **VPN_Profile.ps1。** 此檔案是您可以在用戶端電腦上執行的 Windows PowerShell 腳本，以設定 VPNv2 CSP 中的 ProfileXML 節點。 您也可以透過 Configuration Manager 部署此腳本來設定 CSP。 您無法在遠端桌面會話中執行此腳本，包括 Hyper-v 增強的會話。
 
 >[!IMPORTANT]
 >以下的範例命令需要 Windows 10 組建1607或更新版本。
 
-**建立 VPN_Profile .xml 和 VPN_Proflie. ps1**
+**建立 VPN_Profile.xml 和 VPN_Proflie.ps1**
 
 1. 以[手動建立範本連線設定檔](#manually-create-a-template-connection-profile)一節所述的相同使用者帳戶，登入加入網域的用戶端電腦（包含範本 VPN 設定檔）。
 
 2. 將清單1貼入 Windows PowerShell 整合式腳本環境（ISE），並自訂批註中所述的參數。 這些是 $Template、$ProfileName、$Servers、$DnsSuffix、$DomainName、$TrustedNetwork 和 $DNSServers。 每個設定的完整描述都在批註中。
 
-3. 執行腳本，以在桌面上產生**VPN_Profile .xml**和**VPN_Profile ps1** 。
+3. 執行腳本，以在桌面上產生**VPN_Profile.xml**和**VPN_Profile.ps1** 。
 
-#### <a name="listing-1-understanding-makeprofileps1"></a>列出 1 個 瞭解 MakeProfile
+#### <a name="listing-1-understanding-makeprofileps1"></a>列出 1 個 瞭解 MakeProfile.ps1
 
 本節說明您可以用來瞭解如何建立 VPN 設定檔的範例程式碼，特別是在 VPNv2 CSP 中設定 ProfileXML。
 
-當您從這個範例程式碼組合腳本並執行腳本之後，腳本會產生兩個檔案： VPN_Profile .xml 和 VPN_Profile. ps1。 使用 VPN_Profile 在 OMA-URI 相容的 MDM 服務（例如 Microsoft Intune）中設定 ProfileXML。
+當您從這個範例程式碼組合腳本並執行腳本之後，腳本會產生兩個檔案： VPN_Profile.xml 和 VPN_Profile.ps1。 使用 VPN_Profile.xml 在符合 OMA-URI 規範的 MDM 服務（例如 Microsoft Intune）中設定 ProfileXML。
 
-使用 Windows PowerShell 或 Microsoft Endpoint Configuration Manager 中的**VPN_Profile ps1**腳本，在 windows 10 桌上型電腦上設定 ProfileXML。
+使用 Windows PowerShell 或 Microsoft Endpoint Configuration Manager 中的**VPN_Profile.ps1**腳本，在 windows 10 桌上型電腦上設定 ProfileXML。
 
 >[!NOTE]
->若要查看完整的範例腳本，請參閱[MakeProfile 完整腳本](#makeprofileps1-full-script)一節。
+>若要查看完整的範例腳本，請參閱[MakeProfile.ps1 完整的腳本](#makeprofileps1-full-script)一節。
 
 ##### <a name="parameters"></a>參數
 
@@ -318,7 +318,7 @@ $ProfileXML = @("
 ")
 ```
 
-### <a name="output-vpn_profilexml-for-intune"></a>適用于 Intune 的輸出 VPN_Profile .xml
+### <a name="output-vpn_profilexml-for-intune"></a>Intune 的輸出 VPN_Profile.xml
 
 您可以使用下列範例命令來儲存設定檔 XML 檔案：
 
@@ -326,7 +326,7 @@ $ProfileXML = @("
 $ProfileXML | Out-File -FilePath ($env:USERPROFILE + '\desktop\VPN_Profile.xml')
 ```
 
-### <a name="output-vpn_profileps1-for-the-desktop-and-configuration-manager"></a>桌上型電腦和 Configuration Manager 的輸出 VPN_Profile
+### <a name="output-vpn_profileps1-for-the-desktop-and-configuration-manager"></a>桌面和 Configuration Manager 的輸出 VPN_Profile.ps1
 
 下列範例程式碼會使用 VPNv2 CSP 中的 ProfileXML 節點來設定 AlwaysOn IKEv2 VPN 連線。
 
@@ -450,7 +450,7 @@ $Message = "Successfully created VPN_Profile.xml and VPN_Profile.ps1 on the desk
 Write-Host "$Message"
 ```
 
-## <a name="makeprofileps1-full-script"></a>MakeProfile. ps1 完整腳本
+## <a name="makeprofileps1-full-script"></a>MakeProfile.ps1 完整的腳本
 
 大部分的範例會使用 Set-wmiinstance Windows PowerShell Cmdlet，將 ProfileXML 插入 MDM_VPNv2_01 WMI 類別的新實例中。 
 
@@ -460,7 +460,7 @@ Write-Host "$Message"
 >WMI 到 CSP 橋接器需要本機系統管理許可權（依設計）。 若要部署每個使用者的 VPN 設定檔，您應該使用 Configuration Manager 或 MDM。
 
 >[!NOTE]
->腳本 VPN_Profile. ps1 會使用目前使用者的 SID 來識別使用者的內容。 因為遠端桌面會話中沒有可用的 SID，所以腳本無法在遠端桌面會話中運作。 同樣地，它無法在 Hyper-v 增強的會話中運作。 如果您要在虛擬機器中測試 Always On VPN 的遠端存取，請先停用用戶端 Vm 上的增強會話，再執行此腳本。
+>腳本 VPN_Profile.ps1 會使用目前使用者的 SID 來識別使用者的內容。 因為遠端桌面會話中沒有可用的 SID，所以腳本無法在遠端桌面會話中運作。 同樣地，它無法在 Hyper-v 增強的會話中運作。 如果您要在虛擬機器中測試 Always On VPN 的遠端存取，請先停用用戶端 Vm 上的增強會話，再執行此腳本。
 
 下列範例腳本包含先前章節中的所有程式碼範例。 請確定您將範例值變更為適合您環境的值。
     
@@ -603,9 +603,9 @@ Write-Host "$Message"
 
 ## <a name="configure-the-vpn-client-by-using-windows-powershell"></a>使用 Windows PowerShell 設定 VPN 用戶端
 
-若要在 Windows 10 用戶端電腦上設定 VPNv2 CSP，請執行您在[建立設定檔 XML](#create-the-profile-xml)一節中建立的 VPN_Profile. Ps1 Windows PowerShell 腳本。 以系統管理員身分開啟 Windows PowerShell;否則，您將會收到錯誤，指出「_拒絕存取_」。
+若要在 Windows 10 用戶端電腦上設定 VPNv2 CSP，請執行您在[建立設定檔 XML](#create-the-profile-xml)一節中建立的 VPN_Profile.ps1 Windows PowerShell 腳本。 以系統管理員身分開啟 Windows PowerShell;否則，您將會收到錯誤，指出「_拒絕存取_」。
 
-在執行 VPN_Profile ps1 來設定 VPN 設定檔之後，您可以在 Windows PowerShell ISE 中執行下列命令，以確認是否有任何一次成功的狀態：
+執行 VPN_Profile.ps1 來設定 VPN 設定檔之後，您可以在 Windows PowerShell ISE 中執行下列命令，以確認是否有任何時間成功：
 
 ```powershell
 Get-WmiObject -Namespace root\cimv2\mdm\dmmap -Class MDM_VPNv2_01
@@ -694,7 +694,7 @@ ProfileXML 設定在結構、拼寫、設定和有時候字母大小寫中必須
 
 ## <a name="configure-the-vpn-client-by-using-configuration-manager"></a>使用 Configuration Manager 設定 VPN 用戶端
 
-在 Configuration Manager 中，您可以使用 ProfileXML CSP 節點來部署 VPN 設定檔，就像您在 Windows PowerShell 中所做的一樣。 在這裡，您會使用您在[建立 ProfileXML 設定檔](#create-the-profilexml-configuration-files)一節中建立的 VPN_Profile. Ps1 Windows PowerShell 腳本。
+在 Configuration Manager 中，您可以使用 ProfileXML CSP 節點來部署 VPN 設定檔，就像您在 Windows PowerShell 中所做的一樣。 在這裡，您會使用您在[建立 ProfileXML 設定檔](#create-the-profilexml-configuration-files)一節中建立的 VPN_Profile.ps1 Windows PowerShell 腳本。
 
 若要使用 Configuration Manager 將遠端存取 Always On VPN 設定檔部署到 Windows 10 用戶端電腦，您必須從建立您要部署設定檔的一組電腦或使用者開始。 在此案例中，請建立使用者群組來部署設定腳本。
 
@@ -716,7 +716,7 @@ ProfileXML 設定在結構、拼寫、設定和有時候字母大小寫中必須
 
     a.  在 [**成員資格規則**] 中，按一下 [**新增規則**]，然後按一下 [**直接規則**]。 在此範例中，您會將個別使用者新增至使用者集合。 不過，您可以使用查詢規則，以動態方式將使用者新增至這個集合，以進行更大規模的部署。
 
-    b.  在 [歡迎]**** 頁面上，按 [下一步]****。
+    b.  在 [歡迎] 頁面中按 [下一步]。
 
     c.  在 [搜尋資源] 頁面的 [**值**] 中，輸入您想要新增的使用者名稱。 資源名稱包含使用者的網域。 若要包含以部分相符項為基礎的結果，請在 **%** 搜尋條件的任一結尾插入字元。 例如，若要尋找所有包含字串 "lori" 的使用者，請輸入 **% lori%**。 按 [下一步]  。
 
@@ -736,7 +736,7 @@ ProfileXML 設定在結構、拼寫、設定和有時候字母大小寫中必須
 
 ### <a name="create-a-package-containing-the-profilexml-configuration-script"></a>建立包含 ProfileXML 設定腳本的封裝
 
-1.  在網站伺服器電腦帳戶可以存取的網路共用上，裝載腳本 VPN_Profile. ps1。
+1.  在網站伺服器電腦帳戶可以存取的網路共用上裝載腳本 VPN_Profile.ps1。
 
 2.  在 Configuration Manager 主控台中，開啟 [軟體程式庫] [ ** \\ 應用程式管理 \\ **] [套件]。
 
@@ -748,7 +748,7 @@ ProfileXML 設定在結構、拼寫、設定和有時候字母大小寫中必須
 
     b. 選取 [**此套件包含來源**檔案] 核取方塊，然後按一下 **[流覽]**。
 
-    c. 在 [設定源資料夾] 對話方塊中，按一下 **[流覽]**，選取包含 VPN_Profile 的檔案共用，然後按一下 **[確定]**。
+    c. 在 [設定源資料夾] 對話方塊中，按一下 **[流覽]**，選取包含 VPN_Profile.ps1 的檔案共用，然後按一下 **[確定]**。
         請確定您選取的是網路路徑，而不是本機路徑。 換句話說，路徑應該類似檔案伺服器* \\ \\ vpnscript*，而不是*c： \\ vpnscript*。
 
 1.  按 [下一步]  。
@@ -759,11 +759,11 @@ ProfileXML 設定在結構、拼寫、設定和有時候字母大小寫中必須
 
     a.  在 [**名稱**] 中，輸入**VPN 設定檔腳本**。
 
-    b.  在 [**命令列**] 中，輸入**ExecutionPolicy 略過檔案 "VPN_Profile. ps1"**。
+    b.  在 [**命令列**] 中，輸入**PowerShell.exe-ExecutionPolicy 略過檔案 "VPN_Profile.ps1"**。
 
     c.  在 [**執行模式]** 中，按一下 [以系統**管理許可權執行**]。
 
-    d.  按 [下一步]  。
+    d.  按 [下一步] 。
 
 4.  在 [需求] 頁面上，完成下列步驟：
 
@@ -805,7 +805,7 @@ ProfileXML 設定在結構、拼寫、設定和有時候字母大小寫中必須
 
     c.  按一下 [ **VPN 使用者**]，然後按一下 **[確定]**。
 
-    d.  按 [下一步]  。
+    d.  按 [下一步] 。
 
 6.  在 [內容] 頁面上，完成下列步驟：
 
@@ -838,7 +838,7 @@ ProfileXML 設定在結構、拼寫、設定和有時候字母大小寫中必須
 部署 ProfileXML 設定腳本後，使用您在建立使用者集合時選取的使用者帳戶登入 Windows 10 用戶端電腦。 確認 VPN 用戶端的設定。
 
 >[!NOTE]
->腳本 VPN_Profile. ps1 無法在遠端桌面會話中運作。 同樣地，它無法在 Hyper-v 增強的會話中運作。 如果您要在虛擬機器中測試 Always On VPN 的遠端存取，請先停用用戶端 Vm 上的增強會話，再繼續進行。
+>腳本 VPN_Profile.ps1 無法在遠端桌面會話中運作。 同樣地，它無法在 Hyper-v 增強的會話中運作。 如果您要在虛擬機器中測試 Always On VPN 的遠端存取，請先停用用戶端 Vm 上的增強會話，再繼續進行。
 
 ### <a name="verify-the-configuration-of-the-vpn-client"></a>確認 VPN 用戶端的設定
 
@@ -863,11 +863,11 @@ ProfileXML 設定在結構、拼寫、設定和有時候字母大小寫中必須
 >[!NOTE]
 >Intune 現在會使用 Azure AD 群組。 如果 Azure AD Connect 將 VPN 使用者群組從內部部署同步至 Azure AD，而且使用者已指派給 VPN 使用者群組，則您已準備好繼續進行。
 
-建立 VPN 裝置設定原則，為新增至群組的所有使用者設定 Windows 10 用戶端電腦。 因為 Intune 範本提供 VPN 參數，所以只會複製 \< VPN_ProfileXML 檔案 \<> 部分的 EapHostConfig>。
+建立 VPN 裝置設定原則，為新增至群組的所有使用者設定 Windows 10 用戶端電腦。 因為 Intune 範本提供 VPN 參數，所以只會複製 VPN_ProfileXML 檔案的 \<EapHostConfig> \</EapHostConfig> 部分。
 
 ### <a name="create-the-always-on-vpn-configuration-policy"></a>建立 Always On VPN 設定原則
 
-1.    登入[Azure 入口網站](https://portal.azure.com/)。
+1.    登入 [Azure 入口網站](https://portal.azure.com/)。
 
 2.    前往 [ **Intune**  >  **裝置**設定  >  **設定檔**]。
 
@@ -878,7 +878,7 @@ ProfileXML 設定在結構、拼寫、設定和有時候字母大小寫中必須
 1.   在 [**平臺**] 底下選取 [ **Windows 10 或更新版本**]，然後從 [配置檔案類型] 下拉式選單選擇 [ **VPN** ]。
 
      >[!TIP]
-     >如果您要建立自訂 VPN profileXML，請參閱[使用 Intune 套用 profileXML](https://docs.microsoft.com/windows/security/identity-protection/vpn/vpn-profile-options#apply-profilexml-using-intune)以取得指示。
+     >如果您要建立自訂 VPN profileXML，請參閱[使用 Intune 套用 profileXML](/windows/security/identity-protection/vpn/vpn-profile-options#apply-profilexml-using-intune)以取得指示。
 
 2. 在 [**基底 VPN** ] 索引標籤底下，確認或設定下列設定：
 
@@ -905,12 +905,12 @@ ProfileXML 設定在結構、拼寫、設定和有時候字母大小寫中必須
     <EapHostConfig xmlns="https://www.microsoft.com/provisioning/EapHostConfig"><EapMethod><Type xmlns="https://www.microsoft.com/provisioning/EapCommon">25</Type><VendorId xmlns="https://www.microsoft.com/provisioning/EapCommon">0</VendorId><VendorType xmlns="https://www.microsoft.com/provisioning/EapCommon">0</VendorType><AuthorId xmlns="https://www.microsoft.com/provisioning/EapCommon">0</AuthorId></EapMethod><Config xmlns="https://www.microsoft.com/provisioning/EapHostConfig"><Eap xmlns="https://www.microsoft.com/provisioning/BaseEapConnectionPropertiesV1"><Type>25</Type><EapType xmlns="https://www.microsoft.com/provisioning/MsPeapConnectionPropertiesV1"><ServerValidation><DisableUserPromptForServerValidation>true</DisableUserPromptForServerValidation><ServerNames>NPS.contoso.com</ServerNames><TrustedRootCA>5a 89 fe cb 5b 49 a7 0b 1a 52 63 b7 35 ee d7 1c c2 68 be 4b </TrustedRootCA></ServerValidation><FastReconnect>true</FastReconnect><InnerEapOptional>false</InnerEapOptional><Eap xmlns="https://www.microsoft.com/provisioning/BaseEapConnectionPropertiesV1"><Type>13</Type><EapType xmlns="https://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV1"><CredentialsSource><CertificateStore><SimpleCertSelection>true</SimpleCertSelection></CertificateStore></CredentialsSource><ServerValidation><DisableUserPromptForServerValidation>true</DisableUserPromptForServerValidation><ServerNames>NPS.contoso.com</ServerNames><TrustedRootCA>5a 89 fe cb 5b 49 a7 0b 1a 52 63 b7 35 ee d7 1c c2 68 be 4b </TrustedRootCA></ServerValidation><DifferentUsername>false</DifferentUsername><PerformServerValidation xmlns="https://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV2">true</PerformServerValidation><AcceptServerName xmlns="https://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV2">true</AcceptServerName></EapType></Eap><EnableQuarantineChecks>false</EnableQuarantineChecks><RequireCryptoBinding>false</RequireCryptoBinding><PeapExtensions><PerformServerValidation xmlns="https://www.microsoft.com/provisioning/MsPeapConnectionPropertiesV2">true</PerformServerValidation><AcceptServerName xmlns="https://www.microsoft.com/provisioning/MsPeapConnectionPropertiesV2">true</AcceptServerName></PeapExtensions></EapType></Eap></Config></EapHostConfig>
     ```
 
-4.  以內部部署根憑證授權單位的憑證指紋，取代** \< TrustedRootCA>5a 89 fe cb 5b 49 a7 0b 1a 52 63 b7 35 ee d7 1c c2 68 屬於範例中的 4b<\/ TrustedRootCA>** 。
+4.  將** \<TrustedRootCA> 5a 89 fe cb 5b 49 a7 0b 1a 52 63 b7 35 ee d7 1c c2 68 作為範例中的 4b<\/ TrustedRootCA>** ，其中包含您內部部署根憑證授權單位在這兩個地方的憑證指紋。
   
     >[!Important]
-    >請勿使用 \< 下列 TrustedRootCA>\< /TrustedRootCA> 一節中的範例指紋。  TrustedRootCA 必須是為 RRAS 和 NPS 伺服器發出伺服器驗證憑證的內部部署根憑證授權單位的憑證指紋。 **這不能是雲端根憑證，也不得為中繼發行 CA 憑證指紋**。
+    >請勿在 \<TrustedRootCA> \</TrustedRootCA> 下一節中使用範例指紋。  TrustedRootCA 必須是為 RRAS 和 NPS 伺服器發出伺服器驗證憑證的內部部署根憑證授權單位的憑證指紋。 **這不能是雲端根憑證，也不得為中繼發行 CA 憑證指紋**。
 
-5.  以進行驗證的已加入網域的 NPS 的 FQDN 取代範例 XML 中的** \< ServerNames>NPS.contoso.com \< /ServerNames>** 。 
+5.  以進行驗證之已加入網域的 NPS 的 FQDN 取代範例 XML 中的** \<ServerNames> NPS.contoso.com \</ServerNames> ** 。 
 
 6.  複製修改過的 XML 字串，並貼入 [基底 VPN] 索引標籤底下的 [ **EAP XML** ] 方塊，然後按一下 **[確定**]。
     使用 EAP 的 Always On VPN 裝置設定原則會在 Intune 中建立。
@@ -930,11 +930,11 @@ ProfileXML 設定在結構、拼寫、設定和有時候字母大小寫中必須
 
 5.  關閉 [設定]。 同步處理之後，您會在電腦上看到可用的 VPN 設定檔。
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>接下來的步驟
 
 您已完成 Always On VPN 部署。  如需您可以設定的其他功能，請參閱下表：
 
 |如果您想要...  |然後查看 .。。  |
 |---------|---------|
-|設定 VPN 的條件式存取    |[步驟7：選擇性使用 Azure AD 設定 VPN 連線的條件式存取](../../ad-ca-vpn-connectivity-windows10.md)：在此步驟中，您可以使用[Azure Active Directory （Azure AD）條件式存取](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal)，微調授權的 vpn 使用者如何存取您的資源。 透過 Azure AD 虛擬私人網路（VPN）連線的條件式存取，您可以協助保護 VPN 連接。 「條件式存取」是原則型評估引擎，可讓您為任何 Azure Active Directory (Azure AD) 已連線的應用程式建立存取規則。         |
+|設定 VPN 的條件式存取    |[步驟7：選擇性使用 Azure AD 設定 VPN 連線的條件式存取](../../ad-ca-vpn-connectivity-windows10.md)：在此步驟中，您可以使用[Azure Active Directory （Azure AD）條件式存取](/azure/active-directory/active-directory-conditional-access-azure-portal)，微調授權的 vpn 使用者如何存取您的資源。 透過 Azure AD 虛擬私人網路（VPN）連線的條件式存取，您可以協助保護 VPN 連接。 「條件式存取」是原則型評估引擎，可讓您為任何 Azure Active Directory (Azure AD) 已連線的應用程式建立存取規則。         |
 |深入瞭解 advanced VPN 功能  |[ADVANCED VPN 功能](always-on-vpn-adv-options.md#advanced-vpn-features)：此頁面提供如何啟用 Vpn 流量篩選器、如何使用應用程式觸發程式來設定自動 VPN 連線，以及如何設定 NPS 只允許使用 Azure AD 所發行之憑證的 vpn 連線的指引。        |

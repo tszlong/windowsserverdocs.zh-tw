@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 5f529e6b0176b7ad416a728163b4ae9671040bf8
-ms.sourcegitcommit: d1fc59d53055952f8e55aacebeb29547eef0bca7
+ms.openlocfilehash: 30667f68b25bda9ae86212be34466762d825ec0b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "80861281"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966170"
 ---
 # <a name="appendix-b-setting-up-the-test-environment"></a>附錄 B：設定測試環境
 
@@ -21,7 +21,7 @@ ms.locfileid: "80861281"
 
 本主題概述如何建置實際操作實驗室來測試動態存取控制的步驟。 文中的指示應該依序操作，因為許多元件具有相依性。  
 
-## <a name="prerequisites"></a>Prerequisites  
+## <a name="prerequisites"></a>必要條件  
 **硬體和軟體需求**  
 
 設定測試實驗室的需求：  
@@ -88,7 +88,7 @@ ms.locfileid: "80861281"
 
 3.  在 [建立虛擬網路]**** 之下，選取 [內部]****。  
 
-4.  按一下 [新增]  。 [新的虛擬網路]**** 頁面隨即顯示。  
+4.  按一下 [新增] 。 [新的虛擬網路]**** 頁面隨即顯示。  
 
 5.  輸入 **ID_AD_Network** 做為新網路的名稱。 檢閱其他內容，並視需要修改。  
 
@@ -163,16 +163,16 @@ ms.locfileid: "80861281"
 4. 建立下列包含指定屬性的使用者：  
 
 
-   |       User       |  使用者名稱  |     電子郵件地址      | department |      群組       | 國家/區域 |
+   |       User       |  使用者名稱  |     電子郵件地址      | 部門 |      群組       | 國家/地區 |
    |------------------|------------|------------------------|------------|------------------|----------------|
-   | Myriam Delesalle | MDelesalle | MDelesalle@contoso.com |  財務   |                  |       美國       |
-   |    Miles Reid    |   MReid    |   MReid@contoso.com    |  財務   |   FinanceAdmin   |       美國       |
+   | Myriam Delesalle | MDelesalle | MDelesalle@contoso.com |  Finance   |                  |       美國       |
+   |    Miles Reid    |   MReid    |   MReid@contoso.com    |  Finance   |   FinanceAdmin   |       美國       |
    |   Esther Valle   |   EValle   |   EValle@contoso.com   | 作業 | FinanceException |       美國       |
    |   Maira Wenzel   |  MWenzel   |  MWenzel@contoso.com   |     HR     |                  |       美國       |
    |     Jeff Low     |    JLow    |    JLow@contoso.com    |     HR     |                  |       美國       |
    |    RMS 伺服器    |    rms     |    rms@contoso.com     |            |                  |                |
 
-   如需建立安全性群組的詳細資訊，請參閱 Windows Server 網站上的 [建立新的群組](https://technet.microsoft.com/library/dd861305.aspx) 。  
+   如需建立安全性群組的詳細資訊，請參閱 Windows Server 網站上的 [建立新的群組](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd861305(v=ws.11)) 。  
 
 ##### <a name="to-create-a-group-policy-object"></a>建立群組原則物件  
 
@@ -381,7 +381,7 @@ ms.locfileid: "80861281"
 >     -   NLTEST /SC_RESET:contoso.com  
 > 2.  在網域控制站 (DC1) 上，複寫 Active Directory。  
 >   
->     如需如何強制執行 Active Directory 複寫的詳細資訊，請參閱 [Active Directory 複寫](https://technet.microsoft.com/library/cc794809(WS.10).aspx)。  
+>     如需如何強制執行 Active Directory 複寫的詳細資訊，請參閱 [Active Directory 複寫](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc794809(v=ws.10))。  
 
 (選擇性) 不要使用 [伺服器管理員] 中的 [新增角色和功能精靈]，而是改用 Windows PowerShell 來安裝和設定 AD RMS 伺服器角色，如下列程序中所示。  
 
@@ -562,7 +562,7 @@ SRV1 是 SMTP/POP3 郵件伺服器。 您需要設定郵件伺服器，以便在
 -   將虛擬機器連線到 ID_AD_Network。  
 
 > [!IMPORTANT]  
-> 將虛擬機器加入網域與跨樹系部署宣告類型，需要虛擬機器能夠解析相關網域的 FQDN。 您可能必須手動設定虛擬機器上的 DNS 設定，以完成這項作業。 如需詳細資訊，請參閱 [設定虛擬機器](https://technet.microsoft.com/library/cc732470%28v=ws.10%29.aspx)。  
+> 將虛擬機器加入網域與跨樹系部署宣告類型，需要虛擬機器能夠解析相關網域的 FQDN。 您可能必須手動設定虛擬機器上的 DNS 設定，以完成這項作業。 如需詳細資訊，請參閱 [設定虛擬機器](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732470(v=ws.10))。  
 >   
 > 所有虛擬機器映像 (伺服器與用戶端) 必須重新設定為使用靜態 IP 第 4 版 (IPv4) 位址及網域名稱系統 (DNS) 用戶端設定。 如需詳細資訊，請參閱 [設定 DNS 用戶端的靜態 IP 位址](https://go.microsoft.com/fwlink/?LinkId=150952)。  
 
@@ -835,6 +835,3 @@ SRV1 是 SMTP/POP3 郵件伺服器。 您需要設定郵件伺服器，以便在
 7. 按一下 [**安全性**] 索引標籤，然後按一下 [ **Advanced**]，再按一下 [**集中原則**] 索引標籤。您應該會看到列出的**AdatumEmployeeAccessRule** 。 您可以展開項目以檢視在 Active Directory 中建立規則時設定的所有權限。  
 
 8. 按一下 [確定]**** 返回 [Windows 檔案總管]。  
-
-
-

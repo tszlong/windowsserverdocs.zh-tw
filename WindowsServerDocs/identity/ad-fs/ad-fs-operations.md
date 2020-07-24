@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: cdedcbd5b9491b57ee31170b781dc821853d058f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3442ada27e8e01b72561850f724d7e28d740f43b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815131"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964960"
 ---
 # <a name="ad-fs-operations"></a>AD FS 操作
 
@@ -22,7 +22,7 @@ ms.locfileid: "80815131"
 本檔包含 AD FS 的所有檔作業的清單。 
 
 ## <a name="service-configuration"></a>服務組態
-- [更新 AD FS 和 WAP 2016 中的 SSL 憑證](../ad-fs/operations/Manage-SSL-Certificates-AD-FS-WAP-2016.md)
+- [更新 AD FS 和 WAP 2016 中的 SSL 憑證](./operations/manage-ssl-certificates-ad-fs-wap.md)
 - [AD FS 快速還原工具](../ad-fs/operations/AD-FS-Rapid-Restore-Tool.md)
 - [在 AD FS 中設定憑證驗證的替代主機名稱系結](../ad-fs/operations/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication.md)
 - [新增屬性存放區](../ad-fs/operations/Add-an-Attribute-Store.md)
@@ -32,10 +32,10 @@ ms.locfileid: "80815131"
 - [AlwaysOn 可用性群組](../ad-fs/operations/ad-fs-always-on.md) 
 
 
-## <a name="authentication-configuration"></a>驗證組態
+## <a name="authentication-configuration"></a>驗證設定
 ### <a name="strong-authentication-mfa--password-less"></a>增強式驗證（MFA） & 不限密碼
 - [在 AD FS 中將外部驗證提供者設定為主要（2019或更新版本）](../ad-fs/operations/Additional-Authentication-Methods-AD-FS.md)
-- [設定 AD FS （2016或更新版本）和 Azure MFA](../ad-fs/operations/Configure-AD-FS-2016-and-Azure-MFA.md)
+- [設定 AD FS （2016或更新版本）和 Azure MFA](./operations/configure-ad-fs-and-azure-mfa.md)
 - [設定 AD FS 的其他驗證方法](../ad-fs/operations/Configure-Additional-Authentication-Methods-for-AD-FS.md)
 
 ### <a name="lockout-protection"></a>鎖定保護
@@ -71,7 +71,7 @@ ms.locfileid: "80815131"
 - [設定 AD FS 以使用匯總的同盟提供者（例如 InCommon）](../ad-fs/operations/Improved-interoperability-with-SAML-2.0.md)
 
 ## <a name="sign-in-experience-configuration"></a>登入體驗設定
-- [設定 AD FS 2016 單一登入設定](../ad-fs/operations/AD-FS-2016-Single-Sign-On-Settings.md)
+- [設定 AD FS 2016 單一登入設定](./operations/ad-fs-single-sign-on-settings.md)
 - [設定 AD FS 編頁登入](../ad-fs/operations/AD-FS-paginated-sign-in.md)
 - [設定 AD FS 使用者登入自訂](../ad-fs/operations/AD-FS-user-sign-in-customization.md)
 - [設定 AD FS 傳送密碼到期宣告](../ad-fs/operations/Configure-AD-FS-to-Send-Password-Expiry-Claims.md)
@@ -84,9 +84,7 @@ ms.locfileid: "80815131"
 - [設定 AD FS 實驗室環境](../ad-fs/operations/Set-up-an-AD-FS-lab-environment.md)
 - [逐步解說指南：透過其他多因素驗證管理機密應用程式的風險](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 - [逐步解說指南：使用條件式存取控制管理風險](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)
-- [逐步解說：使用 Windows 裝置 Workplace Join](../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
-- [逐步解說：使用 iOS 裝置 Workplace Join](../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
+- [逐步解說：將 Windows 裝置加入工作地點網路](../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
+- [逐步解說：將 iOS 裝置加入工作地點網路](../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
 
   
-
-

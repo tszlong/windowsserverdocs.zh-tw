@@ -9,12 +9,12 @@ ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: db85d71ed1b7d8d5b3c14ac8ea603789422ea2cb
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e97556ab35471c1745c01b6ebd047cd1451ffb27
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80818881"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966750"
 ---
 # <a name="step-71-configure-eap-tls-to-ignore-certificate-revocation-list-crl-checking"></a>步驟 7.1. 設定 EAP-TLS 以忽略憑證撤銷清單 (CRL) 檢查
 
@@ -35,19 +35,19 @@ ms.locfileid: "80818881"
 
 由於驗證方法是 EAP-TLS，因此只有在 EAP\13. 下才需要此登錄值 如果使用其他 EAP 驗證方法，則也應該在這些情況下新增登錄值。 
 
-**步**
+**程序**
 
-1. 在 NPS 伺服器上開啟**regedit.exe。**
+1. 在 NPS 伺服器上開啟**regedit.exe** 。
 
 2. 流覽至**HKEY_LOCAL_MACHINE \system\currentcontrolset\services\rasman\ppp\eap\13**。
 
-3. 選取 **編輯 > 新增**，然後選取**DWORD （32-位） 值**並輸入**IgnoreNoRevocationCheck**。
+3. 選取 [**編輯] > 新增**]，然後選取 **[DWORD （32-位）] 值**並輸入**IgnoreNoRevocationCheck**。
 
 4. 按兩下 [ **IgnoreNoRevocationCheck** ]，並將值資料設定為**1**。
 
 5. 選取 **[確定]** ，然後重新開機伺服器。 重新開機 RRAS 和 NPS 服務並不足夠。
 
-如需詳細資訊，請參閱[如何啟用或停用用戶端上的憑證撤銷檢查（CRL）](https://technet.microsoft.com/library/bb680540.aspx)。
+如需詳細資訊，請參閱[如何啟用或停用用戶端上的憑證撤銷檢查（CRL）](/previous-versions/system-center/configuration-manager-2007/bb680540(v=technet.10))。
 
 
 |登錄路徑  |EAP 延伸模組  |
@@ -56,6 +56,6 @@ ms.locfileid: "80818881"
 |HKLM\SYSTEM\CurrentControlSet\Services\RasMan\PPP\EAP\25     |PEAP         |
 |HKLM\SYSTEM\CurrentControlSet\Services\RasMan\PPP\EAP\26     |EAP-MSCHAP v2         |
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>接下來的步驟
 
 [步驟7.2。使用 Azure AD 建立根憑證以進行 VPN 驗證](vpn-create-root-cert-for-vpn-auth-azure-ad.md)：在此步驟中，您會設定使用 AZURE AD vpn 驗證的條件式存取根憑證，這會自動在租使用者中建立 Vpn 伺服器雲端應用程式。

@@ -8,12 +8,12 @@ ms.date: 03/25/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: e012706eeb9d483f19eff6f4ba2e1f57e0c0852d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: cd8c41e67baf0ffa0399e62ad2a697e4efa1433f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475325"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965180"
 ---
 # <a name="use-storage-migration-service-to-migrate-a-server"></a>使用儲存體遷移服務來遷移伺服器
 
@@ -23,7 +23,7 @@ ms.locfileid: "85475325"
 
 開始之前，請先安裝儲存體遷移服務，並確定所需的防火牆埠已開啟。
 
-1. 檢查[存放裝置遷移服務需求](overview.md#requirements)，並在您的電腦或管理伺服器上安裝[Windows 系統管理中心](../../manage/windows-admin-center/understand/windows-admin-center.md)（如果您尚未這麼做的話）。 如果要遷移已加入網域的來源電腦，您必須在與來源電腦聯結至相同網域或樹系的伺服器上，安裝並執行儲存體遷移服務。
+1. 檢查[存放裝置遷移服務需求](overview.md#requirements)，並在您的電腦或管理伺服器上安裝[Windows 系統管理中心](../../manage/windows-admin-center/overview.md)（如果您尚未這麼做的話）。 如果要遷移已加入網域的來源電腦，您必須在與來源電腦聯結至相同網域或樹系的伺服器上，安裝並執行儲存體遷移服務。
 2. 在 Windows 系統管理中心，連接到執行 Windows Server 2019 的 orchestrator 伺服器。 <br>這是您將用來安裝儲存體遷移服務並用於管理遷移的伺服器。 如果您只是要遷移一部伺服器，您可以使用目的地伺服器，只要它正在執行 Windows Server 2019 即可。 我們建議您針對任何多伺服器遷移使用不同的協調流程伺服器。
 3. 移至**伺服器管理員**（在 Windows 系統管理中心） >**儲存體遷移服務**，然後選取 [**安裝**] 以安裝儲存體遷移服務及其必要元件（如 [圖 1] 所示）。
     ![[儲存體遷移服務] 頁面的螢幕擷取畫面，其中顯示 [安裝] 按鈕 ](media/migrate/install.png) **圖1：安裝儲存體遷移服務**
@@ -95,7 +95,7 @@ ms.locfileid: "85475325"
 - **請考慮遷移完成，** 而不接管來源伺服器的身分識別。
 - **再次傳輸**，只複製自從上次傳輸後已更新的檔案。
 
-如果您的目標是要將檔案與 Azure 同步，您可以在傳輸檔案之後，或在移至目的地伺服器之後，使用 Azure 檔案同步來設定目的地伺服器（請參閱[規劃 Azure 檔案同步部署](https://docs.microsoft.com/azure/storage/files/storage-sync-files-planning)）。
+如果您的目標是要將檔案與 Azure 同步，您可以在傳輸檔案之後，或在移至目的地伺服器之後，使用 Azure 檔案同步來設定目的地伺服器（請參閱[規劃 Azure 檔案同步部署](/azure/storage/files/storage-sync-files-planning)）。
 
 ## <a name="step-3-cut-over-to-the-new-servers"></a>步驟3：切換到新的伺服器
 
@@ -109,7 +109,7 @@ ms.locfileid: "85475325"
 3. 在 [**設定**切換] 頁面上，指定目的地上的哪一個網路介面卡應該從來源上的每個介面卡接管設定。 這會在進行轉換時，將 IP 位址從來源移至目的地，為來源伺服器提供新的 DHCP 或靜態 IP 位址。 您可以選擇略過所有網路遷移或特定介面。
 4. 指定在轉換後要用於來源伺服器的 IP 位址，將其位址移至目的地。 您可以使用 DHCP 或靜態位址。 如果使用靜態位址，新的子網必須與舊的子網相同，否則轉換將會失敗。
     ![顯示來源伺服器及其 IP 位址和電腦名稱稱的螢幕擷取畫面，以及在轉換之後，將會在轉換後將其取代為 [ ](media/migrate/cutover.png) **圖 4]：來源伺服器及其網路設定將如何移到目的地**
-5. 指定在目的地伺服器接管其名稱之後，如何重新命名來源伺服器。 您可以使用隨機產生的名稱，或輸入一個。 然後選取 [下一步]****。
+5. 指定在目的地伺服器接管其名稱之後，如何重新命名來源伺服器。 您可以使用隨機產生的名稱，或輸入一個。 然後選取 [下一步]。
 6. 在 [調整切換**設定**] 頁面上選取 **[下一步]** 。
 7. 在 [**驗證來源和目的地裝置**] 頁面上選取 [**驗證**]，然後選取 **[下一步]**。
 8. 當您準備好要執行轉換時，請選取 [**開始**切換]。 <br>使用者和應用程式可能會在位址和名稱移動時遇到中斷，而且伺服器會重新開機數次，但不會受到遷移的影響。 轉換所需的時間長短取決於伺服器重新開機的速度，以及 Active Directory 和 DNS 複寫時間。
@@ -118,4 +118,4 @@ ms.locfileid: "85475325"
 
 - [儲存體遷移服務總覽](overview.md)
 - [儲存體遷移服務常見問題（FAQ）](faq.md)
-- [規劃 Azure 檔案同步部署](https://docs.microsoft.com/azure/storage/files/storage-sync-files-planning)
+- [針對 Azure 檔案同步部署進行規劃](/azure/storage/files/storage-sync-files-planning) \(部分機器翻譯\)

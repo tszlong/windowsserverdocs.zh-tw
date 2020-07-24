@@ -9,12 +9,12 @@ manager: dougkim
 ms.author: jgerend
 ms.date: 06/15/2020
 description: 工作資料夾概觀 - 這是 Windows Server 中的一種伺服器角色，可提供使用者一致的方式來存取電腦和裝置中的工作檔案。
-ms.openlocfilehash: 6385249e15312615ea2ca9145fa4c2ff47bd13d9
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a6c1f8a30e3e83a0e7a6bac622982f4f43c44258
+ms.sourcegitcommit: f305bc5f1c5a44dac62f4288450af19f351f9576
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475205"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87118598"
 ---
 # <a name="work-folders-overview"></a>工作資料夾概觀
 
@@ -141,12 +141,12 @@ ms.locfileid: "85475205"
 | - | ------------------ | ------------------- | -------------------------- | -------------- |
 | **技術摘要** | 同步處理儲存在檔案伺服器與電腦和裝置上的檔案 | 同步處理儲存在可存取企業網路的檔案伺服器與電腦上的檔案 (可由工作資料夾取代) | 同步處理儲存在 Office 365 或 SharePoint 與電腦和裝置 (位於企業網路內部或外部) 中的檔案，並提供文件共同作業功能 | 同步處理儲存在 OneDrive 與 PC、Mac 電腦和裝置上的個人檔案 |
 | **其目的在於提供使用者工作檔案的存取權** | 是 | 是 | 是 | 否 |
-| **雲端服務** | None | None | Office 365 | Microsoft OneDrive |
-| **內部網路伺服器** | 執行 Windows Server 2012 R2、Windows Server 2016 和 Windows Server 2019 的檔案伺服器 | 檔案伺服器 | SharePoint 伺服器 (選擇性) | None |
+| **雲端服務** | 無 | 無 | Office 365 | Microsoft OneDrive |
+| **內部網路伺服器** | 執行 Windows Server 2012 R2、Windows Server 2016 和 Windows Server 2019 的檔案伺服器 | 檔案伺服器 | SharePoint 伺服器 (選擇性) | 無 |
 | **支持的用戶端** | PC、iOS、Android | 位於企業網路內，或透過 DirectAccess、VPN 或其他遠端存取技術連接的電腦 | PC、iOS、Android、Windows Phone | PC、Mac 電腦、Windows Phone、iOS、Android |
 
 > [!NOTE]
->  除了列於上表中的同步技術以外，Microsoft 還提供其他的複寫技術，包括針對伺服器對伺服器複寫所設計的 DFS 複寫，以及設計為分公司 WAN 加速技術的 BranchCache。 如需詳細資訊，請參閱 [DFS 命名空間和 DFS 複寫](https://technet.microsoft.com/library/jj127250(v=ws.11).aspx) 和 [BranchCache 概觀](https://technet.microsoft.com/library/hh831696(v=ws.11).aspx)
+>  除了列於上表中的同步技術以外，Microsoft 還提供其他的複寫技術，包括針對伺服器對伺服器複寫所設計的 DFS 複寫，以及設計為分公司 WAN 加速技術的 BranchCache。 如需詳細資訊，請參閱 [DFS 命名空間和 DFS 複寫](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)) 和 [BranchCache 概觀](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831696(v=ws.11))
 
 ## <a name="server-manager-information"></a>伺服器管理員資訊
 
@@ -162,15 +162,15 @@ ms.locfileid: "85475205"
 
  您可以在 Windows Azure 的虛擬機器上執行此 Windows Server 角色服務。 此案例已經過 Windows Server 2012 R2、Windows Server 2016 和 Windows Server 2019 的測試。
 
-若要深入瞭解如何開始使用 Windows Azure 虛擬機器，請造訪 [Windows Azure 網站](http://www.windowsazure.com/documentation/services/virtual-machines)。
+若要深入瞭解如何開始使用 Windows Azure 虛擬機器，請造訪 [Windows Azure 網站](https://www.windowsazure.com/documentation/services/virtual-machines)。
 
 ## <a name="see-also"></a>另請參閱
 
 | 內容類型 | 參考 |
 | ------------------ | ---------------- |
-| **產品評估** | -   [適用於 Android 的工作資料夾 – 已發佈](https://blogs.technet.microsoft.com/filecab/2016/03/16/work-folders-for-android-released) (部落格文章) (英文)<br />-   [適用於 iOS 的工作資料夾 – iPad App 版本](https://blogs.technet.com/b/filecab/archive/2015/01/16/work-folders-for-ios-ipad-app-release.aspx) (部落格文章)<br />-   [Windows Server 2012 R2 上的工作資料夾簡介](https://blogs.technet.com/b/filecab/archive/2013/07/09/introducing-work-folders-on-windows-server-2012-r2.aspx)（blog 文章）<br />-   [工作資料夾簡介](https://channel9.msdn.com/posts/Introduction-to-Work-Folders)（Channel 9 影片）<br />-   [工作資料夾測試實驗室部署](https://blogs.technet.com/b/filecab/archive/2013/07/10/work-folders-test-lab-deployment.aspx) (部落格文章)<br />-   [適用於 Windows 7 的工作資料夾](https://blogs.technet.com/b/filecab/archive/2014/04/24/work-folders-for-windows-7.aspx) (部落格文章) (英文) |
-| **部署** | -   [設計工作資料夾的執行](plan-work-folders.md)<br />-   [部署工作資料夾](deploy-work-folders.md)<br />-   [使用 AD FS 和 Web 應用程式 Proxy （WAP）部署工作資料夾](deploy-work-folders-adfs-overview.md)<br />-   [搭配 Azure AD 應用程式 Proxy 部署工作資料夾](https://blogs.technet.microsoft.com/filecab/2017/05/31/enable-remote-access-to-work-folders-using-azure-active-directory-application-proxy/)<br />- [離線檔案 (CSC) 至工作資料夾移轉指南](https://blogs.technet.microsoft.com/filecab/2016/08/12/offline-files-csc-to-work-folders-migration-guide/)<br />-   [工作資料夾部署的效能考量](https://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx)<br />-   [適用於 Windows 7 的工作資料夾 (64 位元下載)](https://www.microsoft.com/download/details.aspx?id=42558)<br />-   [適用於 Windows 7 的工作資料夾 (32 位元下載)](https://www.microsoft.com/download/details.aspx?id=42559) |
-| **作業** | -   [工作資料夾 iPad 應用程式：常見問題](https://windows.microsoft.com/windows/work-folders-ipad-faq)（適用于使用者）<br />-   [工作資料夾憑證管理](https://blogs.technet.com/b/filecab/archive/2013/08/09/work-folders-certificate-management.aspx) (部落格文章)<br />-   [監視 Windows Server 2012 R2 工作資料夾部署](https://blogs.technet.com/b/filecab/archive/2013/10/15/monitoring-windows-server-2012-r2-work-folders-deployments.aspx)（blog 文章）<br />-   [Windows PowerShell 中的 Set-syncshare （工作資料夾） Cmdlet](https://docs.microsoft.com/powershell/module/syncshare/?view=win10-ps)<br />-   [適用於 Windows Server 2012 R2 預覽版本的儲存空間和檔案服務 PowerShell Cmdlet 快速參考卡](https://blogs.technet.com/b/filecab/archive/2013/07/30/storage-and-file-services-powershell-cmdlets-quick-reference-card-for-windows-server-2012-r2-preview-edition.aspx) |
-| **疑難排解** | -   [Windows Server 2012 R2 – 解決與 IIS Websites 和工作資料夾之間的連接埠衝突](https://blogs.technet.com/b/filecab/archive/2013/10/15/windows-server-2012-r2-resolving-port-conflict-with-iis-websites-and-work-folders.aspx) (部落格文章) (英文)<br />-   [工作資料夾中的常見錯誤](https://social.technet.microsoft.com/wiki/contents/articles/30578.common-errors-in-work-folders.aspx) |
-| **社群資源** | -   [檔案服務和儲存體論壇](https://social.technet.microsoft.com/Forums/windowsserver/home?forum=winserverfiles)<br />-   [Microsoft 的儲存小組-檔案封包 Blog](https://blogs.technet.com/b/filecab/)<br />-   [詢問目錄服務小組的 Blog](https://blogs.technet.com/b/askds/) |
-| **相關技術** | -   [Windows Server 2016 中的存放裝置](../storage.yml)<br>-   [檔案和存放服務](https://technet.microsoft.com/library/hh831487(v=ws.11).aspx)<br />-   [檔案伺服器 Resource Manager](https://technet.microsoft.com/library/hh831701(v=ws.11).aspx)<br />-   [資料夾重新導向、離線檔案和漫遊使用者設定檔](https://technet.microsoft.com/library/hh848267(v=ws.11).aspx)<br />-   [BranchCache](https://technet.microsoft.com/library/hh831696(v=ws.11).aspx)<br />-   [DFS 命名空間和 DFS 複寫](https://technet.microsoft.com/library/jj127250(v=ws.11).aspx) |
+| **產品評估** | -   [適用於 Android 的工作資料夾 – 已發佈](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (部落格文章) (英文)<br />-   [適用於 iOS 的工作資料夾 – iPad App 版本](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (部落格文章)<br />-   [Windows Server 2012 R2 上的工作資料夾簡介](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)（blog 文章）<br />-   [工作資料夾簡介](https://channel9.msdn.com/posts/Introduction-to-Work-Folders)（Channel 9 影片）<br />-   [工作資料夾測試實驗室部署](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (部落格文章)<br />-   [適用於 Windows 7 的工作資料夾](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (部落格文章) (英文) |
+| **部署** | -   [設計工作資料夾的執行](plan-work-folders.md)<br />-   [部署工作資料夾](deploy-work-folders.md)<br />-   [使用 AD FS 和 Web 應用程式 Proxy （WAP）部署工作資料夾](deploy-work-folders-adfs-overview.md)<br />-   [搭配 Azure AD 應用程式 Proxy 部署工作資料夾](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />- [離線檔案 (CSC) 至工作資料夾移轉指南](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />-   [工作資料夾部署的效能考量](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />-   [適用於 Windows 7 的工作資料夾 (64 位元下載)](https://www.microsoft.com/download/details.aspx?id=42558)<br />-   [適用於 Windows 7 的工作資料夾 (32 位元下載)](https://www.microsoft.com/download/details.aspx?id=42559) |
+| **作業** | -   [工作資料夾 iPad 應用程式：常見問題](https://windows.microsoft.com/windows/work-folders-ipad-faq)（適用于使用者）<br />-   [工作資料夾憑證管理](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (部落格文章)<br />-   [監視 Windows Server 2012 R2 工作資料夾部署](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)（blog 文章）<br />-   [Windows PowerShell 中的 Set-syncshare （工作資料夾） Cmdlet](/powershell/module/syncshare/?view=win10-ps)<br />-   [適用於 Windows Server 2012 R2 預覽版本的儲存空間和檔案服務 PowerShell Cmdlet 快速參考卡](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) |
+| **疑難排解** | -   [Windows Server 2012 R2 – 解決與 IIS Websites 和工作資料夾之間的連接埠衝突](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (部落格文章) (英文)<br />-   [工作資料夾中的常見錯誤](https://social.technet.microsoft.com/wiki/contents/articles/30578.common-errors-in-work-folders.aspx) |
+| **社群資源** | -   [檔案服務和儲存體論壇](https://social.technet.microsoft.com/Forums/windowsserver/home?forum=winserverfiles)<br />-   [Microsoft 的儲存小組-檔案封包 Blog](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />-   [詢問目錄服務小組的 Blog](/archive/blogs/askds/) |
+| **相關技術** | -   [Windows Server 2016 中的存放裝置](../storage.yml)<br>-   [檔案和存放服務](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831487(v=ws.11))<br />-   [檔案伺服器 Resource Manager](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831701(v=ws.11))<br />-   [資料夾重新導向、離線檔案和漫遊使用者設定檔](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh848267(v=ws.11))<br />-   [BranchCache](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831696(v=ws.11))<br />-   [DFS 命名空間和 DFS 複寫](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)) |

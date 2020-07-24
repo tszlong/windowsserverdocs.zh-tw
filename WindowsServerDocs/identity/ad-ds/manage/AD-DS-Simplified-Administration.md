@@ -8,16 +8,16 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e1989630cadd7d63f8ed041174135722d568484f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b0790ea13f18383666a090f5c846b2b20bee9aba
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80824421"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966270"
 ---
 # <a name="ad-ds-simplified-administration"></a>AD DS 簡化的系統管理
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 本主題說明 Windows Server 2012 網域控制站部署和管理的功能和優點，以及先前的作業系統 DC 部署和新的 Windows Server 2012 執行之間的差異。  
   
@@ -32,7 +32,7 @@ AD DS 簡化的系統管理是網域部署的重新構思。
 - Windows PowerShell 的 Active Directory 模組現在包含複寫拓撲管理、 動態存取控制及其他操作的 Cmdlet。  
 - Windows Server 2012 樹系功能等級不會實作新功能，而且只有新的 Kerberos 功能子集需要網域功能等級，系統管理員就不會經常需要同質性的網域控制站環境。  
 - 新增了對虛擬網域控制站的完整支援，以包含自動化的部署和復原保護。  
-   - 如需虛擬網域控制站的詳細資訊，請參閱[Active Directory Domain Services &#40;AD DS&#41;虛擬&#40;化層&#41;級100的簡介](../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)。
+   - 如需虛擬網域控制站的詳細資訊，請參閱[Active Directory Domain Services &#40;AD DS 簡介&#41; 虛擬化 &#40;層級 100&#41;](../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)。
 
 此外，還有許多系統管理和維護改良功能：  
 
@@ -55,7 +55,7 @@ Active Directory 樹系結構描述延伸和網域準備現已整合到網域控
   
 Adprep.exe 保留在 DVD 上是為了個別的樹系與網域準備。 隨附於 Windows Server 2012 的工具版本可相容於 Windows Server 2008 x64 與 Windows Server 2008 R2。 Adprep.exe 也支援遠端 forestprep 及 domainprep，就像 ADDSDeployment 型的網域控制站設定工具一樣。  
   
-如需 Adprep 與先前作業系統樹系準備的詳細資訊，請參閱 [執行 Adprep (Windows Server 2008 R2)](https://technet.microsoft.com/library/dd464018(WS.10).aspx)。  
+如需 Adprep 與先前作業系統樹系準備的詳細資訊，請參閱[執行 Adprep (Windows Server 2008 R2)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd464018(v=ws.10))。  
 
 ## <a name="server-manager-ad-ds-integration"></a>伺服器管理員 AD DS 整合
 
@@ -81,7 +81,7 @@ Windows Server 2008 R2 引進 Active Directory 資源回收筒，可復原已刪
   
 Windows Server 2012 增強了現有的 Windows PowerShell 還原功能，在 Active Directory 管理中心有全新的圖形化介面。 這可讓系統管理員啟用資源回收筒，並在樹系的網域內容中找出或還原已刪除的物件，而不需要直接執行 Windows PowerShell Cmdlet。 Active Directory 管理中心和 Active Directory 資源回收筒仍然使用 Windows PowerShell，因此，前一個指令碼與程序仍相當重要。  
   
-如需 Active Directory 資源回收筒的詳細資訊，請參閱 [Active Directory 資源回收筒逐步指南 (Windows Server 2008 R2)](https://technet.microsoft.com/library/dd392261(WS.10).aspx)。  
+如需 Active Directory 資源回收筒的詳細資訊，請參閱 [Active Directory 資源回收筒逐步指南 (Windows Server 2008 R2)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd392261(v=ws.10))。  
   
 ## <a name="active-directory-administrative-center-fine-grained-password-policy"></a>Active Directory 管理中心更細緻的密碼原則
 
@@ -91,7 +91,7 @@ Windows Server 2008 中引進更細緻的密碼原則，可讓系統管理員依
   
 Windows Server 2012 則引進更細緻的密碼原則的圖形化介面。 Active Directory 管理中心是這個新對話方塊的首頁，為所有系統管理員提供簡化的 FGPP 管理。  
   
-如需有關更細緻的密碼原則之資訊，請參閱 [AD DS 更細緻的密碼與帳戶鎖定原則逐步指南 (Windows Server 2008 R2)](https://technet.microsoft.com/library/cc770842(WS.10).aspx)。  
+如需有關更細緻的密碼原則之資訊，請參閱 [AD DS 更細緻的密碼與帳戶鎖定原則逐步指南 (Windows Server 2008 R2)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770842(v=ws.10))。  
   
 ## <a name="active-directory-administrative-center-windows-powershell-history-viewer"></a>Active Directory 管理中心 Windows PowerShell 歷程記錄檢視器
 
@@ -107,13 +107,13 @@ Windows Server 2008 R2 引進 Active Directory 管理中心，取代 Windows 200
   
 Windows Server 2012 新增額外的 Active Directory 複寫 Cmdlet 到 Active Directory Windows PowerShell 模組。 它們可用來設定新的或現有的站台、子網路、連線、站台連結與橋接器。 它們也會傳回 Active Directory 複寫中繼資料、複寫狀態、佇列和最新版向量資訊。 複寫 Cmdlet 的引進，再加上部署和其他現有的 AD DS Cmdlet，讓您只要使用 Windows PowerShell 即可管理樹系。 這使得想要佈建和管理 Windows Server 2012 的系統管理員不需使用圖形化介面即能達成目的，並能減少作業系統的攻擊面和服務的需求。 將伺服器部署到高安全性的網路 (例如機密網際網路通訊協定路由器 (SIPR) 與公司 DMZ) 時，這一點尤其重要。  
   
-如需 AD DS 站台拓撲和複寫的詳細資訊，請參閱 [Windows Server 技術參照](https://technet.microsoft.com/library/cc739127(WS.10).aspx)。  
+如需 AD DS 站台拓撲和複寫的詳細資訊，請參閱 [Windows Server 技術參照](/previous-versions/windows/it-pro/windows-server-2003/cc739127(v=ws.10))。  
 
 ## <a name="rid-management-and-issuance-improvements"></a>RID 管理及發行的改良功能
 
 Windows 2000 Active Directory 引進 RID 主機，其可將相關的識別元集區發行到網域控制站，以建立安全性信任者 (如使用者、群組及電腦) 的安全性識別碼 (SID)。  根據預設，這個全域的 RID 空間大小限制為 2<sup>30</sup> (或網域中共建立 1,073,741,823 個 SID) 。 SID 無法傳回集區或重新發行。 經過一段時間，大型網域的 RID 可能會開始不足，或意外可能導致不必要的 RID 消耗，最後終究匱乏。  
   
-Windows Server 2012 可解決自 1999 年首次建立 Active Directory 網域以來，隨著 AD DS 成熟而有許多客戶和 Microsoft 客戶支援未發現的 RID 發行與管理問題。 這些地方包括：  
+Windows Server 2012 可解決自 1999 年首次建立 Active Directory 網域以來，隨著 AD DS 成熟而有許多客戶和 Microsoft 客戶支援未發現的 RID 發行與管理問題。 其中包含：  
 
 - 定期的 RID 消耗警告會寫入事件記錄檔  
 - 當系統管理員使 RID 集區失效時會產生事件記錄檔  
@@ -121,7 +121,7 @@ Windows Server 2012 可解決自 1999 年首次建立 Active Directory 網域以
 - 當全域 RID 空間不足時，現在會強制執行人為設定的 RID 最大限度並做記錄，讓系統管理員可在全域空間耗盡之前採取動作
 - 全域 RID 空間現在可以增加 1 個位元，使大小增加為原本的 2 倍：2<sup>31</sup> (2147483648 個 SID)  
 
-如需有關 RID 與 RID 主機的詳細資訊，請檢閱 [安全性識別碼的運作方式](https://technet.microsoft.com/library/cc778824(WS.10).aspx)。  
+如需有關 RID 與 RID 主機的詳細資訊，請檢閱[安全性識別碼的運作方式](/previous-versions/windows/it-pro/windows-server-2003/cc778824(v=ws.10))。  
   
 ## <a name="ad-ds-role-deployment-and-management-architecture"></a>AD DS 角色部署和管理架構
 
@@ -176,7 +176,7 @@ Adprep 不再需要於架構主機上執行。 它可以從執行 Windows Server
 
 ADDSDeployment Windows PowerShell Managed 程式碼內建的先決條件檢查系統會依據作業而有不同的運作模式。 下表描述當其使用時的每個測試，並說明其驗證方式與內容。 如果有驗證失敗但錯誤不足以疑難排解問題的情況，這些表格可能會很有用。  
   
-這些測試記錄在工作類別 **Core** 底下的 **DirectoryServices-Deployment**作業事件記錄檔通道中，事件識別碼一律為 **103**。  
+這些測試記錄在工作類別 **Core** 底下的 **DirectoryServices-Deployment** 作業事件記錄檔通道中，事件識別碼一律為 **103**。  
   
 ### <a name="prerequisite-windows-powershell"></a>先決條件 Windows PowerShell
 
@@ -203,10 +203,10 @@ ADDSDeployment Windows PowerShell Managed 程式碼內建的先決條件檢查�
 |CheckDomainPrep<p>GroupMembership|LDAP、<p>RPC over SMB (LSARPC)|驗證使用者是否為 Domain Admins 群組的成員，而且對現有的網域控制站具有管理稽核及安全性事件記錄檔 (SesScurityPrivilege) 的權限|  
 |CheckRODCPrep<p>GroupMembership|LDAP、<p>RPC over SMB (LSARPC)|驗證使用者是否為 Enterprise Admins 群組的成員，而且對現有的網域控制站具有管理稽核及安全性事件記錄檔 (SesScurityPrivilege) 的權限|  
 |VerifyInitSync<p>AfterReboot|LDAP|透過在 rootDSE 屬性 becomeSchemaMaster 設定虛擬值，以驗證架構主機自重新啟動後是否至少複寫過一次|  
-|VerifySFUHotFix<p>已套用|LDAP|驗證現有的樹系架構未包含 OID 為 1.2.840.113556.1.4.7000.187.102 的 UID 屬性的已知問題 SFU2 延伸<p>（[https://support.microsoft.com/kb/821732](https://support.microsoft.com/kb/821732)）|  
-|VerifyExchange<p>SchemaFixed|LDAP、WMI、DCOM、RPC|驗證現有的樹系架構是否仍未包含問題 Exchange 2000 延伸模組-Ms-exch-assistant-name-Assistant-Name、Ms-exch-assistant-name-LabeledURI 和 ms-chap-Ms-exch-assistant-name-內部識別碼（[https://support.microsoft.com/kb/314649](https://support.microsoft.com/kb/314649)）|  
+|VerifySFUHotFix<p>已套用|LDAP|驗證現有的樹系架構未包含 OID 為 1.2.840.113556.1.4.7000.187.102 的 UID 屬性的已知問題 SFU2 延伸<p>([https://support.microsoft.com/kb/821732](https://support.microsoft.com/kb/821732))|  
+|VerifyExchange<p>SchemaFixed|LDAP、WMI、DCOM、RPC|驗證現有的樹系架構是否仍未包含問題 Exchange 2000 延伸模組-Ms-exch-assistant-name-Assistant-Name、Ms-exch-assistant-name-LabeledURI 和 ms-chap-Ms-exch-assistant-name-內部識別碼（ [https://support.microsoft.com/kb/314649](https://support.microsoft.com/kb/314649) ）|  
 |VerifyWin2KSchema<p>一致性|LDAP|驗證現有的樹系架構是否有一致 (未經其他廠商不當修改) 的核心屬性及類別。|  
 |DCPromo|DRSR over RPC、<p>LDAP、<p>DNS<p>RPC over SMB (SAMR)|驗證命令列語法已傳送到升級程式碼和測試升級。 如果是新建樹系或網域，驗證其是否尚未存在|  
 |VerifyOutbound<p>ReplicationEnabled|LDAP、DRSR over SMB、RPC over SMB (LSARPC)|檢查 NTDS 設定物件的選項屬性是否為 NTDSDSA_OPT_DISABLE_OUTBOUND_REPL (0x00000004)，以驗證指定為複寫協力電腦的現有網域控制站是否已啟用連出複寫|  
-|VerifyMachineAdmin<p>Password|DRSR over RPC、<p>LDAP、<p>DNS<p>RPC over SMB (SAMR)|驗證為 DSRM 設定的安全模式密碼符合網域複雜性需求。|  
-|VerifySafeModePassword|*不適用*|驗證設定的本機系統管理員密碼符合電腦的安全性原則複雜性需求。|  
+|VerifyMachineAdmin<p>密碼|DRSR over RPC、<p>LDAP、<p>DNS<p>RPC over SMB (SAMR)|驗證為 DSRM 設定的安全模式密碼符合網域複雜性需求。|  
+|VerifySafeModePassword|*N/A*|驗證設定的本機系統管理員密碼符合電腦的安全性原則複雜性需求。|  

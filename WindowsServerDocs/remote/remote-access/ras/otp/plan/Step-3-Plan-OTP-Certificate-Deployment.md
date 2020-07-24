@@ -8,18 +8,18 @@ ms.topic: article
 ms.assetid: eca02eeb-d92d-463e-aae0-1f7038ba26fe
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 03ae91c0360153789658e0c31cb17980fad32bab
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a65ddec97bcdd911d0cf81bfd54e2ddbb286ed54
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855761"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965259"
 ---
 # <a name="step-3-plan-otp-certificate-deployment"></a>步驟3規劃 OTP 憑證部署
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-在規劃 RADIUS 伺服器之後，您必須規劃憑證授權單位單位（CA）需求，包括將會發出單次密碼（OTP）憑證的 CA、OTP 憑證範本，以及遠端所使用的登錄授權單位憑證。存取伺服器以簽署所有 DirectAccess 用戶端 OTP 憑證要求。 這些憑證的使用方式如下：  
+在規劃 RADIUS 伺服器之後，您必須規劃憑證授權單位單位（CA）需求，包括會發出一次性密碼（OTP）憑證的 CA、OTP 憑證範本，以及遠端存取服務器用來簽署所有 DirectAccess 用戶端 OTP 憑證要求的登錄授權單位憑證。 這些憑證的使用方式如下：  
   
 1.  DirectAccess 用戶端會要求 OTP 憑證，而遠端存取服務器會收到要求。  
   
@@ -54,7 +54,7 @@ ms.locfileid: "80855761"
 -   有效期間應設定為一小時。  
   
     > [!NOTE]  
-    > 在 CA 伺服器是 Windows Server 2003 電腦的情況下，您必須在不同的電腦上設定範本。 這是因為在執行 2008/Vista 之前的 Windows 版本時，不可能設定以小時為單位的**有效期間**。 如果您用來設定範本的電腦未安裝憑證服務角色，或者它是用戶端電腦，則您可能需要安裝 [憑證範本] 嵌入式管理單元。 如需有關此主題的詳細資訊，請按一下[這裡](https://technet.microsoft.com/library/cc732445.aspx)。  
+    > 在 CA 伺服器是 Windows Server 2003 電腦的情況下，您必須在不同的電腦上設定範本。 這是因為在執行 2008/Vista 之前的 Windows 版本時，不可能設定以小時為單位的**有效期間**。 如果您用來設定範本的電腦未安裝憑證服務角色，或者它是用戶端電腦，則您可能需要安裝 [憑證範本] 嵌入式管理單元。 如需有關此主題的詳細資訊，請按一下[這裡](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732445(v=ws.11))。  
   
 -   更新期間應設定為0。  
   
@@ -73,5 +73,3 @@ ms.locfileid: "80855761"
   
 -   [步驟4：為遠端存取服務器規劃 OTP](Step-4-Plan-for-OTP-on-the-Remote-Access-Server.md)  
   
-
-

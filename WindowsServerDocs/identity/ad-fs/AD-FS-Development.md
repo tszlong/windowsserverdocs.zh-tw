@@ -8,12 +8,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b4c94553116d7a888ad76fd999f12cecd70e3523
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7ca84e2e08c033e9153d7db3a5f951aa8be1a581
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854091"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965040"
 ---
 # <a name="ad-fs-development"></a>AD FS 開發
 
@@ -27,24 +27,18 @@ ms.locfileid: "80854091"
   
 - [使用 OpenID Connect 與 AD FS 2016 建立 web 應用程式](../ad-fs/development/Enabling-OpenId-Connect-with-AD-FS.md)  
 
-- [使用 OAuth 和 ADAL 建立單一頁面 web 應用程式。JS 與 AD FS 2016](../ad-fs/development/Single-Page-Application-with-AD-FS.md)
+- [使用 OAuth 和 ADAL.JS 搭配 AD FS 2016 來建立單一頁面 web 應用程式](../ad-fs/development/Single-Page-Application-with-AD-FS.md)
   
-- [使用 OAuth 機密用戶端搭配 AD FS 2016 來建立伺服器端應用程式](../ad-fs/development/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016.md)
+- [使用 OAuth 機密用戶端搭配 AD FS 2016 來建立伺服器端應用程式](./development/enabling-oauth-confidential-clients-with-ad-fs.md)
 
-- [使用 OAuth 搭配 AD FS 2016，使用代理者（OBO）建立多層式應用程式](../ad-fs/development/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016.md) 
+- [使用 OAuth 搭配 AD FS 2016，使用代理者（OBO）建立多層式應用程式](./development/ad-fs-on-behalf-of-authentication-in-windows-server.md) 
 
-- [使用 AD FS 2012 R2 或更高版本的 OAuth 公用用戶端建立原生用戶端應用程式](https://msdn.microsoft.com/library/dn633593.aspx)
+- [使用 AD FS 2012 R2 或更高版本的 OAuth 公用用戶端建立原生用戶端應用程式](/previous-versions/adfs-windows-server-2012R2/dn633593(v=msdn.10))
 
 - [使用 OAuth 公用用戶端搭配 AD FS 2016 來建立原生用戶端應用程式](../ad-fs/development/native-client-with-ad-fs.md)
 
-- [自訂使用 OpenID Connect 或 OAuth 搭配 AD FS 2016 時，要在 id_token 中發出的宣告](../ad-fs/development/Customize-Id-Token-AD-FS-2016.md)
+- [自訂使用 OpenID Connect 或 OAuth 搭配 AD FS 2016 時，要在 id_token 中發出的宣告](./development/custom-id-tokens-in-ad-fs.md)
 
 - [使用 AD FS 的身分識別委派](../ad-fs/development/ad-fs-identity-delegation.md)
 
 - [使用 AD FS 2016 的 OpenID Connect 單一登出](../ad-fs/development/ad-fs-logout-openid-connect.md)
-
-
-
-
-
-

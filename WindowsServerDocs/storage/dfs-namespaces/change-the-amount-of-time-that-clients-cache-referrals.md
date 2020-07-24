@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: d421a14c2a6021d45cd16f30c526ff1670ae62e3
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ddbb799cc46da040bfc2f62445cc2b41945d09f1
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475195"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966290"
 ---
 # <a name="change-the-amount-of-time-that-clients-cache-referrals"></a>變更用戶端快取轉介的時間量
 
@@ -30,7 +30,7 @@ ms.locfileid: "85475195"
 3.  在 [轉介]**** 索引標籤的 [快取期間 (以秒為單位)]**** 文字方塊上，輸入用戶端快取命名空間根目錄轉介的時間量 (以秒為單位)。 預設設定是 300 秒 (5 分鐘)。
 
 > [!TIP]
-> 若要使用 Windows PowerShell 變更用戶端快取命名空間根目錄轉介的時間量，請使用 [Set-DfsnRoot TimeToLiveSec](https://technet.microsoft.com/library/jj884281.aspx) Cmdlet。 這些 Cmdlet 於 Windows Server 2012 中引進。
+> 若要使用 Windows PowerShell 變更用戶端快取命名空間根目錄轉介的時間量，請使用 [Set-DfsnRoot TimeToLiveSec](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753448(v=ws.11)) Cmdlet。 這些 Cmdlet 於 Windows Server 2012 中引進。
 
 ## <a name="to-change-the-amount-of-time-that-clients-cache-folder-referrals"></a>變更用戶端快取資料夾轉介的時間量
 
@@ -44,5 +44,3 @@ ms.locfileid: "85475195"
 
 -   [調整 DFS 命名空間](tuning-dfs-namespaces.md)
 -   [委派 DFS 命名空間的管理權限](delegate-management-permissions-for-dfs-namespaces.md)
-
-

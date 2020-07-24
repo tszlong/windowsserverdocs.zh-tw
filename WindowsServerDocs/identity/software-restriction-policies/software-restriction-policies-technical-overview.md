@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 38625a8d416345a6a7ed40c021b55aa10d1fd92f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9a9a44cd4ab1f4c8ee1c4dadf5cc09de2208b46a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855271"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966160"
 ---
 # <a name="software-restriction-policies-technical-overview"></a>軟體限制原則技術概觀
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 本主題描述軟體限制原則、使用此功能的時機與方式、過去版本中已實行的變更，並提供其他資源的連結，協助您建立及部署從 Windows Server 2008 和 Windows Vista 開始的軟體限制原則。
 
@@ -84,7 +84,7 @@ Windows Server 2012 和 Windows 8 的 SRP 功能不會有任何變更。
 
 |應用程式控制函式|SRP|AppLocker|
 |----------------|----|-------|
-|範圍|SRP 原則可以套用到從 Windows XP 和 Windows Server 2003 開始的所有 Windows 作業系統。|AppLocker 原則僅適用于 Windows Server 2008 R2、Windows Server 2012、Windows 7 和 Windows 8。|
+|影響範圍|SRP 原則可以套用到從 Windows XP 和 Windows Server 2003 開始的所有 Windows 作業系統。|AppLocker 原則僅適用于 Windows Server 2008 R2、Windows Server 2012、Windows 7 和 Windows 8。|
 |原則建立|SRP 原則會透過群組原則進行維護，而且只有 GPO 的系統管理員可以更新 SRP 原則。 本機電腦上的系統管理員可以修改本機 GPO 中定義的 SRP 原則。|AppLocker 原則會透過群組原則維護，只有 GPO 的系統管理員可以更新原則。 本機電腦上的系統管理員可以修改本機 GPO 中定義的 AppLocker 原則。<p>AppLocker 允許自訂錯誤訊息，將使用者導向至網頁尋求協助。|
 |原則維護|SRP 原則必須使用本機安全性原則嵌入式管理單元（如果原則是在本機建立）或群組原則管理主控台（GPMC）來更新。|您可以使用本機安全性原則嵌入式管理單元（如果原則是在本機建立）、GPMC 或 Windows PowerShell AppLocker Cmdlet 來更新 AppLocker 原則。|
 |原則應用程式|SRP 原則會透過群組原則散發。|AppLocker 原則會透過群組原則散發。|
@@ -123,9 +123,9 @@ Windows Server 2012 和 Windows 8 的 SRP 功能不會有任何變更。
 
 -   原則結果組（RSoP），可協助診斷將套用至用戶端的有效原則。
 
-如需 SRP 架構的詳細資訊，SRP 如何管理規則、處理常式和互動，請參閱 Windows Server 2003 技術文件庫中的[軟體限制原則的使用方式](https://technet.microsoft.com/library/cc786941(v=WS.10).aspx)。
+如需 SRP 架構的詳細資訊，SRP 如何管理規則、處理常式和互動，請參閱 Windows Server 2003 技術文件庫中的[軟體限制原則的使用方式](/previous-versions/windows/it-pro/windows-server-2003/cc786941(v=ws.10))。
 
-## <a name="best-practices"></a><a name="BKMK_Best_Practices"></a>最佳做法
+## <a name="best-practices"></a><a name="BKMK_Best_Practices"></a>最佳作法
 
 ### <a name="do-not-modify-the-default-domain-policy"></a>請勿修改預設網域原則。
 
@@ -173,11 +173,9 @@ Windows Server 2012 和 Windows 8 的 SRP 功能不會有任何變更。
 
 |內容類型|參考|
 |--------|-------|
-|**規劃**|[軟體限制原則技術參考](https://technet.microsoft.com/library/cc728085(v=WS.10).aspx)|
-|**操作**|[管理軟體限制原則](administer-software-restriction-policies.md)|
-|**疑難排解**|[軟體限制原則疑難排解（2003）](https://technet.microsoft.com/library/cc737011(v=WS.10).aspx)|
-|**安全性**|[軟體限制原則的威脅和因應對策（2008）](https://technet.microsoft.com/library/dd349795(v=WS.10).aspx)<p>[軟體限制原則的威脅和因應對策（2008 R2）](https://technet.microsoft.com/library/hh125926(v=WS.10).aspx)|
-|**工具及設定**|[軟體限制原則工具和設定（2003）](https://technet.microsoft.com/library/cc782454(v=WS.10).aspx)|
-|**社群資源**|[使用軟體限制原則鎖定應用程式](https://technet.microsoft.com/magazine/2008.06.srp.aspx?pr=blog)|
-
-
+|**規劃**|[軟體限制原則技術參考](/previous-versions/windows/it-pro/windows-server-2003/cc728085(v=ws.10))|
+|**作業**|[管理軟體限制原則](administer-software-restriction-policies.md)|
+|**疑難排解**|[軟體限制原則疑難排解（2003）](/previous-versions/windows/it-pro/windows-server-2003/cc737011(v=ws.10))|
+|**安全性**|[軟體限制原則的威脅和因應對策（2008）](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349795(v=ws.10))<p>[軟體限制原則的威脅和因應對策（2008 R2）](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/hh125926(v=ws.10))|
+|**工具及設定**|[軟體限制原則工具和設定（2003）](/previous-versions/windows/it-pro/windows-server-2003/cc782454(v=ws.10))|
+|**社群資源**|[使用軟體限制原則鎖定應用程式](/previous-versions/technet-magazine/cc510322(v=msdn.10)?pr=blog)|

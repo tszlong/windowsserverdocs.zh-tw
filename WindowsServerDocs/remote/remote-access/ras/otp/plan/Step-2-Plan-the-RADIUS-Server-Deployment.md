@@ -8,16 +8,16 @@ ms.topic: article
 ms.assetid: 2d6ad863-02a5-49b0-9aff-d189e78b2b80
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 1722b750405ea1188d18fab6282d82434f5334ef
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9c0d5adbf2096bbfcf4ea3aaa8b4e735e6594dcc
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858171"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965240"
 ---
 # <a name="step-2-plan-the-radius-server-deployment"></a>步驟2規劃 RADIUS 伺服器部署
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 部署單一遠端存取服務器之後，請規劃一次性密碼（OTP）驗證服務器。  
   
@@ -36,9 +36,7 @@ ms.locfileid: "80858171"
   
 -   當您部署 RADIUS 伺服器時，您會設定共用密碼和 RADIUS 流量的埠號碼。 記下這些詳細資料;當您設定遠端存取服務器時，這是必要的。  
   
-您可以在[測試實驗室指南：示範使用 otp 驗證的 DirectAccess 和 Rsa securid](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/tlg-otp-securid/test-lab-guide-demonstrate-directaccess-with-otp-authentication-and-rsa-securid)中，查看使用 RSA securid 伺服器設定 OTP 驗證的範例測試實驗室指南。  
+您可以在[測試實驗室指南：示範使用 otp 驗證的 DirectAccess 和 Rsa securid](../../../directaccess/tlg-otp-securid/test-lab-guide-demonstrate-directaccess-with-otp-authentication-and-rsa-securid.md)中，查看使用 RSA securid 伺服器設定 OTP 驗證的範例測試實驗室指南。  
   
   
   
-
-

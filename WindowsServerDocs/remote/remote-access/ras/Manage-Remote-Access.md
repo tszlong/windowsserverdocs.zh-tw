@@ -8,16 +8,16 @@ ms.topic: article
 ms.assetid: 1459819a-b1b6-4800-8770-4a85d02c7a2b
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 19798c5fb29d3b8aea68b29e5a42775970eeca46
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8379818d22d51fe8c4cc983f32d017d3cdee52b6
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857445"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965580"
 ---
 # <a name="manage-remote-access"></a>管理遠端存取
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 「DirectAccess 遠端用戶端管理」部署案例會使用 DirectAccess 來維護透過網際網路的用戶端。 本節說明案例，包括其階段、角色、功能及其他資源的連結。  
   
@@ -43,7 +43,7 @@ DirectAccess 提供支援遠端系統管理 DirectAccess 用戶端的設定。 �
 「DirectAccess 遠端用戶端管理」部署案例包括用於計劃和設定的下列步驟：  
   
 ### <a name="plan-the-deployment"></a>計劃部署  
-計劃本案例時，只有幾項電腦和網路需求： 包括：  
+計劃本案例時，只有幾項電腦和網路需求： 其中包括：  
   
 -   **網路和伺服器拓撲**：有了 DirectAccess 之後，您可以將遠端存取伺服器放到內部網路的邊緣，或者放到網路位址轉譯 (NAT) 裝置或防火牆的後面。  
   
@@ -52,7 +52,7 @@ DirectAccess 提供支援遠端系統管理 DirectAccess 用戶端的設定。 �
 -   **DirectAccess 用戶端**：決定哪些受管理的電腦會設定為 DirectAccess 用戶端。  
   
 ### <a name="configure-the-deployment"></a>設定部署  
-設定部署包含一些步驟。 這些地方包括：  
+設定部署包含一些步驟。 其中包含：  
   
 1.  **設定基礎結構**：設定 DNS 設定值、必要時將伺服器和用戶端電腦加入網域，以及設定 Active Directory 安全性群組。  
   
@@ -77,7 +77,7 @@ DirectAccess 提供支援遠端系統管理 DirectAccess 用戶端的設定。 �
   
 -   **容易管理**：遠端存取系統管理員可以透過 DirectAccess，從遠端管理連線到網際網路的 DirectAccess 用戶端電腦，即使用戶端電腦不位於公司內部網路上也可以。 管理伺服器可以自動修復不符合公司規定的用戶端電腦。 只要一部遠端存取管理主控台就可以管理一或多個遠端存取伺服器。  
   
-## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>此案例中包含的角色和功能  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>這個案例包含的角色與功能  
 下表列出本案例必備的角色和功能：  
   
 |角色或功能|如何支援本案例|  
@@ -90,7 +90,7 @@ DirectAccess 提供支援遠端系統管理 DirectAccess 用戶端的設定。 �
   
 ### <a name="server-requirements"></a>伺服器需求  
   
--   符合 Windows Server 2016 硬體需求的電腦。 如需詳細資訊，請參閱 Windows Server 2016[系統需求](https://technet.microsoft.com/windows-server-docs/get-started/system-requirements-and-installation)。  
+-   符合 Windows Server 2016 硬體需求的電腦。 如需詳細資訊，請參閱 Windows Server 2016[系統需求](../directaccess/prerequisites-for-deploying-directaccess.md)。  
   
 -   伺服器必須至少安裝以及啟用一張網路介面卡。 應該只有一張介面卡連接公司內部網路，而且只有一張介面卡連接外部網路 (網際網路)。  
   
@@ -129,4 +129,3 @@ DirectAccess 提供支援遠端系統管理 DirectAccess 用戶端的設定。 �
   
 -   準備一個 Active Directory 安全性群組，只要會設定成 DirectAccess 用戶端的電腦，全部放到這個群組中。 電腦不可以包含在多個內含 DirectAccess 用戶端的安全性群組中。 如果用戶端是包含在多個群組中，則無法正常為每一個用戶端要求，進行名稱的解析工作。  
   
-

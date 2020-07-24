@@ -10,16 +10,16 @@ author: cosmosdarwin
 ms.date: 11/06/2017
 description: 如何將伺服器或磁片磁碟機新增至儲存空間直接存取叢集
 ms.localizationpriority: medium
-ms.openlocfilehash: be79a2d3e0e8c56afc409298518d967c9bc80453
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 773bb3a55de27d049d26fa76659d3a4d8057f0fe
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859121"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966390"
 ---
 # <a name="adding-servers-or-drives-to-storage-spaces-direct"></a>將伺服器或磁碟機新增至儲存空間直接存取
 
->適用于： Windows Server 2019、Windows Server 2016
+>適用於：Windows Server 2019、Windows Server 2016
 
 本主題說明如何將伺服器或磁碟機新增至儲存空間直接存取。
 
@@ -31,7 +31,7 @@ ms.locfileid: "80859121"
 
 一般部署可以藉由新增伺服器，簡單地相應放大： 只需要兩個步驟：
 
-1. 執行[叢集驗證精靈](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx)，方法是使用容錯移轉叢集嵌入式管理單元或使用 PowerShell 中的 **Test-Cluster** Cmdlet (以系統管理員身分執行)。 包含您想新增的新伺服器 *\<NewNode>* 。
+1. 執行[叢集驗證精靈](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732035(v=ws.10))，方法是使用容錯移轉叢集嵌入式管理單元或使用 PowerShell 中的 **Test-Cluster** Cmdlet (以系統管理員身分執行)。 包含您想要新增的新伺服器 *\<NewNode>* 。
 
    ```PowerShell
    Test-Cluster -Node <Node>, <Node>, <Node>, <NewNode> -Include "Storage Spaces Direct", Inventory, Network, "System Configuration"
@@ -40,7 +40,7 @@ ms.locfileid: "80859121"
    這可確認新的伺服器正在執行 Windows Server 2016 Datacenter Edition、已加入與現有伺服器相同的 Active Directory Domain Services、具有所有必要的角色和功能，並且已正確設定網路。
 
    >[!IMPORTANT]
-   > 若您重新使用的磁碟機內含您不再需要的舊資料或中繼資料，使用 [磁碟管理] 或 **Reset-PhysicalDisk** Cmdlet 加以清除。 若偵測到舊的資料或中繼資料，磁碟機便不會置於集區。
+   > 若您重新使用的磁碟機內含您不再需要的舊資料或中繼資料，使用 **\[磁碟管理\]** 或 **Reset-PhysicalDisk** Cmdlet 加以清除。 若偵測到舊的資料或中繼資料，磁碟機便不會置於集區。
 
 2. 在叢集上執行下列 Cmdlet 以完成新增伺服器：
 
@@ -49,13 +49,13 @@ Add-ClusterNode -Name NewNode
 ```
 
    >[!NOTE]
-   > 自動加入集區取決於您是否只有一個集區。 如果您已經規避標準設定來建立多個集區，您必須自行使用 **Add-PhysicalDisk**，將新的磁碟機新增至您慣用的集區。
+   > 自動加入集區取決於您是否只有一個集區。 如果您已規避標準設定來建立多個集區，您必須使用 PhysicalDisk，自行將新**的**磁片磁碟機新增至您偏好的集區。
 
 ### <a name="from-2-to-3-servers-unlocking-three-way-mirroring"></a>從 2 個伺服器變為 3 個：解除鎖定三向鏡像
 
 ![將第三部伺服器新增至雙節點叢集](media/add-nodes/Scaling-2-to-3.png)
 
-使用兩個伺服器，您只能建立雙向鏡像磁碟區 (相較於分散式 RAID-1)。 使用三個伺服器，您便能建立三向鏡像磁碟區並獲得更佳的容錯。 建議您盡可能使用三向鏡像。
+使用兩個伺服器，您只能建立雙向鏡像磁碟區 (相較於分散式 RAID-1)。 使用三個伺服器，您便能建立三向鏡像磁碟區並獲得更佳的容錯。 我們建議盡可能使用三向鏡像。
 
 雙向鏡像磁碟區無法就地升級至三向鏡像。 然而，您可建立新的磁碟區並將資料移轉 (複製，例如透過使用[儲存體複本](../storage-replica/server-to-server-storage-replication.md)) 至其中，然後移除舊的磁碟區。
 
@@ -81,7 +81,7 @@ New-Volume -FriendlyName <Name> -FileSystem CSVFS_ReFS -StoragePoolFriendlyName 
 
 #### <a name="option-3"></a>選項 3
 
-在名為 **Capacity** 的 **StorageTier** 範本上設定 *PhysicalDiskRedundancy = 2*，然後藉由參考該層來建立磁碟區。
+在名為 *Capacity* 的 **StorageTier** 範本上設定 **PhysicalDiskRedundancy = 2**，然後藉由參考該層來建立磁碟區。
 
 ```PowerShell
 Set-StorageTier -FriendlyName Capacity -PhysicalDiskRedundancy 2 
@@ -117,7 +117,7 @@ New-Volume -FriendlyName <Name> -FileSystem CSVFS_ReFS -StoragePoolFriendlyName 
 
 利用四個伺服器，您也可以開始使用鏡像加速的同位，其中的個別磁碟區為部分鏡像及部分同位。
 
-為此，您必須更新您的 **StorageTier** 範本，以同時擁有 *[效能]* 和 [容量] *[容量]* 層，因為如果您先在四個伺服器上執行 **Enable-ClusterS2D** 就會加以建立。 具體來說，這兩層都應該具有您容量裝置 (例如 SSD 或 HDD) 的 **MediaType** 且 **PhysicalDiskRedundancy = 2**。 *[效能]* 層應該是 **ResiliencySettingName = Mirror**，而 *[容量]* 層應該是 **ResiliencySettingName = Parity**。
+為此，您必須更新您的 **StorageTier** 範本，以同時擁有 *[效能]* 和 [容量]*[容量]* 層，因為如果您先在四個伺服器上執行 **Enable-ClusterS2D** 就會加以建立。 具體來說，這兩層都應該具有您容量裝置 (例如 SSD 或 HDD) 的 **MediaType** 且 **PhysicalDiskRedundancy = 2**。 *Performance* 層應該是 **ResiliencySettingName = Mirror**，而 *Capacity* 層應該是 **ResiliencySettingName = Parity**。
 
 #### <a name="option-3"></a>選項 3
 
@@ -130,7 +130,7 @@ New-StorageTier -StoragePoolFriendlyName S2D* -MediaType HDD -PhysicalDiskRedund
 New-StorageTier -StoragePoolFriendlyName S2D* -MediaType HDD -PhysicalDiskRedundancy 2 -ResiliencySettingName Parity -FriendlyName Capacity
 ```
 
-這樣就完成了！ 您現在已可透過參考這些階層範本建立鏡像加速的同位磁碟區。
+就這麼簡單！ 您現在已可透過參考這些階層範本建立鏡像加速的同位磁碟區。
 
 #### <a name="example"></a>範例
 
@@ -142,7 +142,7 @@ New-Volume -FriendlyName "Sir-Mix-A-Lot" -FileSystem CSVFS_ReFS -StoragePoolFrie
 
 當您擴充超過四個伺服器時，新的磁碟區就能受惠於前所未有的絕佳同位編碼效率。 例如，介於六到七個伺服器之間，效率會從 50.0% 提升到 66.7%，因為它變為可能可使用 Reed-Solomon 4+2 (而不是 2+2)。 您不需採取任何步驟，就能開始享受這種新的效率；最佳可行的編碼會在您每次建立磁碟區時自動決定。
 
-不過，任何預先存在的磁碟區將不會「轉換」為範圍更廣泛的新編碼。 其中一個合理的原因是，這樣做需要大量計算，而此計算確實會影響整個部署中的「每個單一位元」。 如果您想要讓預先存在的資料以更佳的效率進行編碼，您可以將它移轉至新的磁碟區。
+不過，任何預先存在的磁碟區將不會**「轉換」為範圍更廣泛的新編碼。 其中一個合理的原因是，這樣做需要大量計算，而此計算確實會影響整個部署中的「每個單一位元」**。 如果您想要讓預先存在的資料以更佳的效率進行編碼，您可以將它移轉至新的磁碟區。
 
 如需詳細資料，請參閱[容錯與儲存空間效率](storage-spaces-fault-tolerance.md)。
 
@@ -150,13 +150,13 @@ New-Volume -FriendlyName "Sir-Mix-A-Lot" -FileSystem CSVFS_ReFS -StoragePoolFrie
 
 如果您的部署會使用底座或機架容錯，您必須先指定新伺服器的底座或機架，然後再將它們新增至叢集。 這會告訴儲存空間直接存取，利用最佳方式來分散資料，以充分利用容錯功能。
 
-1. 建立節點的暫存容錯網域，方法是開啟已提升權限的 PowerShell 工作階段，然後使用下列命令，其中 *\<NewNode>* 是新叢集節點的名稱：
+1. 藉由開啟已提升許可權的 PowerShell 會話，然後使用下列命令（其中是新叢集節點的名稱），建立節點的暫時容錯網域 *\<NewNode>* ：
 
    ```PowerShell
    New-ClusterFaultDomain -Type Node -Name <NewNode> 
    ```
 
-2. 將此暫存的容錯網域移至真實世界中新伺服器所在的底座或機架，如 *\<ParentName>* 所指定：
+2. 將此暫時容錯網域移到新伺服器所在的底座或機架中，如下所指定 *\<ParentName>* ：
 
    ```PowerShell
    Set-ClusterFaultDomain -Name <NewNode> -Parent <ParentName> 
@@ -175,18 +175,18 @@ New-Volume -FriendlyName "Sir-Mix-A-Lot" -FileSystem CSVFS_ReFS -StoragePoolFrie
 
 ![顯示將磁片磁碟機新增至系統的動畫](media/add-nodes/Scale-Up.gif)
 
-若要相應增加，請連接磁碟機並驗證 Windows 會加以探索。 其應顯示於 PowerShell 中 **Get-PhysicalDisk** Cmdlet 的輸出中，且其 **CanPool** 屬性設為 **True**。 若其顯示為 **CanPool = False**，您可透過檢查其 **CannotPoolReason** 屬性了解原因。
+若要向上擴充，請連接磁碟機並確認 Windows 會探索它們。 其應顯示於 PowerShell 中 **Get-PhysicalDisk** Cmdlet 的輸出中，且其 **CanPool** 屬性設為 **True**。 若其顯示為 **CanPool = False**，您可透過檢查其 **CannotPoolReason** 屬性了解原因。
 
 ```PowerShell
 Get-PhysicalDisk | Select SerialNumber, CanPool, CannotPoolReason
 ```
 
-在短時間內，儲存空間直接存取將會自動宣告符合資格的磁碟機、將之新增至儲存集區，而磁碟區將自動[平均重新分散到所有磁碟機上](https://blogs.technet.microsoft.com/filecab/2016/11/21/deep-dive-pool-in-spaces-direct/)。 此時，您已完成並準備好[延伸磁碟區](resize-volumes.md)或[建立新磁碟區](create-volumes.md)。
+在短時間內，符合資格的磁片磁碟機將會由儲存空間直接存取自動宣告、新增至存放集區，而磁片區會自動在[所有磁片磁碟機上重新分配](https://techcommunity.microsoft.com/t5/storage-at-microsoft/deep-dive-the-storage-pool-in-storage-spaces-direct/ba-p/425959)。 此時，您已完成並準備好[延伸磁碟區](resize-volumes.md)或[建立新磁碟區](create-volumes.md)。
 
-如果磁碟機沒有出現，請手動掃描硬體變更。 這可以使用 [動作] 功能表下方的 [裝置管理員] 來完成。 如果它們包含舊的資料或中繼資料，請考慮加以重新格式化。 可透過使用 **[磁碟管理]** 或 **Reset-PhysicalDisk** Cmdlet 進行此操作。
+如果磁碟機沒有出現，請手動掃描硬體變更。 這可以使用 [動作]**** 功能表下方的 [裝置管理員]**** 來完成。 如果它們包含舊的資料或中繼資料，請考慮重新格式化它們。 可透過使用 **[磁碟管理]** 或 **Reset-PhysicalDisk** Cmdlet 進行此操作。
 
    >[!NOTE]
-   > 自動加入集區取決於您是否只有一個集區。 如果您已經規避標準設定來建立多個集區，您必須自行使用 **Add-PhysicalDisk**，將新的磁碟機新增至您慣用的集區。
+   > 自動加入集區取決於您是否只有一個集區。 如果您已規避標準設定來建立多個集區，您必須使用 PhysicalDisk，自行將新**的**磁片磁碟機新增至您偏好的集區。
 
 ## <a name="optimizing-drive-usage-after-adding-drives-or-servers"></a>在新增磁片磁碟機或伺服器之後優化磁片磁碟機使用量
 
@@ -200,7 +200,7 @@ Get-PhysicalDisk | Select SerialNumber, CanPool, CannotPoolReason
 Get-StorageJob
 ```
 
-您可以使用[StoragePool](https://docs.microsoft.com/powershell/module/storage/optimize-storagepool?view=win10-ps) Cmdlet 來手動優化儲存集區。 以下是範例：
+您可以使用[StoragePool](/powershell/module/storage/optimize-storagepool?view=win10-ps) Cmdlet 來手動優化儲存集區。 以下為範例：
 
 ```powershell
 Get-StoragePool <PoolName> | Optimize-StoragePool

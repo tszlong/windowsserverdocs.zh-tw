@@ -8,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: cf069102f409247832204546f3e1c15de7238bd3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3aeac10b8c92c151fe57bcb935e685f7f1a2bfa2
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80822271"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965520"
 ---
 # <a name="integrating-ad-ds-into-an-existing-dns-infrastructure"></a>將 AD DS 整合至現有 DNS 基礎結構
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 如果您的組織已經有現有的網域名稱系統（DNS）伺服器服務，Active Directory Domain Services （AD DS）擁有者的 DNS 就必須與您組織的 dns 擁有者合作，將 AD DS 整合到現有的基礎結構中。 這牽涉到建立 DNS 伺服器和 DNS 用戶端設定。  
   
@@ -33,7 +33,7 @@ ms.locfileid: "80822271"
 -   設定包含 Active Directory 全樹系定位器記錄的區域（也就是 _msdcs。*forestname*區域）使用全樹系 DNS 應用程式目錄分割來複寫至樹系中的每一部 dns 伺服器。  
   
     > [!NOTE]  
-    > 當 DNS 伺服器服務與 Active Directory Domain Services 安裝精靈一併安裝時（我們建議使用此選項），會自動執行所有先前的工作。 如需詳細資訊，請參閱[部署 Windows Server 2008 樹系根域](https://technet.microsoft.com/library/cc731174.aspx)。  
+    > 當 DNS 伺服器服務與 Active Directory Domain Services 安裝精靈一併安裝時（我們建議使用此選項），會自動執行所有先前的工作。 如需詳細資訊，請參閱[部署 Windows Server 2008 樹系根域](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731174(v=ws.10))。  
   
     > [!NOTE]  
     > AD DS 使用全樹系定位器記錄，讓複寫協力電腦可以找到彼此，並讓用戶端尋找通用類別目錄伺服器。 AD DS 會將全樹系定位器記錄儲存在 _msdcs 中。*forestname*區域。 由於區域中的資訊必須可廣泛使用，因此此區域會透過整個樹系 DNS 應用程式目錄分割，複寫到樹系中的所有 DNS 伺服器。  
@@ -61,5 +61,3 @@ ms.locfileid: "80822271"
   
 如果您想要在連接到執行 Windows 2000、Windows Server 2003 或 Windows Server 2008 的伺服器時利用 Kerberos 驗證，您必須確定用戶端使用主要名稱連接到伺服器。  
   
-
-
