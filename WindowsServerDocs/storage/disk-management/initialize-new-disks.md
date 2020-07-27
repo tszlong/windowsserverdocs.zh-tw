@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: c2cb88d5b30be28a8ab7709e3a3908ce82ae8408
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 68e51cff5b70ed0b11488e44cebba057e7432d99
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "75352352"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965270"
 ---
 # <a name="initialize-new-disks"></a>將新磁碟初始化
 
@@ -26,7 +26,7 @@ ms.locfileid: "75352352"
 
 ## <a name="to-initialize-new-disks"></a>將新磁碟初始化
 
-以下說明如何使用 [磁碟管理] 將新磁碟初始化。 如果您偏好使用 PowerShell，請改用 [initialize-disk](https://docs.microsoft.com/powershell/module/storage/initialize-disk) Cmdlet。
+以下說明如何使用 [磁碟管理] 將新磁碟初始化。 如果您偏好使用 PowerShell，請改用 [initialize-disk](/powershell/module/storage/initialize-disk) Cmdlet。
 
 1. 使用系統管理員權限開啟 [磁碟管理]。
  

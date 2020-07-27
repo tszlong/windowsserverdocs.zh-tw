@@ -10,12 +10,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: fea4b259986d1ca6e2f992168f7b0c2e1a177916
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 64756756449b811d2f7fbb109ac93837567413d4
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826101"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955640"
 ---
 # <a name="release-notes-important-issues-in-windows-server-version-1709"></a>版本資訊：Windows Server 1709 版中的重要問題
 
@@ -31,10 +31,10 @@ ms.locfileid: "80826101"
 
 此外，也不支援將執行 Windows Server 1709 版的伺服器導入 Windows Server 2016 儲存空間直接存取部署。
 
-Windows Server 發行模式提供新的選項，使它其模式與 [Windows 10](https://docs.microsoft.com/windows/deployment/update/waas-overview) 和 [Office 365 專業增強版](https://support.office.com/article/Overview-of-the-upcoming-changes-to-Office-365-ProPlus-update-management-78b33779-9356-4cdf-9d2c-08350ef05cca?ui=en-US&rs=en-US&ad=US)的發行及維護模式一致。 半年通道發行會提供新功能給想要以快速節奏進展的客戶，且每年可取得兩次新版本，分別在春季和秋季推出。
+Windows Server 發行模式提供新的選項，使它其模式與 [Windows 10](/windows/deployment/update/waas-overview) 和 [Office 365 專業增強版](https://support.office.com/article/Overview-of-the-upcoming-changes-to-Office-365-ProPlus-update-management-78b33779-9356-4cdf-9d2c-08350ef05cca?ui=en-US&rs=en-US&ad=US)的發行及維護模式一致。 半年通道發行會提供新功能給想要以快速節奏進展的客戶，且每年可取得兩次新版本，分別在春季和秋季推出。
 
 Windows Server 半年通道著重受益於快速創新的容器和應用程式案例，請參閱此[部落格](https://cloudblogs.microsoft.com/windowsserver/2018/03/29/windows-server-semi-annual-channel-update)以取得詳細資訊。 需要基礎結構角色 (如儲存空間直接存取) 的客戶，應使用長期維護通道版本，像是 Windows Server 2016 (現已推出) 和 [Windows Server 2019](https://cloudblogs.microsoft.com/windowsserver/2018/03/20/introducing-windows-server-2019-now-available-in-preview) \(今年稍後推出\)。 我們致力於建立超融合式基礎結構的最佳平台，且我們持續開發新功能，並根據您的意見反應改善現有功能。 
 
 Windows Server 2016 中引進儲存空間直接存取，它是我們超融合式平台的基礎。 積極採用 Microsoft 超融合式平台的市況令人振奮，我們會致力於為客戶提供最好的服務。
 
-傾聽了您的意見反應後，我們一直在努力達成他們對超融合式平台[下一輪創新](https://blogs.technet.microsoft.com/windowsserver/2017/09/07/sneak-peek-2-windows-server-version-1709-hyper-converged-infrastructure/) \(英文\) 的期望。 這些功能現已在 [Windows 測試人員](https://insider.windows.com/for-business/)組建中實現，非常希望您來試用，並分享您的意見反應。 正在尋找已驗證超融合式解決方案的客戶，建議您加入 [Windows Server 軟體定義](https://microsoft.com/wssd)計畫。
+傾聽了您的意見反應後，我們一直在努力達成他們對超融合式平台[下一輪創新](https://cloudblogs.microsoft.com/windowsserver/2017/09/07/sneak-peek-2-windows-server-version-1709-hyper-converged-infrastructure/) \(英文\) 的期望。 這些功能現已在 [Windows 測試人員](https://insider.windows.com/for-business/)組建中實現，非常希望您來試用，並分享您的意見反應。 正在尋找已驗證超融合式解決方案的客戶，建議您加入 [Windows Server 軟體定義](https://microsoft.com/wssd)計畫。

@@ -10,16 +10,16 @@ author: jaimeo
 ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: fd9ea63785e8de313d2177113a466fa67c17410b
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: d95d02dc9aa4adb2f64e88d2307efd0143225bba
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826641"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959040"
 ---
 # <a name="windows-server-2016-activation"></a>Windows Server 2016 啟用
 
-下面資訊概述最初規劃金鑰管理服務 (KMS) 啟用 (與 Windows Server 2016 相關) 時必須檢閱的考量。 如需與此處未列出舊版作業系統相關的 KMS 啟用資訊，請參閱[步驟 1：檢閱和選取啟用方法](https://technet.microsoft.com/library/jj134256(WS.11).aspx)。
+下面資訊概述最初規劃金鑰管理服務 (KMS) 啟用 (與 Windows Server 2016 相關) 時必須檢閱的考量。 如需與此處未列出舊版作業系統相關的 KMS 啟用資訊，請參閱[步驟 1：檢閱和選取啟用方法](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134256(v=ws.11))。
 
 KMS 會使用用戶端-伺服器模式來啟用用戶端。 KMS 用戶端會連線到 KMS 伺服器 (稱為 KMS 主機) 來啟用。 KMS 主機必須在您的區域網路上。
 

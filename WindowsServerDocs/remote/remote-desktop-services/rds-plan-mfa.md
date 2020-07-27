@@ -9,12 +9,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 09/07/2016
 manager: dongill
-ms.openlocfilehash: c46ad24c62510b4a100a89b5c10a8f52c1a66151
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 179feca4870e62f81ed71fabb7b8fd1cb418d391
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857351"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962180"
 ---
 # <a name="remote-desktop-services---multi-factor-authentication"></a>遠端桌面服務 - 多重要素驗證
 
@@ -27,4 +27,4 @@ ms.locfileid: "80857351"
 - 在連線至 RD 閘道以進行安全的遠端存取時，會收到 SMS 或行動應用程式 MFA 挑戰
 - 正確地進行驗證並連線至其資源！
 
-如需設定程序的詳細資訊，請參閱[使用網路原則伺服器 (NPS) 擴充功能和 Azure AD 整合遠端桌面閘道基礎結構](https://docs.microsoft.com/azure/multi-factor-authentication/nps-extension-remote-desktop-gateway) (機器翻譯)。
+如需設定程序的詳細資訊，請參閱[使用網路原則伺服器 (NPS) 擴充功能和 Azure AD 整合遠端桌面閘道基礎結構](/azure/multi-factor-authentication/nps-extension-remote-desktop-gateway) (機器翻譯)。

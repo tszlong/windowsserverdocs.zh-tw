@@ -10,12 +10,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 01b06c2869469ee65e23df2b1f5ca35fb266d234
-ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
+ms.openlocfilehash: a0a6cefcfb69050721a8b82b5f0f770fa518a551
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85548731"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961760"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>Windows Server 2016 的新功能
 
@@ -33,7 +33,7 @@ ms.locfileid: "85548731"
 ### <a name="hyper-v"></a>Hyper-V  
 -   [Windows Server 2016 的 Hyper-V 新功能](../virtualization/hyper-v/What-s-new-in-Hyper-V-on-Windows.md)。 本主題說明在 Windows Server 2016、Windows 10 上執行的用戶端 Hyper-V，以及 Microsoft Hyper-V Server 2016 中 Hyper-V 角色的新功能和變更。  
 
--   [Windows 容器](https://msdn.microsoft.com/virtualization/windowscontainers/containers_welcome)：Windows Server 2016 容器支援新增效能改進、簡化網路管理，以及對 Windows 10 上 Windows 容器的支援。 如需一些關於容器的額外資訊，請參閱[容器︰Docker、Windows 及趨勢](https://azure.microsoft.com/blog/2015/08/17/containers-docker-windows-and-trends/)。  
+-   [Windows 容器](/virtualization/windowscontainers/)：Windows Server 2016 容器支援新增效能改進、簡化網路管理，以及對 Windows 10 上 Windows 容器的支援。 如需一些關於容器的額外資訊，請參閱[容器︰Docker、Windows 及趨勢](https://azure.microsoft.com/blog/2015/08/17/containers-docker-windows-and-trends/)。  
 
 ### <a name="nano-server"></a>Nano 伺服器  
 [Nano 伺服器](getting-started-with-nano-server.md)中的新功能。 Nano 伺服器現在提供建置 Nano 伺服器映像的更新模組，包括實體主機和客體虛擬機器功能之間的進一步分隔，以及針對不同 Windows Server 版本的支援。   
@@ -77,7 +77,7 @@ Active Directory 同盟服務的新功能。 Windows Server 2016 中的 Active D
 ##  <a name="administration"></a>[系統管理](../administration/manage-windows-server.yml)  
 「管理和自動化」領域著重在適用於想要執行和管理 Windows Server 2016 (包括 Windows PowerShell) 之 IT 專業人員的工具及參考資訊。
 
-Windows PowerShell 5.1 包含重要的新功能 (包括支援進行類別開發)，以及新的安全性功能，這些安全性功能可延伸其用途、改善其可用性，並可讓您更輕鬆地全面控制及管理 Windows 型環境。 如需詳細資訊，請參閱 [WMF 5.1 中的新案例及功能](https://docs.microsoft.com/powershell/wmf/5.1/scenarios-features)。
+Windows PowerShell 5.1 包含重要的新功能 (包括支援進行類別開發)，以及新的安全性功能，這些安全性功能可延伸其用途、改善其可用性，並可讓您更輕鬆地全面控制及管理 Windows 型環境。 如需詳細資訊，請參閱 [WMF 5.1 中的新案例及功能](/powershell/wmf/5.1/scenarios-features)。
 
 Windows Server 2016 的新版本包含︰能夠在 Nano 伺服器上本機執行 PowerShell.exe 的能力 (不再僅限遠端)、取代 GUI 的新本機使用者和群組 Cmdlet、新增 PowerShell 偵錯支援，以及在 Nano 伺服器中新增安全性記錄和轉譯及 JEA 的支援。
 
@@ -86,7 +86,7 @@ Windows Server 2016 的新版本包含︰能夠在 Nano 伺服器上本機執行
 ### <a name="powershell-desired-state-configuration-dsc-in-windows-management-framework-wmf-5"></a>Windows Management Framework (WMF) 5 中的 PowerShell 預期狀態設定 (DSC)
 Windows Management Framework 5 包含 Windows PowerShell 預期狀態設定 (DSC)、Windows 遠端管理 (WinRM) 和 Windows Management Instrumentation (WMI) 的更新。
 
-如需測試 Windows Management Framework 5 之 DSC 功能的詳細資訊，請參閱[驗證 PowerShell DSC 的功能](https://blogs.msdn.microsoft.com/powershell/2015/07/06/validate-features-of-powershell-dsc/)中討論的部落格文章系列。 若要下載，請參閱 [Windows Management Framework 5.1](https://docs.microsoft.com/powershell/scripting/wmf/setup/install-configure)。
+如需測試 Windows Management Framework 5 之 DSC 功能的詳細資訊，請參閱[驗證 PowerShell DSC 的功能](https://devblogs.microsoft.com/powershell/validate-features-of-powershell-dsc/)中討論的部落格文章系列。 若要下載，請參閱 [Windows Management Framework 5.1](/powershell/scripting/wmf/setup/install-configure)。
 
 ### <a name="packagemanagement-unified-package-management-for-software-discovery-installation-and-inventory"></a>軟體探索、安裝和清查的 PackageManagement 整合套件管理
 Windows Server 2016 和 Windows 10 包含新的 PackageManagement 功能 (先前稱為 OneGet)，可讓 IT 專業人員或 DevOps 在本機或從遠端自動化軟體探索、安裝及清查 (SDII)，不論安裝程式技術為何，以及軟體位於何處。 
@@ -96,7 +96,7 @@ Windows Server 2016 和 Windows 10 包含新的 PackageManagement 功能 (先前
 ### <a name="powershell-enhancements-to-assist-digital-forensics-and-help-reduce-security-breaches"></a>協助數位鑑識並協助減少安全性缺口的 PowerShell 改進
 為了協助負責調查受危害系統的團隊 (有時稱為「藍隊」)，我們新增了額外的 PowerShell 記錄和其他數位鑑識功能，並新增功能以協助減少指令碼的弱點，例如限制式 PowerShell 和安全的 CodeGeneration API。
 
-如需詳細資訊，請參閱 [PowerShell ♥ the Blue Team](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/) (PowerShell 心繫藍隊)。
+如需詳細資訊，請參閱 [PowerShell ♥ the Blue Team](https://devblogs.microsoft.com/powershell/powershell-the-blue-team/) (PowerShell 心繫藍隊)。
 
 ## <a name="networking"></a>[網路功能](../networking/index.yml)  
 此領域提供 IT 專業人員用來設計、部署和維護 Windows Server 2016 的網路功能產品與功能。  
@@ -116,20 +116,20 @@ Windows Server 2016 和 Windows 10 包含新的 PackageManagement 功能 (先前
 Windows Server 2016 中的 Just Enough Administration 是一種安全性技術，能夠針對可使用 Windows PowerShell 管理的所有項目進行委派管理。 功能包括對下列動作的支援：在網路身分識別下執行、透過 PowerShell Direct 連線、安全地將檔案複製到 JEA 端點 (或是從中複製)，以及將 PowerShell 主控台設定為預設在 JEA 內容中啟動。 如需詳細資訊，請參閱 [GitHub 上的 JEA](https://aka.ms/JEA)。
 
 ### <a name="credential-guard"></a>Credential Guard
-Credential Guard 使用以虛擬化為基礎的安全性來隔離機密資料，使得只有特殊權限的系統軟體可以存取這些資料。 請參閱[使用 Credential Guard 保護衍生的網域認證](https://technet.microsoft.com/itpro/windows/keep-secure/credential-guard)。
+Credential Guard 使用以虛擬化為基礎的安全性來隔離機密資料，使得只有特殊權限的系統軟體可以存取這些資料。 請參閱[使用 Credential Guard 保護衍生的網域認證](/windows/security/identity-protection/credential-guard/credential-guard)。
 
 ###  <a name="remote-credential-guard"></a>Remote Credential Guard
-Credential Guard 支援 RDP 工作階段，讓使用者認證保留在用戶端，而不會公開在伺服器端上。 這也會針對遠端桌面提供單一登入。 請參閱[使用 Windows Defender Credential Guard 保護衍生的網域認證](https://docs.microsoft.com/windows/access-protection/credential-guard/credential-guard)。   
+Credential Guard 支援 RDP 工作階段，讓使用者認證保留在用戶端，而不會公開在伺服器端上。 這也會針對遠端桌面提供單一登入。 請參閱[使用 Windows Defender Credential Guard 保護衍生的網域認證](/windows/access-protection/credential-guard/credential-guard)。   
 
 ### <a name="device-guard-code-integrity"></a>裝置防護 (程式碼完整性)
-裝置防護提供核心模式程式碼完整性 (KMCI) 和使用者模式程式碼完整性 (UMCI)，方法是建立原則來指定可在伺服器上執行的程式碼。 請參閱 [Windows Defender Device Guard 簡介︰虛擬式安全性和程式碼完整性原則](https://docs.microsoft.com/windows/device-security/device-guard/introduction-to-device-guard-virtualization-based-security-and-code-integrity-policies)。
+裝置防護提供核心模式程式碼完整性 (KMCI) 和使用者模式程式碼完整性 (UMCI)，方法是建立原則來指定可在伺服器上執行的程式碼。 請參閱 [Windows Defender Device Guard 簡介︰虛擬式安全性和程式碼完整性原則](/windows/device-security/device-guard/introduction-to-device-guard-virtualization-based-security-and-code-integrity-policies)。
 
 
 ### <a name="windows-defender"></a>Windows Defender  
 [Windows Server 2016 的 Windows Defender 概觀](../security/windows-defender/windows-defender-overview-windows-server.md)。 Windows Server 2016 中預設會安裝並啟用 Windows Server Antimalware，但不會安裝 Windows Server Antimalware 的使用者介面。 不過，Windows Server Antimalware 會在沒有使用者介面的情況下更新反惡意程式碼定義並保護電腦。 如果您需要 Windows Server Antimalware 的使用者介面，您可以使用 [新增角色及功能精靈] 在安裝作業系統之後安裝它。
 
 ### <a name="control-flow-guard"></a>控制流程防護
-控制流程防護 (CFG) 是平台安全性功能，建立目的是要對抗記憶體損毀弱點。 如需詳細資訊，請參閱 [Control Flow Guard](https://msdn.microsoft.com/library/windows/desktop/mt637065(v=vs.85).aspx) (控制流程防護)。
+控制流程防護 (CFG) 是平台安全性功能，建立目的是要對抗記憶體損毀弱點。 如需詳細資訊，請參閱 [Control Flow Guard](/windows/win32/secbp/control-flow-guard) (控制流程防護)。
 
 
 ## <a name="storage"></a>[儲存體](../storage/storage.yml)
@@ -191,9 +191,9 @@ Windows Server 2016 的 IIS 10.0 Web 伺服器提供新功能，包括︰
 ### <a name="distributed-transaction-coordinator-msdtc"></a>分散式交易協調器 (MSDTC)
 在 Microsoft Windows 10 和 Windows Server 2016 中增加三項新功能：
 
-- 新的資源管理員重新加入介面可供資源管理員於資料庫因為發生錯誤而重新開機之後判斷不確定交易的結果。 如需詳細資訊，請參閱 [IResourceManagerRejoinable::Rejoin](https://msdn.microsoft.com/library/mt203799(v=vs.85).aspx)。
+- 新的資源管理員重新加入介面可供資源管理員於資料庫因為發生錯誤而重新開機之後判斷不確定交易的結果。 如需詳細資訊，請參閱 [IResourceManagerRejoinable::Rejoin](/previous-versions/windows/desktop/mt203799(v=vs.85))。
 
-- DSN 名稱限制從 256 位元組增加到 3072 位元組。 如需詳細資訊，請參閱 [IDtcToXaHelperFactory::Create](https://msdn.microsoft.com/library/ms686861(v=vs.85).aspx)，[IDtcToXaHelperSinglePipe::XARMCreate](https://msdn.microsoft.com/library/ms679248(v=vs.85).aspx) 或 [IDtcToXaMapper::RequestNewResourceManager](https://msdn.microsoft.com/library/ms680310(v=vs.85).aspx)。
+- DSN 名稱限制從 256 位元組增加到 3072 位元組。 如需詳細資訊，請參閱 [IDtcToXaHelperFactory::Create](/previous-versions/windows/desktop/ms686861(v=vs.85))，[IDtcToXaHelperSinglePipe::XARMCreate](/previous-versions/windows/desktop/ms679248(v=vs.85)) 或 [IDtcToXaMapper::RequestNewResourceManager](/previous-versions/windows/desktop/ms680310(v=vs.85))。
 
 - 已改善追蹤可讓您設定登錄機碼，將映像檔路徑包含在追蹤記錄檔名稱，以決定檢查哪個追蹤記錄檔。 如需設定 MSDTC 追蹤，請參閱[如何在 Windows 電腦上啟用 MS DTC 診斷追蹤](https://support.microsoft.com/kb/926099)。
 

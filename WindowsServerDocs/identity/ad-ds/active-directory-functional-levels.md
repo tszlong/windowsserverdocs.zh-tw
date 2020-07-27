@@ -10,12 +10,12 @@ ms.prod: windows-server
 ms.custom: it-pro
 ms.reviewer: maheshu
 ms.technology: identity-adds
-ms.openlocfilehash: 5f7a8f08ff10102fbc04b6f8272320bd3b77785d
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: b6a9a5c08e24f5c7bb7ac50ac1c72386ef8a6d0f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80825491"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963050"
 ---
 # <a name="forest-and-domain-functional-levels"></a>樹系和網域功能等級
 
@@ -27,7 +27,7 @@ ms.locfileid: "80825491"
 
 在 Windows 2003 的生命週期結束後，Windows 2003 網域控制站 (DC) 必須更新為 Windows Server 2008、2008R2、2012、2012R2、2016 或 2019。 因此，執行 Windows Server 2003 的任何網域控制站都應該從網域中移除。
 
-在 Windows Server 2008 及更高版本的網域功能等級，分散式檔案服務 (DFS) 複寫是用來複寫網域控制站之間的 SYSVOL 資料夾內容。 如果您在 Windows Server 2008 網域功能等級或更高版本建立新的網域，DFS 複寫會自動複寫 SYSVOL。 如果您已在較低的功能等級建立網域，則需要從使用 FRS 移轉至 SYSVOL 的 DFS 複寫。 至於移轉的步驟，您可以遵循 [TechNet 上的程序](https://technet.microsoft.com/library/dd640019(v=WS.10).aspx)，也可以參閱[Storage Team File Cabinet 上的簡化步驟](https://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx)。
+在 Windows Server 2008 及更高版本的網域功能等級，分散式檔案服務 (DFS) 複寫是用來複寫網域控制站之間的 SYSVOL 資料夾內容。 如果您在 Windows Server 2008 網域功能等級或更高版本建立新的網域，DFS 複寫會自動複寫 SYSVOL。 如果您已在較低的功能等級建立網域，則需要從使用 FRS 移轉至 SYSVOL 的 DFS 複寫。 至於移轉的步驟，您可以遵循 [TechNet 上的程序](../../storage/dfs-replication/migrate-sysvol-to-dfsr.md)，也可以參閱[Storage Team File Cabinet 上的簡化步驟](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)。
 
 ## <a name="windows-server-2019"></a>Windows Server 2019
 
@@ -45,7 +45,7 @@ ms.locfileid: "80825491"
 ### <a name="windows-server-2016-forest-functional-level-features"></a>Windows Server 2016 樹系功能等級的功能
 
 * 可以在 Windows Server 2012R2 樹系功能等級使用的所有功能，以及下列功能：
-   * [使用 Microsoft Identity Manager (MIM) 的特殊權限存取管理 (PAM)](https://docs.microsoft.com/windows-server/identity/whats-new-active-directory-domain-services#a-namebkmkpamaprivileged-access-management)
+   * [使用 Microsoft Identity Manager (MIM) 的特殊權限存取管理 (PAM)](../whats-new-active-directory-domain-services.md#privileged-access-management)
 
 ### <a name="windows-server-2016-domain-functional-level-features"></a>Windows Server 2016 網域功能等級的功能
 
@@ -54,7 +54,7 @@ ms.locfileid: "80825491"
    * 當限制使用者為已加入特定網域的裝置時，DC 可以支援允許網路 NTLM。
    * Kerberos 用戶端成功使用 PKInit Freshness Extension 進行驗證時，將會取得全新的公開金鑰身分識別 SID。
 
-    如需詳細資訊，請參閱 [Kerberos 驗證的新功能](https://docs.microsoft.com/windows-server/security/kerberos/whats-new-in-kerberos-authentication)以及[認證保護的新功能](https://docs.microsoft.com/windows-server/security/credentials-protection-and-management/whats-new-in-credential-protection)。
+    如需詳細資訊，請參閱 [Kerberos 驗證的新功能](../../security/kerberos/whats-new-in-kerberos-authentication.md)以及[認證保護的新功能](../../security/credentials-protection-and-management/whats-new-in-credential-protection.md)。
 
 ## <a name="windows-server-2012r2"></a>Windows Server 2012R2
 
@@ -97,7 +97,7 @@ ms.locfileid: "80825491"
 ### <a name="windows-server-2012-domain-functional-level-features"></a>Windows Server 2012 網域功能等級的功能
 
 * 所有預設的 Active Directory 功能、來自 Windows Server 2008R2 網域功能等級的所有功能，以及下列功能：
-   * 「宣告、複合驗證與 Kerberos 防護的 KDC 支援」KDC 系統管理範本原則有兩個設定 ([永遠提供宣告] 與 [不通過受保護的驗證要求] )，而這兩個設定都需要 Windows Server 2012 網域功能等級。 如需詳細資訊，請參閱 [Kerberos 驗證的新功能](https://technet.microsoft.com/library/hh831747.aspx)。
+   * 「宣告、複合驗證與 Kerberos 防護的 KDC 支援」KDC 系統管理範本原則有兩個設定 ([永遠提供宣告] 與 [不通過受保護的驗證要求] )，而這兩個設定都需要 Windows Server 2012 網域功能等級。 如需詳細資訊，請參閱 [Kerberos 驗證的新功能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831747(v=ws.11))。
 
 ## <a name="windows-server-2008r2"></a>Windows Server 2008R2
 
@@ -146,7 +146,7 @@ ms.locfileid: "80825491"
 
   * 網域型 DFS 命名空間，在 Windows Server 2008 模式中執行，此模式支援存取型列舉和更高的延展性。 Windows Server 2008 模式中的網域型命名空間也需要樹系使用 Windows Server 2003 樹系功能等級。 如需詳細資訊，請參閱[選擇命名空間類型](https://go.microsoft.com/fwlink/?LinkId=180400)。
   * 支援 Kerberos 通訊協定的進階加密標準 (AES 128 與 AES 256)。 為了要使用 AES 來釋放 TGT，網域功能等級必須是 Windows Server 2008 或更高版本，而且需要變更網域密碼。 
-    * 如需詳細資訊，請參閱[Kerberos 增強功能](https://technet.microsoft.com/library/cc749438(ws.10).aspx)。
+    * 如需詳細資訊，請參閱[Kerberos 增強功能](/previous-versions/windows/it-pro/windows-vista/cc749438(v=ws.10))。
 
       > [!NOTE]
       >如果網域控制站已複寫 DFL 變更，但尚未重新整理 krbtgt 密碼，網域控制站上的驗證可能會在網域功能等級提升至 Windows Server 2008 或更高版本之後發生錯誤。 在此情況下，重新啟動網域控制站上的 KDC 服務會觸發新 krbtgt 密碼的記憶體中更新，並解決相關的驗證錯誤。
@@ -226,5 +226,5 @@ ms.locfileid: "80825491"
 
 ## <a name="next-steps"></a>後續步驟
 
-* [提高網域功能等級](https://technet.microsoft.com/library/cc753104.aspx)  
-* [提高樹系功能等級](https://technet.microsoft.com/library/cc730985.aspx)
+* [提高網域功能等級](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753104(v=ws.11))  
+* [提高樹系功能等級](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730985(v=ws.11))

@@ -9,12 +9,12 @@ author: haley-rowland
 ms.author: harowl
 ms.date: 07/17/2018
 manager: scottman
-ms.openlocfilehash: 2386a231edf80fa611daf71c171bc0de3a7b497e
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 14e63969d64a25ca0c7fb9b3efd5e966b64fa376
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80855541"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961200"
 ---
 # <a name="deploy-a-two-node-storage-spaces-direct-scale-out-file-server-for-upd-storage-in-azure"></a>部署雙節點儲存空間直接存取向外延展檔案伺服器以在 Azure 中儲存 UPD
 
@@ -47,7 +47,7 @@ ms.locfileid: "80855541"
 
 1. 建立 [Microsoft Azure 訂用帳戶](https://azure.microsoft.com)。
 2. 登入 [Azure 入口網站](https://ms.portal.azure.com)。
-3. 在 Azure Resource Manager 中建立 [Azure 儲存體帳戶](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/#create-a-storage-account)。 請將其建立在新的資源群組中，並使用下列設定：
+3. 在 Azure Resource Manager 中建立 [Azure 儲存體帳戶](/azure/storage/common/storage-account-create#create-a-storage-account)。 請將其建立在新的資源群組中，並使用下列設定：
    - 部署模型：資源管理員
    - 儲存體帳戶的類型：一般用途
    - 效能層：進階
@@ -56,7 +56,7 @@ ms.locfileid: "80855541"
    - 使用 Azure 快速入門範本進行部署：
       - [建立含有新 AD 樹系的 Azure VM](https://azure.microsoft.com/documentation/templates/active-directory-new-domain/)
       - [建立含有 2 個網域控制站的新 AD 網域](https://azure.microsoft.com/documentation/templates/active-directory-new-domain-ha-2-dc/) (以達到高可用性)
-   - 使用下列設定手動[部署樹系](https://azure.microsoft.com/documentation/articles/active-directory-new-forest-virtual-machine/)：
+   - 使用下列設定手動[部署樹系](../../identity/ad-ds/introduction-to-active-directory-domain-services-ad-ds-virtualization-level-100.md)：
       - 在與儲存體帳戶相同的資源群組中建立虛擬網路。
       - 建議大小：DS2 (如果網域控制站將託管多個網域物件，請增加大小)
       - 使用自動產生的 VNet。
@@ -76,12 +76,12 @@ ms.locfileid: "80855541"
    2. 建立第二個節點。 以下列變更重複上述步驟：
       - 名稱：my-fsn2
       - 高可用性 - 選取您先前建立的可用性設定組。  
-7. 根據您的使用者需求 (請見上表)，將[資料磁碟連結](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-attach-disk-portal/)至叢集節點 VM。 在資料磁碟建立並連結至 VM 後，將 [主機快取]  設為 [無]  。
+7. 根據您的使用者需求 (請見上表)，將[資料磁碟連結](/azure/virtual-machines/windows/attach-managed-disk-portal)至叢集節點 VM。 在資料磁碟建立並連結至 VM 後，將 [主機快取]  設為 [無]  。
 8. 將所有 VM 的 IP 位址設為 [靜態]  。 
    1. 在資源群組中選取 VM，然後按一下 [網路介面]  (位於 [設定]  下方)。 選取列出的網路介面，然後按一下 [IP 設定]  。 選取列出的 IP 設定，並選取 [靜態]  ，然後按一下 [儲存]  。
    2. 記下網域控制站 (在我們的範例中為 my-dc) 的私人 IP 位址 (10.x.x.x)。
 9. 將叢集節點 VM NIC 的 主要 DNS 伺服器位址設為 my-dc 伺服器。 選取 VM，然後按一下 [網路介面 > DNS 伺服器 > 自訂 DNS]  。 輸入您先前記下的私人 IP 位址，然後按一下 [儲存]  。
-10. 建立[要作為雲端見證的 Azure 儲存體帳戶](https://docs.microsoft.com/windows-server/failover-clustering/deploy-cloud-witness)。 (如果您使用連結的指示，請先不要執行「使用容錯移轉叢集管理員 GUI 設定雲端見證」- 我們後續會執行該步驟。)
+10. 建立[要作為雲端見證的 Azure 儲存體帳戶](../../failover-clustering/deploy-cloud-witness.md)。 (如果您使用連結的指示，請先不要執行「使用容錯移轉叢集管理員 GUI 設定雲端見證」- 我們後續會執行該步驟。)
 11. 設定儲存空間直接存取檔案伺服器。 連線至節點 VM，然後執行下列 Windows PowerShell Cmdlet。
     1. 在兩個檔案伺服器叢集節點 VM 上安裝容錯移轉叢集功能和檔案伺服器功能：
 

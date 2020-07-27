@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 06/04/2019
-ms.openlocfilehash: 47269fbfac6aea3fe46513ad67d2cfa2f0c9b78e
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: fd094347679d147a04faefdf3741a06addda2026
+ms.sourcegitcommit: 78b59522234825c43b00c271a04c35f3fd9d65e3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80639922"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86946576"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Windows Server 2019 的新功能
 
@@ -31,7 +31,7 @@ Windows Admin Center 是以瀏覽器為基礎在本機部署的應用程式，�
 
 您可以在 Windows Server 2019、Windows 10 和舊版 Windows 及 Windows Server 上安裝 Windows Admin Center，並用它來管理執行 Windows Server 2008 R2 和更新版本的伺服器及叢集。
 
-如需詳細資訊，請參閱 [Windows Admin Center](../manage/windows-admin-center/understand/windows-admin-center.md)。
+如需詳細資訊，請參閱 [Windows Admin Center](../manage/windows-admin-center/overview.md)。
 
 ### <a name="desktop-experience"></a>桌面體驗
 
@@ -45,7 +45,7 @@ Windows Admin Center 是以瀏覽器為基礎在本機部署的應用程式，�
 
 ### <a name="server-core-app-compatibility-feature-on-demand"></a>Server Core 應用程式相容性功能隨選安裝
 
-[Server Core 應用程式相容性功能隨選安裝 (FOD)](https://docs.microsoft.com/windows-server/get-started-19/install-fod-19) 無須加入 Windows Server 桌面體驗圖形環境，即可納入包含桌面體驗的 Windows Server 二進位檔和元件子集，藉以大幅改進 Windows Server Core 安裝選項的應用程式相容性。  這樣做是為了增加 Server Core 的功能與相容性，同時盡可能保持精簡。  
+[Server Core 應用程式相容性功能隨選安裝 (FOD)](./install-fod-19.md) 無須加入 Windows Server 桌面體驗圖形環境，即可納入包含桌面體驗的 Windows Server 二進位檔和元件子集，藉以大幅改進 Windows Server Core 安裝選項的應用程式相容性。  這樣做是為了增加 Server Core 的功能與相容性，同時盡可能保持精簡。  
 
 這個選用的功能隨選安裝可用於不同的 ISO，僅能使用 DISM 新增到 Windows Server Core 安裝和映像。 
 
@@ -55,43 +55,43 @@ Windows Admin Center 是以瀏覽器為基礎在本機部署的應用程式，�
 
 ATP 的深度平台感應器和回應動作會公開記憶體和核心層級攻擊，並透過隱藏惡意檔案和終止惡意處理程序來因應。
 
--   如需有關 Windows Defender ATP 的詳細資訊，請參閱 [Windows Defender ATP 功能概觀](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-atp/overview) (英文)。
+-   如需有關 Windows Defender ATP 的詳細資訊，請參閱 [Windows Defender ATP 功能概觀](/windows/security/threat-protection/windows-defender-atp/overview) (英文)。
 
--   如需上架伺服器的詳細資訊，請參閱[將伺服器上架到 Windows Defender ATP 服務](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-atp/configure-server-endpoints-windows-defender-advanced-threat-protection)。
+-   如需上架伺服器的詳細資訊，請參閱[將伺服器上架到 Windows Defender ATP 服務](/windows/security/threat-protection/windows-defender-atp/configure-server-endpoints-windows-defender-advanced-threat-protection)。
 
 **Windows Defender ATP 惡意探索防護**是一組新的主機入侵預防功能。 Windows Defender 惡意探索防護的四個元件專門設計來鎖定裝置以抵禦各種攻擊方式，並封鎖惡意程式碼攻擊中常用的行為，同時讓您平衡安全性風險和生產力需求。
 
--   [降低攻擊面 (ASR)](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard?ocid=cx-blog-mmpc) 是一組控制項，可透過封鎖可疑的惡意檔案 (例如 Office 檔案)、指令碼、橫向移動、勒索軟體行為以及電子郵件型威脅，讓企業防止惡意軟體進入機器。
+-   [降低攻擊面 (ASR)](/windows/security/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard?ocid=cx-blog-mmpc) 是一組控制項，可透過封鎖可疑的惡意檔案 (例如 Office 檔案)、指令碼、橫向移動、勒索軟體行為以及電子郵件型威脅，讓企業防止惡意軟體進入機器。
 
--   [網路保護](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/network-protection)透過 Windows Defender SmartScreen 阻止裝置上任何傳向不受信任主機/IP 位址的輸出程序，保護端點免受到 Web 型威脅。
+-   [網路保護](/windows/security/threat-protection/microsoft-defender-atp/network-protection)透過 Windows Defender SmartScreen 阻止裝置上任何傳向不受信任主機/IP 位址的輸出程序，保護端點免受到 Web 型威脅。
 
 -   [受控資料夾存取權](https://cloudblogs.microsoft.com/microsoftsecure/2017/10/23/stopping-ransomware-where-it-counts-protecting-your-data-with-controlled-folder-access/?ocid=cx-blog-mmpc?source=mmpc)會阻止不受信任的處理程序存取受保護的資料夾，進而保護敏感性資料免受勒索軟體侵害。
 
--   [惡意探索保護](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/exploit-protection-exploit-guard)是一組弱點攻擊防護功能 (取代 EMET)，可以輕鬆設定來保護您的應用程式和系統。
+-   [惡意探索保護](/windows/security/threat-protection/windows-defender-exploit-guard/exploit-protection-exploit-guard)是一組弱點攻擊防護功能 (取代 EMET)，可以輕鬆設定來保護您的應用程式和系統。
 
-[Windows Defender 應用程式控制](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control) (也稱為程式碼完整性 (CI) 原則) 在 Windows Server 2016 推出。
+[Windows Defender 應用程式控制](/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control) (也稱為程式碼完整性 (CI) 原則) 在 Windows Server 2016 推出。
 客戶反應這是個很好的概念，但部署困難。
 為了解決這個問題，我們建置了預設 CI 原則，這會允許所有 Windows 隨附檔案和 Microsoft 應用程式 (例如 SQL Server)，並封鎖可略過 CI 的已知執行檔。 
 
 ### <a name="security-with-software-defined-networking-sdn"></a>軟體定義網路 (SDN) 的安全性
 
-[SDN 的安全性](https://docs.microsoft.com/windows-server/networking/sdn/security/sdn-security-top)提供許多功能以提高執行中工作負載的客戶信賴度，無論是內部部署或是雲端中服務提供者的形式。 
+[SDN 的安全性](../networking/sdn/security/sdn-security-top.md)提供許多功能以提高執行中工作負載的客戶信賴度，無論是內部部署或是雲端中服務提供者的形式。 
 
 這些安全性增強功能已整合至 Windows Server 2016 中推出的完整 SDN 平台。
 
-如需 SDN 中新功能的完整清單，請參閱 [Windows Server 2019 之 SDN 的新功能](https://docs.microsoft.com/windows-server/networking/sdn/sdn-whats-new)。
+如需 SDN 中新功能的完整清單，請參閱 [Windows Server 2019 之 SDN 的新功能](../networking/sdn/sdn-whats-new.md)。
 
 ### <a name="shielded-virtual-machines-improvements"></a>受防護虛擬機器改進功能
 
 - **分公司改進功能**
 
-    您現在可以運用全新的[遞補 HGS](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office#fallback-configuration) 和[離線模式](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office#offline-mode)功能，在間歇連線到主機守護者服務的電腦上執行受防護的虛擬機器。 遞補 HGS 可讓您為 Hyper-V 設定第二組 URL，在無法連線到主要 HGS 伺服器時可嘗試使用。
+    您現在可以運用全新的[遞補 HGS](../security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office.md#fallback-configuration) 和[離線模式](../security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office.md#offline-mode)功能，在間歇連線到主機守護者服務的電腦上執行受防護的虛擬機器。 遞補 HGS 可讓您為 Hyper-V 設定第二組 URL，在無法連線到主要 HGS 伺服器時可嘗試使用。
 
     離線模式可在即使無法連線到 HGS 時仍繼續啟動受防護 VM，只要 VM 已成功啟動一次且主機的安全性設定未變更。
 
 - **疑難排解改進功能**
 
-    我們也透過啟用 VMConnect 加強的工作階段模式和 PowerShell Direct 支援，簡化[疑難排解受防護的虛擬機器](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-shielded-vms)。 如果您遺失 VM 的網路連線，並且需要更新其設定來還原存取，這些工具會非常有用。 
+    我們也透過啟用 VMConnect 加強的工作階段模式和 PowerShell Direct 支援，簡化[疑難排解受防護的虛擬機器](../security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-shielded-vms.md)。 如果您遺失 VM 的網路連線，並且需要更新其設定來還原存取，這些工具會非常有用。 
 
     這些功能不需要進行設定，當受防護 VM 放置於執行 Windows Server 版本 1803 或更新版本的 Hyper-V 主機時，就會自動變為可用。
 
@@ -117,7 +117,7 @@ ATP 的深度平台感應器和回應動作會公開記憶體和核心層級攻�
 
 ### <a name="storage-spaces-direct"></a>儲存空間 Direct
 
-以下是儲存空間直接存取的新功能清單。 如需詳細資訊，請參閱[儲存空間直接存取的新功能](../storage/whats-new-in-storage.md#storage-spaces-direct)。 另請參閱 [Azure Stack HCI](https://docs.microsoft.com/azure-stack/operator/azure-stack-hci-overview)，以了解如何取得已驗證的「儲存空間直接存取」系統。
+以下是儲存空間直接存取的新功能清單。 如需詳細資訊，請參閱[儲存空間直接存取的新功能](../storage/whats-new-in-storage.md#storage-spaces-direct)。 另請參閱 [Azure Stack HCI](/azure-stack/operator/azure-stack-hci-overview)，以了解如何取得已驗證的「儲存空間直接存取」系統。
 
 - **ReFS 磁碟區的重複資料刪除和壓縮**
 - **原生支援持續性記憶體**
@@ -163,7 +163,7 @@ ATP 的深度平台感應器和回應動作會公開記憶體和核心層級攻�
 
 Windows Server 2019 會透過支援 Windows 上的 Kubernetes 所需的半年通道發行版本，持續改進計算、網路功能和儲存空間。 即將推出的 Kubernetes 版本中會提供更多詳細資料。
 
-- Windows Server 2019 中的[容器網路功能](https://docs.microsoft.com/windows-server/networking/sdn/technologies/containers/container-networking-overview)透過強化平台網路復原能力和支援容器網路功能外掛程式，大幅改善 Windows 上的 Kubernetes 的可用性。
+- Windows Server 2019 中的[容器網路功能](../networking/sdn/technologies/containers/container-networking-overview.md)透過強化平台網路復原能力和支援容器網路功能外掛程式，大幅改善 Windows 上的 Kubernetes 的可用性。
 
 - Kubernetes 上的部署工作負載將能使用網路安全性，使用內嵌工具來保護 Linux 和 Windows 服務。
 
@@ -183,15 +183,15 @@ Windows Server 2019 會透過支援 Windows 上的 Kubernetes 所需的半年通
 
 - **使用 Windows Admin Center 管理體驗 \(預覽\)**
 
-    我們已透過 Windows Admin Center 的新擴充功能，大幅簡化查看哪些容器正在您的電腦上執行以及管理個別容器。 請至 [Windows Admin Center 公用摘要](https://docs.microsoft.com/windows-server/manage/windows-admin-center/configure/using-extensions)尋找 "Containers" 擴充功能。
+    我們已透過 Windows Admin Center 的新擴充功能，大幅簡化查看哪些容器正在您的電腦上執行以及管理個別容器。 請至 [Windows Admin Center 公用摘要](../manage/windows-admin-center/configure/using-extensions.md)尋找 "Containers" 擴充功能。
 
 ### <a name="encrypted-networks"></a>加密的網路
 
-[加密的網路](https://docs.microsoft.com/windows-server/networking/sdn/sdn-whats-new) - 虛擬網路加密可讓虛擬網路流量在彼此於標示為 **「加密已啟用」** 的子網路內通訊的虛擬機器之間進行加密。 這項功能也利用虛擬子網路上的資料包傳輸層安全性 (DTLS) 來加密封包。 DTLS 提供保護以防止任何可存取實體網路的人進行竊聽、竄改和偽造。
+[加密的網路](../networking/sdn/sdn-whats-new.md) - 虛擬網路加密可讓虛擬網路流量在彼此於標示為 **「加密已啟用」** 的子網路內通訊的虛擬機器之間進行加密。 這項功能也利用虛擬子網路上的資料包傳輸層安全性 (DTLS) 來加密封包。 DTLS 提供保護以防止任何可存取實體網路的人進行竊聽、竄改和偽造。
 
 ### <a name="network-performance-improvements-for-virtual-workloads"></a>虛擬工作負載的網路效能改進功能
 
-[虛擬工作負載的網路效能改進功能](https://docs.microsoft.com/windows-server/networking/technologies/hpn/hpn-insider-preview)無需您不斷調整或過度佈建主機，即可將輸送到虛擬機器的網路輸送量發揮至極致。 如此可降低作業和維護成本，同時提高主機的可用密度。 這些新功能包括︰
+[虛擬工作負載的網路效能改進功能](../networking/technologies/hpn/hpn-insider-preview.md)無需您不斷調整或過度佈建主機，即可將輸送到虛擬機器的網路輸送量發揮至極致。 如此可降低作業和維護成本，同時提高主機的可用密度。 這些新功能包括︰
 
 * 在 vSwitch 中接收區段聯合
 
@@ -204,12 +204,12 @@ Windows Server 2019 會透過支援 Windows 上的 Kubernetes 所需的半年通
 
 ### <a name="windows-time-service"></a>Windows Time 服務
 
-[Windows Time 服務](https://docs.microsoft.com/windows-server/networking/windows-time-service/insider-preview)包含真實 UTC 相容閏秒支援、稱為「精確時間時間通訊協定」的新時間通訊協定，以及端對端可追蹤性。
+[Windows Time 服務](../networking/windows-time-service/insider-preview.md)包含真實 UTC 相容閏秒支援、稱為「精確時間時間通訊協定」的新時間通訊協定，以及端對端可追蹤性。
 
 
 ### <a name="high-performance-sdn-gateways"></a>高效能 SDN 閘道
 
-Windows Server 2019 中的[高效能 SDN 閘道](https://docs.microsoft.com/windows-server/networking/sdn/gateway-performance)大幅改善 IPsec 和 GRE 連線的效能，使用更少 CPU 即可提供超高效能輸送量。
+Windows Server 2019 中的[高效能 SDN 閘道](../networking/sdn/gateway-performance.md)大幅改善 IPsec 和 GRE 連線的效能，使用更少 CPU 即可提供超高效能輸送量。
 <br/>
 
 ### <a name="new-deployment-ui-and-windows-admin-center-extension-for-sdn"></a>適用於 SDN 的新部署 UI 以及 Windows Admin Center 擴充功能
@@ -219,4 +219,3 @@ Windows Server 2019 中的[高效能 SDN 閘道](https://docs.microsoft.com/wind
 ### <a name="persistent-memory-support-for-hyper-v-vms"></a>Hyper-V VM 的持續性記憶體支援
 
 若要運用虛擬機器中持續性記憶體 (又稱為 存放裝置類別記憶體) 的高輸送量和低延遲，現在可以直接投影到 VM 中。 這可協助大幅降低資料庫交易延遲或降低故障時低延遲記憶體中資料庫的修復時間。
-

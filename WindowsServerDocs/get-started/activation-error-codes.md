@@ -11,12 +11,12 @@ ms.custom:
 - CI ID 116803
 - CSSTroubleshoot
 manager: dcscontentpm
-ms.openlocfilehash: fe07636908dffc6bb59c544d512b132e7640bf51
-ms.sourcegitcommit: 75b4cf49dd918ff98258dcae6e6e8d7825c9adec
+ms.openlocfilehash: 6a38dad3362b2fa6c95c48cf613577941ffcc82c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84269227"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963572"
 ---
 # <a name="resolve-windows-activation-error-codes"></a>解決 Windows 啟用錯誤碼
 
@@ -25,7 +25,7 @@ ms.locfileid: "84269227"
 
 本文提供疑難排解資訊，協助您回應在嘗試使用多次啟用金鑰 (MAK) 或金鑰管理服務 (KMS) 在一或多部 Windows 電腦上執行大量啟用時，您會收到的錯誤訊息。 在下表中尋找錯誤碼，然後選取連結，以查看有關該錯誤碼及其解決方式的詳細資訊。
 
-如需大量啟用的詳細資訊，請參閱[大量啟用規劃](https://docs.microsoft.com/windows/deployment/volume-activation/plan-for-volume-activation-client)。
+如需大量啟用的詳細資訊，請參閱[大量啟用規劃](/windows/deployment/volume-activation/plan-for-volume-activation-client)。
 
 如需目前和最新 Windows 版本的大量啟用詳細資訊，請參閱[大量啟用 [用戶端]](https://docs.microsoft.com/windows/deployment/volume-activation/volume-activation-windows-10)。
 

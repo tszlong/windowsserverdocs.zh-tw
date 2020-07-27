@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 6bd97802fbef342520e92a857a1a53acf3e8d7a3
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 3aedb8ed1edb8476642b86ec66d306187d4badf0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71385944"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966060"
 ---
 # <a name="convert-an-mbr-disk-into-a-gpt-disk"></a>將 MBR 磁碟轉換為 GPT 磁碟
 
@@ -39,7 +39,7 @@ ms.locfileid: "71385944"
 
 ## <a name="converting-using-a-command-line"></a>使用命令列進行轉換
 
-使用下列步驟將空的 MBR 磁碟轉換成 GPT 磁碟。 您也可以使用 MBR2GPT.EXE 工具，但有點複雜；如需詳細資訊，請參閱 [Convert MBR partition to GPT](https://docs.microsoft.com/windows/deployment/mbr-to-gpt) (將 MBR 磁碟分割轉換為 GPT)。
+使用下列步驟將空的 MBR 磁碟轉換成 GPT 磁碟。 您也可以使用 MBR2GPT.EXE 工具，但有點複雜；如需詳細資訊，請參閱 [Convert MBR partition to GPT](/windows/deployment/mbr-to-gpt) (將 MBR 磁碟分割轉換為 GPT)。
 
 1.  備份或移動您要轉換成 GPT 磁碟的基本 MBR 磁碟上資料。
 
@@ -67,4 +67,4 @@ ms.locfileid: "71385944"
 
 ## <a name="see-also"></a>另請參閱
 
--   [Command-line syntax notation](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx) (命令列語法標記法)
+-   [Command-line syntax notation](/previous-versions/orphan-topics/ws.11/cc742449(v=ws.11)) (命令列語法標記法)

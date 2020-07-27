@@ -8,12 +8,12 @@ ms.date: 07/06/2018
 ms.topic: article
 author: heidilohr
 manager: lizross
-ms.openlocfilehash: 44b98b485b69720a1459f052b68d15617954bffe
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 42116323dce36b071b2af20ff46330a8d39c13ed
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "75949819"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963060"
 ---
 # <a name="remote-desktop-services-roles"></a>遠端桌面服務角色
 
@@ -38,7 +38,7 @@ ms.locfileid: "75949819"
 如需詳細資訊，請參閱下列文章：
 
 * [Remote Desktop Services - Secure data storage](rds-plan-secure-data-storage.md) (遠端桌面服務 - 安全資料儲存區)
-* [Upload a generalized VHD and use it to create new VMs in Azure](https://docs.microsoft.com/azure/virtual-machines/windows/upload-generalized-managed?toc=%2Fazure%2Fvirtual-machines%2Fwindows%2Ftoc.json) (將一般化 VHD 上傳，並使用它在 Azure 中建立新的 VM)
+* [Upload a generalized VHD and use it to create new VMs in Azure](/azure/virtual-machines/windows/upload-generalized-managed?toc=/azure/virtual-machines/windows/toc.json) (將一般化 VHD 上傳，並使用它在 Azure 中建立新的 VM)
 * [Update RDSH collection (ARM template)](https://azure.microsoft.com/resources/templates/rds-update-rdsh-collection/) (更新 RDSH 集合 (ARM 範本))
 
 ## <a name="remote-desktop-connection-broker"></a>遠端桌面連線代理人

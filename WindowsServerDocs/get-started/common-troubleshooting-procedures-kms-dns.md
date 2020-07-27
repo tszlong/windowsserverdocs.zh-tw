@@ -6,12 +6,12 @@ ms.technology: server-general
 author: Teresa-Motiv
 ms.author: v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: f6e600b41e4a485084bd0622c2be0753d0b11c0c
-ms.sourcegitcommit: 6d7a394edefba684f7b6983c65026679c1b7a485
+ms.openlocfilehash: 0ab2a0eb7c9d29f8d42bd004aad27f9084e38641
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84776710"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962480"
 ---
 # <a name="guidelines-for-troubleshooting-dns-related-activation-issues"></a>針對 DNS 相關啟用問題進行疑難排解的指導方針
 
@@ -64,7 +64,7 @@ ms.locfileid: "84776710"
 
 KMS 啟用要求針對要啟動的用戶端設定 KMS 主機。 如果您的環境中未設定 KMS 主機，請使用適當的 KMS 主機金鑰來安裝並啟動一個。 在網路上設定電腦來裝載 KMS 軟體之後，請發佈網域名稱系統 (DNS) 設定。
 
-如需 KMS 主機設定程序的詳細資訊，請參閱[使用金鑰管理服務進行啟用](https://docs.microsoft.com/windows/deployment/volume-activation/activate-using-key-management-service-vamt)及[安裝和設定 VAMT](https://docs.microsoft.com/windows/deployment/volume-activation/install-configure-vamt)。
+如需 KMS 主機設定程序的詳細資訊，請參閱[使用金鑰管理服務進行啟用](/windows/deployment/volume-activation/activate-using-key-management-service-vamt)及[安裝和設定 VAMT](/windows/deployment/volume-activation/install-configure-vamt)。
 
 [返回程式清單。](#list)
 
@@ -78,7 +78,7 @@ KMS 啟用要求針對要啟動的用戶端設定 KMS 主機。 如果您的環�
    ping <DNS_Server_IP_address>
    ```
    > [!NOTE]
-   > 如果此命令的輸出不包含 "Reply from" 一詞，您必須先解決網路問題或 DNS 問題，才能使用本文中的其他程序。 如果您無法 ping DNS 伺服器，而需要如何針對 TCP/IP 問題進行疑難排解的詳細資訊，請參閱 [TCP/IP 問題的進階疑難排解](https://docs.microsoft.com/windows/client-management/troubleshoot-tcpip)。
+   > 如果此命令的輸出不包含 "Reply from" 一詞，您必須先解決網路問題或 DNS 問題，才能使用本文中的其他程序。 如果您無法 ping DNS 伺服器，而需要如何針對 TCP/IP 問題進行疑難排解的詳細資訊，請參閱 [TCP/IP 問題的進階疑難排解](/windows/client-management/troubleshoot-tcpip)。
 
 [返回程式清單。](#list)
 
@@ -159,7 +159,7 @@ KMS 啟用要求針對要啟動的用戶端設定 KMS 主機。 如果您的環�
       1. 確認 KMS 主機的 IP 位址、主機名稱、連接埠和網域。
       1. 如果這些 **_vlmcs** 項目存在，而且它們包含預期的 KMS 主機名稱，請移至[手動將 KMS 主機指派給 KMS 用戶端](#manually-assign-a-kms-host-to-a-kms-client)。
       > [!NOTE]
-      > 如果 [**nslookup**](https://docs.microsoft.com/windows-server/administration/windows-commands/nslookup) 命令找到 KMS 主機，並不表示 DNS 用戶端可找到 KMS 主機。 如果 **nslookup** 命令找到 KMS 主機，但您仍然無法使用 KMS 主機進行啟用，請檢查其他 DNS 設定，例如主要 DNS 尾碼和 DNS 尾碼的搜尋清單。
+      > 如果 [**nslookup**](../administration/windows-commands/nslookup.md) 命令找到 KMS 主機，並不表示 DNS 用戶端可找到 KMS 主機。 如果 **nslookup** 命令找到 KMS 主機，但您仍然無法使用 KMS 主機進行啟用，請檢查其他 DNS 設定，例如主要 DNS 尾碼和 DNS 尾碼的搜尋清單。
 1. 確認主要 DNS 尾碼的搜尋清單包含與 KMS 主機相關聯的 DNS 網域尾碼。 如果搜尋清單不包含這項資訊，請移至[將 KMS 主機設定為在多個 DNS 網域中發佈](#configure-the-kms-host-to-publish-in-multiple-dns-domains)程序。
 
 [返回程式清單。](#list)

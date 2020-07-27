@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 7eeb462d31391a228ec0e89afb09673ef14b51cf
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 359b4bed3090463bfb92431e06e325d981568248
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "79323440"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961020"
 ---
 # <a name="troubleshooting-disk-management"></a>疑難排解磁碟管理
 
@@ -119,7 +119,7 @@ ms.locfileid: "79323440"
 **若要讓狀態為 [離線] 且依舊名為「Disk \#」(而非「遺失」) 的磁碟重新上線，請嘗試下列其中一或多個程序：**
 
 1. 在 [磁碟管理] 中，選取並按住 (或以滑鼠右鍵按一下) 磁碟，然後按一下 [重新啟動磁碟]  ，使磁碟重新上線。 如果磁碟狀態仍然保持 [離線]  ，請檢查纜線和磁碟控制器，確定實體磁碟狀況良好。 修正任何問題，然後再次嘗試重新啟動磁碟。 如果磁碟重新啟動成功，磁碟上所有的磁碟區應該都會自動回復到 [狀況良好]  狀態。
-2. 在 [事件檢視器] 中，查看事件記錄檔是否有任何磁碟相關錯誤，例如「不良設定複本」。 如果事件記錄檔包含這種錯誤，請連絡 [Microsoft 產品支援服務](https://msdn.microsoft.com/library/aa263468(v=vs.60).aspx)。
+2. 在 [事件檢視器] 中，查看事件記錄檔是否有任何磁碟相關錯誤，例如「不良設定複本」。 如果事件記錄檔包含這種錯誤，請連絡 [Microsoft 產品支援服務](/previous-versions/visualstudio/visual-basic-6/aa263468(v=vs.60))。
 
 3. 嘗試將磁碟移到另一部電腦。 如果您可以在另一部電腦讓磁碟進入 [連線]  狀態，此問題最有可能出在電腦的設定，磁碟因此而無法進入 [連線]  狀態。
 

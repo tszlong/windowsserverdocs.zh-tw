@@ -8,12 +8,12 @@ ms.date: 04/10/2017
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: dc6a9fa0d6834f63c9935518e4b2c26320a04082
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 6e7e70b8adfcba78e50757be671d38f4d62c99db
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80852961"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958700"
 ---
 # <a name="add-the-rd-connection-broker-server-to-the-deployment-and-configure-high-availability"></a>將 RD 連線代理人伺服器加入部署並設定高可用性
 
@@ -25,7 +25,7 @@ ms.locfileid: "80852961"
 
 設定伺服器以作為第二個 RD 連線代理人 - 這可以是實體伺服器或 VM。
 
-設定連線代理人的資料庫。 您可以使用 [Azure SQL Database](https://azure.microsoft.com/documentation/articles/sql-database-get-started/#create-a-new-aure-sql-database) 執行個體或您本機環境中的 SQL Server。 以下的討論將使用 Azure SQL，但這些步驟仍適用於 SQL Server。 您必須尋找資料庫的連接字串，並確定您有正確的 ODBC 驅動程式。
+設定連線代理人的資料庫。 您可以使用 [Azure SQL Database](/azure/azure-sql/database/single-database-create-quickstart#create-a-new-aure-sql-database) 執行個體或您本機環境中的 SQL Server。 以下的討論將使用 Azure SQL，但這些步驟仍適用於 SQL Server。 您必須尋找資料庫的連接字串，並確定您有正確的 ODBC 驅動程式。
 
 ## <a name="step-1-configure-the-database-for-the-connection-broker"></a>步驟 1：設定連線代理人的資料庫
 
@@ -70,7 +70,7 @@ ms.locfileid: "80852961"
       4. 針對 [IP 位址指派]  選取 [靜態]  ，然後輸入目前非使用中的 [私人 IP 位址]  (例如 10.0.0.32)。   
       5. 選取適當的 [訂用帳戶]  、包含您所有資源的 [資源群組]  ，以及適當的 [位置]  。   
       6. 選取 [建立]  。   
-2. 建立[探查](https://azure.microsoft.com/documentation/articles/load-balancer-custom-probe-overview/)以監視作用中的伺服器：   
+2. 建立[探查](/azure/load-balancer/load-balancer-custom-probe-overview)以監視作用中的伺服器：   
       1. 在 Azure 入口網站中，按一下 [瀏覽 > 負載平衡器]  ，然後按一下您剛建立的負載平衡器 (例如 CBLB)。 按一下 [設定]  。   
       2. 按一下 [探查 > 新增]  。   
       3. 輸入探查的名稱 (例如 **RDP**)、選取 [TCP]  作為 [通訊協定]  、針對 [連接埠]  輸入 **3389**，然後按一下 [確定]  。   
@@ -83,7 +83,7 @@ ms.locfileid: "80852961"
       1. 在 [設定]  中按一下 [負載平衡規則]  ，然後按一下 [新增]  。   
       2. 輸入名稱 (例如 RDP)、選取 [TCP]  作為 [通訊協定]  、針對 [連接埠]  和 [後端連接埠]  都輸入 **3389**，然後按一下 [確定]  。   
 5. 新增負載平衡器的 DNS 記錄：   
-      1. 連線至 RDMS 伺服器虛擬機器 (例如 Contoso-CB1)。 如需連線至 VM 的步驟，請參閱[準備 RD 連線代理人 VM](Prepare-the-RD-Connection-Broker-VM-for-Remote-Desktop.md) 一文。   
+      1. 連線至 RDMS 伺服器虛擬機器 (例如 Contoso-CB1)。 如需連線至 VM 的步驟，請參閱[準備 RD 連線代理人 VM](./rds-prepare-vms.md) 一文。   
       2. 在 [伺服器管理員] 中，按一下 [工具 > DNS]  。   
       3. 在左窗格中，展開 [DNS]  、按一下 DNS 機器、按一下 [正向對應區域]  ，然後按一下您的網域名稱 (例如 Contoso.com)。 (處理向 DNS 伺服器取得資訊的查詢可能需要幾秒鐘的時間。)  
       4. 按一下 [動作 > 新增主機 (A 或 AAAA)]  。   
@@ -124,4 +124,3 @@ ms.locfileid: "80852961"
    3. 逐頁操作精靈直到進入 [伺服器選取項目]，然後選取新建立的 RD 連線代理人伺服器 (例如 Contoso-CB2)。
    4. 接受預設值，完成精靈。
 4. 設定 RD 連線代理人伺服器和用戶端上信任的憑證。
-

@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: d90030fe183e5cfcb94866e87793c0419b636433
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 9948fab77ab4869c27fd63e623315bd1b3e9ff47
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475445"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966690"
 ---
 # <a name="volume-shadow-copy-service"></a>磁碟區陰影複製服務
 
@@ -247,7 +247,7 @@ Windows 作業系統包含一組 VSS 寫入器，負責列舉各種 Windows 功�
 
 如需這些寫入器的詳細資訊，請參閱下列Microsoft Docs 網頁：
 
-- [內建 VSS 寫入器](https://docs.microsoft.com/windows/win32/vss/in-box-vss-writers) (https://docs.microsoft.com/windows/win32/vss/in-box-vss-writers)
+- [內建 VSS 寫入器](/windows/win32/vss/in-box-vss-writers) (https://docs.microsoft.com/windows/win32/vss/in-box-vss-writers)
 
 
 ## <a name="how-shadow-copies-are-used"></a>陰影複製的使用方式
@@ -375,7 +375,7 @@ VSS 的設計目的是要建立整個磁碟區的陰影複製。 系統會自動
 > <UL>
 > <LI>無法在 Windows Server 上使用舊版功能建立的陰影複製中刪除檔案。<BR><BR>
 > <LI>無法從共用資料夾陰影複製中刪除檔案。<BR><BR>
-> <LI>可以從使用 <a href="https://docs.microsoft.com/windows-server/administration/windows-commands/diskshadow" data-raw-source="[Diskshadow](https://docs.microsoft.com/windows-server/administration/windows-commands/diskshadow)">Diskshadow</a> 公用程式所建立的陰影複製中刪除檔案，但無法從使用 <a href="https://docs.microsoft.com/windows-server/administration/windows-commands/vssadmin" data-raw-source="[Vssadmin](https://docs.microsoft.com/windows-server/administration/windows-commands/vssadmin)">Vssadmin</a> 公用程式所建立的陰影複製中刪除檔案。<BR><BR>
+> <LI>可以從使用 <a href="https://docs.microsoft.com/windows-server/administration/windows-commands/diskshadow" data-raw-source="[Diskshadow](../../administration/windows-commands/diskshadow.md)">Diskshadow</a> 公用程式所建立的陰影複製中刪除檔案，但無法從使用 <a href="https://docs.microsoft.com/windows-server/administration/windows-commands/vssadmin" data-raw-source="[Vssadmin](../../administration/windows-commands/vssadmin.md)">Vssadmin</a> 公用程式所建立的陰影複製中刪除檔案。<BR><BR>
 > <LI>檔案會盡可能以各種方式從陰影複製中刪除。 但這表示我們無法保證能將其刪除。<BR><BR></LI></UL>
 
 
@@ -622,4 +622,4 @@ VssAdmin 可在 Windows 用戶端和 Windows Server 作業系統版本上使用�
 
 ## <a name="additional-references"></a>其他參考資料
 
-[Windows 開發人員中心內的磁碟區陰影複製服務](https://docs.microsoft.com/windows/desktop/vss/volume-shadow-copy-service-overview)
+[Windows 開發人員中心內的磁碟區陰影複製服務](/windows/desktop/vss/volume-shadow-copy-service-overview)

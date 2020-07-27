@@ -10,12 +10,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: cd4666f9ac0677ce8893041ae4e937cca41e8164
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: fe2d47622d776b722f0d2d91d027e5f3fd0163c5
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826491"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964220"
 ---
 # <a name="system-requirements"></a>系統需求
 
@@ -49,7 +49,7 @@ ms.locfileid: "80826491"
 - 支援 CMPXCHG16b、LAHF/SAHF 與 PrefetchW  
 - 支援第二層地址翻譯 (EPT 或 NPT)  
 
-[Coreinfo](https://technet.microsoft.com/sysinternals/cc835722.aspx) 是一項可供您用來您的 CPU 具有這其中哪些功能的工具。
+[Coreinfo](/sysinternals/downloads/coreinfo) 是一項可供您用來您的 CPU 具有這其中哪些功能的工具。
 
 ## <a name="ram"></a>RAM  
 下列是本產品的預估 RAM 需求：  
@@ -121,7 +121,7 @@ ms.locfileid: "80826491"
 如需安裝 Windows Server 2016 作為 Nano 伺服器的詳細步驟，請參閱[安裝 Nano Server](Getting-Started-with-Nano-Server.md)。
 
 ## <a name="additional-resources"></a>其他資源
-- [Windows 處理器需求](https://docs.microsoft.com/windows-hardware/design/minimum/windows-processor-requirements)
-- [Windows Server 2016 Standard 和 Datacenter 版本的比較](https://docs.microsoft.com/windows-server/get-started/2016-edition-comparison)
+- [Windows 處理器需求](/windows-hardware/design/minimum/windows-processor-requirements)
+- [Windows Server 2016 Standard 和 Datacenter 版本的比較](./2016-edition-comparison.md)
 - [Windows 10 系統需求](https://www.microsoft.com/windows/windows-10-specifications#system-specifications)
 - [下載 Windows Server 2016 授權資料工作表](https://download.microsoft.com/download/7/2/9/7290EA05-DC56-4BED-9400-138C5701F174/WS2016LicensingDatasheet.pdf)

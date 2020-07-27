@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 05/21/2019
-ms.openlocfilehash: 2bf56e69d1a28007c35c320d1d5cc73c2ba9fa53
-ms.sourcegitcommit: 643a9916efb95ad0bb5cc0a9b115ac29af4cb076
+ms.openlocfilehash: 1823816d2218c09c84e5eb61bf8af6bd3411a0d7
+ms.sourcegitcommit: 78b59522234825c43b00c271a04c35f3fd9d65e3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85586691"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86946592"
 ---
 # <a name="windows-server-servicing-channels-ltsc-and-sac"></a>Windows Server 維護通道：LTSC 和 SAC
 
@@ -91,7 +91,7 @@ IT 專業人員有許多工具可以維護 Windows Server。 每個選項都有�
 - Visual Studio 訂閱：Visual Studio 訂閱者可從 [Visual Studio 訂閱者下載頁面](https://my.visualstudio.com/downloads?pid=2347)中下載半年通道版本。 如果您還不是訂閱者，請前往 [Visual Studio 訂閱](https://www.visualstudio.com/subscriptions/)註冊，然後依上述方式瀏覽 [Visual Studio 訂閱者下載頁面](https://my.visualstudio.com/downloads?pid=2347)。 透過 Visual Studio 訂閱取得的版本僅供開發和測試用途。
 
 - 透過 Windows 測試人員計畫取得預覽版：測試 Windows Server 的早期組建對 Microsoft 及其客戶都有幫助，因為這樣就有機會在發行前發現可能的問題。 同時也能讓客戶把握絕佳機會直接影響產品中的功能。
-Microsoft 對接收整個開發流程的意見反應有所依賴，藉此可以盡快進行調整。 早期測試和意見反應對快速發行模型極其重要，缺一不可。 若要加入 Windows 測試人員計畫，請參閱[伺服器用 Windows 測試人員計畫文件](https://docs.microsoft.com/windows-insider/at-work/) (英文)。
+Microsoft 對接收整個開發流程的意見反應有所依賴，藉此可以盡快進行調整。 早期測試和意見反應對快速發行模型極其重要，缺一不可。 若要加入 Windows 測試人員計畫，請參閱[伺服器用 Windows 測試人員計畫文件](/windows-insider/at-work/) (英文)。
 
 ## <a name="activating-semi-annual-channel-releases"></a>啟用半年通道版本
 
@@ -115,7 +115,7 @@ Windows Server 2019 之前發行的半年通道版本使用 Windows Server 2016 
 一般而言，Windows Server 2019 之類的長期維護通道版本會與半年通道 (例如 Windows Server 1809 版) 同時發行。 這會讓人難以判斷伺服器是否正在執行半年通道版本。 您必須查看產品名稱，而不是查看組建編號：半年通道版本會使用沒有版本號碼的 Windows Server Standard 或 Windows Server Datacenter 產品名稱，而長期維護通道版本會包含版本號碼，例如 Windows Server 2019 Datacenter。
 
 > [!Note]
-> 下列指導方針旨在協助識別和區分 LTSC 以及 SAC，但僅適用於生命週期和一般清查目的。  它不適用於應用程式相容性，也不代表特定的 API 介面。  由於元件、API 和功能在系統的整個生命週期都可以加入或不加入，因此應用程式開發人員應該使用其他地方的指導方針以正確地確保相容性。 [作業系統版本](https://docs.microsoft.com/windows/desktop/SysInfo/operating-system-version)是適用於應用程式開發人員的更好起始點。
+> 下列指導方針旨在協助識別和區分 LTSC 以及 SAC，但僅適用於生命週期和一般清查目的。  它不適用於應用程式相容性，也不代表特定的 API 介面。  由於元件、API 和功能在系統的整個生命週期都可以加入或不加入，因此應用程式開發人員應該使用其他地方的指導方針以正確地確保相容性。 [作業系統版本](/windows/desktop/sysinfo/operating-system-version)是適用於應用程式開發人員的更好起始點。
 
 開啟 Powershell，然後使用 Get-ItemProperty Cmdlet 或 Get-ComputerInfo Cmdlet 來檢查登錄中的這些內容。  除了組建編號，這也會透過品牌年份的存在 (或缺乏) 來指出 LTSC 或 SAC，也就是 2019。  LTSC 有這個項目，SAC 沒有。  這也會透過 ReleaseId 或 WindowsVersion 傳回發行時間，也就是 1809，以及安裝的是 Server Core 或是具備桌面體驗的伺服器。
 
@@ -165,7 +165,7 @@ OsVersion                     : 10.0.17763
 OsHardwareAbstractionLayer    : 10.0.17763.107
 ````
 
-若要查詢伺服器上是否存在新的 [Server Core 應用程式相容性功能 FOD](https://docs.microsoft.com/windows-server/get-started-19/install-fod-19)，請使用 [Get-WindowsCapability](https://docs.microsoft.com/powershell/module/dism/get-windowscapability?view=win10-ps) Cmdlet 並尋找：
+若要查詢伺服器上是否存在新的 [Server Core 應用程式相容性功能 FOD](./install-fod-19.md)，請使用 [Get-WindowsCapability](/powershell/module/dism/get-windowscapability?view=win10-ps) Cmdlet 並尋找：
 ````
 Name    :     ServerCore.AppCompatibility~~~~0.0.1.0
 State   :     Installed
@@ -177,8 +177,8 @@ State   :     Installed
 
 [Windows Server 支援週期](https://support.microsoft.com/lifecycle)
 
-[判斷是否正在執行 Server Core](https://msdn.microsoft.com/library/hh846315%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396)
+[判斷是否正在執行 Server Core](/previous-versions/windows/desktop/legacy/hh846315(v=vs.85)?f=255&MSPPError=-2147217396)
 
-[GetProductInfo 函式](https://docs.microsoft.com/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getproductinfo)
+[GetProductInfo 函式](/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getproductinfo)
 
-[軟體清查記錄 Cmdlet](https://docs.microsoft.com/powershell/module/softwareinventorylogging/?view=winserver2012R2-ps)
+[軟體清查記錄 Cmdlet](/powershell/module/softwareinventorylogging/?view=winserver2012R2-ps)

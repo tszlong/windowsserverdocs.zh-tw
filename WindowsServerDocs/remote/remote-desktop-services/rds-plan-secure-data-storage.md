@@ -9,12 +9,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 11/21/2016
 manager: dongill
-ms.openlocfilehash: 934aab380f9e58f4fe9567921623279a1893af4b
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: e233497f298989fd31428095e5a146c8c9f5c08e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80860291"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953860"
 ---
 # <a name="remote-desktop-services---secure-data-storage-with-upds"></a>遠端桌面服務 - 使用 UPD 確保資料儲存安全性
 
@@ -26,6 +26,6 @@ ms.locfileid: "80860291"
 
 從使用者的觀點來看，UPD 可提供熟悉的體驗 - 他們將其文件儲存在 [文件] 資料夾中 (在看似本機磁碟機的位置上)、如往常般變更其應用程式設定，以及對其 Windows 環境進行任何自訂。 這些資料 (包括登錄區) 全都儲存在 UPD 上，並保存於中央網路共用位置。 使用者必須主動連線至桌面或 RemoteApp，才可使用 UPD。 UPD 只能在集合內漫遊，因為使用者的整個 `C:\Users\<username\>` 目錄 (包括 AppData\Local) 都會儲存在 UPD 上。
 
-您可以使用 [PowerShell Cmdlet](https://technet.microsoft.com/library/jj215443.aspx) 來指定中央共用位置的路徑、每個 UPD 的大小，以及儲存至 UPD 的使用者設定檔所應包含或排除的資料夾。 或者，您可以移至 [遠端桌面服務]   > [集合]   > [桌面集合]   > [桌面集合內容]   > [使用者設定檔磁碟]  ，以透過伺服器管理員來啟用 UPD。 請注意，您會為整個集合的所有使用者啟用或停用 UPD，而不是針對該集合中的特定使用者執行。 UPD 必須儲存在集合中的伺服器具有完整控制權限的中央檔案共用位置。 
+您可以使用 [PowerShell Cmdlet](/archive/blogs/mniehaus/windows-10-1607-keeping-apps-from-coming-back-when-deploying-the-feature-update) 來指定中央共用位置的路徑、每個 UPD 的大小，以及儲存至 UPD 的使用者設定檔所應包含或排除的資料夾。 或者，您可以移至 [遠端桌面服務]   > [集合]   > [桌面集合]   > [桌面集合內容]   > [使用者設定檔磁碟]  ，以透過伺服器管理員來啟用 UPD。 請注意，您會為整個集合的所有使用者啟用或停用 UPD，而不是針對該集合中的特定使用者執行。 UPD 必須儲存在集合中的伺服器具有完整控制權限的中央檔案共用位置。 
 
 您可以透過[儲存空間直接存取](rds-storage-spaces-direct-deployment.md)將 UPD 儲存在 Azure 中，使您的 UPD 達到高可用性。 

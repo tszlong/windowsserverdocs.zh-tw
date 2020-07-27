@@ -9,12 +9,12 @@ ms.assetid: 2afe7c32-1fda-4441-989b-1415dabddc72
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 70f27e8f4a23e1a33b4947255819eefadd0103e8
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 3e7d073e4242c88c23ebee8547b51975f931346a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826611"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958990"
 ---
 # <a name="windows-server-2016-and-microsoft-server-application-compatibility"></a>Windows Server 2016 和 Microsoft Server 應用程式相容性
 
@@ -26,20 +26,18 @@ ms.locfileid: "80826611"
 
 |Microsoft Server 應用程式|    發行與否？|    產品連結|
 |-------------------------------------|--------------------------------------------|-------------------|
-|Microsoft SQL Server 2012|是| [安裝 SQL Server 2012 的硬體與軟體需求](https://msdn.microsoft.com/library/ms143506(v=sql.110).aspx) \(機器翻譯\)|
-|Microsoft SQL Server 2014|是|[安裝 SQL Server 2014 的硬體與軟體需求](https://msdn.microsoft.com/library/ms143506(SQL.120).aspx)|
+|Microsoft SQL Server 2012|是| [安裝 SQL Server 2012 的硬體與軟體需求](/previous-versions/sql/sql-server-2012/ms143506(v=sql.110)) \(機器翻譯\)|
+|Microsoft SQL Server 2014|是|[安裝 SQL Server 2014 的硬體與軟體需求](/sql/sql-server/install/hardware-and-software-requirements-for-installing-sql-server?view=sql-server-2014)|
 |Microsoft SQL Server 2016|    是|    [SQL Server 2016](https://www.microsoft.com/cloud-platform/sql-server)| 
-|Microsoft System Center Virtual Machine Manager 2016|    是|    [System Center 的新功能](https://technet.microsoft.com/system-center-docs/get-started/what-s-new-in-system-center)|
-|Microsoft System Center Operations Manager 2016|    是|    [System Center 的新功能](https://technet.microsoft.com/system-center-docs/get-started/what-s-new-in-system-center)|
-|Microsoft System Center Data Protection Manager 2016|    是|    [System Center 的新功能](https://technet.microsoft.com/system-center-docs/get-started/what-s-new-in-system-center)|
-|Configuration Manager (1606 版)|    是|    [Configuration Manager 1606 版的新功能](https://technet.microsoft.com/library/mt752488.aspx)|  
-|SharePoint Server 2016|    是|    [SharePoint Server 2016 的硬體與軟體需求](https://technet.microsoft.com/library/cc262485(v=office.16).aspx)|
-|Project Server 2016|    是|    [Project Server 2016 的軟體需求](https://technet.microsoft.com/library/ee683978(v=office.16).aspx)|
-|Exchange Server 2016|    是|    [Exchange 2016 更新](https://technet.microsoft.com/library/jj907309(v=exchg.160).aspx)| 
+|Microsoft System Center Virtual Machine Manager 2016|    是|    [System Center 的新功能](/sql/sql-server/install/hardware-and-software-requirements-for-installing-sql-server?view=sql-server-2014)|
+|Microsoft System Center Operations Manager 2016|    是|    [System Center 的新功能](/sql/sql-server/install/hardware-and-software-requirements-for-installing-sql-server?view=sql-server-2014)|
+|Microsoft System Center Data Protection Manager 2016|    是|    [System Center 的新功能](/sql/sql-server/install/hardware-and-software-requirements-for-installing-sql-server?view=sql-server-2014)|
+|Configuration Manager (1606 版)|    是|    [Configuration Manager 1606 版的新功能](/mem/configmgr/core/plan-design/changes/whats-new-in-version-1606)|  
+|SharePoint Server 2016|    是|    [SharePoint Server 2016 的硬體與軟體需求](/SharePoint/install/hardware-and-software-requirements)|
+|Project Server 2016|    是|    [Project Server 2016 的軟體需求](/project/software-requirements-for-project-server-2016)|
+|Exchange Server 2016|    是|    [Exchange 2016 更新](/Exchange/new-features/updates?view=exchserver-2019)| 
 |Biztalk Server 2016|    是|    [Microsoft BizTalk Server](https://www.microsoft.com/cloud-platform/biztalk)|
-|Host Integration Server 2016|    是|    [HIS 2016 的新功能](https://msdn.microsoft.com/library/mt670807.aspx) \(英文\)|
+|Host Integration Server 2016|    是|    [HIS 2016 的新功能](/host-integration-server/install-and-config-guides/what-s-new-in-his-2016) \(英文\)|
 |Visual Studio Team Foundation Server 2017|    是|    [Team Foundation Server 2017](https://www.visualstudio.com/news/releasenotes/tfs2017-relnotes)| 
 |商務用 Skype Server 2015|    是|    [如何在 Windows Server 2016 上安裝商務用 Skype Server 2015](https://support.microsoft.com/en-gb/help/4015888/how-to-install-skype-for-business-server-2015-on-windows-server-2016) \(機器翻譯\)|
-|Office Online Server|   是|  [規劃 Office Online Server](https://technet.microsoft.com/library/jj219435(v=office.16).aspx) \(部分機器翻譯\)|
-
-
+|Office Online Server|   是|  [規劃 Office Online Server](/officeonlineserver/plan-office-online-server) \(部分機器翻譯\)|

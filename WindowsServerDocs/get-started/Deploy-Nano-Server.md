@@ -10,12 +10,12 @@ ms.assetid: 9f109c91-7c2e-4065-856c-ce9e2e9ce558
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 938c881a92b15c0cab760ed1a81050fb3363c328
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: e3d710a8c701b52bda62c5cd0616a44f37fe2e7b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472965"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962030"
 ---
 # <a name="deploy-nano-server"></a>部署 Nano Server
 
@@ -72,18 +72,18 @@ Nano Server Image Builder 會建立 VHD、VHDX 或 ISO 格式的自訂 Nano Serv
 | Windows Defender，包括預設簽章檔案 | -Defender |
 | 反轉轉寄站以與應用程式相容，例如 Ruby、Node.js 等通用應用程式架構。 | 現在預設會包含 |
 | DNS 伺服器角色 | -Package Microsoft-NanoServer-DNS-Package |
-| PowerShell Desired State Configuration (DSC) | -Package Microsoft-NanoServer-DSC-Package<p>**注意：** 如需完整詳細資訊，請參閱[在 Nano Server 上使用 DSC](https://msdn.microsoft.com/powershell/dsc/nanoDsc)。 |
+| PowerShell Desired State Configuration (DSC) | -Package Microsoft-NanoServer-DSC-Package<p>**注意：** 如需完整詳細資訊，請參閱[在 Nano Server 上使用 DSC](/archive/blogs/askcore/kms-host-client-count-not-increasing-due-to-duplicate-cmids)。 |
 | Internet Information Server (IIS) | -Package Microsoft-NanoServer-IIS-Package<p>**注意：** 如需使用 IIS 的詳細資訊，請參閱 [Nano Server 上的 IIS](IIS-on-Nano-Server.md)。 |
 | Windows 容器的主機支援 | -Containers |
-| System Center Virtual Machine Manager 代理程式 | -Package Microsoft-NanoServer-SCVMM-Package<p>-Package Microsoft-NanoServer-SCVMM-Compute-Package<p>**注意：** 只有在監視 Hyper-V 時才能使用 SCVMM 計算套件。 針對 VMM 中的超融合部署，您應該同時指定 -Storage 參數。 如需詳細資訊，請參閱 [VMM 文件](https://technet.microsoft.com/system-center-docs/vmm/manage/manage-compute-add-nano-hyper-v)。 |
+| System Center Virtual Machine Manager 代理程式 | -Package Microsoft-NanoServer-SCVMM-Package<p>-Package Microsoft-NanoServer-SCVMM-Compute-Package<p>**注意：** 只有在監視 Hyper-V 時才能使用 SCVMM 計算套件。 針對 VMM 中的超融合部署，您應該同時指定 -Storage 參數。 如需詳細資訊，請參閱 [VMM 文件](/system-center/vmm/hyper-v-nano?view=sc-vmm-2016&viewFallbackFrom=sc-vmm-2019)。 |
 | System Center Operations Manager 代理程式 | 個別安裝。 如需詳細資訊，請參閱 https://technet.microsoft.com/system-center-docs/om/manage/install-agent-on-nano-server 的 System Center Operations Manager 文件。 |
 | 資料中心橋接 (包括 DCBQoS) | -Package Microsoft-NanoServer-DCB-Package |
 | 在虛擬機器上部署 | -Package Microsoft-NanoServer-Guest-Package |
 | 在實體機器上部署 | - Package Microsoft-NanoServer-Host-Package |
 | BitLocker、信賴平台模組 (TPM)、磁碟區加密、平台識別、加密提供者，以及其他與安全啟動相關的功能 | -Package Microsoft-NanoServer-SecureStartup-Package |
 | Hyper-V 支援受防護的 VM | -Package Microsoft-NanoServer-ShieldedVM-Package<p>**注意：** 此套件僅於 Nano Server 的 Datacenter 版本提供。 |
-| 簡易網路管理通訊協定 (SNMP) 代理程式 | -Package Microsoft-NanoServer-SNMP-Agent-Package.cab<p>**注意：** 不包含在 Windows Server 2016 安裝媒體。 僅限線上存取。 如需詳細資訊，請參閱[線上安裝角色和功能](https://technet.microsoft.com/windows-server-docs/get-started/deploy-nano-server#a-namebkmkonlineainstalling-roles-and-features-online)。 |
-| IPHelper 服務，使用 IPv6 轉換技術 (6to4、ISATAP、連接埠 Proxy 及 Teredo) 和 IP-HTTPS 來提供通道連線 | -Package Microsoft-NanoServer-IPHelper-Service-Package.cab<p>**注意：** 不包含在 Windows Server 2016 安裝媒體。 僅限線上存取。 如需詳細資訊，請參閱[線上安裝角色和功能](https://technet.microsoft.com/windows-server-docs/get-started/deploy-nano-server#a-namebkmkonlineainstalling-roles-and-features-online)。 ||
+| 簡易網路管理通訊協定 (SNMP) 代理程式 | -Package Microsoft-NanoServer-SNMP-Agent-Package.cab<p>**注意：** 不包含在 Windows Server 2016 安裝媒體。 僅限線上存取。 如需詳細資訊，請參閱[線上安裝角色和功能](#BKMK_online)。 |
+| IPHelper 服務，使用 IPv6 轉換技術 (6to4、ISATAP、連接埠 Proxy 及 Teredo) 和 IP-HTTPS 來提供通道連線 | -Package Microsoft-NanoServer-IPHelper-Service-Package.cab<p>**注意：** 不包含在 Windows Server 2016 安裝媒體。 僅限線上存取。 如需詳細資訊，請參閱[線上安裝角色和功能](#BKMK_online)。 ||
 
 > [!NOTE]
 > 當您使用這些選項安裝套件時，也會根據選取的伺服器媒體地區設定一併安裝對應的語言套件。 您可以在針對映像地區設定命名之子資料夾中的安裝媒體上，找到可用的語言套件及其地區設定縮寫。
@@ -216,7 +216,7 @@ Bcdboot.exe n:\Windows /s s:
 ## <a name="installing-roles-and-features-online"></a><a name=BKMK_online></a>線上安裝角色和功能
 
 > [!NOTE]
-> 如果您是從媒體或線上存放庫安裝選用的 Nano Server 套件，其並不會包含最新的安全性問題修正。 若要避免選用套件和基本作業系統之間的版本不符，您應該在安裝任何選用套件之後和重新啟動伺服器**之前**，立即安裝[最新的累積更新](https://technet.microsoft.com/windows-server-docs/get-started/update-nano-server)。
+> 如果您是從媒體或線上存放庫安裝選用的 Nano Server 套件，其並不會包含最新的安全性問題修正。 若要避免選用套件和基本作業系統之間的版本不符，您應該在安裝任何選用套件之後和重新啟動伺服器**之前**，立即安裝[最新的累積更新](./update-nano-server.md)。
 
 ### <a name="installing-roles-and-features-from-a-package-repository"></a>從套件存放庫安裝角色和功能
 
@@ -228,7 +228,7 @@ Import-PackageProvider NanoServerPackage
 ```
 
 >[!NOTE]
->如果您在執行 Install-PackageProvider 期間發生錯誤，請檢查您已安裝[最新的累積更新](https://technet.microsoft.com/windows-server-docs/get-started/update-nano-server) ([KB3206632](https://support.microsoft.com/kb/3206632) 或更新版本)，或使用 Save-Module，如下所示：
+>如果您在執行 Install-PackageProvider 期間發生錯誤，請檢查您已安裝[最新的累積更新](./update-nano-server.md) ([KB3206632](https://support.microsoft.com/kb/3206632) 或更新版本)，或使用 Save-Module，如下所示：
 
 ```powershell
 Save-Module -Path $Env:ProgramFiles\WindowsPowerShell\Modules\ -Name NanoServerPackage -MinimumVersion 1.0.1.0
@@ -493,23 +493,23 @@ Windows Server 應用程式 (WSA) 安裝程式為 Nano Server 提供可靠的安
 套件發行者應該執行下列步驟：
 
 1. 安裝 [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)，其中包括建立 WSA 套件所需的工具：MakeAppx、MakeCert、Pvk2Pfx、SignTool。
-2. 宣告資訊清單：遵循 [WSA 資訊清單延伸結構描述](https://msdn.microsoft.com/library/windows/apps/mt670653.aspx)建立資訊清單檔 AppxManifest.xml。
+2. 宣告資訊清單：遵循 [WSA 資訊清單延伸結構描述](/uwp/schemas/appxpackage/uapmanifestschema/element-serverpreview-extension-manual)建立資訊清單檔 AppxManifest.xml。
 3. 使用 **MakeAppx** 工具建立 WSA 套件。
 4. 使用 **MakeCert** 和 **Pvk2Pfx** 工具建立憑證，然後使用 **Signtool** 簽署套件。
 
 接下來，套件取用者應該執行下列步驟：
 
-1. 執行 [*Import-Certificate*](https://technet.microsoft.com/library/hh848630) PowerShell Cmdlet，將上述步驟 4 中的發行者憑證匯入 Nano Server，其 certStoreLocation 位於 Cert:\LocalMachine\TrustedPeople。 例如：`Import-Certificate -FilePath .\xyz.cer -CertStoreLocation Cert:\LocalMachine\TrustedPeople`
-2. 執行 [**Add-AppxPackage**](https://technet.microsoft.com/library/mt575516(v=wps.620).aspx) PowerShell Cmdlet 在 Nano Server 上安裝 WSA 套件，以在 Nano Server 上安裝應用程式。 例如：`Add-AppxPackage wsaSample.appx`
+1. 執行 [*Import-Certificate*](/uwp/schemas/appxpackage/uapmanifestschema/element-serverpreview-extension-manual) PowerShell Cmdlet，將上述步驟 4 中的發行者憑證匯入 Nano Server，其 certStoreLocation 位於 Cert:\LocalMachine\TrustedPeople。 例如：`Import-Certificate -FilePath .\xyz.cer -CertStoreLocation Cert:\LocalMachine\TrustedPeople`
+2. 執行 [**Add-AppxPackage**](/uwp/schemas/appxpackage/uapmanifestschema/element-serverpreview-extension-manual) PowerShell Cmdlet 在 Nano Server 上安裝 WSA 套件，以在 Nano Server 上安裝應用程式。 例如：`Add-AppxPackage wsaSample.appx`
 
 #### <a name="additional-resources-for-creating-apps"></a>用於建立應用程式的其他資源
 
 WSA 是 Windows 應用程式套件技術的伺服器延伸模組 (但未裝載於 Microsoft Store 中)。 如果您想要使用 WSA 發行應用程式，這些主題將協助您熟悉應用程式封裝管道：
 
-- [如何建立基本套件資訊清單](https://msdn.microsoft.com/library/windows/desktop/br211475.aspx)
-- [App 封裝工具 (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx)
-- [如何建立應用程式套件簽署憑證](https://msdn.microsoft.com/library/windows/desktop/jj835832(v=vs.85).aspx)
-- [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx)
+- [如何建立基本套件資訊清單](/uwp/schemas/appxpackage/how-to-create-a-basic-package-manifest)
+- [App 封裝工具 (MakeAppx.exe)](/windows/win32/appxpkg/make-appx-package--makeappx-exe-)
+- [如何建立應用程式套件簽署憑證](/windows/win32/appxpkg/how-to-create-a-package-signing-certificate)
+- [SignTool](/windows/win32/seccrypto/signtool)
 
 ### <a name="installing-drivers-on-nano-server"></a>在 Nano Server 上安裝驅動程式
 
@@ -517,15 +517,15 @@ WSA 是 Windows 應用程式套件技術的伺服器延伸模組 (但未裝載�
 
 PnP 和檔案系統篩選器驅動程式套件必須遵循通用驅動程式需求和安裝程序，以及一般驅動程式套件方針 (例如簽署)。 相關說明請參閱下列位置：
 
-- [驅動程式簽署](https://msdn.microsoft.com/windows/hardware/drivers/install/driver-signing)
-- [使用通用 INF 檔案](https://msdn.microsoft.com/windows/hardware/drivers/install/using-a-configurable-inf-file)
+- [驅動程式簽署](/windows-hardware/drivers/install/driver-signing)
+- [使用通用 INF 檔案](/windows-hardware/drivers/install/using-a-universal-inf-file)
 
 #### <a name="installing-driver-packages-offline"></a>離線安裝驅動程式套件
 
-您可以透過 [DISM.exe](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/dism-driver-servicing-command-line-options-s14) 或 [DISM PowerShell](https://technet.microsoft.com/library/dn376497.aspx) Cmdlet，將支援的驅動程式套件安裝到離線 Nano Server。
+您可以透過 [DISM.exe](/windows-hardware/manufacture/desktop/dism-driver-servicing-command-line-options-s14) 或 [DISM PowerShell](/powershell/module/dism/add-windowsdriver?view=win10-ps) Cmdlet，將支援的驅動程式套件安裝到離線 Nano Server。
 
 #### <a name="installing-driver-packages-online"></a>線上安裝驅動程式套件
-您可以使用 [PnpUtil](https://msdn.microsoft.com/library/windows/hardware/ff550419(v=vs.85).aspx)，將 PnP 驅動程式套件安裝到線上 Nano Server。 Nano Server 目前不支援非 PnP 驅動程式套件的線上驅動程式安裝。
+您可以使用 [PnpUtil](/windows-hardware/drivers/devtest/pnputil)，將 PnP 驅動程式套件安裝到線上 Nano Server。 Nano Server 目前不支援非 PnP 驅動程式套件的線上驅動程式安裝。
 
 ## <a name="joining-nano-server-to-a-domain"></a><a name=BKMK_JoinDomain></a>將 Nano Server 加入網域
 
@@ -679,7 +679,7 @@ Hyper-V 的 Windows PowerShell Cmdlet 可以使用 CimSession 或 Credential 參
 
 使用 `Add-ClusterScaleoutFileServerRole -name <sofsname> -cluster <clustername>` 建立向外延展檔案伺服器
 
-您可以在 [Microsoft.FailoverClusters.PowerShell](https://technet.microsoft.com/library/ee461009.aspx) 中找到用於容錯移轉叢集的其他 Cmdlet。
+您可以在 [Microsoft.FailoverClusters.PowerShell](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee461009(v=technet.10)) 中找到用於容錯移轉叢集的其他 Cmdlet。
 
 ### <a name="using-dns-server-on-nano-server"></a><a name=BKMK_DNS></a>在 Nano Server 上使用 DNS 伺服器
 

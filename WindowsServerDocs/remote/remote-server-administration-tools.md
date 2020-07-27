@@ -8,12 +8,12 @@ ms.assetid: d54a1f5e-af68-497e-99be-97775769a7a7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimp
-ms.openlocfilehash: 69b31c8ef0ce093604ee9fd8fe382d75f7f88595
-ms.sourcegitcommit: aeefdf7814a4672b2dcd7537204205bb7ee5f9a0
+ms.openlocfilehash: 75ebb12962e213887f1827992aff3fdf3c1df305
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84514908"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963130"
 ---
 # <a name="remote-server-administration-tools"></a>遠端伺服器管理工具
 
@@ -46,7 +46,7 @@ RSAT 可讓 IT 系統管理員從 Windows 10 電腦管理 Windows Server 的角�
 > [!IMPORTANT]
 > 您不應該在執行 Windows 8.1、Windows 8、Windows Server 2008 R2、Windows Server 2008、Windows Server 2003 或 Windows 2000 Server 的系統管理工具包之電腦上安裝適用於 Windows 10 的遠端伺服器管理工具。 在安裝適用於 Windows 10 的遠端伺服器管理工具之前，請從電腦上移除所有舊版系統管理工具包或遠端伺服器管理工具，包括較舊的發行前版本，以及不同語言或地區設定的工具版本。
 
-若要使用此版本的伺服器管理員存取和管理執行 Windows Server 2012 R2、Windows Server 2012 或 Windows Server 2008 R2 的遠端伺服器，您必須安裝數個更新，才能使用伺服器管理員來管理這些舊版的 Windows Server 作業系統。 如需如何準備 Windows Server 2012 R2、Windows Server 2012 和 Windows Server 2008 R2，以便在適用於 WIndows 10 的遠端伺服器管理工具中使用伺服器管理員加以管理的相關資訊，請參閱[使用伺服器管理員管理多部遠端伺服器](https://technet.microsoft.com/library/hh831456.aspx)。
+若要使用此版本的伺服器管理員存取和管理執行 Windows Server 2012 R2、Windows Server 2012 或 Windows Server 2008 R2 的遠端伺服器，您必須安裝數個更新，才能使用伺服器管理員來管理這些舊版的 Windows Server 作業系統。 如需如何準備 Windows Server 2012 R2、Windows Server 2012 和 Windows Server 2008 R2，以便在適用於 WIndows 10 的遠端伺服器管理工具中使用伺服器管理員加以管理的相關資訊，請參閱[使用伺服器管理員管理多部遠端伺服器](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831456(v=ws.11))。
         
 您必須在遠端伺服器上啟用 Windows PowerShell 和伺服器管理員遠端管理，才能使用屬於適用於 Windows 10 的遠端伺服器管理工具的工具來管理它們。 在執行 Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 的伺服器上，預設會啟用遠端管理。 如需遠端管理停用時如何啟用的詳細資訊，請參閱＜ [使用伺服器管理員管理多部遠端伺服器](https://go.microsoft.com/fwlink/p/?LinkId=241358)＞。
         
@@ -56,7 +56,7 @@ RSAT 可讓 IT 系統管理員從 Windows 10 電腦管理 Windows Server 的角�
 
 從 Windows 10 2018 年 10 月更新開始，RSAT 會以一組**功能隨選安裝**的形式納入 Windows 10。 現在，您無需下載 RSAT 套件，只需移至 [設定]  中的 [管理選用功能]  ，然後按一下 [新增功能]  ，就能查看可用的 RSAT 工具清單。 選取並安裝所需的特定 RSAT 工具。 若要查看安裝進度，請按一下 [返回]  按鈕，以在 [管理選用功能]  頁面上查看狀態。
         
-[請透過**功能隨選安裝**](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-non-language-fod#remote-server-administration-tools-rsat)，參閱可用的 RSAT 工具。 除了透過圖形化**設定**應用程式安裝，您也可以使用 [**DISM /Add-Capability**](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities#using-dism-add-capability-to-add-or-remove-fods)，透過命令列或自動化來安裝特定的 RSAT 工具。
+[請透過**功能隨選安裝**](/windows-hardware/manufacture/desktop/features-on-demand-non-language-fod#remote-server-administration-tools-rsat)，參閱可用的 RSAT 工具。 除了透過圖形化**設定**應用程式安裝，您也可以使用 [**DISM /Add-Capability**](/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities#using-dism-add-capability-to-add-or-remove-fods)，透過命令列或自動化來安裝特定的 RSAT 工具。
 
 功能隨選安裝的其中一項優點是，已安裝的功能會保存在各個 Windows 10 版本升級中。        
         
@@ -64,7 +64,7 @@ RSAT 可讓 IT 系統管理員從 Windows 10 電腦管理 Windows Server 的角�
 
 在 Windows 10 上，開啟 [設定]  應用程式，移至 [管理選用功能]  ，選取並解除安裝要移除的特定 RSAT 工具。 請注意，在某些情況下，您需要手動將相依性解除安裝。 具體而言，如果 RSAT 工具 B 需要 RSAT 工具 A，那麼如果已安裝 RSAT 工具 B，則選擇將 RSAT 工具 A 解除安裝的作業會失敗。 在這種情況下，請先將 RSAT 工具 B 解除安裝，然後再將 RSAT 工具 A 解除安裝。另外也請注意，在某些情況下，即使工具仍然處於安裝狀態，將 RSAT 工具解除安裝的作業可能看起來還是會成功。 在這種情況下，請將電腦重新開機以移除工具。
 
-請參閱[包含相依性的 RSAT 工具清單](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-non-language-fod#remote-server-administration-tools-rsat)。 除了透過圖形化設定應用程式解除安裝，您也可以使用 [**DISM /Add-Capability**](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities#using-dism-add-capability-to-add-or-remove-fods)，透過命令列或自動化將特定的 RSAT 工具解除安裝。
+請參閱[包含相依性的 RSAT 工具清單](/windows-hardware/manufacture/desktop/features-on-demand-non-language-fod#remote-server-administration-tools-rsat)。 除了透過圖形化設定應用程式解除安裝，您也可以使用 [**DISM /Add-Capability**](/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities#using-dism-add-capability-to-add-or-remove-fods)，透過命令列或自動化將特定的 RSAT 工具解除安裝。
 
 ### <a name="when-to-use-which-rsat-version"></a>各個 RSAT 版本的使用時機
 
@@ -155,7 +155,7 @@ RSAT 可讓 IT 系統管理員從 Windows 10 電腦管理 Windows Server 的角�
 
 > **影響**：WSUS/Configuration Manager 環境中 Windows 10 1809 (2018 年 10 月更新) 上的 RSAT FOD
 > 
-> **解決方法**：若要在已加入網域的電腦上安裝 FOD，以透過 WSUS 或 Configuration Manager 接收更新，您需要變更群組原則設定，以便直接從 Windows Update 或本機共用下載 FOD。 如需有關如何變更該設定的詳細資訊和指示，請參閱[如何在使用 WSUS/SCCM 時讓功能隨選安裝和語言套件可供使用](https://docs.microsoft.com/windows/deployment/update/fod-and-lang-packs)。
+> **解決方法**：若要在已加入網域的電腦上安裝 FOD，以透過 WSUS 或 Configuration Manager 接收更新，您需要變更群組原則設定，以便直接從 Windows Update 或本機共用下載 FOD。 如需有關如何變更該設定的詳細資訊和指示，請參閱[如何在使用 WSUS/SCCM 時讓功能隨選安裝和語言套件可供使用](/windows/deployment/update/fod-and-lang-packs)。
 
 ---
 

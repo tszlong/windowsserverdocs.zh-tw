@@ -9,12 +9,12 @@ ms.author: mikeblodge
 ms.date: 07/12/2018
 ms.topic: get-started-article
 ms.localizationpriority: high
-ms.openlocfilehash: 3d2c55430a78eaabfe55b764275c6e61fa80368a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 271c571229f18d596a67616a1b0dd93743928002
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826211"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961331"
 ---
 # <a name="upgrade-windows-server-2008-and-windows-server-2008-r2"></a>升級 Windows Server 2008 與 Windows Server 2008 R2
 
@@ -28,7 +28,7 @@ Windows Server 2008 和 Windows Server 2008 R2 的延伸支援即將於 2020 年
 
 請參閱[從 Windows Server 2008 R2 或 Windows Server 2008 升級](installation-and-upgrade.md#upgrading-from-windows-server-2008-r2-or-windows-server-2008)，以了解內部部署升級選項的詳細資訊。
 
-如果您執行的是 Windows Server 2003，您必須[升級為 Windows Server 2008](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff972408(v%3dws.10)) (英文)。 請參閱 [Windows Server 2008 升級路徑](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd979563(v=ws.10)) (英文)，以了解內部部署升級選項的詳細資訊。
+如果您執行的是 Windows Server 2003，您必須[升級為 Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/ff972408(v%3dws.10)) (英文)。 請參閱 [Windows Server 2008 升級路徑](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd979563(v=ws.10)) (英文)，以了解內部部署升級選項的詳細資訊。
 
 
 ## <a name="migrate-to-azure"></a>移轉至 Azure
@@ -51,8 +51,8 @@ Windows Server 2008 和 Windows Server 2008 R2 的延伸支援即將於 2020 年
 
 ![SQL Server 標誌](media/sqlr2.jpg)
 
-如果您執行的是 SQL Server 2008/2008 R2，您可以升級為 SQL Server [2016](https://docs.microsoft.com/sql/sql-server/sql-server-technical-documentation?view=sql-server-2016) 或 [2017](https://docs.microsoft.com/sql/sql-server/sql-server-technical-documentation?view=sql-server-2017)。
+如果您執行的是 SQL Server 2008/2008 R2，您可以升級為 SQL Server [2016](/sql/sql-server/sql-server-technical-documentation?view=sql-server-2016) 或 [2017](/sql/sql-server/sql-server-technical-documentation?view=sql-server-2017)。
 
 
 ## <a name="additional-resources"></a>其他資源
-[Microsoft Azure](https://docs.microsoft.com/azure/#pivot=products)
+[Microsoft Azure](/azure/#pivot=products)

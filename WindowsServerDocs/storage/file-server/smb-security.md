@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 658875f132712d34a2c59967ebd316e8c5edca7c
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: 9052e9e6a1327b67fd75b07ab2ee6fc56b1190ac
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070548"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962131"
 ---
 # <a name="smb-security-enhancements"></a>SMB 安全性增強功能
 
@@ -76,7 +76,7 @@ Set-SmbServerConfiguration –RejectUnencryptedAccess $false
 下一節所說明的安全方言交涉功能，可防止攔截式攻擊將 SMB 3.0 的連線降級為 SMB 2.0 (後者會使用未加密的存取)。 不過，此功能不會防止降級至 SMB 1.0 (也會導致未加密的存取)。 若要確保 SMB 3.0 用戶端一律使用 SMB 加密來存取加密的共用，您必須停用 SMB 1.0 伺服器。 (如需指示，請參閱[停用 SMB 1.0](#disabling-smb-10) 一節。)如果 **–RejectUnencryptedAccess** 設定保留為預設設定 **$true**，則只會允許支援加密的 SMB 3.0 用戶端存取檔案共用 (SMB 1.0 用戶端也會遭到拒絕)。
 
 >[!NOTE]
->* SMB 加密會使用進階加密標準 (AES)-CCM 演算法來加密和解密資料。 AES-CCM 也會為加密的檔案共用提供資料完整性驗證 (簽署)，無論 SMB 簽署設定為何。 如果您想要啟用不加密的 SMB 簽署，可以繼續執行此動作。 如需詳細資訊，請參閱 [SMB 簽署的基本概念](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/)。
+>* SMB 加密會使用進階加密標準 (AES)-CCM 演算法來加密和解密資料。 AES-CCM 也會為加密的檔案共用提供資料完整性驗證 (簽署)，無論 SMB 簽署設定為何。 如果您想要啟用不加密的 SMB 簽署，可以繼續執行此動作。 如需詳細資訊，請參閱 [SMB 簽署的基本概念](/archive/blogs/josebda/the-basics-of-smb-signing-covering-both-smb1-and-smb2)。
 >* 如果您的組織使用廣域網路 (WAN) 加速設備，您在嘗試存取檔案共用或伺服器時可能會遇到問題。
 >* 使用預設組態時 (此時將不允許對加密的檔案共用進行未加密存取)，如果不支援 SMB 3.0 的用戶端嘗試存取加密的檔案共用，則會事件識別碼 1003 記錄到 Microsoft-Windows-SmbServer/Operational 事件記錄檔中，且用戶端將會收到**拒絕存取**錯誤訊息。
 >* SMB 加密與 NTFS 檔案系統中的加密檔案系統 (EFS) 無關，且 SMB 加密不需要或不依存於 EFS 的使用。
@@ -90,7 +90,7 @@ SMB 3.0 能夠偵測試圖降級 SMB 2.0 或 SMB 3.0 通訊協定，或是將用
 
 ## <a name="new-signing-algorithm"></a>新的簽署演算法
 
-SMB 3.0 會使用較新的加密演算法進行簽署：以進階加密標準 (AES) 密碼為基礎的訊息驗證碼 (CMAC)。 SMB 2.0 則使用較舊的 HMAC-SHA256 加密演算法。 在具有 AES 指令支援的多數新型 CPU 上，AES-CMAC 和 AES-CCM 可大幅提高資料加密的速度。 如需詳細資訊，請參閱 [SMB 簽署的基本概念](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/)。
+SMB 3.0 會使用較新的加密演算法進行簽署：以進階加密標準 (AES) 密碼為基礎的訊息驗證碼 (CMAC)。 SMB 2.0 則使用較舊的 HMAC-SHA256 加密演算法。 在具有 AES 指令支援的多數新型 CPU 上，AES-CMAC 和 AES-CCM 可大幅提高資料加密的速度。 如需詳細資訊，請參閱 [SMB 簽署的基本概念](/archive/blogs/josebda/the-basics-of-smb-signing-covering-both-smb1-and-smb2)。
 
 ## <a name="disabling-smb-10"></a>停用 SMB 1.0
 

@@ -8,19 +8,19 @@ author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: b4e31cfa892019e4f3bbcd3b67dbb42751cc58dd
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: d56b2d002b0403971dc50fab639f77bddf1f8809
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71963034"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959880"
 ---
 # <a name="example-troubleshooting-active-directory-based-activation-adba-clients-that-do-not-activate"></a>範例：針對未啟用的 Active Directory 型啟用 (ADBA) 用戶端進行疑難排解
 
 > [!NOTE]
 > 本文最初是在 2018 年 3 月 26 日以 TechNet 部落格的形式發佈。
 
-大家好！ 我的名字是 Mike Kammer，過去兩年來，我一直都是 Microsoft 的平台 PFE。 我最近已協助客戶在其環境中部署 Windows Server 2016。 我們藉此機會，同時將其啟用方法從 KMS 伺服器遷移到 [Active Directory 型啟用](https://docs.microsoft.com/previous-versions/windows/hh852637(v=win.10))。
+大家好！ 我的名字是 Mike Kammer，過去兩年來，我一直都是 Microsoft 的平台 PFE。 我最近已協助客戶在其環境中部署 Windows Server 2016。 我們藉此機會，同時將其啟用方法從 KMS 伺服器遷移到 [Active Directory 型啟用](/previous-versions/windows/hh852637(v=win.10))。
 
 作為進行所有變更的適當程序，我們已開始在客戶的測試環境中進行遷移。 我們已遵循 Charity Shelbourne 所撰寫的以下絕佳部落格文章中的指示：[Active Directory-Based Activation vs.Key Management Services](https://techcommunity.microsoft.com/t5/Core-Infrastructure-and-Security/Active-Directory-Based-Activation-vs-Key-Management-Services/ba-p/256016)。 我們的測試環境中的網域控制站全都執行 Windows Server 2012 R2，所以我們不需要準備我們的樹系。 我們已在 Windows Server 2012 R2 網域控制站上安裝角色，並選擇 Active Directory 型啟用作為大量啟用方法。 我們已安裝 KMS 金鑰並將其命名為「KMS AD 啟用 ( ** LAB)」。 我們幾乎已逐步依照部落格文章操作。
 
@@ -70,7 +70,7 @@ ms.locfileid: "71963034"
 
 所以我知道 DNS 沒問題。 Active Directory 已正確設定為 KMS 啟用來源。 我的實體伺服器已正確啟用。 這只是 VM 的問題嗎？ 此時順便提起一件有趣的事，就是客戶告知我，另一個部門也有人已決定要建置超過一打的虛擬 Windows Server 2016 機器。 所以我現在假設我還有另外一些不會啟用的伺服器要處理。 但不是這樣！ 這些伺服器都正常啟動。
 
-我回到 **slmgr** 命令，弄清楚如何啟用這些怪物。 這次我將要使用 **/ipk** 參數，這可讓我安裝產品金鑰。 我進入了[這個網站](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj612867(v=ws.11))，為我的 Windows Server 2016 標準版取得適當的金鑰。 我有些伺服器是資料中心，但我必須先修正此問題。
+我回到 **slmgr** 命令，弄清楚如何啟用這些怪物。 這次我將要使用 **/ipk** 參數，這可讓我安裝產品金鑰。 我進入了[這個網站](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj612867(v=ws.11))，為我的 Windows Server 2016 標準版取得適當的金鑰。 我有些伺服器是資料中心，但我必須先修正此問題。
 
 ![顯示 KMS 用戶端安裝金鑰清單的影像](./media/032618_1700_Troubleshoo9.png)
 

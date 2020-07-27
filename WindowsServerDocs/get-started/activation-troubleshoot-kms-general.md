@@ -8,16 +8,16 @@ author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: dc84edaebda64d3ae359e17b683411ac479c9397
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a089e0efb54af86f97595d8863926525a8416fea
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473215"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960460"
 ---
 # <a name="guidelines-for-troubleshooting-the-key-management-service-kms"></a>金鑰管理服務 (KMS) 疑難排解的指導方針
 
-在其部署過程中，許多企業客戶都會設定金鑰管理服務 (KMS)，以便在其環境中進行 Windows 啟用。 設定 KMS 主機是很簡單的程序，其後，KMS 用戶端即可探索主機並嘗試自行啟用。 但如果該程序無法運作，該如何處理？ 您接下來該怎麼做？ 本文將逐步說明您在排解問題時所需的資源。 如需事件記錄檔項目和 Slmgr.vbs 指令碼的詳細資訊，請參閱[大量啟用技術參考](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn502529(v=ws.11))。
+在其部署過程中，許多企業客戶都會設定金鑰管理服務 (KMS)，以便在其環境中進行 Windows 啟用。 設定 KMS 主機是很簡單的程序，其後，KMS 用戶端即可探索主機並嘗試自行啟用。 但如果該程序無法運作，該如何處理？ 您接下來該怎麼做？ 本文將逐步說明您在排解問題時所需的資源。 如需事件記錄檔項目和 Slmgr.vbs 指令碼的詳細資訊，請參閱[大量啟用技術參考](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502529(v=ws.11))。
 
 ## <a name="kms-overview"></a>KMS 概觀
 
@@ -50,7 +50,7 @@ KMS 主機上有兩個需要檢查的區域。 首先，必須檢查主機軟體
 
   無論環境中有多少有效系統，計數都不會增加到 **50** 以上。 這是因為其計數設定為只會快取 KMS 用戶端所傳回之授權原則上限的兩倍。 當日的原則上限由 Windows 用戶端作業系統所設定，必須在 KMS 主機的計數達到 **25** 或更高時，才會自行啟用。 因此，KMS 主機的最高計數是 2 x 25 或50。 請注意，在僅包含 Windows Server KMS 用戶端的環境中，KMS 主機的計數上限將是 **10**。 這是因為 Windows Server 版本的閾值為 **5** (2 x 5，或 10)。
 
-  與此計數有關的常見問題是，環境中有已啟用的 KMS 主機和足夠的用戶端，但計數並未增長到一以上。 核心問題是已部署的用戶端映像未正確設定 (**sysprep /generalize**)，且系統沒有唯一的用戶端電腦識別碼 (CMID)。 如需詳細資訊，請參閱 [KMS 用戶端](#kms-client)和[當您將新的 Windows Vista 或 Windows 7 用戶端電腦新增至網路時，KMS 的目前計數並未增加](https://support.microsoft.com/help/929829/the-kms-current-count-does-not-increase-when-you-add-new-windows-vista)。 我們一名支援升級工程師也針對此問題發表了部落格文章：[KMS 主機用戶端計數因 CMID 重複而未增加](https://blogs.technet.microsoft.com/askcore/2009/10/16/kms-host-client-count-not-increasing-due-to-duplicate-cmids/)。
+  與此計數有關的常見問題是，環境中有已啟用的 KMS 主機和足夠的用戶端，但計數並未增長到一以上。 核心問題是已部署的用戶端映像未正確設定 (**sysprep /generalize**)，且系統沒有唯一的用戶端電腦識別碼 (CMID)。 如需詳細資訊，請參閱 [KMS 用戶端](#kms-client)和[當您將新的 Windows Vista 或 Windows 7 用戶端電腦新增至網路時，KMS 的目前計數並未增加](https://support.microsoft.com/help/929829/the-kms-current-count-does-not-increase-when-you-add-new-windows-vista)。 我們一名支援升級工程師也針對此問題發表了部落格文章：[KMS 主機用戶端計數因 CMID 重複而未增加](/archive/blogs/askcore/kms-host-client-count-not-increasing-due-to-duplicate-cmids)。
 
   計數未增加的另一個原因，是環境中有太多 KMS 主機，而計數分配給所有的主機。
 - **接聽連接埠**。 與 KMS 的通訊會使用匿名 RPC。 根據預設，用戶端會使用 1688 TCP 連接埠連線至 KMS 主機。 請確定您的 KMS 用戶端與 KMS 主機之間已開啟此連接埠。 您可以變更或設定 KMS 主機上的連接埠。 在通訊期間，KMS 主機會將連接埠指定傳送給 KMS 用戶端。 如果您變更 KMS 用戶端上的連接埠，當該用戶端連線到主機時，就會覆寫該連接埠指定。
@@ -98,7 +98,7 @@ KMS 用戶端會記錄兩個對應的事件，即事件識別碼 12288 和事件
 下列清單包含疑難排解最重要的欄位。 視要解決的問題而定，您應尋找的內容可能有所不同。
 
 - [名稱]。 此值是 KMS 用戶端系統上安裝的 Windows 版本。 使用此欄位可確認您嘗試啟用的 Windows 版本可以使用 KMS。 例如，我們的技術支援人員曾發現客戶嘗試在未使用大量啟用的 Windows 版本 (例如 Windows Vista Ultimate) 上安裝 KMS 用戶端安裝金鑰的事件。
-- [說明]。 此值會顯示已安裝的金鑰。 VOLUME_KMSCLIENT 表示已安裝 KMS 用戶端安裝金鑰 (或 GVLK) (大量授權媒體的預設組態)，且此系統會自動嘗試使用 KMS 主機進行啟用。 如果您在此處看到其他內容 (例如 MAK)，則必須重新安裝 GVLK，以將此系統設定為 KMS 用戶端。 您可以使用 **slmgr.vbs /ipk &lt;*GVLK*&gt;** (如 [KMS 用戶端安裝金鑰](kmsclientkeys.md)中所說明)，或使用大量啟用管理工具 (VAMT)，以手動方式安裝金鑰。 如需取得和使用 VAMT 的相關資訊，請參閱[大量啟用管理工具 (VAMT) 技術參考](https://docs.microsoft.com/windows/deployment/volume-activation/volume-activation-management-tool)。
+- [說明]。 此值會顯示已安裝的金鑰。 VOLUME_KMSCLIENT 表示已安裝 KMS 用戶端安裝金鑰 (或 GVLK) (大量授權媒體的預設組態)，且此系統會自動嘗試使用 KMS 主機進行啟用。 如果您在此處看到其他內容 (例如 MAK)，則必須重新安裝 GVLK，以將此系統設定為 KMS 用戶端。 您可以使用 **slmgr.vbs /ipk &lt;*GVLK*&gt;** (如 [KMS 用戶端安裝金鑰](kmsclientkeys.md)中所說明)，或使用大量啟用管理工具 (VAMT)，以手動方式安裝金鑰。 如需取得和使用 VAMT 的相關資訊，請參閱[大量啟用管理工具 (VAMT) 技術參考](/windows/deployment/volume-activation/volume-activation-management-tool)。
 - **部分產品金鑰**。 在 [名稱] 欄位中，您可以使用這項資訊來判斷此電腦上是否已安裝正確的 KMS 用戶端安裝金鑰 (也就是說，金鑰是否符合 KMS 用戶端上安裝的作業系統)。 根據預設，在使用大量授權服務中心 (VLSC) 入口網站的媒體建置的系統上，會有正確的金鑰。 在某些情況下，客戶可能會先使用多重啟用金鑰 (MAK) 啟用，直到環境中有足夠的系統可支援 KMS 啟用。 這些系統必須安裝 KMS 用戶端安裝金鑰，才能從 MAK 轉換至 KMS。 請使用 VAMT 來安裝此金鑰，並確實套用正確的金鑰。
 - **授權狀態**。 此值會顯示 KMS 用戶端系統的狀態。 若為使用 KMS 啟用的系統，此值應為**已授權**。 若為任何其他值，就可能有問題。 例如，如果 KMS 主機正常運作，且 KMS 用戶端未啟用 (例如，它處於**寬限期**狀態)，則表示可能有某些問題導致用戶端無法連線到主機系統 (例如防火牆問題、網路中斷，或類似的因素)。
 - **用戶端電腦識別碼 (CMID)** 。 每個 KMS 用戶端都應有唯一的 CMID。 如同 [KMS 主機](#kms-host)一節提到的，與計數有關的常見問題是，環境中有已啟用的 KMS 主機和足夠的用戶端，但計數並未增長到 **1** 以上。 如需詳細資訊，請參閱[當您將新的 Windows Vista 或 Windows 7 用戶端電腦新增至網路時，KMS 的目前計數並未增加](https://support.microsoft.com/help/929829/the-kms-current-count-does-not-increase-when-you-add-new-windows-vista)。
@@ -134,6 +134,4 @@ KMS 用戶端會記錄兩個對應的事件，即事件識別碼 12288 和事件
 - KMS 主機的事件記錄檔 (金鑰管理服務記錄) 和 KMS 用戶端系統的事件記錄檔 (應用程式記錄)
 
 ## <a name="additional-references"></a>其他參考資料
-- [詢問核心小組：啟用次數](https://blogs.technet.microsoft.com/askcore/tag/Activation/)
-
-
+- [詢問核心小組：啟用次數](/archive/blogs/askcore/kms-host-client-count-not-increasing-due-to-duplicate-cmids)

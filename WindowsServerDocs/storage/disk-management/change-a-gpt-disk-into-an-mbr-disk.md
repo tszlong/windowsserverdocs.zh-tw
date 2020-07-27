@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 5c6efb0697af663b32ce6f0e27634c3962eca492
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 5a387f7672fd04917e8c3e76543cba73f7195b42
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71402110"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966070"
 ---
 # <a name="convert-a-gpt-disk-into-an-mbr-disk"></a>將 GPT 磁碟轉換為 MBR 磁碟
 
@@ -64,4 +64,4 @@ ms.locfileid: "71402110"
 
 ## <a name="see-also"></a>另請參閱
 
--   [Command-line syntax notation](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx) (命令列語法標記法)
+-   [Command-line syntax notation](/previous-versions/orphan-topics/ws.11/cc742449(v=ws.11)) (命令列語法標記法)

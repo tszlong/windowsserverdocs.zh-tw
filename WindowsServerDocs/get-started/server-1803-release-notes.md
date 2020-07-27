@@ -9,18 +9,18 @@ author: lizap
 ms.author: elizapo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: a511c9888f27fe97fdeaf65cde022e5c2aa999d4
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 7dc63afba827e2a58ba28d2c4398f1ba80d7e7b5
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826081"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962490"
 ---
 # <a name="release-notes-important-issues-in-windows-server-version-1803"></a>版本資訊：Windows Server 1803 版中的重要問題
 
 >適用於：Windows Server 半年通道
 
-這些版本資訊摘要說明 Windows Server 作業系統中最重要的問題，包括可避免或暫時解決已知問題的方式。 若要深入了解此版本的新功能，請參閱 [Windows Server 1803 版的新功能](whats-new-in-windows-server-1803.md)。 如果您對執行 Windows Server 1803 版容器有興趣，請參閱[關於 Windows 容器](https://docs.microsoft.com/virtualization/windowscontainers/about/) \(部分機器翻譯\)。 
+這些版本資訊摘要說明 Windows Server 作業系統中最重要的問題，包括可避免或暫時解決已知問題的方式。 若要深入了解此版本的新功能，請參閱 [Windows Server 1803 版的新功能](whats-new-in-windows-server-1803.md)。 如果您對執行 Windows Server 1803 版容器有興趣，請參閱[關於 Windows 容器](/virtualization/windowscontainers/about/) \(部分機器翻譯\)。 
 
 除非另有說明，否則這其中每個回報的問題都適用於 Windows Server 1803 版的所有版本和安裝選項。  
 
@@ -33,4 +33,4 @@ Windows Server 1803 版不包含儲存空間直接存取、軟體定義網路和
 
 如果您需要基礎結構角色，請使用長期維護通道版本：Windows Server 2016 (現已推出) 或 [Windows Server 2019](https://cloudblogs.microsoft.com/windowsserver/2018/03/20/introducing-windows-server-2019-now-available-in-preview) \(英文\) (今年稍後推出)。
 
-我們致力於建立超融合式基礎結構的最佳平台，且我們持續開發新功能，並根據您的意見反應改善現有功能。 感謝您協助我們達到 [10,000+ 儲存空間直接存取叢集](https://blogs.technet.microsoft.com/filecab/2018/03/27/storage-spaces-direct-momentum) \(英文\)！ 我們期待今年稍後再分享更多資訊。
+我們致力於建立超融合式基礎結構的最佳平台，且我們持續開發新功能，並根據您的意見反應改善現有功能。 感謝您協助我們達到 [10,000+ 儲存空間直接存取叢集](https://techcommunity.microsoft.com/t5/storage-at-microsoft/storage-spaces-direct-10-000-clusters-and-counting/ba-p/428185) \(英文\)！ 我們期待今年稍後再分享更多資訊。

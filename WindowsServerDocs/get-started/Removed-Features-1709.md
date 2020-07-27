@@ -9,12 +9,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: a74f3c6ec629df7d1cc40199091e84989606a50e
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 98632ee7147c3041b0f13d0a0e90bf8115268d36
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826681"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959470"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1709"></a>從 Windows Server 1709 版開始移除或計劃取代的功能
 
@@ -55,14 +55,13 @@ Windows Server 1709 版包含 Windows Server 2016 中提供的相同功能。 �
 
 
 ### <a name="iis-digest-authentication"></a>IIS 摘要式驗證
-此驗證方法已計劃要進行取代。 您應該開始改用其他驗證方法，例如，用戶端憑證對應 (請參閱[設定一對一用戶端憑證對應](https://docs.microsoft.com/iis/manage/configuring-security/configuring-one-to-one-client-certificate-mappings) \(英文\)) 或 Windows 驗證 (請參閱[應用程式設定](https://docs.microsoft.com/iis-administration/configuration/appsettings.json) \(英文\))。
+此驗證方法已計劃要進行取代。 您應該開始改用其他驗證方法，例如，用戶端憑證對應 (請參閱[設定一對一用戶端憑證對應](/iis/manage/configuring-security/configuring-one-to-one-client-certificate-mappings) \(英文\)) 或 Windows 驗證 (請參閱[應用程式設定](/iis-administration/configuration/appsettings.json) \(英文\))。
 
 ### <a name="internet-storage-name-service-isns"></a>網際網路儲存名稱服務 (iSNS)
-iSNS 即將列入取代考量中。 伺服器訊息區 (SMB) 功能提供基本上相同的功能，而且還有額外的功能。 如需此功能的背景資訊，請參閱[伺服器訊息區概觀](https://technet.microsoft.com/library/hh831795(v=ws.11).aspx) \(機器翻譯\)。
+iSNS 即將列入取代考量中。 伺服器訊息區 (SMB) 功能提供基本上相同的功能，而且還有額外的功能。 如需此功能的背景資訊，請參閱[伺服器訊息區概觀](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831795(v=ws.11)) \(機器翻譯\)。
 
 ### <a name="rsaaes-encryption-for-iis"></a>IIS 的 RSA/AES 加密 
-正在考慮取代這個加密方法，因為已經有更好的「密碼編譯 API：新一代 (CNG)」方法可以使用。 若要深入了解 CNG 加密，請參閱[關於 CNG](https://msdn.microsoft.com/library/windows/desktop/aa375276(v=vs.85).aspx) \(英文\)。
+正在考慮取代這個加密方法，因為已經有更好的「密碼編譯 API：新一代 (CNG)」方法可以使用。 若要深入了解 CNG 加密，請參閱[關於 CNG](/windows/win32/seccng/about-cng) \(英文\)。
 
 ### <a name="windows-powershell-20"></a>Windows PowerShell 2.0
-這個早期 Windows PowerShell 版本已被數個較新的版本取代。 為獲得最佳功能及效能，請遷移至 Windows PowerShell 5.0 或更新版本。 如需詳細資訊，請參閱 [PowerShell 文件](https://docs.microsoft.com/powershell/index?view=powershell-5.1)。
-
+這個早期 Windows PowerShell 版本已被數個較新的版本取代。 為獲得最佳功能及效能，請遷移至 Windows PowerShell 5.0 或更新版本。 如需詳細資訊，請參閱 [PowerShell 文件](/powershell/index?view=powershell-5.1)。

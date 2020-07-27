@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: c72b242437c4c308da77a25e06f3d76e4c65f480
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 19b48bd74dad4e20780b41852afbee15f5ec1ade
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "75351890"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966100"
 ---
 # <a name="extend-a-basic-volume"></a>延伸基本磁碟區
 
@@ -61,5 +61,5 @@ ms.locfileid: "75351890"
 
 ## <a name="see-slso"></a>另請參閱
 
-- [Resize-Partition](https://docs.microsoft.com/powershell/module/storage/resize-partition)
-- [Diskpart 延伸](https://docs.microsoft.com/windows-server/administration/windows-commands/extend)
+- [Resize-Partition](/powershell/module/storage/resize-partition)
+- [Diskpart 延伸](../../administration/windows-commands/extend.md)

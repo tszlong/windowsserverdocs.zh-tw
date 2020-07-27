@@ -8,12 +8,12 @@ ms.date: 07/06/2018
 ms.topic: article
 author: heidilohr
 manager: lizross
-ms.openlocfilehash: 2ee11e40d5fb69141ad5dd5342f8574b22232bbd
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: 57e9e25881d948ec705dc51d8e61377e0beb78a8
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070482"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960390"
 ---
 # <a name="desktop-hosting-service"></a>桌面主機服務
 
@@ -41,9 +41,9 @@ Active Directory 網域服務 (AD DS) 提供網域和樹系資訊，讓租用戶
 
 如需詳細資訊，請參閱下列文章：
 
-* [Azure Active Directory 網域服務文件](https://docs.microsoft.com/azure/active-directory-domain-services/)
-* [Windows Server 2012 R2 的桌面主機參考架構指南](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)
-* [在 Azure 入口網站中建立站對站連線](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)
+* [Azure Active Directory 網域服務文件](/azure/active-directory-domain-services/)
+* [Windows Server 2012 R2 的桌面主機參考架構指南](/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)
+* [在 Azure 入口網站中建立站對站連線](/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)
 
 ## <a name="sql-database"></a>SQL 資料庫
 
@@ -56,8 +56,8 @@ Active Directory 網域服務 (AD DS) 提供網域和樹系資訊，讓租用戶
 
 如需如何設定高度可用之 SQL 資料庫基礎結構的詳細資訊，請參閱下列文章：
 
-* [什麼是 Azure SQL Database 服務？](https://docs.microsoft.com/azure/sql-database/sql-database-technical-overview)
-* [建立及設定可用性群組 (SQL Server)](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/creation-and-configuration-of-availability-groups-sql-server?view=sql-server-2017)。
+* [什麼是 Azure SQL Database 服務？](/azure/sql-database/sql-database-technical-overview)
+* [建立及設定可用性群組 (SQL Server)](/sql/database-engine/availability-groups/windows/creation-and-configuration-of-availability-groups-sql-server?view=sql-server-2017)。
 * [將 RD 連線代理人伺服器新增至部署並設定高可用性](rds-connection-broker-cluster.md)。
 
 ## <a name="file-server"></a>檔案伺服器
@@ -71,7 +71,7 @@ Active Directory 網域服務 (AD DS) 提供網域和樹系資訊，讓租用戶
 如需詳細資訊，請參閱下列文章：
 
 * [Windows Server 的儲存空間](../../storage/storage.yml)
-* [如何將受控資料磁碟連結至 Azure 入口網站中的 Windows VM](https://docs.microsoft.com/azure/virtual-machines/windows/attach-managed-disk-portal?toc=%2Fazure%2Fvirtual-machines%2Fwindows%2Fclassic%2Ftoc.json)
+* [如何將受控資料磁碟連結至 Azure 入口網站中的 Windows VM](/azure/virtual-machines/windows/attach-managed-disk-portal?toc=/azure/virtual-machines/windows/classic/toc.json)
 
 ### <a name="user-profile-disks"></a>使用者設定檔磁碟
 

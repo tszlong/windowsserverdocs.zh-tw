@@ -8,12 +8,12 @@ author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: 09206b90dc8b829aaa70d0cca34bd05a9e0eb693
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: cdd597e77d35b154385cf9de35f3d51a3d9c4e8b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71963044"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961337"
 ---
 # <a name="troubleshooting-windows-volume-activation"></a>針對 Windows 大量啟用進行疑難排解
 
@@ -29,30 +29,30 @@ ms.locfileid: "71963044"
 
 ### <a name="key-management-service-kms"></a>金鑰管理服務 (KMS)
 
-- [規劃大量啟用](https://docs.microsoft.com/windows/deployment/volume-activation/plan-for-volume-activation-client)
-- [了解 KMS](https://docs.microsoft.com/previous-versions/tn-archive/ff793434(v=technet.10))
-- [部署 KMS 啟用](https://docs.microsoft.com/previous-versions/tn-archive/ff793409%28v=technet.10%29)
-- [設定 KMS 主機](https://docs.microsoft.com/previous-versions/tn-archive/ff793407%28v%3dtechnet.10%29)
-- [設定 DNS](https://docs.microsoft.com/previous-versions/tn-archive/ff793405%28v%3dtechnet.10%29)
-- [使用金鑰管理服務進行啟用](https://docs.microsoft.com/windows/deployment/volume-activation/activate-using-key-management-service-vamt)
+- [規劃大量啟用](/windows/deployment/volume-activation/plan-for-volume-activation-client)
+- [了解 KMS](/previous-versions/tn-archive/ff793434(v=technet.10))
+- [部署 KMS 啟用](/previous-versions/tn-archive/ff793409%28v=technet.10%29)
+- [設定 KMS 主機](/previous-versions/tn-archive/ff793407%28v%3dtechnet.10%29)
+- [設定 DNS](/previous-versions/tn-archive/ff793405%28v%3dtechnet.10%29)
+- [使用金鑰管理服務進行啟用](/windows/deployment/volume-activation/activate-using-key-management-service-vamt)
 
 ### <a name="active-directory-based-activation-adba"></a>Active Directory 型啟用 (ADBA)
 
-- [部署 Active Directory 型啟用](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502534%28v%3Dws.11%29)
-- [使用 Active Directory 型啟用進行啟用](https://docs.microsoft.com/windows/deployment/volume-activation/activate-using-active-directory-based-activation-client)
-- [Active Directory 型啟用概觀](https://docs.microsoft.com/windows/deployment/volume-activation/active-directory-based-activation-overview)
+- [部署 Active Directory 型啟用](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502534%28v%3dws.11%29)
+- [使用 Active Directory 型啟用進行啟用](/windows/deployment/volume-activation/activate-using-active-directory-based-activation-client)
+- [Active Directory 型啟用概觀](/windows/deployment/volume-activation/active-directory-based-activation-overview)
 
 ### <a name="multiple-activation-key-mak-activation"></a>多次啟用金鑰 (MAK) 啟用
 
-- [使用 MAK 啟用](https://docs.microsoft.com/previous-versions/tn-archive/ff793438%28v=technet.10%29)
-- [了解 MAK 啟用](https://docs.microsoft.com/previous-versions/tn-archive/ff793435%28v%3dtechnet.10%29)
-- [啟用 MAK 用戶端](https://docs.microsoft.com/previous-versions/tn-archive/ff793398%28v%3dtechnet.10%29)
+- [使用 MAK 啟用](/previous-versions/tn-archive/ff793438%28v=technet.10%29)
+- [了解 MAK 啟用](/previous-versions/tn-archive/ff793435%28v%3dtechnet.10%29)
+- [啟用 MAK 用戶端](/previous-versions/tn-archive/ff793398%28v%3dtechnet.10%29)
 
 ### <a name="subscription-activation"></a>訂用帳戶啟用
 
-- [Windows 10 訂用帳戶啟用](https://docs.microsoft.com/windows/deployment/windows-10-subscription-activation)
-- [部署 Windows 10 企業版授權](https://docs.microsoft.com/windows/deployment/deploy-enterprise-licenses)
-- [雲端解決方案提供者中的 Windows 10 企業版 E3](https://docs.microsoft.com/windows/deployment/windows-10-enterprise-e3-overview)
+- [Windows 10 訂用帳戶啟用](/windows/deployment/windows-10-subscription-activation)
+- [部署 Windows 10 企業版授權](/windows/deployment/deploy-enterprise-licenses)
+- [雲端解決方案提供者中的 Windows 10 企業版 E3](/windows/deployment/windows-10-enterprise-e3-overview)
 
 ## <a name="resources-for-troubleshooting-activation-issues"></a>適用於啟用問題疑難排解的資源
 

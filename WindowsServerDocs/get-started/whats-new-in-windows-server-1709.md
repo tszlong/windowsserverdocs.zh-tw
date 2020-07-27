@@ -8,18 +8,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
 ms.date: 06/03/2019
-ms.openlocfilehash: 07479bc5bd2fdf661db8a30e3a9f20c7cce0513e
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: a2e4b17a0f8f38812366dc2913e6c2ee25d4d137
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80825991"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961150"
 ---
 # <a name="whats-new-in-windows-server-version-1709"></a>Windows Server 版本 1709 中的新功能
 
 >適用於：Windows Server (半年通道)
 
-<img src=../media/landing-icons/new.png style='float:left; padding:.5em;' alt=Icon showing a newspaper>&nbsp;若要了解 Windows 的最新功能，請參閱 [Windows Server 的新功能](whats-new-in-windows-server.md)。 本節內容說明 Windows Server 版本 1709 的新功能和變更。 此處所列的新功能和變更是您使用這個版本時最可能帶來最大影響的新功能和變更。 另請參閱 [Windows Server 版本 1709](https://blogs.technet.microsoft.com/windowsserver/2017/08/24/sneak-peek-1-windows-server-version-1709/)。
+<img src=../media/landing-icons/new.png style='float:left; padding:.5em;' alt=Icon showing a newspaper>&nbsp;若要了解 Windows 的最新功能，請參閱 [Windows Server 的新功能](whats-new-in-windows-server.md)。 本節內容說明 Windows Server 版本 1709 的新功能和變更。 此處所列的新功能和變更是您使用這個版本時最可能帶來最大影響的新功能和變更。 另請參閱 [Windows Server 版本 1709](https://cloudblogs.microsoft.com/windowsserver/2017/08/24/sneak-peek-1-windows-server-version-1709/)。
 
 > [!IMPORTANT]
 > 自 2019 年 4 月 9 日起，Windows Server 版本 1709 不再受到支援。
@@ -40,7 +40,7 @@ ms.locfileid: "80825991"
 | 可用性  | 軟體保證或 Azure (雲端託管)  | 所有通道 |
 | 命名慣例  | Windows Server 版本 YYMM  | Windows Server YYYY |
 
-如需詳細資訊，請參閱[維護通道比較](https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview)。
+如需詳細資訊，請參閱[維護通道比較](../get-started-19/servicing-channels-19.md)。
 
 ## <a name="application-containers-and-micro-services"></a>應用程式容器和微服務
 
@@ -49,18 +49,18 @@ ms.locfileid: "80825991"
     - 在 Windows Server 半年通道中，做為容器基底 OS 映像的 Nano Server 已從 390 MB 減少到 80 MB。
 - 使用 Hyper-V 隔離的 Linux 容器 
 
-如需詳細資訊，請參閱 [Nano Server 在 Windows Server 下一個發行版本中的變更](https://docs.microsoft.com/windows-server/get-started/nano-in-semi-annual-channel)和[適用於開發人員的 Windows Server 版本 1709](https://blogs.technet.microsoft.com/windowsserver/2017/09/13/sneak-peek-3-windows-server-version-1709-for-developers/)。
+如需詳細資訊，請參閱 [Nano Server 在 Windows Server 下一個發行版本中的變更](./nano-in-semi-annual-channel.md)和[適用於開發人員的 Windows Server 版本 1709](https://cloudblogs.microsoft.com/windowsserver/2017/09/13/sneak-peek-3-windows-server-version-1709-for-developers/)。
 
 ## <a name="modern-management"></a>現代化管理
 
-請查看 [Project Honolulu](https://docs.microsoft.com/windows-server/manage/honolulu/honolulu)，以了解可協助 IT 系統管理員管理核心疑難排解、設定及維護案例的簡化整合式安全體驗。  Project Honolulu 包含提供簡化整合式安全可延伸介面的新一代工具。
+請查看 [Project Honolulu](../manage/windows-admin-center/overview.md)，以了解可協助 IT 系統管理員管理核心疑難排解、設定及維護案例的簡化整合式安全體驗。  Project Honolulu 包含提供簡化整合式安全可延伸介面的新一代工具。
 Project Honolulu 包含直覺式全新管理體驗，適用於管理電腦、Windows 伺服器、容錯移轉叢集，以及以儲存空間直接存取為基礎的超融合式基礎結構，並且降低營運成本。
 
 ## <a name="compute"></a>運算
 
 **Nano 容器和 Server Core 容器**：首先，這個版本是關於推動應用程式創新。 Nano Server 或 Nano as Host 已被取代並更換成 Nano 容器，這是以容器映像方式執行的 Nano。 
 
-如需有關容器的詳細資訊，請參閱[容器網路功能概觀](https://docs.microsoft.com/windows-server/networking/sdn/technologies/containers/container-networking-overview)。
+如需有關容器的詳細資訊，請參閱[容器網路功能概觀](../networking/sdn/technologies/containers/container-networking-overview.md)。
 
 **以 Server Core 做為容器** (與基礎結構) 主機，可依據現代化程序為現有應用程式提供更好的彈性、密度和效能，並且為已經使用雲端模型開發的新應用程式建立品牌。
 
@@ -70,9 +70,9 @@ Project Honolulu 包含直覺式全新管理體驗，適用於管理電腦、Win
 
 **虛擬化持續性記憶體 (vPMEM)** 的啟用方式為，在主機的直接存取磁碟區上建立 VHD 檔案 (.vhdpmem)、將 vPMEM 控制器新增至 VM，然後將建立的裝置 (.vhdpmem) 新增至 VM。 在主機上使用直接存取磁碟區的 vhdpmem 檔案來支援 vPMEM，可啟用配置彈性，並運用熟悉的管理模型，將磁碟新增至 VM。
 
-**容器儲存空間 – 叢集共用磁碟區 (CSV) 上的持續性資料磁碟區**。 在 Windows Server 版本 1709，以及包含最新更新的 Windows Server 2016 中，我們已新增對容器的支援，以便存取位於 CSV (包括儲存空間直接存取上的 CSV) 的持續性資料磁碟區。 如此一來，不論容器執行個體正在哪一個叢集節點上執行，都能讓應用程式容器持續存取磁碟區。 如需詳細資訊，請參閱[叢集共用磁碟區 (CSV)、儲存空間直接存取 (S2D)、SMB 全域對應的相關容器儲存空間支援](https://blogs.msdn.microsoft.com/clustering/2017/08/10/container-storage-support-with-cluster-shared-volumes-csv-storage-spaces-direct-s2d-smb-global-mapping/)。
+**容器儲存空間 – 叢集共用磁碟區 (CSV) 上的持續性資料磁碟區**。 在 Windows Server 版本 1709，以及包含最新更新的 Windows Server 2016 中，我們已新增對容器的支援，以便存取位於 CSV (包括儲存空間直接存取上的 CSV) 的持續性資料磁碟區。 如此一來，不論容器執行個體正在哪一個叢集節點上執行，都能讓應用程式容器持續存取磁碟區。 如需詳細資訊，請參閱[叢集共用磁碟區 (CSV)、儲存空間直接存取 (S2D)、SMB 全域對應的相關容器儲存空間支援](https://techcommunity.microsoft.com/t5/failover-clustering/bg-p/FailoverClustering)。
 
-**容器儲存空間 – SMB 全域對應的持續性資料磁碟區**。 在 Windows Server 版本 1709 中，我們已新增對應 SMB 檔案共用至容器內部磁碟機代號的支援，這就稱為 SMB 全域對應。 這個對應的磁碟機接著便可供本機伺服器上的所有使用者存取，使資料磁碟區上的容器 I/O 可以透過掛接磁碟機到達基礎檔案共用。 如需詳細資訊，請參閱[叢集共用磁碟區 (CSV)、儲存空間直接存取 (S2D)、SMB 全域對應的相關容器儲存空間支援](https://blogs.msdn.microsoft.com/clustering/2017/08/10/container-storage-support-with-cluster-shared-volumes-csv-storage-spaces-direct-s2d-smb-global-mapping/)。
+**容器儲存空間 – SMB 全域對應的持續性資料磁碟區**。 在 Windows Server 版本 1709 中，我們已新增對應 SMB 檔案共用至容器內部磁碟機代號的支援，這就稱為 SMB 全域對應。 這個對應的磁碟機接著便可供本機伺服器上的所有使用者存取，使資料磁碟區上的容器 I/O 可以透過掛接磁碟機到達基礎檔案共用。 如需詳細資訊，請參閱[叢集共用磁碟區 (CSV)、儲存空間直接存取 (S2D)、SMB 全域對應的相關容器儲存空間支援](https://techcommunity.microsoft.com/t5/failover-clustering/bg-p/FailoverClustering)。
 
 **虛擬機器組態檔格式 (已更新)** 。 已針對設定版本為 8.2 及更高版本的虛擬機器新增額外檔案 (.vmgs)。 VMGS 表示 VM 來賓狀態，而且是全新內部檔案，包含先前屬於 VM 執行階段狀態檔案一部分的裝置狀態。
 
@@ -84,7 +84,7 @@ Project Honolulu 包含直覺式全新管理體驗，適用於管理電腦、Win
 
 現在支援**做為受防護 VM 的 Linux**。
 
-如需詳細資訊，請參閱[受防護網狀架構與受防護的 VM 概觀](https://docs.microsoft.com/windows-server/virtualization/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms)。
+如需詳細資訊，請參閱[受防護網狀架構與受防護的 VM 概觀](../security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms.md)。
 
 **SMBLoris 弱點**：已解決可能導致阻斷服務所謂「SMBLoris」的問題。
 
@@ -105,20 +105,20 @@ Project Honolulu 包含直覺式全新管理體驗，適用於管理電腦、Win
 
 ## <a name="remote-desktop-services-rds"></a>遠端桌面服務 (RDS)
 
-**RDS 已與 Azure AD 整合**，因此客戶可以搭配其他使用 Azure AD 的 SaaS 應用程式運用條件式存取原則、多重要素驗證、整合式驗證，以及更多其他功能。 如需詳細資訊，請參閱[將 Azure AD 網域服務與 RDS 部署整合](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/rds-azure-adds)。
+**RDS 已與 Azure AD 整合**，因此客戶可以搭配其他使用 Azure AD 的 SaaS 應用程式運用條件式存取原則、多重要素驗證、整合式驗證，以及更多其他功能。 如需詳細資訊，請參閱[將 Azure AD 網域服務與 RDS 部署整合](../remote/remote-desktop-services/rds-azure-adds.md)。
 
 >[!TIP]
->若要一窺 RDS 即將推出的其他精彩變更，請參閱[遠端桌面服務：更新與即將推出創新功能](https://blogs.technet.microsoft.com/enterprisemobility/2017/09/20/first-look-at-updates-coming-to-remote-desktop-services/)
+>若要一窺 RDS 即將推出的其他精彩變更，請參閱[遠端桌面服務：更新與即將推出創新功能](https://techcommunity.microsoft.com/t5/microsoft-security-and/first-look-at-updates-coming-to-remote-desktop-services/ba-p/250320)
 
 ## <a name="networking"></a>網路功能
 
-支援 **Docker 的路由網格**。 輸入路由網格屬於[群集模式](https://docs.docker.com/engine/swarm/)的一部分，Docker 內建的容器協調流程解決方案。 如需詳細資訊，請參閱 [Windows Server 版本 1709 隨附的 Docker 路由網格](https://blogs.technet.microsoft.com/virtualization/2017/09/26/dockers-ingress-routing-mesh-available-with-windows-server-version-1709/)。
+支援 **Docker 的路由網格**。 輸入路由網格屬於[群集模式](https://docs.docker.com/engine/swarm/)的一部分，Docker 內建的容器協調流程解決方案。 如需詳細資訊，請參閱 [Windows Server 版本 1709 隨附的 Docker 路由網格](https://techcommunity.microsoft.com/t5/virtualization/bg-p/Virtualization)。
 
 提供**適用於 Docker 的新功能**。 如需詳細資訊，請參閱 [Windows Server 1709 提供適用於 Docker 的新功能](https://blog.docker.com/2017/09/docker-windows-server-1709/)。
 
 **與 Linux 同等適用於 Kubernetes 的 Windows 網路功能**：Windows 目前在網路功能上絲毫不遜色於 Linux。 客戶可以在任何環境 (包括 Azure、內部部署) 中，以及在使用與 Linux 所支援相同網路基本項目和拓撲的協力廠商雲端堆疊上，部署混合作業系統 Kubernetes 叢集，而不需要任何工作負載或交換器擴充功能。
 
-**核心網路堆疊**：核心網路堆疊的幾個功能已獲改善。 如需有關這些功能的詳細資訊，請參閱 [Windows 10 Creators Update 中的核心網路堆疊功能](https://blogs.technet.microsoft.com/networking/2017/07/13/core-network-stack-features-in-the-creators-update-for-windows-10/)。
+**核心網路堆疊**：核心網路堆疊的幾個功能已獲改善。 如需有關這些功能的詳細資訊，請參閱 [Windows 10 Creators Update 中的核心網路堆疊功能](https://techcommunity.microsoft.com/t5/networking-blog/bg-p/NetworkingBlog)。
 - **TCP 快速開啟 (TFO)** ：已新增 TFO 支援來最佳化 TCP 三向交握程序。 TFO 使用標準三向交握在第一次連線上建立安全 TFO Cookie。  與相同伺服器的後續連線會使用 TFO Cookie 而不使用三向交握，以便在沒有耗費來回行程時間的情況下進行連線。
 - **CUBIC**：CUBIC (TCP 壅塞控制演算法) 的實驗性 Windows 原生實作可供使用。 下列命令會分別啟用或停用 CUBIC。
 
@@ -145,7 +145,7 @@ Project Honolulu 包含直覺式全新管理體驗，適用於管理電腦、Win
 
   - **ISATAP 和 6to4**：Creators Update 預設會停用這些技術，做為邁向未來取代的一步。
 - **失效閘道偵測 (Dead Gateway Detection，DGD)** ：當目前閘道無法連線時，DGD 演算法會自動將連線轉換到另一個閘道。 在此版本中，已將演算法改善為定期重新探查網路環境。
-- [Test-NetConnection](https://technet.microsoft.com/itpro/powershell/windows/nettcpip/test-netconnection) 是 Windows PowerShell 中執行各種網路診斷的內建 Cmdlet。  在此版本中，我們增強此 Cmdlet，以提供有關路由選取及來源位址選取的詳細資訊。
+- [Test-NetConnection](/powershell/module/nettcpip/test-netconnection?view=win10-ps) 是 Windows PowerShell 中執行各種網路診斷的內建 Cmdlet。  在此版本中，我們增強此 Cmdlet，以提供有關路由選取及來源位址選取的詳細資訊。
 
 **軟體定義網路**
 
@@ -156,4 +156,3 @@ Project Honolulu 包含直覺式全新管理體驗，適用於管理電腦、Win
 - **預先登入基礎結構通道**。 Windows 10 VPN 預設不會在使用者未登入其電腦或裝置時自動建立基礎結構通道。 您可以在 VPN 設定檔中使用裝置通道 (prelogon) 功能，將 Windows 10 VPN 設定為自動建立預先登入基礎結構通道。
 - **遠端電腦及裝置管理**。  您可以藉由在 VPN 設定檔中設定裝置通道 (prelogon) 功能，管理 Windows 10 VPN 用戶端。 此外，您還必須將 VPN 連線設定為動態註冊已透過內部 DNS 服務指派給 VPN 介面的 IP 位址。
 - **指定預先登入閘道**。 您可以在 VPN 設定檔中指定具有裝置通道 (prelogon) 功能的預先登入閘道，同時結合流量篩選器來控制可在公司網路上透過裝置通道存取哪些管理系統。
-

@@ -9,12 +9,12 @@ author: haley-rowland
 ms.author: elizapo
 ms.date: 06/14/2017
 manager: dongill
-ms.openlocfilehash: 5c0f5d6937a79f36df264597400fe71af3f3779b
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 18ed49472a00790a1c713016c4da9a056066a88a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80855591"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953710"
 ---
 # <a name="create-a-geo-redundant-multi-data-center-rds-deployment-for-disaster-recovery"></a>建立異地備援的多資料中心 RDS 部署以進行災害復原
 
@@ -52,7 +52,7 @@ ms.locfileid: "80855591"
 2. RG A 中的高可用性 Active Directory 部署。您可以使用 [New AD Domain with 2 Domain Controllers](https://azure.microsoft.com/resources/templates/active-directory-new-domain-ha-2-dc/) (具有 2 個網域控制站的新 AD 網域) 範本來建立部署。
 3. RG A 中的高可用性 RDS 部署。使用 [RDS farm deployment using existing active directory](https://azure.microsoft.com/resources/templates/rds-deployment-existing-ad/) (使用現有 Active Directory 的 RDS 伺服器陣列部署) 範本來建立基本的 RDS 部署，然後遵循[遠端桌面服務 - 高可用性](rds-plan-high-availability.md)中的資訊設定其他 RDS 元件以取得高可用性。
 4. RG B 中的 VNet - 請務必使用未與 RG A 中部署重疊的位址空間。
-5. 兩個資源群組之間的 [VNet 對 VNet 連線](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-vnet-vnet-rm-ps)。
+5. 兩個資源群組之間的 [VNet 對 VNet 連線](/azure/vpn-gateway/vpn-gateway-vnet-vnet-rm-ps)。
 6. RG B 中可用性設定組內的兩部 AD 虛擬機器 - 確定 VM 名稱與 RG A 中的 AD VM 不同。在單一可用性設定組中部署兩部 Windows Server 2016 VM、安裝 Active Directory Domain Services 角色，然後將其升階到您在步驟 1 中所建立網域中的網域控制站。
 7. RG B 中的第二個高可用性 RDS 部署。 
    1. 再次使用 [RDS farm deployment using existing active directory](https://azure.microsoft.com/resources/templates/rds-deployment-existing-ad/) (使用現有 Active Directory 的 RDS 伺服器陣列部署) 範本，但這次進行下列變更 (若要自訂範本，請在資源庫中選取它，按一下 [部署至 Azure]  ，然後按一下 [編輯範本]  )。
@@ -81,7 +81,7 @@ ms.locfileid: "80855591"
 
 若要在兩個部署上啟用 UPD，請執行下列動作：
 
-1. 執行 [Set-RDSessionCollectionConfiguration Cmdlet](https://docs.microsoft.com/powershell/module/remotedesktop/set-rdsessioncollectionconfiguration) 為主要 (使用中) 部署啟用使用者設定檔磁碟 - 提供來源磁碟區上的檔案共用路徑 (已在部署步驟的步驟 7 中建立)。
+1. 執行 [Set-RDSessionCollectionConfiguration Cmdlet](/powershell/module/remotedesktop/set-rdsessioncollectionconfiguration) 為主要 (使用中) 部署啟用使用者設定檔磁碟 - 提供來源磁碟區上的檔案共用路徑 (已在部署步驟的步驟 7 中建立)。
 2. 反轉儲存體複本方向，讓目的地磁碟區成為來源磁碟區 (這會掛接磁碟區並使它可供次要部署存取)。 您可以執行 **Set-SRPartnership** Cmdlet 來執行這項操作。 例如：
 
    ```powershell
@@ -160,4 +160,4 @@ RG B 現在是使用中的主要部署。 若要切換回 RG A 作為主要部�
 
 您可以對內部部署端點使用 Azure 流量管理員，但需要 Azure 訂用帳戶。 或者，對於提供給終端使用者的 DNS，給與直接將使用者導向至主要部署的 CNAME 記錄。 在容錯移轉情況下，修改 DNS CNAME 記錄以重新導向至次要部署。 如此一來，終端使用者就可以使用單一 URL (就像是使用 Azure 流量管理員)，將使用者導向至適當的部署。 
 
-如果您想要建立內部部署對 Azure 網站模型，請考慮使用 [Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview)。
+如果您想要建立內部部署對 Azure 網站模型，請考慮使用 [Azure Site Recovery](/azure/site-recovery/site-recovery-overview)。

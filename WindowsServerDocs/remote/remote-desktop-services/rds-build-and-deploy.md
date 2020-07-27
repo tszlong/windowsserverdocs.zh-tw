@@ -9,12 +9,12 @@ ms.topic: article
 ms.assetid: 176ae424-96e9-4c78-88f5-da418e76c3d7
 author: lizap
 manager: dongill
-ms.openlocfilehash: ce8c6e2089c3130d078513287b661a42e5754690
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: c0a2676cc5e7043cd1f96d6c1d393d7b0e443fe8
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857601"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961210"
 ---
 # <a name="build-and-deploy-your-remote-desktop-services-deployment"></a>建置和部署您的遠端桌面服務部署
 
@@ -27,7 +27,7 @@ ms.locfileid: "80857601"
 現有的遠端桌面部署是否已建置於舊版 Windows Server 上？ 請檢查您可用來移至 Windows Server 2016 的選項，您可以在其中利用關於效能與延展性的新功能和更好的功能：
 
 - [將您的 RDS 部署移轉至 Windows Server 2016](migrate-rds-role-services.md)
-- [將您的 RDS 部署升級至 Windows Server 2016](upgrade-to-rds-2016.md)
+- [將您的 RDS 部署升級至 Windows Server 2016](./upgrade-to-rds.md)
 
 想要建立新的遠端桌面部署嗎？ 請使用下列資訊來部署 Windows Server 2016 中的遠端桌面：
 

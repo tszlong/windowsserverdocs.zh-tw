@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c2614c0180b32a0215454f2d725d6a962986ef1f
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 0219c669a52d961cc98d6b0ee16bcbcfbbb78417
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71394398"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961570"
 ---
 # <a name="disable-offline-files-on-individual-redirected-folders"></a>停用個別重新導向資料夾上的離線檔案
 
@@ -22,7 +22,7 @@ ms.locfileid: "71394398"
 本主題說明如何使用資料夾重新導向，在重新導向至網路共用的個別資料夾上停用離線檔案快取。 這可讓您指定要從本機快取排除的資料夾，減少同步處理離線檔案所需的離線檔案快取大小和時間。
 
 >[!NOTE]
->本主題包含可讓您用來將部分所述的程序自動化的 Windows PowerShell Cmdlet 範例。 如需詳細資訊，請參閱 [Windows PowerShell 基本概念](https://docs.microsoft.com/powershell/scripting/getting-started/fundamental/windows-powershell-basics?view=powershell-6)。
+>本主題包含可讓您用來將部分所述的程序自動化的 Windows PowerShell Cmdlet 範例。 如需詳細資訊，請參閱 [Windows PowerShell 基本概念](/powershell/scripting/getting-started/fundamental/windows-powershell-basics?view=powershell-6)。
 
 ## <a name="prerequisites"></a>必要條件
 

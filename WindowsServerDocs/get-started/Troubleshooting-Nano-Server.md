@@ -10,12 +10,12 @@ ms.assetid: e427c66f-9571-4b8c-b65d-e7370d91544d
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: f134680792eda33343bb6743708b37cf4f9e5faa
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: ce71c2d11343be62d47f8957fa9414915fcc7847
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826451"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964410"
 ---
 # <a name="troubleshooting-nano-server"></a>針對 Nano 伺服器進行疑難排解
 
@@ -45,7 +45,7 @@ Nano 伺服器包含修復主控台，確保即使錯誤網路組態干擾與 Na
 > 修復主控台只支援基本鍵盤功能。 不支援鍵盤背光、10 個按鍵區段和鍵盤配置切換 (例如 Caps Lock 和 Number Lock)。 只支援英文鍵盤和字元集。
 
 ## <a name="accessing-nano-server-over-a-serial-port-with-emergency-management-services"></a>使用緊急管理服務透過序列連接埠存取 Nano 伺服器  
-緊急管理服務 (EMS) 可讓您執行基本疑難排解、取得網路狀態，以及使用終端機模擬器透過序列連接埠開啟主控台工作階段 (包括 CMD/PowerShell)。 這會取代使用鍵盤和監視器進行伺服器疑難排解的需求。 如需 EMS 的詳細資訊，請參閱 [Emergency Management Services Technical Reference](https://technet.microsoft.com/library/cc784411(v=ws.10).aspx) (緊急管理服務技術參照)。
+緊急管理服務 (EMS) 可讓您執行基本疑難排解、取得網路狀態，以及使用終端機模擬器透過序列連接埠開啟主控台工作階段 (包括 CMD/PowerShell)。 這會取代使用鍵盤和監視器進行伺服器疑難排解的需求。 如需 EMS 的詳細資訊，請參閱 [Emergency Management Services Technical Reference](/previous-versions/windows/it-pro/windows-server-2003/cc784411(v=ws.10)) (緊急管理服務技術參照)。
 
 若要在 Nano 伺服器映像上啟用 EMS，供您稍後需要使用時使用，請執行這個 Cmdlet︰  
   
@@ -54,7 +54,7 @@ Nano 伺服器包含修復主控台，確保即使錯誤網路組態干擾與 Na
 這個範例 Cmdlet 會使用 9600 bps 的傳輸速率在序列連接埠 3 上啟用 EMS。 如果您不想包含這些參數，則預設值是連接埠 1 和 115200 bps。 若要將這個 Cmdlet 用於 VHDX 媒體，請一定要包含 Hyper-V 功能，以及對應的 Windows PowerShell 模組。
 
 ## <a name="kernel-debugging"></a>核心偵錯  
-您可以設定 Nano 伺服器映像，透過各種方法支援核心偵錯。 若要搭配使用核心偵錯與 VHDX 映像，請一定要包含 Hyper-V 功能，以及對應的 Windows PowerShell 模組。 如需遠端核心偵錯的基本詳細資訊，請參閱[Setting Up Kernel-Mode Debugging over a Network Cable Manually](https://msdn.microsoft.com/library/windows/hardware/hh439346%28v=vs.85%29.aspx) (透過網路纜線手動設定核心模式偵錯) 和 [Remote Debugging Using WinDbg](https://msdn.microsoft.com/library/windows/hardware/hh451173%28v=vs.85%29.aspx) (使用 WinDbg 的遠端偵錯)。  
+您可以設定 Nano 伺服器映像，透過各種方法支援核心偵錯。 若要搭配使用核心偵錯與 VHDX 映像，請一定要包含 Hyper-V 功能，以及對應的 Windows PowerShell 模組。 如需遠端核心偵錯的基本詳細資訊，請參閱[Setting Up Kernel-Mode Debugging over a Network Cable Manually](/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection) (透過網路纜線手動設定核心模式偵錯) 和 [Remote Debugging Using WinDbg](/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection) (使用 WinDbg 的遠端偵錯)。  
   
 ### <a name="debugging-using-a-serial-port"></a>使用序列連接埠偵錯  
 請使用這個 Cmdlet，透過序列連接埠針對映像進行偵錯︰  

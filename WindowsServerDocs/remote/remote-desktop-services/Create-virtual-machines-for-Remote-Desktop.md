@@ -9,12 +9,12 @@ ms.topic: article
 ms.assetid: b0f62d6f-0915-44ca-afef-be44a922e20e
 author: lizap
 manager: dongill
-ms.openlocfilehash: fa17c472e3311e4e34ac7b2176d0045886463274
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 9eba68e3dfce817208763ed11c4a7af68bb60be3
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80818461"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966520"
 ---
 # <a name="create-virtual-machines-for-remote-desktop"></a>建立遠端桌面的虛擬機器
 
@@ -24,9 +24,9 @@ ms.locfileid: "80818461"
   
 針對這個基本部署範例，將建立 3 部虛擬機器 (最小值)。 一部虛擬機器將裝載遠端桌面 (RD) 連線代理人和授權伺服器角色服務及檔案共用以進行部署。 第二部虛擬機器將裝載 RD 閘道和 Web 存取角色服務。  第三部虛擬機器將裝載 RD 工作階段主機角色服務。 對於非常小型的部署，您可以使用 AAD 應用程式 Proxy，從部署中排除所有公用端點，並將所有角色服務結合到單一 VM 上，藉以降低 VM 成本。 針對較大型部署，您可以在個別虛擬機器上安裝各種角色服務，以允許進行更好的調整。  
   
-本節將概述根據 [Microsoft Azure Marketplace](https://azure.microsoft.com/marketplace/) 中的 Windows Server 映像，針對每個角色部署虛擬機器所需的步驟。 如果您需要從自訂映像 (需要 PowerShell) 建立虛擬機器，請參閱[使用 Resource Manager 和 PowerShell 建立 Windows VM](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-ps-create/)。 然後返回此處來連結用於檔案共用的 Azure 資料磁碟，並為您的部署輸入外部 URL 。  
+本節將概述根據 [Microsoft Azure Marketplace](https://azure.microsoft.com/marketplace/) 中的 Windows Server 映像，針對每個角色部署虛擬機器所需的步驟。 如果您需要從自訂映像 (需要 PowerShell) 建立虛擬機器，請參閱[使用 Resource Manager 和 PowerShell 建立 Windows VM](/azure/virtual-machines/windows/quick-create-powershell)。 然後返回此處來連結用於檔案共用的 Azure 資料磁碟，並為您的部署輸入外部 URL 。  
   
-1. [建立 Windows 虛擬機器](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-hero-tutorial/)來裝載 RD 連線代理人、RD 授權伺服器及檔案伺服器。  
+1. [建立 Windows 虛擬機器](/azure/virtual-machines/windows/quick-create-portal)來裝載 RD 連線代理人、RD 授權伺服器及檔案伺服器。  
   
    針對我們的目的，我們將使用下列命名慣例：  
    - RD 連線代理人、授權伺服器及檔案伺服器：   
@@ -79,4 +79,3 @@ ms.locfileid: "80818461"
 5. 針對部署輸入外部 URL/DNS 名稱，以便在外部存取它：  
    1.  在 Azure 入口網站中，按一下 [瀏覽] > [資源群組]  、按一下用於部署的資源群組，然後按一下針對 RD Web 存取和 RD 閘道建立的公用 IP 位址。  
    2.  按一下 [設定]  、輸入 DNS 名稱標籤 (例如 contoso)，然後按一下 [儲存]  。 此 DNS 名稱標籤 (contoso.westus.cloudapp.azure.com) 是您要用來連線到 RD Web 存取和 RD 閘道伺服器的 DNS 名稱。  
-

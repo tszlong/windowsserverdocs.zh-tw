@@ -8,12 +8,12 @@ ms.date: 12/02/2019
 ms.topic: article
 author: Heidilohr
 manager: lizross
-ms.openlocfilehash: beacd246639b5586c071a24bdd7b09c6aceeadab
-ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
+ms.openlocfilehash: 644799ba9c6ebde4943b678199c678da376e05ae
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83203390"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963140"
 ---
 # <a name="virtual-machine-sizing-guidelines"></a>虛擬機器縮放指導方針
 
@@ -40,9 +40,9 @@ ms.locfileid: "83203390"
 
 針對需要服務等級協定 (SLA) 的生產環境工作負載，建議您在 OS 磁碟中使用進階 SSD 儲存體。 如需詳細資訊，請參閱[虛擬機器 SLA](https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_8/)。
 
-對於經常使用圖形密集型程式進行影片轉譯、3D 設計和模擬的使用者而言，圖形處理器 (GPU) 通常是不錯的選擇。 如需深入了解圖形加速，請參閱[選擇您的圖形轉譯技術](rds-graphics-virtualization.md)。 Azure 具有數個圖形加速部署選項和多個可用的 GPU VM 大小。 深入了解 [GPU 最佳化虛擬機器大小](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-gpu)。
+對於經常使用圖形密集型程式進行影片轉譯、3D 設計和模擬的使用者而言，圖形處理器 (GPU) 通常是不錯的選擇。 如需深入了解圖形加速，請參閱[選擇您的圖形轉譯技術](rds-graphics-virtualization.md)。 Azure 具有數個圖形加速部署選項和多個可用的 GPU VM 大小。 深入了解 [GPU 最佳化虛擬機器大小](/azure/virtual-machines/windows/sizes-gpu)。
 
-對於不一定需要最大 CPU 效能的使用者而言，[B 系列高載 VM](https://docs.microsoft.com/azure/virtual-machines/windows/b-series-burstable) 是不錯的選擇。 如需 VM 類型和大小的詳細資訊，請參閱 [Azure 中的 Windows 虛擬機器大小](https://docs.microsoft.com/azure/virtual-machines/windows/sizes)和[虛擬機器系列頁面](https://azure.microsoft.com/pricing/details/virtual-machines/series/)的定價資訊。
+對於不一定需要最大 CPU 效能的使用者而言，[B 系列高載 VM](/azure/virtual-machines/windows/b-series-burstable) 是不錯的選擇。 如需 VM 類型和大小的詳細資訊，請參閱 [Azure 中的 Windows 虛擬機器大小](/azure/virtual-machines/windows/sizes)和[虛擬機器系列頁面](https://azure.microsoft.com/pricing/details/virtual-machines/series/)的定價資訊。
 
 ## <a name="test-your-workload"></a>測試您的工作負載
 

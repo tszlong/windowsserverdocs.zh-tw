@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 3804cfdf49d97f9b889129802e0d2c51730e3c86
-ms.sourcegitcommit: 67116322915066b85decb4261d47cedec2cfe12f
+ms.openlocfilehash: d65701010620127c4d98bdc176be1e7ce401e0a7
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82903464"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965990"
 ---
 # <a name="ad-fs-openid-connectoauth-flows-and-application-scenarios"></a>AD FS OpenID Connect/OAuth 流程和應用程式案例
 適用於 AD FS 2016 和更新版本
@@ -230,7 +230,7 @@ Access_tokens 的存留期較短，您必須在過期後重新整理，才能繼
  
 重新整理權杖沒有指定的存留期。 一般而言，重新整理權杖的存留期相對較長。 不過，在某些情況下，重新整理權杖會過期、遭到撤銷，或缺少所需動作的足夠權限。 您的應用程式必須預期並正確處理權杖發行端點所傳回的錯誤。  
  
-雖然重新整理權杖不會在用來取得新存取權杖時撤銷，但您仍應捨棄舊的重新整理權杖。 根據 OAuth 2.0 規格的敘述：「授權伺服器「可能」會發出新的重新整理權杖，在此情況下，用戶端「必須」捨棄舊的重新整理權杖，並以新的重新整理權杖取代。 授權伺服器「可能」會在對用戶端發出新的重新整理權杖之後，撤銷舊的重新整理權杖。」 當新的重新整理權杖存留期比先前的重新整理權杖存留期還長時，AD FS 就會發出重新整理權杖。  若要檢視關於 AD FS 重新整理權杖存留期的其他資訊，請造訪 [AD FS 單一登入設定](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/ad-fs-single-sign-on-settings)。
+雖然重新整理權杖不會在用來取得新存取權杖時撤銷，但您仍應捨棄舊的重新整理權杖。 根據 OAuth 2.0 規格的敘述：「授權伺服器「可能」會發出新的重新整理權杖，在此情況下，用戶端「必須」捨棄舊的重新整理權杖，並以新的重新整理權杖取代。 授權伺服器「可能」會在對用戶端發出新的重新整理權杖之後，撤銷舊的重新整理權杖。」 當新的重新整理權杖存留期比先前的重新整理權杖存留期還長時，AD FS 就會發出重新整理權杖。  若要檢視關於 AD FS 重新整理權杖存留期的其他資訊，請造訪 [AD FS 單一登入設定](../operations/ad-fs-single-sign-on-settings.md)。
  
 ```
 // Line breaks for legibility only 

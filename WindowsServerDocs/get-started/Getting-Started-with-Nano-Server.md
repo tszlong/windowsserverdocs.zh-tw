@@ -10,12 +10,12 @@ ms.assetid: 2c2fa45b-6f3b-4663-b421-2da6ecc463bf
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 68de1697c8655075041cd9e598ccd2bbc2e6237b
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4002126ee6d9919c0a7fbfb3c068587c9acbecef
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826981"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953680"
 ---
 # <a name="install-nano-server"></a>安裝 Nano 伺服器
 
@@ -45,18 +45,18 @@ Nano Server 適用於一些案例：
 - Nano Server 為無周邊，不具本機登入功能或圖形化使用者介面。
 - 僅支援 64 位元應用程式、工具及代理程式。
 - Nano Server 無法作為 Active Directory 網域控制站。
-- 不支援群組原則。 不過，您可以使用[預期狀態設定](https://msdn.microsoft.com/powershell/dsc/nanoDsc)大規模地套用設定。
+- 不支援群組原則。 不過，您可以使用[預期狀態設定](/previous-versions//dn387184(v=vs.85))大規模地套用設定。
 - 無法將 Nano Server 設為使用 Proxy 伺服器存取網際網路。
 - 不支援 NIC 小組 (具體而言，指負載平衡和容錯移轉，或稱 LBFO)。 改為支援切換內嵌小組 (SET)。
 - 不支援 Microsoft Endpoint Configuration Manager 及 System Center Data Protection Manager。
 - 不支援最佳做法分析程式 (BPA) Cmdlet 及 BPA 與伺服器管理員整合。
 - Nano Server 不支援虛擬主機匯流排介面卡 (HBA)。
-- Nano Server 不需要以產品金鑰啟用。 Nano Server 作為 Hyper-V 主機運作時，不支援[自動虛擬機器啟用](https://technet.microsoft.com/library/dn303421%28v=ws.11%29.aspx) \(AVMA\) (英文)。 在 Nano Server 主機上執行的虛擬機器可使用[金鑰管理服務](https://technet.microsoft.com/library/jj612867(v=ws.11).aspx) \(KMS\) (英文) 搭配一般的大量授權金鑰，或使用[Active Directory 型啟用](https://technet.microsoft.com/library/dn502534(v=ws.11).aspx) \(英文\) 來啟用。
+- Nano Server 不需要以產品金鑰啟用。 Nano Server 作為 Hyper-V 主機運作時，不支援[自動虛擬機器啟用](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303421(v=ws.11)) \(AVMA\) (英文)。 在 Nano Server 主機上執行的虛擬機器可使用[金鑰管理服務](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj612867(v=ws.11)) \(KMS\) (英文) 搭配一般的大量授權金鑰，或使用[Active Directory 型啟用](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn502534(v=ws.11)) \(英文\) 來啟用。
 - Nano Server 隨附的 Windows PowerShell 的版本具有重大差異。 如需詳細資料，請參閱 [Nano Server 上的 PowerShell](PowerShell-on-Nano-Server.md)。
 - Nano Server 僅在最新商務分支 (CBB) 模型上受支援，Nano Server 目前沒有長期維護分支 (LTSB) 版本。 如需詳細資訊，請參閱下列各子章節。
 
 ### <a name="current-branch-for-business"></a>最新商務分支
-Nano Server 由更為活躍的模型提供服務，稱作最新商務分支 (CBB)，以替使用快速開發週期移至雲端節奏的客戶提供支援。 在此模型中，Nano Server 預期每年會有兩到三次的功能更新版本。 此模型需要[軟體保證](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx)，才能在生產環境中部署及操作 Nano Server。 為了維持支援，系統管理員不得落後超過兩個 CBB 版本。 不過，這些版本不會自動更新現有的部署；系統管理員會依其便利性手動安裝新的 CBB 版本。 如需其他資訊，請參閱 [Windows Server 2016 新的最新商務分支服務選項](https://blogs.technet.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/)。
+Nano Server 由更為活躍的模型提供服務，稱作最新商務分支 (CBB)，以替使用快速開發週期移至雲端節奏的客戶提供支援。 在此模型中，Nano Server 預期每年會有兩到三次的功能更新版本。 此模型需要[軟體保證](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx)，才能在生產環境中部署及操作 Nano Server。 為了維持支援，系統管理員不得落後超過兩個 CBB 版本。 不過，這些版本不會自動更新現有的部署；系統管理員會依其便利性手動安裝新的 CBB 版本。 如需其他資訊，請參閱 [Windows Server 2016 新的最新商務分支服務選項](https://cloudblogs.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/)。
 
 Server Core 和「使用桌面體驗的伺服器」安裝選項仍由[長期維護分支 (LTSB) 模型](https://support.microsoft.com/lifecycle#gp%2Fgp_msl_policy)提供服務，由 5 年的主流支援及 5 年的延伸支援組成。
 

@@ -9,12 +9,12 @@ manager: mtillman
 ms.date: 03/22/2019
 ms.technology: identity-adds
 ms.assetid: 7a3114c8-bda8-49bb-83a8-4e04340ab221
-ms.openlocfilehash: 25a5c2222f50b37bff2bcfe41184d6d9fa35995c
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: b9009e4688665e972531b1d38a5ecc92fa990556
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77465502"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955620"
 ---
 # <a name="safely-virtualizing-active-directory-domain-services-ad-ds"></a>安全的虛擬化 Active Directory Domain Services (AD DS)
 
@@ -32,7 +32,7 @@ AD DS 複寫使用每個網域控制站的 InvocationID 與 USN 來判斷哪些�
 
 ![偵測到 USN 回復時的事件順序](../media/Introduction-to-Active-Directory-Domain-Services--AD-DS--Virtualization--Level-100-/ADDS_Exampleofhowreplicationcanbecomeinconsistent.png)
 
-虛擬機器 (VM) 可讓 Hypervisor 系統管理員輕鬆回復網域控制站的 USN (它的邏輯時鐘)，例如，在網域控制站感知外套用快照。 如需 USN 和 USN 回復的詳細資訊，包括示範未偵測到 USN 回復的另一個圖解，請參閱 [USN 和 USN 回復](https://technet.microsoft.com/library/virtual_active_directory_domain_controller_virtualization_hyperv(WS.10).aspx#usn_and_usn_rollback)。
+虛擬機器 (VM) 可讓 Hypervisor 系統管理員輕鬆回復網域控制站的 USN (它的邏輯時鐘)，例如，在網域控制站感知外套用快照。 如需 USN 和 USN 回復的詳細資訊，包括示範未偵測到 USN 回復的另一個圖解，請參閱 [USN 和 USN 回復](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd363553(v=ws.10)#usn_and_usn_rollback)。
 
 從 Windows Server 2012  開始，裝載於 Hypervisor 平台 (會公開 VM-Generation ID 識別碼) 上的 AD DS 虛擬網域控制站，可以偵測並採用必要的安全措施，以便在套用 VM 快照後及回復虛擬機器時保護 AD DS 環境。 VM-GenerationID 設計使用 Hypervisor 廠商獨立機制，在來賓虛擬機器的位址空間上顯示這個識別碼，如此一來，只要是支援 VM-GenerationID 的 Hypervisor，都能擁有一致的安全虛擬化經驗。 虛擬機器內部執行的服務及應用程式可以取樣這個識別碼，來偵測虛擬機器是否及時回復。
 
@@ -127,7 +127,7 @@ Value: 0x4
 
 評估此網域控制站是否有有效的系統狀態備份。 如果在回復的網域控制站未正確還原之前，有進行有效的系統狀態備份，而且備份包含網域控制站最近所做的變更，請從最新的備份還原系統狀態。
 
-您也可以使用快照做為備份的來源。 或者，利用[在沒有適當系統狀態資料備份的情況下還原虛擬網域控制站](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd363553%28v%3dws.10%29#restoring-a-virtual-domain-controller-when-an-appropriate-system-state-data-backup-is-not-available)中的程序，將資料庫設定成為其本身提供新的引動過程識別碼。
+您也可以使用快照做為備份的來源。 或者，利用[在沒有適當系統狀態資料備份的情況下還原虛擬網域控制站](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd363553%28v%3dws.10%29#restoring-a-virtual-domain-controller-when-an-appropriate-system-state-data-backup-is-not-available)中的程序，將資料庫設定成為其本身提供新的引動過程識別碼。
 
 ## <a name="next-steps"></a>接下來的步驟
 

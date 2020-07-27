@@ -9,12 +9,12 @@ ms.author: mikeblodge
 ms.date: 07/11/2018
 ms.topic: get-started-article
 ms.localizationpriority: high
-ms.openlocfilehash: de9233e31c5530abd207a1bbba0e1e16a07d1561
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: f8f8cc63740c6823a01e0c86b387d57b54a06419
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826121"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960290"
 ---
 # <a name="upload-a-windows-server-20082008-r2-specialized-image-to-azure"></a>將 Windows Server 2008/2008 R2 專用映像上傳至 Azure 
 
@@ -85,12 +85,12 @@ Login-AzureRmAccount
 > [!IMPORTANT]
 > 請勿在 Azure 中使用預先定義的使用者映像。
 
-1.    建立新的[資源群組](https://docs.microsoft.com/rest/api/resources/resourcegroups/createorupdate) (英文)。 
-2.    在資源群組內部建立新的[儲存體 Blob](https://docs.microsoft.com/rest/api/storageservices/put-blob)(英文)。
-3.    在儲存體 Blob 內部建立[容器](https://docs.microsoft.com/rest/api/storageservices/create-container) (英文)。
+1.    建立新的[資源群組](/rest/api/resources/resourcegroups/createorupdate) (英文)。 
+2.    在資源群組內部建立新的[儲存體 Blob](/rest/api/storageservices/put-blob)(英文)。
+3.    在儲存體 Blob 內部建立[容器](/rest/api/storageservices/create-container) (英文)。
 4.    複製內容中 Blob 儲存體的 URL。
 5.    使用於上方提供的指令碼將映像上傳至新的儲存體 Blob。
-6.    為您的 VHD 建立[磁碟](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image)。   
+6.    為您的 VHD 建立[磁碟](/azure/virtual-machines/windows/prepare-for-upload-vhd-image)。   
      a.    移至 \[磁碟\]，按一下 \[新增\]  。  
      b.    輸入磁碟的名稱。 選取您要使用的訂用帳戶、設定區域，然後選擇帳戶類型。   
      c. 對於 \[來源類型\]，選取儲存體。 瀏覽至使用指令碼建立的 Blob VHD 位置。  
@@ -105,7 +105,3 @@ Login-AzureRmAccount
  
         PORT:3389 Protocol：TCP Action:Allow Priority:1000 Name:'RDP-Rule'.   
      e.    按一下 [建立]  。
-
-
-
-

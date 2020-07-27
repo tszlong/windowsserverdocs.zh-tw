@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 36988b8ed3d61fe97f4e1018b4ec1b6340cb4fae
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 9bf484ab53790c453b0849b1bf8ca91553f82898
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80855141"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953720"
 ---
 # <a name="privileged-access-workstations"></a>特殊權限存取工作站
 
@@ -29,7 +29,7 @@ ms.locfileid: "80855141"
 > [!NOTE]
 > PAW 架構不需要帳戶與工作站的 1:1 對應，但這是一般設定。 PAW 會建立可由一個或多個帳戶所使用的受信任工作站環境。
 
-為了提供最大的安全性，PAW 應該一律執行最新且最安全的作業系統：︰Microsoft 強烈建議使用 Windows 10 企業版，其中包含一些其他版本未提供的額外安全性功能 (特別是 [Credential Guard](https://technet.microsoft.com/library/mt483740%28v=vs.85%29.aspx) 和 [Device Guard](https://technet.microsoft.com/library/dn986865(v=vs.85).aspx))。
+為了提供最大的安全性，PAW 應該一律執行最新且最安全的作業系統：︰Microsoft 強烈建議使用 Windows 10 企業版，其中包含一些其他版本未提供的額外安全性功能 (特別是 [Credential Guard](/windows/security/identity-protection/credential-guard/credential-guard) 和 [Device Guard](/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control))。
 
 > [!NOTE]
 > 無法存取 Windows 10 企業版的組織可以使用 Windows 10 專業版，其中包含 PAW 的許多重要基本技術，包括信任式開機、BitLocker 和遠端桌面。  教育客戶可以使用 Windows 10 教育版。  Windows 10 家用版不應用於 PAW。
@@ -96,7 +96,7 @@ PAW 安全性控制項著重在緩和最大的影響力以及高可能性的危�
 
 若要進行此設定，請遵循本指導方針中對於 PAW 主機的指示，新增用戶端 Hyper-V 功能、建立使用者 VM，然後在使用者 VM 上安裝 Windows 10 公司映像。
 
-如需有關這項功能的詳細資訊，請閱讀[用戶端 Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/index) 文件。 請注意，客體虛擬機器中的作業系統必須先根據 [Microsoft 產品授權](https://www.microsoft.com/Licensing/product-licensing/products.aspx)獲得授權，在[這裡](https://download.microsoft.com/download/9/8/D/98D6A56C-4D79-40F4-8462-DA3ECBA2DC2C/Licensing_Windows_Desktop_OS_for_Virtual_Machines.pdf)也有相關說明。
+如需有關這項功能的詳細資訊，請閱讀[用戶端 Hyper-V](/virtualization/hyper-v-on-windows/index) 文件。 請注意，客體虛擬機器中的作業系統必須先根據 [Microsoft 產品授權](https://www.microsoft.com/Licensing/product-licensing/products.aspx)獲得授權，在[這裡](https://download.microsoft.com/download/9/8/D/98D6A56C-4D79-40F4-8462-DA3ECBA2DC2C/Licensing_Windows_Desktop_OS_for_Virtual_Machines.pdf)也有相關說明。
 
 #### <a name="simultaneous-use---adding-remoteapp-rdp-or-a-vdi"></a>同時使用 - 新增 RemoteApp、RDP 或 VDI
 
@@ -130,7 +130,7 @@ Microsoft 在我們的系統內部以及我們的客戶使用 PAW 架構方法�
 
 ![此圖顯示系統管理 (高度機密的工作) 的個別「通道」，此通道是透過維護各個專用的系統管理帳戶及工作站所建立](../media/privileged-access-workstations/PAWFig1.JPG)
 
-此架構方法建置在 Windows 10 [Credential Guard](https://technet.microsoft.com/library/mt483740%28v=vs.85%29.aspx) 和 [Device Guard](https://technet.microsoft.com/library/dn986865(v=vs.85).aspx) 功能中的防護之上，而且超越機密帳戶和工作的這些防護。
+此架構方法建置在 Windows 10 [Credential Guard](/windows/security/identity-protection/credential-guard/credential-guard) 和 [Device Guard](/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) 功能中的防護之上，而且超越機密帳戶和工作的這些防護。
 
 這種方法適合可存取高價值資產的帳戶︰
 
@@ -138,7 +138,7 @@ Microsoft 在我們的系統內部以及我們的客戶使用 PAW 架構方法�
 * **高機密性資訊工作者** - PAW 中使用的方法也可以針對高機密性資訊工作者的工作和人員提供防護，例如，涉及公告前合併和收購活動、發行前版本財務報表、組織的社交媒體目前狀態、行政溝通、無專利的商業機密、機密研究，或其他專屬或機密資料的工作和人員。 本指導方針並不會深入討論這些資訊工作者案例的設定，也不會將此案例包含在技術指導中。
 
     > [!NOTE]
-    > Microsoft IT 使用 PAW (內部稱為「安全的系統管理工作站」或 SAW) 管理在 Microsoft 內部對於內部高價值系統的安全存取。 本指導方針在稍後的「Microsoft 如何使用系統管理工作站」一節中，對於 PAW 在 Microsoft 的使用方式提供其他詳細資訊。 如需有關這個高價值資產環境方法的詳細資訊，請參閱[使用安全的系統管理工作站保護高價值的資產](https://msdn.microsoft.com/library/mt186538.aspx)一文。
+    > Microsoft IT 使用 PAW (內部稱為「安全的系統管理工作站」或 SAW) 管理在 Microsoft 內部對於內部高價值系統的安全存取。 本指導方針在稍後的「Microsoft 如何使用系統管理工作站」一節中，對於 PAW 在 Microsoft 的使用方式提供其他詳細資訊。 如需有關這個高價值資產環境方法的詳細資訊，請參閱[使用安全的系統管理工作站保護高價值的資產](/previous-versions//mt186538(v=technet.10))一文。
 
 本文件將說明為什麼建議使用這個做法保護高影響力的特殊權限帳戶、這些 PAW 解決方案在保護系統管理權限時看起來像什麼，以及如何快速部署 PAW 解決方案以管理網域和雲端服務。
 
@@ -175,7 +175,7 @@ PAW 方法是既定建議做法的延伸，也就是為系統管理人員使用�
 
 #### <a name="credential-guard-and-windows-hello-for-business"></a>Credential Guard 與 Windows Hello 企業版
 
-Windows 10 中推出的 [Credential Guard](https://technet.microsoft.com/library/mt483740%28v=vs.85%29.aspx) 使用硬體和虛擬化架構的安全性保護衍生的認證，藉此減輕常見的認證竊取攻擊，例如傳遞雜湊。 [Windows Hello 企業版](https://aka.ms/passport)所用憑證的私密金鑰也可以受到信賴平台模組 (TPM) 硬體的保護。
+Windows 10 中推出的 [Credential Guard](/windows/security/identity-protection/credential-guard/credential-guard) 使用硬體和虛擬化架構的安全性保護衍生的認證，藉此減輕常見的認證竊取攻擊，例如傳遞雜湊。 [Windows Hello 企業版](https://aka.ms/passport)所用憑證的私密金鑰也可以受到信賴平台模組 (TPM) 硬體的保護。
 
 這些是功能強大的防護措施，但是即使認證受到 Credential Guard 或 Windows Hello 企業版的保護，工作站仍然可能容易遭受特定攻擊。 攻擊可能包括濫用權限和直接使用受危害裝置中的認證、在啟用 Credential Guard 之前重複使用先前遭竊的認證，以及濫用工作站上的管理工具和弱式應用程式設定。
 
@@ -267,14 +267,14 @@ Microsoft 建議使用 PAW 存取權限管理解決方案。 對於這些解決�
 |**案例**|**使用 PAW？**|**範圍和安全性考量**|
 |---------|--------|---------------------|
 |Active Directory 管理員 - 第 0 層|是|使用階段 1 指導方針建置的 PAW 對於此角色已經足夠。<p>-   可以新增系統管理樹系，以便為此案例提供最強的防護。 如需有關 ESAE 系統管理樹系的詳細資訊，請參閱 [ESAE 系統管理樹系設計方法](../securing-privileged-access/securing-privileged-access-reference-material.md#esae-administrative-forest-design-approach)<br />-   PAW 可以用來管理多個網域或多個樹系。<br />-   如果在基礎結構即服務 (IaaS) 或內部部署虛擬化解決方案上裝載網域控制站，您應該為那些解決方案的系統管理員優先實作 PAW。|
-|Azure IaaS 和 PaaS 服務的系統管理員 - 第 0 層或第 1 層 (請參閱「範圍和設計考量」)|是|使用階段 2 中提供的指導方針建置的 PAW 對於此角色已經足夠。<p>-   PAW 應該至少用於全域管理員和訂閱計費管理員。 您也應該將 PAW 用於重要或機密伺服器的委派系統管理員。<br />-   PAW 應該用於管理針對雲端服務 (例如 [Azure AD Connect](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect/) 和 Active Directory 同盟服務 (ADFS)) 提供目錄同步作業和身分識別同盟的作業系統與應用程式。<br />-   輸出網路限制必須允許使用階段 2 中的指導方針，僅與已授權的雲端服務連線。 不應該從 PAW 允許開放式網際網路存取。<br />- 應在工作站上設定 Windows Defender 惡意探索防護 **附註：**   如果網域控制站或其他第 0 層主機位於訂閱中，則會將該訂閱視為樹系的第 0 層。 如果在 Azure 中沒有裝載第 0 層伺服器，則訂閱是第 1 層。|
+|Azure IaaS 和 PaaS 服務的系統管理員 - 第 0 層或第 1 層 (請參閱「範圍和設計考量」)|是|使用階段 2 中提供的指導方針建置的 PAW 對於此角色已經足夠。<p>-   PAW 應該至少用於全域管理員和訂閱計費管理員。 您也應該將 PAW 用於重要或機密伺服器的委派系統管理員。<br />-   PAW 應該用於管理針對雲端服務 (例如 [Azure AD Connect](/azure/active-directory/hybrid/whatis-hybrid-identity) 和 Active Directory 同盟服務 (ADFS)) 提供目錄同步作業和身分識別同盟的作業系統與應用程式。<br />-   輸出網路限制必須允許使用階段 2 中的指導方針，僅與已授權的雲端服務連線。 不應該從 PAW 允許開放式網際網路存取。<br />- 應在工作站上設定 Windows Defender 惡意探索防護 **附註：**   如果網域控制站或其他第 0 層主機位於訂閱中，則會將該訂閱視為樹系的第 0 層。 如果在 Azure 中沒有裝載第 0 層伺服器，則訂閱是第 1 層。|
 |管理 Office 365 租用戶 <br />- 第 1 層|是|使用階段 2 中提供的指導方針建置的 PAW 對於此角色已經足夠。<p>-   PAW 應該至少用於訂閱計費管理員、全域管理員、Exchange 系統管理員、SharePoint 系統管理員，以及使用者管理管理員角色。 您也應該認真考慮將 PAW 用於高度重要或敏感資訊的委派系統管理員。<br />- 應在工作站上設定 Windows Defender 惡意探索防護。<br />-   輸出網路限制必須允許使用階段 2 中的指導方針，僅與 Microsoft 服務連線。 不應該從 PAW 允許開放式網際網路存取。|
 |其他 IaaS 或 PaaS 雲端服務系統管理員<br />- 第 0 層或第 1 層 (請參閱「範圍和設計考量」)|是|使用階段 2 中提供的指導方針建置的 PAW 對於此角色已經足夠。<p>-   PAW 應該用於對雲端託管 VM 具有系統管理權限的任何角色，包括能夠安裝代理程式；匯出硬碟檔案；或存取儲存作業系統、機密資料或業務關鍵資料所在硬碟的儲存裝置。<br />-   輸出網路限制必須允許使用階段 2 中的指導方針，僅與 Microsoft 服務連線。 不應該從 PAW 允許開放式網際網路存取。<br />- 應在工作站上設定 Windows Defender 惡意探索防護。 **注意：** 如果網域控制站或其他第 0 層主機位於訂閱中，則該訂閱為樹系的第 0 層。 如果在 Azure 中沒有裝載第 0 層伺服器，則訂閱是第 1 層。|
 |虛擬化系統管理員<br />- 第 0 層或第 1 層 (請參閱「範圍和設計考量」)|是|使用階段 2 中提供的指導方針建置的 PAW 對於此角色已經足夠。<p>-   PAW 應該用於對 VM 具有系統管理權限的任何角色，包括能夠安裝代理程式；匯出虛擬硬碟檔案；或存取儲存客體作業系統資訊、機密資料或業務關鍵資料所在硬碟的儲存裝置。 **注意：** 如果網域控制站或其他第 0 層主機位於訂閱中，則會將虛擬化系統 (及其系統管理員) 視為樹系的第 0 層。 如果在虛擬化系統中沒有裝載第 0 層伺服器，則訂閱是第 1 層。|
 |伺服器維護系統管理員<br />- 第 1 層|是|使用階段 2 中提供的指導方針建置的 PAW 對於此角色已經足夠。<p>-   PAW 應該用於更新、修補執行 Windows Server、Linux 和其他作業系統的企業伺服器與應用程式，以及為其進行疑難排解的系統管理員。<br />-   可能需要新增 PAW 的專用管理工具，才能處理更大規模的這些系統管理員。|
 |使用者工作站系統管理員 <br />- 第 2 層|是|使用階段 2 中提供的指導方針建置的 PAW 對於具有使用者裝置系統管理權限的角色 (例如技術服務人員和技術支援角色) 已經足夠。<p>-   PAW 上可能需要安裝其他應用程式，才能啟用票證管理和其他支援功能。<br />- 應在工作站上設定 Windows Defender 惡意探索防護。<br />    可能需要新增 PAW 的專用管理工具，才能處理更大規模的這些系統管理員。|
 |SQL、SharePoint 或企業營運 (LOB) 系統管理員<br />- 第 1 層|是|使用階段 2 指導方針建置的 PAW 對於此角色已經足夠。<p>-   PAW 上可能需要安裝其他管理工具，才能允許系統管理員管理應用程式，而不需要使用遠端桌面連線到伺服器。|
-|管理社交媒體顯示狀態的使用者|部分|使用階段 2 中提供的指導方針建置的 PAW 可以當做為這些角色提供安全性的起點使用。<p>-   使用 Azure Active Directory (AAD) 保護與管理社交媒體帳戶，以共用、保護並追蹤對於社交媒體帳戶的存取。<br />    如需有關這項功能的詳細資訊，請參閱[此部落格文章](https://blogs.technet.com/b/ad/archive/2015/02/20/azure-ad-automated-password-roll-over-for-facebook-twitter-and-linkedin-now-in-preview.aspx)。<br />-   輸出網路限制必須允許與這些服務的連線。 這可以透過允許開放式網際網路連線 (否定許多 PAW 保證的更高安全性風險)，或僅允許服務所需的 DNS 位址 (可能不容易取得) 完成。|
+|管理社交媒體顯示狀態的使用者|部分|使用階段 2 中提供的指導方針建置的 PAW 可以當做為這些角色提供安全性的起點使用。<p>-   使用 Azure Active Directory (AAD) 保護與管理社交媒體帳戶，以共用、保護並追蹤對於社交媒體帳戶的存取。<br />    如需有關這項功能的詳細資訊，請參閱[此部落格文章](/windows/security/identity-protection/credential-guard/credential-guard)。<br />-   輸出網路限制必須允許與這些服務的連線。 這可以透過允許開放式網際網路連線 (否定許多 PAW 保證的更高安全性風險)，或僅允許服務所需的 DNS 位址 (可能不容易取得) 完成。|
 |標準使用者|否|雖然標準使用者可以使用許多強化步驟，但是 PAW 是針對隔離帳戶與多數使用者為了工作職責所需的開放式網際網路存取所設計。|
 |客體 VDI/Kiosk|否|雖然客體的 Kiosk 系統可以使用許多強化步驟，但是 PAW 架構的設計是為了針對敏感度高的帳戶提供更高的安全性，而不是針對敏感度較低的帳戶提供更高的安全性。|
 |VIP 使用者 (主管、研究人員等等)|部分|使用階段 2 中提供的指導方針建置的 PAW 可以當做為這些角色提供安全性的起點使用。<p>-   此案例類似於標準使用者桌面，但通常會有更小、更簡單，而且已知的應用程式設定檔。 此案例通常需要探索及保護機密資料、服務，以及 (不一定是安裝在桌上型電腦上的) 應用程式。<br />-   這些角色通常需要高度的安全性以及非常高度的可用性，這需要進行設計變更，才能符合使用者喜好設定。|
@@ -333,7 +333,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
    > 每個系統管理員都應該使用自己的帳戶進行系統管理。  請不要共用系統管理帳戶。
 
 2. **將第 0 層特殊權限系統管理員的人數降至最低**。  由於每個系統管理員都必須使用 PAW，因此，減少系統管理員的人數就會減少支援他們所需的 PAW 數目，以及相關的成本。 系統管理員人數較低，也會使這些權限的曝光率和相關的風險較低。 雖然系統管理員可以在一個位置共用 PAW，但是不同實體位置的系統管理員需要個別的 PAW。
-3. **向受信任的供應商取得符合所有技術需求的硬體**。 Microsoft 建議取得符合[使用 Credential Guard 保護網域認證](https://technet.microsoft.com/library/mt483740%28v=vs.85%29.aspx)一文中技術需求的硬體。
+3. **向受信任的供應商取得符合所有技術需求的硬體**。 Microsoft 建議取得符合[使用 Credential Guard 保護網域認證](/windows/security/identity-protection/credential-guard/credential-guard)一文中技術需求的硬體。
 
    > [!NOTE]
    > 在不含這些功能的硬體上安裝的 PAW 可以提供重要的防護，但是將無法使用進階的安全性功能，例如 Credential Guard 和 Device Guard。  階段 1 部署不需要有 Credential Guard 和 Device Guard，但是強烈建議在階段 3 (進階強化) 時使用。
@@ -354,7 +354,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
 5. **請確定您已在內部網路上使用 WSUS 伺服器**。 在內部網路上需要有 WSUS 伺服器，才能下載並安裝 PAW 的更新。 此 WSUS 伺服器應該設定為自動核准 Windows 10 適用的所有安全性更新，或者系統管理人員應該負責快速核准軟體更新。
 
    > [!NOTE]
-   > 如需詳細資訊，請參閱[核准更新指導方針](https://technet.microsoft.com/library/cc708458(v=ws.10).aspx)中的「自動核准更新以供安裝」一節。
+   > 如需詳細資訊，請參閱[核准更新指導方針](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc708458(v=ws.10))中的「自動核准更新以供安裝」一節。
 
 #### <a name="deploy-the-admin-ou-framework-to-host-the-paws"></a>部署系統管理 OU 架構以託管 PAW
 
@@ -408,7 +408,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
       > [!NOTE]
       > 請不要將 PAW Users 群組新增至本機 Administrators 群組的成員資格清單中。  為確保 PAW 使用者無法偶然或刻意修改 PAW 本身的安全性設定，他們不應該是本機 Administrators 群組的成員。
       >
-      > 如需有關如何使用群組原則喜好設定修改群組成員資格的詳細資訊，請參閱 TechNet 文章[設定本機群組項目](https://technet.microsoft.com/library/cc732525.aspx)。
+      > 如需有關如何使用群組原則喜好設定修改群組成員資格的詳細資訊，請參閱 TechNet 文章[設定本機群組項目](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732525(v=ws.11))。
 
 2. **限制本機群組成員資格** - 此設定將確保工作站上的本機系統管理員群組成員資格永遠是空白的
    1. 移至 [電腦設定\喜好設定\控制台設定\本機使用者和群組]，並遵循下列步驟進行︰
@@ -705,7 +705,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
 
        2. 此外，請使用 [編輯本機使用者和群組]  確定下列群組沒有任何成員︰備份操作員、Cryptographic Operator、Hyper-V 系統管理員、Network Configuration Operator、進階使用者、遠端桌面使用者、複寫者
 
-12. (選擇性) 如果您的組織使用安全性資訊及事件管理 (SIEM) 解決方案，請確認 PAW [設為使用 Windows 事件轉送 (WEF) 將事件轉送到系統](https://blogs.technet.com/b/jepayne/archive/2015/11/24/monitoring-what-matters-windows-event-forwarding-for-everyone-even-if-you-already-have-a-siem.aspx)，或使用解決方案登錄，讓 SIEM 主動地接收來自 PAW 的事件和資訊。  此操作的詳細資料會因為您的 SIEM 解決方案而有所不同。
+12. (選擇性) 如果您的組織使用安全性資訊及事件管理 (SIEM) 解決方案，請確認 PAW [設為使用 Windows 事件轉送 (WEF) 將事件轉送到系統](/archive/blogs/jepayne/monitoring-what-matters-windows-event-forwarding-for-everyone-even-if-you-already-have-a-siem)，或使用解決方案登錄，讓 SIEM 主動地接收來自 PAW 的事件和資訊。  此操作的詳細資料會因為您的 SIEM 解決方案而有所不同。
 
     > [!NOTE]
     > 如果您的 SIEM在 PAW 上需要有以系統或本機系統管理帳戶身分執行的代理程式，請確定 SIEM 是使用與您的網域控制站和身分識別系統相同的信任層級加以管理。
@@ -758,7 +758,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
       > [!NOTE]
       > 如果系統管理人員負責管理多個階層的資產，則您必須為每一層建立一個不同的系統管理帳戶。
 
-4. 啟用 Credential Guard 可降低認證遭竊並重複使用的風險。  Credential Guard 是 Windows 10 的一個新功能，可限制應用程式對於認證的存取，以防止認證竊取攻擊 (包括傳遞雜湊)。  Credential Guard 對於使用者是完全透明的，而且需要的設定時間和精力最少。  如需有關 Credential Guard 的其他資訊，包括部署步驟和硬體需求，請參閱[使用 Credential Guard 保護網域認證](https://technet.microsoft.com/library/mt483740%28v=vs.85%29.aspx)一文。
+4. 啟用 Credential Guard 可降低認證遭竊並重複使用的風險。  Credential Guard 是 Windows 10 的一個新功能，可限制應用程式對於認證的存取，以防止認證竊取攻擊 (包括傳遞雜湊)。  Credential Guard 對於使用者是完全透明的，而且需要的設定時間和精力最少。  如需有關 Credential Guard 的其他資訊，包括部署步驟和硬體需求，請參閱[使用 Credential Guard 保護網域認證](/windows/security/identity-protection/credential-guard/credential-guard)一文。
 
    > [!NOTE]
    > 若要設定和使用 Credential Guard，必須先啟用 Device Guard。  不過，您不需要設定其他任何 Device Guard 防護，就能使用 Credential Guard。
@@ -814,7 +814,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
             16. 按一下 [確定]  ，完成 **AutoConfigUrl** 群組原則設定。
    2. 套用 Windows 10 安全性基準和雲端服務存取。使用下列步驟，將 Windows 和雲端服務存取 (如果需要) 的安全性基準連結至正確的 OU︰
       1. 將 Windows 10 安全性基準 ZIP 檔案的內容解壓縮。
-      2. 建立這些 GPO、[匯入原則](https://technet.microsoft.com/library/cc753786.aspx)設定，並依照此表格[連結](https://technet.microsoft.com/library/cc732979.aspx)。 將每個原則連結到每個位置，並確定遵循表格中的順序 (表格中比較下方的項目應該比較晚套用，且優先順序比較高)︰
+      2. 建立這些 GPO、[匯入原則](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753786(v=ws.11))設定，並依照此表格[連結](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732979(v=ws.11))。 將每個原則連結到每個位置，並確定遵循表格中的順序 (表格中比較下方的項目應該比較晚套用，且優先順序比較高)︰
 
          **原則：**
 
@@ -918,18 +918,18 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
 
 1. **為特殊權限帳戶啟用多重要素驗證**。  多重要素驗證會要求使用者在提供認證之外，也提供一個實體權杖，藉以加強帳戶安全性。  多重要素驗證可以完美地補強驗證原則，但是該驗證不相依於部署的驗證原則 (同樣地，驗證原則也不相依於多重要素驗證)。  Microsoft 建議使用以下其中一種形式的多重要素驗證︰
 
-   * **智慧卡**：智慧卡是一個防竄改的可攜式實體裝置，可以在 Windows 登入過程中提供另一個驗證。  您可以要求個人必須擁有智慧卡才能登入，藉此減少從遠端重複使用遭竊憑證的風險。  如需有關 Windows 中的智慧卡登入詳細資訊，請參閱[智慧卡概觀](https://technet.microsoft.com/library/hh831433.aspx)一文。
-   * **虛擬智慧卡**：虛擬智慧卡可提供與實體智慧卡相同的安全性優點，另一個優點則是可以連結至特定的硬體。  如需有關部署和硬體需求的詳細資訊，請參閱[虛擬智慧卡概觀](https://technet.microsoft.com/library/dn593708.aspx)和[開始使用虛擬智慧卡︰逐步解說指南](https://technet.microsoft.com/library/dn579260.aspx)這兩篇文章。
+   * **智慧卡**：智慧卡是一個防竄改的可攜式實體裝置，可以在 Windows 登入過程中提供另一個驗證。  您可以要求個人必須擁有智慧卡才能登入，藉此減少從遠端重複使用遭竊憑證的風險。  如需有關 Windows 中的智慧卡登入詳細資訊，請參閱[智慧卡概觀](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831433(v=ws.11))一文。
+   * **虛擬智慧卡**：虛擬智慧卡可提供與實體智慧卡相同的安全性優點，另一個優點則是可以連結至特定的硬體。  如需有關部署和硬體需求的詳細資訊，請參閱[虛擬智慧卡概觀](/previous-versions/windows/it-pro/windows-8.1-and-8/dn593708(v=ws.11))和[開始使用虛擬智慧卡︰逐步解說指南](/previous-versions/windows/it-pro/windows-8.1-and-8/dn579260(v=ws.11))這兩篇文章。
    * **Windows Hello 企業版**：Windows Hello 企業版可讓使用者驗證 Microsoft 帳戶、Active Directory 帳戶、Microsoft Azure Active Directory (Azure AD) 帳戶，或支援 Fast ID Online (FIDO) 驗證的非 Microsoft 服務。 在 Windows Hello 企業版註冊期間的初始雙步驟驗證之後，Windows Hello 企業版就會在使用者的裝置上設定完成，而使用者可以設定手勢 (可以是 Windows Hello 或 PIN)。 Windows Hello 企業版認證是非對稱金鑰組，在信賴平台模組 (TPM) 的隔離環境內可以產生這個金鑰組。
-      如需 Windows Hello 企業版的詳細資訊，請參閱 [Windows Hello 企業版](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification)一文。
+      如需 Windows Hello 企業版的詳細資訊，請參閱 [Windows Hello 企業版](/windows/security/identity-protection/hello-for-business/hello-identity-verification)一文。
    * **Azure 多重要素驗證**：Azure 多重要素驗證 (MFA) 可提供另一個驗證要素的安全性，並透過監視和機器學習式分析，提供增強的防護。  Azure MFA 不僅可以保護 Azure 系統管理員的安全，還可以保護其他許多解決方案，包括 Web 應用程式、Azure Active Directory，以及內部部署解決方案 (例如遠端存取和遠端桌面)。  如需有關 Azure 多重要素驗證的詳細資訊，請參閱[多重要素驗證](https://azure.microsoft.com/services/multi-factor-authentication)一文。
 
 2. **使用 Windows Defender 應用程式控制和/或 AppLocker，將受信任的應用程式加入允許清單**。  透過限制未受信任或未簽署的程式碼在 PAW 上執行的能力，您就可以進一步降低惡意活動及危害的可能性。  Windows 對於應用程式控制，包含兩個主要選項︰
 
-   * **Applocker**：AppLocker 可協助系統管理員控制可以在指定系統上執行的應用程式。  AppLocker 可以透過群組原則集中加以控制，而且可以套用至特定的使用者或群組 (針對以 PAW 使用者為目標的應用)。  如需有關 AppLocker 的詳細資訊，請參閱 TechNet 文章 [AppLocker 概觀](https://technet.microsoft.com/library/hh831440.aspx)。
-   * **Windows Defender 應用程式控制**︰新的 Windows Defender 應用程式控制功能可提供增強的硬體式應用程式控制項，與 AppLocker 不同的是，無法在受影響的裝置上覆寫該控制項。  如同 AppLocker，Windows Defender 應用程式控制可以透過群組原則加以控制，並以特定使用者為目標。  有關如何使用 Windows Defender 應用程式控制限制應用程式使用方式，詳細資訊請參閱 TechNet 文章 [Windows Defender 應用程式控制部署指南](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide)。
+   * **Applocker**：AppLocker 可協助系統管理員控制可以在指定系統上執行的應用程式。  AppLocker 可以透過群組原則集中加以控制，而且可以套用至特定的使用者或群組 (針對以 PAW 使用者為目標的應用)。  如需有關 AppLocker 的詳細資訊，請參閱 TechNet 文章 [AppLocker 概觀](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831440(v=ws.11))。
+   * **Windows Defender 應用程式控制**︰新的 Windows Defender 應用程式控制功能可提供增強的硬體式應用程式控制項，與 AppLocker 不同的是，無法在受影響的裝置上覆寫該控制項。  如同 AppLocker，Windows Defender 應用程式控制可以透過群組原則加以控制，並以特定使用者為目標。  有關如何使用 Windows Defender 應用程式控制限制應用程式使用方式，詳細資訊請參閱 TechNet 文章 [Windows Defender 應用程式控制部署指南](/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide)。
 
-3. **使用 Protected Users、驗證原則和驗證定址接收器進一步保護特殊權限帳戶**。  Protected Users 的成員受制於其他安全性原則，這些原則可保護本機安全性代理程式 (LSA) 中所儲存的認證，並大幅降低認證竊取和重複使用的風險。  驗證原則和定址接收器可控制特殊權限使用者如何存取網域中的資源。  整體而言，這些防護可大幅增強這些特殊權限使用者的帳戶安全性。  如需有關這些功能的其他詳細資訊，請參閱[如何設定受保護的帳戶](https://technet.microsoft.com/library/dn518179.aspx)網路文章。
+3. **使用 Protected Users、驗證原則和驗證定址接收器進一步保護特殊權限帳戶**。  Protected Users 的成員受制於其他安全性原則，這些原則可保護本機安全性代理程式 (LSA) 中所儲存的認證，並大幅降低認證竊取和重複使用的風險。  驗證原則和定址接收器可控制特殊權限使用者如何存取網域中的資源。  整體而言，這些防護可大幅增強這些特殊權限使用者的帳戶安全性。  如需有關這些功能的其他詳細資訊，請參閱[如何設定受保護的帳戶](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn518179(v=ws.11))網路文章。
 
    > [!NOTE]
    > 這些防護的用意在於補強，而不是取代階段 1 中現有的安全性措施。  系統管理員仍然應該將不同的帳戶用於系統管理和一般用途。
@@ -953,7 +953,7 @@ PAW 必須具備反惡意程式碼功能，而且必須快速套用軟體更新�
 |方法|考量|
 |------|---------|
 |PAW 中的預設值<p>-   Windows Server Update Services<br />-   Windows Defender|-   不需要額外成本<br />-   執行基本的必要安全性功能<br />-   隨附在本指導方針中的指示|
-|使用 [Intune](https://technet.microsoft.com/library/jj676587.aspx) 管理|<ul><li>提供雲端式的可見度及控制<p><ul><li>軟體部署</li><li>o   管理軟體更新</li><li>Windows 防火牆原則管理</li><li>反惡意程式碼防護</li><li>遠端協助</li><li>軟體授權管理。</li></ul></li><li>不需要伺服器基礎結構</li><li>需要遵循階段 2 中的「啟用雲端服務的連線」步驟</li><li>如果 PAW 電腦未加入網域，這需要使用安全性基準下載所提供的工具，將 SCM 基準套用至本機映像。</li></ul>|
+|使用 [Intune](/mem/intune/) 管理|<ul><li>提供雲端式的可見度及控制<p><ul><li>軟體部署</li><li>o   管理軟體更新</li><li>Windows 防火牆原則管理</li><li>反惡意程式碼防護</li><li>遠端協助</li><li>軟體授權管理。</li></ul></li><li>不需要伺服器基礎結構</li><li>需要遵循階段 2 中的「啟用雲端服務的連線」步驟</li><li>如果 PAW 電腦未加入網域，這需要使用安全性基準下載所提供的工具，將 SCM 基準套用至本機映像。</li></ul>|
 |用於管理 PAW 的新 System Center 執行個體|-   提供設定、軟體部署和安全性更新的可見度及控制<br />-   需要不同的伺服器基礎結構，將其固定至 PAW 的層級，並為這些高特殊權限的人員提供專業人員的技能|
 |使用現有的管理工具管理 PAW|-   除非將現有的管理基礎結構培養到 PAW 的安全性層級，否則會對 PAW 的危害造成相當重大的風險 **附註︰**   除非您的組織有使用這種方法的特定原因，否則 Microsoft 通常不建議這麼做。 根據我們的經驗，將所有這些工具 (及其安全性相依項目) 都培養到 PAW 的安全性層級，通常需要非常高的成本。<br />-   其中大部分的工具都提供設定、軟體部署和安全性更新的可見度及控制|
 |需要系統管理員存取權的安全性掃描或監視工具|包含可安裝代理程式的任何工具，或需要具有本機系統管理存取權的帳戶。<p>-   需要將工具安全保證培養到 PAW 的層級。<br />-   可能需要降低 PAW 的安全性情勢，才能支援工具功能 (開放連接埠、安裝 Java 或其他中介軟體等)，進而產生安全性取捨決策，|
@@ -982,7 +982,7 @@ PAW 解決方案應該根據乾淨來源準則，使用[操作標準](https://ak
 ### <a name="set-up-the-host-guardian-service"></a>設定主機守護者服務
 
 主機守護者服務 (HGS) 負責證明實體 PAW 裝置的身分識別與健康情況。
-只有 HGS 已知的電腦和執行受信任[程式碼完整性原則](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control)的電腦，才可以啟動受防護的 VM。
+只有 HGS 已知的電腦和執行受信任[程式碼完整性原則](/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control)的電腦，才可以啟動受防護的 VM。
 這有助於保護受防護的 VM 對抗使用者桌面環境的威脅，讓 VM 執行受信任的工作負載來管理您的階層式資源。
 
 由於 HGS 負責判斷哪些裝置可以執行 PAW VM，因此會被視為第 0 層資源。
@@ -1076,11 +1076,11 @@ New-ShieldingDataFile -Policy Shielded -BindToHostTpm [...]
 
 [Microsoft 進階威脅分析](https://aka.ms/ata)
 
-[使用 Credential Guard 保護衍生的網域認證](https://technet.microsoft.com/library/mt483740%28v=vs.85%29.aspx)
+[使用 Credential Guard 保護衍生的網域認證](/windows/security/identity-protection/credential-guard/credential-guard)
 
-[Device Guard 概觀](https://technet.microsoft.com/library/dn986865(v=vs.85).aspx)
+[Device Guard 概觀](/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control)
 
-[使用安全的系統管理工作站保護高價值的資產](https://msdn.microsoft.com/library/mt186538.aspx)
+[使用安全的系統管理工作站保護高價值的資產](/previous-versions//mt186538(v=technet.10))
 
 [Dave Probert 主講：Windows 10 中隔離的使用者模式 (第 9 頻道)](https://channel9.msdn.com/Blogs/Seth-Juarez/Isolated-User-Mode-in-Windows-10-with-Dave-Probert)
 
@@ -1092,8 +1092,8 @@ New-ShieldingDataFile -Policy Shielded -BindToHostTpm [...]
 
 [在 Windows Kerberos 中啟用嚴格 KDC 驗證](https://www.microsoft.com/download/details.aspx?id=6382)
 
-[Windows Server 2012 Kerberos 驗證的新功能](https://technet.microsoft.com/library/hh831747.aspx)
+[Windows Server 2012 Kerberos 驗證的新功能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831747(v=ws.11))
 
-[Windows Server 2008 R2 中 AD DS 的驗證機制保證逐步指南](https://technet.microsoft.com/library/dd378897(v=ws.10).aspx)
+[Windows Server 2008 R2 中 AD DS 的驗證機制保證逐步指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378897(v=ws.10))
 
 [信賴平台模組](C:/sd/docs/p_ent_keep_secure/p_ent_keep_secure/trusted_platform_module_technology_overview.xml)

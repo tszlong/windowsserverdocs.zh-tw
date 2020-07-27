@@ -9,12 +9,12 @@ ms.topic: article
 ms.assetid: 0f402ae3-5391-4c7d-afea-2c5c9044de46
 author: heidilohr
 manager: lizross
-ms.openlocfilehash: f73f28500c136ec8bdd32084cc5949f5e9804699
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 434d4910e8718747c07fc7378eb37d9ff4e85710
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80818521"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966700"
 ---
 # <a name="azure-services-and-considerations-for-desktop-hosting"></a>桌面主機的 Azure 服務與考量
 
@@ -32,7 +32,7 @@ ms.locfileid: "80818521"
 
 租用戶元件會在於隔離網路上彼此通訊的虛擬機器上執行。 在部署程序中，您可以使用遠端桌面通訊協定端點或遠端 PowerShell 端點，透過 Azure Load Balancer 從外部存取這些虛擬機器。 部署完成之後，通常會刪除這些端點以縮小受攻擊面。 為執行 RD Web 和 RD 閘道元件的虛擬機器所建立唯一端點會是 HTTPS 和 UDP 端點。 這可讓網際網路上的用戶端連線到租用戶桌面主機服務中執行的工作階段。 如果使用者開啟連線到網際網路的應用程式 (例如網頁瀏覽器)，則會透過 Azure Load Balancer 傳遞連線。  
   
-如需詳細資訊，請參閱[什麼是 Azure Load Balancer？](https://azure.microsoft.com/documentation/articles/virtual-machines-linux-load-balance/)
+如需詳細資訊，請參閱[什麼是 Azure Load Balancer？](/azure/load-balancer/load-balancer-overview)
   
 ## <a name="security-considerations"></a>安全性考量
 
@@ -45,9 +45,9 @@ ms.locfileid: "80818521"
   
 如需詳細資訊，請參閱下列文章：
 
-- [Security and protection](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831778(v=ws.11)) (安全性與保護)  
-- [Security best practices for IIS 8](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj635855(v=ws.11)) (IIS 8 的安全性最佳做法)  
-- [Secure Windows Server 2012 R2](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831360(v=ws.11)) (保護 Windows Server 2012 R2)  
+- [Security and protection](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831778(v=ws.11)) (安全性與保護)  
+- [Security best practices for IIS 8](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj635855(v=ws.11)) (IIS 8 的安全性最佳做法)  
+- [Secure Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831360(v=ws.11)) (保護 Windows Server 2012 R2)  
   
 ## <a name="design-considerations"></a>設計考量
 
@@ -61,13 +61,13 @@ ms.locfileid: "80818521"
   
 如需詳細資訊，請參閱下列文章：
 
-- [Sizes for Cloud Services](https://docs.microsoft.com/azure/cloud-services/cloud-services-sizes-specs) (雲端服務的大小)  
+- [Sizes for Cloud Services](/azure/cloud-services/cloud-services-sizes-specs) (雲端服務的大小)  
 - [Microsoft Azure 虛擬機器定價詳細資料](https://azure.microsoft.com/pricing/details/virtual-machines/)  
-- [Hyper-V overview](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11)) (Hyper-V 概觀)  
-- [Azure Storage scalability and performance targets](https://docs.microsoft.com/azure/storage/common/storage-scalability-targets) (Azure 儲存體延展性和效能目標)  
+- [Hyper-V overview](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831531(v=ws.11)) (Hyper-V 概觀)  
+- [Azure Storage scalability and performance targets](/azure/storage/common/storage-scalability-targets) (Azure 儲存體延展性和效能目標)  
 
 ## <a name="azure-active-directory-application-proxy"></a>Azure Active Directory 應用程式 Proxy
 
 Azure Active Directory (AD) 應用程式 Proxy 是 Azure AD 付費 SKU 中所提供的一項服務，可讓使用者透過 Azure 自己的反向 Proxy 服務連線到內部應用程式。 這讓 RD Web 和 RD 閘道端點可以在虛擬網路內隱藏，而不需要透過公用 IP 位址對網際網路公開。 主機服務提供者可以使用 Azure AD 應用程式 Proxy 來壓縮租用戶環境中的虛擬機器數目，同時仍保有完整的部署。 Azure AD 應用程式 Proxy 也支援 Azure AD 所提供的多項優點，例如條件式存取和多重要素驗證。
 
-如需詳細資訊，請參閱[開始使用應用程式 Proxy 並安裝連接器](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-enable)。
+如需詳細資訊，請參閱[開始使用應用程式 Proxy 並安裝連接器](/azure/active-directory/manage-apps/application-proxy-enable)。

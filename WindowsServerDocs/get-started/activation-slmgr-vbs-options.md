@@ -12,12 +12,12 @@ appliesto:
 - Windows Server 2012 R2
 - Windows 10
 - Windows 8.1
-ms.openlocfilehash: c0d8019812144cc3e4bd33cfaf2ca2c0c1b7eefa
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 0de9d7496266afba4b76e5b837dc68e4f9745518
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473175"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962730"
 ---
 # <a name="slmgrvbs-options-for-obtaining-volume-activation-information"></a>用於取得大量啟用資訊的 Slmgr.vbs 選項
 
@@ -35,7 +35,7 @@ slmgr.vbs [<ComputerName> [<User> <Password>]] [<Options>]
 
 ## <a name="using-slmgr-on-remote-computers"></a>在遠端電腦上使用 Slmgr
 
-若要管理遠端用戶端，請使用大量啟用管理工具 (VAMT) 1.2 版或更新版本，或建立能夠感知平台之間差異的自訂 WMI 指令碼。 如需大量啟用的 WMI 屬性和方法詳細資訊，請參閱[大量啟用的 WMI 屬性和方法](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn502536(v=ws.11))。
+若要管理遠端用戶端，請使用大量啟用管理工具 (VAMT) 1.2 版或更新版本，或建立能夠感知平台之間差異的自訂 WMI 指令碼。 如需大量啟用的 WMI 屬性和方法詳細資訊，請參閱[大量啟用的 WMI 屬性和方法](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502536(v=ws.11))。
 
 > [!IMPORTANT]
 > 由於 Windows 7 和 Windows Server 2008 R2 中的 WMI 變更，Slmgr.vbs 指令碼不能跨平台運作。 不支援從 Windows Vista&reg; 作業系統使用 Slmgr.vbs 來管理 Windows 7 或 Windows Server 2008 R2 系統。 嘗試從 Windows 7 或 Windows Server 2008 R2 管理較舊的系統將會產生特定的版本不符錯誤。 例如，執行 **cscript slmgr.vbs \<vista\_machine\_name\> /dlv** 會產生下列輸出：
@@ -69,7 +69,7 @@ slmgr.vbs [<ComputerName> [<User> <Password>]] [<Options>]
 |\/cpky |在全新體驗 (OOBE) 操作期間，某些服務操作需要登錄中有產品金鑰。 **/cpky** 選項會從登錄移除產品金鑰，以防止此金鑰遭惡意程式碼盜用。<br />對於部署金鑰的零售版安裝，建議的最佳作法是執行此選項。 此選項並不需要 MAK 和 KMS 主機金鑰，因為這是這些金鑰的預設行為。 當預設行為不是從登錄清除金鑰時，其他類型的金鑰才需要此選項。<br />此作業必須在已提升權限的命令提示字元視窗中執行。 |
 |\/ilc&nbsp;&lt;license_file&gt; |此選項會安裝必要參數所指定的授權檔案。 這些授權可能會安裝來做為疑難排解之用，以支援權杖型啟用，或做為手動安裝初始應用程式的一部分。<br />在此程序期間內不會驗證授權：授權驗證超出 Slmgr.vbs 的範圍。 相反地，驗證會由軟體保護服務在執行階段處理。<br />必須從已提升權限的命令提示字元視窗中執行此作業，或者必須設定 [標準使用者作業] 登錄值，才能允許未獲授權的使用者具有軟體保護服務的額外存取權。 |
 |\/rilc |這個選項會重新安裝存放在 %SystemRoot%\system32\oem 及 %SystemRoot%\System32\spp\tokens 中的所有授權。 這些是在安裝期間存放的「正確」複本。<br />信任存放區中任何相符的授權都會被取代。 任何其他授權 (例如信任授權單位 (TA) 發行授權 (IL)、應用程式的授權)，都不會受到影響。<br />必須在已提升權限的命令提示字元視窗中執行此作業，或者必須設定 [標準使用者作業] 登錄值，才能允許未獲授權的使用者具有軟體保護服務的額外存取權。 |
-|\/rearm |這個選項會重設啟用計時器。 **/rearm** 處理程序也會由 **sysprep /generalize** 呼叫。<br />如果 **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform\SkipRearm** 登錄項目設定為 **1**，此作業就不會執行任何動作。 如需此登錄項目的詳細資訊，請參閱[大量啟用的登錄設定](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn502532(v=ws.11))。<br />必須在已提升權限的命令提示字元視窗中執行此作業，或者必須設定 [標準使用者作業] 登錄值，才能允許未獲授權的使用者具有軟體保護服務的額外存取權。 |
+|\/rearm |這個選項會重設啟用計時器。 **/rearm** 處理程序也會由 **sysprep /generalize** 呼叫。<br />如果 **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform\SkipRearm** 登錄項目設定為 **1**，此作業就不會執行任何動作。 如需此登錄項目的詳細資訊，請參閱[大量啟用的登錄設定](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502532(v=ws.11))。<br />必須在已提升權限的命令提示字元視窗中執行此作業，或者必須設定 [標準使用者作業] 登錄值，才能允許未獲授權的使用者具有軟體保護服務的額外存取權。 |
 |\/rearm-app &lt;Application&nbsp;ID&gt; |重設指定應用程式的授權狀態。 |
 |\/rearm-sku &lt;Application&nbsp;ID&gt; |重設指定 SKU 的授權狀態。 |
 |\/upk&nbsp;\[&lt;Application&nbsp;ID&gt;] |這個選項會解除安裝目前 Windows 版本的產品金鑰。 重新啟動之後，系統將會變成未授權狀態，除非安裝新的產品金鑰。<br />或者，您可以使用 \<**Activation ID**\> 參數來指定不同的已安裝產品。<br />此作業必須從已提升權限的命令提示字元視窗中執行。 |
@@ -123,6 +123,5 @@ slmgr.vbs [<ComputerName> [<User> <Password>]] [<Options>]
 
 ## <a name="additional-references"></a>其他參考資料
 
-- [大量啟用技術參考](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn502529%28v%3dws.11%29)
-- [大量啟用概觀](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831612%28v%3dws.11%29)
-
+- [大量啟用技術參考](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502529%28v%3dws.11%29)
+- [大量啟用概觀](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831612%28v%3dws.11%29)

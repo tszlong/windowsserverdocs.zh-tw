@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: f8ad7ca8fedfa3493a7f5369f8f603913879b50d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: f866127bc43df307ac1a6a1fa44daac91ada5dcd
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475425"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966080"
 ---
 # <a name="change-a-dynamic-disk-back-to-a-basic-disk"></a>將動態磁碟變更回基本磁碟
 
@@ -70,4 +70,4 @@ ms.locfileid: "85475425"
 
 ## <a name="additional-references"></a>其他參考資料
 
--   [Command-line syntax notation](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx) (命令列語法標記法)
+-   [Command-line syntax notation](/previous-versions/orphan-topics/ws.11/cc742449(v=ws.11)) (命令列語法標記法)

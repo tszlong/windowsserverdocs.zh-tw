@@ -9,12 +9,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 09/07/2016
 manager: dongill
-ms.openlocfilehash: 86c5f59fcd403e838a316174840b93608d7f06ec
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 36996d7f69c33198587dbe5297650c16ffeb1da2
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80858141"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959320"
 ---
 # <a name="remote-desktop-services---high-availability"></a>遠端桌面服務 - 高可用性
 
@@ -23,10 +23,10 @@ ms.locfileid: "80858141"
 在大規模的系統中，失敗和節流是難以避免的。 您可以輕鬆設定遠端桌面基礎結構角色以支援高可用性，並且讓使用者每次都能順暢地連線。
 
 在遠端桌面服務中，下列項目代表遠端桌面基礎結構角色，且分別可依循其各自的指南建立高可用性：
-- [遠端桌面連線代理人](Deploy-a-Remote-Desktop-Connection-Broker-cluster.md)
-- [遠端桌面閘道](Deploy-a-RD-Web-Access-and-Gateway-farm.md)
+- [遠端桌面連線代理人](./rds-connection-broker-cluster.md)
+- [遠端桌面閘道](./rds-rdweb-gateway-ha.md)
 - 遠端桌面授權
-- [遠端桌面 Web 存取](Deploy-a-RD-Web-Access-and-Gateway-farm.md)
+- [遠端桌面 Web 存取](./rds-rdweb-gateway-ha.md)
 
 建立高可用性的方法是將每個角色服務複製到第二個機器上。 在 Azure 中，您只要將兩個一組的虛擬機器 (託管相同角色) 放在可用性設定組中，就可以有可預期的運作時間。
 

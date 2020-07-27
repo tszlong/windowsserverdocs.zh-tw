@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 00335fb2ca7a54031430c6c606fb6ffa23a8f7a2
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 08a315dc362d7de872f47ca702c4401eb327245a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80855131"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966180"
 ---
 # <a name="active-directory-administrative-tier-model"></a>Active Directory 系統管理層模型
 
@@ -133,7 +133,7 @@ ms.locfileid: "80855131"
 
 控制關聯性可透過許多方式來引進，包括像是檔案系統之物件上的安全性存取控制清單 (ACL)、電腦上本機系統管理員群組中的成員，或者在以系統身分執行的電腦上所安裝的代理程式 (能夠執行任意的程式碼與指令碼)。
 
-經常遭到忽略的範例是透過登入公開，這會藉由將系統的系統管理認證公開至另一個系統來建立控制關聯性。 這就是為什麼認證竊取攻擊 (例如傳送雜湊) 的作用力如此強大的基本原因。 當系統管理員使用第 0 層認證來登入標準使用者桌面時，他們會將這些認證公開至該桌面、讓它能夠控制 AD，並建立連到 AD 的提高權限路徑。 如需這些攻擊的詳細資訊，請參閱[本頁](https://technet.microsoft.com/security/dn785092)。
+經常遭到忽略的範例是透過登入公開，這會藉由將系統的系統管理認證公開至另一個系統來建立控制關聯性。 這就是為什麼認證竊取攻擊 (例如傳送雜湊) 的作用力如此強大的基本原因。 當系統管理員使用第 0 層認證來登入標準使用者桌面時，他們會將這些認證公開至該桌面、讓它能夠控制 AD，並建立連到 AD 的提高權限路徑。 如需這些攻擊的詳細資訊，請參閱[本頁](/previous-versions/dn785092(v=msdn.10))。
 
 由於有大量資產相依於像是 Active Directory 的身分識別系統，您應該盡可能減少 Active Directory 和網域控制站相依的系統數量。
 
@@ -464,7 +464,7 @@ ms.locfileid: "80855131"
 > [!NOTE]
 > 這種方法適合用來進行 Active Directory 的系統管理，但有許多應用程式不適合使用標準信任透過外部樹系的帳戶來管理。
 
-此圖說明第 0 層資產的系統管理所使用的 ESAE 樹系，以及設定來與搭配使用 Microsoft Identity Manager 的 Privileged Access Management 功能的 PRIV 樹系。 如需部署 MIM PAM 執行個體的詳細資訊，請參閱 [Active Directory 網域服務 (AD DS) 的特殊權限身分識別管理](https://technet.microsoft.com/library/mt150258.aspx)。
+此圖說明第 0 層資產的系統管理所使用的 ESAE 樹系，以及設定來與搭配使用 Microsoft Identity Manager 的 Privileged Access Management 功能的 PRIV 樹系。 如需部署 MIM PAM 執行個體的詳細資訊，請參閱 [Active Directory 網域服務 (AD DS) 的特殊權限身分識別管理](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services)。
 
 ![此圖顯示第 0 層資產的系統管理所使用的 ESAE 樹系，以及設定來與 Microsoft Identity Manager 的特殊權限存取管理功能搭配使用的 PRIV 樹系](../media/securing-privileged-access-reference-material/PAW_RM_Fig14.JPG)
 
@@ -509,12 +509,12 @@ ms.locfileid: "80855131"
    - 完整磁碟區加密可減輕實體電腦遺失，例如在遠端使用的系統管理膝上型電腦。
 
       > [!NOTE]
-      > 如需詳細資訊，請參閱 [BitLocker](https://technet.microsoft.com/library/dn641993.aspx)。
+      > 如需詳細資訊，請參閱 [BitLocker](/previous-versions/windows/it-pro/windows-8.1-and-8/dn641993(v=ws.11))。
 
    - USB 限制可用來防禦實體感染媒介。
 
       > [!NOTE]
-      > 如需詳細資訊，請參閱[控制抽取式裝置或媒體的讀取或寫入權限](https://technet.microsoft.com/library/cc730808(v=ws.10).aspx)。
+      > 如需詳細資訊，請參閱[控制抽取式裝置或媒體的讀取或寫入權限](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730808(v=ws.10))。
 
    - 網路隔離可防禦網路攻擊和不當的系統管理動作。 主機防火牆應封鎖所有的連入連線 (明確要求的連入連線除外)，以及封鎖所有連出的網際網路存取。
 
@@ -608,7 +608,7 @@ ms.locfileid: "80855131"
 - (-) 表示不會公開認證時。
 - (+) 表示會公開認證時。
 
-對於不在此表格中的管理應用程式，您可以從稽核登入事件的登入類型欄位判斷登入類型。 如需詳細資訊，請參閱[稽核登入事件](https://technet.microsoft.com/library/cc787567(v=ws.10).aspx)。
+對於不在此表格中的管理應用程式，您可以從稽核登入事件的登入類型欄位判斷登入類型。 如需詳細資訊，請參閱[稽核登入事件](/previous-versions/windows/it-pro/windows-server-2003/cc787567(v=ws.10))。
 
 在 Windows 架構的電腦中，所有的驗證都會當成數個登入類型之一來處理，而不論所使用的驗證通訊協定或驗證器為何。 此表格包含最常見的登入類型及其相對於認證竊取的屬性：
 
@@ -631,4 +631,4 @@ ms.locfileid: "80855131"
 - **範例**會列出使用該登入類型的常見案例。
 
 > [!NOTE]
-> 如需登入類型的詳細資訊，請參閱 [SECURITY_LOGON_TYPE 列舉](https://technet.microsoft.com/library/aa380129(VS.85).aspx)。
+> 如需登入類型的詳細資訊，請參閱 [SECURITY_LOGON_TYPE 列舉](/windows/win32/api/ntsecapi/ne-ntsecapi-security_logon_type)。

@@ -10,12 +10,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e13886395040619a7509c3cf896112288c48115
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: d2a1627a0a941f12da4731291a032e4b2e1ad887
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "74945212"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962020"
 ---
 # <a name="features-removed-or-deprecated-in--windows-server-2016"></a>Windows Server 2016 的已移除或過時功能
 
@@ -31,7 +31,7 @@ ms.locfileid: "74945212"
 下列特性與功能已從這個版本的 Windows Server 2016 中移除。 除非您使用其他替代方法，否則與這些功能相依的應用程式、程式碼或使用方式，將無法在這個版本中運作。  
 
 > [!NOTE]  
-> 如果您是從 Windows Server 2012 R2 或 Windows Server 2012 之前的伺服器版本移至 Windows Server 2016，也應該檢閱 [Windows Server 2012 R2 已移除或過時的功能](https://technet.microsoft.com/library/dn303411.aspx)和 [Windows Server 2012 已移除或過時的功能](https://technet.microsoft.com/library/hh831568.aspx)。  
+> 如果您是從 Windows Server 2012 R2 或 Windows Server 2012 之前的伺服器版本移至 Windows Server 2016，也應該檢閱 [Windows Server 2012 R2 已移除或過時的功能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303411(v=ws.11))和 [Windows Server 2012 已移除或過時的功能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831568(v=ws.11))。  
 
 ### <a name="share-and-storage-management"></a>共用與存放管理
 
@@ -49,7 +49,7 @@ Journal.dll 已從 Windows Server 2016 中移除。 沒有任何取代項目。
 
 ### <a name="security-configuration-wizard"></a>安全性設定精靈
 
-「安全性設定精靈」已經移除。 目前，功能依預設會受到保護。 如果您需要控制特定的安全性設定，您可以使用群組原則或 [Microsoft Security Compliance Manager](https://technet.microsoft.com/solutionaccelerators/cc835245.aspx)。  
+「安全性設定精靈」已經移除。 目前，功能依預設會受到保護。 如果您需要控制特定的安全性設定，您可以使用群組原則或 [Microsoft Security Compliance Manager](/previous-versions/tn-archive/cc936627(v=technet.10))。  
 
 ### <a name="sqm"></a>SQM
 
@@ -79,7 +79,7 @@ Journal.dll 已從 Windows Server 2016 中移除。 沒有任何取代項目。
 
 -   **Scregedit.exe** 已淘汰。 如果您的指令碼相依於 Scregedit.exe，請調整它們以使用 Reg.exe 或 Windows PowerShell 方法。  
 
--   **Sconfig.exe** 已淘汰。 請改用 [Sconfig.cmd](https://docs.microsoft.com/windows-server/get-started/sconfig-on-ws2016)。 
+-   **Sconfig.exe** 已淘汰。 請改用 [Sconfig.cmd](./sconfig-on-ws2016.md)。 
 
 ### <a name="netcfg-custom-apis"></a>NetCfg 自訂 API
 

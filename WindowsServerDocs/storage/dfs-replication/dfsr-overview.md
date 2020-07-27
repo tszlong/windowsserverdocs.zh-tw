@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 8164032ff4071facb33c1df0edf44dcc86a6d918
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 380c8ba0e91db47c3313542b2d294a516f7a9466
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475415"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961180"
 ---
 # <a name="dfs-replication-overview"></a>DFS 複寫概觀
 
@@ -50,18 +50,18 @@ DFS 複寫使用的壓縮演算法稱為遠端差異壓縮 (RDC)。 RDC 會偵�
 
 在 Azure 的虛擬機器上使用 DFS 複寫已經過 Windows Server 測試，但您必須遵循一些限制和需求。
 
-- 使用快照或儲存的狀態來還原執行 DFS 複寫進行 SYSVOL 資料夾以外任何內容之複寫工作的伺服器，會造成 DFS 複寫失敗，因為這項工作需要特殊的資料庫復原步驟。 同樣地，請勿匯出、再製或複製虛擬機器。 如需詳細資訊，請參閱 Microsoft 知識庫的文章 [2517913](https://support.microsoft.com/kb/2517913) ，以及 [安全地虛擬化 DFSR](https://blogs.technet.microsoft.com/filecab/2013/04/05/safely-virtualizing-dfsr/)。
+- 使用快照或儲存的狀態來還原執行 DFS 複寫進行 SYSVOL 資料夾以外任何內容之複寫工作的伺服器，會造成 DFS 複寫失敗，因為這項工作需要特殊的資料庫復原步驟。 同樣地，請勿匯出、再製或複製虛擬機器。 如需詳細資訊，請參閱 Microsoft 知識庫的文章 [2517913](https://support.microsoft.com/kb/2517913) ，以及 [安全地虛擬化 DFSR](https://techcommunity.microsoft.com/t5/storage-at-microsoft/safely-virtualizing-dfsr/ba-p/424671)。
 - 備份虛擬機器裝載的複寫資料夾中的資料時，您必須使用客體虛擬機器內的備份軟體。
 - DFS 複寫需要存取實體或虛擬化網域控制站 – 其不能直接與 Azure AD 通訊。
-- DFS 複寫需要您的內部部署複寫群組成員，與裝載在 Azure VM 中的任何成員之間的 VPN 連線。 您也需要設定內部部署路由器 (例如 Forefront Threat Management Gateway)，允許 RPC 端點對應程式 (連接埠 135) 和 49152 到 65535 之間隨機指派的連接埠通過 VPN 連線。 您可以使用 Set-DfsrMachineConfiguration Cmdlet 或 Dfsrdiag 命令列工具來指定靜態連接連接埠，而不是隨機的連接連接埠。 如需有關如何指定 DFS 複寫的靜態連接埠詳細資訊，請參閱 [Set-DfsrServiceConfiguration](https://docs.microsoft.com/powershell/module/dfsr/set-dfsrserviceconfiguration)。 如需開啟用於管理 Windows Server 的相關連接埠的詳細資訊，請參閱 Microsoft 知識庫文章 [832017](https://support.microsoft.com/kb/832017) 。
+- DFS 複寫需要您的內部部署複寫群組成員，與裝載在 Azure VM 中的任何成員之間的 VPN 連線。 您也需要設定內部部署路由器 (例如 Forefront Threat Management Gateway)，允許 RPC 端點對應程式 (連接埠 135) 和 49152 到 65535 之間隨機指派的連接埠通過 VPN 連線。 您可以使用 Set-DfsrMachineConfiguration Cmdlet 或 Dfsrdiag 命令列工具來指定靜態連接連接埠，而不是隨機的連接連接埠。 如需有關如何指定 DFS 複寫的靜態連接埠詳細資訊，請參閱 [Set-DfsrServiceConfiguration](/powershell/module/dfsr/set-dfsrserviceconfiguration)。 如需開啟用於管理 Windows Server 的相關連接埠的詳細資訊，請參閱 Microsoft 知識庫文章 [832017](https://support.microsoft.com/kb/832017) 。
 
-若要深入瞭解如何開始使用 Azure 虛擬機器，請造訪 [Microsoft Azure 網站](https://docs.microsoft.com/azure/virtual-machines/)。
+若要深入瞭解如何開始使用 Azure 虛擬機器，請造訪 [Microsoft Azure 網站](/azure/virtual-machines/)。
 
 ## <a name="installing-dfs-replication"></a>安裝 DFS 複寫
 
 DFS 複寫是檔案和存放服務角色的一部分。 DFS 管理工具 (DFS 管理、適用於 Windows PowerShell 的 DFS 複寫模組以及命令列工具) 是獨立安裝的，屬於遠端伺服器管理工具的一部分。
 
-使用 [Windows Admin Center](../../manage/windows-admin-center/understand/windows-admin-center.md)、伺服器管理員或 PowerShell 來安裝 DFS 複寫，如後續幾節所述。
+使用 [Windows Admin Center](../../manage/windows-admin-center/overview.md)、伺服器管理員或 PowerShell 來安裝 DFS 複寫，如後續幾節所述。
 
 ### <a name="to-install-dfs-by-using-server-manager"></a>使用 [伺服器管理員] 安裝 DFS
 
@@ -104,9 +104,9 @@ Install-WindowsFeature "FS-DFS-Replication", "RSAT-DFS-Mgmt-Con"
 
 ## <a name="additional-references"></a>其他參考資料
 
-- [DFS 命名空間和 DFS 複寫概觀](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v%3dws.11))
-- [檢查清單：部署 DFS 複寫](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772201(v%3dws.11))
-- [檢查清單：管理 DFS 複寫](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755035(v%3dws.11))
-- [部署 DFS 複寫](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770925(v%3dws.11))
-- [管理 DFS 複寫](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770925(v%3dws.11))
-- [針對 DFS 複寫進行疑難排解](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732802(v%3dws.11))
+- [DFS 命名空間和 DFS 複寫概觀](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj127250(v%3dws.11))
+- [檢查清單：部署 DFS 複寫](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc772201(v%3dws.11))
+- [檢查清單：管理 DFS 複寫](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc755035(v%3dws.11))
+- [部署 DFS 複寫](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc770925(v%3dws.11))
+- [管理 DFS 複寫](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc770925(v%3dws.11))
+- [針對 DFS 複寫進行疑難排解](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc732802(v%3dws.11))

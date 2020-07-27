@@ -9,12 +9,12 @@ ms.topic: article
 ms.assetid: 2a44dc9f-c221-4bf7-89c3-fb4c86a90f8c
 author: jaimeo
 manager: dougkim
-ms.openlocfilehash: 2ab78ccbc4e49bd95a74fe1e17d5ea14891eb1b8
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4d666abea6ab79ee29bd5bf93255426289c8deee
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857271"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963360"
 ---
 # <a name="recommended-settings-for-vdi-desktops"></a>建議的 VDI 桌面設定
 
@@ -31,7 +31,7 @@ Microsoft Desktop Virtualization 會透過即時設定公司的應用程式和�
 > [!NOTE]
 > 本主題中未特別提及的所有設定都可以保留其預設值 (或根據您的需求和原則設定)，而不會明顯影響 VDI 功能。
 
-當您建立映像以作為 VDI 部署的基礎時，請務必使用**最新分支**。 如需有關最新分支的詳細資訊，請參閱 [Windows 10 版本資訊](https://technet.microsoft.com/windows/release-info.aspx)。
+當您建立映像以作為 VDI 部署的基礎時，請務必使用**最新分支**。 如需有關最新分支的詳細資訊，請參閱 [Windows 10 版本資訊](/archive/blogs/mniehaus/windows-10-1607-keeping-apps-from-coming-back-when-deploying-the-feature-update)。
 
 ## <a name="creating-the-windows-10-image"></a>建立 Windows 10 映像
 第一個步驟是在實體電腦或虛擬機器上安裝 Windows 10 1607 (版本 10.0.1393) 的參照映像。 安裝至虛擬機器很簡單，而可讓您儲存虛擬硬碟 (VHD) 檔案的版本，以防您想要回復到舊版。

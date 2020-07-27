@@ -9,19 +9,19 @@ ms.topic: article
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 094e4ffdee8480886700a4967ef2281008aad965
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: bc38c21435ba3340f5ffb1aab9d274ec9da1620c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826541"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964060"
 ---
 # <a name="get-started-with-windows-server-2016"></a>開始使用 Windows Server 2016
 
 >適用於：Windows Server 2016
 
 > [!TIP]
-> 尋找舊版 Windows Server 的相關資訊嗎？ 查看我們其他位於 docs.microsoft.com 的 [Windows Server 文件庫](/previous-versions/windows/)。 您也可以[搜尋這個網站](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)以取得特定資訊。
+> 尋找舊版 Windows Server 的相關資訊嗎？ 查看我們其他位於 docs.microsoft.com 的 [Windows Server 文件庫](/previous-versions/windows/)。 您也可以[搜尋這個網站](/search/index?dataSource=previousVersions&search=Windows Server)以取得特定資訊。
 
 ![圖示顯示包含核取記號的方塊](../media/landing-icons/getstarted.png)此集合包含詳細資訊，可協助您判斷是否已準備好移至 Windows Server 2016。 檢查系統需求、升級選項，以及移至 Windows Server 2016 的其他資訊之後，即可回到主要 [Windows Server 2016](Windows-Server-2016.md) 中樞，並開始往下安裝您需要的最佳版本和安裝選項。 
 
@@ -52,5 +52,3 @@ SQL 是否作用於 Windows Server 2016？ 執行 Exchange 所需的步驟為何
 
 ## <a name="server-activation-guide"></a>[伺服器啟用指南](Server-2016-activation.md)
 啟用 Windows Server 2016 本身和其他使用 Windows Server 2016 的作業系統的基本資訊。
-
-

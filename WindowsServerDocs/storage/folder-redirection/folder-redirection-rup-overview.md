@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a2a76c0cdd4433ecdf445bcde01f8af5bae66a7
-ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
+ms.openlocfilehash: 74a181e53e5aea0a3c146b38c0b73f257baa45ef
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85548873"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961550"
 ---
 # <a name="folder-redirection-offline-files-and-roaming-user-profiles-overview"></a>資料夾重新導向、離線檔案及漫遊使用者設定檔概觀
 
@@ -88,7 +88,7 @@ ms.locfileid: "85548873"
 
 利用成本感知同步處，Windows 會在計量付費連線上自動追蹤漫遊及頻寬使用限制。 當使用者在漫遊、接近頻寬限制或超過限制時，Windows 會切換到離線模式並防止執行所有的同步處理。 使用者仍可手動啟動同步處理，系統管理員可以覆寫特定使用者 (例如行政人員) 的成本感知同步處理。
 
-如需詳細資訊，請參閱 [Enable Background File Synchronization on Metered Networks](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj127408(v%3dws.11))。
+如需詳細資訊，請參閱 [Enable Background File Synchronization on Metered Networks](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj127408(v%3dws.11))。
 
 ## <a name="primary-computers-for-folder-redirection-and-roaming-user-profiles"></a>資料夾重新導向及漫遊使用者設定檔的主要電腦
 
@@ -133,6 +133,6 @@ ms.locfileid: "85548873"
 | --- | --- |
 | 產品評估 | [使用可靠的檔案服務與儲存裝置支援資訊工作者](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831495(v%3dws.11)>)<br>[離線檔案的新功能](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff183315(v=ws.10)>)(Windows 7 和 Windows Server 2008 R2)<br>[Windows Vista 中離線檔案的新功能](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc749449(v=ws.10)>)<br>[Windows Vista 中離線檔案的變更](<https://technet.microsoft.com/library/2007.11.offline.aspx>) (TechNet Magazine) |
 | 部署 | [部署資料夾重新導向、離線檔案及漫遊使用者設定檔](deploy-folder-redirection.md)<br>[實作使用者資料集中化解決方案：資料夾重新導向和離線檔案技術驗證與部署](https://download.microsoft.com/download/3/0/1/3019A3DA-2F41-4F2D-BBC9-A6D24C4C68C4/Implementing%20an%20End-User%20Data%20Centralization%20Solution.docx)<br>[管理漫遊使用者資料部署指南](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc766489(v=ws.10)>)<br>[設定 Windows 7 電腦之新離線檔案功能的逐步指南](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff633429(v=ws.10)>)<br>[使用資料夾重新導向](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753996(v=ws.11)>)<br>[實作資料夾重新導向](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc737434(v=ws.10)>) (Windows Server 2003) |
-| 工具及設定 | [MSDN 上的離線檔案](https://msdn.microsoft.com/library/cc296092.aspx)<br>[離線檔案群組原則參考](https://msdn.microsoft.com/library/ms878937.aspx) (Windows 2000) |
+| 工具及設定 | [MSDN 上的離線檔案](/previous-versions/windows/desktop/offlinefiles/offline-files-portal)<br>[離線檔案群組原則參考](https://msdn.microsoft.com/library/ms878937.aspx) (Windows 2000) |
 | 社群資源 | [檔案服務和儲存體論壇](https://social.technet.microsoft.com/forums/windowsserver/home?forum=winserverfiles)<br>[指令碼高手您好：我要如何在 Windows 中使用離線檔案功能？](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>)<br>[指令碼高手您好：如何啟用和停用離線檔案？](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>) |
 | 相關技術|[Windows Server 中的身分識別與存取](../../identity/identity-and-access.yml)<br>[Windows Server 的儲存空間](../storage.yml)<br>[遠端存取和伺服器管理](../../remote/index.yml) |

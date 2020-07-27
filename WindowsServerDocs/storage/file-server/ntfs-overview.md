@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 06/17/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 450e5a4e800a8631adacb9826db63e747ecce4e1
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: a390521cbd4d5dd676662d3dc41062792f1fa945
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070536"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965140"
 ---
 # <a name="ntfs-overview"></a>NTFS 概觀
 
@@ -21,7 +21,7 @@ ms.locfileid: "85070536"
 
 NTFS (最新版 Windows 和 Windows Server 的主要檔案系統) 提供一組完整的功能，包括安全性描述元、加密、磁碟配額，以及豐富的中繼資料，並且可與叢集共用磁碟區 (CSV) 搭配使用，以提供持續可用的磁碟區，讓您可以從容錯移轉叢集的多個節點同時存取。
 
-若要深入了解 Windows Server 2012 R2 中的 NTFS 新功能和已變更的功能，請參閱 [NTFS 的新功能](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn466520(v%3dws.11))。 如需其他功能資訊，請參閱本主題的[其他資訊](#additional-information)一節。 若要深入了解較新的復原檔案系統 (ReFS)，請參閱[復原檔案系統 (ReFS) 概觀](../refs/refs-overview.md)。
+若要深入了解 Windows Server 2012 R2 中的 NTFS 新功能和已變更的功能，請參閱 [NTFS 的新功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn466520(v%3dws.11))。 如需其他功能資訊，請參閱本主題的[其他資訊](#additional-information)一節。 若要深入了解較新的復原檔案系統 (ReFS)，請參閱[復原檔案系統 (ReFS) 概觀](../refs/refs-overview.md)。
 
 ## <a name="practical-applications"></a>實際應用
 
@@ -29,13 +29,13 @@ NTFS (最新版 Windows 和 Windows Server 的主要檔案系統) 提供一組�
 
 當電腦在系統失敗後重新啟動時，NTFS 會使用其記錄檔和檢查點資訊來還原檔案系統的一致性。 在發生磁區損毀錯誤之後，NTFS 會動態地對包含磁區損毀的叢集進行重新對應、為資料配置新的叢集、將原始叢集標示為錯誤，而且不再使用舊的叢集。 例如，在伺服器損毀之後，NTFS 可以藉由重新執行其記錄檔來復原資料。
 
-NTFS 會持續監視並修正背景中的暫時性損毀問題，而且不會讓磁碟區離線 (這項功能稱為[自我修復 NTFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771388(v=ws.10))，是在 Windows Server 2008 中引進的)。 對於較大的損毀問題，Windows Server 2012 和更新版本中的 Chkdsk 公用程式會在磁碟區上線時掃描並分析磁碟機，並將離線時間限制為在磁碟區上還原資料一致性所需的時間。 搭配叢集共用磁碟區使用 NTFS 時，不需要停機。 如需詳細資訊，請參閱 [NTFS 健康情況和 Chkdsk](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831536(v%3dws.11))。
+NTFS 會持續監視並修正背景中的暫時性損毀問題，而且不會讓磁碟區離線 (這項功能稱為[自我修復 NTFS](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc771388(v=ws.10))，是在 Windows Server 2008 中引進的)。 對於較大的損毀問題，Windows Server 2012 和更新版本中的 Chkdsk 公用程式會在磁碟區上線時掃描並分析磁碟機，並將離線時間限制為在磁碟區上還原資料一致性所需的時間。 搭配叢集共用磁碟區使用 NTFS 時，不需要停機。 如需詳細資訊，請參閱 [NTFS 健康情況和 Chkdsk](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831536(v%3dws.11))。
 
 ### <a name="increased-security"></a>提升的安全性
 
 - **檔案和資料夾的存取控制清單 (ACL) 安全性**—NTFS 可讓您設定檔案或資料夾的權限、指定您要限制或允許其存取權的群組和使用者，以及選取存取類型。
 
-- **BitLocker 磁碟機加密的支援**—BitLocker 磁碟機加密可為重要的系統資訊和儲存在 NTFS 磁碟區上的其他資料提供額外的安全性。 從 Windows Server 2012 R2 和 Windows 8.1 開始，BitLocker 可透過支援連線待命的信賴平台模組 (TPM) 在 x86 型和 x64 型電腦上支援裝置加密，而此項目之前只能在 Windows RT 裝置上使用。 裝置加密會藉由實際將您的磁碟機從電腦移除並將其安裝在另一個位置，來協助保護 Windows 型電腦上的資料，以及封鎖惡意使用者，使其無法存取仰賴的系統檔案來探索使用者密碼，或存取磁碟機。 如需詳細資訊，請參閱 [BitLocker 的新功能](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn306081(v%3dws.11))。
+- **BitLocker 磁碟機加密的支援**—BitLocker 磁碟機加密可為重要的系統資訊和儲存在 NTFS 磁碟區上的其他資料提供額外的安全性。 從 Windows Server 2012 R2 和 Windows 8.1 開始，BitLocker 可透過支援連線待命的信賴平台模組 (TPM) 在 x86 型和 x64 型電腦上支援裝置加密，而此項目之前只能在 Windows RT 裝置上使用。 裝置加密會藉由實際將您的磁碟機從電腦移除並將其安裝在另一個位置，來協助保護 Windows 型電腦上的資料，以及封鎖惡意使用者，使其無法存取仰賴的系統檔案來探索使用者密碼，或存取磁碟機。 如需詳細資訊，請參閱 [BitLocker 的新功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn306081(v%3dws.11))。
 
 - **支援大型磁碟區**—NTFS 可支援的磁碟區大小上限為 256 TB。 支援的磁碟區大小會受到叢集大小和叢集數目的影響。 若有 (2<sup>32</sup> –1) 個叢集 (NTFS 支援的叢集數目上限)，則可支援下列磁碟區和檔案的大小。
 
@@ -78,7 +78,7 @@ NTFS 支援長檔名和擴充長度的路徑，最大值如下所示：
 - **支援長檔名且具有回溯相容性**—NTFS 允許使用長檔名，並可在磁碟上儲存 8.3 別名 (使用 Unicode)，以相容於在檔案名稱和副檔案名稱上施加 8.3 限制的檔案系統。 如有需要 (基於效能需要)，您可以在 Windows Server 2008 R2、Windows 8 和較新版本的 Windows 作業系統中，選擇性地停用個別 NTFS 磁碟區上的 8.3 別名。
   在 Windows Server 2008 R2 和更新版本的系統中，當使用作業系統格式化磁碟區時，預設會停用簡短名稱。 針對應用程式相容性，系統磁碟區上仍會啟用簡短名稱。
 
-- **支援擴充長度的路徑**—許多 Windows API 函式具有 Unicode 版本，其允許大約 32,767 個字元的擴充長度路徑，也就是超過 MAX\_PATH 設定所定義的 260 個字元路徑限制。 如需詳細的檔案名稱和路徑格式需求，以及實作擴充長度路徑的指引，請參閱[命名檔案、路徑和命名空間](https://msdn.microsoft.com/library/windows/desktop/aa365247)。
+- **支援擴充長度的路徑**—許多 Windows API 函式具有 Unicode 版本，其允許大約 32,767 個字元的擴充長度路徑，也就是超過 MAX\_PATH 設定所定義的 260 個字元路徑限制。 如需詳細的檔案名稱和路徑格式需求，以及實作擴充長度路徑的指引，請參閱[命名檔案、路徑和命名空間](/windows/win32/fileio/naming-a-file)。
 
 - **叢集存放區**—在容錯移轉叢集中使用時，NTFS 支援持續可用磁碟區，在與叢集共用磁碟區 (CSV) 檔案系統搭配使用時，這些磁碟區可同時由多個叢集節點存取。 如需有關詳細資訊，請參閱[使用容錯移轉叢集的叢集共用磁碟區](../../failover-clustering/failover-cluster-csvs.md)。
 
@@ -95,9 +95,9 @@ NTFS 支援長檔名和擴充長度的路徑，最大值如下所示：
 
 - [ReFS 和 NTFS 的叢集大小建議](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/Cluster-size-recommendations-for-ReFS-and-NTFS/ba-p/425960)
 - [復原檔案系統 (ReFS) 概觀](../refs/refs-overview.md)
-- [NTFS 的新功能](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn466520(v%3dws.11)) (Windows Server 2012 R2)
-- [NTFS 的新功能](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff383236(v=ws.10)) (Windows Server 2008 R2、Windows 7)
-- [NTFS 健康情況和 Chkdsk](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831536(v%3dws.11))
-- [自我修復 NTFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771388(v=ws.10)) (於 Windows Server 2008 中引入)
-- [交易式 NTFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc730726(v%3dws.10)) (於 Windows Server 2008 中引入)
+- [NTFS 的新功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn466520(v%3dws.11)) (Windows Server 2012 R2)
+- [NTFS 的新功能](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/ff383236(v=ws.10)) (Windows Server 2008 R2、Windows 7)
+- [NTFS 健康情況和 Chkdsk](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831536(v%3dws.11))
+- [自我修復 NTFS](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc771388(v=ws.10)) (於 Windows Server 2008 中引入)
+- [交易式 NTFS](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc730726(v%3dws.10)) (於 Windows Server 2008 中引入)
 - [Windows Server 的儲存空間](../storage.yml)

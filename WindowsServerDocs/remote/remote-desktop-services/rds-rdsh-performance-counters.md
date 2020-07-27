@@ -9,12 +9,12 @@ ms.topic: article
 author: lizap
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: a424a28be835fa2a941187b110907fff76e6f220
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 7e08e4aa0cd1298502c59a1a8275293910345d6a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81650061"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966190"
 ---
 # <a name="use-performance-counters-to-diagnose-app-performance-problems-on-remote-desktop-session-hosts"></a>在遠端桌面工作階段主機上使用效能計數器來診斷應用程式效能問題
 
@@ -33,7 +33,7 @@ ms.locfileid: "81650061"
 
 ![遠端桌面：從使用者遠端桌面用戶端到應用程式的使用者輸入流程](./media/rds-user-input.png)
 
-使用者輸入延遲計數器會在[傳統訊息迴圈](https://docs.microsoft.com/windows/win32/winmsg/about-messages-and-message-queues#message-loop) \(英文\) 中，測量要排入佇列的輸入與在應用程式挑選該輸入時之間的最大差異 (在一段時間間隔內)，如以下流程圖所示：
+使用者輸入延遲計數器會在[傳統訊息迴圈](/windows/win32/winmsg/about-messages-and-message-queues#message-loop) \(英文\) 中，測量要排入佇列的輸入與在應用程式挑選該輸入時之間的最大差異 (在一段時間間隔內)，如以下流程圖所示：
 
 ![遠端桌面：使用者輸入延遲效能計數器流程](./media/rds-user-input-delay.png)
 
@@ -68,7 +68,7 @@ reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCou
 
 如果您選取 [每個處理序的使用者輸入延遲]  ，您將會看到格式為 ```SessionID:ProcessID <Process Image>``` 的 [所選物件的執行個體]  (亦即處理序)。
 
-例如，如果 [小算盤] 應用程式正在[工作階段識別碼 1](https://docs.microsoft.com/previous-versions/iis/6.0-sdk/ms524326(v=vs.90)) \(英文\) 中執行，您將會看到 ```1:4232 <Calculator.exe>```。
+例如，如果 [小算盤] 應用程式正在[工作階段識別碼 1](/previous-versions/iis/6.0-sdk/ms524326(v=vs.90)) \(英文\) 中執行，您將會看到 ```1:4232 <Calculator.exe>```。
 
 > [!NOTE]
 > 並非所有處理序都會包含在內。 您將不會看到以 SYSTEM 身分執行的任何處理序。
@@ -135,7 +135,7 @@ reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCou
 
 ## <a name="using-the-new-counters-with-non-microsoft-tools"></a>搭配非 Microsoft 工具使用新的計數器
 
-監視工具可以藉由[使用效能計數器](https://docs.microsoft.com/windows/win32/perfctrs/using-performance-counters) \(英文\) 來取用此計數器。
+監視工具可以藉由[使用效能計數器](/windows/win32/perfctrs/using-performance-counters) \(英文\) 來取用此計數器。
 
 ## <a name="download-windows-server-insider-software"></a>下載 Windows Server 測試人員軟體
 

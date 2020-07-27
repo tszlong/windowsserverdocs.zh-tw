@@ -9,12 +9,12 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.date: 02/19/2020
-ms.openlocfilehash: 44aa465773674625fa392a644ffb188140138bde
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4598c0f60fac98cd14a6f7d920b9c6f31704bd06
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77519593"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963370"
 ---
 # <a name="optimizing-windows-10-version-1909-for-a-virtual-desktop-infrastructure-vdi-role"></a>針對虛擬桌面基礎結構 (VDI) 角色將 Windows 10 版本 1909 最佳化
 
@@ -101,23 +101,23 @@ Windows 10 會利用每月更新演算法進行更新，因此用戶端無需嘗
 
 ### <a name="to-sysprep-or-not-sysprep"></a>是否使用 Sysprep
 
-Windows 10 有一項名為[系統準備工具](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview)的內建功能 (常簡稱為 "Sysprep")。 Sysprep 工具可用來為自訂的 Windows 10 映像進行複製準備。 Sysprep 程序可確保產生的作業系統會有適當的獨特性可在生產環境中執行。
+Windows 10 有一項名為[系統準備工具](/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview)的內建功能 (常簡稱為 "Sysprep")。 Sysprep 工具可用來為自訂的 Windows 10 映像進行複製準備。 Sysprep 程序可確保產生的作業系統會有適當的獨特性可在生產環境中執行。
 
 執行 Sysprep 各有其優缺點。 以 VDI 為例，您可能會希望能夠自訂預設使用者設定檔，以供後續使用此映像登入的使用者作為設定檔範本。 您可能會想要安裝某些應用程式，但同時又希望能控制個別應用程式的設定。
 
-替代方式是使用標準 .ISO 進行安裝；您可以搭配使用自動的安裝回應檔案，以及用來安裝應用程式或移除應用程式的工作序列。 您也可以使用工作序列來設定映像中的本機原則設定；或許可搭配使用[本機群組原則物件公用程式 (LGPO)](https://docs.microsoft.com/archive/blogs/secguide/lgpo-exe-local-group-policy-object-utility-v1-0) 工具。
+替代方式是使用標準 .ISO 進行安裝；您可以搭配使用自動的安裝回應檔案，以及用來安裝應用程式或移除應用程式的工作序列。 您也可以使用工作序列來設定映像中的本機原則設定；或許可搭配使用[本機群組原則物件公用程式 (LGPO)](/archive/blogs/secguide/lgpo-exe-local-group-policy-object-utility-v1-0) 工具。
 
 ### <a name="supportability"></a>可支援性
 
 每當 Windows 預設值變更時，就會發生有關可支援性的問題。 自訂 VDI 映像 (VM 或工作階段) 之後，每次對映像所做的變更都必須在變更記錄檔中追蹤。 進行疑難排解時，通常會在集區中隔離映像並設定問題分析。 一旦追蹤到問題的根本原因之後，系統會先將該變更推到測試環境，最後再到生產工作負載。
 
-本文件刻意避免觸及影響安全性的系統服務、原則或工作。 之後就是 Windows 服務。 已移除維護期間以外的 VDI 映像服務，因為維護期間會在 VDI 環境中進行大部分服務事件時發生，「除了」  安全性軟體更新。 Microsoft 已針對 VDI 環境中的 Windows 安全性發佈指引。 如需詳細資訊，請參閱[在虛擬桌面基礎結構 (VDI) 環境中部署 Windows Defender 防毒軟體的指南](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/deployment-vdi-windows-defender-antivirus)。
+本文件刻意避免觸及影響安全性的系統服務、原則或工作。 之後就是 Windows 服務。 已移除維護期間以外的 VDI 映像服務，因為維護期間會在 VDI 環境中進行大部分服務事件時發生，「除了」  安全性軟體更新。 Microsoft 已針對 VDI 環境中的 Windows 安全性發佈指引。 如需詳細資訊，請參閱[在虛擬桌面基礎結構 (VDI) 環境中部署 Windows Defender 防毒軟體的指南](/windows/security/threat-protection/windows-defender-antivirus/deployment-vdi-windows-defender-antivirus)。
 
 改變預設的 Windows 設定時，請考慮可支援性。 以強化或加速等名義更改系統服務、原則或排定的工作時，可能會導致問題。請參閱 Microsoft 知識庫，以取得有關更改預設設定的目前已知問題。 本文件中的指導方針以及 GitHub 上相關的程式碼，將會在已知問題發生時持續更新。 此外，您可以透過數種方式向 Microsoft 回報問題。
 
 您可以使用慣用的搜尋引擎，使用 “"start value" site:support.microsoft.com” 一詞，提出有關服務預設起始值的已知問題。
 
-您可能會注意到，本文件和 GitHub 上相關的指令碼並不會修改任何預設權限。 如果您想增加安全性設定，請從名為 **AaronLocker** 的專案開始。 如需詳細資訊，請參閱[公告：具有 "AaronLocker" 的應用程式允許清單](https://docs.microsoft.com/archive/blogs/aaron_margosis/announcing-application-whitelisting-with-aaronlocker)。
+您可能會注意到，本文件和 GitHub 上相關的指令碼並不會修改任何預設權限。 如果您想增加安全性設定，請從名為 **AaronLocker** 的專案開始。 如需詳細資訊，請參閱[公告：具有 "AaronLocker" 的應用程式允許清單](/archive/blogs/aaron_margosis/announcing-application-whitelisting-with-aaronlocker)。
 
 #### <a name="vdi-optimization-categories"></a>VDI 最佳化類別
 
@@ -176,13 +176,13 @@ VDI 映像的目標之一是要越精簡越好。 縮小映像大小的方式之
 
 佈建至系統的 UWP 應用程式可在作業系統安裝期間以工作序列移除，或是在作業系統安裝後移除。 後者可能是較理想的方法，因為它可將建立或維護映像的整體程序模組化。 開發指令碼後，如果某個項目在後續組建中有所變更，您可以編輯現有的指令碼，而非從頭重複相關程序。 以下提供一些連結供您參考本主題的相關資訊：
 
-[在工作序列期間移除 Windows 10 內建應用程式](https://blogs.technet.microsoft.com/mniehaus/2015/11/11/removing-windows-10-in-box-apps-during-a-task-sequence/)
+[在工作序列期間移除 Windows 10 內建應用程式](/archive/blogs/mniehaus/removing-windows-10-in-box-apps-during-a-task-sequence)
 
 [使用 Powershell 1.3 版移除 Windows 10 WIM 檔案中的內建應用程式](https://gallery.technet.microsoft.com/Removing-Built-in-apps-65dc387b)
 
-[Windows 10 1607：使應用程式不會在部署功能更新時再次出現](https://blogs.technet.microsoft.com/mniehaus/2016/08/23/windows-10-1607-keeping-apps-from-coming-back-when-deploying-the-feature-update/)
+[Windows 10 1607：使應用程式不會在部署功能更新時再次出現](/archive/blogs/mniehaus/windows-10-1607-keeping-apps-from-coming-back-when-deploying-the-feature-update)
 
-然後，執行 [Remove-AppxProvisionedPackage](https://docs.microsoft.com/powershell/module/dism/remove-appxprovisionedpackage?view=win10-ps) PowerShell 命令以移除 UWP 應用程式承載：
+然後，執行 [Remove-AppxProvisionedPackage](/powershell/module/dism/remove-appxprovisionedpackage?view=win10-ps) PowerShell 命令以移除 UWP 應用程式承載：
 
 ```powershell
 Remove-AppxProvisionedPackage -Online -PackageName
@@ -253,7 +253,7 @@ InstallTime       : 10/29/2019 5:15:17 AM
 
 #### <a name="enable-or-disable-windows-features-using-dism"></a>使用 DISM 啟用或停用 Windows 功能
 
-您可以使用內建的 Dism.exe 工具來列舉及控制 Windows 選用功能。 在作業系統安裝工作進行期間，可以開發並執行 Dism.exe 指令碼。 此處所涉及的 Windows 技術稱為[功能隨選安裝](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities)。
+您可以使用內建的 Dism.exe 工具來列舉及控制 Windows 選用功能。 在作業系統安裝工作進行期間，可以開發並執行 Dism.exe 指令碼。 此處所涉及的 Windows 技術稱為[功能隨選安裝](/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities)。
 
 #### <a name="default-user-settings"></a>預設使用者設定
 
@@ -536,13 +536,13 @@ VDI 環境中的許多 Windows 10 最佳化都可使用 Windows 原則來進行�
 | 本機電腦原則 \\ 使用者設定 \\ 系統管理範本 |  |  |  |
 | 開始功能表和工作列 | 移除網路圖示 |  | 啟用。 網路圖示不會顯示在系統通知區域中。 |
 
-如需網路連線狀態指示器 (NCSI) 的詳細資訊，請參閱[管理適用於 Windows 10 企業版 1903 的連線端點](https://docs.microsoft.com/windows/privacy/manage-windows-1903-endpoints)和[管理從 Windows 10 作業系統元件到 Microsoft 服務的連線](https://docs.microsoft.com/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services)。
+如需網路連線狀態指示器 (NCSI) 的詳細資訊，請參閱[管理適用於 Windows 10 企業版 1903 的連線端點](/windows/privacy/manage-windows-1903-endpoints)和[管理從 Windows 10 作業系統元件到 Microsoft 服務的連線](/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services)。
 
 ### <a name="system-services"></a>系統服務
 
 如果您考慮停用系統服務以節省資源，請務必仔細確認該服務在某方面是否為其他服務的元件之一。 請注意，某些服務不在清單中，因為這些服務無法以支援的方式停用。
 
-這些建議大多與[在包含桌面體驗的 Windows Server 2016 中停用的系統服務指引](https://docs.microsoft.com/windows-server/security/windows-services/security-guidelines-for-disabling-system-services-in-windows-server)中的 Windows Server 2016 桌面體驗方面的建議相對應
+這些建議大多與[在包含桌面體驗的 Windows Server 2016 中停用的系統服務指引](../../security/windows-services/security-guidelines-for-disabling-system-services-in-windows-server.md)中的 Windows Server 2016 桌面體驗方面的建議相對應
 
 許多可能適合停用的服務都設定為手動服務啟動類型。 這表示服務不會自動啟動，且除非有程序或服務對您考慮要停用的服務觸發了要求，才會啟動。 已設定為手動啟動類型的服務通常不會列於此處。
 
@@ -575,9 +575,9 @@ VDI 環境中的許多 Windows 10 最佳化都可使用 Windows 原則來進行�
 
 每一使用者服務是會在使用者登入 Windows 或 Windows Server 時建立，並且在該使用者登出時停止並刪除的服務。這些服務執行於使用者帳戶的安全性內容中 - 其資源管理效能優於先前的方法所能提供的，因為過去須在 [總管] 中使用預先設定的帳戶或以工作的形式執行這類服務。
 
-[Windows 10 和 Windows Server 中的每一使用者服務](https://docs.microsoft.com/windows/application-management/per-user-services-in-windows)
+[Windows 10 和 Windows Server 中的每一使用者服務](/windows/application-management/per-user-services-in-windows)
 
-如果您想要變更服務起始值，偏好的方法是開啟已提升權限的 cmd.exe 命令提示字元，並執行服務控制管理員工具 ‘Sc.exe’。 如需使用 ‘Sc.exe’ 的詳細資訊，請參閱 [Sc](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc754599(v=ws.11))
+如果您想要變更服務起始值，偏好的方法是開啟已提升權限的 cmd.exe 命令提示字元，並執行服務控制管理員工具 ‘Sc.exe’。 如需使用 ‘Sc.exe’ 的詳細資訊，請參閱 [Sc](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc754599(v=ws.11))
 
 ### <a name="scheduled-tasks"></a>排定的工作
 
@@ -653,7 +653,7 @@ VDI 環境中的許多 Windows 10 最佳化都可使用 Windows 原則來進行�
 
 ### <a name="apply-windows-and-other-updates"></a>套用 Windows (和其他) 更新
 
-無論是從 Microsoft Update，還是從您的內部資源，都可套用可用的更新，包括 Windows Defender 特徵碼。 這是套用其他可用更新的好時機，包括 Microsoft Office 的更新 (如有安裝)，以及其他軟體更新。 如果 PowerShell 會保留在影像中，您可以執行命令 [Update-Help](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/update-help?view=powershell-7) 下載 PowerShell 的最新可用說明。
+無論是從 Microsoft Update，還是從您的內部資源，都可套用可用的更新，包括 Windows Defender 特徵碼。 這是套用其他可用更新的好時機，包括 Microsoft Office 的更新 (如有安裝)，以及其他軟體更新。 如果 PowerShell 會保留在影像中，您可以執行命令 [Update-Help](/powershell/module/microsoft.powershell.core/update-help?view=powershell-7) 下載 PowerShell 的最新可用說明。
 
 #### <a name="servicing-the-operating-system-and-apps"></a>維護作業系統和應用程式
 
@@ -704,7 +704,7 @@ Windows 依預設設定會收集並儲存有限的診斷資料。 其目的是�
 
 ### <a name="windows-defender-optimization-with-vdi"></a>Windows Defender 對 VDI 的最佳化
 
-Microsoft 近期發佈了關於在 VDI 環境中使用 Windows Defender 的文件。 請參閱[在虛擬桌面基礎結構 (VDI) 環境中部署 Windows Defender 防毒軟體的指南](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/deployment-vdi-windows-defender-antivirus)以取得詳細資訊。
+Microsoft 近期發佈了關於在 VDI 環境中使用 Windows Defender 的文件。 請參閱[在虛擬桌面基礎結構 (VDI) 環境中部署 Windows Defender 防毒軟體的指南](/windows/security/threat-protection/windows-defender-antivirus/deployment-vdi-windows-defender-antivirus)以取得詳細資訊。
 
 上述文章提供維護黃金 VDI 映像的程序，並說明如何維護執行中的 VDI 用戶端。 若要在 VDI 電腦需要更新其 Windows Defender 特徵碼時降低網路頻寬，請錯開重新開機的時間，並盡可能將重新開機排程在離峰時間。 Windows Defender 特徵碼的更新可包含在內部檔案共用上，且如果可行，請將這些檔案共用放在與 VDI 虛擬機器相同或接近的網路區段上。
 
@@ -715,7 +715,7 @@ Microsoft 近期發佈了關於在 VDI 環境中使用 Windows Defender 的文�
 >[!NOTE]
 > 本節中的某些設定僅以登錄為基礎，且應在映像部署至生產環境之前納入基底映像中。
 
-下列設定值記載於 [Windows Server 2016 效能微調指導方針](https://docs.microsoft.com/windows-server/administration/performance-tuning/)中，由 Windows 產品小組發佈於 Microsoft.com 上。
+下列設定值記載於 [Windows Server 2016 效能微調指導方針](/windows-server/administration/performance-tuning/)中，由 Windows 產品小組發佈於 Microsoft.com 上。
 
 #### <a name="disablebandwidththrottling"></a>DisableBandwidthThrottling
 
@@ -745,15 +745,15 @@ Microsoft 近期發佈了關於在 VDI 環境中使用 Windows Defender 的文�
 
 適用於 Windows 10。 預設值是 **1023**。 此參數可指定在應用程式關閉檔案之後，共用資源上應該保持開啟的檔案數目上限。 有數千個用戶端要連線至 SMB 伺服器時，請考慮將此值縮減至 **256**。
 
-您可以使用 [Set-SmbClientConfiguration](https://docs.microsoft.com/powershell/module/smbshare/set-smbclientconfiguration?view=win10-ps) 和 [Set-SmbServerConfiguration](https://docs.microsoft.com/powershell/module/smbshare/set-smbserverconfiguration?view=win10-ps) Windows PowerShell Cmdlet 來設定其中許多 SMB 設定。 您也可以使用 Windows PowerShell 來設定僅限登錄的設定，如下列範例所示：
+您可以使用 [Set-SmbClientConfiguration](/powershell/module/smbshare/set-smbclientconfiguration?view=win10-ps) 和 [Set-SmbServerConfiguration](/powershell/module/smbshare/set-smbserverconfiguration?view=win10-ps) Windows PowerShell Cmdlet 來設定其中許多 SMB 設定。 您也可以使用 Windows PowerShell 來設定僅限登錄的設定，如下列範例所示：
 
 ```powershell
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters" RequireSecuritySignature -Value 0 -Force
 ```
 
-Windows 受限流量有限功能基準指導方針中的其他設定 Microsoft 已發行使用與 [Windows 安全性基準](https://docs.microsoft.com/powershell/module/smbshare/set-smbserverconfiguration?view=win10-ps)相同的程序建立的基準，適用於未直接連線至網際網路的環境，或不想將太多資料傳送至 Microsoft 和其他服務的環境。
+Windows 受限流量有限功能基準指導方針中的其他設定 Microsoft 已發行使用與 [Windows 安全性基準](/powershell/module/smbshare/set-smbserverconfiguration?view=win10-ps)相同的程序建立的基準，適用於未直接連線至網際網路的環境，或不想將太多資料傳送至 Microsoft 和其他服務的環境。
 
-[Windows 受限流量有限功能基準](https://docs.microsoft.com/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services)設定在群組原則表格中會以星號標示。
+[Windows 受限流量有限功能基準](/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services)設定在群組原則表格中會以星號標示。
 
 #### <a name="disk-cleanup-including-using-the-disk-cleanup-wizard"></a>磁碟清理 (包括使用磁碟清理精靈)
 

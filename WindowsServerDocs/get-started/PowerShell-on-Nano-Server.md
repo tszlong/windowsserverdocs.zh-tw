@@ -9,12 +9,12 @@ ms.assetid: 9b25b939-1e2c-4bed-a8d3-2a8e8e46b53d
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 4879ae58c24596d64d24b6bece54d4c35837f00f
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 6535cb9cc6ad77d4ea5e5e33c2d28e03fd447968
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826761"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963573"
 ---
 # <a name="powershell-on-nano-server"></a>Nano 伺服器上的 PowerShell
 
@@ -127,5 +127,4 @@ Nano Server 預設會在所有 Nano Server 安裝中包含 PowerShell Core。 Po
 
 您可以使用 Windows PowerShell 預期狀態設定 (DSC)，將 Nano Server 當做目標節點來管理。 目前，您只能使用 push 模式的 DSC，來管理執行 Nano Server 的節點。 並非所有 DSC 功能都能搭配 Nano Server 使用。
 
-如需完整詳細資訊，請參閱[在 Nano Server 上使用 DSC](https://docs.microsoft.com/powershell/scripting/dsc/getting-started/nanodsc)。
-
+如需完整詳細資訊，請參閱[在 Nano Server 上使用 DSC](/powershell/scripting/dsc/getting-started/nanodsc)。
