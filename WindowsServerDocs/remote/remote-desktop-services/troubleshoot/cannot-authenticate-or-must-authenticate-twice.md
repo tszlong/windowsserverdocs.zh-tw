@@ -8,12 +8,12 @@ manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fd7cfda8814347f8bab9dc7b3f7632e3b992ecb
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 65bf81d80d5cfd5566d66005728cd3677f131085
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857231"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963220"
 ---
 # <a name="user-cant-authenticate-or-must-authenticate-twice"></a>使用者無法驗證，或必須驗證兩次
 
@@ -168,4 +168,4 @@ This could be due to CredSSP encryption oracle remediation
 
 因為遠端認證防護使用 Kerberos 進行驗證，並限制 NTLM，因而發生此問題。 不過，在具負載平衡的高可用性設定中，RD 連線代理人無法支援 Kerberos 作業。
 
-如果您需使用具負載平衡 RD 連線代理人的高可用性設定，您可以藉由停用遠端認證防護處理此問題。 有關如何管理 Windows Defender 遠端認證防護的詳細資訊，請參閱[使用 Windows Defender 遠端認證防護來保護遠端桌面認證](https://docs.microsoft.com/windows/security/identity-protection/remote-credential-guard#enable-windows-defender-remote-credential-guard)。
+如果您需使用具負載平衡 RD 連線代理人的高可用性設定，您可以藉由停用遠端認證防護處理此問題。 有關如何管理 Windows Defender 遠端認證防護的詳細資訊，請參閱[使用 Windows Defender 遠端認證防護來保護遠端桌面認證](/windows/security/identity-protection/remote-credential-guard#enable-windows-defender-remote-credential-guard)。

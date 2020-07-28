@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: cb4e3ab2bf98a0c2d51483642fe5388e468dbbb4
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 92d8a47c4ac214faeac83ba8ff5a1a746bc8bdb3
+ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81269265"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86891383"
 ---
 # <a name="what-is-windows-admin-center"></a>什麼是 Windows Admin Center？
 
@@ -27,7 +27,7 @@ Windows Admin Center 是「隨附」管理工具 (例如伺服器管理員和 MM
 
 ## <a name="how-does-windows-admin-center-work"></a>Windows Admin Center 如何運作？
 
-Windows Admin Center 在網頁瀏覽器中執行，並透過 Windows Server 或加入網域的 Windows 10 上安裝的 **Windows Admin Center 閘道**來管理 Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows 10 等系統。 閘道使用遠端 PowerShell 和透過 WinRM 的 WMI 來管理伺服器。 閘道以單一輕量型 .msi 套件 (您可以[下載](https://aka.ms/windowsadmincenter)) 隨附於 Windows Admin Center。
+Windows Admin Center 在網頁瀏覽器中執行，並透過 Windows Server 或加入網域的 Windows 10 上安裝的 **Windows Admin Center 閘道**來管理 Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10、Azure Stack HCI 等系統。 閘道使用遠端 PowerShell 和透過 WinRM 的 WMI 來管理伺服器。 閘道以單一輕量型 .msi 套件 (您可以[下載](https://aka.ms/windowsadmincenter)) 隨附於 Windows Admin Center。
 
 將 Windows Admin Center 閘道發佈至 DNS 並授與通過對應公司防火牆的存取權時，此閘道可讓您隨處透過 Microsoft Edge 或 Google Chrome 安全地連線至伺服器並進行管理。
 
@@ -58,6 +58,10 @@ Windows Admin Center 有許多增強功能可讓您管理平台[更加安全](..
 ### <a name="azure-integration"></a>**Azure 整合**
 
 Windows Admin Center 有許多[與 Azure 服務整合](../plan/azure-integration-options.md)之處，包括 Azure Active Directory、Azure 備份、Azure Site Recovery 等功能。
+
+### <a name="deploy-hyper-converged-and-failover-clusters"></a>**部署超融合式和容錯移轉叢集**
+
+Windows Admin Center 可讓您透過簡單易用的精靈，[順暢地部署超融合式和容錯移轉叢集](../use/deploy-hyperconverged-infrastructure.md)。 
 
 ### <a name="manage-hyper-converged-clusters"></a>**管理超融合式叢集**
 

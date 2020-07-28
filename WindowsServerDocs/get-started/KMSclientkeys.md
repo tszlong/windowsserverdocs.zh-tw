@@ -9,12 +9,12 @@ ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 11/12/2019
 ms.topic: get-started-article
-ms.openlocfilehash: 1bbb8f06ab66ced50024f4ff17b73229d50ec5c6
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 1eeaa76af345d3f05effe2afe35c40d594adfc3a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80391712"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959620"
 ---
 # <a name="kms-client-setup-keys"></a>KMS 用戶端安裝識別碼
 
@@ -25,7 +25,7 @@ ms.locfileid: "80391712"
 > [!NOTE]
 > 在下列表格中，"LTSC" 代表「長期維護通道」，而 "LTSB" 是指「長期維護分支」。 
 
-**若要使用此處所列的金鑰 (它們是 GVLK)，您的部署中必須已有執行中的 KMS 主機。** 如果您尚未設定 KMS 主機，請參閱 [Deploy KMS Activation](https://technet.microsoft.com/library/dn502531(v=ws.11).aspx) 的步驟來安裝一部 KMS 主機。
+**若要使用此處所列的金鑰 (它們是 GVLK)，您的部署中必須已有執行中的 KMS 主機。** 如果您尚未設定 KMS 主機，請參閱 [Deploy KMS Activation](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn502531(v=ws.11)) 的步驟來安裝一部 KMS 主機。
 
 如果您將電腦從 KMS 主機、MAK 或 Windows 零售版轉換成 KMS 用戶端，請從下表安裝適用的安裝識別碼 (GVLK)。 若要安裝用戶端安裝識別碼，請在用戶端開啟系統管理命令提示字元，輸入 **slmgr /ipk \<setup key\>** ，然後按 **Enter** 鍵。
 
@@ -209,6 +209,4 @@ ms.locfileid: "80391712"
 
 另請參閱
 
-• [大量啟用規劃](https://technet.microsoft.com/library/jj134042(v=ws.11).aspx)
-
-
+• [大量啟用規劃](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134042(v=ws.11))

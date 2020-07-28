@@ -8,12 +8,12 @@ ms.author: jaimeo, robsmi
 ms.topic: article
 author: jaimeo
 manager: dougkim
-ms.openlocfilehash: b96064f1c05e61223b84a2285535f02733160abe
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: d18f7ac1024adc26a965195619b4996864932160
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857291"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963400"
 ---
 # <a name="optimizing-windows-10-version-1803-for-a-virtual-desktop-infrastructure-vdi-role"></a>針對虛擬桌面基礎結構 (VDI) 角色最佳化 Windows 10 1803 版
 
@@ -88,11 +88,11 @@ VDI 環境可透過網路為電腦使用者提供完整的桌面工作階段，�
 
 ### <a name="to-sysprep-or-not-sysprep"></a>是否使用 Sysprep
 
-Windows 10 有一項名為[系統準備工具](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview)的內建功能 (常簡稱為 "Sysprep")。 Sysprep 工具可用來為自訂的 Windows 10 映像進行複製準備。 Sysprep 程序可確保產生的作業系統會有適當的獨特性可在生產環境中執行。
+Windows 10 有一項名為[系統準備工具](/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview)的內建功能 (常簡稱為 "Sysprep")。 Sysprep 工具可用來為自訂的 Windows 10 映像進行複製準備。 Sysprep 程序可確保產生的作業系統會有適當的獨特性可在生產環境中執行。
 
 執行 Sysprep 各有其優缺點。 以 VDI 為例，您可能會希望能夠自訂預設使用者設定檔，以供後續使用此映像登入的使用者作為設定檔範本。 您可能會想要安裝某些應用程式，但同時又希望能控制個別應用程式的設定。
 
-替代方式是使用標準 .ISO 進行安裝；您可以搭配使用自動的安裝回應檔案，以及用來安裝應用程式或移除應用程式的工作序列。 您也可以使用工作序列來設定映像中的本機原則設定；或許可搭配使用[本機群組原則物件公用程式 (LGPO)](https://blogs.technet.microsoft.com/secguide/2016/01/21/lgpo-exe-local-group-policy-object-utility-v1-0/) 工具。
+替代方式是使用標準 .ISO 進行安裝；您可以搭配使用自動的安裝回應檔案，以及用來安裝應用程式或移除應用程式的工作序列。 您也可以使用工作序列來設定映像中的本機原則設定；或許可搭配使用[本機群組原則物件公用程式 (LGPO)](/archive/blogs/secguide/lgpo-exe-local-group-policy-object-utility-v1-0) 工具。
 
 #### <a name="vdi-optimization-categories"></a>VDI 最佳化類別
 
@@ -179,13 +179,13 @@ VDI 映像的目標之一是要越小越好。 縮小映像大小的方式之一
 
 佈建至系統的 UWP 應用程式可在作業系統安裝期間以工作序列移除，或是在作業系統安裝後移除。 後者可能是較理想的方法，因為它可將建立或維護映像的整體程序模組化。 在您開發指令碼後，如果某個項目在後續組建中有所變更，您可以編輯現有的指令碼，而非從頭重複相關程序。 以下提供一些連結供您參考本主題的相關資訊：
 
-[在工作序列期間移除 Windows 10 內建應用程式](https://blogs.technet.microsoft.com/mniehaus/2015/11/11/removing-windows-10-in-box-apps-during-a-task-sequence/)
+[在工作序列期間移除 Windows 10 內建應用程式](/archive/blogs/mniehaus/removing-windows-10-in-box-apps-during-a-task-sequence)
 
 [使用 Powershell 1.3 版移除 Windows 10 WIM 檔案中的內建應用程式](https://gallery.technet.microsoft.com/Removing-Built-in-apps-65dc387b)
 
-[Windows 10 1607：使應用程式不會在部署功能更新時再次出現](https://blogs.technet.microsoft.com/mniehaus/2016/08/23/windows-10-1607-keeping-apps-from-coming-back-when-deploying-the-feature-update/)
+[Windows 10 1607：使應用程式不會在部署功能更新時再次出現](/archive/blogs/mniehaus/windows-10-1607-keeping-apps-from-coming-back-when-deploying-the-feature-update)
 
-然後，執行 [Remove-AppxProvisionedPackage](https://docs.microsoft.com/powershell/module/dism/remove-appxprovisionedpackage?view=win10-ps) PowerShell 命令以移除 UWP 應用程式承載：
+然後，執行 [Remove-AppxProvisionedPackage](/powershell/module/dism/remove-appxprovisionedpackage?view=win10-ps) PowerShell 命令以移除 UWP 應用程式承載：
 
 ```powershell
 Remove-AppxProvisionedPackage -Online -PackageName 
@@ -372,7 +372,7 @@ VDI 環境中的許多 Windows 10 最佳化都可使用 Windows 原則來進行�
 |                                                         \***Microsoft Edge**                                                         |                                                          設定不要追蹤                                                           |                                                                                                                               |                                                                                                                                                                                                                                                                                                                已啟用 (如果啟用此設定，將一律傳送「不要追蹤」要求到要求追蹤資訊的網站。)                                                                                                                                                                                                                                                                                                                |
 |                                                         \***Microsoft Edge**                                                         |                                                        設定密碼管理員                                                         |                                                                                                                               |                                                                                                                                                                                                                                                                                                                  已停用 (如果停用此設定，員工將無法使用密碼管理員將密碼儲存在本機。)                                                                                                                                                                                                                                                                                                                  |
 |                                                         \***Microsoft Edge**                                                         |                                                設定網址列中的搜尋建議                                                |                                                                                                                               |                                                                                                                                                                                                                                                                                                                               已停用 (使用者無法在 Microsoft Edge 的網址列中看到搜尋建議。)                                                                                                                                                                                                                                                                                                                               |
-|                                                         \***Microsoft Edge**                                                         |                                                           設定起始畫面                                                           |                                                                                                                               |                                                                                                                      已啟用 (如果啟用此設定，您將可設定一或多個 [開始] 頁面。 如果啟用此設定，您也必須包含網頁的 URL，並使用此格式與角括弧分隔多個頁面︰\<support.contoso.com\>\<support.microsoft.com\> Windows 10 1703 版或更新版本：如果您不想要將流量傳送至 Microsoft，您可以使用 \<about:blank\> 值；無論裝置是否已加入網域，如果只有這個已設定的 URL，就會接受此值。                                                                                                                       |
+|                                                         \***Microsoft Edge**                                                         |                                                           設定起始畫面                                                           |                                                                                                                               |                                                                                                                      已啟用 (如果啟用此設定，您將可設定一或多個 [開始] 頁面。 如果啟用這項設定，您也必須包含網頁的 URL，並使用此格式與角括弧分隔多個頁面︰\<support.contoso.com\>\<support.microsoft.com\> Windows 10 版本 1703 或更新版本：如果您不想要將流量傳送至 Microsoft，您可以使用 \<about:blank\> 值；無論裝置是否已加入網域，如果只有這個已設定的 URL，就會接受此值。                                                                                                                       |
 |                                                         \***Microsoft Edge**                                                         |                                                  設定 Windows Defender SmartScreen                                                   |                                                                                                                               |                                                                                                                                                                                                                                                                                                                              已停用 (會關閉 Windows Defender SmartScreen，且員工無法加以開啟。)                                                                                                                                                                                                                                                                                                                              |
 |                                                                                                                                      |                                                                                                                                           |                                                                                                                               |                                                                                                                                                                                                                                                                             **注意**：請考慮在環境中使用此設定。 如果未連線至網際網路，將使電腦無法嘗試聯繫 Microsoft 以取得 SmartScreen 資訊。                                                                                                                                                                                                                                                                             |
 |                                                         \***Microsoft Edge**                                                         |                                       防止 Microsoft Edge 開啟 [首次執行] 網頁                                       |                                                                                                                               |                                                                                                                                                                                                                                                                                                                        **已啟用** (使用者在初次開啟 Microsoft Edge 時不會看見 [首次執行] 頁面。)                                                                                                                                                                                                                                                                                                                         |
@@ -448,13 +448,13 @@ VDI 環境中的許多 Windows 10 最佳化都可使用 Windows 原則來進行�
 | **本機電腦原則 \\ 使用者設定 \\ 系統管理範本** |          |                         |                     |
 | **開始功能表和工作列**                  | 移除網路圖示               |                         | **已啟用** (網路圖示不會顯示在系統通知區域中。) |
 
-如需網路連線狀態指示器 (NCSI) 的詳細資訊，請參閱：[網路連線狀態圖示](https://blogs.technet.microsoft.com/networking/2012/12/20/the-network-connection-status-icon/)
+如需網路連線狀態指示器 (NCSI) 的詳細資訊，請參閱：[網路連線狀態圖示](https://techcommunity.microsoft.com/t5/networking-blog/bg-p/NetworkingBlog)
 
 ### <a name="system-services"></a>系統服務
 
 如果您考慮停用系統服務以節省資源，您必須仔細確認該服務在某方面是否為其他服務的元件之一。
 
-此外，這些建議大多與 Windows Server 2016 桌面體驗方面的建議相對應；如需詳細資訊，[在包含桌面體驗的 Windows Server 2016 中停用的系統服務的指引](https://docs.microsoft.com/windows-server/security/windows-services/security-guidelines-for-disabling-system-services-in-windows-server)。
+此外，這些建議大多與 Windows Server 2016 桌面體驗方面的建議相對應；如需詳細資訊，[在包含桌面體驗的 Windows Server 2016 中停用的系統服務的指引](../../security/windows-services/security-guidelines-for-disabling-system-services-in-windows-server.md)。
 
 請注意，許多可能適合停用的服務都設定為手動服務啟動類型。 這表示服務不會自動啟動，且除非有特定應用程式或服務對您考慮要停用的服務觸發了要求，才會啟動。 已設定為手動啟動類型的服務通常不會列於此處。
 
@@ -478,7 +478,7 @@ VDI 環境中的許多 Windows 10 最佳化都可使用 Windows 原則來進行�
 
 #### <a name="per-user-services-in-windows"></a>Windows 中的每一使用者服務
 
-[每一使用者服務](https://docs.microsoft.com/windows/application-management/per-user-services-in-windows)是會在使用者登入 Windows 或 Windows Server 時建立，並且在該使用者登出時停止並刪除的服務。這些服務執行於使用者帳戶的安全性內容中 - 其資源管理效能優於先前的方法所能提供的，因為過去須在 [總管] 中使用預先設定的帳戶或以工作的形式執行這類服務。 
+[每一使用者服務](/windows/application-management/per-user-services-in-windows)是會在使用者登入 Windows 或 Windows Server 時建立，並且在該使用者登出時停止並刪除的服務。這些服務執行於使用者帳戶的安全性內容中 - 其資源管理效能優於先前的方法所能提供的，因為過去須在 [總管] 中使用預先設定的帳戶或以工作的形式執行這類服務。 
 
 ### <a name="scheduled-tasks"></a>排定的工作
 
@@ -597,7 +597,7 @@ Windows 依預設設定會收集並儲存有限的診斷資料。 其目的是�
 
 ### <a name="windows-defender-optimization-with-vdi"></a>Windows Defender 對 VDI 的最佳化
 
-Microsoft 近期發佈了關於在 VDI 環境中使用 Windows Defender 的文件。 如需詳細資訊，請參閱[在虛擬桌面基礎結構 (VDI) 環境中部署 Windows Defender 防毒軟體的指南](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/deployment-vdi-windows-defender-antivirus)。
+Microsoft 近期發佈了關於在 VDI 環境中使用 Windows Defender 的文件。 如需詳細資訊，請參閱[在虛擬桌面基礎結構 (VDI) 環境中部署 Windows Defender 防毒軟體的指南](/windows/security/threat-protection/windows-defender-antivirus/deployment-vdi-windows-defender-antivirus)。
 
 上述文章提供維護黃金 VDI 映像的程序，並說明如何維護執行中的 VDI 用戶端。 若要在 VDI 電腦需要更新其 Windows Defender 特徵碼時降低網路頻寬，請錯開重新開機的時間，並盡可能將重新開機排程在離峰時間。 Windows Defender 特徵碼的更新可包含在內部檔案共用上，且如果可行，請將這些檔案共用放在與 VDI 虛擬機器相同或接近的網路區段上。
 
@@ -609,7 +609,7 @@ Microsoft 近期發佈了關於在 VDI 環境中使用 Windows Defender 的文�
 
 請注意，本節中的某些設定是「僅以登錄為基礎的」  ，且應在映像部署至生產環境之前納入基底映像中。
 
-下列設定值記載於 [Windows Server 2016 效能微調指導方針](https://docs.microsoft.com/windows-server/administration/performance-tuning/)資訊中，由 Windows 產品小組發佈於 Microsoft.com 上。
+下列設定值記載於 [Windows Server 2016 效能微調指導方針](/windows-server/administration/performance-tuning/)資訊中，由 Windows 產品小組發佈於 Microsoft.com 上。
 
 #### <a name="disablebandwidththrottling"></a>DisableBandwidthThrottling
 
@@ -641,15 +641,15 @@ HKLM\\System\\CurrentControlSet\\Services\\LanmanWorkstation\\Parameters\\Dorman
 
 適用於 Windows 10。 預設值是 **1023**。 此參數可指定在應用程式關閉檔案之後，共用資源上應該保持開啟的檔案數目上限。 有數千個用戶端要連線至 SMB 伺服器時，請考慮將此值縮減至 **256**。
 
-您可以使用 [Set-SmbClientConfiguration](https://docs.microsoft.com/powershell/module/smbshare/set-smbclientconfiguration) 和 [Set-SmbServerConfiguration](https://docs.microsoft.com/powershell/module/smbshare/set-smbserverconfiguration) Windows PowerShell Cmdlet 來設定其中許多 SMB 設定。 您也可以使用 Windows PowerShell 來設定僅限登錄的設定，如下列範例所示：
+您可以使用 [Set-SmbClientConfiguration](/powershell/module/smbshare/set-smbclientconfiguration) 和 [Set-SmbServerConfiguration](/powershell/module/smbshare/set-smbserverconfiguration) Windows PowerShell Cmdlet 來設定其中許多 SMB 設定。 您也可以使用 Windows PowerShell 來設定僅限登錄的設定，如下列範例所示：
 
 `Set-ItemProperty -Path "HKLM:\\SYSTEM\\CurrentControlSet\\Services\\LanmanWorkstation\\Parameters" RequireSecuritySignature -Value 0 -Force`
 
 ### <a name="additional-settings-from-the-windows-restricted-traffic-limited-functionality-baseline-guidance"></a>Windows 受限流量有限功能基準指引中的其他設定
 
-Microsoft 已發行使用與 [Windows 安全性基準](https://docs.microsoft.com/windows/device-security/windows-security-baselines)相同的程序建立的基準，適用於未直接連線至網際網路的環境，或不想將太多資料傳送至 Microsoft 和其他服務的環境。
+Microsoft 已發行使用與 [Windows 安全性基準](/windows/device-security/windows-security-baselines)相同的程序建立的基準，適用於未直接連線至網際網路的環境，或不想將太多資料傳送至 Microsoft 和其他服務的環境。
 
-[Windows 受限流量有限功能基準](https://docs.microsoft.com/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services)設定在群組原則表格中會以星號標示。
+[Windows 受限流量有限功能基準](/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services)設定在群組原則表格中會以星號標示。
 
 ### <a name="disk-cleanup-including-using-the-disk-cleanup-wizard"></a>磁碟清理 (包括使用磁碟清理精靈)
 

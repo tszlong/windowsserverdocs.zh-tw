@@ -9,12 +9,12 @@ ms.date: 03/06/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a2f4c9ac05e72083fab3e3a926dbdd2876214a7b
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 8f1af40f54536ca380db7fe810506c937bb2d478
+ms.sourcegitcommit: f305bc5f1c5a44dac62f4288450af19f351f9576
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77517533"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87118614"
 ---
 # <a name="ad-fs-requirements"></a>AD FS 需求
 
@@ -52,8 +52,8 @@ ms.locfileid: "77517533"
 - 憑證是公開信任的 (適用於生產部署)
 - 憑證包含伺服器驗證增強金鑰使用方法 (EKU) 值
 - 憑證包含同盟服務名稱，例如主體或主體別名 (SAN) 中的 "fs.contoso.com"
-- 若為連接埠 443 上的使用者憑證驗證，憑證會包含 "certauth.\<同盟服務名稱\>"，例如 SAN 中的 "certauth.fs.contoso.com"
-- 針對裝置註冊，或使用 Windows 10 之前的用戶端對內部部署資源所進行的新式驗證，SAN 則必須針對組織使用中的每個 UPN 尾碼來包含 "enterpriseregistration.\<upn 尾碼\>"。
+- 若為連接埠 443 上的使用者憑證驗證，憑證會包含 "certauth.\<federation service name\>"，例如 SAN 中的 "certauth.fs.contoso.com"
+- 針對裝置註冊，或使用 Windows 10 之前的用戶端對內部部署資源所進行的新式驗證，SAN 必須針對組織中使用的每個 UPN 尾碼來包含 "enterpriseregistration.\<upn suffix\>" 。
 
 Web 應用程式 Proxy 上的 SSL 憑證必須符合下列需求
 - 如果 Proxy 用來代理使用 Windows 整合式驗證的 AD FS 要求，則 Proxy SSL 憑證必須與同盟伺服器 SSL 憑證相同 (使用相同金鑰)
@@ -92,7 +92,7 @@ Web 應用程式 Proxy 上的 SSL 憑證必須符合下列需求
 
 ## <a name="hardware-requirements"></a><a name="BKMK_2"></a>硬體需求  
 AD FS 和 Web 應用程式 Proxy 硬體需求 (實體或虛擬) 會受到 CPU 的節制，因此請調整伺服器陣列的大小以獲得處理容量。  
-- 使用 [AD FS 2016 容量規劃試算表](http://adfsdocs.blob.core.windows.net/adfs/ADFSCapacity2016.xlsx)來判斷您需要的 AD FS 和 Web 應用程式 Proxy 伺服器數目。
+- 使用 [AD FS 2016 容量規劃試算表](https://adfsdocs.blob.core.windows.net/adfs/ADFSCapacity2016.xlsx)來判斷您需要的 AD FS 和 Web 應用程式 Proxy 伺服器數目。
 
 AD FS 的記憶體和磁碟需求相當靜態，請參閱下表：
 
@@ -110,7 +110,7 @@ AD FS 的記憶體和磁碟需求相當靜態，請參閱下表：
   
 -   若要能夠存取外部網路，您必須部署 Web 應用程式 Proxy 角色服務 \- 遠端存取伺服器角色的一部分。 
 
--   第三方 Proxy 必須支援 [MS-ADFSPIP 通訊協定](https://msdn.microsoft.com/library/dn392811.aspx)才可支援作為 AD FS Proxy。  如需第三方廠商的清單，請參閱[常見問題集](AD-FS-FAQ.md)。
+-   第三方 Proxy 必須支援 [MS-ADFSPIP 通訊協定](/openspecs/windows_protocols/ms-adfspip/76deccb1-1429-4c80-8349-d38e61da5cbb)才可支援作為 AD FS Proxy。  如需第三方廠商的清單，請參閱[常見問題集](AD-FS-FAQ.md)。
 
 -   AD FS 2016 需要將 Web 應用程式 Proxy 伺服器放在 Windows Server 2016 上。  您無法針對在 2016 陣列行為層級執行的 AD FS 2016 伺服器陣列，設定舊版的 Proxy。
   
@@ -208,7 +208,7 @@ AD FS 的記憶體和磁碟需求相當靜態，請參閱下表：
   
 此外，如果用戶端使用者憑證驗證 \(使用 X509 使用者憑證的 clientTLS 驗證\) 是必要的，而且連接埠 443 上的 certauth 端點未啟用，則 AD FS 2016 會要求在用戶端與 Web 應用程式 Proxy 之間的防火牆上，啟用 TCP 連接埠 49443 的輸入。 Web 應用程式 Proxy 與同盟伺服器之間的防火牆則不需要這麼做。 
 
-如需混合式連接埠需求的詳細資訊，請參閱[混合式身分識別的連接埠和通訊協定](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-ports)。 
+如需混合式連接埠需求的詳細資訊，請參閱[混合式身分識別的連接埠和通訊協定](/azure/active-directory/connect/active-directory-aadconnect-ports)。 
 
 如需其他資訊，請參閱[保護 Active Directory 同盟服務的最佳做法](../deployment/Best-Practices-Securing-AD-FS.md)
   
@@ -222,9 +222,9 @@ AD FS 的記憶體和磁碟需求相當靜態，請參閱下表：
   
 -   若要進行 Windows 整合式驗證，您必須使用 DNS A 記錄 \(而不是 CNAME\) 來作為同盟服務名稱。  
 
--   若要在連接埠 443 上進行使用者憑證驗證，則必須在 DNS 中將 "certauth.\<同盟服務名稱\>" 設定為解析到同盟伺服器或 Web 應用程式 Proxy。
+-   若為連接埠 443 上的使用者憑證驗證，"certauth.\<federation service name\>" 必須在 DNS 中設定以解析為同盟伺服器或 Web 應用程式 Proxy。
 
--   若要註冊裝置或使用 Windows 10 之前的用戶端向內部部署資源進行新式驗證，則必須將組織中正在使用的每個 UPN 尾碼 "enterpriseregistration.\<UPN 尾碼\>" 設定為解析到同盟伺服器或 Web 應用程式 Proxy。
+-   若要註冊裝置或使用 Windows 10 之前的用戶端向內部部署資源進行新式驗證，則必須將組織中正在使用的每個 UPN 尾碼 "enterpriseregistration.\<upn suffix\>" 設定為解析到同盟伺服器或 Web 應用程式 Proxy。
 
 **負載平衡器需求**
 - 負載平衡器不得終止 SSL。 AD FS 支援多個使用憑證驗證的使用案例，但這些案例會在終止 SSL 時中斷。 任何使用案例都不支援在負載平衡器上終止 SSL。 
@@ -241,4 +241,3 @@ AD FS 的記憶體和磁碟需求相當靜態，請參閱下表：
 執行 AD FS 安裝和初始設定的系統管理員，必須具有 AD FS 伺服器上的本機系統管理員權限。  如果本機系統管理員沒有在 Active Directory 中建立物件的權限，則必須先讓網域管理員建立必要的 AD 物件，然後才能使用 AdminConfiguration 參數來設定 AD FS 伺服器陣列。  
   
   
-

@@ -10,12 +10,12 @@ ms.assetid: 599d6438-a506-4d57-a0ea-1eb7ec19f46e
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b41113f302dad1c9917001bf137da28ef431d38
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: f07c6ffd96aabd4bac5a7e34c7bb612df33274f6
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826781"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961110"
 ---
 # <a name="manage-nano-server"></a>管理 Nano 伺服器
 
@@ -99,7 +99,7 @@ chcp 65001
 winrs -r:<IP address of Nano Server> -u:Administrator -p:<Nano Server administrator password> ipconfig
 ```
   
-如需 Windows 遠端管理的詳細資訊，請參閱 [Windows 遠端管理 (WinRM) 概觀](https://technet.microsoft.com/library/dn265971.aspx)。  
+如需 Windows 遠端管理的詳細資訊，請參閱 [Windows 遠端管理 (WinRM) 概觀](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265971(v=ws.11))。  
    
    
   
@@ -113,7 +113,7 @@ Add-NetEventPacketCaptureProvider -SessionName
 Start-NetEventSession [-Name]  
 Stop-NetEventSession [-Name]  
 ```  
-如需這些 Cmdlet 的詳細說明，請參閱 [Network Event Packet Capture Cmdlets in Windows PowerShell](https://technet.microsoft.com/library/dn268520(v=wps.630).aspx) (Windows PowerShell 中的網路事件封包擷取 Cmdlet)  
+如需這些 Cmdlet 的詳細說明，請參閱 [Network Event Packet Capture Cmdlets in Windows PowerShell](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265971(v=ws.11)) (Windows PowerShell 中的網路事件封包擷取 Cmdlet)  
 
 ## <a name="installing-servicing-packages"></a>安裝服務套件  
 如果您想安裝服務套件，請使用 -ServicingPackagePath 參數 (您可以傳遞路徑陣列到 .cab 檔案)：  
@@ -134,7 +134,7 @@ C:>dir C:\KB3157663_expanded
       C:\KB3157663_expanded 的目錄  
    
       04/19/2016  01:17 PM    \<DIR>          .  
-      04/19/2016  01:17 PM    \<DIR&gt;          .  
+      04/19/2016  01:17 PM    \<DIR>          .  
         04/17/2016  12:31 AM               517 Windows10.0-KB3157663-x64-pkgProperties.txt  
 04/17/2016  12:30 AM        93,886,347 Windows10.0-KB3157663-x64.cab  
 04/17/2016  12:31 AM               454 Windows10.0-KB3157663-x64.xml  
@@ -212,7 +212,7 @@ Get-WindowsPackage -Online
 ---  
 上述命令會在網際網路上查詢 Windows Update 和 Microsoft Update 服務，並下載更新。 如果您使用 WSUS，您可以在 Nano Server 上設定登錄機碼，以改用 WSUS 伺服器。  
   
-請參閱 [Configure Automatic Updates in a Non-Active Directory Environment](https://technet.microsoft.com/library/cc708449(v=ws.10).aspx) (在非 Active Directory 環境中設定自動更新) 中的 Windows Update Agent Environment Options Registry Keys (Windows Update 代理程式環境選項登錄機碼) 表格  
+請參閱 [Configure Automatic Updates in a Non-Active Directory Environment](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc708449(v=ws.10)) (在非 Active Directory 環境中設定自動更新) 中的 Windows Update Agent Environment Options Registry Keys (Windows Update 代理程式環境選項登錄機碼) 表格  
   
 您至少應該設定 **WUServer** 和 **WUStatusServer** 登錄機碼，但視您如何實作 WSUS，可能需要其他值。 您一律可以藉由檢查相同環境中的另一部 Windows Server，來確認這些設定。  
 
@@ -227,7 +227,7 @@ Get-WindowsPackage -Online
 [comment]: # (從 Venkat Yalla。)
 Nano Server 完全支援 [Windows 事件追蹤](https://aka.ms/u2pa0i) (ETW) 架構，但某些用來管理追蹤和效能計數器的熟悉工具目前不適用於 Nano Server。 不過，Nano Server 具有可完成最常見效能分析案例的工具和 Cmdlet。
 
-任何 Window Server 安裝上的高階工作流程會保持不變 -- 在目標 (Nano Server) 電腦上執行低負荷的追蹤，並使用 [Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/hardware/hh448170.aspx)、[Message Analyzer](https://www.microsoft.com/download/details.aspx?id=44226) 等工具，在另一部電腦上離線後續處理所產生的追蹤檔案及 (或) 記錄檔。
+任何 Window Server 安裝上的高階工作流程會保持不變 -- 在目標 (Nano Server) 電腦上執行低負荷的追蹤，並使用 [Windows Performance Analyzer](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10))、[Message Analyzer](https://www.microsoft.com/download/details.aspx?id=44226) 等工具，在另一部電腦上離線後續處理所產生的追蹤檔案及 (或) 記錄檔。
 
 > [!NOTE]
 > 若要回顧如何使用 PowerShell 遠端執行功能來轉送檔案，請參閱 [How to copy files to and from Nano Server](https://aka.ms/nri9c8) (如何將檔案複製到 Nano Server 及從中複製檔案)。
@@ -235,7 +235,7 @@ Nano Server 完全支援 [Windows 事件追蹤](https://aka.ms/u2pa0i) (ETW) 架
 下列各節列出最常見的效能資料收集活動，以及在 Nano Server 上完成這些活動的支援方法。
 
 ### <a name="query-available-event-providers"></a>查詢可用的事件提供者
-[Windows Performance Recorder](https://msdn.microsoft.com/library/hh448229.aspx) 是可查詢可用事件提供者的工具，如下所示：
+[Windows Performance Recorder](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448229(v=win.10)) 是可查詢可用事件提供者的工具，如下所示：
 ```
 wpr.exe -providers
 ```
@@ -252,7 +252,7 @@ PS C:\> wpr.exe -providers | select-string Storage
 ```
 
 ### <a name="record-traces-from-a-single-etw-provider"></a>記錄單一 ETW 提供者的追蹤
-您可以使用新的[事件追蹤管理 Cmdlet](https://technet.microsoft.com/library/dn919247.aspx) 來執行這項動作。 以下是工作流程範例：
+您可以使用新的[事件追蹤管理 Cmdlet](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448229(v=win.10)) 來執行這項動作。 以下是工作流程範例：
 
 建立及啟動追蹤，並指定檔案名稱以儲存事件。
 ```
@@ -284,7 +284,7 @@ Mode                LastWriteTime         Length Name
 > 此範例示範如何將單一追蹤提供者新增至工作階段，但您也可以在具有不同提供者 GUID 的追蹤工作階段上多次使用 ```Add-EtwTraceProvider``` Cmdlet，以啟用多個來源的追蹤。 另一個替代方式是使用如下所述的 ```wpr.exe``` 設定檔。
 
 ### <a name="record-traces-from-multiple-etw-providers"></a>記錄多個 ETW 提供者的追蹤
-[Windows Performance Recorder](https://msdn.microsoft.com/library/hh448229.aspx) 的 ```-profiles``` 選項可同時啟用多個提供者的追蹤。 您可以選擇一些內建設定檔，例如 CPU、網路和 DiskIO：
+[Windows Performance Recorder](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448229(v=win.10)) 的 ```-profiles``` 選項可同時啟用多個提供者的追蹤。 您可以選擇一些內建設定檔，例如 CPU、網路和 DiskIO：
 ```
 PS C:\Users\Administrator\Documents> wpr.exe -profiles 
 
@@ -321,7 +321,7 @@ Copyright (c) 2015 Microsoft Corporation. All rights reserved.
         WdfTraceLoggingProvider     WDF Driver Activity
 ```
 
-如需建立自訂設定檔的詳細指引，請參閱 [WPR.exe 文件](https://msdn.microsoft.com/library/windows/hardware/hh448223.aspx)。
+如需建立自訂設定檔的詳細指引，請參閱 [WPR.exe 文件](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448223(v=win.10))。
 
 ### <a name="record-etw-traces-during-operating-system-boot-time"></a>記錄作業系統開機期間的 ETW 追蹤
 使用 ```New-AutologgerConfig``` Cmdlet 可收集系統開機期間的事件。 其使用方式與 ```New-EtwTraceSession``` Cmdlet 非常類似，但最快只能在下次開機時才能啟用新增至自動記錄工具設定的提供者。 整體工作流程如下所示：
@@ -376,13 +376,13 @@ Exiting, please wait...
 The command completed successfully.
 ```
 
-其他命令列選項可讓您指定設定檔中感興趣的效能計數器名稱、將輸出重新導向至記錄檔，以及執行其他工作。 如需詳細資訊，請參閱 [typeperf.exe 文件](https://technet.microsoft.com/library/bb490960.aspx)。
+其他命令列選項可讓您指定設定檔中感興趣的效能計數器名稱、將輸出重新導向至記錄檔，以及執行其他工作。 如需詳細資訊，請參閱 [typeperf.exe 文件](/previous-versions/windows/it-pro/windows-xp/bb490960(v=technet.10))。
 
 您也可以使用 Perfmon.exe 的圖形化介面，從遠端處理 Nano Server 目標。 將效能計數器新增至檢視時，在電腦名稱中指定 Nano Server 目標，而不是預設的 *<Local computer>* 。
 
 ### <a name="interact-with-the-windows-event-log"></a>與 Windows 事件記錄檔互動
 
-Nano Server 支援 ```Get-WinEvent``` Cmdlet，該 Cmdlet 在本機和遠端電腦上提供 Windows 事件記錄檔篩選和查詢功能。 [Get-WinEvent 文件頁面](https://technet.microsoft.com/library/hh849682.aspx)提供詳細的選項和範例。 此簡單範例會擷取「系統」  記錄檔過去兩天所註明的「錯誤」  。
+Nano Server 支援 ```Get-WinEvent``` Cmdlet，該 Cmdlet 在本機和遠端電腦上提供 Windows 事件記錄檔篩選和查詢功能。 [Get-WinEvent 文件頁面](/powershell/module/microsoft.powershell.diagnostics/get-winevent?view=powershell-5.1)提供詳細的選項和範例。 此簡單範例會擷取「系統」  記錄檔過去兩天所註明的「錯誤」  。
 ```
 PS C:\> $StartTime = (Get-Date) - (New-TimeSpan -Day 2)
 PS C:\> Get-WinEvent -FilterHashTable @{LogName='System'; Level=2; StartTime=$StartTime} | select TimeCreated, Message
@@ -397,7 +397,7 @@ TimeCreated           Message
 Nano Server 也支援 ```wevtutil.exe```，以擷取事件記錄檔和發行者的相關資訊。 如需詳細資訊，請參閱 [wevtutil.exe 文件](https://aka.ms/qvod7p)。 
 
 ### <a name="graphical-interface-tools"></a>圖形化介面工具
-[網頁伺服器管理工具](https://blogs.technet.microsoft.com/servermanagement/2016/08/17/deploy-setup-server-management-tools/)可用來從遠端管理 Nano Server 目標，並使用網頁瀏覽器呈現 Nano Server 事件記錄檔。 最後，MMC 嵌入式管理單元事件檢視器 (eventvwr.msc) 也可用來檢視記錄檔 -- 只要在電腦上使用桌面開啟檔案，並將它指向遠端 Nano Server 即可。
+[網頁伺服器管理工具](https://techcommunity.microsoft.com/t5/windows-admin-center-blog/bg-p/Windows-Admin-Center-Blog)可用來從遠端管理 Nano Server 目標，並使用網頁瀏覽器呈現 Nano Server 事件記錄檔。 最後，MMC 嵌入式管理單元事件檢視器 (eventvwr.msc) 也可用來檢視記錄檔 -- 只要在電腦上使用桌面開啟檔案，並將它指向遠端 Nano Server 即可。
 
 
 
@@ -406,4 +406,4 @@ Nano Server 也支援 ```wevtutil.exe```，以擷取事件記錄檔和發行者�
   
 您可以使用 Windows PowerShell 預期狀態設定 (DSC)，將 Nano Server 當做目標節點來管理。 目前，您只能使用 push 模式的 DSC，來管理執行 Nano Server 的節點。 並非所有 DSC 功能都能搭配 Nano Server 使用。  
   
-如需完整詳細資訊，請參閱[在 Nano Server 上使用 DSC](https://msdn.microsoft.com/powershell/dsc/nanoDsc)。  
+如需完整詳細資訊，請參閱[在 Nano Server 上使用 DSC](https://techcommunity.microsoft.com/t5/windows-admin-center-blog/bg-p/Windows-Admin-Center-Blog)。  

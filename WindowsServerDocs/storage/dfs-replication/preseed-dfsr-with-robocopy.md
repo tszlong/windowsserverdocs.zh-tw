@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ff800fc2a0885cec39ca104607d7207f0bd8ce0
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 746aa953b2226152a1f103fd0b5a974f543ce993
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80815601"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966110"
 ---
 # <a name="use-robocopy-to-pre-seed-files-for-dfs-replication"></a>使用 Robocopy 預先植入用於 DFS 複寫的檔案
 
@@ -43,9 +43,9 @@ Windows Server 中隨附 Robocopy (Robust File Copy) 命令列公用程式。 �
 - 確定目的地磁碟有足夠的儲存空間。 請勿在您打算複製的路徑上建立資料夾：Robocopy 必須建立根資料夾。
     
     >[!NOTE]
-    >決定要為預先植入檔案配置多少空間時，請將預期會隨時間成長的資料量和 DFS 複寫的儲存需求列入考量。 若需要協助以進行規劃，請參閱[編輯 DFS 複寫](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754771(v=ws.11)>)中的[編輯複寫用快取資料夾和因衝突而刪除資料夾的配額大小](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754229(v=ws.11))。
+    >決定要為預先植入檔案配置多少空間時，請將預期會隨時間成長的資料量和 DFS 複寫的儲存需求列入考量。 若需要協助以進行規劃，請參閱[編輯 DFS 複寫](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754771(v=ws.11)>)中的[編輯複寫用快取資料夾和因衝突而刪除資料夾的配額大小](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc754229(v=ws.11))。
 
-- 在來源伺服器上，選擇性地安裝處理序監視器或處理序總管，您可以使用此工具來檢查鎖定檔案的應用程式。 如需下載資訊，請參閱[處理序監視器](https://docs.microsoft.com/sysinternals/downloads/procmon)和[處理序總管](https://docs.microsoft.com/sysinternals/downloads/process-explorer)。
+- 在來源伺服器上，選擇性地安裝處理序監視器或處理序總管，您可以使用此工具來檢查鎖定檔案的應用程式。 如需下載資訊，請參閱[處理序監視器](/sysinternals/downloads/procmon)和[處理序總管](/sysinternals/downloads/process-explorer)。
 
 ## <a name="step-1-download-and-install-the-latest-version-of-robocopy"></a>步驟 1：下載和安裝 OneGet 安裝最新版本的 Robocopy
 
@@ -76,7 +76,7 @@ Windows Server 中隨附 Robocopy (Robust File Copy) 命令列公用程式。 �
 |鎖定的來源|說明|緩和措施|
 |---|---|---|
 |使用者從遠端開啟共用上的檔案。|員工連線至標準檔案伺服器並編輯文件、多媒體內容或其他檔案。 有時系統會將其當做傳統主資料夾或共用資料工作負載參考。|只在離峰期間 (非工作時間) 執行 Robocopy 作業。 這可將 Robocopy 在預先植入期間必須略過的檔案數目降至最低。<br><br>請考慮暫時設定檔案共用上的唯讀存取權，這些檔案共用會使用 Windows PowerShell **參考** 和 **Close-SmbSession** Cmdlet 進行複寫。 如果將一般群組 (例如每個人或已驗證的使用者) 的權限設為「讀取」，標準使用者較不可能開啟獨佔鎖定的檔案 (如果其應用程式在檔案開啟時偵測到唯讀存取)。<br><br>您也可以考慮將 SMB 連接埠 445 傳入的暫時防火牆規則設定為該伺服器，以封鎖對檔案的存取，或使用 **Block-SmbShareAccess** Cmdlet。 不過，這兩種方法都會干擾使用者作業。|
-|應用程式在本機開啟檔案。|在檔案伺服器上執行的應用程式工作負載有時會鎖定檔案。|暫時停用或將鎖定檔案的應用程式解除安裝。 您可以使用處理序監視器或處理序總管來判斷鎖定檔案的應用程式。 若要下載處理序監視或處理序總管，請造訪[處理序監視](https://docs.microsoft.com/sysinternals/downloads/procmon)和[處理序總管](https://docs.microsoft.com/sysinternals/downloads/process-explorer)頁面。|
+|應用程式在本機開啟檔案。|在檔案伺服器上執行的應用程式工作負載有時會鎖定檔案。|暫時停用或將鎖定檔案的應用程式解除安裝。 您可以使用處理序監視器或處理序總管來判斷鎖定檔案的應用程式。 若要下載處理序監視或處理序總管，請造訪[處理序監視](/sysinternals/downloads/procmon)和[處理序總管](/sysinternals/downloads/process-explorer)頁面。|
 
 ## <a name="step-3-copy-the-replicated-files-to-the-destination-server"></a>步驟 3：將複寫的檔案複製到目的地伺服器
 
@@ -121,7 +121,7 @@ Windows Server 中隨附 Robocopy (Robust File Copy) 命令列公用程式。 �
     ```
     
     >[!NOTE]
-    >使用 Robocopy 來預先植入檔案以執行 DFS 複寫時，建議您使用上述的參數。 不過，您可以變更其中一些參數值，或新增其他參數。 例如，經測試後您可能會發現可為 */MT* 參數設定較高的值 (執行緒計數)。 此外，如果您主要會複寫較大的檔案，可以為未緩衝的 I/O 新增 **/j** 選項，以提高複製效能。 如需有關 Robocopy 參數的詳細資訊，請參閱 [Robocopy](https://docs.microsoft.com/windows-server/administration/windows-commands/robocopy) 命令列參考。
+    >使用 Robocopy 來預先植入檔案以執行 DFS 複寫時，建議您使用上述的參數。 不過，您可以變更其中一些參數值，或新增其他參數。 例如，經測試後您可能會發現可為 */MT* 參數設定較高的值 (執行緒計數)。 此外，如果您主要會複寫較大的檔案，可以為未緩衝的 I/O 新增 **/j** 選項，以提高複製效能。 如需有關 Robocopy 參數的詳細資訊，請參閱 [Robocopy](../../administration/windows-commands/robocopy.md) 命令列參考。
 
     >[!WARNING]
     >若要避免在使用 Robocopy 將檔案預先植入以執行 DFS 複寫時遺失資料，請不要對建議的參數進行下列變更：

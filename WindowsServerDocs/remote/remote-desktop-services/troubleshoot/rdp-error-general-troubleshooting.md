@@ -8,12 +8,12 @@ manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 03c3c8daa8dc4bea0e03ed285a98401f91cdf1cb
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 7d94b6a2211cd9fbaefb8318ebdcc4eb52ba9ba1
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857211"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963300"
 ---
 # <a name="general-remote-desktop-connection-troubleshooting"></a>針對一般遠端桌面連線進行疑難排解
 
@@ -23,7 +23,7 @@ ms.locfileid: "80857211"
 
 ### <a name="check-the-status-of-the-rdp-protocol-on-a-local-computer"></a>檢查本機電腦上 RDP 通訊協定的狀態
 
-若要檢查並變更本機電腦上 RDP 通訊協定的狀態，請參閱[如何啟用遠端桌面](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/remote-desktop-allow-access#how-to-enable-remote-desktop)。
+若要檢查並變更本機電腦上 RDP 通訊協定的狀態，請參閱[如何啟用遠端桌面](../clients/remote-desktop-allow-access.md#how-to-enable-remote-desktop)。
 
 > [!NOTE]  
 > 若無法使用遠端桌面選項，請參閱[檢查群組原則物件是否封鎖 RDP](#check-whether-a-group-policy-object-gpo-is-blocking-rdp-on-a-local-computer)。
@@ -74,7 +74,7 @@ gpresult /S <computer name> /H c:\gpresult-<computer name>.html
 
 ### <a name="modifying-a-blocking-gpo"></a>修改封鎖 GPO
 
-您可以在群組原則物件編輯器 (GPE) 和群組原則管理主控台 (GPM) 中修改這些設定。 如需如何使用群組原則的詳細資訊，請參閱[進階群組原則管理](https://docs.microsoft.com/microsoft-desktop-optimization-pack/agpm/)。
+您可以在群組原則物件編輯器 (GPE) 和群組原則管理主控台 (GPM) 中修改這些設定。 如需如何使用群組原則的詳細資訊，請參閱[進階群組原則管理](/microsoft-desktop-optimization-pack/agpm/)。
 
 若要修改封鎖原則，請使用下列其中一種方法：
 
@@ -189,7 +189,7 @@ gpresult /S <computer name> /H c:\gpresult-<computer name>.html
 
 針對此程序，使用具有系統管理權限的 PowerShell 執行個體。 針對本機電腦，您也可以使用具有系統管理權限的命令提示字元。 不過，此程序使用 PowerShell，因為相同的 Cmdlet 在本機和遠端皆可運作。
 
-1. 開啟 PowerShell 視窗。 若要連線到遠端電腦，請輸入 **Enter-PSSession -ComputerName \<電腦名稱\>** 。
+1. 開啟 PowerShell 視窗。 若要連線到遠端電腦，請輸入 **Enter-PSSession -ComputerName \<computer name\>** 。
 2. 輸入下列命令：  
    
      ```powershell  
@@ -225,7 +225,7 @@ gpresult /S <computer name> /H c:\gpresult-<computer name>.html
    ```
    
 3. 檢查 **psping** 命令的輸出是否有如下結果：  
-      - **連線到\<電腦 IP\>** ：遠端電腦可連線。
+      - **連線至\<computer IP\>** ：遠端電腦可連線。
       - **(0% 遺失)** ：所有連線嘗試皆成功。
       - **遠端電腦拒絕網路連線**：遠端電腦無法連線。
       - **(100% 遺失)** ：所有連線嘗試皆失敗。
