@@ -2,18 +2,17 @@
 title: 從現有的用戶端電腦備份還原完整的系統
 description: 說明如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 47e498a6-1b71-47de-88f6-8c13c221d108
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 9228092f91f4fe309d4841680cf3a78bd35f5b00
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 885a10ee9b5a684c385de9baa0ebcdfac61f2c0e
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470363"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180824"
 ---
 # <a name="restore-a-full-system-from-an-existing-client-computer-backup"></a>從現有的用戶端電腦備份還原完整的系統
 
@@ -145,7 +144,7 @@ ms.locfileid: "85470363"
 
 #### <a name="to-use-the-full-system-restore-wizard"></a>若要使用完整系統還原精靈
 
-1. 執行下列其中一個動作：
+1. 請執行下列其中一項：
 
    -   Windows Server Essentials：開啟您要還原的用戶端電腦、插入還原媒體，然後關閉電腦。
 
@@ -162,7 +161,7 @@ ms.locfileid: "85470363"
 
 3. 在 **[完整系統還原精靈]** 視窗中，選擇您的慣用語言，然後按一下箭頭。
 
-4. 選擇這部電腦適合的 **[時間及貨幣格式]**，以及 **[鍵盤或輸入法]**。 按一下 [繼續] 。
+4. 選擇這部電腦適合的 **[時間及貨幣格式]**，以及 **[鍵盤或輸入法]**。 按一下 **[繼續]** 。
 
 5. 如果驅動程式遺失，則會顯示 [還原程式無法確認驅動程式] 訊息。 按一下 **[關閉]**，然後按一下 [歡迎使用] 對話方塊上的 **[載入驅動程式]**。
 

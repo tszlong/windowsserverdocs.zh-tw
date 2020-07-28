@@ -2,18 +2,17 @@
 title: Windows Server Essentials 系統需求
 description: 說明如何使用 Windows Server Essentials
 ms.date: 10/31/2013
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 0951a67d-492f-41ad-9ae5-8e4cd25e3041
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ef68f4f34e7a543510dbde5dd0b3edbdf221aef9
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 295022c45a82d18781df27604d47d58af14b4b2d
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471073"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181634"
 ---
 # <a name="system-requirements-for-windows-server-essentials"></a>Windows Server Essentials 系統需求
 
@@ -34,7 +33,7 @@ ms.locfileid: "85471073"
 
 ## <a name="table-2-additional-hardware-and-software-requirements-for-windows-server-essentials"></a>表 2. Windows Server Essentials 的其他硬體和軟體需求
 
-|元件|描述|
+|元件|說明|
 |---------------|-----------------|
 |網路介面卡|Gigabit Ethernet 介面卡 (10/100/1000baseT PHY/MAC)|
 |Internet|某些功能可能會需要網際網路存取權 (可能需支付費用) 或 Microsoft 帳戶|

@@ -2,18 +2,17 @@
 title: 步驟 1：準備好來源伺服器以進行 Windows Server Essentials 移轉
 description: 說明如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 244c8a06-04c6-4863-8b52-974786455373
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f5696c473a8fcb04a60b9a4b6c51ac206a6ef0de
-ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
+ms.openlocfilehash: 6666a0f68863913c0c0a5a1b1e903eaebf5470a4
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83404589"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180484"
 ---
 # <a name="step-1-prepare-your-source-server-for-windows-server-essentials-migration"></a>步驟 1：準備好來源伺服器以進行 Windows Server Essentials 移轉
 
@@ -70,7 +69,7 @@ ms.locfileid: "83404589"
 
 5.  清除 [定義這些原則設定]**** 核取方塊。
 
-6.  刪除 \\ \localhost\SYSVOL \\<domainname \> \scripts\ SBS_LOGIN_SCRIPT .bat。
+6.  刪除 \\ \localhost\SYSVOL \\<domainname \>\scripts\SBS_LOGIN_SCRIPT.bat。
 
 ###  <a name="evaluate-the-health-of-the-source-server"></a><a name="BKMK_EvaluateHealth"></a>評估來源伺服器的健全狀況
  請務必在開始移轉前評估來源伺服器的健康情況。 您可以使用下列程序，確保更新為最新的，以產生系統健康情況報告，並執行 Windows Server 解決方案最佳做法分析程式 (BPA)。

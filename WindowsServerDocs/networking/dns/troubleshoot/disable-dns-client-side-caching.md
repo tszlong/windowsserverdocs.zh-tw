@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: 09af41a544cacb0fd0977847b7bc2e6b0d8a59f7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 74e7f3936418bd2f04234d07b2f600197e94b357
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860071"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182344"
 ---
 # <a name="disable-dns-client-side-caching-on-dns-clients"></a>停用 DNS 用戶端上的 DNS 用戶端快取
 
@@ -46,12 +46,12 @@ DNS 用戶端服務會將先前解析的名稱儲存在記憶體中，藉此優�
 ipconfig /displaydns 
 ```
 
-此命令會顯示 DNS 解析程式快取的內容，包括從 Hosts 檔案預先載入的 DNS 資源記錄，以及系統所解析的任何最近查詢的名稱。 經過一段時間之後，解析程式會捨棄快取中的記錄。 時間週期是由與 DNS 資源記錄相關聯的生存**時間（TTL）** 值所指定。 您也可以手動清除快取。 排清快取之後，電腦必須重新查詢電腦先前已解決的任何 DNS 資源記錄的 DNS 伺服器。 若要刪除 DNS 解析程式快取中的專案，請在命令提示字元中執行 `ipconfig /flushdns`。
+此命令會顯示 DNS 解析程式快取的內容，包括從 Hosts 檔案預先載入的 DNS 資源記錄，以及系統所解析的任何最近查詢的名稱。 經過一段時間之後，解析程式會捨棄快取中的記錄。 時間週期是由與 DNS 資源記錄相關聯的生存**時間（TTL）** 值所指定。 您也可以手動清除快取。 排清快取之後，電腦必須重新查詢電腦先前已解決的任何 DNS 資源記錄的 DNS 伺服器。 若要刪除 DNS 解析程式快取中的專案，請 `ipconfig /flushdns` 在命令提示字元中執行。
 
 ## <a name="using-the-registry-to-control-the-caching-time"></a>使用登錄來控制快取時間
 
 > [!IMPORTANT]  
-> 請仔細依循本節中的步驟。 若您不正確地修改登錄，可能會發生嚴重的問題。 在修改之前，[備份登錄以供還原](https://support.microsoft.com/help/322756)，以免發生問題。
+> 請仔細依循本節中的步驟。 如果您未正確修改登錄，可能會發生嚴重問題。 在修改之前，[備份登錄以供還原](https://support.microsoft.com/help/322756)，以免發生問題。
 
 快取正面或負回應的時間長度取決於下列登錄機碼中的專案值：
 
@@ -66,12 +66,12 @@ ipconfig /displaydns
 >[!Note]
 >- 正面回應的預設 TTL 是86400秒（1天）。
 >- 否定回應的 TTL 是在 MaxNegativeCacheTtl 登錄設定中指定的秒數。
->- 負值回應的預設 TTL 為900秒（15分鐘）。
+>- 負值回應的預設 TTL 為5秒;在 Windows 10 之前的1703版中，預設值是900秒（15分鐘）。
 如果您不想要快取否定回應，請將 MaxNegativeCacheTtl 登錄設定設為0。
 
 若要在用戶端電腦上設定快取時間：
 
-1. 啟動登錄編輯程式（Regedit.exe）。
+1. 啟動 [登錄編輯程式] （Regedit.exe）。
 
 2. 在登錄中找出並按一下下列機碼：
 
@@ -83,16 +83,16 @@ ipconfig /displaydns
 
      資料類型： REG_DWORD
 
-     值資料：預設值86400秒。 
-     
-     如果您將用戶端 DNS 快取中的最大 TTL 值降低為1秒，這會讓用戶端 DNS 快取的外觀變得已停用。    
+     值資料：預設值86400秒。
+
+     如果您將用戶端 DNS 快取中的最大 TTL 值降低為1秒，這會讓用戶端 DNS 快取的外觀變得已停用。
 
    - 值名稱： MaxNegativeCacheTtl
 
      資料類型： REG_DWORD
 
-     值資料：預設值900秒。 
-     
+     數值資料：預設值為5秒。
+
      如果您不想要快取否定回應，請將值設定為0。
 
 4. 輸入您要使用的值，然後按一下 [確定]。

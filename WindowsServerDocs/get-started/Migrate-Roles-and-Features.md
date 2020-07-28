@@ -10,12 +10,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 538ea2d6e0f038a98b64a197bd49ed5719fe15ac
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 99a684cc90d47e1e80dc84ef9c3705a2ed79728b
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959570"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182024"
 ---
 # <a name="migrating-roles-and-features-in-windows-server"></a>在 Windows Server 中移轉角色和功能
 
@@ -27,7 +27,7 @@ ms.locfileid: "86959570"
 
 ## <a name="before-you-begin"></a>在您開始前
 
-在您開始移轉角色和功能之前，請確認來源和目的地伺服器是否執行適用於其作業系統的最新 Service Pack。 
+在您開始移轉角色和功能之前，請確認來源和目的地伺服器是否執行適用於其作業系統的最新 Service Pack。
 
 > [!NOTE]
 > 每當您移轉或升級到任何 Windows Server 版本時，都應該檢閱和了解該版本的[支援週期原則](https://support.microsoft.com/lifecycle)與時間範圍，並進行適當規劃。 您可以針對感興趣的特定 Windows Server 版本[搜尋週期資訊](https://support.microsoft.com/lifecycle)。
@@ -63,7 +63,7 @@ ms.locfileid: "86959570"
 - [將叢集角色移轉到 Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn530779(v=ws.11))
 - [將 DHCP 伺服器移轉到 Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn495425(v=ws.11))
 
-目前已有 Windows Server 2012 R2 與 Windows Server 2012 移轉指南電子書可供閱讀。 如需詳細資訊並下載電子書，請參閱 [Microsoft 技術電子書庫](https://social.technet.microsoft.com/wiki/contents/articles/11608.e-book-gallery-for-microsoft-technologies.aspx#MigrateRoles)。
+目前已有 Windows Server 2012 R2 與 Windows Server 2012 移轉指南電子書可供閱讀。 如需詳細資訊並下載電子書，請參閱 [Microsoft 技術電子書庫](https://download.microsoft.com/download/8/D/3/8D33661A-7E21-4FEE-9AAA-C17C3004B5AA/Windows-Migration-and-Upgrade-Guide.pdf)。
 
 ## <a name="windows-server-2012"></a>Windows Server 2012
 
@@ -80,7 +80,7 @@ ms.locfileid: "86959570"
 - [將 Windows Server Update Services 移轉到 Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh852339(v=ws.11))
 - [將 Active Directory 網域控制站升級到 Windows Server 2012](../identity/ad-ds/deploy/upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012.md)
 - [將叢集服務和應用程式移轉到 Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486790(v=ws.11))
- 
+
 
 如需其他移轉資源，請瀏覽[將角色和功能移轉到 Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134039(v=ws.11))。
 
@@ -104,5 +104,5 @@ ms.locfileid: "86959570"
 - [RRAS 移轉指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee822825(v=ws.10))
 - [Windows Server 移轉一般工作和資訊](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff400258(v=ws.10))
 - [Windows Server Update Services 3.0 SP2 移轉指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee822826(v=ws.10))
- 
+
 如需其他移轉資源，請瀏覽 [Migrate Roles and Features to Windows Server 2008 R2](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd365353(v=ws.10)) (將角色和功能移轉到 Windows Server 2008 R2)。

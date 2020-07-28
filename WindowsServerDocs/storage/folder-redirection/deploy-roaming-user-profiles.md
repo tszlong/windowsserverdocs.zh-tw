@@ -8,12 +8,12 @@ author: JasonGerend
 manager: brianlic
 ms.date: 06/07/2019
 ms.author: jgerend
-ms.openlocfilehash: 514dd9be3f7f634cf021a8a154f4b64c9018743e
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: a1508db6878a48c5fad2a0909123beb836e1d1f0
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961630"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182234"
 ---
 # <a name="deploying-roaming-user-profiles"></a>部署漫遊使用者設定檔
 
@@ -78,7 +78,7 @@ ms.locfileid: "86961630"
     - Windows 8.1 或 Windows Server 2012 R2：安裝 Microsoft 知識庫中 [2887595](https://support.microsoft.com/kb/2887595) 文章所述的軟體更新 (發行後)。
     - Windows 8 或 Windows Server 2012：安裝 Microsoft 知識庫中 [2887239](https://support.microsoft.com/kb/2887239) 文章所述的軟體更新。
 
-2. 在執行 Windows 8.1、Windows 8、Windows Server 2012 R2 或 Windows Server 2012 且您要使用漫遊使用者設定檔的所有電腦上，使用登錄編輯程式或群組原則來建立下列登錄機碼 DWORD 值，並將它設定為 `1`。 如需使用群組原則建立登錄機碼的相關資訊，請參閱 [設定登錄項目](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753092(v=ws.11)>)。
+2. 在執行 Windows 8.1、Windows 8、Windows Server 2012 R2 或 Windows Server 2012 且您要使用漫遊使用者設定檔的所有電腦上，使用登錄編輯程式或群組原則來建立下列登錄機碼 DWORD 值，並將它設定為 `1`。 如需使用群組原則建立登錄機碼的相關資訊，請參閱 [設定登錄項目](</previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753092(v=ws.11)>)。
 
     ```
     HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ProfSvc\Parameters\UseProfilePathExtensionVersion
@@ -131,9 +131,9 @@ ms.locfileid: "86961630"
 7. 在 [權限]  頁面上，選取 [自訂權限...]  。 [進階安全性設定] 對話方塊隨即出現。
 8. 選取 [停用繼承]  ，然後選取 [將繼承的權限轉換成此物件中的明確權限]  。
 9. 如[檔案共用裝載漫遊使用者設定檔的必要權限](#required-permissions-for-the-file-share-hosting-roaming-user-profiles)和以下螢幕截取畫面中所述內容設定權限，移除未列出群組和帳戶的權限，並將特殊權限新增至您在步驟 1 中建立的漫遊使用者設定檔使用者和電腦群組。
-    
+
     ![表 1 中說明的顯示安全性設定視窗權限](media/advanced-security-user-profiles.jpg)
-    
+
     **圖 1** 設定漫遊使用者設定檔共用的權限
 10. 如果您選擇 [SMB 共用 - 進階]  設定檔，在 [管理屬性]  頁面上，選取 [使用者檔案]  資料夾使用方式值。
 11. 如果您選擇 [SMB 共用 - 進階]  設定檔，在 [配額]  頁面上，選擇性地選取套用至共用之使用者的配額。
@@ -164,7 +164,7 @@ ms.locfileid: "86961630"
 7. 在 [安全性篩選]  區段中，選取 [新增]  。
 8. 在 [選取使用者、電腦或群組]  對話方塊中，輸入您在步驟 1 建立的安全性群組名稱 (例如**漫遊使用者設定檔使用者和電腦**)，然後選取 [確定]  。
 9. 選取 [委派]  索引標籤並選取 [新增]  ，輸入**已驗證的使用者**，再選取 [確定]  ，然後再次選取 [確定]  以接受預設的 [讀取] 權限。
-    
+
     由於 [MS16-072](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14%2c-2016) 中所做的安全性變更，這是必要步驟。
 
 >[!IMPORTANT]
@@ -182,16 +182,16 @@ ms.locfileid: "86961630"
 1. 在 Active Directory 系統管理中心，瀏覽到適當網域中的 [使用者]  容器 (或 OU)。
 2. 選取想要指派漫遊使用者設定檔的所有使用者，以滑鼠右鍵按一下使用者，然後選取 [內容]  。
 3. 在 [設定檔]  區段中，選取 [設定檔路徑：]  核取方塊，然後輸入想要儲存使用者的漫遊使用者設定檔的檔案共用路徑，後面加上 `%username%` (它會自動取代為使用者第一次登入的使用者名稱)。 例如：
-    
+
     `\\fs1.corp.contoso.com\User Profiles$\%username%`
-    
+
     若要指定強制的漫遊使用者設定檔，請指定先前建立的 NTuser.man 檔案的路徑，例如 `fs1.corp.contoso.comUser Profiles$default`。 如需詳細資訊，請參閱[建立強制使用者設定檔](/windows/client-management/mandatory-user-profile)。
 4. 選取 [確定]  。
 
 > [!NOTE]
 > 根據預設，使用漫遊使用者設定檔時，允許部署所有 Windows® 執行階段型 (Windows 市集) 應用程式。 不過，當使用特殊設定檔時，預設不會部署應用程式。 特殊設定檔是使用者登出後捨棄變更的使用者設定檔：
 > <br><br>若要移除特殊設定檔的應用程式部署限制，請啟用 **Allow deployment operations in special profiles** 原則設定 (位於 [電腦設定\原則\系統管理範本\Windows 元件\應用程式套件部署])。 不過，在此案例中部署的應用程式會保留部分的資料儲存在電腦上，假如一部電腦有數百位使用者時，資料可能會不斷累積。 若要清除應用程式，請找出或開發使用 [CleanupPackageForUserAsync](/uwp/api/Windows.Management.Deployment.PackageManager?view=winrt-19041#windows_management_deployment_packagemanager_cleanuppackageforuserasync_system_string_system_string_) API 的工具，對於在電腦上不再有設定檔的使用者清除應用程式套件。
-> <br><br>如需 Windows 市集應用程式的額外背景資訊，請參閱 [管理 Windows 市集的用戶端存取](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh832040(v=ws.11)>)。
+> <br><br>如需 Windows 市集應用程式的額外背景資訊，請參閱 [管理 Windows 市集的用戶端存取](</previous-versions/windows/it-pro/windows-8.1-and-8/hh832040(v=ws.11)>)。
 
 ## <a name="step-6-optionally-set-up-roaming-user-profiles-on-computers"></a>步驟 6：選擇性設定電腦的漫遊使用者設定檔
 
@@ -229,7 +229,7 @@ ms.locfileid: "86961630"
 2. 建立完整或部分的開始功能表配置 XML 檔案。 若要這樣做，請參閱[自訂和匯出開始功能表配置](/windows/configuration/customize-and-export-start-layout)。
     * 如果您指定*完整*開始功能表配置，使用者就無法自訂開始功能表的任何部分。 如果您指定*部分*開始功能表配置，使用者可以自訂任何項目，但系統會鎖定您指定的磚群組。 不過，使用部分開始功能表配置時，其使用者自訂項目不會漫遊到其他電腦。
 3. 使用群組原則將自訂的開始功能表配置套用至您為漫遊使用者設定檔所建立的 GPO。 若要這樣做，[使用群組原則在網域中套用自訂的開始功能表配置](/windows/configuration/customize-windows-10-start-screens-by-using-group-policy#bkmk-domaingpodeployment)。
-4. 使用群組原則在 Windows 10 電腦上設定下列登錄值。 若要這樣做，請參閱[設定登錄項目](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753092(v=ws.11)>)。
+4. 使用群組原則在 Windows 10 電腦上設定下列登錄值。 若要這樣做，請參閱[設定登錄項目](</previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753092(v=ws.11)>)。
 
 | **動作**   | **更新**                  |
 | ------------ | ------------                |
@@ -243,7 +243,7 @@ ms.locfileid: "86961630"
 5. (選用) 啟用第一次登入最佳化，以更快速地登入使用者。 若要這麼做，請參閱[套用原則以改善登入時間](/windows/client-management/mandatory-user-profile#apply-policies-to-improve-sign-in-time)。
 6. (選用) 從用來部署用戶端電腦的 Windows 10 基礎映像中移除不必要的應用程式，以進一步減少登入次數。 Windows Server 2019 和 Windows Server 2016 沒有任何預先佈建的應用程式，因此您可以在伺服器映像上略過此步驟。
     - 若要移除應用程式，請使用 Windows PowerShell 中的 [Remove-AppxProvisionedPackage](/powershell/module/dism/remove-appxprovisionedpackage?view=win10-ps) Cmdlet 將下列應用程式解除安裝。 如果您的電腦已部署完成，可以使用 [Remove-AppxPackage](/powershell/module/appx/remove-appxpackage?view=win10-ps) 來編寫移除這些應用程式的程式碼。
-    
+
       - Microsoft.windowscommunicationsapps\_8wekyb3d8bbwe
       - Microsoft.BingWeather\_8wekyb3d8bbwe
       - Microsoft.DesktopAppInstaller\_8wekyb3d8bbwe
@@ -279,7 +279,7 @@ ms.locfileid: "86961630"
 
 1. 使用您已經啟用漫遊使用者設定檔的使用者帳戶，登入主要電腦 (如果您已啟用主要電腦支援)。 如果您在特定電腦上啟用漫遊使用者設定檔，請登入其中一部電腦。
 2. 如果使用者先前已登入電腦，請開啟提升權限的命令提示字元，然後輸入下列命令，以確保最新的群組原則設定套用到用戶端電腦：
-    
+
     ```PowerShell
     GpUpdate /Force
     ```
@@ -321,19 +321,19 @@ ms.locfileid: "86961630"
 以下是在就地升級之後，開始功能表配置重設問題的一些解決方法：
 
 - 如果只有一位使用者使用裝置，而 IT 系統管理員使用受控作業系統部署策略 (例如 Configuration Manager)，則系統管理員可以執行下列動作：
-    
-  1. 在升級之前，使用 Export-Startlayout 匯出開始功能表配置 
-  2. 在 OOBE 之後但在使用者登入之前，使用 Import-StartLayout 匯入開始功能表配置  
- 
-     > [!NOTE] 
+
+  1. 在升級之前，使用 Export-Startlayout 匯出開始功能表配置
+  2. 在 OOBE 之後但在使用者登入之前，使用 Import-StartLayout 匯入開始功能表配置
+
+     > [!NOTE]
      > 匯入 StartLayout 會修改預設的使用者設定檔。 在匯入之後建立的所有使用者設定檔都會取得匯入的 Start-Layout。
- 
+
 - IT 系統管理員可以選擇使用群組原則來管理開始功能表的配置。 使用群組原則可提供集中式管理解決方案，將標準化的開始功能表配置套用至使用者。 使用開始管理的群組原則的模式有 2 種，分別是： 完整鎖定和部分鎖定。 完整鎖定的情況可防止使用者對開始功能表配置進行任何變更。 部分鎖定的情況可讓使用者對開始功能表的特定區域進行變更。 如需詳細資訊，請參閱[自訂和匯出開始功能表配置](/windows/configuration/customize-and-export-start-layout)。
-        
+
    > [!NOTE]
    > 若使用者在部分鎖定的情況下進行變更，升級時仍然無法保有這些變更。
 
-- 如此系統會重設開始功能表配置，並允許終端使用者重新設定開始功能表。 您可以將通知電子郵件或其他通知傳送給終端使用者，說明開始功能表配置會在作業系統升級後重設，以將影響降至最低。 
+- 如此系統會重設開始功能表配置，並允許終端使用者重新設定開始功能表。 您可以將通知電子郵件或其他通知傳送給終端使用者，說明開始功能表配置會在作業系統升級後重設，以將影響降至最低。
 
 ## <a name="change-history"></a>變更歷程記錄
 
@@ -358,7 +358,7 @@ ms.locfileid: "86961630"
 
 - [部署資料夾重新導向、離線檔案及漫遊使用者設定檔](deploy-folder-redirection.md)
 - [部署資料夾重新導向及漫遊使用者設定檔的主要電腦](deploy-primary-computers.md)
-- [實作使用者狀態管理](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784645(v=ws.10)>)
+- [實作使用者狀態管理](</previous-versions/windows/it-pro/windows-server-2003/cc784645(v=ws.10)>)
 - [Microsoft 對於複寫使用者設定檔資料的支援聲明](/archive/blogs/askds/microsofts-support-statement-around-replicated-user-profile-data)
-- [使用 DISM 側載應用程式](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh852635(v=win.10)>)
+- [使用 DISM 側載應用程式](</previous-versions/windows/it-pro/windows-8.1-and-8/hh852635(v=win.10)>)
 - [封裝、部署及查詢 Windows 執行階段型應用程式疑難排解](/windows/win32/appxpkg/troubleshooting)

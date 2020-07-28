@@ -2,18 +2,17 @@
 title: 將商標新增至儀表板、遠端 Web 存取和啟動列
 description: 如何將商標材料新增至您的儀表板、遠端 Web 存取和啟動列畫面。
 ms.date: 04/10/2014
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 166262f8-b2a5-4b1c-a4a7-a141e1c54f10
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 056c7264fc90adbf115c3c6587081a449240a98a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4d1b3ada8888de9885bfe88af56e5b0656fc92b7
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471083"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181604"
 ---
 # <a name="add-branding-to-the-dashboard-remote-web-access-and-launchpad"></a>將商標新增至儀表板、遠端 Web 存取和啟動列
 
@@ -61,7 +60,7 @@ ms.locfileid: "85471083"
 
 下表提供可用字串名稱和資料值的相關資訊。
 
-| 商標位置 | 描述 | 名稱字串 | 資料值 |
+| 商標位置 | 說明 | 名稱字串 | 資料值 |
 |--|--|--|--|
 | 儀表板標誌 | 將標誌影像新增到儀表板。 儀表板標誌必須是 .png 格式，而且寬高比不得大於 350 像素 x 38 像素。<p>**重要事項：** 若要將儀表板與您的標誌共同品牌，您必須編輯 OPK DVD 上提供的 [插圖] 磚，並在遵循適當的空白字元需求時，將您的公司標誌附加至影像。 | DashboardLogo | 輸入標誌影像檔的名稱。 |
 | DashboardClientLogo | 將標誌影像新增至儀表板用戶端登入畫面。 | DashboardClientLogo | 輸入標誌影像檔的名稱。 |
@@ -98,7 +97,7 @@ ms.locfileid: "85471083"
 
 ### <a name="linksxml-elements"></a>LinksXML 元素
 
-| LinksXML 元素 | 描述 |
+| LinksXML 元素 | 說明 |
 |--|--|
 | LogonLinks | 登入連結的父專案。 |
 | 連結名稱 | 登入連結名稱。 |
@@ -111,7 +110,7 @@ ms.locfileid: "85471083"
 | URL | 解析為**首頁**連結的 URL。 |
 | 圖示 | **首頁**連結的圖示檔名稱。 這個檔案應與 .xml 檔案放在相同的資料夾位置中。 圖示影像應為16x16 圖元和 .png 格式。 如果您未提供圖示，則會使用預設的**首頁**連結圖示影像。 |
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [建立和自訂映像](Creating-and-Customizing-the-Image.md)
 

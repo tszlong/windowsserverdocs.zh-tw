@@ -9,18 +9,18 @@ ms.assetid: 158b7a62-2c52-448b-9467-c00d5018f65b
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
-ms.openlocfilehash: 095e40528d27be4509e3235a0ab4c03e59759f99
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 636c0c56c52f501a54679a569213bcd4e4646b72
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966760"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181984"
 ---
 # <a name="configure-vpn-device-tunnels-in-windows-10"></a>在 Windows 10 中設定 VPN 裝置通道
 
 >適用于： Windows 10 版本1709
 
-Always On VPN 可讓您為裝置或電腦建立專用的 VPN 設定檔。 Always On VPN 連接包含兩種類型的通道： 
+Always On VPN 可讓您為裝置或電腦建立專用的 VPN 設定檔。 Always On VPN 連接包含兩種類型的通道：
 
 - _裝置_通道會在使用者登入裝置之前連線到指定的 VPN 伺服器。 登入前的連線案例和裝置管理用途是使用裝置通道。
 
@@ -34,7 +34,7 @@ Always On VPN 可讓您為裝置或電腦建立專用的 VPN 設定檔。 Always
 
 
 ## <a name="device-tunnel-requirements-and-features"></a>裝置通道需求和功能
-您必須為 VPN 連線啟用電腦憑證驗證，並定義用來驗證傳入 VPN 連線的根憑證授權單位。 
+您必須為 VPN 連線啟用電腦憑證驗證，並定義用來驗證傳入 VPN 連線的根憑證授權單位。
 
 ```PowerShell
 $VPNRootCertAuthority = "Common Name of trusted root certification authority"
@@ -46,7 +46,7 @@ Set-VpnAuthProtocol -UserAuthProtocolAccepted Certificate, EAP -RootCertificateN
 
 ## <a name="vpn-device-tunnel-configuration"></a>VPN 裝置通道設定
 
-下面的範例設定檔 XML 提供良好的指引，適用于只需要透過裝置通道進行用戶端起始提取的案例。  流量篩選器會用來將裝置通道限制為僅限管理流量。  此設定適用于 Windows Update、一般群組原則（GP）和 Microsoft 端點 Configuration Manager 更新案例，以及用於第一次登入但沒有快取認證或密碼重設案例的 VPN 連線能力。 
+下面的範例設定檔 XML 提供良好的指引，適用于只需要透過裝置通道進行用戶端起始提取的案例。  流量篩選器會用來將裝置通道限制為僅限管理流量。  此設定適用于 Windows Update、一般群組原則（GP）和 Microsoft 端點 Configuration Manager 更新案例，以及用於第一次登入但沒有快取認證或密碼重設案例的 VPN 連線能力。
 
 針對伺服器起始的推送案例（例如 Windows 遠端管理（WinRM）、遠端 GPUpdate 和遠端 Configuration Manager 更新案例），您必須允許裝置通道上的輸入流量，因此無法使用流量篩選器。  如果在裝置通道設定檔中，您開啟流量篩選器，則裝置通道會拒絕輸入流量。  未來的版本將會移除這項限制。
 
@@ -56,40 +56,40 @@ Set-VpnAuthProtocol -UserAuthProtocolAccepted Certificate, EAP -RootCertificateN
 以下是範例 VPN profileXML。
 
 ``` xml
-<VPNProfile>  
-  <NativeProfile>  
-<Servers>vpn.contoso.com</Servers>  
-<NativeProtocolType>IKEv2</NativeProtocolType>  
-<Authentication>  
-  <MachineMethod>Certificate</MachineMethod>  
-</Authentication>  
-<RoutingPolicyType>SplitTunnel</RoutingPolicyType>  
+<VPNProfile>
+  <NativeProfile>
+<Servers>vpn.contoso.com</Servers>
+<NativeProtocolType>IKEv2</NativeProtocolType>
+<Authentication>
+  <MachineMethod>Certificate</MachineMethod>
+</Authentication>
+<RoutingPolicyType>SplitTunnel</RoutingPolicyType>
  <!-- disable the addition of a class based route for the assigned IP address on the VPN interface -->
-<DisableClassBasedDefaultRoute>true</DisableClassBasedDefaultRoute>  
-  </NativeProfile> 
-  <!-- use host routes(/32) to prevent routing conflicts -->  
-  <Route>  
-<Address>10.10.0.2</Address>  
-<PrefixSize>32</PrefixSize>  
-  </Route>  
-  <Route>  
-<Address>10.10.0.3</Address>  
-<PrefixSize>32</PrefixSize>  
-  </Route>  
-<!-- traffic filters for the routes specified above so that only this traffic can go over the device tunnel --> 
-  <TrafficFilter>  
-<RemoteAddressRanges>10.10.0.2, 10.10.0.3</RemoteAddressRanges>  
+<DisableClassBasedDefaultRoute>true</DisableClassBasedDefaultRoute>
+  </NativeProfile>
+  <!-- use host routes(/32) to prevent routing conflicts -->
+  <Route>
+<Address>10.10.0.2</Address>
+<PrefixSize>32</PrefixSize>
+  </Route>
+  <Route>
+<Address>10.10.0.3</Address>
+<PrefixSize>32</PrefixSize>
+  </Route>
+<!-- traffic filters for the routes specified above so that only this traffic can go over the device tunnel -->
+  <TrafficFilter>
+<RemoteAddressRanges>10.10.0.2, 10.10.0.3</RemoteAddressRanges>
   </TrafficFilter>
-<!-- need to specify always on = true --> 
-  <AlwaysOn>true</AlwaysOn> 
-<!-- new node to specify that this is a device tunnel -->  
+<!-- need to specify always on = true -->
+  <AlwaysOn>true</AlwaysOn>
+<!-- new node to specify that this is a device tunnel -->
  <DeviceTunnel>true</DeviceTunnel>
 <!--new node to register client IP address in DNS to enable manage out -->
 <RegisterDNS>true</RegisterDNS>
 </VPNProfile>
 ```
 
-視每個特定部署案例的需求而定，另一個可使用裝置通道設定的 VPN 功能就是[受信任的網路偵測](https://social.technet.microsoft.com/wiki/contents/articles/38546.new-features-for-vpn-in-windows-10-and-windows-server-2016.aspx#Trusted_Network_Detection)。
+視每個特定部署案例的需求而定，另一個可使用裝置通道設定的 VPN 功能就是[受信任的網路偵測](https://docs.microsoft.com/answers/topics/windows-server-infrastructure.html)。
 
 ```
  <!-- inside/outside detection -->

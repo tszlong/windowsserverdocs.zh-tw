@@ -2,18 +2,17 @@
 title: 管理 Windows Server Essentials 中的 VPN
 description: 說明如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: cc2b264a-b9a8-4114-9f7b-8604f77096e5
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ac6969522344165583bd21ac882fa7b4f6695145
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: bb221a0ef80388fa8b5bffbc38f7cbec56d3f61c
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470473"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180864"
 ---
 # <a name="manage-vpn-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的 VPN
 

@@ -2,18 +2,17 @@
 title: 安裝和設定 Windows Server Essentials
 description: 說明如何使用 Windows Server Essentials
 ms.date: 06/17/2013
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: e95cf219-46a4-4041-bd81-0c4c2a0622cf
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 504ce971691d85c6d3727bacd6419f548673c88a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ce8f1dda49144a817f405d04f17046f701230446
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470893"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181174"
 ---
 # <a name="install-and-configure-windows-server-essentials"></a>安裝和設定 Windows Server Essentials
 
@@ -124,7 +123,7 @@ ms.locfileid: "85470893"
     > [!IMPORTANT]
     >  伺服器名稱必須是在您的網路中未被使用的名稱。 在您完成此步驟後就無法變更伺服器名稱或者內部網域名稱。
 
-4.  按 [下一步] 。
+4.  按 [下一步]  。
 
 5.  在 **提供您的系統管理員帳戶資訊** 頁面，鍵入新系統管理員帳戶的資訊。
 
@@ -137,7 +136,7 @@ ms.locfileid: "85470893"
 
 8.  **正在更新及準備您的伺服器** 頁面顯示最後安裝程序的進度。 這需要花費一些時間完成，您的電腦將會重新啟動數次。
 
-9. 在伺服器最後一次重新啟動後會出現 **您的伺服器已可以使用** 頁面。 按一下 [關閉] 。
+9. 在伺服器最後一次重新啟動後會出現 **您的伺服器已可以使用** 頁面。 按一下 [關閉]。
 
 10. Click the Dashboard tile on the按一下 **開始** 畫面的儀表板圖標，然後在儀表板上，完成 **首頁** 頁面上的 **設定我的伺服器** 工作。 在 Windows Server Essentials 安裝完成後，您應該立即完成這些工作。
 
@@ -153,7 +152,7 @@ ms.locfileid: "85470893"
 
  以下表格為會出現在設定工作清單中的項目。
 
-|Task|描述
+|Task|說明
 |----------|-----------------|
 |取得其他 Microsoft 產品的更新|按一下此工作以存取執行工具的連結，可讓您指定是否要使用 Microsoft Update 自動取得 Windows Server Essentials 和其他 Microsoft 產品（例如 Office）的更新。
 |新增使用者帳戶|按一下此工作以檢視有關新增使用者帳戶的簡短資訊。 提供用來執行 **[新增使用者帳戶精靈]** 的連結。 如需詳細資訊，請參閱[新增使用者帳戶](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage1)。

@@ -9,12 +9,12 @@ manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 78f95f25d365b1b30a9e4e2d311128b8c7cb13b6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8bcfb53b04a03a259c712dd4b3003f8c4a66d8ff
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827411"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181714"
 ---
 # <a name="scale-out-file-server-for-application-data-overview"></a>用於應用程式資料的向外延展檔案伺服器概觀
 
@@ -25,7 +25,7 @@ ms.locfileid: "80827411"
 您可以使用下列其中一種方法來部署和設定叢集檔案伺服器：
 
 - **適用于應用程式資料的向外延展檔案伺服器**此叢集檔案伺服器功能是在 Windows Server 2012 中引進，可讓您在檔案共用上儲存伺服器應用程式資料（如 Hyper-v 虛擬機器檔案），並從存放區域網路取得類似層級的可靠性、可用性、管理性及高效能。 所有檔案共用會在所有節點上同時上線。 與這種類型的叢集檔案伺服器相關的檔案共用，稱為向外延展檔案共用。 這有時也稱為主動/主動。 這是在部署 Hyper-V over Server Message Block (SMB) 或 Microsoft SQL Server over SMB 時建議使用的檔案伺服器類型。
-- **一般用途的檔案伺服器** 這是自容錯移轉叢集引進後 Windows Server 持續支援的叢集檔案伺服器的接續。 這種類型的叢集檔案伺服器一次僅在一個節點上線 (因此與這個叢集檔案伺服器相關的所有共用也是一樣)。 這有時也稱為主動/被動或雙主動。 與這種類型的叢集檔案伺服器相關的檔案共用，稱為叢集檔案共用。 這是在部署資訊工作者案例時建議使用的檔案伺服器類型。
+- **一般用途的檔案伺服器**這是自容錯移轉叢集推出後，Windows Server 支援的叢集檔案伺服器接續。 這種類型的叢集檔案伺服器一次僅在一個節點上線 (因此與這個叢集檔案伺服器相關的所有共用也是一樣)。 這有時也稱為主動/被動或雙主動。 與這種類型的叢集檔案伺服器相關的檔案共用，稱為叢集檔案共用。 這是在部署資訊工作者案例時建議使用的檔案伺服器類型。
 
 ## <a name="scenario-description"></a>案例描述
 
@@ -44,17 +44,17 @@ ms.locfileid: "80827411"
 
 下列主題可協助您部署向外延展檔案伺服器：
 
-- [規劃向外延展檔案伺服器](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134258(v%3dws.11)>)
+- [規劃向外延展檔案伺服器](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134258(v%3dws.11)>)
 
-  - [步驟1：規劃向外延展檔案伺服器中的存放裝置](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134181%28v%3dws.11%29>)
-  - [步驟2：規劃向外延展檔案伺服器中的網路功能](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134253%28v%3dws.11%29>)
+  - [步驟 1：規劃向外延展檔案伺服器中的存放裝置](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134181%28v%3dws.11%29>)
+  - [Step 2: Plan for Networking in Scale-Out File Server](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134253%28v%3dws.11%29>)
 
-- [部署向外延展檔案伺服器](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831359%28v%3dws.11%29>)
+- [Deploy Scale-Out File Server](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831359%28v%3dws.11%29>)
 
-  - [步驟1：安裝向外延展檔案伺服器的必要條件](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831478%28v%3dws.11%29>)
-  - [步驟2：設定向外延展檔案伺服器](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831718%28v%3dws.11%29>)
-  - [步驟3：設定 Hyper-v 以使用向外延展檔案伺服器](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831463%28v%3dws.11%29>)
-  - [步驟4：設定 Microsoft SQL Server 以使用向外延展檔案伺服器](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831815%28v%3dws.11%29>)
+  - [步驟 1：安裝向外延展檔案伺服器的先決條件](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831478%28v%3dws.11%29>)
+  - [步驟 2：設定向外延展檔案伺服器](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831718%28v%3dws.11%29>)
+  - [步驟 3：設定 Hyper-V 以使用向外延展檔案伺服器](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831463%28v%3dws.11%29>)
+  - [步驟 4：設定 Microsoft SQL Server 以使用向外延展檔案伺服器](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831815%28v%3dws.11%29>)
 
 ## <a name="when-to-use-scale-out-file-server"></a>向外延展檔案伺服器的使用時機
 
@@ -65,7 +65,7 @@ ms.locfileid: "80827411"
 <table>
 <thead>
 <tr class="header">
-<th>技術領域</th>
+<th>技術範圍</th>
 <th>功能</th>
 <th>檔案伺服器叢集的一般用途</th>
 <th>向外延展檔案伺服器</th>
@@ -178,25 +178,25 @@ ms.locfileid: "80827411"
 <td>檔案管理</td>
 <td>資料夾重新導向</td>
 <td>是</td>
-<td>不建議使用<em></td>
+<td>不建議<em></td>
 </tr>
 <tr class="odd">
 <td>檔案管理</td>
 <td>離線檔案 (用戶端快取)</td>
 <td>是</td>
-<td>不建議</em></td>
+<td>不建議使用</em></td>
 </tr>
 <tr class="even">
 <td>檔案管理</td>
 <td>漫遊使用者設定檔</td>
 <td>是</td>
-<td>不建議使用<em></td>
+<td>不建議<em></td>
 </tr>
 <tr class="odd">
 <td>檔案管理</td>
 <td>主目錄</td>
 <td>是</td>
-<td>不建議</em></td>
+<td>不建議使用</em></td>
 </tr>
 <tr class="even">
 <td>檔案管理</td>
@@ -213,32 +213,32 @@ ms.locfileid: "80827411"
 <tr class="even">
 <td>應用程式</td>
 <td>Hyper-V</td>
-<td>不建議</td>
+<td>不建議使用</td>
 <td>是</td>
 </tr>
 <tr class="odd">
 <td>應用程式</td>
 <td>Microsoft SQL Server</td>
-<td>不建議</td>
+<td>不建議使用</td>
 <td>是</td>
 </tr>
 </tbody>
 </table>
 
-在使用持續可用的檔案共用時，\* 資料夾重新導向、離線檔案、漫遊使用者設定檔或主目錄會產生大量寫入，而必須立即寫入至磁片（不需要緩衝），以降低與一般用途檔案共用相比的效能。 持續可用的檔案共用也與檔案伺服器資源管理員和執行 Windows XP 的電腦不相容。 此外，在使用者失去共用的存取權後，離線檔案可能不會轉換為離線模式3-6 分鐘，這可能會讓尚未使用「永遠離線」模式的使用者無法通過離線檔案。
+\*[資料夾重新導向]、[離線檔案]、[漫遊使用者設定檔] 或 [主目錄] 會產生大量寫入，當使用持續可用的檔案共用時，必須立即寫入磁片（不需要緩衝處理），相較于一般用途的檔案共用，會降低效能。 持續可用的檔案共用也與檔案伺服器資源管理員和執行 Windows XP 的電腦不相容。 此外，在使用者失去共用的存取權後，離線檔案可能不會轉換為離線模式3-6 分鐘，這可能會讓尚未使用「永遠離線」模式的使用者無法通過離線檔案。
 
 ## <a name="practical-applications"></a>實際應用
 
 向外延展檔案伺服器十分適用於伺服器應用程式儲存。 以下列出可將其資料儲存在向外延展檔案共用的伺服器應用程式範例：
 
-- 網際網路資訊服務 (IIS) Web 伺服器可以將網站的設定和資料儲存在向外延展檔案共用上。 如需詳細資訊，請參閱＜ [共用設定](https://www.iis.net/learn/manage/managing-your-configuration-settings/shared-configuration_264)＞。
-- Hyper-V 可以將設定和即時虛擬磁碟儲存在向外延展檔案共用上。 如需詳細資訊，請參閱[部署透過 SMB 的 Hyper-V](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)。
-- SQL Server 可以將即時資料庫檔案儲存在向外延展檔案共用上。 如需詳細資訊，請參閱＜ [將 SQL Server 與 SMB Fileshare 當做儲存選項一起安裝](https://docs.microsoft.com/sql/database-engine/install-windows/install-sql-server-with-smb-fileshare-as-a-storage-option)＞。
+- 網際網路資訊服務 (IIS) Web 伺服器可以將網站的設定和資料儲存在向外延展檔案共用上。 如需詳細資訊，請參閱＜[共用設定](https://www.iis.net/learn/manage/managing-your-configuration-settings/shared-configuration_264)＞。
+- Hyper-V 可以將設定和即時虛擬磁碟儲存在向外延展檔案共用上。 如需詳細資訊，請參閱[部署透過 SMB 的 Hyper-V](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)。
+- SQL Server 可以將即時資料庫檔案儲存在向外延展檔案共用上。 如需詳細資訊，請參閱＜[將 SQL Server 與 SMB Fileshare 當做儲存選項一起安裝](https://docs.microsoft.com/sql/database-engine/install-windows/install-sql-server-with-smb-fileshare-as-a-storage-option)＞。
 - Virtual Machine Manager (VMM) 可以將程式庫共用 (其中包含虛擬機器範本和相關檔案) 儲存在向外延展檔案共用上。 不過，程式庫伺服器本身不能是向外延展檔案伺服器，它必須位於不使用向外延展檔案伺服器叢集角色的獨立伺服器或容錯移轉叢集上。
 
 如果您以向外延展檔案共用做為程式庫共用，您將只能使用與向外延展檔案伺服器相容的技術。 例如，您無法使用 DFS 複寫來複寫裝載在向外延展檔案共用上的程式庫共用。 同樣重要的是，向外延展檔案伺服器必須已安裝最新的軟體更新。
 
-若要以向外延展檔案共用做為程式庫共用，請先新增具有本機共用或完全不具共用的程式庫伺服器 (可能是虛擬機器)。 然後，當您新增程式庫共用時，請選擇在向外延展檔案伺服器上託管的檔案共用。 此共用應受到 VMM 管理，並且是為了讓程式庫伺服器專用而建立的。 此外，請確實在向外延展檔案伺服器上安裝最新的更新。 如需新增 VMM 程式庫伺服器和程式庫共用的詳細資訊，請參閱[將設定檔新增至 vmm 程式庫](https://docs.microsoft.com/system-center/vmm/library-profiles?view=sc-vmm-1801)。 如需「檔案和存放服務」目前可用的 Hotfix 清單，請參閱＜ [微軟知識庫文章 2899011](https://support.microsoft.com/help/2899011/list-of-currently-available-hotfixes-for-the-file-services-technologie)＞。
+若要以向外延展檔案共用做為程式庫共用，請先新增具有本機共用或完全不具共用的程式庫伺服器 (可能是虛擬機器)。 然後，當您新增程式庫共用時，請選擇在向外延展檔案伺服器上託管的檔案共用。 此共用應受到 VMM 管理，並且是為了讓程式庫伺服器專用而建立的。 此外，請確實在向外延展檔案伺服器上安裝最新的更新。 如需新增 VMM 程式庫伺服器和程式庫共用的詳細資訊，請參閱[將設定檔新增至 vmm 程式庫](https://docs.microsoft.com/system-center/vmm/library-profiles?view=sc-vmm-1801)。 如需「檔案和存放服務」目前可用的 Hotfix 清單，請參閱＜[微軟知識庫文章 2899011](https://support.microsoft.com/help/2899011/list-of-currently-available-hotfixes-for-the-file-services-technologie)＞。
 
 >[!NOTE]
 >有些使用者 (例如資訊工作者) 的工作負載會受到較大的效能影響。 例如，當開啟和關閉檔案、建立新檔案和重新命名現有檔案之類的作業由多個使用者執行時，將會對效能造成影響。 檔案共用如果與持續可用性一起啟用，可提供資料完整性，但也會影響整體效能。 啟用持續可用性時，必須將資料寫入至磁碟，以確保在向外延展檔案伺服器中的叢集節點失敗時仍保有完整性。 因此，使用者若將數個大型檔案複製到檔案伺服器，可以預見持續可用的檔案共用上將發生明顯的效能減緩。
@@ -257,22 +257,22 @@ ms.locfileid: "80827411"
 <tbody>
 <tr class="odd">
 <td><a href="failover-clustering.md">容錯移轉叢集</a></td>
-<td>容錯移轉叢集在 Windows Server 2012 中新增了下列功能，以支援向外延展檔案伺服器：分散式網路名稱、向外延展檔案伺服器資源類型、叢集共用磁片區（CSV）2，以及向外延展檔案伺服器高可用性角色。 如需這些功能的詳細資訊，請參閱<a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)">&#39;Windows Server 2012 中容錯移轉叢集的新功能 [重新導向]</a>。</td>
+<td>容錯移轉叢集在 Windows Server 2012 中新增了下列功能，以支援向外延展檔案伺服器：分散式網路名稱、向外延展檔案伺服器資源類型、叢集共用磁片區（CSV）2，以及向外延展檔案伺服器高可用性角色。 如需這些功能的詳細資訊，請參閱<a href="/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)">Windows Server 2012 中容錯移轉叢集的新功能&#39;[重新導向]</a>。</td>
 </tr>
 <tr class="even">
-<td><a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831795(v%3dws.11)">伺服器訊息區</a></td>
+<td><a href="/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831795(v%3dws.11)">伺服器訊息區</a></td>
 <td>SMB 3.0 在 Windows Server 2012 中新增了下列功能，以支援向外延展檔案伺服器： SMB 透明容錯移轉、SMB 多重通道和 SMB 直接傳輸。<br />
 <br />
-如需 Windows Server 2012 R2 中 SMB 新增和變更功能的詳細資訊，請<a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)">參閱&#39;WINDOWS server 中 smb 的新</a>功能。</td>
+如需 Windows Server 2012 R2 中 SMB 新增和變更功能的詳細資訊，請參閱<a href="/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)">Windows server 中 smb 的新功能&#39;</a>。</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="more-information"></a>詳細資訊
+## <a name="more-information"></a>更多資訊
 
-- [軟體定義的儲存體設計考慮指南](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/mt243829(v%3dws.11)>)
-- [增加伺服器、存放裝置及網路可用性](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831437(v%3dws.11)>)
-- [部署透過 SMB 的 Hyper-V](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
-- [部署適用於伺服器應用程式且快速又有效率的檔案伺服器](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831723(v%3dws.11)>)
+- [軟體定義的儲存體設計考量指南](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/mt243829(v%3dws.11)>)
+- [Increasing Server, Storage, and Network Availability](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831437(v%3dws.11)>)
+- [部署透過 SMB 的 Hyper-V](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
+- [部署適用於伺服器應用程式且快速又有效率的檔案伺服器](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831723(v%3dws.11)>)
 - [是否要向外延展，真是難以抉擇](https://blogs.technet.com/b/filecab/archive/2013/12/05/to-scale-out-or-not-to-scale-out-that-is-the-question.aspx) (部落格文章)
-- [資料夾重新導向、離線檔案及漫遊使用者設定檔](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh848267(v%3dws.11)>)
+- [資料夾重新導向、離線檔案及漫遊使用者設定檔](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh848267(v%3dws.11)>)

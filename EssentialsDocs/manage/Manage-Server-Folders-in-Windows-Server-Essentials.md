@@ -2,18 +2,17 @@
 title: 管理 Windows Server Essentials 中的伺服器資料夾
 description: 說明如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 090cf1b8-7b9b-48b9-ae85-b98477b8d7cc
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 8dba2bb0b282751fbbe584b64dbc92bbe3702979
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: f748ca62062de616be7c6e2ee495a508d0e38646
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470563"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180914"
 ---
 # <a name="manage-server-folders-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的伺服器資料夾
 
@@ -58,7 +57,7 @@ ms.locfileid: "85470563"
 
 ### <a name="server-folder-tasks-on-the-dashboard"></a>儀表板上的伺服器資料夾工作
 
-|工作名稱|描述|
+|工作名稱|說明|
 |---------------|-----------------|
 |開啟資料夾|會在 [檔案總管] (在舊版的 Windows 中稱為 [Windows 檔案總管]) 中顯示所選資料夾的內容。|
 |刪除資料夾|可讓您刪除使用者建立的資料夾。 這個工作不適用於伺服器安裝所建立的預設資料夾。|
@@ -81,7 +80,7 @@ ms.locfileid: "85470563"
 
   您可以使用 [儀表板] 之 [伺服器資料夾]**** 索引標籤上的工作，來管理伺服器上任何伺服器資料夾的存取權。 下表列出當您在伺服器上安裝 Windows Server Essentials 或開啟媒體串流處理時，預設會建立的伺服器資料夾。
 
-|伺服器資料夾名稱|描述|
+|伺服器資料夾名稱|說明|
 |------------------------|-----------------|
 |用戶端電腦備份|Windows Server Essentials 預設會建立儲存在這個資料夾中的用戶端電腦備份。 網路系統管理員可以修改「用戶端電腦備份」的設定。|
 |公司|用來供網路使用者儲存及存取與您組織相關的文件。|
@@ -216,7 +215,7 @@ ms.locfileid: "85470563"
 
 - 疏鬆檔案
 
-- 永久連結
+- 硬式連結
 
 - 擴充屬性
 

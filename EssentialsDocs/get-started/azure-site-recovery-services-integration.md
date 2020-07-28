@@ -2,20 +2,19 @@
 title: Azure Site Recovery Services 整合
 description: 說明如何使用 Windows Server Essentials
 ms.date: 10/01/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 262701a6-8a97-4c4e-bfbf-9f8007c308d6
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b947ca49a82c18fd7a6c1da71b1e4b43ea741b41
-ms.sourcegitcommit: f247065941508b913c31828944978d3e721e2110
+ms.openlocfilehash: e17d60b4931f4858f915bd177f05e85eb1fc5f6a
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82876413"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181684"
 ---
-# <a name="azure-site-recovery-services-integration"></a>Azure Site Recovery Services 整合 
+# <a name="azure-site-recovery-services-integration"></a>Azure Site Recovery Services 整合
 
 >適用于： Windows Server 2016 Essentials
 
@@ -39,7 +38,7 @@ ms.locfileid: "82876413"
 
 ### <a name="enabling-guest-virtual-machines-for-protection"></a>啟用來賓虛擬機器以進行保護
 
-選取 [Azure 復原] 視窗中出現的虛擬機器時，您可以按一下儀表板右側的 [**啟用複寫至 azure** ]，以準備並將虛擬機器&trade;映射複製到 azure：
+選取 [Azure 復原] 視窗中出現的虛擬機器時，您可以按一下儀表板右側的 [**啟用複寫至 azure** ]，以準備並將虛擬機器映射複製 &trade; 到 azure：
 
 ![顯示 [啟用複寫至 Azure] 對話方塊的螢幕擷取畫面。 在新增主機時，會顯示進度列。](media/azure-site-recovery-5.PNG)
 
@@ -63,6 +62,6 @@ ms.locfileid: "82876413"
 
 ![螢幕擷取畫面，其中顯示 [Windows Server Essentials 儀表板] 的 [Azure 復原] 頁面。 已針對名為 Essentials 的主機啟用複寫至 Azure，而在 Azure 中執行名為 Essentials-Test 的虛擬機器表示主機已故障切換至 Azure。](media/azure-site-recovery-8.PNG)
 
-<a name="see-also"></a>請參閱
+<a name="see-also"></a>另請參閱
 --------
 [開始使用 Windows Server Essentials](get-started.md)

@@ -8,12 +8,12 @@ ms.author: harowl
 ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 39af45506ff7023cebe437992e90f6d4ec051333
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 0de38560301d4d793214846036850a05a5d5a326
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "79323590"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182204"
 ---
 # <a name="configure-user-access-control-and-permissions"></a>設定使用者存取控制與權限
 
@@ -68,7 +68,7 @@ ms.locfileid: "79323590"
 
 如果您想要將 Windows Admin Center 服務的閘道使用者或閘道系統管理員存取權提供給特定的 Azure AD 使用者或群組，您必須執行下列動作：
 
-1.  使用 [存取設定] 中提供的超連結，移至 Azure 入口網站中 Windows Admin Center 的 Azure AD 應用程式。 請注意，只有在啟用 Azure Active Directory 驗證時，才可以使用此超連結。 
+1.  使用 [存取設定] 中提供的超連結，移至 Azure 入口網站中 Windows Admin Center 的 Azure AD 應用程式。 請注意，只有在啟用 Azure Active Directory 驗證時，才可以使用此超連結。
     -   若要在 Azure 入口網站中找到您的應用程式，您可以前往 [Azure Active Directory]   > [企業應用程式]   > [所有應用程式]  ，然後搜尋 **WindowsAdminCenter** (Azure AD 應用程式將命名為 WindowsAdminCenter-<gateway name>)。 如果您沒有得到任何搜尋結果，請確定 [顯示]  已設定為 [所有應用程式]  ，而且 [應用程式狀態]  已設定為 [任何]  ，並按一下 [套用]，然後嘗試進行搜尋。 找到應用程式之後，請移至 [使用者和群組] 
 2.  在 [屬性] 索引標籤中，將 [需要使用者指派]  設定為 [是]。
     完成此動作之後，將只有 [使用者和群組]  索引標籤中列出的成員，才能夠存取 Windows Admin Center 閘道。
@@ -86,22 +86,22 @@ ms.locfileid: "79323590"
 
 如果您想要將 Windows Admin Center 服務的閘道使用者或閘道系統管理員存取權提供給特定的 Azure AD 使用者或群組，您必須執行下列動作：
 
-1.  在 Azure 入口網站中，移至您的 SME Azure AD 應用程式。 
+1.  在 Azure 入口網站中，移至您的 SME Azure AD 應用程式。
     -   當您按一下 [變更存取控制]  ，然後從 Windows Admin Center 存取設定中選取 [Azure Active Directory]  時，您可以使用 UI 中提供的超連結，存取 Azure 入口網站中的 Azure AD 應用程式。 當您按一下 [儲存] 並選取 Azure AD 作為存取控制身分識別提供者之後，[存取設定] 中也會提供此超連結。
     -   若要在 Azure 入口網站中找到您的應用程式，您可以前往 [Azure Active Directory]   > [企業應用程式]   > [所有應用程式]  ，然後搜尋 **SME** (Azure AD 應用程式將命名為 SME-<gateway>)。 如果您沒有得到任何搜尋結果，請確定 [顯示]  已設定為 [所有應用程式]  ，而且 [應用程式狀態]  已設定為 [任何]  ，並按一下 [套用]，然後嘗試進行搜尋。 找到應用程式之後，請移至 [使用者和群組] 
 2.  在 [屬性] 索引標籤中，將 [需要使用者指派]  設定為 [是]。
     完成此動作之後，將只有 [使用者和群組]  索引標籤中列出的成員，才能夠存取 Windows Admin Center 閘道。
 3.  在 [使用者和群組] 索引標籤中，選取 [新增使用者]  。 您必須為每個新增的使用者/群組指派閘道使用者或閘道系統管理員角色。
 
-當您在 [變更存取控制]  窗格中儲存 Azure AD 存取控制之後，閘道服務就會重新啟動，而您必須重新整理瀏覽器。 您可以隨時在 Azure 入口網站中更新 Windows Admin Center Azure AD 應用程式的使用者存取權。 
+當您在 [變更存取控制]  窗格中儲存 Azure AD 存取控制之後，閘道服務就會重新啟動，而您必須重新整理瀏覽器。 您可以隨時在 Azure 入口網站中更新 Windows Admin Center Azure AD 應用程式的使用者存取權。
 
-當使用者嘗試存取 Windows Admin Center 閘道 URL 時，系統會提示他們使用其 Azure Active Directory 身分識別登入。 請記住，使用者也必須是閘道伺服器上的本機使用者成員，才能存取 Windows Admin Center。 
+當使用者嘗試存取 Windows Admin Center 閘道 URL 時，系統會提示他們使用其 Azure Active Directory 身分識別登入。 請記住，使用者也必須是閘道伺服器上的本機使用者成員，才能存取 Windows Admin Center。
 
 使用者和系統管理員可以使用 Windows Admin Center 一般設定的 [Azure]  索引標籤，檢視其目前登入的帳戶及此 Azure AD 帳戶的登出情況。
 
 ### <a name="conditional-access-and-multi-factor-authentication"></a>條件式存取和多重要素驗證
 
-使用 Azure AD 作為另一個安全性層級來控制 Windows Admin Center 閘道存取權的其中一項優點是，您可以運用 Azure AD 強大的安全性功能，例如條件式存取和多重要素驗證。 
+使用 Azure AD 作為另一個安全性層級來控制 Windows Admin Center 閘道存取權的其中一項優點是，您可以運用 Azure AD 強大的安全性功能，例如條件式存取和多重要素驗證。
 
 [深入了解如何使用 Azure Active Directory 來設定條件式存取。](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal-get-started)
 
@@ -109,7 +109,7 @@ ms.locfileid: "79323590"
 
 **在部署為 Windows Server 上的服務時設定單一登入**
 
-當您在 Windows 10 上安裝 Windows Admin Center 時，您便可以使用單一登入。 不過，如果您要在 Windows Server 上使用 Windows Admin Center，您必須在您的環境中設定某種形式的 Kerberos 委派，才能使用單一登入。 委派會將閘道電腦設定為受信任的項目，進而委派給目標節點。 
+當您在 Windows 10 上安裝 Windows Admin Center 時，您便可以使用單一登入。 不過，如果您要在 Windows Server 上使用 Windows Admin Center，您必須在您的環境中設定某種形式的 Kerberos 委派，才能使用單一登入。 委派會將閘道電腦設定為受信任的項目，進而委派給目標節點。
 
 若要在您的環境中設定[以資源為基礎的限制委派](https://docs.microsoft.com/windows-server/security/kerberos/kerberos-constrained-delegation-overview)，請使用下列 PowerShell 範例。 此範例會示範如何設定 Windows Server [node01.contoso.com]，以接受 contoso.com 網域中 Windows Admin Center 閘道 [wac.contoso.com] 的委派。
 
@@ -159,7 +159,7 @@ Set-ADComputer -Identity (Get-ADComputer node01) -PrincipalsAllowedToDelegateToA
 3.  在 [詳細資料]  窗格的底部，按一下 [新增使用者]  ，然後輸入應具有伺服器唯讀存取權 (透過 Windows Admin Center) 的使用者或安全性群組名稱。 使用者和群組可以來自本機機器或您的 Active Directory 網域。
 4.  請針對 **Windows Admin Center Hyper-V 系統管理員**和 **Windows Admin Center 系統管理員**群組，重複步驟 2-3。
 
-您也可以使用[有限的群組原則設定](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc756802%28v=ws.10%29)來設定群組原則物件，以一致的方式在網域中填滿這些群組。
+您也可以使用[有限的群組原則設定](/previous-versions/windows/it-pro/windows-server-2003/cc756802%28v=ws.10%29)來設定群組原則物件，以一致的方式在網域中填滿這些群組。
 
 ### <a name="apply-role-based-access-control-to-multiple-machines"></a>將角色型存取控制套用至多部機器
 

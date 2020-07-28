@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-spaces
 manager: brianlic
-ms.openlocfilehash: 95ccfec436ba4143ea7ec70120878a29289d14f7
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d7bbef54d0ec554c6a3cf184dcb0414f7456547c
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966790"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182154"
 ---
 # <a name="troubleshoot-storage-spaces-and-storage-spaces-direct-health-and-operational-states"></a>針對儲存空間和儲存空間直接存取的健全狀況和操作狀態進行疑難排解
 
@@ -67,13 +67,13 @@ S2D on StorageSpacesDirect1 Read-only         Unknown      False        True
 
 當存放集區處於 [**不明**] 或 [狀況**不良**] 狀態時，表示存放集區是唯讀的，而且必須等到集區回到 [**警告** **] 或 [確定]** 健全狀態之後，才能加以修改。
 
-|操作狀態    |唯讀原因 |描述|
+|操作狀態    |唯讀原因 |說明|
 |---------            |---------       |--------   |
 |唯讀|不完整|如果存放集區遺失[仲裁](understand-quorum.md)，就會發生這種情況，這表示集區中的大部分磁片磁碟機都已失敗或因某種原因而離線。 當集區失去仲裁時，儲存空間會自動將集區設定設為唯讀，直到有足夠的磁片磁碟機可供使用為止。<br><br>**動作：** <br>1. 重新連接任何遺失的磁片磁碟機，如果您使用儲存空間直接存取，請讓所有伺服器上線。 <br>2. 開啟具有系統管理許可權的 PowerShell 會話，然後輸入下列命令，將集區設定回讀寫：<br><br> <code>Get-StoragePool <PoolName> -IsPrimordial $False \| Set-StoragePool -IsReadOnly $false</code>|
 ||原則|系統管理員將存放集區設定為唯讀。<br><br>**動作：** 若要在容錯移轉叢集管理員中將叢集儲存集區設定為讀寫存取，**請移**至 [集區]，以滑鼠右鍵按一下集區，然後選取 [**上線**]。<br><br>若是其他伺服器和電腦，請以系統管理許可權開啟 PowerShell 會話，然後輸入：<br><br><code>Get-StoragePool <PoolName> \| Set-StoragePool -IsReadOnly $false</code><br><br> |
 ||啟動中|儲存空間正在啟動，或正在等候集區中的磁片磁碟機連線。 這應該是暫時性的狀態。 一旦完全啟動，集區應該轉換成不同的操作狀態。<br><br>**動作：** 如果集區維持在 [*啟動*中] 狀態，請確定集區中的所有磁片磁碟機都已正確連接。|
 
-另請參閱[修改具有唯讀設定的存放集區](https://social.technet.microsoft.com/wiki/contents/articles/14861.modifying-a-storage-pool-that-has-a-read-only-configuration.aspx)。
+另請參閱[Windows Server storage 論壇](https://docs.microsoft.com/answers/topics/windows-server-storage.html)。
 
 ## <a name="virtual-disk-states"></a>虛擬磁片狀態
 
@@ -125,7 +125,7 @@ Volume2      Warning      {Degraded, Incomplete} None
 
 如果系統管理員將虛擬磁片設為離線或虛擬磁片已中斷連結，則虛擬磁片也可以是**資訊**健全狀態（如 [儲存空間] 控制台專案中所示）或**不明**的健全狀況狀態（如 PowerShell 中所示）。
 
-|操作狀態    |卸離原因 |描述|
+|操作狀態    |卸離原因 |說明|
 |---------            |---------       |--------   |
 |已卸離             |依原則            |系統管理員將虛擬磁片離線，或將虛擬磁片設定為需要手動附件，在這種情況下，您必須在每次 Windows 重新開機時手動連接虛擬磁片。<br><br>**動作**：讓虛擬磁片恢復上線。 若要在虛擬磁片位於叢集存放集區時執行這項操作，請在容錯移轉叢集管理員選取 [**存放集區**] [  >  **Pools**  >  **虛擬磁片**] 中，選取顯示**離線**狀態的虛擬磁片，然後選取 [**上線**]。 <br><br>若要讓虛擬磁片在不在叢集中時恢復上線，請以系統管理員身分開啟 PowerShell 會話，然後嘗試使用下列命令：<br><br> <code>Get-VirtualDisk \| Where-Object -Filter { $_.OperationalStatus -eq "Detached" } \| Connect-VirtualDisk</code><br><br>若要在 Windows 重新開機之後自動附加所有非叢集虛擬磁片，請以系統管理員身分開啟 PowerShell 會話，然後使用下列命令：<br><br> <code>Get-VirtualDisk \| Set-VirtualDisk -ismanualattach $false</code>|
 |            |多數磁片狀況不良 |此虛擬磁片使用的磁片磁碟機過多失敗、遺失或有過時的資料。   <br><br>**動作**： <br> 1. 重新連接任何遺失的磁片磁碟機，如果您是使用儲存空間直接存取，請將任何離線的伺服器上線。 <br> 2. 在所有磁片磁碟機和伺服器都上線之後，更換任何故障的磁片磁碟機。 如需詳細資訊，請參閱[健全狀況服務](../../failover-clustering/health-service-overview.md)。 <br>儲存空間直接存取在重新連接或更換磁片磁碟機之後，視需要自動啟動修復。<br>3. 如果您不是使用儲存空間直接存取，請使用[VirtualDisk](/powershell/module/storage/repair-virtualdisk?view=win10-ps) Cmdlet 來修復虛擬磁片。  <br><br>如果有更多的磁片失敗，但您有資料的複本，而虛擬磁片未在失敗之間修復，則虛擬磁片上的所有資料都會永久遺失。 在這種不幸的情況下，請刪除虛擬磁片、建立新的虛擬磁片，然後從備份還原。|

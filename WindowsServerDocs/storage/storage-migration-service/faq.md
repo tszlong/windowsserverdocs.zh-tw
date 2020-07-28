@@ -8,12 +8,12 @@ ms.date: 06/02/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: d7f1b5387d82d487e50b217b28367e82617a66ea
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: efe16dd9bdc971b97bc401cf10e14439c46069de
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966250"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181734"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>儲存體遷移服務常見問題（FAQ）
 
@@ -62,12 +62,12 @@ ms.locfileid: "86966250"
     - CA 超時
     - 並行使用者限制
     - 持續可用
-    - 描述
+    - 說明
     - 加密資料
     - 身分識別遠端
     - 基礎結構
     - 名稱
-    - 路徑
+    - Path
     - 具範圍
     - 領域名稱
     - 安全性描述元
@@ -182,7 +182,7 @@ Windows Server 2019 隨附的儲存體遷移服務版本不支援從 NTFS 遷移
 若要取得支援：
 
  - 在[Windows Server 技術小組](https://techcommunity.microsoft.com/t5/Windows-Server/ct-p/Windows-Server)張貼問題
- - [Windows Server 2019 Technet 論壇](https://social.technet.microsoft.com/Forums/en-US/home?forum=ws2019&filter=alltypes&sort=lastpostdesc)上的文章
+ - [Windows Server 2019 論壇](https://docs.microsoft.com/answers/topics/windows-server-2019.html)上的文章
  - 透過[Microsoft 支援服務](https://support.microsoft.com)開啟支援案例
 
 ## <a name="additional-references"></a>其他參考

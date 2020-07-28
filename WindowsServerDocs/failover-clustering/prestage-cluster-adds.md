@@ -9,12 +9,12 @@ manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 05/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: eb9077f40c33d615c0bbe18f1c02b29ce27165a2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c0d8efc1bdb5a2c3a653afbe61b211f94658101d
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720517"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181724"
 ---
 # <a name="prestage-cluster-computer-objects-in-active-directory-domain-services"></a>在 Active Directory Domain Services 中預先設置叢集電腦物件
 
@@ -25,7 +25,7 @@ ms.locfileid: "82720517"
 使用建立叢集精靈或使用 Windows PowerShell 建立容錯移轉叢集時，您必須指定叢集的名稱。 如果您建立叢集時具備充分的權限，叢集建立程序會自動在 AD DS 建立符合叢集名稱的電腦物件。 此物件稱為「叢集名稱物件」** 或 CNO。 透過 CNO，當您設定使用用戶端存取點的叢集角色時，會自動建立虛擬電腦物件 (VCO)。 例如，如果您建立一個包含名稱為 *FileServer1*用戶端存取點的高可用性檔案伺服器，CNO 會在 AD DS 建立對應的 VCO。
 
 >[!NOTE]
->有選項可以建立 Active Directory 卸離的叢集，在 AD DS 中不會建立任何 CNO 或 Vco。 這是以特定的叢集部署類型為目標。 如需詳細資訊，請參閱[部署已中斷連結 Active Directory 的叢集](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v%3dws.11)>)。
+>有選項可以建立 Active Directory 卸離的叢集，在 AD DS 中不會建立任何 CNO 或 Vco。 這是以特定的叢集部署類型為目標。 如需詳細資訊，請參閱[部署已中斷連結 Active Directory 的叢集](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v%3dws.11)>)。
 
 若要自動建立 CNO，建立容錯移轉叢集的使用者必須擁有組織單位 (OU) 或是將構成叢集的伺服器所在容器的 [建立電腦物件]**** 權限。 若要讓沒有此權限的使用者或群組能夠建立叢集，在 AD DS 中擁有適當權限的使用者 (通常是網域系統管理員) 可以在 AD DS 中預先設定 CNO。 這也讓網域系統管理員更能掌控叢集所使用的命名慣例，並控管建立叢集物件的 OU。
 
@@ -74,9 +74,9 @@ ms.locfileid: "82720517"
 3. 在 [安全性]**** 索引標籤上，選取 [新增]****。
 4. 在 [**選取使用者、電腦或群組**] 對話方塊中，指定您想要授與許可權的使用者帳戶或群組，然後選取 **[確定]**。
 5. 選取您剛才新增的使用者帳戶或群組，然後選取 [完全控制]**** 旁邊的 [允許]**** 核取方塊。
-  
+
    ![將完全控制授與將要建立叢集的使用者或群組](media/prestage-cluster-adds/granting-full-control-to-the-user-create-the-cluster.png)
-  
+
    **[圖 2]將完全控制授與將建立叢集的使用者或群組**
 6. 選取 [確定]  。
 
@@ -136,7 +136,7 @@ ms.locfileid: "82720517"
 
 容錯移轉叢集的系統管理員現在可以建立含有符合預先設定 VCO 名稱的用戶端存取點的叢集角色，並將資源上線。
 
-## <a name="more-information"></a>詳細資訊
+## <a name="more-information"></a>更多資訊
 
 - [容錯移轉叢集](failover-clustering.md)
 - [在 Active Directory 中設定叢集帳戶](configure-ad-accounts.md)

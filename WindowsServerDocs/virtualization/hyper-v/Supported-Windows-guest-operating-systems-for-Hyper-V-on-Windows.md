@@ -9,12 +9,12 @@ ms.assetid: 06b35897-2192-48b7-8c2d-125c520b0786
 author: lizap
 ms.author: elizapo
 ms.date: 01/08/2019
-ms.openlocfilehash: 514f43447f808aabfe2a20ea01b2d8fd65d628ea
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ddcb4f080183b6a1c8ae0ed0d705597c1a0dd4a5
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474365"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181794"
 ---
 # <a name="supported-windows-guest-operating-systems-for-hyper-v-on-windows-server"></a>Windows Server 上的 Hyper-v 支援的 Windows 客體作業系統
 
@@ -58,9 +58,9 @@ Hyper-v 支援在虛擬機器中執行數個版本的 Windows Server、Windows �
 |主機作業系統|主題|
 |-------------------------|---------|
 |Windows 10|[Windows 10 中的用戶端 Hyper-v 支援的客體作業系統](https://docs.microsoft.com/virtualization/hyper-v-on-windows/about/supported-guest-os)|
-|Windows Server 2012 R2 和 Windows 8.1|-   [Windows Server 2012 R2 中的 Hyper-v 支援的 Windows 客體作業系統和 Windows 8。1](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn792027(v=ws.11))<br />-   [Hyper-v 上的 Linux 和 FreeBSD 虛擬機器](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)|
-|Windows Server 2012 和 Windows 8|[Windows Server 2012 與 Windows 8 中 Hyper-V 所支援的 Windows 客體作業系統](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn792028(v=ws.11))|
-|Windows Server 2008 和 Windows Server 2008 R2|[關於虛擬機器和客體作業系統](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc794868(v=ws.10))|
+|Windows Server 2012 R2 和 Windows 8.1|-   [Windows Server 2012 R2 中的 Hyper-v 支援的 Windows 客體作業系統和 Windows 8。1](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn792027(v=ws.11))<br />-   [Hyper-v 上的 Linux 和 FreeBSD 虛擬機器](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)|
+|Windows Server 2012 和 Windows 8|[Windows Server 2012 與 Windows 8 中 Hyper-V 所支援的 Windows 客體作業系統](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn792028(v=ws.11))|
+|Windows Server 2008 和 Windows Server 2008 R2|[關於虛擬機器和客體作業系統](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc794868(v=ws.10))|
 
 ## <a name="how-microsoft-provides-support-for-guest-operating-systems"></a>Microsoft 如何提供對客體作業系統的支援
 

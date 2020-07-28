@@ -2,18 +2,17 @@
 title: 設定或自訂伺服器備份
 description: 說明如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 441c2d6c-435a-42cb-90f2-6d680d279d34
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 1f53922f8ab90b75cd11785f0ad108e2a1c812ab
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 8342c542861598411570c4e702aea5a94f992c79
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470313"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180804"
 ---
 # <a name="set-up-or-customize-server-backup"></a>設定或自訂伺服器備份
 
@@ -108,7 +107,7 @@ ms.locfileid: "85470313"
 > 1. 在 [控制台] 中開啟 [系統及安全性]****。
 >    2. 在 [系統管理工具]**** 下，按一下 [建立及格式化硬碟磁碟分割]****。
 >    3. 以滑鼠右鍵按一下磁碟機，然後按一下 [變更磁碟機代號及路徑]****。
->    4. 按一下 [新增] 。
+>    4. 按一下 [新增]  。
 >    5. 在 [新增磁碟機代號或路徑] 對話方塊中，選取要指派的磁碟機代號。 （您可以重新指派相同的磁碟機號。）然後按一下 **[確定]**。
 >
 >    磁碟機會立即出現在儀表板上。

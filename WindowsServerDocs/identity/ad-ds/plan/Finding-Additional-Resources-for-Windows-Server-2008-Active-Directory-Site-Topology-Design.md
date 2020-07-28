@@ -7,12 +7,12 @@ manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
-ms.openlocfilehash: 5b45970b3402ecfd7976af9b30f22cfd8782cef9
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 5682eb98854441b35719fc0c2048f07db76cbead
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953470"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181834"
 ---
 # <a name="finding-additional-resources-for-windows-server-2008-active-directory-site-topology-design"></a>尋找其他 Windows Server 2008 Active Directory 站台拓撲設計資源
 
@@ -36,7 +36,7 @@ ms.locfileid: "86953470"
 
 - 如需部署樹系根域的詳細資訊，請參閱[部署 Windows Server 2008 樹系根域](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc731174(v=ws.10))。
 
-- 如需保護網域控制站的詳細資訊，請參閱[Active Directory：設計考慮和最佳作法](https://social.technet.microsoft.com/wiki/contents/articles/52587.active-directory-design-considerations-and-best-practices.aspx)。
+- 如需保護網域控制站的詳細資訊，請參閱[AD DS 設計和規劃](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/ad-ds-design-and-planning)。
 
 - 如需部署地區網域的詳細資訊，請參閱[部署 Windows Server 2008 地區網域](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc755118(v=ws.10))。
 

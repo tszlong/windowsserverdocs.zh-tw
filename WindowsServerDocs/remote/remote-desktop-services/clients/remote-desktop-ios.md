@@ -10,12 +10,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 07/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e421795fd3be9e11ddff4cf6b557ebb211e51c53
-ms.sourcegitcommit: b363d8ceed863c8fd5a464bc8afdc4ef1af9a6f8
+ms.openlocfilehash: 8f51a60e66a3e1452ed66c94c409c5e4e5cb191f
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86445712"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181964"
 ---
 # <a name="get-started-with-the-ios-client"></a>開始使用 iOS 用戶端
 
@@ -174,7 +174,7 @@ ms.locfileid: "86445712"
 
 ## <a name="supported-input-devices"></a>支援的輸入裝置
 
-用戶端以協助工具功能形式提供針對 iOS 13 和 iPadOS 的[藍牙滑鼠支援](https://support.apple.com/HT210546)。 您可以使用 Swiftpoint GT 或 ProPoint 滑鼠來進行更深入的滑鼠整合。 用戶端也支援與 iOS 和 iPadOS 相容的外部鍵盤。 
+用戶端以協助工具功能形式提供針對 iOS 13 和 iPadOS 的[藍牙滑鼠支援](https://support.apple.com/HT210546)。 您可以使用 Swiftpoint GT 或 ProPoint 滑鼠來進行更深入的滑鼠整合。 用戶端也支援與 iOS 和 iPadOS 相容的外部鍵盤。
 
 如需裝置支援的詳細資訊，請參閱 [iOS 用戶端的新功能](ios-whatsnew.md)和 [iOS App Store](https://aka.ms/rdios)。
 
@@ -192,4 +192,4 @@ ms.locfileid: "86445712"
 雖然某些按鍵組合在遠端工作階段中可能無法如預期般運作，但許多常見的 Windows 按鍵組合 (例如 CTRL+C、CTRL+V 和 ALT+TAB) 都可以運作。
 
 > [!TIP]
-> 隨時都歡迎提出問題和意見。 不過，如果您在本文的意見區段中張貼支援要求或產品意見反應，我們將無法回應您的意見反應。 如果需要協助或想要針對用戶端進行疑難排解，強烈建議您移至[遠端桌面用戶端論壇](https://social.technet.microsoft.com/forums/windowsserver/home?forum=winrdc)，並開始新的對話。 如果您有相關的功能建議，可以利用[用戶端使用者意見論壇](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android)告訴我們。
+> 隨時都歡迎提出問題和意見。 不過，如果您在本文的意見區段中張貼支援要求或產品意見反應，我們將無法回應您的意見反應。 如果需要協助或想要針對用戶端進行疑難排解，強烈建議您移至[遠端桌面用戶端論壇](https://docs.microsoft.com/answers/topics/windows-remote-desktop-client.html)，並開始新的對話。 如果您有相關的功能建議，可以利用[用戶端使用者意見論壇](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android)告訴我們。

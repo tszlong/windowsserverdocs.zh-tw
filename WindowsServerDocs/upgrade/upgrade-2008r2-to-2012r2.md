@@ -7,12 +7,12 @@ ms.topic: upgrade
 author: RobHindman
 ms.author: robhind
 ms.date: 09/16/2019
-ms.openlocfilehash: 5e4436bb6e4db19e015056b67730619a93396f9e
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 7598826bee4abd869dff82c3891fdbe126db35fb
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80854261"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182174"
 ---
 # <a name="upgrade-windows-server-2008-r2-to-windows-server-2012-r2"></a>將 Windows Server 2008 R2 升級至 Windows Server 2012 R2
 
@@ -94,4 +94,4 @@ ms.locfileid: "80854261"
 
 ## <a name="related-articles"></a>相關文章
 
-- 如需關於 Windows Server 2012 R2 的詳細資訊，請參閱 [Windows Server 2012 R2 和 Windows Server 2012](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh801901(v=ws.11))。
+- 如需關於 Windows Server 2012 R2 的詳細資訊，請參閱 [Windows Server 2012 R2 和 Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh801901(v=ws.11))。

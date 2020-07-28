@@ -1,5 +1,5 @@
 ---
-title: 疑難排解 DNS 用戶端
+title: 對 DNS 用戶端進行疑難排解
 description: 本文介紹如何針對用戶端的 DNS 問題進行疑難排解。
 manager: dcscontentpm
 ms.technology: networking-dns
@@ -7,14 +7,14 @@ ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: ffc772bafa0027d516194b2741e7680065c0db4b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2a9b44807ae6bc9f4c446d4af2150caf09955899
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860061"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182334"
 ---
-# <a name="troubleshooting-dns-clients"></a>疑難排解 DNS 用戶端
+# <a name="troubleshooting-dns-clients"></a>對 DNS 用戶端進行疑難排解
 
 本文討論如何針對來自 DNS 用戶端的問題進行疑難排解。
 
@@ -56,26 +56,26 @@ ping 10.0.0.1
 
 ### <a name="dns-query-tests"></a>DNS 查詢測試
 
-如果 DNS 用戶端可以 ping DNS 伺服器電腦，請嘗試使用下列 `nslookup` 命令來測試伺服器是否可以回應 DNS 用戶端。 因為 nslookup 不會使用用戶端的 DNS 快取，名稱解析將會使用用戶端設定的 DNS 伺服器。
+如果 DNS 用戶端可以 ping DNS 伺服器電腦，請嘗試使用下列 `nslookup` 命令來測試伺服器是否可以回應 dns 用戶端。 因為 nslookup 不會使用用戶端的 DNS 快取，名稱解析將會使用用戶端設定的 DNS 伺服器。
 
 #### <a name="test-a-client"></a>測試用戶端
 
 ```cmd
 nslookup <client>
 ```
-  
+
 例如，如果用戶端電腦名稱為**client1**，請執行下列命令：
-  
+
 ```cmd
 nslookup client1
 ```
-  
+
 如果未傳回成功的回應，請嘗試執行下列命令：
-  
+
 ```cmd
 nslookup <fqdn of client>
 ```
-  
+
 例如，如果 FQDN 是**client1.corp.contoso.com**，請執行下列命令：
 
 ```cmd
@@ -85,7 +85,7 @@ nslookup client1.corp.contoso.com.
 > [!NOTE]
 > 執行此測試時，您必須包含尾端的句點。
 
-如果 Windows 成功找到 FQDN，但找不到簡短名稱，請在 NIC 的 Advanced TCP/IP 設定的 [DNS] 索引標籤上，檢查 DNS 尾碼設定。 如需詳細資訊，請參閱設定[DNS 解析](https://docs.microsoft.com/previous-versions/tn-archive/dd163570(v=technet.10)#configuring-dns-resolution)。
+如果 Windows 成功找到 FQDN，但找不到簡短名稱，請在 NIC 的 Advanced TCP/IP 設定的 [DNS] 索引標籤上，檢查 DNS 尾碼設定。 如需詳細資訊，請參閱設定[DNS 解析](/previous-versions/tn-archive/dd163570(v=technet.10)#configuring-dns-resolution)。
 
 #### <a name="test-the-dns-server"></a>測試 DNS 伺服器
 
@@ -118,14 +118,14 @@ nslookup app1.corp.contoso.com
 nslookup <external name>
 ```
 
-例如， 
+例如：
 ```cmd
 nslookup bing.com
 ```
 
-如果所有這四項測試都成功，請執行 `ipconfig /displaydns`，並檢查失敗名稱的輸出。 如果您在失敗的名稱底下看到「名稱不存在」，則會從 DNS 伺服器傳回否定回應，並在用戶端上快取。 
+如果所有這四個測試都成功，請執行 `ipconfig /displaydns` 並檢查失敗名稱的輸出。 如果您在失敗的名稱底下看到「名稱不存在」，則會從 DNS 伺服器傳回否定回應，並在用戶端上快取。
 
-若要解決此問題，請執行 `ipconfig /flushdns`來清除快取。
+若要解決此問題，請執行以清除快取 `ipconfig /flushdns` 。
 
 ## <a name="next-step"></a>後續步驟
 

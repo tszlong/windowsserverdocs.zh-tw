@@ -2,18 +2,17 @@
 title: 管理 Windows Server Essentials 中的伺服器存放裝置
 description: 說明如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 1836682e-c7bb-4dd5-a2b5-6ff032693574
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: cb6503c05f0dfc621758acb6da26cc90e658836d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 861404db4d6b5e0d4cfd4db95056f583f9068a0b
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470553"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180904"
 ---
 # <a name="manage-server-storage-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的伺服器存放裝置
 
@@ -56,7 +55,7 @@ ms.locfileid: "85470553"
 
 ### <a name="available-hard-drive-management-tasks"></a>可用的硬碟管理工作
 
-|任務名稱|描述|
+|任務名稱|說明|
 |---------------|-----------------|
 |**檢視硬碟屬性**|開啟 [_硬碟名稱 [_**屬性**] 頁面。 如果選取硬碟，便會顯示此工作。 **硬碟名稱** 屬性頁面的 [一般]** 索引標籤包含下列其他工作：<br /><br /> -   **磁片磁碟機清理**：可讓您清除硬碟上未使用的檔案（此工作僅適用于 Windows Server Essentials）。<br />-   **檢查並修復**：檢查硬碟的檔案系統錯誤，並嘗試自動修復偵測到的錯誤。<br /><br /> [_硬碟名稱 [_**屬性**] 頁面的 [**陰影複製**] 索引標籤可讓您啟用陰影複製。 此索引標籤也會顯示已排定的陰影複製下次執行時間。|
 |**管理儲存空間**|**注意：** 對於 Windows Server Essentials，只有在有現有的儲存空間時，才會顯示此工作。<br /><br /> 開啟 **[儲存空間]** 控制台，您可以從中建立並管理儲存集區與儲存空間。|
@@ -194,7 +193,7 @@ ms.locfileid: "85470553"
 > [!NOTE]
 >  如果您在執行 Windows Server Essentials 的伺服器上設定儲存空間，則無法使用 [**清除資料**] 選項恢復出廠預設值。 此問題的因應措施是先移除儲存空間，然後使用 [清除資料]**** 選項恢復出廠預設值。
 
- 如需儲存空間的詳細資訊，請參閱 [儲存空間常見問題集 (FAQ)](https://social.technet.microsoft.com/wiki/contents/articles/11382.storage-spaces-frequently-asked-questions-faq.aspx)。
+ 如需儲存空間的詳細資訊，請參閱 [儲存空間常見問題集 (FAQ)](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-faq)。
 
 ##  <a name="create-a-storage-space"></a><a name="BKMK_6"></a>建立儲存空間
  若要開始使用伺服器上的儲存空間，必須符合下列最低需求：

@@ -10,12 +10,12 @@ manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
 ms.date: 12/23/2019
-ms.openlocfilehash: dec88eb81227b62cd0a0ca90810b2598b8f9fd52
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: eb402c9cd7bb4f9ae472859fcd45fcc050d1df85
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854741"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182134"
 ---
 # <a name="performance-tuning-network-adapters"></a>效能調整網路介面卡
 
@@ -25,12 +25,12 @@ ms.locfileid: "80854741"
 
 您網路介面卡的正確調整設定取決於下列變數：
 
-- 網路介面卡及其功能集  
-- 伺服器執行的工作負載類型  
-- 伺服器硬體和軟體資源  
-- 您的伺服器效能目標  
+- 網路介面卡及其功能集
+- 伺服器執行的工作負載類型
+- 伺服器硬體和軟體資源
+- 您的伺服器效能目標
 
-下列小節描述一些效能調整選項。  
+以下各節說明一些效能調整選項。
 
 ##  <a name="enabling-offload-features"></a><a name="bkmk_offload"></a>啟用卸載功能
 
@@ -42,17 +42,17 @@ ms.locfileid: "80854741"
 例如，假設有一個硬體資源有限的網路介面卡。
 在此情況下，啟用分割卸載功能可能會降低介面卡的最大可持續輸送量。 不過，如果可接受縮減的輸送量，您應該繼續啟用分割卸載功能。
 
-> [!NOTE]  
+> [!NOTE]
 > 某些網路介面卡需要您個別啟用傳送和接收路徑的卸載功能。
 
 ##  <a name="enabling-receive-side-scaling-rss-for-web-servers"></a><a name="bkmk_rss_web"></a>啟用網頁伺服器的接收端調整（RSS）
 
 當伺服器上的網路介面卡比邏輯處理器少時，RSS 可以改善 Web 延展性和效能。 當所有網路流量都通過支援 RSS 的網路介面卡時，伺服器可以跨不同的 Cpu 同時處理來自不同連線的傳入 web 要求。
 
-> [!IMPORTANT]  
-> 請避免在同一部伺服器上同時使用非 RSS 網路介面卡和支援 RSS 的網路介面卡。 由於 RSS 和超文字傳輸協議（HTTP）中的負載分佈邏輯，如果不支援 RSS 的網路介面卡在具有一或多個支援 RSS 的網路介面卡的伺服器上接受網路流量，則效能可能會嚴重降低。 在這種情況下，您應該使用支援 RSS 的網路介面卡，或是在網路介面卡內容 [進階內容] 索引標籤上停用 RSS。
->  
-> 若要判斷網路介面卡是否支援 RSS，您可以檢視網路介面卡內容 [進階內容] 索引標籤上的 RSS 資訊。
+> [!IMPORTANT]
+> 請避免在同一部伺服器上同時使用非 RSS 網路介面卡和支援 RSS 的網路介面卡。 由於 RSS 和超文字傳輸協議（HTTP）中的負載分佈邏輯，如果不支援 RSS 的網路介面卡在具有一或多個支援 RSS 的網路介面卡的伺服器上接受網路流量，則效能可能會嚴重降低。 在這種情況下，您應該使用支援 RSS 的網路介面卡，或是在網路介面卡內容 [進階內容]**** 索引標籤上停用 RSS。
+>
+> 若要判斷網路介面卡是否支援 RSS，您可以檢視網路介面卡內容 [進階內容]**** 索引標籤上的 RSS 資訊。
 
 ### <a name="rss-profiles-and-rss-queues"></a>RSS 設定檔和 RSS 佇列
 
@@ -62,11 +62,11 @@ ms.locfileid: "80854741"
 
 ##  <a name="increasing-network-adapter-resources"></a><a name="bkmk_resources"></a>增加網路介面卡資源
 
-對於可讓您手動設定資源（例如接收和傳送緩衝區）的網路介面卡，您應該增加已配置的資源。  
+對於可讓您手動設定資源（例如接收和傳送緩衝區）的網路介面卡，您應該增加已配置的資源。
 
 某些網路介面卡會將其接收緩衝區設低以節省來自主機的配置記憶體。 低的值會導致丟棄封包和降低效能。 因此，對於大量接收的情況，建議您將接收緩衝區的值增加到最大。
 
-> [!NOTE]  
+> [!NOTE]
 > 如果網路介面卡未公開手動資源設定，則會以動態方式設定資源，或將資源設為無法變更的固定值。
 
 ### <a name="enabling-interrupt-moderation"></a>啟用中斷仲裁
@@ -81,23 +81,23 @@ ms.locfileid: "80854741"
 
 以下是一些適用於精細度到微秒之網路的效能調整建議。
 
-- 將定電腦 BIOS 設定成 [高效能]，且停用 C-State。 不過，請注意，這與系統和 BIOS 相依，某些系統在讓作業系統控制電源管理的情況下可以提供較高的效能。 您可以從 [**設定**] 或使用**powercfg**命令來檢查並調整電源管理設定。 如需詳細資訊，請參閱[Powercfg 命令列選項](https://docs.microsoft.com/windows-hardware/design/device-experiences/powercfg-command-line-options)。
+- 將定電腦 BIOS 設定成 [高效能]****，且停用 C-State。 不過，請注意，這與系統和 BIOS 相依，某些系統在讓作業系統控制電源管理的情況下可以提供較高的效能。 您可以從 [**設定**] 或使用**powercfg**命令來檢查並調整電源管理設定。 如需詳細資訊，請參閱[Powercfg 命令列選項](https://docs.microsoft.com/windows-hardware/design/device-experiences/powercfg-command-line-options)。
 
-- 將作業系統電源管理設定檔設定為 [高效能系統]。  
-   > [!NOTE]  
+- 將作業系統電源管理設定檔設定為 [高效能系統]****。
+   > [!NOTE]
    > 如果系統 BIOS 已設定為停用電源管理的作業系統控制，則此設定無法正常運作。
 
 - 啟用靜態卸載。 例如，啟用 [UDP 總和檢查碼]、[TCP 總和檢查碼] 和 [傳送大型卸載（LSO）] 設定。
 
 - 如果流量是多資料流程處理，例如接收大量多播流量時，請啟用 RSS。
 
-- 針對要求最低可能延遲的網路卡驅動程式，請停用 [插斷仲裁] 設定。 請記住，此設定可能會使用較多的 CPU 時間，並代表取捨。
+- 針對要求最低可能延遲的網路卡驅動程式，請停用 [插斷仲裁]**** 設定。 請記住，此設定可能會使用較多的 CPU 時間，並代表取捨。
 
 - 在與處理封包的程式 (使用者執行緒) 所使用之核心共用 CPU 快取的核心處理器上，處理網路介面卡插斷和 DPC。 CPU 親和性調整可用來將處理程序導向特定邏輯處理器並搭配 RSS 設定來完成這項作業。 將相同的核心用於插斷、DPC 及使用者模式執行緒會讓效能隨著負載增加而變差，因為 ISR、DPC 及執行緒會爭相使用該核心。
 
 ##  <a name="system-management-interrupts"></a><a name="bkmk_smi"></a>系統管理中斷
 
-許多硬體系統都會使用系統管理中斷（SMI-S）來進行各種維護功能，例如回報錯誤修正程式碼（ECC）記憶體錯誤、維持舊版 USB 相容性、控制風扇，以及管理 BIOS 控制的電源設置。
+許多硬體系統都會使用系統管理中斷（SMI-S）來進行各種維護功能，例如回報錯誤修正程式碼（ECC）記憶體錯誤、維持舊版 USB 相容性、控制風扇，以及管理 BIOS 控制的電源設定。
 
 SMI-S 是系統上最高優先順序的插斷，會將 CPU 放在管理模式中。 此模式會比所有其他的活動，而 SMI-S 會執行插斷服務常式，通常包含在 BIOS 中。
 
@@ -105,7 +105,7 @@ SMI-S 是系統上最高優先順序的插斷，會將 CPU 放在管理模式中
 
 如果您需要達到最低延遲，您應該向硬體提供者要求一個可將 SMI 盡可能降到最低限度的 BIOS 版本。 這些 BIOS 版本通常稱為「低延遲 BIOS」或「SMI-S 免費 BIOS」。 在某些情況下，硬體平台不可能將 SMI 活動全部消除，因為會使用它來控制必要的功能 (例如冷卻風扇)。
 
-> [!NOTE]  
+> [!NOTE]
 > 作業系統無法控制 SMIs，因為邏輯處理器是在特殊維護模式下執行，這可防止作業系統介入。
 
 ##  <a name="performance-tuning-tcp"></a><a name="bkmk_tcp"></a>效能微調 TCP
@@ -120,9 +120,9 @@ SMI-S 是系統上最高優先順序的插斷，會將 CPU 放在管理模式中
 
 若為具有特定大小的 TCP 接收視窗，您可以使用下列方程式來計算單一連接的總輸送量。
 
-> 可達成*的輸送量總計（以位元組為*單位） = *TCP 接收視窗大小*（以位元組為單位） \* （1/*連接延遲（秒*）
+> 可*達到的輸送量總計（以位元組為單位）*  = *TCP 接收視窗大小（位元組）* \*（1/*連接延遲（秒*））
 
-例如，如果連接的延遲為10毫秒，則可達成的總輸送量只有 51 Mbps。 這個值對於大型商業網路基礎結構而言是合理的。 不過，藉由使用自動調整來調整接收視窗，連接可以達到 1 Gbps 連接的完整行速率。  
+例如，如果連接的延遲為10毫秒，則可達成的總輸送量只有 51 Mbps。 這個值對於大型商業網路基礎結構而言是合理的。 不過，藉由使用自動調整來調整接收視窗，連接可以達到 1 Gbps 連接的完整行速率。
 
 有些應用程式會定義 TCP 接收視窗的大小。 如果應用程式未定義接收視窗大小，連結速度會決定大小，如下所示：
 
@@ -135,17 +135,17 @@ SMI-S 是系統上最高優先順序的插斷，會將 CPU 放在管理模式中
 
 這項功能也會充分利用其他功能，以改善網路效能。 這些功能包括[RFC 1323](https://tools.ietf.org/html/rfc1323)中所定義的其餘 TCP 選項。 藉由使用這些功能，以 Windows 為基礎的電腦可以協調較小的 TCP 接收視窗大小，但會根據設定以定義的值進行調整。 此行為可讓您更容易處理網路裝置的大小。
 
-> [!NOTE]  
-> 您可能會遇到網路裝置不符合 [ **TCP 視窗調整] 選項**規範的問題（如[RFC 1323](https://tools.ietf.org/html/rfc1323)中所定義），因此不支援縮放比例。 在這種情況下，請參閱此[KB 934430，當您嘗試在防火牆裝置後方使用 Windows Vista，](https://support.microsoft.com/help/934430/network-connectivity-fails-when-you-try-to-use-windows-vista-behind-a)或洽詢網路裝置廠商的支援小組時，網路連線會失敗。  
+> [!NOTE]
+> 您可能會遇到網路裝置不符合 [ **TCP 視窗調整] 選項**規範的問題（如[RFC 1323](https://tools.ietf.org/html/rfc1323)中所定義），因此不支援縮放比例。 在這種情況下，請參閱此[KB 934430，當您嘗試在防火牆裝置後方使用 Windows Vista，](https://support.microsoft.com/help/934430/network-connectivity-fails-when-you-try-to-use-windows-vista-behind-a)或洽詢網路裝置廠商的支援小組時，網路連線會失敗。
 
 #### <a name="review-and-configure-tcp-receive-window-autotuning-level"></a>審查和設定 TCP 接收視窗自動調諧層級
 
 您可以使用 netsh 命令或 Windows PowerShell Cmdlet 來檢查或修改 TCP 接收視窗自動優化層級。
 
-> [!NOTE]  
+> [!NOTE]
 > 不同于 windows 10 或 Windows Server 2019 之前的 Windows 版本，您無法再使用登錄來設定 TCP 接收視窗大小。 如需已被取代之設定的詳細資訊，請參閱已[取代的 TCP 參數](#deprecated-tcp-parameters)。
 
-> [!NOTE]  
+> [!NOTE]
 > 如需可用自動優化層級的詳細資訊，請參閱自動[優化層級](#autotuning-levels)。
 
 **使用 netsh 來檢查或修改自動優化層級**
@@ -161,7 +161,7 @@ netsh interface tcp show global
 ```
 Querying active state...
 
-TCP Global Parameters  
+TCP Global Parameters
 -----
 Receive-Side Scaling State : enabled
 Chimney Offload State : disabled
@@ -184,10 +184,10 @@ Pacing Profile : off
 netsh interface tcp set global autotuninglevel=<Value>
 ```
 
-> [!NOTE]  
-> 在上述命令中，\<*值*> 代表自動調整層級的新值。
+> [!NOTE]
+> 在上述命令中， \<*Value*> 代表自動調整層級的新值。
 
-如需此命令的詳細資訊，請參閱[介面傳輸控制通訊協定的 Netsh 命令](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731258(v=ws.10))。
+如需此命令的詳細資訊，請參閱[介面傳輸控制通訊協定的 Netsh 命令](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731258(v=ws.10))。
 
 **使用 Powershell 來檢查或修改自動優化層級**
 
@@ -216,8 +216,8 @@ Internet             Normal
 Set-NetTCPSetting -AutoTuningLevelLocal <Value>
 ```
 
-> [!NOTE]  
-> 在上述命令中，\<*值*> 代表自動調整層級的新值。
+> [!NOTE]
+> 在上述命令中， \<*Value*> 代表自動調整層級的新值。
 
 如需這些 Cmdlet 的詳細資訊，請參閱下列文章：
 
@@ -228,13 +228,13 @@ Set-NetTCPSetting -AutoTuningLevelLocal <Value>
 
 您可以將接收視窗自動優化設定為五個層級的任一個。 預設層級為**正常**。 下表描述這些層級。
 
-|Level |十六進位值 |註解 |
+|層級 |十六進位值 |註解 |
 | --- | --- | --- |
 |標準 (預設) |0x8 （調整因數為8） |將 [TCP 接收] 視窗設定為 [成長]，以容納幾乎所有的案例。 |
-|已停用 |沒有可用的縮放比例 |將 TCP 接收視窗設定為預設值。 |
-|Restricted (受限制的) |0x4 （4的縮放因數） |將 TCP 接收視窗設定為超過其預設值，但在某些情況下限制這類成長。 |
+|停用 |沒有可用的縮放比例 |將 TCP 接收視窗設定為預設值。 |
+|受限制 |0x4 （4的縮放因數） |將 TCP 接收視窗設定為超過其預設值，但在某些情況下限制這類成長。 |
 |高度限制 |0x2 （調整因數為2） |將 [TCP 接收] 視窗設定為超過其預設值，但非常保守地這麼做。 |
-|實驗性 |0xE （調整因數為14） |將 [TCP 接收] 視窗設定為「成長」，以容納極端的案例。 |
+|實驗 |0xE （調整因數為14） |將 [TCP 接收] 視窗設定為「成長」，以容納極端的案例。 |
 
 如果您使用應用程式來捕捉網路封包，應用程式應該針對不同的視窗自動優化層級設定，報告類似以下的資料。
 
@@ -366,18 +366,18 @@ Set-NetTCPSetting -AutoTuningLevelLocal <Value>
 已不再支援來自 Windows Server 2003 的下列登錄設定，並會在更新的版本中予以忽略。
 
 - **TcpWindowSize**
-- **NumTcbTablePartitions**  
-- **MaxHashTableSize**  
+- **NumTcbTablePartitions**
+- **MaxHashTableSize**
 
 所有這些設定都位於下列登錄子機碼中：
 
-> **HKEY_LOCAL_MACHINE \System\CurrentControlSet\Services\Tcpip\Parameters**  
+> **HKEY_LOCAL_MACHINE \System\CurrentControlSet\Services\Tcpip\Parameters**
 
 ###  <a name="windows-filtering-platform"></a><a name="bkmk_wfp"></a>Windows 篩選平台
 
 Windows Vista 和 Windows Server 2008 引進了 Windows 篩選平台（WFP）。 WFP 提供 Api 給非 Microsoft 獨立軟體廠商（Isv），以建立封包處理篩選器。 範例包括防火牆和防毒軟體。
 
-> [!NOTE]  
+> [!NOTE]
 > 撰寫不良的 WFP 篩選器可能會大幅降低伺服器的網路效能。 如需詳細資訊，請參閱 Windows 開發人員中心的將封[包處理驅動程式和應用程式移植到 WFP](https://docs.microsoft.com/windows-hardware/drivers/network/porting-packet-processing-drivers-and-apps-to-wfp) 。
 
 如需本指南中所有主題的連結，請參閱[網路子系統效能調整](net-sub-performance-top.md)。

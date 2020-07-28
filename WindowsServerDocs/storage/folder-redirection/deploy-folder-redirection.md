@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 55421cb1f01d654c4c424e8534f4c678ac38e6f5
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 21af2aae837b7a570638c2eb3f3c96cb8997fa84
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959330"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182064"
 ---
 # <a name="deploy-folder-redirection-with-offline-files"></a>使用離線檔案部署資料夾重新導向
 
@@ -128,7 +128,7 @@ ms.locfileid: "86959330"
 
 > [!NOTE]
 > Windows 用戶端電腦上的重新導向資料夾預設會啟用離線檔案，除非使用者變更，否則會在執行 Windows Server 的電腦上停用。 若要使用群組原則來控制是否啟用離線檔案，請使用**允許或禁止使用離線檔案功能**原則設定。
-> 如需其他離線檔案群組原則設定的詳細資訊，請參閱[啟用進階離線檔案功能](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn270369(v%3dws.11)>)和[設定離線檔案群組原則](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc759721(v%3dws.10)>)。
+> 如需其他離線檔案群組原則設定的詳細資訊，請參閱[啟用進階離線檔案功能](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn270369(v%3dws.11)>)和[設定離線檔案群組原則](</previous-versions/windows/it-pro/windows-server-2003/cc759721(v%3dws.10)>)。
 
 如何在群組原則中設定資料夾重新導向：
 
@@ -199,5 +199,5 @@ ms.locfileid: "86959330"
 * [部署資料夾重新導向及漫遊使用者設定檔的主要電腦](deploy-primary-computers.md)
 * [啟用進階離線檔案功能](enable-always-offline.md)
 * [Microsoft 對於複寫使用者設定檔資料的支援聲明](/archive/blogs/askds/microsofts-support-statement-around-replicated-user-profile-data)
-* [使用 DISM 側載應用程式](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh852635(v=win.10)>)
+* [使用 DISM 側載應用程式](</previous-versions/windows/it-pro/windows-8.1-and-8/hh852635(v=win.10)>)
 * [封裝、部署及查詢 Windows 執行階段型應用程式疑難排解](/windows/win32/appxpkg/troubleshooting)

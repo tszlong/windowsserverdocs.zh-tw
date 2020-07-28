@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 01/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e9aecc439235d9396d764420711109552d89f32
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 055538bc52e11b7fb24f15db51af52e5cf8376d1
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965160"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182084"
 ---
 # <a name="overview-of-file-sharing-using-the-smb-3-protocol-in-windows-server"></a>在 Windows Server 中使用 SMB 3 通訊協定的檔案共用概觀
 
@@ -47,7 +47,7 @@ ms.locfileid: "86965160"
 
 | 特色/功能  | 新功能或更新功能  | 摘要  |
 | --------- | --------- | --------- |
-| 已停用對檔案共用的來賓存取 | 新增 | SMB 用戶端已不再允許下列動作：來賓帳戶對遠端伺服器的存取；在提供無效的認證後，會回復為來賓帳戶。 如需詳細資訊，請參閱[在 Windows 中依預設停用 SMB2 中的來賓存取](https://support.microsoft.com/help/4046019/guest-access-in-smb2-disabled-by-default-in-windows-10-and-windows-ser)。 | 
+| 已停用對檔案共用的來賓存取 | 新增 | SMB 用戶端已不再允許下列動作：來賓帳戶對遠端伺服器的存取；在提供無效的認證後，會回復為來賓帳戶。 如需詳細資訊，請參閱[在 Windows 中依預設停用 SMB2 中的來賓存取](https://support.microsoft.com/help/4046019/guest-access-in-smb2-disabled-by-default-in-windows-10-and-windows-ser)。 |
 | SMB 全域對應 | 新增 | 將遠端 SMB 共用對應至本機主機 (包括容器) 上的所有使用者都可存取的磁碟機代號。 若要讓資料磁碟區上的容器 I/O 能夠周遊遠端掛接點，則必須進行此作業。 請注意，對容器使用 SMB 全域對應時，容器主機上的所有使用者都可以存取遠端共用。 容器主機上執行的任何應用程式也都可以存取對應的遠端共用。 如需詳細資訊，請參閱[叢集共用磁碟區 (CSV)、儲存空間直接存取、SMB 全域對應的相關容器儲存空間支援](https://techcommunity.microsoft.com/t5/failover-clustering/container-storage-support-with-cluster-shared-volumes-csv/ba-p/372140)。 |
 | SMB 方言控制 | 新增 | 現在，您可以設定登錄值來控制使用的最低 SMB 版本 (方言) 和最高 SMB 版本。 如需詳細資訊，請參閱[控制 SMB 方言](https://techcommunity.microsoft.com/t5/storage-at-microsoft/controlling-smb-dialects/ba-p/860024)。 |
 
@@ -74,7 +74,7 @@ ms.locfileid: "86965160"
 | SMB 直接傳輸     |   已更新      | 透過提高以少量 I/O 裝載工作負載的效率，改善少量 I/O 工作負載的效能 (例如虛擬機器中的線上交易處理 (OLTP) 資料庫)。 這些改良在使用較高速的網路介面時很明顯，例如 40 Gbps 乙太網路與 56 Gbps InfiniBand。  |
 | SMB 頻寬限制 | 新增 | 現在，您可以使用 [Smb-BandwidthLimit](/powershell/module/smbshare/set-smbbandwidthlimit) 來設定三種類別的頻寬限制：VirtualMachine (透過 SMB 的 Hyper-V 流量)、LiveMigration (透過 SMB 的 Hyper-V 即時移轉流量) 或預設值 (所有其他類型的 SMB 流量)。
 
-若要進一步了解 Windows Server 2012 R2 中新增和變更的 SMB 功能，請參閱 [Windows Server 中新增的 SMB 功能](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)>)。
+若要進一步了解 Windows Server 2012 R2 中新增和變更的 SMB 功能，請參閱 [Windows Server 中新增的 SMB 功能](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)>)。
 
 ## <a name="features-added-in-smb-30-with-windows-server-2012-and-windows-8"></a>在 Windows Server 2012 和 Windows 8 的 SMB 3.0 中新增的功能
 
@@ -122,7 +122,7 @@ SMB 直接傳輸具備下列需求：
 * [Windows Server 的儲存空間](../storage.yml)
 * [用於應用程式資料的向外延展檔案伺服器](../../failover-clustering/sofs-overview.md)
 * [使用 SMB 直接傳輸改善檔案伺服器的效能](smb-direct.md)
-* [部署透過 SMB 的 Hyper-V](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
-* [部署 SMB 多重通道](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn610980(v%3dws.11)>)
-* [部署適用於伺服器應用程式且快速又有效率的檔案伺服器](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831723(v%3dws.11)>)
-* [SMB：疑難排解指南](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn659439(v%3dws.11)>)
+* [部署透過 SMB 的 Hyper-V](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
+* [部署 SMB 多重通道](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn610980(v%3dws.11)>)
+* [部署適用於伺服器應用程式且快速又有效率的檔案伺服器](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831723(v%3dws.11)>)
+* [SMB：疑難排解指南](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn659439(v%3dws.11)>)

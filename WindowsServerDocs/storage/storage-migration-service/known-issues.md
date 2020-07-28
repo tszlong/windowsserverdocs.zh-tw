@@ -8,12 +8,12 @@ ms.date: 06/02/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: a6ee550a0652f5b357a966e4074afdf499fcea34
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d7c76413fbc64ce200ca4c442a30e6f804927f68
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953910"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182054"
 ---
 # <a name="storage-migration-service-known-issues"></a>儲存體遷移服務的已知問題
 
@@ -534,11 +534,23 @@ DFSR Debug 記錄檔：
 
 ## <a name="inventory-or-transfer-fail-when-using-credentials-from-a-different-domain"></a>使用來自不同網域的認證時，清查或傳輸失敗
 
-當您嘗試使用儲存體遷移服務執行清查或轉移，並以 Windows Server 為目標，而同時從目標伺服器以外的其他網域使用遷移認證時，您會收到下列錯誤
+當您嘗試使用儲存體遷移服務執行清查或轉移，並以 Windows Server 為目標，但卻從目標伺服器以外的其他網域使用遷移認證時，您會收到下列一個或多個錯誤
+
+    Exception from HRESULT:0x80131505
 
     The server was unable to process the request due to an internal error
 
-    04/28/2020-11:31:01.169 [Erro] Failed device discovery stage SystemInfo with error: (0x490) Could not find computer object 'myserver' in Active Directory    [d:\os\src\base\dms\proxy\discovery\discoveryproxy\DeviceDiscoveryOperation.cs::TryStage::1042]
+    04/28/2020-11:31:01.169 [Error] Failed device discovery stage SystemInfo with error: (0x490) Could not find computer object 'myserver' in Active Directory    [d:\os\src\base\dms\proxy\discovery\discoveryproxy\DeviceDiscoveryOperation.cs::TryStage::1042]
+
+進一步檢查記錄，會顯示遷移帳戶和從或兩者遷移的伺服器位於不同的網域中：
+
+    ```
+    06/25/2020-10:11:16.543 [Info] Creating new job=NedJob user=**CONTOSO**\ned    
+    [d:\os\src\base\dms\service\StorageMigrationService.IInventory.cs::CreateJob::133]
+    ```
+    
+    GetOsVersion(fileserver75.**corp**.contoso.com)    [d:\os\src\base\dms\proxy\common\proxycommon\CimSessionHelper.cs::GetOsVersion::66]
+06/25/2020-10：20： 45.368 [Info] 電腦 ' fileserver75.corp.contoso.com '： OS 版本 
 
 此問題是由儲存體遷移服務中的程式碼脫離所造成。 若要解決此問題，請使用來源與目的地電腦所屬的相同網域中的遷移認證。 例如，如果來源和目的地電腦屬於 "contoso.com" 樹系中的 "corp.contoso.com" 網域，請使用 ' corp\myaccount ' 來執行遷移，而不是 ' contoso\myaccount ' 認證。
 

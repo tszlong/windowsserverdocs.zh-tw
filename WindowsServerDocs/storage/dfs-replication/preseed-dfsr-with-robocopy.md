@@ -8,18 +8,18 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 746aa953b2226152a1f103fd0b5a974f543ce993
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 54c95a86514e006735bbfe784f3df46eb95e1f94
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966110"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182254"
 ---
 # <a name="use-robocopy-to-pre-seed-files-for-dfs-replication"></a>使用 Robocopy 預先植入用於 DFS 複寫的檔案
 
 >適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
-本主題說明如何使用命令列工具 (**Robocopy.exe**)，在 Windows Server 中設定適用於分散式檔案系統 (DFS) 複寫 (也稱為 DFSR 或 DFS) 的複寫時預先植入檔案。 藉由在設定 DFS 複寫、新增新複寫夥伴或取代伺服器之前先預先植入檔案，可加速初始同步，並在 Windows Server 2012 R2 中啟用 DFS 複寫資料庫的複製作業。 Robocopy 方法是數個預先植入方法的其中一種；如需了解概觀，請參閱[步驟1：預先植入用於 DFS 複寫的檔案](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn495046(v%3dws.11)>)。
+本主題說明如何使用命令列工具 (**Robocopy.exe**)，在 Windows Server 中設定適用於分散式檔案系統 (DFS) 複寫 (也稱為 DFSR 或 DFS) 的複寫時預先植入檔案。 藉由在設定 DFS 複寫、新增新複寫夥伴或取代伺服器之前先預先植入檔案，可加速初始同步，並在 Windows Server 2012 R2 中啟用 DFS 複寫資料庫的複製作業。 Robocopy 方法是數個預先植入方法的其中一種；如需了解概觀，請參閱[步驟1：預先植入用於 DFS 複寫的檔案](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn495046(v%3dws.11)>)。
 
 Windows Server 中隨附 Robocopy (Robust File Copy) 命令列公用程式。 此公用程式提供許多選項，包括複製安全性、備份 API 支援、重試功能和記錄。 較新的版本則納入了多重執行緒和未緩衝處理的 I/O 支援。
 
@@ -41,9 +41,9 @@ Windows Server 中隨附 Robocopy (Robust File Copy) 命令列公用程式。 �
 - 將用來複製檔案的伺服器 (來源伺服器或目的地伺服器) 上安裝最新版本的 Robocopy 時，您需要安裝適用於該作業系統版本的最新版本。 如需指示，請參閱[步驟 2：將要複寫的檔案穩定化](#step-2-stabilize-files-that-will-be-replicated)。 除非您要從執行 Windows Server 2003 R2 的伺服器預先植入檔案，否則可以選擇在來源或目的地伺服器上執行 Robocopy。 目的地伺服器 (通常具有較新的作業系統版本) 可讓您存取最新版本的 Robocopy。
 
 - 確定目的地磁碟有足夠的儲存空間。 請勿在您打算複製的路徑上建立資料夾：Robocopy 必須建立根資料夾。
-    
+
     >[!NOTE]
-    >決定要為預先植入檔案配置多少空間時，請將預期會隨時間成長的資料量和 DFS 複寫的儲存需求列入考量。 若需要協助以進行規劃，請參閱[編輯 DFS 複寫](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754771(v=ws.11)>)中的[編輯複寫用快取資料夾和因衝突而刪除資料夾的配額大小](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc754229(v=ws.11))。
+    >決定要為預先植入檔案配置多少空間時，請將預期會隨時間成長的資料量和 DFS 複寫的儲存需求列入考量。 若需要協助以進行規劃，請參閱[編輯 DFS 複寫](</previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754771(v=ws.11)>)中的[編輯複寫用快取資料夾和因衝突而刪除資料夾的配額大小](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc754229(v=ws.11))。
 
 - 在來源伺服器上，選擇性地安裝處理序監視器或處理序總管，您可以使用此工具來檢查鎖定檔案的應用程式。 如需下載資訊，請參閱[處理序監視器](/sysinternals/downloads/procmon)和[處理序總管](/sysinternals/downloads/process-explorer)。
 
@@ -60,9 +60,9 @@ Windows Server 中隨附 Robocopy (Robust File Copy) 命令列公用程式。 �
 1. 在網頁瀏覽器中，開啟 [https://support.microsoft.com](https://support.microsoft.com/)。
 
 2. 在 [搜尋支援]  中輸入下列字串，以適當的作業系統取代 `<operating system version>`，然後按下 Enter 鍵：
-    
+
     ```robocopy.exe kbqfe "<operating system version>"```
-    
+
     例如，輸入 **robocopy.exe kbqfe "Windows Server 2008 R2"** 。
 
 3. 找出並下載具有最大識別碼 (也就是最新版本) 的 Hotfix。
@@ -92,13 +92,13 @@ Windows Server 中隨附 Robocopy (Robust File Copy) 命令列公用程式。 �
 2. 開啟提升權限的命令提示字元。
 
 3. 若要從來源將檔案預先植入目的地伺服器，請執行下列命令，並以您自己的來源、目的地和記錄檔路徑取代括弧中的值：
-    
+
     ```PowerShell
     robocopy "<source replicated folder path>" "<destination replicated folder path>" /e /b /copyall /r:6 /w:5 /MT:64 /xd DfsrPrivate /tee /log:<log file path> /v
     ```
-    
+
     此命令會使用下列參數，將來源資料夾的所有內容複製到目的地資料夾：
-    
+
     |參數|說明|
     |---|---|
     |"\<source replicated folder path\>"|指定要在目的地伺服器上預先植入的原始檔案。|
@@ -113,13 +113,13 @@ Windows Server 中隨附 Robocopy (Robust File Copy) 命令列公用程式。 �
     |/tee|將狀態輸出寫入主控台視窗及記錄檔。|
     |/log \<log file path>|指定要寫入的記錄檔。 覆寫檔案的現有內容。 (若要將項目附加至現有的記錄檔，請使用 `/log+ <log file path>`)。|
     |/v|產生詳細資訊輸出，其中包含略過的檔案。|
-    
+
     例如，下列命令會將來源複寫資料夾 (E:\\RF01) 中的檔案複寫到目的地伺服器上的資料磁碟機 D：
-    
+
     ```PowerShell
     robocopy.exe "\\srv01\e$\rf01" "d:\rf01" /e /b /copyall /r:6 /w:5 /MT:64 /xd DfsrPrivate /tee /log:c:\temp\pre-seedsrv02.log
     ```
-    
+
     >[!NOTE]
     >使用 Robocopy 來預先植入檔案以執行 DFS 複寫時，建議您使用上述的參數。 不過，您可以變更其中一些參數值，或新增其他參數。 例如，經測試後您可能會發現可為 */MT* 參數設定較高的值 (執行緒計數)。 此外，如果您主要會複寫較大的檔案，可以為未緩衝的 I/O 新增 **/j** 選項，以提高複製效能。 如需有關 Robocopy 參數的詳細資訊，請參閱 [Robocopy](../../administration/windows-commands/robocopy.md) 命令列參考。
 
@@ -132,4 +132,4 @@ Windows Server 中隨附 Robocopy (Robust File Copy) 命令列公用程式。 �
 
 ## <a name="next-step"></a>後續步驟
 
-完成初始複製，並使用 Robocopy 解決盡可能略過的檔案數問題時，會使用 Windows PowerShell 中的 **Get-DfsrFileHash** Cmdlet 或 **Dfsrdiag** 命令，以比較來源與目的地伺服器上的檔案雜湊來驗證預先植入的檔案。 如需詳細指示，請參閱[步驟 2：驗證用於 DFS 複寫的預先植入檔案](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn495042(v%3dws.11)>)。
+完成初始複製，並使用 Robocopy 解決盡可能略過的檔案數問題時，會使用 Windows PowerShell 中的 **Get-DfsrFileHash** Cmdlet 或 **Dfsrdiag** 命令，以比較來源與目的地伺服器上的檔案雜湊來驗證預先植入的檔案。 如需詳細指示，請參閱[步驟 2：驗證用於 DFS 複寫的預先植入檔案](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn495042(v%3dws.11)>)。

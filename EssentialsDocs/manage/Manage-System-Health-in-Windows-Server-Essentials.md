@@ -2,18 +2,17 @@
 title: 在 Windows Server Essentials 中管理系統健康情況
 description: 說明如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 3043f83b-389c-4f37-a1ff-85afe99314fa
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 145f97ed2b5ac928e8d1988f3dfd47a62f5c1bf0
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 98a4b154a9b3cea9ebc92da1eb807bc73e98d5d2
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470513"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180884"
 ---
 # <a name="manage-system-health-in-windows-server-essentials"></a>在 Windows Server Essentials 中管理系統健康情況
 

@@ -2,18 +2,17 @@
 title: 在 Windows Server Essentials 中建立連線
 description: 說明如何使用 Windows Server Essentials
 ms.date: 05/07/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 149a5d34-43b7-4b9e-99e7-9f2294ab9ddb
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 3e8c50b94b441f75a5b80d3a46f42a87450496a1
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: c1dafb9fb89109a16f2f28662464494691a2f2f0
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470062"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87179944"
 ---
 # <a name="get-connected-in-windows-server-essentials"></a>在 Windows Server Essentials 中建立連線
 
@@ -270,7 +269,7 @@ ms.locfileid: "85470062"
 
     -   核心網路功能
 
-    -   遠端桌面服務
+    -   遠端桌面服務問題
 
 -   對電腦進行下列變更以協助進行備份：
 
@@ -395,7 +394,7 @@ ms.locfileid: "85470062"
     > [!NOTE]
     >  如果您的電腦位於 Windows Server Essentials 網路之外的遠端位置，若要執行 [將電腦連線到伺服器]，請在網頁瀏覽器的網址列中輸入**HTTP://<domainname \> /connect** （其中 <domain \> 是您組織的功能變數名稱）。 您可以向您的網路系統管理員取得您的網域名稱資訊。
 
-4.  **[將電腦連線到伺服器]** 頁面就會出現。 執行下列其中一個動作：
+4.  **[將電腦連線到伺服器]** 頁面就會出現。 請執行下列其中一項：
 
     -   在執行 Windows 作業系統的電腦上，按一下 [下載 Windows 適用的軟體]****。
 
@@ -519,7 +518,7 @@ ms.locfileid: "85470062"
 
         3.  按一下 [網站]****。
 
-        4.  網站應該會顯示在 [將這個網站新增到區域]**** 欄位中。 按一下 [新增] 。
+        4.  網站應該會顯示在 [將這個網站新增到區域]**** 欄位中。 按一下 [新增]  。
 
         5.  按一下 [關閉]****，然後按一下 [確定]****。
 

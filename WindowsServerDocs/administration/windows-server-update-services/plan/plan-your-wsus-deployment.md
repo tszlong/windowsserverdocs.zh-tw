@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/24/2018
-ms.openlocfilehash: 0208e23b94b5e7c5012bc99eabf71aa0c7ad944c
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: de4fe62b179286f058a9c4508e9f907eeb9ae806
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82037137"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87178574"
 ---
 # <a name="plan-your-wsus-deployment"></a>規劃 WSUS 部署
 
@@ -48,8 +48,8 @@ ms.locfileid: "82037137"
 
     -   **網路介面卡：** 每秒 100 Mbps 或以上 (建議 1GB)
 
-> [!NOTE] 
-> 這些指導方針假設 WSUS 用戶端會為總計 30000 個用戶端，每隔八小時與伺服器進行同步處理。 如果同步處理頻率較高，伺服器負載就會有相對應的增量。  
+> [!NOTE]
+> 這些指導方針假設 WSUS 用戶端會為總計 30000 個用戶端，每隔八小時與伺服器進行同步處理。 如果同步處理頻率較高，伺服器負載就會有相對應的增量。
 
 -   軟體需求：
 
@@ -103,7 +103,7 @@ ms.locfileid: "82037137"
    > [!NOTE]
    > 設定功能隨選安裝的安裝來源並不會影響 WSUS。 如需如何設定功能的相關資訊，請參閱[設定 Windows Server 中的功能隨選安裝](https://technet.microsoft.com/library/jj127275.aspx)。
 
-3. 執行 Windows 10 版本 1709 或版本 1803 的企業裝置，無法直接從 WSUS 安裝任何功能隨選安裝。 若要安裝功能隨選安裝，請[建立功能檔案 (並列存放)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127275%28v=ws.11%29#create-a-feature-file-or-side-by-side-store)，或從下列其中一個來源取得功能隨選安裝套件：
+3. 執行 Windows 10 版本 1709 或版本 1803 的企業裝置，無法直接從 WSUS 安裝任何功能隨選安裝。 若要安裝功能隨選安裝，請[建立功能檔案 (並列存放)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127275%28v=ws.11%29#create-a-feature-file-or-side-by-side-store)，或從下列其中一個來源取得功能隨選安裝套件：
    - [大量授權服務中心](https://www.microsoft.com/licensing/servicecenter) (VLSC) - 需要 VL 存取權
    - OEM 入口網站 - 需要 OEM 存取權
    - MSDN 下載 - 需要 MSDN 訂用帳戶
@@ -166,7 +166,7 @@ WSUS 支援下列 SQL Server 版本：
 
 -   您可以針對擁有較多用戶端電腦而無法由一部 WSUS 伺服器有效管理的大型組織來擴展 WSUS。
 
-> [!NOTE] 
+> [!NOTE]
 > 建議您不要建立三層以上的 WSUS 伺服器階層。 每增加一個階層，就會增加在連線的伺服器上傳播更新的時間。 雖然理論上沒有階層的限制，但是 Microsoft 僅測試到五個階層的部署。
 >
 > 此外，下游伺服器必須具備與上游伺服器同步處理來源相同版本或舊版的 WSUS。

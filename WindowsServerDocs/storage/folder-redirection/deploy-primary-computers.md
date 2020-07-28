@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 935d3ccf7de777a71d7c75179629b448dbb73a08
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 7af3d5c64216f60cca41aa9fb0c3d2c38c74e6c4
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966280"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182244"
 ---
 # <a name="deploy-primary-computers-for-folder-redirection-and-roaming-user-profiles"></a>部署資料夾重新導向及漫遊使用者設定檔的主要電腦
 
@@ -30,7 +30,7 @@ ms.locfileid: "86966280"
 
 主要電腦支援必須具備以下條件：
 
-- 必須更新 Active Directory Domain Services (AD DS) 結構描述，以包含 Windows Server 2012 結構描述新增項目 (安裝 Windows Server 2012 網域控制站會自動更新結構描述)。 如需更新 AD DS 結構描述的相關資訊，請參閱 [Adprep.exe 整合](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh472161(v=ws.11)#adprepexe-integration>)及[執行 Adprep.exe](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd464018(v=ws.10)>)。
+- 必須更新 Active Directory Domain Services (AD DS) 結構描述，以包含 Windows Server 2012 結構描述新增項目 (安裝 Windows Server 2012 網域控制站會自動更新結構描述)。 如需更新 AD DS 結構描述的相關資訊，請參閱 [Adprep.exe 整合](</previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh472161(v=ws.11)#adprepexe-integration>)及[執行 Adprep.exe](</previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd464018(v=ws.10)>)。
 - 用戶端電腦必須執行 Windows 10、Windows 8.1、Windows 8、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012。
 
 > [!TIP]

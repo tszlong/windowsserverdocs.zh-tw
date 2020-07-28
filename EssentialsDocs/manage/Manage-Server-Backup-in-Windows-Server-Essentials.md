@@ -2,18 +2,17 @@
 title: 管理 Windows Server Essentials 中的伺服器備份
 description: 說明如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 0302d070-c58a-40f2-b56d-7e7842813d02
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d792a03771ad406400877d73c0aa7ef1124adeb3
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 611f3824493acd6047c55f83cf17ba81daf8c923
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470583"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180924"
 ---
 # <a name="manage-server-backup-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的伺服器備份
 
@@ -71,7 +70,7 @@ ms.locfileid: "85470583"
 
 #### <a name="to-use-remote-web-access-to-manage-your-server"></a>使用遠端 Web 存取來管理您的伺服器
 
-1. 請開啟網頁瀏覽器。
+1. 開啟網頁瀏覽器。
 
 2. 在網址方塊中，輸入 Windows Server Essentials 網域的名稱。
 

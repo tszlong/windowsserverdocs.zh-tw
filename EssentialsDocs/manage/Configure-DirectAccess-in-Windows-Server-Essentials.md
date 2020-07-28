@@ -2,18 +2,17 @@
 title: 在 Windows Server Essentials 中設定 DirectAccess
 description: 說明如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: c959b6fc-c67e-46cd-a9cb-cee71a42fa4c
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: a9ebd7af7f748a1e2af4a47ca5b590137cd33b3d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a1f568d34fd0fbd94d09046b59a93d21feb60890
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470903"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181074"
 ---
 # <a name="configure-directaccess-in-windows-server-essentials"></a>在 Windows Server Essentials 中設定 DirectAccess
 
@@ -121,7 +120,7 @@ ms.locfileid: "85470903"
 
 9. 在 [其他 DNS 伺服器]**** 方塊中，輸入其他 DNS 伺服器的 IP 位址 (如果有的話)。
 
-10. 按一下 [確定]****，然後按一下 [關閉]****。
+10. 按一下 **[確定]** ，然後按一下 **[關閉]** 。
 
 > [!IMPORTANT]
 >  務必設定路由器將連接埠 80 和 443 轉送到伺服器的新靜態 IP 位址。

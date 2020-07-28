@@ -2,18 +2,17 @@
 title: Windows Server Essentials 中的儀表板概觀
 description: 說明如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: f70a79de-9c56-4496-89b5-20a1bff2293e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ca60df1066e0a40c4304d7af36133eda58bbd55f
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 0b9ec7bf24bd79b324a811446308129dd3c97b2b
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470453"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180844"
 ---
 # <a name="overview-of-the-dashboard-in-windows-server-essentials"></a>Windows Server Essentials 中的儀表板概觀
 
@@ -60,7 +59,7 @@ ms.locfileid: "85470453"
 
 
 
-|項目|儀表板功能|描述|
+|項目|儀表板功能|說明|
 |----------|-----------------------|-----------------|
 |1|導覽列|按一下瀏覽列上的區段以存取與該區段關聯的資訊和工作。 每次您開啟 [儀表板] 時，預設會顯示 [首頁]****。|
 |2|子區段索引標籤|子區段索引標籤可讓您存取第二層的 Windows Server Essentials 系統管理工作。|
@@ -88,7 +87,7 @@ ms.locfileid: "85470453"
 
 |區段|描述|
 |-------------|-----------------|
-|首頁|[首頁]**** 預設會在您每次開啟 [儀表板] 時顯示。 它包含下列類別的工作和資訊：<br /><br /> **安裝**–完成此類別中的工作，以在第一次設定您的伺服器。 如需這些工作的相關資訊，請參閱[安裝和設定 Windows Server Essentials](../install/Install-and-Configure-Windows-Server-Essentials.md)。<br /><br /> **電子郵件**–選擇此類別中的選項，可將電子郵件服務與伺服器整合。<br /><br /> **注意：** 此類別僅適用于 Windows Server Essentials。<br /><br /> **服務**–選擇此類別中的工作，將 Microsoft 線上服務與伺服器整合。<br /><br /> **注意：** 此類別僅適用于已啟用「Windows Server Essentials 體驗」角色的 Windows Server Essentials 和 Windows Server 2012 R2 Standard。<br /><br /> **增益集**–按一下此類別，為您的公司安裝有用的增益集。<br /><br /> [**快速狀態**] –會顯示高階伺服器狀態。 按一下狀態以檢視該功能的資訊和設定選項。 如果您完成 [設定] 類別中的所有工作，這個類別就會出現在 [類別] 窗格的頂端。<br /><br /> [說明 **] –使用**[搜尋] 方塊來搜尋網路上的說明。 按一下連結以瀏覽所選支援選項的網站。|
+|家庭|[首頁]**** 預設會在您每次開啟 [儀表板] 時顯示。 它包含下列類別的工作和資訊：<br /><br /> **安裝**–完成此類別中的工作，以在第一次設定您的伺服器。 如需這些工作的相關資訊，請參閱[安裝和設定 Windows Server Essentials](../install/Install-and-Configure-Windows-Server-Essentials.md)。<br /><br /> **電子郵件**–選擇此類別中的選項，可將電子郵件服務與伺服器整合。<br /><br /> **注意：** 此類別僅適用于 Windows Server Essentials。<br /><br /> **服務**–選擇此類別中的工作，將 Microsoft 線上服務與伺服器整合。<br /><br /> **注意：** 此類別僅適用于已啟用「Windows Server Essentials 體驗」角色的 Windows Server Essentials 和 Windows Server 2012 R2 Standard。<br /><br /> **增益集**–按一下此類別，為您的公司安裝有用的增益集。<br /><br /> [**快速狀態**] –會顯示高階伺服器狀態。 按一下狀態以檢視該功能的資訊和設定選項。 如果您完成 [設定] 類別中的所有工作，這個類別就會出現在 [類別] 窗格的頂端。<br /><br /> [說明 **] –使用**[搜尋] 方塊來搜尋網路上的說明。 按一下連結以瀏覽所選支援選項的網站。|
 |使用者|若要讓使用者存取 Windows Server Essentials 所提供的資源，您需要使用 [Windows Server Essentials 儀表板] 來建立使用者帳戶。 建立使用者帳戶之後，您可以使用 [儀表板] 之 [使用者]**** 頁面上可用的工作來管理帳戶。 您可以在這個頁面上執行的工作包括：<br /><br /> -查看使用者帳戶的清單。<br /><br /> -查看和管理使用者帳戶屬性。<br /><br /> -啟用或停用使用者帳戶。<br /><br /> -新增或移除使用者帳戶。<br /><br /> -如果您的伺服器與 Office 365 整合，請將區域網路帳戶指派給 Microsoft 線上服務帳戶。<br /><br /> -變更使用者帳戶密碼和管理密碼原則。<br /><br /> 如需管理使用者帳戶的相關資訊，請參閱[管理使用者帳戶](Manage-User-Accounts-in-Windows-Server-Essentials.md)。|
 |使用者群組|**注意：** 這項功能僅適用于已啟用 Windows Server Essentials 體驗角色的 Windows Server Essentials 和 Windows Server 2012 R2 Standard。<br /><br /> 您可以在這個頁面上執行的工作包括：<br /><br /> -查看使用者群組的清單。<br /><br /> -查看和管理使用者群組。<br /><br /> -新增或移除使用者群組。|
 |通訊群組|**注意：** 這項功能僅適用于已啟用 Windows Server Essentials 體驗角色的 Windows Server Essentials 和 Windows Server 2012 R2 Standard。 只有當 Windows Server Essentials 已與 Office 365 整合時，才會顯示這個索引標籤。<br /><br /> 您可以在這個頁面上執行的工作包括：<br /><br /> -查看發佈群組的清單。<br /><br /> -新增或移除通訊群組。|

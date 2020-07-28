@@ -1,5 +1,5 @@
 ---
-title: 疑難排解 DHCP 伺服器上的問題
+title: 針對 DHCP 伺服器上的問題進行疑難排解
 description: 本 artilce 介紹如何疑難排解 DHCP 伺服器上的問題並收集資料。
 ms.prod: windows-server
 ms.service: na
@@ -9,14 +9,14 @@ ms.date: 5/26/2020
 ms.topic: article
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: ad70b03fcb6d703a0b99435ee8715319d09af941
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: 5ec2ef358cfaf7841b093843848f2ea5ee42433e
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84150196"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181894"
 ---
-# <a name="troubleshoot-problems-on-the-dhcp-server"></a>疑難排解 DHCP 伺服器上的問題
+# <a name="troubleshoot-problems-on-the-dhcp-server"></a>針對 DHCP 伺服器上的問題進行疑難排解
 
 本文討論如何疑難排解 DHCP 伺服器上發生的問題。
 
@@ -44,40 +44,39 @@ ms.locfileid: "84150196"
 
   - 列舉並檢查已設定的 DHCP 原則和篩選準則。
 
-## <a name="event-logs"></a>事件記錄
+## <a name="event-logs"></a>事件記錄檔
 
-檢查系統和 DHCP 伺服器服務事件記錄檔（**應用程式和服務記錄**檔 \> **Microsoft** \> **Windows** \> **DHCP 伺服器**）是否有與觀察到的問題相關的回報問題。  
-視問題類型而定，事件會記錄到下列其中一個事件通道：  
-[DHCP 伺服器操作事件](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\))  
-[DHCP 伺服器系統管理事件](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\))  
-[DHCP 伺服器系統事件](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\))  
-[DHCP 伺服器篩選器通知事件](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\))  
-[DHCP 伺服器 Audit 事件](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\))
+檢查系統和 DHCP 伺服器服務事件記錄檔（**應用程式和服務記錄**檔 \> **Microsoft** \> **Windows** \> **DHCP 伺服器**）是否有與觀察到的問題相關的回報問題。
+視問題類型而定，事件會記錄到下列其中一個事件通道： [dhcp 伺服器操作事件](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\)) 
+ [dhcp 伺服器管理事件](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\)) 
+ [dhcp 伺服器系統事件](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\)) 
+ [dhcp 伺服器篩選通知事件](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\)) 
+ [dhcp 伺服器 Audit 事件](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\))
 
 ## <a name="data-collection"></a>資料收集
 
 ### <a name="dhcp-server-log"></a>DHCP 伺服器記錄檔
 
-DHCP 伺服器服務的偵錯工具記錄檔提供有關 IP 位址租用指派的詳細資訊，以及 DHCP 伺服器完成的 DNS 動態更新。 這些記錄檔預設位於% windir% \\ System32 \\ Dhcp。  
-如需詳細資訊，請參閱[分析 DHCP 伺服器記錄](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd183591\(v=ws.10\))檔。
+DHCP 伺服器服務的偵錯工具記錄檔提供有關 IP 位址租用指派的詳細資訊，以及 DHCP 伺服器完成的 DNS 動態更新。 這些記錄檔預設位於% windir% \\ System32 \\ Dhcp。
+如需詳細資訊，請參閱[分析 DHCP 伺服器記錄](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd183591\(v=ws.10\))檔。
 
 ### <a name="network-trace"></a>網路追蹤
 
 相互關聯網路追蹤可能會指出 DHCP 伺服器在記錄事件時所執行的作業。 若要建立這類追蹤，請遵循下列步驟：
 
-1.  前往[GitHub](https://github.com/CSS-Windows/WindowsDiag/tree/master/ALL/TSS)，並下載[tss \_ 工具 .zip](https://github.com/CSS-Windows/WindowsDiag/blob/master/ALL/TSS/tss_tools.zip)檔案。
+1.  前往[GitHub](https://github.com/CSS-Windows/WindowsDiag/tree/master/ALL/TSS)，並下載[tss \_tools.zip](https://github.com/CSS-Windows/WindowsDiag/blob/master/ALL/TSS/tss_tools.zip)檔案。
 
-2.  複製 Tss \_ 工具 .zip 檔案，並將它展開到本機磁片上的某個位置，例如 [C： \\ tools] 資料夾。
+2.  複製 Tss \_tools.zip 檔案，並將它展開到本機磁片上的某個位置，例如 [C： tools] \\ 資料夾。
 
-3.  \\在提高許可權的命令提示字元視窗中，從 C： tools 執行下列命令：  
+3.  \\在提高許可權的命令提示字元視窗中，從 C： tools 執行下列命令：
     ```console
     TSS Ron Trace <Stop:Evt:>20321:<Other:>DhcpAdminEvents NoSDP NoPSR NoProcmon NoGPresult
     ```
-      
-    >[!Note]
-    >在此命令中，請 \<*Stop:Evt:*\> 將和取代為 \<*Other:*\> 您要在追蹤會話中專注于的事件識別碼和事件通道。  
-    >\_ \_ Tss tools .zip 檔案中包含的 Tss 讀我檔案說明 .docx 檔案 \_ 提供所有可用設定的詳細資訊。
 
-4.  觸發事件之後，此工具會建立名為 C： MS DATA 的資料夾 \\ \_ 。 此資料夾將包含一些實用的輸出檔，提供有關電腦的網路和網域設定的一般資訊。  
+    >[!Note]
+    >在此命令中，請 \<*Stop:Evt:*\> 將和取代為 \<*Other:*\> 您要在追蹤會話中專注于的事件識別碼和事件通道。
+    >\_Tsstools.zip 檔案中所包含的 Tss 讀我檔案 \_Help.docx 檔案 \_ 提供所有可用設定的詳細資訊。
+
+4.  觸發事件之後，此工具會建立名為 C： MS DATA 的資料夾 \\ \_ 。 此資料夾將包含一些實用的輸出檔，提供有關電腦的網路和網域設定的一般資訊。
     此資料夾中最有趣的檔案是% Computername% \_ date \_ time \_ packetcapture \_ InternetClient \_ dbg. etl。
     藉由使用[網路監視器](https://www.microsoft.com/download/4865)應用程式，您可以載入檔案，並在「DHCP 或 DNS」通訊協定上設定顯示篩選器，以檢查幕後發生的狀況。

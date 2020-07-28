@@ -5,12 +5,12 @@ ms.author: jmesser
 author: jmesser81
 ms.prod: windows-server
 ms.date: 11/05/2018
-ms.openlocfilehash: 4afde574802bd63db8ea8ca8db9f5daf1a53dc93
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6e4d665ba431331fbf1f41a0ac4774e58693a5e2
+ms.sourcegitcommit: 717222e9efceb5964872dbf97034cad60f3c48df
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859841"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87295033"
 ---
 # <a name="host-compute-network-hcn-service-api-for-vms-and-containers"></a>適用于 Vm 和容器的主機計算網路（HCN）服務 API
 
@@ -59,8 +59,6 @@ ms.locfileid: "80859841"
 ### <a name="example"></a>範例 
 
 以下是此工作流程的範例，該物件代表 VM 設定檔中的 SCSI 控制器。 
-
-在 Windows 原始程式碼中，我們會使用 mars 檔案來定義架構： onecore/vm/dv/net/hns/schema/mars/Schema/HCN。
 
 ```
 enum IpamType
@@ -224,9 +222,9 @@ class Route
 } 
 ```
 
-您可以使用[Swagger](https://swagger.io/)之類的工具來產生用戶端所使用之架構程式設計語言的特定語言標記法。 Swagger 支援各種語言C#，例如、Go、JAVAscript 和 Python。
+您可以使用[Swagger](https://swagger.io/)之類的工具來產生用戶端所使用之架構程式設計語言的特定語言標記法。 Swagger 支援多種語言，例如 c #、Go、JAVAscript 和 Python。
 
-- 最上層 IPAM & 子網物件[產生C#的程式碼範例](example-c-sharp.md)。
+- 最上層 IPAM & 子網物件的已[產生 c # 程式碼範例](example-c-sharp.md)。
 
 - 最上層 IPAM & 子網物件[產生的 Go 程式碼範例](example-go.md)。 Docker 和 Kubernetes 會使用 Go，這是主機計算網路服務 Api 的兩個取用者。 Go 具有內建支援，可將 Go 類型與 JSON 檔進行封送處理。
 

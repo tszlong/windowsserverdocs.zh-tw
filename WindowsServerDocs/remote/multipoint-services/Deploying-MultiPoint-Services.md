@@ -9,14 +9,15 @@ ms.assetid: 594bc09e-5d2d-4984-a9de-79d40b1308d6
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: 94a7a199bf19179217fff00453ac5542e133bba0
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 0e24fadf1914c43bf6270e1d84c5a5535518d9bd
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473645"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182034"
 ---
 # <a name="deploying-multipoint-services"></a>部署 MultiPoint 服務
+
 本指南說明如何在開始使用系統之前，部署執行 MultiPoint 服務的伺服器並設定 MultiPoint 工作站、安裝和設定您的系統、設定使用者帳戶，以及執行一些基本的管理工作，例如開啟磁片保護和設定備份。
 
 > [!NOTE]
@@ -42,5 +43,3 @@ ms.locfileid: "85473645"
 ## <a name="additional-references"></a>其他參考
 
 - [MultiPoint 服務](MultiPoint-Services.md)
--   [MultiPoint 服務論壇](https://social.technet.microsoft.com/Forums/windowsserver/home?forum=windowsmultipointserver&filter=alltypes&sort=lastpostdesc)
-

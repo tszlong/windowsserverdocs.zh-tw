@@ -2,18 +2,17 @@
 title: 整合內部部署 Exchange Server 與 Windows Server Essentials
 description: 說明如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: b56a21e2-c9e3-4ba9-97d9-719ea6a0854b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 13de76ba7e9452e6498479b060712d06c0571c1a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 343bfc1325a065f4c4903732eceba59c769f838f
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470883"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181064"
 ---
 # <a name="integrate-an-on-premises-exchange-server-with-windows-server-essentials"></a>整合內部部署 Exchange Server 與 Windows Server Essentials
 
@@ -52,7 +51,7 @@ ms.locfileid: "85470883"
  例如，如果您的公司網際網路網域名稱為 contoso.com，您想使用完整網域名稱 (FQDN) *mail.contoso.com* 來參照執行 Exchange Server 的內部部署伺服器，請洽詢您的網域名稱提供者以建立下表中的 DNS 資源記錄。
 
 
-| 資源記錄名稱 |     記錄類型     |                                                                         記錄設定                                                                          |                                                                                                                                                                                                                                                              描述                                                                                                                                                                                                                                                              |
+| 資源記錄名稱 |     記錄類型     |                                                                         記錄設定                                                                          |                                                                                                                                                                                                                                                              說明                                                                                                                                                                                                                                                              |
 |----------------------|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |         mail         |      主機 (A)       |                                                        位址=*您的 ISP 指派的公用 IP 位址*                                                         |                                                                                                                                                                                                   Exchange Server 會接收傳送到 mail.contoso.com 的郵件。<br /><br /> 您可以使用自己選擇的其他名稱。                                                                                                                                                                                                    |
 |          MX          | 郵件交換程式 (MX) |                                            主機名稱=@<br /><br /> 位址=mail.contoso.com<br /><br /> 喜好設定=0                                             |                                                                                                                                                                                                      提供的電子郵件訊息路由， email@contoso.com 以抵達執行 Exchange server 的內部部署伺服器。                                                                                                                                                                                                       |
@@ -284,7 +283,7 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 
  您至少必須在路由器設定下列連接埠設定：
 
-|路由器連接埠|目的地 IP|目的地連接埠|附註|
+|路由器連接埠|目的地 IP|目的地連接埠|注意|
 |-----------------|--------------------|----------------------|----------|
 |25 (SMTP)|執行 Exchange Server 的內部部署伺服器的內部 IP。|25||
 |80 (HTTP)|執行 Windows Server Essentials 的伺服器的內部 IP|80||

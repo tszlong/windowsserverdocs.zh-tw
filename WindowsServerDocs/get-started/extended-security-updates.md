@@ -9,12 +9,12 @@ ms.author: iainfou
 ms.topic: get-started-article
 ms.localizationpriority: high
 ms.date: 02/21/2020
-ms.openlocfilehash: 6c9d732b6ec3d8ceb65c691ab143f09dd8f10f23
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 19a65f2a254fe14f7cddfbda2a84e9d00f47da56
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77552530"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181844"
 ---
 # <a name="how-to-use-windows-server-2008-and-2008-r2-extended-security-updates-esu"></a>如何使用 Windows Server 2008 和 2008 R2 延伸安全性更新 (ESU)
 
@@ -87,7 +87,7 @@ Windows Server 2008 和 Windows Server 2008 R2 支援週期已於 2020 年 1 月
 5. 如果您看到有頁面指出「註冊以取得多次啟用金鑰」，這表示您需要先要求私人預覽的存取權，才能使用延伸安全性更新。 如果您沒有看到此頁面，請跳到步驟 6。
 
    若要要求存取權，請選取 [加入私人預覽]  。 隨即會開啟電子郵件訊息視窗。 這封電子郵件是您對產品小組所提出的存取要求。
-  
+
     請在要求中包含下列資訊：
 
     * 客戶名稱
@@ -101,7 +101,7 @@ Windows Server 2008 和 Windows Server 2008 R2 支援週期已於 2020 年 1 月
 
     如果該小組未核准您的要求，您便會看到下列錯誤：
 
-    [在命名空間 'Microsoft.WindowsESU' 中找不到資源類型](https://social.msdn.microsoft.com/Forums/office/94b16a89-3149-43da-865d-abf7dba7b977/the-resource-type-could-not-be-found-in-the-namespace-microsoftwindowsesu-for-api-version)
+    [在命名空間 'Microsoft.WindowsESU' 中找不到資源類型](https://docs.microsoft.com/windows-server/get-started/extended-security-updates)
 
 6. 在 [Azure 詳細資料]  底下，選取您的 Azure 訂用帳戶、資源群組和金鑰的位置。
 

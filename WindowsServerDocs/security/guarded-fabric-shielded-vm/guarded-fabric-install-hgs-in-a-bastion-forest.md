@@ -7,14 +7,14 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 20e0d5e73713c0d6280e95d51ec8de8fde612350
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 331fc5a4e825dc4e7faf6f0a65605d7aaebf8314
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856581"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181694"
 ---
-# <a name="install-hgs-in-an-existing-bastion-forest"></a>在現有的防禦樹系中安裝 HGS 
+# <a name="install-hgs-in-an-existing-bastion-forest"></a>在現有的防禦樹系中安裝 HGS
 
 >適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
 
@@ -27,7 +27,7 @@ ms.locfileid: "80856581"
 
 在提高許可權的 PowerShell 會話中執行本主題中的所有命令。
 
-[!INCLUDE [Install the HGS server role](../../../includes/guarded-fabric-install-hgs-server-role.md)] 
+[!INCLUDE [Install the HGS server role](../../../includes/guarded-fabric-install-hgs-server-role.md)]
 
 如果您的資料中心有您想要加入 HGS 節點的安全防禦樹系，請遵循下列步驟。
 您也可以使用這些步驟來設定2個或更多獨立的 HGS 叢集，這些叢集已聯結至相同的網域。
@@ -41,7 +41,7 @@ ms.locfileid: "80856581"
 建立群組受管理的服務帳戶和2個安全性群組。
 如果您用來初始化 HGS 的帳戶沒有在網域中建立電腦物件的許可權，您也可以預先設置叢集物件。
 
-## <a name="group-managed-service-account"></a>群組受管理的服務帳戶
+## <a name="group-managed-service-account"></a>群組受控服務帳戶
 
 群組受管理的服務帳戶（gMSA）是 HGS 用來抓取和使用其憑證的身分識別。 使用[uninstall-adserviceaccount](https://technet.microsoft.com/itpro/powershell/windows/addsadministration/new-adserviceaccount)建立 gMSA。
 如果這是網域中的第一個 gMSA，您將需要新增金鑰發佈服務根金鑰。
@@ -70,7 +70,7 @@ New-ADServiceAccount -Name 'HGSgMSA' -DnsHostName 'HGSgMSA.yourdomain.com' -Prin
 ```
 
 GMSA 將需要在每部 HGS 伺服器的安全性記錄檔中產生事件的許可權。
-如果您使用群組原則來設定使用者權限指派，請確定 gMSA 帳戶已被授與 HGS 伺服器上的「[產生 audit 事件」許可權](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn221956%28v=ws.11%29)。
+如果您使用群組原則來設定使用者權限指派，請確定 gMSA 帳戶已被授與 HGS 伺服器上的「[產生 audit 事件」許可權](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn221956%28v=ws.11%29)。
 
 > [!NOTE]
 > 從 Windows Server 2012 Active Directory 架構開始，群組受管理的服務帳戶可供使用。
@@ -100,7 +100,7 @@ CNO 代表叢集的名稱，主要是由容錯移轉叢集在內部使用。
 VCO 代表位於叢集頂端的 HGS 服務，而且將會是向 DNS 伺服器註冊的名稱。
 
 > [!IMPORTANT]
-> 將執行 `Initialize-HgsServer` 的使用者需要 Active Directory 中的 CNO 和 VCO 物件的**完整控制權**。
+> 會執行的使用者 `Initialize-HgsServer` 需要 Active Directory 中的 CNO 和 VCO 物件的**完整控制權**。
 
 若要快速預先設置您的 CNO 和 VCO，請 Active Directory 系統管理員執行下列 PowerShell 命令：
 
@@ -142,7 +142,7 @@ Set-Acl -Path $vcoPath -AclObject $acl
 
 **原則名稱：** 網路安全性：設定 Kerberos 允許的加密類型
 
-**動作**：如果已設定此原則，您必須使用[uninstall-adserviceaccount](https://docs.microsoft.com/powershell/module/addsadministration/set-adserviceaccount?view=win10-ps)更新 gMSA 帳戶，以便只在此原則中使用支援的加密類型。 比方說，如果您的原則只允許 AES128\_HMAC\_SHA1 和 AES256\_HMAC\_SHA1，您應該執行 `Set-ADServiceAccount -Identity HGSgMSA -KerberosEncryptionType AES128,AES256`。
+**動作**：如果已設定此原則，您必須使用[uninstall-adserviceaccount](https://docs.microsoft.com/powershell/module/addsadministration/set-adserviceaccount?view=win10-ps)更新 gMSA 帳戶，以便只在此原則中使用支援的加密類型。 比方說，如果您的原則只允許 AES128 \_ hmac \_ SHA1 和 AES256 \_ hmac \_ sha1，您應該執行 `Set-ADServiceAccount -Identity HGSgMSA -KerberosEncryptionType AES128,AES256` 。
 
 
 

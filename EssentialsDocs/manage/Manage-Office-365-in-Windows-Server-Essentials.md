@@ -2,17 +2,16 @@
 title: 在 Windows Server Essentials 中管理 Office 365
 description: 說明如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 3f8485e4-e10f-4f38-8a5e-d5227abd0d84
 author: nnamuhcs
 ms.author: daveba
-ms.openlocfilehash: e21f8b38c126f699fda8245ab620ce5cd210fa11
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 249ff5f77d525792d5bf53719fcf1ee93bc955a4
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470673"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180964"
 ---
 # <a name="manage-office-365-in-windows-server-essentials"></a>在 Windows Server Essentials 中管理 Office 365
 
@@ -185,7 +184,7 @@ ms.locfileid: "85470673"
 
 ### <a name="required-dns-records-for-linking-a-custom-internet-domain-name-to-office-365"></a>將自訂的網際網路網域名稱連結到 Office 365 需要的 DNS 記錄
 
-|Service|需要的 DNS 記錄|目的|
+|服務|需要的 DNS 記錄|目的|
 |-------------|--------------------------|-------------|
 |(多個服務)|MX| Office 365 會使用此記錄來確認您擁有特定的功能變數名稱。 這個 MX 記錄不會干擾電子郵件訊息路由。|
 |Exchange Online|MX|提供電子郵件訊息路由。 **重要事項：** 如果您要遷移電子郵件，請勿指派零（**0**）的喜好設定到新的 MX 記錄。 請確定記錄值大於指派給目前 MX 記錄的值。 當電子郵件遷移完成，而且您已準備好將電子郵件伺服器變更為 Office 365 時，請讓您的網域註冊機構重設新 MX 記錄的喜好設定值。|
@@ -236,7 +235,7 @@ ms.locfileid: "85470673"
 
 3.  輸入您要用來連接到 Office 365 訂閱的帳號憑證，然後按 **[下一步]**。
 
-4.  按一下 [關閉] 。 儀表板會重新啟動。
+4.  按一下 [關閉]。 儀表板會重新啟動。
 
 ###  <a name="disable-office-365-integration"></a><a name="BKMK_Disable"></a>停用 Office 365 整合
  如果您決定不要從儀表板管理您的 Office 365 服務和線上帳戶，您可以停用 Office 365 整合。 您的 Office 365 訂閱仍然有效，而您從儀表板所做的任何設定變更都會生效。 例如，您會收到電子郵件，寄送到您連結到 Office 365 訂閱的功能變數名稱。 您不會遺失任何電子郵件，而且您為行動裝置設定的控制項仍然會使用 Exchange Online。

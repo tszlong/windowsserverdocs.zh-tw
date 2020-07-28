@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f18c880dd673b17f53815a57fa2fcc66558dad71
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: aff9fbdfa6dc97cb644e207efdae9c44533c320b
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961320"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181744"
 ---
 # <a name="network-file-system-overview"></a>網路檔案系統概觀
 
@@ -29,11 +29,11 @@ Windows Server 中的 NFS 包含 Server for NFS 和 Client for NFS。 執行 Win
 
 ## <a name="windows-and-windows-server-versions"></a>Windows 和 Windows Server 版本
 
-Windows 支援多個版本的 NFS 用戶端和伺服器，視作業系統版本和系列而定。 
+Windows 支援多個版本的 NFS 用戶端和伺服器，視作業系統版本和系列而定。
 
 | 作業系統 | NFS 伺服器版本 |NFS 用戶端版本|
 | ----------------- | ------------------- | ----------------- |
-| Windows 7、Windows 8.1、Windows 10 | 不適用 | NFSv2、NFSv3 |
+| Windows 7、Windows 8.1、Windows 10 | N/A | NFSv2、NFSv3 |
 | Windows Server 2008、Windows Server 2008 R2 | NFSv2、NFSv3 | NFSv2、NFSv3 |
 | Windows Server 2012、Windows Server 2012 R2、Windows Server 2016、Windows Server 2019 | NFSv2、NFSv3、NFSv 4。1  | NFSv2、NFSv3 |
 
@@ -49,7 +49,7 @@ Windows 支援多個版本的 NFS 用戶端和伺服器，視作業系統版本�
 
 網路檔案系統中新增和變更的功能包含 NFS 4.1 版的支援，以及改良的部署和管理性。 如需 Windows Server 2012 中新增或變更之功能的相關資訊，請參閱下表：
 
-|特色/功能|新功能或更新功能|描述|
+|特色/功能|新功能或更新功能|說明|
 |---|---|---|
 |[NFS 版本4。1](#nfs-version-41)|新增|相較于 NFS 第3版，提高安全性、效能和互通性。|
 |[NFS 基礎結構](#nfs-infrastructure)|已更新|改善部署和管理性，並提高安全性。|
@@ -99,7 +99,7 @@ NFS 第3版用戶端可以有快速且透明的規劃容錯移轉，並具有更
 
 ## <a name="server-manager-information"></a>伺服器管理員資訊
 
-在伺服器管理員或較新的[Windows 管理中心](../../manage/windows-admin-center/overview.md)-使用 [新增角色及功能] 嚮導來新增 SERVER for NFS 角色服務（在 [檔案] 和 [ISCSI 服務] 角色底下）。 如需安裝功能的一般資訊，請參閱 [安裝或解除安裝角色、角色服務或功能](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831809(v=ws.11)>)。 Server for NFS 工具組含適用于網路檔案系統的服務 MMC 嵌入式管理單元，可用來管理 Server for NFS 和 Client for NFS 元件。 使用嵌入式管理單元，您可以管理安裝在電腦上的 Server for NFS 元件。 Server for NFS 也包含數個 Windows 命令列管理工具：
+在伺服器管理員或較新的[Windows 管理中心](../../manage/windows-admin-center/overview.md)-使用 [新增角色及功能] 嚮導來新增 SERVER for NFS 角色服務（在 [檔案] 和 [ISCSI 服務] 角色底下）。 如需安裝功能的一般資訊，請參閱 [安裝或解除安裝角色、角色服務或功能](</previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831809(v=ws.11)>)。 Server for NFS 工具組含適用于網路檔案系統的服務 MMC 嵌入式管理單元，可用來管理 Server for NFS 和 Client for NFS 元件。 使用嵌入式管理單元，您可以管理安裝在電腦上的 Server for NFS 元件。 Server for NFS 也包含數個 Windows 命令列管理工具：
 
 - **Mount**會在本機掛接遠端 NFS 共用（也稱為匯出），並將它對應至 Windows 用戶端電腦上的本機磁碟機號。
 - **Nfsadmin**會管理 SERVER for Nfs 和 CLIENT for nfs 元件的設定。

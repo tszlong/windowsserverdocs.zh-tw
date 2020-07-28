@@ -9,12 +9,12 @@ author: justinha
 ms.author: justinha
 manager: brianlic
 ms.date: 05/16/2018
-ms.openlocfilehash: fac7e780fc584f0ce4dde8bb87ce37035840a40a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b70a8fefc05723b78dbf5e652bf35f7b8b5cff4d
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474875"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182314"
 ---
 # <a name="overview-of-tls---ssl-schannel-ssp"></a>TLS-SSL （安全通道 SSP）的總覽
 
@@ -104,7 +104,7 @@ Windows Server 2012 中的安全通道 SSP 架構預設會使用上述的存放�
 
 安全通道提供者支援三種用戶端驗證信任模式。 [信任] 模式會控制用戶端憑證鏈的驗證如何執行，而且是由 HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\Schannel. 之下的 REG_DWORD "ClientAuthTrustMode" 所控制的全系統設定。
 
-|值|信任模式|描述|
+|值|信任模式|說明|
 |-----|-------|--------|
 |0|機器信任 (預設)|要求用戶端憑證必須由受信任簽發者清單中的憑證所簽發。|
 |1|獨佔根信任|要求用戶端憑證要鏈結至包含在呼叫者指定之受信任簽發者存放區中的根憑證。 憑證還必須由受信任簽發者清單中的簽發者簽發。|
@@ -148,6 +148,4 @@ DTLS 版本 1.0 通訊協定已新增到安全通道安全性支援提供者。 
 在 Windows Server 2012 和 Windows 8 的安全通道 SSP 中，沒有已淘汰的功能或功能。
 
 ## <a name="additional-references"></a>其他參考
--   [私人雲端安全性模型 - 包裝函式功能](https://social.technet.microsoft.com/wiki/contents/articles/6756.private-cloud-security-model-wrapper-functionality.aspx)
-
-
+-   [私人雲端安全性模型 - 包裝函式功能](https://docs.microsoft.com/archive/blogs/cloudsolutions/cloud-services-foundation-reference-architecture-overview)

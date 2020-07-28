@@ -2,18 +2,17 @@
 title: 在 Windows Server Essentials 中管理遠端 Web 存取
 description: 說明如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: f3ea40fa-b6ba-4d66-b754-221ca6271387
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 2144f66e9c5a5e9384e49a0f5d77796dec9d7429
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 56bfd8d9860ad571265980e859a09914fb4f1b9c
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470623"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180934"
 ---
 # <a name="manage-remote-web-access-in-windows-server-essentials"></a>在 Windows Server Essentials 中管理遠端 Web 存取
 
@@ -83,7 +82,7 @@ ms.locfileid: "85470623"
 
 1.  在連線到 Windows Server Essentials 的電腦上，開啟 [儀表板]。
 
-2.  按一下 [設定]。
+2.  按一下 [設定] 。
 
 3.  在 [一般]**** 索引標籤上，按一下 [伺服器的國家/地區位置]**** 區段中的下拉式清單。
 
@@ -150,9 +149,9 @@ ms.locfileid: "85470623"
  在這個步驟中， Windows Server Essentials 會使用 UPnP 命令嘗試自動設定您的路由器。 若要這樣做，路由器必須支援 UPnP 標準，而且必須在路由器上啟用 UPnP 設定。
 
 > [!NOTE]
->  您的網路設定應該要符合 Windows Server Essentials 支援的網路需求。 您的網路上應該只有一個路由器。
+> 您的網路設定應該要符合 Windows Server Essentials 支援的網路需求。 您的網路上應該只有一個路由器。
 
- 如果路由器不是透過 [設定您的網域名稱精靈] 進行設定，您必須手動轉送連接埠 443。 如需如何在路由器上設定連接埠轉送，請參閱 [路由器設定](https://social.technet.microsoft.com/wiki/contents/articles/windows-small-business-server-2011-essentials-router-setup.aspx)。
+ 如果路由器不是透過 [設定您的網域名稱精靈] 進行設定，您必須手動轉送連接埠 443。 如需如何在路由器上設定埠轉送的詳細資訊，請參閱[Small Business Server 論壇](https://docs.microsoft.com/answers/topics/windows-small-business-server.html)。
 
 ###  <a name="replace-a-router"></a><a name="BKMK_ReplaceRouter"></a>取代路由器
  根據製造商的指示更換路由器，然後執行 [設定您的路由器] 嚮導來設定新的路由器。
@@ -244,7 +243,7 @@ ms.locfileid: "85470623"
 >  Windows Live 允許您在 Microsoft 帳戶密碼中使用伺服器不支援的特殊字元。 如果您使用 Microsoft 個人化網域，請確定您的 Microsoft 帳戶密碼只包含伺服器支援的字元。 伺服器不支援使用 $、/、' 及 % 字元。
 
 ###  <a name="use-a-new-or-existing-domain-name"></a><a name="BKMK_UseNewName"></a>使用新的或現有的功能變數名稱
- 若要在執行 Windows Server Essentials 的伺服器上自動設定您的網域名稱，您必須使用 [設定您的網域名稱精靈] 中所列的網域名稱服務提供者。 您可以選擇取得新網域名稱或使用現有的網域名稱。 執行下列其中一個動作：
+ 若要在執行 Windows Server Essentials 的伺服器上自動設定您的網域名稱，您必須使用 [設定您的網域名稱精靈] 中所列的網域名稱服務提供者。 您可以選擇取得新網域名稱或使用現有的網域名稱。 請執行下列其中一項：
 
 -   如果您想要從精靈所列的其中一個網域名稱服務提供者取得新的網域名稱，請按一下 [我要設定新的網域名稱]****。
 
@@ -307,7 +306,7 @@ ms.locfileid: "85470623"
 
  **一般頂層網域的範例**
 
-|網域延伸|描述|
+|網域延伸|說明|
 |----------------------|-----------------|
 |.com|通常是供商業組織使用，但也可供任何人使用。|
 |.net|專為提供網路基礎結構服務的企業而設計。|
@@ -319,7 +318,7 @@ ms.locfileid: "85470623"
 
  **國碼 (地區碼) 頂層網域的範例**
 
-|網域延伸|描述|
+|網域延伸|說明|
 |----------------------|-----------------|
 |.ca|供位於加拿大的網站使用|
 |.cn|供位於中國的網站使用|
@@ -442,7 +441,7 @@ ms.locfileid: "85470623"
 
 3.  按一下 [修復]****。 [修復遠端 Web 存取]**** 精靈隨即啟動。
 
-4.  按 [下一步] 。 精靈會分析「遠端 Web 存取」、識別問題所在，然後嘗試修復該問題。
+4.  按 [下一步]  。 精靈會分析「遠端 Web 存取」、識別問題所在，然後嘗試修復該問題。
 
 5.  如果您在精靈完成時收到警示，您可以按一下 [重試]**** 來重新嘗試修復問題。 如果您持續收到警示，請查看警示以了解問題和疑難排解步驟的其他相關資訊。
 

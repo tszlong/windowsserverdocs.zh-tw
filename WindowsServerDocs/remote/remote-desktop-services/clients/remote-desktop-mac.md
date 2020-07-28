@@ -10,12 +10,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7be6b7542ca77c80a638df6404aefe77d8d7d19c
-ms.sourcegitcommit: b363d8ceed863c8fd5a464bc8afdc4ef1af9a6f8
+ms.openlocfilehash: 57072fe5a92bcc59a1ccd46b1c0db7a6828a165d
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86445702"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181954"
 ---
 # <a name="get-started-with-the-macos-client"></a>開始使用 macOS 用戶端
 
@@ -40,7 +40,7 @@ ms.locfileid: "86445702"
 
 我們正在 AppCenter 的預覽通道上測試新功能。 想一探究竟嗎？ 請前往[適用於 Mac 的 Microsoft 遠端桌面](https://aka.ms/rdmacbeta)，然後選取 [下載]。 您不需要建立帳戶或登入 AppCenter，即可下載 Beta 用戶端。
 
-如果您已有用戶端，您可以檢查更新，以確定您擁有最新版本。 在 Beta 用戶端中，選取頂端的 [Microsoft 遠端桌面 Beta 版]，然後選取 [檢查更新]。 
+如果您已有用戶端，您可以檢查更新，以確定您擁有最新版本。 在 Beta 用戶端中，選取頂端的 [Microsoft 遠端桌面 Beta 版]，然後選取 [檢查更新]。
 
 ## <a name="add-a-workspace"></a>新增工作區
 
@@ -102,7 +102,7 @@ ms.locfileid: "86445702"
 
 若要在喜好設定中設定新的閘道：
 
-1. 在連線中心，選取 [喜好設定 > 閘道]。 
+1. 在連線中心，選取 [喜好設定 > 閘道]。
 2. 選取表格底部的 **+** 按鈕，並輸入下列資訊：
    - **伺服器名稱** - 您想要用來作為閘道的電腦名稱。 這可以是 Windows 電腦名稱、網際網路網域名稱或 IP 位址。 您也可以將連接埠資訊新增至伺服器名稱 (例如：**RDGateway:443** 或 **10.0.0.1:443**)。
    - **使用者名稱** - 您要連線的遠端桌面閘道所要使用的使用者名稱和密碼。 您也可以選取 [使用連線認證]，以使用針對遠端桌面連線而使用的相同使用者名稱和密碼。
@@ -164,4 +164,4 @@ Windows Server 2012 R2 導入了新式驗證方法的支援，也就是遠端桌
 若要深入了解這項功能，請參閱 [https://aka.ms/paa-sample](https://aka.ms/paa-sample)。
 
 > [!TIP]
-> 隨時都歡迎提出問題和意見。 不過，請「勿」使用本文結尾的留言功能來張貼需要疑難排解協助的要求。 請改為前往[遠端桌面用戶端論壇](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc)，並開始新的對話。 有功能建議嗎？ 請在[用戶端使用者意見論壇](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android)中告訴我們。
+> 隨時都歡迎提出問題和意見。 不過，請「勿」使用本文結尾的留言功能來張貼需要疑難排解協助的要求。 請改為前往[遠端桌面用戶端論壇](https://docs.microsoft.com/answers/topics/windows-remote-desktop-client.html)，並開始新的對話。 有功能建議嗎？ 請在[用戶端使用者意見論壇](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android)中告訴我們。

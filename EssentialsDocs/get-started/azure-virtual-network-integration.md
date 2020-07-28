@@ -2,18 +2,17 @@
 title: Azure 虛擬網路整合
 description: 說明如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: d7d38505-cff5-4f15-9fd5-ae6dba15ce88
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d79530b2c4bfb71b23fa984731d624f30e9a3ef6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5ff685960c5690e1bdda47742d81ec44a38aeb8b
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815211"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181674"
 ---
 # <a name="azure-virtual-network-integration"></a>Azure 虛擬網路整合
 
@@ -21,9 +20,9 @@ ms.locfileid: "80815211"
 
 當組織採用雲端運算時，很少會一次移動其所有資源100%，而是採取某種方法，其中有些資源位於雲端，有些則仍然位於內部部署。 這種混合式方法可讓組織輕鬆地將一些運算資源移至雲端，但也可讓他們成長其 IT 基礎結構，而不需要取得新的硬體。
 
-在執行這種混合式方法以進行運算時，需要在兩個位置中的資源彼此通訊的順暢方式。 Azure 虛擬網路是一項 Azure 服務，可讓組織建立點對點（P2P）或站對站（S2S）虛擬私人網路，讓在 Azure 中執行的資源（例如虛擬機器和儲存體）看起來像是在區域網路上，可順暢地存取應用程式和資源。
+在執行這種混合式方法以進行運算時，需要在兩個位置中的資源彼此通訊的順暢方式。 Azure 虛擬網路是一項 Azure 服務，可讓組織建立點對點（P2P）或站對站（S2S）虛擬私人網路，讓在 Azure 中執行的資源（例如虛擬機器和存放裝置）看起來像是在區域網路上，以進行無縫的應用程式和資源存取。
 
-Azure 虛擬網路的設定可能很複雜。 使用 Windows Server Essentials 2016，您可以透過簡單的 wizard 輕鬆設定您的 Azure 虛擬網路，協助您選擇最適合您網路環境的預設值。 如下列螢幕擷取畫面所示，已將新的 Azure 虛擬網路整合工作新增至 Windows Essentials 儀表板的 [Microsoft Cloud 服務] 區段，以引進 Azure 虛擬網路功能，以及提供起始整合的快速連結.
+Azure 虛擬網路的設定可能很複雜。 使用 Windows Server Essentials 2016，您可以透過簡單的 wizard 輕鬆設定您的 Azure 虛擬網路，協助您選擇最適合您網路環境的預設值。 如下列螢幕擷取畫面所示，已將新的 Azure 虛擬網路整合工作新增至 Windows Essentials 儀表板的 [Microsoft Cloud 服務] 區段，以引進 Azure 虛擬網路功能，以及提供起始整合的快速連結。
 
 ![螢幕擷取畫面，顯示 [Windows Server Essentials 儀表板] 首頁上的 [開始使用] 索引標籤。 在 [開始使用] 索引標籤上，已選取 [服務] 區段，而儀表板會在 [Microsoft Cloud 服務整合] 下方指出 Azure 虛擬網路目前已停用。](media/azure-virtual-network-1.PNG)
 
@@ -39,7 +38,7 @@ Azure 虛擬網路的設定可能很複雜。 使用 Windows Server Essentials 2
 
 ![顯示 [與 Azure 虛擬網路整合] 的 [設定 Azure 虛擬網路] 頁面的螢幕擷取畫面。](media/azure-virtual-network-4.PNG)
 
-整合程式的最後一個步驟是設定將用於 S2S VPN 連接的 VPN 裝置。 由於大多數小型企業在其環境中只有幾部伺服器，而且沒有 IT 人員正確設定 VPN 路由器來連線到 Microsoft Azure，因此預設選項是將 Windows Server Essentials 伺服器設定為該資源的 VPN 伺服器在中，您的區域網路會連線到，以便存取 Azure 虛擬網路中的資源。 不過，如果您想要在您的環境中使用另一部伺服器做為 VPN 伺服器，或者您想要使用 VPN 路由器，則可以選取這些選項。
+整合程式的最後一個步驟是設定將用於 S2S VPN 連接的 VPN 裝置。 由於大多數小型企業在其環境中只有少數伺服器，而且缺少 IT 人員來正確設定 VPN 路由器以連線到 Microsoft Azure，因此預設選項是將 Windows Server Essentials 伺服器設定為您區域網路中的資源將連線的 VPN 伺服器，以便存取 Azure 虛擬網路中的資源。 不過，如果您想要在您的環境中使用另一部伺服器做為 VPN 伺服器，或者您想要使用 VPN 路由器，則可以選取這些選項。
 
 由於路由器類型和型號的變化，Windows Server Essentials 不會嘗試自動設定 VPN 路由器。 選取此整合嚮導中的 VPN 路由器，只會針對 Azure 中所需的適當路由設定，通知裝置類型的 Azure 虛擬網路以進行連線。
 
@@ -65,7 +64,7 @@ Azure 虛擬網路的設定完成後，狀態會變更為 [已連線]，並顯�
 
 -   **停用 Azure VNET 整合**中斷 Azure VNET 的連線，並從 Windows Server Essentials 儀表板移除整合。 請注意，這不會刪除 Azure VNET，如果您稍後想要將 Azure VNET 與儀表板重新整合，設定仍然會保留在 Azure 中。
 
--   **深入瞭解 AZURE VNET** [https://azure.microsoft.com/services/virtual-network/](https://azure.microsoft.com/services/virtual-network/)。
+-   **深入瞭解 AZURE VNET** [https://azure.microsoft.com/services/virtual-network/](https://azure.microsoft.com/services/virtual-network/) 。
 
 <a name="see-also"></a>另請參閱
 --------

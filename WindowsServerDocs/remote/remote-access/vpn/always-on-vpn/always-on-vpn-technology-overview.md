@@ -8,12 +8,12 @@ ms.date: 11/05/2018
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
-ms.openlocfilehash: e1291b377c408c23493ce5a7a946a343f5e28ead
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 12c80e7e266ac3a8c788781a4d98f0a856164084
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958730"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182014"
 ---
 # <a name="always-on-vpn-technology-overview"></a>Always On VPN 技術總覽
 
@@ -84,7 +84,7 @@ NPS 可讓您針對連線要求驗證和授權，建立並強制執行整個組�
 
 憑證授權單位單位（CA）伺服器是正在執行 Active Directory 憑證服務的憑證授權單位單位。 VPN 設定需要以 Active Directory 為基礎的公開金鑰基礎結構（PKI）。
 
-組織可以藉由將個人、裝置或服務的身分識別系結至對應的公開金鑰，來使用 AD CS 來加強安全性。 AD CS 也包含其他功能，讓您管理各種彈性環境中的憑證註冊與撤銷。 如需詳細資訊，請參閱[Active Directory 憑證服務總覽](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11))和[公開金鑰基礎結構設計指導](https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx)方針。
+組織可以藉由將個人、裝置或服務的身分識別系結至對應的公開金鑰，來使用 AD CS 來加強安全性。 AD CS 也包含其他功能，讓您管理各種彈性環境中的憑證註冊與撤銷。 如需詳細資訊，請參閱[Active Directory 憑證服務總覽](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11))和[公開金鑰基礎結構設計指導](https://techcommunity.microsoft.com/t5/ask-the-directory-services-team/designing-and-implementing-a-pki-part-i-design-and-planning/ba-p/396953)方針。
 
 部署完成時，您將在 CA 上設定下列憑證範本。
 
@@ -122,7 +122,7 @@ NPS 可讓您針對連線要求驗證和授權，建立並強制執行整個組�
 
 3. 藉由將憑證金鑰與電腦網路上的電腦、使用者或裝置帳戶產生關聯，進行驗證。
 
-如需詳細資訊，請參閱[AD CS 逐步指南：兩層式 PKI 階層部署](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx)。
+如需詳細資訊，請參閱[Active Directory 憑證服務總覽](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11))。
 
 ## <a name="active-directory-domain-services-ad-ds"></a>Active Directory Domain Services (AD DS)
 
@@ -159,7 +159,7 @@ Active Directory 使用者和電腦中的使用者帳戶具有 NPS 在授權程�
 除了伺服器元件之外，請確定您設定使用 VPN 的用戶端電腦正在執行 Windows 10 年度更新版（版本1607）。 Windows 10 VPN 用戶端必須已加入 Active Directory 網域的網域。
 
 
-Windows 10 VPN 用戶端是可高度設定的，並提供許多選項。 為了更清楚說明此案例所使用的特定功能，[表 1] 會識別此部署所參考的 VPN 功能類別和特定設定。 您將使用此部署中稍後討論的 VPNv2 設定服務提供者（CSP），來設定這些功能的個別設定。 
+Windows 10 VPN 用戶端是可高度設定的，並提供許多選項。 為了更清楚說明此案例所使用的特定功能，[表 1] 會識別此部署所參考的 VPN 功能類別和特定設定。 您將使用此部署中稍後討論的 VPNv2 設定服務提供者（CSP），來設定這些功能的個別設定。
 
 表 1. 此部署中討論的 VPN 功能和設定
 
@@ -184,7 +184,7 @@ Windows 10 VPN 用戶端是可高度設定的，並提供許多選項。 為了�
 
 Windows 10 提供許多 Csp，但此部署著重于使用 VPNv2 CSP 來設定 VPN 用戶端。 VPNv2 CSP 允許透過唯一的 CSP 節點，設定 Windows 10 中的每個 VPN 設定檔設定。 VPNv2 CSP 中也包含一個稱為*ProfileXML*的節點，可讓您設定一個節點中的所有設定，而不是個別進行。 如需 ProfileXML 的詳細資訊，請參閱此部署稍後的「ProfileXML 總覽」一節。 如需每個 VPNv2 CSP 節點的詳細資訊，請參閱[VPNV2 CSP](/windows/client-management/mdm/vpnv2-csp)。
 
-## <a name="next-steps"></a>接下來的步驟
+## <a name="next-steps"></a>後續步驟
 
 - [瞭解一些 advanced Always On VPN 功能](deploy/always-on-vpn-adv-options.md)
 
@@ -204,8 +204,8 @@ Windows 10 提供許多 Csp，但此部署著重于使用 VPNv2 CSP 來設定 VP
 
 - [Active Directory 憑證服務總覽](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11))：本檔提供 Windows Server 2012 中 Active Directory 憑證服務（AD CS）的總覽 &reg; 。 AD CS 是一種伺服器角色，可以讓您為組織建立公開金鑰基礎結構 (PKI)，並提供公開金鑰密碼編譯、數位憑證以及數位簽章功能。
 
-- [公開金鑰基礎結構設計指導](https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx)方針：此 wiki 提供有關設計公開金鑰基礎結構（pki）的指導方針。 設定 PKI 和憑證授權單位單位（CA）階層之前，您應該瞭解組織的安全性原則和憑證實務聲明（CPS）。
+- [公開金鑰基礎結構設計指引](https://techcommunity.microsoft.com/t5/ask-the-directory-services-team/designing-and-implementing-a-pki-part-i-design-and-planning/ba-p/396953)：此論壇提供設計公開金鑰基礎結構（pki）的指導方針。 設定 PKI 和憑證授權單位單位（CA）階層之前，您應該瞭解組織的安全性原則和憑證實務聲明（CPS）。
 
-- [AD CS 逐步指南：兩層式 PKI 階層部署](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx)：此逐步指南說明 &reg; 在實驗室環境中設定 Active Directory 憑證服務（AD CS）的基本設定所需的步驟。 Windows Server &reg; 2008 R2 中的 AD CS 提供了可自訂的服務，可用來建立及管理採用公開金鑰技術的軟體安全性系統中所使用的公開金鑰憑證。
+- [Active Directory 憑證服務總覽](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11))：此逐步指南說明 &reg; 在實驗室環境中設定 Active Directory 憑證服務（AD CS）的基本設定所需的步驟。 Windows Server &reg; 2008 R2 中的 AD CS 提供了可自訂的服務，可用來建立及管理採用公開金鑰技術的軟體安全性系統中所使用的公開金鑰憑證。
 
 - [網路原則伺服器（NPS）](../../../../networking/technologies/nps/nps-top.md)：本主題提供 Windows Server 2016 中網路原則伺服器的總覽。 網路原則伺服器 (NPS) 可讓您建立並執行全組織網路存取原則，以用於連線要求驗證與授權。

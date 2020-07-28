@@ -2,18 +2,17 @@
 title: 管理 Windows Server Essentials 中的應用程式
 description: 說明如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: ae89c46a-0afd-4858-9150-ec97650f45a4
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: bc85199849b140aa8d1ef2f98fd009a1d43bb01b
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7f83d595b56c1c6e2ae0e2565dd607a403b429b0
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470853"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181044"
 ---
 # <a name="manage-applications-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的應用程式
 
@@ -44,7 +43,7 @@ ms.locfileid: "85470853"
 
   下表說明伺服器 [儀表板] 中可用的各種增益集管理工作。 部分工作是增益集特定的工作，只有當您選取清單中的某個增益集時才能看見。
 
-|工作名稱|描述|
+|工作名稱|說明|
 |---------------|-----------------|
 |移除增益集|會將選取的增益集從伺服器及網路中的所有其他電腦中移除。|
 |在網路電腦上安裝增益集|會協助您在網路中的所有其他電腦上排定安裝選取的增益集。|
