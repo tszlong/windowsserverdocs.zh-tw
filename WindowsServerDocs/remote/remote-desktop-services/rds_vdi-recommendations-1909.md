@@ -9,12 +9,12 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.date: 02/19/2020
-ms.openlocfilehash: 4598c0f60fac98cd14a6f7d920b9c6f31704bd06
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 7568db50f09273b398955c314491b903f627d1a9
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963370"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182094"
 ---
 # <a name="optimizing-windows-10-version-1909-for-a-virtual-desktop-infrastructure-vdi-role"></a>針對虛擬桌面基礎結構 (VDI) 角色將 Windows 10 版本 1909 最佳化
 
@@ -39,7 +39,7 @@ VDI 環境可透過網路為電腦使用者提供完整的桌面工作階段，�
 
 Windows 10 會利用每月更新演算法進行更新，因此用戶端無需嘗試更新。 在大多數情況下，VDI 管理員會透過關閉以「主要」或「黃金」映像為基礎的 VM 來控制更新的流程，將唯讀的映像解密、修補映像，然後重新密封並帶回生產環境。 因此，VDI VM 不需要檢查 Windows Update。 例如，在某些情況下，持續性 VDI VM 會執行一般的修補程序。 您也可以使用 Windows Update 或 Microsoft Intune。 System Center Configuration Manager 可以用來處理更新和其他套件傳遞。 每個組織可以自行決定最適用的 VDI 更新方法。
 
-> [!TIP]  
+> [!TIP]
 > 在本主題的討論中用來實作最佳化的指令碼，以及可使用 **LGPO.exe** 匯入的 GPO 匯出檔案，皆可從 GitHub 上的 [TheVDIGuys](https://github.com/TheVDIGuys) 取得。
 
 此指令碼專為符合您的環境和需求而設計。 主要的程式碼是 PowerShell，並使用輸入檔案 (純文字) 與本機群組原則物件 (LGPO) 工具匯出檔案來完成作業。 這些檔案包含要移除的應用程式清單，以及要停用的各項服務清單。 如果您不想移除特定的應用程式或停用特定的服務，請編輯對應的文字檔，並移除該項目。 最後，您可以將本機原則設定匯入您的裝置。 建議您在基礎映像中使用某些設定，而不是透過群組原則套用設定；因為某些設定會在下次重新開機時生效，或在第一次使用元件時生效。
@@ -166,9 +166,9 @@ VDI 映像的目標之一是要越精簡越好。 縮小映像大小的方式之
     Get-AppxProvisionedPackage -Online
 
     DisplayName  : Microsoft.3DBuilder
-    Version      : 13.0.10349.0  
+    Version      : 13.0.10349.0
     Architecture : neutral
-    ResourceId   : \~ 
+    ResourceId   : \~
     PackageName  : Microsoft.3DBuilder_13.0.10349.0_neutral_\~_8wekyb3d8bbwe
     Regions      :
     ...
@@ -195,7 +195,7 @@ Remove-AppxProvisionedPackage -Online -PackageName
 
 ### <a name="manage-windows-optional-features-using-powershell"></a>使用 PowerShell 管理 Windows 選用功能
 
-您可以使用 PowerShell 管理 Windows 選用功能。 如需詳細資訊，請參閱 [Windows 10：使用 PowerShell 管理選用功能](https://social.technet.microsoft.com/wiki/contents/articles/39386.windows-10-managing-optional-features-with-powershell.aspx)。 若要列舉目前已安裝的 Windows 功能，請執行下列 PowerShell 命令：
+您可以使用 PowerShell 管理 Windows 選用功能。 如需詳細資訊，請參閱 [Windows Server PowerShell 論壇](https://docs.microsoft.com/answers/topics/windows-server-powershell.html)。 若要列舉目前已安裝的 Windows 功能，請執行下列 PowerShell 命令：
 
 ```powershell
 Get-WindowsOptionalFeature -Online
@@ -764,7 +764,7 @@ Windows 受限流量有限功能基準指導方針中的其他設定 Microsoft �
 1. 在套用所有更新後執行磁碟清理精靈 (提升權限)。 請納入「傳遞最佳化」和「Windows Update 清理」類別。 您可以使用命令列 `Cleanmgr.exe` 搭配 `/SAGESET:11` 選項以自動進行此程序。 `/SAGESET` 選項會設定後續可用來自動執行磁碟清理的登錄值；屆時會使用磁碟清理精靈中的每個可用選項。
 
     1. 在測試 VM 上從全新安裝執行 `Cleanmgr.exe /SAGESET:11` 時，會顯示只有兩個依預設啟用的自動磁碟清理選項：
-    
+
         - 下載的程式檔案
 
         - Temporary Internet Files
@@ -776,7 +776,7 @@ Windows 受限流量有限功能基準指導方針中的其他設定 Microsoft �
 2. 如有任何使用中的磁碟區陰影複製儲存體，請加以清理。
 
     - 開啟提升權限的命令提示字元，然後執行 `vssadmin list shadows` 命令以及 `vssadmin list shadowstorage` 命令。
-    
+
         如果這些命令的輸出是**找不到符合查詢的項目**，表示沒有任何使用中的 VSS 儲存體。
 
 3. 清理暫存檔案和記錄。 開啟提升權限的命令提示字元，然後執行 `Del C:\*.tmp /s` 命令、`Del C:\Windows\Temp\.` 命令以及 `Del %temp%\.` 命令。
@@ -790,7 +790,7 @@ Windows 受限流量有限功能基準指導方針中的其他設定 Microsoft �
 ```azurecli
 
 Taskkill.exe /F /IM "OneDrive.exe"
-Taskkill.exe /F /IM "Explorer.exe"` 
+Taskkill.exe /F /IM "Explorer.exe"`
     if (Test-Path "C:\\Windows\\System32\\OneDriveSetup.exe")`
      { Start-Process "C:\\Windows\\System32\\OneDriveSetup.exe"`
          -ArgumentList "/uninstall"`

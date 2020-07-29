@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 359b4bed3090463bfb92431e06e325d981568248
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 56ffd044f8526626581455fb18b530fd71a2381e
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961020"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182264"
 ---
 # <a name="troubleshooting-disk-management"></a>疑難排解磁碟管理
 
@@ -35,7 +35,7 @@ ms.locfileid: "86961020"
 
 ![顯示不明磁碟而必須初始化的 [磁碟管理]。](media/uninitialized-disk.PNG)
 
-**原因：** 如果您有一個磁碟未出現在檔案總管中，並在 [磁碟管理] 中列為「未初始化」  ，則可能是因為磁碟沒有有效的磁碟簽章所致。 基本上，這表示磁碟從未初始化和格式化，或磁碟機格式因某個原因已損毀。 
+**原因：** 如果您有一個磁碟未出現在檔案總管中，並在 [磁碟管理] 中列為「未初始化」  ，則可能是因為磁碟沒有有效的磁碟簽章所致。 基本上，這表示磁碟從未初始化和格式化，或磁碟機格式因某個原因已損毀。
 
 也可能是磁碟有硬體問題或插入時發生問題，但我們要再過幾個段落才會探討該內容。
 
@@ -55,7 +55,7 @@ ms.locfileid: "86961020"
 
     > [!NOTE]
     > 請忽略任何列示為 [EFI 系統磁碟分割]  或 [復原磁碟分割]  的磁碟分割。 這些磁碟分割已佔滿了電腦正常運作所需的重要檔案。 最好保持原狀，讓它們可以執行啟動電腦和協助從問題中復原等工作。
-3. 如果您有外部磁碟未顯示出來，請拔除磁碟再將它插回，然後選取 [動作]   > [重新掃描磁碟]  。 
+3. 如果您有外部磁碟未顯示出來，請拔除磁碟再將它插回，然後選取 [動作]   > [重新掃描磁碟]  。
 4. 將電腦關機、關閉外部硬碟 (如果是具有電源線的外部磁碟)，然後重新啟動電腦和磁碟。
     若要在 Windows 10 中將電腦關機，請依序選取 [開始] 按鈕、[電源] 按鈕和 [關機]  。
 5. 將磁碟插入直接位於電腦 (而不是集線器) 上的不同 USB 連接埠。
@@ -69,14 +69,14 @@ ms.locfileid: "86961020"
 
     ![顯示不明 USB 裝置的 [裝置管理員]](media/device-manager.PNG)
 8. 將磁碟插入不同的電腦。
-    
-    如果磁碟在另一部電腦上無法運作，這是好現象，因為這代表問題在於磁碟，而不是您的電腦。 我們知道這並不好笑。 您也可以嘗試 [External USB drive error "You must initialize the disk before Logical Disk Manager can access it"](https://social.technet.microsoft.com/Forums/windows/en-US/2b069948-82e9-49ef-bbb7-e44ec7bfebdb/forum-faq-external-usb-drive-error-you-must-initialize-the-disk-before-logical-disk-manager-can?forum=w7itprohardware) (外部 USB 磁碟機錯誤：「您必須將磁碟初始化，邏輯磁碟管理員才能存取它」) 中的一些其他步驟，但可能是時候在 [Microsoft 社群](https://answers.microsoft.com/en-us/windows/forum/windows_10-files?sort=lastreplydate&dir=desc&tab=All&status=all&mod=&modAge=&advFil=&postedAfter=&postedBefore=&threadType=all&isFilterExpanded=true&tm=1514405359639)網站上搜尋並尋求協助，或連絡您的磁碟製造商或 [Microsoft 支援服務](https://support.microsoft.com/contactus/)。
+
+    如果磁碟在另一部電腦上無法運作，這是好現象，因為這代表問題在於磁碟，而不是您的電腦。 我們知道這並不好笑。 在 [Microsoft 社區](https://answers.microsoft.com/)網站搜尋並尋求協助，或與您的磁碟製造商或 [Microsoft 支援服務](https://support.microsoft.com/contactus/)連絡。
 
     如果您還是無法讓它運作，也有應用程式可嘗試從失敗的磁碟復原資料；如果檔案非常重要，您可以付錢請資料修復公司嘗試復原檔案。 如果您發現任何方法對您有用，請在下方區段留言來讓我們知道。
 
 > [!IMPORTANT]
 > 磁碟經常失敗，所以請務必定期備份任何重要的檔案。 如果您有一個磁碟，有時不出現或發生錯誤，這其實是在提醒您再次檢查備份方法。 如果您有點落後，別擔心 - 我們都曾發生過。 最佳備份解決方案是您使用的解決方案，因此建議您找到一個適合您的解決方案並貫徹到底。
-> 
+>
 > [!TIP]
 > 如需如何使用 Windows 內建應用程式將檔案備份到外部磁碟機 (例如 USB 磁碟機) 的資訊，請參閱[備份與還原您的檔案](https://support.microsoft.com/help/17143/windows-10-back-up-your-files)。 您也可以將檔案儲存在 Microsoft OneDrive 中，這會將您電腦中的檔案同步到雲端。 如果您的硬碟失敗，您仍然可以從 OneDrive.com 取得儲存在 OneDrive 中的任何檔案。 如需詳細資訊，請參閱[電腦上的 OneDrive](https://support.microsoft.com/help/17184/windows-10-onedrive)。
 
@@ -94,7 +94,7 @@ ms.locfileid: "86961020"
 
 在某些情況下，先前已連接到系統的磁碟可能會顯示 [外部]  狀態。 動態磁碟的設定資料是儲存在所有動態磁碟上，因此當所有動態磁碟都失敗時，關於系統擁有哪些磁碟的資訊會遺失。
 
-**解決方法：**  將磁碟新增至電腦的系統設定，讓您可以存取磁碟上的資料。 若要將磁碟新增至電腦的系統設定，請匯入外部磁碟，方法是選取並按住 (或以滑鼠右鍵按一下) 該磁碟，然後按一下 [匯入外部磁碟]  。 當您匯入磁碟時，外部磁碟所有的現有磁碟區都會顯示而且可存取。 
+**解決方法：**  將磁碟新增至電腦的系統設定，讓您可以存取磁碟上的資料。 若要將磁碟新增至電腦的系統設定，請匯入外部磁碟，方法是選取並按住 (或以滑鼠右鍵按一下) 該磁碟，然後按一下 [匯入外部磁碟]  。 當您匯入磁碟時，外部磁碟所有的現有磁碟區都會顯示而且可存取。
 
 ## <a name="a-dynamic-disks-status-is-online-errors"></a>動態磁碟的狀態為 [連線 (錯誤)]
 
@@ -110,8 +110,8 @@ ms.locfileid: "86961020"
 
 **解決方法：** 使離線和遺失的磁碟上線：
 
-1. 修復任何磁碟、控制器或電纜問題。 
-2. 確定實體磁碟已開啟電源、已插入並連結到電腦。 
+1. 修復任何磁碟、控制器或電纜問題。
+2. 確定實體磁碟已開啟電源、已插入並連結到電腦。
 3. 接下來，使用 [重新啟動磁碟]  重新讓磁碟上線。
 4. 請嘗試執行[磁碟狀態為未初始化或磁碟已完全遺失](#disks-that-are-missing-or-not-initialized-plus-general-troubleshooting-steps)中所述的疑難排解步驟。
 5. 如果磁碟狀態仍然是 [離線]  且磁碟名稱依舊為 [遺失]  ，而您判斷磁碟發生無法修復的問題時，您可以選取並按住 (或以滑鼠右鍵按一下) 磁碟，然後按一下 [移除磁碟]  將磁碟從系統移除。 不過，移除磁碟之前，您必須先刪除磁碟上的所有磁碟區 (或鏡像)。 您可以藉由移除鏡像而不是整個磁碟區來保留磁碟上的任何鏡像磁碟區。 刪除磁碟區會損毀磁碟區中的資料，因此只有在非常確定磁碟已永久損壞且無法使用時，才要移除磁碟。
@@ -123,7 +123,7 @@ ms.locfileid: "86961020"
 
 3. 嘗試將磁碟移到另一部電腦。 如果您可以在另一部電腦讓磁碟進入 [連線]  狀態，此問題最有可能出在電腦的設定，磁碟因此而無法進入 [連線]  狀態。
 
-4. 嘗試將磁碟移到另一部有動態磁碟的電腦。 在該電腦上匯入磁碟，然後將磁碟移回到無法在其中進入 [連線]  狀態的電腦。 
+4. 嘗試將磁碟移到另一部有動態磁碟的電腦。 在該電腦上匯入磁碟，然後將磁碟移回到無法在其中進入 [連線]  狀態的電腦。
 
 ## <a name="a-basic-or-dynamic-volumes-status-is-failed"></a>基本或動態磁碟區的狀態為 [失敗]
 
@@ -169,7 +169,7 @@ ms.locfileid: "86961020"
 磁碟區狀態為 [狀況良好 (危險)]  時，底層磁碟的狀態通常為 [連線 (錯誤)]  。
 
 **解決方法：**  
-1. 將底層磁碟回復到 [連線]  狀態。 磁碟回復到 [連線]  狀態後，磁碟區應該會回復到 [狀況良好]  狀態。 如果 [狀況良好 (危險)]  狀態持續存在，磁碟可能會失敗。 
+1. 將底層磁碟回復到 [連線]  狀態。 磁碟回復到 [連線]  狀態後，磁碟區應該會回復到 [狀況良好]  狀態。 如果 [狀況良好 (危險)]  狀態持續存在，磁碟可能會失敗。
 
 2. 盡快備份資料並更換磁碟。
 

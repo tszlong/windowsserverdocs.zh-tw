@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 664e0233d10cbbc526635f1868ea1977c59fea63
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: a923b2da4583c32010e7e3104315957f3f05acaf
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80828901"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87178564"
 ---
 # <a name="step-1-install-the-wsus-server-role"></a>步驟 1：安裝 WSUS 伺服器角色
 
@@ -23,7 +23,7 @@ ms.locfileid: "80828901"
 部署 WSUS 伺服器的下一個步驟是安裝 WSUS 伺服器角色。 下列程序描述如何使用伺服器管理員安裝 WSUS 伺服器角色。
 
 > [!IMPORTANT]
-> 這個安裝程序只涵蓋如何使用 Windows 內部資料庫 (WID) 安裝 WSUS 的內容。 使用 Microsoft SQL Server 安裝 WSUS 的程序記錄在 [這篇文章](https://social.technet.microsoft.com/wiki/contents/articles/10020.installing-wsus-server-role-on-windows-server-2012-with-microsoft-sql-database.aspx)中。
+> 這個安裝程序只涵蓋如何使用 Windows 內部資料庫 (WID) 安裝 WSUS 的內容。 使用 Microsoft SQL Server 安裝 WSUS 的程序記錄在 [WSUS 論壇](https://docs.microsoft.com/answers/topics/windows-server-update-services.html)中。
 
 ### <a name="to-install-the-wsus-server-role"></a>安裝 WSUS 伺服器角色
 

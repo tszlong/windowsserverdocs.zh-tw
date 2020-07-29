@@ -7,50 +7,50 @@ ms.date: 02/24/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 76ec8a817f0c500380c9bef6fc1ee7eb8dddc105
-ms.sourcegitcommit: 319796ec327530c9656ac103b89bd48cc8d373f6
+ms.openlocfilehash: b73b6bf2150b8c97b858f41d7a4864a5d6fd5546
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83790566"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182114"
 ---
 # <a name="windows-time-service-tools-and-settings"></a>Windows 時間服務工具和設定
 
 > 適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10 或更新版本
 
-在本主題中，您將了解 Windows Time 服務 (W32Time) 的工具和設定。  
+在本主題中，您將了解 Windows Time 服務 (W32Time) 的工具和設定。
 
-如果您只想要為已加入網域的用戶端電腦同步時間，請參閱[設定用戶端電腦以便自動同步網域時間](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc816884%28v%3dws.10%29)。 如需有關如何設定 Windows Time 服務的其他主題，請參閱[可在何處找到 Windows Time 服務的設定資訊](windows-time-service-top.md)。  
+如果您只想要為已加入網域的用戶端電腦同步時間，請參閱[設定用戶端電腦以便自動同步網域時間](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc816884%28v%3dws.10%29)。 如需有關如何設定 Windows Time 服務的其他主題，請參閱[可在何處找到 Windows Time 服務的設定資訊](windows-time-service-top.md)。
 
-> [!CAUTION]  
-> 請勿在 Windows 時間服務執行時，使用 **Net time** 命令來設定時間。  
+> [!CAUTION]
+> 請勿在 Windows 時間服務執行時，使用 **Net time** 命令來設定時間。
 >
-> 此外，在執行 Windows XP 或更早版本的舊型電腦上，**Net time /querysntp** 命令會顯示電腦所設定用來作為同步依據的網路時間通訊協定 (NTP) 伺服器名稱，但只有在電腦的時間用戶端設定為 NTP 或 AllSync 時，才會使用該 NTP 伺服器。 該命令已遭到取代。  
+> 此外，在執行 Windows XP 或更早版本的舊型電腦上，**Net time /querysntp** 命令會顯示電腦所設定用來作為同步依據的網路時間通訊協定 (NTP) 伺服器名稱，但只有在電腦的時間用戶端設定為 NTP 或 AllSync 時，才會使用該 NTP 伺服器。 該命令已遭到取代。
 
-大部分網域成員電腦的時間用戶端類型都是 NT5DS，這表示其會與網域階層的時間同步。 一般來說，關於這一點的唯一例外是作為樹系根網域主要網域控制站 (PDC) 模擬器操作主機的網域控制站。 PDC 模擬器操作主機通常會設定為與外部時間來源的時間同步。 若要檢視電腦的時間用戶端設定 (從 Windows Server 2008 和 Windows Vista 起的版本)，從提升權限的命令提示字元執行 **W32tm /query /configuration** 命令，然後查看命令輸出中的 **Type** 行。 如需詳細資訊，請參閱 [Windows Time 服務的運作方式](How-the-Windows-Time-Service-Works.md)。 此外，您可以執行 **reg query HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Parameters** 命令，並查看命令輸出中的 **NtpServer** 值。  
+大部分網域成員電腦的時間用戶端類型都是 NT5DS，這表示其會與網域階層的時間同步。 一般來說，關於這一點的唯一例外是作為樹系根網域主要網域控制站 (PDC) 模擬器操作主機的網域控制站。 PDC 模擬器操作主機通常會設定為與外部時間來源的時間同步。 若要檢視電腦的時間用戶端設定 (從 Windows Server 2008 和 Windows Vista 起的版本)，從提升權限的命令提示字元執行 **W32tm /query /configuration** 命令，然後查看命令輸出中的 **Type** 行。 如需詳細資訊，請參閱 [Windows Time 服務的運作方式](How-the-Windows-Time-Service-Works.md)。 此外，您可以執行 **reg query HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Parameters** 命令，並查看命令輸出中的 **NtpServer** 值。
 
-> [!IMPORTANT]  
-> 在 Windows Server 2016 之前，W32Time 服務並非設計來滿足有時效性應用程式的需求。 但現在，Windows Server 2016 的更新可讓您在網域中實作需要 1 毫秒準確度的解決方案。 如需詳細資訊，請參閱 [Windows 2016 的精確時間](accurate-time.md)和[可為高準確度環境設定 Windows Time 服務的支援界限](support-boundary.md)。  
+> [!IMPORTANT]
+> 在 Windows Server 2016 之前，W32Time 服務並非設計來滿足有時效性應用程式的需求。 但現在，Windows Server 2016 的更新可讓您在網域中實作需要 1 毫秒準確度的解決方案。 如需詳細資訊，請參閱 [Windows 2016 的精確時間](accurate-time.md)和[可為高準確度環境設定 Windows Time 服務的支援界限](support-boundary.md)。
 
-## <a name="windows-time-service-tools"></a>Windows 時間服務工具  
+## <a name="windows-time-service-tools"></a>Windows 時間服務工具
 
-下列工具與 Windows 時間服務相關聯。  
+下列工具與 Windows 時間服務相關聯。
 
-### <a name="w32tmexe-windows-time"></a>W32tm.exe：Windows Time  
+### <a name="w32tmexe-windows-time"></a>W32tm.exe：Windows Time
 
-**類別**  
+**類別**
 
-此工具是 Windows (Windows XP 和更新版本) 和 Windows Server (Windows Server 2003 和更新版本) 預設安裝的一部分。  
+此工具是 Windows (Windows XP 和更新版本) 和 Windows Server (Windows Server 2003 和更新版本) 預設安裝的一部分。
 
-**版本相容性**  
+**版本相容性**
 
-此工具用於 Windows (Windows XP 和更新版本) 和 Windows Server (Windows Server 2003 和更新版本) 預設安裝。  
+此工具用於 Windows (Windows XP 和更新版本) 和 Windows Server (Windows Server 2003 和更新版本) 預設安裝。
 
-您可以使用 W32tm.exe 來設定 Windows 時間服務設定，以及診斷時間服務問題。 W32tm.exe 是在針對 Windows 時間服務進行設定、監視或疑難排解時的慣用命令列工具。  
+您可以使用 W32tm.exe 來設定 Windows 時間服務設定，以及診斷時間服務問題。 W32tm.exe 是在針對 Windows 時間服務進行設定、監視或疑難排解時的慣用命令列工具。
 
-下表說明可與 W32tm.exe 搭配使用的參數。  
+下表說明可與 W32tm.exe 搭配使用的參數。
 
-**W32tm.exe 主要參數**  
+**W32tm.exe 主要參數**
 
 |參數 |說明 |
 | --- | --- |
@@ -62,13 +62,13 @@ ms.locfileid: "83790566"
 |**w32tm /ntpte \<NTP *time epoch*>** |將 NTP 系統時間 (從 0h 1-Jan 1900 開始，以 2<sup>-32</sup> 秒間隔測量) 轉換成可讀取的格式。 |
 |**w32tm /resync [/computer:\<*computer*>] [/nowait] [/rediscover] [/soft]** |指示電腦應盡快重新同步其時鐘，並丟掉所有累積的錯誤統計資料。<p>**/computer:\<*computer*>** :指定應該重新同步的電腦。 如果未指定，則本機電腦會重新同步。<p>**/nowait**: 不等候重新同步開始；立即傳回。 否則，等候重新同步完成後再傳回。<p>**/rediscover**:重新偵測網路設定，並重新探索網路來源，然後重新同步。<p>**/soft**:使用現有的錯誤統計資料來重新同步。 沒什麼用處，為確保相容性而提供。 |
 |**w32tm /stripchart /computer:\<*target*> [/period:\<*refresh*>] [/dataonly] [/samples:\<*count*>] [/rdtsc]** |顯示此電腦與另一部電腦之間的時差帶狀圖。<p>**/computer:\<*target*>** :要對其測量時差的電腦。<p>**/period:\<*refresh*>** :取樣間隔時間，以秒為單位。 預設值為 2 秒。<p>**/dataonly**:僅顯示資料，不包含圖形。<p>**/samples:\<*count*>** :收集 \<*count*> 範例，然後停止。 如果未指定，則會一直收集樣本，直到您按下 **Ctrl+C** 為止。<br/><br/>**/rdtsc**:針對每個樣本，此選項會列印逗號分隔值以及 **RdtscStart**、**RdtscEnd**、**FileTime**、**RoundtripDelay**、**NtpOffset** 等標頭，而不是列印文字圖形。<br/><ul><li>**RdtscStart**:[RDTSC (讀取時間戳記計數器)](https://en.wikipedia.org/wiki/Time_Stamp_Counter) 值，在 NTP 要求產生前一刻進行收集。</li><li>**RdtscEnd**:在收到並處理 NTP 回應之後所立刻收集的 RDTSC 值。</li><li>**FileTime**:NTP 要求中使用的本機 FILETIME 值。</li><li>**RoundtripDelay**:從產生 NTP 要求到處理收到的 NTP 回應所經過的時間 (以秒為單位)，此值會根據 NTP 往返計算來進行計算。</li><li>**NTPOffset**：本機電腦與 NTP 伺服器之間的時差 (以秒為單位)，此值會根據 NTP 時差計算來進行計算。</li></ul> |
-|**w32tm /config [/computer:\<*target*>] [/update] [/manualpeerlist:\<*peers*>] [/syncfromflags:\<*source*>] [/LocalClockDispersion:\<*seconds*>] [/reliable:(YES\|NO)] [/largephaseoffset:\<*milliseconds*>]** |**/computer:\<*target*>** :調整 \<*target*> 的設定。 如果未指定，則預設值是本機電腦。<p>**/update**:對時間服務發出通知，讓其知道設定已變更，以使變更生效。<p>**/manualpeerlist:\<*peers*>** :將手動對等清單設定為 \<*peers*>，這是以空格分隔的 DNS 和/或 IP 位址清單。 指定多個對等時，此選項必須以引號括住。<p>**/syncfromflags:\<*source*>** :設定要作為 NTP 用戶端同步依據的來源。 \<*source*> 應該是下列關鍵字的逗號分隔清單 (不區分大小寫)：<ul><li>**MANUAL**:包含手動對等清單中的對等。</li><li>**DOMHIER**:從網域階層中的網域控制站 (DC) 來同步。</li></ul>**/LocalClockDispersion:\<*seconds*>** :設定 W32Time 在無法從其設定的來源取得時間時，所會採用的內部時鐘精確度。<p>**/reliable:(YES\|NO)** :設定此電腦是否為可靠的時間來源。 此設定只有在網域控制站上才有意義。<ul><li>**YES**:此電腦是可靠的時間服務。</li><li>**NO**:此電腦不是可靠的時間服務。</li></ul>**/largephaseoffset:\<*milliseconds*>** : 設定本機與網路時間之間會讓 W32Time 視為尖峰的時差。 |
+|**w32tm /config [/computer:\<*target*>] [/update] [/manualpeerlist:\<*peers*>] [/syncfromflags:\<*source*>] [/LocalClockDispersion:\<*seconds*>] [/reliable:(YES\|NO)] [/largephaseoffset:\<*milliseconds*>]** |**/computer:\<*target*>** :調整 \<*target*> 的設定。 如果未指定，則預設值是本機電腦。<p>**/update**:對時間服務發出通知，讓其知道設定已變更，以使變更生效。<p>**/manualpeerlist:\<*peers*>** :將手動對等清單設定為 \<*peers*>，這是以空格分隔的 DNS 和/或 IP 位址清單。 指定多個對等時，此選項必須以引號括住。<p>**/syncfromflags:\<*source*>** :設定要作為 NTP 用戶端同步依據的來源。 \<*source*> 應該是下列關鍵字的逗號分隔清單 (不區分大小寫)：<ul><li>**MANUAL**:包含手動對等清單中的對等。</li><li>**DOMHIER**:從網域階層中的網域控制站 (DC) 來同步。</li></ul>**/LocalClockDispersion:\<*seconds*>** :設定 W32Time 在無法從其設定的來源取得時間時，所會採用的內部時鐘精確度。<p>**/reliable:(YES\|NO)** :設定此電腦是否為可靠的時間來源。 此設定只有在網域控制站上才有意義。<ul><li>**YES**:此電腦是可靠的時間服務。</li><li>**NO**:此電腦不是可靠的時間服務。</li></ul>**/largephaseoffset:\<*milliseconds*>** : 設定本機與網路時間之間的時差，而 W32Time 會視其為尖峰。 |
 |**w32tm /tz** |顯示目前的時區設定。 |
-|**w32tm /dumpreg [/subkey:\<*key*>] [/computer:\<*target*>]** |顯示與給定登錄機碼相關聯的值。<p>預設機碼是 **HKLM\System\CurrentControlSet\Services\W32Time** (時間服務的根機碼)。<p>**/subkey:\<*key*>** :顯示與預設機碼的子機碼 <key> 相關聯的值。<p>**/computer:\<*target*>** :查詢電腦 \<*target*> 的登錄設定 |
-|**w32tm /query [/computer:\<*target*>] {/source \| /configuration \| /peers \| /status} [/verbose]** |顯示電腦的 Windows Time 服務資訊。 此參數最早是在 Windows Vista 和 Windows Server 2008 的 Windows 時間用戶端開始提供的。<p>**/computer:\<*target*>** :查詢 \<*target*> 的資訊。 如果未指定，則預設值是本機電腦。<p>**/source**:顯示時間來源。<p>**/configuration**:顯示執行階段的設定和設定的來源。 在詳細資訊模式中，也會顯示未定義或未使用的設定。<p>**/peers**:顯示對等及其狀態的清單。<p>**/status**:顯示 Windows 時間服務狀態。<p>**/verbose**:設定詳細資訊模式以顯示更多資訊。 |
+|**w32tm /dumpreg [/subkey:\<*key*>] [/computer:\<*target*>]** |顯示與給定登錄機碼相關聯的值。<p>預設機碼是 **HKLM\System\CurrentControlSet\Services\W32Time** (時間服務的根機碼)。<p>**/subkey:\<*key*>** :顯示與預設機碼的子機碼 <key> 相關聯的值。<p>**/computer:\<*target*>** :查詢電腦 \<*target*>的登錄設定 |
+|**w32tm /query [/computer:\<*target*>] {/source \| /configuration \| /peers \| /status} [/verbose]** |顯示電腦的 Windows Time 服務資訊。 此參數最早是在 Windows Vista 和 Windows Server 2008 的 Windows 時間用戶端開始提供的。<p>**/computer:\<*target*>** :查詢 \<*target*>的資訊。 如果未指定，則預設值是本機電腦。<p>**/source**:顯示時間來源。<p>**/configuration**:顯示執行階段的設定和設定的來源。 在詳細資訊模式中，也會顯示未定義或未使用的設定。<p>**/peers**:顯示對等及其狀態的清單。<p>**/status**:顯示 Windows 時間服務狀態。<p>**/verbose**:設定詳細資訊模式以顯示更多資訊。 |
 |**w32tm /debug {/disable \| {/enable /file:\<*name*> /size:/<*bytes*> /entries:\<*value*> [/truncate]}}** |啟用或停用本機電腦的 Windows Time 服務私人記錄。 此參數最早是在 Windows Vista 和 Windows Server 2008 的 Windows 時間用戶端開始提供的。<p>**/disable**:停用私人記錄檔。<p>**/enable**:啟用 私人記錄檔。<ul><li>**file:\<*name*>** :指定絕對的檔案名稱。</li><li>**size:\<*bytes*>** :指定循環記錄的大小上限。</li><li>**entries:\<*value*>** :包含以數字指定並以逗號分隔的旗標清單，這些旗標可指定應加以記錄的資訊類型。 有效數字是 0 到 300。 除了單一數字外，使用數字範圍也有效，例如 0-100,103,106。 值 0-300 可用來記錄所有資訊。</li></ul>**/truncate**:截斷檔案 (如果存在的話)。 |
 
-如需 **W32tm.exe** 詳細資訊，請參閱 [Windows 說明](https://support.microsoft.com/hub/4338813/windows-help?os=windows-10)。  
+如需 **W32tm.exe** 詳細資訊，請參閱 [Windows 說明](https://support.microsoft.com/hub/4338813/windows-help?os=windows-10)。
 
 **範例**
 
@@ -88,9 +88,9 @@ W32tm /query /computer:contosoW1 /configuration
 
 此命令的輸出是針對 Windows 時間用戶端所設定的設定參數清單。
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > [Windows Server 2016 已改善同步處理演算法的時間](https://aka.ms/WS2016Time)，與 RFC 規格一致。 因此，如果您想要將本機 Windows 時間用戶端設定為指向多個對等互連，則強烈建議您準備三個以上不同的時間伺服器。
->  
+>
 > 如果您只有兩部時間伺服器，您應該指定 **UseAsFallbackOnly** 旗標 (0x2) 來取消設定其中一個優先順序。 例如，如果您想要在 clock.adatum.com 上設定 ntpserver.contoso.com 的優先順序，請執行下列命令。
 > ```cmd
 > w32tm /config /manualpeerlist:"ntpserver.contoso.com,0x8 clock.adatum.com,0xa" /syncfromflags:manual /update
@@ -99,14 +99,14 @@ W32tm /query /computer:contosoW1 /configuration
 
 ## <a name="using-group-policy-to-configure-the-windows-time-service"></a>使用群組原則設定 Windows 時間服務
 
-Windows 時間服務會將一些設定屬性儲存為登錄項目。 您可以使用群組原則物件來設定這項資訊的大部分內容。 例如，您可以使用群組原則物件 (GPO) 將電腦設定為 NTPServer 或 NTPClient、設定時間同步機制，或將電腦設定為可靠的時間來源。  
+Windows 時間服務會將一些設定屬性儲存為登錄項目。 您可以使用群組原則物件來設定這項資訊的大部分內容。 例如，您可以使用群組原則物件 (GPO) 將電腦設定為 NTPServer 或 NTPClient、設定時間同步機制，或將電腦設定為可靠的時間來源。
 
-> [!NOTE]  
-> Windows Time 服務的群組原則設定可在 Windows Server 2003、Windows Server 2003 R2、Windows Server 2008 和 Windows Server 2008 R2 網域控制站上設定，而且只能套用至執行 Windows Server 2003、Windows Server 2003 R2、Windows Server 2008 和 Windows Server 2008 R2 的電腦。  
+> [!NOTE]
+> Windows Time 服務的群組原則設定可在 Windows Server 2003、Windows Server 2003 R2、Windows Server 2008 和 Windows Server 2008 R2 網域控制站上設定，而且只能套用至執行 Windows Server 2003、Windows Server 2003 R2、Windows Server 2008 和 Windows Server 2008 R2 的電腦。
 
 Windows 會將 Windows 時間服務原則資訊儲存在 W32Time.admx 系統管理範本檔案中，位於 **Computer Configuration\Administrative Templates\System\Windows Time Service** 下。 系統會儲存原則在登錄中所定義的設定資訊，並使用這些登錄項目來設定 Windows 時間服務的登錄項目。 因此，由群組原則所定義的值會覆寫登錄之 Windows 時間服務區段中任何預先存在的值。
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > 某些預設的群組原則物件 (GPO) 設定與對應的預設登錄項目不同。 如果您打算使用 GPO 來設定任何 Windows Time 設定，請務必要檢閱 [Windows Time 服務群組原則設定的預設值與 Windows Server 2003 中對應的 Windows Time 服務登錄項目不同](https://go.microsoft.com/fwlink/?LinkId=186066)。 此問題適用於 Windows Server 2008 R2、Windows Server 2008、Windows Server 2003 R2 和 Windows Server 2003。
 
 例如，假設您 **設定 Windows NTP 用戶端**原則中編輯原則設定。
@@ -125,7 +125,7 @@ Windows 會將這些設定載入下列子機碼下的登錄原則區域中：
 
 下表列出您可以為 Windows 時間服務設定的原則，以及這些原則影響的登錄子機碼。
 
-> [!NOTE]  
+> [!NOTE]
 > 移除群組原則設定時，Windows 會從登錄的原則區域中移除對應的項目。
 
 |原則<sup>1</sup> |登錄位置<sup>2,</sup> <sup>3</sup> |
@@ -135,15 +135,15 @@ Windows 會將這些設定載入下列子機碼下的登錄原則區域中：
 |Time Providers\Enable Windows NTP Client |W32Time\TimeProviders\NtpClient |
 |Time Providers\Enable Windows NTP Server |W32Time\TimeProviders\NtpServer |
 
-> <sup>1</sup> 類別路徑：**Computer Configuration\Administrative Templates\System\Windows Time Service**  
-> <sup>2</sup> 子機碼:**HKLM\SOFTWARE\Policies\Microsoft**  
-> <sup>3</sup> 子機碼:**HKLM\SYSTEM\CurrentControlSet\Services**
+> <sup>1</sup> 類別路徑：**Computer Configuration\Administrative Templates\System\Windows Time Service**
+> <sup>2</sup> Subkey:**HKLM\SOFTWARE\Policies\Microsoft**
+> <sup>3</sup> Subkey:**HKLM\SYSTEM\CurrentControlSet\Services**
 
 ## <a name="enabling-w32time-logging"></a>啟用 W32Time 記錄
 
 下列三個登錄項目雖不是 W32Time 預設設定的一部分，但仍可新增至登錄中以提升記錄功能。 您可以變更群組原則物件編輯器中 **EventLogFlags** 設定的值，以修改記錄到系統事件記錄的資訊。 根據預設，時間服務會在每次切換至新的時間來源時記錄事件。
 
-您必須新增下列登錄項目才能啟用 W32Time 記錄：  
+您必須新增下列登錄項目才能啟用 W32Time 記錄：
 
 |登錄項目 |版本 |說明 |
 | --- | --- | --- |
@@ -153,28 +153,28 @@ Windows 會將這些設定載入下列子機碼下的登錄原則區域中：
 
 ## <a name="configuring-how-windows-time-service-resets-the-computer-clock"></a>設定 Windows 時間服務重設電腦時鐘的方式
 
-為了讓 W32Time 逐漸設定電腦時鐘，時差必須小於 **MaxAllowedPhaseOffset** 值，並同時滿足下列方程式：  
+為了讓 W32Time 逐漸設定電腦時鐘，時差必須小於 **MaxAllowedPhaseOffset** 值，並同時滿足下列方程式：
 
 - Windows Server 2016 和更新版本：
 
-  > |**CurrentTimeOffset**| &divide; (16 &times; **PhaseCorrectRate** &times; **pollIntervalInSeconds**) &le; **SystemClockRate** &divide; 2  
+  > |**CurrentTimeOffset**| &divide; (16 &times; **PhaseCorrectRate** &times; **pollIntervalInSeconds**) &le; **SystemClockRate** &divide; 2
 
 - Windows Server 2012 R2 和較早版本：
 
-  > |**CurrentTimeOffset**| &divide; (**PhaseCorrectRate** &times; **UpdateInterval**) &le; **SystemClockRate** &divide; 2  
+  > |**CurrentTimeOffset**| &divide; (**PhaseCorrectRate** &times; **UpdateInterval**) &le; **SystemClockRate** &divide; 2
 
-**CurrentTimeOffset** 值會以時鐘刻度為單位來進行測量，在 Windows 系統上，1 毫秒 = 10,000 時鐘刻度。  
+**CurrentTimeOffset** 值會以時鐘刻度為單位來進行測量，在 Windows 系統上，1 毫秒 = 10,000 時鐘刻度。
 
-**SystemClockRate** 和 **PhaseCorrectRate** 也會以時鐘刻度為單位來進行測量。 若要取得 **SystemClockRate** 值，您可以使用下列命令，並使用公式 (秒數 &times;1000 &times; 10000) 將其從秒數轉換成時鐘刻度：  
+**SystemClockRate** 和 **PhaseCorrectRate** 也會以時鐘刻度為單位來進行測量。 若要取得 **SystemClockRate** 值，您可以使用下列命令，並使用公式 (秒數 &times;1000 &times; 10000) 將其從秒數轉換成時鐘刻度：
 
 ```cmd
-W32tm /query /status /verbose  
-ClockRate: 0.0156000s  
-```  
+W32tm /query /status /verbose
+ClockRate: 0.0156000s
+```
 
-**SystemClockRate** 是系統上的時脈速率。 以 156000 秒為例，**SystemClockRate** 值會是 0.0156000 &times; 1000 &times; 10000 = 156000 時鐘刻度。  
+**SystemClockRate** 是系統上的時脈速率。 以 156000 秒為例，**SystemClockRate** 值會是 0.0156000 &times; 1000 &times; 10000 = 156000 時鐘刻度。
 
-**MaxAllowedPhaseOffset** 也會以秒為單位測量。 若要將其轉換成時鐘刻度，請乘上 **MaxAllowedPhaseOffset** &times; 1000 &times;10000。  
+**MaxAllowedPhaseOffset** 也會以秒為單位測量。 若要將其轉換成時鐘刻度，請乘上 **MaxAllowedPhaseOffset** &times; 1000 &times;10000。
 
 下列範例說明在使用 Windows Server 2012 R2 或更早版本時要如何套用這些計算。
 
@@ -182,63 +182,63 @@ ClockRate: 0.0156000s
 
 例如，您的時間是 11:05，而您從對等所收到、認為正確無誤的時間樣本是 11:09。
 
-> **PhaseCorrectRate** = 1  
->  
-> **UpdateInterval** = 30000 時鐘刻度  
->  
-> **SystemClockRate** = 156000 時鐘刻度  
->  
-> **MaxAllowedPhaseOffset** = 10 分鐘 = 600 秒 = 600 &times; 1000 &times; 10000 = 6000000000 時鐘刻度  
->  
-> |**CurrentTimeOffset**|= 4 分鐘 = 4 &times; 60 &times; 1000 &times; 10000 = 2400000000 時鐘刻度  
->  
-> Is **CurrentTimeOffset** &le; **MaxAllowedPhaseOffset**?  
->  
-> 2,400,000,000 &le; 6,000,000,000:TRUE  
+> **PhaseCorrectRate** = 1
+>
+> **UpdateInterval** = 30000 時鐘刻度
+>
+> **SystemClockRate** = 156000 時鐘刻度
+>
+> **MaxAllowedPhaseOffset** = 10 分鐘 = 600 秒 = 600 &times; 1000 &times; 10000 = 6000000000 時鐘刻度
+>
+> |**CurrentTimeOffset**|= 4 分鐘 = 4 &times; 60 &times; 1000 &times; 10000 = 2400000000 時鐘刻度
+>
+> Is **CurrentTimeOffset** &le; **MaxAllowedPhaseOffset**?
+>
+> 2,400,000,000 &le; 6,000,000,000:TRUE
 
 其是否符合上述方程式？
 
-> (|**CurrentTimeOffset**| &divide; (**PhaseCorrectRate** &times; **UpdateInterval**) &le; **SystemClockRate** &divide; 2)  
+> (|**CurrentTimeOffset**| &divide; (**PhaseCorrectRate** &times; **UpdateInterval**) &le; **SystemClockRate** &divide; 2)
 
-Is 2,400,000,000 / (30,000 &times; 1) &le; 156,000 &divide; 2  
+Is 2,400,000,000 / (30,000 &times; 1) &le; 156,000 &divide; 2
 
-80,000 &le; 78,000:FALSE  
+80,000 &le; 78,000:FALSE
 
-因此，W32tm 會立即將時鐘回調。  
+因此，W32tm 會立即將時鐘回調。
 
-> [!NOTE]  
-> 在此情況下，如果您想要讓時鐘慢慢回調，則也必須在登錄中調整 **PhaseCorrectRate** 或 **updateInterval** 的值，以確保方程式的結果是 **TRUE**。  
+> [!NOTE]
+> 在此情況下，如果您想要讓時鐘慢慢回調，則也必須在登錄中調整 **PhaseCorrectRate** 或 **updateInterval** 的值，以確保方程式的結果是 **TRUE**。
 
 **範例 2：時間差三分鐘**
 
-> **PhaseCorrectRate** = 1  
-> 
-> **UpdateInterval** = 30000 時鐘刻度  
-> 
-> SystemClockRate = 156000 時鐘刻度  
-> 
-> **MaxAllowedPhaseOffset** = 10 分鐘 = 600 秒 = 600 &times; 1000 &times; 10000 = 6000000000 時鐘刻度  
-> 
-> |**CurrentTimeOffset**|= 3分鐘 = 3 &times; 60 &times; 1,000 &times; 10,000 = 1,800,000,000 時鐘刻度  
-> 
-> Is |**CurrentTimeOffset**| &le; **MaxAllowedPhaseOffset**?  
-> 
-> 1,800,000,000 &le; 6,000,000,000:TRUE  
+> **PhaseCorrectRate** = 1
+>
+> **UpdateInterval** = 30000 時鐘刻度
+>
+> SystemClockRate = 156000 時鐘刻度
+>
+> **MaxAllowedPhaseOffset** = 10 分鐘 = 600 秒 = 600 &times; 1000 &times; 10000 = 6000000000 時鐘刻度
+>
+> |**CurrentTimeOffset**|= 3分鐘 = 3 &times; 60 &times; 1,000 &times; 10,000 = 1,800,000,000 時鐘刻度
+>
+> Is |**CurrentTimeOffset**| &le; **MaxAllowedPhaseOffset**?
+>
+> 1,800,000,000 &le; 6,000,000,000:TRUE
 
 其是否符合上述方程式？
 
-> (|**CurrentTimeOffset**| &divide; (**PhaseCorrectRate** &times; **UpdateInterval**) &le; **SystemClockRate** &divide; 2)  
-> 
-> Is 3 mins &times; (1,800,000,000) &divide; (30,000 &times; 1) &le; 156,000 &divide; 2  
-> 
-> Is 60,000 &le; 78,000:TRUE  
+> (|**CurrentTimeOffset**| &divide; (**PhaseCorrectRate** &times; **UpdateInterval**) &le; **SystemClockRate** &divide; 2)
+>
+> Is 3 mins &times; (1,800,000,000) &divide; (30,000 &times; 1) &le; 156,000 &divide; 2
+>
+> Is 60,000 &le; 78,000:TRUE
 
-在此情況下，時鐘會慢慢回調。  
+在此情況下，時鐘會慢慢回調。
 
 ## <a name="reference-windows-time-service-registry-entries"></a>參考：Windows 時間服務的登錄項目
 
-> [!WARNING]  
-> 在針對必要設定是否已完成套用的情形進行疑難排解或確認時，這些登錄項目資訊可供您作為參考。 在登錄的 W32Time 區段中，有許多值會由 W32Time 在內部用來儲存資訊。 請勿手動變更這些值。 在套用登錄的修改之前，登錄編輯程式或 Windows 並不會加以驗證。 如果登錄包含不正確值，Windows 可能會遇到嚴重錯誤。  
+> [!WARNING]
+> 在針對必要設定是否已完成套用的情形進行疑難排解或確認時，這些登錄項目資訊可供您作為參考。 在登錄的 W32Time 區段中，有許多值會由 W32Time 在內部用來儲存資訊。 請勿手動變更這些值。 在套用登錄的修改之前，登錄編輯程式或 Windows 並不會加以驗證。 如果登錄包含不正確值，Windows 可能會遇到嚴重錯誤。
 
 Windows 時間服務會將資訊儲存在下列登錄子機碼下：
 
@@ -251,13 +251,13 @@ Windows 時間服務會將資訊儲存在下列登錄子機碼下：
 
 在下表中，「所有版本」是指包含 Windows 7、Windows 8、Windows 10、Windows Server 2008 和 Windows Server 2008 R2、Windows Server 2012 和 Windows server 2012 R2、Windows Server 2016 和 Windows Server 2019 的 Windows 版本。 某些項目僅適用於較新的 Windows 版本。
 
-> [!NOTE]  
-> 登錄中的某些參數會以時鐘刻度為單位來測量，某些則會以秒為單位來測量。 若要將時間從時鐘刻度轉換為秒，請使用這些轉換因數：  
-> - 1 分鐘 = 60 秒  
-> - 1 秒 = 1000 毫秒  
-> - 1 毫秒 = Windows 系統上的 10,000 時鐘刻度，如 [DateTime.Ticks 屬性](https://docs.microsoft.com/dotnet/api/system.datetime.ticks)所述。  
->  
-> 例如，5 分鐘會變成 5 &times; 60 &times; 1000 &times; 10000 = 3,000,000,000 時鐘刻度。  
+> [!NOTE]
+> 登錄中的某些參數會以時鐘刻度為單位來測量，某些則會以秒為單位來測量。 若要將時間從時鐘刻度轉換為秒，請使用這些轉換因數：
+> - 1 分鐘 = 60 秒
+> - 1 秒 = 1000 毫秒
+> - 1 毫秒 = Windows 系統上的 10,000 時鐘刻度，如 [DateTime.Ticks 屬性](https://docs.microsoft.com/dotnet/api/system.datetime.ticks)所述。
+>
+> 例如，5 分鐘會變成 5 &times; 60 &times; 1000 &times; 10000 = 3,000,000,000 時鐘刻度。
 
 ### <a name="hklmsystemcurrentcontrolsetservicesw32timeconfig-subkey-entries"></a><a id="config"></a>"HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Config" subkey entries
 
@@ -328,53 +328,53 @@ Windows 時間服務會將資訊儲存在下列登錄子機碼下：
 |**已啟用** |所有版本 |指出是否要在目前的 Time 服務中啟用 NtpServer 提供者。 <ul><li>**1** - 是</li><li>**0** - 否</li></ul>網域成員上的預設值是 **1**。 獨立用戶端和伺服器上的預設值是 **1**。 |
 |**InputProvider** |所有版本 |指出是否要以 InputProvider 的形式來啟用 NtpClient，以從 NtpServer 取得時間資訊。 NtpServer 是時間伺服器，其會傳回可用於同步本機時鐘的時間樣本，以回應網路上的用戶端時間要求。 <ul><li>**1** - 是</li><li>**0** - 否 = 0 </li></ul>網域成員和獨立用戶端的預設值：1 |
 
-## <a name="reference-pre-set-values-for-the-windows-time-service-gpo-settings"></a>參考：Windows 時間服務 GPO 設定的預先設定值  
+## <a name="reference-pre-set-values-for-the-windows-time-service-gpo-settings"></a>參考：Windows 時間服務 GPO 設定的預先設定值
 
-下表列出與 Windows Time 服務相關聯的全域群組原則設定，以及與每個設定相關聯的預先設定值。 如需有關每個設定的詳細資訊，請參閱本文先前提到的[參考：Windows 時間服務的登錄項目](#reference-windows-time-service-registry-entries)。 下列設定包含在名為**全域組態設定**的單一 GPO 中。  
+下表列出與 Windows Time 服務相關聯的全域群組原則設定，以及與每個設定相關聯的預先設定值。 如需有關每個設定的詳細資訊，請參閱本文先前提到的[參考：Windows 時間服務的登錄項目](#reference-windows-time-service-registry-entries)。 下列設定包含在名為**全域組態設定**的單一 GPO 中。
 
 ### <a name="pre-set-values-for-global-group-policy-settings"></a>「全域群組原則」設定的預先設定值
 
-|群組原則設定|預先設定值|  
+|群組原則設定|預先設定值|
 | --- | --- |
-|**AnnounceFlags**|**10**|  
-|**EventLogFlags**|**2**|  
-|**FrequencyCorrectRate**|**4**|  
-|**HoldPeriod**|**5**|  
-|**LargePhaseOffset**|**1,280,000**|  
-|**LocalClockDispersion**|**10**|  
-|**MaxAllowedPhaseOffset**|**300**|  
-|**MaxNegPhaseCorrection**|**54,000** (15小時)|  
-|**MaxPollInterval**|**15**|  
-|**MaxPosPhaseCorrection**|**54,000** (15小時)|  
-|**MinPollInterval**|**10**|  
-|**PhaseCorrectRate**|**7**|  
-|**PollAdjustFactor**|**5**|  
-|**SpikeWatchPeriod**|**90**|  
-|**UpdateInterval**|**100**|  
+|**AnnounceFlags**|**10**|
+|**EventLogFlags**|**2**|
+|**FrequencyCorrectRate**|**4**|
+|**HoldPeriod**|**5**|
+|**LargePhaseOffset**|**1,280,000**|
+|**LocalClockDispersion**|**10**|
+|**MaxAllowedPhaseOffset**|**300**|
+|**MaxNegPhaseCorrection**|**54,000** (15小時)|
+|**MaxPollInterval**|**15**|
+|**MaxPosPhaseCorrection**|**54,000** (15小時)|
+|**MinPollInterval**|**10**|
+|**PhaseCorrectRate**|**7**|
+|**PollAdjustFactor**|**5**|
+|**SpikeWatchPeriod**|**90**|
+|**UpdateInterval**|**100**|
 
 ### <a name="pre-set-values-for-configure-windows-ntp-client-settings"></a>「設定 Windows NTP 用戶端」設定的預先設定值
 
-下表列出**設定 Windows NTP 用戶端** GPO 的可用設定以及與 Windows Time 服務相關聯的預先設定值。 如需有關每個設定的詳細資訊，請參閱本文先前提到的[參考：Windows 時間服務的登錄項目](#reference-windows-time-service-registry-entries)。  
+下表列出**設定 Windows NTP 用戶端** GPO 的可用設定以及與 Windows Time 服務相關聯的預先設定值。 如需有關每個設定的詳細資訊，請參閱本文先前提到的[參考：Windows 時間服務的登錄項目](#reference-windows-time-service-registry-entries)。
 
-|群組原則設定|預先設定值|  
-|------------------------|-----------------|  
-|**NtpServer**|time.windows.com, **0x1**|  
-|**類型**|預設選項：<ul><li>**NTP**。 用於未加入網域的電腦。</li><li>**NT5DS.** 用於已加入網域的電腦。</li></ul>|  
-|**CrossSiteSyncFlags**|**2**|  
-|**ResolvePeerBackoffMinutes**|**15**|  
-|**ResolvePeerBackoffMaxTimes**|**7**|  
-|**SpecialPollInterval**|**3,600**|  
-|**EventLogFlags**|**0**|  
+|群組原則設定|預先設定值|
+|------------------------|-----------------|
+|**NtpServer**|time.windows.com, **0x1**|
+|**類型**|預設選項：<ul><li>**NTP**。 用於未加入網域的電腦。</li><li>**NT5DS.** 用於已加入網域的電腦。</li></ul>|
+|**CrossSiteSyncFlags**|**2**|
+|**ResolvePeerBackoffMinutes**|**15**|
+|**ResolvePeerBackoffMaxTimes**|**7**|
+|**SpecialPollInterval**|**3,600**|
+|**EventLogFlags**|**0**|
 
 ## <a name="reference-network-ports-that-the-windows-time-service-uses"></a>參考：Windows 時間服務所使用的網路連接埠
 
-Windows Time 遵循 NTP 規範，因此必須使用 UDP 連接埠 123 來進行所有的時間同步通訊。 此連接埠保留供 Windows Time 使用，且會永遠保持保留狀態。 每當電腦同步其時鐘或提供時間給另一部電腦時，就會在 UDP 連接埠 123 上執行通訊。  
+Windows Time 遵循 NTP 規範，因此必須使用 UDP 連接埠 123 來進行所有的時間同步通訊。 此連接埠保留供 Windows Time 使用，且會永遠保持保留狀態。 每當電腦同步其時鐘或提供時間給另一部電腦時，就會在 UDP 連接埠 123 上執行通訊。
 
-> [!NOTE]  
-> 如果您的電腦有多個網路介面卡 (也稱為*多重主目錄*電腦)，您就無法根據網路介面卡來選擇性地啟用 Windows Time 服務。  
+> [!NOTE]
+> 如果您的電腦有多個網路介面卡 (也稱為*多重主目錄*電腦)，您就無法根據網路介面卡來選擇性地啟用 Windows Time 服務。
 
-## <a name="related-information"></a>相關資訊  
+## <a name="related-information"></a>相關資訊
 
-下列資源包含與本節相關的其他資訊。  
+下列資源包含與本節相關的其他資訊。
 
-- IETF RFC 資料庫中的 RFC 1305  
+- IETF RFC 資料庫中的 RFC 1305
