@@ -10,12 +10,12 @@ metadata:
   ms.topic: hub-page
   ms.date: 06/06/2019
   ms.author: lizross
-  ms.openlocfilehash: 91a9a648c5b51f098a94300ffb1dd3f7ce76bdd8
-  ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+  ms.openlocfilehash: f1d4865d5213d2889aad1fc114c7ea300b4bfe4e
+  ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 04/23/2020
-  ms.locfileid: "81123161"
+  ms.lasthandoff: 07/27/2020
+  ms.locfileid: "87177694"
 highlightedContent:
   items:
   - title: Windows Server 2019 的新功能？
@@ -192,7 +192,7 @@ additionalContent:
   - items:
     - title: Windows Server 2012 R2 和 Windows Server 2012 (封存)
       summary: 適用於協助 IT 專業人員管理 Windows Server 2012 R2 和 Windows Server 2012 的技術內容封存。
-      url: https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh801901(v=ws.11)
+      url: /previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh801901(v=ws.11)
     - title: Windows Server Essentials
       summary: 適用於協助 IT 專業人員管理 Windows Server Essentials 的技術內容，這是專為擁有多達 25 位使用者和 50 部裝置小型企業所設計的雲端連線第一部伺服器。
       url: https://docs.microsoft.com/en-us/windows-server-essentials/get-started/get-started

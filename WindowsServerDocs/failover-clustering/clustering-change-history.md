@@ -9,22 +9,22 @@ author: JasonGerend
 manager: lizross
 ms.author: jgerend
 ms.date: 01/07/2020
-ms.openlocfilehash: 73767eb8411523a93f3a4fe2e04106c81cc39f9b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2bc64479c5615e356158b83ee41402f425f4ea3b
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827901"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87177894"
 ---
 # <a name="change-history-for-failover-clustering-topics"></a>容錯移轉叢集主題的變更歷程記錄
 
->適用于： Windows Server 2019、Windows Server 2016
+>適用於：Windows Server 2019、Windows Server 2016
 
 本主題列出 Windows Server[容錯移轉](failover-clustering-overview.md)叢集檔中的新增和更新的主題。
 
 > 如果您正在尋找 Windows Server 2016 的更新歷程記錄，請參閱 [Windows 10 和 Windows Server 2016 更新記錄](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history)。
 
-## <a name="january-2020"></a>2020年1月
+## <a name="january-2020"></a>2020 年 1 月
 
 |新增或已變更的主題                                    |描述 |
 |--------------------------------------------------------|------------|
@@ -54,7 +54,7 @@ ms.locfileid: "80827901"
 
 |新增或已變更的主題|描述|
 |---|---|
-|[在 Active Directory 中設定叢集帳戶](configure-ad-accounts.md)|從[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)程式庫遷移|
+|[在 Active Directory 中設定叢集帳戶](configure-ad-accounts.md)|從[舊版](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)程式庫遷移|
 
 ## <a name="october-2018"></a>2018 年 10 月
 
@@ -72,19 +72,19 @@ ms.locfileid: "80827901"
 
 |新增或已變更的主題|描述|
 |---|---|
-|[設定和管理仲裁](manage-cluster-quorum.md) | 從[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫遷移。 |
+|[設定和管理仲裁](manage-cluster-quorum.md) | 從[舊版](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫遷移。 |
 
 ## <a name="april-2018"></a>2018 年 4 月
 
 |新增或已變更的主題|描述|
 |---|---|
 |[使用 Windows 錯誤報告針對容錯移轉叢集進行疑難排解](troubleshooting-using-WER-reports.md)| 新主題。 |
-|[針對應用程式資料向外延展檔案伺服器](sofs-overview.md)|從[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫遷移。|
-|[硬體需求](clustering-requirements.md)|從[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫遷移。|
-|[使用叢集共用磁碟區 (CSV)](failover-cluster-csvs.md)|從[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫遷移。|
-|[建立容錯移轉叢集](create-failover-cluster.md)|從[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫遷移。|
-|[在 AD DS 中預先設置叢集](prestage-cluster-adds.md)|從[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫遷移。|
-|[為容錯移轉叢集部署雲端見證](deploy-cloud-witness.md)|從[舊版](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫遷移。|
+|[針對應用程式資料向外延展檔案伺服器](sofs-overview.md)|從[舊版](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫遷移。|
+|[硬體需求](clustering-requirements.md)|從[舊版](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫遷移。|
+|[使用叢集共用磁碟區 (CSV)](failover-cluster-csvs.md)|從[舊版](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫遷移。|
+|[建立容錯移轉叢集](create-failover-cluster.md)|從[舊版](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫遷移。|
+|[在 AD DS 中預先設置叢集](prestage-cluster-adds.md)|從[舊版](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫遷移。|
+|[部署容錯移轉叢集的雲端見證](deploy-cloud-witness.md)|從[舊版](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)程式庫遷移。|
 
 ## <a name="june-2017"></a>2017 年 6 月
 
@@ -96,7 +96,7 @@ ms.locfileid: "80827901"
 
 |新增或已變更的主題|描述|
 |---|---|
-|[叢集感知更新總覽](cluster-aware-updating.md)|新主題。|
+|[叢集感知更新概觀](cluster-aware-updating.md)|新主題。|
 |[叢集感知更新的需求和最佳做法](cluster-aware-updating-requirements.md)|新主題。|
 |[叢集感知更新的 advanced 選項](cluster-aware-updating-options.md)|新主題。|
 |[叢集感知更新常見問題](cluster-aware-updating-faq.md)|新主題。|

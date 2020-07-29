@@ -9,12 +9,12 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 08/06/2018
 ms.assetid: 3c2993b4-aa81-452b-a5c3-3724ad95d892
-ms.openlocfilehash: bd3c15d08b0d4b6f174fd9c790f0dacb2457472e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: fbe523043b905e80559dfb9df799426761709b4e
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473285"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87177914"
 ---
 # <a name="cluster-aware-updating-overview"></a>叢集感知更新概觀
 
@@ -117,7 +117,7 @@ CAU 可以在所有版本的 Windows Server 上使用，包括 Server Core 安�
 
 1.  啟動伺服器管理員。
 
-2.  執行下列其中一個動作：
+2.  請執行下列其中一項：
 
     -   在 [**工具**] 功能表上，按一下 [叢集** \- 感知更新**]。
 
@@ -136,6 +136,6 @@ CAU 可以在所有版本的 Windows Server 上使用，包括 Server Core 安�
 
 -   [\-Windows PowerShell 中的叢集感知更新 Cmdlet](https://docs.microsoft.com/powershell/module/clusterawareupdating/?view=win10-ps&viewFallbackFrom=winserverr2-ps)
 
--   [叢集 \- 感知更新外掛程式 \- 參考](https://docs.microsoft.com/previous-versions/windows/desktop/mscs/cluster-aware-update-plug-in-interfaces-and-classes)
+-   [叢集 \- 感知更新外掛程式 \- 參考](/previous-versions/windows/desktop/mscs/cluster-aware-update-plug-in-interfaces-and-classes)
 
 
