@@ -1,5 +1,5 @@
 ---
-title: 網路
+title: 網路功能
 description: 本主題提供 Windows Server 2016 中可用的「軟體定義網路」和「網路平台」技術概觀。
 ms.prod: windows-server
 ms.technology: networking
@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 07/29/2020
 ms.locfileid: "87408907"
 ---
-# <a name="networking"></a>網路
+# <a name="networking"></a>網路功能
 
 > 適用於：Windows Server (半年度管道)、Windows Server 2016
 
