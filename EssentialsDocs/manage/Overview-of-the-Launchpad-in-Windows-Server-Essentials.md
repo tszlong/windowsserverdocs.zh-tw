@@ -2,18 +2,17 @@
 title: Windows Server Essentials 中的啟動列概觀
 description: 說明如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 198d16cb-3d07-4706-be89-ad14a5f7dc47
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e3a25a574e932d9a6a66ca706472dfed5a67a6ee
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: c648ab5921d50a2b1178b44104977b8bb3abd692
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470413"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180834"
 ---
 # <a name="overview-of-the-launchpad-in-windows-server-essentials"></a>Windows Server Essentials 中的啟動列概觀
 

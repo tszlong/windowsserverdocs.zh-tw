@@ -8,12 +8,12 @@ metadata:
   author: lizap
   ms.author: elizapo
   ms.date: 06/09/2020
-  ms.openlocfilehash: a115a703071b52e7a27d925578d7703f270b925b
-  ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+  ms.openlocfilehash: f04fc0407eb43f78433aca0dda70aa05e951a19d
+  ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
   ms.translationtype: MT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 06/18/2020
-  ms.locfileid: "85070960"
+  ms.lasthandoff: 07/27/2020
+  ms.locfileid: "87179244"
 landingContent:
 - title: 管理 Windows Server 系統和環境
   linkLists:
@@ -59,13 +59,13 @@ landingContent:
   linkLists:
   - linkListType: overview
     links:
-    - text: 遠端桌面服務
+    - text: 遠端桌面服務問題
       url: ../remote/remote-desktop-services/welcome-to-rds.md
 - title: 較舊版本的 Windows Server
   linkLists:
   - linkListType: overview
     links:
     - text: Windows 舊版檔
-      url: https://docs.microsoft.com/previous-versions/windows/
+      url: /previous-versions/windows/
     - text: 搜尋特定資訊
       url: https://docs.microsoft.com/search/?search=Windows+Server&dataSource=previousVersions

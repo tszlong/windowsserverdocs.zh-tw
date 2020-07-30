@@ -2,18 +2,17 @@
 title: 從 Windows Server Essentials 轉換到 Windows Server 2012 Standard
 description: 說明如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 51bcf124-c215-4e9d-9fa8-a90fa2c2fa22
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 2477cac206af4e70d10e28d7b1da637b7b7accff
-ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
+ms.openlocfilehash: 4cc616c0e23c58ab1298526784574f6bc8f65f23
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85548812"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180384"
 ---
 # <a name="transition-from-windows-server-essentials-to-windows-server-2012-standard"></a>從 Windows Server Essentials 轉換到 Windows Server 2012 Standard
 
@@ -38,7 +37,7 @@ ms.locfileid: "85548812"
 
     1.  以系統管理員身分開啟命令視窗。
 
-    2.  執行以下命令：
+    2.  執行下列命令：
 
          **dism/online/set-edition： ServerStandard/geteula： eula 路徑**
 
@@ -76,7 +75,7 @@ ms.locfileid: "85548812"
  如果您不再需要 Windows Server Essentials 儀表板或其他附加功能來管理伺服器，您可以關閉這些功能，並將它們從伺服器中移除。
 
  [**關閉 Windows Server Essentials 功能嚮導]：**
- 
+
 - 協助您卸載功能。 它也會清除 Windows Server Essentials 伺服器軟體所建立的檔案伺服器。  有些清除作業會立即執行，而其他則會在伺服器重新啟動後才進行。
 
 - 需要您先手動卸載所有增益集，才能完成嚮導。 若要檢視已安裝的增益集清單，請開啟儀表板中的應用程式頁面。 如果精靈偵測到已安裝的增益集，會發出警告，並提示您將它們解除安裝。
@@ -103,7 +102,7 @@ ms.locfileid: "85548812"
 
    **%systemdrive%\Program Files\Windows Server\Bin\TurnOffFeaturesWizard.exe**
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 
 -   [轉換到 Windows Server 2012 R2 Standard](Transition-from-Windows-Server-2012-R2-Essentials-to-Windows-Server-2012-R2-Standard.md)

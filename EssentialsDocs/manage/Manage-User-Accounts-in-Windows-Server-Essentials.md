@@ -2,18 +2,17 @@
 title: 在 Windows Server Essentials 中管理使用者帳戶
 description: 說明如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 0d115697-532b-48c2-a659-9f889e235326
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 350c9aa4cf4a2e71f3a3b7600ec2acd9016fe50e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 433e49f76ba941058a3cd63526f4c640fd0b5ece
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470503"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180874"
 ---
 # <a name="manage-user-accounts-in-windows-server-essentials"></a>在 Windows Server Essentials 中管理使用者帳戶
 
@@ -246,7 +245,7 @@ ms.locfileid: "85470503"
 |新增 Microsoft 線上帳戶|新增 Microsoft 線上帳戶並將它們與區域網路的使用者帳戶建立關聯。<br /><br /> 當您的伺服器已與 Microsoft 線上服務 (例如 Office 365) 整合時，就會顯示這項工作。|
 |設定密碼原則|可讓您變更您網路的密碼原則值。|
 |匯入 Microsoft 線上帳戶|執行將帳戶從 Microsoft 線上服務大量匯入到區域網路的工作。<br /><br /> 當您的伺服器已與 Microsoft 線上服務 (例如 Office 365) 整合時，就會顯示這項工作。|
-|重新整理|重新整理 [使用者] 索引標籤。<br /><br /> 這項工作適用于 Windows Server Essentials。|
+|Refresh|重新整理 [使用者] 索引標籤。<br /><br /> 這項工作適用于 Windows Server Essentials。|
 |變更檔案歷程記錄設定|可讓您變更「檔案歷程記錄」設定，例如備份頻率或備份期間。<br /><br /> 這項工作適用于 Windows Server Essentials。|
 |匯出所有遠端連線|將過去 30 天所有連到伺服器的遠端連線建立為一個 .CSV 格式檔案。|
 

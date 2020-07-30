@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5d51cc178ee5b689071336b0dabd1e8d3565bcd2
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 4610db6755f5177306dfcf4feec005eab6efabfd
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955360"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87178674"
 ---
 # <a name="certreq"></a>certreq
 
@@ -132,7 +132,7 @@ subject = CN=W2K8-BO-DC.contoso2.com
 | KeyProtection | 指定一個值，指出私密金鑰在使用前如何受到保護。 | <ul><li>`XCN_NCRYPT_UI_NO_PROTCTION_FLAG -- 0`</li><li>`XCN_NCRYPT_UI_PROTECT_KEY_FLAG -- 1`</li><li>`XCN_NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG -- 2`</li></ul> | `KeyProtection = NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG` |
 | SuppressDefaults | 指定布林值，指出要求中是否包含預設的擴充功能和屬性。 預設值是以其物件識別碼（Oid）來表示。 | `true | false` | `SuppressDefaults = true` |
 | FriendlyName | 新憑證的易記名稱。 | Text | `FriendlyName = Server1` |
-| ValidityPeriodUnits | 指定要與 ValidityPeriod 搭配使用的單位數。 注意：只有在時，才會使用此 `request type=cert` 。 | 數值 | `ValidityPeriodUnits = 3` |
+| ValidityPeriodUnits | 指定要與 ValidityPeriod 搭配使用的單位數。 注意：只有在時，才會使用此 `request type=cert` 。 | 數字 | `ValidityPeriodUnits = 3` |
 | ValidityPeriod | ValidityPeriod 必須是美式英文複數的時間週期。 注意：只有在要求類型 = cert 時，才會使用此憑證。 | `Years |  Months | Weeks | Days | Hours | Minutes | Seconds` | `ValidityPeriod = Years` |
 
 <sup>1</sup>在等號左邊的參數（=）
@@ -292,7 +292,7 @@ certreq –enroll -machine –cert 61 2d 3c fe 00 00 00 00 00 05 renew
 
 您只能更新有效的憑證。 過期的憑證無法更新，必須以新憑證取代。
 
-## <a name="options"></a>選項
+## <a name="options"></a>選項。
 
 | 選項。 | 描述 |
 | ------- | ----------- |
@@ -341,10 +341,8 @@ certreq –enroll -machine –cert 61 2d 3c fe 00 00 00 00 00 05 renew
 
 - [如何手動建立網頁伺服器 SSL 憑證](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/how-to-create-a-web-server-ssl-certificate-manually/ba-p/1128529)
 
-- [使用 Windows Server 2008 CA 要求 AMT 布建憑證](https://social.technet.microsoft.com/wiki/contents/articles/548.request-an-amt-provisioning-certificate-using-a-windows-server-2008-ca.aspx)
+- [System Center Operations Manager 代理程式的憑證註冊](https://docs.microsoft.com/system-center/scom/plan-planning-agent-deployment?view=sc-om-2019)
 
-- [System Center Operations Manager 代理程式的憑證註冊](https://social.technet.microsoft.com/wiki/contents/articles/2017.certificate-enrollment-for-system-center-operations-manager-agent.aspx)
-
-- [AD CS 逐步指南：兩層式 PKI 階層部署](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx)
+- [Active Directory 憑證服務概觀](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11))
 
 - [如何使用協力廠商憑證授權單位單位啟用 LDAP over SSL](https://support.microsoft.com/help/321051/how-to-enable-ldap-over-ssl-with-a-third-party-certification-authority)

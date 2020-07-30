@@ -9,12 +9,12 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 08/06/2018
 description: 使用叢集感知更新在執行 Windows Server 的叢集上安裝更新的需求。
-ms.openlocfilehash: 066aca3adb2ceec19663653a7bc2f0f8cd42da16
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a3f00d6f0118b536745be0afdac8b4a7084a6721
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473305"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87178355"
 ---
 # <a name="cluster-aware-updating-requirements-and-best-practices"></a>叢集感知更新的需求和最佳做法
 
@@ -200,7 +200,7 @@ netsh winhttp set proxy MyProxy.CONTOSO.com:443 "<local>"
 
 -   您應該在 \- 儲存于網路共用資料夾上的更新前和更新後腳本設定適當的許可權， \- 以避免未經授權的使用者對這些檔案造成潛在的篡改。
 
--   若要在自行更新模式中設定 CAU \- ， \( \) 必須在 ACTIVE DIRECTORY 中建立 cau 叢集角色的虛擬電腦物件 VCO。 若容錯移轉叢集有足夠的權限，CAU 可以在新增 CAU 叢集角色時自動建立此物件。 不過，因為特定組織中的安全性原則，您可能需要在 Active Directory 預先設置該物件。 如需可執行此動作的程序，請參閱 [為叢集角色預先設置帳戶的步驟](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731002\(v=ws.10\)#steps-for-prestaging-the-cluster-name-account)。
+-   若要在自行更新模式中設定 CAU \- ， \( \) 必須在 ACTIVE DIRECTORY 中建立 cau 叢集角色的虛擬電腦物件 VCO。 若容錯移轉叢集有足夠的權限，CAU 可以在新增 CAU 叢集角色時自動建立此物件。 不過，因為特定組織中的安全性原則，您可能需要在 Active Directory 預先設置該物件。 如需可執行此動作的程序，請參閱 [為叢集角色預先設置帳戶的步驟](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731002\(v=ws.10\)#steps-for-prestaging-the-cluster-name-account)。
 
 -   為根據 IT 組織中的類似更新需求儲存「更新執行」設定並在容錯移轉叢集中重複使用，您可以建立「更新執行設定檔」。 此外，視更新模式而定，您可以在位於可供所有遠端「更新協調器」電腦或容錯移轉叢集存取的檔案共用中儲存「更新執行設定檔」並進行管理。 如需詳細資訊，請參閱[Advanced Options 和更新 CAU 的執行設定檔](cluster-aware-updating-options.md)。
 

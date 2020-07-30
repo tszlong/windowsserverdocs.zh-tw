@@ -2,18 +2,17 @@
 title: 使用 Windows Server Essentials 記錄檔收集器
 description: 說明如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: c6985518-b42d-4cfb-9761-eaa75306b6d7
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: a0e1af390f6495ed97eb85d527bb978a944af860
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 2a3e4d55addc493beb4a7561f2db11a41dc49e30
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470033"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180004"
 ---
 # <a name="use-the-windows-server-essentials-log-collector"></a>使用 Windows Server Essentials 記錄檔收集器
 

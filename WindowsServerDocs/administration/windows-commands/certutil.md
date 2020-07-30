@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 159a3d2eb54d6a3040c4a22864a1c90e16bf2247
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 12ef5e7fa5ff305b1670c2f88645f57500c4fb5b
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955330"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87178584"
 ---
 # <a name="certutil"></a>certutil
 
@@ -791,7 +791,7 @@ certutil [options] -store [certificatestorename [certID [outputfile]]]
 [-f] [-user] [-enterprise] [-service] [-grouppolicy] [-silent] [-split] [-dc DCName]
 ```
 
-#### <a name="options"></a>選項
+#### <a name="options"></a>選項。
 
 - `-user`選項會存取使用者存放區，而不是電腦存放區。
 
@@ -928,7 +928,7 @@ certutil [options] -viewstore [certificatestorename [certID [outputfile]]]
 [-f] [-user] [-enterprise] [-service] [-grouppolicy] [-dc DCName]
 ```
 
-#### <a name="options"></a>選項
+#### <a name="options"></a>選項。
 
 - `-user`選項會存取使用者存放區，而不是電腦存放區。
 
@@ -968,7 +968,7 @@ certutil [options] -viewdelstore [certificatestorename [certID [outputfile]]]
 [-f] [-user] [-enterprise] [-service] [-grouppolicy] [-dc DCName]
 ```
 
-#### <a name="options"></a>選項
+#### <a name="options"></a>選項。
 
 - `-user`選項會存取使用者存放區，而不是電腦存放區。
 
@@ -1103,7 +1103,7 @@ certutil [options] -setcasites delete
 - `-f`選項可以用來覆寫指定**sitename**的驗證錯誤，或刪除所有 CA sitenames。
 
 > [!NOTE]
-> 如需有關為 Active Directory Domain Services （AD DS）網站感知設定 Ca 的詳細資訊，請參閱[AD DS AD CS 和 PKI 用戶端的網站感知](https://social.technet.microsoft.com/wiki/contents/articles/14106.ad-ds-site-awareness-for-ad-cs-and-pki-clients.aspx)。
+> 如需有關為 Active Directory Domain Services （AD DS）網站感知設定 Ca 的詳細資訊，請參閱[AD DS AD CS 和 PKI 用戶端的網站感知](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11))。
 
 ### <a name="-enrollmentserverurl"></a>-enrollmentserverURL
 
@@ -1960,7 +1960,7 @@ certutil -? -v
 
 - **-?-v**會顯示完整的參數和選項清單。
 
-## <a name="options"></a>選項
+## <a name="options"></a>選項。
 
 此區段會根據命令定義您可以指定的所有選項。 每個參數都包含哪些選項可供使用的相關資訊。
 
@@ -2003,12 +2003,8 @@ certutil -? -v
 
 如需有關如何使用此命令的其他範例，請參閱
 
-- [從命令列管理 Active Directory 憑證服務（AD CS）的 Certutil 範例](https://social.technet.microsoft.com/wiki/contents/articles/3063.certutil-examples-for-managing-active-directory-certificate-services-ad-cs-from-the-command-line.aspx)
+- [Active Directory 憑證服務 (AD CS)](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11))
 
 - [管理憑證的 Certutil 工作](/previous-versions/orphan-topics/ws.10/cc772898(v=ws.10))
-
-- [使用 certutil.exe 命令列工具的二進位要求匯出逐步解說](https://social.technet.microsoft.com/wiki/contents/articles/7573.active-directory-certificate-services-pki-key-archival-and-management.aspx)
-
-- [根 CA 憑證更新](https://social.technet.microsoft.com/wiki/contents/articles/2016.root-ca-certificate-renewal.aspx)
 
 - [certutil 命令](certutil.md)

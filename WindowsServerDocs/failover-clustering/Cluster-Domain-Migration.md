@@ -9,16 +9,16 @@ author: johnmarlin-msft
 ms.author: johnmar
 ms.date: 01/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ba556b5a00f3932e2049135b177a7ad8bbceec9c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6062dd987a136bc2be67c09efbe399bb8fae24f6
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80828291"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87178524"
 ---
 # <a name="failover-cluster-domain-migration"></a>容錯移轉叢集網域遷移
 
-> 適用于： Windows Server 2019、Windows Server 2016
+> 適用於：Windows Server 2019、Windows Server 2016
 
 本主題提供將 Windows Server 容錯移轉叢集從一個網域移至另一個網域的總覽。
 
@@ -37,11 +37,11 @@ ms.locfileid: "80828291"
    > [!WARNING]
    > 我們建議您在移動叢集之前，先執行叢集中所有共用存放裝置的完整備份。
 
-## <a name="windows-server-2016-and-earlier"></a>Windows Server 2016 和更早版本
+## <a name="windows-server-2016-and-earlier"></a>Windows Server 2016 (含) 以前版本
 
-在 Windows Server 2016 和更早版本中，叢集服務無法從某個網域移至另一個網域。  這是因為 Active Directory Domain Services 和所建立之虛擬名稱的相依性增加。   
+在 Windows Server 2016 和更早版本中，叢集服務無法從某個網域移至另一個網域。  這是因為 Active Directory Domain Services 和所建立之虛擬名稱的相依性增加。
 
-## <a name="options"></a>選項
+## <a name="options"></a>選項。
 
 為了進行這類移動，有兩個選項。
 
@@ -62,14 +62,14 @@ ms.locfileid: "80828291"
 如動畫所示，此選項不具破壞性，但需要來自現有叢集的不同硬體或節點，而不是已移除。
 
 1. 在新網域中建立新的 clusterin，同時仍然具有舊的叢集可用。
-2. 使用 [叢集[遷移嚮導]](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754481(v=ws.10))將所有資源遷移至新叢集。 提醒您，這不會複製資料，因此必須另外完成。
+2. 使用 [叢集[遷移嚮導]](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754481(v=ws.10))將所有資源遷移至新叢集。 提醒您，這不會複製資料，因此必須另外完成。
 3. 解除委任或摧毀舊叢集。
 
 在這兩個選項中，新的叢集都必須安裝所有叢集[感知應用程式](https://technet.microsoft.com/aa369082(v=vs.90))、驅動程式都是最新狀態，而且可能會進行測試，以確保所有元件都能正常執行。  如果也需要移動資料，這就是耗時的進程。
 
 ## <a name="windows-server-2019"></a>Windows Server 2019
 
-在 Windows Server 2019 中，我們引進了跨叢集網域遷移功能。  因此，您可以輕鬆地完成上述案例，而且不再需要重建的需求。  
+在 Windows Server 2019 中，我們引進了跨叢集網域遷移功能。  因此，您可以輕鬆地完成上述案例，而且不再需要重建的需求。
 
 從一個網域移動叢集是一個簡單的程式。 為了達成此目的，有兩個新的 PowerShell commandlet。
 
@@ -77,7 +77,7 @@ ms.locfileid: "80828291"
 
 完成這項作業的程式是將叢集從一個網域變更為一個工作組，並回到新的網域。  不需要摧毀叢集、重建叢集、安裝應用程式等。 例如，它看起來會像這樣：
 
-![移轉](media/Cross-Domain-Cluster-Migration/Cross-Cluster-Domain-Migration-3.gif)
+![遷移](media/Cross-Domain-Cluster-Migration/Cross-Cluster-Domain-Migration-3.gif)
 
 ## <a name="migrating-a-cluster-to-a-new-domain"></a>將叢集遷移至新的網域
 

@@ -9,12 +9,12 @@ manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 67ef309bc2a09c5e241d52c747ab800cfde86168
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 2847b9268207155efc181c97c58a91c1d51eac6d
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720526"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87177814"
 ---
 # <a name="configure-and-manage-quorum"></a>設定和管理仲裁
 
@@ -32,7 +32,7 @@ Windows Server 中的仲裁模型具有彈性。 如果您需要修改叢集的�
 
 下表列出 [設定叢集仲裁精靈] 中提供的三個仲裁設定選項。
 
-| 選項  |描述  |
+| 選項  |說明  |
 | --------- | ---------|
 | [使用一般設定]     |  叢集會自動指派投票給每個節點，並動態管理節點投票。 如果適合您的叢集，並且沒有叢集共用存放裝置可用，叢集就會選取一個磁碟見證。 建議您在大部分的情況下使用此選項，因為叢集軟體會自動選擇可為您的叢集提供最高可用性的仲裁與見證設定。       |
 | [新增或變更仲裁見證]     |   您可以新增、變更或移除見證資源。 您可以設定檔案共用或磁碟見證。 叢集會自動指派投票給每個節點，並動態管理節點投票。      |
@@ -43,7 +43,7 @@ Windows Server 中的仲裁模型具有彈性。 如果您需要修改叢集的�
 | [模式]  | 描述  |
 | --------- | ---------|
 | 節點多數 (不含見證)     |   只有節點具有投票。 不設定任何仲裁見證。 叢集仲裁是使用中叢集成員資格中大部分的投票節點。      |
-| 節點多數 (含見證) (磁碟或檔案共用)     |   節點具有投票。 此外，仲裁見證也具有投票。 叢集仲裁是使用中叢集成員資格加上見證投票中大部分的投票節點。 仲裁見證可以是指定的磁碟見證或指定的檔案共用見證。 
+| 節點多數 (含見證) (磁碟或檔案共用)     |   節點具有投票。 此外，仲裁見證也具有投票。 叢集仲裁是使用中叢集成員資格加上見證投票中大部分的投票節點。 仲裁見證可以是指定的磁碟見證或指定的檔案共用見證。
 | 沒有多數 (只含磁碟見證)     | 沒有節點具有投票。 只有磁碟見證具有投票。 <br>叢集仲裁是由磁碟見證的狀態來決定。 一般而言，不建議使用，也不應該選取這種模式，因為它會使得叢集中有單一失敗點。       |
 
 下列小節將提供有關 advanced 仲裁設定的詳細資訊。
@@ -107,7 +107,7 @@ Windows Server 中的仲裁模型具有彈性。 如果您需要修改叢集的�
 - 長期節點或見證失敗
 - 在多站台災害復原情況中復原叢集
 
-如需驗證容錯移轉叢集的詳細資訊，請參閱[驗證容錯移轉叢集的硬體](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134244(v%3dws.11)>)。
+如需驗證容錯移轉叢集的詳細資訊，請參閱[驗證容錯移轉叢集的硬體](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134244(v%3dws.11)>)。
 
 ## <a name="configure-the-cluster-quorum"></a>設定叢集仲裁
 
@@ -158,7 +158,7 @@ Windows Server 中的仲裁模型具有彈性。 如果您需要修改叢集的�
 
 4. 選取 [下一步]  。 在出現的確認頁面上確認您的選擇，然後選取 **[下一步]**。
 
-在執行 wizard 並出現 [**摘要**] 頁面之後，如果您想要查看嚮導執行之工作的報告，請選取 [ **view report**]。 最新的報告將保留在<em>systemroot</em>**\\Cluster\\Reports**資料夾中，名稱為**為 quorumconfiguration.mht。**
+在執行 wizard 並出現 [**摘要**] 頁面之後，如果您想要查看嚮導執行之工作的報告，請選取 [ **view report**]。 最新的報告將保留在<em>systemroot</em> ** \\ Cluster \\ Reports**資料夾中，名稱為**為 quorumconfiguration.mht。**
 
 > [!NOTE]
 > 在您設定叢集仲裁之後，我們建議您執行 [驗證仲裁設定]**** 測試，以確認更新的仲裁設定。
@@ -179,7 +179,7 @@ Set-ClusterQuorum –Cluster CONTOSO-FC1 -NodeMajority
 Set-ClusterQuorum -NodeAndDiskMajority "Cluster Disk 2"
 ```
 
-以下範例會將本機叢集上的仲裁設定變更為包含見證設定的節點多數。 名為* \\ \\CONTOSO-FS\\fsw*的檔案共用資源會設定為檔案共用見證。
+以下範例會將本機叢集上的仲裁設定變更為包含見證設定的節點多數。 名為* \\ \\ CONTOSO-FS \\ fsw*的檔案共用資源會設定為檔案共用見證。
 
 ```PowerShell
 Set-ClusterQuorum -NodeAndFileShareMajority "\\fileserver\fsw"
@@ -242,7 +242,7 @@ Set-ClusterQuorum -NodeAndFileShareMajority "\\fileserver\fsw"
     容錯移轉叢集管理員會強制啟動可連線之所有節點上的叢集。 叢集將使用目前的叢集設定來啟動。
 
 > [!NOTE]
-> * 若要強制叢集在包含您要使用之叢集設定的特定節點上啟動，您必須使用此程式之後所提供的 Windows PowerShell Cmdlet 或對等的命令列工具。 
+> * 若要強制叢集在包含您要使用之叢集設定的特定節點上啟動，您必須使用此程式之後所提供的 Windows PowerShell Cmdlet 或對等的命令列工具。
 > * 如果您使用容錯移轉叢集管理員連線到強制啟動的叢集，而且您使用 [啟動叢集服務]**** 動作來啟動節點，該節點會自動使用防止仲裁的設定來啟動。
 
 #### <a name="windows-powershell-equivalent-commands-start-clusternode"></a>Windows PowerShell 對等命令（Start-clusternode）
@@ -281,7 +281,7 @@ Net Start ClusSvc /PQ
 
 下表摘要說明這項設定的考量與建議。
 
-| 項目  | 描述  |
+| Item  | 描述  |
 | ---------| ---------|
 | 每個站台的節點投票數     | 應該相等       |
 | 節點投票指派     |  因為所有節點都一樣重要，所以不應該移除節點投票       |
@@ -299,7 +299,7 @@ Net Start ClusSvc /PQ
 
 下表摘要說明這項設定的考量與建議。
 
-| 項目   |描述  |
+| Item   |描述  |
 | ---------| ---------|
 | 每個站台的節點投票數     |  <ul><li> 不應該從主要站台 **SiteA** 的節點移除節點投票</li><li>應該從備份站台 **SiteB** 的節點移除節點投票</li><li>如果 **SiteA** 發生長期中斷，必須將投票指派給 **SiteB** 上的節點，以在復原時於該站台上啟用仲裁多數</li>       |
 | 動態仲裁管理     |  應該啟用       |

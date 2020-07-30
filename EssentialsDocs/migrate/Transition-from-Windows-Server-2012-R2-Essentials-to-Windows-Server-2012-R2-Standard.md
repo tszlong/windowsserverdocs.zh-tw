@@ -2,18 +2,17 @@
 title: 從 Windows Server 2012 Essentials 轉換到 Windows Server 2012 R2 Standard
 description: 說明如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: a14689e3-2310-4229-bd3e-dafc0e739e02
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 3902fa53f59b99475f0ae117fd5ac193afeff8a3
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a460bfa4f802160be4e4842c91793c8568ed0272
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470233"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180374"
 ---
 # <a name="transition-from-windows-server-essentials-to-windows-server-2012-r2-standard"></a>從 Windows Server 2012 Essentials 轉換到 Windows Server 2012 R2 Standard
 
@@ -39,7 +38,7 @@ Windows Server 2016 是雲端就緒的作業系統，可支援您目前的工作
 
     1.  以系統管理員身分開啟命令視窗。
 
-    2.  執行以下命令：
+    2.  執行下列命令：
 
          **dism /online /set-edition:ServerStandard /geteula:** *eula 路徑* (其中 *eula 路徑* 代表您要儲存 EULA 檔案的位置，例如：C:\ws8std_eula.rtf)。 務必使用 .rtf 做為副檔名。
 

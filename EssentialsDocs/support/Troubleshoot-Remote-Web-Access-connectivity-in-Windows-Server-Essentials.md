@@ -2,18 +2,17 @@
 title: Windows Server Essentials 的遠端 Web 存取連線問題疑難排解
 description: 說明如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: d3642575-b3ee-4488-b654-5bf9d3b8c935
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 02563f56cad211d5aa842d7607fa9f6005f18026
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ebb256876114c9c3260311fa09eb30f3067905b8
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470163"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180314"
 ---
 # <a name="troubleshoot-remote-web-access-connectivity-in-windows-server-essentials"></a>Windows Server Essentials 的遠端 Web 存取連線問題疑難排解
 
@@ -53,7 +52,7 @@ ms.locfileid: "85470163"
 
   - 請針對下列連接埠，在路由器上設定連接埠轉送：
 
-    |服務或通訊協定|連接埠|
+    |服務或通訊協定|Port|
     |-------------------------|----------|
     |HTTP|TCP 80|
     |HTTPS|TCP 443|

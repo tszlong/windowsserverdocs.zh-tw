@@ -2,18 +2,17 @@
 title: 安裝 Windows Server Essentials
 description: 說明如何安裝和自訂 Windows Server Essentials
 ms.date: 01/02/2017
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: fdf020cd-3184-4886-9f9d-7d729a89057e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 362ab35973ae62f0774834d059a30a0712d2baf5
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 5b102c6e018eed77fdd350d13a196c83fc7ac893
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470983"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181194"
 ---
 # <a name="install-windows-server-essentials"></a>安裝 Windows Server Essentials
 

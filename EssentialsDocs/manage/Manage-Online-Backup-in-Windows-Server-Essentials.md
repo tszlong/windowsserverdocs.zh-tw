@@ -2,18 +2,17 @@
 title: 在 Windows Server Essentials 中管理線上備份
 description: 說明如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 95a9f593-fad7-4335-bd4d-c7bb8c033efb
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 5c9f6dc91d5bc46d3be6e20e105530a9dca2b548
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b3a9ceca5de9971f77175052a604d3e22de07036
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470649"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180944"
 ---
 # <a name="manage-online-backup-in-windows-server-essentials"></a>在 Windows Server Essentials 中管理線上備份
 
@@ -334,7 +333,7 @@ ms.locfileid: "85470649"
 
 1. 開啟 [儀表板]。
 
-2. 執行下列其中一個動作：
+2. 請執行下列其中一項：
 
      Windows Server Essentials：在流覽窗格中，按一下 [警示] 圖示 \( 可能是 [重大]、[警告] 或 [資訊] \) 。 這會開啟 [警示檢視器]。
 
@@ -403,7 +402,7 @@ ms.locfileid: "85470649"
 
     [安裝]**** 頁面隨即顯示。 安裝開始時，會顯示進度列指示器，並會顯示安裝的進度。 當安裝完成時，您會收到一則訊息，指出已成功安裝 Azure 備份增益集。
 
-4. 按一下 [完成] ****。
+4. 按一下 [完成] 。
 
 5. 關閉並重新開啟 [儀表板]。
 
