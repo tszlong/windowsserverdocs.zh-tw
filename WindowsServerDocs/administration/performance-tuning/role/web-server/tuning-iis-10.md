@@ -7,12 +7,12 @@ ms.topic: landing-page
 ms.author: davso; ericam; yashi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 5e001ef3a51c93e3b1c7e4bf3d1af0a014243e56
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 8617c285ae55521e4e301b5c6b74f389df6b32d2
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471213"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409448"
 ---
 # <a name="tuning-iis-100"></a>調整 IIS 10.0
 
@@ -43,8 +43,6 @@ HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Http\Parameters
 ```
 
 **注意**  如果 HTTP 服務已在執行中，您必須將它重新開機，變更才會生效。
-
-雙 
 
 ## <a name="cache-management-settings"></a>快取管理設定
 
@@ -142,12 +140,12 @@ HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\InetInfo\Parameters\ThreadP
 
 **System.webserver/caching**
 
-|屬性|描述|預設|
-|--- |--- |--- |
-|啟用|當設定為**False**時，會停用使用者模式 IIS 快取。 當快取點擊率非常少時，您可以完全停用快取，以避免與快取程式碼路徑相關聯的額外負荷。 停用使用者模式快取並不會停用核心模式快取。|True|
-|enableKernelCache|當設定為**False**時，會停用核心模式快取。|True|
-|maxCacheSize|將 IIS 使用者模式快取大小限制為指定的大小（以 Mb 為單位）。 IIS 會根據可用的記憶體調整預設值。 根據經常存取的檔案集合大小與 RAM 或 IIS 進程位址空間的數量，仔細選擇值。|0|
-|maxResponseSize|快取檔案，最多可達指定的大小。 實際值取決於資料集內最大檔案的數目和大小與可用的 RAM。 快取大型、經常要求的檔案可以減少 CPU 使用量、磁片存取和相關聯的延遲。|262144|
+| 屬性 | 描述 | 預設 |
+|--|--|--|
+| 啟用 | 當設定為**False**時，會停用使用者模式 IIS 快取。 當快取點擊率非常少時，您可以完全停用快取，以避免與快取程式碼路徑相關聯的額外負荷。 停用使用者模式快取並不會停用核心模式快取。 | True |
+| enableKernelCache | 當設定為**False**時，會停用核心模式快取。 | True |
+| maxCacheSize | 將 IIS 使用者模式快取大小限制為指定的大小（以 Mb 為單位）。 IIS 會根據可用的記憶體調整預設值。 根據經常存取的檔案集合大小與 RAM 或 IIS 進程位址空間的數量，仔細選擇值。 | 0 |
+| maxResponseSize | 快取檔案，最多可達指定的大小。 實際值取決於資料集內最大檔案的數目和大小與可用的 RAM。 快取大型、經常要求的檔案可以減少 CPU 使用量、磁片存取和相關聯的延遲。 | 262144 |
 
 ## <a name="compression-behavior-settings"></a>壓縮行為設定
 
@@ -157,22 +155,22 @@ HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\InetInfo\Parameters\ThreadP
 
 **System.webserver/HTTPCompression**
 
-|屬性|描述|預設|
-|--- |--- |--- |
-|staticCompression-EnableCpuUsage<br><br>staticCompression-DisableCpuUsage<br><br>dynamicCompression-EnableCpuUsage<br><br>dynamicCompression-DisableCpuUsage|如果目前的 CPU 使用量百分比高於或低於指定的限制，則啟用或停用壓縮。<br><br>從 IIS 7.0 開始，如果穩定狀態 CPU 的增加高於停用閾值，則會自動停用壓縮。 如果 CPU 低於啟用閾值，則會啟用壓縮。|分別為50、100、50和90|
-|directory|指定臨時儲存和快取靜態檔案壓縮版本的目錄。 如果經常存取此目錄，請考慮將它移出系統磁片磁碟機。|%SystemDrive%\inetpub\temp\IIS Temporary Compressed Files|
-|doDiskSpaceLimiting|指定所有壓縮檔案可佔用的磁碟空間大小是否有限制。 壓縮檔案會儲存在**目錄**屬性所指定的壓縮目錄中。|True|
-|maxDiskSpaceUsage|指定壓縮檔案在壓縮目錄中可佔用的磁碟空間位元組數。<br><br>如果所有壓縮內容的總大小太大，則此設定可能需要增加。|100 MB|
+| 屬性 | 描述 | 預設 |
+|--|--|--|
+| staticCompression-EnableCpuUsage<br><br>staticCompression-DisableCpuUsage<br><br>dynamicCompression-EnableCpuUsage<br><br>dynamicCompression-DisableCpuUsage | 如果目前的 CPU 使用量百分比高於或低於指定的限制，則啟用或停用壓縮。<br><br>從 IIS 7.0 開始，如果穩定狀態 CPU 的增加高於停用閾值，則會自動停用壓縮。 如果 CPU 低於啟用閾值，則會啟用壓縮。 | 分別為50、100、50和90 |
+| directory | 指定臨時儲存和快取靜態檔案壓縮版本的目錄。 如果經常存取此目錄，請考慮將它移出系統磁片磁碟機。 | %SystemDrive%\inetpub\temp\IIS Temporary Compressed Files |
+| doDiskSpaceLimiting | 指定所有壓縮檔案可佔用的磁碟空間大小是否有限制。 壓縮檔案會儲存在**目錄**屬性所指定的壓縮目錄中。 | True |
+| maxDiskSpaceUsage | 指定壓縮檔案在壓縮目錄中可佔用的磁碟空間位元組數。<br><br>如果所有壓縮內容的總大小太大，則此設定可能需要增加。 | 100 MB |
 
 **System.webserver/urlCompression**
 
-|屬性|描述|預設|
-|--- |--- |--- |
-|doStaticCompression|指定是否壓縮靜態內容。|True|
-|doDynamicCompression|指定是否壓縮動態內容。|True|
+| 屬性 | 描述 | 預設 |
+|--|--|--|
+| doStaticCompression | 指定是否壓縮靜態內容。 | True |
+| doDynamicCompression | 指定是否壓縮動態內容。 | True |
 
-**注意**對於執行 IIS 10.0 但平均 CPU 使用率很低的伺服器，請考慮啟用動態內容的壓縮，特別是當回應很大時。 您應該先在測試環境中完成這項作業，以評估從基準對 CPU 使用量的影響。
-
+> [!NOTE]
+> 對於執行 IIS 10.0 但平均 CPU 使用率很低的伺服器，請考慮啟用動態內容的壓縮，特別是當回應很大時。 您應該先在測試環境中完成這項作業，以評估從基準對 CPU 使用量的影響。
 
 ### <a name="tuning-the-default-document-list"></a>微調預設檔案清單
 
@@ -186,10 +184,10 @@ HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\InetInfo\Parameters\ThreadP
 
 **System.webserver/defaultDocument**
 
-|屬性|描述|預設|
-|--- |--- |--- |
-|已啟用|指定啟用預設檔。|True|
-|&lt;files &gt; 元素|指定設定為預設檔的檔案名。|預設清單是 Default.htm、預設值 .asp、Index.htm、Index.html、Iisstart.htm 和 default.aspx。|
+| 屬性 | 描述 | 預設 |
+|--|--|--|
+| 已啟用 | 指定啟用預設檔。 | True |
+| `<files>` 項目 | 指定設定為預設檔的檔案名。 | 預設清單是 Default.htm、預設值 .asp、Index.htm、Index.html、Iisstart.htm 和 default.aspx。 |
 
 ## <a name="central-binary-logging"></a>中央二進位記錄
 
@@ -199,17 +197,16 @@ HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\InetInfo\Parameters\ThreadP
 
 **system.web/log**
 
-|屬性|描述|預設|
-|--- |--- |--- |
-|centralLogFileMode|指定伺服器的記錄模式。 將此值變更為 CentralBinary，以啟用中央二進位記錄。|網站|
+| 屬性 | 描述 | 預設 |
+|--|--|--|
+| centralLogFileMode | 指定伺服器的記錄模式。 將此值變更為 CentralBinary，以啟用中央二進位記錄。 | 網站 |
 
 **system.web/log/centralBinaryLogFile**
 
-|屬性|描述|預設|
-|--- |--- |--- |
-|已啟用|指定是否啟用中央二進位記錄。|False|
-|directory|指定寫入記錄專案的目錄。|%SystemDrive%\inetpub\logs\LogFiles|
-
+| 屬性 | 描述 | 預設 |
+|--|--|--|
+| 已啟用 | 指定是否啟用中央二進位記錄。 | False |
+| directory | 指定寫入記錄專案的目錄。 | %SystemDrive%\inetpub\logs\LogFiles |
 
 ## <a name="application-and-site-tunings"></a>應用程式和網站 tunings
 
@@ -217,16 +214,16 @@ HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\InetInfo\Parameters\ThreadP
 
 **system.webserver/applicationPools/applicationPoolDefaults**
 
-|屬性|描述|預設|
-|--- |--- |--- |
-|queueLength|表示在未來的要求遭到拒絕之前，HTTP.sys 已排入應用程式集區的要求數目。 當超過這個屬性的值時，IIS 會拒絕後續的要求，並出現503錯誤。<br><br>如果觀察到503錯誤，請考慮為與高延遲後端資料存放區進行通訊的應用程式增加這種情況。|1000|
-|enable32BitAppOnWin64|當為 True 時，可讓32位應用程式在具有64位處理器的電腦上執行。<br><br>如果記憶體耗用量是問題，請考慮啟用32位模式。 由於指標大小和指令大小較小，因此32位應用程式所使用的記憶體會比64位應用程式少。 在64位電腦上執行32位應用程式的缺點是，使用者模式位址空間限制為 4 GB。|False|
+| 屬性 | 描述 | 預設 |
+|--|--|--|
+| queueLength | 表示在未來的要求遭到拒絕之前，HTTP.sys 已排入應用程式集區的要求數目。 當超過這個屬性的值時，IIS 會拒絕後續的要求，並出現503錯誤。<br><br>如果觀察到503錯誤，請考慮為與高延遲後端資料存放區進行通訊的應用程式增加這種情況。 | 1000 |
+| enable32BitAppOnWin64 | 當為 True 時，可讓32位應用程式在具有64位處理器的電腦上執行。<br><br>如果記憶體耗用量是問題，請考慮啟用32位模式。 由於指標大小和指令大小較小，因此32位應用程式所使用的記憶體會比64位應用程式少。 在64位電腦上執行32位應用程式的缺點是，使用者模式位址空間限制為 4 GB。 | False |
 
 **system.web/sites/VirtualDirectoryDefault**
 
-|屬性|描述|預設|
-|--- |--- |--- |
-|allowSubDirConfig|指定 IIS 是否會尋找低於目前層級的內容目錄中的 web.config 檔案（True），或找不到低於目前層級（False）之內容目錄中的 web.config 檔案。 藉由強加簡單的限制，僅允許在虛擬目錄中進行設定，IISÂ10.0 可以知道，除非** / &lt; name &gt; .htm**是虛擬目錄，否則不應尋找設定檔。 略過額外的檔案作業，可以大幅改善具有一組大量隨機存取之靜態內容的網站效能。|True|
+| 屬性 | 描述 | 預設 |
+|--|--|--|
+| allowSubDirConfig | 指定 IIS 是否會尋找低於目前層級的內容目錄中的 web.config 檔案（True），或找不到低於目前層級（False）之內容目錄中的 web.config 檔案。 藉由強加簡單的限制，僅允許在虛擬目錄中進行設定，IISÂ10.0 可以知道，除非** / &lt; name &gt; .htm**是虛擬目錄，否則不應尋找設定檔。 略過額外的檔案作業，可以大幅改善具有一組大量隨機存取之靜態內容的網站效能。 | True |
 
 ## <a name="managing-iis-100-modules"></a>管理 IIS 10.0 模組
 
@@ -244,25 +241,24 @@ IIS 10.0 已分解成多個使用者可擴充的模組，以支援模組化結�
 
 **System.webserver/asp/cache**
 
-|屬性|描述|預設|
-|--- |--- |--- |
-|diskTemplateCacheDirectory|當記憶體內部快取溢位時，ASP 用來儲存已編譯之範本的目錄名稱。<br><br>建議：將設定為不常使用的目錄，例如，未與作業系統、IIS 記錄檔或其他經常存取的內容共用的磁片磁碟機。|%SystemDrive%\inetpub\temp\ASP Compiled Templates|
-|maxDiskTemplateCacheFiles|指定可在磁片上快取的已編譯 ASP 範本數目上限。<br><br>建議：設定為0x7FFFFFFF 的最大值。|2000|
-|scriptFileCacheSize|這個屬性會指定可在記憶體中快取的已編譯 ASP 範本數目上限。<br><br>建議：至少設定為與應用程式集區所服務的常用 ASP 腳本數目一樣多。 可能的話，請將設定為與記憶體限制允許的數目一樣多的 ASP 範本。|500|
-|scriptEngineCacheMax|指定將在記憶體中保持快取的腳本引擎數目上限。<br><br>建議：至少設定為與應用程式集區所服務的常用 ASP 腳本數目一樣多。 可能的話，請將設定為與記憶體限制所允許的數目一樣多的腳本引擎。|250|
+| 屬性 | 描述 | 預設 |
+|--|--|--|
+| diskTemplateCacheDirectory | 當記憶體內部快取溢位時，ASP 用來儲存已編譯之範本的目錄名稱。<br><br>建議：將設定為不常使用的目錄，例如，未與作業系統、IIS 記錄檔或其他經常存取的內容共用的磁片磁碟機。 | %SystemDrive%\inetpub\temp\ASP Compiled Templates |
+| maxDiskTemplateCacheFiles | 指定可在磁片上快取的已編譯 ASP 範本數目上限。<br><br>建議：設定為0x7FFFFFFF 的最大值。 | 2000 |
+| scriptFileCacheSize | 這個屬性會指定可在記憶體中快取的已編譯 ASP 範本數目上限。<br><br>建議：至少設定為與應用程式集區所服務的常用 ASP 腳本數目一樣多。 可能的話，請將設定為與記憶體限制允許的數目一樣多的 ASP 範本。 | 500 |
+| scriptEngineCacheMax | 指定將在記憶體中保持快取的腳本引擎數目上限。<br><br>建議：至少設定為與應用程式集區所服務的常用 ASP 腳本數目一樣多。 可能的話，請將設定為與記憶體限制所允許的數目一樣多的腳本引擎。 | 250 |
 
 **System.webserver/asp/限制**
 
-|屬性|描述|預設|
-|--- |--- |--- |
-|processorThreadMax|指定 ASP 可以建立的每個處理器的背景工作執行緒最大數目。 如果目前的設定不足以處理負載，則增加，這可能會在服務要求或導致 CPU 資源使用量過低時造成錯誤。|25|
+| 屬性 | 描述 | 預設 |
+|--|--|--|
+| processorThreadMax | 指定 ASP 可以建立的每個處理器的背景工作執行緒最大數目。 如果目前的設定不足以處理負載，則增加，這可能會在服務要求或導致 CPU 資源使用量過低時造成錯誤。 | 25 |
 
 **System.webserver/asp/comPlus**
 
-|屬性|描述|預設|
-|--- |--- |--- |
-|executeInMta|如果在 IIS 提供 ASP 內容時偵測到錯誤或失敗，則設為**True** 。 例如，裝載多個隔離的網站（其中每個網站都在自己的背景工作進程下執行）時，就會發生這種情況。 錯誤通常會從事件檢視器中的 COM + 報告。 此設定會啟用 ASP 中的多執行緒單元模型。|False|
-
+| 屬性 | 描述 | 預設 |
+|--|--|--|
+| executeInMta | 如果在 IIS 提供 ASP 內容時偵測到錯誤或失敗，則設為**True** 。 例如，裝載多個隔離的網站（其中每個網站都在自己的背景工作進程下執行）時，就會發生這種情況。 錯誤通常會從事件檢視器中的 COM + 報告。 此設定會啟用 ASP 中的多執行緒單元模型。 | False |
 
 ## <a name="aspnet-concurrency-setting"></a>ASP.NET 並行設定
 
@@ -301,13 +297,12 @@ IIS 10.0 已分解成多個使用者可擴充的模組，以支援模組化結�
 
 **system.webserver/applicationPools/ApplicationPoolDefaults/回收/periodicRestart**
 
-|屬性|描述|預設|
-|--- |--- |--- |
-|memory|如果虛擬記憶體耗用量超過指定的限制（以 kb 為單位），則啟用進程回收。 對於具有小型、2 GB 位址空間的32位電腦而言，這是很有用的設定。 這有助於避免因為記憶體不足的錯誤而導致失敗的要求。|0|
-|privateMemory|如果私用記憶體配置超過指定的限制（以 kb 為單位），則啟用進程回收。|0|
-|requests|在特定數目的要求之後，啟用進程回收。|0|
-|time|在指定的時間週期之後啟用進程回收。|29:00:00|
-
+| 屬性 | 描述 | 預設 |
+|--|--|--|
+| 記憶體 | 如果虛擬記憶體耗用量超過指定的限制（以 kb 為單位），則啟用進程回收。 對於具有小型、2 GB 位址空間的32位電腦而言，這是很有用的設定。 這有助於避免因為記憶體不足的錯誤而導致失敗的要求。 | 0 |
+| privateMemory | 如果私用記憶體配置超過指定的限制（以 kb 為單位），則啟用進程回收。 | 0 |
+| requests | 在特定數目的要求之後，啟用進程回收。 | 0 |
+| time | 在指定的時間週期之後啟用進程回收。 | 29:00:00 |
 
 ## <a name="dynamic-worker-process-page-out-tuning"></a>動態背景工作-進程頁面超微調
 
@@ -317,9 +312,8 @@ IIS 10.0 已分解成多個使用者可擴充的模組，以支援模組化結�
 
 在我們進入細節之前，我們必須記住，如果沒有記憶體限制，最好只將網站設定為永不暫停或終止。 畢竟，如果是電腦上唯一的工作者進程，thereâs 就不會有太大的價值。
 
-**注意**  萬一網站執行不穩定的程式碼（例如，有記憶體流失的程式碼，或不穩定的程式碼），將網站設定為在閒置時終止，可以是修正程式碼 bug 的快速又不好的替代方式。 這不是我們建議的做法，但在借助電腦中，使用這項功能做為清除機制可能會比較好，而更永久性的解決方案則在運作中。\]
-
-雙 
+> [!NOTE]
+> 萬一網站執行不穩定的程式碼（例如，有記憶體流失的程式碼，或不穩定的程式碼），將網站設定為在閒置時終止，可以是修正程式碼 bug 的快速又不好的替代方式。 這不是我們建議的做法，但在借助電腦中，使用這項功能做為清除機制可能會比較好，而更永久性的解決方案則在運作中。\]
 
 另一個要考慮的因素是，如果網站確實使用海量儲存體，則暫停進程本身會收取付費，因為電腦必須將工作者進程所使用的資料寫入磁片。 如果工作者進程正在使用大量的記憶體，則暫停它的成本可能會比必須等待它啟動備份的代價高。
 
@@ -327,22 +321,22 @@ IIS 10.0 已分解成多個使用者可擴充的模組，以支援模組化結�
 
 在理想的情況下，您將設定為暫停或終止的網站是每天都有訪客的網站，但不足以保證隨時保持作用中狀態。 這些通常是一天左右約20名唯一訪客的網站。 您可以使用網站的記錄檔來分析流量模式，並計算平均每日流量。
 
-請記住，一旦特定使用者連線到網站之後，通常至少會保留一段時間、提出額外的要求，因此只計算每日要求可能無法正確反映實際的流量模式。 若要取得更精確的閱讀，您也可以使用工具（例如 Microsoft Excel）來計算要求之間的平均時間。 例如：
+請記住，一旦特定使用者連線到網站之後，通常至少會保留一段時間、提出額外的要求，因此只計算每日要求可能無法正確反映實際的流量模式。 若要取得更精確的閱讀，您也可以使用工具（例如 Microsoft Excel）來計算要求之間的平均時間。 例如︰
 
-||要求 URL|要求時間|差異|
-|--- |--- |--- |--- |
-|1|/SourceSilverLight/Geosource.web/grosource.html|10:01||
-|2|/SourceSilverLight/Geosource.web/sliverlight.js|10:10|0:09|
-|3|/SourceSilverLight/Geosource.web/clientbin/geo/1.aspx|10:11|0:01|
-|4|/lClientAccessPolicy.xml|10:12|0:01|
-|5|/SourceSilverLight/GeosourcewebService/服務 .asmx|10:23|0:11|
-|6|/SourceSilverLight/Geosource. web/GeoSearchServer ... ¦。|11:50|1:27|
-|7|/rest/Services/CachedServices/Silverlight_load_la ... ¦|12:50|1:00|
-|8|/rest/Services/CachedServices/Silverlight_basemap ... ¦。|12:51|0:01|
-|9|/rest/Services/DynamicService/Silverlight_basemap ... ¦。|12:59|0:08|
-|10|/rest/Services/CachedServices/Ortho_2004_cache .。。|13:40|0:41|
-|11|/rest/Services/CachedServices/Ortho_2005_cache.js|13:40|0:00|
-|12|/rest/Services/CachedServices/OrthoBaseEngine.aspx|13:41|0:01|
+| Number | 要求 URL | 要求時間 | 差異 |
+|--|--|--|--|
+| 1 | /SourceSilverLight/Geosource.web/grosource.html | 10:01 |  |
+| 2 | /SourceSilverLight/Geosource.web/sliverlight.js | 10:10 | 0:09 |
+| 3 | /SourceSilverLight/Geosource.web/clientbin/geo/1.aspx | 10:11 | 0:01 |
+| 4 | /lClientAccessPolicy.xml | 10:12 | 0:01 |
+| 5 | /SourceSilverLight/GeosourcewebService/服務 .asmx | 10:23 | 0:11 |
+| 6 | /SourceSilverLight/Geosource. web/GeoSearchServer ... ¦。 | 11:50 | 1:27 |
+| 7 | /rest/Services/CachedServices/Silverlight_load_la ... ¦ | 12:50 | 1:00 |
+| 8 | /rest/Services/CachedServices/Silverlight_basemap ... ¦。 | 12:51 | 0:01 |
+| 9 | /rest/Services/DynamicService/Silverlight_basemap ... ¦。 | 12:59 | 0:08 |
+| 10 | /rest/Services/CachedServices/Ortho_2004_cache .。。 | 13:40 | 0:41 |
+| 11 | /rest/Services/CachedServices/Ortho_2005_cache.js | 13:40 | 0:00 |
+| 12 | /rest/Services/CachedServices/OrthoBaseEngine.aspx | 13:41 | 0:01 |
 
 不過，困難的部分是找出要套用的設定有何意義。 在我們的案例中，網站會從使用者取得一堆要求，而上表顯示在4小時內總共發生4個唯一會話。 使用應用程式集區的背景工作進程暫止的預設設定時，網站會在預設超時20分鐘後終止，這表示每個使用者都會經歷網站微調迴圈。 這讓它成為工作者進程暫止的理想候選，因為在大部分的情況下，網站都處於閒置狀態，因此暫停它會節省資源，並允許使用者幾乎立即到達網站。
 
@@ -352,9 +346,9 @@ IIS 10.0 已分解成多個使用者可擴充的模組，以支援模組化結�
 
 若要設定預先固定的頁面檔案大小，您必須計算其理想大小，這取決於您要暫停的網站數目，以及它們所使用的記憶體數量。 如果使用中的工作者進程的平均為 200 MB，而您在即將暫停的伺服器上有500個網站，則分頁檔案在 \* 分頁檔的基底大小至少應為（200 500） MB （在我們的範例中為 base + 100 GB）。
 
-**注意**當網站暫止時，它們會耗用大約 6 MB，因此在我們的案例中，如果所有網站都已暫止，則記憶體使用量將會約 3 GB。 不過事實上，youâre 可能永遠都不會同時全部暫停。
+> [!NOTE]
+> 當網站暫止時，它們會耗用大約 6 MB，因此在我們的案例中，如果所有網站都已暫止，則記憶體使用量將會約 3 GB。 不過事實上，youâre 可能永遠都不會同時全部暫停。
 
- 
 ## <a name="transport-layer-security-tuning-parameters"></a>傳輸層安全性調整參數
 
 使用傳輸層安全性（TLS）會造成額外的 CPU 成本。 TLS 的最昂貴元件是建立會話建立的成本，因為它牽涉到完整的交握。 重新連接、加密和解密也會增加成本。 如需更好的 TLS 效能，請執行下列動作：
@@ -365,12 +359,10 @@ IIS 10.0 已分解成多個使用者可擴充的模組，以支援模組化結�
 
 -   選擇性地將加密套用到需要它的網頁或部分，而不是整個網站。
 
-**注意**
--   較大的索引鍵可提供更高的安全性，但也會使用較多的 CPU 時間。
+> [!NOTE]
+> - 較大的索引鍵可提供更高的安全性，但也會使用較多的 CPU 時間。
+> - 所有元件可能不需要加密。 不過，混合純 HTTP 和 HTTPS 可能會導致快顯警告，而不是網頁上的所有內容都是安全的。
 
--   所有元件可能不需要加密。 不過，混合純 HTTP 和 HTTPS 可能會導致快顯警告，而不是網頁上的所有內容都是安全的。
-
- 
 ## <a name="internet-server-application-programming-interface-isapi"></a>網際網路伺服器應用程式開發介面（ISAPI）
 
 ISAPI 應用程式不需要任何特殊的調整參數。 如果您撰寫私人 ISAPI 延伸模組，請確定它是針對效能和資源使用所撰寫的。
@@ -389,7 +381,6 @@ IIS 10.0 中的整合式管線模型可提供高程度的彈性和擴充性。 �
 
 當您在隔離模式下執行多個包含 ASP.NET 腳本的主機時（每個網站一個應用程式集區），請監視記憶體使用量。 請確定伺服器有足夠的 RAM 可滿足所需的同時執行應用程式集區數目。 請考慮使用多個應用程式域，而不是多個隔離的進程。
 
-
 ## <a name="other-issues-that-affect-iis-performance"></a>其他會影響 IIS 效能的問題
 
 下列問題可能會影響 IIS 效能：
@@ -403,5 +394,6 @@ IIS 10.0 中的整合式管線模型可提供高程度的彈性和擴充性。 �
     基於效能考慮，IIS 不建議使用 CGI 應用程式來處理要求。 經常建立和刪除 CGI 進程牽涉到相當大的負擔。 更好的替代方案包括使用 FastCGI、ISAPI 應用程式腳本和 ASP 或 ASP.NET 腳本。 每個選項都可以使用隔離。
 
 ## <a name="additional-references"></a>其他參考
+
 - [Web 服務器效能調整](index.md)
 - [HTTP 1.1/2 調整](http-performance.md)

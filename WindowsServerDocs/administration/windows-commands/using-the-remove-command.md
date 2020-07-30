@@ -1,5 +1,5 @@
 ---
-title: remove
+title: 使用 remove 命令
 description: 移除的參考文章，這會移除各種與驅動程式相關的資訊。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 42d429099c135c1376cc831bf59f3d1aaa27dcef
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: dc839eee2a5c1bcc21902b214632152b50175294
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932369"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409859"
 ---
-# <a name="remove"></a>remove
+# <a name="using-the-remove-command"></a>使用 remove 命令
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 ## <a name="subcommands"></a>子
-|Subommand|Description|
+|Subommand|描述|
 |-------|--------|
 |[使用移除映射命令](using-the-remove-image-command.md)|從伺服器移除開機或安裝映射。|
 |[使用 ImageGroup 命令](using-the-remove-imagegroup-command.md)|從伺服器移除映射群組。|

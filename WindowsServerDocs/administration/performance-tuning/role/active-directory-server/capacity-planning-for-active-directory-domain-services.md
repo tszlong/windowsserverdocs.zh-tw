@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: v-tea; kenbrunf
 author: teresa-motiv
 ms.date: 7/3/2019
-ms.openlocfilehash: fc3f1dce4bb88d8581e3d8a890e3c121badaba71
-ms.sourcegitcommit: 6d7a394edefba684f7b6983c65026679c1b7a485
+ms.openlocfilehash: c0ff1c12a94abed86f6fa3cecd54894016dd3ad1
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84776720"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409488"
 ---
 # <a name="capacity-planning-for-active-directory-domain-services"></a>Active Directory Domain Services 的容量規劃
 
@@ -45,7 +45,7 @@ ms.locfileid: "84776720"
 
 在本文中，預期會有下列基準需求：
 
-- 讀者已閱讀並熟悉[Windows Server 2012 R2 的效能微調指導方針](https://docs.microsoft.com/previous-versions//dn529133(v=vs.85))。
+- 讀者已閱讀並熟悉[Windows Server 2012 R2 的效能微調指導方針](/previous-versions//dn529133(v=vs.85))。
 - Windows Server 平臺是以 x64 為基礎的架構。 但是即使您的 Active Directory 環境安裝在 Windows Server 2003 x86 上（現在超出支援週期的結尾），而且具有大小較少 1.5 GB 且可輕鬆保存在記憶體中的目錄資訊樹狀（DIT），本文的指導方針仍然適用。
 - 容量規劃是一種持續的程式，您應該定期回顧環境符合預期的程度。
 - 當硬體成本改變時，將會在多個硬體生命週期進行優化。 例如，記憶體會變得較低，每個核心的成本會降低，或不同儲存體選項的價格變更。
@@ -100,22 +100,22 @@ AD DS 的基本存放裝置需求和妥善撰寫之用戶端軟體的一般行�
 #### <a name="new-environment"></a>新增環境
 
 | 元件 | 估計 |
-|-|-|
-|儲存體/資料庫大小|每位使用者 40 KB 到 60 KB|
-|RAM|資料庫大小<br />基本作業系統建議<br />協力廠商應用程式|
-|網路|1 GB|
-|CPU|1000每個核心的並行使用者|
+|--|--|
+| 儲存體/資料庫大小 | 每位使用者 40 KB 到 60 KB |
+| RAM | 資料庫大小<br />基本作業系統建議<br />協力廠商應用程式 |
+| 網路 | 1 GB |
+| CPU | 1000每個核心的並行使用者 |
 
 #### <a name="high-level-evaluation-criteria"></a>高階評估準則
 
 | 元件 | 評估準則 | 規劃考量 |
-|-|-|-|
-|儲存體/資料庫大小|[[儲存體限制](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/cc961769(v=technet.10))] 中的「若要啟動磁碟重組釋放的磁碟空間」一節| |
-|儲存體/資料庫效能|<ul><li>"LogicalDisk （ *\<NTDS Database Drive\>* ） \Avg disk sec/Read，" "LogicalDisk （ *\<NTDS Database Drive\>* ） \Avg disk Sec/Write，" "LogicalDisk （ *\<NTDS Database Drive\>* ） \Avg Disk sec/Transfer"</li><li>"LogicalDisk （ *\<NTDS Database Drive\>* ） \ Reads/sec，" "LogicalDisk （ *\<NTDS Database Drive\>* ） \ Writes/sec，" "LogicalDisk （ *\<NTDS Database Drive\>* ） \ transfer/sec"</li></ul>|<ul><li>儲存體有兩個要解決的問題<ul><li>可用空間，其大小為現今的主軸型和 SSD 型儲存體，大部分的 AD 環境並不相關。</li> <li>可用的輸入/輸出（IO）作業–在許多環境中，這通常會被忽略。 但請務必只評估沒有足夠 RAM 的環境，將整個 NTDS 資料庫載入記憶體中。</li></ul><li>儲存體可以是複雜的主題，而且應該包含硬體廠商的專業知識以進行適當的調整。 特別是更複雜的案例，例如 SAN、NAS 和 iSCSI 案例。 不過，一般而言，每 Gb 儲存體的成本通常會直接反對者為每個 IO 的成本：<ul><li>RAID 5 的每 Gb 成本低於 Raid 1，但 Raid 1 的每個 IO 成本較低</li><li>以主軸為基礎的硬碟每 Gb 的成本較低，但 Ssd 的每個 IO 成本較低</li></ul><li>重新開機電腦或 Active Directory Domain Services 服務之後，可延伸儲存引擎（ESE）快取是空的，而且在快取會備妥時，效能將會與磁片系結。</li><li>在大部分的環境中，AD 會以隨機模式對磁片進行大量讀取的 i/o，否定快取和讀取優化策略的優點。  此外，AD 在記憶體中的快取比大部分的儲存系統快取更大。</li></ul>
-|RAM|<ul><li>資料庫大小</li><li>基本作業系統建議</li><li>協力廠商應用程式</li></ul>|<ul><li>存放裝置是電腦中最慢的元件。 可以在 RAM 中保存的越多，就越不需要移至磁片。</li><li>請確定配置足夠的 RAM 來儲存作業系統、代理程式（防毒軟體、備份、監視）、NTDS 資料庫和一段時間的成長。</li><li>對於將 RAM 數量最大化的環境（例如衛星位置）或不可行（DIT 太大），請參考儲存體一節，以確保儲存體的大小正確。</li></ul>|
-|網路|<ul><li>「網路介面（ \* ） \Bytes Received/sec」</li><li>「Network Interface （ \* ） \Bytes Sent/sec」|<ul><li>一般來說，從 DC 傳送的流量超過傳送至 DC 的流量。</li><li>因為交換的乙太網路連線是全雙工的，所以輸入和輸出網路流量需要個別調整大小。</li><li>合併 Dc 的數目會增加用來將回應傳回給每個 DC 的用戶端要求的頻寬量，但會接近整個網站的線性。</li><li>如果移除附屬位置 Dc，別忘了將衛星 DC 的頻寬新增至中樞 Dc，並用來評估會有多少 WAN 流量。</li></ul>|
-|CPU|<ul><li>「邏輯磁片（ *\<NTDS Database Drive\>* ） \Avg Disk sec/Read」</li><li>「進程（lsass） \\ % 處理器時間」</li></ul>|<ul><li>將儲存區排除為瓶頸之後，請解決所需的計算能力。</li><li>雖然不是完全線性，但在特定範圍內的所有伺服器上使用的處理器核心數目（例如網站）可以用來測量支援用戶端總負載所需的處理器數量。 新增在範圍內的所有系統上維護目前服務層級所需的最小值。</li><li>處理器速度的變更，包括電源管理的相關變更，會影響從目前環境衍生的數位。 一般來說，無法精確地評估從 2.5 GHz 處理器到 3 GHz 處理器的情況，將會減少所需的 Cpu 數目。</li></ul>|
-|NetLogon|<ul><li>「Netlogon （ \* ） \Semaphore 取得」</li><li>「Netlogon （ \* ） \Semaphore 超時」</li><li>「Netlogon （ \* ） \Average 信號保存時間」</li></ul>|<ul><li>Net Logon 安全通道/MaxConcurrentAPI 只會影響具有 NTLM 驗證和（或） PAC 驗證的環境。 在 Windows Server 2008 之前的作業系統版本中，預設會開啟 PAC 驗證。 這是用戶端設定，因此 Dc 會受到影響，直到所有用戶端系統上的關閉為止。</li><li>如果未正確調整大小，則具有大量交叉信任驗證（包括樹系內信任）的環境會有更大的風險。</li><li>伺服器合併會增加跨信任驗證的平行存取。</li><li>當使用者重新驗證對新叢集節點的移時，需要進行激增，例如叢集轉移失敗。</li><li>個別用戶端系統（例如叢集）可能也需要微調。</li></ul>|
+|--|--|--|
+| 儲存體/資料庫大小 | [[儲存體限制](/previous-versions/windows/it-pro/windows-2000-server/cc961769(v=technet.10))] 中的「若要啟動磁碟重組釋放的磁碟空間」一節 |  |
+| 儲存體/資料庫效能 | <ul><li>"LogicalDisk （ *\<NTDS Database Drive\>* ） \Avg disk sec/Read，" "LogicalDisk （ *\<NTDS Database Drive\>* ） \Avg disk Sec/Write，" "LogicalDisk （ *\<NTDS Database Drive\>* ） \Avg Disk sec/Transfer"</li><li>"LogicalDisk （ *\<NTDS Database Drive\>* ） \ Reads/sec，" "LogicalDisk （ *\<NTDS Database Drive\>* ） \ Writes/sec，" "LogicalDisk （ *\<NTDS Database Drive\>* ） \ transfer/sec"</li></ul> | <ul><li>儲存體有兩個要解決的問題<ul><li>可用空間，其大小為現今的主軸型和 SSD 型儲存體，大部分的 AD 環境並不相關。</li> <li>可用的輸入/輸出（IO）作業–在許多環境中，這通常會被忽略。 但請務必只評估沒有足夠 RAM 的環境，將整個 NTDS 資料庫載入記憶體中。</li></ul><li>儲存體可以是複雜的主題，而且應該包含硬體廠商的專業知識以進行適當的調整。 特別是更複雜的案例，例如 SAN、NAS 和 iSCSI 案例。 不過，一般而言，每 Gb 儲存體的成本通常會直接反對者為每個 IO 的成本：<ul><li>RAID 5 的每 Gb 成本低於 Raid 1，但 Raid 1 的每個 IO 成本較低</li><li>以主軸為基礎的硬碟每 Gb 的成本較低，但 Ssd 的每個 IO 成本較低</li></ul><li>重新開機電腦或 Active Directory Domain Services 服務之後，可延伸儲存引擎（ESE）快取是空的，而且在快取會備妥時，效能將會與磁片系結。</li><li>在大部分的環境中，AD 會以隨機模式對磁片進行大量讀取的 i/o，否定快取和讀取優化策略的優點。  此外，AD 在記憶體中的快取比大部分的儲存系統快取更大。</li></ul> |
+| RAM | <ul><li>資料庫大小</li><li>基本作業系統建議</li><li>協力廠商應用程式</li></ul> | <ul><li>存放裝置是電腦中最慢的元件。 可以在 RAM 中保存的越多，就越不需要移至磁片。</li><li>請確定配置足夠的 RAM 來儲存作業系統、代理程式（防毒軟體、備份、監視）、NTDS 資料庫和一段時間的成長。</li><li>對於將 RAM 數量最大化的環境（例如衛星位置）或不可行（DIT 太大），請參考儲存體一節，以確保儲存體的大小正確。</li></ul> |
+| 網路 | <ul><li>「網路介面（ \* ） \Bytes Received/sec」</li><li>「Network Interface （ \* ） \Bytes Sent/sec」 | <ul><li>一般來說，從 DC 傳送的流量超過傳送至 DC 的流量。</li><li>因為交換的乙太網路連線是全雙工的，所以輸入和輸出網路流量需要個別調整大小。</li><li>合併 Dc 的數目會增加用來將回應傳回給每個 DC 的用戶端要求的頻寬量，但會接近整個網站的線性。</li><li>如果移除附屬位置 Dc，別忘了將衛星 DC 的頻寬新增至中樞 Dc，並用來評估會有多少 WAN 流量。</li></ul> |
+| CPU | <ul><li>「邏輯磁片（ *\<NTDS Database Drive\>* ） \Avg Disk sec/Read」</li><li>「進程（lsass） \\ % 處理器時間」</li></ul> | <ul><li>將儲存區排除為瓶頸之後，請解決所需的計算能力。</li><li>雖然不是完全線性，但在特定範圍內的所有伺服器上使用的處理器核心數目（例如網站）可以用來測量支援用戶端總負載所需的處理器數量。 新增在範圍內的所有系統上維護目前服務層級所需的最小值。</li><li>處理器速度的變更，包括電源管理的相關變更，會影響從目前環境衍生的數位。 一般來說，無法精確地評估從 2.5 GHz 處理器到 3 GHz 處理器的情況，將會減少所需的 Cpu 數目。</li></ul> |
+| NetLogon | <ul><li>「Netlogon （*） \Semaphore 會取得「 </li> <li> netlogon （*） \Semaphore 超時」</li><li>「Netlogon （*） \Average 信號保存時間」</li></ul> | <ul><li>Net Logon 安全通道/MaxConcurrentAPI 只會影響具有 NTLM 驗證和（或） PAC 驗證的環境。 在 Windows Server 2008 之前的作業系統版本中，預設會開啟 PAC 驗證。 這是用戶端設定，因此 Dc 會受到影響，直到所有用戶端系統上的關閉為止。</li><li>如果未正確調整大小，則具有大量交叉信任驗證（包括樹系內信任）的環境會有更大的風險。</li><li>伺服器合併會增加跨信任驗證的平行存取。</li><li>當使用者重新驗證對新叢集節點的移時，需要進行激增，例如叢集轉移失敗。</li><li>個別用戶端系統（例如叢集）可能也需要微調。</li></ul> |
 
 ## <a name="planning"></a>規劃
 
@@ -155,15 +155,15 @@ AD DS 的基本存放裝置需求和妥善撰寫之用戶端軟體的一般行�
 
 ### <a name="calculation-summary-example"></a>計算摘要範例
 
-|元件|估計的記憶體（範例）|
-|-|-|
-|基本作業系統建議的 RAM （Windows Server 2008）|2 GB|
-|LSASS 內部工作|200 MB|
-|監視代理程式|100 MB|
-|防毒|100 MB|
-|資料庫（通用類別目錄）|8.5 GB |
-|要執行備份的緩衝緩衝，系統管理員登入而不受影響|1 GB|
-|總計|12 GB|
+| 元件 | 估計的記憶體（範例） |
+|--|--|
+| 基本作業系統建議的 RAM （Windows Server 2008） | 2 GB |
+| LSASS 內部工作 | 200 MB |
+| 監視代理程式 | 100 MB |
+| 防毒 | 100 MB |
+| 資料庫（通用類別目錄） | 8.5 GB |
+| 要執行備份的緩衝緩衝，系統管理員登入而不受影響 | 1 GB |
+| 總計 | 12 GB |
 
 **建議： 16 GB**
 
@@ -173,7 +173,7 @@ AD DS 的基本存放裝置需求和妥善撰寫之用戶端軟體的一般行�
 
 ### <a name="evaluating"></a>評估中
 
-這一節的目的不在於評估有關複寫流量的需求，這著重在傳輸 WAN 的流量，並已在[Active Directory 複寫流量](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/bb742457(v=technet.10))中全面涵蓋，而不是評估所需的總頻寬和網路容量，包括用戶端查詢、群組原則應用程式等等。 針對現有的環境，可以使用效能計數器「Network Interface （ \* ） \Bytes Received/sec」和「Network interface （ \* ） \Bytes Sent/sec」進行收集。 網路介面計數器的取樣間隔（15、30或60分鐘）。 任何較少的專案通常會太大，以致于良好的測量。任何較大的東西都會非常順暢地進行每日查看。
+這一節的目的不在於評估有關複寫流量的需求，這著重在傳輸 WAN 的流量，並已在[Active Directory 複寫流量](/previous-versions/windows/it-pro/windows-2000-server/bb742457(v=technet.10))中全面涵蓋，而不是評估所需的總頻寬和網路容量，包括用戶端查詢、群組原則應用程式等等。 針對現有的環境，可以使用效能計數器「Network Interface （ \* ） \Bytes Received/sec」和「Network interface （ \* ） \Bytes Sent/sec」進行收集。 網路介面計數器的取樣間隔（15、30或60分鐘）。 任何較少的專案通常會太大，以致于良好的測量。任何較大的東西都會非常順暢地進行每日查看。
 
 > [!NOTE]
 > 一般來說，DC 上的大部分網路流量都會在 DC 回應用戶端查詢時輸出。 這就是將焦點放在輸出流量的原因，不過建議您也針對輸入流量評估每一個環境。 相同的方法可用來處理和檢查輸入網路流量需求。 如需詳細資訊，請參閱知識庫文章[929851：在 Windows Vista 和 Windows Server 2008 中，Tcp/ip 的預設動態通訊埠範圍已變更](https://support.microsoft.com/kb/929851)。
@@ -182,7 +182,7 @@ AD DS 的基本存放裝置需求和妥善撰寫之用戶端軟體的一般行�
 
 規劃網路擴充性涵蓋兩個不同的類別：流量的數量，以及來自網路流量的 CPU 負載。 相較于本文中的某些其他主題，上述每個案例都是簡單明瞭的。
 
-在評估必須支援多少流量時，針對網路流量的 AD DS，有兩個唯一類別的容量規劃。 第一種是在網域控制站之間進行的複寫流量，會在參考[Active Directory 複寫流量](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/bb742457(v=technet.10))中全面涵蓋，而且仍與 AD DS 的目前版本有關。 第二個是網站間用戶端到伺服器的流量。 針對進行規劃的其中一個較簡單案例，主要會從用戶端收到相對於傳送回用戶端之大量資料的小型要求。 100 MB 通常適用于網站中每個伺服器最多5000位使用者的環境。 針對超過5000使用者的任何專案，建議使用 1 GB 的網路介面卡和接收端調整（RSS）支援。 若要驗證這種情況，特別是在伺服器匯總案例中，請查看 \* 網站中所有 dc 的網路介面（） \ 位元組/秒，將它們加在一起，然後除以目標網域控制站的數目，以確保有足夠的容量。 若要這麼做，最簡單的方法是使用 Windows 可靠性和效能監視器（之前稱為 Perfmon）中的「堆疊區域」視圖，確定所有計數器都已調整為相同。
+在評估必須支援多少流量時，針對網路流量的 AD DS，有兩個唯一類別的容量規劃。 第一種是在網域控制站之間進行的複寫流量，會在參考[Active Directory 複寫流量](/previous-versions/windows/it-pro/windows-2000-server/bb742457(v=technet.10))中全面涵蓋，而且仍與 AD DS 的目前版本有關。 第二個是網站間用戶端到伺服器的流量。 針對進行規劃的其中一個較簡單案例，主要會從用戶端收到相對於傳送回用戶端之大量資料的小型要求。 100 MB 通常適用于網站中每個伺服器最多5000位使用者的環境。 針對超過5000使用者的任何專案，建議使用 1 GB 的網路介面卡和接收端調整（RSS）支援。 若要驗證這種情況，特別是在伺服器匯總案例中，請查看 \* 網站中所有 dc 的網路介面（） \ 位元組/秒，將它們加在一起，然後除以目標網域控制站的數目，以確保有足夠的容量。 若要這麼做，最簡單的方法是使用 Windows 可靠性和效能監視器（之前稱為 Perfmon）中的「堆疊區域」視圖，確定所有計數器都已調整為相同。
 
 請考慮下列範例（也就是驗證一般規則是否適用于特定環境的一種真正、複雜的方式）。 會進行下列假設：
 
@@ -224,14 +224,14 @@ AD DS 的基本存放裝置需求和妥善撰寫之用戶端軟體的一般行�
 
 ### <a name="calculation-summary-example"></a>計算摘要範例
 
-|系統|尖峰頻寬|
-|-|-|
-DC 1|6.5 MB/秒|
-DC 2|6.25 MB/秒|
-|DC 3|6.25 MB/秒|
-|DC 4|5.75 MB/秒|
-|DC 5|4.75 MB/秒|
-|總計|28.5 MB/秒|
+| 系統 | 尖峰頻寬 |
+|--|--|
+| DC 1 | 6.5 MB/秒 |
+| DC 2 | 6.25 MB/秒 |
+| DC 3 | 6.25 MB/秒 |
+| DC 4 | 5.75 MB/秒 |
+| DC 5 | 4.75 MB/秒 |
+| 總計 | 28.5 MB/秒 |
 
 **建議： 72 MB/秒**（28.5 MB/s 除以40%）
 
@@ -259,10 +259,10 @@ DC 2|6.25 MB/秒|
 
 考慮的唯一建議是確保110% 的 ntds.dit 大小可供使用，以啟用磁碟重組。 此外，您也應該進行硬體生命週期的成長。
 
-第一個和最重要的考慮是評估 ntds.dit 和 SYSVOL 的大小。 這些測量會導致固定磁片和 RAM 配置的大小調整。 由於這些元件的（相對）低成本，因此數學運算不需要嚴格且精確。 有關如何針對現有和新環境評估這項操作的內容，可以在[資料儲存](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/cc961771(v=technet.10))系列文章中找到。 具體而言，請參閱下列文章：
+第一個和最重要的考慮是評估 ntds.dit 和 SYSVOL 的大小。 這些測量會導致固定磁片和 RAM 配置的大小調整。 由於這些元件的（相對）低成本，因此數學運算不需要嚴格且精確。 有關如何針對現有和新環境評估這項操作的內容，可以在[資料儲存](/previous-versions/windows/it-pro/windows-2000-server/cc961771(v=technet.10))系列文章中找到。 具體而言，請參閱下列文章：
 
-- **針對現有環境 &ndash; **「[儲存區限制](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/cc961769(v=technet.10))」一文中所述的「若要啟動磁碟重組釋放的磁碟空間記錄」一節。
-- **針對新環境 &ndash; **標題為[Active Directory 使用者和組織單位的成長估計](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/cc961779(v=technet.10))文章。
+- **針對現有環境 &ndash; **「[儲存區限制](/previous-versions/windows/it-pro/windows-2000-server/cc961769(v=technet.10))」一文中所述的「若要啟動磁碟重組釋放的磁碟空間記錄」一節。
+- **針對新環境 &ndash; **標題為[Active Directory 使用者和組織單位的成長估計](/previous-versions/windows/it-pro/windows-2000-server/cc961779(v=technet.10))文章。
 
   > [!NOTE]
   > 本文是以 Windows 2000 中 Active Directory 發行時所做的資料大小估計為基礎。 使用物件大小，反映您環境中實際的物件大小。
@@ -272,7 +272,7 @@ DC 2|6.25 MB/秒|
 資料庫大小可能會因作業系統版本而異。 執行舊版作業系統（例如 Windows Server 2003）的 Dc，其資料庫大小比執行較新作業系統（例如 Windows Server 2008 R2）的 DC 小，特別是當啟用這類 Active Directory 回收站或認證漫遊的功能時。
 
 > [!NOTE]
-  >
+>
 >- 針對新的環境，請注意，Active Directory 使用者和組織單位的成長估計值估計值表示100000個使用者（在相同網域中）耗用大約 450 MB 的空間。 請注意，所填入的屬性可能會對總金額造成很大的影響。 協力廠商和 Microsoft 產品（包括 Microsoft Exchange Server 和 Lync）的屬性將會填入許多物件。 最好是根據環境中的產品群組進行評估，但針對所有但最大的環境，將數學運算和測試的精確估計值的做法，可能不是真的值得大量的時間和努力。
 >- 請確定110% 的 ntds.dit 大小可作為可用空間，以啟用離線重組，並規劃在三到五年的硬體生命週期內成長。 由於儲存體的成本有多低，因此在300% 時估計儲存體的大小，因為存放裝置配置可以安全地容納成長，而且可能需要離線重組。
 
@@ -282,11 +282,11 @@ DC 2|6.25 MB/秒|
 
 #### <a name="calculation-summary-example"></a>計算摘要範例
 
-|從評估階段收集的資料| |
-|-|-|
-|Ntds.dit 大小|35 GB|
-|允許離線磁碟重組的修飾詞|2.1|
-|所需的儲存體總計|73.5 GB|
+| 從評估階段收集的資料 | 大小 |
+|--|--|
+| Ntds.dit 大小 | 35 GB |
+| 允許離線磁碟重組的修飾詞 | 2.1 GB |
+| 所需的儲存體總計 | 73.5 GB |
 
 > [!NOTE]
 > 除了 SYSVOL、作業系統、分頁檔案、暫存檔案、本機快取資料（例如安裝程式檔案）和應用程式所需的儲存體之外，還需要此儲存空間。
@@ -332,8 +332,7 @@ DC 2|6.25 MB/秒|
 >     > 有個建議存在，表示儲存體效能會在15ms 到20毫秒時降級（視來源而定）。  上述值和其他指引的差異在於上述值是正常作業範圍。  其他建議是疑難排解指引，以識別用戶端體驗何時會大幅降低並變得很明顯。  如需更深入的說明，請參閱附錄 C。
 > - LogicalDisk （ *\<NTDS\>* ） \ Reads/sec 是執行的 i/o 數量。
 >   - 如果 LogicalDisk （ *\<NTDS\>* ） \Avg Disk sec/Read 是在後端儲存體的最佳範圍內，則 *\<NTDS\>* 可以直接使用 LogicalDisk （） \ Reads/sec 來調整儲存體的大小。
->   - 如果 LogicalDisk （ *\<NTDS\>* ） \Avg Disk sec/Read 不在後端儲存體的最佳範圍內，則會根據下列公式來需要額外的 i/o：
->     > （LogicalDisk （ *\<NTDS\>* ） \Avg Disk sec/Read） &divide;（實體媒體磁片存取時間） &times;（LogicalDisk （ *\<NTDS\>* ） \Avg Disk sec/Read）
+>   - 如果 LogicalDisk （ *\<NTDS\>* ） \Avg Disk sec/Read 不在後端儲存體的最佳範圍內，則需要額外的 i/o （根據下列公式）：（LogicalDisk （ *\<NTDS\>* ） \Avg Disk Sec/read） &divide; （實體媒體磁片存取時間） &times; （LogicalDisk （ *\<NTDS\>* ） \Avg Disk sec/read）
 
 考量：
 
@@ -356,17 +355,17 @@ DC 2|6.25 MB/秒|
 - 若要判斷儲存體所需的 i/o 數量，以超出基礎儲存體的容量：
   >*所需的 IOPS* = （LogicalDisk （ *\<NTDS Database Drive\>* ） \Avg Disk sec/Read &divide; *\<Target Avg Disk sec/Read\>* ） &times; LogicalDisk （ *\<NTDS Database Drive\>* ） \ Read/sec
 
-|計數器|值|
-|-|-|
-|實際 LogicalDisk （ *\<NTDS Database Drive\>* ） \Avg Disk sec/Transfer|02秒（20毫秒）|
-|目標 LogicalDisk （ *\<NTDS Database Drive\>* ） \Avg Disk sec/Transfer|01秒|
-|可用 IO 中的變更乘數|0.02 &divide; 0.01 = 2|
+| 計數器 | 值 |
+|--|--|
+| 實際 LogicalDisk （ *\<NTDS Database Drive\>* ） \Avg Disk sec/Transfer | 02秒（20毫秒） |
+| 目標 LogicalDisk （ *\<NTDS Database Drive\>* ） \Avg Disk sec/Transfer | 01秒 |
+| 可用 IO 中的變更乘數 | 0.02 &divide; 0.01 = 2 |
 
-|值名稱|值|
-|-|-|
-|LogicalDisk （ *\<NTDS Database Drive\>* ） \ 傳輸/秒|400|
-|可用 IO 中的變更乘數|2|
-|尖峰期間所需的 IOPS 總計|800|
+| 值名稱 | 值 |
+|--|--|
+| LogicalDisk （ *\<NTDS Database Drive\>* ） \ 傳輸/秒 | 400 |
+| 可用 IO 中的變更乘數 | 2 |
+| 尖峰期間所需的 IOPS 總計 | 800 |
 
 若要判斷要準備就緒快取的速率：
 
@@ -377,16 +376,16 @@ DC 2|6.25 MB/秒|
 
 請注意，計算的速率（雖然正確）不會精確，因為如果 ESE 未設定為具有固定的快取大小，則先前載入的頁面會被收回，而 AD DS 預設會使用變數快取大小。
 
-|要收集的資料點|值
-|-|-|
-|暖的可接受時間上限|10分鐘（600秒）
-|資料庫大小|2 GB|
+| 要收集的資料點 | 值 |
+|--|--|
+| 暖的可接受時間上限 | 10分鐘（600秒） |
+| 資料庫大小 | 2 GB |
 
-|計算步驟|Formula|結果|
-|-|-|-|
-|計算頁面中的資料庫大小|（2 GB &times; 1024 &times; 1024） =*資料庫的大小（以 KB 為單位*）|2097152 KB|
-|計算資料庫中的頁面數目|2097152 KB &divide; 8 kb =*頁面數目*|262144頁面|
-|計算完全暖快取所需的 IOPS|262144頁 &divide; 600 秒 =*需要 IOPS*|437 IOPS|
+| 計算步驟 | Formula | 結果 |
+|--|--|--|
+| 計算頁面中的資料庫大小 | （2 GB &times; 1024 &times; 1024） =*資料庫的大小（以 KB 為單位*） | 2097152 KB |
+| 計算資料庫中的頁面數目 | 2097152 KB &divide; 8 kb =*頁面數目* | 262144頁面 |
+| 計算完全暖快取所需的 IOPS | 262144頁 &divide; 600 秒 =*需要 IOPS* | 437 IOPS |
 
 ## <a name="processing"></a>Processing
 
@@ -462,7 +461,7 @@ DC 2|6.25 MB/秒|
 
 ### <a name="when-to-tune-ldap-weights"></a>微調 LDAP 權數的時機
 
-在幾種情況下，應該考慮微調[LdapSrvWeight](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/cc957291(v=technet.10)) 。 在容量規劃內容中，當應用程式或使用者負載未平均平衡，或基礎系統並未在功能方面平均平衡時，就會進行這項作業。 除了容量規劃以外的原因，不在本文的討論範圍內。
+在幾種情況下，應該考慮微調[LdapSrvWeight](/previous-versions/windows/it-pro/windows-2000-server/cc957291(v=technet.10)) 。 在容量規劃內容中，當應用程式或使用者負載未平均平衡，或基礎系統並未在功能方面平均平衡時，就會進行這項作業。 除了容量規劃以外的原因，不在本文的討論範圍內。
 
 微調 LDAP 權數有兩個常見的原因：
 
@@ -475,11 +474,11 @@ DC 2|6.25 MB/秒|
 
 #### <a name="example-1---pdc"></a>範例 1-PDC
 
-| |使用預設值的使用率|新增 LdapSrvWeight|預估的新使用率|
-|-|-|-|-|
-|DC 1 （PDC 模擬器）|53%|57|40%|
-|DC 2|33%|100|40%|
-|DC 3|33%|100|40%|
+| 系統 | 使用預設值的使用率 | 新增 LdapSrvWeight | 預估的新使用率 |
+|--|--|--|--|
+| DC 1 （PDC 模擬器）| 53% | 57 | 40% |
+| DC 2| 33% | 100 | 40% |
+| DC 3| 33% | 100 | 40% |
 
 這裡要注意的是，如果 PDC 模擬器角色是轉移或收回，特別是在網站中的另一個網域控制站，新的 PDC 模擬器會大幅增加。
 
@@ -487,19 +486,19 @@ DC 2|6.25 MB/秒|
 
 #### <a name="example-2---differing-cpu-counts"></a>範例 2-不同的 CPU 計數
 
-| |處理器資訊 \\  % &nbsp; 處理器公用程式（_Total）<br />使用預設值的使用率|新增 LdapSrvWeight|預估的新使用率|
-|-|-|-|-|
-|4-CPU DC 1|40|100|30%|
-|4-CPU DC 2|40|100|30%|
-|8-CPU DC 3|20|200|30%|
+| 系統 | 處理器資訊 \\  % &nbsp; 處理器公用程式（_Total）<br />使用預設值的使用率 | 新增 LdapSrvWeight | 預估的新使用率 |
+|--|--|--|--|
+| 4-CPU DC 1 | 40 | 100 | 30% |
+| 4-CPU DC 2 | 40 | 100 | 30% |
+| 8-CPU DC 3 | 20 | 200 | 30% |
 
 不過，請務必謹慎使用這些案例。 如上面所示，math 看起來很不錯，而且非常適合紙張。 但在本文中，規劃「*N* + 1」案例是最重要的一項。 針對每個案例，都必須計算一個 DC 離線的影響。 在先前的案例中，負載分配為偶數，為了確保在「*N*」案例中的60% 負載，並在所有伺服器上平均負載平衡，因此，當比率保持一致時，分配就會很好。 查看 PDC 模擬器微調案例，通常在使用者或應用程式負載不平衡的情況下，其效果會有很大的差異：
 
-| |微調使用率|新增 LdapSrvWeight|預估的新使用率|
-|-|-|-|-|
-|DC 1 （PDC 模擬器）|40%|85|47%|
-|DC 2|40%|100|53%|
-|DC 3|40%|100|53%|
+| 系統 | 微調使用率 | 新增 LdapSrvWeight | 預估的新使用率 |
+|--|--|--|--|
+| DC 1 （PDC 模擬器） | 40% | 85 | 47% |
+| DC 2 | 40% | 100 | 53% |
+| DC 3 | 40% | 100 | 53% |
 
 ### <a name="virtualization-considerations-for-processing"></a>處理的虛擬化考慮
 
@@ -511,16 +510,16 @@ DC 2|6.25 MB/秒|
 
 ### <a name="calculation-summary-example"></a>計算摘要範例
 
-|系統|尖峰 CPU|
-|-|-|-|
-|DC 1|120%|
-|DC 2|147%|
-|Dc 3|218%|
-|使用的 CPU 總計|485%|
+| 系統 | 尖峰 CPU |
+|--|--|--|
+| DC 1 | 120% |
+| DC 2 | 147% |
+| Dc 3 | 218% |
+| 使用的 CPU 總計 | 485% |
 
-|目標系統計數|總頻寬（如上）|
-|-|-|
-|40% 目標所需的 Cpu|4.85 &divide; . 4 = 12.25|
+| 目標系統計數 | 總頻寬（如上） |
+|--|--|
+| 40% 目標所需的 Cpu | 4.85 &divide; . 4 = 12.25 |
 
 重複由於此點的重要性，請*記得規劃成長*。 假設在接下來三年的50% 成長中，此環境將需要 &times; 三年號的 18.375 cpu （12.25 1.5）。 替代方案會在第一年後進行審查，並視需要增加額外的容量。
 
@@ -559,15 +558,15 @@ DC 2|6.25 MB/秒|
 
 ### <a name="calculation-summary-example"></a>計算摘要範例
 
-|資料類型|值|
-|-|-|
-|信號取得（最小）|6161|
-|信號取得（最大值）|6762|
-|信號超時|0|
-|平均信號保存時間|0.012|
-|收集持續時間（秒）|1:11 分鐘（71秒）|
-|公式（從 KB 2688798）|（（6762 &ndash; 6161） + 0） &times; 0.012/|
-|**MaxConcurrentAPI**的最小值|（（6762 &ndash; 6161） + 0） &times; 0.012 &divide; 71 =. 101|
+| 資料類型 | 值 |
+|--|--|
+| 信號取得（最小） | 6161 |
+| 信號取得（最大值） | 6762 |
+| 信號超時 | 0 |
+| 平均信號保存時間 | 0.012 |
+| 收集持續時間（秒） | 1:11 分鐘（71秒） |
+| 公式（從 KB 2688798） | （（6762 &ndash; 6161） + 0） &times; 0.012/ |
+| **MaxConcurrentAPI**的最小值 | （（6762 &ndash; 6161） + 0） &times; 0.012 &divide; 71 =. 101 |
 
 在這段時間內，此系統會接受預設值。
 
@@ -575,14 +574,14 @@ DC 2|6.25 MB/秒|
 
 在本文中，我們已討論過規劃和調整會轉向使用率目標。 以下是建議閾值的摘要圖表，必須加以監視，以確保系統在適當的容量閾值內運作。 請記住，這些不是效能閾值，而是容量規劃閾值。 超過這些臨界值的伺服器運作正常，但卻是開始驗證所有應用程式是否運作良好的時機。 如果說應用程式的行為良好，就可以開始評估硬體升級或其他設定變更。
 
-|類別|效能計數器|間隔/取樣|目標|警告|
-|-|-|-|-|-|
-|處理器|處理器資訊（_Total） \\ % 處理器公用程式|60 分鐘|40%|60%|
-|RAM （Windows Server 2008 R2 或更早版本）|Memory\Available MB|< 100 MB|N/A|< 100 MB|
-|RAM （Windows Server 2012）|Memory\Long-Term 平均待命快取存留期（秒）|30 分鐘|必須經過測試|必須經過測試|
-|網路|Network Interface （ \* ） \Bytes Sent/sec<p>網路介面（ \* ） \Bytes Received/sec|30 分鐘|40%|60%|
-|儲存體|LogicalDisk （ *\<NTDS Database Drive\>* ） \Avg Disk sec/Read<p>LogicalDisk （ *\<NTDS Database Drive\>* ） \Avg Disk sec/Write|60 分鐘|10 毫秒|15毫秒|
-|AD 服務|Netlogon （ \* ） \Average 信號保存時間|60 分鐘|0|1 秒|
+| 類別 | 效能計數器 | 間隔/取樣 | 目標 | 警告 |
+|--|--|--|--|--|
+| 處理器 | 處理器資訊（_Total） \\ % 處理器公用程式 | 60 分鐘 | 40% | 60% |
+| RAM （Windows Server 2008 R2 或更早版本） | Memory\Available MB | < 100 MB | 不適用 | < 100 MB |
+| RAM （Windows Server 2012） | Memory\Long-Term 平均待命快取存留期（秒） | 30 分鐘 | 必須經過測試 | 必須經過測試 |
+| 網路 | Network Interface （ \* ） \Bytes Sent/sec<p>網路介面（ \* ） \Bytes Received/sec | 30 分鐘 | 40% | 60% |
+| 儲存體 | LogicalDisk （ *\<NTDS Database Drive\>* ） \Avg Disk sec/Read<p>LogicalDisk （ *\<NTDS Database Drive\>* ） \Avg Disk sec/Write | 60 分鐘 | 10 毫秒 | 15毫秒 |
+| AD 服務 | Netlogon （ \* ） \Average 信號保存時間 | 60 分鐘 | 0 | 1 秒 |
 
 ## <a name="appendix-a-cpu-sizing-criteria"></a>附錄 A： CPU 大小調整準則
 
@@ -633,7 +632,7 @@ DC 2|6.25 MB/秒|
 
 *U* k = *B* &divide; *T*
 
-其中， *U* k 是使用率百分比， *B*是忙碌的時間量，而*T*是觀察到系統的總時間。 轉譯成 Windows 的內容，這表示處於執行中狀態的100毫微秒（ns）間隔執行緒數目除以給定時間間隔內可用的 100-ns 間隔數。 這正是用來計算% 處理器公用程式（參考[處理器物件](https://docs.microsoft.com/previous-versions/ms804036(v=msdn.10))和[PERF_100NSEC_TIMER_INV](https://docs.microsoft.com/previous-versions/windows/embedded/ms901169(v=msdn.10))）的公式。
+其中， *U* k 是使用率百分比， *B*是忙碌的時間量，而*T*是觀察到系統的總時間。 轉譯成 Windows 的內容，這表示處於執行中狀態的100毫微秒（ns）間隔執行緒數目除以給定時間間隔內可用的 100-ns 間隔數。 這正是用來計算% 處理器公用程式（參考[處理器物件](/previous-versions/ms804036(v=msdn.10))和[PERF_100NSEC_TIMER_INV](/previous-versions/windows/embedded/ms901169(v=msdn.10))）的公式。
 
 佇列理論也會提供公式： *N*  =  *U* k &divide; （1 &ndash; *u* k）來預估以使用率為基礎的等候專案數（ *n*是佇列的長度）。 針對所有使用量間隔繪製此圖表，可提供下列估計值給處理器上的佇列在任何指定的 CPU 負載時間。
 
@@ -649,9 +648,9 @@ DC 2|6.25 MB/秒|
 這就是為什麼在40% 中保守估計的「容量」的長期平均值，對於負載的異常尖峰（例如，執行數分鐘的編碼查詢不佳）或一般負載中的異常高載（長週末後的第一天早上）而言，這就是原因。
 
 上述語句的「% Processor Time」計算與使用法則相同，因為這是簡化一般讀者的簡單工作。 對於數學上嚴格的：
-- 翻譯[PERF_100NSEC_TIMER_INV](https://docs.microsoft.com/previous-versions/windows/embedded/ms901169(v=msdn.10))
-  - *B* = 100-ns 間隔「閒置」執行緒花費在邏輯處理器上的數目。 [PERF_100NSEC_TIMER_INV](https://docs.microsoft.com/previous-versions/windows/embedded/ms901169(v=msdn.10))計算中 "*X*" 變數的變更
-  - *T* = 指定時間範圍內的 100-ns 間隔總數。 [PERF_100NSEC_TIMER_INV](https://docs.microsoft.com/previous-versions/windows/embedded/ms901169(v=msdn.10))計算中 "*Y*" 變數的變更。
+- 翻譯[PERF_100NSEC_TIMER_INV](/previous-versions/windows/embedded/ms901169(v=msdn.10))
+  - *B* = 100-ns 間隔「閒置」執行緒花費在邏輯處理器上的數目。 [PERF_100NSEC_TIMER_INV](/previous-versions/windows/embedded/ms901169(v=msdn.10))計算中 "*X*" 變數的變更
+  - *T* = 指定時間範圍內的 100-ns 間隔總數。 [PERF_100NSEC_TIMER_INV](/previous-versions/windows/embedded/ms901169(v=msdn.10))計算中 "*Y*" 變數的變更。
   - *U* k = 邏輯處理器的使用率百分比（依據「閒置執行緒」或% 閒置時間）。
 - 使用數學運算：
   - *U* k = 1 –處理器時間百分比
@@ -753,27 +752,27 @@ DC 2|6.25 MB/秒|
 
   到目前為止，硬碟的傳輸速率並不相關。 無論硬碟為 20 MB/s Ultra 或 Ultra3 160 MB/秒，10000-RPM HD 可以處理的實際 IOPS 量是 ~ 100 隨機或 ~ 300 順序 i/o。 當區塊大小根據寫入磁片磁碟機的應用程式而變更時，每個 i/o 提取的資料量會不同。 例如，如果區塊大小為 8 KB，則 100 i/o 作業會讀取或寫入硬碟（總共 800 KB）。 不過，如果區塊大小為 32 KB，則 100 i/o 會讀取/寫入至硬碟的 3200 KB （3.2 MB）。 只要 SCSI 傳輸速率超過傳輸的資料總量，取得「更快」的傳輸速率磁片磁碟機就不會得到任何東西。 如需比較，請參閱下表。
 
-  | |7200 RPM 9ms 搜尋，4毫秒存取|10000 RPM 7 毫秒搜尋，3ms 存取|15000 RPM 4 毫秒搜尋，2毫秒存取
-  |-|-|-|-|
-  |隨機 i/o|80|100|150|
-  |連續 i/o|250|300|500|
+  | 描述 | 7200 RPM 9ms 搜尋，4毫秒存取 | 10000 RPM 7 毫秒搜尋，3ms 存取 | 15000 RPM 4 毫秒搜尋，2毫秒存取 |
+  |--|--|--|--|
+  | 隨機 i/o | 80 | 100 | 150 |
+  | 連續 i/o | 250 | 300 | 500 |
 
-  |10000 RPM 磁片磁碟機|8 KB 區塊大小（Active Directory Jet）|
-  |-|-|
-  |隨機 i/o|800 KB/秒|
-  |連續 i/o|2400 KB/秒|
+  | 10000 RPM 磁片磁碟機 | 8 KB 區塊大小（Active Directory Jet） |
+  |--|--|
+  | 隨機 i/o | 800 KB/秒 |
+  | 連續 i/o | 2400 KB/秒 |
 
 - **SCSI 背板（匯流排）–** 瞭解「SCSI 背板（匯流排）」或在此案例中，帶狀線會影響儲存子系統的輸送量，取決於區塊大小的知識。 基本上，問題是，如果 i/o 是在 8 KB 區塊中，匯流排會處理多少 i/o？ 在此案例中，SCSI 匯流排為 20 MB/s，或 20480 KB/s。 20480 KB/s 除以 8 KB 區塊，最多會產生 SCSI 匯流排所支援的大約 2500 IOPS。
 
   > [!NOTE]
   > 下表中的圖形代表一個範例。 大部分連結的存放裝置目前使用 PCI Express，以提供更高的輸送量。
 
-  |SCSI 匯流排每個區塊大小支援的 i/o|2 KB 區塊大小|8 KB 區塊大小（AD Jet）（SQL Server 7.0/SQL Server 2000）
-  |-|-|-|
-  |20 MB/秒|10,000|2,500|
-  |40 MB/秒|20,000|5,000|
-  |128 MB/秒|65,536|16,384|
-  |320 MB/秒|160,000|40,000|
+  | SCSI 匯流排每個區塊大小支援的 i/o | 2 KB 區塊大小 | 8 KB 區塊大小（AD Jet）（SQL Server 7.0/SQL Server 2000） |
+  |--|--|--|
+  | 20 MB/秒 | 10,000 | 2,500 |
+  | 40 MB/秒 | 20,000 | 5,000 |
+  | 128 MB/秒 | 65,536 | 16,384 |
+  | 320 MB/秒 | 160,000 | 40,000 |
 
   根據此圖表的判斷，在呈現的案例中，不論使用何種情況，匯流排都不會是瓶頸，因為主軸最大值為 100 i/o，低於上述任何閾值。
 
@@ -795,17 +794,17 @@ DC 2|6.25 MB/秒|
 
 現在，分析了簡單的設定，下表將示範當儲存子系統中的元件變更或新增時，瓶頸將會發生的位置。
 
-|注意|瓶頸分析|磁碟|公車|配接器|PCI 匯流排|
-|-|-|-|-|-|-|
-|這是新增第二個磁片後的網域控制站設定。 磁片設定代表 800 KB/s 的瓶頸。|新增1個磁片（總計 = 2）<p>I/o 是隨機的<p>4 KB 區塊大小<p>10000 RPM HD|200 i/o 總計<br />800 KB/s 總計。| | | |
-|新增7個磁片之後，磁片設定仍然代表 3200 KB/s 的瓶頸。|**新增7個磁片（總計 = 8）**  <p>I/o 是隨機的<p>4 KB 區塊大小<p>10000 RPM HD|800 i/o 總計。<br />3200 KB/s 總計| | | |
-|將 i/o 變更為連續之後，網路介面卡會成為瓶頸，因為它受限於 1000 IOPS。|新增7個磁片（總計 = 8）<p>**I/o 是連續的**<p>4 KB 區塊大小<p>10000 RPM HD| | |2400 i/o sec 可以讀取/寫入磁片，控制器限制為 1000 IOPS| |
-|將網路介面卡更換為支援 10000 IOPS 的 SCSI 介面卡之後，瓶頸會回到磁片設定。|新增7個磁片（總計 = 8）<p>I/o 是隨機的<p>4 KB 區塊大小<p>10000 RPM HD<p>**升級 SCSI 介面卡（現在支援 10000 i/o）**|800 i/o 總計。<br />3200 KB/s 總計| | | |
-|將區塊大小增加到 32 KB 之後，匯流排就會成為瓶頸，因為它只支援 20 MB/s。|新增7個磁片（總計 = 8）<p>I/o 是隨機的<p>**32 KB 區塊大小**<p>10000 RPM HD| |800 i/o 總計。 25600 KB/s （25 MB/s）可以讀取/寫入磁片。<p>匯流排僅支援 20 MB/秒| | |
-|升級匯流排並新增更多磁片之後，磁片會維持瓶頸。|**新增13個磁片（總計 = 14）**<p>新增具有14個磁片的第二個 SCSI 介面卡<p>I/o 是隨機的<p>4 KB 區塊大小<p>10000 RPM HD<p>**升級至 320 MB/s SCSI 匯流排**|2800 i/o<p>11200 KB/秒（10.9 MB/s）| | | |
-|將 i/o 變更為連續之後，磁片會維持瓶頸。|新增13個磁片（總計 = 14）<p>新增具有14個磁片的第二個 SCSI 介面卡<p>**I/o 是連續的**<p>4 KB 區塊大小<p>10000 RPM HD<p>升級至 320 MB/s SCSI 匯流排|8400 i/o<p>33600 KB\s<p>（32.8 MB\s）| | | |
-|新增更快的硬碟之後，磁片會維持瓶頸。|新增13個磁片（總計 = 14）<p>新增具有14個磁片的第二個 SCSI 介面卡<p>I/o 是連續的<p>4 KB 區塊大小<p>**15000 RPM HD**<p>升級至 320 MB/s SCSI 匯流排|14000 i/o<p>56000 KB/秒<p>（54.7 MB/秒）| | | |
-|將區塊大小增加到 32 KB 之後，PCI 匯流排就會變成瓶頸。|新增13個磁片（總計 = 14）<p>新增具有14個磁片的第二個 SCSI 介面卡<p>I/o 是連續的<p>**32 KB 區塊大小**<p>15000 RPM HD<p>升級至 320 MB/s SCSI 匯流排| | | |14000 i/o<p>448000 KB/秒<p>（437 MB/s）是磁片軸的讀取/寫入限制。<p>PCI 匯流排支援的理論最大值為 133 MB/秒（最好是75% 的效率）。|
+| 注意 | 瓶頸分析 | 磁碟 | 匯流排 | 配接器 | PCI 匯流排 |
+|--|--|--|--|--|--|
+| 這是新增第二個磁片後的網域控制站設定。 磁片設定代表 800 KB/s 的瓶頸。 | 新增1個磁片（總計 = 2）<p>I/o 是隨機的<p>4 KB 區塊大小<p>10000 RPM HD | 200 i/o 總計<br />800 KB/s 總計。 |  |  |  |
+| 新增7個磁片之後，磁片設定仍然代表 3200 KB/s 的瓶頸。 | **新增7個磁片（總計 = 8）**  <p>I/o 是隨機的<p>4 KB 區塊大小<p>10000 RPM HD | 800 i/o 總計。<br />3200 KB/s 總計 |  |  |  |
+| 將 i/o 變更為連續之後，網路介面卡會成為瓶頸，因為它受限於 1000 IOPS。 | 新增7個磁片（總計 = 8）<p>**I/o 是連續的**<p>4 KB 區塊大小<p>10000 RPM HD |  |  | 2400 i/o sec 可以讀取/寫入磁片，控制器限制為 1000 IOPS |  |
+| 將網路介面卡更換為支援 10000 IOPS 的 SCSI 介面卡之後，瓶頸會回到磁片設定。 | 新增7個磁片（總計 = 8）<p>I/o 是隨機的<p>4 KB 區塊大小<p>10000 RPM HD<p>**升級 SCSI 介面卡（現在支援 10000 i/o）** | 800 i/o 總計。<br />3200 KB/s 總計 |  |  |  |
+| 將區塊大小增加到 32 KB 之後，匯流排就會成為瓶頸，因為它只支援 20 MB/s。 | 新增7個磁片（總計 = 8）<p>I/o 是隨機的<p>**32 KB 區塊大小**<p>10000 RPM HD |  | 800 i/o 總計。 25600 KB/s （25 MB/s）可以讀取/寫入磁片。<p>匯流排僅支援 20 MB/秒 |  |  |
+| 升級匯流排並新增更多磁片之後，磁片會維持瓶頸。 | **新增13個磁片（總計 = 14）**<p>新增具有14個磁片的第二個 SCSI 介面卡<p>I/o 是隨機的<p>4 KB 區塊大小<p>10000 RPM HD<p>**升級至 320 MB/s SCSI 匯流排** | 2800 i/o<p>11200 KB/秒（10.9 MB/s） |  |  |  |
+| 將 i/o 變更為連續之後，磁片會維持瓶頸。 | 新增13個磁片（總計 = 14）<p>新增具有14個磁片的第二個 SCSI 介面卡<p>**I/o 是連續的**<p>4 KB 區塊大小<p>10000 RPM HD<p>升級至 320 MB/s SCSI 匯流排 | 8400 i/o<p>33600 KB\s<p>（32.8 MB\s） |  |  |  |
+| 新增更快的硬碟之後，磁片會維持瓶頸。 | 新增13個磁片（總計 = 14）<p>新增具有14個磁片的第二個 SCSI 介面卡<p>I/o 是連續的<p>4 KB 區塊大小<p>**15000 RPM HD**<p>升級至 320 MB/s SCSI 匯流排 | 14000 i/o<p>56000 KB/秒<p>（54.7 MB/秒） |  |  |  |
+| 將區塊大小增加到 32 KB 之後，PCI 匯流排就會變成瓶頸。 | 新增13個磁片（總計 = 14）<p>新增具有14個磁片的第二個 SCSI 介面卡<p>I/o 是連續的<p>**32 KB 區塊大小**<p>15000 RPM HD<p>升級至 320 MB/s SCSI 匯流排 |  |  |  | 14000 i/o<p>448000 KB/秒<p>（437 MB/s）是磁片軸的讀取/寫入限制。<p>PCI 匯流排支援的理論最大值為 133 MB/秒（最好是75% 的效率）。 |
 
 ### <a name="introducing-raid"></a>RAID 簡介
 
@@ -852,7 +851,7 @@ RAID 1 + 0 的行為與 RAID 1 完全相同，關於讀取和寫入的費用。 
 
 - SCSI 或光纖通道硬碟
 - 儲存體單位通道背板
-- 儲存單位
+- 儲存體單位
 - 存放控制器模組
 - SAN 交換器（es）
 - HBA

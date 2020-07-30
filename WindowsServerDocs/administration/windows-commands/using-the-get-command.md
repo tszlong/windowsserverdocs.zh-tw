@@ -1,5 +1,5 @@
 ---
-title: get
+title: 使用 get 命令
 description: Get 的參考文章，它會抓取所指定物件的屬性或屬性。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
@@ -9,21 +9,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6e61be9480065518cf053966a851458af39f5c5d
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d6a943592d0c2443deb3bec4b5709f742e78f4ff
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935020"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87408777"
 ---
-# <a name="get"></a>get
+# <a name="using-the-get-command"></a>使用 get 命令
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 抓取有關指定物件的屬性或屬性。
 
 ## <a name="subcommands"></a>子
-|子命令|Description|
+|子命令|描述|
 |-------|--------|
 |[使用 AllDevices 命令](using-the-get-alldevices-command.md)|顯示所有預先設置電腦的相關資訊。|
 |[使用 AllImageGroups 命令](using-the-get-allimagegroups-command.md)|顯示所有映射群組的相關資訊。|

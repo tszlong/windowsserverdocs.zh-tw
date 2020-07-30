@@ -2,17 +2,16 @@
 title: 使用 My Server 應用程式來連線到 Windows Server Essentials
 description: 說明如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 4e40b57f-6917-43ef-92e0-030baa9d2b99
 author: nnamuhcs
 ms.author: daveba
-ms.openlocfilehash: da125fec78a609aff0d7572cbe448115f03fe501
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a56211dc04a3f10623fd31f5bae174f03ae65022
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469883"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409468"
 ---
 # <a name="use-the-my-server-app-to-connect-to-windows-server-essentials"></a>使用 My Server 應用程式來連線到 Windows Server Essentials
 
@@ -152,29 +151,7 @@ ms.locfileid: "85469883"
 7.  遵循指示完成精靈。
 
     > [!NOTE]
-<<<<<<< HEAD 憑證安裝完成後，您可以使用伺服器名稱和網路認證登入 Windows 8 的 My Server 應用程式或 Windows 8.1。
-
-## <a name="additional-references"></a>其他參考
-
--   [Windows Server Essentials 的服務整合總覽-第1部分](https://blogs.technet.com/b/sbs/archive/2013/11/06/services-integration-overview-for-windows-server-2012-r2-essentials-part-1.aspx)
-
--   [Windows Server Essentials 的服務整合總覽-第2部分](https://blogs.technet.com/b/sbs/archive/2013/11/06/services-integration-overview-for-windows-server-2012-r2-essentials-part-2.aspx)
-
--   [管理隨處存取](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)
-
--   [管理 Windows Server Essentials](../manage/Manage-Windows-Server-Essentials.md)
-
-
--   [遠端工作](Work-Remotely-in-Windows-Server-Essentials.md)
-
--   [使用 Windows Server Essentials](Use-Windows-Server-Essentials.md)
-
--   [遠端工作](../use/Work-Remotely-in-Windows-Server-Essentials.md)
-
--   [使用 Windows Server Essentials](../use/Use-Windows-Server-Essentials.md)
-
-=======
-    >  After the installation of the certificate is complete, you can sign in to the My Server app for Windows 8 or Windows 8.1 by using your server name and your network credentials.
+    >  完成安裝憑證之後，可以使用您的伺服器名稱和網路認證登入 Windows 8 或 Windows 8.1 的 My Server 應用程式。
 
 ## <a name="see-also"></a>另請參閱
 
@@ -189,5 +166,3 @@ ms.locfileid: "85469883"
 -   [遠端工作](Work-Remotely-in-Windows-Server-Essentials.md)
 
 -   [使用 Windows Server Essentials](Use-Windows-Server-Essentials.md)
-
->>>>>>> 97724df67237ac603cf9eb996732230bdb7c0b88

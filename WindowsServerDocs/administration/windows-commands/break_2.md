@@ -1,5 +1,5 @@
 ---
-title: break
+title: 中斷（陰影複製磁片區）
 description: '[中斷] 命令的參考文章，這會解除陰影複製磁片區與 VSS 的對應，並使其可做為一般磁片區存取。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7f3974f183215a42920f7406a62ab335eb101f56
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6eb97ff1c539d8c372b4ae0837c41479c5a0f214
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924890"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409749"
 ---
-# <a name="break"></a>break
+# <a name="break-shadow-copy-volume"></a>中斷（陰影複製磁片區）
 
 將陰影複製磁片區與 VSS 解除，使其可做為一般磁片區存取。 然後可以使用磁碟機號（若已指派）或磁片區名稱來存取該磁片區。 如果在沒有參數的情況下使用， **break**會在命令提示字元中顯示說明。
 
@@ -33,7 +33,7 @@ break [writable] <setid>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | 314.cs | 啟用磁片區上的讀取/寫入存取。 |
 | \<setid> | 指定陰影複製組的識別碼。 「**載入中繼資料**」命令儲存為環境變數的陰影複製識別碼別名，可用於*SetID*參數。 |
@@ -46,6 +46,6 @@ break [writable] <setid>
 break writable %Alias1%
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

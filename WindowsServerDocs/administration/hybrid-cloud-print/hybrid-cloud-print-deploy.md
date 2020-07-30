@@ -9,12 +9,12 @@ author: msjimwu
 ms.author: coreyp
 manager: dongill
 ms.date: 3/15/2018
-ms.openlocfilehash: fe1f2b11921950ea725cb996ce58e75033aaae4a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 9cee8a279be2030d4b911a0a7f456c2b855ca15e
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470203"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409088"
 ---
 # <a name="deploy-windows-server-hybrid-cloud-print"></a>部署 Windows Server 混合式雲端列印
 
@@ -346,7 +346,8 @@ ms.locfileid: "85470203"
     - CloudPrintResourceId = 企業雲端列印應用程式的應用程式識別碼 URI。 您可以在 Azure Active Directory > 應用程式註冊中找到此 > 選取 [企業雲端列印應用程式] > 總覽。 **它必須與尾端/完全相同**。
     - DiscoveryMaxPrinterLimit = \<a positive integer\> 。
 
-> 注意：如果您使用 Microsoft Intune 服務，您可以在 [雲端印表機] 類別下找到這些設定。
+> [!NOTE]
+> 如果您使用 Microsoft Intune 服務，您可以在 [雲端印表機] 類別下找到這些設定。
 
 |Intune 顯示名稱                     |原則                         |
 |----------------------------------------|-------------------------------|
@@ -357,21 +358,22 @@ ms.locfileid: "85470203"
 |要查詢的印表機上限（僅限行動裝置）  |DiscoveryMaxPrinterLimit       |
 |印表機探索服務資源 URI  |MopriaDiscoveryResourceId      |
 
-> 注意：如果 [雲端列印原則] 群組無法使用，但 MDM 提供者支援 OMA-URI 設定，則您可以設定相同的原則。  如需其他資訊，請參閱[這裡](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-enterprisecloudprint#enterprisecloudprint-cloudprintoauthauthority)。
+> [!NOTE]
+> 如果 [雲端列印原則] 群組無法使用，但 MDM 提供者支援 OMA-URI 設定，則您可以設定相同的原則。  如需其他資訊，請參閱[這裡](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-enterprisecloudprint#enterprisecloudprint-cloudprintoauthauthority)。
 
-    - OMA-URI 的值
-        - CloudPrintOAuthAuthority =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthAuthority
-            - 值 =https://login.microsoftonline.com/<Azure AD Directory ID>
-        - CloudPrintOAuthClientId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthClientId
-            - 值 = <Azure AD 原生應用程式的應用程式識別碼>
-        - CloudPrinterDiscoveryEndPoint =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrinterDiscoveryEndPoint
-            - 值 = Mopria 探索服務應用程式的外部 URL （必須完全相同，但不含尾端/）
-        - MopriaDiscoveryResourceId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/MopriaDiscoveryResourceId
-            - 值 = Mopria 探索服務應用程式的應用程式識別碼 URI
-        - CloudPrintResourceId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintResourceId
-            - 值 = 企業雲端列印應用程式的應用程式識別碼 URI
-        - DiscoveryMaxPrinterLimit =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/DiscoveryMaxPrinterLimit
-            - 值 = 正整數
+- OMA-URI 的值
+  - CloudPrintOAuthAuthority =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthAuthority
+    - 值 =`https://login.microsoftonline.com/<Azure AD Directory ID>`
+  - CloudPrintOAuthClientId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthClientId
+    - 值 =`<Azure AD Native App's Application ID>`
+  - CloudPrinterDiscoveryEndPoint =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrinterDiscoveryEndPoint
+    - 值 = Mopria 探索服務應用程式的外部 URL （必須完全相同，但不含尾端 `/` ）
+  - MopriaDiscoveryResourceId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/MopriaDiscoveryResourceId
+    - 值 = Mopria 探索服務應用程式的應用程式識別碼 URI
+  - CloudPrintResourceId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintResourceId
+    - 值 = 企業雲端列印應用程式的應用程式識別碼 URI
+  - DiscoveryMaxPrinterLimit =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/DiscoveryMaxPrinterLimit
+    - 值 = 正整數
 
 ### <a name="step-7---publish-the-shared-printer"></a>步驟 7-發佈共用印表機
 

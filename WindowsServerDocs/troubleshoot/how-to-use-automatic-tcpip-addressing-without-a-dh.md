@@ -1,29 +1,28 @@
 ---
-title: 如何在沒有 DHCP 伺服器的情況下使用自動 TCP/IP 位址
+title: 如何在沒有 DHCP 伺服器的情況下使用自動 TCP/IP 定址
 description: 介紹如何在沒有 DHCP 伺服器的情況下使用自動 TCP/IP 定址。
-ms.date: 5/26/2020
 ms.prod: windows-server
-ms.service: na
 manager: dcscontentpm
 ms.technology: server-general
-ms.topic: article
+ms.date: 5/26/2020
+ms.topic: troubleshoot
 author: Deland-Han
 ms.author: delhan
 ms.reviewer: robsmi
-ms.openlocfilehash: 8fbde77381141b76959f70e824eac22ee2121fa3
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: fcd85c29975709053009ec4a2684df88b4bafd69
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84150186"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409799"
 ---
-# <a name="how-to-use-automatic-tcpip-addressing-without-a-dhcp-server"></a>如何在沒有 DHCP 伺服器的情況下使用自動 TCP/IP 位址
+# <a name="how-to-use-automatic-tcpip-addressing-without-a-dhcp-server"></a>如何在沒有 DHCP 伺服器的情況下使用自動 TCP/IP 定址
 
 本文說明如何使用自動傳輸控制通訊協定/網際網路通訊協定（TCP/IP）位址，而不需要動態主機設定通訊協定（DHCP）伺服器存在於網路上。 本文「適用于」一節中所列的作業系統版本具有稱為「自動私人 IP 位址（APIPA）」的功能。 有了這項功能，如果 DHCP 伺服器無法使用或不存在於網路上，Windows 電腦就可以將網際網路通訊協定（IP）位址指派給自己。 這項功能讓設定和支援執行 TCP/IP 的小型區域網路（LAN）更不容易。
 
 ## <a name="more-information"></a>相關資訊
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > 請仔細依循本節中的步驟。 如果您未正確修改登錄，可能會發生嚴重問題。 在修改之前，[備份登錄以供還原](https://support.microsoft.com/help/322756)，以免發生問題。
 
 如果 DHCP 伺服器無法使用，則設定為使用 DHCP 的 Windows 電腦可以自動將網際網路通訊協定（IP）位址指派給自己。 例如，這可能發生在沒有 DHCP 伺服器的網路上，或在網路上（如果 DHCP 伺服器暫時關閉進行維護）。
@@ -38,8 +37,7 @@ ms.locfileid: "84150186"
 
 - 您的網路已連線到網際網路，但沒有 NAT 或 proxy 伺服器。
 
-除非您已停用 DHCP 相關的訊息，否則 DHCP 訊息會在 DHCP 位址和自動私人 IP 位址之間變更時，提供通知給您。 如果不小心停用 DHCP 訊息，您可以將下列登錄機碼中 PopupFlag 值的值從00變更為01，以重新開啟 DHCP 訊息：  
-`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\VxD\DHCP` 
+除非您已停用 DHCP 相關的訊息，否則 DHCP 訊息會在 DHCP 位址和自動私人 IP 位址之間變更時，提供通知給您。 如果不小心停用 DHCP 訊息，您可以將下列登錄機碼中 PopupFlag 值的值從00變更為01，以重新開啟 DHCP 訊息：`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\VxD\DHCP`
 
 請注意，您必須重新開機電腦，變更才會生效。 您也可以使用 Windows Millennium Edition、Windows 98 或 Windows 98 Second Edition 中的 Winipcfg 工具，判斷您的電腦是否使用 APIPA：
 
@@ -51,8 +49,7 @@ ms.locfileid: "84150186"
 
 您可以手動設定 TCP/IP 資訊，這會完全停用 DHCP。 您可以藉由編輯登錄來停用自動私人 IP 位址（而非 DHCP）。 若要這麼做，您可以將 "IPAutoconfigurationEnabled" DWORD 登錄專案（值為0x0）新增至 Windows Millennium Edition、Windows98 或 Windows 98 Second Edition 的下列登錄機碼：`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\VxD\DHCP`
 
-對於 Windows 2000、Windows XP 和 Windows Server 2003，可以藉由將 "IPAutoconfigurationEnabled" DWORD 登錄專案（值為0x0）新增至下列登錄機碼來停用 APIPA：  
-`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\<Adapter GUID>`  
+對於 Windows 2000、Windows XP 和 Windows Server 2003，可以藉由將 "IPAutoconfigurationEnabled" DWORD 登錄專案（值為0x0）新增至下列登錄機碼來停用 APIPA：`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\<Adapter GUID>`
 > [!NOTE]
 > **介面卡 GUID**子機碼是電腦 LAN 介面卡的全域唯一識別碼（GUID）。
 

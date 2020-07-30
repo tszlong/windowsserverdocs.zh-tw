@@ -7,12 +7,12 @@ ms.assetid: 282f3634-6de6-4691-803c-df6c3c16660d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e6eeec9a8f533eac38c3ffc92cf60eb2348f1cc3
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: e75db6f67bfa46bc5980688f82a6b4ebf56eaa0f
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180894"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409538"
 ---
 # <a name="manage-sharepoint-online-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的 SharePoint Online
 
@@ -32,12 +32,19 @@ ms.locfileid: "87180894"
 
 ### <a name="manage-your-online-libraries"></a>管理您的線上文件庫
 
-|-|-| |新增程式庫 |在 [ **SharePoint 文件庫**] 索引標籤上，使用 [**新增程式庫**]。 您可以執行所有的一般選項：<br /><br /> -選擇小組網站和文件庫類型。<br />-決定是否要使用版本控制。<br />-指派存取權限。<br /><br /> **秘訣：** 若要找出您的程式庫將會繼承哪些小組網站許可權，如果您未指派許可權，請使用**View the site 許可權**。 ||開啟程式庫 |若要使用文件庫的內容，您必須在 Office 365 中開啟它。 只要選取文件庫，並按一下 [開啟文件庫]****。 內容的用途將取決於您用來登入 SharePoint Online 的認證。 ||變更版本控制或存取權限 |您可以使用 **[視圖程式庫] 屬性**來查看或變更文件庫的版本控制或存取權限。 ||刪除程式庫 |**警告：** 在您刪除 SharePoint Online 文件庫之前，請務必將任何想要保留的檔案儲存到另一個位置。 當您從 SharePoint 刪除文件庫時，會永久刪除所有專案。 沒有任何可以復原的方法。<br /><br /> 在您檢查以確定媒體櫃未儲存您稍後將需要的任何專案之後，請選取該文件庫，然後按一下 **[刪除媒體**櫃]。 |
+- **新增程式庫。** 在 [SharePoint 文件庫]**** 索引標籤中，使用 [新增文件庫]****。 您可以執行所有的一般選項：
+  - 選擇小組網站和文件庫類別。
+  - 決定是否要使用版本控制。
+  - 指派存取權限。
+     **秘訣：** 若要找出您的程式庫將會繼承哪些小組網站許可權，如果您未指派許可權，請使用**View the site 許可權**。
+- **開啟文件庫。** 若要使用文件庫的內容，您必須在 Office 365 中開啟它。 只要選取文件庫，並按一下 [開啟文件庫]****。 內容的用途將取決於您用來登入 SharePoint Online 的認證。
+- **變更版本控制或存取權限。** 您可以使用 [檢視文件庫內容]**** 以檢視或變更文件庫的版本控制或存取權限。
+- **刪除媒體櫃。** 在您檢查確定文件庫上沒有儲存任何後續還需要的資料後，請選取該文件庫並按一下 [刪除文件庫]****。 **警告：** 在您刪除 SharePoint Online 文件庫之前，請務必將任何想要保留的檔案儲存到另一個位置。 當您從 SharePoint 刪除文件庫時，會永久刪除所有專案。 沒有任何可以復原的方法。
 
 ### <a name="manage-your-team-sites"></a>管理您的小組網站
 
-|-|-| |管理 SharePoint 小組網站 |[**管理小組網站**] 動作可讓您登入 Office 365 並管理 SharePoint Online 小組網站。 您在 Office 365 中可以執行的動作會由您用來登入的線上帳戶來決定。<br /><br /> 當您關閉 Office 365 並返回儀表板時，請**按一下 [** 重新整理] 以顯示變更。
-|查看或變更小組網站許可權 |因為程式庫預設會繼承其小組網站的許可權，所以輕鬆存取小組網站會很有説明。 若要查看或變更小組網站的許可權，請選取小組網站或其任何文件庫，然後按一下 **[流覽網站許可權**]。<br /><br /> **秘訣：** 需要 SharePoint 小組網站許可權的協助嗎？ 在小組網站權限中有一個實用的 [深入了解](https://office.microsoft.com/office365-sharepoint-online-enterprise-help/introduction-control-user-access-with-permissions-HA102771919.aspx?CTT=5&origin=HA102771924) 連結。
+- **管理 SharePoint 小組網站。** [**管理小組網站**] 動作可讓您登入 Office 365 並管理 SharePoint Online 小組網站。 您在 Office 365 中可以執行的動作會由您用來登入的線上帳戶來決定。 當您關閉 Office 365 並返回儀表板時，請**按一下 [** 重新整理] 以顯示變更。
+- **查看或變更小組網站許可權。** 因為程式庫預設會繼承其小組網站的許可權，所以輕鬆存取小組網站會很有説明。 若要查看或變更小組網站的許可權，請選取小組網站或其任何文件庫，然後按一下 **[流覽網站許可權**]。 **秘訣：** 需要 SharePoint 小組網站許可權的協助嗎？ 在小組網站權限中有一個實用的 [深入了解](https://office.microsoft.com/office365-sharepoint-online-enterprise-help/introduction-control-user-access-with-permissions-HA102771919.aspx?CTT=5&origin=HA102771924) 連結。
 
 ## <a name="tips"></a>提示
 

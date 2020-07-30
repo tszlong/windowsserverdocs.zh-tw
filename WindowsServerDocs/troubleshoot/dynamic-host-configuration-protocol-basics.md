@@ -1,21 +1,20 @@
 ---
 title: DHCP （動態主機設定通訊協定）基本概念
 description: ''
-ms.date: 5/26/2020
 ms.prod: windows-server
-ms.service: na
 manager: dcscontentpm
 ms.technology: server-general
-ms.topic: article
+ms.date: 5/26/2020
+ms.topic: troubleshoot
 author: Deland-Han
 ms.author: delhan
 ms.reviewer: ''
-ms.openlocfilehash: c7e4f385472c9078c49fcfd7aeab28b1b70c5a13
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: 5a3247fad961f4b2d1cf6e354c29706708c8e330
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84150206"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409809"
 ---
 # <a name="dhcp-dynamic-host-configuration-protocol-basics"></a>DHCP （動態主機設定通訊協定）基本概念
 
@@ -43,7 +42,7 @@ ms.locfileid: "84150206"
 
 - 適用于工作組3.11、3.11 和 3.11 b 版本的 Microsoft TCP/IP-32 for Windows
 
-不同的 DHCP 用戶端支援可以從 DHCP 伺服器接收的不同選項。 
+不同的 DHCP 用戶端支援可以從 DHCP 伺服器接收的不同選項。
 
 下列 Microsoft 伺服器作業系統提供 DHCP 伺服器功能：
 

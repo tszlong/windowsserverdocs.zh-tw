@@ -5,33 +5,33 @@ author: laknight5
 ms.author: laknight
 ms.date: 6/29/2020
 ms.prod: windows-server
-ms.technology: storage-file-systems
+ms.technology: windows-commands
 ms.topic: article
-ms.openlocfilehash: c84aaed5b34c535221247dcdd6ab0a5462fd4aad
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3afc96970bb0350a3c1168c520cc20ad4f2254af
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931107"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409719"
 ---
 # <a name="refsutil"></a>ReFSUtil
 
->適用於：Windows Server 2019、Windows 10
+> 適用於：Windows Server 2019、Windows 10
 
-ReFSUtil 是 Windows 和 Windows Server 中包含的工具，會嘗試診斷嚴重損毀的 ReFS 磁片區、識別剩餘的檔案，並將這些檔案複製到另一個磁片區。 這是在 Windows 10 的資料夾中， `%SystemRoot%\Windows\System32` 或是在 Windows Server 的 `%SystemRoot%\\System32` 資料夾中。
+ReFSUtil 是 Windows 和 Windows Server 中包含的工具，會嘗試診斷嚴重損毀的 ReFS 磁片區、識別剩餘的檔案，並將這些檔案複製到另一個磁片區。 這是在 Windows 10 的資料夾中， `%SystemRoot%\Windows\System32` 或是在 Windows Server 的 `%SystemRoot%\System32` 資料夾中。
 
 ReFS 搶救是 ReFSUtil 的主要功能，適用于從磁片管理中顯示為原始的磁片區復原資料。 ReFS 搶救有兩個階段：掃描階段和複製階段。 在 [自動] 模式中，[掃描] 階段和 [複製階段] 將會循序執行。 在手動模式中，每個階段都可以單獨執行。 進度和記錄會儲存在工作目錄中，以允許個別執行階段，以及要暫停和繼續掃描階段。 您不應該使用 ReFSutil 工具，除非該磁片區是 RAW。 如果是唯讀，則資料仍然可以存取。
 
 ## <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 |--|--|
 | `<source volume>` | 指定要處理的 ReFS 磁片區。 磁碟機號必須格式化為 "L："，或者您必須提供磁片區掛接點的路徑。 |
 | `<working directory>` | 指定要儲存暫存資訊和記錄檔的位置。 它不得**位於**上 `<source volume>` 。 |
 | `<target directory>` | 指定要將已識別檔案複製到其中的位置。 它不得**位於**上 `<source volume>` 。 |
 | \-m | 復原所有可能的檔案，包括刪除的檔案。<p>**警告：** 這個參數不僅會使進程執行較長的時間，也可能導致非預期的結果。 |
 | \-& | 指定使用詳細資訊模式。 |
-| \-x | 必要時，強制先卸載磁片區。 磁片區的所有開啟的控制碼都將失效。 例如 `refsutil salvage -QA R: N:\\WORKING N:\\DATA -x`。 |
+| \-x | 必要時，強制先卸載磁片區。 磁片區的所有開啟的控制碼都將失效。 例如： `refsutil salvage -QA R: N:\WORKING N:\DATA -x` 。 |
 
 ## <a name="usage-and-available-options"></a>使用方式和可用的選項
 
@@ -99,6 +99,6 @@ Advanced users 可以使用互動式主控台搶救檔案。 此模式也需要�
 refsutil salvage -IC <source volume> <working directory> <options>
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

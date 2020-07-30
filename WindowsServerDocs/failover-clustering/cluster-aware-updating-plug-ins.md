@@ -9,12 +9,12 @@ ms.author: jgerend
 author: JasonGerend
 ms.date: 04/28/2017
 ms.technology: storage-failover-clustering
-ms.openlocfilehash: 21585ab376830f37ca6432849dd8e9b3773af9ab
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ac09163eb40045289a68287aa3eace20ff714d09
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473295"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409578"
 ---
 # <a name="how-cluster-aware-updating-plug-ins-work"></a>叢集感知更新外掛程式的工作方式
 
@@ -84,7 +84,7 @@ CAU 會 \- 安裝 \( **microsoft.windowsupdateplugin**和 Microsoft 的外掛程
 |Cmdlet|描述|
 |----------|---------------|
 |[Get-CauPlugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/get-cauplugin)|抓取在 \- 本機電腦上註冊的一或多個軟體更新外掛程式的相關資訊。|
-|[Register-CauPlugin]((https://docs.microsoft.com/powershell/module/clusterawareupdating/register-cauplugin))|在本機電腦上註冊 CAU 軟體更新外掛程式 \- 。|
+|[Register-CauPlugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/register-cauplugin)|在本機電腦上註冊 CAU 軟體更新外掛程式 \- 。|
 |[Unregister-CauPlugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/unregister-cauplugin)|\-從可供 CAU 使用的外掛程式清單中移除軟體更新外掛程式 \- 。 **注意：**\-與 CAU \( **microsoft.windowsupdateplugin**和**microsoft.hotfixplugin**一起安裝的外掛程式 \) 無法取消註冊。|
 
 ## <a name="using-the-microsoftwindowsupdateplugin"></a><a name="BKMK_WUP"></a>使用 Microsoft.windowsupdateplugin
@@ -164,7 +164,7 @@ CAU Microsoft.windowsupdateplugin 的預設外掛程式會 \- 執行**Microsoft.
     > [!NOTE]
     > 若要安裝 Microsoft 提供的大部分 Hotfix 與其他更新，您可以使用預設的 Hotfix 設定檔而無需修改。 若您的案例需要，您可以以進階工作方式自訂設定檔。 設定檔可以包含自訂規則，例如處理具有特定副檔名的 Hotfix 或定義特定結束條件行為的規則。 如需詳細資訊，請參閱此主題稍後的[自訂 Hotfix 設定檔](#BKMK_CONFIG_FILE)。
 
-### <a name="configuration"></a>設定
+### <a name="configuration"></a>組態
 
 設定下列設定。 如需詳細資訊，請參閱此主題稍後的小節的連結。
 - 包含要套用之更新與 Hotfix 設定檔之共用 Hotfix 根資料夾的路徑。 您可以在 CAU UI 中輸入此路徑，或設定**HotfixRootFolderPath \= \<Path> ** PowerShell 外掛程式 \- 引數。
@@ -398,7 +398,7 @@ Hotfix 設定檔控制 **Microsoft.HotfixPlugin** 如何在容錯移轉叢集中
 > [!IMPORTANT]
 > 若選取強制使用 SMB 加密的選項，且未針對使用 SMB 加密的連線設定 Hotfix 根資料夾，「更新執行」將失敗。
 
-#### <a name="step-5-enable-a-windows-firewall-rule-on-the-smb-server"></a>步驟 5： 在 SMB 伺服器上啟用 Windows 防火牆規則
+#### <a name="step-5-enable-a-windows-firewall-rule-on-the-smb-server"></a>步驟 5。 在 SMB 伺服器上啟用 Windows 防火牆規則
 
 您必須在 SMB 檔案伺服器上的 [Windows 防火牆] 中啟用 [**檔案伺服器遠端系統管理 \( smb \- \) ** ] 規則。 在 Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 中，預設會啟用此功能。
 

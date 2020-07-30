@@ -9,12 +9,12 @@ ms.author: jgerend
 manager: dongill
 ms.date: 06/29/2020
 ms.prod: windows-server
-ms.openlocfilehash: bd2d1f9baa17581cb43ae383c260c938f302a73c
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 33b19ba9c6f7d8f12d72876a04dbf8bdfda7ff30
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958980"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409929"
 ---
 # <a name="windows-commands"></a>Windows 命令
 
@@ -49,7 +49,7 @@ ms.locfileid: "86958980"
 [W](#w)  |
 [X](#x) |Y |Z
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 本主題所包含的資訊適用于：
 
@@ -711,8 +711,7 @@ PowerShell 的設計目的是要擴充命令 shell 的功能，以執行稱為 C
 - [regini](regini.md)
 - [regsvr32](regsvr32.md)
 - [relog](relog.md)
-- [rem batch file](rem.md)
-- [rem script](rem_1.md)
+- [rem](rem.md)
 - [remove](remove.md)
 - [ren](ren.md)
 - [rename](rename.md)

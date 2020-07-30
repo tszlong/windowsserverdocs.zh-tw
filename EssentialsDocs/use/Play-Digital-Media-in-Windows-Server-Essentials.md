@@ -7,12 +7,12 @@ ms.assetid: 5f570492-ee21-471b-92c1-3fd9bfb84f55
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: bd14631917a9f0211e39bd44c9d01e11ad2a177f
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: c8f490f09f9623aa82b42f2103f2fd3e95537d7d
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87179884"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409508"
 ---
 # <a name="play-digital-media-in-windows-server-essentials"></a>在 Windows Server Essentials 中播放數位媒體
 
@@ -65,11 +65,9 @@ ms.locfileid: "87179884"
 
  您可以使用下列任一方式來搜尋和播放儲存在您的伺服器上的數位媒體檔案：
 
-
 -   [從網路上的電腦或數位媒體播放機搜尋和播放 Windows Server Essentials 上的媒體檔案](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_2.1)
 
 -   [將 Windows Server Essentials 上的媒體檔案傳送到 Windows 媒體播放機、Xbox 360，或網路中的網路數位媒體播放機](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_SendToDevice)
-
 
 
 ###  <a name="search-for-and-play-media-files-on-windows-server-essentials-from-a-computer-or-digital-media-player-on-the-network"></a><a name="BKMK_2.1"></a>從網路上的電腦或數位媒體播放機搜尋和播放 Windows Server Essentials 上的媒體檔案
@@ -87,7 +85,6 @@ ms.locfileid: "87179884"
 -   [使用啟動列的共用資料夾功能來搜尋和播放媒體檔案](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_SharedFolders)
 
 -   [使用遠端 Web 存取來搜尋和播放共用媒體](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_RWA2)
-
 
 
 ####  <a name="search-for-and-play-media-files-from-a-computer-that-is-running-windows-media-center"></a><a name="BKMK_WMC"></a>從執行 Windows Media Center 的電腦搜尋和播放媒體檔案
@@ -260,19 +257,8 @@ ms.locfileid: "87179884"
 
 -   [管理數位媒體](../manage/Manage-Digital-Media-in-Windows-Server-Essentials.md)
 
-
 -   [取得連線](Get-Connected-in-Windows-Server-Essentials.md)
 
 -   [使用共用資料夾](Use-Shared-Folders-in-Windows-Server-Essentials.md)
 
 -   [遠端工作](Work-Remotely-in-Windows-Server-Essentials.md)
-
-< < < < < < < HEAD
--   [取得連線](../use/Get-Connected-in-Windows-Server-Essentials.md)
-
--   [使用共用資料夾](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md)
-
--   [遠端工作](../use/Work-Remotely-in-Windows-Server-Essentials.md)
-
-=======
->>>>>>> 97724df67237ac603cf9eb996732230bdb7c0b88

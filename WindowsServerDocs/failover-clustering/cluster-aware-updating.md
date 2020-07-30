@@ -9,12 +9,12 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 08/06/2018
 ms.assetid: 3c2993b4-aa81-452b-a5c3-3724ad95d892
-ms.openlocfilehash: fbe523043b905e80559dfb9df799426761709b4e
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: a889e19947d014bc2008417f64f6be5cc53112e6
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87177914"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409889"
 ---
 # <a name="cluster-aware-updating-overview"></a>叢集感知更新概觀
 

@@ -7,12 +7,12 @@ ms.assetid: 6141fa69-5952-4e3c-a868-40ef3f4badd2
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 32692ff36b82527e96979628948909461aafa82f
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 3f9bfeb2dbadd4d3d6cadd0200f05759d75f5519
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181404"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409548"
 ---
 # <a name="create-a-server-recovery-dvd-for-remotely-administered-servers"></a>針對遠端管理的伺服器建立伺服器復原 DVD
 
@@ -94,7 +94,7 @@ ms.locfileid: "87181404"
 ####  <a name="step-3-create-the-server-recovery-dvd"></a><a name="BKMK_Creating"></a>步驟3：建立伺服器復原 DVD
  原廠出貨的每部伺服器都必須隨附伺服器復原 DVD。 您的 ADK 工具 DVD 包含建立 DVD 所需要的檔案。
 
-###### <a name="to-create-the-server-recovery-dvd"></a>建立伺服器復原 DVD
+##### <a name="to-create-the-server-recovery-dvd"></a>建立伺服器復原 DVD
 
 1.  建立一個工作資料夾，做為儲存最終 ISO 的位置。
 
@@ -114,15 +114,15 @@ ms.locfileid: "87181404"
 
 1. 精靈頁面上會有其他說明的連結。 若此 .chm 檔案存在，則會覆寫網頁說明的 FWLink。 說明檔案位於：
 
-    <DVD Root \> \\ $OEM $ \Customization \\<文化特性名稱 \> \RestartHelp.chm
+    `<DVD Root>\$OEM$\Customization\<culture name>\RestartHelp.chm`
 
 2. 此檔案包含客戶在精靈頁面上所看見的文字。 這些文字會說明如何將伺服器開機至復原模式。 其控制項是可捲動的，它會對可新增的文字數量施以實用的限制。
 
     下列檔案是用來取代精靈中的範例圖片，主要與商標有關。 它必須是 .png 檔案。 檔案大小必須是 256 像素 x 256 像素，否則會在於精靈中顯示時遭到截斷。
 
-    <DVD Root \> \\ $OEM $ \Customization \\<文化特性名稱 \> \RestartInstructions.rtf
+    `<DVD Root>\$OEM$\Customization\<culture name>\RestartInstructions.rtf`
 
-3. <DVD 根 \> \\ $OEM $ \Customization \\<文化特性名稱 \>\ServerImage.png
+3. `<DVD Root>\$OEM$\Customization\<culture name>\ServerImage.png`
 
    轉換伺服器復原 DVD 以支援多個語言時，請確定執行下列作業：
 
@@ -136,7 +136,25 @@ ms.locfileid: "87181404"
 
    支援的文化特性名稱包括：
 
-|-|-| |-cs-CZ<br /><br /> -de<br /><br /> -en-us<br /><br /> -es<br /><br /> -fr-FR<br /><br /> -hu-HU<br /><br /> -it-IT<br /><br /> -ja-jp<br /><br /> -ko-KR<br /><br /> -nl-NL |-pl-PL<br /><br /> -pt-BR<br /><br /> -pt-PT<br /><br /> -ru-RU<br /><br /> -sv-SE<br /><br /> -tr-TR<br /><br /> -zh-CN<br /><br /> -zh-HK<br /><br /> -zh-幼圓
+   - cs-CZ
+   - de-DE
+   - en-US
+   - es-ES
+   - fr-FR
+   - hu-HU
+   - it-IT
+   - ja-JP
+   - ko-KR
+   - nl-NL
+   - pl-PL
+   - pt-BR
+   - pt-PT
+   - ru-RU
+   - sv-SE
+   - tr-TR
+   - zh-CN
+   - zh-HK
+   - zh-TW
 
 ####  <a name="step-5-create-the-iso-file"></a><a name="BKMK_CreatingISO"></a>步驟5：建立 ISO 檔案
  建立的資料夾與所有內容都可以燒錄至 DVD。 這是會隨新伺服器提供給客戶的 DVD。

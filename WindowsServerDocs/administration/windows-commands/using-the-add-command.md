@@ -1,5 +1,5 @@
 ---
-title: add
+title: 使用 add 命令
 description: 各種 add 命令的參考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 23bcfa5d304839094151d8baa9a7ebd77334d469
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 4b70ec8ef9d80b8fc09af1283c5e108642c764b6
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937248"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87408787"
 ---
-# <a name="add"></a>add
+# <a name="using-the-add-command"></a>使用 add 命令
 
 > 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 ## <a name="subcommands"></a>子
-|子命令|Description|
+|子命令|描述|
 |-------|--------|
 |[使用 [新增裝置] 命令](using-the-add-device-command.md)|在 active directory 中將預先設置電腦。|
 |[使用新增映射命令](using-the-add-image-command.md)|新增開機或安裝映射。|

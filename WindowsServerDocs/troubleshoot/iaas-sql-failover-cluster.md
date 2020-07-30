@@ -6,12 +6,12 @@ ms.technology: server-general
 ms.date: 05/28/2020
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: c0e2f0309049f0271a223c2a23012eb2efa8d843
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: 86a7023f6480e68f917cb8cdd9d0c69c417d3145
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84150166"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409789"
 ---
 # <a name="iaas-with-sql-alwayson---tuning-failover-cluster-network-thresholds"></a>IaaS 與 SQL AlwaysOn - 微調容錯移轉叢集網路閾值
 
@@ -21,7 +21,7 @@ ms.locfileid: "84150166"
 
 使用 SQL Server AlwaysOn 在 IaaS 中執行 Windows 容錯移轉叢集節點時，建議您將叢集設定變更為較寬鬆的監視狀態。 現成的叢集設定會受到限制，而且可能會造成不必要的中斷。 預設設定是專為對內部部署網路進行高度調整而設計，並不會考慮因多租使用者環境（例如 Windows Azure （IaaS））而造成延遲的可能性。
 
-Windows Server 容錯移轉叢集會持續監視 Windows 叢集中節點的網路連線和健全狀況。  如果無法透過網路連線到節點，則會採取復原動作來復原，並讓叢集中另一個節點上的應用程式和服務恢復連線。 叢集節點之間通訊的延遲可能會導致下列錯誤：  
+Windows Server 容錯移轉叢集會持續監視 Windows 叢集中節點的網路連線和健全狀況。  如果無法透過網路連線到節點，則會採取復原動作來復原，並讓叢集中另一個節點上的應用程式和服務恢復連線。 叢集節點之間通訊的延遲可能會導致下列錯誤：
 
 > 錯誤1135（系統事件記錄檔）
 
@@ -91,17 +91,16 @@ C:\Windows\system32> get-cluster | fl *subnet*
 
 每個支援作業系統的預設、最小值、最大值和建議值
 
-|   |作業系統|最小值|最大值|預設|建議|
-|---|---|---|---|---|---|
-|CrossSubnetThreshold|2008 R2|3|20|5|20|
-|CrossSubnet 臨界值|2012|3|120|5|20|
-|CrossSubnet 臨界值|2012 R2|3|120|5|20|
-|CrossSubnet 臨界值|2016|3|120|20|20|
-|SameSubnet 臨界值|2008 R2|3|10|5|10|
-|SameSubnet 臨界值|2012|3|120|5|10
-|SameSubnet 臨界值|2012 R2|3|120|5|10|
-|SameSubnetThreshold|2016|3|120|10|10|
-|||||||
+| 描述 | OS | 最小值 | 最大值 | 預設 | 建議 |
+|--|--|--|--|--|--|
+| CrossSubnetThreshold | 2008 R2 | 3 | 20 | 5 | 20 |
+| CrossSubnet 臨界值 | 2012 | 3 | 120 | 5 | 20 |
+| CrossSubnet 臨界值 | 2012 R2 | 3 | 120 | 5 | 20 |
+| CrossSubnet 臨界值 | 2016 | 3 | 120 | 20 | 20 |
+| SameSubnet 臨界值 | 2008 R2 | 3 | 10 | 5 | 10 |
+| SameSubnet 臨界值 | 2012 | 3 | 120 | 5 | 10 |
+| SameSubnet 臨界值 | 2012 R2 | 3 | 120 | 5 | 10 |
+| SameSubnetThreshold | 2016 | 3 | 120 | 10 | 10 |
 
 [閾值] 的值會反映目前關於部署範圍的建議，如下列文章所述：
 

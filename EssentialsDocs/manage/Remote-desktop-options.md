@@ -7,29 +7,26 @@ ms.assetid: 51076946-ea9b-4ac7-9a6e-d6023816b97d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 8d1235e523bf055d1d3ec6aa78780aa8e4f2f44e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7de65cdbed7fc1995f6729a49e9398ce948a63c6
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470393"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409528"
 ---
 # <a name="remote-desktop-options"></a>遠端桌面選項
-
 
 ## <a name="connection-speed"></a>連線速度
  連線到使用遠端 Web 存取之網路電腦的速度會決定您在主機電腦上可用的桌面選項。 下表顯示您透過遠端 Web 存取連線到遠端電腦的速度，可使用的桌面選項。
 
-||||||
-|-|-|-|-|-|
-||慢速數據機 (28.8 Kbps)|快速數據機 (56 Kbps) (預設值)|寬頻 (128 Kbps - 1.5 Mbps)|區域網路 (1.5 Mbps 或更高)|
-|桌面背景|否|否|否|是|
-|字型平滑處理|否|否|否|是|
-|桌面轉譯緩衝處理|否|否|是|是|
-|拖曳時顯示視窗的內容|否|否|是|是|
-|功能表及視窗動畫|否|否|是|是|
-|佈景主題|否|是|是|是|
-|點陣圖快取|是|是|是|是|
+| Desktop 選項 | 慢速數據機 (28.8 Kbps) | 快速數據機 (56 Kbps) (預設值) | 寬頻 (128 Kbps - 1.5 Mbps) | 區域網路 (1.5 Mbps 或更高) |
+|--|--|--|--|--|
+| 字型平滑處理 | 否 | 否 | 否 | 是 |
+| 桌面轉譯緩衝處理 | 否 | 否 | 是 | 是 |
+| 拖曳時顯示視窗的內容 | 否 | 否 | 是 | 是 |
+| 功能表及視窗動畫 | 否 | 否 | 是 | 是 |
+| 佈景主題 | 否 | 是 | 是 | 是 |
+| 點陣圖快取 | 是 | 是 | 是 | 是 |
 
 ## <a name="screen-size"></a>螢幕大小
  此選項會決定當您透過遠端存取網站連線到遠端電腦時，在本機電腦上開啟的視窗大小。 視窗大小以像素表示。

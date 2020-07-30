@@ -2,18 +2,17 @@
 title: 使用 Windows Server Essentials 中的遠端 Web 存取
 description: 說明如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 47ea21a0-5e05-4b4b-8fa4-338c82601276
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 4758842e65ef562b5a387e791f9909a660954335
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 341a7dd217045150e1f637d23378e49a86bb5fbf
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469973"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409478"
 ---
 # <a name="use-remote-web-access-in-windows-server-essentials"></a>使用 Windows Server Essentials 中的遠端 Web 存取
 
@@ -24,7 +23,6 @@ ms.locfileid: "85469973"
   「遠端 Web 存取」可協助您在置身他處時與 Windows Server Essentials 網路保持連線。 當您登入遠端 Web 存取時，您可以連線到 Windows Server Essentials 網路上的電腦、開啟 [儀表板] 來管理 Windows Server Essentials 網路，以及存取伺服器上的所有共用資料夾和媒體檔案。
 
  這個主題包括下列各節：
-
 
 -   [連線到遠端 Web 存取](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Connect)
 
@@ -129,7 +127,7 @@ ms.locfileid: "85469973"
 
 #### <a name="upload-files"></a>上傳檔案
 
-###### <a name="to-upload-files"></a>上傳檔案
+##### <a name="to-upload-files"></a>上傳檔案
 
 1. 在 [遠端 Web 存取] 中，按一下 [共用資料夾]**** 索引標籤，然後按一下某個共用資料夾連結。 這會顯示該共用資料夾中檔案和資料夾的清單。
 
@@ -150,7 +148,7 @@ ms.locfileid: "85469973"
 > [!NOTE]
 >  與 HTML5 相容的網頁瀏覽器中原本就支援上傳多個檔案。 只有當網頁瀏覽器不支援 HTML5 時，才需要這個工具。
 
-###### <a name="to-upload-files-using-the-easy-file-upload-tool"></a>使用簡易檔案上傳工具來上傳檔案
+##### <a name="to-upload-files-using-the-easy-file-upload-tool"></a>使用簡易檔案上傳工具來上傳檔案
 
 1.  在 [遠端 Web 存取] 中，按一下 [共用資料夾]**** 索引標籤，然後按一下某個共用資料夾連結。 這會顯示該共用資料夾中檔案和資料夾的清單。
 
@@ -168,7 +166,7 @@ ms.locfileid: "85469973"
 
 #### <a name="download-files-or-folders"></a>下載檔案或資料夾
 
-###### <a name="to-download-a-single-file"></a>下載單一檔案
+##### <a name="to-download-a-single-file"></a>下載單一檔案
 
 1. 在 [遠端 Web 存取] 中，按一下 [共用資料夾]**** 索引標籤，然後按一下某個共用資料夾連結。 這會顯示該共用資料夾中檔案和資料夾的清單。
 
@@ -204,7 +202,7 @@ ms.locfileid: "85469973"
 
   在實際的下載開始之前，會先建立 exe 或 zip 檔。 視要下載的檔案數目和檔案總大小而定，這可能會花費數分鐘的時間。 建立下載檔案之後，就會在背景進行下載檔案的程序。 這可讓您在下載程序完成的過程中繼續工作。
 
-###### <a name="to-download-multiple-files-or-folders"></a>下載多個檔案或資料夾
+##### <a name="to-download-multiple-files-or-folders"></a>下載多個檔案或資料夾
 
 1.  在 [遠端 Web 存取] 中，按一下 [共用資料夾]**** 索引標籤，然後按一下某個共用資料夾連結。 這會顯示該共用資料夾中檔案和資料夾的清單。
 
@@ -225,13 +223,13 @@ ms.locfileid: "85469973"
 
  如果您選取多個檔案或資料夾來下載，您可能會收到可自我解壓縮的壓縮執行檔 (.exe) 或壓縮檔 (.zip)。
 
-###### <a name="to-retrieve-a-file-from-the-compressed-exe-file"></a>從壓縮檔 (.exe) 中擷取檔案
+##### <a name="to-retrieve-a-file-from-the-compressed-exe-file"></a>從壓縮檔 (.exe) 中擷取檔案
 
 1.  在您的電腦上，按兩下壓縮檔來開啟它。
 
 2.  依照指示將檔案解壓縮到您電腦上的資料夾。
 
-###### <a name="to-retrieve-a-file-from-the-compressed-zip-file"></a>從壓縮檔 (.zip) 中擷取檔案
+##### <a name="to-retrieve-a-file-from-the-compressed-zip-file"></a>從壓縮檔 (.zip) 中擷取檔案
 
 1.  在您的電腦上，按兩下壓縮檔來開啟它。
 
@@ -244,9 +242,9 @@ ms.locfileid: "85469973"
  您可以使用「遠端 Web 存取」在您的伺服器上於現有的共用資料夾中建立新資料夾、重新命名檔案和資料夾、移動及複製檔案和資料夾，以及刪除檔案和資料夾。
 
 > [!NOTE]
-<<<<<<< 標頭在執行 Windows Server Essentials 的伺服器上新增共用資料夾，您必須使用 [儀表板]。 若要從 [遠端的 Web 存取] 連線到伺服器主控台，請在 [電腦]**** 索引標籤上，按一下伺服器名稱，按一下 [連線]****，然後依照指示來登入伺服器。 如須有關如何建立共用資料夾的資訊，請參閱[新增或移動伺服器資料夾](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5)。
+> 若要在執行 Windows Server Essentials 的伺服器上新增共用資料夾，您必須使用 [儀表板]。 若要從 [遠端的 Web 存取] 連線到伺服器主控台，請在 [電腦]**** 索引標籤上，按一下伺服器名稱，按一下 [連線]****，然後依照指示來登入伺服器。 如須有關如何建立共用資料夾的資訊，請參閱[新增或移動伺服器資料夾](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5)。
 
-##### <a name="to-create-a-new-folder"></a>建立新資料夾
+#### <a name="to-create-a-new-folder"></a>建立新資料夾
 
 1.  在 [遠端 Web 存取] 中，按一下 [共用資料夾]**** 索引標籤，然後按一下某個共用資料夾連結。 這會顯示該共用資料夾中檔案和資料夾的清單。
 
@@ -262,7 +260,7 @@ ms.locfileid: "85469973"
 
 3.  在文字方塊中輸入新名稱，然後按一下 [確定]****。
 
-##### <a name="to-move-files-or-folders"></a>移動檔案或資料夾
+#### <a name="to-move-files-or-folders"></a>移動檔案或資料夾
 
 1.  在 [遠端 Web 存取] 中，按一下 [共用資料夾]**** 索引標籤，然後按一下某個共用資料夾連結。 這會顯示該共用資料夾中檔案和資料夾的清單。
 
@@ -356,108 +354,3 @@ ms.locfileid: "85469973"
 
 -   [使用 Windows Server Essentials](../use/Use-Windows-Server-Essentials.md)
 
-=======
->  若要在執行 Windows Server Essentials 的伺服器上新增共用資料夾，您必須使用 [儀表板]。 若要從 [遠端的 Web 存取] 連線到伺服器主控台，請在 [電腦]**** 索引標籤上，按一下伺服器名稱，按一下 [連線]****，然後依照指示來登入伺服器。 如須有關如何建立共用資料夾的資訊，請參閱[新增或移動伺服器資料夾](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5)。
-
-##### <a name="to-create-a-new-folder"></a>建立新資料夾
-
-1.  在 [遠端 Web 存取] 中，按一下 [共用資料夾]**** 索引標籤，然後按一下某個共用資料夾連結。 這會顯示該共用資料夾中檔案和資料夾的清單。
-
-2.  在工作列中，按一下 [新增資料夾]****。
-
-3.  輸入資料夾的名稱，然後按一下 [確定]****。
-
-##### <a name="to-rename-a-file-or-folder"></a>重新命名檔案或資料夾
-
-1.  在 [遠端 Web 存取] 中，按一下 [共用資料夾]**** 索引標籤，然後按一下某個共用資料夾連結。 這會顯示該共用資料夾中檔案和資料夾的清單。
-
-2.  在您想要重新命名的檔案或資料夾上按一下滑鼠右鍵，然後按一下 [重新命名]****。
-
-3.  在文字方塊中輸入新名稱，然後按一下 [確定]****。
-
-##### <a name="to-move-files-or-folders"></a>移動檔案或資料夾
-
-1.  在 [遠端 Web 存取] 中，按一下 [共用資料夾]**** 索引標籤，然後按一下某個共用資料夾連結。 這會顯示該共用資料夾中檔案和資料夾的清單。
-
-2.  選取您想要移動之檔案或資料夾旁邊的核取方塊，在其中一個選取的檔案或資料夾上按一下滑鼠右鍵，然後按一下 [剪下]****。
-
-3.  在您想要將檔案或資料夾移到該處的資料夾上按一下滑鼠右鍵，然後按一下 [貼上]****。
-
-##### <a name="to-delete-a-file-or-folder"></a>刪除檔案或資料夾
-
-1.  在 [遠端 Web 存取] 中，按一下 [共用資料夾]**** 索引標籤，然後按一下某個共用資料夾連結。 這會顯示該共用資料夾中檔案和資料夾的清單。
-
-2.  選取您想要刪除之檔案或資料夾旁邊的核取方塊，在其中一個選取的檔案或資料夾上按一下滑鼠右鍵，然後按一下 [刪除]****。
-
-3.  若要確認您想要刪除選取的檔案和資料夾，請按一下 [是]****。
-
-##### <a name="to-copy-files-or-folders"></a>複製檔案或資料夾
-
-1.  在 [遠端 Web 存取] 中，按一下 [共用資料夾]**** 索引標籤，然後按一下某個共用資料夾連結。 這會顯示該共用資料夾中檔案和資料夾的清單。
-
-2.  選取您想要複製之檔案或資料夾旁邊的核取方塊，在其中一個選取的檔案或資料夾上按一下滑鼠右鍵，然後按一下 [複製]****。
-
-3.  在您想要將檔案或資料夾複製到該處的資料夾上按一下滑鼠右鍵，然後按一下 [貼上]****。
-
-##  <a name="connect-from-a-mobile-device"></a><a name="BKMK_ConnectMobile"></a>從行動裝置連接
-
-
--   [從行動裝置使用遠端 Web 存取](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_8)
-
--   [支援的行動裝置網頁瀏覽器](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_9)
-
-
-###  <a name="use-remote-web-access-from-a-mobile-device"></a><a name="BKMK_8"></a>從行動裝置使用遠端 Web 存取
- 您可以從智慧型手機登入 [遠端 Web 存取] 來檢視伺服器上共用資料夾中的檔案和資料夾。
-
-> [!NOTE]
->  您也可以從 [Windows Phone Marketplace](http://www.windowsphone.com/apps/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a) 下載並使用適用於 Windows Server Essentials 的 My Server 應用程式，來存取儲存在伺服器上的共用資料夾和媒體檔案。
-
-##### <a name="to-log-on-to-remote-web-access-from-a-mobile-device"></a>從行動裝置登入遠端 Web 存取
-
-1.  開啟網頁瀏覽器，然後在網址列中輸入**HTTPs://** _<您功能變數名稱 \> _ **/remote** 。  請確定您在 HTTPs 中包含 s。
-
-2.  在 [遠端 Web 存取登入] 頁面的文字方塊中輸入您的使用者名稱和密碼，然後按一下箭號。 這會將您登入行動裝置版本的「遠端 Web 存取」。
-
-##### <a name="to-switch-to-the-desktop-version-of-remote-web-access"></a>切換到桌面版本的遠端 Web 存取
-
-1.  開啟網頁瀏覽器，然後在網址列中輸入**HTTPs://** _<您功能變數名稱 \> _ **/remote** 。  請確定您在 HTTPs 中包含 s。
-
-2.  在 [遠端 Web 存取登入] 頁面上，于文字方塊中輸入您的使用者名稱和密碼，按一下 [**觀看桌上出版本**]，然後按一下箭號。 這會將您登入桌面版本的「遠端 Web 存取」。
-
-##### <a name="to-return-to-the-mobile-version-of-remote-web-access"></a>回到行動裝置版本的遠端 Web 存取
-
-1. 登出。
-
-2. 開啟網頁瀏覽器，然後在網址列中輸入**HTTPs://** _<您功能變數名稱 \> _**網址列/remote/m** 。 請確定您在 HTTPs 中包含 s。
-
-3. 隨即顯示 [遠端 Web 存取的行動版。 在 [遠端 Web 存取登入] 頁面的文字方塊中輸入您的使用者名稱和密碼，然後按一下箭號。 您登入的是行動版的遠端 Web 存取。
-
-   您可以搜尋伺服器上共用資料夾中的檔案和資料夾。
-
-###  <a name="supported-web-browsers-for-mobile-devices"></a><a name="BKMK_9"></a>行動裝置支援的網頁瀏覽器
- 支援的行動裝置網頁瀏覽器包括：
-
--   Internet Explorer Mobile 6.0 或更新版本
-
--   Safari
-
--   Blackberry
-
--   Symbian 6.0 或更新版本
-
--   Android
-
--   Google Chrome
-
--   Firefox
-
-## <a name="see-also"></a>另請參閱
-
--   [管理遠端 Web 存取](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)
-
--   [遠端工作](Work-Remotely-in-Windows-Server-Essentials.md)
-
--   [使用 Windows Server Essentials](Use-Windows-Server-Essentials.md)
-
->>>>>>> 97724df67237ac603cf9eb996732230bdb7c0b88

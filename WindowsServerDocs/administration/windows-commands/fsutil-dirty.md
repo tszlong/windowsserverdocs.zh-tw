@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: 385a2a7c-d6bd-4f11-9c18-fca0413f9e97
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: c61ab5405fb5b469b6f4513459e4096524f4b7fe
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: cb133dc9f9f19a948eb88d24935fac27f2a5e4a3
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929269"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409729"
 ---
 # <a name="fsutil-dirty"></a>fsutil dirty
 
@@ -30,7 +30,7 @@ fsutil dirty {query | set} <volumepath>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | 查詢 | 查詢指定的磁片區的中途位。 |
 | set | 設定指定磁片區的中途位。 |
@@ -56,13 +56,9 @@ fsutil dirty {query | set} <volumepath>
 fsutil dirty query c:
 ```
 
-    If the volume is dirty, the following output displays:
+- 如果磁片區已變更，則會顯示下列輸出：`Volume C: is dirty`
 
-    `Volume C: is dirty`
-
-    If the volume isn't dirty, the following output displays:
-
-    `Volume C: is not dirty`
+- 如果磁片區未變更，則會顯示下列輸出：`Volume C: is not dirty`
 
 若要在磁片磁碟機 C 上設定中途位，請輸入：
 
@@ -70,7 +66,7 @@ fsutil dirty query c:
 fsutil dirty set C:
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -9,18 +9,19 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e58898359c15a19f139d074bca4ef7bd1aaf9062
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 350187c0ad7490a0698e4a3b99ef710b632f6c6c
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851431"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87408837"
 ---
 # <a name="software-inventory-logging-aggregator"></a>軟體清查記錄彙總工具
 
->適用于： Windows Server 2012 R2
+> 適用于： Windows Server 2012 R2
 
 ## <a name="what-is-software-inventory-logging-aggregator"></a>什麼是軟體清查記錄匯總工具？
+
 軟體清查記錄彙總工具 (SILA) 可接收、彙總並產生資料中心內的 Windows Server 上已安裝的 Microsoft 企業軟體數目和類型的基本報告。
 
 SILA 是可安裝在 Windows Server 上的軟體，但不包含在 Windows Server 安裝中。 若要安裝此軟體，請先從 Windows 下載中心免費下載： [適用於 Windows Server 的軟體清查記錄彙總工具 1.0](https://www.microsoft.com/download/details.aspx?id=49046)
@@ -31,6 +32,7 @@ SILA 是可安裝在 Windows Server 上的軟體，但不包含在 Windows Serve
 > 使用此軟體並不會將任何資料傳送給 Microsoft。
 
 ### <a name="data-sil-collects-over-time"></a>SIL 收集一段時間的資料
+
 正確部署後，就可在 SIL 彙總工具中檢視下列資料：
 
 -   唯一的 Windows Server 安裝在您的資料中心
@@ -51,11 +53,11 @@ SILA 是可安裝在 Windows Server 上的軟體，但不包含在 Windows Serve
 
 -   在一段時間內，每個主機上同時執行的 Windows Server VM (如果主機執行 Hypervisor) 的上限標記計數和身分識別
 
--   一段時間內，每個主機上\) Windows Server Vm 同時執行受管理 \(System Center 代理程式的高水位標記計數和主機名稱
+-   一段時間內，同時執行受管理的 System Center 代理程式的高水位標記計數和主機名稱會 \( 顯示每部 \) 主機上的 Windows Server vm
 
--   已安裝在 Vm 上的 System Center 代理程式名稱，並以受管理的高\-水標記計算
+-   Vm 上所安裝的 System Center 代理程式名稱，並以受管理 \- 的上限標準計算
 
--   經過一段時間後，SQL Server 安裝的計數和位置 \(只有需要授權的 Sku 和版本\)
+-   一段時間內 SQL Server 安裝的計數和位置 \( （僅限需要授權的 sku 和版本）\)
 
 -   [新增/移除程式] 中安裝的軟體清單
 
@@ -65,8 +67,8 @@ SILA 是可安裝在 Windows Server 上的軟體，但不包含在 Windows Serve
 
 -   **Cio 和財務**機關，他們需要報告其組織 IT 部署中的 Microsoft 企業軟體使用方式。
 
-## <a name="getting-started"></a>使用者入門
-**必要條件**
+## <a name="getting-started"></a>開始使用
+**先決條件**
 
 軟體清查記錄彙總工具 (SIL 彙總工具) 至少在一部伺服器上用於彙總和報告 (在 VM 中或實體硬體上)：
 
@@ -96,42 +98,42 @@ SILA 是可安裝在 Windows Server 上的軟體，但不包含在 Windows Serve
 ### <a name="security-and-account-types"></a>安全性和帳戶類型
 **憑證需求**
 
-SIL 和 SIL 彙總工具在已驗證的通訊上依賴 SSL 憑證。 一般的實作是以一個憑證 (伺服器名稱和憑證名稱相符) 安裝 SIL 彙總工具，以裝載接收清查資料的 Web 服務。 然後，要使用 SIL 功能清查的 Windows Server 會使用不同的用戶端憑證，將資料推入 SIL 彙總工具。 PowerShell Cmdlet （Set-silaggregator，以下提供更多詳細資料）必須用來將憑證指紋新增至 SIL 匯總工具的已核准憑證清單中，而匯總工具將會從中接受相關聯的資料。 以憑證驗證每一個裝載的資料之後，SIL 彙總工具會繼續處理並插入至其資料庫。 如何相關運作方式的具體細節，請參閱 **SIL 彙總工具 Cmdlet 詳細資料** 一節。
+SIL 和 SIL 彙總工具在已驗證的通訊上依賴 SSL 憑證。 一般的實作是以一個憑證 (伺服器名稱和憑證名稱相符) 安裝 SIL 彙總工具，以裝載接收清查資料的 Web 服務。 然後，要使用 SIL 功能清查的 Windows Server 會使用不同的用戶端憑證，將資料推入 SIL 彙總工具。 PowerShell Cmdlet （Set-silaggregator，以下提供更多詳細資料）必須用來將憑證指紋新增至 SIL 匯總工具的已核准憑證清單中，而匯總工具將會從中接受相關聯的資料。 以憑證驗證每一個裝載的資料之後，SIL 彙總工具會繼續處理並插入至其資料庫。 如何相關運作方式的具體細節，請參閱 **SIL 彙總工具 Cmdlet 詳細資料**一節。
 
 ### <a name="polling-account-setup"></a>輪詢帳戶設定
 將認證加入至 SIL 彙總工具來啟用輪詢作業時，您應該使用最低權限帳戶方法。 此外，基於安全性最佳作法，您不應該對資料中心或其他 IT 部署中的所有或多部主機使用相同的認證。
 
 在您想要設定由 SIL 彙總工具輪詢的 Windows Server 主機上，以及為了避免使用系統管理員群組中的使用者，請遵循下列步驟，提供剛好足夠的存取權給使用者帳戶：
 
-##### <a name="to-setup-a-polling-account"></a>設定輪詢帳戶
+#### <a name="to-setup-a-polling-account"></a>設定輪詢帳戶
 
-1.  在您想要從 SIL 彙總工具輪詢的 Windows Server Hyper-V 主機上，使用 Windows 中的 [電腦管理] 建立本機使用者帳戶 (務必取消核取強制在第一次登入時變更密碼的方塊)。
+1.  在您想要從 SIL 彙總工具輪詢的 Windows Server Hyper-V 主機上，使用 Windows 中的 [電腦管理]**** 建立本機使用者帳戶 (務必取消核取強制在第一次登入時變更密碼的方塊)。
 
 2.  將此使用者加入至 **Remote Management Users** 群組。
 
 3.  將此使用者加入至 **Hyper-V Administrators** 群組。
 
-4.  開啟**wmimgmt.msc** ，並**啟動**->**執行**。
+4.  使用**WMIMgmt.msc** [**開始** -> **執行**] 開啟 wmimgmt.msc。
 
-5.  按一下 [動作] 區段中的 [其他動作] ，選取 [內容]。
+5.  按一下 [動作]**** 區段中的 [其他動作]****，選取 [內容]****。
 
-6.  按一下 [安全性]。
+6.  按一下 **[安全性]** 。
 
-7.  在 [命名空間] 樹狀檢視中選取 [cimv2] 命名空間。
+7.  在 [命名空間]**** 樹狀檢視中選取 [cimv2]**** 命名空間。
 
-8.  按一下 [安全性] (按鈕)。
+8.  按一下 [安全性]**** (按鈕)。
 
 9. 以 **machinename\group name** 格式新增 **Remote Management Users** 群組
 
 10. 按一下 [確定]。
 
-11. 回到 [**root\cimv2** 的安全性] 視窗中，選取 [Remote Management Users]。
+11. 回到 [**root\cimv2** 的安全性] 視窗中，選取 [Remote Management Users]****。
 
 12. 在底部的 [許可權] 區段中，確定已核取 [**遠端啟用**]。
 
-13. 按一下 [套用] ，然後按一下 [確定]。
+13. 按一下 [套用]****，然後按一下 [確定]****。
 
-14. 按一下 [內容] 視窗中的 [確定] 。
+14. 在 [**屬性**] 視窗中按一下 **[確定]** 。
 
 ### <a name="installing-sil-aggregator"></a>安裝 SIL 彙總工具
 在 Windows Server 上安裝 SIL 彙總工具之前，您需要確定一些事情：
@@ -152,77 +154,77 @@ SIL 和 SIL 彙總工具在已驗證的通訊上依賴 SSL 憑證。 一般的�
 
     -   安裝之後，應該將 SQL Server 代理程式設定成自動執行。
 
--   **已新增 IIS 伺服器角色**並選取 .Net Framework 4.5、WCF 服務和 HTTP 啟用，全都都在 [新增角色及功能精靈]中選取的相同樹狀結構中完成。
+-   **已新增 IIS 伺服器角色**並選取 .Net Framework 4.5、WCF 服務和 HTTP 啟用，全都都在 [新增角色及功能精靈]**** 中選取的相同樹狀結構中完成。
 
--   您已 **使用伺服器上具有系統管理權限的帳戶登入伺服器** 。
+-   您**使用具有伺服器系統管理許可權的帳戶登入伺服器**。
 
--   您已 **使用 SQL Server 上具有 sysadmin 權限的帳戶登入伺服器**(如果想要使用 Windows 驗證)
+-   您已**使用 SQL Server 上具有 sysadmin 權限的帳戶登入伺服器** (如果想要使用 Windows 驗證)
 
     OR
 
     如果想要使用 SQL 驗證，**您必須知道 SQL 系統管理權限帳戶的密碼**。
 
-##### <a name="to-install-software-inventory-logging-aggregator"></a>安裝軟體清查記錄彙總工具
+#### <a name="to-install-software-inventory-logging-aggregator"></a>安裝軟體清查記錄彙總工具
 
 1.  按兩下 **Setup.exe** 開始安裝。
 
-2.  在歡迎使用視窗上按 [下一步] 。
+2.  在歡迎使用視窗上按 [下一步]****。
 
-3.  如果您接受使用者授權合約，請核取表示接受合約的方塊，然後按 [下一步]。
+3.  如果您接受 EULA，請核取接受合約的方塊，然後按 **[下一步]**。
 
-4.  在 [選擇功能] 中，選取 [安裝軟體清查記錄彙總工具和報告模組]，然後 [下一步]。
+4.  在 [選擇功能]**** 中，選取 [安裝軟體清查記錄彙總工具和報告模組]****，然後 [下一步]****。
 
-    如需有關只安裝報告模組的詳細資訊，請參閱 `Publish-SilReport`SIL 彙總工具 Cmdlet 詳細資料**一節下的** 。
+    如需有關只安裝報告模組的詳細資訊，請參閱 **SIL 彙總工具 Cmdlet 詳細資料**一節下的 `Publish-SilReport`。
 
-5.  驗證所有必要條件之後，按 [下一步]。
+5.  驗證所有必要條件之後，按 [下一步]****。
 
-6.  在 [選擇帳戶類型]中，隨您的喜好選取 [本機使用者] 或 [gMSA]。
+6.  在 [選擇帳戶類型] **** 中，隨您的喜好選取 [本機使用者] **** 或 [gMSA] ****。
 
-    選擇 [本機使用者] 帳戶選項會以自動產生的強式密碼建立本機使用者。 此帳戶將用於本機伺服器上的所有 SIL 彙總工具服務和工作作業。  如果彙總工具是 Active Directory 網域的一部分 (Windows Server 2012 及更高版本)，建議使用群組受管理的服務帳戶 (gMSA)。 如需 gMSA 的詳細資訊，請參閱： [群組受管理的服務帳戶概觀](https://technet.microsoft.com/library/hh831782.aspx)。
+    選擇 [本機使用者] 帳戶選項會以自動產生的強式密碼建立本機使用者。 此帳戶將用於本機伺服器上的所有 SIL 彙總工具服務和工作作業。  如果彙總工具是 Active Directory 網域的一部分 (Windows Server 2012 及更高版本)，建議使用群組受管理的服務帳戶 (gMSA)。 如需 gMSA 的詳細資訊，請參閱：[群組受管理的服務帳戶概觀](https://technet.microsoft.com/library/hh831782.aspx)。
 
     -   如果您打算在 SIL 彙總工具以外的不同伺服器上執行 SQL Server 資料庫，則必須使用 gMSA 帳戶選項。
 
     -   將電腦帳戶新增至 Active Directory 中已啟用 gMSA 的安全性群組之後，別忘了重新開機伺服器。
 
-7.  在 [選擇 SQL Server]中，輸入已安裝 SQL 執行個體的 SQL Server 或 **localhost**(如果安裝在本機伺服器上)。
+7.  在 [選擇 SQL Server]**** 中，輸入已安裝 SQL 執行個體的 SQL Server 或 **localhost** (如果安裝在本機伺服器上)。
 
     每個 SQL 執行個體僅支援一個 SIL 彙總工具。
 
-8.  選取驗證類型，然後按 [驗證 SQL]。
+8.  選取驗證類型，然後按 [驗證 SQL]****。
 
-9. 按 [下一步]，然後在 [網際網路資訊服務伺服器的詳細資料]中，選取連接埠號碼或保留預設值。
+9. 按 [下一步]****，然後在 [網際網路資訊服務伺服器的詳細資料]**** 中，選取連接埠號碼或保留預設值。
 
-10. 瀏覽 **.pfx** 檔案位置，輸入 .pfx 檔案的密碼，然後按 [下一步]。
+10. 瀏覽 **.pfx** 檔案位置，輸入 .pfx 檔案的密碼，然後按 [下一步]****。
 
-11. 最後一個畫面會顯示安裝進度。 成功完成時，按一下 [完成]。
+11. 最後一個畫面會顯示安裝進度。 成功完成時，按一下 [完成]****。
 
 ### <a name="uninstalling-sil-aggregator"></a>解除安裝 SIL 彙總工具
 
-##### <a name="to-uninstall-software-inventory-logging-aggregator"></a>解除安裝軟體清查記錄彙總工具
+#### <a name="to-uninstall-software-inventory-logging-aggregator"></a>解除安裝軟體清查記錄彙總工具
 
-1.  以系統管理員身分開啟 **PowerShell** ，然後輸入 `Stop-SilAggregator` 當提示返回時，表示 SIL 彙總工具已停止。
+1.  以系統管理員身分開啟**PowerShell** ，然後輸入 `Stop-SilAggregator` 。 當提示返回時，表示 SIL 彙總工具已停止。
 
     根據設計，SIL 彙總工具會在 20 分鐘或收到 100 個檔案之後處理檔案。  在大規模環境中，永遠不會發生這種情況，但在小規模環境中，可能仍有某些檔案需要處理，因而無法停止彙總工具。 如果不需要保留這些檔案和資料，請使用 `–Force` 參數。
 
-2.  移至 [控制台]，依序按一下 [程式和功能]、[解除安裝程式]、[軟體清查記錄彙總工具]，然後按一下 [解除安裝]。
+2.  移至 [控制台]****，依序按一下 [程式和功能]****、[解除安裝程式]****、[軟體清查記錄彙總工具]****，然後按一下 [解除安裝]****。
 
     軟體清查記錄彙總工具會開啟視窗，提示您選擇刪除資料庫中的所有資料，或將所有資料保留在資料庫中。 預設選項是保留 (如果想要重新安裝，您可以連接至現有的資料庫，回到彙總工具先前離開的地方取回資料)。
 
-3.  選取 [保留] 或 [刪除]，然後按 [下一步]。
+3.  選取 [保留]**** 或 [刪除]****，然後按 [下一步]****。
 
-4.  進度列完成後，按一下 [完成]。
+4.  進度列完成後，按一下 [完成]****。
 
 ### <a name="start-using-sil-and-the-sil-aggregator"></a>開始使用 SIL 和 SIL 彙總工具
 
 #### <a name="introduction-to-sil-aggregator-powershell-cmdlets"></a>SIL 彙總工具 PowerShell Cmdlet 簡介
 身為系統管理員，可以從 Windows PowerShell 主控台執行下列命令。
 
-|Windows PowerShell Cmdlet|函數|
+|Windows PowerShell Cmdlet|函式|
 |-----------------------------|------------|
 |`Start-SilAggregator`|啟動所有軟體清查記錄彙總工具服務和工作。 需要如此，彙總工具才能從已啟動 SIL 記錄的伺服器透過 HTTPS 接收資料。|
 |`Stop-SilAggregator`|停止所有軟體清查記錄彙總工具服務和工作。 如果工作或服務正在執行中，可能會延遲完成此命令。|
 |`Set-SilAggregator`|可讓系統管理員變更軟體清查記錄彙總工具的組態。|
-|`Add-SilVmHost`|用來新增要定期輪詢的特定主機名稱或主機名稱陣列 \(預設為一小時的間隔\)。|
+|`Add-SilVmHost`|用來新增要定期輪詢的特定主機名稱或主機名稱陣列， \( 預設為一小時的間隔 \) 。|
 |`Remove-SilVmHost`|用於移除要定期輪詢的特定主機名稱或主機名稱陣列。|
 |`Get-SilVMHost`|用於擷取供軟體清查記錄彙總工具已設定要輪詢進行中 VM 執行狀態資料的實體主機清單。|
 |`Get-SILAggregatorData`|用於將資料庫中的資料擷取至 PowerShell 主控台。|
@@ -233,11 +235,11 @@ SIL 和 SIL 彙總工具在已驗證的通訊上依賴 SSL 憑證。 一般的�
 
 -   在 SIL 彙總工具上：
 
-    -   執行 `Start-SilAggregator`
+    -   `Start-SilAggregator`執行
 
         需要如此，彙總工具才能主動從您已經 (或將要) 設定要清查的伺服器，透過 HTTPS 接收轉送給它的資料。 請注意，即使您已經先啟用伺服器來轉送到此彙總工具，也沒有問題，因為它們會將資料內容快取在本機長達 30 天。 在匯總工具之後，其 "targeturi" 會啟動並執行，所有快取的資料會一次轉送到匯總工具，並處理所有資料。
 
-    -   執行 `Add-SilVMHost`
+    -   `Add-SilVMHost`執行
 
         範例： `add-silvmhost –vmhostname contoso1 –hostcredential get-credential`
 
@@ -245,44 +247,44 @@ SIL 和 SIL 彙總工具在已驗證的通訊上依賴 SSL 憑證。 一般的�
 
         -   根據預設，從 `Start-SilAggregator` 執行之後的一小時開始，或從主機新增至輪詢清單之後的一小時開始，輪詢每小時執行一次。  您可以使用 `Set-SilAggregator cmdlet` 變更輪詢間隔。
 
-        -   對於您要新增的主機，此 Cmdlet 會從預設的選項清單中 (請參閱 **SIL 彙總工具 Cmdlet 詳細資料**一節)，自動偵測正確的 HostType 和 HyperVisorType。 如果無法辨識這些資料或提供的認證不正確，將會顯示提示。 如果您輸入 **Y** 表示接受，則會新增主機而且列為 [未知]，但不會輪詢它。
+        -   對於您要新增的主機，此 Cmdlet 會從預設的選項清單中 (請參閱 **SIL 彙總工具 Cmdlet 詳細資料**一節)，自動偵測正確的 HostType 和 HyperVisorType。 如果無法辨識這些資料或提供的認證不正確，將會顯示提示。 如果您輸入 **Y** 表示接受，則會新增主機而且列為 [未知]****，但不會輪詢它。
 
-    -   執行 `Set-SilAggregator –AddCertificateThumbprint` 「您的用戶端憑證的指紋」
+    -   執行「 `Set-SilAggregator –AddCertificateThumbprint` 您的用戶端憑證的指紋」
 
-        需要如此，才能透過 HTTPS 從已啟用 SIL 記錄的 Windows Server 接收資料。 這個指紋會加入至供 SIL 彙總工具接受資料的指紋清單中。 SIL 彙總工具設計為接受有效的企業用戶端驗證憑證。 使用的憑證必須安裝在轉送資料的伺服器上的 **\\localmachine\MY （本機電腦 > Personal**）存放區中。
+        需要如此，才能透過 HTTPS 從已啟用 SIL 記錄的 Windows Server 接收資料。 這個指紋會加入至供 SIL 彙總工具接受資料的指紋清單中。 SIL 彙總工具設計為接受有效的企業用戶端驗證憑證。 使用的憑證必須安裝在轉送資料的伺服器上的** \\ Localmachine\MY （本機電腦 > 個人**）存放區中。
 
 -   在您要清查的 Windows Server 上，以系統管理員身分開啟 PowerShell 並執行下列命令：
 
-    -   執行 `Set-SilLogging –TargetUri "https://contososilaggregator" –CertificateThumbprint "your client certificate's thumbprint"`
+    -   `Set-SilLogging –TargetUri "https://contososilaggregator" –CertificateThumbprint "your client certificate's thumbprint"`執行
 
         -   這會指告 Windows Server 中的 SIL 將清查資料傳送至何處，以及要用於驗證的憑證。
 
             > [!IMPORTANT]
             > 請確定 "HTTPs://' 是在 TargetUri 值中。
 
-        -   具有此指紋的企業用戶端憑證必須安裝在 **\localmachine\MY**，或使用 **certmgr.msc** 將憑證安裝在 [本機電腦 -> 個人] 存放區。
+        -   具有此指紋的企業用戶端憑證必須安裝在 **\localmachine\MY**，或使用 **certmgr.msc** 將憑證安裝在 [本機電腦 -> 個人]**** 存放區。
 
             > [!IMPORTANT]
             > 如果這些值不正確，或憑證未安裝在正確的存放區 (或無效)，當 SIL 記錄啟動時，轉送至目標將會失敗。 資料會快取在本機長達 30 天。
 
-    -   執行 `Start-SilLogging`
+    -   `Start-SilLogging`執行
 
         這會啟動 SIL 記錄。 SIL 會每小時依隨機間隔時間，將其清查資料轉送至 `–targeturi` 參數所指定的彙總工具。 第一次會轉送一組完整的資料。 後續每次轉送都會是「信號」更多，只會識別沒有任何變更的資料。 如果資料集有任何變更，將會轉送另一組完整的資料。
 
-    -   執行 `Publish-SilData`
+    -   `Publish-SilData`執行
 
         -   第一次啟用 SIL 來記錄時，這個步驟為選擇性。
 
         -   這是手動一次性轉送一組完整的資料。
 
-        -   如果 SIL 記錄已啟動一段時間，然後以 `Set-SilLogging`指定新的 SIL 彙總工具，則需要執行這個 Cmdlet (只需要執行一次)，將一組完整的資料傳送至新的彙總工具。
+        -   如果 SIL 記錄已啟動一段時間，然後以 `Set-SilLogging` 指定新的 SIL 彙總工具，則需要執行這個 Cmdlet (只需要執行一次)，將一組完整的資料傳送至新的彙總工具。
 
 一旦您已遵循下列步驟來新增執行虛擬 Windows Server 電腦的實體主機，「而且」已在這些 Windows Server 內啟用軟體清查記錄 (或 SIL 記錄)，則您隨時可以在 SIL 彙總工具上執行 `Publish-SilReport –OpenReport` (需要 Excel 2013)。 但是請注意，SQL Server Analysis Services Cube 每天處理一次，因此資料不會出現在同一天的報告中。
 
 ## <a name="architectural-overview"></a>架構概觀
 SIL 同時以推入和提取模式運作，由兩個平行運作的元件組成：Windows Server 中的軟體清查記錄 (SIL) 功能，以及軟體清查記錄彙總工具 (SILA) 可下載 MSI。 要清查的伺服器會利用 SIL 透過 HTTPS 將軟體清查資料推入 SIL 彙總工具 (依每小時內的隨機時間點)。 接著，彙總工具會每小時輪詢或查詢實體 Hypervisor 主機，以提取硬體清查資料。 推入和提取都必須適當設定，才能發揮 SIL 的完整功能。 這些可以依任何順序設定。 不過，彙總工具的 Cube 處理每天進行一次，因此，彙總工具上透過推入或提取所擷取的資料，必須等到隔天才會出現在報告中。
 
-![](../media/software-inventory-logging/SILA_Architecture.png)
+![軟體清查記錄匯總工具圖表](../media/software-inventory-logging/SILA_Architecture.png)
 
 > [!IMPORTANT]
 > 使用此軟體並不會將任何資料傳送給 Microsoft。
@@ -290,7 +292,7 @@ SIL 同時以推入和提取模式運作，由兩個平行運作的元件組成�
 ## <a name="enable-sil-on-multiple-servers"></a>在多部伺服器上啟用 SIL
 有幾種方式可以在分散式伺服器基礎結構中啟用 SIL，例如在虛擬機器的私人雲端中。  以下範例是將 Windows Server 映像設定為在網路上第一次在啟動時，自動將清查資料傳送至 SIL 彙總工具的一種方法。
 
-在每個已安裝 Windows Server 的執行中 VM 或實體電腦/裝置上 (請參閱 **必要條件** 一節)，在 PowerShell 主控台中以系統管理員身分執行下列 Cmdlet：
+在每個已安裝 Windows Server 的執行中 VM 或實體電腦/裝置上 (請參閱**必要條件**一節)，在 PowerShell 主控台中以系統管理員身分執行下列 Cmdlet：
 
 您需要 .pfx 格式的有效用戶端 SSL 憑證。  必須使用 `Set-SILAggregator –AddCertificateThumbprint` Cmdlet 將此憑證的指紋加入您的 SIL 彙總工具。 此用戶端憑證不需要符合您 SIL 彙總工具的名稱。
 
@@ -306,19 +308,19 @@ SIL 同時以推入和提取模式運作，由兩個平行運作的元件組成�
 
 -   `$firstAvailableDriveLetter = $availableDriveLetters[0]`
 
--   `New-PSDrive -Name $firstAvailableDriveLetter -PSProvider filesystem -root` **<\\server\path 以共用保存 pfx 憑證檔案 >** `-credential $mycreds`
+-   `New-PSDrive -Name $firstAvailableDriveLetter -PSProvider filesystem -root`** < \\ server\path 以共用保存 pfx 憑證檔案>**`-credential $mycreds`
 
--   `Copy-Item ${firstAvailableDriveLetter}:\` **< certificatename 的新磁片磁碟機目錄中的 .pfx 檔案 > c：您選擇的\<位置 >**
+-   `Copy-Item ${firstAvailableDriveLetter}:\`**<certificatename 的新磁片磁碟機目錄中的 .pfx 檔案> c：\<location of your choice>**
 
 -   `Remove-PSDrive –Name $firstAvailableDriveLetter`
 
 -   `$mypwd = ConvertTo-SecureString -String "`**<password for the certificate pfx file>**`" -Force –AsPlainText`
 
--   `Import-PfxCertificate -FilePath c:\` **< location\\certificatename >** `cert:\localMachine\my -Password $mypwd`
+-   `Import-PfxCertificate -FilePath c:\`**<location \\ certificatename .pfx>**`cert:\localMachine\my -Password $mypwd`
 
--   `Set-sillogging –targeturi "https://` **<machinename of your SIL Aggregator>** `–certificatethumbprint`
+-   `Set-sillogging –targeturi "https://`**<machinename of your SIL Aggregator>** `–certificatethumbprint`
 
-> [!NOTE] 
+> [!NOTE]
 > 使用來自用戶端 pfx 檔案的憑證指紋，並使用**set-silaggregator '-AddCertificateThumbprint** Cmdlet 新增至您的 SIL 匯總工具。
 
 -   `Start-sillogging`
@@ -328,7 +330,7 @@ SIL 同時以推入和提取模式運作，由兩個平行運作的元件組成�
 如果在 SIL 資料成功推入舊的彙總工具之後要再推入新的 SIL 彙總工具，請將 `Publish-SilData` 加入至上述清單 (這會傳送新的彙總工具所需要關於此電腦的一整組 SIL 資料)。
 
 ## <a name="software-inventory-logging-aggregator-reports"></a>軟體清查記錄彙總工具報告
-![](../media/software-inventory-logging/SILA_Report.png)
+![軟體清查記錄匯總工具報表的影像](../media/software-inventory-logging/SILA_Report.png)
 
 ### <a name="cube-processing"></a>Cube 處理
 在軟體清查記錄彙總工具上，本機系統時間每天上午 3:00:00 會處理一次 SQL Server Analysis Services Cube。 報告會反映截至該時間為止的所有資料，但不會反映同一天該時間以後的任何資料。
@@ -369,35 +371,35 @@ SIL 同時以推入和提取模式運作，由兩個平行運作的元件組成�
 
 -   如果實體主機變更處理器數目或實體記憶體數量，則報告中除了舊的資料列，還會出現一個新的資料列。 舊的資料列上會停止輪詢更新，而在新的資料列上繼續，彷彿它是新加入的主機一樣。
 
--   在 [摘要] 和 [詳細資料] 索引標籤上，[同時執行的 Windows Server] 或受管理 Windows Server 的資料行中列出的總計，指出下方所有主機的所有上限標記的總計。 這些包括不是虛擬機器主機的 Windows 伺服器，而且沒有執行中的 Vm，以及可能執行 Vm 但狀態為「不明」的伺服器，因為從 VM 的 SIL 透過 HTTPS 不會收到任何資料。 為了方便起見，這些都已加總。
+-   在 [**摘要**] 和 [**詳細資料**] 索引標籤上，列在同時執行的 windows 伺服器或受管理的 windows 伺服器的 [欄數] 中，會指出下列所有主機的所有上限標記。 這些包括不是虛擬機器主機的 Windows 伺服器，而且沒有執行中的 Vm，以及可能執行 Vm 但狀態為「不明」的伺服器，因為從 VM 的 SIL 透過 HTTPS 不會收到任何資料。 為了方便起見，這些都已加總。
 
--   在 [儀表板] 索引標籤的 [SQL Server] 區段中，SQL Server 安裝總數是 [儀表板] 上所有版本總計的彙總。  在單一伺服器安裝多個 SQL 版本的情況下，這可能會導致 [SQL 詳細資料] 索引標籤上出現的總計不一致。  [儀表板] 會分別計算每個伺服器的這些數字，但 [詳細資料] 索引標籤並不會。  根據授權條款，一部 Windows Server 上安裝的多個 SQL 版本一律以 1 個版本計算。
+-   在 [儀表板]**** 索引標籤的 [SQL Server]**** 區段中，SQL Server 安裝總數是 [儀表板] 上所有版本總計的彙總。  在單一伺服器安裝多個 SQL 版本的情況下，這可能會導致 [SQL 詳細資料]**** 索引標籤上出現的總計不一致。  [儀表板] 會分別計算每個伺服器的這些數字，但 [詳細資料]**** 索引標籤並不會。  根據授權條款，一部 Windows Server 上安裝的多個 SQL 版本一律以 1 個版本計算。
 
--   在 [儀表板] 索引標籤的 [Windows Server] 區段中，[其他 Hypervisor 主機] 和 [Hypervisor 主機總計] 資料列包含可能或「沒有」執行 Hyper-V 的實體 Windows Server 主機。
+-   在 [儀表板]**** 索引標籤的 [Windows Server]**** 區段中，[其他 Hypervisor 主機]**** 和 [Hypervisor 主機總計]**** 資料列包含可能或「沒有」執行 Hyper-V 的實體 Windows Server 主機。
 
 ### <a name="column-descriptions"></a>資料行描述
-針對 SIL 彙總工具建立的 Excel 報告，以下是此報告的 [Windows Server 詳細資料] 索引標籤上每個資料行的描述。 其他資料索引標籤是相同或這些資料行的子集。 其中一個例外狀況是 [SQL Server] 索引標籤上的 [安裝計數] （請參閱**上限標記**一節）。
+針對 SIL 彙總工具建立的 Excel 報告，以下是此報告的 [Windows Server 詳細資料]**** 索引標籤上每個資料行的描述。 其他資料索引標籤是相同或這些資料行的子集。 其中一個例外狀況是 [SQL Server] 索引標籤上的 [安裝計數] （請參閱**上限標記**一節）。
 
 |資料行標頭|描述|
 |-----------------|---------------|
-|行事曆月份|報告中的資料依月份分組，以最新月份為優先。 月份內的資料不依特定順序列出。|
-|Host Name|SIL 彙總工具成功輪詢的實體主機的網路名稱或 FQDN。<p>使用 Get-SilVMHost Cmdlet 尋找已加入但無法或不再成功輪詢的主機。 將會顯示最後一次成功的輪詢。|
-|主控件類型|實體主機的作業系統製造商。|
+|日曆月份|報告中的資料依月份分組，以最新月份為優先。 月份內的資料不依特定順序列出。|
+|主機名稱|SIL 彙總工具成功輪詢的實體主機的網路名稱或 FQDN。<p>使用 Get-SilVMHost Cmdlet 尋找已加入但無法或不再成功輪詢的主機。 將會顯示最後一次成功的輪詢。|
+|主機類型|實體主機的作業系統製造商。|
 |Hypervisor 類型|實體主機的 Hypervisor 製造商。|
 |處理器製造商|實體主機的處理器製造商。|
 |處理器型號|實體主機的處理器型號。|
 |已啟用超執行緒？|視實體主機的處理器是否啟用超執行緒而定，顯示為 True 或 False。|
-|VM 名稱|Windows Server 虛擬機器的網路名稱或 FQDN。 如果彙總工具透過 HTTPS 未收到這部電腦的資料，則會列出 Hypervisor 中的 VM 易記名稱。|
-|主機同時執行的 Windows Server VM|主機上同時執行的 Windows Server VM 的計數。 該主機在月份中的最高數字是指在該時間點列出和擷取的上限標記計數。<p>請參閱本文件的 **上限標記** 一節。<p>已安裝 Windows Server 的實體主機，或已安裝 Windows Server 但未執行已知 Windows Server VM 的實體主機，一律以 1 個計算。 如果主機上至少執行一個已知的 Windows Server VM，而且主機本身也執行 Windows Server，則主機作業系統不納入計算。|
+|虛擬機器名稱|Windows Server 虛擬機器的網路名稱或 FQDN。 如果彙總工具透過 HTTPS 未收到這部電腦的資料，則會列出 Hypervisor 中的 VM 易記名稱。|
+|主機同時執行的 Windows Server VM|主機上同時執行的 Windows Server VM 的計數。 該主機在月份中的最高數字是指在該時間點列出和擷取的上限標記計數。<p>請參閱本文件的**上限標記**一節。<p>已安裝 Windows Server 的實體主機，或已安裝 Windows Server 但未執行已知 Windows Server VM 的實體主機，一律以 1 個計算。 如果主機上至少執行一個已知的 Windows Server VM，而且主機本身也執行 Windows Server，則主機作業系統不納入計算。|
 |實體處理器計數|安裝在實體主機上的實體處理器數目。|
 |實體核心計數|安裝在實體主機上的實體處理器核心數目。|
 |虛擬處理器計數|Windows 在 VM 內可辨識的虛擬處理器數目。 這個值只來自 Windows Server 中使用 SIL 透過 HTTPS 轉送的資料。|
-|輪詢日期時間|該實體主機上同時執行的 Windows Server VM 的最新上限標記點的日期和時間。<p>請參閱本文件的 **輪詢日期時間** 一節。|
+|輪詢日期時間|該實體主機上同時執行的 Windows Server VM 的最新上限標記點的日期和時間。<p>請參閱本檔的**輪詢日期時間**一節。|
 |前次看到 VM 的日期時間|彙總工具前次透過 HTTPS 從這個 Windows Server VM 收到資料清查的日期和時間。|
 |前次看到主機的日期時間|彙總工具前次透過 HTTPS 從這個 Windows Server 實體伺服器收到資料清查的日期和時間。<p>它支援執行 Windows Server 和 HyperV 的實體主機啟用 SIL，並透過 HTTPS 將清查資料轉送至 SIL 彙總工具。|
 
 ## <a name="sil-aggregator-cmdlets-detail"></a>SIL 彙總工具 Cmdlet 詳細資料
-以下是 SIL 彙總工具 Cmdlet 的詳細資料。 如需完整的 Cmdlet 文件，請參閱： [SIL 彙總工具 PowerShell Cmdlet](https://technet.microsoft.com/library/mt548455.aspx)
+以下是 SIL 彙總工具 Cmdlet 的詳細資料。 如需完整的 Cmdlet 文件，請參閱：[SIL 彙總工具 PowerShell Cmdlet](https://technet.microsoft.com/library/mt548455.aspx)
 
 ### <a name="publish-silreport"></a>Publish-SilReport
 
@@ -474,9 +476,9 @@ Copyright (c) 2010, RENCI</pre>
 
 -   此 Cmdlet 搭配參數使用時，將直接從用於協助自訂使用 SIL 整體解決方案的資料庫中擷取資料。
 
--   請注意， `–StartTime` 和 `–Endtime` 參數會從顯示從開始日期的月份開頭到結束日期的月份結尾的報告資料。
+-   請注意，`–StartTime` 和 `–Endtime` 參數會從顯示從開始日期的月份開頭到結束日期的月份結尾的報告資料。
 
-![](../media/software-inventory-logging/SILA_Get-SILAggregator.png)
+![已完成 AggregatorData Cmdlet 的影像](../media/software-inventory-logging/SILA_Get-SILAggregator.png)
 
 ### <a name="get-silvmhost"></a>Get-SilVMHost
 
@@ -486,7 +488,7 @@ Copyright (c) 2010, RENCI</pre>
 
 -   此 Cmdlet 也會列出已透過來自 VM 本身的資料而加入的任何主機名稱的清單 (如果 VM 有提供的話)。 這些將會出現在清單中，但不會有任何 HostType 或 HypervisorType。 這項資料可協助匹配 VM 和可能未設定要輪詢的主機。
 
--   使用 `–StartTime` 和`–EndTime` 參數可協助您了解主機第一次加入或前次輪詢的時間。
+-   使用 `–StartTime` 和 `–EndTime` 參數可協助您了解主機第一次加入或前次輪詢的時間。
 
 ### <a name="remove-silvmhost"></a>Remove-SilVMHost
 
@@ -500,9 +502,9 @@ Copyright (c) 2010, RENCI</pre>
 
 -   `SilLogging` 或 `Publish-Sildata` Cmdlet 失敗或錯誤時的檢查事項：
 
-    -   請確定輸入的 **targeturi** 中有 **https://** 。
+    -   請確定**targeturi**已**HTTPs://** 在專案中。
 
-    -   請確定已安裝 Windows Server 的所有必要更新 (請參閱「SIL 的必要條件」)。  若要快速檢查，請使用下列 Cmdlet 來尋找這些方法： `Get-SilWindowsUpdate *3060*, *3000*`
+    -   請確定已安裝 Windows Server 的所有必要更新 (請參閱「SIL 的必要條件」)。  若要快速檢查，請使用下列 Cmdlet 來尋找這些方法：`Get-SilWindowsUpdate *3060*, *3000*`
 
     -   請確定用於向彙總工具驗證的憑證，已安裝在要以 SilLogging 清查的本機伺服器的正確存放區中 (請參閱「開始使用」一節)。
 
@@ -512,7 +514,7 @@ Copyright (c) 2010, RENCI</pre>
 
     -   如果已檢查上述所有情況，接著您可以檢查用來安裝 SIL 彙總工具的憑證狀況良好，且符合 SIL 彙總工具伺服器本身的名稱 (如果其他電腦順利轉送至相同的 SIL 彙總工具，則不需要此步驟)。
 
-    -   您可以檢查下列位置，以取得嘗試轉送/推送、\Windows\System32\\記錄檔\\SIL 的伺服器上快取的 SIL 檔案。 如果 `SilLogging` 已啟動且執行超過一小時，或 `Publish-SilData` 才剛執行不久，因而此目錄中沒有任何檔案，則表示已成功登入彙總工具。
+    -   您可以在嘗試轉送/推送 \Windows\System32 記錄檔 SIL 的伺服器上，檢查快取 SIL 檔案的下列位置 \\ \\ 。 如果 `SilLogging` 已啟動且執行超過一小時，或 `Publish-SilData` 才剛執行不久，因而此目錄中沒有任何檔案，則表示已成功登入彙總工具。
 
 -   請確認登入的使用者具有 SQL 資料庫和 Analysis Services 存取權。
 
@@ -530,11 +532,11 @@ Copyright (c) 2010, RENCI</pre>
 
     -   在 Active Directory 中，將伺服器加入已啟用 gMSA 的電腦群組之後，別忘了將它重新開機。
 
-    -   在安裝過程中，輸入 domain\user 時不要使用完整的網域 例如，使用**mydomain\gmsaaccount**。 請勿輸入**mydomain。<i> </i>com\gmsaaccount**。
+    -   在安裝過程中，輸入 domain\user 時不要使用完整的網域 例如，使用**mydomain\gmsaaccount**。 請勿輸入**mydomain。 <i></i>com\gmsaaccount**。
 
 -   在您的環境中使用 Windows Management Framework 時：
 
-    -   請確定已安裝 SILA 的伺服器未安裝 WMF 5.1。  您可以在事件記錄檔中遇到關於 DLL **' mpunits '** 的錯誤。  這將導致無法正常運作。  SILA 只需要 WMF 4.0。
+    -   請確定已安裝 SILA 的伺服器未安裝 WMF 5.1。  您可能會在事件記錄檔中遇到關於 DLL **' mpunits.dll '** 的錯誤。  這將導致無法正常運作。  SILA 只需要 WMF 4.0。
 
 ## <a name="managing-sil-over-time"></a>持續管理 SIL
 
@@ -573,7 +575,7 @@ Copyright (c) 2010, RENCI</pre>
 
     3.  在選取的樹目錄中依序展開 SoftwareInventoryLogging 資料庫及資料表。
 
-    4.  以滑鼠右鍵按一下  **dbo。Dbo.sqlserveredition**，然後選取 **編輯前 200**個數據列。
+    4.  以滑鼠右鍵按一下 [ **dbo]。Dbo.sqlserveredition]**，然後選取 [**編輯前 200**個數據列]。
 
     5.  將 [Standard Edition] 旁的 PropertyNumValue 變更為**2760240536** （從-1534726760）。
 
@@ -585,14 +587,14 @@ Copyright (c) 2010, RENCI</pre>
 
 -   資料列（在 [**儀表板**] 索引標籤上）和標示為「**同時**執行 ...」的**資料**行總計，在兩個位置之間並不完全相符。 在 [**儀表板**] 索引標籤上，必須將「**Windows Server 裝置（沒有已知的 vm**）」值新增至「**同時**執行 ...」在 [**摘要] 和 [詳細資料**] 索引標籤上，等於此數目的值。
 
--   在本文件的 **持續管理 SIL** 一節中變更或更新憑證時，請參閱 **避免資料遺失的重要步驟** 。
+-   在本文件的**持續管理 SIL** 一節中變更或更新憑證時，請參閱**避免資料遺失的重要步驟**。
 
 -   雖然可以將 Windows Server 2008 R2 和 Windows Server 2012 主機加入至輪詢主機清單，但此版本 (1.0) 的 SIL 彙總工具只支援在輪詢 Windows Server 2012 R2 時 (以 Windows/Hyper-V 為基礎的主機)，才能夠順利使用所有特性和功能。  特別的是，已知輪詢 Windows Server 2008 R2 主機時，虛擬機器和主機在 SIL 彙總工具報告中可能不匹配。
 
 ## <a name="see-also"></a>另請參閱
-[適用于 Windows Server 的軟體清查記錄匯總工具1。0](https://www.microsoft.com/download/details.aspx?id=49046)<br>
-[SIL 匯總工具 PowerShell Cmdlet](https://technet.microsoft.com/library/mt548455.aspx)<br>
+[適用於 Windows Server 的軟體清查記錄彙總工具 1.0](https://www.microsoft.com/download/details.aspx?id=49046)<br>
+[SIL 彙總工具 PowerShell Cmdlet](https://technet.microsoft.com/library/mt548455.aspx)<br>
 [SIL PowerShell Cmdlet](https://technet.microsoft.com/library/dn283390.aspx)<br>
-[SIL 的總覽](https://technet.microsoft.com/library/dn268301.aspx)<br>
+[SIL 概觀](https://technet.microsoft.com/library/dn268301.aspx)<br>
 [管理 SIL](https://technet.microsoft.com/library/dn383584.aspx)
 

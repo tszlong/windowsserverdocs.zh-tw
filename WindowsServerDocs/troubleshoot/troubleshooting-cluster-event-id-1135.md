@@ -1,15 +1,17 @@
 ---
-title: 針對事件識別碼1135的叢集問題進行疑難排解
+title: 針對事件識別碼 1135 的叢集問題進行疑難排解
 description: 說明如何針對事件識別碼1135的叢集服務啟動問題進行疑難排解。
 ms.date: 05/28/2020
-ms.openlocfilehash: d59f8b89e89ea7ff42aecd79670465aee8d63524
-ms.sourcegitcommit: 5fac756c2c9920757e33ef0a68528cda0c85dd04
+author: Deland-Han
+ms.author: delhan
+ms.openlocfilehash: 2836fc9385d57ff076828ab5cf6a1e341a7d88a8
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84306527"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409829"
 ---
-# <a name="troubleshooting-cluster-issue-with-event-id-1135"></a>針對事件識別碼1135的叢集問題進行疑難排解
+# <a name="troubleshooting-cluster-issue-with-event-id-1135"></a>針對事件識別碼 1135 的叢集問題進行疑難排解
 
 本文可協助您診斷和解決事件識別碼1135，這可能會在容錯移轉叢集環境中的叢集服務啟動時記錄下來。
 
@@ -38,11 +40,11 @@ ms.locfileid: "84306527"
 
 #### <a name="for-windows-server-2008-r2-cluster"></a>適用于 Windows Server 2008 R2 叢集
 
-從提高許可權的命令提示字元執行： **cluster .exe node/stat**  
+從提高許可權的命令提示字元執行： **cluster.exe node/stat**
 
 #### <a name="for-windows-server-2012-and-windows-server-2012-r2-cluster"></a>適用于 Windows Server 2012 \ 和 Windows Server 2012 R2 叢集
 
-執行 PS 命令：叢集**節點/status**  
+執行 PS 命令：叢集**節點/status**
 
 叢集服務會持續執行，並可在所有節點上使用嗎？
 
@@ -134,12 +136,12 @@ Cluster node ' **NODE A** ' was removed from the active failover cluster members
 
 - 快照集目錄
 
-- mms .exe
+- mms.exe
 
     > [!NOTE]
     > 此檔案可能必須設定為防毒軟體內的進程排除）。
 
-- Vmwp .exe
+- Vmwp.exe
 
     > [!NOTE]
     > 此檔案可能必須設定為防毒軟體內的進程排除。
@@ -150,9 +152,9 @@ Cluster node ' **NODE A** ' was removed from the active failover cluster members
 
 叢集服務會控制伺服器叢集的作業，並管理叢集資料庫。 叢集是獨立電腦的集合，可作為單一電腦。 管理員、程式設計人員和使用者會看到叢集為單一系統。 軟體會在叢集的節點之間分散資料。 如果節點失敗，其他節點會提供先前由遺失的節點所提供的服務和資料。 新增或修復節點時，叢集軟體會將某些資料移轉至該節點。
 
-系統服務名稱： **ClusSvc**  
+系統服務名稱： **ClusSvc**
 
-|Application|通訊協定|連接埠|
+|應用程式|通訊協定|連接埠|
 |---|---|---|
 |叢集服務|UDP|3343|
 |叢集服務|TCP|3343（節點聯結作業期間需要此埠）。|
@@ -200,13 +202,13 @@ netsh advfirewall firewall show rule name="Failover Clusters (UDP-In)" verbose
 
 請遵循下列步驟來變更網路介面卡的系結順序：
 
-1. 按一下 [**開始**]，按一下 [**執行**]，輸入 Ncpa，然後按一下 **[確定]**。 您可以在 [**網路**連線] 視窗的 [ **LAN] 和 [高速網際網路**] 區段中看到可用的連接。
+1. 依序按一下 [**開始**] 和 [**執行**]，輸入 ncpa.cpl，然後按一下 **[確定]**。 您可以在 [**網路**連線] 視窗的 [ **LAN] 和 [高速網際網路**] 區段中看到可用的連接。
 
 2. 在 [ **advanced** ] 功能表上，按一下 [ **advanced Settings**]，然後按一下 [**介面卡和**系結] 索引標籤。
 
 3. **在 [連線] 區域中**，選取您想要在清單中更高的位置上移動的連接。 使用箭號按鈕來移動連接。 一般來說，與網路（網域連線、路由至其他網路等等）交談的卡片應該是第一個系結（清單頂端）。
 
-叢集節點是多重主目錄系統。 網路優先順序會影響 DNS 用戶端的輸出網路連線能力。 用於用戶端通訊的網路介面卡應該位於系結順序的頂端。 非路由網路可以設定為較低的優先順序。 在 Windows Server 2012 和 Windows Server2012 R2 中，叢集網路驅動程式（NETFT）。SYS）介面卡會自動放在 [系結順序] 清單底部。
+叢集節點是多重主目錄系統。 網路優先順序會影響 DNS 用戶端的輸出網路連線能力。 用於用戶端通訊的網路介面卡應該位於系結順序的頂端。 非路由網路可以設定為較低的優先順序。 在 Windows Server 2012 和 Windows Server2012 R2 中，叢集網路驅動程式（NETFT.SYS）介面卡會自動放在 [系結順序] 清單底部。
 
 #### <a name="check-the-validate-network-communication"></a>檢查驗證網路通訊
 
@@ -246,7 +248,7 @@ Either address 192.168.0.2 is not reachable from 10.0.0.96 or **the ping latency
 
 ##### <a name="cluster-installed-in-the-vmware-virtualization-platform"></a>安裝在 VmWare 虛擬化平臺的叢集
 
-確認 vmware 環境的 VMware 介面卡問題。 
+確認 vmware 環境的 VMware 介面卡問題。
 
 如果封包在高流量高載期間遭到捨棄，則可能會發生此問題。 確保不會發生流量篩選（例如，使用郵件篩選器）。 在排除這種可能性之後，請逐漸增加客體作業系統中的緩衝區數目並進行驗證。
 
@@ -254,9 +256,9 @@ Either address 192.168.0.2 is not reachable from 10.0.0.96 or **the ping latency
 
 1. 使用 Windows 鍵 + R 開啟 [執行] 方塊。
 2. 輸入 devmgmt.msc，然後按**enter**。
-3. 展開**網路介面卡**  
-4. 以滑鼠右鍵按一下 [ **vmxnet3]，然後按一下 [屬性]。**  
-5. 按一下 [**進階**] 索引標籤。
+3. 展開**網路介面卡**
+4. 以滑鼠右鍵按一下 [ **vmxnet3]，然後按一下 [屬性]。**
+5. 按一下 [進階] 索引標籤。
 6. 按一下 [**小型 Rx 緩衝區**] 並增加值。 預設值為512，而上限為8192。
 7. 按一下 [ **Rx Ring #1**大小] 並增加值。 預設值為1024，而上限為4096。
 
