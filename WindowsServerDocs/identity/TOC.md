@@ -46,7 +46,7 @@
 ##### [適用於應用程式廠商的虛擬網域控制站複製測試指導方針](ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Cloning-Test-Guidance-for-Application-Vendors.md)
 ##### [支援針對虛擬網域控制站使用 Hyper-V 複本](ad-ds/get-started/virtual-dc/Support-for-using-Hyper-V-Replica-for-virtualized-domain-controllers.md)
 
-####[Windows Time 服務和 AD DS](../networking/windows-time-service/windows-time-service.md)
+#### [Windows Time 服務和 AD DS](../networking/windows-time-service/windows-time-service.md)
 
 ### [AD DS 設計與規劃](ad-ds/plan/AD-DS-Design-and-Planning.md)
 
@@ -348,22 +348,22 @@
 #### [部署 Azure AD Connect Health](/azure/active-directory/hybrid/whatis-hybrid-identity)
 #### [將 Active Directory Federation Services 角色服務移轉到 Windows Server 2012 R2](ad-fs/deployment/migrate-ad-fs-service-role-to-windows-server-r2.md)
 ##### [準備移轉 AD FS 同盟伺服器](ad-fs/deployment/prepare-migrate-ad-fs-server-r2.md)
-#####[移轉 AD FS 同盟伺服器](ad-fs/deployment/migrate-ad-fs-fed-server-r2.md)
-#####[移轉 AD FS 同盟伺服器 Proxy](ad-fs/deployment/migrate-fed-server-proxy-r2.md)
-#####[確認將 AD FS 移轉到 Windows Server 2012 R2](ad-fs/deployment/verify-ad-fs-migration.md)
+##### [移轉 AD FS 同盟伺服器](ad-fs/deployment/migrate-ad-fs-fed-server-r2.md)
+##### [移轉 AD FS 同盟伺服器 Proxy](ad-fs/deployment/migrate-fed-server-proxy-r2.md)
+##### [確認將 AD FS 移轉到 Windows Server 2012 R2](ad-fs/deployment/verify-ad-fs-migration.md)
 
 #### [將 Active Directory Federation Services 角色服務移轉到 Windows Server 2012](ad-fs/deployment/migrate-ad-fs-role-services-to-windows-server-2012.md)
 ##### [準備移轉 AD FS 2.0 同盟伺服器](ad-fs/deployment/prepare-to-migrate-ad-fs-fed-server.md)
-######[準備移轉獨立 AD FS 2.0 或單一節點伺服器陣列伺服器](ad-fs/deployment/prepare-to-migrate-a-stand-alone-ad-fs-federation-server.md)
-######[準備移轉 AD FS 2.0 WID 伺服器陣列](ad-fs/deployment/prepare-to-migrate-a-wid-farm.md)
-######[準備移轉 AD FS 2.0 SQL 伺服器陣列](ad-fs/deployment/prepare-to-migrate-a-sql-server-farm.md)
-#####[準備移轉 AD FS 2.0 同盟伺服器 Proxy](ad-fs/deployment/prepare-to-migrate-ad-fs-fed-proxy.md)
-#####[移轉 AD FS 2.0 同盟伺服器](ad-fs/deployment/migrate-the-ad-fs-fed-server.md)
-######[移轉獨立 AD FS 2.0 或單一節點伺服器陣列伺服器](ad-fs/deployment/migrate-ad-fs-stand-alone-server.md)
-######[移轉 AD FS 2.0 WID 伺服器陣列](ad-fs/deployment/migrate-ad-fs-wid-farm.md)
-######[移轉 AD FS 2.0 SQL 伺服器陣列](ad-fs/deployment/migrate-ad-fs-sql-farm.md)
-#####[移轉 AD FS 2.0 同盟伺服器 Proxy](ad-fs/deployment/migrate-the-ad-fs-2-fed-server-proxy.md)
-#####[移轉 AD FS 1.1 網路代理程式](ad-fs/deployment/migrate-the-ad-fs-web-agent.md)
+###### [準備移轉獨立 AD FS 2.0 或單一節點伺服器陣列伺服器](ad-fs/deployment/prepare-to-migrate-a-stand-alone-ad-fs-federation-server.md)
+###### [準備移轉 AD FS 2.0 WID 伺服器陣列](ad-fs/deployment/prepare-to-migrate-a-wid-farm.md)
+###### [準備移轉 AD FS 2.0 SQL 伺服器陣列](ad-fs/deployment/prepare-to-migrate-a-sql-server-farm.md)
+##### [準備移轉 AD FS 2.0 同盟伺服器 Proxy](ad-fs/deployment/prepare-to-migrate-ad-fs-fed-proxy.md)
+##### [移轉 AD FS 2.0 同盟伺服器](ad-fs/deployment/migrate-the-ad-fs-fed-server.md)
+###### [移轉獨立 AD FS 2.0 或單一節點伺服器陣列伺服器](ad-fs/deployment/migrate-ad-fs-stand-alone-server.md)
+###### [移轉 AD FS 2.0 WID 伺服器陣列](ad-fs/deployment/migrate-ad-fs-wid-farm.md)
+###### [移轉 AD FS 2.0 SQL 伺服器陣列](ad-fs/deployment/migrate-ad-fs-sql-farm.md)
+##### [移轉 AD FS 2.0 同盟伺服器 Proxy](ad-fs/deployment/migrate-the-ad-fs-2-fed-server-proxy.md)
+##### [移轉 AD FS 1.1 網路代理程式](ad-fs/deployment/migrate-the-ad-fs-web-agent.md)
 
 
 

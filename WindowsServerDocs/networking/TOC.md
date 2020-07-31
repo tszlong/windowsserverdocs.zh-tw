@@ -229,7 +229,7 @@
 #### [QoS 原則的運作方式](technologies/qos/qos-policy-works.md)
 #### [QoS 原則架構](technologies/qos/qos-policy-architecture.md)
 #### [QoS 原則案例](technologies/qos/qos-policy-scenarios.md)
-###[管理 QoS 原則](technologies/qos/qos-policy-manage.md)
+### [管理 QoS 原則](technologies/qos/qos-policy-manage.md)
 #### [QoS 原則事件與錯誤](technologies/qos/qos-policy-errors.md)
 ### [QoS 原則常見問題](technologies/qos/qos-policy-faq.md)
 
