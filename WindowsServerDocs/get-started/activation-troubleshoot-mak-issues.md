@@ -1,19 +1,19 @@
 ---
 title: MAK 啟用的已知問題
 description: 說明在 MAK 啟用過程中可能發生的常見問題，並提供解決方式和指引
-ms.topic: article
+ms.topic: troubleshooting
 ms.date: 10/3/2019
 ms.technology: server-general
 author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f4153387d740379e66eca9e8069b7a446a1ec71
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 8e8872a5a768973e11c98461fc760055001932b8
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826231"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409969"
 ---
 # <a name="mak-activation-known-issues"></a>MAK 啟用：已知問題
 

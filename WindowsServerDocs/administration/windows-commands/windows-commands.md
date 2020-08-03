@@ -9,45 +9,18 @@ ms.author: jgerend
 manager: dongill
 ms.date: 06/29/2020
 ms.prod: windows-server
-ms.openlocfilehash: 33b19ba9c6f7d8f12d72876a04dbf8bdfda7ff30
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 3f1af3e2f352c8bbea1540c2d1964ad8536170fe
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409929"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519577"
 ---
 # <a name="windows-commands"></a>Windows 命令
 
 所有支援的 Windows 版本（伺服器和用戶端）都有一組內建的 Win32 主控台命令。
 
 這一組檔描述可讓您使用腳本或腳本工具來自動化工作的 Windows 命令。
-
-若要尋找特定命令的相關資訊，請在下列 a-z 功能表中，按一下命令開頭的字母，然後按一下命令名稱。
-
-[A](#a)  |
-[B](#b)  |
-[C](#c)  |
-[D](#d)  |
-[E](#e)  |
-[F](#f)  |
-[G](#g)  |
-[H](#h)  |
-[I](#i)  |
-[J](#j)  |
-[K](#k)  |
-[L](#l)  |
-[M](#m)  |
-[N](#n)  |
-[O](#o)  |
-[P](#p)  |
-[問](#q)  |
-[R](#r)  |
-[S](#s)  |
-[T](#t)  |
-[U](#u)  |
-[V](#v)  |
-[W](#w)  |
-[X](#x) |Y |Z
 
 ## <a name="prerequisites"></a>先決條件
 
@@ -88,32 +61,9 @@ PowerShell 的設計目的是要擴充命令 shell 的功能，以執行稱為 C
 
 ## <a name="command-line-reference-a-z"></a>命令列參考 A-Z
 
-若要尋找特定 Windows 命令的相關資訊，請在下列 a-z 功能表中，按一下命令開頭的字母，然後按一下命令名稱。
+若要尋找特定命令的相關資訊，請在下列 a-z 功能表中，按一下命令開頭的字母，然後按一下命令名稱。
 
-[A](#a)  |
-[B](#b)  |
-[C](#c)  |
-[D](#d)  |
-[E](#e)  |
-[F](#f)  |
-[G](#g)  |
-[H](#h)  |
-[I](#i)  |
-[J](#j)  |
-[K](#k)  |
-[L](#l)  |
-[M](#m)  |
-[N](#n)  |
-[O](#o)  |
-[P](#p)  |
-[問](#q)  |
-[R](#r)  |
-[S](#s)  |
-[T](#t)  |
-[U](#u)  |
-[V](#v)  |
-[W](#w)  |
-[X](#x) |Y |Z
+[A](#a)  | [B](#b)  | [C](#c)  | [D](#d)  | [E](#e)  | [F](#f)  | [G](#g)  | [H](#h)  | [I](#i)  | [J](#j)  | [K](#k)  | [L](#l)  | [M](#m)  | [N](#n)  | [O](#o)  | [P](#p)  | [問](#q)  | [R](#r)  | [S](#s)  | [T](#t)  | [U](#u)  | [V](#v)  | [W](#w)  | [X](#x) |Y |Z
 
 ### <a name="a"></a>A
 

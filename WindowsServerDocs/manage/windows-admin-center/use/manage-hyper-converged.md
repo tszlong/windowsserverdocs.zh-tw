@@ -8,12 +8,12 @@ ms.author: jol
 ms.date: 03/01/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 71e45622292f7393b19978ec3235492c5065a8a1
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 8344fcb01a5d527dfce46118121fbf7623636549
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474025"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519667"
 ---
 # <a name="manage-hyper-converged-infrastructure-with-windows-admin-center"></a>使用 Windows 管理中心管理超融合式基礎結構
 
@@ -46,7 +46,7 @@ ms.locfileid: "85474025"
 
 適用于超融合基礎結構的 Windows 系統管理中心正由 Microsoft 積極開發。 它會接收經常更新，以改善現有的功能並新增功能。
 
-## <a name="before-you-start"></a>在您開始使用 Intune 之前
+## <a name="before-you-start"></a>開始之前
 
 若要在 Windows 管理中心將您的叢集管理為超融合式基礎結構，它必須執行 Windows Server 2016 或 Windows Server 2019，並啟用 Hyper-v 和儲存空間直接存取。 此外，它也可以透過 Windows 管理中心啟用並管理軟體定義的網路功能。
 
@@ -278,7 +278,7 @@ Windows Admin Center 除了 Windows 本身以外，不需另付費用。
 
 ![監視 SDN 基礎結構](../media/manage-hyper-converged/sdn-monitoring.png)
 
-## <a name="feedback"></a>意見反應
+## <a name="give-us-feedback"></a>提供意見反應
 
 這就是您的意見反應！ 經常更新最重要的好處，就是知道有哪些功能，以及需要改進的功能。 以下是讓我們知道您所想要的一些方法：
 

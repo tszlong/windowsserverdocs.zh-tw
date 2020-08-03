@@ -10,12 +10,12 @@ ms.date: 08/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 3ad6658c504cc90eedef2c1cb6688c6f12233b3c
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 68232d0b8ab6f4b7330b746657fc63e30a3c2e74
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959870"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87518826"
 ---
 # <a name="winlogon-automatic-restart-sign-on-arso"></a>Winlogon 自動重新開機登入（ARSO）
 
@@ -31,10 +31,9 @@ ms.locfileid: "86959870"
 
 ARSO 會以不同方式來處理非受控和受管理的裝置。 若為未受管理的裝置，則會使用裝置加密，但不需要使用者取得 ARSO。 針對受管理的裝置，ARSO 設定需要 TPM 2.0、SecureBoot 和 BitLocker。 IT 系統管理員可以透過群組原則覆寫這項需求。 受管理裝置的 ARSO 目前僅適用于已加入 Azure Active Directory 的裝置。
 
-|   | Windows Update| shutdown-g-t 0  | 使用者起始的重新開機 | 具有 SHUTDOWN_ARSO/EWX_ARSO 旗標的 Api |
-| --- | :---: | :---: | :---: | :---: |
-| 受控裝置 | :heavy_check_mark:  | :heavy_check_mark: |   | :heavy_check_mark: |
-| 未受管理的裝置 | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| Windows Update | shutdown-g-t 0 | 使用者起始的重新開機 | 具有 SHUTDOWN_ARSO/EWX_ARSO 旗標的 Api |
+|--|--|--|--|
+| 受管理的裝置-是<p>未受管理的裝置-是 | 受管理的裝置-是<p>未受管理的裝置-是 | 受管理的裝置-否<p>未受管理的裝置-是 | 受管理的裝置-是<p>未受管理的裝置-是 |
 
 > [!NOTE]
 > 在 Windows Update 引發重新開機之後，最後一個互動式使用者會自動登入，而且會話會被鎖定。 這讓使用者的鎖定畫面應用程式即使在 Windows Update 重新開機，仍可執行。
@@ -51,7 +50,7 @@ ARSO 會以不同方式來處理非受控和受管理的裝置。 若為未受�
 
 **Intune 原則：**
 
-- 平台：Windows 10 及以上版本
+- 平台：Windows 10 及更新版本
 - 配置檔案類型：系統管理範本
 - 路徑： \Windows \Windows 登入選項
 
@@ -92,7 +91,7 @@ ARSO 會以不同方式來處理非受控和受管理的裝置。 若為未受�
 
 **Intune 原則：**
 
-- 平台：Windows 10 及以上版本
+- 平台：Windows 10 及更新版本
 - 配置檔案類型：系統管理範本
 - 路徑： \Windows \Windows 登入選項
 
@@ -159,12 +158,12 @@ ARSO 會以不同方式來處理非受控和受管理的裝置。 若為未受�
 
 ### <a name="credentials-stored"></a>儲存的認證
 
-|   | 密碼雜湊 | 認證金鑰 | 票證授權票證 | 主要重新整理權杖 |
-| --- | :---: | :---: | :---: | :---: |
-| 本機帳戶 | :heavy_check_mark: | :heavy_check_mark: |   |   |
-| MSA 帳戶 | :heavy_check_mark: | :heavy_check_mark: |   |   |
-| Azure AD 加入的帳戶 | :heavy_check_mark: | :heavy_check_mark: | ： heavy_check_mark：（如果是混合式） | :heavy_check_mark: |
-| 已加入網域的帳戶 | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | ： heavy_check_mark：（如果是混合式） |
+| 密碼雜湊 | 認證金鑰 | 票證授權票證 | 主要重新整理權杖 |
+|--|--|--|--|
+| 本機帳戶-是 | 本機帳戶-是 | 本機帳戶-否 | 本機帳戶-否 |
+| MSA 帳戶-是 | MSA 帳戶-是 | MSA 帳戶-否 | MSA 帳戶-否 |
+| Azure AD 加入的帳戶-是 | Azure AD 加入的帳戶-是 | Azure AD 加入的帳戶-是（如果混合式） | Azure AD 加入的帳戶-是 |
+| 已加入網域的帳戶-是 | 已加入網域的帳戶-是 | 已加入網域的帳戶-是 | 已加入網域的帳戶-是（如果混合式） |
 
 ### <a name="credential-guard-interaction"></a>Credential Guard 互動
 

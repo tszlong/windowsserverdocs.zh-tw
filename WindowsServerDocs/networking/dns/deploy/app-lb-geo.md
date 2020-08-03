@@ -8,16 +8,16 @@ ms.topic: article
 ms.assetid: b6e679c6-4398-496c-88bc-115099f3a819
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d4e005e65a3ff645ed91f488820435aff5173390
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: b66ae0ef1bf319b991efc01c062ec156bf277c31
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317895"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87518393"
 ---
 # <a name="use-dns-policy-for-application-load-balancing-with-geo-location-awareness"></a>使用 DNS 原則進行具有地理位置感知的應用程式負載平衡
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 您可以使用本主題來瞭解如何設定 DNS 原則，以對具有地理位置感知的應用程式進行負載平衡。
 
@@ -32,7 +32,7 @@ ms.locfileid: "80317895"
 
 與北美洲類似，公司現在已有在歐洲資料中心內裝載的 web 伺服器。
 
-Contoso 禮品服務 DNS 系統管理員想要以類似美國的 DNS 原則執行方式，設定歐洲資料中心的應用程式負載平衡，並將應用程式流量分散到位於的 Web 服務器都柏林、愛爾蘭、阿姆斯特丹、Holland 和其他位置。
+Contoso 禮品服務 DNS 系統管理員想要以類似美國的 DNS 原則執行方式，設定歐洲資料中心的應用程式負載平衡，並將應用程式流量分散到位於都柏林、愛爾蘭、阿姆斯特丹、Holland 和其他位置的 Web 服務器。
 
 DNS 系統管理員也希望世界各地其他位置的所有查詢在其資料中心之間均等分散。
 
@@ -53,12 +53,13 @@ DNS 系統管理員也希望世界各地其他位置的所有查詢在其資料�
 
 DNS 用戶端子網是 IPv4 或 IPv6 子網的邏輯群組，會將查詢傳送到 DNS 伺服器。
 
-您可以使用下列 Windows PowerShell 命令來建立 DNS 用戶端子網。 
+您可以使用下列 Windows PowerShell 命令來建立 DNS 用戶端子網。
 
-    
-    Add-DnsServerClientSubnet -Name "AmericaSubnet" -IPv4Subnet 192.0.0.0/24,182.0.0.0/24
-    Add-DnsServerClientSubnet -Name "EuropeSubnet" -IPv4Subnet 141.1.0.0/24,151.1.0.0/24
-    
+```powershell
+Add-DnsServerClientSubnet -Name "AmericaSubnet" -IPv4Subnet 192.0.0.0/24,182.0.0.0/24
+Add-DnsServerClientSubnet -Name "EuropeSubnet" -IPv4Subnet 141.1.0.0/24,151.1.0.0/24
+```
+
 如需詳細資訊，請參閱[DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)。
 
 ### <a name="create-the-zone-scopes"></a><a name="bkmk_zscopes2"></a>建立區域範圍
@@ -72,16 +73,16 @@ DNS 用戶端子網是 IPv4 或 IPv6 子網的邏輯群組，會將查詢傳送�
 
 先前的應用程式負載平衡案例示範如何在北美洲中設定資料中心的三個區域範圍。
 
-使用下列命令，您可以建立兩個更多區域範圍，分別用於都柏林和阿姆斯特丹資料中心。 
+使用下列命令，您可以建立兩個更多區域範圍，分別用於都柏林和阿姆斯特丹資料中心。
 
 您可以新增這些區域範圍，而不需要變更相同區域中的三個現有北美洲區域範圍。 此外，在建立這些區域範圍之後，您不需要重新開機您的 DNS 伺服器。
 
 您可以使用下列 Windows PowerShell 命令來建立區域範圍。
 
-    
-    Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "DublinZoneScope"
-    Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "AmsterdamZoneScope"
-    
+```powershell
+Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "DublinZoneScope"
+Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "AmsterdamZoneScope"
+```
 
 如需詳細資訊，請參閱[DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
@@ -90,11 +91,11 @@ DNS 用戶端子網是 IPv4 或 IPv6 子網的邏輯群組，會將查詢傳送�
 現在您必須將代表 web 伺服器主機的記錄新增到區域範圍中。
 
 先前的案例中已加入北美洲資料中心的記錄。 您可以使用下列 Windows PowerShell 命令，將記錄新增至歐洲資料中心的區域範圍。
- 
-    
-    Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "151.1.0.1" -ZoneScope "DublinZoneScope”
-    Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "141.1.0.1" -ZoneScope "AmsterdamZoneScope"
-    
+
+```powershell
+Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "151.1.0.1" -ZoneScope "DublinZoneScope”
+Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "141.1.0.1" -ZoneScope "AmsterdamZoneScope"
+```
 
 如需詳細資訊，請參閱[DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。
 
@@ -110,14 +111,11 @@ DNS 用戶端子網是 IPv4 或 IPv6 子網的邏輯群組，會將查詢傳送�
 
 您可以使用下列 Windows PowerShell 命令來執行這些 DNS 原則。
 
-    
-    Add-DnsServerQueryResolutionPolicy -Name "AmericaLBPolicy" -Action ALLOW -ClientSubnet "eq,AmericaSubnet" -ZoneScope "SeattleZoneScope,2;ChicagoZoneScope,1; TexasZoneScope,1" -ZoneName "contosogiftservices.com" –ProcessingOrder 1
-    
-    Add-DnsServerQueryResolutionPolicy -Name "EuropeLBPolicy" -Action ALLOW -ClientSubnet "eq,EuropeSubnet" -ZoneScope "DublinZoneScope,1;AmsterdamZoneScope,1" -ZoneName "contosogiftservices.com" -ProcessingOrder 2
-    
-    Add-DnsServerQueryResolutionPolicy -Name "WorldWidePolicy" -Action ALLOW -FQDN "eq,*.contoso.com" -ZoneScope "SeattleZoneScope,1;ChicagoZoneScope,1; TexasZoneScope,1;DublinZoneScope,1;AmsterdamZoneScope,1" -ZoneName "contosogiftservices.com" -ProcessingOrder 3
-    
-    
+```powershell
+Add-DnsServerQueryResolutionPolicy -Name "AmericaLBPolicy" -Action ALLOW -ClientSubnet "eq,AmericaSubnet" -ZoneScope "SeattleZoneScope,2;ChicagoZoneScope,1; TexasZoneScope,1" -ZoneName "contosogiftservices.com" –ProcessingOrder 1
+Add-DnsServerQueryResolutionPolicy -Name "EuropeLBPolicy" -Action ALLOW -ClientSubnet "eq,EuropeSubnet" -ZoneScope "DublinZoneScope,1;AmsterdamZoneScope,1" -ZoneName "contosogiftservices.com" -ProcessingOrder 2
+Add-DnsServerQueryResolutionPolicy -Name "WorldWidePolicy" -Action ALLOW -FQDN "eq,*.contoso.com" -ZoneScope "SeattleZoneScope,1;ChicagoZoneScope,1; TexasZoneScope,1;DublinZoneScope,1;AmsterdamZoneScope,1" -ZoneName "contosogiftservices.com" -ProcessingOrder 3
+```
 
 如需詳細資訊，請參閱[DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
 

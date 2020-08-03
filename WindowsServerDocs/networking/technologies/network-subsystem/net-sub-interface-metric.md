@@ -8,16 +8,16 @@ ms.assetid: 3266328c-ca82-40d2-90ca-854b7088ccaa
 manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
-ms.openlocfilehash: 9e288908df5f5de70f1e369cff08821b8d178de7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 176fa80cd82fdaa3ac76a8661d189b16aa9631ff
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80862211"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517893"
 ---
 # <a name="configure-the-order-of-network-interfaces"></a>設定網路介面順序
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 在 Windows Server 2016 和 Windows 10 中，您可以使用介面計量來設定網路介面的順序。
 
@@ -29,7 +29,9 @@ ms.locfileid: "80862211"
 
 下列 Windows PowerShell 命令範例示範如何使用此參數。
 
-    Set-NetIPInterface -InterfaceIndex 12 -InterfaceMetric 15
+```powershell
+Set-NetIPInterface -InterfaceIndex 12 -InterfaceMetric 15
+```
 
 介面卡出現在清單中的順序取決於 IPv4 或 IPv6 介面計量。  如需詳細資訊，請參閱[GetAdaptersAddresses 函數](https://msdn.microsoft.com/library/windows/desktop/aa365915%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396)。
 

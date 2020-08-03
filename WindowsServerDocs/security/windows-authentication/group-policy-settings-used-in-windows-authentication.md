@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: d5268a5d95dd99bade89015863ea3eadf1b7913a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 9cbf10e9ebce5bbe0865f28001d0c505b42c9742
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475505"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517993"
 ---
 # <a name="group-policy-settings-used-in-windows-authentication"></a>Windows 驗證中使用的群組原則設定
 
@@ -25,7 +25,7 @@ ms.locfileid: "85475505"
 您可以藉由將使用者、電腦和服務帳戶新增至群組，然後將驗證原則套用至這些群組，來管理 Windows 作業系統中的驗證。 這些原則會定義為本機安全性原則和系統管理範本，也稱為群組原則設定。 您可以使用群組原則，在整個組織中設定和散發這兩個集合。
 
 > [!NOTE]
-> Windows Server 2012 R2 中引進的功能，可讓您使用受保護的帳戶，為目標服務或應用程式（通常稱為驗證定址接收器）設定驗證原則。 如需如何在 Active Directory 中執行此動作的詳細資訊，請參閱[如何設定受保護的帳戶](how-to-configure-protected-accounts.md)。
+> Windows Server 2012 R2 中引進的功能，可讓您使用受保護的帳戶，為目標服務或應用程式（通常稱為驗證定址接收器）設定驗證原則。 如需如何在 Active Directory 中執行此動作的詳細資訊，請參閱[如何設定受保護的帳戶](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts)。
 
 例如，您可以根據組織中的功能，將下列原則套用至群組：
 

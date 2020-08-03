@@ -8,22 +8,22 @@ ms.date: 11/14/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 7fc5b8b2f29c0eee2f11f2b581e6ccdd56635236
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 431b751bceb9ccbb1a494da074b1dfe23f58f601
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954290"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519587"
 ---
 # <a name="demoting-domain-controllers-and-domains"></a>降級網域控制站和網域
 
->適用於：Windows Server
+> 適用於：Windows Server
 
 這個主題說明如何使用伺服器管理員或 Windows PowerShell 移除 AD DS。
-  
+
 ## <a name="ad-ds-removal-workflow"></a>AD DS 移除工作流程
 
-![AD DS 移除工作流程圖表](media/Demoting-Domain-Controllers-and-Domains--Level-200-/adds_demotedomainforest.png)  
+![AD DS 移除工作流程圖表](media/Demoting-Domain-Controllers-and-Domains--Level-200-/adds_demotedomainforest.png)
 
 > [!CAUTION]
 > 不支援在升級為網域控制站之後使用 Dism.exe 或 Windows PowerShell DISM 模組移除 AD DS 角色，這樣做將會導致伺服器無法正常開機。
@@ -32,105 +32,104 @@ ms.locfileid: "86954290"
 
 ## <a name="demotion-and-role-removal-with-powershell"></a>使用 PowerShell 的降級和角色移除
 
-|||  
-|-|-|  
-|**ADDSDeployment 和 ServerManager Cmdlet**|引數 (**粗體**的引數是必要的。 *斜體*的引數可以使用 Windows PowerShell 或 [AD DS 設定精靈] 來指定。)|  
-|卸載-Uninstall-addsdomaincontroller|-SkipPreChecks<p>*-LocalAdministratorPassword*<p>-Confirm<p>***-Credential***<p>-DemoteOperationMasterRole<p>*-DNSDelegationRemovalCredential*<p>-Force<p>*-ForceRemoval*<p>*-IgnoreLastDCInDomainMismatch*<p>*-IgnoreLastDNSServerForZone*<p>*-LastDomainControllerInDomain*<p>-Norebootoncompletion<p>*-RemoveApplicationPartitions*<p>*-RemoveDNSDelegation*<p>-RetainDCMetadata|  
-|Uninstall-WindowsFeature/Remove-WindowsFeature|***-Name***<p>***-IncludeManagementTools***<p>*-重新開機*<p>-Remove<p>-Force<p>-ComputerName<p>-Credential<p>-LogPath<p>-Vhd|  
-  
-> [!NOTE]  
-> 只有在您尚未登入為 Enterprise Admins 群組 (降級網域中最後一個 DC) 或 Domain Admins 群組 (降級複本 DC) 的成員時才需要 **-credential** 引數。只有在您想要移除所有 AD DS 管理公用程式時，才需要 **-Includemanagementtools** 引數。  
-  
-## <a name="demote"></a>降級  
-  
+| ADDSDeployment 和 ServerManager Cmdlet | 引數 (**粗體**的引數是必要的。 *斜體*的引數可以使用 Windows PowerShell 或 [AD DS 設定精靈] 來指定。) |
+|--|--|
+| 卸載-Uninstall-addsdomaincontroller | -SkipPreChecks<p>*-LocalAdministratorPassword*<p>-Confirm<p>***-Credential***<p>-DemoteOperationMasterRole<p>*-DNSDelegationRemovalCredential*<p>-Force<p>*-ForceRemoval*<p>*-IgnoreLastDCInDomainMismatch*<p>*-IgnoreLastDNSServerForZone*<p>*-LastDomainControllerInDomain*<p>-Norebootoncompletion<p>*-RemoveApplicationPartitions*<p>*-RemoveDNSDelegation*<p>-RetainDCMetadata |
+| Uninstall-WindowsFeature/Remove-WindowsFeature | ***-Name***<p>***-IncludeManagementTools***<p>*-重新開機*<p>-Remove<p>-Force<p>-ComputerName<p>-Credential<p>-LogPath<p>-Vhd |
+
+> [!NOTE]
+> 只有在您尚未登入為 Enterprise Admins 群組 (降級網域中最後一個 DC) 或 Domain Admins 群組 (降級複本 DC) 的成員時才需要 **-credential** 引數。只有在您想要移除所有 AD DS 管理公用程式時，才需要 **-Includemanagementtools** 引數。
+
+## <a name="demote"></a>降級
+
 ### <a name="remove-roles-and-features"></a>移除角色和功能
 
-伺服器管理員提供兩個介面用於移除 Active Directory 網域服務角色：  
-  
-* 主要儀表板上的 [管理]**** 功能表 (使用 [移除角色及功能]****)  
+伺服器管理員提供兩個介面用於移除 Active Directory 網域服務角色：
 
-   ![伺服器管理員-移除角色和功能](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_Manage.png)  
+* 主要儀表板上的 [管理]**** 功能表 (使用 [移除角色及功能]****)
 
-* 按一下瀏覽窗格上的 [AD DS]**** 或 [所有伺服器]****。 向下捲動到 [角色和功能]**** 區段。 以滑鼠右鍵按一下 [角色和功能]**** 清單中的 [Active Directory 網域服務]****，然後按一下 [移除角色或功能]****。 這個介面會略過 [伺服器選取項目]**** 頁面。  
+   ![伺服器管理員-移除角色和功能](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_Manage.png)
 
-   ![伺服器管理員-所有伺服器-移除角色和功能](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ServerSelection.png)  
+* 按一下瀏覽窗格上的 [AD DS]**** 或 [所有伺服器]****。 向下捲動到 [角色和功能]**** 區段。 以滑鼠右鍵按一下 [角色和功能]**** 清單中的 [Active Directory 網域服務]****，然後按一下 [移除角色或功能]****。 這個介面會略過 [伺服器選取項目]**** 頁面。
+
+   ![伺服器管理員-所有伺服器-移除角色和功能](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ServerSelection.png)
 
 ServerManager Cmdlet **Uninstall**和**Remove**會阻止您移除 AD DS 角色，除非您將網域控制站降級。
-  
+
 ### <a name="server-selection"></a>伺服器選項
 
-![移除角色及功能嚮導選取目的地伺服器](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ServerSelection2.png)  
+![移除角色及功能嚮導選取目的地伺服器](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ServerSelection2.png)
 
-[伺服器選取項目]**** 對話方塊可讓您從先前已加入集區的伺服器中選擇其中之一 (只要其可供存取)。 執行伺服器管理員的本機伺服器會一律自動變成可供使用的伺服器。  
+[伺服器選取項目]**** 對話方塊可讓您從先前已加入集區的伺服器中選擇其中之一 (只要其可供存取)。 執行伺服器管理員的本機伺服器會一律自動變成可供使用的伺服器。
 
 ### <a name="server-roles-and-features"></a>伺服器角色與功能
 
-![移除角色及功能 Wizard-選取要移除的角色](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ServerRoles.png)  
+![移除角色及功能 Wizard-選取要移除的角色](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ServerRoles.png)
 
-取消選取 [Active Directory 網域服務]**** 核取方塊來將網域控制站降級。如果伺服器目前是網域控制站，這不會移除 AD DS 角色，而是會切換成提供降級供應項目的 [驗證結果]**** 對話方塊。 否則，它會移除二進位檔，就像任何其他角色功能一樣。  
+取消選取 [Active Directory 網域服務]**** 核取方塊來將網域控制站降級。如果伺服器目前是網域控制站，這不會移除 AD DS 角色，而是會切換成提供降級供應項目的 [驗證結果]**** 對話方塊。 否則，它會移除二進位檔，就像任何其他角色功能一樣。
 
-* 如果您想要立即再次升級網域控制站，請勿移除任何其他的 AD DS 相關角色或功能 (例如 DNS、GPMC 或 RSAT 工具)。 移除其他角色與功能會增加重新升級的時間，因為伺服器管理員會在您重新安裝角色時重新安裝這些功能。  
-* 如果您想要永久降級網域控制站，請自行選擇移除不必要的 AD DS 角色與功能。 這需要取消選取那些角色與功能的核取方塊。  
+* 如果您想要立即再次升級網域控制站，請勿移除任何其他的 AD DS 相關角色或功能 (例如 DNS、GPMC 或 RSAT 工具)。 移除其他角色與功能會增加重新升級的時間，因為伺服器管理員會在您重新安裝角色時重新安裝這些功能。
+* 如果您想要永久降級網域控制站，請自行選擇移除不必要的 AD DS 角色與功能。 這需要取消選取那些角色與功能的核取方塊。
 
-   AD DS 相關角色與功能的完整清單包括：  
-  
-   * Windows PowerShell 的 Active Directory 模組功能  
-   * AD DS 與 AD LDS 工具功能  
-   * Active Directory 管理中心功能  
-   * AD DS 嵌入式管理單元及命令列工具功能  
-   * DNS 伺服器  
-   * 群組原則管理主控台  
-  
-相等的 ADDSDeployment 和 ServerManager Windows PowerShell Cmdlet 為：  
-  
+   AD DS 相關角色與功能的完整清單包括：
+
+   * Windows PowerShell 的 Active Directory 模組功能
+   * AD DS 與 AD LDS 工具功能
+   * Active Directory 管理中心功能
+   * AD DS 嵌入式管理單元及命令列工具功能
+   * DNS 伺服器
+   * 群組原則管理主控台
+
+相等的 ADDSDeployment 和 ServerManager Windows PowerShell Cmdlet 為：
+
 ```
-Uninstall-addsdomaincontroller  
-Uninstall-windowsfeature  
+Uninstall-addsdomaincontroller
+Uninstall-windowsfeature
 ```
 
-![移除角色及功能嚮導-確認對話方塊](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_RemoveFeatures.png)  
+![移除角色及功能嚮導-確認對話方塊](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_RemoveFeatures.png)
 
-![移除角色及功能嚮導-驗證](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_Demote.png)  
+![移除角色及功能嚮導-驗證](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_Demote.png)
 
 ### <a name="credentials"></a>認證
 
-![Active Directory Domain Services Configuration Wizard-認證選取範圍](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_Credentials.png)  
+![Active Directory Domain Services Configuration Wizard-認證選取範圍](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_Credentials.png)
 
-您可以在 [認證]**** 頁面上設定降級選項。 提供執行下列清單降級所需的認證：  
+您可以在 [認證]**** 頁面上設定降級選項。 提供執行下列清單降級所需的認證：
 
-* 降級其他網域控制站需要 Domain Admin 認證。 選取 [**強制移除此網域控制站**] 會將網域控制站降級，而不會從 Active Directory 移除網域控制站物件的中繼資料。  
+* 降級其他網域控制站需要 Domain Admin 認證。 選取 [**強制移除此網域控制站**] 會將網域控制站降級，而不會從 Active Directory 移除網域控制站物件的中繼資料。
 
-   > [!WARNING]  
-   > 請不要選取這個選項，除非網域控制站無法連絡其他網域控制站，而且沒有其他正當的方法** 可以解決這個網路問題。 強制降級會在樹系的剩餘網域控制站上的 Active Directory 中留下孤立的中繼資料。 不僅如此，該網域控制站上所有未複寫的變更 (如密碼或新的使用者帳戶) 都會永遠遺失。 孤立的中繼資料是 Microsoft 客戶支援遇到大部分 AD DS、Exchange、SQL 及其他軟體問題的根本原因。  
+   > [!WARNING]
+   > 請不要選取這個選項，除非網域控制站無法連絡其他網域控制站，而且沒有其他正當的方法** 可以解決這個網路問題。 強制降級會在樹系的剩餘網域控制站上的 Active Directory 中留下孤立的中繼資料。 不僅如此，該網域控制站上所有未複寫的變更 (如密碼或新的使用者帳戶) 都會永遠遺失。 孤立的中繼資料是 Microsoft 客戶支援遇到大部分 AD DS、Exchange、SQL 及其他軟體問題的根本原因。
    >
-   > 如果您強制降級網域控制站，則必須** 立即手動清理中繼資料。 如需相關步驟，請參閱 [清理伺服器中繼資料](ad-ds-metadata-cleanup.md)。  
+   > 如果您強制降級網域控制站，則必須** 立即手動清理中繼資料。 如需相關步驟，請參閱 [清理伺服器中繼資料](ad-ds-metadata-cleanup.md)。
 
-   ![Active Directory Domain Services Configuration Wizard-認證強制移除](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ForceDemote.png)  
-  
-* 降級網域中最後一個網域控制站需要 Enterprise Admins 群組成員資格，因為它會移除網域本身 (如果這是樹系的最後一個網域，則會移除樹系)。 如果您目前的網域控制站是網域的最後一部網域控制站，[伺服器管理員] 將會通知您。 選取 [網域中最後一個網域控制站]**** 核取方塊來確認網域控制站是網域中的最後一個網域控制站。  
+   ![Active Directory Domain Services Configuration Wizard-認證強制移除](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ForceDemote.png)
 
-對等的 ADDSDeployment Windows PowerShell 引數為：  
+* 降級網域中最後一個網域控制站需要 Enterprise Admins 群組成員資格，因為它會移除網域本身 (如果這是樹系的最後一個網域，則會移除樹系)。 如果您目前的網域控制站是網域的最後一部網域控制站，[伺服器管理員] 將會通知您。 選取 [網域中最後一個網域控制站]**** 核取方塊來確認網域控制站是網域中的最後一個網域控制站。
+
+對等的 ADDSDeployment Windows PowerShell 引數為：
 
 ```
--credential <pscredential>  
--forceremoval <{ $true | false }>  
--lastdomaincontrollerindomain <{ $true | false }>  
+-credential <pscredential>
+-forceremoval <{ $true | false }>
+-lastdomaincontrollerindomain <{ $true | false }>
 ```
 
 ### <a name="warnings"></a>警告
 
-![Active Directory Domain Services Configuration Wizard-認證 FSMO 角色影響](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_Warnings.png)  
+![Active Directory Domain Services Configuration Wizard-認證 FSMO 角色影響](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_Warnings.png)
 
 [警告]**** 頁面會提示您移除此網域控制站之後可能發生的結果。 若要繼續，您必須選取 [繼續移除]****。
 
-> [!WARNING]  
+> [!WARNING]
 > 如果您先前在 [認證]**** 頁面上選取 [強制此網域控制站移除]****，[警告]**** 頁面就會顯示此網域控制站代管的所有彈性單一主機操作角色。 您*必須*在將此伺服器降級之後*立即*從另一個網域控制站拿取角色。 如需拿取 FSMO 角色的詳細資訊，請參閱 [拿取操作主機角色](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc816779(v=ws.10))。
 
 此頁面沒有相等的 ADDSDeployment Windows PowerShell 引數。
 
 ### <a name="removal-options"></a>移除選項
 
-![Active Directory Domain Services Configuration Wizard-認證移除 DNS 和應用程式磁碟分割](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ReviewOptions.png)  
+![Active Directory Domain Services Configuration Wizard-認證移除 DNS 和應用程式磁碟分割](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ReviewOptions.png)
 
 [移除選項]**** 頁面會根據先前在 [認證]**** 頁面上選取 [網域中最後一個網域控制站]**** 而顯示。 此頁面可讓您設定其他移除選項。 選取 [**略過區域的最後一個 DNS 伺服器**，**移除應用程式磁碟分割**，並**移除 DNS 委派**] 以啟用 [**下一步]** 按鈕。
 
@@ -138,18 +137,18 @@ Uninstall-windowsfeature
 
 按一下 [變更]**** 來指定替代的 DNS 系統管理認證。 按一下 [檢視分割]**** 來檢視降級時精靈會移除的其他分割。 根據預設，其他分割只有網域 DNS 與樹系 DNS 區域。 所有其他分割都是非 Windows 分割。
 
-相等的 ADDSDeployment Cmdlet 引數為：  
+相等的 ADDSDeployment Cmdlet 引數為：
 
 ```
--ignorelastdnsserverforzone <{ $true | false }>  
--removeapplicationpartitions <{ $true | false }>  
--removednsdelegation <{ $true | false }>  
--dnsdelegationremovalcredential <pscredential>  
+-ignorelastdnsserverforzone <{ $true | false }>
+-removeapplicationpartitions <{ $true | false }>
+-removednsdelegation <{ $true | false }>
+-dnsdelegationremovalcredential <pscredential>
 ```
 
 ### <a name="new-administrator-password"></a>新系統管理員密碼
 
-![Active Directory Domain Services Configuration Wizard-認證新的系統管理員密碼](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_NewAdminPwd.png)  
+![Active Directory Domain Services Configuration Wizard-認證新的系統管理員密碼](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_NewAdminPwd.png)
 
 一旦降級完成且電腦成為網域成員伺服器或工作組電腦之後，[**新系統管理員密碼**] 頁面會要求您提供內建本機電腦的系統管理員帳戶密碼。
 
@@ -196,13 +195,13 @@ Uninstall-ADDSDomainController
 
 ![PowerShell 卸載-Uninstall-addsdomaincontroller 範例](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_PSUninstall.png)
 
-使用 ADDSDeployment Windows PowerShell 時，重新啟動提示是您取消此作業的最後機會。 若要覆寫該提示，請使用 **-force** 或 **confirm:$false** 引數。  
+使用 ADDSDeployment Windows PowerShell 時，重新啟動提示是您取消此作業的最後機會。 若要覆寫該提示，請使用 **-force** 或 **confirm:$false** 引數。
 
 ### <a name="demotion"></a>降級
 
-![Active Directory Domain Services 設定向導-降級進行中](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_Demotion.png)  
+![Active Directory Domain Services 設定向導-降級進行中](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_Demotion.png)
 
-在 [降級]**** 頁面顯示時，就會開始網域控制站組態設定，且無法暫停或取消。 詳細的作業會在此頁面上顯示並寫入記錄檔：  
+在 [降級]**** 頁面顯示時，就會開始網域控制站組態設定，且無法暫停或取消。 詳細的作業會在此頁面上顯示並寫入記錄檔：
 
 * %systemroot%\debug\dcpromo.log
 * %systemroot%\debug\dcpromoui.log

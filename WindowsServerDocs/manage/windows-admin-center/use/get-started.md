@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 02/15/2019
-ms.openlocfilehash: fc8e6ffa39320cfc73bf3f5bd0a5bc765ded24b4
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 5c0094c9cecfb50304b0317ab11c60f0332ef3a7
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322870"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87518566"
 ---
 # <a name="get-started-with-windows-admin-center"></a>開始使用 Windows 管理中心
 
@@ -33,18 +33,18 @@ ms.locfileid: "79322870"
 當您第一次在 Windows 10 上開啟 Windows 系統管理中心時，請務必選取*Windows 管理中心用戶端*憑證（否則您會收到 HTTP 403 錯誤，指出「無法進入此頁面」）。
 
 在 Microsoft Edge 中，當系統提示您使用此對話方塊時：
- 
+
 1. 按一下 [**更多選擇**]
 
-    ![](../media/launch-cert-1.png)
+    ![選取具有反白顯示更多選項的憑證方塊](../media/launch-cert-1.png)
 
 2. 選取標示為 [ **Windows Admin Center 用戶端**] 的憑證，然後按一下 **[確定]**
 
-    ![](../media/launch-cert-2.png)
+    ![選取顯示可用憑證的憑證方塊](../media/launch-cert-2.png)
 
 3. 請確定已選取 [**永遠允許存取**]，然後按一下 [**允許**]
 
-    ![](../media/launch-cert-3.png)
+    !需要認證對話方塊] （.。/media/launch-cert-3.png）
 
 ## <a name="connecting-to-managed-nodes-and-clusters"></a>連接到受管理的節點和叢集
 
@@ -52,17 +52,17 @@ ms.locfileid: "79322870"
 
  **將單一伺服器或叢集新增為受管理節點**
 
-1. 按一下 [**所有連接**] 底下的 [ **+ 新增**]。
+1. 按一下 [所有連線] 底下的 [+ 新增]。
 
-   ![](../media/launch/addserver0.png)
+   ![Windows 系統管理中心-所有連接頁面](../media/launch/addserver0.png)
 
 2. 選擇新增伺服器、叢集、Windows 電腦或 Azure VM：
-    
-   ![](../media/launch/ChooseConnectionType.png)
+
+   ![Windows 系統管理中心-新增資源頁面](../media/launch/ChooseConnectionType.png)
 
 3. 輸入要管理的伺服器或叢集名稱，然後按一下 [**提交**]。 在 [總覽] 頁面上，伺服器或叢集將會新增至您的連接清單。
 
-   ![](../media/launch/addserver2.png)
+   ![Windows 系統管理中心-伺服器頁面](../media/launch/addserver2.png)
 
    **--或--**
 
@@ -70,7 +70,7 @@ ms.locfileid: "79322870"
 
  1. 在 [**新增伺服器連接**] 頁面上，選擇 [匯**入伺服器**] 索引標籤。
 
-    ![](../media/launch/import-servers.png)
+    ![Windows 管理中心-[匯入伺服器] 索引標籤](../media/launch/import-servers.png)
 
  2. 按一下 **[流覽]** ，然後選取含有逗號或換行的文字檔，其中包含您想要新增之伺服器的 fqdn 清單。
 
@@ -83,7 +83,7 @@ ms.locfileid: "79322870"
 
  1. 在 [**新增伺服器連接**] 頁面上，選擇 [**搜尋 Active Directory] 索引**標籤。
 
-    ![](../media/launch/search-ad.png)
+    ![Windows 系統管理中心-搜尋 Active Directory] 索引標籤](../media/launch/search-ad.png)
 
  2. 輸入您的搜尋條件，然後按一下 [**搜尋**]。 支援萬用字元（*）。
 
@@ -95,7 +95,7 @@ Windows 系統管理中心支援數個使用受管理節點進行驗證的機制
 
 **單一登入**
 
-您可以使用目前的 Windows 認證，向受管理的節點進行驗證。 這是預設值，而且 Windows 管理中心會在您新增伺服器時嘗試登入。 
+您可以使用目前的 Windows 認證，向受管理的節點進行驗證。 這是預設值，而且 Windows 管理中心會在您新增伺服器時嘗試登入。
 
 **在部署為 Windows Server 上的服務時設定單一登入**
 
@@ -107,11 +107,11 @@ Windows 系統管理中心支援數個使用受管理節點進行驗證的機制
 
 在 [**所有**連線] 底下，從清單中選取伺服器，然後選擇 [**管理**身分]，指定您將用來向受管理節點進行驗證的認證：
 
-![](../media/launch-use-6.png)
+![所有連接、管理為選項](../media/launch-use-6.png)
 
 如果 Windows 系統管理中心是在 Windows Server 上以服務模式執行，但是您未設定 Kerberos 委派，則必須重新輸入您的 Windows 認證：
 
-![](../media/launch-use-7.png)
+![指定您的認證頁面](../media/launch-use-7.png)
 
 您可以將認證套用至所有連線，這會針對該特定瀏覽器會話進行快取。 如果您重載瀏覽器，則必須重新輸入您的 [**管理**身分] 認證。
 
@@ -128,7 +128,7 @@ Windows 系統管理中心支援數個使用受管理節點進行驗證的機制
 * 在 [所有連接] 清單中選取伺服器或多部伺服器
 * 按一下 [**所有連接**] 底下的 [**編輯標記**]
 
-![](../media/launch/tags-5.png)
+![Windows 管理中心-編輯標記選項](../media/launch/tags-5.png)
 
 [**編輯連接標記**] 窗格可讓您修改、新增或移除所選連接中的標記：
 
@@ -140,16 +140,19 @@ Windows 系統管理中心支援數個使用受管理節點進行驗證的機制
 
 * 如果將標籤套用至選取之連接的子集，則會以中繼狀態顯示此核取方塊。 您可以按一下方塊進行檢查，並將標籤套用到所有選取的連線，或再按一次以取消核取，然後從所有選取的連線移除標記。
 
-![](../media/launch/tags-6.png)
+![Windows 管理中心-編輯連接標記頁面](../media/launch/tags-6.png)
 
 ### <a name="filter-connections-by-tag"></a>依標記篩選連接
 
 一旦將標記加入至一或多個伺服器連接之後，您就可以在連接清單上查看標記，並依標記篩選連接清單。
 
 * 若要依標記篩選，請選取 [搜尋] 方塊旁邊的篩選圖示。
-![](../media/launch/tags-7.png)
-* 您可以選取 "or"、"and" 或 "not"，以修改所選標記的篩選行為。
-![](../media/launch/tags-8.png)
+
+   ![Windows 系統管理中心-使用 [搜尋] 方塊篩選](../media/launch/tags-7.png)
+
+   * 您可以選取 "or"、"and" 或 "not"，以修改所選標記的篩選行為。
+
+   ![Windows 系統管理中心-篩選連接頁面](../media/launch/tags-8.png)
 
 ## <a name="use-powershell-to-import-or-export-your-connections-with-tags"></a>使用 PowerShell 匯入或匯出您的連線 (包含標記)
 
@@ -159,4 +162,4 @@ Windows 系統管理中心支援數個使用受管理節點進行驗證的機制
 
 連線到伺服器、叢集或電腦之後，您可以查看 PowerShell 腳本，以增強 Windows 管理中心提供的 UI 動作。 從工具內，按一下頂端應用程式行中的 [PowerShell] 圖示。 從下拉式清單中選取想要的命令，以流覽至對應的 PowerShell 腳本。
 
-![](../media/launch/showscript.png)
+![查看適用于總覽的 PowerShell 腳本頁面](../media/launch/showscript.png)

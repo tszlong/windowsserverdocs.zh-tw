@@ -8,12 +8,12 @@ ms.date: 01/12/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 09d61292b91c83466f9770184d431b3e6d627dca
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 052a804a61701855fbdf6b6e373314d35b474cf9
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385444"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517593"
 ---
 # <a name="ad-fs-troubleshooting---sql-connectivity"></a>AD FS 疑難排解-SQL 連線能力
 AD FS 提供對 AD FS 伺服器陣列資料使用遠端 SQL Server 的功能。  如果伺服器陣列中的 AD FS 伺服器無法與後端 SQL server 通訊，您將會發現問題。  下列檔將提供一些基本步驟來測試與後端伺服器的通訊。
@@ -23,10 +23,11 @@ AD FS 提供對 AD FS 伺服器陣列資料使用遠端 SQL Server 的功能。 
 
 ### <a name="to-acquire-the-sql-connection-string"></a>取得 SQL 連接字串
 1.  開啟 Windows PowerShell
-2. 輸入下列內容： `$adfs = gwmi -Namespace root/ADFS -Class SecurityTokenService`，然後按 Enter 鍵
-3. 輸入下列內容： `$adfs.ConfigurationDatabaseConnectionString`，然後按 enter 鍵。
+2. 輸入下列內容： `$adfs = gwmi -Namespace root/ADFS -Class SecurityTokenService` 並按 Enter 鍵
+3. 輸入下列內容： `$adfs.ConfigurationDatabaseConnectionString` ，然後按 enter 鍵。
 4. 您應該會看到連接字串資訊。
-![](media/ad-fs-tshoot-sql/sql2.png)
+
+![PowerShell 命令畫面正在執行命令](media/ad-fs-tshoot-sql/sql2.png)
 
 ## <a name="create-a-universal-data-link-udl-file-to-test-connectivity"></a>建立通用資料連結（UDL）檔案來測試連線能力
 通用資料連結檔案或 UDL 檔案基本上是包含資料庫連接字串的文字檔。  藉由使用我們在上方取得的資訊，我們可以測試 SQL server 是否正在回應連接。
@@ -38,8 +39,8 @@ AD FS 提供對 AD FS 伺服器陣列資料使用遠端 SQL Server 的功能。 
 3. 填寫下列資訊： a。 **選取或輸入伺服器名稱：** 使用來自 b 以上連接字串的資料來源。 **輸入資訊以登入伺服器：** 使用 AD FS 服務帳戶或具有遠端登入權利的帳戶。  如果帳戶是 windows 帳戶，請使用整合式驗證，否則請輸入使用者名稱和密碼。
     c. **選取伺服器上的資料庫：** 使用上述字串中的初始目錄。  範例： AdfsConfigurationV3。
    ![測試連接](media/ad-fs-tshoot-sql/sql4.png)
-1. 按一下 [**測試連接**]。</br>
-![成功](media/ad-fs-tshoot-sql/sql3.png)
+1. 按一下 **[測試連接]** 。</br>
+「成功」![](media/ad-fs-tshoot-sql/sql3.png)
 
 ## <a name="use-sql-server-management-studio-to-test-connectivity"></a>使用 SQL Server Management Studio 來測試連線能力
 您也可以[下載](https://go.microsoft.com/fwlink/?linkid=864329)並安裝 SSMS，以測試資料庫連線能力。
@@ -49,7 +50,7 @@ AD FS 提供對 AD FS 伺服器陣列資料使用遠端 SQL Server 的功能。 
 ![安裝](media/ad-fs-tshoot-sql/sql5.png)
 1. 開啟 SSMS，輸入伺服器名稱。  上述的資料來源。
 2. 使用 AD FS 服務帳戶或具有遠端登入權利的帳戶。  如果帳戶是 windows 帳戶，請使用整合式驗證，否則請輸入使用者名稱和密碼。
-![連接](media/ad-fs-tshoot-sql/sql6.png)
+![[連接]](media/ad-fs-tshoot-sql/sql6.png)
 1. 您應該會看到左側已填入。  展開 [資料庫]，並確認您看到 AD FS 資料庫。
 ![AD FS 資料庫](media/ad-fs-tshoot-sql/sql7.png)
 

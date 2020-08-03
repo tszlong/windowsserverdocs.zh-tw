@@ -1,7 +1,7 @@
 ---
 title: 解決 Windows 啟用錯誤碼
 description: 了解如何針對啟用錯誤碼進行疑難排解
-ms.topic: article
+ms.topic: troubleshooting
 ms.date: 9/18/2019
 ms.technology: server-general
 author: kaushika-msft
@@ -11,17 +11,17 @@ ms.custom:
 - CI ID 116803
 - CSSTroubleshoot
 manager: dcscontentpm
-ms.openlocfilehash: 6a38dad3362b2fa6c95c48cf613577941ffcc82c
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 778af6869cbc01478cb468ff8d2d4543c786056f
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963572"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409989"
 ---
 # <a name="resolve-windows-activation-error-codes"></a>解決 Windows 啟用錯誤碼
 
-> [!NOTE]  
-> 本文適用於技術支援專員和 IT 專業人員。 如需 Windows 啟用錯誤訊息的詳細資訊，請參閱[取得 Windows 啟用錯誤的說明](https://support.microsoft.com/help/10738/windows-10-get-help-with-activation-errors)。  
+> [!NOTE]
+> 本文適用於技術支援專員和 IT 專業人員。 如需 Windows 啟用錯誤訊息的詳細資訊，請參閱[取得 Windows 啟用錯誤的說明](https://support.microsoft.com/help/10738/windows-10-get-help-with-activation-errors)。
 
 本文提供疑難排解資訊，協助您回應在嘗試使用多次啟用金鑰 (MAK) 或金鑰管理服務 (KMS) 在一或多部 Windows 電腦上執行大量啟用時，您會收到的錯誤訊息。 在下表中尋找錯誤碼，然後選取連結，以查看有關該錯誤碼及其解決方式的詳細資訊。
 
@@ -33,7 +33,7 @@ ms.locfileid: "86963572"
 
 ## <a name="diagnostic-tool"></a>診斷工具
 
-> [!NOTE]  
+> [!NOTE]
 > 此工具的目的是為了在執行 Windows 企業版、專業版或伺服器版本的電腦上，協助修正 Windows 啟用問題。
 
 
@@ -80,20 +80,20 @@ Microsoft 支援及修復小幫手 (SaRA) 可簡化 Windows KMS 啟動的疑難�
 
 ## <a name="causes-and-resolutions"></a>原因和解決方式
 
-### <a name="0x8004fe21-this-computer-is-not-running-genuine-windows"></a>0x8004FE21 這部電腦未執行正版 Windows  
+### <a name="0x8004fe21-this-computer-is-not-running-genuine-windows"></a>0x8004FE21 這部電腦未執行正版 Windows
 
 #### <a name="possible-cause"></a>可能的原因
 
-多種原因會導致發生此問題。 最可能的造成原因是電腦上尚未安裝語言套件 (MUI)，這些電腦所執行 Windows 版本沒有其他語言套件的授權。  
+多種原因會導致發生此問題。 最可能的造成原因是電腦上尚未安裝語言套件 (MUI)，這些電腦所執行 Windows 版本沒有其他語言套件的授權。
 
 > [!NOTE]
-> 此問題不一定表示遭到竄改。 某些應用程式可以安裝多語支援，即使該 Windows 版本沒有這些語言套件的授權也一樣。  
+> 此問題不一定表示遭到竄改。 某些應用程式可以安裝多語支援，即使該 Windows 版本沒有這些語言套件的授權也一樣。
 
-如果 Windows 遭到惡意程式碼修改為允許安裝其他功能，也可能會發生此問題。 如果特定系統檔案已損毀，也可能會發生此問題。  
+如果 Windows 遭到惡意程式碼修改為允許安裝其他功能，也可能會發生此問題。 如果特定系統檔案已損毀，也可能會發生此問題。
 
 #### <a name="resolution"></a>解決方法
 
-若要解決此問題，您必須重新安裝作業系統。  
+若要解決此問題，您必須重新安裝作業系統。
 
 ### <a name="0x80070005-access-denied"></a>0x80070005 拒絕存取
 
@@ -103,30 +103,30 @@ Microsoft 支援及修復小幫手 (SaRA) 可簡化 Windows KMS 啟動的疑難�
 
 #### <a name="possible-cause"></a>可能的原因
 
-使用者帳戶控制 (UAC) 禁止啟用處理程序在未提升權限的命令提示字元視窗中執行。  
+使用者帳戶控制 (UAC) 禁止啟用處理程序在未提升權限的命令提示字元視窗中執行。
 
 #### <a name="resolution"></a>解決方法
 
-從提升權限的命令提示字元執行 **slmgr.vbs**。 若要這麼做，請在 [開始] 功能表上，以滑鼠右鍵按一下 **cmd.exe**，然後選取 [以系統管理員身分執行]。  
+從提升權限的命令提示字元執行 **slmgr.vbs**。 若要這麼做，請在 [開始] 功能表上，以滑鼠右鍵按一下 **cmd.exe**，然後選取 [以系統管理員身分執行]。
 
 ### <a name="0x8007007b-dns-name-does-not-exist"></a>0x8007007b DNS 名稱不存在
 
 #### <a name="possible-cause"></a>可能的原因
 
-如果 KMS 用戶端在 DNS 中找不到 KMS SRV 資源記錄，就可能會發生此問題。  
+如果 KMS 用戶端在 DNS 中找不到 KMS SRV 資源記錄，就可能會發生此問題。
 
 #### <a name="resolution"></a>解決方法
 
-如需針對這類 DNS 相關問題進行疑難排解的詳細資訊，請參閱 [KMS 和 DNS 問題的常見疑難排解程序](common-troubleshooting-procedures-kms-dns.md)。  
+如需針對這類 DNS 相關問題進行疑難排解的詳細資訊，請參閱 [KMS 和 DNS 問題的常見疑難排解程序](common-troubleshooting-procedures-kms-dns.md)。
 
 ### <a name="0x80070490-the-product-key-you-entered-didnt-work"></a>0x80070490 輸入的產品金鑰無效
 
 此錯誤的完整文字與下列類似：
-> 輸入的產品金鑰無效。 請檢查產品金鑰並再試一次，或輸入其他金鑰。  
+> 輸入的產品金鑰無效。 請檢查產品金鑰並再試一次，或輸入其他金鑰。
 
 #### <a name="possible-cause"></a>可能的原因
 
-因為輸入的 MAK 無效，或由於 Windows Server 2019 中的已知問題，所以發生此問題。  
+因為輸入的 MAK 無效，或由於 Windows Server 2019 中的已知問題，所以發生此問題。
 
 #### <a name="resolution"></a>解決方法
 
@@ -136,17 +136,17 @@ Microsoft 支援及修復小幫手 (SaRA) 可簡化 Windows KMS 啟動的疑難�
 
 #### <a name="possible-cause"></a>可能的原因
 
-未在 KMS 主機上設定防火牆設定，或 DNS SRV 記錄已過時。  
+未在 KMS 主機上設定防火牆設定，或 DNS SRV 記錄已過時。
 
 #### <a name="resolution"></a>解決方法
 
 在 KMS 主機上，確定已針對金鑰管理服務 (TCP 連接埠 1688) 啟用防火牆例外。
 
-確定 DNS SRV 記錄指向有效的 KMS 主機。 
+確定 DNS SRV 記錄指向有效的 KMS 主機。
 
-針對網路連線進行疑難排解。  
+針對網路連線進行疑難排解。
 
-如需針對這類 DNS 相關問題進行疑難排解的詳細資訊，請參閱 [KMS 和 DNS 問題的常見疑難排解程序](common-troubleshooting-procedures-kms-dns.md)。  
+如需針對這類 DNS 相關問題進行疑難排解的詳細資訊，請參閱 [KMS 和 DNS 問題的常見疑難排解程序](common-troubleshooting-procedures-kms-dns.md)。
 
 ### <a name="0x8007232a-dns-server-failure"></a>0x8007232A DNS 伺服器失敗
 
@@ -156,21 +156,21 @@ Microsoft 支援及修復小幫手 (SaRA) 可簡化 Windows KMS 啟動的疑難�
 
 #### <a name="resolution"></a>解決方法
 
-針對網路與 DNS 進行疑難排解。  
+針對網路與 DNS 進行疑難排解。
 
 ### <a name="0x8007232b-dns-name-does-not-exist"></a>0x8007232B DNS 名稱不存在
 
 #### <a name="possible-cause"></a>可能的原因
 
-KMS 用戶端在 DNS 中找不到 KMS 伺服器資源記錄 (SRV RR)。  
+KMS 用戶端在 DNS 中找不到 KMS 伺服器資源記錄 (SRV RR)。
 
 #### <a name="resolution"></a>解決方法
 
-確認已安裝 KMS 主機，且已啟用 DNS 發佈 (預設值)。 若 DNS 無法使用，請使用 **slmgr.vbs /skms <*kms_host_name*>** 將 KMS 用戶端指向 KMS 主機。  
+確認已安裝 KMS 主機，且已啟用 DNS 發佈 (預設值)。 若 DNS 無法使用，請使用 **slmgr.vbs /skms <*kms_host_name*>** 將 KMS 用戶端指向 KMS 主機。
 
 如果您沒有 KMS 主機，請取得並安裝 MAK。 然後，啟動系統。
 
-如需針對這類 DNS 相關問題進行疑難排解的詳細資訊，請參閱 [KMS 和 DNS 問題的常見疑難排解程序](common-troubleshooting-procedures-kms-dns.md)。  
+如需針對這類 DNS 相關問題進行疑難排解的詳細資訊，請參閱 [KMS 和 DNS 問題的常見疑難排解程序](common-troubleshooting-procedures-kms-dns.md)。
 
 ### <a name="0x8007251d-no-records-found-for-dns-query"></a>0x8007251D 找不到 DNS 查詢記錄
 
@@ -180,7 +180,7 @@ KMS 用戶端在 DNS 中找不到 KMS SRV 記錄。
 
 #### <a name="resolution"></a>解決方法
 
-針對網路連線與 DNS 進行疑難排解。 如需如何針對這類 DNS 相關問題進行疑難排解的詳細資訊，請參閱 [KMS 和 DNS 問題的常見疑難排解程序](common-troubleshooting-procedures-kms-dns.md)。  
+針對網路連線與 DNS 進行疑難排解。 如需如何針對這類 DNS 相關問題進行疑難排解的詳細資訊，請參閱 [KMS 和 DNS 問題的常見疑難排解程序](common-troubleshooting-procedures-kms-dns.md)。
 
 ### <a name="0x80092328-dns-name-does-not-exist"></a>0x80092328 DNS 名稱不存在
 
@@ -190,13 +190,13 @@ KMS 用戶端在 DNS 中找不到 KMS SRV 記錄。
 
 #### <a name="resolution"></a>解決方法
 
-如需針對這類 DNS 相關問題進行疑難排解的詳細資訊，請參閱 [KMS 和 DNS 問題的常見疑難排解程序](common-troubleshooting-procedures-kms-dns.md)。  
+如需針對這類 DNS 相關問題進行疑難排解的詳細資訊，請參閱 [KMS 和 DNS 問題的常見疑難排解程序](common-troubleshooting-procedures-kms-dns.md)。
 
 ### <a name="0xc004b100-the-activation-server-determined-that-the-computer-could-not-be-activated"></a>0xC004B100 啟用伺服器判定無法啟用電腦
 
 #### <a name="possible-cause"></a>可能的原因
 
-不支援該 MAK。  
+不支援該 MAK。
 
 #### <a name="resolution"></a>解決方法
 
@@ -220,17 +220,17 @@ KMS 用戶端在 DNS 中找不到 KMS SRV 記錄。
 
 #### <a name="resolution"></a>解決方法
 
-若要取得新的 MAK，請連絡 [Microsoft 授權啟用中心](https://www.microsoft.com/Licensing/existing-customer/activation-centers)。 取得新的 MAK 之後，請嘗試再次安裝和啟用 Windows。  
+若要取得新的 MAK，請連絡 [Microsoft 授權啟用中心](https://www.microsoft.com/Licensing/existing-customer/activation-centers)。 取得新的 MAK 之後，請嘗試再次安裝和啟用 Windows。
 
 ### <a name="0xc004c008-the-activation-server-determined-that-the-specified-product-key-could-not-be-used"></a>0xC004C008 啟用伺服器判定無法使用所指定的產品金鑰
 
 #### <a name="possible-cause"></a>可能的原因
 
-該 KMS 金鑰已超過其啟用限制。 KMS 主機金鑰最多可以六部不同的電腦上啟用高達 10次。  
+該 KMS 金鑰已超過其啟用限制。 KMS 主機金鑰最多可以六部不同的電腦上啟用高達 10次。
 
 #### <a name="resolution"></a>解決方法
 
-如果您需要額外啟用，請連絡 [Microsoft 授權啟用中心](https://www.microsoft.com/Licensing/existing-customer/activation-centers)。  
+如果您需要額外啟用，請連絡 [Microsoft 授權啟用中心](https://www.microsoft.com/Licensing/existing-customer/activation-centers)。
 
 ### <a name="0xc004c020-the-activation-server-reported-that-the-multiple-activation-key-has-exceeded-its-limit"></a>0xC004C020 啟用伺服器報告多次啟用金鑰已超過其限制
 
@@ -256,7 +256,7 @@ KMS 用戶端在 DNS 中找不到 KMS SRV 記錄。
 
 #### <a name="possible-cause"></a>可能的原因
 
-寬限期在系統啟用前就已過期。 現在，系統是處於「通知」狀態。  
+寬限期在系統啟用前就已過期。 現在，系統是處於「通知」狀態。
 
 #### <a name="resolution"></a>解決方法
 
@@ -266,11 +266,11 @@ KMS 用戶端在 DNS 中找不到 KMS SRV 記錄。
 
 #### <a name="possible-cause"></a>可能的原因
 
-系統上的硬體已變更或驅動程式已更新。  
+系統上的硬體已變更或驅動程式已更新。
 
 #### <a name="resolution"></a>解決方法
 
-如果您使用 MAK 啟用，請在 OOT 寬限期內使用線上或電話啟用方式來重新啟用系統。  
+如果您使用 MAK 啟用，請在 OOT 寬限期內使用線上或電話啟用方式來重新啟用系統。
 
 如果您使用 KMS 啟用，請重新啟動 Windows 或執行 **slmgr.vbs /ato**。
 
@@ -278,11 +278,11 @@ KMS 用戶端在 DNS 中找不到 KMS SRV 記錄。
 
 #### <a name="possible-cause"></a>可能的原因
 
-系統尚未安裝任何產品金鑰。  
+系統尚未安裝任何產品金鑰。
 
 #### <a name="resolution"></a>解決方法
 
-如果您使用 MAK 啟用，請安裝 MAK 產品金鑰。 
+如果您使用 MAK 啟用，請安裝 MAK 產品金鑰。
 
 如果您使用 KMS 啟用，請檢查 Pid.txt 檔案 (位於 \sources 資料夾中的安裝媒體) 以取得 KMS 設定金鑰。 安裝金鑰。
 
@@ -290,23 +290,23 @@ KMS 用戶端在 DNS 中找不到 KMS SRV 記錄。
 
 #### <a name="possible-cause"></a>可能的原因
 
-系統偵測到在電話啟用期間輸入的資料無效。  
+系統偵測到在電話啟用期間輸入的資料無效。
 
 #### <a name="resolution"></a>解決方法
 
-確認輸入的 CID 是正確的。  
+確認輸入的 CID 是正確的。
 
 ### <a name="0xc004f035-invalid-volume-license-key"></a>0xC004F035 大量授權金鑰無效
 
 此錯誤訊息的完整文字與下列類似：
 
-> 錯誤：大量授權金鑰無效。 若要啟用，您必須將產品金鑰變更為有效的多次啟用金鑰 (MAK) 或零售金鑰。 您必須有合格的作業系統授權以及大量授權的 Windows 7 之升級授權，或從零售來源取得 Windows 7 的完整授權。 此軟體的任何其他安裝都違反您合約及適用的著作權法。  
+> 錯誤：大量授權金鑰無效。 若要啟用，您必須將產品金鑰變更為有效的多次啟用金鑰 (MAK) 或零售金鑰。 您必須有合格的作業系統授權以及大量授權的 Windows 7 之升級授權，或從零售來源取得 Windows 7 的完整授權。 此軟體的任何其他安裝都違反您合約及適用的著作權法。
 
 錯誤文字正確，但模稜兩可。 此錯誤表示電腦在其 BIOS 中遺漏 Windows 標記，而該標記可將其識別為執行合格 Windows 版本的 OEM 系統。 KMS 用戶端啟用需要此資訊。 此程式碼的更具體意義是「錯誤：大量授權金鑰無效」
 
 #### <a name="possible-cause"></a>可能的原因
 
-只有 Windows 7 大量授權版本已授權升級。 Microsoft 不支援在未安裝合格作業系統的電腦上安裝大量授權作業系統。  
+只有 Windows 7 大量授權版本已授權升級。 Microsoft 不支援在未安裝合格作業系統的電腦上安裝大量授權作業系統。
 
 #### <a name="resolution"></a>解決方法
 
@@ -324,20 +324,20 @@ KMS 用戶端在 DNS 中找不到 KMS SRV 記錄。
 
 此錯誤訊息的完整文字與下列類似：
 
-> 軟體保護服務報告指出無法啟用電腦。 您的金鑰管理服務 (KMS) 報告的計數不足。 請連絡您的系統管理員。  
+> 軟體保護服務報告指出無法啟用電腦。 您的金鑰管理服務 (KMS) 報告的計數不足。 請連絡您的系統管理員。
 
 #### <a name="possible-cause"></a>可能的原因
 
-KMS 主機上的計數不足。 若為 Windows Server，KMS 計數必須大於或等於 5。 若為 Windows (用戶端)，KMS 計數必須大於或等於 25。  
+KMS 主機上的計數不足。 若為 Windows Server，KMS 計數必須大於或等於 5。 若為 Windows (用戶端)，KMS 計數必須大於或等於 25。
 
 #### <a name="resolution"></a>解決方法
-在您可以使用 KMS 來啟動 Windows 之前，KMS 集區中必須有更多電腦。 若要取得 KMS 主機上的最新計數，請執行 **Slmgr.vbs /dli**。  
+在您可以使用 KMS 來啟動 Windows 之前，KMS 集區中必須有更多電腦。 若要取得 KMS 主機上的最新計數，請執行 **Slmgr.vbs /dli**。
 
 ### <a name="0xc004f039-the-key-management-service-kms-is-not-enabled"></a>0xC004F039 金鑰管理服務 (KMS) 未啟用
 
 此錯誤訊息的完整文字與下列類似：
 
-> 軟體保護服務報告指出無法啟用電腦。 金鑰管理服務 (KMS) 未啟用。  
+> 軟體保護服務報告指出無法啟用電腦。 金鑰管理服務 (KMS) 未啟用。
 
 #### <a name="possible-cause"></a>可能的原因
 
@@ -351,21 +351,21 @@ KMS 未回應 KMS 要求。
 
 此錯誤訊息的完整文字與下列類似：
 
-> 軟體保護服務判定金鑰管理伺服器 (KMS) 並未啟用。 必須啟用 KMS。  
+> 軟體保護服務判定金鑰管理伺服器 (KMS) 並未啟用。 必須啟用 KMS。
 
 #### <a name="possible-cause"></a>可能的原因
 
-KMS 主機未啟用。  
+KMS 主機未啟用。
 
 #### <a name="resolution"></a>解決方法
 
-使用線上或電話啟用方式來啟用 KMS 主機。  
+使用線上或電話啟用方式來啟用 KMS 主機。
 
 ### <a name="0xc004f042-the-software-protection-service-determined-that-the-specified-key-management-service-kms-cannot-be-used"></a>0xC004F042 軟體保護服務判定無法使用所指定的金鑰管理服務 (KMS)
 
 #### <a name="possible-cause"></a>可能的原因
 
-如果 KMS 用戶端連絡無法啟用用戶端軟體的 KMS 主機，便會發生此錯誤。 例如，在包含應用程式特定與作業系統特定 KMS 主機的混合式環境中，這種情況可能很常見。  
+如果 KMS 用戶端連絡無法啟用用戶端軟體的 KMS 主機，便會發生此錯誤。 例如，在包含應用程式特定與作業系統特定 KMS 主機的混合式環境中，這種情況可能很常見。
 
 #### <a name="resolution"></a>解決方法
 
@@ -375,17 +375,17 @@ KMS 主機未啟用。
 
 #### <a name="possible-cause"></a>可能的原因
 
-這可能是因為未正確輸入 KMS 金鑰，或在作業系統的發行版本輸入搶鮮版 (Beta) 金鑰。  
+這可能是因為未正確輸入 KMS 金鑰，或在作業系統的發行版本輸入搶鮮版 (Beta) 金鑰。
 
 #### <a name="resolution"></a>解決方法
 
-在對應的 Windows 版本上安裝適當的 KMS 金鑰。 檢查拼字。 如果您以剪貼方式輸入金鑰，請確定金鑰中的長破折號沒有被取代為連字號。  
+在對應的 Windows 版本上安裝適當的 KMS 金鑰。 檢查拼字。 如果您以剪貼方式輸入金鑰，請確定金鑰中的長破折號沒有被取代為連字號。
 
 ### <a name="0xc004f051-the-software-protection-service-reported-that-the-product-key-is-blocked"></a>0xC004F051 軟體保護服務報告指出產品金鑰被封鎖
 
 #### <a name="possible-cause"></a>可能的原因
 
-啟用伺服器判定 Microsoft 已封鎖產品金鑰。  
+啟用伺服器判定 Microsoft 已封鎖產品金鑰。
 
 #### <a name="resolution"></a>解決方法
 
@@ -395,7 +395,7 @@ KMS 主機未啟用。
 
 #### <a name="possible-cause"></a>可能的原因
 
-Windows 啟用工具 (WAT) 判定系統不是正版。  
+Windows 啟用工具 (WAT) 判定系統不是正版。
 
 #### <a name="resolution"></a>解決方法
 
@@ -405,7 +405,7 @@ Windows 啟用工具 (WAT) 判定系統不是正版。
 
 #### <a name="possible-cause"></a>可能的原因
 
-Windows 啟用工具判定系統不是正版。 系統將會在非正版寬限期內繼續執行。  
+Windows 啟用工具判定系統不是正版。 系統將會在非正版寬限期內繼續執行。
 
 #### <a name="resolution"></a>解決方法
 
@@ -415,28 +415,28 @@ Windows 啟用工具判定系統不是正版。 系統將會在非正版寬限�
 
 此錯誤訊息的完整文字與下列類似：
 
-> 軟體保護服務報告指出無法啟用電腦。 金鑰管理服務 (KMS) 判斷出要求時間戳記無效。  
+> 軟體保護服務報告指出無法啟用電腦。 金鑰管理服務 (KMS) 判斷出要求時間戳記無效。
 
 #### <a name="possible-cause"></a>可能的原因
 
-用戶端電腦上的系統時間與 KMS 主機上的時間差異太大。 基於各種原因，時間同步對於系統與網路安全性而言非常重要。  
+用戶端電腦上的系統時間與 KMS 主機上的時間差異太大。 基於各種原因，時間同步對於系統與網路安全性而言非常重要。
 
 #### <a name="resolution"></a>解決方法
 
-請變更用戶端上的系統時間使其與 KMS 主機同步，以修正此問題。 建議使用網路時間通訊協定 (NTP) 時間來源或 Active Directory Domain Services 來進行時間同步。 此問題導因於使用 UTP 時間，而且與時區選擇無關。  
+請變更用戶端上的系統時間使其與 KMS 主機同步，以修正此問題。 建議使用網路時間通訊協定 (NTP) 時間來源或 Active Directory Domain Services 來進行時間同步。 此問題導因於使用 UTP 時間，而且與時區選擇無關。
 
 ### <a name="0xc004f074-no-key-management-service-kms-could-be-contacted"></a>0xC004F074 無法聯繫金鑰管理服務 (KMS)
 
 此錯誤訊息的完整文字與下列類似：
 
-> 軟體保護服務報告指出無法啟用電腦。 無法聯繫金鑰管理服務 (KMS)。 如需其他資訊，請參閱應用程式事件記錄檔。  
+> 軟體保護服務報告指出無法啟用電腦。 無法聯繫金鑰管理服務 (KMS)。 如需其他資訊，請參閱應用程式事件記錄檔。
 
 #### <a name="possible-cause"></a>可能的原因
 
-所有 KMS 主機系統都傳回錯誤。  
+所有 KMS 主機系統都傳回錯誤。
 
 #### <a name="resolution"></a>解決方法
 
 在應用程式事件記錄中，找出具有事件識別碼 12288 並與啟用嘗試相關聯的每個事件。 針對這些事件的錯誤進行疑難排解。
 
-如需針對 DNS 相關問題進行疑難排解的詳細資訊，請參閱 [KMS 和 DNS 問題的常見疑難排解程序](common-troubleshooting-procedures-kms-dns.md)。  
+如需針對 DNS 相關問題進行疑難排解的詳細資訊，請參閱 [KMS 和 DNS 問題的常見疑難排解程序](common-troubleshooting-procedures-kms-dns.md)。

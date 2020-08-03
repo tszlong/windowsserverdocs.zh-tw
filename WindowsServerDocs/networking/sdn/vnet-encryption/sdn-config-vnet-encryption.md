@@ -9,12 +9,12 @@ ms.assetid: 378213f5-2d59-4c9b-9607-1fc83f8072f1
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: daca59ffbb428e4bdfa2a71c156653389275960f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 11ec399ab9c63b27711b19987c6e070b47545fdd
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853591"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87520227"
 ---
 # <a name="configure-encryption-for-a-virtual-subnet"></a>設定虛擬子網的加密
 
@@ -36,12 +36,12 @@ ms.locfileid: "80853591"
 >如果您必須將應用程式限制為只能在加密的子網上進行通訊，您只能使用存取控制清單（Acl），以允許目前子網內的通訊。 如需詳細資訊，請參閱[使用存取控制清單（acl）管理資料中心網路流量](https://docs.microsoft.com/windows-server/networking/sdn/manage/use-acls-for-traffic-flow)。
 
 
-## <a name="step-1-create-the-encryption-certificate"></a>步驟 1. 建立加密憑證
-每部主機都必須安裝加密憑證。 您可以對所有租使用者使用相同的憑證，或為每個租使用者產生唯一一個。 
+## <a name="step-1-create-the-encryption-certificate"></a>步驟 1： 建立加密憑證
+每部主機都必須安裝加密憑證。 您可以對所有租使用者使用相同的憑證，或為每個租使用者產生唯一一個。
 
-1.  產生憑證  
+1.  產生憑證
 
-```
+    ```
     $subjectName = "EncryptedVirtualNetworks"
     $cryptographicProviderName = "Microsoft Base Cryptographic Provider v1.0";
     [int] $privateKeyLength = 1024;
@@ -58,7 +58,7 @@ ms.locfileid: "80853591"
     $key.KeySpec = 1 #X509KeySpec.XCN_AT_KEYEXCHANGE
     $key.Length = $privateKeyLength
     $key.MachineContext = 1
-    $key.ExportPolicy = 0x2 #X509PrivateKeyExportFlags.XCN_NCRYPT_ALLOW_EXPORT_FLAG 
+    $key.ExportPolicy = 0x2 #X509PrivateKeyExportFlags.XCN_NCRYPT_ALLOW_EXPORT_FLAG
     $key.Create()
 
     #Configure Eku
@@ -93,130 +93,127 @@ ms.locfileid: "80853591"
     $enrollment.InitializeFromRequest($cert)
     $certdata = $enrollment.CreateRequest(0)
     $enrollment.InstallResponse(2, $certdata, 0, "")
-```
+    ```
 
-執行腳本之後，[我的存放區] 中會出現新的憑證：
+    執行腳本之後，[我的存放區] 中會出現新的憑證：
 
+    ```
     PS D:\> dir cert:\\localmachine\my
-
-
     PSParentPath: Microsoft.PowerShell.Security\Certificate::localmachine\my
 
     Thumbprint                                Subject
     ----------                                -------
     84857CBBE7A1C851A80AE22391EB2C39BF820CE7  CN=MyNetwork
     5EFF2CE51EACA82408572A56AE1A9BCC7E0843C6  CN=EncryptedVirtualNetworks
+    ```
 
-2. 將憑證匯出至檔案。<p>您需要憑證的兩個複本，一個包含私密金鑰，另一個沒有。
+1. 將憑證匯出至檔案。<p>您需要憑證的兩個複本，一個包含私密金鑰，另一個沒有。
 
-```
+    ```
    $subjectName = "EncryptedVirtualNetworks"
    $cert = Get-ChildItem cert:\localmachine\my | ? {$_.Subject -eq "CN=$subjectName"}
    [System.io.file]::WriteAllBytes("c:\$subjectName.pfx", $cert.Export("PFX", "secret"))
    Export-Certificate -Type CERT -FilePath "c:\$subjectName.cer" -cert $cert
-```
+    ```
 
-3. 在您的每個 hyper-v 主機上安裝憑證 
+3. 在您的每個 hyper-v 主機上安裝憑證
 
-   PS C：\> dir c：\$subjectname. *
+    ```
+    PS C:\> dir c:\$subjectname.*
 
-
-~~~
     Directory: C:\
 
+    Mode                LastWriteTime         Length Name
+    ----                -------------         ------ ----
+    -a----        9/22/2017   4:54 PM            543 EncryptedVirtualNetworks.cer
+    -a----        9/22/2017   4:54 PM           1706 EncryptedVirtualNetworks.pfx
+    ```
 
-Mode                LastWriteTime         Length Name
-----                -------------         ------ ----
--a----        9/22/2017   4:54 PM            543 EncryptedVirtualNetworks.cer
--a----        9/22/2017   4:54 PM           1706 EncryptedVirtualNetworks.pfx
-~~~
+1. 在 Hyper-v 主機上安裝
 
-4. 在 Hyper-v 主機上安裝
+    ```
+    $server = "Server01"
 
-```
-   $server = "Server01"
+    $subjectname = "EncryptedVirtualNetworks"
+    copy c:\$SubjectName.* \\$server\c$
+    invoke-command -computername $server -ArgumentList $subjectname,"secret" {
+        param (
+            [string] $SubjectName,
+            [string] $Secret
+        )
+        $certFullPath = "c:\$SubjectName.cer"
 
-   $subjectname = "EncryptedVirtualNetworks"
-   copy c:\$SubjectName.* \\$server\c$
-   invoke-command -computername $server -ArgumentList $subjectname,"secret" {
-       param (
-           [string] $SubjectName,
-           [string] $Secret
-       )
-       $certFullPath = "c:\$SubjectName.cer"
+        # create a representation of the certificate file
+        $certificate = new-object System.Security.Cryptography.X509Certificates.X509Certificate2
+        $certificate.import($certFullPath)
 
-       # create a representation of the certificate file
-       $certificate = new-object System.Security.Cryptography.X509Certificates.X509Certificate2
-       $certificate.import($certFullPath)
+        # import into the store
+        $store = new-object System.Security.Cryptography.X509Certificates.X509Store("Root", "LocalMachine")
+        $store.open("MaxAllowed")
+        $store.add($certificate)
+        $store.close()
 
-       # import into the store
-       $store = new-object System.Security.Cryptography.X509Certificates.X509Store("Root", "LocalMachine")
-       $store.open("MaxAllowed")
-       $store.add($certificate)
-       $store.close()
+        $certFullPath = "c:\$SubjectName.pfx"
+        $certificate = new-object System.Security.Cryptography.X509Certificates.X509Certificate2
+        $certificate.import($certFullPath, $Secret, "MachineKeySet,PersistKeySet")
 
-       $certFullPath = "c:\$SubjectName.pfx"
-       $certificate = new-object System.Security.Cryptography.X509Certificates.X509Certificate2
-       $certificate.import($certFullPath, $Secret, "MachineKeySet,PersistKeySet")
+        # import into the store
+        $store = new-object System.Security.Cryptography.X509Certificates.X509Store("My", "LocalMachine")
+        $store.open("MaxAllowed")
+        $store.add($certificate)
+        $store.close()
 
-       # import into the store
-       $store = new-object System.Security.Cryptography.X509Certificates.X509Store("My", "LocalMachine")
-       $store.open("MaxAllowed")
-       $store.add($certificate)
-       $store.close()
+        # Important: Remove the certificate files when finished
+        remove-item C:\$SubjectName.cer
+        remove-item C:\$SubjectName.pfx
+    }
+    ```
 
-       # Important: Remove the certificate files when finished
-       remove-item C:\$SubjectName.cer
-       remove-item C:\$SubjectName.pfx
-   }
-```
-
-5. 針對環境中的每部伺服器重複執行。<p>針對每部伺服器重複之後，您應該將憑證安裝在每部 Hyper-v 主機的根目錄和我的存放區中。 
+5. 針對環境中的每部伺服器重複執行。<p>針對每部伺服器重複之後，您應該將憑證安裝在每部 Hyper-v 主機的根目錄和我的存放區中。
 
 6. 驗證憑證的安裝。<p>檢查「我的根憑證存放區」的內容，以確認憑證：
 
-   PS C：\> 輸入-pssession Server1
+    ```
+    PS C:\> enter-pssession Server1
 
-~~~
-[Server1]: PS C:\> get-childitem cert://localmachine/my,cert://localmachine/root | ? {$_.Subject -eq "CN=EncryptedVirtualNetworks"}
+    [Server1]: PS C:\> get-childitem cert://localmachine/my,cert://localmachine/root | ? {$_.Subject -eq "CN=EncryptedVirtualNetworks"}
 
-PSParentPath: Microsoft.PowerShell.Security\Certificate::localmachine\my
+    PSParentPath: Microsoft.PowerShell.Security\Certificate::localmachine\my
 
-Thumbprint                                Subject
-----------                                -------
-5EFF2CE51EACA82408572A56AE1A9BCC7E0843C6  CN=EncryptedVirtualNetworks
+    Thumbprint                                Subject
+    ----------                                -------
+    5EFF2CE51EACA82408572A56AE1A9BCC7E0843C6  CN=EncryptedVirtualNetworks
 
+    PSParentPath: Microsoft.PowerShell.Security\Certificate::localmachine\root
 
-PSParentPath: Microsoft.PowerShell.Security\Certificate::localmachine\root
-
-Thumbprint                                Subject
-----------                                -------
-5EFF2CE51EACA82408572A56AE1A9BCC7E0843C6  CN=EncryptedVirtualNetworks
-~~~
+    Thumbprint                                Subject
+    ----------                                -------
+    5EFF2CE51EACA82408572A56AE1A9BCC7E0843C6  CN=EncryptedVirtualNetworks
+    ```
 
 7. 記下指紋。<p>您必須記下指紋，因為您需要它才能在網路控制卡中建立憑證認證物件。
 
-## <a name="step-2-create-the-certificate-credential"></a>步驟 2. 建立憑證認證
+## <a name="step-2-create-the-certificate-credential"></a>步驟 2： 建立憑證認證
 
-在連線到網路控制站的每一部 Hyper-v 主機上安裝憑證之後，您現在必須設定網路控制卡使用它。  若要這樣做，您必須從已安裝網路控制站 PowerShell 模組的電腦建立包含憑證指紋的認證物件。 
+在連線到網路控制站的每一部 Hyper-v 主機上安裝憑證之後，您現在必須設定網路控制卡使用它。  若要這樣做，您必須從已安裝網路控制站 PowerShell 模組的電腦建立包含憑證指紋的認證物件。
 
 ```
-    # Replace with thumbprint from your certificate
-    $thumbprint = "5EFF2CE51EACA82408572A56AE1A9BCC7E0843C6"  
+///Replace with the thumbprint from your certificate
+$thumbprint = "5EFF2CE51EACA82408572A56AE1A9BCC7E0843C6"
 
-    # Replace with your Network Controller URI
-    $uri = "https://nc.contoso.com"
+$uri = "https://nc.contoso.com"
 
-    Import-module networkcontroller
+///Replace with your Network Controller URI
+Import-module networkcontroller
 
-    $credproperties = new-object Microsoft.Windows.NetworkController.CredentialProperties
-    $credproperties.Type = "X509Certificate"
-    $credproperties.Value = $thumbprint
-    New-networkcontrollercredential -connectionuri $uri -resourceid "EncryptedNetworkCertificate" -properties $credproperties -force
+$credproperties = new-object Microsoft.Windows.NetworkController.CredentialProperties
+$credproperties.Type = "X509Certificate"
+$credproperties.Value = $thumbprint
+New-networkcontrollercredential -connectionuri $uri -resourceid "EncryptedNetworkCertificate" -properties $credproperties -force
 ```
->[!TIP]
->您可以針對每個加密的虛擬網路重複使用此認證，也可以為每個租使用者部署及使用唯一的憑證。
 
+> [!TIP]
+> 您可以針對每個加密的虛擬網路重複使用此認證，也可以為每個租使用者部署及使用唯一的憑證。
 
 ## <a name="step-3-configuring-a-virtual-network-for-encryption"></a>步驟 3： 設定加密的虛擬網路
 
@@ -225,28 +222,27 @@ Thumbprint                                Subject
 >[!NOTE]
 >與相同子網上的另一個 VM 通訊時，不論其目前是否已連線或已連線，流量都會自動加密。
 
-1.  從網路控制卡取出虛擬網路和認證物件
-```
+1.  從網路控制卡取出虛擬網路和認證物件：
+
+    ```
     $vnet = Get-NetworkControllerVirtualNetwork -ConnectionUri $uri -ResourceId "MyNetwork"
     $certcred = Get-NetworkControllerCredential -ConnectionUri $uri -ResourceId "EncryptedNetworkCertificate"
-```
-2.  新增憑證認證的參考，並在個別子網上啟用加密
-```
+    ```
+
+2.  新增憑證認證的參考，並在個別子網上啟用加密：
+
+    ```
     $vnet.properties.EncryptionCredential = $certcred
 
-    # Replace the Subnets index with the value corresponding to the subnet you want encrypted.  
+    # Replace the Subnets index with the value corresponding to the subnet you want encrypted.
     # Repeat for each subnet where encryption is needed
     $vnet.properties.Subnets[0].properties.EncryptionEnabled = $true
-```
-3.  將更新的虛擬網路物件放入網路控制卡中
-```
+    ```
+
+3.  將更新的虛擬網路物件放入網路控制卡：
+
+    ```
     New-NetworkControllerVirtualNetwork -ConnectionUri $uri -ResourceId $vnet.ResourceId -Properties $vnet.Properties -force
-```
+    ```
 
-_**那麼!**_ 完成這些步驟之後，您就完成了。 
-
-
-## <a name="next-steps"></a>後續步驟
-
-
-
+*恭喜！** 完成這些步驟之後，您就完成了。

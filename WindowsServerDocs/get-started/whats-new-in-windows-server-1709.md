@@ -8,22 +8,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
 ms.date: 06/03/2019
-ms.openlocfilehash: a2e4b17a0f8f38812366dc2913e6c2ee25d4d137
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c814098aeb73ca186e0a0db668f477f9cc1f5cf9
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961150"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409568"
 ---
 # <a name="whats-new-in-windows-server-version-1709"></a>Windows Server 版本 1709 中的新功能
 
->適用於：Windows Server (半年通道)
+> 適用於：Windows Server (半年通道)
 
 <img src=../media/landing-icons/new.png style='float:left; padding:.5em;' alt=Icon showing a newspaper>&nbsp;若要了解 Windows 的最新功能，請參閱 [Windows Server 的新功能](whats-new-in-windows-server.md)。 本節內容說明 Windows Server 版本 1709 的新功能和變更。 此處所列的新功能和變更是您使用這個版本時最可能帶來最大影響的新功能和變更。 另請參閱 [Windows Server 版本 1709](https://cloudblogs.microsoft.com/windowsserver/2017/08/24/sneak-peek-1-windows-server-version-1709/)。
 
 > [!IMPORTANT]
 > 自 2019 年 4 月 9 日起，Windows Server 版本 1709 不再受到支援。
-
 
 ## <a name="new-cadence-of-releases"></a>新的發行頻率
 
@@ -33,21 +32,21 @@ ms.locfileid: "86961150"
 
 下表提供發行通道的摘要說明。
 
-|   | 半年通道 | 長期維護管道 |
-| ------------- | ------------- | ------------ |
-| 發行頻率  | 一年兩次 (春季和秋季)  | 每隔 2-3 年一次 |
-| 支援排程  | 18 個月主流生產環境支援  | 5 年主要支援 + 5 年延伸支援 |
-| 可用性  | 軟體保證或 Azure (雲端託管)  | 所有通道 |
-| 命名慣例  | Windows Server 版本 YYMM  | Windows Server YYYY |
+| 說明 | 半年通道 | 長期維護管道 |
+| ------------- |--| -- |
+| 發行頻率 | 一年兩次 (春季和秋季) | 每隔 2-3 年一次 |
+| 支援排程 | 18 個月主流生產環境支援 | 5 年主要支援 + 5 年延伸支援 |
+| 可用性 | 軟體保證或 Azure (雲端託管) | 所有通道 |
+| 命名慣例 | Windows Server 版本 YYMM | Windows Server YYYY |
 
 如需詳細資訊，請參閱[維護通道比較](../get-started-19/servicing-channels-19.md)。
 
 ## <a name="application-containers-and-micro-services"></a>應用程式容器和微服務
 
-- Server Core 容器映像已進一步針對隨即轉移案例最佳化，您可以在進行最少變更的情況下將現有程式碼基底或應用程式移轉到容器中，而且大小還會縮小 60%。 
+- Server Core 容器映像已進一步針對隨即轉移案例最佳化，您可以在進行最少變更的情況下將現有程式碼基底或應用程式移轉到容器中，而且大小還會縮小 60%。
 - Nano Server 容器映像將近縮小 80%。
     - 在 Windows Server 半年通道中，做為容器基底 OS 映像的 Nano Server 已從 390 MB 減少到 80 MB。
-- 使用 Hyper-V 隔離的 Linux 容器 
+- 使用 Hyper-V 隔離的 Linux 容器
 
 如需詳細資訊，請參閱 [Nano Server 在 Windows Server 下一個發行版本中的變更](./nano-in-semi-annual-channel.md)和[適用於開發人員的 Windows Server 版本 1709](https://cloudblogs.microsoft.com/windowsserver/2017/09/13/sneak-peek-3-windows-server-version-1709-for-developers/)。
 
@@ -58,7 +57,7 @@ Project Honolulu 包含直覺式全新管理體驗，適用於管理電腦、Win
 
 ## <a name="compute"></a>運算
 
-**Nano 容器和 Server Core 容器**：首先，這個版本是關於推動應用程式創新。 Nano Server 或 Nano as Host 已被取代並更換成 Nano 容器，這是以容器映像方式執行的 Nano。 
+**Nano 容器和 Server Core 容器**：首先，這個版本是關於推動應用程式創新。 Nano Server 或 Nano as Host 已被取代並更換成 Nano 容器，這是以容器映像方式執行的 Nano。
 
 如需有關容器的詳細資訊，請參閱[容器網路功能概觀](../networking/sdn/technologies/containers/container-networking-overview.md)。
 
@@ -91,15 +90,15 @@ Project Honolulu 包含直覺式全新管理體驗，適用於管理電腦、Win
 ## <a name="storage"></a>存放裝置
 
 **儲存體複本**：儲存體複本在 Windows Server 2016 中新增的災害復原保護現已擴充到包含：
-- **測試容錯移轉**：掛接目的地存放裝置的選項現在可以透過測試容錯移轉功能來使用。 您可以在目的地節點上暫時掛接已複寫存放裝置的快照集以作測試或備份之用。  如需詳細資訊，請參閱[儲存體複本的常見問題集](https://aka.ms/srfaq)。 
+- **測試容錯移轉**：掛接目的地存放裝置的選項現在可以透過測試容錯移轉功能來使用。 您可以在目的地節點上暫時掛接已複寫存放裝置的快照集以作測試或備份之用。  如需詳細資訊，請參閱[儲存體複本的常見問題集](https://aka.ms/srfaq)。
 - **Project Honolulu 支援**：Project Honolulu 現已提供伺服器對伺服器複寫的圖形化管理支援。 這樣就不再需要使用 PowerShell 來管理常見的嚴重損壞狀況保護工作負載。
 
-**SMB**： 
-- **SMB1 與客體驗證移除**：Windows Server 版本 1709 不再預設安裝 SMB1 用戶端及伺服器。 此外，在 SMB2 和更新版本中以客體身分驗證的功能也預設為關閉。 如需詳細資訊，請檢閱[在 Windows 10 版本 1709 及 Windows Server 版本 1709 中，預設不安裝 SMBv1](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server)。 
+**SMB**：
+- **SMB1 與客體驗證移除**：Windows Server 版本 1709 不再預設安裝 SMB1 用戶端及伺服器。 此外，在 SMB2 和更新版本中以客體身分驗證的功能也預設為關閉。 如需詳細資訊，請檢閱[在 Windows 10 版本 1709 及 Windows Server 版本 1709 中，預設不安裝 SMBv1](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server)。
 
 - **SMB2/SMB3 安全性與相容性**：已新增安全性及應用程式相容性的額外選項，包括可在 SMB2+ 中停用舊版應用程式 Oplocks 的功能，以及向用戶端要求對每一連線的簽署或加密。 如需詳細資訊，請檢閱 SMBShare PowerShell 模組說明。
 
-**重複資料刪除**： 
+**重複資料刪除**：
 - **重複資料刪除現在支援 ReFS**：再也不必權衡新式檔案系統在 ReFS 和重複資料刪除方面的優勢，從兩者之間做出選擇：您現在只要可以啟用 ReFS，也就可以啟用重複資料刪除。 透過 ReFS 提升儲存效率，增加 95% 以上。
 - **適用於重複資料刪除磁碟區最佳化輸入/輸出的 DataPort API**：開發人員現在可以利用重複資料刪除功能關於有效率儲存資料方面的優勢，在磁碟區、伺服器和叢集之間有效率地移動資料。
 
@@ -150,7 +149,7 @@ Project Honolulu 包含直覺式全新管理體驗，適用於管理電腦、Win
 **軟體定義網路**
 
 - **虛擬網路加密**是新的功能，可讓虛擬網路流量在彼此於標示為「加密已啟用」的子網路內通訊的虛擬機器之間進行加密。 這項功能利用虛擬子網路上的資料包傳輸層安全性 (DTLS) 來加密封包。  DTLS 會提供保護以防止任何可存取實體網路的人進行竊聽、竄改和偽造。
- 
+
 **Windows 10 VPN**
 
 - **預先登入基礎結構通道**。 Windows 10 VPN 預設不會在使用者未登入其電腦或裝置時自動建立基礎結構通道。 您可以在 VPN 設定檔中使用裝置通道 (prelogon) 功能，將 Windows 10 VPN 設定為自動建立預先登入基礎結構通道。

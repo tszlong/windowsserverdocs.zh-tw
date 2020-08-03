@@ -10,12 +10,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 07/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b76ded74b311265a22e32d836cb7a5dd5fe03f0d
-ms.sourcegitcommit: b363d8ceed863c8fd5a464bc8afdc4ef1af9a6f8
+ms.openlocfilehash: 215d69f40c09a11048c3e4c5a5c7cd610da3b9c4
+ms.sourcegitcommit: 25d3b2083405d3e1395355dcc34a032105e9c36d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86445722"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87389635"
 ---
 # <a name="get-started-with-the-android-client"></a>開始使用 Android 用戶端
 
@@ -35,7 +35,7 @@ ms.locfileid: "86445722"
 
 以下說明如何在您的 Android 裝置上設定遠端桌面用戶端：
 
-1. 從 [Google Play](https://play.google.com/store/apps/details?id=com.microsoft.rdc.android) 下載 Microsoft 遠端桌面用戶端。
+1. 從 [Google Play](https://play.google.com/store/apps/details?id=com.microsoft.rdc.androidx) 下載 Microsoft 遠端桌面用戶端。
 2. 從您的應用程式清單啟動 **RD 用戶端**。
 3. 新增[遠端桌面連線](#add-a-remote-desktop-connection)或[遠端資源](#add-remote-resources)。 您可以使用連線直接連線到 Windows 電腦和遠端資源，以存取由系統管理員發佈給您的應用程式和桌上型電腦。
 
@@ -128,12 +128,12 @@ ms.locfileid: "86445722"
 您可以設定下列的顯示設定：
 
 - **方向**會為您的工作階段設定慣用的方向 (橫向或直向)。
-  
+
   >[!NOTE]
   > 如果您連線到執行 Windows 8 或更早版本的電腦，且裝置方向有變動，則工作階段不會正確縮放。 若要讓用戶端正確的縮放，請中斷與電腦的連線，然後以您想要使用的方向重新連線。 您也可以改為使用 Windows 10 的電腦來確保縮放正確。
 
 - **解析度**會設定您想要用於全域桌面連線的遠端解析度。 如果您已經為個別的連線設定自訂解析度，此設定不會變更該解析度。
-  
+
   >[!NOTE]
   >當您變更顯示設定時，所做的變更只會套用到變更設定之後所建立的新連線。 若要將變更套用至您目前連線的工作階段，請先中斷連線後再重新連線，以重新整理您的工作階段。
 

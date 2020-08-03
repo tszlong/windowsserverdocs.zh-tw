@@ -7,12 +7,12 @@ ms.date: 11/17/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: fe176af74ebabb5cb56d8aa74d755c4e35ec94a3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7821910caa3c0cfa5c5402df57bd758ce8d0c245
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857311"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519867"
 ---
 #  <a name="single-log-out-for-openid-connect-with-ad-fs"></a>使用 AD FS 的 OpenID Connect 單一登出
 
@@ -50,8 +50,8 @@ OpenID Connect 會使用稱為「探索檔」的 JSON 檔來提供設定的詳�
 "rp_id_token_token_binding_supported":true,
 "frontchannel_logout_supported":true,
 "frontchannel_logout_session_supported":true
-} 
- 
+}
+
 ```
 
 
@@ -64,20 +64,21 @@ OpenID Connect 會使用稱為「探索檔」的 JSON 檔來提供設定的詳�
 
 
 ## <a name="ad-fs-server-configuration"></a>AD FS 伺服器設定
-預設會啟用 AD FS 屬性 EnableOAuthLogout。  此屬性會指示 AD FS 伺服器流覽具有 SID 的 URL （LogoutURI），以起始用戶端上的登出。 如果您尚未安裝[KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801) ，您可以使用下列 PowerShell 命令：
+預設會啟用 AD FS 屬性 EnableOAuthLogout。  此屬性會指示 AD FS 伺服器流覽具有 SID 的 URL （LogoutURI），以起始用戶端上的登出。
+如果您尚未安裝[KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801) ，您可以使用下列 PowerShell 命令：
 
 ```PowerShell
 Set-ADFSProperties -EnableOAuthLogout $true
 ```
 
 >[!NOTE]
-> 安裝[KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801)之後，`EnableOAuthLogout` 參數會標示為過時。 `EnableOAUthLogout` 一定會是 true，而且不會影響登出功能。
+> `EnableOAuthLogout`安裝[KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801)之後，參數會標示為過時。 `EnableOAUthLogout`一定會是 true，而且不會影響登出功能。
 
 >[!NOTE]
 >只有在安裝[KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801)之後**才**支援 frontchannel_logout
 
 ## <a name="client-configuration"></a>用戶端組態
-用戶端必須執行「登出」已登入使用者的 url。 系統管理員可以使用下列 PowerShell Cmdlet，在用戶端設定中設定 LogoutUri。 
+用戶端必須執行「登出」已登入使用者的 url。 系統管理員可以使用下列 PowerShell Cmdlet，在用戶端設定中設定 LogoutUri。
 
 
 - `(Add | Set)-AdfsNativeApplication`
@@ -88,26 +89,25 @@ Set-ADFSProperties -EnableOAuthLogout $true
 Set-AdfsClient -LogoutUri <url>
 ```
 
-`LogoutUri` 是 AF FS 用來「登出」使用者的 url。 若要執行 `LogoutUri`，用戶端必須確保它會清除應用程式中使用者的驗證狀態，例如，卸載其所擁有的驗證權杖。 AD FS 將流覽至該 URL，並以 SID 作為查詢參數，以通知信賴憑證者/應用程式登出使用者。 
+`LogoutUri`是 AF FS 用來「登出」使用者的 url。 `LogoutUri`若要執行，用戶端必須確保它會清除應用程式中使用者的驗證狀態，例如，卸載它所擁有的驗證權杖。 AD FS 將流覽至該 URL，並以 SID 作為查詢參數，以通知信賴憑證者/應用程式登出使用者。
 
-![](media/ad-fs-logout-openid-connect/adfs_single_logout2.png)
-
+![ADFS 登出使用者圖表](media/ad-fs-logout-openid-connect/adfs_single_logout2.png)
 
 1.  **具有會話識別碼**： AD FS 的 oauth 權杖會在 id_token 權杖發行時，于 OAuth 權杖中包含會話識別碼。 稍後會使用此 AD FS 來識別要為使用者清除的相關 SSO cookie。
 2.  **使用者會在 App1 上起始登出**：使用者可以從任何已登入的應用程式起始登出。 在此範例案例中，使用者會從 App1 起始登出。
 3.  **應用程式將登出要求傳送至 AD FS**：在使用者起始登出之後，應用程式會將 GET 要求傳送至 AD FS 的 end_session_endpoint。 應用程式可以選擇性地包含 id_token_hint 做為此要求的參數。 如果 id_token_hint 存在，AD FS 會將其與會話識別碼搭配使用，以找出用戶端在登出後應重新導向至哪個 URI （post_logout_redirect_uri）。  Post_logout_redirect_uri 應該是使用 RedirectUris 參數向 AD FS 註冊的有效 uri。
 4.  **AD FS 會將登出傳送至登入的用戶端**： AD FS 會使用會話識別碼值來尋找使用者所登入的相關用戶端。 已識別的用戶端會在向 AD FS 註冊的 LogoutUri 上傳送要求，以起始用戶端上的登出。
 
-## <a name="faqs"></a>FAQ
+## <a name="faqs"></a>常見問題集
 **問：** 我在探索檔中看不到 frontchannel_logout_supported 和 frontchannel_logout_session_supported 參數。</br>
 **答：** 請確定您已在所有 AD FS 伺服器上安裝[KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801) 。 請參閱使用[KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801)在伺服器2016中的單一登出。
 
 **問：** 我已依照指示設定單一登出，但使用者在其他用戶端上保持登入狀態。</br>
-**答：** 請確定已針對使用者登入的所有用戶端設定 `LogoutUri`。 此外，AD FS 會在已註冊的 `LogoutUri`上傳送登出要求的最佳案例。 用戶端必須執行邏輯來處理要求，並採取動作將使用者從應用程式登出。</br>
+**答：** 請確定 `LogoutUri` 已針對使用者登入的所有用戶端設定。 此外，AD FS 會在已註冊的上嘗試傳送登出要求的最佳案例 `LogoutUri` 。 用戶端必須執行邏輯來處理要求，並採取動作將使用者從應用程式登出。</br>
 
 **問：** 如果登出之後，其中一個用戶端回到 AD FS 具有有效的重新整理權杖，就會 AD FS 發行存取權杖嗎？</br>
-**答：** 是。 用戶端應用程式必須負責在註冊的 `LogoutUri`收到登出要求之後，捨棄所有已驗證的成品。
+**答：** 是。 用戶端應用程式必須負責在註冊後收到登出要求之後，捨棄所有已驗證 `LogoutUri` 的成品。
 
 
 ## <a name="next-steps"></a>後續步驟
-[AD FS 開發](../../ad-fs/AD-FS-Development.md)  
+[AD FS 開發](../../ad-fs/AD-FS-Development.md)

@@ -8,18 +8,18 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 398918dc-c8ab-41a6-a377-95681ec0b543
 ms.technology: identity-adds
-ms.openlocfilehash: e95c11007548c0e1db77132b6e872b88569d3b47
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3792a1e9b5c8978fdc8db5201ff4d439dbfb98d6
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963000"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519015"
 ---
-# <a name="ad-forest-recovery---backing-up-a-full-server"></a>AD 樹系復原-備份完整伺服器  
+# <a name="ad-forest-recovery---backing-up-a-full-server"></a>AD 樹系復原-備份完整伺服器
 
 >適用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
-建議使用完整伺服器備份來準備樹系復原，因為它可以還原到不同的硬體或不同的作業系統實例。  使用 Windows Server Backup 您可以執行伺服器的完整備份。 
+建議使用完整伺服器備份來準備樹系復原，因為它可以還原到不同的硬體或不同的作業系統實例。  使用 Windows Server Backup 您可以執行伺服器的完整備份。
 
 ## <a name="windows-server-backup"></a>Windows Server Backup
 
@@ -28,7 +28,7 @@ ms.locfileid: "86963000"
 >[!NOTE]
 >請注意，Windows Server 2016 和 Windows Server 2012 R2 之間的步驟可能稍有不同。
 
-如需在 Windows Server 2008 和 Windows Server 2008 R2 中安裝它的步驟，請參閱[安裝 Windows Server Backup](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771232(v=ws.10))。  
+如需在 Windows Server 2008 和 Windows Server 2008 R2 中安裝它的步驟，請參閱[安裝 Windows Server Backup](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771232(v=ws.10))。
 
 ### <a name="to-install-windows-server-backup"></a>若要安裝 Windows Server Backup
 
@@ -47,7 +47,7 @@ ms.locfileid: "86963000"
 1. 開啟**伺服器管理員**，按一下 [**工具**]，然後按一下 [ **Windows Server Backup**]。
    - 在 Windows Server 2008 R2 和 Windows Server 2008 中，按一下 [**開始**]，指向 [系統**管理工具**]，然後按一下 [ **Windows Server Backup**]。
 
-   ![安裝備份](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup1.png) 
+   ![安裝備份](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup1.png)
 
 2. 如果系統提示您，請在 [**使用者帳戶控制**] 對話方塊中，提供備份操作員認證，然後按一下 **[確定]**。
 3. 按一下 [**本機備份**]。
@@ -75,8 +75,8 @@ ms.locfileid: "86963000"
 Wbadmin.exe 是一種命令列公用程式，可讓您從命令提示字元備份和還原作業系統、磁片區、檔案、資料夾和應用程式。
 
 ### <a name="to-perform-a-full-server-backup-using-wbadminexe"></a>若要使用 Wbadmin.exe 執行完整伺服器備份
-  
-- 開啟提升許可權的命令提示字元，輸入下列命令，然後按 ENTER 鍵：  
+
+- 開啟提升許可權的命令提示字元，輸入下列命令，然後按 ENTER 鍵：
 
    ```
    wbadmin start backup -backuptarget:<Drive_letter_to store_backup>: -include:<Drive_letter_to_include>:

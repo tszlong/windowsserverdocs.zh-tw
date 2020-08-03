@@ -1,5 +1,5 @@
 ---
-title: progress
+title: 使用進度命令
 description: 進度的參考文章，會在命令執行時顯示進度。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9e9650a980d74f15bc0ec5c88d8df2dc93a3d8b0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b9284c7330adfbad0115b5b7f6bbab034b42fda4
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934593"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519627"
 ---
-# <a name="progress"></a>progress
+# <a name="using-the-progress-command"></a>使用進度命令
 
 顯示執行命令時的進度。 您可以使用 **/progress**搭配您執行的任何其他 WDSUTIL 命令。 請注意，您必須在**WDSUTIL**之後直接指定 **/verbose**和 **/progress** 。
 

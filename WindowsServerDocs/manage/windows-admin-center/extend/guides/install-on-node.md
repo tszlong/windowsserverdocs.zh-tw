@@ -1,6 +1,6 @@
 ---
-title: 開發工具擴充功能
-description: 開發工具擴充功能 Windows 系統管理中心 SDK （Project 檀香山）
+title: 在受管理的節點上安裝延伸模組承載
+description: 有關如何在受管理節點上安裝延伸模組承載的指示
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
@@ -8,18 +8,19 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 3a93a1105862ffbf4fcbd1d23b15d9bcaa6010dc
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 463280ba1d0a3fac84a12c0483946b01c0fefb75
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950505"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87518556"
 ---
 # <a name="install-extension-payload-on-a-managed-node"></a>在受管理的節點上安裝延伸模組承載
 
 >適用於：Windows Admin Center、Windows Admin Center 預覽版
 
-## <a name="setup"></a>[設定]
+## <a name="setup"></a>安裝程式
+
 > [!NOTE]
 > 若要遵循本指南，您將需要組建1.2.1904.02001 或更高版本。 若要檢查組建編號，請開啟 [Windows 管理中心]，然後按一下右上方的問號。
 
@@ -30,9 +31,9 @@ ms.locfileid: "75950505"
 | ```{!Company Name}``` | 您的公司名稱（含空格） | ```Contoso``` |
 | ```{!Tool Name}``` | 您的工具名稱（含空格） | ```InstallOnNode``` |
 
-在您的工具擴充功能資料夾內，建立 ```Node``` 資料夾（```{!Tool Name}\Node```）。 使用此 API 時，會將放在此資料夾中的任何內容複寫到受管理的節點。 新增您的使用案例所需的任何檔案。 
+在您的工具擴充功能資料夾內建立 ```Node``` 資料夾（ ```{!Tool Name}\Node``` ）。 使用此 API 時，會將放在此資料夾中的任何內容複寫到受管理的節點。 新增您的使用案例所需的任何檔案。
 
-另請建立 ```{!Tool Name}\Node\installNode.ps1``` 腳本。 將所有檔案從 ```{!Tool Name}\Node``` 資料夾複製到受管理的節點之後，就會在受管理的節點上執行此腳本。 為您的使用案例新增任何其他邏輯。 範例 ```{!Tool Name}\Node\installNode.ps1``` 檔案：
+另請建立 ```{!Tool Name}\Node\installNode.ps1``` 腳本。 一旦將所有檔案從 ```{!Tool Name}\Node``` 資料夾複製到受管理的節點，就會在受管理的節點上執行此腳本。 為您的使用案例新增任何其他邏輯。 範例檔案 ```{!Tool Name}\Node\installNode.ps1``` ：
 
 ``` ps1
 # Add logic for installing payload on managed node
@@ -40,12 +41,12 @@ echo 'Success'
 ```
 
 > [!NOTE]
-> ```{!Tool Name}\Node\installNode.ps1``` 具有 API 將尋找的特定名稱。 變更此檔案的名稱將會導致錯誤。
+> ```{!Tool Name}\Node\installNode.ps1```具有 API 將尋找的特定名稱。 變更此檔案的名稱將會導致錯誤。
 
 
 ## <a name="integration-with-ui"></a>與 UI 整合
 
-將 ```\src\app\default.component.ts``` 更新為下列內容：
+更新 ```\src\app\default.component.ts``` 至下列內容：
 
 ``` ts
 import { Component } from '@angular/core';
@@ -105,13 +106,13 @@ this.post('contoso.install-on-node', '1.0.0',
       );
 ```
 
-同時將 ```\src\app\default.component.html``` 更新為：
+另請 ```\src\app\default.component.html``` 將更新為：
 ``` html
 <button (click)="installOnNode()">Click to install</button>
 <sme-loading-wheel *ngIf="loading" size="large"></sme-loading-wheel>
 <p *ngIf="response">{{response}}</p>
 ```
-最後 ```\src\app\default.module.ts```：
+最後 ```\src\app\default.module.ts``` ：
 ``` ts
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
@@ -136,11 +137,11 @@ export class DefaultModule { }
 
 最後一個步驟是使用我們已新增的檔案來建立 NuGet 套件，然後在 Windows 系統管理中心安裝該套件。
 
-如果您之前尚未建立延伸模組套件，請遵循[發行延伸](../publish-extensions.md)模組指南。 
+如果您之前尚未建立延伸模組套件，請遵循[發行延伸](../publish-extensions.md)模組指南。
 > [!IMPORTANT]
-> 在此延伸模組的 nuspec 檔案中，請務必讓 ```<id>``` 值符合專案 ```manifest.json``` 中的名稱，而且 ```<version>``` 符合已加入 ```\src\app\default.component.ts```的內容。 同時在 [```<files>```] 下新增專案： 
-> 
-> ```<file src="Node\**\*.*" target="Node" />```。
+> 在此延伸模組的 nuspec 檔案中， ```<id>``` 值必須符合專案中的名稱， ```manifest.json``` 而且 ```<version>``` 符合已加入的內容 ```\src\app\default.component.ts``` 。 此外，在下新增專案 ```<files>``` ：
+>
+> ```<file src="Node\**\*.*" target="Node" />```.
 
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -155,7 +156,7 @@ export class DefaultModule { }
     <licenseUrl>http://YourLicenseLink</licenseUrl>
     <iconUrl>http://YourLogoLink</iconUrl>
     <description>Install on node extension by Contoso</description>
-    <copyright>(c) Contoso. All rights reserved.</copyright> 
+    <copyright>(c) Contoso. All rights reserved.</copyright>
   </metadata>
     <files>
     <file src="bundle\**\*.*" target="ux" />
@@ -165,4 +166,4 @@ export class DefaultModule { }
 </package>
 ```
 
-建立此套件之後，請新增該摘要的路徑。 在 [Windows 管理中心] 中，移至 [設定] > [延伸模組 > 摘要]，並將路徑新增至該套件所在的位置。 當您的擴充功能安裝完成時，您應該可以按一下 [```install```] 按鈕，就會呼叫 API。  
+建立此套件之後，請新增該摘要的路徑。 在 [Windows 管理中心] 中，移至 [設定] > [延伸模組 > 摘要]，並將路徑新增至該套件所在的位置。 當您的擴充功能安裝完成時，您應該能夠按一下按鈕， ```install``` 就會呼叫 API。

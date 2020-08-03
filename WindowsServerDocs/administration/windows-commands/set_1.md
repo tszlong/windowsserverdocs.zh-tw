@@ -9,18 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 002ac4624d9ed501fab7816a83c2a0c5fc6a2bce
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 34c8abf01e7dbde7a8f175ac8691e5731a04be45
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922826"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519657"
 ---
 # <a name="set"></a>set
 
 顯示、設定或移除 cmd.exe 的環境變數。 如果使用時不含參數，**設定**會顯示目前的環境變數設定。
-
-
 
 ## <a name="syntax"></a>語法
 
@@ -145,6 +143,6 @@ set p
 > [!NOTE]
 > 此命令需要預設啟用的命令延伸模組。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

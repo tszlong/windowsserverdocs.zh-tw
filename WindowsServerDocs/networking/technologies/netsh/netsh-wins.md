@@ -8,14 +8,14 @@ ms.assetid: c94e37a4-3637-4613-9eb5-ed604e831eca
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 73798ff4c8af11cc5cfb6461245ba7873f5d6f36
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: f0cc6818b589c6ee2ac64115fe9e7fb71c3d20b1
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80316721"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517903"
 ---
-# <a name="network-shell-netsh-example-batch-file"></a>網路殼層 \(Netsh\) 範例批次檔
+# <a name="network-shell-netsh-example-batch-file"></a>網路殼層 (Netsh) 範例批次檔
 
 適用於：Windows Server 2016
 
@@ -39,35 +39,29 @@ ms.locfileid: "80316721"
 
 在下列範例批次檔中，包含註解的程式列前面會加上 "rem"，以進行備註。 Netsh 會忽略註解。
 
-    rem: Begin example batch file.
-    
-    rem two WINS servers:
-    
-    rem (WINS-A) 192.168.125.30
-    
-    rem (WINS-B) 192.168.0.189
-    
-    rem 1. Connect to (WINS-A), and add the dynamic name MY\_RECORD \[04h\] to the (WINS-A) database.
-    
-    netsh wins server 192.168.125.30 add name Name=MY\_RECORD EndChar=04 IP={192.168.0.205}
-    
-    rem 2. Connect to (WINS-A), and set (WINS-B) as a push/pull replication partner of (WINS-A).
-    
-    netsh wins server 192.168.125.30 add partner Server=192.168.0.189 Type=2
-    
-    rem 3. Connect to (WINS-B), and set (WINS-A) as a push/pull replication partner of (WINS-B).
-    
-    netsh wins server 192.168.0.189 add partner Server=192.168.125.30 Type=2
-    
-    rem 4. Connect back to (WINS-A), and initiate a push replication to (WINS-B).
-    
-    netsh wins server 192.168.125.30 init push Server=192.168.0.189 PropReq=0
-    
-    rem 5. Connect to (WINS-B), and check that the record MY\_RECORD \[04h\] was replicated successfully.
-    
-    netsh wins server 192.168.0.189 show name Name=MY\_RECORD EndChar=04
-    
-    rem 6. End example batch file.
+```
+rem: Begin example batch file.
+rem two WINS servers:
+rem (WINS-A) 192.168.125.30
+rem (WINS-B) 192.168.0.189
+
+rem 1. Connect to (WINS-A), and add the dynamic name MY\_RECORD \[04h\] to the (WINS-A) database.
+netsh wins server 192.168.125.30 add name Name=MY\_RECORD EndChar=04 IP={192.168.0.205}
+
+rem 2. Connect to (WINS-A), and set (WINS-B) as a push/pull replication partner of (WINS-A).
+netsh wins server 192.168.125.30 add partner Server=192.168.0.189 Type=2
+
+rem 3. Connect to (WINS-B), and set (WINS-A) as a push/pull replication partner of (WINS-B).
+netsh wins server 192.168.0.189 add partner Server=192.168.125.30 Type=2
+
+rem 4. Connect back to (WINS-A), and initiate a push replication to (WINS-B).
+netsh wins server 192.168.125.30 init push Server=192.168.0.189 PropReq=0
+
+rem 5. Connect to (WINS-B), and check that the record MY_RECORD [04h] was replicated successfully.
+netsh wins server 192.168.0.189 show name Name=MY_RECORD EndChar=04
+
+rem 6. End example batch file.
+```
 
 ## <a name="netsh-wins-commands-used-in-the-example-batch-file"></a>範例批次檔中使用的 Netsh WINS 命令
 
@@ -77,6 +71,8 @@ ms.locfileid: "80316721"
 - **add name**。 在 WINS 伺服器上註冊名稱。
 - **add partner**。 在 WINS 伺服器上新增複寫協力電腦。
 - **init push**。 起始推送觸發程序，並將其傳送至 WINS 伺服器。
-- **show name**。 顯示 WINS 伺服器資料庫中特定記錄的詳細資訊。  
+- **show name**。 顯示 WINS 伺服器資料庫中特定記錄的詳細資訊。
 
-如需詳細資訊，請參閱[網路殼層 (Netsh)](netsh.md)。
+## <a name="additional-references"></a>其他參考資料
+
+- [網路殼層 (Netsh)](netsh.md)

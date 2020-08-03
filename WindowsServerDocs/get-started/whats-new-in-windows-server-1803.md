@@ -8,16 +8,16 @@ author: greg-lindsay
 ms.author: greg-lindsay
 ms.localizationpriority: high
 ms.date: 05/07/2018
-ms.openlocfilehash: 73d0d62aac3771c4150a133950085170f7f51cb5
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 32410c9b2645d96ee1190afdda6a2ce75f09feef
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961140"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409558"
 ---
 # <a name="whats-new-in-windows-server-version-1803"></a>Windows Server 版本 1803 中的新功能
 
->適用於：Windows Server (半年通道)
+> 適用於：Windows Server (半年通道)
 
 <img src=../media/landing-icons/new.png style='float:left; padding:.5em;' alt=Icon showing a newspaper>&nbsp;若要深入了解 Windows 的最新功能，請參閱 [Windows Server 的新功能](whats-new-in-windows-server.md)。 本節內容說明 Windows Server 版本 1803 的新功能和變更。 此處所列的新功能和變更是您使用這個版本時最可能帶來最大影響的新功能和變更。 另請參閱 [Windows Server 半年通道更新](https://cloudblogs.microsoft.com/windowsserver/2018/03/29/windows-server-semi-annual-channel-update/)。
 
@@ -39,14 +39,14 @@ Windows Server 版本 1709 已於 2017 年 9 月做為半年通道中的第一�
 
 半年通道和長期維護通道的相關特定案例，如下：
 
-|   | 長期維護管道 |  半年通道 |
-| ------------- | ------------- | ------------ |
-| 建議的案例     | 一般用途檔案伺服器、第一方和第三方工作負載、傳統應用程式、基礎結構角色、軟體定義資料中心以及超融合式基礎結構  | 容器化應用程式、容器主機，以及因加快創新而受益的應用程式案例 |
-| 最新發行  | 每隔 2-3 年一次  | 每隔 6 個月一次 |
-| 支援  | 5 年主要支援 + 5 年延伸支援  | 18 個月 |
-| 版本  | 所有可用的 Windows Server 版本  | Standard 和 Datacenter Edition |
-| 誰可以使用  | 透過所有通道更新的所有客戶 | 僅限軟體保證與雲端客戶 |
-| 安裝選項  | Server Core 以及具備桌面體驗的伺服器  | 適用於容器主機和容器映像以及 Nano 伺服器容器映像的 Server Core |
+| 說明 | 長期維護管道 | 半年通道 |
+|--|--|--|
+| 建議的案例 | 一般用途檔案伺服器、第一方和第三方工作負載、傳統應用程式、基礎結構角色、軟體定義資料中心以及超融合式基礎結構 | 容器化應用程式、容器主機，以及因加快創新而受益的應用程式案例 |
+| 最新發行 | 每隔 2-3 年一次 | 每隔 6 個月一次 |
+| 支援 | 5 年主要支援 + 5 年延伸支援 | 18 個月 |
+| 版本 | 所有可用的 Windows Server 版本 | Standard 和 Datacenter Edition |
+| 誰可以使用 | 透過所有通道更新的所有客戶 | 僅限軟體保證與雲端客戶 |
+| 安裝選項 | Server Core 以及具備桌面體驗的伺服器 | 適用於容器主機和容器映像以及 Nano 伺服器容器映像的 Server Core |
 
 ## <a name="application-platform-and-containers"></a>應用程式平台和容器
 

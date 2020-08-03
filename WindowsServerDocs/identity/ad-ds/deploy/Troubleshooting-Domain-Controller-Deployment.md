@@ -8,12 +8,12 @@ ms.date: 03/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: ee22c55a3c786be4df8f06b2e3c5d33ea620b1e0
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: e3f215abaccbd1f95ee46eca93a573aa1db9e065
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409949"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519406"
 ---
 # <a name="troubleshooting-domain-controller-deployment"></a>疑難排解網域控制站部署
 
@@ -29,13 +29,13 @@ ms.locfileid: "87409949"
 
 內建記錄檔是疑難排解網域控制站升級和降級問題的最重要工具。 預設會啟用及設定所有的這些記錄檔以提供最詳盡的詳細資訊。
 
-| 階段 | Log |  |
-|--|--|--|
-| 伺服器管理員或 ADDSDeployment Windows PowerShell 作業 | - %systemroot%\debug\dcpromoui.log<p>-%systemroot%\debug\dcpromoui * .log |  |
-| 網域控制站的安裝/升級 | -%systemroot%\debug\dcpromo.log<p>-%systemroot%\debug\dcpromo * .log<p>-Event 檢視器 \windows 記錄 \ 系統<p>-Event 檢視器 \windows logs\Application<p>-事件 viewer\Applications 和服務 logs\Directory 服務<p>-事件 viewer\Applications 和服務 logs\File 複寫服務<p>-事件 viewer\Applications 和服務 logs\DFS 複寫 |  |
-| 樹系或網域升級 | -%systemroot%\debug\adprep \\ <datetime> \adprep.log<p>-%systemroot%\debug\adprep \\ <datetime> \csv.log<p>-%systemroot%\debug\adprep \\ <datetime> \dspecup.log<p>-%systemroot%\debug\adprep \\ <datetime> \ldif.log * |  |
-| 伺服器管理員 ADDSDeployment Windows PowerShell 部署引擎 | -事件 viewer\Applications 和服務 logs\Microsoft\Windows\DirectoryServices-Deployment\Operational |  |
-| Windows 維護 | - %systemroot%\Logs\CBS\\*<p>-% systemroot% \servicing\sessions\sessions.xml<p>- %systemroot%\winsxs\poqexec.log<p>-% systemroot% \winsxs\pending.xml |  |
+| 階段 | Log |
+|--|--|
+| 伺服器管理員或 ADDSDeployment Windows PowerShell 作業 | - %systemroot%\debug\dcpromoui.log<p>-%systemroot%\debug\dcpromoui * .log |
+| 網域控制站的安裝/升級 | -%systemroot%\debug\dcpromo.log<p>-%systemroot%\debug\dcpromo * .log<p>-Event 檢視器 \windows 記錄 \ 系統<p>-Event 檢視器 \windows logs\Application<p>-事件 viewer\Applications 和服務 logs\Directory 服務<p>-事件 viewer\Applications 和服務 logs\File 複寫服務<p>-事件 viewer\Applications 和服務 logs\DFS 複寫 |
+| 樹系或網域升級 | -%systemroot%\debug\adprep \\ <datetime> \adprep.log<p>-%systemroot%\debug\adprep \\ <datetime> \csv.log<p>-%systemroot%\debug\adprep \\ <datetime> \dspecup.log<p>-%systemroot%\debug\adprep \\ <datetime> \ldif.log * |
+| 伺服器管理員 ADDSDeployment Windows PowerShell 部署引擎 | -事件 viewer\Applications 和服務 logs\Microsoft\Windows\DirectoryServices-Deployment\Operational |
+| Windows 維護 | - %systemroot%\Logs\CBS\\*<p>-% systemroot% \servicing\sessions\sessions.xml<p>- %systemroot%\winsxs\poqexec.log<p>-% systemroot% \winsxs\pending.xml |
 
 ### <a name="tools-and-commands-for-troubleshooting-domain-controller-configuration"></a>適用於疑難排解網域控制站設定的工具和命令
 
@@ -95,13 +95,13 @@ ms.locfileid: "87409949"
 
 1. 使用伺服器管理員時，請在自動重新開機之前十秒內檢查升級結果。
 
-2. 使用 ADDSDeployment Windows PowerShell 時，請在自動重新開機之前十秒內檢查升級結果。 或者，在完成時選擇不要自動重新啟動。 您應該新增**格式清單**管線以方便閱讀輸出結果。 例如︰
+2. 使用 ADDSDeployment Windows PowerShell 時，請在自動重新開機之前十秒內檢查升級結果。 或者，在完成時選擇不要自動重新啟動。 您應該新增**格式清單**管線以方便閱讀輸出結果。 例如：
 
    ```
    Install-addsdomaincontroller <options> -norebootoncompletion:$true | format-list
    ```
 
-   先決條件驗證和確認錯誤不會在重新開機時持續發生，因此在所有情況下都會看到那些錯誤。 例如︰
+   先決條件驗證和確認錯誤不會在重新開機時持續發生，因此在所有情況下都會看到那些錯誤。 例如：
 
    ![疑難排解](media/Troubleshooting-Domain-Controller-Deployment/ADDS_PSPrereqError.png)
 
@@ -217,10 +217,10 @@ ms.locfileid: "87409949"
 
 以下是 Windows Server 2012 開發程序的過程中常見的問題。 這所有的問題都是「經過設計的」，具有有效的因應措施或更適當的技術，可在第一時間避免發生這些問題。 這些行為中有許多在 Windows Server 2008 R2 和較舊的作業系統中完全相同，但是重寫 AD DS 部署提高了問題的敏感性。
 
-| 問題 | 將網域控制站降級會讓 DNS 維持在沒有區域的情況下執行 |  |
-|--|--|--|
-| 徵狀 | 伺服器仍會回應 DNS 要求但沒有區域資訊 |  |
-| 解決方式和注意事項 | 移除 AD DS 角色時，也會移除 DNS 伺服器角色或將 DNS 伺服器服務設定為停用。 請記得將 DNS 用戶端指向其本身之外的其他伺服器。 如果使用 Windows PowerShell，請在將伺服器降級之後執行以下項目：<p>程式碼-uninstall dns<p>或<p>程式碼集-服務 dns-starttype 已停用<br />停止服務 dns |  |
+| 問題 | 將網域控制站降級會讓 DNS 維持在沒有區域的情況下執行 |
+|--|--|
+| 徵狀 | 伺服器仍會回應 DNS 要求但沒有區域資訊 |
+| 解決方式和注意事項 | 移除 AD DS 角色時，也會移除 DNS 伺服器角色或將 DNS 伺服器服務設定為停用。 請記得將 DNS 用戶端指向其本身之外的其他伺服器。 如果使用 Windows PowerShell，請在將伺服器降級之後執行以下項目：<p>程式碼-uninstall dns<p>或<p>程式碼集-服務 dns-starttype 已停用<br />停止服務 dns |
 
 | 問題 | 將 Windows Server 2012 升級至現有單一標籤網域並不會設定 updatetopleveldomain = 1 或 allowsinglelabeldnsdomain = 1 |
 |--|--|
@@ -280,7 +280,7 @@ ms.locfileid: "87409949"
 | 問題 | 預先建立之電腦帳戶中的 RODC 升級失敗 |
 |--|--|
 | 徵狀 | 使用 ADDSDeployment Windows PowerShell 來升級具備分段電腦帳戶的新 RODC 時，收到錯誤：<p>無法使用指定的具名引數解析程式代碼參數集。    <br />InvalidArgument: ParameterBindingException<br />    + FullyQualifiedErrorId： AmbiguousParameterSet、Microsoft.directoryservices，然後安裝 |
-| 解決方式和注意事項 | 請勿提供已在預先建立的 RODC 帳戶中定義的參數。 它們包括：<p>程式碼--readonlyreplica<br />-installdns<br />-donotconfigureglobalcatalog<br />-sitename<br />-installdns |
+| 解決方式和注意事項 | 請勿提供已在預先建立的 RODC 帳戶中定義的參數。 其中包括：<p>程式碼--readonlyreplica<br />-installdns<br />-donotconfigureglobalcatalog<br />-sitename<br />-installdns |
 
 | 問題 | 取消選取/選取 [必要時自動重新啟動目的地伺服器] 時未執行任何動作 |
 |--|--|

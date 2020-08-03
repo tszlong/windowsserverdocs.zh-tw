@@ -8,27 +8,26 @@ ms.topic: article
 ms.assetid: d011eaad-f72a-4a83-8099-8589c4ee8994
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: dba00395b32980d3139cf88e25571c8001cac24e
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 7a855087647b86486eaf5358e0e713d6fab6dd02
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316248"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517873"
 ---
 # <a name="realm-names"></a>領域名稱
 
->適用於：Windows Server (半年通道)、Windows Server 2016
-
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 您可以使用本主題，以瞭解在網路原則伺服器連線要求處理中使用領域名稱的總覽。
 
-User-Name RADIUS 屬性是一種字元字串，通常會包含使用者帳戶位置與使用者帳戶名稱。 使用者帳戶位置也稱為「領域」或「領域名稱」，與網域的概念同義，包括 DNS 網域、Active Directory®網域和 Windows NT 4.0 網域。 例如，如果使用者帳戶位於名稱為 example.com 的網域使用者帳戶資料庫中，則領域名稱為 example.com。
+User-Name RADIUS 屬性是一種字元字串，通常會包含使用者帳戶位置與使用者帳戶名稱。 使用者帳戶位置又稱為領域或領域名稱，與網域概念同義，包括 DNS 網域、Active Directory® 網域以及 Windows NT 4.0 網域。 例如，如果使用者帳戶位於名稱為 example.com 的網域使用者帳戶資料庫中，則領域名稱為 example.com。
 
-在另一個範例中，如果使用者名稱 RADIUS 屬性包含 user1@example.com的使用者名稱，user1 就是使用者帳戶名稱，而 example.com 是領域名稱。 領域名稱可以顯示在使用者名稱的首碼或尾碼：
+在另一個範例中，如果使用者名稱 RADIUS 屬性包含使用者名稱 user1@example.com ，user1 就是使用者帳戶名稱，而 example.com 是領域名稱。 領域名稱可以顯示在使用者名稱的首碼或尾碼：
 
-- **Example\user1**。 在此範例中，領域名稱**範例**是前置詞;而且也是&reg; 網域服務 \(AD DS\) 網域的 Active Directory 名稱。
+- **Example\user1**。 在此範例中，領域名稱**範例**是前置詞;而且也是 Active Directory &reg; 網域服務 \( AD DS 網域的名稱 \) 。
 
-- <strong>user1@example.com</strong>。 在此範例中，領域名稱**example.com**是尾碼;而且它可以是 DNS 功能變數名稱或 AD DS 網域的名稱。
+- <strong>user1@example.com</strong>. 在此範例中，領域名稱**example.com**是尾碼;而且它可以是 DNS 功能變數名稱或 AD DS 網域的名稱。
 
 您可以使用連線要求原則中設定的領域名稱，同時設計和部署 RADIUS 基礎結構，以確保連線要求從 RADIUS 用戶端 (又稱為網路存取伺服器) 路由傳送到可驗證及授權連線要求的 RADIUS 伺服器。
 
@@ -58,11 +57,11 @@ User-Name RADIUS 屬性是一種字元字串，通常會包含使用者帳戶位
 
 您可以設定 User-Name 屬性的屬性操作規則以變更下列項目：
 
-- 從使用者名稱中移除領域名稱 \(也稱為領域去除\)。 例如，user1@example.com 的使用者名稱變更為 user1。
+- 從使用者名稱中移除領域名稱， \( 也稱為領域去除 \) 。 例如，使用者名稱 user1@example.com 會變更為 user1。
 
-- 變更領域名稱但不變更語法。 例如，user1@example.com 的使用者名稱變更為 user1@wcoast.example.com。
+- 變更領域名稱但不變更語法。 例如，使用者名稱 user1@example.com 會變更為 user1@wcoast.example.com 。
 
-- 變更領域名稱的語法。 例如，使用者名稱 example\user1 會變更為 user1@example.com。
+- 變更領域名稱的語法。 例如，使用者名稱 example\user1 會變更為 user1@example.com 。
 
 在根據您設定的屬性操作規則修改 User-Name 屬性之後，第一次符合連線要求原則的其他設定是用以判斷：
 
@@ -74,11 +73,11 @@ User-Name RADIUS 屬性是一種字元字串，通常會包含使用者帳戶位
 
 當使用者名稱不包含網域名稱時，NPS 會提供包含網域名稱的使用者名稱。 根據預設，NPS 提供的功能變數名稱是 NPS 所屬的網域。 您可以透過下列登錄設定來指定 NPS 提供的網域名稱：
 
-    
-    HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\RasMan\PPP\ControlProtocols\BuiltIn\DefaultDomain
-    
+```
+HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\RasMan\PPP\ControlProtocols\BuiltIn\DefaultDomain
+```
 
->[!CAUTION]
->不當編輯登錄可能會造成系統嚴重受損。 變更登錄之前，您應該先備份電腦所有的重要資料。
+> [!CAUTION]
+> 不當編輯登錄可能會造成系統嚴重受損。 變更登錄之前，您應該先備份電腦所有的重要資料。
 
 有些非 Microsoft 網路存取伺服器會刪除或修改使用者指定的網域名稱。 因此，會針對預設網域來驗證網路存取要求，但是它可能不是使用者帳戶的網域。 若要解決這個問題，請設定 RADIUS 伺服器以便將使用者名稱變更為正確格式及正確網域名稱。

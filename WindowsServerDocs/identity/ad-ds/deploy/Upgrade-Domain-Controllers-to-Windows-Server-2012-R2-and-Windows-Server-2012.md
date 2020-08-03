@@ -8,12 +8,12 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e9a7913f3639e464909d41a86c493774221ace28
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: f211acd5e93f3f4654983e2c61d6b1a460415655
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181884"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519376"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012"></a>將網域控制站升級為 Windows Server 2012 R2 與 Windows Server 2012
 
@@ -93,7 +93,7 @@ Windows 8 與 Windows Server 2012 引進一項名為 [自動維護](/windows/win
 |功能|說明|
 |-----------|---------------|
 |Active Directory 型啟用 (AD BA)；請參閱 [大量啟用概觀](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831612(v=ws.11))|簡化大量軟體授權發佈和管理的設定工作。|
-|[Active Directory 同盟服務（AD FS）](../../active-directory-federation-services.md)|透過伺服器管理員新增角色安裝、簡化信任設定、自動化信任管理、SAML 通訊協定支援等等。|
+|[Active Directory Federation Services (AD FS)](../../active-directory-federation-services.md)|透過伺服器管理員新增角色安裝、簡化信任設定、自動化信任管理、SAML 通訊協定支援等等。|
 |Active Directory 遺失頁面排清事件|NTDS ISAM 事件 530 與 Jet 錯誤 -1119 的記錄是偵測 Active Directory 資料庫的遺失頁面排清事件。|
 |[Active Directory 資源回收筒使用者介面](../get-started/adac/introduction-to-active-directory-administrative-center-enhancements--level-100-.md#ad_recycle_bin_mgmt)|Active Directory 管理中心 (ADAC) 為原本由 Windows Server 2008 R2 引入的資源回收筒功能新增了 GUI 管理。|
 |[Active Directory 複寫和拓撲 Windows PowerShell Cmdlet](../manage/powershell/introduction-to-active-directory-replication-and-topology-management-using-windows-powershell--level-100-.md)|支援使用 Windows PowerShell 建立和管理 Active Directory 站台、站台連結、連線物件等等。|
@@ -154,25 +154,24 @@ AD DS 安裝精靈的先決條件檢查會在安裝開始前識別可能的錯�
 
 從 Windows Server 2008 開始，相較于執行 Windows Server 2003 或 Windows 2000 的網域控制站，網域控制站也具有下列安全預設設定。
 
-|||||
-|-|-|-|-|
-|加密類型或原則|Windows Server 2008 預設值|Windows Server 2012 和 Windows Server 2008 R2 預設值|註解|
-|AllowNT4Crypto|已停用|停用|協力廠商伺服器訊息區 (SMB) 用戶端可能與網域控制站上的安全預設設定不相容。 在所有情況下，這些設定可放寬以允許交互操作性，但同時也會產生安全風險。 如需詳細資訊，請參閱 Microsoft 知識庫中的[文章 942564](https://go.microsoft.com/fwlink/?LinkId=164558) （ https://go.microsoft.com/fwlink/?LinkId=164558) 。|
-|DES|啟用|停用|Microsoft 知識庫中的[文章 977321](https://go.microsoft.com/fwlink/?LinkId=177717) （https://go.microsoft.com/fwlink/?LinkId=177717)|
-|CBT/整合式驗證的擴充保護|不適用|啟用|請參閱 microsoft 資訊[安全諮詢（937811）](https://go.microsoft.com/fwlink/?LinkId=164559) （ https://go.microsoft.com/fwlink/?LinkId=164559) microsoft 知識庫中的[文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) （） https://go.microsoft.com/fwlink/?LinkId=178251) 。<p>如有需要，請在 Microsoft 知識庫檔中查看並安裝此修補[977073](https://go.microsoft.com/fwlink/?LinkId=186394)程式 https://go.microsoft.com/fwlink/?LinkId=186394) 。|
-|LMv2|啟用|停用|Microsoft 知識庫中的[文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) （https://go.microsoft.com/fwlink/?LinkId=178251)|
+| 加密類型或原則 | Windows Server 2008 預設值 | Windows Server 2012 和 Windows Server 2008 R2 預設值 | 註解 |
+|--|--|--|--|
+| AllowNT4Crypto | 已停用 | 已停用 | 協力廠商伺服器訊息區 (SMB) 用戶端可能與網域控制站上的安全預設設定不相容。 在所有情況下，這些設定可放寬以允許交互操作性，但同時也會產生安全風險。 如需詳細資訊，請參閱 Microsoft 知識庫中的[文章 942564](https://go.microsoft.com/fwlink/?LinkId=164558) （ https://go.microsoft.com/fwlink/?LinkId=164558) 。 |
+| DES | 啟用 | 已停用 | Microsoft 知識庫中的[文章 977321](https://go.microsoft.com/fwlink/?LinkId=177717) （https://go.microsoft.com/fwlink/?LinkId=177717) |
+| CBT/整合式驗證的擴充保護 | N/A | 啟用 | 請參閱 microsoft 資訊[安全諮詢（937811）](https://go.microsoft.com/fwlink/?LinkId=164559) （ https://go.microsoft.com/fwlink/?LinkId=164559) microsoft 知識庫中的[文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) （） https://go.microsoft.com/fwlink/?LinkId=178251) 。<p>如有需要，請在 Microsoft 知識庫檔中查看並安裝此修補[977073](https://go.microsoft.com/fwlink/?LinkId=186394)程式 https://go.microsoft.com/fwlink/?LinkId=186394) 。 |
+| LMv2 | 啟用 | 已停用 | Microsoft 知識庫中的[文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) （https://go.microsoft.com/fwlink/?LinkId=178251) |
 
 ## <a name="operating-system-requirements"></a><a name="BKMK_SysReqs"></a>作業系統需求
 
 下表列出 Windows Server 2012 的最低系統需求。 如需系統需求及預先安裝資訊的詳細資訊，請參閱 [安裝 Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134246(v=ws.11))。 安裝新 Active Directory 樹系沒有額外的系統需求，但是您應該增加足夠的記憶體用於快取 Active Directory 資料庫的內容，以便提升網域控制站、LDAP 用戶端要求和 Active Directory 應用程式的效能。 如果您要升級現有網域控制站或將新的網域控制站新增到現有的樹系，請參閱下一節以確保伺服器符合磁碟空間需求。
 
-|||
-|-|-|
-|處理器|1.4 Ghz 64 位元處理器|
-|RAM|512 MB|
-|可用磁碟空間需求|32 GB|
-|螢幕解析度|800 x 600 或更高|
-|其他|DVD 光碟機、鍵盤、網際網路存取|
+| 需求 | 值 |
+|--|--|
+| 處理器 | 1.4 Ghz 64 位元處理器 |
+| RAM | 512 MB |
+| 可用磁碟空間需求 | 32 GB |
+| 螢幕解析度 | 800 x 600 或更高 |
+| 其他 | DVD 光碟機、鍵盤、網際網路存取 |
 
 ### <a name="disk-space-requirements-for-upgrading-domain-controllers"></a><a name="BKMK_DiskSpaceDCWin8"></a>升級網域控制站的磁碟空間需求
 
@@ -201,14 +200,14 @@ Standard 和 Datacenter 這兩個版本可支援 AD DS 角色。
 
 執行64位版本的 Windows Server 2008 或 Windows Server 2008 R2 的網域控制站可以升級至 Windows Server 2012。 您不能升級執行 Windows Server 2003 或 32 位元版本 Windows Server 2008 的網域控制站。 若要取代它們，請在網域中安裝執行更新版 Windows Server 的網域控制站，然後移除執行 Windows Server 2003 的網域控制站。
 
-|如果您執行這些版本|您可以升級到這些版本|
-|-------------------------------------|-------------------------------------|
-|Windows Server 2008 Standard (含 SP2)<p>OR<p>Windows Server 2008 Enterprise (含 SP2)|Windows Server 2012 Standard<p>OR<p>Windows Server 2012 Datacenter|
-|Windows Server 2008 Datacenter (含 SP2)|Windows Server 2012 Datacenter|
-|Windows Web Server 2008|Windows Server 2012 Standard|
-|Windows Server 2008 R2 Standard (含 SP1)<p>OR<p>Windows Server 2008 R2 Enterprise (含 SP1)|Windows Server 2012 Standard<p>OR<p>Windows Server 2012 Datacenter|
-|Windows Server 2008 R2 Datacenter (含 SP1)|Windows Server 2012 Datacenter|
-|Windows Web Server 2008 R2|Windows Server 2012 Standard|
+| 如果您執行這些版本 | 您可以升級到這些版本 |
+|--|--|
+| Windows Server 2008 Standard (含 SP2)<p>或者<p>Windows Server 2008 Enterprise (含 SP2) | Windows Server 2012 Standard<p>或者<p>Windows Server 2012 Datacenter |
+| Windows Server 2008 Datacenter (含 SP2) | Windows Server 2012 Datacenter |
+| Windows Web Server 2008 | Windows Server 2012 Standard |
+| Windows Server 2008 R2 Standard (含 SP1)<p>或者<p>Windows Server 2008 R2 Enterprise (含 SP1) | Windows Server 2012 Standard<p>或者<p>Windows Server 2012 Datacenter |
+| Windows Server 2008 R2 Datacenter (含 SP1) | Windows Server 2012 Datacenter |
+| Windows Web Server 2008 R2 | Windows Server 2012 Standard |
 
 如需支援的升級路徑詳細資訊，請參閱 [適用於 Windows Server 2012 的評估版與升級選項](https://go.microsoft.com/fwlink/?LinkId=260917)。 請注意，您不能將執行評估版 Windows Server 2012 的網域控制站直接轉換為零售版。 您必須在執行零售版的伺服器上安裝另一個網域控制站，然後從在評估版執行的網域控制站移除 AD DS。
 
@@ -276,7 +275,7 @@ Windows Server 2012 中的一些新功能會影響操作主機角色：
 
 下表涵蓋常見的整合 Active Directory Microsoft 應用程式。 表格內容包含應用程式可以安裝在哪些版本的 Windows Server 上，以及採用 Windows Server 2012 DC 是否會對應用程式相容性產生影響。
 
-|Products|注意|
+|產品|注意|
 |-----------|---------|
 |[Microsoft SharePoint 2010](https://support.microsoft.com/kb/2724471)|需要 SharePoint 2010 Service Pack 2，才能在  <br />Windows Server 2012 伺服器上 安裝和操作 SharePoint 2010<p>在 Windows Server 2012 伺服器上安裝和操作 SharePoint 2010 Foundation 需要有 SharePoint 2010 Foundation Service Pack 2<p>SharePoint Server 2010 (不含 Service Pack) 安裝程序在 Windows Server 2012 上會失敗<p>SharePoint Server 2010 必要條件安裝程式（PrerequisiteInstaller.exe）失敗，並出現「此程式有相容性問題」錯誤。 按一下 [執行程式而不取得說明] 會顯示錯誤：「正在驗證 SharePoint 是否可以安裝 &#124; SharePoint Server 2010 （不含 service pack）無法安裝在 Windows Server 2012 上」。|
 |[Microsoft SharePoint 2013](/SharePoint/install/hardware-and-software-requirements-0)|伺服器陣列中的資料庫伺服器最低需求：<p>64 位元版本的 Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise 或 Datacenter，或是 64 位元版本的 Windows Server 2012 Standard 或 Datacenter<p>含內建資料庫的單一伺服器最低需求：<p>64 位元版本的 Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise 或 Datacenter，或是 64 位元版本的 Windows Server 2012 Standard 或 Datacenter<p>伺服器陣列中的前端網頁伺服器和應用程式伺服器最低需求：<p>64 位元版本的 Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise 或 Datacenter，或是 64 位元版本的 Windows Server 2012 Standard 或 Datacenter。|
@@ -300,42 +299,41 @@ Windows Server 2012 中的一些新功能會影響操作主機角色：
 
 下表列出與 AD DS 安裝相關的已知問題。
 
-||||
-|-|-|-|
-|知識庫文章編號和標題|受影響的技術領域|問題/描述|
-|[2830145](https://support.microsoft.com/kb/2830145)：SID S-1-18-1 與 SID S-1-18-2 無法對應在網域環境中的 Windows 7 或 Windows Server 2008 R2 電腦上|AD DS 管理/應用程式相容|對應 SID S-1-18-1 與 SID S-1-18-2 的應用程式 (Windows Server 2012 中的新功能) 可能會失敗，因為 SID 無法在 Windows 7 或 Windows Server 2008 R2 電腦上解析。 如果要解決這個問題，請在網域的 Windows 7 與 Windows Server 2008 R2 電腦上安裝 Hotfix。|
-|[2737129](https://support.microsoft.com/kb/2737129)：當您自動準備 Windows Server 2012 的現有網域時不會執行群組原則準備|AD DS 安裝|安裝第一個在網域中執行 Windows Server 2012 的 DC 時，不會自動執行 Adprep /domainprep /gpprep。 如果之前從未在網域執行過，必須手動執行。|
-|[2737416](https://support.microsoft.com/kb/2737416)：Windows PowerShell 網域控制站部署重複出現警告|AD DS 安裝|警告可能在先決條件驗證期間出現，在安裝時又重複出現。|
-|[2737424](https://support.microsoft.com/kb/2737424)：當您嘗試從網域控制站移除 Active Directory 網域服務時發生「指定的網域名稱格式不正確」錯誤|AD DS 安裝|如果您移除網域中的最後一個 DC，但該網域中預先建立的 RODC 帳戶仍然存在，就會出現此錯誤。 這會影響 Windows Server 2012、Windows Server 2008 R2 和 Windows Server 2008。|
-|[2737463](https://support.microsoft.com/kb/2737463)：網域控制站未啟動、發生 c00002e2 錯誤或顯示「選擇選項」|AD DS 安裝|因為系統管理員使用 Dism.exe、Pkgmgr.exe 或 Ocsetup.exe 移除 DirectoryServices-DomainController 角色，所以 DC 沒有啟動。|
-|[2737516](https://support.microsoft.com/kb/2737516)：Windows Server 2012 伺服器管理員的 IFM 驗證限制|AD DS 安裝|IFM 驗證有所限制，如同知識庫文章中的說明。|
-|[2737535](https://support.microsoft.com/kb/2737535)：Install-AddsDomainController Cmdlet 傳回 RODC 的參數設定錯誤|AD DS 安裝|如果您指定的引數已經填入預先建立的 RODC 帳戶，當您嘗試將伺服器連結到 RODC 帳戶時會收到錯誤。|
-|[2737560](https://support.microsoft.com/kb/2737560)：「無法執行 Exchange 架構衝突檢查」錯誤和先決條件檢查失敗|AD DS 安裝|當您在現有的網域中設定第一個 Windows Server 2012 DC 時，因為 DC 遺失網路服務的 SeServiceLogonRight 或因為 WMI 或 DCOM 通訊協定被封鎖，先決條件檢查會失敗。|
-|[2737797](https://support.microsoft.com/kb/2737797)：AddsDeployment 模組搭配 -Whatif 引數顯示不正確的 DNS 結果|AD DS 安裝|-WhatIf 參數會顯示 DNS 伺服器將不會安裝，但會是。|
-|[2737807](https://support.microsoft.com/kb/2737807)：[網域控制站選項] 頁面的 [下一步] 按鈕無法使用|AD DS 安裝|因為目標 DC 的 IP 位址沒有對應到現有的子網路或站台，或是因為並未正確輸入和確認 DSRM 密碼，所以會停用 [網域控制站選項] 頁面的 [下一步] 按鈕。|
-|[2737935](https://support.microsoft.com/kb/2737935)：Active Directory 安裝在「建立 NTDS 設定物件」階段停止|AD DS 安裝|因為本機系統管理員密碼與網域系統管理員密碼相同，或因為網路問題而無法完成關鍵性複寫，因此安裝停滯。|
-|[2738060](https://support.microsoft.com/kb/2738060)：使用 Install-AddsDomain 遠端建立子網域時出現「拒絕存取」錯誤訊息|AD DS 安裝|如果 DNSDelegationCredential 密碼錯誤，當您使用 Invoke-Command Cmdlet 執行 Install-ADDSDomain 時，會收到這個錯誤。|
-|[2738697](https://support.microsoft.com/kb/2738697)：使用伺服器管理員設定伺服器時出現「無法操作伺服器」網域控制站設定錯誤|AD DS 安裝|當您嘗試在工作群組電腦安裝 AD DS 時，因為 NTLM 驗證停用，所以會收到這個錯誤。|
-|[2738746](https://support.microsoft.com/kb/2738746)：登入本機系統管理員網域帳戶之後收到拒絕存取錯誤|AD DS 安裝|當您使用本機系統管理員帳戶而不是內建系統管理員帳戶登入，然後建立新的網域，帳戶不會新增到 Domain Admins 群組。|
-|[2743345](https://support.microsoft.com/kb/2743345)：「系統找不到指定的檔案」Adprep /gpprep 錯誤，或工具損毀|AD DS 安裝|當您執行 adprep /gpprep 時，因為基礎結構主機實作一個不相鄰的命名空間，所以會收到這個錯誤。|
-|[2743367](https://support.microsoft.com/kb/2743367)：64 位元 Windows Server 2003 發生 Adprep「不是有效的 Win32 應用程式」錯誤|AD DS 安裝|因為 Windows Server 2012 Adprep 不能在 Windows Server 2003 上執行，所以會收到這個錯誤。|
-|[2753560](https://support.microsoft.com/kb/2753560)：Windows Server 2012 發生 ADMT 3.2 和 PES 3.1 安裝錯誤|ADMT|Windows Server 2012 的設計不能安裝 ADMT 3.2。|
-|[2750857](https://support.microsoft.com/kb/2750857)：Internet Explorer 10 無法正確顯示 DFS 複寫診斷報告|DFS 複寫|因為 Internet Explorer 10 有所變更，所以無法正確顯示 DFS 複寫診斷報告。|
-|[2741537](https://support.microsoft.com/kb/2741537)：使用者可以看見遠端群組原則更新|群組原則|這是因為排程工作會在每個登入的使用者內容執行。 Windows 工作排程器的設計在這種情況下需要互動式提示。|
-|[2741591](https://support.microsoft.com/kb/2741591)：GPMC 基礎結構狀態選項的 SYSVOL 中沒有 ADM 檔案|群組原則|GP 複寫可以報告「複寫進行中」，因為 GPMC 基礎結構狀態不會遵循自訂篩選規則。|
-|[2737880](https://support.microsoft.com/kb/2737880)：AD DS 設定期間發生「無法啟動服務」錯誤|虛擬 DC 複製|因為 DS 角色伺服器服務停用，所以安裝、移除 AD DS 或複製時會收到這個錯誤。|
-|[2742836](https://support.microsoft.com/kb/2742836)：使用 VDC 複製功能時會為每個網域控制站建立兩個 DHCP 租用|虛擬 DC 複製|因為複製的網域控制站會在複製之前和複製完成時各收到一個租用，所以會發生這種狀況。|
-|[2742844](https://support.microsoft.com/kb/2742844)：在 Windows Server 2012，網域控制站複製失敗且伺服器以 DSRM 重新啟動|虛擬 DC 複製|因為知識庫文章中所列的各種理由，複製的 DC 會因複製失敗而以 DSRM 啟動。|
-|[2742874](https://support.microsoft.com/kb/2742874)：網域控制站複製不會重新建立所有服務主體名稱|虛擬 DC 複製|因為網域重新命名程序的限制，所以複製的 DC 上不會重新建立某些協力廠商 SPN。|
-|[2742908](https://support.microsoft.com/kb/2742908)：複製網域控制站後發生「無可用的登入伺服器」錯誤|虛擬 DC 複製|因為複製虛擬 DC 失敗且 DC 以 DSRM 啟動，所以當您在複製之後嘗試登入時，會收到這個錯誤。 以 .\administrator 的身分登入可排除這個複製失敗。|
-|[2742916](https://support.microsoft.com/kb/2742916)：網域控制站複製失敗，dcpromo.log 中的錯誤為 8610|虛擬 DC 複製|PDC 模擬器未執行網域分割的輸入複寫，很可能是因為角色已移轉，所以複製失敗。|
-|[2742927](https://support.microsoft.com/kb/2742927)：「索引超出範圍」New-AdDcCloneConfig 錯誤|虛擬 DC 複製|複製虛擬 DC 時執行 New-ADDCCloneConfigFile Cmdlet 之後，因為不是從提升權限的命令提示字元執行 Cmdlet，或因為您的存取權杖不含 Administrators 群組，所以會收到這個錯誤。|
-|[2742959](https://support.microsoft.com/kb/2742959)：網域控制站複製失敗，錯誤為 8437：「指定了不正確的參數給這項複寫操作」|虛擬 DC 複製|因為指定無效的複製名稱或重複的 NetBIOS 名稱，所以複製失敗。|
-|[2742970](https://support.microsoft.com/kb/2742970)：DC 複製失敗，沒有 DSRM、重複來源和複製電腦|虛擬 DC 複製|因為沒有在正確的位置建立 DCCloneConfig.xml 檔案，或因為來源 DC 已經在複製之前重新啟動，所以複製的虛擬 DC 使用重複名稱做為來源 DC，以目錄服務修復模式 (DSRM) 啟動。|
-|[2743278](https://support.microsoft.com/kb/2743278)：網域控制站複製錯誤 0x80041005|虛擬 DC 複製|因為只指定一個 WINS 伺服器，所以複製的 DC 開機到 DSRM。 如果指定了 WINS 伺服器，也必須同時指定慣用和其他 WINS 伺服器。|
-|[2745013](https://support.microsoft.com/kb/2745013)：在 Windows Server 2012 執行 New-AdDcCloneConfigFile 會出現「無法操作伺服器」錯誤訊息|虛擬 DC 複製|因為伺服器無法連線到通用類別目錄伺服器，所以執行 New-ADDCCloneConfigFile Cmdlet 之後會收到這個錯誤。|
-|[2747974](https://support.microsoft.com/kb/2747974)：網域控制站複製事件 2224 提供不正確的指導|虛擬 DC 複製|事件識別碼 2224 不正確的說明必須在複製之前移除受管理的服務帳戶。 獨立 MSA 必須移除，但群組 MSA 不會封鎖複製。|
-|[2748266](https://support.microsoft.com/kb/2748266)：升級至 Windows 8 之後無法解除鎖定 BitLocker 加密的磁碟機|BitLocker|當您嘗試在已從 Windows 7 升級的電腦上解除鎖定磁片磁碟機時，會收到「找不到應用程式」錯誤。|
+| 知識庫文章編號和標題 | 受影響的技術領域 | 問題/描述 |
+|--|--|--|
+| [2830145](https://support.microsoft.com/kb/2830145)：SID S-1-18-1 與 SID S-1-18-2 無法對應在網域環境中的 Windows 7 或 Windows Server 2008 R2 電腦上 | AD DS 管理/應用程式相容 | 對應 SID S-1-18-1 與 SID S-1-18-2 的應用程式 (Windows Server 2012 中的新功能) 可能會失敗，因為 SID 無法在 Windows 7 或 Windows Server 2008 R2 電腦上解析。 如果要解決這個問題，請在網域的 Windows 7 與 Windows Server 2008 R2 電腦上安裝 Hotfix。 |
+| [2737129](https://support.microsoft.com/kb/2737129)：當您自動準備 Windows Server 2012 的現有網域時不會執行群組原則準備 | AD DS 安裝 | 安裝第一個在網域中執行 Windows Server 2012 的 DC 時，不會自動執行 Adprep /domainprep /gpprep。 如果之前從未在網域執行過，必須手動執行。 |
+| [2737416](https://support.microsoft.com/kb/2737416)：Windows PowerShell 網域控制站部署重複出現警告 | AD DS 安裝 | 警告可能在先決條件驗證期間出現，在安裝時又重複出現。 |
+| [2737424](https://support.microsoft.com/kb/2737424)：當您嘗試從網域控制站移除 Active Directory 網域服務時發生「指定的網域名稱格式不正確」錯誤 | AD DS 安裝 | 如果您移除網域中的最後一個 DC，但該網域中預先建立的 RODC 帳戶仍然存在，就會出現此錯誤。 這會影響 Windows Server 2012、Windows Server 2008 R2 和 Windows Server 2008。 |
+| [2737463](https://support.microsoft.com/kb/2737463)：網域控制站未啟動、發生 c00002e2 錯誤或顯示「選擇選項」 | AD DS 安裝 | 因為系統管理員使用 Dism.exe、Pkgmgr.exe 或 Ocsetup.exe 移除 DirectoryServices-DomainController 角色，所以 DC 沒有啟動。 |
+| [2737516](https://support.microsoft.com/kb/2737516)：Windows Server 2012 伺服器管理員的 IFM 驗證限制 | AD DS 安裝 | IFM 驗證有所限制，如同知識庫文章中的說明。 |
+| [2737535](https://support.microsoft.com/kb/2737535)：Install-AddsDomainController Cmdlet 傳回 RODC 的參數設定錯誤 | AD DS 安裝 | 如果您指定的引數已經填入預先建立的 RODC 帳戶，當您嘗試將伺服器連結到 RODC 帳戶時會收到錯誤。 |
+| [2737560](https://support.microsoft.com/kb/2737560)：「無法執行 Exchange 架構衝突檢查」錯誤和先決條件檢查失敗 | AD DS 安裝 | 當您在現有的網域中設定第一個 Windows Server 2012 DC 時，因為 DC 遺失網路服務的 SeServiceLogonRight 或因為 WMI 或 DCOM 通訊協定被封鎖，先決條件檢查會失敗。 |
+| [2737797](https://support.microsoft.com/kb/2737797)：AddsDeployment 模組搭配 -Whatif 引數顯示不正確的 DNS 結果 | AD DS 安裝 | -WhatIf 參數會顯示 DNS 伺服器將不會安裝，但會是。 |
+| [2737807](https://support.microsoft.com/kb/2737807)：[網域控制站選項] 頁面的 [下一步] 按鈕無法使用 | AD DS 安裝 | 因為目標 DC 的 IP 位址沒有對應到現有的子網路或站台，或是因為並未正確輸入和確認 DSRM 密碼，所以會停用 [網域控制站選項] 頁面的 [下一步] 按鈕。 |
+| [2737935](https://support.microsoft.com/kb/2737935)：Active Directory 安裝在「建立 NTDS 設定物件」階段停止 | AD DS 安裝 | 因為本機系統管理員密碼與網域系統管理員密碼相同，或因為網路問題而無法完成關鍵性複寫，因此安裝停滯。 |
+| [2738060](https://support.microsoft.com/kb/2738060)：使用 Install-AddsDomain 遠端建立子網域時出現「拒絕存取」錯誤訊息 | AD DS 安裝 | 如果 DNSDelegationCredential 密碼錯誤，當您使用 Invoke-Command Cmdlet 執行 Install-ADDSDomain 時，會收到這個錯誤。 |
+| [2738697](https://support.microsoft.com/kb/2738697)：使用伺服器管理員設定伺服器時出現「無法操作伺服器」網域控制站設定錯誤 | AD DS 安裝 | 當您嘗試在工作群組電腦安裝 AD DS 時，因為 NTLM 驗證停用，所以會收到這個錯誤。 |
+| [2738746](https://support.microsoft.com/kb/2738746)：登入本機系統管理員網域帳戶之後收到拒絕存取錯誤 | AD DS 安裝 | 當您使用本機系統管理員帳戶而不是內建系統管理員帳戶登入，然後建立新的網域，帳戶不會新增到 Domain Admins 群組。 |
+| [2743345](https://support.microsoft.com/kb/2743345)：「系統找不到指定的檔案」Adprep /gpprep 錯誤，或工具損毀 | AD DS 安裝 | 當您執行 adprep /gpprep 時，因為基礎結構主機實作一個不相鄰的命名空間，所以會收到這個錯誤。 |
+| [2743367](https://support.microsoft.com/kb/2743367)：64 位元 Windows Server 2003 發生 Adprep「不是有效的 Win32 應用程式」錯誤 | AD DS 安裝 | 因為 Windows Server 2012 Adprep 不能在 Windows Server 2003 上執行，所以會收到這個錯誤。 |
+| [2753560](https://support.microsoft.com/kb/2753560)：Windows Server 2012 發生 ADMT 3.2 和 PES 3.1 安裝錯誤 | ADMT | Windows Server 2012 的設計不能安裝 ADMT 3.2。 |
+| [2750857](https://support.microsoft.com/kb/2750857)：Internet Explorer 10 無法正確顯示 DFS 複寫診斷報告 | DFS 複寫 | 因為 Internet Explorer 10 有所變更，所以無法正確顯示 DFS 複寫診斷報告。 |
+| [2741537](https://support.microsoft.com/kb/2741537)：使用者可以看見遠端群組原則更新 | 群組原則 | 這是因為排程工作會在每個登入的使用者內容執行。 Windows 工作排程器的設計在這種情況下需要互動式提示。 |
+| [2741591](https://support.microsoft.com/kb/2741591)：GPMC 基礎結構狀態選項的 SYSVOL 中沒有 ADM 檔案 | 群組原則 | GP 複寫可以報告「複寫進行中」，因為 GPMC 基礎結構狀態不會遵循自訂篩選規則。 |
+| [2737880](https://support.microsoft.com/kb/2737880)：AD DS 設定期間發生「無法啟動服務」錯誤 | 虛擬 DC 複製 | 因為 DS 角色伺服器服務停用，所以安裝、移除 AD DS 或複製時會收到這個錯誤。 |
+| [2742836](https://support.microsoft.com/kb/2742836)：使用 VDC 複製功能時會為每個網域控制站建立兩個 DHCP 租用 | 虛擬 DC 複製 | 因為複製的網域控制站會在複製之前和複製完成時各收到一個租用，所以會發生這種狀況。 |
+| [2742844](https://support.microsoft.com/kb/2742844)：在 Windows Server 2012，網域控制站複製失敗且伺服器以 DSRM 重新啟動 | 虛擬 DC 複製 | 因為知識庫文章中所列的各種理由，複製的 DC 會因複製失敗而以 DSRM 啟動。 |
+| [2742874](https://support.microsoft.com/kb/2742874)：網域控制站複製不會重新建立所有服務主體名稱 | 虛擬 DC 複製 | 因為網域重新命名程序的限制，所以複製的 DC 上不會重新建立某些協力廠商 SPN。 |
+| [2742908](https://support.microsoft.com/kb/2742908)：複製網域控制站後發生「無可用的登入伺服器」錯誤 | 虛擬 DC 複製 | 因為複製虛擬 DC 失敗且 DC 以 DSRM 啟動，所以當您在複製之後嘗試登入時，會收到這個錯誤。 以 .\administrator 的身分登入可排除這個複製失敗。 |
+| [2742916](https://support.microsoft.com/kb/2742916)：網域控制站複製失敗，dcpromo.log 中的錯誤為 8610 | 虛擬 DC 複製 | PDC 模擬器未執行網域分割的輸入複寫，很可能是因為角色已移轉，所以複製失敗。 |
+| [2742927](https://support.microsoft.com/kb/2742927)：「索引超出範圍」New-AdDcCloneConfig 錯誤 | 虛擬 DC 複製 | 複製虛擬 DC 時執行 New-ADDCCloneConfigFile Cmdlet 之後，因為不是從提升權限的命令提示字元執行 Cmdlet，或因為您的存取權杖不含 Administrators 群組，所以會收到這個錯誤。 |
+| [2742959](https://support.microsoft.com/kb/2742959)：網域控制站複製失敗，錯誤為 8437：「指定了不正確的參數給這項複寫操作」 | 虛擬 DC 複製 | 因為指定無效的複製名稱或重複的 NetBIOS 名稱，所以複製失敗。 |
+| [2742970](https://support.microsoft.com/kb/2742970)：DC 複製失敗，沒有 DSRM、重複來源和複製電腦 | 虛擬 DC 複製 | 因為沒有在正確的位置建立 DCCloneConfig.xml 檔案，或因為來源 DC 已經在複製之前重新啟動，所以複製的虛擬 DC 使用重複名稱做為來源 DC，以目錄服務修復模式 (DSRM) 啟動。 |
+| [2743278](https://support.microsoft.com/kb/2743278)：網域控制站複製錯誤 0x80041005 | 虛擬 DC 複製 | 因為只指定一個 WINS 伺服器，所以複製的 DC 開機到 DSRM。 如果指定了 WINS 伺服器，也必須同時指定慣用和其他 WINS 伺服器。 |
+| [2745013](https://support.microsoft.com/kb/2745013)：在 Windows Server 2012 執行 New-AdDcCloneConfigFile 會出現「無法操作伺服器」錯誤訊息 | 虛擬 DC 複製 | 因為伺服器無法連線到通用類別目錄伺服器，所以執行 New-ADDCCloneConfigFile Cmdlet 之後會收到這個錯誤。 |
+| [2747974](https://support.microsoft.com/kb/2747974)：網域控制站複製事件 2224 提供不正確的指導 | 虛擬 DC 複製 | 事件識別碼 2224 不正確的說明必須在複製之前移除受管理的服務帳戶。 獨立 MSA 必須移除，但群組 MSA 不會封鎖複製。 |
+| [2748266](https://support.microsoft.com/kb/2748266)：升級至 Windows 8 之後無法解除鎖定 BitLocker 加密的磁碟機 | BitLocker | 當您嘗試在已從 Windows 7 升級的電腦上解除鎖定磁片磁碟機時，會收到「找不到應用程式」錯誤。 |
 
 ## <a name="see-also"></a>另請參閱
 
