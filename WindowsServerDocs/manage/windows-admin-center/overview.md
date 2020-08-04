@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 01/07/2020
 ms.localizationpriority: high
 ms.prod: windows-server
-ms.openlocfilehash: cb91b884edfbd105bc9e88a9d11b3b96055247c9
-ms.sourcegitcommit: c40c29683d25ed75b439451d7fa8eda9d8d9e441
+ms.openlocfilehash: 2a3655c7efddbbe22f312bab4c9276e88e53481b
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85833331"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87410009"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -35,19 +35,18 @@ Windows Admin Center 是以瀏覽器為基礎在本機部署的應用程式，�
 
 您可以將 Windows Admin Center 用於以下事項：
 
-|     |     |
-| --- | --- |
-| ![](media/simple-icon.png)| **簡化伺服器管理** <br/> 使用現代化版本的熟悉工具 (例如伺服器管理員) 來管理您的伺服器和叢集。 不到五分鐘即可安裝完畢，並可立即管理您環境中的伺服器，而不需要其他設定。 如需詳細資訊，請參閱＜[什麼是 Windows Admin Center？](understand/what-is.md)＞。 |
-| ![](media/future-icon.png)| **運用混合式解決方案** <br/> 與 Azure 整合可協助您選擇性地將內部部署伺服器與相關的雲端服務連接。 如需詳細資訊，請參閱＜[Azure 混合式服務](azure/index.md)＞ |
-| ![](media/secure-icon.png)| **簡化超融合式管理** <br/> 簡化 Azure Stack HCI 或 Windows Server 超融合式叢集的管理。 使用簡化的工作負載來建立和管理 VM、儲存空間直接存取磁碟區、軟體定義的網路功能等等。 如需詳細資訊，請參閱＜[使用 Windows Admin Center 來管理超融合式基礎結構](use/manage-hyper-converged.md)＞|
+- **簡化伺服器管理** 使用現代化版本的熟悉工具 (例如伺服器管理員) 來管理您的伺服器和叢集。 不到五分鐘即可安裝完畢，並可立即管理您環境中的伺服器，而不需要其他設定。 如需詳細資訊，請參閱＜[什麼是 Windows Admin Center？](understand/what-is.md)＞。
+
+- **運用混合式解決方案** 與 Azure 整合可協助您選擇性地將內部部署伺服器與相關的雲端服務連接。 如需詳細資訊，請參閱＜[Azure 混合式服務](azure/index.md)＞
+
+- **簡化超融合式管理** 簡化 Azure Stack HCI 或 Windows Server 超融合式叢集的管理。 使用簡化的工作負載來建立和管理 VM、儲存空間直接存取磁碟區、軟體定義的網路功能等等。 如需詳細資訊，請參閱＜[使用 Windows Admin Center 來管理超融合式基礎結構](use/manage-hyper-converged.md)＞
 
 這裡有一段影片可讓您大致瞭解，接著是提供更多詳細資料的海報：
->[!VIDEO https://www.youtube.com/embed/WCWxAp27ERk]
+> [!VIDEO https://www.youtube.com/embed/WCWxAp27ERk]
 
 [![Windows Admin Center 海報](media/WAC1910Poster_thumb_small.PNG)](media/WAC1910Poster_thumb.png)
 
 [下載 PDF](https://github.com/MicrosoftDocs/windowsserverdocs/raw/master/WindowsServerDocs/manage/windows-admin-center/media/WindowsAdminCenter1910Poster.pdf)
-
 
 ## <a name="contents-at-a-glance"></a>內容簡介
 
@@ -184,6 +183,6 @@ Windows Admin Center 主要用於管理單一伺服器或叢集。 它補充但�
 
 ## <a name="stay-updated"></a>持續更新
 
-![](//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOolR)[在 Twitter 上關注我們](https://twitter.com/servermgmt)
+[在 Twitter 上關注我們](https://twitter.com/servermgmt)
 
-![](//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOtyw)[閱讀我們的部落格](https://techcommunity.microsoft.com/t5/windows-admin-center-blog/bg-p/Windows-Admin-Center-Blog)
+[閱讀我們的部落格](https://techcommunity.microsoft.com/t5/windows-admin-center-blog/bg-p/Windows-Admin-Center-Blog)
