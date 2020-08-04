@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.assetid: c6f36998-5b64-45d1-b1f0-0f0d6604dbe3
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 301541b42398ab517940af987e7ed6f3a7a54b0d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 204f6079b2d8a8c833afb8a32b4d0ac97ac0912f
+ms.sourcegitcommit: 3d56b626dc2d163d2c7847c01e872bfbfcde0e12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475545"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87538510"
 ---
 # <a name="whats-new-in-dhcp"></a>DHCP 的新功能
 
@@ -24,6 +24,12 @@ ms.locfileid: "85475545"
 DHCP 是一項網際網路工程任務推動小組（IETF）標準，其設計目的是為了降低在 TCP/IP \- 網路（例如私人內部網路）上設定主機的管理負擔和複雜度。 使用 DHCP 伺服器服務可以將 DHCP 用戶端設定 TCP/IP 的程序自動化。
 
 下列各節提供有關 DHCP 的新功能和功能變更的資訊。
+
+## <a name="new-dhcp-client-side-features-in-the-windows-10-may-2020-update"></a>Windows 10 中的新 DHCP 用戶端功能5月2020更新 
+
+Windows 10 中的 DHCP 用戶端已在10月2020更新（也稱為 Windows 10，版本2004）中更新。 當您執行 Windows 用戶端並透過行動網卡 Android 手機連線到網際網路時，應該將連線標示為「計量付費」。 先前，連線已標示為不按過的順序。 請注意，並非所有 Android 行動網卡電話都會以計量方式偵測到，而其他網路也可能會顯示為計量付費。
+
+此外，某些 Windows 裝置的傳統用戶端廠商名稱已經過更新。 這個值只是 MSFT 5.0。 有些裝置現在會顯示為 MSFT 5.0 XBOX。
 
 ## <a name="dhcp-subnet-selection-options"></a>DHCP 子網選擇選項
 
@@ -60,7 +66,7 @@ Windows Server 2008 的 DHCP 伺服器角色引進了 NAP 支援，windows 10 �
 
 如果執行 Windows Server 2016 的伺服器是 RADIUS proxy，將驗證要求轉送到支援 NAP 的網路原則伺服器 \( NPS \) ，這些 NAP 用戶端會由 NPS 評估為不支援 nap \- ，而 nap 處理會失敗。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [動態主機設定通訊協定 (DHCP)](Dynamic-Host-Configuration-Protocol--DHCP-.md)
 
