@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 92d8a47c4ac214faeac83ba8ff5a1a746bc8bdb3
-ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
+ms.openlocfilehash: da2970a8777ddcc95e2e8af0d979341965cb70ad
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86891383"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87518526"
 ---
 # <a name="what-is-windows-admin-center"></a>什麼是 Windows Admin Center？
 
@@ -23,7 +23,7 @@ Windows Admin Center 是在本機部署以瀏覽器為基礎的全新管理工�
 
 Windows Admin Center 是「隨附」管理工具 (例如伺服器管理員和 MMC) 的現代化演進。 與 System Center 相輔相成，而非加以取代。
 
-![](../media/wac-complements.png)
+![與其他解決方案搭配運作的 Windows Admin Center 圖表](../media/wac-complements.png)
 
 ## <a name="how-does-windows-admin-center-work"></a>Windows Admin Center 如何運作？
 
@@ -31,7 +31,7 @@ Windows Admin Center 在網頁瀏覽器中執行，並透過 Windows Server 或�
 
 將 Windows Admin Center 閘道發佈至 DNS 並授與通過對應公司防火牆的存取權時，此閘道可讓您隨處透過 Microsoft Edge 或 Google Chrome 安全地連線至伺服器並進行管理。
 
-![](../media/architecture.png)
+![Windows Admin Center 架構圖表](../media/architecture.png)
 
 ## <a name="learn-how-windows-admin-center-improves-your-management-environment"></a>了解 Windows Admin Center 如何改善您的管理環境
 
@@ -61,7 +61,7 @@ Windows Admin Center 有許多[與 Azure 服務整合](../plan/azure-integration
 
 ### <a name="deploy-hyper-converged-and-failover-clusters"></a>**部署超融合式和容錯移轉叢集**
 
-Windows Admin Center 可讓您透過簡單易用的精靈，[順暢地部署超融合式和容錯移轉叢集](../use/deploy-hyperconverged-infrastructure.md)。 
+Windows Admin Center 可讓您透過簡單易用的精靈，[順暢地部署超融合式和容錯移轉叢集](../use/deploy-hyperconverged-infrastructure.md)。
 
 ### <a name="manage-hyper-converged-clusters"></a>**管理超融合式叢集**
 

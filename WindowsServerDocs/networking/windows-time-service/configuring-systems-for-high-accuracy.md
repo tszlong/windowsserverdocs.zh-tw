@@ -8,12 +8,12 @@ ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 25472e4ba4837bd68c9b6914e22c2219c91d3ac0
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 71f15f9da1f477ec8632fd2eb900e650f83ef3de
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80861651"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409598"
 ---
 # <a name="configuring-systems-for-high-accuracy"></a>設定高準確度的系統
 >適用於：Windows Server 2016 與 Windows 10 版本 1607 或更新版本
@@ -23,7 +23,7 @@ Windows 10 和 Windows Server 2016 中的時間同步功能已大幅改善。  �
 下列指導方針可協助您設定系統以達到高準確度。  本文會討論下列需求：
 
 - 支援的作業系統
-- 系統設定 
+- 系統設定
 
 > [!WARNING]
 > **先前作業系統的準確度目標**<br>
@@ -61,8 +61,7 @@ Windows 10 和 Windows Server 2016 中的時間同步功能已大幅改善。  �
 
 ![時間拓撲 - 1607](../media/Windows-Time-Service/Configuring-Systems-for-High-Accuracy/Topology2016.png)
 
-
->[!TIP] 
+>[!TIP]
 >**判斷 Windows 版本**<br>
 > 您可以在命令提示字元中執行命令 `winver`，以確認作業系統版本是 1607 (或更新版本)，而 OS 組建是 14393 (或更新版本)，如下所示：
 >
@@ -93,78 +92,70 @@ Windows Time 服務 (W32Time) 必須持續執行。  若要這麼做，請將 Wi
 您可以使用收件匣 w32tm.exe 工具來取得此測量值。  若要這樣做：
 
 1. 從目標和時間伺服器 B 執行計算。
-    
+
     `w32tm /stripchart /computer:TimeServerB /rdtsc /samples:450 > c:\temp\Target_TsB.csv`
 
 2. 從時間伺服器 B 針對 (指向) 時間伺服器 A 執行計算。
-    
+
     `w32tm /stripchart /computer:TimeServerA /rdtsc /samples:450 > c:\temp\Target_TsA.csv`
 
 3. 從時間伺服器 A 針對來源執行計算。
- 
+
 4. 接下來，新增在上一個步驟中測量到的平均 RoundTripDelay，並除以 2 來取得目標和來源之間的累計網路延遲。
 
-#### <a name="registry-settings"></a>登錄設定
+## <a name="registry-settings"></a>登錄設定
 
-# <a name="minpollinterval"></a>[MinPollInterval](#tab/MinPollInterval)
+### <a name="minpollinterval"></a>MinPollInterval
+
 設定系統輪詢所允許的最小間隔 (以 log2 秒為單位)。
 
-|  |  | 
-|---------|---------|
-|機碼位置     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config        |
-|設定    | 6        |
-|結果 | 最小輪詢間隔現在是 64 秒。 |
+| 描述 | 值 |
+|--|--|
+| 機碼位置 | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config |
+| 設定 | 6 |
+| 結果 | 最小輪詢間隔現在是 64 秒。 |
 
-下列命令會指示 Windows Time 取得已更新的設定：
+下列命令會指示 Windows Time 取得已更新的設定：`w32tm /config /update`
 
-`w32tm /config /update`
+### <a name="maxpollinterval"></a>MaxPollInterval
 
-
-# <a name="maxpollinterval"></a>[MaxPollInterval](#tab/MaxPollInterval)
 設定系統輪詢所允許的最大間隔 (以 log2 秒為單位)。
 
-|  |  |  
-|---------|---------|
-|機碼位置     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config        |
-|設定    | 6        |
-|結果 | 最大輪詢間隔現在是 64 秒。  |
+| 描述 | 值 |
+|--|--|
+| 機碼位置 | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config |
+| 設定 | 6 |
+| 結果 | 最大輪詢間隔現在是 64 秒。 |
 
-下列命令會指示 Windows Time 取得已更新的設定：
+下列命令會指示 Windows Time 取得已更新的設定：`w32tm /config /update`
 
-`w32tm /config /update`
+### <a name="updateinterval"></a>UpdateInterval
 
-# <a name="updateinterval"></a>[UpdateInterval](#tab/UpdateInterval)
 每次相位校正調整所間隔的時鐘刻度數目。
 
-|  |  |  
-|---------|---------|
-|機碼位置     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config       |
-|設定    | 100        |
-|結果 | 每次相位校正調整所間隔的時鐘刻度數目是 100 刻度。 |
+| 描述 | 值 |
+|--|--|
+| 機碼位置 | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config |
+| 設定 | 100 |
+| 結果 | 每次相位校正調整所間隔的時鐘刻度數目是 100 刻度。 |
 
-下列命令會指示 Windows Time 取得已更新的設定：
+下列命令會指示 Windows Time 取得已更新的設定：`w32tm /config /update`
 
-`w32tm /config /update`
+### <a name="specialpollinterval"></a>SpecialPollInterval
 
-# <a name="specialpollinterval"></a>[SpecialPollInterval](#tab/SpecialPollInterval)
 設定啟用了 SpecialInterval 0x1 旗標時的輪詢間隔 (以秒為單位)。
 
-|  |  |  
-|---------|---------|
-|機碼位置     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient        |
-|設定    | 64        |
-|結果 | 輪詢間隔現在是 64 秒。 |
+| 描述 | 值 |
+|--|--|
+| 機碼位置 | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient |
+| 設定 | 64 |
+| 結果 | 輪詢間隔現在是 64 秒。 |
 
-下列命令會重新啟動 Windows Time 來取得已更新的設定：
+下列命令會重新啟動 Windows Time 來取得已更新的設定：`net stop w32time && net start w32time`
 
-`net stop w32time && net start w32time`
+### <a name="frequencycorrectrate"></a>FrequencyCorrectRate
 
-# <a name="frequencycorrectrate"></a>[FrequencyCorrectRate](#tab/FrequencyCorrectRate)
-
-|  |  |  
-|---------|---------|
-|機碼位置     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config      |
-|設定    | 2        |
-
-
----
+| 描述 | 值 |
+|--|--|
+| 機碼位置 | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config |
+| 設定 | 2 |

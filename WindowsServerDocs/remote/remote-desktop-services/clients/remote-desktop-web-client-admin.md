@@ -8,19 +8,19 @@ ms.date: 09/19/2019
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: a8521eae302ade84904e3ba09c001eac21fffd6a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 12ea9226a1656c6b3c800517818e5e950d142c64
+ms.sourcegitcommit: e86ea69254e2f63eaab10010ae3a43622156ab23
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77125149"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87470691"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>為您的使用者設定遠端桌面 Web 用戶端
 
 遠端桌面 Web 用戶端可讓使用者透過相容的網頁瀏覽器存取您的組織的遠端桌面基礎結構。 他們無論身在何處，都將能夠像在本機電腦上一樣與遠端應用程式或桌面互動。 在您設定遠端桌面 Web 用戶端後，您的使用者只需取得可用來存取用戶端、其認證和支援的網頁瀏覽器的 URL，即可展開作業。
 
 >[!IMPORTANT]
->Web 用戶端目前不支援使用 Azure 應用程式 Proxy，也完全不支援 Web 應用程式 Proxy。 如需詳細資訊，請參閱[搭配使用 RDS 與應用程式 Proxy 服務](../rds-supported-config.md#using-remote-desktop-services-with-application-proxy-services)。
+>Web 用戶端的確支援使用 Azure AD 應用程式 Proxy，但完全不支援 Web 應用程式 Proxy。 如需詳細資訊，請參閱[搭配使用 RDS 與應用程式 Proxy 服務](../rds-supported-config.md#using-remote-desktop-services-with-application-proxy-services)。
 
 ## <a name="what-youll-need-to-set-up-the-web-client"></a>設定 Web 用戶端時所需的項目
 
@@ -42,7 +42,7 @@ ms.locfileid: "77125149"
 >1. 開啟提升權限的 PowerShell 命令提示字元。
 >2. 執行 **Uninstall-Module RDWebClientManagement**，將新模組解除安裝。
 >3. 關閉並重新開啟提升權限的 PowerShell 命令提示字元。
->4. 執行 **Install-Module RDWebClientManagement -RequiredVersion \<舊版本>，以安裝舊模組。**
+>4. 執行 **Install-Module RDWebClientManagement -RequiredVersion \<old version>，以安裝舊模組。**
 >5. 執行 **Uninstall-RDWebClient**，將舊版 Web 用戶端解除安裝。
 >6. 執行 **Uninstall-Module RDWebClientManagement**，將舊模組解除安裝。
 >7. 關閉並重新開啟提升權限的 PowerShell 命令提示字元。

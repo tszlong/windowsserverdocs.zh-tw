@@ -1,17 +1,17 @@
 ---
-title: 適用於 Windows 的 OpenSSH 伺服器設定
-description: 使用 Windows 工具或 PowerShell 設定適用於 Windows 的 OpenSSH 伺服器。
+title: 管理 Windows 的 OpenSSH 金鑰
+description: 使用 Windows 工具或 PowerShell 管理 Windows 的 OpenSSH 伺服器金鑰。
 ms.date: 09/27/2018
 ms.topic: conceptual
 contributor: maertendMSFT
 author: maertendmsft
 ms.product: windows-server
-ms.openlocfilehash: 4acb7893f41207de045af7eeaea15efba8221f4a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: c400d1071b3905b06bd6b6104a810194186ba4cc
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469843"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87408867"
 ---
 # <a name="openssh-key-management"></a>OpenSSH 金鑰管理
 

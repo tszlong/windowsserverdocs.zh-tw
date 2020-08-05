@@ -7,14 +7,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 07/14/2020
+ms.date: 07/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e9449da93e52471d1f21c2b7079a8fed0415a03a
-ms.sourcegitcommit: e6becfd2266fd434b7994455c7782de36af4ff80
+ms.openlocfilehash: 41e4923d64ebacf606f01350a873f6dbce564b4c
+ms.sourcegitcommit: 42cd33c95645321d09d006ff2e7666d6370dfbc3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86377002"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87330814"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面用戶端的新功能
 
@@ -26,19 +26,20 @@ ms.locfileid: "86377002"
 
 |使用者群組 |版本  |
 |-----------|---------|
-|公用     |1.2.1104 |
-|Insider    |1.2.1185 |
+|公用     |1.2.1186 |
+|Insider    |1.2.1186 |
 
-## <a name="updates-for-version-121185"></a>1\.2.1185 版的更新
+## <a name="updates-for-version-121186"></a>1\.2.1186 版的更新
 
-*發行日期：* 2020/07/14
+*發行日期：2020/07/28*
 
-下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4B1Hr)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4B1Hs)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4B1Hq)
+下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4C7Qy)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4Ciex)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4C7Qx)
 
 - 您現在可以使用用戶端頂端命令列上的溢位功能表 ([ **...** ]) 選項，訂閱具有多個使用者帳戶的工作區。 為了區分工作區，工作區標題現在包含使用者名稱，如同所有應用程式捷徑標題一樣。
 - 將其他資訊新增至訂用帳戶錯誤訊息，以改善疑難排解功能。
 - 現在在重新整理期間，會保留工作區的摺疊/展開狀態。
 - 將 [**傳送診斷並關閉**] 按鈕，新增至 [**連線資訊**] 對話方塊中。
+- 已修正遠端工作階段中的 CTRL + SHIFT 鍵問題。
 
 ## <a name="updates-for-version-121104"></a>1\.2.1104 版的更新
 
