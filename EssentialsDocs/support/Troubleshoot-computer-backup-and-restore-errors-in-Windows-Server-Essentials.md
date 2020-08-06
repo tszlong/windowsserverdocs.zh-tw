@@ -7,12 +7,12 @@ ms.assetid: 5cc73aff-d2c0-4cf9-a23d-ef928ae5ddc9
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: cbc6fec843a55d99ba709953b56e01a55f317a62
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 933dab3e0471ef4b9d8e4f603a1c177ecc6fc70c
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409518"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838287"
 ---
 # <a name="troubleshoot-computer-backup-and-restore-errors-in-windows-server-essentials"></a>疑難排解 Windows Server Essentials 中的電腦備份與還原錯誤
 
@@ -21,13 +21,13 @@ ms.locfileid: "87409518"
 使用下列程序可疑難排解在 Windows Server Essentials 中的電腦備份，包括備份設定問題、不完整或不成功的備份、備份的健康情況警示，以及檔案、資料夾或完整系統還原的問題。
 
 > [!NOTE]
-> 如需 Windows Server Essentials 社區的最新疑難排解資訊，請造訪[Windows Server Essentials 論壇](https://docs.microsoft.com/answers/topics/windows-server-essentials.html)。
+> 如需 Windows Server Essentials 社區的最新疑難排解資訊，請造訪[Windows Server Essentials 論壇](/answers/topics/windows-server-essentials.html)。
 
 ## <a name="troubleshoot-backup-configuration-issues-for-a-connected-computer"></a>疑難排解連線電腦的備份設定問題
 
 使用這些程序可疑難排解在 Windows Server Essentials 伺服器上備份之電腦的備份設定問題。
 
-### <a name="errors"></a>錯誤
+### <a name="errors"></a>Errors
 
 - 備份設定未順利完成
 
@@ -73,7 +73,7 @@ ms.locfileid: "87409518"
 
 備份若處於不成功的狀態，則備份的所有部份都視為不成功，也沒有資料可供您還原。 不過，若備份處於不完整的狀態，則表示並非備份設定中指定的所有項目都已備份，但某些資料可能可供您還原。
 
-### <a name="errors"></a>錯誤
+### <a name="errors"></a>Errors
 
 - 備份不完整
 
@@ -131,7 +131,7 @@ ms.locfileid: "87409518"
 
 ## <a name="troubleshoot-backup-health-alert-issues"></a>疑難排解備份健康情況警示問題
 
-### <a name="errors"></a>錯誤
+### <a name="errors"></a>Errors
 
 - Windows Server Solutions Computer Backup Provider Service 停止運作
 
@@ -174,7 +174,7 @@ ms.locfileid: "87409518"
 
 ## <a name="troubleshoot-a-file-or-folder-restore"></a>疑難排解檔案或資料夾還原
 
-### <a name="errors"></a>錯誤
+### <a name="errors"></a>Errors
 
 - 檔案或資料夾還原未順利完成。
 
@@ -222,7 +222,7 @@ ms.locfileid: "87409518"
 
 ## <a name="troubleshoot-a-full-system-restore"></a>疑難排解完整系統還原
 
-### <a name="errors"></a>錯誤
+### <a name="errors"></a>Errors
 
 - 進行完整系統還原之後無法登入用戶端電腦。
 
@@ -240,6 +240,6 @@ ms.locfileid: "87409518"
 
 4. 再次將電腦連線到伺服器。 如需詳細資訊，請參閱[將電腦連線到伺服器](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [支援 Windows Server Essentials](Support-Windows-Server-Essentials.md)

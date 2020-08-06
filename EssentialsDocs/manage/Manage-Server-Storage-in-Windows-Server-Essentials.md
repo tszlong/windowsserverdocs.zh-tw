@@ -7,12 +7,12 @@ ms.assetid: 1836682e-c7bb-4dd5-a2b5-6ff032693574
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 861404db4d6b5e0d4cfd4db95056f583f9068a0b
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 0ee5669fc9ae6e1ee4e38065792d3da7611900a4
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180904"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837727"
 ---
 # <a name="manage-server-storage-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的伺服器存放裝置
 
@@ -55,9 +55,9 @@ ms.locfileid: "87180904"
 
 ### <a name="available-hard-drive-management-tasks"></a>可用的硬碟管理工作
 
-|任務名稱|說明|
+|任務名稱|描述|
 |---------------|-----------------|
-|**檢視硬碟屬性**|開啟 [_硬碟名稱 [_**屬性**] 頁面。 如果選取硬碟，便會顯示此工作。 **硬碟名稱** 屬性頁面的 [一般]** 索引標籤包含下列其他工作：<br /><br /> -   **磁片磁碟機清理**：可讓您清除硬碟上未使用的檔案（此工作僅適用于 Windows Server Essentials）。<br />-   **檢查並修復**：檢查硬碟的檔案系統錯誤，並嘗試自動修復偵測到的錯誤。<br /><br /> [_硬碟名稱 [_**屬性**] 頁面的 [**陰影複製**] 索引標籤可讓您啟用陰影複製。 此索引標籤也會顯示已排定的陰影複製下次執行時間。|
+|**檢視硬碟屬性**|開啟 [_硬碟名稱 [_**屬性**] 頁面。 如果選取硬碟，便會顯示此工作。 **硬碟名稱** 屬性頁面的 [一般]** 索引標籤包含下列其他工作：<br /><br /> -   **磁片磁碟機清理**：可讓您清除硬碟上未使用的檔案 (此工作僅適用于 Windows Server Essentials) 。<br />-   **檢查並修復**：檢查硬碟的檔案系統錯誤，並嘗試自動修復偵測到的錯誤。<br /><br /> [_硬碟名稱 [_**屬性**] 頁面的 [**陰影複製**] 索引標籤可讓您啟用陰影複製。 此索引標籤也會顯示已排定的陰影複製下次執行時間。|
 |**管理儲存空間**|**注意：** 對於 Windows Server Essentials，只有在有現有的儲存空間時，才會顯示此工作。<br /><br /> 開啟 **[儲存空間]** 控制台，您可以從中建立並管理儲存集區與儲存空間。|
 |**建立儲存空間**|開啟 [建立儲存空間精靈]，這可讓您使用一或多個硬碟以增加儲存集區容量。|
 |**增加儲存集區容量**|**注意：** 只有當選取的硬碟位於儲存空間時，才會顯示此工作。<br /><br /> 開啟 [增加儲存集區容量精靈]，這可讓您使用一或多個硬碟以增加儲存集區容量。|
@@ -142,7 +142,7 @@ ms.locfileid: "87180904"
    2.  若要移動伺服器資料夾，請選取您要移動到新硬碟的資料夾，然後按一下 [移動資料夾]****。
 
    > [!NOTE]
-   >  如果您流覽至硬碟並將其選取為伺服器資料夾位置而不建立資料夾，則會出現下列錯誤訊息：**無法將根目錄（例如 C： \\ 、D： \\ ）新增為伺服器資料夾。建立新的資料夾，或在根目錄下選取現有的資料夾，然後再試一次**。 若要解決這個錯誤，請在新加入的硬碟中建立新資料夾，然後選取新資料夾做為儲存伺服器資料夾的位置。
+   >  如果您流覽至硬碟並將其選取為伺服器資料夾位置而不建立資料夾，則會出現下列錯誤訊息：**無法將根目錄 (例如 C： \\ 、D： \\) 新增為伺服器資料夾。建立新的資料夾，或在根目錄下選取現有的資料夾，然後再試一次**。 若要解決這個錯誤，請在新加入的硬碟中建立新資料夾，然後選取新資料夾做為儲存伺服器資料夾的位置。
 
 4. 遵循指示以完成精靈。
 
@@ -193,7 +193,7 @@ ms.locfileid: "87180904"
 > [!NOTE]
 >  如果您在執行 Windows Server Essentials 的伺服器上設定儲存空間，則無法使用 [**清除資料**] 選項恢復出廠預設值。 此問題的因應措施是先移除儲存空間，然後使用 [清除資料]**** 選項恢復出廠預設值。
 
- 如需儲存空間的詳細資訊，請參閱 [儲存空間常見問題集 (FAQ)](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-faq)。
+ 如需儲存空間的詳細資訊，請參閱 [儲存空間常見問題集 (FAQ)](/windows-server/storage/storage-spaces/storage-spaces-direct-faq)。
 
 ##  <a name="create-a-storage-space"></a><a name="BKMK_6"></a>建立儲存空間
  若要開始使用伺服器上的儲存空間，必須符合下列最低需求：
@@ -231,7 +231,7 @@ ms.locfileid: "87180904"
 
    如需增加儲存集區容量的相關資訊，請參閱 [Use the new hard drive to increase storage pool capacity](Manage-Server-Storage-in-Windows-Server-Essentials.md#BKMK_4c)。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [管理伺服器資料夾](Manage-Server-Folders-in-Windows-Server-Essentials.md)
 

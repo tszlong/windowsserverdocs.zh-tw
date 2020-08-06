@@ -7,12 +7,12 @@ ms.assetid: f3ea40fa-b6ba-4d66-b754-221ca6271387
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 56bfd8d9860ad571265980e859a09914fb4f1b9c
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 094e5914fee1c5d2a1b6f3c68621fa81b96f21c0
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180934"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837777"
 ---
 # <a name="manage-remote-web-access-in-windows-server-essentials"></a>在 Windows Server Essentials 中管理遠端 Web 存取
 
@@ -82,7 +82,7 @@ ms.locfileid: "87180934"
 
 1.  在連線到 Windows Server Essentials 的電腦上，開啟 [儀表板]。
 
-2.  按一下 [設定] 。
+2.  按一下 [設定]。
 
 3.  在 [一般]**** 索引標籤上，按一下 [伺服器的國家/地區位置]**** 區段中的下拉式清單。
 
@@ -151,7 +151,7 @@ ms.locfileid: "87180934"
 > [!NOTE]
 > 您的網路設定應該要符合 Windows Server Essentials 支援的網路需求。 您的網路上應該只有一個路由器。
 
- 如果路由器不是透過 [設定您的網域名稱精靈] 進行設定，您必須手動轉送連接埠 443。 如需如何在路由器上設定埠轉送的詳細資訊，請參閱[Small Business Server 論壇](https://docs.microsoft.com/answers/topics/windows-small-business-server.html)。
+ 如果路由器不是透過 [設定您的網域名稱精靈] 進行設定，您必須手動轉送連接埠 443。 如需如何在路由器上設定埠轉送的詳細資訊，請參閱[Small Business Server 論壇](/answers/topics/windows-small-business-server.html)。
 
 ###  <a name="replace-a-router"></a><a name="BKMK_ReplaceRouter"></a>取代路由器
  根據製造商的指示更換路由器，然後執行 [設定您的路由器] 嚮導來設定新的路由器。
@@ -231,9 +231,9 @@ ms.locfileid: "87180934"
 ###  <a name="understand-microsoft-personalized-domain-names"></a><a name="BKMK_PersonalizedNames"></a>瞭解 Microsoft 個人化功能變數名稱
  Microsoft 個人化網域名稱包含下列特色：
 
-- 遠端 Web 存取的自訂功能變數名稱（例如， *yourhostname*. remotewebaccess.com）。 您的網域名稱會與公用 IP 位址關聯。
+- 遠端 Web 存取的自訂功能變數名稱 (例如， *yourhostname*. remotewebaccess.com) 。 您的網域名稱會與公用 IP 位址關聯。
 
-- DNS 動態更新通訊協定服務，如果您的公用 IP 位址變更，則不會中斷使用功能變數名稱的遠端 Web 存取。 一般而言，貴組織寬頻連線的網際網路服務提供者（Isp）會提供可變更的動態公用 IP 位址。
+- DNS 動態更新通訊協定服務，如果您的公用 IP 位址變更，則不會中斷使用功能變數名稱的遠端 Web 存取。 一般來說，網際網路服務提供者 (Isp) 為貴組織的寬頻連線提供可變更的動態公用 IP 位址。
 
 - 一個與網域名稱關聯的受信任憑證。
 
@@ -297,7 +297,7 @@ ms.locfileid: "87180934"
 >  建議您使用預設的 **Remote** 做為您網域名稱的前置碼。
 
 ###  <a name="choose-a-domain-name-extension"></a><a name="BKMK_Extension"></a>選擇功能變數名稱擴充功能
- 當您為網際網路網站選擇網域名稱時，您也需要指定您想要使用的網域名稱延伸。 延伸是由任何網域名稱最後一個句點後面的字母來識別。 （延伸模組的正式詞彙是最上層網域或 TLD）。
+ 當您為網際網路網站選擇網域名稱時，您也需要指定您想要使用的網域名稱延伸。 延伸是由任何網域名稱最後一個句點後面的字母來識別。  (延伸模組的正式詞彙是最上層網域或 TLD。 ) 
 
  您可以使用的網域延伸主要有兩種類型：一般和國碼 (地區碼)。
 
@@ -356,7 +356,7 @@ ms.locfileid: "87180934"
 
 1.  決定主機名稱，例如 [遠端]。 這是網域名稱首碼。 功能變數名稱前置詞加上您的功能變數名稱會定義用來開啟遠端 Web 存取登入頁面的 URL;例如， **http://remote.contoso.com** 。
 
-2.  在您的功能變數名稱服務提供者設定儀表板（通常在其網頁上）中，為您在步驟1中決定的主機名稱建立 A 記錄。 請確定您在 A 記錄中指定的 IP 位址是路由器 WAN 端的 IP 位址（網際網路面向端）。 請參閱您的路由器文件，找出您的 WAN IP 位址。
+2.  在您的功能變數名稱服務提供者設定儀表板 (通常會在其網頁) 上，為您在步驟1中決定的主機名稱建立 A 記錄。 請確定您在 A 記錄中指定的 IP 位址是路由器的 WAN 端上的 IP 位址， (網際網路面向的端) 。 請參閱您的路由器文件，找出您的 WAN IP 位址。
 
 3.  建議向您的網際網路服務提供者 (ISP) 購買網路的靜態 IP 位址。 這可確保 IP 位址不會變更，而且您的 DNS 項目不會過時。
 
@@ -415,7 +415,7 @@ ms.locfileid: "87180934"
 #### <a name="image-file-types"></a>影像檔類型
  下列影像檔類型可用來取代預設背景和網站標誌：
 
--   Bitmap （* .bmp、 \* .dib、 \* rle）
+-   點陣圖 ( * .bmp、 \* .dib、 \* rle) 
 
 -   GIF (*.gif)
 
@@ -441,7 +441,7 @@ ms.locfileid: "87180934"
 
 3.  按一下 [修復]****。 [修復遠端 Web 存取]**** 精靈隨即啟動。
 
-4.  按 [下一步]  。 精靈會分析「遠端 Web 存取」、識別問題所在，然後嘗試修復該問題。
+4.  按 [下一步] 。 精靈會分析「遠端 Web 存取」、識別問題所在，然後嘗試修復該問題。
 
 5.  如果您在精靈完成時收到警示，您可以按一下 [重試]**** 來重新嘗試修復問題。 如果您持續收到警示，請查看警示以了解問題和疑難排解步驟的其他相關資訊。
 
@@ -453,7 +453,7 @@ ms.locfileid: "87180934"
 
 -   [疑難排解隨處存取](../support/Troubleshoot-Anywhere-Access-in-Windows-Server-Essentials.md)
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [遠端桌面選項](Remote-desktop-options.md)
 

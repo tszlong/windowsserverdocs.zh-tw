@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/15/2020
 ms.assetid: 12bc8e11-d63c-4aef-8129-f92324b2bf1b
-ms.openlocfilehash: 170d023f0548ca9f01ce9575b18563d4a55d2c78
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 04477ac9d7aa7905a4d5fc4dd58c7891c91f5baf
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182374"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769696"
 ---
 # <a name="frequently-asked-questions-about-storage-replica"></a>儲存體複本的常見問題集
 
@@ -22,12 +22,13 @@ ms.locfileid: "87182374"
 本主題包含關於「儲存體複本」的常見問題集 (FAQ) 解答。
 
 ## <a name="is-storage-replica-supported-on-azure"></a><a name="FAQ1"></a>Azure 上是否支援儲存體複本？
+
 是。 您可以搭配 Azure 使用下列案例：
 
-1. Azure 內的伺服器對伺服器複寫（一或兩個資料中心容錯網域中的 IaaS Vm 同步或非同步），或兩個不同區域之間的非同步複寫
-2. Azure 和內部部署之間的伺服器對伺服器非同步複寫（使用 VPN 或 Azure ExpressRoute）
-3. Azure 內的叢集對叢集複寫（一或兩個資料中心容錯網域中的 IaaS Vm 同步或非同步），或兩個不同區域之間的非同步複寫
-4. Azure 和內部部署之間的叢集對叢集非同步複寫（使用 VPN 或 Azure ExpressRoute）
+1. Azure 內的伺服器對伺服器複寫會在一或兩個資料中心容錯網域中的 IaaS Vm 之間同步或非同步 (，或在兩個不同的區域之間以非同步方式進行) 
+2. 使用 VPN 或 Azure ExpressRoute) 的 Azure 與內部部署 (之間的伺服器對伺服器非同步複寫
+3. Azure 內部的叢集對叢集複寫會在一或兩個資料中心容錯網域中的 IaaS Vm 之間同步或非同步 (，或在兩個不同的區域之間以非同步方式進行) 
+4. 使用 VPN 或 Azure ExpressRoute) 的 Azure 與內部部署 (之間的叢集對叢集非同步複寫
 
 如需 Azure 中來賓叢集的進一步注意事項，請參閱：[在 Microsoft Azure 中部署 IAAS VM 來賓](https://techcommunity.microsoft.com/t5/Failover-Clustering/Deploying-IaaS-VM-Guest-Clusters-in-Microsoft-Azure/ba-p/372126)叢集。
 
@@ -35,7 +36,7 @@ ms.locfileid: "87182374"
 
 1. Azure 不支援共用 VHDX 來賓叢集，因此 Windows 容錯移轉叢集虛擬機器必須針對傳統共用儲存體的持續性磁片保留叢集或儲存空間直接存取使用 iSCSI 目標。
 2. 在[建立儲存空間直接存取 SOFS 叢集與儲存體複本，以在跨 Azure 區域進行](https://aka.ms/azure-storage-replica-cluster)嚴重損壞修復時，儲存空間直接存取型儲存體複本叢集有 Azure Resource Manager 範本。
-3. Azure 中的叢集對叢集 RPC 通訊（叢集 Api 所需，以授與叢集之間的存取權）需要設定 CNO 的網路存取。 您必須允許 TCP 埠135和 TCP 埠49152以上的動態範圍。 [在 AZURE IAAS VM 上建立 Windows Server 容錯移轉叢集的參考–第2部分網路和建立](/archive/blogs/askcore/building-windows-server-failover-cluster-on-azure-iaas-vm-part-2-network-and-creation)。
+3. 在 Azure 中，叢集對叢集的 RPC 通訊 (叢集 Api 需要用來授與叢集) 之間的存取權，需要設定 CNO 的網路存取權。 您必須允許 TCP 埠135和 TCP 埠49152以上的動態範圍。 [在 AZURE IAAS VM 上建立 Windows Server 容錯移轉叢集的參考–第2部分網路和建立](/archive/blogs/askcore/building-windows-server-failover-cluster-on-azure-iaas-vm-part-2-network-and-creation)。
 4. 您可以使用雙節點的來賓叢集，其中每個節點都會針對儲存體複本所複寫的非對稱叢集使用回送 iSCSI。 但這可能會有非常不佳的效能，而且應該僅用於非常有限的工作負載或測試。
 
 ## <a name="how-do-i-see-the-progress-of-replication-during-initial-sync"></a><a name="FAQ2"></a>如何? 在初始同步期間查看複寫的進度嗎？
@@ -77,9 +78,11 @@ Update-SmbMultichannelConnection
 
 在延展式叢集上設定網路限制式：
 
-    Set-SRNetworkConstraint -SourceComputerName sr-cluster01 -SourceRGName group1 -SourceNWInterface "Cluster Network 1","Cluster Network 2" -DestinationComputerName sr-cluster02 -DestinationRGName group2 -DestinationNWInterface "Cluster Network 1","Cluster Network 2"
+```
+Set-SRNetworkConstraint -SourceComputerName sr-cluster01 -SourceRGName group1 -SourceNWInterface "Cluster Network 1","Cluster Network 2" -DestinationComputerName sr-cluster02 -DestinationRGName group2 -DestinationNWInterface "Cluster Network 1","Cluster Network 2"
+```
 
-## <a name="can-i-configure-one-to-many-replication-or-transitive-a-to-b-to-c-replication"></a><a name="FAQ4"></a>是否可以設定一對多複寫或可轉移（A 到 B 到 C）複寫？
+## <a name="can-i-configure-one-to-many-replication-or-transitive-a-to-b-to-c-replication"></a><a name="FAQ4"></a>我可以設定一對多複寫或可轉移 (A 到 C) 複寫嗎？
 否，儲存體複本僅支援伺服器、叢集或延展叢集節點的一對一複寫。 這可能會在未來版本中變更。 當然，您可以設定特定磁碟區組的各種伺服器間任一方向的複寫。 例如，伺服器 1 可以將其 D 磁碟區複寫到伺服器 2，並從伺服器 3 複寫其 E 磁碟區。
 
 ## <a name="can-i-grow-or-shrink-replicated-volumes-replicated-by-storage-replica"></a><a name="FAQ5"></a>我是否可以增加或縮減「儲存體複本」所複寫的複寫磁碟區？
@@ -106,13 +109,13 @@ Update-SmbMultichannelConnection
 
 您只能將測試容錯移轉功能用於短期暫時作業。 此功能並不適合長期使用。 使用時，複寫會持續對實際目的地磁碟區進行。
 
-## <a name="can-i-configure-scale-out-file-server-sofs-in-a-stretch-cluster"></a><a name="FAQ7"></a>我可以在延展式叢集中設定向外延展檔案伺服器（SOFS）嗎？
+## <a name="can-i-configure-scale-out-file-server-sofs-in-a-stretch-cluster"></a><a name="FAQ7"></a>我可以在延展式叢集中設定向外延展檔案伺服器 (SOFS) 嗎？
 在技術上可行的情況下，這不是建議的設定，因為在計算節點中缺少網站感知，以聯絡 SOFS。 如果使用校園網路，其中延遲通常是毫秒，則此設定通常會運作而不會發生問題。
 
 如果設定叢集對叢集複寫，在兩個叢集之間進行複寫時，「儲存體複本」可完全支援「向外延展檔案伺服器」，包括使用「儲存空間直接存取」。
 
 ## <a name="is-csv-required-to-replicate-in-a-stretch-cluster-or-between-clusters"></a><a name="FAQ7.5"></a>CSV 是否需要在延展叢集或叢集之間進行複寫？
-不可以。 您可以使用叢集資源所擁有的 CSV 或持續性磁片保留（PDR）（例如檔案伺服器角色）進行複寫。
+否。 您可以使用 CSV 或持續性磁片保留進行複寫 (PDR) 由叢集資源所擁有，例如檔案伺服器角色。
 
 如果設定叢集對叢集複寫，在兩個叢集之間進行複寫時，「儲存體複本」可完全支援「向外延展檔案伺服器」，包括使用「儲存空間直接存取」。
 
@@ -127,6 +130,7 @@ Update-SmbMultichannelConnection
 若要防止自動容錯移轉，您可以使用 PowerShell 來設定 `Get-ClusterNode -Name "NodeName").NodeWeight=0`。 這將會在災害復原網站中移除每個節點上的投票。 接著，您可以在主要網站的節點上使用 `Start-ClusterNode -PreventQuorum`，以及在災害網站的節點上使用 `Start-ClusterNode -ForceQuorum`，以強制執行容錯移轉。 沒有任何圖形化選項可防止自動容錯移轉，且不建議防止自動容錯移轉。
 
 ## <a name="how-do-i-disable-virtual-machine-resiliency"></a><a name="FAQ11"></a>如何停用虛擬機器復原功能？
+
 若要防止新的 Hyper-v 虛擬機器復原功能執行，因而暫停虛擬機器，而不是將它們容錯移轉至損毀修復網站，請執行`(Get-Cluster).ResiliencyDefaultPeriod=0`
 
 ## <a name="how-can-i-reduce-time-for-initial-synchronization"></a><a name="FAQ12"></a>如何縮短初始同步處理的時間？
@@ -143,53 +147,74 @@ Update-SmbMultichannelConnection
 
 您可以使用 `Grant-SRDelegation` Cmdlet。 這可讓您在伺服器對伺服器、叢集對叢集及延展式複寫案例中設定特定使用者，就像擁有建立、修改或移除複寫的權限，而不需是本機系統管理員群組的成員。 例如：
 
-    Grant-SRDelegation -UserName contso\tonywang
+```
+Grant-SRDelegation -UserName contso\tonywang
+```
 
 這個 Cmdlet 將提醒您，使用者必須登出，然後登入其正準備進行管理的伺服器，以便讓變更生效。 您可以使用 `Get-SRDelegation` 和 `Revoke-SRDelegation` 進一步控制此動作。
 
 ## <a name="what-are-my-backup-and-restore-options-for-replicated-volumes"></a><a name="FAQ13"></a>複寫磁片區的備份與還原選項有哪些？
+
 「儲存體複本」支援備份及還原來源磁碟區。 它也支援建立及還原來源磁碟區的快照。 您無法在目的地磁碟區受到「儲存體複本」保護時備份或還原該磁碟區，因為它並未掛接，也無法存取。 如果您遇到來源磁碟區遺失的災害時，使用 `Set-SRPartnership` 將前一個目的地磁碟區立即升級為讀取/可寫入來源，將可讓您備份或還原該磁碟區。 您也可以使用 `Remove-SRPartnership` 和 `Remove-SRGroup` 來移除複寫，以重新掛接該磁碟區做為讀取/可寫入來源。
+
 若要定期建立應用程式一致快照，您可以在來源伺服器上使用 VSSADMIN.EXE 以建立複寫資料磁碟區的快照。 例如，您正在其中使用「儲存體複本」來複寫 F: 磁碟區：
 
-    vssadmin create shadow /for=F:
+```
+vssadmin create shadow /for=F:
+```
+
 接著，在您切換複寫方向、移除複寫，或者就只是仍位於相同來源磁碟機之後，您可以將任何快照還原到它的時間點。 例如，仍然使用 F：
 
-    vssadmin list shadows
-     vssadmin revert shadow /shadow={shadown copy ID GUID listed previously}
+```
+vssadmin list shadows
+vssadmin revert shadow /shadow={shadown copy ID GUID listed previously}
+```
+
 您也可以使用排程的工作，定期排程此工具來執行。 如需使用 VSS 的詳細資訊，請檢閱 [Vssadmin](../../administration/windows-commands/vssadmin.md)。 備份記錄檔磁碟區時沒有任何需要或值。 嘗試這麼做時，VSS 將會加以忽略。
+
 使用 Windows Server Backup、Microsoft Azure 備份、Microsoft DPM 或其他快照，只要 VSS、虛擬機器或以檔案為基礎的技術是在磁碟區層內運作，就受到「儲存體複本」所支援。 「儲存體複本」不支援以區塊為基礎的備份及還原。
 
 ## <a name="can-i-configure-replication-to-restrict-bandwidth-usage"></a><a name="FAQ14"></a>我可以設定複寫來限制頻寬使用量嗎？
+
 是，可透過 SMB 頻寬限制器來設定。 這是適用於所有「儲存體複本」流量的全域設定，因此會影響所有來自此伺服器的複寫。 一般而言，只有使用「儲存體複本」初始同步設定時才需要此項，而其中的所有磁碟區資料都必須傳輸。 如果在初始同步之後需要執行此動作，您的網路頻寬對 IO 工作負載而言就會過低；請減少 IO 或增加頻寬。
 
 這應該只能用於非同步複寫 (注意︰初始同步一律是非同步，即使您已指定同步也一樣)。
 您也可以使用網路 QoS 原則，來為 「儲存體複本」流量塑型。 使用高度相符的植入「儲存體複本」複寫，也會大幅降低整體初始同步的頻寬使用量。
 
-
 若要設定頻寬限制，請使用：
 
-    Set-SmbBandwidthLimit  -Category StorageReplication -BytesPerSecond x
+```
+Set-SmbBandwidthLimit  -Category StorageReplication -BytesPerSecond x
+```
 
 若要查看頻寬限制，請使用：
 
-    Get-SmbBandwidthLimit -Category StorageReplication
+```
+Get-SmbBandwidthLimit -Category StorageReplication
+```
 
 若要移除頻寬限制，請使用：
 
-    Remove-SmbBandwidthLimit -Category StorageReplication
+```
+Remove-SmbBandwidthLimit -Category StorageReplication
+```
 
 ## <a name="what-network-ports-does-storage-replica-require"></a><a name="FAQ15"></a>儲存體複本需要哪些網路連接埠？
+
 儲存體複本依賴 SMB 和 WSMAN 的複寫和管理。 這表示需要下列連接埠：
 
- 445（SMB 複寫傳輸通訊協定，叢集 RPC 管理通訊協定）5445（iWARP SMB-只有在使用 iWARP RDMA 網路時才需要）5985（WMI/CIM/PowerShell 的 WSManHTTP 管理通訊協定）
+- 445 (SMB 複寫傳輸通訊協定，叢集 RPC 管理通訊協定) 
+- 5445 (iWARP SMB-只有在使用 iWARP RDMA 網路時才需要) 
+- 5985 (WMI/CIM/PowerShell) 的 WSManHTTP 管理通訊協定
 
-注意：Test-SRTopology cmdlet 需要 ICMPv4/ICMPv6，但不適用於複寫或管理。
+> !下Test-srtopology Cmdlet 需要 ICMPv4/ICMPv6，但無法進行複寫或管理。
 
 ## <a name="what-are-the-log-volume-best-practices"></a><a name="FAQ15.5"></a>有哪些記錄檔磁碟區最佳做法？
+
 記錄檔的最佳大小在每個環境和工作負載上都有很大的差異，並取決於您的工作負載執行多少寫入 IO。
 
-1.  較大或較小的記錄檔不會讓您更快或更慢
-2.  較大或較小的記錄檔與10TB 的資料量（例如
+1. 較大或較小的記錄檔不會讓您更快或更慢
+2. 較大或較小的記錄檔與10TB 的資料量（例如
 
 較大的記錄檔只是在換出寫滿的資料之前收集和保留較多寫入 IO 而已。這可能會讓來源與目的地電腦之間發生的服務中斷 (例如網路斷線或目的地離線) 持續得更久。 如果記錄檔可以保留 10 小時的寫入，而網路中斷了 2 小時，當網路回復時，來源可以簡單地重新執行未同步的變更，非常迅速地將目的地的落差補足，您也很快地重新受到保護。 如果記錄檔保留 10 小時寫入而斷線了 2 天，來源現在則必須從不同的記錄檔 (稱為點陣圖) 開始重新執行，很可能較慢恢復到同步狀態。一旦進入同步狀態，就會回復使用原本的記錄檔。
 
@@ -197,16 +222,17 @@ Update-SmbMultichannelConnection
 
 再說一次：Microsoft 強烈建議記錄檔儲存體必須比資料儲存體更快速，而且記錄磁碟區絕不能用於其他工作負載。
 
-您可以執行 Test-srtopology 工具來取得記錄大小的建議。 或者，您可以使用現有伺服器上的效能計數器，讓記錄檔大小 judgement。 此公式很簡單：監視工作負載下的資料磁片輸送量（Avg Write Bytes/Sec），並用它來計算填滿不同大小之記錄檔所需的時間量。 例如，50 MB/s 的資料磁片輸送量會導致120GB 的記錄以 120GB/50MB 秒或2400秒或40分鐘來包裝。 因此，在記錄檔包裝在40分鐘之前，目的地伺服器可能無法連線的時間量。 如果記錄檔已包裝，但目的地再次可連線，則來源會透過位對應記錄來重新執行區塊，而不是主記錄檔。 記錄檔的大小不會影響效能。
+您可以執行 Test-srtopology 工具來取得記錄大小的建議。 或者，您可以使用現有伺服器上的效能計數器，讓記錄檔大小 judgement。 此公式很簡單：監視資料磁片輸送量 (工作負載下的 Avg Write Bytes/Sec) ，並用它來計算填滿不同大小之記錄所需的時間量。 例如，50 MB/s 的資料磁片輸送量會導致120GB 的記錄以 120GB/50MB 秒或2400秒或40分鐘來包裝。 因此，在記錄檔包裝在40分鐘之前，目的地伺服器可能無法連線的時間量。 如果記錄檔已包裝，但目的地再次可連線，則來源會透過位對應記錄來重新執行區塊，而不是主記錄檔。 記錄檔的大小不會影響效能。
 
 只應備份來源叢集的資料磁片。 儲存體複本記錄檔磁片不應進行備份，因為備份可能會與儲存體複本作業發生衝突。
 
 ## <a name="why-would-you-choose-a-stretch-cluster-versus-cluster-to-cluster-versus-server-to-server-topology"></a><a name="FAQ16"></a>您選擇延展式叢集、叢集對叢集或伺服器對伺服器拓撲會有不同原因，差異何在？
+
 儲存體複本有三個主要設定：延展叢集、叢集對叢集，以及伺服器對伺服器。 各有不同的優點。
 
 延展式叢集拓撲非常適合需要可透過協調流程自動容錯移轉的工作負載，例如 Hyper-V 私人雲端叢集和 SQL Server FCI。 其中也有使用 [容錯移轉叢集管理員] 的內建圖形介面。 透過持續保留使用 [儲存空間]、SAN、iSCSI 及 RAID 的傳統非對稱式叢集共用存放架構。 您只使用 2 個節點就可以執行這種拓撲。
 
-叢集對叢集拓撲使用兩個不同的叢集，非常適合需要手動容錯移轉的系統管理員，尤其是在佈建第二網站作災害復原之用，而非日常使用時。 協調流程為手動。 不同于延展叢集，儲存空間直接存取可以在此設定中使用（有警告-請參閱儲存體複本常見問題和叢集對叢集檔）。 您只使用 4 個節點就可以執行這種拓撲。
+叢集對叢集拓撲使用兩個不同的叢集，非常適合需要手動容錯移轉的系統管理員，尤其是在佈建第二網站作災害復原之用，而非日常使用時。 協調流程為手動。 與延展叢集不同的是，儲存空間直接存取可以在此設定 (中使用，但請參閱儲存體複本常見問題和叢集對叢集檔) 。 您只使用 4 個節點就可以執行這種拓撲。
 
 伺服器對伺服器拓撲非常適合執行無法納入叢集之硬體的客戶。 這需要手動容錯移轉及協調流程。 這適用于分公司與中央資料中心之間的便宜部署，特別是在使用非同步複寫時。 此設定通常可以取代用於單一主機災害復原案例之受 DFSR 保護的檔案伺服器執行個體。
 
@@ -218,19 +244,21 @@ Update-SmbMultichannelConnection
 
 是，儲存體複本支援資料 Deduplcation。 在來源伺服器上的磁片區上啟用重復資料刪除，而在複寫期間，目的地伺服器會收到磁片區的重復資料刪除複本。
 
-雖然您應該同時在來源和目的地伺服器上*安裝*重復資料刪除（請參閱[安裝和啟用重復資料刪除](../data-deduplication/install-enable.md)），但請務必不要在目的地伺服器上*啟用*重復資料刪除。 儲存體複本只允許來源伺服器上的寫入。 因為重復資料刪除會對磁片區進行寫入，所以它只能在來源伺服器上執行。
+雖然您應該同時在來源與目的地伺服器上*安裝*重復資料刪除 (參閱[安裝和啟用重復資料刪除](../data-deduplication/install-enable.md)) ，但請務必不要在目的地伺服器上*啟用*重復資料刪除。 儲存體複本只允許來源伺服器上的寫入。 因為重復資料刪除會對磁片區進行寫入，所以它只能在來源伺服器上執行。
 
 ## <a name="can-i-replicate-between-windows-server-2019-and-windows-server-2016"></a><a name="FAQ19"></a>我可以在 Windows Server 2019 和 Windows Server 2016 之間進行複寫嗎？
 
 可惜的是，我們不支援在 Windows Server 2019 和 Windows Server 2016 之間建立*新*的合作關係。 您可以將執行 Windows Server 2016 的伺服器或叢集安全地升級至 Windows Server 2019，任何*現有*的合作關係將會繼續運作。
 
-不過，若要取得 Windows Server 2019 的改良複寫效能，合作關係的所有成員都必須執行 Windows Server 2019，而且您必須刪除現有的合作關係和相關聯的複寫群組，然後再以植入的資料重新建立（在 Windows 管理中心或使用 Get-srpartnership 指令程式建立合作關係時）。
+不過，若要取得 Windows Server 2019 的改良複寫效能，合作關係的所有成員都必須執行 Windows Server 2019，而且您必須先刪除現有的合作關係和相關聯的複寫群組，然後使用植入的資料來重新建立， (在 Windows 系統管理中心或 Get-srpartnership Cmdlet) 。
 
 ## <a name="how-do-i-report-an-issue-with-storage-replica-or-this-guide"></a><a name="FAQ17"></a>如何? 報告儲存體複本或本指南的問題嗎？
+
 如需儲存體複本的技術協助，您可以在[Microsoft 論壇](https://docs.microsoft.com/answers/index.html)張貼文章。 您也可以透過電子郵件，將「儲存體複本」相關問題或與此文件的相關問題寄送到 srfeed@microsoft.com。 [Windows Server 一般意見反應網站](https://windowsserver.uservoice.com/forums/295047-general-feedback)慣用於設計變更要求，因為它可讓您的客戶為您的想法提供支援和意見反應。
 
 ## <a name="can-storage-replica-be-configured-to-replicate-in-both-directions"></a><a name="FAQ18"></a>儲存體複本是否可以設定為雙向複寫？
-儲存體複本是單向複寫技術。  它只會將每個磁片區從來源複製到目的地。  這個方向可以隨時反轉，但仍然只能在單一方向。  不過，這並不表示您不能將一組磁片區（來源和目的地）以一個方向複寫，而一組不同的磁片磁碟機（來源和目的地）會以相反方向進行複寫。  例如，您想要設定伺服器對伺服器複寫。  Server1 和 Server2 各有磁碟機號 L：、M：、N：和 O：，而且您想要將磁片磁碟機 M：從 Server1 複寫到 Server2，但磁片磁碟機 O：從 Server2 複寫到 Server1。  只要每個群組都有個別的記錄磁片磁碟機，就可以完成這項作業。 亦即.
+
+儲存體複本是單向複寫技術。  它只會將每個磁片區從來源複製到目的地。  這個方向可以隨時反轉，但仍然只能在單一方向。  不過，這並不表示您不能有一組磁片區 (來源和目的地) 以一個方向複寫，而另一組磁片磁碟機 (來源和目的地) 以相反的方向進行複寫。  例如，您想要設定伺服器對伺服器複寫。  Server1 和 Server2 各有磁碟機號 L：、M：、N：和 O：，而且您想要將磁片磁碟機 M：從 Server1 複寫到 Server2，但磁片磁碟機 O：從 Server2 複寫到 Server1。  只要每個群組都有個別的記錄磁片磁碟機，就可以完成這項作業。 亦即.
 
 - Server1 來源磁片磁碟機 M：使用來源記錄磁片磁碟機 L：複寫到 Server2 目的地磁片磁碟機 M：使用目的地記錄磁片磁碟機 L：
 - Server2 來源磁片磁碟機 O：使用來源記錄磁片磁碟機 N：複寫到 Server1 目的地磁片磁碟機 O：目的地記錄磁片磁碟機 N：

@@ -7,12 +7,12 @@ ms.assetid: 79a417fd-1b3e-47ab-ae33-bb1faf95c86d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 05694d772de033a82c6de6feca94621185cb2642
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 37b443a90ebdb2c6042596747f6c364fafe073a7
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181454"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838077"
 ---
 # <a name="change-the-order-and-grouping-of-tabs"></a>變更索引標籤的順序和群組
 
@@ -41,7 +41,7 @@ ms.locfileid: "87181454"
 
 6.  輸入已為頂層索引標籤定義的 GUID，然後按 **ENTER**。
 
-     如需建立和識別頂層索引標籤的詳細資訊，請參閱 Windows Server 解決方案 SDK 中的 [建立頂層索引標籤](https://msdn.microsoft.com/library/gg513957) 。
+     如需建立和識別頂層索引標籤的詳細資訊，請參閱 Windows Server 解決方案 SDK 中的 [建立頂層索引標籤](/previous-versions/windows/server-essentials/gg513957(v=msdn.10)) 。
 
 7.  將變更儲存至登錄。
 

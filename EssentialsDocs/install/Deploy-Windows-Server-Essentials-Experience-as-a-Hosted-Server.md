@@ -7,18 +7,18 @@ ms.assetid: a455c6b4-b29f-4f76-8c6b-1578b6537717
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 63f5a72cf070b1520815f8f8f59d9c6ecf386aa5
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 7dd1aa46786a3768127ba7934c8a8767d40e6654
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181254"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838017"
 ---
 # <a name="deploy-windows-server-essentials-experience-as-a-hosted-server"></a>部署 Windows Server Essentials 體驗做為託管伺服器
 
 >適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-本檔包含主控者的專屬資訊，其適用于想要部署 Windows server Essentials 體驗角色（在檔其餘部分中稱為「Windows Server Essentials」）的 Microsoft Windows Server 16，並打算以服務的形式提供給客戶的 Windows Server Essentials 體驗。 本文件包含下列各節：
+本檔包含主控者使用 Windows server Essentials 體驗角色部署 Microsoft Windows Server 16 的特定資訊， (在檔的其餘部分中稱為 Windows Server Essentials，) 安裝在其實驗室中，並想要為其客戶提供 Windows Server Essentials 體驗服務。 本文件包含下列各節：
 
 
 -   [Windows Server Essentials 體驗總覽](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_WSEEOverview)
@@ -49,11 +49,11 @@ ms.locfileid: "87181254"
 ##  <a name="windows-server-essentials-experience-overview"></a><a name="BKMK_WSEEOverview"></a>Windows Server Essentials 體驗總覽
  Windows Server Essentials 體驗是 Windows Server 2012 R2 Standard 和 Windows Server 2012 R2 Datacenter 中提供的伺服器角色。 當 Windows Server Essentials 體驗角色安裝在執行 Windows Server 2012 R2 的伺服器上時，客戶可以利用 Windows Server Essentials 中的所有功能，而不會有鎖定和限制。 Windows Server Essentials 體驗可為中小型企業提供下列跨單位的解決方案：
 
--   **資料儲存和保護**您可以在集中的位置儲存客戶的資料，並藉由備份網路內的伺服器和用戶端電腦（低於75）來保護伺服器和用戶端的資料。
+-   **資料儲存和保護**您可以將客戶的資料儲存在集中的位置，並藉由將伺服器和用戶端 (電腦備份到網路內的 75) ，來保護伺服器和用戶端的資料。
 
--   **使用者管理** 您可以透過簡化的伺服器儀表板管理使用者及群組。 此外，與 Microsoft Azure Active Directory （Azure AD）整合，可讓使用者使用其網域認證輕鬆存取 Microsoft 線上服務（例如，Office 365、Exchange Online 和 SharePoint Online）的資料。
+-   **使用者管理** 您可以透過簡化的伺服器儀表板管理使用者及群組。 此外，與 Microsoft Azure Active Directory (Azure AD) 的整合，可讓您輕鬆地存取 Microsoft 線上服務 (例如 Office 365、Exchange Online 和 SharePoint Online) 使用其網域認證的使用者。
 
--   **服務整合**您可以整合伺服器與 Microsoft 線上服務（例如 Office 365、SharePoint Online 和 Microsoft Azure 備份）。 您也可以將伺服器與您的服務或由協力廠商提供者所提供的服務整合。
+-   **服務整合**您可以整合伺服器與 Microsoft 線上服務 (例如 Office 365、SharePoint Online 和 Microsoft Azure 備份) 。 您也可以將伺服器與您的服務或由協力廠商提供者所提供的服務整合。
 
 -   **隨處存取** 客戶可以從他們有網際網路連線的任何地點，以及使用幾乎任何裝置存取伺服器、網路電腦和資料。 遠端 Web 存取可讓客戶擁有簡化、友善的瀏覽器觸控體驗，存取應用程式和資料。 「我的伺服器」應用程式可讓他們從 Windows Phone 或 Microsoft Store 應用程式存取資料。
 
@@ -140,7 +140,7 @@ Install-WssVpnServer -IPv4AddressRange ('192.168.0.160','192.168.0.240') -ApplyT
 >  如果您在客戶擁有伺服器之前無法提供 VPN 連線，請確定伺服器連接埠 3389 可透過網際網路連線，以便客戶可以使用遠端桌面通訊協定來連線到伺服器並進行設定。
 
 ##  <a name="customize-the-image-of-windows-server-essentials-experience-role"></a><a name="BKMK_CustomizeImage"></a>自訂 Windows Server Essentials 體驗角色的映射
- 您在設定 Windows Server Essentials 體驗角色之前可以自訂映像。 若要了解標準的 Windows Server Sysprep 程序，請參閱 [Windows 評定及部署套件](https://msdn.microsoft.com/library/hh825420.aspx)。 使用 Sysprep 準備映像之後，您可以使用它或封裝成 Install.wim 進行新的部署。
+ 您在設定 Windows Server Essentials 體驗角色之前可以自訂映像。 若要了解標準的 Windows Server Sysprep 程序，請參閱 [Windows 評定及部署套件](/previous-versions/windows/hh825420(v=win.10))。 使用 Sysprep 準備映像之後，您可以使用它或封裝成 Install.wim 進行新的部署。
 
  如果您使用 Virtual Machine Manager，可以使用執行中的執行個體來建立範本。 此程序使用 Sysprep 準備執行個體，並將電腦關機。 將範本儲存在您的程式庫之後，您就可以依個別情況加以使用。
 
@@ -160,14 +160,14 @@ Install-WssVpnServer -IPv4AddressRange ('192.168.0.160','192.168.0.240') -ApplyT
 
 - **隨處存取** 當您執行「設定隨處存取精靈」時，預設將會略過路由器及 VPN 設定。
 
-  如果您想要控制每個列出功能的行為，您可以針對每一項設定相對應的登錄機碼。 如需如何設定登錄機碼的相關資訊，請參閱 [在 Windows Server 2012 R2 中自訂和部署 Windows Server Essentials](https://technet.microsoft.com/library/dn293241.aspx)
+  如果您想要控制每個列出功能的行為，您可以針對每一項設定相對應的登錄機碼。 如需如何設定登錄機碼的相關資訊，請參閱 [在 Windows Server 2012 R2 中自訂和部署 Windows Server Essentials](/previous-versions/windows/it-pro/windows-8.1-and-8/dn293241(v=win.10))
 
 ##  <a name="automate-the-deployment-of-windows-server-essentials-experience"></a><a name="BKMK_AutomateDeployment"></a>自動部署 Windows Server Essentials 體驗
  若要自動化部署，您必須先部署作業系統，然後再安裝 Windows Server Essentials 體驗角色。
 
--   若要自動部署 Windows Server 2012 R2 Standard 或 Windows Server 2012 R2 Datacenter，請遵循[Windows 評定及部署套件](https://msdn.microsoft.com/library/hh825420.aspx)中的指示。
+-   若要自動部署 Windows Server 2012 R2 Standard 或 Windows Server 2012 R2 Datacenter，請遵循[Windows 評定及部署套件](/previous-versions/windows/hh825420(v=win.10))中的指示。
 
--   若要瞭解如何使用 Windows PowerShell 安裝 Windows Server Essentials 體驗角色，請參閱[安裝和設定 Windows Server essentials](https://technet.microsoft.com/library/dn281793.aspx)。
+-   若要瞭解如何使用 Windows PowerShell 安裝 Windows Server Essentials 體驗角色，請參閱[安裝和設定 Windows Server essentials](/previous-versions/windows/it-pro/windows-server-essentials-sbs/dn281793(v=ws.11))。
 
 > [!NOTE]
 >  請確定主機虛擬機器和 Windows Server Essentials 體驗的時區設定相同。 否則，您可能會遇到幾個錯誤。 這些包括：伺服器的初始設定可能不會在憑證相關工作上成功，憑證可能會在安裝 Windows Server Essentials 體驗角色後的幾個小時內無法運作，且裝置資訊將無法正確更新。
@@ -192,7 +192,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 > - 來源伺服器和目的地伺服器可以存取彼此的「內部 DNS 名稱」。
 >   -   所有必要的連接埠皆已開啟。
 
- 移轉之後，您可以升級您的授權以移除鎖定與限制。 如需詳細資訊，請參閱[從 Windows Server Essentials 轉換到 Windows server 2012 Standard](https://technet.microsoft.com/library/jj247582.aspx)。
+ 移轉之後，您可以升級您的授權以移除鎖定與限制。 如需詳細資訊，請參閱[從 Windows Server Essentials 轉換到 Windows server 2012 Standard](/previous-versions/windows/it-pro/windows-server-essentials-sbs/jj247582(v=ws.11))。
 
 ##  <a name="perform-common-tasks-by-using-windows-powershell"></a><a name="BKMK_PowerShell"></a>使用 Windows PowerShell 執行一般工作
  本節說明您可以使用 Windows PowerShell 執行的一些常見工作。
@@ -231,7 +231,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
  此命令會在指定的位置新增名為 MyTestFolder 的伺服器資料夾。
 
 ##  <a name="email-integration-with-windows-server-essentials"></a><a name="BKMK_EmailIntegration"></a>與 Windows Server Essentials 整合的電子郵件
- 您可以整合 Windows Server Essentials 體驗與 Office 365 或託管的 Exchange Server。 如果您希望客戶使用您裝載的電子郵件，您必須開發增益集將 Windows Server Essentials 體驗與裝載的電子郵件解決方案整合。 如需詳細資訊，請參閱 [Windows Server Essentials SDK](https://msdn.microsoft.com/library/gg513877.aspx)。
+ 您可以整合 Windows Server Essentials 體驗與 Office 365 或託管的 Exchange Server。 如果您希望客戶使用您裝載的電子郵件，您必須開發增益集將 Windows Server Essentials 體驗與裝載的電子郵件解決方案整合。 如需詳細資訊，請參閱 [Windows Server Essentials SDK](/previous-versions/windows/server-essentials/gg513877(v=msdn.10))。
 
 ##  <a name="monitor-and-manage-by-using-native-tools"></a><a name="BKMK_Monitoring"></a>使用原生工具進行監視和管理
  本節討論 Windows Server 2012 R2 中可用來監視和管理伺服器的原生工具。
@@ -254,7 +254,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 -   **內部部署備份** 可讓您在個別磁碟上定期執行區塊層級的增量備份。 身為主機服務提供者，您可以將虛擬硬碟連接至執行 Windows Server Essentials 的虛擬機器，然後設定伺服器備份到此虛擬硬碟。 虛擬硬碟與執行 Windows Server Essentials 的虛擬機器應位於不同的實體磁碟上。
 
     > [!NOTE]
-    >  如果您的虛擬機器有其他備份解決方案，而您不想讓使用者看見 Windows Server Essentials 原生的伺服器備份功能，您可以將它關閉，並從儀表板中移除相關的使用者介面。 如需詳細資訊，請參閱 [自訂和部署 Windows Server 2012 R2 中的 Windows Server Essentials](https://technet.microsoft.com/library/dn293413.aspx) 之 [自訂伺服器備份](https://technet.microsoft.com/library/dn293241.aspx)一節。
+    >  如果您的虛擬機器有其他備份解決方案，而您不想讓使用者看見 Windows Server Essentials 原生的伺服器備份功能，您可以將它關閉，並從儀表板中移除相關的使用者介面。 如需詳細資訊，請參閱 [自訂和部署 Windows Server 2012 R2 中的 Windows Server Essentials](/previous-versions/windows/it-pro/windows-8.1-and-8/dn293413(v=win.10)) 之 [自訂伺服器備份](/previous-versions/windows/it-pro/windows-8.1-and-8/dn293241(v=win.10))一節。
 
 -   **外部部署備份** 可讓您定期將伺服器資料備份至雲端架構的服務。 您可以下載並安裝適用于 Windows Server Essentials 的 Microsoft Azure 備份整合模組，以利用 Microsoft 提供的 Azure 備份。
 
@@ -285,13 +285,13 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 
     -   變更檢查點閾值：在用戶端上，變更 **HKLM\Software\Microsoft\Windows Server\Backup\CheckPointThreshold** 的預設值 40 GB。
 
--   **用戶端裸機還原** 由於 Windows 預先安裝環境不支援 VPN 連線，因此也不支援用戶端裸機還原。 您應遵循在[Windows server 2012 R2 中自訂和部署 Windows Server Essentials](https://technet.microsoft.com/library/dn293241.aspx)中的步驟來隱藏用戶端還原服務工作。
+-   **用戶端裸機還原** 由於 Windows 預先安裝環境不支援 VPN 連線，因此也不支援用戶端裸機還原。 您應遵循在[Windows server 2012 R2 中自訂和部署 Windows Server Essentials](/previous-versions/windows/it-pro/windows-8.1-and-8/dn293241(v=win.10))中的步驟來隱藏用戶端還原服務工作。
 
 ##### <a name="file-history"></a>檔案歷程記錄
- 檔案歷程記錄是 Windows 8.1 和 Windows 8 中將設定檔資料 (媒體櫃、桌面、連絡人和我的最愛) 備份到網路共用的功能。 您可以為所有執行 Windows 8.1 或 Windows 8 且加入 Windows Server Essentials 網路的電腦，集中管理檔案歷程記錄設定。 備份資料會儲存在執行 Windows Server Essentials 的伺服器上。 您必須遵循 [自訂和部署 Windows Server 2012 R2 中的 Windows Server Essentials](https://technet.microsoft.com/library/dn293241.aspx)之步驟來隱藏用戶端還原服務工作。
+ 檔案歷程記錄是 Windows 8.1 和 Windows 8 中將設定檔資料 (媒體櫃、桌面、連絡人和我的最愛) 備份到網路共用的功能。 您可以為所有執行 Windows 8.1 或 Windows 8 且加入 Windows Server Essentials 網路的電腦，集中管理檔案歷程記錄設定。 備份資料會儲存在執行 Windows Server Essentials 的伺服器上。 您必須遵循 [自訂和部署 Windows Server 2012 R2 中的 Windows Server Essentials](/previous-versions/windows/it-pro/windows-8.1-and-8/dn293241(v=win.10))之步驟來隱藏用戶端還原服務工作。
 
 ### <a name="storage-management"></a>存放管理
- 「儲存空間」可讓您彙總不同硬碟的實體儲存空間、以動態方式新增硬碟，並以指定的彈性層級建立資料磁碟區。 您可以在主機或虛擬機器上，執行這項操作。 如果您想要在執行 Windows Server Essentials 的虛擬機器中隱藏這項功能，請遵循 [自訂和部署 Windows Server 2012 R2 中的 Windows Server Essentials](https://technet.microsoft.com/library/dn293241.aspx)之指示。
+ 「儲存空間」可讓您彙總不同硬碟的實體儲存空間、以動態方式新增硬碟，並以指定的彈性層級建立資料磁碟區。 您可以在主機或虛擬機器上，執行這項操作。 如果您想要在執行 Windows Server Essentials 的虛擬機器中隱藏這項功能，請遵循 [自訂和部署 Windows Server 2012 R2 中的 Windows Server Essentials](/previous-versions/windows/it-pro/windows-8.1-and-8/dn293241(v=win.10))之指示。
 
 ##  <a name="test-scenarios"></a><a name="BKMK_Scenarios"></a>測試案例
  從裝載的觀點來看，我們建議您測試下列案例：
@@ -299,7 +299,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 
 -   [伺服器部署](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_ServerDeploy)
 
--   [伺服器設定](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_ServerConfig2)
+-   [伺服器組態](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_ServerConfig2)
 
 -   [伺服器管理](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_ServerManage)
 
@@ -367,13 +367,13 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 -   (如果適用) 確認電子郵件整合體驗。
 
 ##  <a name="support-information"></a><a name="BKMK_Support"></a>支援資訊
- 您可以下載 Windows Server Essentials 軟體發展工具組（SDK）和 Windows Server Essentials 評定及部署套件（ADK）：
+ 您可以下載 Windows Server Essentials 軟體發展工具組 (SDK) 以及 Windows Server Essentials 評定及部署套件 (ADK) ：
 
--   [Windows Server Essentials 軟體發展工具組](https://msdn.microsoft.com/library/gg513877.aspx)SDK
+-   [Windows Server Essentials 軟體發展工具組](/previous-versions/windows/server-essentials/gg513877(v=msdn.10))SDK
 
--   [在 Windows Server 2012 R2 中自訂和部署 Windows Server Essentials](https://technet.microsoft.com/library/dn293241.aspx)
+-   [在 Windows Server 2012 R2 中自訂和部署 Windows Server Essentials](/previous-versions/windows/it-pro/windows-8.1-and-8/dn293241(v=win.10))
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [Windows Server Essentials 中的新功能](../get-started/what-s-new.md)
 

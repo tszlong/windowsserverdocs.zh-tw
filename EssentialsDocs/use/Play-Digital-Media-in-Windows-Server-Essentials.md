@@ -7,12 +7,12 @@ ms.assetid: 5f570492-ee21-471b-92c1-3fd9bfb84f55
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c8f490f09f9623aa82b42f2103f2fd3e95537d7d
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 1ce7359929cb1658cc84418231fb7d65efce8692
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409508"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838217"
 ---
 # <a name="play-digital-media-in-windows-server-essentials"></a>在 Windows Server Essentials 中播放數位媒體
 
@@ -182,7 +182,7 @@ ms.locfileid: "87409508"
 
 
 > [!NOTE]
->  您也可以透過使用適用於 Windows Phone 的 My Server 應用程式，將媒體檔案上傳到伺服器。 您可以從 [Windows Phone 市集](http://www.windowsphone.com/store/app/my-server/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a)下載 My Server 應用程式。 如需有關適用于 Windows Phone 的 My Server 應用程式的詳細資訊，請參閱[Windows Server Essentials 的 My server Phone 應用程式](https://blogs.technet.com/b/sbs/archive/2012/09/18/my-server-phone-app-for-windows-server-2012-essentials.aspx)的 blog 文章。
+>  您也可以透過使用適用於 Windows Phone 的 My Server 應用程式，將媒體檔案上傳到伺服器。 您可以從 [Windows Phone 市集](http://www.windowsphone.com/store/app/my-server/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a)下載 My Server 應用程式。 如需有關適用于 Windows Phone 的 My Server 應用程式的詳細資訊，請參閱[Windows Server Essentials 的 My server Phone 應用程式](/archive/blogs/sbs/my-server-phone-app-for-windows-server-2012-essentials)的 blog 文章。
 
 #### <a name="to-add-digital-media-files-to-shared-folders-on-the-server"></a>將數位媒體檔案新增到伺服器上的共用資料夾
 
@@ -222,7 +222,7 @@ ms.locfileid: "87409508"
   在實際下載開始之前，會先建立 exe 或 zip 檔。 視要下載的檔案數目和檔案總大小而定，這可能會花費數分鐘的時間。 建立下載檔案之後，就會在背景進行下載檔案的程序。 這可讓您在下載程序完成的過程中繼續工作。
 
 ##  <a name="easy-file-upload-tool"></a><a name="BKMK_6"></a>簡易檔案上傳工具
- 「簡易檔案上傳」工具可以簡化在 Windows Server Essentials 伺服器上上傳檔案的程式。 您可以視需要將多個檔案新增至「簡易檔案上傳」工具，然後在單一批次中將它們上傳到 Windows Server Essentials 伺服器上的共用資料夾。 如需詳細資訊，請參閱部落格文章 [了解「遠端 Web 存取」檔案共用](https://blogs.technet.com/b/sbs/archive/2012/04/19/understanding-remote-web-access-file-sharing.aspx)。
+ 「簡易檔案上傳」工具可以簡化在 Windows Server Essentials 伺服器上上傳檔案的程式。 您可以視需要將多個檔案新增至「簡易檔案上傳」工具，然後在單一批次中將它們上傳到 Windows Server Essentials 伺服器上的共用資料夾。 如需詳細資訊，請參閱部落格文章 [了解「遠端 Web 存取」檔案共用](/archive/blogs/sbs/understanding-remote-web-access-file-sharing)。
 
 ##  <a name="view-and-browse-shared-digital-media"></a><a name="BKMK_7"></a>查看和流覽共用數位媒體
  您可以使用「儀表板」、「啟動列」、「遠端 Web 存取」網站或適用於 Windows Phone 的 My Server 應用程式來檢視或瀏覽資源。
@@ -253,7 +253,7 @@ ms.locfileid: "87409508"
 
 3.  按兩下資料夾來檢視該資料夾的內容。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [管理數位媒體](../manage/Manage-Digital-Media-in-Windows-Server-Essentials.md)
 

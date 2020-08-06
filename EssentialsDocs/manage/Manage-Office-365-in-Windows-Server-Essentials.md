@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 3f8485e4-e10f-4f38-8a5e-d5227abd0d84
 author: nnamuhcs
 ms.author: daveba
-ms.openlocfilehash: 249ff5f77d525792d5bf53719fcf1ee93bc955a4
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 8bae98123ee5c8365304243e9f2487218bb5230f
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180964"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837807"
 ---
 # <a name="manage-office-365-in-windows-server-essentials"></a>在 Windows Server Essentials 中管理 Office 365
 
@@ -47,7 +47,7 @@ ms.locfileid: "87180964"
 
   -   在 Windows Server Essentials 伺服器上，也可以管理 Exchange Online 通訊群組的電子郵件。
 
-- 藉由將自訂的網際網路網域連結至 Office 365 訂閱，從您組織的網際網路網域（例如，contoso.com）傳送和接收電子郵件。
+- 從您組織的網際網路網域傳送和接收電子郵件 (例如，將自訂的網際網路網域連結至 Office 365 訂閱，以 contoso.com) 。
 
 - 從儀表板管理您的訂用帳戶和 Office 365 整合。
 
@@ -85,7 +85,7 @@ ms.locfileid: "87180964"
 
 -   [步驟 2：將伺服器與 Microsoft Office 365 整合](#BKMK_StepTwo)
 
--   [步驟3：將組織的網際網路功能變數名稱連結到 Office 365 （選擇性）](#BKMK_StepThree)
+-   [步驟3：將組織的網際網路功能變數名稱連結到 Office 365 (選擇性) ](#BKMK_StepThree)
 
 ###  <a name="step-1-verify-office-365-integration-requirements"></a><a name="BKMK_StepOne_VERIFY"></a>步驟1：驗證 Office 365 整合需求
  在開始之前，請確定伺服器符合這些需求：
@@ -113,7 +113,7 @@ ms.locfileid: "87180964"
 
 1. 以系統管理員身分登入伺服器，然後開啟 [Windows Server Essentials 儀表板]。
 
-2. 在首頁**上**，按一下 [**服務**] （在 [Windows Server Essentials] 中，按一下 [**電子郵件**]），按一下 [**與 Microsoft Office 365 整合**]，然後按一下 [**設定 Microsoft Office 365 整合**]。
+2. 在 [**首頁**] 頁面上，按一下 [Windows Server Essentials 中的**服務** (]，按一下 [**電子郵件**) ]，再按一下 [**與 Microsoft Office 365 整合**]，然後按一下 [**設定 Microsoft Office 365 整合**]。
 
     [與 Microsoft Office 365 整合精靈] 會隨即出現。
 
@@ -135,7 +135,7 @@ ms.locfileid: "87180964"
 
 -   Windows Server Essentials 伺服器上的 [**儲存體**] 頁面具有 [ **sharepoint**程式庫] 索引標籤，可用於管理 sharepoint Online 文件庫和變更小組網站的許可權。 Office 365 的每個商務計畫都包含這些基本的 SharePoint Online 功能。
 
-###  <a name="step-3-link-your-organizations-internet-domain-name-to-office-365-optional"></a><a name="BKMK_StepThree"></a>步驟3：將組織的網際網路功能變數名稱連結到 Office 365 （選擇性）
+###  <a name="step-3-link-your-organizations-internet-domain-name-to-office-365-optional"></a><a name="BKMK_StepThree"></a>步驟3：將組織的網際網路功能變數名稱連結到 Office 365 (選擇性) 
  如果您想要在寄給組織的電子郵件和 SharePoint Online 資源的 Url 中使用您自己的網際網路網域，您可以將自訂網域連結到您的 Office 365 訂閱。 如果您將 Windows Server Essentials 伺服器與 Office 365 整合，您可以從儀表板執行此動作。
 
  在為您的使用者建立線上帳戶之前，最好先執行此動作，如此一來，您就可以在大量建立線上帳戶時使用網域。
@@ -146,9 +146,9 @@ ms.locfileid: "87180964"
 
 1. **購買網域名稱。** 也就是向網域註冊機構或 DNS 主機服務提供者註冊網域。
 
-   -   挑選可與 Office 365 搭配使用的功能變數名稱。 您可以使用第二層功能變數名稱（例如 buycontoso.com？，而不是第三層功能變數名稱）？例如，marketing.contoso.com。 如需在 Office 365 中選擇要使用之網域的詳細資訊，請參閱[網域](https://technet.microsoft.com/library/office-365-domains.aspx)。
+   -   挑選可與 Office 365 搭配使用的功能變數名稱。 您可以使用第二層功能變數名稱（例如 buycontoso.com？，而不是第三層功能變數名稱）？例如，marketing.contoso.com。 如需在 Office 365 中選擇要使用之網域的詳細資訊，請參閱[網域](/office365/servicedescriptions/office-365-platform-service-description/domains)。
 
-   -   向網域註冊機構購買，允許 Office 365 所需的功能變數名稱伺服器（DNS）記錄。 若要找出哪些網域註冊機構允許所需的 DNS 記錄，請參閱 [如何購買網域名稱](https://office.microsoft.com/office365-suite-help/how-to-buy-a-domain-name-HA102819883.aspx?CTT=5&origin=HA102818660)。 如果您已經向不同的註冊機構註冊您的網域，別擔心;當您將網域連結到 Office 365 時，可以將網域轉移給不同的註冊機構。
+   -   向網域註冊機構購買，讓功能變數名稱伺服器 (Office 365 所需的 DNS) 記錄。 若要找出哪些網域註冊機構允許所需的 DNS 記錄，請參閱 [如何購買網域名稱](https://office.microsoft.com/office365-suite-help/how-to-buy-a-domain-name-HA102819883.aspx?CTT=5&origin=HA102818660)。 如果您已經向不同的註冊機構註冊您的網域，別擔心;當您將網域連結到 Office 365 時，可以將網域轉移給不同的註冊機構。
 
 2. **設定 DNS 紀錄以允許 Office 365 服務使用網域名稱。** 最簡單的方式是在您于步驟3將網域連結到 Office 365 訂閱時，讓 wizard 為您設定 DNS 記錄。 如果您想要自行做，請參閱[如何手動設定 Office 365 整合的 DNS 記錄](#BKMK_ManuallyConfigureDNS)。
 
@@ -178,7 +178,7 @@ ms.locfileid: "87180964"
      在嚮導完成後，會等待一些時間，而網域註冊機構會驗證 DNS 記錄。 這會自動發生;您不需要執行任何動作。 但通常需要大約一小時的時間，而且有時候會有更長的時間。 當網域驗證完成時， **Office 365**頁面會列出貴組織的網域。
 
 ####  <a name="how-to-manually-configure-dns-records-for-office-365-integration"></a><a name="BKMK_ManuallyConfigureDNS"></a>如何手動設定 Office 365 整合的 DNS 記錄
- 如果̌ [將網域連結到 Office 365] 精靈偵測到您的網域名稱不是由伺服器管理，您必須手動設定必要的網域名稱伺服器 (DNS) 記錄，以完成設定。 在這種情況下，您會在 **% username% \ NewDNSRecords_ （n） .txt**中找到您必須設定的 DNS 記錄清單，其中 *（n）* 是亂數字。
+ 如果̌ [將網域連結到 Office 365] 精靈偵測到您的網域名稱不是由伺服器管理，您必須手動設定必要的網域名稱伺服器 (DNS) 記錄，以完成設定。 在這種情況下，您會在 **% username% \ NewDNSRecords_** 找到您必須設定的 DNS 記錄清單 (n) .txt，其中* (n) *是一個亂數字。
 
  下表描述您必須加入的 DNS 記錄。 輸入法因不同的網域名稱註冊機構而有所不同。 如果您有任何問題，請向您的網域名稱註冊機構尋求協助。
 
@@ -187,8 +187,8 @@ ms.locfileid: "87180964"
 |服務|需要的 DNS 記錄|目的|
 |-------------|--------------------------|-------------|
 |(多個服務)|MX| Office 365 會使用此記錄來確認您擁有特定的功能變數名稱。 這個 MX 記錄不會干擾電子郵件訊息路由。|
-|Exchange Online|MX|提供電子郵件訊息路由。 **重要事項：** 如果您要遷移電子郵件，請勿指派零（**0**）的喜好設定到新的 MX 記錄。 請確定記錄值大於指派給目前 MX 記錄的值。 當電子郵件遷移完成，而且您已準備好將電子郵件伺服器變更為 Office 365 時，請讓您的網域註冊機構重設新 MX 記錄的喜好設定值。|
-|Exchange Online|別名 (CNAME)|用來幫助使用者輕易設定 Exchange Online 與 Outlook 桌面用戶端或行動式電子郵件用戶端之間連線的自動探索記錄。 **注意：** 如果您想要使用組織自己的功能變數名稱（例如，而不是標準 URL 來存取 Outlook Web 存取（ http://mail.contoso.com) https://outlook.com/owa/office365.com) ），您可以設定別名（cname）記錄，如下所示： **Type = CName、TTL = 01：00：00、HostName = mail、Address = mail office365 .com**|
+|Exchange Online|MX|提供電子郵件訊息路由。 **重要事項：** 如果您要遷移電子郵件，請勿將零 (**0**) 的喜好設定指派給新的 MX 記錄。 請確定記錄值大於指派給目前 MX 記錄的值。 當電子郵件遷移完成，而且您已準備好將電子郵件伺服器變更為 Office 365 時，請讓您的網域註冊機構重設新 MX 記錄的喜好設定值。|
+|Exchange Online|別名 (CNAME)|用來幫助使用者輕易設定 Exchange Online 與 Outlook 桌面用戶端或行動式電子郵件用戶端之間連線的自動探索記錄。 **注意：** 如果您想要使用組織自己的功能變數名稱來存取 Outlook Web 存取 (例如， http://mail.contoso.com) 而不是標準 URL (https://outlook.com/owa/office365.com) ，您可以將別名設定 (cname) 記錄，如下所示： **Type = CName、TTL = 01：00：00、HostName = mail、Address = mail office365 .com**|
 |Exchange Online|TXT|指定 outlook.com （由 Office 365 電子郵件伺服器使用的網域）授權代表您的網域傳送電子郵件。 建立此記錄可協助防止您寄出的電子郵件被標示為垃圾郵件。|
 |Lync Online|SRV|協助啟用與其他 Windows Live 或 Yahoo! 等立即訊息服務聯盟。|
 |Lync Online|SRV|用來幫助使用者輕易設定 Lync 桌面用戶端與 Microsoft Lync Online 之間連線的自動探索記錄。|
@@ -210,7 +210,7 @@ ms.locfileid: "87180964"
 
 -   [管理您的 Office 365 訂閱](#BKMK_ManageO365)？變更您用來管理訂閱的系統管理員帳戶。 開啟 Office 365 系統管理儀表板來管理您的訂用帳戶。
 
--   將[您組織的網際網路網域連結至 Office 365](#BKMK_StepThree) ？如果您想要能夠傳送和接收已寄送到您自己網域的電子郵件，您可以將網域連結至 Office 365。 （稍早討論的[步驟3：將組織的網域連結到 Office 365](#BKMK_StepThree)）。
+-   將[您組織的網際網路網域連結至 Office 365](#BKMK_StepThree) ？如果您想要能夠傳送和接收已寄送到您自己網域的電子郵件，您可以將網域連結至 Office 365。  (稍早討論過，請前往[步驟3：將組織的網域連結到 Office 365](#BKMK_StepThree)。 ) 
 
 -   要[停用 Office 365 整合](#BKMK_Disable)嗎？如果您不想從儀表板管理您的 Office 365 服務、訂閱及線上帳戶，您可以停用 Office 365 整合。 這些服務仍可在 Office 365 入口網站上取得。
 
@@ -231,11 +231,11 @@ ms.locfileid: "87180964"
 
 1.  在儀表板上，按一下 [Office 365]****。
 
-2.  在 [設定工作] **** 中，按一下 [變更 Office 365 系統管理員帳戶] ****。 [變更系統管理員帳戶精靈] 會隨即出現。 （在 Windows Server Essentials 中，嚮導命名為 [設定 Office 365 系統管理員帳戶]）。
+2.  在 [設定工作] **** 中，按一下 [變更 Office 365 系統管理員帳戶] ****。 [變更系統管理員帳戶精靈] 會隨即出現。  (在 Windows Server Essentials 中，此 wizard 的名稱為 [設定 Office 365 系統管理員帳戶]。 ) 
 
 3.  輸入您要用來連接到 Office 365 訂閱的帳號憑證，然後按 **[下一步]**。
 
-4.  按一下 [關閉]。 儀表板會重新啟動。
+4.  按一下 [關閉]  。 儀表板會重新啟動。
 
 ###  <a name="disable-office-365-integration"></a><a name="BKMK_Disable"></a>停用 Office 365 整合
  如果您決定不要從儀表板管理您的 Office 365 服務和線上帳戶，您可以停用 Office 365 整合。 您的 Office 365 訂閱仍然有效，而您從儀表板所做的任何設定變更都會生效。 例如，您會收到電子郵件，寄送到您連結到 Office 365 訂閱的功能變數名稱。 您不會遺失任何電子郵件，而且您為行動裝置設定的控制項仍然會使用 Exchange Online。
@@ -259,7 +259,7 @@ ms.locfileid: "87180964"
  本節提供的資訊可協助您針對在 Windows Server Essentials 中使用 Office 365 整合功能時可能會遇到的常見問題進行疑難排解。
 
 ###  <a name="some-microsoft-online-services-accounts-were-not-created"></a><a name="BKMK_AcctsNotCreated"></a>未建立某些 Microsoft Online Services 帳戶
- **說明**
+ **描述**
 
  嘗試從儀表板建立一或多個 Microsoft Online Services 帳戶不成功。
 
@@ -272,7 +272,7 @@ ms.locfileid: "87180964"
 3.  如果這個問題持續發生，請重新啟動伺服器，然後重新嘗試建立線上帳戶。
 
 ###  <a name="there-was-a-problem-uninstalling-office-365-integration"></a><a name="BKMK_ProblemUninstalling"></a>卸載 Office 365 整合時發生問題
- **說明**
+ **描述**
 
  當您嘗試停用 Office 365 整合時，發生未知的錯誤。
 
@@ -282,11 +282,11 @@ ms.locfileid: "87180964"
 
 2.  如果錯誤再次發生，請重新啟動伺服器，然後再試一次。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
--   [Windows Server Essentials 的服務整合總覽-第1部分](https://blogs.technet.com/b/sbs/archive/2013/11/04/services-integration-overview-for-windows-server-2012-r2-essentials-part-1.aspx)
+-   [Windows Server Essentials 的服務整合總覽-第1部分](/archive/blogs/sbs/services-integration-overview-for-windows-server-2012-r2-essentials-part-1)
 
--   [Windows Server Essentials 的服務整合總覽-第2部分](https://blogs.technet.com/b/sbs/archive/2013/11/06/services-integration-overview-for-windows-server-2012-r2-essentials-part-2.aspx)
+-   [Windows Server Essentials 的服務整合總覽-第2部分](/archive/blogs/sbs/services-integration-overview-for-windows-server-2012-r2-essentials-part-2)
 
 -   [使用 Microsoft Office 365 的快速入門指南](../use/Quick-Start-Guide-to-Using-Microsoft-Office-365-with-Windows-Server-Essentials.md)
 

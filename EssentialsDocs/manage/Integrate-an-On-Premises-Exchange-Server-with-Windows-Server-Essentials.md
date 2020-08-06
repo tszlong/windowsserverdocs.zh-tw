@@ -7,12 +7,12 @@ ms.assetid: b56a21e2-c9e3-4ba9-97d9-719ea6a0854b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 343bfc1325a065f4c4903732eceba59c769f838f
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: cef547570c58c405ac563a1c2215feda120350f4
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181064"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837877"
 ---
 # <a name="integrate-an-on-premises-exchange-server-with-windows-server-essentials"></a>整合內部部署 Exchange Server 與 Windows Server Essentials
 
@@ -25,7 +25,7 @@ ms.locfileid: "87181064"
 > [!NOTE]
 >  Exchange Server 2010 不支援在執行 Windows Server 2012 的電腦上進行安裝。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
  在 Windows Server Essentials 網路上安裝 Exchange Server 之前，請確定您已完成本節所述的工作。
 
 -   [設定執行 Windows Server Essentials 的伺服器](Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md#BKMK_SetUpSBS8)
@@ -56,7 +56,7 @@ ms.locfileid: "87181064"
 |         mail         |      主機 (A)       |                                                        位址=*您的 ISP 指派的公用 IP 位址*                                                         |                                                                                                                                                                                                   Exchange Server 會接收傳送到 mail.contoso.com 的郵件。<br /><br /> 您可以使用自己選擇的其他名稱。                                                                                                                                                                                                    |
 |          MX          | 郵件交換程式 (MX) |                                            主機名稱=@<br /><br /> 位址=mail.contoso.com<br /><br /> 喜好設定=0                                             |                                                                                                                                                                                                      提供的電子郵件訊息路由， email@contoso.com 以抵達執行 Exchange server 的內部部署伺服器。                                                                                                                                                                                                       |
 |         SPF          |     文字 (TXT)      |                                                                        v=spf1 a mx ~all                                                                         |                                                                                                                                                                                                                      協助防止將您伺服器傳送的電子郵件識別為垃圾郵件的資源記錄。                                                                                                                                                                                                                      |
-|  autodiscover._tcp   |    服務 (SRV)    | 服務：_autodiscover<br /><br /> 通訊協定：_tcp<br /><br /> 優先順序：0<br /><br /> 權數：0<br /><br /> 連接埠：443<br /><br /> 目標主機：mail.contoso.com | 讓 Microsoft Office Outlook 和行動裝置自動探索執行 Exchange Server 的內部部署伺服器。<br /><br /> **注意：** 您也可以設定「自動探索主機」（A）資源記錄，並將記錄指向執行 Exchange Server 之內部部署伺服器的公用 IP 位址。 不過，如果您實作這個選項，也必須提供同時支援 mail.contoso.com 和 autodiscover.contoso.com 網域名稱的主體別名 (SAN) SSL 憑證。 |
+|  autodiscover._tcp   |    服務 (SRV)    | 服務：_autodiscover<br /><br /> 通訊協定：_tcp<br /><br /> 優先順序：0<br /><br /> 權數：0<br /><br /> 連接埠：443<br /><br /> 目標主機：mail.contoso.com | 讓 Microsoft Office Outlook 和行動裝置自動探索執行 Exchange Server 的內部部署伺服器。<br /><br /> **注意：** 您也可以 () 資源記錄設定自動探索主機，並將記錄指向執行 Exchange Server 之內部部署伺服器的公用 IP 位址。 不過，如果您實作這個選項，也必須提供同時支援 mail.contoso.com 和 autodiscover.contoso.com 網域名稱的主體別名 (SAN) SSL 憑證。 |
 
 > [!NOTE]
 >  -   用您註冊的網際網路網域名稱取代這個範例中的 *contoso.com* 項目。
@@ -270,9 +270,9 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 
  您必須為電子郵件訊息的外寄/內送傳輸設定 SMTP 傳送連接器和 SMTP 接收連接器。
 
- 若要建立 SMTP 傳送連接器，請遵循 Exchange Server 文章 [建立 SMTP 傳送連接器](https://technet.microsoft.com/library/aa997285.aspx)中的指示。
+ 若要建立 SMTP 傳送連接器，請遵循 Exchange Server 文章 [建立 SMTP 傳送連接器](/previous-versions/office/exchange-server-2010/aa997285(v=exchg.141))中的指示。
 
- 若要建立 SMTP 接收連接器，請遵循 Exchange Server 文章 [建立 SMTP 接收連接器](https://technet.microsoft.com/library/bb125159.aspx)中的指示。
+ 若要建立 SMTP 接收連接器，請遵循 Exchange Server 文章 [建立 SMTP 接收連接器](/previous-versions/office/exchange-server-2010/bb125159(v=exchg.141))中的指示。
 
  您可以選擇參考本文件前面的指令碼，利用 Exchange PowerShell Cmdlet 來建立傳送和接收連接器。
 
@@ -283,7 +283,7 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 
  您至少必須在路由器設定下列連接埠設定：
 
-|路由器連接埠|目的地 IP|目的地連接埠|注意|
+|路由器連接埠|目的地 IP|目的地連接埠|注意事項|
 |-----------------|--------------------|----------------------|----------|
 |25 (SMTP)|執行 Exchange Server 的內部部署伺服器的內部 IP。|25||
 |80 (HTTP)|執行 Windows Server Essentials 的伺服器的內部 IP|80||
@@ -347,7 +347,7 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 6. 將 Exchange Server 的 SSL 憑證檔案複製到執行 Windows Server Essentials 的伺服器上。 憑證檔案必須包含私密金鑰，而且必須使用 PFX 檔案格式。
 
    > [!NOTE]
-   >  如果您使用自動發行憑證，請遵循 Exchange Server 文章 [匯出 Exchange 憑證](https://technet.microsoft.com/library/dd351274.aspx) 中的指示匯出憑證。
+   >  如果您使用自動發行憑證，請遵循 Exchange Server 文章 [匯出 Exchange 憑證](/previous-versions/office/exchange-server-2010/dd351274(v=exchg.141)) 中的指示匯出憑證。
 
 7. 視您目前執行的 Windows Server Essentials 版本而定，執行下列其中一項：
 
@@ -380,7 +380,7 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 > - 您提供的主機名稱必須包含在您為 Exchange Server 購買的 SSL 憑證中。
 >   -   如果您有多個主機名稱，請使用逗號 (,) 加以分隔。
 
- 若要確認設定是否正常運作，請嘗試存取執行 Exchange Server 之伺服器的 OWA 網站（ https://mail 。 (https://mail.*您的網域名稱*.com/owa)。 若要疑難排解連線問題，您也可以使用線上 [Microsoft 遠端連線分析程式](https://go.microsoft.com/fwlink/p/?LinkId=249455) 工具。
+ 若要確認設定是否正常運作，請嘗試存取執行 Exchange Server (之伺服器的 OWA 網站 https://mail 。 (https://mail.*您的網域名稱*.com/owa)。 若要疑難排解連線問題，您也可以使用線上 [Microsoft 遠端連線分析程式](https://go.microsoft.com/fwlink/p/?LinkId=249455) 工具。
 
 ### <a name="configure-split-dns-for-exchange-server"></a>為 Exchange Server 設定分割 DNS
 
@@ -441,7 +441,7 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 
  當您執行儀表板上的 [設定 Exchange Server 整合]**** 工作時，精靈會將頁面新增至「新增使用者帳戶精靈」，讓您選擇是否強制執行信箱配額，並指定配額大小。 根據預設，[強制信箱配額]**** 選項為已選取 (開啟)，使用者信箱會被指派 2 GB 的儲存空間。 Exchange 系統管理員可以自訂信箱配額設定，以符合其商務需求。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [Windows Server Essentials 系統需求](../get-started/system-requirements.md)
 

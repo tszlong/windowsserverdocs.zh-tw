@@ -7,12 +7,12 @@ ms.assetid: 95a9f593-fad7-4335-bd4d-c7bb8c033efb
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b3a9ceca5de9971f77175052a604d3e22de07036
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: e5c8a274a8e012ffd24ce6c6c819fa240c9f1095
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180944"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837887"
 ---
 # <a name="manage-online-backup-in-windows-server-essentials"></a>在 Windows Server Essentials 中管理線上備份
 
@@ -53,7 +53,7 @@ ms.locfileid: "87180944"
 -   [將伺服器取消註冊](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_6)
 
 ###  <a name="upload-a-certificate-to-the-azure-backup-vault"></a><a name="BKMK_1"></a>將憑證上傳至 Azure 備份保存庫
- 您必須先上傳公開憑證以向備份保存庫註冊，才可以在 Windows Server Essentials 中使用 Azure 備份進行線上備份。 憑證是用來驗證 Azure 備份部署（代理程式），代表 Microsoft Online Services 訂閱擁有者負責管理與訂用帳戶相關聯的資源。
+ 您必須先上傳公開憑證以向備份保存庫註冊，才可以在 Windows Server Essentials 中使用 Azure 備份進行線上備份。 憑證是用來驗證代理程式)  (的 Azure 備份部署，代表 Microsoft Online Services 訂閱擁有者管理與訂用帳戶相關聯的資源。
 
 > [!NOTE]
 >  在上傳憑證之前，您必須完成[註冊 Azure 備份服務](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_16)中的程序。
@@ -84,7 +84,7 @@ ms.locfileid: "87180944"
    >  您也可以使用自己的公開憑證。 若要知道需要什麼憑證，請在 [快速入門]**** 頁面上，按一下 [取得憑證]**** 連結。
 
    > [!NOTE]
-   >   Azure 需要具有公開金鑰的 x.509 v2 憑證。 如需詳細資訊，請參閱 [管理保存庫憑證](https://msdn.microsoft.com/library/azure/dn169036.aspx)。
+   >   Azure 需要具有公開金鑰的 x.509 v2 憑證。 如需詳細資訊，請參閱 [管理保存庫憑證](/previous-versions/azure/dn169036(v=azure.100))。
 
 7. 選取憑證之後，請按一下 [確定]**** (核取記號)。
 
@@ -365,7 +365,7 @@ ms.locfileid: "87180944"
 
 2.  在 [儀表板] 的 [首頁]**** 上，按一下 [增益集]**** 類別，按一下 [與 Azure 備份整合]****，然後按一下 [按一下以註冊 Azure 備份]****。
 
-3.  在 [Azure 復原**服務**] 頁面的 [**備份（預覽）** ] 區段中，查看詳細資料。
+3.  在 [Azure 復原**服務**] 頁面的 [**備份 (預覽) ** ] 區段中，查看詳細資料。
 
 4.  如果您沒有 Azure 訂用帳戶，請按一下 [**免費試用**]，然後依照指示取得 azure 訂用帳戶。
 
@@ -452,7 +452,7 @@ ms.locfileid: "87180944"
 |**階段**|這是最新狀態的記錄時間。|
 |**狀態:**|有五種類型的狀態-**成功**、**進行中**、**已取消**、**警告**和**失敗**。|
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [管理備份與還原](Manage-Backup-and-Restore-in-Windows-Server-Essentials.md)
 

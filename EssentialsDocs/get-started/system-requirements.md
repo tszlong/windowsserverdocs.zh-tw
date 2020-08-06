@@ -7,12 +7,12 @@ ms.assetid: 0951a67d-492f-41ad-9ae5-8e4cd25e3041
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 295022c45a82d18781df27604d47d58af14b4b2d
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: b82435dc9d0018d3ac3fa5c6855b18bcddbd2797
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181634"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838097"
 ---
 # <a name="system-requirements-for-windows-server-essentials"></a>Windows Server Essentials 系統需求
 
@@ -45,15 +45,13 @@ ms.locfileid: "87181634"
 
  如需硬體需求的詳細資訊，請參閱 [Windows Server Catalog](https://www.windowsservercatalog.com/)。
 
- 所有伺服器硬體都應符合為系統的 Windows Server 2012 R2 標誌計畫所建立的需求。 如需詳細資訊，請參閱 [Windows Logo Program](https://msdn.microsoft.com/windows/hardware/gg487403.aspx)。
+ 所有伺服器硬體都應符合為系統的 Windows Server 2012 R2 標誌計畫所建立的需求。 如需詳細資訊，請參閱 [Windows Logo Program](/previous-versions/windows/hardware/hck/dn641155(v=vs.85))。
 
 > [!IMPORTANT]
 > Windows Server Essentials 不支援動態磁碟。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [安裝 Windows Server Essentials](../install/Install-Windows-Server-Essentials.md)
 
 -   [Windows Server Essentials 系統需求](system-requirements.md)
-
-

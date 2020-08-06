@@ -7,19 +7,19 @@ ms.assetid: 2fdbc016-d464-43cb-bd75-8a63e61588a2
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 6ebacd42df17d1d1aa840bc77dfdbb23a1ab48e7
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 4057e0d6805c7633bf07960d06d97b2eab15f28a
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181484"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838087"
 ---
 # <a name="build-multi-language-client-restore-media"></a>建立多語言用戶端還原媒體
 
 >適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 > [!NOTE]
->  您必須先建立多語系 windows 映射，如逐步解說[：多語系 Windows 映像建立](https://technet.microsoft.com/library/jj126995)中所述，再將 Windows Server Essentials 語言 install.wim pack 新增至 install .wim。
+>  您必須先建立多語系 windows 映射，如逐步解說[：多語系 Windows 映像建立](/previous-versions/windows/it-pro/windows-8.1-and-8/jj126995(v=win.10))中所述，再將 Windows Server Essentials 語言 install.wim pack 新增至 install .wim。
 
  建立多語言伺服器安裝 DVD 時，將為 Server install.wim 安裝語言套件。 還原精靈的當地語系化資源將作為語言套件的一部分進行安裝。
 
@@ -87,4 +87,3 @@ ms.locfileid: "87181484"
 ## <a name="see-also"></a>另請參閱
 
  [建立和自訂映射額外的](Creating-and-Customizing-the-Image.md)[自訂](Additional-Customizations.md)[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)
-

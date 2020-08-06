@@ -7,12 +7,12 @@ ms.assetid: 4f1902f1-a0e0-49a6-afa7-3c4b61a11b48
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 1943c8cc1f4d000439e11dfc2ee74d8421add768
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: d0930960441617f2dc9dbc219d8b9c121461006d
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180854"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837637"
 ---
 # <a name="manage-windows-server-essentials"></a>管理 Windows Server Essentials
 
@@ -50,13 +50,13 @@ ms.locfileid: "87180854"
 
 ## <a name="end-to-end-solution-guides"></a>端對端解決方案指南
 
--    若要了解如何集中化資料儲存區、限制資料存取權限，以及在內部部署和雲端備份您的資料，請參閱[提供小型和中型企業中的資料保護](https://technet.microsoft.com/library/dn582043.aspx)。
+-    若要了解如何集中化資料儲存區、限制資料存取權限，以及在內部部署和雲端備份您的資料，請參閱[提供小型和中型企業中的資料保護](/previous-versions/orphan-topics/ws.11/dn582043(v=ws.11))。
 
--    若要了解如何安全地從任何地點、任何連線至網際網路的裝置存取商務資料，請參閱[小型和中型企業中的安全遠端存取](https://technet.microsoft.com/library/dn629457.aspx)。
+-    若要了解如何安全地從任何地點、任何連線至網際網路的裝置存取商務資料，請參閱[小型和中型企業中的安全遠端存取](/previous-versions/windows/it-pro/solutions-guidance/dn629457(v=ws.11))。
 
--    若要了解如何安全地與合作夥伴和廠商共同作業，請參閱[提升小型和中型企業中的共同作業](https://technet.microsoft.com/library/dn747893.aspx)。
+-    若要了解如何安全地與合作夥伴和廠商共同作業，請參閱[提升小型和中型企業中的共同作業](/previous-versions/windows/it-pro/solutions-guidance/dn747893(v=ws.11))。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [安裝 Windows Server Essentials](../install/Install-Windows-Server-Essentials.md)
 

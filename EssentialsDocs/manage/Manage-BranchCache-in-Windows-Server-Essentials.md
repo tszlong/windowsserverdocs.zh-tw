@@ -7,22 +7,22 @@ ms.assetid: f6e05aec-d07c-4e0b-94ab-f20279e9ffd1
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 9ef958a34caaffbdcc0b57e8cf63d677e6ab5623
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: aae5c0c8a3a98b25d13d7bf11f6fb14963714c24
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181024"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837917"
 ---
 # <a name="manage-branchcache-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的 BranchCache
 
 >適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-當 Windows Server Essentials 伺服器位於您辦公室的遠端，或連接到本機伺服器的用戶端電腦使用 SharePoint Online 程式庫之類的雲端資源時，BranchCache 可以協助您優化網際網路使用方式、改善網路應用程式的效能，以及降低廣域網路（WAN）上的流量。
+BranchCache 可協助您優化網際網路使用方式、改善網路應用程式的效能，以及降低廣域網路的流量 (WAN) 當 Windows Server Essentials 伺服器位於您辦公室的遠端時，或當用戶端電腦連接到本機伺服器時，使用 SharePoint Online 程式庫之類的雲端資源。
 
  啟用 BranchCache 時，當用戶端電腦從遠端 Windows Server Essentials 伺服器要求內容時，會在本機辦公室快取內容。 之後，同一個辦公室內的其他電腦便可以在本機取得內容，而不需要透過 WAN 從伺服器重新下載內容。 這會提升網路應用程式的效能，並降低 WAN 上的頻寬使用量。
 
- 無論您的 Windows Server Essentials 伺服器是本機或遠端，BranchCache 都可以改善伺服器共用資料夾的回應時間，以及裝載于伺服器上的 Web 內容（例如 SharePoint Online 文件庫）。
+ 無論您的 Windows Server Essentials 伺服器是本機或遠端，BranchCache 都可以改善伺服器共用資料夾的回應時間，以及裝載于伺服器 (的 Web 內容（例如 SharePoint Online 程式庫) ）。
 
  由於 BranchCache 不需要新增硬體或網路拓撲變更，因此這項功能可讓您輕鬆地最佳化 WAN 上的頻寬使用量，並改善透過 WAN 存取之服務和資源的回應時間。
 
@@ -98,8 +98,8 @@ ms.locfileid: "87181024"
         Disable-WSSBranchCache
         ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
--   [BranchCache 概觀](https://technet.microsoft.com/library/hh831696.aspx)
+-   [BranchCache 概觀](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831696(v=ws.11))
 
 -   [管理 Windows Server Essentials](Manage-Windows-Server-Essentials.md)

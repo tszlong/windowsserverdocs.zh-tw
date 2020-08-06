@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: c7da0f6c-9732-4784-9c28-7dad72c4071d
 author: daveba
 ms.author: daveba
-ms.openlocfilehash: e00bf2db8216489787ba3a476a79d7567d4d0d78
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 3c415155734515af004e25a07c4e61afabaa3359
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181414"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838007"
 ---
 # <a name="create-a-server-recovery-dvd-for-multi-language-support"></a>針對多語言支援建立伺服器復原 DVD
 
@@ -20,7 +20,7 @@ ms.locfileid: "87181414"
 ##  <a name="create-a-server-setup-and-server-recovery-dvd-for-multiple-language-support-on-locally-administered-servers"></a><a name="BKMK_MLHeadedRecovery"></a>在本機管理的伺服器上建立伺服器設定和伺服器復原 DVD 以提供多種語言支援
 
 > [!NOTE]
->  您必須先建立多語系 windows 映射，如逐步解說[：多語系 Windows 映像建立](https://technet.microsoft.com/library/jj126995)中所述，再將 Windows Server Essentials 語言 install.wim pack 新增至 install .wim。
+>  您必須先建立多語系 windows 映射，如逐步解說[：多語系 Windows 映像建立](/previous-versions/windows/it-pro/windows-8.1-and-8/jj126995(v=win.10))中所述，再將 Windows Server Essentials 語言 install.wim pack 新增至 install .wim。
 
  安裝有兩個階段：Windows 預先安裝環境 (Windows PE) 和初始設定。 根據預設，將不會在初始設定中顯示語言選取頁面。
 
@@ -43,7 +43,7 @@ ms.locfileid: "87181414"
 
 2.  建立可散佈的媒體
 
-### <a name="prerequisites"></a>必要條件
+### <a name="prerequisites"></a>先決條件
  若要為 Windows 安裝程式新增多語言支援，您將需要下列項目：
 
 
@@ -63,7 +63,7 @@ ms.locfileid: "87181414"
  在此步驟中，您會將 Windows Server 2012 和 Windows Server Essentials 語言套件新增至 Install .wim。
 
 > [!NOTE]
->  確認您已安裝 Windows Server 2012 的語言套件。 如此可確保您會有適當的商標。 Windows Server 2012 多語系使用者介面語言套件可在[Microsoft.com](https://www.microsoft.com/OEM/en/installation/downloads/Pages/technical-downloads.aspx)上取得。 請依照[逐步解說：](https://technet.microsoft.com/library/jj126995.aspx)在建立多語系 windows 映射時建立多語系 windows 映射中所述的指示，將 Windows Server Essentials 語言套件新增至 install .wim。
+>  確認您已安裝 Windows Server 2012 的語言套件。 如此可確保您會有適當的商標。 Windows Server 2012 多語系使用者介面語言套件可在[Microsoft.com](https://www.microsoft.com/OEM/en/installation/downloads/Pages/technical-downloads.aspx)上取得。 請依照[逐步解說：](/previous-versions/windows/it-pro/windows-8.1-and-8/jj126995(v=win.10))在建立多語系 windows 映射時建立多語系 windows 映射中所述的指示，將 Windows Server Essentials 語言套件新增至 install .wim。
 >
 >  Windows Server Essentials 語言套件可在 \Language Pack<CultureName 的語言套件媒體中取得 \\ \> 。
 
@@ -104,4 +104,3 @@ ms.locfileid: "87181414"
 ## <a name="see-also"></a>另請參閱
 
  [建立和自訂映射額外的](Creating-and-Customizing-the-Image.md)[自訂](Additional-Customizations.md)[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)
-

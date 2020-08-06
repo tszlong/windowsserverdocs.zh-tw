@@ -7,12 +7,12 @@ ms.assetid: fda5628c-ad23-49de-8d94-430a4f253802
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 55d4059361189a0117bfd197c030fb860a1b10bd
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 73ac5bb39280277a50af84f489e3a9c5ccb0db05
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181224"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837997"
 ---
 # <a name="hosted-windows-server-essentials"></a>主控的 Windows Server Essentials
 
@@ -25,18 +25,18 @@ ms.locfileid: "87181224"
 
  **伺服器作業系統：** Windows Server 2012 產品技術提供 Windows Server Essentials 的核心。 如需詳細資訊，請瀏覽 [Windows Server 2012 網站](https://www.microsoft.com/server-cloud/products/windows-server-2012-r2/default.aspx#fbid=ZH0GD_CRAWh)。
 
- **資料保護：** Windows Server Essentials 利用 Windows Server 2012 中提供的幾項新功能，大幅提升資料保護功能。 [新的「儲存空間」功能](https://technet.microsoft.com/library/hh831739.aspx) 可讓您彙總不同硬碟的實體儲存容量、以動態方式新增硬碟，並以指定的彈性層級建立資料磁碟區。 Windows Server Essentials 可以執行完整的系統備份以及伺服器本身的裸機還原，以及連線到網路的用戶端電腦，現在支援的磁片區大於 2 TB。 透過 Windows Server 2012 的更新， [Windows Azure Online Backup](https://technet.microsoft.com/library/hh831419.aspx) 可用來在由 Microsoft 所管理的雲端存放服務中保護檔案和資料夾。 Windows Server Essentials 也會集中管理和設定 Windows 8.1 用戶端的檔案歷程記錄功能，以協助使用者在不需要系統管理員協助的情況下，從意外刪除或覆寫的檔案中復原。
+ **資料保護：** Windows Server Essentials 利用 Windows Server 2012 中提供的幾項新功能，大幅提升資料保護功能。 [新的「儲存空間」功能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831739(v=ws.11)) 可讓您彙總不同硬碟的實體儲存容量、以動態方式新增硬碟，並以指定的彈性層級建立資料磁碟區。 Windows Server Essentials 可以執行完整的系統備份以及伺服器本身的裸機還原，以及連線到網路的用戶端電腦，現在支援的磁片區大於 2 TB。 透過 Windows Server 2012 的更新， [Windows Azure Online Backup](/previous-versions/azure/hh831419(v=azure.100)) 可用來在由 Microsoft 所管理的雲端存放服務中保護檔案和資料夾。 Windows Server Essentials 也會集中管理和設定 Windows 8.1 用戶端的檔案歷程記錄功能，以協助使用者在不需要系統管理員協助的情況下，從意外刪除或覆寫的檔案中復原。
 
- **隨處存取：** 遠端 Web 存取提供簡化、易於使用的瀏覽器體驗，讓您可以從任何有網際網路連線的位置，使用任何裝置來存取應用程式和資料。 Windows Server Essentials 也為 Windows 8.1 用戶端電腦提供更新的 Windows Phone 應用程式和新的應用程式，讓使用者可以直覺地連接、搜尋及存取伺服器上的檔案和資料夾。 系統也會自動快取檔案以供離線存取，並在恢復伺服器連線時進行同步。 Windows Server Essentials 可讓您只需按幾下滑鼠，就能輕鬆地將虛擬私人網路（VPN）設定為簡單的 wizard 驅動程式，並簡化使用者 VPN 存取的管理作業。 用戶端電腦可利用 VPN 連線，不需回到辦公室就可以遠端方式進入 Windows SBS 環境。
+ **隨處存取：** 遠端 Web 存取提供簡化、易於使用的瀏覽器體驗，讓您可以從任何有網際網路連線的位置，使用任何裝置來存取應用程式和資料。 Windows Server Essentials 也為 Windows 8.1 用戶端電腦提供更新的 Windows Phone 應用程式和新的應用程式，讓使用者可以直覺地連接、搜尋及存取伺服器上的檔案和資料夾。 系統也會自動快取檔案以供離線存取，並在恢復伺服器連線時進行同步。 Windows Server Essentials 會將虛擬私人網路轉換 (VPN) ，讓您只需按幾下滑鼠，就能輕鬆地管理使用者的 VPN 存取。 用戶端電腦可利用 VPN 連線，不需回到辦公室就可以遠端方式進入 Windows SBS 環境。
 
  **工作負載彈性：** Windows Server Essentials 的設計可讓客戶彈性地選擇要在內部部署執行的應用程式和服務，以及在雲端中執行的服務。 在之前的版本中，Windows Small Business Server Standard 將 Exchange Server 納入成為元件產品，使得想要使用雲端式傳訊和協同作業服務的客戶必須承擔更多的成本以及複雜性。 透過 Windows Server Essentials，客戶可以利用相同類型的整合式管理體驗，不論他們選擇執行的是 Exchange Server 的內部部署複本、訂閱託管 Exchange 服務，或是訂閱 Microsoft Office 365。
 
  **健全狀況監視：** Windows Server Essentials 會監視其自身的健康狀態，以及執行 Windows 8.1、Windows 7 和 Mac OS X 10.5 版和更新版本的用戶端電腦狀態。 健康狀態會通知您與電腦備份、伺服器存放裝置和磁碟空間不足等有關的問題。
 
- 擴充性 **：** Windows Server Essentials 建置於 Windows SBS 2011 Essentials 的擴充性模型上，可讓其他軟體廠商將功能和功能新增至核心產品，並新增一組新的 web 服務 Api。 此外，它也可維護與現有 [軟體開發套件](https://msdn.microsoft.com/library/gg513958.aspx) (SDK) 以及為 Windows SBS 2011 Essentials 建立之 [增益集](https://pinpoint.microsoft.com/applications/search?fpt=300105&q=small+business+server+essentials) 之間的相容性。
+ 擴充性 **：** Windows Server Essentials 建置於 Windows SBS 2011 Essentials 的擴充性模型上，可讓其他軟體廠商將功能和功能新增至核心產品，並新增一組新的 web 服務 Api。 此外，它也可維護與現有 [軟體開發套件](/previous-versions/windows/server-essentials/gg513958(v=msdn.10)) (SDK) 以及為 Windows SBS 2011 Essentials 建立之 [增益集](https://pinpoint.microsoft.com/applications/search?fpt=300105&q=small+business+server+essentials) 之間的相容性。
 
 ## <a name="how-can-i-customize-an-image"></a>如何自訂映像？
- 請參閱[Windows Server Essentials](https://go.microsoft.com/fwlink/p/?LinkID=249124)，這是標準的 windows server sysprep 程式，其中包含額外的 Windows server essentials 自訂步驟。 若要完成自訂，請遵循 [建立簡單的自訂映像](https://technet.microsoft.com/library/jj200117) 和 [自訂映像](https://technet.microsoft.com/library/jj200161)中的指示，然後遵循 [準備用於部署的映像](https://technet.microsoft.com/library/jj200142) 中的指示來擷取您的最終映像。
+ 請參閱[Windows Server Essentials](https://go.microsoft.com/fwlink/p/?LinkID=249124)，這是標準的 windows server sysprep 程式，其中包含額外的 Windows server essentials 自訂步驟。 若要完成自訂，請遵循 [建立簡單的自訂映像](/previous-versions/windows/it-pro/windows-server-essentials-sbs/jj200117(v=ws.11)) 和 [自訂映像](/previous-versions/windows/it-pro/windows-server-essentials-sbs/cc514417(v=msdn.10))中的指示，然後遵循 [準備用於部署的映像](/previous-versions/windows/it-pro/windows-server-essentials-sbs/jj200142(v=ws.11)) 中的指示來擷取您的最終映像。
 
  您應注意以下各項：
 
@@ -55,7 +55,7 @@ ms.locfileid: "87181224"
 ##  <a name="how-do-i-automate-the-deployment"></a><a name="BKMK_automatedeployment"></a>如何? 自動化部署？
  在您取得自訂映像之後，就可以使用您自己的映像來執行部署。 若要執行半自動安裝，您必須提供部署 unattend.xml 以進行 WinPE 設定。 若要執行完全自動安裝，您還需要提供 Windows Server Essentials 初始設定的 cfg.ini 檔案。
 
-1. 僅執行自動 WinPE 設定。 這只會自動化 WinPE 設定，並讓安裝在初始設定之前停止，讓使用者可在 RDP 進入伺服器工作階段之後自行提供 Corp、網域和系統管理員資訊。 作法：
+1. 僅執行自動 WinPE 設定。 這只會自動化 WinPE 設定，並讓安裝在初始設定之前停止，讓使用者可在 RDP 進入伺服器工作階段之後自行提供 Corp、網域和系統管理員資訊。 若要這樣做：
 
    1.  提供 Windows unattend.xml 檔案。 遵循[WINDOWS 8.1 ADK](https://go.microsoft.com/fwlink/?LinkId=248694)以產生檔案，並提供所有必要的資訊，包括伺服器名稱、產品金鑰和系統管理員密碼。 在 unattend.xml 檔案的 [Microsoft-Windows 安裝程式] 區段中，提供如下所示的資訊。
 
@@ -79,11 +79,11 @@ ms.locfileid: "87181224"
 
    如果您使用 Virtual Machine Manager，當您從範本建立新的執行個體時，可以在主控台指定系統管理員密碼。
 
-2. 執行包含自動初始設定在內的完整自動設定。 作法：
+2. 執行包含自動初始設定在內的完整自動設定。 若要這樣做：
 
    1.  如果部署從 WinPE 設定開始，您可以如同前述提供 unattend.xml 檔案。
 
-   2.  請參閱有權[建立 Cfg.ini](https://technet.microsoft.com/library/jj200150)檔案的 Windows SERVER Essentials ADK 一節，以產生 cfg.ini。
+   2.  請參閱有權[建立 Cfg.ini](/previous-versions/windows/it-pro/windows-server-essentials-sbs/jj200150(v=ws.11))檔案的 Windows SERVER Essentials ADK 一節，以產生 cfg.ini。
 
    3.  在 [InitialConfiguration] 中提供資訊。
 
@@ -253,8 +253,8 @@ $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"
 ## <a name="which-email-solutions-can-be-integrated"></a>可整合哪些電子郵件解決方案？
  Windows Server Essentials 支援與兩個現成的電子郵件解決方案整合： Office 365 和內部部署 Exchange。 如果您執行自己的主控電子郵件解決方案，您將需要開發增益集來整合 Windows Server Essentials 與您的託管電子郵件解決方案。
 
-## <a name="how-do-i-migrate-on-premises-windows-sbs-201120082003-to-the-hosted-windows-server-essentials"></a>如何? 將內部部署 Windows SBS （2011/2008/2003）遷移至託管的 Windows Server Essentials？
- 遷移指南適用于內部部署 Windows Small Business Server （Windows SBS）到 Windows Server Essentials 的遷移。 某些步驟可能無法完全套用在您的主控環境中。 不過待移轉的一般工作和工作負載應相同。 建議您參閱 [移轉指南](https://go.microsoft.com/fwlink/p/?LinkID=254292) ，並根據您的主控環境來進行必要的自訂。
+## <a name="how-do-i-migrate-on-premises-windows-sbs-201120082003-to-the-hosted-windows-server-essentials"></a>如何? 將內部部署 Windows SBS (2011/2008/2003) 遷移至託管的 Windows Server Essentials？
+ 遷移指南適用于內部部署 Windows Small Business Server (Windows SBS) 到 Windows Server Essentials 的遷移。 某些步驟可能無法完全套用在您的主控環境中。 不過待移轉的一般工作和工作負載應相同。 建議您參閱 [移轉指南](https://go.microsoft.com/fwlink/p/?LinkID=254292) ，並根據您的主控環境來進行必要的自訂。
 
  建議您將來源伺服器和目的地伺服器置於相同的子網路。 如果此方法不可行，則應確定下列各項：
 
@@ -311,7 +311,7 @@ $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"
 
 1.  更新 Windows Server Essentials 儀表板的使用者介面，讓它提供您慣用雲端服務的連結，而不是預設的 Azure 備份。 如需詳細資訊，請參閱 [ADK 文件](https://go.microsoft.com/fwlink/p/?LinkID=249124)的＜自訂映像＞一節。
 
-2.  選擇性開發適用于 Windows Server Essentials 儀表板的增益集，以設定及管理雲端備份服務。
+2.   (選擇性) 開發適用于 Windows Server Essentials 儀表板的增益集，以設定及管理雲端備份服務。
 
 #### <a name="back-up-the-client"></a>備份用戶端
  Windows Server Essentials 支援兩種用戶端資料備份：完整用戶端備份和檔案歷程記錄。
@@ -319,7 +319,7 @@ $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"
 > [!NOTE]
 >  由於資料必須透過 VPN 從用戶端傳送至伺服器，因此備份用戶端可能會對效能造成影響。
 
- 針對所有連線到 Windows Server Essentials 網路的用戶端裝置，預設會在上進行**完整的用戶端備份**。 它會以累加方式備份完整用戶端 (系統和資料) 並支援重複資料刪除。 備份資料將會在執行 Windows Server Essentials 的伺服器上。 失敗的用戶端會將資料還原至上一個備份點。 您可以遵循[ADK](https://technet.microsoft.com/library/jj200150)檔的建立 Cfg.ini 檔案一節中的步驟來關閉這項功能。
+ 針對所有連線到 Windows Server Essentials 網路的用戶端裝置，預設會在上進行**完整的用戶端備份**。 它會以累加方式備份完整用戶端 (系統和資料) 並支援重複資料刪除。 備份資料將會在執行 Windows Server Essentials 的伺服器上。 失敗的用戶端會將資料還原至上一個備份點。 您可以遵循[ADK](/previous-versions/windows/it-pro/windows-server-essentials-sbs/jj200150(v=ws.11))檔的建立 Cfg.ini 檔案一節中的步驟來關閉這項功能。
 
  以下是完整用戶端備份中的一些考量：
 
@@ -333,10 +333,10 @@ $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"
 
 - 用戶端裸機還原：由於 Windows 前置安裝環境不支援 VPN 連線，因此也無法支援用戶端裸機還原。
 
-  [檔案歷程**記錄**] 是將設定檔資料（媒體櫃、桌面、連絡人、我的最愛）備份到網路共用的 Windows 8.1 功能。 在 Windows Server Essentials 中，我們允許集中管理所有加入 Windows Server Essentials 的 Windows 8.1 用戶端的 [檔案歷程記錄] 設定。 備份資料會儲存在執行 Windows Server Essentials 的伺服器上。 您可以遵循[ADK](https://technet.microsoft.com/library/jj200150)檔的建立 Cfg.ini 檔案一節中的步驟來關閉這項功能。
+  檔案歷程**記錄**是 Windows 8.1 的功能，可將設定檔資料 (程式庫、桌面、連絡人、我的最愛) 備份到網路共用。 在 Windows Server Essentials 中，我們允許集中管理所有加入 Windows Server Essentials 的 Windows 8.1 用戶端的 [檔案歷程記錄] 設定。 備份資料會儲存在執行 Windows Server Essentials 的伺服器上。 您可以遵循[ADK](/previous-versions/windows/it-pro/windows-server-essentials-sbs/jj200150(v=ws.11))檔的建立 Cfg.ini 檔案一節中的步驟來關閉這項功能。
 
 ### <a name="storage-management"></a>存放管理
- [新的「儲存空間」功能](https://technet.microsoft.com/library/hh831739.aspx) 可讓您彙總不同硬碟的實體儲存容量、以動態方式新增硬碟，並以指定的彈性層級建立資料磁碟區。 您也可以將 iSCSI 磁片連結到 Windows Server Essentials 以擴充其存放裝置。
+ [新的「儲存空間」功能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831739(v=ws.11)) 可讓您彙總不同硬碟的實體儲存容量、以動態方式新增硬碟，並以指定的彈性層級建立資料磁碟區。 您也可以將 iSCSI 磁片連結到 Windows Server Essentials 以擴充其存放裝置。
 
 ## <a name="what-are-the-main-scenarios-i-should-test"></a>我應測試哪些主要實例？
  從主控的觀點來看，我們建議您測試以下實例：

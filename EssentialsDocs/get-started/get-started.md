@@ -6,12 +6,12 @@ ms.assetid: 2d0eb084-09dd-4d85-a41a-5d449cc3b504
 author: nnamuhcs
 ms.author: coreyp
 manager: jasgro
-ms.openlocfilehash: adaf10a96a945fddce16592da3d491be2b32aa3b
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: df3eb1b5a1704dcd5a1fc05fab4023c7faaeabe7
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181664"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838107"
 ---
 # <a name="get-started-with-windows-server-essentials"></a>開始使用 Windows Server Essentials
 
@@ -46,16 +46,16 @@ ms.locfileid: "87181664"
 
 ## <a name="end-to-end-solution-guides"></a>端對端解決方案指南
 
--    若要了解如何集中化資料儲存區、限制資料存取權限，以及在內部部署和雲端備份您的資料，請參閱[提供小型和中型企業中的資料保護](https://technet.microsoft.com/library/dn582043.aspx)。
+-    若要了解如何集中化資料儲存區、限制資料存取權限，以及在內部部署和雲端備份您的資料，請參閱[提供小型和中型企業中的資料保護](/previous-versions/orphan-topics/ws.11/dn582043(v=ws.11))。
 
--    若要了解如何安全地從任何地點、任何連線至網際網路的裝置存取商務資料，請參閱[小型和中型企業中的安全遠端存取](https://technet.microsoft.com/library/dn629457.aspx)。
+-    若要了解如何安全地從任何地點、任何連線至網際網路的裝置存取商務資料，請參閱[小型和中型企業中的安全遠端存取](/previous-versions/windows/it-pro/solutions-guidance/dn629457(v=ws.11))。
 
--    若要了解如何安全地與合作夥伴和廠商共同作業，請參閱[提升小型和中型企業中的共同作業](https://technet.microsoft.com/library/dn747893.aspx)。
+-    若要了解如何安全地與合作夥伴和廠商共同作業，請參閱[提升小型和中型企業中的共同作業](/previous-versions/windows/it-pro/solutions-guidance/dn747893(v=ws.11))。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
--   [Windows Server TechNet 文件庫](https://technet.microsoft.com/library/bb625087.aspx)
+-   [Windows Server TechNet 文件庫](/windows-server/windows-server-versions)
 
--   [Windows Server Essentials 和 Windows Small Business Server 部落格](https://blogs.technet.com/b/sbs/)
+-   [Windows Server Essentials 和 Windows Small Business Server 部落格](/archive/blogs/sbs/)
 
--   [Windows Server Essentials (Small Business Server) TechNet 文件庫](https://technet.microsoft.com/library/cc514417.aspx)
+-   [Windows Server Essentials (Small Business Server) TechNet 文件庫](/previous-versions/windows/it-pro/windows-server-essentials-sbs/cc514417(v=msdn.10))

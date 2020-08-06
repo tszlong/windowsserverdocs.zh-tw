@@ -7,12 +7,12 @@ ms.technology: storagespaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/15/2019
-ms.openlocfilehash: 6c3e16f0965be5fc7de4bdc7bd751fb1dd193556
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 311edb38f4cdf1dac153d843811442d5eafbce05
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962200"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769746"
 ---
 # <a name="nested-resiliency-for-storage-spaces-direct"></a>儲存空間直接存取的嵌套復原
 
@@ -20,7 +20,7 @@ ms.locfileid: "86962200"
 
 Nested 復原是 Windows Server 2019 中[儲存空間直接存取](storage-spaces-direct-overview.md)的新功能，可讓兩部伺服器的叢集同時承受多個硬體失敗，而不會遺失存放裝置的可用性，讓使用者、應用程式和虛擬機器在不中斷的情況下繼續執行。 本主題說明其運作方式、提供開始使用的逐步指示，以及回答最常見問題。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>Prerequisites
 
 ### <a name="green-checkmark-icon-consider-nested-resiliency-if"></a>![綠色核取記號圖示。](media/nested-resiliency/supported.png) 假設有下列情況，請考慮 nested 復原：
 
@@ -62,7 +62,7 @@ Windows Server 2019 中的儲存空間直接存取提供在軟體中執行的兩
 
 ### <a name="capacity-efficiency"></a>容量效率
 
-容量效率是可用空間與[磁片](plan-volumes.md#choosing-the-size-of-volumes)區使用量的比率。 它描述復原所需的容量負荷，並取決於您選擇的復原選項。 簡單的範例是，在沒有復原的情況下儲存資料是100% 的容量有效率（1 TB 的資料佔用 1 TB 的實體儲存體容量），而雙向鏡像則是50% 的效率（1 TB 的資料佔用 2 TB 的實體儲存體容量）。
+容量效率是可用空間與[磁片](plan-volumes.md#choosing-the-size-of-volumes)區使用量的比率。 它描述復原所需的容量負荷，並取決於您選擇的復原選項。 簡單的範例是，在沒有復原的情況下儲存資料是100% 的容量有效率 (1 TB 的資料佔用 1 TB 的實體儲存體容量) ，而雙向鏡像則是50% 的效率 (1 TB 的資料會耗用 2 TB 的實體儲存體容量) 。
 
 - **嵌套的雙向鏡像**會寫入四個複本，這表示若要儲存 1 tb 的資料，您需要 4 TB 的實體儲存體容量。 雖然它的簡單性很吸引人，但嵌套的雙向鏡像的容量效率25% 是儲存空間直接存取中任何復原選項的最低。
 
@@ -76,9 +76,9 @@ Windows Server 2019 中的儲存空間直接存取提供在軟體中執行的兩
   | 7+                         | 40.0%      | 37.5%      | 35.3%      |
 
   > [!NOTE]
-  > **如果您想知道，以下是完整數學運算的範例。** 假設我們在兩部伺服器中都有六個容量磁片磁碟機，而我們想要建立 1 100 GB 的磁片區，其中包含 10 GB 的鏡像和 90 GB 的同位。 伺服器本機雙向鏡像是50.0% 有效率，這表示 10 GB 的鏡像資料會在每部伺服器上儲存 20 GB。 鏡像到這兩部伺服器，其總使用量為 40 GB。 在此情況下，伺服器本機單一同位檢查是 5/6 = 83.3% 有效率，這表示 90 GB 的同位資料會在每部伺服器上儲存 108 GB。 鏡像到這兩部伺服器，其總使用量為 216 GB。 總使用量會因此 [（10 GB/50.0% + （90 GB/83.3%）] × 2 = 256 GB，以達39.1% 的整體容量效率。
+  > **如果您想知道，以下是完整數學運算的範例。** 假設我們在兩部伺服器中都有六個容量磁片磁碟機，而我們想要建立 1 100 GB 的磁片區，其中包含 10 GB 的鏡像和 90 GB 的同位。 伺服器本機雙向鏡像是50.0% 有效率，這表示 10 GB 的鏡像資料會在每部伺服器上儲存 20 GB。 鏡像到這兩部伺服器，其總使用量為 40 GB。 在此情況下，伺服器本機單一同位檢查是 5/6 = 83.3% 有效率，這表示 90 GB 的同位資料會在每部伺服器上儲存 108 GB。 鏡像到這兩部伺服器，其總使用量為 216 GB。 總使用量會因此 [ (10 GB/50.0% ) + (90 GB/83.3% ) ] × 2 = 256 GB，適用于39.1% 的整體容量效率。
 
-請注意傳統雙向鏡像的容量效率（大約50%）和嵌套的鏡像加速同位檢查（最多40%）並不會有太大的差異。 視您的需求而定，較低的容量效率可能值得大幅增加儲存體可用性。 您可以選擇每個磁片區的復原功能，以便在相同的叢集中混合使用嵌套的復原磁片區和傳統雙向鏡像磁片區。
+請注意，傳統雙向鏡像的容量效率 (大約 50% ) 和嵌套鏡像加速同位 (最多 40% ) 並不會有太大的差異。 視您的需求而定，較低的容量效率可能值得大幅增加儲存體可用性。 您可以選擇每個磁片區的復原功能，以便在相同的叢集中混合使用嵌套的復原磁片區和傳統雙向鏡像磁片區。
 
 ![折衷](media/nested-resiliency/tradeoff.png)
 
@@ -90,7 +90,7 @@ Windows Server 2019 中的儲存空間直接存取提供在軟體中執行的兩
 
 首先，使用 Cmdlet 來建立新的儲存層範本 `New-StorageTier` 。 您只需要執行這項動作一次，然後您所建立的每個新磁片區都可以參考這些範本。 指定 `-MediaType` 您的容量磁片磁碟機，以及您選擇的（選擇性） `-FriendlyName` 。 請勿修改其他參數。
 
-如果您的容量磁片磁碟機是硬碟機（HDD），請以系統管理員身分啟動 PowerShell 並執行：
+如果您的容量磁片磁碟機是硬碟 (HDD) ，請以系統管理員身分啟動 PowerShell 並執行：
 
 ```PowerShell
 # For mirror
@@ -100,7 +100,7 @@ New-StorageTier -StoragePoolFriendlyName S2D* -FriendlyName NestedMirror -Resili
 New-StorageTier -StoragePoolFriendlyName S2D* -FriendlyName NestedParity -ResiliencySettingName Parity -MediaType HDD -NumberOfDataCopies 2 -PhysicalDiskRedundancy 1 -NumberOfGroups 1 -FaultDomainAwareness StorageScaleUnit -ColumnIsolation PhysicalDisk
 ```
 
-如果您的容量磁片磁碟機是固態硬碟（SSD），請 `-MediaType` 改為將設定為 `SSD` 。 請勿修改其他參數。
+如果您的容量磁片磁碟機是 (SSD) 的固態磁片磁碟機，請 `-MediaType` 改為將設定為 `SSD` 。 請勿修改其他參數。
 
 > [!TIP]
 > 確認已成功建立層 `Get-StorageTier` 。
@@ -119,7 +119,7 @@ New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume01 -StorageTierFrie
 
 #### <a name="nested-mirror-accelerated-parity"></a>嵌套鏡像加速同位
 
-若要使用嵌套鏡像加速同位，請參考 `NestedMirror` 和 `NestedParity` 層範本，並指定兩個大小，分別用於磁片區的每個部分（鏡像優先、同位檢查秒）。 例如，若要建立 1 500 GB 的磁片區，其為20% 的嵌套雙向鏡像和80% 的嵌套同位，請執行：
+若要使用嵌套鏡像加速同位，請參考 `NestedMirror` 和 `NestedParity` 層範本，並指定兩個大小，分別代表磁片區的每個部分， (鏡像，第二個) 。 例如，若要建立 1 500 GB 的磁片區，其為20% 的嵌套雙向鏡像和80% 的嵌套同位，請執行：
 
 ```PowerShell
 New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume02 -StorageTierFriendlyNames NestedMirror, NestedParity -StorageTierSizes 100GB, 400GB
@@ -129,7 +129,7 @@ New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume02 -StorageTierFrie
 
 使用嵌套復原的磁片區會以明確標籤出現在[Windows 系統管理中心](../../manage/windows-admin-center/overview.md)，如下列螢幕擷取畫面所示。 建立之後，您就可以使用 Windows 管理中心來管理和監視它們，就像儲存空間直接存取中的任何其他磁片區一樣。
 
-![](media/nested-resiliency/windows-admin-center.png)
+![Windows 系統管理中心的磁片區管理](media/nested-resiliency/windows-admin-center.png)
 
 ### <a name="optional-extend-to-cache-drives"></a>選擇性：擴充至快取磁片磁碟機
 
@@ -137,7 +137,7 @@ New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume02 -StorageTierFrie
 
 為了解決此案例，儲存空間直接存取提供選項，讓您在兩部伺服器的叢集中的一部伺服器關閉時自動停用寫入快取，然後在伺服器備份之後重新啟用寫入快取。 若要在不影響效能的情況下允許常式重新開機，則在伺服器關閉30分鐘之前，不會停用寫入快取。 一旦停用寫入快取，寫入快取的內容就會寫入容量裝置。 在此之後，伺服器可以容忍線上伺服器中失敗的快取裝置，但如果快取裝置失敗，則快取的讀取可能會延遲或失敗。
 
-若要設定此行為（選擇性），請以系統管理員身分啟動 PowerShell 並執行：
+若要 (選擇性) 設定此行為，請以系統管理員身分啟動 PowerShell 並執行：
 
 ```PowerShell
 Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.NestedResiliency.DisableWriteCacheOnNodeDown.Enabled" -Value "True"
@@ -148,8 +148,8 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.N
 | 情況                       | 快取行為                           | 可以容許快取磁片磁碟機遺失嗎？ |
 |---------------------------------|------------------------------------------|--------------------------------|
 | 兩部伺服器都啟動                 | 快取讀取和寫入，完整效能 | 是                            |
-| 伺服器關閉，前30分鐘   | 快取讀取和寫入，完整效能 | 否（暫時）               |
-| 前30分鐘後          | 僅快取讀取，受影響的效能   | 是（在快取寫入容量磁片磁碟機之後）                           |
+| 伺服器關閉，前30分鐘   | 快取讀取和寫入，完整效能 | 不 (暫時)                |
+| 前30分鐘後          | 僅快取讀取，受影響的效能   | 將快取寫入容量磁片磁碟機之後， (是)                            |
 
 ## <a name="frequently-asked-questions"></a>常見問題集
 
@@ -167,15 +167,15 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.N
 
 ### <a name="how-many-drives-do-i-need-to-use-nested-resiliency"></a>我需要多少個磁片磁碟機才能使用嵌套的復原功能？
 
-儲存空間直接存取所需的最小磁片磁碟機數目是每個伺服器節點4個容量磁片磁碟機，加上每個伺服器節點2個快取磁片磁碟機（如果有的話）。 這在 Windows Server 2016 中是不變的。 不需要任何額外的嵌套復原，而且保留容量的建議也不會變更。
+儲存空間直接存取所需的最小磁片磁碟機數目是每個伺服器節點4個容量磁片磁碟機，加上每個伺服器節點2個快取磁片磁碟機， (是否有任何) 。 這在 Windows Server 2016 中是不變的。 不需要任何額外的嵌套復原，而且保留容量的建議也不會變更。
 
 ### <a name="does-nested-resiliency-change-how-drive-replacement-works"></a>Nested 復原是否會變更磁片磁碟機更換的運作方式？
 
-不可以。
+否。
 
 ### <a name="does-nested-resiliency-change-how-server-node-replacement-works"></a>Nested 復原是否會變更伺服器節點取代的運作方式？
 
-不可以。 若要取代伺服器節點和其磁片磁碟機，請遵循下列順序：
+否。 若要取代伺服器節點和其磁片磁碟機，請遵循下列順序：
 
 1. 淘汰傳出伺服器中的磁片磁碟機
 2. 將含有其磁片磁碟機的新伺服器新增至叢集
@@ -184,7 +184,7 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.N
 
 如需詳細資訊，請參閱[移除伺服器](remove-servers.md)主題。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [儲存空間直接存取總覽](storage-spaces-direct-overview.md)
 - [瞭解儲存空間直接存取中的容錯](storage-spaces-fault-tolerance.md)

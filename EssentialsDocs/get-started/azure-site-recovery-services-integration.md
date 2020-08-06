@@ -7,18 +7,18 @@ ms.assetid: 262701a6-8a97-4c4e-bfbf-9f8007c308d6
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e17d60b4931f4858f915bd177f05e85eb1fc5f6a
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 7c30d99bd1a0019130f7e39f70b289effd6935c4
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181684"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838247"
 ---
 # <a name="azure-site-recovery-services-integration"></a>Azure Site Recovery Services 整合
 
 >適用于： Windows Server 2016 Essentials
 
-[Azure Site Recovery 服務](https://docs.microsoft.com/azure/site-recovery/)是 Microsoft Azure 提供的一項服務，可讓您將虛擬機器（VM）即時複寫到 Azure 中的備份保存庫。 如果您的伺服器或網站因硬體或其他失敗而關閉，您可以故障切換至 Azure，其中儲存在備份保存庫中的 VM 映射將會布建為 Azure 中執行中的 VM。 與 Azure 虛擬網路結合，在容錯移轉至 Azure 的情況下，先前連線到內部部署伺服器的用戶端電腦將會以透明的方式連接到在 Azure 中執行的伺服器。
+[Azure Site Recovery 服務](/azure/site-recovery/)是 Microsoft Azure 提供的一項服務，可讓您將虛擬機器 (VM) 即時複寫到 Azure 中的備份保存庫。 如果您的伺服器或網站因硬體或其他失敗而關閉，您可以故障切換至 Azure，其中儲存在備份保存庫中的 VM 映射將會布建為 Azure 中執行中的 VM。 與 Azure 虛擬網路結合，在容錯移轉至 Azure 的情況下，先前連線到內部部署伺服器的用戶端電腦將會以透明的方式連接到在 Azure 中執行的伺服器。
 
 將 Azure Site Recovery 服務與 Windows Server Essentials 整合，會以設定[Azure 虛擬網路](azure-virtual-network-integration.md)的相同方式啟動。 從 [儀表板] 的 [ **Microsoft Cloud 服務整合**] 頁面中，按一下 [儀表板] 右邊的 [**與 Azure Site Recovery 服務整合**]：
 
@@ -32,7 +32,7 @@ ms.locfileid: "87181684"
 
 ![顯示 [啟用複寫至 Azure] 的 [登入 Microsoft Azure] 頁面的螢幕擷取畫面。 因為使用者已登入 Microsoft Azure，此頁面會提供選項來選取訂用帳戶、儲存體帳戶和區域。](media/azure-site-recovery-3.PNG)
 
-選取訂用帳戶和區域之後，名為**Azure**復原的**Windows Server Essentials 儀表板**中會出現新的索引標籤。 網路掃描是用來識別和列舉受支援的主機伺服器（執行 Windows Server Hyper-v 2012 R2 和更新版本），以及個別主機下的虛擬機器（來賓）：
+選取訂用帳戶和區域之後，名為**Azure**復原的**Windows Server Essentials 儀表板**中會出現新的索引標籤。 網路掃描是用來識別和列舉支援的主機伺服器 (執行 Windows Server Hyper-v 2012 R2 和更新版本) 以及個別主機上 (來賓) 的虛擬機器：
 
 ![螢幕擷取畫面，其中顯示 [Windows Server Essentials 儀表板] 的 [Azure 復原] 頁面。 會顯示兩部 Hyper-v 主機，以及在這些主機上執行的虛擬機器。 主機 RAM 上名為 ramh157v01 的虛擬機器已選取，而目前已停用此虛擬機器的複寫至 Azure。](media/azure-site-recovery-4.PNG)
 

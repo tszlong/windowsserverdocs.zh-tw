@@ -7,12 +7,12 @@ ms.assetid: 9378bffa-487c-43ca-9ec3-7e7864d2dd9a
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e4f3cf42cdf9343be106660b74041c059fdc7073
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: c59fd121fdf628fc0943214b699599f2f20625b3
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180994"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837827"
 ---
 # <a name="manage-digital-media-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的數位媒體
 
@@ -101,7 +101,7 @@ ms.locfileid: "87180994"
   如需詳細資訊，請參閱[開啟或關閉媒體串流處理](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_4)。
 
 ##  <a name="turn-media-streaming-on-or-off"></a><a name="BKMK_4"></a>開啟或關閉媒體串流處理
- 您可以透過將檔案串流處理到任何支援的數位媒體接收器（DMR）（例如電腦、行動電話、電視、數位媒體接收器、Windows Media Center 的擴充項（包括 Xbox 360）和其他個人電子裝置），從 Windows Server Essentials 共用音樂、影片和圖片。
+ 您可以透過將檔案串流處理到任何支援的數位媒體接收器 (DMR) 例如電腦、行動電話、電視、數位媒體接收器、Windows Media Center (的擴充項，包括 Xbox 360) 和其他個人電子裝置，從 Windows Server Essentials 共用音樂、影片和圖片。
 
  如需目前與 Windows Server Essentials 相容的數位媒體裝置清單，請參閱[Windows 相容性中心](https://www.microsoft.com/windows/compatibility/CompatCenter/Home)。
 
@@ -130,7 +130,7 @@ ms.locfileid: "87180994"
  伺服器系統管理員可以直接存取伺服器，或使用遠端 Web 存取網站登入儀表板，將數位媒體新增至媒體櫃中的共用資料夾。 其他使用者可以使用 [啟動列] 上的 [**共用資料夾**] 連線、使用 [遠端 Web 存取] 網站，或使用適用于 Windows Phone 的 My server 應用程式，將媒體檔案新增至伺服器。 如需播放媒體的相關資訊，請參閱[播放數位媒體](../use/Play-Digital-Media-in-Windows-Server-Essentials.md)。
 
 > [!NOTE]
->  您也可以透過使用適用於 Windows Phone 的 My Server 應用程式，將媒體檔案上傳到伺服器。 您可以從 [Windows Phone 市集](https://www.windowsphone.com/store/app/my-server/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a)下載 My Server 應用程式。 如需適用于 Windows phone 的 My Server 應用程式的詳細資訊，請參閱[Windows Server Essentials 的 My server phone 應用程式](https://blogs.technet.com/b/sbs/archive/2012/09/18/my-server-phone-app-for-windows-server-2012-essentials.aspx)的 blog 文章。
+>  您也可以透過使用適用於 Windows Phone 的 My Server 應用程式，將媒體檔案上傳到伺服器。 您可以從 [Windows Phone 市集](https://www.windowsphone.com/store/app/my-server/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a)下載 My Server 應用程式。 如需適用于 Windows phone 的 My Server 應用程式的詳細資訊，請參閱[Windows Server Essentials 的 My server phone 應用程式](/archive/blogs/sbs/my-server-phone-app-for-windows-server-2012-essentials)的 blog 文章。
 
 #### <a name="to-add-digital-media-files-to-shared-folders-on-the-server"></a>將數位媒體檔案新增到伺服器上的共用資料夾
 
@@ -184,14 +184,14 @@ ms.locfileid: "87180994"
 
 4.  按一下 [套用]**** 或 [確定]**** 以儲存您的變更。
 
-##  <a name="enable-media-devices-that-use-the-server-message-block-smb-protocol-to-access-shared-files-on-the-server"></a><a name="BKMK_10"></a>啟用使用伺服器訊息區（SMB）通訊協定的媒體裝置，以存取伺服器上的共用檔案
+##  <a name="enable-media-devices-that-use-the-server-message-block-smb-protocol-to-access-shared-files-on-the-server"></a><a name="BKMK_10"></a>啟用使用伺服器訊息區 (SMB) 通訊協定的媒體裝置，以存取伺服器上的共用檔案
  裝置如果是使用「伺服器訊息區」(SMB) 而不是 DLNA (適用於媒體串流處理) 來存取網路檔案和共用存取，就需要啟用來賓帳戶。 這可讓網路上的任何裝置或使用者不需驗證，即可檢視共用資料夾的內容。
 
 > [!CAUTION]
 >  當您啟用來賓帳戶時，預設是任何人都可以存取伺服器上的共用資源。
 
 ##  <a name="common-processors-and-the-video-profiles-they-support"></a><a name="BKMK_CommonProcessors"></a>常見的處理器和其支援的影片設定檔
- 若要從 Windows Server Essentials 伺服器串流媒體，您可以使用執行 Windows 7 或 Windows 8 作業系統的電腦，或是其他網路裝置（例如數位媒體播放程式）或 Media Center 擴充項（例如 Xbox 360）。 當您不在您網路的近端時，可以使用「遠端 Web 存取媒體播放機」來播放儲存在您伺服器上的檔案。
+ 若要從 Windows Server Essentials 伺服器串流媒體，您可以使用執行 Windows 7 或 Windows 8 作業系統的電腦，或其他網路裝置 (例如數位媒體播放機) 或 Media Center 擴充項 (例如 Xbox 360) 。 當您不在您網路的近端時，可以使用「遠端 Web 存取媒體播放機」來播放儲存在您伺服器上的檔案。
 
  您的資料傳送速率必須介於 200 KBps 到 10 MBps。 您必須使用您的電腦和裝置可以辨識和播放的媒體格式。 並非所有裝置都支援相同的媒體格式，因此必須有一個可供您的電腦和裝置播放您所擁有之媒體檔案的方法。
 
@@ -243,7 +243,7 @@ ms.locfileid: "87180994"
 
  如需受支援檔案格式的其他資訊，請參閱 [Windows Media Player 支援的檔案類型](https://go.microsoft.com/fwlink/p/?LinkID=196118) 和 Silverlight [支援的媒體格式、通訊協定及記錄欄位](https://go.microsoft.com/fwlink/p/?LinkId=203339) 。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [播放數位媒體](../use/Play-Digital-Media-in-Windows-Server-Essentials.md)
 

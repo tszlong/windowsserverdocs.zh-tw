@@ -7,17 +7,17 @@ ms.technology: networking-da
 ms.topic: article
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6bb92a1a6f569cb5b43fa3cf3861220b8b570fb9
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 4a7d784c38db692110559d9e2ce1f1f7c760313a
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518113"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769736"
 ---
 # <a name="step-1-plan-the-basic-directaccess-infrastructure"></a>步驟1規劃基本 DirectAccess 基礎結構
 在單一伺服器上進行基本 DirectAccess 部署的第一個步驟，是針對部署所需的基礎結構進行規劃。 本主題描述基礎結構規劃步驟：
 
-|Task|說明|
+|Task|描述|
 |----|--------|
 |規劃網路拓撲與設定|決定 DirectAccess 伺服器的放置位置 (在邊緣，或在「網路位址轉譯」(NAT) 裝置或防火牆後面)，並規劃 IP 位址指定和路由。|
 |規劃防火牆需求|為允許 DirectAccess 通過邊緣防火牆做規劃。|
@@ -48,9 +48,9 @@ ms.locfileid: "87518113"
 
 3.  根據下表設定所需的介面卡和位址指定。 針對使用單一網路介面卡的 NAT 裝置後方部署，請只使用 [**內部網路介面卡**] 資料行來設定您的 IP 位址。
 
-    ||外部網路介面卡|內部網路介面卡<sup>1</sup>|路由需求|
+    |描述|外部網路介面卡|內部網路介面卡<sup>1</sup>|路由需求|
     |-|--------------|--------------------|------------|
-    |IPv4 內部網路與 IPv4 網際網路|設定下列各項：<p>-一個靜態公用 IPv4 位址，具有適當的子網路遮罩。<br />-網際網路防火牆或本機網際網路服務提供者（ISP）路由器的預設閘道 IPv4 位址。|設定下列各項：<p>-具有適當子網路遮罩的 IPv4 內部網路位址。<br />-內部網路命名空間的連線特定 DNS 尾碼。 此外，也必須在內部介面上設定 DNS 伺服器。<br />-請勿在任何內部網路介面上設定預設閘道。|若要設定 DirectAccess 伺服器連線到內部 IPv4 網路上的所有子網路，請執行下列動作：<p>1. 列出內部網路上所有位置的 IPv4 位址空間。<br />2. 使用**route add-p**或**netsh interface ipv4 add route**命令來新增 ipv4 位址空間，做為 DirectAccess 伺服器之 ipv4 路由表中的靜態路由。|
+    |IPv4 內部網路與 IPv4 網際網路|設定下列各項：<p>-一個靜態公用 IPv4 位址，具有適當的子網路遮罩。<br />-網際網路防火牆或本機網際網路服務提供者 (ISP) 路由器的預設閘道 IPv4 位址。|設定下列各項：<p>-具有適當子網路遮罩的 IPv4 內部網路位址。<br />-內部網路命名空間的連線特定 DNS 尾碼。 此外，也必須在內部介面上設定 DNS 伺服器。<br />-請勿在任何內部網路介面上設定預設閘道。|若要設定 DirectAccess 伺服器連線到內部 IPv4 網路上的所有子網路，請執行下列動作：<p>1. 列出內部網路上所有位置的 IPv4 位址空間。<br />2. 使用**route add-p**或**netsh interface ipv4 add route**命令來新增 ipv4 位址空間，做為 DirectAccess 伺服器之 ipv4 路由表中的靜態路由。|
     |IPv6 網際網路與 IPv6 內部網路|設定下列各項：<p>-使用您 ISP 所提供的自動設定位址設定。<br />-使用 [**路由列印**] 命令，以確保指向 ISP 路由器的預設 ipv6 路由存在於 IPv6 路由表中。<br />-判斷 ISP 和內部網路路由器是否使用 RFC 4191 中所述的預設路由器喜好設定，以及使用高於您近端內部網路路由器的預設喜好設定。 如果這兩項都是肯定的，預設路由就不需要其他設定。 ISP 路由器的喜好設定等級較高時，可確保 DirectAccess 伺服器的作用中預設 IPv6 路由指向 IPv6 網際網路。<p>由於 DirectAccess 伺服器是 IPv6 路由器，因此如果您有原生的 IPv6 基礎結構，網際網路介面也可以連線到內部網路上的網域控制站。 在此情況下，請將封包篩選器新增到周邊網路中的網域控制站，以防止連線到 DirectAccess 伺服器之網際網路對向介面的 IPv6 位址。|設定下列各項：<p>-如果您不是使用預設的喜好設定層級，請使用**netsh interface ipv6 Set InterfaceIndex ignoredefaultroutes = enabled 命令設定**內部網路介面。 此命令可確保指向內部網路路由器的其他預設路由不會新增至 IPv6 路由表。 您可以從 netsh interface show interface 命令的顯示畫面，取得內部網路介面的 InterfaceIndex。|當您有 IPv6 內部網路時，若要設定 DirectAccess 伺服器來連線到所有 IPv6 位置，請執行下列動作：<p>1. 列出內部網路上所有位置的 IPv6 位址空間。<br />2. 使用**netsh interface ipv6 add route**命令來新增 ipv6 位址空間，做為 DirectAccess 伺服器之 ipv6 路由表中的靜態路由。|
     |IPv4 網際網路和 IPv6 內部網路|DirectAccess 伺服器會使用 Microsoft 6to4 介面卡介面，將預設的 IPv6 路由流量轉送到 IPv4 網際網路上的 6to4 轉送。 您可以使用下列命令，針對 IPv4 網際網路上的 Microsoft 6to4 轉送 IPv4 位址設定 DirectAccess 伺服器 (當公司網路中沒有部署原生 IPv6 時使用)：netsh interface ipv6 6to4 set relay name=192.88.99.1 state=enabled 命令。|||
 
@@ -65,7 +65,7 @@ ms.locfileid: "87518113"
 
 -   6to4 流量-IP 通訊協定41輸入和輸出。
 
--   IP-HTTPS-傳輸控制通訊協定（TCP）目的地埠443，以及 TCP 來源埠443輸出。
+-   IP-HTTPS-傳輸控制通訊協定 (TCP) 目的地埠443，以及 TCP 來源埠443輸出。
 
 -   如果您是以單一網路介面卡部署 DirectAccess，並且將網路位置伺服器安裝在 DirectAccess 伺服器上，則也應該豁免 TCP 連接埠 62000。
 
@@ -130,7 +130,7 @@ IPsec 的憑證需求包括 DirectAccess 用戶端電腦在用戶端與 DirectAc
 
         1.  directaccess-directaccess-webprobehost-應解析為 DirectAccess 伺服器的內部 IPv4 位址，或解析為僅 IPv6 環境中的 IPv6 位址。
 
-        2.  directaccess-directaccess-corpconnectivityhost-應解析為 localhost （回送）位址。 應該會建立 A 和 AAAA 資源記錄，A 記錄的值為 127.0.0.1，而 AAAA 記錄的值是從 NAT64 首碼建構且最後 32 位元為 127.0.0.1。 執行 get-netnattransitionconfiguration Cmdlet 即可抓取 NAT64 首碼。
+        2.  directaccess-directaccess-corpconnectivityhost-應解析為 localhost (回送) 位址。 應該會建立 A 和 AAAA 資源記錄，A 記錄的值為 127.0.0.1，而 AAAA 記錄的值是從 NAT64 首碼建構且最後 32 位元為 127.0.0.1。 執行 get-netnattransitionconfiguration Cmdlet 即可抓取 NAT64 首碼。
 
         您可以透過 HTTP 使用其他網址或使用 PING，來建立其他連線能力檢查器。 每個連線能力檢查器都必須有一個 DNS 項目。
 
@@ -180,7 +180,7 @@ DirectAccess 會使用 Active Directory 並 Active Directory 群組原則物件�
 > - 用於 DirectAccess 的 Active Directory 網域控制站不可以是能從 DirectAccess 伺服器的外部網際網路介面卡連到的網域控制站 (介面卡不得在 Windows 防火牆的網域設定檔中)。
 
 ### <a name="plan-group-policy-objects"></a><a name="bkmk_1_7_GPOs"></a>規劃群組原則物件
-當您設定 DirectAccess 時所設定的 DirectAccess 設定會收集到群組原則物件（GPO）中。 兩個不同的 GPO 會被填入 DirectAccess 設定，並依下列方式分配：
+當您設定 DirectAccess 時所設定的 DirectAccess 設定會收集到 (GPO) 的群組原則物件中。 兩個不同的 GPO 會被填入 DirectAccess 設定，並依下列方式分配：
 
 -   **DirectAccess 用戶端 GPO**。 這個 GPO 包含用戶端設定，包括 IPv6 轉換技術設定、NRPT 項目，以及「具有進階安全性的 Windows 防火牆」連線安全性規則。 這個 GPO 會套用到為用戶端電腦指定的安全性群組。
 

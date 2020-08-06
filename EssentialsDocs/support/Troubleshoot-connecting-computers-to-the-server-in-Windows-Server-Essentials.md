@@ -7,12 +7,12 @@ ms.assetid: e45b3d89-c057-4c70-a627-86fb06dd22aa
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c05888f52f3fe60d0dde22a70ceb5a3eee94e0ef
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: e832957a5d44851131cb622e4c3bf9d99d4e4a7f
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180234"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838267"
 ---
 # <a name="troubleshoot-connecting-computers-to-the-server-in-windows-server-essentials"></a>Windows Server Essentials 中的電腦與伺服器連線問題疑難排解
 
@@ -21,7 +21,7 @@ ms.locfileid: "87180234"
  本主題包含將電腦連線到執行 Windows Server Essentials 或 Windows Server Essentials 的伺服器時，可能會遇到之問題的疑難排解指引。
 
 > [!NOTE]
->  如需 Windows Server Essentials 和 Windows Server Essentials 社區中最新的疑難排解資訊，建議您造訪[Windows Server Essentials 論壇](https://docs.microsoft.com/answers/topics/windows-server-essentials.html)。 Windows Server Essentials 論壇是一個搜尋協助或詢問問題的好地方。
+>  如需 Windows Server Essentials 和 Windows Server Essentials 社區中最新的疑難排解資訊，建議您造訪[Windows Server Essentials 論壇](/answers/topics/windows-server-essentials.html)。 Windows Server Essentials 論壇是一個搜尋協助或詢問問題的好地方。
 
  本主題提供下列問題的解決方法：
 
@@ -54,7 +54,7 @@ ms.locfileid: "87180234"
 
  我取得套件安裝失敗。 請嘗試重新安裝 Windows Server Essentials 連接器。 如果問題持續發生，請在將電腦連接到伺服器時，請洽詢網路系統管理員的錯誤
 
- **說明**
+ **描述**
 
  如果您將電腦連線到執行 Windows Server Essentials 的伺服器，而其他 Windows 更新或應用程式安裝處於擱置狀態，而且已取消連接器安裝，則可能會發生此問題。
 
@@ -67,7 +67,7 @@ ms.locfileid: "87180234"
 
  無法將電腦加入 Windows Server Essentials
 
- **說明**
+ **描述**
 
  電腦名稱稱中有非 ASCII 字元的電腦不能加入 Windows Server Essentials。 如果電腦名稱包含非 ASCII 字元，您會收到錯誤訊息「發生意外的錯誤」。
 
@@ -80,7 +80,7 @@ ms.locfileid: "87180234"
 
  當我將電腦連線到伺服器時，出現 [連接器軟體安裝已取消] 錯誤
 
- **說明**
+ **描述**
 
  若要能夠將電腦連線到伺服器，系統帳戶必須具有 [Windows Server Essentials 儀表板] 上所顯示伺服器資料夾的 [完全控制] 許可權。 如果尚未取得必要的權限，您會收到「連接器軟體安裝已取消」的錯誤訊息。
 
@@ -111,7 +111,7 @@ ms.locfileid: "87180234"
 
  我收到執行此應用程式的，您必須在將電腦連線到伺服器時，安裝下列其中一個版本的 .NET Framework： V 4.5.50709 "錯誤
 
- **說明**
+ **描述**
 
  當您將電腦連線到執行 Windows Server Essentials 或 Windows Server Essentials 的伺服器時，嚮導會嘗試在電腦上安裝 .NET Framework 版本4.5.50709。 不過，如果舊版的 .NET Framework 版本4.5 存在，則無法安裝更新的版本，而且連線嘗試會失敗並出現下列錯誤訊息：若要執行此應用程式，您必須安裝下列其中一個版本的 .NET Framework： V 4.5.50709。 請洽詢您的配置發行者，以取得取得適當 .NET Framework 版本的指示。
 
@@ -134,7 +134,7 @@ ms.locfileid: "87180234"
 
  我收到伺服器無法使用。 若要解決此問題，請洽詢負責您網路的人員。 的錯誤
 
- **說明**
+ **描述**
 
  如果已連線電腦上的日期和時間與伺服器上的日期和時間不同步，就可能發生這種情況。  Windows Server Essentials 和 Windows Server Essentials 會使用時間同步處理服務，將在 Windows Server Essentials 或 Windows Server Essentials 網路中執行之電腦的日期和時間同步。 時間同步處理很重要，因為預設的驗證通訊協定會在驗證程序中使用伺服器時間。 例如，如果用戶端電腦上的時鐘未同步處理到正確的日期和時間，Windows Server Essentials 或 Windows Server Essentials 驗證可能會將登入要求誤認為入侵嘗試，並拒絕使用者存取。
 
@@ -186,7 +186,7 @@ ms.locfileid: "87180234"
 
  發生未預期的錯誤。 若要解決此問題，請洽詢負責您網路的人員。 的錯誤
 
- **說明**
+ **描述**
 
  如果您收到這個錯誤訊息，WSS 憑證 Web 服務可能並未執行。
 
@@ -209,7 +209,7 @@ ms.locfileid: "87180234"
 
  當我嘗試在連線嘗試失敗後再次將電腦連接到伺服器時，我收到警告，表示此名稱的電腦已經連接到伺服器
 
- **說明**
+ **描述**
 
  如果先前嘗試將電腦連線到伺服器已取消或中斷，您可能會在嘗試重新連線時收到下列警告：此名稱的電腦已經連接到伺服器。 由於第一次嘗試連線到伺服器時會發出憑證，因此會發生這種情況。
 
@@ -220,7 +220,7 @@ ms.locfileid: "87180234"
 
  當我嘗試將執行 Windows 7 Home 的用戶端電腦連線到伺服器時，會開啟執行連接器軟體的網頁，但用戶端電腦無法連線到伺服器
 
- **說明**
+ **描述**
 
  如果您網路上的路由器已啟用多點傳送，伺服器與執行 Windows 7 Home Basic 或 Windows 7 Home Premium 的用戶端電腦之間的通訊將無法正常運作。
 
@@ -233,7 +233,7 @@ ms.locfileid: "87180234"
 
  當我將電腦連線到伺服器之後，自動登入已停止運作。
 
- **說明**
+ **描述**
 
  當您將電腦連線到 Windows Server Essentials 時，如果已為使用者帳戶設定自動登入，則會在電腦上安裝連接器軟體時覆寫此設定。
 
@@ -247,9 +247,9 @@ ms.locfileid: "87180234"
 
  解除安裝連接器軟體的發行前版本並不會移除現有的記錄檔
 
- **說明**
+ **描述**
 
- 從 Windows Server Essentials 的發行前（Beta 或 RC）版本更新為發行版本之後，您必須從連線到伺服器的每部電腦移除連接器軟體，然後再次連接電腦以安裝連接器軟體的發行版本。
+ 從 Windows Server Essentials 的發行前版本 (Beta 或 RC) 版本更新為發行版本之後，您必須從連線到伺服器的每部電腦移除連接器軟體，然後再次連接電腦以安裝連接器軟體的發行版本。
 
  不過，當您從網路電腦移除連接器軟體時，並不會刪除該電腦上 %ProgramData%\Microsoft\Windows Server\Logs\ 資料夾中的現有記錄檔。 如果您未刪除 Logs 資料夾，當您將電腦連線到 Windows Server Essentials 的發行版本時，記錄檔可能會損毀。
 
@@ -268,7 +268,7 @@ ms.locfileid: "87180234"
 
  我想要升級用戶端電腦上的作業系統
 
- **說明**
+ **描述**
 
  在安裝連接器軟體期間，會對用戶端作業系統執行許多檢查，以確保用戶端符合連接器的所有必要條件。 如果您在安裝連接器軟體之後升級用戶端作業系統，可能會缺少其中一些必要元件，而導致用戶端連接器失敗。
 
@@ -278,8 +278,8 @@ ms.locfileid: "87180234"
 
  如果您已經升級安裝了連接器軟體的用戶端，請使用 [新增/移除程式]**** 或 [程式和功能]**** 解除安裝連接器軟體。 然後重新安裝連接器軟體。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [管理 Windows Server Essentials](../manage/Manage-Windows-Server-Essentials.md)
 
-- [Windows 2012 Server Essentials ConnectComputer 疑難排解](https://docs.microsoft.com/windows-server-essentials/support/troubleshoot-connecting-computers-to-the-server-in-windows-server-essentials)
+- [Windows 2012 Server Essentials ConnectComputer 疑難排解]()

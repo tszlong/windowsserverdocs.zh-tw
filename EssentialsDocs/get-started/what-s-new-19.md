@@ -6,12 +6,12 @@ ms.assetid: affff774-5fa6-4944-887a-9bfde05f6a3f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: jasgroce
-ms.openlocfilehash: 97b5d3df88f10aa55a345e5640a896a8cc25ff76
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: d7e655ba001f72bb6c2a5e68db8032520232bf8d
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181624"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838117"
 ---
 # <a name="whats-new-in-windows-server-2019-essentials"></a>Windows Server 2019 Essentials 中的新功能
 
@@ -34,9 +34,9 @@ Windows Server Essentials 體驗角色已從所有伺服器 Sku 中移除，包�
 
 ## <a name="aad-connect-can-now-be-installed-on-windows-server-2019-essentials"></a>AAD Connect 現在可以安裝在 Windows Server 2019 Essentials 上
 
-Windows Server 2019 Essentials 包含透過[AAD Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-prerequisites)Azure Active Directory 的新支援。
+Windows Server 2019 Essentials 包含透過[AAD Connect](/azure/active-directory/connect/active-directory-aadconnect-prerequisites)Azure Active Directory 的新支援。
 
 ## <a name="ltsc-support-for-windows-server-2016-essentials"></a>Windows Server 2016 Essentials 的 LTSC 支援
 
-根據長期維護通道（LTSC）服務的時間表，將支援目前使用 Windows Server 2016 Essentials 的客戶。
+目前使用 Windows Server 2016 Essentials 的客戶，將會根據長期維護通道 (LTSC) 服務時間行來支援。
 對於擁有超過25個以上使用者/50 個裝置的公司，或可能成長超過25位使用者的公司，Windows Server 2019 Standard （和可能是 Datacenter edition）可以提供更有彈性的部署選項。

@@ -7,12 +7,12 @@ ms.assetid: f1e6b377-4a24-4d28-9b25-05910914826b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ab964839dbdf8b2907d68c42c80e9d8f93d5bc75
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 3d1428fa258f661636d599dd8dcf41acaaf59082
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180254"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838277"
 ---
 # <a name="troubleshoot-computer-monitoring-in-windows-server-essentials"></a>Windows Server Essentials 中的電腦監視問題疑難排解
 
@@ -21,7 +21,7 @@ ms.locfileid: "87180254"
 本主題提供在 [警示檢視器] 中監視電腦的健全狀況狀態，以及透過 Windows Server Essentials 中的電子郵件通知，所遇到的問題疑難排解。
 
 > [!NOTE]
-> 如需 Windows Server Essentials 社區最新的疑難排解資訊，建議您流覽[Windows Server Essentials 論壇](https://docs.microsoft.com/answers/topics/windows-server-essentials.html)。 Windows Server Essentials 論壇是一個搜尋協助或詢問問題的好地方。
+> 如需 Windows Server Essentials 社區最新的疑難排解資訊，建議您流覽[Windows Server Essentials 論壇](/answers/topics/windows-server-essentials.html)。 Windows Server Essentials 論壇是一個搜尋協助或詢問問題的好地方。
 
 ## <a name="troubleshooting-email-notifications-for-alerts"></a>疑難排解警示的電子郵件通知
 
