@@ -1,6 +1,6 @@
 ---
 ms.assetid: 8890ccc9-068d-4da2-bd51-8a2964173ff1
-title: 使用 WID 和 Proxy 的同盟伺服器陣列
+title: 使用 WID 和 proxy AD FS 同盟伺服器陣列
 author: billmath
 ms.author: billmath
 manager: femila
@@ -8,23 +8,23 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 9c6dba880b80de43bb713d1b4495f0e03d56a695
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e70359b5a05fed8e7cfb467d3410e12939a1de1b
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853091"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864049"
 ---
 # <a name="federation-server-farm-using-wid-and-proxies"></a>使用 WID 和 Proxy 的同盟伺服器陣列
 
-適用于 Active Directory 同盟服務 \(AD FS\) 的這個部署拓撲，與 Windows Internal Database \(WID\) 拓撲的同盟伺服器陣列相同，但它會將同盟伺服器 proxy 新增至周邊網路，以支援外部使用者。 同盟伺服器 proxy 會將來自公司網路外部的用戶端驗證要求重新導向至同盟伺服器陣列。  
+適用于 Active Directory 同盟服務 AD FS 的部署拓撲與 \( \) 具有 Windows 內部資料庫 WID 拓撲的同盟伺服器陣列相同 \( \) ，但它會將同盟伺服器 proxy 新增至周邊網路，以支援外部使用者。 同盟伺服器 proxy 會將來自公司網路外部的用戶端驗證要求重新導向至同盟伺服器陣列。  
   
-## <a name="deployment-considerations"></a>部署考量  
+## <a name="deployment-considerations"></a>部署考量因素  
 本節說明與此部署拓撲相關聯的目標物件、優點和限制的各種考慮。  
   
 ### <a name="who-should-use-this-topology"></a>誰應該使用此拓撲？  
   
--   具有100或較少已設定信任關係的組織，必須同時提供他們的內部使用者和外部使用者 \(登入位於公司\-\) 網路外部的電腦，\(SSO\) 存取同盟應用程式或服務  
+-   具有100或更少已設定信任關係的組織，必須提供他們的內部使用者和外部使用者 \( 登入實際位於公司網路外部的電腦，並 \) 具有同盟 \- \( \) 應用程式或服務的單一登入 SSO 存取權  
   
 -   需要提供內部使用者和外部使用者 Microsoft Office 365 的 SSO 存取權的組織  
   
@@ -39,9 +39,9 @@ ms.locfileid: "80853091"
 -   [使用 WID 拓撲針對同盟伺服器](Federation-Server-Farm-Using-WID-2012.md)陣列所列出的相同限制  
   
 ## <a name="server-placement-and-network-layout-recommendations"></a>伺服器放置和網路設定建議  
-若要部署此拓撲，除了新增兩個同盟伺服器 proxy 以外，您還必須確定您的周邊網路也可以提供網域名稱系統 \(DNS\) 伺服器的存取權，以及 \(NLB\) 主機的第二個網路負載平衡。 第二部 NLB 主機必須透過使用網際網路\-可存取叢集 IP 位址的 NLB 叢集來設定，而且必須使用與您在公司網路上設定的先前 NLB 叢集相同的叢集 DNS 名稱設定 \(fs.fabrikam.com\)。 同盟伺服器 proxy 也應該使用網際網路\-可存取的 IP 位址進行設定。  
+若要部署此拓撲，除了新增兩個同盟伺服器 proxy 以外，您還必須確定您的周邊網路也可以提供網域名稱系統 \( DNS \) 伺服器和第二個網路負載平衡 \( NLB 主機的存取權 \) 。 第二部 NLB 主機必須透過使用可存取網際網路的叢集 IP 位址的 NLB 叢集來設定 \- ，而且必須使用與您在公司網路 fs.fabrikam.com 上設定的先前 NLB 叢集相同的叢集 DNS 名稱設定 \( \) 。 同盟伺服器 proxy 也應該使用網際網路 \- 可存取的 IP 位址進行設定。  
   
-下圖顯示具有先前所述之 WID 拓撲的現有同盟伺服器陣列，以及虛構 Fabrikam，Inc.，公司如何提供周邊 DNS 伺服器的存取權，新增具有相同叢集 DNS 名稱的第二個 NLB 主機 \(fs.fabrikam.com\)，並將兩個同盟伺服器 proxy \(fsp1 和 fsp2 新增\) 新增至周邊網路。  
+下圖顯示具有先前所述之 WID 拓撲的現有同盟伺服器陣列，以及虛構 Fabrikam，Inc.，公司如何提供周邊 DNS 伺服器的存取權，新增第二個具有相同叢集 DNS 名稱 fs.fabrikam.com 的 NLB 主機 \( \) ，並將兩個同盟伺服器 proxy \( fsp1 和 fsp2 新增新增 \) 至周邊網路。  
   
 ![使用 WID 的伺服器陣列](media/FarmWIDProxies.gif)  
   

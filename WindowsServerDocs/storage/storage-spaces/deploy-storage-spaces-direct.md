@@ -7,24 +7,24 @@ ms.technology: storage-spaces
 ms.topic: get-started-article
 ms.assetid: 20fee213-8ba5-4cd3-87a6-e77359e82bc0
 author: stevenek
-ms.date: 06/07/2019
-description: 使用 Windows Server 中的儲存空間直接存取，將軟體定義的存放裝置部署為超融合基礎結構或聚合式（也稱為分類式）基礎結構的逐步指示。
+ms.date: 07/24/2020
+description: 使用 Windows Server 中的儲存空間直接存取部署軟體定義的存放裝置的逐步指示，做為超大範圍基礎結構或聚合式 (也稱為分類式) 基礎結構。
 ms.localizationpriority: medium
-ms.openlocfilehash: c18d3edc57ab04c9f9487bc39b52325fa1eb0ba9
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ba9287cebe1cf35c151335e59476f63ae3e01a56
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955110"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87863935"
 ---
 # <a name="deploy-storage-spaces-direct"></a>部署儲存空間直接存取
 
 > 適用於：Windows Server 2019、Windows Server 2016
 
-本主題提供部署[儲存空間直接存取](storage-spaces-direct-overview.md)的逐步指示。
+本主題提供逐步指示，說明如何在 Windows Server 上部署[儲存空間直接存取](storage-spaces-direct-overview.md)。 若要將儲存空間直接存取部署 Azure Stack HCI 的一部分，請參閱[AZURE STACK HCI 的部署程式為何？](/azure-stack/hci/deploy/deployment-overview)
 
 > [!Tip]
-> 想要取得超融合的基礎結構嗎？ Microsoft 建議向我們的合作夥伴購買經過驗證的硬體/軟體解決方案，包括部署工具和程式。 這些解決方案是針對我們的參考架構而設計、組裝和驗證，以確保相容性和可靠性，讓您快速啟動並執行。 如需 Windows Server 2019 解決方案，請造訪[AZURE STACK HCI 解決方案網站](https://azure.microsoft.com/overview/azure-stack/hci)。 如需 Windows Server 2016 解決方案，請在[Windows Server 軟體定義](https://microsoft.com/wssd)中深入瞭解。
+> 想要取得超大範圍基礎結構嗎？ Microsoft 建議向我們的合作夥伴購買經過驗證的硬體/軟體 Azure Stack HCI 解決方案。 這些解決方案是針對我們的參考架構而設計、組裝和驗證，以確保相容性和可靠性，讓您快速啟動並執行。 若要詳閱使用 Azure Stack HCI 的硬體/軟體解決方案目錄，請參閱[AZURE STACK HCI 目錄](https://azure.microsoft.com/products/azure-stack/hci/catalog/)。
 
 > [!Tip]
 > 您可以使用 Hyper-v 虛擬機器（包括在 Microsoft Azure 中）來[評估沒有硬體的儲存空間直接存取](storage-spaces-direct-in-vm.md)。 您可能也會想要查看[Windows Server 快速實驗室部署腳本](https://aka.ms/wslab)，這是我們用來定型的課程。
@@ -41,7 +41,7 @@ ms.locfileid: "86955110"
 
 - **功能變數名稱。** 熟悉您組織的網域命名和加入網域的原則。  您會將伺服器加入您的網域，而且您必須指定功能變數名稱。
 
-- **RDMA 網路功能。** RDMA 通訊協定有兩種類型： iWarp 和 RoCE。 請注意，您的網路介面卡會使用哪一個，如果 RoCE，也請注意版本（v1 或 v2）。 針對 RoCE，也請記下機架頂端交換器的型號。
+- **RDMA 網路功能。** RDMA 通訊協定有兩種類型： iWarp 和 RoCE。 請注意，您的網路介面卡會使用哪一個，如果 RoCE，也請注意版本 (v1 或 v2) 。 針對 RoCE，也請記下機架頂端交換器的型號。
 
 - **VLAN ID。** 請注意，在伺服器上用於管理 OS 網路介面卡的 VLAN ID （如果有的話）。 您應該能夠從您的網路管理員取得。
 
@@ -51,7 +51,7 @@ ms.locfileid: "86955110"
 
 第一個步驟是在每個將位於叢集中的伺服器上安裝 Windows Server。 儲存空間直接存取需要 Windows Server 2016 Datacenter Edition。 您可以使用 Server Core 安裝選項或具有桌面體驗的伺服器。
 
-當您使用安裝程式來安裝 Windows Server 時，可以選擇*Windows server* （指的是 server Core）和*windows Server （具有桌面體驗的伺服器）*，這相當於 windows server 2012 R2 中可用的*完全*安裝選項。 如果您沒有選擇，將會取得 Server Core 安裝選項。 如需詳細資訊，請參閱[Windows Server 2016 的安裝選項](../../get-started/Windows-Server-2016.md)。
+當您使用安裝程式來安裝 Windows Server 時，可以在*Windows server* (參照 server Core) 和*具有桌面體驗) 的 Windows server (server *，這相當於 Windows Server 2012 R2 中提供的*完全*安裝選項。 如果您沒有選擇，將會取得 Server Core 安裝選項。 如需詳細資訊，請參閱[Windows Server 2016 的安裝選項](../../get-started/Windows-Server-2016.md)。
 
 ### <a name="step-12-connect-to-the-servers"></a>步驟1.2：連接到伺服器
 
@@ -102,7 +102,7 @@ ms.locfileid: "86955110"
 Add-Computer -NewName "Server01" -DomainName "contoso.com" -Credential "CONTOSO\User" -Restart -Force
 ```
 
-如果您的存放裝置系統管理員帳戶不是 Domain Admins 群組的成員，請將您的儲存體系統管理員帳戶新增至每個節點上的本機 Administrators 群組（或更棒的是）新增用於存放裝置管理者的群組。 您可以使用下列命令（或撰寫 Windows PowerShell 函式來執行此動作-如需詳細資訊，請參閱[使用 PowerShell 將網域使用者新增至本機群組](https://devblogs.microsoft.com/scripting/use-powershell-to-add-domain-users-to-a-local-group/)）：
+如果您的存放裝置系統管理員帳戶不是 Domain Admins 群組的成員，請將您的儲存體系統管理員帳戶新增至每個節點上的本機 Administrators 群組（或更棒的是）新增用於存放裝置管理者的群組。 您可以使用下列命令 (或撰寫 Windows PowerShell 函式來執行此動作-如需詳細資訊，請參閱[使用 PowerShell 將網域使用者新增至本機群組](https://devblogs.microsoft.com/scripting/use-powershell-to-add-domain-users-to-a-local-group/)) ：
 
 ```
 Net localgroup Administrators <Domain\Account> /add
@@ -110,11 +110,11 @@ Net localgroup Administrators <Domain\Account> /add
 
 ### <a name="step-14-install-roles-and-features"></a>步驟1.4：安裝角色和功能
 
-下一步是在每一部伺服器上安裝伺服器角色。 您可以使用[Windows 系統管理中心](../../manage/windows-admin-center/use/manage-servers.md)、[伺服器管理員](../../administration/server-manager/install-or-uninstall-roles-role-services-or-features.md)）或 PowerShell 來執行這項操作。 以下是要安裝的角色：
+下一步是在每一部伺服器上安裝伺服器角色。 您可以使用[Windows 系統管理中心](../../manage/windows-admin-center/use/manage-servers.md)、[伺服器管理員](../../administration/server-manager/install-or-uninstall-roles-role-services-or-features.md)) 或 PowerShell 來執行這項操作。 以下是要安裝的角色：
 
 - 容錯移轉叢集
 - Hyper-V
-- 檔案伺服器（如果您想要裝載任何檔案共用，例如用於聚合式部署）
+- 如果您想要裝載任何檔案共用（例如針對交集部署），請使用檔案伺服器 () 
 - 資料中心橋接 (如果您正在使用 RoCEv2 而非 iWARP 網路介面卡)
 - RSAT-Clustering-PowerShell
 - Hyper-V-PowerShell
@@ -142,12 +142,12 @@ Invoke-Command ($ServerList) {
 
 如果您要在虛擬機器內部署儲存空間直接存取，請略過本節。
 
-儲存空間直接存取需要在叢集中的伺服器之間具有高頻寬、低延遲的網路功能。 至少需要 10 GbE 網路，並且建議使用遠端直接記憶體存取（RDMA）。 您可以使用 iWARP 或 RoCE，前提是它具有 Windows Server 2016 標誌，但 iWARP 通常較容易設定。
+儲存空間直接存取需要在叢集中的伺服器之間具有高頻寬、低延遲的網路功能。 至少需要 10 GbE 網路，而且建議 (RDMA) 的遠端直接記憶體存取。 您可以使用 iWARP 或 RoCE，前提是它具有 Windows Server 2016 標誌，但 iWARP 通常較容易設定。
 
 > [!Important]
 > 根據您的網路設備，特別是使用 RoCE v2，可能需要一些最上層交換器的設定。 正確的交換器設定非常重要，可確保儲存空間直接存取的可靠性和效能。
 
-Windows Server 2016 引進了 Hyper-v 虛擬交換器內的交換器內嵌小組（SET）。 這可讓您在使用 RDMA 時，將相同的實體 NIC 埠用於所有網路流量，以減少所需的實體 NIC 埠數目。 建議儲存空間直接存取使用交換器內嵌小組。
+Windows Server 2016 引進了交換器內嵌小組 (在 Hyper-v 虛擬交換器內設定) 。 這可讓您在使用 RDMA 時，將相同的實體 NIC 埠用於所有網路流量，以減少所需的實體 NIC 埠數目。 建議儲存空間直接存取使用交換器內嵌小組。
 
 切換或 switchless 的節點互連
 - 已切換：網路交換器必須正確設定，才能處理頻寬和網路類型。 如果使用執行 RoCE 通訊協定的 RDMA，網路裝置和交換器設定更為重要。
@@ -204,7 +204,7 @@ Count Name                          PSComputerName
 
 ### <a name="step-32-validate-the-cluster"></a>步驟3.2：驗證叢集
 
-在此步驟中，您將執行叢集驗證工具，以確保伺服器節點已正確設定，以使用儲存空間直接存取來建立叢集。 叢集驗證（）在叢集 `Test-Cluster` 建立之前執行時，會執行測試，確認設定是否顯示為可成功做為容錯移轉叢集。 下面的範例 `-Include` 會使用參數，然後指定特定的測試類別。 這可確保驗證中包含與儲存空間直接存取相關的測試。
+在此步驟中，您將執行叢集驗證工具，以確保伺服器節點已正確設定，以使用儲存空間直接存取來建立叢集。 叢集驗證 () 在叢集 `Test-Cluster` 建立之前執行時，它會執行測試，確認設定是否顯示為可成功做為容錯移轉叢集。 下面的範例 `-Include` 會使用參數，然後指定特定的測試類別。 這可確保驗證中包含與儲存空間直接存取相關的測試。
 
 您可以使用下列 PowerShell 命令驗證一組用來做為儲存空間直接存取叢集的伺服器。
 
@@ -264,11 +264,11 @@ Enable-ClusterStorageSpacesDirect –CimSession <ClusterName>
 
 ### <a name="step-37-optionally-enable-the-csv-cache"></a>步驟3.7：選擇性地啟用 CSV 快取
 
-您可以選擇性地啟用叢集共用磁片區（CSV）快取，以使用系統記憶體（RAM）做為讀取作業的寫入式區塊層級快取，但 Windows 快取管理員尚未快取該快取。 這可以改善 Hyper-v 之類應用程式的效能。 CSV 快取可以提高讀取要求的效能，也適用于向外延展檔案伺服器案例。
+您可以選擇性地啟用叢集共用磁片區 (CSV) 快取，以使用系統記憶體 (RAM) 做為讀取作業的寫入式區塊層級快取，但尚未由 Windows 快取管理員快取。 這可以改善 Hyper-v 之類應用程式的效能。 CSV 快取可以提高讀取要求的效能，也適用于向外延展檔案伺服器案例。
 
 啟用 CSV 快取會減少可在超融合式叢集上執行 Vm 的記憶體數量，因此您必須在儲存體效能與 Vhd 可用的記憶體之間取得平衡。
 
-若要設定 CSV 快取的大小，請使用在存放裝置叢集上具有系統管理員許可權的帳戶開啟管理系統上的 PowerShell 會話，然後使用此腳本，視 `$ClusterName` 需要變更和 `$CSVCacheSize` 變數（此範例會為每部伺服器設定 2 GB CSV 快取）：
+若要設定 CSV 快取的大小，請使用在存放裝置叢集上具有系統管理員許可權的帳戶開啟管理系統上的 PowerShell 會話，然後使用此腳本，視情況變更 `$ClusterName` 和 `$CSVCacheSize` 變數 (此範例會為每部伺服器設定 2 GB CSV 快取) ：
 
 ```PowerShell
 $ClusterName = "StorageSpacesDirect1"
@@ -287,7 +287,7 @@ Write-Output "$ClusterName CSV cache size: $CSVCurrentCacheSize MB"
 
 如果您要部署超融合式叢集，最後一個步驟是在儲存空間直接存取叢集上布建虛擬機器。
 
-虛擬機器的檔案應該儲存在 systems CSV 命名空間（例如： c： \\ ClusterStorage \\ Volume1）上，就像容錯移轉叢集上的叢集 vm 一樣。
+虛擬機器的檔案應該儲存在 systems CSV 命名空間 (範例： c： \\ ClusterStorage \\ Volume1) 就像容錯移轉叢集上的叢集 vm 一樣。
 
 您可以使用 [內建工具] 或其他工具來管理儲存體和虛擬機器，例如 System Center Virtual Machine Manager。
 
@@ -327,7 +327,7 @@ Add-ClusterScaleOutFileServerRole -Name SOFS -Cluster FSCLUSTER
 
 ### <a name="step-42-create-file-shares"></a>步驟4.2：建立檔案共用
 
-建立虛擬磁片並將其新增至 Csv 之後，就可以在其上建立檔案共用-每個虛擬磁片每個 CSV 一個檔案共用。 System Center Virtual Machine Manager （VMM）可能是執行這項作業的 handiest 方式，因為它會為您處理許可權，但如果您的環境中沒有它，您可以使用 Windows PowerShell 來部分自動化部署。
+建立虛擬磁片並將其新增至 Csv 之後，就可以在其上建立檔案共用-每個虛擬磁片每個 CSV 一個檔案共用。 System Center Virtual Machine Manager (VMM) 可能是 handiest 的方法，因為它會為您處理許可權，但如果您的環境中沒有它，您可以使用 Windows PowerShell 來部分自動化部署。
 
 使用[適用于 Hyper-v 工作負載的 SMB 共用](https://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a)設定腳本中包含的腳本，這會部分自動化建立群組和共用的流程。 它是針對 Hyper-v 工作負載所撰寫，因此，如果您要部署其他工作負載，您可能必須修改設定，或在建立共用之後執行其他步驟。 例如，如果您使用 Microsoft SQL Server，SQL Server 服務帳戶就必須被授與共享和檔案系統的完整控制權。
 
@@ -382,11 +382,11 @@ CD $ScriptFolder
 .\KCDSetup.ps1 -HyperVClusterName $HyperVClusterName -ScaleOutFSName $ScaleOutFSName -EnableLM
 ```
 
-## <a name="next-steps"></a>接下來的步驟
+## <a name="next-steps"></a>後續步驟
 
 部署叢集檔案伺服器之後，我們建議您先使用綜合工作負載測試解決方案的效能，然後再啟動任何實際的工作負載。 這可讓您確認解決方案是否正常執行，並在增加工作負載複雜度之前，先解決任何延遲問題。 如需詳細資訊，請參閱[使用綜合工作負載測試儲存空間效能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn894707(v=ws.11))。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [Windows Server 2016 中的儲存空間直接存取](storage-spaces-direct-overview.md)
 -   [了解儲存空間直接存取中的快取](understand-the-cache.md)

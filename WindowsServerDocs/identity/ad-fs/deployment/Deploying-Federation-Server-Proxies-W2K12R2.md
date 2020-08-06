@@ -1,6 +1,6 @@
 ---
 ms.assetid: 222e9f93-7c41-4527-8a98-8f7fbc7a58af
-title: 部署同盟伺服器 Proxy
+title: 在 Windows Server 2012 R2 的 AD FS 中部署同盟伺服器 proxy
 author: billmath
 ms.author: billmath
 manager: femila
@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 445f3b6fef526cb5dd308be8aafe49a3ecddd6a4
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: eaf33a1f5398adc1237eaed5c8b418ccbebed9fe
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965970"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864166"
 ---
 # <a name="deploying-federation-server-proxies"></a>部署同盟伺服器 Proxy
 
@@ -23,7 +23,7 @@ ms.locfileid: "86965970"
   
 若要規劃 Web 應用程式 Proxy 的部署，您可以檢閱下列主題的資訊：  
   
--   [規劃 Web 應用程式 Proxy 基礎結構（WAP）](/previous-versions/orphan-topics/ws.11/dn383648(v=ws.11))  
+-   [ (WAP) 規劃 Web 應用程式 Proxy 基礎結構](/previous-versions/orphan-topics/ws.11/dn383648(v=ws.11))  
   
 -   [規劃 Web 應用程式 Proxy 伺服器](/previous-versions/orphan-topics/ws.11/dn383647(v=ws.11))  
   

@@ -1,6 +1,6 @@
 ---
 ms.assetid: 41d6b897-1e72-4522-aad6-eece1154a154
-title: 在資源夥伴組織中部署 AD FS
+title: 在資源夥伴組織中部署舊版 AD FS
 author: billmath
 ms.author: billmath
 manager: femila
@@ -8,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: d9afc19be9ee92c23198b7fd8a7716379eb0821d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 63afcbf825aadcc8207793e6e7ccb3cdc48cacbb
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853161"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87863791"
 ---
-# <a name="deploying-ad-fs-in-the-resource-partner-organization"></a>在資源夥伴組織中部署 AD FS
+# <a name="deploying-legacy-ad-fs-in-the-resource-partner-organization"></a>在資源夥伴組織中部署舊版 AD FS
 
-Active Directory 同盟服務 \(AD FS\) 中的資源夥伴組織，代表其 Web 服務器可能受到資源\-端同盟伺服器保護的組織。 資源夥伴的同盟伺服器會使用帳戶夥伴所產生的安全性權杖，向位於資源夥伴的 Web 服務器提供宣告。  
+Active Directory 同盟服務 AD FS 中的資源夥伴 \( 組織 \) 代表其 Web 服務器可能受到資源 \- 端同盟伺服器保護的組織。 資源夥伴的同盟伺服器會使用帳戶夥伴所產生的安全性權杖，向位於資源夥伴的 Web 服務器提供宣告。  
   
 在您需要將同盟服務或應用程式的存取權提供給許多不同的使用者（在某些使用者位於不同的組織時），您可以設定資源同盟伺服器，讓您可以部署多個帳戶夥伴。  
   

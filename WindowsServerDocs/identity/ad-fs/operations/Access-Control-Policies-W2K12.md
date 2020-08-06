@@ -1,6 +1,6 @@
 ---
 ms.assetid: 5728847d-dcef-4694-9080-d63bfb1fe24b
-title: AD FS 中的存取控制原則
+title: Windows Server 2012 R2 中 AD FS 的存取控制原則
 author: billmath
 ms.author: billmath
 manager: femila
@@ -8,12 +8,12 @@ ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2fd8b6680039d344e9a9b0c41a29cc4c4210bc0b
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 649b5d8b05b4512a7c42419af043db9afe4a1fde
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519837"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87863835"
 ---
 # <a name="access-control-policies-in-windows-server-2012-r2-and-windows-server-2012-ad-fs"></a>Windows Server 2012 R2 和 Windows Server 2012 中的存取控制原則 AD FS
 
@@ -34,7 +34,7 @@ Windows 10 網域加入和登入所需的 AD FS 端點
 - [federation service 名稱]/adfs/services/trust/2005/certificatemixed
 - [federation service 名稱]/adfs/services/trust/13/certificatemixed
 
->**重要**事項：/adfs/services/trust/2005/windowstransport 和/adfs/services/trust/13/windowstransport 端點應僅啟用內部網路存取，因為它們的目的是在 HTTPS 上使用 WIA 系結的內部網路面向端點。 將它們公開到外部網路，可能會允許對這些端點的要求略過鎖定保護。 這些端點應該停用在 proxy 上（也就是從外部網路停用），以保護 AD 帳戶鎖定。
+>**重要**事項：/adfs/services/trust/2005/windowstransport 和/adfs/services/trust/13/windowstransport 端點應僅啟用內部網路存取，因為它們的目的是在 HTTPS 上使用 WIA 系結的內部網路面向端點。 將它們公開到外部網路，可能會允許對這些端點的要求略過鎖定保護。 這些端點應該在 proxy 上停用 (也就是從外部網路) 停用來保護 AD 帳戶鎖定。
 
 若要解決此問題，請更新根據端點宣告拒絕的任何原則，以允許上述端點發生例外狀況。
 
@@ -55,11 +55,11 @@ Windows 10 網域加入和登入所需的 AD FS 端點
 
 ## <a name="client-access-policies-scenarios"></a>用戶端存取原則案例
 
-|**案例**|**說明**|
+|**案例**|**描述**|
 | --- | --- |
 |案例1：封鎖所有對 Office 365 的外部存取|您可以從內部公司網路上的所有用戶端存取 Office 365，但來自外部用戶端的要求會根據外部用戶端的 IP 位址而遭到拒絕。|
 |案例2：封鎖 Exchange ActiveSync 以外的所有 Office 365 外部存取|您可以從內部公司網路上的所有用戶端，以及使用 Exchange ActiveSync 的任何外部用戶端裝置（例如智慧型手機）來存取 Office 365。 所有其他外部用戶端（例如使用 Outlook 的其他）都會遭到封鎖。|
-|案例3：封鎖以瀏覽器為基礎的應用程式以外的所有 Office 365 外部存取|封鎖對 Office 365 的外部存取，但被動（以瀏覽器為基礎）的應用程式（例如 Outlook Web 存取或 SharePoint Online）除外。|
+|案例3：封鎖以瀏覽器為基礎的應用程式以外的所有 Office 365 外部存取|封鎖對 Office 365 的外部存取，但被動 (以瀏覽器為基礎的) 應用程式，例如 Outlook Web 存取或 SharePoint Online。|
 |案例4：除了指定的 Active Directory 群組以外，封鎖所有對 Office 365 的外部存取|此案例是用來測試和驗證用戶端存取原則部署。 它只會封鎖一或多個 Active Directory 群組的成員對 Office 365 的外部存取。 它也可以用來提供僅限群組成員的外部存取權。|
 
 ## <a name="enabling-client-access-policy"></a>啟用用戶端存取原則
@@ -78,8 +78,8 @@ Windows 10 網域加入和登入所需的 AD FS 端點
 
 4.  在 [**選取規則範本**] 頁面的 [宣告**規則範本**] 底下，選取 [**使用自訂規則傳送宣告**]，然後按 **[下一步]**。
 
-5.  在 [**設定規則**] 頁面的 [宣告**規則名稱**] 下，輸入此規則的顯示名稱，例如「如果有任何 IP 宣告超出所需的範圍，拒絕」。 在 [**自訂規則**] 底下，輸入或貼上下列宣告規則語言語法（將上面的值取代為 "x------------------------`c1:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");` </br>
-6.  按一下 [完成] 。 確認新的規則會出現在 [預設**允許存取所有使用者**] 規則之前的 [發行授權規則] 清單中（拒絕規則的優先順序，即使它稍早出現在清單中也一樣）。  如果您沒有預設允許存取規則，您可以使用宣告規則語言在清單結尾新增一個，如下所示：  </br>
+5.  在 [**設定規則**] 頁面的 [宣告**規則名稱**] 下，輸入此規則的顯示名稱，例如「如果有任何 IP 宣告超出所需的範圍，拒絕」。 在 [**自訂規則**] 底下，輸入或貼上下列宣告規則語言語法 (將上述的值取代為有效的 ip 運算式) ：`c1:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");` </br>
+6.  按一下 [完成] 。 確認新的規則會出現在 [預設**允許存取所有使用者**] 規則之前的 [發行授權規則] 清單中 (拒絕規則將會優先，即使它稍早出現在清單) 中也一樣。  如果您沒有預設允許存取規則，您可以使用宣告規則語言在清單結尾新增一個，如下所示：  </br>
 
     `c:[] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true"); `
 
@@ -100,7 +100,7 @@ Windows 10 網域加入和登入所需的 AD FS 端點
 
 4.  在 [**選取規則範本**] 頁面的 [宣告**規則範本**] 底下，選取 [**使用自訂規則傳送宣告**]，然後按 **[下一步]**。
 
-5.  在 [**設定規則**] 頁面的 [宣告**規則名稱**] 下，輸入此規則的顯示名稱，例如「如果有任何 IP 宣告超出所需的範圍，請發出 ipoutsiderange 宣告」。 在 [**自訂規則**] 底下，輸入或貼上下列宣告規則語言語法（將上面的值取代為 "x------------------------
+5.  在 [**設定規則**] 頁面的 [宣告**規則名稱**] 下，輸入此規則的顯示名稱，例如「如果有任何 IP 宣告超出所需的範圍，請發出 ipoutsiderange 宣告」。 在 [**自訂規則**] 底下，輸入或貼上下列宣告規則語言語法 (將上述的值取代為有效的 ip 運算式) ：
 
     `c1:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`
 
@@ -140,7 +140,7 @@ Windows 10 網域加入和登入所需的 AD FS 端點
     c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://custom/xmsapplication", Value == "fail"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");
     ```
 
-18.  按一下 [完成] 。 確認新的規則會出現在 [發佈授權規則] 清單中的 [允許存取所有使用者的預設值] 規則之前，以及 [拒絕規則] 的優先順序（即使它稍早出現在清單中）。<p>如果您沒有預設允許存取規則，您可以使用宣告規則語言在清單結尾新增一個，如下所示：
+18.  按一下 [完成] 。 確認新的規則會出現在 [發行授權規則] (清單中的 [允許存取所有使用者的預設值] 規則正下方，而且 [拒絕] 規則會優先于 [) 的清單中<p>如果您沒有預設允許存取規則，您可以使用宣告規則語言在清單結尾新增一個，如下所示：
 
         ```
         c:[] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true");
@@ -162,7 +162,7 @@ Windows 10 網域加入和登入所需的 AD FS 端點
 
 4.  在 [**選取規則範本**] 頁面的 [宣告**規則範本**] 底下，選取 [**使用自訂規則傳送宣告**]，然後按 **[下一步]**。
 
-5.  在 [**設定規則**] 頁面的 [宣告**規則名稱**] 下，輸入此規則的顯示名稱，例如「如果有任何 IP 宣告超出所需的範圍，請發出 ipoutsiderange 宣告」。 在 [**自訂規則**] 底下，輸入或貼上下列宣告規則語言語法（將上面的值取代為 "x------------------------
+5.  在 [**設定規則**] 頁面的 [宣告**規則名稱**] 下，輸入此規則的顯示名稱，例如「如果有任何 IP 宣告超出所需的範圍，請發出 ipoutsiderange 宣告」。 在 [**自訂規則**] 底下，輸入或貼上下列宣告規則語言語法 (將上述的值取代為有效的 ip 運算式) ：
 
    ```
    c1:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");
@@ -180,7 +180,7 @@ Windows 10 網域加入和登入所需的 AD FS 端點
     c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value != "/adfs/ls/"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");`
     ```
 
-10. 按一下 [完成] 。 確認新的規則會出現在 [預設**允許存取所有使用者**] 規則之前的 [發行授權規則] 清單中（拒絕規則的優先順序，即使它稍早出現在清單中也一樣）。  </br></br> 如果您沒有預設允許存取規則，您可以使用宣告規則語言在清單結尾新增一個，如下所示：
+10. 按一下 [完成] 。 確認新的規則會出現在 [預設**允許存取所有使用者**] 規則之前的 [發行授權規則] 清單中 (拒絕規則將會優先，即使它稍早出現在清單) 中也一樣。  </br></br> 如果您沒有預設允許存取規則，您可以使用宣告規則語言在清單結尾新增一個，如下所示：
 
    `c:[] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true");`
 
@@ -201,7 +201,7 @@ Windows 10 網域加入和登入所需的 AD FS 端點
 
 4.  在 [**選取規則範本**] 頁面的 [宣告**規則範本**] 底下，選取 [**使用自訂規則傳送宣告**]，然後按 **[下一步]**。
 
-5.  在 [**設定規則**] 頁面的 [宣告**規則名稱**] 下，輸入此規則的顯示名稱，例如「如果有任何 IP 宣告超出所需的範圍，請發出 ipoutsiderange 宣告」。 在 [**自訂規則**] 底下，輸入或貼上下列宣告規則語言語法（將上面的值取代為 "x------------------------
+5.  在 [**設定規則**] 頁面的 [宣告**規則名稱**] 下，輸入此規則的顯示名稱，例如「如果有任何 IP 宣告超出所需的範圍，請發出 ipoutsiderange 宣告」。 在 [**自訂規則**] 底下，輸入或貼上下列宣告規則語言語法 (將上述的值取代為有效的 ip 運算式) ：
 
     ```
     `c1:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] && c2:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`
@@ -213,7 +213,7 @@ Windows 10 網域加入和登入所需的 AD FS 端點
 
 8. 在 [**選取規則範本**] 頁面的 [宣告**規則範本**] 底下，選取 [**使用自訂規則傳送宣告**]，然後按 **[下一步]**。
 
-9. 在 [**設定規則**] 頁面的 [宣告**規則名稱**] 下，輸入此規則的顯示名稱，例如「檢查群組 SID」。 在 [**自訂規則**] 底下，輸入或貼上下列宣告規則語言語法（將 "groupsid" 取代為您所使用之 AD 群組的實際 SID）：
+9. 在 [**設定規則**] 頁面的 [宣告**規則名稱**] 下，輸入此規則的顯示名稱，例如「檢查群組 SID」。 在 [**自訂規則**] 底下，輸入或貼上下列宣告規則語言語法 (將 "groupsid" 取代為您要使用之 AD 群組的實際 SID) ：
 
     ```
     NOT EXISTS([Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value == "S-1-5-32-100"]) => add(Type = "http://custom/groupsid", Value = "fail");
@@ -231,7 +231,7 @@ Windows 10 網域加入和登入所需的 AD FS 端點
    c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://custom/groupsid", Value == "fail"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");
    ```
 
-14. 按一下 [完成] 。 確認新的規則會出現在 [發佈授權規則] 清單中的 [允許存取所有使用者的預設值] 規則之前，以及 [拒絕規則] 的優先順序（即使它稍早出現在清單中）。  </br></br>如果您沒有預設允許存取規則，您可以使用宣告規則語言在清單結尾新增一個，如下所示：
+14. 按一下 [完成] 。 確認新的規則會出現在 [發行授權規則] (清單中的 [允許存取所有使用者的預設值] 規則正下方，而且 [拒絕] 規則會優先于 [) 的清單中  </br></br>如果您沒有預設允許存取規則，您可以使用宣告規則語言在清單結尾新增一個，如下所示：
 
    ```
    c:[] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true");
@@ -251,7 +251,7 @@ Windows 10 網域加入和登入所需的 AD FS 端點
 
 > [!NOTE]
 > - 公司網路上用戶端的 IP 位址將會顯示為組織的輸出 proxy 或閘道的外部介面 IP 位址。
-> - 透過 VPN 或 Microsoft DirectAccess （DA）連線到公司網路的用戶端，可能會顯示為內部公司用戶端，或作為外部用戶端（視 VPN 或 DA 的設定而定）。
+> - 透過 VPN 或 Microsoft DirectAccess (DA) 連線到公司網路的用戶端，可能會顯示為內部公司用戶端，或作為外部用戶端（視 VPN 或 DA 的設定而定）。
 
 - 一或多個 IP 位址：當 Exchange Online 無法判斷連線用戶端的 IP 位址時，它會根據 x 轉送的標頭值來設定值，這是可包含在 HTTP 要求中的非標準標頭，而且市場上有許多用戶端、負載平衡器和 proxy 支援。
 
@@ -260,7 +260,7 @@ Windows 10 網域加入和登入所需的 AD FS 端點
 > 2. 與 Exchange Online 基礎結構相關的 IP 位址將不會列在清單中。
 
 ### <a name="regular-expressions"></a>[規則運算式]
- 當您必須符合某個範圍的 IP 位址時，就必須建立正則運算式來執行比較。 在下一系列的步驟中，我們將提供如何建立這類運算式以符合下列位址範圍的範例（請注意，您必須變更這些範例以符合您的公用 IP 範圍）：
+ 當您必須符合某個範圍的 IP 位址時，就必須建立正則運算式來執行比較。 在下一系列的步驟中，我們將提供如何建立這類運算式以符合下列位址範圍的範例 (請注意，您必須變更這些範例，以符合您的公用 IP 範圍) ：
 
 - 192.168.1.1 –192.168.1.25
 
@@ -270,9 +270,9 @@ Windows 10 網域加入和登入所需的 AD FS 端點
 
   擴充此項，我們可以使用 OR 運算式比對兩個不同的 IP 位址，如下所示： \b # # # \\ . # # # \\ . # # # \\ . # # # \b&#124; \b # # # \\ . # # # \\ . # # # \\ . # # # \b
 
-  因此，只比對兩個位址的範例（例如192.168.1.1 或10.0.0.1）會是： \b192 \\ . 168 \\ .1 \\ .1 \ b&#124; \b10 \\ .0 \\ . 0 \\ . 1 \ b
+  因此，只比對兩個位址 (的範例，例如192.168.1.1 或 10.0.0.1) 會是： \b192 \\ . 168 \\ .1 \\ .1 \ b&#124; \b10 \\ .0 \\ . 0 \\ . 1 \ b
 
-  如此一來，您就可以輸入任意數目的位址。 需要允許的位址範圍（例如192.168.1.1 –192.168.1.25）時，比對必須以字元完成字元： \b192 \\ . 168. \\ 1 \\ . （[1-9] &#124;1 [0-9] &#124;2 [0-5]） \b
+  如此一來，您就可以輸入任意數目的位址。 需要允許某個範圍的位址（例如192.168.1.1 –192.168.1.25）時，比對必須以字元完成字元： \b192 \\ . 168 \\ .1 \\ 。 ( [1-9] &#124;1 [0-9] &#124;2 [0-5] ) \b
 
   請注意：
 
@@ -284,17 +284,17 @@ Windows 10 網域加入和登入所需的 AD FS 端點
 
 - 下列專案符合最後一個小數點之後的位址部分所需的範圍：
 
-  - （[1-9] 符合以1-9 結尾的位址
+  -  ( [1-9] 符合以1-9 結尾的位址
 
   - &#124;1 [0-9] 符合以10-19 結尾的位址
 
-  - &#124;2 [0-5]）符合以20-25 結尾的位址
+  - &#124;2 [0-5] ) 符合以20-25 結尾的位址
 
 - 請注意，括弧必須正確定位，如此您才不會開始比對 IP 位址的其他部分。
 
-- 在與192區塊相符的情況下，我們可以針對10個區塊撰寫類似的運算式： \b10 \\ .0。 \\ \\ （[1-9] &#124;1 [0-4]） \b
+- 在與192區塊相符的情況下，我們可以為10個區塊撰寫類似的運算式： \b10 \\ .0 \\ .0 \\ 。 ( [1-9] &#124;1 [0-4] ) \b
 
-- 並將它們放在一起，下列運算式應符合 "192.168.1.1 ~ 25" 和 "10.0.0.1 ~ 14" 的所有位址： \b192 \\ . 168. \\ \\ （[1-9] &#124;1 [0-9] &#124;2 [0-5]） \b&#124; \b10 \\ .0 \\ 。 0 \\ . （[1-9] &#124;1 [0-4]） \b
+- 將它們放在一起，下列運算式應符合 "192.168.1.1 ~ 25" 和 "10.0.0.1 ~ 14"： \b192 \\ . 168 .1 的所有位址 \\ 。 \\ ( [1-9] &#124;1 [0-9] &#124;2 [0-5] ) \b&#124; \b10 \\ .0 \\ .0 \\ 。 ( [1-9] &#124;1 [0-4] ) \b
 
 ### <a name="testing-the-expression"></a>測試運算式
  Regex 運算式可能會變得相當棘手，因此強烈建議使用 RegEx 驗證工具。 如果您在網際網路上搜尋「線上 RegEx 運算式產生器」，您將會發現幾個良好的線上公用程式，可讓您針對範例資料嘗試運算式。
@@ -311,7 +311,7 @@ Windows 10 網域加入和登入所需的 AD FS 端點
 ### <a name="x-ms-forwarded-client-ip"></a>X-毫秒-轉送-用戶端 IP
  宣告類型：`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip`
 
- 此 AD FS 宣告代表在查明使用者的 IP 位址（例如 Outlook 用戶端）提出要求時的「最佳嘗試」。 此宣告可以包含多個 IP 位址，包括轉送要求的每個 proxy 的位址。  此宣告會從 HTTP 填入。 宣告的值可以是下列其中一項：
+ 此 AD FS 宣告代表在查明使用者的 IP 位址時的「最佳嘗試」 (例如，Outlook 用戶端) 提出要求。 此宣告可以包含多個 IP 位址，包括轉送要求的每個 proxy 的位址。  此宣告會從 HTTP 填入。 宣告的值可以是下列其中一項：
 
 - 單一 IP 位址-直接連線至 Exchange Online 之用戶端的 IP 位址
 
@@ -360,7 +360,7 @@ Windows 10 網域加入和登入所需的 AD FS 端點
 ### <a name="x-ms-client-user-agent"></a>X-MS-用戶端-使用者-代理程式
  宣告類型：`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent`
 
- 此 AD FS 宣告會提供字串，以代表用戶端用來存取服務的裝置類型。 當客戶想要防止特定裝置（例如特定類型的智慧型手機）的存取權時，可以使用此方法。  此宣告的範例值包括（但不限於）以下的值。
+ 此 AD FS 宣告會提供字串，以代表用戶端用來存取服務的裝置類型。 當客戶想要防止特定裝置的存取 (例如特定類型的智慧型手機) 時，可以使用此方法。  此宣告的範例值包括 (，但不限於下列值) 。
 
  以下範例為 x-ms-用戶端-應用程式的用戶端---------------------------------
 
@@ -392,10 +392,10 @@ Windows 10 網域加入和登入所需的 AD FS 端點
 
  與上述的 [x-ms-proxy] 宣告類型類似，此宣告類型會指出要求是否通過 web 應用程式 proxy。 不同于 x-ms-proxy，insidecorporatenetwork 是布林值，其中 True 表示直接從公司網路內部對 federation service 的要求。
 
-### <a name="x-ms-endpoint-absolute-path-active-vs-passive"></a>X-MS-端點-絕對路徑（主動與被動）
+### <a name="x-ms-endpoint-absolute-path-active-vs-passive"></a>X-MS-端點-絕對路徑 (主動與被動) 
  宣告類型：`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path`
 
- 此宣告類型可用來判斷源自「作用中」（豐富）用戶端與「被動」（以 web 瀏覽器為基礎）用戶端的要求。 這可讓來自瀏覽器型應用程式（例如 Outlook Web 存取、SharePoint Online 或 Office 365 入口網站）的外部要求允許，而源自豐富用戶端（例如 Microsoft Outlook）的要求會遭到封鎖。
+ 此宣告類型可用來判斷源自「作用中」 (豐富) 用戶端和「被動」 (以 web 瀏覽器為基礎的) 用戶端的要求。 這可讓來自瀏覽器型應用程式（例如 Outlook Web 存取、SharePoint Online 或 Office 365 入口網站）的外部要求允許，而源自豐富用戶端（例如 Microsoft Outlook）的要求會遭到封鎖。
 
  宣告的值是收到要求的 AD FS 服務名稱。
 

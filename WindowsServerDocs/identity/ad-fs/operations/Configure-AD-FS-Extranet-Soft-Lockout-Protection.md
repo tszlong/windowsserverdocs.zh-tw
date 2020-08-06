@@ -1,6 +1,6 @@
 ---
 ms.assetid: 777aab65-c9c7-4dc9-a807-9ab73fac87b8
-title: 設定 AD FS 外部網路鎖定保護
+title: 設定 AD FS 外部網路軟鎖定保護
 author: billmath
 ms.author: billmath
 manager: femila
@@ -8,12 +8,12 @@ ms.date: 02/01/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: f49e4a7e27d5b224a86655e48f07df741f03e7b0
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: cc81ac2270a35268fb1547b39f83d1564be994fd
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962640"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87863979"
 ---
 # <a name="configure-ad-fs-extranet-lockout-protection"></a>設定 AD FS 外部網路鎖定保護
 
@@ -42,14 +42,14 @@ ms.locfileid: "86962640"
 Set-AdfsProperties -EnableExtranetLockout $true -ExtranetLockoutThreshold 15 -ExtranetObservationWindow (new-timespan -Minutes 30)
 ```
 
-這些設定會套用到 AD FS 服務可以驗證的所有網域。 其運作方式是，當 AD FS 收到驗證要求時，它會透過 LDAP 呼叫來存取主域控制站（PDC），並為 PDC 上的使用者執行**badPwdCount**屬性的查閱。 如果 AD FS 找到**badPwdCount** >= ExtranetLockoutThreshold 設定的值，而且外部網路觀察視窗中定義的時間尚未通過，AD FS 會立即拒絕要求，這表示不論使用者是否從外部網路輸入良好或錯誤的密碼，登入都會失敗，因為 AD FS 不會將認證傳送到 AD。 AD FS 不會維護**badPwdCount**或鎖定使用者帳戶的任何狀態。 AD FS 使用 AD 進行所有狀態追蹤。 
+這些設定會套用到 AD FS 服務可以驗證的所有網域。 其運作方式是，當 AD FS 收到驗證要求時，它會透過 LDAP 呼叫來存取主域控制站 (PDC) ，並為 PDC 上的使用者執行**badPwdCount**屬性的查閱。 如果 AD FS 找到**badPwdCount** >= ExtranetLockoutThreshold 設定的值，而且外部網路觀察視窗中定義的時間尚未通過，AD FS 會立即拒絕要求，這表示不論使用者是否從外部網路輸入良好或錯誤的密碼，登入都會失敗，因為 AD FS 不會將認證傳送到 AD。 AD FS 不會維護**badPwdCount**或鎖定使用者帳戶的任何狀態。 AD FS 使用 AD 進行所有狀態追蹤。 
 
 > [!warning]
 > 當伺服器 2012 R2 上的 AD FS 外部網路鎖定啟用時，所有透過 WAP 的驗證要求都是由 PDC 上的 AD FS 進行驗證。 當 PDC 無法使用時，使用者將無法從外部網路進行驗證。
 
 伺服器2016提供額外的參數，可讓 AD FS 在 PDC 無法使用時，回復至另一個網域控制站：
 
-- **ExtranetLockoutRequirePDC &lt;布林 &gt; 值**-啟用時：外部網路鎖定需要主域控制站（PDC）。 停用時：外部網路鎖定會回到另一個網域控制站，以防 PDC 無法使用。
+- **ExtranetLockoutRequirePDC &lt;布林 &gt; 值**-啟用時：外部網路鎖定需要 (PDC) 的主域控制站。 停用時：外部網路鎖定會回到另一個網域控制站，以防 PDC 無法使用。
 
 您可以使用下列 Windows PowerShell 命令來設定伺服器2016上的 AD FS 外部網路鎖定：
 
@@ -90,7 +90,7 @@ AD FS 中的外部網路鎖定功能可獨立于 AD 鎖定原則運作。 不過
 - 若要避免惡意帳戶鎖定，您應該確定**ExtranetLockoutThreshold**  <  **帳戶鎖定閾值**和**ExtranetObservationWindow**  >  **重設帳戶鎖定計數器**
 
 
-## <a name="additional-references"></a>其他參考  
+## <a name="additional-references"></a>其他參考資料  
 - [保護 Active Directory 同盟服務的最佳做法](../../ad-fs/deployment/best-practices-securing-ad-fs.md)
 - [將 AD FS Powershell Cmdlet 存取權委派給非系統管理員使用者](delegate-ad-fs-pshell-access.md)
 - [設定-Set-adfsproperties](/powershell/module/adfs/set-adfsproperties?view=win10-ps)

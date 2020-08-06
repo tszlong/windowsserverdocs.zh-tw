@@ -1,6 +1,6 @@
 ---
 ms.assetid: 460792e4-9f1d-4e7b-b6b2-53e057f839df
-title: AD FS 部署拓撲考量
+title: 搭配使用 AD DS 宣告與 AD FS
 author: billmath
 ms.author: billmath
 manager: femila
@@ -8,20 +8,20 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 3086de9dc34f555d5f6056716ab9572b980f1962
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2f3aa75a865c61d486d68463aceb6574f6381eb0
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858751"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864250"
 ---
 # <a name="using-ad-ds-claims-with-ad-fs"></a>搭配使用 AD DS 宣告與 AD FS
   
   
-您可以使用 Active Directory Domain Services \(AD DS\)\-發行的使用者和裝置宣告以及 Active Directory 同盟服務 \(AD FS\)，為同盟應用程式啟用更豐富的存取控制。  
+您可以使用 Active Directory Domain Services \( AD DS \) \- 與 Active Directory 同盟服務 AD FS 一起發行的使用者和裝置宣告， \( 為同盟應用程式啟用更豐富的存取控制 \) 。  
   
 ## <a name="about-dynamic-access-control"></a>關於動態存取控制  
-在 Windows Server&reg; 2012 中，「動態存取控制」功能可讓組織根據使用者帳戶屬性來授與檔案的存取權 \(其來源為使用者帳戶屬性\) 和裝置宣告 \(由\) Active Directory Domain Services \(AD DS 所發行的電腦帳戶屬性\)。 AD DS 發行的宣告會透過 Kerberos 驗證通訊協定整合到 Windows 整合式驗證中。  
+在 Windows Server &reg; 2012 中，「動態存取控制」功能可讓組織根據使用者 \( 帳戶屬性 \) 和裝置宣告（由 \( Active Directory Domain Services AD DS 所發行的電腦帳戶屬性所產生），授與檔案的 \) \( 存取權 \) 。 AD DS 發行的宣告會透過 Kerberos 驗證通訊協定整合到 Windows 整合式驗證中。  
   
 如需動態存取控制的詳細資訊，請參閱[動態存取控制內容藍圖](../../solution-guides/Dynamic-Access-Control--Scenario-Overview.md#BKMK_APP)。  
   
@@ -30,20 +30,20 @@ ms.locfileid: "80858751"
   
 -   除了 AD DS 中的使用者帳戶屬性之外，還可存取電腦帳戶屬性。 在舊版的 AD FS 中，同盟服務無法從 AD DS 存取電腦帳戶屬性。  
   
--   取用位於 Kerberos 驗證票證中 AD DS 發行的使用者或裝置宣告。 在舊版的 AD FS 中，宣告引擎能夠從 Kerberos 讀取使用者和群組的安全識別碼 \(Sid\)，但無法讀取 Kerberos 票證中包含的任何宣告資訊。  
+-   取用位於 Kerberos 驗證票證中 AD DS 發行的使用者或裝置宣告。 在舊版的 AD FS 中，宣告引擎能夠從 Kerberos 讀取使用者和群組的安全識別碼 \( sid， \) 但無法讀取 kerberos 票證中包含的任何宣告資訊。  
   
 -   將已發行的使用者或裝置宣告 AD DS 轉換為 SAML 權杖，讓應用程式可使用這些 token 來執行更豐富的存取控制。  
   
 ## <a name="benefits-of-using-ad-ds-claims-with-ad-fs"></a>搭配 AD FS 使用 AD DS 宣告的優點  
 這些 AD DS 發行的宣告可以插入 Kerberos 驗證票證中，並搭配 AD FS 使用，以提供下列優點：  
   
--   需要更豐富存取控制原則的組織，可以根據指定使用者或電腦帳戶 AD DS 中儲存的屬性值，使用 AD DS 發行的宣告，來啟用宣告\-以存取應用程式和資源。 這可協助系統管理員減少與建立和管理相關聯的額外負荷：  
+-   需要更豐富存取控制原則的組織，可以 \- 使用以指定使用者或電腦帳戶 AD DS 中儲存的屬性值為基礎的 AD DS 發行的宣告，來啟用對應用程式和資源的宣告式存取。 這可協助系統管理員減少與建立和管理相關聯的額外負荷：  
   
     -   AD DS 安全性群組，用於控制可透過 Windows 整合式驗證存取之應用程式和資源的存取權。  
   
-    -   以其他方式用來控制商務\-存取的樹系信任，以\-商務 \(B2B\) \/ 可存取網際網路的應用程式和資源。  
+    -   其他樹系信任，用於控制對企業 \- 對 \- 企業 \( B2B \) \/ 網際網路可存取應用程式和資源的存取。  
   
--   組織現在可以根據儲存在 AD DS 中的特定電腦帳戶屬性值，防止未經授權的用戶端電腦存取網路資源 \(例如，電腦的 DNS 名稱\) 符合資源的存取控制原則 \(例如，使用宣告 ACLd 的檔案伺服器\) 或信賴憑證者原則 \(例如宣告\-感知 Web 應用程式\)。 這可協助系統管理員針對下列情況，為資源或應用程式設定更精細的存取控制原則：  
+-   組織現在可以根據儲存在 AD DS 中的特定電腦帳戶屬性值，防止未經授權的用戶端電腦存取網路資源（例如 \( ，電腦的 DNS 名稱是否 \) 符合資源的存取控制原則 \( ），例如，使用宣告或信賴憑證者原則 ACLd 的檔案伺服器（ \) \( 例如，宣告 \- 感知 Web 應用程式） \) 。 這可協助系統管理員針對下列情況，為資源或應用程式設定更精細的存取控制原則：  
   
     -   只能透過 Windows 整合式驗證存取。  
   
@@ -57,17 +57,17 @@ ms.locfileid: "80858751"
 -   AD FS 只能發出封裝在 SAML 權杖中的宣告，而不是 Kerberos 票證。 如需 AD FS 如何發出宣告的詳細資訊，請參閱[宣告引擎的角色](../../ad-fs/technical-reference/The-Role-of-the-Claims-Engine.md)。  
   
 ## <a name="how-ad-ds-issued-claims-work-with-ad-fs"></a>已發出的 AD DS 宣告如何與 AD FS 搭配  
-AD DS 發行的宣告可以與 AD FS 搭配使用，直接從使用者的驗證內容存取使用者和裝置宣告，而不是對 Active Directory 進行個別的 LDAP 呼叫。 下圖和對應的步驟會討論此程式如何更詳細地運作，以針對動態存取控制案例啟用宣告\-型存取控制。  
+AD DS 發行的宣告可以與 AD FS 搭配使用，直接從使用者的驗證內容存取使用者和裝置宣告，而不是對 Active Directory 進行個別的 LDAP 呼叫。 下圖和對應的步驟會討論此程式如何更詳細地運作，以啟用 \- 動態存取控制案例的宣告型存取控制。  
   
 ![使用宣告](media/UsingADDSClaimswithADFS.gif)  
   
 1.  AD DS 系統管理員會使用 Active Directory 管理中心主控台或 PowerShell Cmdlet，在 AD DS 架構中啟用特定的宣告類型物件。  
   
-2.  AD FS 系統管理員會使用 AD FS 管理主控台，透過或轉換宣告規則來建立和設定宣告提供者和信賴憑證者\-信任。  
+2.  AD FS 系統管理員會使用 AD FS 管理主控台來建立和設定宣告提供者，以及使用「傳遞」或「轉換宣告」規則的信賴憑證者信任 \- 。  
   
-3.  Windows 用戶端嘗試存取網路。 在 Kerberos 驗證程式中，用戶端會出示其使用者和電腦票證\-將票證 \(TGT\) （尚未包含任何宣告）授與網域控制站。 接著，網域控制站會尋找已啟用之宣告類型的 AD DS，並在傳回的 Kerberos 票證中包含任何產生的宣告。  
+3.  Windows 用戶端嘗試存取網路。 在 Kerberos 驗證程式中，用戶端 \- \( \) 會向網域控制站出示尚未包含任何宣告的使用者和電腦票證授權票證 TGT。 接著，網域控制站會尋找已啟用之宣告類型的 AD DS，並在傳回的 Kerberos 票證中包含任何產生的宣告。  
   
-4.  當使用者\/用戶端嘗試存取 ACLd 的檔案資源以要求宣告時，他們可以存取資源，因為從 Kerberos 呈現的複合識別碼具有這些宣告。  
+4.  當使用者 \/ 用戶端嘗試存取 ACLd 的檔案資源以要求宣告時，他們可以存取資源，因為從 Kerberos 呈現的複合識別碼具有這些宣告。  
   
 5.  當相同的用戶端嘗試存取設定為 AD FS authentication 的網站或 Web 應用程式時，系統會將使用者重新導向至針對 Windows 整合式驗證設定的 AD FS 同盟伺服器。 用戶端會使用 Kerberos 將要求傳送給網域控制站。 網域控制站會發出 Kerberos 票證，其中包含用戶端可以接著呈現給同盟伺服器的要求宣告。  
   

@@ -1,6 +1,6 @@
 ---
 ms.assetid: 8c3536b7-d091-4ee6-ad04-24713f070862
-title: 在帳戶夥伴組織中部署 AD FS
+title: 在帳戶夥伴組織中部署舊版 AD FS
 author: billmath
 ms.author: billmath
 manager: femila
@@ -8,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 7a1d92a932638388ef50322078084c648c9dfdb9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 46b22a2b76896844c08f937304575a250582ccc9
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853191"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87863694"
 ---
-# <a name="deploying-ad-fs-in-the-account-partner-organization"></a>在帳戶夥伴組織中部署 AD FS
+# <a name="deploying-legacy-ad-fs-in-the-account-partner-organization"></a>在帳戶夥伴組織中部署舊版 AD FS
 
-Active Directory 同盟服務 \(AD FS\) 中的帳戶夥伴代表在支援的屬性存放區中實際儲存使用者帳戶的同盟信任關係中的組織。 如需有關支援哪些屬性存放區的詳細資訊，請參閱[屬性存放區的角色](../../ad-fs/technical-reference/The-Role-of-Attribute-Stores.md)。  
+Active Directory 同盟服務 AD FS 中的帳戶 \( 夥伴 \) 代表在支援的屬性存放區中實際儲存使用者帳戶的同盟信任關係中的組織。 如需有關支援哪些屬性存放區的詳細資訊，請參閱[屬性存放區的角色](../../ad-fs/technical-reference/The-Role-of-Attribute-Stores.md)。  
   
 帳戶夥伴組織中的同盟伺服器會驗證本機使用者，並建立資源夥伴用來進行授權決策的安全性權杖。 Web sites 和 Web 服務之類的信賴憑證者就能夠輕鬆地自行向同盟伺服器註冊，並使用發行的權杖進行驗證和存取控制。  
   

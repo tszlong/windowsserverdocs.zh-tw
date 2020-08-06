@@ -1,6 +1,6 @@
 ---
 ms.assetid: 0039fbbb-b981-4526-a550-f3456ff27635
-title: 建立規則轉換傳入宣告
+title: 建立規則以傳送 AD FS 1.x 相容的宣告
 author: billmath
 ms.author: billmath
 manager: femila
@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b74d31ed6dd8775181465c42b6a9c8745f668615
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 7b85cfdd93787785b058f5dc83a779b4cd1f6a33
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966660"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864261"
 ---
 # <a name="create-a-rule-to-send-an-ad-fs-1x-compatible-claim"></a>建立規則以傳送 AD FS 1.x 相容的宣告
 
@@ -321,7 +321,7 @@ ms.locfileid: "86966660"
 
 11. 按一下 **[完成]**，然後按一下 **[確定]** 以儲存規則。  
 
-## <a name="additional-references"></a>其他參考 
+## <a name="additional-references"></a>其他參考資料 
 [設定宣告規則](Configure-Claim-Rules.md)  
  
 [檢查清單：為信賴憑證者信任建立宣告規則](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/ee913578(v=ws.11))  

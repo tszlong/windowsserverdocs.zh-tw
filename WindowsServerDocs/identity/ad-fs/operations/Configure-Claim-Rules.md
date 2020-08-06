@@ -8,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 62671800d923e95c6bc3f9c7efb0660974c438e2
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: a7304402b4be1710fbff9e29e2dd0094ba621095
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954280"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864293"
 ---
-# <a name="configure-claim-rules"></a>設定宣告規則
+# <a name="configure-claim-rules-in-ad-fs-for-windows-server"></a>在 Windows Server 的 AD FS 中設定宣告規則
 
 在宣告式身分 \- 識別模型中， \( 做為同盟服務之 Active Directory 同盟服務 AD FS 的功能 \) 是發行包含一組宣告的權杖。 宣告規則負責管理 AD FS 問題之宣告的相關決策。 宣告規則和所有伺服器設定資料都會儲存在 AD FS 設定資料庫中。  
   

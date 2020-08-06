@@ -8,14 +8,14 @@ ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 9882061aad5ec6620cda5a0a288790d34f25c3f3
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3de9f6f55a93c51c02eadf293b850d40e644586f
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966670"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864239"
 ---
-# <a name="migrate-an-ad-fs-20-wid-farm"></a>遷移 AD FS 2.0 WID 伺服器陣列  
+# <a name="migrate-an-ad-fs-20-sql-farm"></a>遷移 AD FS 2.0 SQL 伺服器陣列  
 本檔提供將 AD FS 2.0 SQL 伺服器陣列遷移至 Windows Server 2012 的詳細資訊。
 
 

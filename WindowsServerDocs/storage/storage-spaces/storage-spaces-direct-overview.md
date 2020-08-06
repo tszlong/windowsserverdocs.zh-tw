@@ -6,24 +6,24 @@ manager: dongill
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
-ms.date: 06/26/2019
+ms.date: 07/24/2020
 ms.assetid: 8bd0d09a-0421-40a4-b752-40ecb5350ffd
-description: 概述儲存空間直接存取，這是 Windows Server 的一項功能，可讓您將具有內部存放裝置的伺服器叢集為軟體定義的儲存體解決方案。
+description: 概述儲存空間直接存取，這是一項 Windows Server 和 Azure Stack HCI 的功能，可讓您將具有內部存放裝置的伺服器叢集為軟體定義的儲存體解決方案。
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fb8700935306cbd007ab4afc61cf3eb54227130
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 3fd86a8465d2fef59ccce73fc473790682f0d180
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87768943"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864319"
 ---
 # <a name="storage-spaces-direct-overview"></a>儲存空間直接存取概觀
 
->適用於：Windows Server 2019、Windows Server 2016
+>適用于： Azure Stack HCI、Windows Server 2019、Windows Server 2016
 
 儲存空間直接存取會使用業界標準的伺服器搭配本機連接的磁碟機，以比傳統 SAN 或 NAS 陣列更少的成本來建立高可用性、高延展性的軟體定義存放裝置。 其交集或超融合式架構會大幅簡化採購和部署，而快取、儲存層和抹除編碼等功能以及最新的硬體革新（如 RDMA 網路和 NVMe 磁片磁碟機）則提供無可匹敵的效率和效能。
 
-儲存空間直接存取包含在 Windows Server 2019 Datacenter、Windows Server 2016 Datacenter 和[Windows Server Insider Preview 組建](https://insider.windows.com/for-business-getting-started-server/)中。
+儲存空間直接存取包含在[AZURE STACK HCI](/azure-stack/hci/)、windows Server 2019 Datacenter、windows Server 2016 Datacenter 和[Windows Server Insider preview 組建](https://insider.windows.com/for-business-getting-started-server/)中。
 
 如需儲存空間的其他應用程式（例如共用的 SAS 叢集和獨立伺服器），請參閱[儲存空間總覽](overview.md)。 如果您要尋找在 Windows 10 電腦上使用儲存空間的相關資訊，請參閱[windows 10 中的儲存空間](https://support.microsoft.com/help/12438/windows-10-storage-spaces)。
 
@@ -53,7 +53,7 @@ ms.locfileid: "87768943"
 
 ## <a name="key-benefits"></a>主要權益
 
-| 映像 | 說明 |
+| 映像 | 描述 |
 |--|--|
 | ![簡潔](media/storage-spaces-direct-in-windows-server-2016/simplicity-icon.png) | **簡易.** 從執行 Windows Server 2016 的業界標準伺服器到您的第一個儲存空間直接存取叢集所需的時間不超過 15 分鐘。 對於 System Center 使用者而言，部署只需一個核取方塊。 |
 | ![無與倫比的效能](media/storage-spaces-direct-in-windows-server-2016/performance-icon.png) | **無可比擬的效能。** 不論是全快閃式或混合式，由於儲存空間直接存取的 Hypervisor 內嵌架構、其內建的讀取/寫入快取，以及對於在 PCIe 匯流排上直接裝載尖端 NVMe 磁碟機的支援，讓它具有一致性且低延遲的特性，輕鬆超越[每部伺服器 150,000 個混合式 4k 隨機 IOPS](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)。 |

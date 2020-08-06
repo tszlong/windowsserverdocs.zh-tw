@@ -8,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: f3dedd53d75120a6a3e8087c345cd7dfa04ca35d
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 4527b6787531b3a349534092e3597a91dbebf78f
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519937"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864132"
 ---
-# <a name="federation-server-farm-using-sql-server"></a>使用 SQL Server 的同盟伺服器陣列
+# <a name="legacy-ad-fs-federation-server-farm-using-sql-server"></a>舊版 AD FS 使用 SQL Server 的同盟伺服器陣列
 
 此 Active Directory 同盟服務 AD FS 的 \( 拓撲 \) 與使用 Windows Internal Database WID 部署拓撲的同盟伺服器陣列不同 \( \) ，因為它不會將資料複寫至伺服器陣列中的每部同盟伺服器。 取而代之的是，伺服器陣列中的所有同盟伺服器都可以讀取資料，並將其寫入至儲存在執行 Microsoft SQL Server 的伺服器上的通用資料庫。
 
@@ -64,7 +64,7 @@ Windows Server 2012 R2 中的 AD FS 支援下列 SQL server 版本：
 
 ![使用 SQL 的伺服器陣列](media/SQLFarmADFSBlue.gif)
 
-如需有關如何設定網路環境以與同盟伺服器或 web 應用程式 Proxy 搭配使用的詳細資訊，請參閱[AD FS 需求](AD-FS-Requirements.md)和[規劃 Web 應用程式 Proxy 基礎結構（WAP）](/previous-versions/orphan-topics/ws.11/dn383648(v=ws.11))中的「名稱解析需求」一節。
+如需有關如何設定網路環境以與同盟伺服器或 web 應用程式 Proxy 搭配使用的詳細資訊，請參閱[AD FS 需求](AD-FS-Requirements.md)和[規劃 Web 應用程式 Proxy 基礎結構 (WAP) ](/previous-versions/orphan-topics/ws.11/dn383648(v=ws.11))中的「名稱解析需求」一節。
 
 ## <a name="high-availability-options-for-sql-server-farms"></a>SQL Server 服務器陣列的高可用性選項
 在 Windows Server 2012 R2 中，AD FS 有兩個新選項可在使用 SQL Server 的 AD FS 伺服器陣列中支援高可用性。
@@ -85,10 +85,10 @@ Windows Server 2012 R2 中的 AD FS 支援下列 SQL server 版本：
 
 下表提供使用 WID 伺服器陣列的摘要：
 
-| 1-100 RP 信任 | 超過 100 RP 信任 |
+| 1-100 個 RP 信任 | 超過 100 個 RP 信任 |
 |--|--|
-| **1-30 AD FS 節點：** 支援 WID | **1-30 AD FS 節點：** 不支援使用 WID-SQL |
-| **超過30個 AD FS 節點：** 不支援使用 WID-SQL | **超過30個 AD FS 節點：** 不支援使用 WID-SQL |
+| **1-30 個 AD FS 節點：** 支援 WID | **1-30 個 AD FS 節點：** 不支援使用 WID - 需要 SQL |
+| **超過 30 個 AD FS 節點：** 不支援使用 WID - 需要 SQL | **超過 30 個 AD FS 節點：** 不支援使用 WID - 需要 SQL |
 
 ### <a name="alwayson-availability-groups"></a>AlwaysOn 可用性群組
 **概觀**

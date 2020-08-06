@@ -1,6 +1,6 @@
 ---
 ms.assetid: 551c1a0d-8d30-41b4-9c4a-35a3337dd3bc
-title: 部署同盟伺服器
+title: 將 AD FS 設定為將宣告傳送至 AD FS 1.x 宣告感知網路代理程式
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 85e6d625021b86983c734e9242d8ede574302e0c
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 61a2fb57e893615b0112592ce575a55ca3d6d71a
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520097"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864142"
 ---
 # <a name="checklist-configuring-ad-fs-to-send-claims-to-an-ad-fs-1x-claims-aware-web-agent"></a>檢查清單：將 AD FS 設定為將宣告傳送至 AD FS 1.x 宣告感知網路代理程式
 

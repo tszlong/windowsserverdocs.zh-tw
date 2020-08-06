@@ -8,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: f542dfb228e5c32c2ff6c9d0b5e853c5aa66cf83
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 4cfdfbda3a1c7df19ded887cc748e7f69f2fad08
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519917"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864060"
 ---
-# <a name="federation-server-farm-using-wid"></a>使用 WID 的同盟伺服器陣列
+# <a name="legacy-ad-fs-federation-server-farm-using-wid"></a>舊版 AD FS 使用 WID 的同盟伺服器陣列
 
 Active Directory 同盟服務 AD FS 的預設拓撲 \( \) 是同盟伺服器陣列，使用的是 Windows 內部資料庫 \( WID \) 。 在此拓撲中，AD FS 會針對加入該伺服器陣列的所有同盟伺服器，使用 WID 做為 AD FS 設定資料庫的存放區。 伺服器陣列會複寫並維護伺服器陣列中每部伺服器之設定資料庫的 Federation Service 資料。 Windows Server 2012 R2 中的 AD FS 可讓具有100或較少信賴憑證者信任的組織，使用最多30部伺服器的 WID 來設定同盟伺服器陣列。
 
@@ -56,10 +56,10 @@ Active Directory 同盟服務 AD FS 的預設拓撲 \( \) 是同盟伺服器陣�
 
 下表提供使用 WID 伺服器陣列的摘要。 使用它來規劃您的實施。
 
-| 1-100 RP 信任 | 超過 100 RP 信任 |
+| 1-100 個 RP 信任 | 超過 100 個 RP 信任 |
 |--|--|
-| **1-30 AD FS 節點：** 支援 WID | **1-30 AD FS 節點：** 不支援使用 WID-SQL |
-| **超過30個 AD FS 節點：** 不支援使用 WID-SQL | **超過30個 AD FS 節點：** 不支援使用 WID-SQL |
+| **1-30 個 AD FS 節點：** 支援 WID | **1-30 個 AD FS 節點：** 不支援使用 WID - 需要 SQL |
+| **超過 30 個 AD FS 節點：** 不支援使用 WID - 需要 SQL | **超過 30 個 AD FS 節點：** 不支援使用 WID - 需要 SQL |
 
 
 ## <a name="server-placement-and-network-layout-recommendations"></a>伺服器放置和網路設定建議
