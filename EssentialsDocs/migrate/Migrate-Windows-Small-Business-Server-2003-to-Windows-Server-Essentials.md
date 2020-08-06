@@ -7,12 +7,12 @@ ms.assetid: 119a7fbc-2c76-4aa3-8a7f-c7073d461b5b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 6cd58247ec0591b293f8e11b1cfb24524fcd8658
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 4883f8daed21b89cac6906ddf68e06d71a95364e
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180704"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838387"
 ---
 # <a name="migrate-windows-small-business-server-2003-to-windows-server-essentials"></a>將 Windows Small Business Server 2003 移轉到 Windows Server Essentials
 
@@ -49,7 +49,7 @@ ms.locfileid: "87180704"
 
 3.  將[電腦加入新的 Windows Server Essentials 網路](Join-computers-to-the-new-Windows-Server-Essentials-network.md)。  本節涵蓋將用戶端電腦加入新的 Windows Server Essentials 網路，以及更新群組原則設定。
 
-4.  [將 SBS 2003 設定和資料移至目的地伺服器](Move-Windows-SBS-2003-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md)。  本節提供從來源伺服器移轉資料和設定的相關資訊。
+4.  [將 SBS 2003 設定和資料移至目的地伺服器](./move-windows-sbs-2003-to-the-destination-server-for-migration.md)。  本節提供從來源伺服器移轉資料和設定的相關資訊。
 
 5.  在[Windows Server Essentials 目的地伺服器上啟用資料夾](Enable-folder-redirection-on-the-Windows-Server-Essentials-Destination-Server.md)重新導向。  如果來源伺服器上已啟用資料夾重新導向，您可以在目的地伺服器啟用資料夾重新導向，然後刪除舊的資料夾重新導向群組原則設定。
 

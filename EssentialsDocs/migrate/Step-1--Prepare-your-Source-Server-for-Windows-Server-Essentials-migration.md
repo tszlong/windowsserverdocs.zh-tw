@@ -7,12 +7,12 @@ ms.assetid: 244c8a06-04c6-4863-8b52-974786455373
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 6666a0f68863913c0c0a5a1b1e903eaebf5470a4
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: c2007160c294074287437bedb7e94b318432a9b4
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180484"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838347"
 ---
 # <a name="step-1-prepare-your-source-server-for-windows-server-essentials-migration"></a>步驟 1：準備好來源伺服器以進行 Windows Server Essentials 移轉
 
@@ -42,14 +42,14 @@ ms.locfileid: "87180484"
 
 2. 確認備份執行成功。 若要測試備份的完整性，從備份隨機選取檔案、將這些檔案還原到其他位置，然後確認還原的檔案與原始檔案相同。
 
-   |Products|資源|
+   |產品|資源|
    |---|---|
-   |Windows Small Business Server 2003|[備份及還原 Windows Small Business Server 2003](https://msdn.microsoft.com/library/cc875809.aspx)
+   |Windows Small Business Server 2003|[備份及還原 Windows Small Business Server 2003](/previous-versions/tn-archive/cc875809(v=technet.10))
    |Windows Small Business Server 2008|[備份及還原 Windows Small Business Server 2008 上的資料](https://technet.microsoft.com/library/cc527505\(WS.10\).aspx)
    |Windows Server 2008 Foundation|[備份和復原](https://technet.microsoft.com/library/cc754097\(WS.10\).aspx)
-   |Windows Small Business Server 2011 Essentials|[深入了解設定伺服器備份](https://technet.microsoft.com/library/server-backup-support-1.aspx)
-   |Windows Small Business Server 2011 Standard|[管理伺服器備份](https://technet.microsoft.com/library/cc527488.aspx)
-   |Windows Server Essentials|[在 Windows Server Essentials 中管理備份與還原](https://technet.microsoft.com/library/jj713536.aspx)
+   |Windows Small Business Server 2011 Essentials|[深入了解設定伺服器備份](/previous-versions/windows/it-pro/windows-server-essentials-sbs/ff402413(v=ws.11))
+   |Windows Small Business Server 2011 Standard|[管理伺服器備份](/previous-versions/windows/it-pro/windows-server-essentials-sbs/cc527488(v=ws.11))
+   |Windows Server Essentials|[在 Windows Server Essentials 中管理備份與還原](/previous-versions/windows/it-pro/windows-server-essentials-sbs/cc514417(v=msdn.10))
 
 ###  <a name="install-the-most-recent-service-packs"></a><a name="BKMK_InstallTheMostRecentServicePacksToPrepareForMigration"></a>安裝最新的 service pack
  移轉之前，您必須在來源伺服器上安裝最新的更新和 Service Pack。
@@ -136,7 +136,7 @@ ms.locfileid: "87180484"
 若要檢視問題的描述和解決方案，在報告中按一下該問題。 並非 BPA 工具回報的所有問題都會影響移轉，但您應盡可能解決這些問題，以確保移轉能順利進行。
 
 ####  <a name="synchronize-the-source-server-time-with-an-external-time-source"></a><a name="BKMK_SynchronizeTheSourceServerTimeWithAnExternalTimeSource"></a>同步處理來源伺服器時間與外部時間來源
- 來源伺服器上的時間與目的地伺服器上的時間差距不能超過 5 分鐘，而且兩部伺服器上的日期和時區必須相同。 若來源伺服器是在虛擬機器中執行，則主機伺服器的日期、時間與時區必須符合來源伺服器與目的地伺服器的日期、時間與時區。 為協助確保已成功安裝 Windows Server Essentials，您必須將來源伺服器的時間與網際網路上的網路時間通訊協定（NTP）伺服器同步。
+ 來源伺服器上的時間與目的地伺服器上的時間差距不能超過 5 分鐘，而且兩部伺服器上的日期和時區必須相同。 若來源伺服器是在虛擬機器中執行，則主機伺服器的日期、時間與時區必須符合來源伺服器與目的地伺服器的日期、時間與時區。 為協助確保已成功安裝 Windows Server Essentials，您必須將來源伺服器的時間與網際網路上 (NTP) 伺服器的網路時間通訊協定進行同步處理。
 
 ###### <a name="to-synchronize-the-source-server-time-with-the-ntp-server"></a>同步來源伺服器和 NTP 伺服器的時間
 
@@ -172,17 +172,17 @@ ms.locfileid: "87180484"
  如果您選擇要使用 Microsoft Office 365 做為您網域的電子郵件解決方案，請依照[使用 Exchange 完全遷移將所有的信箱移轉至雲端](https://help.outlook.com/140/ms.exch.ecp.emailmigrationwizardexchangelearnmore.aspx)中的指導方針，開始將電子郵件移轉至 Office 365。 我們建議您先完成電子郵件遷移，再安裝 Windows Server Essentials。
 
 > [!NOTE]
->  如果您想要將 Windows Server Essentials 與 Office 365 整合，則在來源伺服器上移除內部部署 Exchange Server 的步驟是必要的。 如需如何將 Exchange Server 公用資料夾移轉至 Office 365 的相關資訊，請參閱部落格文章 [Office 365 的 Microsoft Exchange 2013 公用資料夾移轉指令碼](https://blogs.technet.com/b/fmustafa/archive/2013/04/11/microsoft-exchange-2013-public-folders-migration-scripts-for-office-365.aspx)。
+>  如果您想要將 Windows Server Essentials 與 Office 365 整合，則在來源伺服器上移除內部部署 Exchange Server 的步驟是必要的。 如需如何將 Exchange Server 公用資料夾移轉至 Office 365 的相關資訊，請參閱部落格文章 [Office 365 的 Microsoft Exchange 2013 公用資料夾移轉指令碼](/archive/blogs/fmustafa/microsoft-exchange-2013-public-folders-migration-scripts-for-office-365)。
 >
 >  完成安裝之後，您應該執行 [**與 Microsoft Office 365 整合**] 工作，在 Windows Server Essentials 中開啟 Office 365 整合功能。
 
 > [!IMPORTANT]
->  若要允許 Office 365 移轉工具連線到來源伺服器上執行的 Exchange Server，您必須啟用來源伺服器的 RPC over HTTP。 如需如何啟用 RPC over HTTP 的相關資訊，請參閱 [如何在 Small Business Server 2003 (Standard 或 Premium) 中第一次部署 RPC over HTTP](https://technet.microsoft.com/library/bb123622%28EXCHG.65%29.aspx)。 如果您無法在啟用 RPC over HTTP 後順利執行 Office 365 移轉工具，請檢視登錄 HKEY_LOCAL_MACHINE\Software\Microsoft\Rpc\RpcProxy 中的 [ValidPorts] **** 設定，確定有列出來源伺服器的完整網域名稱 (FQDN)。 如果沒有列出 FQDN，請使用下列範例手動將它加入：
+>  若要允許 Office 365 移轉工具連線到來源伺服器上執行的 Exchange Server，您必須啟用來源伺服器的 RPC over HTTP。 如需如何啟用 RPC over HTTP 的相關資訊，請參閱 [如何在 Small Business Server 2003 (Standard 或 Premium) 中第一次部署 RPC over HTTP](/previous-versions/tn-archive/bb123622(v=exchg.65))。 如果您無法在啟用 RPC over HTTP 後順利執行 Office 365 移轉工具，請檢視登錄 HKEY_LOCAL_MACHINE\Software\Microsoft\Rpc\RpcProxy 中的 [ValidPorts] **** 設定，確定有列出來源伺服器的完整網域名稱 (FQDN)。 如果沒有列出 FQDN，請使用下列範例手動將它加入：
 >
 >  remote. *contoso*.com:6001-6002;remote. *contoso*.com:6004 (以您的網域名稱取代 *contoso*)。
 
 #### <a name="migrate-email-to-another-on-premises-exchange-server"></a>將電子郵件移轉到其他內部部署 Exchange Server
- 如需如何將電子郵件遷移至另一個內部部署 Exchange Server 的相關資訊，請參閱[整合內部部署 Exchange server 與 Windows Server Essentials](https://technet.microsoft.com/library/jj200172.aspx)。 建議您在安裝 Windows Server Essentials 之後設定新的內部部署 Exchange Server，然後在降級來源伺服器之前完成電子郵件遷移。
+ 如需如何將電子郵件遷移至另一個內部部署 Exchange Server 的相關資訊，請參閱[整合內部部署 Exchange server 與 Windows Server Essentials](/previous-versions/windows/it-pro/windows-server-essentials-sbs/jj200172(v=ws.11))。 建議您在安裝 Windows Server Essentials 之後設定新的內部部署 Exchange Server，然後在降級來源伺服器之前完成電子郵件遷移。
 
 > [!NOTE]
 >  Exchange Server 不含 Windows Small Business Server POP3 連接器。 當您將電子郵件資料移轉到其他 Exchange Server 後，將無法再使用 POP3 連接器功能。
@@ -194,4 +194,3 @@ ms.locfileid: "87180484"
  您已準備好要遷移到 Windows Server Essentials 的來源伺服器。  現在請移至[步驟2：將 Windows Server Essentials 安裝為新的複本網域控制站](Step-2--Install-Windows-Server-Essentials-as-a-new-replica-domain-controller.md)。
 
 若要查看所有步驟，請參閱[遷移至 Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。
-

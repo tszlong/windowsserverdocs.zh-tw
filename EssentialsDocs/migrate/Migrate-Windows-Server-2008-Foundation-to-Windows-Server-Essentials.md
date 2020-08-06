@@ -7,12 +7,12 @@ ms.assetid: f22fc0a4-cb82-4e60-afe6-2d03145745e7
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 1da24c4200cfbfeb5256cad51e72b0836d6af3c7
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 74b79e3306ee34708b079b09f445a00ddfc15fdb
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180724"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838376"
 ---
 # <a name="migrate-windows-server-2008-foundation-to-windows-server-essentials"></a>將 Windows Server 2008 Foundation 移轉到 Windows Server Essentials
 
@@ -41,7 +41,7 @@ ms.locfileid: "87180724"
 
 3.  將[電腦加入新的 Windows Server Essentials 網路](Join-computers-to-the-new-Windows-Server-Essentials-network.md)。  本節涵蓋將用戶端電腦加入新的 Windows Server Essentials 網路，以及更新群組原則設定。
 
-4.  [將 Windows server 2008 Foundation 設定和資料移至目的地伺服器](Move-Windows-Server-2008-Foundation-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md)。  本節提供從來源伺服器移轉資料和設定的相關資訊。
+4.  [將 Windows server 2008 Foundation 設定和資料移至目的地伺服器](./move-windows-server-2008-foundation-to-the-destination-server-for-migration.md)。  本節提供從來源伺服器移轉資料和設定的相關資訊。
 
 5.  [從新的 Windows Server Essentials 網路降級和移除來源伺服器](Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md)。  從網路移除來源伺服器之前，您必須強制執行群組原則更新並降級來源伺服器。
 

@@ -7,12 +7,12 @@ ms.assetid: 86244c66-2c5e-488d-adb8-112e1ca3e2e1
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e78b3d50193cfd20df331d945fc549d3e3b35dbe
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 955da6c37bd57711529de02277d10f4627851715
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180414"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838337"
 ---
 # <a name="step-6-demote-and-remove-the-source-server-from-the-new-windows-server-essentials-network"></a>步驟 6：從新的 Windows Server Essentials 網路降級和移除來源伺服器
 
@@ -50,7 +50,7 @@ ms.locfileid: "87180414"
 7.  檢視 [確認移除選項]**** 頁面上的資訊，然後按一下 [移除]****。
 
     > [!NOTE]
-    >  如果網際網路資訊服務 (IIS) 正在執行，會提示您停止服務才能繼續。 按一下 [確定]。
+    >  如果網際網路資訊服務 (IIS) 正在執行，會提示您停止服務才能繼續。 按一下 [確定]  。
 
     > [!NOTE]
     >  首先，您可能需要移除 [憑證授權單位網頁註冊]**** (如果已安裝)。
@@ -79,7 +79,7 @@ ms.locfileid: "87180414"
 
 4. 可能需要您登出再重新登入，以完成處理程序。 按一下 [是]**** 以確認。
 
-   如果您要從 Windows Server Essentials 或其舊版進行遷移，請參閱[移除 Active Directory Domain Services](https://technet.microsoft.com/library/hh472163.aspx)。 在將來源伺服器新增為工作群組成員，並中斷其網路連線之後，您必須將它從目的地伺服器上的 AD DS 中移除。
+   如果您要從 Windows Server Essentials 或其舊版進行遷移，請參閱[移除 Active Directory Domain Services](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh472163(v=ws.11))。 在將來源伺服器新增為工作群組成員，並中斷其網路連線之後，您必須將它從目的地伺服器上的 AD DS 中移除。
 
    如果您要從 Windows Server Essentials 進行遷移，請使用伺服器管理員移除 Active Directory Domain Services 角色，藉此使用下列程式來降級來源伺服器上的網域控制站：
 
@@ -106,4 +106,3 @@ ms.locfileid: "87180414"
 
 
 若要查看所有步驟，請參閱[遷移至 Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。
-

@@ -38,7 +38,7 @@ ms.locfileid: "87769606"
 
 **圖 1：延展式叢集中的存放裝置複寫**
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>必要條件
 -   Active Directory 網域服務樹系 (不需要執行 Windows Server 2016)。
 -   2-64 部執行 Windows Server 2019 或 Windows Server 2016 Datacenter Edition 的伺服器。 如果您執行的是 Windows Server 2019，如果您確定只複寫最多 2 TB 大小的單一磁片區，就可以改用 Standard Edition。
 -   兩組共用的存放裝置，使用 SAS JBOD (例如搭配「儲存空間」)、光纖通道 SAN、共用 VHDX 或 iSCSI 目標。 存放裝置應包含 HDD 和 SSD 媒體的混合，且必須支援「持續保留」。 您要將每組存放裝置設定為只能供其中兩部伺服器使用 (非對稱)。
@@ -182,7 +182,7 @@ ms.locfileid: "87769606"
    7. 將線上存放裝置新增至名為 [新角色 (2)]**** 的空白角色。
    8. 現在您已利用磁碟機代號掛接了所有存放裝置，接著可以使用 `Test-SRTopology` 來評估叢集。
 
-        例如：
+        例如︰
 
         ```
         MD c:\temp
@@ -250,7 +250,7 @@ ms.locfileid: "87769606"
    Set-ClusterResourceDependency -Resource “Cluster Name” -Dependency “[Cluster IP Address] or [NewIPAddress]”
    ```
 
-3. 在指向共用 (裝載於網域控制站或一些其他獨立伺服器上) 的叢集中，設定檔案共用見證或雲端 (Azure) 見證。 例如：
+3. 在指向共用 (裝載於網域控制站或一些其他獨立伺服器上) 的叢集中，設定檔案共用見證或雲端 (Azure) 見證。 例如︰
 
    ```PowerShell
    Set-ClusterQuorum -FileShareWitness \\someserver\someshare
@@ -391,7 +391,7 @@ ms.locfileid: "87769606"
     ```
 
 
-3. 在指向共用 (裝載於網域控制站或一些其他獨立伺服器上) 的叢集中，設定檔案共用見證或雲端 (Azure) 見證。 例如：
+3. 在指向共用 (裝載於網域控制站或一些其他獨立伺服器上) 的叢集中，設定檔案共用見證或雲端 (Azure) 見證。 例如︰
 
     ```PowerShell
     Set-ClusterQuorum -FileShareWitness \\someserver\someshare
@@ -408,7 +408,7 @@ ms.locfileid: "87769606"
 
 5. 確定您是以最佳方式設定叢集網路。
 
-6.  設定檔案伺服器角色。 例如：
+6.  設定檔案伺服器角色。 例如︰
 
     ```PowerShell
     Get-ClusterResource
@@ -607,7 +607,7 @@ ms.locfileid: "87769606"
         Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica | FL
         ```
 
-    4.  或者，複本的目的地伺服器群組會隨時說明待複製的位元組數目，並可透過 PowerShell 進行查詢。 例如：
+    4.  或者，複本的目的地伺服器群組會隨時說明待複製的位元組數目，並可透過 PowerShell 進行查詢。 例如︰
 
         ```PowerShell
         (Get-SRGroup).Replicas | Select-Object numofbytesremaining

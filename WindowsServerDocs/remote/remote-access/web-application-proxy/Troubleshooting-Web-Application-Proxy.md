@@ -44,7 +44,7 @@ ms.locfileid: "87769476"
 
 ## <a name="powershell-messages"></a>PowerShell 訊息
 
-|事件或徵兆|可能的原因|解決方案|
+|事件或徵兆|可能的原因|解決方法|
 |--------------------|------------------|--------------|
 | ( "ADFS ProxyTrust-" ) 的信任憑證無效 <WAP machine name>|可能是由下列任何原因所造成：<p>-應用程式 Proxy 機器已關閉太長時間。<br />-Web 應用程式 Proxy 與 AD FS 之間的連線中斷<br />-憑證基礎結構問題<br />-AD FS 機上的變更，或 Web 應用程式 Proxy 與 AD FS 之間的更新進程，並未每8小時執行一次，因此他們需要更新信任<br />-Web 應用程式 Proxy 電腦和 AD FS 的時鐘不會同步處理。|請確定時鐘已同步處理。 執行 Install-webapplicationproxy Cmdlet。|
 |在 AD FS 中找不到設定資料|這可能是因為 Web 應用程式 Proxy 尚未完整安裝，或因為 AD FS 資料庫或資料庫損毀而變更。|執行 Install-Install-webapplicationproxy Cmdlet|
@@ -54,7 +54,7 @@ ms.locfileid: "87769476"
 ## <a name="administrator-console-events"></a>系統管理員主控台事件
 下列系統管理員主控台事件通常會指示驗證錯誤、不正確 tokes 或過期的 cookie。
 
-|事件或徵兆|可能的原因|解決方案|
+|事件或徵兆|可能的原因|解決方法|
 |--------------------|------------------|--------------|
 |11005<p>Web 應用程式 Proxy 無法使用設定中的密碼來建立 cookie 加密金鑰。|全域設定 "AccessCookiesEncryptionKey" 參數已由 PowerShell 命令變更： Set-webapplicationproxyconfiguration-RegenerateAccessCookiesEncryptionKey|不需要執行任何動作。 已移除問題的 cookie，並將使用者重新導向至 STS 進行驗證。|
 |12000<p>Web 應用程式 Proxy 無法檢查至少60分鐘的設定變更|Web 應用程式 Proxy 無法使用 Set-webapplicationproxyconfiguration/應用程式命令來存取 Web 應用程式 Proxy 設定。 這通常是因為沒有與 AD FS 的連線，或需要更新與 AD FS 的信任所造成。|檢查與 AD FS 的連線能力。 若要這麼做，您可以使用連結 HTTPs://<FQDN_AD_FS_Proxy>/FederationMetadata/2007-06/FederationMetadata.xml確認 AD FS 和 Web 應用程式 Proxy 之間已建立信任。 如果這些解決方案無法運作，請執行 Install-webapplicationproxy Cmdlet。|
@@ -82,7 +82,7 @@ ms.locfileid: "87769476"
 
 下列系統管理員主控台事件通常表示與設定有關的問題，例如布建、未成功的要求、無法連線的後端伺服器，以及緩衝區溢位。
 
-|事件或徵兆|可能的原因|解決方案|
+|事件或徵兆|可能的原因|解決方法|
 |--------------------|------------------|--------------|
 |12019<p>Web Application Proxy 無法為下列 URL 建立接聽程式。|事件的可能原因是另一個服務正在接聽相同的 URL。|系統管理員必須確定沒有人接聽或系結至相同的 Url。 若要檢查此動作，請執行下列命令： netsh HTTP show urlacl。 如果此 URL 是由 Web 應用程式 Proxy 電腦上執行的另一個元件所使用，請將它移除，或使用不同的 URL 透過 Web 應用程式 Proxy 發佈應用程式。|
 |12020<p>Web 應用程式 Proxy 無法為下列 URL 建立保留區。|事件的可能原因是另一個服務在相同的 URL 上有一個保留。|系統管理員必須確定沒有任何人系結至相同的 Url。 若要檢查此動作，請執行下列命令： netsh HTTP show urlacl。 如果此 URL 是由 Web 應用程式 Proxy 電腦上執行的另一個元件所使用，請將它移除，或使用不同的 URL 透過 Web 應用程式 Proxy 發佈應用程式。|

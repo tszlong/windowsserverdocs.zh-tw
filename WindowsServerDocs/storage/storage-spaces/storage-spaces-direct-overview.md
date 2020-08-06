@@ -53,7 +53,7 @@ ms.locfileid: "87768943"
 
 ## <a name="key-benefits"></a>主要權益
 
-| 映像 | 描述 |
+| 映像 | 說明 |
 |--|--|
 | ![簡潔](media/storage-spaces-direct-in-windows-server-2016/simplicity-icon.png) | **簡易.** 從執行 Windows Server 2016 的業界標準伺服器到您的第一個儲存空間直接存取叢集所需的時間不超過 15 分鐘。 對於 System Center 使用者而言，部署只需一個核取方塊。 |
 | ![無與倫比的效能](media/storage-spaces-direct-in-windows-server-2016/performance-icon.png) | **無可比擬的效能。** 不論是全快閃式或混合式，由於儲存空間直接存取的 Hypervisor 內嵌架構、其內建的讀取/寫入快取，以及對於在 PCIe 匯流排上直接裝載尖端 NVMe 磁碟機的支援，讓它具有一致性且低延遲的特性，輕鬆超越[每部伺服器 150,000 個混合式 4k 隨機 IOPS](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)。 |

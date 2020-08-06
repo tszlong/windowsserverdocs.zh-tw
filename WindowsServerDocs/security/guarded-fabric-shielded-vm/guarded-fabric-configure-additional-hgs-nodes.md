@@ -28,7 +28,7 @@ ms.locfileid: "87769356"
 | 新的 HGS 樹系 | [使用 PFX 檔案](#dedicated-hgs-forest-with-pfx-certificates) | [使用憑證指紋](#dedicated-hgs-forest-with-certificate-thumbprints) |
 | 現有的防禦樹系 | [使用 PFX 檔案](#existing-bastion-forest-with-pfx-certificates) | [使用憑證指紋](#existing-bastion-forest-with-certificate-thumbprints) |
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>先決條件
 
 請確定每個額外的節點：
 - 具有與主要節點相同的硬體和軟體設定

@@ -7,12 +7,12 @@ ms.assetid: ac12e9a9-ba7a-480a-9249-6e216c70941b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b1d684b594d7ad0361c2859db4cf30bbb4239a30
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: d09b5a6425c2921bf2ad3cae57aecad9e4f35098
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180344"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838327"
 ---
 # <a name="support-windows-server-essentials"></a>支援 Windows Server Essentials
 
@@ -24,17 +24,17 @@ ms.locfileid: "87180344"
 
 - [Windows Server 2012 R2 和 Windows Server 2012 的最佳支援解決方案](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831490(v=ws.11))
 
-- [Windows Server Essentials 遷移準備工具的更新](https://support.microsoft.com/kb/2908176)（2013年12月）
+- [Windows Server Essentials 遷移準備工具的更新](https://support.microsoft.com/kb/2908176) (2013 年12月) 
 
-- [Windows Server Essentials 的更新彙總套件 1](https://support.microsoft.com/kb/2887595) （2013年11月）
+- [Windows Server Essentials 的更新彙總套件 1](https://support.microsoft.com/kb/2887595) (2013 年11月) 
 
-- [適用于 Windows Server Essentials 的更新彙總套件 3](https://support.microsoft.com/kb/2862551) （2013年10月）
+- [Windows Server Essentials 的更新彙總套件 3](https://support.microsoft.com/kb/2862551) (2013 年10月) 
 
-- [適用于 Windows Server Essentials 的更新彙總套件 2](https://support.microsoft.com/kb/2824160) （2013年6月）
+- [Windows Server Essentials 的更新彙總套件 2](https://support.microsoft.com/kb/2824160) (6 月 2013) 
 
-- [適用于 Windows Server Essentials 的更新彙總套件 1](https://support.microsoft.com/kb/2781267) （2013年2月）
+- [Windows Server Essentials 的更新彙總套件 1](https://support.microsoft.com/kb/2781267) (2013 年2月) 
 
-- [修補程式：您無法在 Windows Server Essentials 中啟用 Windows Server Update Services 角色](https://support.microsoft.com/kb/2762663)（2013年2月）
+- [修補程式：您無法在2013年2月 (啟用 Windows Server Essentials 中的 Windows Server Update Services 角色](https://support.microsoft.com/kb/2762663)) 
 
 ## <a name="troubleshoot"></a>疑難排解
 
@@ -80,13 +80,13 @@ ms.locfileid: "87180344"
 
 ## <a name="ask-a-question-in-the-forums"></a>在論壇中發問
 
-- [Windows Server Essentials 一般](https://docs.microsoft.com/answers/topics/windows-server-essentials.html)
+- [Windows Server Essentials 一般](/answers/topics/windows-server-essentials.html)
 
-- [Windows SBS 2011 Essentials](https://docs.microsoft.com/answers/topics/windows-small-business-server.html)
+- [Windows SBS 2011 Essentials](/answers/topics/windows-small-business-server.html)
 
-- [Small Business Server](https://docs.microsoft.com/answers/topics/windows-small-business-server.html)
+- [Small Business Server](/answers/topics/windows-small-business-server.html)
 
-- [Windows Server 論壇](https://docs.microsoft.com/answers/topics/windows-server.html)
+- [Windows Server 論壇](/answers/topics/windows-server.html)
 
 ## <a name="get-additional-help"></a>取得其他說明
 
@@ -110,7 +110,7 @@ ms.locfileid: "87180344"
 
 - [適用於小型企業的支援](https://smallbusiness.support.microsoft.com/contact)
 
-- [Windows Server Essentials 和 Small Business Server 部落格](https://blogs.technet.com/b/sbs/)
+- [Windows Server Essentials 和 Small Business Server 部落格](/archive/blogs/sbs/)
 
 ## <a name="end-to-end-solution-guides"></a>端對端解決方案指南
 
@@ -120,7 +120,7 @@ ms.locfileid: "87180344"
 
 - 若要了解如何安全地與合作夥伴和廠商共同作業，請參閱[提升小型和中型企業中的共同作業](/previous-versions/windows/it-pro/solutions-guidance/dn747893(v=ws.11))。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [安裝 Windows Server Essentials](../install/Install-Windows-Server-Essentials.md)
 
