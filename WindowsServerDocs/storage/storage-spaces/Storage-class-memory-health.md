@@ -9,16 +9,16 @@ ms.topic: article
 author: JasonGerend
 ms.date: 06/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 12b2ed2a176167b79596ee398fc43c66d7196a54
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: cda974bf264c7e497c8d472338cf7b5f7d13a534
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966430"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769047"
 ---
 # <a name="storage-class-memory-nvdimm-n-health-management-in-windows"></a>Windows 中的存放裝置類別記憶體 (NVDIMM-N) 健全狀況管理
 
-> 適用于： Windows Server 2019、Windows Server 2016、Windows Server （半年通道）、Windows 10
+> 適用于： Windows Server 2019、Windows Server 2016、Windows Server (半年通道) 、Windows 10
 
 本文向系統管理員和 IT 專業人員提供 Windows 中存放裝置類別記憶體 (NVDIMM-N) 裝置特定的錯誤處理與健全狀況管理相關資訊，強調說明存放裝置類別記憶體與傳統存放裝置之間的差異。
 
@@ -72,7 +72,7 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 下表列出有關此情況的部分資訊。
 
-| | 描述 |
+| 朝向 | 描述 |
 | --- | --- |
 | 可能的情況 | 違反 NVDIMM-N 警告閾值 |
 | 根本原因 | NVDIMM-N 裝置可追蹤各種臨界值，例如溫度、NVM 存留期，及/或能量來源存留期。 當超過這些閾值的其中一個時，作業系統會收到通知。 |
@@ -92,7 +92,7 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 下表列出有關此情況的部分資訊。
 
-| | 描述 |
+| 朝向 | 描述 |
 | --- | --- |
 | 可能的情況 | 遺失持續性 / 備份電源 |
 |根本原因|NVDIMM-N 裝置仰賴備份電源以維持其持續性 – 通常是電池或超級電容器。 如果無法使用此備份電源來源或者裝置因為任何原因無法執行備份 (控制器/Flash 錯誤)，資料就會有風險，Windows 會防止對受影響的裝置進行任何進一步寫入作業。 仍可能會進行讀取以撤除資料。|
@@ -112,7 +112,7 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 下表列出有關此情況的部分資訊。
 
-||描述|
+|朝向|描述|
 |---|---|
 |可能的情況|BIOS 未向作業系統公開 NVDIMM-N|
 |根本原因|NVDIMM-N 裝置是以 DRAM 為基礎。 當參考損毀的 DRAM 位址時，大部分的 CPU 會起始電腦檢查，然後重新啟動伺服器。 部分伺服器平台會取消對應 NVDIMM，以防止作業系統存取它並防止可能因此導致執行另一次電腦檢查。 如果 BIOS 偵測到 NVDIMM-N 已經失敗且需要更換時，這也可能發生。|
@@ -132,7 +132,7 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 下表列出有關此情況的部分資訊。
 
-||描述|
+|朝向|描述|
 |---|---|
 |可能的情況|備份/還原失敗|
 |根本原因|備份或還原程序失敗可能會造成 NVDIMM-N 上所有的資料遺失。 作業系統載入時，會顯示為沒有磁碟分割或檔案系統的全新 NVDIMM-N，並呈現為 RAW，代表它沒有檔案系統。|
