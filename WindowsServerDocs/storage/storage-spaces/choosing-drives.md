@@ -9,12 +9,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 07/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: bdd5264394c94748b7720842cf8ff7e01e1375e7
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: aae554c87b8a4ac6005ad359bc474026f5f1ed9e
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965420"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769406"
 ---
 # <a name="choosing-drives-for-storage-spaces-direct"></a>選擇儲存空間直接存取的磁碟機
 
@@ -29,7 +29,7 @@ ms.locfileid: "86965420"
 <table>
     <tr style="border: 0;">
         <td style="padding: 10px; border: 0; width:70px">
-            <img src="media/understand-the-cache/pmem-100px.png">
+            <img src="media/understand-the-cache/pmem-100px.png" alt="Image of PMem (persistent memory)">
         </td>
         <td style="padding: 10px; border: 0;" valign="middle">
             <b>PMem</b>指的是持續性記憶體，這是一種新的低延遲、高效能儲存體。
@@ -37,7 +37,7 @@ ms.locfileid: "86965420"
     </tr>
     <tr style="border: 0;">
         <td style="padding: 10px; border: 0; width:70px">
-            <img src="media/understand-the-cache/NVMe-100px.png">
+            <img src="media/understand-the-cache/NVMe-100px.png" alt="Image of NVMe (Non-Volatile Memory Express)">
         </td>
         <td style="padding: 10px; border: 0;" valign="middle">
             <b>NVMe</b> (Non-Volatile Memory Express) 指的是直接位於 PCIe 匯流排的固態硬碟。 常見的板型規格為 2.5" U.2、PCIe Add-In-Card (AIC) 及 M.2。 NVMe 提供較高的 IOPS 和 IO 輸送量，其延遲比目前支援的其他任何類型的磁片磁碟機（持續性記憶體除外）。
@@ -45,7 +45,7 @@ ms.locfileid: "86965420"
     </tr>
     <tr style="border: 0;">
         <td style="padding: 10px; border: 0; width:70px" >
-            <img src="media/understand-the-cache/SSD-100px.png">
+            <img src="media/understand-the-cache/SSD-100px.png" alt="Image of SSD drive">
         </td>
         <td style="padding: 10px; border: 0;" valign="middle">
             <b>SSD</b>是指透過傳統 SATA 或 SAS 連接的固態硬碟。
@@ -53,7 +53,7 @@ ms.locfileid: "86965420"
     </tr>
     <tr style="border: 0;">
         <td style="padding: 10px; border: 0; width:70px">
-            <img src="media/understand-the-cache/HDD-100px.png">
+            <img src="media/understand-the-cache/HDD-100px.png" alt="Image of HDD">
         </td>
         <td style="padding: 10px; border: 0;" valign="middle">
             <b>HDD</b> 指的是提供大量儲存容量的旋轉磁性硬碟。
@@ -122,9 +122,9 @@ ms.locfileid: "86965420"
 
 ### <a name="general"></a>一般
 
-建議您將每部伺服器的儲存容量總計限制為大約 400 tb。 每個伺服器的儲存容量愈多，停機或重新開機後 (如套用軟體更新) 重新同步資料所需花費的時間愈長。 每個存放集區目前的大小上限為 4 pb （PB）（4000 TB）（適用于 Windows Server 2019）或 1 pb （適用于 Windows Server 2016）。
+建議您將每部伺服器的儲存容量總計限制為大約 400 tb (TB) 。 每個伺服器的儲存容量愈多，停機或重新開機後 (如套用軟體更新) 重新同步資料所需花費的時間愈長。 每個存放集區目前的大小上限為 4 pb (PB)  (4000 TB) 適用于 Windows Server 2019，或 1 pb （適用于 Windows Server 2016）。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [儲存空間直接存取總覽](storage-spaces-direct-overview.md)
 - [了解儲存空間直接存取中的快取](understand-the-cache.md)

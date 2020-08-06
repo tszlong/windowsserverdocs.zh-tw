@@ -8,16 +8,16 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 01/14/2020
-ms.openlocfilehash: 9244dd8c9a567813c5732571de5dddc42d23be2a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: c1eea8c7f6da1140480d0a8deaafb2edb73528de
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475585"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769146"
 ---
 # <a name="deploying-the-host-guardian-service"></a>部署主機守護者服務
 
->適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
+>適用于： Windows Server 2019、Windows Server (半年通道) 、Windows Server 2016
 
 提供裝載環境的其中一個最重要的目標，就是保證在環境中執行之虛擬機器的安全性。 身為雲端服務提供者或企業私人雲端系統管理員，您可以使用受防護網狀架構為 VM 提供更安全的環境。 受防護網狀架構包含一個主機守護者服務 (HGS) (通常是有三個節點的叢集)，加上一或多個受防護的主機，以及一組受防護的虛擬機器 (VM)。
 
@@ -29,23 +29,24 @@ ms.locfileid: "85475585"
 
 下表會細分部署受防護網狀架構的工作，並根據不同的系統管理員角色建立受防護的 Vm。 請注意，當 HGS 管理員設定 HGS 與已授權的 Hyper-v 主機時，網狀架構系統管理員會同時收集和提供主機的識別資訊。
 
-|<img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-hgs-administrator-tasks.png" alt="Host Guardian Service administrator tasks" width="238" height="62" align="left" /> | <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-fabric-administrator-tasks.png" alt="Fabric administrator tasks" width="300" height="62" align="left" /> | <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-tenant-administrator-tasks.png" alt="Tenant administrator tasks" width="184" height="66" align="left" /> |
-|-------------------------------------|--------------------------------|-----------------------------------------|
-|（1）[確認 HGS 必要條件](guarded-fabric-prepare-for-hgs.md) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-verify.png" alt="Step 1" hspace="8" align="right" />| | |
-|（2）[設定第一個 HGS &nbsp; 節點](guarded-fabric-choose-where-to-install-hgs.md)&nbsp;<img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-configure-first-hgs-node.png" alt="Step 2" hspace="8" align="right" />| | |
-|（3）[設定其他 HGS &nbsp; 節點](guarded-fabric-configure-additional-hgs-nodes.md) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-configure-secondary-hgs-nodes.png" alt="Step 3" hspace="8" align="right" />| | |
-| &nbsp; |（4）[設定網狀架構 DNS](guarded-fabric-configuring-fabric-dns.md) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-configure-fabric-dns.png" alt="Step 4" hspace="8" align="right" />| |
-| &nbsp; |（5）[確認主機 &nbsp; 必要條件（金鑰）](guarded-fabric-guarded-host-prerequisites.md#host-key-attestation)<br>[確認主機 &nbsp; 必要條件（TPM）](guarded-fabric-guarded-host-prerequisites.md#tpm-trusted-attestation)<img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-verify.png" alt="Step 5" hspace="8" align="right" />| |
-|（7）[以主機資訊設定 HGS](guarded-fabric-add-host-information-to-hgs.md) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-configure-hgs-with-host-info.png" alt="Step 7" hspace="8" align="right" />|（6）[建立主機金鑰（索引鍵）](guarded-fabric-create-host-key.md)<br>[收集主機資訊（TPM）](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-collect-info-from-hosts.png" alt="Step 6" hspace="8" align="right" />| |
-| &nbsp; |（8）[確認主機可以證明](guarded-fabric-confirm-hosts-can-attest-successfully.md) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-confirm-hosts-attest.png" alt="Step 8" hspace="8" align="right" />| |
-| &nbsp; |（9）[設定 VMM （選擇性）](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-overview) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-configure-vmm.png" alt="Step 9" hspace="8" align="right" />| |
-| &nbsp; |（10）[建立範本磁片](guarded-fabric-create-a-shielded-vm-template.md) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-create-template-disk.png" alt="Step 10" hspace="8" align="right" />| |
-| &nbsp; |（11）[建立 VMM 的 VM 防護 helper 磁片（選擇性）](guarded-fabric-vm-shielding-helper-vhd.md) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-create-helper-disk.png" alt="Step 11" hspace="8" align="right" />| |
-| &nbsp; |（12）[設定 Windows Azure 套件（選擇性）](guarded-fabric-shielded-vm-windows-azure-pack.md) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-windows-azure-pack.png" alt="Step 12" hspace="8" align="right" />| |
-| &nbsp; | &nbsp; |（13）[建立防護資料檔案](guarded-fabric-tenant-creates-shielding-data.md) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-shielding-data-file.png" alt="Step 13" hspace="8" align="right" />|
-| &nbsp; | &nbsp; |（14）[使用 Windows Azure 套件建立受防護的 vm](guarded-fabric-shielded-vm-windows-azure-pack.md) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-shielded-vms.png" alt="Step 14" hspace="8" align="right" /><br>[使用 VMM 建立受防護的 Vm](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-vms) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-shielded-vms.png" alt="Step 15" hspace="8" align="right" />|
+| 步驟和連結至內容 | 映像 |
+|--|--|--|
+| 1-[驗證 HGS 必要條件](guarded-fabric-prepare-for-hgs.md) | ![步驟1，驗證必要條件](../media/Guarded-Fabric-Shielded-VM/guarded-host-verify.png) |
+| 2-[設定第一個 HGS 節點](guarded-fabric-choose-where-to-install-hgs.md) | ![步驟2，設定第一個 HGS 節點](../media/Guarded-Fabric-Shielded-VM/guarded-host-configure-first-hgs-node.png) |
+| 3-[設定其他 HGS 節點](guarded-fabric-configure-additional-hgs-nodes.md) | ![步驟3，設定其他 HGS 節點](../media/Guarded-Fabric-Shielded-VM/guarded-host-configure-secondary-hgs-nodes.png) |
+| 4-[設定網狀架構 DNS](guarded-fabric-configuring-fabric-dns.md) | ![步驟4，設定網狀架構 DNS](../media/Guarded-Fabric-Shielded-VM/guarded-host-configure-fabric-dns.png) |
+| 5-[確認主機必要條件 (金鑰) ](guarded-fabric-guarded-host-prerequisites.md#host-key-attestation)並[確認主機必要條件 (TPM) ](guarded-fabric-guarded-host-prerequisites.md#tpm-trusted-attestation) | ![步驟5：確認主機必要條件金鑰和主機必要條件 TPM](../media/Guarded-Fabric-Shielded-VM/guarded-host-verify.png) |
+| 6-[建立主機金鑰 (金鑰) ](guarded-fabric-create-host-key.md)並[收集 (TPM 的主機資訊) ](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md) | ![步驟6，建立主機金鑰和收集主機資訊](../media/Guarded-Fabric-Shielded-VM/guarded-host-collect-info-from-hosts.png) |
+| 7-[設定 HGS 與主機資訊](guarded-fabric-add-host-information-to-hgs.md) | ![步驟7，將主機資訊新增至 HGS](../media/Guarded-Fabric-Shielded-VM/guarded-host-configure-hgs-with-host-info.png) |
+| 8-[確認主機可以證明](guarded-fabric-confirm-hosts-can-attest-successfully.md) | ![步驟8：確認主機可以證明](../media/Guarded-Fabric-Shielded-VM/guarded-host-confirm-hosts-attest.png) |
+| 9-[設定 VMM (選擇性) ](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-overview) | ![步驟9，設定 VMM (選擇性) ](../media/Guarded-Fabric-Shielded-VM/guarded-host-configure-vmm.png) |
+| 10-[建立範本磁片](guarded-fabric-create-a-shielded-vm-template.md) | ![步驟10，建立範本磁片](../media/Guarded-Fabric-Shielded-VM/guarded-host-create-template-disk.png) |
+| 11-[建立 VMM 的 VM 防護協助程式磁片 (選擇性) ](guarded-fabric-vm-shielding-helper-vhd.md) | ![步驟11：建立 VMM 的 VM 防護說明磁片](../media/Guarded-Fabric-Shielded-VM/guarded-host-create-helper-disk.png) |
+| 12-[設定 Windows Azure 套件 (選擇性) ](guarded-fabric-shielded-vm-windows-azure-pack.md) | ![步驟12，設定 Windows Azure 套件 (選擇性) ](../media/Guarded-Fabric-Shielded-VM/guarded-host-windows-azure-pack.png) |
+| 13-[建立防護資料檔案](guarded-fabric-tenant-creates-shielding-data.md) | ![步驟13，建立防護資料檔案](../media/Guarded-Fabric-Shielded-VM/guarded-host-shielding-data-file.png) |
+| 14-[使用 Windows Azure 套件建立受防護的 vm](guarded-fabric-shielded-vm-windows-azure-pack.md) | ![步驟14，使用 Windows Azure 套件建立受防護的 Vm](../media/Guarded-Fabric-Shielded-VM/guarded-host-shielded-vms.png) |
+| 15-[使用 VMM 建立受防護的 vm](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-vms) | ![步驟15：使用 VMM 建立受防護的 Vm](../media/Guarded-Fabric-Shielded-VM/guarded-host-shielded-vms.png) |
 
-
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [受防護網狀架構與受防護的 VM](guarded-fabric-and-shielded-vms-top-node.md)

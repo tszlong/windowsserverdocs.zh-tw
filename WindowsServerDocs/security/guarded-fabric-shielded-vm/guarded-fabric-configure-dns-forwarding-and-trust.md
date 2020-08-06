@@ -7,19 +7,19 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 6d6ad10dacf9c667069ecd43f38473a3f20bc781
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e8ecabe9f98bda1442fb127198be665b693c853e
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856851"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769269"
 ---
 # <a name="configure-dns-forwarding-in-the-hgs-domain-and-a-one-way-trust-with-the-fabric-domain"></a>設定 HGS 網域中的 DNS 轉送和網狀架構網域的單向信任
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 >[!IMPORTANT]
->從 Windows Server 2019 開始，AD 模式已淘汰。 針對不可能進行 TPM 證明的環境，請設定[主機金鑰證明](guarded-fabric-initialize-hgs-key-mode.md)。 主機金鑰證明提供與 AD 模式類似的保證，而且設定起來較簡單。 
+>從 Windows Server 2019 開始，AD 模式已淘汰。 針對不可能進行 TPM 證明的環境，請設定[主機金鑰證明](guarded-fabric-initialize-hgs-key-mode.md)。 主機金鑰證明提供與 AD 模式類似的保證，而且設定起來較簡單。
 
 使用下列步驟來設定 DNS 轉送，並建立與網狀架構網域的單向信任。 這些步驟可讓 HGS 找出網狀架構網域控制站，並驗證 Hyper-v 主機的群組成員資格。
 
@@ -31,11 +31,13 @@ ms.locfileid: "80856851"
 
 2.  若要建立單向樹系信任，請在提升許可權的命令提示字元中執行下列命令：
 
-    將 `bastion.local` 取代為 HGS 網域的名稱，並使用網狀架構網域的名稱 `fabrikam.com`。 提供網狀架構網域的系統管理員密碼。
+    `bastion.local`以 HGS 網域的名稱取代，並 `fabrikam.com` 以網狀架構網域的名稱取代。 提供網狀架構網域的系統管理員密碼。
 
-        netdom trust bastion.local /domain:fabrikam.com /userD:fabrikam.com\Administrator /passwordD:<password> /add
+    ```powershell
+    netdom trust bastion.local /domain:fabrikam.com /userD:fabrikam.com\Administrator /passwordD:<password> /add
+    ```
 
-## <a name="next-step"></a>後續步驟 
+## <a name="next-step"></a>後續步驟
 
 > [!div class="nextstepaction"]
 > [設定 HTTPS](guarded-fabric-configure-hgs-https.md)

@@ -9,22 +9,22 @@ ms.topic: article
 author: eldenchristensen
 ms.date: 07/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 50aba2d8edfe74bf6ca51d7c390f2cfc4ead0048
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b930df382adfc9641175eb4ee3ce531d7eaf8bbc
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961220"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769057"
 ---
 # <a name="using-storage-spaces-direct-in-guest-virtual-machine-clusters"></a>使用來賓虛擬機器叢集中的儲存空間直接存取
 
 > 適用於：Windows Server 2019、Windows Server 2016
 
-您可以在實體伺服器或虛擬機器來賓叢集的叢集上部署儲存空間直接存取（有時稱為 S2D），如本主題中所述。 這種類型的部署會在私人或公用雲端上的一組 Vm 之間提供虛擬共用存放裝置，讓應用程式的高可用性解決方案得以用來提高應用程式的可用性。
+您可以在實體伺服器或虛擬機器來賓叢集的叢集上部署儲存空間直接存取 (有時稱為 S2D) ，如本主題中所述。 這種類型的部署會在私人或公用雲端上的一組 Vm 之間提供虛擬共用存放裝置，讓應用程式的高可用性解決方案得以用來提高應用程式的可用性。
 
 若要改為針對來賓虛擬機器使用 Azure 共用磁片，請參閱[Azure 共用磁片](/azure/virtual-machines/windows/disks-shared)。
 
-![](media/storage-spaces-direct-in-vm/storage-spaces-direct-in-vm.png)
+![儲存空間直接存取圖表](media/storage-spaces-direct-in-vm/storage-spaces-direct-in-vm.png)
 
 ## <a name="deploying-in-azure-iaas-vm-guest-clusters"></a>在 Azure Iaas VM 來賓叢集中部署
 
@@ -41,7 +41,7 @@ ms.locfileid: "86961220"
 
 - 最少2個節點和最多3個節點
 
-- 2-節點部署必須設定見證（雲端見證或檔案共用見證）
+- 2-節點部署必須設定見證 (雲端見證或檔案共用見證) 
 
 - 3節點部署可容忍1個節點，並在另一個節點上遺失一或多個磁片。  如果關閉2個節點，則虛擬磁片會離線，直到其中一個節點返回為止。
 
@@ -51,13 +51,13 @@ ms.locfileid: "86961220"
 
     - Hyper-v –在 Vm 上設定 AntiAffinityClassNames，以將 Vm 分散到不同的節點
 
-    - VMware –藉由建立「個別虛擬機器」類型的 DRS 規則來設定 VM VM 反親和性規則，以將 Vm 分散到 ESX 主機。 提供給儲存空間直接存取使用的磁片應該使用 Paravirtual SCSI （PVSCSI）介面卡。 如需 Windows Server 的 PVSCSI 支援，請參閱 https://kb.vmware.com/s/article/1010398 。
+    - VMware –藉由建立「個別虛擬機器」類型的 DRS 規則來設定 VM VM 反親和性規則，以將 Vm 分散到 ESX 主機。 提供給儲存空間直接存取使用的磁片應該使用 Paravirtual SCSI (PVSCSI) 介面卡。 如需 Windows Server 的 PVSCSI 支援，請參閱 https://kb.vmware.com/s/article/1010398 。
 
 - 利用低延遲/高效能儲存體-需要 Azure 進階儲存體受控磁片
 
 - 部署未設定快取裝置的平面儲存設計
 
-- 最少2個虛擬資料磁片呈現給每個 VM （VHD/VHDX/VMDK）
+- 每個 VM 最少顯示2個虛擬資料磁片 (VHD/VHDX/VMDK) 
 
     此數目與裸機部署不同，因為虛擬磁片可以實作為不容易受到實體失敗影響的檔案。
 
@@ -85,7 +85,7 @@ ms.locfileid: "86961220"
 
     透過虛擬機器公開的虛擬磁片必須保留相同的大小和特性。 將更多虛擬磁片新增至每部虛擬機器，並將其新增至集區，即可完成將更多的容量新增至存放集區。 強烈建議使用與目前虛擬磁片相同大小和特性的虛擬磁片。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [用於部署儲存空間直接存取、影片和逐步指南的其他 Azure IAAS VM 範本](https://techcommunity.microsoft.com/t5/Failover-Clustering/Deploying-IaaS-VM-Guest-Clusters-in-Microsoft-Azure/ba-p/372126)。
 

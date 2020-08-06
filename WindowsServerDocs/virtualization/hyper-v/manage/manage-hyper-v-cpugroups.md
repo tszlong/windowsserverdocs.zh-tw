@@ -7,12 +7,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.service: windows-10-hyperv
 ms.assetid: cc7bb88e-ae75-4a54-9fb4-fc7c14964d67
-ms.openlocfilehash: ebb5f9a0ca9c50a5e5357e3dd2c755095da98d11
-ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
+ms.openlocfilehash: bcae278caf088bc544fb6686450eacdfdf88237b
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83203541"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769596"
 ---
 # <a name="virtual-machine-resource-controls"></a>虛擬機器資源控制
 
@@ -28,12 +28,12 @@ ms.locfileid: "83203541"
 
 ## <a name="managing-cpu-groups"></a>管理 CPU 群組
 
-CPU 群組是透過 Hyper-v 主機計算服務或 HCS 來管理。 如需 HCS、其創世、HCS Api 連結等等的絕佳說明，請前往《[主機計算服務（HCS）簡介](https://blogs.technet.microsoft.com/virtualization/2017/01/27/introducing-the-host-compute-service-hcs/)中的 Microsoft 虛擬化小組的 blog。
+CPU 群組是透過 Hyper-v 主機計算服務或 HCS 來管理。 如需 HCS 的絕佳說明、其創世、HCS Api 的連結，以及更多相關資訊，請前往《[主機計算服務 (HCS) ](https://blogs.technet.microsoft.com/virtualization/2017/01/27/introducing-the-host-compute-service-hcs/)的張貼文章中的 Microsoft 虛擬化小組的 blog。
 
 >[!NOTE]
 >只有 HCS 可以用來建立和管理 CPU 群組;Hyper-v 管理員 applet、WMI 和 PowerShell 管理介面不支援 CPU 群組。
 
-Microsoft 會在[Microsoft 下載中心](https://go.microsoft.com/fwlink/?linkid=865968)提供命令列公用程式 cpugroups，其使用 HCS 介面來管理 CPU 群組。  此公用程式也可以顯示主機的 CPU 拓撲。
+Microsoft 會在[Microsoft 下載中心](https://go.microsoft.com/fwlink/?linkid=865968)提供命令列公用程式 cpugroups.exe，其使用 HCS 介面來管理 CPU 群組。  此公用程式也可以顯示主機的 CPU 拓撲。
 
 ## <a name="how-cpu-groups-work"></a>CPU 群組的工作方式
 
@@ -41,19 +41,19 @@ Hyper-v 虛擬機器會使用計算的 CPU 群組上限，強制執行跨 CPU �
 
 CPU 群組上限的計算方式為 G = *n* x *C*，其中：
 
-    *G* is the amount of host LP we'd like to assign to the group
-    *n* is the total number of logical processors (LPs) in the group
-    *C* is the maximum CPU allocation — that is, the class of service desired for the group, expressed as a percentage of the system's total compute capacity
+- *G*是我們想要指派給群組的主機 LP 數量
+- *n*是群組中 (LPs) 的邏輯處理器總數
+- *C*是 CPU 配置的最大值（也就是，群組所需的服務類別，以系統的總計算容量百分比表示）
 
-例如，假設有一個 CPU 群組設定了4個邏輯處理器（LPs），而上限為50%。
+例如，假設 CPU 群組設定了4個邏輯處理器， (LPs) ，而上限為50%。
 
-    G = n * C
-    G = 4 * 50%
-    G = 2 LP's worth of CPU time for the entire group
+- G = n * C
+- G = 4 * 50%
+- G = 2 LP 對整個群組的 CPU 時間
 
 在此範例中，CPU 群組 G 會配置2個 LP 的 CPU 時間。
 
-請注意，不論已指派給該群組的虛擬機器或虛擬處理器數目為何，不論是否已指派給 CPU 群組的虛擬機器的狀態（例如關閉或啟動）為何，群組上限都會套用。 因此，系結至相同 CPU 群組的每個 VM 都會收到群組的總 CPU 配置，而這會隨著系結至 CPU 群組的 Vm 數目而變更。 因此，當 Vm 是從 CPU 群組系結或解除系結 Vm 時，整體 CPU 群組上限必須是進行調整並設定，以維持所需的每個 VM 上限。 VM 主機管理員或虛擬化管理軟體層負責視需要管理群組上限，以達到所需的每個 VM CPU 資源配置。
+請注意，不論系結至群組的虛擬機器或虛擬處理器數目為何，不論狀態 (（例如，關閉或啟動) 指派給 CPU 群組的虛擬機器），都適用群組上限。 因此，系結至相同 CPU 群組的每個 VM 都會收到群組的總 CPU 配置，而這會隨著系結至 CPU 群組的 Vm 數目而變更。 因此，當 Vm 是從 CPU 群組系結或解除系結 Vm 時，整體 CPU 群組上限必須是進行調整並設定，以維持所需的每個 VM 上限。 VM 主機管理員或虛擬化管理軟體層負責視需要管理群組上限，以達到所需的每個 VM CPU 資源配置。
 
 ## <a name="example-classes-of-service"></a>服務的範例類別
 
@@ -70,9 +70,9 @@ CPU 群組上限的計算方式為 G = *n* x *C*，其中：
 
 若要建立「B」層，主機 adminstartor 會將群組上限設定為50%：
 
-    G = n * C
-    G = 8 * 50%
-    G = 4 LP's worth of CPU time for the entire group
+- G = n * C
+- G = 8 * 50%
+- G = 4 LP 對整個群組的 CPU 時間
 
 主機管理員會新增單一「B」層 VM。
 此時，我們的「B」層 VM 最多可使用50% 的主機 CPU，或在我們的範例系統中相當於4個 LPs。
@@ -173,7 +173,7 @@ LpIndex NodeNumber PackageId CoreId RootVpIndex
 
 在這裡，我們將列出目前主機上的所有 CPU 群組、其 GroupId、群組的 CPU 限定，以及指派給該群組的 LPs indicies。
 
-請注意，有效的 CPU 限定值位於 [0，65536] 範圍內，而這些值會以百分比表示群組上限（例如 32768 = 50%）。
+請注意，有效的 CPU 限定值位於 [0，65536] 範圍內，而這些值會以百分比表示群組上限 (例如 32768 = 50% ) 。
 
 ```console
 C:\vm\tools>CpuGroups.exe GetGroups

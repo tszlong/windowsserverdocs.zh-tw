@@ -1,5 +1,5 @@
 ---
-title: 儲存體遷移服務常見問題（FAQ）
+title: '儲存體遷移服務的常見問題 (常見問題) '
 description: 關於儲存體遷移服務的常見問題，例如從一部伺服器遷移至另一部伺服器時，要從傳輸中排除哪些檔案。
 author: nedpyle
 ms.author: nedpyle
@@ -8,22 +8,22 @@ ms.date: 06/02/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: efe16dd9bdc971b97bc401cf10e14439c46069de
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: d5c0644c36d4476eb49797de2f828c4da0f53965
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181734"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769156"
 ---
-# <a name="storage-migration-service-frequently-asked-questions-faq"></a>儲存體遷移服務常見問題（FAQ）
+# <a name="storage-migration-service-frequently-asked-questions-faq"></a>儲存體遷移服務的常見問題 (常見問題) 
 
-本主題包含有關使用[儲存體遷移服務](overview.md)來遷移伺服器的常見問題（faq）的解答。
+本主題包含有關使用[儲存體遷移服務](overview.md)來遷移伺服器的常見問題)  (常見問題的解答。
 
 ## <a name="what-files-and-folders-are-excluded-from-transfers"></a>哪些檔案和資料夾會從傳輸中排除？
 
 儲存體遷移服務不會傳輸我們知道可能會干擾 Windows 操作的檔案或資料夾。 具體而言，我們不會傳送或移至目的地上的 PreExistingData 資料夾：
 
-- Windows，程式檔案，program Files （x86），程式資料，使用者
+- Windows、Program Files、Program Files (x86) 、程式資料、使用者
 - $Recycle bin、Recycler、回收、系統磁碟區資訊、$UpgDrv $、$SysReset、$Windows。 ~ BT、$Windows. ~ LS、Windows .old、開機、復原、檔和設定
 - pagefile.sys、hiberfil.sys、swapfile.sys、winpepge.sys、config.sys、bootsect.exe .bak、bootmgr、bootnxt
 - 來源伺服器上的任何檔案或資料夾，與目的地上排除的資料夾衝突。 <br>例如，如果來源上有 N:\Windows 資料夾，而且它會對應至 C：\因為它會干擾目的地上的 C：\Windows 系統資料夾，所以目的地上的磁片區不會傳輸（不論其包含的內容為何）。
@@ -52,28 +52,28 @@ ms.locfileid: "87181734"
 
 儲存體遷移服務會遷移 SMB 共用的所有旗標、設定和安全性。 儲存體遷移服務所遷移的旗標清單包括：
 
-    - 共用狀態
-    - 可用性類型
-    - 共用類型
-    - 資料夾列舉模式 *（也稱為以存取為基礎的列舉或 ABE）*
-    - 快取模式
-    - 租用模式
-    - Smb 實例
-    - CA 超時
-    - 並行使用者限制
-    - 持續可用
-    - 說明
-    - 加密資料
-    - 身分識別遠端
-    - 基礎結構
-    - 名稱
-    - Path
-    - 具範圍
-    - 領域名稱
-    - 安全性描述元
-    - 陰影複製
-    - 特殊
-    - 暫存
+- 共用狀態
+- 可用性類型
+- 共用類型
+- 資料夾列舉模式* (也稱為存取型列舉或 ABE) *
+- 快取模式
+- 租用模式
+- Smb 實例
+- CA 超時
+- 並行使用者限制
+- 持續可用
+- 描述
+- 加密資料
+- 身分識別遠端
+- 基礎結構
+- 名稱
+- Path
+- 具範圍
+- 領域名稱
+- 安全性描述元
+- 陰影複製
+- 特殊
+- 暫存
 
 ## <a name="can-i-consolidate-multiple-servers-into-one-server"></a>我可以將多部伺服器合併成一部伺服器嗎？
 
@@ -85,7 +85,7 @@ Windows Server 2019 隨附的儲存體遷移服務版本不支援將多部伺服
 
 ## <a name="can-i-migrate-previous-file-versions"></a>我可以遷移先前的檔案版本嗎？
 
-Windows Server 2019 隨附的儲存體遷移服務版本不支援將檔案的先前版本（與磁片區陰影複製服務一起建立）進行遷移。 只會遷移目前的版本。
+Windows Server 2019 隨附的儲存體遷移服務版本不支援遷移舊版 (與磁片區陰影複製服務) 的檔案。 只會遷移目前的版本。
 
 ## <a name="optimizing-inventory-and-transfer-performance"></a>優化清查和傳輸效能
 
@@ -111,7 +111,7 @@ Windows Server 2019 隨附的儲存體遷移服務版本不支援將檔案的先
 
     FileTransferThreadCount 和 EndpointFileTransferTaskCount 的總和是儲存體遷移服務可以從工作中的一個來源節點同時複製的檔案數目。 若要新增更多平行來源節點，請建立並執行更多的同步作業。
 
-- **新增核心和記憶體。**  我們強烈建議來源、orchestrator 和目的地電腦至少要有兩個處理器核心或兩個個 vcpu，而更多可以大幅協助清查和傳輸效能，特別是在與 FileTransferThreadCount （上方）結合時。 當傳輸的檔案大於一般的 Office 格式（gb 或以上）時，傳輸效能會從比預設2GB 最小值更多的記憶體獲益。
+- **新增核心和記憶體。**  我們強烈建議來源、orchestrator 和目的地電腦至少要有兩個處理器核心或兩個個 vcpu，而更多可以大幅協助清查和傳輸效能，特別是在) 以上的 FileTransferThreadCount (。 傳輸大於一般 Office 格式的檔案時 (gb 或更大的) 傳輸效能會從比預設2GB 最小值更多的記憶體獲益。
 
 - **建立多個作業。** 建立具有多個伺服器來源的作業時，會以序列方式來連接每部伺服器，以進行清查、傳輸和轉換。 這表示每一部伺服器都必須在另一部伺服器啟動之前完成其階段。 若要平行執行更多伺服器，只需要建立多個作業，每個作業只包含一部伺服器。 SMS 最多支援100同時執行作業，這表示單一協調器可以平行處理許多 Windows Server 2019 目的地電腦。 如果您的目的地電腦是 Windows Server 2016 或 Windows Server 2012 R2，而不是在目的地上執行 SMS proxy 服務，則不建議執行多個並行作業，協調器必須自行執行所有傳輸，而且可能會成為瓶頸。 在單一作業內平行執行伺服器的功能，是我們打算在較新版本的 SMS 中新增的功能。
 
@@ -120,7 +120,7 @@ Windows Server 2019 隨附的儲存體遷移服務版本不支援將檔案的先
 - **使用 SMB 3 多重通道。** 如果是從 Windows Server 2012 或更新版本的來源電腦傳輸，SMB 3.x 支援可大幅提升檔案複製效能的多重通道複本。 只要來源和目的地都有下列內容，此功能就會自動運作：
 
    - 多個網路介面卡
-   - 一或多個支援接收端調整（RSS）的網路介面卡
+   - 一或多個支援接收端調整 (RSS) 的網路介面卡
    - 使用 NIC 小組設定的其他網路介面卡之一
    - 一或多個支援 RDMA 的網路介面卡
 
@@ -136,11 +136,11 @@ Windows Server 2019 隨附的儲存體遷移服務版本不支援將檔案的先
 
 ## <a name="can-i-migrate-from-ntfs-to-refs"></a>我可以從 NTFS 遷移到 REFS 嗎？
 
-Windows Server 2019 隨附的儲存體遷移服務版本不支援從 NTFS 遷移到 REFS 檔案系統。 您可以從 NTFS 遷移至 NTFS 和 REFS 至 ReFS。 這是設計的，因為功能、中繼資料及 ReFS 的其他方面有許多差異，而不是從 NTFS 複製。 ReFS 的目的是做為應用程式工作負載檔案系統，而不是一般檔案系統。 如需詳細資訊，請參閱[復原檔案系統（ReFS）總覽](../refs/refs-overview.md)
+Windows Server 2019 隨附的儲存體遷移服務版本不支援從 NTFS 遷移到 REFS 檔案系統。 您可以從 NTFS 遷移至 NTFS 和 REFS 至 ReFS。 這是設計的，因為功能、中繼資料及 ReFS 的其他方面有許多差異，而不是從 NTFS 複製。 ReFS 的目的是做為應用程式工作負載檔案系統，而不是一般檔案系統。 如需詳細資訊，請參閱[復原檔案系統 (ReFS) 總覽](../refs/refs-overview.md)
 
 ## <a name="can-i-move-the-storage-migration-service-database"></a>我可以移動儲存體遷移服務資料庫嗎？
 
-儲存體遷移服務會使用依預設安裝在隱藏的 c:\programdata\microsoft\storagemigrationservice 資料夾中的可擴充儲存引擎（ESE）資料庫。 此資料庫會隨著作業的新增和傳輸完成而成長，如果您未刪除作業，則在遷移數百萬個檔案之後，可能會耗用大量的磁碟空間。 如果需要移動資料庫，請執行下列步驟：
+儲存體遷移服務會使用可擴充的儲存引擎， (預設安裝在隱藏的 c:\programdata\microsoft\storagemigrationservice 資料夾中的 ESE) 資料庫。 此資料庫會隨著作業的新增和傳輸完成而成長，如果您未刪除作業，則在遷移數百萬個檔案之後，可能會耗用大量的磁碟空間。 如果需要移動資料庫，請執行下列步驟：
 
 1. 停止 orchestrator 電腦上的「儲存體遷移服務」服務。
 2. 取得資料夾的擁有權 `%programdata%/Microsoft/StorageMigrationService`
@@ -185,6 +185,6 @@ Windows Server 2019 隨附的儲存體遷移服務版本不支援從 NTFS 遷移
  - [Windows Server 2019 論壇](https://docs.microsoft.com/answers/topics/windows-server-2019.html)上的文章
  - 透過[Microsoft 支援服務](https://support.microsoft.com)開啟支援案例
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [儲存體遷移服務總覽](overview.md)

@@ -5,22 +5,24 @@ author: allenma
 ms.date: 12/15/2017
 ms.topic: article
 ms.prod: windows-server
-ms.openlocfilehash: de621b3bfdc9792e61e6d21d9f3774da76c55df6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1e35595a0b5a0ab12187aae2cf714fc4d53901ee
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860781"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769626"
 ---
 # <a name="hyper-v-host-cpu-resource-management"></a>Hyper-v 主機 CPU 資源管理
 
-Windows Server 2016 或更新版本中引進的 hyper-v 主機 CPU 資源控制，可讓 Hyper-v 系統管理員更有效地管理和配置「根」或管理磁碟分割和來賓 Vm 之間的主機伺服器 CPU 資源。 系統管理員可以使用這些控制項，將主機系統的處理器子集專用於根磁碟分割。 這可以在 Hyper-v 主機中，從在系統處理器的個別子集上執行的工作負載中，將完成的工作與來賓虛擬機器中執行的工作負載隔離。
+Windows Server 2016 或更新版本中引進的 hyper-v 主機 CPU 資源控制，可讓 Hyper-v 系統管理員更有效地管理和配置「根」或管理磁碟分割和來賓 Vm 之間的主機伺服器 CPU 資源。
+系統管理員可以使用這些控制項，將主機系統的處理器子集專用於根磁碟分割。
+這可以在 Hyper-v 主機中，從在系統處理器的個別子集上執行的工作負載中，將完成的工作與來賓虛擬機器中執行的工作負載隔離。
 
 如需 Hyper-v 主機硬體的詳細資訊，請參閱[Windows 10 Hyper-v 系統需求](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/hyper-v-requirements)。
 
 ## <a name="background"></a>背景
 
-在設定 Hyper-v 主機 CPU 資源的控制權之前，最好先參閱 Hyper-v 架構的基本概念。  
+在設定 Hyper-v 主機 CPU 資源的控制權之前，最好先參閱 Hyper-v 架構的基本概念。
 您可以在[Hyper-v 架構](https://docs.microsoft.com/windows-server/administration/performance-tuning/role/hyper-v-server/architecture)一節中找到一般摘要。
 以下是這篇文章的重要概念：
 
@@ -28,7 +30,7 @@ Windows Server 2016 或更新版本中引進的 hyper-v 主機 CPU 資源控制�
 
 * 根磁碟分割本身是虛擬機器磁碟分割，雖然它具有與來賓虛擬機器不同的唯一屬性和更高的許可權。  根磁碟分割提供管理服務，可控制所有來賓虛擬機器、提供來賓的虛擬裝置支援，以及管理來賓虛擬機器的所有裝置 i/o。  Microsoft 強烈建議您不要在主機分割區中執行任何應用程式工作負載。
 
-* 根磁碟分割的每個虛擬處理器（VP）都會將1:1 對應到基礎邏輯處理器（LP）。  主機副總一律會在相同的基礎 LP 上執行–不會遷移根磁碟分割的 VPs。  
+* 根磁碟分割的每個虛擬處理器 (VP) 會將1:1 對應到基礎邏輯處理器 (LP) 。  主機副總一律會在相同的基礎 LP 上執行–不會遷移根磁碟分割的 VPs。
 
 * 根據預設，主機 VPs 執行所在的 LPs 也可以執行來賓 VPs。
 
@@ -50,19 +52,18 @@ Minroot 設定是透過「虛擬程式」 BCD 專案來控制。 若要啟用 mi
 ```
      bcdedit /set hypervisorrootproc n
 ```
-其中 n 是根 VPs 的數目。 
+其中 n 是根 VPs 的數目。
 
 系統必須重新開機，而且在 OS 開機的存留期間，新的根處理器數目將會保存。  Minroot 設定無法在執行時間動態變更。
 
-如果有多個 NUMA 節點，則每個節點都會取得 `n/NumaNodeCount` 的處理器。
+如果有多個 NUMA 節點，每個節點都會取得 `n/NumaNodeCount` 處理器。
 
-請注意，使用多個 NUMA 節點時，您必須確定 VM 的拓撲是在每個 NUMA 節點上有足夠的可用 LPs （也就是 LPs，不含根 VPs），才能執行對應的 VM NUMA 節點 VPs。
+請注意，使用多個 NUMA 節點時，您必須確定 VM 的拓撲是有足夠的免費 LPs (也就是 LPs 在每個 NUMA 節點上都沒有根 VPs) ，以執行對應的 VM NUMA 節點 VPs。
 
 ## <a name="verifying-the-minroot-configuration"></a>正在驗證 Minroot 設定
 
 您可以使用 [工作管理員] 來驗證主機的 minroot 設定，如下所示。
 
-![](./media/minroot-taskman.png)
+![[工作管理員] 中顯示的主機 minroot 設定](./media/minroot-taskman.png)
 
 當 Minroot 為作用中時，[工作管理員] 會顯示目前配置給主機的邏輯處理器數目，以及系統中的邏輯處理器總數。
- 

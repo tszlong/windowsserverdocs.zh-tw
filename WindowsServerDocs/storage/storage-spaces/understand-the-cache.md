@@ -9,12 +9,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 07/17/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f275e7657fc1e5d9ab982726c5b9b9adee381830
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b5c4ddf6575979722aa246e541902544551fe577
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473465"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769436"
 ---
 # <a name="understanding-the-cache-in-storage-spaces-direct"></a>了解儲存空間直接存取中的快取
 
@@ -35,7 +35,7 @@ ms.locfileid: "85473465"
 <table>
     <tr style="border: 0;">
         <td style="padding: 10px; border: 0; width:70px">
-            <img src="media/understand-the-cache/NVMe-100px.png">
+            <img src="media/understand-the-cache/NVMe-100px.png" alt="Image of NVMe (Non-Volatile Memory Express)" >
         </td>
         <td style="padding: 10px; border: 0;" valign="middle">
             NVMe (非揮發性記憶體高速規格)
@@ -43,7 +43,7 @@ ms.locfileid: "85473465"
     </tr>
     <tr style="border: 0;">
         <td style="padding: 10px; border: 0; width:70px">
-            <img src="media/understand-the-cache/SSD-100px.png">
+            <img src="media/understand-the-cache/SSD-100px.png" alt="Image of SSD" >
         </td>
         <td style="padding: 10px; border: 0;" valign="middle">
             SATA/SAS SSD (固態硬碟)
@@ -51,7 +51,7 @@ ms.locfileid: "85473465"
     </tr>
     <tr style="border: 0;">
         <td style="padding: 10px; border: 0; width:70px">
-            <img src="media/understand-the-cache/HDD-100px.png">
+            <img src="media/understand-the-cache/HDD-100px.png"alt="Image of HDD" >
         </td>
         <td style="padding: 10px; border: 0;" valign="middle">
             HDD (硬碟)
@@ -117,7 +117,7 @@ ms.locfileid: "85473465"
 
 當三種類型的磁碟機都齊全時，NVMe 磁碟機可以快取 SSD 和 HDD。 此行為如前文所述：SSD 只快取寫入，HDD 則讀取和寫入都快取。 快取 HDD 的負荷會平均分散到快取磁碟。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本表摘要說明哪些磁碟機用於快取、哪些用於容量，以及各種部署可能出現的快取行為。
 
@@ -271,7 +271,7 @@ CacheModeSSD : ReadWrite
 
 規則並無標準，但若讀取有太多快取遺漏，就需要縮減，而您應該考慮增加快取磁碟機擴張快取。 您可以隨時獨立新增快取磁碟機或容量磁碟機。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [選擇磁碟機及復原類型](choosing-drives.md)
 - [容錯與儲存空間效率](storage-spaces-fault-tolerance.md)

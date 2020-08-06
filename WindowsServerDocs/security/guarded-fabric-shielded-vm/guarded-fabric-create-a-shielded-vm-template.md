@@ -8,34 +8,34 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 01/29/2019
-ms.openlocfilehash: 82725e654fb4c7296b092019db111f9d3debad6d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: d33714c9939593b4c877e76f77d390139771e3ff
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475385"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769386"
 ---
 # <a name="create-a-windows-shielded-vm-template-disk"></a>建立 Windows 受防護的 VM 範本磁片
 
->適用于： Windows Server （半年通道）、Windows Server 2016、Windows Server 2019
+>適用于： Windows Server (半年通道) 、Windows Server 2016、Windows Server 2019
 
 
-如同一般 Vm，您可以建立 VM 範本（例如， [Virtual Machine Manager （VMM）中的 vm 範本](https://technet.microsoft.com/system-center-docs/vmm/manage/manage-library-add-vm-templates)），讓租使用者和系統管理員可以輕鬆地使用範本磁片在網狀架構上部署新的 vm。 由於受防護的 Vm 是安全性敏感的資產，因此有額外的步驟可建立支援防護的 VM 範本。 本主題涵蓋在 VMM 中建立受防護的範本磁片和 VM 範本的步驟。
+如同一般 Vm，您可以建立 VM 範本 (例如， [Virtual Machine Manager 中的 vm 範本 (VMM) ](https://technet.microsoft.com/system-center-docs/vmm/manage/manage-library-add-vm-templates)) ，讓租使用者和系統管理員可以輕鬆地使用範本磁片在網狀架構上部署新的 vm。 由於受防護的 Vm 是安全性敏感的資產，因此有額外的步驟可建立支援防護的 VM 範本。 本主題涵蓋在 VMM 中建立受防護的範本磁片和 VM 範本的步驟。
 
 若要瞭解本主題如何適用于部署受防護 Vm 的整體程式，請參閱[主機服務提供者設定步驟中的受防護主機和受防護的 vm](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)。
 
 ## <a name="prepare-an-operating-system-vhdx"></a>準備作業系統 VHDX
 
-首先準備一個 OS 磁片，然後再透過受防護的範本磁片建立嚮導來執行。 此磁片將用來做為租使用者 Vm 中的 OS 磁片。 您可以使用任何現有的工具來建立此磁片，例如 Microsoft 桌面映射 Service Manager （DISM），或手動設定具有空白 VHDX 的 VM，並將 OS 安裝到該磁片。 設定磁片時，必須遵守下列專屬於第2代和/或受防護 Vm 的需求：
+首先準備一個 OS 磁片，然後再透過受防護的範本磁片建立嚮導來執行。 此磁片將用來做為租使用者 Vm 中的 OS 磁片。 您可以使用任何現有的工具來建立此磁片（例如 Microsoft 桌面映射 Service Manager (DISM) ），或手動設定具有空白 VHDX 的 VM，並將 OS 安裝到該磁片。 設定磁片時，必須遵守下列專屬於第2代和/或受防護 Vm 的需求：
 
 | VHDX 的需求 | 原因 |
 |-----------|----|
-|必須是 GUID 磁碟分割表格（GPT）磁片 | 第2代虛擬機器需要支援 UEFI|
+|必須是 (GPT) 磁片的 GUID 磁碟分割表格 | 第2代虛擬機器需要支援 UEFI|
 |磁片類型必須是 [**基本**]，而不是 [**動態**]。 <br>注意：這是指邏輯磁片類型，而不是 Hyper-v 所支援的「動態擴充」 VHDX 功能。 | BitLocker 不支援動態磁碟。|
 |磁片至少有兩個磁碟分割。 一個磁碟分割必須包含安裝 Windows 的磁片磁碟機。 此為 BitLocker 將會加密的磁碟機。 另一個磁碟分割是作用中的磁碟分割，其中包含開機載入器，並且會保持未加密狀態，讓電腦可以啟動。|BitLocker 所需|
 |檔案系統為 NTFS | BitLocker 所需|
 |安裝在 VHDX 上的作業系統是下列其中一項：<br>-Windows Server 2019、Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 <br>-Windows 10、Windows 8.1、Windows 8| 需要支援第2代虛擬機器和 Microsoft 安全開機範本|
-|作業系統必須一般化（執行 sysprep.exe） | 範本布建牽涉到將 Vm 專門用於特定租使用者的工作負載|
+|作業系統必須一般化 (執行 sysprep.exe)  | 範本布建牽涉到將 Vm 專門用於特定租使用者的工作負載|
 
 > [!NOTE]
 > 如果您使用 VMM，請勿在此階段將範本磁碟複製到 VMM 程式庫。
@@ -46,26 +46,30 @@ ms.locfileid: "85475385"
 
 ## <a name="prepare-and-protect-the-vhdx-with-the-template-disk-wizard"></a>使用範本磁片 wizard 來準備和保護 VHDX
 
-若要使用範本磁片搭配受防護的 Vm，您必須使用受防護的範本磁片建立嚮導，以 BitLocker 備妥磁片並加以加密。 此 wizard 會為磁片產生雜湊，並將它新增至磁片區簽章目錄（VSC）。 VSC 是使用您指定的憑證來簽署，並在布建程式期間使用，以確保租使用者所部署的磁片未遭到變更，或被租使用者不信任的磁片取代。 最後，系統會將 BitLocker 安裝在磁片的作業系統上（如果尚未存在），以便在 VM 布建期間準備磁片進行加密。
+若要使用範本磁片搭配受防護的 Vm，您必須使用受防護的範本磁片建立嚮導，以 BitLocker 備妥磁片並加以加密。 此 wizard 會為磁片產生雜湊，並將它新增至磁片區簽章目錄， (VSC) 。 VSC 是使用您指定的憑證來簽署，並在布建程式期間使用，以確保租使用者所部署的磁片未遭到變更，或被租使用者不信任的磁片取代。 最後，系統會將 BitLocker 安裝在磁片的作業系統上， (如果尚未準備好要在 VM 布建期間進行加密的磁片) 。
 
 > [!NOTE]
 > 範本磁片 wizard 會修改您指定的範本磁片。 在執行 wizard 之後，您可能會想要建立未受保護的 VHDX 複本，稍後再更新磁片。 您將無法修改已使用「範本磁片」 wizard 保護的磁片。
 
-在執行 Windows Server 2016、Windows 10 （已安裝遠端伺服器管理工具、RSAT）或更新版本（不需要是受防護主機或 VMM 伺服器）的電腦上執行下列步驟：
+在執行 Windows Server 2016、Windows 10 (搭配遠端伺服器管理工具的電腦上，) 或更新版本安裝的 RSAT (不需要是受防護主機或 VMM 伺服器) ：
 
 1. 將 [[準備作業系統 VHDX](#prepare-an-operating-system-vhdx) ] 中建立的一般化 VHDX 複製到伺服器（如果尚未加入）。
 
 2. 若要在本機管理伺服器，請從伺服器上的**遠端伺服器管理工具**安裝**受防護的 VM 工具**功能。
 
-        Install-WindowsFeature RSAT-Shielded-VM-Tools -Restart
+    ```
+    Install-WindowsFeature RSAT-Shielded-VM-Tools -Restart
+    ```
 
     您也可以從已安裝[Windows 10 遠端伺服器管理工具](https://www.microsoft.com/download/details.aspx?id=45520)的用戶端電腦管理伺服器。
 
-3. 取得或建立憑證，以簽署將成為新受防護 Vm 之範本磁片的 VHDX VSC。 當租使用者建立其防護資料檔案時，會向租使用者顯示此憑證的詳細資料，並授權其信任的磁片。 因此，請務必從您和您的租使用者雙方信任的憑證授權單位單位取得此憑證。 在您同時是主機服務提供者和租使用者的企業案例中，您可以考慮從 PKI 發行此憑證。
+3. 取得或建立憑證，以簽署將成為新受防護 Vm 之範本磁片的 VHDX VSC。 當租使用者建立其防護資料檔案時，會向租使用者顯示此憑證的詳細資料，並授權其信任的磁片。 因此，請務必從您和您的租使用者雙方信任的憑證授權單位單位取得此憑證。 在同時是主機和租使用者的企業案例中，您可以考慮從 PKI 發行此憑證。
 
     如果您要設定測試環境，而且只想要使用自我簽署憑證來準備您的範本磁片，請執行類似下列的命令：
 
-        New-SelfSignedCertificate -DnsName publisher.fabrikam.com
+    ```
+    New-SelfSignedCertificate -DnsName publisher.fabrikam.com
+    ```
 
 4. 從 [開始] 功能表上的 [系統**管理工具**] 資料夾，或在命令提示字元中輸入**TemplateDiskWizard.exe** ，啟動 [**範本磁片]** 。
 
@@ -83,7 +87,7 @@ ms.locfileid: "85475385"
 
     > [!IMPORTANT]
     > 範本磁片只能與安全受防護的 VM 布建程式搭配使用。
-    > 嘗試使用範本磁片來啟動一般（非遮罩） VM 可能會導致停止錯誤（藍色畫面），而且不受支援。
+    > 嘗試使用範本磁片來啟動一般 (無防護) VM，可能會導致停止錯誤 (藍色畫面) 且不受支援。
 
 9. 在 [**摘要**] 頁面上，會顯示磁片範本的相關資訊、用來簽署 VSC 的憑證，以及憑證簽發者。 按一下 [關閉] 結束精靈。
 
@@ -113,7 +117,7 @@ ms.locfileid: "85475385"
 
 ## <a name="create-the-shielded-vm-template-in-vmm-using-the-prepared-template-disk"></a>使用已備妥的範本磁片，在 VMM 中建立受防護的 VM 範本
 
-在 VMM 程式庫中備妥的範本磁片之後，您就可以為受防護的 Vm 建立 VM 範本。 受防護 Vm 的 VM 範本與傳統 VM 範本稍有不同，因為已修正特定設定（第2代 VM、UEFI 和安全開機等），而其他則無法使用（租使用者自訂僅限於少數，請選取 VM 的屬性）。 若要建立 VM 範本，請執行下列步驟：
+在 VMM 程式庫中備妥的範本磁片之後，您就可以為受防護的 Vm 建立 VM 範本。 適用于受防護 Vm 的 VM 範本與傳統 VM 範本稍有不同，因為特定設定已固定 (第2代 VM、UEFI 和安全開機啟動，因此) 和其他專案無法使用 (租使用者自訂僅限於少數，請選取 VM) 的屬性。 若要建立 VM 範本，請執行下列步驟：
 
 1. 在 [連結**庫**] 工作區中，按一下頂端 [首頁] 索引標籤上的 [**建立 VM 範本**]。
 
@@ -127,12 +131,12 @@ ms.locfileid: "85475385"
 
     如果您選擇利用 VMM 中的靜態 IP 集區，而不是在租使用者網路上執行 DHCP 伺服器，您必須向您的租使用者發出此設定的警示。 當租使用者提供其防護資料檔案（其中包含 VMM 的自動安裝檔案）時，必須為靜態 IP 集區資訊提供特殊的預留位置值。 如需租使用者自動安裝檔案中 VMM 預留位置的詳細資訊，請參閱[建立回應](guarded-fabric-tenant-creates-shielding-data.md#create-an-answer-file)檔案。
 
-6. 在 [**設定作業系統**] 頁面上，VMM 只會顯示受防護 vm 的幾個選項，包括產品金鑰、時區和電腦名稱稱。 租使用者會透過防護資料檔案（）指定某些安全資訊（例如系統管理員密碼和功能變數名稱）。PDK 檔案）。
+6. 在 [**設定作業系統**] 頁面上，VMM 只會顯示受防護 vm 的幾個選項，包括產品金鑰、時區和電腦名稱稱。 租使用者會透過 ( 的防護資料檔案來指定某些安全資訊，例如系統管理員密碼和功能變數名稱。PDK 檔案) 。
 
     > [!NOTE]
     > 如果您選擇在此頁面上指定產品金鑰，請確定它適用于範本磁片上的作業系統。 如果使用了不正確的產品金鑰，則建立 VM 將會失敗。
 
-建立範本之後，租使用者可以使用它來建立新的虛擬機器。 您必須確認 VM 範本是租用戶系統管理員消費者角色可用的資源之一（在 VMM 中，使用者角色位於 [**設定**] 工作區）。
+建立範本之後，租使用者可以使用它來建立新的虛擬機器。 您必須確認 VM 範本是 VMM 中租用戶系統管理員消費者角色 (可用的其中一個資源，使用者角色位於 [**設定**] 工作區) 中。
 
 ## <a name="prepare-and-protect-the-vhdx-using-powershell"></a>使用 PowerShell 來準備和保護 VHDX
 
@@ -167,7 +171,7 @@ Save-VolumeSignatureCatalog -TemplateDiskPath 'C:\temp\MyLinuxTemplate.vhdx' -Vo
 > [!div class="nextstepaction"]
 > [建立防護資料檔案](guarded-fabric-tenant-creates-shielding-data.md)
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [適用於受防護主機和受防護 VM 的託管服務提供者設定步驟](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [受防護網狀架構與受防護的 VM](guarded-fabric-and-shielded-vms-top-node.md)

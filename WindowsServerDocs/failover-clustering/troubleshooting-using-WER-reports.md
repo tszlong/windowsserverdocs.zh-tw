@@ -1,23 +1,23 @@
 ---
-title: 使用 Windows 錯誤報告疑難排解容錯移轉叢集
+title: 使用 Windows 錯誤報告針對容錯移轉叢集進行疑難排解
 description: 使用 WER 報表疑難排解容錯移轉叢集，並提供如何收集報表和診斷常見問題的特定詳細資料。
 ms.prod: windows-server
 ms.technology: storage-failover-clustering
-ms.author: vpetter
-author: dcuomo
+ms.author: johnmar
+author: JohnMarlin-MSFT
 ms.date: 03/27/2018
-ms.openlocfilehash: e8db88dc4fe3ad9176299c5b423a7aac6093f254
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f888b7f49c2bf97eb42070a6028b137aeb730406
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827351"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87768535"
 ---
-# <a name="troubleshooting-a-failover-cluster-using-windows-error-reporting"></a>使用 Windows 錯誤報告疑難排解容錯移轉叢集 
+# <a name="troubleshooting-a-failover-cluster-using-windows-error-reporting"></a>使用 Windows 錯誤報告針對容錯移轉叢集進行疑難排解
 
 > 適用于： Windows Server 2019、Windows Server 2016、Windows Server
 
-Windows 錯誤報告（WER）是彈性的事件型意見基礎結構，其設計目的是要協助高級管理員或第3層支援收集 Windows 可偵測的硬體和軟體問題的相關資訊、向 Microsoft 報告資訊，以及為使用者提供任何可用的解決方案。 此[參考](https://docs.microsoft.com/powershell/module/windowserrorreporting/)提供所有 WindowsErrorReporting Cmdlet 的說明和語法。
+Windows 錯誤報告 (WER) 是彈性的事件型意見基礎結構，其設計目的是要協助 advanced administrator 或第3層支援收集 Windows 可偵測的硬體和軟體問題的相關資訊、向 Microsoft 報告資訊，以及為使用者提供任何可用的解決方案。 此[參考](https://docs.microsoft.com/powershell/module/windowserrorreporting/)提供所有 WindowsErrorReporting Cmdlet 的說明和語法。
 
 下列有關疑難排解的資訊將有助於疑難排解已升級的 advanced 問題，而且可能需要將資料傳送給 Microsoft 以進行分類。
 
@@ -36,7 +36,7 @@ Windows 錯誤報告（WER）是彈性的事件型意見基礎結構，其設計
 PS C:\Windows\system32> (get-cluster).EnabledEventLogs
 ```
 
-以下是輸出的範例：
+輸出的範例如下：
 ```
 Microsoft-Windows-Hyper-V-VmSwitch-Diagnostic,4,0xFFFFFFFD
 Microsoft-Windows-SMBDirect/Debug,4
@@ -44,7 +44,7 @@ Microsoft-Windows-SMBServer/Analytic
 Microsoft-Windows-Kernel-LiveDump/Analytic
 ```
 
-**EnabledEventLogs**屬性是一個 multistring，其中每個字串的格式都是： **channel-name，記錄層級，關鍵字-mask**。 **關鍵字遮罩**可以是十六進位（前置詞0x）、八進位（前置詞0）或十進位數（沒有前置詞）數位。 例如，若要將新的事件通道加入至清單，並設定**記錄層級**和**關鍵字遮罩**，您可以執行：
+**EnabledEventLogs**屬性是一個 multistring，其中每個字串的格式都是： **channel-name，記錄層級，關鍵字-mask**。 **關鍵字遮罩**可以是十六進位 (前置詞 0x) 、八進位 (前置詞 0) 或十進位數 (沒有前置詞) 數位。 例如，若要將新的事件通道加入至清單，並設定**記錄層級**和**關鍵字遮罩**，您可以執行：
 
 ```powershell
 (get-cluster).EnabledEventLogs += "Microsoft-Windows-WinINet/Analytic,2,321"
@@ -106,7 +106,7 @@ Windows 錯誤報告的報表會儲存在 **%ProgramData%\Microsoft\Windows\WER*
 PS C:\Windows\system32> dir c:\ProgramData\Microsoft\Windows\WER\ReportQueue
 ```
 
-以下是輸出的範例：
+輸出的範例如下：
 ```
 Volume in drive C is INSTALLTO
 Volume Serial Number is 4031-E397
@@ -143,7 +143,7 @@ Directory of C:\ProgramData\Microsoft\Windows\WER\ReportQueue
 PS C:\Windows\system32> dir C:\ProgramData\Microsoft\Windows\WER\ReportArchive
 ```
 
-以下是輸出的範例：
+輸出的範例如下：
 ```
 Volume in drive C is INSTALLTO
 Volume Serial Number is 4031-E397
@@ -171,7 +171,7 @@ Windows 錯誤報告提供許多設定，可自訂問題報告體驗。 如需�
 PS C:\Windows\system32> dir C:\ProgramData\Microsoft\Windows\WER\ReportArchive\Critical_PhysicalDisk_b46b8883d892cfa8a26263afca228b17df8133d_00000000_cab_08abc39c
 ```
 
-以下是輸出的範例：
+輸出的範例如下：
 ```
 Volume in drive C is INSTALLTO
 Volume Serial Number is 4031-E397
@@ -228,7 +228,7 @@ Volume Serial Number is 4031-E397
 接下來，從報表的**wer**檔案開始分類，這會告訴您失敗的內容。
 
 ```
-EventType=Failover_clustering_resource_error 
+EventType=Failover_clustering_resource_error
 <skip>
 Sig[0].Name=ResourceType
 Sig[0].Value=Physical Disk
@@ -258,7 +258,7 @@ DynamicSig[29].Value=2017//12//12-22:38:05.485
 PS C:\Windows\system32> (Get-ClusterResourceType -Name "Physical Disk").DumpLogQuery
 ```
 
-以下是輸出的範例：
+輸出的範例如下：
 ```
 <QueryList><Query Id="0"><Select Path="Microsoft-Windows-Kernel-PnP/Configuration">*[System[TimeCreated[timediff(@SystemTime) &lt;= 600000]]]</Select></Query></QueryList>
 <QueryList><Query Id="0"><Select Path="Microsoft-Windows-ReFS/Operational">*[System[TimeCreated[timediff(@SystemTime) &lt;= 600000]]]</Select></Query></QueryList>
@@ -299,20 +299,20 @@ Message Analyzer 可讓您捕獲、顯示和分析通訊協定訊息流量。 �
 
 ![依提供者分組的記錄](media/troubleshooting-using-WER-reports/logs-grouped-by-providers.png)
 
-若要找出磁片失敗的原因，請流覽至 [**故障叢集/診斷**和**故障叢集/DiagnosticVerbose**] 底下的事件。 然後執行下列查詢： **EventLog. EventData ["LogString"] 包含 "Cluster Disk 10"** 。  這會提供您下列輸出：
+若要找出磁片失敗的原因，請流覽至 [**故障叢集/診斷**和**故障叢集/DiagnosticVerbose**] 底下的事件。 然後執行下列查詢： **EventLog. EventData ["LogString"] 包含 "Cluster Disk 10"**。  這會提供您下列輸出：
 
 ![執行中記錄查詢的輸出](media/troubleshooting-using-WER-reports/output-of-running-log-query.png)
 
 
 ### <a name="physical-disk-timed-out"></a>實體磁片超時
 
-若要診斷此問題，請流覽至 [WER 報告] 資料夾。 資料夾包含**RHS**、 **clussvc**和裝載 "**smphost**" 服務之進程的記錄檔和傾印檔案，如下所示：
+若要診斷此問題，請流覽至 [WER 報告] 資料夾。 資料夾包含**RHS**、 **clussvc.exe**和裝載 "**smphost**" 服務之進程的記錄檔和傾印檔案，如下所示：
 
 ```powershell
 PS C:\Windows\system32> dir C:\ProgramData\Microsoft\Windows\WER\ReportArchive\Critical_PhysicalDisk_64acaf7e4590828ae8a3ac3c8b31da9a789586d4_00000000_cab_1d94712e
 ```
 
-以下是輸出的範例：
+輸出的範例如下：
 ```
 Volume in drive C is INSTALLTO
 Volume Serial Number is 4031-E397
@@ -395,7 +395,7 @@ DynamicSig[29].Name=HangThreadId
 DynamicSig[29].Value=10008
 ```
 
-我們在傾印中收集的服務和處理常式清單是由下列屬性所控制： **PS C:\Windows\system32 > （ClusterResourceType-Name "實體磁片"）。DumpServicesSmphost**
+我們在傾印中收集的服務和處理常式清單是由下列屬性所控制： **PS C:\Windows\system32> (ClusterResourceType-Name "實體磁片" ) 。DumpServicesSmphost**
 
 若要識別發生停止回應的原因，請開啟 dum 檔案。 然後執行下列查詢： **EventLog. EventData ["LogString"] 包含 "Cluster Disk 10"** ，這會提供您下列輸出：
 
@@ -406,9 +406,9 @@ DynamicSig[29].Value=10008
 ```
 # 21  Id: 1d98.2718 Suspend: 0 Teb: 0000000b`f1f7b000 Unfrozen
 # Child-SP          RetAddr           Call Site
-00 0000000b`f3c7ec38 00007ff8`455d25ca ntdll!ZwDelayExecution+0x14 
-01 0000000b`f3c7ec40 00007ff8`2ef19710 KERNELBASE!SleepEx+0x9a 
-02 0000000b`f3c7ece0 00007ff8`3bdf7fbf clusres!ResHardDiskOnlineOrTurnOffMMThread+0x2b0 
-03 0000000b`f3c7f960 00007ff8`391eed34 resutils!ClusWorkerStart+0x5f 
+00 0000000b`f3c7ec38 00007ff8`455d25ca ntdll!ZwDelayExecution+0x14
+01 0000000b`f3c7ec40 00007ff8`2ef19710 KERNELBASE!SleepEx+0x9a
+02 0000000b`f3c7ece0 00007ff8`3bdf7fbf clusres!ResHardDiskOnlineOrTurnOffMMThread+0x2b0
+03 0000000b`f3c7f960 00007ff8`391eed34 resutils!ClusWorkerStart+0x5f
 04 0000000b`f3c7f9d0 00000000`00000000 vfbasics+0xed34
 ```
