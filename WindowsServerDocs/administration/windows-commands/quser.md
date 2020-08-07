@@ -1,24 +1,22 @@
 ---
 title: quser
 description: Quser 命令的參考文章，它會顯示遠端桌面工作階段主機伺服器上的使用者會話相關資訊。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 8056204f-ed11-4c91-bb1d-c799283a48a4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 372622de4e94debcff019f2ab5b7cc793381aedf
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: dd56263e65ed9b6749f6d3d63c60bce32bb8ed53
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956400"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884382"
 ---
 # <a name="quser"></a>quser
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 顯示遠端桌面工作階段主機伺服器上的使用者會話相關資訊。 您可以使用這個命令來找出特定使用者是否登入特定的遠端桌面工作階段主機伺服器。 此命令會傳回下列資訊：
 
@@ -28,9 +26,9 @@ ms.locfileid: "86956400"
 
 - 工作階段識別碼
 
-- 會話的狀態（作用中或已中斷連線）
+- 會話的狀態 (作用中或已中斷連線) 
 
-- 閒置時間（自上一次按鍵或滑鼠移動到會話之後的分鐘數）
+- [閒置時間] (在會話上一次按鍵或滑鼠移動之後的分鐘數) 
 
 - 使用者登入的日期和時間
 
@@ -75,7 +73,7 @@ quser
 quser USER1 /server:Server1
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

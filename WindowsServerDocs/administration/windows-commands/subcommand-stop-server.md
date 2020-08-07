@@ -1,24 +1,22 @@
 ---
 title: 子命令停止-伺服器
 description: 子命令停止伺服器的參考文章，這會停止 Windows 部署服務伺服器上的所有服務。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 09f411c0-099f-4591-95fd-b77b3fd9118a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 044b151247d4f525656f6ad97d882df7ca37472a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e923ad4a7151ada5b23beb149b9aadc02f4573b8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935370"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882022"
 ---
 # <a name="subcommand-stop-server"></a>子命令： stop-Server
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 停止 Windows 部署服務伺服器上的所有服務。
 
@@ -27,9 +25,9 @@ ms.locfileid: "85935370"
 wdsutil [Options] /Stop-Server [/Server:<Server name>]
 ```
 ### <a name="parameters"></a>參數
-|參數|說明|
+|參數|描述|
 |-------|--------|
-|[/Server： <Server name> ]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。|
+|[/Server： <Server name> ]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或 (FQDN) 的完整功能變數名稱。 如果未指定伺服器名稱，則會使用本機伺服器。|
 ## <a name="examples"></a>範例
 若要停止服務，請輸入下列其中一項：
 ```

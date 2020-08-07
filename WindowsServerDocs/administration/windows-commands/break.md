@@ -1,20 +1,18 @@
 ---
 title: break
 description: Break 命令的參考文章，它會將具有焦點的鏡像磁碟區分成兩個簡單磁片區。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ffc4901c-457b-46a6-a671-3052355f8a3c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c5de6bb682e5094f555b6310d5c712c0739f9454
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 427aa9d360e98cc21393e431aecfd5a73dc32700
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409759"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880474"
 ---
 # <a name="break"></a>break
 
@@ -31,7 +29,7 @@ ms.locfileid: "87409759"
 break=[on|off]
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

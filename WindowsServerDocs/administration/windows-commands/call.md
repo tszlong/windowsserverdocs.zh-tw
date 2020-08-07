@@ -1,20 +1,18 @@
 ---
 title: call
 description: 呼叫命令的參考文章，會呼叫另一個 batch 程式，而不會停止父批次程式。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: d34a41dc-e6c7-4467-bf6a-15cec704833e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 06/05/2018
-ms.openlocfilehash: e73199b9d5633d5b3f1f7b8afd2bd35eb826bfd7
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7ff402f159dc69d683ad5c568ca2d31d753eb77c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924838"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880394"
 ---
 # <a name="call"></a>call
 
@@ -31,7 +29,7 @@ call [drive:][path]<filename> [<batchparameters>] [:<label> [<arguments>]]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `[<drive>:][<path>]<filename>` | 指定您想要呼叫的批次程式的位置和名稱。 `<filename>`參數是必要的，而且必須具有 .bat 或 .cmd 副檔名。 |
 | `<batchparameters>` | 指定 batch 程式所需的任何命令列資訊。 |
@@ -41,13 +39,13 @@ call [drive:][path]<filename> [<batchparameters>] [:<label> [<arguments>]]
 
 ## <a name="batch-parameters"></a>批次參數
 
-批次腳本引數參考（**%0**， **%1**，...）列在下表中。
+下表列出 (**%0**， **%1**，... ) 的批次腳本引數參考。
 
-使用批次腳本中的 **% &#42;** 值會參考所有引數（例如， **%1**， **%2**， **%3**...）。
+使用批次腳本中的 **% &#42;** 值指的是所有引數 (例如， **%1**， **%2**， **%3**... ) 。
 
-您可以使用下列選擇性語法做為批次參數的替代（**% n**）：
+您可以使用下列選擇性語法，做為 (**% n**) 的批次參數替代：
 
-| Batch 參數 | Description |
+| Batch 參數 | 描述 |
 | --------------- | ----------- |
 | % ~ 1 | 展開 **%1** ，並移除前後的引號。 |
 | % ~ f1 | 將 **%1**展開為完整路徑。 |
@@ -63,7 +61,7 @@ call [drive:][path]<filename> [<batchparameters>] [:<label> [<arguments>]]
 
 下表顯示如何將修飾詞與複合結果的批次參數結合：
 
-| 具有修飾詞的批次參數 | Description |
+| 具有修飾詞的批次參數 | 描述 |
 | ----------------------------- | ----------- |
 | % ~ dp1 | 僅將 **%1**擴充到磁碟機號和路徑。 |
 | % ~ nx1 | 僅將 **%1**擴充到檔案名和副檔名。 |
@@ -76,15 +74,15 @@ call [drive:][path]<filename> [<batchparameters>] [:<label> [<arguments>]]
 
 - 使用批次參數：
 
-    批次參數可以包含您可以傳遞給 batch 程式的任何資訊，包括命令列選項、檔案名、批次參數 **%0**到 **%9**和變數（例如 **% 波特%**）。
+    批次參數可以包含您可以傳遞給 batch 程式的任何資訊，包括命令列選項、檔案名、批次參數 **%0**到 **%9**和變數 (例如 **% 波特%**) 。
 
 - 使用 `<label>` 參數：
 
-    藉由使用**call**搭配 `<label>` 參數，您可以建立新的批次檔內容，並將控制權傳遞至指定之標籤之後的語句。 第一次遇到批次檔的結尾時（也就是在跳到標籤之後），控制權會回到**call**語句之後的語句。 第二次遇到批次檔的結尾時，就會結束批次腳本。
+    藉由使用**call**搭配 `<label>` 參數，您可以建立新的批次檔內容，並將控制權傳遞至指定之標籤之後的語句。 第一次遇到批次檔尾 (也就是，在跳到標籤) 之後，控制項會回到**call**語句之後的語句。 第二次遇到批次檔的結尾時，就會結束批次腳本。
 
 - 使用管道和重新導向符號：
 
-    請勿使用 [管道] `(|)` 或 [重新導向符號] （ `<` 或）搭配 [ `>` **呼叫**]。
+    請勿使用 [管道] 或 [重新導向] `(|)` 符號 (`<` 或 `>`) 搭配**call**。
 
 - 進行遞迴呼叫
 

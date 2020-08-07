@@ -1,24 +1,22 @@
 ---
 title: bootcfg ems
 description: 適用于 bootcfg ems 命令的參考文章，可讓使用者新增或變更緊急管理服務主控台重新導向至遠端電腦的設定。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 57abdc50-c64a-45f1-8470-3f8c3a51f743
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9c24f8acf6beb368dd989e4b05c912b69c4e7b68
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b3f703eefe9f9300d6576a9f4349d2fb275b2d57
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926242"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880570"
 ---
 # <a name="bootcfg-ems"></a>bootcfg ems
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 可讓使用者新增或變更緊急管理服務主控台重新導向至遠端電腦的設定。 啟用緊急管理服務時，會將 `redirect=Port#` 一行新增至 Boot.ini 檔案的 [開機載入器] 區段，並將/redirect 選項加到指定的作業系統專案行。 [緊急管理服務] 功能只會在伺服器上啟用。
 
@@ -30,10 +28,10 @@ bootcfg /ems {on | off | edit}[/s <computer> [/u <domain>\<user> /p <password>]]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `{on | off | edit}` | 指定緊急管理服務重新導向的值，包括：<ul><li>**的.** 啟用所指定的遠端輸出 `<osentrylinenum>` 。 也會將/redirect 選項加入至指定的 <osentrylinenum> ，並將 `redirect=com<X>` 設定新增至 [開機載入器] 區段。 的值 `com<X>` 是由 **/port**參數所設定。</li><li>**停止.** 停用輸出至遠端電腦。 也會 <osentrylinenum> `redirect=com<X>` 從 [開機載入器] 區段中，移除指定之和設定的/redirect 選項。</li><li>**編輯.** 藉由變更 `redirect=com<X>` [開機載入器] 區段中的設定，允許變更埠設定。 的值 `com<X>` 是由 **/port**參數所設定。</li></ul> |
-| `/s <computer>` | 指定遠端電腦的名稱或 IP 位址（不要使用反斜線）。 預設是本機電腦。 |
+| `/s <computer>` | 指定遠端電腦的名稱或 IP 位址 (不要使用反斜線) 。 預設是本機電腦。 |
 | `/u <domain>\<user>`  | 以或指定之使用者的帳戶許可權來執行命令 `<user>` `<domain>\<user>` 。 預設為發出命令之電腦上目前登入使用者的許可權。 |
 | `/p <password>` | 指定 **/u**參數中指定之使用者帳戶的密碼。 |
 | `/port {COM1 | COM2 | COM3 | COM4 | BIOSSET}` |  指定要用於重新導向的 COM 埠。 BIOSSET 參數會指示緊急管理服務取得 BIOS 設定，以判斷應該使用哪一個埠進行重新導向。 如果已停用遠端系統管理的輸出，請勿使用此參數。 |

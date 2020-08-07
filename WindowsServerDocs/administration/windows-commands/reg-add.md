@@ -1,20 +1,18 @@
 ---
 title: reg add
 description: Reg add 命令的參考文章，它會將新的子機碼或專案新增至登錄。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: d9ad143e-dc10-4e2e-a229-408393c40079
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: db968e8fb55a4de73f5221f8149f794600f6884e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 549c9e4ff0eb09e051debdee12003031a8443e18
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933514"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884204"
 ---
 # <a name="reg-add"></a>reg add
 
@@ -28,9 +26,9 @@ reg add <keyname> [{/v Valuename | /ve}] [/t datatype] [/s Separator] [/d Data] 
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 |--|--|
-| `<keyname>` | 指定要新增之子機碼或專案的完整路徑。 若要指定遠端電腦，請將電腦名稱稱（格式為）包含在 `\\<computername>\` *keyname*中。 省略 `\\<computername>\` 會使操作預設為本機電腦。 *Keyname*必須包含有效的根金鑰。 本機電腦的有效根金鑰為： **HKLM**、 **HKCU**、 **HKCR**、 **HKU**和**HKCC**。 如果指定遠端電腦，有效的根金鑰為： **HKLM**和**HKU**。 如果登錄機碼名稱包含空格，請用引號括住機碼名稱。 |
+| `<keyname>` | 指定要新增之子機碼或專案的完整路徑。 若要指定遠端電腦，請將電腦名稱稱的格式加上 `\\<computername>\`) 作為*keyname*的一部分 (。 省略 `\\<computername>\` 會使操作預設為本機電腦。 *Keyname*必須包含有效的根金鑰。 本機電腦的有效根金鑰為： **HKLM**、 **HKCU**、 **HKCR**、 **HKU**和**HKCC**。 如果指定遠端電腦，有效的根金鑰為： **HKLM**和**HKU**。 如果登錄機碼名稱包含空格，請用引號括住機碼名稱。 |
 | 停`<Valuename>` | 指定加入登錄專案的名稱。 |
 | /ve | 指定加入的登錄專案具有 null 值。 |
 | 一起`<Type>` | 指定登錄專案的類型。 *類型*必須是下列其中一項：<ul><li>REG_SZ</li><li>REG_MULTI_SZ</li><li>REG_DWORD_BIG_ENDIAN</li><li>REG_DWORD</li><li>REG_BINARY</li><li>REG_DWORD_LITTLE_ENDIAN</li><li>REG_LINK</li><li>REG_FULL_RESOURCE_DESCRIPTOR</li><li> REG_EXPAND_SZ </li></ul> |
@@ -45,12 +43,12 @@ reg add <keyname> [{/v Valuename | /ve}] [/t datatype] [/s Separator] [/d Data] 
 
 - **Reg add**作業的傳回值如下：
 
-| 值 | 說明 |
+| 值 | 描述 |
 |--|--|
 | 0 | 成功 |
 | 1 | 失敗 |
 
-- 針對**REG_EXPAND_SZ**金鑰類型，請在 **^** /d 參數內部使用插入號（） **%** 。
+- 針對**REG_EXPAND_SZ**金鑰類型，請在 **^** /d 參數內部使用插入號 ( ) **%** 。
 
 ### <a name="examples"></a>範例
 

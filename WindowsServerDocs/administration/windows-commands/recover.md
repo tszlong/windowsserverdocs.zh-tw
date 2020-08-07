@@ -1,20 +1,18 @@
 ---
 title: recover
 description: 復原命令的參考文章，可從損壞或損毀的磁片復原可讀取的資訊。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: cf9be2e3-90c8-4773-a201-dc503b91948e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ab7f502b046bf30a40b1fdd386c7faddc5c8f15a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 0c3d709d76743df4c1a653f0f0a19e8319b0e0f1
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931932"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884312"
 ---
 # <a name="recover"></a>recover
 
@@ -30,9 +28,9 @@ recover [<drive>:][<path>]<filename>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 |--|--|
-| `[<drive>:][<path>]<filename>` | 指定您想要復原之檔案的檔案名（如果檔案不在目前目錄中，則為該檔案的位置）。 *Filename*是必要的，而且不支援萬用字元。 |
+| `[<drive>:][<path>]<filename>` | 如果檔案不在您想要復原的目前目錄) ，請指定檔案名 (和檔案的位置。 *Filename*是必要的，而且不支援萬用字元。 |
 | /? | 在命令提示字元顯示說明。 |
 
 ### <a name="examples"></a>範例

@@ -4,15 +4,13 @@ description: '[ReFSUtil] 工具的參考文章，會嘗試診斷嚴重損毀的 
 author: laknight5
 ms.author: laknight
 ms.date: 6/29/2020
-ms.prod: windows-server
-ms.technology: windows-commands
 ms.topic: article
-ms.openlocfilehash: 3afc96970bb0350a3c1168c520cc20ad4f2254af
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: d40faa165666a5836dc6e87589d27f8eb643479e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409719"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884214"
 ---
 # <a name="refsutil"></a>ReFSUtil
 
@@ -51,9 +49,9 @@ refsutil salvage -QA <source volume> <working directory> <target directory> <opt
 refsutil salvage -FA <source volume> <working directory> <target directory> <options>
 ```
 
-### <a name="diagnose-phase-command-line-usage-manual-mode"></a>診斷階段命令列使用方式（手動模式）
+### <a name="diagnose-phase-command-line-usage-manual-mode"></a>診斷階段命令列使用方式 (手動模式) 
 
-首先，請嘗試判斷 `<source volume>` 是否為 ReFS 磁片區，並判斷磁片區是否為可裝載。 如果磁片區無法裝載，則會提供原因。 這是獨立的階段。
+首先，請嘗試判斷 `<source volume>` 是否為 ReFS 磁片區，並判斷磁片區是否為可裝載。 如果磁片區無法裝載，將會提供 (s) 的原因。 這是獨立的階段。
 
 ```
 refsutil salvage -D <source volume> <working directory> <options>
@@ -99,6 +97,6 @@ Advanced users 可以使用互動式主控台搶救檔案。 此模式也需要�
 refsutil salvage -IC <source volume> <working directory> <options>
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

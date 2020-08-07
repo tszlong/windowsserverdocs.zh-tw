@@ -1,24 +1,22 @@
 ---
 title: 查詢處理序
 description: 查詢程式命令的參考文章，它會顯示在遠端桌面工作階段主機伺服器上執行之進程的相關資訊。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 36ce3ffc-0092-4eb1-a374-28e6616ca946
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 548be2874bf79aab88abd53f0303096a82486fd0
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 204782437d9fb144a9738038e82cdbbbcdc9078f
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956520"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884533"
 ---
 # <a name="query-process"></a>查詢處理序
 
-適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 顯示在遠端桌面工作階段主機伺服器上執行之進程的相關資訊。 您可以使用此命令來找出特定使用者正在執行的程式，以及哪些使用者正在執行特定程式。 此命令會傳回下列資訊：
 
@@ -76,7 +74,7 @@ query process *
 query process /ID:2
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

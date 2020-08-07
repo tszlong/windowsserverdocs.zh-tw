@@ -1,20 +1,18 @@
 ---
 title: reg delete
 description: Reg delete 命令的參考文章，它會刪除登錄中的子機碼或專案。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: cee05071-1607-4ab1-b8ab-65caebeb85c3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c8f90578cdd291f5788fc53223d9dc471f7a1458
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: da541f55117e287df81b53a45c923ed2ed3ae028
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934654"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884151"
 ---
 # <a name="reg-delete"></a>reg delete
 
@@ -28,9 +26,9 @@ reg delete <keyname> [{/v Valuename | /ve | /va}] [/f]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 |--|--|
-| `<keyname1>` | 指定要新增之子機碼或專案的完整路徑。 若要指定遠端電腦，請將電腦名稱稱（格式為）包含在 `\\<computername>\` *keyname*中。 省略 `\\<computername>\` 會使操作預設為本機電腦。 *Keyname*必須包含有效的根金鑰。 本機電腦的有效根金鑰為： **HKLM**、 **HKCU**、 **HKCR**、 **HKU**和**HKCC**。 如果指定遠端電腦，有效的根金鑰為： **HKLM**和**HKU**。 如果登錄機碼名稱包含空格，請用引號括住機碼名稱。 |
+| `<keyname1>` | 指定要新增之子機碼或專案的完整路徑。 若要指定遠端電腦，請將電腦名稱稱的格式加上 `\\<computername>\`) 作為*keyname*的一部分 (。 省略 `\\<computername>\` 會使操作預設為本機電腦。 *Keyname*必須包含有效的根金鑰。 本機電腦的有效根金鑰為： **HKLM**、 **HKCU**、 **HKCR**、 **HKU**和**HKCC**。 如果指定遠端電腦，有效的根金鑰為： **HKLM**和**HKU**。 如果登錄機碼名稱包含空格，請用引號括住機碼名稱。 |
 | 停`<Valuename>` | 刪除子機碼下的特定專案。 如果未指定任何專案，則會刪除子機碼下的所有專案和子機碼。 |
 | /ve | 指定只會刪除沒有值的專案。 |
 | /va | 刪除指定子機碼下的所有專案。 不會刪除指定子機碼下的子機碼。 |
@@ -41,7 +39,7 @@ reg delete <keyname> [{/v Valuename | /ve | /va}] [/f]
 
 - **Reg delete**作業的傳回值如下：
 
-    | 值 | 說明 |
+    | 值 | 描述 |
     |--|--|
     | 0 | 成功 |
     | 1 | 失敗 |

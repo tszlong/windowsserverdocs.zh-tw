@@ -1,24 +1,22 @@
 ---
 title: pwlauncher
-description: Pwlauncher 命令的參考文章，可啟用或停用 Windows To Go 啟動選項（pwlauncher）。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Pwlauncher 命令的參考文章，可啟用或停用 Windows To Go 啟動選項 (pwlauncher) 。
 ms.topic: article
 ms.assetid: 0917bb7b-408a-40f7-a1c5-20e94c10d38b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 29e7434731bc89dff9bddbaedb8a6179f266fa28
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 28c19ebd52c083963fa951972a1c2af39410078a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936706"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884568"
 ---
 # <a name="pwlauncher"></a>pwlauncher
 
-啟用或停用 Windows To Go 啟動選項（pwlauncher）。 **Pwlauncher**命令列工具可讓您將電腦設定為自動開機進入 Windows to Go 工作區（假設有一個），而不需要輸入您的固件或變更您的啟動選項。
+啟用或停用 Windows To Go 啟動選項 (pwlauncher) 。 **Pwlauncher**命令列工具可讓您將電腦設定為自動開機進入 Windows to Go 工作區 (假設有一個) ，而不需要您輸入您的固件或變更您的啟動選項。
 
 Windows To Go 啟動選項可讓使用者將其電腦設定為從 Windows 內的 USB 開機，而不需要輸入其固件，只要其固件支援從 USB 開機即可。 讓系統一律從 USB 開機，會有您應該考慮的含意。 例如，可能會不小心地開機包含惡意程式碼的 USB 裝置來危害系統，或可能會插入多個 USB 磁片磁碟機來造成開機衝突。 基於這個理由，預設設定預設會停用 Windows To Go 啟動選項。 此外，也需要有系統管理員許可權，才能設定 Windows To Go 啟動選項。 如果您使用 pwlauncher 命令列工具或 [**變更 Windows To Go 啟動選項**] 應用程式來啟用 Windows To go 啟動選項，電腦將會嘗試從插入電腦的任何 USB 裝置開機，然後再啟動。
 
@@ -30,7 +28,7 @@ pwlauncher {/enable | /disable}
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 |--|--|
 | /enable | 啟用 Windows To Go 啟動選項，因此電腦會在出現時從 USB 裝置自動開機。 |
 | /disable | 停用 Windows To Go 啟動選項，因此除非在固件中手動設定，否則無法從 USB 裝置啟動電腦。 |

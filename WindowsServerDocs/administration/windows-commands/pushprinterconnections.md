@@ -1,20 +1,18 @@
 ---
 title: pushprinterconnections
 description: Pushprinterconnections.exe 命令的參考文章，它會從群組原則讀取已部署的印表機連線設定，並視需要部署/移除印表機連接。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c30afb97-b149-478f-a4b9-2cbc25361818
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7b22fd5143a9477b40a515df44c9a0b5663dfd7a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 07d792b31b6ff8ead9e027c711fb91d87ba54ebd
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931382"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884577"
 ---
 # <a name="pushprinterconnections"></a>pushprinterconnections
 
@@ -31,7 +29,7 @@ pushprinterconnections <-log> <-?>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 |--|--|
 | <-記錄> | 將每個使用者的 debug 記錄檔寫入 *% temp*，或將每個機器的 debug 記錄檔寫入 *%windir%\temp*。 |
 | <-？ > | 在命令提示字元顯示 [說明]。 |

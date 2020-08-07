@@ -1,26 +1,24 @@
 ---
 title: CD
 description: Cd 命令的參考文章，它會顯示或變更目前的目錄的名稱。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 932d9cc1-3dff-40da-835c-1cb0894874f1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 37ce63cd4fce871c615ac64756f8fc17f1d28460
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 87766cd7be95eeb9cbecd29ec88a044224dc81da
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922912"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880387"
 ---
 # <a name="cd"></a>CD
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-顯示目前目錄的名稱，或變更目前的目錄。 如果只搭配磁碟機號使用（例如， `cd C:` ）， **cd**會顯示指定磁片磁碟機中目前目錄的名稱。 如果在沒有參數的情況下使用， **cd**會顯示目前的磁片磁碟機和目錄。
+顯示目前目錄的名稱，或變更目前的目錄。 如果僅搭配磁碟機號使用 (例如， `cd C:`) ， **cd**會顯示指定磁片磁碟機中目前目錄的名稱。 如果在沒有參數的情況下使用， **cd**會顯示目前的磁片磁碟機和目錄。
 
 > [!NOTE]
 > 此命令與[chdir 命令](chdir.md)相同。
@@ -36,10 +34,10 @@ chdir [..]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | /d | 變更目前的磁片磁碟機以及磁片磁碟機的目前目錄。 |
-| `<drive>:` | 指定要顯示或變更的磁片磁碟機（如果不同于目前的磁片磁碟機）。 |
+| `<drive>:` | 指定要顯示或變更 (的磁片磁碟機（如果與目前的磁片磁碟機) 不同）。 |
 | `<path>` | 指定您想要顯示或變更之目錄的路徑。 |
 | [..] | 指定您想要變更為父資料夾。 |
 | /? | 在命令提示字元顯示說明。 |

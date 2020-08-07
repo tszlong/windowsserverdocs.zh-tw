@@ -1,26 +1,24 @@
 ---
 title: nslookup lserver
-description: Nslookup lserver 命令的參考文章，它會將初始伺服器變更為指定的網域名稱系統（DNS）網域。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Nslookup lserver 命令的參考文章，它會將初始伺服器變更為指定的網域名稱系統 (DNS) 網域。
 ms.topic: article
 ms.assetid: aee5ea0b-bb17-4c14-bde7-2f7a91f2f22b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1f8d40a39abb6f96e900aee6dc029963ed7c0486
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ab7c478b6c9f3ae299559a556629e53f9eb852ee
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931274"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885798"
 ---
 # <a name="nslookup-lserver"></a>nslookup lserver
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-將初始伺服器變更為指定的網域名稱系統（DNS）網域。
+將初始伺服器變更為指定的網域名稱系統 (DNS) 網域。
 
 此命令會使用初始伺服器來查閱指定 DSN 網域的相關資訊。 如果您想要使用目前的預設伺服器查閱資訊，請使用[nslookup server](nslookup-server.md)命令。
 
@@ -32,7 +30,7 @@ lserver <DNSdomain>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<DNSdomain>` | 指定初始伺服器的 DNS 網域。 |
 | /? | 在命令提示字元顯示說明。 |

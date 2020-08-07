@@ -1,20 +1,18 @@
 ---
 title: bitsadmin getstate
 description: Bitsadmin getstate 命令的參考文章，它會抓取指定之作業的狀態。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 1252d6cf-14ca-44df-beb2-930ff011f297
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fd698727cba25f15a12a331f847e7f8436d3d54e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 38ad3cedbd4dc9b0cc3d5e855ea4fabd1736b6aa
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926674"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87893846"
 ---
 # <a name="bitsadmin-getstate"></a>bitsadmin getstate
 
@@ -28,7 +26,7 @@ bitsadmin /getstate <job>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | -------------- | -------------- |
 | 作業 | 作業的顯示名稱或 GUID。 |
 
@@ -36,7 +34,7 @@ bitsadmin /getstate <job>
 
 傳回的輸出值可以是：
 
-| State | Description |
+| 州 | 描述 |
 | --------------- | ----------- |
 | 已排入佇列 | 作業正在等候執行。 |
 | Connecting | BITS 正在聯繫伺服器。 |

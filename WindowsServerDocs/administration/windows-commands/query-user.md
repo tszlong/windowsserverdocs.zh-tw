@@ -1,24 +1,22 @@
 ---
 title: query user
 description: 查詢使用者命令的參考文章，其會顯示遠端桌面工作階段主機伺服器上的使用者會話相關資訊。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: a670fb78-c055-464a-b61d-3a85632c52c5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6929f7828f82c50723ae0a8c658ee2c79e1f1499
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ea760c32cc7955c96a363c994c2cb49227bceb2e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956450"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884400"
 ---
 # <a name="query-user"></a>query user
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 顯示遠端桌面工作階段主機伺服器上的使用者會話相關資訊。 您可以使用這個命令來找出特定使用者是否登入特定的遠端桌面工作階段主機伺服器。 此命令會傳回下列資訊：
 
@@ -28,9 +26,9 @@ ms.locfileid: "86956450"
 
 - 工作階段識別碼
 
-- 會話的狀態（作用中或已中斷連線）
+- 會話的狀態 (作用中或已中斷連線) 
 
-- 閒置時間（自上一次按鍵或滑鼠移動到會話之後的分鐘數）
+- [閒置時間] (在會話上一次按鍵或滑鼠移動之後的分鐘數) 
 
 - 使用者登入的日期和時間
 
@@ -75,7 +73,7 @@ query user
 query user USER1 /server:Server1
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

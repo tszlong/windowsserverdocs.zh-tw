@@ -1,24 +1,22 @@
 ---
 title: bootcfg raw
 description: Bootcfg raw 命令的參考文章，其會將作業系統載入選項（指定為字串）新增至 Boot.ini 檔案之作業系統區段中的作業系統專案。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e3458749-b0a0-460f-a022-3ff199a71f27
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 74ab3c957623178e54b8a5debcf4aebffc942070
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 9cba66ccebeacd21d337e04c97d935bd2c260b24
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926222"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880557"
 ---
 # <a name="bootcfg-raw"></a>bootcfg raw
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 將指定為字串的作業系統載入選項新增至 Boot.ini 檔案的 [作業系統] 區段中的作業系統專案。 此命令會覆寫任何現有的作業系統專案選項。
 
@@ -30,9 +28,9 @@ bootcfg /raw [/s <computer> [/u <domain>\<user> /p <password>]] <osloadoptionsst
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
-| `/s <computer>` | 指定遠端電腦的名稱或 IP 位址（不要使用反斜線）。 預設是本機電腦。 |
+| `/s <computer>` | 指定遠端電腦的名稱或 IP 位址 (不要使用反斜線) 。 預設是本機電腦。 |
 | `/u <domain>\<user>`  | 以或指定之使用者的帳戶許可權來執行命令 `<user>` `<domain>\<user>` 。 預設為發出命令之電腦上目前登入使用者的許可權。 |
 | `/p <password>` | 指定 **/u**參數中指定之使用者帳戶的密碼。 |
 | `<osloadoptionsstring>` | 指定要新增至作業系統專案的作業系統載入選項。 這些載入選項會取代任何與作業系統專案相關聯的現有載入選項。 不會對參數進行任何驗證 `<osloadoptions>` 。

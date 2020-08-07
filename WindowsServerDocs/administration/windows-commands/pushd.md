@@ -1,20 +1,18 @@
 ---
 title: pushd
 description: Pushd 命令的參考文章，它會儲存目前目錄以供 popd 命令使用，然後變更為指定的目錄。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 396bc545-0f41-473e-b0ac-76fbbb74d390
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 871834ae1ac29eb53be982831e7ede93d9d309cf
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e885cab58e23af9da050822c49a655ca897ce819
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933751"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884585"
 ---
 # <a name="pushd"></a>pushd
 
@@ -32,7 +30,7 @@ pushd [<path>]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 |--|--|
 | `<path>` | 指定要做為目前的目錄的目錄。 此命令支援相對路徑。 |
 | /? | 在命令提示字元顯示說明。 |
@@ -41,7 +39,7 @@ pushd [<path>]
 
 - 如果已啟用命令延伸模組，則**pushd**命令會接受網路路徑或本機磁碟機號和路徑。
 
-- 如果您指定網路路徑，則**pushd**命令會暫時指派最高未使用的磁碟機號（從 Z：）指定的網路資源。 然後，此命令會將目前的磁片磁碟機和目錄變更為新指派磁片磁碟機上的指定目錄。 如果您使用**popd**命令並啟用命令延伸模組，則**popd**命令會移除由**pushd**所建立的磁碟機號指派。
+- 如果您指定網路路徑，則**pushd**命令會暫時將最高未使用的磁碟機號（從 Z： ) 開始指派給指定的網路資源） (。 然後，此命令會將目前的磁片磁碟機和目錄變更為新指派磁片磁碟機上的指定目錄。 如果您使用**popd**命令並啟用命令延伸模組，則**popd**命令會移除由**pushd**所建立的磁碟機號指派。
 
 ### <a name="examples"></a>範例
 

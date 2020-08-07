@@ -1,20 +1,18 @@
 ---
 title: netsh
 description: Netsh 命令的參考文章，這是一種命令列腳本公用程式，可讓您在本機或遠端，顯示或修改目前執行中電腦的網路設定。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 96fc069d-53c0-4d0a-9f7f-f9f3d49a02bd carmonmills
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4d39b891b9a8b6e313121756aa8266c79b5bfaca
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 366c7a21f44dc6545de7ba81cba8fe152c245b6b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934778"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886034"
 ---
 # <a name="netsh"></a>netsh
 
@@ -30,7 +28,7 @@ netsh [-a <Aliasfile>][-c <Context>][-r <Remotecomputer>][-u [<domainname>\<user
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | -a`<Aliasfile>` | 指定在執行 Aliasfile 之後，傳回至 netsh 提示字元，以及包含一或多個 netsh 命令的文字檔名稱。 |
 | -c`<Context>` | 指定 netsh 輸入指定的 netsh 內容和要輸入的 netsh 內容。 |

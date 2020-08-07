@@ -1,24 +1,22 @@
 ---
 title: query session
 description: 查詢會話命令的參考文章，它會顯示遠端桌面工作階段主機伺服器上會話的相關資訊。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: abc0ace8-0b74-4b6e-a937-a78bb4b61a1f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 75cb8deb61ebfe3a4b0db665da4353339ee8d314
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 4ef51631c497b72de4a8fbf5073c5a2c376a668e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956500"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884428"
 ---
 # <a name="query-session"></a>query session
 
-適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 顯示遠端桌面工作階段主機伺服器上會話的相關資訊。 此清單不僅包含作用中會話的資訊，還包括伺服器執行的其他會話。
 
@@ -85,7 +83,7 @@ query session /server:Server2
 query session modeM02
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

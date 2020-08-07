@@ -1,24 +1,22 @@
 ---
 title: bootcfg rmsw
 description: Bootcfg rmsw 命令的參考文章，它會移除指定作業系統專案的作業系統載入選項。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: fd7e4248-880e-4e2b-929e-87f8d44b9a63
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c905712b898501f45cbfc036d771f18232e82d5b
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2ffe80c6a95421a66a1aebd119664c9e4f68952d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924975"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880539"
 ---
 # <a name="bootcfg-rmsw"></a>bootcfg rmsw
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 移除指定之作業系統專案的作業系統載入選項。
 
@@ -30,9 +28,9 @@ bootcfg /rmsw [/s <computer> [/u <domain>\<user> /p <password>]] [/mm] [/bv] [/s
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
-| `/s <computer>` | 指定遠端電腦的名稱或 IP 位址（不要使用反斜線）。 預設是本機電腦。 |
+| `/s <computer>` | 指定遠端電腦的名稱或 IP 位址 (不要使用反斜線) 。 預設是本機電腦。 |
 | `/u <domain>\<user>`  | 以或指定之使用者的帳戶許可權來執行命令 `<user>` `<domain>\<user>` 。 預設為發出命令之電腦上目前登入使用者的許可權。 |
 | `/p <password>` | 指定 **/u**參數中指定之使用者帳戶的密碼。 |
 | /mm | 從指定的中移除/maxmem 選項及其關聯的最大記憶體值 `<osentrylinenum>` 。 /Maxmem 選項會指定作業系統可使用的 RAM 數量上限。 |

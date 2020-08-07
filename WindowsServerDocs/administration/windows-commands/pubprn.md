@@ -1,24 +1,22 @@
 ---
 title: pubprn
 description: Pubprn 命令的參考文章，它會將印表機發佈到 Active Directory Domain Services。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0bc7f7e3-84e1-4359-b477-7b1a1a0bd639
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c73c79450d4feb4d2567f29bfed56364dea9b5a8
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 33905fbfe06887ee8b8721ed9c91eed5701ed3f5
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932010"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884606"
 ---
 # <a name="pubprn"></a>pubprn
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 將印表機發佈到 Active Directory Domain Services。 此命令是位於目錄中的 Visual Basic 腳本 `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 若要在命令提示字元中使用此命令，請輸入**cscript** ，後面接著 pubprn 檔案的完整路徑，或將目錄變更為適當的資料夾。 例如：`cscript %WINdir%\System32\printing_Admin_Scripts\en-US\pubprn`。
 
@@ -30,16 +28,16 @@ cscript pubprn {<servername> | <UNCprinterpath>} LDAP://CN=<container>,DC=<conta
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 |--|--|
 | `<servername>` | 指定裝載您要發佈之印表機的 Windows server 名稱。 如果您未指定電腦，則會使用本機電腦。 |
-| `<UNCprinterpath>` | 您想要發佈之共用印表機的通用命名慣例（UNC）路徑。 |
+| `<UNCprinterpath>` | 通用命名慣例 (UNC) 路徑，指向您要發佈的共用印表機。 |
 | `LDAP://CN=<Container>,DC=<Container>` | 指定您要在其中發行印表機 Active Directory Domain Services 中容器的路徑。 |
 | /? | 在命令提示字元顯示說明。 |
 
 #### <a name="remarks"></a>備註
 
-- 如果您提供的資訊包含空格，請使用引號括住文字（例如「電腦名稱稱」）。
+- 如果您提供的資訊包含空格，請使用引號括住文字 (例如「電腦名稱稱」 ) 。
 
 ### <a name="examples"></a>範例
 

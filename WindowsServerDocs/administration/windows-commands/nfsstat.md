@@ -1,24 +1,22 @@
 ---
 title: nfsstat
-description: Nfsstat 命令的參考文章，它會顯示有關網路檔案系統（NFS）和遠端程序呼叫（RPC）呼叫的統計資訊。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Nfsstat 命令的參考文章，它會顯示網路檔案系統 (NFS) 的統計資訊，以及 (RPC) 呼叫的遠端程序呼叫。
 ms.topic: article
 ms.assetid: da7a9768-44bd-404b-97ee-c388d00dc395
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0eb2836b15c24dc946953c0c82c4b3586971c5bc
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ca87df561414a70091adc81ccd4e4ff11e583f02
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956730"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885968"
 ---
 # <a name="nfsstat"></a>nfsstat
 
-一種命令列公用程式，可顯示網路檔案系統（NFS）和遠端程序呼叫（RPC）呼叫的相關統計資訊。 使用不含參數的情況下，此命令會顯示所有統計資料，而不重設任何專案。
+一種命令列公用程式，可顯示網路檔案系統 (NFS) 和遠端程序呼叫 (RPC) 呼叫的相關統計資訊。 使用不含參數的情況下，此命令會顯示所有統計資料，而不重設任何專案。
 
 ## <a name="syntax"></a>語法
 
@@ -69,7 +67,7 @@ nfsstat -s
 nfsstat -z
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

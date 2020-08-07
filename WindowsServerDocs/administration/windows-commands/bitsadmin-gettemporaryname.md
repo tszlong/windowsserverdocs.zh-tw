@@ -1,20 +1,18 @@
 ---
 title: bitsadmin gettemporaryname
 description: Bitsadmin gettemporaryname 命令的參考文章，它會報告作業中指定檔案的暫存檔案。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 68925edc-a801-4292-a812-7471c4f60fdd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0b5dab756856f0c0905d7e3b523a2ec4f3d7cad6
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5b5919d45f2b8497bb6e8fa6cf3650f49e27cd48
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926655"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87893831"
 ---
 # <a name="bitsadmin-gettemporaryname"></a>bitsadmin gettemporaryname
 
@@ -28,7 +26,7 @@ bitsadmin /gettemporaryname <job> <file_index>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | -------------- | -------------- |
 | 作業 | 作業的顯示名稱或 GUID。 |
 | file_index | 從0開始。 |

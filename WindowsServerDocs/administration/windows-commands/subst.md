@@ -1,20 +1,18 @@
 ---
 title: subst
 description: 瞭解如何建立路徑與磁碟機號的關聯。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 3e69234c-2312-4343-868b-afc1017c622a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 62ba0de33e69998e7d3e343b1e53c1de7e630e10
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 385359a49ee1cc4df95a17bef6c2aed4704a2dcd
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721614"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881954"
 ---
 # <a name="subst"></a>subst
 
@@ -27,7 +25,7 @@ ms.locfileid: "82721614"
 ## <a name="syntax"></a>語法
 
 ```
-subst [<Drive1>: [<Drive2>:]<Path>] 
+subst [<Drive1>: [<Drive2>:]<Path>]
 subst <Drive1>: /d
 ```
 
@@ -35,9 +33,9 @@ subst <Drive1>: /d
 
 |參數|描述|
 |---------|-----------|
-|\<Drive1>：|指定您要指派路徑的虛擬磁片磁碟機。|
-|[\<Drive2>：]\<路徑>|指定您要指派給虛擬磁片磁碟機的實體磁片磁碟機和路徑。|
-|/d|刪除替代的（虛擬）磁片磁碟機。|
+|\<Drive1>:|指定您要指派路徑的虛擬磁片磁碟機。|
+|[\<Drive2>:]\<Path>|指定您要指派給虛擬磁片磁碟機的實體磁片磁碟機和路徑。|
+|/d|刪除替代的 (虛擬) 磁片磁碟機。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
@@ -59,17 +57,17 @@ subst <Drive1>: /d
 
     `Invalid parameter - drive1:`
 
-## <a name="examples"></a><a name="BKMK_examples"></a>範例
+## <a name="examples"></a><a name="BKMK_examples"></a>典型
 
 若要建立路徑 B:\User\Betty\Forms 的虛擬磁片磁碟機 Z，請輸入：
 ```
-subst z: b:\user\betty\forms 
+subst z: b:\user\betty\forms
 ```
 您可以輸入虛擬磁片磁碟機的字母，後面加上冒號，而不是輸入完整路徑，如下所示：
 ```
-z: 
+z:
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
