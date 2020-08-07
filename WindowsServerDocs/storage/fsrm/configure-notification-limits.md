@@ -2,18 +2,16 @@
 title: 設定通知限制
 description: 本文說明如何將時間限制新增至各種通知類型
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 5b9bda5ffb225cc05df7d45e8b611e0154f9e582
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 969c950d3a925afac400d128ac21ed0923f07ffa
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961530"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950652"
 ---
 # <a name="configure-notification-limits"></a>設定通知限制
 
@@ -23,7 +21,7 @@ ms.locfileid: "86961530"
 
 -   電子郵件
 -   事件記錄檔
--   命令
+-   Command
 -   報告
 
 每項限制都會指定針對同樣問題產生另一相同類型已設定通知之前的一段時間。
@@ -41,7 +39,7 @@ ms.locfileid: "86961530"
 > [!Note]
 > 若要自訂與特定配額或檔案檢測之通知相關聯的時間限制，您可以使用檔案伺服器資源管理員命令列工具 **Dirquota.exe** 和 **Filescrn.exe**，或使用[檔案伺服器資源管理員](/powershell/module/fileserverresourcemanager/?view=win10-ps) Cmdlet。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [設定檔案伺服器資源管理員選項](setting-file-server-resource-manager-options.md)
 -   [命令列工具](command-line-tools.md)

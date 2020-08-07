@@ -7,14 +7,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 5b3dbe22e5db03d76916218317d5e9ffe0640042
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: a46d18a0d2f589cb0ae7ee5915af0c84b0c8982f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519515"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950402"
 ---
 # <a name="install-a-windows-server-2012-active-directory-read-only-domain-controller-rodc-level-200"></a>安裝 Windows Server 2012 Active Directory 唯讀網域控制站 (RODC) (等級 200)
 
@@ -49,7 +47,7 @@ ms.locfileid: "87519515"
 
 ## <a name="attach-rodc-windows-powershell"></a><a name=BKMK_AttachPS></a>連結 RODC Windows PowerShell
 
-| ADDSDeployment Cmdlet | 引數（**粗體**引數是必要的。 *斜體*的引數可以使用 Windows PowerShell 或 [AD DS 設定精靈] 來指定。) |
+| ADDSDeployment Cmdlet | 需要**粗體**引數 (引數。 *斜體*的引數可以使用 Windows PowerShell 或 [AD DS 設定精靈] 來指定。) |
 |--|--|
 | Install-AddsDomaincontroller | -SkipPreChecks<p>***-DomainName***<p>*-SafeModeAdministratorPassword*<p>*-ApplicationPartitionsToReplicate*<p>*-CreateDNSDelegation*<p>***-Credential***<p>-CriticalReplicationOnly<p>*-DatabasePath*<p>*-DNSDelegationCredential*<p>*-InstallationMediaPath*<p>*-LogPath*<p>-Norebootoncompletion<p>*-ReplicationSourceDC*<p>*-SystemKey*<p>*-SYSVOLPath*<p>***-UseExistingAccount*** |
 
@@ -230,7 +228,7 @@ Install-AddsDomainController
 [網域控制站選項]**** 頁面顯示新網域控制站的網域控制站選項。 當這個頁面載入時，Active Directory 網域服務設定精靈會將 LDAP 查詢傳送到現有的網域控制站，以檢查是否有未使用的帳戶。 如果查詢找到與目前電腦共用相同名稱的未使用網域控制站電腦帳戶，則嚮導會在頁面頂端顯示一個參考用訊息，其中會讀取**與目錄中存在的目標伺服器名稱相符的預先建立 RODC 帳戶。選擇要使用這個現有的 RODC 帳戶，或重新安裝此網域控制站**。 精靈會使用 [使用現有的 RODC 帳戶]**** 做為預設設定。
 
 > [!IMPORTANT]
-> 當網域控制站發生實體問題而無法回復功能時，您可以使用 [重新安裝此網域控制站]****。 這可節省設定取代網域控制站的時間，因為能在 Active Directory 中保留網域控制站電腦帳戶與物件中繼資料。 使用*相同的名稱*安裝新的電腦，並將它升級為網域中的網域控制站。 如果您從 Active Directory 移除網域控制站物件的中繼資料（中繼資料清除），[**重新安裝此網域控制站**] 選項就無法使用。
+> 當網域控制站發生實體問題而無法回復功能時，您可以使用 [重新安裝此網域控制站]****。 這可節省設定取代網域控制站的時間，因為能在 Active Directory 中保留網域控制站電腦帳戶與物件中繼資料。 使用*相同的名稱*安裝新的電腦，並將它升級為網域中的網域控制站。 如果您已從 Active Directory 中移除網域控制站物件的中繼資料， (中繼資料清除) ，則無法使用 [**重新安裝此網域控制站**] 選項。
 
 當您將伺服器連結至 RODC 電腦帳戶時，無法設定網域控制站選項。 您要在建立執行的 RODC 電腦帳戶時設定網域控制站選項。
 
@@ -417,7 +415,7 @@ Install-addsdomaincontroller
 
 ## <a name="rodc-without-staging-windows-powershell"></a>沒有執行 Windows PowerShell 的 RODC
 
-| ADDSDeployment Cmdlet | 引數（**粗體**引數是必要的。 *斜體*的引數可以使用 Windows PowerShell 或 [AD DS 設定精靈] 來指定。) |
+| ADDSDeployment Cmdlet | 需要**粗體**引數 (引數。 *斜體*的引數可以使用 Windows PowerShell 或 [AD DS 設定精靈] 來指定。) |
 |--|--|
 | Install-AddsDomainController | -SkipPreChecks<p>***-DomainName***<p>*-SafeModeAdministratorPassword*<p>***-SiteName***<p>*-ApplicationPartitionsToReplicate*<p>*-CreateDNSDelegation*<p>***-Credential***<p>*-CriticalReplicationOnly*<p>*-DatabasePath*<p>*-DNSDelegationCredential*<p>-DNSOnNetwork<p>*-InstallationMediaPath*<p>*-InstallDNS*<p>*-LogPath*<p>-MoveInfrastructureOperationMasterRoleIfNecessary<p>*-NoGlobalCatalog*<p>-Norebootoncompletion<p>*-ReplicationSourceDC*<p>-SkipAutoConfigureDNS<p>*-SystemKey*<p>*-SYSVOLPath*<p>*-AllowPasswordReplicationAccountName*<p>*-DelegatedAdministratorAccountName*<p>*-DenyPasswordReplicationAccountName*<p>***-ReadOnlyReplica*** |
 

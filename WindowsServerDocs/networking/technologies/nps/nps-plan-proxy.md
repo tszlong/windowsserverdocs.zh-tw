@@ -2,24 +2,22 @@
 title: 將 NPS 作為 RADIUS Proxy 規劃
 description: 本主題提供有關 Windows Server 2016 中的網路原則伺服器 RADIUS proxy 部署規劃的資訊。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: ca77d64a-065b-4bf2-8252-3e75f71b7734
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d64fceaf7242b7fe44912f105229c132ef9ee3b3
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 9cdc28eae61acb0d8548627e48a882435cd7da81
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315749"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952023"
 ---
 # <a name="plan-nps-as-a-radius-proxy"></a>將 NPS 作為 RADIUS Proxy 規劃
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-當您將網路原則伺服器（NPS）部署為遠端驗證撥入使用者服務 \(RADIUS\) proxy 時，NPS 會接收來自 RADIUS 用戶端（例如網路存取伺服器或其他 RADIUS proxy）的連線要求，然後將這些連接要求轉送到執行 NPS 或其他 RADIUS 伺服器的伺服器。 您可以使用這些規劃指導方針來簡化您的 RADIUS 部署。
+當您部署網路原則伺服器 (NPS) 作為遠端驗證撥入使用者服務 \( RADIUS \) proxy 時，nps 會接收來自 RADIUS 用戶端（例如網路存取伺服器或其他 radius proxy）的連線要求，然後將這些連接要求轉送到執行 NPS 或其他 radius 伺服器的伺服器。 您可以使用這些規劃指導方針來簡化您的 RADIUS 部署。
 
 這些規劃指導方針不包括您想要將 NPS 部署為 RADIUS 伺服器的情況。 當您將 NPS 部署為 RADIUS 伺服器時，NPS 會針對本機網域和信任本機網域的網域，執行連線要求的驗證、授權和帳戶處理。
 
@@ -39,7 +37,7 @@ ms.locfileid: "80315749"
 
 ## <a name="plan-nps-configuration"></a>規劃 NPS 設定
 
-當您使用 NPS 做為 RADIUS proxy 時，NPS 會將連線要求轉送到 NPS 或其他 RADIUS 伺服器進行處理。 因此，NPS proxy 的網域成員資格並不相關。 Proxy 不需要在 Active Directory Domain Services \(AD DS\) 中註冊，因為它不需要存取使用者帳戶的撥入屬性。 此外，您不需要在 NPS proxy 上設定網路原則，因為 proxy 不會執行連線要求的授權。 NPS proxy 可以是網域成員，也可以是不含網域成員資格的獨立伺服器。
+當您使用 NPS 做為 RADIUS proxy 時，NPS 會將連線要求轉送到 NPS 或其他 RADIUS 伺服器進行處理。 因此，NPS proxy 的網域成員資格並不相關。 Proxy 不需要在 Active Directory Domain Services AD DS 中註冊， \( \) 因為它不需要存取使用者帳戶的撥入屬性。 此外，您不需要在 NPS proxy 上設定網路原則，因為 proxy 不會執行連線要求的授權。 NPS proxy 可以是網域成員，也可以是不含網域成員資格的獨立伺服器。
 
 NPS 必須設定為使用 RADIUS 通訊協定與 RADIUS 用戶端（也稱為網路存取伺服器）進行通訊。 此外，您可以設定 NPS 記錄在事件記錄檔中的事件種類，也可以輸入伺服器的描述。
 
@@ -47,7 +45,7 @@ NPS 必須設定為使用 RADIUS 通訊協定與 RADIUS 用戶端（也稱為網
 
 在規劃 NPS proxy 設定的過程中，您可以使用下列步驟。
 
-- 判斷 NPS proxy 用來從 RADIUS 用戶端接收 RADIUS 訊息的 RADIUS 埠，以及將 RADIUS 訊息傳送給遠端 RADIUS 伺服器群組的成員。 Radius 驗證訊息的預設使用者資料包協定（UDP）埠是1812和1645，而 RADIUS 帳戶處理訊息則是 UDP 埠1813和1646。
+- 判斷 NPS proxy 用來從 RADIUS 用戶端接收 RADIUS 訊息的 RADIUS 埠，以及將 RADIUS 訊息傳送給遠端 RADIUS 伺服器群組的成員。 預設的使用者資料包協定 (UDP) 埠是1812和1645，用於 RADIUS 驗證訊息，而 UDP 埠1813和1646用於 RADIUS 帳戶處理訊息。
 
 - 如果 NPS proxy 設定了多個網路介面卡，請決定您想要允許 RADIUS 流量使用的介面卡。
 
@@ -59,17 +57,17 @@ NPS 必須設定為使用 RADIUS 通訊協定與 RADIUS 用戶端（也稱為網
 
 ## <a name="plan-radius-clients"></a>規劃 RADIUS 用戶端
 
-RADIUS 用戶端是網路存取伺服器，例如無線存取點、虛擬私人網路 \(VPN\) 伺服器、802.1 X 功能交換器和撥號伺服器。 將連線要求訊息轉寄到 RADIUS 伺服器的 RADIUS proxy 也是 RADIUS 用戶端。 NPS 支援所有符合 RADIUS 通訊協定的網路存取伺服器和 RADIUS proxy，如 RFC 2865 < 遠端驗證撥入使用者服務 \(RADIUS\)」和 RFC 2866 「RADIUS 帳戶處理」中所述。
+RADIUS 用戶端是網路存取伺服器，例如無線存取點、虛擬私人網路 \( VPN \) 伺服器、802.1 x 功能交換器和撥號伺服器。 將連線要求訊息轉寄到 RADIUS 伺服器的 RADIUS proxy 也是 RADIUS 用戶端。 NPS 支援所有符合 RADIUS 通訊協定的網路存取伺服器和 RADIUS proxy，如 RFC 2865 「遠端驗證撥入使用者服務 \( RADIUS」 \) 和 rfc 2866 「radius 帳戶處理」中所述。
 
-此外，無線存取點和交換器都必須能夠 802.1 X 驗證。 如果您想要部署可擴充的驗證通訊協定（EAP）或受保護的可延伸驗證通訊協定（PEAP），存取點和交換器必須支援使用 EAP。
+此外，無線存取點和交換器都必須能夠 802.1 X 驗證。 如果您想要部署可延伸的驗證通訊協定 (EAP) 或受保護的可延伸驗證通訊協定 (PEAP) ，存取點和交換器必須支援使用 EAP。
 
-若要測試無線存取點的 PPP 連線基本互通性，請將存取點和存取用戶端設定為使用密碼驗證通訊協定（PAP）。 使用其他以 PPP 為基礎的驗證通訊協定（例如 PEAP），直到您已經測試過您想要用來存取網路的使用者。
+若要測試無線存取點的 PPP 連線基本互通性，請將存取點和存取用戶端設定為使用密碼驗證通訊協定 (PAP) 。 使用其他以 PPP 為基礎的驗證通訊協定（例如 PEAP），直到您已經測試過您想要用來存取網路的使用者。
 
 ### <a name="key-steps"></a>主要步驟
 
 在規劃 RADIUS 用戶端時，您可以使用下列步驟。
 
-- 記錄您必須在 NPS 中設定的廠商特定屬性（Vsa）。 如果您的 Nas 需要 Vsa，請在 NPS 中設定網路原則時，記錄 VSA 資訊以供稍後使用。
+- 記錄 (Vsa) 您必須在 NPS 中設定的廠商專屬屬性。 如果您的 Nas 需要 Vsa，請在 NPS 中設定網路原則時，記錄 VSA 資訊以供稍後使用。
 
 - 記錄 RADIUS 用戶端和 NPS proxy 的 IP 位址，以簡化所有裝置的設定。 當您部署 RADIUS 用戶端時，您必須將其設定為使用 RADIUS 通訊協定，並將 NPS proxy IP 位址輸入為驗證服務器。 當您設定 NPS 與 RADIUS 用戶端通訊時，您必須在 NPS 嵌入式管理單元中輸入 RADIUS 用戶端 IP 位址。
 
@@ -103,11 +101,11 @@ RADIUS 用戶端是網路存取伺服器，例如無線存取點、虛擬私人�
 
 您可以設定 NPS 將所有連線要求轉送到一個遠端 RADIUS 伺服器群組，而不使用屬性操作規則。
 
-不過，如果您要將連線要求轉送到一個以上的位置，您必須為每個位置建立連線要求原則，然後使用您想要轉寄訊息的遠端 RADIUS 伺服器群組來設定原則，以及使用屬性操作規則，告訴 NPS 要轉送哪些訊息。
+不過，如果您想要將連線要求轉送到一個以上的位置，您必須為每個位置建立一個連線要求原則，然後使用您想要轉寄訊息的遠端 RADIUS 伺服器群組來設定原則，以及使用告訴 NPS 要轉送哪些訊息的屬性操作規則。
 
 您可以建立下列屬性的規則。
 
-- 呼叫-工作站識別碼。 網路存取伺服器（NAS）的電話號碼。 這個屬性的值是字元字串。 您可以使用模式比對語法指定區碼。
+- 呼叫-工作站識別碼。 網路存取伺服器的電話號碼 (NAS) 。 這個屬性的值是字元字串。 您可以使用模式比對語法指定區碼。
 
 - 呼叫站識別碼。 呼叫者使用的電話號碼。 這個屬性的值是字元字串。 您可以使用模式比對語法指定區碼。
 

@@ -1,32 +1,30 @@
 ---
 title: 將容器端點連線至租用戶虛擬網路
-description: 在本主題中，我們將示範如何將容器端點連線至透過 SDN 建立的現有租使用者虛擬網路。 您可以使用適用于 Docker 的 Windows libnetwork 外掛程式所提供的 l2bridge （並選擇性 l2tunnel）網路驅動程式，在租使用者 VM 上建立容器網路。
+description: 在本主題中，我們將示範如何將容器端點連線至透過 SDN 建立的現有租使用者虛擬網路。 您可以使用 l2bridge (，並選擇性地 l2tunnel 適用于 Docker 的 Windows libnetwork 外掛程式提供的) 網路驅動程式，以在租使用者 VM 上建立容器網路。
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: f7af1eb6-d035-4f74-a25b-d4b7e4ea9329
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/24/2018
-ms.openlocfilehash: 2b8927ec260b4f5a42aa59a25db1b18896ce91ef
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fd05441ecc64c05778234dc00fa315bb406dfb40
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854531"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970805"
 ---
 # <a name="connect-container-endpoints-to-a-tenant-virtual-network"></a>將容器端點連線至租用戶虛擬網路
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-在本主題中，我們將示範如何將容器端點連線至透過 SDN 建立的現有租使用者虛擬網路。 您可以使用適用于 Docker 的 Windows libnetwork 外掛程式所提供的*l2bridge* （並選擇性*l2tunnel*）網路驅動程式，在租使用者 VM 上建立容器網路。
+在本主題中，我們將示範如何將容器端點連線至透過 SDN 建立的現有租使用者虛擬網路。 您可以使用*l2bridge* (，並選擇性地*L2tunnel*適用于 Docker 的 Windows libnetwork 外掛程式提供的) 網路驅動程式，以在租使用者 VM 上建立容器網路。
 
-在[容器網路驅動程式](https://docs.microsoft.com/virtualization/windowscontainers/container-networking/network-drivers-topologies)主題中，我們討論了透過 Windows 上的 Docker 提供的多個網路驅動程式。 針對 SDN，請使用*l2bridge*和*l2tunnel*驅動程式。 對於這兩個驅動程式，每個容器端點都位於與容器主機（租使用者）虛擬機器相同的虛擬子網中。 
+在[容器網路驅動程式](https://docs.microsoft.com/virtualization/windowscontainers/container-networking/network-drivers-topologies)主題中，我們討論了透過 Windows 上的 Docker 提供的多個網路驅動程式。 針對 SDN，請使用*l2bridge*和*l2tunnel*驅動程式。 對於這兩個驅動程式而言，每個容器端點都位於與容器主機 (租使用者) 虛擬機器相同的虛擬子網中。
 
-主機網路服務（HNS）透過私用雲端外掛程式，以動態方式指派容器端點的 IP 位址。 容器端點具有唯一的 IP 位址，但會因為第2層位址轉譯而共用容器主機（租使用者）虛擬機器的相同 MAC 位址。 
+主機網路服務 (HNS) ，透過私用雲端外掛程式，以動態方式指派容器端點的 IP 位址。 容器端點具有唯一的 IP 位址，但會因為第2層位址轉譯而共用容器主機的相同 MAC 位址 (租使用者) 虛擬機器。
 
-這些容器端點的網路原則（Acl、封裝和 QoS）會在網路控制站所接收並定義于上層管理系統中的實體 Hyper-v 主機中強制執行。 
+這些容器端點的網路原則 (Acl、封裝和 QoS) 會在網路控制站所接收並定義于上層管理系統中的實體 Hyper-v 主機中強制執行。
 
 *L2bridge*和*l2tunnel*驅動程式之間的差異如下：
 
@@ -48,19 +46,19 @@ ms.locfileid: "80854531"
 
    ```powershell
    # To install HyperV feature without checks for nested virtualization
-   dism /Online /Enable-Feature /FeatureName:Microsoft-Hyper-V /All 
+   dism /Online /Enable-Feature /FeatureName:Microsoft-Hyper-V /All
    ```
 
 >[!Note]
->除非使用 Hyper-v 容器，否則不需要[嵌套虛擬化](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/nesting)和公開虛擬化延伸模組。 
+>除非使用 Hyper-v 容器，否則不需要[嵌套虛擬化](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/nesting)和公開虛擬化延伸模組。
 
 
 ## <a name="workflow"></a>工作流程
 
-[1. 透過網路控制站（Hyper-v 主機）
-2，將多個 IP 設定新增至現有的 VM NIC 資源](#1-add-multiple-ip-configurations) [。在主機上啟用網路 proxy，以配置容器端點（Hyper-v 主機）的 CA IP 位址](#2-enable-the-network-proxy)
-[3。安裝私人雲端外掛程式，將 CA IP 位址指派給容器端點（容器主機 VM）](#3-install-the-private-cloud-plug-in)
-[4。使用 docker 建立*l2bridge*或*L2tunnel*網路（容器主機 VM）](#4-create-an-l2bridge-container-network)
+[1. 透過網路控制卡，將多個 IP 設定新增至現有的 VM NIC 資源 (Hyper-v 主機) ](#1-add-multiple-ip-configurations) 
+ [2。在主機上啟用網路 proxy，以配置容器端點的 CA IP 位址， (hyper-v 主機) ](#2-enable-the-network-proxy) 
+ [3。安裝私人雲端外掛程式，將 CA IP 位址指派給容器端點 (容器主機 VM) ](#3-install-the-private-cloud-plug-in) 
+ [4。使用 docker (容器主機 VM 建立*l2bridge*或*l2tunnel*網路) ](#4-create-an-l2bridge-container-network)
 
 >[!NOTE]
 >透過 System Center Virtual Machine Manager 建立的 VM NIC 資源不支援多個 IP 設定。 針對這些部署類型，建議您使用網路控制站 PowerShell 來建立頻外的 VM NIC 資源。
@@ -89,7 +87,7 @@ foreach ($i in 1..10)
     $props = new-object Microsoft.Windows.NetworkController.NetworkInterfaceIpConfigurationProperties
 
     $resourceid = "IP_192_168_1_1"
-    if ($i -eq 10) 
+    if ($i -eq 10)
     {
         $resourceid += "10"
         $ipstr = "192.168.1.110"
@@ -101,7 +99,7 @@ foreach ($i in 1..10)
     }
 
     $newipconfig.ResourceId = $resourceid
-    $props.PrivateIPAddress = $ipstr    
+    $props.PrivateIPAddress = $ipstr
 
     $props.PrivateIPAllocationMethod = "Static"
     $props.Subnet = new-object Microsoft.Windows.NetworkController.Subnet
@@ -117,9 +115,9 @@ New-NetworkControllerNetworkInterface -ResourceId $vmnic.ResourceId -Properties 
 ```
 
 ### <a name="2-enable-the-network-proxy"></a>2. 啟用網路 proxy
-在此步驟中，您會啟用網路 proxy，為容器主機虛擬機器配置多個 IP 位址。 
+在此步驟中，您會啟用網路 proxy，為容器主機虛擬機器配置多個 IP 位址。
 
-若要啟用網路 proxy，請在裝載容器主機（租使用者）虛擬機器的**Hyper-v 主機**上執行[ConfigureMCNP](https://github.com/Microsoft/SDN/blob/master/Containers/ConfigureMCNP.ps1)腳本。
+若要啟用網路 proxy，請在裝載容器主機 (租使用者) 虛擬機器的**Hyper-v 主機**上執行[ConfigureMCNP.ps1](https://github.com/Microsoft/SDN/blob/master/Containers/ConfigureMCNP.ps1)腳本。
 
 ```powershell
 PS C:\> ConfigureMCNP.ps1
@@ -128,7 +126,7 @@ PS C:\> ConfigureMCNP.ps1
 ### <a name="3-install-the-private-cloud-plug-in"></a>3. 安裝私用雲端外掛程式
 在此步驟中，您會安裝外掛程式，讓 HNS 能夠與 Hyper-v 主機上的網路 proxy 進行通訊。
 
-若要安裝外掛程式，請在**容器主機（租使用者）虛擬機器**內執行[InstallPrivateCloudPlugin](https://github.com/Microsoft/SDN/blob/master/Containers/InstallPrivateCloudPlugin.ps1)腳本。
+若要安裝外掛程式，請在**容器主機 (租使用者) 虛擬機器**中執行[InstallPrivateCloudPlugin.ps1](https://github.com/Microsoft/SDN/blob/master/Containers/InstallPrivateCloudPlugin.ps1)腳本。
 
 
 ```powershell
@@ -136,19 +134,19 @@ PS C:\> InstallPrivateCloudPlugin.ps1
 ```
 
 ### <a name="4-create-an-l2bridge-container-network"></a>4. 建立*l2bridge*容器網路
-在此步驟中，您會使用**容器主機（租使用者）虛擬機器**上的 `docker network create` 命令來建立 l2bridge 網路。 
+在此步驟中，您會在 `docker network create` **容器主機 (租使用者) 虛擬機器**上使用命令，以建立 l2bridge 網路。
 
 ```powershell
 # Create the container network
 C:\> docker network create -d l2bridge --subnet="192.168.1.0/24" --gateway="192.168.1.1" MyContainerOverlayNetwork
 
-# Attach a container to the MyContainerOverlayNetwork 
+# Attach a container to the MyContainerOverlayNetwork
 C:\> docker run -it --network=MyContainerOverlayNetwork <image> <cmd>
 ```
 
 >[!NOTE]
 >搭配 Microsoft SDN 堆疊使用時， *l2bridge*或*l2tunnel*容器網路不支援靜態 IP 指派。
 
-## <a name="more-information"></a>詳細資訊
+## <a name="more-information"></a>更多資訊
 如需部署 SDN 基礎結構的詳細資訊，請參閱[部署軟體定義的網路基礎結構](https://docs.microsoft.com/windows-server/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure)。
 

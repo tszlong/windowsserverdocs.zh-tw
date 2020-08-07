@@ -2,18 +2,16 @@
 title: 建立自動套用配額
 description: 本文說明如何以配額範本為基礎建立自動套用配額
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 38354a6c6e39f58574a64c752bb86800f3fc3039
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b5ec19000e8fdb90fa413905dfd9ef4885347ed9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474065"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87935867"
 ---
 # <a name="create-an-auto-apply-quota"></a>建立自動套用配額
 
@@ -40,7 +38,7 @@ ms.locfileid: "85474065"
 > [!Note]
 > 您可以選取 **\[配額\]** 節點然後選取 **\[重新整理\]**，來檢查所有自動產生的配額。 將會列出每個子資料夾的個別配額套以及上層磁碟區或資料夾的自動套用配額設定檔。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [配額管理](quota-management.md)
 -   [編輯自動套用配額內容](edit-auto-apply-quota-properties.md)

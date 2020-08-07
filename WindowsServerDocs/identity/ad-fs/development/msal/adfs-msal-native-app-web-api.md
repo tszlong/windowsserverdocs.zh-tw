@@ -6,14 +6,12 @@ ms.author: billmath
 manager: daveba
 ms.date: 08/09/2019
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: bb31a7e87b35ec52f176d50d2c92e717a3e4bca0
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: afe68493303ace2a9dd415964c41f8a635e3618b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519857"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949992"
 ---
 # <a name="scenario-native-app-calling-web-api"></a>案例：原生應用程式呼叫 Web API
 >適用于： AD FS 2019 和更新版本
@@ -26,7 +24,7 @@ ms.locfileid: "87519857"
 
  ![概觀](media/adfs-msal-native-app-web-api/native1.png)
 
-在此流程中，您會將驗證新增至您的原生應用程式（公用用戶端），進而登入使用者並呼叫 Web API。 若要從登入使用者的原生應用程式呼叫 Web API，您可以使用 MSAL 的[AcquireTokenInteractive](/dotnet/api/microsoft.identity.client.ipublicclientapplication.acquiretokeninteractive?view=azure-dotnet#Microsoft_Identity_Client_IPublicClientApplication_AcquireTokenInteractive_System_Collections_Generic_IEnumerable_System_String__) token 取得方法。 為啟用此互動，MSAL 會利用網頁瀏覽器。
+在此流程中，您會將驗證新增至您的原生應用程式 (公用用戶端) ，因此可讓使用者登入並呼叫 Web API。 若要從登入使用者的原生應用程式呼叫 Web API，您可以使用 MSAL 的[AcquireTokenInteractive](/dotnet/api/microsoft.identity.client.ipublicclientapplication.acquiretokeninteractive?view=azure-dotnet#Microsoft_Identity_Client_IPublicClientApplication_AcquireTokenInteractive_System_Collections_Generic_IEnumerable_System_String__) token 取得方法。 為啟用此互動，MSAL 會利用網頁瀏覽器。
 
 若要進一步瞭解如何在 ADFS 中設定原生應用程式以互動方式取得存取權杖，讓我們使用[這裡](https://github.com/microsoft/adfs-sample-msal-dotnet-native-to-webapi)提供的範例，並逐步解說應用程式註冊和程式碼設定步驟。
 
@@ -38,19 +36,19 @@ ms.locfileid: "87519857"
 - Visual Studio 2013 或更新版本
 
 ## <a name="app-registration-in-ad-fs"></a>AD FS 中的應用程式註冊
-本節說明如何在 AD FS 中，將原生應用程式註冊為公用用戶端和 Web API 做為信賴憑證者（RP）
+本節說明如何將原生應用程式註冊為公用用戶端和 Web API，做為信賴憑證者 (RP) 在中 AD FS
 
   1. 在**AD FS 管理**] 中，以滑鼠右鍵按一下 [**應用程式群組**]，然後選取 [**新增應用程式群組**]。
 
-  2. 在 [應用程式群組] 上，針對 [**名稱**] 輸入**NativeAppToWebApi** ，然後在 [**用戶端-伺服器應用程式**] 下，選取**存取 Web API 範本的原生應用程式**。 按 [下一步] 。
+  2. 在 [應用程式群組] 上，針對 [**名稱**] 輸入**NativeAppToWebApi** ，然後在 [**用戶端-伺服器應用程式**] 下，選取**存取 Web API 範本的原生應用程式**。 按 [下一步]  。
 
       ![應用程式 Reg](media/adfs-msal-native-app-web-api/native2.png)
 
-  3. 複製 [**用戶端識別碼**] 值。 稍後在應用程式的**App.config**檔中，將會使用它做為**ClientId**的值。 針對 [重新導向 URI] 輸入下列**內容：** https://ToDoListClient 。 按一下 [新增] 。 按 [下一步] 。
+  3. 複製 [**用戶端識別碼**] 值。 稍後在應用程式的**App.config**檔中，將會使用它做為**ClientId**的值。 針對 [重新導向 URI] 輸入下列**內容：** https://ToDoListClient 。 按一下 [新增] 。 按 [下一步]  。
 
      ![應用程式 Reg](media/adfs-msal-native-app-web-api/native3.png)
 
-  4. 在 [設定 Web API] 畫面上，輸入**識別碼：** https://localhost:44321/ 。 按一下 [新增] 。 按 [下一步] 。 稍後在應用程式的**App.config**和**Web.config**檔案中將會用到此值。
+  4. 在 [設定 Web API] 畫面上，輸入**識別碼：** https://localhost:44321/ 。 按一下 [新增] 。 按 [下一步]  。 稍後在應用程式的**App.config**和**Web.config**檔案中將會用到此值。
 
      ![應用程式 Reg](media/adfs-msal-native-app-web-api/native4.png)
 
@@ -137,7 +135,7 @@ ms.locfileid: "87519857"
 
       ![應用程式測試](media/adfs-msal-native-app-web-api/native18.png)
 
-  2. 登入之後，請在 [**建立待辦**事項] 專案中輸入文字**組建原生應用程式至 Web Api** 。 按一下 [**新增專案**]。  這會呼叫**待辦事項清單服務（WEB API）** ，並在快取中新增專案。
+  2. 登入之後，請在 [**建立待辦**事項] 專案中輸入文字**組建原生應用程式至 Web Api** 。 按一下 [**新增專案**]。  這會呼叫「**待辦事項清單」服務 (WEB API) **並在快取中新增專案。
 
        ![應用程式測試](media/adfs-msal-native-app-web-api/native19.png)
 

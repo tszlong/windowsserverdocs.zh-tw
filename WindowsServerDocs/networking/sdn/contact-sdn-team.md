@@ -2,18 +2,16 @@
 title: 請連絡資料中心和雲端網路團隊
 description: 此頁面的設計目的是通知客戶有關在各種內容中達到 SDN 小組的最佳方法。
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: f9945c55-c2d0-448f-86dd-8c734e1b2987
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 45baf6966fc0bc703dcf354e557b9d4eeab8e9d9
-ms.sourcegitcommit: 0ccc7b2caa1781f0c67e1a3cc52c0b0f6a175ad4
+ms.openlocfilehash: fe5b9bc8c8b3b888b3c11a72c39756374cde566c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87819579"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970825"
 ---
 # <a name="contact-the-datacenter-and-cloud-networking-team"></a>請連絡資料中心和雲端網路團隊
 
@@ -37,7 +35,7 @@ Microsoft 的**軟體定義網路 \( SDN \) **和**容器網路**解決方案是
 我們的[容器網路檔](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking)可在[Microsoft Docs (docs.microsoft.com) ](https://docs.microsoft.com/)上找到，其具有**內建的批註功能**。 若要在 Microsoft Docs 直接登入來回複留言，請在您想要參考的 [Microsoft Docs] 頁面底部向下流覽，然後在該處提交批註。
 
 > [Microsoft Docs](https://docs.microsoft.com/)是 Microsoft 的新整合檔網站。 雖然我們的大部分小組[SDN 檔](https://technet.microsoft.com/windows-server-docs/networking/sdn/software-defined-networking)都保留在 TechNet 上，但我們的[容器網路功能檔](https://docs.microsoft.com/virtualization/windowscontainers)現在已 Microsoft Docs。
-> 
+>
 > *一般來說，如果您在 Microsoft Docs 上遇到問題的主題，或是想要更多的資訊，只要在該頁面上留下留言，即可與 Microsoft 團隊分享您的意見反應。*
 
 ## <a name="container-specific-forums"></a>容器特定論壇
@@ -45,5 +43,5 @@ Microsoft 的**軟體定義網路 \( SDN \) **和**容器網路**解決方案是
 - [使用者心聲](https://windowsserver.uservoice.com/forums/304624-containers)-適用于*功能要求*
 - [Github (虛擬化](https://github.com/Microsoft/Virtualization-Documentation)存放庫) -最適合尋求*疑難排解協助*和*報告錯誤*
 
-### <a name="not-seeing-the-forum-for-you"></a>看不到您的論壇嗎？ 
+### <a name="not-seeing-the-forum-for-you"></a>看不到您的論壇嗎？
 可能的話，我們鼓勵您使用我們的公用論壇，讓更廣泛的社區可以受益于我們所提供之問題和意見的存取權。 不過，我們也瞭解在某些情況下，電子郵件只是與我們接觸的慣用方式。 如果您是在其中一種情況下，請傳送電子郵件給我們， sdn_feedback@microsoft.com 我們很高興聽到您的意見。

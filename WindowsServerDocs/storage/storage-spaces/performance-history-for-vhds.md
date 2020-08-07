@@ -2,23 +2,22 @@
 title: 虛擬硬碟的效能歷程記錄
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 02/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d6ed65b07fd9155d0ded38ecec6ab25e51209c34
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 458c9578e541d67135836557af7789c671ed001d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955240"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87935677"
 ---
 # <a name="performance-history-for-virtual-hard-disks"></a>虛擬硬碟的效能歷程記錄
 
 > 適用於：Windows Server 2019
 
-[儲存空間直接存取的效能歷程記錄](performance-history.md)的子主題會詳細說明針對虛擬硬碟（VHD）檔案收集的效能歷程記錄。 效能歷程記錄適用于連接至執行中叢集虛擬機器的每個 VHD。 效能歷程記錄適用于 VHD 和 VHDX 格式，但不適用於共用 VHDX 檔案。
+[儲存空間直接存取的效能歷程記錄](performance-history.md)的子主題詳細說明收集虛擬硬碟 (VHD) 檔案的效能歷程記錄。 效能歷程記錄適用于連接至執行中叢集虛擬機器的每個 VHD。 效能歷程記錄適用于 VHD 和 VHDX 格式，但不適用於共用 VHDX 檔案。
 
    > [!NOTE]
    > 可能需要幾分鐘的時間，才能開始收集新建立或移動的 VHD 檔案。
@@ -87,6 +86,6 @@ Get-VHD <Path> | Get-ClusterPerf
    > [!NOTE]
    > 取得 VHD Cmdlet 需要提供檔案路徑。 它不支援列舉。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [儲存空間直接存取的效能歷程記錄](performance-history.md)

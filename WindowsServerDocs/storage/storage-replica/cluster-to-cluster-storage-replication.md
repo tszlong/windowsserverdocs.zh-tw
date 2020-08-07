@@ -1,20 +1,18 @@
 ---
 title: 叢集對叢集儲存體複寫
-ms.prod: windows-server
 manager: siroy
 ms.author: nedpyle
-ms.technology: storage-replica
 ms.topic: get-started-article
 ms.assetid: 834e8542-a67a-4ba0-9841-8a57727ef876
 author: nedpyle
 ms.date: 04/26/2019
 description: 如何使用儲存體複本將一個叢集中的磁片區複寫到另一個執行 Windows Server 的叢集。
-ms.openlocfilehash: d99a7ebf933427e8e065f72261816610e62a433d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 5de25151f0b49ac9cbf9d6be793c2ba0c6efb165
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961240"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950472"
 ---
 # <a name="cluster-to-cluster-storage-replication"></a>叢集對叢集儲存體複寫
 
@@ -44,7 +42,7 @@ ms.locfileid: "86961240"
 ## <a name="prerequisites"></a>必要條件
 
 * Active Directory 網域服務樹系 (不需要執行 Windows Server 2016)。
-* 4-128 部執行 Windows Server 2019 或 Windows Server 2016 Datacenter Edition 的伺服器（兩部2-64 伺服器的叢集）。 如果您執行的是 Windows Server 2019，如果您確定只複寫最多 2 TB 大小的單一磁片區，就可以改用 Standard Edition。
+* 4-128 伺服器 (兩個2-64 伺服器叢集) 執行 Windows Server 2019 或 Windows Server 2016 Datacenter Edition。 如果您執行的是 Windows Server 2019，如果您確定只複寫最多 2 TB 大小的單一磁片區，就可以改用 Standard Edition。
 * 兩組存放裝置，使用 SAS JBOD、光纖通道 SAN、共用 VHDX、儲存空間直接存取或 iSCSI 目標。 存放裝置應包含 HDD 和 SSD 兩者混合的媒體。 您必須設定每組存放裝置只能供各自的叢集使用，叢集之間不得共用存取。
 * 每組存放裝置必須允許建立至少兩個虛擬磁碟，一個供複寫的資料使用，另一個供記錄檔使用。 實體存放裝置的所有資料磁碟上，必須都要有相同的磁區大小。 實體存放裝置的所有記錄檔磁碟上，必須都要有相同的磁區大小。
 * 每部伺服器上至少要有一個乙太網路/TCP 連線，以進行同步複寫，但最好是 RDMA。
@@ -57,7 +55,7 @@ ms.locfileid: "86961240"
 
 ## <a name="step-1-provision-operating-system-features-roles-storage-and-network"></a>步驟 1：佈建作業系統、功能、角色、儲存體及網路
 
-1.  在安裝類型為 Windows Server **（桌面體驗）** 的所有四個伺服器節點上安裝 windows server。
+1.  在所有四個伺服器節點上安裝 Windows Server，其中安裝類型為 Windows Server ** (桌面體驗) **。
 
 2.  新增網路資訊並加入網域，然後予以重新啟動。
 
@@ -107,9 +105,9 @@ ms.locfileid: "86961240"
     > -   記錄檔磁碟區應該使用 Flash 架構的儲存體，例如 SSD。  Microsoft 建議記錄檔儲存體應該要比資料儲存體更快。 記錄檔磁碟區不得用於其他工作負載。
     > -   資料磁碟可以使用 HDD、SSD 或階層式組合，而且可以使用鏡像或同位空間，或是 RAID 1 或 10、RAID 5 或 RAID 50。
     > -   記錄磁片區預設必須至少為8GB，而且可能會根據記錄需求而更大或更小。
-    > -   搭配 NVME 或 SSD 快取使用儲存空間直接存取（儲存空間直接存取）時，您會在設定儲存空間直接存取叢集之間的儲存體複本複寫時看到大於預期的延遲增加。 當您在效能 + 容量設定中使用 NVME 和 SSD，而且沒有 HDD 層或容量層級時，延遲變更的比例會高於您所看到的內容。
+    > -   使用儲存空間直接存取 (儲存空間直接存取具有 NVME 或 SSD 快取的) 時，您會在設定儲存空間直接存取叢集之間的儲存體複本複寫時看到大於預期的延遲增加。 當您在效能 + 容量設定中使用 NVME 和 SSD，而且沒有 HDD 層或容量層級時，延遲變更的比例會高於您所看到的內容。
 
-    此問題發生的原因是，與較慢的媒體相比，SR 記錄機制內的架構限制與 NVME 的極低延遲結合。 使用儲存空間直接存取儲存空間直接存取快取時，SR 記錄的所有 IO 以及應用程式所有最近的讀取/寫入 IO，都會出現在快取中，而且不會發生在效能或容量層級上。 這表示所有 SR 活動都是在相同的速度媒體上執行-不建議使用此設定（ https://aka.ms/srfaq 如需記錄建議，請參閱）。
+    此問題發生的原因是，與較慢的媒體相比，SR 記錄機制內的架構限制與 NVME 的極低延遲結合。 使用儲存空間直接存取儲存空間直接存取快取時，SR 記錄的所有 IO 以及應用程式所有最近的讀取/寫入 IO，都會出現在快取中，而且不會發生在效能或容量層級上。 這表示所有 SR 活動都是在相同的速度媒體上執行-不建議使用此設定 (https://aka.ms/srfaq 如需) 記錄建議，請參閱。
 
     搭配 Hdd 使用儲存空間直接存取時，您無法停用或避免快取。 因應措施是，如果只使用 SSD 和 NVME，您可以只設定效能和容量層。 如果使用該設定，而且只將 SR 記錄放在效能層，而只將其服務在容量層上的資料磁片區，您就可以避免上述的高延遲問題。 這種做法可以混合使用更快速且更慢的 Ssd，而且沒有 NVME。
 
@@ -169,7 +167,7 @@ ms.locfileid: "86961240"
 4.  設定檔案共用見證或雲端見證。
 
     > [!NOTE]
-    > WIndows Server 現在包含以雲端（Azure）為基礎的見證選項。 您可以選擇此仲裁選項，而不是檔案共用見證。
+    > WIndows Server 現在包含 Cloud (Azure) 型見證的選項。 您可以選擇此仲裁選項，而不是檔案共用見證。
 
     > [!WARNING]
     > 如需仲裁設定的詳細資訊，請參閱[設定和管理仲裁](../../failover-clustering/manage-cluster-quorum.md)中的**見證**設定一節。 如需 `Set-ClusterQuorum` Cmdlet 的詳細資訊，請參閱 [Set-ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum)。
@@ -201,7 +199,7 @@ ms.locfileid: "86961240"
     ```
 
     > [!NOTE]
-    > WIndows Server 現在包含以雲端（Azure）為基礎的見證選項。 您可以選擇此仲裁選項，而不是檔案共用見證。
+    > WIndows Server 現在包含 Cloud (Azure) 型見證的選項。 您可以選擇此仲裁選項，而不是檔案共用見證。
 
     > [!WARNING]
     > 如需仲裁設定的詳細資訊，請參閱[設定和管理仲裁](../../failover-clustering/manage-cluster-quorum.md)中的**見證**設定一節。 如需 `Set-ClusterQuorum` Cmdlet 的詳細資訊，請參閱 [Set-ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum)。
@@ -386,7 +384,7 @@ ms.locfileid: "86961240"
     > [!NOTE]
     > 儲存空間複本會卸載目的地磁碟區。 這是原廠設定。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [儲存體複本總覽](storage-replica-overview.md)
 -   [使用共用存放裝置的延展叢集複寫](stretch-cluster-replication-using-shared-storage.md)

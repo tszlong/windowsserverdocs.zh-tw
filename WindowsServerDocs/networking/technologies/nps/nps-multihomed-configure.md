@@ -1,31 +1,29 @@
 ---
-title: 在多重主目錄電腦上設定 NPS
+title: 設定多重主目錄電腦上的 NPS
 description: 本主題提供的指示說明如何設定具有多個網路介面卡（在 Windows Server 2016 中執行網路原則伺服器）的伺服器。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: d9d9e9ac-4859-4522-89ed-a23092c9e12a
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: a937e151954629f7e8775ec68ba8ab5f2b63ee1a
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 1292accf4d19afa7f6a050281b7af373b3c867c3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315815"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952083"
 ---
-# <a name="configure-nps-on-a-multihomed-computer"></a>在多重主目錄電腦上設定 NPS
+# <a name="configure-nps-on-a-multihomed-computer"></a>設定多重主目錄電腦上的 NPS
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 您可以使用本主題來設定具有多個網路介面卡的 NPS。
 
 在執行網路原則伺服器 (NPS) 的伺服器中使用多張網路介面卡時，可以設定下列各項：
 
-- 執行並不會傳送和接收遠端驗證撥入使用者服務 \(RADIUS\) 流量的網路介面卡。
-- 根據每個網路介面卡，NPS 會監視網際網路通訊協定第4版上的 RADIUS 流量 \(IPv4\)、IPv6 或 IPv4 和 IPv6 兩者。
-- 在每個通訊協定上傳送和接收 RADIUS 流量的 UDP 埠號碼 \(IPv4 或 IPv6\)，每個網路介面卡的基礎。
+- 執行和不會傳送和接收遠端驗證撥入使用者服務 RADIUS 流量的網路 \( 配接器 \) 。
+- 以每個網路介面卡為基礎，NPS 會監視網際網路通訊協定第4版 \( ipv4 \) 、Ipv6 或 Ipv4 和 IPV6 的 RADIUS 流量。
+- UDP 埠號碼，會根據每個通訊協定的 \( IPv4 或 IPv6 \) 、每個網路介面卡來傳送和接收 RADIUS 流量。
 
 根據預設值，NPS 會為所有已安裝的網路介面卡的 IPv6 與 IPv4，接聽連接埠 1812、1813、1645 和 1646 上的 RADIUS 流量。 由於 NPS 會自動針對 RADIUS 流量使用所有網路介面卡，因此當您想要防止 NPS 使用特定的網路介面卡時，您只需要指定您想要 NPS 用於 RADIUS 流量的網路介面卡。
 
@@ -42,14 +40,14 @@ ms.locfileid: "80315815"
 
 若要設定 NPS 在網路介面卡上接聽和傳送 RADIUS 流量，請在 NPS 主控台的 [網路原則伺服器] 的 [內容] 對話方塊中使用下列語法：
 
-- IPv4 流量語法： IPAddress： UDPport，其中 IPAddress 是在您要傳送 RADIUS 流量的網路介面卡上設定的 IPv4 位址，而 UDPport 是您要用於 RADIUS 驗證或帳戶處理的 RADIUS 埠號碼流量.
-- IPv6 流量語法： [IPv6Address]： UDPport，其中需要 IPv6Address 的括弧，IPv6Address 是在您要用來傳送 RADIUS 流量的網路介面卡上設定的 IPv6 位址，而 UDPport 是您想要的 RADIUS 埠號碼用於 RADIUS 驗證或帳戶處理流量。
+- IPv4 流量語法： IPAddress： UDPport，其中 IPAddress 是在您要傳送 RADIUS 流量的網路介面卡上設定的 IPv4 位址，而 UDPport 是您要用於 RADIUS 驗證或帳戶處理流量的 RADIUS 埠號碼。
+- IPv6 流量語法： [IPv6Address]： UDPport，其中需要 IPv6Address 的括弧，IPv6Address 是在您要用來傳送 RADIUS 流量的網路介面卡上設定的 IPv6 位址，而 UDPport 是您要用於 RADIUS 驗證或帳戶處理流量的 RADIUS 埠號碼。
 
 下列字元可在設定 IP 位址與 UDP 連接埠資訊時當作分隔字元：
 
-- 位址/埠分隔符號：冒號（:)
-- 埠分隔符號：逗號（，）
-- 介面分隔符號：分號（;)
+- 位址/埠分隔符號：冒號 (： ) 
+- 埠分隔符號：逗號 (，) 
+- 介面分隔符號：分號 (; ) 
 
 ## <a name="configuring-network-access-servers"></a>設定網路存取伺服器
 

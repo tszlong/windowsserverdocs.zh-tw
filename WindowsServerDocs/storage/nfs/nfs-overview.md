@@ -1,25 +1,23 @@
 ---
 title: 網路檔案系統概觀
 description: 說明什麼是網路檔案系統。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: aff9fbdfa6dc97cb644e207efdae9c44533c320b
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 0a8ba971fb7224333fb495971cb06d4b97d83a62
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181744"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950451"
 ---
 # <a name="network-file-system-overview"></a>網路檔案系統概觀
 
 >適用于： Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-本主題說明 Windows Server 中的檔案和存放服務伺服器角色所包含的網路檔案系統角色服務和功能。 網路檔案系統（NFS）為具有同時包含 Windows 和非 Windows 電腦的異類環境的企業，提供檔案共用解決方案。
+本主題說明 Windows Server 中的檔案和存放服務伺服器角色所包含的網路檔案系統角色服務和功能。 網路檔案系統 (NFS) 為具有同時包含 Windows 和非 Windows 電腦的異類環境的企業，提供檔案共用解決方案。
 
 ## <a name="feature-description"></a>功能說明
 
@@ -49,7 +47,7 @@ Windows 支援多個版本的 NFS 用戶端和伺服器，視作業系統版本�
 
 網路檔案系統中新增和變更的功能包含 NFS 4.1 版的支援，以及改良的部署和管理性。 如需 Windows Server 2012 中新增或變更之功能的相關資訊，請參閱下表：
 
-|特色/功能|新功能或更新功能|說明|
+|特色/功能|新功能或更新功能|描述|
 |---|---|---|
 |[NFS 版本4。1](#nfs-version-41)|新增|相較于 NFS 第3版，提高安全性、效能和互通性。|
 |[NFS 基礎結構](#nfs-infrastructure)|已更新|改善部署和管理性，並提高安全性。|
@@ -68,13 +66,13 @@ Windows 支援多個版本的 NFS 用戶端和伺服器，視作業系統版本�
 
 Windows Server 2012 中整體 NFS 基礎結構的改良功能詳述如下：
 
-- Server for NFS 和 Client for NFS 提供的**遠端程序呼叫（RPC）/External 資料標記法（XDR）** 傳輸基礎結構由 WinSock 網路通訊協定提供技術支援。 這會取代傳輸裝置介面（TDI）、提供更佳的支援，並提供更好的擴充性和接收端調整（RSS）。
-- **RPC 通訊埠**多工器功能可供防火牆（較少管理埠）和簡化 NFS 的部署。
+- Server for NFS 和 Client for NFS 提供的**遠端程序呼叫 (RPC) /External 資料表示 (XDR) **傳輸基礎結構（由 WinSock 網路通訊協定提供技術支援）。 這會取代傳輸裝置介面 (TDI) 、提供更佳的支援，並提供更佳的擴充性和接收端調整 (RSS) 。
+- **RPC 通訊埠**多工器功能是易於防火牆 (較少的埠來管理) 並簡化 NFS 的部署。
 - **自動調整快取和執行緒**集區是新 RPC/XDR 基礎結構的資源管理功能，它是動態的，會根據工作負載自動調整快取和執行緒集區。 如此一來，當您在部署 NFS 時，就能盡速提供最佳效能，這就完全免除了微調參數時的猜測
-- **新的 kerberos 隱私權實行和驗證選項**，加上 kerberos 隱私權（Krb5p）支援，以及現有的 krb5 和 krb5i 驗證選項。
-- **識別對應 Windows PowerShell 模組**Cmdlet 可讓您更輕鬆地管理身分識別對應、設定 Active Directory 輕量型目錄服務（AD LDS），以及設定 UNIX 和 Linux passwd 和一般檔案。
+- **新的 kerberos 隱私權實行和驗證選項**，加上 kerberos 隱私權 (Krb5p) 支援，以及現有的 krb5 和 krb5i 驗證選項。
+- **識別對應 Windows PowerShell 模組**Cmdlet 可讓您更輕鬆地管理身分識別對應、設定 Active Directory 輕量型目錄服務 (AD LDS) ，以及設定 UNIX 和 Linux passwd 和一般檔案。
 - **磁片區掛接點**可讓您存取以 nfs 版本4.1 裝載于 nfs 共用下的磁片區。
-- 通訊**埠多**任務功能支援 RPC 通訊埠多工器（埠2049），其具備防火牆的便利性，並簡化 NFS 部署。
+- 通訊**埠多**任務的功能支援 RPC 通訊埠多工器， (埠 2049) ，其具備防火牆易懂並簡化 NFS 部署。
 
 ## <a name="nfs-version-3-continuous-availability"></a>NFS 第3版持續可用性
 
@@ -83,7 +81,7 @@ NFS 第3版用戶端可以有快速且透明的規劃容錯移轉，並具有更
 - 叢集基礎結構現在允許每個網路名稱有一個資源，而不是每個共用一個資源，這可大幅改善資源的容錯移轉時間。
 - NFS 伺服器內的容錯移轉路徑會進行微調，以獲得更好的效能。
 - NFS 伺服器中的萬用字元註冊已不再需要，而且容錯移轉更精細。
-- 網路狀態監視器（NSM）通知會在容錯移轉程式之後送出，而且用戶端不再需要等待 TCP 超時重新連線到容錯移轉的伺服器。
+- 網路狀態監視器 (NSM) 通知會在容錯移轉程式之後送出，而且用戶端不再需要等待 TCP 超時重新連線到容錯移轉的伺服器。
 
 請注意，Server for NFS 僅在手動起始時 (通常於規劃的維護期間) 支援透明容錯移轉。 如果發生未規劃的容錯移轉，NFS 用戶端的連線將會中斷。 Server for NFS 也不會與繼續金鑰篩選器進行任何整合。 這表示如果本機應用程式或 SMB 工作階段在規劃的容錯移轉後，立即嘗試存取 NFS 用戶端正在存取的檔案，NFS 用戶端的連線可能會中斷 (透明容錯移轉不會成功)。
 
@@ -95,13 +93,13 @@ NFS 第3版用戶端可以有快速且透明的規劃容錯移轉，並具有更
 - 識別對應已透過本機一般檔案對應存放區，以及用於設定身分識別對應的新 Windows PowerShell Cmdlet 來改善。
 - 伺服器管理員圖形化使用者介面較容易使用。
 - 新的 WMI 第2版提供者可讓您更輕鬆地進行管理。
-- RPC 通訊埠多工器（埠2049）具有防火牆易懂，而且簡化了 NFS 的部署。
+- RPC 通訊埠多工器 (埠 2049) 具備防火牆的便利性，而且簡化了 NFS 的部署。
 
 ## <a name="server-manager-information"></a>伺服器管理員資訊
 
-在伺服器管理員或較新的[Windows 管理中心](../../manage/windows-admin-center/overview.md)-使用 [新增角色及功能] 嚮導來新增 SERVER for NFS 角色服務（在 [檔案] 和 [ISCSI 服務] 角色底下）。 如需安裝功能的一般資訊，請參閱 [安裝或解除安裝角色、角色服務或功能](</previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831809(v=ws.11)>)。 Server for NFS 工具組含適用于網路檔案系統的服務 MMC 嵌入式管理單元，可用來管理 Server for NFS 和 Client for NFS 元件。 使用嵌入式管理單元，您可以管理安裝在電腦上的 Server for NFS 元件。 Server for NFS 也包含數個 Windows 命令列管理工具：
+在伺服器管理員或較新的[Windows 系統管理中心](../../manage/windows-admin-center/overview.md)-使用 [新增角色及功能] 嚮導，在 [檔案和 ISCSI 服務] 角色) 下新增 [SERVER For NFS] 角色服務 (。 如需安裝功能的一般資訊，請參閱 [安裝或解除安裝角色、角色服務或功能](</previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831809(v=ws.11)>)。 Server for NFS 工具組含適用于網路檔案系統的服務 MMC 嵌入式管理單元，可用來管理 Server for NFS 和 Client for NFS 元件。 使用嵌入式管理單元，您可以管理安裝在電腦上的 Server for NFS 元件。 Server for NFS 也包含數個 Windows 命令列管理工具：
 
-- **Mount**會在本機掛接遠端 NFS 共用（也稱為匯出），並將它對應至 Windows 用戶端電腦上的本機磁碟機號。
+- **Mount 會掛接**遠端 NFS 共用 (也稱為匯出) 在本機上，並將它對應至 Windows 用戶端電腦上的本機磁碟機號。
 - **Nfsadmin**會管理 SERVER for Nfs 和 CLIENT for nfs 元件的設定。
 - **Nfsshare**會為使用 SERVER for NFS 共用的資料夾設定 NFS 共用設定。
 - **Nfsstat**顯示或重設 SERVER for NFS 所接收之呼叫的統計資料。

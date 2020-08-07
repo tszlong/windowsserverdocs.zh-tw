@@ -1,19 +1,17 @@
 ---
 title: 使用共用存放裝置的延展式叢集複寫
-ms.prod: windows-server
 manager: eldenc
 ms.author: nedpyle
-ms.technology: storage-replica
 ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/26/2019
 ms.assetid: 6c5b9431-ede3-4438-8cf5-a0091a8633b0
-ms.openlocfilehash: dcccbd1efa7fa6f287349deb910dbbbc4b6fd706
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: fa5246aad79b9441b973cf864233ca8cfe0da7fa
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769606"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950539"
 ---
 # <a name="stretch-cluster-replication-using-shared-storage"></a>使用共用存放裝置的延展式叢集複寫
 
@@ -182,7 +180,7 @@ ms.locfileid: "87769606"
    7. 將線上存放裝置新增至名為 [新角色 (2)]**** 的空白角色。
    8. 現在您已利用磁碟機代號掛接了所有存放裝置，接著可以使用 `Test-SRTopology` 來評估叢集。
 
-        例如︰
+        例如：
 
         ```
         MD c:\temp
@@ -250,7 +248,7 @@ ms.locfileid: "87769606"
    Set-ClusterResourceDependency -Resource “Cluster Name” -Dependency “[Cluster IP Address] or [NewIPAddress]”
    ```
 
-3. 在指向共用 (裝載於網域控制站或一些其他獨立伺服器上) 的叢集中，設定檔案共用見證或雲端 (Azure) 見證。 例如︰
+3. 在指向共用 (裝載於網域控制站或一些其他獨立伺服器上) 的叢集中，設定檔案共用見證或雲端 (Azure) 見證。 例如：
 
    ```PowerShell
    Set-ClusterQuorum -FileShareWitness \\someserver\someshare
@@ -391,7 +389,7 @@ ms.locfileid: "87769606"
     ```
 
 
-3. 在指向共用 (裝載於網域控制站或一些其他獨立伺服器上) 的叢集中，設定檔案共用見證或雲端 (Azure) 見證。 例如︰
+3. 在指向共用 (裝載於網域控制站或一些其他獨立伺服器上) 的叢集中，設定檔案共用見證或雲端 (Azure) 見證。 例如：
 
     ```PowerShell
     Set-ClusterQuorum -FileShareWitness \\someserver\someshare
@@ -408,7 +406,7 @@ ms.locfileid: "87769606"
 
 5. 確定您是以最佳方式設定叢集網路。
 
-6.  設定檔案伺服器角色。 例如︰
+6.  設定檔案伺服器角色。 例如：
 
     ```PowerShell
     Get-ClusterResource
@@ -607,7 +605,7 @@ ms.locfileid: "87769606"
         Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica | FL
         ```
 
-    4.  或者，複本的目的地伺服器群組會隨時說明待複製的位元組數目，並可透過 PowerShell 進行查詢。 例如︰
+    4.  或者，複本的目的地伺服器群組會隨時說明待複製的位元組數目，並可透過 PowerShell 進行查詢。 例如：
 
         ```PowerShell
         (Get-SRGroup).Replicas | Select-Object numofbytesremaining

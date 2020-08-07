@@ -1,31 +1,29 @@
 ---
 title: NPS Proxy 伺服器負載平衡
 description: 您可以使用本主題來瞭解 Windows Server 2016 和 Windows 10 VPN 的功能。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 528280e6-b47e-489f-b310-b257d434aa0d
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 10a33494365f5a10923dd9ce46c3575675099b27
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 8710723c397744f3ba937ac863cf5ab45dc8a4f1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315978"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952155"
 ---
 # <a name="nps-proxy-server-load-balancing"></a>NPS Proxy 伺服器負載平衡
 
-適用於︰Windows Server 2016
+適用於：Windows Server 2016
 
-遠端驗證撥入使用者服務（RADIUS）用戶端，也就是網路存取伺服器，例如虛擬私人網路（VPN）伺服器和無線存取點，會建立連線要求，並將它們傳送至 RADIUS 伺服器（例如 NPS）。 在某些情況下，NPS 可能會一次收到太多連線要求，因而導致效能降低或超載。 當 NPS 超載時，將更多 Nps 新增到您的網路並設定負載平衡是個不錯的主意。 當您將傳入的連線要求平均分散到多個 Nps，以避免一或多個 Nps 超載時，就稱為負載平衡。
+遠端驗證撥入使用者服務 (RADIUS) 用戶端，也就是網路存取伺服器，例如虛擬私人網路 (VPN) 伺服器和無線存取點、建立連線要求，並將它們傳送至 RADIUS 伺服器（例如 NPS）。 在某些情況下，NPS 可能會一次收到太多連線要求，因而導致效能降低或超載。 當 NPS 超載時，將更多 Nps 新增到您的網路並設定負載平衡是個不錯的主意。 當您將傳入的連線要求平均分散到多個 Nps，以避免一或多個 Nps 超載時，就稱為負載平衡。
 
 負載平衡特別適用于：
 
-- 使用可延伸驗證通訊協定-傳輸層安全性的組織 \(EAP-TLS\) 或受保護的可延伸驗證通訊協定 \(PEAP\)-TLS 以進行驗證。 因為這些驗證方法會使用憑證進行伺服器驗證，以及使用者或用戶端電腦驗證，所以 RADIUS proxy 和伺服器上的負載會比使用密碼型驗證方法時還要多。
+- 使用可延伸驗證通訊協定的組織-傳輸層安全性 \( eap-tls \) 或受保護的可延伸驗證通訊協定 \( PEAP \) -tls 以進行驗證。 因為這些驗證方法會使用憑證進行伺服器驗證，以及使用者或用戶端電腦驗證，所以 RADIUS proxy 和伺服器上的負載會比使用密碼型驗證方法時還要多。
 - 需要維持持續服務可用性的組織。
-- 網際網路服務提供者 \(Isp\)，以外包其他組織的 VPN 存取權。 外包的 VPN 服務可能會產生大量的驗證流量。
+- 網際網路服務提供者 \( isp \) ，可外包其他組織的 VPN 存取權。 外包的 VPN 服務可能會產生大量的驗證流量。
 
 有兩種方法可用來平衡傳送至 Nps 的連線要求負載：
 
@@ -53,7 +51,7 @@ ms.locfileid: "80315978"
 
 若要將 NPS 設定為 proxy 伺服器，並將來自 RADIUS 用戶端的連線要求轉送到遠端 RADIUS 伺服器，您必須採取下列動作：
 
-1. 將您的 RADIUS 用戶端部署 \(VPN 伺服器、撥號伺服器、終端機服務閘道伺服器、802.1 X 驗證交換器和 802.1 X 無線存取\) 點，並將其設定為將連線要求傳送到 NPS proxy 伺服器。
+1. 部署您的 RADIUS 用戶端 \( VPN 伺服器、撥號伺服器、終端機服務閘道伺服器、802.1 x 驗證交換器和 802.1 x 無線存取點， \) 並將其設定為將連線要求傳送到 NPS proxy 伺服器。
 
 2. 在 NPS proxy 上，將網路存取伺服器設定為 RADIUS 用戶端。 如需詳細資訊，請參閱[設定 RADIUS 用戶端](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-radius-clients-configure)。
 

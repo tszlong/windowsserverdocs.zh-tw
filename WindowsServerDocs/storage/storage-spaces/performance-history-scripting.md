@@ -2,17 +2,16 @@
 title: 使用儲存空間直接存取效能歷程記錄的腳本
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 05/15/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f3274210ea6c08d63862551570096ab10aa878e
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: a0e04034c79a82bb245b611eca291acca0e40f9f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961810"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87935779"
 ---
 # <a name="scripting-with-powershell-and-storage-spaces-direct-performance-history"></a>使用 PowerShell 編寫腳本，並儲存空間直接存取效能歷程記錄
 
@@ -36,7 +35,7 @@ ms.locfileid: "86961810"
 
 ## <a name="sample-1-cpu-i-see-you"></a>範例1： CPU，我看到您！
 
-這個範例會使用 `ClusterNode.Cpu.Usage` `LastWeek` 時間範圍內的數列來顯示叢集中每部伺服器的最大值（「上限標準」）、最小和平均 CPU 使用量。 它也會執行簡單的四次分析，以顯示過去8天內 CPU 使用量超過25%、50% 和75% 的小時數。
+這個範例會使用 `ClusterNode.Cpu.Usage` `LastWeek` 時間範圍內的數列來顯示叢集中每部伺服器的最大 ( 「上限」 ) 、最小和平均 CPU 使用量。 它也會執行簡單的四次分析，以顯示過去8天內 CPU 使用量超過25%、50% 和75% 的小時數。
 
 ### <a name="screenshot"></a>螢幕擷取畫面
 
@@ -46,7 +45,7 @@ ms.locfileid: "86961810"
 
 ### <a name="how-it-works"></a>運作方式
 
-管道的輸出會適當地 `Get-ClusterPerf` 放入內建的 `Measure-Object` Cmdlet 中，我們只會指定 `Value` 屬性。 使用其 `-Maximum` 、 `-Minimum` 和 `-Average` 旗標，可 `Measure-Object` 讓我們幾乎免費提供前三個數據行。 若要進行四向分析，我們可以透過管道傳送至， `Where-Object` 並計算有多少值 `-Gt` （大於）25、50或75。 最後一個步驟是美化 with `Format-Hours` 和 helper 函式 `Format-Percent` –當然是選擇性的。
+管道的輸出會適當地 `Get-ClusterPerf` 放入內建的 `Measure-Object` Cmdlet 中，我們只會指定 `Value` 屬性。 使用其 `-Maximum` 、 `-Minimum` 和 `-Average` 旗標，可 `Measure-Object` 讓我們幾乎免費提供前三個數據行。 若要進行四向分析，我們可以透過管道傳送至， `Where-Object` 並計算 `-Gt` (大於) 25、50或75的值數目。 最後一個步驟是美化 with `Format-Hours` 和 helper 函式 `Format-Percent` –當然是選擇性的。
 
 ### <a name="script"></a>指令碼
 
@@ -92,7 +91,7 @@ $Output | Sort-Object ClusterNode | Format-Table
 
 ## <a name="sample-2-fire-fire-latency-outlier"></a>範例2：引發、引發、延遲極端
 
-這個範例會使用 `PhysicalDisk.Latency.Average` 時間範圍內的數列 `LastHour` 來尋找統計極端值，其定義為磁片磁碟機，其每小時平均延遲超過 +3 σ（三個標準差）高於人口平均。
+這個範例會使用 `PhysicalDisk.Latency.Average` 時間範圍內的數列 `LastHour` 來尋找統計極端值，並將其定義為每小時平均延遲超過 +3 σ的磁片磁碟機， (三個標準差) 高於人口平均。
 
    > [!IMPORTANT]
    > 為求簡潔，此腳本不會針對低變異數執行保護措施，不會處理部分遺失的資料，也不會因模型或固件而區別等等。請執行良好的 judgement，不要單獨依賴此腳本來判斷是否要更換硬碟。 在此只是為了教育目的而呈現。
@@ -202,7 +201,7 @@ Else {
 
 ## <a name="sample-3-noisy-neighbor-thats-write"></a>範例3：有雜訊的鄰居？ 那就寫了！
 
-效能歷程記錄*現在*也可以回答問題。 新的度量會即時提供，每10秒一次。 這個範例會使用 `VHD.Iops.Total` `MostRecent` 時間範圍內的數列，找出耗用最多儲存 IOPS 的虛擬機器（可能是 "noisiest"），在叢集中的每個主機上，並顯示其活動的讀取/寫入細目。
+效能歷程記錄*現在*也可以回答問題。 新的度量會即時提供，每10秒一次。 這個範例會使用 `VHD.Iops.Total` `MostRecent` 時間範圍內的數列來找出最忙碌的 (有些可能會在叢集中的每一部主機上，「noisiest」 ) 虛擬機器耗用大部分的儲存 IOPS，並顯示其活動的讀取/寫入細目。
 
 ### <a name="screenshot"></a>螢幕擷取畫面
 
@@ -264,10 +263,10 @@ $Output | Sort-Object RawIopsTotal -Descending | Select-Object -First 10 | Forma
 
 ### <a name="how-it-works"></a>運作方式
 
-我們會 `Invoke-Command` `Get-NetAdapter` 在每一部伺服器上重複我們的技巧，並將其傳送至 `Get-ClusterPerf` 。 在此過程中，我們會抓取兩個相關的屬性：其 `LinkSpeed` 字串（例如 "10 Gbps"）及其原始 `Speed` 整數（例如10000000000）。 我們使用 `Measure-Object` 來取得最後一天的平均值和尖峰（提醒：時間範圍內的每個度量 `LastDay` 代表5分鐘），並乘以每個位元組8位，以取得蘋果對蘋果的比較。
+我們會 `Invoke-Command` `Get-NetAdapter` 在每一部伺服器上重複我們的技巧，並將其傳送至 `Get-ClusterPerf` 。 在此過程中，我們會抓取兩個相關的屬性：其 `LinkSpeed` 字串（例如 "10 Gbps"）及其原始 `Speed` 整數（例如10000000000）。 我們使用 `Measure-Object` 來取得最後一天的平均和尖峰 (提醒：時間範圍內的每個測量都 `LastDay` 代表5分鐘) 並乘以每個位元組8位，以取得蘋果對蘋果的比較。
 
    > [!NOTE]
-   > 某些廠商（例如，Chelsio）包含其*網路介面卡*效能計數器中的遠端直接記憶體存取（RDMA）活動，因此包含在系列中 `NetAdapter.Bandwidth.Total` 。 有些人（如 Mellanox）可能不會。 如果您的廠商不這麼做，只要 `NetAdapter.Bandwidth.RDMA.Total` 在您的此腳本版本中新增數列即可。
+   > 某些廠商（例如，Chelsio）包含在其*網路介面卡*效能計數器中 (RDMA) 活動的遠端直接記憶體存取，因此包含在此 `NetAdapter.Bandwidth.Total` 系列中。 有些人（如 Mellanox）可能不會。 如果您的廠商不這麼做，只要 `NetAdapter.Bandwidth.RDMA.Total` 在您的此腳本版本中新增數列即可。
 
 ### <a name="script"></a>指令碼
 
@@ -338,9 +337,9 @@ $Output | Sort-Object PsComputerName, InterfaceDescription | Format-Table PsComp
 
 ### <a name="how-it-works"></a>運作方式
 
-`LastYear`時間範圍每天有一個資料點。 雖然您只需要兩個點以符合趨勢線，但實際上最好是需要更多的時間，例如14天。 我們使用 `Select-Object -Last 14` 設定範圍 [1，14] 中*x*的 *（x，y）* 點陣列。 有了這些點之後，我們會執行簡單的[線性最小平方演算法](http://mathworld.wolfram.com/LeastSquaresFitting.html)，以尋找 `$A` 並 `$B` 將最符合*y = ax + b*的線條參數化。 歡迎使用高中。
+`LastYear`時間範圍每天有一個資料點。 雖然您只需要兩個點以符合趨勢線，但實際上最好是需要更多的時間，例如14天。 我們使用 `Select-Object -Last 14` 來為範圍 [1，14] 中的*x*設定* (x，y) *點的陣列。 有了這些點之後，我們會執行簡單的[線性最小平方演算法](http://mathworld.wolfram.com/LeastSquaresFitting.html)，以尋找 `$A` 並 `$B` 將最符合*y = ax + b*的線條參數化。 歡迎使用高中。
 
-將磁片區的 `SizeRemaining` 屬性除以趨勢（斜率）， `$A` 可讓我們初步估計目前的儲存體成長率，直到量已滿為止。 `Format-Bytes`、和 helper 函式會 `Format-Trend` `Format-Days` 美化輸出。
+將磁片區的 `SizeRemaining` 屬性除以 (斜率) 的趨勢， `$A` 可讓我們初步估計目前的儲存體成長率，直到量已滿為止。 `Format-Bytes`、和 helper 函式會 `Format-Trend` `Format-Days` 美化輸出。
 
    > [!IMPORTANT]
    > 此預估是線性的，而且僅根據最新的14個每日測量。 有更複雜且更精確的技術存在。 請執行良好的 judgement，並不要單獨依賴此腳本來判斷是否要投資擴充您的儲存體。 在此只是為了教育目的而呈現。
@@ -451,7 +450,7 @@ $Output | Format-Table
 
 ### <a name="how-it-works"></a>運作方式
 
-我們在每部 `Invoke-Command` 伺服器上重複上述的訣竅 `Get-VM` 。 我們會使用 `Measure-Object -Average` 來取得每個 VM 的每月平均，然後再 `Sort-Object` 按 `Select-Object -First 10` 以取得我們的排行榜。 （或者，這是我們*最希望*的清單？）
+我們在每部 `Invoke-Command` 伺服器上重複上述的訣竅 `Get-VM` 。 我們會使用 `Measure-Object -Average` 來取得每個 VM 的每月平均，然後再 `Sort-Object` 按 `Select-Object -First 10` 以取得我們的排行榜。  (或也許是我們*最希望*的清單？ ) 
 
 ### <a name="script"></a>指令碼
 
@@ -487,7 +486,7 @@ $Output | Sort-Object RawAvgMemoryUsage -Descending | Select-Object -First 10 | 
 
 就這麼簡單！ 希望這些範例可以讓您激發，並協助您開始使用。 有了儲存空間直接存取的效能歷程記錄，以及功能強大、腳本易懂的 `Get-ClusterPerf` Cmdlet，您都可以問與答！ –管理和監視 Windows Server 2019 基礎結構時的複雜問題。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [Windows PowerShell 使用者入門](/powershell/scripting/getting-started/getting-started-with-windows-powershell)
 - [儲存空間直接存取總覽](storage-spaces-direct-overview.md)

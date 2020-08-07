@@ -2,22 +2,20 @@
 title: 管理遠端儲存資源
 description: 本文說明如何管理遠端電腦上的儲存資源
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 5c6dc9c931e130e36e01655de05fbd209f50f3dc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8498d55cbdeab609bb3526c9ef884e330148d714
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394081"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950632"
 ---
 # <a name="managing-remote-storage-resources"></a>管理遠端儲存資源
 
-> 適用於：Windows Server 2019、Windows Server 2016、Windows Server （半年通道）、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用于： Windows Server 2019、Windows Server 2016、Windows Server (半年通道) 、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 若要管理遠端電腦上的儲存資源，您有兩個選擇：
 

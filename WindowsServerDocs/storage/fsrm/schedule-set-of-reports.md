@@ -2,18 +2,16 @@
 title: 排程一組報告
 description: 本文說明如何建立一組定期報告
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: cc0c155afe62a22c9a39b2c1dd89730246709221
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4b8b0c66bc4f6e5445635deead1f79f7cc11309d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475495"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950462"
 ---
 # <a name="schedule-a-set-of-reports"></a>排程一組報告
 
@@ -68,7 +66,7 @@ ms.locfileid: "85475495"
        這些選項會根據您選擇的時間間隔變更。 例如，您可以針對每週報告指定報告之間相隔的週數，以及要在星期幾產生報告。
    -   若要指定一天當中要產生報告的時間，請在 **\[開始時間\]** 方塊中輸入或選取值。
    -   若要存取其他排程選項 (包括工作的開始日期及結束日期)，請按一下 **\[進階\]**。
-   -   若要儲存排程，請按一下 [確定]****。
+   -   若要儲存排程，請按一下 [確定]。
    -  若要建立工作的其他排程 (或修改現有排程)，請按一下 **\[排程\]** 索引標籤上的 **\[編輯排程\]**。
 
 8. 若要儲存報告工作，按一下 **\[確定\]**。
@@ -77,7 +75,7 @@ ms.locfileid: "85475495"
 
 此外，您還可以檢視報告的目前狀態 (報告是否正在執行)、上次執行時間和執行結果，以及下一次排程的執行時間。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [存放裝置報告管理](storage-reports-management.md)
 -   [設定檔案伺服器資源管理員選項](setting-file-server-resource-manager-options.md)

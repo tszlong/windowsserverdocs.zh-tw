@@ -5,18 +5,16 @@ ms.author: jgerend
 manager: dmoss
 ms.date: 10/16/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: storage
 ms.assetid: 1f1215cd-404f-42f2-b55f-3888294d8a1f
-ms.openlocfilehash: 55611be13333c36201aad149be87207564d4ac97
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 15c4b7942be949af33e70d2a5f299af426040e7b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471143"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950502"
 ---
 # <a name="refs-integrity-streams"></a>ReFS 完整性資料流
->適用于： Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server （半年通道）、Windows 10
+>適用于： Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server (半年通道) 、Windows 10
 
 完整性資料流是 ReFS 的選用功能，可使用總和檢查碼驗證和維護資料的完整性。 雖然 ReFS 一律會在中繼資料上使用總和檢查碼，但 ReFS 預設不會在檔案資料上產生或驗證總和檢查碼。 完整性資料流這項功能可讓使用者針對檔案資料使用總和檢查碼。 啟用完整性資料流時，ReFS 可以明確判斷資料為有效或損毀。 此外，ReFS 與儲存空間可共同自動修正損毀的中繼資料及資料。
 
@@ -92,7 +90,7 @@ PS C:\> Set-FileIntegrity H:\ -Enable $True
 PS C:\> Set-FileIntegrity H:\Docs -Enable $True
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [ReFS 概觀](refs-overview.md)
 -   [ReFS 區塊複製](block-cloning.md)

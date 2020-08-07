@@ -1,19 +1,18 @@
 ---
 title: 新增或移除電腦
 description: 瞭解如何從 MultiPoint 服務新增和移除電腦。
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: 1c37739d-7ab0-4b80-8d05-0330e79fd631
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 07/13/2017
-ms.openlocfilehash: 40905afb2bff790425586c3f54e9ee43bdd4fc52
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 5b72655966cc1c16c2da3625c70cd31facf70056
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409839"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970705"
 ---
 # <a name="add-or-remove-computers"></a>新增或移除電腦
 您可以使用 MultiPoint 管理員，從 MultiPoint 服務系統新增其他電腦或移除電腦。 新增其他電腦至 MultiPoint 管理員可讓 MultiPoint 儀表板在使用者登入該電腦時，透過與用於 MultiPoint 工作站相同的方式來協調任何使用者的工作階段。

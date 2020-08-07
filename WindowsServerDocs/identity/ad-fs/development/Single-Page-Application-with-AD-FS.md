@@ -6,14 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 06/13/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: active-directory-federation-services
-ms.openlocfilehash: 934ef170f6cbd5a2bd4031d336907d6b925cff06
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: c615bd6426098e00854e873d3e1eb2cfbfaa0734
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519897"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970935"
 ---
 # <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>使用 OAuth 和 ADAL.JS 搭配 AD FS 2016 或更新版本來建立單一頁面 web 應用程式
 
@@ -32,7 +30,7 @@ ms.locfileid: "87519897"
 
 ![AD FS 授權](media/Single-Page-Application-with-AD-FS/authenticationflow.PNG)
 
-使用單一頁面應用程式時，使用者會流覽至起始位置，其中會載入起始頁和 JavaScript 檔案集合和 HTML 視圖。 您需要設定 Active Directory 驗證程式庫（ADAL）來知道應用程式的重要資訊，例如，AD FS 實例的用戶端識別碼，以便將驗證導向您的 AD FS。
+使用單一頁面應用程式時，使用者會流覽至起始位置，其中會載入起始頁和 JavaScript 檔案集合和 HTML 視圖。 您需要設定 Active Directory 驗證程式庫 (ADAL) 來知道應用程式的重要資訊，例如 AD FS 實例、用戶端識別碼，以便將驗證導向您的 AD FS。
 
 如果 ADAL 看到驗證的觸發程式，它會使用應用程式所提供的資訊，並將驗證導向您的 AD FS STS。  在 AD FS 中註冊為公用用戶端的單一頁面應用程式，會自動設定為隱含授與流程。 授權要求會產生一個識別碼權杖，其會透過 #fragment 傳回給應用程式。 後續對後端 WebAPI 的呼叫會將此識別碼權杖當做標頭中的持有人權杖，以取得 WebAPI 的存取權。
 
@@ -69,7 +67,7 @@ git clone https://github.com/Azure-Samples/active-directory-angularjs-singlepage
 
 **index.html** -包含 adal.js 的參考
 
-**HomeController.js**-顯示如何利用 ADAL 中的 login （）和登出（）方法。
+**HomeController.js**-示範如何在 ADAL 中利用登入 ( # A1 和登出 ( # A3 方法。
 
 **UserDataController.js** -顯示如何從快取的 id_token 解壓縮使用者資訊。
 
@@ -148,7 +146,7 @@ and add:
     );
 ```
 
-|參數|說明|
+|參數|描述|
 |--------|--------|
 |ValidAudience|這會設定將在權杖中進行檢查的「物件」的值|
 |ValidIssuer|這會設定將在權杖中檢查的「簽發者」值|
@@ -168,7 +166,7 @@ and add:
 ## <a name="running-the-solution"></a>正在執行解決方案
 清除方案，重建解決方案並加以執行。 如果您想要查看詳細的追蹤，請啟動 Fiddler，並啟用 HTTPS 解密。
 
-瀏覽器（使用 Chrome 瀏覽器）會載入 SPA，而您會看到下列畫面：
+瀏覽器 (使用 Chrome 瀏覽器) 會載入 SPA，而您會看到下列畫面：
 
 ![註冊用戶端](media/Single-Page-Application-with-AD-FS/singleapp3.PNG)
 

@@ -1,20 +1,18 @@
 ---
 title: 解決 vRSS 問題
 description: 如果您看不到 [vRSS] [將流量負載平衡到 VM] LPs，請解決 [vRSS] 問題。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.localizationpriority: medium
 manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/04/2018
-ms.openlocfilehash: 1caedfcc5711df98836b3d373ebf4384fa1c7469
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a7f0a3b190232cafb68e3a39104c357972831441
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858041"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87951948"
 ---
 # <a name="resolve-vrss-issues"></a>解決 vRSS 問題
 
@@ -27,32 +25,32 @@ ms.locfileid: "80858041"
    Set-VMNetworkAdapter -ManagementOS -VrssEnabled $TRUE
    ```
 
-2. 已在 VM 或主機 vNIC 上停用 RSS。 Windows Server 2016 預設會啟用 RSS;有人可能已停用它。 
+2. 已在 VM 或主機 vNIC 上停用 RSS。 Windows Server 2016 預設會啟用 RSS;有人可能已停用它。
 
    - Enabled = **True**
 
-   **查看目前的設定：** 
+   **查看目前的設定：**
 
-   在 vm 中的 vRSS\) 或主機 vNIC vRSS\)的主機 \(上，執行下列 PowerShell\(Cmdlet。
+   \(針對 vm 中的 vRSS \) 或 \( 主機 vNIC vrss 的主機，在 vm 中執行下列 PowerShell Cmdlet \) 。
 
    ```PowerShell
    Get-NetAdapterRss
    ```
 
-   **啟用功能：** 
+   **啟用功能：**
 
    若要將值從 False 變更為 True，請執行下列 PowerShell Cmdlet。
 
    ```PowerShell
    Enable-NetAdapterRss *
    ```
-   
-   另一個全系統設定 RSS 的方式是使用 netsh。 用法 
-   
+
+   另一個全系統設定 RSS 的方式是使用 netsh。 使用
+
     ```cmd
    netsh int tcp show global
    ```
-   
+
    以確保不會全域停用 RSS。 並在必要時加以啟用。 *-Set-netadapterrss 不觸及這項設定。
 
 3. 如果您在設定 vRSS 之後發現未啟用 VMMQ，請在連接至虛擬交換器的每個介面卡上確認下列設定：
@@ -62,19 +60,19 @@ ms.locfileid: "80858041"
 
    ![vmmq-已啟用](../../media/vmmq-enabled.png)
 
-   **查看目前的設定：** 
+   **查看目前的設定：**
 
    ```PowerShell
    Get-NetAdapterAdvancedProperty -Name NICName -DisplayName 'Virtual Switch RSS'
    ```
 
-   **啟用功能：** 
+   **啟用功能：**
 
    ```PowerShell
    Set-NetAdapterAdvancedProperty -Name NICName -DisplayName 'Virtual Switch RSS' -DisplayValue Enabled”
    ```
- 
-4. _（Windows Server 2019）_ 將**VrssQueueSchedulingMode**設定為 [**動態**] 時，您無法啟用 VMMQ （VmmqEnabled = False）。 啟用 VMMQ 之後，VrssQueueSchedulingMode 不會變更為動態。<p>啟用 VMMQ 時， **Dynamic**的**VrssQueueSchedulingMode**需要驅動程式支援。  VMMQ 是卸載邏輯處理器上的封包位置，因此需要驅動程式支援以利用動態演算法。  請安裝支援動態 VMMQ 的 NIC 廠商驅動程式和固件。
+
+4. _ (Windows Server 2019) _將**VrssQueueSchedulingMode**設定為 [**動態**] 時，您無法啟用 VMMQ (VmmqEnabled = False) 。 啟用 VMMQ 之後，VrssQueueSchedulingMode 不會變更為動態。<p>啟用 VMMQ 時， **Dynamic**的**VrssQueueSchedulingMode**需要驅動程式支援。  VMMQ 是卸載邏輯處理器上的封包位置，因此需要驅動程式支援以利用動態演算法。  請安裝支援動態 VMMQ 的 NIC 廠商驅動程式和固件。
 
 
 

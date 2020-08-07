@@ -2,19 +2,17 @@
 title: 建立站台的 Windows 10 企業版虛擬桌面
 description: 瞭解如何建立適用于工作站的 Windows Server 2016 桌上型電腦
 ms.date: 07/22/2016
-ms.prod: windows-server
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: 63f08b5b-c735-41f4-b6c8-411eff85a4ab
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: 6f6d7d3ef66e8943fbb39cfd96cff1b91ab413eb
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: fb36cb13f9a78ae028f1217dd667a106a81e5c94
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409819"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87937310"
 ---
 # <a name="create-windows-10-enterprise-virtual-desktops-for-stations"></a>建立站台的 Windows 10 企業版虛擬桌面
 MultiPoint 服務中的這項選擇性設定主要適用于基本應用程式需要每個使用者自己的用戶端作業系統實例的情況。 範例包括無法安裝在 Windows Server 上的應用程式，以及不會在同一部主機電腦上執行多個實例的應用程式。
@@ -22,16 +20,16 @@ MultiPoint 服務中的這項選擇性設定主要適用于基本應用程式需
 > [!NOTE]
 > 這些虛擬桌面（也稱為 VDI）比預設的 MultiPoint 服務桌面會話更耗費資源，因此我們建議您盡可能使用預設的 MultiPoint 服務會話。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 若要準備建立站虛擬桌面，請確定您的 MultiPoint 服務系統符合下列需求：
 
 | 硬體 | 需求 |
 |--|--|
-| CPU （多媒體） | 1個核心或每個虛擬機器的執行緒 |
-| 固態硬碟（SSD） | 容量 >= 每一站 20 gb + 40GB，適用于 MultiPoint 服務主機作業系統<p>隨機讀取/寫入 IOPS >= 每台工作站3K |
+| CPU (多媒體)  | 1個核心或每個虛擬機器的執行緒 |
+| 穩固的狀態磁片磁碟機 (SSD)  | 容量 >= 每一站 20 gb + 40GB，適用于 MultiPoint 服務主機作業系統<p>隨機讀取/寫入 IOPS >= 每台工作站3K |
 | RAM | Windows MultiPoint Server 主機作業系統的每個工作站 2GB + 2GB |
 | 圖形 | DX11 |
-| BIOS | 設定為啟用虛擬化的 BIOS CPU 設定-第二層位址轉譯（SLAT） |
+| BIOS | 設定為啟用虛擬化的 BIOS CPU 設定-第二層位址轉譯 (SLAT)  |
 
 -   **工作站**-設定 MultiPoint 服務系統的工作站。 如需詳細資訊，請參閱[將其他工作站附加至 MultiPoint 服務](Attach-additional-stations-to-your-MultiPoint-services-computer.md)。
 
@@ -57,7 +55,7 @@ MultiPoint 服務中的這項選擇性設定主要適用于基本應用程式需
 
 3.  按一下 [**虛擬桌面**] 索引標籤，按一下 [**啟用虛擬桌面**]，然後按一下 **[確定]**，並等候系統重新開機。
 
-下一步是建立虛擬桌面範本。 您實際上是建立虛擬硬碟（VHD）檔案，您可以使用此檔案作為範本，以建立適用于 MultiPoint 管理員的工作站虛擬桌面。 您可以使用適用于 Windows 或的實體安裝媒體。做為範本來源的 ISO 影像檔案。 您也可以使用。Windows 安裝的 VHD。 請注意，若要使用實體安裝光碟，您必須先插入光碟，然後再啟動精靈。
+下一步是建立虛擬桌面範本。 您實際上是建立虛擬硬碟 (VHD) 檔案，您可以使用該檔案作為範本，以建立適用于 MultiPoint 管理員的工作站虛擬桌面。 您可以使用適用于 Windows 或的實體安裝媒體。做為範本來源的 ISO 影像檔案。 您也可以使用。Windows 安裝的 VHD。 請注意，若要使用實體安裝光碟，您必須先插入光碟，然後再啟動精靈。
 
 ##### <a name="to-create-a-virtual-desktop-template"></a>建立虛擬桌面範本
 
@@ -103,7 +101,7 @@ MultiPoint 服務中的這項選擇性設定主要適用于基本應用程式需
     如果您要將您的工作站連接到網域，建議您在自訂期間建立本機使用者帳戶，並將它新增至本機系統管理員群組。
 
     > [!NOTE]
-    > 如果在自訂範本時系統重新開機，則在系統重新開機之後，使用內建的系統管理員帳戶自動登入可能會失敗。 若要解決此問題，請使用您建立的本機系統管理員帳戶手動登入、變更內建系統管理員帳戶的密碼、登出，然後使用內建的系統管理員帳戶和新密碼重新登入。 （當您使用本機系統管理員帳戶登入時，您必須刪除已建立的設定檔）。
+    > 如果在自訂範本時系統重新開機，則在系統重新開機之後，使用內建的系統管理員帳戶自動登入可能會失敗。 若要解決此問題，請使用您建立的本機系統管理員帳戶手動登入、變更內建系統管理員帳戶的密碼、登出，然後使用內建的系統管理員帳戶和新密碼重新登入。  (您將需要刪除使用本機系統管理員帳戶登入時所建立的設定檔。 ) 
 
 6.  在您完成系統的設定之後，請按兩下管理員桌面上的 [ **CompleteCustomization** ] 快捷方式來執行 Sysprep，然後關閉範本。 在自訂期間，Sysprep 工具會移除所有唯一的系統資訊，以準備要製作映射的 Windows 安裝。
 
@@ -115,7 +113,7 @@ MultiPoint 服務中的這項選擇性設定主要適用于基本應用程式需
 
 ##### <a name="to-create-virtual-desktops-for-your-stations"></a>為您的工作站建立虛擬桌面
 
-1.  使用本機系統管理員帳戶，或在網域中的本機 Administrators 群組中的網域帳戶，從遠端工作站（例如，使用遠端桌面連線的 Windows 電腦）登入 Windows MultiPoint server。
+1.  從遠端工作站登入 Windows MultiPoint server (例如，使用遠端桌面連線) 使用本機系統管理員帳戶，或在網域中，在本機 Administrators 群組中的網域帳戶。
 
     > [!NOTE]
     > 或者，您也可以使用本機工作站登入伺服器。 不過，當您建立站虛擬桌面時，必須登出用來建立虛擬桌面的工作站，才能將其他工作站連接到新的虛擬桌面。
@@ -152,7 +150,7 @@ MultiPoint 服務中的這項選擇性設定主要適用于基本應用程式需
 
 3.  按一下 [**虛擬桌面**] 索引標籤。
 
-4.  按一下 [匯**入虛擬桌面範本**]，然後使用 **[流覽]** 來選取您要匯入的 .vhd 檔案（範本）。 當您匯入範本時，會建立原始 .vhd 的複本。 根據預設，MultiPoint 服務會將 .vhd 檔案儲存在 C： \\ Users 公用檔的 [ \\ \\ \\ hyper-v \- \\ 虛擬硬碟] \\ 資料夾中。
+4.  按一下 [匯**入虛擬桌面範本**]，然後使用 **[流覽]** 來選取要匯入 (範本) 的 .vhd 檔案。 當您匯入範本時，會建立原始 .vhd 的複本。 根據預設，MultiPoint 服務會將 .vhd 檔案儲存在 C： \\ Users 公用檔的 [ \\ \\ \\ hyper-v \- \\ 虛擬硬碟] \\ 資料夾中。
 
 5.  輸入新範本的前置詞，然後按一下 **[確定]**。
 

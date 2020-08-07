@@ -1,27 +1,25 @@
 ---
 title: 設定和檢視 Hyper-V 虛擬交換器連接埠上的 VLAN 設定
-description: 您可以使用本主題來瞭解在 Windows Server 2016 中設定和查看 Hyper-v 虛擬交換器埠上的虛擬區域網路（VLAN）設定的最佳作法。
+description: 您可以使用本主題來瞭解在 Windows Server 2016 中設定和查看 Hyper-v 虛擬交換器埠上的虛擬區域網路 (VLAN) 設定的最佳做法。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-hv-switch
 ms.topic: article
 ms.assetid: 69e0e28a-98ae-4ade-bd27-ce2ad7eb310f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 083558762051283115211d10d32ebb6fd3ad3953
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 1f4812e05ff003d40b34b7bf757894f7e66aaa6e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308038"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950292"
 ---
 # <a name="configure-and-view-vlan-settings-on-hyper-v-virtual-switch-ports"></a>設定和檢視 Hyper-V 虛擬交換器連接埠上的 VLAN 設定
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-您可以使用本主題來瞭解在 Hyper-v 虛擬交換器埠上設定和查看虛擬區域網路（VLAN）設定的最佳作法。
+您可以使用本主題來瞭解在 Hyper-v 虛擬交換器埠上設定和觀看虛擬區域網路 (VLAN) 設定的最佳作法。
 
-當您想要在 Hyper-v 虛擬交換器埠上設定 VLAN 設定時，您可以使用 Windows&reg; Server 2016 Hyper-v 管理員或 System Center Virtual Machine Manager （VMM）。
+當您想要設定 Hyper-v 虛擬交換器埠上的 VLAN 設定時，您可以使用 Windows &reg; Server 2016 Hyper-v 管理員或 System Center Virtual Machine Manager (VMM) 。
 
 如果您使用 VMM，VMM 會使用下列 Windows PowerShell 命令來設定交換器埠。
 
@@ -41,8 +39,8 @@ Set-VMNetworkAdapterVlan <VM-name|-managementOS> -Access -VlanID <vlan-value>
 
 若要設定及查看 VLAN 交換器埠設定，您必須執行下列動作：
 
-- 如果您使用 VMM 或網路控制卡來設定和管理您的網路，而且您已部署軟體定義網路功能（SDN），則必須使用**VMNetworkAdapterIsolation** Cmdlet。 
-- 如果您使用 Windows Server 2016 Hyper-v 管理員或 Windows PowerShell Cmdlet，而且您尚未部署軟體定義網路功能（SDN），則必須使用**set-vmnetworkadaptervlan** Cmdlet。
+- 如果您使用 VMM 或網路控制卡來設定和管理您的網路，而且已將軟體定義的網路功能部署 (SDN) ，則必須使用**VMNetworkAdapterIsolation** Cmdlet。
+- 如果您使用 Windows Server 2016 Hyper-v 管理員或 Windows PowerShell Cmdlet，但尚未部署軟體定義的網路功能 (SDN) ，您必須使用**set-vmnetworkadaptervlan** Cmdlet。
 
 ### <a name="possible-issues"></a>可能的問題
 

@@ -1,18 +1,16 @@
 ---
 title: 儲存空間直接存取的嵌套復原
-ms.prod: windows-server
 ms.author: jgerend
-manager: dansimp
-ms.technology: storagespaces
+manager: dansimpspaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/15/2019
-ms.openlocfilehash: 311edb38f4cdf1dac153d843811442d5eafbce05
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 91d8cce64088855d2e8a0c89c1084077a252e26a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769746"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87935954"
 ---
 # <a name="nested-resiliency-for-storage-spaces-direct"></a>儲存空間直接存取的嵌套復原
 
@@ -20,7 +18,7 @@ ms.locfileid: "87769746"
 
 Nested 復原是 Windows Server 2019 中[儲存空間直接存取](storage-spaces-direct-overview.md)的新功能，可讓兩部伺服器的叢集同時承受多個硬體失敗，而不會遺失存放裝置的可用性，讓使用者、應用程式和虛擬機器在不中斷的情況下繼續執行。 本主題說明其運作方式、提供開始使用的逐步指示，以及回答最常見問題。
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>必要條件
 
 ### <a name="green-checkmark-icon-consider-nested-resiliency-if"></a>![綠色核取記號圖示。](media/nested-resiliency/supported.png) 假設有下列情況，請考慮 nested 復原：
 

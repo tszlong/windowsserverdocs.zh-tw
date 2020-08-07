@@ -1,20 +1,18 @@
 ---
 title: 建立容錯移轉叢集
 description: 如何建立適用于 Windows Server 2012 R2、Windows Server 2012、Windows Server 2016 和 Windows Server 2019 的容錯移轉叢集。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 manager: lizross
-ms.technology: storage-failover-clustering
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 322eba03bb46a32191c46461c49eace4fcfda9e0
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: e96056eb26e200f360f92c4c6e2b94c2d77bf9ec
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87177834"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950112"
 ---
 # <a name="create-a-failover-cluster"></a>建立容錯移轉叢集
 
@@ -90,7 +88,7 @@ ms.locfileid: "87177834"
 2. 在 [**容錯移轉叢集管理員**] 窗格的 [**管理**] 底下，選取 [**驗證**設定]。
 3. 在 [開始之前]**** 頁面上，選取 [下一步]****。
 4. 在 [**選取伺服器或**叢集] 頁面的 [**輸入名稱**] 方塊中，輸入您計畫新增為容錯移轉叢集節點之伺服器的 NetBIOS 名稱或完整功能變數名稱，然後選取 [**新增**]。 對您要新增的每部伺服器重複此步驟。 若要同時新增多部伺服器，請以逗號或分號分隔名稱。 例如，以格式輸入名稱 `server1.contoso.com, server2.contoso.com` 。 完成後，選取 [下一步] ****。
-5. 在 [**測試選項**] 頁面上，選取 [**執行所有測試（建議）**]，然後選取 **[下一步]**。
+5. 在 [**測試選項**] 頁面上，選取 [**執行所有測試] (建議) **]，然後選取 **[下一步]**。
 6. 在 [**確認**] 頁面上，選取 **[下一步]**。
 
     [驗證中] 頁面會顯示執行測試的狀態。
@@ -129,7 +127,7 @@ ms.locfileid: "87177834"
     2. 如果伺服器沒有設定使用 DHCP 的網路介面卡，您必須為容錯移轉叢集設定一或多個靜態 IP 位址。 選取您想要用於叢集管理的每個網路旁邊的核取方塊。 選取所選網路旁邊的 [**位址**] 欄位，然後輸入您要指派給叢集的 IP 位址。 此 IP 位址 (或多個位址) 會與網域名稱系統 (DNS) 的叢集名稱相關聯。
 
       >[!NOTE]
-      > 如果您使用的是 Windows Server 2019，則可以選擇使用叢集的分散式網路名稱。 分散式網路名稱會使用成員伺服器的 IP 位址，而不需要叢集的私人 IP 位址。 根據預設，如果 Windows 偵測到您在 Azure 中建立叢集，則會使用分散式網路名稱（因此，您不需要為叢集建立內部負載平衡器），或如果您是在內部部署環境中執行，則為一般靜態或 IP 位址。 如需詳細資訊，請參閱[分散式網路名稱](https://blogs.windows.com/windowsexperience/2018/08/14/announcing-windows-server-2019-insider-preview-build-17733/#W0YAxO8BfwBRbkzG.97)。
+      > 如果您使用的是 Windows Server 2019，則可以選擇使用叢集的分散式網路名稱。 分散式網路名稱會使用成員伺服器的 IP 位址，而不需要叢集的私人 IP 位址。 根據預設，如果 Windows 偵測到您在 Azure 中建立叢集，則會使用分散式網路名稱 (因此，您不需要為叢集) 建立內部負載平衡器，或是如果您是在內部部署環境中執行，則不需為一般靜態或 IP 位址。 如需詳細資訊，請參閱[分散式網路名稱](https://blogs.windows.com/windowsexperience/2018/08/14/announcing-windows-server-2019-insider-preview-build-17733/#W0YAxO8BfwBRbkzG.97)。
 
     3. 完成後，選取 [下一步] ****。
 8. 檢視 [確認]**** 頁面上的設定。 預設會選取 [新增適合的儲存裝置到叢集]**** 核取方塊。 如果您想要執行下列其中一項，請取消選取此核取方塊：
@@ -159,9 +157,9 @@ ms.locfileid: "87177834"
 
    | 叢集角色  | 角色或功能先決條件  |
    | ---------       | ---------                    |
-   | 命名空間伺服器     |   命名空間（檔案伺服器角色的一部分）       |
+   | 命名空間伺服器     |   命名空間 (檔案伺服器角色的一部分)        |
    | DFS 命名空間伺服器     |  DHCP 伺服器角色       |
-   | 分散式交易協調器 (DTC)     | 無        |
+   | 分散式交易協調器 (DTC)     | None        |
    | 檔案伺服器     |  檔案伺服器角色       |
    | 泛型應用程式     |  不適用       |
    | 泛型指令碼     |   不適用      |
@@ -170,7 +168,7 @@ ms.locfileid: "87177834"
    | iSCSI Target Server     |    iSCSI 目標伺服器 (檔案伺服器角色的一部分)     |
    | iSNS 伺服器     |  iSNS 伺服器服務功能       |
    | 訊息佇列     |  訊息佇列服務的功能       |
-   | 其他伺服器     |  無       |
+   | 其他伺服器     |  None       |
    | 虛擬機器     |  Hyper-V 角色       |
    | WINS 伺服器     |   WINS 伺服器功能      |
 
@@ -220,7 +218,7 @@ New-Cluster -Name CN=MyCluster,OU=Cluster,DC=Contoso,DC=com -Node Server1, Serve
 
 如需如何新增叢集角色的範例，請參閱 [Add-ClusterFileServerRole](https://docs.microsoft.com/powershell/module/failoverclusters/add-clusterfileserverrole?view=win10-ps) 和 [Add-ClusterGenericApplicationRole](https://docs.microsoft.com/powershell/module/failoverclusters/add-clustergenericapplicationrole?view=win10-ps)之類的主題。
 
-## <a name="more-information"></a>詳細資訊
+## <a name="more-information"></a>更多資訊
 
   - [容錯移轉叢集](failover-clustering.md)
   - [部署 Hyper-V 叢集](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj863389(v%3dws.11)>)

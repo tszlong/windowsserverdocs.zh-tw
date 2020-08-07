@@ -2,18 +2,16 @@
 title: 設定檔案檢測稽核
 description: 本文說明如何設定檔檢測稽核以產生 [檔案檢測稽核] 報告
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: cf1824e514c34ee89870daa6d15190bffd822a8b
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 822c483fc7f5f4518ca976b1f7d719b95730008f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475315"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950683"
 ---
 # <a name="configure-file-screen-audit"></a>設定檔案檢測稽核
 
@@ -30,9 +28,9 @@ ms.locfileid: "85475315"
 
 2.  在 **\[檔案檢測稽核\]** 索引標籤上，選取 **\[在稽核資料庫中記錄檔案檢測活動\]** 核取方塊。
 
-3.  按一下 [確定]****。 所有的檔案檢測活動現在都會都儲存在稽核資料庫中，您可以執行 [檔檢測稽核] 報告來檢視該資料庫。
+3.  按一下 [確定]  。 所有的檔案檢測活動現在都會都儲存在稽核資料庫中，您可以執行 [檔檢測稽核] 報告來檢視該資料庫。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [設定檔案伺服器資源管理員選項](setting-file-server-resource-manager-options.md)
 -   [存放裝置報告管理](storage-reports-management.md)

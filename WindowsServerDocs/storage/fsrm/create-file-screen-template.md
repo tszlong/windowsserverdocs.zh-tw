@@ -2,18 +2,16 @@
 title: 建立檔案檢測範本
 description: 本文說明如何建立檔案檢測範本
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 87df941015b240fd34028e59b8aea489e9410834
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 05219f74ba03f77da5dc0b1f85c92b2af303a586
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475625"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950622"
 ---
 # <a name="create-a-file-screen-template"></a>建立檔案檢測範本
 
@@ -75,7 +73,7 @@ ms.locfileid: "85475625"
 
 11. 選取您要使用的所有檔案範本內容之後，按一下 **\[確定\]** 儲存範本。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [檔案檢測管理](file-screening-management.md)
 -   [設定檔案伺服器資源管理員選項](setting-file-server-resource-manager-options.md)

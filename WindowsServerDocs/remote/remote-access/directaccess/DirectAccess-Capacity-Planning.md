@@ -2,18 +2,16 @@
 title: DirectAccess 容量規劃
 description: 您可以使用本主題來取得 Windows Server 2012 DirectAccess 伺服器效能的報告，以協助您在 Windows Server 2016 中進行 DirectAccess 的容量規劃。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-da
 ms.topic: article
 ms.assetid: 456e5971-3aa7-4a24-bc5d-0c21fec7687e
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 85ac9d40ec0de0a896e99d56679b325cdfc387ff
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 6df4005112601aefb1e508087ec66e7af44e52fd
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517683"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87951403"
 ---
 # <a name="directaccess-capacity-planning"></a>DirectAccess 容量規劃
 
@@ -21,7 +19,7 @@ ms.locfileid: "87517683"
 
 本文件是有關 Windows Server 2012 DirectAccess 伺服器效能的報告。 執行測試是為了判斷使用高階電腦硬體和低階電腦硬體的輸送量容量。 高階和低階 CPU 效能取決於網路流量輸送量和使用的用戶端類型。 一般 DirectAccess 部署 (以及這些測試的基礎) 是由 1/3 (30%) IPHTTPS 用戶端和 2/3 (70%) Teredo 用戶端組成。 Teredo 用戶端的部分效能比 IPHTTPS 用戶端高，因為 Windows Server 2012 利用接收端調整 (RSS) 而允許使用所有 CPU 核心。 在這些測試中，由於已啟用 RSS，因此停用了超執行緒。 此外，Windows Server 2012 中的 TCP/IP 支援 UDP 流量，允許 Teredo 用戶端跨 CPU 的負載平衡。
 
-收集的資料來自於低階 (4 核心、4GB) 伺服器和高階 (8 核心、8GB) 伺服器中較為典型的硬體。  以下是新的 Windows 8 工作管理員的螢幕擷取畫面，內含750用戶端（562 Teredo，188 IPHTTPS）執行 ~ 77 Mb/秒的低終端硬體。這是為了模擬不會顯示智慧卡認證的使用者。
+收集的資料來自於低階 (4 核心、4GB) 伺服器和高階 (8 核心、8GB) 伺服器中較為典型的硬體。  以下是在具有750用戶端的低端硬體上新的 Windows 8 工作管理員的螢幕擷取畫面 (562 Teredo，188 IPHTTPS) 執行 ~ 77 Mb/秒。這是為了模擬不會顯示智慧卡認證的使用者。
 
 這些測試結果指出 Windows 8 中 Teredo 的執行效能優於 IPHTTPS，但是與 Windows 7 相較，Teredo 與 IPHTTPS 頻寬使用量都顯著提升。
 
