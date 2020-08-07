@@ -1,24 +1,22 @@
 ---
 title: tlntadmn
 description: Tlntadmn 的參考文章，可管理本機或遠端電腦，並執行 telnet 伺服器服務。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 78b61e8d-b953-44bb-8d57-f3b42da9e7a8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 995b2332f98906a1a5b9cb53f504a87fb831c3e0
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 4dee63c0233bab5341dae724ccd9779c3917054c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958800"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897150"
 ---
 # <a name="tlntadmn"></a>tlntadmn
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 管理執行 telnet 伺服器服務的本機或遠端電腦。
 
@@ -46,7 +44,7 @@ tlntadmn [<computerName>] [-u <UserName>] [-p <Password>] [{start | stop | pause
 |          config maxfail =\<attempts>          |                                                                                                                          設定中斷連線前的失敗登入嘗試次數上限。                                                                                                                          |
 |        config maxconn =\<Connections>         |                                                                                                                                         設定連接的最大數目。                                                                                                                                          |
 |            config port = < \Number of>             |                                                                                                                    設定 telnet 通訊埠。 您必須使用小於1024的整數來指定埠。                                                                                                                    |
-| config sec {+ &#124;-} NTLM {+ &#124;-} passwd | 指定您要使用 NTLM 還是密碼，或兩者都用來驗證登入嘗試。 若要使用特定類型的驗證，請 **+** 在該類型的驗證之前輸入加號（）。 若要避免使用特定類型的驗證，請 **-** 在該類型的驗證之前輸入減號（）。 |
+| config sec {+ &#124;-} NTLM {+ &#124;-} passwd | 指定您要使用 NTLM 還是密碼，或兩者都用來驗證登入嘗試。 若要使用特定類型的驗證，請在 **+** 該類型的驗證之前輸入加號 () 。 若要避免使用特定類型的驗證，請在 **-** 該類型的驗證之前輸入減號 () 。 |
 |     config mode = {console &#124; stream}      |                                                                                                                                             指定操作的模式。                                                                                                                                             |
 |                       -?                       |                                                                                                                                           在命令提示字元顯示說明。                                                                                                                                           |
 
@@ -64,6 +62,6 @@ tlntadmn config timeout=0:30:0
 tlntadmn -s
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 -   [telnet 操作指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753164(v=ws.10))
 - [命令列語法關鍵](command-line-syntax-key.md)

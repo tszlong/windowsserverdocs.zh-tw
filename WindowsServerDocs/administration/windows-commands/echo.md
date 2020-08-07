@@ -1,20 +1,18 @@
 ---
 title: 回應
 description: Echo 命令的參考文章，它會顯示訊息，或開啟或關閉命令回顯功能。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: fb9fcd0f-5e73-4504-aa95-78204e1a79d3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bc463efef38e07c1ce8b9ebee1ddd7bdfd7d3066
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ff1b196a26b43eb51d5da613e0ac596d26c65d05
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930522"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890730"
 ---
 # <a name="echo"></a>回應
 
@@ -29,7 +27,7 @@ echo [on | off]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | [ \| 關閉] | 開啟或關閉命令回顯功能。 命令回顯預設為開啟。 |
 | `<message>` | 指定要在螢幕上顯示的文字。 |
@@ -45,7 +43,7 @@ echo [on | off]
 
 - 若要避免回應批次檔中的特定命令，請 `@` 在命令前面插入一個登入。 若要避免回應批次檔中的所有命令，請在檔案的開頭包含**echo off**命令。
 
-- 若要在 `|` 使用 echo 時顯示管道（）或重新導向字元（ `<` 或 `>` ），請在管道或重新導向字元之前使用插入號**echo**（ `^` ）。 例如，、 `^|` `^>` 或 `^<` ）。 若要顯示插入號，請連續輸入兩個插入號（ `^^` ）。
+- 若要在 `|` 使用 echo 時顯示管道 () 或重新導向字元 (`<` 或 `>`) ，請在管道或重新導向字元之前使用插入號 (**echo** `^`) 。 例如，、 `^|` `^>` 或 `^<`) 。 若要顯示插入號，請連續輸入兩個插入號 (`^^`) 。
 
 ### <a name="examples"></a>範例
 
@@ -73,7 +71,7 @@ echo off
 > [!NOTE]
 > 當**echo**關閉時，命令提示字元視窗中不會出現命令提示字元。 若要再次顯示命令提示字元，請**在上輸入 echo**。
 
-若要防止批次檔中的所有命令（包括 [**回應關閉**] 命令）在畫面上顯示，請在批次處理檔案類型的第一行：
+若要防止批次檔中的所有命令 (包括 [**回應關閉**] 命令) 在螢幕上顯示，請在批次處理檔案類型的第一行：
 
 ```
 @echo off
@@ -104,7 +102,7 @@ echo This directory contains no text files.
 This directory contains no text files.
 ```
 
-當批次檔執行時，如果找到 .txt 檔案，就會顯示下列輸出（在此範例中，假設檔案 File1.txt、File2.txt 和 File3.txt 存在）：
+當批次檔執行時，如果找到 .txt 檔案，則會顯示此範例 (的下列輸出，假設檔案 File1.txt、File2.txt 和 File3.txt 存在) ：
 
 ```
 This directory contains the following text files:

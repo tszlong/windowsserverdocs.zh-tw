@@ -1,20 +1,18 @@
 ---
 title: eventcreate
 description: Eventcreate 命令的參考文章，可讓系統管理員在指定的事件記錄檔中建立自訂事件。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: f2b1b26d-a70e-49a6-832b-91eb5a1a159a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 60ed97eeffc8ae2410fdd8f296a0e8348f376652
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: bf5cc7e1c36dc0af7325172325a55edb314664ab
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925315"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890590"
 ---
 # <a name="eventcreate"></a>eventcreate
 
@@ -31,9 +29,9 @@ eventcreate [/s <computer> [/u <domain\user> [/p <password>]] {[/l {APPLICATION|
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- |------------ |
-| /s`<computer>` | 指定遠端電腦的名稱或 IP 位址（請勿使用反斜線）。 預設是本機電腦。 |
+| /s`<computer>` | 指定遠端電腦的名稱或 IP 位址， (不要使用反斜線) 。 預設是本機電腦。 |
 | u`<domain\user>` | 以或指定之使用者的帳戶許可權來執行命令 `<user>` `<domain\user>` 。 預設為發出命令之電腦上目前登入使用者的許可權。 |
 | /p`<password>` | 指定 **/u**參數中指定之使用者帳戶的密碼。 |
 | /l`{APPLICATION | SYSTEM}` | 指定將建立事件的事件記錄檔名稱。 有效的記錄檔名稱為**APPLICATION**或**SYSTEM**。 |

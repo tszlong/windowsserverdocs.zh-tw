@@ -1,20 +1,18 @@
 ---
 title: 檔案伺服器的效能微調
 description: 執行 Windows Server 的檔案伺服器效能微調
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 author: phstee
 ms.author: nedpyle; danlo; dkruse; v-tea
 ms.date: 12/12/2019
 manager: dcscontentpm
 audience: Admin
-ms.openlocfilehash: 1236b961f77fe46f19b70a2c48d32f05585bd29c
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 951d59a1a0e1d58a064eb71bd073259c15fd46d4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80851841"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896174"
 ---
 # <a name="performance-tuning-for-file-servers"></a>檔案伺服器的效能微調
 
@@ -95,24 +93,24 @@ ms.locfileid: "80851841"
 
     預設值是 10 秒。 這是目錄快取逾時。
 
-    > [!NOTE]  
+    > [!NOTE]
     > 此參數可控制沒有目錄租用時的目錄中繼資料快取。
-     
-     > [!NOTE]  
+
+     > [!NOTE]
      > Windows 10 版本 1803 中的已知問題會影響 Windows 10 快取大型目錄的能力。 將電腦升級至 Windows 10 版本 1803 之後，您可以存取包含上千個檔案和資料夾的網路共用，並開啟位於該共用上的文件。 在這兩項作業中，會感受到顯著的延遲。
-     >  
+     >
      > 若要解決此問題，請安裝 Windows 10 版本 1809 或更新版本。
-     >  
+     >
      > 若要因應此問題，請將 **DirectoryCacheLifetime** 設定為 **0**。
-     >  
-     > 此問題會影響下列的 Windows 10 版本：  
+     >
+     > 此問題會影響下列的 Windows 10 版本：
      > - Windows 10 企業版 (版本 1803)
      > - Windows 10 工作站專業版 (版本 1803)
      > - Windows 10 專業教育版 (版本 1803)
      > - Windows 10 專業版 (版本 1803)
      > - Windows 10 教育版 (版本 1803)
      > - Windows 10 家用版 (版本 1803)
-   
+
 -   **DirectoryCacheEntrySizeMax**
 
     ```
@@ -171,8 +169,8 @@ ms.locfileid: "80851841"
 
     適用於 Windows 10、Windows 8.1、Windows 8、Windows 7、Windows Vista、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 和 Windows Server 2008
 
-    預設值是 0，並停用 SMB 簽署。 將此值變更為 1 可啟用所有 SMB 通訊的 SMB 簽署，以防止 SMB 與停用 SMB 簽署的電腦通訊。 SMB 簽署可能增加 CPU 成本和網路往返，但可協助封鎖中間人攻擊。 如果 SMB 簽署並非必要，請確定所有用戶端和伺服器上的此登錄值均為 0。 
-    
+    預設值是 0，並停用 SMB 簽署。 將此值變更為 1 可啟用所有 SMB 通訊的 SMB 簽署，以防止 SMB 與停用 SMB 簽署的電腦通訊。 SMB 簽署可能增加 CPU 成本和網路往返，但可協助封鎖中間人攻擊。 如果 SMB 簽署並非必要，請確定所有用戶端和伺服器上的此登錄值均為 0。
+
     如需詳細資訊，請參閱 [SMB 簽署的基本概念](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/)。
 
 -   **FileInfoCacheEntriesMax**
@@ -237,7 +235,7 @@ ms.locfileid: "80851841"
 | FileNotFoundCacheEntriesMax | 32768 | 128     |
 | MaxCmds                     | 32768 | 15      |
 
- 
+
 
 從 Windows 8 開始，您可以使用 **Set-SmbClientConfiguration** 和 **Set-SmbServerConfiguration** Windows PowerShell Cmdlet 來設定其中許多 SMB 設定。 使用 Windows PowerShell 也可以設定僅限登錄的設定。
 

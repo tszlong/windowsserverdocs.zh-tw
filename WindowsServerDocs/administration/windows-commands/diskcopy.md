@@ -1,20 +1,18 @@
 ---
 title: diskcopy
 description: Diskcopy 命令的參考文章，它會將來源磁片磁碟機中的軟碟內容複寫到目的地磁片磁碟機中格式化或未格式化的磁片。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5fd21efa-52cc-4e70-a7fe-35125a435106
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/07/2018
-ms.openlocfilehash: 7b29e81dc1befff8cd90b460b1117207146fa191
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b385d7fb371b0e33bcf16b240b051ce038a525a7
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929345"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890941"
 ---
 # <a name="diskcopy"></a>diskcopy
 
@@ -28,7 +26,7 @@ diskcopy [<drive1>: [<drive2>:]] [/v]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<drive1>` | 指定包含來源磁片的磁片磁碟機。 |
 | /v | 確認已正確複製資訊。 此選項會使複製程式變慢。 |
@@ -74,7 +72,7 @@ diskcopy [<drive1>: [<drive2>:]] [/v]
 
 - **diskcopy**結束代碼：
 
-    | 結束碼 | 說明 |
+    | 結束碼 | 描述 |
     | --------- | ----------- |
     | 0 | 複製操作成功 |
     | 1 | 發生非嚴重的讀取/寫入錯誤 |

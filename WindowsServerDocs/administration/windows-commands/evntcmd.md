@@ -1,24 +1,22 @@
 ---
 title: evntcmd
 description: Evntcmd 命令的參考文章，其會根據設定檔中的資訊，將事件的轉譯設定為陷阱、陷阱目的地或兩者。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c1aabb74-76e7-4304-95a6-50ad87e92fd9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 291b13163f5c5a13442ed6dc80b769d0170df42e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 9610608000ce106ec321f721a4181658453d6348
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922789"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890543"
 ---
 # <a name="evntcmd"></a>evntcmd
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 會根據設定檔中的資訊，將事件的轉譯設定為陷阱、陷阱目的地或兩者。
 
@@ -30,7 +28,7 @@ evntcmd [/s <computername>] [/v <verbositylevel>] [/n] <filename>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | /s`<computername>` | 依名稱指定要將事件轉譯成陷阱、陷阱目的地或兩者的電腦。 如果您未指定電腦，則會在本機電腦上進行設定。 |
 | 停`<verbositylevel>` | 指定哪些類型的狀態訊息會顯示為「陷阱」和「設陷目的地」。 這個參數必須是介於0到10之間的整數。 如果您指定10，則會顯示所有類型的訊息，包括追蹤訊息以及是否已成功設定 trap 的警告。 如果您指定0，則不會出現任何訊息。 |
@@ -60,7 +58,7 @@ evntcmd [/s <computername>] [/v <verbositylevel>] [/n] <filename>
 
     - **Count**參數是選擇性的，它會指定在傳送陷阱訊息之前，事件必須發生多少次。 如果您未使用此參數，則會在事件發生一次之後傳送陷阱訊息。
 
-    - **Period**參數是選擇性的，但它需要您使用**count**參數。 **Period**參數會指定事件必須發生的時間長度（以秒為單位），在此期間內，在傳送 trap 訊息之前，使用**count**參數指定的次數。 如果您不使用此參數，則會在事件發生時，以***count***參數指定的次數來傳送陷阱訊息，不論發生的時間有多少。
+    - **Period**參數是選擇性的，但它需要您使用**count**參數。 **Period**參數會指定時間長度 (以秒為單位，) 在這段期間內，事件必須發生在傳送陷阱訊息之前，使用**count**參數指定的次數。 如果您不使用此參數，則會在事件發生時，以***count***參數指定的次數來傳送陷阱訊息，不論發生的時間有多少。
 
 - 移除陷阱的語法如下：
 

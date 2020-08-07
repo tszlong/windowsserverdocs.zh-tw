@@ -1,24 +1,22 @@
 ---
 title: dnscmd
 description: Dnscmd 命令的參考文章，這是用來管理 DNS 伺服器的命令列介面。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e7f31cb5-a426-4e25-b714-88712b8defd5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8c8d865643c12377a3f4b14250f9d3dbead1e2ac
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: bc034b86cc095b8bd23a8c0fd71f9da515474068
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958240"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890785"
 ---
 # <a name="dnscmd"></a>Dnscmd
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 管理 DNS 伺服器的命令列介面。 這個公用程式適用于腳本批次檔，可協助自動化例行的 DNS 管理工作，或在您的網路上執行簡單的自動安裝和設定新的 DNS 伺服器。
 
@@ -48,9 +46,9 @@ dnscmd [<servername>] /ageallrecords <zonename>[<nodename>] | [/tree]|[/f]
 
 | 參數 | 描述 |
 | ---------- | ----------- |
-| `<servername>` | 指定系統管理員計畫管理的 DNS 伺服器，以 IP 位址、完整功能變數名稱（FQDN）或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
+| `<servername>` | 指定系統管理員計畫管理的 DNS 伺服器，以 IP 位址、完整功能變數名稱表示 (FQDN) 或主機名稱。 如果省略此參數，則會使用本機伺服器。 |
 | `<zonename>` | 指定區域的 FQDN。 |
-| `<nodename>` | 使用下列內容指定區域中的特定節點或子樹：<ul><li>**@** 針對根區域或 FQDN</li><li>節點的 FQDN （結尾有句號（.）的名稱）</li><li>相對於區域根目錄之名稱的單一標籤。</li></ul> |
+| `<nodename>` | 使用下列內容指定區域中的特定節點或子樹：<ul><li>**@** 針對根區域或 FQDN</li><li>節點的 FQDN (名稱 ( 的句點。 ) 在結尾) </li><li>相對於區域根目錄之名稱的單一標籤。</li></ul> |
 | /tree | 指定所有子節點也會接收時間戳記。 |
 | /f | 執行命令而不要求確認。 |
 
@@ -58,7 +56,7 @@ dnscmd [<servername>] /ageallrecords <zonename>[<nodename>] | [/tree]|[/f]
 
 - **Ageallrecords**命令是為了讓目前版本的 dns 與舊版的 dns （不支援過時和清除）之間的回溯相容性。 它會將目前時間的時間戳記新增至沒有時間戳記的資源記錄，並在具有時間戳記的資源記錄上設定目前的時間。
 
-- 記錄清除不會發生，除非記錄有時間戳記。 [名稱伺服器（NS）] 資源記錄、[啟動授權（SOA）] 資源記錄和 [Windows 網際網路名稱服務（WINS）] 資源記錄不會包含在清除程式中，而且即使在**ageallrecords**命令執行時也不會加上時間戳記。
+- 記錄清除不會發生，除非記錄有時間戳記。 名稱伺服器 (NS) 資源記錄、開始授權 (SOA) 資源記錄，以及 Windows 網際網路名稱服務 (WINS) 資源記錄不會包含在清除程式中，而且即使**ageallrecords**命令執行時也不會加上時間戳記。
 
 - 此命令會失敗，除非已啟用 DNS 伺服器和區域的清除。 如需如何啟用區域清除的相關資訊，請參閱本文中命令語法內的**過時**參數 `dnscmd /config` 。
 
@@ -97,7 +95,7 @@ dnscmd dnssvr1.contoso.com /clearcache
 變更登錄中 DNS 伺服器和個別區域的值。 此命令也會修改指定之伺服器的設定。 接受伺服器層級和區域層級的設定。
 
 > [!CAUTION]
-> 請勿直接編輯登錄，除非您沒有替代方案。 登錄編輯程式會略過標準保護，允許降低效能、損毀您的系統，甚至要求您重新安裝 Windows 的設定。 您可以使用 [控制台] 或 Microsoft Management Console （mmc）中的程式，安全地改變大部分的登錄設定。 如果您必須直接編輯登錄，請先備份。 如需詳細資訊，請參閱登錄編輯程式說明。
+> 請勿直接編輯登錄，除非您沒有替代方案。 登錄編輯程式會略過標準保護，允許降低效能、損毀您的系統，甚至要求您重新安裝 Windows 的設定。 您可以使用 [控制台] 中的程式或 Microsoft Management Console (mmc) ，安全地改變大部分的登錄設定。 如果您必須直接編輯登錄，請先備份。 如需詳細資訊，請參閱登錄編輯程式說明。
 
 ### <a name="server-level-syntax"></a>伺服器層級語法
 
@@ -111,50 +109,50 @@ dnscmd [<servername>] /config <parameter>
 | ---------- | ----------- |
 | `<servername>` | 指定您打算管理的 DNS 伺服器，以本機電腦語法、IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<parameter>` | 指定一個設定和一個值做為選項。 參數值使用此語法：*參數*[*值*]。 |
-| /addressanswerlimit`[0|5-28]` | 指定 DNS 伺服器可以傳送以回應查詢的最大主機記錄數目。 此值可以是零（0），也可以在5到28筆記錄的範圍內。 預設值為零 (0)。 |
+| /addressanswerlimit`[0|5-28]` | 指定 DNS 伺服器可以傳送以回應查詢的最大主機記錄數目。 此值可以是零 (0) ，也可以在5到28筆記錄的範圍內。 預設值為零 (0)。 |
 | /bindsecondaries`[0|1]` | 變更區域傳輸的格式，讓它可以達到最大的壓縮和效率。 接受值：<ul><li>**0** -使用最大壓縮，而且與僅限系結版本4.9.4 和更新版本相容</li><li>**1** -只將每個訊息的一個資源記錄傳送到非 Microsoft DNS 伺服器，並且與4.9.4 之前的 BIND 版本相容。 這是預設值。</li></ul> |
 | /bootmethod`[0|1|2|3]` | 決定 DNS 伺服器取得其設定資訊的來源。 接受值：<ul><li>**0** -清除設定資訊的來源。</li><li>**1** -從位於 DNS 目錄（預設為）的 BIND 檔案載入 `%systemroot%\System32\DNS` 。</li><li>**2** -從登錄載入。</li><li>**3** -從 AD DS 和登錄載入。 這是預設值。</li></ul> |
 | /defaultagingstate`[0|1]` | 判斷新建立的區域上是否預設啟用 DNS 清除功能。 接受值：<ul><li>**0** -停用清除。 這是預設值。</li><li>**1** -啟用清除。</li></ul> |
 | /defaultnorefreshinterval`[0x1-0xFFFFFFFF|0xA8]` | 設定動態更新記錄不接受重新整理的一段時間。 伺服器上的區域會自動繼承此值。<p>若要變更預設值，請輸入**0x1-0xffffffff**範圍中的值。 伺服器的預設值為**0xA8**。 |
 | /defaultrefreshinterval`[0x1-0xFFFFFFFF|0xA8]` | 設定允許動態更新 DNS 記錄的一段時間。 伺服器上的區域會自動繼承此值。<p>若要變更預設值，請輸入**0x1-0xffffffff**範圍中的值。 伺服器的預設值為**0xA8**。 |
-| /disableautoreversezones`[0|1]` | 啟用或停用自動建立反向對應區域。 反向對應區域可為 DNS 功能變數名稱提供網際網路通訊協定（IP）位址的解析。 接受值：<ul><li>**0** -啟用反向對應區域的自動建立。 這是預設值。</li><li>**1** -停用自動建立反向對應區域。</li></ul> |
-| /disablensrecordsautocreation`[0|1]` | 指定 DNS 伺服器是否自動為其主控的區域建立名稱伺服器（NS）資源記錄。 接受值：<ul><li>**0** -自動為 DNS 伺服器所裝載的區域建立名稱伺服器（NS）資源記錄。</li><li>**1** -不會自動為 DNS 伺服器所裝載的區域建立名稱伺服器（NS）資源記錄。</li></ul> |
+| /disableautoreversezones`[0|1]` | 啟用或停用自動建立反向對應區域。 反向對應區域可為 DNS 功能變數名稱提供網際網路通訊協定 (IP) 位址的解析。 接受值：<ul><li>**0** -啟用反向對應區域的自動建立。 這是預設值。</li><li>**1** -停用自動建立反向對應區域。</li></ul> |
+| /disablensrecordsautocreation`[0|1]` | 指定 DNS 伺服器是否會針對其主控的區域，自動建立名稱伺服器 (NS) 資源記錄。 接受值：<ul><li>**0** -自動為 DNS 伺服器所裝載的區域建立名稱伺服器 (NS) 資源記錄。</li><li>**1** -不會自動為 DNS 伺服器所裝載的區域建立名稱伺服器 (NS) 資源記錄。</li></ul> |
 | /dspollinginterval`[0-30]` | 指定 DNS 伺服器輪詢 AD DS active directory 整合區域中變更的頻率。 |
 | /dstombstoneinterval`[1-30]` |AD DS 中保留已刪除記錄的時間量（以秒為單位）。 |
-| /ednscachetimeout`[3600-15724800]` | 指定快取擴充 DNS （EDNS）資訊的秒數。 最小值為**3600**，而最大值為**15724800**。 預設值為**604800**秒（一周）。 |
+| /ednscachetimeout`[3600-15724800]` | 指定快取擴充 DNS (EDNS) 資訊的秒數。 最小值為**3600**，而最大值為**15724800**。 預設值為**604800**秒 (一周) 。 |
 | /enableednsprobes`[0|1]` | 啟用或停用伺服器來探查其他伺服器，以判斷是否支援 EDNS。 接受值：<ul><li>**0** -停用 EDNS 探查的主動支援。</li><li>**1** -啟用對 EDNS 探查的主動支援。</li></ul> |
-| /enablednssec`[0|1]` | 啟用或停用 DNS 安全性延伸模組（DNSSEC）的支援。 接受值：<ul><li>**0** -停用 DNSSEC。</li><li>**1** -啟用 DNSSEC。</li></ul> |
+| /enablednssec`[0|1]` | 啟用或停用 (DNSSEC) 的 DNS 安全性延伸模組支援。 接受值：<ul><li>**0** -停用 DNSSEC。</li><li>**1** -啟用 DNSSEC。</li></ul> |
 | /enableglobalnamessupport`[0|1]` | 啟用或停用 GlobalNames 區域的支援。 GlobalNames 區域支援跨樹系解析單一標籤 DNS 名稱。 接受值：<ul><li>**0** -停用 GlobalNames 區域的支援。 當您將此命令的值設定為0時，DNS 伺服器服務不會解析 GlobalNames 區域中的單一標籤名稱。</li><li>**1** -啟用 GlobalNames 區域的支援。 當您將此命令的值設定為1時，DNS 伺服器服務會解析 GlobalNames 區域中的單一標籤名稱。</li></ul> |
 | /enableglobalqueryblocklist`[0|1]` | 啟用或停用全域查詢封鎖清單的支援，這會封鎖清單中名稱的名稱解析。 當服務第一次啟動時，DNS 伺服器服務預設會建立並啟用全域查詢封鎖清單。 若要查看目前的全域查詢封鎖清單，請使用 dnscmd/info **/globalqueryblocklist**命令。 接受值：<ul><li>**0** -停用全域查詢封鎖清單的支援。 當您將此命令的值設定為0時，DNS 伺服器服務會回應封鎖清單中的名稱查詢。</li><li>**1** -啟用全域查詢封鎖清單的支援。 當您將此命令的值設定為1時，DNS 伺服器服務不會回應封鎖清單中的名稱查詢。</li></ul> |
 | /eventloglevel`[0|1|2|4]` | 判斷哪些事件會記錄在事件檢視器的 DNS 伺服器記錄中。 接受值：<ul><li>**0** -不記錄任何事件。</li><li>**1** -只記錄錯誤。</li><li>**2** -僅記錄錯誤和警告。</li><li>**4** -記錄錯誤、警告和參考事件。 這是預設值。</li></ul> |
 | /forwarddelegations`[0|1]` | 決定 DNS 伺服器如何處理委派子領域的查詢。 這些查詢可以傳送到查詢中所參考的子領域或 DNS 伺服器名稱為的轉寄站清單。 只有在啟用轉送時，才會使用設定中的專案。 接受值：<ul><li>**0** -自動將參考委派 subzones 的查詢傳送至適當的子領域。 這是預設值。</li><li>**1** -將參考委派子領域的查詢轉送至現有的轉寄站。</li></ul> |
-| /forwardingtimeout`[<seconds>]` | 決定 DNS 伺服器在嘗試另一個轉寄站之前，等待轉寄站回應的秒數（**0x1-0xffffffff**）。 預設值為**0x5**，這是5秒。 |
+| /forwardingtimeout`[<seconds>]` | 判斷在嘗試另一個轉寄站之前， (**0x1-0xffffffff**) DNS 伺服器等候轉寄站回應的秒數。 預設值為**0x5**，這是5秒。 |
 | /globalneamesqueryorder`[0|1]` | 指定 DNS 伺服器服務解析名稱時，是否要先在 GlobalNames 區域或本機區域中查看。 接受值：<ul><li>**0** -DNS 伺服器服務會在查詢已授權的區域之前，先查詢 GlobalNames 區域，藉以嘗試解析名稱。</li><li>**1** -DNS 伺服器服務會在查詢 GlobalNames 區域之前，先查詢其是否已授權的區域，藉以嘗試解析名稱。</li></ul> |
 | /globalqueryblocklist`[[<name> [<name>]...]` | 以您指定的名稱清單取代目前的全域查詢封鎖清單。 如果您未指定任何名稱，此命令會清除封鎖清單。 根據預設，全域查詢封鎖清單會包含下列專案：<ul><li>isatap</li><li>wpad</li></ul>第一次啟動時，DNS 伺服器服務可以移除其中一或兩個名稱，如果它在現有的區域中找到這些名稱。 |
 | /isslave`[0|1]` | 決定 DNS 伺服器轉送的查詢不會收到任何回應時的回應方式。 接受值：<ul><li>**0** -指定 DNS 伺服器不是從屬。 如果轉寄站沒有回應，DNS 伺服器會嘗試解析查詢本身。 這是預設值。</li><li>**1** -指定 DNS 伺服器為從屬。 如果轉寄站沒有回應，DNS 伺服器會終止搜尋，並將失敗訊息傳送給解決器。</li></ul> |
 | /localnetpriority`[0|1]` | 決定當 DNS 伺服器有多個相同名稱的主機記錄時，傳回主機記錄的順序。 接受值：<ul><li>**0** -傳回記錄，依其在 DNS 資料庫中列出的順序。</li><li>**1** -先傳回具有類似 IP 網路位址的記錄。 這是預設值。</li></ul> |
-| /logfilemaxsize`[<size>]` | 指定 Dns .log 檔案的大小上限（以位元組為單位）（**0x10000-0xffffffff**）。 當檔案達到其大小上限時，DNS 會覆寫最舊的事件。 預設大小是**0x400000**，也就是 4 mb。 |
+| /logfilemaxsize`[<size>]` | 指定 Dns .log 檔案 (**0x10000-0xffffffff**) 的大小上限（以位元組為單位）。 當檔案達到其大小上限時，DNS 會覆寫最舊的事件。 預設大小為**0x400000**，這是 4 MB (mb) 。 |
 | /logfilepath`[<path+logfilename>]` | 指定 Dns .log 檔案的路徑。 預設路徑為 `%systemroot%\System32\Dns\Dns.log`。 您可以使用格式來指定不同的路徑 `path+logfilename` 。 |
 | /logipfilterlist`<IPaddress> [,<IPaddress>...]` | 指定要記錄在 debug 記錄檔中的封包。 這些專案是 IP 位址的清單。 只會記錄傳入和傳出清單中 IP 位址的封包。 |
-| /loglevel`[<eventtype>]` | 判斷哪些類型的事件會記錄在 Dns .log 檔案中。 每個事件種類都是以十六進位數位來表示。 如果您想要在記錄檔中有多個事件，請使用十六進位新增來加入值，然後輸入總和。 接受值：<ul><li>**0x0** -DNS 伺服器不會建立記錄檔。 這是預設專案。</li><li>**0x10** -記錄查詢和通知。</li><li>**0x20** -記錄更新。</li><li>**0xFE** -記錄 nonquery 交易。</li><li>**0x100** -記錄問題交易。</li><li>**0x200** -記錄解答。</li><li>**0x1000** -記錄傳送封包。</li><li>**0x2000** -記錄接收封包。</li><li>**0x4000** -記錄使用者資料包協定（UDP）封包。</li><li>**0x8000** -記錄傳輸控制通訊協定（TCP）封包。</li><li>**0xffff** -記錄所有封包。</li><li>**0x10000** -記錄 active directory 寫入交易。</li><li>**0x20000** -記錄 active directory 更新交易。</li><li>**0x1000000** -記錄完整封包。</li><li>**0x80000000** -記錄寫入交易。</li><li></ul> |
-| /maxcachesize | 指定 DNS 伺服器的記憶體快取大小上限（以 kb 為單位）。 |
-| /maxcachettl`[<seconds>]` | 決定記錄儲存在快取中的秒數（**0x0-0xffffffff**）。 如果使用**0x0**設定，DNS 伺服器就不會快取記錄。 預設設定為**0x15180** （86400秒或1天）。 |
-| /maxnegativecachettl`[<seconds>]` | 指定在查詢中記錄負面回應的秒數（**0x1-0xffffffff**）會保留儲存在 DNS 快取中。 預設設定為 [ **0x384** （900秒）]。 |
-| /namecheckflag`[0|1|2|3]` | 指定檢查 DNS 名稱時使用的字元標準。 接受值：<ul><li>**0** -使用符合網際網路工程任務推動小組（IETF）要求建議（rfc）的 ANSI 字元。</li><li>**1** -使用不一定符合 IETF RFC 的 ANSI 字元。</li><li>**2** -使用多位元組的 UCS 轉換格式8（utf-8）字元。 這是預設值。</li><li>**3** -使用所有字元。</li></ul> |
+| /loglevel`[<eventtype>]` | 判斷哪些類型的事件會記錄在 Dns .log 檔案中。 每個事件種類都是以十六進位數位來表示。 如果您想要在記錄檔中有多個事件，請使用十六進位新增來加入值，然後輸入總和。 接受值：<ul><li>**0x0** -DNS 伺服器不會建立記錄檔。 這是預設專案。</li><li>**0x10** -記錄查詢和通知。</li><li>**0x20** -記錄更新。</li><li>**0xFE** -記錄 nonquery 交易。</li><li>**0x100** -記錄問題交易。</li><li>**0x200** -記錄解答。</li><li>**0x1000** -記錄傳送封包。</li><li>**0x2000** -記錄接收封包。</li><li>**0x4000** -記錄使用者資料包通訊協定 (UDP) 封包。</li><li>**0x8000** -記錄傳輸控制通訊協定 (TCP) 封包。</li><li>**0xffff** -記錄所有封包。</li><li>**0x10000** -記錄 active directory 寫入交易。</li><li>**0x20000** -記錄 active directory 更新交易。</li><li>**0x1000000** -記錄完整封包。</li><li>**0x80000000** -記錄寫入交易。</li><li></ul> |
+| /maxcachesize | 指定 DNS 伺服器的記憶體快取大小上限（以 kb (KB) ）。 |
+| /maxcachettl`[<seconds>]` | 判斷記錄儲存在快取中的秒數 (**0x0-0xffffffff**) 。 如果使用**0x0**設定，DNS 伺服器就不會快取記錄。 預設設定為**0x15180** (86400 秒或1天) 。 |
+| /maxnegativecachettl`[<seconds>]` | 指定 (**0x1-0xffffffff**的秒數) 輸入查詢的負面答案的專案會保留在 DNS 快取中。 預設設定為**0x384** (900 秒) 。 |
+| /namecheckflag`[0|1|2|3]` | 指定檢查 DNS 名稱時使用的字元標準。 接受值：<ul><li>**0** -使用符合網際網路工程任務推動小組 (IETF) 要求 (rfc) 的 ANSI 字元。</li><li>**1** -使用不一定符合 IETF RFC 的 ANSI 字元。</li><li>**2** -使用多位元組的 UCS 轉換格式 8 (utf-8) 字元。 這是預設值。</li><li>**3** -使用所有字元。</li></ul> |
 | /norecursion`[0|1]` | 判斷 DNS 伺服器是否執行遞迴名稱解析。 接受值：<ul><li>**0** -如果在查詢中要求 DNS 伺服器，則會執行遞迴名稱解析。 這是預設值。</li><li>**1** -DNS 伺服器不會執行遞迴名稱解析。</li></ul> |
 | /notcp | 這個參數已過時，在目前的 Windows Server 版本中並沒有任何作用。 |
-| /recursionretry`[<seconds>]` | 決定 DNS 伺服器在再次嘗試連線到遠端伺服器之前等待的秒數（**0x1-0xffffffff**）。 預設設定為**0x3** （三秒）。 當遞迴發生在緩慢的廣域網路（WAN）連結上時，應該增加此值。 |
-| /recursiontimeout`[<seconds>]` | 決定 DNS 伺服器在停嘗試連接遠端伺服器之前等待的秒數（**0x1-0xffffffff**）。 設定的範圍是從**0x1**到**0xffffffff**。 預設設定為**0xF** （15秒）。 當透過慢速 WAN 連結進行遞迴時，應該增加此值。 |
+| /recursionretry`[<seconds>]` | 決定 DNS 伺服器在再次嘗試連線到遠端伺服器之前等待的秒數 (**0x1-0xffffffff**) 。 預設設定為 [ **0x3** (三秒]) 。 當透過低速廣域網路 (WAN) 連結進行遞迴時，應該增加此值。 |
+| /recursiontimeout`[<seconds>]` | 決定 DNS 伺服器在停嘗試連線到遠端伺服器之前等待的秒數 (**0x1-0xffffffff**) 。 設定的範圍是從**0x1**到**0xffffffff**。 預設設定為**0xF** (15 秒) 。 當透過慢速 WAN 連結進行遞迴時，應該增加此值。 |
 | /roundrobin`[0|1]` | 決定當伺服器具有相同名稱的多個主機記錄時，傳回主機記錄的順序。 接受值：<ul><li>**0** -DNS 伺服器不使用迴圈配置資源。 相反地，它會傳回第一筆記錄給每個查詢。</li><li>**1** -DNS 伺服器會在所傳回的記錄中，從頂端到相符記錄清單的底部旋轉。 這是預設值。</li></ul> |
-| /rpcprotocol`[0x0|0x1|0x2|0x4|0xFFFFFFFF]` | 指定遠端程序呼叫（RPC）從 DNS 伺服器建立連線時所使用的通訊協定。 接受值：<ul><li>**0x0** -停用 DNS 的 RPC。</li><li>**0x01** -使用 tcp/ip</li><li>**0x2** -使用具名管道。</li><li>**0x4** -使用本機程序呼叫（LPC）。</li><li>**0xffffffff** -所有通訊協定。 這是預設值。</li></ul> |
-| /scavenginginterval`[<hours>]` | 判斷 DNS 伺服器的清除功能是否已啟用，並設定清除迴圈之間的時數（**0x0-0xffffffff**）。 預設設定為 [ **0x0**]，這會停用 DNS 伺服器的清除。 大於**0x0**的設定會啟用伺服器的清除，並設定清除週期之間的時數。 |
+| /rpcprotocol`[0x0|0x1|0x2|0x4|0xFFFFFFFF]` | 指定遠端程序呼叫 (RPC) 在從 DNS 伺服器進行連線時所使用的通訊協定。 接受值：<ul><li>**0x0** -停用 DNS 的 RPC。</li><li>**0x01** -使用 tcp/ip</li><li>**0x2** -使用具名管道。</li><li>**0x4** -使用本機程序呼叫， (LPC) 。</li><li>**0xffffffff** -所有通訊協定。 這是預設值。</li></ul> |
+| /scavenginginterval`[<hours>]` | 判斷 DNS 伺服器的清除功能是否已啟用，並設定清除迴圈之間 (**0x0-0xffffffff**) 的時數。 預設設定為 [ **0x0**]，這會停用 DNS 伺服器的清除。 大於**0x0**的設定會啟用伺服器的清除，並設定清除週期之間的時數。 |
 | /secureresponses`[0|1]` | 判斷 DNS 是否篩選儲存在快取中的記錄。 接受值：<ul><li>**0** -將名稱查詢的所有回應儲存至快取。 這是預設值。</li><li>**1** -只將屬於相同 DNS 子樹的記錄儲存至快取。</li></ul> |
-| /sendport`[<port>]` | 指定 DNS 用來將遞迴查詢傳送至其他 DNS 伺服器的埠號碼（**0x0-0xffffffff**）。 預設設定為 [ **0x0**]，表示會隨機選取埠號碼。 |
+| /sendport`[<port>]` | 指定 DNS 用來將遞迴查詢傳送至其他 DNS 伺服器的埠號碼 (**0x0-0xffffffff**) 。 預設設定為 [ **0x0**]，表示會隨機選取埠號碼。 |
 | /serverlevelplugindll`[<dllpath>]` | 指定自訂外掛程式的路徑。 當 Dllpath 指定有效 DNS 伺服器外掛程式的完整路徑名稱時，DNS 伺服器會呼叫外掛程式中的函式，以解析不在所有本機裝載區域範圍內的名稱查詢。 如果查詢的名稱超出外掛程式的範圍，DNS 伺服器會依照設定的方式，使用轉送或遞迴來執行名稱解析。 如果未指定 Dllpath，則 DNS 伺服器會在先前已設定自訂外掛程式時，停止使用自訂外掛程式。 |
 | /strictfileparsing`[0|1]` | 決定 DNS 伺服器在載入區域時遇到錯誤記錄時的行為。 接受值：<ul><li>**0** -即使伺服器遇到錯誤記錄，DNS 伺服器仍會繼續載入區域。 此錯誤會記錄在 DNS 記錄檔中。 這是預設值。</li><li>**1** -dns 伺服器會停止載入區域，並在 dns 記錄檔中記錄錯誤。</li></ul> |
-| /updateoptions`<RecordValue>` | 禁止動態更新指定類型的記錄。 如果您想要在記錄中禁止一個以上的記錄類型，請使用十六進位新增來加入值，然後輸入總和。 接受值：<ul><li>**0x0** -不會限制任何記錄類型。</li><li>**0x1** -排除啟動授權（SOA）資源記錄。</li><li>**0x2** -排除名稱伺服器（NS）資源記錄。</li><li>**0x4** -排除名稱伺服器（NS）資源記錄的委派。</li><li>**0x8** -排除伺服器主機記錄。</li><li>**0x100** -在安全動態更新期間，不包括啟動授權（SOA）資源記錄。</li><li>**0x200** -在安全動態更新期間，會排除根名稱伺服器（NS）資源記錄。</li><li>**0x30F** -在標準動態更新期間，不包括名稱伺服器（NS）資源記錄、啟動授權（SOA）資源記錄，以及伺服器主機記錄。 在安全動態更新期間，會排除根名稱伺服器（NS）資源記錄和啟動授權（SOA）資源記錄。 允許委派和伺服器主機更新。</li><li>**0x400** -在安全動態更新期間，會排除委派名稱伺服器（NS）資源記錄。</li><li>**0x800** -在安全動態更新期間，會排除伺服器主機記錄。</li><li>**0x1000000** -排除委派簽署者（DS）記錄。</li><li>**0x80000000** -停用 DNS 動態更新。</li></ul> |
-| /writeauthorityns`[0|1]` | 決定 DNS 伺服器何時將名稱伺服器（NS）資源記錄寫入回應的授權區段中。 接受值：<ul><li>**0** -僅在參考的 [授權] 區段中寫入名稱伺服器（NS）資源記錄。 這種設定符合 Rfc 1034、功能變數名稱概念和設備，以及 Rfc 2181，會向 DNS 規格說明。 這是預設值。</li><li>**1** -在所有成功的授權回應的 [授權] 區段中寫入名稱伺服器（NS）資源記錄。</li></ul> |
-| /xfrconnecttimeout`[<seconds>]` | 決定主要 DNS 伺服器等候其次要伺服器傳送回應的秒數（**0x0-0xffffffff**）。 預設值為**0x1E** （30秒）。 超時值過期之後，連接就會終止。 |
+| /updateoptions`<RecordValue>` | 禁止動態更新指定類型的記錄。 如果您想要在記錄中禁止一個以上的記錄類型，請使用十六進位新增來加入值，然後輸入總和。 接受值：<ul><li>**0x0** -不會限制任何記錄類型。</li><li>**0x1** -排除 (SOA) 資源記錄的啟動授權單位。</li><li>**0x2** -排除名稱伺服器 (NS) 資源記錄。</li><li>**0x4** -排除名稱伺服器 (NS) 資源記錄的委派。</li><li>**0x8** -排除伺服器主機記錄。</li><li>**0x100** -在安全動態更新期間，不包括) 資源記錄的 (SOA 啟動授權。</li><li>**0x200** -在安全動態更新期間，會排除根名稱伺服器 (NS) 資源記錄。</li><li>**0x30F** -在標準動態更新期間，會排除名稱伺服器 (NS) 資源記錄、啟動授權 (SOA) 資源記錄，以及伺服器主機記錄。 在安全動態更新期間，會排除根名稱伺服器 (NS) 資源記錄，並啟動 (SOA) 資源記錄的許可權。 允許委派和伺服器主機更新。</li><li>**0x400** -在安全動態更新期間，會排除委派名稱伺服器 (NS) 資源記錄。</li><li>**0x800** -在安全動態更新期間，會排除伺服器主機記錄。</li><li>**0x1000000** -排除委派簽署者 (DS) 記錄。</li><li>**0x80000000** -停用 DNS 動態更新。</li></ul> |
+| /writeauthorityns`[0|1]` | 判斷 DNS 伺服器何時會在回應的授權區段中，將名稱伺服器寫入 (NS) 資源記錄。 接受值：<ul><li>**0** -僅在參考的 [授權] 區段中，將名稱伺服器 (NS) 資源記錄。 這種設定符合 Rfc 1034、功能變數名稱概念和設備，以及 Rfc 2181，會向 DNS 規格說明。 這是預設值。</li><li>**1** -在所有成功的授權回應的 [授權] 區段中，將名稱伺服器 (NS) 資源記錄。</li></ul> |
+| /xfrconnecttimeout`[<seconds>]` | 決定 (**0x0-0xffffffff**) 主要 DNS 伺服器等候來自其次要伺服器之傳輸回應的秒數。 預設值為**0x1E** (30 秒) 。 超時值過期之後，連接就會終止。 |
 
 ### <a name="zone-level-syntax"></a>區域層級語法
 
@@ -170,7 +168,7 @@ dnscmd /config <parameters>
 | ---------- | ----------- |
 | `<parameter>` | 指定設定、區功能變數名稱稱，以及做為選項（值）。 參數值使用此語法： `zonename parameter [value]` 。 |
 | /aging`<zonename>`| 啟用或停用特定區域中的清除。 |
-| /allownsrecordsautocreation `<zonename>``[value]` | 覆寫 DNS 伺服器的名稱伺服器（NS）資源記錄 autocreation 設定。 先前為此區域註冊的名稱伺服器（NS）資源記錄不會受到影響。 因此，如果您不想要的話，必須手動將它們移除。 |
+| /allownsrecordsautocreation `<zonename>``[value]` | 覆寫 DNS 伺服器的名稱伺服器 (NS) 資源記錄 autocreation 設定。 名稱伺服器 (NS) 先前為此區域註冊的資源記錄不會受到影響。 因此，如果您不想要的話，必須手動將它們移除。 |
 | /allowupdate`<zonename>` | 判斷指定的區域是否接受動態更新。 |
 | /forwarderslave`<zonename>` | 覆寫 DNS 伺服器 **/isslave**設定。 |
 | /forwardertimeout`<zonename>` | 決定 DNS 區域在嘗試另一個轉寄站之前，等待轉寄站回應的秒數。 這個值會覆寫在伺服器層級設定的值。 |
@@ -349,7 +347,7 @@ dnscmd [<servername>] /enumzones [/primary | /secondary | /forwarder | /stub | /
 
 #### <a name="examples"></a>範例
 
-- [範例2：顯示 DNS 伺服器上的完整區域清單](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-2-display-a-complete-list-of-zones-on-a-dns-server)）
+- [範例2：在 DNS 伺服器上顯示完整的區域清單](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-2-display-a-complete-list-of-zones-on-a-dns-server)) 
 
 - [範例3：顯示 DNS 伺服器上的由區域清單](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-3-display-a-list-of-autocreated-zones-on-a-dns-server)
 
@@ -732,7 +730,7 @@ dnscmd [<servername>] /zonedelete <zonename> [/dsdel] [/f]
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<zonename>` | 指定要刪除之區域的名稱。 |
-| /dsdel | 從 Azure Directory 網域服務（AD DS）中刪除區域。 |
+| /dsdel | 從 Azure Directory 網域服務 (AD DS) 中刪除區域。 |
 | /f | 執行命令而不要求確認。 |
 
 #### <a name="examples"></a>範例
@@ -860,7 +858,7 @@ dnscmd [<servername>] /zonerefresh <zonename>
 
 ##### <a name="remarks"></a>備註
 
-- **Zonerefresh**命令會強制檢查主伺服器 s 啟動授權（SOA）資源記錄中的版本號碼。 如果主伺服器上的版本號碼高於次要伺服器的版本號碼，就會起始更新次要伺服器的區域轉送。 如果版本號碼相同，則不會進列區域轉送。
+- **Zonerefresh**命令會強制檢查主伺服器 s (SOA) 資源記錄中的版本號碼。 如果主伺服器上的版本號碼高於次要伺服器的版本號碼，就會起始更新次要伺服器的區域轉送。 如果版本號碼相同，則不會進列區域轉送。
 
 - 強制檢查預設會每隔15分鐘執行一次。 若要變更預設值，請使用 `dnscmd config refreshinterval` 命令。
 
@@ -889,7 +887,7 @@ dnscmd [<servername>] /zonereload <zonename>
 
 ##### <a name="remarks"></a>備註
 
-- 如果區域已整合 active directory，它會從 Active Directory Domain Services （AD DS）重載。
+- 如果區域已整合 active directory，它會從 Active Directory Domain Services (AD DS) 重載。
 
 - 如果該區域是標準的檔案支援區域，則會從檔案重載。
 
@@ -981,7 +979,7 @@ dnscmd [<servername>] /zoneresetsecondaries <zonename> {/noxfr | /nonsecure | /s
 | /local | 設定本機主要清單。 此參數用於 active directory 整合區域。 |
 | /noxfr | 指定不允許區域轉送。 |
 | /nonsecure | 指定授與所有區域轉送要求。 |
-| /securens | 指定只會授與區域的名稱伺服器（NS）資源記錄中所列伺服器的傳輸。 |
+| /securens | 指定只會授與區域的名稱伺服器 (NS) 資源記錄中所列伺服器的傳輸。 |
 | /securelist | 指定僅將區域轉送授與伺服器清單。 此參數後面必須加上主伺服器所使用的 IP 位址或位址。 |
 | `<securityIPaddresses>` | 列出接收來自主伺服器之區域傳輸的 IP 位址。 這個參數只能搭配 **/securelist**參數使用。 |
 | /nonotify | 指定不將任何變更通知傳送到次要伺服器。 |
@@ -1112,6 +1110,6 @@ dnscmd [<servername>] /zonewriteback <zonename>
 dnscmd dnssvr1.contoso.com /zonewriteback test.contoso.com
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

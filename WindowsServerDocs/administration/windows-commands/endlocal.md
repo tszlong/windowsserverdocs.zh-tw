@@ -1,20 +1,18 @@
 ---
 title: endlocal
 description: Endlocal 命令的參考文章，會在批次檔中結束環境變更的當地語系化，並在執行對應的 setlocal 命令之前，將環境變數還原到其值。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 765fae3c-0c0a-4639-99a4-cf613489b949
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a17ef4b25a0b0bb4d77068aa3bff3d879955aec5
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a7b4b95b38fc3b7bd333c131296bf07bbabeb378
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932125"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890606"
 ---
 # <a name="endlocal"></a>endlocal
 
@@ -28,7 +26,7 @@ endlocal
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | /? | 在命令提示字元顯示說明。 |
 
@@ -38,7 +36,7 @@ endlocal
 
 - 批次檔的結尾處有隱含的**endlocal**命令。
 
-- 如果已啟用命令延伸模組（預設會啟用命令延伸模組）， **endlocal**命令會將命令延伸模組的狀態（也就是啟用或停用）還原為執行對應的**setlocal**命令之前的內容。
+- 如果已啟用命令延伸模組 (預設會啟用命令延伸模組) ， **endlocal**命令會將命令 (延伸模組的狀態（啟用或停用) ）還原為執行對應的**setlocal**命令之前的內容。
 
 > [!NOTE]
 > 如需有關啟用和停用命令延伸模組的詳細資訊，請參閱[Cmd 命令](cmd.md)。

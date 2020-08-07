@@ -1,24 +1,22 @@
 ---
 title: tscon
-description: Tscon 的參考文章，它會連接到遠端桌面工作階段主機（rd 工作階段主機）伺服器上的另一個會話。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Tscon 的參考文章，它會連接到遠端桌面工作階段主機 (rd 工作階段主機) 伺服器上的另一個會話。
 ms.topic: article
 ms.assetid: 315a9793-cd10-4987-bb68-89a9d13f7fce
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 83f8778d73d022ed41fcab14795eb3cdf41dc6cf
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 96f23a310d1cf9b1843194ee233b84f69c84bb0c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954940"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897086"
 ---
 # <a name="tscon"></a>tscon
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 連接到遠端桌面工作階段主機伺服器上的另一個會話。
 
@@ -62,6 +60,6 @@ tscon {<SessionID> | <SessionName>} [/dest:<SessionName>] [/password:<pw> | /pas
   ```
   tscon TERM03 /v /dest:TERM05
   ```
-  ## <a name="additional-references"></a>其他參考
+  ## <a name="additional-references"></a>其他參考資料
   - [命令列語法索引鍵](command-line-syntax-key.md) 
-  [遠端桌面服務（終端機服務）命令參考](remote-desktop-services-terminal-services-command-reference.md)
+  [遠端桌面服務 (終端機服務) 命令參考](remote-desktop-services-terminal-services-command-reference.md)

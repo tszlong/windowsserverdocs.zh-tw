@@ -1,34 +1,32 @@
 ---
 title: tracerpt
 description: Tracerpt 的參考文章，它會剖析事件追蹤記錄檔、由效能監視器產生的記錄檔，以及即時事件追蹤提供者。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: cb9eaf86-0ef6-4197-b6c8-9cca8a1d723c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7060932f0b7eb996d0f0934e6945665c0c91e916
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 657a0ff1df856bf605c31d260a77bc266909485d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935578"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897112"
 ---
 # <a name="tracerpt"></a>tracerpt
 
 **Tracerpt**命令可以用來剖析事件追蹤記錄、由效能監視器產生的記錄檔，以及即時事件追蹤提供者。 它會產生傾印檔案、報表檔案和報表架構。
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>語法
 
 ```
 tracerpt <[-l] <value [value [...]]>|-rt <session_name [session_name [...]]>> [options]
 ```
 
-## <a name="options"></a>選項
+## <a name="options"></a>選項。
 
-|              選項旗標               |                                                                    Description                                                                    |
+|              選項旗標               |                                                                    描述                                                                    |
 |----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
 |                   -?                   |                                                         顯示即時線上說明。                                                          |
 |          -config\<filename>           |                                                 載入包含命令選項的設定檔案。                                                  |
@@ -39,9 +37,9 @@ tracerpt <[-l] <value [value [...]]>|-rt <session_name [session_name [...]]>> [o
 |            -int\<filename>            |                                            將解讀的事件結構傾印到指定的檔案。                                            |
 |                  -rts                  |                        報告事件追蹤標頭中的原始時間戳記。 只能與-o、非報表或-summary 搭配使用。                         |
 |            -tmf\<filename>            |                                                  指定追蹤訊息格式定義檔。                                                  |
-|              -tp\<value>              |                            指定 TMF 檔案搜尋路徑。 可以使用多個路徑，並以分號分隔（;)。                            |
-|              -i\<value>               | 指定提供者映射路徑。 相符的 PDB 將位於符號伺服器中。 可以使用多個路徑，並以分號分隔（;)。 |
-|             -pdb\<value>              |                             指定符號伺服器路徑。 可以使用多個路徑，並以分號分隔（;)。                             |
+|              -tp\<value>              |                            指定 TMF 檔案搜尋路徑。 可以使用多個路徑，並以分號分隔 (; ) 。                            |
+|              -i\<value>               | 指定提供者映射路徑。 相符的 PDB 將位於符號伺服器中。 可以使用多個路徑，並以分號分隔 (; ) 。 |
+|             -pdb\<value>              |                             指定符號伺服器路徑。 可以使用多個路徑，並以分號分隔 (; ) 。                             |
 |                  -gmt                  |                                              將 WPP 裝載時間戳記轉換為格林威治標準時間。                                               |
 |              -rl \<value>              |                                               定義從1到5的系統報表層級。 預設值為 1。                                               |
 |          -summary [filename]           |                                  產生摘要報告文字檔。 如果未指定，則為檔案名 summary.txt。                                   |

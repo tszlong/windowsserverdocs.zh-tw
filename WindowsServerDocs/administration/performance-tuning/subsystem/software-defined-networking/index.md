@@ -1,18 +1,16 @@
 ---
 title: 效能微調軟體定義網路
 description: 軟體定義網路 (SDN) 效能調整指導方針
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: grcusanz; anpaul
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: cfd166aab7a0ef0383fe4700fdf50cc6d35289b1
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 9c097d9b777676da1caef062e8aee4267d2e4dac
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80851611"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895950"
 ---
 # <a name="performance-tuning-software-defined-networks"></a>效能微調軟體定義網路
 
@@ -34,7 +32,7 @@ Windows Server 2016 中的軟體定義網路 (SDN) 是由網路控制卡、Hyper
 
 ### <a name="physical-network-adapter-nic-teaming"></a>實體網路介面卡 (NIC) 小組
 
-如需最佳效能和容錯移轉功能，建議您設定要構成小組的實體網路介面卡。  使用 SDN 時，您必須使用 Switch Embedded Teaming (SET) 建立小組。  
+如需最佳效能和容錯移轉功能，建議您設定要構成小組的實體網路介面卡。  使用 SDN 時，您必須使用 Switch Embedded Teaming (SET) 建立小組。
 
 最佳的小組成員數目是兩個，因為虛擬化流量會分散於輸入和輸出方向的小組成員。  您可以有兩個以上的小組成員，不過輸入流量最多會分散於兩個介面卡。  如果動態負載平衡的預設值仍是設定於虛擬交換器，則輸出流量一律會分散於所有介面卡。
 
@@ -55,7 +53,7 @@ SDN 仰賴封包的封裝來將網路虛擬化。  為了達到最佳效能，�
 
 封裝會導致每個封包新增額外的位元組。  為了避免這些封包分散，則必須將實體網路設定為使用 jumbo 框架。  MTU 值為 9234 是 VXLAN 或 NVGRE 的建議大小，且必須設定於主機連接埠 (L2) 的實體介面和 VLAN 的路由器介面 (L3) (將透過這些介面傳送封裝的封包) 的實體交換器上。  這包括傳輸、HNV 提供者和管理網路。
 
-Hyper-V 主機上的 MTU 是透過網路介面卡設定，而在 Hyper-V 主機上執行的網路控制卡主機代理程式將會針對封裝額外負荷自動調整 (如果由網路介面卡驅動程式支援)。  
+Hyper-V 主機上的 MTU 是透過網路介面卡設定，而在 Hyper-V 主機上執行的網路控制卡主機代理程式將會針對封裝額外負荷自動調整 (如果由網路介面卡驅動程式支援)。
 
 流量透過閘道從虛擬網路輸入後，系統就會移除封裝，並使用從 VM 傳送的原始 MTU。
 

@@ -1,23 +1,21 @@
 ---
 title: Windows Server 容器的效能調整
 description: Windows Server 16 上容器的效能調整建議
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: landing-page
 ms.author: davso; ericam; yashi
 author: akino
 ms.date: 10/16/2017
-ms.openlocfilehash: a4508e28e54562748422b198f703e23326d15720
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 53201ee17829ec82eb8d661b5f76689e00d22df8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80851631"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895986"
 ---
 # <a name="performance-tuning-windows-server-containers"></a>Windows Server 容器的效能調整
 
 ## <a name="introduction"></a>簡介
-Windows Server 2016 是第一個對 OS 提供內建容器技術支援的 Windows 版本。 在 Server 2016 中，有兩種類型的容器可使用：Windows Server 容器和 Hyper-V 容器。 每個容器類型都可支援 Windows Server 2016 的 Server Core 或 Nano Server SKU。 
+Windows Server 2016 是第一個對 OS 提供內建容器技術支援的 Windows 版本。 在 Server 2016 中，有兩種類型的容器可使用：Windows Server 容器和 Hyper-V 容器。 每個容器類型都可支援 Windows Server 2016 的 Server Core 或 Nano Server SKU。
 
 這些設定都有不同的效能影響，我們將在下方詳細說明，以協助您了解何者最適合您的案例。 此外，我們會詳細說明影響效能的設定，並說明這每個選項的權衡取捨。
 
@@ -33,7 +31,7 @@ Hyper-V 容器所提供的額外隔離主要是藉助隔離容器與容器主機
 
 ### <a name="nano-server-and-server-core"></a>Nano Server 與 Server Core
 
-Windows Server 容器和 Hyper-V 容器都可支援 Server Core 和 Windows Server 2016 中可用的新安裝選項：[Nano Server](https://technet.microsoft.com/windows-server-docs/compute/nano-server/getting-started-with-nano-server)。 
+Windows Server 容器和 Hyper-V 容器都可支援 Server Core 和 Windows Server 2016 中可用的新安裝選項：[Nano Server](https://technet.microsoft.com/windows-server-docs/compute/nano-server/getting-started-with-nano-server)。
 
 Nano Server 是一個遠端管理的伺服器作業系統，已針對私人雲端和資料中心最佳化。 它類似於 Server Core 模式的 Windows Server，但明顯較小、沒有本機登入功能，而且只支援 64 位元應用程式、工具和代理程式。 其佔用的磁碟空間相當少，而且啟動速度更快。
 
@@ -71,7 +69,7 @@ Windows Server 容器和 Hyper-V 容器會提供各種不同的網路模式，�
 
 每個容器將會從內部、私用 IP 首碼 (例如 172.16.0.0/12) 收到 IP 位址。 支援從容器主機到容器端點的連接埠轉送/對應。 Docker 依預設會在 dockerd 第一次執行時建立 NAT 網路。
 
-在這三種模式中，NAT 組態是成本最高的網路 IO 路徑，但需要最少的設定。 
+在這三種模式中，NAT 組態是成本最高的網路 IO 路徑，但需要最少的設定。
 
 Windows Server 容器使用主機 vNIC 連結到虛擬交換器。 Hyper-V 容器使用綜合 VM NIC (不向公用程式 VM 公開) 連結到虛擬交換器。 當容器與外部網路通訊時，封包會透過 WinNAT 及套用的位址轉譯來進行路由，而這會產生一些額外負荷。
 

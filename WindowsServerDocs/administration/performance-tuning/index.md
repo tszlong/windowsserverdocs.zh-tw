@@ -1,18 +1,16 @@
 ---
 title: Windows Server 2016 效能調整指導方針
 description: Windows Server 2016 的效能調整指導方針
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: landing-page
 ms.author: phstee
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: f684a87b091ffd95bb65c0b5f3aa0dfc9f405825
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 69b65e9a7cb5e935a8c6b1a8ab500e33307a092d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71355042"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896695"
 ---
 # <a name="performance-tuning-guidelines-for-windows-server-2016"></a>Windows Server 2016 的效能調整指導方針
 
@@ -68,4 +66,4 @@ ms.locfileid: "71355042"
 
 - *移除專用儲存體區段*，改為新的[儲存空間直接存取](subsystem/storage-spaces-direct/index.md)區段與標準 Technet 內容
 
-- *移除專用網路區段*，改為新的標準 Technet 內容  
+- *移除專用網路區段*，改為新的標準 Technet 內容

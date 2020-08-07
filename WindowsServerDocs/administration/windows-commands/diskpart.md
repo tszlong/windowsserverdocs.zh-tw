@@ -1,23 +1,21 @@
 ---
 title: diskpart
 description: Diskpart 命令直譯器的參考文章，可協助您管理電腦的磁片磁碟機。
-ms.prod: windows-server
-ms.technology: storage
 author: jasongerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 1df6abc3ab3ef99139ca50701bd45feab1e28f42
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 627f9254606b1ed70b198f6dd0096ccbff424c45
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958270"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890921"
 ---
 # <a name="diskpart"></a>diskpart
 
 > 適用于： Windows 10、Windows 8.1、Windows 8、Windows 7、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012 和 Windows Server 2008 R2、Windows Server 2008
 
-Diskpart 命令直譯器可協助您管理電腦的磁片磁碟機（磁片、磁碟分割、磁片區或虛擬硬碟）。
+Diskpart 命令直譯器可協助您管理電腦的磁片磁碟機， (磁片、磁碟分割、磁片區或虛擬硬碟) 。
 
 在您可以使用**diskpart**命令之前，您必須先列出，然後選取要提供焦點的物件。 在物件具有焦點之後，您輸入的任何 diskpart 命令都會在該物件上作用。
 
@@ -33,7 +31,7 @@ Diskpart 命令直譯器可協助您管理電腦的磁片磁碟機（磁片、�
 
 - `list vdisk`-顯示電腦上的所有虛擬磁片。
 
-執行**清單**命令之後，會在具有焦點的物件旁邊出現星號（*）。
+執行**清單**命令之後，會在具有焦點的物件旁出現一個星號 ( * ) 。
 
 ## <a name="determine-focus"></a>判斷焦點
 
@@ -41,9 +39,9 @@ Diskpart 命令直譯器可協助您管理電腦的磁片磁碟機（磁片、�
 
 有些命令會自動變更焦點。 例如，當您建立新的分割區時，焦點會自動切換到新的資料分割。
 
-您只能將焦點提供給所選磁片上的資料分割。 分割區具有焦點之後，相關的磁片區（如果有的話）也會有焦點。 當磁片區具有焦點之後，如果磁片區對應至單一特定分割區，則相關的磁片和分割區也會有焦點。 如果不是這種情況，將焦點放在磁片上並遺失分割區。
+您只能將焦點提供給所選磁片上的資料分割。 分割區具有焦點之後，如果有任何) 也有焦點，則相關磁片區 (。 當磁片區具有焦點之後，如果磁片區對應至單一特定分割區，則相關的磁片和分割區也會有焦點。 如果不是這種情況，將焦點放在磁片上並遺失分割區。
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>語法
 
 若要啟動 diskpart 命令直譯器，請在命令提示字元中輸入：
 
@@ -58,33 +56,33 @@ diskpart <parameter>
 
 您可以從 Diskpart 命令直譯器執行下列命令：
 
-| 命令 | 描述 |
+| Command | 描述 |
 | ------- | ----------- |
 | [active](active.md) | 將具有焦點的磁碟分割標示為作用中。 |
 | [add](add.md) | 將具有焦點的簡單磁碟區鏡像到指定的磁碟。 |
 | [assign](assign.md) | 將磁碟機代號或掛接點指派給帶有焦點的磁碟區。 |
-| [附加 vdisk](attach-vdisk.md) | 連接（有時稱為裝載或介面）虛擬硬碟（VHD），使其在主機電腦上顯示為本機硬碟。 |
+| [附加 vdisk](attach-vdisk.md) | 連接 (有時稱為裝載或介面) 虛擬硬碟 (VHD) ，使其在主機電腦上顯示為本機硬碟。 |
 | [attributes](attributes.md) | 顯示、設定或清除磁片或磁片區的屬性。 |
 | [automount](automount.md) | 啟用或停用自動掛接功能。 |
 | [break](break.md) | 將具有焦點的鏡像磁碟區分割成兩個簡單磁碟區。 |
 | [clean](clean.md) | 從具有焦點的磁碟移除部分或全部磁碟分割或磁碟區格式化。 |
-| [compact vdisk](compact-vdisk.md) | 減少動態擴充虛擬硬碟（VHD）檔案的實體大小。 |
-| [convert](convert.md) | 將檔案分配表（FAT）和 FAT32 磁片區轉換為 NTFS 檔案系統，讓現有的檔案和目錄保持不變。 |
-| [create](create.md) | 在磁片上、一或多個磁片上的磁片區，或虛擬硬碟（VHD）上建立分割區。 |
+| [compact vdisk](compact-vdisk.md) | 減少動態擴充虛擬硬碟 (VHD) 檔案的實體大小。 |
+| [convert](convert.md) | 將檔案配置表 (FAT) 和 FAT32 磁片區轉換為 NTFS 檔案系統，讓現有的檔案和目錄保持不變。 |
+| [create](create.md) | 在磁片上、一或多個磁片上的磁片區，或 (VHD) 的虛擬硬碟上建立分割區。 |
 | [delete](delete.md) | 刪除分割區或磁片區。 |
-| [detach vdisk](detach-vdisk.md) | 停止選取的虛擬硬碟（VHD），使其不會顯示為主電腦上的本機硬碟。 |
-| [detail](detail.md) | 顯示所選磁片、磁碟分割、磁片區或虛擬硬碟（VHD）的相關資訊。 |
+| [detach vdisk](detach-vdisk.md) | 停止選取的虛擬硬碟 (VHD) 不會顯示為主電腦上的本機硬碟。 |
+| [detail](detail.md) | 顯示所選磁片、磁碟分割、磁片區或虛擬硬碟 (VHD) 的相關資訊。 |
 | [exit](exit.md) | 結束 diskpart 命令直譯器。 |
-| [expand vdisk](expand-vdisk.md) | 將虛擬硬碟（VHD）擴充為您指定的大小。 |
-| [extend](extend.md) | 將具有焦點的磁片區或磁碟分割（連同其檔案系統）延伸到磁片上的可用（未配置）空間。 |
+| [expand vdisk](expand-vdisk.md) | 將 (VHD) 的虛擬硬碟擴充到您指定的大小。 |
+| [extend](extend.md) | 將具有焦點的磁片區或磁碟分割（連同其檔案系統）延伸到磁片上的免費 (未配置的) 空間。 |
 | [filesystems](filesystems.md) | 顯示具有焦點之磁片區目前檔案系統的相關資訊，並列出格式化磁片區所支援的檔案系統。 |
 | [format](format.md) | 格式化磁片以接受 Windows 檔案。 |
-| [gpt](gpt.md) | 指派 gpt 屬性給分割區，並將焦點放在基本的 GUID 磁碟分割表格（gpt）磁片上。 |
+| [gpt](gpt.md) | 將 (s) 的 gpt 屬性指派給分割區，並將焦點放在基本的 GUID 磁碟分割表格 (gpt) 磁片上。 |
 | [說明](help.md) | 顯示指定命令的可用命令或詳細說明資訊的清單。 |
 | [import](import.md) | 將外部磁片群組匯入本機電腦的磁片群組。 |
-| [inactive](inactive.md) | 在基本主開機記錄（MBR）磁片上，將具有焦點的系統磁碟分割或開機磁碟分割標記為非作用中。 |
-| [list](list.md) | 顯示磁片中的磁碟分割、磁片中的磁片區或虛擬硬碟（Vhd）的磁片清單。 |
-| [merge vdisk](merge-vdisk.md) | 合併差異虛擬硬碟（VHD）與其對應的父 VHD。 |
+| [inactive](inactive.md) | 在基本主開機記錄 (MBR) 磁片上，將具有焦點的系統磁碟分割或開機磁碟分割標示為非作用中。 |
+| [list](list.md) | 顯示磁片中的磁碟分割、磁片中的磁片區，或 (Vhd) 的虛擬硬碟清單。 |
+| [merge vdisk](merge-vdisk.md) | 將差異虛擬硬碟 (VHD) 與其對應的父 VHD 合併。 |
 | [offline](offline.md) | 使線上磁片或磁片區處於離線狀態。 |
 | [online](online.md) | 使離線磁片或磁片區處於線上狀態。 |
 | [recover](recover.md) | 重新整理磁片群組中所有磁片的狀態、嘗試復原無效磁片群組中的磁片，以及重新同步擁有過時資料的鏡像磁碟區和 RAID-5 磁片區。 |
@@ -93,13 +91,13 @@ diskpart <parameter>
 | [repair](repair.md) | 以指定的動態磁碟取代失敗的磁片區域，以修復具有焦點的 RAID-5 磁片區。 |
 | [rescan](rescan.md) | 尋找可能已新增至電腦的新磁片。 |
 | [retain](retain.md) | 準備要當做開機或系統磁碟區使用的現有動態簡單磁片區。 |
-| [san](san.md) | 顯示或設定作業系統的存放區域網路（san）原則。 |
-| [select](select.md) | 將焦點移到磁片、磁碟分割、磁片區或虛擬硬碟（VHD）。 |
+| [san](san.md) | 顯示或設定作業系統的存放區域網路 (san) 原則。 |
+| [select](select.md) | 將焦點移至磁片、分割區、磁片區或虛擬硬碟 (VHD) 。 |
 | [set id](set-id.md) | 變更具有焦點之資料分割的資料分割類型欄位。 |
 | [shrink](shrink.md) | 依據您指定的數量減少所選磁片區的大小。 |
-| [uniqueid](uniqueid.md) | 顯示或設定具有焦點之磁片的 GUID 磁碟分割表格（GPT）識別碼或主要開機記錄（MBR）簽章。 |
+| [uniqueid](uniqueid.md) | 針對具有焦點的磁片，顯示或設定 GUID 磁碟分割表格 (GPT) 識別碼或主開機記錄 (MBR) 簽章。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

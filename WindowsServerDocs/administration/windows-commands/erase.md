@@ -1,20 +1,18 @@
 ---
 title: erase
 description: 清除命令的參考文章，會刪除一個或多個檔案。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 024a4d0f-8679-4e06-b46f-61fdaf5464bc
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0a22c738215671096373a7077fc89ac87fe03597
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 144575c1886206ada0cbfd8edbe8571337b37ed9
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929317"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890599"
 ---
 # <a name="erase"></a>erase
 
@@ -33,7 +31,7 @@ del [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<names>` | 指定一或多個檔案或目錄的清單。 萬用字元可用來刪除多個檔案。 如果指定目錄，則會刪除目錄中的所有檔案。 |
 | /p | 在刪除指定的檔案之前提示您確認。 |
@@ -49,7 +47,7 @@ del [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
 
     `FileName, Delete (Y/N)?`
 
-    若要確認刪除，請按下**Y**。若要取消刪除並顯示下一個檔案名（如果您指定了一組檔案），請按**N**。若要停止**清除**命令，請按 CTRL + C。
+    若要確認刪除，請按下**Y**。若要取消刪除並顯示下一個檔案名 (如果您) 指定一組檔案，請按**N**。若要停止**清除**命令，請按 CTRL + C。
 
 - 如果您停用命令延伸模組， **/s**參數會顯示找不到的任何檔案名，而不是顯示正在刪除之檔案的名稱。
 
@@ -59,7 +57,7 @@ del [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
   erase \work
   ```
 
-- 您可以使用萬用字元（**&#42;** 和 **？**）一次刪除一個以上的檔案。 不過，若要避免不慎刪除檔案，您應該謹慎使用萬用字元。 例如，如果您輸入下列命令：
+- 您可以使用萬用字元 (**&#42;** 和 **？**) 一次刪除一個以上的檔案。 不過，若要避免不慎刪除檔案，您應該謹慎使用萬用字元。 例如，如果您輸入下列命令：
 
   ```
   erase *.*

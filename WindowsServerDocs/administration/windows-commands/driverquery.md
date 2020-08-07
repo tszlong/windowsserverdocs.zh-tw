@@ -1,20 +1,18 @@
 ---
 title: driverquery
 description: Driverquery 命令的參考文章，可讓系統管理員顯示已安裝的設備磁碟機及其屬性的清單。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 92ca4b84-e4e2-405b-9f31-bf6db9f66839
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8ad0a028217e07d8c15b59dc96e31c8f236dd743
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a996d48927215f8304e5a16f9da67419cbf7de65
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931465"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890757"
 ---
 # <a name="driverquery"></a>driverquery
 
@@ -28,12 +26,12 @@ driverquery [/s <system> [/u [<domain>\]<username> [/p <password>]]] [/fo {table
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- |------------ |
 | /s`<system>` | 指定遠端電腦的名稱或 IP 位址。 請勿使用反斜線。 預設是本機電腦。 |
 | u`[<domain>]<username>` | 以*user*或*domain\user*所指定的使用者帳號憑證來執行命令。 根據預設， */s*會使用目前登入發出命令之電腦的使用者認證。 除非指定了 **/s** ，否則無法使用 **/u** 。 |
 | /p`<password>` | 指定 **/u**參數中指定之使用者帳戶的密碼。 除非指定 **/u** ，否則無法使用 **/p** 。 |
-| /fo 資料表 | 將輸出格式化為表格。 此為預設值。 |
+| /fo 資料表 | 將輸出格式化為表格。 這是預設值。 |
 | /fo 清單 | 將輸出格式化為清單。 |
 | /fo csv | 使用逗號分隔值來格式化輸出。 |
 | /nh | 省略顯示的驅動程式資訊中的標頭資料列。 如果 **/fo**參數設定為**list**，則無效。 |
@@ -49,7 +47,7 @@ driverquery [/s <system> [/u [<domain>\]<username> [/p <password>]]] [/fo {table
 driverquery
 ```
 
-若要以逗號分隔值（CSV）格式顯示輸出，請輸入：
+若要顯示逗號分隔值中的輸出 (CSV) 格式，請輸入：
 
 ```
 driverquery /fo csv

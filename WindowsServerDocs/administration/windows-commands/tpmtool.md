@@ -1,26 +1,24 @@
 ---
 title: tpmtool
 description: Tpmtool 的參考文章，可取得信賴平臺模組的相關資訊。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 author: ashleytqy
 ms.author: ashleytqy
 manager: ronaldai
 ms.date: 05/07/2019
-ms.openlocfilehash: 843361a9b3844ecb29e2f9ac723d22e3fc14730f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f34e577a87acd79f343f06bb81486d50339cdb54
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955020"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897140"
 ---
 # <a name="tpmtool"></a>tpmtool
 
-這個公用程式可以用來取得[信賴平臺模組（TPM）](/windows/security/information-protection/tpm/trusted-platform-module-overview)的相關資訊。
+這個公用程式可以用來取得[ (TPM) 的信賴平臺模組](/windows/security/information-protection/tpm/trusted-platform-module-overview)相關資訊。
 
 >[!IMPORTANT]
->預先發行的產品在正式發行前可能會大幅度修改，本文提供有關該產品的一些資訊。 Microsoft 對於此處提供的資訊不做任何明示或暗示保證。
+>預先發行的產品在正式發行前可能會大幅度修改，本文提供有關該產品的一些資訊。 針對此處提供的資訊，Microsoft 不做任何明示或默許的擔保。
 
 如需如何使用此命令的範例，請參閱[範例](#tpmtool_examples)。
 
@@ -38,7 +36,7 @@ tpmtool /parameter [<arguments>]
 |drivertracing [啟動/停止]|啟動/停止收集 TPM 驅動程式追蹤。 追蹤記錄 TPMTRACE 會產生並放在目前的目錄中。|
 |/?|在命令提示字元顯示說明。|
 
-## <a name="examples"></a><a name=tpmtool_examples></a>範例
+## <a name="examples"></a><a name=tpmtool_examples></a>典型
 
 若要顯示 TPM 的基本資訊，請輸入：
 ```

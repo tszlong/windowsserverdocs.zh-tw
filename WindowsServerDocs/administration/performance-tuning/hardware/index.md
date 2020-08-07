@@ -1,18 +1,16 @@
 ---
 title: 伺服器硬體效能考量
 description: Windows Server 2016 的伺服器硬體效能考量
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: landing-page
 ms.author: phstee
 author: phstee
 ms.date: 01/08/2018
-ms.openlocfilehash: 9c012711dff3746587b4a04b31d9c23ebb7de4cd
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: bac2aa367cc9a8d736fd83f7aeed3e467aeddb54
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71370548"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896744"
 ---
 # <a name="server-hardware-performance-considerations"></a>伺服器硬體效能考量
 
@@ -40,8 +38,8 @@ ms.locfileid: "71370548"
 
 ## <a name="memory-ram-and-paging-storage-recommendations"></a>記憶體 (RAM) 和分頁儲存體建議
 
->[!Note] 
-> 相較於 Windows Server 2012 R2，執行 Windows Server 2016 的全新安裝時，部分系統可能會出現儲存空間效能降低的情形。 在 Windows Server 2016 的開發期間我們做了一些變更，以改善平台的安全性及可靠性。 其中有些變更 (例如預設啟用 Windows Defender) 會導致較長的 I/O 路徑，因而降低特定工作負載和模式中的 I/O 效能。 Microsoft 不建議停用 Windows Defender，因為它是您系統很重要的一層保護。 
+>[!Note]
+> 相較於 Windows Server 2012 R2，執行 Windows Server 2016 的全新安裝時，部分系統可能會出現儲存空間效能降低的情形。 在 Windows Server 2016 的開發期間我們做了一些變更，以改善平台的安全性及可靠性。 其中有些變更 (例如預設啟用 Windows Defender) 會導致較長的 I/O 路徑，因而降低特定工作負載和模式中的 I/O 效能。 Microsoft 不建議停用 Windows Defender，因為它是您系統很重要的一層保護。
 
 請增加 RAM 以符合您的記憶體需求。
 當您電腦的記憶體不足且立即需要更多記憶體時，Windows 會透過名為分頁的程序，使用硬碟空間來補充系統 RAM。 太多分頁會降低整體系統效能。
