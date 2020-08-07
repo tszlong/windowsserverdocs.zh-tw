@@ -1,26 +1,24 @@
 ---
 title: ftp
-description: Ftp 命令的參考文章，它會在執行檔案傳輸通訊協定（ftp）伺服器服務的電腦上來回傳輸檔案。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Ftp 命令的參考文章，它會在執行檔案傳輸通訊協定 (ftp) server 服務的電腦上來回傳輸檔案。
 ms.topic: article
 ms.assetid: 758335e1-fd8d-448c-a654-993126239dd9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 01d597bf4520fc41fa31f90c643c852ec9f77b2f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 369a41cf6ad803a4fce939da58228997410cf177
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957290"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888789"
 ---
 # <a name="ftp"></a>ftp
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-在執行檔案傳輸通訊協定（ftp）伺服器服務的電腦之間傳輸檔案。 此命令可透過處理 ASCII 文字檔，以互動方式或在批次模式中使用。
+在執行檔案傳輸通訊協定 (ftp) server 服務的電腦之間傳輸檔案。 此命令可透過處理 ASCII 文字檔，以互動方式或在批次模式中使用。
 
 ## <a name="syntax"></a>語法
 
@@ -36,8 +34,8 @@ ftp [-v] [-d] [-i] [-n] [-g] [-s:<filename>] [-a] [-A] [-x:<sendbuffer>] [-r:<re
 | -d | 啟用「偵測」，顯示在 FTP 用戶端與 FTP 伺服器之間傳遞的所有命令。 |
 | -i | 停用多個檔案傳輸期間的互動式提示。 |
 | -n | 在初始連接時抑制自動登入。 |
-| -g | 停用檔案名萬用字元。  **Glob**允許使用星號（*）和問號（？）做為本機檔案和路徑名稱中的萬用字元。 |
-| 今日`<filename>` | 指定包含**ftp**命令的文字檔。 這些命令會在**ftp**啟動後自動執行。 此參數不允許空格。 使用此參數，而不是重新導向（ `<` ）。 **注意：** 在 Windows 8 和 Windows Server 2012 或更新版本的作業系統中，文字檔必須以 UTF-8 撰寫。 |
+| -g | 停用檔案名萬用字元。  **Glob**允許使用星號 ( * ) 和問號 (？ ) 作為本機檔案和路徑名稱中的萬用字元。 |
+| 今日`<filename>` | 指定包含**ftp**命令的文字檔。 這些命令會在**ftp**啟動後自動執行。 此參數不允許空格。 請使用此參數，而不是 () 的重新導向 `<` 。 **注意：** 在 Windows 8 和 Windows Server 2012 或更新版本的作業系統中，文字檔必須以 UTF-8 撰寫。 |
 | -a | 指定在系結 ftp 資料連線時，可以使用任何本機介面。 |
 | -A | 以匿名方式登入 ftp 伺服器。 |
 | x`<sendbuffer> `| 覆寫8192的預設 SO_SNDBUF 大小。 |
@@ -51,7 +49,7 @@ ftp [-v] [-d] [-i] [-n] [-g] [-s:<filename>] [-a] [-A] [-x:<sendbuffer>] [-r:<re
 
 - **Ftp**命令列參數會區分大小寫。
 
-- 只有當**網際網路通訊協定（tcp/ip）** 通訊協定是在網路連線的網路介面卡內容中安裝為元件時，才可以使用此命令。
+- 只有當**網際網路通訊協定 (tcp/ip) **通訊協定在網路連線的網路介面卡內容中安裝為元件時，才可使用此命令。
 
 - **Ftp**命令可以互動方式使用。 啟動之後， **ftp**會建立一個子環境，您可以在其中使用**ftp**命令。 您可以輸入**quit**命令來返回命令提示字元。 當**ftp**子環境正在執行時，命令提示字元會指示它 `ftp >` 。 如需詳細資訊，請參閱**ftp**命令。
 
@@ -71,7 +69,7 @@ ftp ftp.example.microsoft.com
 ftp -s:resync.txt ftp.example.microsoft.com
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -1,20 +1,18 @@
 ---
 title: bcdedit
 description: Bcdedit 命令的參考文章，它會建立新的存放區、修改現有的存放區，以及新增開機功能表參數。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ab2da47d-3aac-44a0-b7fd-bd9561d61553
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/27/2018
-ms.openlocfilehash: 59d6a4eafe2eb3383cfeed9e1cbcb9d3e10fe376
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 0a24ce7f2503d06ce6c57270027328600d93e217
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955810"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895161"
 ---
 # <a name="bcdedit"></a>bcdedit
 
@@ -43,13 +41,13 @@ bcdedit /command [<argument1>] [<argument2>] ...
 
 ### <a name="general-bcdedit-command-line-options"></a>一般 BCDEdit 命令列選項
 
-| 選項 | 說明 |
+| 選項 | 描述 |
 | ------ | ----------- |
 | /? | 顯示 BCDEdit 命令清單。 若執行此命令時未加上引數，則會顯示可用命令的摘要。 若要顯示特定命令的詳細說明，請執行**bcdedit/？** `<command>`，其中 `<command>` 是您要搜尋的命令名稱，以取得的詳細資訊。 例如， **bcdedit/？ createstore**會顯示 createstore 命令的詳細說明。 |
 
 #### <a name="parameters-that-operate-on-a-store"></a>在存放區上操作的參數
 
-| 選項 | 說明 |
+| 選項 | 描述 |
 | ------ | ----------- |
 | /createstore | 建立新的且空的開機設定資料存放區。 建立的存放區並非系統存放區。 |
 | /export | 將系統存放區的內容匯出至檔案。 這個檔案稍後可用於還原系統存放區的狀態。 這個命令僅對系統存放區有效。 |
@@ -104,10 +102,10 @@ bcdedit /command [<argument1>] [<argument2>] ...
 | /dbgsettings | 指定或顯示系統的全域偵錯工具設定。 此命令不會 enablepose。 若要設定個別的全域偵錯工具設定，請使用**bcdedit/set** `<dbgsettings> <type> <value>` 命令。 |
 | /debug | 啟用或停用指定之開機項目的核心偵錯工具。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 如需如何使用 BCDEdit 的範例，請參閱[BCDEdit 選項參考](/windows-hardware/drivers/devtest/bcd-boot-options-reference)文章。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

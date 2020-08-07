@@ -1,20 +1,18 @@
 ---
 title: 附加
 description: Append 命令的參考文章，可讓程式在指定的目錄中開啟資料檔案，就像是在目前的目錄中一樣。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9c3fea20-9502-40ad-a442-7a927aad88eb
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c8e67c4419b563fdeba156b2bb1f082bf7de834c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 887d058baf333f068b2e1fb557f085f0cfe58615
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924030"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895577"
 ---
 # <a name="append"></a>附加
 
@@ -32,7 +30,7 @@ append ;
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `[\<drive>:]<path>` | 指定要附加的磁片磁碟機和目錄。 |
 | /x： on | 將附加的目錄套用至檔案搜尋和啟動應用程式。 |

@@ -1,20 +1,18 @@
 ---
 title: tcmsetup
 description: 瞭解如何設定及停用 TAPI 用戶端。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 15e0c10f-996f-4301-92e5-943f7ee8212d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0e453ef94aedb8920c0310123ff6033fafbaddab
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: e078439fcb9889f075efd364ea9530bdfb8db26a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958620"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881806"
 ---
 # <a name="tcmsetup"></a>tcmsetup
 
@@ -25,7 +23,7 @@ ms.locfileid: "86958620"
 ## <a name="syntax"></a>語法
 
 ```
-tcmsetup [/q] [/x] /c <Server1> [<Server2> …] 
+tcmsetup [/q] [/x] /c <Server1> [<Server2> …]
 tcmsetup  [/q] /c /d
 ```
 
@@ -48,7 +46,7 @@ tcmsetup  [/q] /c /d
 -   在用戶端使用者可以在 TAPI 伺服器上使用電話或線路之前，電話語音伺服器管理員必須將使用者指派給電話或線路。
 -   透過此命令建立的電話語音伺服器清單，會取代用戶端可用的任何現有電話語音伺服器清單。 您無法使用此命令新增到現有清單。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

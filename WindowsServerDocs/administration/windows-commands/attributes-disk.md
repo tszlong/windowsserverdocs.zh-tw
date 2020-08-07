@@ -1,20 +1,18 @@
 ---
 title: attributes disk
 description: 屬性磁片命令的參考文章，它會顯示、設定或清除磁片的屬性。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: eed57071-c1c6-4394-9542-62b52a878c92
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 02ad39b84afb2487b388d046d6409a682b58615b
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d6ebdd831a9ddfe1224c641a979ed972672a3ba3
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923894"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895496"
 ---
 # <a name="attributes-disk"></a>attributes disk
 
@@ -31,7 +29,7 @@ attributes disk [{set | clear}] [readonly] [noerr]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | set | 設定具有焦點之磁片的指定屬性。 |
 | clear | 清除具有焦點之磁片的指定屬性。 |

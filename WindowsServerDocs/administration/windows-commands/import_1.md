@@ -1,20 +1,18 @@
 ---
 title: 匯入 diskpart
 description: 匯入命令的參考文章，它會將外部磁片群組匯入到本機電腦的磁片群組。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4b9d2751-7637-4738-83b0-8c578eb28f27
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 072c012e5e2cc8d49811fbfa1cff5140b2c745a1
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 0c32ee8643beefa394451c83df08dcec7a565117
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924425"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888349"
 ---
 # <a name="import-diskpart"></a>import (diskpart)
 
@@ -30,7 +28,7 @@ import [noerr]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | noerr | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
 

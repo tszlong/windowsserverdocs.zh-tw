@@ -1,24 +1,22 @@
 ---
 title: 軟體清查記錄入門
 description: 說明如何安裝和開始使用軟體清查記錄
-ms.prod: windows-server
-ms.technology: manage-software-inventory-logging
 ms.topic: article
 ms.assetid: ed51c13c-7cbf-4144-a675-011fd29379d4
 author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e54e8f96863280263f7afee2e32bfd41ec712110
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 940c5d7795ff4dcf84bad0727d1f92d155b3ea1b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851441"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895660"
 ---
 # <a name="get-started-with-software-inventory-logging"></a>軟體清查記錄入門
 
->適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server (半年通道)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
  軟體清查記錄會以每一伺服器為基礎來收集 Microsoft 軟體清查資料。 在使用 Windows Server 2012 R2 的軟體清查記錄之前，請確定每個要清查的系統上都已安裝 Windows Update [KB 3000850](https://support.microsoft.com/kb/3000850)和[KB 3060681](https://support.microsoft.com/kb/3060681) 。 Windows Server 2016 不需要 Windows Update。 此外，如果您想要使用 SIL 的功能將資料轉送到匯總伺服器，請確定您的網路有有效的 SSL 憑證。
 
@@ -26,7 +24,7 @@ ms.locfileid: "80851441"
 Windows Server 中的軟體清查記錄功能有一組簡單的 PowerShell Cmdlet，可協助伺服器系統管理員擷取伺服器上安裝的 Microsoft 軟體清單。 它也提供功能，定期收集並透過網路，使用 HTTPS 通訊協定將此資料轉送到目標 Web 伺服器，以便進行彙總。 管理功能 (主要是每小時的收集和轉送) 也是使用 PowerShell 命令完成。
 
 > [!NOTE]
-> 執行 web 服務的彙總伺服器可以分開設定。 深入了解 [軟體清查記錄彙總工具](software-inventory-logging-aggregator.md)。
+> 執行 web 服務的彙總伺服器可以分開設定。 深入了解[軟體清查記錄彙總工具](software-inventory-logging-aggregator.md)。
 
 > [!IMPORTANT]
 > 軟體清查記錄所收集的資料都不會隨著功能的功能傳送給 Microsoft。
@@ -44,6 +42,6 @@ Windows Server 中的軟體清查記錄功能有一組簡單的 PowerShell Cmdle
 [軟體清查記錄彙總工具](https://technet.microsoft.com/library/mt572043.aspx)<br>
 [管理軟體清查記錄](manage-software-inventory-logging.md)<br>
 [Windows PowerShell 中的軟體清查記錄 Cmdlet](https://technet.microsoft.com/library/dn283390.aspx)<br>
-[Microsoft 評估及規劃](https://www.microsoft.com/download/en/details.aspx?id=7826)工具組
-[大量啟用管理工具](https://blogs.technet.com/b/volume-licensing/)
+[Microsoft 評估及規劃工具](https://www.microsoft.com/download/en/details.aspx?id=7826) 
+ 組[大量啟用管理工具](https://blogs.technet.com/b/volume-licensing/)
 

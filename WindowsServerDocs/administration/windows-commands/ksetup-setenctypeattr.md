@@ -1,26 +1,24 @@
 ---
 title: ksetup setenctypeattr
 description: Ksetup setenctypeattr 命令的參考文章，其會設定網域的加密類型屬性。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 88fb913e-6b57-48d9-8c16-a035ab2977ac
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8bb8411a795d0167af1fc921fdf1c19febcb8527
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 50d5c5be2382cc1d811066d577f8f092b676853a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933908"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887764"
 ---
 # <a name="ksetup-setenctypeattr"></a>ksetup setenctypeattr
 
 設定網域的加密類型屬性。 成功或失敗完成時，會顯示狀態訊息。
 
-您可以藉由執行**klist**命令並查看輸出，來查看 Kerberos 票證授權票證（TGT）和工作階段金鑰的加密類型。 您可以藉由執行命令來設定要連接及使用的網域 `ksetup /domain <domainname>` 。
+您可以藉由執行**klist**命令並查看輸出，來查看 Kerberos 票證授與票證 (TGT) 和工作階段金鑰的加密類型。 您可以藉由執行命令來設定要連接及使用的網域 `ksetup /domain <domainname>` 。
 
 ## <a name="syntax"></a>語法
 
@@ -30,7 +28,7 @@ ksetup /setenctypeattr <domainname> {DES-CBC-CRC | DES-CBC-MD5 | RC4-HMAC-MD5 | 
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<domainname>` | 您想要建立連接的網功能變數名稱稱。 使用完整功能變數名稱或簡單格式的名稱，例如 corp.contoso.com 或 contoso。 |
 | 加密類型 | 必須是下列其中一種支援的加密類型：<ul><li>DES-CBC-CRC</li><li>DES-CBC-MD5</li><li>RC4-HMAC-MD5</li><li>AES128-CTS-HMAC-SHA1-96</li><li>AES256-CTS-HMAC-SHA1-96</li></ul> |
@@ -41,7 +39,7 @@ ksetup /setenctypeattr <domainname> {DES-CBC-CRC | DES-CBC-MD5 | RC4-HMAC-MD5 | 
 
 ### <a name="examples"></a>範例
 
-若要查看 Kerberos 票證授權票證（TGT）和工作階段金鑰的加密類型，請輸入：
+若要查看 Kerberos 票證授權票證的加密類型 (TGT) 和工作階段金鑰，請輸入：
 
 ```
 klist

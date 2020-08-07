@@ -1,24 +1,22 @@
 ---
 title: attributes volume
 description: '[屬性] [volume] 命令的參考文章，可顯示、設定或清除磁片區的屬性。'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e40e8284-3d57-4de8-a46c-e4ade34a0d53
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aae7cc7fe26fac5ef03e40610eb46389eb274c94
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a4e0e7110bd23d1a8127e867dd991d1dc620c164
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923875"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895486"
 ---
 # <a name="attributes-volume"></a>attributes volume
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 顯示、設定或清除磁片區的屬性。
 
@@ -30,7 +28,7 @@ attributes volume [{set | clear}] [{hidden | readonly | nodefaultdriveletter | s
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ------- | -------- |
 | set | 設定具有焦點之磁片區的指定屬性。 |
 | clear | 清除具有焦點之磁片區的指定屬性。 |
@@ -42,9 +40,9 @@ attributes volume [{set | clear}] [{hidden | readonly | nodefaultdriveletter | s
 
 ### <a name="remarks"></a>備註
 
-- 在基本的主開機記錄（MBR）磁片上， **hidden**、 **readonly**和**nodefaultdriveletter**參數適用于磁片上的所有磁片區。
+- 在基本的主要開機記錄 (MBR) 磁片上， **hidden**、 **readonly**和**nodefaultdriveletter**參數適用于磁片上的所有磁片區。
 
-- 在基本 GUID 磁碟分割表格（GPT）磁片上，以及在動態 MBR 和 GPT 磁片上， **hidden**、 **readonly**和**nodefaultdriveletter**參數只適用于選取的磁片區。
+- 在基本 GUID 磁碟分割表格上 (GPT) 磁片，而在動態 MBR 和 GPT 磁片上， **hidden**、 **readonly**和**nodefaultdriveletter**參數只適用于選取的磁片區。
 
 - 必須選取磁片區，**屬性 volume**命令才會成功。 使用 [**選取磁片**區] 命令來選取磁片區，並將焦點移至該磁片區。
 

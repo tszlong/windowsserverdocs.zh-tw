@@ -1,20 +1,18 @@
 ---
 title: 軟體清查記錄彙總工具
-description: 說明如何安裝和管理軟體清查記錄匯總工具
-ms.prod: windows-server
-ms.technology: manage-software-inventory-logging
+description: 說明如何安裝和管理軟體清查記錄匯總工具-軟體-清查-記錄
 ms.topic: article
 ms.assetid: e4230a75-6bcd-47d9-ba92-a052a90a6abc
 author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 350187c0ad7490a0698e4a3b99ef710b632f6c6c
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 697ca5e27db6a937c31b4dad072eef19a6f3df06
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87408837"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895671"
 ---
 # <a name="software-inventory-logging-aggregator"></a>軟體清查記錄彙總工具
 
@@ -26,7 +24,7 @@ ms.locfileid: "87408837"
 
 SILA 是可安裝在 Windows Server 上的軟體，但不包含在 Windows Server 安裝中。 若要安裝此軟體，請先從 Windows 下載中心免費下載： [適用於 Windows Server 的軟體清查記錄彙總工具 1.0](https://www.microsoft.com/download/details.aspx?id=49046)
 
-軟體清查記錄架構是為了降低清查 IT 環境中許多伺服器上部署的 Microsoft 軟體時的作業成本。 這個架構是由 Windows Server 2012 R2 中引進的「軟體清查記錄」（SIL）中的兩個元件（SIL 匯總工具和 Windows Server 功能）所組成。 此軟體清查記錄彙總工具 1.0 安裝在一部伺服器上，並接收任何已設定為透過 SIL 轉送資料的 Windows Server 所送來的清查資料。 此設計可讓資料中心系統管理員在廣泛散佈於環境的主要 Windows Server 映像中啟用 SIL。  此軟體套件是目標點，主要是讓客戶安裝在內部，以輕鬆記錄一段時間的清查資料。 此軟體也可以定期在 Microsoft Excel 中建立基本的清查報告。 軟體清查記錄彙總工具 1.0 報告中包含 Windows Server、System Center 和 SQL Server 的安裝計數。
+軟體清查記錄架構是為了降低清查 IT 環境中許多伺服器上部署的 Microsoft 軟體時的作業成本。 此架構是由兩個元件所組成： Windows Server 2012 R2 中引進的 SIL 匯總工具和 Windows Server 功能，軟體清查記錄 (SIL) 。 此軟體清查記錄彙總工具 1.0 安裝在一部伺服器上，並接收任何已設定為透過 SIL 轉送資料的 Windows Server 所送來的清查資料。 此設計可讓資料中心系統管理員在廣泛散佈於環境的主要 Windows Server 映像中啟用 SIL。  此軟體套件是目標點，主要是讓客戶安裝在內部，以輕鬆記錄一段時間的清查資料。 此軟體也可以定期在 Microsoft Excel 中建立基本的清查報告。 軟體清查記錄彙總工具 1.0 報告中包含 Windows Server、System Center 和 SQL Server 的安裝計數。
 
 > [!IMPORTANT]
 > 使用此軟體並不會將任何資料傳送給 Microsoft。
@@ -68,7 +66,7 @@ SILA 是可安裝在 Windows Server 上的軟體，但不包含在 Windows Serve
 -   **Cio 和財務**機關，他們需要報告其組織 IT 部署中的 Microsoft 企業軟體使用方式。
 
 ## <a name="getting-started"></a>開始使用
-**先決條件**
+**必要條件**
 
 軟體清查記錄彙總工具 (SIL 彙總工具) 至少在一部伺服器上用於彙總和報告 (在 VM 中或實體硬體上)：
 
@@ -98,7 +96,7 @@ SILA 是可安裝在 Windows Server 上的軟體，但不包含在 Windows Serve
 ### <a name="security-and-account-types"></a>安全性和帳戶類型
 **憑證需求**
 
-SIL 和 SIL 彙總工具在已驗證的通訊上依賴 SSL 憑證。 一般的實作是以一個憑證 (伺服器名稱和憑證名稱相符) 安裝 SIL 彙總工具，以裝載接收清查資料的 Web 服務。 然後，要使用 SIL 功能清查的 Windows Server 會使用不同的用戶端憑證，將資料推入 SIL 彙總工具。 PowerShell Cmdlet （Set-silaggregator，以下提供更多詳細資料）必須用來將憑證指紋新增至 SIL 匯總工具的已核准憑證清單中，而匯總工具將會從中接受相關聯的資料。 以憑證驗證每一個裝載的資料之後，SIL 彙總工具會繼續處理並插入至其資料庫。 如何相關運作方式的具體細節，請參閱 **SIL 彙總工具 Cmdlet 詳細資料**一節。
+SIL 和 SIL 彙總工具在已驗證的通訊上依賴 SSL 憑證。 一般的實作是以一個憑證 (伺服器名稱和憑證名稱相符) 安裝 SIL 彙總工具，以裝載接收清查資料的 Web 服務。 然後，要使用 SIL 功能清查的 Windows Server 會使用不同的用戶端憑證，將資料推入 SIL 彙總工具。 PowerShell Cmdlet (Set-silaggregator，以下的更多詳細資料) 必須用來將憑證指紋新增至 SIL 匯總工具的已核准憑證清單中，而匯總工具將接受相關聯的資料。 以憑證驗證每一個裝載的資料之後，SIL 彙總工具會繼續處理並插入至其資料庫。 如何相關運作方式的具體細節，請參閱 **SIL 彙總工具 Cmdlet 詳細資料**一節。
 
 ### <a name="polling-account-setup"></a>輪詢帳戶設定
 將認證加入至 SIL 彙總工具來啟用輪詢作業時，您應該使用最低權限帳戶方法。 此外，基於安全性最佳作法，您不應該對資料中心或其他 IT 部署中的所有或多部主機使用相同的認證。
@@ -125,7 +123,7 @@ SIL 和 SIL 彙總工具在已驗證的通訊上依賴 SSL 憑證。 一般的�
 
 9. 以 **machinename\group name** 格式新增 **Remote Management Users** 群組
 
-10. 按一下 [確定]。
+10. 按一下 [確定]  。
 
 11. 回到 [**root\cimv2** 的安全性] 視窗中，選取 [Remote Management Users]****。
 
@@ -160,7 +158,7 @@ SIL 和 SIL 彙總工具在已驗證的通訊上依賴 SSL 憑證。 一般的�
 
 -   您已**使用 SQL Server 上具有 sysadmin 權限的帳戶登入伺服器** (如果想要使用 Windows 驗證)
 
-    OR
+    或者
 
     如果想要使用 SQL 驗證，**您必須知道 SQL 系統管理權限帳戶的密碼**。
 
@@ -251,7 +249,7 @@ SIL 和 SIL 彙總工具在已驗證的通訊上依賴 SSL 憑證。 一般的�
 
     -   執行「 `Set-SilAggregator –AddCertificateThumbprint` 您的用戶端憑證的指紋」
 
-        需要如此，才能透過 HTTPS 從已啟用 SIL 記錄的 Windows Server 接收資料。 這個指紋會加入至供 SIL 彙總工具接受資料的指紋清單中。 SIL 彙總工具設計為接受有效的企業用戶端驗證憑證。 使用的憑證必須安裝在轉送資料的伺服器上的** \\ Localmachine\MY （本機電腦 > 個人**）存放區中。
+        需要如此，才能透過 HTTPS 從已啟用 SIL 記錄的 Windows Server 接收資料。 這個指紋會加入至供 SIL 彙總工具接受資料的指紋清單中。 SIL 彙總工具設計為接受有效的企業用戶端驗證憑證。 使用的憑證必須安裝在** \\ Localmachine\MY (本機電腦上-> Personal**) 存放區中轉送資料的伺服器上。
 
 -   在您要清查的 Windows Server 上，以系統管理員身分開啟 PowerShell 並執行下列命令：
 
@@ -378,7 +376,7 @@ SIL 同時以推入和提取模式運作，由兩個平行運作的元件組成�
 -   在 [儀表板]**** 索引標籤的 [Windows Server]**** 區段中，[其他 Hypervisor 主機]**** 和 [Hypervisor 主機總計]**** 資料列包含可能或「沒有」執行 Hyper-V 的實體 Windows Server 主機。
 
 ### <a name="column-descriptions"></a>資料行描述
-針對 SIL 彙總工具建立的 Excel 報告，以下是此報告的 [Windows Server 詳細資料]**** 索引標籤上每個資料行的描述。 其他資料索引標籤是相同或這些資料行的子集。 其中一個例外狀況是 [SQL Server] 索引標籤上的 [安裝計數] （請參閱**上限標記**一節）。
+針對 SIL 彙總工具建立的 Excel 報告，以下是此報告的 [Windows Server 詳細資料]**** 索引標籤上每個資料行的描述。 其他資料索引標籤是相同或這些資料行的子集。 其中一個例外狀況是 [SQL Server] 索引標籤上的 [安裝計數] (請參閱**高水位號**一節) 。
 
 |資料行標頭|描述|
 |-----------------|---------------|
@@ -403,7 +401,7 @@ SIL 同時以推入和提取模式運作，由兩個平行運作的元件組成�
 
 ### <a name="publish-silreport"></a>Publish-SilReport
 
--   此 Cmdlet 的使用方式為，會建立軟體清查記錄報告，並將它放在登入使用者的 Documents 目錄中（執行此 Cmdlet 的電腦上需要 Excel 2013）。
+-   此 Cmdlet 的使用方式，將會建立軟體清查記錄報告，並將它放在登入的使用者檔目錄中 (在執行此 Cmdlet 的電腦上需要 Excel 2013) 。
 
 -   此 Cmdlet 搭配 `–OpenReport` 參數一起使用，將建立報告並在 Excel 中開啟來檢視。
 
@@ -536,7 +534,7 @@ Copyright (c) 2010, RENCI</pre>
 
 -   在您的環境中使用 Windows Management Framework 時：
 
-    -   請確定已安裝 SILA 的伺服器未安裝 WMF 5.1。  您可能會在事件記錄檔中遇到關於 DLL **' mpunits.dll '** 的錯誤。  這將導致無法正常運作。  SILA 只需要 WMF 4.0。
+    -   請確定已安裝 SILA 的伺服器 (s) 未安裝 WMF 5.1。  您可能會在事件記錄檔中遇到關於 DLL **' mpunits.dll '** 的錯誤。  這將導致無法正常運作。  SILA 只需要 WMF 4.0。
 
 ## <a name="managing-sil-over-time"></a>持續管理 SIL
 
@@ -577,7 +575,7 @@ Copyright (c) 2010, RENCI</pre>
 
     4.  以滑鼠右鍵按一下 [ **dbo]。Dbo.sqlserveredition]**，然後選取 [**編輯前 200**個數據列]。
 
-    5.  將 [Standard Edition] 旁的 PropertyNumValue 變更為**2760240536** （從-1534726760）。
+    5.  將 [Standard Edition] 旁的 PropertyNumValue 變更為**2760240536** (從-1534726760) 。
 
     6.  關閉查詢以儲存變更。
 
@@ -585,7 +583,7 @@ Copyright (c) 2010, RENCI</pre>
 
 -   在 SIL 產生的報告中，如果實體伺服器上已啟用超執行緒，則所有處理器核心計數會包含執行緒的計數。  若要得到啟用超執行緒的伺服器上的實際實體核心計數，必須將這些計數減少一半。
 
--   資料列（在 [**儀表板**] 索引標籤上）和標示為「**同時**執行 ...」的**資料**行總計，在兩個位置之間並不完全相符。 在 [**儀表板**] 索引標籤上，必須將「**Windows Server 裝置（沒有已知的 vm**）」值新增至「**同時**執行 ...」在 [**摘要] 和 [詳細資料**] 索引標籤上，等於此數目的值。
+-   [**儀表板**] 索引標籤上的 [資料列] (中的總計 ([**摘要] 和 [詳細資料**] 索引標籤上的 [) ] 和 [已同時執行 ...] 標示，而 Windows Server 和 System Center 的 [**同時**執行 ...])  在 [**儀表板**] 索引標籤上，必須將 [**沒有已知 Vm 的 Windows Server 裝置 (**) ] 值新增至 [**同時**執行 ...]在 [**摘要] 和 [詳細資料**] 索引標籤上，等於此數目的值。
 
 -   在本文件的**持續管理 SIL** 一節中變更或更新憑證時，請參閱**避免資料遺失的重要步驟**。
 

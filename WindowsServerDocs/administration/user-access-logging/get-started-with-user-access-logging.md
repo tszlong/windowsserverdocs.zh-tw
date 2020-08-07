@@ -1,26 +1,24 @@
 ---
 title: 開始使用使用者存取記錄
 desctription: Describes the User Access Logging feature and how to start using it.
-ms.prod: windows-server
-ms.technology: manage-user-access-logging
 ms.topic: article
 ms.assetid: 5c395b8b-3b35-4042-b9cc-07e438f86d50
 author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 44bcdd3d89946558934b8309634061f6b8e7ffda
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 6b5e8ae365fbf8130d134ab2f9fa555e952d012a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471163"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895631"
 ---
 # <a name="get-started-with-user-access-logging"></a>開始使用使用者存取記錄
 
 >適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-使用者存取記錄（UAL）是 Windows Server 中的一項功能，可依本機伺服器上的角色和產品匯總用戶端使用資料。 它可協助 Windows server 系統管理員針對本機伺服器上的角色和服務，量化用戶端電腦的要求。
+使用者存取記錄 (UAL) 是 Windows Server 中的功能，可依角色和產品在本機伺服器上匯總用戶端使用狀況資料。 它可協助 Windows server 系統管理員針對本機伺服器上的角色和服務，量化用戶端電腦的要求。
 
 預設會安裝並啟用 UAL，並以近乎即時的方式收集資料。 不需要系統管理員設定，雖然可以停用或啟用 UAL。 如需詳細資訊，請參閱[管理使用者存取記錄](Manage-User-Access-Logging.md)。 使用者存取記錄服務會將角色和產品的用戶端使用量資料匯總至本機資料庫檔案。  IT 系統管理員稍後可以使用 Windows Management Instrumentation (WMI) 或 Windows PowerShell Cmdlet 來擷取依伺服器角色 (或軟體產品)、依使用者、依裝置、依本機伺服器以及依日期的數量和執行個體。
 
@@ -102,7 +100,7 @@ UAL 可以支援下列伺服器角色和服務：
 
 |資料|描述|
 |--------|---------------|
-|**UserName**|伴隨已安裝角色及產品之 UAL 項目的用戶端上的使用者名稱 (如果有的話)。|
+|**使用者名稱**|伴隨已安裝角色及產品之 UAL 項目的用戶端上的使用者名稱 (如果有的話)。|
 |**活動計數**|特定使用者存取角色或服務的次數。|
 |**FirstSeen**|使用者第一次存取角色或服務的日期和時間。|
 |**LastSeen**|使用者最後一次存取角色或服務的日期和時間。|
@@ -127,7 +125,7 @@ UAL 可以支援下列伺服器角色和服務：
 ## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>軟體需求
 在 Windows Server 2012 之後執行 Windows Server 版本的任何電腦上，都可以使用 UAL。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 MSDN 上的[使用者存取記錄](https://msdn.microsoft.com/library/windows/desktop/hh437528(v=vs.85).aspx)。
 [管理使用者存取記錄](Manage-User-Access-Logging.md)
 

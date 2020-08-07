@@ -1,20 +1,18 @@
 ---
 title: ksetup dumpstate
 description: Ksetup dumpstate 命令的參考文章，它會顯示電腦上定義之所有領域的領域設定目前狀態。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 3ef2f7b8-97af-4f42-9542-cff324840637
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 86e3761af14da9e1b8f52f4ce6859128fcda7bb7
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b9c59ad53a7e9d1fb149a0a0a87f5f00938d6a33
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929166"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887954"
 ---
 # <a name="ksetup-dumpstate"></a>ksetup dumpstate
 
@@ -28,9 +26,9 @@ ksetup /dumpstate
 
 ### <a name="remarks"></a>備註
 
-- 此命令的輸出包含預設領域（電腦所屬的網域），以及此電腦上定義的所有領域。 每個領域包含下列各項：
+- 此命令的輸出包含預設領域 (電腦所屬的網域) 以及在這部電腦上定義的所有領域。 每個領域包含下列各項：
 
-  - 與此領域相關聯的所有金鑰發佈中心（Kdc）。
+  - 所有金鑰發佈中心 (與此領域相關聯的 Kdc) 。
 
   - 此領域的所有**設定領域**旗標。
 

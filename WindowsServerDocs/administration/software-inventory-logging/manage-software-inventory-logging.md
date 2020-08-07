@@ -1,30 +1,28 @@
 ---
 title: 管理軟體清查記錄
 description: 說明如何管理軟體清查記錄
-ms.prod: windows-server
-ms.technology: manage-software-inventory-logging
 ms.topic: article
 ms.assetid: 812173d1-2904-42f4-a9e2-de19effec201
 author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 263a0fdfa5207924e170ebd198ce53749431e49d
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 1df4ffbb0cdc79527bef0fd2e3400d78995d5474
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87408817"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895669"
 ---
 # <a name="manage-software-inventory-logging"></a>管理軟體清查記錄
 
->適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+>適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 本檔說明如何管理軟體清查記錄，這項功能可協助資料中心系統管理員在一段時間內，輕鬆地記錄其部署的 Microsoft 軟體資產管理資料。 本文件說明如何管理軟體清查記錄。 在使用 Windows Server 2012 R2 的軟體清查記錄之前，請確定每個需要清查的系統上都已安裝 Windows Update [kb 3000850](https://support.microsoft.com/kb/3000850)和[KB 3060681](https://support.microsoft.com/kb/3060681) 。 Windows Server 2016 不需要任何 Wndows 更新。 這項功能會在要清查的每部伺服器上本機執行。 它不會從遠端伺服器收集資料。
 
 軟體清查記錄功能也可新增 Windows Server 2012 R2 之前的兩個 Windows Server 版本。 您可以安裝以下更新，在 Windows Server 2012 和 Windows Server 2008 R2 SP1 中新增軟體清查記錄功能：
 
-- **Windows Server 2012 （Standard 或 Datacenter Edition）**
+- **Windows Server 2012 (Standard 或 Datacenter Edition) **
 
 > [!NOTE]
 > 套用下方的更新程式封裝前，請確定您已安裝了 [WMF 4.0](https://www.microsoft.com/download/details.aspx?id=40855)。
@@ -71,7 +69,7 @@ ms.locfileid: "87408817"
 
 -   [刪除軟體清查記錄所記錄的資料](manage-software-inventory-logging.md#BKMK_Step4)
 
--   [備份及還原軟體清查記錄所記錄的資料] 管理-軟體-清查-記錄 md # BKMK_Step5）
+-   [備份及還原軟體清查記錄所記錄的資料] 管理-軟體-清查-記錄 md # BKMK_Step5) 
 
 -   [讀取軟體清查記錄所記錄及發佈的資料](manage-software-inventory-logging.md#BKMK_Step6)
 
@@ -117,9 +115,9 @@ ms.locfileid: "87408817"
 ## <a name="configuring-software-inventory-logging"></a>設定軟體清查記錄
 設定軟體清查記錄將隨著時間推移所產生的資料轉寄至彙總伺服器，須執行下列三個步驟：
 
-1.  使用**start-sillogging – TargetUri**指定匯總伺服器的 web 位址（必須以 "HTTPs://" 開頭）。
+1.  使用**start-sillogging – TargetUri**指定匯總伺服器的 web 位址， (必須以 "HTTPs://" ) 開頭。
 
-2.  使用**start-sillogging – CertificateThumbprint**來指定有效 SSL 憑證的指紋雜湊，以用來驗證匯總伺服器的資料傳輸（您的匯總伺服器必須設定為接受雜湊）。
+2.  使用**start-sillogging – CertificateThumbprint**來指定有效 SSL 憑證的指紋雜湊，以用來驗證匯總伺服器的資料傳輸 (您的匯總伺服器必須設定為接受雜湊) 。
 
 3.  在要轉寄資料之來源本機伺服器的**本機電腦/個人存放區** (或 **/LocalMachine/MY**) 安裝有效的 SSL 憑證。
 
@@ -198,7 +196,7 @@ SystemManufacturer        : Microsoft Corporation
 > 不一定要使用 **Get Sil** Cmdlet 才能啟動軟體清查記錄。
 
 ## <a name="deleting-data-logged-by-software-inventory-logging"></a><a name="BKMK_Step4"></a>刪除軟體清查記錄所記錄的資料
-軟體清查記錄並不是做為關鍵元件使用。 它的設計目的是為了在維護高度可靠性的同時，儘可能減少對本機系統作業的影響。 這也可讓系統管理員手動刪除軟體清查記錄資料庫和支援檔案（\Windows\System32\LogFiles\SIL 目錄中的每個檔案），以符合操作需求。
+軟體清查記錄並不是做為關鍵元件使用。 它的設計目的是為了在維護高度可靠性的同時，儘可能減少對本機系統作業的影響。 這也可讓系統管理員以手動方式刪除軟體清查記錄資料庫和支援檔案 (\Windows\System32\LogFiles\SIL 目錄中的每個檔案) ，以符合操作需求。
 
 #### <a name="to-delete-data-logged-by-software-inventory-logging"></a>刪除軟體清查記錄所記錄的資料
 
@@ -220,7 +218,7 @@ SystemManufacturer        : Microsoft Corporation
 > 如果因任何原因而導致 SIL 在本機記錄的資料保留持續時間變得很重要，可以藉由變更這裡的登錄值來設定： \ HKEY_LOCAL_MACHINE \\ SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging。 預設值為 ' 30 ' 30 天。
 
 ## <a name="reading-data-logged-and-published-by-software-inventory-logging"></a><a name="BKMK_Step6"></a>讀取軟體清查記錄所記錄及發佈的資料
-SIL 記錄但儲存在本機的資料（如果轉送到目標 URI 失敗），或成功轉送到目標匯總伺服器的資料，會儲存在二進位檔案中（適用于每日的資料）。 若要在 PowerShell 中顯示這項資料，請使用 [Import-BinaryMiLog](https://technet.microsoft.com/library/dn262592.aspx) Cmdlet。
+SIL 記錄的資料，但是會儲存在本機 (如果轉送到目標 URI) ，或是成功轉送到目標匯總伺服器的資料，則會儲存在每日資料)  (的二進位檔案中。 若要在 PowerShell 中顯示這項資料，請使用 [Import-BinaryMiLog](https://technet.microsoft.com/library/dn262592.aspx) Cmdlet。
 
 ## <a name="software-inventory-logging-security"></a><a name="BKMK_Step7"></a>軟體清查記錄安全性
 若要順利地從軟體清查記錄 WMI 與 PowerShell API 中擷取資料，您必須要有本機伺服器上的系統管理權限。
@@ -275,9 +273,9 @@ SIL 記錄但儲存在本機的資料（如果轉送到目標 URI 失敗），�
 > [!NOTE]
 > 在 [KB 3000850](https://support.microsoft.com/kb/3000850) 更新的安裝中已移除這項功能。
 
-在 Windows Server 2012 R2 Hyper-v 主機上使用軟體清查記錄時，如果已在來賓中啟動 SIL 記錄，則可以從本機執行的 Windows Server 2012 R2 來賓中取出 SIL 資料。 不過，只有在使用 Publish-sildata 和 Publish-sildata Powershell Cmdlet 時，才有可能發生這種情況，而且只有在主機和來賓的 WIndows Server 2012 R2 中才可行。這項功能的目的是讓提供客體 VM 給租用戶或其他大型公司實體的資料中心系統管理員，可以在 Hypervisor 主機擷取軟體清查資料，然後後續將所有資料轉送至彙總工具 (或目標 URI)。
+在 Windows Server 2012 R2 Hyper-v 主機上使用軟體清查記錄時，如果在來賓 (s) 中啟動了 SIL 記錄，就可以從本機執行的 Windows Server 2012 R2 來賓抓取 SIL 資料。 不過，只有在使用 Publish-sildata 和 Publish-sildata Powershell Cmdlet 時，才有可能發生這種情況，而且只有在主機和來賓的 WIndows Server 2012 R2 中才可行。這項功能的目的是讓提供客體 VM 給租用戶或其他大型公司實體的資料中心系統管理員，可以在 Hypervisor 主機擷取軟體清查資料，然後後續將所有資料轉送至彙總工具 (或目標 URI)。
 
-以下兩個範例說明 PowerShell 主控台上的輸出會在 Windows Server 2012 R2 Hyper-v 主機上執行，其中包含 SIL 記錄啟動的 windows server 2012 R2 的來賓 VM。您會注意到單使用 Get-SilData 的第一個範例，會如預期般輸出主機的所有資料。另還包含在內的是客體的所有 SIL 資料，但會以摺疊格式表示。若要展開並檢視客體的這項資料，您只需剪下並貼上以下第二個範例中所使用的程式碼片段即可。客體的 SIL 資料物件的物件內一定會有相關聯的 VM GUID。
+以下兩個範例說明 PowerShell 主控台上的輸出內容， (在 Windows Server 2012 R2 Hyper-v 主機上執行一部 Windows Server 2012 R2 的虛擬機器（已啟動 SIL 記錄）) 的縮寫。您會注意到單使用 Get-SilData 的第一個範例，會如預期般輸出主機的所有資料。另還包含在內的是客體的所有 SIL 資料，但會以摺疊格式表示。若要展開並檢視客體的這項資料，您只需剪下並貼上以下第二個範例中所使用的程式碼片段即可。客體的 SIL 資料物件的物件內一定會有相關聯的 VM GUID。
 
 > [!NOTE]
 > 由於 SIL 資料會輸出在主控台上，使用 Get-SilData Cmdlet 時，在資料流中，不一定永遠都能以預測的順序輸出物件。在下列兩個範例中，文字已經過色彩標示 (藍色表示實體主機資料，綠色表示虛擬客體資料)，這單純只做為這份文件的說明工具使用。
@@ -286,7 +284,7 @@ SIL 記錄但儲存在本機的資料（如果轉送到目標 URI 失敗），�
 
 ![範例輸出報表的影像](../media/software-inventory-logging/SILHyper-VExample1.png)
 
-**輸出範例 2** （w/Expand-publish-sildata 函數）
+**輸出範例 2** (w/Expand-publish-sildata 函式) 
 
 ![範例輸出報表的影像](../media/software-inventory-logging/SILHyper-VExample2.png)
 

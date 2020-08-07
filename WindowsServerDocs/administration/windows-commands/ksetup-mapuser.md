@@ -1,20 +1,18 @@
 ---
 title: ksetup mapuser
 description: Ksetup mapuser 命令的參考文章，其會將 Kerberos 主體的名稱對應至帳戶。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 84113e6e-89ff-488a-9cd0-f14bbf23b543
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f387b8c3ff7cf7515a4f2ed9b8ea62d379332ec7
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: c234dc857241a70f479934fda15dcfab0b4e9de7
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933692"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887837"
 ---
 # <a name="ksetup-mapuser"></a>ksetup mapuser
 
@@ -28,18 +26,18 @@ ksetup /mapuser <principal> <account>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
-| `<principal>` | 指定任何主體使用者的完整功能變數名稱。 例如 mike@corp.CONTOSO.COM。 如果您未指定帳戶參數，則會刪除指定主體的對應。 |
+| `<principal>` | 指定任何主體使用者的完整功能變數名稱。 例如： mike@corp.CONTOSO.COM 。 如果您未指定帳戶參數，則會刪除指定主體的對應。 |
 | `<account>` | 指定存在於此電腦上的任何帳戶或安全性群組名稱，例如 [**來賓**]、[**網域使用者**] 或 [**系統管理員**]。 如果省略此參數，則會刪除指定主體的對應。 |
 
 #### <a name="remarks"></a>備註
 
-- 可以明確識別帳戶（例如**網域來賓**），或者您可以使用萬用字元（*）來包含所有帳戶。
+- 可以明確識別帳戶（例如**網域來賓**），或者您可以使用萬用字元 ( * ) 來包含所有帳戶。
 
 - 只有在指定領域的主體出示有效的 Kerberos 票證時，電腦才會進行驗證。
 
-- 每當對外部金鑰發佈中心（KDC）和領域設定進行變更時，就需要重新開機已變更設定的電腦。
+- 只要對外部金鑰發佈中心進行變更 (KDC) 和領域設定，就必須重新開機已變更設定的電腦。
 
 ### <a name="examples"></a>範例
 

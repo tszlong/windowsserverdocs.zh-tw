@@ -1,31 +1,29 @@
 ---
 title: gpt
-description: Gpt 命令的參考文章，它會將 gpt 屬性指派給具有焦點的磁碟分割。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Gpt 命令的參考文章，它會將 (s) 的 gpt 屬性指派給具有焦點的磁碟分割。
 ms.topic: article
 ms.assetid: 1d6f9029-807f-4420-a336-36669b5361bc
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2357f9916aba2eaba6a226fc8addbb13bf5f2f37
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 561bc4a11580a45452ac71cffddee1c58e48cf86
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957140"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888549"
 ---
 # <a name="gpt"></a>gpt
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-在基本 GUID 磁碟分割表格（gpt）磁片上，此命令會將 gpt 屬性指派給具有焦點的磁碟分割。 Gpt 磁碟分割屬性提供有關使用資料分割的其他資訊。 某些屬性是磁碟分割類型 GUID 所特有的。
+在基本 GUID 磁碟分割表格上 (gpt) 磁片，此命令會將 gpt 屬性 (s) 指派給具有焦點的磁碟分割。 Gpt 磁碟分割屬性提供有關使用資料分割的其他資訊。 某些屬性是磁碟分割類型 GUID 所特有的。
 
 您必須選擇基本 gpt 磁碟分割，此作業才會成功。 使用 [[選取資料分割] 命令](select-partition.md)來選取基本 gpt 磁碟分割，並將焦點移至該分割區。
 
 > [!CAUTION]
-> 變更 gpt 屬性可能會導致您的基本資料磁片區無法指派磁碟機號，或防止檔案系統載入。 我們強烈建議您不要變更 gpt 屬性，除非您是原始設備製造商（OEM）或熟悉 gpt 磁片的 IT 專業人員。
+> 變更 gpt 屬性可能會導致您的基本資料磁片區無法指派磁碟機號，或防止檔案系統載入。 我們強烈建議您不要變更 gpt 屬性，除非您是原始設備製造商， (OEM) 或熟悉 gpt 磁片的 IT 專業人員。
 
 ## <a name="syntax"></a>語法
 
@@ -51,7 +49,7 @@ gpt attributes=<n>
 gpt attributes=0x8000000000000000
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

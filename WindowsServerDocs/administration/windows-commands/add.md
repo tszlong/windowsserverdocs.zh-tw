@@ -1,20 +1,18 @@
 ---
 title: add
 description: Add 命令的參考文章，其會將磁片區新增至要陰影複製的磁片區集合，或將別名新增至別名環境。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 47efce7a-86d2-4872-ae31-baa108757afd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7b409b0355f4e112773c3f847466586fe3c84654
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 8ba5f425617fe48d10a900c82fbfcf9c174214f5
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924071"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895587"
 ---
 # <a name="add"></a>add
 
@@ -33,7 +31,7 @@ add alias <aliasname> <aliasvalue>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | 磁碟區 | 將磁片區新增至陰影複製組，這是要陰影複製的一組磁片區。 如需語法和參數，請參閱[新增磁片](add-volume.md)區。 |
 | alias | 將指定的名稱和值加入至別名環境。 如需語法和參數，請參閱[add alias](add-alias.md) 。 |

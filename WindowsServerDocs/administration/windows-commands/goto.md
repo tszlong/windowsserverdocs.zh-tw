@@ -1,20 +1,18 @@
 ---
 title: goto
 description: Goto 命令的參考文章，會將 cmd.exe 導向至 batch 程式中已標記的行。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e0de1458-1f78-48ff-a746-c285a945a510
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: afc77f7837ddaeb0552052538537285f0d652682
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: cc5059f90d471496deb0ccfc668054f1ed7cbde6
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924681"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888594"
 ---
 # <a name="goto"></a>goto
 
@@ -28,18 +26,18 @@ goto <label>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<label>` | 指定在 batch 程式中當做標籤使用的文字字串。 |
 | /? | 在命令提示字元顯示說明。 |
 
 #### <a name="remarks"></a>備註
 
--  如果已啟用命令延伸模組（預設值），而且您使用 [ **goto** ] 命令搭配目標標籤 **： EOF**，則您會將控制權轉移到目前批次腳本檔案的結尾，並結束批次腳本檔案，但不定義標籤。 當您使用此命令搭配 **： EOF**標籤時，您必須在標籤之前插入冒號。 例如：`goto:EOF`。
+-  如果已啟用 (預設) 的命令延伸模組，而且您使用 [ **goto** ] 命令搭配目標標籤 **： EOF**，則會將控制權轉移到目前批次腳本檔案的結尾，並結束批次腳本檔案，但不定義標籤。 當您使用此命令搭配 **： EOF**標籤時，您必須在標籤之前插入冒號。 例如：`goto:EOF`。
 
-- 您可以使用*標籤*參數中的空格，但不能包含其他分隔符號（例如，分號（;)或等號（=））。
+- 您可以使用*標籤*參數中的空格，但是不能包含其他分隔符號 (例如，分號 (; ) 或等號 (=) # A5。
 
-- 您指定的*標籤*值必須符合 batch 程式中的標籤。 Batch 程式內的標籤必須以冒號（:) 開頭。 如果一行的開頭是冒號，則會將它視為標籤，而該行上的任何命令都會被忽略。 如果您的 batch 程式不包含您在*label*參數中指定的標籤，則 batch 程式會停止，並顯示下列訊息： `Label not found` 。
+- 您指定的*標籤*值必須符合 batch 程式中的標籤。 Batch 程式內的標籤必須以冒號開頭 (： ) 。 如果一行的開頭是冒號，則會將它視為標籤，而該行上的任何命令都會被忽略。 如果您的 batch 程式不包含您在*label*參數中指定的標籤，則 batch 程式會停止，並顯示下列訊息： `Label not found` 。
 
 - 您可以搭配其他命令使用**goto**來執行條件式作業。 如需使用**goto**進行條件式作業的詳細資訊，請參閱[if 命令](if.md)。
 

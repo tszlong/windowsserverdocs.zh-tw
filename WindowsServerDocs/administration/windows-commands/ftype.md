@@ -1,24 +1,22 @@
 ---
 title: ftype
 description: Ftype 命令的參考文章，它會顯示或修改副檔名關聯中所使用的檔案類型。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 6fb53cee-9bed-44dd-af5d-bc7cec1dd114
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0ab401c4dd4707cf05c69c1746368927c0bfaa83
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ed4a8a698328737259f830118fa9c6a482247884
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930461"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888712"
 ---
 # <a name="ftype"></a>ftype
 
-顯示或修改副檔名關聯中所使用的檔案類型。 如果在沒有指派運算子（=）的情況下使用，此命令會顯示指定檔案類型目前開啟的命令字串。 如果使用時不含參數，此命令會顯示已定義 open 命令字串的檔案類型。
+顯示或修改副檔名關聯中所使用的檔案類型。 如果在沒有指派運算子的情況下使用 (=) ，此命令會顯示指定檔案類型目前開啟的命令字串。 如果使用時不含參數，此命令會顯示已定義 open 命令字串的檔案類型。
 
 > [!NOTE]
 > 只有 cmd.exe 中才支援此命令，而且無法從 PowerShell 使用。
@@ -32,7 +30,7 @@ ftype [<filetype>[=[<opencommandstring>]]]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<filetype>` | 指定要顯示或變更的檔案類型。 |
 | `<opencommandstring>` | 指定開啟指定檔案類型的檔案時，所要使用的 open 命令字串。|
@@ -46,7 +44,7 @@ ftype [<filetype>[=[<opencommandstring>]]]
 | -------- | ----------------- |
 | `%0` 或 `%1` | 會以透過關聯啟動的檔案名取代。 |
 | `%*` | 取得所有參數。 |
-| `%2`, `%3`, ... | 取得第一個參數（ `%2` ）、第二個參數（ `%3` ）等等。 |
+| `%2`, `%3`, ... | 取得第一個參數 (`%2`) 、第二個參數 (`%3`) 等等。 |
 | `%~<n>` | 取得所有開頭為第*n*個參數的剩餘參數，其中*n*可以是介於2到9之間的任何數位。 |
 
 ### <a name="examples"></a>範例

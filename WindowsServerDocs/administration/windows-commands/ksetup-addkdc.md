@@ -1,24 +1,22 @@
 ---
 title: ksetup addkdc
-description: Ksetup addkdc 命令的參考文章，其會為指定的 Kerberos 領域廣告金鑰發佈中心（KDC）位址。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Ksetup addkdc 命令的參考文章，其廣告金鑰發佈中心指定之 Kerberos 領域的 (KDC) 位址。
 ms.topic: article
 ms.assetid: 98bfc23a-14c4-401c-bcb3-9903c5cdde64
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 32839c0f8c1e408cfa6ab1e067c250551ee7b490
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 13f3a2e2343ae8161968d6968babc2cafd78e053
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925564"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888138"
 ---
 # <a name="ksetup-addkdc"></a>ksetup addkdc
 
-為指定的 Kerberos 領域新增金鑰發佈中心（KDC）位址
+為指定的 Kerberos 領域新增金鑰發佈中心 (KDC) 位址
 
 對應會儲存在登錄中的**HKEY_LOCAL_MACHINE \system\currentcontrolset\control\lsa\kerberos\domains**底下，而且必須重新開機電腦，才會使用新的領域設定。
 
@@ -33,7 +31,7 @@ ksetup /addkdc <realmname> [<KDCname>]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<realmname>` | 指定大寫 DNS 名稱，例如 CORP。CONTOSO.COM。 當**ksetup**執行時，這個值也會顯示為預設領域，而是您想要將其他 KDC 加入其中的領域。 |
 | `<KDCname>` | 指定不區分大小寫的完整功能變數名稱，例如 mitkdc.contoso.com。 如果省略 KDC 名稱，DNS 將會找出 Kdc。 |

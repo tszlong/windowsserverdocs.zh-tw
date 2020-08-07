@@ -1,20 +1,18 @@
 ---
 title: ksetup server
 description: Ksetup 伺服器命令的參考文章，可讓您指定執行 Windows 作業系統之電腦的名稱，因此 ksetup 命令所做的變更會更新目的電腦。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e3407111-ac92-457f-aa1f-a04fe9109d59
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 99c708c3842d1d2d36783db09d60750bb2703670
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2bfa894468ee05b983d8c0122a1738982ef4d909
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926093"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887783"
 ---
 # <a name="ksetup-server"></a>ksetup server
 
@@ -33,7 +31,7 @@ ksetup /server <servername>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<servername>` | 指定設定會生效的完整電腦名稱稱，例如*IPops897.corp.contoso.com*。<p>如果指定了不完整的完整網域電腦名稱稱，此命令將會失敗。 |
 

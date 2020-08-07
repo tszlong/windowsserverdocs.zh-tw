@@ -1,20 +1,18 @@
 ---
 title: add volume
 description: Add volume 命令的參考文章，它會將磁片區新增到陰影複製組，這是要陰影複製的一組磁片區。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: b7d4d35d-8bda-46d2-8df5-eb598cecaaba
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3cd80a60fd3215a2234d4eb5be8a62da91e2cba4
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 374fec353397916fa76952401571dee92073dd59
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924086"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895593"
 ---
 # <a name="add-volume"></a>add volume
 
@@ -32,7 +30,7 @@ add volume <volume> [provider <providerid>]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<volume>` | 指定要加入陰影複製組的磁片區。 必須至少有一個磁片區，才能建立陰影複製。 |
 | `[provider \<providerid>]` | 指定要用來建立陰影複製之已註冊提供者的提供者識別碼。 如果未指定**provider** ，則會使用預設提供者。 |

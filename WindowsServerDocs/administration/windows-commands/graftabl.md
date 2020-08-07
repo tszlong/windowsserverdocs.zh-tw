@@ -1,20 +1,18 @@
 ---
 title: graftabl
 description: Graftabl 命令的參考文章，可讓 Windows 作業系統以圖形模式顯示擴充字元集。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: b08351d4-3d24-490c-86f6-1252da11d923
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9259833856ec5c6de402b0db0a4de4636a66f508
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: cd20baaca94c13e725cf3121ba7a9f4f9f5524b1
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924595"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888505"
 ---
 # <a name="graftabl"></a>graftabl
 
@@ -29,9 +27,9 @@ graftabl /status
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
-| `<codepage>` | 指定字碼頁，以定義圖形模式中擴充字元的外觀。 有效的字碼頁識別編號為：<ul><li>**437** -美國</li><li>**850** -多語系（拉丁 I）</li><li>**852** -斯拉夫語（拉丁 II）</li><li>**855** -斯拉夫文（俄文）</li><li>**857** -土耳其文</li><li>**860** -葡萄牙文</li><li>**861** -冰島文</li><li>**863** -加拿大-法文</li><li>**865** -北歐</li><li>**866** -俄文</li><li>**869** -新式希臘文</li></ul> |
+| `<codepage>` | 指定字碼頁，以定義圖形模式中擴充字元的外觀。 有效的字碼頁識別編號為：<ul><li>**437** -美國</li><li>**850** -多語系 (拉丁 I) </li><li>**852** -斯拉夫 (拉丁 II) </li><li>**855** -斯拉夫文 (俄文) </li><li>**857** -土耳其文</li><li>**860** -葡萄牙文</li><li>**861** -冰島文</li><li>**863** -加拿大-法文</li><li>**865** -北歐</li><li>**866** -俄文</li><li>**869** -新式希臘文</li></ul> |
 | /status | 顯示此命令目前使用的字碼頁。 |
 | /? | 在命令提示字元顯示說明。 |
 
@@ -41,7 +39,7 @@ graftabl /status
 
 - 每個結束代碼和其簡短描述：
 
-    | 結束碼 | 說明 |
+    | 結束碼 | 描述 |
     | --------- | ----------- |
     | 0 | 字元集已成功載入。 未載入先前的字碼頁。 |
     | 1 | 指定了不正確的參數。 未採取任何動作。 |
@@ -57,13 +55,13 @@ graftabl /status
 graftabl /status
 ```
 
-若要將字碼頁437（美國）的圖形字元集載入記憶體中，請輸入：
+若要將字碼頁 437 (美國) 的圖形字元集載入記憶體中，請輸入：
 
 ```
 graftabl 437
 ```
 
-若要將字碼頁850（多語系）的圖形字元集載入記憶體中，請輸入：
+若要載入字碼頁 850 (多語系) 至記憶體中的圖形字元集，請輸入：
 
 ```
 graftabl 850

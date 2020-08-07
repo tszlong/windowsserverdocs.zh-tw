@@ -1,20 +1,18 @@
 ---
 title: autochk
 description: '[Autochk] 命令的參考文章，會在電腦啟動時以及 Windows Server 開始驗證檔案系統的邏輯完整性時執行。'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 8787e6a3-f023-4ea5-b2d1-61c6876d8aff
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9cfb034f37f85b1e54e0cee2a8a4d128518c775a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 91472aa7447c590aefcb4af58d1951e8e39225fe
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923623"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895290"
 ---
 # <a name="autochk"></a>autochk
 
@@ -35,7 +33,7 @@ ms.locfileid: "85923623"
 >
 > - 您可以搭配 **/x**參數使用**chkntfs** ，以防止在特定磁片區或多個磁片區上執行**autochk** 。
 >
-> - 使用**chkntfs.exe**命令列工具搭配 **/t**參數，將 autochk 延遲從0秒變更為最多3天（259200秒）。 不過，長時間延遲表示電腦不會啟動到經過的時間，或直到您按下按鍵來取消**autochk**為止。
+> - 使用**chkntfs.exe**命令列工具搭配 **/t**參數，將 autochk 延遲從0秒變更為最多3天， (259200 秒) 。 不過，長時間延遲表示電腦不會啟動到經過的時間，或直到您按下按鍵來取消**autochk**為止。
 
 ## <a name="additional-references"></a>其他參考資料
 

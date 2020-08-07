@@ -1,20 +1,18 @@
 ---
 title: ksetup addrealmflags
 description: Ksetup addrealmflags 命令的參考文章，它會將其他領域旗標新增至指定的領域。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 80ca1e16-8871-494b-b9be-6bc9d63de860
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0206d56563544e48fec5e714febdd3c3be52ab40
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a834d6ce69fede20ed544d858c4f4c46abdf0d68
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925528"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888070"
 ---
 # <a name="ksetup-addrealmflags"></a>ksetup addrealmflags
 
@@ -28,7 +26,7 @@ ksetup /addrealmflags <realmname> [sendaddress] [tcpsupported] [delegate] [ncsup
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<realmname>` | 指定大寫 DNS 名稱，例如 CORP。CONTOSO.COM。 |
 
@@ -36,12 +34,12 @@ ksetup /addrealmflags <realmname> [sendaddress] [tcpsupported] [delegate] [ncsup
 
 - 領域旗標會指定不是以 Windows 伺服器作業系統為基礎的 Kerberos 領域的其他功能。 執行 Windows Server 的電腦可以使用 Kerberos 伺服器來管理 Kerberos 領域中的驗證，而不是使用執行 Windows Server 作業系統的網域。 此專案會建立領域的功能，如下所示：
 
-| 值 | 領域旗標 | Description |
+| 值 | 領域旗標 | 描述 |
 | ----- | ---------- | ----------- |
 | 0xF | 全部 | 所有領域旗標都已設定。 |
-| 0x00 | None | 未設定領域旗標，且未啟用任何其他功能。 |
+| 0x00 | 無 | 未設定領域旗標，且未啟用任何其他功能。 |
 | 0x01 | sendaddress | IP 位址會包含在票證授權票證中。 |
-| 0x02 | tcpsupported | 此領域支援傳輸控制通訊協定（TCP）和使用者資料包協定（UDP）。 |
+| 0x02 | tcpsupported | 傳輸控制通訊協定 (TCP) 和使用者資料包協定 (UDP) 在此領域中受到支援。 |
 | 0x04 | Delegate - 委派 | 此領域中的每個人都受信任，可進行委派。 |
 | 0x08 | ncsupported | 此領域支援名稱標準化，其允許 DNS 和領域命名標準。 |
 | 0x80 | rc4 | 此領域支援 RC4 加密來啟用跨領域信任，以允許使用 TLS。 |

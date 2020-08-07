@@ -1,20 +1,18 @@
 ---
 title: Tasklist
 description: 瞭解如何顯示在本機或遠端電腦上執行的處理常式清單。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 8dbe30ee-1484-46be-917b-5ca3ff4fdc9c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c189af48e30729b53b04b343d2d4c0e4e81c4d0e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a4f87c4cc2dc80c67e2004c929fa23aea8791fb9
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721536"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881818"
 ---
 # <a name="tasklist"></a>Tasklist
 
@@ -32,15 +30,15 @@ tasklist [/s <Computer> [/u [<Domain>\]<UserName> [/p <Password>]]] [{/m <Module
 
 |          參數           |                                                                                                                                            描述                                                                                                                                             |
 |------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|        /s \<Computer>        |                                                                                         指定遠端電腦的名稱或 IP 位址（請勿使用反斜線）。 預設是本機電腦。                                                                                         |
-| /u [\<網域>\\ \] \<使用者名稱> | 使用 [使用者*名稱*] 或 [*網域*\*使用者名稱] 所指定的帳號許可權來執行命令<em>。\*只有在指定/s 時，才可以指定\*/u</em> 。 **/s** \* 預設為目前登入發出命令之電腦的使用者許可權。 |
-|        /p \<密碼>        |                                                                                                       指定 **/u**參數中指定之使用者帳戶的密碼。                                                                                                        |
-|         /m \<模組>         |                                                               列出載入符合指定模式名稱之 DLL 模組的所有工作。 如果未指定模組名稱，此選項會顯示每個工作載入的所有模組。                                                                |
+|        /s\<Computer>        |                                                                                         指定遠端電腦的名稱或 IP 位址， (不要使用反斜線) 。 預設是本機電腦。                                                                                         |
+| 那麼\<Domain>\\\]\<UserName> | 使用 [使用者*名稱*] 或 [*網域*使用者名稱] 所指定的帳號許可權來執行命令 \* <em>。 \* \*</em> \* 只有在指定 **/s**時，才可以指定/u。 預設為目前登入發出命令之電腦的使用者許可權。 |
+|        /p\<Password>        |                                                                                                       指定 **/u**參數中指定之使用者帳戶的密碼。                                                                                                        |
+|         /m\<Module>         |                                                               列出載入符合指定模式名稱之 DLL 模組的所有工作。 如果未指定模組名稱，此選項會顯示每個工作載入的所有模組。                                                                |
 |             /svc             |                                                                                    列出每個進程的所有服務資訊，而不進行截斷。 當 **/fo**參數設定為**table**時有效。                                                                                    |
 |              /v              |                                                                                 在輸出中顯示詳細的工作資訊。 如需完整的詳細資訊輸出而不截斷，請同時使用 **/v**和 **/svc** 。                                                                                 |
-|  /fo {資料表\|清單\| csv}  |                                                                             指定要用於輸出的格式。 有效值為**table**、 **list**和**csv**。 輸出的預設格式為**table**。                                                                             |
+|  /fo {資料表 \| 清單 \| csv}  |                                                                             指定要用於輸出的格式。 有效值為**table**、 **list**和**csv**。 輸出的預設格式為**table**。                                                                             |
 |             /nh              |                                                                                             隱藏輸出中的資料行標頭。 當 **/fo**參數設定為**table**或**csv**時有效。                                                                                              |
-|        /fi \<篩選>         |                                                                          指定要在查詢中包含或排除的處理常式類型。 請參閱下表以取得有效的篩選器名稱、運算子和值。                                                                          |
+|        /fi\<Filter>         |                                                                          指定要在查詢中包含或排除的處理常式類型。 請參閱下表以取得有效的篩選器名稱、運算子和值。                                                                          |
 |              /?              |                                                                                                                                在命令提示字元顯示說明。                                                                                                                                |
 
 ### <a name="filter-names-operators-and-values"></a>篩選名稱、運算子和值
@@ -63,7 +61,7 @@ tasklist [/s <Computer> [/u [<Domain>\]<UserName> [/p <Password>]]] [{/m <Module
 
 當指定遠端系統時，不支援 SYSTEM.WINDOWS.CONTROLS.PAGE.WINDOWTITLE 和 STATUS 篩選。
 
-## <a name="examples"></a><a name="BKMK_examples"></a>範例
+## <a name="examples"></a><a name="BKMK_examples"></a>典型
 
 若要列出處理序識別碼大於1000的所有工作，並將其顯示為 CSV 格式，請輸入：
 ```
@@ -83,13 +81,13 @@ tasklist /s srvmain /svc /fi "MODULES eq ntdll*"
 ```
 若要使用您目前登入的使用者帳戶的認證來列出遠端電腦上的處理常式 "Srvmain"，請輸入：
 ```
-tasklist /s srvmain 
+tasklist /s srvmain
 ```
 若要使用使用者帳戶 Hiropln 的認證來列出遠端電腦上的處理常式 "Srvmain"，請輸入：
 ```
 tasklist /s srvmain /u maindom\hiropln /p p@ssW23
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

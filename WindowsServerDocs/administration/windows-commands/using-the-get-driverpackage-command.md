@@ -1,20 +1,18 @@
 ---
 title: DriverPackage
 description: DriverPackage 的參考文章，它會顯示伺服器上驅動程式套件的相關資訊。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 94d231e4-ff01-48e7-9bc8-7b0d97a4339e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f0ca307b9f42d0921c896df2fe622c5b0f8a853d
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 95dbc43df5feb7bd07e2dfe3d9e74e81d94dd612
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932257"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879795"
 ---
 # <a name="get-driverpackage"></a>DriverPackage
 
@@ -28,7 +26,7 @@ WDSUTIL /Get-DriverPackage [/Server:<Server name>] {/DriverPackage:<Package Name
 
 ### <a name="parameters"></a>參數
 
-|        參數         |                                                                           說明                                                                            |
+|        參數         |                                                                           描述                                                                            |
 |--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [/Server： \<Server name> ] |              指定伺服器的名稱。 這可以是 NetBIOS 名稱或 FQDN。 如果未指定伺服器名稱，則會使用本機伺服器。               |
 | [/DriverPackage： \<Name> ] |                                                        指定要顯示的驅動程式套件的名稱。                                                         |

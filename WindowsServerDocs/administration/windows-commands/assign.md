@@ -1,31 +1,29 @@
 ---
 title: assign
 description: 指派命令的參考文章，其會將磁碟機號或掛接點指派給具有焦點的磁片區。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 57912b73-622e-489b-b053-a369021ba8e1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 41c6194b68414be65fcf6b93b662e25ae80e0309
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: bd0e03c0705a65ad03c3627222ae5b6003c1cdfa
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955500"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895551"
 ---
 # <a name="assign"></a>assign
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 將磁碟機代號或掛接點指派給帶有焦點的磁碟區。 您也可以使用這個命令來變更與卸載式磁片磁碟機相關聯的磁碟機號。 如果未指定磁碟機代號或掛接點，則會指派下一個可用的磁碟機代號。 如果磁碟機代號或掛接點已在使用中，則會產生錯誤。
 
 必須選取一個磁碟區，這項操作才能繼續。 使用 [**選取磁片**區] 命令來選取磁片區，並將焦點移至該磁片區。
 
 > [!IMPORTANT]
-> 您無法將磁碟機號指派給系統磁碟區、開機磁碟區或包含分頁檔的磁片區。 此外，您不能將磁碟機號指派給原始設備製造商（OEM）磁碟分割，或是基本資料分割以外的任何 GUID 磁碟分割表格（gpt）磁碟分割。
+> 您無法將磁碟機號指派給系統磁碟區、開機磁碟區或包含分頁檔的磁片區。 此外，您也無法將磁碟機號指派給原始設備製造商， (OEM) 磁碟分割或任何 GUID 磁碟分割表格 (gpt) 磁碟分割以外的資料分割。
 
 ## <a name="syntax"></a>語法
 
@@ -49,7 +47,7 @@ assign [{letter=<d> | mount=<path>}] [noerr]
 assign letter=e
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

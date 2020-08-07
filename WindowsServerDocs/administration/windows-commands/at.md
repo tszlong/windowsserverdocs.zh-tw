@@ -1,24 +1,22 @@
 ---
 title: at
 description: At 命令的參考文章，會排定在指定的時間和日期，于電腦上執行命令和程式。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ff18fd16-9437-4c53-8794-bfc67f5256b3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1ead4132b70cc98d9bdd7f478a8e3f18ab6da1aa
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e8bd4ba389d072ca1f8054d9f691f434063a8df4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923936"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895550"
 ---
 # <a name="at"></a>at
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 排定在指定的時間和日期，于電腦上執行的命令和程式。 只有**在排程服務正在執行時**，您才能使用。 在不使用參數的情況下，**于**列出已排程的命令。 您必須是本機 Administrators 群組的成員，才能執行此命令。
 
@@ -31,23 +29,23 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `\<computername\>` | 指定遠端電腦。 如果您省略此參數，請**在**排程本機電腦上的命令和程式。 |
 | `<id>` | 指定指派給已排程命令的識別碼。 |
 | /delete | 取消已排程的命令。 如果您省略*識別碼*，電腦上所有已排程的命令都會被取消。 |
 | /yes | 當您刪除已排程的事件時，對系統中的所有查詢回答 [是]。 |
-| `<time>` | 指定您要執行命令的時間。 時間以小時：分鐘表示，24小時制標記法（也就是00:00 （午夜）到23:59）。 |
+| `<time>` | 指定您要執行命令的時間。 時間以小時：分鐘表示，24小時制標記法 (也就是 00:00 (午夜) 到 23:59) 。 |
 | 互動式 | 允許*命令*在*命令*執行時，與登入之使用者的桌面進行互動。 |
-| 每個 | 在每個指定的一天或一周或一個月的某一天（例如，每個星期四或每個月的第三天）執行*命令*。 |
-| `<date>` | 指定您要執行命令的日期。 您可以指定一或多個星期（也就是 type **M**、**T**、**W**、**Th**、**F**、**S**、**Su**）或當月的一或多天（也就是輸入1到31）。 以逗號分隔多個日期專案。 如果您省略*date*， **at**會使用當月的目前日期。 |
-| 下一個 | 在下一天出現時執行*命令*（例如，下一個星期四）。 |
-| `<command>` | 指定您想要執行的 Windows 命令、程式（也就是 .exe 或 .com 檔案）或批次檔（也就是 .bat 或 .cmd 檔案）。 當命令需要路徑做為引數時，請使用絕對路徑（也就是以磁碟機號開頭的完整路徑）。 如果命令位於遠端電腦上，請為伺服器和共用名稱指定通用命名慣例（UNC）標記法，而不是遠端磁碟機號。 |
+| 每個 | 在每個指定的一天或一周或每月的哪一天執行*命令* (例如，每個星期四，或每個月的第三天) 。 |
+| `<date>` | 指定您要執行命令的日期。 您可以指定一或多天的 (，也就是輸入**M**、**T**、**W**、**Th**、**F**、**S**、**Su**) 或當月的一或多天 (也就是輸入1到 31) 。 以逗號分隔多個日期專案。 如果您省略*date*， **at**會使用當月的目前日期。 |
+| 下一個 | 在下一天出現時執行*命令* (例如，下一個星期四) 。 |
+| `<command>` | 指定 Windows 命令、程式 (，也就是、.exe 或 .com 檔案) 或 batch 程式 (，也就是您想要執行的 .bat 或 .cmd 檔案) 。 當命令需要路徑做為引數時，請使用絕對路徑 (也就是以磁碟機號為開頭的整個路徑) 。 如果命令位於遠端電腦上，請為伺服器和共用名稱指定通用命名慣例 (UNC) 標記法，而不是遠端磁碟機號。 |
 | /? | 在命令提示字元顯示說明。 |
 
 ### <a name="remarks"></a>備註
 
-- 執行命令之前，此命令不會自動載入 cmd.exe。 如果您不是執行可執行檔（.exe），您必須在命令開頭明確載入 cmd.exe，如下所示：
+- 執行命令之前，此命令不會自動載入 cmd.exe。 如果您不是執行 ( .exe) 檔案，您必須在命令開頭明確載入 cmd.exe，如下所示：
 
     ```
     cmd /c dir > c:\test.out
@@ -62,7 +60,7 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
     OK      3    Each F     11:59 PM    backup2.bat
     ```
 
-- 如果使用此命令包含識別碼（*ID*），則只會顯示單一專案的資訊，其格式如下所示：
+- 如果在此命令中包含識別碼 (*識別碼*) ，只有單一專案的資訊會以類似下列的格式出現：
 
     ```
     Task ID: 1
@@ -107,7 +105,7 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
     > [!Caution]
     > 不正確地編輯登錄可能會對系統造成嚴重的損害。 變更登錄之前，您應該先備份電腦所有的重要資料。
 
-    1. 啟動 [登錄編輯程式] （regedit.exe）。
+    1. 啟動 [登錄編輯程式] ( # A0) 。
 
     2. 在登錄中找出並按一下下列機碼：`HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Schedule`
 
@@ -155,7 +153,7 @@ at \\marketing 00:00 /every:5,10,15,20,25,30 archive
 at /delete
 ```
 
-若要執行不是可執行檔（.exe）的命令，請在命令前面加上**cmd/c**以載入 cmd.exe，如下所示：
+若要執行不是可執行檔 ( .exe) 檔案的命令，請在命令前面加上**cmd/c**以載入 cmd.exe，如下所示：
 
 ```
 cmd /c dir > c:\test.out

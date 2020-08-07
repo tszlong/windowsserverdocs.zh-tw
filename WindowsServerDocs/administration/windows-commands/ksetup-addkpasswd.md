@@ -1,24 +1,22 @@
 ---
 title: ksetup addkpasswd
-description: Ksetup addkpasswd 命令的參考文章，它會新增領域的 Kerberos 密碼（kpasswd）伺服器位址。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Ksetup addkpasswd 命令的參考文章，其會為領域的 kpasswd) 伺服器位址新增 Kerberos 密碼 (。
 ms.topic: article
 ms.assetid: d3196995-1b38-48ff-ba08-911cfab77317
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2db728684e713df35a39995c8ca95196f0b745ed
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 96dd96b3f66a41d75b943fd74ea9fb674f393d09
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925558"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888122"
 ---
 # <a name="ksetup-addkpasswd"></a>ksetup addkpasswd
 
-新增領域的 Kerberos 密碼（kpasswd）伺服器位址。
+為領域新增 Kerberos 密碼 (kpasswd) 伺服器位址。
 
 ## <a name="syntax"></a>語法
 
@@ -28,7 +26,7 @@ ksetup /addkpasswd <realmname> [<kpasswdname>]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<realmname>` | 指定大寫 DNS 名稱，例如 CORP。CONTOSO.COM，且在執行**ksetup**時列為預設領域或**領域 =** 。 |
 | `<kpasswdname>` | 指定 Kerberos 密碼伺服器。 它會指定為不區分大小寫的完整功能變數名稱，例如 mitkdc.contoso.com。 如果省略 KDC 名稱，則可能會使用 DNS 來尋找 Kdc。 |

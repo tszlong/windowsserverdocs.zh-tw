@@ -1,26 +1,24 @@
 ---
 title: getmac
-description: Getmac 命令的參考文章，它會傳回媒體存取控制（MAC）位址，以及與每個、本機或網路上相關聯的網路通訊協定清單。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Getmac 命令的參考文章，它會傳回媒體存取控制 (MAC) 位址，以及與每個、本機或網路上相關聯的網路通訊協定清單。
 ms.topic: article
 ms.assetid: a749a348-7cd1-4336-9f33-bb42dd0e31e1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 345daa310b075f8a094dd8a87e7c1c0d3694ab10
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 0ffc11e4aad7336e11cf65f8e51cdc155703c2dc
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932341"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888631"
 ---
 # <a name="getmac"></a>getmac
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-針對每部電腦中的所有網路卡，在本機或網路上，傳回媒體存取控制（MAC）位址和與每個位址相關聯的網路通訊協定清單。 當您想要將 MAC 位址輸入網路分析器，或當您需要知道電腦上的每個網路介面卡目前正在使用哪些通訊協定時，此命令特別有用。
+針對每部電腦中的所有網路卡，在本機或網路上，傳回媒體存取控制 (MAC) 位址和與每個位址相關聯的網路通訊協定清單。 當您想要將 MAC 位址輸入網路分析器，或當您需要知道電腦上的每個網路介面卡目前正在使用哪些通訊協定時，此命令特別有用。
 
 ## <a name="syntax"></a>語法
 
@@ -30,9 +28,9 @@ getmac[.exe][/s <computer> [/u <domain\<user> [/p <password>]]][/fo {table | lis
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- |------------ |
-| /s`<computer>` | 指定遠端電腦的名稱或 IP 位址（請勿使用反斜線）。 預設是本機電腦。 |
+| /s`<computer>` | 指定遠端電腦的名稱或 IP 位址， (不要使用反斜線) 。 預設是本機電腦。 |
 | u`<domain>\<user>` | 以*user*或*domain\user*所指定使用者的帳戶許可權來執行命令。 預設為發出命令之電腦上目前登入使用者的許可權。 |
 | /p`<password>` | 指定 **/u**參數中指定之使用者帳戶的密碼。 |
 | /fo {資料表 | list | csv | 指定要用於查詢輸出的格式。 有效值為**table**、 **list**和**csv**。 輸出的預設格式為**table**。 |

@@ -1,28 +1,26 @@
 ---
 title: gpresult
-description: Gpresult 命令的參考文章，它會顯示遠端使用者和電腦的原則結果組（RSoP）資訊。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Gpresult 命令的參考文章，其中顯示遠端使用者和電腦的原則結果組 (RSoP) 資訊。
 ms.topic: article
 ms.assetid: dfaa3adf-2c83-486c-86d6-23f93c5c883c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b55db74c0c8f9c527ade8412f50ef83ea675a5c6
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5c65dd4799441dca44db24f532be66349b1249a5
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924632"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888575"
 ---
 # <a name="gpresult"></a>gpresult
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-顯示遠端使用者和電腦的原則結果組（RSoP）資訊。 若要透過防火牆針對遠端目的電腦使用 RSoP 報告，您必須具有可在埠上啟用輸入網路流量的防火牆規則。
+顯示遠端使用者和電腦的原則結果組 (RSoP) 資訊。 若要透過防火牆針對遠端目的電腦使用 RSoP 報告，您必須具有可在埠上啟用輸入網路流量的防火牆規則。
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>語法
 
 ```
 gpresult [/s <system> [/u <username> [/p [<password>]]]] [/user [<targetdomain>\]<targetuser>] [/scope {user | computer}] {/r | /v | /z | [/x | /h] <filename> [/f] | /?}
@@ -33,14 +31,14 @@ gpresult [/s <system> [/u <username> [/p [<password>]]]] [/user [<targetdomain>\
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | /s`<system>` | 指定遠端電腦的名稱或 IP 位址。 請勿使用反斜線。 預設是本機電腦。 |
 | u`<username>` | 使用指定使用者的認證來執行命令。 預設使用者是登入發出命令之電腦的使用者。 |
 | /p`[<password>]` | 指定 **/u**參數中提供之使用者帳戶的密碼。 如果省略 **/p** ， **gpresult**會提示輸入密碼。 **/P**參數不能搭配 **/x**或 **/h**使用。 |
 | /user`[<targetdomain>\]<targetuser>]` | 指定要顯示其 RSoP 資料的遠端使用者。 |
 | /scope`{user | computer}` | 顯示使用者或電腦的 RSoP 資料。 如果省略 **/scope** ， **gpresult**會顯示使用者和電腦的 RSoP 資料。 |
-| `[/x | /h] <filename>` | 以 XML （**/x**）或 HTML （**/h**）格式將報表儲存在位置，並以*filename*參數所指定的檔案名儲存。 不能與 **/u**、 **/p**、 **/r**、 **/v**或 **/z**搭配使用。 |
+| `[/x | /h] <filename>` | 以 XML (**/x**) 或 HTML (**/h**) 格式儲存報表，並在位置使用*filename*參數所指定的檔案名。 不能與 **/u**、 **/p**、 **/r**、 **/v**或 **/z**搭配使用。 |
 | /f | 強制**gpresult**覆寫 **/x**或 **/h**選項中所指定的檔案名。 |
 | /r | 顯示 RSoP 摘要資料。 |
 | /v | 顯示詳細資訊原則資訊。 這包括優先順序為1的詳細設定。 |
@@ -53,7 +51,7 @@ gpresult [/s <system> [/u <username> [/p [<password>]]]] [/user [<targetdomain>\
 
 - 因為您可以將重迭的原則設定套用至任何電腦或使用者，所以群組原則功能會在使用者登入時產生一組產生的原則設定。 **Gpresult**命令會顯示使用者登入時，針對指定使用者在電腦上強制執行的一組原則設定。
 
-- 由於 **/v**和 **/z**會產生許多資訊，因此將輸出重新導向至文字檔（例如，）會很有説明 `gpresult/z >policy.txt` 。
+- 由於 **/v**和 **/z**會產生許多資訊，因此將輸出重新導向至文字檔 (例如，) 會很有用 `gpresult/z >policy.txt` 。
 
 ### <a name="examples"></a>範例
 

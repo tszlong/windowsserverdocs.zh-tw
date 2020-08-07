@@ -1,24 +1,22 @@
 ---
 title: telnet display
 description: Telnet 顯示的參考文章，會顯示指令引數。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9272086c-3aaa-405d-ac71-652f25e2eb34
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fffee5059172ad0a3f2c14489bda07ce76da9cb8
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2345602981fd0ae02fa4ef7668a2edda16d68915
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930142"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881719"
 ---
 # <a name="telnet-display"></a>telnet：顯示
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 顯示指令引數。
 

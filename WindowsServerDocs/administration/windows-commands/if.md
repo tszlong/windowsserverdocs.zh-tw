@@ -1,26 +1,24 @@
 ---
 title: if
 description: If 命令的參考文章，它會在 batch 程式中執行條件式處理。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 698b3fb9-532b-4c2b-af7f-179f8dc57131
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dd55ebb6ae3562906efdc710f7a067a7e7514e59
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3644c64d4159d9232ec58e747efc542dd903791e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924470"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888375"
 ---
 # <a name="if"></a>if
 
 在 batch 程式中執行條件式處理。
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>語法
 
 ```
 if [not] ERRORLEVEL <number> <command> [else <expression>]
@@ -38,16 +36,16 @@ if defined <variable> <command> [else <expression>]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- |------------ |
-| 否 | 指定只有在條件為 false 時，才執行命令。 |
+| not | 指定只有在條件為 false 時，才執行命令。 |
 | errorlevel`<number>` | 只有在前一個程式執行時，才會指定 true 條件，Cmd.exe 傳回等於或大於*數位*的結束代碼。 |
 | `<command>` | 指定在符合前述條件時應執行的命令。 |
-| `<string1>==<string2>` | 只有在*string1*和*string2*相同時，才指定 true 條件。 這些值可以是常值字串或批次變數（例如 `%1` ）。 您不需要將常值字串括在引號中。 |
+| `<string1>==<string2>` | 只有在*string1*和*string2*相同時，才指定 true 條件。 這些值可以是常值字串或批次變數 (例如 `%1`) 。 您不需要將常值字串括在引號中。 |
 | 有`<filename>` | 如果指定的檔案名存在，則指定 true 條件。 |
 | `<compareop>` | 指定三個字母的比較運算子，包括：<ul><li>**等於**-等於</li><li>**NEQ** -不等於</li><li>**LSS** -小於</li><li>**LEQ** -小於或等於</li><li>**GTR** -大於</li><li>**GEQ** -大於或等於</li></ul> |
 | /i | 強制字串比較以忽略大小寫。 您可以使用 **/i** `string1==string2` **if**的格式的/i。 這些比較是泛型的，在這種情況下，如果*string1*和*string2*都只由數位組成，則字串會轉換成數位，並執行數值比較。 |
-| cmdextversion`<number>` | 只有當與 Cmd.exe 的命令延伸功能相關聯的內部版本號碼等於或大於指定的數位時，才指定 true 條件。 第一個版本是1。 當命令延伸模組中新增了顯著的增強功能時，它會增加一個增量。 當停用命令延伸模組時， **cmdextversion**條件一律為 true （預設會啟用命令延伸）。 |
+| cmdextversion`<number>` | 只有當與 Cmd.exe 的命令延伸功能相關聯的內部版本號碼等於或大於指定的數位時，才指定 true 條件。 第一個版本是1。 當命令延伸模組中新增了顯著的增強功能時，它會增加一個增量。 當停用命令延伸模組時， **cmdextversion**條件一律為 true， (預設會啟用命令延伸模組) 。 |
 | defined `<variable>` | 如果已定義*變數*，則指定 true 條件。 |
 | `<expression>` | 指定命令列命令，以及要傳遞給**else**子句中命令的任何參數。 |
 | /? | 在命令提示字元顯示說明。 |

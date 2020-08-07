@@ -1,20 +1,18 @@
 ---
 title: ksetup setrealm
 description: Ksetup setrealm 命令的參考文章，其會設定 Kerberos 領域的名稱。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ab268c40-276b-46ef-ab16-d5ce7667fbed
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c6fa5573322237dfee5909d9afc2e99696ac82b3
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 501660d072cdb651a26098f8ac63cee21dfcba88
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933128"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887725"
 ---
 # <a name="ksetup-setrealm"></a>ksetup setrealm
 
@@ -31,7 +29,7 @@ ksetup /setrealm <DNSdomainname>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<DNSdomainname>` | 指定大寫 DNS 名稱，例如 CORP。CONTOSO.COM。 您可以使用完整功能變數名稱或簡單格式的名稱。 如果您的 DNS 名稱未使用大寫，系統會要求您進行驗證以繼續進行。 |
 

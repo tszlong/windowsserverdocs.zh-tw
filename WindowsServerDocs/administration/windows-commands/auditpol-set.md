@@ -1,28 +1,26 @@
 ---
 title: auditpol set
 description: Auditpol set 命令的參考文章，它會設定每個使用者的稽核原則、系統稽核原則或 [審核選項]。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: f4947486-87bd-48cb-ba81-7230c8e70895
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bc42168d65116261d57053e0812cbb49e17021d5
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 06dcac123a56adbab93aab4dfa44fcc47d26220d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923690"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895330"
 ---
 # <a name="auditpol-set"></a>auditpol set
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 設定每位使用者的稽核原則、系統稽核原則或審核選項。
 
-若要對*每個使用者*和*系統*策略執行*設定*作業，您必須擁有安全描述項中該物件集的 [**寫入**] 或 [**完全控制**] 許可權。 如果您擁有 [管理] [**審核及安全性記錄檔**] （SeSecurityPrivilege）使用者權限，也可以執行*設定*作業。 不過，此許可權允許執行整體*設定*作業所需的其他存取權。
+若要對*每個使用者*和*系統*策略執行*設定*作業，您必須擁有安全描述項中該物件集的 [**寫入**] 或 [**完全控制**] 許可權。 您也可以執行*設定*作業（如果您的 [管理] [**審核及安全性記錄** (SeSecurityPrivilege) ] 使用者權限）。 不過，此許可權允許執行整體*設定*作業所需的其他存取權。
 
 ## <a name="syntax"></a>語法
 
@@ -38,17 +36,17 @@ auditpol /set
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
-| /user | 設定類別或子類別所指定之每個使用者稽核原則的安全性主體。 必須指定 [類別] 或 [子類別] 選項，做為安全識別碼（SID）或名稱。 |
+| /user | 設定類別或子類別所指定之每個使用者稽核原則的安全性主體。 必須指定 [類別] 或 [子類別] 選項，做為 (SID) 或名稱的安全識別碼。 |
 | /include | 使用/user 指定;指出使用者的每個使用者原則，即使系統稽核原則未指定，也會產生 audit。 此設定是預設值，如果未明確指定/include 或/exclude 參數，則會自動套用。 |
 | /exclude | 使用/user 指定;指出使用者的每一使用者原則，不論系統稽核原則為何，都會使 audit 遭到抑制。 對於身為本機 Administrators 群組成員的使用者，會忽略此設定。 |
-| /類別 | 全域唯一識別碼（GUID）或名稱所指定的一或多個 audit 分類。 如果未指定任何使用者，則會設定系統原則。 |
+| /類別 | 全域唯一識別碼所指定的一或多個 audit 分類 (GUID) 或名稱。 如果未指定任何使用者，則會設定系統原則。 |
 | /subcategory | GUID 或名稱所指定的一或多個 audit 子類別。 如果未指定任何使用者，則會設定系統原則。 |
 | /success | 指定成功的審核。 此設定是預設值，如果未明確指定/success 或/failure 參數，則會自動套用。 此設定必須與指出是否啟用或停用設定的參數搭配使用。 |
 | /failure | 指定失敗的審核。 此設定必須與指出是否啟用或停用設定的參數搭配使用。 |
 | /option | 設定 CrashOnAuditFail、FullprivilegeAuditing、AuditBaseObjects 或 AuditBasedirectories 選項的稽核原則。 |
-| /sd | 設定用來將存取權委派給稽核原則的安全描述項。 安全描述項必須使用安全描述項定義語言（SDDL）來指定。 安全描述項必須具有任意存取控制清單（DACL）。 |
+| /sd | 設定用來將存取權委派給稽核原則的安全描述項。 安全描述項必須使用安全描述項定義語言 (SDDL) 來指定。 安全描述項必須具有任意存取控制清單 (DACL) 。 |
 | /? | 在命令提示字元顯示說明。 |
 
 ## <a name="examples"></a>範例
@@ -80,7 +78,7 @@ auditpol /set /category:detailed Tracking /success:enable
 > [!NOTE]
 > 失敗設定不會改變。
 
-若要設定物件存取和系統類別的系統稽核原則（隱含的原因是因為列出子類別）和 Guid 指定的子類別，以隱藏嘗試失敗和成功的嘗試，請輸入：
+若要為 [物件存取] 和 [系統類別] 設定 [系統稽核原則] (這是隱含的，因為子類別會列在 Guid 所指定) 和子類別目錄中，以隱藏失敗的嘗試和成功的嘗試次數，請輸入：
 
 ```
 auditpol /set /subcategory:{0ccee9210-69ae-11d9-bed3-505054503030},{0ccee9211-69ae-11d9-bed3-505054503030}, /failure:disable /success:enable

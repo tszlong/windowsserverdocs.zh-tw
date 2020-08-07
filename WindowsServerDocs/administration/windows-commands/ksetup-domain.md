@@ -1,20 +1,18 @@
 ---
 title: ksetup domain
 description: Ksetup 網域命令的參考文章，其會設定所有 Kerberos 作業的功能變數名稱。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2ef766e3-6071-44f2-946b-22ea5b61a508
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 70454205f73375b11dc63e3496a2d7fc1bb3e50e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 81135ed668da901c55e891cec4c8749687359818
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926108"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887929"
 ---
 # <a name="ksetup-domain"></a>ksetup domain
 
@@ -28,7 +26,7 @@ ksetup /domain <domainname>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<domainname>` | 您想要建立連接的網功能變數名稱稱。 使用完整功能變數名稱或簡單格式的名稱，例如 contoso.com 或 contoso。|
 

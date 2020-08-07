@@ -1,24 +1,22 @@
 ---
 title: ksetup delhosttorealmmap
-description: Ksetup delhosttorealmmap 命令的參考文章，它會移除指定主機與領域之間的服務主體名稱（SPN）對應。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Ksetup delhosttorealmmap 命令的參考文章，它會移除服務主體名稱 (SPN) 在所述主機與領域之間的對應。
 ms.topic: article
 ms.assetid: 3faee482-a96c-4614-86fd-aaa446643ec4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c55fe25a147c23026ddf97900d6da856f04314a3
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 953a8d33a65bb9c5aafd4d549f762772bc059ba4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925490"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888004"
 ---
 # <a name="ksetup-delhosttorealmmap"></a>ksetup delhosttorealmmap
 
-移除所指定主機與領域之間的服務主體名稱（SPN）對應。 此命令也會移除主機與領域（或多部主機到領域）之間的任何對應。
+移除服務主體名稱， (指定的主機與領域之間的 SPN) 對應。 此命令也會移除主機到領域 (或多部主機與領域) 之間的任何對應。
 
 對應會儲存在登錄中的底下 `HKEY_LOCAL_MACHINE\SYSTEM\CurrentContolSet\Lsa\Kerberos\HostToRealm` 。 執行此命令之後，建議您確定對應出現在登錄中。
 
@@ -30,7 +28,7 @@ ksetup /delhosttorealmmap <hostname> <realmname>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<hostname>` | 指定電腦的完整功能變數名稱。 |
 | `<realmname>` | 指定大寫 DNS 名稱，例如 CORP。CONTOSO.COM。 |
