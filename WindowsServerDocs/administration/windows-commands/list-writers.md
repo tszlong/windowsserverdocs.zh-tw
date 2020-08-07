@@ -1,20 +1,18 @@
 ---
 title: list writers
 description: '[清單寫入器] 命令的參考文章，其中列出系統上的寫入器。'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 1c30cbc4-f568-4fa7-b564-66c41d3ca82d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a3b4334d9f1f1a76b390a29a1b9cfd877da91185
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1a7176c949eb20af3488abe772c6ba683e1789f8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931774"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887558"
 ---
 # <a name="list-writers"></a>list writers
 
@@ -28,7 +26,7 @@ list writers [metadata | detailed | status]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | 中繼資料 | 列出寫入器的身分識別和狀態，並顯示中繼資料，例如元件詳細資料和排除的檔案。 這是預設參數。 |
 | 詳細 | 會列出與**中繼資料**相同的資訊，但也包含所有元件的完整檔案清單。 |

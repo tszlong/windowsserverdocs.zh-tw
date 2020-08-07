@@ -1,24 +1,22 @@
 ---
 title: bitsadmin util
 description: Bitsadmin util 命令的參考文章，其中列出 Util 參數。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e8278a28-1ecc-42be-92e2-c93dee59751d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 96708544053c760153fbb18d813880564fd49bac
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 9ef79ffc523e34f1e09c083aac4e10b8e03e9773
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927280"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880786"
 ---
 # <a name="bitsadmin-util"></a>bitsadmin util
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 列出 **/util**參數。
 
@@ -36,7 +34,7 @@ bitsadmin /util /version
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | [bitsadmin util and help](bitsadmin-util-and-help.md) | 顯示/Util 參數的命令列使用方式。 您也可以指定/？。 |
 | [bitsadmin util and getieproxy](bitsadmin-util-and-getieproxy.md) | 抓取指定服務帳戶的 proxy 使用方式。 |

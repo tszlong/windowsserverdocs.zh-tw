@@ -1,20 +1,18 @@
 ---
 title: 更新-ServerFiles
 description: ServerFiles 的參考文章，它會使用儲存在伺服器%Windir%\System32\RemInst 資料夾中的最新檔案，更新 REMINST 共用資料夾中的檔案。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 23aa79df-38c6-401e-91bd-cd23811b30b4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 79b9332d5962c7e3c50ea3d7c71f33111a0e74b8
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: f60e5b5c5208d5718a287fd2d012368d13fad9f9
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930136"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881463"
 ---
 # <a name="update-serverfiles"></a>更新-ServerFiles
 
@@ -28,9 +26,9 @@ WDSUTIL [Options] /Update-ServerFiles [/Server:<Server name>]
 
 ### <a name="parameters"></a>參數
 
-|參數|說明|
+|參數|描述|
 |---------|-----------|
-|[/Server： \<Server name> ]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。|
+|[/Server： \<Server name> ]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或 (FQDN) 的完整功能變數名稱。 如果未指定伺服器名稱，則會使用本機伺服器。|
 
 ## <a name="examples"></a>範例
 

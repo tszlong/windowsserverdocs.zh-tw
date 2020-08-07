@@ -1,21 +1,19 @@
 ---
 title: 開始使用安裝與開機事件集合
 description: 設定安裝與開機事件集合收集器及目標
-ms.prod: windows-server
 manager: DonGill
-ms.technology: server-sbec
 ms.localizationpriority: medium
 ms.date: 10/16/2017
 ms.topic: get-started-article
 ms.assetid: fc239aec-e719-47ea-92fc-d82a7247b3f8
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: bb70f25ca4564f1bdf76940c9d2fcb840db5afa2
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: e5e18ed5f5cc4cba319042f1a5da84acae8e5fd5
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87408887"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879536"
 ---
 # <a name="get-started-with-setup-and-boot-event-collection"></a>開始使用安裝與開機事件集合
 
@@ -28,7 +26,7 @@ ms.locfileid: "87408887"
 
 -   載入核心模組和驅動程式
 
--   裝置的列舉和其驅動程式的初始化（包括如 CPU 類型的裝置）
+-   裝置的列舉和其驅動程式的初始化 (包括 CPU 類型之類的裝置) 
 
 -   驗證和掛接檔案系統
 
@@ -42,9 +40,9 @@ ms.locfileid: "87408887"
 
 |虛擬化主機|收集器虛擬機器|目標虛擬機器|
 |-----------------------|-----------------------------|--------------------------|
-|Windows 8.1|可以|是|
-|Windows 10|可以|是|
-|Windows Server 2016|可以|是|
+|Windows 8.1|是|是|
+|Windows 10|是|是|
+|Windows Server 2016|是|是|
 |Windows Server 2012 R2|是|否|
 
 ## <a name="installing-the-collector-service"></a>安裝收集器服務
@@ -79,7 +77,7 @@ ms.locfileid: "87408887"
 
     winrm quickconfig
 
-2.  回應提示，然後重新啟動目標電腦。 如果目標電腦與收集器電腦不在相同網域中，您可能需要將這些電腦定義為受信任的主機。 作法：
+2.  回應提示，然後重新啟動目標電腦。 如果目標電腦與收集器電腦不在相同網域中，您可能需要將這些電腦定義為受信任的主機。 若要這樣做：
 
 3.  在收集器電腦上，執行下列任一命令：
 
@@ -158,7 +156,7 @@ ms.locfileid: "87408887"
 ### <a name="validate-target-computer-configuration"></a>驗證目標電腦設定
 若要檢查目標電腦上的設定，請開啟提升權限的命令提示字元並執行 **bcdedit /enum**。 完成此命令後，接著執行 **bcdedit /eventsettings**。 您可以仔細檢查下列值：
 
--   機碼
+-   Key
 
 -   Debugtype = NET
 
@@ -256,7 +254,7 @@ ms.locfileid: "87408887"
     >
     > \<forwarder>元素會指定要如何轉送從目的電腦接收的 ETW 事件。 只有一種類型的轉寄站，這會將事件寫入 ETL 檔案。 參數會指定檔案名稱模式、循環索引序列中每個檔案的大小限制，以及每部電腦的循環索引序列大小。 設定 toxml 指定 ETW 事件會在收到時以二進位格式寫入，而不會轉換成 XML。 如需決定是否要將事件授與 XML 的相關資訊，請參閱 XML 事件轉換一節。 檔案名稱模式包含下列替代位置：{computer} 代表電腦名稱，而 {#3} 代表循環索引序列中的檔案索引。
     >
-    > 在此範例檔案中，兩部目的電腦是以 \<target> 元素定義。 每個定義都會指定的 IP 位址 \<ipv4> ，但您也可以使用 MAC 位址（例如 `<mac value=11:22:33:44:55:66/>` 或 `<mac value=11-22-33-44-55-66/>` ）或 SMBIOS GUID （例如， `<guid value={269076F9-4B77-46E1-B03B-CA5003775B88}/>` ）來識別目的電腦。 另請記下加密金鑰 (與之前使用 Bcdedit 在目標電腦上所指定或產生的一樣) 和電腦名稱。
+    > 在此範例檔案中，兩部目的電腦是以 \<target> 元素定義。 每個定義都會指定的 IP 位址 \<ipv4> ，但您也可以使用 MAC 位址 (例如， `<mac value=11:22:33:44:55:66/>` 或 `<mac value=11-22-33-44-55-66/>`) 或 SMBIOS GUID (例如， `<guid value={269076F9-4B77-46E1-B03B-CA5003775B88}/>`) 來識別目的電腦。 另請記下加密金鑰 (與之前使用 Bcdedit 在目標電腦上所指定或產生的一樣) 和電腦名稱。
 
 4. 輸入每部目的電腦的詳細資料做為 \<target> 設定檔中的個別元素，然後儲存 Newconfig.xml 並關閉 [記事本]。
 
@@ -292,7 +290,7 @@ Nano 伺服器提供的基本介面有時使其發生的問題難以診斷。 �
 
 4. 更新 Nano 伺服器映像中的 BCD 設定以啟用事件旗標，並設定收集器電腦以確保診斷事件傳送至正確的伺服器。 記下您在收集器 Active.XML 檔案中設定的收集器電腦 IPv4 位址、TCP 連接埠及加密金鑰 (已於本主題其他位置述及) 。 在 Windows PowerShell 主控台中，以較高的許可權使用此命令：`Enable-SbecBcd -Path C:\NanoServer\Workloads\IncludingWorkloads.vhd -CollectorIp 192.168.100.1 -CollectorPort 50000 -Key a.b.c.d`
 
-5. 將收集器電腦更新為接收 Nano 伺服器電腦傳送的事件，方法是將 IPv4 位址範圍、特定的 IPv4 位址或 Nano 伺服器的 MAC 位址新增到收集器電腦上的 Active.XML 檔案（請參閱本主題的設定收集器電腦一節）。
+5. 將收集器電腦更新為接收 Nano 伺服器電腦傳送的事件，方法是將 IPv4 位址範圍、特定的 IPv4 位址或 Nano 伺服器的 MAC 位址新增到收集器電腦上的 Active.XML 檔案 (請參閱本主題) 中的設定收集器電腦一節。
 
 ## <a name="starting-the-event-collector-service"></a>啟動事件收集器服務
 
@@ -321,7 +319,7 @@ Nano 伺服器提供的基本介面有時使其發生的問題難以診斷。 �
 
 在 Windows PowerShell 命令提示字元：`Get-WinEvent -LogName Microsoft-Windows-BootEvent-Collector/Admin` (您可附加 `-Oldest`，以傳回依時間先後順序第一個列出最早事件的清單)
 
-您可以透過 [警告]、[資訊] （預設值）、[詳細資料] 和 [debug]，從錯誤中調整記錄檔的詳細程度。 比資訊更詳細的層級有助於診斷目的電腦未連線的問題，但它們可能會產生大量的資料，因此請小心使用它們。
+您可以從錯誤記錄檔中的詳細資料層級，透過 [警告]、[資訊] (預設) 、verbose 和 debug。 比資訊更詳細的層級有助於診斷目的電腦未連線的問題，但它們可能會產生大量的資料，因此請小心使用它們。
 
 您可以在設定檔的元素中設定最低記錄層級 \<collector> 。 例如： <收集器 configVersionMajor = 1 minlog \= verbose>。
 
@@ -345,7 +343,7 @@ Nano 伺服器提供的基本介面有時使其發生的問題難以診斷。 �
 
 4. 檢查事件記錄檔是否有關於所收到封包的資訊。 檢查是否任何封包都收到了。 如果封包已收到但不正確，請檢查事件訊息以取得詳細資料。
 5. KDNET 會從目標端將一些診斷資訊寫入至登錄。 查看**HKLM\SYSTEM\CurrentControlSet\Services\kdnet**中的訊息。
-   KdInitStatus （DWORD）會在成功時 = 0，並在錯誤 KdInitErrorString = 錯誤說明時顯示錯誤碼（如果沒有錯誤，也會包含參考用訊息）
+   KdInitStatus (DWORD) 會成功，並顯示錯誤碼，錯誤 KdInitErrorString = 錯誤的說明 (也會包含未發生錯誤時的參考用訊息) 
 
 6. 對目標執行 Ipconfig.exe，並檢查其回報的裝置名稱。 如果 KDNET 正確載入，則裝置名稱應該類似 kdnic，而不是原始廠商的卡片名稱。
 7. 檢查是否已為目標設定 DHCP。 KDNET 絕對需要 DHCP。

@@ -1,24 +1,22 @@
 ---
 title: bitsadmin
 description: Bitsadmin 命令的參考文章，這是用來建立、下載或上傳作業及監視其進度的命令列工具。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4853036e-1df8-45ad-8be6-cfb097b8dd27
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 51a64b059dd9d07dd6bd0ecccb1cd99382bdfaa5
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 4bfaa79720dafdbed62a704b20940143b82390ac
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955370"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880752"
 ---
 # <a name="bitsadmin"></a>bitsadmin
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10
 
 Bitsadmin 是一種命令列工具，可用來建立、下載或上傳作業，以及監視其進度。 Bitsadmin 工具會使用參數來識別要執行的工作。 您可以呼叫 `bitsadmin /?` 或 `bitsadmin /help` 來取得參數的清單。
 

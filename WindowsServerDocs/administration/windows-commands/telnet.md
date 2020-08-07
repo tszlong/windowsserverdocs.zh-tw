@@ -1,24 +1,22 @@
 ---
 title: telnet
 description: Telnet 的參考文章，與執行 telnet 伺服器服務的電腦通訊。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: b70a6156-9413-4300-84ce-a34c467e2b4e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 70c4eb44a654094410432dd9d37d0ad0082f5874
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: fd270011dfa3a0cfcef3cbdc41eb8140f409ff2d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958810"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881603"
 ---
 # <a name="telnet"></a>telnet
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 與執行 telnet 伺服器服務的電腦通訊。
 
@@ -34,12 +32,12 @@ telnet [/a] [/e <EscapeChar>] [/f <FileName>] [/l <UserName>] [/t {vt100 | vt52 
 |/f \<FileName>|用於用戶端記錄的檔案名。|
 |/l\<UserName>|指定要在遠端電腦上登入的使用者名稱。|
 |/t {vt100 &#124; vt52 &#124; ansi &#124; vtnt}|指定終端機類型。 支援的終端機類型為 vt100、vt52、ansi 和 vtnt。|
-|\<Host> [\<Port>]|指定要連接之遠端電腦的主機名稱或 IP 位址，以及選擇性地使用的 TCP 埠（預設為 TCP 埠23）。|
+|\<Host> [\<Port>]|指定要連接之遠端電腦的主機名稱或 IP 位址，以及選擇性地使用的 TCP 埠 (預設為 TCP 埠 23) 。|
 |/?|在命令提示字元顯示說明。 或者，您也可以輸入/h。|
 
 ## <a name="remarks"></a>備註
 -   您必須先安裝 telnet 用戶端軟體，才能執行此命令。 如需詳細資訊，請參閱[安裝 telnet](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754293(v=ws.10))。
--   您可以不使用參數來執行 telnet，以輸入 telnet 內容，如 telnet 提示（**Microsoft telnet>**）所示。 從 telnet 提示字元，您可以使用 telnet 命令來管理執行 telnet 用戶端的電腦。
+-   您可以在不使用參數的情況下執行 telnet，以輸入 telnet 內容，這是由**Microsoft telnet>**)  (的 telnet 提示字元所表示。 從 telnet 提示字元，您可以使用 telnet 命令來管理執行 telnet 用戶端的電腦。
 
 ## <a name="examples"></a>範例
 使用 telnet 連線到執行 telnet 伺服器服務的電腦，網址為 telnet.microsoft.com。
@@ -51,7 +49,7 @@ telnet telnet.microsoft.com
 telnet /f telnetlog.txt telnet.microsoft.com 44
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 -   [安裝 telnet](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754293(v=ws.10))
 -   [telnet 技術參考](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754987(v=ws.10))
 - [命令列語法關鍵](command-line-syntax-key.md)

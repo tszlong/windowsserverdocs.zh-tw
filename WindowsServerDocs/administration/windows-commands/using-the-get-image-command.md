@@ -1,28 +1,26 @@
 ---
 title: 取得-影像
 description: 取得影像的參考文章，它會抓取影像的相關資訊。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0ecaa999-72ad-4191-adb5-a418de42a001
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d37989fa681e5694b0c15b77aa1baddcfebbeecf
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5b97e13441d883a683515222774194c1fb75ecbc
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932234"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879359"
 ---
 # <a name="get-image"></a>取得-影像
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 抓取影像的相關資訊。
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>語法
 開機映射：
 ```
 wdsutil [Options] /Get-Imagmedia:<Image name> [/Server:<Server name>mediatype:Boot /Architecture:{x86 | ia64 | x64} [/Filename:<File name>]
@@ -32,10 +30,10 @@ wdsutil [Options] /Get-Imagmedia:<Image name> [/Server:<Server name>mediatype:Bo
 wdsutil [Options] /Get-Imagmedia:<Image name> [/Server:<Server name>mediatype:InstallmediaGroup:<Image group name>] [/Filename:<File name>]
 ```
 ### <a name="parameters"></a>參數
-|參數|說明|
+|參數|描述|
 |-------|--------|
 媒介<Image name>|指定映像的名稱。|
-|[/Server： <Server name> ]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。|
+|[/Server： <Server name> ]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或 (FQDN) 的完整功能變數名稱。 如果未指定伺服器名稱，則會使用本機伺服器。|
 媒體： {Boot &#124; 安裝}|指定映射的類型。|
 |/Architecture： {x86 &#124; ia64 &#124; x64}|指定映射的架構。 因為不同架構中的開機映射可能會有相同的映射名稱，所以指定架構值可確保傳回正確的映射。|
 |[/Filename： <File name> ]|如果無法以名稱唯一識別映射，您就必須使用這個選項來指定檔案名。|

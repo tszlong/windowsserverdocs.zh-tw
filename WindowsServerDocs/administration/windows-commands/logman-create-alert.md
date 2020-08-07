@@ -1,24 +1,22 @@
 ---
 title: logman create alert
 description: Logman create alert 命令的參考文章，它會建立警示資料收集器。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 93e6fc2b-5bf5-413b-84b4-be8b9dd3a57d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cb2c1372caefd18e9625eedfe71538a78bfc84e4
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a0e2dd1be058d4428c255d174826eb046acc3482
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931647"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887460"
 ---
 # <a name="logman-create-alert"></a>logman create alert
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 建立警示資料收集器。
 
@@ -30,7 +28,7 @@ logman create alert <[-n] <name>> [options]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | -s`<computer name>` | 在指定的遠端電腦上執行命令。 |
 | -config`<value>` | 指定包含命令選項的設定檔案。 |
@@ -60,11 +58,11 @@ logman create alert <[-n] <name>> [options]
 
 #### <a name="remarks"></a>備註
 
-- 其中列出 [-]，加入額外的連字號（-）會否定選項。
+- 其中列出 [-]，加入額外的連字號 (-) 會將選項否定。
 
 ### <a name="examples"></a>範例
 
-若要建立名為的新警示，請*new_alert*，當 processor （_Total）計數器群組中的效能計數器時間百分比超過計數器值50時，就會引發此警示，請輸入：
+若要建立名為的新警示，請*new_alert*，當處理器 (_Total) 計數器的效能計數器時間超過計數器值50時，就會引發這種情況，請輸入：
 
 ```
 logman create alert new_alert -th \Processor(_Total)\% Processor time>50

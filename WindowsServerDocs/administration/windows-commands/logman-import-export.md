@@ -1,24 +1,22 @@
 ---
 title: logman import and logman export
 description: Logman 匯入和 logman 匯出的參考文章，它會從 XML 檔案匯入資料收集器集合，或將資料收集器集合匯出至 XML 檔案。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c258daba-fb93-47c0-a53b-2fe83ed2c743
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d5fbe0139a1c320056e4ba80a845b43755fc0026
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 0d09d0e517acf19ba1cbb167eb24b16aea3ff2bc
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934396"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887290"
 ---
 # <a name="logman-import-and-logman-export"></a>logman import and logman export
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 從 XML 檔案匯入資料收集器集合，或將資料收集器集合匯出至 XML 檔案。
 
@@ -31,7 +29,7 @@ logman export <[-n] <name> <-xml <name> [options]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | -s`<computer name>` | 在指定的遠端電腦上執行命令。 |
 | -config`<value>` | 指定包含命令選項的設定檔案。 |

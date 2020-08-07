@@ -1,20 +1,18 @@
 ---
 title: bitsadmin cache and delete
 description: Bitsadmin cache 和 delete 命令的參考文章，可刪除特定的快取專案。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 22540273-55a5-46ea-869b-6df2aa6808a1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 739215722eac761aed45d6b4dba32b2b001450b3
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2453169fae963ba7236efe3e86e3e3e4095241c5
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927041"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87894860"
 ---
 # <a name="bitsadmin-cache-and-delete"></a>bitsadmin cache and delete
 
@@ -28,7 +26,7 @@ bitsadmin /cache /delete recordID
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | -------------- | -------------- |
 | recordID | 與快取專案相關聯的 GUID。 |
 

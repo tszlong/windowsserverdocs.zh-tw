@@ -1,20 +1,18 @@
 ---
 title: 適用于 Microsoft 產品的 Linux 軟體存放庫
 description: 本檔說明如何使用和安裝適用于 Microsoft 產品的 Linux 軟體套件。
-ms.prod: windows-server
 manager: szark
-ms.technology: compute
 ms.topic: article
 ms.assetid: b5387444-595f-4f38-abb7-163a70ea1895
 author: szarkos
 ms.author: szark
 ms.date: 10/16/2017
-ms.openlocfilehash: 28d86981e87184c11eb37981945876e05a83ad62
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: f8d31aaeaba4bba6cf6caaa2a69190cfdbd8e488
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87408877"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879522"
 ---
 # <a name="linux-software-repository-for-microsoft-products"></a>適用于 Microsoft 產品的 Linux 軟體存放庫
 
@@ -35,24 +33,24 @@ Microsoft 的 Linux 軟體存放庫是由多個子存放庫所組成：
 
 您可以安裝適用于 Linux 發行版本和版本的 Linux 套件，以自動設定存放庫。 此套件將會安裝存放庫設定以及工具（例如 apt/yum/zypper）用來驗證已簽署套件和/或存放庫中繼資料的 GPG 公開金鑰。
 
-### <a name="enterprise-linux-rhel-and-variants"></a>Enterprise Linux （RHEL 和 variant）
+### <a name="enterprise-linux-rhel-and-variants"></a>Enterprise Linux (RHEL 和 variant) 
 
-- Enterprise Linux 6 （EL6）<p>sudo rpm-Uvhhttps://packages.microsoft.com/config/rhel/6/packages-microsoft-prod.rpm
+- Enterprise Linux 6 (EL6) <p>sudo rpm-Uvhhttps://packages.microsoft.com/config/rhel/6/packages-microsoft-prod.rpm
 
-- Enterprise Linux 7 （EL7）<p>sudo rpm-Uvhhttps://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
+- Enterprise Linux 7 (EL7) <p>sudo rpm-Uvhhttps://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
 
 
 ### <a name="ubuntu"></a>Ubuntu
 
- - Ubuntu 14.04 （Trusty）<p>捲曲 https://packages.microsoft.com/keys/microsoft.asc | sudo apt-金鑰新增-sudo apt-新增存放庫https://packages.microsoft.com/ubuntu/14.04/prod<p>sudo apt-get update
+ - Ubuntu 14.04 (Trusty) <p>捲曲 https://packages.microsoft.com/keys/microsoft.asc | sudo apt-金鑰新增-sudo apt-新增存放庫https://packages.microsoft.com/ubuntu/14.04/prod<p>sudo apt-get update
 
- - Ubuntu 16.04 （Xenial）<p>捲曲 https://packages.microsoft.com/keys/microsoft.asc | sudo apt-金鑰新增-sudo apt-新增存放庫https://packages.microsoft.com/ubuntu/16.04/prod<p>sudo apt-get update
+ - Ubuntu 16.04 (Xenial) <p>捲曲 https://packages.microsoft.com/keys/microsoft.asc | sudo apt-金鑰新增-sudo apt-新增存放庫https://packages.microsoft.com/ubuntu/16.04/prod<p>sudo apt-get update
 
- - Ubuntu 18.04 （Bionic）<p>捲曲 https://packages.microsoft.com/keys/microsoft.asc | sudo apt-金鑰新增-sudo apt-新增存放庫https://packages.microsoft.com/ubuntu/18.04/prod<p>sudo apt-get update
+ - Ubuntu 18.04 (Bionic) <p>捲曲 https://packages.microsoft.com/keys/microsoft.asc | sudo apt-金鑰新增-sudo apt-新增存放庫https://packages.microsoft.com/ubuntu/18.04/prod<p>sudo apt-get update
 
- - Ubuntu 18.10 （宇宙射線）<p>捲曲 https://packages.microsoft.com/keys/microsoft.asc | sudo apt-金鑰新增-sudo apt-新增存放庫https://packages.microsoft.com/ubuntu/18.10/prod<p>sudo apt-get update
+ - Ubuntu 18.10 (宇宙射線) <p>捲曲 https://packages.microsoft.com/keys/microsoft.asc | sudo apt-金鑰新增-sudo apt-新增存放庫https://packages.microsoft.com/ubuntu/18.10/prod<p>sudo apt-get update
 
- - Ubuntu 19.04 （Disco）<p>捲曲 https://packages.microsoft.com/keys/microsoft.asc | sudo apt-金鑰新增-sudo apt-新增存放庫https://packages.microsoft.com/ubuntu/19.04/prod<p>sudo apt-get update
+ - Ubuntu 19.04 (Disco) <p>捲曲 https://packages.microsoft.com/keys/microsoft.asc | sudo apt-金鑰新增-sudo apt-新增存放庫https://packages.microsoft.com/ubuntu/19.04/prod<p>sudo apt-get update
 
 ### <a name="suse-linux-enterprise-12"></a>SUSE Linux Enterprise 12
 
@@ -62,12 +60,12 @@ sudo rpm-Uvhhttps://packages.microsoft.com/config/sles/12/packages-microsoft-pro
 
 存放庫設定檔可從[packages.microsoft.com/config](https://packages.microsoft.com/config/)取得。您可以使用下列 URI 命名慣例來找出這些檔案的名稱和位置：
 
-https://packages.microsoft.com/config/<Distribution>/<Version>生產.（存放庫 | 清單）
+https://packages.microsoft.com/config/<Distribution>/<Version>/prod. (存放庫 | 清單) 
 
 **套件和存放庫簽署金鑰**
 
 - Microsoft 的 GPG 公開金鑰可能會在此下載：[https://packages.microsoft.com/keys/microsoft.asc](https://packages.microsoft.com/keys/microsoft.asc)
-- 公開金鑰識別碼： Microsoft （發行簽署）<gpgsecurity@microsoft.com>
+- 公開金鑰識別碼： Microsoft (發行簽署) <gpgsecurity@microsoft.com>
 - 公開金鑰指紋：`BC52 8686 B50D 79E3 39D3 721C EB3E 94AD BE12 29CF`
 
 ### <a name="examples"></a>範例

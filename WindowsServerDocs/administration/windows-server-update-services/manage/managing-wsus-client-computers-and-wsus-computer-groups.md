@@ -1,26 +1,24 @@
 ---
 title: 管理 WSUS 用戶端電腦和 WSUS 電腦群組
-description: Windows Server Update Service （WSUS）主題-如何管理用戶端電腦和群組
-ms.prod: windows-server
-ms.technology: manage-wsus
+description: Windows Server Update Service (WSUS) 主題-如何管理用戶端電腦和群組
 ms.topic: article
 ms.assetid: 4b1ea915-0f9f-4f0e-8913-a1dd460d07ab
 author: coreyp-at-msft
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: 3ac5a0c09d28de53430ded651b6da92ba92a1f68
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 02aa39bda56d6b160a3600201ea8920823ce5f4d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80828622"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879341"
 ---
 # <a name="managing-wsus-client-computers-and-wsus-computer-groups"></a>管理 WSUS 用戶端電腦和 WSUS 電腦群組
 
->適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2019、Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-[電腦] 節點是 WSUS 管理主控台中用來管理 WSUS 用戶端電腦和裝置的集中存取點。 在此節點下，您可以找到已設定的不同群組（加上預設群組 [未指派的電腦]）。
+[電腦] 節點是 WSUS 管理主控台中用來管理 WSUS 用戶端電腦和裝置的集中存取點。 在此節點下，您可以找到已設定的不同群組 (加上預設群組 [未指派的電腦]) 。
 
 ## <a name="managing-client-computers"></a>管理用戶端電腦
 在 [**選項**] 下的 [**電腦**] 節點中選取其中一個電腦群組，會導致該群組中的電腦顯示在詳細資料窗格中。 如果將電腦指派給多個群組，它會出現在這兩個群組的清單中。 如果您在清單中選取電腦，則可以看到其內容，其中包括電腦的一般詳細資料和其更新狀態，例如特定電腦的更新安裝或偵測狀態。 您可以依狀態篩選指定電腦群組下的電腦清單。 預設只會顯示需要更新或安裝失敗的電腦;不過，您可以依任何狀態篩選顯示。 變更狀態**篩選後，** 按一下 [重新整理]。

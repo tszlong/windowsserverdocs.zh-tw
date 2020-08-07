@@ -1,20 +1,18 @@
 ---
 title: bitsadmin cache and list
 description: Bitsadmin cache 和 list 命令的參考文章，其中會列出所有快取專案。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9b4d10a6-42f8-487c-9f0b-65bc15682b7e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e338eee4b3270bbadf3a527ae07c618d470116d8
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 4468b7320127a925f17fcc823c433b57e345ba4e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923240"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87894866"
 ---
 # <a name="bitsadmin-cache-and-list"></a>bitsadmin cache and list
 

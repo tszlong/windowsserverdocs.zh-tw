@@ -1,20 +1,18 @@
 ---
 title: load metadata
 description: 載入中繼資料命令的參考文章，它會在匯入可轉移的陰影複製之前載入中繼資料 .cab 檔案，或在還原時載入寫入器中繼資料。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2c535487-668b-44fc-babb-ff59cf7d190e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 01e782d0214da70f831b81120aff3c5097895036
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 4b0f5412ee189814fcdf1f020f238e19dc308b7d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931679"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887487"
 ---
 # <a name="load-metadata"></a>載入中繼資料
 
@@ -28,7 +26,7 @@ load metadata [<drive>:][<path>]<metadata.cab>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `[<drive>:][<path>]` | 指定中繼資料檔案的位置。 |
 | metadata.cab | 指定要載入的中繼資料 .cab 檔案。 |

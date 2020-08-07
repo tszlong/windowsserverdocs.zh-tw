@@ -1,20 +1,18 @@
 ---
 title: bitsadmin setvalidationstate
 description: Bitsadmin setvalidationstate 命令的參考文章，它會設定作業中指定檔案的內容驗證狀態。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e8fc8e8c-171c-4681-8057-6986b018e576
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ae776279b742e3af5af3cf555765007bbf0eb8de
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1dcdbd017f225704fc20d0472346d98fd84bb2c0
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927498"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881024"
 ---
 # <a name="bitsadmin-setvalidationstate"></a>bitsadmin setvalidationstate
 
@@ -28,7 +26,7 @@ bitsadmin /setvalidationstate <job> <file_index> <TRUE|FALSE>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ---------- |
 | 工作 (Job) | 作業的顯示名稱或 GUID。 |
 | file_index | 從0開始。 |

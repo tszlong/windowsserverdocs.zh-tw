@@ -1,20 +1,18 @@
 ---
 title: timeout
 description: Timeout 的參考文章，會在指定的秒數內暫停命令處理器。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e26b4a84-0e30-46e1-aa10-0667b7d3cb4c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 62ead9473a9034c02fab18f2318ecb5162511922
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 90ba2da52f97ee603ce7992e4df135c1284c4070
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930095"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881404"
 ---
 # <a name="timeout"></a>timeout
 
@@ -30,9 +28,9 @@ timeout /t <TimeoutInSeconds> [/nobreak]
 
 ### <a name="parameters"></a>參數
 
-|參數|說明|
+|參數|描述|
 |---------|-----------|
-|一起\<TimeoutInSeconds>|指定命令處理器繼續處理之前，要等候的秒數（介於-1 到99999之間）。 值-1 會使電腦無限期地等待按鍵。|
+|一起\<TimeoutInSeconds>|指定介於-1 和 99999) 之間的秒數 (，以在命令處理器繼續處理之前等待。 值-1 會使電腦無限期地等待按鍵。|
 |/nobreak|指定忽略使用者金鑰筆劃。|
 |/?|在命令提示字元顯示說明。|
 

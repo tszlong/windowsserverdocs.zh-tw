@@ -1,24 +1,22 @@
 ---
-title: 標籤
-description: 標籤命令的參考文章，會建立、變更或刪除磁片的磁片區標籤（也就是名稱）。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+title: label
+description: 標籤命令的參考文章，會建立、變更或刪除磁片區標籤， (也就是磁片的名稱) 。
 ms.topic: article
 ms.assetid: bbae8bdd-97d4-4566-9118-7c95aa07645f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f8c13285c5dc5030e96d7d334bb65d15f04dff86
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e7656078b87a74db789ed85c10be9f30cabfd971
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931814"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887630"
 ---
-# <a name="label"></a>標籤
+# <a name="label"></a>label
 
-建立、變更或刪除磁片的磁片區標籤（也就是名稱）。 如果使用時不含參數， **label**命令會變更目前的磁片區標籤，或刪除現有的標籤。
+建立、變更或刪除磁片區標籤 (也就是磁片的名稱) 。 如果使用時不含參數， **label**命令會變更目前的磁片區標籤，或刪除現有的標籤。
 
 ## <a name="syntax"></a>語法
 
@@ -28,16 +26,16 @@ label [/mp] [<volume>] [<label>]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | /mp | 指定應該將磁片區視為掛接點或磁片區名稱。 |
-| `<volume>` | 指定磁碟機號（後面接著冒號）、掛接點或磁片區名稱。 如果指定了磁片區名稱， **/mp**參數就是不必要的。 |
+| `<volume>` | 指定 (後面接著冒號) 、掛接點或磁片區名稱的磁碟機號。 如果指定了磁片區名稱， **/mp**參數就是不必要的。 |
 | `<label>` | 指定磁片區的標籤。 |
 | /? | 在命令提示字元顯示說明。 |
 
 ## <a name="remarks"></a>備註
 
-- Windows 會顯示磁片區標籤和序號（如果有的話）做為目錄清單的一部分。
+- Windows 會顯示磁片區標籤和序號， (如果它有一個) 作為目錄清單的一部分。
 
 - NTFS 磁片區標籤的長度最多可達32個字元，包括空格。 NTFS 磁片區標籤會保留，並顯示建立標籤時所使用的大小寫。
 

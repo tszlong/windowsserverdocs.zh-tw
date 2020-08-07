@@ -1,20 +1,18 @@
 ---
 title: bitsadmin transfer
 description: Bitsadmin 傳輸命令的參考文章，它會傳送一或多個檔案。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: fe302141-b33a-4a05-835e-dc4fc4db7d5a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6b2d03fb379c879f445a30dd0f3daf762fed23c7
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 06496dffa417bb611700a9d6cec2262fd4d6e690
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955430"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880973"
 ---
 # <a name="bitsadmin-transfer"></a>bitsadmin transfer
 
@@ -36,9 +34,9 @@ bitsadmin /transfer <name> [<type>] [/priority <job_priority>] [/ACLflags <flags
 | 參數 | 描述 |
 | --------- | ----------- |
 | NAME | 作業的名稱。 此命令不可以是 GUID。 |
-| 類型 | 選擇性。 設定作業的類型，包括：<ul><li>**下載.** 預設值。 請為下載作業選擇此類型。</li><li>**上傳.** 請為上傳作業選擇此類型。</li></ul> |
+| type | 選擇性。 設定作業的類型，包括：<ul><li>**下載.** 預設值。 請為下載作業選擇此類型。</li><li>**上傳.** 請為上傳作業選擇此類型。</li></ul> |
 | priority | 選擇性。 設定作業的優先順序，包括：<ul><li>FOREGROUND</li><li>HIGH</li><li>NORMAL</li><li>LOW</li></ul> |
-| ACLflags | 選擇性。 表示您想要使用所要下載的檔案來維護擁有者和 ACL 資訊。 指定一或多個值，包括：<ul><li>**o** -使用 file 複製擁有者資訊。</li><li>**g** -使用 file 複製群組資訊。</li><li>**d** -使用檔案複製任意存取控制清單（DACL）資訊。</li><li>**s** -使用檔案複製系統存取控制清單（SACL）資訊。</li></ul> |
+| ACLflags | 選擇性。 表示您想要使用所要下載的檔案來維護擁有者和 ACL 資訊。 指定一或多個值，包括：<ul><li>**o** -使用 file 複製擁有者資訊。</li><li>**g** -使用 file 複製群組資訊。</li><li>**d** -使用檔案複製任意存取控制清單 (DACL) 資訊。</li><li>**s** -使用檔案複製系統存取控制清單 (SACL) 資訊。</li></ul> |
 | /DYNAMIC | 使用[**BITS_JOB_PROPERTY_DYNAMIC_CONTENT**](/windows/win32/api/bits5_0/ne-bits5_0-bits_job_property_id)設定作業，以放寬伺服器端需求。 |
 | remotefilename | 檔案傳送到伺服器之後的名稱。 |
 | localfilename | 位於本機的檔案名。 |
@@ -51,7 +49,7 @@ bitsadmin /transfer <name> [<type>] [/priority <job_priority>] [/ACLflags <flags
 bitsadmin /transfer myDownloadJob http://prodserver/audio.wma c:\downloads\audio.wma
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
