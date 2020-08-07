@@ -1,26 +1,24 @@
 ---
 title: Always On VPN 疑難排解
 description: 本主題提供驗證和疑難排解 Windows Server 2016 中 Always On VPN 部署的指示。
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: 4d08164e-3cc8-44e5-a319-9671e1ac294a
 ms.localizationpriority: medium
 ms.date: 06/11/2018
 ms.author: v-tea
 author: Teresa-MOTIV
-ms.openlocfilehash: bbb614886099bf2adc1239a699ef8d904e71be7b
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f1e4713e6d658e6a51955e321e39cb7f90e261a9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961780"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87963804"
 ---
-# <a name="troubleshoot-always-on-vpn"></a>Always On VPN 疑難排解 
+# <a name="troubleshoot-always-on-vpn"></a>Always On VPN 疑難排解
 
->適用于： Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows 10
+>適用于： Windows Server (半年通道) 、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
-如果您的 Always On VPN 安裝程式無法將用戶端連線到您的內部網路，則原因可能是不正確 VPN 憑證、不正確的 NPS 原則，或用戶端部署腳本或路由及遠端存取的問題。 針對 VPN 連線進行疑難排解和測試的第一個步驟，是瞭解 Always On VPN 基礎結構的核心元件。 
+如果您的 Always On VPN 安裝程式無法將用戶端連線到您的內部網路，則原因可能是不正確 VPN 憑證、不正確的 NPS 原則，或用戶端部署腳本或路由及遠端存取的問題。 針對 VPN 連線進行疑難排解和測試的第一個步驟，是瞭解 Always On VPN 基礎結構的核心元件。
 
 您可以透過數種方式對連接問題進行疑難排解。 針對用戶端問題和一般疑難排解，用戶端電腦上的應用程式記錄非常寶貴。 對於驗證特定的問題，NPS 伺服器上的 NPS 記錄檔可協助您判斷問題來源。
 
@@ -36,19 +34,19 @@ ms.locfileid: "86961780"
 
     - 如果您知道要用於部署的通道，請將 VPN 的類型設定為 VPN 用戶端上的特定通道類型。
 
-    - 藉由建立具有特定通道類型的 VPN 連線，您的連線仍會失敗，但會導致更多的通道特定錯誤（例如，「對 PPTP 封鎖了 GRE」）。
+    - 藉由建立具有特定通道類型的 VPN 連線，您的連線仍然會失敗，但會導致更多的通道特定錯誤 (例如「對 PPTP 封鎖的 GRE」 ) 。
 
     - 當無法連線到 VPN 伺服器，或通道連線失敗時，也會發生此錯誤。
 
 - **請確定：**
 
-    - IKE 埠（UDP 埠500和4500）不會遭到封鎖。
+    -  (UDP 埠500和 4500) 的 IKE 埠不會遭到封鎖。
 
     - 用戶端和伺服器上都有正確的 IKE 憑證。
 
 ### <a name="error-code-809"></a>錯誤碼：809
 
-- **錯誤描述。**  因為遠端伺服器沒有回應，所以無法建立電腦與 VPN 伺服器之間的網路連線。 這可能是因為您的電腦與遠端伺服器之間的其中一個網路裝置（例如防火牆、NAT、路由器）未設定為允許 VPN 連線。 請洽詢您的系統管理員或服務提供者，以判斷可能造成問題的裝置。
+- **錯誤描述。**  因為遠端伺服器沒有回應，所以無法建立電腦與 VPN 伺服器之間的網路連線。 這可能是因為其中一個網路裝置 (例如，在您的電腦與遠端伺服器之間) 的防火牆、NAT、路由器未設定為允許 VPN 連線。 請洽詢您的系統管理員或服務提供者，以判斷可能造成問題的裝置。
 
 - **可能的原因。** 此錯誤是由 VPN 伺服器或防火牆上已封鎖的 UDP 500 或4500埠所造成。
 
@@ -148,7 +146,7 @@ NPS 記錄檔有助於診斷與原則相關的問題。 如需 NPS 記錄的詳�
 
 2. 您可以將遠端存取/VPN 伺服器名稱解析成 IP 位址嗎？ 在 [**控制台**] 的  >  [**網路**和網際網路網路**連線**] 中  >  ** **，開啟您的 VPN 設定檔的屬性。 [**一般**] 索引標籤中的值應該可透過 DNS 公開解析。
 
-3. 您可以從外部網路存取 VPN 伺服器嗎？ 請考慮開啟外部介面的網際網路控制訊息通訊協定（ICMP），並從遠端用戶端 ping 名稱。 Ping 成功之後，您可以移除 ICMP 允許規則。
+3. 您可以從外部網路存取 VPN 伺服器嗎？ 請考慮開啟網際網路控制訊息通訊協定 (ICMP) 至外部介面，並從遠端用戶端 ping 名稱。 Ping 成功之後，您可以移除 ICMP 允許規則。
 
 4. 您是否已正確設定 VPN 伺服器上的內部和外部 Nic？ 它們位於不同的子網嗎？ 外部 NIC 會連線到您防火牆上的正確介面嗎？
 
@@ -170,15 +168,15 @@ NPS 記錄檔有助於診斷與原則相關的問題。 如需 NPS 記錄的詳�
 
   - 使用者的個人憑證存儲中具有有效的用戶端驗證憑證，但 Azure AD 不發出。
 
-  - [VPN 設定檔] \<TLSExtensions\> 區段遺失，或未包含** \<EKUName\> Aad 條件式存取 \</EKUName\> \<EKUOID\> 1.3.6.1.4.1.311.87，</Ekuoid \> \<EKUName> aad 條件存取</ekuname \> \<EKUOID\> 1.3.6.1.4.1.311.87< \> /ekuoid**專案。 \<EKUName>和 \<EKUOID> 專案會告訴 vpn 用戶端，在將憑證傳遞給 vpn 伺服器時，要從使用者的憑證存放區中取出哪一個憑證。 如果沒有這麼做，VPN 用戶端會使用使用者憑證存放區中任何有效的用戶端驗證憑證，而且驗證會成功。 
+  - [VPN 設定檔] \<TLSExtensions\> 區段遺失，或未包含** \<EKUName\> Aad 條件式存取 \</EKUName\> \<EKUOID\> 1.3.6.1.4.1.311.87，</Ekuoid \> \<EKUName> aad 條件存取</ekuname \> \<EKUOID\> 1.3.6.1.4.1.311.87< \> /ekuoid**專案。 \<EKUName>和 \<EKUOID> 專案會告訴 vpn 用戶端，在將憑證傳遞給 vpn 伺服器時，要從使用者的憑證存放區中取出哪一個憑證。 如果沒有這麼做，VPN 用戶端會使用使用者憑證存放區中任何有效的用戶端驗證憑證，而且驗證會成功。
 
-  - RADIUS 伺服器（NPS）尚未設定為只接受包含**AAD 條件式存取**OID 的用戶端憑證。
+  - RADIUS 伺服器 (NPS) 尚未設定為只接受包含**AAD 條件式存取**OID 的用戶端憑證。
 
 - **可能的解決方案。** 若要取消此迴圈，請執行下列動作：
 
-  1. 在 Windows PowerShell 中，執行**WmiObject** Cmdlet 來傾印 VPN 設定檔設定。 
+  1. 在 Windows PowerShell 中，執行**WmiObject** Cmdlet 來傾印 VPN 設定檔設定。
   2. 確認 **\<TLSExtensions>** 、 **\<EKUName>** 和 **\<EKUOID>** 區段存在，並顯示正確的名稱和 OID。
-      
+
       ```powershell
       PS C:\> Get-WmiObject -Class MDM_VPNv2_01 -Namespace root\cimv2\mdm\dmmap
 
@@ -261,7 +259,7 @@ NPS 記錄檔有助於診斷與原則相關的問題。 如需 NPS 記錄的詳�
         Simple container name: te-User-c7bcc4bd-0498-4411-af44-da2257f54387
         Provider = Microsoft Enhanced Cryptographic Provider v1.0
       Encryption test passed
-        
+
       ================ Certificate 1 ================
       Serial Number: 367fbdd7e6e4103dec9b91f93959ac56
       Issuer: CN=Microsoft VPN root CA gen 1
@@ -279,8 +277,8 @@ NPS 記錄檔有助於診斷與原則相關的問題。 如需 NPS 記錄的詳�
      >[!NOTE]
      >如果使用者的個人存放區中有來自簽發者**CN = MICROSOFT VPN 根 CA gen 1**的憑證，但是使用者藉由選取**X**以關閉糟糕訊息來取得存取權，請收集 CAPI2 事件記錄檔，以確認用來驗證的憑證是否為不是從 Microsoft VPN 根 CA 發行的有效用戶端驗證憑證。
 
-  4. 如果使用者的個人存放區中有有效的用戶端驗證憑證，則在使用者選取**X**之後，如果 **\<TLSExtensions>** 、 **\<EKUName>** 和 **\<EKUOID>** 區段存在且包含正確的資訊，連接就會失敗（如其所示）。
-   
+  4. 如果使用者的個人存放區中有有效的用戶端驗證憑證，連接就會失敗 (因為它應該在使用者選取**X**之後) ，而且如果 **\<TLSExtensions>** 、 **\<EKUName>** 和 **\<EKUOID>** 區段存在，而且包含正確的資訊。
+
      此時會出現一個錯誤訊息，指出「找不到可以搭配可延伸驗證通訊協定使用的憑證」。
 
 ### <a name="unable-to-delete-the-certificate-from-the-vpn-connectivity-blade"></a>無法從 VPN 連線分頁刪除憑證

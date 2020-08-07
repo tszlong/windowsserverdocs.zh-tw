@@ -5,22 +5,20 @@ author: allenma
 ms.author: allenma
 ms.date: 08/14/2018
 ms.topic: article
-ms.prod: windows-server-hyper-v
-ms.technology: virtualization
 ms.localizationpriority: low
 ms.assetid: 6cb13f84-cb50-4e60-a685-54f67c9146be
-ms.openlocfilehash: f82aab1b3a3af61afa08a1849392297ca5def2ab
-ms.sourcegitcommit: 9889f20270e8eb7508d06cbf844cba9159e39697
+ms.openlocfilehash: 954efafe3185cadb347384c3c93a2eb8ef895143
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83551101"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87963554"
 ---
 # <a name="managing-hyper-v-hypervisor-scheduler-types"></a>管理 Hyper-v 虛擬程式排程器類型
 
 >適用于： Windows 10、Windows Server 2016、Windows Server、版本1709、Windows Server、版本1803、Windows Server 2019
 
-本文說明 Windows Server 2016 中首次引進的虛擬處理器排程邏輯新模式。 這些模式或排程器類型會決定 Hyper-v 虛擬機器如何配置及管理跨來賓虛擬處理器的工作。 Hyper-v 主機系統管理員可以選取最適用于來賓虛擬機器（Vm）的虛擬程式排程器類型，並設定 Vm 以利用排程邏輯。
+本文說明 Windows Server 2016 中首次引進的虛擬處理器排程邏輯新模式。 這些模式或排程器類型會決定 Hyper-v 虛擬機器如何配置及管理跨來賓虛擬處理器的工作。 Hyper-v 主機系統管理員可以選取最適合來賓虛擬機器 (Vm) 的虛擬程式管理器類型，並設定 Vm 以利用排程邏輯。
 
 > [!NOTE]
 > 需要進行更新，才能使用本檔中所述的程式管理器排程器功能。 如需詳細資訊，請參閱[必要的更新](#required-updates)。
@@ -48,7 +46,7 @@ Intel 和 AMD 皆提供支援 SMT 的處理器。 Intel 是以 Intel 超執行�
 
 * 根磁碟分割本身是虛擬機器磁碟分割，雖然它具有與來賓虛擬機器不同的唯一屬性和更高的許可權。 根磁碟分割提供管理服務，可控制所有來賓虛擬機器、提供來賓的虛擬裝置支援，以及管理來賓虛擬機器的所有裝置 i/o。 Microsoft 強烈建議您不要在根磁碟分割中執行任何應用程式工作負載。
 
-* 根磁碟分割的每個虛擬處理器（VP）都會將1:1 對應到基礎邏輯處理器（LP）。 主機 VP 一律會在相同的基礎 LP 上執行–不會遷移根磁碟分割的 VPs。
+* 根磁碟分割的每個虛擬處理器 (VP) 會將1:1 對應到基礎邏輯處理器 (LP) 。 主機 VP 一律會在相同的基礎 LP 上執行–不會遷移根磁碟分割的 VPs。
 
 * 根據預設，主機 VPs 執行所在的 LPs 也可以執行來賓 VPs。
 
@@ -79,7 +77,7 @@ Intel 和 AMD 皆提供支援 SMT 的處理器。 Intel 是以 Intel 超執行�
 
 * 效能可能會降低，因為如果只有一個 VPs 群組可以執行，則核心中只有一個指令資料流程會執行，另一個則是閒置。
 
-* 在來賓虛擬機器中執行的作業系統和應用程式，可以利用 SMT 行為和程式設計介面（Api）來控制和散佈跨 SMT 執行緒的工作，就像執行非虛擬化一樣。
+* 在來賓虛擬機器中執行的 OS 和應用程式可以利用 SMT 行為和程式設計介面 (Api) 來控制和散佈跨 SMT 執行緒的工作，就像執行非虛擬化一樣。
 
 * 來賓工作負載隔離的強式安全性界限-來賓 VPs 受限於在基礎實體核心配對上執行，以降低對側通道窺探攻擊的弱點。
 
@@ -93,7 +91,7 @@ Intel 和 AMD 皆提供支援 SMT 的處理器。 Intel 是以 Intel 超執行�
 
 根排程器是在 Windows 10 1803 版中引進。 當根排程器類型為 [已啟用] 時，[處理常式 cedes] 會對根磁碟分割進行工作排程的控制。 根磁碟分割的 OS 實例中的 NT 排程器會管理將工作排程到系統 LPs 的所有層面。
 
-根排程器會解決支援公用程式磁碟分割所固有的獨特需求，以提供與 Windows Defender 應用程式防護（WDAG）搭配使用的強式工作負載隔離。 在此案例中，將排程責任留給根 OS 會提供幾個優點。 例如，適用于容器案例的 CPU 資源控制可以搭配公用程式分割使用，以簡化管理和部署。 此外，根 OS 排程器可以隨時收集容器內工作負載 CPU 使用率的相關計量，並使用此資料做為與系統中所有其他工作負載適用的相同排程原則的輸入。 這些相同的計量也有助於清楚地將應用程式容器中所執行的屬性，設定為主機系統。 使用傳統虛擬機器工作負載來追蹤這些計量會比較棘手，因為所有執行中 VM 的工作都是在根磁碟分割中進行。
+根排程器會解決支援公用程式磁碟分割所固有的獨特需求，以提供與 Windows Defender 應用程式防護 (WDAG) 搭配使用的強式工作負載隔離。 在此案例中，將排程責任留給根 OS 會提供幾個優點。 例如，適用于容器案例的 CPU 資源控制可以搭配公用程式分割使用，以簡化管理和部署。 此外，根 OS 排程器可以隨時收集容器內工作負載 CPU 使用率的相關計量，並使用此資料做為與系統中所有其他工作負載適用的相同排程原則的輸入。 這些相同的計量也有助於清楚地將應用程式容器中所執行的屬性，設定為主機系統。 使用傳統虛擬機器工作負載來追蹤這些計量會比較棘手，因為所有執行中 VM 的工作都是在根磁碟分割中進行。
 
 #### <a name="root-scheduler-use-on-client-systems"></a>根排程器在用戶端系統上使用
 

@@ -1,24 +1,22 @@
 ---
 title: 升級 Windows 10 或 Windows Server 上的 Hyper-v 中的虛擬機器版本
 description: 提供升級虛擬機器版本的指示和考慮
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: 897f2454-5aee-445c-a63e-f386f514a0f6
 author: jasongerend
 ms.author: jgerend
 ms.date: 05/22/2019
-ms.openlocfilehash: e08d13e4d9b493b80cad59561c8088c7d3a12b57
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e7c86cc15877c622cf3554a7ae69fe3d0aea1c50
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860871"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87938922"
 ---
 # <a name="upgrade-virtual-machine-version-in-hyper-v-on-windows-10-or-windows-server"></a>升級 Windows 10 或 Windows Server 上的 Hyper-v 中的虛擬機器版本
 
->適用于： Windows 10、Windows Server 2019、Windows Server 2016、Windows Server （半年通道）
+>適用于： Windows 10、Windows Server 2019、Windows Server 2016、Windows Server (半年通道) 
 
 藉由升級設定版本，將最新的 Hyper-v 功能提供給您的虛擬機器。 請不要執行此動作，直到：
 
@@ -30,7 +28,7 @@ ms.locfileid: "80860871"
 
 ## <a name="step-1-check-the-virtual-machine-configuration-versions"></a>步驟1：檢查虛擬機器設定版本
 
-1. 在 Windows 桌面上，按一下 \[開始\] 按鈕，然後輸入 **Windows PowerShell** 名稱的任何一部分。
+1. 在 Windows 桌面上，按一下 [開始] 按鈕，然後輸入 **Windows PowerShell** 名稱的任何一部分。
 2. 以滑鼠右鍵按一下 [Windows PowerShell]，然後選取 [**以系統管理員身分執行**]。
 3. 使用[Get-VM](https://docs.microsoft.com/powershell/module/hyper-v/get-vm)Cmdlet。 執行下列命令來取得虛擬機器的版本。
 
@@ -43,7 +41,7 @@ Get-VM * | Format-Table Name, Version
 ## <a name="step-2-upgrade-the-virtual-machine-configuration-version"></a>步驟2：升級虛擬機器設定版本
 
 1. 在 [Hyper-v 管理員] 中關閉虛擬機器。
-2. 選取 [動作] > [升級設定版本]。 如果虛擬機器無法使用此選項，則它已是 Hyper-v 主機所支援的最高設定版本。
+2. 選取 [動作] > [升級設定版本]。 如果虛擬機器無法使用此選項，表示虛擬機器已經是 Hyper-V 主機所支援的最高組態版本。
 
 若要使用 Windows PowerShell 升級虛擬機器設定版本，請使用[VMVersion](https://docs.microsoft.com/powershell/module/hyper-v/update-vmversion) Cmdlet。 執行下列命令，其中 vmname 是虛擬機器的名稱。
 
@@ -76,7 +74,7 @@ New-VM -Name "WindowsCV5" -Version 5.0
 | --- |---|---|---|---|---|---|---|---|---|---|
 |Windows Server 2019|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Windows 10 企業版 LTSC 2019|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Windows Server 2016|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|Windows Server 2016|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Windows 10 企業版 2016 長期維護|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Windows 10 Enterprise 2015 LTSB|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10004;|&#10004;|
 |Windows Server 2012 R2|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10004;|
@@ -88,15 +86,15 @@ New-VM -Name "WindowsCV5" -Version 5.0
 
 | Hyper-v 主機 Windows 版本 | 9.1 | 9.0 | 8.3 | 8.2 | 8.1 | 8.0 | 7.1 | 7.0 | 6.2 | 5.0 |
 | --- |---|---|---|---|---|---|---|---|---|---|
-| Windows 10 5 月2019更新（版本1903） |&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;| &#10004;|
+| Windows 10 5 月2019更新 (版本 1903)  |&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;| &#10004;|
 | Windows Server 版本 1903 |&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;| &#10004;|
-|Windows Server，版本1809|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Windows 10 2018 年10月更新（版本1809）|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|Windows Server，版本 1809|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|Windows 10 2018 年 10 月更新 (版本 1809)|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Windows Server 1803 版|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Windows 10 2018 年4月更新（版本1803）|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Windows 10 秋季建立者更新（版本1709）|&#10006;|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Windows 10 建立者更新（版本1703）|&#10006;|&#10006;|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Windows 10 年度更新版（版本1607）|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|Windows 10 2018 年 4 月更新 (版本 1803)|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|Windows 10 Fall Creators Update (版本 1709)|&#10006;|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|Windows 10 Creators Update (版本 1703)|&#10006;|&#10006;|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|Windows 10 年度更新版 (版本 1607)|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 
 ## <a name="why-should-i-upgrade-the-virtual-machine-configuration-version"></a>為什麼要升級虛擬機器設定版本？
 
@@ -112,7 +110,7 @@ New-VM -Name "WindowsCV5" -Version 5.0
  |執行時間狀態|以二進位檔案格式儲存的虛擬機器執行時間狀態資訊。 <br />副檔名：. .vmrs 和. vmgs <br />預設位置： C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual 機器|
 |虛擬硬碟|儲存虛擬機器的虛擬硬碟。 <br /> 副檔名： .vhd 或 .vhdx <br />預設位置： C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual 硬碟|
  |自動虛擬硬碟 |用於虛擬機器檢查點的差異磁片檔案。 <br /> 副檔名：. .avhdx <br /> 預設位置： C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual 硬碟|
- |檢查點|檢查點會儲存在多個檢查點檔案中。 每個檢查點會建立設定檔案和執行階段狀態檔案。 <br /> 副檔名：. .vmrs 和. .vmcx <br />預設位置： C:\ProgramData\Microsoft\Windows\Snapshots|
+ |Checkpoint|檢查點會儲存在多個檢查點檔案中。 每個檢查點會建立設定檔案和執行階段狀態檔案。 <br /> 副檔名：. .vmrs 和. .vmcx <br />預設位置： C:\ProgramData\Microsoft\Windows\Snapshots|
 
 ## <a name="what-happens-if-i-dont-upgrade-the-virtual-machine-configuration-version"></a>如果我不升級虛擬機器設定版本，會發生什麼事？
 
@@ -133,14 +131,14 @@ New-VM -Name "WindowsCV5" -Version 5.0
 |PowerShell Direct |6.2|
 |虛擬機器群組|6.2|
 |虛擬信賴平台模組 (vTPM)|7.0|
-|虛擬機器多個佇列（VMMQ）|7.1|
+|虛擬機器多佇列 (VMMQ) |7.1|
 |XSAVE 支援|8.0|
 |金鑰存放磁片磁碟機|8.0|
-|以來賓虛擬化為基礎的安全性支援（VBS）|8.0|
-|嵌套虛擬化|8.0|
+|以來賓虛擬化為基礎的安全性支援 (VBS) |8.0|
+|巢狀虛擬化|8.0|
 |虛擬處理器計數|8.0|
 |大型記憶體 Vm|8.0|
-|將每個裝置的虛擬裝置的預設最大數目增加到64（例如網路和指派的裝置）|8.3|
+|將虛擬裝置的預設最大數目增加為每個裝置 64 (例如網路和指派的裝置) |8.3|
 |允許 Perfmon 的其他處理器功能|9.0|
 |使用[核心](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-scheduler-types#windows-server-2019-hyper-v-defaults-to-using-the-core-scheduler)排程器自動公開在主機上執行之 vm 的[同步多執行緒](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-scheduler-types#background)設定|9.0|
 |休眠支援|9.0|

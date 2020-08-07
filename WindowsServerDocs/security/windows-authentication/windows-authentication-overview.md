@@ -1,20 +1,18 @@
 ---
 title: Windows 驗證概觀
 description: Windows Server 安全性
-ms.prod: windows-server
-ms.technology: security-windows-auth
 ms.topic: article
 ms.assetid: 485a0774-0785-457f-a964-0e9403c12bb1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 4e3dbed9ebef441dab4a4583455e29df98a6ab24
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 10fb8e072e9dd810e64ace79c17f02290766ec6f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182304"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936488"
 ---
 # <a name="windows-authentication-overview"></a>Windows 驗證概觀
 
@@ -52,7 +50,7 @@ Windows 作業系統會執行一組預設的驗證通訊協定，包括 Kerberos
 ## <a name="practical-applications"></a>實際應用
 Windows 驗證是用來確認來自信任來源的資訊，是否出自個人或電腦物件，例如另一部電腦。 Windows 提供許多不同的方法來達成這個目標，如下所述。
 
-|收件人...|功能|說明|
+|收件人...|功能|描述|
 |----|------|--------|
 |在 Active Directory 網域內驗證|Kerberos|Microsoft Windows &nbsp; Server 作業系統會針對公開金鑰驗證，執行 Kerberos 第5版的驗證通訊協定和延伸。 Kerberos 驗證用戶端會實作為安全性支援提供者 \( SSP \) ，而且可以透過安全性支援提供者介面 SSPI 來存取 \( \) 。 初始使用者驗證與 Winlogon 單一登入 \- 架構整合。 Kerberos 金鑰發佈中心 \( KDC \) 會與網域控制站上執行的其他 Windows Server 安全性服務整合。 KDC 會使用網域的 Active Directory 目錄服務資料庫作為其安全性帳戶資料庫。 預設的 Kerberos 需要 Active Directory。<p>如需其他資源，請參閱 [Kerberos 驗證概觀](../kerberos/kerberos-authentication-overview.md)。|
 |在網路上安全的驗證|\/在安全通道安全性支援提供者中執行的 TLS SSL|傳輸層安全性 \( TLS \) 通訊協定版本1.0、1.1 和1.2、安全通訊端層 \( SSL \) 通訊協定、版本2.0 和3.0、資料包傳輸層安全性通訊協定版本1.0 和私人通訊傳輸 \( 百分比 \) 通訊協定（版本1.0）都是以公開金鑰密碼編譯為基礎。 安全通道 \( Schannel \) 提供者驗證通訊協定套件提供這些通訊協定。 所有安全通道通訊協定都使用用戶端與伺服器模型。<p>如需其他資源，請參閱[TLS-SSL &#40;SCHANNEL SSP&#41; 總覽](../tls/tls-ssl-schannel-ssp-overview.md)。|

@@ -6,14 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 09/19/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: ca13ebe29b0a9260302599110f333d166681abdb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 27b0232b65a3003dde9a5702ec45063781abd813
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358564"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947444"
 ---
 # <a name="ad-fs-paginated-sign-in"></a>AD FS 分頁登入
 
@@ -35,7 +33,7 @@ ms.locfileid: "71358564"
 
 ![newsignin](media/AD-FS-paginated-sign-in/signin2.png)
 
-在第一個頁面上，系統會要求您輸入您的使用者名稱。 您也可以選取 [讓我保持登入] 選項，以降低登入提示的頻率，並在安全時保持登入狀態。 （預設會停用此選項）。
+在第一個頁面上，系統會要求您輸入您的使用者名稱。 您也可以選取 [讓我保持登入] 選項，以降低登入提示的頻率，並在安全時保持登入狀態。  (預設會停用此選項。 ) 
 
 ![newsignin](media/AD-FS-paginated-sign-in/signin3.png)
 
@@ -43,7 +41,7 @@ ms.locfileid: "71358564"
 
 ![newsignin](media/AD-FS-paginated-sign-in/signin4.png)
 
-在第三個頁面上，系統會要求您輸入密碼（假設您已選取 [密碼] 做為您的驗證選項）。
+在第三個頁面上，系統會要求您輸入密碼， (假設您已選取 [密碼] 做為驗證選項) 。
 
 ## <a name="how-to-get-the-new-experience"></a>如何取得新的體驗
 
@@ -62,6 +60,6 @@ ms.locfileid: "71358564"
 自訂的選項仍然適用于 AD FS 2019。
 以下是其他檔的一些連結，供您參考。
 
-•適用于不打算將伺服器升級至 AD FS 2019，但仍想要進行新設計的人員：[在 Active Directory 同盟服務中使用 Azure AD UX Web 主題](azure-ux-web-theme-in-ad-fs.md)
+•適用于不打算將伺服器升級至 AD FS 2019，但仍想要新設計的使用者：[在 Active Directory 同盟服務中使用 AZURE AD UX Web 主題](azure-ux-web-theme-in-ad-fs.md)
 
-•自訂的集中位置：[自訂 AD FS 使用者登入](ad-fs-user-sign-in-customization.md)
+•自訂的集中位置： [AD FS 使用者登入自訂](ad-fs-user-sign-in-customization.md)

@@ -1,33 +1,31 @@
 ---
 title: 建立金鑰發佈服務 KDS 根金鑰
 description: Windows Server 安全性
-ms.prod: windows-server
-ms.technology: security-gmsa
 ms.topic: article
 ms.assetid: 42e5db8f-1516-4d42-be0a-fa932f5588e9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: d26cd32f021e8b00c6c9c6d3949a00f71096a3c9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 90fa1203f09bc04b27885034895e52db5fa1c5f0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857011"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971485"
 ---
 # <a name="create-the-key-distribution-services-kds-root-key"></a>建立金鑰發佈服務 KDS 根金鑰
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-本主題適用于 IT 專業人員，說明如何使用 Windows PowerShell 在網域控制站上建立 Microsoft 金鑰發佈服務（kdssvc）根金鑰，以在 Windows Server 2012 或更新版本中產生群組受管理的服務帳戶密碼。
+本主題適用于 IT 專業人員，說明如何使用 Windows PowerShell 在網域控制站上建立 Microsoft 金鑰發佈服務 ( # A0) 根金鑰，以在 Windows Server 2012 或更新版本中產生群組受管理的服務帳戶密碼。
 
-網域控制站（DC）必須要有根金鑰，才能開始產生 gMSA 的密碼。 網域控制站最長會等待 10 小時 (從建立算起) 來允許所有網域控制站聚合它們的 AD 複寫，然後才允許建立 gMSA。 10 小時是一項安全措施，用來避免在環境中的所有 DC 都能夠回應 gMSA 要求之前就產生密碼。  如果您太快嘗試使用 gMSA，金鑰可能尚未複寫到所有網域控制站，因此當 gMSA 主機嘗試抓取密碼時，密碼抓取可能會失敗。 當使用具有有限複寫排程的 Dc 或發生複寫問題時，也可能會發生 gMSA 密碼抓取失敗。
+網域控制站 (DC) 需要根金鑰才能開始產生 gMSA 密碼。 網域控制站最長會等待 10 小時 (從建立算起) 來允許所有網域控制站聚合它們的 AD 複寫，然後才允許建立 gMSA。 10 小時是一項安全措施，用來避免在環境中的所有 DC 都能夠回應 gMSA 要求之前就產生密碼。  如果您太快嘗試使用 gMSA，金鑰可能尚未複寫到所有網域控制站，因此當 gMSA 主機嘗試抓取密碼時，密碼抓取可能會失敗。 當使用具有有限複寫排程的 Dc 或發生複寫問題時，也可能會發生 gMSA 密碼抓取失敗。
 
 > [!NOTE]
-> 刪除和重新建立根金鑰可能會導致問題，因為索引鍵的快取會在刪除之後繼續使用舊金鑰。 如果重新建立根金鑰，就應該在所有網域控制站上重新啟動金鑰發佈服務（KDC）。
+> 刪除和重新建立根金鑰可能會導致問題，因為索引鍵的快取會在刪除之後繼續使用舊金鑰。 如果重新建立根金鑰，則應該在所有網域控制站上重新啟動金鑰發佈服務 (KDC) 。
 
-若要完成此程序，至少需要 **Domain Admins** 或 **Enterprise Admins** 群組的成員資格或同等權限。 如需使用適當帳戶和群組成員資格的詳細資料，請參閱 [本機與網域的預設群組](https://technet.microsoft.com/library/dd728026(WS.10).aspx)。
+若要完成此程序，至少需要 **Domain Admins** 或 **Enterprise Admins** 群組的成員資格或同等權限。 如需使用適當帳戶和群組成員資格的詳細資訊，請參閱[本機與網域預設群組](https://technet.microsoft.com/library/dd728026(WS.10).aspx)。
 
 > [!NOTE]
 > 若要執行用來管理群組「受管理的服務帳戶」的 Windows PowerShell 命令，必須有 64 位元架構。
@@ -53,15 +51,15 @@ ms.locfileid: "80857011"
 
     **$a = 取得日期**
 
-    **$b = $a. Time.addhours （-10）**
+    **$b = $a. Time.addhours (-10) **
 
     **新增-Add-kdsrootkey-EffectiveTime $b**
 
     或使用單一命令
 
-    **Add-kdsrootkey-EffectiveTime （（get-date） time.addhours （-10））**
+    **Add-kdsrootkey-EffectiveTime ( # B1 get-date) . time.addhours (-10) # B5**
 
 ## <a name="see-also"></a>另請參閱
-[開始使用群組受管理的服務帳戶](getting-started-with-group-managed-service-accounts.md)
+[使用群組受管理的服務帳戶消費者入門](getting-started-with-group-managed-service-accounts.md)
 
 

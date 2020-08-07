@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: c8b332de4053aa64f3294c3cd68c37773742f9f5
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f16ea84d339e1b6bb51d0c0e5be352aeda4abc41
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962720"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947338"
 ---
 # <a name="ad-fs-user-sign-in-customization"></a>自訂 AD FS 使用者登入
 
@@ -22,9 +20,9 @@ AD FS 提供許多選項，讓系統管理員自訂及量身打造使用者體�
 
 
 
-![AD FS 自訂](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png) 
-    
-  
+![AD FS 自訂](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png)
+
+
 
 
 

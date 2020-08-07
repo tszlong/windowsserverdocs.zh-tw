@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 06/05/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 649b5d8b05b4512a7c42419af043db9afe4a1fde
-ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
+ms.openlocfilehash: b09c9da43d25d7921f7687475c154540ec9d2907
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87863835"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947317"
 ---
 # <a name="access-control-policies-in-windows-server-2012-r2-and-windows-server-2012-ad-fs"></a>Windows Server 2012 R2 和 Windows Server 2012 中的存取控制原則 AD FS
 
@@ -55,7 +53,7 @@ Windows 10 網域加入和登入所需的 AD FS 端點
 
 ## <a name="client-access-policies-scenarios"></a>用戶端存取原則案例
 
-|**案例**|**描述**|
+|**案例**|**說明**|
 | --- | --- |
 |案例1：封鎖所有對 Office 365 的外部存取|您可以從內部公司網路上的所有用戶端存取 Office 365，但來自外部用戶端的要求會根據外部用戶端的 IP 位址而遭到拒絕。|
 |案例2：封鎖 Exchange ActiveSync 以外的所有 Office 365 外部存取|您可以從內部公司網路上的所有用戶端，以及使用 Exchange ActiveSync 的任何外部用戶端裝置（例如智慧型手機）來存取 Office 365。 所有其他外部用戶端（例如使用 Outlook 的其他）都會遭到封鎖。|

@@ -1,20 +1,18 @@
 ---
 title: Windows Server 上的 Hyper-v 支援的 Windows 客體作業系統
 description: 列出支援在虛擬機器中做為來賓使用的 Windows 作業系統。 也會提供舊版 Hyper-v 的類似文章連結。
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: 06b35897-2192-48b7-8c2d-125c520b0786
 author: lizap
 ms.author: elizapo
 ms.date: 01/08/2019
-ms.openlocfilehash: ddcb4f080183b6a1c8ae0ed0d705597c1a0dd4a5
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: a3c1f82d1c1f12c51a36a8285d28ccb9402f2817
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181794"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87963704"
 ---
 # <a name="supported-windows-guest-operating-systems-for-hyper-v-on-windows-server"></a>Windows Server 上的 Hyper-v 支援的 Windows 客體作業系統
 
@@ -28,7 +26,7 @@ Hyper-v 支援在虛擬機器中執行數個版本的 Windows Server、Windows �
 
 以下是在 Windows Server 2016 和 Windows Server 2019 中，支援作為 Hyper-v 之客體作業系統的 Windows Server 版本。
 
-|客體作業系統 (伺服器)|虛擬處理器數量的上限|Integration Services|注意|
+|客體作業系統 (伺服器)|虛擬處理器數量的上限|Integration Services|附註|
 |-------------------------------------|----------------------------------------|------------------------|---------|
 |Windows Server 版本 1909 |240代表層代 2;<br>適用于層代1的64|內建|大於240虛擬處理器支援需要 Windows Server 1903 版或更新版本的客體作業系統。|
 |Windows Server 版本 1903 |240代表層代 2;<br>適用于層代1的64|內建||
@@ -45,7 +43,7 @@ Hyper-v 支援在虛擬機器中執行數個版本的 Windows Server、Windows �
 
 以下是 Windows Server 2016 和 Windows Server 2019 中，支援作為 Hyper-v 之客體作業系統的 Windows 用戶端版本。
 
-|客體作業系統 (用戶端)|虛擬處理器數量的上限|Integration Services|注意|
+|客體作業系統 (用戶端)|虛擬處理器數量的上限|Integration Services|附註|
 |-------------------------------------|----------------------------------------|------------------------|---------|
 |Windows 10|32|內建||
 |Windows 8.1|32|內建||
@@ -72,7 +70,7 @@ Microsoft 透過下列方式提供客體作業系統的支援：
 
 -   若為在其他作業系統中發現的問題，Microsoft 會將問題提交給 [TSANet](https://www.tsanet.org/)，其為多個廠商支援的社群。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [Hyper-V 上的 Linux 和 FreeBSD 虛擬機器](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
 

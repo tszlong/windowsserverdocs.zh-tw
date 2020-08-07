@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 2152d6a242f829b56207632d214a1fc73e48515d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 410e9ce5fbde7d84cbb4efbbde3515d0af537180
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959590"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87937885"
 ---
 # <a name="the-role-of-claim-rules"></a>宣告規則的角色
 Active Directory 同盟服務 AD FS 中的同盟服務的整體功能 \( \) 是發行包含一組宣告的權杖。 關於哪些宣告 AD FS 接受，然後發出問題的決定是由宣告規則所控管。

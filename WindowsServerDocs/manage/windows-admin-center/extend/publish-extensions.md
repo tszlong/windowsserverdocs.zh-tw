@@ -1,19 +1,17 @@
 ---
 title: 發行 Windows 管理中心的擴充功能
-description: 發行 Windows 管理中心的延伸模組（Project 檀香山）
-ms.technology: manage
+description: '發行 Windows 系統管理中心的擴充功能 (Project 檀香山) '
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 357c37ec395e5c51f3c3f946414f38ea5f95e9e4
-ms.sourcegitcommit: eaf3fb57517b9110082edad356b12daf3345bb2c
+ms.openlocfilehash: c817a28494104a1bfed1d7e19eaebaa04fd5138e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85593989"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971965"
 ---
 # <a name="publishing-extensions"></a>發行延伸模組
 
@@ -51,7 +49,7 @@ Windows 系統管理中心支援的可設定套件來源有三個主要選項：
 
 如果您要發行延伸模組的預覽版本以供評估之用，我們建議您：
 
-- 在 nuspec 檔案中，將 "（Preview）" 附加至延伸模組標題的結尾
+- 在 nuspec 檔案中，將 " (Preview) " 附加至延伸模組標題的結尾
 - 說明 nuspec 檔案中延伸模組描述的限制
 
 ## <a name="creating-an-extension-package"></a>建立擴充功能套件
@@ -64,11 +62,11 @@ Windows 管理中心會利用 NuGet 套件和摘要來散發和下載延伸模�
 
 #### <a name="ui-extensions"></a>UI 延伸模組
 
-若要開始收集 UI 延伸模組所需的所有內容，請在您的工具上執行 "gulp build"，並確認組建成功。  此程式會將所有元件一起封裝在一個名為「配套」的資料夾中，位於延伸模組的根目錄中（位於相同的 src 目錄層級）。  將此目錄及其所有內容複寫到 [NuGet 套件] 資料夾。
+若要開始收集 UI 延伸模組所需的所有內容，請在您的工具上執行 "gulp build"，並確認組建成功。  此程式會將所有元件一起封裝在一個名為「配套」的資料夾中，位於您擴充功能的根目錄中， (位於相同的 src 目錄層級) 。  將此目錄及其所有內容複寫到 [NuGet 套件] 資料夾。
 
 #### <a name="gateway-plugins"></a>閘道外掛程式
 
-使用您的組建基礎結構（這可能和開啟 Visual Studio，然後按一下 [組建] 按鈕），編譯並建立您的外掛程式。  開啟您的組建輸出目錄，並複製代表您外掛程式的 Dll，並將它們放在名為 "Package" 的「NuGet 套件」目錄內的新資料夾中。  您不需要複製 FeatureInterface dll，只有代表您程式碼的 Dll。
+使用您的組建基礎結構 (這可以簡單地開啟 Visual Studio 然後按一下 [組建] 按鈕) 、編譯及建立您的外掛程式。  開啟您的組建輸出目錄，並複製代表您外掛程式的 Dll () ，並將它們放在名為 "Package" 的「NuGet 套件」目錄內的新資料夾中。  您不需要複製 FeatureInterface dll，只有代表程式碼的 Dll () 。
 
 ### <a name="2-create-the-nuspec-file"></a>2. 建立 nuspec 檔案
 
@@ -93,7 +91,7 @@ Windows 管理中心會利用 NuGet 套件和摘要來散發和下載延伸模�
     <licenseUrl>http://YourLicenseLink</licenseUrl>
     <iconUrl>http://YourLogoLink</iconUrl>
     <description>Hello World extension by Contoso</description>
-    <copyright>(c) Contoso. All rights reserved.</copyright> 
+    <copyright>(c) Contoso. All rights reserved.</copyright>
     <tags></tags>
   </metadata>
   <files>
@@ -110,7 +108,7 @@ Windows 管理中心會利用 NuGet 套件和摘要來散發和下載延伸模�
 | packageType | 必要 | 使用 "WindowsAdminCenterExtension"，這是針對 Windows 管理中心延伸模組所定義的 NuGet 套件類型。 |
 | id | 必要 | 摘要內的唯一封裝識別碼。 這個值必須符合專案的 manifest.js檔案中的 "name" 值。  如需指導方針，請參閱[選擇唯一的套件識別碼](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)。 |
 | title | 發行至 Windows 系統管理中心摘要所需 | 顯示在 Windows 管理中心擴充管理員中之套件的易記名稱。 |
-| version | 必要 | 延伸模組版本。 建議使用[語義版本設定（SemVer 慣例）](http://semver.org/spec/v1.0.0.html) ，但不是必要的。 |
+| version | 必要 | 延伸模組版本。 建議使用[ (SemVer 慣例) 的語義版本](http://semver.org/spec/v1.0.0.html)設定，但並非必要。 |
 | authors | 必要 | 如果代表您的公司發行，請使用您的公司名稱。 |
 | description | 必要 | 提供延伸模組功能的描述。 |
 | iconUrl | 發行至 Windows 系統管理中心摘要時建議使用 | 要在擴充管理員中顯示的圖示 URL。 |
@@ -127,7 +125,7 @@ Windows 管理中心會利用 NuGet 套件和摘要來散發和下載延伸模�
 
 ### <a name="4-signing-your-extension-nuget-package"></a>4. 簽署您的擴充功能 NuGet 套件
 
-延伸模組中包含的任何 .dll 檔案都必須使用來自受信任憑證授權單位單位（CA）的憑證進行簽署。 根據預設，當 Windows 管理中心在生產模式中執行時，不會封鎖未簽署的 .dll 檔案。
+延伸模組中包含的任何 .dll 檔案都必須使用來自受信任憑證授權單位單位 (CA) 的憑證進行簽署。 根據預設，當 Windows 管理中心在生產模式中執行時，不會封鎖未簽署的 .dll 檔案。
 
 我們也強烈建議您簽署延伸模組 NuGet 封裝，以確保封裝的完整性，但這不是必要的步驟。
 

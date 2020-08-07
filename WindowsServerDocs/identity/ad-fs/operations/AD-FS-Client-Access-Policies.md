@@ -5,36 +5,34 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 6d049175c7d89670f82bb45addc929d57b60b7b0
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 4d7d45b91e866b9df927620f2e214ced248b3361
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86960740"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947484"
 ---
 # <a name="controlling-access-to-organizational-data-with-active-directory-federation-services"></a>使用 Active Directory 同盟服務控制組織資料的存取
 
-本檔概述跨內部部署、混合式和雲端案例的 AD FS 的存取控制。  
+本檔概述跨內部部署、混合式和雲端案例的 AD FS 的存取控制。
 
-## <a name="ad-fs-and-conditional-access-to-on-premises-resources"></a>內部部署資源的 AD FS 和條件式存取 
+## <a name="ad-fs-and-conditional-access-to-on-premises-resources"></a>內部部署資源的 AD FS 和條件式存取
 自 Active Directory 同盟服務引進之後，授權原則就可以根據要求和資源的屬性，限制或允許使用者存取資源。  隨著 AD FS 從版本移至版本，這些原則的執行方式也已改變。  如需依版本存取控制功能的詳細資訊，請參閱：
 - [Windows Server 2016 中 AD FS 的存取控制原則](Access-Control-Policies-in-AD-FS.md)
 - [Windows Server 2012 R2 AD FS 中的存取控制](Manage-Risk-with-Conditional-Access-Control.md)
 
 
-## <a name="ad-fs-and-conditional-access-in-a-hybrid-organization"></a>混合式組織中的 AD FS 和條件式存取  
+## <a name="ad-fs-and-conditional-access-in-a-hybrid-organization"></a>混合式組織中的 AD FS 和條件式存取
 
 AD FS 在混合式案例中提供條件式存取原則的內部部署元件。 以 AD FS 為基礎的授權規則應用於非 Azure AD 資源，例如直接同盟至 AD FS 的內部部署應用程式。  雲端元件是由 Azure AD 的[條件式存取](/azure/active-directory/active-directory-conditional-access)所提供。  Azure AD Connect 提供連接這兩者的控制平面。
 
-例如，當您使用 Azure AD 對雲端資源的條件式存取註冊裝置時，Azure AD Connect 裝置回寫功能會讓裝置註冊資訊可供內部部署使用，以供 AD FS 原則使用並強制執行。  如此一來，您就可以使用一致的方法來存取內部部署和雲端資源的控制原則。  
+例如，當您使用 Azure AD 對雲端資源的條件式存取註冊裝置時，Azure AD Connect 裝置回寫功能會讓裝置註冊資訊可供內部部署使用，以供 AD FS 原則使用並強制執行。  如此一來，您就可以使用一致的方法來存取內部部署和雲端資源的控制原則。
 
-![條件式存取](../deployment/media/Plan-Device-based-Conditional-Access-on-Premises/ADFS_ITPRO4.png)  
+![條件式存取](../deployment/media/Plan-Device-based-Conditional-Access-on-Premises/ADFS_ITPRO4.png)
 
 
 ### <a name="the-evolution-of-client-access-policies-for-office-365"></a>適用于 Office 365 的用戶端存取原則演進
-許多人都使用用戶端存取原則搭配 AD FS，以根據因素（例如用戶端位置和所使用的用戶端應用程式類型）來限制存取 Office 365 和其他 Microsoft 線上服務。  
+許多人都使用用戶端存取原則搭配 AD FS，以根據因素（例如用戶端位置和所使用的用戶端應用程式類型）來限制存取 Office 365 和其他 Microsoft 線上服務。
 - [Windows Server 2012 R2 中的用戶端存取原則 AD FS](Access-Control-Policies-W2K12.md)
 - [AD FS 2.0 中的用戶端存取原則](Access-Control-Policies-in-AD-FS-2.md)
 

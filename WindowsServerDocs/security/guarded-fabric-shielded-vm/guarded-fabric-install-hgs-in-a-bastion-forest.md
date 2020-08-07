@@ -1,22 +1,20 @@
 ---
 title: 在現有的防禦樹系中安裝 HGS
-ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 331fc5a4e825dc4e7faf6f0a65605d7aaebf8314
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: cb2fe57963ac2786586d75df2a783945e2fb7d11
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181694"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87963774"
 ---
 # <a name="install-hgs-in-an-existing-bastion-forest"></a>在現有的防禦樹系中安裝 HGS
 
->適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
+>適用于： Windows Server 2019、Windows Server (半年通道) 、Windows Server 2016
 
 
 ## <a name="join-the-hgs-server-to-the-existing-domain"></a>將 HGS 伺服器加入現有的網域
@@ -43,7 +41,7 @@ ms.locfileid: "87181694"
 
 ## <a name="group-managed-service-account"></a>群組受控服務帳戶
 
-群組受管理的服務帳戶（gMSA）是 HGS 用來抓取和使用其憑證的身分識別。 使用[uninstall-adserviceaccount](https://technet.microsoft.com/itpro/powershell/windows/addsadministration/new-adserviceaccount)建立 gMSA。
+群組受管理的服務帳戶 (gMSA) 是 HGS 用來取出和使用其憑證的身分識別。 使用[uninstall-adserviceaccount](https://technet.microsoft.com/itpro/powershell/windows/addsadministration/new-adserviceaccount)建立 gMSA。
 如果這是網域中的第一個 gMSA，您將需要新增金鑰發佈服務根金鑰。
 
 每個 HGS 節點都必須允許存取 gMSA 密碼。
@@ -78,7 +76,7 @@ GMSA 將需要在每部 HGS 伺服器的安全性記錄檔中產生事件的許�
 
 ## <a name="jea-security-groups"></a>JEA 安全性群組
 
-當您設定 HGS 時，[只有足夠的管理（JEA）](https://aka.ms/JEAdocs) PowerShell 端點會設定為允許系統管理員管理 HGS，而不需要完整的本機系統管理員許可權。
+當您設定 HGS 時，[只有足夠的系統管理 (JEA) ](https://aka.ms/JEAdocs) PowerShell 端點設定為允許系統管理員管理 HGS，而不需要完整的本機系統管理員許可權。
 您不需要使用 JEA 來管理 HGS，但它仍然必須在執行 Initialize-HgsServer 時設定。
 JEA 端點的設定包含指定2個安全性群組，其中包含您的 HGS 管理員和 HGS 審核者。
 屬於系統管理員群組的使用者可以在 HGS 上新增、變更或移除原則;審核者只能查看目前的設定。
@@ -95,7 +93,7 @@ New-ADGroup -Name 'HgsJeaAdmins' -GroupScope DomainLocal
 如果您用來設定 HGS 的帳戶沒有在網域中建立新電腦物件的許可權，您將需要預先預備叢集物件。
 這些步驟會在 Active Directory Domain Services 的預先設置叢集[電腦物件](https://technet.microsoft.com/library/dn466519(v=ws.11).aspx)中說明。
 
-若要設定您的第一個 HGS 節點，您將需要建立一個叢集名稱物件（CNO）和一個虛擬電腦物件（VCO）。
+若要設定您的第一個 HGS 節點，您必須建立一個 (CNO) 的叢集名稱物件，以及一個 (VCO) 的虛擬電腦物件。
 CNO 代表叢集的名稱，主要是由容錯移轉叢集在內部使用。
 VCO 代表位於叢集頂端的 HGS 服務，而且將會是向 DNS 伺服器註冊的名稱。
 
@@ -150,5 +148,5 @@ Set-Acl -Path $vcoPath -AclObject $acl
 
 - 如需設定 TPM 型證明的後續步驟，請參閱[在現有防禦樹系中使用 TPM 模式初始化 HGS](guarded-fabric-initialize-hgs-tpm-mode-bastion.md)叢集。
 - 如需設定主機金鑰證明的下一個步驟，請參閱[使用現有防禦樹系中的金鑰模式初始化 HGS](guarded-fabric-initialize-hgs-key-mode-bastion.md)叢集。
-- 如需設定以系統管理員為基礎之證明（已在 Windows Server 2019 中淘汰）的後續步驟，請參閱[在現有防禦樹系中使用 AD 模式初始化 HGS](guarded-fabric-initialize-hgs-ad-mode-bastion.md)叢集。
+- 如需設定以系統管理員為基礎的證明 (在 Windows Server 2019) 中被取代的後續步驟，請參閱[在現有防禦樹系中使用 AD 模式初始化 HGS](guarded-fabric-initialize-hgs-ad-mode-bastion.md)叢集。
 
