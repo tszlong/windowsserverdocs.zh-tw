@@ -1,20 +1,18 @@
 ---
 title: wscript
 description: Wscript.echo 的參考文章，其提供的環境可讓使用者以各種不同的語言執行腳本，以使用各種不同的物件模型來執行工作。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2fbaf193-cdbd-414c-84c9-bb5720f84c29
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/21/2018
-ms.openlocfilehash: a07ad9b33000b17f5c6f41835a1a36531b3945af
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 4d3ab5d04423a093b280b8468c7e85aad3519dcb
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958880"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896447"
 ---
 # <a name="wscript"></a>wscript
 
@@ -43,9 +41,9 @@ wscript [<scriptname>] [/b] [/d] [/e:<engine>] [{/h:cscript|/h:wscript}] [/i] [/
 |/logo|指定在執行腳本之前，主控台中顯示 Windows 腳本主機橫幅。</br>這是預設值，與 **/nologo**相反。|
 |/nologo|指定在腳本執行之前，不顯示 Windows Script 主機橫幅。 這與 **/logo**相反。|
 |/s|儲存目前使用者的目前命令提示字元選項。|
-|/t:\<number>|指定腳本可執行檔時間上限（以秒為單位）。 您最多可以指定32767秒。</br>預設值為 [無時間限制]。|
+|/t:\<number>|指定腳本可執行檔時間上限 (以秒為單位) 。 您最多可以指定32767秒。</br>預設值為 [無時間限制]。|
 |/x|啟動偵錯工具中的腳本。|
-|ScriptArguments|指定傳遞至腳本的引數。 每個腳本引數前面必須加上斜線（/）。|
+|ScriptArguments|指定傳遞至腳本的引數。 每個腳本引數前面必須加上斜線 (/) 。|
 |/?|在命令提示字元顯示 [說明]。|
 
 ## <a name="remarks"></a>備註
@@ -59,6 +57,6 @@ wscript [<scriptname>] [/b] [/d] [/e:<engine>] [{/h:cscript|/h:wscript}] [/i] [/
 -   您可以設定個別腳本的屬性。 如需詳細資訊，請參閱[Windows Script Host 總覽](/previous-versions/windows/it-pro/windows-server-2003/cc738350(v=ws.10))。
 -   Windows Script Host 可以使用**manage-bde.wsf**腳本檔案。 每個**manage-bde.wsf**檔案都可以使用多個腳本引擎並執行多個作業。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

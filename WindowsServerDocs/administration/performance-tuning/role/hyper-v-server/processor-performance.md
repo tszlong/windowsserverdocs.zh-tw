@@ -1,18 +1,16 @@
 ---
 title: Hyper-v 處理器效能
 description: Hyper-v 效能調整中的處理器效能考慮
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: d165413dfbf89b2debd77806110ca80e9b6af7c8
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ab68975c84e1b299914e09045eddbc302ca9697f
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471293"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896072"
 ---
 # <a name="hyper-v-processor-performance"></a>Hyper-v 處理器效能
 
@@ -33,7 +31,7 @@ Windows Server 2016 中的 hyper-v 支援每個虛擬機器最多240個虛擬處
 
 -   安裝最新版本的虛擬機器 Integration Services。
 
--   透過 [虛擬機器設定] 對話方塊來移除模擬的網路介面卡（使用 Microsoft Hyper-v 專用介面卡）。
+-   透過 [虛擬機器設定] 對話方塊移除模擬的網路介面卡 (使用 Microsoft Hyper-v 專用介面卡) 。
 
 -   移除未使用的裝置（例如，CD-ROM 和 COM 埠），或中斷其媒體連線。
 
@@ -43,7 +41,7 @@ Windows Server 2016 中的 hyper-v 支援每個虛擬機器最多240個虛擬處
 
 -   執行**logman.exe 查詢-ets** ，以檢查預設開啟的 ETW 追蹤提供者
 
--   改善伺服器應用程式，以減少定期活動（例如計時器）。
+-   改善伺服器應用程式，以減少週期性的活動 (例如計時器) 。
 
 -   關閉主機和客體作業系統上的伺服器管理員。
 
@@ -69,7 +67,7 @@ Microsoft SQL Server 是 NUMA 感知應用程式的範例。 如需詳細資訊�
 
 如需虛擬 NUMA 的詳細資訊，請參閱[Hyper-v 虛擬 Numa 總覽](https://technet.microsoft.com/library/dn282282.aspx)。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [Hyper-V 術語](terminology.md)
 

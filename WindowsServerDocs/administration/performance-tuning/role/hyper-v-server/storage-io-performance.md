@@ -1,18 +1,16 @@
 ---
 title: Hyper-v 存放裝置 i/o 效能
 description: Hyper-v 效能調整中的儲存體 i/o 效能考慮
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: c77f084e06e71c9aafd658b59ff385af85ef0b9d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 6322d7f32c78109623a06a7674c08f76a2d5d542
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471313"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896084"
 ---
 # <a name="hyper-v-storage-io-performance"></a>Hyper-v 存放裝置 i/o 效能
 
@@ -20,25 +18,25 @@ ms.locfileid: "85471313"
 
 ## <a name="virtual-controllers"></a>虛擬控制器
 
-Hyper-v 提供三種類型的虛擬控制器： IDE、SCSI 和虛擬主機匯流排介面卡（Hba）。
+Hyper-v 提供三種類型的虛擬控制器： IDE、SCSI 和虛擬主機匯流排介面卡 (Hba) 。
 
 ## <a name="ide"></a>IDE
 
 IDE 控制器會將 IDE 磁片公開給虛擬機器。 IDE 控制器已模擬，而且只有在沒有虛擬機器 Integration Services 的情況下，才可供執行舊版 Windows 的來賓 Vm 使用的控制器。 使用虛擬機器 Integration Services 所提供的 IDE 篩選驅動程式執行的磁片 i/o，明顯優於模擬 IDE 控制器所提供的磁片 i/o 效能。 我們建議您只將 IDE 磁片用於作業系統磁片，因為它們有效能限制，因為可以發行到這些裝置的 i/o 大小上限。
 
-## <a name="scsi-sas-controller"></a>SCSI （SAS 控制器）
+## <a name="scsi-sas-controller"></a>SCSI (SAS 控制器) 
 
 SCSI 控制器會向虛擬機器公開 SCSI 磁片，而每個虛擬 SCSI 控制器最多可支援64部裝置。 為了達到最佳效能，我們建議您將多個磁片連接至單一虛擬 SCSI 控制器，並建立額外的控制器，而只需要調整連線到虛擬機器的磁片數目。 SCSI 路徑不會模擬，使其成為作業系統磁片以外任何磁片的慣用控制器。 事實上，在第2代 Vm 中，這是唯一可行的控制器類型。 在 Windows Server 2012 R2 中引進，此控制器會回報為 SAS 以支援共用 VHDX。
 
 ## <a name="virtual-fibre-channel-hbas"></a>虛擬光纖通道 Hba
 
-虛擬光纖通道 Hba 可設定為允許虛擬機器直接存取，以透過乙太網路（FCoE） Lun 光纖通道和光纖通道。 虛擬光纖通道磁片會略過根磁碟分割中的 NTFS 檔案系統，以減少儲存體 i/o 的 CPU 使用量。
+虛擬光纖通道 Hba 可設定為允許虛擬機器直接存取，以透過 Ethernet (FCoE) Lun 來光纖通道和光纖通道。 虛擬光纖通道磁片會略過根磁碟分割中的 NTFS 檔案系統，以減少儲存體 i/o 的 CPU 使用量。
 
-在多部虛擬機器之間共用的大型資料磁片磁碟機和磁片磁碟機（適用于來賓叢集案例）是虛擬光纖通道磁片的主要候選項目。
+在多部虛擬機器之間共用的大型資料磁片磁碟機和磁片磁碟機 (針對來賓叢集案例，) 是虛擬光纖通道磁片的主要候選項目。
 
-虛擬光纖通道磁片需要在主機上安裝一或多個光纖通道主機匯流排介面卡（Hba）。 每個主機 HBA 都必須使用支援 Windows Server 2016 虛擬光纖通道/NPIV 功能的 HBA 驅動程式。 SAN 網狀架構應支援 NPIV，而且應該在支援 NPIV 的光纖通道拓撲中，設定用於虛擬光纖通道的 HBA 埠。
+虛擬光纖通道磁片需要一或多個光纖通道主機匯流排介面卡， (Hba) 安裝在主機上。 每個主機 HBA 都必須使用支援 Windows Server 2016 虛擬光纖通道/NPIV 功能的 HBA 驅動程式。 SAN 網狀架構應支援 NPIV，而且應該在支援 NPIV 的光纖通道拓撲中設定用於虛擬光纖通道的 HBA 埠 (s) 。
 
-若要在隨一個以上的 HBA 安裝的主機上最大化輸送量，建議您在 Hyper-v 虛擬機器內設定多個虛擬 Hba （每個虛擬機器最多可以設定四個 Hba）。 Hyper-v 會自動進行平衡虛擬 Hba 的工作，以裝載存取相同虛擬 SAN 的 Hba。
+若要在安裝了多個 HBA 的主機上最大化輸送量，我們建議您在 Hyper-v 虛擬機器內設定多個虛擬 Hba (最多可為每個虛擬機器) 設定四個 Hba。 Hyper-v 會自動進行平衡虛擬 Hba 的工作，以裝載存取相同虛擬 SAN 的 Hba。
 
 ## <a name="virtual-disks"></a>虛擬磁片
 
@@ -52,7 +50,7 @@ SCSI 控制器會向虛擬機器公開 SCSI 磁片，而每個虛擬 SCSI 控制
 
 VHD 格式是 Hyper-v 在過去版本中唯一支援的虛擬硬碟格式。 在 Windows Server 2012 中引進的 VHD 格式已經過修改，以提供更好的對齊方式，讓新的大型磁區磁片上的效能大幅提升。
 
-在 Windows Server 2012 或更新版本上建立的任何新 VHD 都具有最佳的 4 KB 對齊。 這個對齊的格式與舊版的 Windows Server 作業系統完全相容。 不過，如果剖析器的新配置不是 4 KB 對齊感知（例如來自舊版 Windows Server 的 VHD 剖析器或非 Microsoft 剖析器），則對齊屬性將會中斷。
+在 Windows Server 2012 或更新版本上建立的任何新 VHD 都具有最佳的 4 KB 對齊。 這個對齊的格式與舊版的 Windows Server 作業系統完全相容。 不過，如果剖析器的新配置不是 4 KB 對齊感知 (（例如舊版 Windows Server 的 VHD 剖析器或非 Microsoft 剖析器) ），則對齊屬性將會中斷。
 
 從舊版本移動的任何 VHD 不會自動轉換成這個新的改良 VHD 格式。
 
@@ -128,7 +126,7 @@ VHDX 格式也提供下列效能優點：
 
 -   4 KB 的邏輯磁區虛擬磁片，可在專為 4 KB 磁區設計的應用程式和工作負載使用時，提供更高的效能。
 
--   效率表示資料，這會產生較小的檔案大小，並允許基礎實體存放裝置回收未使用的空間。 （Trim 需要傳遞或 SCSI 磁片，以及與 Trim 相容的硬體）。
+-   效率表示資料，這會產生較小的檔案大小，並允許基礎實體存放裝置回收未使用的空間。  (Trim 需要傳遞或 SCSI 磁片，以及與 Trim 相容的硬體。 ) 
 
 當您升級至 Windows Server 2016 時，建議您將所有 VHD 檔案轉換成 VHDX 格式，因為這些優點。 只有當虛擬機器可能會移至不支援 VHDX 格式的舊版 Hyper-v 時，才會有意義，讓檔案保持 VHD 格式是合理的情況。
 
@@ -164,9 +162,9 @@ VHD 會指向父 VHD 檔案。 對區塊的任何寫入都不會寫入，因而�
 
 ## <a name="sector-size-implications"></a>磁區大小的影響
 
-大部分的軟體產業都依存于512個位元組的磁片磁區，但標準會移到 4 KB 的磁片磁區。 為了減少磁區大小變更時可能發生的相容性問題，硬碟廠商引進了一種轉換大小，稱為512模擬磁片磁碟機（512e）。
+大部分的軟體產業都依存于512個位元組的磁片磁區，但標準會移到 4 KB 的磁片磁區。 為了減少磁區大小變更時可能發生的相容性問題，硬碟廠商引進了一種轉換大小，稱為512模擬磁片磁碟機 (512e) 。
 
-這些模擬磁片磁碟機提供 4 KB 磁片磁區原生磁片磁碟機所提供的一些優點，例如改良的格式效率，以及改善錯誤修正碼（ECC）的配置。 在磁片介面上公開 4 KB 磁區大小，就會產生較少的相容性問題。
+這些模擬磁片磁碟機提供 4 KB 磁片磁區原生磁片磁碟機所提供的一些優點，例如改良的格式效率，以及改進的錯誤修正程式碼配置， (ECC) 。 在磁片介面上公開 4 KB 磁區大小，就會產生較少的相容性問題。
 
 ## <a name="support-for-512e-disks"></a>支援512e 磁片
 
@@ -178,11 +176,11 @@ VHD 會指向父 VHD 檔案。 對區塊的任何寫入都不會寫入，因而�
 
 -   磁碟會執行將已更新的 4 KB 緩衝區寫回到其磁碟上的實體磁區。
 
-此程式稱為讀取-修改-寫入（RMW）。 RMW 程式的整體效能影響取決於工作負載。 RMW 程式會導致虛擬硬碟的效能降低，原因如下：
+此程式稱為讀取-修改-寫入 (RMW) 。 RMW 程式的整體效能影響取決於工作負載。 RMW 程式會導致虛擬硬碟的效能降低，原因如下：
 
 -   動態和差異虛擬硬碟在其資料裝載前方具有512個位元組的磁區點陣圖。 此外，頁尾、標頭和父系定位器會對齊512位元組的磁區。 虛擬硬碟驅動程式通常會發出512位元組的寫入命令來更新這些結構，因而導致先前所述的 RMW 程式。
 
--   應用程式通常會以 4 KB 大小的倍數（NTFS 的預設叢集大小）來發出讀取和寫入。 由於動態和差異虛擬硬碟的資料承載區塊前面有512個位元組的磁區點陣圖，因此 4 KB 區塊不會對齊實體 4 KB 界限。 下圖顯示未與實體 4 KB 界限對齊的 VHD 4 KB 區塊（反白顯示）。
+-   應用程式通常會以 4 KB 大小的倍數來發出讀取和寫入 (NTFS) 的預設叢集大小。 由於動態和差異虛擬硬碟的資料承載區塊前面有512個位元組的磁區點陣圖，因此 4 KB 區塊不會對齊實體 4 KB 界限。 下圖顯示未對齊實體 4 KB 界限的 VHD 4 KB 區塊 (反白顯示的) 。
 
 ![vhd 4 kb 區塊](../../media/perftune-guide-vhd-4kb-block.png)
 
@@ -204,7 +202,7 @@ Windows Server 2012 R2 和以上的 hyper-v 支援 4 KB 的原生磁片。 但�
 
 ## <a name="pass-through-disks"></a>傳遞磁片
 
-虛擬機器中的 VHD 可以直接對應到實體磁片或邏輯單元編號（LUN），而不是 VHD 檔案。 其優點是，此設定會略過根磁碟分割中的 NTFS 檔案系統，以減少儲存體 i/o 的 CPU 使用量。 其風險是，實體磁片或 Lun 在機器之間移動時，可能會比 VHD 檔案更容易。
+虛擬機器中的 VHD 可以直接對應到實體磁片或邏輯單元編號， (LUN) ，而不是 VHD 檔案。 其優點是，此設定會略過根磁碟分割中的 NTFS 檔案系統，以減少儲存體 i/o 的 CPU 使用量。 其風險是，實體磁片或 Lun 在機器之間移動時，可能會比 VHD 檔案更容易。
 
 由於虛擬機器遷移案例所引進的限制，應避免傳遞磁片。
 
@@ -212,7 +210,7 @@ Windows Server 2012 R2 和以上的 hyper-v 支援 4 KB 的原生磁片。 但�
 
 ### <a name="storage-quality-of-service-qos"></a>存放裝置服務品質 (QoS)
 
-從 Windows Server 2012 R2 開始，Hyper-v 包含在虛擬機器上為存放裝置設定特定服務品質（QoS）參數的能力。 存放裝置 QoS 在多組織用戶環境提供存放效能隔離，還提供在存放裝置的 I/O 效能沒有達到設定的閾值而無法有效執行虛擬機器工作負載時通知您的機制。
+從 Windows Server 2012 R2 開始，Hyper-v 包括能夠為虛擬機器上的存放裝置設定特定服務品質 (QoS) 參數。 存放裝置 QoS 在多組織用戶環境提供存放效能隔離，還提供在存放裝置的 I/O 效能沒有達到設定的閾值而無法有效執行虛擬機器工作負載時通知您的機制。
 
 存放裝置 QoS 能夠指定虛擬硬碟每秒輸入/輸出作業 (IOPS) 的最大值。 系統管理員可調節存放裝置 I/O，阻止一個用戶耗用過多存放裝置資源而影響另一位用戶。
 
@@ -236,7 +234,7 @@ Windows Server 2012 R2 和以上的 hyper-v 支援 4 KB 的原生磁片。 但�
 
 ### <a name="numa-io"></a>NUMA I/O
 
-Windows Server 2012 （含）以上的支援大型虛擬機器，而且任何大型虛擬機器設定（例如，Microsoft SQL Server 以64虛擬處理器執行的設定）也需要以 i/o 輸送量為依據的擴充性。
+Windows Server 2012 （含）以上的支援大型虛擬機器，而任何大型虛擬機器設定 (例如，Microsoft SQL Server 以64虛擬) 處理器執行的設定，則也需要以 i/o 輸送量為依據的擴充性。
 
 Windows Server 2012 儲存堆疊和 Hyper-v 中首次引進的下列主要改良功能，提供大型虛擬機器的 i/o 擴充性需求：
 
@@ -246,9 +244,9 @@ Windows Server 2012 儲存堆疊和 Hyper-v 中首次引進的下列主要改良
 
 Windows Server 2012 中引進了一些登錄專案，位於 HKLM \\ System \\ CurrentControlSet \\ Enum \\ VMBUS \\ {device id} \\ {instance id} \\ StorChannel，可讓您調整通道數目。 它們也會將處理 i/o 完成的虛擬處理器，與應用程式指派給 i/o 處理器的虛擬 Cpu 對齊。 登錄設定會根據裝置的硬體機碼，以每個介面卡為基礎進行設定。
 
--   **ChannelCount （DWORD）** 要使用的通道總數，最大值為16。 其預設值為上限，這是虛擬處理器/16 的數目。
+-   **ChannelCount (DWORD) **要使用的通道總數，最大值為16。 其預設值為上限，這是虛擬處理器/16 的數目。
 
--   **ChannelMask （QWORD）** 通道的處理器親和性。 如果未設定或設定為0，則會預設為您用於一般儲存體或網路通道的現有通道散發演算法。 這可確保您的儲存通道不會與您的網路通道衝突。
+-   **ChannelMask (QWORD) **通道的處理器親和性。 如果未設定或設定為0，則會預設為您用於一般儲存體或網路通道的現有通道散發演算法。 這可確保您的儲存通道不會與您的網路通道衝突。
 
 ### <a name="offloaded-data-transfer-integration"></a>卸載的資料傳輸整合
 
@@ -256,7 +254,7 @@ Vhd 的重要維護工作，例如 merge、move 和 compact，會相依于複製
 
 存放區域網路 (SAN) 廠商正努力提供接近即時的大量資料複製作業。 此儲存體的設計可讓磁片上的系統指定將特定資料集從一個位置移到另一個位置。 此硬體功能稱為卸載的資料傳輸。
 
-Windows Server 2012 和以上的 hyper-v 支援卸載資料傳輸（ODX）作業，可讓您從客體作業系統將這些作業傳遞到主機硬體。 這可確保工作負載可以使用已啟用 ODX 的儲存體，就像在非虛擬化環境中執行一樣。 Hyper-v 存放裝置堆疊也會在 Vhd 的維護作業期間發出 ODX 作業，例如合併磁片，以及移動大量資料的儲存體遷移中繼作業。
+Windows Server 2012 和以上的 hyper-v 支援卸載資料傳輸 (ODX) 作業，以便這些作業可以從客體作業系統傳遞至主機硬體。 這可確保工作負載可以使用已啟用 ODX 的儲存體，就像在非虛擬化環境中執行一樣。 Hyper-v 存放裝置堆疊也會在 Vhd 的維護作業期間發出 ODX 作業，例如合併磁片，以及移動大量資料的儲存體遷移中繼作業。
 
 ### <a name="unmap-integration"></a>取消對應整合
 
@@ -270,7 +268,7 @@ Windows Server 2012 和以上的 hyper-v 支援卸載資料傳輸（ODX）作業
 
 基於這些理由，建議您在不使用虛擬光纖通道磁片的情況下，使用連接到 SCSI 控制器的 VHDX 檔案。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [Hyper-V 術語](terminology.md)
 

@@ -1,23 +1,21 @@
 ---
 title: 效能微調遠端桌面閘道
 description: 遠端桌面閘道的效能微調建議
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: hammadbu; vladmis
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 3794b47e7226a905944495dd7c31f3196a33d0d5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8aeaf524b3621c61cfdd6b0e4edd9d0f8f73ebae
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851731"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896044"
 ---
 # <a name="performance-tuning-remote-desktop-gateways"></a>效能微調遠端桌面閘道
 
 > [!NOTE]
-> 在 Windows 8 + 和 Windows Server 2012 R2 + 中，遠端桌面閘道（RD 閘道）支援 TCP、UDP 和舊版 RPC 傳輸。 下列大部分資料都與舊版 RPC 傳輸有關。 如果未使用舊版 RPC 傳輸，則不適用此區段。
+> 在 Windows 8 + 和 Windows Server 2012 R2 + 中，遠端桌面閘道 (RD 閘道) 支援 TCP、UDP 和舊版 RPC 傳輸。 下列大部分資料都與舊版 RPC 傳輸有關。 如果未使用舊版 RPC 傳輸，則不適用此區段。
 
 本主題說明與效能相關的參數，可協助改善客戶部署的效能，以及依賴客戶網路使用模式的 tunings。
 
@@ -26,7 +24,7 @@ ms.locfileid: "80851731"
 > [!NOTE]
 > 下列參數僅適用于 RPC 傳輸。
 
-Internet Information Services （IIS）和 RD 閘道匯出下列登錄參數，以協助改善 RD 閘道中的系統效能。
+Internet Information Services (IIS) 並 RD 閘道匯出下列登錄參數，以協助改善 RD 閘道中的系統效能。
 
 **執行緒 tunings**
 
@@ -48,7 +46,7 @@ Internet Information Services （IIS）和 RD 閘道匯出下列登錄參數，�
 
 **RD 閘道的遠端程序呼叫 tunings**
 
-下列參數可協助微調遠端桌面連線和 RD 閘道電腦所收到的遠端程序呼叫（RPC）。 變更 windows 有助於節流處理每個連接的資料量，並可改善 RPC over HTTP v2 案例的效能。
+下列參數可協助微調遠端程序呼叫， (由遠端桌面連線和 RD 閘道電腦接收的 RPC) 。 變更 windows 有助於節流處理每個連接的資料量，並可改善 RPC over HTTP v2 案例的效能。
 
 -   **ServerReceiveWindow**
 
@@ -74,38 +72,38 @@ Internet Information Services （IIS）和 RD 閘道匯出下列登錄參數，�
 
 -   \\RPC/HTTP Proxy\\\*
 
--   每一伺服器的 \\RPC/HTTP Proxy\\\*
+-   \\每一伺服器的 RPC/HTTP Proxy\\\*
 
 -   \\Web 服務\\\*
 
--   \\W3SVC\_W3WP.EXE\\\*
+-   \\W3SVC \_ w3wp.exe\\\*
 
 -   \\IPv4\\\*
 
--   \\記憶體\\\*
+-   \\快閃記憶體\\\*
 
--   \\網路介面（\*）\\\*
+-   \\網路介面 (\*) \\\*
 
--   \\進程（\*）\\\*
+-   \\進程 (\*) \\\*
 
--   \\處理器資訊（\*）\\\*
+-   \\處理器資訊 (\*) \\\*
 
--   \\同步處理（\*）\\\*
+-   \\同步處理 (\*) \\\*
 
--   \\系統\\\*
+-   \\筆記本電腦\\\*
 
 -   \\Tcpv4 已\\\*
 
 下列效能計數器僅適用于舊版 RPC 傳輸：
 
--   \\RPC/HTTP Proxy\\\* RPC
+-   \\RPC/HTTP Proxy \\ \* rpc
 
--   每一伺服器 \\RPC/HTTP Proxy\\\* RPC
+-   \\每個伺服器 rpc 的 RPC/HTTP Proxy \\ \*
 
--   \\Web 服務\\\* RPC
+-   \\Web 服務 \\ \* RPC
 
--   \\W3SVC\_W3WP.EXE\\\* RPC
+-   \\W3SVC \_ W3wp.exe \\ \* RPC
 
 > [!NOTE]
-> 如果適用的話，請將 \\IPv6\\\*，並 \\TCPv6\\\* 物件。ReplaceThisText
+> 如果適用的話，請新增 \\ IPv6 \\ \* 和 \\ TCPv6 \\ \* 物件。ReplaceThisText
 

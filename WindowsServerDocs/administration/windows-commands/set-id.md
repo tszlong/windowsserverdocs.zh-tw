@@ -1,24 +1,22 @@
 ---
 title: 設定識別碼
 description: Diskpart 集合識別碼的參考文章，它會變更具有焦點之資料分割的資料分割類型欄位。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5793d7ad-827e-4285-b2c6-ae60eeb0e886
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ad0a4c6ac29e4226bbbe6ea2bde140ae21b68374
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: afcaa134cd9af11d37130e17012a7cf8a147afd4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937106"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882623"
 ---
 # <a name="set-id"></a>設定識別碼
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Diskpart Set ID 命令會變更具有焦點之分割區的資料分割類型欄位。
 
@@ -35,7 +33,7 @@ set id={ <byte> | <GUID> } [override] [noerr]
 
 ### <a name="parameters"></a>參數
 
-| 參數 |                                                                                                                                                                                                                                                                                                                                                                   說明                                                                                                                                                                                                                                                                                                                                                                   |
+| 參數 |                                                                                                                                                                                                                                                                                                                                                                   描述                                                                                                                                                                                                                                                                                                                                                                   |
 |-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |  <byte>   |                                                                                                                                                                                                       針對主開機記錄 \( MBR \) 磁片，為數據分割指定 [類型] 欄位的新值（十六進位格式）。 除了指定 LDM 分割區的類型0x42 以外，您可以使用這個參數來指定任何資料分割類型 byte。 請注意，指定十六進位資料分割類型時，會省略前置的0x。                                                                                                                                                                                                       |
 |  <GUID>   | 針對 GUID 磁碟分割表格 \( gpt \) 磁片，為數據分割的 [類型] 欄位指定新的 GUID 值。 可識別的 Guid 包括：<p>-EFI 系統磁碟分割： c12a7328 \- f81f \- 11d2 \- ba4b \- 00a0c93ec93b<br />-基本資料分割： ebd0a0a2 \- b9e5 \- 4433 \- 87c0 \- 68b6b72699c7<p>任何資料分割類型 GUID 都可以使用此參數來指定，但下列除外：<p>-Microsoft 保留的磁碟分割： e3c9e316 \- 0b5c \- 4db8 \- 817d \- f92df00215ae<br />-動態磁碟上的 LDM 中繼資料分割： 5808c8aa \- 7e8f \- 42e0 \- 85d2 \- e1e90434cfb3<br />-動態磁碟上的 LDM 資料磁碟分割： af9b60a0 \- 1431 \- 4f62 \- bc68 \- 3311714a69ad<br />-叢集中繼資料分割： db97dba9 \- 0840 \- 4bae \- 97f0 \- ffb9a327c7e1 |

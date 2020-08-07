@@ -1,27 +1,26 @@
 ---
 title: 不在伺服器核心容器中的角色、角色服務和功能-Windows Server，版本1803
 description: 瞭解我們從 Windows Server 的 Server Core 容器映射中移除的角色和功能。
-ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 05/07/2018
-ms.openlocfilehash: 41b5a9ac32066f1b2a41de84f66b9be79252c336
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f577ebd805e5373a10dd43a3d5054f92d4881c7d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383407"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895917"
 ---
 # <a name="roles-role-services-and-features-not-in-server-core-containers---windows-server-version-1803"></a>不在伺服器核心容器中的角色、角色服務和功能-Windows Server，版本1803
 
 > 適用於：Windows Server 版本 1803
 
-在 Windows Server 1803 版中，我們將[伺服器核心容器映射的整體大小縮減為**1.58 GB**](https://blogs.technet.microsoft.com/virtualization/2018/01/22/a-smaller-windows-server-core-container-with-better-application-compatibility/)。 我們完成這項作業的方式是，將架構優化，並移除您不需要的[Server Core 容器](https://docs.microsoft.com/virtualization/windowscontainers/about/)中的專案。 有些是在容器中無法運作的專案，有些則是沒有人使用的角色和功能。 
+在 Windows Server 1803 版中，我們將[伺服器核心容器映射的整體大小縮減為**1.58 GB**](https://blogs.technet.microsoft.com/virtualization/2018/01/22/a-smaller-windows-server-core-container-with-better-application-compatibility/)。 我們完成這項作業的方式是，將架構優化，並移除您不需要的[Server Core 容器](https://docs.microsoft.com/virtualization/windowscontainers/about/)中的專案。 有些是在容器中無法運作的專案，有些則是沒有人使用的角色和功能。
 
 > [!IMPORTANT]
-> 我們已從 Server Core**容器**映射中移除這些服務，而不是[server core 本身](server-core-roles-and-services.md)。 
+> 我們已從 Server Core**容器**映射中移除這些服務，而不是[server core 本身](server-core-roles-and-services.md)。
 
 以下是從 Server Core 容器映射中移除的功能和角色的完整清單：
 
@@ -110,7 +109,7 @@ ms.locfileid: "71383407"
 <br>ServerForNFS-基礎結構
 <br>ServerManager-核心-RSAT-功能工具
 <br>ServerMediaFoundation
-<br>Servermigration.log
+<br>ServerMigration
 <br>SessionDirectory
 <br>SetupAndBootEventCollection
 <br>ShieldedVMToolsAdminPack

@@ -1,20 +1,18 @@
 ---
 title: 管理-manage-bde on
 description: 適用于 manage-bde on 命令的參考文章，它會加密磁片磁碟機並開啟 BitLocker。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: f6a12814-df74-416c-a04a-62ea8512263e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b06c8a37524544201bf9f37a446a8d227f878ee4
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: cb1f58cb5f9683e4f9c01343d86af3332c8c3e32
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935453"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886794"
 ---
 # <a name="manage-bde-on"></a>管理-manage-bde on
 
@@ -31,7 +29,7 @@ manage-bde –on <drive> {[-recoverypassword <numericalpassword>]|[-recoverykey 
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<drive>` | 表示後面接著冒號的磁碟機號。 |
 | -msfve-recoverypassword | 新增數位密碼保護裝置。 您也可以使用 **-rp**做為此命令的縮寫版本。 |
@@ -41,7 +39,7 @@ manage-bde –on <drive> {[-recoverypassword <numericalpassword>]|[-recoverykey 
 | -startupkey | 新增用於啟動的外部金鑰保護裝置。 您也可以使用 **-sk**作為此命令的縮寫版本。 |
 | `<pathtoexternalkeydirectory>` | 表示啟動金鑰的目錄路徑。 |
 | -憑證 | 新增資料磁片磁碟機的公用金鑰保護裝置。 您也可以使用 **-cert**做為此命令的縮寫版本。 |
-| -tpmanDPIn | 新增適用于作業系統磁片磁碟機的信賴平臺模組（TPM）和個人識別碼（PIN）保護裝置。 您也可以使用 **-tp**做為此命令的縮寫版本。 |
+| -tpmanDPIn | 為作業系統磁片磁碟機新增 (TPM) 和個人識別碼 (PIN) 保護裝置的信賴平臺模組。 您也可以使用 **-tp**做為此命令的縮寫版本。 |
 | -tpmandstartupkey | 新增作業系統磁片磁碟機的 TPM 和啟動金鑰保護裝置。 您也可以使用 **-嘖**做為此命令的縮寫版本。 |
 | -tpmanDPInandstartupkey | 新增作業系統磁片磁碟機的 TPM、PIN 和啟動金鑰保護裝置。 您也可以使用 **-tpsk**做為此命令的縮寫版本。 |
 | -password | 新增資料磁片磁碟機的密碼金鑰保護裝置。 您也可以使用 **-pw**做為此命令的縮寫版本。 |
@@ -72,7 +70,7 @@ manage-bde –on C: -recoverypassword
 manage-bde –on C: -recoverykey E:\ -recoverypassword
 ```
 
-若要開啟 C 磁片磁碟機的 BitLocker，使用外部金鑰保護裝置（例如 USB 金鑰）解除鎖定作業系統磁片磁碟機，請輸入：
+若要開啟 C 磁片磁碟機的 BitLocker，使用外部金鑰保護裝置 (例如 USB 金鑰) 解除鎖定作業系統磁片磁碟機，請輸入：
 
 ```
 manage-bde -on C: -startupkey E:\

@@ -1,24 +1,22 @@
 ---
 title: select volume
 description: '* * * * 的參考文章'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5d70d776-80ad-4f20-8288-a7997fb1df28
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 847cf4865217dd4165f6973f1019dffa22ec85ec
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 394afbc4cb046968d9b1e1d88a272598dc23d3b9
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935939"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882793"
 ---
 # <a name="select-volume"></a>select volume
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 選取指定的磁片區，並將焦點移至其上。 此命令也可以用來顯示目前在所選磁片中具有焦點的磁片區。
 
@@ -32,7 +30,7 @@ select volume={<n>|<d>}
 
 ### <a name="parameters"></a>參數
 
-| 參數 |                                                                               說明                                                                                |
+| 參數 |                                                                               描述                                                                                |
 |-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    <n>    | 要接收焦點的磁片區編號。 您可以使用 DiskPart 中的 [**列出**磁片區] 命令，來查看目前選取之磁片上的所有磁片區編號。 |
 |    <d>    |                                                 要接收焦點之磁片區的磁碟機號或掛接點路徑。                                                 |

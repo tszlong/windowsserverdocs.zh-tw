@@ -1,20 +1,18 @@
 ---
 title: 在伺服器管理員中設定遠端系統管理
 description: 伺服器管理員
-ms.prod: windows-server
-ms.technology: manage-server-manager
 ms.topic: article
 ms.assetid: 509182ed-c37d-4b81-84bc-aee43d006873
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 01bc2d2d262882c08d1213bae6149896a8b284ab
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b0d2369bd42fc884b1a401fc1450dbe9d1e47663
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851561"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895804"
 ---
 # <a name="configure-remote-management-in-server-manager"></a>在伺服器管理員中設定遠端系統管理
 
@@ -26,39 +24,39 @@ ms.locfileid: "80851561"
 
 若要管理執行 windows server 版本早于 Windows server 2016 的伺服器，請安裝下列軟體和更新，使用 Windows Server 2016 中的伺服器管理員來管理較舊版本的 Windows Server。
 
-|作業系統|必要軟體|管理性|
+|作業系統|必要軟體|管理能力|
 |----------|-----------|---------|
-| Windows Server 2012 R2 或 Windows Server 2012 |-   [.NET Framework 4.6](https://www.microsoft.com/download/details.aspx?id=45497)<br />-   [Windows Management Framework 5.0](https://go.microsoft.com/fwlink/?LinkID=395058)。 Windows Management Framework 5.0 下載套件更新 Windows Server 2012 R2、Windows Server 2012 和 Windows Server 2008 R2 上的 Windows Management Instrumentation （WMI）提供者。 更新的 WMI 提供者可讓伺服器管理員收集受管理伺服器上所安裝角色和功能的相關資訊。 在套用更新之前，執行 Windows Server 2012 R2、Windows Server 2012 或 Windows Server 2008 R2 的伺服器都具有 [**無法存取**] 的管理性狀態。<br />-執行 Windows Server 2012 R2 或 Windows Server 2012 的伺服器不再需要與[知識庫文章 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487)相關聯的效能更新。||
-| Windows Server 2008 R2 |-   [.NET Framework 4.5](https://www.microsoft.com/download/details.aspx?id=30653)<br />-   [Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkId=293881)。 Windows Management Framework 4.0 下載套件更新 Windows Server 2008 R2 上的 Windows Management Instrumentation （WMI）提供者。 更新的 WMI 提供者可讓伺服器管理員收集受管理伺服器上所安裝角色和功能的相關資訊。 在套用更新之前，執行 Windows Server 2008 R2 的伺服器具有 [**無法存取**] 的管理性狀態。<br />-與[知識庫文章 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487)相關的效能更新可讓伺服器管理員從 Windows Server 2008 R2 收集效能資料。||
-| Windows Server 2008 |-   [.NET Framework 4](https://www.microsoft.com/download/en/details.aspx?id=17718)<br />-   [Windows Management framework 3.0](https://go.microsoft.com/fwlink/p/?LinkID=229019) windows Server 2008 上的 Windows management framework 3.0 下載套件更新 WINDOWS MANAGEMENT INSTRUMENTATION （WMI）提供者。 更新的 WMI 提供者可讓伺服器管理員收集受管理伺服器上所安裝角色和功能的相關資訊。 在套用更新之前，執行 Windows Server 2008 的伺服器的管理性狀態會是 [**無法存取-請確認舊版執行 Windows Management Framework 3.0**]。<br />-與[知識庫文章 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487)相關的效能更新可讓伺服器管理員收集 Windows Server 2008 的效能資料。||
+| Windows Server 2012 R2 或 Windows Server 2012 |-   [.NET Framework 4。6](https://www.microsoft.com/download/details.aspx?id=45497)<br />-   [Windows Management Framework 5.0](https://go.microsoft.com/fwlink/?LinkID=395058)。 Windows Management Framework 5.0 下載套件更新 Windows Management Instrumentation Windows Server 2012 R2、Windows Server 2012 和 Windows Server 2008 R2 上 (WMI) 提供者。 更新的 WMI 提供者可讓伺服器管理員收集受管理伺服器上所安裝角色和功能的相關資訊。 在套用更新之前，執行 Windows Server 2012 R2、Windows Server 2012 或 Windows Server 2008 R2 的伺服器都具有 [**無法存取**] 的管理性狀態。<br />-執行 Windows Server 2012 R2 或 Windows Server 2012 的伺服器不再需要與[知識庫文章 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487)相關聯的效能更新。||
+| Windows Server 2008 R2 |-   [.NET Framework 4。5](https://www.microsoft.com/download/details.aspx?id=30653)<br />-   [Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkId=293881)。 Windows Management Framework 4.0 下載套件更新 Windows Management Instrumentation Windows Server 2008 R2 上 (WMI) 提供者。 更新的 WMI 提供者可讓伺服器管理員收集受管理伺服器上所安裝角色和功能的相關資訊。 在套用更新之前，執行 Windows Server 2008 R2 的伺服器具有 [**無法存取**] 的管理性狀態。<br />-與[知識庫文章 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487)相關的效能更新可讓伺服器管理員從 Windows Server 2008 R2 收集效能資料。||
+| Windows Server 2008 |-   [.NET Framework 4](https://www.microsoft.com/download/en/details.aspx?id=17718)<br />-   [Windows Management Framework 3.0](https://go.microsoft.com/fwlink/p/?LinkID=229019)Windows Management Framework 3.0 下載套件更新 Windows Management Instrumentation Windows Server 2008 上 (WMI) 提供者。 更新的 WMI 提供者可讓伺服器管理員收集受管理伺服器上所安裝角色和功能的相關資訊。 在套用更新之前，執行 Windows Server 2008 的伺服器的管理性狀態會是 [**無法存取-請確認舊版執行 Windows Management Framework 3.0**]。<br />-與[知識庫文章 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487)相關的效能更新可讓伺服器管理員收集 Windows Server 2008 的效能資料。||
 
 如需如何新增要管理的工作組伺服器，或從執行伺服器管理員的工作組電腦管理遠端伺服器的詳細資訊，請參閱[將伺服器新增至伺服器管理員](add-servers-to-server-manager.md)。
 
 ## <a name="enabling-or-disabling-remote-management"></a>啟用或停用遠端管理
 在 Windows Server 2016 中，預設會啟用遠端系統管理。 在您可以使用伺服器管理員從遠端連線到執行 Windows Server 2016 的電腦之前，必須先在目的地電腦上啟用伺服器管理員遠端系統管理（如果已停用）。 本節中的程序說明如何停用遠端管理，以及如何重新啟用已停用的遠端管理。 在伺服器管理員主控台中，本機伺服器的遠端系統管理狀態會顯示在 [**本機伺服器**] 頁面的 [**屬性**] 區域中。
 
-即使已經啟用遠端管理，除了內建的 Administrator 帳戶以外的本機系統管理員帳戶可能沒有遠端管理伺服器的權限。 遠端使用者帳戶控制（UAC） **LocalAccountTokenFilterPolicy**登錄設定必須設定為允許系統管理員群組的本機帳戶，而非內建的 administrator 帳戶，才能遠端管理伺服器。
+即使已經啟用遠端管理，除了內建的 Administrator 帳戶以外的本機系統管理員帳戶可能沒有遠端管理伺服器的權限。  (UAC) **LocalAccountTokenFilterPolicy**登錄設定的遠端使用者帳戶控制，必須設定為允許系統管理員群組的本機帳戶，而非內建的 administrator 帳戶，才能遠端管理伺服器。
 
-在 Windows Server 2016 中，伺服器管理員依賴 Windows 遠端系統管理（WinRM）和分散式元件物件模型（DCOM）進行遠端通訊。 [**設定遠端系統管理**] 對話方塊所控制的設定，只會影響使用 WinRM 進行遠端通訊的伺服器管理員和 Windows PowerShell 的部分。 它們不會影響使用 DCOM 進行遠端通訊的伺服器管理員部分。 例如，伺服器管理員使用 WinRM 與執行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的遠端伺服器通訊，但使用 DCOM 來與執行 Windows Server 2008 和 Windows Server 2008 R2 的伺服器通訊，但未套用[Windows Management framework 4.0](https://go.microsoft.com/fwlink/?LinkId=293881)或[windows management framework 3.0](https://go.microsoft.com/fwlink/p/?LinkID=229019)更新。 Microsoft Management Console （mmc）和其他舊版管理工具會使用 DCOM。 如需如何變更這些設定的詳細資訊，請參閱本主題中的[設定透過 DCOM 的 mmc 或其他工具遠端系統管理](#to-configure-mmc-or-other-tool-remote-management-over-dcom)。
+在 Windows Server 2016 中，伺服器管理員依賴 Windows 遠端系統管理 (WinRM) 和分散式元件物件模型 (DCOM) 進行遠端通訊。 [**設定遠端系統管理**] 對話方塊所控制的設定，只會影響使用 WinRM 進行遠端通訊的伺服器管理員和 Windows PowerShell 的部分。 它們不會影響使用 DCOM 進行遠端通訊的伺服器管理員部分。 例如，伺服器管理員使用 WinRM 與執行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的遠端伺服器通訊，但使用 DCOM 來與執行 Windows Server 2008 和 Windows Server 2008 R2 的伺服器通訊，但未套用[Windows Management framework 4.0](https://go.microsoft.com/fwlink/?LinkId=293881)或[windows management framework 3.0](https://go.microsoft.com/fwlink/p/?LinkID=229019)更新。 Microsoft Management Console (mmc) 和其他舊版管理工具使用 DCOM。 如需如何變更這些設定的詳細資訊，請參閱本主題中的[設定透過 DCOM 的 mmc 或其他工具遠端系統管理](#to-configure-mmc-or-other-tool-remote-management-over-dcom)。
 
 > [!NOTE]
 > 本節中的程序僅能在執行 Windows Server 的電腦上完成。 您無法使用這些程式在執行 Windows 10 的電腦上啟用或停用遠端系統管理，因為無法使用伺服器管理員來管理用戶端作業系統。
 
 -   若要啟用 WinRM 遠端管理，請選取下列其中一項程序。
 
-    -   [若要使用 Windows 介面啟用伺服器管理員遠端系統管理](#to-enable-server-manager-remote-management-by-using-the-windows-interface)
+    -   [使用 Windows 介面啟用伺服器管理員遠端管理](#to-enable-server-manager-remote-management-by-using-the-windows-interface)
 
-    -   [使用 Windows PowerShell 啟用伺服器管理員遠端系統管理](#to-enable-server-manager-remote-management-by-using-windows-powershell)
+    -   [使用 Windows PowerShell 啟用伺服器管理員遠端管理](#to-enable-server-manager-remote-management-by-using-windows-powershell)
 
-    -   [若要使用命令列啟用伺服器管理員遠端系統管理](#to-enable-server-manager-remote-management-by-using-the-command-line)
+    -   [使用命令列啟用伺服器管理員遠端管理](#to-enable-server-manager-remote-management-by-using-the-command-line)
 
-    -   [在舊版的 Windows Server 上啟用伺服器管理員和 Windows PowerShell 遠端系統管理](#to-enable-server-manager-and-windows-powershell-remote-management-on-earlier-releases-of-windows-server)
+    -   [在舊版的 Windows Server 上啟用伺服器管理員與 Windows PowerShell 遠端管理](#to-enable-server-manager-and-windows-powershell-remote-management-on-earlier-releases-of-windows-server)
 
 -   若要停用 WinRM 和伺服器管理員遠端系統管理，請選取下列其中一個程式。
 
-    -   [若要使用群組原則停用遠端系統管理](#to-disable-remote-management-by-using-group-policy)
+    -   [使用群組原則停用遠端管理](#to-disable-remote-management-by-using-group-policy)
 
-    -   [若要在自動安裝期間使用回應檔案停用遠端系統管理](#to-disable-remote-management-by-using-an-answer-file-during-unattended-installation)
+    -   [在自動安裝期間使用回應檔案停用遠端管理](#to-disable-remote-management-by-using-an-answer-file-during-unattended-installation)
 
 -   若要設定 DCOM 遠端管理，請參閱[設定 DCOM 遠端管理](#to-configure-mmc-or-other-tool-remote-management-over-dcom)。
 
@@ -67,13 +65,13 @@ ms.locfileid: "80851561"
 1.  > [!NOTE]
     > [**設定遠端系統管理**] 對話方塊所控制的設定，不會影響使用 DCOM 進行遠端通訊的伺服器管理員部分。
 
-    在您要遠端系統管理的電腦上，開啟伺服器管理員（如果尚未開啟）。 在 Windows 工作列上按一下 [伺服器管理員]。 在 [**開始**] 畫面上，按一下 [**伺服器管理員**] 磚。
+    在您要遠端系統管理的電腦上，開啟伺服器管理員（如果尚未開啟）。 在 Windows 工作列上按一下 [伺服器管理員]****。 在 [**開始**] 畫面上，按一下 [**伺服器管理員**] 磚。
 
 2.  在 [**本機伺服器**] 頁面的 [**屬性**] 區域中，按一下 [**遠端系統管理**] 屬性的超連結值。
 
-3.  執行下列其中一項動作，然後按一下 [確定]。
+3.  執行下列其中一項動作，然後按一下 [確定] ****。
 
-    -   若要防止這部電腦使用伺服器管理員（如果已安裝，則為 Windows PowerShell）進行遠端系統管理，請清除 [**啟用從其他電腦遠端系統管理這部伺服器**] 核取方塊。
+    -   若要防止這部電腦使用伺服器管理員 (或 Windows PowerShell 進行遠端系統管理（如果) 安裝），請清除 [**啟用從其他電腦遠端系統管理這部伺服器**] 核取方塊。
 
     -   若要讓這部電腦使用伺服器管理員或 Windows PowerShell 從遠端系統管理，請選取 [**啟用從其他電腦遠端系統管理這部伺服器**]。
 
@@ -81,13 +79,13 @@ ms.locfileid: "80851561"
 
 1.  在您要遠端系統管理的電腦上，執行下列其中一項動作，以提升的使用者權限開啟 Windows PowerShell 會話。
 
-    -   在 Windows 桌面上，用滑鼠右鍵按一下工作列上的 [Windows PowerShell]，然後按一下 [以系統管理員身分執行]。
+    -   在 Windows 桌面上，用滑鼠右鍵按一下工作列上的 [Windows PowerShell]****，然後按一下 [以系統管理員身分執行]****。
 
     -   在 Windows [**開始**] 畫面上，以滑鼠右鍵按一下 [ **windows PowerShell**]，然後在應用程式行上，按一下 [以**系統管理員身分執行**]。
 
 2.  輸入下列文字，然後按**enter**鍵以啟用所有必要的防火牆規則例外。
 
-    **Configure-smremoting.exe-enable**
+    **Configure-SMremoting.exe-啟用**
 
 ### <a name="to-enable-server-manager-remote-management-by-using-the-command-line"></a>使用命令列啟用伺服器管理員遠端管理
 
@@ -95,19 +93,19 @@ ms.locfileid: "80851561"
 
 2.  執行下列可執行檔。
 
-    **%windir%\system32\Configure-SMremoting.exe**
+    **% windir% \system32\Configure-SMremoting.exe**
 
-3.  執行下列任一步驟：
+3.  請執行下列其中一項：
 
-    -   若要停用遠端系統管理，請輸入**configure-smremoting.exe-disable**，然後按**enter**。
+    -   若要停用遠端系統管理，請輸入**Configure-SMremoting.exe-disable**，然後按**enter**。
 
-    -   若要啟用遠端系統管理，請輸入**configure-smremoting.exe-enable**，然後按**enter**。
+    -   若要啟用遠端系統管理，請輸入**Configure-SMremoting.exe-enable**，然後按**enter**。
 
-    -   若要查看目前的遠端系統管理設定，請輸入**configure-smremoting.exe-get**，然後按 enter。
+    -   若要查看目前的遠端系統管理設定，請輸入**Configure-SMremoting.exe-get**，然後按 enter。
 
 ### <a name="to-enable-server-manager-and-windows-powershell-remote-management-on-earlier-releases-of-windows-server"></a>在舊版的 Windows Server 上啟用伺服器管理員與 Windows PowerShell 遠端管理
 
--   執行下列任一步驟：
+-   請執行下列其中一項：
 
     -   若要在執行 Windows Server 2012 的伺服器上啟用遠端系統管理，請參閱本主題中[的使用 Windows 介面啟用伺服器管理員遠端系統管理](#to-enable-server-manager-remote-management-by-using-the-windows-interface)。
 
@@ -119,23 +117,23 @@ ms.locfileid: "80851561"
 
 1.  執行下列其中一項以開啟 [具有進階安全性的 Windows 防火牆] 嵌入式管理單元。
 
-    -   在 **伺服器管理員的**  **本機伺服器** 頁面的 內容 區域中，按一下  **Windows 防火牆** 內容的超文字值，然後按一下  **Advanced settings** （設定）。
+    -   在 [**伺服器管理員的 [** **本機伺服器**] 頁面的 [內容] 區域中，按一下 [ **Windows 防火牆**] 內容的超文字值，然後按一下 [ **Advanced settings**] （設定）。
 
     -   在 [**開始**] 畫面上，輸入**WF**，然後在 [**應用程式**] 結果中顯示 [嵌入式管理單元] 磚時，按一下它。
 
-2.  在樹狀目錄窗格中選取 [輸入規則]。
+2.  在樹狀目錄窗格中選取 [輸入規則] ****。
 
 3.  確認已啟用下列防火牆規則的例外狀況，而且未被群組原則設定停用。 如果有任一個規則未啟用，請繼續下一個步驟。
 
     -   COM+ 網路存取 (DCOM-In)
 
-    -   遠端事件記錄檔管理（NP-IN）
+    -   遠端事件記錄檔管理 (NP-In) 
 
-    -   遠端事件記錄檔管理（RPC）
+    -   遠端事件記錄檔管理 (RPC) 
 
-    -   遠端事件記錄檔管理（rpc-epmap）
+    -   遠端事件記錄檔管理 (RPC-EPMAP) 
 
-4.  用滑鼠右鍵按一下未啟用的規則，然後按一下內容功能表上的 [啟用規則] 。
+4.  用滑鼠右鍵按一下未啟用的規則，然後按一下內容功能表上的 [啟用規則]****。
 
 5.  關閉 [具有進階安全性的 Windows 防火牆] 嵌入式管理單元。
 
@@ -147,15 +145,15 @@ ms.locfileid: "80851561"
 
     -   在執行 Windows Server 2008 R2 或 Windows Server 2008 的伺服器上，于 [**執行**] 對話方塊中輸入**gpedit.msc**，然後按**enter**。
 
-2.  開啟**電腦的 [配置] 範本 \Windows 元件 \windows 遠端系統管理（WinRM） \WinRM 服務**。
+2.  開啟**電腦的管理元件 \Windows 範本 \windows 遠端系統管理 (WinRM) \Winrm 服務**。
 
-3.  在內容窗格中，按兩下 [允許透過 WinRM 進行遠端伺服器管理]。
+3.  在內容窗格中，按兩下 [允許透過 WinRM 進行遠端伺服器管理]****。
 
-4.  在 [允許透過 WinRM 進行遠端伺服器管理] 原則設定的對話方塊中，選取 [停用] 以停用遠端管理。 按一下 [確定] 以儲存變更，然後關閉原則設定對話方塊。
+4.  在 [允許透過 WinRM 進行遠端伺服器管理]**** 原則設定的對話方塊中，選取 [停用]**** 以停用遠端管理。 按一下 [確定]**** 以儲存變更，然後關閉原則設定對話方塊。
 
 ### <a name="to-disable-remote-management-by-using-an-answer-file-during-unattended-installation"></a>在自動安裝期間使用回應檔案停用遠端管理
 
-1.  使用 Windows 系統映射管理員（Windows SIM）來建立 Windows Server 2016 安裝的自動安裝回應檔案。 如需如何建立回應檔案與使用 Windows SIM 的詳細資訊，請參閱 [何謂 Windows 系統映像管理員？](https://technet.microsoft.com/library/cc766347.aspx) 及 [逐步說明：IT 專業人員的基本 Windows 部署](https://technet.microsoft.com/library/dd349348.aspx)。
+1.  使用 Windows 系統映射管理員 (Windows SIM) ，建立 Windows Server 2016 安裝的自動安裝回應檔案。 如需如何建立回應檔案與使用 Windows SIM 的詳細資訊，請參閱[何謂 Windows 系統映像管理員？](https://technet.microsoft.com/library/cc766347.aspx)及[逐步說明：IT 專業人員的基本 Windows 部署](https://technet.microsoft.com/library/dd349348.aspx)。
 
 2.  在您的回應檔案中，找出 [設定**microsoft-windows-web-services-for-management-core\enableserverremotemanagement 設定**]。
 
@@ -163,10 +161,10 @@ ms.locfileid: "80851561"
 
     > [!NOTE]
     > 這項設定會在作業系統安裝程序期間停用遠端管理。 進行此設定時，不會讓系統管理員在作業系統安裝完成後，在伺服器上啟用伺服器管理員遠端系統管理。 系統管理員可以使用在本主題中使用 windows[介面設定伺服器管理員遠端](#to-enable-server-manager-remote-management-by-using-the-windows-interface)管理或使用[windows PowerShell 來啟用伺服器管理員遠端系統管理](#to-enable-server-manager-remote-management-by-using-windows-powershell)的步驟，再次啟用伺服器管理員遠端系統管理。
-    > 
-    > 如果您在自動安裝過程中預設停用遠端系統管理，而且未在安裝之後再次啟用伺服器上的遠端系統管理，則無法使用伺服器管理員完全管理套用這個回應檔案的伺服器。 執行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 （且預設為停用遠端系統管理）的伺服器，會在新增至伺服器管理員伺服器集區之後，在伺服器管理員主控台中產生管理性狀態錯誤。
+    >
+    > 如果您在自動安裝過程中預設停用遠端系統管理，而且未在安裝之後再次啟用伺服器上的遠端系統管理，則無法使用伺服器管理員完全管理套用這個回應檔案的伺服器。 執行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 (且預設停用遠端系統管理的伺服器，) 在新增至伺服器管理員伺服器集區之後，于伺服器管理員主控台產生管理性狀態錯誤。
 
-## <a name="windows-remote-management-winrm-listener-settings"></a>Windows 遠端系統管理（WinRM）接聽程式設定
+## <a name="windows-remote-management-winrm-listener-settings"></a>Windows 遠端系統管理 (WinRM) 接聽程式設定
 伺服器管理員依賴您想要管理的遠端伺服器上的預設 WinRM 接聽程式設定。 如果遠端伺服器上的預設驗證機制或 WinRM 接聽程式埠號碼已從預設設定中變更，伺服器管理員就無法與遠端伺服器通訊。
 
 下列清單顯示使用伺服器管理員管理的預設 WinRM 接聽程式設定。
@@ -184,9 +182,9 @@ WinRM 與遠端電腦通訊的預設連接埠號碼為 5985。
 如需有關如何設定 WinRM 接聽程式設定的詳細資訊，請在命令提示字元中輸入**WinRM help config**，然後按 enter。
 
 ## <a name="see-also"></a>另請參閱
-[將伺服器新增至伺服器管理員](add-servers-to-server-manager.md)
-[Windows PowerShell： Windows Server 技術中心上的 About_remote_Troubleshooting](https://technet.microsoft.com/library/dd347642.aspx)
-[使用者帳戶控制的描述](https://support.microsoft.com/kb/951016)
+[將伺服器新增至伺服器管理員](add-servers-to-server-manager.md) 
+[Windows PowerShell： Windows Server 技術中心](https://technet.microsoft.com/library/dd347642.aspx) 
+ 上的 about_remote_Troubleshooting[使用者帳戶控制的描述](https://support.microsoft.com/kb/951016)
 
 
 

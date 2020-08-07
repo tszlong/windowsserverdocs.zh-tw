@@ -1,24 +1,22 @@
 ---
 title: showmount
 description: Showmount –的參考文章，會顯示裝載的目錄。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: a6dd562e-e3bd-4ee6-be3b-6d29e29fd20e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 131ecf9dea650dd127e4dff05838245ceece1ead
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 0be623eadd56a55a87f2df57fec9b4c6558770c9
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931603"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882406"
 ---
 # <a name="showmount"></a>showmount
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 您可以使用**showmount –** 來顯示裝載的目錄。
 

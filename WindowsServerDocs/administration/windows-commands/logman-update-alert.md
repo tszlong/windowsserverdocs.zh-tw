@@ -1,24 +1,22 @@
 ---
 title: logman update alert
 description: Logman 更新警示命令的參考文章，可更新現有警示資料收集器的屬性。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ede94a76-931c-40ed-9fda-6766bed8ff72
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 84e198ef528d1f9192662ed89ad39b6884fab742
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1139b3d5f8e49c70f00b5bd5780a96f30bafa41e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932274"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887258"
 ---
 # <a name="logman-update-alert"></a>logman update alert
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 更新現有警示資料收集器的屬性。
 
@@ -30,7 +28,7 @@ logman update alert <[-n] <name>> [options]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | -s`<computer name>` | 在指定的遠端電腦上執行命令。 |
 | -config`<value>` | 指定包含命令選項的設定檔案。 |
@@ -60,11 +58,11 @@ logman update alert <[-n] <name>> [options]
 
 #### <a name="remarks"></a>備註
 
-- 其中列出 [-]，加入額外的連字號（-）會否定選項。
+- 其中列出 [-]，加入額外的連字號 (-) 會將選項否定。
 
 ### <a name="examples"></a>範例
 
-若要更新稱為*new_alert*的現有警示，請在 [處理器（_Total）] 計數器群組中，將計數器% Processor time 的臨界值設定為40%，輸入：
+若要更新名為*new_alert*的現有警示，請在 [處理器 (_Total) ] 計數器群組中，將 [計數器% Processor time] 的臨界值設定為40%，輸入：
 
 ```
 logman update alert new_alert -th \Processor(_Total)\% Processor time>40

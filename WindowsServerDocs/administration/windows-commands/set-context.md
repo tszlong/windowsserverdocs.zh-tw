@@ -1,20 +1,18 @@
 ---
 title: 設定內容
 description: Set coNtext 的參考文章，可設定陰影複製建立的內容。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: fc16c7dd-e8f0-4c2a-8742-0bddb2848bfd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 98fb69f84b15a2444d24e4b6515ff9ff665b9aa7
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3506a79ec713f26b16f58cd8cda3903ce6503adf
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937108"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882699"
 ---
 # <a name="set-contex"></a>設定操作
 
@@ -30,7 +28,7 @@ set context {clientaccessible | persistent [nowriters] | volatile [nowriters]}
 
 ### <a name="parameters"></a>參數
 
-|參數|說明|
+|參數|描述|
 |---------|-----------|
 |clientaccessible|指定陰影複製可供用戶端版本的 Windows 使用。|
 |持續|指定陰影複製在程式結束、重設或重新開機時持續存在。|

@@ -1,20 +1,18 @@
 ---
 title: 伺服器管理員的鍵盤快速鍵
 description: 伺服器管理員
-ms.prod: windows-server
-ms.technology: manage-server-manager
 ms.topic: article
 ms.assetid: 96a2a8be-cbeb-4799-9034-284ea057915c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8135f453f633f8193fa56d80ae05cd9601435c87
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 182a99ff3c20ff8a62b36714967b25603ff055b3
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851511"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895765"
 ---
 # <a name="keyboard-shortcuts-for-server-manager"></a>伺服器管理員的鍵盤快速鍵
 
@@ -24,14 +22,14 @@ ms.locfileid: "80851511"
 
 若為沒有自己的鍵盤快速鍵或便捷鍵的命令，則可以藉由在取得焦點時按 **Tab** 鍵於控制項群組中切換的方式存取。
 
-## <a name="access-keys"></a>便捷鍵
+## <a name="access-keys"></a>存取金鑰
 **伺服器管理員中的現用控制區域**
 
 **歡迎使用磚**
 
 |控制項群組|存取金鑰|
 |---------|-------|
-|歡迎使用磚-快速入門索引標籤|**Alt + Q**|
+|歡迎使用磚-快速入門索引標籤|**Alt+Q**|
 |歡迎使用磚 - [最新內容] 索引標籤|**Alt + W**|
 |歡迎使用磚-深入瞭解索引標籤|**Alt + L**|
 |歡迎使用磚 [隱藏] 命令|**Alt + D**|
@@ -48,14 +46,14 @@ ms.locfileid: "80851511"
 |---------|-------|
 |網址列中的上一頁按鈕|**Alt+向左鍵**或**退格鍵**|
 |網址列中的 [下一頁] 按鈕|**Alt + 向右鍵**|
-|重新整理|**F5**|
+|Refresh|**F5**|
 |通知區域，開啟工作詳細資料對話方塊|**Alt + N**|
-|[管理] 功能表|**Alt + M**|
+|[管理] 功能表|**Alt+M**|
 |檢視功能表|**Alt + V**|
-|[說明] 功能表|**Alt + H**|
-|開啟伺服器管理員說明|**瞭解**|
-|放大|**Ctrl + 加號（+）**|
-|縮小|**Ctrl + 減號（-）**|
+|[說明] 功能表|**Alt+H**|
+|開啟伺服器管理員說明|**F1**|
+|放大|**Ctrl+加號 (+)**|
+|縮小|**Ctrl+減號 (-)**|
 |以 100% 大小顯示主控台|**Ctrl + 0**|
 
 **角色、群組或本機伺服器頁面上的磚**
@@ -65,35 +63,35 @@ ms.locfileid: "80851511"
 |[本機伺服器] 頁面 [屬性] 磚|**Alt + P**|
 |角色、群組或本機伺服器頁面 [事件] 磚|**Alt + E**|
 |角色、群組或本機伺服器頁面 [服務] 磚|**Alt + R**|
-|角色、群組或本機伺服器頁面最佳做法分析程式（BPA）磚|**Alt + B**|
+|角色、群組或本機伺服器頁面最佳做法分析程式 (BPA) 磚|**Alt + B**|
 |角色、群組或本機伺服器頁面 [效能] 磚|**Alt + O**|
-|角色、群組或本機伺服器頁面 [角色和功能] 磚|**Alt + A**|
-|[所有伺服器] 頁面 [伺服器] 磚|**Alt + A**|
+|角色、群組或本機伺服器頁面 [角色和功能] 磚|**Alt+A**|
+|[所有伺服器] 頁面 [伺服器] 磚|**Alt+A**|
 
-**在本機伺服器屬性磚中導覽**
+**在 [本機伺服器屬性] 磚內瀏覽**
 
 |控制項群組|存取金鑰|
 |---------|-------|
-|電腦名稱|**Alt + C**|
+|computer name|**Alt + C**|
 |上次安裝的更新|**Alt + L**|
 |網域或工作群組|**Alt + D**|
 |Windows Update|**Alt + W**|
 |上次檢查更新的時間|**Alt + S**|
 |遠端管理|**Alt + R**|
-|Windows 防火牆|**Alt + F**|
-|遠端桌面|**Alt + K**|
+|Windows 防火牆|**Alt+F**|
+|遠端桌面|**Alt+K**|
 |Windows 錯誤報告|**Alt + G**|
-|NIC 小組|**Alt + T**|
+|NIC 小組|**Alt+T**|
 |客戶經驗改進計畫|**Alt + X**|
 |有線乙太網路連線|**Alt + O**|
-|IE 增強式安全性設定|**Alt + Y**|
-|時區|**Alt + Z**|
+|IE 增強式安全性設定|**Alt+Y**|
+|時區|**Alt+Z**|
 
-**在事件、服務、BPA、效能及角色和功能磚內流覽**
+**在 [事件]、[服務]、[BPA]、[效能] 和 [角色和功能] 磚內瀏覽**
 
 |控制項群組|存取金鑰|
 |---------|-------|
-|[工作] 功能表|**Alt + T**|
-|篩選控制項|**Alt + F**|
-|查詢控制項|**Alt + Q**|
+|[工作] 功能表|**Alt+T**|
+|篩選控制項|**Alt+F**|
+|查詢控制項|**Alt+Q**|
 |儲存查詢|**Alt + S**|

@@ -1,20 +1,18 @@
 ---
 title: 設定詳細資訊
 description: 設定詳細資訊的參考文章，指定是否在建立陰影複製時提供詳細資訊輸出。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 93cb93c9-666f-4c74-814b-1c404a949935
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 309053339ca6ee354dda95860be7f77f3f885da2
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1b3e406de89b392782fcf81d43b34046ca7f96bd
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935917"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882586"
 ---
 # <a name="set-verbose"></a>設定詳細資訊
 
@@ -28,7 +26,7 @@ set verbose {on | off}
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 |-----------|-------------|
 |    {開啟    |    off}     |
 

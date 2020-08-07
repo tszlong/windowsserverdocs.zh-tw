@@ -1,22 +1,20 @@
 ---
-title: start
+title: 開始
 description: Start 的參考文章，它會啟動個別的 [命令提示字元] 視窗，以執行指定的程式或命令。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0173f9b3-5cd7-4edb-b01e-d02193b4fadc
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f8864edd1f108ac0408b6b9f899c72e70e22922f
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 54ec76cf6162cd887b21f99b6579fc123f4f614c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937051"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882289"
 ---
-# <a name="start"></a>start
+# <a name="start"></a>開始
 
 啟動個別的 [命令提示字元] 視窗，以執行指定的程式或命令。
 
@@ -30,15 +28,15 @@ start [<Title>] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/low 
 
 ### <a name="parameters"></a>參數
 
-|參數|說明|
+|參數|描述|
 |---------|-----------|
 |\<Title>|指定要在 [命令提示字元] 視窗標題列中顯示的標題。|
 |/d\<Path>|指定啟動目錄。|
 |/i|將 Cmd.exe 啟動環境傳遞至新的命令提示字元視窗。 如果未指定 **/i** ，則會使用目前的環境。|
-|/min \| /max|指定以最小化（**/min**）或最大化（**/max**）新的命令提示字元視窗。|
-|/separate \| /shared|在個別的記憶體空間（**/separate**）或共用記憶體空間（**/shared**）中啟動16位程式。 64位平臺上不支援這些選項。|
+|/min \| /max|指定在新的 [命令提示字元] 視窗) 最小化 (**/min**) 或最大化 (的 **/max** 。|
+|/separate \| /shared|在個別的記憶體空間中啟動16位程式 (**/separate**) 或共用記憶體空間 (**/shared**) 。 64位平臺上不支援這些選項。|
 |/low \| /normal \| /high ... program.exe \| /realtime \| /abovenormal \| /belownormal|以指定的優先權類別啟動應用程式。 有效的優先權類別值為 **/low**、 **/normal**、 **/high ... program.exe**、 **/realtime**、 **/abovenormal**和 **/belownormal**。|
-|/affinity\<HexAffinity>|將指定的處理器親和性遮罩（以十六進位數表示）套用至新的應用程式。|
+|/affinity\<HexAffinity>|將指定的處理器親和性遮罩 (以十六進位數位表示，) 新增至新的應用程式。|
 |/wait|啟動應用程式，並等候它結束。|
 |/elevate|以系統管理員身分執行應用程式。|
 |/b|啟動應用程式，而不開啟新的命令提示字元視窗。 除非應用程式啟用 CTRL + C 處理，否則會忽略 CTRL + C 處理。 使用 CTRL + BREAK 來中斷應用程式。|
@@ -50,7 +48,7 @@ start [<Title>] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/low 
 
 - 您可以藉由將檔案的名稱輸入為命令，以透過檔案關聯來執行非檔的檔案。
 - 當您執行的命令包含字串 CMD 做為第一個不含副檔名或路徑辨識符號的 token 時，CMD 會取代為 COMSPEC 變數的值。 這可防止使用者從目前目錄中挑選**cmd** 。
-- 當您執行32點陣圖形使用者介面（GUI）應用程式時， **cmd**不會等待應用程式結束，然後再返回命令提示字元。 如果您從命令腳本執行應用程式，就不會發生這種行為。
+- 當您執行32點陣圖形使用者介面 (GUI) 應用程式時， **cmd**不會等待應用程式結束，然後再返回命令提示字元。 如果您從命令腳本執行應用程式，就不會發生這種行為。
 - 當您執行的命令使用不包含擴充功能的第一個權杖時，Cmd.exe 會使用 PATHEXT 環境變數的值來決定要尋找的延伸模組和順序。 PATHEXT 變數的預設值為：
   ```
   .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC

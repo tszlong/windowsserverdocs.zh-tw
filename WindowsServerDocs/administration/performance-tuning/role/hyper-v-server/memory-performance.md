@@ -1,18 +1,16 @@
 ---
 title: Hyper-v 記憶體效能
 description: 效能微調 Hyper-v 中的記憶體考慮
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: b513dd3346d593ec4c823808f540bce68dd472ce
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 08ccc5c8a6b7300f1fa476c01838080b0b01f67a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471363"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896099"
 ---
 # <a name="hyper-v-memory-performance"></a>Hyper-v 記憶體效能
 
@@ -41,7 +39,7 @@ ms.locfileid: "85471363"
 
 Windows Server 2016 中的 hyper-v 會監視根磁碟分割管理作業系統的執行時間健全狀況，以決定可以安全地配置給子磁碟分割的記憶體數量，同時仍能確保根磁碟分割的高效能和可靠性。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [Hyper-V 術語](terminology.md)
 

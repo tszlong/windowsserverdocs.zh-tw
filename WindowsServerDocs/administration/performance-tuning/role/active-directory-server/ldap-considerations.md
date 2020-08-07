@@ -1,18 +1,16 @@
 ---
 title: 中的 LDAP 考慮新增效能微調
 description: Active Directory 工作負載中的 LDAP 考慮
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 2ef32b379dcc5d1c2d8217564b639f44d024e5ee
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b1678eadda1232da19c80e648c8b7ecb9c06f64b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471544"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896220"
 ---
 # <a name="ldap-considerations-in-adds-performance-tuning"></a>中的 LDAP 考慮新增效能微調
 
@@ -47,7 +45,7 @@ MSDN 上有廣泛的檔，說明如何適當地撰寫、結構和分析查詢以
 
 - 具有高持續時間的大量查詢，會導致使用 ATQ LDAP 執行緒的耗用量和耗盡。 監視下列效能計數器：
 
-    - **NTDS \\要求延遲**–這取決於要求處理所需的時間長度。 在120秒（預設值）之後，Active Directory 會超時要求，但大部分的執行速度應該會更快，而且在整體的數位中應該會隱藏長時間執行的查詢。 尋找此基準中的變更，而不是絕對臨界值。
+    - **NTDS \\要求延遲**–這取決於要求處理所需的時間長度。 Active Directory 會在120秒後將要求超時 (預設) ，不過，大部分的執行速度應該會更快，而且非常長的執行中查詢應該會隱藏在整體的數位中。 尋找此基準中的變更，而不是絕對臨界值。
 
         > [!NOTE]
         > 這裡的高值也可能是對其他網域和 CRL 檢查的「代理」要求延遲的指標。
@@ -60,11 +58,11 @@ MSDN 上有廣泛的檔，說明如何適當地撰寫、結構和分析查詢以
 
 -   [追蹤昂貴且效率不佳的搜尋](https://msdn.microsoft.com/library/ms808539.aspx)
 
--   Active Directory 效能監視器中的診斷資料收集器集合工具（[SPA 的子物： Win2008 和其他的 AD 資料收集器集合](https://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx)）
+-   Active Directory 效能監視器中的診斷資料收集器集合工具 ([SPA 的子物： Win2008 中的 AD 資料收集器集合和超過的](https://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx)) 
 
 -   [Microsoft Server Performance Advisor](../../../server-performance-advisor/microsoft-server-performance-advisor.md)Active Directory Advisor 套件
 
--   使用 "（objectClass =）" 以外的任何篩選準則搜尋 \* ，其使用祖系索引。
+-   使用「 (objectClass =) 」以外的任何篩選準則 \* ，使用祖系索引。
 
 ### <a name="other-index-considerations"></a>其他索引考慮
 
@@ -80,11 +78,11 @@ MSDN 上有廣泛的檔，說明如何適當地撰寫、結構和分析查詢以
 
 -   需要元組索引，才能支援中詞搜尋字串和最終搜尋字串。 初始搜尋字串不需要元組索引。
 
-    -   初始搜尋字串–（samAccountName = MYPC \* ）
+    -   初始搜尋字串– (samAccountName = MYPC \*) 
 
-    -   中詞搜尋字串-（samAccountName = \* MYPC \* ）
+    -   中詞搜尋字串- (samAccountName = \* MYPC \*) 
 
-    -   最終搜尋字串–（samAccountName = \* MYPC $）
+    -   最後搜尋字串– (samAccountName = \* MYPC $) 
 
 -   建立索引時將會產生磁片 i/o。 這會在優先順序較低的背景執行緒上完成，傳入要求會優先于索引組建。 如果環境的容量規劃已正確完成，這應該是透明的。 不過，大量寫入案例或網域控制站儲存體上負載不明的環境可能會降低用戶端體驗，而且應該在數小時後完成。
 
@@ -98,7 +96,7 @@ MSDN 上有廣泛的檔，說明如何適當地撰寫、結構和分析查詢以
 
 -   [已編制索引的屬性](https://msdn.microsoft.com/library/windows/desktop/ms677112.aspx)
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [Active Directory 伺服器的效能調整](index.md)
 - [硬體考量](hardware-considerations.md)

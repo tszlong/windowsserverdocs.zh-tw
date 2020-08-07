@@ -1,24 +1,22 @@
 ---
 title: sfc
 description: Sfc 的參考文章，它會掃描並確認所有受保護系統檔案的完整性，並以正確的版本取代不正確的版本。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c58c25da-e028-42a6-9e10-973484a4b953
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8f4b0798f9c0e3e1c70ca701de1ea2246bddf7b9
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 56aa6a1f07b75e37111d265fc15253ba1d3a7f1d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931614"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882471"
 ---
 # <a name="sfc"></a>sfc
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 會掃描並確認所有受保護系統檔案的完整性，並以正確的版本取代不正確的版本。
 
@@ -29,7 +27,7 @@ sfc [/scannow] [/verifyonly] [/scanfile=<file>] [/verifyfile=<file>] [/offwindir
 ```
 
 #### <a name="parameters"></a>參數
-|參數|說明|
+|參數|描述|
 |-------|--------|
 |/scannow|會掃描所有受保護系統檔案的完整性，並在可能時修復有問題的檔案。|
 |/verifyonly|掃描所有受保護系統檔案的完整性。 不會執行任何修復操作。|

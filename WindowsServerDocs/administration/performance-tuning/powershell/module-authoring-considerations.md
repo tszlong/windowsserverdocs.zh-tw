@@ -1,18 +1,16 @@
 ---
 title: PowerShell 模組撰寫考慮
 description: PowerShell 模組撰寫考慮
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: jasonsh
 author: lzybkr
 ms.date: 10/16/2017
-ms.openlocfilehash: 25b202e56286b7c26c3150642a656eb31a120808
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bb22009262cc1ae713846779c6b24402e3ed7928
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851931"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896264"
 ---
 # <a name="powershell-module-authoring-considerations"></a>PowerShell 模組撰寫考慮
 
@@ -28,10 +26,10 @@ ms.locfileid: "80851931"
 
 ### <a name="guidelines"></a>指導方針
 
-* 在模組資訊清單中，請勿在 `AliasesToExport`、`CmdletsToExport`和 `FunctionsToExport` 專案中使用萬用字元。
+* 在模組資訊清單中，請勿在 `AliasesToExport` 、 `CmdletsToExport` 和專案中使用萬用字元 `FunctionsToExport` 。
 
-* 如果模組不會匯出特定類型的命令，請藉由指定 `@()`在資訊清單中明確指定。
-遺失或 `$null` 專案相當於指定萬用字元 `*`。
+* 如果模組不會匯出特定類型的命令，請藉由指定在資訊清單中明確指定 `@()` 。
+遺漏或 `$null` 專案相當於指定萬用字元 `*` 。
 
 應盡可能避免下列情況：
 
@@ -59,9 +57,9 @@ ms.locfileid: "80851931"
 
 在決定如何執行模組時，有三個主要選項：
 
-* Binary （通常C#為）
-* 腳本（PowerShell）
-* CDXML （XML 檔案包裝 CIM）
+* 二進位 (通常是 c # ) 
+*  (PowerShell) 的腳本
+* CDXML (包裝 CIM 的 XML 檔案) 
 
 如果載入模組的速度很重要，則 CDXML 的順序大致上比二進位模組慢一倍。
 

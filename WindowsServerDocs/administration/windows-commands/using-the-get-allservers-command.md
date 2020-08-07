@@ -1,20 +1,18 @@
 ---
 title: AllServers
 description: AllServers 的參考文章，它會抓取所有 Windows 部署服務伺服器的相關資訊。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: fe2e3c69-8f2e-457d-af55-d249ebf70f53
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a02515b138c9db6a1d320a4ad466700c15b84749
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6218b3dba4e87758322a7d33865b9a1a69dcb9fa
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935064"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896389"
 ---
 # <a name="get-allservers"></a>AllServers
 
@@ -31,7 +29,7 @@ WDSUTIL [Options] /Get-AllServers /Show:{Config | Images | All} [/Detailed] [/Fo
 
 ### <a name="parameters"></a>參數
 
-|   參數   |                                                                                                                 說明                                                                                                                  |
+|   參數   |                                                                                                                 描述                                                                                                                  |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | /Show： {Config |                                                                                                                    影像                                                                                                                    |
 |  [/Detailed]  | 與 **/show： Images**或 **/show： All**一起使用時，會傳回每個影像中的所有影像中繼資料。 如果未指定 **/Detailed**選項，則預設行為是傳回映射名稱、描述和檔案名。 |

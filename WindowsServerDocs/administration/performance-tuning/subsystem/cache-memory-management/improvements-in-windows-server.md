@@ -1,18 +1,16 @@
 ---
 title: 快取與記憶體管理員的改良功能
-description: Windows Server 2016 中的快取與記憶體管理員改良功能
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
+description: Windows Server 2016 中快取與記憶體管理員的改良功能
 ms.topic: article
 ms.author: pavel; atales
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: ef3658ab0f035435f6140c1dfa585de78537d37a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 35eb3d01af9c957831a6c860738e6a2516096b03
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851641"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895974"
 ---
 # <a name="cache-and-memory-manager-improvements"></a>快取與記憶體管理員的改良功能
 
@@ -20,7 +18,7 @@ ms.locfileid: "80851641"
 
 ## <a name="cache-manager-improvements-in-windows-server-2016"></a>Windows Server 2016 中的快取管理員改良功能
 快取管理員也新增了真正非同步快取讀取的支援。
-如果應用程式高度依賴非同步快取讀取，這可能會改善其效能。  雖然大部分的內建檔案系統都支援非同步快取讀取一段時間，但通常是因為各種與處理執行緒集區和檔案系統的內部工作佇列相關的設計選項而產生的效能限制。  透過內核適當的支援，快取管理員現在會從檔案系統隱藏所有線程集區和工作佇列管理的複雜性，使其更有效率地處理非同步快取讀取。快取管理員具有一組控制項 datastructures，適用于每個（系統支援的最大值） VHD-嵌套層級，可將平行處理原則最大化。
+如果應用程式高度依賴非同步快取讀取，這可能會改善其效能。雖然大部分的內建檔案系統都支援非同步快取讀取一段時間，但通常是因為各種與處理執行緒集區和檔案系統的內部工作佇列相關的設計選項而產生的效能限制。透過內核適當的支援，快取管理員現在會從檔案系統隱藏所有線程集區和工作佇列管理的複雜性，使其更有效率地處理非同步快取讀取。「快取管理員」有一組控制項 datastructures，適用于每個 (系統支援的) VHD 嵌套層級上限，以最大化平行處理原則。
 
 
 ## <a name="cache-manager-improvements-in-windows-server-2012"></a>Windows Server 2012 中的快取管理員改良功能
@@ -31,8 +29,8 @@ ms.locfileid: "80851641"
 
 以下是一些伺服器角色的範例，其中的頁面結合不太可能提供太多好處：
 
--   檔案伺服器（大部分的記憶體都是由不是私用，因此無法組合的檔案頁面所使用）
+-   檔案伺服器 (大部分的記憶體都是由不是私用，因此無法組合的檔案頁面所耗用) 
 
--   設定為使用 AWE 或大型頁面的 Microsoft SQL Server （大部分的記憶體都是私用的，但無法分頁）
+-   設定為使用 AWE 或大型頁面的 Microsoft SQL Server (大部分的記憶體都是私用的，但無法分頁) 
 
 預設會停用頁面結合，但可以使用[Mmagent.ps1](https://technet.microsoft.com/library/jj658954.aspx) Windows PowerShell Cmdlet 來啟用。 已在 Windows Server 2012 中新增頁面結合。

@@ -1,18 +1,16 @@
 ---
 title: Hyper-V 設定
 description: 效能微調的 hyper-v 設定考慮
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 3fb1001c99e084ab69f37db9779e5d5ae7acf58e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 02f2849b7259379ebf6beed927601b13966a7704
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471433"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896148"
 ---
 # <a name="hyper-v-configuration"></a>Hyper-V 設定
 
@@ -22,7 +20,7 @@ ms.locfileid: "85471433"
 
 -   **處理器**
 
-    Windows Server 2016 中的 hyper-v 將邏輯處理器呈現成每部作用中虛擬機器的一或多個虛擬處理器。 Hyper-v 現在需要支援第二層位址轉譯（SLAT）技術的處理器，例如延伸頁面表格（EPT）或嵌套頁面資料表（NPT）。
+    Windows Server 2016 中的 hyper-v 將邏輯處理器呈現成每部作用中虛擬機器的一或多個虛擬處理器。 Hyper-v 現在需要支援第二層位址轉譯的處理器 (SLAT) 技術，例如延伸分頁表 (EPT) 或嵌套頁面資料表 (NPT) 。
 
 -   **快取**
 
@@ -46,7 +44,7 @@ ms.locfileid: "85471433"
 
 Windows Server 會在各種不同的案例中使用虛擬化。 從輕量載入的 IIS 伺服器到適度忙碌的 SQL Server，到具有 Hyper-v 且每部伺服器執行數百部虛擬機器的雲端主機。 這些案例中的每一個都可能有獨特的硬體、軟體和效能需求。 根據預設，Windows Server 會使用並建議**平衡**的電源計劃，藉由調整以 CPU 使用率為基礎的處理器效能來節省電源。
 
-使用**平衡**電源計劃時，只有當實體主機相當忙碌時，才會套用最高的電源狀態（以及租使用者工作負載中最低的回應延遲）。 如果您針對所有租使用者工作負載，為具決定性的低延遲回應，您應該考慮從預設的**平衡**電源計劃切換到**高效**能的電源計劃。 高效**能的電源計劃**會隨時以全速的速度執行處理器，並有效地停用以需求為基礎的切換以及其他電源管理技術，並透過電力節約優化效能。
+使用**平衡**電源計劃時，只有當實體主機相當忙碌時，才會套用最高的電源狀態 (和租使用者工作負載中的最低回應延遲) 。 如果您針對所有租使用者工作負載，為具決定性的低延遲回應，您應該考慮從預設的**平衡**電源計劃切換到**高效**能的電源計劃。 高效**能的電源計劃**會隨時以全速的速度執行處理器，並有效地停用以需求為基礎的切換以及其他電源管理技術，並透過電力節約優化效能。
 
 對於滿足減少實體伺服器數量並想要確保它們達到虛擬化工作負載的最大效能的客戶，您應該考慮使用**高效**能的電源計劃。
 
@@ -76,18 +74,18 @@ Hyper-v 會發佈效能計數器，以協助描述虛擬化伺服器的行為，
 
 您應該一律使用 Hyper-v 虛擬機器邏輯處理器效能計數器來測量實體系統的 CPU 使用量。 「工作管理員」和「效能監視器」報表在根和子分割區中的 CPU 使用率計數器，並不會反映實際的實體 CPU 使用量。 使用下列效能計數器來監視效能：
 
-- **Hyper-v 虛擬機器邏輯處理器（ \* ） \\ % 總執行時間**-邏輯處理器的非閒置時間總計
+- **Hyper-v 虛擬機器邏輯處理器 () 邏輯處理器的非閒置時間總計的 \* \\ 總執行時間**
 
-- **Hyper-v 虛擬機器邏輯處理器（ \* ） \\ % Guest 執行時間**花費在來賓或主機內執行迴圈的時間
+- **Hyper-v 虛擬機器的邏輯處理器 (\*) \\ % 來賓執行時間**在來賓或主機內執行迴圈所花費的時間
 
-- **Hyper-v 虛擬機器邏輯處理器（ \* ） \\ % 監控程式執行時間**花費在虛擬機器內執行的時間
+- **Hyper-v 虛擬機器的邏輯處理器 (\*) \\ % 監控程式執行時間**在虛擬機器內執行所花的時間
 
-- **Hyper-v 虛擬機器根虛擬處理器（ \* ） \\ \\ *** 測量根磁碟分割的 CPU 使用量
+- **Hyper-v 虛擬機器根虛擬處理器 (\*) \\ \\ *** 測量根磁碟分割的 CPU 使用量
 
-- **Hyper-v 虛擬處理器（ \* ） \\ \\ *** 測量來賓磁碟分割的 CPU 使用量
+- **Hyper-v 虛擬處理器 (\*) \\ \\ *** 測量來賓磁碟分割的 CPU 使用量
 
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [Hyper-V 術語](terminology.md)
 

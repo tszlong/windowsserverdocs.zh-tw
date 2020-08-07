@@ -1,20 +1,18 @@
 ---
 title: setx
 description: Setx 的參考文章，它會在使用者或系統內容中建立或修改環境變數，而不需要程式設計或編寫腳本。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ef37482f-f8a8-4765-951a-2518faac3f44
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 69dcbca54419acb9ede0924e3e835bdfaf0633c1
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 0edab4ce56d3e43e26c1d14b32403a2954cbbce6
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935897"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882522"
 ---
 # <a name="setx"></a>setx
 
@@ -32,14 +30,14 @@ setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <FileName>
 
 ### <a name="parameters"></a>參數
 
-|         參數          |                                                                                                                                              說明                                                                                                                                              |
+|         參數          |                                                                                                                                              描述                                                                                                                                              |
 |----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       /s\<Computer>       |                                                                                  指定遠端電腦的名稱或 IP 位址。 請勿使用反斜線。 預設值是本機電腦的名稱。                                                                                  |
 | 那麼\<Domain>\]<User name> |                                                                                           使用指定之使用者帳戶的認證執行腳本。 預設值是系統許可權。                                                                                            |
 |      /p [ \<Password> ]      |                                                                                                         指定 **/u**參數中指定之使用者帳戶的密碼。                                                                                                         |
 |        \<Variable>         |                                                                                                                 指定您想要設定的環境變數名稱。                                                                                                                  |
 |          \<Value>          |                                                                                                                指定您要設定環境變數的值。                                                                                                                 |
-|         /k\<Path>         | 指定根據登錄機碼中的資訊來設定變數。 P*路徑 a)* 會使用下列語法：</br>`\\<HIVE>\<KEY>\...\<Value>`</br>例如，您可以指定下列路徑：</br>`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName` |
+|         /k\<Path>         | 指定根據登錄機碼中的資訊來設定變數。 P*路徑 a) *會使用下列語法：</br>`\\<HIVE>\<KEY>\...\<Value>`</br>例如，您可以指定下列路徑：</br>`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName` |
 |      /f \<File name>       |                                                                                                                               指定您想要使用的檔案。                                                                                                                                |
 |        /a \<X> 、<Y>         |                                                                                                                    指定絕對座標和位移作為搜尋參數。                                                                                                                    |
 |   /r \<X> 、 <Y><String>   |                                                                                                            指定**字串**的相對座標和位移作為搜尋參數。                                                                                                            |
@@ -51,14 +49,14 @@ setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <FileName>
 ## <a name="remarks"></a>備註
 
 -   **Setx**命令類似于 UNIX 公用程式 SETENV。
--   **Setx**提供唯一的命令列或程式設計方式，直接並永久設定系統內容值。 系統內容變數可透過 [**控制台**] 或 [登錄編輯程式] 手動設定。 **Set**命令是命令直譯器的內部（Cmd.exe），只會為目前的主控台視窗設定使用者環境變數。
--   您可以使用**setx**命令，從三個來源（模式）的其中一個設定使用者和系統內容變數的值：命令列模式、登錄模式或檔案模式。
+-   **Setx**提供唯一的命令列或程式設計方式，直接並永久設定系統內容值。 系統內容變數可透過 [**控制台**] 或 [登錄編輯程式] 手動設定。 **Set**命令是命令直譯器的內部 ( # A0) ，只會為目前的主控台視窗設定使用者環境變數。
+-   您可以使用**setx**命令，從三個來源的其中一個 (模式，設定使用者和系統內容變數的值) ：命令列模式、登錄模式或檔案模式。
 -   **Setx**會將變數寫入登錄中的主要環境。 使用**setx**變數設定的變數僅適用于未來的命令視窗，而不是在目前的命令視窗中。
 -   **HKEY_CURRENT_USER**和**HKEY_LOCAL_MACHINE**是唯一支援的 hive。 REG_DWORD、REG_EXPAND_SZ、REG_SZ 和 REG_MULTI_SZ 是有效的**RegKey**資料類型。
 -   當您取得登錄中**REG_MULTI_SZ**值的存取權時，只會解壓縮和使用第一個專案。
 -   您無法使用**setx**命令來移除已新增至本機或系統內容的值。 您可以使用**set**搭配變數名稱，沒有值可從本機環境中移除對應的值。
 -   REG_DWORD 登錄值會解壓縮並在十六進位模式中使用。
--   [檔案模式] 僅支援剖析 [回車] 和 [換行字元（CRLF）] 文字檔。
+-   [檔案模式] 僅支援剖析回車和換行 (CRLF) 文字檔。
 
 ## <a name="examples"></a>範例
 

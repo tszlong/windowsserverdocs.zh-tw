@@ -1,24 +1,22 @@
 ---
 title: select vdisk
 description: '* * * * 的參考文章'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 8808872a-3523-4205-a6c6-83fa738ee37a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 734b31d9c9bcf174bf4617418978935bc49ad6da
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 4dd10e984096390278c6bd14ae6b61d431dd7c2a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936433"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882820"
 ---
 # <a name="select-vdisk"></a>select vdisk
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 選取指定的虛擬硬碟 \( VHD \) ，並將焦點轉移到其上。
 
@@ -33,7 +31,7 @@ select vdisk file=<full path> [noerr]
 
 ### <a name="parameters"></a>參數
 
-|參數|說明|
+|參數|描述|
 |-------|--------|
 |文字檔\=<full path>|指定現有 VHD 檔案的完整路徑和檔案名。|
 |noerr|僅用於腳本。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。|

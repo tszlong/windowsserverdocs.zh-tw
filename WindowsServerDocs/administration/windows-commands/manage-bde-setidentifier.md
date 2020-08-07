@@ -1,20 +1,18 @@
 ---
 title: manage-bde setidentifier
 description: Setidentifier 命令的參考文章，它會將磁片磁碟機上的 [磁片磁碟機識別碼] 欄位設定為 [為您的組織提供唯一識別碼] 群組原則設定中指定的值。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 7092d18f-4ac9-4c73-a20f-1246ca60e75e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c6a04b4f7c04174158a165cf0d41493078af0056
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 836f8a0cb1842dcae276ccd8c2cca8f831056099
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957040"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886703"
 ---
 # <a name="manage-bde-setidentifier"></a>manage-bde setidentifier
 
@@ -44,7 +42,7 @@ manage-bde –setidentifier <drive> [-computername <name>] [{-?|/?}] [{-help|-h}
 manage-bde –setidentifier C:
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

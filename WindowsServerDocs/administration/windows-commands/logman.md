@@ -1,24 +1,22 @@
 ---
 title: logman
 description: Logman 命令的參考文章，它會建立和管理事件追蹤會話和效能記錄檔，並從命令列支援效能監視器的許多功能。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 574a5203-5b3b-4759-a678-f26d00dde447
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 993c96fbbcccd1b2a48303cc5926f25fd7899c4d
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: f5983ff4534f2f017de92cbd672352084f6a7552
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934567"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887103"
 ---
 # <a name="logman"></a>logman
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 建立和管理事件追蹤工作階段和效能記錄檔，並支援從命令列執行效能監視器的許多功能。
 
@@ -30,7 +28,7 @@ logman [create | query | start | stop | delete| update | import | export | /?] [
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | [logman create](logman-create.md) | 建立計數器、追蹤、設定資料收集器或 API。 |
 | [logman query](logman-query.md) | 查詢資料收集器屬性。 |

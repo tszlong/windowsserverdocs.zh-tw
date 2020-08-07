@@ -1,26 +1,24 @@
 ---
 title: set_2
 description: Set_2 的參考文章，其會設定用於陰影複製建立的內容、選項、詳細資訊模式和中繼資料檔案。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: acf24663-1a50-4321-b48d-1717655e9476
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1b25b30ad729eb4e1cbf455f02cdacc76c0a3ab3
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 9eb5b2032028dbe54680e1c197dc2f6fc09f3886
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934634"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882557"
 ---
 # <a name="set_2"></a>set_2
 
 設定陰影複製建立的內容、選項、詳細資訊模式和中繼資料檔案。 如果使用時不含參數，則**設定**會列出所有目前的設定。
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>語法
 
 ```
 set
@@ -32,7 +30,7 @@ set metadata <MetaData.cab>
 
 ## <a name="set-sub-commands"></a>設定子命令
 
-|子命令|Description|
+|子命令|描述|
 |-----------|-----------|
 |內容|設定陰影複製建立的內容。 請參閱設定語法和參數的[內容](set-context.md)。|
 |選項|設定陰影複製建立的選項。 如需語法和參數，請參閱[Set 選項](set-option.md)。|

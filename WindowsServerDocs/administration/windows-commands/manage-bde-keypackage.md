@@ -1,20 +1,18 @@
 ---
 title: manage-bde keypackage
 description: Manage-bde keypackage 命令的參考文章，它會產生磁片磁碟機的金鑰封裝。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c631ef10-2a2f-4541-8578-292f2d4e9e80
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4bdbd9bb46b75e7dc87cae1cd6e9b3a101ff91ff
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 969b9fc85959d137ec8b6bfc6b377f48e02e5157
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928563"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886877"
 ---
 # <a name="manage-bde-keypackage"></a>manage-bde keypackage
 
@@ -28,7 +26,7 @@ manage-bde -keypackage [<drive>] [-ID <keyprotectoryID>] [-path <pathtoexternalk
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<drive>` | 表示後面接著冒號的磁碟機號。 |
 | -ID | 使用金鑰保護裝置，並搭配此識別碼值所指定的識別碼，建立金鑰封裝。 **秘訣：** 使用 manage-bde **–保護裝置– get**命令，以及您要為其建立金鑰套件的磁碟機號，以取得可用的 guid 清單做為識別碼值。 |

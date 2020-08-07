@@ -1,18 +1,16 @@
 ---
 title: Hyper-v 網路 i/o 效能
 description: Hyper-v 效能調整中的網路 i/o 效能考慮
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: dcf43bf41edada0a2e3df6fde825ff128a119a8f
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b21ed45b97b1bc657b8a77ac7731dd32f5090c3d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471353"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896106"
 ---
 # <a name="hyper-v-network-io-performance"></a>Hyper-v 網路 i/o 效能
 
@@ -33,9 +31,9 @@ ms.locfileid: "85471353"
 
 此外，增加與遷移相關的每個網路介面卡上的傳送和接收緩衝區數目，可以改善遷移效能。
 
-Windows Server 2012 R2 引進了一個選項，可在透過網路傳送或使用遠端直接記憶體存取（RDMA）（如果您的硬體支援）時，藉由壓縮記憶體來加速即時移轉。
+Windows Server 2012 R2 引進了一個選項，可在透過網路傳輸之前壓縮記憶體，或使用遠端直接記憶體存取 (RDMA) （如果您的硬體支援的話），來加速即時移轉。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [Hyper-V 術語](terminology.md)
 

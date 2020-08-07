@@ -1,18 +1,16 @@
 ---
 title: SMB 檔案伺服器的效能微調
 description: SMB 檔案伺服器的效能微調
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 author: phstee
 ms.author: nedpyle; danlo; dkruse
 ms.date: 4/14/2017
-ms.openlocfilehash: 89017686801501593c51245d44bf88a6ecf4baf6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9e20b05f911726837cf436798a3743fbb80af193
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851821"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896160"
 ---
 # <a name="performance-tuning-for-smb-file-servers"></a>SMB 檔案伺服器的效能微調
 
@@ -30,7 +28,7 @@ ms.locfileid: "80851821"
 
 ### <a name="smb-30-protocol-family"></a>SMB 3.0 通訊協定系列
 
-SMB 3.0 是在 Windows Server 2012 中引進，並在 Windows Server 2012 R2 （SMB 3.02）和 Windows Server 2016 （SMB 3.1.1）中進一步增強。 此版本引進的技術可大幅提升檔案伺服器的效能和可用性。 如需詳細資訊，請參閱[Windows Server 2012 中的 SMB 和 2012 R2 2012](https://aka.ms/smb3plus)和[smb 3.1.1 的新功能](https://aka.ms/smb311)。
+SMB 3.0 是在 Windows Server 2012 中引進，並在 Windows Server 2012 R2 (SMB 3.02) 和 Windows Server 2016 (SMB 3.1.1) 中進一步增強。 此版本引進的技術可大幅提升檔案伺服器的效能和可用性。 如需詳細資訊，請參閱[Windows Server 2012 中的 SMB 和 2012 R2 2012](https://aka.ms/smb3plus)和[smb 3.1.1 的新功能](https://aka.ms/smb311)。
 
 
 
@@ -58,7 +56,7 @@ SMB 相應放大允許在叢集設定中使用 SMB 3.0，在叢集的所有節�
 
 ### <a name="performance-counters-for-smb-30"></a>SMB 3.0 的效能計數器
 
-下列 SMB 效能計數器是在 Windows Server 2012 中引進的，當您監視 SMB 2 和更新版本的資源使用量時，會將它們視為一組基本的計數器。 將效能計數器記錄到本機的原始（.blg）效能計數器記錄檔。 使用萬用字元（\*）來收集所有實例會比較便宜，然後使用重新執行，在後置處理期間解壓縮特定的實例。
+下列 SMB 效能計數器是在 Windows Server 2012 中引進的，當您監視 SMB 2 和更新版本的資源使用量時，會將它們視為一組基本的計數器。 將效能計數器記錄到本機的原始 ( .blg) 效能計數器記錄檔。 使用萬用字元 () 收集所有實例 \* ，然後使用 Relog.exe 在後置處理期間將特定實例解壓縮，會比較便宜。
 
 -   **SMB 用戶端共用**
 
@@ -74,7 +72,7 @@ SMB 相應放大允許在叢集設定中使用 SMB 3.0，在叢集的所有節�
 
     這些計數器會顯示使用 SMB 2.0 或更高版本之 SMB 伺服器會話的相關資訊。
 
-    開啟伺服器端上的計數器（伺服器共用或伺服器會話），對於高 IO 工作負載可能會有顯著的效能影響。
+    開啟伺服器端 (伺服器共用或伺服器會話) 上的計數器，對於高 IO 工作負載可能會有顯著的效能影響。
 
 -   **繼續金鑰篩選**
 
@@ -86,12 +84,12 @@ SMB 相應放大允許在叢集設定中使用 SMB 3.0，在叢集的所有節�
 
 -   **實體磁片、SMB、CSV FS 效能計數器關聯性**
 
-    如需實體磁片、SMB 和 CSV FS （檔案系統）計數器相關方式的詳細資訊，請參閱下列 blog 文章：[叢集共用磁碟區效能計數器](https://blogs.msdn.com/b/clustering/archive/2014/06/05/10531462.aspx)。
+    如需實體磁片、SMB 和 CSV FS (檔案系統) 計數器相關的詳細資訊，請參閱下列 blog 文章：[叢集共用磁碟區效能計數器](https://blogs.msdn.com/b/clustering/archive/2014/06/05/10531462.aspx)。
 
 ## <a name="tuning-parameters-for-smb-file-servers"></a>調整 SMB 檔案伺服器的參數
 
 
-下列 REG\_DWORD 登錄設定可能會影響 SMB 檔案伺服器的效能：
+下列 REG \_ DWORD 登錄設定可能會影響 SMB 檔案伺服器的效能：
 
 - **Smb2CreditsMin**和**Smb2CreditsMax**
 
@@ -104,11 +102,11 @@ SMB 相應放大允許在叢集設定中使用 SMB 3.0，在叢集的所有節�
   ```
 
   預設值分別是512和8192。 這些參數可讓伺服器在指定的界限內動態地對用戶端操作並行進行節流。 某些用戶端可能會以較高的平行存取限制來達到增加的輸送量，例如，透過高頻寬、高延遲的連結複製檔案。
-    
+
   > [!TIP]
-  > 在 Windows 10 和 Windows Server 2016 之前，授與用戶端的信用額度數目會根據嘗試根據網路延遲和點數使用量來判斷所要授與的最佳信用額度數目的演算法，在 Smb2CreditsMin 與 Smb2CreditsMax 之間動態變化。 在 Windows 10 和 Windows Server 2016 中，SMB 伺服器已變更為在要求時，無條件將信用額度授與已設定的最大點數。 做為這項變更的一部分，信用節流機制會在伺服器發生記憶體不足的壓力時，減少每個連線的點數視窗大小。 觸發節流的核心記憶體不足事件只會在伺服器記憶體不足（< 幾 MB）時才會收到信號，表示毫無用處。 因為伺服器不會再縮減信用額度視窗，所以不再需要 Smb2CreditsMin 設定，而且現在會忽略。
-  > 
-  > 您可以監視 SMB 用戶端共用\\點數會延遲數秒，以查看是否有任何信用額度問題。
+  > 在 Windows 10 和 Windows Server 2016 之前，授與用戶端的信用額度數目會根據嘗試根據網路延遲和點數使用量來判斷所要授與的最佳信用額度數目的演算法，在 Smb2CreditsMin 與 Smb2CreditsMax 之間動態變化。 在 Windows 10 和 Windows Server 2016 中，SMB 伺服器已變更為在要求時，無條件將信用額度授與已設定的最大點數。 做為這項變更的一部分，信用節流機制會在伺服器發生記憶體不足的壓力時，減少每個連線的點數視窗大小。 觸發節流的核心記憶體不足事件只會在伺服器的記憶體不足時發出信號， ( # A0 的 MB) 為無用。 因為伺服器不會再縮減信用額度視窗，所以不再需要 Smb2CreditsMin 設定，而且現在會忽略。
+  >
+  > 您可以監視 SMB 用戶端共用 \\ 點數會延遲數秒，以查看是否有任何信用額度問題。
 
 - **AdditionalCriticalWorkerThreads**
 
@@ -119,7 +117,7 @@ SMB 相應放大允許在叢集設定中使用 SMB 3.0，在叢集的所有節�
     預設值為0，表示不會新增任何額外的重要核心背景工作執行緒。 此值會影響檔案系統快取用於預先讀取和寫入後置要求的執行緒數目。 引發此值可以讓儲存子系統中有更多佇列的 i/o，而且它可以改善 i/o 效能，特別是在具有許多邏輯處理器和強大儲存硬體的系統上。
 
     >[!TIP]
-    > 如果快取管理員的已變更資料量（效能計數器快取\\中途分頁）正在成長中，則可能需要增加此值（超過 ~ 25%）在記憶體中，或如果系統正在執行許多同步讀取 i/o。
+    > 如果快取管理員的已變更資料量 (效能計數器快取 \\ 已中途分頁) 正在成長，以耗用超過 ~ 25% ) 記憶體，或系統正在執行許多同步讀取 i/o 的大量 (，則此值可能需要增加。
 
 - **MaxThreadsPerQueue**
 
@@ -127,22 +125,22 @@ SMB 相應放大允許在叢集設定中使用 SMB 3.0，在叢集的所有節�
   HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\MaxThreadsPerQueue
   ```
 
-  預設值為20。 增加此值會引發檔案伺服器可用於服務並行要求的執行緒數目。 當有大量作用中的連線需要服務，且硬體資源（例如存放裝置頻寬）足夠時，增加價值可以改善伺服器的擴充性、效能和回應時間。
+  預設值為 20。 增加此值會引發檔案伺服器可用於服務並行要求的執行緒數目。 當有大量作用中的連線需要服務，且硬體資源（例如存放裝置頻寬）足夠時，增加價值可以改善伺服器的擴充性、效能和回應時間。
 
   >[!TIP]
-  > 可能需要增加值的指示是，如果 SMB2 工作佇列的成長非常大（效能計數器「伺服器工作佇列」\\佇列長度\\SMB2 非封鎖 \*' 的持續時間高於100）。
+  > 可能需要增加值的指示是，如果 SMB2 工作佇列的成長非常大 (效能計數器「伺服器工作佇列 \\ 佇列長度 SMB2 非封鎖」 \\ \* 則一致地高於 ~ 100) 。
 
   >[!Note]
   >在 Windows 10 和 Windows Server 2016 中，MaxThreadsPerQueue 無法使用。 執行緒集區的執行緒數目會是「20 * NUMA 節點中的處理器數目」。
-     
+
 
 - **AsynchronousCredits**
 
-  ``` 
+  ```
   HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\AsynchronousCredits
   ```
 
-  預設值為512。 此參數會限制單一連接上允許的並行非同步 SMB 命令數目。 在某些情況下（例如，當前端伺服器具有後端 IIS 伺服器時）需要大量的平行存取（尤其是針對檔案變更通知要求）。 此專案的值可以增加以支援這些案例。
+  預設值為 512。 此參數會限制單一連接上允許的並行非同步 SMB 命令數目。 在某些情況下 (例如，當前端伺服器具有後端 IIS 伺服器時) 需要大量的並行 (來處理檔案變更通知要求，特別是) 。 此專案的值可以增加以支援這些案例。
 
 ### <a name="smb-server-tuning-example"></a>SMB 伺服器微調範例
 

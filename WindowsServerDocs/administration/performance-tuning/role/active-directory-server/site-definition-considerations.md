@@ -1,18 +1,16 @@
 ---
 title: 中的網站定義和網域控制站位置新增效能微調
 description: Active Directory 效能微調中的網站定義和網域控制站放置考慮。
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 19574c859e038374a4cf3fe1e452adae0891e067
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7502233cfd71fe2f3e7d25ff6ba246531233d1ff
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471483"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896207"
 ---
 # <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>適當地放置網域控制站與站台考量
 
@@ -26,7 +24,7 @@ ms.locfileid: "85471483"
 
 如需進一步資訊，請參閱：
 -   [應用程式和 RODC 的相容性](https://technet.microsoft.com/library/cc772597.aspx)
--   [Active Directory 服務介面（ADSI）和唯讀網域控制站（RODC）–避免效能問題](https://blogs.technet.microsoft.com/fieldcoding/2012/06/24/active-directory-service-interface-adsi-and-the-read-only-domain-controller-rodc-avoiding-performance-issues/)
+-   [Active Directory 服務介面 (ADSI) 和唯讀網域控制站 (RODC) –避免效能問題](https://blogs.technet.microsoft.com/fieldcoding/2012/06/24/active-directory-service-interface-adsi-and-the-read-only-domain-controller-rodc-avoiding-performance-issues/)
 
 ## <a name="optimize-for-referrals"></a>針對參考優化
 
@@ -60,7 +58,7 @@ ms.locfileid: "85471483"
 
     -   在受信任網域與信任網域之間融合網站名稱，以反映相同位置中的網域控制站。 請確定子網和 IP 位址對應已適當地連結至兩個樹系中的網站。 如需詳細資訊，請參閱[跨樹系信任的網域定位器](https://blogs.technet.com/b/askds/archive/2008/09/24/domain-locator-across-a-forest-trust.aspx)。
 
-    -   確定埠已根據 DCLocator 需求開啟，適用于網域控制站位置。 如果網域之間有防火牆存在，請確定已針對所有信任正確設定防火牆。 如果防火牆未開啟，信任的網域控制站仍然會嘗試存取受信任的網域。 如果通訊因任何原因而失敗，信任的網域控制站最終會將要求提供給受信任的網域控制站。 不過，這些時間輸出可能會花費數秒的每個要求，如果傳入要求的數量很高，則可能會耗盡信任網域控制站上的網路埠。 用戶端可能會在網域控制站上遇到等待時間超時的擱置執行緒，這可能會轉譯成無回應的應用程式（如果應用程式在前景執行緒中執行要求）。 如需詳細資訊，請參閱[如何設定網域和信任的防火牆](https://support.microsoft.com/kb/179442)。
+    -   確定埠已根據 DCLocator 需求開啟，適用于網域控制站位置。 如果網域之間有防火牆存在，請確定已針對所有信任正確設定防火牆。 如果防火牆未開啟，信任的網域控制站仍然會嘗試存取受信任的網域。 如果通訊因任何原因而失敗，信任的網域控制站最終會將要求提供給受信任的網域控制站。 不過，這些時間輸出可能會花費數秒的每個要求，如果傳入要求的數量很高，則可能會耗盡信任網域控制站上的網路埠。 如果應用程式在前景執行緒) 中執行要求，則用戶端可能會在網域控制站上遇到等待時間以擱置執行緒的速度，這可能會轉譯成無回應的應用程式 (。 如需詳細資訊，請參閱[如何設定網域和信任的防火牆](https://support.microsoft.com/kb/179442)。
 
     -   使用 DnsAvoidRegisterRecords 來消除效能不佳或高延遲的網域控制站，例如在衛星網站中，從廣告到一般定位器。 如需詳細資訊，請參閱[如何優化位於用戶端網站外部之網域控制站或通用類別目錄的位置](https://support.microsoft.com/kb/306602)。
 
@@ -70,13 +68,13 @@ ms.locfileid: "85471483"
 
     -  請考慮將網域控制站放在同一個實體位置中受信任和信任的網域。
 
-在所有信任案例中，認證會根據驗證要求中指定的網域來路由傳送。 這也適用于 LookupAccountName 和 LsaLookupNames 的查詢（以及其他專案，這些只是最常使用的） Api。 當這些 Api 的網域參數傳遞 Null 值時，網域控制站會嘗試尋找每個可用信任網域中指定的帳號名稱。
+在所有信任案例中，認證會根據驗證要求中指定的網域來路由傳送。 這也適用于 LookupAccountName 和 LsaLookupNames (的查詢，以及其他專案，這些只是最常使用的) Api。 當這些 Api 的網域參數傳遞 Null 值時，網域控制站會嘗試尋找每個可用信任網域中指定的帳號名稱。
 
 -   當指定 Null 網域時，停用檢查所有可用的信任。 [如何使用 LsaLookupRestrictIsolatedNameLevel 登錄專案來限制外部受信任網域中的隔離名稱查閱](https://support.microsoft.com/kb/818024)
 
 -   停用在所有可用的信任上指定 Null 網域的傳遞驗證要求。 [如果 Active Directory 網域控制站上有許多外部信任，Lsass.exe 進程可能會停止回應](https://support.microsoft.com/kb/923241/EN-US)
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 - [Active Directory 伺服器的效能調整](index.md)
 - [硬體考量](hardware-considerations.md)
 - [LDAP 考量](ldap-considerations.md)

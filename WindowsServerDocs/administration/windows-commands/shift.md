@@ -1,20 +1,18 @@
 ---
 title: shift
 description: Shift 的參考文章，這會變更批次檔中批次參數的位置。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: b56574e8-570a-4cc9-bbac-1b94fbf6a47a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c72f1f2390a1adaa993be2caa7954d72dede51e9
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 985c1271a1da8f486e2313ba9aeb266803664b93
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932584"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882397"
 ---
 # <a name="shift"></a>shift
 
@@ -30,7 +28,7 @@ shift [/n <N>]
 
 ### <a name="parameters"></a>參數
 
-|參數|說明|
+|參數|描述|
 |---------|-----------|
 |/n\<N>|指定在第*N*個引數開始轉移，其中*N*是0到8之間的任何值。 需要預設啟用的命令延伸模組。|
 |/?|在命令提示字元顯示說明。|
@@ -39,9 +37,9 @@ shift [/n <N>]
 
 - **Shift**命令會藉由將每個參數複製到前一個參數來變更批次參數 **%0**到 **%9**的值- **%1**的值會複製到 **%0**，而 **%2**的值會複製到 **%1**，依此類推。 這適用于撰寫在任何數目的參數上執行相同作業的批次檔。
 - 如果已啟用命令延伸模組， **shift**命令會支援 **/n**命令列選項。 **/N**選項指定在第 n 個引數開始轉移，其中**n**是0到8之間的任何值。 例如， **shift/2**會將 **%3**改成% **2**， **%4**到 **%3**，依此類推，而不會影響 **%0**和 **%1** 。 預設會啟用命令延伸模組。
-- 您可以使用**shift**命令來建立可接受10個以上批次參數的批次檔。 如果您在命令列上指定超過10個參數，則在第十個（**%9**）之後出現的參數，將會一次移位一個到 **%9**。
+- 您可以使用**shift**命令來建立可接受10個以上批次參數的批次檔。 如果您在命令列上指定超過10個參數，則會在第十個 (**%9**) 之後，將其一次移位至 **%9**。
 - **Shift**命令對 batch 參數不會有任何作用 **%\*** 。
-- 沒有回溯**shift**命令。 在您執行**shift**命令之後，就無法復原在轉移之前已存在的批次參數（**%0**）。
+- 沒有回溯**shift**命令。 在您執行**shift**命令之後，您無法復原 (**%0**) 的批次參數，這是在轉移之前存在的。
 
 ## <a name="examples"></a>範例
 

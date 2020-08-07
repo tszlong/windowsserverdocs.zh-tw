@@ -1,20 +1,18 @@
 ---
 title: shutdown
 description: 關閉的參考文章，讓您可以一次關閉或重新開機本機或遠端電腦。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c432f5cf-c5aa-4665-83af-0ec52c87112e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2f31e5b0ee1252bf015c964fa76dd2852df3515b
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 8dff8150cb6ccfea24238567581320a9b11650d3
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956120"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882361"
 ---
 # <a name="shutdown"></a>shutdown
 
@@ -37,13 +35,13 @@ shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t 
 |/s|將電腦關機。|
 |/r|關機後重新開機電腦。|
 |/a|中止系統關機。 只在超時期間生效。 若要使用 **/a**，您也必須使用 **/m**選項。|
-|/p|只會關閉本機電腦（非遠端電腦），而不會有超時時間或警告。 您只能使用 **/p**搭配 **/d**或 **/f**。 如果您的電腦不支援電源關閉功能，則會在您使用 **/p**時關閉，但是電腦的電源仍會保持開啟。|
+|/p|只會關閉本機電腦 (不是遠端電腦) —沒有超時時間或警告。 您只能使用 **/p**搭配 **/d**或 **/f**。 如果您的電腦不支援電源關閉功能，則會在您使用 **/p**時關閉，但是電腦的電源仍會保持開啟。|
 |/h|如果已啟用休眠，則將本機電腦置於休眠狀態。 您只能搭配使用 **/h**和 **/f**。|
 |/e|可讓您記錄目的電腦上未預期關機的原因。|
 |/f|強制執行應用程式關閉，而不發出警告使用者。</br>注意：使用 **/f**選項可能會造成未儲存的資料遺失。|
 |/m\\\\\<ComputerName>|指定目的電腦。 不能與 **/l**選項一起使用。|
 |一起\<XXX>|在重新開機或關機之前，將超時時間或延遲設定為*XXX*秒。 這會導致在本機主控台上顯示警告。 您可以指定0-600 秒。 如果您未使用 **/t**，則超時期間預設為30秒。|
-|/d [p \| u：] \<XX> ：\<YY>|列出系統重新開機或關機的原因。 以下是參數值：</br>**p**表示已規劃重新開機或關機。</br>**u**表示原因是使用者定義的。</br>注意：如果未指定**p**或**u** ，則會有未規劃的重新開機或關機。</br>*XX*指定主要的原因號碼（正小於256的正整數）。</br>*YY*指定次要原因號碼（正整數小於65536）。|
+|/d [p \| u：] \<XX> ：\<YY>|列出系統重新開機或關機的原因。 以下是參數值：</br>**p**表示已規劃重新開機或關機。</br>**u**表示原因是使用者定義的。</br>注意：如果未指定**p**或**u** ，則會有未規劃的重新開機或關機。</br>*XX*指定小於 256)  (正整數的主要原因編號。</br>*YY*指定小於 65536)  (正整數的次要原因號碼。|
 |/c\<Comment>|可以讓您詳細註解關機的原因。 您必須先使用 **/d**選項來提供原因。 您必須將批註括在引號中。 最多可以使用 511 個字元。|
 |/?|在命令提示字元中顯示說明，包括在本機電腦上定義的主要和次要原因清單。|
 
@@ -59,7 +57,7 @@ shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t 
 
 ## <a name="examples"></a>範例
 
-若要強制應用程式在一分鐘延遲之後關閉並重新啟動本機電腦，原因是應用程式：維護（已規劃）和批註設定 myapp.exe 類型：
+若要強制應用程式在一分鐘延遲之後，關閉並重新啟動本機電腦，原因是應用程式：維護 (規劃的) 和批註設定 myapp.exe 類型：
 ```
 shutdown /r /t 60 /c Reconfiguring myapp.exe /f /d p:4:1
 ```
@@ -68,6 +66,6 @@ shutdown /r /t 60 /c Reconfiguring myapp.exe /f /d p:4:1
 shutdown /r /m \\servername /t 60 /c Reconfiguring myapp.exe /f /d p:4:1
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

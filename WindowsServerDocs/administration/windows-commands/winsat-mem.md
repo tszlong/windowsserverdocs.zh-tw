@@ -1,20 +1,18 @@
 ---
 title: winsat mem
 description: Winsat 記憶體的參考文章，它會以反映記憶體緩衝區複本的方式來測試系統記憶體頻寬，如同用於多媒體處理。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 winms.topic: article
 ms.assetid: cda017bf-6193-43c1-b71f-e379c23e1152
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f7ddb18a923358997d2882cce0d3ae1e261061ef
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 928c0b7389af4c2417fe62af1aeae4f9a90856a4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936103"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896486"
 ---
 # <a name="winsat-mem"></a>winsat mem
 
@@ -32,7 +30,7 @@ winsat mem <parameters>
 
 ### <a name="parameters"></a>參數
 
-|參數|說明|
+|參數|描述|
 |---------|-----------|
 |-向上|強制執行只有一個執行緒的記憶體測試。 預設為每個實體 CPU 或核心執行一個執行緒。|
 |-rn|指定評估的執行緒應該以一般優先權執行。 預設值是以優先順序15執行。|
@@ -44,7 +42,7 @@ winsat mem <parameters>
 |-v|將詳細資訊輸出傳送至 STDOUT，包括狀態和進度資訊。 任何錯誤也會寫入至命令視窗。|
 |-xml\<file name>|將評量的輸出儲存為指定的 XML 檔案。 如果指定的檔案存在，則會覆寫該檔案。|
 |-idiskinfo|將實體磁片區和邏輯磁片的相關資訊儲存為 **\<SystemConfig>** XML 輸出中區段的一部分。|
-|-iguid|在 XML 輸出檔中建立全域唯一識別碼（GUID）。|
+|-iguid|在 XML 輸出檔中建立 (GUID) 的全域唯一識別碼。|
 |-注意附注文字|將附注文字加入至 **\<note>** XML 輸出檔案中的區段。|
 |-icn|在 XML 輸出檔中包含本機電腦名稱稱。|
 |-eef|列舉 XML 輸出檔中的額外系統資訊。|

@@ -1,24 +1,22 @@
 ---
 title: logman update api
 description: Logman update api 命令的參考文章，它會更新現有 API 追蹤資料收集器的屬性。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 6f322e52-0f9f-42b1-bd64-8b8f8fe086fc
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 40575772e5f82474c4afbd4809773f47d7e4e075
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: eaa66a05fa6f47fc17990d1f84223c2e2a8086c3
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933875"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887247"
 ---
 # <a name="logman-update-api"></a>logman update api
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 更新現有 API 追蹤資料收集器的屬性。
 
@@ -30,7 +28,7 @@ logman update api <[-n] <name>> [options]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | -s`<computer name>` | 在指定的遠端電腦上執行命令。 |
 | -config`<value>` | 指定包含命令選項的設定檔案。 |
@@ -54,14 +52,14 @@ logman update api <[-n] <name>> [options]
 | -mods`<path [path [...]]>` | 指定要從中記錄 API 呼叫的模組清單。 |
 | -inapis` <module!api [module!api [...]]>` | 指定要包含在記錄中的 API 呼叫清單。 |
 | -exapis`<module!api [module!api [...]]>` | 指定要排除在記錄之外的 API 呼叫清單。 |
-| -[-] ano | 僅記錄（-ano） API 名稱，或不記錄（-ano） API 名稱。 |
-| -[-] 遞迴 | 記錄（-遞迴）或不要以遞迴方式記錄（-遞迴） Api 超過第一層。 |
+| -[-] ano | 記錄 (-僅 ano) API 名稱，或不只記錄 (-ano) API 名稱。 |
+| -[-] 遞迴 | 記錄 (-遞迴) 或不會以遞迴方式記錄在第一層以外的 ( 遞迴) Api。 |
 | -exe`<value>` | 為 API 追蹤指定可執行檔的完整路徑。 |
 | /? | 顯示即時線上說明。 |
 
 #### <a name="remarks"></a>備註
 
-- 其中列出 [-]，加入額外的連字號（-）會否定選項。
+- 其中列出 [-]，加入額外的連字號 (-) 會將選項否定。
 
 ### <a name="examples"></a>範例
 

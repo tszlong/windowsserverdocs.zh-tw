@@ -1,20 +1,18 @@
 ---
 title: 寫入器
 description: 寫入器的參考發行項，它會確認寫入器或元件是否包含在備份或還原程式中，或排除寫入器或元件。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 7cf98295-411d-4705-8573-f898ff45c140
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 16746f2f070b87e0c287f3a49b19a480ba5399c9
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 9fbcca5f9bc15e77b812368fadfbc7af8f4fff96
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936088"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896458"
 ---
 # <a name="writer"></a>寫入器
 
@@ -31,7 +29,7 @@ writer exclude [<Writer> | <Component>]
 
 ### <a name="parameters"></a>參數
 
-| 參數  |                                                                                      說明                                                                                      |
+| 參數  |                                                                                      描述                                                                                      |
 |------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   驗證   | 驗證指定的寫入器或元件是否包含在備份或還原程式中。 如果未包含寫入器或元件，備份或還原程式將會失敗。 |
 |  排除   |                                                   從備份或還原程式中排除指定的寫入器或元件。                                                    |
@@ -39,7 +37,7 @@ writer exclude [<Writer> | <Component>]
 
 ## <a name="examples"></a>範例
 
-若要藉由指定 GUID 來驗證寫入器（在此範例中為4dc3bdd4-ab48-4d07-adb0-3bee2926fd7f），請輸入：
+若要在此範例中指定 GUID (來驗證寫入器，請在 4dc3bdd4-ab48-4d07-adb0-3bee2926fd7f) 中輸入：
 ```
 writer verify {4dc3bdd4-ab48-4d07-adb0-3bee2926fd7f}
 ```

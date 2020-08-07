@@ -1,20 +1,18 @@
 ---
 title: manage-bde changepin
 description: Changepin 命令的參考文章，它會修改作業系統磁片磁碟機的 PIN。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c85aa1c7-3485-4839-a292-99dfcd6db252
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dabe40e80200a0fd2574dc9a3e0e5b47ef8b97ec
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 8b71c0087583732e638e0b6de9558e5c1c0655c9
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932077"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886897"
 ---
 # <a name="manage-bde-changepin"></a>manage-bde changepin
 
@@ -28,7 +26,7 @@ manage-bde -changepin [<drive>] [-computername <name>] [{-?|/?}] [{-help|-h}]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<drive>` | 表示後面接著冒號的磁碟機號。 |
 | -computername | 指定 manage-bde.exe 將用來修改另一部電腦上的 BitLocker 保護。 您也可以使用 **-cn**做為此命令的縮寫版本。 |

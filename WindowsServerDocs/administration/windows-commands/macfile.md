@@ -1,24 +1,22 @@
 ---
 title: macfile
 description: 用於管理 Macintosh 伺服器、磁片區、目錄和檔案之檔案伺服器的 macfile 命令的參考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e2ce586c-b316-41d3-90f8-4be0d074cc0e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6937e8bbf40ec9ce908be095e5de0e04f793f40e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d3b450241ee3f8a765f9ac93ec09b0450d8c28e5
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933656"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887042"
 ---
 # <a name="macfile"></a>macfile
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 管理適用于 Macintosh 伺服器、磁片區、目錄和檔案的檔案伺服器。 您可以在批次檔中包含一系列命令，並以手動方式或在預先定義的時間啟動它們，來自動化管理工作。
 
@@ -34,13 +32,13 @@ macfile directory[/server:\\<computername>] /path:<directory> [/owner:<ownername
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | /server:`\\<computername>` | 指定要變更目錄的伺服器。 如果省略，則會在本機電腦上執行此操作。 |
 | /path`<directory>` | 指定您要變更之目錄的路徑。 此為必要參數。 **注意：** 目錄必須存在，使用**macfile 目錄**將不會建立目錄。 |
 | /owner`<ownername>` | 變更目錄的擁有者。 如果省略，則擁有者名稱不會變更。 |
 | 小組`<groupname>` | 指定或變更與目錄相關聯的 Macintosh 主要群組。 如果省略，主要群組會保持不變。 |
-| 無權`<permissions>` | 為擁有者、主要群組和全球（everyone）設定目錄的許可權。 這必須是11位數的數位，其中數位1會授與許可權，0則會撤銷許可權（例如，11111011000）。 如果省略此參數，許可權會維持不變。 |
+| 無權`<permissions>` | 設定擁有者、主要群組和全球目錄的許可權， (每個人) 。 這必須是11位數的數位，其中數位1會授與許可權，0則會撤銷許可權 (例如 11111011000) 。 如果省略此參數，許可權會維持不變。 |
 | /? | 在命令提示字元顯示說明。 |
 
 ##### <a name="position-of-permissions-digit"></a>許可權的位置數位
@@ -51,7 +49,7 @@ macfile directory[/server:\\<computername>] /path:<directory> [/owner:<ownername
 | -------- | --------------- |
 | First | OwnerSeeFiles |
 | Second | OwnerSeeFolders |
-| 第三個 | OwnerMakechanges |
+| Third | OwnerMakechanges |
 | 第四個 | GroupSeeFiles |
 | 步驟 5 | GroupSeeFolders |
 | 步驟 6 | GroupMakechanges |
@@ -63,7 +61,7 @@ macfile directory[/server:\\<computername>] /path:<directory> [/owner:<ownername
 
 ##### <a name="remarks"></a>備註
 
-- 如果您提供的資訊包含空格或特殊字元，請使用引號括住文字（例如，" `<computer name>` "）。
+- 如果您提供的資訊包含空格或特殊字元，請使用引號括住文字 (例如 " `<computer name>` " ) 。
 
 - 使用**macfile 目錄**，將 macintosh 可存取磁片區中的現有目錄提供給 macintosh 使用者。 [ **Macfile 目錄**] 命令不會建立目錄。
 
@@ -91,7 +89,7 @@ macfile forkize[/server:\\<computername>] [/creator:<creatorname>] [/type:<typen
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | /server:`\\<computername>` | 指定要聯結檔案的伺服器。 如果省略，則會在本機電腦上執行此操作。 |
 | 創`<creatorname>` | 指定檔案的建立者。 Macintosh 搜尋工具會使用 **/creator**命令列選項來判斷建立檔案的應用程式。 |
@@ -103,11 +101,11 @@ macfile forkize[/server:\\<computername>] [/creator:<creatorname>] [/type:<typen
 
 ##### <a name="remarks"></a>備註
 
-- 如果您提供的資訊包含空格或特殊字元，請使用引號括住文字（例如，" `<computer name>` "）。
+- 如果您提供的資訊包含空格或特殊字元，請使用引號括住文字 (例如 " `<computer name>` " ) 。
 
 #### <a name="examples"></a>範例
 
-若要在 [Macintosh 可存取的磁片區] *D:\Release*上，使用 [資源分支*C:\Cross\Mac\Appcode*] 建立檔案*tree_app* ，並將此新檔案顯示為 macintosh 用戶端作為應用程式（Macintosh 應用程式會使用類型*appl.exe*）並將建立者（簽章）設定為*木蘭*，請輸入：
+若要在 [Macintosh 可存取的磁片區] *D:\Release*上建立檔案*tree_app* 、使用資源分支*C:\Cross\Mac\Appcode*，以及讓此新檔案以應用程式的形式顯示給 macintosh 用戶端， (macintosh 應用程式使用類型*appl.exe*) 搭配建立者 (簽章) 設定為*木蘭*，請輸入：
 
 ```
 macfile forkize /resourcefork:c:\cross\mac\appcode /type:APPL /creator:MAGNOLIA /targetfile:D:\Release\tree_app
@@ -131,7 +129,7 @@ macfile server [/server:\\<computername>] [/maxsessions:{number | unlimited}] [/
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- |------------ |
 | /server:`\\<computername>` | 指定要在其上變更參數的伺服器。 如果省略，則會在本機電腦上執行此操作。 |
 | maxsessions`{number | unlimited}` | 指定可以同時使用 Macintosh 檔案和列印伺服器的最大使用者數目。 如果省略，伺服器的**maxsessions**設定會維持不變。 |
@@ -140,7 +138,7 @@ macfile server [/server:\\<computername>] [/maxsessions:{number | unlimited}] [/
 
 ##### <a name="remarks"></a>備註
 
-- 如果您提供的資訊包含空格或特殊字元，請使用引號括住文字（例如，" `<computer name>` "）。
+- 如果您提供的資訊包含空格或特殊字元，請使用引號括住文字 (例如 " `<computer name>` " ) 。
 
 #### <a name="examples"></a>範例
 
@@ -163,7 +161,7 @@ macfile volume /remove[/server:\\<computername>] /name:<volumename>
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `{/add | /set}` | 新增或變更 Macintosh 可存取磁片區時的必要。 新增或變更指定的磁片區。 |
 | /server:`\\<computername>` | 指定要在其上新增、變更或移除磁片區的伺服器。 如果省略，則會在本機電腦上執行此操作。 |
@@ -178,7 +176,7 @@ macfile volume /remove[/server:\\<computername>] /name:<volumename>
 
 ##### <a name="remarks"></a>備註
 
-- 如果您提供的資訊包含空格或特殊字元，請使用引號括住文字（例如，" `<computer name>` "）。
+- 如果您提供的資訊包含空格或特殊字元，請使用引號括住文字 (例如 " `<computer name>` " ) 。
 
 #### <a name="examples"></a>範例
 

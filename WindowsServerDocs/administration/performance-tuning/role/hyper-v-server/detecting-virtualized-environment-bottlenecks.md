@@ -1,18 +1,16 @@
 ---
 title: 偵測虛擬化環境中的瓶頸
 description: 如何偵測並解決可能的 Hyper-v 效能瓶頸
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 11b2f596fc8c1f8c193100e4a9f1ee792d3d7502
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 049df52033d637409a73400616b596037f9d7976
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471413"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896138"
 ---
 # <a name="detecting-bottlenecks-in-a-virtualized-environment"></a>偵測虛擬化環境中的瓶頸
 
@@ -28,15 +26,15 @@ ms.locfileid: "85471413"
 
 您可以使用主機的下列效能計數器：
 
--   邏輯處理器使用率- \\ Hyper-v 虛擬機器邏輯處理器（ \* ） \\ % 總執行時間
+-   邏輯處理器使用率- \\ Hyper-v 虛擬機器的邏輯處理器 (\*) \\ % 總執行時間
 
--   虛擬處理器使用率- \\ hyper-v 虛擬處理器（ \* ） \\ % 總執行時間
+-   虛擬處理器使用率- \\ hyper-v 虛擬處理器 (\*) \\ % 總執行時間
 
--   根虛擬處理器使用率- \\ hyper-v 虛擬機器根虛擬處理器（ \* ） \\ % 總執行時間
+-   根虛擬處理器使用率- \\ Hyper-v 管理元件根虛擬處理器 (\*) \\ % 總執行時間
 
-如果**Hyper-v 虛擬機器邏輯處理器（ \_ 總計） \\ % total Runtime**計數器超過90%，則會多載主機。 您應該增加更多處理能力，或將部分虛擬機器移至不同的主機。
+如果**Hyper-v 虛擬機器邏輯處理器 (\_ 總計) 總計 \\ 運行**時間計數器超過90%，則會多載主機。 您應該增加更多處理能力，或將部分虛擬機器移至不同的主機。
 
-如果所有虛擬處理器的**Hyper-v 虛擬處理器（VM 名稱： VP x） \\ % Total Runtime**計數器大於90%，您應該執行下列動作：
+如果**hyper-v 虛擬處理器 (VM 名稱：所有虛擬處理器的副總 x) \\ % Total Runtime**計數器大於90%，您應該執行下列動作：
 
 -   確認主機未超載
 
@@ -44,7 +42,7 @@ ms.locfileid: "85471413"
 
 -   將更多虛擬處理器指派給虛擬機器
 
-若為部分（而非全部）的虛擬處理器， **hyper-v 虛擬處理器（VM 名稱： VP x） \\ % Total Runtime**計數器大於90%，您應該執行下列動作：
+如果**hyper-v 虛擬處理器 (VM 名稱) ： \\ **部分（而非全部）虛擬處理器的總執行時間計數器為90%，您應該執行下列動作：
 
 -   如果您的工作負載需要大量網路，您應該考慮使用 vRSS。
 
@@ -52,7 +50,7 @@ ms.locfileid: "85471413"
 
 -   如果您的工作負載需要大量儲存空間，您應該啟用虛擬 NUMA 並新增更多虛擬磁片。
 
-如果部分的**hyper-v 虛擬機器根虛擬處理器（根副總 x） \\ % Total Runtime**計數器超過90% 但並非所有虛擬處理器和**處理器（x）% 的插斷 \\ 時間和處理器（x） \\ % DPC Time**計數器大約增加了**根虛擬處理器（根 VP x） \\ % Total Runtime**計數器的值，您應該確定在網路介面卡上啟用 VMQ。
+如果**hyper-v 虛擬機器根虛擬處理器 (根 VP x) \\ % Total Runtime**計數器已超過90% 的部分，但並非所有虛擬處理器和**處理器 (x) % 插斷 \\ 時間和處理器 (x) \\ % DPC Time**計數器大約會增加**根虛擬處理器的值 (根副總 x) \\ % Total Runtime**計數器，您應該確保在網路介面卡上啟用 VMQ。
 
 ## <a name="memory-bottlenecks"></a>記憶體瓶頸
 
@@ -68,13 +66,13 @@ ms.locfileid: "85471413"
 
 -   記憶體 \\ 可用 mb
 
--   Hyper-v 動態記憶體平衡器（ \* ） \\ 可用的記憶體
+-   Hyper-v 動態記憶體平衡器 (\*) \\ 可用的記憶體
 
 您可以使用虛擬機器中的下列效能計數器：
 
 -   記憶體 \\ 可用 mb
 
-如果**記憶體 \\ 可用 Mb**和**hyper-v 動態記憶體平衡器（）主機上的 \* \\ 可用記憶體**計數器不足，您應該停止非必要的服務，並將一或多部虛擬機器遷移至另一部主機。
+如果**記憶體 \\ 可用 Mb**和**hyper-v 動態記憶體平衡器 (\*) 可用的 \\ 記憶體**計數器在主機上很低，您應該停止非必要的服務，並將一或多部虛擬機器遷移至另一部主機。
 
 如果虛擬機器中的**記憶體 \\ 可用 mb**計數器很低，您應該指派更多記憶體給虛擬機器。 如果您使用動態記憶體，您應該增加 [記憶體上限] 設定。
 
@@ -88,11 +86,11 @@ ms.locfileid: "85471413"
 
 您可以使用主機的下列效能計數器：
 
--   網路介面（*網路介面卡名稱*） \\ 位元組/秒
+-   網路介面 (*網路介面卡名稱*) \\ 位元組/秒
 
 您可以使用虛擬機器中的下列效能計數器：
 
--   Hyper-v 虛擬網路介面卡（*虛擬機器名稱 &lt; GUID &gt; *） \\ 位元組/秒
+-   Hyper-v 虛擬網路介面卡 (*虛擬機器名稱名稱 &lt; GUID &gt; *) \\ 位元組/秒
 
 如果 [**實體 NIC 位元組/秒**] 計數器大於或等於90% 的容量，您應該新增額外的網路介面卡、將虛擬機器遷移至另一部主機，以及設定網路 QoS。
 
@@ -110,13 +108,13 @@ ms.locfileid: "85471413"
 
 您可以使用主機的下列效能計數器：
 
--   實體磁片（*磁片磁碟機號*） \\ Avg. Disk sec/Read
+-   實體磁片 (*disk 字母*) \\ Avg. Disk sec/Read
 
--   實體磁片（*磁片磁碟機號*） \\ Avg. Disk sec/Write
+-   實體磁片 (*disk 字母*) \\ Avg. Disk sec/Write
 
--   實體磁片（*磁片磁碟機號*） \\ 平均磁片讀取佇列長度
+-   實體磁片 (*磁片磁碟機*) \\ 平均磁片讀取佇列長度
 
--   實體磁片（*磁片磁碟機號*） \\ 平均磁片寫入佇列長度
+-   實體磁片 (*磁片磁碟機*) \\ 平均磁片寫入佇列長度
 
 如果延遲持續大於50毫秒，您應該執行下列動作：
 
@@ -130,7 +128,7 @@ ms.locfileid: "85471413"
 
 -   使用 VHDX
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [Hyper-V 術語](terminology.md)
 

@@ -1,24 +1,22 @@
 ---
 title: logman update cfg
 description: Logman update cfg 命令的參考文章，可更新現有設定資料收集器的屬性。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9da4e8b4-3be5-42d3-b0b4-c429630c35c4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6e2d50504d8d4b9a92d36e4279a10526ddbd7877
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: addd9b1dfc60acdd5fa093970f393d4ebe61b3fa
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933890"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887193"
 ---
 # <a name="logman-update-cfg"></a>logman update cfg
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 更新現有設定資料收集器的屬性。
 
@@ -31,7 +29,7 @@ logman update cfg <[-n] <name>> [options]
 ### <a name="parameters"></a>參數
 
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | -s`<computer name>` | 在指定的遠端電腦上執行命令。 |
 | -config`<value>` | 指定包含命令選項的設定檔案。 |
@@ -51,15 +49,15 @@ logman update cfg <[-n] <name>> [options]
 | -[-] max`<value>` | 最大記錄檔大小（MB）或 SQL 記錄檔的最大記錄數目。 |
 | -[-] my.cnf`<[[hh:]mm:]ss>` | 當指定時間時，會在指定的時間已過時建立新的檔案。 未指定時間時，會在超過最大大小時建立新的檔案。 |
 | -y | 對所有問題回答 [是] 而不提示。 |
-| -[-] ni | 啟用（-ni）或停用（-ni）網路介面查詢。 |
-| -reg`<path [path [...]]>` | 指定要收集的登錄值。 |
-| -進行中`<query [query [...]]>` | 指定要使用 SQL 查詢語言收集的 WMI 物件。 |
-| -ftc`<path [path [...]]>` | 指定要收集之檔案的完整路徑。 |
+| -[-] ni | 啟用 (-ni) 或停用 (-ni) 網路介面查詢。 |
+| -reg`<path [path [...]]>` | 指定要收集的登錄值 (s) 。 |
+| -進行中`<query [query [...]]>` | 指定要使用 SQL 查詢語言收集的 WMI 物件 () 。 |
+| -ftc`<path [path [...]]>` | 指定要收集 (s) 的完整路徑。 |
 | /? | 顯示即時線上說明。 |
 
 #### <a name="remarks"></a>備註
 
-- 其中列出 [-]，加入額外的連字號（-）會否定選項。
+- 其中列出 [-]，加入額外的連字號 (-) 會將選項否定。
 
 ### <a name="examples"></a>範例
 

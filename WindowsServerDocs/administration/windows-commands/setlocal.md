@@ -1,20 +1,18 @@
 ---
 title: setlocal
 description: Setlocal 的參考文章，它會啟動批次檔中環境變數的當地語系化。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e4e4b6d3-3f1a-4851-a782-25ee2470e16e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4e990cf931e72bd8f6972db448d24db08c2e5208
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 30b84c9dcaf741c57393e680d3f9c9cb7b92f19b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934608"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882535"
 ---
 # <a name="setlocal"></a>setlocal
 
@@ -30,7 +28,7 @@ setlocal [enableextensions | disableextensions] [enabledelayedexpansion | disabl
 
 ## <a name="arguments"></a>引數
 
-|引數|說明|
+|引數|描述|
 |--------|-----------|
 |enableextensions|會啟用命令延伸模組，直到遇到相符的**endlocal**命令為止，不論在**setlocal**命令執行之前的設定為何。|
 |disableextensions|除非執行**setlocal**命令之前的設定，否則會停用命令延伸模組，直到遇到相符的**endlocal**命令為止。|
@@ -48,10 +46,10 @@ setlocal [enableextensions | disableextensions] [enabledelayedexpansion | disabl
     當您執行批次檔時，請使用**setlocal**來變更環境變數。 執行**setlocal**之後所做的環境變更是批次檔的本機。 Cmd.exe 程式會在遇到**endlocal**命令或到達批次檔尾時，還原先前的設定。
 -   嵌套命令
 
-    Batch 程式中可以有一個以上的**setlocal**或**endlocal**命令（也就是，也就是嵌套的命令）。
+    Batch 程式中可以有一個以上的**setlocal**或**endlocal**命令 (也就是) 的嵌套命令。
 -   在批次檔中測試命令延伸模組
 
-    **Setlocal**命令會設定 ERRORLEVEL 變數。 如果您傳遞 {**enableextensions**  |  **disableextensions**} 或 {**enabledelayedexpansion**  |  **disabledelayedexpansion**}，則 ERRORLEVEL 變數會設定為**0** （零）。 否則，它會設定為**1**。 您可以在批次腳本中使用這項資訊來判斷延伸模組是否可用，如下列範例所示：
+    **Setlocal**命令會設定 ERRORLEVEL 變數。 如果您傳遞 {**enableextensions**  |  **disableextensions**} 或 {**enabledelayedexpansion**  |  **disabledelayedexpansion**}，ERRORLEVEL 變數會設定為**0** ， (零) 。 否則，它會設定為**1**。 您可以在批次腳本中使用這項資訊來判斷延伸模組是否可用，如下列範例所示：
     ```
     setlocal enableextensions
     verify other 2>nul

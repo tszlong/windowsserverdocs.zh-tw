@@ -1,24 +1,22 @@
 ---
 title: 登出
 description: 登出命令的參考文章，它會將使用者從遠端桌面工作階段主機伺服器上的會話登出，並刪除會話。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 939f09cc-de8c-436c-a05d-aca5f2a06371
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d154b767302f5c536e0a7efb30d99ac0a8e087d5
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b8eb1b13d7eeddc03ead24bcda10062aea5e1cfe
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927165"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887069"
 ---
 # <a name="logoff"></a>登出
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 將使用者從遠端桌面工作階段主機伺服器上的會話登出，並刪除會話。
 
@@ -29,7 +27,7 @@ logoff [<sessionname> | <sessionID>] [/server:<servername>] [/v]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<sessionname>` | 指定會話的名稱。 這必須是使用中的會話。|
 | `<sessionID>` | 指定識別伺服器會話的數值識別碼。 |
