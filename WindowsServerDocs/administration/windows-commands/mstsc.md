@@ -1,26 +1,24 @@
 ---
 title: mstsc
-description: Mstsc 命令的參考文章，會建立遠端桌面工作階段主機伺服器或其他遠端電腦的連線、編輯現有的遠端桌面連線（.rdp）設定檔，並將使用用戶端連接管理員建立的舊版連接檔案遷移至新的 .rdp 連接檔案。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Mstsc 命令的參考文章，會建立遠端桌面工作階段主機伺服器或其他遠端電腦的連線、編輯現有的遠端桌面連線 ( .rdp) 設定檔，並將使用用戶端連接管理員建立的舊版連接檔案遷移至新的 .rdp 連接檔案。
 ms.topic: article
 ms.assetid: 59801227-1e7e-4dbd-96e6-f54102a3ce92
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cec9ef281c886964163c233022466d8478d65c79
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: abf4824c50b931944c96307f6c9df42e6924b638
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934843"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886155"
 ---
 # <a name="mstsc"></a>mstsc
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-建立遠端桌面工作階段主機伺服器或其他遠端電腦的連線、編輯現有的遠端桌面連線（.rdp）設定檔，並將以用戶端連接管理員建立的舊版連接檔案遷移至新的 .rdp 連接檔案。
+建立遠端桌面工作階段主機伺服器或其他遠端電腦的連線、編輯現有的遠端桌面連線 ( .rdp) 設定檔，並將使用用戶端連接管理員建立的舊版連接檔案遷移至新的 .rdp 連接檔案。
 
 ## <a name="syntax"></a>語法
 
@@ -32,7 +30,7 @@ mstsc.exe /migrate
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ------------|
 | `<connectionfile>` | 指定連接的 .rdp 檔案名。 |
 | /v:`<server>[:<port>]` | 指定遠端電腦，以及您想要連接的埠號碼（選擇性）。 |
@@ -52,7 +50,7 @@ mstsc.exe /migrate
 
 - 使用者建立的 .rdp 檔案預設會儲存在使用者的 [**檔**] 資料夾中，但可以儲存在任何位置。
 
-- 為了跨越監視器，監視器必須使用相同的解析度，而且必須水準對齊（也就是並存）。 目前不支援跨越用戶端系統上彼此垂直的多個監視器顯示桌面內容。
+- 為了跨越監視器，監視器必須使用相同的解析度，而且必須水準對齊 (也就是並存) 。 目前不支援跨越用戶端系統上彼此垂直的多個監視器顯示桌面內容。
 
 ### <a name="examples"></a>範例
 

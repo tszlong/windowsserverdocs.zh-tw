@@ -1,26 +1,24 @@
 ---
 title: reset session
 description: '* * * * 的參考文章'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4f029ecc-874e-415a-95a8-8b731bae35f9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 14ef7bdcb8490787b3fadff0cb842070f7a71446
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 2f910dfc1c13b0e8555078acfb4e7ad830049592
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956230"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883667"
 ---
 # <a name="reset-session"></a>reset session
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-可讓您重設（刪除）遠端桌面工作階段主機（rd 工作階段主機）伺服器上的會話。
+可讓您在遠端桌面工作階段主機 (rd 工作階段主機) 伺服器上，重設) 會話 (刪除。
 
 
 > [!NOTE]
@@ -57,6 +55,6 @@ reset session {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
   reset session 3
   ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 - [命令列語法索引鍵](command-line-syntax-key.md) 
-[遠端桌面服務（終端機服務）命令參考](remote-desktop-services-terminal-services-command-reference.md)
+[遠端桌面服務 (終端機服務) 命令參考](remote-desktop-services-terminal-services-command-reference.md)

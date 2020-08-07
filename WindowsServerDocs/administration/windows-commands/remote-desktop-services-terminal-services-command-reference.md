@@ -1,26 +1,24 @@
 ---
-title: 遠端桌面服務（終端機服務）命令列工具參考
-description: 遠端桌面服務（RDS）命令列工具的參考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+title: 遠端桌面服務 (終端機服務) 命令列工具參考
+description: 遠端桌面服務 (RDS) 命令列工具的參考文章。
 ms.topic: article
 ms.assetid: 2f371848-5c48-470c-908c-afbc95d3a805
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 36204940c339b937817457aa993ead6ed6644891
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: ae8156298c9b5108748afa114e1e3cabc0180441
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409689"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883848"
 ---
-# <a name="remote-desktop-services-terminal-services-command-line-tools-reference"></a>遠端桌面服務（終端機服務）命令列工具參考
+# <a name="remote-desktop-services-terminal-services-command-line-tools-reference"></a>遠端桌面服務 (終端機服務) 命令列工具參考
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-深入瞭解可用的遠端桌面服務（終端機服務）命令列工具，並提供詳細資訊的說明和連結。
+如需詳細資訊，請 (終端機服務) 命令列工具的可用遠端桌面服務，並提供說明和連結。
 
 > [!NOTE]
 > 在 Windows Server 2008 R2 中，終端機服務已重新命名為遠端桌面服務。 若要瞭解最新版本的新功能，請參閱[Windows Server 中遠端桌面服務的新功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
@@ -47,15 +45,15 @@ ms.locfileid: "87409689"
 | [query user](query-user.md) | 顯示遠端桌面工作階段主機伺服器上的使用者會話相關資訊。 |
 | [quser](quser.md) | 顯示遠端桌面工作階段主機伺服器上的使用者會話相關資訊。 |
 | [qwinsta](qwinsta.md) | 顯示遠端桌面工作階段主機伺服器上會話的相關資訊。 |
-| [rdpsign](rdpsign.md) | 可讓您以數位方式簽署遠端桌面通訊協定（.rdp）檔案。 |
-| [reset session](reset-session.md) | 可讓您在遠端桌面工作階段主機伺服器上重設（刪除）會話。 |
-| [rwinsta](rwinsta.md) | 可讓您在遠端桌面工作階段主機伺服器上重設（刪除）會話。 |
+| [rdpsign](rdpsign.md) | 可讓您以數位方式簽署遠端桌面通訊協定 ( .rdp) 檔案。 |
+| [reset session](reset-session.md) | 可讓您重設遠端桌面工作階段主機伺服器上會話)  (刪除。 |
+| [rwinsta](rwinsta.md) | 可讓您重設遠端桌面工作階段主機伺服器上會話)  (刪除。 |
 | [shadow](shadow.md) | 可讓您在遠端桌面工作階段主機伺服器上，遠端控制另一位使用者的使用中會話。 |
 | [tscon](tscon.md) | 連接到遠端桌面工作階段主機伺服器上的另一個會話。 |
 | [tsdiscon](tsdiscon.md) | 中斷會話與遠端桌面工作階段主機伺服器的連線。 |
 | [tskill](tskill.md) | 結束在遠端桌面工作階段主機伺服器上的會話中執行的處理常式。 |
 | [tsprof](tsprof.md) | 將遠端桌面服務的使用者設定資訊從一個使用者複製到另一個。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

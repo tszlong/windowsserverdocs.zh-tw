@@ -1,24 +1,22 @@
 ---
 title: mqbkup
 description: Mqbkup 命令的參考文章，它會將 MSMQ 訊息檔案和登錄設定備份到存放裝置，並還原先前儲存的訊息和設定。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 7bdd41c4-75ef-455f-b241-1d64a4c7acf5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 00518ab36f1886ccb3a1221a065715668fb02f47
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 7eecb016efd039d87774c3fd869e746df1e60178
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956920"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886302"
 ---
 # <a name="mqbkup"></a>mqbkup
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 將 MSMQ 訊息檔案和登錄設定備份到存放裝置，並還原先前儲存的訊息和設定。
 
@@ -69,7 +67,7 @@ mqbkup /b /y c:\oldbkup
 mqbkup /r c:\msmqbkup
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

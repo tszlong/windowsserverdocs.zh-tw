@@ -1,24 +1,22 @@
 ---
 title: 複製映射
 description: 複製映射的參考文章，它會複製相同映射群組內的影像。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: bea41cf4-36e6-4181-afa5-00170ebd4fdc
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 04af31680a99c5da60b721ad5dc31cbd3851538d
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 4995d45de3897c590dd232b316756330081b13ee
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933993"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892198"
 ---
 # <a name="copy-image"></a>複製映射
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 複製位於相同映射群組內的影像。 若要複製映射群組之間的影像，請使用 [[匯出-映射命令](using-the-export-image-command.md)] 命令，然後使用 [[新增映射命令](using-the-add-image-command.md)] 命令。
 
@@ -34,10 +32,10 @@ wdsutil [Options] /copy-Imagmedia:<Image name> [/Server:<Server name>]
          [/Description:<Description>]
 ```
 ### <a name="parameters"></a>參數
-|參數|說明|
+|參數|描述|
 |-------|--------|
 媒介<Image name>|指定要複製之影像的名稱。|
-|[/Server： <Server name> ]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。|
+|[/Server： <Server name> ]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或 (FQDN) 的完整功能變數名稱。 如果未指定伺服器名稱，則會使用本機伺服器。|
 媒體：安裝|指定要複製的影像類型。 此選項必須設定為 [**安裝**]。|
 |\mediaGroup： <Image group name> ]|指定包含要複製之影像的映射群組。 如果未指定映射群組，而且伺服器上只存在一個群組，則預設會使用該映射群組。 如果伺服器上有一個以上的映射群組，您就必須指定映射群組。|
 |[/Filename： <Filename> ]|指定要複製之影像的檔案名。 如果來源映射無法以名稱唯一識別，您就必須指定檔案名。|

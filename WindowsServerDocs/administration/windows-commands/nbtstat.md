@@ -1,28 +1,26 @@
 ---
 title: nbtstat
-description: Nbtstat 命令的參考文章，它會顯示 NetBIOS over TCP/IP （NetBT）通訊協定統計資料、本機電腦和遠端電腦的 NetBIOS 名稱表，以及 NetBIOS 名稱快取。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Nbtstat 命令的參考文章，它會顯示 NetBIOS over TCP/IP (NetBT) 通訊協定統計資料、本機電腦和遠端電腦的 NetBIOS 名稱表，以及 NetBIOS 名稱快取。
 ms.topic: article
 ms.assetid: 1d2ea99e-72f1-471f-9525-d2c49bf3be82
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e663559686d95a4aaa123e2d43731a6b613de080
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3367190fb751a0cb5081724c6ea8ad2b7f2c95ff
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934848"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886109"
 ---
 # <a name="nbtstat"></a>nbtstat
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-顯示 NetBIOS over TCP/IP （NetBT）通訊協定統計資料、本機電腦和遠端電腦的 NetBIOS 名稱表，以及 NetBIOS 名稱快取。 此命令也允許重新整理 NetBIOS 名稱快取，以及使用 Windows 網際網路名稱服務（WINS）註冊的名稱。 使用時不含參數，此命令會顯示說明資訊。
+顯示 NetBIOS over TCP/IP (NetBT) 通訊協定統計資料、本機電腦和遠端電腦的 NetBIOS 名稱表，以及 NetBIOS 名稱快取。 此命令也允許重新整理 NetBIOS 名稱快取，以及在 Windows 網際網路名稱服務中註冊的名稱 (WINS) 。 使用時不含參數，此命令會顯示說明資訊。
 
-只有當網際網路通訊協定（TCP/IP）通訊協定是在網路連線的網路介面卡內容中安裝為元件時，才可以使用此命令。
+只有當網際網路通訊協定 (TCP/IP) 通訊協定在網路連線的網路介面卡內容中安裝為元件時，才可使用此命令。
 
 ## <a name="syntax"></a>語法
 
@@ -32,10 +30,10 @@ nbtstat [/a <remotename>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | /a`<remotename>` | 顯示遠端電腦的 NetBIOS 名稱資料表，其中*remotename*是遠端電腦的 netbios 電腦名稱稱。 NetBIOS 名稱資料表是對應于該電腦上執行之 NetBIOS 應用程式的 NetBIOS 名稱清單。 |
-| /A`<IPaddress>` | 顯示遠端電腦的 NetBIOS 名稱表，由遠端電腦的 IP 位址（小數點十進位標記法）所指定。 |
+| /A`<IPaddress>` | 顯示遠端電腦的 NetBIOS 名稱資料表（由 IP 位址指定） (以小數點十進位標記法) 的遠端電腦。 |
 | /C | 顯示 NetBIOS 名稱快取的內容、NetBIOS 名稱的資料表及其已解析的 IP 位址。 |
 | /n | 顯示本機電腦的 NetBIOS 名稱表。 [**已註冊**] 狀態表示此名稱是透過廣播或 WINS 伺服器註冊。 |
 | /r | 顯示 NetBIOS 名稱解析統計資料。 |
@@ -52,29 +50,29 @@ nbtstat [/a <remotename>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
 
 - **Nbtstat**命令所產生的資料行標題包括：
 
-    | 朝向 | Description |
+    | 朝向 | 描述 |
     | ------- | ----------- |
     | 輸入 | 收到的位元組數目。 |
     | 輸出 | 已傳送的位元組數。 |
-    | 輸入/輸出 | 連線是從電腦（輸出）還是從另一部電腦連接到本機電腦（輸入）。 |
+    | 輸入/輸出 | 無論是從電腦 (輸出) 還是從另一部電腦連線到本機電腦 (輸入) 。 |
     | 存留期 | 名稱資料表快取專案在清除前存留的剩餘時間。 |
     | 本機名稱 | 與連接相關聯的本機 NetBIOS 名稱。 |
     | 遠端主機 | 與遠端電腦相關聯的名稱或 IP 位址。 |
     | `<03>` | 轉換成十六進位之 NetBIOS 名稱的最後一個位元組。 每個 NetBIOS 名稱長度為16個字元。 最後一個位元組通常具有特殊的重要性，因為相同的名稱可能會出現在電腦上數次，但只有最後一個位元組不同。 例如， `<20>` 是 ASCII 文字中的空格。 |
-    | 類型 | 名稱的類型。 名稱可以是唯一的名稱或組名。 |
-    | 狀態 | 遠端電腦上的 NetBIOS 服務是否正在執行（已註冊）或重複的電腦名稱稱已註冊相同的服務（衝突）。 |
-    | State | NetBIOS 連接的狀態。 |
+    | type | 名稱的類型。 名稱可以是唯一的名稱或組名。 |
+    | 狀態 | 遠端電腦上的 NetBIOS 服務是否正在執行 (註冊) 或重複的電腦名稱稱已註冊相同的服務 (衝突) 。 |
+    | 州 | NetBIOS 連接的狀態。 |
 
 - 可能的 NetBIOS 連接狀態包括：
 
-    | State | Description |
+    | 州 | 描述 |
     | ------- | ----------- |
     | 連線 | 已建立會話。 |
     | 接聽 | 此端點適用于輸入連線。 |
     | 閒置 | 已開啟此端點，但無法接收連接。 |
     | Connecting | 會話在連線階段中，而目的地的名稱與 IP 位址對應已被解析。 |
     | 接受 | 目前已接受傳入會話，很快就會連接。 |
-    | 正在 | 會話嘗試重新連線（第一次嘗試連接失敗）。 |
+    | 正在 | 會話嘗試重新連線 (無法在第一次嘗試時連接) 。 |
     | 輸出 | 會話正在連接階段，而且目前正在建立 TCP 連線。 |
     | 輸入 | 輸入會話在連接階段。 |
     | 正在中斷連線 | 會話正在中斷連接的過程中。 |

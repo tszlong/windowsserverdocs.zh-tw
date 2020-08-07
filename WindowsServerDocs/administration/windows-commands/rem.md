@@ -1,20 +1,18 @@
 ---
 title: rem
 description: Rem 命令的參考文章，會記錄腳本、批次或 config.sys 檔案中的批註。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 1a45b585-a83c-4ff6-badd-ff40f34cec23
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fe0bfce3f9f72d0a32ef5b3bb540e5a297df24a1
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 6593e7700853af3658206b741817a86933fa66d1
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409699"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883853"
 ---
 # <a name="rem"></a>rem
 
@@ -37,7 +35,7 @@ rem [<comment>]
 
 - **Rem**命令不會在螢幕上顯示批註。 若要在螢幕上顯示批註，您必須在檔案中包含**echo on**命令。
 
-- 您無法 `<` 在批次檔批註中使用重新導向字元（或 `>` ）或管道（ `|` ）。
+- 您無法 `<` 在批次檔批註中使用重新導向字元 (或 `>`) 或管道 (`|`) 。
 
 - 雖然您可以使用**rem**而不加批註來將垂直間距新增至批次檔，但您也可以使用空白行。 處理批次程式時，會忽略空白行。
 
@@ -79,6 +77,6 @@ create partition logical
 assign f:
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

@@ -1,24 +1,22 @@
 ---
 title: convert mbr
-description: Convert mbr 命令的參考文章，其會將具有 GUID 磁碟分割表格（GPT）磁碟分割樣式的空白基本磁碟轉換成具有主開機記錄（MBR）磁碟分割樣式的基本磁碟。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Convert mbr 命令的參考文章，它會將具有 GUID 磁碟分割表格的空白基本磁碟轉換成具有主開機記錄 (MBR) 磁碟分割樣式的基本磁碟，以將具有 GUID 分割區資料表 (GPT) 磁碟分割樣式。
 ms.topic: article
 ms.assetid: a635a4c0-af73-4330-b021-51d483424537
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 784521c99e3fc0cf8d372f95424af785636a0687
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 61f387d55f310d2ea610aa3033464c66addfc353
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958510"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892555"
 ---
 # <a name="convert-mbr"></a>convert mbr
 
-將具有 GUID 磁碟分割表格（GPT）磁碟分割樣式的空白基本磁碟，轉換為具有主開機記錄（MBR）磁碟分割樣式的基本磁碟。 必須選取基本磁碟，此操作才能成功。 使用 [[選取磁片] 命令](select-disk.md)來選取基本磁碟，並將焦點轉移到其上。
+將具有 GUID 磁碟分割表格的空白基本磁碟，轉換為具有主開機記錄 (MBR) 磁碟分割樣式的基本磁碟，並將 GUID 分割區資料表 (GPT) 磁碟分割樣式。 必須選取基本磁碟，此操作才能成功。 使用 [[選取磁片] 命令](select-disk.md)來選取基本磁碟，並將焦點轉移到其上。
 
 > [!IMPORTANT]
 > 磁碟必須是空的，才能轉換成基本磁蹀。 在轉換磁碟之前，先備份您的資料，然後刪除全部磁碟分割或磁碟區。
@@ -46,7 +44,7 @@ convert mbr [noerr]
 convert mbr
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -1,24 +1,22 @@
 ---
 title: 新增-D g e
 description: D g e 的參考文章，它會從現有的開機映射建立新的探索映射。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ede9fbbb-0bba-4309-8c21-3cc13e1dc3cd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d6730dd2b5ffd7cbec2ed7ec9706747072b36fab
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b6c84735b868af92c6a3f2f16dc872e12c9f38c1
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932438"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892406"
 ---
 # <a name="new-discoverimage"></a>新增-D g e
 
-從現有的開機映射建立新的探索映射。 探索映射是強制在 Windows 部署服務模式下啟動 Setup.exe 程式，然後探索 Windows 部署服務伺服器的開機映射。 這些映射通常是用來將映射部署到無法開機至 PXE 的電腦。 如需詳細資訊，請參閱建立影像（ [https://go.microsoft.com/fwlink/?LinkId=115311](https://go.microsoft.com/fwlink/?LinkId=115311) ）。
+從現有的開機映射建立新的探索映射。 探索映射是強制在 Windows 部署服務模式下啟動 Setup.exe 程式，然後探索 Windows 部署服務伺服器的開機映射。 這些映射通常是用來將映射部署到無法開機至 PXE 的電腦。 如需詳細資訊，請參閱 ([https://go.microsoft.com/fwlink/?LinkId=115311](https://go.microsoft.com/fwlink/?LinkId=115311)) 建立映射。
 
 ## <a name="syntax"></a>語法
 
@@ -37,9 +35,9 @@ WDSUTIL [Options] /New-DiscoverImage [/Server:<Server name>]
 
 ### <a name="parameters"></a>參數
 
-|        參數         |                                                                                                                                                                                                                                                                                                                                                                                                                       說明                                                                                                                                                                                                                                                                                                                                                                                                                       |
+|        參數         |                                                                                                                                                                                                                                                                                                                                                                                                                       描述                                                                                                                                                                                                                                                                                                                                                                                                                       |
 |--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [/Server： \<Server name> ] |                                                                                                                                                                                                                                                                                                                                     指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。                                                                                                                                                                                                                                                                                                                                     |
+| [/Server： \<Server name> ] |                                                                                                                                                                                                                                                                                                                                     指定伺服器的名稱。 這可以是 NetBIOS 名稱或 (FQDN) 的完整功能變數名稱。 如果未指定伺服器名稱，則會使用本機伺服器。                                                                                                                                                                                                                                                                                                                                     |
 |   包\<Image name>   |                                                                                                                                                                                                                                                                                                                                                                                                      指定來源開機映射的名稱。                                                                                                                                                                                                                                                                                                                                                                                                       |
 |    /Architecture： {x86    |                                                                                                                                                                                                                                                                                                                                                                                                                          ia64                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | [/Filename： \<File name> ] |                                                                                                                                                                                                                                                                                                                                                                         如果無法以名稱唯一識別映射，您就必須使用這個選項來指定檔案名。                                                                                                                                                                                                                                                                                                                                                                          |

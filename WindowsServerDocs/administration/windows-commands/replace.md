@@ -1,20 +1,18 @@
 ---
 title: 取代
 description: 瞭解如何使用 replace 命令來取代檔案。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 6143661e-d90f-4812-b265-6669b567dd1f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 4ac424154968b4f4c55664d0d20f524345b87986
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 34d1adfc6a92dce33a6a9bbac308d3338db3934e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722385"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883683"
 ---
 # <a name="replace"></a>取代
 
@@ -27,16 +25,16 @@ ms.locfileid: "82722385"
 ## <a name="syntax"></a>語法
 
 ```
-replace [<Drive1>:][<Path1>]<FileName> [<Drive2>:][<Path2>] [/a] [/p] [/r] [/w] 
-replace [<Drive1>:][<Path1>]<FileName> [<Drive2>:][<Path2>] [/p] [/r] [/s] [/w] [/u] 
+replace [<Drive1>:][<Path1>]<FileName> [<Drive2>:][<Path2>] [/a] [/p] [/r] [/w]
+replace [<Drive1>:][<Path1>]<FileName> [<Drive2>:][<Path2>] [/p] [/r] [/s] [/w] [/u]
 ```
 
 ### <a name="parameters"></a>參數
 
 |參數|描述|
 |---------|-----------|
-|[\<Drive1>：][\<Path1>]\<檔案名>|指定來源檔案或檔案集的位置和名稱。 *FileName*是必要的，而且可以包含萬用字元（**&#42;** 和 **？**）。|
-|[\<Drive2>：][\<Path2>]|指定目的檔案的位置。 您不能指定所取代檔案的檔案名。 如果您未指定磁片磁碟機或路徑， **replace**會使用目前的磁片磁碟機和目錄做為目的地。|
+|[\<Drive1>:][\<Path1>]\<FileName>|指定來源檔案或檔案集的位置和名稱。 *FileName*是必要的，而且可以包含萬用字元 (**&#42;** 和 **？**) 。|
+|[\<Drive2>:][\<Path2>]|指定目的檔案的位置。 您不能指定所取代檔案的檔案名。 如果您未指定磁片磁碟機或路徑， **replace**會使用目前的磁片磁碟機和目錄做為目的地。|
 |/a|將新檔案新增至目的地目錄，而不是取代現有的檔案。 您不能將此命令列選項與 **/s**或 **/u**命令列選項搭配使用。|
 |/p|在取代目的地檔案或新增原始程式檔之前，先提示您確認。|
 |/r|取代唯讀和未受保護的檔案。 如果您嘗試取代唯讀檔案，但未指定 **/r**，則會產生錯誤，並停止取代作業。|
@@ -47,17 +45,17 @@ replace [<Drive1>:][<Path1>]<FileName> [<Drive2>:][<Path2>] [/p] [/r] [/s] [/w] 
 
 ## <a name="remarks"></a>備註
 
-- As **replace**新增或取代檔案時，檔案名會顯示在畫面上。 **Replace**完成後，會顯示下列其中一種格式的摘要行：  
+- As **replace**新增或取代檔案時，檔案名會顯示在畫面上。 **Replace**完成後，會顯示下列其中一種格式的摘要行：
   ```
   nnn files added
   nnn files replaced
   no file added
   no file replaced
-  ```  
+  ```
 - 如果您使用的是軟碟，而且需要在**更換**作業期間切換磁片，您可以指定 **/w**命令列選項，讓**replace**會等待您切換磁片。
 - 您不能使用**replace**來更新隱藏的檔案或系統檔案。
-- 下表顯示每個結束代碼和其意義的簡短描述：  
-  |結束代碼|描述|
+- 下表顯示每個結束代碼和其意義的簡短描述：
+  |結束碼|描述|
   |---------|-----------|
   |0|**Replace**命令已成功取代或新增檔案。|
   |1|**Replace**命令遇到不正確的 MS-DOS 版本。|
@@ -70,12 +68,12 @@ replace [<Drive1>:][<Path1>]<FileName> [<Drive2>:][<Path2>] [/p] [/r] [/s] [/w] 
 > [!NOTE]
 > 您可以在 batch 程式中的**if**命令列上使用 ERRORLEVEL 參數，以處理**replace**所傳回的結束代碼。
 
-## <a name="examples"></a><a name="BKMK_examples"></a>範例
+## <a name="examples"></a><a name="BKMK_examples"></a>典型
 
-若要更新名為 phone 的檔案的所有版本（出現在 C 磁片磁碟機上的多個目錄中），請從磁片磁碟機 A 中的軟碟使用最新版本的 phone. cli 檔案，輸入：
+若要更新名稱為 phone. cli 的所有檔案版本 (該檔案會出現在磁片磁碟機 C) 上的多個目錄中，並將最新版本的 phone. cli 檔案從磁片磁碟機 A 中的軟碟，請輸入：
 
 `replace a:\phones.cli c:\ /s`
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

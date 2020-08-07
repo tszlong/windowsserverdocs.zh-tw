@@ -1,20 +1,18 @@
 ---
 title: reg save
 description: Reg save 命令的參考文章，會將登錄的指定子機碼、專案和值的複本儲存在指定的檔案中。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: b326482b-c8af-467d-a20c-0481eeda3d5c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4051d69819cfd3550d094de8e9d4bc73f77c4e4b
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 187811b277ca109ac3f3e1517aeb169bd8baca15
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931032"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884017"
 ---
 # <a name="reg-save"></a>reg save
 
@@ -28,9 +26,9 @@ reg save <keyname> <filename> [/y]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 |--|--|
-| `<keyname>` | 指定子機碼的完整路徑。 若要指定遠端電腦，請將電腦名稱稱（格式為）包含在 `\\<computername>\` *keyname*中。 省略 `\\<computername>\` 會使操作預設為本機電腦。 *Keyname*必須包含有效的根金鑰。 本機電腦的有效根金鑰為： **HKLM**、 **HKCU**、 **HKCR**、 **HKU**和**HKCC**。 如果指定遠端電腦，有效的根金鑰為： **HKLM**和**HKU**。 如果登錄機碼名稱包含空格，請用引號括住機碼名稱。 |
+| `<keyname>` | 指定子機碼的完整路徑。 若要指定遠端電腦，請將電腦名稱稱的格式加上 `\\<computername>\`) 作為*keyname*的一部分 (。 省略 `\\<computername>\` 會使操作預設為本機電腦。 *Keyname*必須包含有效的根金鑰。 本機電腦的有效根金鑰為： **HKLM**、 **HKCU**、 **HKCR**、 **HKU**和**HKCC**。 如果指定遠端電腦，有效的根金鑰為： **HKLM**和**HKU**。 如果登錄機碼名稱包含空格，請用引號括住機碼名稱。 |
 | `<filename>` | 指定所建立檔案的名稱和路徑。 如果未指定路徑，則會使用目前的路徑。 |
 | /y | 覆寫名稱為*filename*的現有檔案，而不提示確認。 |
 | /? | 在命令提示字元顯示說明。 |
@@ -41,7 +39,7 @@ reg save <keyname> <filename> [/y]
 
 - **Reg 儲存**作業的傳回值如下：
 
-    | 值 | 說明 |
+    | 值 | 描述 |
     |--|--|
     | 0 | 成功 |
     | 1 | 失敗 |

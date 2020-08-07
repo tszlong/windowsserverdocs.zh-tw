@@ -1,24 +1,22 @@
 ---
 title: change user
 description: 變更使用者命令的參考文章，這會變更遠端桌面工作階段主機伺服器的安裝模式。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 6202f024-8cf5-411e-89b1-ee37ff46499d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5b17ba6f6245176f09eca301a7b2f44a8f439def
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ca78126095b11ca7bf900d10c253cd7ad19fcc12
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955280"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892891"
 ---
 # <a name="change-user"></a>change user
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 變更遠端桌面工作階段主機伺服器的安裝模式。
 
@@ -46,7 +44,7 @@ change user {/execute | /install | /query}
 
 - 第一次執行應用程式時，它會在主目錄中搜尋其 .ini 檔案。 如果在主目錄中找不到 .ini 檔案，但是在系統目錄中找到，遠端桌面服務將 .ini 檔案複製到主目錄，確保每個使用者都有一個應用程式 .ini 檔案的唯一複本。 所有新的 .ini 檔案都會建立在主目錄中。
 
-- 每位使用者都應該有一個應用程式的 .ini 檔案的唯一複本。 這可防止不同使用者可能會有不相容的應用程式設定（例如，不同的預設目錄或螢幕解析度）。
+- 每位使用者都應該有一個應用程式的 .ini 檔案的唯一複本。 這可防止不同使用者可能會有不相容的應用程式設定 (例如，不同的預設目錄或螢幕解析度) 。
 
 - 當系統執行**變更使用者/install**時，會發生幾件事。 所有建立的登錄專案都會以**HKEY_LOCAL_MACHINE \Software\microsoft\windows server\ NT\Currentversion\Terminal Server\Install**為依據，在**\SOFTWARE**子機碼或**\MACHINE**子機碼中。 新增至**HKEY_CURRENT_USER**的子機碼會在**\SOFTWARE**子機碼下複製，而新增至**HKEY_LOCAL_MACHINE**的子機碼會複製到**\MACHINE**子機碼下。 如果應用程式使用系統呼叫（例如 GetWindowsdirectory）來查詢 Windows 目錄，rd 工作階段主機伺服器會傳回 systemroot 目錄。 如果使用系統呼叫（例如 WritePrivateProfileString）新增任何 .ini 檔案專案，則會將它們新增至 systemroot 目錄底下的 .ini 檔案。
 
@@ -74,7 +72,7 @@ change user {/execute | /install | /query}
   change user /query
   ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

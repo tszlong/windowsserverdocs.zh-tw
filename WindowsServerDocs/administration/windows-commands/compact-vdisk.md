@@ -1,26 +1,24 @@
 ---
 title: compact vdisk
-description: Compact vdisk 命令的參考文章，可減少動態擴充虛擬硬碟（VHD）檔案的實際大小。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Compact vdisk 命令的參考文章，可減少動態擴充虛擬硬碟 (VHD) 檔案的實際大小。
 ms.topic: article
 ms.assetid: 40ca0820-67de-4160-b62a-e9bf63fe2790
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7379975981c2df386b7180c814799f7129eee7da
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 0e8f29cf7188d2630f15bee9bde2910c64f325b5
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929051"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892630"
 ---
 # <a name="compact-vdisk"></a>compact vdisk
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-減少動態擴充虛擬硬碟（VHD）檔案的實體大小。 這個參數很有用，因為當您新增檔案時，動態擴充 Vhd 的大小會增加，但當您刪除檔案時，不會自動縮減大小。
+減少動態擴充虛擬硬碟 (VHD) 檔案的實體大小。 這個參數很有用，因為當您新增檔案時，動態擴充 Vhd 的大小會增加，但當您刪除檔案時，不會自動縮減大小。
 
 ## <a name="syntax"></a>語法
 

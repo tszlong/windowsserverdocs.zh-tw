@@ -1,20 +1,18 @@
 ---
 title: chkntfs
 description: Chkntfs 命令的參考文章，它會在電腦啟動時顯示或修改自動磁片檢查。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 93eca810-8699-4716-8e9d-aecd54f704be
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4d2a19a479ec3b00bda83ecded91f5fbb7941ca0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d0f0c0a956cb2b286d4f5b1f34332dc01d984462
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930713"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892734"
 ---
 # <a name="chkntfs"></a>chkntfs
 
@@ -35,9 +33,9 @@ chkntfs [/c <volume> [...]]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
-| `<volume>` [...] | 指定電腦啟動時要檢查的一或多個磁片區。 有效的磁片區包含磁碟機號（後面接著冒號）、掛接點或磁片區名稱。 |
+| `<volume>` [...] | 指定電腦啟動時要檢查的一或多個磁片區。 有效的磁片區包含磁碟機號 (後面接著冒號) 、掛接點或磁片區名稱。 |
 | /d | 還原所有的**chkntfs**預設設定，但自動檢查檔案的倒數計時時間除外。 根據預設，系統會在電腦啟動時檢查所有磁片區，而**chkdsk**會在那些已變更的磁片區上執行。 |
 | /t [ `:<time>` ] | 將 Autochk.exe 起始倒數計時時間變更為指定的時間量（以秒為單位）。 如果您沒有輸入時間， **/t**會顯示目前的倒數計時時間。 |
 | /x `<volume>` [...] | 指定當電腦啟動時要排除的一或多個磁片區，即使磁片區標示為需要**chkdsk**也一樣。 |

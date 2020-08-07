@@ -1,20 +1,18 @@
 ---
 title: 等等
 description: '[更多] 命令的參考文章，一次會顯示一個輸出畫面。'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ded14f6a-d82f-4aeb-a2d8-7ec1c94dfb8f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/26/2019
-ms.openlocfilehash: ec7f8c29f71389a6b583fda805c32ddf872321b4
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 198f3f3f3b80282d876e4fdda9e7cde649a8c7da
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956950"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886376"
 ---
 # <a name="more"></a>等等
 
@@ -33,7 +31,7 @@ more [/c] [/p] [/s] [/t<n>] [+<n>] [<files>]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<command>` | 指定您想要顯示輸出的命令。 |
 | /C | 在顯示頁面之前清除畫面。 |
@@ -47,7 +45,7 @@ more [/c] [/p] [/s] [/t<n>] [+<n>] [<files>]
 
 #### <a name="remarks"></a>備註
 
-- 在**更多**提示（）中可接受下列子命令 `-- More --` ，包括：
+- 下列子命令會在 () 的**更多**提示下接受 `-- More --` ，包括：
 
     | Key | 動作 |
     | --- | ------ |
@@ -60,9 +58,9 @@ more [/c] [/p] [/s] [/t<n>] [+<n>] [<files>]
     | 今日`<n>` | 按**S**以略過接下來的*n*行。 |
     | ? | 按下 **？** 以顯示**更多**提示中可用的命令。|
 
-- 如果您使用重新導向字元（ `<` ），您也必須指定檔案名做為來源。
+- 如果您使用 () 的重新導向字元 `<` ，則也必須指定檔案名做為來源。
 
-- 如果您使用管道（ `|` ），您可以使用**目錄**、**排序**和**類型**之類的命令。
+- 如果您使用 [管道 (] `|`) ，則可以使用 [ **dir**]、[ **sort**] 和 [ **type**] 這類命令。
 
 ### <a name="examples"></a>範例
 
@@ -106,8 +104,8 @@ more s
 
 [**更多**] 提示會詢問您要略過的行數，如下所示： `-- More -- Lines:` 。 輸入要略過的行數，然後按 ENTER 鍵。 畫面會變更，以顯示這些線條會略過。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [Windows 修復環境（WinRE）](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)
+- [Windows 修復環境 (WinRE) ](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)

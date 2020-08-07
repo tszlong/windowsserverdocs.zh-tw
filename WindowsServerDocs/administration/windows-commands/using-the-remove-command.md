@@ -1,24 +1,22 @@
 ---
 title: 使用 remove 命令
 description: 移除的參考文章，這會移除各種與驅動程式相關的資訊。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e3f1644d-6028-4c47-a9fd-227bcdcc6123
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dc839eee2a5c1bcc21902b214632152b50175294
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: bf3dfa5481c000a6b81a1c4da07493099bbe81a8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409859"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892389"
 ---
 # <a name="using-the-remove-command"></a>使用 remove 命令
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 ## <a name="subcommands"></a>子
 |Subommand|描述|

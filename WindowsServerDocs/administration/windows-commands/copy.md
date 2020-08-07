@@ -1,27 +1,25 @@
 ---
 title: copy
 description: 複製命令的參考文章，可將一或多個檔案從一個位置複製到另一個位置。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9624d4a1-349a-4693-ad00-1d1d4e59e9ac
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3e15db58ab8fa8c3a0114b695cb85eec7684039e
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: cb48cbc4ccc9a0d68bfc6f5cdda8ac5e7f1a6c87
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958470"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892509"
 ---
 # <a name="copy"></a>copy
 
 將一個或多個檔案從一個位置複製到另一個位置。
 
 > [!NOTE]
-> 您也可以從修復主控台使用具有不同參數的**copy**命令。 如需有關修復主控台的詳細資訊，請參閱[Windows 修復環境（WINDOWS RE）](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)。
+> 您也可以從修復主控台使用具有不同參數的**copy**命令。 如需有關修復主控台的詳細資訊，請參閱[Windows 修復環境 (WINDOWS RE) ](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)。
 
 ## <a name="syntax"></a>語法
 
@@ -47,32 +45,32 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <source> [/a | /b] [+<source> [/a 
 
 #### <a name="remarks"></a>備註
 
-- 您可以複製使用檔案結尾字元（CTRL + Z）來表示檔案結尾的 ASCII 文字檔。
+- 您可以複製使用檔案結尾字元的 ASCII 文字檔 (CTRL + Z) 來表示檔案結尾。
 
 - 如果 **/a**在命令列上的檔案清單前面或後面，則會套用至所有列出的檔案，直到**複製**遇到 **/b**為止。 在此情況下， **/b**會套用至位於 **/b**前面的檔案。
 
     **/A**的效果取決於其在命令列字串中的位置：
-      - 如果 **/a**遵循*來源*， **copy**命令會將檔案視為 ASCII 檔案，並複製第一個檔案結尾字元（CTRL + Z）之前的資料。
-      - 如果 **/a**跟隨*目的地*， **copy**命令會將檔案結尾字元（CTRL + Z）新增為檔案的最後一個字元。
+      - 如果 **/a**遵循*source*， **copy**命令會將檔案視為 ASCII 檔案，然後將第一個檔案結尾字元的資料複製 (CTRL + Z) 。
+      - 如果 **/a**跟隨*目的地*， **copy**命令會將檔案結尾字元 (CTRL + Z) 做為檔案的最後一個字元。
 
 - 如果 **/b**會指示命令直譯器讀取目錄中檔案大小所指定的位元組數目。 **/b**是**copy**的預設值，除非**copy**結合了檔案。
 
 - 如果**在**命令列上的檔案清單前面或後面接著，它會套用至所有列出的檔案，直到**複製**遇到 **/a**為止。 在此情況下， **/a**會套用至 **/a**前面的檔案。
 
-    **/B**的效果取決於它在命令列字串中的位置：-如果 **/b**跟隨*來源*， **copy**命令會複製整個檔案，包括任何檔案結尾字元（CTRL + Z）。
-        -如果 **/b**跟隨*目的地*， **copy**命令就不會加入檔案結尾字元（CTRL + Z）。
+    **/B**的效果取決於它在命令列字串中的位置：-如果 **/b**跟隨*來源*， **copy**命令會複製整個檔案，包括 (CTRL + Z) 的任何檔案結尾字元。
+        -如果 **/b**跟隨*目的地*， **copy**命令就不會 (CTRL + Z) 新增檔案結尾字元。
 
 - 如果無法驗證寫入作業，則會出現錯誤訊息。 雖然**copy**命令很少發生記錄錯誤，但是您可以使用 **/v**來驗證是否已正確記錄重要資料。 **/V**命令列選項也會減緩**複製**命令的速度，因為必須檢查磁片上所記錄的每個磁區。
 
 - 如果在**COPYCMD**環境變數中預設為 **/y** ，您可以在命令列中使用 **/-y**來覆寫此設定。 根據預設，除非在批次腳本中執行**copy**命令，否則當您取代此設定時，系統會提示您。
 
-- 若要附加檔案，請針對 [*目的地*] 指定單一檔案，但為 [*來源*] 輸入多個檔案（使用萬用字元或*file1* + *file2* + *file3*格式）。
+- 若要附加檔案，請為*目的地*指定單一檔案，但*來源* (的多個檔案使用萬用字元或*file1* + *file2* + *file3*格式) 。
 
-- 如果在複製階段期間中斷連接（例如，如果伺服器離線中斷連線），您可以在重新建立連接之後，使用**copy/z**繼續。 **/Z**選項也會顯示針對每個檔案完成的複製作業百分比。
+- 如果連接在複製階段期間遺失 (例如，如果離線服務器中斷連線) ，您可以在重新建立連線之後，使用**copy/z**繼續進行。 **/Z**選項也會顯示針對每個檔案完成的複製作業百分比。
 
 - 您可以將裝置名稱替換成一或多個出現在*來源*或*目的地的位置*。
 
-- 如果*目的地*是裝置（例如 Com1 或 Lpt1）， **/b**選項會以二進位模式將資料複製到裝置。 在二進位模式中， **copy/b**會將所有的字元（包括像是 Ctrl + C、Ctrl + S、Ctrl + Z 和 ENTER 等特殊字元）複製到裝置的資料。 不過，如果您省略 **/b**，資料會以 ASCII 模式複製到裝置。 在 ASCII 模式中，特殊字元可能會在複製過程中合併檔案。
+- 如果*目的地*是裝置 (例如，Com1 或 Lpt1) ，則 **/b**選項會以二進位模式將資料複製到裝置。 在二進位模式中， **copy/b**會複製所有字元 (包括特殊字元，例如 Ctrl + C、Ctrl + S、Ctrl + Z，然後輸入) 至裝置，做為資料。 不過，如果您省略 **/b**，資料會以 ASCII 模式複製到裝置。 在 ASCII 模式中，特殊字元可能會在複製過程中合併檔案。
 
 - 如果您未指定目的地檔案，則會使用與原始檔案相同的名稱、修改日期和修改時間來建立複本。 新的複本會儲存在目前磁片磁碟機的目前目錄中。 如果原始程式檔位於目前的磁片磁碟機上，且您未指定不同的磁片磁碟機或目錄作為目的地檔案， **copy**命令就會停止，並顯示下列錯誤訊息：
 
@@ -95,7 +93,7 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <source> [/a | /b] [+<source> [/a 
 
 ## <a name="examples"></a>範例
 
-若要將名為*memo.doc*的檔案複製到目前磁片磁碟機中的*letter.doc* ，並確定檔案結尾字元（CTRL + Z）位於複製檔案的結尾，請輸入：
+若要將名為*memo.doc*的檔案複製到目前磁片磁碟機中的*letter.doc* ，並確定 (CTRL + Z) 的檔案結尾字元位於複製檔案的結尾處，請輸入：
 
 ```
 copy memo.doc letter.doc /a
@@ -110,7 +108,7 @@ copy robin.typ c:\birds
 > [!NOTE]
 > 如果 [*鳥瞰*] 目錄不存在，則會將檔案資源類型的*typ*複製到名為 [*鳥*] 的檔案中，該檔案位於磁片磁碟機 C 的根目錄中。
 
-若要結合位於目前目錄中的*Mar89 rpt*、 *Apr89*和*May89*，並將它們放在名為*Report*的檔案中（也在目前的目錄中），請輸入：
+若要結合位於目前目錄中的*Mar89 rpt*、 *Apr89、rpt*和*May89*，並將它們放在名為*Report*的檔案中 (也可以在目前目錄) 中輸入：
 
 ```
 copy mar89.rpt + apr89.rpt + may89.rpt Report
@@ -152,7 +150,7 @@ copy *.txt + *.ref *.doc
 copy *.txt + *.ref Combined.doc
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

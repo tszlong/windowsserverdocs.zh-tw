@@ -1,20 +1,18 @@
 ---
 title: msiexec
 description: Msiexec 命令的參考文章，提供從命令列安裝、修改和執行 Windows Installer 作業的方法。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 122eb0ce-ecbc-4909-a52a-15c3413619af
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b1224d4dfeefd850dcc29e523972351b8cdd9778
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: a72798d7bdd94b3315d54e866e78145af4db1d79
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956870"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886172"
 ---
 # <a name="msiexec"></a>msiexec
 
@@ -147,7 +145,7 @@ msiexec.exe [/i][/x] <path_to_package> [/L{i|w|e|a|r|u|c|m|o|p|v|x+|!|*}] <path_
 | /lx | 開啟記錄功能，並在輸出記錄檔中包含額外的調試資訊。 |
 | /l + | 開啟記錄功能，並將資訊附加至現有的記錄檔。 |
 | /l! | 開啟記錄，並將每一行排清到記錄檔。 |
-| /l | 開啟記錄並記錄所有資訊，但詳細資訊（**/lv**）或額外的調試資訊（**/lx**）除外。 |
+| /l | 開啟記錄並記錄所有資訊，但詳細資訊 (**/lv**) 或額外的調試資訊 (**/lx**) 。 |
 | `<path_to_logfile>` | 指定輸出記錄檔的位置和名稱。 |
 
 #### <a name="examples"></a>範例
@@ -173,7 +171,7 @@ msiexec.exe [/p][/update][/uninstall[/package<product_code_of_package>]] <path_t
 | 參數 | 描述 |
 | ------- | -------- |
 | /p | 安裝修補程式。 如果您要以無訊息方式安裝，您也必須將 REINSTALLMODE 屬性設定為*ecmus* ，並重新安裝為*ALL*。 否則，修補程式只會更新目標裝置上快取的 MSI。 |
-| /update | [安裝修補程式] 選項。 如果您要套用多個更新，您必須使用分號來分隔它們（;)。 |
+| /update | [安裝修補程式] 選項。 如果您要套用多個更新，您必須使用分號 ( 來分隔它們; ) 。 |
 | /package | 安裝或設定產品。 |
 
 #### <a name="examples"></a>範例
@@ -227,7 +225,7 @@ msiexec.exe /fa {AAD3D77A-7476-469F-ADF4-04424124E91D}
 
 您可以透過此命令設定公用屬性。 如需可用屬性和其設定方式的詳細資訊，請參閱[公用屬性](/windows/win32/msi/public-properties)。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -1,29 +1,27 @@
 ---
 title: relog
 description: 重新記錄命令的參考文章，它會從效能計數器記錄檔中解壓縮效能計數器資訊。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 7480f6c0-9953-4d70-9b1c-b27e09d8db13
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: a404b896179aa43fff28556e995d369780ae544a
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: c3c60503cf725d05afd4b21ceef5f36c64c2b155
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409709"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883859"
 ---
 # <a name="relog"></a>relog
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-從效能計數器記錄檔中將效能計數器解壓縮成其他格式，例如文本-TSV （適用于 tab 鍵分隔的文字）、text-CSV （以逗號分隔的文字）、binary BIN 或 SQL。
+從效能計數器記錄檔中，將效能計數器解壓縮成其他格式，例如 tab 鍵分隔文字的文字 TSV () 、以逗號分隔的文字) 、二進位 BIN 或 SQL 的文字 CSV (。
 
 >[!NOTE]
->如需將**重新執行納入**WINDOWS MANAGEMENT INSTRUMENTATION （WMI）腳本的詳細資訊，請參閱[撰寫腳本](https://devblogs.microsoft.com/scripting/)的程式碼。
+>如需有關將重新**執行納入**WINDOWS MANAGEMENT INSTRUMENTATION (WMI) 腳本的詳細資訊，請參閱[撰寫腳本的 blog](https://devblogs.microsoft.com/scripting/)。
 
 ## <a name="syntax"></a>語法
 
@@ -37,11 +35,11 @@ relog [<filename> [<filename> ...]] [/a] [/c <path> [<path> ...]] [/cf <filename
 |--|--|
 | `filename [filename ...]` | 指定現有效能計數器記錄檔的路徑名稱。 您可以指定多個輸入檔案。 |
 | -a | 附加輸出檔，而不是覆寫。 此選項不適用於預設一律附加的 SQL 格式。 |
-| -c`path [path ...]` | 指定要記錄的效能計數器路徑。 若要指定多個計數器路徑，請以空格分隔，並以引號括住計數器路徑（例如， `"path1 path2"` ）。 |
+| -c`path [path ...]` | 指定要記錄的效能計數器路徑。 若要指定多個計數器路徑，請以空格分隔，並將計數器路徑括在引號中 (例如， `"path1 path2"`) 。 |
 | -cf 檔案名 | 指定文字檔的路徑名稱，列出要包含在重新登錄檔案中的效能計數器。 使用此選項可列出輸入檔中的計數器路徑，每行一個。 預設設定是原始記錄檔中的所有計數器都是 relogged。 |
-| -f`{bin | csv | tsv | SQL}` | 指定輸出檔案格式的路徑名稱。 預設格式為**bin**。 針對 SQL 資料庫，輸出檔會指定 `DSN!CounterLog` 。 您可以使用 ODBC 管理員來設定 DSN （資料庫系統名稱），以指定資料庫位置。 |
+| -f`{bin | csv | tsv | SQL}` | 指定輸出檔案格式的路徑名稱。 預設格式為**bin**。 針對 SQL 資料庫，輸出檔會指定 `DSN!CounterLog` 。 您可以使用 ODBC 管理員來指定資料庫位置，以設定 DSN (資料庫系統名稱) 。 |
 | -t 值 | 指定*n*筆記錄中的取樣間隔。 包含重新登錄檔案中的每 n 個資料點。 預設值為每個資料點。 |
-| -o`{Outputfile | SQL:DSN!Counter_Log}` | 指定要寫入計數器的輸出檔或 SQL 資料庫的路徑名稱。 <P>**注意：** 針對64位和32位版本的 relog.exe，您必須在系統上的 ODBC 資料來源中定義 DSN （分別為64位和32位）。 使用 "SQL Server" ODBC 驅動程式來定義 DSN。 |
+| -o`{Outputfile | SQL:DSN!Counter_Log}` | 指定要寫入計數器的輸出檔或 SQL 資料庫的路徑名稱。 <P>**注意：** 針對64位和32位版本的 relog.exe，您必須分別在 ODBC 資料來源中定義一個 DSN， (在系統上) 64 位和32位。 使用 "SQL Server" ODBC 驅動程式來定義 DSN。 |
 | -b`<M/D/YYYY> [[<HH>:]<MM>:]<SS>]` | 指定從輸入檔複製第一筆記錄的開始時間。 日期和時間必須是格式正確的 M/D/YYYYHH： MM： SS。 |
 | -e `<M/D/YYYY> [[<HH>:]<MM>:]<SS>]` | 指定要從輸入檔複製最後一筆記錄的結束時間。 日期和時間必須是格式正確的 M/D/YYYYHH： MM： SS。 |
 | -config`{filename | i}` | 指定包含命令列參數之設定檔案的路徑名稱。 如果您使用設定檔，可以使用 **-i**做為可放在命令列上的輸入檔清單的預留位置。 如果您使用的是命令列，請不要使用 **-i**。 您也可以使用萬用字元（例如） `*.blg` 一次指定數個輸入檔案名。 |
@@ -63,7 +61,7 @@ relog [<filename> [<filename> ...]] [/a] [/c <path> [<path> ...]] [/cf <filename
 
 - 如果在**計數器**名稱中指定萬用字元，則會傳回指定之物件的所有計數器。
 
-- 不支援部分計數器路徑字串相符專案（例如，pro *）。
+- 部分計數器路徑字串符合 (例如，不支援 pro * ) 。
 
 - 計數器檔案是文字檔，會列出現有記錄檔中的一或多個效能計數器。 從記錄檔或 **/q**輸出中複製完整的計數器名稱， `<computer>\<object>\<instance>\<counter>` 格式為。 列出每一行上的一個計數器路徑。
 
@@ -71,7 +69,7 @@ relog [<filename> [<filename> ...]] [/a] [/c <path> [<path> ...]] [/cf <filename
 
 - 使用 **/t**參數來指定將輸入檔案依每筆記錄的間隔插入輸出檔中 `nth` 。 根據預設，資料會從每一筆記錄中 relogged。
 
-- 您可以指定輸出記錄包含開始時間之前的記錄（也就是 **/b**），以提供需要格式化值之計算值的計數器資料。 輸出檔案會有輸入檔中的最後一筆記錄，其時間戳記小於 **/e** （也就是結束時間）參數。
+- 您可以指定輸出記錄包含開始時間之前的記錄 (也就是 **/b**) 為需要格式化值之計算值的計數器提供資料。 輸出檔案會有輸入檔中的最後一筆記錄，其時間戳記小於 **/e** (，也就是結束時間) 參數。
 
 - 搭配 **/config**選項使用的設定檔內容應具有下列格式： `<commandoption>\<value>` ，其中 `<commandoption>` 是命令列選項，並 `<value>` 指定其值。
 
@@ -95,6 +93,6 @@ relog c:\perflogs\daily_trace_log.blg /cf counter_file.txt /o c:\perflogs\reduce
 relog "c:\perflogs\daily_trace_log.blg" -f sql -o "SQL:sql2016x64odbc!counter_log"
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

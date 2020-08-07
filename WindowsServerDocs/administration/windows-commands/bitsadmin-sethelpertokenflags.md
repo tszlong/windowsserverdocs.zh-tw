@@ -1,19 +1,17 @@
 ---
 title: bitsadmin sethelpertokenflags
 description: Bitsadmin sethelpertokenflags 命令的參考文章，它會針對與 BITS 傳送工作相關聯的 helper token 設定使用旗標。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: 679a6fd754cf939005238df84ab62af56d243c36
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 1d3fee2b69ba498e3eae771b4be42848b1d88065
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955680"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87893126"
 ---
 # <a name="bitsadmin-sethelpertokenflags"></a>bitsadmin sethelpertokenflags
 
@@ -33,9 +31,9 @@ bitsadmin /sethelpertokenflags <job> <flags>
 | 參數 | 描述 |
 | --------- | ----------- |
 | 作業 | 作業的顯示名稱或 GUID。 |
-| flags | 可能的 helper token 值，包括：<ul><li>**0x0001.** 用來開啟上傳作業的本機檔案、建立或重新命名下載作業的暫存檔案，或建立或重新命名上傳-回復作業的回復檔案。</li><li>**0x0002.** 用來開啟伺服器訊息區（SMB）上傳或下載作業的遠端檔案，或回應對隱含 NTLM 或 Kerberos 認證的 HTTP 伺服器或 proxy 挑戰。</li></ul>您必須呼叫  `/setcredentialsjob targetscheme null null`   以透過 HTTP 傳送認證。 |
+| flags | 可能的 helper token 值，包括：<ul><li>**0x0001.** 用來開啟上傳作業的本機檔案、建立或重新命名下載作業的暫存檔案，或建立或重新命名上傳-回復作業的回復檔案。</li><li>**0x0002.** 用來開啟伺服器訊息區的遠端檔案 (SMB) 上傳或下載作業，或回應對隱含 NTLM 或 Kerberos 認證的 HTTP 伺服器或 proxy 挑戰。</li></ul>您必須呼叫  `/setcredentialsjob targetscheme null null`   以透過 HTTP 傳送認證。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

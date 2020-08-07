@@ -1,20 +1,18 @@
 ---
 title: mklink
 description: Mklink 命令的參考文章，它會建立目錄或檔案符號或硬式連結。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0ce4df22-2dbc-48fc-9c16-b721ae85f857
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 22c364a56c804fd71a4b633294491f6b9b084ca0
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 76c97032874fe23fea773dbf5e2d1d862a6048af
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956980"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886438"
 ---
 # <a name="mklink"></a>mklink
 
@@ -34,7 +32,7 @@ mklink [[/d] | [/h] | [/j]] <link> <target>
 | /h | 建立硬式連結，而不是符號連結。 |
 | /j | 建立目錄連接點。 |
 | `<link>` | 指定要建立之符號連結的名稱。 |
-| `<target>` | 指定新符號連結所參考的路徑（相對或絕對）。 |
+| `<target>` | 指定新符號連結所參考的路徑 (相對或絕對) 。 |
 | /? | 在命令提示字元顯示說明。 |
 
 ### <a name="examples"></a>範例
@@ -48,7 +46,7 @@ rd \MyFolder
 del \MyFile.file
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

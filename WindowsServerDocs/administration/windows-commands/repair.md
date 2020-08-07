@@ -1,24 +1,22 @@
 ---
 title: 修復
 description: '* * * * 的參考文章'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9f84f661-f3cd-48c8-bf08-87819cf626fe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3e9afb6c418558078496871b71bfaff706753b0a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d646318b41881783e12b07da1c72d2a9cc31f853
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936759"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883775"
 ---
 # <a name="repair"></a>修復
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 以指定的 \- 動態磁碟取代失敗的磁片區域，以修復具有焦點的 RAID 5 磁片區。
 
@@ -32,7 +30,7 @@ repair disk=<n> [align=<n>] [noerr]
 
 ### <a name="parameters"></a>參數
 
-| 參數  |                                                                                             說明                                                                                              |
+| 參數  |                                                                                             描述                                                                                              |
 |------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 硬碟\=<n>  |                                                                 指定將取代失敗磁片區域的動態磁碟。                                                                 |
 | 對齊\=<n> |          將所有磁片區或資料分割範圍對齊最接近的對齊界限。 *n*是 \( \) 從磁片開頭到最接近對齊界限的 kb kb 數。           |

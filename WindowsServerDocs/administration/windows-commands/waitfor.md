@@ -1,20 +1,18 @@
 ---
 title: waitfor
 description: Waitfor 的參考文章，會在系統上傳送或等候信號。 **Waitfor**是用來同步處理網路上的電腦。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: a48ef70d-4d28-4035-b6b0-7d7b46ac2157
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9a80b606fc91ec146a6808bde97a8d7f0081d0ff
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e061c36f7cdf949ea76d548a4ed804a0e12169bf
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937011"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892247"
 ---
 # <a name="waitfor"></a>waitfor
 
@@ -33,9 +31,9 @@ waitfor [/t <Timeout>] <SignalName>
 
 ### <a name="parameters"></a>參數
 
-|       參數       |                                                                                         說明                                                                                          |
+|       參數       |                                                                                         描述                                                                                          |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    /s\<Computer>     | 指定遠端電腦的名稱或 IP 位址（請勿使用反斜線）。 預設是本機電腦。 這個參數會套用至命令中指定的所有檔案和資料夾。 |
+|    /s\<Computer>     | 指定遠端電腦的名稱或 IP 位址， (不要使用反斜線) 。 預設是本機電腦。 這個參數會套用至命令中指定的所有檔案和資料夾。 |
 | 那麼\<Domain>\]<User> |                              使用指定之使用者帳戶的認證來執行腳本。 根據預設， **waitfor**會使用目前使用者的認證。                               |
 |   /p [ \<Password> ]    |                                                    指定 **/u**參數中指定之使用者帳戶的密碼。                                                     |
 |          /si          |                                                                        透過網路傳送指定的信號。                                                                        |
@@ -45,7 +43,7 @@ waitfor [/t <Timeout>] <SignalName>
 
 ## <a name="remarks"></a>備註
 
--   信號名稱不能超過225個字元。 有效的字元包括 a-z、a-z、0-9 和 ASCII 擴充字元集（128-255）。
+-   信號名稱不能超過225個字元。 有效的字元包括 a-z、a-z、0-9 和 ASCII 擴充字元集 (128-255) 。
 -   如果您不使用 **/s**，則會將信號廣播到網域中的所有系統。 如果您使用 **/s**，信號只會傳送到指定的系統。
 -   您可以在單一電腦上執行多個**waitfor**實例，但**waitfor**的每個實例都必須等候不同的信號。 只有一個**waitfor**實例可以等候指定電腦上的指定信號。
 -   您可以使用 **/si**命令列選項，以手動方式啟動信號。

@@ -1,24 +1,22 @@
 ---
 title: ren
 description: Ren 命令的參考文章，會重新命名檔案或目錄。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 60398e12-a05d-4524-a73a-0a925943e21d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: c5f873de224ff335be097d97c7d8933a70af726d
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: e21b521947ed02307c470932fffcf466016bae8b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409669"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883802"
 ---
 # <a name="ren"></a>ren
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 重新命名檔案或目錄。
 
@@ -35,7 +33,7 @@ ren [<drive>:][<path>]<filename1> <filename2>
 
 | 參數 | 描述 |
 |--|--|
-| `[<drive>:][<path>]<filename1>` | 指定要重新命名之檔案或檔案集的位置和名稱。 *Filename1*可以包含萬用字元（**&#42;** 和 **？**）。 |
+| `[<drive>:][<path>]<filename1>` | 指定要重新命名之檔案或檔案集的位置和名稱。 *Filename1*可以包含 (**&#42;** 和 **？**) 的萬用字元。 |
 | `<filename2>` | 指定檔案的新名稱。 您可以使用萬用字元來指定多個檔案的新名稱。 |
 | /? | 在命令提示字元顯示說明。 |
 
@@ -61,7 +59,7 @@ ren *.txt *.doc
 ren chap10 part10
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

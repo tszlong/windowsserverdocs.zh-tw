@@ -1,19 +1,17 @@
 ---
 title: Vssadmin
 description: Vssadmin 命令的總覽。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f3618841eb2f511323873d2ea962838f9ab777d0
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 529a135164495ad5d0cb2db09373139ac7663e57
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954690"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892271"
 ---
 # <a name="vssadmin"></a>Vssadmin
 
@@ -21,7 +19,7 @@ ms.locfileid: "86954690"
 
 顯示目前的磁片區陰影複本備份，以及所有已安裝的陰影複製寫入器和提供者。 在下表中選取命令名稱，以查看其命令語法。
 
-|命令|描述|可用性
+|Command|描述|可用性
 |---|---|---
 |[Vssadmin add shadowstorage](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc788051(v%3dws.11))|新增磁片區陰影複製儲存體關聯。| 僅限伺服器
 |[Vssadmin 建立陰影](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc788055(v%3dws.11))|建立新的磁片區陰影複製。| 僅限伺服器

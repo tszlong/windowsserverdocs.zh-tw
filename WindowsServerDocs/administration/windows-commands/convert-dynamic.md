@@ -1,27 +1,25 @@
 ---
 title: convert dynamic
 description: 轉換動態命令的參考文章，其會將基本磁碟轉換成動態磁碟。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 7b8fa4b1-850f-4e48-b05f-871c883ea33c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8c57986bf46dc7d22eeecfb6d7ad085f5e3f7e8c
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 6a0967cc53d0d5f01035be7edcefd8e9f70c1e59
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958540"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892582"
 ---
 # <a name="convert-dynamic"></a>convert dynamic
 
 將基本磁碟轉換為動態磁碟。 必須選取基本磁碟，此操作才能成功。 使用 [[選取磁片] 命令](select-disk.md)來選取基本磁碟，並將焦點轉移到其上。
 
 > [!NOTE]
-> 如需有關如何使用此命令的指示，請參閱[將動態磁碟變更回基本磁碟](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc755238(v=ws.11))）。
+> 如需有關如何使用此命令的指示，請參閱[將動態磁碟變更回基本磁碟](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc755238(v=ws.11))) 。
 
 ## <a name="syntax"></a>語法
 
@@ -47,7 +45,7 @@ convert dynamic [noerr]
 convert dynamic
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

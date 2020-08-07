@@ -1,20 +1,18 @@
 ---
 title: bitsadmin setproxysettings
 description: Bitsadmin setproxysettings 命令的參考文章，其會設定指定之作業的 proxy 設定。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: be8edb1b-614e-4d0b-a8f8-64b4bde3e64b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a59bbb560b8c89134e81c02f99aaecebdb65ca89
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 0fb4e8893aa4becac49e5837baef3148541136ff
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927585"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892969"
 ---
 # <a name="bitsadmin-setproxysettings"></a>bitsadmin setproxysettings
 
@@ -28,7 +26,7 @@ bitsadmin /setproxysettings <job> <usage> [list] [bypass]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | 作業 | 作業的顯示名稱或 GUID。 |
 | usage | 設定 proxy 使用方式，包括：<ul><li>**LNK-WHAT-ARE-PRECONFIG-SOLUTIONS.** 使用擁有者的 Internet Explorer 預設值。</li><li>**NO_PROXY。** 不要使用 proxy 伺服器。</li><li>**覆寫.** 使用明確的 proxy 清單和略過清單。 Proxy 清單和 proxy 略過資訊必須遵循。</li><li>**檢測.** 會自動偵測 proxy 設定。</li></ul> |

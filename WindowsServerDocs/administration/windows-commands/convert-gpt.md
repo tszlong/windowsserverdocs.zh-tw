@@ -1,20 +1,18 @@
 ---
 title: convert gpt
-description: Convert gpt 命令的參考文章，其會將具有主開機記錄（MBR）磁碟分割樣式的空白基本磁碟轉換成具有 GUID 磁碟分割表格（GPT）磁碟分割樣式的基本磁碟。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Convert gpt 命令的參考文章，它會將具有主開機記錄的空白基本磁碟轉換 (MBR) 磁碟分割樣式，轉換成具有 GUID 磁碟分割表格 (GPT) 磁碟分割樣式的基本磁碟。
 ms.topic: article
 ms.assetid: b3b1b747-0a7a-4be2-8487-2c4be16ee190
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2384ea5a94de64051dc45caecd88e08960b567b0
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ec1066e0ac50536db915eed9df7a6076ba5f3879
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958530"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892576"
 ---
 # <a name="convert-gpt"></a>convert gpt
 
@@ -46,7 +44,7 @@ convert gpt [noerr]
 convert gpt
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

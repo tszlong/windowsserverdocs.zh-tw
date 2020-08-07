@@ -1,20 +1,18 @@
 ---
 title: color
 description: Color 命令的參考文章，這會在目前會話的 [命令提示字元] 視窗中變更前景和背景色彩。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: f5b67131-d196-45ec-a3f9-b5d9f091fd86
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 93c51fdbf1909adfda06730c3a517f602f8024b8
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2534273eebe7f8596b0e8f2ab3c90cfdcf824d00
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929800"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892675"
 ---
 # <a name="color"></a>color
 
@@ -28,7 +26,7 @@ color [[<b>]<f>]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<b>` | 指定背景色彩。 |
 | `<f>` | 指定前景色彩。 |
