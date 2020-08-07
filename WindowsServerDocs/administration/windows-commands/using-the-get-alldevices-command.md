@@ -1,24 +1,22 @@
 ---
 title: AllDevices
 description: AllDevices 的參考文章，它會顯示所有預先設置電腦的 Windows 部署服務屬性。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5824b3d2-2df1-4ed6-a289-e6c47c13fea2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b5eae53c2dcd39a7f3587f4c3c6bf96d4782ea05
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1e527be333570838ecb675d78742bbf55918eff3
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935221"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896975"
 ---
 # <a name="get-alldevices"></a>AllDevices
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 顯示所有預先設置電腦的 Windows 部署服務屬性。 預先設置的電腦是指已連結至 active directory 網域服務中電腦帳戶的實體電腦。
 
@@ -27,7 +25,7 @@ ms.locfileid: "85935221"
 wdsutil [Options] /Get-AllDevices [/forest:{Yes | No}] [/ReferralServer:<Server name>]
 ```
 ### <a name="parameters"></a>參數
-|參數|說明|
+|參數|描述|
 |-------|--------|
 |[/forest： {Yes &#124; No}]|指定 Windows 部署服務是否應傳回整個樹系或本機網域中的電腦。 預設設定為 [**否**]，表示只會傳回本機網域中的電腦。|
 |[/ReferralServer： <Server name> ]|只傳回針對指定伺服器預先設置的電腦。|

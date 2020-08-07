@@ -1,24 +1,22 @@
 ---
 title: ftp mls
 description: Ftp mls 命令的參考文章，它會在遠端目錄中顯示檔案和子目錄的縮寫清單。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4738fd49-0e80-4bdf-a773-0f973db3a710
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2f3d5c6b595cf6f8261a4af742cef60d0c9e3abd
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c2e0dc4ff4b516cc436e5b8a0a9c5ca2e4d77b5d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957650"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889234"
 ---
 # <a name="ftp-mls"></a>ftp mls
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 顯示遠端目錄中的檔案和子目錄的縮寫清單。
 
@@ -49,7 +47,7 @@ mls dir1 dir2 -
 mls dir1 dir2 dirlist.txt
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

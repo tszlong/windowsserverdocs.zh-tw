@@ -1,20 +1,18 @@
 ---
 title: Scwcmd 分析
 description: '* * * * 的參考文章'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0259271b-be5b-48d7-a51d-8b9b6786efb4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dc8616112cc94ae88995e9fd9fe635622b767f17
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 635da8cd31140ea0b1d0cd786e7b16e2ce692bcd
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932781"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883225"
 ---
 # <a name="scwcmd-analyze"></a>Scwcmd: analyze
 
@@ -31,16 +29,16 @@ scwcmd analyze [[[/m:<ComputerName> | /ou:<Ou>] /p:<Policy>] | /i:<ComputerList>
 
 #### <a name="parameters"></a>參數
 
-|參數|說明|
+|參數|描述|
 |---------|-----------|
 |/m\<ComputerName>|指定要分析之電腦的 NetBIOS 名稱、DNS 名稱或 IP 位址。 如果指定 **/m**參數，則也必須指定 **/p**參數。|
-|/ou\<OuName>|在 Active Directory Domain Services 中指定組織單位（OU）的完整功能變數名稱（FQDN）。 如果指定 **/ou**參數，則也必須指定 **/p**參數。 OU 中的所有電腦都會針對指定的原則進行分析。|
+|/ou\<OuName>|指定 Active Directory Domain Services 中組織單位 (OU)  (FQDN) 的完整功能變數名稱。 如果指定 **/ou**參數，則也必須指定 **/p**參數。 OU 中的所有電腦都會針對指定的原則進行分析。|
 |/p\<Policy>|指定要用來執行分析之 .xml 原則檔案的路徑和檔案名。|
 |/i\<ComputerList>|指定 .xml 檔案的路徑和檔案名，其中包含一份電腦清單及其預期的原則檔案。 .Xml 檔案中的所有電腦都會根據其對應的原則檔案進行分析。 範例 .xml 檔案是% windir% \security\SampleMachineList.xml。|
 |/o\<ResultDir>|指定應儲存分析結果檔案的路徑和目錄。 預設值是目前的目錄。|
 |u\<UserName>|指定在遠端電腦上執行分析時要使用的替代使用者認證。 預設為登入的使用者。|
 |/pw\<Password>|指定在遠端電腦上執行分析時要使用的替代使用者認證。 預設值為登入使用者的密碼。|
-|/t:\<Threads>|指定在分析期間應維持的同時未完成分析作業數目（DefaultValue = 40，MinValue = 1，int32.maxvalue = 1000）。|
+|/t:\<Threads>|指定在 analysis (DefaultValue = 40，MinValue = 1，int32.maxvalue = 1000) 期間，應維持的同時未處理分析作業數目。|
 |/l|會記錄分析進程。 系統會為每一部要分析的電腦產生一個記錄檔。 記錄檔將會儲存在與結果檔案相同的目錄中。 使用 **/o**選項來指定結果檔案的目錄。|
 |/e|如果找到不相符的專案，請將事件記錄至應用程式事件記錄檔。|
 |/?|在命令提示字元顯示說明。|

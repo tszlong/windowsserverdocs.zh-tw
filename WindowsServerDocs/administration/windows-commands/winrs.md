@@ -1,24 +1,22 @@
 ---
 title: winrs
 description: Winrs 的參考文章，可讓您從遠端系統管理及執行程式。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c370de31-5651-400a-872d-ef229aae2309
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d0213db0a808829ac87a6f79b4d68a3787e706bc
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 54accc21cbacc6471840d1bd83e3c05d9052a0eb
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936121"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896817"
 ---
 # <a name="winrs"></a>winrs
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Windows 遠端系統管理可讓您從遠端系統管理及執行程式。
 ## <a name="syntax"></a>語法
@@ -27,7 +25,7 @@ winrs [/<parameter>[:<value>]] <command>
 ```
 #### <a name="parameters"></a>參數
 
-|           參數            |                                                                                                                                                                                    說明                                                                                                                                                                                     |
+|           參數            |                                                                                                                                                                                    描述                                                                                                                                                                                     |
 |--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |      /remote\<endpoint>       |                                                                                          使用 NetBIOS 名稱或標準連接來指定目標端點：<p>-   <url>: [\<transport>://]\<target>[:\<port>]<p>如果未指定，則會使用 **/r： localhost** 。                                                                                          |
 |          /unencrypted          | 指定不會加密遠端 shell 的訊息。 這適用于疑難排解，或當網路流量已經使用**ipsec**加密或強制執行實體安全性時。<p>根據預設，訊息會使用 Kerberos 或 NTLM 金鑰進行加密。<p>選取 [HTTPS 傳輸] 時，會忽略此命令列選項。 |
@@ -37,7 +35,7 @@ winrs [/<parameter>[:<value>]] <command>
 |       /目錄\<path>       |                                                                                            指定遠端 shell 的起始目錄。<p>如果未指定，則遠端 shell 將會在環境變數 **% USERPROFILE%** 定義的使用者主目錄中啟動。                                                                                             |
 | 環境\<string>=<value> |                                                                          指定要在 shell 啟動時設定的單一環境變數，這可讓您變更 shell 的預設環境。<p>這個參數的多次出現必須用來指定多個環境變數。                                                                          |
 |            /noecho             |                                                                                                    指定應該停用 echo。 這可能是為了確保使用者的遠端提示答案不會顯示在本機。<p>預設會開啟 echo。                                                                                                    |
-|           /noprofile           |                                              指定不應載入使用者的設定檔。<p>根據預設，伺服器會嘗試載入使用者設定檔。<p>如果遠端使用者不是目標系統上的本機系統管理員，則需要此選項（預設會導致錯誤）。                                               |
+|           /noprofile           |                                              指定不應載入使用者的設定檔。<p>根據預設，伺服器會嘗試載入使用者設定檔。<p>如果遠端使用者不是目標系統上的本機系統管理員，則需要此選項 (預設會導致) 錯誤。                                               |
 |         /allowdelegate         |                                                                                                                  指定使用者的認證可以用來存取遠端共用，例如，位於與目標端點不同的電腦上。                                                                                                                   |
 |          /compression          |                                                                           開啟壓縮。  遠端電腦上的舊版安裝可能不支援壓縮，因此預設為關閉。<p>預設設定為 off，因為遠端電腦上的舊版安裝可能不支援壓縮。                                                                           |
 |            /usessl             |                                                                                                               使用遠端端點時，請使用 SSL 連線。  指定此項，而不是傳輸**HTTPs：** 會使用預設的**WinRM**預設通訊埠。                                                                                                                |

@@ -1,31 +1,29 @@
 ---
 title: Scwcmd 轉換
 description: '* * * * 的參考文章'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 640dd892-0bb9-416d-8318-60a26605bcf4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b70557b64a4cb68a0435bee9db033c893186dc0c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5af1f9d1f2ee5386da8b02f4142c156c3711852f
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932635"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883091"
 ---
 # <a name="scwcmd-transform"></a>Scwcmd: transform
 
 > 適用于： Windows Server 2012 R2、Windows Server 2012
 
-將使用安全性設定 Wizard （SCW）所產生的安全性原則檔案，轉換為 Active Directory Domain Services 中新的群組原則物件（GPO）。 轉換作業不會變更執行此作業之伺服器上的任何設定。 轉換作業完成後，系統管理員必須將 GPO 連結到所需的 Ou，才能將原則部署至伺服器。
+使用 [安全性設定] 嚮導將產生的安全性原則檔案轉換 (SCW) 至) 中 (GPO Active Directory Domain Services 的新群組原則物件。 轉換作業不會變更執行此作業之伺服器上的任何設定。 轉換作業完成後，系統管理員必須將 GPO 連結到所需的 Ou，才能將原則部署至伺服器。
 
 需要網域系統管理員認證才能完成轉換作業。
 
 > [!IMPORTANT]
-> 無法使用群組原則部署 Internet Information Services （IIS）安全性原則設定。</br>除非在伺服器上一次啟動時自動啟動 Windows 防火牆服務，否則列出已核准應用程式的 > 防火牆原則不應部署到伺服器。
+> Internet Information Services 無法使用群組原則來部署 (IIS) 安全性原則設定。</br>除非在伺服器上一次啟動時自動啟動 Windows 防火牆服務，否則列出已核准應用程式的 > 防火牆原則不應部署到伺服器。
 
 
 
@@ -37,7 +35,7 @@ scwcmd transform /p:<Policyfile.xml> /g:<GPODisplayName>
 
 #### <a name="parameters"></a>參數
 
-|參數|說明|
+|參數|描述|
 |---------|-----------|
 |/p\<Policyfile.xml>|指定應套用之 .xml 原則檔的路徑和檔案名。 必須指定這個參數。|
 |/g\<GPODisplayName>|指定 GPO 的顯示名稱。 必須指定這個參數。|

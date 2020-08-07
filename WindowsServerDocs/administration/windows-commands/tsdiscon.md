@@ -1,24 +1,22 @@
 ---
 title: tsdiscon
 description: Tsdiscon 的參考文章，它會中斷會話與遠端桌面工作階段主機伺服器的連線。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 13139674-7dee-4965-8cac-32f4928e8b9a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3016bb5a146bf7c1d55ab93325debb11b0f6a81c
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: e81a1c7f68af0bb1d16ce64bb4985e3ddb8d18f2
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954930"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897071"
 ---
 # <a name="tsdiscon"></a>tsdiscon
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 中斷會話與遠端桌面工作階段主機伺服器的連線。
 
@@ -62,6 +60,6 @@ tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
   ```
   tsdiscon TERM04
   ```
-  ## <a name="additional-references"></a>其他參考
+  ## <a name="additional-references"></a>其他參考資料
   - [命令列語法索引鍵](command-line-syntax-key.md) 
-  [遠端桌面服務（終端機服務）命令參考](remote-desktop-services-terminal-services-command-reference.md)
+  [遠端桌面服務 (終端機服務) 命令參考](remote-desktop-services-terminal-services-command-reference.md)

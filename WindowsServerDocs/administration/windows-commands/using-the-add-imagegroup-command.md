@@ -1,24 +1,22 @@
 ---
 title: 新增-ImageGroup
 description: ImageGroup 的參考文章，可將映射群組新增至 Windows 部署服務伺服器。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 6ca88671-51de-4924-b969-88f3dfd84270
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5898b9bccb9ab0581cadd1ed51f4059a4c7c2dcc
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 611425c7c3ff997009e16792fea1924a403f364e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934119"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896598"
 ---
 # <a name="add-imagegroup"></a>新增-ImageGroup
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 將映射群組新增至 Windows 部署服務伺服器。
 
@@ -27,10 +25,10 @@ ms.locfileid: "85934119"
 wdsutil [Options] /add-ImageGroumediaGroup:<Image group name> [/Server:<Server name>]
 ```
 ### <a name="parameters"></a>參數
-|參數|說明|
+|參數|描述|
 |-------|--------|
 mediaGroup:<Image group name>|指定要加入之映射群組的名稱。|
-|[/Server： <Server name> ]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。|
+|[/Server： <Server name> ]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或 (FQDN) 的完整功能變數名稱。 如果未指定伺服器名稱，則會使用本機伺服器。|
 ## <a name="examples"></a>範例
 若要新增映射群組，請輸入下列其中一項：
 ```

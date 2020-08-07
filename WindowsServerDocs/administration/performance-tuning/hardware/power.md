@@ -1,18 +1,16 @@
 ---
 title: Windows Server 硬體電源考慮
 description: Windows Server 硬體電源的相關考慮。
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: conceptual
 ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 0e110fbb41f44a4c8ac6ab014eeae44e542ade41
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ee380937e54faa77ec17f8ae47445089ba1eece8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471683"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896726"
 ---
 # <a name="server-hardware-power-considerations"></a>伺服器硬體電源的考量
 
@@ -20,7 +18,7 @@ ms.locfileid: "85471683"
 
 ## <a name="processor-recommendations"></a>處理器建議事項
 
-頻率、操作電壓、快取大小和處理技術會影響處理器的能源消耗。 處理器具有散熱設計點（TDP）分級，可提供相對於其他型號之能源耗用量的基本指示。
+頻率、操作電壓、快取大小和處理技術會影響處理器的能源消耗。 處理器具有熱設計點 (TDP) 分級，提供相對於其他型號之能源耗用量的基本指示。
 
 一般而言，選擇符合您的效能目標的最低 TDP 處理器。 此外，較新的處理器層級通常會比能源效率更高，而且它們可能會公開更多 Windows 電源管理演算法的電源狀態，以提供更佳的電源管理。 或者，他們也可以使用 Microsoft 與硬體製造商合作開發的一些新的「合作」電源管理技術。
 
@@ -28,7 +26,7 @@ ms.locfileid: "85471683"
 
 ## <a name="memory-recommendations"></a>記憶體建議
 
-記憶體帳戶會增加整體系統能力的分數。 許多因素會影響記憶體 DIMM 的能源耗用量，例如記憶體技術、錯誤修正程式碼（ECC）、匯流排頻率、容量、密度和等級數。 因此，最好在購買大量記憶體之前，先比較預期的電源評等。
+記憶體帳戶會增加整體系統能力的分數。 許多因素會影響記憶體 DIMM 的能源耗用量，例如記憶體技術、錯誤更正程式碼 (ECC) 、匯流排頻率、容量、密度和等級數。 因此，最好在購買大量記憶體之前，先比較預期的電源評等。
 
 現在提供低功率記憶體，但您必須考慮效能和成本取捨。 如果您的伺服器將會分頁，您也應該考慮分頁磁片的能源成本。
 
@@ -38,7 +36,7 @@ RPM 越高表示增加能源耗用量。 SSD 磁片磁碟機比旋轉磁片磁�
 
 ## <a name="network-and-storage-adapter-recommendations"></a>網路和儲存裝置介面卡建議
 
-某些介面卡會減少閒置期間的能源耗用量。 這是 10 Gb 網路介面卡和高頻寬（4-8 Gb）儲存體連結的重要考慮。 這類裝置可能會耗用大量的能源。
+某些介面卡會減少閒置期間的能源耗用量。 這是 10 Gb 網路介面卡和高頻寬 (4-8 Gb) 儲存體連結的重要考慮。 這類裝置可能會耗用大量的能源。
 
 ## <a name="power-supply-recommendations"></a>電源供應器建議
 
@@ -69,7 +67,7 @@ Power 塊不是伺服器硬體不可或缺的一部分，但在資料中心內�
 
 ![處理器術語](../media/perftune-guide-figure-1.png)
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [伺服器硬體效能考量](index.md)
 

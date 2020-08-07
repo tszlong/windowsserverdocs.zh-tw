@@ -1,26 +1,24 @@
 ---
 title: 新增-命名空間
 description: 新命名空間的參考文章，它會建立並設定新的命名空間。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 6df60703-30bd-4d59-a8d9-9fe3efe96add
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3afbdd195f21450508bfa6992fc73c7d360092c6
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: f96181b9ce85a80ccc3d1bd344105dcc1e7f8d2d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932417"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896892"
 ---
 # <a name="new-namespace"></a>新增-命名空間
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-建立並設定新的命名空間。 當您只安裝傳輸伺服器角色服務時，應該使用此選項。 如果您已安裝「部署伺服器」角色服務和「傳輸伺服器」角色服務（這是預設值），請使用[MulticastTransmission 命令](using-the-new-multicasttransmission-command.md)。 請注意，在使用此選項之前，您必須先註冊內容提供者。
+建立並設定新的命名空間。 當您只安裝傳輸伺服器角色服務時，應該使用此選項。 如果您已安裝部署伺服器角色服務和傳輸伺服器角色服務 (這是預設) ，請使用[MulticastTransmission 命令](using-the-new-multicasttransmission-command.md)。 請注意，在使用此選項之前，您必須先註冊內容提供者。
 ## <a name="syntax"></a>語法
 ```
 wdsutil [Options] /New-Namespace [/Server:<Server name>]
@@ -34,9 +32,9 @@ wdsutil [Options] /New-Namespace [/Server:<Server name>]
          [/Clients:<Number of clients>]
 ```
 ### <a name="parameters"></a>參數
-|參數|說明|
+|參數|描述|
 |-------|--------|
-|[/Server： <Server name> ]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。|
+|[/Server： <Server name> ]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或 (FQDN) 的完整功能變數名稱。 如果未指定伺服器名稱，則會使用本機伺服器。|
 |FriendlyName<Friendly name>|指定命名空間的好記名稱。|
 |/Description<Description>]|設定命名空間的描述。|
 |命名空間<Namespace name>|指定命名空間的名稱。 請注意，這不是易記的名稱，而且必須是唯一的。<p>-   **部署伺服器角色服務**：此選項的語法為/NAMESPACE： WDS： <Image group> / <Image name> / <Index> 。 例如： **WDS： ImageGroup1/install .wim/1**<br />-   **傳輸伺服器角色服務**：此值應符合在伺服器上建立命名空間時所指定的名稱。|

@@ -1,20 +1,18 @@
 ---
 title: robocopy
 description: 瞭解如何在 Windows 和 Windows Server 中使用 robocopy 命令來複製檔案
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: d4c6e8e9-fcb3-4a4a-9d04-2d8c367b6354
 author: jasongerend
 ms.author: jgerend
 manager: lizapo
 ms.date: 06/07/2020
-ms.openlocfilehash: 3ce409d0995449a4f5da98b69df6f436d75e04b7
-ms.sourcegitcommit: a538474d2c0a9520567f4e6ad0933f8660273098
+ms.openlocfilehash: fdf7eda5a17dccba0f43cca91cae122872dd5235
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84505790"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883498"
 ---
 # <a name="robocopy"></a>robocopy
 
@@ -26,7 +24,7 @@ ms.locfileid: "84505790"
 robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 ```
 
-例如，若要將名為*yearly-report*的檔案從 c:\reports 複製到檔案共用（* \\ marketing\videos*），同時啟用多執行緒處理以達到較高的效能（使用/mt 參數），而且能夠在中斷時重新開機傳輸（使用/z 參數），您可以使用下列語法：
+例如，若要將名為*yearly-report*的檔案從 c:\reports 複製到檔案共用 (* \\ marketing\videos*) 同時啟用多執行緒處理，以使用/mt 參數) 更高效能 (，以及在使用/z 參數 (中斷傳輸) 時重新開機轉移的功能，您會使用下列語法：
 
 ```dos
 robocopy C:\reports '\\marketing\videos' yearly-report.mov /mt /z
@@ -38,7 +36,7 @@ robocopy C:\reports '\\marketing\videos' yearly-report.mov /mt /z
 |----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   \<Source>    |                                                                            指定來源目錄的路徑。                                                                           |
 | \<Destination> |                                                                          指定目的地目錄的路徑。                                                                        |
-|    \<File>     | 指定要複製的檔案。 如有需要，您可以使用萬用字元（**&#42;** 或 **？**）。 如果未指定**File** **參數， \* \* 則會使用**做為預設值。 |
+|    \<File>     | 指定要複製的檔案。 如有需要，您可以 (**&#42;** 或 **？**) 使用萬用字元。 如果未指定**File** **參數， \* \* 則會使用**做為預設值。 |
 |   \<Options>   |                                                                    指定要與**robocopy**命令搭配使用的選項。                                                                   |
 
 ### <a name="copy-options"></a>複製選項
@@ -52,27 +50,27 @@ robocopy C:\reports '\\marketing\videos' yearly-report.mov /mt /z
 |/b|以備份模式複製檔案。|
 |/zb|使用可重新開機模式。 如果存取遭拒，此選項會使用備份模式。|
 |/efsraw|複製 EFS RAW 模式的所有加密檔案。|
-|/copy\<CopyFlags>|指定要複製的檔案屬性。 以下是這個選項的有效值：</br>**D**資料</br>**屬性**</br>**T**時間戳記</br>**S** NTFS 存取控制清單（ACL）</br>**O**擁有者資訊</br>**U**審核資訊</br>**CopyFlags**的預設值為 [ **DAT** ] （[資料]、[屬性] 和 [時間戳記]）。|
+|/copy\<CopyFlags>|指定要複製的檔案屬性。 以下是這個選項的有效值：</br>**D**資料</br>**屬性**</br>**T**時間戳記</br>**S** NTFS 存取控制清單 (ACL) </br>**O**擁有者資訊</br>**U**審核資訊</br>**CopyFlags**的預設值是) 的 (資料、屬性和時間戳記的**DAT** 。|
 |/dcopy:\<copyflags\>|定義要為目錄複寫哪些內容。 預設值為 DA。 選項為 D = data、A = attributes 和 T = 時間戳記。|
-|/秒|複製具有安全性的檔案（相當於 **/copy： dat**）。|
-|/copyall|複製所有檔案資訊（相當於 **/copy： DATSOU**）。|
-|/nocopy|不復制任何檔案資訊（適用于 **/purge**）。|
+|/秒|複製安全性 (相當於 **/copy： dat**) 的檔案。|
+|/copyall|複製 (相當於 **/copy： DATSOU**) 的所有檔案資訊。|
+|/nocopy|不復制任何檔案資訊 (適用于 **/purge**) 。|
 |/secfix|修正所有檔案的檔案安全性，甚至略過一個檔案。|
 |/timfix|修正所有檔案的檔案時間，甚至略過一個檔案。|
 |/purge|刪除不再存在於來源中的目的地檔案和目錄。 如需其他資訊，請參閱[備註](#remarks)。|
-|/mir|鏡像目錄樹狀結構（相當於 **/e** plus **/purge**）。 如需其他資訊，請參閱[備註](#remarks)。|
+|/mir|鏡像目錄樹狀 (相當於 **/e** plus **/purge**) 。 如需其他資訊，請參閱[備註](#remarks)。|
 |/mov|移動檔案，並在複製後從來源刪除檔案。|
 |/move|移動檔案和目錄，並在複製後從來源刪除它們。|
 |/a +： [RASHCNET]|將指定的屬性新增至複製的檔案。|
 |/a-： [RASHCNET]|從複製的檔案中移除指定的屬性。|
 |/create|只建立目錄樹狀結構和長度為零的檔案。|
 |/fat|只使用8.3 字元長度的 FAT 檔案名來建立目的地檔案。|
-|/256|關閉非常長路徑（長度超過256個字元）的支援。|
+|/256|關閉非常長路徑的支援， (超過256個字元) 。|
 |監視器\<N>|會監視來源，並在偵測到超過*N*個變更時再次執行。|
 |/mot:\<M>|會監視來源，如果偵測到變更，則會在*M*分鐘內再次執行。|
 |/MT[:N]|建立具有*N*個執行緒的多執行緒複本。 *N*必須是介於1到128之間的整數。 *N*的預設值為8。</br>**/Mt**參數不能與 **/IPG**和 **/EFSRAW**參數搭配使用。</br>使用 **/log**選項來重新導向輸出，以獲得更好的效能。</br>注意：/MT 參數適用于 Windows Server 2008 R2 和 Windows 7。|
 |/rh： hhmm-hhmm|指定新複本可能啟動時的執行時間。|
-|/pf|檢查每個檔案的執行時間（不是每次執行）。|
+|/pf|會針對每個檔案檢查執行時間， (不會以每次) 為基礎。|
 |/ipg： n|指定在慢速線路上釋放頻寬的封包間間距。|
 |/sl|請不要遵循符號連結，改為建立連結的複本。|
 
@@ -86,13 +84,13 @@ robocopy C:\reports '\\marketing\videos' yearly-report.mov /mt /z
 
 ### <a name="file-selection-options"></a>檔案選取選項
 
-|選項|說明|
+|選項|描述|
 |------|-----------|
 |/a|只複製已設定封存屬性的**檔案**。|
 |/m|只複製已設定封存屬性的**檔案**，並重設**封存屬性。**|
 |/ia:[RASHCNETO]|只包含已設定任何指定屬性的檔案。|
 |/xa:[RASHCNETO]|排除已設定任何指定屬性的檔案。|
-|/xf \<FileName> [...]|排除符合指定名稱或路徑的檔案。 請注意， *FileName*可以包含萬用字元（**&#42;** 和 **？**）。|
+|/xf \<FileName> [...]|排除符合指定名稱或路徑的檔案。 請注意， *FileName*可以包含 (**&#42;** 和 **？**) 的萬用字元。|
 |/xd \<Directory> [...]|排除符合指定名稱和路徑的目錄。|
 |/xc|排除已變更的檔案。|
 |/xn|排除較新的檔案。|
@@ -101,12 +99,12 @@ robocopy C:\reports '\\marketing\videos' yearly-report.mov /mt /z
 |/xl|排除「孤立」的檔案和目錄。|
 |/is|包含相同的檔案。|
 |/it|包含 "調整" 檔案。|
-|讀數\<N>|指定檔案大小上限（以排除大於*N*個位元組的檔案）。|
-|分鐘\<N>|指定最小檔案大小（以排除小於*N*個位元組的檔案）。|
-|maxage\<N>|指定檔案最長存留期（排除*N*天或日期之前的檔案）。|
-|minage\<N>|指定檔案最短存留期（排除比*N*天或日期更新的檔案）。|
-|/maxlad:\<N>|指定最大的上次存取日期（排除自*N*之後未使用的檔案）。|
-|/minlad:\<N>|指定如果*n*小於1900，則為最小的上次存取日期（排除自*N*後使用的檔案）， *n*指定天數。 否則， *N*會以 YYYYMMDD 格式指定日期。|
+|讀數\<N>|指定檔案大小上限 (以排除大於*N*個位元組) 的檔案。|
+|分鐘\<N>|指定 (排除小於*N*個位元組) 的檔案大小下限。|
+|maxage\<N>|指定要排除超過*N*天或 date) 之檔案的最大檔案存留期 (。|
+|minage\<N>|指定最短的檔案存在時間， (排除比*N*天或日期) 更新的檔案。|
+|/maxlad:\<N>|指定上次存取日期的最大值 (排除因為*N*) 而未使用的檔案。|
+|/minlad:\<N>|指定最小的上次存取日期 (排除自*n*) 後所使用的檔案（如果*n*小於1900）， *n*指定天數。 否則， *N*會以 YYYYMMDD 格式指定日期。|
 |/xj|排除連接點，通常預設會包含在內。|
 |/fft|假設 FAT 檔案時間 (兩秒精確度)。|
 |/dst|補償一小時的 DST 時間差異。|
@@ -115,18 +113,18 @@ robocopy C:\reports '\\marketing\videos' yearly-report.mov /mt /z
 
 ### <a name="retry-options"></a>重試選項
 
-|選項|說明|
+|選項|描述|
 |------|-----------|
-|/r\<N>|指定失敗複製的重試次數。 *N*的預設值是1000000（1000000重試）。|
-|/w\<N>|指定重試之間的等待時間 (以秒為單位)。 *N*的預設值為30（等待時間30秒）。|
+|/r\<N>|指定失敗複製的重試次數。 *N*的預設值為 1000000 (1000000 重試) 。|
+|/w\<N>|指定重試之間的等待時間 (以秒為單位)。 *N*的預設值為30， (等待時間30秒) 。|
 |/reg|將 **/r**和 **/w**選項中指定的值儲存為登錄中的預設設定。|
-|/tbd|指定系統會等待定義共用名稱（重試錯誤67）。|
+|/tbd|指定系統會等待定義共用名稱， (重試錯誤 67) 。|
 
 ### <a name="logging-options"></a>記錄選項
 
-|選項|說明|
+|選項|描述|
 |------|-----------|
-|/l|指定只列出檔案（而不復制、刪除或加上時間戳記）。|
+|/l|指定僅列出 (的檔案，而且不會) 複製、刪除或時間戳記。|
 |/x|報告所有多餘的檔案，而不只是選取的檔案。|
 |/v|會產生詳細資訊輸出，並顯示所有略過的檔案。|
 |/ts|在輸出中包含來源檔案時間戳記。|
@@ -137,30 +135,30 @@ robocopy C:\reports '\\marketing\videos' yearly-report.mov /mt /z
 |/nfl|指定不會記錄檔案名稱。|
 |/ndl|指定不會記錄目錄名稱。|
 |/np|指定將不會顯示複製作業的進度 (到目前為止複製的檔案或目錄數目)。|
-|/eta|顯示已複製檔案的預估到達時間（ETA）。|
+|/eta|顯示覆制的檔案的預估抵達時間 (ETA) 。|
 |/log\<LogFile>|將狀態輸出寫入至記錄檔 (覆寫現有記錄檔)。|
-|/log +：\<LogFile>|將狀態輸出寫入至記錄檔（將輸出附加至現有的記錄檔）。|
+|/log +：\<LogFile>|將狀態輸出寫入至記錄檔， (將輸出附加至現有的記錄檔) 。|
 |/unicode|將狀態輸出顯示為 Unicode 文字。|
-|/unilog:\<LogFile>|將狀態輸出寫入至記錄檔，做為 Unicode 文字（覆寫現有的記錄檔）。|
-|/unilog +：\<LogFile>|將狀態輸出寫入至記錄檔做為 Unicode 文字（將輸出附加至現有的記錄檔）。|
+|/unilog:\<LogFile>|將狀態輸出當做 Unicode 文字寫入記錄檔， (覆寫現有的記錄檔) 。|
+|/unilog +：\<LogFile>|將狀態輸出寫入至記錄檔做為 Unicode 文字， (將輸出附加至現有的記錄檔) 。|
 |/tee|將狀態輸出寫入主控台視窗，以及記錄檔。|
 |/njh|指定沒有工作標頭。|
 |/njs|指定沒有工作摘要。|
 
 ### <a name="job-options"></a>作業選項
 
-|選項|說明|
+|選項|描述|
 |------|-----------|
 |/工作 x\<JobName>|指定要從命名的作業檔案衍生參數。|
 |/save\<JobName>|指定參數要儲存至已命名的工作檔案。|
-|/quit|在處理命令列之後結束（以查看參數）。|
+|/quit|在處理命令列之後結束 (以) 查看參數。|
 |/nosd|表示未指定來原始目錄。|
 |/nodd|表示未指定目的地目錄。|
 |/if|包含指定的檔案。|
 
-### <a name="exit-return-codes"></a>結束（傳回）代碼
+### <a name="exit-return-codes"></a>結束 (傳回) 碼
 
-值 | 說明
+值 | 描述
 -- | --
 0 | 未複製任何檔案。 未發生任何失敗。  沒有任何檔案不相符。 檔案已存在於目的地目錄中;因此，已略過複製操作。
 1 | 已成功複製所有檔案。
@@ -176,10 +174,10 @@ robocopy C:\reports '\\marketing\videos' yearly-report.mov /mt /z
 
 ### <a name="remarks"></a>備註
 
--   **/Mir**選項相當於 **/e** plus **/purge**選項，其行為有一小不同：  
+-   **/Mir**選項相當於 **/e** plus **/purge**選項，其行為有一小不同：
     -   使用 **/e** plus **/purge**選項時，如果目的地目錄存在，則不會覆寫目的地目錄安全性設定。
     -   使用 **/mir**選項時，如果目的地目錄存在，則會覆寫目的地目錄安全性設定。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

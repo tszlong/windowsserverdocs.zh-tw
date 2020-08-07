@@ -1,24 +1,22 @@
 ---
 title: tskill
 description: Tskill 的參考文章，它會結束在遠端桌面工作階段主機伺服器上的會話中執行的進程。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 08986e6a-6900-4ece-85a1-8f73b14db1b3 Lizap
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b5e4e32bada68b8c7d931b8603fbf09eba45791d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 9fe3db1f218bc95fab4f3f2d917575679ab81931
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954880"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896673"
 ---
 # <a name="tskill"></a>tskill
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 結束在遠端桌面工作階段主機伺服器上的會話中執行的處理常式。
 
@@ -57,6 +55,6 @@ tskill {<ProcessID> | <ProcessName>} [/server:<ServerName>] [/id:<SessionID> | /
   ```
   tskill explorer /id:5
   ```
-  ## <a name="additional-references"></a>其他參考
+  ## <a name="additional-references"></a>其他參考資料
   - [命令列語法索引鍵](command-line-syntax-key.md) 
-  [遠端桌面服務（終端機服務）命令參考](remote-desktop-services-terminal-services-command-reference.md)
+  [遠端桌面服務 (終端機服務) 命令參考](remote-desktop-services-terminal-services-command-reference.md)

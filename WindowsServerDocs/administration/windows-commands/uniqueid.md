@@ -1,24 +1,22 @@
 ---
 title: uniqueid
-description: Uniqueid 的參考文章，它會顯示或設定具有焦點之磁片的 GUID 磁碟分割表格（GPT）識別碼或主要開機記錄（MBR）簽章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Uniqueid 的參考文章，它會顯示或設定 GUID 磁碟分割表格 (GPT) 識別碼或主要開機記錄 (MBR) 簽章，以取得具有焦點的磁片。
 ms.topic: article
 ms.assetid: 64235a4a-b91c-46da-b9b0-68ee90571c2a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5acf29d9a7dfd505a5ecdad2a08dfdb1a9f4d975
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ef76189e3377ecdb11605acf449ba68424d1588f
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937278"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897056"
 ---
 # <a name="uniqueid"></a>uniqueid
 
-顯示或設定具有焦點之磁片的 GUID 磁碟分割表格（GPT）識別碼或主要開機記錄（MBR）簽章。
+針對具有焦點的磁片，顯示或設定 GUID 磁碟分割表格 (GPT) 識別碼或主開機記錄 (MBR) 簽章。
 
 > [!IMPORTANT]
 > Windows Vista 的任何版本都無法使用此 DiskPart 命令。
@@ -31,7 +29,7 @@ uniqueid disk [id={<dword> | <GUID>}] [noerr]
 
 ### <a name="parameters"></a>參數
 
-|  參數   |                                                                                             說明                                                                                              |
+|  參數   |                                                                                             描述                                                                                              |
 |--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 識別碼 = {\<dword> |                                                                                               <GUID>}                                                                                                |
 |    noerr     | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |

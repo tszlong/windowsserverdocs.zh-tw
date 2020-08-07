@@ -1,24 +1,22 @@
 ---
 title: ftp dir
 description: Ftp dir 命令的參考文章，它會顯示遠端電腦上的目錄檔案和子目錄清單。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: a29a92a5-7b79-4e6e-95cf-2ccb38bb6fb2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1c3ec103797a1683c6f2810da375b00b56b87414
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 0a4f65cee67ec91b6871649fece4f580684c2e3f
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957870"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889479"
 ---
 # <a name="ftp-dir"></a>ftp dir
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 顯示遠端電腦上的目錄檔案和子目錄清單。
 
@@ -49,7 +47,7 @@ dir dir1
 dir . dirlist.txt
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -1,20 +1,18 @@
 ---
 title: unexpose
 description: Diskshadow.exe 取消公開的參考文章，其 unexposes 使用公開命令公開的陰影複製。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 58dc7d0f-52e9-4587-9487-d3b4c3e52640
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 02edb1f2c9331a22473123f0327dbc84cb05a865
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1c315639746db84d49afd72fc2be89e757c8fb95
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937305"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897070"
 ---
 # <a name="unexpose"></a>unexpose
 
@@ -30,12 +28,12 @@ unexpose {<ShadowID> | <Drive:> | <Share> | <MountPoint>}
 
 ### <a name="parameters"></a>參數
 
-|參數|說明|
+|參數|描述|
 |---------|-----------|
 |\<ShadowID>|Unexposes 給定陰影識別碼所指定的陰影複製。|
-|\<Drive:>|Unexposes 與指定磁碟機號相關聯的陰影複製（例如，磁片磁碟機 P）。|
-|\<Share>|Unexposes 與指定的共用相關聯的陰影複製（例如 \\ \\ *MachineName* \) 。|
-|\<MountPoint>|Unexposes 與指定掛接點相關聯的陰影複製（例如，C:\shadowcopy \) 。|
+|\<Drive:>|Unexposes 與指定磁碟機號相關聯的陰影複製 (例如，磁片磁碟機 P) 。|
+|\<Share>|Unexposes 與指定的共用相關聯的陰影複製 (例如 \\ \\ *MachineName* \) 。|
+|\<MountPoint>|Unexposes 與指定掛接點相關聯的陰影複製 (例如，C:\shadowcopy \) 。|
 
 ## <a name="remarks"></a>備註
 

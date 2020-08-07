@@ -1,20 +1,18 @@
 ---
 title: manage-bde 解除鎖定
 description: Manage-bde unlock 命令的參考文章，使用修復密碼或修復金鑰來解除鎖定受 BitLocker 保護的磁片磁碟機。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 7852bf7d-9102-40be-adcb-71e8f4dfde72
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1be2bf029a378015cd20f21c236c0d519f2e072a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d9b13e4ac27ab77a522d223749cd84e3b1bb11a6
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922205"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886643"
 ---
 # <a name="manage-bde-unlock"></a>manage-bde 解除鎖定
 
@@ -28,7 +26,7 @@ manage-bde -unlock {-recoverypassword <password>|-recoverykey <pathtoexternalkey
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | -msfve-recoverypassword | 指定將使用修復密碼來解除鎖定磁片磁碟機。 您也可以使用 **-rp**做為此命令的縮寫版本。 |
 | `<password>` | 代表可以用來解除鎖定磁片磁碟機的修復密碼。 |
@@ -37,7 +35,7 @@ manage-bde -unlock {-recoverypassword <password>|-recoverykey <pathtoexternalkey
 | `<drive>` | 表示後面接著冒號的磁碟機號。 |
 | -憑證 | 用來解除鎖定磁片區的 BitLocker 憑證的本機使用者憑證位於 [本機使用者] 憑證存放區中。 您也可以使用 **-cert**做為此命令的縮寫版本。 |
 | -cf`<pathtocertificatefile>` | 憑證檔案的路徑。 |
-| -ct`<certificatethumbprint>` | 憑證指紋，可以選擇性地包含 PIN 碼（-pin）。 |
+| -ct`<certificatethumbprint>` | 憑證指紋，可以選擇性地包含 PIN ( pin) 。 |
 | -password | 提供密碼解除鎖定磁片區的提示。 您也可以使用 **-pw**做為此命令的縮寫版本。 |
 | -computername | 指定 manage-bde.exe 將用來修改另一部電腦上的 BitLocker 保護。 您也可以使用 **-cn**做為此命令的縮寫版本。 |
 | `<name>` | 代表要修改 BitLocker 保護的電腦名稱稱。 接受的值包括電腦的 NetBIOS 名稱和電腦的 IP 位址。 |

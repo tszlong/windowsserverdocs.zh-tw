@@ -1,24 +1,22 @@
 ---
 title: 轉換-RiprepImage
-description: RiprepImage 的參考文章，可將現有的遠端安裝準備（RIPrep）映射轉換為 Windows 映像（.wim）格式。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: RiprepImage 的參考文章，可將現有的遠端安裝準備 (RIPrep) 映射轉換成 Windows 映像 ( .wim) 格式。
 ms.topic: article
 ms.assetid: 88c2b96f-5947-4b64-9dcf-1946b3c013cf
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d0e360a23874ada4659819395db16de7527208b4
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5e4a10c4013594c4b6ea19463cf41836f251127a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934110"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896576"
 ---
 # <a name="convert-riprepimage"></a>轉換-RiprepImage
 
-將現有的遠端安裝準備（RIPrep）映射轉換成 Windows 映像（.wim）格式。
+將現有的遠端安裝準備 (RIPrep) 映射轉換成 Windows 映像 ( .wim) 格式。
 
 ## <a name="syntax"></a>語法
 
@@ -34,7 +32,7 @@ WDSUTIL [Options] /Convert-RIPrepImage /FilePath:<File path and name>
 
 ### <a name="parameters"></a>參數
 
-|            參數            |                                                                                                                                                                                                                                                                                                               說明                                                                                                                                                                                                                                                                                                                |
+|            參數            |                                                                                                                                                                                                                                                                                                               描述                                                                                                                                                                                                                                                                                                                |
 |---------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | FilePath\<File path and name> |                                                                                                                                                                                                       指定對應于 RIPrep 映射之 .sif 檔案的完整路徑和檔案名。 這個檔案通常稱為 Riprep，在包含 RIPrep 映射的資料夾的 \Templates 子資料夾中找到。                                                                                                                                                                                                       |
 |        /DestinationImage        | 使用下列選項指定目的地映射的設定。</br>-/FilePath： \<File path and name> -設定新檔案的完整檔案路徑。 例如： **C:\Temp\convert.wim**</br>-[/Name： \<Name> ]-設定影像的顯示名稱。 如果未指定顯示名稱，則會使用來源影像的顯示名稱。</br>-[/Description： \<Description> ]-設定影像的描述。</br>-[/InPlace]-指定應該在原始 RIPrep 映射上進行轉換，而不是在原始映射的複本上進行，這是預設行為。</br>-[/Overwrite： {Yes |

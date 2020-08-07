@@ -1,28 +1,26 @@
 ---
 title: Windows 命令
 description: 參考
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c703d07c-8227-4e86-94a6-8ef390f94cdc
 author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.date: 06/29/2020
-ms.prod: windows-server
-ms.openlocfilehash: a4de7f64601ec4c869c2ae0e6b5ec7a0d22aee2c
-ms.sourcegitcommit: 3d56b626dc2d163d2c7847c01e872bfbfcde0e12
+ms.openlocfilehash: f93d78571528ba721c92e28f2e482b163e355031
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87538530"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896877"
 ---
 # <a name="windows-commands"></a>Windows 命令
 
-所有支援的 Windows 版本（伺服器和用戶端）都有一組內建的 Win32 主控台命令。
+所有支援的 Windows 版本 (伺服器和用戶端) 都有一組內建的 Win32 主控台命令。
 
 這一組檔描述可讓您使用腳本或腳本工具來自動化工作的 Windows 命令。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 本主題所包含的資訊適用于：
 
@@ -38,7 +36,7 @@ ms.locfileid: "87538530"
 
 ### <a name="command-shell-overview"></a>命令 shell 總覽
 
-命令 shell 是 Windows 內建的第一個 shell，可使用 batch （.bat）檔案，將例行工作（例如使用者帳戶管理或夜間備份）自動化。 使用 Windows Script Host，您可以在命令 shell 中執行更複雜的腳本。 如需詳細資訊，請參閱[cscript](cscript.md)或[wscript.echo](wscript.md)。 您可以使用腳本，而不是使用使用者介面來更有效率地執行作業。 腳本會接受命令列上可用的所有命令。
+命令 shell 是 Windows 內建的第一個 shell，可使用 batch ( .bat) 檔案，將例行工作（例如使用者帳戶管理或夜間備份）自動化。 使用 Windows Script Host，您可以在命令 shell 中執行更複雜的腳本。 如需詳細資訊，請參閱[cscript](cscript.md)或[wscript.echo](wscript.md)。 您可以使用腳本，而不是使用使用者介面來更有效率地執行作業。 腳本會接受命令列上可用的所有命令。
 
 Windows 有兩個命令執行介面：命令 shell 和[PowerShell](/powershell/scripting/overview)。 每個 shell 都是一種軟體程式，可提供您與作業系統或應用程式之間的直接通訊，並提供環境來自動化 IT 作業。
 
@@ -57,7 +55,7 @@ PowerShell 的設計目的是要擴充命令 shell 的功能，以執行稱為 C
 >
 > HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\completionChar\ reg_DWOrd
 >
-> 若要設定**reg_DWOrd**值，請針對特定函式使用控制字元的十六進位值（例如， **0 9**為 Tab， **0 08**為倒退鍵）。 使用者指定的設定會優先于電腦設定，而命令列選項的優先順序高於登錄設定。
+> 若要設定**reg_DWOrd**值，請針對特定函式使用控制字元的十六進位值 (例如， **0 9**是 Tab 鍵， **0 08**則是倒退鍵) 。 使用者指定的設定會優先于電腦設定，而命令列選項的優先順序高於登錄設定。
 
 ## <a name="command-line-reference-a-z"></a>命令列參考 A-Z
 

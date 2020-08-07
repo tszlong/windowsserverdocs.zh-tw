@@ -1,24 +1,22 @@
 ---
 title: tsprof
 description: Tsprof 的參考文章，會將遠端桌面服務的使用者設定資訊從一個使用者複製到另一個。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 27047868-b706-4208-b7e0-1437a2325dd3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3abaf2413348edd723962ad99a19be5aa435a495
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 43a9c986a58a28b8de8110789be99f157be9fb66
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954870"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896666"
 ---
 # <a name="tsprof"></a>tsprof
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 將遠端桌面服務的使用者設定資訊從一個使用者複製到另一個。
 [本機使用者和群組] 和 [active directory 使用者和電腦] 的 [遠端桌面服務延伸] 中會顯示遠端桌面服務的使用者設定資訊。
@@ -64,6 +62,6 @@ tsprof /q {/domain:<DomainName> | /local} <UserName>
     tsprof /update /local /profile:c:\profiles LocalUser1
     ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 - [命令列語法索引鍵](command-line-syntax-key.md) 
-[遠端桌面服務（終端機服務）命令參考](remote-desktop-services-terminal-services-command-reference.md)
+[遠端桌面服務 (終端機服務) 命令參考](remote-desktop-services-terminal-services-command-reference.md)

@@ -1,20 +1,18 @@
 ---
 title: WSUS 和類別目錄網站
-description: Windows Server Update Service （WSUS）主題-如何藉由存取 Microsoft Update 目錄網站，將修補程式匯入 WSUS
-ms.prod: windows-server
-ms.technology: manage-wsus
+description: Windows Server Update Service (WSUS) 主題-如何藉由存取 Microsoft Update 目錄網站，將修補程式匯入 WSUS
 ms.topic: article
 ms.assetid: f19a8659-5a96-4fdd-a052-29e4547fe51a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 44c5ff9ffe793160b0d378a753c3f4c35e40f282
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 25a9852935c47e0c005d78ae7ea24d14c7c1a546
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80828321"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896781"
 ---
 # <a name="wsus-and-the-catalog-site"></a>WSUS 和類別目錄網站
 
@@ -37,7 +35,7 @@ ms.locfileid: "80828321"
 
 從 Microsoft Update 目錄網站匯入的核准更新會在下次 WSUS 伺服器進行同步處理時下載。 從 Microsoft Update 目錄網站匯入時，不會下載它們。
 
-請注意，您必須透過 WSUS 主控台存取 Microsoft Update 目錄網站，以確保以與 WSUS 相容的格式匯入更新。 如果您以手動方式存取 Microsoft Update 目錄網站，則您下載的任何更新都不會匯入到 WSUS 伺服器，而是以個別的 * 下載。MSU 檔案。 WSUS 目前不支援在 \*中匯入檔案的機制。MSU 格式。
+請注意，您必須透過 WSUS 主控台存取 Microsoft Update 目錄網站，以確保以與 WSUS 相容的格式匯入更新。 如果您以手動方式存取 Microsoft Update 目錄網站，則您下載的任何更新都不會匯入到 WSUS 伺服器，而是以個別的 * 下載。MSU 檔案。 WSUS 目前不支援在中匯入檔案的機制 \* 。MSU 格式。
 
 如果您執行 [伺服器清理嚮導]，從已設定為 [未核准] 或 [已拒絕] 的 Microsoft Update 目錄匯入的更新，可能會從 WSUS 伺服器中移除。 如果已移除，則可以從 Microsoft Update 目錄重新匯入它們。
 

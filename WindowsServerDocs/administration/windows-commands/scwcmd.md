@@ -1,26 +1,24 @@
 ---
 title: Scwcmd
 description: '* * * * 的參考文章'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 188ae881-c7d4-4a7a-b967-8fdc79f5f345
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bb651c2b527d332f70cd0686a7d57f089bc987ac
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 48348586c354ff8b387a036ecfd021262d31d974
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932620"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883078"
 ---
 # <a name="scwcmd"></a>Scwcmd
 
 > 適用于： Windows Server 2012 R2、Windows Server 2012
 
-安全性設定 Wizard （SCW）隨附的 Scwcmd.exe 命令列工具可用來執行下列工作：
+安全性設定向導隨附的 Scwcmd.exe 命令列工具 (SCW) 可用來執行下列工作：
 -   使用 SCW 產生的原則設定一或多部伺服器。
 -   使用 SCW 產生的原則來分析一或多部伺服器。
 -   以 HTML 格式觀看分析結果。
@@ -38,13 +36,13 @@ scwcmd <command> [<subcommand>]
 
 ### <a name="parameters"></a>參數
 
-|子命令|Description|
+|子命令|描述|
 |----------|-----------|
 |/analyze|判斷電腦是否符合原則。</br>如需語法和選項，請參閱[Scwcmd：分析](scwcmd-analyze.md)。|
 |/configure|將 SCW 產生的安全性原則套用至電腦。</br>如需語法和選項，請參閱[Scwcmd： configure](scwcmd-configure.md) 。|
 |/register|藉由註冊包含角色、工作、服務或埠定義的安全性設定資料庫檔案，延伸或自訂 SCW 安全性設定資料庫。</br>請參閱[Scwcmd：註冊](scwcmd-register.md)以取得語法和選項。|
 |/rollback|套用最新可用的復原原則，然後刪除該復原原則。</br>如需語法和選項，請參閱[Scwcmd： rollback](scwcmd-rollback.md) 。|
-|/transform|將使用 SCW 產生的安全性原則檔案轉換成 Active Directory Domain Services 中新的群組原則物件（GPO）。</br>請參閱[Scwcmd：轉換](scwcmd-transform.md)語法和選項。|
+|/transform|將使用 SCW 產生的安全性原則檔案轉換成 Active Directory Domain Services 中 (GPO) 的新群組原則物件。</br>請參閱[Scwcmd：轉換](scwcmd-transform.md)語法和選項。|
 |/view|使用指定的 .xsl 轉換來呈現 .xml 檔案。</br>如需語法和選項，請參閱[Scwcmd： view](scwcmd-view.md) 。|
 |/?|在命令提示字元顯示說明。|
 

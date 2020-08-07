@@ -1,24 +1,22 @@
 ---
 title: DriverGroup
 description: DriverGroup 的參考文章，它會顯示伺服器上驅動程式群組的相關資訊。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 7cfe10c3-a63f-48e7-bef9-f6b474b4ddbe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b1969ec9e095e3a6d59e2e78e93cb3f83260ed68
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 95981c1821117f6a4a634df001b901ee76816b75
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932263"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896956"
 ---
 # <a name="get-drivergroup"></a>DriverGroup
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 顯示伺服器上驅動程式群組的相關資訊。
 
@@ -27,7 +25,7 @@ ms.locfileid: "85932263"
 wdsutil /Get-DriverGroup /DriverGroup:<Group Name> [/Server:<Server name>]
 ```
 ### <a name="parameters"></a>參數
-|參數|說明|
+|參數|描述|
 |-------|--------|
 |/DriverGroup:<Group Name>|指定驅動程式群組的名稱。|
 |[/Server： <Server name> ]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或 FQDN。  如果未指定伺服器名稱，則會使用本機伺服器。|

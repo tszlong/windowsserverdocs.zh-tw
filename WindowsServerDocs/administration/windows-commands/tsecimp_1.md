@@ -1,24 +1,22 @@
 ---
 title: tsecimp
-description: Tsecimp 的參考文章，它會將指派資訊從可延伸標記語言 (XML) （XML）檔案匯入到 TAPI 伺服器安全性檔案（Tsec.ini）。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: 'Tsecimp 的參考文章，它會將可延伸標記語言 (XML)  (XML) 檔案中的指派資訊匯入至 TAPI 伺服器安全性檔案 ( # A0) 。'
 ms.topic: article
 ms.assetid: d7488ec6-0eff-45ff-89ee-9cbe752416bf
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c5c3362571df5a3b22dda1b663fcbba749ee6df6
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 641e9724211034fa6e5bd76d0d3705b175a18b4c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954890"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896684"
 ---
 # <a name="tsecimp"></a>tsecimp
 
-將可延伸標記語言 (XML) （XML）檔案中的指派資訊匯入至 TAPI 伺服器安全性檔案（Tsec.ini）。 您也可以使用此命令來顯示 TAPI 提供者清單，以及與每個專案相關聯的線路裝置，驗證 XML 檔案的結構而不匯入內容，以及檢查網域成員資格。
+將可延伸標記語言 (XML)  (XML) 檔案中的指派資訊匯入至 TAPI 伺服器安全性檔案 ( # A0) 。 您也可以使用此命令來顯示 TAPI 提供者清單，以及與每個專案相關聯的線路裝置，驗證 XML 檔案的結構而不匯入內容，以及檢查網域成員資格。
 
 ## <a name="syntax"></a>語法
 
@@ -152,7 +150,7 @@ tsecimp /d
 
     ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

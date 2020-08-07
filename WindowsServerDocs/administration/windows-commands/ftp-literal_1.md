@@ -1,24 +1,22 @@
 ---
 title: ftp literal
 description: Ftp 常值命令的參考文章，它會將逐字引數傳送到遠端 ftp 伺服器。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: fb81aa2d-07fa-4e79-bf44-1fb5526fdf14
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c13458a80aa78b377f8859f7e81b8789bd014dc3
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: bafa2626481941b91d501e4fd6df52aa1f8f05d1
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957750"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889356"
 ---
 # <a name="ftp-literal"></a>ftp literal
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 將逐字引數傳送到遠端 ftp 伺服器。 會傳回單一 ftp 回復碼。
 
@@ -45,7 +43,7 @@ literal <argument> [ ]
 literal quit
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

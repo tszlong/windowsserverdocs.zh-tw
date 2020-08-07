@@ -1,28 +1,26 @@
 ---
 title: 新增-映射
 description: 新增映射的參考文章，它會將影像新增至 Windows 部署服務伺服器。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: d5b6f4da-90ba-4b0e-9423-66c8ef5172e2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 535c303e779441dd164174e7a7e311747a9c1e4d
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 24afd8b608875fcb971efad50d4c8adf16541557
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929138"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897000"
 ---
 # <a name="add-image"></a>新增-映射
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 將影像新增至 Windows 部署服務伺服器。
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>語法
 針對開機映射，請使用下列語法：
 ```
 wdsutil /add-ImagmediaFile:<wim file path> [/Server:<Server name>mediatype:Boot [/Skipverify] [/Name:<Image name>] [/Description:<Image description>]
@@ -42,10 +40,10 @@ wdsutil /add-ImagmediaFile:<wim file path>
      [/UnattendFile:<Unattend file path>]
 ```
 ### <a name="parameters"></a>參數
-|參數|說明|
+|參數|描述|
 |-------|--------|
-mediaFile： < .wim 檔案路徑>|指定包含要加入之映射的 Windows 映像（.wim）檔案的完整路徑和檔案名。|
-|[/Server： <Server name> ]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。|
+mediaFile： < .wim 檔案路徑>|指定包含要新增之映射的 Windows 映像)  ( 的完整路徑和檔案名。|
+|[/Server： <Server name> ]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或 (FQDN) 的完整功能變數名稱。 如果未指定伺服器名稱，則會使用本機伺服器。|
 媒體： {Boot&#124;安裝}|指定要加入之映射的類型。|
 |[/Skipverify]|指定在加入映射之前，不會在來源影像檔上執行完整性驗證。|
 |[/Name： <Name> ]|設定影像的顯示名稱。|

@@ -1,26 +1,24 @@
 ---
 title: Scwcmd 設定
 description: '* * * * 的參考文章'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 6528b9dc-3d82-4228-b734-ed717458d74c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e93c0566c28cc77074781b4670dac689795aeeb2
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7556d28826b422b7693ba0770f1e4fa2e4a3a76d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932661"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883210"
 ---
 # <a name="scwcmd-configure"></a>Scwcmd: configure
 
 > 適用于： Windows Server 2012 R2、Windows Server 2012
 
-將安全性設定向導（SCW）產生的安全性原則套用至電腦。 此命令列工具也會接受電腦名稱稱清單做為輸入。
+將 (SCW) 產生的安全性原則套用至電腦的安全性設定 Wizard。 此命令列工具也會接受電腦名稱稱清單做為輸入。
 
 ## <a name="syntax"></a>語法
 
@@ -30,15 +28,15 @@ scwcmd configure [[[/m:<ComputerName> | /ou:<OuName>] /p:<Policy>] | /i:<Compute
 
 #### <a name="parameters"></a>參數
 
-|參數|說明|
+|參數|描述|
 |---------|-----------|
 |/m\<ComputerName>|指定要設定之電腦的 NetBIOS 名稱、DNS 名稱或 IP 位址。 如果指定 **/m**參數，則也必須指定 **/p**參數。|
-|/ou\<OuName>|在 Active Directory Domain Services 中指定組織單位（OU）的完整功能變數名稱（FQDN）。 如果指定 **/ou**參數，則也必須指定 **/p**參數。 OU 中的所有電腦都會根據指定的原則進行分析。|
+|/ou\<OuName>|指定 Active Directory Domain Services 中組織單位 (OU)  (FQDN) 的完整功能變數名稱。 如果指定 **/ou**參數，則也必須指定 **/p**參數。 OU 中的所有電腦都會根據指定的原則進行分析。|
 |/p\<Policy>|指定要用來執行設定之 .xml 原則檔案的路徑和檔案名。|
 |/i\<ComputerList>|指定 .xml 檔案的路徑和檔案名，其中包含一份電腦清單及其預期的原則檔案。 .Xml 檔案中的所有電腦都將根據其對應的原則檔案進行設定。 範例 .xml 檔案是% windir% \security\SampleMachineList.xml。|
 |u\<UserName>|指定設定遠端電腦時要使用的替代使用者認證。 預設為登入的使用者。|
 |/pw\<Password>|指定設定遠端電腦時要使用的替代使用者認證。 預設值為登入使用者的密碼。|
-|/t:\<Threads>|指定在設定程式期間應維持的同時未處理設定作業數目（DefaultValue = 40，MinValue = 1，int32.maxvalue = 1000）。|
+|/t:\<Threads>|指定在設定過程中應該維護的同時未處理設定作業數目 (DefaultValue = 40，MinValue = 1，int32.maxvalue = 1000) 。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註

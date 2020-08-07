@@ -1,24 +1,22 @@
 ---
 title: ftp mput
 description: Ftp mput 命令的參考文章，它會使用目前的檔案傳輸類型，將本機檔案複製到遠端電腦。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 980f15e7-7cf1-4813-9946-a8cc4edfb198
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ca0b72fce2ce9408fa04e948c8116a0b9e153268
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d2caf7e91341f470fc265d0d1dbf6a51b6fe99bb
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957640"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889228"
 ---
 # <a name="ftp-mput"></a>ftp mput
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 使用目前的檔案傳輸類型，將本機檔案複製到遠端電腦。
 
@@ -42,7 +40,7 @@ mput <localfile>[ ]
 mput Program1.exe Program2.exe
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

@@ -1,26 +1,24 @@
 ---
 title: secedit：驗證
 description: '* * * * 的參考文章'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9fb06354-f55a-4ca4-9fbc-9a872eb9b9cf
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7f2da0792768a6b6d6113842614bc6f93c258822
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 30bb02f0d7947aa77f7ac41d5f7b179ca8fd236b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935977"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882931"
 ---
 # <a name="seceditvalidate"></a>secedit：驗證
 
 
 
-驗證儲存在安全性範本（.inf 檔案）中的安全性設定。
+驗證儲存在安全性範本中的安全性設定 ( .inf 檔案) 。
 
 ## <a name="syntax"></a>語法
 
@@ -31,7 +29,7 @@ Secedit /validate <configuration file name>
 
 #### <a name="parameters"></a>參數
 
-|參數|說明|
+|參數|描述|
 |---------|-----------|
 |組態檔名稱|必要。</br>指定要驗證之安全性範本的路徑和檔案名。|
 

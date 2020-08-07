@@ -1,20 +1,18 @@
 ---
 title: Scwcmd 復原
 description: '* * * * 的參考文章'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4fd9f89b-0420-420a-ad20-4a328636b1e7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b329791b16e333e38669258eeeedfa8d65f334db
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 8e0fc158584c15c021b14c96829fe0266c3193be
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932649"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883123"
 ---
 # <a name="scwcmd-rollback"></a>Scwcmd: rollback
 
@@ -30,7 +28,7 @@ scwcmd rollback /m:<ComputerName> [/u:<UserName>] [/pw:<Password>]
 
 #### <a name="parameters"></a>參數
 
-|參數|說明|
+|參數|描述|
 |---------|-----------|
 |/m\<ComputerName>|指定應執行復原作業之電腦的 NetBIOS 名稱、DNS 名稱或 IP 位址。|
 |u\<UserName>|指定執行遠端復原時要使用的替代使用者帳戶。 預設為登入的使用者。|
