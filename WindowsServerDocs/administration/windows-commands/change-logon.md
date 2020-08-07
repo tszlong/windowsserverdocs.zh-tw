@@ -1,24 +1,22 @@
 ---
 title: change logon
 description: 變更登入命令的參考文章，可啟用或停用用戶端會話的登入，或顯示目前的登入狀態。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 41466260-aee9-4333-bcb6-178112c22afd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3604082a909986a5b89efb9feca2c5f6c8abbb53
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f1196ec063ce6ab6d2ede64d58d22608e2e76c48
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955320"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880275"
 ---
 # <a name="change-logon"></a>change logon
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 啟用或停用來自用戶端會話的登入，或顯示目前的登入狀態。 這個公用程式適用于系統維護。 您必須是系統管理員才能執行此命令。
 
@@ -68,7 +66,7 @@ change logon {/query | /enable | /disable | /drain | /drainuntilrestart}
   change logon /disable
   ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

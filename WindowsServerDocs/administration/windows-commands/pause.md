@@ -1,20 +1,18 @@
 ---
 title: pause
 description: Pause 命令的參考文章，會暫停批次程式的處理。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: cab3afc3-d046-432f-a0bf-6282f0099032
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f604bbd205a074d8966cd2c1a1bc65506e7ca5e0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e5f8f10ae64fea8cf2c4610247ebe28b03ce26ae
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922897"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885059"
 ---
 # <a name="pause"></a>pause
 
@@ -28,13 +26,13 @@ pause
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 |--|--|
 | /? | 在命令提示字元顯示說明。 |
 
 ## <a name="remarks"></a>備註
 
-- 如果您按下 CTRL + C 來停止 batch 程式，則會出現下列訊息： `Terminate batch job (Y/N)?` 。 如果您按**Y** （為 [是]）來回應此訊息，則 batch 程式會結束，且控制權會回到作業系統。
+- 如果您按下 CTRL + C 來停止 batch 程式，則會出現下列訊息： `Terminate batch job (Y/N)?` 。 如果您按下**Y** (為 [是]) 回應此訊息，則 batch 程式會結束，且控制權會回到作業系統。
 
 - 您可以在可能不想要處理的批次檔區段之前，插入**pause**命令。 **暫停**batch 程式的處理時，您可以按下 CTRL + C，然後按**Y**以停止 batch 程式。
 

@@ -1,28 +1,26 @@
 ---
 title: wbadmin get versions
 description: Wbadmin get 版本的參考文章，其中列出本機電腦或另一部電腦上儲存的可用備份的詳細資料。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: b986acc4-d083-4d32-9434-862314ed5e97
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6d122176e37d7c49f9193477e348e44e039e9ac9
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 209244f18758a13838a27ffd2f44e871cf5971c1
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954610"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891726"
 ---
 # <a name="wbadmin-get-versions"></a>wbadmin get versions
 
 
 
-列出儲存在本機電腦或另一部電腦上的可用備份的詳細資料。 使用此子命令時，如果沒有參數，它會列出本機電腦的所有備份，即使這些備份無法使用也一樣。 針對備份所提供的詳細資料包括備份時間、備份儲存體位置、[ **wbadmin get items** ] 子命令所需的版本識別碼，以及執行復原的類型，以及您可以執行的復原類型。
+列出儲存在本機電腦或另一部電腦上的可用備份的詳細資料。 使用此子命令時，如果沒有參數，它會列出本機電腦的所有備份，即使這些備份無法使用也一樣。 針對備份提供的詳細資料包括備份時間、備份儲存位置、 **wbadmin get items**子命令所需 (版本識別碼，以及執行復原) 以及您可以執行的復原類型。
 
-若要使用此子命令取得可用備份的詳細資料，您必須是**Backup Operators**群組或**Administrators**群組的成員，或者必須已被委派適當的許可權。 此外，您必須從提升許可權的命令提示字元執行**wbadmin** 。 （若要開啟提升許可權的命令提示字元**命令提示**字元，請按一下 [以**系統管理員身分執行**]）。
+若要使用此子命令取得可用備份的詳細資料，您必須是**Backup Operators**群組或**Administrators**群組的成員，或者必須已被委派適當的許可權。 此外，您必須從提升許可權的命令提示字元執行**wbadmin** 。  (開啟提升許可權的命令提示字元**命令提示**字元，然後按一下 [以**系統管理員身分執行**]。 ) 
 
 ## <a name="syntax"></a>語法
 
@@ -54,7 +52,7 @@ wbadmin get versions -backupTarget:h:
 wbadmin get versions -backupTarget:\\servername\share -machine:server01
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 -   [Restore](wbadmin.md)

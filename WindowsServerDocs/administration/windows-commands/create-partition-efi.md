@@ -1,26 +1,24 @@
 ---
 title: create partition efi
-description: 建立磁碟分割 efi 命令的參考文章，它會在 Itanium 型電腦上的 GUID 磁碟分割表格（gpt）磁片上建立可擴充固件介面（EFI）系統磁碟分割。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: 建立磁碟分割 efi 命令的參考文章，它會在 GUID 磁碟分割表格上建立可延伸固件介面 (EFI) 系統磁碟分割 (在 Itanium 型電腦上使用 gpt) 磁片。
 ms.topic: article
 ms.assetid: 3cfc1fca-6515-4a4d-bfae-615fa8045ea9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 05c811e7be32ed9e73b352161ef1e6f043f27048
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e0307410648453a42c66e7327b5c671a702017e2
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928886"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879999"
 ---
 # <a name="create-partition-efi"></a>create partition efi
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-在 Itanium 型電腦上的 GUID 磁碟分割表格（gpt）磁片上建立可延伸韌體介面（EFI）系統磁碟分割。 建立分割區之後，會將焦點提供給新的資料分割。
+在以 Itanium 為基礎的電腦上，于 GUID 磁碟分割表格上建立可延伸固件介面 (EFI) 系統磁碟分割 (gpt) 磁片。 建立分割區之後，會將焦點提供給新的資料分割。
 
 >[!NOTE]
 > 必須選取 gpt 磁片，此操作才會成功。 使用 [[選取磁片](select-disk.md)] 命令來選取磁片，並將焦點移至它。
@@ -33,10 +31,10 @@ create partition efi [size=<n>] [offset=<n>] [noerr]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
-| 大小 =`<n>` | 分割區的大小（以 mb 為單位）。 如果沒有指定大小的話，則磁碟分割會繼續，直到目前的區域中沒有多餘的可用空間為止。 |
-| offset =`<n>` | 分割區的建立位移（以 kb 為單位）。 如果沒有指定位移的話，則磁碟分割會置於足夠容納它的第一個磁碟範圍內。 |
+| 大小 =`<n>` | 分割區的大小（以 mb 為單位） (MB) 。 如果沒有指定大小的話，則磁碟分割會繼續，直到目前的區域中沒有多餘的可用空間為止。 |
+| offset =`<n>` | 建立資料分割的位移（以 kb 為單位） (KB) 。 如果沒有指定位移的話，則磁碟分割會置於足夠容納它的第一個磁碟範圍內。 |
 | noerr | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
 
 #### <a name="remarks"></a>備註

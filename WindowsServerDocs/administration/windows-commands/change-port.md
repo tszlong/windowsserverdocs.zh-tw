@@ -1,24 +1,22 @@
 ---
 title: change port
 description: '[變更埠] 命令的參考文章，其會列出或變更 COM 埠對應，以與 MS-DOS 應用程式相容。'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 3d772c90-e849-4e74-b9ec-b6cae1159336 Lizap
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1ee3305ff1b8e9ecf82126bd16e6c2c15bb27b26
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 64c0d012d8106d99f1d7a167dd8f2d1d9107150b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955310"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880260"
 ---
 # <a name="change-port"></a>change port
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 列出或變更 COM 埠對應，以與 MS-DOS 應用程式相容。
 
@@ -60,7 +58,7 @@ change port [<portX>=<portY| /d <portX | /query]
   change port /query
   ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

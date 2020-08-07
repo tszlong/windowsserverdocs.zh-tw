@@ -1,20 +1,18 @@
 ---
 title: 選項
 description: '[選擇] 命令的參考文章，會提示使用者從 batch 程式中的單一字元選項清單中選取一個專案，然後傳回所選選擇的索引。'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c65a9119-410b-4dcf-9fa7-4e07d2a7238b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 745321c6388e6faa9de1ce1a8a24afe66514d259
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6aec3af1966d0b7952f0bbb5880e373356117e42
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929981"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880249"
 ---
 # <a name="choice"></a>選項
 
@@ -28,10 +26,10 @@ choice [/c [<choice1><choice2><…>]] [/n] [/cs] [/t <timeout> /d <choice>] [/m 
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
-| /c`<choice1><choice2><…>` | 指定要建立的選項清單。 有效的選項包括 a-z、a-z、0-9 和擴充的 ASCII 字元（128-254）。 預設清單是 [YN]，它會顯示為 `[Y,N]?` 。 |
-| /n | 隱藏選項清單，雖然仍會啟用選項，而且仍然會顯示郵件內文（如 **/m**所指定）。 |
+| /c`<choice1><choice2><…>` | 指定要建立的選項清單。 有效的選項包括 a-z、a-z、0-9 和擴充的 ASCII 字元， (128-254) 。 預設清單是 [YN]，它會顯示為 `[Y,N]?` 。 |
+| /n | 隱藏選項清單，雖然仍會啟用選擇，而且如果) **/m**所指定的郵件內文 (，仍然會顯示。 |
 | /cs | 指定選擇是否區分大小寫。 根據預設，這些選項不區分大小寫。 |
 | 一起`<timeout>` | 指定在使用 **/d**所指定的預設選項之前，要暫停的秒數。 可接受的值為**0**到**9999**。 如果 **/t**設定為**0**，則在傳回預設選項之前，**選擇**不會暫停。 |
 | /d`<choice>` | 指定在等候 **/t**指定的秒數之後，要使用的預設選項。 預設選項必須位於 **/c**所指定的挑選清單中。 |

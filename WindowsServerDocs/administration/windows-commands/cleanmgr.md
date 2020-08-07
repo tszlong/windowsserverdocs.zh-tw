@@ -1,23 +1,21 @@
 ---
 title: cleanmgr
-description: 設定 [磁片清理工具] （Cleanmgr.exe 釋放）以自動清除特定檔案。
-ms.prod: windows-server
+description: " ( # A0) 設定磁片清理工具，以自動清除特定檔案。"
 ms.reviewer: cosmosdarwin
 author: iangpgh
 ms.author: jgerend
 manager: daveba
-ms.technology: storage-spaces
 ms.date: 06/20/2019
-ms.openlocfilehash: 49d85fe0c8ec1bbba810a502724fd7aac0c2f55d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c0b1cb2ff31bbf3fa25d5ac5e4be0e4b35260019
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82712843"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880201"
 ---
 # <a name="cleanmgr"></a>cleanmgr
 
-> 適用于： Windows Server 2019、Windows Server 2016、Windows Server 2012、Windows Server 2008 R2、Windows Server （半年通道）
+> 適用于： Windows Server 2019、Windows Server 2016、Windows Server 2012、Windows Server 2008 R2、Windows Server (半年通道) 
 
 從您的電腦硬碟清除不必要的檔案。 您可以使用命令列選項來指定**cleanmgr.exe 釋放**清除暫存檔案、網際網路檔案、下載的檔案和回收站檔案。 接著，您可以使用 [**排定**的工作] 工具，將工作排程在特定時間執行。
 
@@ -31,10 +29,10 @@ cleanmgr [/d <driveletter>] [/sageset:n]  [/sagerun:n] [/TUNEUP:n] [/LOWDISK] [/
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| /d`<driveletter>` | 指定您想要清理磁片的磁片磁碟機。<p>**注意：****/D**選項不會與`/sagerun:n`搭配使用。 |
-| /sageset： n | 顯示 [**磁片清理設定**] 對話方塊，並建立登錄機碼來儲存您所選取的設定。 儲存`n`在登錄中的值可讓您指定要執行磁片清理的工作。 此`n`值可以是從0到65535的任何整數值。 |
+| /d`<driveletter>` | 指定您想要清理磁片的磁片磁碟機。<p>**注意：****/D**選項不會與搭配使用 `/sagerun:n` 。 |
+| /sageset： n | 顯示 [**磁片清理設定**] 對話方塊，並建立登錄機碼來儲存您所選取的設定。 `n`儲存在登錄中的值可讓您指定要執行磁片清理的工作。 此 `n` 值可以是從0到65535的任何整數值。 |
 | /sagerun： n | 如果您使用**\sageset**選項，則會執行指派給 n 值的指定工作。 系統會列舉電腦上的所有磁片磁碟機，並針對每個磁片磁碟機執行選取的設定檔。 |
-| /tuneup： n | 針對相同`n`的執行 **/sageset**和 **/sagerun** 。 |
+| /tuneup： n | 針對相同的執行 **/sageset**和 **/sagerun** `n` 。 |
 | /lowdisk | 以預設設定執行。 |
 | /verylowdisk | 以預設設定執行，不提示使用者。 |
 | /? | 在命令提示字元顯示說明。 |
@@ -61,7 +59,7 @@ cleanmgr [/d <driveletter>] [/sageset:n]  [/sagerun:n] [/TUNEUP:n] [/LOWDISK] [/
 
 - **壓縮舊**檔案-Windows 可以壓縮您最近未使用過的檔案。 壓縮檔案可節省磁碟空間，但您仍然可以使用這些檔案。 不刪除任何檔案。 因為檔案是以不同的速率進行壓縮，所以您將獲得大約的磁碟空間量。 [選項] 按鈕可讓您指定磁片清理壓縮未使用的檔案之前等待的天數。
 
-- **內容索引器的類別目錄**檔案-索引服務會藉由維護磁片上檔案的索引，來加速並改善檔案搜尋。 這些類別目錄檔案會保留在先前的索引編制作業中，而且可以安全地刪除。<p>**注意：** 類別目錄檔案可能會出現在多個磁片磁碟機中，例如，而`%SystemRoot%`不是在中。
+- **內容索引器的類別目錄**檔案-索引服務會藉由維護磁片上檔案的索引，來加速並改善檔案搜尋。 這些類別目錄檔案會保留在先前的索引編制作業中，而且可以安全地刪除。<p>**注意：** 類別目錄檔案可能會出現在多個磁片磁碟機中，例如，而不是在中 `%SystemRoot%` 。
 
 >[!NOTE]
 > 如果您指定清除包含 Windows 安裝的磁片磁碟機，所有這些選項都可以在 [**磁片清理**] 索引標籤上取得。如果您指定任何其他磁片磁碟機，則 [**磁片清理**] 索引標籤上只會提供 [回收站] 和內容索引選項的類別目錄檔案。
@@ -80,13 +78,13 @@ cleanmgr /sageset:1
 cleanmgr /sagerun:1
 ```
 
-若要`cleanmgr /sageset:1`同時`cleanmgr /sagerun:1`執行和，請輸入：
+若要 `cleanmgr /sageset:1` 同時執行和 `cleanmgr /sagerun:1` ，請輸入：
 
 ```
 cleanmgr /tuneup:1
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [在 Windows 10 中釋放磁碟機空間](https://support.microsoft.com/help/12425/windows-10-free-up-drive-space)
 

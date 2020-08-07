@@ -1,20 +1,18 @@
 ---
 title: 伺服器清理精靈
-description: Windows Server Update Service （WSUS）主題-如何使用伺服器清理嚮導來管理磁碟空間
-ms.prod: windows-server
-ms.technology: manage-wsus
+description: Windows Server Update Service (WSUS) 主題-如何使用伺服器清理嚮導來管理磁碟空間
 ms.topic: article
 ms.assetid: 7c351797-2716-4442-a668-60d5b4e77751
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 12049e2bba28f2381e6e80db07768b4e180861d6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 85713dc245e8e812fa0c715d037738feaeb1ca0e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80828531"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891677"
 ---
 # <a name="the-server-cleanup-wizard"></a>伺服器清理精靈
 
@@ -43,10 +41,10 @@ ms.locfileid: "80828531"
   -   取代更新必須經過核准才能安裝到電腦群組
 
   > [!WARNING]
-  >  在 WSUS 階層中，強烈建議您先在較低的下游/複本 WSUS 伺服器上執行清除程式，然後再向上移動階層。 在每一部下游伺服器上執行清除之前，在任何上游伺服器上不正確執行清除，可能會導致上游資料庫和下游資料庫中出現的資料不相符。 資料不符可能會導致上游和下游伺服器之間的同步處理失敗。 
-  > 
+  >  在 WSUS 階層中，強烈建議您先在較低的下游/複本 WSUS 伺服器上執行清除程式，然後再向上移動階層。 在每一部下游伺服器上執行清除之前，在任何上游伺服器上不正確執行清除，可能會導致上游資料庫和下游資料庫中出現的資料不相符。 資料不符可能會導致上游和下游伺服器之間的同步處理失敗。
+  >
   > [!IMPORTANT]
-  >  如果您使用 [伺服器清理] Wizard 移除不必要的內容，則也會移除您從 Microsoft Update 目錄網站下載的所有私人更新檔案。 執行 [伺服器清理嚮導] 之後，您必須重新匯入這些檔案。 
+  >  如果您使用 [伺服器清理] Wizard 移除不必要的內容，則也會移除您從 Microsoft Update 目錄網站下載的所有私人更新檔案。 執行 [伺服器清理嚮導] 之後，您必須重新匯入這些檔案。
 
 如果使用自動核准規則核准更新，它們可能仍處於 [已核准] 狀態，而且不會由 [伺服器清理] Wizard 移除。 若要移除處於核准狀態的自動核准更新，WSUS 系統管理員必須至少以手動方式將已取代之更新的核准狀態設定為 [未核准]，如此使用者就可以由 [伺服器清理] Wizard 進行 declination。 伺服器清理嚮導會確保已核准較新的更新，而且沒有任何用戶端系統仍會在將更新標示為已拒絕之前，視需要進行更新。
 

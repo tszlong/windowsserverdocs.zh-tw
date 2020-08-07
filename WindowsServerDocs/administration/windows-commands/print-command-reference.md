@@ -1,31 +1,29 @@
 ---
 title: 列印命令列工具參考
 description: 使用列印命令列工具的參考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 88d8fa87-6fa8-4774-9294-080b0157ea8d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aca9b6fd7763c5c9d07a8a741e80bc20131f2297
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5f5d093393908cfcd81909d0a522f2ee423bcbad
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926045"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884854"
 ---
 # <a name="print-command-line-tool-reference"></a>列印命令列工具參考
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 每個相關聯的列印命令列工具的資訊和連結。
 
-| Command | 說明 |
+| Command | 描述 |
 |--|--|
-| [lpq](lpq.md) | 顯示執行線上印表機 Daemon （LPD）之電腦上的列印佇列狀態。 |
-| [lpr](lpr.md) | 將檔案傳送到執行線上印表機 Daemon （LPD）服務的電腦或印表機共用裝置，以準備進行列印。 |
+| [lpq](lpq.md) | 顯示執行線上印表機 Daemon (LPD) 的電腦上列印佇列的狀態。 |
+| [lpr](lpr.md) | 將檔案傳送到執行線上印表機背景程式的電腦或印表機共用裝置 (LPD) 服務，以準備進行列印。 |
 | [Net print](net-print.md) | 顯示指定之印表機佇列的相關資訊、顯示指定列印工作的相關資訊，或控制指定的列印工作。 |
 | [print](print.md) | 將文字檔傳送至印表機。 |
 | [prncnfg](prncnfg.md) | 設定或顯示印表機的設定資訊。 |

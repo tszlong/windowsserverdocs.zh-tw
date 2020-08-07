@@ -1,20 +1,18 @@
 ---
 title: pnputil
 description: Pnputil 命令的參考文章，可新增驅動程式套件、移除驅動程式套件，以及列出驅動程式存放區中的驅動程式套件（使用 pnputil.exe 公用程式）。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: fab686b8-09d3-4f6c-afa2-630e6036f44c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 01b8aee1aa4dfb85b590c9d4abbec471fc437da8
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 4bd4a5ed4dcadb1011dfbf28647ba4f223249a34
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930240"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884928"
 ---
 # <a name="pnputil"></a>pnputil
 
@@ -28,7 +26,7 @@ pnputil.exe [-f | -i] [ -? | -a | -d | -e ] <INF name>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 |--|--|
 | -a | 指定要新增已識別的 INF 檔案。 |
 | -d | 指定刪除已識別的 INF 檔案。 |

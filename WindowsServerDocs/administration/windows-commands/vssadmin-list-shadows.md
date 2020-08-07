@@ -1,19 +1,17 @@
 ---
 title: Vssadmin 清單陰影
 description: Vssadmin list shadows 命令的描述。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ebe9056e1ae1393cebf0b1e2a719cd0c369b3e3e
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d3616902fa0b971969e5e906d6dbb200c633d15a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954770"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891799"
 ---
 # <a name="vssadmin-list-shadows"></a>Vssadmin 清單陰影
 
@@ -34,7 +32,7 @@ vssadmin list shadows [/for=<ForVolumeSpec>] [/shadow=<ShadowID>]
 |/for =\<ForVolumeSpec>|指定將為其列出陰影複製的磁片區。|
 |/shadow =\<ShadowID>|列出 ShadowID 所指定的陰影複製。 若要取得陰影複製識別碼，請使用**vssadmin list shadows**命令。 當您輸入陰影複製識別碼時，請使用下列格式，其中每個*X*代表一個十六進位字元：<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX （XXXX）|
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 * [命令列語法索引鍵](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc771080(v%3dws.11))
 * [Vssadmin](vssadmin.md)

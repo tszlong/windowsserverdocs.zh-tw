@@ -1,28 +1,26 @@
 ---
 title: 移除-影像
 description: 移除映射的參考文章，這會從伺服器刪除影像。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ce5e2384-2264-4b22-92af-74eec8c10ae0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: badcb079b12cf4357cba85d5711cfc5b6a50a2a4
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: fd660c2eae9af48313e751a0dbaf9a336ca9b9fb
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931241"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891966"
 ---
 # <a name="remove-image"></a>移除-影像
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 從伺服器刪除影像。
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>語法
 開機映射：
 ```
 wdsutil [Options] /remove-Imagmedia:<Image name> [/Server:<Server name>mediatype:Boot /Architecture:{x86 | ia64 | x64} [/Filename:<Filename>]
@@ -32,10 +30,10 @@ wdsutil [Options] /remove-Imagmedia:<Image name> [/Server:<Server name>mediatype
 wdsutil [Options] /remove-Imagmedia:<Image name> [/Server:<Server name>mediatype:InstallmediaGroup:<Image group name>] [/Filename:<Filename>]
 ```
 ### <a name="parameters"></a>參數
-|參數|說明|
+|參數|描述|
 |-------|--------|
 媒介<Image name>|指定映像的名稱。|
-|[/Server： <Server name> ]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱（FQDN）。 如果未指定伺服器名稱，則會使用本機伺服器。|
+|[/Server： <Server name> ]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或 (FQDN) 的完整功能變數名稱。 如果未指定伺服器名稱，則會使用本機伺服器。|
 媒體： {Boot &#124; 安裝}|指定映射的類型。|
 |/Architecture： {x86 &#124; ia64 &#124; x64}|指定映射的架構。 因為不同架構中的不同開機映射可能會有相同的映射名稱，所以指定架構值可確保移除正確的映射。|
 |\mediaGroup： <Image group name> ]|指定包含影像的映射群組。 如果未指定映射組名，且伺服器上只存在一個映射群組，則會使用該映射群組。 如果有一個以上的映射群組存在，您就必須使用此選項來指定映射群組。|

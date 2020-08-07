@@ -1,38 +1,36 @@
 ---
 title: nslookup
-description: Nslookup 命令的參考文章，它會顯示可用來診斷網域名稱系統（DNS）基礎結構的資訊。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Nslookup 命令的參考文章，它會顯示可用來診斷網域名稱系統 (DNS) 基礎結構的資訊。
 ms.topic: article
 ms.assetid: 41516932-7833-434a-aa92-b4cf0f9a7ef7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 87f973349426016b6d62bd1f018f268d4e873c51
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7d01f167a198803db269e97e806a6d2867074d60
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925385"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885328"
 ---
 # <a name="nslookup"></a>nslookup
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-顯示您可以用來診斷網域名稱系統（DNS）基礎結構的資訊。 使用此工具之前，您應該先熟悉 DNS 的運作方式。 只有當您已安裝 TCP/IP 通訊協定時，才能使用 nslookup 命令列工具。
+顯示您可以用來診斷網域名稱系統 (DNS) 基礎結構的資訊。 使用此工具之前，您應該先熟悉 DNS 的運作方式。 只有當您已安裝 TCP/IP 通訊協定時，才能使用 nslookup 命令列工具。
 
 Nslookup 命令列工具有兩種模式：互動式和非互動式。
 
 如果您只需要查閱單一資料片段，建議使用非互動模式。 針對第一個參數，輸入您要查閱之電腦的名稱或 IP 位址。 針對第二個參數，輸入 DNS 名稱伺服器的名稱或 IP 位址。 如果您省略第二個引數， **nslookup**會使用預設的 DNS 名稱伺服器。
 
-如果您需要查閱一個以上的資料，則可以使用互動模式。 輸入第一個參數的連字號（-），以及第二個參數的 DNS 名稱伺服器的名稱或 IP 位址。 如果您省略這兩個參數，此工具會使用預設的 DNS 名稱伺服器。 使用互動模式時，您可以：
+如果您需要查閱一個以上的資料，則可以使用互動模式。 輸入第一個參數的連字號 (-) ，以及第二個參數的 DNS 名稱伺服器的名稱或 IP 位址。 如果您省略這兩個參數，此工具會使用預設的 DNS 名稱伺服器。 使用互動模式時，您可以：
 
 - 按 CTRL + B，隨時中斷互動式命令。
 
 - 結束，方法是輸入**exit**。
 
-- 將內建命令視為電腦名稱稱，並在前面加上 escape 字元（ \) 。 無法辨識的命令會被視為電腦名稱稱。
+- 將內建命令視為電腦名稱稱，並在前面加上 escape 字元 (\) 。 無法辨識的命令會被視為電腦名稱稱。
 
 ## <a name="syntax"></a>語法
 
@@ -42,7 +40,7 @@ nslookup [exit | finger | help | ls | lserver | root | server | set | view] [opt
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | [nslookup 結束](nslookup-exit-command.md) | 結束 nslookup 命令列工具。 |
 | [nslookup 手指](nslookup-finger-command.md) | 連接目前電腦上的 finger 伺服器。 |
@@ -75,11 +73,11 @@ nslookup [exit | finger | help | ls | lserver | root | server | set | view] [opt
 
 - 如果*computerTofind*是名稱，而且沒有尾端句點，則預設的 DNS 功能變數名稱會附加至名稱。 此行為取決於下列**set**子命令的狀態： **domain**、 **srchlist**、 **defname**和**search**。
 
-- 如果您輸入連字號（-）而不是*computerTofind*，則命令提示字元會變更為**nslookup**互動模式。
+- 如果您輸入連字號 (-) 而不是*computerTofind*，則命令提示字元會變更為**nslookup**互動模式。
 
 - 如果查閱要求失敗，命令列工具會提供錯誤訊息，包括：
 
-  | 錯誤訊息 | Description |
+  | 錯誤訊息 | 描述 |
   | ------------- | ----------- |
   | 超時 |伺服器不會在一段時間後回應要求，而且一定會重試次數。 您可以使用[nslookup set timeout](nslookup-set-timeout.md)命令來設定超時時間。 您可以使用[nslookup 設定重試](nslookup-set-retry.md)命令來設定重試次數。 |
   | 伺服器沒有回應 | 伺服器電腦上沒有正在執行的 DNS 名稱伺服器。 |

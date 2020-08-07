@@ -1,24 +1,22 @@
 ---
 title: certutil
-description: Certutil 命令的參考文章，這是一種命令列程式，會傾印並顯示憑證授權單位單位（CA）設定資訊、設定憑證服務、備份和還原 CA 元件，以及驗證憑證、金鑰組和憑證鏈。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Certutil 命令的參考文章，這是一種命令列程式，會傾印並顯示憑證授權單位單位 (CA) 設定資訊、設定憑證服務、備份和還原 CA 元件，以及驗證憑證、金鑰組和憑證鏈。
 ms.topic: article
 ms.assetid: c264ccf0-ba1e-412b-9dd3-d77dd9345ad9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 12ef5e7fa5ff305b1670c2f88645f57500c4fb5b
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 9f66bfb724a40a21bfaf323a54749f1d99c25e86
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87178584"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880341"
 ---
 # <a name="certutil"></a>certutil
 
-Certutil.exe 是一種命令列程式，已安裝為憑證服務的一部分。 您可以使用 certutil.exe 來傾印和顯示憑證授權單位單位（CA）設定資訊、設定憑證服務、備份和還原 CA 元件，以及驗證憑證、金鑰組和憑證鏈。
+Certutil.exe 是一種命令列程式，已安裝為憑證服務的一部分。 您可以使用 certutil.exe 來傾印和顯示憑證授權單位單位 (CA) 設定資訊、設定憑證服務、備份和還原 CA 元件，以及驗證憑證、金鑰組和憑證鏈。
 
 如果 certutil 是在沒有其他參數的憑證授權單位單位上執行，則會顯示目前的憑證授權單位單位設定。 如果 certutil 是在非憑證授權單位單位上執行，此命令會預設為執行 `certutil [-dump]` 命令。
 
@@ -178,7 +176,7 @@ certutil [options] -revoke serialnumber [reason]
 
 - **原因**是撤銷原因的數位或符號標記法，包括：
 
-  - **0. CRL_REASON_UNSPECIFIED**未指定（預設值）
+  - **0. CRL_REASON_UNSPECIFIED**未指定 (預設) 
 
   - **1. CRL_REASON_KEY_COMPROMISE**金鑰洩露
 
@@ -266,7 +264,7 @@ certutil [options] -cainfo [infoname [index | errorcode]]
 
   - **sanitizedname** -已清理的 CA 名稱
 
-  - **dsname** -已清理的 CA 簡短名稱（DS 名稱）
+  - **dsname** -已清理的 CA 簡短名稱 (DS 名稱) 
 
   - **sharedfolder** -共用資料夾
 
@@ -370,7 +368,7 @@ certutil [options] -ca.cert outcacertfile [index]
 
 - **outcacertfile**是輸出檔案。
 
-- [**索引**] 是 CA 憑證更新索引（預設為最新的）。
+- [**索引**] 是 CA 憑證更新索引 (預設為最新的) 。
 
 ```
 [-f] [-split] [-config Machine\CAName]
@@ -388,7 +386,7 @@ certutil [options] -ca.chain outcacertchainfile [index]
 
 - **outcacertchainfile**是輸出檔案。
 
-- [**索引**] 是 CA 憑證更新索引（預設為最新的）。
+- [**索引**] 是 CA 憑證更新索引 (預設為最新的) 。
 
 ```
 [-f] [-split] [-config Machine\CAName]
@@ -396,15 +394,15 @@ certutil [options] -ca.chain outcacertchainfile [index]
 
 ### <a name="-getcrl"></a>-getcrl
 
-取得憑證撤銷清單（CRL）。
+取得 (CRL) 的憑證撤銷清單。
 
 certutil [options]-getcrl outfile [index] [delta]
 
 其中：
 
-- **index**是 crl 索引或金鑰索引（預設為最新金鑰的 crl）。
+- **索引**是 crl 索引或金鑰索引 (預設為最新金鑰) 的 crl。
 
-- **delta**是 delta crl （預設值為「基底 crl」）。
+- **delta**是 delta crl (預設值是基底 crl) 。
 
 ```
 [-f] [-split] [-config Machine\CAName]
@@ -412,7 +410,7 @@ certutil [options]-getcrl outfile [index] [delta]
 
 ### <a name="-crl"></a>-crl
 
-發佈新的憑證撤銷清單（Crl）或 delta Crl。
+發佈新的憑證撤銷清單 (Crl) 或 delta Crl。
 
 ```
 certutil [options] -crl [dd:hh | republish] [delta]
@@ -424,7 +422,7 @@ certutil [options] -crl [dd:hh | republish] [delta]
 
 - 重新**發佈**將最新的 crl。
 
-- **差異**只會發佈 delta crl （預設值為基底和 delta crl）。
+- **差異**只會發佈 delta crl (預設值為「基底」和「delta crl」) 。
 
 ```
 [-split] [-config Machine\CAName]
@@ -595,9 +593,9 @@ certutil [options] -backup backupdirectory [incremental] [keeplog]
 
 - **backupdirectory**是用來儲存備份資料的目錄。
 
-- **增量**只會執行增量備份（預設為完整備份）。
+- **增量**只會執行增量備份 (預設為完整備份) 。
 
-- **keeplog**會保留資料庫記錄檔（預設為截斷記錄檔）。
+- **keeplog**會保留資料庫記錄檔 (預設為截斷) 的記錄檔。
 
 ```
 [-f] [-config Machine\CAName] [-p Password]
@@ -615,9 +613,9 @@ certutil [options] -backupdb backupdirectory [incremental] [keeplog]
 
 - **backupdirectory**是用來儲存備份資料庫檔案的目錄。
 
-- **增量**只會執行增量備份（預設為完整備份）。
+- **增量**只會執行增量備份 (預設為完整備份) 。
 
-- **keeplog**會保留資料庫記錄檔（預設為截斷記錄檔）。
+- **keeplog**會保留資料庫記錄檔 (預設為截斷) 的記錄檔。
 
 ```
 [-f] [-config Machine\CAName]
@@ -783,7 +781,7 @@ certutil [options] -store [certificatestorename [certID [outputfile]]]
 
   - `-user ldap: (AD user object certificates)`
 
-- **certID**是憑證或 CRL 相符 token。 這可以是序號、SHA-1 憑證、CRL、CTL 或公開金鑰雜湊、數值憑證索引（0、1等等）、數值 CRL 索引（.0、.1 等等）、數值 CTL 索引（.）。0、.。1等等）、公用金鑰、簽章或延伸 ObjectId、憑證主體一般名稱、電子郵件地址、UPN 或 DNS 名稱、金鑰容器名稱或 CSP 名稱、範本名稱或 ObjectId、EKU 或應用程式原則 ObjectId，或 CRL 簽發者一般名稱。 其中有許多可能會導致多個相符專案。
+- **certID**是憑證或 CRL 相符 token。 這可以是序號、SHA-1 憑證、CRL、CTL 或公開金鑰雜湊、數值憑證索引 (0、1等等) 、數位 CRL 索引 ( .0、.1 等等，) 的數值 CTL 索引 (.。0、.。1，因此在) 、公用金鑰、簽章或延伸 ObjectId、憑證主體一般名稱、電子郵件地址、UPN 或 DNS 名稱、金鑰容器名稱或 CSP 名稱、範本名稱或 ObjectId、EKU 或應用程式原則 ObjectId，或 CRL 簽發者一般名稱。 其中有許多可能會導致多個相符專案。
 
 - **outputfile**是用來儲存相符憑證的檔案。
 
@@ -990,7 +988,7 @@ certutil [options] -viewdelstore [certificatestorename [certID [outputfile]]]
 
 ### <a name="-dspublish"></a>-dspublish
 
-發行憑證或憑證撤銷清單（CRL）以 Active Directory。
+將憑證或憑證撤銷清單 (CRL) 發佈至 Active Directory。
 
 ```
 certutil [options] -dspublish certfile [NTAuthCA | RootCA | SubCA | CrossCA | KRA | User | Machine]
@@ -1056,7 +1054,7 @@ certutil [options] -template [template]
 
 ### <a name="-templatecas"></a>-templatecas
 
-顯示憑證範本的憑證授權單位單位（Ca）。
+顯示憑證範本 (Ca) 的憑證授權單位單位。
 
 ```
 certutil [options] -templatecas template
@@ -1098,12 +1096,12 @@ certutil [options] -setcasites delete
 
 #### <a name="remarks"></a>備註
 
-- `-config`選項的目標是單一憑證授權單位單位（預設值為 [所有 ca]）。
+- `-config`選項的目標是單一憑證授權單位單位 (預設值是所有 ca) 。
 
 - `-f`選項可以用來覆寫指定**sitename**的驗證錯誤，或刪除所有 CA sitenames。
 
 > [!NOTE]
-> 如需有關為 Active Directory Domain Services （AD DS）網站感知設定 Ca 的詳細資訊，請參閱[AD DS AD CS 和 PKI 用戶端的網站感知](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11))。
+> 如需有關為 Active Directory Domain Services (AD DS) 網站感知設定 Ca 的詳細資訊，請參閱[AD DS AD CS 和 PKI 用戶端的網站感知](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11))。
 
 ### <a name="-enrollmentserverurl"></a>-enrollmentserverURL
 
@@ -1283,7 +1281,7 @@ certutil [options] -DCInfo [domain] [verify | deletebad | deleteall]
 ```
 
 > [!TIP]
-> 指定 Active Directory Domain Services （AD DS）網域 **[domain]** 以及指定網域控制站（**-dc**）的功能已在 Windows Server 2012 中新增。 若要成功執行命令，您必須使用屬於**Domain admins**或**Enterprise admins**成員的帳戶。 此命令的行為修改如下所示：<ol><li>1. 如果未指定網域，而且未指定特定網域控制站，則此選項會傳回要從預設網域控制站處理的網域控制站清單。</li><li>2. 如果未指定網域，但指定網域控制站，則會產生指定網域控制站上的憑證報告。</li><li>3. 如果指定網域，但未指定網域控制站，則會在清單中的每個網域控制站的憑證上產生網域控制站清單，以及報告。</li><li>4. 如果指定網域和網域控制站，則會從目標網域控制站產生網域控制站清單。 也會產生清單中每個網域控制站的憑證報告。</li></ol>
+> 在 Windows Server 2012 中已新增 Active Directory Domain Services (AD DS) 網域 **[網域]** 和指定網域控制站 (**-dc**) 的功能。 若要成功執行命令，您必須使用屬於**Domain admins**或**Enterprise admins**成員的帳戶。 此命令的行為修改如下所示：<ol><li>1. 如果未指定網域，而且未指定特定網域控制站，則此選項會傳回要從預設網域控制站處理的網域控制站清單。</li><li>2. 如果未指定網域，但指定網域控制站，則會產生指定網域控制站上的憑證報告。</li><li>3. 如果指定網域，但未指定網域控制站，則會在清單中的每個網域控制站的憑證上產生網域控制站清單，以及報告。</li><li>4. 如果指定網域和網域控制站，則會從目標網域控制站產生網域控制站清單。 也會產生清單中每個網域控制站的憑證報告。</li></ol>
 >
 >例如，假設有一個名為 CPANDL 的網域，且名為 CPANDL 的網域控制站。 您可以執行下列命令，從 CPANDL-DC1 取得網域控制站及其憑證的清單：`certutil -dc cpandl-dc1 -DCInfo cpandl`
 
@@ -1368,7 +1366,7 @@ certutil [options] -verifykeys [keycontainername cacertfile]
 
 ### <a name="-verify"></a>-驗證
 
-驗證憑證、憑證撤銷清單（CRL）或憑證鏈。
+驗證憑證、憑證撤銷清單 (CRL) 或憑證鏈。
 
 ```
 certutil [options] -verify certfile [applicationpolicylist | - [issuancepolicylist]]
@@ -1439,7 +1437,7 @@ certutil [options] -verifyCTL CTLobject [certdir] [certfile]
 
 - **certdir**指定包含符合 CTL 專案之憑證的資料夾。 預設為與**CTLobject**相同的資料夾或網站。 使用 HTTP 資料夾路徑時，結尾必須有路徑分隔符號。 如果您未指定**AuthRoot**或不**允許**，則會搜尋多個位置以尋找相符的憑證，包括本機憑證存放區、crypt32.dll 資源和本機 URL 快取。 `-f`視需要使用從 Windows Update 下載。
 
-- **certfile**會指定要驗證的憑證。 憑證會與 CTL 專案進行比對，並顯示結果。 此選項會隱藏大部分的預設輸出。
+- **certfile**指定) 要驗證的憑證 (。 憑證會與 CTL 專案進行比對，並顯示結果。 此選項會隱藏大部分的預設輸出。
 
 ```
 [-f] [-user] [-split]
@@ -1447,7 +1445,7 @@ certutil [options] -verifyCTL CTLobject [certdir] [certfile]
 
 ### <a name="-sign"></a>-sign
 
-重新簽署憑證撤銷清單（CRL）或憑證。
+ (CRL) 或憑證重新簽署憑證撤銷清單。
 
 ```
 certutil [options] -sign infilelist | serialnumber | CRL outfilelist [startdate+dd:hh] [+serialnumberlist | -serialnumberlist | -objectIDlist | \@extensionfile]
@@ -1470,7 +1468,7 @@ certutil [options] -sign infilelist | serialnumber | CRL outfilelist [#hashalgor
 
   - 選擇性的天數和時數有效期間
 
-  如果同時指定這兩者，您就必須使用加號（+）分隔字元。 使用從 `now[+dd:hh]` 目前的時間開始。 使用沒有 `never` 到期日（僅適用于 crl）。
+  如果同時指定這兩者，您就必須使用加號 (+) 分隔符號。 使用從 `now[+dd:hh]` 目前的時間開始。 請使用 `never` ，讓 crl 沒有到期日 (僅) 。
 
 - **serialnumberlist**是要新增或移除之檔案的逗點分隔序號清單。
 
@@ -1495,9 +1493,9 @@ certutil [options] -sign infilelist | serialnumber | CRL outfilelist [#hashalgor
 
 #### <a name="remarks"></a>備註
 
-- 使用減號（-）會移除序號和延伸模組。
+- 使用負號 (-) 會移除序號和延伸模組。
 
-- 使用加號（+）會將序號新增至 CRL。
+- 使用加號 (+) 會將序號新增至 CRL。
 
 - 您可以使用清單同時從 CRL 移除序號和 Objectid。
 
@@ -1619,7 +1617,7 @@ certutil [options] -oid agID | algorithmname [groupID]
 
 - **objectID**顯示或加入顯示名稱。
 
-- **groupid**是 objectid 列舉的 groupid 數位（decimal）。
+- **groupid**是 objectid 列舉 (decimal) 的 groupid 數位。
 
 - **algID**是 objectID 所查詢的十六進位識別碼。
 
@@ -1629,11 +1627,11 @@ certutil [options] -oid agID | algorithmname [groupID]
 
 - **delete**刪除顯示名稱。
 
-- **LanguageId**是語言識別項值（預設為目前的：1033）。
+- **LanguageId**是語言識別項值 (預設為目前的： 1033) 。
 
 - **類型**是要建立的 DS 物件類型，包括：
 
-  - `1`-Template （預設值）
+  - `1`-範本 (預設) 
 
   - `2`-發行原則
 
@@ -1667,17 +1665,17 @@ certutil [options] -getreg [{ca | restore | policy | exit | template | enroll |c
 
 - **exit**會使用第一個結束模組的登錄機碼。
 
-- **範本**會使用範本登錄機碼（用於 `-user` 使用者範本）。
+- **範本**會使用範本登錄機碼， (用於 `-user`) 的使用者範本。
 
-- **註冊**會使用註冊登錄機碼（用於 `-user` 使用者內容）。
+- **註冊**會使用註冊登錄機碼 (用於 `-user` 使用者內容) 。
 
 - **鏈**會使用連鎖設定登錄機碼。
 
 - **policyservers**會使用原則伺服器登錄機碼。
 
-- **progID**會使用原則或結束模組的 progID （登錄子機碼名稱）。
+- **progID**會使用原則或結束模組的 progID (登錄子機碼名稱) 。
 
-- **registryvaluename**會使用登錄值名稱（使用 `Name*` 前置詞相符）。
+- **registryvaluename**會使用登錄值名稱， (用 `Name*` 來) 前置詞相符。
 
 - **值**使用新的數值、字串或日期登錄值或檔案名。 如果數值開頭為 `+` 或，則 `-` 會在現有的登錄值中設定或清除在新值中指定的位。
 
@@ -1689,7 +1687,7 @@ certutil [options] -getreg [{ca | restore | policy | exit | template | enroll |c
 
 - 如果字串值的開頭為 `+` 或 `-` ，且現有的值為 `REG_MULTI_SZ` 值，則會在現有的登錄值中加入或移除字串。 若要強制建立 `REG_MULTI_SZ` 值，請將新增 `\n` 至字串值的結尾。
 
-- 如果值以開頭 `\@` ，則值的其餘部分會是包含二進位值之十六進位文字表示的檔案名。 如果未參考有效的檔案，則會改為將其剖析為 `[Date][+|-][dd:hh]` 選擇性的日期加或減去選擇性的日和小時。 如果同時指定這兩者，請使用加號（+）或減號（-）分隔字元。 `now+dd:hh`針對與目前時間相關的日期使用。
+- 如果值以開頭 `\@` ，則值的其餘部分會是包含二進位值之十六進位文字表示的檔案名。 如果未參考有效的檔案，則會改為將其剖析為 `[Date][+|-][dd:hh]` 選擇性的日期加或減去選擇性的日和小時。 如果同時指定這兩者，請使用加號 (+) 或負號 ( ) 分隔符號。 `now+dd:hh`針對與目前時間相關的日期使用。
 
 - 用 `chain\chaincacheresyncfiletime \@now` 來有效地清除快取的 crl。
 
@@ -1711,17 +1709,17 @@ certutil [options] -setreg [{ca | restore | policy | exit | template | enroll |c
 
 - **exit**會使用第一個結束模組的登錄機碼。
 
-- **範本**會使用範本登錄機碼（用於 `-user` 使用者範本）。
+- **範本**會使用範本登錄機碼， (用於 `-user`) 的使用者範本。
 
-- **註冊**會使用註冊登錄機碼（用於 `-user` 使用者內容）。
+- **註冊**會使用註冊登錄機碼 (用於 `-user` 使用者內容) 。
 
 - **鏈**會使用連鎖設定登錄機碼。
 
 - **policyservers**會使用原則伺服器登錄機碼。
 
-- **progID**會使用原則或結束模組的 progID （登錄子機碼名稱）。
+- **progID**會使用原則或結束模組的 progID (登錄子機碼名稱) 。
 
-- **registryvaluename**會使用登錄值名稱（使用 `Name*` 前置詞相符）。
+- **registryvaluename**會使用登錄值名稱， (用 `Name*` 來) 前置詞相符。
 
 - **值**使用新的數值、字串或日期登錄值或檔案名。 如果數值開頭為 `+` 或，則 `-` 會在現有的登錄值中設定或清除在新值中指定的位。
 
@@ -1733,7 +1731,7 @@ certutil [options] -setreg [{ca | restore | policy | exit | template | enroll |c
 
 - 如果字串值的開頭為 `+` 或 `-` ，且現有的值為 `REG_MULTI_SZ` 值，則會在現有的登錄值中加入或移除字串。 若要強制建立 `REG_MULTI_SZ` 值，請將新增 `\n` 至字串值的結尾。
 
-- 如果值以開頭 `\@` ，則值的其餘部分會是包含二進位值之十六進位文字表示的檔案名。 如果未參考有效的檔案，則會改為將其剖析為 `[Date][+|-][dd:hh]` 選擇性的日期加或減去選擇性的日和小時。 如果同時指定這兩者，請使用加號（+）或減號（-）分隔字元。 `now+dd:hh`針對與目前時間相關的日期使用。
+- 如果值以開頭 `\@` ，則值的其餘部分會是包含二進位值之十六進位文字表示的檔案名。 如果未參考有效的檔案，則會改為將其剖析為 `[Date][+|-][dd:hh]` 選擇性的日期加或減去選擇性的日和小時。 如果同時指定這兩者，請使用加號 (+) 或負號 ( ) 分隔符號。 `now+dd:hh`針對與目前時間相關的日期使用。
 
 - 用 `chain\chaincacheresyncfiletime \@now` 來有效地清除快取的 crl。
 
@@ -1755,17 +1753,17 @@ certutil [options] -delreg [{ca | restore | policy | exit | template | enroll |c
 
 - **exit**會使用第一個結束模組的登錄機碼。
 
-- **範本**會使用範本登錄機碼（用於 `-user` 使用者範本）。
+- **範本**會使用範本登錄機碼， (用於 `-user`) 的使用者範本。
 
-- **註冊**會使用註冊登錄機碼（用於 `-user` 使用者內容）。
+- **註冊**會使用註冊登錄機碼 (用於 `-user` 使用者內容) 。
 
 - **鏈**會使用連鎖設定登錄機碼。
 
 - **policyservers**會使用原則伺服器登錄機碼。
 
-- **progID**會使用原則或結束模組的 progID （登錄子機碼名稱）。
+- **progID**會使用原則或結束模組的 progID (登錄子機碼名稱) 。
 
-- **registryvaluename**會使用登錄值名稱（使用 `Name*` 前置詞相符）。
+- **registryvaluename**會使用登錄值名稱， (用 `Name*` 來) 前置詞相符。
 
 - **值**使用新的數值、字串或日期登錄值或檔案名。 如果數值開頭為 `+` 或，則 `-` 會在現有的登錄值中設定或清除在新值中指定的位。
 
@@ -1777,7 +1775,7 @@ certutil [options] -delreg [{ca | restore | policy | exit | template | enroll |c
 
 - 如果字串值的開頭為 `+` 或 `-` ，且現有的值為 `REG_MULTI_SZ` 值，則會在現有的登錄值中加入或移除字串。 若要強制建立 `REG_MULTI_SZ` 值，請將新增 `\n` 至字串值的結尾。
 
-- 如果值以開頭 `\@` ，則值的其餘部分會是包含二進位值之十六進位文字表示的檔案名。 如果未參考有效的檔案，則會改為將其剖析為 `[Date][+|-][dd:hh]` 選擇性的日期加或減去選擇性的日和小時。 如果同時指定這兩者，請使用加號（+）或減號（-）分隔字元。 `now+dd:hh`針對與目前時間相關的日期使用。
+- 如果值以開頭 `\@` ，則值的其餘部分會是包含二進位值之十六進位文字表示的檔案名。 如果未參考有效的檔案，則會改為將其剖析為 `[Date][+|-][dd:hh]` 選擇性的日期加或減去選擇性的日和小時。 如果同時指定這兩者，請使用加號 (+) 或負號 ( ) 分隔符號。 `now+dd:hh`針對與目前時間相關的日期使用。
 
 - 用 `chain\chaincacheresyncfiletime \@now` 來有效地清除快取的 crl。
 
@@ -1793,7 +1791,7 @@ certutil [options] -importKMS userkeyandcertfile [certID]
 
 - **userkeyandcertfile**是一個資料檔案，其中包含要封存的使用者私密金鑰和憑證。 這個檔案可以是：
 
-  - Exchange 金鑰管理伺服器（KMS）匯出檔案。
+  -  (KMS) 匯出檔案的 Exchange 金鑰管理伺服器。
 
   - PFX 檔案。
 
@@ -1839,11 +1837,11 @@ certutil [options] -getkey searchtoken retrieve | recover outputfilebasename
 
 其中：
 
-- **腳本**會產生腳本來抓取和復原金鑰（如果找到多個相符的復原候選人，或未指定輸出檔，則為預設行為）。
+- 如果找到多個相符的復原候選項目，或者如果找不到指定的輸出檔) ，**腳本**會產生腳本來抓取和復原金鑰 (預設行為。
 
-- **retrieve**抓取會抓取一或多個金鑰修復 blob （如果只找到一個符合的復原候選，而且已指定輸出檔，則會有預設行為）。 使用此選項會截斷任何延伸模組，並為每個金鑰修復 blob 附加憑證特定的字串和 rec 副檔名。  每個檔案都包含憑證鏈和相關聯的私密金鑰，但仍加密為一或多個金鑰復原代理憑證。
+- 如果只找到一個符合的復原候選，則抓取會抓取一或多個金鑰修復 Blob (預設行為，而且如果) 指定輸出檔案，則會**取得**。 使用此選項會截斷任何延伸模組，並為每個金鑰修復 blob 附加憑證特定的字串和 rec 副檔名。  每個檔案都包含憑證鏈和相關聯的私密金鑰，但仍加密為一或多個金鑰復原代理憑證。
 
-- **復原**會在一個步驟中（需要金鑰復原代理憑證和私密金鑰）來抓取和復原私密金鑰。 使用此選項會截斷任何延伸模組，並附加 p12 副檔名。  每個檔案都包含已復原的憑證鏈和相關聯的私密金鑰，並儲存為 PFX 檔案。
+- **復原** (需要) 金鑰復原代理憑證和私密金鑰，以在一個步驟中抓取和復原私密金鑰。 使用此選項會截斷任何延伸模組，並附加 p12 副檔名。  每個檔案都包含已復原的憑證鏈和相關聯的私密金鑰，並儲存為 PFX 檔案。
 
 - **searchtoken**會選取要復原的金鑰和憑證，包括：
 
@@ -1851,13 +1849,13 @@ certutil [options] -getkey searchtoken retrieve | recover outputfilebasename
 
   - 2. 憑證序號
 
-  - 3. 憑證 SHA-1 雜湊（指紋）
+  - 3. 憑證 SHA-1 雜湊 (指紋) 
 
-  - 4. 憑證 KeyId SHA-1 雜湊（主體金鑰識別碼）
+  - 4. 憑證 KeyId SHA-1 雜湊 (主體金鑰識別碼) 
 
-  - 5. 要求者名稱（網域 \ 使用者）
+  - 5. 要求者名稱 (domain\user) 
 
-  - 6. UPN （使用者 \@ 網域）
+  - 6. UPN (使用者 \@ 網域) 
 
 - **recoverybloboutfile**會使用憑證鏈和相關聯的私密金鑰來輸出檔案，仍然加密為一或多個金鑰復原代理憑證。
 
@@ -1926,7 +1924,7 @@ certutil [options] -convertEPF PFXinfilelist PFXoutfile [cast | cast-] [V3CAcert
 
 - **cast**會使用 cast 64 加密。
 
-- **cast-** 使用 cast 64 加密（export）
+- **cast-** 使用 cast 64 加密 (匯出) 
 
 - **V3CAcertID**是 V3 CA 憑證對應 token。 如需詳細資訊，請參閱本文 `-store` 中的參數。
 
@@ -1979,7 +1977,7 @@ certutil -? -v
 | -秒 | 以秒和毫秒為單位顯示時間。 |
 | -silent | 使用 `silent` 旗標來取得 crypt 內容。 |
 | -split | 分割內嵌的 asn.1 元素，並儲存至檔案。 |
-| -v | 提供更詳細的資訊（詳細資訊）。 |
+| -v | 提供更詳細的 (詳細資訊) 資訊。 |
 | -privatekey | 顯示密碼和私密金鑰資料。 |
 | -pin 釘選 | 智慧卡 PIN。 |
 | -urlfetch verify | 取得並驗證 AIA 憑證和 CDP Crl。 |
@@ -1999,7 +1997,7 @@ certutil -? -v
 | -t timeout | URL 提取超時（以毫秒為單位）。 |
 | -symkeyalg symmetrickeyalgorithm [，keylength] | 具有選擇性金鑰長度之對稱金鑰演算法的名稱。 例如：`AES,128` 或 `3DES` |
 
-### <a name="additional-references"></a>其他參考
+### <a name="additional-references"></a>其他參考資料
 
 如需有關如何使用此命令的其他範例，請參閱
 

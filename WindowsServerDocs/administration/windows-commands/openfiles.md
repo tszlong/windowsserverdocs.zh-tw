@@ -1,20 +1,18 @@
 ---
 title: openfiles
 description: Openfiles 命令的參考文章，可讓系統管理員查詢、顯示或中斷已在系統上開啟的檔案和目錄。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c3be561d-a11f-4bf1-9835-8e4e96fe98ec
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1c1683bb916e068d83ab30e03fdd76e35abb77df
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 79163a717746cfb43d0195cf30c7bbf7e1766623
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936797"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885123"
 ---
 # <a name="openfiles"></a>openfiles
 
@@ -32,15 +30,15 @@ openfiles /disconnect [/s <system> [/u [<domain>\]<username> [/p [<password>]]]]
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 |--|--|
-| /s`<system>` | 指定要連接的遠端系統（依名稱或 IP 位址）。 請勿使用反斜線。 如果您不使用 **/s**選項，預設會在本機電腦上執行命令。 這個參數會套用至命令中指定的所有檔案和資料夾。 |
+| /s`<system>` | 指定要依名稱或 IP 位址) 連接 (的遠端系統。 請勿使用反斜線。 如果您不使用 **/s**選項，預設會在本機電腦上執行命令。 這個參數會套用至命令中指定的所有檔案和資料夾。 |
 | u`[<domain>\]<username>` | 使用指定之使用者帳戶的許可權來執行命令。 如果您不使用 **/u**選項，預設會使用系統許可權。 |
 | /p`[<password>]` | 指定 **/u**選項中所指定使用者帳戶的密碼。 如果您未使用 **/p**選項，則會在命令執行時顯示密碼提示。 |
-| /id`<openfileID>` | 將開啟的檔案與指定的檔案識別碼中斷連接。 您可以使用萬用字元（**&#42;**）搭配此參數。<p>注意：您可以使用**openfiles/query**命令來尋找檔案識別碼。 |
-| /a`<accessedby>` | 中斷與*accessedby*參數中指定的使用者名稱相關聯的所有已開啟檔案。 您可以使用萬用字元（**&#42;**）搭配此參數。 |
-| /o`{read | write | read/write}` | 中斷所有開啟的檔案與指定的開啟模式值的連線。 有效值為「**讀取**」、「**寫入**」或「**讀取/寫入**」。 您可以使用萬用字元（**&#42;**）搭配此參數。 |
-| /op`<openfile>` | 中斷特定開啟的檔案名所建立的所有開啟的檔案連接。 您可以使用萬用字元（**&#42;**）搭配此參數。 |
+| /id`<openfileID>` | 將開啟的檔案與指定的檔案識別碼中斷連接。 您可以使用萬用字元 (**&#42;**) 搭配此參數。<p>注意：您可以使用**openfiles/query**命令來尋找檔案識別碼。 |
+| /a`<accessedby>` | 中斷與*accessedby*參數中指定的使用者名稱相關聯的所有已開啟檔案。 您可以使用萬用字元 (**&#42;**) 搭配此參數。 |
+| /o`{read | write | read/write}` | 中斷所有開啟的檔案與指定的開啟模式值的連線。 有效值為「**讀取**」、「**寫入**」或「**讀取/寫入**」。 您可以使用萬用字元 (**&#42;**) 搭配此參數。 |
+| /op`<openfile>` | 中斷特定開啟的檔案名所建立的所有開啟的檔案連接。 您可以使用萬用字元 (**&#42;**) 搭配此參數。 |
 | /? | 在命令提示字元顯示說明。 |
 
 ### <a name="examples"></a>範例
@@ -88,14 +86,14 @@ openfiles /query [/s <system> [/u [<domain>\]<username> [/p [<password>]]]] [/fo
 #### <a name="parameters"></a>參數
 
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 |--|--|
-| /s`<system>` | 指定要連接的遠端系統（依名稱或 IP 位址）。 請勿使用反斜線。 如果您不使用 **/s**選項，預設會在本機電腦上執行命令。 這個參數會套用至命令中指定的所有檔案和資料夾。 |
+| /s`<system>` | 指定要依名稱或 IP 位址) 連接 (的遠端系統。 請勿使用反斜線。 如果您不使用 **/s**選項，預設會在本機電腦上執行命令。 這個參數會套用至命令中指定的所有檔案和資料夾。 |
 | u`[<domain>\]<username>` | 使用指定之使用者帳戶的許可權來執行命令。 如果您不使用 **/u**選項，預設會使用系統許可權。 |
 | /p`[<password>]` | 指定 **/u**選項中所指定使用者帳戶的密碼。 如果您未使用 **/p**選項，則會在命令執行時顯示密碼提示。 |
-| [/fo `{TABLE | LIST | CSV}` ] | 以指定的格式顯示輸出。 有效值包括：<ul><li>**資料表**-顯示資料表中的輸出。</li><li>**清單**-顯示清單中的輸出。</li><li>**CSV** -以逗號分隔值（CSV）格式顯示輸出。</li></ul> |
+| [/fo `{TABLE | LIST | CSV}` ] | 以指定的格式顯示輸出。 有效值包括：<ul><li>**資料表**-顯示資料表中的輸出。</li><li>**清單**-顯示清單中的輸出。</li><li>**Csv** -以逗號分隔值顯示 (CSV) 格式的輸出。</li></ul> |
 | /nh | 隱藏輸出中的資料行標頭。 只有當 **/fo**參數設定為**TABLE**或**CSV**時，才有效。 |
-| /v | 指定在輸出中顯示詳細的（詳細資料）資訊。 |
+| /v | 指定在輸出中顯示詳細 (詳細資料) 資訊。 |
 | /? | 在命令提示字元顯示說明。 |
 
 ### <a name="examples"></a>範例
@@ -142,7 +140,7 @@ openfiles /local [on | off]
 
 #### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 |--|--|
 | `[on | off]` | 啟用或停用 [系統**維護物件清單**] 全域旗標，它會追蹤本機檔案控制代碼。 |
 | /? | 在命令提示字元顯示說明。 |

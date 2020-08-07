@@ -1,24 +1,22 @@
 ---
-title: 路徑
-description: 在 PATH 環境變數中設定命令路徑的參考文章，指定用來搜尋可執行檔（.exe）的目錄集合。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+title: path
+description: 在 PATH 環境變數中設定命令路徑的參考文章，指定用來搜尋可執行檔 ( .exe) 檔案的目錄集。
 ms.topic: article
 ms.assetid: 1bfa1349-e79a-472b-a9e6-d7a91149ae8f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f324c2b0fc84d2df05f7df93d83799b3ac463d5d
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 4c81dfef09b4c9a411db9469ec851d4f92180f1d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932020"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885100"
 ---
-# <a name="path"></a>路徑
+# <a name="path"></a>path
 
-在 PATH 環境變數中設定命令路徑，並指定用來搜尋可執行檔（.exe）的目錄集。 如果使用時不含參數，此命令會顯示目前的命令路徑。
+在 PATH 環境變數中設定命令路徑，指定用來搜尋可執行檔 ( .exe) 檔案的目錄集。 如果使用時不含參數，此命令會顯示目前的命令路徑。
 
 ## <a name="syntax"></a>語法
 
@@ -29,7 +27,7 @@ path ;
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 |--|--|
 | `[<drive>:]<path>` | 指定要在命令路徑中設定的磁片磁碟機和目錄。 在命令路徑中指定的目錄之前，一律會搜尋目前的目錄。 |
 | ; | 在命令路徑中分隔目錄。 如果使用時沒有其他參數，**則**會從 PATH 環境變數清除現有的命令路徑，並將 Cmd.exe 導向僅在目前目錄中搜尋。 |

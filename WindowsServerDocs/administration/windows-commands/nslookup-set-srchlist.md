@@ -1,26 +1,24 @@
 ---
 title: nslookup set srchlist
-description: Nslookup set srchlist 命令的參考文章，它會變更預設的網域名稱系統（DNS）功能變數名稱和搜尋清單。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Nslookup set srchlist 命令的參考文章，它會變更預設網域名稱系統 (DNS) 功能變數名稱和搜尋清單。
 ms.topic: article
 ms.assetid: 8486266d-22ac-4ce5-aad6-1cd0c08110a2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5d43107ed2c777349a8cac1a0411c035371bc0f7
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: de02663ce43b9f3f24f1addd739438a0796be0ea
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930410"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885498"
 ---
 # <a name="nslookup-set-srchlist"></a>nslookup set srchlist
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-變更預設網域名稱系統（DNS）功能變數名稱和搜尋清單。 此命令會覆寫[nslookup set domain](nslookup-set-domain.md)命令的預設 DNS 功能變數名稱和搜尋清單。
+變更預設網域名稱系統 (DNS) 功能變數名稱和搜尋清單。 此命令會覆寫[nslookup set domain](nslookup-set-domain.md)命令的預設 DNS 功能變數名稱和搜尋清單。
 
 ## <a name="syntax"></a>語法
 
@@ -30,9 +28,9 @@ set srchlist=<domainname>[/...]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
-| `<domainname>` | 指定預設 DNS 網域和搜尋清單的新名稱。 預設的功能變數名稱值是以主機名稱為基礎。 您最多可以指定六個名稱，並以斜線（/）分隔。 |
+| `<domainname>` | 指定預設 DNS 網域和搜尋清單的新名稱。 預設的功能變數名稱值是以主機名稱為基礎。 您最多可以指定六個名稱，並以斜線分隔 (/) 。 |
 | /? | 在命令提示字元顯示說明。 |
 | /help | 在命令提示字元顯示說明。 |
 

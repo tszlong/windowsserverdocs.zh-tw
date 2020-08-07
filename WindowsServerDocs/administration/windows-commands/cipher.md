@@ -1,20 +1,18 @@
 ---
 title: cipher
 description: Encryption 命令的參考文章，它會顯示或變更 NTFS 磁片區上的目錄和檔案的加密。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 78ef795e-0f87-4acd-8d15-192c972c0f41
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f23e2855c4542cc359d458f6825dd9420581657f
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6b5d7c6708c714cd414e06e150b9b0344cc03f9c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929975"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880237"
 ---
 # <a name="cipher"></a>cipher
 
@@ -37,23 +35,23 @@ cipher /rekey [pathname [...]]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | /b | 如果發生錯誤，則中止。 根據預設，即使遇到錯誤， **cipher**還是會繼續執行。 |
 | /C | 顯示加密檔案的資訊。 |
 | /d | 解密指定的檔案或目錄。 |
 | /e | 加密指定的檔案或目錄。 系統會標示目錄，以便在之後新增的檔案會進行加密。 |
 | /h | 顯示具有隱藏或系統屬性的檔案。 根據預設，這些檔案不會經過加密或解密。 |
-| /k | 建立要與加密檔案系統（EFS）檔案搭配使用的新憑證和金鑰。 如果指定了 **/k**參數，則會忽略所有其他參數。 |
-| /r： `<filename>` [/smartcard] | 會產生 EFS 復原代理程式金鑰和憑證，然後將它們寫入 .pfx 檔案（包含憑證和私密金鑰）和 .cer 檔案（僅包含憑證）。 如果指定 **/smartcard** ，則會將修復金鑰和憑證寫入智慧卡，且不會產生 .pfx 檔案。 |
+| /k | 建立新的憑證和金鑰，以與加密檔案系統 (EFS) 檔案搭配使用。 如果指定了 **/k**參數，則會忽略所有其他參數。 |
+| /r： `<filename>` [/smartcard] | 會產生 EFS 復原代理程式金鑰和憑證，然後將它們寫入 .pfx 檔案， (包含憑證和私密金鑰) 以及僅包含憑證) 的 .cer 檔案 (。 如果指定 **/smartcard** ，則會將修復金鑰和憑證寫入智慧卡，且不會產生 .pfx 檔案。 |
 | /s`<directory>` | 在指定*目錄*中的所有子目錄上執行指定的操作。 |
-| /u [/n] |  尋找本機磁片磁碟機上的所有加密檔案。 如果搭配 **/n**參數使用，則不會進行任何更新。 如果使用時不含 **/n**， **/u**會將使用者的檔案加密金鑰或復原代理程式的金鑰與目前的金鑰進行比較，並在變更時加以更新。 這個參數只能搭配 **/n**使用。 |
+| /u [/n] |  在本機磁片磁碟機上尋找所有已加密的檔案 (s) 。 如果搭配 **/n**參數使用，則不會進行任何更新。 如果使用時不含 **/n**， **/u**會將使用者的檔案加密金鑰或復原代理程式的金鑰與目前的金鑰進行比較，並在變更時加以更新。 這個參數只能搭配 **/n**使用。 |
 | /w`<directory>` | 從整個磁片區上可用的未使用磁碟空間移除資料。 如果您使用 **/w**參數，則會忽略所有其他參數。 指定的目錄可以位於本機磁片區中的任何位置。 如果是掛接點或指向另一個磁片區中的目錄，則會移除該磁片區上的資料。 |
-| /x [： efsfile] [ `<FileName>` ] | 將 EFS 憑證和金鑰備份至指定的檔案名。 如果搭配使用 **： efsfile**， **/x**會備份用來加密檔案的使用者憑證。 否則，會備份使用者目前的 EFS 憑證和金鑰。 |
+| /x [： efsfile] [ `<FileName>` ] | 將 EFS 憑證和金鑰備份至指定的檔案名。 如果與搭配使用 **： efsfile**， **/x**會備份用來加密檔案的使用者憑證 (s) 。 否則，會備份使用者目前的 EFS 憑證和金鑰。 |
 | /y | 顯示本機電腦上目前的 EFS 憑證縮圖。 |
 | /adduser [/certhash:`<hash>` | /certfile： `<filename>` ] |
-| /rekey | 更新指定的加密檔案，以使用目前設定的 EFS 金鑰。 |
-| /removeuser /certhash:`<hash>` | 從指定的檔案中移除使用者。 提供給 **/certhash**的*雜湊*必須是要移除之憑證的 SHA1 雜湊。 |
+| /rekey |  (s) 更新指定的加密檔案，以使用目前設定的 EFS 金鑰。 |
+| /removeuser /certhash:`<hash>` | 從指定的檔案 (s) 移除使用者。 提供給 **/certhash**的*雜湊*必須是要移除之憑證的 SHA1 雜湊。 |
 | /? | 在命令提示字元顯示說明。 |
 
 ### <a name="remarks"></a>備註

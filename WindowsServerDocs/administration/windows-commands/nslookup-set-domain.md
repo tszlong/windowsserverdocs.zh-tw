@@ -1,26 +1,24 @@
 ---
 title: nslookup set domain
-description: Nslookup set 網域命令的參考文章，它會將預設網域名稱系統（DNS）功能變數名稱變更為指定的名稱。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Nslookup set 網域命令的參考文章，它會將預設網域名稱系統 (DNS) 功能變數名稱變更為指定的名稱。
 ms.topic: article
 ms.assetid: 9d4d28e8-6e88-42cc-801f-94e9d8e051f4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: eaa12029beab301f955a4c9bed4595831f6ebf12
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: fbf2602f387af9a1f389bdcccc50b19a5b25c2ce
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934408"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885668"
 ---
 # <a name="nslookup-set-domain"></a>nslookup set domain
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-將預設網域名稱系統（DNS）功能變數名稱變更為指定的名稱。
+將預設網域名稱系統 (DNS) 功能變數名稱變更為指定的名稱。
 
 ## <a name="syntax"></a>語法
 
@@ -30,7 +28,7 @@ set domain=<domainname>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<domainname>` | 指定預設 DNS 功能變數名稱的新名稱。 預設值是主機的名稱。 |
 | /? | 在命令提示字元顯示說明。 |

@@ -1,20 +1,18 @@
 ---
 title: offline disk
 description: 離線磁片命令的參考文章，這會將線上磁片的焦點放在離線狀態。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 8fb9b3c3-0b2c-4192-a2e7-f706292653e3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cc8a746e09e5756eec1890d1715a88e60696cd49
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b570336bba8da402adb848c465148dabc49b0f6a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936755"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885281"
 ---
 # <a name="offline-disk"></a>offline disk
 
@@ -33,7 +31,7 @@ offline disk [noerr]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | noerr | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
 

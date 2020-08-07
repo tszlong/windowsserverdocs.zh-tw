@@ -1,24 +1,22 @@
 ---
 title: cmdkey
 description: Cmdkey 命令的參考文章，它會建立、列出及刪除已儲存的使用者名稱和密碼或認證。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5fcd68ee-a14a-4b71-9300-c3f5c5d31e8e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a7a5446a692719a55575853df6aebc78733135b8
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d7194b19231209150197fbc4c20175b319da77cd
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929838"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880059"
 ---
 # <a name="cmdkey"></a>cmdkey
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 建立、列出和刪除儲存的使用者名稱和密碼或認證。
 
@@ -30,7 +28,7 @@ cmdkey [{/add:<targetname>|/generic:<targetname>}] {/smartcard | /user:<username
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | ---------- | ----------- |
 | /add`<targetname>` | 將使用者名稱和密碼加入清單中。<p>需要 `<targetname>` 可識別此專案將關聯之電腦或功能變數名稱的參數。 |
 | /一般`<targetname>` | 將一般認證加入清單中。<p>需要 `<targetname>` 可識別此專案將關聯之電腦或功能變數名稱的參數。 |

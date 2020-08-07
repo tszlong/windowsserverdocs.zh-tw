@@ -1,20 +1,18 @@
 ---
 title: offline volume
 description: 離線磁片區命令的參考文章，它會將線上磁片區的焦點放在離線狀態。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: b8f7192f-ea38-47d0-9d4e-58ef68336ae6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9f64a6924b0033b0e7889ccbcab4fb142a4f7c05
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2e8a6bbebb88f97c4e4b04afccedeb05c4a1392a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936733"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885262"
 ---
 # <a name="offline-volume"></a>offline volume
 
@@ -31,7 +29,7 @@ offline volume [noerr]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | noerr | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
 
