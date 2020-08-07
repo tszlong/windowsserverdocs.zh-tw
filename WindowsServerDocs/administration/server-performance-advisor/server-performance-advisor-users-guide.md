@@ -220,7 +220,7 @@ SPA 主控台會使用相同的帳戶來讀取記錄，並將它們匯入至資�
 
     * 將伺服器新增至目標伺服器清單
 
-3.  按 [下一步] 。 [**建立專案資料庫**] 頁面會要求您提供要在其中建立資料庫之 Microsoft SQL Server 實例的名稱。 例如，如果與主控台位於同一部電腦上，您可以使用**LOCALHOST \\ &lt; SQL server 名稱 &gt; **。
+3.  按 [下一步]  。 [**建立專案資料庫**] 頁面會要求您提供要在其中建立資料庫之 Microsoft SQL Server 實例的名稱。 例如，如果與主控台位於同一部電腦上，您可以使用**LOCALHOST \\ &lt; SQL server 名稱 &gt; **。
 
     **注意**SQL Server 2008 R2 Express 安裝的預設實例名稱是 SQLExpress。 針對安裝在本機電腦上 SQL Server 2008 R2 Express 的實例，資料庫通常會預設為**localhost \\ SQLExpress**。 不過，在 SQL Server 安裝期間可能已變更，因此您必須確定使用的是正確的 SQL Server 實例名稱。
 
