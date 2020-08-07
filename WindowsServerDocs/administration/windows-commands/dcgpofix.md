@@ -1,24 +1,22 @@
 ---
 title: dcgpofix
-description: Dcgpofix 命令的參考文章，它會重新建立網域的預設群組原則物件（Gpo）。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Dcgpofix 命令的參考文章，會重新建立網域 (Gpo) 的預設群組原則物件。
 ms.topic: article
 ms.assetid: 81d5fa65-2aea-49d3-b353-357441846c00
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cf9e3c37c054c34d602e472a2c5f83e9a8b284b9
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b4e2da750883dbffaa45fe1800249543cd8b9209
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928805"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891507"
 ---
 # <a name="dcgpofix"></a>dcgpofix
 
-重新建立網域的預設群組原則物件（Gpo）。 若要取得群組原則管理主控台（GPMC），您必須透過伺服器管理員將群組原則管理安裝為功能。
+重新建立網域 (Gpo) 的預設群組原則物件。 若要取得群組原則管理主控台 (GPMC) ，您必須透過伺服器管理員將群組原則管理安裝為功能。
 
 >[!IMPORTANT]
 > 最佳做法是只設定預設網域原則 GPO 來管理預設的**帳戶原則**設定、密碼原則、帳戶鎖定原則和 Kerberos 原則。 此外，您應該只設定 [預設網域控制站原則] GPO 來設定使用者權限和稽核原則。
@@ -31,7 +29,7 @@ dcgpofix [/ignoreschema] [/target: {domain | dc | both}] [/?]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | /ignoreschema | 當您執行此命令時，會忽略 Active Directory 架構的版本。 否則，此命令僅適用于隨附命令之 Windows 版本的相同架構版本。 |
 | `/target {domain | dc | both` | 指定是以預設網域原則、預設網域控制站原則或兩種原則類型為目標。 |

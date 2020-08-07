@@ -1,20 +1,18 @@
 ---
 title: forfiles
 description: Forfiles 命令的參考文章，會在檔案或一組檔案上選取並執行命令。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 43f6b004-446d-4fdd-91c5-5653613524a4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/20/2020
-ms.openlocfilehash: 26c443aa05d081fc257dc49d2f2c7f6a9adae865
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 004c27b841629e18eac4d94f7fe0816b42762107
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922398"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890147"
 ---
 # <a name="forfiles"></a>forfiles
 
@@ -28,13 +26,13 @@ forfiles [/P pathname] [/M searchmask] [/S] [/C command] [/D [+ | -] [{<date> | 
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | /P`<pathname>` | 指定要從中開始搜尋的路徑。 根據預設，搜尋會從目前的工作目錄開始。 |
 | /M`<searchmask>` | 根據指定的搜尋遮罩搜尋檔案。 預設 searchmask 為 `*` 。 |
 | /S | 指示**forfiles**命令以遞迴方式搜尋子目錄。 |
 | /C`<command>` | 在每個檔案上執行指定的命令。 命令字串應該以雙引號括住。 預設的命令是 `"cmd /c echo @file"` 。 |
-| /D`[{+\|-}][{<date> | <days>}]` | 選取在指定的時間範圍內，具有上次修改日期的檔案：<ul><li>選取上次修改日期晚于或等於（ **+** ）或早于或等於（ **-** ）指定日期的檔案，其中*date*的格式為 MM/DD/YYYY。</li><li>選取上次修改日期晚于或等於（ **+** ）目前日期加上指定的天數，或早于或等於（ **-** ）目前日期減去指定天數的檔案。</li><li>*Days*的有效值包括0–32768範圍內的任何數位。 如果未指定正負號， **+** 則預設會使用。</li></ul> |
+| /D`[{+\|-}][{<date> | <days>}]` | 選取在指定的時間範圍內，具有上次修改日期的檔案：<ul><li>選取上次修改日期晚于或等於 (**+**) 或)  (早于 **-** 指定日期的檔案，其中*date*的格式為 MM/DD/YYYY。</li><li>選取上次修改日期晚于或等於 (的檔案 **+**) 目前的日期加上指定的天數，或早于或等於 (**-**) 目前的日期減去指定的天數。</li><li>*Days*的有效值包括0–32768範圍內的任何數位。 如果未指定正負號， **+** 則預設會使用。</li></ul> |
 | /? | 在 cmd 視窗中顯示解說文字。 |
 
 #### <a name="remarks"></a>備註
@@ -55,7 +53,7 @@ forfiles [/P pathname] [/M searchmask] [/S] [/C command] [/D [+ | -] [{<date> | 
     | @FDATE | 上次修改檔案的日期戳記。 |
     | @FTIME | 上次修改檔案的時間戳記。 |
 
-- **Forfiles**命令可讓您在上執行命令，或將引數傳遞至多個檔案。 例如，您可以在具有 .txt 副檔名的樹狀目錄中的所有檔案上執行**type**命令。 或者，您可以在磁片磁碟機 C 上執行每個批次檔（* .bat），檔案名 Myinput.txt 做為第一個引數。
+- **Forfiles**命令可讓您在上執行命令，或將引數傳遞至多個檔案。 例如，您可以在具有 .txt 副檔名的樹狀目錄中的所有檔案上執行**type**命令。 或者，您也可以在磁片磁碟機 C 上執行每個 ( * .bat) 的批次檔，並以檔案名 Myinput.txt 作為第一個引數。
 
 - 此命令可以：
 
@@ -65,7 +63,7 @@ forfiles [/P pathname] [/M searchmask] [/S] [/C command] [/D [+ | -] [{<date> | 
 
     - 使用變數來區分目錄中的檔案 @ISDIR 。
 
-    - 在命令列中包含特殊字元，方法是使用字元的十六進位代碼，格式為 0x*HH* （例如，索引標籤的0x09）。
+    - 在命令列中包含特殊字元，方法是使用字元的十六進位代碼，格式為 0x*HH* ， (例如，索引標籤) 的0x09。
 
 - 此命令的運作方式是 `recurse subdirectories` 在設計用來處理單一檔案的工具上，執行旗標。
 

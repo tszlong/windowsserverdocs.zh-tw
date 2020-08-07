@@ -1,24 +1,22 @@
 ---
 title: defrag
 description: 重組命令的參考文章，它會在本機磁片區上尋找和合併分散的檔案，以改善系統效能。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: aaf1d1ac-996a-4282-9b4d-1e8245ff162c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 65c1d22bd45734a667bfc46840fe652e3f2f5314
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c68edbb4511df12912adbc666201d5a381c06fe3
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958430"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891488"
 ---
 # <a name="defrag"></a>defrag
 
-> 適用于： Windows 10、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows 10、Windows Server (半年通道) 、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 尋找併合並本機磁片區上的分散檔案，以改善系統效能。
 
@@ -40,10 +38,10 @@ defrag <volume> [<parameters>]
 | `<volume>` | 指定要進行磁碟重組或分析之磁片區的磁碟機號或掛接點路徑。 |
 | /a | 在指定的磁片區上執行分析。 |
 | /C | 在所有磁片區上執行操作。 |
-| /d | 執行傳統磁碟重組（這是預設值）。 不過，在分層磁片區上，傳統的磁碟重組只會在容量層上執行。 |
+| /d | 執行傳統磁碟重組 (這是預設) 。 不過，在分層磁片區上，傳統的磁碟重組只會在容量層上執行。 |
 | /e | 在除了指定的磁片區上執行作業。 |
 | /g | 將指定磁片區上的儲存層優化。 |
-| /h | 以一般優先權執行作業（預設值為 [低]）。 |
+| /h | 以一般優先權執行作業， (預設值為低) 。 |
 | /i [n] | 在每個磁片區上最多可執行 n 秒的層優化。 |
 | /k | 在指定的磁片區上執行樓板匯總。 |
 | /l | 在指定的磁片區上執行 retrim。 |
@@ -69,7 +67,7 @@ defrag <volume> [<parameters>]
 
   - 非**NTFS**、 **ReFS**、 **Fat**或**Fat32**的檔案系統磁片區。
 
-- 您無法排程在位於 SSD 上的虛擬硬碟（VHD）上重組固態硬碟（SSD）或磁片區。
+- 您無法排程將固態磁片磁碟機 (SSD) 或位於 SSD 上之虛擬硬碟 (VHD) 的磁片區重組。
 
 - 若要執行此程序，您必須是本機電腦上的 Administrators 群組成員或是已經委派您適當的權限。 如果該電腦已加入網域，則 Domain Admins 群組的成員便可以執行這項程序。 作為安全性最佳作法，請考慮使用 [**執行**身分] 來執行此程式。
 
@@ -79,7 +77,7 @@ defrag <volume> [<parameters>]
 
 - 根據預設，如果您未指定 **/a**或 **/v** **參數，重組會同時顯示分析**和磁碟重組報告的摘要。
 
-- 您可以輸入FileName.txt，將報表傳送至文字檔 **>** <em> </em>，其中*FileName.txt*是您指定的檔案名。 例如：`defrag volume /v > FileName.txt`
+- 您可以輸入FileName.txt，將報表傳送至文字檔 **>** <em> </em>，其中*FileName.txt*是您指定的檔案名。 例如： `defrag volume /v > FileName.txt`
 
 - 若要中斷磁碟重組程式，請在命令列中按**CTRL + C**。
 
@@ -129,9 +127,9 @@ defrag /c /h /v
 
     - 電腦未插入。 如果電腦以電池電源執行，則不會執行此程式。
 
-    - 電腦已啟動備份（從閒置狀態恢復）。
+    - 電腦已啟動備份 (從閒置) 繼續。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

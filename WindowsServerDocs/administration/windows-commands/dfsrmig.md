@@ -1,26 +1,24 @@
 ---
 title: dfsrmig
 description: Drsrmig 命令的參考文章，可將 SYSvol 複寫從 FRS 遷移至 DFS 複寫、提供有關遷移進度的資訊，以及修改 AD DS 物件以支援遷移。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e1b6a464-6a93-4e66-9969-04f175226d8d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 87882ebe0beb687f704c5573091f56c067c278ee
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 83e4d039b0c7c36960ab8dadfa4740d0c01daa33
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928632"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891047"
 ---
 # <a name="dfsrmig"></a>dfsrmig
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-DFS 複寫服務 dfsrmig.exe 的遷移工具會隨 DFS 複寫服務一起安裝。 此工具會將 SYSvol 複寫從檔案複寫服務（FRS）遷移至分散式檔案系統（DFS）複寫。 它也會提供有關遷移進度的資訊，並修改 Active Directory Domain Services （AD DS）物件以支援遷移。
+DFS 複寫服務 dfsrmig.exe 的遷移工具會隨 DFS 複寫服務一起安裝。 此工具會將 SYSvol 複寫從檔案複寫服務 (FRS) 遷移至分散式檔案系統 (DFS) 複寫。 它也會提供有關遷移進度的資訊，以及修改 Active Directory Domain Services (AD DS) 物件以支援遷移。
 
 ## <a name="syntax"></a>語法
 
@@ -31,7 +29,7 @@ dfsrmig [/setglobalstate <state> | /getglobalstate | /getmigrationstate | /creat
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `/setglobalstate <state>` | 將網域的全域遷移狀態設定為對應至*state*所指定之值的域。 您只能將全域遷移狀態設定為穩定狀態。 *狀態值*包括：<ul><li>**0** -開始狀態</li><li>**1** -備妥狀態</li><li>**2** -重新導向狀態</li><li>**3** -排除狀態</li></ul> |
 | /getglobalstate | 在 PDC 模擬器上執行時，從 AD DS 資料庫的本機複本中，抓取網域的目前全域遷移狀態。 使用此選項來確認您已設定正確的全域遷移狀態。<p>**重要事項：** 您應該只在 PDC 模擬器上執行這個命令。 |
@@ -57,17 +55,17 @@ dfsrmig [/setglobalstate <state> | /getglobalstate | /getmigrationstate | /creat
 
 - 只有在執行 Windows Server 網域功能等級的網域控制站上才支援**drsrmig**命令，因為從 FRS 到 DFS 複寫的 SYSvol 遷移僅適用于在該層級運作的網域控制站。
 
-- 您可以在任何網域控制站上執行**drsrmig**命令，但建立或操作 AD DS 物件的作業只能在可讀寫功能的網域控制站（不是在唯讀網域控制站上）上使用。
+- 您可以在任何網域控制站上執行**drsrmig**命令，但建立或操作 AD DS 物件的作業只能在讀寫功能的網域控制站上使用， (不在唯讀網域控制站) 上。
 
 ## <a name="examples"></a>範例
 
-若要將全域遷移狀態設定為 [備妥] （**1**），並起始遷移或從備妥的狀態復原，請輸入：
+若要將全域遷移狀態設定為備妥 (**1**) 並起始遷移或從備妥的狀態復原，請輸入：
 
 ```
 dfsrmig /setglobalstate 1
 ```
 
-若要將全域遷移狀態設定為 [啟動] （**0**），並起始復原至 [啟動] 狀態，請輸入：
+若要將全域遷移狀態設定為啟動 (**0**) 並起始復原至啟動狀態，請輸入：
 
 ```
 dfsrmig /setglobalstate 0

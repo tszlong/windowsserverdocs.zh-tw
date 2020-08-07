@@ -1,24 +1,22 @@
 ---
 title: flattemp
 description: Flattemp 命令的參考文章，可啟用或停用一般暫存資料夾。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 059a0960-1fd9-4382-87fe-a85d5dccdaea
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1ec253182ce3071f03ce47e368c6fa87fe58fed0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b90bfdf06fad151ab92ea82782a4171877e6d0ad
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932102"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890191"
 ---
 # <a name="flattemp"></a>flattemp
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 啟用或停用單層暫存資料夾。 您必須具有系統管理認證，才能執行此命令。
 
@@ -33,18 +31,18 @@ flattemp {/query | /enable | /disable}
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | /query | 查詢目前的設定。 |
 | /enable | 啟用單層暫存資料夾。 除非暫存資料夾位於使用者的主資料夾中，否則使用者會共用暫存資料夾。 |
-| /disable | 停用單層暫存資料夾。 每個使用者的暫存資料夾都會位於個別的資料夾（由使用者的會話識別碼決定）。 |
+| /disable | 停用單層暫存資料夾。 每個使用者的暫存資料夾都位於個別的資料夾中， (由使用者的會話識別碼) 決定。 |
 | /? | 在命令提示字元顯示說明。 |
 
 #### <a name="remarks"></a>備註
 
 - 當每位使用者都有唯一的暫存資料夾之後，請使用 `flattemp /enable` 來啟用一般暫存資料夾。
 
-- 為多個使用者建立暫存資料夾的預設方法（通常由 TEMP 和 TMP 環境變數指向）是使用 logonID 做為子資料夾名稱，在 [ **\temp** ] 資料夾中建立子資料夾。 例如，如果 TEMP 環境變數指向 C：\Temp，則指派給使用者 logonID 4 的暫存資料夾會是 C:\Temp\4。
+- 為多個使用者建立暫存資料夾的預設方法 (通常是由 TEMP 和 TMP 環境變數所指向，) 是在 [ **\temp** ] 資料夾中建立子資料夾，方法是使用 logonID 做為子資料夾名稱。 例如，如果 TEMP 環境變數指向 C：\Temp，則指派給使用者 logonID 4 的暫存資料夾會是 C:\Temp\4。
 
     使用**flattemp**，您可以直接指向 [\temp] 資料夾，並防止子資料夾形成。 當您想要讓使用者暫存資料夾包含在主資料夾（不論是在遠端桌面工作階段主機伺服器本機磁片磁碟機或共用網路磁碟機機上）時，這會很有用。 `flattemp /enable*`只有在每個使用者都有個別的暫存資料夾時，您才應該使用此命令。
 

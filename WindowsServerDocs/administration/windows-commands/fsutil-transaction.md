@@ -1,24 +1,22 @@
 ---
 title: fsutil transaction
 description: 適用于管理 NTFS 交易之 fsutil transaction 命令的參考文章。
-ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: f2eefaaf-2817-4ac7-abac-d2b65fa971dc
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 776903b820c7d7381aff61bb754446b5682f88db
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f70281af6ecf652cc1dba95ec09b07529f71752e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958170"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889799"
 ---
 # <a name="fsutil-transaction"></a>fsutil transaction
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8
 
 管理 NTFS 交易。
 
@@ -52,7 +50,7 @@ fsutil transaction [rollback] <GUID>
 fsutil transaction fileinfo c:\test.txt
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

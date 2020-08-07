@@ -1,24 +1,22 @@
 ---
 title: ftp append
 description: Ftp append 命令的參考文章，它會使用目前的檔案類型設定，將本機檔案附加至遠端電腦上的檔案。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 7c1a133c-31dc-41a4-9eb9-258efd79804d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cee11d52db784477b0b4ffeecc307d395f910a92
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 0c98e9eb4ed5d2dc560deac0720158cf90d801e4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958080"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889689"
 ---
 # <a name="ftp-append"></a>ftp append
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 使用目前的檔案類型設定，將本機檔案附加至遠端電腦上的檔案。
 
@@ -49,7 +47,7 @@ append file1.txt file2.txt
 append file1.txt
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

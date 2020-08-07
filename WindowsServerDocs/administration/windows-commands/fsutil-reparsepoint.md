@@ -1,30 +1,28 @@
 ---
 title: fsutil reparsepoint
 description: Fsutil reparsepoint 命令的參考文章，它會查詢或刪除重新分析點。
-ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: fb95c8ee-a418-4520-a12a-7754ae947c3c
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: edbbc578b6a84ebd4e342493e29cbe2bd5c5a2cd
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b7742b7bb970394f0ef8602ae5c862c2ff9a1a41
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931212"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889883"
 ---
 # <a name="fsutil-reparsepoint"></a>fsutil reparsepoint
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8
 
 查詢或刪除重新分析點。  **Fsutil reparsepoint**命令通常是由支援專業人員所使用。
 
 重新分析點是具有可定義屬性的 NTFS 檔案系統物件，其中包含使用者定義的資料。 它們是用來：
 
-- 擴充輸入/輸出（i/o）子系統中的功能。
+- 擴充輸入/輸出 (i/o) 子系統中的功能。
 
 - 作為目錄連接點和磁片區掛接點。
 
@@ -39,7 +37,7 @@ fsutil reparsepoint [delete] <filename>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | 查詢 | 抓取與指定的控制碼所識別之檔案或目錄相關聯的重新分析點資料。 |
 | delete | 從指定的控制碼所識別的檔案或目錄中刪除重新分析點，但不會刪除檔案或目錄。 |

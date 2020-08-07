@@ -1,26 +1,24 @@
 ---
 title: fsutil usn
-description: 適用于管理更新序號（USN）變更日誌的 fsutil usn 命令參考文章。
-ms.prod: windows-server
+description: Fsutil usn 命令的參考文章，它會管理更新序號 (USN) 變更日誌。
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: faad34aa-4ba1-4129-bc1f-08088399e2fa
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: b3f71588c7221f0ba8e3659d9a1a1dd133971ce9
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: c2bbd130902812f9a44d2d762a074b67de5e8dac
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930470"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889780"
 ---
 # <a name="fsutil-usn"></a>fsutil usn
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8
 
-管理更新序號（USN）變更日誌。 USN 變更日誌會針對磁片區上的檔案所做的所有變更，提供持續性記錄。 新增、刪除和修改檔案、目錄和其他 NTFS 物件時，NTFS 會將記錄輸入到 USN 變更日誌中，這是電腦上的每個磁片區。 每個記錄都會指出變更的類型與變更的物件。 新的記錄會附加到資料流程的結尾。
+管理 (USN) 變更日誌的更新序號。 USN 變更日誌會針對磁片區上的檔案所做的所有變更，提供持續性記錄。 新增、刪除和修改檔案、目錄和其他 NTFS 物件時，NTFS 會將記錄輸入到 USN 變更日誌中，這是電腦上的每個磁片區。 每個記錄都會指出變更的類型與變更的物件。 新的記錄會附加到資料流程的結尾。
 
 ## <a name="syntax"></a>語法
 
@@ -36,14 +34,14 @@ fsutil usn [readjournal] [c= <chunk-size> s=<file-size-threshold>] <volumepath>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | createjournal | 建立 USN 變更日誌。 |
 | m =`<maxsize>` | 指定 NTFS 為變更日誌配置的大小上限（以位元組為單位）。 |
 | a =`<allocationdelta>` | 指定新增至結尾並從變更日誌開頭移除的記憶體配置大小（以位元組為單位）。 |
-| `<volumepath>` | 指定磁碟機號（後面接著冒號）。 |
-| deletejournal | 刪除或停用 active USN 變更日誌。<p>**注意：** 刪除變更日誌會影響檔案複寫服務（FRS）和索引服務，因為它需要這些服務來執行磁片區的完整（且耗時）掃描。 這在重新掃描磁片區時，會反過來對 FRS SYSVOL 複寫和 DFS 連結替代之間的複寫造成負面影響。 |
-| /d | 停用 active USN 變更日誌，並在停用變更日誌時傳回輸入/輸出（i/o）控制。 |
+| `<volumepath>` | 指定 (後面接著冒號) 的磁碟機號。 |
+| deletejournal | 刪除或停用 active USN 變更日誌。<p>**注意：** 刪除變更日誌會影響檔案複寫服務 (FRS) 和索引服務，因為它需要這些服務來執行磁片區的完整 (和耗時的) 掃描。 這在重新掃描磁片區時，會反過來對 FRS SYSVOL 複寫和 DFS 連結替代之間的複寫造成負面影響。 |
+| /d | 停用 active USN 變更日誌，並在停用變更日誌時，傳回輸入/輸出 (i/o) 控制項。 |
 | /n | 停用使用中的 USN 變更日誌，只有在停用變更日誌之後，才會傳回 i/o 控制。 |
 | enablerangetracking | 啟用磁片區的 USN 寫入範圍追蹤。 |
 | c =`<chunk-size>` | 指定要在磁片區上追蹤的區塊大小。 |
@@ -62,7 +60,7 @@ fsutil usn [readjournal] [c= <chunk-size> s=<file-size-threshold>] <volumepath>
 
 #### <a name="remarks"></a>備註
 
-- 程式可以查閱 USN 變更日誌，以判斷對一組檔案所做的所有修改。 USN 變更日誌比檢查時間戳記或註冊檔案通知更有效率。 USN 變更日誌是由索引服務、檔案複寫服務（FRS）、遠端安裝服務（RIS）和遠端存放啟用及使用。
+- 程式可以查閱 USN 變更日誌，以判斷對一組檔案所做的所有修改。 USN 變更日誌比檢查時間戳記或註冊檔案通知更有效率。 USN 變更日誌是由索引服務、檔案複寫服務 (FRS) 、遠端安裝服務 (RIS) 和遠端存放啟用及使用。
 
 - 如果磁片區上已有變更日誌， **createjournal**參數會更新變更日誌的**maxsize**和**allocationdelta**參數。 這可讓您擴充使用中日誌維護的記錄數目，而不需要將它停用。
 
@@ -70,7 +68,7 @@ fsutil usn [readjournal] [c= <chunk-size> s=<file-size-threshold>] <volumepath>
 
 - 在修剪之前，變更日誌可以成長到大於**maxsize**和**allocationdelta**值的總和。
 
-- 刪除或停用使用中的變更日誌非常耗時，因為系統必須存取主要檔案資料表（MFT）中的所有記錄，並將最後一個 USN 屬性設為0（零）。 此程式可能需要幾分鐘的時間，而且如果需要重新開機，它可以在系統重新開機之後繼續進行。 在此過程中，變更日誌不會被視為作用中，也不會停用。 當系統停用日誌時，就無法存取它，而且所有日誌作業都會傳回錯誤。 停用使用中的日誌時，您應該特別小心，因為它會對其他使用日誌的應用程式造成不良影響。
+- 刪除或停用使用中的變更日誌非常耗時，因為系統必須存取主要檔案資料表 (MFT) 中的所有記錄，並將最後一個 USN 屬性設為 0 (零) 。 此程式可能需要幾分鐘的時間，而且如果需要重新開機，它可以在系統重新開機之後繼續進行。 在此過程中，變更日誌不會被視為作用中，也不會停用。 當系統停用日誌時，就無法存取它，而且所有日誌作業都會傳回錯誤。 停用使用中的日誌時，您應該特別小心，因為它會對其他使用日誌的應用程式造成不良影響。
 
 ### <a name="examples"></a>範例
 

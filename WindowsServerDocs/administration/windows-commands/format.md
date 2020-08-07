@@ -1,20 +1,18 @@
 ---
 title: format
 description: Format 命令的參考文章，其格式化磁片以接受 Windows 檔案。
-ms.prod: windows-server
 manager: dongill
 ms.author: jgerend
-ms.technology: storage
 ms.topic: article
 ms.assetid: 51ec7423-9a01-4219-868a-25d69cdcc832
 author: jasongerend
 ms.date: 10/16/2017
-ms.openlocfilehash: 73f83a07cb1537af66d59977099b251b6dd12f47
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: a923706252e6094cf12dcdf2632366ee7b2401f8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958220"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890127"
 ---
 # <a name="format"></a>格式
 
@@ -23,7 +21,7 @@ ms.locfileid: "86958220"
 格式化磁片以接受 Windows 檔案。 您必須是 Administrators 群組的成員，才能格式化硬碟。
 
 > [!NOTE]
-> 您也可以從修復主控台使用**format**命令搭配不同的參數。 如需有關修復主控台的詳細資訊，請參閱[Windows 修復環境（WINDOWS RE）](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)。
+> 您也可以從修復主控台使用**format**命令搭配不同的參數。 如需有關修復主控台的詳細資訊，請參閱[Windows 修復環境 (WINDOWS RE) ](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)。
 
 ## <a name="syntax"></a>語法
 
@@ -39,8 +37,8 @@ format <volume> [/q]
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| `<volume>` | 指定您想要格式化之磁片磁碟機的掛接點、磁片區名稱或磁碟機號（後面接著冒號）。 如果您未指定下列任何命令列選項， **format**會使用磁片區類型來判斷磁片的預設格式。 |
-| /fs： {FAT | FAT32 | 格式化 | 指定檔案系統的類型（FAT、FAT32、NTFS）。 |
+| `<volume>` | 指定掛接點、磁片區名稱或磁碟機號 (後面接著您要格式化之磁片磁碟機的冒號) 。 如果您未指定下列任何命令列選項， **format**會使用磁片區類型來判斷磁片的預設格式。 |
+| /fs： {FAT | FAT32 | 格式化 | 指定檔案系統的類型 (FAT、FAT32、NTFS) 。 |
 | /v:`<label>` | 指定磁碟區標籤。 如果您省略 **/v**命令列選項，或在未指定磁片區標籤的情況下使用它，**格式**會在格式化完成之後提示您輸入磁片區標籤。 使用語法 **/v:** 以避免出現磁碟區標籤的提示。 如果您使用單一 **format** 命令來格式化多個磁碟，即會為所有磁碟指定相同的磁碟區標籤。 |
 | /a`<unitsize>` | 指定要在 FAT、FAT32 或 NTFS 磁片區上使用的配置單位大小。 如果您未指定*unitsize*，則會根據磁片區大小來選擇。 針對一般用途，強烈建議使用預設設定。 下列清單顯示 NTFS、FAT 和 FAT32 *unitsize*的有效值：<ul><li>512</li><li>1024</li><li>2048</li><li>4096</li><li>8192</li><li>16K</li><li>32 K</li><li>64K</li></ul>FAT 和 FAT32 也針對大於 512 位元組的磁區大小支援 128 K 和 256 K。 |
 | /q | 執行快速格式化。 刪除先前格式化之磁片區的檔案資料表和根目錄，但不會針對錯誤區域執行磁區內的掃描。 您應該使用 **/q**命令列選項，只將您知道的先前格式化磁片區格式化為良好狀況。 請注意，**/q** 會覆寫 **/p**。 |
@@ -60,7 +58,7 @@ format <volume> [/q]
 
     `Volume label (11 characters, ENTER for none)?`
 
-    若要新增磁片區標籤，請輸入最多11個字元（包含空格）。 如果您不想要將磁片區標籤新增至磁片，請按 ENTER。
+    若要新增磁片區標籤，請輸入最多11個字元， (包括空格) 。 如果您不想要將磁片區標籤新增至磁片，請按 ENTER。
 
 - 當您使用**format**命令格式化硬碟時，會顯示類似下列的警告訊息：
 
@@ -91,8 +89,8 @@ format <volume> [/q]
   | --------- | ----------- |
   | 0 | 格式化作業成功。 |
   | 1 | 提供的參數不正確。 |
-  | 4 | 發生嚴重錯誤（這是0、1或5以外的任何錯誤）。 |
-  | 5 | 使用者按下 N 以回應「繼續進行格式（Y/N）？」 以停止該程序。 |
+  | 4 | 發生嚴重錯誤 (，其為0、1或 5) 以外的任何錯誤。 |
+  | 5 | 使用者按下 N 以回應「繼續進行格式 (Y/N) ？」提示 以停止該程序。 |
 
   您可以使用 ERRORLEVEL 環境變數搭配 **if** 批次命令來檢查這些結束代碼。
 
@@ -116,6 +114,6 @@ format a: /q
 format a: /v:DATA
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc771080(v=ws.11))

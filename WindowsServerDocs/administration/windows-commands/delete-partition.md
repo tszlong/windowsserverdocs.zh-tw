@@ -1,20 +1,18 @@
 ---
 title: delete partition
 description: 刪除資料分割命令的參考文章，這會刪除具有焦點的資料分割。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 65752312-cb16-46f6-870f-1b95c507b101
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b45cb060a5d82e254fe371269dbdbcb9d46fee92
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5a783a7d94b48f088eeb868ac64ca355d8829c25
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928726"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891431"
 ---
 # <a name="delete-partition"></a>delete partition
 
@@ -33,7 +31,7 @@ delete partition [noerr] [override]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | noerr | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
 | override | 啟用 DiskPart 來刪除各種類型的磁碟分割。 一般來說，DiskPart 只允許您刪除已知的資料磁碟分割。 |
@@ -42,7 +40,7 @@ delete partition [noerr] [override]
 
 - 若要刪除動態磁碟區，請一律改用 [[刪除磁片](delete-volume.md)區] 命令。
 
-- 磁碟分割可以從動態磁碟中刪除，但不應建立。 例如，您可以刪除動態 GPT 磁片上無法辨識的 GUID 磁碟分割表格（GPT）分割區。 刪除這類資料分割並不會導致產生的可用空間變成可用。 相反地，此命令的目的是讓您在無法使用 DiskPart 中的[clean](clean.md)命令的緊急情況下，回收損毀離線動態磁碟上的空間。
+- 磁碟分割可以從動態磁碟中刪除，但不應建立。 例如，您可以刪除無法辨識的 GUID 磁碟分割表格， (在動態 GPT 磁片上的 GPT) 磁碟分割。 刪除這類資料分割並不會導致產生的可用空間變成可用。 相反地，此命令的目的是讓您在無法使用 DiskPart 中的[clean](clean.md)命令的緊急情況下，回收損毀離線動態磁碟上的空間。
 
 ## <a name="examples"></a>範例
 

@@ -1,20 +1,18 @@
 ---
 title: bitsadmin removeclientcertificate
 description: Bitsadmin removeclientcertificate 命令的參考文章，它會從作業中移除用戶端憑證。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: b417c3e5-aadd-4fcc-968f-45d8b67ca516
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3659f830b9462469762fcd4c7690295073400b1e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: f4b2a17a08f3c2b224d90237975841644ea16ecd
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927980"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87893380"
 ---
 # <a name="bitsadmin-removeclientcertificate"></a>bitsadmin removeclientcertificate
 
@@ -28,7 +26,7 @@ bitsadmin /removeclientcertificate <job>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | -------------- | -------------- |
 | 作業 | 作業的顯示名稱或 GUID。 |
 

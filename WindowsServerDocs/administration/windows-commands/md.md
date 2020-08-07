@@ -1,20 +1,18 @@
 ---
 title: md
 description: Md 命令的參考文章，它會建立目錄或子目錄。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 82162d00-cc34-4776-9e55-4b4836dbd6a9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e7d5dac14572bfe53f92333cddcdc68bfa0aab1a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 94dd8f696b97d56fe082f73287a3d50dc7f70883
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922097"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886509"
 ---
 # <a name="md"></a>md
 
@@ -31,7 +29,7 @@ md [<drive>:]<path>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<drive>`: | 指定您要在其上建立新目錄的磁片磁碟機。 |
 | `<path>` | 指定新目錄的名稱和位置。 任何單一路徑的最大長度都是由檔案系統所決定。 這是必要參數。 |

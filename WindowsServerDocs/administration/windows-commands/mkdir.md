@@ -1,20 +1,18 @@
 ---
 title: mkdir
 description: Mkdir 命令的參考文章，它會建立目錄或子目錄。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 033a57a2-5deb-4c98-aa78-61ce8df2a330
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c7c1569e82143443de861216e40b904de4481a03
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: afff7a7985c5934a8566162da7307ad8676a50f9
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931281"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886457"
 ---
 # <a name="mkdir"></a>mkdir
 
@@ -31,7 +29,7 @@ mkdir [<drive>:]<path>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<drive>`: | 指定您要在其上建立新目錄的磁片磁碟機。 |
 | `<path>` | 指定新目錄的名稱和位置。 任何單一路徑的最大長度都是由檔案系統所決定。 這是必要參數。 |

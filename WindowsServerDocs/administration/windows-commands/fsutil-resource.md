@@ -1,24 +1,22 @@
 ---
 title: fsutil resource
 description: Fsutil resource 命令的參考文章，它會管理交易式 Resource Manager 及其行為。
-ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: b198d8ca-a5b7-430f-8911-5cbb9f50484c
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: c0be84f00df2e0010f6c2a318f605532a3bc4d23
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 85b52c1ad124ac47617948f1683038108214e2e3
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958180"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889877"
 ---
 # <a name="fsutil-resource"></a>fsutil resource
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8
 
 建立次要交易式 Resource Manager、啟動或停止交易式 Resource Manager，或顯示交易式 Resource Manager 的相關資訊，以及修改下列行為：
 
@@ -59,7 +57,7 @@ fsutil resource [stop] <rmrootpathname>
 | `<containers>` | 指定交易 Resource Manager 所使用的資料物件。 |
 | maxextent | 指定指定交易 Resource Manager 的容器數目上限。 |
 | minextent | 指定指定交易 Resource Manager 的容器數目下限。 |
-| 下`{full|undo}` | 指定是否記錄所有交易（ **full**），或只記錄回復事件（**復原**）。 |
+| 下`{full|undo}` | 指定是否要記錄所有交易 (**完整**) 或只記錄回復的事件 (**復原**) 。 |
 | 重新命名 | 變更交易式 Resource Manager 的 GUID。 |
 | shrink | 指定交易 Resource Manager 記錄可自動減少的百分比。 |
 | 大小 | 將交易 Resource Manager 的大小指定為指定的*容器*數目。 |
@@ -86,7 +84,7 @@ fsutil resource setlog growth 2 percent c:test
 fsutil resource setautoreset true c:\
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 

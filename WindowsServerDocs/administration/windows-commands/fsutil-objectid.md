@@ -1,29 +1,27 @@
 ---
 title: fsutil objectid
 description: Fsutil objectid 命令的參考文章，它會管理物件識別碼以追蹤其他物件，例如檔案、目錄和連結。
-ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: 693ab895-9d0c-47c1-9f52-df5cd287842a
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 5ab0b95bdcde8bce51e1d5a2c14888229621fcaa
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: f24a434a3b48186baa1743cc6159cac39443231e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925243"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889961"
 ---
 # <a name="fsutil-objectid"></a>fsutil objectid
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8
 
-管理物件識別元（Oid），這是分散式連結追蹤（DLT）用戶端服務和檔案複寫服務（FRS）所使用的內建物件，用來追蹤其他物件，例如檔案、目錄和連結。 大部分的程式都不會看到物件識別碼，而且絕對不能修改。
+管理 (Oid) 的物件識別碼，這是分散式連結追蹤 (DLT) 用戶端服務和檔案複寫服務 (FRS) 用來追蹤其他物件（例如檔案、目錄和連結）的內建物件。 大部分的程式都不會看到物件識別碼，而且絕對不能修改。
 
 > [!WARNING]
-> 請勿刪除、設定或以其他方式修改物件識別碼。 刪除或設定物件識別碼可能會導致從檔案的某些部分遺失資料，最多包括和包含整個資料量。 此外，您可能會在分散式連結追蹤（DLT）用戶端服務和檔案複寫服務（FRS）中造成不良的行為。
+> 請勿刪除、設定或以其他方式修改物件識別碼。 刪除或設定物件識別碼可能會導致從檔案的某些部分遺失資料，最多包括和包含整個資料量。 此外，您可能會在分散式連結追蹤 (DLT) 用戶端服務和檔案複寫服務 (FRS) 中造成不良的行為。
 
 ## <a name="syntax"></a>語法
 
@@ -36,15 +34,15 @@ fsutil objectid [set] <objectID> <birthvolumeID> <birthobjectID> <domainID> <fil
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | 建立 | 如果指定的檔案不存在，則建立物件識別碼。 如果檔案已經有物件識別碼，這個子命令就相當於**查詢**子命令。 |
 | delete | 刪除物件識別碼。 |
 | 查詢 | 查詢物件識別碼。 |
 | set | 設定物件識別碼。 |
-| `<objectID>` | 設定特定檔案的16位元組十六進位識別碼，保證在磁片區中是唯一的。 [分散式連結追蹤（DLT）] 用戶端服務和 [檔案複寫服務（FRS）] 會使用物件識別碼來識別檔案。 |
+| `<objectID>` | 設定特定檔案的16位元組十六進位識別碼，保證在磁片區中是唯一的。 分散式連結追蹤會使用物件識別碼 (DLT) 用戶端服務和檔案複寫服務 (FRS) 來識別檔案。 |
 | `<birthvolumeID>` | 指出第一次取得物件識別碼時，檔案所在的磁片區。 此值是 DLT 用戶端服務所使用的16位元組十六進位識別碼。 |
-| `<birthobjectID>` | 指出檔案的原始物件識別碼（移動檔案時， *objectID*可能會變更）。 此值是 DLT 用戶端服務所使用的16位元組十六進位識別碼。 |
+| `<birthobjectID>` | 指出檔案的原始物件識別碼 (*objectID*可能會在檔案) 移動時變更。 此值是 DLT 用戶端服務所使用的16位元組十六進位識別碼。 |
 | `<domainID>` | 16位元組的十六進位網域識別碼。 目前未使用這個值，而且必須設定為所有零。 |
 | `<filename>` | 指定檔案的完整路徑，包括檔案名和副檔名，例如*C:\documents\filename.txt*。 |
 

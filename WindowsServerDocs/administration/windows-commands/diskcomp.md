@@ -1,20 +1,18 @@
 ---
 title: diskcomp
 description: Diskcomp 命令的參考文章，它會比較兩個磁片的內容。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4f56f534-a356-4daa-8b4f-38e089341e42
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: efd935d4630d9397d97863d6d373db3801a97b17
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 71401942f25d3f503639b2931f2f0ee49229e15b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929356"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890975"
 ---
 # <a name="diskcomp"></a>diskcomp
 
@@ -28,7 +26,7 @@ diskcomp [<drive1>: [<drive2>:]]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | `<drive1>` | 指定包含其中一個軟碟的磁片磁碟機。 |
 | /? | 在命令提示字元顯示說明。 |
@@ -43,7 +41,7 @@ diskcomp [<drive1>: [<drive2>:]]
   or is nonremovable
   ```
 
-- 如果要比較的兩個磁片上的所有追蹤都相同（它會忽略磁片的磁片區編號）， **diskcomp**會顯示下列訊息：
+- 如果要比較的兩個磁片上的所有追蹤都相同 (它會忽略磁片的磁片區編號) ， **diskcomp**會顯示下列訊息：
 
   ```
   Compare OK
@@ -91,7 +89,7 @@ diskcomp [<drive1>: [<drive2>:]]
 
 - **diskcomp**結束代碼：
 
-  | 結束碼 | 說明 |
+  | 結束碼 | 描述 |
   | --------- | ----------- |
   | 0 | 磁片相同 |
   | 1 | 發現差異 |
@@ -102,7 +100,7 @@ diskcomp [<drive1>: [<drive2>:]]
 
 ## <a name="examples"></a>範例
 
-如果您的電腦只有一個磁片磁碟機（例如磁片磁碟機 A），而您想要比較兩個磁片，請輸入：
+如果您的電腦只有一個磁片磁碟機 (例如，磁片磁碟機) ，而您想要比較兩個磁片，請輸入：
 
 ```
 diskcomp a: a:

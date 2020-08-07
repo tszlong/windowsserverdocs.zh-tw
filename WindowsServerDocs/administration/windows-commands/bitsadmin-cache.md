@@ -1,24 +1,22 @@
 ---
 title: bitsadmin cache
 description: Bitsadmin cache 命令的參考文章，其中包含 bitsadmin 快取參數的清單。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9ae4a283-a187-4fe3-b05c-4b53732c27cb
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 57b3897e89c70658d5b4015668d7b966222ce15d
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 45d2fb96a8e405f93b1bb63a4eec00d817c6b420
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928419"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87894654"
 ---
 # <a name="bitsadmin-cache"></a>bitsadmin cache
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 包含 bitsadmin/cache 交換器的清單。
 
@@ -41,7 +39,7 @@ bitsadmin /cache /setexpirationtime
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | -------------- | -------------- |
 | [bitsadmin cache and help](bitsadmin-cache-and-help.md) | 顯示/cache 參數的命令列使用方式。 |
 | [bitsadmin cache and clear](bitsadmin-cache-clear.md) | 清除本機快取。 |

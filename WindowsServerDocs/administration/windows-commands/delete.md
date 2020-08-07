@@ -1,20 +1,18 @@
 ---
 title: delete
 description: 刪除命令的參考文章，可刪除磁碟分割或磁片區。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 021799a3-11a2-4e7f-8fdc-fba24ca2ba21
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c3ebd26438836d19f0bcae51a26ba09ebe4fa723
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ee2449fec8d02b52ce9b5761dbb26ec08791700a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929480"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891350"
 ---
 # <a name="delete"></a>delete
 
@@ -31,7 +29,7 @@ delete volume
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 |---------- | ----------- |
 | [刪除磁片](delete-disk.md) | 從磁片清單刪除遺失的動態磁碟。 |
 | [刪除分割區](delete-partition.md) | 刪除資料分割。 |

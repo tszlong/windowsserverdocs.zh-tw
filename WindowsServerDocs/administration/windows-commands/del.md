@@ -1,26 +1,24 @@
 ---
 title: del
 description: Del 命令的參考文章，它會刪除一個或多個檔案。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 346eede2-2085-44f5-9936-6877b5d5a833
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fe1ae558da0a4cb19159c68c67e1e72970e3b502
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f909a212284f29fff15de0d02995b08b713cd889
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958410"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891500"
 ---
 # <a name="del"></a>del
 
 刪除一或多個檔案。 此命令會執行與**清除**命令相同的動作。
 
-**Del**命令也可以從 Windows 修復主控台使用不同的參數執行。 如需詳細資訊，請參閱[Windows 修復環境（WinRE）](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)。
+**Del**命令也可以從 Windows 修復主控台使用不同的參數執行。 如需詳細資訊，請參閱[Windows 修復環境 (WinRE) ](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)。
 
 > [!WARNING]
 > 如果您使用**del**來刪除磁片中的檔案，就無法取出檔案。
@@ -50,7 +48,7 @@ erase [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
 
     `FileName, Delete (Y/N)?`
 
-    若要確認刪除，請按下**Y**。若要取消刪除並顯示下一個檔案名（如果您指定了一組檔案），請按**N**。若要停止**del**命令，請按 CTRL + C。
+    若要確認刪除，請按下**Y**。若要取消刪除並顯示下一個檔案名 (如果您) 指定一組檔案，請按**N**。若要停止**del**命令，請按 CTRL + C。
 
 - 如果您停用命令延伸模組， **/s**參數會顯示找不到的任何檔案名，而不是顯示正在刪除之檔案的名稱。
 
@@ -60,7 +58,7 @@ erase [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
   del \work
   ```
 
-- 您可以使用萬用字元（**&#42;** 和 **？**）一次刪除一個以上的檔案。 不過，若要避免不慎刪除檔案，您應該謹慎使用萬用字元。 例如，如果您輸入下列命令：
+- 您可以使用萬用字元 (**&#42;** 和 **？**) 一次刪除一個以上的檔案。 不過，若要避免不慎刪除檔案，您應該謹慎使用萬用字元。 例如，如果您輸入下列命令：
 
   ```
   del *.*
@@ -96,8 +94,8 @@ del *.bat
 del /a:r *.*
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [Windows 修復環境（WinRE）](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)
+- [Windows 修復環境 (WinRE) ](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)

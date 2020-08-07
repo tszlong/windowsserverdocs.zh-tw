@@ -1,24 +1,22 @@
 ---
 title: freedisk
 description: Freedisk 命令的參考文章，在繼續安裝程式之前，會先檢查指定的磁碟空間容量是否可用。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 91c15166-5baa-4b80-9e0c-4cd815d00530
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d0cfce52c2eaf0917f8169d959b61832bd1779e0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a6c5c09e35f852be9229180ae894356e127f8a03
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924749"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890098"
 ---
 # <a name="freedisk"></a>freedisk
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 在繼續進行安裝程式之前，請先檢查指定的磁碟空間容量是否可用。
 
@@ -30,9 +28,9 @@ freedisk [/s <computer> [/u [<domain>\]<user> [/p [<password>]]]] [/d <drive>] [
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
-| /s`<computer>` | 指定遠端電腦的名稱或 IP 位址（請勿使用反斜線）。 預設是本機電腦。 這個參數會套用至命令中指定的所有檔案和資料夾。 |
+| /s`<computer>` | 指定遠端電腦的名稱或 IP 位址， (不要使用反斜線) 。 預設是本機電腦。 這個參數會套用至命令中指定的所有檔案和資料夾。 |
 | u`[<domain>\]<user>` | 以指定之使用者帳戶的許可權執行腳本。 預設值為 [系統許可權]。 |
 | /p [ <password> ] | 指定 **/u**中所指定使用者帳戶的密碼。 |
 | /d`<drive>` | 指定您想要找出可用空間可用性的磁片磁碟機。 您必須指定 `<drive>` 遠端電腦的。 |

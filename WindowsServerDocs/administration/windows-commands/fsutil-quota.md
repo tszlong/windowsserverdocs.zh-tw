@@ -1,24 +1,22 @@
 ---
 title: fsutil quota
 description: Fsutil quota 命令的參考文章，它會管理 NTFS 磁片區上的磁片配額，以提供更精確的網路型存放裝置控制。
-ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: 21225c11-7c72-4ea2-96bd-e63d4beb3be5
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: f757f822a903f6b5c6d221e17f87cf1e73d1555f
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7edf7ac908df419611fb42dd819323b15c8ded4e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925226"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889929"
 ---
 # <a name="fsutil-quota"></a>fsutil quota
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8
 
 管理 NTFS 磁片區上的磁片配額，以更精確地控制以網路為基礎的存放裝置。
 
@@ -35,7 +33,7 @@ fsutil quota [violations]
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | disable | 在指定的磁片區上停用配額追蹤和強制執行。 |
 | 強制執行 | 在指定的磁片區上強制執行配額使用量。 |
@@ -44,8 +42,8 @@ fsutil quota [violations]
 | 追蹤 | 追蹤指定磁片區上的磁片使用量。 |
 | 衝突 | 搜尋系統和應用程式記錄檔，並顯示一則訊息，指出已偵測到配額違規，或使用者已達到配額閾值或配額限制。 |
 | `<volumepath>` | 必要。 指定磁片磁碟機名稱，後面接著冒號或 GUID，格式為 `volume{GUID}` 。 |
-| `<threshold>`  | 設定發出警告的限制（以位元組為單位）。 此為命令所需的參數 `fsutil quota modify` 。 |
-| `<limit>` | 設定允許的磁片使用量上限（以位元組為單位）。 此為命令所需的參數 `fsutil quota modify` 。 |
+| `<threshold>`  | 設定發出警告 () 的限制（以位元組為單位）。 此為命令所需的參數 `fsutil quota modify` 。 |
+| `<limit>` | 設定允許的磁片使用量上限 (以位元組為單位) 。 此為命令所需的參數 `fsutil quota modify` 。 |
 | `<username>` | 指定網域或使用者名稱。 此為命令所需的參數 `fsutil quota modify` 。 |
 
 #### <a name="remarks"></a>備註

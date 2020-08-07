@@ -1,24 +1,22 @@
 ---
 title: bitsadmin peers
 description: Bitsadmin 對等命令的參考文章，其中列出/peers 參數。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5effbd52-993a-4657-b331-596c64deb8fb
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3e01a02c2615d353cbdaaa6980e86a965edce018
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 756368bfb9c1e718fcd494cb0aebc9337701ad9c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927993"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87893449"
 ---
 # <a name="bitsadmin-peers"></a>bitsadmin peers
 
-> 適用于： Windows Server （半年通道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 列出可用的/peers 參數。
 
@@ -32,7 +30,7 @@ bitsadmin /peers /list
 ```
 
 ### <a name="parameters"></a>參數
-| 參數 | 說明 |
+| 參數 | 描述 |
 | -------------- | -------------- |
 | [bitsadmin peers and help](bitsadmin-peers-and-help.md) | 顯示/peers 參數的命令列使用方式。 |
 | [bitsadmin peers and discover](bitsadmin-peers-and-discover.md) | 再次探索對等。 |

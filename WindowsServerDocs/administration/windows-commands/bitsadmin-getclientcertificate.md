@@ -1,20 +1,18 @@
 ---
 title: bitsadmin getclientcertificate
 description: Bitsadmin getclientcertificate 命令的參考文章，它會從作業中抓取用戶端憑證。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4fc8f408-085e-43a0-9fa8-3d798ef107b1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5113214f106aea21b1b13f08cc08002237730daf
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a3deb42c0b29f238bfd0a3b0fddbea14833d38b4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928511"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87894504"
 ---
 # <a name="bitsadmin-getclientcertificate"></a>bitsadmin getclientcertificate
 
@@ -28,7 +26,7 @@ bitsadmin /getclientcertificate <job>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | -------------- | -------------- |
 | 作業 | 作業的顯示名稱或 GUID。 |
 

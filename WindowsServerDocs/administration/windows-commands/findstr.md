@@ -1,20 +1,18 @@
 ---
 title: findstr
 description: Findstr 命令的參考文章，它會搜尋檔案中的文字模式。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c2d803fb-4cd2-46a1-a1b7-6f5e0249c418
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f0cf30f19ef23c1b3275b6b7632b03f0dd8e433a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1b1ef8139208397361a8c787686d2bc4c3b5ab43
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931433"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890236"
 ---
 # <a name="findstr"></a>findstr
 
@@ -28,7 +26,7 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<file>] 
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | /b | 符合文字模式（如果它位於行首）。 |
 | /e | 符合文字模式（如果它位於行尾）。 |
@@ -46,7 +44,7 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<file>] 
 | /f`<file>` | 從指定的檔案取得檔案清單。 |
 | /c`<string>` | 使用指定的文字做為常值搜尋字串。 |
 | /g`<file>` | 從指定的檔案取得搜尋字串。 |
-| /d`<dirlist>` | 搜尋指定的目錄清單。 每個目錄都必須以分號分隔（例如，;) `dir1;dir2;dir3` 。 |
+| /d`<dirlist>` | 搜尋指定的目錄清單。 每個目錄都必須以分號分隔 (; 例如，) `dir1;dir2;dir3` 。 |
 | /a`<colorattribute>` | 指定具有兩個十六進位數位的色彩屬性。 如需其他資訊，請輸入 `color /?` 。 |
 | `<strings>` | 指定要在*filename*中搜尋的文字。 必要。 |
 | `[\<drive>:][<path>]<filename>[ ...]` | 指定要搜尋的位置和檔案。 至少需要一個檔案名。 |
@@ -60,7 +58,7 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<file>] 
 
   - 常值字元是在正則運算式語法中沒有特殊意義的字元;相反地，它會符合該字元的出現次數。 例如，字母和數位是常值字元。
 
-  - 中繼字元是一種符號，在正則運算式語法中具有特殊意義（運算子或分隔符號）。
+  - 中繼字元是一種符號，具有特殊意義 (在正則運算式語法中) 的運算子或分隔符號。
 
     接受的中繼字元為：
 
@@ -77,7 +75,7 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<file>] 
     | `<string` | **開始文字位置**-單字的開頭。 |
     | `string>` | **結束文字位置**-單字的結尾。 |
 
-    當您一起使用時，正則運算式語法中的特殊字元具有最大的功能。 例如，使用萬用字元（ `.` ）和重複（）字元的組合， `*` 以符合任何字元字串：`.*`
+    當您一起使用時，正則運算式語法中的特殊字元具有最大的功能。 例如，使用萬用字元 (的組合 `.`) 並重複 (`*`) 字元，以符合任何字元字串：`.*`
 
     使用下列運算式做為較大運算式的一部分，以比對開頭為*b*並以*ing*結尾的任何字串：`b.*ing`
 
@@ -99,7 +97,7 @@ findstr hello there x.y
 findstr /c:hello there x.y
 ```
 
-若要在檔案*proposal.txt*中尋找所有出現的 word*視窗*（包含初始大寫字母 W），請輸入：
+若要尋找 word *Windows* (的所有出現專案，並在檔案*proposal.txt*中使用初始大寫字母 W) ，請輸入：
 
 ```
 findstr Windows proposal.txt
@@ -111,7 +109,7 @@ findstr Windows proposal.txt
 findstr /s /i Windows *.*
 ```
 
-若要尋找所有以*為*開頭，且前面加上零或多個空格（如同在電腦程式迴圈中）的所有專案，並顯示每次找到的行號，請輸入：
+若要找出以*為*開頭的所有行，且前面加上零或多個空格 (在電腦程式迴圈中) ，並顯示找到每個發生次數的行號，請輸入：
 
 ```
 findstr /b /n /r /c:^ *FOR *.bas
@@ -129,7 +127,7 @@ findstr /g:stringlist.txt /f:filelist.txt > results.out
 findstr /s /i /m <computer> *.*
 ```
 
-若要列出包含「電腦」和開頭為「複合」之任何其他單字的每個檔案（例如「補充和競爭」），請輸入：
+若要列出包含一部電腦的每個檔案，以及以 comp 開頭的任何其他單字， (例如 [補充] 和 [競爭) ]，請輸入：
 
 ```
 findstr /s /i /m <comp.* *.*

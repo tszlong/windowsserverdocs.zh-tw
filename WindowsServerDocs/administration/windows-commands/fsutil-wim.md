@@ -1,26 +1,24 @@
 ---
 title: fsutil wim
-description: Fsutil wim 命令的參考文章，其提供探索和管理 Windows 映像（WIM）支援檔案的功能。
-ms.prod: windows-server
+description: Fsutil wim 命令的參考文章，其提供探索和管理 Windows 映像 (WIM) 支援檔案的功能。
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: 6c6ff819-f349-4aea-b0be-1f637f631736
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 791eb80942187b0a0309097b2b785fb3dcea88ec
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: f709ec86924f24e7321e4de14d3e21615f207903
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931409"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889743"
 ---
 # <a name="fsutil-wim"></a>fsutil wim
 
 > 適用於：Windows Server (半年通道)、Windows Server 2019、Windows Server 2016、Windows 10
 
-提供探索和管理 Windows 映像（WIM）支援之檔案的功能。
+提供探索和管理 Windows 映像 (WIM) 支援檔案的功能。
 
 ## <a name="syntax"></a>語法
 
@@ -33,7 +31,7 @@ fsutil wim [removewim] <drive name> <data source>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | enumfiles | 列舉支援 WIM 的檔案。 |
 | `<drive name>` | 指定磁片磁碟機名稱。 |

@@ -1,20 +1,18 @@
 ---
 title: fc
 description: Fc 命令的參考文章，它會比較兩個檔案或一組檔案，並顯示兩者之間的差異。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 485fc3d8-b7c5-496d-87be-0011112f27d5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6d9e12853d2634f7e7bcbd976b6c301f8e02c0dc
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 72c71a76b168b96164ea6739adff974ba37a2308
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930484"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890363"
 ---
 # <a name="fc"></a>fc
 
@@ -29,7 +27,7 @@ fc /b [<drive1:>][<path1>]<filename1> [<drive2:>][<path2>]<filename2>
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 | --------- | ----------- |
 | /a | 縮寫 ASCII 比較的輸出。 **Fc**不會顯示不同的所有線條，而是只會針對每一組差異顯示第一個和最後一行。 |
 | /b | 比較兩個二進位模式的檔案（以位元組為單位），而且不會在發現不相符的情況下嘗試重新同步處理檔案。 這是比較具有下列副檔名之檔案的預設模式： .exe、.com、sys.databases、.obj、.lib 或 bin。 |
@@ -40,7 +38,7 @@ fc /b [<drive1:>][<path1>]<filename1> [<drive2:>][<path2>]<filename2>
 | /off [行] | 不會略過已設定離線屬性的檔案。 |
 | /t | 防止**fc**將索引標籤轉換為空格。 預設行為是將定位字元視為空格，並在每個第八個字元位置停止。 |
 | /U | 將檔案與 Unicode 文字檔做比較。 |
-| /W | 在比較期間壓縮空白字元（也就是定位字元和空格）。 如果一行包含多個連續的空格或索引標籤，則 **/w**會將這些字元視為單一空格。 與 **/w**搭配使用時， **fc**會忽略行開頭和結尾的空白字元。 |
+| /W | 壓縮 (的空白字元，也就是在比較期間) 的定位點和空格。 如果一行包含多個連續的空格或索引標籤，則 **/w**會將這些字元視為單一空格。 與 **/w**搭配使用時， **fc**會忽略行開頭和結尾的空白字元。 |
 | /`<nnnn>` | 指定遵循不相符時必須符合的連續行數， **fc**會考慮重新同步處理檔案。 如果檔案中相符的行數小於*nnnn*， **fc**會顯示相符的行做為差異。 預設值為 2。 |
 | `[<drive1>:][<path1>]<filename1>` | 指定要比較之第一個檔案或一組檔案的位置和名稱。 *filename1*是必要的。 |
 | `[<drive2>:][<path2>]<filename2>` | 指定要比較的第二個檔案或一組檔的位置和名稱。 *filename2*是必要的。 |
@@ -48,7 +46,7 @@ fc /b [<drive1:>][<path1>]<filename1> [<drive2:>][<path2>]<filename2>
 
 #### <a name="remarks"></a>備註
 
-- 此命令是由 c:\WINDOWS\fc.exe implemeted。 您可以在 PowerShell 中使用此命令，但請務必將完整的可執行檔（fc.exe）拼出，因為 ' fc ' 也是格式自訂的別名。
+- 此命令是由 c:\WINDOWS\fc.exe implemeted。 您可以在 PowerShell 中使用此命令，但請務必將完整的可執行檔拼出 ( # A0) ，因為 ' fc ' 也是格式自訂的別名。
 
 - 當您使用**fc**進行 ASCII 比較時， **fc**會以下列順序顯示兩個檔案之間的差異：
 
@@ -70,9 +68,9 @@ fc /b [<drive1:>][<path1>]<filename1> [<drive2:>][<path2>]<filename2>
 
     *Xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx*的值會指定位元組配對的相對十六進位位址，從檔案的開頭開始測量。 位址開始于00000000。 *YY*和*ZZ*的十六進位值分別代表*filename1*和*filename2*中不相符的位元組。
 
-- 您可以在*filename1*和*filename2*中使用萬用字元（**&#42;** 和 **？**）。 如果您在*filename1*中使用萬用字元， **fc**會將所有指定的檔案與*filename2*所指定的檔案或一組檔案進行比較。 如果您在*filename2*中使用萬用字元， **fc**會使用*filename1*中的對應值。
+- 在*filename1*和*filename2*中，您可以 (**&#42;** 和 **？**) 使用萬用字元。 如果您在*filename1*中使用萬用字元， **fc**會將所有指定的檔案與*filename2*所指定的檔案或一組檔案進行比較。 如果您在*filename2*中使用萬用字元， **fc**會使用*filename1*中的對應值。
 
-- 比較 ASCII 檔案時， **fc**會使用內部緩衝區（夠大，足以容納100行）做為儲存空間。 如果檔案大於緩衝區， **fc**會比較它可以載入到緩衝區的內容。 如果**fc**在檔案載入的部分找不到相符的檔案，它會停止並顯示下列訊息：
+- 比較 ASCII 檔案時， **fc**使用的內部緩衝區 (夠大，足以容納100行，) 儲存。 如果檔案大於緩衝區， **fc**會比較它可以載入到緩衝區的內容。 如果**fc**在檔案載入的部分找不到相符的檔案，它會停止並顯示下列訊息：
 
     `Resynch failed. Files are too different.`
 

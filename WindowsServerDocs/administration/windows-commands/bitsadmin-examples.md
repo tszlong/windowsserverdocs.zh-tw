@@ -1,20 +1,18 @@
 ---
 title: bitsadmin examples
 description: 範例示範如何使用 bitsadmin 工具來執行最常見的工作。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: cb8f8374-ba6e-4a68-85a1-9a95b8215354
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/31/2018
-ms.openlocfilehash: 1db9dd387d7b9cc39c582ce79e5163c83579b613
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 5cf827ebc96c2caf114a9605482a33636689dc25
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819628"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87894586"
 ---
 # <a name="bitsadmin-examples"></a>bitsadmin examples
 
@@ -166,7 +164,7 @@ bitsadmin /reset
 2 out of 2 jobs canceled.
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
