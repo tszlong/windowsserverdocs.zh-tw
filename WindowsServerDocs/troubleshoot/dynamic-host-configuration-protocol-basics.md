@@ -1,30 +1,28 @@
 ---
-title: DHCP （動態主機設定通訊協定）基本概念
+title: DHCP (動態主機設定通訊協定) 基本概念
 description: ''
-ms.prod: windows-server
 manager: dcscontentpm
-ms.technology: server-general
 ms.date: 5/26/2020
 ms.topic: troubleshoot
 author: Deland-Han
 ms.author: delhan
 ms.reviewer: ''
-ms.openlocfilehash: 5a3247fad961f4b2d1cf6e354c29706708c8e330
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 445663569fca7182e5343dd6f7ac677fd7f87f3b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409809"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970055"
 ---
-# <a name="dhcp-dynamic-host-configuration-protocol-basics"></a>DHCP （動態主機設定通訊協定）基本概念
+# <a name="dhcp-dynamic-host-configuration-protocol-basics"></a>DHCP (動態主機設定通訊協定) 基本概念
 
-動態主機設定通訊協定（DHCP）是由 RFC 1541 所定義的標準通訊協定（由 RFC 2131 取代），可讓伺服器將 IP 位址和設定資訊動態散發給用戶端。 通常 DHCP 伺服器至少會提供此基本資訊給用戶端：
+動態主機設定通訊協定 (DHCP) 是由 RFC 1541 (所) 2131 取代的標準通訊協定，可讓伺服器將 IP 位址和設定資訊動態散發給用戶端。 通常 DHCP 伺服器至少會提供此基本資訊給用戶端：
 
 - IP 位址
 
 - 子網路遮罩
 
-- 也可以提供預設的 GatewayOther 資訊，例如功能變數名稱服務（DNS）伺服器位址和 Windows 網際網路名稱服務（WINS）伺服器位址。 系統管理員會使用向外剖析至用戶端的選項來設定 DHCP 伺服器。
+- 也可以提供預設的 GatewayOther 資訊，例如功能變數名稱服務 (DNS) 伺服器位址和 Windows 網際網路名稱服務 (WINS) 伺服器位址。 系統管理員會使用向外剖析至用戶端的選項來設定 DHCP 伺服器。
 
 ## <a name="more-information"></a>相關資訊
 
@@ -123,7 +121,7 @@ DHCP: Discover (xid=21274A1D)
 
 ### <a name="dhcpoffer"></a>DHCPOFFER
 
-DHCP 伺服器會藉由傳送 DHCPOFFER 封包來回應。 在下面的 capture 摘錄的 IP 區段中，來源位址現在是 DHCP 伺服器 IP 位址，而目的地位址是廣播位址255.255.255.255。 DHCP 區段會將封包識別為供應專案。 [YIADDR] 欄位會填入伺服器提供給用戶端的 IP 位址。 請注意，CHADDR 欄位仍然包含要求用戶端的實體位址。 此外，我們也會在 DHCP 選項欄位區段中看到伺服器傳送的各種選項，以及 IP 位址。 在此情況下，伺服器會傳送子網路遮罩、預設閘道（路由器）、租用時間、WINS 伺服器位址（NetBIOS 名稱服務）和 NetBIOS 節點類型。
+DHCP 伺服器會藉由傳送 DHCPOFFER 封包來回應。 在下面的 capture 摘錄的 IP 區段中，來源位址現在是 DHCP 伺服器 IP 位址，而目的地位址是廣播位址255.255.255.255。 DHCP 區段會將封包識別為供應專案。 [YIADDR] 欄位會填入伺服器提供給用戶端的 IP 位址。 請注意，CHADDR 欄位仍然包含要求用戶端的實體位址。 此外，我們也會在 DHCP 選項欄位區段中看到伺服器傳送的各種選項，以及 IP 位址。 在此情況下，伺服器會傳送子網路遮罩、預設閘道 (路由器) 、租用時間、WINS 伺服器位址 (NetBIOS 名稱服務) 和 NetBIOS 節點類型。
 
 ```
 

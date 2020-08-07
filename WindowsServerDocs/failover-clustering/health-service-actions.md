@@ -1,18 +1,16 @@
 ---
 title: 健全狀況服務動作
-ms.prod: windows-server
 manager: eldenc
 ms.author: cosdar
-ms.technology: storage-health-service
 ms.topic: article
 author: cosmosdarwin
 ms.date: 08/14/2017
-ms.openlocfilehash: 541b5cbbc18d3ea8619f34d9bcc8aeb34fd0066b
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 16e8a27dc38b8908ffb7ccac94f3bcc15a5c956f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473125"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945791"
 ---
 # <a name="health-service-actions"></a>健全狀況服務動作
 
@@ -44,7 +42,7 @@ Get-StorageHealthAction
 
 -   正在重新平衡儲存集區
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [Windows Server 2016 中的健全狀況服務](health-service-overview.md)
 - [MSDN 上的開發人員檔、範例程式碼和 API 參考](https://msdn.microsoft.com/windowshealthservice)

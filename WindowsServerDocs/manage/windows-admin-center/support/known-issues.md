@@ -1,19 +1,17 @@
 ---
 title: Windows Admin Center 已知問題
 description: Windows Admin Center 已知問題 (Project Honolulu)
-ms.technology: manage
 ms.topic: article
 author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
-ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: f7e62f05a340a2186a012d7ed99e3ecc46654256
-ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
+ms.openlocfilehash: bb416a45e18ea34628994b589e452f25d2d7744e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86891397"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87937667"
 ---
 # <a name="windows-admin-center-known-issues"></a>Windows Admin Center 已知問題
 
@@ -29,7 +27,7 @@ ms.locfileid: "86891397"
 
 ## <a name="general"></a>一般
 
-- 在1910.2 版的 Windows 系統管理中心內，您可能無法連線到特定硬體上的 Hyper-v 伺服器。 如果您在此問題遭到封鎖，[請下載先前的組建](https://aka.ms/wacprevious)。 
+- 在1910.2 版的 Windows 系統管理中心內，您可能無法連線到特定硬體上的 Hyper-v 伺服器。 如果您在此問題遭到封鎖，[請下載先前的組建](https://aka.ms/wacprevious)。
 
 - 如果您將 Windows 系統管理中心安裝為**Windows Server 2016**上的閘道，請使用 [繁重]，此服務可能會在包含和的事件記錄檔中發生錯誤時損毀 ```Faulting application name: sme.exe``` ```Faulting module name: WsmSvc.dll``` 。 這是因為 Windows Server 2019 已修正的錯誤。 Windows Server 2016 的修補程式隨附于2月2019累積更新（ [KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977)）。
 
@@ -59,7 +57,7 @@ ms.locfileid: "86891397"
 
 ### <a name="google-chrome"></a>Google Chrome
 
-- 在70版之前（2018年10月發行），Chrome 有關于 websocket 通訊協定和 NTLM 驗證的[錯誤](https://bugs.chromium.org/p/chromium/issues/detail?id=423609)。 這會影響下列工具：事件、PowerShell、遠端桌面。
+- 70年10月之前發行 (版本，2018) Chrome 有關于 websocket 通訊協定和 NTLM 驗證的[錯誤](https://bugs.chromium.org/p/chromium/issues/detail?id=423609)。 這會影響下列工具：事件、PowerShell、遠端桌面。
 
 - Chrome 可能會快顯多個認證提示，特別是在**工作群組** (非網域) 環境中加入連線體驗時。
 
@@ -73,9 +71,9 @@ Windows Admin Center 未使用 Mozilla Firefox 來測試，但大部分功能應
 
 ## <a name="websocket-compatibility-when-using-a-proxy-service"></a>使用 Proxy 服務時的 WebSocket 相容性
 
-Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 WebSocket 通訊協定，而這通常在使用 Proxy 服務時不受支援。 
+Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 WebSocket 通訊協定，而這通常在使用 Proxy 服務時不受支援。
 
-## <a name="support-for-windows-server-versions-before-2016-2012-r2-2012-2008-r2"></a>2016之前的 Windows Server 版本支援（2012 R2、2012、2008 R2）
+## <a name="support-for-windows-server-versions-before-2016-2012-r2-2012-2008-r2"></a>2016之前的 Windows Server 版本支援 (2012 R2、2012、2008 R2) 
 
 > [!NOTE]
 > Windows 管理中心需要不包含在 Windows Server 2012 R2、2012或 2008 R2 中的 PowerShell 功能。 如果您要使用 Windows 系統管理中心來管理 Windows Server，您必須在這些伺服器上安裝 WMF 5.1 版或更新版本。
@@ -108,7 +106,7 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 
 ### <a name="files"></a>檔案儲存體
 
-- 尚未支援上傳或下載大型檔案。 （ \~ 100mb 限制） [12524234]
+- 尚未支援上傳或下載大型檔案。  (\~ 100mb 限制) [12524234]
 
 ### <a name="powershell"></a>PowerShell
 
@@ -168,7 +166,7 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 
 - 嘗試設定 Azure 更新管理時，您可能會遇到下列錯誤：「金鑰集不存在」。 在此情況下，請在受管理的節點上嘗試下列補救步驟-
     1. 停止「密碼編譯服務」服務。
-    2. 變更資料夾選項以顯示隱藏的檔案（如有必要）。
+    2. 變更資料夾選項以顯示隱藏的檔案 (如有必要) 。
     3. 到達 "%allusersprofile%\Microsoft\Crypto\RSA\S-1-5-18" 資料夾，並刪除其所有內容。
     4. 重新開機「密碼編譯服務」服務。
     5. 使用 Windows 系統管理中心重複設定更新管理
@@ -189,12 +187,12 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 
 電腦管理解決方案包含伺服器管理員解決方案所提供工具的子集，因此適用同樣的已知問題，以及下列電腦管理解決方案特定問題：
 
-- 如果您使用 Microsoft 帳戶（[MSA](https://account.microsoft.com/account/)），或使用 AZURE ACTIVE DIRECTORY （AAD）登入 Windows 10 電腦，則必須使用 [管理-as] 來提供本機系統管理員帳戶的認證 [16568455]
+- 如果您使用 Microsoft 帳戶 ([MSA](https://account.microsoft.com/account/)) 或使用 AZURE ACTIVE DIRECTORY (AAD) 登入您的 Windows 10 電腦，則必須使用 [管理-as] 來提供本機系統管理員帳戶的認證 [16568455]
 
 - 當您嘗試管理 localhost 時，系統會提示您提高閘道程序的權限。 如果您在接下來的 [使用者帳戶控制] 快顯視窗中按一下 [**否**]，您必須取消連線嘗試並從頭開始。
 
 - Windows 10 預設不會開啟 WinRM/PowerShell 遠端功能。
-  
+
   - 若要啟用 Windows 10 用戶端管理，您必須從提升權限的 PowerShell 命令提示字元發出命令 ```Enable-PSRemoting```。
 
   - 您可能還需要使用 ```Set-NetFirewallRule -Name WINRM-HTTP-In-TCP -RemoteAddress Any``` 更新防火牆，以允許來自外部本機子網路的連線。 如需更多嚴格網路案例，請參閱[此文件](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-5.1)。
@@ -205,35 +203,35 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 新增伺服器時，目前不支援混合的工作組電腦。 用於叢集化的所有電腦都必須屬於相同的工作組。 如果不是，[下一步] 按鈕將會停用，而且會出現下列錯誤：「無法在不同的 Active Directory 網域中建立具有伺服器的叢集。 請確認伺服器名稱是否正確。 請將所有伺服器移入相同的網域，然後再試一次。」
 
 ### <a name="step-14"></a>步驟1。4
-Hyper-v 必須安裝在執行 Azure Stack HCI OS 的虛擬機器上。 嘗試啟用這些虛擬機器的 Hyper-v 功能將會失敗，並出現下列錯誤： 
+Hyper-v 必須安裝在執行 Azure Stack HCI OS 的虛擬機器上。 嘗試啟用這些虛擬機器的 Hyper-v 功能將會失敗，並出現下列錯誤：
 
 ![Hyper-v 啟用錯誤的螢幕擷取畫面](../media/cluster-create-install-hyperv.png)
 
-若要在執行 Azure Stack HCI OS 的虛擬機器上安裝 Hyper-v，請執行下列命令： 
+若要在執行 Azure Stack HCI OS 的虛擬機器上安裝 Hyper-v，請執行下列命令：
 
 ```PowerShell
-Enable-windowsoptionalfeature -online -featurename Microsoft-hyper-v 
+Enable-windowsoptionalfeature -online -featurename Microsoft-hyper-v
 ```
 
 ### <a name="step-17"></a>步驟1。7
-在安裝更新之後，伺服器可能會花費比預期更長的時間來重新開機。 Windows 管理中心叢集部署嚮導會定期檢查伺服器重新開機狀態，以得知伺服器是否已成功重新開機。 不過，如果使用者以手動方式在嚮導外部重新開機伺服器，則 wizard 不會有適當的方式來捕捉伺服器狀態。 
+在安裝更新之後，伺服器可能會花費比預期更長的時間來重新開機。 Windows 管理中心叢集部署嚮導會定期檢查伺服器重新開機狀態，以得知伺服器是否已成功重新開機。 不過，如果使用者以手動方式在嚮導外部重新開機伺服器，則 wizard 不會有適當的方式來捕捉伺服器狀態。
 
-如果您想要手動重新開機伺服器，請結束目前的 wizard 會話。 重新開機伺服器之後，您可以重新啟動精靈。 
+如果您想要手動重新開機伺服器，請結束目前的 wizard 會話。 重新開機伺服器之後，您可以重新啟動精靈。
 
 ### <a name="stretch-cluster-creation"></a>延展叢集建立
 建議您在建立延展式叢集時，使用已加入網域的伺服器。 因為 WinRM 限制，所以嘗試使用工作組電腦進行延展叢集部署時，發生網路分割問題。
 
 ### <a name="undo-and-start-over"></a>復原並從頭開始
-重複使用相同的電腦進行叢集部署時，清除先前的叢集實體對於在同一組機器中成功部署叢集而言非常重要。 如需如何清理叢集的指示，請參閱[部署超融合基礎結構](https://docs.microsoft.com/windows-server/manage/windows-admin-center/use/deploy-hyperconverged-infrastructure#undo-and-start-over)的頁面。 
+重複使用相同的電腦進行叢集部署時，清除先前的叢集實體對於在同一組機器中成功部署叢集而言非常重要。 如需如何清理叢集的指示，請參閱[部署超融合基礎結構](https://docs.microsoft.com/windows-server/manage/windows-admin-center/use/deploy-hyperconverged-infrastructure#undo-and-start-over)的頁面。
 
 ### <a name="credssp"></a>CredSSP
-Windows 管理中心叢集部署嚮導會在數個地方使用 CredSSP。 您會在嚮導期間遇到此錯誤訊息（這最常發生于 [驗證叢集] 步驟）：
+Windows 管理中心叢集部署嚮導會在數個地方使用 CredSSP。 您會在嚮導期間遇到此錯誤訊息 (這種情況最常發生在 [驗證叢集] 步驟) 中：
 
 ![叢集建立 CredSSP 錯誤的螢幕擷取畫面](../media/cluster-create-credssp-error.jpg)
 
-您可以使用下列步驟進行疑難排解： 
+您可以使用下列步驟進行疑難排解：
 
-1. 停用所有節點和 Windows 管理中心閘道電腦上的 CredSSP 設定。 在您的閘道電腦上執行第一個命令，然後在叢集中的所有節點上執行第二個命令： 
+1. 停用所有節點和 Windows 管理中心閘道電腦上的 CredSSP 設定。 在您的閘道電腦上執行第一個命令，然後在叢集中的所有節點上執行第二個命令：
 
 ```PowerShell
 Disable-WsmanCredSSP -Role Client
@@ -241,7 +239,7 @@ Disable-WsmanCredSSP -Role Client
 ```PowerShell
 Disable-WsmanCredSSP -Role Server
 ```
-2. 修復所有節點上的信任。 在所有節點上執行下列命令： 
+2. 修復所有節點上的信任。 在所有節點上執行下列命令：
 ```PowerShell
 Test-ComputerSecureChannel -Verbose -Repair -Credential <account name>
 ```
@@ -251,7 +249,7 @@ Test-ComputerSecureChannel -Verbose -Repair -Credential <account name>
 gpupdate /force
 ```
 
-4. 重新開機節點。 重新開機之後，請使用下列命令來測試您的閘道電腦與目標節點之間的連線，以及節點之間的連線能力： 
+4. 重新開機節點。 重新開機之後，請使用下列命令來測試您的閘道電腦與目標節點之間的連線，以及節點之間的連線能力：
 ```PowerShell
 Enter-PSSession -computername <node fqdn>
 ```
@@ -260,20 +258,20 @@ Enter-PSSession -computername <node fqdn>
 在虛擬機器上驗證 Azure Stack HCI OS 叢集部署時，必須先開啟嵌套的虛擬化，才能使用下列 powershell 命令啟用角色/功能：
 
 ```PowerShell
-Set-VMProcessor -VMName <VMName> -ExposeVirtualizationExtensions $true 
+Set-VMProcessor -VMName <VMName> -ExposeVirtualizationExtensions $true
 ```
 
   > [!Note]
-  > 若要在虛擬機器環境中成功執行虛擬交換器小組，必須在建立虛擬機器之後，立即在主機的 PowerShell 中執行下列命令： Get-vm |% {set-VMNetworkAdapter-VMName $ _。名稱-MacAddressSpoofing On-AllowTeaming on} 
+  > 若要在虛擬機器環境中成功執行虛擬交換器小組，必須在建立虛擬機器之後，立即在主機的 PowerShell 中執行下列命令： Get-vm |% {set-VMNetworkAdapter-VMName $ _。名稱-MacAddressSpoofing On-AllowTeaming on}
 
-如果您是使用 Azure Stack HCI OS 部署叢集，則會有額外的需求。 VM 開機虛擬硬碟必須預先安裝 Hyper-v 功能。 若要這麼做，請在建立虛擬機器之前，執行下列命令： 
+如果您是使用 Azure Stack HCI OS 部署叢集，則會有額外的需求。 VM 開機虛擬硬碟必須預先安裝 Hyper-v 功能。 若要這麼做，請在建立虛擬機器之前，執行下列命令：
 
 ```PowerShell
 Install-WindowsFeature –VHD <Path to the VHD> -Name Hyper-V, RSAT-Hyper-V-Tools, Hyper-V-PowerShell
 ```
 
 ### <a name="support-for-rdma"></a>支援 RDMA
-Windows 系統管理中心2007版中的叢集部署嚮導不支援 RDMA 設定。   
+Windows 系統管理中心2007版中的叢集部署嚮導不支援 RDMA 設定。
 
 ## <a name="failover-cluster-manager-solution"></a>容錯移轉叢集管理員解決方案
 
@@ -296,12 +294,12 @@ Windows 系統管理中心2007版中的叢集部署嚮導不支援 RDMA 設定�
 Azure 檔案同步需要 Azure 中 Windows 系統管理中心未提供1910版之前的許可權。 如果您使用早于 Windows 管理中心版本1910的版本向 Azure 註冊您的 Windows 管理中心閘道，您將需要更新 Azure Active Directory 應用程式，以取得在最新版本的 Windows 管理中心內使用 Azure 檔案同步的正確許可權。 其他許可權可讓 Azure 檔案同步執行自動設定儲存體帳戶存取權，如這篇文章中所述：[確定 Azure 檔案同步有權存取儲存體帳戶](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#tabpanel_CeZOj-G++Q-5_azure-portal)。
 
 若要更新您的 Azure Active Directory 應用程式，您可以執行兩個動作的其中一項
-1. 移至 [**設定**] [  >  **Azure**]  >  [**取消註冊**]，然後再次向 azure 註冊 Windows 系統管理中心，並確定您選擇建立新的 Azure Active Directory 應用程式。 
+1. 移至 [**設定**] [  >  **Azure**]  >  [**取消註冊**]，然後再次向 azure 註冊 Windows 系統管理中心，並確定您選擇建立新的 Azure Active Directory 應用程式。
 2. 移至您的 Azure Active Directory 應用程式，並手動將您現有 Azure Active Directory 應用程式所需的許可權新增到已向 Windows 系統管理中心註冊。 若要這麼做，請**Settings**移至  >  **Azure**  >  **azure 中的**[設定] [azure View]。 從 Azure 的 [**應用程式註冊**] 分頁中，移至 [ **API 許可權**]，選取 [**新增許可權**]。 依序選取 [ **Azure Active Directory 圖形]**、[**委派的許可權**] 和 [**目錄**]，然後選取 [ **AccessAsUser**]。 按一下 [**新增許可權**]，將更新儲存至應用程式。
 
 ### <a name="options-for-setting-up-azure-management-services"></a>設定 Azure 管理服務的選項
 
 包括 Azure 監視器、Azure 更新管理和 Azure 資訊安全中心的 Azure 管理服務，會針對內部部署伺服器使用相同的代理程式： Microsoft Monitoring Agent。 Azure 更新管理有一組較有限的支援區域，而且需要將 Log Analytics 工作區連結至 Azure 自動化帳戶。 基於這項限制，如果您想要在 Windows 管理中心設定多個服務，您必須先設定 Azure 更新管理，然後 Azure 資訊安全中心或 Azure 監視器。 如果您已設定任何使用 Microsoft Monitoring Agent 的 Azure 管理服務，然後嘗試使用 Windows 系統管理中心來設定 Azure 更新管理，則 Windows 系統管理中心只會在連結至 Microsoft Monitoring Agent 的現有資源支援 Azure 更新管理時，允許您設定 Azure 更新管理。 如果不是這種情況，您有兩個選項：
 
-1. 移至 [控制台] > Microsoft Monitoring Agent，將[您的伺服器與現有的 Azure 管理解決方案](https://docs.microsoft.com/azure/azure-monitor/platform/log-faq#q-how-do-i-stop-an-agent-from-communicating-with-log-analytics)（例如 Azure 監視器或 Azure 資訊安全中心）中斷連接。 然後在 Windows 系統管理中心設定 Azure 更新管理。 之後，您可以透過 Windows 系統管理中心返回設定其他 Azure 管理解決方案，而不會發生問題。
-2. 您可以[手動設定 azure 更新管理所需的 azure 資源](https://docs.microsoft.com/azure/automation/automation-update-management)，然後[手動更新 Microsoft Monitoring Agent](https://docs.microsoft.com/azure/azure-monitor/platform/agent-manage#adding-or-removing-a-workspace) （在 Windows 系統管理中心以外），以新增對應至您想要使用之更新管理解決方案的新工作區。
+1. 移至 [控制台] > Microsoft Monitoring Agent，將[您的伺服器與現有的 Azure 管理解決方案](https://docs.microsoft.com/azure/azure-monitor/platform/log-faq#q-how-do-i-stop-an-agent-from-communicating-with-log-analytics) (（例如 Azure 監視器或 Azure 資訊安全中心) ）中斷連接。 然後在 Windows 系統管理中心設定 Azure 更新管理。 之後，您可以透過 Windows 系統管理中心返回設定其他 Azure 管理解決方案，而不會發生問題。
+2. 您可以[手動設定 azure 更新管理所需的 azure 資源](https://docs.microsoft.com/azure/automation/automation-update-management)，然後[手動更新](https://docs.microsoft.com/azure/azure-monitor/platform/agent-manage#adding-or-removing-a-workspace)Windows 管理中心) 以外的 Microsoft Monitoring Agent (，以新增對應至您想要使用之更新管理解決方案的新工作區。

@@ -2,28 +2,26 @@
 title: MultiPoint 站台
 description: 瞭解 MultiPoint 服務中的工作站，包括不同的使用者選項
 ms.date: 07/22/2016
-ms.prod: windows-server
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: f9f9d618-ccfe-41ea-a52c-00c3c7adb51a
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 6167919b31621aef51707bc5b7acf9c07ba795e3
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 6f1c313f4d8eeb4e32ec27da1c37bc1d423240d1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517673"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953814"
 ---
 # <a name="multipoint--stations"></a>MultiPoint 工作站
 在 MultiPoint 服務系統內容中，*工作站*是用來連接到執行 MultiPoint 服務之電腦的使用者端點。 每個工作站會為使用者提供獨立的 Windows 10 體驗。 支援下列工作站類型：
 
 -   直接連接視頻的工作站
 
--   USB-零-用戶端連線的工作站（包括 USB over Ethernet 的零用戶端）
+-   USB-零用戶端連線的工作站 (包括 USB over Ethernet 的零用戶端) 
 
--   透過區域網路連線的工作站（適用于豐富型用戶端或瘦用戶端電腦）
+-   適用于豐富型用戶端或瘦用戶端電腦的 RDP over LAN 連線的工作站 () 
 
 已安裝 MultiPoint 連接器的完整電腦也可以使用 MultiPoint 儀表板來監視和控制。 在 Windows 10 上，您可以透過 Windows 功能的 [控制台] 來啟用 MultiPoint 連接器。
 
@@ -48,9 +46,9 @@ Multipoint 服務支援這些工作站類型的任意組合，但建議一部工
 使用 MultiPoint 服務時，您可以將主機板上的 PS/2 鍵盤和滑鼠對應到直接連線到視頻的監視器，以建立 PS/2 站。 主機板上的高定義類比音訊是與這種類型的工作站相關聯的音訊。 這不適用於主機板上沒有 PS/2 插座的電腦。
 
 ## <a name="usb-zero-client-connected-stations"></a>USB-零-用戶端連線的工作站
-USB-零用戶端連線的工作站會利用*usb 零用戶端*做為工作站中樞。 USB 零用戶端有時稱為具有影片的多功能集線器。 它們是透過 USB 纜線連接到電腦的中樞，而這些中樞通常支援視頻監視器、滑鼠和鍵盤（PS/2 或 USB）、音訊和其他 USB 裝置。 本指南將這些特製化的中樞稱為 USB 零用戶端。
+USB-零用戶端連線的工作站會利用*usb 零用戶端*做為工作站中樞。 USB 零用戶端有時稱為具有影片的多功能集線器。 它們是透過 USB 纜線連接到電腦的中樞，而這些中樞通常支援視頻監視器、滑鼠和鍵盤 (PS/2 或 USB) 、音訊和其他 USB 裝置。 本指南將這些特製化的中樞稱為 USB 零用戶端。
 
-下圖顯示具有主要工作站（直接視頻連接的站）和兩個額外 USB 零用戶端連線站的 MultiPoint server 系統。
+下圖顯示一部 MultiPoint server 系統，其中包含主要工作站 (直接視頻連接的站) 以及兩個額外的 USB 零用戶端連線站。
 
 ![USB 零用戶端連線的工作站](./media/WMS11_diagram7.gif)
 
@@ -60,7 +58,7 @@ USB-零用戶端連線的工作站會利用*usb 零用戶端*做為工作站中�
 USB over 乙太網路的零用戶端是一種 USB 零用戶端的變化，會將 USB over LAN 傳送至 MultiPoint 服務系統。 這些類型的 USB 零用戶端的運作方式類似于其他 USB 零用戶端，但不受 USB 纜線長度上限的限制。 USB over 乙太網路的零用戶端不是傳統的瘦用戶端，而是顯示為 MultiPoint 服務系統上的虛擬 USB 裝置。 使用這些裝置時，請參閱裝置製造商，以取得特定的效能和網站規劃建議。 大部分的裝置都有適用于 MultiPoint 管理員的協力廠商外掛程式，可讓您將裝置與 MultiPoint 服務系統建立關聯和連接。
 
 ## <a name="rdp-over-lan-connected-stations"></a>RDP over LAN 連線的工作站
-瘦用戶端和傳統桌上型電腦、膝上型電腦或平板電腦，都可以使用遠端桌面通訊協定（RDP）或專屬通訊協定和遠端桌面通訊協定提供者，透過區域網路（LAN）連接到執行 MultiPoint 服務的電腦。 RDP 連線提供的使用者體驗與任何其他 MultiPoint 工作站非常類似，但會使用本機用戶端電腦的硬體。 深入瞭解[遠端桌面用戶端](../remote-desktop-services/clients/remote-desktop-clients.md)中適用于 Android、IOS、Mac 和 Windows 的遠端桌面應用程式。
+瘦用戶端和傳統桌上型電腦、膝上型電腦或平板電腦，都可以使用遠端桌面通訊協定 (RDP) 或專屬通訊協定和遠端桌面通訊協定提供者，透過區域網路 (LAN) 連接到執行 MultiPoint 服務的電腦。 RDP 連線提供的使用者體驗與任何其他 MultiPoint 工作站非常類似，但會使用本機用戶端電腦的硬體。 深入瞭解[遠端桌面用戶端](../remote-desktop-services/clients/remote-desktop-clients.md)中適用于 Android、IOS、Mac 和 Windows 的遠端桌面應用程式。
 
 執行 Microsoft RemoteFX 的用戶端和裝置可以利用本機瘦用戶端或電腦的處理器和視頻硬體功能，透過網路提供高定義的影片，來提供豐富的多媒體體驗。
 
@@ -111,11 +109,11 @@ MultiPoint 服務會在具有直接視頻連線的工作站或 USB-零用戶端�
 
 ## <a name="station-type-comparison"></a><a name="BKMK_StationTypeComparison"></a>工作站類型比較
 
-| 說明 | 直接連接影片 | USB 零用戶端連線 | 已連線的 RDP over LAN |
+| 描述 | 直接連接影片 | USB 零用戶端連線 | 已連線的 RDP over LAN |
 |--|--|--|--|
 | 影片效能 | 建議最佳的影片效能 |  | 使用支援 RemoteFX 的瘦用戶端，以較低的網路頻寬改善視頻品質 |
-| 實體限制 | 受限於視頻纜線長度和 USB 集線器和纜線長度（建議使用15計量長度上限） | 受限於 USB 集線器和纜線長度（建議使用15計量長度上限） | 受 LAN 散發限制 |
-| 允許的工作站數目 | 受限於主機板上的可用 PCIe 插槽數乘以每張視頻的影片埠 | 總數目可能受到 USB 零用戶端製造商的限制（如需詳細資訊，請參閱此表格後面的注意事項）。 | 受限於網路交換器上的可用埠 |
+| 實體限制 | 受限於視頻纜線長度和 USB 集線器和纜線長度 (建議的15計量長度上限)  | 受限於 USB 集線器和纜線長度 (建議使用15計量的最大長度)  | 受 LAN 散發限制 |
+| 允許的工作站數目 | 受限於主機板上的可用 PCIe 插槽數乘以每張視頻的影片埠 | 總數目可能受到 USB 零用戶端製造商 (的限制。如需詳細資訊，請參閱本表後面的附注。 )  | 受限於網路交換器上的可用埠 |
 | 分割畫面 | 是 | 是 | 否 |
 | MultiPoint 管理站的周邊狀態、自動登入設定、工作站重新命名 | 是 | 是 | 否 |
 | 存取伺服器啟動功能表 | 是 | 否 | 否 |

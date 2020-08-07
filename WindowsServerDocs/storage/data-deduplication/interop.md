@@ -1,28 +1,26 @@
 ---
 ms.assetid: 60fca6b2-f1c0-451f-858f-2f6ab350d220
 title: 重複資料刪除互通性
-ms.technology: storage-deduplication
-ms.prod: windows-server
 ms.topic: article
 author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/16/2016
-ms.openlocfilehash: fb3c9842f1d698151bffebbe5f77618c8b19b366
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7f99b4d12821e505a229ac02d0198a9ac2ed31fa
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403197"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936303"
 ---
 # <a name="data-deduplication-interoperability"></a>重複資料刪除互通性
 
-> 適用於：Windows Server （半年通道）、Windows Server 2016、Windows Server 2019
+> 適用于： Windows Server (半年通道) 、Windows Server 2016、Windows Server 2019
 
 ## <a name="supported"></a>支援
 
 ### <a name="refs"></a>ReFS
-從 Windows Server 2019，支援重復資料刪除。 
+從 Windows Server 2019，支援重復資料刪除。
 
 ### <a name="failover-clustering"></a>容錯移轉叢集
 
@@ -43,18 +41,18 @@ ms.locfileid: "71403197"
 重複資料刪除可與分散式檔案系統 (DFS) 複寫搭配使用。 將檔案最佳化或未最佳化不會觸發複寫，因為檔案不會變更。 DFS 複寫使用遠端差異壓縮 (RDC) (而非使用區塊存放區中的區塊) 來進行有線網路節約。 如果複本使用重複資料刪除，也可以使用重複資料刪除將複本上的檔案最佳化。
 
 ### <a name="quotas"></a>配額
-重複資料刪除不支援在也會啟用重複資料刪除的磁碟區根資料夾上建立固定配額。 磁碟區根目錄上有固定配額時，磁碟區的實際可用空間與磁碟區的配額限制空間將會不同。 這可能會導致重複資料刪除最佳化工作失敗。 但是，很可能會在已啟用重複資料刪除的磁碟區根目錄上建立彈性配額。 
+重複資料刪除不支援在也會啟用重複資料刪除的磁碟區根資料夾上建立固定配額。 磁碟區根目錄上有固定配額時，磁碟區的實際可用空間與磁碟區的配額限制空間將會不同。 這可能會導致重複資料刪除最佳化工作失敗。 但是，很可能會在已啟用重複資料刪除的磁碟區根目錄上建立彈性配額。
 
 在重複資料刪除磁碟區上啟用配額時，配額會使用檔案的邏輯大小，而不是檔案的實際大小。 重複資料刪除工作處理檔案時，不會變更配額使用量 (包含任何配額閾值)。 使用重複資料刪除時，所有其他配額功能 (包含磁碟區根目錄的彈性配額和子資料夾上的配額) 都能正常運作。
 
 ### <a name="windows-server-backup"></a>Windows Server Backup
 Windows Server Backup 可以依原樣備份最佳化的磁碟區 (亦即，不需移除已經過重複資料刪除的資料)。 下列步驟示範如何備份磁碟區，以及如何還原磁碟區或磁碟區中選取的檔案。
-1. 安裝 Windows Server Backup。  
+1. 安裝 Windows Server Backup。
     ```PowerShell
     Install-WindowsFeature -Name Windows-Server-Backup
     ```
 
-2. 執行下列命令將 E: 磁碟區備份至另一個磁碟區，並針對您的情況替代正確的磁碟區名稱。  
+2. 執行下列命令將 E: 磁碟區備份至另一個磁碟區，並針對您的情況替代正確的磁碟區名稱。
     ```PowerShell
     wbadmin start backup –include:E: -backuptarget:F: -quiet
     ```
@@ -64,14 +62,14 @@ Windows Server Backup 可以依原樣備份最佳化的磁碟區 (亦即，不�
     wbadmin get versions
     ```
 
-    這個輸出版本識別碼會是日期和時間字串，例如：08/18/2016-06:22。
+    此輸出版本識別碼會是一個日期和時間字串，例如︰08/18/2016-06:22。
 
 4. 還原整個磁碟區。
     ```PowerShell
     wbadmin start recovery –version:02/16/2012-06:22 -itemtype:Volume  -items:E: -recoveryTarget:E:
     ```
 
-    **--或--**  
+    **--或--**
 
     還原特定資料夾 (在此案例中為 E:\Docs 資料夾)：
     ```PowerShell
@@ -80,7 +78,7 @@ Windows Server Backup 可以依原樣備份最佳化的磁碟區 (亦即，不�
 
 ## <a name="unsupported"></a>不支援
 
-### <a name="windows-10-client-os"></a>Windows 10 （用戶端作業系統）
+### <a name="windows-10-client-os"></a>Windows 10 (用戶端作業系統)
 Windows 10 不支援重複資料刪除。 Windows 社群中有數篇熱門部落格文章說明如何將二進位檔從 Windows Server 2016 移除並安裝在 Windows 10，但是這個案例在「重複資料刪除」的開發過程中還未經驗證。 [在 Windows Server Storage UserVoice 上投票給 Windows 10 vNext 的這個項目](https://windowsserver.uservoice.com/forums/295056-storage/suggestions/9011008-add-deduplication-support-to-client-os)。
 
 ### <a name="windows-search"></a>Windows 搜尋

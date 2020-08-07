@@ -2,22 +2,20 @@
 title: 設定轉介中目標的排序方法
 description: 本文說明如何設定轉介中目標的排序方法。
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: a993d53611382dcd0007bfecae95da6221cf6016
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: e448a12659ca7aa9fbc4230dce51df4fbcd7bcf0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966800"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936101"
 ---
 # <a name="set-the-ordering-method-for-targets-in-referrals"></a>設定轉介中目標的排序方法
 
-> 適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用于： Windows Server 2019、Windows Server (半年通道) 、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 轉介是排序的目標清單，當使用者存取命名空間根目錄或包含目標的資料夾時，用戶端電腦會從網域控制站或命名空間伺服器收到轉介。 當用戶端接收轉介之後，用戶端會嘗試存取清單中的第一個目標。 如果目標無法使用，用戶端會嘗試存取下一個目標。
 用戶端站台上的目標一定會在轉介中優先列出。 用戶端站台外的目標則根據排序方法列出。
@@ -89,7 +87,7 @@ DFSN Windows PowerShell 模組於 Windows Server 2012 中引進。
 > [!NOTE]
 > 即使排序方法為 **\[排除用戶端站台外的目標\]**，目標優先順序設定為 \[所有目標中的第一個目標\] 或 \[所有目標中的最後一個目標\] 的目標仍會列在轉介中。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [調整 DFS 命名空間](tuning-dfs-namespaces.md)
 -   [委派 DFS 命名空間的管理權限](delegate-management-permissions-for-dfs-namespaces.md)

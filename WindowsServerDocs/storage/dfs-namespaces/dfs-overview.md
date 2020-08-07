@@ -1,19 +1,17 @@
 ---
 title: DFS 命名空間概觀
-ms.prod: windows-server
 ms.author: jgerend
 manager: daveba
-ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms.date: 06/07/2019
 description: 本主題說明 DFS 命名空間，這是 Windows Server 中的角色服務，可讓您將位於不同伺服器上的共用資料夾，分組成一個或多個邏輯結構命名空間。
-ms.openlocfilehash: 71c7f4e90a6a224586c90890a456fdf6f061ddf2
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 54f26a605c15ab683dbe51f768e82bce2c00a290
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182274"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936188"
 ---
 # <a name="dfs-namespaces-overview"></a>DFS 命名空間概觀
 
@@ -116,7 +114,7 @@ Install-WindowsFeature "FS-DFS-Namespace", "RSAT-DFS-Mgmt-Con"
 
 若要深入了解如何開始使用 Azure 虛擬機器，請參閱 [Azure 虛擬機器文件](/azure/virtual-machines/)。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 如需其他相關資訊，請參閱下列資源。
 
@@ -126,6 +124,6 @@ Install-WindowsFeature "FS-DFS-Namespace", "RSAT-DFS-Mgmt-Con"
 | **部署**    | [DFS 命名空間延展性考量](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) |
 | **作業**    | [DFS 命名空間：常見問題集](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee404780(v=ws.10)) |
 | **社群資源** | [檔案服務和儲存體 TechNet 論壇](https://docs.microsoft.com/answers/topics/windows-server-storage.html) |
-| **通訊協定**        | [Windows Server 中的檔案服務通訊協定](/openspecs/windows_protocols/MS-WINPROTLP/df36f95e-6a6b-48d6-a3ae-35a17674f546)（已淘汰） |
+| **通訊協定**        | [Windows Server 中的檔案服務通訊協定](/openspecs/windows_protocols/MS-WINPROTLP/df36f95e-6a6b-48d6-a3ae-35a17674f546) (已淘汰)  |
 | **相關技術** | [容錯移轉叢集](../../failover-clustering/failover-clustering-overview.md)|
 | **支援** | [Windows IT 專業人員支援](https://www.microsoft.com/itpro/windows/support)|

@@ -1,31 +1,29 @@
 ---
 title: 在 Windows Server 2019 中部署檔案共用見證
 description: 檔案共用見證可讓您使用檔案共用，在叢集仲裁中進行投票。 本主題描述檔案共用見證和新功能，包括使用連接到路由器的 USB 磁片磁碟機做為檔案共用見證。
-ms.prod: windows-server
 manager: eldenc
-ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
 ms.author: johnmar
 ms.date: 01/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 63e016b8e00482529e69aaa12727f854afd51e41
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ea9dd3f79576048a57c85e879daf86567d325046
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827671"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945831"
 ---
 # <a name="deploy-a-file-share-witness"></a>部署檔案共用見證
 
-> 適用于： Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用於：Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 「檔案共用見證」是一個 SMB 共用，容錯移轉叢集會在叢集仲裁中用來做為投票。 本主題提供 Windows Server 2019 中技術和新功能的總覽，包括使用連接到路由器的 USB 磁片磁碟機做為檔案共用見證。
 
-在下列情況下，檔案共用見證很方便：  
+在下列情況下，檔案共用見證很方便：
 
 - 無法使用雲端見證，因為並非叢集中的所有伺服器都有可靠的網際網路連線
-- 無法使用磁片見證，因為沒有任何共用磁片磁碟機可用於磁片見證。 這可能是儲存空間直接存取叢集、SQL Server Always On 可用性群組（AG）、Exchange 資料庫可用性群組（DAG）等。 這些類型的叢集都不會使用共用磁片。
+- 無法使用磁片見證，因為沒有任何共用磁片磁碟機可用於磁片見證。 這可能是儲存空間直接存取叢集、SQL Server Always On 可用性群組 (AG) 、Exchange 資料庫可用性群組 (DAG) 等等。 這些類型的叢集都不會使用共用磁片。
 
 ## <a name="file-share-witness-requirements"></a>檔案共用見證需求
 
@@ -34,29 +32,29 @@ ms.locfileid: "80827671"
 |檔案伺服器類型                 | 支援的叢集 |
 |---------------------------------|--------------------|
 |任何具有 SMB 2 檔案共用的裝置 | Windows Server 2019|
-|已加入網域的 Windows Server     | Windows Server 2008 和更新版本|
+|已加入網域的 Windows Server     | Windows Server 2008 及更新版本|
 
 如果叢集正在執行 Windows Server 2019，以下是需求：
 
 - *任何使用 smb 2 或更新版本通訊協定的裝置上*的 SMB 檔案共用，包括：
-    - 網路連接儲存裝置（NAS）
+    -  (NAS) 裝置的網路連接存放裝置
     - 加入工作組的 Windows 電腦
     - 具有本機連線 USB 存放裝置的路由器
 - 用於驗證叢集的裝置上的本機帳戶
-- 如果您改為使用 Active Directory 來驗證具有檔案共用的叢集，叢集名稱物件（CNO）必須擁有共用的寫入權限，而且該伺服器必須位於與叢集相同的 Active Directory 樹系中。
+- 如果您改為使用 Active Directory 來驗證具有檔案共用的叢集，則叢集名稱物件 (CNO) 必須擁有共用的寫入權限，且伺服器必須與叢集位於相同的 Active Directory 樹系中。
 - 檔案共用至少有 5 MB 的可用空間
 
 如果叢集執行的是 Windows Server 2016 或更早版本，以下是需求：
 
 - Windows server 上的 SMB 檔案共用，已加入與叢集*相同的 Active Directory 樹*系
-- 叢集名稱物件（CNO）必須具有共用的寫入權限
+-  (CNO) 的叢集名稱物件必須擁有共用的寫入權限
 - 檔案共用至少有 5 MB 的可用空間
 
 其他注意事項：
 - 若要使用裝置所裝載的檔案共用見證，而非已加入網域的 Windows server，您目前必須使用**set-clusterquorum-Credential** PowerShell Cmdlet 來設定見證，如本主題稍後所述。
 - 如需高可用性，您可以在個別的容錯移轉叢集上使用檔案共用見證
 - 檔案共用可供多個叢集使用
-- 任何版本的容錯移轉叢集都不支援使用分散式檔案系統（DFS）共用或複寫的存放裝置。  這些可能會導致分割的大腦狀況，其中叢集伺服器彼此獨立執行，而且可能會造成資料遺失。
+- 任何版本的容錯移轉叢集都不支援使用分散式檔案系統 (DFS) 共用或複寫的存放裝置。  這些可能會導致分割的大腦狀況，其中叢集伺服器彼此獨立執行，而且可能會造成資料遺失。
 
 ## <a name="creating-a-file-share-witness-on-a-router-with-a-usb-device"></a>在具有 USB 裝置的路由器上建立檔案共用見證
 

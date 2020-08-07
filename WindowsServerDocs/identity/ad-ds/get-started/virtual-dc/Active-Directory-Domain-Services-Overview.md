@@ -6,21 +6,19 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 84d28ffec35bdc5dce22d797cb830f8b75068013
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 14c82049171c25d24836ec3cbed35dfe592885f6
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966050"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87969935"
 ---
 # <a name="active-directory-domain-services-overview"></a>Active Directory 網域服務概觀
 
 >適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 
-目錄是一種階層式結構，可將物件的相關資訊儲存在網路上。 目錄服務（例如 Active Directory Domain Services （AD DS））提供儲存目錄資料的方法，並讓網路使用者和系統管理員可以使用此資料。 例如，AD DS 會儲存使用者帳戶的相關資訊，例如名稱、密碼、電話號碼等等，並讓相同網路上的其他授權使用者存取此資訊。
+目錄是一種階層式結構，可將物件的相關資訊儲存在網路上。 目錄服務（例如 Active Directory Domain Services (AD DS) ）提供儲存目錄資料的方法，並讓網路使用者和系統管理員可以使用此資料。 例如，AD DS 會儲存使用者帳戶的相關資訊，例如名稱、密碼、電話號碼等等，並讓相同網路上的其他授權使用者存取此資訊。
 
 Active Directory 會將物件的相關資訊儲存在網路上，並讓系統管理員和使用者輕鬆地尋找和使用此資訊。 Active Directory 使用結構化資料存放區作為目錄資訊的邏輯階層式組織基礎。
 
@@ -42,14 +40,14 @@ Active Directory 也包括：
 
 ## <a name="understanding-active-directory"></a>瞭解 Active Directory
  本節提供核心 Active Directory 概念的連結：
- 
-* [Active Directory 結構和儲存技術](/previous-versions/windows/it-pro/windows-server-2003/cc759186(v=ws.10))
-* [網域控制站角色](/previous-versions/windows/it-pro/windows-server-2003/cc786438(v=ws.10)) 
-* [Active Directory 架構](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc771796(v=ws.10))
-* [瞭解信任](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc771568(v=ws.10)) 
-* [Active Directory 複寫技術](/previous-versions/windows/it-pro/windows-server-2003/cc776877(v=ws.10)) 
-* [Active Directory 搜尋和發行技術](/previous-versions/windows/it-pro/windows-server-2003/cc775686(v=ws.10)) 
-* [與 DNS 和群組原則交互操作](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd197486(v=ws.10))
-* [瞭解架構](/previous-versions/windows/it-pro/windows-server-2003/cc759402(v=ws.10)) 
 
-如需 Active Directory 概念的詳細清單，請參閱[瞭解 Active Directory](/previous-versions/windows/it-pro/windows-server-2003/cc781408(v=ws.10))。 
+* [Active Directory 結構和儲存技術](/previous-versions/windows/it-pro/windows-server-2003/cc759186(v=ws.10))
+* [網域控制站角色](/previous-versions/windows/it-pro/windows-server-2003/cc786438(v=ws.10))
+* [Active Directory 架構](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc771796(v=ws.10))
+* [瞭解信任](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc771568(v=ws.10))
+* [Active Directory 複寫技術](/previous-versions/windows/it-pro/windows-server-2003/cc776877(v=ws.10))
+* [Active Directory 搜尋和發行技術](/previous-versions/windows/it-pro/windows-server-2003/cc775686(v=ws.10))
+* [與 DNS 和群組原則交互操作](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd197486(v=ws.10))
+* [瞭解架構](/previous-versions/windows/it-pro/windows-server-2003/cc759402(v=ws.10))
+
+如需 Active Directory 概念的詳細清單，請參閱[瞭解 Active Directory](/previous-versions/windows/it-pro/windows-server-2003/cc781408(v=ws.10))。

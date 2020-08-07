@@ -1,28 +1,26 @@
 ---
 title: QoS 常見問題
-description: 本主題提供有關 Windows Server 2016 中的服務品質（QoS）原則問題的解答。
-ms.prod: windows-server
-ms.technology: networking
+description: 本主題提供有關 Windows Server 2016 中的服務品質 (QoS) 原則的問題解答。
 ms.topic: article
 ms.assetid: 74c97a14-b957-4568-b48e-8963a674fdb3
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: a2b0990bd1416032cd519c60878c389f391e053d
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: f992aa4d538e5af2feefa353393154be5e797409
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315530"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953854"
 ---
 # <a name="qos-policy-frequently-asked-questions"></a>QoS 原則的常見問題
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 以下是 QoS 原則的常見問題和這些問題的答案。
-  
+
 1.  **我的網域控制站需要執行哪些作業系統才能使用 QoS 原則？**
-  
+
      Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 或 Windows Server 2008
 
 2.  **哪些作業系統支援將 QoS 原則應用到使用者或電腦？**
@@ -33,12 +31,12 @@ ms.locfileid: "80315530"
 
      必須在傳送的電腦上套用 QoS 原則，以影響其輸出流量。 為了影響兩部電腦的雙向流量，QoS 原則必須套用到這兩部電腦上。
 
-4.  **如果有衝突的 QoS 原則部署到同一部電腦，會發生什麼事？**  
-  
-     如果套用多項原則，則會優先使用更具體的 QoS 原則。 例如，會套用指出主機位址（192.168.4.12）的原則，而不是較不特定的網路位址（192.168.0.0/16）。 如果電腦層級和使用者層級原則具有相同的明確性，則會套用使用者層級的 QoS 原則，而不是電腦層級的 QoS 原則。 
+4.  **如果有衝突的 QoS 原則部署到同一部電腦，會發生什麼事？**
+
+     如果套用多項原則，則會優先使用更具體的 QoS 原則。 例如，會套用 (192.168.4.12) 的主機位址原則，而不是較不特定的網路位址 (192.168.0.0/16) 。 如果電腦層級和使用者層級原則具有相同的明確性，則會套用使用者層級的 QoS 原則，而不是電腦層級的 QoS 原則。
 
 5.  **QoS 原則是否預設為啟用？**
 
      否，預設不會啟用 QoS 原則。 您必須手動建立 QoS 原則，才能啟用 QoS。  如需詳細資訊，請參閱[管理 QoS 原則](qos-policy-manage.md)。
 
-如需本指南的第一個主題，請參閱[服務品質（QoS）原則](qos-policy-top.md)。
+如需本指南的第一個主題，請參閱[服務品質 (QoS) 原則](qos-policy-top.md)。

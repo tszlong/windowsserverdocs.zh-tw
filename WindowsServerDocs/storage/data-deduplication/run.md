@@ -1,19 +1,17 @@
 ---
 ms.assetid: f15c02d7-1cbd-4eba-a571-0ea34ab93ef4
 title: 執行重複資料刪除
-ms.technology: storage-deduplication
-ms.prod: windows-server
 ms.topic: article
 author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
-ms.openlocfilehash: f75a20a8b69a863209f6e782bd34e48d8c12fe91
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f382d229458f27795c09e0377e0f0b23ef7b395b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962160"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936229"
 ---
 # <a name="running-data-deduplication"></a>執行重複資料刪除
 
@@ -23,7 +21,7 @@ ms.locfileid: "86962160"
 
 您可以使用下列 PowerShell Cmdlet，手動執行每個排程的重複資料刪除工作：
 * [`Start-DedupJob`](/previous-versions/system-center/system-center-2012-R2/hh758173(v=sc.12))：啟動新的重復資料刪除工作
-* [`Stop-DedupJob`](/previous-versions/system-center/system-center-2012-R2/hh758173(v=sc.12))：停止已在進行中的重復資料刪除工作（或將它從佇列中移除）
+* [`Stop-DedupJob`](/previous-versions/system-center/system-center-2012-R2/hh758173(v=sc.12))：停止已在進行中的重復資料刪除工作 (或將它從佇列中移除) 
 * [`Get-DedupJob`](/previous-versions/system-center/system-center-2012-R2/hh758173(v=sc.12))：顯示所有作用中和已排入佇列的重復資料刪除工作
 
 所有[當您在排程重複資料刪除工作時可使用的設定](advanced-settings.md#modifying-job-schedules-available-settings)，也可以在您手動啟動工作 (排程特有的設定除外) 時使用。 例如，若要手動啟動具有高優先順序、最大 CPU 使用量，以及最大記憶體使用量的[最佳化](understand.md#job-info-optimization)工作，請以系統管理員權限執行下列 PowerShell 命令：
@@ -42,7 +40,7 @@ Start-DedupJob -Type Optimization -Volume <Your-Volume-Here> -Memory 100 -Cores 
 * 針對[記憶體回收工作](understand.md#job-info-gc)，查看 `LastGarbageCollectionResult` (0 = 成功)、`LastGarbageCollectionResultMessage`，及 `LastGarbageCollectionTime` (應該是最新的)。
 * 針對[清除工作](understand.md#job-info-scrubbing)，查看 `LastScrubbingResult` (0 = 成功)、`LastScrubbingResultMessage`，及 `LastScrubbingTime` (應該是最新的)。
 
-> [!Note]  
+> [!Note]
 > 如需工作成功和失敗的其他詳細資料，請參閱 `\Applications and Services Logs\Windows\Deduplication\Operational` 下的 Windows 事件檢視器。
 
 ### <a name="optimization-rates"></a><a id="monitoring-dedup-optimization-rates"></a>優化速率
@@ -51,8 +49,8 @@ Start-DedupJob -Type Optimization -Volume <Your-Volume-Here> -Memory 100 -Cores 
 
 > [!Important]
 > `Get-DedupStatus`有兩個與優化速率相關的欄位： `OptimizedFilesSavingsRate` 和 `SavingsRate` 。 這兩者都是需要追蹤的重要值，但每一個都具有獨特的意義。
-> - `OptimizedFilesSavingsRate`僅適用于優化的檔案（ `space used by optimized files after optimization / logical size of optimized files` ）。
-> - `SavingsRate`適用于整個磁片區（ `space used by optimized files after optimization / total logical size of the optimization` ）。
+> - `OptimizedFilesSavingsRate`僅適用于「原則中」的檔案，用於優化 (`space used by optimized files after optimization / logical size of optimized files`) 。
+> - `SavingsRate`適用于整個磁片區 (`space used by optimized files after optimization / total logical size of the optimization`) 。
 
 ## <a name="disabling-data-deduplication"></a><a id="disabling-dedup"></a>停用重複資料刪除
 若要關閉重複資料刪除，請執行[取消最佳化工作](understand.md#job-info-unoptimization)。 若要復原磁碟區最佳化，請執行下列命令：
@@ -61,9 +59,9 @@ Start-DedupJob -Type Optimization -Volume <Your-Volume-Here> -Memory 100 -Cores 
 Start-DedupJob -Type Unoptimization -Volume <Desired-Volume>
 ```
 
-> [!Important]  
+> [!Important]
 > 如果磁碟區沒有足夠空間來保存已取消最佳化的資料，則取消最佳化工作將會失敗。
 
 ## <a name="frequently-asked-questions"></a><a id="faq"></a>常見問題
-**是否有 System Center Operations Manager 管理組件可用來監視重複資料刪除？**  
+**是否有 System Center Operations Manager 管理組件可用來監視重複資料刪除？**
 是。 重複資料刪除可透過檔案伺服器的 System Center 管理組件來監視。 如需詳細資訊，請參閱[檔案伺服器 2012 R2 的 System Center 管理組件指南](https://download.microsoft.com/download/6/F/7/6F7A33B9-9383-48ED-9252-23C2C8AD1BDA/MPGuide_FileServer2012R2.doc)文件。

@@ -1,18 +1,16 @@
 ---
 title: 閘道頻寬配置
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/22/2018
-ms.openlocfilehash: a5e4e6b280c30eedc230da99cbf798e5560a0ca5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 48a24586c356650ee0e625770dcdd55ce505951c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855711"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962282"
 ---
 # <a name="gateway-bandwidth-allocation"></a>閘道頻寬配置
 
@@ -20,9 +18,9 @@ ms.locfileid: "80855711"
 
 在 Windows Server 2016 中，IPsec、GRE 和 L3 的個別通道頻寬是總閘道容量的比率。 因此，客戶會根據預期此閘道 VM 的標準 TCP 頻寬來提供閘道容量。
 
-此外，閘道上的最大 IPsec 通道頻寬限制為（3/20）客戶所提供的\*閘道容量。 因此，例如，如果您將閘道容量設定為 100 Mbps，則 IPsec 通道容量會是 150 Mbps。 GRE 和 L3 通道的對等比例分別為1/5 和1/2。
+此外，閘道上的最大 IPsec 通道頻寬限制為 \* 客戶提供的 (3/20) 閘道容量。 因此，例如，如果您將閘道容量設定為 100 Mbps，則 IPsec 通道容量會是 150 Mbps。 GRE 和 L3 通道的對等比例分別為1/5 和1/2。
 
-雖然這適用于大部分的部署，但固定比例模型不適合高輸送量環境。 即使資料傳輸速率很高（例如，高於 40 Gbps），SDN 閘道通道的最大輸送量也會因為內部因素而達到上限。
+雖然這適用于大部分的部署，但固定比例模型不適合高輸送量環境。 即使資料傳輸速率很高 (例如，高於 40 Gbps) ，SDN 閘道通道的最大輸送量也會因為內部因素而達到上限。
 
 在 Windows Server 2019 中，針對通道類型，最大輸送量是固定的：
 
@@ -38,7 +36,7 @@ ms.locfileid: "80855711"
 
 在理想的情況下，您會將閘道輸送量容量設定為可供閘道 VM 使用的輸送量。 因此，例如，如果您有單一閘道 VM，而基礎主機 NIC 輸送量是 25 Gbps，則閘道輸送量也可以設為 25 Gbps。
 
-如果只使用 IPsec 連線的閘道，可用的固定容量上限為 5 Gbps。 因此，例如，如果您在閘道上布建 IPsec 連線，您只能以 5 Gbps 的形式布建到匯總頻寬（傳入 + 傳出）。
+如果只使用 IPsec 連線的閘道，可用的固定容量上限為 5 Gbps。 因此，例如，如果您在閘道上布建 IPsec 連線，您只能布建到匯總頻寬 (傳入 + 傳出) 為 5 Gbps。
 
 如果同時使用閘道來進行 IPsec 和 GRE 連線，您可以布建最多 5 Gbps 的 IPsec 輸送量，或最多可達 15 Gbps 的 GRE 輸送量。 因此，例如，如果您布建 2 Gbps 的 IPsec 輸送量，您會有 3 Gbps 的 IPsec 輸送量留在閘道上，或剩 9 Gbps 的 GRE 輸送量。
 
@@ -46,9 +44,9 @@ ms.locfileid: "80855711"
 
 - 閘道的總容量 = 25 Gbps
 
-- 可用的 IPsec 容量總計 = 5 Gbps （固定）
+- 可用的 IPsec 容量總計 = 5 Gbps (固定) 
 
-- 可用的 GRE 容量總計 = 15 Gbps （固定）
+- 可用的 GRE 容量總計 = 15 Gbps (固定) 
 
 - 此閘道的 IPsec 輸送量比例 = 25/5 = 5 Gbps
 
@@ -56,15 +54,15 @@ ms.locfileid: "80855711"
 
 例如，如果您將 2 Gbps 的 IPsec 輸送量配置給客戶：
 
-閘道上的剩餘可用容量 = 閘道的總容量– IPsec 輸送量比率 * 已配置的 IPsec 輸送量（已使用的容量）
+閘道上的剩餘可用容量 = 閘道的總容量– IPsec 輸送量比率 * 已配置的 IPsec 輸送量 (使用的容量) 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25 – 5 * 2 = 15 Gbps
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25– 5 * 2 = 15 Gbps
 
-您可以在閘道上配置的其餘 IPsec 輸送量 
+您可以在閘道上配置的其餘 IPsec 輸送量
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5-2 = 3 Gbps
 
-您可以在閘道上配置的剩餘 GRE 輸送量 = 閘道/GRE 輸送量比率的剩餘容量 
+您可以在閘道上配置的剩餘 GRE 輸送量 = 閘道/GRE 輸送量比率的剩餘容量
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15 * 3/5 = 9 Gbps
 
@@ -74,7 +72,7 @@ ms.locfileid: "80855711"
 
 ## <a name="windows-server-2016-behavior"></a>Windows Server 2016 行為
 
-適用于 Windows Server 2016 的閘道容量計算演算法會維持不變。 在 Windows Server 2016 中，最大的 IPsec 通道頻寬限制為（3/20）\*閘道上的閘道容量。 GRE 和 L3 通道的對等比例分別為1/5 和1/2。
+適用于 Windows Server 2016 的閘道容量計算演算法會維持不變。 在 Windows Server 2016 中，最大的 IPsec 通道頻寬限制為 \* 閘道上的 (3/20) 閘道容量。 GRE 和 L3 通道的對等比例分別為1/5 和1/2。
 
 如果您要從 Windows Server 2016 升級至 Windows Server 2019：
 
@@ -83,6 +81,6 @@ ms.locfileid: "80855711"
 2.  **IPSec 通道：** Windows Server 2016 閘道配置邏輯會繼續運作，直到閘道集區中的所有閘道都升級至 Windows Server 2019 為止。 針對閘道集區中的所有閘道，您必須將 Azure 閘道服務設定為 [**自動**]。
 
 >[!NOTE]
->升級至 Windows Server 2019 之後，閘道可能會變成過度布建（因為配置邏輯會從 Windows Server 2016 變更為 Windows Server 2019）。 在此情況下，閘道上的現有連線會繼續存在。 閘道的 REST 資源會擲回閘道已過度布建的警告。 在此情況下，您應該將一些連線移到另一個閘道。
+>升級至 Windows Server 2019 之後，閘道可能會因為配置邏輯從 Windows Server 2016 變更為 Windows Server 2019) 而變成過度布建的 (。 在此情況下，閘道上的現有連線會繼續存在。 閘道的 REST 資源會擲回閘道已過度布建的警告。 在此情況下，您應該將一些連線移到另一個閘道。
 
 ---

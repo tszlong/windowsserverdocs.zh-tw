@@ -2,22 +2,20 @@
 title: 最佳化命名空間輪詢
 description: 本文說明如何最佳化命名空間輪詢，以在命名空間伺服器間維持一致的網域型命名空間
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 4ffcf974bd809d1692e16d632153c213081041c4
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: cc14dd4f8d6cd833642b87caa32353d4f8940b05
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961230"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936133"
 ---
 # <a name="optimize-namespace-polling"></a>最佳化命名空間輪詢
 
-> 適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用于： Windows Server 2019、Windows Server (半年通道) 、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 若要在命名空間伺服器間維護一致的網域型命名空間，命名空間伺服器必須定期輪詢 Active Directory 網域服務 (AD DS) 以取得最新的命名空間資料。
 
@@ -37,7 +35,7 @@ ms.locfileid: "86961230"
 > [!NOTE]
 > 若要使用 Windows PowerShell 來設定命名空間輪詢模式，請使用 [Set-DfsnRoot EnableRootScalability](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771913(v=ws.11)) Cmdlet，此功能已在 Windows Server 2012 中推出。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [調整 DFS 命名空間](tuning-dfs-namespaces.md)
 -   [委派 DFS 命名空間的管理權限](delegate-management-permissions-for-dfs-namespaces.md)

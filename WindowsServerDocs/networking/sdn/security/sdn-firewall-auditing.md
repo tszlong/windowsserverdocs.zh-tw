@@ -1,32 +1,30 @@
 ---
 title: SDN 防火牆稽核
-description: 防火牆審核是 Windows Server 2019 中 SDN 防火牆的新功能。 當您啟用 SDN 防火牆時，會記錄已啟用記錄的 SDN 防火牆規則（Acl）所處理的任何流程。
+description: 防火牆審核是 Windows Server 2019 中 SDN 防火牆的新功能。 當您啟用 SDN 防火牆時，SDN 防火牆規則所處理的任何流程都會記錄已啟用記錄的 (Acl) 。
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: c4e2f6c7-0364-4bf8-bb66-9af59c0bbd74
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/22/2018
-ms.openlocfilehash: d834c78d393fdbaeaa65900f16f4d1e32f2e5131
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e37fc548db0a1043b2b78d95f97e8b4ef01214c8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854381"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962052"
 ---
 # <a name="sdn-firewall-auditing"></a>SDN 防火牆稽核
 
->適用于： Windows Server 2019
+>適用於：Windows Server 2019
 
-防火牆審核是 Windows Server 2019 中 SDN 防火牆的新功能。 當您啟用 SDN 防火牆時，會記錄已啟用記錄的 SDN 防火牆規則（Acl）所處理的任何流程。 記錄檔必須是與[Azure 網路監看員流量記錄](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview)一致的語法。 這些記錄可用於診斷或封存，以供日後分析。 
+防火牆審核是 Windows Server 2019 中 SDN 防火牆的新功能。 當您啟用 SDN 防火牆時，SDN 防火牆規則所處理的任何流程都會記錄已啟用記錄的 (Acl) 。 記錄檔必須是與[Azure 網路監看員流量記錄](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview)一致的語法。 這些記錄可用於診斷或封存，以供日後分析。 
 
 我們很快就會提供一些範例，說明如何使用 Power BI 之類的工具來處理這些檔案。
 
 _**試試看，並提供意見反應給我們！**_
 
-以下是在 Hyper-v 主機上啟用防火牆審核的範例腳本。 一開始就更新變數，並在已安裝 RSAT-NetworkController 功能的 Windows Server 2019 電腦上執行此動作：
+以下是在 Hyper-v 主機上啟用防火牆審核的範例腳本。一開始就更新變數，並在已安裝 RSAT-NetworkController 功能的 Windows Server 2019 電腦上執行此動作：
 
 ```PowerShell
 $logpath = "C:\test\log1"
@@ -54,7 +52,7 @@ foreach ($s in $servers) {
 }
 ```
 
-一旦啟用，新的檔案就會出現在每個主機上指定的目錄中每小時一次。  您應該定期處理這些檔案，並將它們從主機中移除。  目前檔案的長度為零，且在下一個小時標記排清之前已鎖定：
+一旦啟用，新的檔案就會出現在每個主機上指定的目錄中每小時一次。您應該定期處理這些檔案，並將它們從主機中移除。目前檔案的長度為零，且在下一個小時標記排清之前已鎖定：
 
 ```syntax
 PS C:\test\log1> dir
@@ -73,7 +71,7 @@ Mode                LastWriteTime         Length Name
 這些檔案包含一連串的流程事件，例如：
 
 ```syntax
-{ 
+{
     "records": [
         {
             "properties":{

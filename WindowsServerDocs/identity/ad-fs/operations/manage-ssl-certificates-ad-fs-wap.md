@@ -7,14 +7,12 @@ ms.author: billmath
 manager: samueld
 ms.date: 10/02/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: a982df8ce7d1f335a1c2242f277b1983573c9ee1
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: cc48e3efc783665921519272443e86620dcd4d4a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954201"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962472"
 ---
 # <a name="managing-ssl-certificates-in-ad-fs-and-wap-in-windows-server-2016"></a>管理 Windows Server 2016 中 AD FS 及 WAP 的 SSL 憑證
 
@@ -23,10 +21,10 @@ ms.locfileid: "86954201"
 本文說明如何將新的 SSL 憑證部署至您的 AD FS 和 WAP 伺服器。
 
 >[!NOTE]
->取代 AD FS 伺服器陣列的 SSL 憑證的建議方式是使用 Azure AD Connect。  如需詳細資訊，請參閱[更新 Active Directory 同盟服務（AD FS）伺服器陣列的 SSL 憑證](/azure/active-directory/connect/active-directory-aadconnectfed-ssl-update)
+>取代 AD FS 伺服器陣列的 SSL 憑證的建議方式是使用 Azure AD Connect。  如需詳細資訊，請參閱[更新 Active Directory 同盟服務 (AD FS) 伺服器陣列的 SSL 憑證](/azure/active-directory/connect/active-directory-aadconnectfed-ssl-update)
 
 ## <a name="obtaining-your-ssl-certificates"></a>取得您的 SSL 憑證
-針對生產 AD FS 伺服器陣列，建議使用公開信任的 SSL 憑證。 這通常是藉由將憑證簽署要求（CSR）提交給協力廠商的公開憑證提供者來取得。 有各種方式可產生 CSR，包括從 Windows 7 或更新版本的電腦。 您的廠商應該有此的檔。
+針對生產 AD FS 伺服器陣列，建議使用公開信任的 SSL 憑證。 這通常是藉由將 (CSR) 的憑證簽署要求提交給協力廠商的公開憑證提供者來取得。 有各種方式可產生 CSR，包括從 Windows 7 或更新版本的電腦。 您的廠商應該有此的檔。
 
 - 請確定憑證符合[AD FS 和 Web 應用程式 PROXY SSL 憑證需求](../overview/ad-fs-requirements.md#BKMK_1)
 
@@ -43,12 +41,12 @@ ms.locfileid: "86954201"
 首先，判斷您的 AD FS 伺服器執行哪種憑證系結模式：預設憑證驗證系結，或替代用戶端 TLS 系結模式。
 
 ### <a name="replacing-the-ssl-certificate-for-ad-fs-running-in-default-certificate-authentication-binding-mode"></a>取代以預設憑證驗證系結模式執行之 AD FS 的 SSL 憑證
-AD FS 預設會在埠443上執行裝置憑證驗證，並在埠49443上執行使用者憑證驗證（或不是443的可設定通訊埠）。
+AD FS 預設會在埠443上執行裝置憑證驗證，並在埠 49443 (或可設定的埠（不是 443) ）上進行使用者憑證驗證。
 在此模式中，請使用 powershell Cmdlet Set-Set-adfssslcertificate 來管理 SSL 憑證。
 
 遵循下列步驟：
 
-1. 首先，您將需要取得新的憑證。 這通常是藉由將憑證簽署要求（CSR）提交給協力廠商的公開憑證提供者來完成。 有各種方式可產生 CSR，包括從 Windows 7 或更新版本的電腦。 您的廠商應該有此的檔。
+1. 首先，您將需要取得新的憑證。 這通常是藉由將 (CSR) 的憑證簽署要求提交給協力廠商的公開憑證提供者來完成。 有各種方式可產生 CSR，包括從 Windows 7 或更新版本的電腦。 您的廠商應該有此的檔。
 
     * 請確定憑證符合[AD FS 和 Web 應用程式 PROXY SSL 憑證需求](../overview/ad-fs-requirements.md#BKMK_1)
 
@@ -70,7 +68,7 @@ dir Cert:\LocalMachine\My\
 
 * Set-adfssslcertificate Cmdlet 是多節點 Cmdlet;這表示它只需要從主要節點執行，且伺服器陣列中的所有節點都將更新。 這是伺服器2016中的新功能。 在伺服器 2012 R2 上，您必須在每部伺服器上執行 Set-adfssslcertificate 設定。
 * Set-adfssslcertificate 指令程式必須只在主伺服器上執行。 主伺服器必須執行伺服器2016，而伺服器陣列行為層級應提升至2016。
-* Set-adfssslcertificate 指令會使用 PowerShell 遠端來設定其他 AD FS 伺服器，請確定已在其他節點上開啟埠5985（TCP）。
+* Set-adfssslcertificate 指令會使用 PowerShell 遠端來設定其他 AD FS 伺服器，請確定已在其他節點上開啟埠 5985 (TCP) 。
 * Set-adfssslcertificate 指令碼會將 SSL 憑證的私密金鑰讀取權限授與 adfssrv 主體。 此主體代表 AD FS 服務。 不需要將 SSL 憑證之私密金鑰的讀取權授與 AD FS 服務帳戶。
 
 ### <a name="replacing-the-ssl-certificate-for-ad-fs-running-in-alternate-tls-binding-mode"></a>取代以替代 TLS 系結模式執行之 AD FS 的 SSL 憑證
@@ -79,7 +77,7 @@ dir Cert:\LocalMachine\My\
 
 遵循下列步驟：
 
-1. 首先，您將需要取得新的憑證。 這通常是藉由將憑證簽署要求（CSR）提交給協力廠商的公開憑證提供者來完成。 有各種方式可產生 CSR，包括從 Windows 7 或更新版本的電腦。 您的廠商應該有此的檔。
+1. 首先，您將需要取得新的憑證。 這通常是藉由將 (CSR) 的憑證簽署要求提交給協力廠商的公開憑證提供者來完成。 有各種方式可產生 CSR，包括從 Windows 7 或更新版本的電腦。 您的廠商應該有此的檔。
 
     * 請確定憑證符合[AD FS 和 Web 應用程式 PROXY SSL 憑證需求](../overview/ad-fs-requirements.md#BKMK_1)
 
@@ -101,7 +99,7 @@ dir Cert:\LocalMachine\My\
 
 * AdfsAlternateTlsClientBinding Cmdlet 是多節點 Cmdlet;這表示它只需要從主要節點執行，且伺服器陣列中的所有節點都將更新。
 * AdfsAlternateTlsClientBinding 指令程式必須只在主伺服器上執行。 主伺服器必須執行伺服器2016，而伺服器陣列行為層級應提升至2016。
-* AdfsAlternateTlsClientBinding 指令會使用 PowerShell 遠端來設定其他 AD FS 伺服器，請確定已在其他節點上開啟埠5985（TCP）。
+* AdfsAlternateTlsClientBinding 指令會使用 PowerShell 遠端來設定其他 AD FS 伺服器，請確定已在其他節點上開啟埠 5985 (TCP) 。
 * AdfsAlternateTlsClientBinding 指令碼會將 SSL 憑證的私密金鑰讀取權限授與 adfssrv 主體。 此主體代表 AD FS 服務。 不需要將 SSL 憑證之私密金鑰的讀取權授與 AD FS 服務帳戶。
 
 ## <a name="replacing-the-ssl-certificate-for-the-web-application-proxy"></a>取代 Web 應用程式 Proxy 的 SSL 憑證
@@ -124,6 +122,6 @@ $cred = Get-Credential
 Install-WebApplicationProxy -FederationServiceTrustCredential $cred -CertificateThumbprint '<thumbprint of new cert>' -FederationServiceName 'fs.contoso.com'
 ```
 
-## <a name="additional-references"></a>其他參考  
+## <a name="additional-references"></a>其他參考資料
 * [AD FS 支援憑證驗證的替代主機名稱繫結](../operations/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication.md)
 * [AD FS 和憑證 KeySpec 屬性資訊](../technical-reference/AD-FS-and-KeySpec-Property.md)

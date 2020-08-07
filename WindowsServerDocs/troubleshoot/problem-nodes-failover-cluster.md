@@ -1,23 +1,21 @@
 ---
 title: 刪除節點時發生問題
 description: 本文說明從作用中的容錯移轉叢集成員資格移除節點時所遇到的問題。
-ms.prod: windows-server
-ms.technology: server-general
 ms.date: 05/28/2020
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: 08f5e7ef2ddd0f11abee7d0f21b56c3d5a601d3d
-ms.sourcegitcommit: 5fac756c2c9920757e33ef0a68528cda0c85dd04
+ms.openlocfilehash: e69b110db8f631b74c89e046f724367b4d60dbad
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84306517"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970035"
 ---
 # <a name="having-a-problem-with-nodes-being-removed-from-active-failover-cluster-membership"></a>從作用中的容錯移轉叢集成員資格移除節點時發生問題
 
 這篇文章介紹如何解決從「主動容錯移轉叢集」成員資格中隨機移除節點的問題。
 
-## <a name="symptoms"></a>徵兆
+## <a name="symptoms"></a>徵狀
 
 當問題發生時，您會看到像這樣的事件會記錄在系統事件記錄檔中：
 
@@ -56,7 +54,7 @@ Windows 2008 或 2008 R2 容錯移轉叢集中的所有節點，會透過設定�
 
 6. IPv6 是容錯移轉叢集將用於其心跳的預設通訊協定。 「心跳本身」是透過埠3343進行通訊的 UDP 單播網路封包。 如果沒有適當設定的交換器、防火牆或路由器可允許此流量通過，您可能會遇到像這樣的問題。
 
-7. IPsec 安全性原則重新整理也會造成此問題。 具體的問題是在 IPSec 群組原則更新期間，所有 IPsec 安全性關聯（SAs）都是由 Windows 防火牆 with Advanced Security （WFAS）進行破壞。 發生這種情況時，所有網路連線都會遭到封鎖。 當重新交涉安全性關聯時，如果使用 Active Directory 執行驗證時發生延遲，這些延遲（所有網路通訊都會遭到封鎖）也會封鎖叢集的心跳，使叢集健康狀態監視無法通過，如果節點未在5秒的閾值內回應，則會導致叢集健全狀況監控。
+7. IPsec 安全性原則重新整理也會造成此問題。 具體的問題是，在 IPSec 群組原則期間，所有 IPsec 安全性關聯 (SAs) 會由具有 Advanced Security (WFAS) 的 Windows 防火牆進行破壞。 發生這種情況時，所有網路連線都會遭到封鎖。 當重新交涉安全性關聯時，如果對 Active Directory 執行驗證時發生延遲，這些延遲 (在所有網路通訊遭到封鎖的情況下) 也會封鎖叢集的心跳，使叢集健全狀況監視在未于5秒的閾值內回應時，將節點視為關閉。
 
 8. 舊的或過時的網路卡驅動程式和/或固件。  有時，網路卡或交換器的簡單錯誤設定可能也會導致遺失信號。
 

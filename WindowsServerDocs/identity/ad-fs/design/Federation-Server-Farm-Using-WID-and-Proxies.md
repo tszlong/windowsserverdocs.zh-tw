@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: a906876c25fea62e20abfebf2268af977e6b3ad3
-ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
+ms.openlocfilehash: 372d2ff3c372815823261e7e80a05db088c88331
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87864039"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945428"
 ---
 # <a name="legacy-ad-fs-federation-server-farm-using-wid-and-proxies"></a>舊版 AD FS 使用 WID 和 proxy 的同盟伺服器陣列
 

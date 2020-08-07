@@ -1,19 +1,17 @@
 ---
 title: 設定網路介面順序
 description: 本主題是 Windows Server 2016 的網路子系統效能微調指南的一部分。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 3266328c-ca82-40d2-90ca-854b7088ccaa
 manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
-ms.openlocfilehash: 176fa80cd82fdaa3ac76a8661d189b16aa9631ff
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 2db455943439a452aded5845bd2cb52c2da196f5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517893"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953944"
 ---
 # <a name="configure-the-order-of-network-interfaces"></a>設定網路介面順序
 

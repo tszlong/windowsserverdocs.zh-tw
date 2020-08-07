@@ -2,22 +2,20 @@
 title: 在命名空間上啟用存取型列舉
 description: 本文說明如何在命名空間上啟用存取型列舉。
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 04b023a931f8d66205a07f05bb8d3e955f8b83ca
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 507af0f3cdd76ab7af59092f8f099225c113edaa
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964070"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936122"
 ---
 # <a name="enable-access-based-enumeration-on-a-namespace"></a>在命名空間上啟用存取型列舉
 
-> 適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用于： Windows Server 2019、Windows Server (半年通道) 、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 存取型列舉可以隱藏使用者沒有存取權限的檔案和資料夾。 預設情況下不會為 DFS 命名空間啟用此功能。 您可以使用 DFS 管理來啟用 DFS 資料夾的存取型列舉。 若要控制資料夾目標中檔案和資料夾的存取型列舉，您必須使用 \[共用與存放管理\]，在每個共用資料夾上啟用存取型列舉。
 
@@ -80,13 +78,13 @@ ms.locfileid: "86964070"
 
 1. 在具有 **\[分散式檔案系統\]** 角色服務或已安裝 **\[分散式檔案系統工具\]** 功能的伺服器上，開啟命令提示字元視窗。
 
-2. 輸入下列命令，其中* &lt; DFSPath &gt; *是 DFS 資料夾（連結）的路徑， *<網域 \\ 帳戶>* 是群組或使用者帳戶的名稱，而 *（...）* 會取代為其他存取控制專案（ace）：
+2. 輸入下列命令，其中* &lt; DFSPath &gt; *是 (連結) DFS 資料夾的路徑， *<網域 \\ 帳戶>* 是群組或使用者帳戶的名稱，而* ( ... ) *會取代為其他存取控制專案 (ace) ：
 
    ```
    dfsutil property sd grant <DFSPath> DOMAIN\Account:R (...) Protect Replace
    ```
 
-   例如，若要以允許 Domain Admins 和 CONTOSO \\ 講師群組讀取（R）存取 office\public\training 資料夾的許可權來取代現有許可權 \\ ，請輸入下列命令：
+   例如，若要以允許 Domain Admins 和 CONTOSO 講師群組的許可權來取代現有許可權， \\ 請閱讀 (R) office\public\training 資料夾的存取權 \\ ，輸入下列命令：
 
    ```
    dfsutil property sd grant \\contoso.office\public\training "CONTOSO\Domain Admins":R CONTOSO\Trainers:R Protect Replace
@@ -95,13 +93,13 @@ ms.locfileid: "86964070"
 3. 若要從命令提示字元執行其他工作，請使用下列命令：
 
 
-| 命令 | 描述 |
+| Command | 描述 |
 |---|---|
 |[Dfsutil property sd deny](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759150(v=ws.11))|拒絕群組或使用者檢視資料夾的能力。|
 |[Dfsutil property sd reset](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759150(v=ws.11)) |移除資料夾的所有權限。|
 |[Dfsutil property sd revoke](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759150(v=ws.11))| 從資料夾移除群組或使用者 ACE。 |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [建立 DFS 命名空間](create-a-dfs-namespace.md)
 -   [委派 DFS 命名空間的管理權限](delegate-management-permissions-for-dfs-namespaces.md)

@@ -1,19 +1,17 @@
 ---
 title: 受防護的 VM - 託管服務提供者會設定 Windows Azure Pack
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: d528c689-58b0-425c-9740-25e2553ed689
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 4632c218f0638885e3094446704a91c442859d4c
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7e62b5dab69676e15494ff531ffe0fce0e550c1a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473965"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970085"
 ---
 # <a name="shielded-vms---hosting-service-provider-sets-up-windows-azure-pack"></a>受防護的 VM - 託管服務提供者會設定 Windows Azure Pack
 
@@ -25,26 +23,26 @@ ms.locfileid: "85473965"
 
 您將完成下列工作，在您的環境中設定 Windows Azure 套件：
 
-1. 針對您的主機網狀架構，完成 System Center 2016-Virtual Machine Manager （VMM）的設定。 這包括設定 VM 範本和 VM 雲端，這會透過 Windows Azure 套件公開：
+1. 針對您的主機網狀架構，完成 System Center 2016-Virtual Machine Manager (VMM) 的設定。 這包括設定 VM 範本和 VM 雲端，這會透過 Windows Azure 套件公開：
 
     [案例 - 在 VMM 中部署受防護主機和受防護的虛擬機器](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-overview)
 
-2. 安裝和設定 System Center 2016-Service Provider Foundation （SPF）。 此軟體可讓 Windows Azure 套件與您的 VMM 伺服器進行通訊：
+2. 安裝和設定 System Center 2016-Service Provider Foundation (SPF) 。 此軟體可讓 Windows Azure 套件與您的 VMM 伺服器進行通訊：
 
     [部署 Service Provider Foundation-SPF](https://technet.microsoft.com/system-center-docs/spf/deploy/deploy-spf)
 
 3. 安裝 Windows Azure 套件，並將它設定為與 SPF 進行通訊：
 
-    - [安裝 Windows Azure 套件](#install-windows-azure-pack)（在本主題中）
-    - [設定 Windows Azure 套件](#configure-windows-azure-pack)（在本主題中）
+    - [安裝](#install-windows-azure-pack)本主題中的 Windows Azure 套件 () 
+    - [設定](#configure-windows-azure-pack)本主題中的 Windows Azure 套件 () 
 
 4. 在 Windows Azure 套件中建立一或多個主機方案，以允許租使用者存取您的 VM 雲端：
 
-    [在 Windows Azure 套件中建立方案](#create-a-plan-in-windows-azure-pack)（在本主題中）
+    在本主題的 Windows Azure 套件 (中[建立計畫](#create-a-plan-in-windows-azure-pack)) 
 
 ## <a name="install-windows-azure-pack"></a>安裝 Windows Azure 套件
 
-在您要裝載租使用者入口網站的電腦上安裝並設定 Windows Azure 套件（WAP）。 這部電腦必須能夠連線到 SPF 伺服器，並可供您的租使用者連接。
+在您要裝載租使用者入口網站的電腦上，安裝和設定 Windows Azure 套件 (WAP) 。 這部電腦必須能夠連線到 SPF 伺服器，並可供您的租使用者連接。
 
 1.  查看[WAP 系統需求](https://technet.microsoft.com/library/dn296442.aspx)，並安裝[先決條件軟體](https://technet.microsoft.com/library/dn469335.aspx)。
 
@@ -52,7 +50,7 @@ ms.locfileid: "85473965"
 
 3.  開啟 [Web Platform Installer 並尋找 [**產品**] 索引標籤底下的 [ **Windows Azure 套件：入口網站和 API Express** ]。按一下 [**新增**]，然後在視窗底部**安裝**。
 
-4.  繼續安裝。 安裝完成之後，就會在您的網頁瀏覽器中開啟設定網站（*HTTPs:// &lt; wapserver &gt; ： 30101/*）。 在此網站上，提供 SQL server 的相關資訊，並完成 WAP 的設定。
+4.  繼續安裝。 安裝完成之後，就會在您的網頁瀏覽器中開啟設定網站 (*HTTPs:// &lt; wapserver &gt; ： 30101/*) 。 在此網站上，提供 SQL server 的相關資訊，並完成 WAP 的設定。
 
 如需設定 Windows Azure 套件的說明，請參閱[安裝 Windows Azure 套件的快速部署](https://technet.microsoft.com/dn296439.aspx)。
 
@@ -85,7 +83,7 @@ ms.locfileid: "85473965"
 
 4. 略過選取方案的任何附加元件的步驟。
 
-5. 按一下 **[確定]** （核取記號）以建立方案。 雖然這會建立方案，但它尚未處於已設定的狀態。
+5. 按一下 **[確定]** (勾選 [標記) ] 以建立方案。 雖然這會建立方案，但它尚未處於已設定的狀態。
 
    ![Windows Azure 套件中的計畫](../media/Guarded-Fabric-Shielded-VM/guarded-host-azure-pack-02-create-plan.png)
 
@@ -93,9 +91,9 @@ ms.locfileid: "85473965"
 
 7. 在下一個頁面的 [**方案服務**] 底下，按一下 [**虛擬機器**雲端]。 這會開啟頁面，您可以在其中設定此方案的配額。
 
-8. 在 [**基本**] 底下，選取您想要提供給租使用者的 VMM 管理伺服器和虛擬機器雲端。 可以提供受防護 Vm 的雲端會顯示其名稱旁邊的 **（支援防護）** 。
+8. 在 [**基本**] 底下，選取您想要提供給租使用者的 VMM 管理伺服器和虛擬機器雲端。 可以提供受防護 Vm 的雲端，將會顯示其名稱旁邊的** (防護) ** 。
 
-9. 選取您想要在此方案中套用的配額。 （例如，CPU 核心和 RAM 使用量的限制）。 請務必選取 [**允許受防護的虛擬機器**] 核取方塊。
+9. 選取您想要在此方案中套用的配額。  (例如，CPU 核心和 RAM 使用量) 的限制。 請務必選取 [**允許受防護的虛擬機器**] 核取方塊。
 
    ![Windows Azure 套件中的虛擬機器雲端設定](../media/Guarded-Fabric-Shielded-VM/guarded-host-azure-pack-03-virtual-machine-clouds.png)
 
@@ -113,7 +111,7 @@ ms.locfileid: "85473965"
 
     此時，已設定 Windows Azure 套件，而且租使用者將能夠訂閱您剛建立的方案，並部署受防護的 Vm。 如需租使用者需要完成的其他步驟，請參閱適用于租使用者的[受防護 vm-使用 Windows Azure 套件部署受防護的 vm](guarded-fabric-shielded-vm-windows-azure-pack.md)。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [適用於受防護主機和受防護 VM 的託管服務提供者設定步驟](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [受防護網狀架構與受防護的 VM](guarded-fabric-and-shielded-vms-top-node.md)

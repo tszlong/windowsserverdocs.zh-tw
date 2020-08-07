@@ -5,15 +5,13 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server
 ms.assetid: c49b40b2-598d-49aa-85b4-766bce960e0d
-ms.technology: identity-adds
-ms.openlocfilehash: 6dcd1185ba4d4c847cfe212f78ccc9661fd2aead
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 827a983e49d9e20aafe2e7361f87e9f00ec117b0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823781"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87969865"
 ---
 # <a name="active-directory-forest-recovery-prerequisites"></a>Active Directory 樹系復原必要條件
 
@@ -25,27 +23,27 @@ ms.locfileid: "80823781"
 
 1. 您已經與 Microsoft 支援服務專業人員合作，並且：
    - 判斷整個樹系失敗的原因。 本指南不建議發生失敗的原因，或建議採取任何程式來避免失敗。
-   - 評估任何可能的補救方式。  
+   - 評估任何可能的補救方式。
    - 結束，在與 Microsoft 支援服務的諮詢中，將整個樹系還原到失敗發生之前的狀態，是從失敗中復原的最佳方式。 在許多情況下，樹系復原應該是最後一個選項。
 
-1. 您已遵循使用 Active Directory 整合式網域名稱系統（DNS）的 Microsoft 最佳作法建議。 具體而言，每個 Active Directory 網域都應該有一個 Active Directory 整合的 DNS 區域。
+1. 您已遵循使用 Active Directory 整合式網域名稱系統的 Microsoft 最佳做法建議， (DNS) 。 具體而言，每個 Active Directory 網域都應該有一個 Active Directory 整合的 DNS 區域。
    - 如果不是這種情況，您仍然可以使用本指南的基本原則來執行樹系復原。 不過，您必須根據自己的環境，針對 DNS 復原採取特定的量值。 如需使用 Active Directory 整合式 DNS 的詳細資訊，請參閱[建立 Dns 基礎結構設計](../../ad-ds/plan/Creating-a-DNS-Infrastructure-Design.md)。
 
-1. 雖然本指南的目的是做為樹系復原的一般指南，但並非所有可能的案例都涵蓋在內。 比方說，從 Windows Server 2008 開始，有一個 Server Core 版本，這是 Windows Server 的完整版本，但沒有完整的 GUI。 雖然您可以復原的樹系只包含執行 Server Core 的 Dc，但本指南沒有詳細的指示。 不過，根據此處所討論的指導方針，您將能夠自行設計必要的命令列動作。  
+1. 雖然本指南的目的是做為樹系復原的一般指南，但並非所有可能的案例都涵蓋在內。 比方說，從 Windows Server 2008 開始，有一個 Server Core 版本，這是 Windows Server 的完整版本，但沒有完整的 GUI。 雖然您可以復原的樹系只包含執行 Server Core 的 Dc，但本指南沒有詳細的指示。 不過，根據此處所討論的指導方針，您將能夠自行設計必要的命令列動作。
 
 > [!NOTE]
-> 雖然本指南的目標是要復原樹系，並維護或還原完整的 DNS 功能，但在失敗之前，修復可能會導致 DNS 設定從設定中變更。 在樹系復原之後，您可以還原成原始的 DNS 設定。 本指南中的建議不會說明如何設定 DNS 伺服器，以對公司命名空間的其他部分執行名稱解析，其中有不會儲存在 AD DS 中的 DNS 區域。  
+> 雖然本指南的目標是要復原樹系，並維護或還原完整的 DNS 功能，但在失敗之前，修復可能會導致 DNS 設定從設定中變更。 在樹系復原之後，您可以還原成原始的 DNS 設定。 本指南中的建議不會說明如何設定 DNS 伺服器，以對公司命名空間的其他部分執行名稱解析，其中有不會儲存在 AD DS 中的 DNS 區域。
 
 ## <a name="concepts-for-using-this-guide"></a>使用本指南的概念
 
-開始規劃 Active Directory 樹系的復原之前，您應該先熟悉下列各項：  
-  
-- 基本 Active Directory 概念  
-- 操作主機角色（也稱為彈性單一主機操作或 FSMO）的重要性。 這些角色包括下列各項：  
+開始規劃 Active Directory 樹系的復原之前，您應該先熟悉下列各項：
+
+- 基本 Active Directory 概念
+- 操作主機角色的重要性 (也稱為彈性單一主機操作或 FSMO) 。 這些角色包括下列各項：
   - 架構主機
   - 網域命名主機
-  - 相對識別碼（RID）主機
-  - 主域控制站（PDC）模擬器主機
+  - 相對識別碼 (RID) 主機
+  -  (PDC) 模擬器主機的主域控制站
   - 基礎結構主機
 
 此外，您應該定期在實驗室環境中備份和還原 AD DS 和 SYSVOL。 如需詳細資訊，請參閱[備份系統狀態資料](AD-Forest-Recovery-Procedures.md)和[執行 Active Directory Domain Services 的非系統授權還原](AD-Forest-Recovery-Procedures.md)。

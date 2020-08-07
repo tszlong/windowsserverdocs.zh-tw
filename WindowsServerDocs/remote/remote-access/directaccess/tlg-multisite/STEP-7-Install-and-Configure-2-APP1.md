@@ -2,18 +2,16 @@
 title: 步驟7：安裝和設定 2-APP1
 description: 本主題屬於測試實驗室指南-示範適用于 Windows Server 2016 的 DirectAccess 多網站部署
 manager: brianlic
-ms.prod: windows-server
 ms.topic: article
-ms.technology: networking-da
 ms.assetid: 1cc0abc6-be4d-4cbe-bd0c-cc448bf294f6
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: ff2b9eacfa2ae888497371e3f6dffedf955d82d3
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: b881f22ab2e2aa5427b0c06f042d4102cccf26fc
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409849"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953684"
 ---
 # <a name="step-7-install-and-configure-2-app1"></a>步驟7：安裝和設定 2-APP1
 
@@ -27,7 +25,7 @@ ms.locfileid: "87409849"
 
 - 聯結 2-APP1 至 CORP2 網域
 
-- 在 2-APP1 上安裝網頁伺服器（IIS）角色
+- 在 2 APP1 上安裝 Web 服務器 (IIS) 角色
 
 - 在 2-APP1 上建立共用資料夾
 
@@ -36,7 +34,7 @@ ms.locfileid: "87409849"
 
 #### <a name="to-install-the-operating-system-on-2-app1"></a>若要在 2-APP1 上安裝作業系統
 
-1.  開始安裝 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 （完整安裝）。
+1.  開始安裝 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 (完整安裝) 。
 
 2.  依指示完成安裝，為本機 Administrator 帳戶指定強式密碼。 使用本機 Administrator 帳戶登入。
 
@@ -96,16 +94,16 @@ ms.locfileid: "87409849"
 
 9. 在電腦重新開機之後，按一下 [**切換使用者**]，然後按一下 [**其他使用者**]，並使用系統管理員帳戶登入 CORP2 網域。
 
-## <a name="install-the-web-server-iis-role-on-2-app1"></a><a name="bkmk_IIS"></a>在 2-APP1 上安裝網頁伺服器（IIS）角色
-安裝網頁伺服器（IIS）角色，讓 web 伺服器具有 2 APP1。
+## <a name="install-the-web-server-iis-role-on-2-app1"></a><a name="bkmk_IIS"></a>在 2 APP1 上安裝 Web 服務器 (IIS) 角色
+ (IIS) 角色安裝 Web 服務器，讓 web 伺服器 APP1。
 
-#### <a name="to-install-the-web-server-iis-role"></a>若要安裝網頁伺服器（IIS）角色
+#### <a name="to-install-the-web-server-iis-role"></a>若要安裝 Web 服務器 (IIS) 角色
 
 1.  在伺服器管理員主控台的 [**儀表板**] 上，按一下 [**新增角色及功能**]。
 
 2.  按三次 **[下一步]** 以移至伺服器角色選取畫面
 
-3.  在 [**選取伺服器角色**] 頁面上，選取 [**網頁伺服器（IIS）**]，然後按 **[下一步]** 四次。
+3.  在 [**選取伺服器角色**] 頁面上，選取 [**網頁伺服器 (IIS) **]，然後按 **[下一步]** 四次。
 
 4.  在 [確認安裝選項]**** 頁面上，按一下 [安裝]****。
 
@@ -118,7 +116,7 @@ ms.locfileid: "87409849"
 
 1.  在 [**開始**] 畫面上，輸入**explorer.exe**，然後按 enter。
 
-2.  按一下 [**電腦**]，然後按兩下 **[本機磁片（C：）**]。
+2.  按一下 [**電腦**]，然後按兩下 [**本機磁片] (C： ) **。
 
 3.  按一下 [**新增資料夾**]，輸入**Files**，然後按 enter。 將 [**本機磁片**] 視窗保持開啟。
 
@@ -126,7 +124,7 @@ ms.locfileid: "87409849"
 
 5.  在 [未**命名的-記事本**] 視窗中，輸入**這是 2-APP1 上的共用**檔案。
 
-6.  依序**按一下 [檔案**]、[**儲存** **]、[****電腦**]，再按兩下 [**本機磁片（C：）**]，然後按兩下 [檔案] 資料夾。
+6.  依**序按一下 [檔案]、[****儲存**]、[**電腦**]，然後**按兩下 [** **本機磁片] (C： ) **]，再按兩下 [檔案] 資料夾。
 
 7.  在 [**檔案名**] 中，輸入**example.txt**，然後按一下 [**儲存**]。 關閉 [記事本]。
 

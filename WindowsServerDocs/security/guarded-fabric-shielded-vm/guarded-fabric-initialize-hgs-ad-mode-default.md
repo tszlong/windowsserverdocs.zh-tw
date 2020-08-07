@@ -1,27 +1,25 @@
 ---
-title: 在新的專用樹系中使用 AD 模式初始化 HGS 叢集（預設值）
-ms.prod: windows-server
+title: '在新的專用樹系中使用 AD 模式初始化 HGS 叢集 (預設值) '
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 851ee57545aa233fd7d6c728b213ba687a1c1371
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 91a7620b1c484cb67300c9cb575100d9421d0dfc
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856681"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953564"
 ---
-# <a name="initialize-the-hgs-cluster-using-ad-mode-in-a-new-dedicated-forest-default"></a>在新的專用樹系中使用 AD 模式初始化 HGS 叢集（預設值）
+# <a name="initialize-the-hgs-cluster-using-ad-mode-in-a-new-dedicated-forest-default"></a>在新的專用樹系中使用 AD 模式初始化 HGS 叢集 (預設值) 
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 >[!IMPORTANT]
->從 Windows Server 2019 開始，系統管理員信任的證明（AD 模式）已淘汰。 針對不可能進行 TPM 證明的環境，請設定[主機金鑰證明](guarded-fabric-initialize-hgs-key-mode-default.md)。 主機金鑰證明提供與 AD 模式類似的保證，而且設定起來較簡單。 
+>從 Windows Server 2019 開始，系統管理員信任的證明 (AD 模式) 已淘汰。 針對不可能進行 TPM 證明的環境，請設定[主機金鑰證明](guarded-fabric-initialize-hgs-key-mode-default.md)。 主機金鑰證明提供與 AD 模式類似的保證，而且設定起來較簡單。
 
-1.  [!INCLUDE [Initialize HGS](../../../includes/guarded-fabric-initialize-hgs-default-step-one.md)] 
+1.  [!INCLUDE [Initialize HGS](../../../includes/guarded-fabric-initialize-hgs-default-step-one.md)]
 2.  [!INCLUDE [Obtain certificates for HGS](../../../includes/guarded-fabric-initialize-hgs-default-step-two.md)]
 
 3.  在第一個 HGS 節點上已提升許可權的 PowerShell 視窗中執行[Initialize-HgsServer](https://technet.microsoft.com/library/mt652185.aspx) 。 此 Cmdlet 的語法支援許多不同的輸入，但2個最常見的調用如下：
@@ -35,13 +33,13 @@ ms.locfileid: "80856681"
         Initialize-HgsServer -HgsServiceName 'MyHgsDNN' -SigningCertificatePath '.\signCert.pfx' -SigningCertificatePassword $signingCertPass -EncryptionCertificatePath '.\encCert.pfx' -EncryptionCertificatePassword $encryptionCertPass -TrustActiveDirectory
         ```
 
-    -   如果您使用的是安裝在本機憑證存放區中的不可匯出憑證，請執行下列命令。 如果您不知道憑證的指紋，可以藉由執行 `Get-ChildItem Cert:\LocalMachine\My`來列出可用的憑證。
+    -   如果您使用的是安裝在本機憑證存放區中的不可匯出憑證，請執行下列命令。 如果您不知道憑證的指紋，您可以執行來列出可用的憑證 `Get-ChildItem Cert:\LocalMachine\My` 。
 
         ```powershell
         Initialize-HgsServer -HgsServiceName 'MyHgsDNN' -SigningCertificateThumbprint '1A2B3C4D5E6F...' -EncryptionCertificateThumbprint '0F9E8D7C6B5A...' --TrustActiveDirectory
         ```
 
-4.  [!INCLUDE [Initialize HGS](../../../includes/guarded-fabric-initialize-hgs-default-step-four.md)]  
+4.  [!INCLUDE [Initialize HGS](../../../includes/guarded-fabric-initialize-hgs-default-step-four.md)]
 
 5.  [!INCLUDE [Initialize HGS](../../../includes/guarded-fabric-initialize-hgs-default-step-five.md)]
 

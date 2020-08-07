@@ -1,19 +1,17 @@
 ---
 title: Windows Admin Center 一般疑難排解步驟
 description: Windows Admin Center 一般疑難排解步驟 (Project Honolulu)
-ms.technology: manage
 ms.topic: article
 author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
-ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 2ddcf101b6eae3be6f48c66de3c400c66ed53f2b
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: a7ef7eb2acf9a641babf5690119c61f452aaabbc
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519647"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87937617"
 ---
 # <a name="troubleshooting-windows-admin-center"></a>Windows Admin Center 疑難排解
 
@@ -61,7 +59,7 @@ ms.locfileid: "87519647"
 
     ![[工作管理員-服務] 索引標籤](../media/Service-TaskMan.PNG)
 
-* 測試閘道的網路連線（以 \<values> 您部署中的資訊取代）
+* 測試閘道的網路連線 (將取代為 \<values> 您部署中的資訊) 
 
     ```powershell
     Test-NetConnection -Port <port> -ComputerName <gateway> -InformationLevel Detailed
@@ -81,11 +79,11 @@ ms.locfileid: "87519647"
 
 * 如果您使用的是 Windows 10 或伺服器的 insider preview 版本，其組建版本介於17134和17637之間，Windows 就會發生錯誤，導致 Windows 系統管理中心失敗。 請使用目前支援的 Windows 版本。
 
-### <a name="make-sure-the-windows-remote-management-winrm-service-is-running-on-both-the-gateway-machine-and-managed-node"></a>請確定 Windows 遠端管理（WinRM）服務正在閘道電腦和受控節點上執行
+### <a name="make-sure-the-windows-remote-management-winrm-service-is-running-on-both-the-gateway-machine-and-managed-node"></a>請確定 Windows 遠端管理 (WinRM) 服務同時在閘道電腦和受控節點上執行
 
 * 使用 WindowsKey + R 開啟 [執行] 對話方塊
 * 輸入 ```services.msc``` ，然後按 enter 鍵
-* 在開啟的視窗中，尋找 [Windows 遠端管理（WinRM）]，確定它正在執行，並設定為 [自動啟動]
+* 在開啟的視窗中，尋找 Windows 遠端管理 (WinRM) ，確定它正在執行中，並設定為自動啟動
 
 ### <a name="did-you-upgrade-your-server-from-2016-to-2019"></a>您是否已將伺服器從2016升級至2019？
 
@@ -196,7 +194,7 @@ netsh http delete urlacl url=https://+:443/
 
 Edge 有與安全性區域相關的[已知問題](https://github.com/AzureAD/azure-activedirectory-library-for-js/wiki/Known-issues-on-Edge)，這些問題會影響 Windows 管理中心的 Azure 登入。 如果您在使用 Edge 時遇到使用 Azure 功能的問題，請嘗試將 https://login.microsoftonline.com https://login.live.com 閘道的 URL 新增為信任的網站，並在您的用戶端瀏覽器上加入允許的邊緣快顯封鎖程式設定的網站。
 
-作法：
+若要這樣做：
 1. 在 Windows [開始] 功能表中搜尋 [**網際網路選項**]
 2. 移至 [**安全性**] 索引標籤
 3. 在 [信任的網站] 選項底下，按一下 [網站] 按鈕，然後在開啟的對話方塊中新增 URL。 您必須新增閘道 URL 以及 https://login.microsoftonline.com 和 https://login.live.com 。

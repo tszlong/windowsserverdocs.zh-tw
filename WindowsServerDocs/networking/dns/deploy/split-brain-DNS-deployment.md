@@ -2,18 +2,16 @@
 title: 使用適合拆分式 DNS 部署的 DNS 原則
 description: 本主題是 Windows Server 2016 DNS 原則案例指南的一部分
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-dns
 ms.topic: article
 ms.assetid: a255a4a5-c1a0-4edc-b41a-211bae397e3c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 466a9e940a8211335abbfab43e933a5dcbbffebf
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: f0274eddba5aa81a0910ca2f22841029c699bb3e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518254"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962302"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-deployment"></a>使用適用于分割 \- 大腦 Dns 部署的 Dns 原則
 
@@ -24,7 +22,7 @@ ms.locfileid: "87518254"
 >[!NOTE]
 >如需有關如何將 DNS 原則用於使用 \- Active Directory 整合式 Dns 區域的分割大腦 dns 部署的詳細資訊，請參閱[在 Active Directory 中將 dns 原則用於分割大腦 dns](dns-sb-with-ad.md)。
 
-在過去，此案例需要 DNS 系統管理員維護兩部不同的 DNS 伺服器，每個都提供服務給每一組使用者（內部和外部）。 如果區域內只有少數記錄是分割的 \- brained，或區域的兩個實例（內部和外部）都已委派給相同的父系網域，這就成為管理之間謎。
+在過去，此案例需要 DNS 系統管理員維護兩部不同的 DNS 伺服器，每個都提供服務給每一組使用者（內部和外部）。 如果區域內只有少數記錄是分割的 \- brained，或區域的兩個實例 (內部和外部) 已委派給相同的父系網域，這就成為了管理之間謎。
 
 分割大腦部署的另一個設定案例是 DNS 名稱解析的選擇性遞迴控制。 在某些情況下，企業 DNS 伺服器預期會透過網際網路對內部使用者執行遞迴解析，而它們也必須作為外部使用者的授權名稱伺服器，並封鎖它們的遞迴。
 
@@ -63,7 +61,7 @@ ms.locfileid: "87518254"
 
 如果接收查詢的伺服器介面符合任何原則，則會使用相關聯的區域範圍來回應查詢。
 
-因此，在我們的範例中，在私人 IP （10.0.0.56）上收到的 www.career.contoso.com DNS 查詢會收到包含內部 IP 位址的 DNS 回應。而且在公用網路介面上接收到的 DNS 查詢，會收到包含預設區域範圍中公用 IP 位址的 DNS 回應（這與一般查詢解析相同）。
+因此，在我們的範例中，在私人 IP 上收到的 www.career.contoso.com DNS 查詢 (10.0.0.56) 會收到包含內部 IP 位址的 DNS 回應;而在公用網路介面上接收到的 DNS 查詢，會收到包含預設區域範圍中公用 IP 位址的 DNS 回應 (這與一般查詢解析) 相同。
 
 ## <a name="how-to-configure-dns-split-brain-deployment"></a><a name="bkmk_sbconfigure"></a>如何設定 DNS 分割大腦部署
 若要使用 DNS 原則設定 DNS 分割部署，您必須使用下列步驟。
@@ -92,7 +90,7 @@ ms.locfileid: "87518254"
 
 ### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>將記錄新增至區域範圍
 
-下一個步驟是將代表 Web 服務器主機的記錄新增至兩個區域範圍-內部和預設（適用于外部用戶端）。
+下一個步驟是將代表 Web 服務器主機的記錄新增至兩個區域範圍內：外部用戶端) 的內部和預設 (。
 
 在內部區域範圍中，會使用 IP 位址10.0.0.39 （也就是私人 IP）新增記錄<strong>www.career.contoso.com</strong> 。而在預設區域範圍中，會使用 IP 位址65.55.39.10 加入相同的記錄<strong>www.career.contoso.com</strong>。
 
