@@ -4,20 +4,20 @@ ms.topic: article
 author: cosmosdarwin
 ms.author: cosdar
 ms.date: 11/04/2019
-ms.openlocfilehash: a7c15bd07754d48b7fbffe2cd95edaa871c9bde3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 06062f4add54fda3ddcda4d092d6eaf1d692ebf8
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964444"
+ms.locfileid: "87993484"
 ---
 # <a name="deploy-hyperconverged-infrastructure-with-windows-admin-center"></a>使用 Windows 管理中心部署超大範圍基礎結構
 
 > 適用於：Windows Admin Center、Windows Admin Center 預覽版
 
-您可以使用 Windows 管理中心[1910 版](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center)或更新版本，使用兩個或更多適合的 Windows 伺服器來部署超大範圍基礎結構。 這項新功能會採用多階段工作流程的形式，引導您安裝功能、設定網路功能、建立叢集，以及部署儲存空間直接存取和/或軟體定義的網路 (SDN) （如果已選取）。
+您可以使用 Windows 管理中心[1910 版](../overview.md)或更新版本，使用兩個或更多適合的 Windows 伺服器來部署超大範圍基礎結構。 這項新功能會採用多階段工作流程的形式，引導您安裝功能、設定網路功能、建立叢集，以及部署儲存空間直接存取和/或軟體定義的網路 (SDN) （如果已選取）。
 
-從 Windows 系統管理中心2007版，Windows 系統管理中心支援 Azure Stack HCI OS。 如需瞭解[如何在 Windows 系統管理中心部署叢集，請參閱 AZURE STACK HCI](https://docs.microsoft.com/azure-stack/hci/getting-started)檔。Althought 本檔著重于 Azure Stack HCI，指示也適用于 Windows Server 部署。
+從 Windows 系統管理中心2007版，Windows 系統管理中心支援 Azure Stack HCI OS。 如需瞭解[如何在 Windows 系統管理中心部署叢集，請參閱 AZURE STACK HCI](/azure-stack/hci/getting-started)檔。Althought 本檔著重于 Azure Stack HCI，指示也適用于 Windows Server 部署。
 
 ## <a name="undo-and-start-over"></a>復原並從頭開始
 
@@ -88,5 +88,5 @@ Get-NetAdapter | Where Name -Ne "Management" | Set-NetAdapter -VlanID 0
 
 ## <a name="additional-references"></a>其他參考資料
 
-- [Hello，Windows 系統管理中心](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center)
-- [部署儲存空間直接存取](https://docs.microsoft.com/windows-server/storage/storage-spaces/deploy-storage-spaces-direct)
+- [Hello，Windows 系統管理中心](../overview.md)
+- [部署儲存空間直接存取](../../../storage/storage-spaces/deploy-storage-spaces-direct.md)

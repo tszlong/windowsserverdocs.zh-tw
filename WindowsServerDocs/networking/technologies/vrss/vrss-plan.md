@@ -8,12 +8,12 @@ manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/04/2018
-ms.openlocfilehash: 9457a1763f92e7f2571040c1c6e8e323d96ee598
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ccfaa9fa02dd7324f1682592867b027cad4006a8
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87951937"
+ms.locfileid: "87993562"
 ---
 # <a name="plan-the-use-of-vrss"></a>規劃使用 vRSS
 
@@ -40,7 +40,7 @@ ms.locfileid: "87951937"
 
 3. **缺少 SR \-SR-IOV**。 確認單一根輸入 \- 輸出虛擬化 \( sr-iov 虛擬函式 \- \) \( VF \) 驅動程式未連接至 VM 網路介面。 您可以使用**get-netadaptersriov**命令來確認這一點。 如果您已載入 VF 驅動程式，RSS 會使用此驅動程式的調整設定，而不是由 vRSS 設定的值。 如果 VF 驅動程式不支援 RSS，則會停用 vRSS。
 
-4. **NIC**小組設定。 如果您使用的是 NIC 小組，請務必適當地設定 VMQ 以使用 NIC 小組設定。 如需有關 NIC 小組部署和管理的詳細資訊，請參閱[nic](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/nic-teaming)小組。
+4. **NIC**小組設定。 如果您使用的是 NIC 小組，請務必適當地設定 VMQ 以使用 NIC 小組設定。 如需有關 NIC 小組部署和管理的詳細資訊，請參閱[nic](../nic-teaming/nic-teaming.md)小組。
 
 5. **LPs 的數目**。 確認 VM 有一個以上的邏輯處理器 \( LP \) 。 vRSS 依賴 VM 或 Hyper-v 主機上的 RSS，以負載平衡接收到多個 LPs 的流量以進行平行處理。 您可以在主機中執行 Windows PowerShell 命令**VMProcessor** ，觀察 VM 有多少 LPs。 執行命令之後，您可以觀察 LPs 數目的 Count 資料行專案。
 

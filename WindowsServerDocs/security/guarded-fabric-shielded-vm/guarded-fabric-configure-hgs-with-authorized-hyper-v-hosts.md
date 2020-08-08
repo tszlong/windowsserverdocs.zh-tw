@@ -1,29 +1,27 @@
 ---
 title: 部署受保護的主機
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 2379ca26-b32d-4055-8b4b-99d1f2df37e1
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 59b6aaa22fa89620df2ce6757b2d9f5ffe91c652
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: d69ce87349e7714a1aaf1bb0cc03fb9a145da12e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475345"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87966135"
 ---
 # <a name="deploy-guarded-hosts"></a>部署受保護的主機
 
->適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
+>適用于： Windows Server 2019、Windows Server (半年通道) 、Windows Server 2016
 
-本節中的主題說明網狀架構系統管理員設定 Hyper-v 主機以與主機守護者服務（HGS）搭配使用所需的步驟。 在您可以開始這些步驟之前，[必須先設定 HGS](guarded-fabric-setting-up-the-host-guardian-service-hgs.md)叢集中至少一個節點。
+本節中的主題說明網狀架構系統管理員設定 Hyper-v 主機以與主機守護者服務搭配使用 (HGS) 所需的步驟。 在您可以開始這些步驟之前，[必須先設定 HGS](guarded-fabric-setting-up-the-host-guardian-service-hgs.md)叢集中至少一個節點。
 
 **針對 TPM 信任證明**：
 1. 設定網狀[架構 dns](guarded-fabric-configuring-fabric-dns.md)：告訴您如何將 DNS 轉寄站從網狀架構網域設定為 HGS 網域。
-2. [抓取 HGS 所需的資訊](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md)：告訴您如何捕捉 TPM 識別碼（也稱為平臺識別碼）、建立程式碼完整性原則，以及建立 TPM 基準。 然後，您會將此資訊提供給 HGS 系統管理員，以設定證明。
+2. [HGS 所需的 Capture 資訊](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md)：告訴您如何捕捉 TPM 識別碼 (也稱為平臺識別碼) 、建立程式碼完整性原則，以及建立 TPM 基準。 然後，您會將此資訊提供給 HGS 系統管理員，以設定證明。
 3. [確認受防護主機可以證明](guarded-fabric-confirm-hosts-can-attest-successfully.md)
 
 **對於主機金鑰證明**：
@@ -38,6 +36,6 @@ ms.locfileid: "85475345"
 3. [確認受防護主機可以證明](guarded-fabric-confirm-hosts-can-attest-successfully.md)
 
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [受保護網狀架構和受防護 Vm 的部署工作](guarded-fabric-deploying-hgs-overview.md#deployment-tasks-for-guarded-fabrics-and-shielded-vms)

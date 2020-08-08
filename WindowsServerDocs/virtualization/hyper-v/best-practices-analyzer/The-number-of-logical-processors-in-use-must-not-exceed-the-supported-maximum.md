@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 66df8b02-91d1-424b-8934-a39c214d530e
 author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: d74fa49a3ce0015cb8ee819b537153519c498627
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 4a78f81fa90bc25d9ca1888d2c74d90a417f1071
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960461"
+ms.locfileid: "87993431"
 ---
 # <a name="the-number-of-logical-processors-in-use-must-not-exceed-the-supported-maximum"></a>使用中的邏輯處理器數目不得超過支援的最大值
 
@@ -41,7 +41,7 @@ ms.locfileid: "87960461"
 
 *請從這部電腦移除一些處理器，或使用 msconfig 來限制可用的處理器數目。*
 
-請參閱下列指示以使用 Msconfig。 如需移除處理器的詳細資訊，請參閱電腦隨附的指示，或洽詢硬體製造商。 如需 Hyper-v 支援的最大設定的詳細資訊，請參閱[在 Windows Server 2016 中規劃 hyper-v 擴充性](../plan/Plan-for-Hyper-V-scalability-in-Windows-Server-2016.md)。
+請參閱下列指示以使用 Msconfig。 如需移除處理器的詳細資訊，請參閱電腦隨附的指示，或洽詢硬體製造商。 如需 Hyper-v 支援的最大設定的詳細資訊，請參閱[在 Windows Server 2016 中規劃 hyper-v 擴充性](../plan/plan-hyper-v-scalability-in-windows-server.md)。
 
 ### <a name="to-limit-the-number-of-available-processors"></a>限制可用的處理器數目
 
@@ -52,6 +52,3 @@ ms.locfileid: "87960461"
 3.  選取 [**處理器數目**]，然後在清單中選取一個數位。 按一下 [確定]  。
 
 4.  重新開機電腦，以使用新的處理器數目來執行。
-
-
-

@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: trudyha
 ms.author: trudyha
 ms.date: 10/16/2017
-ms.openlocfilehash: fc76aef0f7fbc9f3c1dd73b94c6510c0ad37034c
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 49c5ee234a6983902e7eb2f68e64a058167a3182
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879418"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993418"
 ---
 # <a name="windows-server-hybrid-cloud-print-overview"></a>Windows Server 混合式雲端列印總覽
 
@@ -56,7 +56,7 @@ Windows 10 建立者更新和 Windows 10 S 支援**混合式雲端列印**。
 | BYOD 裝置/Windows 列印伺服器多工緩衝處理器/印表機 | 這些都是現成的。 部署中的功能沒有任何變更。 |
 
 有兩種方式可安裝**混合式雲端列印**：
-- * * 依需求提供的功能，請參閱在[Windows Server 中設定隨選功能](https://docs.microsoft.com/windows-server/administration/server-manager/configure-features-on-demand-in-windows-server)，以深入瞭解如何新增和移除角色和功能檔案。
+- * * 依需求提供的功能，請參閱在[Windows Server 中設定隨選功能](../server-manager/configure-features-on-demand-in-windows-server.md)，以深入瞭解如何新增和移除角色和功能檔案。
 - * * Windows Server 2016 設定，系統管理員可以前往 [**設定**] [  ->  **應用程式**] [  ->  **管理選擇性功能**]  ->  [**新增功能**]，並搜尋 [隨選功能] 套件
 - PowerShell 命令-在 PowerShell 系統管理員視窗中，執行下列命令：
 

@@ -5,16 +5,14 @@ author: allenma
 ms.author: allenma
 ms.date: 08/14/2018
 ms.topic: article
-ms.prod: windows-server-hyper-v
-ms.technology: virtualization
 ms.localizationpriority: low
 ms.assetid: 5fe163d4-2595-43b0-ba2f-7fad6e4ae069
-ms.openlocfilehash: 128f9d734311f8eaf0f06204e114171fa8b0f750
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 332ec3a31d8a442fada7f01d30c5cb7d44965238
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87768426"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87994100"
 ---
 # <a name="about-hyper-v-hypervisor-scheduler-type-selection"></a>關於 Hyper-v 程式管理器排程器類型選取
 
@@ -32,7 +30,7 @@ ms.locfileid: "87768426"
 
 ## <a name="background"></a>背景
 
-從 Windows Server 2016 開始，Hyper-v 支援數種排程和管理虛擬處理器的方法，稱為「虛擬程式管理者」。  如需所有「虛擬機器排程器」類型的詳細說明，請參閱[瞭解和使用 hyper-v 虛擬程式](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-scheduler-types)排程器類型。
+從 Windows Server 2016 開始，Hyper-v 支援數種排程和管理虛擬處理器的方法，稱為「虛擬程式管理者」。  如需所有「虛擬機器排程器」類型的詳細說明，請參閱[瞭解和使用 hyper-v 虛擬程式](./manage-hyper-v-scheduler-types.md)排程器類型。
 
 >[!NOTE]
 >新的虛擬程式管理器排程器類型最初是在 Windows Server 2016 中引進，而且在舊版中無法使用。 Windows Server 2016 之前的所有 Hyper-v 版本僅支援傳統的排程器。 核心排程器的支援僅限最近發行。
@@ -78,7 +76,7 @@ ms.locfileid: "87768426"
 部署具有最大安全性狀態的 Hyper-v 主機時，需要使用「虛擬程式核心排程器」類型。 為確保我們的客戶預設是安全的，Microsoft 會變更下列預設和建議的設定。
 
 >[!NOTE]
->雖然在 Windows Server 2016、Windows Server 1709 和 Windows Server 1803 的初始版本中已包含管理器的內部支援，但需要更新才能存取設定控制項，這可讓您選取「虛擬程式」排程器類型。  如需這些更新的詳細資訊，請參閱[瞭解和使用 hyper-v 虛擬機器管理器類型](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-scheduler-types)。
+>雖然在 Windows Server 2016、Windows Server 1709 和 Windows Server 1803 的初始版本中已包含管理器的內部支援，但需要更新才能存取設定控制項，這可讓您選取「虛擬程式」排程器類型。  如需這些更新的詳細資訊，請參閱[瞭解和使用 hyper-v 虛擬機器管理器類型](./manage-hyper-v-scheduler-types.md)。
 
 ### <a name="virtualization-host-changes"></a>虛擬化主機變更
 
@@ -168,7 +166,7 @@ Microsoft 虛擬程式提供多個 enlightenment 或提示，在來賓 VM 中執
 
 ### <a name="nononarchitecturalcoresharing-enlightenment-details"></a>NoNonArchitecturalCoreSharing 啟蒙教學詳細資料
 
-從 Windows Server 2016 開始，基礎程式會定義新的啟蒙教學，以描述它對虛擬作業系統的副總排程和位置的處理。 此啟蒙教學定義于[虛擬機器的頂層功能規格 v 5.0 c](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/tlfs)中。
+從 Windows Server 2016 開始，基礎程式會定義新的啟蒙教學，以描述它對虛擬作業系統的副總排程和位置的處理。 此啟蒙教學定義于[虛擬機器的頂層功能規格 v 5.0 c](/virtualization/hyper-v-on-windows/reference/tlfs)中。
 
 「虛擬程式」綜合 CPUID 的 cpuid 0x40000004。 EAX： 18 [NoNonArchitecturalCoreSharing = 1] 表示虛擬處理器絕對不會與另一個虛擬處理器共用實體核心，但回報為「同輩 SMT」執行緒的虛擬處理器除外。 例如，來賓副總不會在 SMT 執行緒上執行，而根副總會同時在相同處理器核心上的兄弟 SMT 執行緒上執行。 只有在執行虛擬化時才可能發生這種情況，因此代表也會有嚴重安全性影響的非架構 SMT 行為。 虛擬作業系統可以使用 NoNonArchitecturalCoreSharing = 1 來表示啟用優化，這可能有助於避免設定 STIBP 的效能負擔。
 

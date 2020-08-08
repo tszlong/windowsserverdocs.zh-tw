@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: dc6608713ddd60d20b0b717d4133d93d23fc7b25
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b9f764b64a50b0c69116cf19e253097da464cdbb
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80816251"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954294"
 ---
 # <a name="manage-risk-with-additional-multi-factor-authentication-for-sensitive-applications"></a>透過其他多因素驗證管理機密應用程式的風險
 
@@ -26,22 +24,22 @@ ms.locfileid: "80816251"
 
 -   [設定 AD FS 的其他驗證方法](../../ad-fs/operations/Configure-Additional-Authentication-Methods-for-AD-FS.md)
 
-## <a name="in-this-guide"></a>在本指南中
+## <a name="in-this-guide"></a>本指南內容
 本指南提供下列資訊：
 
--   [AD FS 中的驗證機制](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_1)-Windows Server 2012 R2 中 Active Directory 同盟服務（AD FS）提供的驗證機制描述
+-   [AD FS 中的驗證機制](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_1)-Windows Server 2012 R2 中 Active Directory 同盟服務 (AD FS) 可用的驗證機制描述
 
--   [案例總覽](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_2)-使用 Active Directory 同盟服務（AD FS）根據使用者的群組成員資格啟用多重要素驗證（MFA）的案例描述。
+-   [案例總覽](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_2)-一種案例的描述，您可以使用 Active Directory 同盟服務 (AD FS) ，根據使用者的群組成員資格來啟用多重要素驗證 (MFA) 。
 
     > [!NOTE]
     > 在 Windows Server 2012 R2 的 AD FS 中，您可以根據網路位置、裝置身分識別，以及使用者身分識別或群組成員資格來啟用 MFA。
 
     如需設定和驗證此案例的詳細逐步解說指示，請參閱逐步解說[指南：透過其他多因素驗證管理機密應用程式的風險](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)。
 
-## <a name="key-concepts---authentication-mechanisms-in-ad-fs"></a><a name="BKMK_1"></a>主要概念-AD FS 中的驗證機制
+## <a name="key-concepts---authentication-mechanisms-in-ad-fs"></a><a name="BKMK_1"></a>重要概念 - AD FS 中的驗證機制
 
 ### <a name="benefits-of-authentication-mechanisms-in-ad---fs"></a>AD FS 驗證機制的好處
-Windows Server 2012 R2 中的 Active Directory 同盟服務（AD FS）為 IT 系統管理員提供更豐富、更有彈性的工具組，以驗證想要存取公司資源的使用者。 它可讓系統管理員有彈性地控制主要和其他驗證方法，提供豐富的管理體驗來設定驗證原則（透過使用者介面和 Windows PowerShell），並增強存取受 AD FS 保護之應用程式和服務的終端使用者體驗。 以下是在 Windows Server 2012 R2 中使用 AD FS 保護您的應用程式和服務的一些優點：
+Windows Server 2012 R2 中的 Active Directory 同盟服務 (AD FS) 為 IT 系統管理員提供更豐富、更有彈性的工具組，來驗證想要存取公司資源的使用者。 它可讓系統管理員有彈性地控制主要和其他驗證方法，提供豐富的管理體驗，讓您透過使用者介面和 Windows PowerShell) 設定驗證原則 (，並增強存取 AD FS 所保護之應用程式和服務的使用者體驗。 以下是在 Windows Server 2012 R2 中使用 AD FS 保護您的應用程式和服務的一些優點：
 
 -   全域驗證原則-一種集中管理功能，IT 系統管理員可以根據其存取受保護資源的網路位置，選擇要用來驗證使用者的驗證方法。 這種做法可讓系統管理員執行下列工作：
 
@@ -63,7 +61,7 @@ Windows Server 2012 R2 中的 Active Directory 同盟服務（AD FS）為 IT 系
 -   支援自訂 MFA 提供者：針對利用協力廠商 MFA 方法的組織，AD FS 提供順暢地併入和使用這些驗證方法的能力。
 
 ### <a name="authentication-scope"></a>驗證範圍
-在 Windows Server 2012 R2 的 AD FS 中，您可以指定全域範圍的驗證原則，而該領域適用于 AD FS 保護的所有應用程式和服務。  您也可以為 AD FS 保護的特定應用程式和服務（信賴憑證者信任）設定驗證原則。 指定特定應用程式 (每個信賴憑證者信任) 的驗證原則不會覆寫通用驗證原則。 如果通用或每個信賴憑證者信任驗證原則需要 MFA，每當使用者嘗試驗證此信賴憑證者信任就會觸發 MFA。  通用驗證原則是未設定特定驗證原則之信賴憑證者信任 (應用程式和服務) 的後援。
+在 Windows Server 2012 R2 的 AD FS 中，您可以指定全域範圍的驗證原則，而該領域適用于 AD FS 保護的所有應用程式和服務。  您也可以設定特定應用程式和服務的驗證原則， (信賴憑證者信任，) 受到 AD FS 保護。 指定特定應用程式 (每個信賴憑證者信任) 的驗證原則不會覆寫通用驗證原則。 如果通用或每個信賴憑證者信任驗證原則需要 MFA，每當使用者嘗試驗證此信賴憑證者信任就會觸發 MFA。  通用驗證原則是未設定特定驗證原則之信賴憑證者信任 (應用程式和服務) 的後援。
 
 全域驗證原則會套用至 AD FS 保護的所有信賴憑證者。 您可以在通用驗證原則中設定下列設定：
 
@@ -111,7 +109,7 @@ MFA 設定 (需要 MFA 的條件) 有下列可用選項：
 
 -   您可以為已註冊 (已加入工作地點) 或未註冊 (未加入工作地點) 裝置要求 MFA。
 
-    Windows Server 2012 R2 採用以使用者為中心的方法，將裝置物件代表 user@device 與公司之間的關聯性的新式裝置。 裝置物件是 Windows Server 2012 R2 中 AD 的新類別，可在提供應用程式和服務的存取權時，用來提供複合身分識別。 AD FS 的新元件 - 裝置註冊服務 (DRS) - 在 Active Directory 中佈建裝置身分識別，並在可用來代表裝置身分識別的消費裝置上設定憑證。 接著，您可以使用此裝置身分識別將裝置加入到工作地點，也就是將您的個人裝置連線到工作地點的 Active Directory。 當您將個人裝置加入工作地點就會變成已知裝置，並可提供無縫式的次要因素驗證來保護資源和應用程式。 換句話說，在裝置加入工作場所之後，使用者的身分識別會系結到此裝置，而且可以在存取受保護的資源之前，用來進行順暢的複合身分識別驗證。
+    Windows Server 2012 R2 採用以使用者為中心的方法，讓裝置物件代表與公司之間的關聯性的新式裝置 user@device 。 裝置物件是 Windows Server 2012 R2 中 AD 的新類別，可在提供應用程式和服務的存取權時，用來提供複合身分識別。 AD FS 的新元件 - 裝置註冊服務 (DRS) - 在 Active Directory 中佈建裝置身分識別，並在可用來代表裝置身分識別的消費裝置上設定憑證。 接著，您可以使用此裝置身分識別將裝置加入到工作地點，也就是將您的個人裝置連線到工作地點的 Active Directory。 當您將個人裝置加入工作地點就會變成已知裝置，並可提供無縫式的次要因素驗證來保護資源和應用程式。 換句話說，在裝置加入工作場所之後，使用者的身分識別會系結到此裝置，而且可以在存取受保護的資源之前，用來進行順暢的複合身分識別驗證。
 
     如需工作地方聯結和離開的詳細資訊，請參閱[從任何裝置加入工作場所以進行 SSO，以及跨公司應用程式進行無縫第二因素驗證](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)。
 
@@ -147,8 +145,8 @@ MFA 設定 (需要 MFA 的條件) 有下列可用選項：
     ```
 
 ## <a name="see-also"></a>另請參閱
-[逐步解說指南：透過其他多因素驗證管理機密應用程式的風險](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
-[設定 Windows Server 2012 R2 中 AD FS 的實驗室環境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
+[逐步解說指南：透過其他多因素驗證管理機密應用程式](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md) 
+ 的風險[在 Windows Server 2012 R2 中設定 AD FS 的實驗室環境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
 
 
 

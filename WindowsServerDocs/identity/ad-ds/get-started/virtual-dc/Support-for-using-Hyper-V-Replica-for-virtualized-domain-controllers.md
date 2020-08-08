@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 10252626e3732197e681e12851d5ef66bad1cc80
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: a751e8d6f170a83027f417855da1bdaa471de01b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519075"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954414"
 ---
 # <a name="support-for-using-hyper-v-replica-for-virtualized-domain-controllers"></a>支援針對虛擬網域控制站使用 Hyper-V 複本
 
@@ -32,12 +30,12 @@ Hyper-V 複本會以非同步方式，跨 LAN 或 WAN 連結，將從主要 Hype
 
 ## <a name="windows-server-2012-or-newer-domain-controllers-required"></a>需要 Windows Server 2012 或更新版本的網域控制站
 
-Windows Server 2012 Hyper-v 引進了 VM-GenerationID （VMGenID）。 VMGenID 提供一種方式，讓 Hypervisor 可以在發生顯著變更時，與客體作業系統進行通訊。 例如，Hypervisor 可以在發生從快照還原的動作時 (Hyper-V 快照還原技術，非備份還原)，與虛擬 DC 進行通訊。 Windows Server 2012 和更新版本中的 AD DS 都知道 VMGenID VM 技術，並使用它來偵測是否執行虛擬程式作業（例如快照還原），讓它能夠更適當地保護本身。
+Windows Server 2012 Hyper-v 引進了 VM-GenerationID (VMGenID) 。 VMGenID 提供一種方式，讓 Hypervisor 可以在發生顯著變更時，與客體作業系統進行通訊。 例如，Hypervisor 可以在發生從快照還原的動作時 (Hyper-V 快照還原技術，非備份還原)，與虛擬 DC 進行通訊。 Windows Server 2012 和更新版本中的 AD DS 都知道 VMGenID VM 技術，並使用它來偵測是否執行虛擬程式作業（例如快照還原），讓它能夠更適當地保護本身。
 
 > [!NOTE]
 > 只有 Windows Server 2012 Dc 或更新版本上的 AD DS 提供 VMGenID 所產生的這些安全措施;執行所有舊版 Windows Server 的 Dc 會受限於使用不支援的機制（例如快照還原）還原虛擬 DC 時可能發生的 USN 復原問題。 如需這些保護措施和觸發時機的詳細資訊，請參閱[虛擬網域控制站架構](./virtualized-domain-controller-architecture.md)。
 
-當發生 Hyper-v 複本容錯移轉（已規劃或未規劃）時，虛擬化的 DC 會偵測到 VMGenID 重設，並觸發上述的安全性功能。 Active Directory 作業之後會照常繼續執行。 複本 VM 會取代主要 VM 執行。
+當 Hyper-v 複本容錯移轉 (已規劃或未計畫的) 時，虛擬化的 DC 會偵測到 VMGenID 重設，並觸發上述的安全性功能。 Active Directory 作業之後會照常繼續執行。 複本 VM 會取代主要 VM 執行。
 
 > [!NOTE]
 > 假設現在有兩個執行個體具備相同的 DC 識別，則有可能主要執行個體和複寫執行個體同時執行。 儘管 Hyper-V 複本有適當的控制機制，可確保主要和複本 VM 不會同時執行，但是如果它們之間的連結於 VM 複寫之後失敗，便有可能同時執行。 發生這個罕見的情況時，執行 Windows Server 2012 的虛擬 DC 會有保護措施來協助保護 AD DS，而執行舊版 Windows Server 的虛擬 DC 則無法提供保護。
@@ -70,5 +68,5 @@ Windows Server 2012 Hyper-v 引進了 VM-GenerationID （VMGenID）。 VMGenID �
 
 | 計劃性容錯移轉 | 未規劃的容錯移轉 |
 |--|--|
-| 支援但不建議使用，因為執行這些 Windows Server 版本的 DC 不支援 VMGenID 或使用相關的虛擬化防護措施。 這會讓它們處於 USN 復原的風險之中。 如需詳細資訊，請參閱[usn 和 Usn 回復](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd363553(v=ws.10))。 | 不支援<p>**注意：** 如果 USN 復原不是風險，例如樹系中的單一 DC （不建議設定），則會支援未計畫的容錯移轉。 |
+| 支援但不建議使用，因為執行這些 Windows Server 版本的 DC 不支援 VMGenID 或使用相關的虛擬化防護措施。 這會讓它們處於 USN 復原的風險之中。 如需詳細資訊，請參閱[usn 和 Usn 回復](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd363553(v=ws.10))。 | 不支援<p>**注意：** 如果 USN 復原不是風險，例如樹系中的單一 DC (不建議) 的設定，則會支援未計畫的容錯移轉。 |
 | 測試案例：<p>-DC1 和 DC2 正在執行 Windows Server 2008 R2。<p>-DC2 已關閉，而且已規劃的容錯移轉會在 DC2-Rec 上執行。在關機完成之前，DC2 上的所有資料會複寫至 DC2-Rec。<p>-DC2 啟動之後，它會使用與 DC2 相同的 invocationID，繼續與 DC1 進行複寫。 | N/A |

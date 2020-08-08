@@ -5,18 +5,18 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 916239535b92e1248918c76897e5222fa1dc6451
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b1616af3cfc1f14c534392c7f083b333b4744ef3
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896115"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993344"
 ---
 # <a name="linux-virtual-machine-considerations"></a>Linux 虛擬機器考慮
 
 相較于 Hyper-v 中的 Windows 虛擬機器，Linux 和 BSD 虛擬機器有其他考慮。
 
-第一個考慮是 Integration Services 是否存在，或 VM 是否只在沒有啟蒙教學的模擬硬體上執行。 [Windows 上的 Hyper-v 支援的 linux 和 FreeBSD 虛擬機器](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows)中有提供內建或可下載 Integration Services 的 LINUX 和 BSD 版本資料表。 這些頁面有適用于 Linux 發行版本的可用 Hyper-v 功能的方格，以及這些功能的相關注意事項。
+第一個考慮是 Integration Services 是否存在，或 VM 是否只在沒有啟蒙教學的模擬硬體上執行。 [Windows 上的 Hyper-v 支援的 linux 和 FreeBSD 虛擬機器](../../../../virtualization/hyper-v/supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows.md)中有提供內建或可下載 Integration Services 的 LINUX 和 BSD 版本資料表。 這些頁面有適用于 Linux 發行版本的可用 Hyper-v 功能的方格，以及這些功能的相關注意事項。
 
 即使來賓正在執行 Integration Services，它仍可使用舊版硬體進行設定，而不會展現最佳效能。 例如，針對來賓設定和使用虛擬 ethernet 介面卡，而不是使用傳統網路介面卡。 Windows Server 2016 也提供 SR-IOV 這類 advanced 網路功能。
 
@@ -51,7 +51,7 @@ net.ipv4.tcp_abort_on_overflow = 1
 
 ## <a name="linux-storage-performance"></a>Linux 儲存體效能
 
-在[hyper-v 上執行 Linux 的最佳作法](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/best-practices-for-running-linux-on-hyper-v)中列出一些最佳做法，如下所示。 Linux 核心具有不同的 i/o 排程器，可使用不同的演算法重新排序要求。 NOOP 是先進先出佇列，可通過由管理者所進行的排程決策。 建議在 Hyper-v 上執行 Linux 虛擬機器時，使用 NOOP 做為排程器。 若要變更特定裝置的排程器，請在開機載入器的 configuration (/etc/grub.conf （例如) ）中，將新增 `elevator=noop` 至核心參數，然後重新開機。
+在[hyper-v 上執行 Linux 的最佳作法](../../../../virtualization/hyper-v/best-practices-for-running-linux-on-hyper-v.md)中列出一些最佳做法，如下所示。 Linux 核心具有不同的 i/o 排程器，可使用不同的演算法重新排序要求。 NOOP 是先進先出佇列，可通過由管理者所進行的排程決策。 建議在 Hyper-v 上執行 Linux 虛擬機器時，使用 NOOP 做為排程器。 若要變更特定裝置的排程器，請在開機載入器的 configuration (/etc/grub.conf （例如) ）中，將新增 `elevator=noop` 至核心參數，然後重新開機。
 
 與網路類似，Linux 的來賓效能與存放裝置的優點是多個佇列的深度，足以讓主機保持忙碌。 使用 libaio 引擎的 fio 基準測試，Microbenchmarking 儲存體效能可能最佳。
 

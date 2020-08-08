@@ -5,12 +5,12 @@ ms.topic: get-started-article
 ms.assetid: 08fb7563-d319-48a9-b181-ca0ca3032c18
 author: dcuomo
 ms.author: dacuo
-ms.openlocfilehash: 78741ae45a5f175d6be0e608adba5c6c6fcbf771
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 69e1fee1a8ae0ff1c878c64790650290b4804351
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964394"
+ms.locfileid: "87993819"
 ---
 # <a name="whats-new-in-networking"></a>網路的新功能
 
@@ -35,7 +35,7 @@ Upd 本主題包含下列各節。
 
 以下是新的或改良的 SDN 基礎結構技術。
 
--   **網路控制**卡。 Windows Server 2016 中的新功能，網路控制站提供集中式、可程式化的自動化點，以管理、設定、監視和疑難排解資料中心內的虛擬和實體網路基礎結構。 使用網路控制器時，您可以自動化網路基礎結構的設定，而不用執行網路裝置與服務的手動設定。 如需詳細資訊，請參閱[網路控制](sdn/technologies/network-controller/Network-Controller.md)卡和[使用腳本部署軟體定義網路](https://technet.microsoft.com/library/mt427380.aspx)。
+-   **網路控制**卡。 Windows Server 2016 中的新功能，網路控制站提供集中式、可程式化的自動化點，以管理、設定、監視和疑難排解資料中心內的虛擬和實體網路基礎結構。 使用網路控制器時，您可以自動化網路基礎結構的設定，而不用執行網路裝置與服務的手動設定。 如需詳細資訊，請參閱[網路控制](sdn/technologies/network-controller/Network-Controller.md)卡和[使用腳本部署軟體定義網路](/previous-versions/windows/server/mt427380(v=ws.12))。
 
 -   **Hyper-v 虛擬交換器**。 Hyper-v 虛擬交換器會在 Hyper-v 主機上執行，並可讓您建立分散式切換和路由，以及與 Microsoft Azure 一致且相容的原則強制層。 如需詳細資訊，請參閱 [Hyper-V 虛擬交換器](../virtualization/hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md)。
 
@@ -50,7 +50,7 @@ Upd 本主題包含下列各節。
         如需詳細資訊，請參閱[Ras 閘道的新功能](sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md)和[SDN 的 ras 閘道](sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md)。
 
     - **軟體 Load Balancer (SLB) 和網路位址轉譯 (NAT) **。 北南部和東西部第4層負載平衡器和 NAT 藉由支援伺服器直接回傳來增強輸送量，讓傳回的網路流量可以略過負載平衡多工器。
-       如需詳細資訊，請參閱[適用于 SDN 的軟體負載平衡 &#40;SLB&#41;](sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md)。
+       如需詳細資訊，請參閱[適用于 SDN 的軟體負載平衡 &#40;SLB&#41;](./sdn/technologies/network-function-virtualization/software-load-balancing-for-sdn.md)。
 
     如需詳細資訊，請參閱[網路功能虛擬化](sdn/technologies/network-function-virtualization/Network-Function-Virtualization.md)。
 
@@ -145,5 +145,3 @@ IPAM 為組織網路上的 IP 位址和 DNS 基礎結構提供高度可自訂的
      您可以使用 Windows PowerShell 來設定 IPAM 物件的存取範圍。
 
 如需詳細資訊，請參閱[ipam 的新功能](technologies/ipam/What-s-New-in-IPAM.md)和[管理 ipam](technologies/ipam/Manage-IPAM.md)。
-
-

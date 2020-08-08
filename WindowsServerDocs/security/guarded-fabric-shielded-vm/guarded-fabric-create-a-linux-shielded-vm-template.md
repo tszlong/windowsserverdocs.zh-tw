@@ -1,23 +1,21 @@
 ---
 title: 建立 Linux 受防護的 VM 範本磁片
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: d0e1d4fb-97fc-4389-9421-c869ba532944
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 1a6325a5d8e931f1e62c83ba4013d94760e39f86
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0535a15d0b21b62bb9f8b91729f773d1f4db0db0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856791"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87966065"
 ---
 # <a name="create-a-linux-shielded-vm-template-disk"></a>建立 Linux 受防護的 VM 範本磁片
 
-> 適用于： Windows Server 2019、Windows Server （半年通道）、 
+> 適用于： Windows Server 2019、Windows Server (半年通道) 、
 
 本主題說明如何準備可用於將一或多個租使用者 Vm 具現化的 Linux 受防護 Vm 的範本磁片。
 
@@ -26,10 +24,10 @@ ms.locfileid: "80856791"
 若要準備和測試 Linux 受防護的 VM，您將需要下列可用的資源：
 
 - 具有執行 Windows Server 1709 版或更新版本之虛擬化 capababilities 的伺服器
-- 第二部電腦（Windows 10 或 Windows Server 2016），能夠執行 Hyper-v 管理員以連線至執行中 VM 的主控台
+- 第二部電腦 (Windows 10 或 Windows Server 2016) 能夠執行 Hyper-v 管理員以連線至執行中 VM 的主控台
 - 其中一個支援的 Linux 受防護 VM 作業系統的 ISO 映像：
     - 具有4.4 核心的 Ubuntu 16.04 LTS
-    - Red Hat Enterprise Linux 7。3
+    - Red Hat Enterprise Linux 7.3
     - SUSE Linux Enterprise Server 12 Service Pack 2
 - 下載 lsvmtools 套件和 OS 更新的網際網路存取權
 
@@ -43,7 +41,7 @@ ms.locfileid: "80856791"
 受防護的 Vm 是從安全的範本磁片建立而成。
 範本磁片包含 VM 和中繼資料的作業系統，包括/boot 和/root 磁碟分割的數位簽章，以確保核心作業系統元件不會在部署之前修改。
 
-若要建立範本磁片，您必須先建立一般（無遮罩） VM，做為未來受防護 Vm 的基礎映射。
+若要建立範本磁片，您必須先建立一般的 (無遮罩) VM，做為未來受防護 Vm 的基礎映射。
 您所安裝的軟體和您對此 VM 進行的設定變更，將會套用到從這個範本磁片建立的所有受防護 Vm。
 這些步驟將逐步引導您完成 Linux VM 的最低需求，以準備好進行 templatization。
 
@@ -72,8 +70,8 @@ ms.locfileid: "80856791"
 5.  使用 Hyper-v 管理員，在虛擬化伺服器上[設定外部交換器](https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/create-a-virtual-switch-for-hyper-v-virtual-machines)，讓 Linux VM 可以存取網際網路以取得更新。
 
 6.  接下來，建立新的虛擬機器以安裝 Linux OS。
-    在 [動作] 窗格中，按一下 [**新增** > **虛擬機器**] 以顯示嚮導。
-    為您的 VM 提供易記名稱，例如「預先範本化的 Linux」，然後按 **[下一步]** 。
+    在 [動作] 窗格中，按一下 [**新增**  >  **虛擬機器**] 以顯示嚮導。
+    為您的 VM 提供易記名稱，例如「預先範本化的 Linux」，然後按 **[下一步]**。
 
 7.  在嚮導的第二個頁面上，選取 [**第2代**] 以確保 VM 是以 UEFI 為基礎的固件設定檔來布建。
 
@@ -87,8 +85,8 @@ ms.locfileid: "80856791"
 10. 針對您選取的 Linux 散發套件進行設定程式。
     雖然每個 Linux 散發套件都使用不同的安裝程式，但必須符合下列需求，才能成為受 Linux 防護的 VM 範本磁片的 Vm：
 
-    - 磁片必須使用 GUID 分割表格（GPT）配置進行分割
-    - 根磁碟分割必須以 dm crypt 加密。 複雜密碼應設定為複雜**密碼**（全部小寫）。 當布建受防護的 VM 時，此複雜密碼將會是隨機的，而且磁碟分割會重新加密。
+    - 磁片必須使用 GUID 分割資料表分割 (GPT) 配置
+    - 根磁碟分割必須以 dm crypt 加密。 複雜密碼應設定為所有小寫)  (的複雜**密碼**。 當布建受防護的 VM 時，此複雜密碼將會是隨機的，而且磁碟分割會重新加密。
     - 開機磁碟分割必須使用**ext2**檔案系統
 
 11. 一旦您的 Linux OS 完全開機且您已登入，建議您安裝 linux 虛擬核心和相關聯的 Hyper-v integration services 套件。
@@ -139,7 +137,7 @@ ms.locfileid: "80856791"
     ```
 
 14. 當您完成自訂 Linux OS 時，請在您的系統上找出 lsvmprep 安裝程式並加以執行。
-    
+
     ```bash
     # The path below may change based on the version of lsvmprep installed
     # Run "find /opt -name lsvmprep" to locate the lsvmprep executable
@@ -148,9 +146,9 @@ ms.locfileid: "80856791"
 
 15. 關閉您的 VM。
 
-16. 如果您已採取 VM 的任何檢查點（包括 Hyper-v 以 Windows 10 秋季建立者更新所建立的自動檢查點），請務必先將其刪除，然後再繼續進行。
-    檢查點建立「範本磁片」 Wizard 不支援的差異磁片（. .avhdx）。
-    
+16. 如果您已採取 VM 的任何檢查點 (包括 Hyper-v 所建立的自動檢查點與 Windows 10 秋季建立者更新) ，請務必先將其刪除，再繼續進行。
+    檢查點 ( 「範本磁片」 Wizard 不支援的 .avhdx) 建立差異磁片。
+
     若要刪除檢查點，請開啟 [ **Hyper-v 管理員**]，選取您的 VM，以滑鼠右鍵按一下檢查點窗格中最上方的檢查點，然後按一下 [**刪除檢查點子樹**]。
 
     ![在 Hyper-v 管理員中刪除範本 VM 的所有檢查點](../media/Guarded-Fabric-Shielded-VM/delete-checkpoints-lsvm-template.png)
@@ -164,13 +162,13 @@ ms.locfileid: "80856791"
 ### <a name="obtain-a-certificate-to-sign-the-disk"></a>取得憑證以簽署磁片
 
 若要以數位方式簽署磁片測量，您必須在將執行「範本磁片」 Wizard 的電腦上取得憑證。
-憑證必須符合下列需求：
+憑證必須符合下列要求：
 
 Certificate 屬性 | 必要值
 ---------------------|---------------
 金鑰演算法 | RSA
 最小金鑰大小 | 2048 位元
-簽章演算法 | SHA256 （建議）
+簽章演算法 | 建議使用 SHA256 () 
 金鑰使用方式 | 數位簽章
 
 當租使用者建立其防護資料檔案時，會向租使用者顯示此憑證的詳細資料，並授權其信任的磁片。
@@ -187,7 +185,7 @@ New-SelfSignedCertificate -Subject "CN=Linux Shielded VM Template Disk Signing C
 ### <a name="process-the-disk-with-the-template-disk-wizard-cmdlet"></a>使用範本 Disk Wizard Cmdlet 處理磁片
 
 將您的範本磁片和憑證複製到執行 Windows Server （版本1709）的電腦，然後執行下列命令來起始簽署程式。
-您提供給 `-Path` 參數的 VHDX 將會以更新的範本磁片覆寫，因此請務必在執行命令之前複製複本。
+您提供給參數的 VHDX `-Path` 會被更新的範本磁片覆寫，因此請務必在執行命令之前複製複本。
 
 > [!IMPORTANT]
 > Windows Server 2016 或 Windows 10 上可用的遠端伺服器管理工具無法用來準備 Linux 受防護的 VM 範本磁片。

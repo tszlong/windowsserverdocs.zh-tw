@@ -6,12 +6,12 @@ ms.assetid: 1575cc7c-62a7-4add-8f78-e5d93effe93f
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: bc012fd6a685b005b9f7f2b055d49050ef3c009a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9732be4cb0f9301e7011075a663f5499bcf8a277
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971775"
+ms.locfileid: "87993976"
 ---
 # <a name="manage-data-center-bridging-dcb"></a>管理資料中心橋接 (DCB) 
 
@@ -464,10 +464,10 @@ Windows Server 2016 和 Windows Server 2012 R2 都有 DCB 的 Windows PowerShell
 
 下列適用于 Windows Server 2016 的主題提供 Windows PowerShell Cmdlet 的說明和語法，適用于所有的資料中心橋接 \( DCB \) 服務 \( QoS \) \- 特定 Cmdlet 的品質。 Cmdlet 清單以 Cmdlet 開頭動詞的字母順序排列。
 
-- [DcbQoS 模組](https://technet.microsoft.com/itpro/powershell/windows/dcbqos/dcbqos)
+- [DcbQoS 模組](/powershell/module/dcbqos/?view=win10-ps)
 
 ### <a name="windows-server-2012-r2-windows-powershell-commands-for-dcb"></a>適用于 DCB 的 windows Server 2012 R2 Windows PowerShell 命令
 
 下列適用于 Windows Server 2012 R2 的主題提供 Windows PowerShell Cmdlet 的說明和語法，適用于所有資料中心橋接 \( DCB \) 服務 \( QoS \) \- 特定 Cmdlet 的品質。 Cmdlet 清單以 Cmdlet 開頭動詞的字母順序排列。
 
-- [Windows PowerShell 中的資料中心橋接 (DCB) 服務品質 (QoS) Cmdlet](https://technet.microsoft.com/library/hh967440.aspx)
+- [Windows PowerShell 中的資料中心橋接 (DCB) 服務品質 (QoS) Cmdlet](/powershell/module/dcbqos/?view=win10-ps&viewFallbackFrom=winserverr2-ps)

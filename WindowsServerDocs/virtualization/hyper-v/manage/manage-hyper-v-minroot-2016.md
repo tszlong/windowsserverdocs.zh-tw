@@ -4,13 +4,12 @@ description: 設定主機 CPU 資源控制
 author: allenma
 ms.date: 12/15/2017
 ms.topic: article
-ms.prod: windows-server
-ms.openlocfilehash: 1e35595a0b5a0ab12187aae2cf714fc4d53901ee
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: fc65159474f9b1cd8bf282acf00ff06f4727673b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769626"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87994058"
 ---
 # <a name="hyper-v-host-cpu-resource-management"></a>Hyper-v 主機 CPU 資源管理
 
@@ -18,12 +17,12 @@ Windows Server 2016 或更新版本中引進的 hyper-v 主機 CPU 資源控制�
 系統管理員可以使用這些控制項，將主機系統的處理器子集專用於根磁碟分割。
 這可以在 Hyper-v 主機中，從在系統處理器的個別子集上執行的工作負載中，將完成的工作與來賓虛擬機器中執行的工作負載隔離。
 
-如需 Hyper-v 主機硬體的詳細資訊，請參閱[Windows 10 Hyper-v 系統需求](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/hyper-v-requirements)。
+如需 Hyper-v 主機硬體的詳細資訊，請參閱[Windows 10 Hyper-v 系統需求](/virtualization/hyper-v-on-windows/reference/hyper-v-requirements)。
 
 ## <a name="background"></a>背景
 
 在設定 Hyper-v 主機 CPU 資源的控制權之前，最好先參閱 Hyper-v 架構的基本概念。
-您可以在[Hyper-v 架構](https://docs.microsoft.com/windows-server/administration/performance-tuning/role/hyper-v-server/architecture)一節中找到一般摘要。
+您可以在[Hyper-v 架構](../../../administration/performance-tuning/role/hyper-v-server/architecture.md)一節中找到一般摘要。
 以下是這篇文章的重要概念：
 
 * Hyper-v 會建立及管理虛擬機器磁碟分割，在這些資料分割中，會在管理者控制下配置和共用計算資源。  分割區可在所有來賓虛擬機器之間，以及在來賓 Vm 與根磁碟分割之間提供強式隔離界限。

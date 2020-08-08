@@ -6,32 +6,30 @@ ms.author: billmath
 manager: mtillman
 ms.date: 02/22/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 7ca84e2e08c033e9153d7db3a5f951aa8be1a581
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 786c96a7583c99c2c231fc1c3659afdb5615d9d1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965040"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954354"
 ---
 # <a name="ad-fs-development"></a>AD FS 開發
 
 
-本檔包含 AD FS 開發的所有檔逐步解說清單。 這包括下列項目：  
-  
- 
+本檔包含 AD FS 開發的所有檔逐步解說清單。 這包括下列項目：
+
+
 - [建置適用於 AD FS 的自訂驗證方法](../ad-fs/development/ad-fs-build-custom-auth-method.md)
 
 - [使用 AD FS 2019 風險評估模型建置外掛程式](../ad-fs/development/ad-fs-risk-assessment-model.md)
-  
-- [使用 OpenID Connect 與 AD FS 2016 建立 web 應用程式](../ad-fs/development/Enabling-OpenId-Connect-with-AD-FS.md)  
+
+- [使用 OpenID Connect 與 AD FS 2016 建立 web 應用程式](../ad-fs/development/Enabling-OpenId-Connect-with-AD-FS.md)
 
 - [使用 OAuth 和 ADAL.JS 搭配 AD FS 2016 來建立單一頁面 web 應用程式](../ad-fs/development/Single-Page-Application-with-AD-FS.md)
-  
+
 - [使用 OAuth 機密用戶端搭配 AD FS 2016 來建立伺服器端應用程式](./development/enabling-oauth-confidential-clients-with-ad-fs.md)
 
-- [使用 OAuth 搭配 AD FS 2016，使用代理者（OBO）建立多層式應用程式](./development/ad-fs-on-behalf-of-authentication-in-windows-server.md) 
+- [使用 OAuth 搭配 AD FS 2016 來建立多層式的應用程式 (OBO) ](./development/ad-fs-on-behalf-of-authentication-in-windows-server.md)
 
 - [使用 AD FS 2012 R2 或更高版本的 OAuth 公用用戶端建立原生用戶端應用程式](/previous-versions/adfs-windows-server-2012R2/dn633593(v=msdn.10))
 

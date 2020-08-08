@@ -7,12 +7,12 @@ ms.localizationpriority: medium
 ms.date: 06/11/2018
 ms.author: v-tea
 author: Teresa-MOTIV
-ms.openlocfilehash: f1e4713e6d658e6a51955e321e39cb7f90e261a9
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3a1b85504fcae1aabc155d9cf415bc49d4722494
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963804"
+ms.locfileid: "87993639"
 ---
 # <a name="troubleshoot-always-on-vpn"></a>Always On VPN 疑難排解
 
@@ -112,7 +112,7 @@ ms.locfileid: "87963804"
 
 用戶端電腦上的應用程式記錄檔會記錄 VPN 線上活動的大部分較高層級詳細資料。
 
-尋找來自來源 RasClient 的事件。 所有錯誤訊息都會在訊息結尾傳回錯誤碼。 以下詳述一些較常見的錯誤碼，但完整清單可在[路由及遠端存取錯誤碼](/previous-versions//mt728163(v=technet.10))中取得。
+尋找來自來源 RasClient 的事件。 所有錯誤訊息都會在訊息結尾傳回錯誤碼。 以下詳述一些較常見的錯誤碼，但完整清單可在[路由及遠端存取錯誤碼](/previous-versions/mt728163(v=technet.10))中取得。
 
 ## <a name="nps-logs"></a>NPS 記錄檔
 

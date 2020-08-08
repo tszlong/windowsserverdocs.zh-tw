@@ -6,12 +6,12 @@ author: jasongerend
 ms.author: jgerend
 ms.date: 01/17/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d77498b9d4c8573dfac82b7291b6d0676d0d8c1e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a784bdfdfbfbbc4f91579d40cedb22230a70b13a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971975"
+ms.locfileid: "87993584"
 ---
 # <a name="windows-admin-center-ui-text-and-design-style-guide"></a>Windows Admin Center UI 文字與設計樣式指南
 
@@ -19,7 +19,7 @@ ms.locfileid: "87971975"
 
 本主題說明撰寫 Windows Admin Center 使用者介面 (UI) 文字的一般方法，以及一些我們所採用的特定慣例和方法。
 
-Windows Admin Center 及任何擴充功能都應該遵循 [Microsoft 的語氣表達原則](https://docs.microsoft.com/style-guide/brand-voice-above-all-simple-human)，讓人在體驗上感覺易於使用且友善。 本樣式指南以下列語氣表達原則為依據，同時也參酌 [Microsoft 書寫樣式指南](https://docs.microsoft.com/style-guide/welcome/)來擬定，因此請務必查看這兩項資源以取得[協助工具](https://docs.microsoft.com/style-guide/accessibility/accessibility-guidelines-requirements)、[縮略字](https://docs.microsoft.com/style-guide/acronyms)和[用詞](https://docs.microsoft.com/style-guide/word-choice/) (例如[敬請](https://docs.microsoft.com/style-guide/a-z-word-list-term-collections/p/please)和[抱歉](https://docs.microsoft.com/style-guide/a-z-word-list-term-collections/s/sorry)) 等要項的相關資訊。
+Windows Admin Center 及任何擴充功能都應該遵循 [Microsoft 的語氣表達原則](/style-guide/brand-voice-above-all-simple-human)，讓人在體驗上感覺易於使用且友善。 本樣式指南以下列語氣表達原則為依據，同時也參酌 [Microsoft 書寫樣式指南](/style-guide/welcome/)來擬定，因此請務必查看這兩項資源以取得[協助工具](/style-guide/accessibility/accessibility-guidelines-requirements)、[縮略字](/style-guide/acronyms)和[用詞](/style-guide/word-choice/) (例如[敬請](/style-guide/a-z-word-list-term-collections/p/please)和[抱歉](/style-guide/a-z-word-list-term-collections/s/sorry)) 等要項的相關資訊。
 
 ## <a name="buttons"></a>按鈕
 
@@ -29,7 +29,7 @@ Windows Admin Center 及任何擴充功能都應該遵循 [Microsoft 的語氣�
 
 ## <a name="capitalization"></a>大寫
 
-我們遵循 Microsoft 樣式的[大寫](https://docs.microsoft.com/style-guide/capitalization)：對於所有內容幾乎都使用句子樣式大寫。
+我們遵循 Microsoft 樣式的[大寫](/style-guide/capitalization)：對於所有內容幾乎都使用句子樣式大寫。
 
 | UI 項目              |大寫|註解|
 |-------------------------|--------------|--------|
@@ -215,7 +215,7 @@ Windows Admin Center 及任何擴充功能都應該遵循 [Microsoft 的語氣�
 ## <a name="punctuation"></a>標點符號
 
 - 標題或不完整的句子沒有結束標點符號 (句號、問號)。 在標題有提問的確認對話方塊中，則屬例外
-- 在[句號](https://docs.microsoft.com/style-guide/punctuation/periods)和[問號](https://docs.microsoft.com/style-guide/punctuation/question-marks)上使用 Microsoft 樣式指南的指引。
+- 在[句號](/style-guide/punctuation/periods)和[問號](/style-guide/punctuation/question-marks)上使用 Microsoft 樣式指南的指引。
 
 ## <a name="status-messages"></a>狀態訊息
 

@@ -6,12 +6,12 @@ ms.date: 06/18/2018
 ms.topic: article
 ms.service: windows-10-hyperv
 ms.assetid: cc7bb88e-ae75-4a54-9fb4-fc7c14964d67
-ms.openlocfilehash: 1f902a37dd4df28b2591380e78fe86c271f4ed3e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 215521886418167fe6504c5f08b59dbfa7375432
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963594"
+ms.locfileid: "87994044"
 ---
 # <a name="virtual-machine-resource-controls"></a>虛擬機器資源控制
 
@@ -113,7 +113,7 @@ Hyper-v 主機系統管理員可能也想要能夠將計算資源專用於 VM。
 虛擬化主機可以設定為將主機磁碟分割限制為特定 LPs，並將一或多個 CPU 群組相似化為到剩餘的 LPs。
 如此一來，根和來賓磁碟分割就可以在專用的 CPU 資源上執行，而且完全隔離，而不會有 CPU 共用。
 
-如需有關 "minroot" 設定的詳細資訊，請參閱[Hyper-v 主機 CPU 資源管理](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-minroot-2016)。
+如需有關 "minroot" 設定的詳細資訊，請參閱[Hyper-v 主機 CPU 資源管理](./manage-hyper-v-minroot-2016.md)。
 
 ## <a name="using-the-cpugroups-tool"></a>使用 CpuGroups 工具
 

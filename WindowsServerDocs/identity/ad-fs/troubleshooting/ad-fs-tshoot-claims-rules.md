@@ -6,20 +6,18 @@ ms.author: billmath
 manager: mtillman
 ms.date: 03/01/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 94e841282963e2b2b6ada552b54c7732d965b6b6
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 349b673b7c062fd8f14d9a9fd857e1d7c859d3de
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955970"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954194"
 ---
 # <a name="ad-fs-troubleshooting---claims-rules-syntax"></a>AD FS 疑難排解-宣告規則語法
 「宣告」（claim）是一個主體對自己或其他主旨的相關語句。  宣告是由信賴憑證者所發出，而且會指定一個或多個值，然後封裝在 AD FS 伺服器所發出的安全性權杖中。  本文會說明宣告語法和建立。  如需宣告發行的詳細資訊，請參閱[AD FS 疑難排解-宣告發行](ad-fs-tshoot-claims-issuance.md)。
 
->[!NOTE]  
->您可以在[ADFS](https://adfshelp.microsoft.com)說明網站上使用[ClaimsXRay](https://adfshelp.microsoft.com/ClaimsXray/TokenRequest) ，協助針對宣告問題進行疑難排解。   
+>[!NOTE]
+>您可以在[ADFS](https://adfshelp.microsoft.com)說明網站上使用[ClaimsXRay](https://adfshelp.microsoft.com/ClaimsXray/TokenRequest) ，協助針對宣告問題進行疑難排解。
 
 ## <a name="how-claim-rules-are-processed"></a>宣告規則的處理方式
 宣告規則會透過使用[宣告引擎](../../ad-fs/technical-reference/The-Role-of-the-Claims-Engine.md)的[宣告管線](../../ad-fs/technical-reference/The-Role-of-the-Claims-Pipeline.md)來處理。 宣告引擎是同盟服務的邏輯元件，其會檢查使用者所提供的連入宣告集，而且將接著根據每個規則中的邏輯產生宣告的輸出集。
@@ -36,7 +34,7 @@ ms.locfileid: "86955970"
 
 範例：
 
-```c:[type == "Name", value == "domain user"] => issue(type = "Role", value = "employee");``` 
+```c:[type == "Name", value == "domain user"] => issue(type = "Role", value = "employee");```
 
 下列宣告具有下列各項：
 - 條件- `c:[type == "Name", value == "domain user"] ` -評估 windows 帳戶名稱是否為網域使用者的輸入宣告

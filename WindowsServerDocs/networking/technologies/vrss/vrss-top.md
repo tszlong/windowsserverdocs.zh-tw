@@ -8,12 +8,12 @@ ms.localizationpriority: medium
 manager: dougkim
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 135008db9f8a5f6b1238c18df64e89ed8c71180c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 86403af3cea6843905ca58437a3858b77351bc81
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955525"
+ms.locfileid: "87993722"
 ---
 # <a name="virtual-receive-side-scaling-vrss"></a>虛擬接收端調整 \( vRSS\)
 
@@ -45,7 +45,7 @@ vRSS 與所有其他的 Hyper-v \- 網路技術相容。 vRSS 相依于 \( \) hy
 - 已安裝 Windows Server 2012 R2 整合元件的 windows Server 2012。
 - 已安裝 Windows Server 2012 R2 整合元件的 windows 8。
 
-如需在 Hyper-v 上執行 FreeBSD 或 Linux 作為客體作業系統之 Vm 的 vRSS 支援的相關資訊，請參閱[支援的 Linux 和 FreeBSD 虛擬機器（適用于 Windows 上的 hyper-v](https://docs.microsoft.com/windows-server/virtualization/hyper-v/Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows)）。
+如需在 Hyper-v 上執行 FreeBSD 或 Linux 作為客體作業系統之 Vm 的 vRSS 支援的相關資訊，請參閱[支援的 Linux 和 FreeBSD 虛擬機器（適用于 Windows 上的 hyper-v](../../../virtualization/hyper-v/supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows.md)）。
 
 ## <a name="hardware-requirements"></a>硬體需求
 

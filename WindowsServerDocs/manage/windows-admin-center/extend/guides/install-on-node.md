@@ -1,19 +1,17 @@
 ---
 title: 在受管理的節點上安裝延伸模組承載
 description: 有關如何在受管理節點上安裝延伸模組承載的指示
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 463280ba1d0a3fac84a12c0483946b01c0fefb75
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 6a8675ff481f908feeeef4f97be0f1889b117291
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518556"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87944970"
 ---
 # <a name="install-extension-payload-on-a-managed-node"></a>在受管理的節點上安裝延伸模組承載
 
@@ -28,10 +26,10 @@ ms.locfileid: "87518556"
 
 | 值 | 說明 | 範例 |
 | ----- | ----------- | ------- |
-| ```{!Company Name}``` | 您的公司名稱（含空格） | ```Contoso``` |
-| ```{!Tool Name}``` | 您的工具名稱（含空格） | ```InstallOnNode``` |
+| ```{!Company Name}``` | 您的公司名稱 (空格)  | ```Contoso``` |
+| ```{!Tool Name}``` | 您的工具名稱 (空格)  | ```InstallOnNode``` |
 
-在您的工具擴充功能資料夾內建立 ```Node``` 資料夾（ ```{!Tool Name}\Node``` ）。 使用此 API 時，會將放在此資料夾中的任何內容複寫到受管理的節點。 新增您的使用案例所需的任何檔案。
+在您的工具擴充功能資料夾內，建立 ```Node``` () 的資料夾 ```{!Tool Name}\Node``` 。 使用此 API 時，會將放在此資料夾中的任何內容複寫到受管理的節點。 新增您的使用案例所需的任何檔案。
 
 另請建立 ```{!Tool Name}\Node\installNode.ps1``` 腳本。 一旦將所有檔案從 ```{!Tool Name}\Node``` 資料夾複製到受管理的節點，就會在受管理的節點上執行此腳本。 為您的使用案例新增任何其他邏輯。 範例檔案 ```{!Tool Name}\Node\installNode.ps1``` ：
 

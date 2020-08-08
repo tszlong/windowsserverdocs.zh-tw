@@ -1,19 +1,17 @@
 ---
 title: 開發工具擴充功能
-description: 開發工具擴充功能 Windows 系統管理中心 SDK （Project 檀香山）
-ms.technology: manage
+description: '開發工具擴充功能 Windows 系統管理中心 SDK (Project 檀香山) '
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: de2cbf3a47771555eef02cd7d18f93b2b33227b3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f3bf885cd86015842be26124e7374f622d38a9c2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406906"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954124"
 ---
 # <a name="develop-a-tool-extension"></a>開發工具擴充功能
 
@@ -40,8 +38,8 @@ wac create --company "{!Company Name}" --tool "{!Tool Name}"
 
 | 值 | 說明 | 範例 |
 | ----- | ----------- | ------- |
-| ```{!Company Name}``` | 您的公司名稱（含空格） | ```Contoso Inc``` |
-| ```{!Tool Name}``` | 您的工具名稱（含空格） | ```Manage Foo Works``` |
+| ```{!Company Name}``` | 您的公司名稱 (空格)  | ```Contoso Inc``` |
+| ```{!Tool Name}``` | 您的工具名稱 (空格)  | ```Manage Foo Works``` |
 
 這裡提供一個範例用法：
 
@@ -49,7 +47,7 @@ wac create --company "{!Company Name}" --tool "{!Tool Name}"
 wac create --company "Contoso Inc" --tool "Manage Foo Works"
 ```
 
-這會使用您為工具指定的名稱，在目前的工作目錄內建立新的資料夾，將所有必要的範本檔案複製到您的專案中，並使用您的公司和工具名稱來設定檔案。  
+這會使用您為工具指定的名稱，在目前的工作目錄內建立新的資料夾，將所有必要的範本檔案複製到您的專案中，並使用您的公司和工具名稱來設定檔案。
 
 接下來，將目錄切換到剛才建立的資料夾，然後執行下列命令來安裝必要的本機相依性：
 
@@ -57,7 +55,7 @@ wac create --company "Contoso Inc" --tool "Manage Foo Works"
 npm install
 ```
 
-完成後，您就可以設定將新延伸模組載入 Windows 管理中心所需的所有專案。 
+完成後，您就可以設定將新延伸模組載入 Windows 管理中心所需的所有專案。
 
 ## <a name="add-content-to-your-extension"></a>將內容新增至您的擴充功能
 
@@ -65,13 +63,13 @@ npm install
 
 - 新增[空白模組](guides/add-module.md)
 - 新增[iFrame](guides/add-iframe.md)
- 
+
 如需更多範例，請參閱我們的[GITHUB SDK 網站](https://aka.ms/wacsdk)：
 -  [開發人員工具](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/windows-admin-center-developer-tools)是功能完整的延伸模組，可以側載到 Windows 系統管理中心，而且包含豐富的範例功能和工具範例集合，可讓您在自己的延伸模組中流覽和使用。
 
 ## <a name="customize-your-extensions-icon"></a>自訂您的擴充功能圖示
 
-您可以在 [工具] 清單中自訂您的擴充功能所顯示的圖示。  若要這麼做，請針對您的延伸模組修改 ```manifest.json``` 中的所有 ```icon``` 專案：
+您可以在 [工具] 清單中自訂您的擴充功能所顯示的圖示。  若要這麼做，請 ```icon``` ```manifest.json``` 針對您的延伸模組修改中的所有專案：
 
 ``` json
 "icon": "{!icon-uri}",
@@ -81,13 +79,13 @@ npm install
 | ----- | ----------- | ------- |
 | ```{!icon-uri}``` | 圖示資源的位置 | ```assets/foo-icon.svg``` |
 
-注意：目前，當您在 dev 模式中載入擴充功能時，不會顯示自訂圖示。  因應措施是移除 ```target``` 的內容，如下所示：
+注意：目前在 dev 模式中載入擴充功能時，不會顯示自訂圖示。  因應措施是移除的內容，如下所示 ```target``` ：
 
 ``` json
 "target": "",
 ```
 
-此設定僅適用于在 dev 模式中進行側載，因此請務必保留包含在 ```target``` 的值，然後在發佈擴充功能之前將它還原。
+此設定僅適用于在 dev 模式中進行側載，因此請務必保留包含在中的值 ```target``` ，然後在發佈擴充功能之前將它還原。
 
 ## <a name="build-and-side-load-your-extension"></a>組建和側邊載入您的擴充功能
 

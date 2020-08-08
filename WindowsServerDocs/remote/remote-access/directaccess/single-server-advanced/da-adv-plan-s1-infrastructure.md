@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: aa3174f3-42af-4511-ac2d-d8968b66da87
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 8f60a960d76e7c24ff3dc9afaf931792713f06af
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9d00622ce5712a2f725f1c6f1b533387651bc903
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970405"
+ms.locfileid: "87993600"
 ---
 # <a name="step-1-plan-the-advanced-directaccess-infrastructure"></a>步驟1規劃 Advanced DirectAccess 基礎結構
 
@@ -52,9 +52,9 @@ ms.locfileid: "87970405"
 
     DirectAccess 使用 IPv6 搭配 IPsec 在 DirectAccess 用戶端電腦與公司內部網路之間建立安全連線。 不過，DirectAccess 不一定需要 IPv6 網際網路的連線能力，或內部網路的原生 IPv6 支援。 取而代之的是，它會自動設定並使用 IPv6 轉換技術，透過 IPv4 網際網路 (藉由使用 6to4、Teredo 或 IP-HTTPS) 及透過僅支援 IPv4 的內部網路 (藉由使用 NAT64 或 ISATAP) 建立 IPv6 流量通道。 如需這些轉換技術的概觀，請參閱下列資源：
 
-    - [IPv6 轉換技術](/previous-versions//bb726951(v=technet.10))
+    - [IPv6 轉換技術](/previous-versions/bb726951(v=technet.10))
 
-    - [IP-HTTPS 通道通訊協定規格](/previous-versions//bb726951(v=technet.10))
+    - [IP-HTTPS 通道通訊協定規格](/previous-versions/bb726951(v=technet.10))
 
 3. 根據下表設定所需的介面卡和位址。 針對使用單一網路介面卡並設定在 NAT 裝置後面的部署，請只使用**內部網路介面卡**欄來設定您的 IP 位址。
 
