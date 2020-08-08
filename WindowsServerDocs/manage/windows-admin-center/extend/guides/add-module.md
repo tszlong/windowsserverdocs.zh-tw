@@ -1,19 +1,17 @@
 ---
 title: 新增模組至工具擴充功能
-description: 開發工具擴充功能 Windows 系統管理中心 SDK （Project 檀香山）-將模組新增至工具擴充功能
-ms.technology: manage
+description: 開發工具擴充功能 Windows 管理中心 SDK (Project 檀香山) -將模組新增至工具擴充功能
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 9d30980ca404187ff1481242c1c0ef0a3d571416
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e7875f8aa2320d7292b314cb18f3e17894e76fa0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357104"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945041"
 ---
 # <a name="add-a-module-to-a-tool-extension"></a>新增模組至工具擴充功能
 
@@ -23,17 +21,17 @@ ms.locfileid: "71357104"
 
 ## <a name="prepare-your-environment"></a>準備您的環境
 
-如果您還沒有這麼做，請遵循開發[工具](../develop-tool.md)（或[解決方案](../develop-solution.md)）延伸模組中的指示來準備您的環境，並建立新的空白工具擴充功能。
+如果您還沒有這麼做，請遵循開發[工具](../develop-tool.md) (或[解決方案](../develop-solution.md)) 延伸模組中的指示來準備您的環境，並建立新的空白工具擴充功能。
 
-## <a name="use-the-angular-cli-to-create-a-module-and-component"></a>使用角度 CLI 建立模組（和元件）
+## <a name="use-the-angular-cli-to-create-a-module-and-component"></a>使用角度 CLI 來建立模組 (和元件) 
 
-如果對 Angular 不熟悉，強烈建議您閱讀 Angular.Io 網站上的文件以了解 Angular 和 NgModule。 如需 NgModule 的詳細資訊，請移至這裡： https://angular.io/guide/ngmodule
+如果對 Angular 不熟悉，強烈建議您閱讀 Angular.Io 網站上的文件以了解 Angular 和 NgModule。 如需 NgModule 的詳細資訊，請移至這裡：https://angular.io/guide/ngmodule
 
-* 在 Angular CLI 中產生新模組的詳細資訊： https://github.com/angular/angular-cli/wiki/generate-module
-* 在 Angular CLI 中產生新元件的詳細資訊： https://github.com/angular/angular-cli/wiki/generate-component
+* 在 Angular CLI 中產生新模組的詳細資訊：https://github.com/angular/angular-cli/wiki/generate-module
+* 在 Angular CLI 中產生新元件的詳細資訊：https://github.com/angular/angular-cli/wiki/generate-component
 
 
-開啟命令提示字元，在專案中將目錄變更為 \src\app，然後執行下列命令，將 ```{!ModuleName}``` 取代為您的模組名稱（移除空格）：
+開啟命令提示字元，在專案中將目錄變更為 \src\app，然後執行下列命令， ```{!ModuleName}``` 將取代為您的模組名稱 (移除的空間) ：
 
 ```
 cd \src\app
@@ -45,7 +43,7 @@ ng generate component {!ModuleName}
 | ----- | ----------- | ------- |
 | ```{!ModuleName}``` | 您的模組名稱 (移除空格) | ```ManageFooWorksPortal``` |
 
-範例用法：
+使用方式範例：
 ```
 cd \src\app
 ng generate module ManageFooWorksPortal
@@ -55,7 +53,7 @@ ng generate component ManageFooWorksPortal
 
 ## <a name="add-routing-information"></a>新增路由資訊
 
-如果不熟悉 Angular，強烈建議您了解一下 Angular 路由與巡覽。 以下章節定義必要的路由元素，這些元素可讓 Windows Admin Center 巡覽至您的擴充功能，並且在擴充功能的檢視之間巡覽，以回應使用者活動。 若要深入了解，請移至這裡： https://angular.io/guide/router
+如果不熟悉 Angular，強烈建議您了解一下 Angular 路由與巡覽。 以下章節定義必要的路由元素，這些元素可讓 Windows Admin Center 巡覽至您的擴充功能，並且在擴充功能的檢視之間巡覽，以回應使用者活動。 若要深入了解，請移至這裡：https://angular.io/guide/router
 
 使用您在上述步驟中使用的相同模組名稱。
 
@@ -83,7 +81,7 @@ ng generate component ManageFooWorksPortal
             // if the component has child components that need to be routed to, include them in the children array.
             children: [
                 {
-                    path: '', 
+                    path: '',
                     redirectTo: 'base',
                     pathMatch: 'full'
                 }
@@ -130,7 +128,7 @@ ng generate component ManageFooWorksPortal
 
 * 修改匯入陳述式以匯入路由：
 
-    | 原始值 | 新的值 |
+    | 原始值 | 新值 |
     | -------------- | --------- |
     | ```imports: [ CommonModule ]``` | ```imports: [ CommonModule, Routing ]``` |
 
@@ -143,7 +141,7 @@ ng generate component ManageFooWorksPortal
 | 值 | 說明 | 範例檔案名稱 |
 | ----- | ----------- | ------- |
 | ```{!module-name}``` | 您的模組名稱 (小寫，空格以破折號取代) | ```manage-foo-works-portal.component.ts``` |
-    
+
 將檔案中的內容修改如下：
 
 ``` ts
@@ -157,7 +155,7 @@ public ngOnInit() {
 ```
 ### <a name="update-app-routingmodulets"></a>更新應用程式-路由。 ts
 
-開啟 [檔案 ```app-routing.module.ts```]，然後修改預設路徑，使其載入您剛建立的新模組。  找出 ```path: ''``` 的專案，並更新 ```loadChildren``` 以載入您的模組，而不是預設模組：
+開啟 [檔案] ```app-routing.module.ts``` ，並修改預設路徑，使其載入您剛建立的新模組。  尋找的專案 ```path: ''``` ，並更新 ```loadChildren``` 以載入您的模組，而不是預設模組：
 
 | 值 | 說明 | 範例 |
 | ----- | ----------- | ------- |
@@ -166,14 +164,14 @@ public ngOnInit() {
 
 ``` ts
     {
-        path: '', 
+        path: '',
         loadChildren: 'app/{!module-name}/{!module-name}.module#{!ModuleName}Module'
     },
 ```
 以下是更新預設路徑的範例：
 ``` ts
     {
-        path: '', 
+        path: '',
         loadChildren: 'app/manage-foo-works-portal/manage-foo-works-portal.module#ManageFooWorksPortalModule'
     },
 ```

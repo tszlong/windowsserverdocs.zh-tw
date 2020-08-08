@@ -6,20 +6,18 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: b4031ce1d9a5bce4f0dd8fe98dea304b2373c2ae
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 8b28d412411336062187a842912b6f4a41957eba
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181824"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87994351"
 ---
 # <a name="monitoring-active-directory-for-signs-of-compromise"></a>監視 Active Directory 遭到危害的徵兆
 
 >適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-*第五條法則：永久性警覺性來得是安全性的代價。* - [10個不變的安全性管理法則](/previous-versions//cc722488(v=technet.10))
+*第五條法則：永久性警覺性來得是安全性的代價。* - [10個不變的安全性管理法則](/previous-versions/cc722488(v=technet.10))
 
 穩固的事件記錄檔監視系統是任何安全 Active Directory 設計的重要部分。 如果受害者制訂適當的事件記錄檔監視和警示，可能會提早在事件中發現許多電腦安全性性危害。 這是一段完整支援的獨立報表。 例如， [2009 Verizon 資料缺口報告](http://www.verizonbusiness.com/resources/security/reports/2009_databreach_rp.pdf)指出：
 
@@ -39,7 +37,7 @@ ms.locfileid: "87181824"
 下列連結提供 windows 8 和 Windows Server 2012 中 Windows 審核功能改進的相關資訊，以及 Windows Server 2008 中 AD DS 審核的相關資訊。
 
 * [安全性審查的新](/previous-versions/orphan-topics/ws.11/hh849638(v=ws.11))功能-概述 windows 8 和 windows Server 2012 中的新安全性審查功能。
-* [AD DS 審核逐步指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731607(v=ws.10))-說明 Windows Server 2008 中的新 Active Directory Domain Services （AD DS）審核功能。 它也會提供執行這項新功能的程式。
+* [AD DS 審核逐步指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731607(v=ws.10))-說明 Windows Server 2008 中 Active Directory Domain Services (AD DS) 的新功能。 它也會提供執行這項新功能的程式。
 
 ### <a name="windows-audit-categories"></a>Windows Audit 分類
 
@@ -61,7 +59,7 @@ ms.locfileid: "87181824"
 稽核原則類別目錄會啟用下列事件記錄檔訊息類型。
 
 ##### <a name="audit-account-logon-events"></a>審核帳戶登入事件
-報告登入或登出一部電腦的每個安全性主體實例（例如，使用者、電腦或服務帳戶），其中另一部電腦用來驗證帳戶。 當網域安全性主體帳戶在網域控制站上進行驗證時，就會產生帳戶登入事件。 本機電腦上本機使用者的驗證會產生登入本機安全性記錄檔的 logon 事件。 不會記錄任何帳戶登出事件。
+報告每個安全性主體實例 (例如，使用者、電腦或服務帳戶) 登入或登出一部電腦，其中另一部電腦用來驗證帳戶。 當網域安全性主體帳戶在網域控制站上進行驗證時，就會產生帳戶登入事件。 本機電腦上本機使用者的驗證會產生登入本機安全性記錄檔的 logon 事件。 不會記錄任何帳戶登出事件。
 
 這個類別會產生許多「雜訊」，因為 Windows 在正常的商務過程中，經常會有登入和登出本機和遠端電腦的帳戶。 儘管如此，任何安全性計畫都應該包含此 audit 類別目錄的成功和失敗。
 
@@ -70,13 +68,13 @@ ms.locfileid: "87181824"
 
 ##### <a name="audit-directory-service-access"></a>稽核目錄服務存取
 
-此原則設定可決定是否要針對具有自己指定系統存取控制清單（SACL）的 Active Directory 物件，來審核安全性主體存取權。 一般來說，此類別目錄應該只在網域控制站上啟用。 啟用時，此設定會產生許多「雜訊」。
+此原則設定可決定是否要針對具有自己指定之系統存取控制清單 (SACL) 的 Active Directory 物件，來審核安全性主體存取權。 一般來說，此類別目錄應該只在網域控制站上啟用。 啟用時，此設定會產生許多「雜訊」。
 
 ##### <a name="audit-logon-events"></a>審核登入事件
 本機電腦上的本機安全性主體經過驗證時，就會產生登入事件。 Logon 事件會記錄在本機電腦上發生的網域登入。 不會產生帳戶登出事件。 啟用時，登入事件會產生許多「雜訊」，但在任何安全性審核計畫中應該預設為啟用。
 
 ##### <a name="audit-object-access"></a>Audit 物件存取
-存取已啟用審核功能的後續定義物件（例如，開啟、讀取、重新命名、刪除或關閉）時，物件存取可以產生事件。 啟用主要審核類別之後，系統管理員必須個別定義哪些物件將啟用審核。 許多 Windows 系統物件都已啟用審核，因此在系統管理員定義任何之前，啟用此類別通常會開始產生事件。
+當後續定義的已啟用審核功能的物件存取時，物件存取可以產生事件 (例如，開啟、讀取、重新命名、刪除或關閉) 。 啟用主要審核類別之後，系統管理員必須個別定義哪些物件將啟用審核。 許多 Windows 系統物件都已啟用審核，因此在系統管理員定義任何之前，啟用此類別通常會開始產生事件。
 
 此類別非常「雜訊」，而且會針對每個物件存取產生五到十個事件。 系統管理員對於物件的審核功能可能很容易取得有用的資訊。 它應該只在需要時才啟用。
 
@@ -85,7 +83,7 @@ ms.locfileid: "87181824"
 
 ##### <a name="audit-privilege-use"></a>Audit 許可權使用
 
-Windows 中有數十種使用者權利和許可權（例如，以批次工作登入，並作為作業系統的一部分）。 此原則設定會決定是否要藉由使用使用者權限或許可權，來審查安全性主體的每個實例。 啟用此類別會產生許多「雜訊」，但它有助於使用較高的許可權來追蹤安全性主體帳戶。
+Windows (中有數十種使用者權利和許可權，例如，以批次工作登入，並作為作業系統) 的一部分。 此原則設定會決定是否要藉由使用使用者權限或許可權，來審查安全性主體的每個實例。 啟用此類別會產生許多「雜訊」，但它有助於使用較高的許可權來追蹤安全性主體帳戶。
 
 ##### <a name="audit-process-tracking"></a>審核進程追蹤
 此原則設定可決定是否要針對事件（例如程式啟動、進程結束、控制碼重複和間接物件存取），審查詳細的進程追蹤資訊。 這適用于追蹤惡意使用者和其所使用的程式。
@@ -176,10 +174,10 @@ Windows 中有數十種使用者權利和許可權（例如，以批次工作登
 此子類別會報告進程終止的時間。
 
 ##### <a name="dpapi-activity"></a>DPAPI 活動
-此子類別會報告對資料保護應用程式開發介面（DPAPI）的加密或解密呼叫。 DPAPI 是用來保護秘密資訊，例如儲存的密碼和金鑰資訊。
+此子類別會報告加密或解密資料保護應用程式開發介面 (DPAPI) 的呼叫。 DPAPI 是用來保護秘密資訊，例如儲存的密碼和金鑰資訊。
 
 ##### <a name="rpc-events"></a>RPC 事件
-此子類別會報告遠端程序呼叫（RPC）連接事件。
+此子類別會報告遠端程序呼叫 (RPC) 連接事件。
 
 #### <a name="directory-service-access"></a>目錄服務存取
 
@@ -201,10 +199,10 @@ Windows 中有數十種使用者權利和許可權（例如，以批次工作登
 當使用者嘗試登入系統時，此子類別會報告。 這些事件會發生在存取的電腦上。 若為互動式登入，則會在登入的電腦上產生這些事件。 如果進行網路登入以存取共用，這些事件會在裝載所存取資源的電腦上產生。 如果此設定設為 [**無**]，則很難或無法判斷哪些使用者已存取或嘗試存取組織電腦。
 
 ##### <a name="network-policy-server"></a>網路原則伺服器
-此子類別會報告 RADIUS （IAS）和網路存取保護（NAP）使用者存取要求所產生的事件。 這些要求可以是**Grant**、 **Deny**、**捨棄**、**隔離**、**鎖定**和**解除鎖定**。 此設定會導致 NPS 和 資訊存取伺服器上的記錄量適中或大量。
+此子類別會報告 RADIUS (IAS) 和網路存取保護所產生的事件 (NAP) 使用者存取要求。 這些要求可以是**Grant**、 **Deny**、**捨棄**、**隔離**、**鎖定**和**解除鎖定**。 此設定會導致 NPS 和 資訊存取伺服器上的記錄量適中或大量。
 
 ##### <a name="ipsec-main-mode"></a>IPsec 主要模式
-此子類別會報告在主要模式協商期間，網際網路金鑰交換（IKE）通訊協定和已驗證的網際網路通訊協定（AuthIP）的結果。
+此子類別會報告在主要模式協商期間，網際網路金鑰交換 (IKE) 通訊協定和已驗證的網際網路通訊協定 (AuthIP) 的結果。
 
 ##### <a name="ipsec-extended-mode"></a>IPsec 延伸模式
 此子類別會在延伸模式協商期間報告 AuthIP 的結果。
@@ -233,16 +231,16 @@ Windows 中有數十種使用者權利和許可權（例如，以批次工作登
 此子類別會報告驗證原則中的變更。
 
 ##### <a name="authorization-policy-change"></a>授權原則變更
-此子類別會報告授權原則中的變更，包括許可權（DACL）變更。
+此子類別會報告授權原則中的變更，包括 (DACL) 變更的許可權。
 
 ##### <a name="mpssvc-rule-level-policy-change"></a>MPSSVC 規則層級原則變更
-此子類別會報告 Microsoft 保護服務（MPSSVC.exe）所使用之原則規則中的變更。 Windows 防火牆會使用此服務。
+此子類別會報告 Microsoft 保護服務 ( # A0) 所使用原則規則中的變更。 Windows 防火牆會使用此服務。
 
 ##### <a name="filtering-platform-policy-change"></a>篩選平臺原則變更
 此子類別會報告從 WFP 新增和移除物件，包括啟動篩選。 這些事件在大量中可能非常高。
 
 ##### <a name="other-policy-change-events"></a>其他原則變更事件
-此子類別會報告其他類型的安全性原則變更，例如信賴平臺模組（TPM）或密碼編譯提供者的設定。
+此子類別會報告其他類型的安全性原則變更，例如 (TPM) 或密碼編譯提供者設定信賴平臺模組。
 
 #### <a name="privilege-use"></a>許可權使用
 
@@ -258,7 +256,7 @@ Windows 中有數十種使用者權利和許可權（例如，以批次工作登
 #### <a name="object-access"></a>物件存取
 
 ##### <a name="file-system"></a>檔案系統
-此子類別會報告檔案系統物件的存取時機。 只有具有 Sacl 的檔案系統物件才會產生 audit 事件，而且只有在以符合其 SACL 專案的方式存取時才會發生。 此原則設定本身將不會造成任何事件的審核。 它會決定是否要針對存取具有指定系統存取控制清單（SACL）之檔案系統物件的使用者，以有效地啟用進行中的審核來進行事件。
+此子類別會報告檔案系統物件的存取時機。 只有具有 Sacl 的檔案系統物件才會產生 audit 事件，而且只有在以符合其 SACL 專案的方式存取時才會發生。 此原則設定本身將不會造成任何事件的審核。 它會決定是否要針對存取具有指定系統存取控制清單 (SACL) 之檔案系統物件的使用者，以有效地啟用進行中的審核。
 
 如果 audit 物件存取設定是設定為 [**成功**]，每次使用者成功存取具有指定 SACL 的物件時，就會產生 audit 專案。 如果此原則設定已設定為 [**失敗**]，則每次使用者嘗試存取具有指定 SACL 的物件失敗時，就會產生 audit 專案。
 
@@ -269,22 +267,22 @@ Windows 中有數十種使用者權利和許可權（例如，以批次工作登
 此子類別會報告核心物件（例如處理常式和 mutex）的存取時機。 只有具有 Sacl 的核心物件才會產生 audit 事件，而且只有在以符合其 SACL 專案的方式存取時才會發生。 一般來說，只有在啟用 AuditBaseObjects 或 AuditBaseDirectories 的審核選項時，才會提供 Sacl 的核心物件。
 
 ##### <a name="sam"></a>SAM
-此子類別會報告本機安全性帳戶管理員（SAM）驗證資料庫物件的存取時機。
+此子類別會報告本機安全性帳戶管理員 (SAM) 驗證資料庫物件的存取時機。
 
 ##### <a name="certification-services"></a>認證服務
 此子類別會報告憑證服務作業的執行時間。
 
 ##### <a name="application-generated"></a>應用程式已產生
-當應用程式嘗試使用 Windows 審核應用程式開發介面（Api）來產生 audit 事件時，此子類別會回報。
+當應用程式嘗試使用 Windows 審核應用程式開發介面 (Api) 來產生 audit 事件時，此子類別會報告。
 
 ##### <a name="handle-manipulation"></a>處理操作
-這個子類別會報告物件的控制碼何時開啟或關閉。 只有具有 Sacl 的物件才會產生這些事件，而且只有在嘗試的控制碼作業符合 SACL 專案時才會這麼做。 只有在已啟用對應物件存取子類別的物件類型（例如，檔案系統或登錄），才會產生處理操作事件。
+這個子類別會報告物件的控制碼何時開啟或關閉。 只有具有 Sacl 的物件才會產生這些事件，而且只有在嘗試的控制碼作業符合 SACL 專案時才會這麼做。 只會針對 (已啟用對應物件存取子類別的物件類型（例如，檔案系統或登錄) ）產生處理操作事件。
 
 ##### <a name="file-share"></a>檔案共用
-此子類別會報告檔案共用的存取時機。 此原則設定本身將不會造成任何事件的審核。 它會決定是否要針對存取具有指定系統存取控制清單（SACL）之檔案共用物件的使用者，以有效地啟用進行中的審核來進行事件。
+此子類別會報告檔案共用的存取時機。 此原則設定本身將不會造成任何事件的審核。 它會決定是否要針對存取具有指定系統存取控制清單 (SACL) 之檔案共用物件的使用者來審核事件，並有效地啟用進行中的審核。
 
 ##### <a name="filtering-platform-packet-drop"></a>篩選平臺封包捨棄
-此子類別會報告 Windows 篩選平台（WFP）何時捨棄封包。 這些事件在大量中可能非常高。
+此子類別會報告 Windows 篩選平台 (WFP) 卸載封包的時間。 這些事件在大量中可能非常高。
 
 ##### <a name="filtering-platform-connection"></a>篩選平臺連接
 此子類別會報告 WFP 允許或封鎖連接的時間。 這些事件的數量可能很高。
@@ -305,7 +303,7 @@ Windows 中有數十種使用者權利和許可權（例如，以批次工作登
 
 IPsec 驅動程式
 
-此子類別會報告網際網路通訊協定安全性（IPsec）驅動程式的活動。
+此子類別會報告網際網路通訊協定安全性 (IPsec) 驅動程式的活動。
 
 ##### <a name="other-system-events"></a>其他系統事件
 此子類別會報告其他系統事件。
@@ -319,21 +317,21 @@ IPsec 驅動程式
 您可以使用群組原則、auditpol.exe、Api 或登錄編輯來設定 Windows 稽核原則。 為大部分公司設定稽核原則的建議方法是群組原則或 auditpol.exe。 設定系統的稽核原則時，需要有系統管理員層級的帳戶許可權或適當的委派許可權。
 
 > [!NOTE]
-> 「**管理」和「安全性記錄**」許可權必須提供給安全性主體（系統管理員預設會有），以允許修改個別資源（例如檔案、Active Directory 物件和登錄機碼）的物件存取審核選項。
+> [**管理審核及安全性記錄**] 許可權必須提供給安全性主體 (系統管理員預設會) ，以允許修改個別資源的物件存取審核選項，例如檔案、Active Directory 物件和登錄機碼。
 
 ### <a name="setting-windows-audit-policy-by-using-group-policy"></a>使用群組原則設定 Windows 稽核原則
 
-若要使用群組原則來設定稽核原則，請在 [電腦設定] [設定 \**本機本機審核原則**] 底下設定適當的 audit 類別（請參閱下列螢幕擷取畫面，以取得本機群組原則編輯器（gpedit.msc）中的範例）。 可以針對**成功**、**失敗**或**成功**和失敗事件啟用每個稽核原則類別目錄。
+若要使用群組原則設定稽核原則，請在 [電腦設定] [設定 \**本機本機審核原則**] 底下設定適當的 audit 類別， (查看下列螢幕擷取畫面，以取得本機群組原則編輯器 (gpedit.msc) # A3 的範例。 可以針對**成功**、**失敗**或**成功**和失敗事件啟用每個稽核原則類別目錄。
 
 ![監視 AD](media/Monitoring-Active-Directory-for-Signs-of-Compromise/SAD_6.gif)
 
-您可以使用 Active Directory 或本機群組原則來設定 Advanced Audit Policy。 若要設定「高級稽核原則」，請在 [電腦設定 \ 檢查子設定] **\Windows 安全性進階稽核原則**（請參閱下列螢幕擷取畫面，以取得來自本機群組原則編輯器（gpedit.msc）的範例）。 每個稽核原則子類別都可以啟用**成功**、**失敗**或**成功**和**失敗**事件。
+您可以使用 Active Directory 或本機群組原則來設定 Advanced Audit Policy。 若要設定「先進的稽核原則」，請在 [電腦設定 \Windows] [設定] [\Windows 安全性進階] [**審核 (策略**] 底下設定適當的子類別，然後從本機群組原則編輯器 (gpedit.msc) # A3 的範例中查看下列螢幕擷取畫面。 每個稽核原則子類別都可以啟用**成功**、**失敗**或**成功**和**失敗**事件。
 
 ![監視 AD](media/Monitoring-Active-Directory-for-Signs-of-Compromise/SAD_7.gif)
 
 ### <a name="setting-windows-audit-policy-using-auditpolexe"></a>使用 Auditpol.exe 設定 Windows 稽核原則
 
-Auditpol.exe （用於設定 Windows 稽核原則）是在 Windows Server 2008 和 Windows Vista 中引進。 一開始，只有 auditpol.exe 可用來設定 Advanced 稽核原則，但群組原則可用於 Windows Server 2012、Windows Server 2008 R2 或 Windows Server 2008、Windows 8 和 Windows 7。
+Windows Server 2008 和 Windows Vista 中引進了設定 Windows 稽核原則) 的 Auditpol.exe (。 一開始，只有 auditpol.exe 可用來設定 Advanced 稽核原則，但群組原則可用於 Windows Server 2012、Windows Server 2008 R2 或 Windows Server 2008、Windows 8 和 Windows 7。
 
 Auditpol.exe 是命令列公用程式。 語法如下所示：
 
@@ -348,7 +346,7 @@ Auditpol.exe 語法範例：
 `auditpol /set /subcategory:"IPSEC Main Mode" /failure:enable`
 
 > [!NOTE]
-> Auditpol.exe 在本機設定 Advanced Audit Policy。 如果本機原則與 Active Directory 或本機群組原則衝突，群組原則設定通常會超越 auditpol.exe 設定。 當有多個群組或本機原則衝突存在時，只會有一個原則（也就是取代）。 稽核原則不會合並。
+> Auditpol.exe 在本機設定 Advanced Audit Policy。 如果本機原則與 Active Directory 或本機群組原則衝突，群組原則設定通常會超越 auditpol.exe 設定。 當有多個群組或本機原則衝突存在時，只有一個原則會 (也就是取代) 。 稽核原則不會合並。
 
 #### <a name="scripting-auditpol"></a>腳本 Auditpol
 
@@ -366,13 +364,13 @@ Auditpol.exe 可用來儲存和還原本機稽核原則，以及查看其他的�
 
 `auditpol /restore /file:<filename>`-用來將先前儲存的稽核原則檔匯入本機稽核原則
 
-`auditpol /<get/set> /option:<CrashOnAuditFail> /<enable/disable>`-如果此稽核原則設定已啟用，如果因為任何原因無法記錄安全性 audit，它會導致系統立即停止（使用 STOP： C0000244 {Audit Failed} 訊息）。 一般而言，當安全性審核記錄已滿，而且針對安全性記錄檔指定的保留方法不會依天數**覆寫事件**或**覆寫事件**時，就無法記錄事件。 通常只會由需要更高保證安全性記錄檔正在記錄的環境來啟用。 啟用時，系統管理員必須仔細監看安全性記錄大小，並視需要輪替記錄。 也可以藉由修改安全性選項 [ **Audit：立即關閉系統] （如果無法記錄安全性審核**（預設值 = 已停用）來設定群組原則。
+`auditpol /<get/set> /option:<CrashOnAuditFail> /<enable/disable>`-如果已啟用此稽核原則設定，則會導致系統立即停止 (，並停止： C0000244 {Audit Failed} message) 如果基於任何原因而無法記錄安全性 audit。 一般而言，當安全性審核記錄已滿，而且針對安全性記錄檔指定的保留方法不會依天數**覆寫事件**或**覆寫事件**時，就無法記錄事件。 通常只會由需要更高保證安全性記錄檔正在記錄的環境來啟用。 啟用時，系統管理員必須仔細監看安全性記錄大小，並視需要輪替記錄。 也可以藉由修改安全性選項 [ **Audit：立即關閉系統] （如果無法記錄安全性審核** (預設 = 已停用) ）來設定群組原則。
 
-`auditpol /<get/set> /option:<AuditBaseObjects> /<enable/disable>`-此稽核原則設定會決定是否要審核全域系統物件的存取權。 如果啟用此原則，則會使用預設的系統存取控制清單（SACL）來建立系統物件，例如 mutex、事件、信號和 DOS 裝置。 大部分的系統管理員會考慮將全域系統物件視為「雜訊」，而只有在懷疑惡意入侵時才會啟用。 只有命名物件會獲得 SACL。 如果也啟用「audit 物件存取稽核原則」（或「核心物件」 audit 子類別），則會對這些系統物件的存取進行審核。 進行此安全性設定時，除非您重新開機 Windows，否則變更不會生效。 這項原則也可以透過下列方式來設定群組原則藉由修改安全性選項 [審查全域系統物件的存取權（預設值 = 停用）]。
+`auditpol /<get/set> /option:<AuditBaseObjects> /<enable/disable>`-此稽核原則設定會決定是否要審核全域系統物件的存取權。 如果啟用此原則，則會導致系統物件（例如 mutex、事件、信號和 DOS 裝置）以預設的系統存取控制清單建立 (SACL) 。 大部分的系統管理員會考慮將全域系統物件視為「雜訊」，而只有在懷疑惡意入侵時才會啟用。 只有命名物件會獲得 SACL。 如果也啟用了 audit 物件存取稽核原則 (或核心物件的 audit 子類別) ，就會對這些系統物件的存取進行審核。 進行此安全性設定時，除非您重新開機 Windows，否則變更不會生效。 此原則也可以使用群組原則來設定，方法是修改安全性選項 [審查全域系統物件的存取權 (預設值 = 已停用]) 。
 
-`auditpol /<get/set> /option:<AuditBaseDirectories> /<enable/disable>`-此稽核原則設定會指定命名核心物件（例如 mutex 和信號）在建立時提供給 Sacl。 當 AuditBaseObjects 影響不能包含其他物件的物件時，AuditBaseDirectories 會影響容器物件。
+`auditpol /<get/set> /option:<AuditBaseDirectories> /<enable/disable>`-此稽核原則設定會指定命名核心物件 (例如 mutex 和信號，) 在建立時提供 Sacl。 當 AuditBaseObjects 影響不能包含其他物件的物件時，AuditBaseDirectories 會影響容器物件。
 
-`auditpol /<get/set> /option:<FullPrivilegeAuditing> /<enable/disable>`-此稽核原則設定指定當有一或多個許可權指派給使用者安全性權杖時，用戶端是否會產生事件： AssignPrimaryTokenPrivilege、AuditPrivilege、BackupPrivilege、CreateTokenPrivilege、DebugPrivilege、EnableDelegationPrivilege、ImpersonatePrivilege、LoadDriverPrivilege、RestorePrivilege、SecurityPrivilege、SystemEnvironmentPrivilege、TakeOwnershipPrivilege 和 TcbPrivilege。 如果未啟用此選項（預設值 = 停用），則不會記錄 BackupPrivilege 和 RestorePrivilege 許可權。 啟用此選項可能會在備份作業期間，讓安全性記錄產生極雜訊的事件（有時候會有數百個事件）。 此原則也可以藉由修改安全性選項**Audit： audit 使用備份和還原許可權**來設定群組原則。
+`auditpol /<get/set> /option:<FullPrivilegeAuditing> /<enable/disable>`-此稽核原則設定指定當有一或多個許可權指派給使用者安全性權杖時，用戶端是否會產生事件： AssignPrimaryTokenPrivilege、AuditPrivilege、BackupPrivilege、CreateTokenPrivilege、DebugPrivilege、EnableDelegationPrivilege、ImpersonatePrivilege、LoadDriverPrivilege、RestorePrivilege、SecurityPrivilege、SystemEnvironmentPrivilege、TakeOwnershipPrivilege 和 TcbPrivilege。 如果未啟用此選項 (預設 = 停用) ，則不會記錄 BackupPrivilege 和 RestorePrivilege 許可權。 啟用此選項可讓安全性記錄非常雜訊 (有時候會在備份作業期間，有數百個事件) 。 此原則也可以藉由修改安全性選項**Audit： audit 使用備份和還原許可權**來設定群組原則。
 
 > [!NOTE]
 > 此處提供的部分資訊是取自 Microsoft [Audit 選項類型](/openspecs/windows_protocols/ms-gpac/262a2bed-93d4-4c04-abec-cf06e9ec72fd)和 microsoft SCM 工具。
@@ -381,9 +379,9 @@ Auditpol.exe 可用來儲存和還原本機稽核原則，以及查看其他的�
 
 在 Windows Server 2012、Windows Server 2008 R2、Windows Server 2008、Windows 8、Windows 7 和 Windows Vista 中，系統管理員可以選擇啟用九種傳統類別，或使用子類別。 這是必須在每個 Windows 系統中進行的二進位選擇。 可以啟用主要類別，或 subcategoriesit 不能同時為兩者。
 
-若要防止傳統傳統類別目錄原則覆寫稽核原則子類別，您必須啟用 [**強制稽核原則子類別設定（Windows Vista 或更新版本）** ]，以覆寫位於 [電腦設定] [設定] \ [保護 \] \ 安全性**選項**下的稽核原則類別設定原則
+若要防止傳統傳統類別目錄原則覆寫稽核原則子類別，您必須啟用 [**強制稽核原則子類別設定] ([Windows Vista 或更新版本]) ，以覆寫**位於 [**電腦設定 \windows**設定 \ 安全性設定 \ 系統保護選項] 下的 [稽核原則] 分類
 
-我們建議您啟用和設定子類別，而不是9個主要類別。 這需要啟用群組原則設定（以允許子類別覆寫審核類別），以及設定支援稽核原則的不同子類別。
+我們建議您啟用和設定子類別，而不是9個主要類別。 這需要啟用群組原則設定， (允許子類別覆寫審核目錄) 以及設定支援稽核原則的不同子類別。
 
 您可以使用數種方法來設定 [審核子類別]，包括群組原則和命令列程式 auditpol.exe。
 

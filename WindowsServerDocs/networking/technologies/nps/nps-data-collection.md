@@ -8,19 +8,19 @@ ms.reviewer: richagi
 ms.custom: it-pro
 ms.topic: article
 ms.date: 05/01/2018
-ms.openlocfilehash: a5cce413e2e95387edf73c628f38a4d225c80adb
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a47cb5791b6e157b434d80535d10b107159db48f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955575"
+ms.locfileid: "87994598"
 ---
 # <a name="network-policy-server-user-data-collection"></a>網路原則伺服器使用者資料收集
 
 本檔說明如何在您想要移除網路原則伺服器 (NPS) 的事件中，尋找其所收集的使用者資訊。
 
 >[!Note]
->如果您有興趣查看或刪除個人資料，請參閱 Microsoft 在[GDPR 的 Windows 資料主體要求](https://docs.microsoft.com/microsoft-365/compliance/gdpr-dsr-windows)網站中的指引。 如果您要尋找有關 GDPR 的一般資訊，請參閱[服務信任入口網站的 GDPR 一節](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted)。
+>如果您有興趣查看或刪除個人資料，請參閱 Microsoft 在[GDPR 的 Windows 資料主體要求](/microsoft-365/compliance/gdpr-dsr-windows)網站中的指引。 如果您要尋找有關 GDPR 的一般資訊，請參閱[服務信任入口網站的 GDPR 一節](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted)。
 
 ## <a name="information-collected-by-nps"></a>NPS 收集的資訊
 

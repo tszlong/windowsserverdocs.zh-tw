@@ -1,37 +1,35 @@
 ---
 title: 控制您的工具在解決方案中的可見度
-description: 控制您的工具在解決方案中的可見度 Windows 系統管理中心 SDK （Project 檀香山）
-ms.technology: manage
+description: 在 Windows 系統管理中心 SDK (Project 檀香山) 中控制您工具的可見度
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 440ba3d11da671beedc2c2fb90caa3e176f83877
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: df939bb1a87c9ded77431661dcabd7faf607bb6e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385316"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945001"
 ---
 # <a name="control-your-tools-visibility-in-a-solution"></a>控制您的工具在解決方案中的可見度 #
 
 >適用於：Windows Admin Center、Windows Admin Center 預覽版
 
-有時候，您可能會想要從 [可用的工具] 清單中排除（或隱藏）您的擴充功能或工具。 例如，如果您的工具只以 Windows Server 2016 （而不是較舊的版本）為目標，則您可能不想要連接到 Windows Server 2012 R2 伺服器的使用者，完全查看您的工具。 （想像使用者經驗-他們按一下它，等待工具載入，只是為了取得其功能無法用於連線的訊息）。您可以定義在工具的資訊清單. json 檔案中顯示（或隱藏）功能的時機。
+有時候，您可能會想要從 [可用的工具] 清單中排除 (或隱藏) 您的擴充功能或工具。 例如，如果您的工具只以 Windows Server 2016 為目標 (不是舊版) ，您可能不想要連線到 Windows Server 2012 R2 伺服器的使用者完全看不到您的工具。  (想像使用者體驗-他們按一下它，等待工具載入，只是為了取得其功能無法連線的訊息。 ) 您可以定義何時要在工具的 manifest.js檔案中顯示 (或隱藏) 功能的時機。
 
 ## <a name="options-for-deciding-when-to-show-a-tool"></a>決定何時要顯示工具的選項 ##
 
 有三種不同的選項可供您用來判斷是否應該顯示您的工具，並可供特定伺服器或叢集連接使用。
 
-* 發出
-* 清查（屬性陣列）
+* localhost
+* 清查 (屬性陣列) 
 * 指令碼
 
 ### <a name="localhost"></a>發出 ###
 
-條件物件的 localHost 屬性包含布林值，如果連接的節點是 localHost （Windows 系統管理中心安裝所在的同一部電腦），則可以評估為推斷。 藉由將值傳遞給屬性，您可以指定何時（條件）顯示工具。 例如，如果您只想要在使用者實際上是連接到本機主機時顯示工具，請設定如下：
+條件物件的 localHost 屬性包含一個布林值，如果連接的節點是 localHost (在) 上安裝 Windows 系統管理中心的同一部電腦上，則可以評估為推斷。 藉由將值傳遞給屬性，您可以指定何時 (條件) 以顯示工具。 例如，如果您只想要在使用者實際上是連接到本機主機時顯示工具，請設定如下：
 
 ``` json
 "conditions": [
@@ -86,9 +84,9 @@ SDK 包含預先策劃的清查屬性集，可供您用來建立條件，以判�
 | 屬性名稱 | 預期的數值型別 |
 | ------------- | ------------------- |
 | computerManufacturer | string |
-| operatingSystemSKU | number |
-| operatingSystemVersion | version_string （例如："10.1. *"） |
-| productType | number |
+| operatingSystemSKU | 數字 |
+| operatingSystemVersion | version_string (，例如： "10.1. *" )  |
+| productType | 數字 |
 | clusterFqdn | string |
 | isHyperVRoleInstalled | boolean |
 | isHyperVPowershellInstalled | boolean |
@@ -110,33 +108,33 @@ SDK 包含預先策劃的清查屬性集，可供您用來建立條件，以判�
 | 運算子 | 描述 |
 | -------- | ----------- |
 | gt | 大於 |
-| 串聯 | 大於或等於 |
+| ge | 大於或等於 |
 | lt | 小於 |
 | le | 小於或等於 |
-| 均衡 | 等於 |
+| eq | 等於 |
 | ne | 不等於 |
-| 為 | 檢查值是否為 true |
-| 否 | 檢查值是否為 false |
-| 包含 | 專案存在於字串中 |
+| is | 檢查值是否為 true |
+| not | 檢查值是否為 false |
+| contains | 專案存在於字串中 |
 | notContains | 專案不存在於字串中 |
 
 #### <a name="data-types"></a>資料類型 ####
 
 ' Type ' 屬性的可用選項：
 
-| Type | 描述 |
+| 類型 | 描述 |
 | ---- | ----------- |
-| 版本 | 版本號碼（例如：10.1. *） |
-| number | 數值 |
+| version |  (的版本號碼，例如： 10.1. * )  |
+| 數字 | 數值 |
 | string | 字串值 |
 | boolean | true 或 false |
 
-#### <a name="value-types"></a>實數值型別 ####
+#### <a name="value-types"></a>值類型 ####
 
 ' Value ' 屬性會接受下列類型：
 
-* string
-* number
+* 字串
+* 數字
 * boolean
 
 正確格式的清查條件集看起來像這樣：
@@ -193,7 +191,7 @@ SDK 包含預先策劃的清查屬性集，可供您用來建立條件，以判�
         @{Name='Prop2'; Value = 12345678; Type='number'; };
 }
 ```
-State 屬性是重要的值，將控制在 [工具] 清單中顯示或隱藏您的延伸模組的決策。  允許的值為:
+State 屬性是重要的值，將控制在 [工具] 清單中顯示或隱藏您的延伸模組的決策。  允許的值包括：
 
 | 值 | 描述 |
 | ---- | ----------- |
@@ -212,7 +210,7 @@ $response = @{
 }
 
 if (Get-Module -ListAvailable -Name servermanager) {
-    Import-module servermanager; 
+    Import-module servermanager;
     $isInstalled = (Get-WindowsFeature -name bitlocker).Installed;
     $isGood = $isInstalled;
 }
@@ -272,7 +270,7 @@ $response
 
 您可以使用一組以上的需求，藉由定義多個「需求」區塊來判斷何時要顯示您的工具。
 
-例如，若要顯示您的工具（如果「案例 A」或「案例 B」為 true），請定義兩個需求區塊;如果其中一項為 true （也就是符合需求區塊內的所有條件），則會顯示工具。
+例如，若要顯示您的工具（如果「案例 A」或「案例 B」為 true），請定義兩個需求區塊;如果其中一個為 true (也就是，符合需求區塊內的所有條件) ，就會顯示工具。
 
 ``` json
 "entryPoints": [

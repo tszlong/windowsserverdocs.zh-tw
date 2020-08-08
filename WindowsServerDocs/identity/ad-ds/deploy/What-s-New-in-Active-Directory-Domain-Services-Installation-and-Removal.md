@@ -6,12 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: 7444fcc6807e43192e68c006dcd49464a503976b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 09863123a69eec72b3d8bfaaf138bb2d2562f687
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953295"
+ms.locfileid: "87994512"
 ---
 # <a name="whats-new-in-active-directory-domain-services-installation-and-removal"></a>Active Directory 網域服務安裝和移除的新功能
 
@@ -173,7 +173,7 @@ Windows server 2012 的系統需求與 Windows Server 2008 R2 保持不變。 �
 
    在這個情況下，您需要將 ADDSDeployment Cmdlet 與不支援原生 64 位元程序的 Cmdlet 分開執行。
 
-- Windows Server 2012 中有一個新的檔案系統，稱為復原檔案系統。 請不要將 Active Directory 資料庫、記錄檔或 SYSVOL 儲存到使用復原檔案系統 (ReFS) 格式化的資料磁碟區。 如需 ReFS 的詳細資訊，請參閱 [Building the next generation file system for Windows: ReFS](https://blogs.msdn.com/b/b8/archive/2012/01/16/building-the-next-generation-file-system-for-windows-refs.aspx)(為 Windows 建立新一代的檔案系統：ReFS)。
+- Windows Server 2012 中有一個新的檔案系統，稱為復原檔案系統。 請不要將 Active Directory 資料庫、記錄檔或 SYSVOL 儲存到使用復原檔案系統 (ReFS) 格式化的資料磁碟區。 如需 ReFS 的詳細資訊，請參閱 [Building the next generation file system for Windows: ReFS](/archive/blogs/b8/building-the-next-generation-file-system-for-windows-refs)(為 Windows 建立新一代的檔案系統：ReFS)。
 - 在伺服器管理員中，在 Server Core 安裝上執行 AD DS 或其他伺服器角色並已升級至 Windows Server 2012 的伺服器，伺服器角色可能會出現紅色狀態，即使事件和狀態已如預期般收集也一樣。 執行初步發行版本 Windows Server 2012 的 Server Core 安裝的伺服器也可能受到影響。
 
 ### <a name="active-directory-domain-services-installation-hangs-if-an-error-prevents-critical-replication"></a>如果錯誤阻止關鍵性複寫，Active Directory 網域服務安裝會停滯

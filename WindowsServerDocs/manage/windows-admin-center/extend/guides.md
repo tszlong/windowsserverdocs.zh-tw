@@ -1,25 +1,23 @@
 ---
-title: 指南
-description: 指南 Windows 管理中心 SDK （Project 檀香山）
-ms.technology: manage
+title: 手冊
+description: '引導 Windows 管理中心 SDK (Project 檀香山) '
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/17/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: b7e091e4b9bef11b37a8247b52390404e258ae3b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bd4b8c35cc5a46500292e08ee1967ef00b74c0e1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357105"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945115"
 ---
-# <a name="guides"></a>指南
+# <a name="guides"></a>手冊
 
 >適用於：Windows Admin Center、Windows Admin Center 預覽版
 
-## <a name="guides"></a>指南
+## <a name="guides"></a>手冊
 以下是使用 Windows Admin Center SDK 進行開發的一些指南：
 
 - [新增模組至工具擴充功能](guides/add-module.md)

@@ -6,12 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: dd08192558457a014b6884316de7a22900dded2f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 55317bfb392fa9867b7fae1f4900b4ce6b83a141
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87941062"
+ms.locfileid: "87994423"
 ---
 # <a name="finding-additional-resources-for-windows-server-2008-active-directory-site-topology-design"></a>尋找其他 Windows Server 2008 Active Directory 站台拓撲設計資源
 
@@ -35,7 +35,7 @@ ms.locfileid: "87941062"
 
 - 如需部署樹系根域的詳細資訊，請參閱[部署 Windows Server 2008 樹系根域](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc731174(v=ws.10))。
 
-- 如需保護網域控制站的詳細資訊，請參閱[AD DS 設計和規劃](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/ad-ds-design-and-planning)。
+- 如需保護網域控制站的詳細資訊，請參閱[AD DS 設計和規劃](./ad-ds-design-and-planning.md)。
 
 - 如需部署地區網域的詳細資訊，請參閱[部署 Windows Server 2008 地區網域](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc755118(v=ws.10))。
 

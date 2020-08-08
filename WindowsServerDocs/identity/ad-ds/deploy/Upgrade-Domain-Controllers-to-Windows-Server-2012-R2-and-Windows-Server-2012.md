@@ -6,12 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: f4c4cfa0fe56acc19f1a78a5b1140d90b585cce5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ae0aa44dba50c467dd1bd2423e9eb67104387cd3
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953307"
+ms.locfileid: "87994483"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012"></a>將網域控制站升級為 Windows Server 2012 R2 與 Windows Server 2012
 
@@ -55,7 +55,7 @@ ms.locfileid: "87953307"
 - [在現有網域中安裝複本 Windows Server 2012 網域控制站 (等級 200)](./install-a-replica-windows-server-2012-domain-controller-in-an-existing-domain--level-200-.md)
 - [安裝新的 Windows Server 2012 Active Directory 子網域或樹狀目錄網域 (等級 200)](./install-a-new-windows-server-2012-active-directory-child-or-tree-domain--level-200-.md)
 - [安裝 Windows Server 2012 Active Directory 唯讀網域控制站 (RODC) (等級 200)](./rodc/install-a-windows-server-2012-active-directory-read-only-domain-controller--rodc---level-200-.md)
-- [有關網域控制站的 Windows Server 2012 論壇](https://docs.microsoft.com/answers/topics/windows-server-2012.html)
+- [有關網域控制站的 Windows Server 2012 論壇](/answers/topics/windows-server-2012.html)
 
 ## <a name="windows-update-considerations"></a>Windows Update 考慮
 
@@ -175,7 +175,7 @@ AD DS 安裝精靈的先決條件檢查會在安裝開始前識別可能的錯�
 
 本節只涵蓋從 Windows Server 2008 或 Windows Server 2008 R2 升級網域控制站的磁碟空間需求。 如需將網域控制站升級到舊版 Windows Server 之磁碟空間需求的詳細資訊，請參閱 [升級到 Windows Server 2008 的磁碟空間需求](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754463(v=ws.10)#BKMK_2008) 或 [升級到 Windows Server 2008 R2 的磁碟空間需求](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754463(v=ws.10)#BKMK_2008R2)。
 
-估計裝載 Active Directory 資料庫和記錄檔之磁碟的大小，這個大小必須能夠容納自訂和應用程式驅動的架構延伸、應用程式和由系統管理員起始的索引，還需要網域控制站部署存留期 (通常為 5 到 8 年) 新增到目錄之物件和屬性所需的空間。 與部署之後擴充磁碟存放裝置所需的更多成本相較之下，在部署階段決定正確的大小是一項非常有價值的投資。 如需詳細資訊，請參閱 [Active Directory 網域服務容量規劃](https://docs.microsoft.com/windows-server/administration/performance-tuning/role/active-directory-server/capacity-planning-for-active-directory-domain-services)。
+估計裝載 Active Directory 資料庫和記錄檔之磁碟的大小，這個大小必須能夠容納自訂和應用程式驅動的架構延伸、應用程式和由系統管理員起始的索引，還需要網域控制站部署存留期 (通常為 5 到 8 年) 新增到目錄之物件和屬性所需的空間。 與部署之後擴充磁碟存放裝置所需的更多成本相較之下，在部署階段決定正確的大小是一項非常有價值的投資。 如需詳細資訊，請參閱 [Active Directory 網域服務容量規劃](../../../administration/performance-tuning/role/active-directory-server/capacity-planning-for-active-directory-domain-services.md)。
 
 在計劃升級的網域控制站上，確定裝載了 Active Directory 資料庫 (NTDS.DIT) 的磁碟機擁有至少相當於 20% NTDS.DIT 檔案的可用磁碟空間，然後才開始作業系統升級。 如果磁碟區上沒有足夠的可用磁碟空間，升級會失敗，而且升級相容性報告會傳回錯誤，指示可用磁碟空間不足：
 

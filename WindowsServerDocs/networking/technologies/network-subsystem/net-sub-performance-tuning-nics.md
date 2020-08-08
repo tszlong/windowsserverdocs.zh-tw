@@ -8,12 +8,12 @@ manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
 ms.date: 12/23/2019
-ms.openlocfilehash: a29830fe5f6f23138b5872b95926ae7dc8834ae4
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0b6b09960e6d5f344aa4873d4c821ebdfb6f6a30
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955585"
+ms.locfileid: "87994231"
 ---
 # <a name="performance-tuning-network-adapters"></a>效能調整網路介面卡
 
@@ -79,7 +79,7 @@ ms.locfileid: "87955585"
 
 以下是一些適用於精細度到微秒之網路的效能調整建議。
 
-- 將定電腦 BIOS 設定成 [高效能]****，且停用 C-State。 不過，請注意，這與系統和 BIOS 相依，某些系統在讓作業系統控制電源管理的情況下可以提供較高的效能。 您可以從 [**設定**] 或使用**powercfg**命令來檢查並調整電源管理設定。 如需詳細資訊，請參閱[Powercfg 命令列選項](https://docs.microsoft.com/windows-hardware/design/device-experiences/powercfg-command-line-options)。
+- 將定電腦 BIOS 設定成 [高效能]****，且停用 C-State。 不過，請注意，這與系統和 BIOS 相依，某些系統在讓作業系統控制電源管理的情況下可以提供較高的效能。 您可以從 [**設定**] 或使用**powercfg**命令來檢查並調整電源管理設定。 如需詳細資訊，請參閱[Powercfg 命令列選項](/windows-hardware/design/device-experiences/powercfg-command-line-options)。
 
 - 將作業系統電源管理設定檔設定為 [高效能系統]****。
    > [!NOTE]
@@ -219,8 +219,8 @@ Set-NetTCPSetting -AutoTuningLevelLocal <Value>
 
 如需這些 Cmdlet 的詳細資訊，請參閱下列文章：
 
-- [NetTCPSetting](https://docs.microsoft.com/powershell/module/nettcpip/get-nettcpsetting?view=win10-ps)
-- [設定-NetTCPSetting](https://docs.microsoft.com/powershell/module/nettcpip/set-nettcpsetting?view=win10-ps)
+- [NetTCPSetting](/powershell/module/nettcpip/get-nettcpsetting?view=win10-ps)
+- [設定-NetTCPSetting](/powershell/module/nettcpip/set-nettcpsetting?view=win10-ps)
 
 #### <a name="autotuning-levels"></a>自動優化層級
 
@@ -376,6 +376,6 @@ Set-NetTCPSetting -AutoTuningLevelLocal <Value>
 Windows Vista 和 Windows Server 2008 引進了 (WFP) 的 Windows 篩選平台。 WFP 會為非 Microsoft 獨立軟體廠商提供 Api， (Isv) 建立封包處理篩選器。 範例包括防火牆和防毒軟體。
 
 > [!NOTE]
-> 撰寫不良的 WFP 篩選器可能會大幅降低伺服器的網路效能。 如需詳細資訊，請參閱 Windows 開發人員中心的將封[包處理驅動程式和應用程式移植到 WFP](https://docs.microsoft.com/windows-hardware/drivers/network/porting-packet-processing-drivers-and-apps-to-wfp) 。
+> 撰寫不良的 WFP 篩選器可能會大幅降低伺服器的網路效能。 如需詳細資訊，請參閱 Windows 開發人員中心的將封[包處理驅動程式和應用程式移植到 WFP](/windows-hardware/drivers/network/porting-packet-processing-drivers-and-apps-to-wfp) 。
 
 如需本指南中所有主題的連結，請參閱[網路子系統效能調整](net-sub-performance-top.md)。

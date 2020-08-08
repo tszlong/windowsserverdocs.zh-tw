@@ -1,21 +1,19 @@
 ---
 title: 分公司考慮
-ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
-ms.openlocfilehash: a9893ecd76e142dd243a1d99e83a48d2edfd5872
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b56b2d4f74f18e68a3849b01e84b0aca5ca7412e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856561"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957906"
 ---
 # <a name="branch-office-considerations"></a>分公司考量
 
-> 適用于： Windows Server 2019、Windows Server （半年通道）、 
+> 適用于： Windows Server 2019、Windows Server (半年通道) 、
 
 本文說明在分公司和其他遠端案例中執行受防護虛擬機器的最佳作法，其中 Hyper-v 主機可能有一段時間與 HGS 的連線能力有限。
 
@@ -24,7 +22,7 @@ ms.locfileid: "80856561"
 從 Windows Server 1709 版開始，您可以在 Hyper-v 主機上設定一組額外的主機守護者服務 Url，以便在主要 HGS 沒有回應時使用。
 這可讓您執行本機 HGS 叢集作為主伺服器，以便在本機伺服器關閉時，能夠切換回您公司資料中心的 HGS，以獲得更佳的效能。
 
-若要使用 fallback 選項，您必須設定兩部 HGS 伺服器。 他們可以執行 Windows Server 2019 或 Windows Server 2016，而且可能屬於相同或不同的叢集。 如果它們是不同的叢集，您會想要建立作業實務，以確保兩個伺服器之間的證明原則是同步的。 它們都必須能夠正確授權 Hyper-v 主機執行受防護的 Vm，並擁有啟動受防護 Vm 所需的金鑰內容。 您可以選擇在兩個叢集之間擁有一組共用加密和簽署憑證，或使用不同的憑證，並設定 HGS 受防護的 VM，以授權防護資料檔案中的保護者（加密/簽署憑證配對）。
+若要使用 fallback 選項，您必須設定兩部 HGS 伺服器。 他們可以執行 Windows Server 2019 或 Windows Server 2016，而且可能屬於相同或不同的叢集。 如果它們是不同的叢集，您會想要建立作業實務，以確保兩個伺服器之間的證明原則是同步的。 它們都必須能夠正確授權 Hyper-v 主機執行受防護的 Vm，並擁有啟動受防護 Vm 所需的金鑰內容。 您可以選擇在兩個叢集之間擁有一組共用加密和簽署憑證，或使用不同的憑證，並設定 HGS 受防護的 VM，以授權防護資料檔案中) 的加密/簽署憑證 (。
 
 然後，將您的 Hyper-v 主機升級為 Windows Server 1709 版或 Windows Server 2019，然後執行下列命令：
 ```powershell
@@ -48,7 +46,7 @@ Set-HgsClientConfiguration -KeyProtectionServerUrl 'https://hgs.primary.com/KeyP
 
 [離線] 模式可讓您的受防護 VM 在無法連線到 HGS 時開啟，只要您的 Hyper-v 主機的安全性設定未變更即可。
 離線模式的運作方式是在 Hyper-v 主機上快取特定版本的 VM TPM 金鑰保護裝置。
-金鑰保護裝置會加密為主機目前的安全性設定（使用虛擬化型安全性識別金鑰）。
+金鑰保護裝置會使用以虛擬化為基礎的安全性識別金鑰) ，加密為主機 (的目前安全性設定。
 如果您的主機無法與 HGS 通訊，而且其安全性設定尚未變更，它就可以使用快取的金鑰保護裝置來啟動受防護的 VM。
 當系統上的安全性設定變更時（例如，套用新的程式碼完整性原則或停用安全開機），快取的金鑰保護裝置將會失效，而且主機必須先向 HGS 證明，才能再次啟動任何受防護的 Vm。
 
@@ -60,5 +58,5 @@ Set-HgsClientConfiguration -KeyProtectionServerUrl 'https://hgs.primary.com/KeyP
 Set-HgsKeyProtectionConfiguration -AllowKeyMaterialCaching:$true
 ```
 
-由於可快取的金鑰保護裝置對每個受防護的 VM 而言是唯一的，因此您必須完全關閉（而非重新開機），並啟動受防護的 Vm，以在 HGS 上啟用此設定之後，取得可快取的金鑰保護裝置。
+由於可快取的金鑰保護裝置對每個受防護的 VM 而言都是唯一的，因此您必須完全關閉 (不重新開機) 並啟動受防護的 Vm，以在 HGS 上啟用這項設定之後，取得可快取的金鑰保護裝置。
 如果您的受防護 VM 會遷移至執行舊版 Windows Server 的 Hyper-v 主機，或從舊版 HGS 取得新的金鑰保護裝置，它將無法在離線模式中啟動，但可在存取 HGS 時繼續在線上模式中執行。

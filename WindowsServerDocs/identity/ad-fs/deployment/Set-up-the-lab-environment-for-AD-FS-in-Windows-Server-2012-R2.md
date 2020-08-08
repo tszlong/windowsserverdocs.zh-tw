@@ -6,12 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 30dc33bec01cf4a9ab0b944464d4bbc60f6ca74e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 276c4d22c3df64debd696ae07fff996fdbf4ceea
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87938230"
+ms.locfileid: "87994279"
 ---
 # <a name="set-up-the-lab-environment-for-ad-fs-in-windows-server-2012-r2"></a>在 Windows Server 2012 R2 設定 AD FS 實驗室環境
 
@@ -85,7 +85,7 @@ ms.locfileid: "87938230"
 
 -   主體別名 (DNS)：enterpriseregistration.contoso.com
 
-如需有關設定 SSL 憑證的詳細資訊，請參閱 [在具有企業 CA 之網域中的網站上設定 SSL/TLS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831822(v=ws.11))。
+如需有關設定 SSL 憑證的詳細資訊，請參閱 [在具有企業 CA 之網域中的網站上設定 SSL/TLS](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831822(v=ws.11))。
 
 [Active Directory Federation Services How-To Video Series: Updating Certificates](https://channel9.msdn.com/Search?term=Active%20Directory%20Federation%20Services#pubDate=year&ch9Search)(Active Directory 同盟服務使用方法影片系列：更新憑證)。
 

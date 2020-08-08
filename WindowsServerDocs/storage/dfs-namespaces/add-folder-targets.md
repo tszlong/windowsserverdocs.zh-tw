@@ -1,23 +1,21 @@
 ---
 title: 新增資料夾目標
 description: 本文說明如何新增資料夾目標 (UNC 路徑)
-ms.prod: windows-server
 ms.author: jgerend
 manager: brianlic
-ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms-date: 06/05/2017
-ms.openlocfilehash: e5a81f2967953b985028407d53d6a039fd8990eb
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: bc229360a616e7fa56231e6211b4b909d45ec2de
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961270"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957816"
 ---
 # <a name="add-folder-targets"></a>新增資料夾目標
 
-> 適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用于： Windows Server 2019、Windows Server (半年通道) 、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 資料夾目標是共用資料夾或其他與命名空間中資料夾相關聯之命名空間的通用命名慣例 (UNC) 路徑。 新增多個資料夾目標可提高命名空間中資料夾的可用性。
 
@@ -39,7 +37,7 @@ ms.locfileid: "86961270"
 > [!NOTE]
 > 資料夾可以在同一個資料夾階層中包含資料夾目標或其他 DFS 資料夾，但不能同時包含兩者。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [部署 DFS 命名空間](deploying-dfs-namespaces.md)
 -   [委派 DFS 命名空間的管理權限](delegate-management-permissions-for-dfs-namespaces.md)

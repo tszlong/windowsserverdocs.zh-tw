@@ -1,27 +1,25 @@
 ---
 title: 使用 Azure AD 的 VPN 連線性條件式存取
-description: 在此選擇性步驟中，您可以使用 Azure Active Directory （Azure AD）條件式存取，微調授權的 VPN 使用者如何存取您的資源。
-ms.prod: windows-server
-ms.technology: networking-ras
+description: 在此選擇性步驟中，您可以使用 Azure Active Directory (Azure AD) 條件式存取，微調授權的 VPN 使用者如何存取您的資源。
 ms.topic: article
 ms.localizationpriority: medium
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.date: 06/28/2019
 ms.reviewer: deverette
-ms.openlocfilehash: da32df185cb0c0c2370e60119dd9c2fbd510bd08
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 9c57d120106041692b920891b7d0c3341daec314
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964260"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87958226"
 ---
-# <a name="step-7-optional-conditional-access-for-vpn-connectivity-using-azure-ad"></a>步驟 7： 選擇性使用 Azure AD 進行 VPN 連線的條件式存取
+# <a name="step-7-optional-conditional-access-for-vpn-connectivity-using-azure-ad"></a>步驟 7：  (選用的) 使用 Azure AD VPN 連線的條件式存取
 
 - [**上一步：** 步驟6。設定 Windows 10 用戶端 Always On VPN 連線](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)
-- [**下一步：** 步驟7.1。設定 EAP-TLS 以忽略憑證撤銷清單（CRL）檢查](vpn-config-eap-tls-to-ignore-crl-checking.md)
+- [**下一步：** 步驟7.1。設定 EAP-TLS 以忽略憑證撤銷清單 (CRL) 檢查](vpn-config-eap-tls-to-ignore-crl-checking.md)
 
-在此選擇性步驟中，您可以使用[Azure Active Directory （Azure AD）條件式存取](/azure/active-directory/active-directory-conditional-access-azure-portal)，微調 VPN 使用者存取資源的方式。 透過 Azure AD 虛擬私人網路（VPN）連線的條件式存取，您可以協助保護 VPN 連接。 「條件式存取」是原則型評估引擎，可讓您為任何 Azure Active Directory (Azure AD) 已連線的應用程式建立存取規則。
+在此選擇性步驟中，您可以使用[Azure Active Directory (Azure AD) 條件式存取](/azure/active-directory/active-directory-conditional-access-azure-portal)，微調 VPN 使用者存取資源的方式。 透過 Azure AD 虛擬私人網路的條件式存取 (VPN) 連線能力，您可以協助保護 VPN 連接。 「條件式存取」是原則型評估引擎，可讓您為任何 Azure Active Directory (Azure AD) 已連線的應用程式建立存取規則。
 
 ## <a name="prerequisites"></a>必要條件
 
@@ -40,13 +38,13 @@ ms.locfileid: "86964260"
 
 ## <a name="step-71-configure-eap-tls-to-ignore-certificate-revocation-list-crl-checking"></a>[步驟 7.1.設定 EAP-TLS 以忽略憑證撤銷清單 (CRL) 檢查](vpn-config-eap-tls-to-ignore-crl-checking.md)
 
-在此步驟中，您可以新增**IgnoreNoRevocationCheck**並將它設定為允許用戶端在憑證不包含 CRL 發佈點時進行驗證。 根據預設，IgnoreNoRevocationCheck 會設定為0（已停用）。
+在此步驟中，您可以新增**IgnoreNoRevocationCheck**並將它設定為允許用戶端在憑證不包含 CRL 發佈點時進行驗證。 根據預設，IgnoreNoRevocationCheck 會設定為0， (停用) 。
 
-除非 NPS 伺服器已完成憑證鏈（包含根憑證）的撤銷檢查，否則 EAP-TLS 用戶端無法連接。 由 Azure AD 發行給使用者的雲端憑證不具有 CRL，因為其存留期為一小時的短期憑證。 NPS 上的 EAP 必須設定為忽略不存在 CRL 的情況。 由於驗證方法是 EAP-TLS，因此只有在**EAP\13**底下才需要此登錄值。 如果使用其他 EAP 驗證方法，則也應該在這些情況下新增登錄值。
+除非 NPS 伺服器已完成憑證鏈的撤銷檢查 (包括根憑證) ，否則 EAP-TLS 用戶端無法連接。 由 Azure AD 發行給使用者的雲端憑證不具有 CRL，因為其存留期為一小時的短期憑證。 NPS 上的 EAP 必須設定為忽略不存在 CRL 的情況。 由於驗證方法是 EAP-TLS，因此只有在**EAP\13**底下才需要此登錄值。 如果使用其他 EAP 驗證方法，則也應該在這些情況下新增登錄值。
 
 ## <a name="step-72-create-root-certificates-for-vpn-authentication-with-azure-ad"></a>[ 7.2.使用 Azure AD 建立 VPN 驗證的根憑證](vpn-create-root-cert-for-vpn-auth-azure-ad.md)
 
-在此步驟中，您會使用 Azure AD 來設定 VPN 驗證的根憑證，這會自動在租使用者中建立 VPN 伺服器雲端應用程式。  
+在此步驟中，您會使用 Azure AD 來設定 VPN 驗證的根憑證，這會自動在租使用者中建立 VPN 伺服器雲端應用程式。
 
 若要設定 VPN 連線能力的條件式存取，您需要執行下列動作：
 
@@ -65,7 +63,7 @@ ms.locfileid: "86964260"
 
 1. 建立指派給 VPN 使用者的條件式存取原則。
 2. 將雲端應用程式設定為**VPN 伺服器**。
-3. 將授與（存取控制）設定為**需要多重要素驗證**。  您可以視需要使用其他控制項。
+3. 將授與 (存取控制) 設定為**需要多重要素驗證**。  您可以視需要使用其他控制項。
 
 ## <a name="step-74-deploy-conditional-access-root-certificates-to-on-premises-ad"></a>[步驟7.4。將條件式存取根憑證部署到內部部署 AD](vpn-deploy-cond-access-root-cert-to-on-premise-ad.md)
 
@@ -81,9 +79,9 @@ ms.locfileid: "86964260"
 
 在此步驟中，您可以使用 Intune 建立 OMA DM 型 VPNv2 設定檔，以部署 VPN 裝置設定原則。 如果您想要使用 Configuration Manager 或 PowerShell 腳本來建立 VPNv2 設定檔，請參閱[VPNV2 CSP 設定](/windows/client-management/mdm/vpnv2-csp)以取得更多詳細資料。
 
-## <a name="next-steps"></a>接下來的步驟
+## <a name="next-steps"></a>後續步驟
 
-[步驟7.1。設定 EAP-TLS 以忽略憑證撤銷清單（CRL）檢查](vpn-config-eap-tls-to-ignore-crl-checking.md)：在此步驟中，您必須新增**IgnoreNoRevocationCheck**並將它設定為允許在憑證不包含 CRL 發佈點時驗證用戶端。 根據預設，IgnoreNoRevocationCheck 會設定為0（已停用）。
+[步驟7.1。設定 EAP-TLS 以忽略憑證撤銷清單 (CRL) 檢查](vpn-config-eap-tls-to-ignore-crl-checking.md)：在此步驟中，您必須新增**IgnoreNoRevocationCheck** ，並將它設定為允許在憑證不包含 CRL 發佈點時驗證用戶端。 根據預設，IgnoreNoRevocationCheck 會設定為0， (停用) 。
 
 ## <a name="related-topics"></a>相關主題
 

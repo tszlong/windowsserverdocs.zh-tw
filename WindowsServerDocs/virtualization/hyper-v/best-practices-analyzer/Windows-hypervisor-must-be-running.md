@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 501a9beb-c464-46c0-88c5-e3e7e3e70101
 author: kbdazure
 ms.date: 10/03/2016
-ms.openlocfilehash: c0e056d2e2b26180399d3fab3321c5e75bff8780
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: aa89f3735151b2dee795c1a325e22446e3770fa0
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948115"
+ms.locfileid: "87994533"
 ---
 # <a name="windows-hypervisor-must-be-running"></a>Windows 虛擬程式必須正在執行
 
@@ -86,6 +86,4 @@ ms.locfileid: "87948115"
     2. 尋找報告問題的事件。 例如，事件識別碼41表示 BIOS 設定的問題：「Hyper-v 啟動失敗;VMX 不存在或未在 BIOS 中啟用。」
 
 ### <a name="see-also"></a>另請參閱
-如需在 Windows 10 上使用 Hyper-v 的詳細資訊，包括如何檢查您的電腦是否可以執行 Hyper-v，請參閱[Windows 10 Hyper-v 系統需求](https://msdn.microsoft.com/virtualization/hyperv_on_windows/quick_start/walkthrough_compatibility)。
-
-
+如需在 Windows 10 上使用 Hyper-v 的詳細資訊，包括如何檢查您的電腦是否可以執行 Hyper-v，請參閱[Windows 10 Hyper-v 系統需求](/virtualization/hyper-v-on-windows/reference/hyper-v-requirements)。
