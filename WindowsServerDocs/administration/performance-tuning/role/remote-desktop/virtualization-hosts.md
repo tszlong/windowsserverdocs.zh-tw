@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: hammadbu; vladmis; denisgun
 author: phstee
 ms.date: 10/22/2019
-ms.openlocfilehash: 071321249db62c927ee5677a48c52a7f2cd9c20d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 235dd0209030854f1fc883f52ab41550ab693dc5
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896039"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992078"
 ---
 # <a name="performance-tuning-remote-desktop-virtualization-hosts"></a>效能微調遠端桌面虛擬主機
 
@@ -20,7 +20,7 @@ Windows Server 支援兩種類型的虛擬桌面：個人虛擬桌面和集區�
 
 ## <a name="general-considerations"></a>一般考量
 
-### <a name="storage"></a>存放裝置
+### <a name="storage"></a>儲存體
 
 儲存體是最可能的效能瓶頸，因此請務必調整您的儲存體大小，以適當處理虛擬機器狀態變更所產生的 i/o 負載。 如果試驗或模擬不可行，最好的指導方針是為四部作用中的虛擬機器布建一個磁片主軸。 使用具有良好寫入效能 (的磁片設定，例如 RAID 1 + 0) 。
 
@@ -104,7 +104,7 @@ Windows Server 2012 和更新版本中的容錯移轉叢集提供叢集共用磁
 | 網際網路連線共用                  | 以取用者為中心的服務                                                                                                                                                                                  |
 | Media Center 擴充服務               | 以取用者為中心的服務                                                                                                                                                                                  |
 > [!NOTE]
-> 這份清單不是完整清單，因為任何變更都會影響到所需的目標和案例。 如需詳細資訊，請參閱[熱門的按下、立即取得、Windows 8 VDI 優化腳本，PFE！](https://blogs.technet.com/b/jeff_stokes/archive/2013/04/09/hot-off-the-presses-get-it-now-the-windows-8-vdi-optimization-script-courtesy-of-pfe.aspx)。
+> 這份清單不是完整清單，因為任何變更都會影響到所需的目標和案例。 如需詳細資訊，請參閱[熱門的按下、立即取得、Windows 8 VDI 優化腳本，PFE！](/archive/blogs/jeff_stokes/hot-off-the-presses-get-it-now-the-windows-8-vdi-optimization-script-courtesy-of-pfe)。
 
 
 > [!NOTE]

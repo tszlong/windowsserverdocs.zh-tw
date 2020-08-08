@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 4f36b1808ff58b29cbd7be852617689bff8bb146
-ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
+ms.openlocfilehash: a6d1a23e7a038c11fac8840b4034c519f46be030
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87863781"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943005"
 ---
 # <a name="ad-fs-requirements-for-windows-server"></a>Windows Server AD FS 需求
 

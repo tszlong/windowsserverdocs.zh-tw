@@ -1,27 +1,25 @@
 ---
 title: 在 Windows Server 上安裝 Hyper-v 角色
 description: 提供使用伺服器管理員或 Windows PowerShell 安裝 Hyper-v 的指示
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: get-started-article
 ms.assetid: 8e871317-09d2-4314-a6ec-ced12b7aee89
 author: kbdazure
 ms.author: kathydav
 ms.date: 12/02/2016
-ms.openlocfilehash: 5bd77284fd73d75075cec307e989274c86552209
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 32632e7af3db0c3b390606bc784b929e76b2892f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475645"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997599"
 ---
 # <a name="install-the-hyper-v-role-on-windows-server"></a>在 Windows Server 上安裝 Hyper-v 角色
 
 >適用於：Windows Server 2016、Windows Server 2019
 
 若要建立和執行虛擬機器，請在 windows Server 上使用伺服器管理員或 Windows PowerShell 中的**install---** 的指令程式安裝 hyper-v 角色。
-若為 Windows 10，請參閱[在 windows 10 上安裝 hyper-v](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v)。
+若為 Windows 10，請參閱[在 windows 10 上安裝 hyper-v](/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v)。
 
 若要深入瞭解 Hyper-v，請參閱[Hyper-v 技術總覽](../Hyper-V-Technology-Overview.md)。 若要試用 Windows Server 2019，您可以下載並安裝評估版。 請參閱[評估中心](https://www.microsoft.com/evalcenter/evaluate-windows-server-2019)。
 
@@ -35,7 +33,7 @@ ms.locfileid: "85475645"
 
 1. 在 [伺服器管理員]**** 的 [管理]**** 功能表上，按一下 [新增角色及功能]****。
 
-2. 在 [在您開始前]**** 頁面上，確認已準備好目的地伺服器和網路環境，以便安裝您要的角色和功能。 按 [下一步] 。
+2. 在 [在您開始前]**** 頁面上，確認已準備好目的地伺服器和網路環境，以便安裝您要的角色和功能。 按 [下一步]  。
 
 3. 在 [選取安裝類型]**** 頁面上，選取 [角色型或功能型安裝]****，然後按 [下一步]****。
 
@@ -76,6 +74,6 @@ ms.locfileid: "85475645"
 > [!NOTE]
 > 如果您在執行 Windows Server 2016 之 Server Core 安裝選項的伺服器上安裝此角色，並使用參數 `-IncludeManagementTools` ，則只會安裝適用于 Windows PowerShell 的 Hyper-v 模組。 您可以使用另一部電腦上的 [GUI 管理工具] [Hyper-v 管理員]，從遠端系統管理在 Server Core 安裝上執行的 Hyper-v 主機。 如需遠端連線的指示，請參閱[使用 Hyper-v 管理員從遠端系統管理 hyper-v 主機](../Manage/Remotely-manage-Hyper-V-hosts.md)。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
-- [Install-Add-windowsfeature](https://docs.microsoft.com/powershell/module/Microsoft.Windows.ServerManager.Migration/Install-WindowsFeature)
+- [Install-Add-windowsfeature](/powershell/module/Microsoft.Windows.ServerManager.Migration/Install-WindowsFeature)

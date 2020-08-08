@@ -5,12 +5,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: c508df5b23481a53ccc112d6c81b11fc9dcea790
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: f81e77b0de231a03bcaa0cfe6877b1e67dd081db
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971385"
+ms.locfileid: "87989578"
 ---
 # <a name="guarded-fabric-and-shielded-vms-overview"></a>受防護網狀架構與受防護的 VM 概觀
 
@@ -58,7 +58,7 @@ HGS 與建立受防護的 VM 的方法搭配使用，協助提供以下保證。
 
 | **VM 的保證類型**                         | **受防護的 VM 保證，來自金鑰保護服務以及受防護的 VM 建立方法** |
 |----------------------------|--------------------------------------------------|
-| **BitLocker 加密的磁碟 (作業系統磁碟和資料磁碟)**   | 受防護的 VM 會使用 BitLocker 保護其磁碟。 啟動 VM 和解密磁片所需的 BitLocker 金鑰會受到受防護 VM 的虛擬 TPM 保護，並使用業界證實的技術，例如安全測量開機。 雖然受防護的 VM 僅會自動加密並保護作業系統磁碟，您也可以[加密資料磁碟機](https://technet.microsoft.com/itpro/windows/keep-secure/bitlocker-overview) (附加至受防護的 VM 的資料磁碟機)。 |
+| **BitLocker 加密的磁碟 (作業系統磁碟和資料磁碟)**   | 受防護的 VM 會使用 BitLocker 保護其磁碟。 啟動 VM 和解密磁片所需的 BitLocker 金鑰會受到受防護 VM 的虛擬 TPM 保護，並使用業界證實的技術，例如安全測量開機。 雖然受防護的 VM 僅會自動加密並保護作業系統磁碟，您也可以[加密資料磁碟機](/windows/security/information-protection/bitlocker/bitlocker-overview) (附加至受防護的 VM 的資料磁碟機)。 |
 | **從「信任的」範本磁片/映射部署新的受防護 Vm** | 部署新的受防護的 VM 時，租用戶可指定他們所信任的範本磁碟。 受防護的範本磁碟在其內容被視為可信任時，會有以該時間點計算的簽章。 磁碟簽章接著會儲存在簽章目錄中，在建立受防護的 VM 時，租用戶可安全地提供給網狀架構。 在受防護的 VM 佈建期間，會再次計算磁碟的簽章，並與目錄中信任的簽章比較。 如果簽章相符，則會部署受防護的 VM。 如果簽章不相符，則會將受防護的範本磁碟視為不受信任，且部署會失敗。 |
 | **受防護的 VM 建立後的密碼及其他機密資料保護** | 建立 Vm 時，必須確保 VM 秘密（例如受信任的磁片簽章、RDP 憑證，以及 VM 的本機系統管理員帳戶的密碼）不會洩漏到網狀架構。 這些機密資料會儲存在稱為防護資料檔案 (PDK 檔案) 的加密檔案中，它受到租用戶金鑰保護，並且由租用戶上傳至網狀架構。 當受防護的 VM 建立後，租用戶選取要使用的防護資料，這些機密資料只會在受防護網狀架構中安全地提供給受信任的元件。 |
 | **VM 可啟動位置的租用戶控制** | 防護資料也包含受防護網狀架構清單，特定受防護的 VM 可在其上執行。 這非常實用，例如，受防護的 VM 通常位於內部部署的私人雲端，但可能需要移轉至另一個 (公用或私人) 雲端以供災害復原用途使用。 目標雲端或網狀架構必須支援受防護的 VM，且受防護的 VM 必須允許網狀架構執行它。 |
@@ -164,6 +164,6 @@ HGS 與建立受防護的 VM 的方法搭配使用，協助提供以下保證。
 ## <a name="additional-references"></a>其他參考資料
 
 - [受防護網狀架構與受防護的 VM](guarded-fabric-and-shielded-vms-top-node.md)
-- Blog：[資料中心和私用雲端安全性 Blog](https://blogs.technet.microsoft.com/datacentersecurity/)
+- Blog：[資料中心和私用雲端安全性 Blog](/archive/blogs/datacentersecurity/)
 - 影片：[受防護的虛擬機器簡介](https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016)
 - 影片：[使用 Windows Server 2016 Hyper-v 深入探索受防護的 vm](https://channel9.msdn.com/events/Ignite/2016/BRK3124)

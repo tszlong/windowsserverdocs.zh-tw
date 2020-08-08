@@ -6,18 +6,16 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: ab3c72e2e418450509e4ffce57a41e88cd60f47d
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: ad4275bf7b6231692171209b19c4c60190e30126
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182364"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942974"
 ---
 # <a name="appendix-a-reviewing-ad-fs-requirements"></a>附錄 A：檢閱 AD FS 需求
 
-為了讓您的 Active Directory 同盟服務（AD FS）部署中的組織夥伴可以成功共同作業，您必須先確定您的公司網路基礎結構已設定為支援帳戶、名稱解析和憑證的 AD FS 需求。 AD FS 具有以下類型的需求：
+因此，您 Active Directory 同盟服務中 (AD FS) 部署的組織夥伴可以成功共同作業，您必須先確定您的公司網路基礎結構已設定為支援帳戶、名稱解析和憑證的 AD FS 需求。 AD FS 具有以下類型的需求：
 
 > [!TIP]
 > 您可以在[瞭解重要的 AD FS 概念](https://docs.microsoft.com/windows-server/identity/ad-fs/technical-reference/understanding-key-ad-fs-concepts)中找到其他 AD FS 資源連結。
@@ -43,9 +41,9 @@ AD FS 依賴 Windows Server 2012 作業系統內建的伺服器功能 &reg; 。
 ### <a name="federation-server-certificates"></a>同盟伺服器憑證
 同盟伺服器需要下表中的憑證。
 
-|憑證類型|說明|您需要在部署之前了解的內容|
+|憑證類型|描述|您需要在部署之前了解的內容|
 |--------------------|---------------|------------------------------------------|
-|安全通訊端層 (SSL) 憑證|這是標準的安全通訊端層 (SSL) 憑證，可用來保護同盟伺服器與用戶端之間的通訊安全。|這個憑證必須繫結到網際網路資訊服務 (IIS) 中預設的網站，以供同盟伺服器或同盟伺服器 Proxy 使用。  針對同盟伺服器 Proxy，必須先在 IIS 中設定繫結才能成功執行 [同盟伺服器 Proxy 設定精靈]。<p>**建議：** 由於此憑證必須受到 AD FS 的用戶端信任，因此，請使用由公用（協力廠商）憑證授權單位單位（CA）所發行的伺服器驗證憑證，例如 VeriSign。 **秘訣：** 此憑證的主體名稱用來代表您所部署 AD FS 的每個實例的同盟服務名稱。 基於這個理由，您可能想要考慮在任何 CA 簽發的新憑證上，選擇對合作夥伴而言最能代表貴公司或組織名稱的主體名稱。|
+|安全通訊端層 (SSL) 憑證|這是標準的安全通訊端層 (SSL) 憑證，可用來保護同盟伺服器與用戶端之間的通訊安全。|這個憑證必須繫結到網際網路資訊服務 (IIS) 中預設的網站，以供同盟伺服器或同盟伺服器 Proxy 使用。  針對同盟伺服器 Proxy，必須先在 IIS 中設定繫結才能成功執行 [同盟伺服器 Proxy 設定精靈]。<p>**建議：** 由於此憑證必須受到 AD FS 的用戶端信任，因此，請使用由公用 (協力廠商) 證書)  (頒發機構單位（例如 VeriSign）所發行的伺服器驗證憑證。 **秘訣：** 此憑證的主體名稱用來代表您所部署 AD FS 的每個實例的同盟服務名稱。 基於這個理由，您可能想要考慮在任何 CA 簽發的新憑證上，選擇對合作夥伴而言最能代表貴公司或組織名稱的主體名稱。|
 |服務通訊憑證|這個憑證會啟用 WCF 訊息安全性，來保護同盟伺服器之間的通訊。|根據預設，SSL 憑證會用來做為服務通訊憑證。  這可以使用 AD FS 管理主控台來變更。|
 |權杖簽署憑證|這是標準的 X509 憑證，可以用來安全地簽署同盟伺服器簽發的所有權杖。|權杖簽署憑證必須包含一個私密金鑰，而且應該鏈結到 Federation Service 中受信任的根目錄。 根據預設，AD FS 會建立自我簽署憑證。 但是，根據組織需求而定，您稍後可以使用 AD FS 管理嵌入式管理單元，將這個憑證變更為 CA 簽發的憑證。|
 |權杖解密憑證|這是標準的 SSL 憑證，可以用來解密任何由夥伴同盟伺服器加密的傳入權杖。 它也會在同盟中繼資料中發佈。|根據預設，AD FS 會建立自我簽署憑證。 但是，根據組織需求而定，您稍後可以使用 AD FS 管理嵌入式管理單元，將這個憑證變更為 CA 簽發的憑證。|
@@ -58,9 +56,9 @@ AD FS 依賴 Windows Server 2012 作業系統內建的伺服器功能 &reg; 。
 ### <a name="federation-server-proxy-certificates"></a>同盟伺服器 Proxy 憑證
 同盟伺服器 Proxy 需要下表中的憑證。
 
-|憑證類型|說明|您需要在部署之前了解的內容|
+|憑證類型|描述|您需要在部署之前了解的內容|
 |--------------------|---------------|------------------------------------------|
-|伺服器驗證憑證|這是標準的安全通訊端層 (SSL) 憑證，可用來在同盟伺服器 Proxy 與網際網路用戶端電腦之間進行安全通訊。|這個憑證必須先繫結到網際網路資訊服務 (IIS) 中預設的網站，您才能成功執行 [AD FS 同盟伺服器 Proxy 設定精靈]。<p>**建議：** 由於此憑證必須受到 AD FS 的用戶端信任，因此，請使用由公用（協力廠商）憑證授權單位單位（CA）所發行的伺服器驗證憑證，例如 VeriSign。<p>**秘訣：** 此憑證的主體名稱用來代表您所部署 AD FS 的每個實例的同盟服務名稱。 基於這個理由，您可能想要考慮選擇對合作夥伴而言最能代表貴公司或組織名稱的主體名稱。|
+|伺服器驗證憑證|這是標準的安全通訊端層 (SSL) 憑證，可用來在同盟伺服器 Proxy 與網際網路用戶端電腦之間進行安全通訊。|這個憑證必須先繫結到網際網路資訊服務 (IIS) 中預設的網站，您才能成功執行 [AD FS 同盟伺服器 Proxy 設定精靈]。<p>**建議：** 由於此憑證必須受到 AD FS 的用戶端信任，因此，請使用由公用 (協力廠商) 證書)  (頒發機構單位（例如 VeriSign）所發行的伺服器驗證憑證。<p>**秘訣：** 此憑證的主體名稱用來代表您所部署 AD FS 的每個實例的同盟服務名稱。 基於這個理由，您可能想要考慮選擇對合作夥伴而言最能代表貴公司或組織名稱的主體名稱。|
 
 如需同盟伺服器 Proxy 所使用的憑證相關詳細資訊，請參閱[同盟伺服器 Proxy 的憑證需求](Certificate-Requirements-for-Federation-Server-Proxies.md)。
 
@@ -92,9 +90,9 @@ AD FS 會建立以工作階段為基礎的永續性 Cookie，這類 Cookie 必�
 若要讓 AD FS 運作，下列各項之間必須要有 TCP/IP 網路連線：用戶端；網域控制站；以及裝載 Federation Service、Federation Service Proxy (使用時) 與 AD FS 網路代理程式的電腦。
 
 ### <a name="dns"></a>DNS
-除了 Active Directory Domain Services （AD DS）以外，對 AD FS 作業而言，主要網路服務是網域名稱系統（DNS）。 部署 DNS 時，使用者可以使用容易記住的好記電腦名稱，連接到電腦及 IP 網路上的其他資源。
+Active Directory Domain Services (AD DS) 以外的 AD FS 操作的主要網路服務是網域名稱系統 (DNS) 。 部署 DNS 時，使用者可以使用容易記住的好記電腦名稱，連接到電腦及 IP 網路上的其他資源。
 
- Windows Server 2008 使用 DNS 進行名稱解析，而不是以 Windows NT 4.0 為基礎的網路中使用的 Windows 網際網路名稱服務（WINS） NetBIOS 名稱解析。 您還是能夠針對需要 WINS 的應用程式使用它。 不過，AD DS 和 AD FS 需要 DNS 名稱解析。
+ Windows Server 2008 使用 DNS 進行名稱解析，而不是 Windows 網際網路名稱服務 (WINS) 以 Windows NT 4.0 為基礎的網路中使用的 NetBIOS 名稱解析。 您還是能夠針對需要 WINS 的應用程式使用它。 不過，AD DS 和 AD FS 需要 DNS 名稱解析。
 
 設定 DNS 以支援 AD FS 的程式會因下列情況而異：
 
@@ -120,7 +118,7 @@ AD FS 需要至少一個用來驗證使用者的屬性存放區，並將這些�
 在已加入網域的電腦上安裝並設定 AD FS 時，該網域的 Active Directory 使用者帳戶存放區會變成可選取的屬性存放區。
 
 > [!IMPORTANT]
-> 由於 AD FS 需要安裝 Internet Information Services （IIS），因此基於安全性考慮，建議您不要在生產環境的網域控制站上安裝 AD FS 軟體。 但是，Microsoft 客戶服務支援部門支援這個設定。
+> 由於 AD FS 需要 (IIS) 安裝 Internet Information Services，因此基於安全性考慮，建議您不要在生產環境中的網域控制站上安裝 AD FS 軟體。 但是，Microsoft 客戶服務支援部門支援這個設定。
 
 #### <a name="schema-requirements"></a>結構描述需求
 AD FS 不需要對 AD DS 進行架構變更或功能層級修改。
@@ -135,7 +133,7 @@ AD FS 不需要對 AD DS 進行架構變更或功能層級修改。
 當您使用其他以輕量型目錄存取通訊協定 (LDAP) 為基礎的屬性存放區時，必須連線到支援 Windows 整合式驗證的 LDAP 伺服器。 LDAP 連線字串也必須以 LDAP URL 的格式來書寫，如 RFC 2255 中所述。
 
 ### <a name="sql-server"></a>SQL Server
-若要讓 AD FS 能夠順利運作，裝載結構化查詢語言 (SQL) （SQL）伺服器屬性存放區的電腦必須執行 Microsoft SQL Server 2005 或 SQL Server 2008。 當您使用以 SQL 為基礎的屬性存放區時，也必須設定連線字串。
+若要讓 AD FS 能夠順利操作，裝載結構化查詢語言 (SQL)  (SQL) 伺服器屬性存放區的電腦，必須執行 Microsoft SQL Server 2005 或 SQL Server 2008。 當您使用以 SQL 為基礎的屬性存放區時，也必須設定連線字串。
 
 ### <a name="custom-attribute-stores"></a>自訂屬性存放區
 您可以開發自訂屬性存放區，以啟用進階案例。 AD FS 內建的原則語言可以參考自訂屬性存放區，因此能夠增強下列任一個案例：
@@ -161,7 +159,7 @@ AD FS 與現有的 Windows 驗證自然整合，例如 Kerberos 驗證、NTLM、
 AD FS 同盟伺服器 Proxy 角色讓使用者能夠從外部使用 SSL 用戶端驗證來進行驗證。 儘管通常最順暢的使用者經驗是藉由設定帳戶同盟伺服器以進行 Windows 整合式驗證來達成，您也可以設定同盟伺服器角色來要求 SSL 用戶端驗證。 在這個情況下，AD FS 對於使用者利用哪些憑證來進行 Windows 桌面登入沒有任何控制權。
 
 ### <a name="smart-card-logon"></a>智慧卡登入
-雖然 AD FS 可以強制執行用於驗證的認證類型（密碼、SSL 用戶端驗證或 Windows 整合式驗證），但它不會直接使用智慧卡強制執行驗證。 因此，AD FS 不會提供用戶端使用者介面（UI）來取得智慧卡個人識別碼（PIN）認證。 這是因為以 Windows 為基礎的用戶端刻意不會提供使用者認證詳細資料給同盟伺服器或網頁伺服器。
+雖然 AD FS 可以強制執行用於驗證 (密碼、SSL 用戶端驗證或 Windows 整合式驗證) 的認證類型，但它不會直接使用智慧卡強制執行驗證。 因此，AD FS 不會提供用戶端使用者介面 (UI) 來取得智慧卡個人識別碼 (PIN) 認證。 這是因為以 Windows 為基礎的用戶端刻意不會提供使用者認證詳細資料給同盟伺服器或網頁伺服器。
 
 ### <a name="smart-card-authentication"></a>智慧卡驗證
 智慧卡驗證會使用 Kerberos 通訊協定向帳戶同盟伺服器進行驗證。 AD FS 無法擴充以加入新的驗證方法。 不需使用智慧卡中的憑證來鏈結到用戶端電腦上信任的根目錄。 使用智慧卡憑證搭配 AD FS 需要下列條件：

@@ -7,12 +7,12 @@ ms.author: nedpyle
 manager: jgerend
 ms.date: 01/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a93051f4b8aa95f5e48604a5ac7cc9f4c8242a2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c9401d19472e362ee411613ee97caa3428c35e4f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87940049"
+ms.locfileid: "87997538"
 ---
 # <a name="deploy-azure-virtual-machines-from-within-windows-admin-center"></a>在 Windows 系統管理中心內部署 Azure 虛擬機器
 
@@ -20,7 +20,7 @@ ms.locfileid: "87940049"
 
 Windows Admin Center 1910 版可讓您部署 Azure 虛擬機器。 這會將 VM 部署整合到 Windows 管理中心管理的工作負載，例如[儲存體遷移服務](../../../storage/storage-migration-service/overview.md)和[儲存體複本](../../../storage/storage-replica/storage-replica-overview.md)。 不是在部署工作負載之前手動在 Azure 入口網站中建立新的伺服器和 Vm，而是可能遺失必要的步驟和設定-Windows 管理中心可以部署 Azure VM、設定其儲存體、將其加入您的網域、安裝角色，然後設定您的分散式系統。 您也可以在沒有工作負載的情況下，從 Windows 管理中心的 [連線] 頁面部署新的 Azure Vm。
 
-Windows 管理中心也會管理各種不同的 Azure 服務。 [深入瞭解 Windows 管理中心提供的 Azure 整合選項](../plan/azure-integration-options.md)。
+Windows 管理中心也會管理各種不同的 Azure 服務。 [深入瞭解 Windows 管理中心提供的 Azure 整合選項](./index.md)。
 
 如果您想要將虛擬機器隨即轉移至 Azure，而不是建立新的，請考慮使用 Azure Migrate。 如需詳細資訊，請參閱[Azure Migrate 總覽](https://go.microsoft.com/fwlink/?linkid=2056064)。
 
@@ -38,8 +38,8 @@ Windows 管理中心1910版 Azure VM 部署支援下列案例：
 
 - [Azure 訂用帳戶](https://azure.microsoft.com)。
 - 向[Azure 註冊的 Windows 管理中心閘道](azure-integration.md)
-- 您擁有建立許可權的現有[Azure 資源群組](https://docs.microsoft.com/azure/azure-resource-manager/management/overview)。
-- 現有的[Azure 虛擬網路](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview)和子網。
+- 您擁有建立許可權的現有[Azure 資源群組](/azure/azure-resource-manager/management/overview)。
+- 現有的[Azure 虛擬網路](/azure/virtual-network/virtual-networks-overview)和子網。
 - 系結至虛擬網路和子網的[Azure Express Route](https://azure.microsoft.com/services/expressroute/)或[azure VPN 解決方案](https://azure.microsoft.com/services/vpn-gateway/)，允許從 Azure vm 連線到您的內部部署用戶端、網域控制站、Windows 系統管理中心電腦，以及需要與此 VM 通訊的任何伺服器，做為工作負載部署的一部分。 比方說，若要使用儲存體遷移服務將儲存體遷移至 Azure VM，協調器電腦和來源電腦必須能夠與您要遷移的目的地 Azure VM 連線。
 
 ## <a name="usage"></a>使用量

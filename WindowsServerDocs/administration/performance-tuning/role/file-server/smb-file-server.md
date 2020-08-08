@@ -5,12 +5,12 @@ ms.topic: article
 author: phstee
 ms.author: nedpyle; danlo; dkruse
 ms.date: 4/14/2017
-ms.openlocfilehash: 9e20b05f911726837cf436798a3743fbb80af193
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 4a1fd4036e20e4cbb5b137832297daca99e9f5cc
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896160"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992165"
 ---
 # <a name="performance-tuning-for-smb-file-servers"></a>SMB 檔案伺服器的效能微調
 
@@ -52,7 +52,7 @@ SMB 多重通道可讓檔案伺服器同時使用多個網路連線，並提供�
 
 SMB 相應放大允許在叢集設定中使用 SMB 3.0，在叢集的所有節點中顯示共用。 此主動/主動設定可讓您進一步擴充檔案伺服器叢集，而不需要具有多個磁片區、共用和叢集資源的複雜設定。 最大共用頻寬是所有檔案伺服器叢集節點的總頻寬。 總頻寬不再受單一叢集節點的頻寬限制，而是取決於支援儲存系統的功能。 您可以新增節點以增加總頻寬。
 
-如需 SMB 向外延展的詳細資訊，請參閱[用於應用程式資料的向外延展檔案伺服器總覽](https://technet.microsoft.com/library/hh831349.aspx)，以及要相應放大或不向外延展的 blog 文章[，這就是問題](https://blogs.technet.com/b/filecab/archive/2013/12/05/to-scale-out-or-not-to-scale-out-that-is-the-question.aspx)所在。
+如需 SMB 向外延展的詳細資訊，請參閱[用於應用程式資料的向外延展檔案伺服器總覽](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831349(v=ws.11))，以及要相應放大或不向外延展的 blog 文章[，這就是問題](https://blogs.technet.com/b/filecab/archive/2013/12/05/to-scale-out-or-not-to-scale-out-that-is-the-question.aspx)所在。
 
 ### <a name="performance-counters-for-smb-30"></a>SMB 3.0 的效能計數器
 
@@ -62,7 +62,7 @@ SMB 相應放大允許在叢集設定中使用 SMB 3.0，在叢集的所有節�
 
     這些計數器會顯示使用 SMB 2.0 或更高版本的用戶端所存取之伺服器上檔案共用的相關資訊。
 
-    如果您已熟悉 Windows 中的一般磁片計數器，您可能會注意到某些非常相似。 這不是意外的。 SMB 用戶端共用效能計數器的設計目的是要完全符合磁片計數器。 如此一來，您就可以輕鬆地重複使用目前所擁有之應用程式磁片效能調整的任何指引。 如需有關計數器對應的詳細資訊，請參閱[每個共用用戶端效能計數器的 blog](https://blogs.technet.com/b/josebda/archive/2012/11/19/windows-server-2012-file-server-tip-new-per-share-smb-client-performance-counters-provide-great-insight.aspx)。
+    如果您已熟悉 Windows 中的一般磁片計數器，您可能會注意到某些非常相似。 這不是意外的。 SMB 用戶端共用效能計數器的設計目的是要完全符合磁片計數器。 如此一來，您就可以輕鬆地重複使用目前所擁有之應用程式磁片效能調整的任何指引。 如需有關計數器對應的詳細資訊，請參閱[每個共用用戶端效能計數器的 blog](/archive/blogs/josebda/windows-server-2012-file-server-tip-new-per-share-smb-client-performance-counters-provide-great-insight)。
 
 -   **SMB 伺服器共用**
 
@@ -146,7 +146,7 @@ SMB 相應放大允許在叢集設定中使用 SMB 3.0，在叢集的所有節�
 
 下列設定可在許多情況下，優化電腦的檔案伺服器效能。 在所有電腦上，這些設定並不是最佳或適當的。 套用個別設定之前，您應該評估其影響。
 
-| 參數                       | 值 | 預設 |
+| 參數                       | 值 | Default |
 |---------------------------------|-------|---------|
 | AdditionalCriticalWorkerThreads | 64    | 0       |
 | MaxThreadsPerQueue              | 64    | 20      |
@@ -154,4 +154,4 @@ SMB 相應放大允許在叢集設定中使用 SMB 3.0，在叢集的所有節�
 
 ### <a name="smb-client-performance-monitor-counters"></a>SMB 用戶端效能監視器計數器
 
-如需 SMB 用戶端計數器的詳細資訊，請參閱[Windows server 2012 檔案伺服器提示：每個共用的新 SMB 用戶端效能計數器提供絕佳的深入](https://blogs.technet.com/b/josebda/archive/2012/11/19/windows-server-2012-file-server-tip-new-per-share-smb-client-performance-counters-provide-great-insight.aspx)解析。
+如需 SMB 用戶端計數器的詳細資訊，請參閱[Windows server 2012 檔案伺服器提示：每個共用的新 SMB 用戶端效能計數器提供絕佳的深入](/archive/blogs/josebda/windows-server-2012-file-server-tip-new-per-share-smb-client-performance-counters-provide-great-insight)解析。

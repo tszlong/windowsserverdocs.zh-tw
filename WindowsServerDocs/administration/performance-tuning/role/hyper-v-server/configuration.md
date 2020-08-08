@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 02f2849b7259379ebf6beed927601b13966a7704
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 42e95662cd2177b37fef1b47f0a51989ab964168
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896148"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992151"
 ---
 # <a name="hyper-v-configuration"></a>Hyper-V 設定
 
@@ -22,7 +22,7 @@ ms.locfileid: "87896148"
 
     Windows Server 2016 中的 hyper-v 將邏輯處理器呈現成每部作用中虛擬機器的一或多個虛擬處理器。 Hyper-v 現在需要支援第二層位址轉譯的處理器 (SLAT) 技術，例如延伸分頁表 (EPT) 或嵌套頁面資料表 (NPT) 。
 
--   **快取**
+-   **Cache**
 
     Hyper-v 可以從較大的處理器快取中獲益，特別是在記憶體中有大型工作集的負載，以及虛擬處理器與邏輯處理器的比率高的虛擬機器設定中。
 
@@ -56,7 +56,7 @@ Windows Server 會在各種不同的案例中使用虛擬化。 從輕量載入�
 
 Windows Server 2016 的功能為 Server Core 安裝選項。 Server Core 提供裝載一組選取的伺服器角色（包括 Hyper-v）的最小環境。 它的功能是主機 OS 的磁片使用量較小，且攻擊和服務介面較小。 因此，強烈建議 Hyper-v 虛擬化伺服器使用 Server Core 安裝選項。
 
-Server Core 安裝只有在使用者登入時才會提供主控台視窗，但 Hyper-v 會公開包含[Windows Powershell](https://technet.microsoft.com/library/hh848559.aspx)的遠端系統管理功能，讓系統管理員可以從遠端進行管理。
+Server Core 安裝只有在使用者登入時才會提供主控台視窗，但 Hyper-v 會公開包含[Windows Powershell](/powershell/module/hyper-v/?view=win10-ps)的遠端系統管理功能，讓系統管理員可以從遠端進行管理。
 
 ## <a name="dedicated-server-role"></a>專用伺服器角色
 
@@ -66,7 +66,7 @@ Server Core 安裝只有在使用者登入時才會提供主控台視窗，但 H
 
 ## <a name="guest-operating-systems"></a>客體作業系統
 
-Hyper-v 支援並已針對數個不同的客體作業系統進行調整。 每個來賓支援的虛擬處理器數目取決於客體作業系統。 如需支援的客體作業系統清單，請參閱[Hyper-v 總覽](https://technet.microsoft.com/library/hh831531.aspx)。
+Hyper-v 支援並已針對數個不同的客體作業系統進行調整。 每個來賓支援的虛擬處理器數目取決於客體作業系統。 如需支援的客體作業系統清單，請參閱[Hyper-v 總覽](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11))。
 
 ## <a name="cpu-statistics"></a>CPU 統計資料
 

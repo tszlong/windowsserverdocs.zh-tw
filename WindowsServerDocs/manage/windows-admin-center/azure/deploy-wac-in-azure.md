@@ -6,12 +6,12 @@ author: jwwool
 ms.author: jeffrew
 ms.date: 04/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b4ae232d47398800ecae8500cff6726128f22b83
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 381073ad383913684b1b861883b981a19583767f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971985"
+ms.locfileid: "87997532"
 ---
 # <a name="deploy-windows-admin-center-in-azure"></a>在 Azure 中部署 Windows Admin Center
 
@@ -29,7 +29,7 @@ ms.locfileid: "87971985"
 
 如果指定您自己的憑證：
 
-* 將憑證上傳至[Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-whatis)。 首先，在 Azure 入口網站中建立金鑰保存庫，然後將憑證上傳至金鑰保存庫。 或者，您可以使用 Azure 入口網站為您產生憑證。
+* 將憑證上傳至[Azure Key Vault](/azure/key-vault/key-vault-whatis)。 首先，在 Azure 入口網站中建立金鑰保存庫，然後將憑證上傳至金鑰保存庫。 或者，您可以使用 Azure 入口網站為您產生憑證。
 
 ### <a name="script-parameters"></a>指令碼參數
 

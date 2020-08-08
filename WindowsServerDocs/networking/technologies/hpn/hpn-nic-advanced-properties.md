@@ -7,16 +7,16 @@ manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/20/2018
-ms.openlocfilehash: aa26e3ef83ec6255da6a386ecfce34a7501ae3f5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ce9c4049ab701d647701029f41d2570b7fc8cd03
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955635"
+ms.locfileid: "87997658"
 ---
 # <a name="nic-advanced-properties"></a>NIC 進階內容
 
-您可以透過 Windows PowerShell 使用[get-netadapter](https://docs.microsoft.com/powershell/module/netadapter/?view=win10-ps&viewFallbackFrom=winserverr2-ps) Cmdlet 來管理 nic 和所有功能。  您也可以使用 [網路控制台] ( # A0) 來管理 Nic 和所有功能。
+您可以透過 Windows PowerShell 使用[get-netadapter](/powershell/module/netadapter/?view=win10-ps&viewFallbackFrom=winserverr2-ps) Cmdlet 來管理 nic 和所有功能。  您也可以使用 [網路控制台] ( # A0) 來管理 Nic 和所有功能。
 
 1. 在**Windows PowerShell**中， `Get‑NetAdapterAdvancedProperties` 針對兩個不同的 nic 建立/型號執行 Cmdlet。
 

@@ -6,20 +6,18 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: a54b13121933d2780ada9e68a9a7656709947c22
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 9dbb7debbca8d1625ebe975a051ed8b607d1ddd0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518856"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943283"
 ---
 # <a name="event-id-2088-dns-lookup-failure-occurred-with-replication-success"></a>事件識別碼 2088：發生 DNS 查閱錯誤但複寫成功
 
 >適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-當執行 Windows Server 2003 （含 Service Pack 1 （SP1））的目的地網域控制站在目錄服務事件記錄檔中收到事件識別碼2088時，會嘗試將別名（CNAME）資源記錄中的全域唯一識別碼（GUID）解析為來源網域控制站的 IP 位址失敗。 不過，目的地網域控制站會嘗試使用完整功能變數名稱（FQDN）或來源網域控制站的 NetBIOS 名稱來解析名稱和成功的方法。 雖然複寫成功，但應診斷並解決網域名稱系統（DNS）問題。
+當執行 Windows Server 2003 Service Pack 1 (SP1 的目的地網域控制站) 在目錄服務事件記錄檔中收到事件識別碼2088時，會嘗試將別名 (CNAME) 資源記錄中的全域唯一識別碼 (GUID) ，解析為來源網域控制站的 IP 位址失敗。 不過，目的地網域控制站會嘗試使用完整功能變數名稱 (FQDN) 或來源網域控制站的 NetBIOS 名稱來解析名稱和成功。 雖然複寫成功，但應診斷並解決網域名稱系統 (DNS) 問題。
 
 以下是事件文字的範例：
 
@@ -67,11 +65,11 @@ dcdiag/test： dns
   <section>
     <title>診斷</title>
     <content>
-      <para>若無法使用 DNS 中的別名（CNAME）資源記錄來解析來源網域控制站名稱，可能是因為 dns 的錯誤或 DNS 資料傳播中的延遲所致。</para>
+      <para>若無法使用別名解析來源網域控制站名稱 (CNAME) 資源記錄，可能是因為 dns 的錯誤或 dns 資料傳播中的延遲所致。</para>
     </content>
   </section>
   <section>
-    <title>解決方案</title>
+    <title>解決方法</title>
     <content>
       <para>如 &quot; <link xlink:href="85b1d179-f53e-4f95-b0b8-5b1c096a8076">事件識別碼2087： dns 查閱失敗</link>中所述，繼續進行 DNS 測試，導致複寫失敗。&quot;</para>
     </content>

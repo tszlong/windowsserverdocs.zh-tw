@@ -6,22 +6,20 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: f656571f8afbca1a86c4a25a25601e494a44c71f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c9d634467af9f883a88a27c6b5f1cad15326fff6
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963820"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943207"
 ---
 # <a name="deploying-ad-ds-in-a-windows-server-2003-organization"></a>在 Windows Server 2003 組織中部署 AD DS
 
 > 適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-如果您的組織目前正在執行 Windows Server 2003 Active Directory，您可以將部分或所有網域控制站的作業系統就地升級到 Windows Server 2008，或在您的環境中引進執行 Windows Server 2008 的網域控制站，以部署 Windows Server 2008 Active Directory Domain Services （AD DS）。
+如果您的組織目前正在執行 Windows Server 2003 Active Directory，您可以將部分或所有網域控制站的作業系統就地升級到 Windows Server 2008，或在您的環境中引進執行 Windows Server 2008 的網域控制站，以部署 Windows Server 2008 Active Directory Domain Services (AD DS) 。
 
-在您可以將執行 Windows Server 2008 的網域控制站新增到現有的 Windows Server 2003 Active Directory 網域之前，您必須執行**adprep**（命令列工具）。 Adprep 會擴充 AD DS 架構、更新所選物件的預設安全描述項，並依某些應用程式的需求新增目錄物件。 Adprep 適用于 Windows Server 2008 安裝磁片（\sources\adprep\adprep.exe）。 如需詳細資訊，請參閱[Adprep](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc731728(v=ws.11))。
+在您可以將執行 Windows Server 2008 的網域控制站新增到現有的 Windows Server 2003 Active Directory 網域之前，您必須執行**adprep**（命令列工具）。 Adprep 會擴充 AD DS 架構、更新所選物件的預設安全描述項，並依某些應用程式的需求新增目錄物件。 Adprep 適用于 Windows Server 2008 安裝磁片 ( # A0) 。 如需詳細資訊，請參閱[Adprep](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc731728(v=ws.11))。
 
 下圖顯示在目前執行 Windows Server 2003 Active Directory 的網路環境中部署 Windows Server 2008 AD DS 的步驟。
 

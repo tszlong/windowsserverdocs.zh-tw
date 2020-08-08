@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: e4f400e8320b6ff48fcea3289654656eb1ad1418
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 7064a3ef4735d88051a91390089549d4a3eba613
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966650"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943082"
 ---
 # <a name="determining-whether-to-upgrade-existing-domains-or-deploy-new-domains"></a>決定是否要升級現有網域或部署新網域
 
@@ -27,4 +25,4 @@ ms.locfileid: "86966650"
 
 如需有關在樹系內和之間重組 AD DS 網域的詳細資訊，請參閱[ADMT 指南：遷移和重組 Active Directory 網域](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc974332(v=ws.10))。
 
-如需協助您記錄新網域和升級網域之計畫的工作表，請從[Windows Server 2003 部署套件的工作輔助程式](https://microsoft.com/download/details.aspx?id=9608)下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，並開放「網域規劃」（DSSLOGI_5.doc）。
+如需協助您記錄新網域和升級網域之計畫的工作表，請從[Windows Server 2003 部署套件的工作輔助](https://microsoft.com/download/details.aspx?id=9608)下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，並開放「網域規劃」 ( # A1) 。

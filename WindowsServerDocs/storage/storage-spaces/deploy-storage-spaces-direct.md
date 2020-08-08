@@ -8,12 +8,12 @@ author: stevenek
 ms.date: 07/24/2020
 description: 使用 Windows Server 中的儲存空間直接存取部署軟體定義的存放裝置的逐步指示，做為超大範圍基礎結構或聚合式 (也稱為分類式) 基礎結構。
 ms.localizationpriority: medium
-ms.openlocfilehash: a15f9df55fd5650443f4d0220dee6b4ada9253d2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: f0115e76ca297fa0af5fc57e197d75e428cb3e72
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971105"
+ms.locfileid: "87997566"
 ---
 # <a name="deploy-storage-spaces-direct"></a>部署儲存空間直接存取
 
@@ -49,7 +49,7 @@ ms.locfileid: "87971105"
 
 第一個步驟是在每個將位於叢集中的伺服器上安裝 Windows Server。 儲存空間直接存取需要 Windows Server 2016 Datacenter Edition。 您可以使用 Server Core 安裝選項或具有桌面體驗的伺服器。
 
-當您使用安裝程式來安裝 Windows Server 時，可以在*Windows server* (參照 server Core) 和*具有桌面體驗) 的 Windows server (server *，這相當於 Windows Server 2012 R2 中提供的*完全*安裝選項。 如果您沒有選擇，將會取得 Server Core 安裝選項。 如需詳細資訊，請參閱[Windows Server 2016 的安裝選項](../../get-started/Windows-Server-2016.md)。
+當您使用安裝程式來安裝 Windows Server 時，可以在*Windows server* (參照 server Core) 和*具有桌面體驗) 的 Windows server (server *，這相當於 Windows Server 2012 R2 中提供的*完全*安裝選項。 如果您沒有選擇，將會取得 Server Core 安裝選項。 如需詳細資訊，請參閱[Windows Server 2016 的安裝選項](../../index.yml)。
 
 ### <a name="step-12-connect-to-the-servers"></a>步驟1.2：連接到伺服器
 

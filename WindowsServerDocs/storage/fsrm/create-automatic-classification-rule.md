@@ -2,18 +2,16 @@
 title: 建立自動分類規則
 description: 本文說明如何建立屬性的分類規則。
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 9fc2034905408975f82f9348f151d99df17f9d3a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 3793e8cd7f72e9e8d365df855c8c3450d9107f9b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475395"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961472"
 ---
 # <a name="create-an-automatic-classification-rule"></a>建立自動分類規則
 
@@ -50,9 +48,9 @@ ms.locfileid: "85475395"
 
 6.  按一下 **\[確定\]** 或 **\[取消\]** 以關閉 **\[進階\]** 對話方塊。
 
-7.  按一下 [確定]****。
+7.  按一下 [確定]  。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [建立分類屬性](create-classification-property.md)
 -   [分類管理](classification-management.md)

@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 7a73bf1b677d09cc31783b58148c8ca7c581fbca
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c3f17320432d44a84be05040e23e7af30995c969
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971375"
+ms.locfileid: "87997559"
 ---
 # <a name="guarded-fabric-and-shielded-vms"></a>受防護網狀架構與受防護的 VM
 
@@ -28,7 +28,7 @@ ms.locfileid: "87971375"
 - 影片： [Windows Server 2016 中受防護的虛擬機器簡介](https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016)
 - 影片：[使用 Windows Server 2016 Hyper-v 深入探索受防護的 vm](https://channel9.msdn.com/events/Ignite/2016/BRK3124)
 - 影片：[使用 Windows Server 2016 部署受防護的 vm 和受防護的網狀架構](https://mva.microsoft.com/training-courses/deploying-shielded-vms-and-a-guarded-fabric-with-windows-server-2016-17131?l=WFLef7vUD_4604300474)
-- Blog：[資料中心和私用雲端安全性 Blog](https://blogs.technet.microsoft.com/datacentersecurity/)
+- Blog：[資料中心和私用雲端安全性 Blog](/archive/blogs/datacentersecurity/)
 - 總覽：[受保護的網狀架構和受防護的 vm 總覽](Guarded-Fabric-and-Shielded-VMs.md)
 
 ## <a name="planning-topics"></a>規劃主題
@@ -46,7 +46,7 @@ ms.locfileid: "87971375"
         - [使用 AD 模式部署受防護主機](guarded-fabric-admin-trusted-attestation-creating-a-security-group.md)
         - [使用 TPM 模式部署受防護主機](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md)
         - [確認受防護主機可以證明](guarded-fabric-confirm-hosts-can-attest-successfully.md)
-        - [受防護的 VM - 託管服務提供者會在 VMM 中部署受防護的主機](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-hosts)
+        - [受防護的 VM - 託管服務提供者會在 VMM 中部署受防護的主機](/system-center/vmm/guarded-deploy-host?view=sc-vmm-2019)
     - [部署受防護的 VM](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
         - [建立受防護的 VM 範本](guarded-fabric-create-a-shielded-vm-template.md)
         - [準備 VM 防護協助程式 VHD](guarded-fabric-vm-shielding-helper-vhd.md)

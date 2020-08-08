@@ -2,18 +2,16 @@
 title: 建立配額
 description: 本文說明如何以範本為基礎建立配額
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: b3513510ef00eec7ea78a3193cf44c25ddb17c7e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ce4aa23aac2ccceed8b3600418609a7678e2227f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475215"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961462"
 ---
 # <a name="create-a-quota"></a>建立配額
 
@@ -49,7 +47,7 @@ ms.locfileid: "85475215"
 
 7.  按一下 [建立]。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [配額管理](quota-management.md)
 -   [建立自動套用配額](create-auto-apply-quota.md)

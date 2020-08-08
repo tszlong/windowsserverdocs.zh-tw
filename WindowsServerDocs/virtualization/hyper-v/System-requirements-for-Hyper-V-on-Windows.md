@@ -7,12 +7,12 @@ ms.assetid: bc4a4971-f727-40cd-91f5-2ee6d24b54cb
 author: kbdazure
 ms.author: kathydav
 ms.date: 9/30/2016
-ms.openlocfilehash: 56d9f862d4bd31ac8fba08837e59c94b865f7b1a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d0cbbc79fe1dc942dfe79ca9dbe81769dd112730
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970025"
+ms.locfileid: "87997617"
 ---
 # <a name="system-requirements-for-hyper-v-on-windows-server"></a>Windows Server 上的 Hyper-v 系統需求
 
@@ -22,7 +22,7 @@ Hyper-v 具有特定的硬體需求，而某些 Hyper-v 功能則有額外的需
 
 如果您已經在使用 Hyper-v，很可能可以使用現有的硬體。 Windows Server 2012 R2 並未大幅改變一般硬體需求。  但是，您將需要較新的硬體，才能使用受防護的虛擬機器或個別的裝置指派。 這些功能依賴特定硬體支援，如下所述。 此外，硬體的主要差異在於第二層位址轉譯 (SLAT) 現在是必要的，而不是建議的做法。
 
-如需 Hyper-v 支援的最大設定（例如執行中虛擬機器的數目）的詳細資訊，請參閱[規劃 Windows Server 2016 中的 hyper-v 擴充性](plan/Plan-for-Hyper-V-scalability-in-Windows-Server-2016.md)。 您可以在虛擬機器中執行的作業系統清單涵蓋于[Windows Server 上的 Hyper-v 支援的 windows 客體作業系統](Supported-Windows-guest-operating-systems-for-Hyper-V-on-Windows.md)。
+如需 Hyper-v 支援的最大設定（例如執行中虛擬機器的數目）的詳細資訊，請參閱[規劃 Windows Server 2016 中的 hyper-v 擴充性](./plan/plan-hyper-v-scalability-in-windows-server.md)。 您可以在虛擬機器中執行的作業系統清單涵蓋于[Windows Server 上的 Hyper-v 支援的 windows 客體作業系統](Supported-Windows-guest-operating-systems-for-Hyper-V-on-Windows.md)。
 
 ## <a name="general-requirements"></a>一般需求
 
@@ -89,4 +89,3 @@ Systeminfo.exe
 
 - 第 2 代
 - Windows Server 2012 或更新版本做為客體作業系統
-

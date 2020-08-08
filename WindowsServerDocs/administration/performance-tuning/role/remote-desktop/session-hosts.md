@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: hammadbu; vladmis; denisgun
 author: phstee
 ms.date: 10/22/2019
-ms.openlocfilehash: 9de802638a6f8225d4c8b942ac3cbea303f09a89
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 9a82f0db1f586e1f762292c61eabdd7f6556c8bc
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896051"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992111"
 ---
 # <a name="performance-tuning-remote-desktop-session-hosts"></a>效能微調遠端桌面工作階段主機
 
@@ -91,13 +91,13 @@ RD 工作階段主機伺服器的網路使用量包含兩個主要類別：
 
 -   停用註冊要從使用者登入或會話啟動開始的不必要進程。
 
-    建立新的使用者會話時，這些程式可能會大幅提高 CPU 使用量的成本，這通常是需要大量 CPU 的程式，而且在早上的案例中可能會很耗費資源。 使用 MsConfig.exe 或 MsInfo32.exe，取得在使用者登入時啟動的處理常式清單。 如需更詳細的資訊，您可以使用[適用于 Windows 的 Autoruns](https://technet.microsoft.com/sysinternals/bb963902.aspx)。
+    建立新的使用者會話時，這些程式可能會大幅提高 CPU 使用量的成本，這通常是需要大量 CPU 的程式，而且在早上的案例中可能會很耗費資源。 使用 MsConfig.exe 或 MsInfo32.exe，取得在使用者登入時啟動的處理常式清單。 如需更詳細的資訊，您可以使用[適用于 Windows 的 Autoruns](/sysinternals/downloads/autoruns)。
 
 針對記憶體耗用量，您應該考慮下列各項：
 
 -   確認應用程式載入的 Dll 不會重新置放。
 
-    -   重新放置的 Dll 可以藉由選取 [處理常式 DLL 視圖] 來驗證，如下圖所示，使用[Process Explorer](https://technet.microsoft.com/sysinternals/bb896653.aspx)。
+    -   重新放置的 Dll 可以藉由選取 [處理常式 DLL 視圖] 來驗證，如下圖所示，使用[Process Explorer](/sysinternals/downloads/process-explorer)。
 
     -   在這裡，我們可以看到 y.dll 已重新放置，因為 x.dll 已經佔用其預設基底位址，而 ASLR 並未啟用
 

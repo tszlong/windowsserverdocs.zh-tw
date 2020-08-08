@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/08/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 3755f1cdaa5dfb49083c9e3c3e8b6a8c4edb40d2
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 23959e4f373afbd745e5f1c8c4b760d766ab53e3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518846"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943263"
 ---
 # <a name="executive-summary"></a>執行摘要
 
@@ -22,7 +20,7 @@ ms.locfileid: "87518846"
 >[!IMPORTANT]
 >下列檔是以2013撰寫，而且僅供歷程記錄之用。  我們目前正在審查此檔，但仍有可能變更。  它可能不會反映目前的最佳作法。
 
-沒有資訊技術（IT）基礎結構的組織會遭受攻擊，但是如果適當的原則、程式和控制項是為了保護組織運算基礎結構的重要區段而實行，則可能會導致入侵事件無法成長到計算環境的大量入侵。
+沒有任何使用資訊技術的組織 (IT) 基礎結構不受攻擊的威脅，但如果適當的原則、處理常式和控制項是為了保護組織運算基礎結構的重要區段而實行，則可能會導致入侵事件無法成長到計算環境的大量入侵。
 
 本「執行摘要」的目的是要做為檔內容摘要的獨立檔，其中包含的建議可協助組織加強其 Active Directory 安裝的安全性。 藉由實施這些建議，組織將能夠找出並設定安全性活動的優先順序、保護其組織運算基礎結構的重要區段，並建立控制措施，大幅降低對 IT 環境的重要元件攻擊成功的可能性。
 
@@ -51,7 +49,7 @@ ms.locfileid: "87518846"
   - 缺乏安全的應用程式開發實務
 
 - **認證竊取的吸引**人-認證竊取攻擊是攻擊者一開始取得網路上電腦的特殊許可權存取權，然後使用自由可用的工具，從其他已登入的帳戶會話中解壓縮認證。 本節包含下列內容：
-  - **增加危害可能性的活動**-因為認證竊取的目標通常是具有高許可權的網域帳戶和「非常重要的人員」（VIP）帳戶，所以系統管理員必須在意可提高認證竊取攻擊成功機率的活動。 這些活動包括：
+  - **增加危害可能性的活動**-因為認證竊取的目標通常是具有高許可權的網域帳戶，而且「非常重要的人」 (VIP) 帳戶，所以系統管理員必須在意可提高認證竊取攻擊成功機率的活動。 這些活動包括：
 
     - 使用具有特殊許可權的帳戶登入不安全的電腦
 
@@ -73,12 +71,12 @@ ms.locfileid: "87518846"
 
     - 網域控制站
 
-    - 其他會影響身分識別、存取和設定管理的基礎結構服務，例如公開金鑰基礎結構（PKI）伺服器和 systems management server
+    - 其他會影響身分識別、存取和設定管理的基礎結構服務，例如 (PKI) 伺服器和系統管理伺服器的公開金鑰基礎結構
 
 ## <a name="reducing-the-active-directory-attack-surface"></a>減少 Active Directory 的攻擊面
 本節著重于技術控制項，以減少 Active Directory 安裝的受攻擊面。 本章節包含下列主題：
 
-- Active Directory 一節中的特殊**許可權帳戶和群組**會討論 Active Directory 中最高許可權的帳戶和群組，以及用來保護特殊許可權帳戶的機制。 在 Active Directory 中，有三個內建組是目錄中的最高許可權群組（Enterprise Admins、Domain Admins 和 Administrators），不過也應該保護一些額外的群組和帳戶。
+- Active Directory 一節中的特殊**許可權帳戶和群組**會討論 Active Directory 中最高許可權的帳戶和群組，以及用來保護特殊許可權帳戶的機制。 在 Active Directory 內，有三個內建群組是目錄中的最高許可權群組 (Enterprise Admins、Domain Admins 和 Administrators) ，雖然也應該保護一些額外的群組和帳戶。
 
 - 「**執行最小許可權的系統管理模型**」一節著重于找出使用高許可權帳戶進行日常管理的風險，以及提供建議來降低風險。
 
@@ -94,7 +92,7 @@ ms.locfileid: "87518846"
 
 - 在資料存放庫中
 
-- 「正在**執行安全的系統管理主機**」一節說明安全的系統管理主機，也就是設定為支援 Active Directory 和連線系統管理的電腦。 這些主機專門用於系統管理功能，而且不會執行電子郵件應用程式、網頁瀏覽器或生產力軟體（例如 Microsoft Office）等軟體。
+- 「正在**執行安全的系統管理主機**」一節說明安全的系統管理主機，也就是設定為支援 Active Directory 和連線系統管理的電腦。 這些主機專門用於系統管理功能，而且不會執行電子郵件應用程式、網頁瀏覽器或生產力 (軟體等軟體，例如 Microsoft Office) 。
 
 本節包含下列內容：
 
@@ -111,10 +109,10 @@ ms.locfileid: "87518846"
 
 - **網域控制站作業系統**-包含保護網域控制站作業系統安全的建議。
 
-- **安全設定網域控制站**：原生和自由可用的設定工具和設定，可用來建立網域控制站的安全性設定基準，之後可以由群組原則物件（gpo）來強制執行。
+- **安全設定網域控制站**：原生和自由可用的設定工具和設定，可用來建立網域控制站的安全性設定基準，之後可以透過群組原則物件 (gpo) 來強制執行。
 
 ## <a name="monitoring-active-directory-for-signs-of-compromise"></a>監視 Active Directory 遭到危害的徵兆
-本節提供舊版審查分類和稽核原則子類別的相關資訊（在 Windows Vista 和 Windows Server 2008 中引進），以及 Advanced Audit Policy （這是在 Windows Server 2008 R2 中引進）。 此外，也提供要監視之事件和物件的相關資訊，這可能表示嘗試危害環境，以及一些其他參考，可用來為 Active Directory 建立完整的稽核原則。
+本節提供在 windows Vista 和 Windows Server 2008) 中引進的舊版審查分類和稽核原則子類別 (相關資訊，以及 Windows Server 2008 R2) 中引進的 Advanced Audit Policy (。 此外，也提供要監視之事件和物件的相關資訊，這可能表示嘗試危害環境，以及一些其他參考，可用來為 Active Directory 建立完整的稽核原則。
 
 本章節包含下列主題：
 
@@ -143,7 +141,7 @@ ms.locfileid: "87518846"
 
     - **建立 Active Directory 的商業中心安全性實務**，以有效管理由 Active Directory 管理的使用者、資料、應用程式和系統的生命週期，請遵循這些原則。
 
-        - **將商務擁有權指派給 Active Directory 資料**-將基礎結構元件的擁有權指派給它;針對新增至 Active Directory Domain Services （AD DS）以支援企業的資料（例如，新的員工、新的應用程式和新的資訊儲存機制），指定的業務單位或使用者應該與資料相關聯。
+        - **將商務擁有權指派給 Active Directory 資料**-將基礎結構元件的擁有權指派給它;針對新增至 Active Directory Domain Services (AD DS) 以支援企業的資料，例如，新的員工、新的應用程式和新的資訊存放庫，指定的業務單位或使用者應該與資料相關聯。
 
         - **實行商業導向的生命週期管理**-應針對 Active Directory 中的資料來實行生命週期管理。
 

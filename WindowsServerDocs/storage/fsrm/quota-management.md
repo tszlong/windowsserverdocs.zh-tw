@@ -2,22 +2,20 @@
 title: 配額管理
 description: 本文說明如何建立和管理配額
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 1f2d584e7d3a0239e38dcadcf6415683d91a4bec
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b1d2d37d73a3d7837fd5390b9f5860f7cb41ee85
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474196"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961372"
 ---
 # <a name="quota-management"></a>配額管理
 
-> 適用于： Windows Server 2019、Windows Server 2016、Windows Server （半年通道）、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用于： Windows Server 2019、Windows Server 2016、Windows Server (半年通道) 、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 在檔案伺服器資源管理員 Microsoft<sup>®</sup> Management Console (MMC) 嵌入式管理單元的 **\[配額管理\]** 節點，您可以執行下列工作：
 
@@ -42,7 +40,7 @@ ms.locfileid: "85474196"
 > [!Note]
 > 若要設定電子郵件通知和報告功能，您必須先設定檔案伺服器資源管理員的一般選項。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [設定檔案伺服器資源管理員選項](setting-file-server-resource-manager-options.md)
 

@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 6de4232d-b0b3-4e43-8735-ebae35ae4f9f
 author: dcuomo
 ms.author: dacuo
-ms.openlocfilehash: 5a0f8d372c8e84e6e9140ef40f89c1fa7b116355
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0059e04b79754a3fb183a51cbd75bc03e9a89ae5
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87939999"
+ms.locfileid: "87997551"
 ---
 # <a name="windows-server-supported-networking-scenarios"></a>Windows Server 支援的網路功能案例
 
@@ -170,7 +170,7 @@ NIC 小組案例可讓您：
 
 SET 是替代的 NIC 小組解決方案，可用於包含 Hyper-v 的環境，以及在 Windows Server 2016 中 (SDN) 堆疊的軟體定義網路功能。 將一些 NIC 小組功能整合到 Hyper-v 虛擬交換器。
 
-如需詳細資訊，請參閱[ (RDMA 的遠端直接記憶體存取) 和切換內嵌小組 (設定) ](https://technet.microsoft.com/windows-server-docs/networking/technologies/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming)
+如需詳細資訊，請參閱[ (RDMA 的遠端直接記憶體存取) 和切換內嵌小組 (設定) ](../virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming.md)
 
 
 
@@ -180,6 +180,3 @@ Windows Server 2016 不支援下列網路功能案例。
 -   以 VLAN 為基礎的租使用者虛擬網路。
 
 -   Underlay 或重迭中不支援 IPv6。
-
-
-

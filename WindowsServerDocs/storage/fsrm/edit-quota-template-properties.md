@@ -2,18 +2,16 @@
 title: 編輯配額範本內容
 description: 本文說明如何編輯配額範本內容，以將變更擴展到由原始配額範本中建立的配額
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: f4793616caf9ba4a8f9db09cd1902432323c081b
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4e8a112f26f2b0ffdf8047063411dbb5539f4eb1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474035"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961412"
 ---
 # <a name="edit-quota-template-properties"></a>編輯配額範本內容
 
@@ -40,9 +38,9 @@ ms.locfileid: "85474035"
     -   如果您想要修改所有由原始範本中建立的現有配額，請選取 **\[將範本套用到所有的衍生配額\]**。
     -   如果您想要保持現有的配額不變，請選取 **\[不要將範本套用到衍生配額\]**。
 
-6.  按一下 [確定]****。
+6.  按一下 [確定]  。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [配額管理](quota-management.md)
 -   [建立配額範本](create-quota-template.md)

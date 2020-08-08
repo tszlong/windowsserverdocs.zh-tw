@@ -2,18 +2,16 @@
 title: 設定存放裝置報告
 description: 本文說明如何設定存放裝置報告的預設參數
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 94d1b75bba4edac5ad8df80adb13d95a7b8dec39
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 8b9d6a53b5f34c0c053de860895f5c4e48b07c83
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474155"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961492"
 ---
 # <a name="configure-storage-reports"></a>設定存放裝置報告
 
@@ -38,9 +36,9 @@ ms.locfileid: "85474155"
 
 6. 若要查看所有報告的預設參數清單，請按一下 **\[檢閱報告\]**。 然後按一下 [關閉]****。
 
-7.  按一下 [確定]****。
+7.  按一下 [確定]  。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [設定檔案伺服器資源管理員選項](setting-file-server-resource-manager-options.md)
 -   [存放裝置報告管理](storage-reports-management.md)
