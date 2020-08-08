@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 35afec8e-39a4-463b-839a-3c300ab01174
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: f1d4be029ffac40486482ff8ff56528b5f662ba9
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8b2ae3691ff0181dc4559692829febbbdba94c86
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955265"
+ms.locfileid: "87989827"
 ---
 # <a name="step-2-configure-advanced-directaccess-servers"></a>步驟2設定 Advanced DirectAccess 伺服器
 
@@ -241,5 +241,4 @@ Set-DAClientExperienceConfiguration -FriendlyName 'Contoso DirectAccess Connecti
 
 ## <a name="next-step"></a>後續步驟
 
--   [步驟 3：檢查部署](Step-3-Verify-the-Deployment.md)
-
+-   [步驟 3：檢查部署](./da-adv-configure-s3-verify.md)

@@ -2,18 +2,16 @@
 title: 在 Active Directory 中使用適合拆分式 DNS 部署的 DNS 原則
 description: 您可以使用本主題，利用 Windows Server 2016 中 Active Directory 整合式 DNS 區域，在分裂部署時運用 DNS 原則的流量管理功能。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-dns
 ms.topic: article
 ms.assetid: f9533204-ad7e-4e49-81c1-559324a16aeb
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 444670b5098d0a6cd1f834ffbccee606e038bf70
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 1f6da8584f7a2b2221fb1a283b8ea4de842ddc58
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518284"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964134"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-in-active-directory"></a>在 Active Directory 中使用適合拆分式 DNS 部署的 DNS 原則
 
@@ -23,7 +21,7 @@ ms.locfileid: "87518284"
 
 在 Windows Server 2016 中，DNS 原則支援已延伸到 Active Directory 整合的 DNS 區域。 Active Directory 整合 \- 為 DNS 伺服器提供多個主要的高可用性功能。
 
-在過去，此案例需要 DNS 系統管理員維護兩部不同的 DNS 伺服器，每個都提供服務給每一組使用者（內部和外部）。 如果區域內只有少數記錄是分割的 \- brained，或區域的兩個實例（內部和外部）都已委派給相同的父系網域，這就成為管理之間謎。
+在過去，此案例需要 DNS 系統管理員維護兩部不同的 DNS 伺服器，每個都提供服務給每一組使用者（內部和外部）。 如果區域內只有少數記錄是分割的 \- brained，或區域的兩個實例 (內部和外部) 已委派給相同的父系網域，這就成為了管理之間謎。
 
 > [!NOTE]
 > - \-當單一區域有兩個版本、一個用於組織內部網路上的內部使用者，以及一個適用于外部使用者（通常是網際網路上的使用者）的版本時，DNS 部署就是分割的大腦。
@@ -60,9 +58,9 @@ DNS 系統管理員會使用下列 IP 位址來設定 DNS 伺服器介面。
 
 如果接收查詢的伺服器介面符合任何原則，則會使用相關聯的區域範圍來回應查詢。
 
-因此，在我們的範例中，在私人 IP （10.0.0.56）上收到的 www.career.contoso.com DNS 查詢會收到包含內部 IP 位址的 DNS 回應。而且在公用網路介面上接收到的 DNS 查詢，會收到包含預設區域範圍中公用 IP 位址的 DNS 回應（這與一般查詢解析相同）。
+因此，在我們的範例中，在私人 IP 上收到的 www.career.contoso.com DNS 查詢 (10.0.0.56) 會收到包含內部 IP 位址的 DNS 回應;而在公用網路介面上接收到的 DNS 查詢，會收到包含預設區域範圍中公用 IP 位址的 DNS 回應 (這與一般查詢解析) 相同。
 
-\( \) 只有預設區域範圍才支援動態 DNS DDNS 更新和清除。 因為內部用戶端是由預設區域範圍服務，所以 Contoso DNS 系統管理員可以繼續使用現有的機制（動態 DNS 或靜態）來更新 contoso.com 中的記錄。 若為非 \- 預設區域範圍 \( ，例如此範例中的外部範圍 \) ，則無法使用 DDNS 或清除支援。
+\( \) 只有預設區域範圍才支援動態 DNS DDNS 更新和清除。 因為內部用戶端是由預設區域範圍服務，所以 Contoso DNS 系統管理員可以繼續使用現有的機制 (動態 DNS 或靜態) 來更新 contoso.com 中的記錄。 若為非 \- 預設區域範圍 \( ，例如此範例中的外部範圍 \) ，則無法使用 DDNS 或清除支援。
 
 ### <a name="high-availability-of-policies"></a>原則的高可用性
 

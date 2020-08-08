@@ -1,19 +1,17 @@
 ---
 title: 使用 Windows 管理中心管理容錯移轉叢集
-description: 使用 Windows 管理中心管理容錯移轉叢集（Project 檀香山）
-ms.technology: manage
+description: '使用 Windows Admin Center 管理容錯移轉叢集 (Project 檀香山) '
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 06/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: b7f015ac4c9906447069501bf0922b36306a51d7
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: a0b9c0e43d1573a52f69454ce05dd7a1c281510e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950489"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964414"
 ---
 # <a name="manage-failover-clusters-with-windows-admin-center"></a>使用 Windows 管理中心管理容錯移轉叢集
 
@@ -48,14 +46,14 @@ ms.locfileid: "75950489"
 
 下列工具適用于容錯移轉叢集連接：
 
-| 工具 | 說明 |
+| 工具 | 描述 |
 | ---- | ----------- |
 | 概觀 | 查看容錯移轉叢集詳細資料和管理叢集資源 |
-| [磁碟] | 查看叢集共用磁片和磁片區 |
-| [網路] | 在叢集中查看網路 |
+| 磁碟 | 查看叢集共用磁片和磁片區 |
+| 網路 | 在叢集中查看網路 |
 | 節點 | 查看和管理叢集節點 |
 | 角色 | 管理叢集角色或建立空白角色 |
-| 更新 | 管理叢集感知更新（需要[CredSSP](../understand/faq.md#does-windows-admin-center-use-credssp)） |
+| 更新 | 管理叢集感知更新 (需要[CredSSP](../understand/faq.md#does-windows-admin-center-use-credssp))  |
 | [虛擬機器](manage-virtual-machines.md) | 查看和管理虛擬機器 |
 | 虛擬交換器 | 查看和管理虛擬交換器 |
 

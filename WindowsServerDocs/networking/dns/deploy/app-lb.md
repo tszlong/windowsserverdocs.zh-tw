@@ -2,18 +2,16 @@
 title: 使用 DNS 原則進行應用程式負載平衡
 description: 本主題是 Windows Server 2016 DNS 原則案例指南的一部分
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-dns
 ms.topic: article
 ms.assetid: f9c313ac-bb86-4e48-b9b9-de5004393e06
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 50ac17bafb09eddc6bb02df1d4decf3636f4db17
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 0af8a819494754fc45392116230edad808835e80
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518294"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964234"
 ---
 # <a name="use-dns-policy-for-application-load-balancing"></a>使用 DNS 原則進行應用程式負載平衡
 
@@ -101,7 +99,7 @@ Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -
 
 #### <a name="create-the-dns-policies"></a><a name="bkmk_policies"></a>建立 DNS 原則
 
-建立分割區（區域範圍）並新增記錄之後，您必須建立可將連入查詢分散到這些範圍的 DNS 原則，以便 contosogiftservices.com 的50% 查詢會以西雅圖資料中心內 Web 服務器的 IP 位址回應，其餘部分則平均分散于芝加哥和達拉斯資料中心。
+建立分割區 (區域範圍之後) 並新增記錄之後，您必須建立可將傳入查詢分散到這些範圍的 DNS 原則，讓 contosogiftservices.com 的50% 查詢以西雅圖資料中心內 Web 服務器的 IP 位址回應，其餘部分則平均分散于芝加哥與達拉斯的資料中心。
 
 您可以使用下列 Windows PowerShell 命令來建立將應用程式流量平衡到這三個資料中心的 DNS 原則。
 

@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: a4587cff-c086-49f1-a0bf-cd74b8a44440
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 64ec120f552c5a95b69e9ac635e861507805b281
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d03169b3af61dd4925b0ca2f972faff496955b9d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971955"
+ms.locfileid: "87989235"
 ---
 # <a name="branchcache"></a>BranchCache
 
@@ -143,7 +143,7 @@ BranchCache 可以改善網路應用程式效能和降低共用的資料快取�
 > [!NOTE]
 > 由於某些 Web proxy 無法處理非標準的內容編碼標頭，因此建議您將 BranchCache 與超文字傳輸通訊協定安全 (HTTPS) 而不是 HTTP。
 
-= = = = = = = 如需有關 Windows Server 2016 中雲端技術的詳細資訊，請參閱[軟體定義的網路功能 &#40;SDN&#41;](../sdn/Software-Defined-Networking--SDN-.md)。
+= = = = = = = 如需有關 Windows Server 2016 中雲端技術的詳細資訊，請參閱[軟體定義的網路功能 &#40;SDN&#41;](../sdn/software-defined-networking.md)。
 
 ## <a name="content-information-versions"></a><a name="bkmk_version"></a>內容資訊版本
 

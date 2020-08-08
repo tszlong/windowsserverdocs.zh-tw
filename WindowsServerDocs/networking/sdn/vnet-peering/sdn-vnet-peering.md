@@ -5,12 +5,12 @@ ms.topic: get-started-article
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: 21008268f14435852c7de78ce826bc380f9017a1
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d0d9f149a95c00fdac02cbdd383fb950e56b845a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955815"
+ms.locfileid: "87990039"
 ---
 # <a name="virtual-network-peering"></a>虛擬網路對等互連
 
@@ -57,7 +57,7 @@ ms.locfileid: "87955815"
 
 -   虛擬網路中的虛擬機器可以存取對等互連虛擬網路中的內部負載平衡器。
 
-您可以在任何一個虛擬網路中 (Acl) 套用存取控制清單，以封鎖其他虛擬網路或子網的存取（如有需要）。 如果您開啟對等互連虛擬網路之間的完整連線 (這是) 的預設選項，您可以將 Acl 套用至特定子網或虛擬機器，以封鎖或拒絕特定的存取。 若要深入瞭解 Acl，請參閱[使用存取控制清單 (acl) 來管理資料中心網路流量](https://docs.microsoft.com/windows-server/networking/sdn/manage/use-acls-for-traffic-flow)。
+您可以在任何一個虛擬網路中 (Acl) 套用存取控制清單，以封鎖其他虛擬網路或子網的存取（如有需要）。 如果您開啟對等互連虛擬網路之間的完整連線 (這是) 的預設選項，您可以將 Acl 套用至特定子網或虛擬機器，以封鎖或拒絕特定的存取。 若要深入瞭解 Acl，請參閱[使用存取控制清單 (acl) 來管理資料中心網路流量](../manage/use-acls-for-traffic-flow.md)。
 
 ## <a name="service-chaining"></a>服務鏈結
 
@@ -65,7 +65,7 @@ ms.locfileid: "87955815"
 
 您可以部署中樞和輪輻網路，其中中樞虛擬網路可以裝載基礎結構元件，例如網路虛擬裝置。 所有與中樞虛擬網路對等的輪輻虛擬網路。 流量可以流經中樞虛擬網路中的網路虛擬裝置。
 
-虛擬網路對等互連可讓使用者定義路由中的下一個躍點成為對等互連虛擬網路中虛擬機器的 IP 位址。 若要深入瞭解使用者定義的路由，請參閱[在虛擬網路上使用網路虛擬裝置](https://docs.microsoft.com/windows-server/networking/sdn/manage/use-network-virtual-appliances-on-a-vn)。
+虛擬網路對等互連可讓使用者定義路由中的下一個躍點成為對等互連虛擬網路中虛擬機器的 IP 位址。 若要深入瞭解使用者定義的路由，請參閱[在虛擬網路上使用網路虛擬裝置](../manage/use-network-virtual-appliances-on-a-vn.md)。
 
 ## <a name="gateways-and-on-premises-connectivity"></a>閘道及內部部署連線能力
 
@@ -87,4 +87,3 @@ ms.locfileid: "87955815"
 
 ## <a name="next-steps"></a>後續步驟
 [設定虛擬網路對等互連](sdn-configure-vnet-peering.md)：在此程式中，您會使用 Windows PowerShell 來尋找 HNV 提供者邏輯網路，以建立兩個虛擬網路，每一個都有一個子網。 您也可以設定兩個虛擬網路之間的對等互連。
-

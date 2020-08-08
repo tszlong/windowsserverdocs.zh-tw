@@ -1,19 +1,17 @@
 ---
 title: 準備您的開發環境
 description: 準備您的開發環境 Windows Admin Center SDK (Project Honolulu)
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 09/18/2018
-ms.prod: windows-server
-ms.openlocfilehash: 136107210d2a8a4b336c9e4eb809e2ca096bfba2
-ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
+ms.openlocfilehash: 09d39aa027adf360c339da434b16038a3b8e5c90
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81269215"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964594"
 ---
 # <a name="prepare-your-development-environment"></a>準備您的開發環境
 
@@ -26,18 +24,18 @@ ms.locfileid: "81269215"
 
 若要準備您的開發環境，請執行下列步驟：
 
-## <a name="install-prerequisites"></a>安裝必要條件
+## <a name="install-prerequisites"></a>安裝先決條件
 
 若要開始使用 SDK 進行開發，請下載並安裝下列必要條件：
 
-* [Windows 系統管理中心](https://aka.ms/WACDownloadPage)（GA 或預覽版本）
+* [Windows 系統管理中心](https://aka.ms/WACDownloadPage) (GA 或預覽版本) 
 * Visual Studio 或 [Visual Studio Code](https://code.visualstudio.com)
-* [Node.js](https://nodejs.org/en/download/releases/) （版本10.3.0）
-* [Node 封裝管理員](https://npmjs.com/get-npm)（8.12.0 或更新版本）
+* [Node.js](https://nodejs.org/en/download/releases/) (版本 10.3.0) 
+* [節點套件管理員](https://npmjs.com/get-npm) (8.12.0 或更新版本) 
 * [Nuget](https://www.nuget.org/downloads) (用於發佈擴充功能)
 
 > [!NOTE]
-> 您必須依照下列步驟，在開發人員模式中安裝並執行 Windows Admin Center。 開發人員模式允許 Windows Admin Center 載入未簽署的擴充功能。 Windows 管理中心只能在 Windows 10 電腦上以 Dev 模式安裝。 
+> 您必須依照下列步驟，在開發人員模式中安裝並執行 Windows Admin Center。 開發人員模式允許 Windows Admin Center 載入未簽署的擴充功能。 Windows 管理中心只能在 Windows 10 電腦上以 Dev 模式安裝。
 >
 >  若要啟用開發人員模式，請使用參數 DEV_MODE=1 從命令列中安裝 Windows Admin Center。 在以下範例中，將 ```<version>``` 取代為您要安裝的版本，亦即 ```WindowsAdminCenter1809.msi```。
 >
@@ -59,7 +57,7 @@ npm install -g windows-admin-center-cli
 ```
 
 >[!NOTE]
->您可以安裝較新版本的 @angular/cli，但請注意，如果您安裝的版本大於7.1.2，則在 gulp 組建步驟期間會收到警告，表示本機 cli 版本不符合已安裝的版本。
+>您可以安裝較新版本的 @angular/cli ，但請注意，如果您安裝的版本大於7.1.2，您會在 gulp 組建步驟期間收到警告，表示本機 cli 版本與已安裝的版本不符。
 
 ## <a name="next-steps"></a>後續步驟
 

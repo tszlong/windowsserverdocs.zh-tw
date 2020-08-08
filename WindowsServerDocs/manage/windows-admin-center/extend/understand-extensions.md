@@ -1,19 +1,17 @@
 ---
 title: 了解 Windows Admin Center 擴充功能
 description: 了解 Windows Admin Center SDK 擴充功能 (Project Honolulu)
-ms.technology: extend
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 06/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 4bfabe4959fe16f5e240cbf1a972a902e37ffb52
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 44038185bb4f9cb61920033ce5edc67afb3de99b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385252"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964574"
 ---
 # <a name="understanding-windows-admin-center-extensions"></a>了解 Windows Admin Center 擴充功能
 

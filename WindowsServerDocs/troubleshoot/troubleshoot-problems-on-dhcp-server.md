@@ -1,20 +1,18 @@
 ---
 title: 針對 DHCP 伺服器上的問題進行疑難排解
 description: 本 artilce 介紹如何疑難排解 DHCP 伺服器上的問題並收集資料。
-ms.prod: windows-server
 ms.service: na
 manager: dcscontentpm
-ms.technology: server-general
 ms.date: 5/26/2020
 ms.topic: article
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: 5ec2ef358cfaf7841b093843848f2ea5ee42433e
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: d6fc69c15c3465769232d89f70a65ca915d0584e
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181894"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989034"
 ---
 # <a name="troubleshoot-problems-on-the-dhcp-server"></a>針對 DHCP 伺服器上的問題進行疑難排解
 
@@ -26,7 +24,7 @@ ms.locfileid: "87181894"
 
   - DHCP 伺服器服務已啟動且正在執行。 若要檢查此設定，請執行**net start**命令，並尋找**DHCP 伺服器**。
 
-  - DHCP 伺服器已獲授權。 請參閱已[加入網域的案例中的 WINDOWS DHCP 伺服器授權](https://docs.microsoft.com/openspecs/windows_protocols/ms-dhcpe/56f8870b-a7c1-4db1-8a86-f69079fe5077)。
+  - DHCP 伺服器已獲授權。 請參閱已[加入網域的案例中的 WINDOWS DHCP 伺服器授權](/openspecs/windows_protocols/ms-dhcpe/56f8870b-a7c1-4db1-8a86-f69079fe5077)。
 
   - 確認 DHCP 用戶端所在之子網的 DHCP 伺服器範圍中有可用的 IP 位址租用。 若要執行這項操作，請參閱 DHCP 伺服器管理主控台中適當範圍的統計資料。
 
@@ -36,7 +34,7 @@ ms.locfileid: "87181894"
 
   - 確認 DHCP 伺服器所系結的 IP 位址是在必須從中租用 IP 位址之範圍的子網內。如果沒有可用的轉送代理，就會發生這種情況。 若要這麼做，請執行**DhcpServerv4Binding**或**DhcpServerv6Binding** Cmdlet。
 
-  - 確認只有 DHCP 伺服器接聽 UDP 埠67和68。 其他處理常式或其他服務（例如 WDS 或 PXE）則不應佔用這些埠。 若要這麼做，請執行 `netstat -anb` 命令。
+  - 確認只有 DHCP 伺服器接聽 UDP 埠67和68。 沒有其他進程或其他服務 (例如 WDS 或 PXE) 應該佔用這些埠。 若要這麼做，請執行 `netstat -anb` 命令。
 
   - 如果您要處理 IPsec 部署的環境，請確認已新增 DHCP 伺服器 IPsec 豁免。
 
@@ -46,14 +44,14 @@ ms.locfileid: "87181894"
 
 ## <a name="event-logs"></a>事件記錄檔
 
-檢查系統和 DHCP 伺服器服務事件記錄檔（**應用程式和服務記錄**檔 \> **Microsoft** \> **Windows** \> **DHCP 伺服器**）是否有與觀察到的問題相關的回報問題。
+檢查系統和 DHCP 伺服器服務事件記錄檔 (**應用程式和服務記錄**檔 \> **Microsoft** \> **Windows** \> **DHCP 伺服器**) ，以瞭解與觀察到的問題相關的回報問題。
 視問題類型而定，事件會記錄到下列其中一個事件通道： [dhcp 伺服器操作事件](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\)) 
  [dhcp 伺服器管理事件](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\)) 
  [dhcp 伺服器系統事件](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\)) 
  [dhcp 伺服器篩選通知事件](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\)) 
  [dhcp 伺服器 Audit 事件](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\))
 
-## <a name="data-collection"></a>資料收集
+## <a name="data-collection"></a>資料集合
 
 ### <a name="dhcp-server-log"></a>DHCP 伺服器記錄檔
 

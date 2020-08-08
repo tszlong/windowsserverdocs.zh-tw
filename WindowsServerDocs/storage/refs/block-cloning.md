@@ -6,14 +6,12 @@ ms.author: gawatu
 manager: gawatu
 ms.date: 10/17/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: storage-file-systems
-ms.openlocfilehash: cd74468029ff973846ddfd10cce8ba0e26a607e9
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 01177b24646f7f1213378f08c930cdaae8f591de
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961390"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939433"
 ---
 # <a name="block-cloning-on-refs"></a>ReFS 上的區塊複製
 
@@ -61,7 +59,7 @@ ReFS 透過保留各個邏輯叢集的參考計數，讓檔案間的隔離不中
 - 區塊複製作業會中斷「共用伺服器用戶端檔案鎖」(也稱為[層級 2 伺服器用戶端檔案鎖](/windows/win32/fileio/types-of-opportunistic-locks))。
 - ReFS 磁碟區必須使用 Windows Server 2016 格式化，且若正在使用容錯移轉叢集，叢集功能等級的格式時間必須為 Windows Server 2016 或更新版本。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [ReFS 概觀](refs-overview.md)
 -   [ReFS 完整性資料流](integrity-streams.md)

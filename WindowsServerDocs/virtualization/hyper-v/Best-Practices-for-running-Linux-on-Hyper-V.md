@@ -1,20 +1,18 @@
 ---
 title: 在 Hyper-v 上執行 Linux 的最佳做法
 description: 提供在虛擬機器上執行 Linux 的建議
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: a08648eb-eea0-4e2b-87fb-52bfe8953491
 author: shirgall
 ms.author: kathydav
 ms.date: 04/15/2020
-ms.openlocfilehash: 75b471d4083ef1597d5edcc775ea6fc847992483
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b9a03ec24adf0b77ff4a6e477f550c63760c9d85
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474465"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989105"
 ---
 # <a name="best-practices-for-running-linux-on-hyper-v"></a>在 Hyper-v 上執行 Linux 的最佳做法
 
@@ -26,7 +24,7 @@ ms.locfileid: "85474465"
 
 某些 Linux 檔案系統可能會耗用大量的實際磁碟空間，即使檔案系統大多是空的。 若要減少動態 VHDX 檔案的實際磁碟空間使用量，請考慮下列建議：
 
-* 建立 VHDX 時，請在 PowerShell 中使用 1MB BlockSizeBytes （從預設的32MB），例如：
+* 建立 VHDX 時，請在 PowerShell 中使用預設的 32MB) 的 1MB BlockSizeBytes (，例如：
 
 ```Powershell
 PS > New-VHD -Path C:\MyVHDs\test.vhdx -SizeBytes 127GB -Dynamic -BlockSizeBytes 1MB
@@ -68,7 +66,7 @@ Set-VMComPort -VMName <Name> -Number 2 -Path \\.\pipe\dbg1
 
 ## <a name="use-static-mac-addresses-with-failover-clustering"></a>搭配容錯移轉叢集使用靜態 MAC 位址
 
-將使用容錯移轉叢集部署的 Linux 虛擬機器，應該使用每個虛擬網路介面卡的靜態媒體存取控制（MAC）位址進行設定。 在某些 Linux 版本中，網路設定可能會在容錯移轉後遺失，因為已將新的 MAC 位址指派給虛擬網路介面卡。 為避免遺失網路設定，請確定每個虛擬網路介面卡都有靜態 MAC 位址。 您可以在 [Hyper-v 管理員] 或容錯移轉叢集管理員中編輯虛擬機器的設定，以設定 MAC 位址。
+將使用容錯移轉叢集部署的 Linux 虛擬機器應該使用靜態媒體存取控制來設定， (MAC) 位址用於每個虛擬網路介面卡。 在某些 Linux 版本中，網路設定可能會在容錯移轉後遺失，因為已將新的 MAC 位址指派給虛擬網路介面卡。 為避免遺失網路設定，請確定每個虛擬網路介面卡都有靜態 MAC 位址。 您可以在 [Hyper-v 管理員] 或容錯移轉叢集管理員中編輯虛擬機器的設定，以設定 MAC 位址。
 
 ## <a name="use-hyper-v-specific-network-adapters-not-the-legacy-network-adapter"></a>使用 Hyper-v 專用的網路介面卡，而不是傳統網路介面卡
 
@@ -90,18 +88,18 @@ Linux 核心提供兩組磁片 i/o 排程器來重新排序要求。  其中一�
 
 ## <a name="shrinking-vhdx-or-expanding-vhd-and-vhdx-files-can-result-in-erroneous-gpt-partition-tables"></a>壓縮 VHDX 或擴充 VHD 和 VHDX 檔案可能會導致錯誤的 GPT 磁碟分割表格
 
-Hyper-v 允許壓縮虛擬磁片（VHDX）檔案，而不考慮磁片上可能存在的任何磁碟分割、磁片區或檔案系統資料結構。 如果 VHDX 已壓縮到 VHDX 結尾前面的位置，則資料可能會遺失、分割區可能損毀，或讀取分割區時，可能會傳回不正確資料。
+Hyper-v 允許壓縮虛擬磁片 (VHDX) 檔案，而不考慮磁片上可能存在的任何分割區、磁片區或檔案系統資料結構。 如果 VHDX 已壓縮到 VHDX 結尾前面的位置，則資料可能會遺失、分割區可能損毀，或讀取分割區時，可能會傳回不正確資料。
 
-調整 VHD 或 VHDX 的大小之後，系統管理員應該使用像是 fdisk 或 parted 的公用程式來更新分割區、磁片區和檔案系統結構，以反映磁片大小的變更。 壓縮或擴充具有 GUID 磁碟分割表格（GPT）的 VHD 或 VHDX 大小，將會在使用磁碟分割管理工具來檢查磁碟分割配置時產生警告，而且系統管理員會收到警告，以修正第一個和第二個 GPT 標頭。 在不遺失資料的情況下，可以安全地執行此手動步驟。
+調整 VHD 或 VHDX 的大小之後，系統管理員應該使用像是 fdisk 或 parted 的公用程式來更新分割區、磁片區和檔案系統結構，以反映磁片大小的變更。 壓縮或擴充具有 GUID 磁碟分割表格 (GPT) 的 VHD 或 VHDX 大小，將會在使用磁碟分割管理工具來檢查分割區配置時產生警告，並會警告系統管理員修正第一個和第二個 GPT 標頭。 在不遺失資料的情況下，可以安全地執行此手動步驟。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 * [Windows 上的 Hyper-v 支援的 Linux 和 FreeBSD 虛擬機器](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
 
 * [在 Hyper-v 上執行 FreeBSD 的最佳做法](Best-practices-for-running-FreeBSD-on-Hyper-V.md)
 
-* [部署 Hyper-V 叢集](https://technet.microsoft.com/library/jj863389.aspx)
+* [部署 Hyper-V 叢集](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj863389(v=ws.11))
 
-* [建立適用于 Azure 的 Linux 映射](https://docs.microsoft.com/azure/virtual-machines/linux/create-upload-generic)
+* [建立適用于 Azure 的 Linux 映射](/azure/virtual-machines/linux/create-upload-generic)
 
-* [在 Azure 上最佳化 Linux VM](https://docs.microsoft.com/azure/virtual-machines/linux/optimization)
+* [在 Azure 上最佳化 Linux VM](/azure/virtual-machines/linux/optimization)

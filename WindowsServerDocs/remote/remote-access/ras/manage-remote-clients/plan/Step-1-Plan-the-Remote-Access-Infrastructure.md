@@ -2,18 +2,16 @@
 title: 步驟1規劃遠端存取基礎結構
 description: 本主題是在 Windows Server 2016 中遠端系統管理 DirectAccess 用戶端指南的一部分。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: a1ce7af5-f3fe-4fc9-82e8-926800e37bc1
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 567097d69db8f0de3f93e315af06c18525ad3735
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 88bc666b516d00b4c132b5b67ed702f071847fb0
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769586"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989751"
 ---
 # <a name="step-1-plan-the-remote-access-infrastructure"></a>步驟1規劃遠端存取基礎結構
 
@@ -52,9 +50,9 @@ ms.locfileid: "87769586"
 
     DirectAccess 使用 IPv6 搭配 IPsec 在 DirectAccess 用戶端電腦與公司內部網路之間建立安全連線。 不過，DirectAccess 不一定需要 IPv6 網際網路的連線能力，或內部網路的原生 IPv6 支援。 相反地，它會自動設定並使用 IPv6 轉換技術，透過 IPv4 網際網路 (6to4、Teredo 或 IP-HTTPS) ，以及跨僅 IPv4 的內部網路 (NAT64 或 ISATAP) ，將 IPv6 流量通道。 如需這些轉換技術的概觀，請參閱下列資源：
 
-    -   [IPv6 轉換技術](/previous-versions//bb726951(v=technet.10))
+    -   [IPv6 轉換技術](/previous-versions/bb726951(v=technet.10))
 
-    -   [IP-HTTPS 通道通訊協定規格](/previous-versions//bb726951(v=technet.10))
+    -   [IP-HTTPS 通道通訊協定規格](/previous-versions/bb726951(v=technet.10))
 
 3.  根據下表設定所需的介面卡和位址指定。 針對使用單一網路介面卡的 NAT 裝置後方的部署，請只使用 [**內部網路介面卡**] 資料行來設定您的 IP 位址。
 

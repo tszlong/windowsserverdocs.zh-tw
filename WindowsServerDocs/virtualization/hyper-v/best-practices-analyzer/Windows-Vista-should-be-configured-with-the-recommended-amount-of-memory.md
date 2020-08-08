@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 64f4e53b-4adb-4e1d-bc48-c24f5f9d222f
 author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: c1754283e8406944f45668d787f741d3fd573e1b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: edfc39153785b9926a39032520082329ad37d830
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948157"
+ms.locfileid: "87989777"
 ---
 # <a name="windows-vista-should-be-configured-with-the-recommended-amount-of-memory"></a>應該使用建議的記憶體數量來設定 Windows Vista
 
@@ -68,7 +68,4 @@ Set-VMMemory <MyVM> -StartupBytes 1GB
 ```
 
 ## <a name="see-also"></a>另請參閱
-[設定-Set-vmmemory](https://technet.microsoft.com/library/hh848572.aspx)
-
-
-
+[設定-Set-vmmemory](/powershell/module/hyper-v/set-vmmemory?view=win10-ps)

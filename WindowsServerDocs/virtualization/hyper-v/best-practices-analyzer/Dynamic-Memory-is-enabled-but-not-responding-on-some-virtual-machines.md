@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 91b7f50f-a071-4ab6-beb1-1b29f92f52b6
 author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 26b925861eada96bae11b66278955e648e197f65
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d6227829f73cdccefecd0758a69a25a299665557
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87935447"
+ms.locfileid: "87988957"
 ---
 # <a name="dynamic-memory-is-enabled-but-not-responding-on-some-virtual-machines"></a>在某些虛擬機器上已啟用動態記憶體但沒有回應
 
@@ -42,7 +42,4 @@ ms.locfileid: "87935447"
 
 從 Windows Server 2016，integration services 會透過 Windows Update 傳遞。 請確定已將虛擬機器設定為接收更新，以取得最新版本的 integration services。
 
-動態記憶體適用于支援的來賓的特定版本。 如需比 Windows Server 2016 和 Windows 10 更舊的版本，請參閱[hyper-v 動態記憶體總覽](https://technet.microsoft.com/library/hh831766.aspx)。
-
-
-
+動態記憶體適用于支援的來賓的特定版本。 如需比 Windows Server 2016 和 Windows 10 更舊的版本，請參閱[hyper-v 動態記憶體總覽](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831766(v=ws.11))。

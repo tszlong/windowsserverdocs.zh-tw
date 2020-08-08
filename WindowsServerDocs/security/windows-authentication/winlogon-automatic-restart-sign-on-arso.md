@@ -6,12 +6,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 3e709c76bb1ae8c3557748d3a1e14f80fce89525
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ee6e5817564389c1870e72543a0c073dd40df4db
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936458"
+ms.locfileid: "87989064"
 ---
 # <a name="winlogon-automatic-restart-sign-on-arso"></a>Winlogon 自動重新啟動登入 (ARSO)
 
@@ -140,6 +140,4 @@ Windows 8 引進了鎖定畫面應用程式。  這些應用程式會在使用�
 
 |詞彙|定義|
 |----|-------|
-|Autologon|自動登入功能是已在 Windows 中針對數個版本而呈現的功能。  這是 Windows 的已記載功能，甚至還具有 Windows v4.0 * [HTTP：/technet. .com/sysinternals/bb963905](https://technet.microsoft.com/sysinternals/bb963905.aspx)等工具的自動登出。*<p>它允許裝置的單一使用者自動登入，而不需要輸入認證。 認證會以加密的 LSA 秘密設定並儲存在登錄中。|
-
-
+|Autologon|自動登入功能是已在 Windows 中針對數個版本而呈現的功能。  這是 Windows 的已記載功能，甚至還具有 Windows v4.0 * [HTTP：/technet. .com/sysinternals/bb963905](/sysinternals/downloads/autologon)等工具的自動登出。*<p>它允許裝置的單一使用者自動登入，而不需要輸入認證。 認證會以加密的 LSA 秘密設定並儲存在登錄中。|

@@ -6,12 +6,12 @@ ms.topic: get-started-article
 ms.assetid: 3830b356-36d3-44f9-a1d7-990ff3e57403
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6fea97938343039f0e2e76aaf0a653672b11faea
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2868bfcca87f44ee9c29aa4c36de3486c660ee62
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971945"
+ms.locfileid: "87989177"
 ---
 # <a name="branchcache-deployment-guide"></a>BranchCache 部署指南
 
@@ -56,7 +56,7 @@ BranchCache 可減少 WAN 流量，以及分公司使用者在網路上開啟檔
 
 -   以**檔案伺服器為基礎的內容伺服器**。 這些內容伺服器必須執行 Windows Server 2016、Windows Server 2012 R2、Windows Server 2012 或支援 BranchCache 且已安裝檔案服務伺服器角色的 windows Server 2008 R2 版本。 此外，必須安裝和設定檔案服務伺服器角色的 [網路檔案的**BranchCache** ] 角色服務。 這些內容伺服器會使用伺服器訊息區 (SMB) 通訊協定，將內容傳送至 BranchCache 用戶端電腦。
 
-如需詳細資訊，請參閱[BranchCache 的作業系統版本](https://technet.microsoft.com/windows-server-docs/networking/branchcache/branchcache#a-namebkmkosaoperating-system-versions-for-branchcache)。
+如需詳細資訊，請參閱[BranchCache 的作業系統版本](../branchcache.md#bkmk_os)。
 
 ### <a name="branchcache-deployment-requirements"></a>BranchCache 部署需求
 
@@ -66,7 +66,7 @@ BranchCache 可減少 WAN 流量，以及分公司使用者在網路上開啟檔
 
 -   **用戶端電腦**必須執行 windows 10、Windows 8.1 或 Windows 8，才能使用最新的部署模型，以及 windows Server 2012 引進的區塊化和雜湊改良功能。
 
--   **託管**快取伺服器必須執行 Windows server 2016、windows Server 2012 R2 或 Windows server 2012，才能使用本檔中所述的部署改進和擴充功能。  執行設定為託管快取伺服器的其中一個作業系統的電腦，可以繼續為執行 Windows 7 的用戶端電腦提供服務，但若要這麼做，則必須配備適用于傳輸層安全性 (TLS) 的憑證，如 Windows Server 2008 R2 和 Windows 7 [BranchCache 部署指南](https://technet.microsoft.com/library/ee649232.aspx)中所述。
+-   **託管**快取伺服器必須執行 Windows server 2016、windows Server 2012 R2 或 Windows server 2012，才能使用本檔中所述的部署改進和擴充功能。  執行設定為託管快取伺服器的其中一個作業系統的電腦，可以繼續為執行 Windows 7 的用戶端電腦提供服務，但若要這麼做，則必須配備適用于傳輸層安全性 (TLS) 的憑證，如 Windows Server 2008 R2 和 Windows 7 [BranchCache 部署指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee649232(v=ws.10))中所述。
 
 -   需要**Active Directory 網域**，才能利用群組原則和託管快取自動探索，但不需要網域就能使用 BranchCache。  您可以使用 Windows PowerShell 來設定個別電腦。 此外，您的網域控制站不需要執行 Windows Server 2012 或更新版本，就能使用新的 BranchCache 群組原則設定;您可以將 BranchCache 系統管理範本匯入到執行舊版作業系統的網域控制站，也可以在執行 Windows 10、Windows Server 2016、Windows 8.1、Windows Server 2012 R2、Windows 8 或 Windows Server 2012 的其他電腦上遠端撰寫群組原則物件。
 
@@ -79,8 +79,5 @@ BranchCache 最初是在 Windows 7 &reg; 和 Windows server &reg; 2008 R2 中引
 > [!NOTE]
 > 如果您要在 Windows Server 2016 以外的作業系統中部署 BranchCache，可以使用下列檔資源。
 >
-> - 如需 Windows 8、Windows 8.1、Windows Server 2012 和 Windows Server 2012 R2 中 BranchCache 的相關資訊，請參閱[Branchcache 總覽](https://technet.microsoft.com/library/hh831696.aspx)。
-> - 如需有關 Windows 7 和 Windows Server 2008 R2 中 BranchCache 的詳細資訊，請參閱[Windows Server 2008 r2 的 branchcache](https://technet.microsoft.com/library/dd996634.aspx)。
-
-
-
+> - 如需 Windows 8、Windows 8.1、Windows Server 2012 和 Windows Server 2012 R2 中 BranchCache 的相關資訊，請參閱[Branchcache 總覽](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831696(v=ws.11))。
+> - 如需有關 Windows 7 和 Windows Server 2008 R2 中 BranchCache 的詳細資訊，請參閱[Windows Server 2008 r2 的 branchcache](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd996634(v=ws.10))。

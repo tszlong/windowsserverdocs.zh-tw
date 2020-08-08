@@ -1,20 +1,18 @@
 ---
 title: 用於應用程式資料的向外延展檔案伺服器概觀
 description: 概述適用于 Windows Server 201 R2 和 Windows Server 2012 的向外延展檔案伺服器功能。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 manager: lizross
-ms.technology: storage-failover-clustering
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bcfb53b04a03a259c712dd4b3003f8c4a66d8ff
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: dfd39210b6db8516fafbe8b437c7d38cd7839bad
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181714"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972385"
 ---
 # <a name="scale-out-file-server-for-application-data-overview"></a>用於應用程式資料的向外延展檔案伺服器概觀
 
@@ -29,14 +27,14 @@ ms.locfileid: "87181714"
 
 ## <a name="scenario-description"></a>案例描述
 
-透過向外延展檔案共用，您將可共用叢集中多個節點的相同資料夾。 比方說，如果您有四個節點的檔案伺服器叢集使用伺服器訊息區（SMB）向外延展，則執行 Windows Server 2012 R2 或 Windows Server 2012 的電腦可以從四個節點中的任一個存取檔案共用。 這是利用新的 Windows Server 容錯移轉叢集功能和 Windows 檔案伺服器通訊協定 SMB 3.0 的功能所達成的。 檔案伺服器系統管理員可以提供向外延展檔案共用和持續可用的檔案服務給伺服器應用程式，而且只要使更多伺服器上線，就能回應快速增加的需求。 這全都可以在實際執行環境中進行，而且對伺服器應用程式而言是完全透明的。
+透過向外延展檔案共用，您將可共用叢集中多個節點的相同資料夾。 例如，如果您有四個節點的檔案伺服器叢集，而該叢集使用伺服器訊息區 (SMB) 相應放大，則執行 Windows Server 2012 R2 或 Windows Server 2012 的電腦可以從四個節點中的任一個存取檔案共用。 這是利用新的 Windows Server 容錯移轉叢集功能和 Windows 檔案伺服器通訊協定 SMB 3.0 的功能所達成的。 檔案伺服器系統管理員可以提供向外延展檔案共用和持續可用的檔案服務給伺服器應用程式，而且只要使更多伺服器上線，就能回應快速增加的需求。 這全都可以在實際執行環境中進行，而且對伺服器應用程式而言是完全透明的。
 
 向外延展檔案伺服器提供的主要好處包含：
 
 - **主動-主動檔案共用**。 所有叢集節點都可以接受和處理 SMB 用戶端要求。 由於可同時從所有叢集節點存取檔案共用內容，在計劃中的維護期間和非計劃中的失敗導致服務中斷時，SMB 3.0 叢集和用戶端會合作以提供透明的容錯移轉給其他叢集節點。
 - **增加頻寬**。 最大共用頻寬是所有檔案伺服器叢集節點的總頻寬。 與舊版 Windows Server 不同的是，總頻寬不再僅限於單一叢集節點頻寬，而是由備份儲存系統的功能定義限制。 您可以新增節點以增加總頻寬。
 - **零停機時間的 CHKDSK**。 Windows Server 2012 中的 CHKDSK 已大幅增強，可大幅縮短檔案系統離線修復的時間。 叢集共用磁碟區 (CSV) 進一步加以擴充，去除了離線階段。 CSV 檔案系統 (CSVFS) 可以在檔案系統上使用 CHKDSK，而不影響含有開啟控制代碼的應用程式。
-- 叢集**共用磁片**區快取。 Windows Server 2012 中的 Csv 引進讀取快取的支援，可大幅改善某些案例的效能，例如虛擬桌面基礎結構（VDI）。
+- 叢集**共用磁片**區快取。 Windows Server 2012 中的 Csv 引進讀取快取的支援，可大幅改善某些案例中的效能，例如在 (VDI) 的虛擬桌面基礎結構中。
 - **較簡單的管理**。 使用向外延展檔案伺服器時，您可以建立向外延展檔案伺服器，然後新增必要的 Csv 和檔案共用。 不再需要建立各自擁有不同叢集磁碟的多部叢集檔案伺服器，然後開發位置原則以確保每個叢集節點上的活動。
 - **自動重新平衡向外延展檔案伺服器用戶端**。 在 Windows Server 2012 R2 中，自動重新平衡可改善向外延展檔案伺服器的擴充性與管理能力。 SMB 用戶端連線是以每個檔案共用 (而非每個伺服器) 的方式追蹤，接著再將用戶端重新導向至最方便存取檔案共用使用之磁碟區的叢集節點。 由於檔案伺服器節點之間的重新導向流量減少，因此可以提升效率。 起始一個連線和重新設定叢集存放裝置都會將用戶端重新導向。
 
@@ -110,7 +108,7 @@ ms.locfileid: "87181714"
 </tr>
 <tr class="odd">
 <td>檔案系統</td>
-<td>復原檔案系統（<a href="https://docs.microsoft.com/windows-server/storage/refs/refs-overview">ReFS</a>）</td>
+<td>復原檔案系統 (<a href="https://docs.microsoft.com/windows-server/storage/refs/refs-overview">ReFS</a>) </td>
 <td>建議使用儲存空間直接存取</td>
 <td>建議使用儲存空間直接存取</td>
 </tr>
@@ -225,7 +223,7 @@ ms.locfileid: "87181714"
 </tbody>
 </table>
 
-\*[資料夾重新導向]、[離線檔案]、[漫遊使用者設定檔] 或 [主目錄] 會產生大量寫入，當使用持續可用的檔案共用時，必須立即寫入磁片（不需要緩衝處理），相較于一般用途的檔案共用，會降低效能。 持續可用的檔案共用也與檔案伺服器資源管理員和執行 Windows XP 的電腦不相容。 此外，在使用者失去共用的存取權後，離線檔案可能不會轉換為離線模式3-6 分鐘，這可能會讓尚未使用「永遠離線」模式的使用者無法通過離線檔案。
+\*[資料夾重新導向]、[離線檔案]、[漫遊使用者設定檔] 或 [主目錄] 會產生大量的寫入，必須在使用持續可用的檔案共用時，立即寫入磁片 (而不需要緩衝) ，相較于一般用途的檔案共用，會降低效能。 持續可用的檔案共用也與檔案伺服器資源管理員和執行 Windows XP 的電腦不相容。 此外，在使用者失去共用的存取權後，離線檔案可能不會轉換為離線模式3-6 分鐘，這可能會讓尚未使用「永遠離線」模式的使用者無法通過離線檔案。
 
 ## <a name="practical-applications"></a>實際應用
 
@@ -257,7 +255,7 @@ ms.locfileid: "87181714"
 <tbody>
 <tr class="odd">
 <td><a href="failover-clustering.md">容錯移轉叢集</a></td>
-<td>容錯移轉叢集在 Windows Server 2012 中新增了下列功能，以支援向外延展檔案伺服器：分散式網路名稱、向外延展檔案伺服器資源類型、叢集共用磁片區（CSV）2，以及向外延展檔案伺服器高可用性角色。 如需這些功能的詳細資訊，請參閱<a href="/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)">Windows Server 2012 中容錯移轉叢集的新功能&#39;[重新導向]</a>。</td>
+<td>容錯移轉叢集在 Windows Server 2012 中新增了下列功能，以支援向外延展檔案伺服器：分散式網路名稱、向外延展檔案伺服器資源類型、叢集共用磁片區 (CSV) 2 和向外延展檔案伺服器高可用性角色。 如需這些功能的詳細資訊，請參閱<a href="/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)">Windows Server 2012 中容錯移轉叢集的新功能&#39;[重新導向]</a>。</td>
 </tr>
 <tr class="even">
 <td><a href="/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831795(v%3dws.11)">伺服器訊息區</a></td>

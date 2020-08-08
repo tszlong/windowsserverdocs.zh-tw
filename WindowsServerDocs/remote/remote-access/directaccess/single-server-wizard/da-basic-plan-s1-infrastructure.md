@@ -2,17 +2,15 @@
 title: 步驟1規劃基本 DirectAccess 基礎結構
 description: 本主題是使用適用于 Windows Server 2016 的消費者入門 Wizard 部署單一 DirectAccess 伺服器指南的一部分
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-da
 ms.topic: article
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 4a7d784c38db692110559d9e2ce1f1f7c760313a
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: f1878944b0f72e22a94b9153b735571ef5b5f5f0
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769736"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990009"
 ---
 # <a name="step-1-plan-the-basic-directaccess-infrastructure"></a>步驟1規劃基本 DirectAccess 基礎結構
 在單一伺服器上進行基本 DirectAccess 部署的第一個步驟，是針對部署所需的基礎結構進行規劃。 本主題描述基礎結構規劃步驟：
@@ -42,9 +40,9 @@ ms.locfileid: "87769736"
 
     DirectAccess 使用 IPv6 搭配 IPsec 在 DirectAccess 用戶端電腦與公司內部網路之間建立安全連線。 不過，DirectAccess 不一定需要 IPv6 網際網路的連線能力，或內部網路的原生 IPv6 支援。 取而代之的是，它會自動設定並使用 IPv6 轉換技術，透過 IPv4 網際網路 (6to4、Teredo 或 IP-HTTPS) 及透過僅支援 IPv4 的內部網路 (NAT64 或 ISATAP) 建立 IPv6 流量通道。 如需這些轉換技術的概觀，請參閱下列資源：
 
-    -   [IPv6 轉換技術](/previous-versions//bb726951(v=technet.10))
+    -   [IPv6 轉換技術](/previous-versions/bb726951(v=technet.10))
 
-    -   [IP-HTTPS 通道通訊協定規格](/previous-versions//bb726951(v=technet.10))
+    -   [IP-HTTPS 通道通訊協定規格](/previous-versions/bb726951(v=technet.10))
 
 3.  根據下表設定所需的介面卡和位址指定。 針對使用單一網路介面卡的 NAT 裝置後方部署，請只使用 [**內部網路介面卡**] 資料行來設定您的 IP 位址。
 

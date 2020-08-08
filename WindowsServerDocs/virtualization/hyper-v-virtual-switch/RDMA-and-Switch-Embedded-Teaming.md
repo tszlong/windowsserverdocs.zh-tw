@@ -2,18 +2,16 @@
 title: 遠端直接記憶體存取 (RDMA) 和交換器內嵌小組 (SET)
 description: 本主題提供有關使用 Windows Server 2016 中的 Hyper-v 來設定遠端直接記憶體存取 (RDMA) 介面的資訊，以及有關交換器內嵌小組 (設定) 的資訊。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: 68c35b64-4d24-42be-90c9-184f2b5f19be
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: b0f11e67467521a8cfa98f4035435bbed537eda2
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 54d3ecbf752ce806a14d16088476bbb270e28271
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769566"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989132"
 ---
 # <a name="remote-direct-memory-access-rdma-and-switch-embedded-teaming-set"></a>遠端直接記憶體存取 \( RDMA \) 和交換器內嵌小組 \( 集\)
 
@@ -190,7 +188,7 @@ SET 是替代的 NIC 小組解決方案，可供您在 \( Windows Server 2016 �
 
 由於 SET 已整合到 Hyper-v 虛擬交換器中，因此您無法在虛擬機器 (VM) 中使用 SET。 不過，您可以在 Vm 中使用 NIC 小組。
 
-如需詳細資訊，請參閱[虛擬機器 (vm) 中的 NIC](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/nict-vms)小組。
+如需詳細資訊，請參閱[虛擬機器 (vm) 中的 NIC](../../networking/technologies/nic-teaming/nic-teaming.md)小組。
 
 此外，SET 架構不會公開小組介面。 相反地，您必須設定 Hyper-v 虛擬交換器埠。
 
@@ -342,7 +340,7 @@ Windows Server 2016 支援即時移轉。
 
 建議您使用 System Center Virtual Machine Manager \( VMM \) 來管理設定小組，不過您也可以使用 Windows PowerShell 來管理集合。 下列各節提供可用來管理 SET 的 Windows PowerShell 命令。
 
-如需有關如何使用 VMM 建立集合小組的詳細資訊，請參閱 System Center VMM 程式庫主題中的「設定邏輯交換器」一節，[建立邏輯交換器](https://docs.microsoft.com/system-center/vmm/network-switch)。
+如需有關如何使用 VMM 建立集合小組的詳細資訊，請參閱 System Center VMM 程式庫主題中的「設定邏輯交換器」一節，[建立邏輯交換器](/system-center/vmm/network-switch)。
 
 ### <a name="create-a-set-team"></a>建立集合小組
 
@@ -376,7 +374,7 @@ Set-VMSwitchTeam -Name TeamedvSwitch -NetAdapterName "NIC 1","NIC 3"
 
 ### <a name="removing-a-set-team"></a>移除集合小組
 
-您只需移除包含集合小組的 Hyper-v 虛擬交換器，即可移除集合小組。  如需如何移除 Hyper-v 虛擬交換器的詳細資訊，請使用[移除-VMSwitch](https://technet.microsoft.com/itpro/powershell/windows/hyper-v/remove-vmswitch)主題。 下列範例會移除名為**SETvSwitch**的虛擬交換器。
+您只需移除包含集合小組的 Hyper-v 虛擬交換器，即可移除集合小組。  如需如何移除 Hyper-v 虛擬交換器的詳細資訊，請使用[移除-VMSwitch](/powershell/module/hyper-v/remove-vmswitch?view=win10-ps)主題。 下列範例會移除名為**SETvSwitch**的虛擬交換器。
 
 ```
 Remove-VMSwitch "SETvSwitch"

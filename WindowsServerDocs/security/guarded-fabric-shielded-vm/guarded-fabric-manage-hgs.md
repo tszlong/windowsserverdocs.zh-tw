@@ -1,18 +1,16 @@
 ---
 title: 管理主機守護者服務
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: eecb002e-6ae5-4075-9a83-2bbcee2a891c
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
-ms.openlocfilehash: 19bf253a4cd669020442ca80f77c141f19ab94fe
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 851ea4a57068c1544f290c48f370e04b96857cf6
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769456"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989165"
 ---
 # <a name="managing-the-host-guardian-service"></a>管理主機守護者服務
 
@@ -120,7 +118,7 @@ Remove-PSSession -Session $session
 您可以藉由開啟事件檢視器並流覽至 HostGuardianService-windows-HostGuardianService-KeyProtection，來查看這些事件。
 
 在大型環境中，通常最好是將事件轉寄到中央 Windows 事件收集器，讓事件的分析更容易。
-如需詳細資訊，請參閱[Windows 事件轉送檔](https://msdn.microsoft.com/library/windows/desktop/bb427443.aspx)。
+如需詳細資訊，請參閱[Windows 事件轉送檔](/windows/win32/wec/windows-event-collector)。
 
 ### <a name="using-system-center-operations-manager"></a>使用 System Center Operations Manager
 您也可以使用 System Center 2016-Operations Manager 來監視 HGS 和受防護的主機。
@@ -486,7 +484,7 @@ Add-HgsAttestationDumpPolicy -Name 'DumpEncryptionKey02' -PublicKeyHash '<paste 
 如果您選擇在您的受防護網狀架構中使用不同的金鑰，請務必將每個唯一的傾印加密金鑰新增至 HGS。
 使用不知道 HGS 的金鑰來加密記憶體傾印的主機將不會通過證明。
 
-如需[在主機上](https://technet.microsoft.com/windows-server-docs/virtualization/hyper-v/manage/about-dump-encryption)設定傾印加密的詳細資訊，請參閱 hyper-v 檔。
+如需[在主機上](../../virtualization/hyper-v/manage/about-dump-encryption.md)設定傾印加密的詳細資訊，請參閱 hyper-v 檔。
 
 #### <a name="check-if-the-system-passed-attestation"></a>檢查系統是否通過證明
 向 HGS 註冊所需的資訊之後，您應該檢查主機是否通過證明。

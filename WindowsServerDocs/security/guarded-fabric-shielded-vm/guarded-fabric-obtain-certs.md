@@ -1,51 +1,49 @@
 ---
 title: 取得 HGS 的憑證
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: f4b4d1a8-bf6d-4881-9150-ddeca8b48038
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: da1ae4bacd5a6b2e38b22930aacf06f65b16bb29
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 995a115b9e611500732e4674880ee4ca4b204e14
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856531"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989111"
 ---
 # <a name="obtain-certificates-for-hgs"></a>取得 HGS 的憑證
 
->適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
+>適用于： Windows Server 2019、Windows Server (半年通道) 、Windows Server 2016
 
 當您部署 HGS 時，系統會要求您提供簽署和加密憑證，以用來保護啟動受防護 VM 所需的機密資訊。
 這些憑證永遠不會離開 HGS，而且只會在其執行所在的主機證明其狀況良好時，用來解密受防護的 VM 金鑰。
-租使用者（VM 擁有者）會使用憑證的公用部分來授權您的資料中心執行其受防護的 Vm。
+租使用者 (的 VM 擁有者) 會使用公用的憑證部分來授權您的資料中心執行其受防護的 Vm。
 本節涵蓋取得 HGS 相容簽署和加密憑證所需的步驟。
 
 ## <a name="request-certificates-from-your-certificate-authority"></a>向您的憑證授權單位單位要求憑證
 
 雖然並非必要，但強烈建議您從信任的憑證授權單位單位取得憑證。
-這麼做可協助 VM 擁有者確認他們正在授權正確的 HGS 伺服器（也就是服務提供者或資料中心）來執行受防護的 Vm。
+這麼做可協助 VM 擁有者驗證其是否授權正確的 HGS 伺服器， (例如，服務提供者或資料中心) 執行其受防護的 Vm。
 在企業案例中，您可以選擇使用您自己的企業 CA 來頒發證書。
 主控者和服務提供者應考慮改為使用已知的公用 CA。
 
-簽署和加密憑證都必須使用下列 certificiate 屬性來發行（除非標記為「建議」）：
+簽署和加密憑證都必須使用下列 certificiate 屬性來發行 (除非標示為「建議」 ) ：
 
-憑證範本屬性 | 必要值 
+憑證範本屬性 | 必要值
 ------------------------------|----------------
-加密提供者               | 任何金鑰儲存提供者（KSP）。 **不**支援舊版密碼編譯服務提供者（csp）。
+加密提供者               | 任何金鑰儲存提供者 (KSP) 。 **不**支援 (csp) 的舊版密碼編譯服務提供者。
 金鑰演算法                 | RSA
 最小金鑰大小              | 2048 位元
 簽章演算法           | 建議： SHA256
-金鑰使用方式                     | 數位簽章*和*資料加密
+金鑰使用量                     | 數位簽章*和*資料加密
 增強金鑰使用方法            | 伺服器驗證
 金鑰更新原則            | 以相同的金鑰更新。 使用不同的金鑰來更新 HGS 憑證，會導致受防護的 Vm 無法啟動。
 主體名稱                  | 建議：您公司的名稱或網址。 這項資訊會顯示在 [防護資料檔案] 中的 VM 擁有者。
 
 無論您使用的是由硬體或軟體支援的憑證，都適用這些需求。
-基於安全性理由，建議您在硬體安全模組（HSM）中建立 HGS 金鑰，以防止將私密金鑰複製到系統中。
+基於安全性理由，建議您在硬體安全模組中建立 HGS 金鑰 (HSM) ，以防止私密金鑰複製到系統中。
 遵循 HSM 廠商所提供的指導方針，要求具有上述屬性的憑證，並務必在每個 HGS 節點上安裝及授權 HSM KSP。
 
 每個 HGS 節點都需要存取相同的簽署和加密憑證。
@@ -81,11 +79,11 @@ Hyper-v 主機和 HGS 節點都必須信任您提供的 SSL 憑證，因此建�
 
 SSL 憑證屬性 | 必要值
 -------------------------|---------------
-主體名稱             | HGS 叢集的名稱（稱為「分散式網路名稱」或「虛擬電腦物件 FQDN」）。 這會將提供給 `Initialize-HgsServer` 的 HGS 服務名稱與您的 HGS 功能變數名稱串連。
-主體替代名稱 | 如果您將使用不同的 DNS 名稱來連線到 HGS 叢集（例如，如果它位於負載平衡器後方），請務必在憑證要求的 SAN 欄位中包含這些 DNS 名稱。
+主體名稱             | HGS 叢集的名稱 (稱為「分散式網路名稱」或「虛擬電腦物件 FQDN) 。 這會是提供給的 HGS 服務名稱 `Initialize-HgsServer` 與您的 hgs 功能變數名稱的串連。
+主體別名 | 如果您將使用不同的 DNS 名稱來連線到 HGS 叢集 (例如，如果它位於負載平衡器) 後方，請務必在憑證要求的 [SAN] 欄位中包含這些 DNS 名稱。
 
 [設定第一個 hgs 節點](guarded-fabric-initialize-hgs.md)時，會涵蓋在初始化 HGS 伺服器時指定此憑證的選項。
-您也可以在稍後使用[HgsServer](https://docs.microsoft.com/powershell/module/hgsserver/set-hgsserver?view=win10-ps) Cmdlet 來新增或變更 SSL 憑證。
+您也可以在稍後使用[HgsServer](/powershell/module/hgsserver/set-hgsserver?view=win10-ps) Cmdlet 來新增或變更 SSL 憑證。
 
 ## <a name="next-step"></a>後續步驟
 

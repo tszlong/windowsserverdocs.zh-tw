@@ -1,19 +1,17 @@
 ---
 title: 開始使用 Windows 管理中心
 description: 開始使用 Windows 管理中心
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
-ms.prod: windows-server
 ms.date: 02/15/2019
-ms.openlocfilehash: 5c0094c9cecfb50304b0317ab11c60f0332ef3a7
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: f03e97cb4c318a65b0daf4034f0f0cfd6fe053bf
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518566"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964604"
 ---
 # <a name="get-started-with-windows-admin-center"></a>開始使用 Windows 管理中心
 
@@ -30,7 +28,7 @@ ms.locfileid: "87518566"
 
 ### <a name="selecting-a-client-certificate"></a>選取用戶端憑證
 
-當您第一次在 Windows 10 上開啟 Windows 系統管理中心時，請務必選取*Windows 管理中心用戶端*憑證（否則您會收到 HTTP 403 錯誤，指出「無法進入此頁面」）。
+當您第一次在 Windows 10 上開啟 Windows 系統管理中心時，請務必選取 [ *windows 系統管理中心用戶端*憑證] (否則會收到 HTTP 403 錯誤，指出「無法進入此頁面」 ) 。
 
 在 Microsoft Edge 中，當系統提示您使用此對話方塊時：
 
@@ -44,7 +42,7 @@ ms.locfileid: "87518566"
 
 3. 請確定已選取 [**永遠允許存取**]，然後按一下 [**允許**]
 
-    !需要認證對話方塊] （.。/media/launch-cert-3.png）
+    !需要認證對話方塊] (。/media/launch-cert-3.png) 
 
 ## <a name="connecting-to-managed-nodes-and-clusters"></a>連接到受管理的節點和叢集
 
@@ -54,7 +52,7 @@ ms.locfileid: "87518566"
 
 1. 按一下 [所有連線] 底下的 [+ 新增]。
 
-   ![Windows 系統管理中心-所有連接頁面](../media/launch/addserver0.png)
+   ![Windows Admin Center - 所有連線頁面](../media/launch/addserver0.png)
 
 2. 選擇新增伺服器、叢集、Windows 電腦或 Azure VM：
 
@@ -85,7 +83,7 @@ ms.locfileid: "87518566"
 
     ![Windows 系統管理中心-搜尋 Active Directory] 索引標籤](../media/launch/search-ad.png)
 
- 2. 輸入您的搜尋條件，然後按一下 [**搜尋**]。 支援萬用字元（*）。
+ 2. 輸入您的搜尋條件，然後按一下 [**搜尋**]。 支援 ( * ) 的萬用字元。
 
  3. 搜尋完成之後-選取一或多個結果，並選擇性地新增標籤，然後按一下 [**新增**]。
 
@@ -115,7 +113,7 @@ Windows 系統管理中心支援數個使用受管理節點進行驗證的機制
 
 您可以將認證套用至所有連線，這會針對該特定瀏覽器會話進行快取。 如果您重載瀏覽器，則必須重新輸入您的 [**管理**身分] 認證。
 
-**本機系統管理員密碼解決方案（LAPS）**
+**本機系統管理員密碼解決方案 (LAPS) **
 
 如果您的環境使用[LAPS](https://technet.microsoft.com/mt227395.aspx)，而且您的 WINDOWS 10 電腦上已安裝 Windows 系統管理中心，則可以使用 LAPS 認證來向受管理的節點進行驗證。 **如果您使用此案例，請**[提供意見](https://aka.ms/WACFeedback)反應。
 
@@ -130,9 +128,9 @@ Windows 系統管理中心支援數個使用受管理節點進行驗證的機制
 
 ![Windows 管理中心-編輯標記選項](../media/launch/tags-5.png)
 
-[**編輯連接標記**] 窗格可讓您修改、新增或移除所選連接中的標記：
+[**編輯連接標記**] 窗格可讓您修改、新增或移除所選連接的標記 (s) ：
 
-* 若要將新標籤新增至選取的連接，請選取 [**新增**標籤]，然後輸入您想要使用的標記名稱。
+* 若要將新標籤新增至您選取的連線 (s) ，請選取 [**新增**標籤]，然後輸入您想要使用的標記名稱。
 
 * 若要使用現有的標記名稱標記選取的連接，請核取您要套用之標記名稱旁的方塊。
 

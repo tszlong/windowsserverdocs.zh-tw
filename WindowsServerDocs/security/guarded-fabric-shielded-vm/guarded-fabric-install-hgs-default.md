@@ -1,38 +1,36 @@
 ---
 title: 在新樹系中安裝 HGS
-ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 8f896b0cea49f9dd26a828a2580b59a78348763a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c18c14435c93d08c98b1a765fd820294a273a575
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856601"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939542"
 ---
-# <a name="install-hgs-in-a-new-forest"></a>在新樹系中安裝 HGS 
+# <a name="install-hgs-in-a-new-forest"></a>在新樹系中安裝 HGS
 
->適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
+>適用于： Windows Server 2019、Windows Server (半年通道) 、Windows Server 2016
 
 ## <a name="add-the-hgs-server-role"></a>新增 HGS 伺服器角色
 
 在提高許可權的 PowerShell 會話中執行下列命令，以新增 HGS 伺服器角色並安裝 HGS。
 
-[!INCLUDE [Install the HGS server role](../../../includes/guarded-fabric-install-hgs-server-role.md)] 
+[!INCLUDE [Install the HGS server role](../../../includes/guarded-fabric-install-hgs-server-role.md)]
 
-## <a name="install-hgs"></a>安裝 HGS 
+## <a name="install-hgs"></a>安裝 HGS
 
-[!INCLUDE [Install HGS by default](../../../includes/install-hgs-default.md)] 
+[!INCLUDE [Install HGS by default](../../../includes/install-hgs-default.md)]
 
 ## <a name="next-steps"></a>後續步驟
 
-- 如需設定 TPM 型證明的後續步驟，請參閱[使用新的專用樹系中的 tpm 模式初始化 HGS 叢集（預設值）](guarded-fabric-initialize-hgs-tpm-mode-default.md)。
-- 如需設定主機金鑰證明的下一個步驟，請參閱[使用新的專用樹系中的金鑰模式初始化 HGS 叢集（預設值）](guarded-fabric-initialize-hgs-key-mode-default.md)。
-- 如需設定系統管理員架構證明（在 Windows Server 2019 中被取代）的後續步驟，請參閱[在新的專用樹系中使用 AD 模式初始化 HGS 叢集（預設值）](guarded-fabric-initialize-hgs-ad-mode-default.md)。
+- 如需設定 TPM 型證明的後續步驟，請參閱[使用新的專用樹系中的 tpm 模式初始化 HGS 叢集 (預設) ](guarded-fabric-initialize-hgs-tpm-mode-default.md)。
+- 如需設定主機金鑰證明的下一個步驟，請參閱[使用新的專用樹系中的金鑰模式初始化 HGS 叢集 (預設) ](guarded-fabric-initialize-hgs-key-mode-default.md)。
+- 如需在 Windows Server 2019) 中設定以系統管理員為基礎之證明 (已被取代的後續步驟，請參閱[在新的專用樹系中使用 AD 模式初始化 HGS 叢集 (預設) ](guarded-fabric-initialize-hgs-ad-mode-default.md)。
 
 ## <a name="next-step"></a>後續步驟
 

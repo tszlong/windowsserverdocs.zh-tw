@@ -2,22 +2,20 @@
 title: 建立 DFS 命名空間
 description: 本文說明如何建立 DFS 命名空間。
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 60b31b90ed54137898043e79c3c6504afb3f4b7f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 6999dec3681a765ac64fdedd2e695c8a3f7dbcfa
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953360"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939423"
 ---
 # <a name="create-a-dfs-namespace"></a>建立 DFS 命名空間
 
-> 適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用于： Windows Server 2019、Windows Server (半年通道) 、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 若要建立新的命名空間，您可以在安裝 DFS 命名空間角色服務時，使用伺服器管理員來建立命名空間。 您也可以在 Windows PowerShell 工作階段中使用 [New-DfsnRoot Cmdlet](/powershell/module/dfsn/new-dfsnroot)。
 
@@ -38,7 +36,7 @@ DFSN Windows PowerShell 模組於 Windows Server 2012 中引進。
 > [!IMPORTANT]
 > 除非樹系功能等級是 Windows Server 2003 或更高版本，否則請勿嘗試使用 Windows Server 2008 模式來建立網域型命名空間。 這麼做會造成無法刪除 DFS 資料夾的命名空間，並產生下列錯誤訊息：「無法刪除資料夾。 無法完成此功能。」
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [部署 DFS 命名空間](deploying-dfs-namespaces.md)
 -   [選擇命名空間類型](choose-a-namespace-type.md)

@@ -1,20 +1,18 @@
 ---
 title: 匯出和匯入虛擬機器
 description: 說明如何使用 Hyper-v 管理員或 Windows PowerShell 匯出和匯入虛擬機器。
-ms.prod: windows-server
 author: kbdazure
 ms.author: kathydav
 manager: dongill
-ms.technology: compute-hyper-v
 ms.date: 12/13/2016
 ms.topic: article
 ms.assetid: 7fd996f5-1ea9-4b16-9776-85fb39a3aa34
-ms.openlocfilehash: f1b321c04ad0b7541f21b444499b13fd2b4e4a6d
-ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
+ms.openlocfilehash: 674c1640ced07df731b8667658fdbf3e5500e28d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83203561"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87988948"
 ---
 # <a name="export-and-import-virtual-machines"></a>匯出和匯入虛擬機器
 
@@ -38,13 +36,13 @@ ms.locfileid: "83203561"
 
 ### <a name="using-powershell"></a>使用 PowerShell
 
-以系統管理員身分開啟會話，並在取代 \< vm 名稱和路徑之後執行如下所示的命令 \> \< \> ：
+以系統管理員身分開啟會話，並在取代和之後執行如下所示的命令 \<vm name\> \<path\> ：
 
 ```powershell
 Export-VM -Name \<vm name\> -Path \<path\>
 ```
 
-如需詳細資訊，請參閱[匯出-VM](https://docs.microsoft.com/powershell/module/hyper-v/export-vm)。
+如需詳細資訊，請參閱[匯出-VM](/powershell/module/hyper-v/export-vm)。
 
 ## <a name="import-a-virtual-machine"></a>匯入虛擬機器
 
@@ -58,15 +56,15 @@ Export-VM -Name \<vm name\> -Path \<path\>
 
 1. 從 [Hyper-v 管理員] 中的 [**動作**] 功能表，按一下 [匯**入虛擬機器**]。
 
-2. 按一下 [下一步]  。
+2. 按 [下一步]  。
 
 3. 選取包含匯出檔案的資料夾，然後按 **[下一步]**。
 
 4. 選取要匯入的虛擬機器。
 
-5. 選擇 [匯入類型]，然後按 **[下一步]**。 （如需說明，請參閱下方的匯[入類型](#import-types)）。
+5. 選擇 [匯入類型]，然後按 **[下一步]**。  (如需說明，請參閱下面的匯[入類型](#import-types)。 ) 
 
-6. 按一下 [完成]  。
+6. 按一下 [完成] 。
 
 ### <a name="import-using-powershell"></a>使用 Powershell 進行匯入
 
@@ -96,7 +94,7 @@ Import-VM -Path 'C:\<vm export path>\2B91FEB3-F1E0-4FFF-B8BE-29CED892A95A.vmcx' 
 Import-VM -Path 'C:\<vm export path>\2B91FEB3-F1E0-4FFF-B8BE-29CED892A95A.vmcx' -Copy -GenerateNewId
 ```
 
-如需詳細資訊，請參閱匯[入 VM](https://docs.microsoft.com/powershell/module/hyper-v/import-vm)。
+如需詳細資訊，請參閱匯[入 VM](/powershell/module/hyper-v/import-vm)。
 
 ### <a name="import-types"></a>匯入類型
 
@@ -107,4 +105,3 @@ Hyper-v 提供三種匯入類型：
 - **還原虛擬機器**–將虛擬機器還原至您選擇的位置，或使用 hyper-v 的預設值。 這種匯入類型會建立匯出檔案的複本，並將它們移到選取的位置。 在匯入時，虛擬機器的識別碼與匯出時的識別碼一樣。 因此，如果虛擬機器已在 Hyper-v 中執行，則必須先將它刪除，然後才能完成匯入。 當匯入完成時，匯出的檔案會維持不變，而且可以再次移除或匯入。
 
 - **複製虛擬機器**–這類似于您選取檔案位置的還原類型。 差別在於匯入的虛擬機器具有新的唯一識別碼，這表示您可以多次將虛擬機器匯入相同的主機。
-
