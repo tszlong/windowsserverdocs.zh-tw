@@ -7,12 +7,12 @@ ms.assetid: fdc8063c-47ce-4448-b445-d7ff9894dc17
 author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 7140c9e8b3205a2772e50652fd0e162790204b4c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b9de14f9c3f66f6d8c8b532e8f4a83192b3e824b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960117"
+ms.locfileid: "87996631"
 ---
 # <a name="create-a-virtual-switch-for-hyper-v-virtual-machines"></a>為 Hyper-V 虛擬機器建立虛擬交換器
 
@@ -49,7 +49,7 @@ ms.locfileid: "87960117"
     |設定名稱|說明|
     |----------------|---------------|
     |允許管理作業系統共用此網路介面卡|如果您想要允許 Hyper-v 主機與虛擬機器共用虛擬交換器和 NIC 或 NIC 小組的使用，請選取此選項。 啟用此功能後，主機可以使用您為虛擬交換器設定的任何設定，例如服務品質 (QoS) 設定、安全性設定，或 Hyper-v 虛擬交換器的其他功能。|
-    |啟用單一根目錄 I/O 虛擬化 (SR-IOV)|只有在您想要允許虛擬機器流量略過虛擬機器交換器，並直接移至實體 NIC 時，才選取此選項。 如需詳細資訊，請參閱海報隨附參考： Hyper-v 網路中的[單一根目錄 I/o 虛擬化](https://technet.microsoft.com/library/dn641211.aspx#Sec4)。|
+    |啟用單一根目錄 I/O 虛擬化 (SR-IOV)|只有在您想要允許虛擬機器流量略過虛擬機器交換器，並直接移至實體 NIC 時，才選取此選項。 如需詳細資訊，請參閱海報隨附參考： Hyper-v 網路中的[單一根目錄 I/o 虛擬化](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn641211(v=ws.11)#Sec4)。|
 
 7.  如果您想要隔離來自管理 Hyper-v 主機作業系統或其他共用相同虛擬交換器之虛擬機器的網路流量，請選取 [**啟用管理作業系統的虛擬 LAN 識別**]。 您可以將 VLAN ID 變更為任何數位，或保留預設值。 這是管理作業系統將用於所有透過此虛擬交換器進行網路通訊的虛擬 LAN 識別碼。
 
@@ -73,7 +73,7 @@ ms.locfileid: "87960117"
     Get-NetAdapter
     ```
 
-4.  使用[新的-VMSwitch](https://technet.microsoft.com/library/hh848455.aspx) Cmdlet 建立虛擬交換器。 例如，若要使用 ethernet 網路介面卡建立名為 ExternalSwitch 的外部虛擬交換器，並開啟 [**允許管理作業系統共用此網路介面卡**]，請執行下列命令。
+4.  使用[新的-VMSwitch](/powershell/module/hyper-v/new-vmswitch?view=win10-ps) Cmdlet 建立虛擬交換器。 例如，若要使用 ethernet 網路介面卡建立名為 ExternalSwitch 的外部虛擬交換器，並開啟 [**允許管理作業系統共用此網路介面卡**]，請執行下列命令。
 
     ```
     New-VMSwitch -name ExternalSwitch  -NetAdapterName Ethernet -AllowManagementOS $true
@@ -96,6 +96,3 @@ ms.locfileid: "87960117"
 
 ## <a name="next-step"></a>後續步驟
 [在 Hyper-V 中建立虛擬機器](Create-a-virtual-machine-in-Hyper-V.md)
-
-
-
