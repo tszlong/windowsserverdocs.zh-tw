@@ -7,12 +7,12 @@ ms.author: rickman
 manager: stevelee
 ms.topic: article
 ms.date: 07/14/2020
-ms.openlocfilehash: 9a060f1650d20a029d64739e1fc7f9be44d8355c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 38d0ae70e0b6e70e87cc962ec5776d4ffb950fe5
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953434"
+ms.locfileid: "87995607"
 ---
 # <a name="deploy-graphics-devices-using-remotefx-vgpu"></a>使用 RemoteFX vGPU 部署圖形裝置
 
@@ -75,10 +75,10 @@ RemoteFX 的 vGPU 功能可以讓多部虛擬機器共用實體 GPU。 轉譯和
 
 使用下列 PowerShell Cmdlet 來新增、審查和設定介面卡：
 
-- [新增-VMRemoteFx3dVideoAdapter](https://docs.microsoft.com/powershell/module/hyper-v/add-vmremotefx3dvideoadapter?view=win10-ps)
-- [VMRemoteFx3dVideoAdapter](https://docs.microsoft.com/powershell/module/hyper-v/get-vmremotefx3dvideoadapter?view=win10-ps)
-- [設定-VMRemoteFx3dVideoAdapter](https://docs.microsoft.com/powershell/module/hyper-v/set-vmremotefx3dvideoadapter?view=win10-ps)
-- [Microsoft.hyperv.powershell.vmremotefxphysicalvideoadapter](https://docs.microsoft.com/powershell/module/hyper-v/get-vmremotefxphysicalvideoadapter?view=win10-ps)
+- [新增-VMRemoteFx3dVideoAdapter](/powershell/module/hyper-v/add-vmremotefx3dvideoadapter?view=win10-ps)
+- [VMRemoteFx3dVideoAdapter](/powershell/module/hyper-v/get-vmremotefx3dvideoadapter?view=win10-ps)
+- [設定-VMRemoteFx3dVideoAdapter](/powershell/module/hyper-v/set-vmremotefx3dvideoadapter?view=win10-ps)
+- [Microsoft.hyperv.powershell.vmremotefxphysicalvideoadapter](/powershell/module/hyper-v/get-vmremotefxphysicalvideoadapter?view=win10-ps)
 
 ## <a name="monitor-performance"></a>監視效能
 
@@ -108,4 +108,4 @@ RemoteFX 的 vGPU 功能可以讓多部虛擬機器共用實體 GPU。 轉譯和
 
 當 GPU 的資源不足時，讀取和寫入作業需要很長的時間才能完成。 系統管理員可以使用效能計數器來知道何時要調整資源，並防止使用者停機。
 
-若要深入瞭解監視 RemoteFX vGPU 行為的效能計數器，請在[診斷遠端桌面的圖形效能問題](https://docs.microsoft.com/azure/virtual-desktop/remotefx-graphics-performance-counters)。
+若要深入瞭解監視 RemoteFX vGPU 行為的效能計數器，請在[診斷遠端桌面的圖形效能問題](/azure/virtual-desktop/remotefx-graphics-performance-counters)。

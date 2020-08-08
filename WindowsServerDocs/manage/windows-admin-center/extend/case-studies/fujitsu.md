@@ -1,19 +1,17 @@
 ---
 title: Windows Admin Center SDK 案例研究-Fujitsu
 description: Windows Admin Center SDK 案例研究-Fujitsu
-ms.technology: extend
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 05/23/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 9acfa873e4ce7d3e91a23abff726836f0e11ce59
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 15f0120fdf1792ad127a9f5fa0e045ef7df18e85
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357225"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87958746"
 ---
 # <a name="fujitsu-serverview-health-and-raid-extensions"></a>Fujitsu ServerView 健全狀況和 RAID 擴充功能
 
@@ -25,10 +23,10 @@ Fujitsu 看到一個機會，可以輕鬆地與 Windows 管理中心整合，因
 
 ![Fujitsu 延伸模組-健全狀況樹狀檢視](../../media/extend-case-study-fujitsu/health-tree.png)
 
-一旦小組熟悉 Windows Admin Center SDK，新增 UI 以公開額外的硬體資訊，通常只是幾行 HTML 程式碼，而且很快就能從單一工具展開，以顯示硬體元件的摘要觀點健全狀況、系統事件記錄檔的詳細觀點、驅動程式監視器、處理器、記憶體、風扇、電源供應器、溫度和電壓的個別視圖，甚至是 RAID 管理的額外工具。 使用 SDK 中提供的 UI 控制項，例如 [樹狀結構]、[方格] 和 [詳細資料] 窗格控制項，可讓小組快速建立 UI，也能達成與 Windows 系統管理中心其他內容非常類似的視覺效果和互動設計。
+一旦小組熟悉 Windows Admin Center SDK，新增 UI 以公開額外的硬體資訊，通常只是幾行 HTML 程式碼，而且很快就能從單一工具擴充，以顯示硬體元件健全狀況的摘要、系統事件記錄檔的詳細資料、驅動程式監視器、處理器的個別視圖、記憶體、風扇、電源供應器、溫度和電壓，甚至還有額外的工具可進行 RAID 管理。 使用 SDK 中提供的 UI 控制項，例如 [樹狀結構]、[方格] 和 [詳細資料] 窗格控制項，可讓小組快速建立 UI，也能達成與 Windows 系統管理中心其他內容非常類似的視覺效果和互動設計。
 
 ![Fujitsu 擴充功能-RAID 樹狀檢視](../../media/extend-case-study-fujitsu/raid-tree.png)
 
 ![Fujitsu 擴充功能-RAID 磁片區視圖](../../media/extend-case-study-fujitsu/raid-volumes.png)
 
-Fujitsu 與 Windows 管理中心團隊之間的合作，清楚地顯示 Windows 系統管理中心內的整合價值，讓客戶能夠對伺服器角色和服務、作業系統和硬體管理提供端對端的深入解析.
+Fujitsu 與 Windows 管理中心團隊之間的合作，清楚地顯示 Windows 系統管理中心內的整合價值，讓客戶能夠對伺服器角色和服務、作業系統和硬體管理提供端對端的深入解析。

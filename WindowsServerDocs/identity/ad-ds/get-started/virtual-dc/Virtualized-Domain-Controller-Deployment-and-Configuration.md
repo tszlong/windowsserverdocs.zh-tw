@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 653df4bc517dccad5ecee6eb243d8a236648c7fd
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 6804df686635e441c667ab395ca486d3791a2aa5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519055"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959406"
 ---
 # <a name="virtualized-domain-controller-deployment-and-configuration"></a>虛擬網域控制站的部署與設定
 
@@ -131,7 +129,7 @@ ms.locfileid: "87519055"
 
 如果虛擬程式是 Microsoft Hyper-v，請確定它正在 Windows Server 2012 上執行。 您可以使用 [裝置管理] 來驗證這一點
 
-開啟 [Devmgmt.msc]****，然後針對已安裝的 Microsoft Hyper-V 裝置和驅動程式檢查 [系統裝置]****。 虛擬網域控制站所需的特定系統裝置是**Microsoft Hyper-v 世代計數器**（驅動程式： vmgencounter.sys）。
+開啟 [Devmgmt.msc]****，然後針對已安裝的 Microsoft Hyper-V 裝置和驅動程式檢查 [系統裝置]****。 虛擬網域控制站所需的特定系統裝置是**Microsoft Hyper-v 世代計數器** (驅動程式： vmgencounter.sys) 。
 
 ![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_HyperVVMGenIDCounter.png)
 

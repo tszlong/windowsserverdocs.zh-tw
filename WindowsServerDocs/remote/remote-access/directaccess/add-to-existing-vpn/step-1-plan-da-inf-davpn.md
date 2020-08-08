@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 4ca50ea8-6987-4081-acd5-5bf9ead62acd
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 9d820acc69e71c5236dbff799f58c35e02f0d161
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: f67609fff7f5de7cd1b53d73dcf86faaec9dec64
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970425"
+ms.locfileid: "87995455"
 ---
 # <a name="step-1-plan-directaccess-infrastructure"></a>步驟1規劃 DirectAccess 基礎結構
 
@@ -44,7 +44,7 @@ ms.locfileid: "87970425"
 
     DirectAccess 使用 IPv6 搭配 IPsec 在 DirectAccess 用戶端電腦與公司內部網路之間建立安全連線。 不過，DirectAccess 不一定需要 IPv6 網際網路的連線能力，或內部網路的原生 IPv6 支援。 取而代之的是，它會自動設定並使用 IPv6 轉換技術，透過 IPv4 網際網路 (6to4、Teredo 或 IP-HTTPS) 及透過僅支援 IPv4 的內部網路 (NAT64 或 ISATAP) 建立 IPv6 流量通道。 如需這些轉換技術的概觀，請參閱下列資源：
 
-    - [IPv6 轉換技術](/previous-versions//bb726951(v=technet.10))
+    - [IPv6 轉換技術](/previous-versions/bb726951(v=technet.10))
 
     - [IP-HTTPS 通道通訊協定規格](/openspecs/windows_protocols/ms-iphttps/f1bf1125-49c2-4246-9c75-5d4fc9706b56)
 

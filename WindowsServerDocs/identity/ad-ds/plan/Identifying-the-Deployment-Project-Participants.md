@@ -6,20 +6,18 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 9fb864bcf74fb0fee921288165b1e042a34f027e
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 16edfc28e90ca5e5755305a1e95c338b604a72f2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965530"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959046"
 ---
 # <a name="identifying-the-deployment-project-participants"></a>識別部署專案參與者
 
 > 適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-建立 Active Directory 網域 Service （AD DS）部署專案的第一步，是建立將負責管理 Active Directory 專案週期之設計階段和部署階段的設計和部署專案小組。 此外，在部署完成之後，您必須識別負責擁有及維護目錄的個人和群組。
+為 Active Directory 網域 Service (AD DS) 建立部署專案的第一步，是建立將負責管理 Active Directory 專案週期之設計階段和部署階段的設計和部署專案小組。 此外，在部署完成之後，您必須識別負責擁有及維護目錄的個人和群組。
 
 - [定義專案特定的角色](#BKMK_1)
 
@@ -83,7 +81,7 @@ Active Directory 專案架構設計人員的責任包括下列各項：
 - 負責規劃及長期維護 Active Directory 基礎結構，以及確保目錄持續運作，並維護在服務等級協定中所建立之目標的服務擁有者。
 - 負責維護儲存在目錄中之資訊的資料擁有者。 這包括使用者和電腦帳戶管理和本機資源的管理，例如成員伺服器和工作站。
 
-請務必及早識別 Active Directory 服務和資料擁有者，讓他們能夠盡可能參與大部分的設計流程。 因為服務和資料擁有者負責在部署專案完成後長期維護目錄，所以這些人員必須提供有關組織需求的輸入，並熟悉如何和為何進行特定設計決策。 服務擁有者包括樹系擁有者、Active Directory 網域命名系統（DNS）擁有者，以及網站拓朴擁有者。 資料擁有者包括組織單位（OU）擁有者。
+請務必及早識別 Active Directory 服務和資料擁有者，讓他們能夠盡可能參與大部分的設計流程。 因為服務和資料擁有者負責在部署專案完成後長期維護目錄，所以這些人員必須提供有關組織需求的輸入，並熟悉如何和為何進行特定設計決策。 服務擁有者包括樹系擁有者、Active Directory 網域命名系統 (DNS) 擁有者和網站拓朴擁有者。 資料擁有者包括組織單位 (OU) 擁有者。
 
 ### <a name="service-and-data-administrators"></a>服務和資料管理員
 AD DS 的作業牽涉到兩種類型的系統管理員：服務系統管理員和資料管理員。 服務系統管理員會實行服務擁有者所做的原則決策，並處理與維護目錄服務和基礎結構相關聯的日常工作。 這包括管理主控目錄服務的網域控制站、管理其他網路服務（例如 AD DS 所需的 DNS）、控制整個樹系設定的設定，以及確保目錄一律可供使用。
@@ -105,7 +103,7 @@ AD DS 的作業牽涉到兩種類型的系統管理員：服務系統管理員�
 完成部署專案之後，這些服務和資料擁有者會繼續負責其群組所管理之基礎結構的部分。 在 Active Directory 環境中，這些擁有者是樹系擁有者、AD DS 擁有者的 DNS、網站拓朴擁有者，以及 OU 擁有者。 下列各節將說明這些服務和資料擁有者的角色。
 
 #### <a name="forest-owner"></a>樹系擁有者
-樹系擁有者通常是組織中的資深資訊技術（IT）經理，負責 Active Directory 部署程式，以及最終負責在完成部署之後維護樹系中服務的傳遞。 樹系擁有者會藉由識別組織內能夠提供有關網路基礎結構和系統管理需求之必要資訊的重要人員，來指派個人來填滿其他擁有權角色。 樹系擁有者負責下列各項：
+樹系擁有者通常是一項資深資訊技術， (負責 Active Directory 部署程式的組織中) 管理員，以及在部署完成後，最終負責維護樹系中服務傳遞的人員。 樹系擁有者會藉由識別組織內能夠提供有關網路基礎結構和系統管理需求之必要資訊的重要人員，來指派個人來填滿其他擁有權角色。 樹系擁有者負責下列各項：
 
 - 部署樹系根域以建立樹系
 
@@ -178,11 +176,11 @@ Active Directory 專案小組是臨時組，負責完成 Active Directory 的設
 ### <a name="identifying-potential-forest-owners"></a>識別可能的樹系擁有者
 識別貴組織內的群組，其擁有並控制為網路上的使用者提供目錄服務所需的資源。 這些群組會被視為可能的樹系擁有者。
 
-在 AD DS 中區隔服務和資料管理，讓組織的基礎結構 IT 群組（或群組）可以管理目錄服務，而每個群組中的本機系統管理員則會管理屬於其本身群組的資料。 可能的樹系擁有者具有網路基礎結構所需的授權，以部署和支援 AD DS。
+將服務和資料管理與 AD DS 分開，可讓 IT 小組的基礎結構 (或群組) 組織管理目錄服務，而每個群組中的本機系統管理員則會管理屬於其本身群組的資料。 可能的樹系擁有者具有網路基礎結構所需的授權，以部署和支援 AD DS。
 
 對於擁有一個集中式基礎結構 IT 群組的組織而言，IT 群組通常是樹系擁有者，因此可能會有任何未來部署的樹系擁有者。 組織若包含多個獨立的基礎結構，IT 群組會有許多可能的樹系擁有者。 如果您的組織已經有 Active Directory 的基礎結構，任何目前的樹系擁有者也都是新部署的潛在樹系擁有者。
 
-選取其中一個可能的樹系擁有者，作為您要考慮部署的每個樹系的樹系擁有者。 這些潛在的樹系擁有者必須負責與設計小組合作，以判斷其樹系是否會實際部署，或如果採取其他動作（例如加入另一個現有的樹系），是否能更有效地使用可用的資源，而且仍然符合其需求。 您組織中的樹系擁有者（或擁有者）是 Active Directory 設計小組的成員。
+選取其中一個可能的樹系擁有者，作為您要考慮部署的每個樹系的樹系擁有者。 這些潛在的樹系擁有者必須負責與設計小組合作，以判斷是否要實際部署其樹系，或如果採取其他行動 (例如加入另一個現有的樹系) 可以更有效地使用可用的資源，而且仍然符合其需求。 您組織中的樹系擁有者 (或擁有者) 是 Active Directory design 小組的成員。
 
 ### <a name="establishing-a-design-team"></a>建立設計團隊
 Active Directory 的設計小組會負責收集對 Active Directory 邏輯結構設計做出決策所需的所有資訊。
@@ -251,4 +249,4 @@ Active Directory 部署小組包含下列成員：
 部署小組會在部署階段與服務和資料管理員合作，以確保作業小組的成員熟悉新的設計。 這有助於確保在部署作業完成時順暢地轉換擁有權。 完成部署程式時，維護新的 Active Directory 環境的責任會傳遞給作業小組。
 
 ### <a name="documenting-the-design-and-deployment-teams"></a>記載設計和部署小組
-記錄要參與 AD DS 設計和部署之人員的名稱和連絡人資訊。 識別誰負責設計和部署小組的每個角色。 一開始，這份清單包含潛在的樹系擁有者、專案經理和專案架構設計人員。 當您判斷將部署的樹係數目時，可能需要為其他樹系建立新的設計小組。 請注意，當小組成員資格變更時，您將需要更新檔，而且在設計程式期間識別各種 Active Directory 的擁有者。 如需協助您為每個樹系記錄設計和部署小組的工作表，請從[適用于 Windows Server 2003 部署套件的工作輔助程式](https://microsoft.com/download/details.aspx?id=9608)下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，並開啟「設計和部署小組資訊」（DSSLOGI_1.doc）。
+記錄要參與 AD DS 設計和部署之人員的名稱和連絡人資訊。 識別誰負責設計和部署小組的每個角色。 一開始，這份清單包含潛在的樹系擁有者、專案經理和專案架構設計人員。 當您判斷將部署的樹係數目時，可能需要為其他樹系建立新的設計小組。 請注意，當小組成員資格變更時，您將需要更新檔，而且在設計程式期間識別各種 Active Directory 的擁有者。 如需協助您為每個樹系記錄設計和部署小組的工作表，請從[Windows Server 2003 部署套件的工作輔助](https://microsoft.com/download/details.aspx?id=9608)下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，並開啟「設計和部署小組資訊」 ( # A1) 。

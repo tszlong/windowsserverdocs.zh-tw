@@ -6,25 +6,23 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/08/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 244444cc773e3b69ba09a2050ebaefa11ea9edef
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b77899c0603e89f972f2fbcb705a95b202c5062e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962280"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87967735"
 ---
 # <a name="creating-a-site-link-bridge-design"></a>建立站台連結橋接器設計
 
 > 適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-站台連結橋會連接兩個或多個站台連結，並啟用站台連結之間的傳遞。 橋接器中的每個站台連結都必須具有與橋接器中另一個站台連結相同的網站。 知識一致性檢查程式（KCC）會使用每個站台連結上的資訊，來計算一個站台連結中的網站與橋接器的另一個站台連結中的網站之間的複寫成本。 如果沒有在站台連結之間出現一般網站，則 KCC 也無法在相同站台連結橋連線的網站中的網域控制站之間建立直接連線。
+站台連結橋會連接兩個或多個站台連結，並啟用站台連結之間的傳遞。 橋接器中的每個站台連結都必須具有與橋接器中另一個站台連結相同的網站。 知識一致性檢查程式 (KCC) 會使用每個站台連結上的資訊，來計算一個站台連結中的網站與橋接器的另一個站台連結中的網站之間的複寫成本。 如果沒有在站台連結之間出現一般網站，則 KCC 也無法在相同站台連結橋連線的網站中的網域控制站之間建立直接連線。
 
-根據預設，所有站台連結都是可轉移的。 我們建議您不要變更 [**橋接所有站台連結**] 的預設值（預設為啟用），藉以保持啟用傳遞。 不過，在下列情況下，您必須停用**橋接所有網站連結**並完成站台連結橋設計：
+根據預設，所有站台連結都是可轉移的。 我們建議您不要變更預設值 [**橋接] [所有站台連結**] 的預設值，以保持啟用傳遞功能， (預設為啟用) 。 不過，在下列情況下，您必須停用**橋接所有網站連結**並完成站台連結橋設計：
 
 - 您的 IP 網路未完全路由。 當您停用**橋接所有站台連結**時，所有站台連結都會被視為非轉移，而您可以建立並設定站台連結橋物件，以模型出網路的實際路由行為。
-- 您必須控制在 Active Directory Domain Services （AD DS）中所做變更的複寫流程。 藉由停用 [橋接] 站台連結 IP 傳輸和設定站台連結橋的**所有網站**連結，站台連結橋就等同于脫離的網路。 站台連結橋接中的所有站台連結都可以進行可轉移的路由，但不會在站台連結橋的外部路由。
+- 您必須控制在 Active Directory Domain Services (AD DS) 中所做變更的複寫流程。 藉由停用 [橋接] 站台連結 IP 傳輸和設定站台連結橋的**所有網站**連結，站台連結橋就等同于脫離的網路。 站台連結橋接中的所有站台連結都可以進行可轉移的路由，但不會在站台連結橋的外部路由。
 
 如需如何使用 [Active Directory 的網站和服務] 嵌入式管理單元來停用 [**橋接所有站台連結**] 設定的詳細資訊，請參閱[啟用或停用站台連結橋](/previous-versions/windows/it-pro/windows-server-2003/cc738789(v=ws.10))文章。
 

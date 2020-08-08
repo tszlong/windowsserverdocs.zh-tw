@@ -1,35 +1,33 @@
 ---
 ms.assetid: c54b544f-cc32-4837-bb2d-a8656b22f3de
-title: 使用 Windows PowerShell 進行 Active Directory 複寫和拓撲管理簡介 (層級 100)
+title: Introduction to Active Directory Replication and Topology Management Using Windows PowerShell (Level 100)
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 63ecad01ec6d4b4d72b7aaff315b74541cb0fadc
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 62ba9e757195861989fcd6d9eca395a47262aa7e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80822981"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87967775"
 ---
-# <a name="introduction-to-active-directory-replication-and-topology-management-using-windows-powershell-level-100"></a>使用 Windows PowerShell 進行 Active Directory 複寫和拓撲管理簡介 (層級 100)
+# <a name="introduction-to-active-directory-replication-and-topology-management-using-windows-powershell-level-100"></a>Introduction to Active Directory Replication and Topology Management Using Windows PowerShell (Level 100)
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Active Directory 的 Windows PowerShell 可讓您管理複寫、站台、網域與樹系、網域控制站以及分割。 使用舊版管理工具 (像是 [Active Directory 站台及服務] 嵌入式管理單元與 repadmin.exe) 的使用者將在 Active Directory 的 Windows PowerShell 環境下找到類似的功能。 此外，這些 Cmdlet 也和 Active Directory 適用的現有 Windows PowerShell Cmdlet 相容，因此可以簡化程序，讓客戶輕鬆地建立自動化指令碼。
 
 > [!NOTE]
 > 下列環境可使用 Active Directory 複寫與拓撲適用的 Windows PowerShell Cmdlet：
-> 
+>
 > -    Windows Server 2012 網域控制站
 > -    Windows Server 2012，並已安裝適用于 AD DS 和 AD LDS 的遠端伺服器管理工具。
-> -   Windows&reg; 8，並已安裝 AD DS 和 AD LDS 的遠端伺服器管理工具。
+> -   Windows &reg; 8，並已安裝適用于 AD DS 和 AD LDS 的遠端伺服器管理工具。
 
 ## <a name="installing-the-active-directory-module-for-windows-powershell"></a>安裝 Windows PowerShell 的 Active Directory 模組
-當 AD DS 伺服器角色安裝在執行 Windows Server 2012 的伺服器上時，預設會安裝適用于 Windows PowerShell 的 Active Directory 模組。 除了新增伺服器角色，不需要執行任何額外的步驟。 您也可以藉由安裝遠端伺服器管理工具，在執行 Windows Server 2012 的伺服器上安裝 Active Directory 模組，而且可以下載並安裝[遠端伺服器系統管理工具（RSAT）](https://www.microsoft.com/download/details.aspx?id=28972)，以在執行 windows 8 的電腦上安裝 Active Directory 模組。 如需安裝步驟，請參閱 [指示](https://www.microsoft.com/download/details.aspx?id=28972)。
+當 AD DS 伺服器角色安裝在執行 Windows Server 2012 的伺服器上時，預設會安裝適用于 Windows PowerShell 的 Active Directory 模組。 除了新增伺服器角色，不需要執行任何額外的步驟。 您也可以藉由安裝遠端伺服器管理工具，在執行 Windows Server 2012 的伺服器上安裝 Active Directory 模組，而且您可以下載並安裝[遠端伺服器系統管理工具 (RSAT) ](https://www.microsoft.com/download/details.aspx?id=28972)，在執行 windows 8 的電腦上安裝 Active Directory 模組。 如需安裝步驟，請參閱[指示](https://www.microsoft.com/download/details.aspx?id=28972)。
 
 ## <a name="scenarios-for-testing-windows-powershell-for-active-directory-replication-and-topology-management-cmdlets"></a>測試 Active Directory 複寫與拓撲管理適用的 Windows PowerShell Cmdlet 的案例
 下列案例是為了讓系統管理員熟悉新的管理 Cmdlet 而設計的：
@@ -61,10 +59,10 @@ Active Directory 的 Windows PowerShell 可讓您管理複寫、站台、網域�
 
     > [!TIP]
     > 在 Windows PowerShell 中，您可以使用 Tab 鍵自動完成命令。
-    > 
-    > 範例：輸入 `Get-ADRep` 並按 Tab 多次，以跳過相符的命令，直到 `Get-ADReplicationSite`出現為止。 自動完成也可以用在像是 `Filter` 的參數名稱上。
+    >
+    > 範例：輸入 `Get-ADRep` 並按 Tab 多次可以跳過相符的命令，直到 `Get-ADReplicationSite` 出現為止。 自動完成也可以用在像是 `Filter` 的參數名稱上。
 
-    若要將 `Get-ADReplicationSite` 命令的輸出格式化為表格，並將顯示限制為特定欄位，您可以使用管線將輸出傳送至 `Format-Table` 命令（簡稱為 "`ft`"）：
+    若要將命令的輸出格式化 `Get-ADReplicationSite` 為表格，並將顯示限制為特定欄位，您可以使用管線將輸出傳送至 `Format-Table` 命令 (或 " `ft` "，以進行短) ：
 
     `Get-ADReplicationSite -Filter * | ft Name`
 
@@ -72,20 +70,20 @@ Active Directory 的 Windows PowerShell 可讓您管理複寫、站台、網域�
 
 #### <a name="to-produce-a-table-of-all-domain-controllers"></a>產生包含所有網域控制站的表格
 
--   在 [Windows PowerShell 的 Active Directory 模組] 命令提示字元中輸入下列命令：
+-   在 [Windows PowerShell 的 Active Directory 模組]**** 命令提示字元中輸入下列命令：
 
     `Get-ADDomainController -Filter * | ft Hostname,Site`
 
     這個命令會傳回網域控制站主機名稱與它們的站台關聯。
 
 ## <a name="manage-replication-topology"></a>管理複寫拓撲
-在上一個步驟中，執行完 `Get-ADDomainController -Filter * | ft Hostname,Site`命令以後， **DC2** 會列為 **CORPORATE** 站台的一部分。 在下列程序中，您將會建立一個新的分公司站台 **BRANCH1**、建立新的站台連結、設定站台連結成本與複寫頻率，然後將 **DC2** 移到 **BRANCH1**。
+在上一個步驟中，執行完 `Get-ADDomainController -Filter * | ft Hostname,Site` 命令以後，**DC2** 會列為 **CORPORATE** 站台的一部分。 在下列程序中，您將會建立一個新的分公司站台 **BRANCH1**、建立新的站台連結、設定站台連結成本與複寫頻率，然後將 **DC2** 移到 **BRANCH1**。
 
 您必須是 Domain Admins 群組的成員或具備相等的權限，才能完成下列程序中的步驟。
 
 #### <a name="to-create-a-new-site"></a>建立新站台
 
--   在 [Windows PowerShell 的 Active Directory 模組] 命令提示字元中輸入下列命令：
+-   在 [Windows PowerShell 的 Active Directory 模組]**** 命令提示字元中輸入下列命令：
 
     `New-ADReplicationSite BRANCH1`
 
@@ -93,7 +91,7 @@ Active Directory 的 Windows PowerShell 可讓您管理複寫、站台、網域�
 
 #### <a name="to-create-a-new-site-link"></a>建立新的站台連結
 
--   在 [Windows PowerShell 的 Active Directory 模組] 命令提示字元中輸入下列命令：
+-   在 [Windows PowerShell 的 Active Directory 模組]**** 命令提示字元中輸入下列命令：
 
     `New-ADReplicationSiteLink 'CORPORATE-BRANCH1'  -SitesIncluded CORPORATE,BRANCH1 -OtherAttributes @{'options'=1}`
 
@@ -104,15 +102,15 @@ Active Directory 的 Windows PowerShell 可讓您管理複寫、站台、網域�
 
 #### <a name="to-set-the-site-link-cost-and-replication-frequency"></a>設定站台連結成本與複寫頻率
 
--   在 [Windows PowerShell 的 Active Directory 模組] 命令提示字元中輸入下列命令：
+-   在 [Windows PowerShell 的 Active Directory 模組]**** 命令提示字元中輸入下列命令：
 
     `Set-ADReplicationSiteLink CORPORATE-BRANCH1 -Cost 100 -ReplicationFrequencyInMinutes 15`
 
-    這個命令會將 **BRANCH1** 的站台連結成本設為 **100** ，並將站台複寫頻率設為 **15 分鐘**。
+    這個命令會將 **BRANCH1** 的站台連結成本設為 **100**，並將站台複寫頻率設為 **15 分鐘**。
 
 #### <a name="to-move-a-domain-controller-to-a-different-site"></a>將網域控制站移到其他站台
 
--   在 [Windows PowerShell 的 Active Directory 模組] 命令提示字元中輸入下列命令：
+-   在 [Windows PowerShell 的 Active Directory 模組]**** 命令提示字元中輸入下列命令：
 
     `Get-ADDomainController DC2 | Move-ADDirectoryServer -Site BRANCH1`
 
@@ -122,13 +120,13 @@ Active Directory 的 Windows PowerShell 可讓您管理複寫、站台、網域�
 
 ##### <a name="to-verify-site-creation-new-site-link-and-cost-and-replication-frequency"></a>驗證站台建立結果、新的站台連結以及成本與複寫頻率
 
--   按一下 [伺服器管理員]，依序按一下 [工具] 和 [Active Directory 站台及服務] ，然後進行下列驗證：
+-   按一下 [伺服器管理員]****，依序按一下 [工具]**** 和 [Active Directory 站台及服務]****，然後進行下列驗證：
 
     驗證 **BRANCH1** 站台包含 Windows PowerShell 命令中所有正確的值。
 
     驗證 **CORPORATE-BRANCH1** 站台連結已經建立，而且連接了 **BRANCH1** 與 **CORPORATE** 站台。
 
-    驗證 **DC2** 現在位於 **BRANCH1** 站台。 或者，您可以開啟 [Windows PowerShell 的 Active Directory 模組] 並輸入下列命令以驗證 **DC2** 現在位於 **BRANCH1** 站台：`Get-ADDomainController -Filter * | ft Hostname,Site`。
+    驗證 **DC2** 現在位於 **BRANCH1** 站台。 或者，您可以開啟 [Windows PowerShell 的 Active Directory 模組]**** 並輸入下列命令以驗證 **DC2** 現在位於 **BRANCH1** 站台：`Get-ADDomainController -Filter * | ft Hostname,Site`。
 
 ## <a name="view-replication-status-information"></a>檢視複寫狀態資訊
 在下列程序中，您將使用 Active Directory 複寫與管理適用的其中一個 Windows PowerShell Cmdlet (`Get-ADReplicationUpToDatenessVectorTable DC1`)，產生使用最新向量表格製成的簡單複寫報告 (由各個網域控制站維護)。 這個最新向量表格會記錄從樹系中的每個網域控制站所觀察到的最高來源寫入 USN。
@@ -137,7 +135,7 @@ Active Directory 的 Windows PowerShell 可讓您管理複寫、站台、網域�
 
 #### <a name="to-view-the-up-to-dateness-vector-table-for-a-single-domain-controller"></a>檢視單一網域控制站的最新向量表格
 
-1.  在 [Windows PowerShell 的 Active Directory 模組] 命令提示字元中輸入下列命令：
+1.  在 [Windows PowerShell 的 Active Directory 模組]**** 命令提示字元中輸入下列命令：
 
     `Get-ADReplicationUpToDatenessVectorTable DC1`
 
@@ -154,6 +152,6 @@ Active Directory 的 Windows PowerShell 可讓您管理複寫、站台、網域�
     排序功能可以讓您輕鬆比較每個網域控制站針對指定的複寫協力電腦所觀察到的最後一個 USN。 這是確認您的環境正在進行複寫的一個快速方法。 如果複寫可以正常進行，則所有網域控制站針對指定的複寫協力電腦所回報的 UsnFilter 值應該相當類似。
 
 ## <a name="see-also"></a>另請參閱
-[使用 Windows PowerShell &#40;Level 200 進行先進的 Active Directory 複寫和拓撲管理&#41;](Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-.md)
+[使用 Windows PowerShell 進行先進的 Active Directory 複寫和拓撲管理 &#40;層級 200&#41;](Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-.md)
 
 

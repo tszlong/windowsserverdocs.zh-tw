@@ -2,17 +2,16 @@
 title: 對 DNS 用戶端進行疑難排解
 description: 本文介紹如何針對用戶端的 DNS 問題進行疑難排解。
 manager: dcscontentpm
-ms.technology: networking-dns
 ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: 2a9b44807ae6bc9f4c446d4af2150caf09955899
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 8098f49c0a48004c54e4acc67522d61d4b30717c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182334"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87958636"
 ---
 # <a name="troubleshooting-dns-clients"></a>對 DNS 用戶端進行疑難排解
 
@@ -44,7 +43,7 @@ ms.locfileid: "87182334"
 
 ### <a name="ping-test"></a>Ping 測試
 
-確認用戶端可以透過其 IP 位址 ping 慣用的 DNS 伺服器，以聯繫慣用（或替代） DNS 伺服器。
+確認用戶端可以透過其 IP 位址來 ping 慣用的 DNS 伺服器，以聯繫慣用的 (或替代的) DNS 伺服器。
 
 例如，如果用戶端使用的是慣用的 DNS 伺服器10.0.0.1，請在命令提示字元中執行此命令：
 

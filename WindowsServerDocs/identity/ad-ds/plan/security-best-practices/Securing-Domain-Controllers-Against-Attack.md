@@ -6,20 +6,18 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 06/18/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 1b156701090acc79a63afab26653f42044a23741
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 0ac2a3b67b0c3407db017c63d5e5187d36f08aa5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966540"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87958846"
 ---
 # <a name="securing-domain-controllers-against-attack"></a>保護網域控制站不受攻擊
 
 > 適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-*第三條法則：如果不良的人員對您的電腦具有不受限制的實體存取權，則不是您的電腦。* - [十個不變的安全性法則（版本2.0）](https://www.microsoft.com/en-us/msrc?rtc=1)
+*第三條法則：如果不良的人員對您的電腦具有不受限制的實體存取權，則不是您的電腦。* - [安全性 (2.0 版的十大不變法則) ](https://www.microsoft.com/en-us/msrc?rtc=1)
 
 除了提供可讓企業有效管理其伺服器、工作站、使用者和應用程式的服務和資料以外，網域控制站還提供 AD DS 資料庫的實體儲存體。 如果惡意使用者取得網域控制站的特殊許可權存取權，該使用者就可以修改、損毀或終結 AD DS 資料庫，並根據延伸模組，Active Directory 所管理的所有系統和帳戶。
 
@@ -35,11 +33,11 @@ ms.locfileid: "86966540"
 
 #### <a name="physical-domain-controllers"></a>實體網域控制站
 
-在資料中心中，實體網域控制站應該安裝在與一般伺服器擴展不同的專用安全機架或機殼中。 可能的話，應該使用信賴平臺模組（TPM）晶片來設定網域控制站，而域控制器伺服器中的所有磁片區都應該透過 BitLocker 磁碟機加密來保護。 BitLocker 通常會在單一位數的百分比中增加效能額外負荷，但即使已從伺服器移除磁片，還是會保護目錄免于危害。 BitLocker 也可以協助保護系統免于遭受攻擊，例如 rootkit，因為修改開機檔會導致伺服器開機進入修復模式，以便載入原始的二進位檔。 如果網域控制站設定為使用軟體 RAID、序列連接 SCSI、SAN/NAS 存放裝置或動態磁碟區，則無法執行 BitLocker，因此，應盡可能在網域控制站中使用本機連接的存放裝置（不論是否有硬體 RAID）。
+在資料中心中，實體網域控制站應該安裝在與一般伺服器擴展不同的專用安全機架或機殼中。 可能的話，應該使用信賴平臺模組設定網域控制站 (TPM) 晶片，且域控制器伺服器中的所有磁片區都應該透過 BitLocker 磁碟機加密來保護。 BitLocker 通常會在單一位數的百分比中增加效能額外負荷，但即使已從伺服器移除磁片，還是會保護目錄免于危害。 BitLocker 也可以協助保護系統免于遭受攻擊，例如 rootkit，因為修改開機檔會導致伺服器開機進入修復模式，以便載入原始的二進位檔。 如果網域控制站設定為使用軟體 RAID、序列連接 SCSI、SAN/NAS 存放裝置或動態磁碟區，則無法執行 BitLocker，因此，不論是否有硬體 RAID) ，本機連接的存放裝置 (都應該在網域控制站中使用。
 
 #### <a name="virtual-domain-controllers"></a>虛擬網域控制站
 
-如果您執行虛擬網域控制站，您應該確保網域控制站在不同的實體主機上執行，而不是環境中的其他虛擬機器。 即使您是使用協力廠商的虛擬化平臺，請考慮在 Windows Server 2012 或 Windows Server 2008 R2 中的 Hyper-v 伺服器上部署虛擬網域控制站，這會提供最小的受攻擊面，而且可以使用它所裝載的網域控制站來管理，而不是使用其他虛擬化主機來管理。 如果您執行 System Center Virtual Machine Manager （SCVMM）來管理虛擬化基礎結構，您可以針對網域控制站虛擬機器所在的實體主機，以及已授權系統管理員的網域控制站，委派系統管理。 您也應該考慮分隔虛擬網域控制站的存放裝置，以防止存放裝置系統管理員存取虛擬機器檔案。
+如果您執行虛擬網域控制站，您應該確保網域控制站在不同的實體主機上執行，而不是環境中的其他虛擬機器。 即使您是使用協力廠商的虛擬化平臺，請考慮在 Windows Server 2012 或 Windows Server 2008 R2 中的 Hyper-v 伺服器上部署虛擬網域控制站，這會提供最小的受攻擊面，而且可以使用它所裝載的網域控制站來管理，而不是使用其他虛擬化主機來管理。 如果您執行 System Center Virtual Machine Manager (SCVMM) 來管理虛擬化基礎結構，您可以針對網域控制站虛擬機器所在的實體主機，以及網域控制站本身，委派給授權的系統管理員。 您也應該考慮分隔虛擬網域控制站的存放裝置，以防止存放裝置系統管理員存取虛擬機器檔案。
 
 ### <a name="branch-locations"></a>分支位置
 
@@ -65,7 +63,7 @@ ms.locfileid: "86966540"
 
 ### <a name="security-configuration-wizard"></a>安全性設定精靈
 
-所有網域控制站都應該在初始組建時鎖定。 您可以使用 Windows Server 原生提供的安全性設定向導，在「基底組建」網域控制站上設定服務、登錄、系統和 WFAS 設定，以達成此目的。 設定可以儲存並匯出至 GPO，以連結至樹系中每個網域的網域控制站 OU，以強制執行一致的網域控制站設定。 如果您的網域包含多個版本的 Windows 作業系統，您可以設定 Windows Management Instrumentation （WMI）篩選器，只將 Gpo 套用至執行對應作業系統版本的網域控制站。
+所有網域控制站都應該在初始組建時鎖定。 您可以使用 Windows Server 原生提供的安全性設定向導，在「基底組建」網域控制站上設定服務、登錄、系統和 WFAS 設定，以達成此目的。 設定可以儲存並匯出至 GPO，以連結至樹系中每個網域的網域控制站 OU，以強制執行一致的網域控制站設定。 如果您的網域包含多個版本的 Windows 作業系統，您可以設定 Windows Management Instrumentation (WMI) 篩選器，只將 Gpo 套用至執行對應作業系統版本的網域控制站。
 
 ### <a name="microsoft-security-compliance-toolkit"></a>Microsoft 安全性合規性工具組
 
@@ -73,7 +71,7 @@ ms.locfileid: "86966540"
 
 ### <a name="rdp-restrictions"></a>RDP 限制
 
-連結至樹系中所有網域控制站 Ou 的群組原則物件，應設定為僅允許來自授權使用者和系統的 RDP 連線（例如，跳躍伺服器）。 這可以透過使用者權限設定和 WFAS 設定的組合來達成，而且應該在 Gpo 中執行，以便一致地套用原則。 如果略過，下一個群組原則重新整理會將系統傳回其適當的設定。
+連結至樹系中所有網域控制站 Ou 的群組原則物件，應設定為僅允許來自授權使用者和系統的 RDP 連線 (例如，跳躍伺服器) 。 這可以透過使用者權限設定和 WFAS 設定的組合來達成，而且應該在 Gpo 中執行，以便一致地套用原則。 如果略過，下一個群組原則重新整理會將系統傳回其適當的設定。
 
 ### <a name="patch-and-configuration-management-for-domain-controllers"></a>網域控制站的修補和設定管理
 
@@ -81,9 +79,9 @@ ms.locfileid: "86966540"
 
 ### <a name="blocking-internet-access-for-domain-controllers"></a>封鎖網域控制站的網際網路存取
 
-在 Active Directory 安全性評估中執行的其中一項檢查，就是在網域控制站上使用和設定 Internet Explorer。 Internet Explorer （或任何其他網頁瀏覽器）不應在網域控制站上使用，但對數千個網域控制站的分析，發現有許多情況下，有許可權的使用者使用 Internet Explorer 流覽組織的內部網路或網際網路。
+在 Active Directory 安全性評估中執行的其中一項檢查，就是在網域控制站上使用和設定 Internet Explorer。 Internet Explorer (或任何其他網頁瀏覽器) 不應在網域控制站上使用，但是對上千個網域控制站的分析，發現有許多情況下，有許可權的使用者使用 Internet Explorer 流覽組織的內部網路或網際網路。
 
-如先前在「設定錯誤」一節中所述，使用高許可權帳戶（這是唯一允許在本機登入網域控制站的帳戶），從 Windows 基礎結構中最強大的電腦流覽網際網路（或受感染的內部網路[），會對組織](../../../ad-ds/plan/security-best-practices/Avenues-to-Compromise.md)的安全性帶來一項特別的風險。 無論是透過下載或下載惡意程式碼感染的「公用程式」，攻擊者都可以存取所需的所有專案，以完全洩露或摧毀 Active Directory 環境。
+如先前在「設定錯誤」一節中所述，使用高許可權帳戶從 Windows 基礎結構中最強大的電腦流覽網際網路 (或受感染的內部網路[) ， (](../../../ad-ds/plan/security-best-practices/Avenues-to-Compromise.md)這是唯一允許在本機登入網域控制站的帳戶) 會為組織的安全性帶來極大的風險。 無論是透過下載或下載惡意程式碼感染的「公用程式」，攻擊者都可以存取所需的所有專案，以完全洩露或摧毀 Active Directory 環境。
 
 雖然 Windows Server 2012、Windows Server 2008 R2、Windows Server 2008 和目前版本的 Internet Explorer 提供一些保護以防止惡意下載，在大部分情況下，網域控制站和特殊許可權帳戶已用來流覽網際網路、網域控制站執行的是 Windows Server 2003，或是已刻意停用較新作業系統和瀏覽器所提供的保護。
 

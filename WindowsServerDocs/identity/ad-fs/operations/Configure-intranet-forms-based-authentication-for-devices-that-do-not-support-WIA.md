@@ -6,18 +6,16 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 781f950041666ba184fc522a55cbf23a54e6dd08
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: c64fad4357055ca0cef5d06279f244a92815d473
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519777"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87967535"
 ---
 # <a name="configuring-intranet-forms-based-authentication-for-devices-that-do-not-support-wia"></a>針對不支援 WIA 的裝置設定內部網路表單架構驗證
 
-根據預設，windows Server 2012 R2 中的 Active Directory 同盟服務（AD FS）會啟用 Windows 整合式驗證（WIA），以取得針對任何使用瀏覽器進行驗證之應用程式在組織內部網路（內部網路）中發生的驗證要求。 例如，這些可以是以瀏覽器為基礎的應用程式，使用 WS-同盟或 SAML 通訊協定，以及使用 OAuth 通訊協定的豐富應用程式。 WIA 可讓使用者順暢地登入應用程式，而不需要手動輸入其認證。 不過，有些裝置和瀏覽器無法支援 WIA，因此來自這些裝置的驗證要求將會失敗。 此外，與 NTLM 協商的特定瀏覽器的體驗並不理想。 建議的方法是針對這類裝置和瀏覽器，切換到以表單為基礎的驗證。
+根據預設，在 Windows Server 2012 R2 的 Active Directory 同盟服務 (AD FS) 中，已啟用 Windows 整合式驗證 (WIA) ，以取得針對使用瀏覽器進行驗證的任何應用程式，在組織內部網路 (內部網路) 中發生的驗證要求。 例如，這些可以是以瀏覽器為基礎的應用程式，使用 WS-同盟或 SAML 通訊協定，以及使用 OAuth 通訊協定的豐富應用程式。 WIA 可讓使用者順暢地登入應用程式，而不需要手動輸入其認證。 不過，有些裝置和瀏覽器無法支援 WIA，因此來自這些裝置的驗證要求將會失敗。 此外，與 NTLM 協商的特定瀏覽器的體驗並不理想。 建議的方法是針對這類裝置和瀏覽器，切換到以表單為基礎的驗證。
 
 Windows Server 2016 和 Windows Server 2012 R2 中的 AD FS 可讓系統管理員設定使用者代理程式清單，以支援以表單為基礎的驗證。 您可以透過兩個設定來進行回復：
 
@@ -38,9 +36,9 @@ Set-AdfsProperties -WIASupportedUserAgents @("MSIE 6.0", "MSIE 7.0; Windows NT",
 -----|-----|
 MSIE 6。0|IE 6。0|
 MSIE 7.0;Windows NT|IE 7，位於內部網路區域。 「Windows NT」片段是由桌上型電腦作業系統傳送。|
-MSIE 8。0|IE 8.0 （沒有任何裝置傳送此資訊，因此需要進行更明確的動作）|
-MSIE 9。0|IE 9.0 （沒有任何裝置傳送此資訊，因此不需要讓它更明確）|
-MSIE 10.0;Windows NT 6|適用于 Windows XP 和較新版本之桌面作業系統的 IE 10。0</br></br>已排除 Windows Phone 8.0 裝置（喜好設定為 mobile），因為它們會傳送</br></br>使用者代理程式： Mozilla/5.0 （相容;MSIE 10.0;Windows Phone 8.0;Trident/6.0;IEMobile/10.0;ARM按鍵式NETWORKSLumia 920）|
+MSIE 8。0|IE 8.0 (沒有任何裝置傳送此資訊，因此需要做出更具體的) |
+MSIE 9。0|IE 9.0 (沒有任何裝置傳送此資訊，因此不需要讓這種特定的) |
+MSIE 10.0;Windows NT 6|適用于 Windows XP 和較新版本之桌面作業系統的 IE 10。0</br></br>將喜好設定設為行動) 的 Windows Phone 8.0 裝置 (已排除，因為他們傳送</br></br>使用者代理程式： Mozilla/5.0 (相容;MSIE 10.0;Windows Phone 8.0;Trident/6.0;IEMobile/10.0;ARM按鍵式NETWORKSLumia 920) |
 Windows NT 6.3;Trident/7。0</br></br>Windows NT 6.3;Win64x64Trident/7。0</br></br>Windows NT 6.3;WOW64Trident/7。0| Windows 8.1 桌面作業系統、不同的平臺|
 Windows NT 6.2;Trident/7。0</br></br>Windows NT 6.2;Win64x64Trident/7。0</br></br>Windows NT 6.2;WOW64Trident/7。0|Windows 8 桌面作業系統，不同的平臺|
 Windows NT 6.1;Trident/7。0</br></br>Windows NT 6.1;Win64x64Trident/7。0</br></br>Windows NT 6.1;WOW64Trident/7。0|Windows 7 桌面作業系統，不同的平臺|
@@ -76,7 +74,7 @@ Set-AdfsProperties -WIASupportedUserAgents ((Get-ADFSProperties | Select -Expand
 Get-AdfsProperties | Select -ExpandProperty WIASupportedUserAgents
 ```
 
-（您在此需要新的螢幕擷取畫面） ![設定驗證](media/Configure-intranet-forms-based-authentication-for-devices-that-do-not-support-WIA/chrome1.png)
+ (您在此需要新的螢幕擷取畫面) ![ 設定驗證](media/Configure-intranet-forms-based-authentication-for-devices-that-do-not-support-WIA/chrome1.png)
 
 >[!NOTE]
 > 隨著新的瀏覽器和裝置發行，建議您協調這些使用者代理程式的功能，並據此更新 AD FS 設定，以在使用瀏覽器和裝置時優化使用者的驗證體驗。 更具體來說，建議您在將新裝置或瀏覽器類型新增至您的支援矩陣以使用 WIA 時，重新評估 AD FS 中的**WIASupportedUserAgents**設定。

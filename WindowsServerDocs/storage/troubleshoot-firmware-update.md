@@ -1,19 +1,17 @@
 ---
 ms.assetid: 13210461-1e92-48a1-91a2-c251957ba256
 title: 對磁碟機韌體更新進行疑難排解
-ms.prod: windows-server
 ms.author: toklima
 manager: masriniv
-ms.technology: storage
 ms.topic: article
 author: toklima
 ms.date: 04/18/2017
-ms.openlocfilehash: b62fdfe64ea579f61239dc582c639fb10ec1371c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b63df280585c4e1d5de88bc8a2ab08cce74c06d7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820881"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946221"
 ---
 # <a name="troubleshooting-drive-firmware-updates"></a>對磁碟機韌體更新進行疑難排解
 
@@ -23,8 +21,8 @@ Windows 10 版本 1703 和更新版本，以及 Windows Server (半年度管道)
 
 您可以在下列位置找到更多有關此功能的資訊：
 
-- [更新 Windows Server 2016 中的磁片磁碟機固件](update-firmware.md)
-- [更新儲存空間直接存取的磁片磁碟機固件而不停機](https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct)
+- [在 Windows Server 2016 中更新磁碟機韌體](update-firmware.md)
+- [在儲存空間直接存取中，不停機也能更新磁碟機韌體](https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct)
 
 韌體更新可能會因為各種原因而失敗。 本文章的目的是要協助您進行進階疑難排解。
 
@@ -41,7 +39,7 @@ Windows 10 版本 1703 和更新版本，以及 Windows Server (半年度管道)
 下列各節根據使用的是 Microsoft 還是協力廠商的驅動程式，概述疑難排解資訊。
 
 ## <a name="identifying-inappropriate-hardware"></a>識別不適當的硬體
-識別裝置是否支援正確命令集最快速方法就是，直接啟動 PowerShell，並將磁碟的象徵 PhysicalDisk 物件傳遞至 Get-StorageFirmwareInfo Cmdlet。 以下是範例：
+識別裝置是否支援正確命令集最快速方法就是，直接啟動 PowerShell，並將磁碟的象徵 PhysicalDisk 物件傳遞至 Get-StorageFirmwareInfo Cmdlet。 範例如下：
 
 ```powershell
 Get-PhysicalDisk -SerialNumber 15140F55976D | Get-StorageFirmwareInformation
@@ -64,7 +62,7 @@ SupportsUpdate 欄位 (至少 SATA 和 NVMe 裝置的這個欄位) 將會指出�
 
 要驗證 SAS 裝置是否支援所需的命令集，有兩個方式可以選擇︰
 1.  透過 Update-StorageFirmware Cmdlet，以適當的韌體映像來試試看，或者
-2.  請參閱 Windows Server 目錄，以識別哪些 SAS 裝置已成功取得 FW 更新 AQ （ https://www.windowsservercatalog.com/)
+2.  請參閱 Windows Server 目錄，以識別哪些 SAS 裝置已成功取得 FW 更新 AQ (https://www.windowsservercatalog.com/)
 
 ### <a name="remediation-options"></a>修復選項
 如果您測試中的特定裝置不支援適當命令集，請向廠商查詢以了解是否有更新的韌體提供所需的命令集，或是查閱 Windows Server 目錄以確認裝置是否有實作適當命令集的來源。
@@ -81,7 +79,7 @@ SupportsUpdate 欄位 (至少 SATA 和 NVMe 裝置的這個欄位) 將會指出�
 ```powershell
 Get-PhysicalDisk -SerialNumber 44GS103UT5EW | Update-StorageFirmware -ImagePath C:\Firmware\J3E160@3.enc -SlotNumber 0
 ```
-以下是輸出的範例：
+輸出的範例如下：
 
 ```
 Update-StorageFirmware : Failed
@@ -97,14 +95,14 @@ At line:1 char:47
 + CategoryInfo          : NotSpecified: (:) [Update-StorageFirmware], CimException
 + FullyQualifiedErrorId : StorageWMI 4,Microsoft.Management.Infrastructure.CimCmdlets.InvokeCimMethodCommand,Update-StorageFirmware
 ```
-    
+
 PowerShell 會擲回錯誤，並且收到表示所呼叫之功能 (亦即核心 API) 不正確的資訊。 這可能表示 API 不是由協力廠商 SAS Mini-Port 埠驅動程式所實作 (本案例即是如此)，或是 API 因其他緣故 (例如下載區段未對齊) 而失敗。
 
 ```
 EventData
 DeviceGUID  {132EDB55-6BAC-A3A0-C2D5-203C7551D700}
 DeviceNumber    1
-Vendor  ATA 
+Vendor  ATA
 Model   TOSHIBA THNSNJ12
 FirmwareVersion 6101
 SerialNumber    44GS103UT5EW
@@ -119,12 +117,12 @@ CdbBytes    3B0E0000000001000000
 NumberOfRetriesDone 0
 ```
 
-來自通道的 ETW 事件507顯示 SCSI SRB 要求失敗，並提供 SenseKey 為 ' 5 ' （不合法的要求）的其他資訊，而且 AdditionalSense 資訊是 ' 36 ' （CDB 中不合法的欄位）。
+來自通道的 ETW 事件507顯示 SCSI SRB 要求失敗，並提供 SenseKey 為 ' 5 ' 的其他資訊 (不合法的要求) ，而且 AdditionalSense 資訊是 ' 36 ' (CDB) 中不合法的欄位。
 
    > [!Note]
    > 此資訊是由前述 Miniport 提供，而該資訊的正確性取決於 Miniport 驅動程式的實作和複雜性。
 
-如果 Miniport 驅動程式沒有釐清錯誤碼之間的分別，不同的錯誤條件有可能會顯示相同的錯誤碼。 例如，嘗試透過 SAS HBA 將無效的韌體映像下載到 SATA 裝置 (預期此裝置會失敗) 可能會轉譯成相同的失敗碼。
+如果 Miniport 驅動程式沒有釐清錯誤碼之間的分別，不同的錯誤條件有可能會顯示相同的錯誤碼。  例如，嘗試透過 SAS HBA 將無效的韌體映像下載到 SATA 裝置 (預期此裝置會失敗) 可能會轉譯成相同的失敗碼。
 
 在通訊協定為混合式且發生轉譯 (亦即 SATA 後置 SAS) 的情況下，最好要測試直接與 SATA 控制連接的 SATA 裝置，以排除其有潛在問題。
 
@@ -144,7 +142,7 @@ NumberOfRetriesDone 0
 
 以下是有關 SATA 裝置因下載映像無效 (事件識別碼：258) 而失敗的韌體更新範例：
 
-``` 
+```
 EventData
 MiniportName    storahci
 MiniportEventId 19
@@ -175,10 +173,10 @@ Parameter8Value 0
 
 上述事件的參數值 2 至 6 包含詳細的裝置資訊。 我們在這裡看到了各種 ATA 暫存器值。 ATA ACS 規格可以用來解碼下面的下載微碼命令失敗值：
 - 傳回碼：0 (0000 0000) (不適用 - 無意義，因為沒有傳輸任何承載)
-- 功能：15（0000 1111）（Bit 1 已設定為 ' 1 '，表示「中止」）
+- 功能： 15 (0000 1111)  (位1設定為 ' 1 '，並指出「中止」 ) 
 - 磁區計數：0 (0000 0000) (不適用)
 - 磁碟機磁頭：160 (1010 0000) (不適用 – 只有過時的位元已設定)
-- 命令：146（1001 0010）（Bit 1 設定為 ' 1 '，表示有意義資料的可用性）
+- 命令： 146 (1001 0010)  (位1設定為 ' 1 '，表示有意義資料的可用性) 
 
 這就是說，韌體更新作業已由裝置中止。
 

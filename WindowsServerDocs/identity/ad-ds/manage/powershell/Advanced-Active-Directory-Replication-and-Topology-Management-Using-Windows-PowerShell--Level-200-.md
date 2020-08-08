@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 41cfde1ffab857762469a00d1e805d5cf1fc542b
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 058e1ba1cd68c1d33aee6e85dfb0de572a480d26
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518836"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87967975"
 ---
 # <a name="advanced-active-directory-replication-and-topology-management-using-windows-powershell-level-200"></a>Advanced Active Directory Replication and Topology Management Using Windows PowerShell (Level 200)
 
@@ -100,7 +98,7 @@ Repadmin.exe 會驗證 Active Directory 複寫的健康情況與一致性。 Rep
 
 - **Get-ADReplicationUpToDatenessVectorTable**
 
-**Target** 引數接受一個以逗號分隔的字串清單，識別由 **Scope** 引數所指定的目標伺服器、站台、網域或樹系。 \*也允許星號（），表示指定範圍內的所有伺服器。 如果未指定任何範圍，則表示目前使用者樹系中的所有伺服器。 **Scope** 引數指定搜尋的範圍。 可接受的值為 **Server**、**Site**、**Domain** 與 **Forest**。 **EnumerationServer** 指定的伺服器會列舉 **Target** 和 **Scope** 中指定的網域控制站清單。 其運作方式與 **Server** 引數相同，而且要求指定的伺服器必須執行「Active Directory Web 服務」。
+**Target** 引數接受一個以逗號分隔的字串清單，識別由 **Scope** 引數所指定的目標伺服器、站台、網域或樹系。 \*也允許星號 () ，並表示指定範圍內的所有伺服器。 如果未指定任何範圍，則表示目前使用者樹系中的所有伺服器。 **Scope** 引數指定搜尋的範圍。 可接受的值為 **Server**、**Site**、**Domain** 與 **Forest**。 **EnumerationServer** 指定的伺服器會列舉 **Target** 和 **Scope** 中指定的網域控制站清單。 其運作方式與 **Server** 引數相同，而且要求指定的伺服器必須執行「Active Directory Web 服務」。
 
 為了介紹新的 Cmdlet，以下範例案例顯示 repadmin.exe 無法執行的功能；有了這些實例，就能明確顯示出系統管理的可能性。 如需特定的使用需求，請檢閱 Cmdlet 說明。
 

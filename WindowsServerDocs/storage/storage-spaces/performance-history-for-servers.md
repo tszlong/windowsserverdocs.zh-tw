@@ -2,17 +2,16 @@
 title: 伺服器的效能歷程記錄
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 02/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 15f6e68f613dea03631d1ce6be53f6cb9d854fc1
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 262c35e7d91fe43d2ade955d4606279f8d428f6a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954100"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946331"
 ---
 # <a name="performance-history-for-servers"></a>伺服器的效能歷程記錄
 
@@ -45,12 +44,12 @@ ms.locfileid: "86954100"
 | 數列                           | 如何解讀                                                      |
 |----------------------------------|-----------------------------------------------------------------------|
 | `clusternode.cpu.usage`          | 非閒置的處理器時間百分比。                        |
-| `clusternode.cpu.usage.guest`    | 用於來賓（虛擬機器）需求的處理器時間百分比。 |
+| `clusternode.cpu.usage.guest`    | 用於來賓 (虛擬機器) 需求的處理器時間百分比。 |
 | `clusternode.cpu.usage.host`     | 用於主機需求的處理器時間百分比。                    |
 | `clusternode.memory.total`       | 伺服器的實體記憶體總計。                              |
 | `clusternode.memory.available`   | 伺服器的可用記憶體。                                   |
-| `clusternode.memory.usage`       | 伺服器的配置（無法使用）記憶體。                   |
-| `clusternode.memory.usage.guest` | 配置給來賓（虛擬機器）需求的記憶體。               |
+| `clusternode.memory.usage`       | 配置的 (無法) 伺服器記憶體使用。                   |
+| `clusternode.memory.usage.guest` | 配置給來賓 (虛擬機器) 要求的記憶體。               |
 | `clusternode.memory.usage.host`  | 配置給主機需求的記憶體。                                  |
 
 ## <a name="where-they-come-from"></a>來自何處
@@ -79,7 +78,7 @@ ms.locfileid: "86954100"
 
 有同樣的警告， `clusternode.cpu.usage.guest` 一律是 `vm.cpu.usage` 主機伺服器上所有虛擬機器的總和。
 
-此 `memory.*` 系列為（即將推出）。
+此 `memory.*` 系列 (即將推出) 。
 
   > [!NOTE]
   > 計數器是以整個間隔來測量，而不是取樣。 例如，如果伺服器閒置9秒，但尖峰到 100% CPU 的第10秒，則在 `clusternode.cpu.usage` 此10秒的間隔期間，平均會將其記錄為10%。 這可確保其效能歷程會捕捉所有活動，而且健全于雜訊。
@@ -92,6 +91,6 @@ ms.locfileid: "86954100"
 Get-ClusterNode <Name> | Get-ClusterPerf
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [儲存空間直接存取的效能歷程記錄](performance-history.md)

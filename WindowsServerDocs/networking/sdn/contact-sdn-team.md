@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: f9945c55-c2d0-448f-86dd-8c734e1b2987
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: fe5b9bc8c8b3b888b3c11a72c39756374cde566c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d9bba302c80a810e44c41079d7041b49741fd5b4
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970825"
+ms.locfileid: "87995243"
 ---
 # <a name="contact-the-datacenter-and-cloud-networking-team"></a>請連絡資料中心和雲端網路團隊
 
@@ -31,10 +31,10 @@ Microsoft 的**軟體定義網路 \( SDN \) **和**容器網路**解決方案是
 
 > GitHub 是與我們聯繫的最佳位置，其中包含的主題與您可以在推文中輕鬆容納的專案類型有關。 *您的 SDN 部署需要協助嗎？不確定我們的功能可以如何滿足您組織的獨特需求？有可能的 bug 嗎？* 藉由提交 GitHub 問題，讓我們能夠與我們聯繫的所有好原因。
 
-## <a name="microsoft-docs"></a>[Microsoft Docs](https://docs.microsoft.com/)
-我們的[容器網路檔](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking)可在[Microsoft Docs (docs.microsoft.com) ](https://docs.microsoft.com/)上找到，其具有**內建的批註功能**。 若要在 Microsoft Docs 直接登入來回複留言，請在您想要參考的 [Microsoft Docs] 頁面底部向下流覽，然後在該處提交批註。
+## <a name="microsoft-docs"></a>[Microsoft Docs](/)
+我們的[容器網路檔](/virtualization/windowscontainers/manage-containers/container-networking)可在[Microsoft Docs (docs.microsoft.com) ](/)上找到，其具有**內建的批註功能**。 若要在 Microsoft Docs 直接登入來回複留言，請在您想要參考的 [Microsoft Docs] 頁面底部向下流覽，然後在該處提交批註。
 
-> [Microsoft Docs](https://docs.microsoft.com/)是 Microsoft 的新整合檔網站。 雖然我們的大部分小組[SDN 檔](https://technet.microsoft.com/windows-server-docs/networking/sdn/software-defined-networking)都保留在 TechNet 上，但我們的[容器網路功能檔](https://docs.microsoft.com/virtualization/windowscontainers)現在已 Microsoft Docs。
+> [Microsoft Docs](/)是 Microsoft 的新整合檔網站。 雖然我們的大部分小組[SDN 檔](./software-defined-networking.md)都保留在 TechNet 上，但我們的[容器網路功能檔](/virtualization/windowscontainers)現在已 Microsoft Docs。
 >
 > *一般來說，如果您在 Microsoft Docs 上遇到問題的主題，或是想要更多的資訊，只要在該頁面上留下留言，即可與 Microsoft 團隊分享您的意見反應。*
 

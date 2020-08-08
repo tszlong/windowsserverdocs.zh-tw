@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 09/25/2019
-ms.openlocfilehash: 21c29c8432d9f578a50130719c61a255fdb5c649
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fa6b0bb75752d29b4deaa510eca2293abab4a15c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87944078"
+ms.locfileid: "87995326"
 ---
 # <a name="troubleshooting-the-host-guardian-service"></a>針對主機守護者服務進行疑難排解
 
@@ -165,7 +165,7 @@ AttestationSignerCertRenewalTask
 
 ## <a name="endorsement-key-certificate-error-messages"></a>簽署金鑰憑證錯誤訊息
 
-使用[HgsAttestationTpmHost](https://docs.microsoft.com/powershell/module/hgsattestation/add-hgsattestationtpmhost) Cmdlet 來註冊主機時，會從提供的平臺識別碼檔案中解壓縮兩個 TPM 識別碼：簽署金鑰憑證 (EKcert) ，而 (EKpub) 的公開簽署金鑰。
+使用[HgsAttestationTpmHost](/powershell/module/hgsattestation/add-hgsattestationtpmhost) Cmdlet 來註冊主機時，會從提供的平臺識別碼檔案中解壓縮兩個 TPM 識別碼：簽署金鑰憑證 (EKcert) ，而 (EKpub) 的公開簽署金鑰。
 EKcert 會識別 TPM 的製造商，藉由正常供應鏈來確保 TPM 的真實性和製造。
 EKpub 會唯一識別該特定 TPM，而是 HGS 用來授與主機存取權以執行受防護 Vm 的其中一個量值。
 
@@ -175,7 +175,7 @@ EKpub 會唯一識別該特定 TPM，而是 HGS 用來授與主機存取權以�
 
 某些 TPM 製造商不會在其 Tpm 中包含 EKcerts。
 如果您懷疑 TPM 發生這種情況，請向您的 OEM 確認您的 Tpm 不應該有 EKcert，並使用旗標 `-Force` 手動向 HGS 註冊主機。
-如果您的 TPM 應該有 EKcert，但在平臺識別碼檔案中找不到，則請確定您使用的是系統管理員，在主機上執行[PlatformIdentifier](https://docs.microsoft.com/powershell/module/platformidentifier/get-platformidentifier)時， (提高許可權的) PowerShell 主控台。
+如果您的 TPM 應該有 EKcert，但在平臺識別碼檔案中找不到，則請確定您使用的是系統管理員，在主機上執行[PlatformIdentifier](/powershell/module/platformidentifier/get-platformidentifier)時， (提高許可權的) PowerShell 主控台。
 
 如果您收到 EKcert 不受信任的錯誤，請確定您已在每部 HGS 伺服器上[安裝受信任的 tpm 根憑證封裝](guarded-fabric-install-trusted-tpm-root-certificates.md)，而且 TPM 廠商的根憑證存在於本機電腦的**TrustedTPM \_ rootca.cer**存放區中。 任何適用的中繼憑證也必須安裝在本機電腦上的**TrustedTPM \_ IntermediateCA**存放區中。
 安裝根和中繼憑證之後，您應該能夠 `Add-HgsAttestationTpmHost` 順利執行。

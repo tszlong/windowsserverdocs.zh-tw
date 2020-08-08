@@ -1,19 +1,17 @@
 ---
 ms.assetid: e5945bae-4a33-487c-a019-92a69db8cf6c
 title: 更新磁碟機韌體
-ms.prod: windows-server
 ms.author: toklima
 manager: dmoss
-ms.technology: storage-spaces
 ms.topic: article
 author: toklima
 ms.date: 10/04/2016
-ms.openlocfilehash: 0e117b486fd628397bfe36aa897ff64cdd26f98b
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 15e0d6dedc6bb81c0b511479ee342dbd463654e2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965830"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946211"
 ---
 # <a name="updating-drive-firmware"></a>更新磁碟機韌體
 >適用于： Windows Server 2019、Windows Server 2016、Windows 10
@@ -25,13 +23,13 @@ ms.locfileid: "86965830"
 
 ## <a name="drive-compatibility"></a>磁碟機相容性
 
-若要使用 Windows Server 來更新磁碟機韌體，您必須具有支援的磁碟機。 為了確保通用裝置行為，一開始會定義適用於 SAS、SATA 和 NVMe 裝置的新和 (適用於 Windows 10 和 Windows Server 2016) 選擇性 Hardware Lab Kit (HLK) 需求。 這些需求概述 SATA、SAS 或 NVMe 裝置必須支援的命令，以用來透過這些新的 Windows 原生 PowerShell Cmdlet 進行韌體更新。 若要支援這些需求，會進行新的 HLK 測試，確認廠商產品支援正確的命令，並在未來的修訂中進行實作。 
+若要使用 Windows Server 來更新磁碟機韌體，您必須具有支援的磁碟機。 為了確保通用裝置行為，一開始會定義適用於 SAS、SATA 和 NVMe 裝置的新和 (適用於 Windows 10 和 Windows Server 2016) 選擇性 Hardware Lab Kit (HLK) 需求。 這些需求概述 SATA、SAS 或 NVMe 裝置必須支援的命令，以用來透過這些新的 Windows 原生 PowerShell Cmdlet 進行韌體更新。 若要支援這些需求，會進行新的 HLK 測試，確認廠商產品支援正確的命令，並在未來的修訂中進行實作。
 
 如需硬體是否支援 Windows 更新磁碟機韌體的相關資訊，請連絡解決方案廠商。
 以下是各種需求的連結︰
 
 -   SATA：[Device.Storage.Hd.Sata](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)#devicestoragehdsata) - 在 **[如果已實作\] 韌體下載和啟用**小節
-    
+
 -   SAS：[Device.Storage.Hd.Sas](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)#devicestoragehdsas) - 在 **[如果已實作\] 韌體下載和啟用**小節
 
 -   NVMe：[Device.Storage.ControllerDrive.NVMe](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)#devicestoragecontrollerdrivenvme) - 在 **5.7** 和 **5.8** 小節。
@@ -65,7 +63,7 @@ ms.locfileid: "86965830"
 
 磁碟機會先將新的韌體映像載入至內部臨時區域。 發生這種情況時，通常會繼續 I/O。 映像會在下載之後啟用。 因為發生內部重設，所以磁碟機在這段時間將無法回應 I/O 命令。 這表示此磁碟機在啟用期間未提供任何資料。 除非韌體啟用完成，否則存取此磁碟機上資料的應用程式必須等待回應。 以下是作用中的 Cmdlet 範例︰
 
-   ```powershell 
+   ```powershell
    $pd | Update-StorageFirmware -ImagePath C:\Firmware\J3E160@3.enc -SlotNumber 0
    $pd | Get-StorageFirmwareInformation
 
@@ -81,7 +79,7 @@ ms.locfileid: "86965830"
 
 這個磁碟機已在 ~5.8 秒內執行韌體更新，如下所示︰
 
-```powershell 
+```powershell
 Measure-Command {$pd | Update-StorageFirmware -ImagePath C:\\Firmware\\J3E16101.enc -SlotNumber 0}
 
  Days : 0

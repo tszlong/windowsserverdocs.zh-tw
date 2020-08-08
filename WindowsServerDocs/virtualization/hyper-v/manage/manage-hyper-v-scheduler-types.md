@@ -7,12 +7,12 @@ ms.date: 08/14/2018
 ms.topic: article
 ms.localizationpriority: low
 ms.assetid: 6cb13f84-cb50-4e60-a685-54f67c9146be
-ms.openlocfilehash: 954efafe3185cadb347384c3c93a2eb8ef895143
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a1f53dba659af7d5ac0efff2e72bd168523bde0c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963554"
+ms.locfileid: "87995629"
 ---
 # <a name="managing-hyper-v-hypervisor-scheduler-types"></a>管理 Hyper-v 虛擬程式排程器類型
 
@@ -40,7 +40,7 @@ Intel 和 AMD 皆提供支援 SMT 的處理器。 Intel 是以 Intel 超執行�
 
 ## <a name="understanding-how-hyper-v-virtualizes-processors"></a>瞭解 Hyper-v 如何虛擬化處理器
 
-在考慮「基礎程式排程器」類型之前，瞭解 Hyper-v 架構也很有説明。 您可以在[Hyper-v 技術總覽](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-technology-overview)中找到一般摘要。 以下是這篇文章的重要概念：
+在考慮「基礎程式排程器」類型之前，瞭解 Hyper-v 架構也很有説明。 您可以在[Hyper-v 技術總覽](../hyper-v-technology-overview.md)中找到一般摘要。 以下是這篇文章的重要概念：
 
 * Hyper-v 會建立及管理虛擬機器磁碟分割，在這些資料分割中，會在管理者控制下配置和共用計算資源。 分割區可在所有來賓虛擬機器之間，以及在來賓 Vm 與根磁碟分割之間提供強式隔離界限。
 

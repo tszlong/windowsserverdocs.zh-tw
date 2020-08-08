@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 09/25/2019
-ms.openlocfilehash: 296de5fbb7387e469d7e1ce39a477366dd274bbb
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c9d1237caeb5838d1e95d00ec9afab9eeb436fd4
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936749"
+ms.locfileid: "87995477"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>受防護的租使用者 Vm-建立防護資料以定義受防護的 VM
 
@@ -39,7 +39,7 @@ ms.locfileid: "87936749"
 
 由於租使用者只能使用遠端桌面連線或其他遠端系統管理工具來連線到其受防護的 Vm，因此請務必確保租使用者可以驗證它們是否連線到正確的端點 (也就是不會有「中間人」攔截連接) 。
 
-驗證您要連線到目標伺服器的其中一種方式，就是安裝和設定憑證，讓遠端桌面服務在您起始連線時顯示。 連接到伺服器的用戶端電腦將會檢查它是否信任憑證，如果沒有，則會顯示警告。 一般而言，若要確保連線的用戶端信任憑證，RDP 憑證會從租使用者的 PKI 發行。 如需如何[在遠端桌面服務中使用憑證](https://technet.microsoft.com/library/dn781533.aspx)的詳細資訊，請參閱 TechNet。
+驗證您要連線到目標伺服器的其中一種方式，就是安裝和設定憑證，讓遠端桌面服務在您起始連線時顯示。 連接到伺服器的用戶端電腦將會檢查它是否信任憑證，如果沒有，則會顯示警告。 一般而言，若要確保連線的用戶端信任憑證，RDP 憑證會從租使用者的 PKI 發行。 如需如何[在遠端桌面服務中使用憑證](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn781533(v=ws.11))的詳細資訊，請參閱 TechNet。
 
  為了協助您決定是否需要取得自訂的 RDP 憑證，請考慮下列事項：
 
@@ -103,7 +103,7 @@ ms.locfileid: "87936749"
 此外，請注意，只有在您利用 VMM 靜態 IP 位址池時，才會使用與資料表結尾相對應的網路相關替代字串。 您的主機服務提供者應該能夠告訴您是否需要這些替代字串。 如需 VMM 範本中靜態 IP 位址的詳細資訊，請參閱 VMM 檔中的下列內容：
 
 - [IP 位址集區的指導方針](https://technet.microsoft.com/system-center-docs/vmm/plan/plan-network#guidelines-for-ip-address-pools)
-- [設定 VMM 光纖中的靜態 IP 位址集區](https://technet.microsoft.com/system-center-docs/vmm/manage/manage-network-static-address-pools)
+- [設定 VMM 光纖中的靜態 IP 位址集區](/system-center/vmm/network-pool?view=sc-vmm-2019)
 
 最後，請務必注意，受防護的 VM 部署程式只會加密 OS 磁片磁碟機。 如果您部署具有一或多個資料磁片磁碟機的受防護 VM，強烈建議您在租使用者網域中新增自動安裝命令或群組原則設定，以自動加密資料磁片磁碟機。
 
@@ -206,10 +206,10 @@ ms.locfileid: "87936749"
 
 ## <a name="create-a-shielding-data-file-and-add-guardians-using-powershell"></a>使用 PowerShell 建立防護資料檔案並新增監護人
 
-除了 [防護資料檔案] [檔案] 之外，您還可以執行[ShieldingDataFile](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/new-shieldingdatafile?view=win10-ps)來建立防護資料檔案。
+除了 [防護資料檔案] [檔案] 之外，您還可以執行[ShieldingDataFile](/powershell/module/shieldedvmdatafile/new-shieldingdatafile?view=win10-ps)來建立防護資料檔案。
 
 所有的防護資料檔案都必須使用正確的擁有者和監護人憑證進行設定，以授權受防護的虛擬機器在受保護網狀架構上執行。
-您可以藉由執行[HgsGuardian](https://docs.microsoft.com/powershell/module/hgsclient/get-hgsguardian?view=win10-ps)來檢查是否已在本機安裝任何監護人。 擁有者的監護人擁有私密金鑰，而您的資料中心的守護者通常不會這麼做。
+您可以藉由執行[HgsGuardian](/powershell/module/hgsclient/get-hgsguardian?view=win10-ps)來檢查是否已在本機安裝任何監護人。 擁有者的監護人擁有私密金鑰，而您的資料中心的守護者通常不會這麼做。
 
 如果您需要建立擁有者守護者，請執行下列命令：
 
@@ -251,7 +251,7 @@ New-ShieldingDataFile -ShieldingDataFilePath "C:\temp\Marketing-LBI.pdk" -Policy
 您可以藉由將以逗號分隔的磁片區識別碼辨識符號清單提供給參數，來信任一個以上的範本磁片 `-VolumeIDQualifier` 。
 最後，如果您有其他需要隨 VM 一起回應檔案的檔案，請使用 `-OtherFile` 參數並提供以逗號分隔的檔案路徑清單。
 
-請參閱[ShieldingDataFile](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-ShieldingDataFile?view=win10-ps)和[VolumeIDQualifier](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-VolumeIDQualifier?view=win10-ps)的 Cmdlet 檔，以瞭解設定防護資料檔案的其他方式。
+請參閱[ShieldingDataFile](/powershell/module/shieldedvmdatafile/new-shieldingdatafile?view=win10-ps)和[VolumeIDQualifier](/powershell/module/shieldedvmdatafile/New-VolumeIDQualifier?view=win10-ps)的 Cmdlet 檔，以瞭解設定防護資料檔案的其他方式。
 
 ## <a name="additional-references"></a>其他參考資料
 

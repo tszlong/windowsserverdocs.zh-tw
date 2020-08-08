@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 04/01/2019
-ms.openlocfilehash: a0bc065f9654091ece18445488e4b46cfb197ad3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: dedd7a3629b4381fd5f78f70a39f6906cab0573d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87944148"
+ms.locfileid: "87995391"
 ---
 # <a name="authorize-guarded-hosts-using-tpm-based-attestation"></a>使用 TPM 型證明授權受防護主機
 
@@ -80,11 +80,11 @@ Windows Server 2019 引進了證明的新方法，稱為*v2 證明*，其中必�
 
 建議您先在 audit (記錄) 模式中建立 CI 原則，以查看它是否遺漏任何專案，然後強制執行主機生產工作負載的原則。
 
-如果您使用 CIPolicy Cmdlet 來產生自己的[程式](https://docs.microsoft.com/powershell/module/configci/new-cipolicy?view=win10-ps)代碼完整性原則，就必須決定要使用的規則層級。
+如果您使用 CIPolicy Cmdlet 來產生自己的[程式](/powershell/module/configci/new-cipolicy?view=win10-ps)代碼完整性原則，就必須決定要使用的規則層級。
 我們建議使用回溯至**Hash**的主要「**發行者**」層級，以允許更新最多數位簽署的軟體，而不需要變更 CI 原則。
 相同發行者所撰寫的新軟體也可以安裝在伺服器上，而不需要變更 CI 原則。
 未數位簽署的可執行檔將會雜湊--這些檔案的更新將會要求您建立新的 CI 原則。
-如需可用 CI 原則規則層級的詳細資訊，請參閱[部署程式碼完整性原則：原則規則和檔案規則](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create#windows-defender-application-control-policy-rules)和 Cmdlet 說明。
+如需可用 CI 原則規則層級的詳細資訊，請參閱[部署程式碼完整性原則：原則規則和檔案規則](/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create#windows-defender-application-control-policy-rules)和 Cmdlet 說明。
 
 1.  在參照主機上，產生新的程式碼完整性原則。 下列命令會在**發行者**層級建立原則，並將其回復為**Hash**。 接著，它會將 XML 檔案轉換成二進位檔案格式，Windows 和 HGS 必須分別套用和測量 CI 原則。
 
@@ -101,7 +101,7 @@ Windows Server 2019 引進了證明的新方法，稱為*v2 證明*，其中必�
 
 3.  將 CI 原則套用至您的參考主機：
 
-    1.  執行下列命令，將電腦設定為使用您的 CI 原則。 您也可以使用[群組原則](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/deploy-windows-defender-application-control-policies-using-group-policy)或[SYSTEM CENTER VIRTUAL MACHINE MANAGER](https://docs.microsoft.com/system-center/vmm/guarded-deploy-host?view=sc-vmm-2019#manage-and-deploy-code-integrity-policies-with-vmm)來部署 CI 原則。
+    1.  執行下列命令，將電腦設定為使用您的 CI 原則。 您也可以使用[群組原則](/windows/security/threat-protection/windows-defender-application-control/deploy-windows-defender-application-control-policies-using-group-policy)或[SYSTEM CENTER VIRTUAL MACHINE MANAGER](/system-center/vmm/guarded-deploy-host?view=sc-vmm-2019#manage-and-deploy-code-integrity-policies-with-vmm)來部署 CI 原則。
 
         ```powershell
         Invoke-CimMethod -Namespace root/Microsoft/Windows/CI -ClassName PS_UpdateAndCompareCIPolicy -MethodName Update -Arguments @{ FilePath = "C:\temp\HW1CodeIntegrity.p7b" }

@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 01/14/2020
-ms.openlocfilehash: a0537c938b86141f83857f1763fbb18260a23e42
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 40381a08c22c8b559fbf2b7da8e8151e91c77718
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87944190"
+ms.locfileid: "87995369"
 ---
 # <a name="troubleshooting-using-the-guarded-fabric-diagnostic-tool"></a>使用受防護的網狀架構診斷工具進行疑難排解
 
@@ -19,7 +19,7 @@ ms.locfileid: "87944190"
 
 本主題說明如何使用受防護的網狀架構診斷工具，來找出並修復部署、設定和受防護網狀架構基礎結構的持續性作業中常見的失敗。 這包括主機守護者服務 (HGS) 、所有受防護主機，以及 DNS 和 Active Directory 等支援服務。 診斷工具可以用來在分級失敗的受防護網狀架構時執行第一階段，為系統管理員提供解決中斷的起點，並找出設定錯誤的資產。 此工具並不是為了讓您瞭解如何操作受防護的網狀架構，而只是為了快速驗證日常作業期間最常遇到的問題。
 
-本文中所使用 Cmdlet 的完整檔可在[HgsDiagnostics 模組參考](https://docs.microsoft.com/powershell/module/hgsdiagnostics/?view=win10-ps)中找到。
+本文中所使用 Cmdlet 的完整檔可在[HgsDiagnostics 模組參考](/powershell/module/hgsdiagnostics/?view=win10-ps)中找到。
 
 [!INCLUDE [Guarded fabric diagnostics tool](../../../includes/guarded-fabric-diagnostics-tool.md)]
 
@@ -105,10 +105,10 @@ Get-HgsTrace -RunDiagnostics -Target $server
 ```
 這個範例會產生收集遠端使用者認證的提示，然後診斷會使用遠端主機在上執行， `hgs-01.secure.contoso.com` 以完成追蹤收集。  產生的追蹤會下載至 localhost，然後進行診斷。  診斷結果的顯示方式與執行[本機診斷](#local-diagnosis)時相同。  同樣地，您也不需要指定角色，因為它可以根據遠端系統上安裝的 Windows PowerShell 模組來推斷。
 
-遠端診斷會針對遠端主機的所有存取，利用 Windows PowerShell 遠端功能。  因此，追蹤目標必須啟用 Windows PowerShell 遠端功能的必要條件 (請參閱[啟用 PSRemoting](https://technet.microsoft.com/library/hh849694.aspx)) ，並已正確設定 localhost 來啟動目標的連接。
+遠端診斷會針對遠端主機的所有存取，利用 Windows PowerShell 遠端功能。  因此，追蹤目標必須啟用 Windows PowerShell 遠端功能的必要條件 (請參閱[啟用 PSRemoting](/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-7)) ，並已正確設定 localhost 來啟動目標的連接。
 
 > [!NOTE]
-> 在大部分情況下，只有 localhost 屬於相同 Active Directory 樹系，且使用有效的 DNS 主機名稱。  如果您的環境使用更複雜的同盟模型，或您想要使用直接 IP 位址進行連線，您可能需要執行其他設定，例如設定 WinRM[信任的主機](https://technet.microsoft.com/library/ff700227.aspx)。
+> 在大部分情況下，只有 localhost 屬於相同 Active Directory 樹系，且使用有效的 DNS 主機名稱。  如果您的環境使用更複雜的同盟模型，或您想要使用直接 IP 位址進行連線，您可能需要執行其他設定，例如設定 WinRM[信任的主機](/previous-versions/technet-magazine/ff700227(v=msdn.10))。
 
 您可以使用 Cmdlet 來確認追蹤目標已正確具現化並設定為接受連接 `Test-HgsTraceTarget` ：
 ```PowerShell
@@ -122,7 +122,7 @@ $server | Test-HgsTraceTarget
 當您從具有足夠許可權的使用者執行遠端診斷以從遠端連線到追蹤目標時，不需要提供認證給 `New-HgsTraceTarget` 。  此 `Get-HgsTrace` Cmdlet 會在開啟連線時，自動重複使用叫用 Cmdlet 的使用者認證。
 
 > [!WARNING]
-> 有些限制適用于重複使用認證，特別是在執行所謂的「第二個躍點」時。  嘗試從遠端會話內部將認證重複使用到另一部電腦時，就會發生這種情況。  您必須[設定 CredSSP](https://technet.microsoft.com/library/hh849872.aspx)以支援此案例，但這不在受防護網狀架構管理和疑難排解的範圍內。
+> 有些限制適用于重複使用認證，特別是在執行所謂的「第二個躍點」時。  嘗試從遠端會話內部將認證重複使用到另一部電腦時，就會發生這種情況。  您必須[設定 CredSSP](/powershell/module/microsoft.wsman.management/enable-wsmancredssp?view=powershell-7)以支援此案例，但這不在受防護網狀架構管理和疑難排解的範圍內。
 
 #### <a name="using-windows-powershell-just-enough-administration-jea-and-diagnostics"></a>使用 Windows PowerShell 的系統管理 (JEA) 和診斷
 

@@ -1,24 +1,22 @@
 ---
 title: 設定伺服器基礎結構
 description: 在此步驟中，您會安裝並設定支援 VPN 所需的伺服器端元件。 伺服器端元件包括設定 PKI，以散發使用者、VPN 伺服器和 NPS 伺服器所使用的憑證。
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.localizationpriority: medium
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.date: 08/30/2018
 ms.reviewer: deverette
-ms.openlocfilehash: 0a9d9c139c721608e9104c4943dda2664432c94d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 31a11fa1a2991b9ee0ea70434e485cb6cdc7460f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955100"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946581"
 ---
-# <a name="step-2-configure-the-server-infrastructure"></a>步驟 2. 設定伺服器基礎結構
+# <a name="step-2-configure-the-server-infrastructure"></a>步驟 2： 設定伺服器基礎結構
 
->適用于： Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows 10
+>適用于： Windows Server (半年通道) 、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
 - [**上一步：** 步驟1。規劃 Always On VPN 部署](always-on-vpn-deploy-planning.md)
 - [**下一步：** 步驟3。設定 Always On VPN 的遠端存取服務器](vpn-deploy-ras.md)
@@ -26,7 +24,7 @@ ms.locfileid: "86955100"
 在此步驟中，您將安裝和設定支援 VPN 所需的伺服器端元件。 伺服器端元件包括設定 PKI，以散發使用者、VPN 伺服器和 NPS 伺服器所使用的憑證。  您也可以設定 RRAS 來支援 IKEv2 連線，以及執行 VPN 連線授權的 NPS 伺服器。
 
 ## <a name="configure-certificate-autoenrollment-in-group-policy"></a>在群組原則中設定憑證自動註冊
-在此程式中，您會在網域控制站上設定群組原則，讓網域成員自動要求使用者和電腦憑證。 這麼做可讓 VPN 使用者要求和取出自動驗證 VPN 連線的使用者憑證。 同樣地，此原則可讓 NPS 伺服器自動要求伺服器驗證憑證。 
+在此程式中，您會在網域控制站上設定群組原則，讓網域成員自動要求使用者和電腦憑證。 這麼做可讓 VPN 使用者要求和取出自動驗證 VPN 連線的使用者憑證。 同樣地，此原則可讓 NPS 伺服器自動要求伺服器驗證憑證。
 
 您會在 VPN 伺服器上手動註冊憑證。
 
@@ -35,7 +33,7 @@ ms.locfileid: "86955100"
 
 1. 在網域控制站上，開啟 [群組原則管理]。
 
-2. 在流覽窗格中，以滑鼠右鍵按一下您的網域（例如，corp.contoso.com），然後選取 [**在這個網域中建立 GPO 並連結到**]。
+2. 在流覽窗格中，以滑鼠右鍵按一下您的網域 (例如 corp.contoso.com) ]，然後選取 [**在這個網域中建立 GPO 並連結到**]。
 
 3. 在 [新增 GPO] 對話方塊中，輸入**自動註冊原則**，然後選取 **[確定]**。
 
@@ -73,7 +71,7 @@ ms.locfileid: "86955100"
 
 因為 RRAS 伺服器未加入網域，所以無法使用自動註冊來註冊 VPN 閘道憑證。  因此，請使用離線憑證要求程式。
 
-1. 在 RRAS 伺服器上，根據附錄 A （第0節）中所提供的範例憑證原則要求，產生名為**VPNGateway**的檔案，並自訂下列專案：
+1. 在 RRAS 伺服器上，根據附錄 A (區段) 0 中所提供的範例憑證原則要求，產生名為**VPNGateway**的檔案，並自訂下列專案：
 
    - 在 [NewRequest] 區段中，將主體名稱所使用的 vpn.contoso.com 取代為選擇的 [_Customer_] VPN 端點 FQDN。
 
@@ -87,9 +85,9 @@ ms.locfileid: "86955100"
    certreq -new VPNGateway.inf VPNGateway.req
    ```
 
-4. 將新建立的**VPNGateway**輸出檔案複製到憑證授權單位單位伺服器，或特殊許可權存取工作站（PAW）。
+4. 將新建立的**VPNGateway**輸出檔案複製到憑證授權單位單位伺服器，或特殊許可權存取工作站 (PAW) 。
 
-5. 將**VPNGateway**檔案儲存或複製到憑證授權單位單位伺服器或特殊許可權存取工作站（PAW）上選擇的位置。
+5. 將**VPNGateway**檔案儲存或複製到憑證授權單位單位伺服器上的選擇位置，或特殊許可權存取工作站 (PAW) 。
 
 6. 從提高許可權的命令提示字元中，流覽至包含在上一個步驟中建立之 VPNGateway 檔案的資料夾，然後輸入：
 
@@ -99,7 +97,7 @@ ms.locfileid: "86955100"
 
 7. 如果 [憑證授權單位單位清單] 視窗出現提示，請選取適當的企業 CA 來服務憑證要求。
 
-8. 將新建立的**VPNGateway .cer**輸出檔案複製到 RRAS 伺服器。 
+8. 將新建立的**VPNGateway .cer**輸出檔案複製到 RRAS 伺服器。
 
 9. 將**VPNGateway**檔案儲存或複製到 RRAS 伺服器上選擇的位置。
 
@@ -113,7 +111,7 @@ ms.locfileid: "86955100"
 
 12. 請確定具有下列屬性的 RRAS 伺服器有有效的憑證：
 
-    - 目的 **：** 伺服器驗證，IP 安全性 IKE 中繼 
+    - 目的 **：** 伺服器驗證，IP 安全性 IKE 中繼
 
     - **憑證範本：** [_Customer_] VPN 伺服器
 
@@ -125,19 +123,19 @@ ms.locfileid: "86955100"
 >您可以在 [憑證要求原則] 資料夾底下的 [VPN 供應專案] IP 套件中，找到 VPNGateway 的複本。 僅 \_ \_ 以客戶特定值更新 [主旨] 和 [繼續]。
 
 ```
-[Version] 
+[Version]
 
 Signature="$Windows NT$"
 
 [NewRequest]
 Subject = "CN=vpn.contoso.com"
-Exportable = FALSE   
-KeyLength = 2048     
-KeySpec = 1          
-KeyUsage = 0xA0      
+Exportable = FALSE
+KeyLength = 2048
+KeySpec = 1
+KeyUsage = 0xA0
 MachineKeySet = True
 ProviderName = "Microsoft RSA SChannel Cryptographic Provider"
-RequestType = PKCS10 
+RequestType = PKCS10
 
 [Extensions]
 2.5.29.17 = "{text}"
@@ -146,7 +144,7 @@ _continue_ = "dns=vpn.contoso.com&"
 
 ## <a name="create-the-vpn-users-vpn-servers-and-nps-servers-groups"></a>建立 VPN 使用者、VPN 伺服器和 NPS 伺服器群組
 
-在此程式中，您可以加入新的 Active Directory （AD）群組，其中包含允許使用 VPN 連線到您組織網路的使用者。
+在此程式中，您可以加入新的 Active Directory (AD) 群組，其中包含允許使用 VPN 連線到您組織網路的使用者。
 
 此群組有兩個用途：
 
@@ -159,7 +157,7 @@ _continue_ = "dns=vpn.contoso.com&"
 您也可以新增包含 VPN 伺服器的群組，以及包含 NPS 伺服器的另一個群組。 您可以使用這些群組來限制對其成員的憑證要求。
 
 >[!NOTE]
->我們建議位於 DMA/周邊的 VPN 伺服器不會加入網域。 不過，如果您想要讓 VPN 伺服器加入網域，以獲得更好的管理性（群組原則、備份/監視代理程式、不需要管理的本機使用者等等），請將 AD 群組新增至 VPN 伺服器憑證範本。
+>我們建議位於 DMA/周邊的 VPN 伺服器不會加入網域。 不過，如果您想要讓 VPN 伺服器加入網域以獲得更好的管理性 (群組原則、備份/監視代理程式、不需要管理的本機使用者等等) ，然後將 AD 群組新增至 VPN 伺服器憑證範本。
 
 ### <a name="configure-the-vpn-users-group"></a>設定 VPN 使用者群組
 
@@ -203,7 +201,7 @@ _continue_ = "dns=vpn.contoso.com&"
 
 在此程式中，您會設定自訂的用戶端-伺服器驗證範本。 此範本是必要的，因為您想要選取升級的相容性層級並選擇 Microsoft 平臺密碼編譯提供者，以提升憑證的整體安全性。 最後一次的變更可讓您在用戶端電腦上使用 TPM 來保護憑證。 如需 TPM 的總覽，請參閱可[信賴平臺模組技術總覽](/windows/device-security/tpm/trusted-platform-module-overview)。
 
->[!IMPORTANT] 
+>[!IMPORTANT]
 >Microsoft 平臺密碼編譯提供者 "需要 TPM 晶片，在您執行 VM 的情況下，您會收到下列錯誤：「在本機電腦中找不到有效的 CSP」嘗試手動註冊憑證時，您需要檢查「Microsoft 軟體金鑰儲存提供者」，並在憑證內容的 [密碼編譯] 索引標籤中的 [Microsoft 平臺密碼編譯提供者
 
 **步**
@@ -215,7 +213,7 @@ _continue_ = "dns=vpn.contoso.com&"
 3. 在 [憑證範本] 主控台中，以滑鼠右鍵按一下 [**使用者**]，然後選取 [**複製範本**]。
 
    >[!WARNING]
-   >請勿在步驟10之前的任何**時間選取**[套用 **] 或 [確定]** 。  如果您在輸入所有參數之前先選取這些按鈕，許多選擇會變成固定，而且無法再編輯。 例如，在 [**密碼**編譯] 索引標籤上，如果_舊版密碼編譯儲存提供者_顯示在 [提供者類別] 欄位中，它會變成停用，防止任何進一步的變更。 唯一的替代方法是刪除範本，然後重新建立它。  
+   >請勿在步驟10之前的任何**時間選取**[套用 **] 或 [確定]** 。  如果您在輸入所有參數之前先選取這些按鈕，許多選擇會變成固定，而且無法再編輯。 例如，在 [**密碼**編譯] 索引標籤上，如果_舊版密碼編譯儲存提供者_顯示在 [提供者類別] 欄位中，它會變成停用，防止任何進一步的變更。 唯一的替代方法是刪除範本，然後重新建立它。
 
 4. 在 [新範本的內容] 對話方塊的 [**一般**] 索引標籤上，完成下列步驟：
 
@@ -234,7 +232,7 @@ _continue_ = "dns=vpn.contoso.com&"
    4. 在 [ **VPN 使用者的許可權**] 中，選取 [**允許**] 欄中的 [**註冊**] 和 [**自動註冊**] 核取方塊。
 
       >[!TIP]
-      >請務必保留已選取的 [讀取] 核取方塊。 換句話說，您需要註冊的 [讀取] 許可權。 
+      >請務必保留已選取的 [讀取] 核取方塊。 換句話說，您需要註冊的 [讀取] 許可權。
 
    5. 在 [**群組或使用者名稱**] 中，選取 [**網域使用者**]，然後選取 [**移除**]。
 
@@ -272,7 +270,7 @@ _continue_ = "dns=vpn.contoso.com&"
 
 ## <a name="create-the-vpn-server-authentication-template"></a>建立 VPN 伺服器驗證範本
 
-在此程式中，您可以為 VPN 伺服器設定新的伺服器驗證範本。 新增 IP 安全性（IPsec） IKE 中繼應用程式原則可讓伺服器篩選憑證，如果伺服器驗證擴充金鑰使用方式有一個以上的憑證可供使用。
+在此程式中，您可以為 VPN 伺服器設定新的伺服器驗證範本。 新增 IP 安全性 (IPsec) IKE 中繼應用程式原則可讓伺服器篩選憑證，如果伺服器驗證擴充金鑰使用方式有多個憑證可用的話。
 
 >[!IMPORTANT]
 >由於 VPN 用戶端會從公用網際網路存取此伺服器，因此主旨和替代名稱會與內部伺服器名稱不同。 因此，您無法在 VPN 伺服器上自動註冊此憑證。
@@ -298,7 +296,7 @@ _continue_ = "dns=vpn.contoso.com&"
     2. 在 [**編輯應用程式原則延伸**] 對話方塊中，選取 [**新增**]。
 
     3. 在 [**新增應用程式原則**] 對話方塊中，選取 [ **IP 安全性 IKE 中繼**]，然後選取 **[確定]**。
-   
+
         將 IP 安全性 IKE 中繼新增至 EKU 有助於在 VPN 伺服器上存在多個伺服器驗證憑證的情況下。 當 IP 安全性 IKE 中繼存在時，IPSec 只會使用具有這兩個 EKU 選項的憑證。 若沒有這種情況，IKEv2 驗證可能會失敗，並出現錯誤13801：無法接受 IKE 驗證認證。
 
     4. 選取 **[確定]** 以返回 [**新範本的屬性**] 對話方塊。
@@ -321,7 +319,7 @@ _continue_ = "dns=vpn.contoso.com&"
 
     2. 在 [**憑證範本**警告] 對話方塊中，選取 **[確定]**。
 
-8. 選擇性如果您要設定 VPN 連線能力的條件式存取，請選取 [**要求處理**] 索引標籤，然後選取 [**允許匯出私密金鑰**]。
+8.  (選擇性) 如果您要設定 VPN 連線能力的條件式存取，請選取 [**要求處理**] 索引標籤，然後選取 [**允許匯出私密金鑰**]。
 
 9. 選取 **[確定]** 以儲存 VPN 伺服器憑證範本。
 
@@ -329,7 +327,7 @@ _continue_ = "dns=vpn.contoso.com&"
 
 11. 在 [憑證授權單位單位] 嵌入式管理單元的流覽窗格中，在 [**憑證範本**] 上按一下滑鼠右鍵，按一下 [**新增**]，然後按一下 [**要發出的憑證範本**]。
 
-12. 重新開機憑證授權單位單位服務。(*)
+12. 重新開機憑證授權單位單位服務。 ( * ) 
 
 13. 在 [憑證授權單位單位] 嵌入式管理單元的流覽窗格中，以滑鼠右鍵按一下 [**憑證範本**]，選取 [**新增**]，然後選取 [**要發出的憑證範本**]。
 
@@ -437,10 +435,10 @@ Net Start "certsvc"
 
 7. 選取 [**註冊**]。
 
-8. 選取 [完成] 。
+8. 選取 [完成]。
 
 9. 在 [憑證] 嵌入式管理單元的 [**個人**] 底下，選取 [**憑證**]。
-    
+
     您列出的憑證會出現在詳細資料窗格中。
 
 10. 在具有 VPN 伺服器名稱的憑證上按一下滑鼠右鍵，然後選取 [**開啟**]。
@@ -471,6 +469,6 @@ Net Start "certsvc"
 
 7. 關閉 [憑證] 嵌入式管理單元。
 
-## <a name="next-steps"></a>接下來的步驟
+## <a name="next-steps"></a>後續步驟
 
 [步驟3。設定遠端存取服務器以 Always On VPN](vpn-deploy-ras.md)：在此步驟中，您會設定遠端存取 VPN 以允許 IKEV2 VPN 連線、拒絕來自其他 VPN 通訊協定的連線，以及指派靜態 ip 位址集區來發佈 IP 位址，以連線已授權的 VPN 用戶端。
