@@ -5,18 +5,18 @@ ms.author: helohr
 ms.date: 11/01/2017
 ms.topic: article
 author: heidilohr
-ms.openlocfilehash: 5cadad3dd8fafe28ba127610afd3dfa219f92b73
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: fb3e0b60787cb12c3401a14a54aebf4809c61b45
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895842"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993223"
 ---
 # <a name="what-is-server-core-2008"></a>什麼是 Server Core 2008？
 >適用于： Windows Server 2008
 
 >[!NOTE]
->這套資訊適用于 Windows Server 2008。 如需 Windows Server 中 Server Core 的相關資訊，請參閱[什麼是 Windows server 中的 Server Core 安裝](https://docs.microsoft.com/windows-server/administration/server-core/what-is-server-core)。
+>這套資訊適用于 Windows Server 2008。 如需 Windows Server 中 Server Core 的相關資訊，請參閱[什麼是 Windows server 中的 Server Core 安裝](./what-is-server-core.md)。
 
 [Server Core] 選項是新的最小安裝選項，可在您部署 Standard、Enterprise 或 Datacenter edition 的 Windows Server 2008 時使用。 Server Core 提供最低限度的 Windows Server 2008 安裝，只支援安裝特定的伺服器角色，如本章稍後所述。 這與 Windows Server 2008 的完整安裝選項相反，它支援安裝所有可用的伺服器角色，以及其他 Microsoft 或協力廠商伺服器應用程式，例如 Microsoft Exchange Server 或 SAP。
 
@@ -131,7 +131,7 @@ Server Core 安裝也只支援 Windows Server 2008 完整安裝上可用的有�
 
 **資料表 1-4**Windows Server 2008 Enterprise Edition 完整和 Server Core 安裝的功能比較
 
-| 特徵  | 可在完整安裝中使用  | 在 Server Core 中提供  |
+| 功能  | 可在完整安裝中使用  | 在 Server Core 中提供  |
 | ------------- | :-------------: | :------------: |
 | .NET Framework 3.0 功能  | X  |  |
 | BitLocker 磁碟機加密  | X  | X |

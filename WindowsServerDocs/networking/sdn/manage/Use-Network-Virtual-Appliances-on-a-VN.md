@@ -3,22 +3,20 @@ title: 使用虛擬網路上的網路虛擬設備
 description: 在本主題中，您將瞭解如何在租使用者虛擬網路上部署網路虛擬裝置。 您可以將網路虛擬裝置新增至執行使用者定義路由和埠鏡像功能的網路。
 manager: grcusanz
 ms.topic: article
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.assetid: 3c361575-1050-46f4-ac94-fa42102f83c1
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/30/2018
-ms.openlocfilehash: 5d8ac7256e9c7e59c7df260bea5d5a8f0fb6b42b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3fa6fcd735a2cad6a062d7b2daaa7cf206589c20
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854471"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954054"
 ---
 # <a name="use-network-virtual-appliances-on-a-virtual-network"></a>使用虛擬網路上的網路虛擬設備
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 在本主題中，您將瞭解如何在租使用者虛擬網路上部署網路虛擬裝置。 您可以將網路虛擬裝置新增至執行使用者定義路由和埠鏡像功能的網路。
 
@@ -28,7 +26,7 @@ ms.locfileid: "80854471"
 
 1. **使用者定義的路由**-以虛擬裝置的路由功能取代虛擬網路上的分散式路由器。  使用使用者定義的路由，虛擬裝置會當做虛擬網路上虛擬子網之間的路由器使用。
 
-2. **埠鏡像**-所有進入或離開受監視埠的網路流量都會複製並傳送至虛擬裝置進行分析。 
+2. **埠鏡像**-所有進入或離開受監視埠的網路流量都會複製並傳送至虛擬裝置進行分析。
 
 
 ## <a name="deploying-a-network-virtual-appliance"></a>部署網路虛擬裝置
@@ -37,20 +35,20 @@ ms.locfileid: "80854471"
 
 某些設備需要多個虛擬網路介面卡。 通常會有一張網路介面卡專用於裝置管理，而其他介面卡則會處理流量。  如果您的設備需要多個網路介面卡，您必須在網路控制卡中建立每個網路介面。 您也必須為每個位於不同虛擬子網的其他介面卡，在每部主機上指派介面識別碼。
 
-部署網路虛擬裝置之後，您可以使用設備來定義路由、移植鏡像或兩者。 
+部署網路虛擬裝置之後，您可以使用設備來定義路由、移植鏡像或兩者。
 
 
 ## <a name="example-user-defined-routing"></a>範例：使用者定義的路由
 
 在大部分的環境中，您只需要已由虛擬網路的分散式路由器定義的系統路由。 不過，您可能需要建立路由表，並在特定案例中新增一或多個路由，例如：
 
-- 透過您的內部部署網路強制通道傳送至網際網路。
+- 透過內部部署網路到網際網路的強制通道。
 - 在您的環境中使用虛擬應用裝置。
 
 在這些情況下，您必須建立路由表，並將使用者定義的路由新增至資料表。 您可以有多個路由表，而且可以將相同的路由表與一或多個子網建立關聯。 您只能將每個子網與單一路由表產生關聯。 子網中的所有 Vm 都會使用與子網相關聯的路由表。
 
-子網會依賴系統路由，直到路由表與子網相關聯為止。 關聯存在之後，就會根據使用者定義的路由和系統路由中最長的前置詞比對（LPM）來完成路由。 如果有多個路由具有相同的 LPM 相符項，則會先選取使用者定義的路由（在系統路由之前）。
- 
+子網會依賴系統路由，直到路由表與子網相關聯為止。 關聯存在之後，就會根據最長的前置詞比對，在使用者定義的路由和系統路由之間 (LPM) 進行路由。 如果有多個路由具有相同的 LPM 相符項，則會先選取使用者定義的路由（在系統路由之前）。
+
 **步**
 
 1. 建立路由表屬性，其中包含所有使用者定義的路由。<p>系統路由仍會根據上面定義的規則套用。
@@ -91,7 +89,7 @@ ms.locfileid: "80854471"
 
 ## <a name="example-port-mirroring"></a>範例：埠鏡像
 
-在此範例中，您會設定 MyVM_Ethernet1 鏡像 Appliance_Ethernet1 的流量。  我們假設您已部署兩個 Vm，一個做為應用裝置，另一個作為要以鏡像監視的 VM。 
+在此範例中，您會設定 MyVM_Ethernet1 鏡像 Appliance_Ethernet1 的流量。  我們假設您已部署兩個 Vm，一個做為應用裝置，另一個作為要以鏡像監視的 VM。
 
 設備必須有第二個網路介面來進行管理。 在 Appliciance_Ethernet1 上啟用鏡像做為目的地之後，它就不會再接收到目的地設定之 IP 介面的流量。
 
@@ -165,5 +163,5 @@ ms.locfileid: "80854471"
    ```
 
 完成這些步驟之後，Appliance_Ethernet1 介面會反映來自 MyVM_Ethernet1 介面的流量。
- 
+
 ---

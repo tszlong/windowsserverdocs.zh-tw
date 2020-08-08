@@ -6,12 +6,12 @@ ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 10/17/2017
-ms.openlocfilehash: ee5786684c4f3a6c75c3b123b9d3ef9d32143949
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d01757fcf1539e41db866b46cdf9eba60a59fc04
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895887"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993212"
 ---
 # <a name="configure-memory-dump-files-for-server-core-installation"></a>設定 Server Core 安裝的記憶體傾印檔案
 
@@ -195,7 +195,4 @@ dumpchk.exe 公用程式可讓您使用您選擇的媒體，將記憶體傾印�
 
 如需使用記憶體傾印檔案的一般資訊，請參閱[適用于 Windows 的記憶體傾印檔選項總覽](https://support.microsoft.com/help/254649/overview-of-memory-dump-file-options-for-windows)。
 
-如需專用傾印檔案的詳細資訊，請參閱[如何使用 DedicatedDeumpFile 登錄值來克服系統磁片磁碟機上的空間限制，並同時捕捉系統記憶體轉儲](https://blogs.msdn.microsoft.com/ntdebugging/2010/04/02/how-to-use-the-dedicateddumpfile-registry-value-to-overcome-space-limitations-on-the-system-drive-when-capturing-a-system-memory-dump/)。
-
-
-
+如需專用傾印檔案的詳細資訊，請參閱[如何使用 DedicatedDeumpFile 登錄值來克服系統磁片磁碟機上的空間限制，並同時捕捉系統記憶體轉儲](/archive/blogs/ntdebugging/how-to-use-the-dedicateddumpfile-registry-value-to-overcome-space-limitations-on-the-system-drive-when-capturing-a-system-memory-dump)。
