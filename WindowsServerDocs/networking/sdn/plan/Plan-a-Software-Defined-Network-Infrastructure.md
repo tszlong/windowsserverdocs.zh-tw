@@ -7,12 +7,12 @@ ms.assetid: ea7e53c8-11ec-410b-b287-897c7aaafb13
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/10/2018
-ms.openlocfilehash: 60ba3ea51bf958f2cc5fa598e4f1323bd5631a80
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1930ee8d74a1aa99b5c94df19e572d382144e604
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962172"
+ms.locfileid: "87996553"
 ---
 # <a name="plan-a-software-defined-network-infrastructure"></a>規劃軟體定義網路的基礎結構
 
@@ -243,7 +243,7 @@ Host|硬體需求|軟體需求|
 |適用于 SLB/MUX 對等互連的 RAS 閘道 BGP 路由器<p> (也會使用 ToR 參數作為 BGP 路由器) |2個 vcpu|2 GB|適用于 OS 磁片磁碟機的 75 GB|
 
 
-如果您使用 VMM 進行部署，VMM 和其他非 SDN 基礎結構需要額外的基礎結構虛擬機器資源。 如需其他資訊，請參閱[System Center Technical Preview 的最低硬體建議。](https://technet.microsoft.com/library/dn997303.aspx)
+如果您使用 VMM 進行部署，VMM 和其他非 SDN 基礎結構需要額外的基礎結構虛擬機器資源。 如需其他資訊，請參閱[System Center Technical Preview 的最低硬體建議。](/system-center/)
 
 ## <a name="extending-your-infrastructure"></a>擴充您的基礎結構
 您的基礎結構的大小和資源需求取決於您打算裝載的租使用者工作負載虛擬機器。 基礎結構虛擬機器的 CPU、記憶體和磁片需求 (例如：網路控制站、SLB、閘道等 ) 列在上表中。 您可以視需要新增更多的基礎結構虛擬機器來相應放大。 不過，在 Hyper-v 主機上執行的任何租使用者虛擬機器都有自己的 CPU、記憶體和磁片需求，您必須加以考慮。
@@ -253,7 +253,4 @@ Host|硬體需求|軟體需求|
 
 ## <a name="see-also"></a>另請參閱
 [部署網路控制](Installation-and-Preparation-Requirements-for-Deploying-Network-Controller.md) 
- 卡的安裝和準備需求[軟體定義網路 &#40;SDN&#41;](../Software-Defined-Networking--SDN-.md)
-
-
-
+ 卡的安裝和準備需求[軟體定義網路 &#40;SDN&#41;](../software-defined-networking.md)

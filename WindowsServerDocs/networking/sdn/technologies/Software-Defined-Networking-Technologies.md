@@ -7,12 +7,12 @@ ms.assetid: b491089c-5bcb-49d4-95b1-915b7ce69f88
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 02/14/2019
-ms.openlocfilehash: 591a81c91dc444cfe48f0fa40142489b72142409
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 69e01630cf34a588b6861c833015076bd4a31ef4
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952568"
+ms.locfileid: "87996472"
 ---
 # <a name="sdn-technologies"></a>SDN 技術
 
@@ -72,7 +72,7 @@ SET 是替代的 NIC 小組解決方案，可用於包含 Hyper-v 的環境，�
 [設定] 可讓您將一或八個實體 Ethernet 網路介面卡組成一或多個以軟體為基礎的虛擬網路介面卡。 這些虛擬網路介面卡可在網路介面卡故障時，提供快速的效能與容錯。
 設定成員網路介面卡必須全部安裝在要放在小組中的相同實體 Hyper-v 主機。
 
-此外，您可以使用 Windows PowerShell 命令來啟用資料中心橋接 (DCB) 、使用 RDMA 虛擬 NIC (vNIC) 建立 Hyper-v 虛擬交換器，以及使用 SET 和 RDMA Vnic 建立 Hyper-v 虛擬交換器。 如需詳細資訊，請參閱[ (RDMA 的遠端直接記憶體存取) 和切換內嵌小組 (設定) ](https://docs.microsoft.com/windows-server/virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming.md)。
+此外，您可以使用 Windows PowerShell 命令來啟用資料中心橋接 (DCB) 、使用 RDMA 虛擬 NIC (vNIC) 建立 Hyper-v 虛擬交換器，以及使用 SET 和 RDMA Vnic 建立 Hyper-v 虛擬交換器。 如需詳細資訊，請參閱[ (RDMA 的遠端直接記憶體存取) 和切換內嵌小組 (設定) ](../../../virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming.md)。
 
 ## <a name="border-gateway-protocol-bgp"></a>[邊界閘道通訊協定 (BGP)](../../../remote/remote-access/bgp/Border-Gateway-Protocol-BGP.md)
 
@@ -87,7 +87,7 @@ Windows Server 容器是輕量的作業系統虛擬化方法，用來分隔應�
 
 ## <a name="system-center"></a>System Center
 
-使用[虛擬機器管理 (VMM) ](https://docs.microsoft.com/system-center/vmm/)和[Operations Manager](https://docs.microsoft.com/system-center/scom/)來部署和管理 SDN 基礎結構。 透過 VMM，您可以佈建及管理在私人雲端中建立及部署虛擬機器和服務所需的資源。  透過 Operations Manager，您可以監視整個企業中的服務、裝置和作業，進而找出問題並立即採取行動。
+使用[虛擬機器管理 (VMM) ](/system-center/vmm/)和[Operations Manager](/system-center/scom/)來部署和管理 SDN 基礎結構。 透過 VMM，您可以佈建及管理在私人雲端中建立及部署虛擬機器和服務所需的資源。  透過 Operations Manager，您可以監視整個企業中的服務、裝置和作業，進而找出問題並立即採取行動。
 
 
 ---

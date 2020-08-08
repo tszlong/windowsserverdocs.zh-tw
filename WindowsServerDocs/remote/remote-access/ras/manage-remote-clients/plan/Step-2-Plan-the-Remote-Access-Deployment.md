@@ -2,18 +2,16 @@
 title: 步驟2規劃遠端存取部署
 description: 本主題是在 Windows Server 2016 中遠端系統管理 DirectAccess 用戶端指南的一部分。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: cc9f02b9-8ddd-4cae-b397-a832996144dd
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: a1971345a1a5256768651bc29e03d9c7824fecb3
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 0de2e1fa0d5dcb6c7ed2bd5ea8c6a65048296315
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475565"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970245"
 ---
 # <a name="step-2-plan-the-remote-access-deployment"></a>步驟2規劃遠端存取部署
 
@@ -39,7 +37,7 @@ ms.locfileid: "85475565"
 
 2.  哪些安全性群組將包含 DirectAccess 用戶端電腦？
 
-    Directaccess 設定包含在 DirectAccess 用戶端群組原則物件（GPO）中。 這個 GPO 會套用到屬於您在「DirectAccess 用戶端安裝精靈」中指定之安全性群組的電腦。 您可以指定包含在任何支援的網域中的安全性群組。
+    Directaccess 設定包含在 DirectAccess 用戶端群組原則物件 (GPO) 中。 這個 GPO 會套用到屬於您在「DirectAccess 用戶端安裝精靈」中指定之安全性群組的電腦。 您可以指定包含在任何支援的網域中的安全性群組。
 
     設定「遠端存取」之前，您必須先建立安全性群組。 完成「遠端存取」部署之後，您可以將電腦新增到安全性群組。 不過，如果您新增的用戶端電腦位於與安全性群組不同的網域中，則用戶端 GPO 將不會套用到這些用戶端。 例如，如果您在網域 A 中為 DirectAccess 用戶端建立 SG1，並在稍後將用戶端從網域 B 新增到此群組，用戶端 GPO 將不會套用到網域 B 中的用戶端。
 
@@ -63,7 +61,7 @@ ms.locfileid: "85475565"
 
     -   **允許 DirectAccess 用戶端使用本機名稱解析**
 
-        用戶端需要在本機解析名稱的方法。 如果您允許 DirectAccess 用戶端使用本機名稱解析，使用者便可以使用本機 DNS 伺服器來解析名稱。 當終端使用者選擇使用本機 DNS 伺服器進行名稱解析時，DirectAccess 不會將單一標籤名稱的解析要求傳送到內部的公司 DNS 伺服器。 它會改為使用本機名稱解析（藉由使用連結-本機多播名稱解析（LLMNR）和 NetBios over TCP/IP 通訊協定）。
+        用戶端需要在本機解析名稱的方法。 如果您允許 DirectAccess 用戶端使用本機名稱解析，使用者便可以使用本機 DNS 伺服器來解析名稱。 當終端使用者選擇使用本機 DNS 伺服器進行名稱解析時，DirectAccess 不會將單一標籤名稱的解析要求傳送到內部的公司 DNS 伺服器。 它會使用本機名稱解析，而不是使用連結-本機多播名稱解析 (LLMNR) 和 NetBios over TCP/IP 通訊協定) 來 (。
 
 ## <a name="plan-a-remote-access-server-deployment-strategy"></a>規劃遠端存取服務器部署策略
 當您規劃部署遠端存取服務器時所需進行的決策包括：
@@ -103,7 +101,7 @@ ms.locfileid: "85475565"
 
 -   **VPN 設定**
 
-    設定「遠端存取」之前，請決定是否要提供遠端用戶端的 VPN 存取權。 如果您的組織中有不支援 DirectAccess 連線的用戶端電腦（例如，它們不受管理，或執行不支援 DirectAccess 的作業系統），您應該提供 VPN 存取。 [遠端存取服務器安裝程式] 可讓您設定如何指派 IP 位址（藉由使用 DHCP 或靜態位址集區），以及 VPN 用戶端的驗證方式（藉由使用 Active Directory 或 RADIUS 伺服器）。
+    設定「遠端存取」之前，請決定是否要提供遠端用戶端的 VPN 存取權。 如果您的組織中有不支援 DirectAccess 連線的用戶端電腦，您應該提供 VPN 存取 (例如不受管理，或他們執行的作業系統不支援 DirectAccess) 。 「遠端存取服務器安裝程式」可讓您設定如何使用 DHCP 或靜態位址集區)  (指派 IP 位址，以及如何使用 Active Directory 或 RADIUS 伺服器) 驗證 VPN 用戶端 (。
 
 ## <a name="plan-the-infrastructure-servers-configurations"></a>規劃基礎結構伺服器的設定
 遠端存取需要三種類型的基礎結構伺服器：
@@ -114,7 +112,7 @@ ms.locfileid: "85475565"
 
 -   **管理伺服器**
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [步驟 1：規劃遠端存取基礎架構](Step-1-Plan-the-Remote-Access-Infrastructure.md)
 

@@ -6,18 +6,18 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 41ec95b44c6953e061390f181bc22c9788db50de
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c75f2109f7ef67cb9c83ddd05f95030904413e23
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87937678"
+ms.locfileid: "87996573"
 ---
 # <a name="understanding-key-ad-fs-concepts"></a>Understanding Key AD FS Concepts
 建議您瞭解 Active Directory 同盟服務的重要概念，並熟悉其功能集。
 
 > [!TIP]
-> 您可以在[瞭解重要的 AD FS 概念](https://docs.microsoft.com/windows-server/identity/ad-fs/technical-reference/understanding-key-ad-fs-concepts)中找到其他 AD FS 資源連結。
+> 您可以在[瞭解重要的 AD FS 概念]()中找到其他 AD FS 資源連結。
 
 ## <a name="ad-fs-terminology-used-in-this-guide"></a>此指南中使用的 AD FS 詞彙
 
@@ -62,5 +62,3 @@ AD FS 是一種身分識別存取解決方案，可讓 \( 您的網路內部或�
 -   [決定要使用的宣告規則範本類型](Determine-the-Type-of-Claim-Rule-Template-to-Use.md)
 
 -   [AD FS 中的 URI 使用方式](How-URIs-Are-Used-in-AD-FS.md)
-
-

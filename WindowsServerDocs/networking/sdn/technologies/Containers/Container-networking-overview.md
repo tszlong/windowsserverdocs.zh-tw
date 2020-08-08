@@ -7,12 +7,12 @@ ms.assetid: 318659e5-e4a5-4e46-99d6-211dfc46f6b8
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 09/04/2018
-ms.openlocfilehash: 7d45987b863eaabd3ed57630ff1ee425e35fd939
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1cfd326cd2ab5054829b1f4b9df6b072b3856eb7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87966595"
+ms.locfileid: "87996490"
 ---
 # <a name="container-networking-overview"></a>容器網路功能概觀
 
@@ -33,6 +33,6 @@ Windows 容器會與容器主機和所有在主機上執行的容器共用核心
 
 ## <a name="related-topics"></a>相關主題
 
-- [Windows 容器網路](https://docs.microsoft.com/virtualization/windowscontainers/container-networking/architecture)功能：瞭解如何建立及管理非重迭/SDN 部署的容器網路。
+- [Windows 容器網路](/virtualization/windowscontainers/container-networking/architecture)功能：瞭解如何建立及管理非重迭/SDN 部署的容器網路。
 
 - [將容器端點連線至租使用者虛擬網路](../../manage/Connect-container-endpoints-to-a-Tenant-Virtual-Network.md)：瞭解如何使用 SDN 來建立和管理重迭虛擬網路的容器網路。

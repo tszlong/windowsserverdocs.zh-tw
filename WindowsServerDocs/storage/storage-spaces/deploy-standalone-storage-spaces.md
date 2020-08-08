@@ -6,12 +6,12 @@ author: JasonGerend
 ms.author: jgerend
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ac661631eef9053e202c7e21ffff9982d26d1d38
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7f98ec982601281d5b16a5ec369ca275de189c85
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960821"
+ms.locfileid: "87996480"
 ---
 # <a name="deploy-storage-spaces-on-a-stand-alone-server"></a>在獨立伺服器上部署儲存空間
 
@@ -21,7 +21,7 @@ ms.locfileid: "87960821"
 
 若要建立儲存空間，您必須先建立一或多個儲存集區。 儲存集區是實體磁碟的集合。 儲存集區可啟用儲存彙總、彈性容量擴充，以及委派的系統管理。
 
-您可以從儲存集區建立一或多個虛擬磁碟。 這些虛擬磁碟也稱為「儲存空間」**。 儲存空間會對 Windows 作業系統顯示為一般磁碟，您可以從這個磁碟建立格式化磁碟區。 透過「檔案和存放服務」使用者介面建立虛擬磁碟時，您可以設定復原類型 (簡單、鏡像或同位)、佈建類型 (精簡或固定) 及大小。 透過 Windows PowerShell，您可以設定其他參數，例如欄位數目、間隔值，以及要使用集區中的哪一個實體磁碟。 如需這些其他參數的詳細資訊，請參閱[VirtualDisk](/powershell/module/storage/new-virtualdisk?view=win10-ps)和[Windows Server storage 論壇](https://docs.microsoft.com/answers/topics/windows-server-storage.html)。
+您可以從儲存集區建立一或多個虛擬磁碟。 這些虛擬磁碟也稱為「儲存空間」**。 儲存空間會對 Windows 作業系統顯示為一般磁碟，您可以從這個磁碟建立格式化磁碟區。 透過「檔案和存放服務」使用者介面建立虛擬磁碟時，您可以設定復原類型 (簡單、鏡像或同位)、佈建類型 (精簡或固定) 及大小。 透過 Windows PowerShell，您可以設定其他參數，例如欄位數目、間隔值，以及要使用集區中的哪一個實體磁碟。 如需這些其他參數的詳細資訊，請參閱[VirtualDisk](/powershell/module/storage/new-virtualdisk?view=win10-ps)和[Windows Server storage 論壇](/answers/topics/windows-server-storage.html)。
 
 >[!NOTE]
 >您無法使用儲存空間來裝載 Windows 作業系統。
@@ -266,4 +266,4 @@ Get-VirtualDisk –FriendlyName VirtualDisk1 | Get-Disk | Initialize-Disk –Pas
 - [儲存空間](overview.md)
 - [Windows PowerShell 中的儲存體 Cmdlet](/powershell/module/storage/index?view=win10-ps)
 - [部署叢集儲存空間](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11))
-- [Windows Server storage 論壇](https://docs.microsoft.com/answers/topics/windows-server-storage.html)
+- [Windows Server storage 論壇](/answers/topics/windows-server-storage.html)

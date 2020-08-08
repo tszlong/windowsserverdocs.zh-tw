@@ -6,32 +6,30 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: ad2cf439b5d85e72f1a9dbfbf1d0cb1afcadff7e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2d0ec1d5213db3afac60e1d9cf50b1dae69b9b8b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80822791"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87969785"
 ---
 # <a name="creating-a-domain-design"></a>建立網域設計
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-樹系擁有者負責建立樹系的網域設計。 建立網域設計牽涉到檢查複寫需求和網路基礎結構的現有容量，然後建立可讓 Active Directory Domain Services （AD DS）以最有效率的方式運作的網域結構。 系統會使用網域來分割目錄，以便在整個企業中有效率地散佈和管理目錄中的資訊。 您的網域設計目標是將 Active Directory 複寫拓撲的效率最大化，同時確保複寫不會使用太多可用的網路頻寬，而且不會干擾網路的每日作業。  
-  
-## <a name="in-this-section"></a>本節內容  
-  
--   [檢查領域模型](../../ad-ds/plan/Reviewing-the-Domain-Models.md)  
-  
--   [決定所需的網域數](../../ad-ds/plan/Determining-the-Number-of-Domains-Required.md)  
-  
--   [決定是否要升級現有網域或部署新網域](../../ad-ds/plan/Determining-Whether-to-Upgrade-Existing-Domains-or-Deploy-New-Domains.md)  
-  
--   [指派網域名稱](../../ad-ds/plan/Assigning-Domain-Names.md)  
-  
--   [選取樹系根網域](../../ad-ds/plan/Selecting-the-Forest-Root-Domain.md)  
-  
+樹系擁有者負責建立樹系的網域設計。 建立網域設計牽涉到檢查複寫需求和網路基礎結構的現有容量，然後建立網域結構，讓 Active Directory Domain Services (AD DS) 以最有效率的方式運作。 系統會使用網域來分割目錄，以便在整個企業中有效率地散佈和管理目錄中的資訊。 您的網域設計目標是將 Active Directory 複寫拓撲的效率最大化，同時確保複寫不會使用太多可用的網路頻寬，而且不會干擾網路的每日作業。
+
+## <a name="in-this-section"></a>本節內容
+
+-   [檢查領域模型](../../ad-ds/plan/Reviewing-the-Domain-Models.md)
+
+-   [決定所需的網域數](../../ad-ds/plan/Determining-the-Number-of-Domains-Required.md)
+
+-   [決定是否要升級現有網域或部署新網域](../../ad-ds/plan/Determining-Whether-to-Upgrade-Existing-Domains-or-Deploy-New-Domains.md)
+
+-   [指派網域名稱](../../ad-ds/plan/Assigning-Domain-Names.md)
+
+-   [選取樹系根網域](../../ad-ds/plan/Selecting-the-Forest-Root-Domain.md)
+
 
 

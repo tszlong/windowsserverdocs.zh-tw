@@ -6,12 +6,12 @@ ms.assetid: 528280e6-b47e-489f-b310-b257d434aa0d
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 8710723c397744f3ba937ac863cf5ab45dc8a4f1
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ee552c0202bff26cdcc58411b64cb342a4c7409e
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952155"
+ms.locfileid: "87996462"
 ---
 # <a name="nps-proxy-server-load-balancing"></a>NPS Proxy 伺服器負載平衡
 
@@ -53,12 +53,10 @@ ms.locfileid: "87952155"
 
 1. 部署您的 RADIUS 用戶端 \( VPN 伺服器、撥號伺服器、終端機服務閘道伺服器、802.1 x 驗證交換器和 802.1 x 無線存取點， \) 並將其設定為將連線要求傳送到 NPS proxy 伺服器。
 
-2. 在 NPS proxy 上，將網路存取伺服器設定為 RADIUS 用戶端。 如需詳細資訊，請參閱[設定 RADIUS 用戶端](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-radius-clients-configure)。
+2. 在 NPS proxy 上，將網路存取伺服器設定為 RADIUS 用戶端。 如需詳細資訊，請參閱[設定 RADIUS 用戶端](./nps-radius-clients-configure.md)。
 
-3. 在 NPS proxy 上，建立一或多個遠端 RADIUS 伺服器群組。 在此過程中，請將 RADIUS 伺服器新增至遠端 RADIUS 伺服器群組。 如需詳細資訊，請參閱[設定遠端 RADIUS 伺服器群組](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-crp-rrsg-configure)。
+3. 在 NPS proxy 上，建立一或多個遠端 RADIUS 伺服器群組。 在此過程中，請將 RADIUS 伺服器新增至遠端 RADIUS 伺服器群組。 如需詳細資訊，請參閱[設定遠端 RADIUS 伺服器群組](./nps-crp-rrsg-configure.md)。
 
 4. 在 NPS proxy 上，針對您新增至遠端 RADIUS 伺服器群組的每部 RADIUS 伺服器，按一下 [RADIUS 伺服器**負載平衡**] 索引標籤，然後設定 [**優先順序**]、[**權數**] 和 [**高級] 設定**。
 
-5. 在 NPS proxy 上，設定連線要求原則，將驗證和帳戶處理要求轉送到遠端 RADIUS 伺服器群組。 您必須為每個遠端 RADIUS 伺服器群組建立一個連線要求原則。 如需詳細資訊，請參閱[設定連線要求原則](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-crp-configure)。
-
-
+5. 在 NPS proxy 上，設定連線要求原則，將驗證和帳戶處理要求轉送到遠端 RADIUS 伺服器群組。 您必須為每個遠端 RADIUS 伺服器群組建立一個連線要求原則。 如需詳細資訊，請參閱[設定連線要求原則](./nps-crp-configure.md)。

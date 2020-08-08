@@ -6,12 +6,12 @@ author: haley-rowland
 ms.author: harowl
 ms.date: 06/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 615ecb6c34da980b1223b4ffc5da20c8e84cb9ea
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: addd9d4cf4516725ac8c59d84204cfeb2501e4b3
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964424"
+ms.locfileid: "87996566"
 ---
 # <a name="use-event-logging-in-windows-admin-center-to-gain-insight-into-management-activities-and-track-gateway-usage"></a>使用 Windows 管理中心的事件記錄來深入瞭解管理活動，並追蹤閘道的使用方式
 
@@ -34,11 +34,11 @@ Windows 系統管理中心可讓您深入瞭解環境中的伺服器上所執行
 | UserOnGateway | 用來存取 Windows Admin Center 閘道並執行動作的使用者名稱                    |
 | UserOnTarget  | 用來存取目標受管理伺服器的使用者名稱（如果不同于 userOnGateway (亦即，使用者使用「管理身分」認證來存取伺服器）)  |
 | 委派    | 布林值：如果目標受管理伺服器信任閘道，且認證是從使用者的用戶端電腦委派             |
-| LAPS          | 布林值：如果使用者使用[LAPS](https://technet.microsoft.com/mt227395.aspx)認證存取伺服器                          |
+| LAPS          | 布林值：如果使用者使用[LAPS](/previous-versions/mt227395(v=msdn.10))認證存取伺服器                          |
 | 檔案          | 已上傳檔案的名稱（如果動作是檔案上傳）                                |
 
 ## <a name="learn-about-windows-admin-center-activity-with-event-logging"></a>瞭解具有事件記錄的 Windows 管理中心活動
 
 Windows 管理中心會將閘道活動記錄到閘道電腦上的事件通道，協助您針對問題進行疑難排解，並查看使用方式的計量。 這些事件會記錄到**Microsoft ServerManagementExperience**的事件通道。
 
-[深入瞭解 Windows 管理中心的疑難排解。](troubleshooting.md)
+[深入瞭解 Windows 管理中心的疑難排解。](../support/troubleshooting.md)

@@ -7,18 +7,18 @@ ms.assetid: c4e2f6c7-0364-4bf8-bb66-9af59c0bbd74
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/22/2018
-ms.openlocfilehash: e37fc548db0a1043b2b78d95f97e8b4ef01214c8
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 256c1e503dcaaf0e482ab3f69ca1c5a1b977a10b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962052"
+ms.locfileid: "87996530"
 ---
 # <a name="sdn-firewall-auditing"></a>SDN 防火牆稽核
 
 >適用於：Windows Server 2019
 
-防火牆審核是 Windows Server 2019 中 SDN 防火牆的新功能。 當您啟用 SDN 防火牆時，SDN 防火牆規則所處理的任何流程都會記錄已啟用記錄的 (Acl) 。 記錄檔必須是與[Azure 網路監看員流量記錄](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview)一致的語法。 這些記錄可用於診斷或封存，以供日後分析。 
+防火牆審核是 Windows Server 2019 中 SDN 防火牆的新功能。 當您啟用 SDN 防火牆時，SDN 防火牆規則所處理的任何流程都會記錄已啟用記錄的 (Acl) 。 記錄檔必須是與[Azure 網路監看員流量記錄](/azure/network-watcher/network-watcher-nsg-flow-logging-overview)一致的語法。 這些記錄可用於診斷或封存，以供日後分析。 
 
 我們很快就會提供一些範例，說明如何使用 Power BI 之類的工具來處理這些檔案。
 
@@ -169,4 +169,3 @@ Mode                LastWriteTime         Length Name
                    }
 }
 ```
-

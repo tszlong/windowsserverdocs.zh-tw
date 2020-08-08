@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 32eabe7d-1130-4001-a79a-8ddb31993e5b
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 36dc2b0e8bbb6b65b0cc3568641017aa51122650
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7d7c49ffc8866091fea138b8b61411b8a31be51c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955495"
+ms.locfileid: "87996397"
 ---
 #  <a name="windows-internet-name-service-wins"></a>Windows 網際網路名稱服務 (WINS)
 
@@ -21,6 +21,6 @@ Windows 網際網路名稱服務 (WINS) 是舊版電腦名稱登錄與解析服�
 
 如果您的網路上還沒有部署 WINS，請不要部署 WINS，而是部署網域名稱系統 \( DNS \) 。 DNS 也提供電腦名稱稱註冊和解析服務，並在 WINS 上包含許多額外的優點，例如與 Active Directory Domain Services 整合。
 
-如需詳細資訊，請參閱[網域名稱系統 (DNS) ](https://docs.microsoft.com/windows-server/networking/dns/dns-top)
+如需詳細資訊，請參閱[網域名稱系統 (DNS) ](../../dns/dns-top.md)
 
 如果您已在網路上部署 WINS，建議您部署 DNS，然後解除委任 WINS。

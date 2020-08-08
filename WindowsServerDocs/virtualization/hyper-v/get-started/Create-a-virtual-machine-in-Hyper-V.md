@@ -7,12 +7,12 @@ ms.assetid: 59297022-a898-456c-b299-d79cd5860238
 author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 5f4e07919503f283add8da1c8dd522f3d2b7f222
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 22dc2e83f1c7370bfd6f97d821a83041a9c528fe
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87942014"
+ms.locfileid: "87996608"
 ---
 # <a name="create-a-virtual-machine-in-hyper-v"></a>在 Hyper-V 中建立虛擬機器
 
@@ -42,16 +42,16 @@ ms.locfileid: "87942014"
 
 2. 以滑鼠右鍵按一下 [Windows PowerShell]，然後選取 [以系統管理員身分執行]。
 
-3. 取得您想[要讓虛擬](https://technet.microsoft.com/library/hh848499.aspx)機使用的虛擬交換器名稱。  例如
+3. 取得您想[要讓虛擬](/powershell/module/hyper-v/get-vmswitch?view=win10-ps)機使用的虛擬交換器名稱。  例如
 
    ```
    Get-VMSwitch  * | Format-Table Name
    ```
 
-4. 使用[新的-VM](https://technet.microsoft.com/library/hh848537.aspx) Cmdlet 來建立虛擬機器。  請參閱以下範例。
+4. 使用[新的-VM](/powershell/module/hyper-v/new-vm?view=win10-ps) Cmdlet 來建立虛擬機器。  請參閱以下範例。
 
    > [!NOTE]
-   > 如果您可以將此虛擬機器移至執行 Windows Server 2012 R2 的 Hyper-v 主機，請使用-Version 參數搭配[新的-VM](https://technet.microsoft.com/library/hh848537.aspx) ，將虛擬機器設定版本設為5。 Windows Server 2012 R2 或更舊版本不支援 Windows Server 2016 的預設虛擬機器設定版本。 建立虛擬機器之後，您就無法變更虛擬機器設定版本。 如需詳細資訊，請參閱[支援的虛擬機器設定版本](../deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md#supported-virtual-machine-configuration-versions)。
+   > 如果您可以將此虛擬機器移至執行 Windows Server 2012 R2 的 Hyper-v 主機，請使用-Version 參數搭配[新的-VM](/powershell/module/hyper-v/new-vm?view=win10-ps) ，將虛擬機器設定版本設為5。 Windows Server 2012 R2 或更舊版本不支援 Windows Server 2016 的預設虛擬機器設定版本。 建立虛擬機器之後，您就無法變更虛擬機器設定版本。 如需詳細資訊，請參閱[支援的虛擬機器設定版本](../deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md#supported-virtual-machine-configuration-versions)。
 
    - **現有虛擬硬碟**-若要建立具有現有虛擬硬碟的虛擬機器，您可以使用下列命令，其中
      - **-Name** 是您為要建立的虛擬機器提供的名稱。
@@ -80,9 +80,9 @@ ms.locfileid: "87942014"
      New-VM -Name Win10VM -MemoryStartupBytes 4GB -BootDevice VHD -NewVHDPath .\VMs\Win10.vhdx -Path .\VMData -NewVHDSizeBytes 20GB -Generation 2 -Switch ExternalSwitch
      ```
 
-   - **開機進入作業系統映射的新虛擬硬碟**-若要建立虛擬機器，並啟動新的虛擬磁片以開機進入作業系統映射，請參閱在[Windows 10 上建立 hyper-v 的虛擬機器逐步](https://msdn.microsoft.com/virtualization/hyperv_on_windows/quick_start/walkthrough_create_vm)解說中的 PowerShell 範例。
+   - **開機進入作業系統映射的新虛擬硬碟**-若要建立虛擬機器，並啟動新的虛擬磁片以開機進入作業系統映射，請參閱在[Windows 10 上建立 hyper-v 的虛擬機器逐步](/virtualization/hyper-v-on-windows/quick-start/create-virtual-machine)解說中的 PowerShell 範例。
 
-5. 使用[啟動 VM](https://technet.microsoft.com/library/hh848589.aspx) Cmdlet 來啟動虛擬機器。 執行下列 Cmdlet，其中 Name 是您所建立之虛擬機器的名稱。
+5. 使用[啟動 VM](/powershell/module/hyper-v/start-vm?view=win10-ps) Cmdlet 來啟動虛擬機器。 執行下列 Cmdlet，其中 Name 是您所建立之虛擬機器的名稱。
 
    ```
    Start-VM -Name <Name>
@@ -107,7 +107,7 @@ ms.locfileid: "87942014"
 |--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|
 |**指定名稱和位置**|名稱：新的虛擬機器。<p>位置： **C:\ProgramData\Microsoft\Windows\Hyper-V \\ **。|您也可以輸入自己的名稱，並為虛擬機器選擇另一個位置。<p>這是將儲存虛擬機器組態檔案的位置。|
 |**指定世代**|第 1 代|您也可以選擇建立第2代虛擬機器。 如需詳細資訊，請參閱[我應該在 hyper-v 中建立第1代或第2代虛擬機器嗎？。](../plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md)|
-|**指派記憶體**|啟動記憶體： 1024 MB<p>動態記憶體：**未選取**|您可以將啟動記憶體從32MB 設定為5902MB。<p>您也可以選擇使用動態記憶體。 如需詳細資訊，請參閱[hyper-v 動態記憶體總覽](https://technet.microsoft.com/library/hh831766.aspx)。|
+|**指派記憶體**|啟動記憶體： 1024 MB<p>動態記憶體：**未選取**|您可以將啟動記憶體從32MB 設定為5902MB。<p>您也可以選擇使用動態記憶體。 如需詳細資訊，請參閱[hyper-v 動態記憶體總覽](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831766(v=ws.11))。|
 |**設定網路功能**|Not connected|您可以從現有的虛擬交換器清單中選取要用於虛擬機器的網路連線。 請參閱[為 hyper-v 虛擬機器建立虛擬交換器](Create-a-virtual-switch-for-Hyper-V-virtual-machines.md)。|
 |**連接虛擬硬碟**|建立虛擬硬碟<p>名稱： <*vmname*> .vhdx<p>**位置**： **C:\Users\Public\Documents\Hyper-V\Virtual \\ 硬碟**<p>**大小**：127GB|您也可以選擇使用現有的虛擬硬碟，或稍後等候並連接虛擬硬碟。|
 |**安裝選項**|稍後安裝作業系統|這些選項會變更虛擬機器的開機順序，讓您可以從 .iso 檔案、可開機的磁片或網路安裝服務（如 Windows 部署服務 (WDS) ）進行安裝。|
@@ -115,7 +115,7 @@ ms.locfileid: "87942014"
 
 ## <a name="additional-references"></a>其他參考資料
 
-- [New-VM](https://technet.microsoft.com/library/hh848537.aspx)
+- [New-VM](/powershell/module/hyper-v/new-vm?view=win10-ps)
 
 - [支援的虛擬機器設定版本](../deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md#supported-virtual-machine-configuration-versions)
 

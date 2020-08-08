@@ -1,29 +1,27 @@
 ---
 ms.assetid: b7bf7579-ca53-49e3-a26a-6f9f8690762f
 title: 保護 AD FS 和 Web 應用程式 Proxy 的最佳做法
-description: 安全規劃和部署 Active Directory 同盟服務（AD FS）和 Web 應用程式 Proxy 的最佳作法。
+description: 安全規劃和部署 Active Directory 同盟服務 (AD FS) 和 Web 應用程式 Proxy 的最佳作法。
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: da54deaa2d1a583fd8ebb2328027e74da2cac5bc
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 10aa277a990dd91016c4dada6f8de3730b1a60fc
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520117"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87969795"
 ---
 # <a name="best-practices-for-securing-active-directory-federation-services"></a>保護 Active Directory 同盟服務的最佳做法
 
-本檔提供安全規劃和部署 Active Directory 同盟服務（AD FS）和 Web 應用程式 Proxy 的最佳作法。  其中包含這些元件預設行為的相關資訊，以及具有特定使用案例和安全性需求之組織的其他安全性設定建議。
+本檔提供 Active Directory 同盟服務 (AD FS) 和 Web 應用程式 Proxy 的安全規劃與部署的最佳作法。  其中包含這些元件預設行為的相關資訊，以及具有特定使用案例和安全性需求之組織的其他安全性設定建議。
 
-本檔適用于 Windows Server 2012 R2 和 Windows Server 2016 （預覽）中的 AD FS 和 WAP。  不論基礎結構是部署在內部部署網路或雲端託管環境（例如 Microsoft Azure）中，都可以使用這些建議。
+本檔適用于 Windows Server 2012 R2 和 Windows Server 2016 (preview) 中的 AD FS 和 WAP。  不論基礎結構是部署在內部部署網路或雲端託管環境（例如 Microsoft Azure）中，都可以使用這些建議。
 
 ## <a name="standard-deployment-topology"></a>標準部署拓撲
-若要在內部部署環境中部署，建議採用標準部署拓朴，此拓撲是由內部公司網路上的一或多部 AD FS 伺服器所組成，其中包含一或多個 Web 應用程式 Proxy （WAP）伺服器，位於 DMZ 或外部網路。  在每一層，AD FS 和 WAP，硬體或軟體負載平衡器會放在伺服器陣列的前方，並處理流量路由。  防火牆會在負載平衡器的外部 IP 位址前面放在每個（FS 和 proxy）伺服器陣列前面。
+若要在內部部署環境中部署，建議採用標準部署拓朴，此拓撲是由內部公司網路上的一或多部 AD FS 伺服器所組成，其中包含一或多個 Web 應用程式 Proxy (WAP 或外部網路中的 WAP) 伺服器。  在每一層，AD FS 和 WAP，硬體或軟體負載平衡器會放在伺服器陣列的前方，並處理流量路由。  防火牆會在負載平衡器的外部 IP 位址前面放在每個 (FS 和 proxy) 伺服器陣列前面。
 
 ![AD FS 標準拓撲](media/Best-Practices-Securing-AD-FS/adfssec1.png)
 
@@ -38,12 +36,12 @@ ms.locfileid: "87520117"
 ![AD FS 標準拓撲](media/Best-Practices-Securing-AD-FS/adfssec2.png)
 
 >[!NOTE]
-> 埠808（Windows Server 2012R2）或埠1501（Windows Server 2016 +）是用於本機 WCF 端點的 Net.tcp AD FS 埠，可將設定資料傳送至服務處理常式和 Powershell。 您可以藉由執行 Set-adfsproperties 來查看此埠 |選取 [NetTcpPort]。 這是不需要在防火牆中開啟，但會顯示在埠掃描中的本機埠。
+> 埠 808 (Windows Server 2012R2) 或埠 1501 (Windows Server 2016 +) 是 Net.tcp 埠 AD FS 用於本機 WCF 端點，以將設定資料傳輸至服務進程和 Powershell。 您可以藉由執行 Set-adfsproperties 來查看此埠 |選取 [NetTcpPort]。 這是不需要在防火牆中開啟，但會顯示在埠掃描中的本機埠。
 
 ### <a name="azure-ad-connect-and-federation-serverswap"></a>Azure AD Connect 和同盟伺服器/WAP
 此表說明 Azure AD Connect 伺服器與同盟/WAP 伺服器之間通訊所需的連接埠和通訊協定。
 
-通訊協定 |連接埠 |說明
+通訊協定 |連接埠 |描述
 --------- | --------- |---------
 HTTP|80 (TCP/UDP)|用於下載 CRL (憑證撤銷清單) 以驗證 SSL 憑證。
 HTTPS|443(TCP/UDP)|用來與 Azure AD 同步處理。
@@ -52,14 +50,14 @@ WinRM|5985| WinRM 接聽程式
 ### <a name="wap-and-federation-servers"></a>WAP 和同盟伺服器
 此表說明同盟伺服器與 WAP 伺服器之間通訊所需的連接埠和通訊協定。
 
-通訊協定 |連接埠 |說明
+通訊協定 |連接埠 |描述
 --------- | --------- |---------
 HTTPS|443(TCP/UDP)|用於進行驗證。
 
 ### <a name="wap-and-users"></a>WAP 和使用者
 此表說明使用者與 WAP 伺服器之間通訊所需的連接埠和通訊協定。
 
-通訊協定 |連接埠 |說明
+通訊協定 |連接埠 |描述
 --------- | --------- |--------- |
 HTTPS|443(TCP/UDP)|用於裝置驗證。
 TCP|49443 (TCP)|用於憑證驗證。
@@ -81,7 +79,7 @@ TCP|49443 (TCP)|用於憑證驗證。
 |/adfs/ls|以瀏覽器為基礎的驗證流程和目前版本的 Microsoft Office 使用此端點進行 Azure AD 和 Office 365 驗證 |
 |/adfs/services/trust/2005/usernamemixed|用於 Exchange Online 與 Office 2013 舊的 Office 用戶端可能會更新2015。  較新的用戶端會使用被動 \adfs\ls 端點。 |
 |/adfs/services/trust/13/usernamemixed|用於 Exchange Online 與 Office 2013 舊的 Office 用戶端可能會更新2015。  較新的用戶端會使用被動 \adfs\ls 端點。 |
-|/adfs/oauth2|這項功能適用于任何現代化應用程式（在內部部署或雲端上）您已設定為直接向 AD FS 進行驗證（亦即不透過 AAD） |
+|/adfs/oauth2|這項功能適用于內部部署或雲端中 (的任何現代化應用程式，) 您已設定為直接向 (AD FS 進行驗證，亦即不透過 AAD)  |
 |/adfs/services/trust/mex|用於 Exchange Online 與 Office 2013 舊的 Office 用戶端可能會更新2015。  較新的用戶端會使用被動 \adfs\ls 端點。|
 |/adfs/ls/federationmetadata/2007-06/federationmetadata.xml    |任何被動流程的需求;並由 Office 365/Azure AD 用來檢查 AD FS 憑證。 |
 
@@ -98,7 +96,7 @@ Set-AdfsEndpoint -TargetAddressPath /adfs/services/trust/13/certificatemixed -Pr
 ```
 
 ### <a name="extended-protection-for-authentication"></a>驗證擴充保護
-驗證的擴充保護是一項功能，可減少中間人（MITM）攻擊中的人，並且預設會使用 AD FS 來啟用。
+驗證的擴充保護功能，可減少 (MITM) 攻擊的中間人，並依預設使用 AD FS 來啟用。
 
 #### <a name="to-verify-the-settings-you-can-do-the-following"></a>若要驗證設定，您可以執行下列動作：
 您可以使用下列 PowerShell Cmdlet 來驗證此設定。
@@ -110,7 +108,7 @@ Get-ADFSProperties
 屬性是 `ExtendedProtectionTokenCheck`。  預設值為 [允許]，如此就能在沒有支援功能的瀏覽器相容性問題的情況下，達到安全性優勢。
 
 ### <a name="congestion-control-to-protect-the-federation-service"></a>保護 federation service 的擁塞控制
-Federation service proxy （WAP 的一部分）提供擁塞控制來保護 AD FS 服務免于大量的要求。  如果 Web 應用程式 Proxy 與同盟伺服器之間的延遲偵測到同盟伺服器超載，Web 應用程式 Proxy 就會拒絕外部用戶端驗證要求。  此功能預設會設定為建議的延遲臨界值層級。
+Federation service proxy (WAP 的一部分) 提供擁塞控制來保護 AD FS 服務免于大量的要求。  如果 Web 應用程式 Proxy 與同盟伺服器之間的延遲偵測到同盟伺服器超載，Web 應用程式 Proxy 就會拒絕外部用戶端驗證要求。  此功能預設會設定為建議的延遲臨界值層級。
 
 #### <a name="to-verify-the-settings-you-can-do-the-following"></a>若要驗證設定，您可以執行下列動作：
 1. 在 Web 應用程式 Proxy 電腦上，啟動提升權限的命令視窗。
@@ -138,9 +136,9 @@ Azure AD 客戶監視並保持最新基礎結構的建議方式是透過 Azure A
 您可以選擇性地設定下列其他功能，以提供預設部署中所提供的額外保護。
 
 ### <a name="extranet-soft-lockout-protection-for-accounts"></a>帳戶的外部網路「軟」鎖定保護
-透過 Windows Server 2012 R2 中的外部網路鎖定功能，AD FS 系統管理員可以設定允許的失敗驗證要求數上限（ExtranetLockoutThreshold）和 `observation window` s 時間週期（ExtranetObservationWindow）。 當達到驗證要求的最大數目（ExtranetLockoutThreshold）時，AD FS 會停止嘗試針對設定時間週期（ExtranetObservationWindow）的 AD FS 驗證所提供的帳號憑證。 此動作會保護此帳戶免于 AD 帳戶鎖定，換句話說，它會保護此帳戶不會遺失依賴 AD FS 的公司資源存取權來驗證使用者。 這些設定適用于 AD FS 服務可以驗證的所有網域。
+透過 Windows Server 2012 R2 中的外部網路鎖定功能，AD FS 系統管理員可以設定允許的失敗驗證要求數目上限 (ExtranetLockoutThreshold) 和 `observation window` s (ExtranetObservationWindow) 的時間週期。 當達到此數目上限 (驗證要求的 ExtranetLockoutThreshold) 時，AD FS 會停止嘗試針對設定時間週期 (ExtranetObservationWindow) 的 AD FS 驗證所提供的帳號憑證。 此動作會保護此帳戶免于 AD 帳戶鎖定，換句話說，它會保護此帳戶不會遺失依賴 AD FS 的公司資源存取權來驗證使用者。 這些設定適用于 AD FS 服務可以驗證的所有網域。
 
-您可以使用下列 Windows PowerShell 命令來設定 AD FS 外部網路鎖定（範例）：
+您可以使用下列 Windows PowerShell 命令，將 AD FS 外部網路鎖定設定 (範例) ：
 
 ```powershell
 Set-AdfsProperties -EnableExtranetLockout $true -ExtranetLockoutThreshold 15 -ExtranetObservationWindow ( new-timespan -Minutes 30 )
@@ -150,7 +148,7 @@ Set-AdfsProperties -EnableExtranetLockout $true -ExtranetLockoutThreshold 15 -Ex
 
 ### <a name="disable-ws-trust-windows-endpoints-on-the-proxy-ie-from-extranet"></a>停用 proxy 上的 WS-TRUST Windows 端點，即來自外部網路
 
-WS-TRUST Windows 端點（*/adfs/services/trust/2005/windowstransport*和 */adfs/services/trust/13/windowstransport*）僅適用于在 HTTPS 上使用 WIA 系結的內部網路面向端點。 將它們公開到外部網路，可能會允許對這些端點的要求略過鎖定保護。 您應該在 proxy 上停用這些端點（也就是從外部網路停用），以使用下列 PowerShell 命令來保護 AD 帳戶鎖定。 藉由停用 proxy 上的這些端點，並不會影響到已知的終端使用者。
+WS-TRUST Windows 端點 (*/adfs/services/trust/2005/windowstransport*和 */adfs/services/trust/13/windowstransport*) 僅適用于在 HTTPS 上使用 WIA 系結的內部網路面向端點。 將它們公開到外部網路，可能會允許對這些端點的要求略過鎖定保護。 您應該停用 proxy 上的這些端點 (也就是從外部網路) 停用，使用下列 PowerShell 命令來保護 AD 帳戶鎖定。 藉由停用 proxy 上的這些端點，並不會影響到已知的終端使用者。
 
 ```powershell
 Set-AdfsEndpoint -TargetAddressPath /adfs/services/trust/2005/windowstransport -Proxy $false
@@ -160,8 +158,8 @@ Set-AdfsEndpoint -TargetAddressPath /adfs/services/trust/13/windowstransport -Pr
 ### <a name="differentiate-access-policies-for-intranet-and-extranet-access"></a>區分內部網路和外部網路存取的存取原則
 AD FS 能夠區分源自本機、公司網路與要求的存取原則，而這些要求是透過 proxy 從網際網路傳入。  這可在每個應用程式或全域執行。  對於具有敏感性或個人識別資訊的高商業價值應用程式或應用程式，請考慮需要多重要素驗證。  這可以透過 [AD FS 管理] 嵌入式管理單元來完成。
 
-### <a name="require-multi-factor-authentication-mfa"></a>需要多重要素驗證（MFA）
-AD FS 可以設定為需要增強式驗證（例如多重要素驗證），特別是針對透過 proxy 傳入的要求、個別的應用程式，以及適用于 Azure AD/Office 365 和內部部署資源的條件式存取。  支援的 MFA 方法包括 Microsoft Azure MFA 和協力廠商提供者。  系統會提示使用者提供其他資訊（例如包含單次代碼的 SMS 文字），而 AD FS 會與提供者特定外掛程式搭配使用，以允許存取。
+### <a name="require-multi-factor-authentication-mfa"></a> (MFA) 需要多重要素驗證
+AD FS 可以設定為需要增強式驗證 (例如多重要素驗證) 特別適用于透過 proxy 傳入的要求、個別的應用程式，以及適用于 Azure AD/Office 365 和內部部署資源的條件式存取。  支援的 MFA 方法包括 Microsoft Azure MFA 和協力廠商提供者。  系統會提示使用者提供額外的資訊 (例如包含單次代碼) 的 SMS 文字，而 AD FS 會與提供者特定外掛程式搭配使用，以允許存取。
 
 支援的外部 MFA 提供者包括[此](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn758113(v=ws.11))頁面中所列的和 HDI Global。
 
@@ -175,5 +173,5 @@ Install-AdfsFarm -CertificateThumbprint <String> -DecryptionCertificateThumbprin
 其中：
 
 - `CertificateThumbprint`是您的 SSL 憑證
-- `SigningCertificateThumbprint`您的簽署憑證（含 HSM 保護的金鑰）
-- `DecryptionCertificateThumbprint`您的加密憑證（使用受 HSM 保護的金鑰）
+- `SigningCertificateThumbprint`您的簽署憑證 (了受 HSM 保護的金鑰) 
+- `DecryptionCertificateThumbprint`您的加密憑證 (了受 HSM 保護的金鑰) 

@@ -6,12 +6,12 @@ ms.topic: get-started-article
 ms.assetid: ad848a5b-0811-4c67-afe5-6147489c0384
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 2980e073c34d6177846175563e4d374b439ced44
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c7eb9b82938d6506493ff7cf0856a8c25d3af0ed
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952598"
+ms.locfileid: "87996512"
 ---
 # <a name="internal-dns-service-idns-for-sdn"></a>SDN 的內部 DNS 服務 (iDNS)
 
@@ -65,7 +65,7 @@ Idn proxy 是一種 Windows 服務，它會在每部主機上執行，並將租�
 
 如需詳細資訊，請參閱下列主題。
 
-- [使用指令碼部署軟體定義網路的基礎結構](https://docs.microsoft.com/windows-server/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure-using-scripts)
+- [使用指令碼部署軟體定義網路的基礎結構](../deploy/deploy-a-software-defined-network-infrastructure-using-scripts.md)
 
 
 ## <a name="understanding-idns-deployment-steps"></a>瞭解 Idn 部署步驟
@@ -108,7 +108,7 @@ Method: PUT
 ```
 
 >[!NOTE]
->這是 SDNExpress.ps1 中 [設定**ConfigureIDns** ] 區段的摘錄。 如需詳細資訊，請參閱[使用指令碼部署軟體定義網路基礎結構](https://technet.microsoft.com/windows-server-docs/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure-using-scripts)。
+>這是 SDNExpress.ps1 中 [設定**ConfigureIDns** ] 區段的摘錄。 如需詳細資訊，請參閱[使用指令碼部署軟體定義網路基礎結構](../deploy/deploy-a-software-defined-network-infrastructure-using-scripts.md)。
 
 ### <a name="step-3-configure-the-idns-proxy-service"></a>步驟3：設定 Idn Proxy 服務
 Idn Proxy 服務會在每個 Hyper-v 主機上執行，提供租使用者的虛擬網路與 Idn 伺服器所在的實體網路之間的橋樑。 您必須在每個 Hyper-v 主機上建立下列登錄機碼。
@@ -149,7 +149,7 @@ Idn Proxy 服務會在每個 Hyper-v 主機上執行，提供租使用者的虛�
 - ValueType = "String"
 
 >[!NOTE]
->這是 SDNExpress.ps1 中 [設定**ConfigureIDnsProxy** ] 區段的摘錄。 如需詳細資訊，請參閱[使用指令碼部署軟體定義網路基礎結構](https://technet.microsoft.com/windows-server-docs/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure-using-scripts)。
+>這是 SDNExpress.ps1 中 [設定**ConfigureIDnsProxy** ] 區段的摘錄。 如需詳細資訊，請參閱[使用指令碼部署軟體定義網路基礎結構](../deploy/deploy-a-software-defined-network-infrastructure-using-scripts.md)。
 
 ### <a name="step-4-restart-the-network-controller-host-agent-service"></a>步驟4：重新開機網路控制站主機代理程式服務
 您可以使用下列 Windows PowerShell 命令來重新開機網路控制站主機代理程式服務。
@@ -158,7 +158,7 @@ Idn Proxy 服務會在每個 Hyper-v 主機上執行，提供租使用者的虛�
 Restart-Service nchostagent -Force
 ```
 
-如需詳細資訊，請參閱[重新開機服務](https://technet.microsoft.com/library/hh849823.aspx)。
+如需詳細資訊，請參閱[重新開機服務](/powershell/module/microsoft.powershell.management/restart-service?view=powershell-7)。
 
 ### <a name="enable-firewall-rules-for-the-dns-proxy-service"></a>啟用 DNS proxy 服務的防火牆規則
 您可以使用下列 Windows PowerShell 命令來建立防火牆規則，以允許 proxy 的例外狀況與 VM 和 Idn 伺服器進行通訊。
@@ -167,12 +167,12 @@ Restart-Service nchostagent -Force
 Enable-NetFirewallRule -DisplayGroup 'DNS Proxy Firewall'
 ```
 
-如需詳細資訊，請參閱[Enable-get-netfirewallrule](https://technet.microsoft.com/library/jj554869.aspx)。
+如需詳細資訊，請參閱[Enable-get-netfirewallrule](/powershell/module/netsecurity/enable-netfirewallrule?view=winserver2012r2-ps)。
 
 ### <a name="validate-the-idns-service"></a>驗證 Idn 服務
 若要驗證 Idn 服務，您必須部署範例租使用者工作負載。
 
-如需詳細資訊，請參閱[建立 VM 並聯機至租使用者虛擬網路或 VLAN](https://technet.microsoft.com/windows-server-docs/networking/sdn/manage/create-a-tenant-vm)。
+如需詳細資訊，請參閱[建立 VM 並聯機至租使用者虛擬網路或 VLAN](../manage/create-a-tenant-vm.md)。
 
 如果您想要讓租使用者 VM 使用 Idn 服務，則必須讓 VM 網路介面的 DNS 伺服器設定保留空白，並允許介面使用 DHCP。
 
@@ -187,5 +187,4 @@ Enable-NetFirewallRule -DisplayGroup 'DNS Proxy Firewall'
 DNS proxy 也可確保租使用者 VM 查詢已隔離。 如果 Idn 伺服器是查詢的授權，則 Idn 伺服器會以授權回應回應。 如果 Idn 伺服器不是查詢的授權，它會執行 DNS 遞迴來解析網際網路名稱。
 
 >[!NOTE]
->這項資訊包含在 SDNExpressTenant.ps1 的設定**AttachToVirtualNetwork**一節中。 如需詳細資訊，請參閱[使用指令碼部署軟體定義網路基礎結構](https://technet.microsoft.com/windows-server-docs/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure-using-scripts)。
-
+>這項資訊包含在 SDNExpressTenant.ps1 的設定**AttachToVirtualNetwork**一節中。 如需詳細資訊，請參閱[使用指令碼部署軟體定義網路基礎結構](../deploy/deploy-a-software-defined-network-infrastructure-using-scripts.md)。

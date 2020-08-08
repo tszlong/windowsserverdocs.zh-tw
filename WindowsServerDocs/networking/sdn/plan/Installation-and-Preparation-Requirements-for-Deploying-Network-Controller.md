@@ -7,12 +7,12 @@ ms.assetid: 7f899e62-6e5b-4fca-9a59-130d4766ee2f
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/10/2018
-ms.openlocfilehash: 060194959f80c9d2a6d174910b0264c58214373b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 051518873bd028e8b1253b9bf7cb17dcff344d0d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964084"
+ms.locfileid: "87996600"
 ---
 # <a name="requirements-for-deploying-network-controller"></a>部署網路控制站的需求
 
@@ -102,7 +102,7 @@ ms.locfileid: "87964084"
 
 ### <a name="step-4-configure-service-principal-name-if-using-kerberos-based-authentication"></a>步驟 4： 設定服務主體名稱（如果使用 Kerberos 型驗證）
 
-如果網路控制卡使用 Kerberos 驗證來與管理用戶端通訊，您必須為 Active Directory 中的網路控制站) 設定 (SPN 的服務主體名稱。 網路控制站會自動設定 SPN。 您只需要提供網路控制站電腦的許可權，就可以註冊和修改 SPN。 如需詳細資訊，請參閱[ (SPN) 設定服務主體名稱](https://docs.microsoft.com/windows-server/networking/sdn/security/kerberos-with-spn#configure-service-principal-names-spn)。
+如果網路控制卡使用 Kerberos 驗證來與管理用戶端通訊，您必須為 Active Directory 中的網路控制站) 設定 (SPN 的服務主體名稱。 網路控制站會自動設定 SPN。 您只需要提供網路控制站電腦的許可權，就可以註冊和修改 SPN。 如需詳細資訊，請參閱[ (SPN) 設定服務主體名稱](../security/kerberos-with-spn.md#configure-service-principal-names-spn)。
 
 ## <a name="deployment-options"></a>部署選項
 
@@ -129,7 +129,7 @@ ms.locfileid: "87964084"
 
 
 ## <a name="next-steps"></a>後續步驟
-[規劃軟體定義的網路基礎結構](https://technet.microsoft.com/windows-server-docs/networking/sdn/plan/plan-a-software-defined-network-infrastructure)。
+[規劃軟體定義的網路基礎結構](./plan-a-software-defined-network-infrastructure.md)。
 
 ## <a name="related-topics"></a>相關主題
 - [網路控制卡](../technologies/network-controller/Network-Controller.md)

@@ -7,12 +7,12 @@ ms.assetid: bc625de9-ee31-40a4-9ad2-7448bfbfb6e6
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: 3937f124ba91a597af83c00cd5497ea57c1b2fed
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ce85e93f229c62d836a00e7665e2a76bd08b44dd
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962132"
+ms.locfileid: "87996550"
 ---
 # <a name="kerberos-with-service-principal-name-spn"></a>Kerberos 搭配服務主體名稱 (SPN)
 
@@ -20,7 +20,7 @@ ms.locfileid: "87962132"
 
 網路控制卡支援多種驗證方法來與管理用戶端通訊。 您可以使用以 Kerberos 為基礎的驗證，以 X509 憑證為基礎的驗證。 您也可以選擇不使用測試部署的驗證。
 
-System Center Virtual Machine Manager 使用以 Kerberos 為基礎的驗證。 如果您使用以 Kerberos 為基礎的驗證，您必須為 Active Directory 中的網路控制站) 設定 (SPN 的服務主體名稱。 SPN 是網路控制站服務實例的唯一識別碼，由 Kerberos 驗證用來將服務實例與服務登入帳戶建立關聯。 如需詳細資訊，請參閱[服務主體名稱](https://docs.microsoft.com/windows/desktop/ad/service-principal-names)。
+System Center Virtual Machine Manager 使用以 Kerberos 為基礎的驗證。 如果您使用以 Kerberos 為基礎的驗證，您必須為 Active Directory 中的網路控制站) 設定 (SPN 的服務主體名稱。 SPN 是網路控制站服務實例的唯一識別碼，由 Kerberos 驗證用來將服務實例與服務登入帳戶建立關聯。 如需詳細資訊，請參閱[服務主體名稱](/windows/desktop/ad/service-principal-names)。
 
 ## <a name="configure-service-principal-names-spn"></a> (SPN) 設定服務主體名稱
 
