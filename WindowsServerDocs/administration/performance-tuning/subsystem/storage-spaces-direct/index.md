@@ -6,12 +6,12 @@ ms.assetid: 15a519fa-37cc-4d84-a9fe-097d33bb71ea
 author: phstee
 ms.author: vshankar; danlo; clausjor; stevenek
 ms.date: 4/14/2017
-ms.openlocfilehash: 9430e9e71d9e39533d5bdacd72af4593fe34c59a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 18dca2080a311a337e0d41055e95e7a7f0f42a80
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895924"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991985"
 ---
 # <a name="performance-tuning-for-storage-spaces-direct"></a>儲存空間直接存取的效能調整
 
@@ -36,7 +36,7 @@ ms.locfileid: "87895924"
 
 ## <a name="additional-references"></a>其他參考資料
 
-- [了解儲存空間直接存取](../../../../storage/storage-spaces/understand-storage-spaces-direct.md)
-- [規劃儲存空間直接存取](../../../../storage/storage-spaces/plan-storage-spaces-direct.md)
+- [了解儲存空間直接存取](../../../../storage/storage-spaces/understand-the-cache.md)
+- [規劃儲存空間直接存取](../../../../storage/storage-spaces/storage-spaces-direct-hardware-requirements.md)
 - [檔案伺服器的效能調整](../../role/file-server/index.md)
-- [軟體定義存放裝置設計考量指南](https://technet.microsoft.com/library/mt243829.aspx) (適用於 Windows Server 2012 R2 與共用 SAS 存放裝置)
+- [軟體定義存放裝置設計考量指南](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/mt243829(v=ws.11)) (適用於 Windows Server 2012 R2 與共用 SAS 存放裝置)

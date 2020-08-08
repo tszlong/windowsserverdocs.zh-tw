@@ -10,35 +10,35 @@ metadata:
   ms.topic: hub-page
   ms.date: 06/06/2019
   ms.author: lizross
-  ms.openlocfilehash: f1d4865d5213d2889aad1fc114c7ea300b4bfe4e
-  ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+  ms.openlocfilehash: c0820365f1a022545752e90ff01b625f7aa72c98
+  ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 07/27/2020
-  ms.locfileid: "87177694"
+  ms.lasthandoff: 08/07/2020
+  ms.locfileid: "87996671"
 highlightedContent:
   items:
   - title: Windows Server 2019 的新功能？
     itemType: whats-new
-    url: /windows-server/get-started-19/whats-new-19
+    url: ./get-started-19/whats-new-19.md
   - title: 開始使用 Windows Server 2019
     itemType: overview
-    url: /windows-server/get-started-19/get-started-19
+    url: ./get-started-19/get-started-19.md
   - title: Windows Admin Center
     itemType: how-to-guide
-    url: /windows-server/manage/windows-admin-center/overview
+    url: ./manage/windows-admin-center/overview.md
   - title: 超融合式基礎結構
     itemType: overview
-    url: /windows-server/hyperconverged/index
+    url: ./hyperconverged/index.yml
   - title: 連線到 Azure 混合式服務
     itemType: how-to-guide
-    url: /windows-server/azure-hybrid-services/index
+    url: ./manage/windows-admin-center/azure/index.md
   - title: 開始使用 Windows Server 2016
     itemType: how-to-guide
-    url: /windows-server/get-started/server-basics
+    url: ./get-started/server-basics.md
   - title: 使用 Windows Server 2008 和 2008 R2 擴充的安全性更新
     itemType: how-to-guide
-    url: /windows-server/get-started/extended-security-updates
+    url: ./get-started/extended-security-updates.md
   - title: 適用於伺服器的 Windows 測試人員計畫
     itemType: overview
     url: /windows-insider/at-work/
@@ -46,146 +46,146 @@ conceptualContent:
   items:
   - title: 升級 Windows Server
     links:
-    - url: /windows-server/upgrade/upgrade-2016-to-2019
+    - url: ./upgrade/upgrade-2016-to-2019.md
       itemType: how-to-guide
       text: 升級 Windows Server 2016
-    - url: /windows-server/upgrade/upgrade-2012r2-to-2019
+    - url: ./upgrade/upgrade-2012r2-to-2019.md
       itemType: how-to-guide
       text: 升級 Windows Server 2012 R2
-    - url: /windows-server/upgrade/upgrade-2012-to-2016
+    - url: ./upgrade/upgrade-2012-to-2016.md
       itemType: how-to-guide
       text: 升級 Windows Server 2012
-    - url: /windows-server/upgrade/upgrade-2008r2-to-2012r2
+    - url: ./upgrade/upgrade-2008r2-to-2012r2.md
       itemType: how-to-guide
       text: 升級 Windows Server 2008 R2
     footerLink:
-      url: /windows-server/upgrade/upgrade-overview
+      url: ./upgrade/upgrade-overview.md
       text: 查看更多
   - title: 身分識別與存取
     links:
-    - url: /windows-server/identity/ad-ds/ad-ds-getting-started
+    - url: ./identity/ad-ds/ad-ds-getting-started.md
       itemType: overview
       text: 開始使用 Active Directory 網域服務 (AD DS)
-    - url: /windows-server/identity/active-directory-federation-services
+    - url: ./identity/active-directory-federation-services.md
       itemType: overview
       text: Active Directory Federation Services (AD FS)
-    - url: /windows-server/identity/securing-privileged-access/securing-privileged-access
+    - url: ./identity/securing-privileged-access/securing-privileged-access.md
       itemType: concept
       text: 保護特殊權限存取
     footerLink:
-      url: /windows-server/identity/identity-and-access
+      url: ./identity/identity-and-access.yml
       text: 查看更多
   - title: 容錯移轉叢集
     links:
-    - url: /windows-server/failover-clustering/whats-new-in-failover-clustering
+    - url: ./failover-clustering/whats-new-in-failover-clustering.md
       itemType: whats-new
       text: 容錯移轉叢集的新功能
-    - url: /windows-server/failover-clustering/create-failover-cluster
+    - url: ./failover-clustering/create-failover-cluster.md
       itemType: how-to-guide
       text: 建立容錯移轉叢集
-    - url: /windows-server/failover-clustering/cluster-aware-updating
+    - url: ./failover-clustering/cluster-aware-updating.md
       itemType: overview
       text: 叢集感知更新概觀
     footerLink:
-      url: /windows-server/failover-clustering/failover-clustering-overview
+      url: ./failover-clustering/failover-clustering-overview.md
       text: 查看更多
   - title: 管理
     links:
-    - url: /windows-server/manage/windows-admin-center/overview
+    - url: ./manage/windows-admin-center/overview.md
       itemType: overview
       text: 使用 Windows Admin Center 管理您的環境
-    - url: /windows-server/manage/system-insights/overview
+    - url: ./manage/system-insights/overview.md
       itemType: overview
       text: 系統深入解析概觀
-    - url: /windows-server/administration/performance-tuning/
+    - url: ./administration/performance-tuning/index.md
       itemType: overview
       text: Windows Server 2016 的效能調整指導方針
     footerLink:
-      url: /windows-server/administration/manage-windows-server
+      url: ./administration/manage-windows-server.yml
       text: 查看更多
   - title: 網路功能
     links:
-    - url: /windows-server/networking/what-s-new-in-networking
+    - url: ./networking/what-s-new-in-networking.md
       itemType: whats-new
       text: 網路的新功能
-    - url: /windows-server/networking/sdn/
+    - url: ./networking/sdn/index.yml
       itemType: overview
       text: 軟體定義網路 (SDN) 概觀
-    - url: /windows-server/networking/sdn/technologies/network-controller/network-controller
+    - url: ./networking/sdn/technologies/network-controller/network-controller.md
       itemType: overview
       text: 網路控制卡
     footerLink:
-      url: /windows-server/networking/networking
+      url: ./networking/index.yml
       text: 查看更多
   - title: 遠端
     links:
-    - url: /windows-server/remote/remote-desktop-services/welcome-to-rds
+    - url: ./remote/remote-desktop-services/welcome-to-rds.md
       itemType: overview
       text: 遠端桌面服務概觀
-    - url: /windows-server/remote/remote-desktop-services/clients/remote-desktop-clients
+    - url: ./remote/remote-desktop-services/clients/remote-desktop-clients.md
       itemType: overview
       text: 遠端桌面用戶端
-    - url: /windows-server/remote/remote-desktop-services/clients/remote-desktop-allow-access
+    - url: ./remote/remote-desktop-services/clients/remote-desktop-allow-access.md
       itemType: how-to-guide
       text: 遠端桌面 - 允許存取您的電腦
     footerLink:
-      url: /windows-server/remote/index
+      url: ./remote/index.yml
       text: 查看更多
   - title: 安全性和保證
     links:
-    - url: /windows-server/security/windows-authentication/windows-authentication-overview
+    - url: ./security/windows-authentication/windows-authentication-overview.md
       itemType: overview
       text: Windows 驗證概觀
-    - url: /windows-server/security/group-managed-service-accounts/getting-started-with-group-managed-service-accounts
+    - url: ./security/group-managed-service-accounts/getting-started-with-group-managed-service-accounts.md
       itemType: how-to-guide
       text: 開始使用群組受管理的服務帳戶
-    - url: /windows-server/security/windows-authentication/credentials-processes-in-windows-authentication
+    - url: ./security/windows-authentication/credentials-processes-in-windows-authentication.md
       itemType: overview
       text: Windows 驗證中的認證程序
     footerLink:
-      url: /windows-server/security/security-and-assurance
+      url: ./security/security-and-assurance.yml
       text: 查看更多
   - title: 存放裝置
     links:
-    - url: /windows-server/storage/whats-new-in-storage
+    - url: ./storage/whats-new-in-storage.md
       itemType: whats-new
       text: 儲存空間的新功能
-    - url: /windows-server/storage/disk-management/overview-of-disk-management
+    - url: ./storage/disk-management/overview-of-disk-management.md
       itemType: overview
       text: 磁碟管理概觀
-    - url: /windows-server/storage/storage-spaces/understand-quorum
+    - url: ./storage/storage-spaces/understand-quorum.md
       itemType: overview
       text: 了解叢集和集區仲裁
     footerLink:
-      url: /windows-server/storage/storage
+      url: ./storage/storage.yml
       text: 查看更多
   - title: 疑難排解
     links:
-    - url: /windows-server/manage/windows-admin-center/support/troubleshooting
+    - url: ./manage/windows-admin-center/support/troubleshooting.md
       itemType: how-to-guide
       text: 針對 Windows Admin Center 問題進行疑難排解
-    - url: /windows-server/failover-clustering/troubleshooting-using-wer-reports
+    - url: ./failover-clustering/troubleshooting-using-wer-reports.md
       itemType: how-to-guide
       text: 使用 Windows 錯誤報告針對容錯移轉叢集進行疑難排解
-    - url: /windows-server/storage/disk-management/troubleshooting-disk-management
+    - url: ./storage/disk-management/troubleshooting-disk-management.md
       itemType: how-to-guide
       text: 針對磁碟管理問題進行疑難排解
     footerLink:
-      url: /windows-server/troubleshoot/windows-server-troubleshooting
+      url: ./troubleshoot/windows-server-troubleshooting.md
       text: 查看更多
   - title: 虛擬化
     links:
     - url: /virtualization/windowscontainers/
       itemType: overview
       text: Windows 概觀上的容器
-    - url: /windows-server/virtualization/hyper-v/hyper-v-on-windows-server
+    - url: ./virtualization/hyper-v/hyper-v-on-windows-server.md
       itemType: overview
       text: Windows Server 上的 Hyper-V
-    - url: /windows-server/virtualization/hyper-v-virtual-switch/hyper-v-virtual-switch
+    - url: ./virtualization/hyper-v-virtual-switch/hyper-v-virtual-switch.md
       itemType: overview
       text: Hyper-V 虛擬交換器概觀
     footerLink:
-      url: /windows-server/virtualization/virtualization
+      url: ./virtualization/virtualization.yml
       text: 查看更多
 additionalContent:
   sections:
@@ -195,4 +195,4 @@ additionalContent:
       url: /previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh801901(v=ws.11)
     - title: Windows Server Essentials
       summary: 適用於協助 IT 專業人員管理 Windows Server Essentials 的技術內容，這是專為擁有多達 25 位使用者和 50 部裝置小型企業所設計的雲端連線第一部伺服器。
-      url: https://docs.microsoft.com/en-us/windows-server-essentials/get-started/get-started
+      url: /windows-server-essentials/get-started/get-started

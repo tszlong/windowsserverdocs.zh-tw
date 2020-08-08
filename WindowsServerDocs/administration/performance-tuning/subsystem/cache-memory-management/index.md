@@ -5,12 +5,12 @@ ms.topic: landing-page
 ms.author: pavel; atales
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 404bc76e0bc3b08fc87b49b8263427cd4496bd43
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 07a8b12b9d4be5f9105baefaae0ef4030e02f69f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895997"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993330"
 ---
 # <a name="performance-tuning-cache-and-memory-manager"></a>快取與記憶體管理員的效能調整
 
@@ -30,4 +30,4 @@ ms.locfileid: "87895997"
 
 -   [快取與記憶體管理員潛在效能問題](troubleshoot.md)
 
--   [Windows Server 2016 中快取與記憶體管理員的改良功能](improvements-in-2016.md)
+-   [Windows Server 2016 中快取與記憶體管理員的改良功能](./improvements-in-windows-server.md)

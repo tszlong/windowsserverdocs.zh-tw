@@ -10,48 +10,48 @@ metadata:
   author: coreyp-at-msft
   ms.author: coreyp
   ms.date: 06/10/2020
-  ms.openlocfilehash: 1d2ec270e90423f2405b664f22de7ca85c540498
-  ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+  ms.openlocfilehash: da06358fad02f7ca2f7088bae1a82a2b21786bda
+  ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 06/18/2020
-  ms.locfileid: "85070163"
+  ms.lasthandoff: 08/07/2020
+  ms.locfileid: "87993876"
 productDirectory:
   items:
   - title: Hyper-V
     imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-virtualize.svg
     links:
-    - url: https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/
+    - url: /windows-server/virtualization/hyper-v/
       text: 將伺服器硬體虛擬化可讓您在超融合式叢集中的多部伺服器上執行虛擬機器。
   - title: 儲存空間 Direct
     imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-store.svg
     links:
-    - url: https://docs.microsoft.com/en-us/windows-server/storage/storage-spaces/storage-spaces-direct-overview
+    - url: ../storage/storage-spaces/storage-spaces-direct-overview.md
       text: 將儲存體硬體虛擬化可讓您在跨超融合式叢集中所有伺服器散佈的虛擬化磁碟區集區上建立磁碟區。
   - title: 容錯移轉叢集
     imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-cluster.svg
     links:
-    - url: https://docs.microsoft.com/en-us/windows-server/failover-clustering/failover-clustering-overview
+    - url: ../failover-clustering/failover-clustering-overview.md
       text: 將多部伺服器組成群組，以便工作負載 (例如虛擬機器) 可以在叢集中的任何伺服器上執行，進而獲得伺服器之間的負載平衡與容錯移轉功能。
   - title: 軟體定義的網路功能
     imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-network.svg
     links:
-    - url: https://docs.microsoft.com/windows-server/networking/sdn/
+    - url: ../networking/sdn/index.yml
       text: 將您的網路硬體虛擬化可讓您動態建立及管理會從底層實體網路抽取您工作負載的網路與原則。
   - title: Windows Admin Center
     imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-admin-center.svg
     links:
-    - url: https://docs.microsoft.com/en-us/windows-server/manage/windows-admin-center/overview
+    - url: ../manage/windows-admin-center/overview.md
       text: 將伺服器硬體虛擬化可讓您在超融合式叢集中的多部伺服器上執行虛擬機器。
   - title: 連線到 Azure 混合式服務
     imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-microsoft-azure.svg
     links:
-    - url: https://docs.microsoft.com/en-us/windows-server/azure-hybrid-services
+    - url: /windows-server/azure-hybrid-services
       text: 將您的叢集連線到 Azure 混合式服務，以進行站台復原、監視等等。
   - title: Azure Stack HCI
     imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-azure-stack.svg
     links:
-    - url: https://docs.microsoft.com/en-us/windows-server/azure-stack-hci
+    - url: /windows-server/azure-stack-hci
       text: 搭配來自您所選合作夥伴且經認證的硬體解決方案使用 Windows Server 2019 虛擬化與叢集技術，有助於在調整軟體定義資料中心時排除不定因素。
   - title: Windows Server 軟體定義 (WSSD)
     imageSrc: https://docs.microsoft.com/media/common/i_data-collection.svg

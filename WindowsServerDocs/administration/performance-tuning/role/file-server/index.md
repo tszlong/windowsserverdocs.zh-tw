@@ -7,12 +7,12 @@ ms.author: nedpyle; danlo; dkruse; v-tea
 ms.date: 12/12/2019
 manager: dcscontentpm
 audience: Admin
-ms.openlocfilehash: 951d59a1a0e1d58a064eb71bd073259c15fd46d4
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ecbd1bc751f133b80cf1d9cb264cf70a4ac4f47c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896174"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992198"
 ---
 # <a name="performance-tuning-for-file-servers"></a>檔案伺服器的效能微調
 
@@ -171,7 +171,7 @@ ms.locfileid: "87896174"
 
     預設值是 0，並停用 SMB 簽署。 將此值變更為 1 可啟用所有 SMB 通訊的 SMB 簽署，以防止 SMB 與停用 SMB 簽署的電腦通訊。 SMB 簽署可能增加 CPU 成本和網路往返，但可協助封鎖中間人攻擊。 如果 SMB 簽署並非必要，請確定所有用戶端和伺服器上的此登錄值均為 0。
 
-    如需詳細資訊，請參閱 [SMB 簽署的基本概念](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/)。
+    如需詳細資訊，請參閱 [SMB 簽署的基本概念](/archive/blogs/josebda/the-basics-of-smb-signing-covering-both-smb1-and-smb2)。
 
 -   **FileInfoCacheEntriesMax**
 
