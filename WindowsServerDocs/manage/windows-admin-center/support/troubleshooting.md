@@ -6,12 +6,12 @@ author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
 ms.date: 06/07/2019
-ms.openlocfilehash: a7ef7eb2acf9a641babf5690119c61f452aaabbc
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 76b171b81ff01a7a16b700d720bf289fefddf0f7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87937617"
+ms.locfileid: "87990205"
 ---
 # <a name="troubleshooting-windows-admin-center"></a>Windows Admin Center 疑難排解
 
@@ -69,7 +69,7 @@ ms.locfileid: "87937617"
 
 * [檢查 Windows 版本](#check-the-windows-version)
 * 您是否已新增 HTTPS 的輸入連接埠規則？
-* [深入了解如何在 Azure VM 中安裝 Windows Admin Center](https://docs.microsoft.com/windows-server/manage/windows-admin-center/configure/azure-integration#use-a-windows-admin-center-gateway-deployed-in-azure)
+* [深入了解如何在 Azure VM 中安裝 Windows Admin Center](../azure/azure-integration.md)
 
 ### <a name="check-the-windows-version"></a>檢查 Windows 版本
 
@@ -237,4 +237,3 @@ Edge 有與安全性區域相關的[已知問題](https://github.com/AzureAD/azu
 * 您要**嘗試管理**之電腦的 Windows [版本](#check-the-windows-version)：
 * 您使用何種瀏覽器？
     * 如果您使用 Google Chrome，版本為何？ ([說明] > [關於 Google Chrome])
-

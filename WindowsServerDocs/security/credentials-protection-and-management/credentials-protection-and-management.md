@@ -1,20 +1,18 @@
 ---
 title: 認證保護和管理
 description: Windows Server 安全性
-ms.prod: windows-server
-ms.technology: security-credential-protection
 ms.topic: article
 ms.assetid: e457229c-0126-40fe-948c-101c943e1b57
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 649c070fe477a51ca764bd1ad83ed013feb1b60b
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 3dc1d0ae3658e4379d3a358211471ac7f675651c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518014"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87948701"
 ---
 # <a name="credentials-protection-and-management"></a>認證保護和管理
 
@@ -38,7 +36,7 @@ ms.locfileid: "87518014"
 
 Protected Users 群組的成員進一步受到下列驗證方法的限制：
 
--   Protected Users 群組的成員只能使用 Kerberos 通訊協定登入。 無法使用 NTLM、摘要式驗證或 CredSSP 驗證帳戶。 在執行 Windows 8.1 的裝置上，系統不會快取密碼，因此當帳戶是受保護使用者群組的成員時，使用任何一種安全性支援提供者（Ssp）的裝置將無法向網域進行驗證。
+-   Protected Users 群組的成員只能使用 Kerberos 通訊協定登入。 無法使用 NTLM、摘要式驗證或 CredSSP 驗證帳戶。 在執行 Windows 8.1 的裝置上，系統不會快取密碼，因此，當帳戶是受保護使用者群組的成員時，使用其中任何一種安全性支援提供者 (Ssp) 的裝置將無法向網域進行驗證。
 
 -   Kerberos 通訊協定不會在預先驗證處理程序中使用較弱的 DES 或 RC4 加密類型。 這表示網域必須設定為至少支援 AES 加密套件。
 
@@ -68,7 +66,7 @@ Protected Users 群組的成員進一步受到下列驗證方法的限制：
 
 如需如何設定受保護帳戶的詳細資訊，請參閱[如何設定受保護帳戶](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts)。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 如需 LSA 與 LSASS 的詳細資訊，請參閱 [Windows Logon and Authentication Technical Overview](https://technet.microsoft.com/library/dn169029(v=ws.10).aspx) (Windows 登入及驗證技術概觀)。
 
 

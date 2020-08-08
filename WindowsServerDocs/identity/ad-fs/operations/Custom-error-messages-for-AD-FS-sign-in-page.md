@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 0fabcd6bb01c3f2dac5f3e110339ced9e7c0d898
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 91d9e0e5ba0a0272c1efc820578fb6547a14abc8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519767"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956435"
 ---
 # <a name="custom-error-messages-for-ad-fs-sign-in-page"></a>AD FS 登入頁面的自訂錯誤訊息
 
@@ -68,6 +66,6 @@ Set-AdfsGlobalWebContent -ErrorPageSupportEmail  "admin@contoso.com"
 Set-AdfsRelyingPartyWebContent -Name fedpassive -ErrorPageAuthorizationErrorMessage "<p> You need to be a member of Security Auditors to access this site. Click <A href='http://accessrequest/'>here</A> for more information.</p>"
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 [AD FS 使用者登入自訂](AD-FS-user-sign-in-customization.md)

@@ -5,14 +5,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 06/28/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 9e38105bafc92efc4d9e62e4815cdb24c3c25512
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: e5cb939fcf862d16837c2f9e05548644faf3bf71
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965610"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956485"
 ---
 # <a name="ad-fs-and-banned-ip-addresses"></a>AD FS 和禁用的 IP 位址
 
@@ -45,7 +43,7 @@ PS C:\ >Set-AdfsProperties -RemoveBannedIps "1.2.3.4"
 若要讀取目前已禁用的 IP 位址組，請使用下列 Powershell Cmdlet：
 
 ``` powershell
-PS C:\ >Get-AdfsProperties 
+PS C:\ >Get-AdfsProperties
 ```
 
 範例輸出︰
@@ -56,7 +54,7 @@ BannedIpList                   : {1.2.3.4, ::3,1.2.3.4/16}
 
 
 
-## <a name="additional-references"></a>其他參考  
+## <a name="additional-references"></a>其他參考資料
 [保護 Active Directory 同盟服務的最佳做法](../../ad-fs/deployment/best-practices-securing-ad-fs.md)
 
 [設定-Set-adfsproperties](/powershell/module/adfs/set-adfsproperties?view=win10-ps)

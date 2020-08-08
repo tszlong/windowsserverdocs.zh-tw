@@ -5,14 +5,12 @@ ms.author: billmath
 manager: femila
 ms.date: 11/17/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 7821910caa3c0cfa5c5402df57bd758ce8d0c245
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 1ab6735e09d912bac5b1a319a3793ee6e0c70fa2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519867"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964935"
 ---
 #  <a name="single-log-out-for-openid-connect-with-ad-fs"></a>使用 AD FS 的 OpenID Connect 單一登出
 
@@ -64,7 +62,7 @@ OpenID Connect 會使用稱為「探索檔」的 JSON 檔來提供設定的詳�
 
 
 ## <a name="ad-fs-server-configuration"></a>AD FS 伺服器設定
-預設會啟用 AD FS 屬性 EnableOAuthLogout。  此屬性會指示 AD FS 伺服器流覽具有 SID 的 URL （LogoutURI），以起始用戶端上的登出。
+預設會啟用 AD FS 屬性 EnableOAuthLogout。  此屬性會指示 AD FS 伺服器流覽 URL (LogoutURI) ，並以 SID 起始用戶端上的登出。
 如果您尚未安裝[KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801) ，您可以使用下列 PowerShell 命令：
 
 ```PowerShell
@@ -95,7 +93,7 @@ Set-AdfsClient -LogoutUri <url>
 
 1.  **具有會話識別碼**： AD FS 的 oauth 權杖會在 id_token 權杖發行時，于 OAuth 權杖中包含會話識別碼。 稍後會使用此 AD FS 來識別要為使用者清除的相關 SSO cookie。
 2.  **使用者會在 App1 上起始登出**：使用者可以從任何已登入的應用程式起始登出。 在此範例案例中，使用者會從 App1 起始登出。
-3.  **應用程式將登出要求傳送至 AD FS**：在使用者起始登出之後，應用程式會將 GET 要求傳送至 AD FS 的 end_session_endpoint。 應用程式可以選擇性地包含 id_token_hint 做為此要求的參數。 如果 id_token_hint 存在，AD FS 會將其與會話識別碼搭配使用，以找出用戶端在登出後應重新導向至哪個 URI （post_logout_redirect_uri）。  Post_logout_redirect_uri 應該是使用 RedirectUris 參數向 AD FS 註冊的有效 uri。
+3.  **應用程式將登出要求傳送至 AD FS**：在使用者起始登出之後，應用程式會將 GET 要求傳送至 AD FS 的 end_session_endpoint。 應用程式可以選擇性地包含 id_token_hint 做為此要求的參數。 如果 id_token_hint 存在，AD FS 會將其與會話識別碼搭配使用，以找出用戶端在登出 (post_logout_redirect_uri) 後應重新導向至哪個 URI。  Post_logout_redirect_uri 應該是使用 RedirectUris 參數向 AD FS 註冊的有效 uri。
 4.  **AD FS 會將登出傳送至登入的用戶端**： AD FS 會使用會話識別碼值來尋找使用者所登入的相關用戶端。 已識別的用戶端會在向 AD FS 註冊的 LogoutUri 上傳送要求，以起始用戶端上的登出。
 
 ## <a name="faqs"></a>常見問題集

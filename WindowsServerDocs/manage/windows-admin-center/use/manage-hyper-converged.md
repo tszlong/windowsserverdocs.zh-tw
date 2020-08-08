@@ -1,19 +1,17 @@
 ---
 title: 使用 Windows 管理中心管理超融合式基礎結構
-description: 使用 Windows 管理中心管理超融合式基礎結構（Project 檀香山）
-ms.technology: manage
+description: '使用 Windows Admin Center 管理超融合式基礎結構 (Project 檀香山) '
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 03/01/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 8344fcb01a5d527dfce46118121fbf7623636549
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: a2fd0e688d33265119c8dcb915d485e953507c80
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519667"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990488"
 ---
 # <a name="manage-hyper-converged-infrastructure-with-windows-admin-center"></a>使用 Windows 管理中心管理超融合式基礎結構
 
@@ -21,7 +19,7 @@ ms.locfileid: "87519667"
 
 ## <a name="what-is-hyper-converged-infrastructure"></a>什麼是超融合式基礎結構
 
-超融合式基礎結構會將軟體定義的計算、儲存體和網路功能合併成一個叢集，以提供高效能、符合成本效益且可輕鬆調整的虛擬化。 這項功能是在 Windows Server 2016 中引進[儲存空間直接存取](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)、[軟體定義的網路](https://docs.microsoft.com/windows-server/networking/sdn/software-defined-networking)功能和[hyper-v](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-on-windows-server)。
+超融合式基礎結構會將軟體定義的計算、儲存體和網路功能合併成一個叢集，以提供高效能、符合成本效益且可輕鬆調整的虛擬化。 這項功能是在 Windows Server 2016 中引進[儲存空間直接存取](../../../storage/storage-spaces/storage-spaces-direct-overview.md)、[軟體定義的網路](../../../networking/sdn/software-defined-networking.md)功能和[hyper-v](../../../virtualization/hyper-v/hyper-v-on-windows-server.md)。
 
 > [!Tip]
 > 想要取得超融合的基礎結構嗎？ Microsoft 建議合作夥伴[提供這些 Windows Server 軟體定義的](https://microsoft.com/wssd)解決方案。 它們會針對我們的參考架構進行設計、組裝和驗證，以確保相容性和可靠性，讓您快速啟動並執行。
@@ -42,7 +40,7 @@ ms.locfileid: "87519667"
 - **適用于計算、儲存和很快網路的統一單一窗格。** 您的虛擬機器、主機伺服器、磁片區、磁片磁碟機等等，都是在一個專門建立、一致、互連的體驗內。
 - **建立和管理儲存空間和 Hyper-v 虛擬機器。** 建立、開啟、調整大小和刪除磁片區的徹底簡單工作流程;建立、啟動、連接及移動虛擬機器;還有更多。
 - **功能強大的全叢集監視。** 儀表板會在叢集中的每一部伺服器上即時繪製記憶體和 CPU 使用量、儲存容量、IOPS、輸送量和延遲，並在某些情況下清除警示。
-- **軟體定義網路（SDN）支援。** 管理和監視虛擬網路、子網、將虛擬機器連線至虛擬網路，以及監視 SDN 基礎結構。
+- **軟體定義網路 (SDN) 支援。** 管理和監視虛擬網路、子網、將虛擬機器連線至虛擬網路，以及監視 SDN 基礎結構。
 
 適用于超融合基礎結構的 Windows 系統管理中心正由 Microsoft 積極開發。 它會接收經常更新，以改善現有的功能並新增功能。
 
@@ -57,7 +55,7 @@ ms.locfileid: "87519667"
 
 超融合式基礎結構的 Windows 系統管理中心取決於 Windows Server 2016 發行後新增的管理 Api。 您必須先執行下列兩個步驟，才能使用 Windows 管理中心管理 Windows Server 2016 叢集：
 
-1. 請確認叢集中的每部伺服器都已安裝[Windows server 2016 （KB4103723）](https://support.microsoft.com/help/4103723/windows-10-update-kb4103723)或更新版本的2018-05 累積更新。 若要下載並安裝此更新，請移至 [**設定**] [更新] [  >  **& 安全性**  >  **Windows Update** ]，然後選取 [**線上檢查來自 Microsoft Update 的更新**]
+1. 請確認叢集中的每部伺服器都已安裝[Windows server 2016 的2018-05 累積更新 (KB4103723) ](https://support.microsoft.com/help/4103723/windows-10-update-kb4103723)或更新版本。 若要下載並安裝此更新，請移至 [**設定**] [更新] [  >  **& 安全性**  >  **Windows Update** ]，然後選取 [**線上檢查來自 Microsoft Update 的更新**]
 2. 以系統管理員身分在叢集上執行下列 PowerShell Cmdlet：
 
 ```powershell
@@ -65,15 +63,15 @@ ms.locfileid: "87519667"
 ```
 
 > [!Tip]
-> 您只需要在叢集中的任何伺服器上執行 Cmdlet 一次。 您可以在 Windows PowerShell 中本機執行，或使用認證安全性服務提供者（CredSSP）從遠端執行。 根據您的設定而定，您可能無法從 Windows 系統管理中心執行此 Cmdlet。
+> 您只需要在叢集中的任何伺服器上執行 Cmdlet 一次。 您可以在 Windows PowerShell 中本機執行，或使用認證安全性服務提供者 (CredSSP) 從遠端執行。 根據您的設定而定，您可能無法從 Windows 系統管理中心執行此 Cmdlet。
 
 ### <a name="prepare-your-windows-server-2019-cluster-for-windows-admin-center"></a>為 Windows 系統管理中心準備您的 Windows Server 2019 叢集
 
 如果您的叢集執行 Windows Server 2019，則不需要上述步驟。 只要將叢集新增到 Windows 管理中心，如下一節中所述，您就可以開始了！
 
-### <a name="configure-software-defined-networking-optional"></a>設定軟體定義網路功能（選擇性） ###
+### <a name="configure-software-defined-networking-optional"></a> (選擇性) 設定軟體定義網路功能 ###
 
-您可以使用下列步驟，將執行 Windows Server 2016 或2019的超融合式基礎結構設定為使用軟體定義網路功能（SDN）：
+您可以使用下列步驟，將執行 Windows Server 2016 或2019的超融合式基礎結構設定為使用軟體定義的網路 (SDN) ：
 
 1. 準備 OS 的 VHD，這是您在超融合式基礎結構主機上安裝的相同作業系統。 此 VHD 將用於所有 NC/SLB/GW Vm。
 2. 從下載 SDN Express 底下的所有資料夾和檔案 [https://github.com/Microsoft/SDN/tree/master/SDNExpress](https://github.com/Microsoft/SDN/tree/master/SDNExpress) 。
@@ -113,7 +111,7 @@ ms.locfileid: "87519667"
 
 ![新增超交集叢集連接](../media/manage-hyper-converged/add-hyper-converged-cluster-connection.gif)
 
-### <a name="add-sdn-enabled-hyper-converged-cluster-windows-admin-center-preview"></a>新增具有 SDN 功能的超交集叢集（Windows 管理中心預覽）
+### <a name="add-sdn-enabled-hyper-converged-cluster-windows-admin-center-preview"></a> (Windows 系統管理中心預覽新增具有 SDN 功能的超融合叢集) 
 
 最新的 Windows 管理中心預覽支援對超融合式基礎結構進行軟體定義的網路管理。 藉由將網路控制站 REST URI 新增至您的超交集叢集連線，您可以使用超融合式叢集管理員來管理 SDN 資源，以及監視 SDN 基礎結構。
 
@@ -137,7 +135,7 @@ ms.locfileid: "87519667"
 
 是。 適用于超融合基礎結構的 Windows 系統管理中心會接收經常更新，以改善 Windows Server 2016 和 Windows Server 2019 的體驗。 不過，某些新功能僅適用于 Windows Server 2019 –例如，用於重復資料刪除和壓縮的切換參數。
 
-### <a name="can-i-use-windows-admin-center-to-manage-storage-spaces-direct-for-other-use-cases-not-hyper-converged-such-as-converged-scale-out-file-server-sofs-or-microsoft-sql-server"></a>我可以使用 Windows 系統管理中心來管理其他使用案例（非超融合式）的儲存空間直接存取，例如交集向外延展檔案伺服器（SoFS）或 Microsoft SQL Server？
+### <a name="can-i-use-windows-admin-center-to-manage-storage-spaces-direct-for-other-use-cases-not-hyper-converged-such-as-converged-scale-out-file-server-sofs-or-microsoft-sql-server"></a>我可以使用 Windows 系統管理中心來管理其他使用案例的儲存空間直接存取 (不是超交集) ，例如交集的向外延展檔案伺服器 (SoFS) 或 Microsoft SQL Server？
 
 超融合式基礎結構的 Windows 系統管理中心不會特別針對儲存空間直接存取的其他使用案例提供管理或監視選項–例如，它無法建立檔案共用。 不過，儀表板和核心功能（例如建立磁片區或更換磁片磁碟機）適用于任何儲存空間直接存取叢集。
 
@@ -151,7 +149,7 @@ ms.locfileid: "87519667"
 
 ### <a name="why-do-i-need-the-latest-cumulative-update-for-windows-server-2016"></a>為什麼我需要最新的 Windows Server 2016 累積更新？
 
-超融合式基礎結構的 Windows 系統管理中心取決於 Windows Server 2016 發行後所開發的管理 Api。 這些 Api 會新增至[Windows Server 2016 （KB4103723）的2018-05 累積更新（](https://support.microsoft.com/help/4103723/windows-10-update-kb4103723)從5月8日2018）。
+超融合式基礎結構的 Windows 系統管理中心取決於 Windows Server 2016 發行後所開發的管理 Api。 這些 Api 是在[Windows Server 2016 (KB4103723) 的2018-05 累積更新](https://support.microsoft.com/help/4103723/windows-10-update-kb4103723)中新增，可從2018的5月8日正式運作。
 
 ### <a name="how-much-does-it-cost-to-use-windows-admin-center"></a>使用 Windows Admin Center 需要多少費用？
 
@@ -176,12 +174,12 @@ Windows Admin Center 除了 Windows 本身以外，不需另付費用。
 ### <a name="manage-storage-spaces-direct-volumes"></a>管理儲存空間直接存取磁片區
 
 <ul>
-               <li>（0:37）<a href="https://youtu.be/o66etKq70N8">如何建立三向鏡像磁片</a>區</li>
-               <li>（1:17）<a href="https://youtu.be/R72QHudqWpE">如何建立鏡像加速同位磁片</a>區</li>
-               <li>（1:02）<a href="https://youtu.be/j59z7ulohs4">如何開啟磁片區並新增</a>檔案</li>
-               <li>（0:51）<a href="https://youtu.be/PRibTacyKko">如何開啟重復資料刪除和壓縮</a></li>
-               <li>（0:47）<a href="https://youtu.be/hqyBzipBoTI">如何擴充磁片</a>區</li>
-               <li>（0:26）<a href="https://youtu.be/DbjF8r2F6Jo">如何刪除磁片</a>區</li>
+               <li> (0:37) <a href="https://youtu.be/o66etKq70N8">如何建立三向鏡像磁片</a>區</li>
+               <li> (1:17) <a href="https://youtu.be/R72QHudqWpE">如何建立鏡像加速同位磁片</a>區</li>
+               <li> (1:02) <a href="https://youtu.be/j59z7ulohs4">如何開啟磁片區並新增</a>檔案</li>
+               <li> (0:51) <a href="https://youtu.be/PRibTacyKko">如何開啟重復資料刪除和壓縮</a></li>
+               <li> (0:47) <a href="https://youtu.be/hqyBzipBoTI">如何擴充磁片</a>區</li>
+               <li> (0:26) <a href="https://youtu.be/DbjF8r2F6Jo">如何刪除磁片</a>區</li>
 </ul>
 
 <table>
@@ -253,7 +251,7 @@ Windows Admin Center 除了 Windows 本身以外，不需另付費用。
 7. 移除失敗的磁片磁碟機，並插入其取代。
 8. 在**磁片磁碟機 > 清查**中，將會出現新的磁片磁碟機。 警示會在時間清除，磁片區會回復為 [確定] 狀態，而存放裝置會重新平衡到新的磁片磁碟機–使用者不必採取任何動作。
 
-### <a name="manage-virtual-networks-sdn-enabled-hci-clusters-using-windows-admin-center-preview"></a>管理虛擬網路（使用 Windows 管理中心預覽的已啟用 SDN HCI 叢集）
+### <a name="manage-virtual-networks-sdn-enabled-hci-clusters-using-windows-admin-center-preview"></a>使用 Windows 管理中心預覽來管理虛擬網路 (具有 SDN 功能的 HCI 叢集) 
 
 1. 從左側導覽中選取 [**虛擬網路**]。
 2. 按一下 [**新增**] 以建立新的虛擬網路和子網，或選擇現有的虛擬網路，然後按一下 [設定] 以修改其**設定**。
@@ -261,7 +259,7 @@ Windows Admin Center 除了 Windows 本身以外，不需另付費用。
 
 ![管理虛擬網路](../media/manage-hyper-converged/manage-virtual-networks.png)
 
-### <a name="connect-a-virtual-machine-to-a-virtual-network-sdn-enabled-hci-clusters-using-windows-admin-center-preview"></a>將虛擬機器連線至虛擬網路（使用 Windows 管理中心預覽的已啟用 SDN HCI 叢集）
+### <a name="connect-a-virtual-machine-to-a-virtual-network-sdn-enabled-hci-clusters-using-windows-admin-center-preview"></a>使用 Windows 管理中心預覽將虛擬機器連線至虛擬網路 (具有 SDN 功能的 HCI 叢集) 
 
 1. 從左側導覽中選取 [**虛擬機器**]。
 2. 選擇現有的虛擬機器 > 按一下 [**設定**] > 開啟 [**設定**] 中的 [**網路**] 索引標籤。
@@ -271,7 +269,7 @@ Windows Admin Center 除了 Windows 本身以外，不需另付費用。
 
 ![將虛擬機器連線至虛擬網路](../media/manage-hyper-converged/connect-vm-to-virtual-network.png)
 
-### <a name="monitor-software-defined-networking-infrastructure-sdn-enabled-hci-clusters-using-windows-admin-center-preview"></a>監視軟體定義的網路基礎結構（使用 Windows 管理中心預覽的已啟用 SDN HCI 叢集）
+### <a name="monitor-software-defined-networking-infrastructure-sdn-enabled-hci-clusters-using-windows-admin-center-preview"></a>使用 Windows 系統管理中心預覽，監視軟體定義的網路基礎結構 (具有 SDN 功能的 HCI 叢集) 
 
 1. 從左側導覽中選取 [ **SDN 監視**]。
 2. 查看網路控制站、軟體 Load Balancer、虛擬閘道健康情況的詳細資訊，並監視您的虛擬閘道集區、公用和私人 IP 集區使用方式，以及 SDN 主機狀態。
@@ -286,9 +284,9 @@ Windows Admin Center 除了 Windows 本身以外，不需另付費用。
 - [加入 Microsoft Tech 社區的 Windows 管理中心論壇](https://techcommunity.microsoft.com/t5/Windows-Server-Management/bd-p/WindowsServerManagement)
 - 推文至`@servermgmt`
 
-### <a name="additional-references"></a>其他參考
+### <a name="additional-references"></a>其他參考資料
 
 - [Windows Admin Center](../overview.md)
-- [儲存空間直接存取](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)
-- [Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-on-windows-server)
-- [軟體定義網路](https://docs.microsoft.com/windows-server/networking/sdn/software-defined-networking)
+- [儲存空間直接存取](../../../storage/storage-spaces/storage-spaces-direct-overview.md)
+- [Hyper-V](../../../virtualization/hyper-v/hyper-v-on-windows-server.md)
+- [軟體定義網路](../../../networking/sdn/software-defined-networking.md)

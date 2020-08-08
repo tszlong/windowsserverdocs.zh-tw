@@ -6,14 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 01/18/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: a85d486dc30a36d575927ba243d46a403c3a5185
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: f30b66bd80b3c5002bdc2c66a1d89718cdb1ee39
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520167"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956205"
 ---
 # <a name="ad-fs-troubleshooting---fiddler---ws-federation"></a>AD FS 疑難排解-Fiddler-WS-FEDERATION
 
@@ -27,11 +25,11 @@ ms.locfileid: "87520167"
 
 要求：
 
-- 信賴憑證者的 HTTP GET （http://sql1.contoso.com/SampApp)
+- 信賴憑證者的 HTTP GET (http://sql1.contoso.com/SampApp)
 
 回應：
 
-- 回應是 HTTP 302 （重新導向）。  回應標頭中的傳輸資料會顯示要重新導向到的位置（https://sts.contoso.com/adfs/ls)
+- 回應是 HTTP 302 (重新導向) 。  回應標頭中的傳輸資料會顯示要重新導向到的位置 (https://sts.contoso.com/adfs/ls)
 - [重新導向 URL] 包含 wa = wsignin1.0 1.0，告訴我們 RP 應用程式已為我們建立 WS-同盟登入要求，並將其傳送至 AD FS 的/adfs/ls/端點。  這就是所謂的重新導向系結。
 
 ![在回應標頭中傳輸資料](media/ad-fs-tshoot-fiddler-ws-fed/fiddler2.png)
@@ -42,7 +40,7 @@ ms.locfileid: "87520167"
 
 要求：
 
-- AD FS 伺服器的 HTTP GET （sts .com）
+- AD FS 伺服器的 HTTP GET (sts.contoso.com) 
 
 回應：
 

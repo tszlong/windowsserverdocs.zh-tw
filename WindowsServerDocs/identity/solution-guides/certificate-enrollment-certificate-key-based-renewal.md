@@ -5,13 +5,12 @@ ms.author: delhan
 manager: dcscontentpm
 ms.date: 11/12/2019
 ms.topic: article
-ms.prod: windows-server
-ms.openlocfilehash: c4c74fc5fef01c21d5c1818c212c004786caca66
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 5e8618853e28c6deef4a15e84361e339c70bf052
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182214"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940332"
 ---
 # <a name="configuring-certificate-enrollment-web-service-for-certificate-key-based-renewal-on-a-custom-port"></a>在自訂埠上為憑證金鑰型更新設定憑證註冊 Web 服務
 
@@ -20,7 +19,7 @@ Windows 群組的 Ankit Tyagi 支援工程師
 
 ## <a name="summary"></a>總結
 
-本文提供逐步指示，讓您在443以外的自訂埠上執行憑證註冊原則 Web 服務（CEP）和憑證註冊 Web 服務（CES）以進行憑證金鑰型更新，以利用 CEP 和 CES 的自動續約功能。
+本文提供逐步指示，說明如何在443以外的自訂埠上執行憑證註冊原則 Web 服務 (CEP) 和憑證註冊 Web 服務 (CES) 以進行以憑證金鑰為基礎的更新，以利用 CEP 和 CES 的自動續約功能。
 
 本文也會說明 CEP 和 CES 的運作方式，並提供安裝指導方針。
 
@@ -33,13 +32,13 @@ Windows 群組的 Ankit Tyagi 支援工程師
 
 在此範例中，指示是以使用下列設定的環境為基礎：
 
-- 具有 Active Directory 憑證服務（AD CS）公開金鑰基礎結構（PKI）的 Contoso.com 樹系。
+- 具有 Active Directory 憑證服務的 Contoso.com 樹系， (AD CS) 公開金鑰基礎結構 (PKI) 。
 
 - 在服務帳戶下執行的一部伺服器上設定的兩個 CEP/CES 實例。 一個實例會使用使用者名稱和密碼進行初始註冊。 另一個則使用以憑證為基礎的驗證，用於僅限更新模式中的金鑰型更新。
 
 - 使用者有一個工作組或未加入網域的電腦，他將使用使用者名稱和密碼認證來註冊電腦憑證。
 
-- 從使用者到 CEP 和 CES over HTTPS 的連線會發生在自訂埠（例如49999）上。 （此埠是從動態埠範圍選取，而且不會由任何其他服務當做靜態埠使用）。
+- 從使用者到 CEP 和 CES over HTTPS 的連線會發生在自訂埠（例如49999）上。  (此埠是從動態埠範圍選取，而不是由任何其他服務用來做為靜態埠。 ) 
 
 - 當憑證存留期即將結束時，電腦會使用以憑證為基礎的 CES 金鑰型更新，以透過相同的通道更新憑證。
 
@@ -118,7 +117,7 @@ Add-WindowsFeature Adcs-Enroll-Web-Svc
 Install-AdcsEnrollmentPolicyWebService -AuthenticationType Username -SSLCertThumbprint "sslCertThumbPrint"
 ```
 
-此命令會藉由指定使用者名稱和密碼來進行驗證，以安裝憑證註冊原則 Web 服務（CEP）。
+此命令會藉由指定用於驗證的使用者名稱和密碼，安裝 (CEP) 的憑證註冊原則 Web 服務。
 
 > [!Note]
 > 在此命令中， \<**SSLCertThumbPrint**\> 是將用來系結 IIS 之憑證的指紋。
@@ -127,11 +126,11 @@ Install-AdcsEnrollmentPolicyWebService -AuthenticationType Username -SSLCertThum
 Install-AdcsEnrollmentWebService -ApplicationPoolIdentity -CAConfig "CA1.contoso.com\contoso-CA1-CA" -SSLCertThumbprint "sslCertThumbPrint" -AuthenticationType Username
 ```
 
-此命令會安裝憑證註冊 Web 服務（CES）以使用電腦名稱稱為**CA1.contoso.com**的憑證授權單位單位，以及**CA1**ca 的一般名稱。 CES 的識別會指定為預設的應用程式集區身分識別。 [驗證類型] 為 [使用者**名稱**]。 SSLCertThumbPrint 是將用來系結 IIS 之憑證的指紋。
+此命令會安裝憑證註冊 Web 服務 (CES) ，以使用**CA1.contoso.com**電腦名稱稱的憑證授權單位單位，以及**CONTOSO 的 CA1 ca**一般名稱。 CES 的識別會指定為預設的應用程式集區身分識別。 [驗證類型] 為 [使用者**名稱**]。 SSLCertThumbPrint 是將用來系結 IIS 之憑證的指紋。
 
-##### <a name="step-2-check-the-internet-information-services-iis-manager-console"></a>步驟2檢查 Internet Information Services （IIS）管理員主控台
+##### <a name="step-2-check-the-internet-information-services-iis-manager-console"></a>步驟 2 (IIS) 管理員主控台檢查 Internet Information Services
 
-成功安裝之後，您應該會在 Internet Information Services （IIS）管理員主控台中看到下列顯示畫面。
+成功安裝之後，您預期會在 Internet Information Services (IIS) Manager 主控台中看到下列顯示畫面。
 ![IIS 管理員](media/certificate-enrollment-certificate-key-based-renewal-4.png)
 
 在 [**預設的網站**] 底下，選取 [ **ADPolicyProvider_CEP_UsernamePassword**]，然後開啟 [**應用程式設定**]。 請記下**識別碼**和**URI**。
@@ -148,7 +147,7 @@ Install-AdcsEnrollmentWebService -ApplicationPoolIdentity -CAConfig "CA1.contoso
 Install-AdcsEnrollmentPolicyWebService -AuthenticationType Certificate -SSLCertThumbprint "sslCertThumbPrint" -KeyBasedRenewal
 ```
 
-此命令會安裝憑證註冊原則 Web 服務（CEP），並指定使用憑證進行驗證。
+此命令會安裝憑證註冊原則 Web 服務 (CEP) 並指定使用憑證進行驗證。
 
 > [!Note]
 > 在此命令中， \<SSLCertThumbPrint\> 是將用來系結 IIS 之憑證的指紋。
@@ -159,7 +158,7 @@ Install-AdcsEnrollmentPolicyWebService -AuthenticationType Certificate -SSLCertT
 Install-AdcsEnrollmentWebService -CAConfig "CA1.contoso.com\contoso-CA1-CA" -SSLCertThumbprint "sslCertThumbPrint" -AuthenticationType Certificate -ServiceAccountName "Contoso\cepcessvc" -ServiceAccountPassword (read-host "Set user password" -assecurestring) -RenewalOnly -AllowKeyBasedRenewal
 ```
 
-此命令會安裝憑證註冊 Web 服務（CES）以使用電腦名稱稱為**CA1.contoso.com**的憑證授權單位單位，以及**CA1**ca 的一般名稱。
+此命令會安裝憑證註冊 Web 服務 (CES) ，以使用**CA1.contoso.com**電腦名稱稱的憑證授權單位單位，以及**CONTOSO 的 CA1 ca**一般名稱。
 
 在此命令中，憑證註冊 Web 服務的身分識別會指定為**cepcessvc**服務帳戶。 驗證類型為**certificate**。 **SSLCertThumbPrint**是將用來系結 IIS 之憑證的指紋。
 
@@ -191,9 +190,9 @@ Install-AdcsEnrollmentWebService -CAConfig "CA1.contoso.com\contoso-CA1-CA" -SSL
 
 ![New Object](media/certificate-enrollment-certificate-key-based-renewal-6.png)
 
-##### <a name="step-2-configure-the-service-account-for-constrained-delegation-s4u2self"></a>步驟2：設定限制委派的服務帳戶（S4U2Self）
+##### <a name="step-2-configure-the-service-account-for-constrained-delegation-s4u2self"></a>步驟2：設定用於限制委派的服務帳戶 (S4U2Self) 
 
-執行下列 PowerShell 命令以啟用限制委派（S4U2Self 或任何驗證通訊協定）：
+執行下列 PowerShell 命令，以啟用限制委派 (S4U2Self 或任何驗證通訊協定) ：
 
 ```PowerShell
 Get-ADUser -Identity cepcessvc | Set-ADAccountControl -TrustedToAuthForDelegation $True
@@ -276,7 +275,7 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
 
 若要確定自動續約運作正常，請使用 mmc 更新具有相同金鑰的憑證，以確認手動更新是否正常運作。 此外，在更新時，系統應該會提示您選取憑證。 您可以選擇我們稍早註冊的憑證。 需要提示。
 
-開啟 [電腦個人] 憑證存放區，然後新增 [封存的憑證] 視圖。 若要這麼做，請將 [本機電腦帳戶] 嵌入式管理單元新增至 mmc.exe，按一下 [**憑證（本機電腦）** ]，按一下右邊的 [**動作]** 索引標籤或 mmc 頂端的 [**流覽**]，按一下 [**流覽選項**]，選取 [封存的**憑證**]，然後按一下 **[確定]**。
+開啟 [電腦個人] 憑證存放區，然後新增 [封存的憑證] 視圖。 若要這麼做，請將 [本機電腦帳戶] 嵌入式管理單元新增至 [mmc.exe]，將 [**憑證] ([本機電腦]) **按一下反白顯示，從右邊或 mmc 頂端的 [**動作]** 索引標籤按一下 [**觀看**]，按一下 [**視圖選項**]，選取 [封存**憑證**]，然後按一下 **[確定]**
 
 ### <a name="method-1"></a>方法 1
 
@@ -292,9 +291,9 @@ certreq -machine -q -enroll -cert <thumbprint> renew
 
 將用戶端電腦上的時間和日期前移到憑證範本的更新時間。
 
-例如，憑證範本已設定了2天的有效性設定和8小時的更新設定。 範例憑證會在上午4:00 發行 在當月第18天，于上午4:00 到期 20。 自動註冊引擎會在重新開機時觸發，並每隔8小時進行一次（大約）。
+例如，憑證範本已設定了2天的有效性設定和8小時的更新設定。 範例憑證會在上午4:00 發行 在當月第18天，于上午4:00 到期 20。 自動註冊引擎會在重新開機時觸發，並每隔8小時進行一次， (大約) 。
 
-因此，如果您將時間前進到下午8:10 在19，因為我們的更新視窗在範本上設定為8小時，所以執行 Certutil-脈衝（以觸發 AE 引擎）會為您註冊憑證。
+因此，如果您將時間前進到下午8:10 在19上，由於我們的更新視窗在範本上設定為8小時，執行 Certutil-脈衝 (以觸發 AE 引擎) 為您註冊憑證。
 
 ![命令](media/certificate-enrollment-certificate-key-based-renewal-15.png)
 
@@ -303,7 +302,7 @@ certreq -machine -q -enroll -cert <thumbprint> renew
 > [!Note]
 > 先前的螢幕擷取畫面是示範自動註冊引擎如預期般運作的範例，因為 CA 日期仍然設定為18。 因此，它會繼續發行憑證。 在實際情況下，將不會進行這項大量的更新。
 
-## <a name="references"></a>參考資料
+## <a name="references"></a>參考
 
 [測試實驗室指南：示範憑證金鑰型更新](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj590165(v%3dws.11))
 
@@ -323,4 +322,4 @@ certreq -machine -q -enroll -cert <thumbprint> renew
 
 [Windows PKI 部落格](/archive/blogs/pki/)
 
-[如何在網頁註冊 proxy 頁面的自訂服務帳戶上設定 Kerberos 限制委派（僅限 S4U2Proxy 或 Kerberos）](https://support.microsoft.com/help/4494313/configuring-web-enrollment-proxy-for-s4u2proxy-constrained-delegation)
+[如何在網頁註冊 proxy 頁面的自訂服務帳戶上設定 Kerberos 限制委派 (S4U2Proxy 或 Kerberos) ](https://support.microsoft.com/help/4494313/configuring-web-enrollment-proxy-for-s4u2proxy-constrained-delegation)

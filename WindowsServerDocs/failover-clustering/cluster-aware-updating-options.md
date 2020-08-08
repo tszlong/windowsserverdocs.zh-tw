@@ -1,25 +1,24 @@
 ---
 ms.assetid: 2f4b6641-0ec2-4b1c-85fb-a1f1d16685c8
 title: 叢集感知更新的 advanced 選項和更新執行設定檔
-description: 如何設定適用于叢集感知更新（CAU）的 advanced 選項和更新執行設定檔
+description: 如何設定適用于叢集感知更新 (CAU) 的 advanced 選項和更新執行設定檔
 ms.topic: article
-ms.prod: windows-server
 manager: lizross
 ms.author: jgerend
 author: JasonGerend
 ms.date: 08/06/2018
-ms.openlocfilehash: e9bda378b287407f6225c844c2a147b8cd85c709
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: f5f81edbe1c7eab772d1c4b1bbe90695fa725f8c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473315"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990902"
 ---
 # <a name="cluster-aware-updating-advanced-options-and-updating-run-profiles"></a>叢集感知更新的 advanced 選項和更新執行設定檔
 
 > 適用于： Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012。
 
-本主題描述可針對叢集[感知更新](cluster-aware-updating.md)（CAU）「更新執行」設定的「更新執行」選項。 當您使用 CAU UI 或 CAU Windows PowerShell Cmdlet 來套用更新或設定自行更新選項時，可以設定這些先進的選項。
+本主題說明可針對叢集[感知更新](cluster-aware-updating.md)設定的更新執行選項， (CAU) 更新執行。 當您使用 CAU UI 或 CAU Windows PowerShell Cmdlet 來套用更新或設定自行更新選項時，可以設定這些先進的選項。
 
 大部分組態設定都可儲存成 XML 檔案，這稱為更新執行設定檔，可在之後的更新執行重複使用。 CAU 提供的「更新執行」選項預設值也可用於許多叢集環境。
 
@@ -42,8 +41,8 @@ ms.locfileid: "85473315"
 |**RequireAllNodesOnline**|None|指定所有節點都必須在線上且可搜尋，才能開始更新。|
 |**RebootTimeoutMinutes**|15|CAU 允許重新啟動節點 (如有需要重新啟動) 與啟動所有自動啟動服務的時間 (分鐘)。 如果重新開機程式未在這段時間內完成，就會將該節點上的「更新執行」標示為「失敗」。|
 |**PreUpdateScript**|None|在開始更新之前，以及節點進入維護模式之前，要在每個節點上執行之 PowerShell 腳本的路徑和檔案名。 副檔名必須是**ps1**，而且路徑加上檔案名的總長度不得超過260個字元。 最佳作法是讓指令碼位於叢集存放裝置的磁碟上，或在高可用性的網路檔案共用，以確保所有叢集節點永遠都能存取該指令碼。 如果指令碼位於網路檔案共用，請確定已設定檔案共用的 Everyone 群組讀取權限並禁止寫入存取，以防止未經授權的使用者竄改檔案。<p> 如果指定了更新前指令碼，請務必設定可讓指令碼順利執行的設定，像是時間限制 (例如 **StopAfter**)。 這些限制會套用到執行指令碼和安裝更新的整個處理程序中，而非只針對安裝更新的處理程序。|
-|**PostUpdateScript**|None|在更新完成之後（節點離開維護模式之後）執行之 PowerShell 腳本的路徑和檔案名。 副檔名必須是 **. ps1** ，而且路徑加上檔案名的總長度不得超過260個字元。 最佳作法是讓指令碼位於叢集存放裝置的磁碟上，或在高可用性的網路檔案共用，以確保所有叢集節點永遠都能存取該指令碼。 如果指令碼位於網路檔案共用，請確定已設定檔案共用的 Everyone 群組讀取權限並禁止寫入存取，以防止未經授權的使用者竄改檔案。<p> 如果指定了更新後指令碼，請務必設定可讓指令碼順利執行的設定，像是時間限制 (例如 **StopAfter**)。 這些限制會套用到執行指令碼和安裝更新的整個處理程序中，而非只針對安裝更新的處理程序。|
-|**ConfigurationName**|此設定只會在您執行指令碼時生效。<p> 如果您指定更新前腳本或更新後腳本，但未指定**ConfigurationName**，則會使用 PowerShell （Microsoft powershell）的預設會話設定。|指定 PowerShell 會話設定，此設定會定義腳本（由**PreUpdateScript**和**PostUpdateScript**所指定）執行的會話，而且可以限制可執行檔命令。|
+|**PostUpdateScript**|None|在節點離開維護模式) 之後，要在更新完成後執行之 PowerShell 腳本的路徑和檔案名 (。 副檔名必須是 **. ps1** ，而且路徑加上檔案名的總長度不得超過260個字元。 最佳作法是讓指令碼位於叢集存放裝置的磁碟上，或在高可用性的網路檔案共用，以確保所有叢集節點永遠都能存取該指令碼。 如果指令碼位於網路檔案共用，請確定已設定檔案共用的 Everyone 群組讀取權限並禁止寫入存取，以防止未經授權的使用者竄改檔案。<p> 如果指定了更新後指令碼，請務必設定可讓指令碼順利執行的設定，像是時間限制 (例如 **StopAfter**)。 這些限制會套用到執行指令碼和安裝更新的整個處理程序中，而非只針對安裝更新的處理程序。|
+|**ConfigurationName**|此設定只會在您執行指令碼時生效。<p> 如果您指定更新前腳本或更新後腳本，但未指定**ConfigurationName**，則會使用 powershell (的預設會話設定) 。|指定 PowerShell 會話設定，此設定會定義在其中執行**PreUpdateScript**和**PostUpdateScript**) 所指定之腳本 (的會話，並可限制可執行檔命令。|
 |**CauPluginName**|**Microsoft.WindowsUpdatePlugin**|設定讓叢集感知更新用來預覽更新或執行「更新執行」的外掛程式。 如需詳細資訊，請參閱叢集[感知更新外掛程式的工作方式](cluster-aware-updating-plug-ins.md)。|
 |**CauPluginArguments**|None|更新外掛程式使用的一組 *name=value* 組 (引數)，例如：<p>**網域 = 網域. 本機**<p>對於您在 *CauPluginName* 中指定的外掛程式而言，這些 **name=value** 組必須是有意義的配對。<p>若要使用 CAU UI 指定引數，請輸入 *name*，按下 Tab 鍵，然後輸入對應的 *value*。 再次按下 Tab 鍵即可提供下一個引數。 每個 *name* 及 *value* 都會自動以等號 (=) 分隔。 多個組會自動以分號分隔。<p>若為預設的**microsoft.windowsupdateplugin**外掛程式，則不需要任何引數。 不過，您可以指定選用引數，例如指定標準 Windows Update Agent 查詢字串以篩選外掛程式套用的更新組。 針對*名稱*，使用**QueryString**，並針對*值*，將完整查詢括在引號中。<p> 如需詳細資訊，請參閱叢集[感知更新外掛程式的工作方式](cluster-aware-updating-plug-ins.md)。|
 
@@ -53,7 +52,7 @@ ms.locfileid: "85473315"
 |選項|預設值|詳細資料|
 |------------|-------------------|-------------|
 |**ClusterName**|None <br>**注意：** 只有當 CAU UI 不是在容錯移轉叢集節點上執行，或者您想要參考與執行 CAU UI 不同的容錯移轉叢集時，才必須設定此選項。|要執行「更新執行」的叢集 NetBIOS 名稱。|
-|**認證**|目前的帳戶認證|將要執行「更新執行」的目標叢集的管理認證。 如果您從具有叢集系統管理員許可權的帳戶啟動 CAU UI （或開啟 PowerShell 會話，而您正在使用 CAU PowerShell Cmdlet），則可能已經擁有必要的認證。|
+|**認證**|目前的帳戶認證|將要執行「更新執行」的目標叢集的管理認證。 如果您在叢集上使用具有系統管理員許可權的帳戶) 的 CAU PowerShell Cmdlet，則在啟動 CAU UI (或開啟 PowerShell 會話時，您可能已經擁有必要的認證。|
 |**NodeOrder**|根據預設，CAU 會從擁有最少叢集角色的節點開始，接著處理擁有第二少叢集角色的節點，依此類推。|依更新順序 (可能的話) 顯示的叢集節點名稱。|
 
 ##  <a name="use-updating-run-profiles"></a><a name="BKMK_profile"></a>使用更新執行設定檔
@@ -82,8 +81,8 @@ Invoke-CauRun –ClusterName CONTOSO-FC1 @MyRunProfile
 
 
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [叢集感知更新](cluster-aware-updating.md)
 
--   [Windows PowerShell 的叢集感知更新 Cmdlet](https://docs.microsoft.com/powershell/module/clusterawareupdating/?view=win10-ps)
+-   [Windows PowerShell 的叢集感知更新 Cmdlet](/powershell/module/clusterawareupdating/?view=win10-ps)

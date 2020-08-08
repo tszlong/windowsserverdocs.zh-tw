@@ -7,12 +7,12 @@ ms.author: jgerend
 manager: lizross
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: dfd39210b6db8516fafbe8b437c7d38cd7839bad
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9147d88b2d31def46e7a755abf17a2cdf767f8a2
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87972385"
+ms.locfileid: "87990692"
 ---
 # <a name="scale-out-file-server-for-application-data-overview"></a>用於應用程式資料的向外延展檔案伺服器概觀
 
@@ -231,12 +231,12 @@ ms.locfileid: "87972385"
 
 - 網際網路資訊服務 (IIS) Web 伺服器可以將網站的設定和資料儲存在向外延展檔案共用上。 如需詳細資訊，請參閱＜[共用設定](https://www.iis.net/learn/manage/managing-your-configuration-settings/shared-configuration_264)＞。
 - Hyper-V 可以將設定和即時虛擬磁碟儲存在向外延展檔案共用上。 如需詳細資訊，請參閱[部署透過 SMB 的 Hyper-V](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)。
-- SQL Server 可以將即時資料庫檔案儲存在向外延展檔案共用上。 如需詳細資訊，請參閱＜[將 SQL Server 與 SMB Fileshare 當做儲存選項一起安裝](https://docs.microsoft.com/sql/database-engine/install-windows/install-sql-server-with-smb-fileshare-as-a-storage-option)＞。
+- SQL Server 可以將即時資料庫檔案儲存在向外延展檔案共用上。 如需詳細資訊，請參閱＜[將 SQL Server 與 SMB Fileshare 當做儲存選項一起安裝](/sql/database-engine/install-windows/install-sql-server-with-smb-fileshare-as-a-storage-option)＞。
 - Virtual Machine Manager (VMM) 可以將程式庫共用 (其中包含虛擬機器範本和相關檔案) 儲存在向外延展檔案共用上。 不過，程式庫伺服器本身不能是向外延展檔案伺服器，它必須位於不使用向外延展檔案伺服器叢集角色的獨立伺服器或容錯移轉叢集上。
 
 如果您以向外延展檔案共用做為程式庫共用，您將只能使用與向外延展檔案伺服器相容的技術。 例如，您無法使用 DFS 複寫來複寫裝載在向外延展檔案共用上的程式庫共用。 同樣重要的是，向外延展檔案伺服器必須已安裝最新的軟體更新。
 
-若要以向外延展檔案共用做為程式庫共用，請先新增具有本機共用或完全不具共用的程式庫伺服器 (可能是虛擬機器)。 然後，當您新增程式庫共用時，請選擇在向外延展檔案伺服器上託管的檔案共用。 此共用應受到 VMM 管理，並且是為了讓程式庫伺服器專用而建立的。 此外，請確實在向外延展檔案伺服器上安裝最新的更新。 如需新增 VMM 程式庫伺服器和程式庫共用的詳細資訊，請參閱[將設定檔新增至 vmm 程式庫](https://docs.microsoft.com/system-center/vmm/library-profiles?view=sc-vmm-1801)。 如需「檔案和存放服務」目前可用的 Hotfix 清單，請參閱＜[微軟知識庫文章 2899011](https://support.microsoft.com/help/2899011/list-of-currently-available-hotfixes-for-the-file-services-technologie)＞。
+若要以向外延展檔案共用做為程式庫共用，請先新增具有本機共用或完全不具共用的程式庫伺服器 (可能是虛擬機器)。 然後，當您新增程式庫共用時，請選擇在向外延展檔案伺服器上託管的檔案共用。 此共用應受到 VMM 管理，並且是為了讓程式庫伺服器專用而建立的。 此外，請確實在向外延展檔案伺服器上安裝最新的更新。 如需新增 VMM 程式庫伺服器和程式庫共用的詳細資訊，請參閱[將設定檔新增至 vmm 程式庫](/system-center/vmm/library-profiles?view=sc-vmm-1801)。 如需「檔案和存放服務」目前可用的 Hotfix 清單，請參閱＜[微軟知識庫文章 2899011](https://support.microsoft.com/help/2899011/list-of-currently-available-hotfixes-for-the-file-services-technologie)＞。
 
 >[!NOTE]
 >有些使用者 (例如資訊工作者) 的工作負載會受到較大的效能影響。 例如，當開啟和關閉檔案、建立新檔案和重新命名現有檔案之類的作業由多個使用者執行時，將會對效能造成影響。 檔案共用如果與持續可用性一起啟用，可提供資料完整性，但也會影響整體效能。 啟用持續可用性時，必須將資料寫入至磁碟，以確保在向外延展檔案伺服器中的叢集節點失敗時仍保有完整性。 因此，使用者若將數個大型檔案複製到檔案伺服器，可以預見持續可用的檔案共用上將發生明顯的效能減緩。

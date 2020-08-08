@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 02/15/2019
-ms.openlocfilehash: f03e97cb4c318a65b0daf4034f0f0cfd6fe053bf
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c824b2ae8c43be4b5b33b79ce9ddb75dd03c9a9e
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964604"
+ms.locfileid: "87990528"
 ---
 # <a name="get-started-with-windows-admin-center"></a>開始使用 Windows 管理中心
 
@@ -115,7 +115,7 @@ Windows 系統管理中心支援數個使用受管理節點進行驗證的機制
 
 **本機系統管理員密碼解決方案 (LAPS) **
 
-如果您的環境使用[LAPS](https://technet.microsoft.com/mt227395.aspx)，而且您的 WINDOWS 10 電腦上已安裝 Windows 系統管理中心，則可以使用 LAPS 認證來向受管理的節點進行驗證。 **如果您使用此案例，請**[提供意見](https://aka.ms/WACFeedback)反應。
+如果您的環境使用[LAPS](/previous-versions/mt227395(v=msdn.10))，而且您的 WINDOWS 10 電腦上已安裝 Windows 系統管理中心，則可以使用 LAPS 認證來向受管理的節點進行驗證。 **如果您使用此案例，請**[提供意見](https://aka.ms/WACFeedback)反應。
 
 ## <a name="using-tags-to-organize-your-connections"></a>使用標記來組織您的連接
 

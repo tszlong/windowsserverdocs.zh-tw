@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 670c853cb1c41fbbc799eca4cc6ac54588c55761
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 5523f882d64f0c43456bd86aa9a60f95db033094
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86960500"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956271"
 ---
 # <a name="walkthrough-guide-manage-risk-with-conditional-access-control"></a>逐步解說指南：使用條件式存取控制管理風險
 
@@ -21,7 +19,7 @@ ms.locfileid: "86960500"
 
 
 ## <a name="about-this-guide"></a>關於本指南
-本逐步解說提供的指示可讓您透過 Windows Server 2012 R2 中的 Active Directory 同盟服務（AD FS）中的條件式存取控制機制，使用其中一個因素（使用者資料）來管理風險。 如需 Windows Server 2012 R2 AD FS 中的條件式存取控制和授權機制的詳細資訊，請參閱[使用條件式存取控制管理風險](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)。
+本逐步解說提供的指示可讓您透過 Windows Server 2012 R2 中 Active Directory 同盟服務 (AD FS) 中的條件式存取控制機制， (使用者資料) 提供的其中一個因素來管理風險。 如需 Windows Server 2012 R2 AD FS 中的條件式存取控制和授權機制的詳細資訊，請參閱[使用條件式存取控制管理風險](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)。
 
 本逐步解說包含下列各節：
 
@@ -123,7 +121,7 @@ Set-AdfsRelyingPartyTrust -TargetRelyingParty $rp -IssuanceAuthorizationRules $G
 
     您將會獲得應用程式的存取權。
 
-3.  輸入另一個不屬於 **Finance** 群組的 AD 使用者認證。 （如需如何在 AD 中建立使用者帳戶的詳細資訊，請參閱 [https://technet.microsoft.com/library/cc7833232.aspx](/previous-versions/windows/it-pro/windows-server-2003/cc783323(v=ws.10)) 。
+3.  輸入另一個不屬於 **Finance** 群組的 AD 使用者認證。  (需如何在 AD 中建立使用者帳戶的詳細資訊，請參閱 [https://technet.microsoft.com/library/cc7833232.aspx](/previous-versions/windows/it-pro/windows-server-2003/cc783323(v=ws.10)) 。
 
     此時，因為您在上一個步驟中設定的存取控制原則，所以會針對不屬於**財務**群組的此 AD 使用者顯示「拒絕存取」訊息。 預設郵件內文是**您未獲授權存取此網站。按一下這裡登出並重新登入，或洽詢您的系統管理員以取得許可權。** 。不過，您可以完全自訂這段文字內容。 如需如何自訂登入體驗的詳細資訊，請參閱＜ [Customizing the AD FS Sign-in Pages](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280950(v=ws.11))＞。
 

@@ -1,19 +1,17 @@
 ---
 title: 管理功能
 description: System Insights 會公開可針對每項功能設定的各種設定，而且可以微調這些設定來解決部署的特定需求。 本主題說明如何透過 Windows 管理中心或 PowerShell 管理每項功能的各種設定，並提供基本的 PowerShell 範例和 Windows 管理中心的螢幕擷取畫面，以示範如何調整這些設定。
-ms.prod: windows-server
-ms.technology: system-insights
 ms.topic: article
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 6/05/2018
-ms.openlocfilehash: 66745440094ccf55b774727320d59074139a7f33
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: e82b27d2d746592b29b86a66ee34b21f8605a0d8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471779"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940159"
 ---
 # <a name="managing-capabilities"></a>管理功能
 
@@ -152,7 +150,7 @@ Remove-InsightsCapabilityAction -Name "CPU capacity forecasting" -Type Warning
 ![使用者可以在其中指定補救動作的 [設定] 頁面](media/actions-page-contoso.png)
 
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 若要深入瞭解「系統深入解析」，請使用下列資源：
 
 - [系統深入解析概觀](overview.md)

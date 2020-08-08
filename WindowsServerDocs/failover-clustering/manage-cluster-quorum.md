@@ -1,20 +1,18 @@
 ---
 title: 設定和管理容錯移轉叢集中的仲裁
 description: 有關如何在 Windows Server 容錯移轉叢集中管理叢集仲裁的詳細資訊。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 manager: lizross
-ms.technology: storage-failover-clustering
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2847b9268207155efc181c97c58a91c1d51eac6d
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 02158cc005cc46bd42e88569b14c17c59ef377ee
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87177814"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990771"
 ---
 # <a name="configure-and-manage-quorum"></a>設定和管理仲裁
 
@@ -32,7 +30,7 @@ Windows Server 中的仲裁模型具有彈性。 如果您需要修改叢集的�
 
 下表列出 [設定叢集仲裁精靈] 中提供的三個仲裁設定選項。
 
-| 選項  |說明  |
+| 選項  |描述  |
 | --------- | ---------|
 | [使用一般設定]     |  叢集會自動指派投票給每個節點，並動態管理節點投票。 如果適合您的叢集，並且沒有叢集共用存放裝置可用，叢集就會選取一個磁碟見證。 建議您在大部分的情況下使用此選項，因為叢集軟體會自動選擇可為您的叢集提供最高可用性的仲裁與見證設定。       |
 | [新增或變更仲裁見證]     |   您可以新增、變更或移除見證資源。 您可以設定檔案共用或磁碟見證。 叢集會自動指派投票給每個節點，並動態管理節點投票。      |
@@ -60,7 +58,7 @@ Windows Server 中的仲裁模型具有彈性。 如果您需要修改叢集的�
 | ---------    |---------        |---------                        |
 | 磁碟見證     |  <ul><li> 儲存叢集資料庫複本的固定 LUN</li><li> 最適合用於具有共用 (非複寫) 存放裝置的叢集</li>       |  <ul><li>LUN 的大小必須至少為 512 MB</li><li> 必須是叢集專用且未指派給叢集角色</li><li> 必須包含在叢集存放裝置中並通過存放裝置驗證測試</li><li> 不能是作為叢集共用磁碟區 (CSV) 的磁碟</li><li> 具有單一磁碟區的基本磁碟</li><li> 不需要有磁碟機代號</li><li> 可以使用 NTFS 或 ReFS 格式化</li><li> 可選擇性設定硬體 RAID 以提供容錯功能</li><li> 應從備份及病毒掃描中排除</li><li> 儲存空間直接存取不支援磁片見證</li>|
 | 檔案共用見證     | <ul><li>在執行 Windows Server 的檔案伺服器上設定的 SMB 檔案共用</li><li> 不會儲存叢集資料庫的複本</li><li> 維護僅存在於 witness.log 檔案中的叢集資訊</li><li> 最適合用於具備複寫的存放裝置的多站台叢集 </li>       |  <ul><li>必須至少有 5 MB 的可用空間</li><li> 必須專用於單一叢集，且不用來儲存使用者或應用程式資料</li><li> 必須啟用叢集名稱之電腦物件的寫入權限</li></ul><br>以下是代管檔案共用見證之檔案伺服器的其他考量：<ul><li>單一檔案伺服器可以設定多個叢集的檔案共用見證。</li><li> 檔案伺服器必須位於與叢集工作負載分開的站台上。 如果站台至站台之間網路通訊中斷時，這可讓任何叢集站台有相同的機會繼續運作。 如果檔案伺服器位於相同站台，該網站會成為主要的站台，而且是可連線檔案共用的唯一站台。</li><li> 如果虛擬機器不是位於使用檔案共用見證的同一叢集上，檔案伺服器就可以在虛擬機器上執行。</li><li> 為了獲得高可用性，可以在獨立的容錯移轉叢集上設定檔案伺服器。 </li>      |
-| 雲端見證     |  <ul><li>儲存在 Azure blob 儲存體中的見證檔案</li><li> 當叢集中的所有伺服器都有可靠的網際網路連線時，建議使用此選項。</li>      |  請參閱[部署雲端見證](https://docs.microsoft.com/windows-server/failover-clustering/deploy-cloud-witness)。       |
+| 雲端見證     |  <ul><li>儲存在 Azure blob 儲存體中的見證檔案</li><li> 當叢集中的所有伺服器都有可靠的網際網路連線時，建議使用此選項。</li>      |  請參閱[部署雲端見證](./deploy-cloud-witness.md)。       |
 
 ### <a name="node-vote-assignment"></a>節點投票指派
 
@@ -83,7 +81,7 @@ Windows Server 中的仲裁模型具有彈性。 如果您需要修改叢集的�
 
 使用動態仲裁管理時，叢集也可以在最後一個倖存的叢集節點上執行。 藉由動態調整仲裁多數需求，即使節點循序關機至單一節點，叢集也可以承受。
 
-您可以使用[Start-clusternode](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusternode?view=win10-ps) Windows PowerShell Cmdlet，透過叢集節點的**DynamicWeight** common 屬性來驗證節點的叢集指派動態投票。 值 0 表示節點沒有仲裁投票。 值 1 表示節點具有仲裁投票。
+您可以使用[Start-clusternode](/powershell/module/failoverclusters/get-clusternode?view=win10-ps) Windows PowerShell Cmdlet，透過叢集節點的**DynamicWeight** common 屬性來驗證節點的叢集指派動態投票。 值 0 表示節點沒有仲裁投票。 值 1 表示節點具有仲裁投票。
 
 您可以使用 [驗證叢集仲裁]**** 驗證測試來驗證所有叢集節點的投票指派。
 
@@ -96,7 +94,7 @@ Windows Server 中的仲裁模型具有彈性。 如果您需要修改叢集的�
 
 ## <a name="general-recommendations-for-quorum-configuration"></a>仲裁設定的一般建議
 
-叢集軟體會根據設定的節點數目和共用存放裝置的可用性，為新叢集自動設定仲裁。 這通常是最適合該叢集的仲裁設定。 不過，最好在建立叢集之後先檢閱仲裁設定，然後再將叢集置入實際執行環境。 若要查看詳細的叢集仲裁設定，您可以使用 [驗證設定向導] 或 [[測試](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps)叢集 Windows PowerShell] Cmdlet 來執行 [**驗證仲裁**設定] 測試。 在容錯移轉叢集管理員中，基本仲裁設定會顯示在所選叢集的摘要資訊中，或者您可以在執行[Set-clusterquorum](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusterquorum?view=win10-ps) Windows PowerShell Cmdlet 時，檢查所傳回仲裁資源的相關資訊。
+叢集軟體會根據設定的節點數目和共用存放裝置的可用性，為新叢集自動設定仲裁。 這通常是最適合該叢集的仲裁設定。 不過，最好在建立叢集之後先檢閱仲裁設定，然後再將叢集置入實際執行環境。 若要查看詳細的叢集仲裁設定，您可以使用 [驗證設定向導] 或 [[測試](/powershell/module/failoverclusters/test-cluster?view=win10-ps)叢集 Windows PowerShell] Cmdlet 來執行 [**驗證仲裁**設定] 測試。 在容錯移轉叢集管理員中，基本仲裁設定會顯示在所選叢集的摘要資訊中，或者您可以在執行[Set-clusterquorum](/powershell/module/failoverclusters/get-clusterquorum?view=win10-ps) Windows PowerShell Cmdlet 時，檢查所傳回仲裁資源的相關資訊。
 
 您可以隨時執行 [驗證仲裁設定]**** 測試，以驗證仲裁設定是否為叢集適用的最佳設定。 測試輸出會指出是否建議變更仲裁設定，以及設定是否為最佳設定。 如果建議變更，您可以使用 [設定叢集仲裁精靈] 來套用建議的設定。
 
@@ -165,7 +163,7 @@ Windows Server 中的仲裁模型具有彈性。 如果您需要修改叢集的�
 
 ### <a name="windows-powershell-equivalent-commands"></a>Windows PowerShell 對應的命令
 
-下列範例示範如何使用[set-clusterquorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum?view=win10-ps) Cmdlet 和其他 Windows PowerShell Cmdlet 來設定叢集仲裁。
+下列範例示範如何使用[set-clusterquorum](/powershell/module/failoverclusters/set-clusterquorum?view=win10-ps) Cmdlet 和其他 Windows PowerShell Cmdlet 來設定叢集仲裁。
 
 以下範例會將叢集 *CONTOSO-FC1* 上的仲裁設定變更為不含仲裁見證的簡單節點多數設定。
 
@@ -245,7 +243,7 @@ Set-ClusterQuorum -NodeAndFileShareMajority "\\fileserver\fsw"
 > * 若要強制叢集在包含您要使用之叢集設定的特定節點上啟動，您必須使用此程式之後所提供的 Windows PowerShell Cmdlet 或對等的命令列工具。
 > * 如果您使用容錯移轉叢集管理員連線到強制啟動的叢集，而且您使用 [啟動叢集服務]**** 動作來啟動節點，該節點會自動使用防止仲裁的設定來啟動。
 
-#### <a name="windows-powershell-equivalent-commands-start-clusternode"></a>Windows PowerShell 對等命令（Start-clusternode）
+#### <a name="windows-powershell-equivalent-commands-start-clusternode"></a>Windows PowerShell 對等命令 (開始 Start-clusternode) 
 
 以下範例示範如何使用 **Start-ClusterNode** Cmdlet 來強制啟動節點 *ContosoFCNode1* 上的叢集。
 
@@ -281,7 +279,7 @@ Net Start ClusSvc /PQ
 
 下表摘要說明這項設定的考量與建議。
 
-| Item  | 描述  |
+| 項目  | 描述  |
 | ---------| ---------|
 | 每個站台的節點投票數     | 應該相等       |
 | 節點投票指派     |  因為所有節點都一樣重要，所以不應該移除節點投票       |
@@ -299,7 +297,7 @@ Net Start ClusSvc /PQ
 
 下表摘要說明這項設定的考量與建議。
 
-| Item   |描述  |
+| 項目   |描述  |
 | ---------| ---------|
 | 每個站台的節點投票數     |  <ul><li> 不應該從主要站台 **SiteA** 的節點移除節點投票</li><li>應該從備份站台 **SiteB** 的節點移除節點投票</li><li>如果 **SiteA** 發生長期中斷，必須將投票指派給 **SiteB** 上的節點，以在復原時於該站台上啟用仲裁多數</li>       |
 | 動態仲裁管理     |  應該啟用       |
@@ -311,8 +309,8 @@ Net Start ClusSvc /PQ
 - 一開始只會在 *SiteA* 的節點中設定仲裁投票。 這是為了確保 *SiteB* 的節點狀態不會影響叢集仲裁。
 - 復原步驟會視 *SiteA* 是否可以承受暫時失敗或長期失敗而改變。
 
-## <a name="more-information"></a>詳細資訊
+## <a name="more-information"></a>更多資訊
 
-* [容錯移轉叢集](failover-clustering.md)
-* [容錯移轉叢集 Windows PowerShell Cmdlet](https://docs.microsoft.com/powershell/module/failoverclusters/?view=win10-ps)
+* [容錯移轉叢集](./failover-clustering-overview.md)
+* [容錯移轉叢集 Windows PowerShell Cmdlet](/powershell/module/failoverclusters/?view=win10-ps)
 * [瞭解叢集和集區仲裁](../storage/storage-spaces/understand-quorum.md)

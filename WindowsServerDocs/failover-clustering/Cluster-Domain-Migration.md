@@ -1,20 +1,18 @@
 ---
 title: Windows Server 2016/2019 中的跨網域叢集遷移
 description: 本文說明如何將 Windows Server 2019 叢集從一個網域移到另一個網域
-ms.prod: windows-server
 manager: eldenc
-ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
 ms.author: johnmar
 ms.date: 01/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6062dd987a136bc2be67c09efbe399bb8fae24f6
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 32f7e62fd08080f8b56c9c495f374d5c927454bb
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87178524"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990973"
 ---
 # <a name="failover-cluster-domain-migration"></a>容錯移轉叢集網域遷移
 
@@ -55,7 +53,7 @@ ms.locfileid: "87178524"
 2. 將節點的網域成員資格變更為新的網域。
 3. 在更新的網域中，將叢集重新建立為新的叢集。  這需要重新建立所有資源。
 
-第二個選項的破壞性較低，但需要額外的硬體，因為新的叢集需要建立新的網域。  一旦叢集在新網域中，請執行 [叢集遷移嚮導] 以遷移資源。 請注意，這不會遷移資料，您必須使用另一個工具來遷移資料，例如[儲存體遷移服務](../storage/storage-migration-service/overview.md)（新增叢集支援之後）。
+第二個選項的破壞性較低，但需要額外的硬體，因為新的叢集需要建立新的網域。  一旦叢集在新網域中，請執行 [叢集遷移嚮導] 以遷移資源。 請注意，這不會遷移資料-您必須使用另一個工具來遷移資料，例如[儲存體遷移服務](../storage/storage-migration-service/overview.md) (一旦) 新增叢集支援。
 
 ![組建和遷移](media/Cross-Domain-Cluster-Migration/Cross-Cluster-Domain-Migration-2.gif)
 
@@ -65,7 +63,7 @@ ms.locfileid: "87178524"
 2. 使用 [叢集[遷移嚮導]](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754481(v=ws.10))將所有資源遷移至新叢集。 提醒您，這不會複製資料，因此必須另外完成。
 3. 解除委任或摧毀舊叢集。
 
-在這兩個選項中，新的叢集都必須安裝所有叢集[感知應用程式](https://technet.microsoft.com/aa369082(v=vs.90))、驅動程式都是最新狀態，而且可能會進行測試，以確保所有元件都能正常執行。  如果也需要移動資料，這就是耗時的進程。
+在這兩個選項中，新的叢集都必須安裝所有叢集[感知應用程式](/previous-versions/windows/desktop/mscs/cluster-aware-applications)、驅動程式都是最新狀態，而且可能會進行測試，以確保所有元件都能正常執行。  如果也需要移動資料，這就是耗時的進程。
 
 ## <a name="windows-server-2019"></a>Windows Server 2019
 
@@ -84,7 +82,7 @@ ms.locfileid: "87178524"
 在下列步驟中，會將叢集從 Contoso.com 網域移動到新的 Fabrikam.com 網域。  叢集名稱是*CLUSCLUS* ，而且具有名為*FS-CLUSCLUS*的檔案伺服器角色。
 
 1. 在叢集中的所有伺服器上，建立具有相同名稱和密碼的本機系統管理員帳戶。  當伺服器在網域之間移動時，可能需要進行這項登入。
-2. 使用 Active Directory 具有叢集名稱物件（CNO）、虛擬電腦物件（VCO）許可權的網域使用者或系統管理員帳戶登入第一部伺服器，以存取叢集並開啟 PowerShell。
+2. 使用具有叢集名稱物件 Active Directory 許可權的網域使用者或系統管理員帳戶登入第一部伺服器 (CNO) 、虛擬電腦物件 (VCO) 、具有叢集的存取權，以及開啟 PowerShell。
 3. 請確定所有叢集網路名稱資源都處於離線狀態，然後執行下列命令。  此命令將會移除叢集可能擁有的 Active Directory 物件。
 
    ```PowerShell
@@ -123,7 +121,7 @@ ms.locfileid: "87178524"
    New-ClusterNameAccount -Name CLUSTERNAME -Domain NEWDOMAINNAME.com -UpgradeVCOs
    ```
 
-    注意：如果您沒有任何其他具有網路名稱的群組（也就是僅含虛擬機器的 Hyper-v 叢集），則不需要-UpgradeVCOs 參數切換。
+    注意：如果您沒有任何其他群組的網路名稱 (也就是只有) 虛擬機器的 Hyper-v 叢集，則不需要-UpgradeVCOs 參數切換。
 
 9. 使用 Active Directory 的使用者和電腦來檢查新的網域，並確定已建立相關聯的電腦物件。 如果有，則將群組中的其餘資源上線。
 
@@ -140,4 +138,3 @@ ms.locfileid: "87178524"
 ```
 New-ClusternameAccount : Cluster name account cannot be created.  This cluster contains a file share witness with invalid permissions for a cluster of type AdministrativeAccesssPoint ActiveDirectoryAndDns. To proceed, delete the file share witness.  After this you can create the cluster name account and recreate the file share witness.  The new file share witness will be automatically created with valid permissions.
 ```
-

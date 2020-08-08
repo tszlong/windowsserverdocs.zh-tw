@@ -7,12 +7,12 @@ ms.assetid: 8510a709-001c-4eee-b6d6-c451e8a8a836
 author: kbdazure
 ms.author: kathydav
 ms.date: 10/11/2016
-ms.openlocfilehash: dea2da2d0a10839fd9fe69dbb7b3974290b85975
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e44a60becc84e3b376797bd64ffe433ce44b8c55
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963614"
+ms.locfileid: "87990353"
 ---
 # <a name="configure-virtual-local-area-networks-for-hyper-v"></a>設定 Hyper-v 的虛擬區域網路絡
 虛擬區域網路 \( vlan \) 提供一種隔離網路流量的方式。 Vlan 是在支援 802.1 q 的交換器和路由器中設定。 如果您設定多個 Vlan，而且想要在兩者之間進行通訊，您必須設定網路裝置以允許。
@@ -50,8 +50,8 @@ ms.locfileid: "87963614"
 
 - 將更多虛擬網路介面卡連線到適當的虛擬交換器，並指派 VLAN 識別碼。 請務必正確地設定 IP 位址，而且您要透過 VLAN 路由傳送的流量也會使用正確的 IP 位址。
 
-- 使用[Set \- set-vmnetworkadaptervlan](https://technet.microsoft.com/library/hh848475.aspx) Cmdlet，在主幹模式中設定虛擬網路介面卡。
+- 使用[Set \- set-vmnetworkadaptervlan](/powershell/module/hyper-v/set-vmnetworkadaptervlan?view=win10-ps) Cmdlet，在主幹模式中設定虛擬網路介面卡。
 
 ## <a name="see-also"></a>另請參閱
 
-[Hyper-v \- 虛擬交換器](https://technet.microsoft.com/windows-server-docs/networking/technologies/hyper-v-virtual-switch/hyper-v-virtual-switch)
+[Hyper-v \- 虛擬交換器](../../hyper-v-virtual-switch/hyper-v-virtual-switch.md)

@@ -1,20 +1,18 @@
 ---
 title: 使用 Windows 管理中心部署 Azure 虛擬機器
 description: 使用 Windows 系統管理中心部署 Azure 虛擬機器。 將 Azure 虛擬機器設定為 Windows 管理中心管理案例的一部分。
-ms.technology: manage
 ms.topic: article
 author: nedpyle
 ms.author: nedpyle
 manager: jgerend
 ms.date: 01/28/2020
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 15c9526e4049b218a3fcd7c85bd30dc917629425
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2a93051f4b8aa95f5e48604a5ac7cc9f4c8242a2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925948"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940049"
 ---
 # <a name="deploy-azure-virtual-machines-from-within-windows-admin-center"></a>在 Windows 系統管理中心內部署 Azure 虛擬機器
 
@@ -32,9 +30,9 @@ Windows 管理中心1910版 Azure VM 部署支援下列案例：
 
 - [存放裝置移轉服務](../../../storage/storage-migration-service/overview.md)
 - [儲存體複本](../../../storage/storage-replica/storage-replica-overview.md)
-- [新的獨立伺服器（不含角色）](index.md#extend-on-premises-capacity-with-azure)
+- [不具角色的新獨立伺服器 () ](index.md#extend-on-premises-capacity-with-azure)
 
-## <a name="requirements"></a>規格需求
+## <a name="requirements"></a>需求
 
 若要從 Windows 系統管理中心建立新的 Azure VM，您必須具備：
 
@@ -44,7 +42,7 @@ Windows 管理中心1910版 Azure VM 部署支援下列案例：
 - 現有的[Azure 虛擬網路](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview)和子網。
 - 系結至虛擬網路和子網的[Azure Express Route](https://azure.microsoft.com/services/expressroute/)或[azure VPN 解決方案](https://azure.microsoft.com/services/vpn-gateway/)，允許從 Azure vm 連線到您的內部部署用戶端、網域控制站、Windows 系統管理中心電腦，以及需要與此 VM 通訊的任何伺服器，做為工作負載部署的一部分。 比方說，若要使用儲存體遷移服務將儲存體遷移至 Azure VM，協調器電腦和來源電腦必須能夠與您要遷移的目的地 Azure VM 連線。
 
-## <a name="usage"></a>使用方式
+## <a name="usage"></a>使用量
 
 Azure VM 部署步驟和嚮導會因案例而異。 如需整體案例的詳細資訊，請參閱工作負載的檔。
 
@@ -53,22 +51,22 @@ Azure VM 部署步驟和嚮導會因案例而異。 如需整體案例的詳細�
 1. 從 Windows 系統管理中心內的*儲存體遷移服務*工具，執行一或多個來源伺服器的清查。
 2. 在*傳輸資料*階段中，選取 [*指定目的地*] 頁面上的 [**建立新的 Azure VM** ]，然後按一下 [**建立 VM**]。<br><br>
 這會開始一個逐步建立工具，其會選取 Windows Server 2012 R2、Windows Server 2016 或 Windows Server 2019 Azure VM 作為遷移目的地。 儲存體遷移服務提供建議的 VM 大小以符合您的來源，但您可以按一下 [**查看所有大小**] 來覆寫它們。
-<br><br>來源伺服器資料也會用來自動設定您的受控磁片和其檔案系統，以及將新的 Azure VM 加入您的 Active Directory 網域。 如果 VM 是 Windows Server 2019 （建議採用），Windows 系統管理中心會安裝儲存體遷移服務 proxy 功能。 建立 Azure VM 之後，Windows 管理中心會回到正常的儲存體遷移服務傳輸工作流程。  
+<br><br>來源伺服器資料也會用來自動設定您的受控磁片和其檔案系統，以及將新的 Azure VM 加入您的 Active Directory 網域。 如果 VM 是 Windows Server 2019 (這是我們建議的) ，Windows 系統管理中心會安裝儲存體遷移服務 proxy 功能。 建立 Azure VM 之後，Windows 管理中心會回到正常的儲存體遷移服務傳輸工作流程。
 
 以下影片顯示如何使用儲存體遷移服務來遷移至 Azure Vm。
 
-> [!VIDEO https://www.youtube-nocookie.com/embed/k8Z9LuVL0xQ] 
+> [!VIDEO https://www.youtube-nocookie.com/embed/k8Z9LuVL0xQ]
 
 ### <a name="deploying-azure-vms-as-part-of-storage-replica"></a>將 Azure Vm 部署為儲存體複本的一部分
 
 1. 從 Windows 系統管理中心內的 [*儲存體複本*] 工具，在 [*合作關係*] 索引標籤底下選取 [**新增**]，然後在 [*使用其他伺服器*複寫] 底下選取 **[****使用新的 Azure VM**
 2. 指定來源伺服器資訊和複寫組名，然後選取 **[下一步]**。<br><br>
-這會開始一種程式，自動選取 Windows Server 2016 或 Windows Server 2019 Azure VM 作為遷移來源的目的地。 儲存體遷移服務會建議 VM 大小以符合您的來源，但您可以選取 [**查看所有大小**] 來覆寫。 清查資料是用來自動設定您的受控磁片和其檔案系統，以及將您的新 Azure VM 加入您的 Active Directory 網域。 
+這會開始一種程式，自動選取 Windows Server 2016 或 Windows Server 2019 Azure VM 作為遷移來源的目的地。 儲存體遷移服務會建議 VM 大小以符合您的來源，但您可以選取 [**查看所有大小**] 來覆寫。 清查資料是用來自動設定您的受控磁片和其檔案系統，以及將您的新 Azure VM 加入您的 Active Directory 網域。
 3. 在 Windows 系統管理中心建立 Azure VM 之後，請提供複寫組名，然後選取 [**建立**]。 接著，Windows 管理中心會開始正常的儲存體複本初始同步處理常式，以開始保護您的資料。
 
 以下影片顯示如何使用儲存體複本來複寫至 Azure Vm。
 
-> [!VIDEO https://www.youtube-nocookie.com/embed/_VqD7HjTewQ] 
+> [!VIDEO https://www.youtube-nocookie.com/embed/_VqD7HjTewQ]
 
 ### <a name="deploying-a-new-standalone-azure-vm"></a>部署新的獨立 Azure VM
 
@@ -77,4 +75,4 @@ Azure VM 部署步驟和嚮導會因案例而異。 如需整體案例的詳細�
 
 以下影片顯示如何使用 Windows 管理中心來建立 Azure Vm。
 
-> [!VIDEO https://www.youtube-nocookie.com/embed/__A8J9aC_Jk] 
+> [!VIDEO https://www.youtube-nocookie.com/embed/__A8J9aC_Jk]

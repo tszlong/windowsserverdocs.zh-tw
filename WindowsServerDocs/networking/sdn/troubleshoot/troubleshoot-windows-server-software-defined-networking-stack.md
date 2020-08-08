@@ -7,12 +7,12 @@ ms.assetid: 9be83ed2-9e62-49e8-88e7-f52d3449aac5
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/14/2018
-ms.openlocfilehash: 87972f9a0d83a4b7f192e2fe0f751ee66c599044
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2bf186d2f8761ca51c77b4d02489b0d85c53e046
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955915"
+ms.locfileid: "87990152"
 ---
 # <a name="troubleshoot-the-windows-server-software-defined-networking-stack"></a>對 Windows Server 軟體定義網路堆疊進行疑難排解
 
@@ -20,7 +20,7 @@ ms.locfileid: "87955915"
 
 本指南會檢查常見的軟體定義網路 (SDN) 錯誤和失敗案例，並概述利用可用診斷工具的疑難排解工作流程。
 
-如需 Microsoft 軟體定義網路功能的詳細資訊，請參閱[軟體定義的網路](../../sdn/Software-Defined-Networking--SDN-.md)功能。
+如需 Microsoft 軟體定義網路功能的詳細資訊，請參閱[軟體定義的網路](../software-defined-networking.md)功能。
 
 ## <a name="error-types"></a>錯誤類型
 下列清單代表 Hyper-v 網路虛擬化最常看到的問題類別， (HNVv1 Windows Server 2012 R2 中的生產環境部署中) ，並以許多方式與 Windows Server 2016 HNVv2 中出現的相同問題類型，與新的軟體定義網路 (SDN) 堆疊一樣。
@@ -54,12 +54,12 @@ Import-Module hnvdiagnostics
 ```
 
 ### <a name="network-controller-diagnostics"></a>網路控制站診斷
-這些 Cmdlet 記載于 TechNet 上的[網路控制卡診斷 Cmdlet 主題](https://docs.microsoft.com/powershell/module/networkcontrollerdiagnostics/)。 它們有助於在網路控制站節點之間，以及網路控制站和在 Hyper-v 主機上執行的 NC 主機代理程式之間，識別網路原則一致性的問題。
+這些 Cmdlet 記載于 TechNet 上的[網路控制卡診斷 Cmdlet 主題](/powershell/module/networkcontrollerdiagnostics/)。 它們有助於在網路控制站節點之間，以及網路控制站和在 Hyper-v 主機上執行的 NC 主機代理程式之間，識別網路原則一致性的問題。
 
  _Debug-ServiceFabricNodeStatus_和_NetworkControllerReplica_ Cmdlet 必須從其中一個網路控制站節點虛擬機器執行。 所有其他 NC 診斷 Cmdlet 都可以從任何可連線到網路控制站的主機執行，而且位於網路控制卡管理安全性群組 (Kerberos) 或具有 x.509 憑證的存取權來管理網路控制站。
 
 ### <a name="hyper-v-host-diagnostics"></a>Hyper-v 主機診斷
-這些 Cmdlet 記載于 TechNet 上的[Hyper-v 網路虛擬化 (HNV) Diagnostics Cmdlet 主題](https://docs.microsoft.com/powershell/module/hnvdiagnostics/)。 它們有助於識別租使用者虛擬機器之間的問題 (東部/西部) 以及透過 SLB VIP (北/南部) 輸入流量。
+這些 Cmdlet 記載于 TechNet 上的[Hyper-v 網路虛擬化 (HNV) Diagnostics Cmdlet 主題](/powershell/module/hnvdiagnostics/)。 它們有助於識別租使用者虛擬機器之間的問題 (東部/西部) 以及透過 SLB VIP (北/南部) 輸入流量。
 
 _VirtualMachineQueueOperation_、 _CustomerRoute_、 _PACAMapping_、 _ProviderAddress_、 _get-VMNetworkAdapterPortId_、VMSwitchExternalPortId 和 EncapOverheadSettings_等都_是可以從任何 hyper-v 主機執行的本機測試（ _Test_ ）。 其他 Cmdlet 會透過網路控制卡叫用資料路徑測試，因此需要存取網路控制站，如上述 descried 所示。
 

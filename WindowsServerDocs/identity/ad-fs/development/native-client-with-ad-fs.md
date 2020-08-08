@@ -7,14 +7,12 @@ ms.reviewer: anandy
 manager: mtillman
 ms.date: 07/17/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: active-directory-federation-services
-ms.openlocfilehash: cecffe6ae789c4a7c8c9ff382e83d84ade8ef018
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 0cfb91269e0a55524346d7189d728848d9c6e670
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519847"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940465"
 ---
 # <a name="build-a-native-client-application-using-oauth-public-clients-with-ad-fs-2016-or-later"></a>使用 AD FS 2016 或更新版本的 OAuth 公用用戶端建立原生用戶端應用程式
 
@@ -22,7 +20,7 @@ ms.locfileid: "87519847"
 
 本文說明如何建立原生應用程式，以與受 AD FS 2016 或更新版本保護的 Web API 互動。
 
-1. .Net TodoListClient WPF 應用程式會使用 Active Directory 驗證程式庫（ADAL），透過 OAuth 2.0 通訊協定從 Azure Active Directory （Azure AD）取得 JWT 存取權杖
+1. .Net TodoListClient WPF 應用程式會使用 Active Directory 驗證程式庫 (ADAL) ，透過 OAuth 2.0 通訊協定從 Azure Active Directory (Azure AD) 取得 JWT 存取權杖
 2. 存取權杖是用來做為持有人權杖，以便在呼叫 TodoListService Web API 的/todolist 端點時驗證使用者。
  我們將在這裡使用 Azure AD 的應用程式範例，然後針對 AD FS 2016 或更新版本加以修改。
 
@@ -41,7 +39,7 @@ ms.locfileid: "87519847"
 
 1. 在 AD FS 管理] 中，以滑鼠右鍵按一下 [**應用程式群組**]，然後選取 [**新增應用程式群組**]。
 
-2. 在 [應用程式群組嚮導] 上，針對 [名稱] 輸入您偏好的任何名稱，例如 NativeToDoListAppGroup。 選取**存取 Web API 範本的原生應用程式**。 按 [下一步] 。
+2. 在 [應用程式群組嚮導] 上，針對 [名稱] 輸入您偏好的任何名稱，例如 NativeToDoListAppGroup。 選取**存取 Web API 範本的原生應用程式**。 按 [下一步]  。
  ![新增應用程式群組](media/native-client-with-ad-fs-2016/addapplicationgroup1.png)
 
 3. 在 [**原生應用程式**] 頁面上，記下 AD FS 所產生的識別碼。 這是 AD FS 將用來辨識公用用戶端應用程式的識別碼。 複製 [**用戶端識別碼**] 值。 稍後在應用程式代碼中，將會使用它做為**ida： ClientId**的值。 如果您想要的話，可以在這裡提供任何自訂識別碼。 重新導向 URI 是任意值，例如 put https://ToDoListClient ![ 原生應用程式](media/native-client-with-ad-fs-2016/addapplicationgroup2.png)
@@ -80,7 +78,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-native-deskto
 方案中的這個專案代表 native client 應用程式。 我們必須確保用戶端應用程式知道：
 
 1. 何時可以在需要時，讓使用者進行驗證？
-2. 用戶端需要提供多少識別碼給驗證授權單位（AD FS）？
+2. 用戶端需要提供多少識別碼給驗證授權單位 (AD FS) ？
 3. 我們要求存取權杖的資源識別碼為何？
 4. Web API 的基底位址為何？
 

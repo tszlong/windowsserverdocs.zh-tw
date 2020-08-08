@@ -1,20 +1,18 @@
 ---
 title: Protected Users 安全性群組
 description: Windows Server 安全性
-ms.prod: windows-server
-ms.technology: security-credential-protection
 ms.topic: article
 ms.assetid: 1b0b5180-f65a-43ac-8ef3-66014116f296
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: cd849486e441c8315daa95db351bcd214b929759
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 450279f5af907e4643f8ee8c1ea0ff36edd9aea5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518004"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87948691"
 ---
 # <a name="protected-users-security-group"></a>Protected Users 安全性群組
 
@@ -52,7 +50,7 @@ ms.locfileid: "87518004"
 > [!Note]
 > 網域控制站將不支援網域保護。
 
-藉由將[主域控制站（PDC）模擬器角色轉移](https://technet.microsoft.com/library/cc816944(v=ws.10).aspx)至執行 Windows Server 2012 R2 的網域控制站，即可建立 Protected Users 群組。 該群組物件複寫到其他網域控制站之後，可以在執行舊版 Windows Server 的網域控制站上裝載 PDC 模擬器角色。
+藉由將[主域控制站 (PDC) 模擬器角色轉移](https://technet.microsoft.com/library/cc816944(v=ws.10).aspx)至執行 Windows Server 2012 R2 的網域控制站，即可建立 Protected Users 群組。 該群組物件複寫到其他網域控制站之後，可以在執行舊版 Windows Server 的網域控制站上裝載 PDC 模擬器角色。
 
 ### <a name="protected-users-group-ad-properties"></a><a name="BKMK_ADgroup"></a>Protected Users 群組 AD 屬性
 
@@ -80,14 +78,14 @@ ms.locfileid: "87518004"
 ### <a name="device-protections-for-signed-in-protected-users"></a>已登入受保護使用者的裝置保護
 當已登入的使用者是 Protected Users 群組的成員時，會套用下列保護：
 
-- 即使已啟用 [**允許委派預設認證**] 群組原則設定，認證委派（CredSSP）也不會快取使用者的純文字認證。
+-  (CredSSP) 的認證委派不會快取使用者的純文字認證，即使已啟用 [**允許委派預設認證**] 群組原則設定也一樣。
 
 - 從 Windows 8.1 和 Windows Server 2012 R2 開始，即使啟用 Windows 摘要，Windows 摘要式也不會快取使用者的純文字認證。
 
 > [!Note]
 > 安裝[Microsoft 安全性諮詢 2871997](https://technet.microsoft.com/library/security/2871997)之後，Windows 摘要式會繼續快取認證，直到設定登錄機碼為止。 如需指示，請參閱[Microsoft 安全性摘要報告：更新以改善認證保護和管理： 2014 5 月13日](https://support.microsoft.com/help/2871997/microsoft-security-advisory-update-to-improve-credentials-protection-a)。
 
-- NTLM 不會快取使用者的純文字認證或 NT 單向函式（NTOWF）。
+- NTLM 不會快取使用者的純文字認證或 NT 單向函數 (NTOWF) 。
 
 - Kerberos 將不再建立 DES 或 RC4 金鑰。 此外，在取得初始 TGT 之後，它也不會快取使用者的純文字認證或長期金鑰。
 
@@ -113,13 +111,13 @@ ms.locfileid: "87518004"
 ## <a name="troubleshooting"></a>疑難排解
 有兩個操作系統管理記錄檔可用來協助排解 Protected Users 相關事件的疑難。 這些新的記錄檔位於事件檢視器中，而且預設為停用，且位於 [**應用程式和服務 Logs\Microsoft\Windows\Authentication**] 底下。
 
-|事件識別碼和記錄檔|說明|
+|事件識別碼和記錄檔|描述|
 |----------|--------|
 |104<p>**ProtectedUser-Client**|原因：用戶端上的安全性套件未包含認證。<p>當帳戶是 Protected Users 安全性群組的成員時，錯誤會記錄在用戶端電腦上。 這個事件指出安全性封裝並未快取向伺服器驗證時所需的認證。<p>會顯示封裝名稱、使用者名稱、網域名稱及伺服器名稱。|
 |304<p>**ProtectedUser-Client**|原因：安全性封裝不會儲存受保護使用者的認證。<p>用戶端中會記錄資訊事件，以指出安全性封裝不會快取使用者的登入認證。 預期摘要 (WDigest)、認證委派 (CredSSP) 及 NTLM 無法擁有 Protected Users 的登入認證。 如果應用程式提示輸入認證，則仍然可以登入成功。<p>會顯示封裝名稱、使用者名稱及網域名稱。|
 |100<p>**ProtectedUserFailures-DomainController**|原因：受保護使用者安全性群組中的帳戶發生 NTLM 登入失敗。<p>錯誤會記錄在網域控制站中，指出因為帳戶是 Protected Users 安全性群組的成員，所以 NTLM 驗證失敗。<p>會顯示帳戶名稱和裝置名稱。|
 |104<p>**ProtectedUserFailures-DomainController**|原因： DES 或 RC4 加密類型用於 Kerberos 驗證，而受保護使用者安全性群組中的使用者發生登入失敗。<p>Kerberos 預先驗證失敗，因為當帳戶是 Protected Users 安全性群組的成員時，不能使用 DES 與 RC4 加密類型。<p>(可以接受 AES)。|
-|303<p>**ProtectedUserSuccesses-DomainController**|原因：已成功為受保護使用者群組的成員發出 Kerberos 票證授權票證（TGT）。|
+|303<p>**ProtectedUserSuccesses-DomainController**|原因：已成功為受保護使用者群組的成員發出 Kerberos 票證授權票證 (TGT) 。|
 
 
 ## <a name="additional-resources"></a>其他資源

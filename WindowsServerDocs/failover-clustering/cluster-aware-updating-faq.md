@@ -2,18 +2,17 @@
 ms.assetid: 6416d125-bcaf-433d-971a-2f0283bca2c2
 title: 叢集感知更新-常見問題
 ms.topic: article
-ms.prod: windows-server
 manager: lizross
 ms.author: jgerend
 author: JasonGerend
 ms.date: 04/28/2017
 description: Windows Server 中叢集感知更新的常見問題解答。
-ms.openlocfilehash: aa2f99378713d93bafed710b96542559ac44ead7
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 0283f7f29ccc647508530d6cfdbf54b41086b90c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473335"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990909"
 ---
 # <a name="cluster-aware-updating-frequently-asked-questions"></a>叢集感知更新：常見問題集
 
@@ -101,7 +100,7 @@ CAU 預設會依據活動的等級來選取更新節點的順序。 裝載最少
 
 **Advanced 更新執行選項**系統管理員可以額外指定一組大量的高階更新執行選項，例如每個節點上重試更新程式的最大次數。 您可以使用 CAU UI 或 CAU PowerShell Cmdlet 來指定這些選項。 這些自訂設定可儲存在「更新執行設定檔」中，以供往後的「更新執行」重複使用。
 
-**公用外掛程式 \- 架構**CAU 包含註冊、取消註冊和選取外掛程式的功能 \- 。 cau 隨附兩個預設外掛程式 \- ：一個會協調 \( 每個叢集節點上的 Windows Update Agent WUA api，第二個則 \) 會套用手動複製到叢集節點可存取之檔案共用的修補程式。 如果企業具有這兩個外掛程式無法滿足的獨特需求 \- ，企業可以 \- 根據公用 API 規格來建立新的 CAU 外掛程式。 如需詳細資訊，請參閱叢集[ \- 感知更新外掛程式 \- 參考](https://msdn.microsoft.com/library/hh418084(VS.85).aspx)。
+**公用外掛程式 \- 架構**CAU 包含註冊、取消註冊和選取外掛程式的功能 \- 。 cau 隨附兩個預設外掛程式 \- ：一個會協調 \( 每個叢集節點上的 Windows Update Agent WUA api，第二個則 \) 會套用手動複製到叢集節點可存取之檔案共用的修補程式。 如果企業具有這兩個外掛程式無法滿足的獨特需求 \- ，企業可以 \- 根據公用 API 規格來建立新的 CAU 外掛程式。 如需詳細資訊，請參閱叢集[ \- 感知更新外掛程式 \- 參考](/previous-versions/windows/desktop/mscs/cluster-aware-update-plug-in-interfaces-and-classes)。
 
 如需設定和自訂 CAU 外掛程式 \- 以支援不同更新案例的相關資訊，請參閱[外掛程式的 \- 操作方式](assetId:///847b571b-12b3-473c-953f-75a5a1f51333)。
 
@@ -154,11 +153,10 @@ CAU 不需要在叢集節點上執行的服務。 不過，CAU 需要在叢集 \
 
 ## <a name="where-is-the-cau-plug-in-specification"></a>CAU 外掛程式規格在哪裡 \- ？
 
--   [叢集 \- 感知更新外掛程式 \- 參考](https://msdn.microsoft.com/library/hh418084(VS.85).aspx)
+-   [叢集 \- 感知更新外掛程式 \- 參考](/previous-versions/windows/desktop/mscs/cluster-aware-update-plug-in-interfaces-and-classes)
 
 -   [叢集感知更新外掛程式 \- 範例](https://code.msdn.microsoft.com/windowsdesktop/Cluster-Aware-Updating-6a8854c9)
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [叢集 \- 感知更新總覽](cluster-aware-updating.md)
-

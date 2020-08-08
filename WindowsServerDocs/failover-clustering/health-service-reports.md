@@ -1,18 +1,16 @@
 ---
 title: 健全狀況服務報表
-ms.prod: windows-server
 manager: eldenc
 ms.author: cosdar
-ms.technology: storage-health-service
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: a1aedd4dc48abb38c33679f219a6825c6a9141bb
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 1e6b11bc73ef34e5247ca43140d3e2122e77ab61
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473025"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990780"
 ---
 # <a name="health-service-reports"></a>健全狀況服務報表
 
@@ -77,7 +75,7 @@ public CimSession Connect(string Domain = "...", string Computer = "...", string
 
 ### <a name="discover-objects"></a>探索物件
 
-建立**CimSession**之後，您就可以查詢叢集上的 WINDOWS MANAGEMENT INSTRUMENTATION （WMI）。
+建立**CimSession**之後，您就可以查詢叢集上的 WINDOWS MANAGEMENT INSTRUMENTATION (WMI) 。
 
 在您取得錯誤或計量之前，您必須取得數個相關物件的實例。 首先， **MSFT \_ StorageSubSystem**代表叢集儲存空間直接存取。 使用這種方式，您可以取得叢集中的每個**msft \_ StorageNode** ，以及每個**msft \_ 磁片**區（資料磁片區）。 最後，您還需要**MSFT \_ StorageHealth**，也就是健全狀況服務本身。
 
@@ -109,7 +107,7 @@ public void DiscoverObjects(CimSession Session)
 
 這些是您在 PowerShell 中使用**StorageSubSystem**、 **StorageNode**和**取得磁片**區等 Cmdlet 取得的相同物件。
 
-您可以存取[儲存管理 API 類別](https://msdn.microsoft.com/library/windows/desktop/hh830612(v=vs.85).aspx)中記載的所有相同屬性。
+您可以存取[儲存管理 API 類別](/previous-versions/windows/desktop/stormgmt/storage-management-api-classes)中記載的所有相同屬性。
 
 ```
 using System.Diagnostics;
@@ -127,9 +125,9 @@ foreach (CimInstance Node in Nodes)
 
 Windows Server 2016 中每個領域的可用計量完整清單記載于下面。
 
-### <a name="iobserveronnext"></a>IObserver. Iobserver.onnext （）
+### <a name="iobserveronnext"></a>IObserver. Iobserver.onnext ( # A1
 
-這個範例程式碼會使用[觀察者設計模式](https://msdn.microsoft.com/library/ee850490(v=vs.110).aspx)來執行觀察器，其**iobserver.onnext （）** 方法會在每個新的度量樣本抵達時叫用。 如果串流結束，將會呼叫其**OnCompleted （）** 方法。 例如，您可以使用它來重新起始串流，因此它會無限期地繼續。
+這個範例程式碼會使用[觀察者設計模式](/dotnet/standard/events/observer-design-pattern)來執行觀察器，其**Iobserver.onnext ( # B1**方法會在每個新的度量樣本抵達時叫用。 如果串流結束，將會呼叫其**OnCompleted ( # B1**方法。 例如，您可以使用它來重新起始串流，因此它會無限期地繼續。
 
 ```
 class MetricsObserver<T> : IObserver<T>
@@ -280,6 +278,6 @@ public void BeginStreamingMetrics(CimSession Session, CimInstance HealthService,
 | IOThroughputTotal   | 1         |
 | IOThroughputWrite   | 1         |
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [Windows Server 2016 中的健全狀況服務](health-service-overview.md)

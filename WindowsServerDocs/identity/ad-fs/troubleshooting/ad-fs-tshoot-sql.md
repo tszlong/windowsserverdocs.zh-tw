@@ -6,14 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 01/12/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 052a804a61701855fbdf6b6e373314d35b474cf9
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 2fb32d5b553b4d248c718fac766a83daa5dfedb2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517593"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964815"
 ---
 # <a name="ad-fs-troubleshooting---sql-connectivity"></a>AD FS 疑難排解-SQL 連線能力
 AD FS 提供對 AD FS 伺服器陣列資料使用遠端 SQL Server 的功能。  如果伺服器陣列中的 AD FS 伺服器無法與後端 SQL server 通訊，您將會發現問題。  下列檔將提供一些基本步驟來測試與後端伺服器的通訊。
@@ -29,7 +27,7 @@ AD FS 提供對 AD FS 伺服器陣列資料使用遠端 SQL Server 的功能。 
 
 ![PowerShell 命令畫面正在執行命令](media/ad-fs-tshoot-sql/sql2.png)
 
-## <a name="create-a-universal-data-link-udl-file-to-test-connectivity"></a>建立通用資料連結（UDL）檔案來測試連線能力
+## <a name="create-a-universal-data-link-udl-file-to-test-connectivity"></a>建立 (UDL) 檔案的通用資料連結來測試連線能力
 通用資料連結檔案或 UDL 檔案基本上是包含資料庫連接字串的文字檔。  藉由使用我們在上方取得的資訊，我們可以測試 SQL server 是否正在回應連接。
 
 ### <a name="to-create-a-udl-file-to-test-connectivity"></a>若要建立 udl 檔案來測試連線能力

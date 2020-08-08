@@ -7,14 +7,12 @@ manager: mtillman
 ms.reviewer: anandyadavMSFT
 ms.date: 03/29/2019
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 5d56a84680467359b68ae1ab115801d82a34c822
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e6d6063d3d01cda48a662160c9ad661169371677
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407231"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956195"
 ---
 # <a name="ad-fs-help-diagnostics-analyzer"></a>AD FS 說明診斷分析器
 
@@ -26,13 +24,13 @@ AD FS 有許多設定，可支援用於驗證和應用程式開發的各種功�
 2. 執行診斷並上傳檔案以 AD FS 說明
 3. 查看診斷分析並解決任何問題
 
-請移至[AD FS 說明診斷分析器（ https://aka.ms/adfsdiagnosticsanalyzer)](https://aka.ms/adfsdiagnosticsanalyzer)以開始進行疑難排解。
+請移至[AD FS 協助診斷分析器 https://aka.ms/adfsdiagnosticsanalyzer) (](https://aka.ms/adfsdiagnosticsanalyzer)開始進行疑難排解。
 
 ![AD FS 說明上的 AD FS diagnostics analyzer 工具](media/ad-fs-diagonostics-analyzer/home.png)
 
 ## <a name="step-1-setup-the-adfstoolbox-module-on-ad-fs-server"></a>步驟1：在 AD FS 伺服器上設定 ADFSToolbox 模組
 
-若要執行[診斷分析器](https://aka.ms/adfsdiagnosticsanalyzer)，您必須安裝 ADFSToolbox PowerShell 模組。 如果 AD FS 伺服器可連線到網際網路，您可以直接從 PowerShell 資源庫安裝 ADFSToolbox 模組。 如果沒有網際網路連線，您可以手動安裝它。 
+若要執行[診斷分析器](https://aka.ms/adfsdiagnosticsanalyzer)，您必須安裝 ADFSToolbox PowerShell 模組。 如果 AD FS 伺服器可連線到網際網路，您可以直接從 PowerShell 資源庫安裝 ADFSToolbox 模組。 如果沒有網際網路連線，您可以手動安裝它。
 
 [!WARNING]
 如果您使用 AD FS 2.1 或更低版本，您必須安裝 ADFSToolbox 版的1.0.13。 ADFSToolbox 不再于最新版本上支援2.1 或更低的 AD FS。
@@ -50,15 +48,15 @@ AD FS 有許多設定，可支援用於驗證和應用程式開發的各種功�
 
 ### <a name="setup-manually"></a>手動安裝
 
-ADFSToolbox 模組必須手動複製到 AD FS 或 WAP 伺服器。 請依照下列指示進行。
+ADFSToolbox 模組必須手動複製到 AD FS 或 WAP 伺服器。 請遵循下列指示：
 
 1. 在可存取網際網路的電腦上啟動已提升許可權的 PowerShell 視窗。
-2. 安裝 AD FS 工具箱 模組。
+2. 安裝 AD FS 工具箱] 模組。
 
     ```powershell
     Install-Module -Name ADFSToolbox -Force
     ```
-3. 將位於本機電腦 `%SYSTEMDRIVE%\Program Files\WindowsPowerShell\Modules\` 的 ADFSToolbox 資料夾複製到 AD FS 或 WAP 電腦上的相同位置。
+3. 將位於本機電腦上的 ADFSToolbox 資料夾複製 `%SYSTEMDRIVE%\Program Files\WindowsPowerShell\Modules\` 到 AD FS 或 WAP 電腦上的相同位置。
 
 4. 在 AD FS 機上啟動已提升許可權的 PowerShell 視窗，然後執行下列 Cmdlet 以匯入模組。
 
@@ -76,17 +74,17 @@ ADFSToolbox 模組必須手動複製到 AD FS 或 WAP 伺服器。 請依照下�
     Export-AdfsDiagnosticsFile [-ServerNames <list of servers>]
 ```
 
-在伺服器2016或更新版本 AD FS 伺服器陣列中，此命令將會從 AD FS 設定讀取 AD FS 伺服器清單。 然後會嘗試對清單中的每部伺服器進行診斷測試。 如果沒有可用的 AD FS 伺服器清單（例如2012R2），則會對本機電腦執行測試。 若要指定要執行測試的伺服器清單，請使用**ServerNames**引數來提供伺服器清單。 以下提供範例
+在伺服器2016或更新版本 AD FS 伺服器陣列中，此命令將會從 AD FS 設定讀取 AD FS 伺服器清單。 然後會嘗試對清單中的每部伺服器進行診斷測試。 如果無法使用 AD FS 伺服器清單 (範例 2012R2) ，則會對本機電腦執行測試。 若要指定要執行測試的伺服器清單，請使用**ServerNames**引數來提供伺服器清單。 以下提供範例
 
 ```powershell
     Export-AdfsDiagnosticsFile -ServerNames @("adfs1.contoso.com", "adfs2.contoso.com")
 ```
 
-結果是在命令執行所在的相同目錄中建立的 JSON 檔案。 檔案的名稱是 AdfsDiagnosticsFile-\<timestamp\>。 範例檔案名為 AdfsDiagnosticsFile-07312019-184201. json。
+結果是在命令執行所在的相同目錄中建立的 JSON 檔案。 檔案的名稱是 AdfsDiagnosticsFile- \<timestamp\> 。 AdfsDiagnosticsFile-07312019-184201.js上的檔案名範例。
 
 ## <a name="step-3-upload-the-diagnostics-file"></a>步驟3：上傳診斷檔案
 
-在步驟3的[https://aka.ms/adfsdiagnosticsanalyzer](https://aka.ms/adfsdiagnosticsanalyzer)使用檔案瀏覽器來選取要上傳的結果檔案。
+在步驟3中， [https://aka.ms/adfsdiagnosticsanalyzer](https://aka.ms/adfsdiagnosticsanalyzer) 使用 [檔案瀏覽器] 選取要上傳的結果檔案。
 
 按一下 [上**傳**] 以完成上傳。
 
@@ -104,7 +102,7 @@ ADFSToolbox 模組必須手動複製到 AD FS 或 WAP 伺服器。 請依照下�
 4. 未執行：此區段包含因遺漏資訊而無法執行的測試清單。
 5. 不適用：此區段包含未執行的測試清單，因為它們不適用於命令執行所在的特定伺服器。
 
-![AD FS 診斷分析器工具-測試結果](media/ad-fs-diagonostics-analyzer/step3a_v3.png) 清單會顯示每個測試結果的詳細資料，其中會說明測試和解決步驟：
+![AD FS 診斷分析器工具-測試結果清單 ](media/ad-fs-diagonostics-analyzer/step3a_v3.png) 會顯示每個測試結果，其中包含描述測試和解決步驟的詳細資料：
 
 1. 測試名稱：已執行之測試的名稱
 2. 描述：測試的描述。
@@ -113,7 +111,7 @@ ADFSToolbox 模組必須手動複製到 AD FS 或 WAP 伺服器。 請依照下�
 
 ![AD FS 診斷分析器工具-失敗解決](media/ad-fs-diagonostics-analyzer/step3b_v3.png)
 
-## <a name="next"></a>下一則
+## <a name="next"></a>下一個
 
 - [使用 AD FS Help troublehshooting 指南](https://aka.ms/adfshelp/troubleshooting )
 - [AD FS 疑難排解](ad-fs-tshoot-overview.md)

@@ -1,19 +1,17 @@
 ---
 title: Windows Admin Center 擴充功能
 description: Windows Admin Center SDK 擴充功能 (Project Honolulu)
-ms.technology: extend
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 09/17/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 010ab340dc71d199119f1bd51fbc22e3ad449040
-ms.sourcegitcommit: 074b59341640a8ae0586d6b37df7ba256e03a0c6
+ms.openlocfilehash: 9dd372b765df3dce719c44ce99ed6e4ab6d156fc
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81650084"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956115"
 ---
 # <a name="extensions-for-windows-admin-center"></a>Windows Admin Center 擴充功能
 
@@ -28,7 +26,7 @@ Windows Admin Center 擴充功能是使用新式 Web 技術 (包括 HTML5、CSS�
 以下是開發 Windows 管理中心延伸模組時，您可以帶入產品和客戶的價值：
 
 - **與 Windows Admin Center 工具整合：** 將您的產品及服務與 Windows Admin Center 中的伺服器及叢集管理工具整合，並將一致且順暢的端對端監視、管理及疑難排解體驗提供給您的客戶。
-- **利用平臺安全性、身分識別和管理功能：** 藉由運用 Windows 管理中心平臺功能，以符合現今 IT 組織的複雜需求，為您的產品和服務啟用 Azure Active Directory （AAD）支援、多重要素驗證、角色型存取控制（RBAC）、記錄、審核。
+- **利用平臺安全性、身分識別和管理功能：** 啟用 Azure Active Directory (AAD) 支援、多重要素驗證、以角色為基礎的存取控制 (RBAC) 、記錄、您的產品和服務的審核，方法是利用 Windows 管理中心的平臺功能，以符合現今 IT 組織的複雜需求。
 - **使用最新的 Web 技術進行開發：** 使用新式 Web 技術 (包括 HTML5、CSS、Angular、TypeScript 和 jQuery)，以及 Windows Admin Center SDK 中包含的豐富強大的 UI 控制項，快速建置精彩體驗。
 - **擴充產品延伸：** 成為 Windows 管理中心生態系統的一部分，並延伸到我們擴充的客戶群。
 

@@ -1,18 +1,16 @@
 ---
 title: 健全狀況服務錯誤
-ms.prod: windows-server
 manager: eldenc
 ms.author: cosdar
-ms.technology: storage-health-service
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: de2e9939302c0b9937fb54b4082feeecf6de5295
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 5f35c52e6b4aaf382c80507ca562b52ce27da953
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473105"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990785"
 ---
 # <a name="health-service-faults"></a>健全狀況服務錯誤
 
@@ -24,7 +22,7 @@ ms.locfileid: "85473105"
 
 每個錯誤都包含五個重要欄位：
 
--   Severity
+-   嚴重性
 -   問題描述
 -   解決此問題的下一個建議步驟
 -   錯誤實體的識別資訊
@@ -103,7 +101,7 @@ public CimSession Connect(string Domain = "...", string Computer = "...", string
 
 ### <a name="discover-objects"></a>探索物件
 
-建立**CimSession**之後，您就可以查詢叢集上的 WINDOWS MANAGEMENT INSTRUMENTATION （WMI）。
+建立**CimSession**之後，您就可以查詢叢集上的 WINDOWS MANAGEMENT INSTRUMENTATION (WMI) 。
 
 在您取得錯誤或計量之前，您必須取得數個相關物件的實例。 首先， **MSFT \_ StorageSubSystem**代表叢集儲存空間直接存取。 使用這種方式，您可以取得叢集中的每個**msft \_ StorageNode** ，以及每個**msft \_ 磁片**區（資料磁片區）。 最後，您還需要**MSFT \_ StorageHealth**，也就是健全狀況服務本身。
 
@@ -135,7 +133,7 @@ public void DiscoverObjects(CimSession Session)
 
 這些是您在 PowerShell 中使用**StorageSubSystem**、 **StorageNode**和**取得磁片**區等 Cmdlet 取得的相同物件。
 
-您可以存取[儲存管理 API 類別](https://msdn.microsoft.com/library/windows/desktop/hh830612(v=vs.85).aspx)中記載的所有相同屬性。
+您可以存取[儲存管理 API 類別](/previous-versions/windows/desktop/stormgmt/storage-management-api-classes)中記載的所有相同屬性。
 
 ```
 using System.Diagnostics;
@@ -206,7 +204,7 @@ foreach (CimInstance DiagnoseResult in DiagnoseResults)
 }
 ```
 
-每個錯誤（**DiagnoseResult**）中的屬性完整清單記載于下面。
+每個錯誤 (**DiagnoseResult**) 中的屬性完整清單如下所述。
 
 ### <a name="fault-events"></a>錯誤事件
 
@@ -225,7 +223,7 @@ public void ListenForFaultEvents()
 }
 ```
 
-接下來，執行會在每次產生新事件時叫用**iobserver.onnext （）** 方法的觀察者。
+接下來，執行將會在每次產生新事件時叫用**iobserver.onnext ( # B1**方法的觀察者。
 
 每個事件都包含**ChangeType** ，指出是否正在建立、移除或更新錯誤，以及相關的**FaultId**。
 
@@ -279,7 +277,7 @@ class FaultsObserver : IObserver
 
 錯誤不應標示為「已顯示」或由使用者解決。 當健全狀況服務觀察到問題時，就會建立它們，而且只有在健全狀況服務無法再觀察問題時，才會自動移除。 一般來說，這反映出問題已獲得修正。
 
-不過，在某些情況下，健全狀況服務可能會重新探索錯誤（例如容錯移轉之後，或因為間歇連線等）。 基於這個理由，保存您自己的錯誤表示可能是合理的，因此您可以輕鬆地刪除重複。 如果您傳送電子郵件警示或對等項，這就特別重要。
+不過，在某些情況下，健全狀況服務 (可能會重新探索錯誤，例如在容錯移轉之後，或由於間歇連線能力等 ) 。 基於這個理由，保存您自己的錯誤表示可能是合理的，因此您可以輕鬆地刪除重複。 如果您傳送電子郵件警示或對等項，這就特別重要。
 
 ### <a name="properties-of-faults"></a>錯誤的屬性
 
@@ -328,7 +326,7 @@ class FaultsObserver : IObserver
 
 在 Windows Server 2016 中，健全狀況服務提供下列錯誤涵蓋範圍：
 
-### <a name="physicaldisk-8"></a>**PhysicalDisk （8）**
+### <a name="physicaldisk-8"></a>**PhysicalDisk (8) **
 
 #### <a name="faulttype-microsofthealthfaulttypephysicaldiskfailedmedia"></a>FaultType： FaultType. PhysicalDisk. FailedMedia
 * 嚴重性：警告
@@ -370,7 +368,7 @@ class FaultsObserver : IObserver
 * 原因：「*嘗試更新實體磁片上的固件失敗」。*
 * RecommendedAction：「*嘗試使用不同的固件二進位*檔」。
 
-### <a name="virtual-disk-2"></a>**虛擬磁片（2）**
+### <a name="virtual-disk-2"></a>**虛擬磁片 (2) **
 
 #### <a name="faulttype-microsofthealthfaulttypevirtualdisksneedsrepair"></a>FaultType： FaultType. VirtualDisks. NeedsRepair
 * 嚴重性：告知性
@@ -382,14 +380,14 @@ class FaultsObserver : IObserver
 * 原因：「*無法存取磁片區。有些資料可能會遺失。* 」
 * RecommendedAction：「*檢查所有存放裝置的實體和/或網路連線能力。您可能需要從備份還原。* 」
 
-### <a name="pool-capacity-1"></a>**集區容量（1）**
+### <a name="pool-capacity-1"></a>**集區容量 (1) **
 
 #### <a name="faulttype-microsofthealthfaulttypestoragepoolinsufficientreservecapacityfault"></a>FaultType： FaultType. StoragePool. InsufficientReserveCapacityFault
 * 嚴重性：警告
-* 原因：「*存放集區沒有最小的建議保留容量。這可能會限制您在發生磁片磁碟機失敗時還原資料復原的能力。* 」
+* 原因：「*存放集區沒有最小的建議保留容量。這可能會限制您在發生磁片磁碟機失敗 (s) 時還原資料復原的能力。* 」
 * RecommendedAction：「*將額外的容量新增至存放集區，或釋放容量。最小的建議保留會因部署而有所不同，但大約是2個磁片磁碟機的容量。* 」
 
-### <a name="volume-capacity-2sup1sup"></a>**磁片區容量（2）**<sup>1</sup>
+### <a name="volume-capacity-2sup1sup"></a>**磁片區容量 (2) ** <sup>1</sup>
 
 #### <a name="faulttype-microsofthealthfaulttypevolumecapacity"></a>FaultType： FaultType. Volume. 容量
 * 嚴重性：警告
@@ -401,7 +399,7 @@ class FaultsObserver : IObserver
 * 原因：「*磁片區的可用空間不足。* 」
 * RecommendedAction：「*擴充磁片區或將工作負載遷移至其他磁片*區」。
 
-### <a name="server-3"></a>**伺服器（3）**
+### <a name="server-3"></a>**伺服器 (3) **
 
 #### <a name="faulttype-microsofthealthfaulttypeserverdown"></a>FaultType： FaultType。伺服器關閉
 * 嚴重性：重大
@@ -411,21 +409,21 @@ class FaultsObserver : IObserver
 #### <a name="faulttype-microsofthealthfaulttypeserverisolated"></a>FaultType： FaultType. Server. 獨立模式
 * 嚴重性：重大
 * 原因：「*伺服器因連線問題*而與叢集隔離。」
-* RecommendedAction：「*如果隔離持續，請檢查網路，或將工作負載遷移至其他節點。* 」
+* RecommendedAction：「*如果隔離持續，請檢查網路 (s) 或將工作負載遷移至其他節點。* 」
 
 #### <a name="faulttype-microsofthealthfaulttypeserverquarantined"></a>FaultType： FaultType. 伺服器隔離
 * 嚴重性：重大
 * 原因：「叢集*因週期性失敗而隔離伺服器。* 」
 * RecommendedAction：「*取代伺服器或修正網路」。*
 
-### <a name="cluster-1"></a>**叢集（1）**
+### <a name="cluster-1"></a>**Cluster (1) **
 
 #### <a name="faulttype-microsofthealthfaulttypeclusterquorumwitnesserror"></a>FaultType： FaultType. ClusterQuorumWitness。錯誤
 * 嚴重性：重大
 * 原因：「叢集*是一部伺服器故障，離開。* 」
 * RecommendedAction：「*檢查見證資源，並視需要重新開機」。啟動或取代失敗的伺服器。」*
 
-### <a name="network-adapterinterface-4"></a>**網路介面卡/介面（4）**
+### <a name="network-adapterinterface-4"></a>**網路介面卡/介面 (4) **
 
 #### <a name="faulttype-microsofthealthfaulttypenetworkadapterdisconnected"></a>FaultType： FaultType NetworkAdapter。已中斷連線
 * 嚴重性：警告
@@ -434,7 +432,7 @@ class FaultsObserver : IObserver
 
 #### <a name="faulttype-microsofthealthfaulttypenetworkinterfacemissing"></a>FaultType： FaultType. NetworkInterface. 遺失
 * 嚴重性：警告
-* 原因：「*伺服器 {伺服器} 缺少連線到叢集網路 {cluster network} 的網路介面卡。* 」
+* 原因：「*伺服器 {伺服器} 遺失網路介面卡 (s，) 連線到叢集網路 {cluster network}」。*
 * RecommendedAction：「*將伺服器連線到遺失的叢集網路」。*
 
 #### <a name="faulttype-microsofthealthfaulttypenetworkadapterhardware"></a>FaultType： FaultType. NetworkAdapter. 硬體
@@ -447,7 +445,7 @@ class FaultsObserver : IObserver
 * 原因：「*網路介面 {網路介面} 未啟用，且未在使用中。* 」
 * RecommendedAction：「*啟用網路介面」。*
 
-### <a name="enclosure-6"></a>**主機殼（6）**
+### <a name="enclosure-6"></a>**主機殼 (6) **
 
 #### <a name="faulttype-microsofthealthfaulttypestorageenclosurelostcommunication"></a>FaultType： FaultType. StorageEnclosure. LostCommunication
 * 嚴重性：警告
@@ -479,7 +477,7 @@ class FaultsObserver : IObserver
 * 原因：「*儲存主機殼位置 {位置} 的溫度感應器失敗。* 」
 * RecommendedAction：「*更換儲存主機殼中的溫度感應器」。*
 
-### <a name="firmware-rollout-3"></a>**固件推出（3）**
+### <a name="firmware-rollout-3"></a>** (3) 的固件推出**
 
 #### <a name="faulttype-microsofthealthfaulttypefaultdomainfailedmaintenancemode"></a>FaultType： FaultType. FaultDomain. FailedMaintenanceMode
 * 嚴重性：警告
@@ -496,7 +494,7 @@ class FaultsObserver : IObserver
 * 原因：「*因為有太多實體磁片導致固件更新嘗試失敗，所以已取消固件推出。* 」
 * RecommendedAction：「*一旦固件問題解決，即重新開機固件」。*
 
-### <a name="storage-qos-3sup2sup"></a>**存放裝置 QoS （3）**<sup>2</sup>
+### <a name="storage-qos-3sup2sup"></a>**存放裝置 QoS (3) ** <sup>2</sup>
 
 #### <a name="faulttype-microsofthealthfaulttypestorqosinsufficientthroughput"></a>FaultType： FaultType. StorQos. InsufficientThroughput
 * 嚴重性：警告
@@ -510,15 +508,15 @@ class FaultsObserver : IObserver
 
 #### <a name="faulttype-microsofthealthfaulttypestorqosmisconfiguredflow"></a>FaultType： FaultType. StorQos. MisconfiguredFlow
 * 嚴重性：警告
-* 原因：「*一或多個儲存體取用者（通常虛擬機器）使用識別碼為 {id} 的不存在原則」。*
+* 原因：「*一或多個儲存體取用者 (通常虛擬機器) 使用的不存在原則具有識別碼 {id}。* 」
 * RecommendedAction：「*重新建立任何遺失的儲存體 QoS 原則」。*
 
-<sup>1</sup>表示磁片區已達到80% 的完整（次要嚴重性）或90% 已滿（主要嚴重性）。
-<sup>2</sup>表示磁片區上的某些 .vhd 並未達到其最小 IOPS （超過10% （次要））、30% （主要）或50% （重大）的輪流24小時時間範圍。
+<sup>1</sup>表示磁片區已達 80% full (次要嚴重性) 或90% 完整 (主要嚴重性) 。
+<sup>2</sup>表示磁片區上的某些 .vhd (s) 未達 10% (次要) 、30% (主要) 或 50% (迴圈24小時期間的關鍵) 的最小 IOPS。
 
 >[!NOTE]
 > 存放裝置機箱組件 (如風扇、電源供應器和感應器) 的健康情況是衍生自 SCSI 機箱服務 (SES)。 如果您的廠商沒有提供這項資訊，「健全狀況服務」就無法顯示它。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [Windows Server 2016 中的健全狀況服務](health-service-overview.md)

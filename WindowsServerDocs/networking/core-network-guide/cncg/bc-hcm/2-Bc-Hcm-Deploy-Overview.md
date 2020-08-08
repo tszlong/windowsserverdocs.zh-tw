@@ -2,18 +2,16 @@
 title: BranchCache 託管快取模式部署概觀
 description: 本指南提供的指示說明如何在執行 Windows Server 2016 和 Windows 10 的電腦上，以託管快取模式部署 BranchCache。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-bc
 ms.topic: article
 ms.assetid: 55686a9c-60dd-47f4-9f1f-fe72c2873a44
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 2ac8dc289cf321266d39016f841c243899fe6cf4
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 011c0e2f30dad914cc9fde4b2f81fdea2899bf11
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80319065"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956035"
 ---
 # <a name="branchcache-hosted-cache-mode-deployment-overview"></a>BranchCache 託管快取模式部署概觀
 
@@ -25,7 +23,7 @@ ms.locfileid: "80319065"
 
 ## <a name="hosted-cache-server-deployment-infrastructure"></a><a name="bkmk_components"></a>託管快取伺服器部署基礎結構
 
-在此部署中，會使用 Active Directory Domain Services \(AD DS\)中的服務連接點來部署託管快取伺服器，而且您可以選擇 Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 中的 BranchCache 來預先雜湊 Web 和檔案型內容伺服器上的共用內容，然後在託管快取伺服器上預先載入內容。
+在此部署中，會使用 Active Directory Domain Services AD DS 中的服務連接點來部署託管快取伺服器 \( \) ，而且您可以選擇 Windows server 2016、windows Server 2012 R2 和 Windows server 2012 中的 BranchCache 來預先雜湊 Web 和檔案型內容伺服器上的共用內容，然後在託管快取伺服器上預先載入內容。
 
 下圖顯示部署 BranchCache 託管快取伺服器所需的基礎結構。
 
@@ -40,12 +38,12 @@ ms.locfileid: "80319065"
 
 ### <a name="web1-in-the-cloud-data-center"></a>雲端資料中心內的 WEB1
 
-WEB1 是啟用的內容伺服器\-BranchCache。 如果您選擇預先雜湊內容伺服器資料，讓您可以預先載入託管快取伺服器上的內容，您可以在 WEB1 上預先雜湊共用內容，然後建立您複製到 HCS1 的資料封裝。
+WEB1 是 \- 已啟用 BranchCache 的內容伺服器。 如果您選擇預先雜湊內容伺服器資料，讓您可以預先載入託管快取伺服器上的內容，您可以在 WEB1 上預先雜湊共用內容，然後建立您複製到 HCS1 的資料封裝。
 
 ### <a name="file1-in-the-cloud-data-center"></a>雲端資料中心的 FILE1
 
-FILE1 是啟用內容伺服器\-BranchCache。 如果您選擇預先雜湊內容伺服器資料，讓您可以預先載入託管快取伺服器上的內容，您可以在 FILE1 上預先雜湊共用內容，然後建立您複製到 HCS1 的資料封裝。
-  
+FILE1 是 \- 已啟用 BranchCache 的內容伺服器。 如果您選擇預先雜湊內容伺服器資料，讓您可以預先載入託管快取伺服器上的內容，您可以在 FILE1 上預先雜湊共用內容，然後建立您複製到 HCS1 的資料封裝。
+
 ### <a name="dc1-in-the-main-office"></a>總公司中的 DC1
 
 DC1 是網域控制站，而且您必須設定預設網域原則，或其他更適合您部署的原則，並使用 BranchCache 群組原則設定來啟用服務連接點的自動託管快取探索。
@@ -68,12 +66,12 @@ DC1 是網域控制站，而且您必須設定預設網域原則，或其他更�
 
 1. 在 HCS1 上，使用 Windows PowerShell 命令將電腦設定為託管快取伺服器，並在 Active Directory 中註冊服務連接點。
 
-2. \(選擇性\) 在 HCS1 上，如果 BranchCache 預設值不符合伺服器和託管快取的部署目標，請設定您要為託管快取配置的磁碟空間量。 此外，也請設定您偏好用於託管快取的磁片位置。
+2. \(選擇性 \) 在 HCS1 上，如果 BranchCache 預設值不符合伺服器和託管快取的部署目標，請設定您想要為託管快取配置的磁碟空間量。 此外，也請設定您偏好用於託管快取的磁片位置。
 
-3. \(選擇性\) 在內容伺服器上預先雜湊內容、建立資料套件，以及在託管快取伺服器上預先載入內容。
+3. \(選擇性 \) 預先雜湊內容伺服器上的內容、建立資料套件，以及在託管快取伺服器上預先載入內容。
 
     > [!NOTE]
-    > 在託管快取伺服器上 Prehashing 並預先載入內容是選擇性的，不過，如果您選擇預先雜湊和預先載入，則必須執行下列適用于您部署的所有步驟。 \(例如，如果您沒有 Web 服務器，就不需要執行任何與 prehashing 和預先載入網頁伺服器內容相關的步驟。\)
+    > 在託管快取伺服器上 Prehashing 並預先載入內容是選擇性的，不過，如果您選擇預先雜湊和預先載入，則必須執行下列適用于您部署的所有步驟。 \(例如，如果您沒有 Web 服務器，就不需要執行任何與 prehashing 和預先載入 Web 服務器內容相關的步驟。\)
 
     1. 在 WEB1 上，預先雜湊網頁伺服器內容並建立資料封裝。
 

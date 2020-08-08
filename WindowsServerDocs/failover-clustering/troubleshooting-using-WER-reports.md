@@ -1,23 +1,21 @@
 ---
 title: 使用 Windows 錯誤報告針對容錯移轉叢集進行疑難排解
 description: 使用 WER 報表疑難排解容錯移轉叢集，並提供如何收集報表和診斷常見問題的特定詳細資料。
-ms.prod: windows-server
-ms.technology: storage-failover-clustering
 ms.author: johnmar
 author: JohnMarlin-MSFT
 ms.date: 03/27/2018
-ms.openlocfilehash: f888b7f49c2bf97eb42070a6028b137aeb730406
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 9b4569f4f4d28ad1380cf057cdf96e4b81fbdb2a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87768535"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990742"
 ---
 # <a name="troubleshooting-a-failover-cluster-using-windows-error-reporting"></a>使用 Windows 錯誤報告針對容錯移轉叢集進行疑難排解
 
 > 適用于： Windows Server 2019、Windows Server 2016、Windows Server
 
-Windows 錯誤報告 (WER) 是彈性的事件型意見基礎結構，其設計目的是要協助 advanced administrator 或第3層支援收集 Windows 可偵測的硬體和軟體問題的相關資訊、向 Microsoft 報告資訊，以及為使用者提供任何可用的解決方案。 此[參考](https://docs.microsoft.com/powershell/module/windowserrorreporting/)提供所有 WindowsErrorReporting Cmdlet 的說明和語法。
+Windows 錯誤報告 (WER) 是彈性的事件型意見基礎結構，其設計目的是要協助 advanced administrator 或第3層支援收集 Windows 可偵測的硬體和軟體問題的相關資訊、向 Microsoft 報告資訊，以及為使用者提供任何可用的解決方案。 此[參考](/powershell/module/windowserrorreporting/)提供所有 WindowsErrorReporting Cmdlet 的說明和語法。
 
 下列有關疑難排解的資訊將有助於疑難排解已升級的 advanced 問題，而且可能需要將資料傳送給 Microsoft 以進行分類。
 
@@ -75,11 +73,11 @@ Microsoft-Windows-Kernel-LiveDump/Analytic
 
 ## <a name="gathering-logs"></a>正在收集記錄檔
 
-啟用事件通道之後，您可以使用**DumpLogQuery**來收集記錄。 公用資源類型屬性**DumpLogQuery**是 mutistring 值。 每個字串都是[XPATH 查詢，如這裡所述](https://msdn.microsoft.com/library/windows/desktop/dd996910(v=vs.85).aspx)。
+啟用事件通道之後，您可以使用**DumpLogQuery**來收集記錄。 公用資源類型屬性**DumpLogQuery**是 mutistring 值。 每個字串都是[XPATH 查詢，如這裡所述](/windows/win32/wes/consuming-events)。
 
 進行疑難排解時，如果您需要收集其他事件通道，可以藉由新增其他查詢或修改清單來修改**DumpLogQuery**屬性。
 
-若要這麼做，請先使用[New-winevent](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent?view=powershell-5.1) PowerShell Cmdlet 來測試 XPATH 查詢：
+若要這麼做，請先使用[New-winevent](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent?view=powershell-5.1) PowerShell Cmdlet 來測試 XPATH 查詢：
 
 ```powershell
 get-WinEvent -FilterXML "<QueryList><Query><Select Path='Microsoft-Windows-GroupPolicy/Operational'>*[System[TimeCreated[timediff(@SystemTime) &gt;= 600000]]]</Select></Query></QueryList>"
@@ -158,7 +156,7 @@ Directory of c:\ProgramData\Microsoft\Windows\WER\ReportArchive
 
 ```
 
-Windows 錯誤報告提供許多設定，可自訂問題報告體驗。 如需詳細資訊，請參閱 Windows 錯誤報告[檔](https://msdn.microsoft.com/library/windows/desktop/bb513638(v=vs.85).aspx)。
+Windows 錯誤報告提供許多設定，可自訂問題報告體驗。 如需詳細資訊，請參閱 Windows 錯誤報告[檔](/windows/win32/wer/wer-settings)。
 
 
 ## <a name="troubleshooting-using-windows-error-reporting-reports"></a>使用 Windows 錯誤報告報表進行疑難排解

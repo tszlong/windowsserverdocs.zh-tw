@@ -3,24 +3,22 @@ ms.assetid: d44d4430-41e2-483a-9685-92610cdef32a
 title: 叢集感知更新外掛程式的工作方式
 description: 在 Windows Server 中使用叢集感知更新以在叢集上安裝更新時，如何使用外掛程式來協調更新。
 ms.topic: article
-ms.prod: windows-server
 manager: lizross
 ms.author: jgerend
 author: JasonGerend
 ms.date: 04/28/2017
-ms.technology: storage-failover-clustering
-ms.openlocfilehash: ac09163eb40045289a68287aa3eace20ff714d09
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 42ba496ce0d62a6a911f762f6ea7330001fb9031
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409578"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990885"
 ---
 # <a name="how-cluster-aware-updating-plug-ins-work"></a>叢集感知更新外掛程式的工作方式
 
 > 適用於：Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-叢集[感知更新](cluster-aware-updating.md)（CAU）會使用外掛程式來協調容錯移轉叢集中各節點的更新安裝。 本主題提供使用 \- 內建 cau 外掛程式 \- 或 \- 您為 CAU 安裝的其他外掛程式的相關資訊。
+叢集[感知更新](cluster-aware-updating.md) (CAU) 使用外掛程式來協調容錯移轉叢集中跨節點的更新安裝。 本主題提供使用 \- 內建 cau 外掛程式 \- 或 \- 您為 CAU 安裝的其他外掛程式的相關資訊。
 
 ## <a name="install-a-plug-in"></a><a name="BKMK_INSTALL"></a>安裝 \- 外掛程式
 除了 \- \- 與 CAU Microsoft.windowsupdateplugin 和 microsoft.hotfixplugin 一起安裝的預設外掛程式以外的外掛程式以外， \( **Microsoft.WindowsUpdatePlugin** **Microsoft.HotfixPlugin** \) 必須另外安裝。 如果在自行更新模式中使用 CAU \- ，則外掛程式 \- 必須安裝在所有叢集節點上。 如果在遠端更新模式中使用 CAU \- ，則「外掛程式」 \- 必須安裝在遠端更新協調器電腦上。 您安裝的外掛程式在 \- 每個節點上可能會有額外的安裝需求。
@@ -48,10 +46,10 @@ ms.locfileid: "87409578"
 
 |Cmdlet|描述|
 |----------|---------------|
-|[Add-CauClusterRole](https://docs.microsoft.com/powershell/module/clusterawareupdating/add-cauclusterrole)|將提供自我更新功能的 CAU 叢集角色新增 \- 至指定的叢集。|
-|[Invoke-CauRun](https://docs.microsoft.com/powershell/module/clusterawareupdating/invoke-caurun)|執行叢集節點掃描以判斷適用的更新，並透過所指定叢集上的「更新執行」安裝那些更新。|
-|[Invoke-CauScan](https://docs.microsoft.com/powershell/module/clusterawareupdating/invoke-causcan)|執行叢集節點掃描以判斷適用的更新，並傳回將套用至所指定叢集中每個節點的初始更新集清單。|
-|[Set-CauClusterRole](https://docs.microsoft.com/powershell/module/clusterawareupdating/set-cauclusterrole)|設定所指定叢集上的 CAU 叢集角色屬性。|
+|[Add-CauClusterRole](/powershell/module/clusterawareupdating/add-cauclusterrole)|將提供自我更新功能的 CAU 叢集角色新增 \- 至指定的叢集。|
+|[Invoke-CauRun](/powershell/module/clusterawareupdating/invoke-caurun)|執行叢集節點掃描以判斷適用的更新，並透過所指定叢集上的「更新執行」安裝那些更新。|
+|[Invoke-CauScan](/powershell/module/clusterawareupdating/invoke-causcan)|執行叢集節點掃描以判斷適用的更新，並傳回將套用至所指定叢集中每個節點的初始更新集清單。|
+|[Set-CauClusterRole](/powershell/module/clusterawareupdating/set-cauclusterrole)|設定所指定叢集上的 CAU 叢集角色屬性。|
 
 如果您未 \- 使用這些 Cmdlet 指定 CAU 外掛程式參數，則預設值為 \- **microsoft.windowsupdateplugin**中的插頭。
 
@@ -83,9 +81,9 @@ CAU 會 \- 安裝 \( **microsoft.windowsupdateplugin**和 Microsoft 的外掛程
 
 |Cmdlet|描述|
 |----------|---------------|
-|[Get-CauPlugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/get-cauplugin)|抓取在 \- 本機電腦上註冊的一或多個軟體更新外掛程式的相關資訊。|
-|[Register-CauPlugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/register-cauplugin)|在本機電腦上註冊 CAU 軟體更新外掛程式 \- 。|
-|[Unregister-CauPlugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/unregister-cauplugin)|\-從可供 CAU 使用的外掛程式清單中移除軟體更新外掛程式 \- 。 **注意：**\-與 CAU \( **microsoft.windowsupdateplugin**和**microsoft.hotfixplugin**一起安裝的外掛程式 \) 無法取消註冊。|
+|[Get-CauPlugin](/powershell/module/clusterawareupdating/get-cauplugin)|抓取在 \- 本機電腦上註冊的一或多個軟體更新外掛程式的相關資訊。|
+|[Register-CauPlugin](/powershell/module/clusterawareupdating/register-cauplugin)|在本機電腦上註冊 CAU 軟體更新外掛程式 \- 。|
+|[Unregister-CauPlugin](/powershell/module/clusterawareupdating/unregister-cauplugin)|\-從可供 CAU 使用的外掛程式清單中移除軟體更新外掛程式 \- 。 **注意：**\-與 CAU \( **microsoft.windowsupdateplugin**和**microsoft.hotfixplugin**一起安裝的外掛程式 \) 無法取消註冊。|
 
 ## <a name="using-the-microsoftwindowsupdateplugin"></a><a name="BKMK_WUP"></a>使用 Microsoft.windowsupdateplugin
 
@@ -141,7 +139,7 @@ CAU Microsoft.windowsupdateplugin 的預設外掛程式會 \- 執行**Microsoft.
 
 **QueryString \= "IsInstalled \= 0 and Type \= ' 驅動程式 ' and IsHidden \= 0"**
 
-如需預設外掛程式的查詢字串、 \- **microsoft.windowsupdateplugin**、搜尋準則 \( （例如**IsInstalled** \) ），以及您可以包含在查詢字串中之語法的詳細資訊，請參閱[Windows Update 代理程式（WUA） API 參考](https://go.microsoft.com/fwlink/p/?LinkId=223304)中的搜尋條件一節。
+如需預設外掛程式的查詢字串、 \- **microsoft.windowsupdateplugin**、搜尋準則 \( （例如**IsInstalled** \) ），以及您可以在查詢字串中包含的語法的詳細資訊，請參閱[Windows Update 代理程式 (WUA) API 參考](https://go.microsoft.com/fwlink/p/?LinkId=223304)中的搜尋準則一節。
 
 ## <a name="use-the-microsofthotfixplugin"></a><a name="BKMK_HFP"></a>使用 Microsoft.HotfixPlugin
 \-您可以使用**microsoft.hotfixplugin**中的外掛程式來套用 microsoft 有限發佈發行 \( LDR \) 更新 \( （也稱為「修補程式」），先前稱為「qfe」， \) 您可以單獨下載以解決特定的 Microsoft 軟體問題。 外掛程式會從 SMB 檔案共用上的根資料夾安裝更新，也可以自訂以套用非 \- Microsoft 驅動程式、固件和 BIOS 更新。
@@ -402,11 +400,10 @@ Hotfix 設定檔控制 **Microsoft.HotfixPlugin** 如何在容錯移轉叢集中
 
 您必須在 SMB 檔案伺服器上的 [Windows 防火牆] 中啟用 [**檔案伺服器遠端系統管理 \( smb \- \) ** ] 規則。 在 Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 中，預設會啟用此功能。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [叢集感知更新總覽](cluster-aware-updating.md)
 
--   [叢集感知更新 Windows PowerShell Cmdlet](https://docs.microsoft.com/powershell/module/clusterawareupdating)
+-   [叢集感知更新 Windows PowerShell Cmdlet](/powershell/module/clusterawareupdating)
 
--   [叢集感知更新外掛程式參考](https://msdn.microsoft.com/library/hh418084.aspx)
-
+-   [叢集感知更新外掛程式參考](/previous-versions/windows/desktop/mscs/cluster-aware-update-plug-in-interfaces-and-classes)

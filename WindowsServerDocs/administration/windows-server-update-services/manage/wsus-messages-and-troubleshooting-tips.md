@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7ce07e38a3a8a07f97959e782fd22c1d5472d338
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: cf3d0337dfa7360bdf8304c587c4ea31b7607e27
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896777"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990958"
 ---
 # <a name="wsus-messages-and-troubleshooting-tips"></a>WSUS 訊息和疑難排解秘訣
 
@@ -69,7 +69,7 @@ WSUS 安裝程式會使用 Microsoft SQL Server 來執行安裝。 發生此問�
 
 ## <a name="some-services-are-not-running-check-the-following-services"></a>某些服務並未執行。 檢查下列服務：
 
-- **Selfupdate：** 如[需](https://technet.microsoft.com/library/cc708554(v=ws.10).aspx)Selfupdate 服務疑難排解的相關資訊，請參閱自動更新。
+- **Selfupdate：** 如[需](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc708554(v=ws.10))Selfupdate 服務疑難排解的相關資訊，請參閱自動更新。
 
 - **WSSUService.exe：** 此服務有助於同步處理。 如果您有同步處理的問題，請按一下 [**開始**]，指向 [系統**管理工具**]，按一下 [**服務**]，然後在服務清單中尋找 [ **Windows Server Update Service** ]，以存取 WSUSService.exe。 執行下列動作：
 

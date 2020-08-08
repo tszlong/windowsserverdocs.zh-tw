@@ -6,19 +6,17 @@ ms.author: billmath
 manager: mtillman
 ms.date: 02/22/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 2162937498a5c16ce33b67ba5e478d2a6bb1a687
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 9d0cc816ce27130867988f51a097456bb37faef0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964980"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964945"
 ---
 # <a name="identity-delegation-scenario-with-ad-fs"></a>具有 AD FS 的身分識別委派案例
 
 
-[從 .NET Framework 4.5 開始，Windows Identity Foundation （WIF）已完全整合到 .NET Framework 中。 本主題 WIF 3.5 所解決的 WIF 版本已被取代，只有在針對 .NET Framework 3.5 SP1 或 .NET Framework 4 進行開發時才應該使用。 如需 .NET Framework 4.5 （也稱為 WIF 4.5）中 WIF 的詳細資訊，請參閱 .NET Framework 4.5 開發指南中的 Windows Identity Foundation 檔。 
+[從 .NET Framework 4.5 開始，Windows Identity Foundation (WIF) 已完全整合到 .NET Framework 中。 本主題 WIF 3.5 所解決的 WIF 版本已被取代，只有在針對 .NET Framework 3.5 SP1 或 .NET Framework 4 進行開發時才應該使用。 如需 .NET Framework 4.5 （也稱為 WIF 4.5）中 WIF 的詳細資訊，請參閱 .NET Framework 4.5 開發指南中的 Windows Identity Foundation 檔。
 
 此案例描述需要存取後端資源的應用程式，需要身分識別委派鏈來執行存取控制檢查。 簡單的身分識別委派鏈通常包含初始呼叫端的資訊，以及立即呼叫端的身分識別。
 
@@ -38,10 +36,10 @@ ms.locfileid: "86964980"
 
 - web1：一個 Web 應用程式，其中包含需要初始呼叫者委派身分識別的後端資源連結。 此應用程式是以 ASP.NET 建立。
 - 存取 SQL Server 的 Web 服務，這需要初始呼叫者的委派身分識別，以及立即呼叫端的識別碼。 此服務是以 WCF 建立。
-- sts1：屬於宣告提供者角色的 STS，會發出應用程式所需的宣告（web1）。 它已建立與 Fabrikam.com 的信任，以及與應用程式搭配使用。
+- sts1：屬於宣告提供者角色的 STS，會發出應用程式所需的宣告， (web1) 。 它已建立與 Fabrikam.com 的信任，以及與應用程式搭配使用。
 - sts2：一種 STS，其為 Fabrikam.com 的識別提供者角色，並提供 Fabrikam 員工用來進行驗證的結束點。 它已建立與 Contoso.com 的信任，讓 Fabrikam 員工可以存取 Contoso.com 上的資源。
 
->[!NOTE] 
+>[!NOTE]
 >在此案例中經常使用的「ActAs token」一詞是指 STS 所發出的權杖，並包含使用者的身分識別。 執行者屬性包含 STS 的身分識別。
 
 如上圖所示，此案例中的流程為：
@@ -52,12 +50,12 @@ ms.locfileid: "86964980"
 3. Contoso Web 服務已設定為藉由呼叫 sts1 來驗證 ActAs token。 Adam 已啟用 sts1 來處理委派要求。
 4. Fabrikam 使用者 Frank 會存取 Contoso 應用程式，並獲得對後端資源的存取權。
 
-## <a name="set-up-the-identity-provider-ip"></a>設定身分識別提供者（IP）
+## <a name="set-up-the-identity-provider-ip"></a> (IP) 設定識別提供者
 
 有三個選項可供 Fabrikam.com 系統管理員使用，Frank：
 
 
-1. 購買並安裝 STS 產品，例如 Active Directory &reg; 同盟服務（AD FS）。
+1. 購買並安裝 STS 產品，例如 Active Directory &reg; 同盟服務 (AD FS) 。
 2. 訂閱雲端 STS 產品，例如 LiveID STS。
 3. 使用 WIF 建立自訂的 STS。
 
@@ -111,7 +109,7 @@ ChannelFactory<IService2Channel> factory = (ChannelFactory<IService2Channel>)App
 IService2Channel channel;
 lock (factory)
 {
-// Setup the ActAs to point to the caller's token so that we perform a 
+// Setup the ActAs to point to the caller's token so that we perform a
 // delegated call to the backend service
 // on behalf of the original caller.
     channel = factory.CreateChannelActingAs<IService2Channel>(callerToken);
@@ -136,7 +134,7 @@ try
 ```
 ## <a name="web-service-specific-changes"></a>Web 服務特定的變更
 
-由於 Web 服務是以 WCF 建立並啟用 WIF，因此一旦系結設定了具有適當簽發者位址的 IssuedSecurityTokenParameters，ActAs 的驗證就會由 WIF 自動處理。 
+由於 Web 服務是以 WCF 建立並啟用 WIF，因此一旦系結設定了具有適當簽發者位址的 IssuedSecurityTokenParameters，ActAs 的驗證就會由 WIF 自動處理。
 
 Web 服務會公開應用程式所需的特定方法。 服務上不需要進行任何特定的程式碼變更。 下列程式碼範例示範如何使用 IssuedSecurityTokenParameters 設定 Web 服務：
 
@@ -183,4 +181,4 @@ using ( ServiceHost host = new ServiceHost( typeof( Service2 ), new Uri( "http:/
 ```
 
 ## <a name="next-steps"></a>後續步驟
-[AD FS 開發](../../ad-fs/AD-FS-Development.md)  
+[AD FS 開發](../../ad-fs/AD-FS-Development.md)

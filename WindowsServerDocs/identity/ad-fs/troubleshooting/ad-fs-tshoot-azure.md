@@ -6,14 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 03/01/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: b66d688052398ba76b6721e8bab0d0878be4959a
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: d7941733ff2191e94c6c1e380d4349585a5c98d3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517703"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956175"
 ---
 # <a name="ad-fs-troubleshooting---azure-ad"></a>AD FS 疑難排解-Azure AD
 隨著雲端的成長，許多公司都已繼續為其各種應用程式和服務使用 Azure AD。  與 Azure AD 的聯盟已成為許多組織的標準實務。  本檔將涵蓋此同盟所引發之問題的一些疑難排解部分。  一般疑難排解檔中的數個主題仍屬於與 Azure 的同盟，因此本檔僅著重于 Azure AD 和 AD FS 互動方面的細節。
@@ -72,7 +70,7 @@ ms.locfileid: "87517703"
 |-----|-----|
 |使用者名稱和密碼|urn:oasis:names:tc:SAML:2.0:ac:classes:Password|
 |受密碼保護的傳輸|urn： oasis： names： tc： SAML：2.0： ac：類別： PasswordProtectedTransport|
-|傳輸層安全性（TLS）用戶端|urn： oasis： names： tc： SAML：2.0： ac：類別： TLSClient
+| (TLS) 用戶端的傳輸層安全性|urn： oasis： names： tc： SAML：2.0： ac：類別： TLSClient
 |X.509 憑證|urn： oasis： names： tc： SAML：2.0： ac：類別： X509
 |整合式 Windows 驗證|urn：同盟：驗證： windows|
 |Kerberos|urn： oasis： names： tc： SAML：2.0： ac：類別： Kerberos|

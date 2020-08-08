@@ -1,20 +1,18 @@
 ---
 title: 叢集感知更新概觀
-description: 叢集感知更新（CAU）會在執行 Windows Server 的叢集上自動安裝軟體更新。
+description: 叢集感知更新 (CAU) 會在執行 Windows Server 的叢集上自動安裝軟體更新。
 ms.topic: article
-ms.prod: windows-server
 manager: lizross
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage-failover-clustering
 ms.date: 08/06/2018
 ms.assetid: 3c2993b4-aa81-452b-a5c3-3724ad95d892
-ms.openlocfilehash: a889e19947d014bc2008417f64f6be5cc53112e6
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: defec4b34dfd0e2efa5724e499330c79b993bb60
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409889"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990814"
 ---
 # <a name="cluster-aware-updating-overview"></a>叢集感知更新概觀
 
@@ -80,7 +78,7 @@ CAU 可以在所有版本的 Windows Server 上使用，包括 Server Core 安�
 
 若要安裝容錯移轉功能，可以使用下列工具：
 - 伺服器管理員中的 [新增角色及功能精靈]。
-- [Install-add-windowsfeature](https://docs.microsoft.com/powershell/module/servermanager/Install-WindowsFeature?view=winserver2012r2-ps&viewFallbackFrom=win10-ps)  Windows PowerShell Cmdlet
+- [Install-add-windowsfeature](/powershell/module/servermanager/Install-WindowsFeature?view=winserver2012r2-ps&viewFallbackFrom=win10-ps)  Windows PowerShell Cmdlet
 - 部署映像服務與管理 (DISM) 命令列工具
 
 如需詳細資訊，請參閱[安裝容錯移轉叢集功能](create-failover-cluster.md#install-the-failover-clustering-feature)。
@@ -101,9 +99,9 @@ CAU 可以在所有版本的 Windows Server 上使用，包括 Server Core 安�
 ### <a name="enabling-self-updating-mode"></a>啟用自行更新模式
 若要啟用自行更新模式，您必須將叢集感知更新叢集角色新增至容錯移轉叢集。 若要執行此動作，請使用下列其中一種方法：
 - 在伺服器管理員中，選取 [**工具**] [叢集  >  **感知更新**]，然後在 [叢集感知更新] 視窗中，選取 [**設定叢集自行更新選項**]。
-- 在 PowerShell 會話中，執行[add-cauclusterrole](https://docs.microsoft.com/powershell/module/clusterawareupdating/Add-CauClusterRole?view=win10-ps) Cmdlet。
+- 在 PowerShell 會話中，執行[add-cauclusterrole](/powershell/module/clusterawareupdating/Add-CauClusterRole?view=win10-ps) Cmdlet。
 
-若要卸載 CAU，請使用伺服器管理員、 [uninstall](https://docs.microsoft.com/powershell/module/servermanager/Uninstall-WindowsFeature?view=win10-ps) CMDLET 或 DISM 命令列工具來卸載容錯移轉叢集功能或容錯移轉叢集工具 \- 。
+若要卸載 CAU，請使用伺服器管理員、 [uninstall](/powershell/module/servermanager/Uninstall-WindowsFeature?view=win10-ps) CMDLET 或 DISM 命令列工具來卸載容錯移轉叢集功能或容錯移轉叢集工具 \- 。
 
 ### <a name="additional-requirements-and-best-practices"></a>其他需求和最佳做法
 
@@ -123,7 +121,7 @@ CAU 可以在所有版本的 Windows Server 上使用，包括 Server Core 安�
 
     -   如果一或多個叢集節點或叢集新增至伺服器管理員，請在 [**所有伺服器**] 頁面上，以滑鼠右鍵 \- 按一下節點名稱 \( 或叢集名稱，然後按一下 [ \) **更新**叢集]。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 下列連結提供有關使用叢集感知更新的詳細資訊。
 
 -   [叢集感知更新的需求和最佳作法 \-](cluster-aware-updating.md)
@@ -134,8 +132,6 @@ CAU 可以在所有版本的 Windows Server 上使用，包括 Server Core 安�
 
 -   [CAU 外掛程式的 \- 工作方式](cluster-aware-updating-plug-ins.md)
 
--   [\-Windows PowerShell 中的叢集感知更新 Cmdlet](https://docs.microsoft.com/powershell/module/clusterawareupdating/?view=win10-ps&viewFallbackFrom=winserverr2-ps)
+-   [\-Windows PowerShell 中的叢集感知更新 Cmdlet](/powershell/module/clusterawareupdating/?view=win10-ps&viewFallbackFrom=winserverr2-ps)
 
 -   [叢集 \- 感知更新外掛程式 \- 參考](/previous-versions/windows/desktop/mscs/cluster-aware-update-plug-in-interfaces-and-classes)
-
-

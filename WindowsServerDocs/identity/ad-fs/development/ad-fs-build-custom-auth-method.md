@@ -6,14 +6,12 @@ ms.author: billmath
 manager: daveba
 ms.date: 05/23/2019
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 868878fa9c38e1a37ec238d57be578727c189471
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: c817567d081ebcd7b6349d80b0590042528135be
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519887"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965025"
 ---
 # <a name="build-a-custom-authentication-method-for-ad-fs-in-windows-server"></a>在 Windows Server 中建立 AD FS 的自訂驗證方法
 
@@ -50,7 +48,7 @@ ms.locfileid: "87519887"
 
     您現在應該設定為解析提供者所需的所有類型。
 
-7. 將新類別新增至您的專案（以滑鼠右鍵按一下您的專案，然後**新增 .。。類別 ...**）並提供名稱，例如**MyAdapter**，如下所示：
+7. 將新類別新增至您的專案 (以滑鼠右鍵按一下您的專案，然後**新增 .。。類別 ...**) 並提供類似**MyAdapter**的名稱，如下所示：
 
     ![建立提供者](media/ad-fs-build-custom-auth-method/Dn783423.6b6a7a8b-9d66-40c7-8a86-a2e3b9e14d09(MSDN.10).jpg "建立提供者")
 
@@ -77,7 +75,7 @@ ms.locfileid: "87519887"
         }
     ```
 
-    現在您應該能夠在 IAuthenticationAdapter 上按 F12 （以滑鼠右鍵按一下 [移至定義]），以查看所需的介面成員集合。
+    現在您應該能夠按 F12 (按一下滑鼠右鍵– [移至定義]) IAuthenticationAdapter，以查看所需的介面成員集合。
 
     接下來，您可以執行這些動作的簡單部署。
 
@@ -138,7 +136,7 @@ ms.locfileid: "87519887"
     }
     ```
 
-2. 接下來，您可以為每個新增必要的成員。首先，中繼資料（具有有用的內嵌批註）
+2. 接下來，您可以為每個新增必要的成員。首先，中繼資料 (具有有用的內嵌批註) 
 
     ```
     class MyMetadata : IAuthenticationAdapterMetadata
@@ -325,9 +323,9 @@ ms.locfileid: "87519887"
 
    ![建立提供者](media/ad-fs-build-custom-auth-method/Dn783423.3369ad8f-f65f-4f36-a6d5-6a3edbc1911a(MSDN.10).jpg "建立提供者")
 
-15. 然後，在**Resources .resx**檔案中，選擇 [**加入資源]。新增現有**的檔案。 流覽至您在上方儲存的文字檔（包含 html 片段）。
+15. 然後，在**Resources .resx**檔案中，選擇 [**加入資源]。新增現有**的檔案。 流覽至文字檔， (包含您在上方儲存) 的 html 片段。
 
-   請確定您的 GetFormHtml 程式碼會由資源檔（.resx 檔案）名稱前置詞正確解析新資源的名稱，後面接著資源本身的名稱：
+   請確定您的 GetFormHtml 程式碼會由資源檔正確解析新資源的名稱， ( .resx 檔案) 名稱前置詞，後面接著資源本身的名稱：
 
 ```
     public string GetFormHtml(int lcid)
@@ -367,11 +365,11 @@ ms.locfileid: "87519887"
 
 3. 將 Gacutil.exe 工具複製到伺服器。
 
-    您可以在 Windows 8 電腦上的 **% homedrive% Program Files （x86） Microsoft sdkswindowsv 8.0 abinnetfx 4.0 工具**中找到 Gacutil.exe。 您將需要**gacutil.exe**檔案本身以及**1033**、 **En-us**，以及**NETFX 4.0 工具**位置底下的其他當地語系化資源資料夾。
+    Gacutil.exe 可以在 Windows 8 電腦上的 **% homedrive% Program Files (x86) Microsoft sdkswindowsv 8.0 abinnetfx 4.0 工具**中找到。 您將需要**gacutil.exe**檔案本身以及**1033**、 **En-us**，以及**NETFX 4.0 工具**位置底下的其他當地語系化資源資料夾。
 
-4. 將您的提供者檔案（一或多個強式名稱簽署的 .dll 檔案）複製到與**gacutil.exe**相同的資料夾位置（此位置只是為了方便起見）
+4. 將您的提供者檔案 (s)  (一或多個強式名稱簽署的 .dll 檔案) 到與**gacutil.exe** (相同的資料夾位置) 
 
-5. 將您的 .dll 檔案加入至伺服器陣列中每部 AD FS 同盟伺服器上的 GAC：
+5. 將您的 .dll 檔案 (s) 新增至伺服器陣列中每部 AD FS 同盟伺服器上的 GAC：
 
     範例：使用命令列工具 GACutil.exe 將 dll 新增至 GAC：`C:>.gacutil.exe /if .<yourdllname>.dll`
 
@@ -381,7 +379,7 @@ ms.locfileid: "87519887"
 
 ### <a name="register-your-provider-in-ad-fs"></a>在 AD FS 中註冊您的提供者
 
-符合上述先決條件之後，請在您的同盟伺服器上開啟 Windows PowerShell 命令視窗，並輸入下列命令（請注意，如果您使用的是使用 Windows Internal Database 的同盟伺服器陣列，您必須在伺服器陣列的主要同盟伺服器上執行這些命令）：
+符合上述先決條件之後，請在您的同盟伺服器上開啟 Windows PowerShell 命令視窗，並輸入下列命令 (請注意，如果您使用的是使用 Windows Internal Database 的同盟伺服器陣列，您必須在伺服器陣列的主要同盟伺服器上執行下列命令) ：
 
 1. `Register-AdfsAuthenticationProvider –TypeName YourTypeName –Name “AnyNameYouWish” [–ConfigurationFilePath (optional)]`
 
@@ -389,7 +387,7 @@ ms.locfileid: "87519887"
 
     這會在 AD FS 中註冊您的外部提供者，並以您在上面所提供的名稱 AnyNameYouWish。
 
-2. 重新開機 AD FS 服務（例如，使用 Windows 服務嵌入式管理單元）。
+2. 使用 Windows 服務嵌入式管理單元重新開機 AD FS 服務 (，例如) 。
 
 3. 執行下列命令：`Get-AdfsAuthenticationProvider`。
 
@@ -414,7 +412,7 @@ ms.locfileid: "87519887"
 
 #### <a name="create-the-authentication-policy-using-the-ad-fs-management-snap-in"></a>使用 AD FS 管理嵌入式管理單元建立驗證原則
 
-1. 開啟 [AD FS 管理] 嵌入式管理單元（從 [伺服器管理員**工具**] 功能表）。
+1. 從 [伺服器管理員**工具**] 功能表中，開啟 [AD FS 管理] 嵌入式管理單元 () 。
 
 2. 按一下 [**驗證原則**]。
 
@@ -422,7 +420,7 @@ ms.locfileid: "87519887"
 
 4. 在頁面底部的 [**選取其他驗證方法**] 底下，選取提供者 AdminName 的方塊。 按一下 [套用]。
 
-5. 若要提供「觸發程式」以使用介面卡叫用 MFA，請在 [**位置**] 底下檢查**外部**網路和**內部**網路，例如。 按一下 [確定]。 （若要設定每個信賴憑證者的觸發程式，請參閱下方的「使用 Windows PowerShell 建立驗證原則」）。
+5. 若要提供「觸發程式」以使用介面卡叫用 MFA，請在 [**位置**] 底下檢查**外部**網路和**內部**網路，例如。 按一下 [確定]  。  (若要設定每個信賴憑證者的觸發程式，請參閱下方的「使用 Windows PowerShell 建立驗證原則」。 ) 
 
 6. 使用下列命令來檢查結果：
 
@@ -453,7 +451,7 @@ ms.locfileid: "87519887"
    Set-AdfsAdditionalAuthenticationRule –AdditionalAuthenticationRules 'c:[type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", value == "false"] => issue(type = "https://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", value = "https://schemas.microsoft.com/claims/multipleauthn" );
    ```
 
-   範例2：建立 MFA 規則，要求對特定信賴憑證者的外部要求進行 MFA。 （請注意，個別提供者無法連線到 Windows Server 2012 R2 AD FS 中的個別信賴憑證者。
+   範例2：建立 MFA 規則，要求對特定信賴憑證者的外部要求進行 MFA。  (請注意，個別提供者無法連線到 Windows Server 2012 R2) 中 AD FS 的個別信賴憑證者。
 
     ```powershell
     $rp = Get-AdfsRelyingPartyTrust –Name <Relying Party Name>
@@ -464,15 +462,15 @@ ms.locfileid: "87519887"
 
 最後，執行下列步驟來測試您的介面卡：
 
-1. 請確定 AD FS 全域主要驗證類型已設定為外部網路和內部網路的表單驗證（這可讓您更輕鬆地以特定使用者的身分進行驗證）
+1. 請確定 AD FS 全域主要驗證類型已設定為外部網路和內部網路的表單驗證 (這讓您的示範更容易以特定使用者的身分進行驗證) 
 
     1. 在 [AD FS] 嵌入式管理單元中，于 [**驗證原則**] 下的 [**主要驗證**] 區域中，按一下 [**全域設定**] 旁的 [**編輯**]。
 
         1. 或者，只需按一下 [**多重要素原則**] UI 中的 [**主要**] 索引標籤。
 
-2. 確定 [**表單驗**證] 是同時檢查外部網路和內部網路驗證方法的唯一選項。 按一下 [確定]。
+2. 確定 [**表單驗**證] 是同時檢查外部網路和內部網路驗證方法的唯一選項。 按一下 [確定]  。
 
-3. 開啟 IDP 起始的登入 html 頁面（HTTPs:// <fsname> /adfs/ls/idpinitiatedsignon.htm），然後在您的測試環境中以有效的 AD 使用者身分登入。
+3. 開啟 IDP 起始的登入 html 頁面 (HTTPs:// <fsname> /adfs/ls/idpinitiatedsignon.htm) ，然後在您的測試環境中以有效的 AD 使用者身分登入。
 
 4. 輸入認證以進行主要驗證。
 
@@ -503,7 +501,7 @@ return new MyPresentationForm();
 }
 ```
 
-讓我們更新它，讓它不會一律傳回 MyPresentationForm （）。 為此，您可以在類別中建立一個簡單的公用程式方法：
+讓我們更新它，使其不一定會傳回 MyPresentationForm ( # A1。 為此，您可以在類別中建立一個簡單的公用程式方法：
 
 ```
 static bool ValidateProofData(IProofData proofData, IAuthenticationContext authContext)
@@ -559,7 +557,7 @@ return new MyPresentationForm();
 
 ![清除原則](media/ad-fs-build-custom-auth-method/Dn783423.c111b4e7-5b05-413c-8b0f-222a0e91ac1f(MSDN.10).jpg "清除原則")
 
-### <a name="unregister-provider-windows-powershell"></a>取消註冊提供者（Windows PowerShell）
+### <a name="unregister-provider-windows-powershell"></a>取消註冊提供者 (Windows PowerShell) 
 
 `PS C:> Unregister-AdfsAuthenticationProvider –Name “YourAuthProviderName”`
 
@@ -567,7 +565,7 @@ return new MyPresentationForm();
 
 請注意，您為「名稱」傳遞的值與您提供給 Register-adfsauthenticationprovider 指令程式的「名稱」值相同。 它也是 Register-adfsauthenticationprovider 所輸出的 "Name" 屬性。
 
-請注意，取消註冊提供者之前，您必須先從 AdfsGlobalAuthenticationPolicy 中移除提供者（藉由清除您在 AD FS 管理嵌入式管理單元中簽入的核取方塊，或使用 Windows PowerShell）。
+請注意，取消註冊提供者之前，您必須藉由清除 AD FS 管理嵌入式管理單元或使用 Windows PowerShell 中簽入的核取方塊，從 (AdfsGlobalAuthenticationPolicy 中移除提供者。 ) 
 
 請注意，在這種作業之後，必須重新開機 AD FS 服務。
 
@@ -585,7 +583,7 @@ return new MyPresentationForm();
 
 請務必先在本機貼上更新的 .dll。 `C:>.gacutil.exe /if .MFAAdapter.dll`
 
-### <a name="view-assembly-in-the-gac-cmd-line"></a>GAC 中的視圖元件（cmd 行）
+### <a name="view-assembly-in-the-gac-cmd-line"></a>GAC 中的視圖元件 (cmd 行) 
 
 `C:> .gacutil.exe /l mfaadapter`
 
@@ -599,7 +597,7 @@ return new MyPresentationForm();
 
 ### <a name="create-the-authentication-policy-using-the-ad-fs-management-snap-in"></a>使用 AD FS 管理嵌入式管理單元建立驗證原則
 
-1. 開啟 [AD FS 管理] 嵌入式管理單元（從 [伺服器管理員**工具**] 功能表）。
+1. 從 [伺服器管理員**工具**] 功能表中，開啟 [AD FS 管理] 嵌入式管理單元 () 。
 
 2. 按一下 [**驗證原則**]。
 
@@ -607,21 +605,21 @@ return new MyPresentationForm();
 
 4. 在 [**選取其他驗證方法**] 底下，勾選提供者 AdminName 的方塊。 按一下 [套用]。
 
-5. 若要提供「觸發程式」以使用介面卡叫用 MFA，請在 [位置] 底下檢查**外部**網路和**內部**網路，例如。 按一下 [確定]。
+5. 若要提供「觸發程式」以使用介面卡叫用 MFA，請在 [位置] 底下檢查**外部**網路和**內部**網路，例如。 按一下 [確定]  。
 
 ### <a name="authenticate-with-mfa-using-your-adapter"></a>使用您的介面卡向 MFA 進行驗證
 
 最後，執行下列步驟來測試您的介面卡：
 
-1. 請確定 AD FS 全域主要驗證類型已設定為外部網路和內部網路的**表單驗證**（這可讓您更輕鬆地以特定使用者的身分進行驗證）。
+1. 請確定 AD FS 全域主要驗證類型已設定為外部網路和內部網路的**表單驗證** (這可讓您更輕鬆地以特定使用者) 進行驗證。
 
     1. 在 [AD FS 管理] 嵌入式管理單元中，于 [**驗證原則**] 下的 [**主要驗證**] 區域中，按一下 [**全域設定**] 旁的 [**編輯**]。
 
         1. 或者，只需按一下 [多重要素原則] UI 中的 [**主要**] 索引標籤。
 
-2. 確定 [**表單驗**證] 是同時檢查**外部**網路和**內部**網路驗證方法的唯一選項。 按一下 [確定]。
+2. 確定 [**表單驗**證] 是同時檢查**外部**網路和**內部**網路驗證方法的唯一選項。 按一下 [確定]  。
 
-3. 開啟 IDP 起始的登入 html 頁面（HTTPs:// <fsname> /adfs/ls/idpinitiatedsignon.htm），然後在您的測試環境中以有效的 AD 使用者身分登入。
+3. 開啟 IDP 起始的登入 html 頁面 (HTTPs:// <fsname> /adfs/ls/idpinitiatedsignon.htm) ，然後在您的測試環境中以有效的 AD 使用者身分登入。
 
 4. 輸入主要驗證的認證。
 

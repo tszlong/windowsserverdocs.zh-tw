@@ -1,20 +1,18 @@
 ---
 title: 容錯移轉叢集硬體需求和存放裝置選項
 description: 建立容錯移轉叢集的硬體需求和存放裝置選項。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 manager: lizross
-ms.technology: storage-failover-clustering
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ed3337e0543953182ed73337ff7aa0a2f093376c
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 65d2d21138efbae3c5ada56bfa8628f06c4dcbe7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87177925"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990795"
 ---
 # <a name="failover-clustering-hardware-requirements-and-storage-options"></a>容錯移轉叢集硬體需求和存放裝置選項
 
@@ -32,7 +30,7 @@ ms.locfileid: "87177925"
 
 - **用於存放的裝置控制器或適當的介面卡**：
 
-  - **序列連結 SCSI 或光纖通道**：如果您使用序列連結 SCSI 或光纖通道，則所有叢集伺服器中的存放裝置堆疊的所有元素都應該相同。 多重路徑 i/o （MPIO）軟體必須相同，且裝置特定模組（DSM）軟體必須相同。 建議連接到叢集存放裝置的大型存放裝置控制器（主機匯流排介面卡（HBA）、HBA 驅動程式及 HBA 固件）是相同的。 如果您使用不相同的 HBA，則應向存放裝置廠商確認，以符合其支援或建議的設定。
+  - **序列連結 SCSI 或光纖通道**：如果您使用序列連結 SCSI 或光纖通道，則所有叢集伺服器中的存放裝置堆疊的所有元素都應該相同。 多重路徑 i/o (MPIO) 軟體必須相同，且裝置特定模組 (DSM) 軟體相同。 建議將大型存放裝置控制器（主機匯流排介面卡）（ (HBA) 、HBA 驅動程式及 HBA 固件）連接到叢集存放區相同。 如果您使用不相同的 HBA，則應向存放裝置廠商確認，以符合其支援或建議的設定。
   - **iSCSI**：如果您使用 iSCSI，則每一部叢集伺服器都應該有一或多個專用於叢集存放裝置的網路介面卡或 HBA。 用於 iSCSI 的網路不應該用於網路通訊。 在所有叢集伺服器中，用來連接 iSCSI 存放目標的網路介面卡都應該相同，建議您使用 Gigabit Ethernet 或速度更快的介面卡。
 - **存放裝置**：您必須使用與 windows Server 2012 R2 或 windows server 2012 相容的[儲存空間直接存取](../storage/storage-spaces/storage-spaces-direct-overview.md)或共用存放裝置。 您可以使用已連接的共用存放裝置，也可以使用 SMB 3.0 檔案共用，作為在容錯移轉叢集中設定之執行 Hyper-v 的伺服器的共用存放裝置。 如需詳細資訊，請參閱[部署透過 SMB 的 Hyper-V](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)。
 
@@ -63,17 +61,17 @@ ms.locfileid: "87177925"
 
 - **確認存放裝置的相容性**：向製造商和廠商確認存放裝置（包括用於存放裝置的驅動程式、固件和軟體）與您正在執行的 Windows Server 版本中的容錯移轉叢集相容。
 - **隔離存放裝置 (每部裝置一個叢集)**：來自不同叢集的伺服器不得存取同一存放裝置。 在大多數情況下，用於某一組叢集伺服器的 LUN 應透過 LUN 遮罩或分區，與所有其他伺服器隔離。
-- **考慮使用多重路徑 I/O 軟體或網路介面卡小組**：在高度可用的存放裝置網狀架構中，您可以使用多重路徑 I/O 軟體或網路介面卡小組 (也稱為負載平衡及容錯移轉，又稱 LBFO) 來部署具備多個主機匯流板介面卡的容錯移轉叢集。 這樣可提供最高層級的備援和可用性。 對於 Windows Server 2012 R2 或 Windows Server 2012，您的多重路徑解決方案必須以 Microsoft 多重路徑 i/o （MPIO）為基礎。 雖然 Windows Server 的作業系統已包含一或多個 DSM，但是您的硬體廠商通常會為硬體提供 MPIO 裝置專屬模組 (DSM)。
+- **考慮使用多重路徑 I/O 軟體或網路介面卡小組**：在高度可用的存放裝置網狀架構中，您可以使用多重路徑 I/O 軟體或網路介面卡小組 (也稱為負載平衡及容錯移轉，又稱 LBFO) 來部署具備多個主機匯流板介面卡的容錯移轉叢集。 這樣可提供最高層級的備援和可用性。 對於 Windows Server 2012 R2 或 Windows Server 2012，您的多重路徑解決方案必須以 Microsoft 多重路徑 i/o (MPIO) 為基礎。 雖然 Windows Server 的作業系統已包含一或多個 DSM，但是您的硬體廠商通常會為硬體提供 MPIO 裝置專屬模組 (DSM)。
 
-    如需 LBFO 的詳細資訊，請參閱 Windows Server 技術文件庫中的[NIC 小組總覽](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/nic-teaming)。
+    如需 LBFO 的詳細資訊，請參閱 Windows Server 技術文件庫中的[NIC 小組總覽](../networking/technologies/nic-teaming/nic-teaming.md)。
 
     >[!IMPORTANT]
     >主機匯流排介面卡和多重路徑 I/O 軟體可能對版本相當敏感。 如果您的叢集實作多重路徑解決方案，請與硬體廠商密切配合，為您正在執行的 Windows Server 版本選擇正確的介面卡、韌體及軟體。
 
-- **考慮使用儲存空間**：如果您打算部署使用儲存空間設定的序列連接 SCSI （SAS）叢集存放裝置，請參閱針對需求[部署叢集儲存空間](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11)>)。
+- **考慮使用儲存空間**：如果您打算部署序列連接的 SCSI (SAS) 使用儲存空間設定的叢集存放裝置，請參閱針對需求[部署叢集儲存空間](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11)>)。
 
-## <a name="more-information"></a>詳細資訊
+## <a name="more-information"></a>更多資訊
 
-- [容錯移轉叢集](failover-clustering.md)
+- [容錯移轉叢集](./failover-clustering-overview.md)
 - [儲存空間](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831739(v%3dws.11)>)
 - [使用客體叢集以提供高可用性](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn440540(v%3dws.11)>)

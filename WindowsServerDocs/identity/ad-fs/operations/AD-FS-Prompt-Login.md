@@ -7,16 +7,14 @@ manager: femila
 ms.date: 06/27/2017
 ms.topic: article
 ms.custom: it-pro
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: a80678f5d2773e3fcd7a95032853249dc36d5616
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: 0af0d71ad2b373f755653898ab0697b0308faa4b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465522"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940301"
 ---
-# <a name="active-directory-federation-services-promptlogin-parameter-support"></a>Active Directory 同盟服務提示 = 登入參數支援
+# <a name="active-directory-federation-services-promptlogin-parameter-support"></a>Active Directory 同盟服務提示=登入參數支援
 
 下列檔描述 AD FS 中提供之 prompt = login 參數的原生支援。
 
@@ -26,20 +24,20 @@ ms.locfileid: "77465522"
 
 當此要求適用于同盟使用者時，Azure AD 需要通知 IdP （例如 AD FS）要求是否為全新驗證。
 
-根據預設，Azure AD 會在傳送此類型的驗證要求給同盟 IdP 時，將 `prompt=login` 轉譯為 `wfresh=0` 和 `wauth=https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password`。
+根據預設，Azure AD 會 `prompt=login` `wfresh=0` 在將 `wauth=https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password` 此類型的驗證要求傳送至同盟 IdP 時，轉譯為和。
 
 這些參數表示：
 
 - `wfresh=0`：進行全新驗證
 - `wauth=https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password`：使用使用者名稱/密碼進行全新的驗證要求
 
-這可能會造成公司內部網路和多重要素驗證案例的問題，其中 `wauth` 參數所要求的驗證類型不是使用者名稱和密碼。  
+這可能會造成公司內部網路和多重要素驗證案例的問題，其中的驗證類型不是參數所要求的使用者名稱和密碼 `wauth` 。
 
-Windows Server 2012 R2 中的 AD FS 與7月2016更新彙總套件引進了 `prompt=login` 參數的原生支援。 這表示現在 Azure AD 可以在 Azure AD 和 Office 365 驗證要求中，AD FS 服務的方式傳送此參數。
+Windows Server 2012 R2 中的 AD FS 與7月2016更新彙總套件引進了參數的原生支援 `prompt=login` 。 這表示現在 Azure AD 可以在 Azure AD 和 Office 365 驗證要求中，AD FS 服務的方式傳送此參數。
 
 ## <a name="ad-fs-versions-that-support-promptlogin"></a>支援 prompt = login 的 AD FS 版本
 
-以下是支援 `prompt=login` 參數的 AD FS 版本清單。
+以下是支援參數的 AD FS 版本清單 `prompt=login` 。
 
 - Windows Server 2012 R2 中的 AD FS 加上2016年7月更新彙總套件
 - Windows Server 2016 中的 AD FS
@@ -49,30 +47,30 @@ Windows Server 2012 R2 中的 AD FS 與7月2016更新彙總套件引進了 `prom
 使用 Azure AD PowerShell 模組來進行設定。
 
 > [!NOTE]
-> `prompt=login` 功能（由 `PromptLoginBehavior` 屬性啟用）目前僅適用于[1.0 版的 Azure AD Powershell 模組](https://connect.microsoft.com/site1164/Downloads/DownloadDetails.aspx?DownloadID=59185)，其中 Cmdlet 的名稱會包含 "Msol"，例如 set-msoldomainfederationsettings。  目前無法透過 Azure AD PowerShell 模組的 ' version 2.0 ' 取得，其 Cmdlet 的名稱類似 "AzureAD\*"。
+> `prompt=login`屬性) 所啟用的功能 (`PromptLoginBehavior` 目前僅適用于[Azure AD Powershell 模組的1.0 版](https://connect.microsoft.com/site1164/Downloads/DownloadDetails.aspx?DownloadID=59185)，其中 Cmdlet 具有包含 "Msol" 的名稱，例如 set-msoldomainfederationsettings。  目前無法透過 Azure AD PowerShell 模組的 ' version 2.0 ' 取得，其 Cmdlet 的名稱類似 "AzureAD \* "。
 
-1. 藉由執行下列 PowerShell 命令，先取得同盟網域的 `PreferredAuthenticationProtocol`、`SupportsMfa`和 `PromptLoginBehavior` 的目前值：
+1. 首先 `PreferredAuthenticationProtocol` ，藉 `SupportsMfa` `PromptLoginBehavior` 由執行下列 PowerShell 命令，取得同盟網域的、和的目前值：
 
 ```powershell
     Get-MsolDomainFederationSettings -DomainName <your_domain_name> | Format-List *
 ```
 
 > [!NOTE]
-> `Get-MsolDomainFederationSettings` 的輸出預設不會在主控台中顯示特定屬性。 若要查看所有屬性，您應該以管線（`|`）將其輸出傳送至 `Format-List *`，以強制執行物件所有屬性的輸出。
+> 根據預設，的輸出不 `Get-MsolDomainFederationSettings` 會在主控台中顯示特定屬性。 若要查看所有屬性，您應該將 (`|`) 其輸出傳送至 `Format-List *` ，以強制執行物件所有屬性的輸出。
 
 ![Get-MsolDomainFederationSettings](media/AD-FS-Prompt-Login/GetMsol.png)
 
 > [!NOTE]
-> 如果屬性（property）的值 `PromptLoginBehavior` 是空的（`$null`），則會使用 `TranslateToFreshPasswordAuth` 的行為。
+> 如果屬性的值 `PromptLoginBehavior` 是空的 (`$null`) 會使用的行為 `TranslateToFreshPasswordAuth` 。
 
-2. 執行下列命令，以設定所需的 `PromptLoginBehavior` 值：
+2. 執行下列命令，以設定所需的值 `PromptLoginBehavior` ：
 
 ```powershell
     Set-MsolDomainFederationSettings –DomainName <your_domain_name> -PreferredAuthenticationProtocol <current_value_from_step1> -SupportsMfa <current_value_from_step1> -PromptLoginBehavior <TranslateToFreshPasswordAuth|NativeSupport|Disabled>
 ```
 
-以下是可能的 `PromptLoginBehavior` 參數值及其意義：
+以下是參數的可能值 `PromptLoginBehavior` 及其意義：
 
-- **TranslateToFreshPasswordAuth**：表示將 `prompt=login` 轉譯為 `wauth=https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password` 和 `wfresh=0`的預設 Azure AD 行為。
-- **NativeSupport**：表示 `prompt=login` 參數將會以 AD FS 的方式傳送。 如果 AD FS 是在 2012 2016 年7月更新彙總套件或更高版本的 Windows Server R2 中，這是建議的值。
-- **Disabled**：表示只有 `wfresh=0` 會傳送至 AD FS。
+- **TranslateToFreshPasswordAuth**：表示將轉換成和的預設 Azure AD 行為 `prompt=login` `wauth=https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password` `wfresh=0` 。
+- **NativeSupport**：表示 `prompt=login` 參數將會以目前的方式傳送至 AD FS。 如果 AD FS 是在 2012 2016 年7月更新彙總套件或更高版本的 Windows Server R2 中，這是建議的值。
+- **Disabled**：表示只 `wfresh=0` 會傳送至 AD FS。

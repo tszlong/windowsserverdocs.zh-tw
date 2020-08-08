@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: be9eaa7b742f554539fa5bbd08f46d47a347c1ad
-ms.sourcegitcommit: f305bc5f1c5a44dac62f4288450af19f351f9576
+ms.openlocfilehash: f651f60b5ba9e871a88a2df15d87b6819e851642
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87118567"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956285"
 ---
 # <a name="walkthrough-guide-manage-risk-with-additional-multi-factor-authentication-for-sensitive-applications"></a>逐步解說指南：透過其他多因素驗證管理機密應用程式的風險
 
@@ -21,7 +19,7 @@ ms.locfileid: "87118567"
 
 
 ## <a name="about-this-guide"></a>關於本指南
-本逐步解說提供的指示，說明如何根據使用者的群組成員資格資料，在 Windows Server 2012 R2 的 Active Directory 同盟服務（AD FS）中設定多重要素驗證（MFA）。
+本逐步解說提供的指示可讓您根據使用者的群組成員資格資料，在 Windows Server 2012 R2 的 Active Directory 同盟服務 (AD FS) 中設定多重要素驗證 (MFA) 。
 
 如需 AD FS 中 MFA 和驗證機制的詳細資訊，請參閱透過[其他多因素驗證管理機密應用程式的風險](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)。
 
@@ -136,7 +134,7 @@ ms.locfileid: "87118567"
 
     3.  **目錄**-與多因素驗證提供者相關聯的 Windows Azure Active Directory 租使用者。 這是選擇性的欄位，因為在保護內部部署應用程式安全性時，提供者不一定要與 Windows Azure Active Directory 連結。
 
-7.  按下建立之後，就會建立多因素驗證提供者，且應該會看到下列訊息：已成功建立多因素驗證提供者。  按一下 [確定]。
+7.  按下建立之後，就會建立多因素驗證提供者，且應該會看到下列訊息：已成功建立多因素驗證提供者。  按一下 [確定] 。
 
 接著，您必須下載 Windows Azure Multi-Factor Authentication Server。 您可以從 Windows Azure 入口網站啟動 Windows Azure Multi-Factor Authentication 入口網站來完成此動作。
 
@@ -183,9 +181,9 @@ ms.locfileid: "87118567"
 
     > [!NOTE]
     > [多因素驗證 AD FS 配接器]**** 安裝精靈會在您的 Active Directory 建立一個名為 **PhoneFactor Admins** 的安全性群組，然後將您的 Federation Service AD FS 服務帳戶加入這個群組。
-    > 
+    >
     > 建議您在網域控制站確認 **PhoneFactor Admins** 群組確實已經建立，而且 AD FS 服務帳戶是此群組的成員。
-    > 
+    >
     > 如有需要，請在網域控制站上將 AD FS 服務帳戶手動新增至 **PhoneFactor Admins** 群組。
 
     如需安裝 AD FS 配接器的詳細資訊，請按一下 Multi-Factor Authentication Server 右上角的 [說明] 連結。
@@ -204,7 +202,7 @@ ms.locfileid: "87118567"
 
 ##### <a name="to-configure-the-mfa-policy-based-on-users-group-membership-data-for-claimapp--via-the-ad-fs-management-console"></a>透過 AD FS 管理主控台，根據 ' claimapp ' 的使用者群組成員資格資料來設定 MFA 原則
 
-1.  在您的同盟伺服器上，于 AD FS 管理主控台中， **Authentication Policies**流覽至 \\ [**每個信賴**憑證者信任節點的驗證原則]，然後選取代表您範例應用程式（**claimapp**）的信賴憑證者信任。
+1.  在您的同盟伺服器上，于 AD FS 管理主控台中， **Authentication Policies**流覽至 [ \\ **每個信賴**憑證者信任] 節點的 [驗證原則]，然後選取代表您範例應用程式的信賴憑證者信任， (**claimapp**) 。
 
 2.  在 [動作]**** 頁面，或在 [claimapp]**** 按一下滑鼠右鍵，選取 [編輯自訂多因素驗證]****。
 

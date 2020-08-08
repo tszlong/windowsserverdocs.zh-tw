@@ -1,20 +1,18 @@
 ---
 title: 在 Active Directory Domain Services 中預先設置叢集電腦物件
 description: 如何在 Active Directory Domain Services 中預先設置叢集電腦物件。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 manager: lizross
-ms.technology: storage-failover-clustering
 ms.date: 05/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: c0d8efc1bdb5a2c3a653afbe61b211f94658101d
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 1f9255b0f3ca85a2c128549fbe9dc2c01c870b1b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181724"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990755"
 ---
 # <a name="prestage-cluster-computer-objects-in-active-directory-domain-services"></a>在 Active Directory Domain Services 中預先設置叢集電腦物件
 
@@ -78,7 +76,7 @@ ms.locfileid: "87181724"
    ![將完全控制授與將要建立叢集的使用者或群組](media/prestage-cluster-adds/granting-full-control-to-the-user-create-the-cluster.png)
 
    **[圖 2]將完全控制授與將建立叢集的使用者或群組**
-6. 選取 [確定]  。
+6. 選取 [確定]。
 
 完成此步驟之後，獲得您授與權限的使用者就可以建立容錯移轉叢集。 不過，如果 CNO 位於 OU，必須等到您完成步驟 3，使用者才能建立需要用戶端存取點的叢集角色。
 
@@ -132,11 +130,11 @@ ms.locfileid: "87181724"
 8. 在 [**選取使用者、電腦、服務帳戶或群組**] 對話方塊中，選取 [**物件類型**]，選取 [**電腦**] 核取方塊，然後選取 **[確定]**。
 9. 在 [**輸入物件名稱來選取**] 下，輸入 CNO 的名稱，選取 [**檢查名稱**]，然後選取 **[確定]**。 如果您收到一則警告訊息，指出您即將新增已停用的物件，請選取 **[確定]**。
 10. 確定已選取 CNO，然後選取 [完全控制]**** 旁邊的 [允許]**** 核取方塊。
-11. 選取 [確定]  。
+11. 選取 [確定]。
 
 容錯移轉叢集的系統管理員現在可以建立含有符合預先設定 VCO 名稱的用戶端存取點的叢集角色，並將資源上線。
 
 ## <a name="more-information"></a>更多資訊
 
-- [容錯移轉叢集](failover-clustering.md)
+- [容錯移轉叢集](./failover-clustering-overview.md)
 - [在 Active Directory 中設定叢集帳戶](configure-ad-accounts.md)
