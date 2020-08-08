@@ -7,12 +7,12 @@ ms.assetid: c4e2f6c7-0364-4bf8-bb66-9af59c0bbd74
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/22/2018
-ms.openlocfilehash: 3156b2ed40415226e094485fba224e7d95a12ca2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 71152234b72a0557ca0d189896826d66c6ce0f49
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87947104"
+ms.locfileid: "87996515"
 ---
 # <a name="manage-certificates-for-software-defined-networking"></a>管理軟體定義網路的憑證
 
@@ -56,7 +56,7 @@ Windows Server 2016 Datacenter 中的 SDN 同時支援自我 \- 簽署和憑證�
 
 #### <a name="multiple-node"></a>多個節點
 
-您可以使用[SelfSignedCertificate](https://technet.microsoft.com/itpro/powershell/windows/pkiclient/new-selfsignedcertificate) Windows PowerShell 命令來建立自我 \- 簽署憑證。
+您可以使用[SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate?view=win10-ps) Windows PowerShell 命令來建立自我 \- 簽署憑證。
 
 **語法**
 
@@ -72,7 +72,7 @@ New-SelfSignedCertificate -KeyUsageProperty All -Provider "Microsoft Strong Cryp
 
 #### <a name="single-node"></a>單一節點
 
-您可以使用[SelfSignedCertificate](https://technet.microsoft.com/itpro/powershell/windows/pkiclient/new-selfsignedcertificate) Windows PowerShell 命令來建立自我 \- 簽署憑證。
+您可以使用[SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate?view=win10-ps) Windows PowerShell 命令來建立自我 \- 簽署憑證。
 
 **語法**
 
