@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 7502233cfd71fe2f3e7d25ff6ba246531233d1ff
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: bb0850923dca2f0749c1f2cb5e787d998e8f03ca
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896207"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992246"
 ---
 # <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>適當地放置網域控制站與站台考量
 
@@ -23,8 +23,8 @@ ms.locfileid: "87896207"
 -   可能需要可寫入的網域控制站。  將讀寫網域控制站放在中央位置，以將延遲降到最低。
 
 如需進一步資訊，請參閱：
--   [應用程式和 RODC 的相容性](https://technet.microsoft.com/library/cc772597.aspx)
--   [Active Directory 服務介面 (ADSI) 和唯讀網域控制站 (RODC) –避免效能問題](https://blogs.technet.microsoft.com/fieldcoding/2012/06/24/active-directory-service-interface-adsi-and-the-read-only-domain-controller-rodc-avoiding-performance-issues/)
+-   [應用程式和 RODC 的相容性](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772597(v=ws.10))
+-   [Active Directory 服務介面 (ADSI) 和唯讀網域控制站 (RODC) –避免效能問題](/archive/blogs/fieldcoding/active-directory-service-interface-adsi-and-the-read-only-domain-controller-rodc-avoiding-performance-issues)
 
 ## <a name="optimize-for-referrals"></a>針對參考優化
 
@@ -54,9 +54,9 @@ ms.locfileid: "87896207"
 
 -   信任網域中的網域控制站會先嘗試在位於相同網站的受信任網域中尋找網域控制站，然後再容錯回復到一般定位器。
 
-    -   如需 DCLocator 運作方式的詳細資訊，請參閱在[最接近的網站中尋找網域控制站](https://technet.microsoft.com/library/cc978016.aspx)。
+    -   如需 DCLocator 運作方式的詳細資訊，請參閱在[最接近的網站中尋找網域控制站](/previous-versions/windows/it-pro/windows-2000-server/cc978016(v=technet.10))。
 
-    -   在受信任網域與信任網域之間融合網站名稱，以反映相同位置中的網域控制站。 請確定子網和 IP 位址對應已適當地連結至兩個樹系中的網站。 如需詳細資訊，請參閱[跨樹系信任的網域定位器](https://blogs.technet.com/b/askds/archive/2008/09/24/domain-locator-across-a-forest-trust.aspx)。
+    -   在受信任網域與信任網域之間融合網站名稱，以反映相同位置中的網域控制站。 請確定子網和 IP 位址對應已適當地連結至兩個樹系中的網站。 如需詳細資訊，請參閱[跨樹系信任的網域定位器](/archive/blogs/askds/domain-locator-across-a-forest-trust)。
 
     -   確定埠已根據 DCLocator 需求開啟，適用于網域控制站位置。 如果網域之間有防火牆存在，請確定已針對所有信任正確設定防火牆。 如果防火牆未開啟，信任的網域控制站仍然會嘗試存取受信任的網域。 如果通訊因任何原因而失敗，信任的網域控制站最終會將要求提供給受信任的網域控制站。 不過，這些時間輸出可能會花費數秒的每個要求，如果傳入要求的數量很高，則可能會耗盡信任網域控制站上的網路埠。 如果應用程式在前景執行緒) 中執行要求，則用戶端可能會在網域控制站上遇到等待時間以擱置執行緒的速度，這可能會轉譯成無回應的應用程式 (。 如需詳細資訊，請參閱[如何設定網域和信任的防火牆](https://support.microsoft.com/kb/179442)。
 

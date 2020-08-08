@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: b1678eadda1232da19c80e648c8b7ecb9c06f64b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 779175a4e1e42bae5f40aa4d4d8495ac7803c655
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896220"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992261"
 ---
 # <a name="ldap-considerations-in-adds-performance-tuning"></a>中的 LDAP 考慮新增效能微調
 
@@ -21,19 +21,19 @@ ms.locfileid: "87896220"
 
 確認 LDAP 查詢符合建立有效率的查詢建議。
 
-MSDN 上有廣泛的檔，說明如何適當地撰寫、結構和分析查詢以用於 Active Directory。 如需詳細資訊，請參閱[建立更有效率的 Microsoft Active Directory 啟用應用程式](https://msdn.microsoft.com/library/ms808539.aspx)。
+MSDN 上有廣泛的檔，說明如何適當地撰寫、結構和分析查詢以用於 Active Directory。 如需詳細資訊，請參閱[建立更有效率的 Microsoft Active Directory 啟用應用程式](/previous-versions/ms808539(v=msdn.10))。
 
 ## <a name="optimize-ldap-page-sizes"></a>優化 LDAP 頁面大小
 
 當傳回具有多個物件的結果以回應用戶端要求時，網域控制站必須將結果集暫時儲存在記憶體中。 增加頁面大小會導致更多的記憶體使用量，而且可能會不必要地將專案保留在快取中。 在此情況下，預設設定是最佳的。 在數個案例中，我們提出了建議來增加頁面大小設定。 我們建議使用預設值，除非明確識別為不足夠。
 
-當查詢有許多結果時，可能會遇到類似查詢同時執行的限制。  這是因為 LDAP 伺服器可能會耗盡稱為「cookie 集區」的全域記憶體區域。  可能需要增加集區的大小，如[如何處理 LDAP 伺服器 cookie](https://technet.microsoft.com/windows-server-docs/identity/ad-ds/manage/how-ldap-server-cookies-are-handled)中所述。
+當查詢有許多結果時，可能會遇到類似查詢同時執行的限制。  這是因為 LDAP 伺服器可能會耗盡稱為「cookie 集區」的全域記憶體區域。  可能需要增加集區的大小，如[如何處理 LDAP 伺服器 cookie](../../../../identity/ad-ds/manage/how-ldap-server-cookies-are-handled.md)中所述。
 
 若要調整這些設定，請參閱[Windows Server 2008 和更新版本的網域控制站只會在 LDAP 回應中傳回5000值](https://support.microsoft.com/kb/2009267)。
 
 ## <a name="determine-whether-to-add-indices"></a>判斷是否要加入索引
 
-在篩選準則中搜尋具有屬性名稱的物件時，索引屬性會很有用。 編制索引可以減少評估篩選時必須造訪的物件數目。 不過，這會降低寫入作業的效能，因為修改或加入對應的屬性時，必須更新索引。 它也會增加目錄資料庫的大小，不過這些優點通常會超過儲存體的成本。 記錄可以用來尋找成本高昂且效率不佳的查詢。 一旦識別出來，請考慮對對應查詢中使用的某些屬性編制索引，以改善搜尋效能。 如需有關 Active Directory 如何搜尋工作的詳細資訊，請參閱[Active Directory 搜尋如何工作](https://technet.microsoft.com/library/cc755809.aspx)。
+在篩選準則中搜尋具有屬性名稱的物件時，索引屬性會很有用。 編制索引可以減少評估篩選時必須造訪的物件數目。 不過，這會降低寫入作業的效能，因為修改或加入對應的屬性時，必須更新索引。 它也會增加目錄資料庫的大小，不過這些優點通常會超過儲存體的成本。 記錄可以用來尋找成本高昂且效率不佳的查詢。 一旦識別出來，請考慮對對應查詢中使用的某些屬性編制索引，以改善搜尋效能。 如需有關 Active Directory 如何搜尋工作的詳細資訊，請參閱[Active Directory 搜尋如何工作](/previous-versions/windows/it-pro/windows-server-2003/cc755809(v=ws.10))。
 
 ### <a name="scenarios-that-benefit-in-adding-indices"></a>可受益于新增索引的案例
 
@@ -54,11 +54,11 @@ MSDN 上有廣泛的檔，說明如何適當地撰寫、結構和分析查詢以
 
 您可以使用下列一或多種方法來偵測這些案例：
 
--   [使用統計資料控制項判斷查詢時間](https://msdn.microsoft.com/library/ms808539.aspx)
+-   [使用統計資料控制項判斷查詢時間](/previous-versions/ms808539(v=msdn.10))
 
--   [追蹤昂貴且效率不佳的搜尋](https://msdn.microsoft.com/library/ms808539.aspx)
+-   [追蹤昂貴且效率不佳的搜尋](/previous-versions/ms808539(v=msdn.10))
 
--   Active Directory 效能監視器中的診斷資料收集器集合工具 ([SPA 的子物： Win2008 中的 AD 資料收集器集合和超過的](https://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx)) 
+-   Active Directory 效能監視器中的診斷資料收集器集合工具 ([SPA 的子物： Win2008 中的 AD 資料收集器集合和超過的](/archive/blogs/askds/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond)) 
 
 -   [Microsoft Server Performance Advisor](../../../server-performance-advisor/microsoft-server-performance-advisor.md)Active Directory Advisor 套件
 
@@ -68,11 +68,11 @@ MSDN 上有廣泛的檔，說明如何適當地撰寫、結構和分析查詢以
 
 -   確定在微調查詢已用盡為選項之後，建立索引是問題的正確解決方案。 適當地調整硬體大小十分重要。 只有在適當的修正是要為屬性編制索引，而不是嘗試模糊處理硬體問題時，才應新增索引。
 
--   索引會增加資料庫的大小，其最小值為要編制索引之屬性的總大小。 因此，可以藉由採用屬性中資料的平均大小，並乘以將填入屬性的物件數目，來評估資料庫成長的估計。 這通常大約是資料庫大小增加1%。 如需詳細資訊，請參閱[資料存放區的運作方式](https://technet.microsoft.com/library/cc772829.aspx)。
+-   索引會增加資料庫的大小，其最小值為要編制索引之屬性的總大小。 因此，可以藉由採用屬性中資料的平均大小，並乘以將填入屬性的物件數目，來評估資料庫成長的估計。 這通常大約是資料庫大小增加1%。 如需詳細資訊，請參閱[資料存放區的運作方式](/previous-versions/windows/it-pro/windows-server-2003/cc772829(v=ws.10))。
 
 -   如果搜尋行為主要是在組織單位層級完成，請考慮編制容器化搜尋的索引。
 
--   元組索引比一般索引大，但估計大小的難度就愈多。 使用一般索引大小估計值作為成長的樓層，最大值為20%。 如需詳細資訊，請參閱[資料存放區的運作方式](https://technet.microsoft.com/library/cc772829.aspx)。
+-   元組索引比一般索引大，但估計大小的難度就愈多。 使用一般索引大小估計值作為成長的樓層，最大值為20%。 如需詳細資訊，請參閱[資料存放區的運作方式](/previous-versions/windows/it-pro/windows-server-2003/cc772829(v=ws.10))。
 
 -   如果搜尋行為主要是在組織單位層級完成，請考慮編制容器化搜尋的索引。
 
@@ -90,11 +90,11 @@ MSDN 上有廣泛的檔，說明如何適當地撰寫、結構和分析查詢以
 
 如需詳細資訊，請參閱下列各項：
 
--   [建立更有效率的 Microsoft Active Directory 啟用應用程式](https://msdn.microsoft.com/library/ms808539.aspx)
+-   [建立更有效率的 Microsoft Active Directory 啟用應用程式](/previous-versions/ms808539(v=msdn.10))
 
--   [在 Active Directory Domain Services 中搜尋](https://msdn.microsoft.com/library/aa746427.aspx)
+-   [在 Active Directory Domain Services 中搜尋](/windows/win32/ad/searching-in-active-directory-domain-services)
 
--   [已編制索引的屬性](https://msdn.microsoft.com/library/windows/desktop/ms677112.aspx)
+-   [已編制索引的屬性](/windows/win32/ad/indexed-attributes)
 
 ## <a name="additional-references"></a>其他參考資料
 

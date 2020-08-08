@@ -6,21 +6,19 @@ ms.author: joflore
 manager: mtillman
 ms.date: 09/08/2017
 ms.topic: article
-ms.prod: windows-server
 ms.assetid: a3a91034-a4da-4ad7-93f8-0cd2ec3e7824
-ms.technology: identity-adds
-ms.openlocfilehash: 0dfb108067bee1a5f276963116e2a72b99f6aec2
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 41e696ffd7339269311a9ccf21e096b48ef37439
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961120"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943431"
 ---
 # <a name="active-directory-domain-services-component-updates"></a>Active Directory 網域服務元件更新
 
 >適用于： Windows Server 2016、Windows Server 2012 R2
 
-本單元介紹目錄服務和身分識別領域中收到小幅更新的元件。  
+本單元介紹目錄服務和身分識別領域中收到小幅更新的元件。
 
 
 | 關於作者 |
@@ -30,34 +28,34 @@ ms.locfileid: "86961120"
 | **參與者** |
 |  **審閱者**   |
 
-> [!NOTE]  
-> 本內容由 Microsoft 客戶支援工程師編寫，適用對象為經驗豐富的系統管理員和系統架構​​師，如果 TechNet 提供的主題已無法滿足您，您要找的是 Windows Server 2012 R2 中功能和解決方案的更深入技術講解，則您是本文的適用對象。 不過，本文未經過相同的編輯階段，因此部分語句也許不如 TechNet 文章那樣洗鍊。  
+> [!NOTE]
+> 本內容由 Microsoft 客戶支援工程師編寫，適用對象為經驗豐富的系統管理員和系統架構​​師，如果 TechNet 提供的主題已無法滿足您，您要找的是 Windows Server 2012 R2 中功能和解決方案的更深入技術講解，則您是本文的適用對象。 不過，本文未經過相同的編輯階段，因此部分語句也許不如 TechNet 文章那樣洗鍊。
 
-### <a name="what-you-will-learn"></a>學習內容  
-完成本單元後，您將能夠：  
+### <a name="what-you-will-learn"></a>學習內容
+完成本單元後，您將能夠：
 
--   說明 Windows Server 2012 R2 中的目錄服務和身分識別技術領域所進行的元件更新。  
+-   說明 Windows Server 2012 R2 中的目錄服務和身分識別技術領域所進行的元件更新。
 
-    -   [SPN 和 UPN 的唯一性](../../../ad-ds/manage/component-updates/SPN-and-UPN-uniqueness.md)  
+    -   [SPN 和 UPN 的唯一性](../../../ad-ds/manage/component-updates/SPN-and-UPN-uniqueness.md)
 
-    -   [Winlogon 自動重新開機登入 &#40;ARSO&#41;](../../../ad-ds/manage/component-updates/Winlogon-Automatic-Restart-Sign-On--ARSO-.md)  
+    -   [Winlogon 自動重新開機登入 &#40;ARSO&#41;](../../../ad-ds/manage/component-updates/Winlogon-Automatic-Restart-Sign-On--ARSO-.md)
 
-    -   [TPM 金鑰證明](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md)  
+    -   [TPM 金鑰證明](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md)
 
-    -   [CA 備份與還原 Windows PowerShell Cmdlet](../../../ad-ds/manage/component-updates/CA-Backup-and-Restore-Windows-PowerShell-cmdlets.md)  
+    -   [CA 備份與還原 Windows PowerShell Cmdlet](../../../ad-ds/manage/component-updates/CA-Backup-and-Restore-Windows-PowerShell-cmdlets.md)
 
-    -   [命令列程序稽核](../../../ad-ds/manage/component-updates/Command-line-process-auditing.md)  
+    -   [命令列程序稽核](../../../ad-ds/manage/component-updates/Command-line-process-auditing.md)
 
-    -   [認證保護和管理](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn408190(v=ws.11))  
+    -   [認證保護和管理](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn408190(v=ws.11))
 
-    -   [目錄服務元件更新](../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md)  
+    -   [目錄服務元件更新](../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md)
 
-        -   [網域與樹系功能等級](../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_FL)  
+        -   [網域與樹系功能等級](../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_FL)
 
-        -   [NTFRS 過時](../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_NTFRS)  
+        -   [NTFRS 過時](../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_NTFRS)
 
-        -   [LDAP 查詢最佳化工具變更](../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_LDAPQuery)  
+        -   [LDAP 查詢最佳化工具變更](../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_LDAPQuery)
 
-        -   [1644 事件改進](../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_1644)  
+        -   [1644 事件改進](../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_1644)
 
-        -   [Active Directory 複寫輸送量改進](../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_ADRepl)  
+        -   [Active Directory 複寫輸送量改進](../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_ADRepl)

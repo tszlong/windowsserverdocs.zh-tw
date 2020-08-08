@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: v-tea; kenbrunf
 author: teresa-motiv
 ms.date: 7/3/2019
-ms.openlocfilehash: 33ae34a953f71739fd909ff5548861c2aebfe170
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 2067f3dd8c07190c7f52eb75229f08e080ae0208
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896309"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992303"
 ---
 # <a name="capacity-planning-for-active-directory-domain-services"></a>Active Directory Domain Services 的容量規劃
 
@@ -43,7 +43,7 @@ ms.locfileid: "87896309"
 
 在本文中，預期會有下列基準需求：
 
-- 讀者已閱讀並熟悉[Windows Server 2012 R2 的效能微調指導方針](/previous-versions//dn529133(v=vs.85))。
+- 讀者已閱讀並熟悉[Windows Server 2012 R2 的效能微調指導方針](/previous-versions/dn529133(v=vs.85))。
 - Windows Server 平臺是以 x64 為基礎的架構。 但是即使您的 Active Directory 環境安裝在 Windows Server 2003 x86 (上，現在已超出支援週期的結尾) 而且具有目錄資訊樹狀結構 (DIT) 大小較少 1.5 GB，而且可以輕鬆地保存在記憶體中，本文中的指導方針仍然適用。
 - 容量規劃是一種持續的程式，您應該定期回顧環境符合預期的程度。
 - 當硬體成本改變時，將會在多個硬體生命週期進行優化。 例如，記憶體會變得較低，每個核心的成本會降低，或不同儲存體選項的價格變更。
@@ -410,7 +410,7 @@ AD DS 的基本存放裝置需求和妥善撰寫之用戶端軟體的一般行�
 
 如先前所述，在規劃整個網站的容量時，其目標是以*N* + 1 容量設計為目標，因此在尖峰期間，某個系統的失敗會允許在合理的品質層級接續服務。 這表示在「*N*」案例中，所有方塊上的負載都應該小於 100% (更好，而在尖峰期間則小於 80% ) 。
 
-此外，如果網站中的應用程式和用戶端使用的是尋找網域控制站的最佳做法 (也就是使用[DsGetDcName](https://docs.microsoft.com/windows/win32/api/dsgetdc/nf-dsgetdc-dsgetdcnamea)函式) ，用戶端應該相對平均分散，因為有任何數目的因素。
+此外，如果網站中的應用程式和用戶端使用的是尋找網域控制站的最佳做法 (也就是使用[DsGetDcName](/windows/win32/api/dsgetdc/nf-dsgetdc-dsgetdcnamea)函式) ，用戶端應該相對平均分散，因為有任何數目的因素。
 
 在下一個範例中，會進行下列假設：
 
@@ -792,7 +792,7 @@ AD DS 的基本存放裝置需求和妥善撰寫之用戶端軟體的一般行�
 
 現在，分析了簡單的設定，下表將示範當儲存子系統中的元件變更或新增時，瓶頸將會發生的位置。
 
-| 注意 | 瓶頸分析 | 磁碟 | 匯流排 | 配接器 | PCI 匯流排 |
+| 附註 | 瓶頸分析 | 磁碟 | 匯流排 | 配接器 | PCI 匯流排 |
 |--|--|--|--|--|--|
 | 這是新增第二個磁片後的網域控制站設定。 磁片設定代表 800 KB/s 的瓶頸。 | 新增1個磁片 (總計 = 2) <p>I/o 是隨機的<p>4 KB 區塊大小<p>10000 RPM HD | 200 i/o 總計<br />800 KB/s 總計。 |  |  |  |
 | 新增7個磁片之後，磁片設定仍然代表 3200 KB/s 的瓶頸。 | **新增7個磁片 (總計 = 8) **  <p>I/o 是隨機的<p>4 KB 區塊大小<p>10000 RPM HD | 800 i/o 總計。<br />3200 KB/s 總計 |  |  |  |
@@ -895,7 +895,7 @@ Ssd 是與主軸型硬碟完全不同的動物。 但這兩個主要的準則仍
 - IOPS 類型可能會有非常不同的數位，視其是否為讀取或寫入而定。 一般來說，AD DS 服務主要是以讀取為主，而不會受到其他應用程式案例的影響。
 - 「寫入耐用」–這是 SSD 資料格最後會磨損的概念。各種製造商會處理這項挑戰不同的 fashions。 至少針對資料庫磁片磁碟機，主要的讀取 i/o 設定檔可讓您 downplaying 這項考慮的重要性，因為資料並不是高度變動。
 
-### <a name="summary"></a>摘要
+### <a name="summary"></a>總結
 
 考慮儲存的其中一種方式是 picturing 的家用管道。 想像資料儲存所在之媒體的 IOPS 是家用的主要清空。 當這種情況變長時 (例如管道中的根) 或 (已折迭或太小) 時，家庭中的所有接收器都會使用太多的水，而不會 (過多的來賓。 這完全類似于共用環境，其中一或多個系統會利用具有相同基礎媒體的 SAN/NAS/iSCSI 上的共用存放裝置。 可以採取不同的方法來解決不同的情況：
 

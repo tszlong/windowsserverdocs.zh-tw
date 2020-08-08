@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 9b45ad16981667eff626278daadbe8b39f5cc5c8
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 1fcc21df93d9963ee83159c1df2fcf918ddbbfba
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896716"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992374"
 ---
 # <a name="processor-power-management-ppm-tuning-for-the-windows-server-balanced-power-plan"></a>處理器電源管理 (PPM) 微調 Windows Server 平衡電源計劃
 
@@ -87,7 +87,7 @@ ms.locfileid: "87896716"
 
 由於參數的數量和複雜度，這可能是一項很具挑戰性的工作，但如果您要尋找特定環境的能源耗用量和工作負載效力之間的最佳取捨，可能值得付出。
 
- 您可以在[處理器電源管理微調](https://msdn.microsoft.com/windows/hardware/gg566941.aspx)中找到完整的可調式 PPM 參數集。 要開始使用的一些最簡單的電源參數可以是：
+ 您可以在[處理器電源管理微調](/previous-versions/windows/hardware/design/dn613983(v=vs.85))中找到完整的可調式 PPM 參數集。 要開始使用的一些最簡單的電源參數可以是：
 
 -   **處理器效能增加閾值和處理器效能增加時間**-較大的值會使效能回應變慢以增加活動
 

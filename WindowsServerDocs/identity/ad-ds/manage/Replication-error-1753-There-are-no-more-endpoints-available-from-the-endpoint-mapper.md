@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: ca7ab368c9e15de15f733070a5bcb06584956500
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 23bab1ff39cf5097f7b6face4886c6be59a7e5d5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961130"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943518"
 ---
 # <a name="replication-error-1753-there-are-no-more-endpoints-available-from-the-endpoint-mapper"></a>複寫錯誤 1753：端點對應表中無更多可用的端點
 
@@ -71,7 +69,7 @@ REPADMIN.EXE 報告複寫嘗試失敗，狀態為1753。
 
 ```
 Default-First-Site-NameCONTOSO-DC1
-DSA Options: IS_GC 
+DSA Options: IS_GC
 Site Options: (none)
 DSA object GUID: b6dc8589-7e00-4a5d-b688-045aef63ec01
 DSA invocationID: b6dc8589-7e00-4a5d-b688-045aef63ec01
@@ -108,36 +106,36 @@ NTDS KCC、NTDS General 或 Microsoft-Windows ActiveDirectory_DomainService 事�
 | --- | --- | --- |
 | 1655 | NTDS 一般 | Active Directory 嘗試與下列通用類別目錄通訊，但嘗試失敗。 |
 | 1925 | NTDS KCC | 嘗試為下列可寫入的目錄磁碟分割建立複寫連結失敗。 |
-| 1265 | NTDS KCC | 知識一致性檢查程式（KCC）嘗試新增下列目錄磁碟分割與來源網域控制站的複製協定失敗。 |
+| 1265 | NTDS KCC | 知識一致性檢查程式 (KCC) 新增下列目錄磁碟分割與來源網域控制站的複寫協定失敗。 |
 
 ## <a name="cause"></a>原因
 
-下列步驟顯示的 RPC 工作流程是從註冊伺服器應用程式開始，並在步驟1中使用 RPC 端點對應程式（EPM）將資料從 RPC 用戶端傳遞至步驟7中的用戶端應用程式。
+下列步驟顯示的 RPC 工作流程是從註冊伺服器應用程式開始，並在步驟1中使用 RPC 端點對應程式 (EPM) ，將資料從 RPC 用戶端傳遞至步驟7中的用戶端應用程式。
 
 ### <a name="adds-rpc-workflow"></a>新增 RPC 工作流程
 
-1. 伺服器應用程式會向 RPC 端點對應程式（EPM）註冊其端點
-1. 用戶端進行 RPC 呼叫（代表使用者、作業系統或應用程式起始的作業）
+1. 伺服器應用程式會使用 (EPM 的 RPC 端點對應程式來註冊其端點) 
+1. 用戶端會代表使用者、作業系統或應用程式起始的作業， (進行 RPC 呼叫) 
 1. 用戶端 RPC 會聯絡目的電腦 EPM，並要求端點完成用戶端呼叫
 1. 伺服器電腦的 EPM 以端點回應
 1. 用戶端 RPC 會與伺服器應用程式聯繫
 1. 伺服器應用程式會執行呼叫，並將結果傳回到用戶端 RPC
 1. 用戶端 RPC 會將結果傳回給用戶端應用程式
 
-失敗1753是由步驟 #3 和 #4 之間的失敗所產生。 具體而言，錯誤1753表示 RPC 用戶端（目的地 DC）能夠透過埠135與 RPC 伺服器（來源 DC）連線，但 RPC 伺服器（來源 DC）上的 EPM 無法找到感關注的 RPC 應用程式，並傳回伺服器端錯誤1753。 出現1753錯誤表示 RPC 用戶端（目的地 DC）從網路上的 RPC 伺服器（AD 複寫來源 DC）收到伺服器端錯誤回應。
+失敗1753是由步驟 #3 和 #4 之間的失敗所產生。 具體而言，錯誤1753表示 RPC 用戶端 (目的地 DC) 能夠透過埠135連線到 RPC 伺服器 (來源 DC) ，但是 RPC 伺服器上的 EPM (來源 DC) 找不到感問題的 RPC 應用程式，並傳回伺服器端錯誤1753。 1753錯誤的存在表示 RPC 用戶端 (目的地 DC) 收到來自 RPC 伺服器的伺服器端錯誤回應， (AD 複寫來源 DC) 透過網路。
 
 1753錯誤的特定根本原因包括：
 
-* 伺服器應用程式永遠不會啟動（也就是不會嘗試在上述「詳細資訊」圖表中執行步驟 #1）。
-* 伺服器應用程式已啟動，但在初始化期間發生一些失敗，導致它無法向 RPC 端點對應程式登錄（亦即，嘗試使用 [詳細資訊] 圖表中的步驟 #1，但失敗）。
-* 伺服器應用程式已啟動，但後續壞掉。 （也就是上述 [詳細資訊] 圖中的步驟 #1 已順利完成，但稍後因為伺服器壞掉）而復原。
-* 伺服器應用程式已手動取消註冊其端點（類似于3但刻意）。 不可能，但包含完整性）。
-* 因為 DNS、WINS 或主機/Lmhosts 檔案中的名稱與 IP 對應錯誤，所以 RPC 用戶端（目的地 DC）已與所需的 RPC 伺服器連線。
+* 伺服器應用程式永遠不會啟動 (也就是不會嘗試) 上述「詳細資訊」圖表中的步驟 #1。
+* 伺服器應用程式已啟動，但在初始化期間發生一些失敗，導致它無法向 RPC 端點對應程式登錄 (也就是嘗試了上述「詳細資訊」圖中的步驟 #1，但) 失敗。
+* 伺服器應用程式已啟動，但後續壞掉。  (也就是上述「詳細資訊」圖中的步驟 #1 已順利完成，但後來因為伺服器壞掉) 而復原。
+* 伺服器應用程式已手動取消註冊其端點 (類似于3但刻意。 不太可能，但包含完整性。 ) 
+* RPC 用戶端 (目的地 DC) 與所需的 RPC 伺服器連線，因為 DNS、WINS 或主機/Lmhosts 檔案中的名稱與 IP 對應錯誤。
 
 錯誤1753不是由下列原因所造成：
 
-* 透過埠135的 RPC 用戶端（目的地 DC）與 RPC 伺服器（來源 DC）之間缺少網路連線
-* 在暫時埠上使用埠135和 RPC 用戶端（目的地 DC）的 RPC 伺服器（來源 DC）之間缺少網路連線能力。
+* RPC 用戶端 (目的地 DC) 與透過埠135的 RPC 伺服器 (來源 DC) 之間缺少網路連線
+* RPC 伺服器 (來源 DC 之間缺少網路連線，) 使用埠135和 RPC 用戶端 (目的地 DC) 透過暫時埠。
 * 密碼不相符，或來源 DC 無法解密 Kerberos 加密封包
 
 ## <a name="resolutions"></a>解決方式
@@ -145,17 +143,17 @@ NTDS KCC、NTDS General 或 Microsoft-Windows ActiveDirectory_DomainService 事�
 確認服務向端點對應程式註冊其服務已啟動
 
 * Windows 2000 和 Windows Server 2003 Dc：確定來源 DC 是以正常模式開機。
-* 針對 Windows Server 2008 或 Windows Server 2008 R2：從來源 DC 的主控台，啟動 [服務管理員] （services.msc），並確認 Active Directory Domain Services 服務正在執行。
+* 針對 Windows Server 2008 或 Windows Server 2008 R2：從來源 DC 的主控台，啟動 [服務管理員] (services.msc) 並確認 Active Directory Domain Services 服務正在執行。
 
-確認 RPC 用戶端（目的地 DC）已連線到預期的 RPC 伺服器（來源 DC）
+確認 RPC 用戶端 (目的地 DC) 連線到預期的 RPC 伺服器 (來源 DC) 
 
 通用 Active Directory 樹系中的所有 Dc 都會在 _msdcs 中註冊網域控制站 CNAME 記錄。 \<forest root domain>DNS 區域，不論其位於樹系中的網域為何。 DC CNAME 記錄是從每個網域控制站的 [NTDS 設定] 物件的 objectGUID 屬性衍生而來。
 
 執行以複寫為基礎的作業時，目的地 DC 會查詢來源 Dc CNAME 記錄的 DNS。 CNAME 記錄包含來源 DC 完整的電腦名稱稱，其可用來透過 DNS 用戶端快取查閱、主機/LMHost 檔查閱、在 DNS 中裝載 A/AAAA 記錄或 WINS 來衍生來源 Dc 的 IP 位址。
 
-在 DNS、WINS、主機和 LMHOST 檔中，過時的 NTDS 設定物件和錯誤的名稱對 IP 對應可能會導致 RPC 用戶端（目的地 DC）連線到錯誤的 RPC 伺服器（來源 DC）。 此外，不正確的名稱對 IP 對應可能會導致 RPC 用戶端（目的地 DC）連接到沒有感興趣之 RPC 伺服器應用程式的電腦（在此案例中為 Active Directory 角色）。 （範例： DC2 的過時主機記錄包含 DC3 或成員電腦的 IP 位址）。
+在 DNS、WINS、主機和 LMHOST 檔中，過時的 NTDS 設定物件和錯誤的名稱對 IP 對應，可能會導致 RPC 用戶端 (目的地 DC) 連接到錯誤的 RPC 伺服器 (來源 DC) 。 此外，不正確的名稱對 IP 對應可能會導致 RPC 用戶端 (目的地 DC) 連接到不會有感興趣之 RPC 伺服器應用程式的電腦 (在此情況下) 安裝 Active Directory 角色。  (範例： DC2 的過時主機記錄包含 DC3 的 IP 位址或) 的成員電腦。
 
-確認存在於目的地 Dc 複本中的來源 DC 的 objectGUID Active Directory 符合儲存在 Active Directory 來源 Dc 複本中的來源 DC objectGUID。 如果有不一致的情況，請在 ntds 設定物件上使用 repadmin/showobjmeta，以查看哪一個對應至來源 DC 的最後一個升級（提示：比較 NTDS 設定物件的日期戳記會針對來源 Dc dcpromo .log 檔案中的最後一個升級日期從/showobjmeta 建立日期）。 您可能必須使用 DCPROMO 的上次修改/建立日期。記錄檔本身）。 如果物件 Guid 不相同，則目的地 DC 可能會有來源 DC 的過時 NTDS 設定物件，其 CNAME 記錄指的是將名稱錯誤的主機記錄指向 IP 對應。
+確認存在於目的地 Dc 複本中的來源 DC 的 objectGUID Active Directory 符合儲存在 Active Directory 來源 Dc 複本中的來源 DC objectGUID。 如果有不一致的情況，請在 ntds 設定物件上使用 repadmin/showobjmeta，以查看哪一個對應至來源 DC 的最後一個升級 (提示：比較 NTDS 設定物件的日期戳記根據來源 Dc dcpromo .log 檔案中的最後一個升級日期，從/showobjmeta 建立日期。 您可能必須使用 DCPROMO 的上次修改/建立日期。記錄檔本身) 。 如果物件 Guid 不相同，則目的地 DC 可能會有來源 DC 的過時 NTDS 設定物件，其 CNAME 記錄指的是將名稱錯誤的主機記錄指向 IP 對應。
 
 在目的地 DC 上，執行 IPCONFIG/ALL 以判斷目的地 DC 用於名稱解析的 DNS 伺服器：
 
@@ -192,10 +190,10 @@ NSLOOKUP -type=hostname <fully qualified computer name of source DC> <secondary 
 
 如果上述測試或網路追蹤未顯示名稱查詢傳回不正確 IP 位址，請考慮主機檔案、LMHOSTS 檔案和 WINS 伺服器中的過時專案。 請注意，DNS 伺服器也可以設定為執行 WINS 的回退名稱解析。
 
-* 確認伺服器應用程式（Active Directory et al）已向 RPC 伺服器（來源 DC）上的端點對應工具註冊
+* 確認伺服器應用程式 (Active Directory et al) 已向 RPC 伺服器 (來源 DC 上的端點對應程式註冊) 
 * Active Directory 混合使用已知且動態註冊的埠。 下表列出 Active Directory 網域控制站所使用的知名埠和通訊協定。
 
-| RPC 伺服器應用程式 | Port | TCP | UDP |
+| RPC 伺服器應用程式 | 連接埠 | TCP | UDP |
 | --- | --- | --- | --- |
 | DNS 伺服器 | 53 | X | X |
 | Kerberos | 88 | X | X |
@@ -209,7 +207,7 @@ NSLOOKUP -type=hostname <fully qualified computer name of source DC> <secondary 
 
 Active Directory 和其他應用程式也會註冊服務，以在 RPC 暫時埠範圍內接收動態指派的埠。 這類 RPC 伺服器應用程式是在 windows 2000 和 windows server 2003 電腦上以動態方式指派的 TCP 5000 1024 埠，以及 windows Server 49152 和 Windows Server 65535 R2 電腦上的2008與2008範圍之間的埠。 複寫所使用的 RPC 埠可以使用[知識庫文章 224196](https://support.microsoft.com/kb/224196)中記載的步驟，在登錄中進行硬式編碼。 當設定為使用硬式編碼埠時，Active Directory 會繼續向 EPM 註冊。
 
-確認相關的 RPC 伺服器應用程式已向 RPC 伺服器上的 RPC 端點對應程式（AD 複寫案例中的來源 DC）註冊自己。
+確認相關的 RPC 伺服器應用程式已向 RPC 伺服器上的 RPC 端點對應程式註冊自己， (在 AD 複寫) 的情況下進行來源 DC。
 
 有數種方式可以完成這項工作，但其中一個方法是使用語法，從來源 DC 的主控台上的系統管理員許可權命令提示字元安裝並執行 PORTQRY：
 
@@ -217,17 +215,17 @@ Active Directory 和其他應用程式也會註冊服務，以在 RPC 暫時埠�
 portquery -n <source DC> -e 135 > file.txt
 ```
 
-在 portqry 輸出中，請注意 ncacn_ip_tcp 通訊協定的「MS NT Directory DRS 介面」（UUID = 351 ...）動態註冊的埠號碼。 下列程式碼片段顯示來自 Windows Server 2008 R2 DC 的範例 portquery 輸出：
+在 portqry 輸出中，請注意 ncacn_ip_tcp 通訊協定的「MS NT Directory DRS 介面」 (UUID = 351 ... ) 所動態註冊的埠號碼。 下列程式碼片段顯示來自 Windows Server 2008 R2 DC 的範例 portquery 輸出：
 
 ```
 UUID: e3514235-4b06-11d1-ab04-00c04fc2dcd2 MS NT Directory DRS Interface
-ncacn_np:CONTOSO-DC01[\pipe\lsass] 
+ncacn_np:CONTOSO-DC01[\pipe\lsass]
 UUID: e3514235-4b06-11d1-ab04-00c04fc2dcd2 MS NT Directory DRS Interface
-ncacn_np:CONTOSO-DC01[\PIPE\protected_storage] 
+ncacn_np:CONTOSO-DC01[\PIPE\protected_storage]
 UUID: e3514235-4b06-11d1-ab04-00c04fc2dcd2 MS NT Directory DRS Interface
-ncacn_ip_tcp:CONTOSO-DC01[49156] 
+ncacn_ip_tcp:CONTOSO-DC01[49156]
 UUID: e3514235-4b06-11d1-ab04-00c04fc2dcd2 MS NT Directory DRS Interface
-ncacn_http:CONTOSO-DC01[49157] 
+ncacn_http:CONTOSO-DC01[49157]
 UUID: e3514235-4b06-11d1-ab04-00c04fc2dcd2 MS NT Directory DRS Interface
 ncacn_http:CONTOSO-DC01[6004]
 ```
@@ -236,13 +234,13 @@ ncacn_http:CONTOSO-DC01[6004]
 
 * 確認來源 DC 在正常模式下開機，且來源 DC 上的 OS 和 DC 角色已完全啟動。
 * 確認 Active Directory 網域服務正在執行。 如果服務目前已停止或未設定預設的啟動值，請重設預設的啟動值，重新開機修改過的 DC，然後重試一次作業。
-* 針對 RPC 用戶端（目的地 DC）和 RPC 伺服器（來源 DC）的 OS 版本，確認 [RPC 服務] 和 [RPC 定位器] 的啟動值和 [服務狀態] 是正確的。 如果服務目前已停止或未設定預設的啟動值，請重設預設的啟動值，重新開機修改過的 DC，然後重試一次作業。
+* 確認 rpc 服務和 RPC 定位器的啟動值和服務狀態是否正確， (目的地 DC) 和 RPC 伺服器 (來源 DC) 。 如果服務目前已停止或未設定預設的啟動值，請重設預設的啟動值，重新開機修改過的 DC，然後重試一次作業。
    * 此外，請確定服務內容符合下表所列的預設設定。
 
-      | 服務 | Windows Server 2003 和更新版本中的預設狀態（啟動類型） | Windows Server 2000 中的預設狀態（啟動類型） |
+      | 服務 | Windows Server 2003 和更新版本中的預設狀態 (啟動類型)  | Windows Server 2000 中 (啟動類型) 的預設狀態 |
       | --- | --- | --- |
-      | 遠端程序呼叫 | 已啟動（自動） | 已啟動（自動） |
-      | 遠端程序呼叫定位器 | Null 或已停止（手動） | 已啟動（自動） |
+      | 遠端程序呼叫 | 已啟動 (自動)  | 已啟動 (自動)  |
+      | 遠端程序呼叫定位器 | Null 或已停止 (手動)  | 已啟動 (自動)  |
 
 * 確認動態埠範圍的大小尚未受到限制。 用來列舉 RPC 埠範圍的 Windows Server 2008 和 Windows Server 2008 R2 NETSH 語法如下所示：
 
@@ -265,7 +263,7 @@ ncacn_http:CONTOSO-DC01[6004]
    ncacn_ip_udp REG_SZ rpcrt4.dll
    ```
 
-## <a name="more-information"></a>詳細資訊
+## <a name="more-information"></a>更多資訊
 
 導致 RPC 錯誤1753與-2146893022 的 IP 對應名稱錯誤範例：目標主體名稱不正確
 
@@ -294,7 +292,7 @@ F# SRC    DEST    Operation
 
 這類不正確主機對 IP 對應可能是因為主機/lmhost 檔中的過時專案、在 DNS 中裝載 A/AAAA 註冊，或是 WINS。
 
-摘要：此範例失敗，因為不正確主機對 IP 對應（在此案例中為主機檔案）導致目的地 DC 解析為沒有執行 Active Directory Domain Services 服務的「來源」 DC （或甚至是已安裝），因此複寫 SPN 尚未註冊，且來源 DC 傳回錯誤1753。 在第二個案例中，不正確主機對 IP 對應（同樣在主機檔案中）導致目的地 DC 連接到已註冊 E351 的 DC .。。複寫 SPN 但該來源的主機名稱和安全性識別與預期的來源 DC 不同，因此嘗試失敗，錯誤為-2146893022：目標主體名稱不正確。
+摘要：此範例失敗，因為在此情況下，主機檔案中的主機對 IP 對應 (無效) 導致目的地 DC 解析為「來源」 DC，但該 DC 未) 執行 (或甚至已安裝的 Active Directory Domain Services 服務，因此複寫 SPN 尚未註冊，且來源 DC 傳回錯誤1753。 在第二個案例中，主機檔案中再次 (不正確主機對 IP 對應) 導致目的地 DC 連接到已註冊 E351 的 DC .。。複寫 SPN 但該來源的主機名稱和安全性識別與預期的來源 DC 不同，因此嘗試失敗，錯誤為-2146893022：目標主體名稱不正確。
 
 ## <a name="related-topics"></a>相關主題
 

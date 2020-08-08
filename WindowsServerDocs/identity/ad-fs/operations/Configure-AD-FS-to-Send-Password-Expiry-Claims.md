@@ -6,19 +6,17 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 2fd2e86e43b6d230a2c8b873ce8267a4e68ca4ed
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: e53c33f1fef30570db46cf658bd1481343e846cd
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962550"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962542"
 ---
 # <a name="configure-ad-fs-to-send-password-expiry-claims"></a>設定 AD FS 傳送密碼到期宣告
 
 
-您可以設定 Active Directory 同盟服務（AD FS），將密碼到期宣告傳送給受 ADFS 保護的信賴憑證者信任（應用程式）。 這些宣告的使用方式取決於應用程式。 例如，若以 Office 365 作為您的信賴憑證者，Exchange 和 Outlook 已實作了相關更新，會在同盟使用者的密碼即將過期時對其發出通知。
+您可以設定 Active Directory 同盟服務 (AD FS) ，將密碼到期宣告傳送給受 ADFS 保護 (應用程式) 的信賴憑證者信任。 這些宣告的使用方式取決於應用程式。 例如，若以 Office 365 作為您的信賴憑證者，Exchange 和 Outlook 已實作了相關更新，會在同盟使用者的密碼即將過期時對其發出通知。
 
 若要設定 AD FS 將密碼到期宣告傳送至信賴憑證者信任，您必須在此信賴憑證者信任中新增下列宣告規則：
 

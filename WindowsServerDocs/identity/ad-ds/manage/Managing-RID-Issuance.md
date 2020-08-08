@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 0451917da46c94c9c637d1bb26d68e0c33d65be4
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 4d3e242bf151650144f8350a4665196672425530
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518975"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943602"
 ---
 # <a name="managing-rid-issuance"></a>管理 RID 發行
 
@@ -243,7 +241,7 @@ RID 發行的所有記錄都在系統事件記錄檔的來源 Directory-Services
 
 3. 傳回的錯誤是否明確提及 RID，但其他方面卻不明確？ 例如，「 Windows 無法建立物件，因為目錄服務無法配置相關的識別元。 」
 
-    1. 檢查網域控制站上的系統事件記錄檔，以取得[Rid 集區要求](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee406152(v=ws.10))（16642、16643、16644、16645、16656）中詳述的「舊版」（Windows Server 2012 之前） rid 事件。
+    1. 檢查網域控制站上的系統事件記錄檔中是否有「舊版」 2012 () rid[集區要求](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee406152(v=ws.10))中詳述的 rid 事件 (16642、16643、16644、16645、16656) 。
 
     2. 檢查網域控制站上的系統事件與 RID 主機是否有詳細記載於本主題下方的新區塊指標事件 (16655、16656、16657)。
 

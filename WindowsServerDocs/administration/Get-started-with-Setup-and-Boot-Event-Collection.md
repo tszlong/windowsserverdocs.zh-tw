@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.assetid: fc239aec-e719-47ea-92fc-d82a7247b3f8
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: e5e18ed5f5cc4cba319042f1a5da84acae8e5fd5
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e5275937e12542e16c40273d69d9684d72a4ee82
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879536"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992443"
 ---
 # <a name="get-started-with-setup-and-boot-event-collection"></a>開始使用安裝與開機事件集合
 
@@ -130,9 +130,9 @@ ms.locfileid: "87879536"
 
 1.  在目標電腦上，啟動 Regedit.exe 並尋找此登錄機碼：
 
-    **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\AutoLogger**. 各種記錄工作階段會列為此機碼底下的子機碼。 **\[Setup Platform\]**、**\[NT Kernel Logger\]** 和 **\[Microsoft-Windows-Setup\]** 都可能選擇來與「安裝與開機事件集合」搭配使用，但建議的選項是 **\[EventLog-System\]**。 這些機碼在[設定和啟動自動記錄工具工作階段](https://msdn.microsoft.com/library/windows/desktop/aa363687(v=vs.85).aspx)中有詳細說明。
+    **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\AutoLogger**. 各種記錄工作階段會列為此機碼底下的子機碼。 **\[Setup Platform\]**、**\[NT Kernel Logger\]** 和 **\[Microsoft-Windows-Setup\]** 都可能選擇來與「安裝與開機事件集合」搭配使用，但建議的選項是 **\[EventLog-System\]**。 這些機碼在[設定和啟動自動記錄工具工作階段](/windows/win32/etw/configuring-and-starting-an-autologger-session)中有詳細說明。
 
-2.  在 EventLog-System 機碼中，將 **LogFileMode** 的值從 **0x10000180** 變更為 **0x10080180**。 如需有關這些設定詳細資料的詳細資料，請參閱[記錄模式常數](https://msdn.microsoft.com/library/windows/desktop/aa364080(v=vs.85).aspx)。
+2.  在 EventLog-System 機碼中，將 **LogFileMode** 的值從 **0x10000180** 變更為 **0x10080180**。 如需有關這些設定詳細資料的詳細資料，請參閱[記錄模式常數](/windows/win32/etw/logging-mode-constants)。
 
 3.  或者，您也可以啟用轉送錯誤檢查資料給收集器電腦的功能。 若要這樣做，請尋找登錄機碼 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager，並建立值為 **0x1** 的 **Debug Print Filter** 機碼。
 
@@ -156,7 +156,7 @@ ms.locfileid: "87879536"
 ### <a name="validate-target-computer-configuration"></a>驗證目標電腦設定
 若要檢查目標電腦上的設定，請開啟提升權限的命令提示字元並執行 **bcdedit /enum**。 完成此命令後，接著執行 **bcdedit /eventsettings**。 您可以仔細檢查下列值：
 
--   Key
+-   機碼
 
 -   Debugtype = NET
 
@@ -276,7 +276,7 @@ Nano 伺服器提供的基本介面有時使其發生的問題難以診斷。 �
 
 ### <a name="to-configure-nano-server-as-a-target-computer"></a>若要將 Nano 伺服器設定為目標電腦
 
-1. 建立基本 Nano 伺服器映像。 如需詳細資訊，請參閱[開始使用 Nano 伺服器](https://technet.microsoft.com/library/mt126167.aspx)。
+1. 建立基本 Nano 伺服器映像。 如需詳細資訊，請參閱[開始使用 Nano 伺服器](../get-started/getting-started-with-nano-server.md)。
 
 2. 如本主題的設定收集器電腦一節所述，設定收集器電腦。
 
@@ -286,7 +286,7 @@ Nano 伺服器提供的基本介面有時使其發生的問題難以診斷。 �
 
     2. 以較高的許可權啟動 Windows PowerShell 主控台，然後執行 `Import-Module BootEventCollector` 。
 
-    3. 更新 Nano Server VHD 登錄以啟用自動記錄工具。 若要這樣做，請執行 `Enable-SbecAutoLogger -Path C:\NanoServer\Workloads\IncludingWorkloads.vhd`。 這會新增最常見安裝與開機事件的基本清單；您可以在[控制事件追蹤工作階段](https://msdn.microsoft.com/library/windows/desktop/aa363694(v=vs.85).aspx)上研究其他事件。
+    3. 更新 Nano Server VHD 登錄以啟用自動記錄工具。 若要這樣做，請執行 `Enable-SbecAutoLogger -Path C:\NanoServer\Workloads\IncludingWorkloads.vhd`。 這會新增最常見安裝與開機事件的基本清單；您可以在[控制事件追蹤工作階段](/windows/win32/etw/controlling-event-tracing-sessions)上研究其他事件。
 
 4. 更新 Nano 伺服器映像中的 BCD 設定以啟用事件旗標，並設定收集器電腦以確保診斷事件傳送至正確的伺服器。 記下您在收集器 Active.XML 檔案中設定的收集器電腦 IPv4 位址、TCP 連接埠及加密金鑰 (已於本主題其他位置述及) 。 在 Windows PowerShell 主控台中，以較高的許可權使用此命令：`Enable-SbecBcd -Path C:\NanoServer\Workloads\IncludingWorkloads.vhd -CollectorIp 192.168.100.1 -CollectorPort 50000 -Key a.b.c.d`
 

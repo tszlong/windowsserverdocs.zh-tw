@@ -2,31 +2,29 @@
 title: 管理 NPSs
 description: 本主題提供在 Windows Server 2016 中管理 Nps 之程式的連結。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 6005dc27-f49e-427f-92f7-b0e558ffe3ff
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 89b0ff250d118b47b16996018ffb0e973072f6e7
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: fd03e794e4ba6efb5c68b0ddce50732b490a4c2d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315939"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952227"
 ---
 # <a name="manage-npss"></a>管理 NPSs
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 您可以使用本節中的主題來管理 Nps。
 
 >[!NOTE]
 >如需其他網路原則伺服器檔，您可以使用下列程式庫區段。
->- [網路原則伺服器的消費者入門](nps-getstart-top.md)
->- [部署網路原則伺服器](nps-deploy.md) 
+>- [開始使用網路原則伺服器](nps-getstart-top.md)
+>- [部署網路原則伺服器](nps-deploy.md)
 
-本節包含下列主題。
+此章節包含下列主題。
 
 - [設定多重主目錄電腦上的 NPS](nps-multihomed-configure.md)
 - [設定 NPS UDP 埠資訊](nps-udp-ports-configure.md)

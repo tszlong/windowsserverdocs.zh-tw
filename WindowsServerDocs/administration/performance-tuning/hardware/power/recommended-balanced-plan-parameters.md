@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 559f274bcfafdd6c89cf7aea69b3df14f68130c1
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 4f733eea9ffae00421a58881b7ffc8deeaf7c785
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896709"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992276"
 ---
 # <a name="recommended-balanced-power-plan-parameters-for-workloads-requiring-quick-response-times"></a>針對需要快速回應時間的工作負載，建議的平衡電源計劃參數
 
@@ -67,4 +67,4 @@ Powercfg -setactive scheme_balanced
 - [伺服器硬體電源的考量](../power.md)
 - [電源與效能調整](power-performance-tuning.md)
 - [處理器電源管理](processor-power-management-tuning.md)
-- [容錯移轉叢集](https://technet.microsoft.com/library/cc725923.aspx)
+- [容錯移轉叢集](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc725923(v=ws.10))

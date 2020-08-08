@@ -1,26 +1,24 @@
 ---
 title: 在 vSwitch 中接收區段聯合 (RSC)
-description: VSwitch 中的接收區段聯合（RSC）是 Windows Server 2019 和 Windows 10 2018 年10月更新中的一項功能，可將多個 TCP 區段結合成較少但較大的區段，以協助降低主機 CPU 使用率並增加虛擬工作負載的輸送量。 較少的處理、大型區段（結合）比處理許多小型區段更有效率。
+description: 在 vSwitch 中 (RSC) 的接收區段聯合是 Windows Server 2019 和 Windows 10 2018 年10月更新中的一項功能，可將多個 TCP 區段結合成較少但較大的區段，以協助降低主機 CPU 使用率並增加虛擬工作負載的輸送量。 較少的處理、大型區段 (結合) 比處理許多小型區段更有效率。
 manager: dougkim
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.author: dacuo
 author: dcuomo
 ms.date: 09/07/2018
-ms.openlocfilehash: e7db6656bd9331e5cc6c2deaee143b3602ef1239
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 26f4a5fc028ebe134e6eff8ff22c348d52ba3f90
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181814"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962042"
 ---
 # <a name="rsc-in-the-vswitch"></a>VSwitch 中的 RSC
 >適用於：Windows Server 2019
 
-VSwitch 中的接收區段聯合（RSC）是 Windows Server 2019 和 Windows 10 2018 年10月更新中的一項功能，可將多個 TCP 區段結合成較少但較大的區段，以協助降低主機 CPU 使用率並增加虛擬工作負載的輸送量。 較少的處理、大型區段（結合）比處理許多小型區段更有效率。
+在 vSwitch 中 (RSC) 的接收區段聯合是 Windows Server 2019 和 Windows 10 2018 年10月更新中的一項功能，可將多個 TCP 區段結合成較少但較大的區段，以協助降低主機 CPU 使用率並增加虛擬工作負載的輸送量。 較少的處理、大型區段 (結合) 比處理許多小型區段更有效率。
 
-Windows Server 2012 和更新版本包含硬體專用卸載版本（實作為實體網路介面卡），這項技術也稱為接收區段聯合。 這個卸載版的 RSC 仍然可以在較新版本的 Windows 中使用。 不過，它與虛擬工作負載不相容，一旦實體網路介面卡連接到 vSwitch 之後，就會停用它。 如需僅限硬體版本的 RSC 的詳細資訊，請參閱[接收區段聯合（RSC）](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh997024(v=ws.11))。
+Windows Server 2012 和更新版本包含僅限硬體卸載版本， (實作為技術的實體網路介面卡) （也稱為接收區段聯合）。 這個卸載版的 RSC 仍然可以在較新版本的 Windows 中使用。 不過，它與虛擬工作負載不相容，一旦實體網路介面卡連接到 vSwitch 之後，就會停用它。 如需僅限硬體版本的 RSC 的詳細資訊，請參閱[ (rsc) 的接收區段](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh997024(v=ws.11))聯合。
 
 ## <a name="scenarios-that-benefit-from-rsc-in-the-vswitch"></a>在 vSwitch 中受益于 RSC 的案例
 
@@ -34,7 +32,7 @@ Windows Server 2012 和更新版本包含硬體專用卸載版本（實作為實
 
     -   Hyper-V 主機
 
-    -   儲存空間直接存取
+    -   儲存空間 Direct
 
 -   Hyper-v 來賓虛擬 Nic
 

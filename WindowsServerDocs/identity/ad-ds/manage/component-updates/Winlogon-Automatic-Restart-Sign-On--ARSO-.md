@@ -1,6 +1,6 @@
 ---
 ms.assetid: cb834273-828a-4141-9387-37dd8270e932
-title: Winlogon 自動重新開機登入（ARSO）
+title: 'Winlogon 自動重新開機登入 (ARSO) '
 description: Windows 自動重新開機登入如何讓您的使用者更具生產力。
 author: MicrosoftGuyJFlo
 ms.author: joflore
@@ -8,16 +8,14 @@ manager: mtillman
 ms.reviewer: cahick
 ms.date: 08/20/2019
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 68232d0b8ab6f4b7330b746657fc63e30a3c2e74
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 711a3fc22977d7aa9751c8e200524f4cd295110b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518826"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943305"
 ---
-# <a name="winlogon-automatic-restart-sign-on-arso"></a>Winlogon 自動重新開機登入（ARSO）
+# <a name="winlogon-automatic-restart-sign-on-arso"></a>Winlogon 自動重新開機登入 (ARSO) 
 
 在 Windows Update 期間，必須進行使用者特定進程，才能完成更新。 這些進程需要使用者登入其裝置。 在起始更新後的第一次登入時，使用者必須等到這些使用者特定的進程完成後，才能開始使用其裝置。
 
@@ -25,7 +23,7 @@ ms.locfileid: "87518826"
 
 當 Windows Update 起始自動重新開機時，ARSO 會將目前登入之使用者的衍生認證解壓縮，並將其保存在磁片中，並為使用者設定自動登入。 Windows Update 以 TCB 許可權執行為系統時，將會起始 RPC 呼叫來進行此動作。
 
-在最後 Windows Update 重新開機之後，使用者會自動透過自動登入機制登入，而使用者的會話會以保存的秘密解除凍結。 此外，裝置會被鎖定，以保護使用者的會話。 鎖定會透過 Winlogon 起始，而認證管理則是由本地安全機構（LSA）來完成。 成功 ARSO 設定和登入時，會立即從磁片刪除已儲存的認證。
+在最後 Windows Update 重新開機之後，使用者會自動透過自動登入機制登入，而使用者的會話會以保存的秘密解除凍結。 此外，裝置會被鎖定，以保護使用者的會話。 鎖定會透過 Winlogon 起始，而認證管理則是由本地安全機構 (LSA) 進行。 成功 ARSO 設定和登入時，會立即從磁片刪除已儲存的認證。
 
 藉由在主控台上自動登入和鎖定使用者，Windows Update 可以在使用者回到裝置之前，先完成使用者特定的處理常式。 如此一來，使用者就可以立即開始使用其裝置。
 
@@ -74,8 +72,8 @@ ARSO 會以不同方式來處理非受控和受管理的裝置。 若為未受�
 
 | 值名稱 | 類型 | 資料 |
 | --- | --- | --- |
-| DisableAutomaticRestartSignOn | DWORD | 0（啟用 ARSO） |
-|   |   | 1（停用 ARSO） |
+| DisableAutomaticRestartSignOn | DWORD | 0 (啟用 ARSO)  |
+|   |   | 1 (停用 ARSO)  |
 
 **原則登錄位置：** HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
 
@@ -115,8 +113,8 @@ ARSO 會以不同方式來處理非受控和受管理的裝置。 若為未受�
 
 | 值名稱 | 類型 | 資料 |
 | --- | --- | --- |
-| AutomaticRestartSignOnConfig | DWORD | 0（啟用 ARSO （如果安全）） |
-|   |   | 1（啟用一律為 ARSO） |
+| AutomaticRestartSignOnConfig | DWORD | 0 (在安全) 時啟用 ARSO |
+|   |   | 1 (啟用 ARSO 一律)  |
 
 **原則登錄位置：** HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
 
@@ -144,11 +142,11 @@ ARSO 會以不同方式來處理非受控和受管理的裝置。 若為未受�
 
 ### <a name="user-must-change-password-at-next-login"></a>使用者必須在下次登入時變更密碼
 
-使用者登入可以在下次登入時需要密碼變更時進入封鎖狀態。  在大部分情況下，您可以在重新開機之前偵測到此情況，但不是全部（例如，在關機和下一次登入時都可以達到密碼到期。
+使用者登入可以在下次登入時需要密碼變更時進入封鎖狀態。  在大部分情況下，您可以在重新開機前偵測到這種情況，但並非所有 (例如，關閉和下一次登入時都可以達到密碼到期。
 
 ### <a name="user-account-disabled"></a>使用者帳戶已停用
 
-即使停用了現有的使用者會話，也可以加以維護。  在大部分情況下，可在本機偵測到已停用帳戶的重新開機，視 gp 而定，網域帳戶可能不適用（某些網域快取的登入案例即使在 DC 上已停用帳戶也能正常執行）。
+即使停用了現有的使用者會話，也可以加以維護。  在大部分情況下，可以在本機偵測到已停用之帳戶的重新開機，視 gp 而定，可能不是網域帳戶 (某些網域快取的登入案例即使在 DC) 上已停用帳戶也能正常執行。
 
 ### <a name="logon-hours-and-parental-controls"></a>登入時數和家長監護
 
@@ -162,8 +160,8 @@ ARSO 會以不同方式來處理非受控和受管理的裝置。 若為未受�
 |--|--|--|--|
 | 本機帳戶-是 | 本機帳戶-是 | 本機帳戶-否 | 本機帳戶-否 |
 | MSA 帳戶-是 | MSA 帳戶-是 | MSA 帳戶-否 | MSA 帳戶-否 |
-| Azure AD 加入的帳戶-是 | Azure AD 加入的帳戶-是 | Azure AD 加入的帳戶-是（如果混合式） | Azure AD 加入的帳戶-是 |
-| 已加入網域的帳戶-是 | 已加入網域的帳戶-是 | 已加入網域的帳戶-是 | 已加入網域的帳戶-是（如果混合式） |
+| Azure AD 加入的帳戶-是 | Azure AD 加入的帳戶-是 | Azure AD 加入的帳戶-是 (如果混合式)  | Azure AD 加入的帳戶-是 |
+| 已加入網域的帳戶-是 | 已加入網域的帳戶-是 | 已加入網域的帳戶-是 | 已加入網域的帳戶-是混合式) 的 ( |
 
 ### <a name="credential-guard-interaction"></a>Credential Guard 互動
 

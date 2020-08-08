@@ -1,29 +1,27 @@
 ---
 title: 在 Azure 虛擬機器上安裝 Active Directory Domain Services
-description: 如何在 Azure 虛擬機器上的虛擬機器（VM）上建立新的 Active Directory 樹系。
+description: 如何在 Azure 虛擬機器上 (VM) 上的虛擬機器上建立新的 Active Directory 樹系。
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
 ms.date: 04/11/2019
-ms.technology: identity-adds
 ms.topic: article
-ms.prod: windows-server
-ms.openlocfilehash: a429ae3fed8694b5d9f05722b9f9d580b6b27ae6
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 7272ddc3693816974df528e6c5e10671bbe4ffb7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962980"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943773"
 ---
 # <a name="install-a-new-active-directory-forest-using-azure-cli"></a>使用 Azure CLI 安裝新的 Active Directory 樹系
 
-AD DS 可以在 Azure 虛擬機器（VM）上執行，就像在許多內部部署實例中執行一樣。 本文會逐步引導您在使用 Azure 入口網站和 Azure CLI 的 Azure 可用性設定組中，將新的 AD DS 樹系部署在兩個新的網域控制站上。 許多客戶在建立實驗室或準備在 Azure 中部署網域控制站時，會發現此指引很有説明。
+AD DS 可以在 Azure 虛擬機器 (VM) 上執行，其方式與在許多內部部署實例中執行的相同。 本文會逐步引導您在使用 Azure 入口網站和 Azure CLI 的 Azure 可用性設定組中，將新的 AD DS 樹系部署在兩個新的網域控制站上。 許多客戶在建立實驗室或準備在 Azure 中部署網域控制站時，會發現此指引很有説明。
 
-## <a name="components"></a>單元
+## <a name="components"></a>元件
 
 * 用來將所有專案放入其中的資源群組。
 * [Azure 虛擬網路](/azure/virtual-network/virtual-networks-overview.md)、子網、網路安全性群組和規則，以允許對 VM 的 RDP 存取。
-* Azure 虛擬機器[可用性設定組](/azure/virtual-machines/windows/regions-and-availability#availability-sets)，可將兩個 Active Directory Domain Services （AD DS）網域控制站放在中。
+* Azure 虛擬機器[可用性設定組](/azure/virtual-machines/windows/regions-and-availability#availability-sets)，可將兩個 Active Directory Domain Services (AD DS) 網域控制站。
 * 要執行 AD DS 和 DNS 的兩部 Azure 虛擬機器。
 
 ### <a name="items-that-are-not-covered"></a>未涵蓋的專案
@@ -176,13 +174,13 @@ az vm create \
    * 建立新的簡單磁片區並指派磁碟機號 F：如有需要，您可以提供磁片區標籤
 * 使用伺服器管理員安裝 Active Directory Domain Services
 * 將網域控制站升階為新樹系中的第一個
-   * 在 [網域控制站選項] 頁面上，將 [網域名稱系統（DNS）伺服器] 和 [通用類別目錄（GC）] 保持核取狀態
+   * 在 [網域控制站選項] 頁面上，保留網域名稱系統 (DNS) 伺服器和通用類別目錄 (GC) 已核取
    * 根據您的組織需求指定目錄服務還原模式密碼
    * 變更 C：的路徑，使其指向我們在提示輸入其位置時所建立的 F：磁片磁碟機
    * 檢查在嚮導中所做的選擇，然後選擇 **[下一步]**
 
 > [!NOTE]
-> 必要條件檢查會警告您實體網路介面卡未指派靜態 IP 位址，您可以放心地忽略此情況，因為 Azure 虛擬網路中指派了靜態 ip。
+> 必要條件檢查會警告您，實體網路介面卡沒有指派的靜態 IP 位址 () es，您可以放心地忽略這種情況，因為 Azure 虛擬網路中指派了靜態 ip。
 
 * 選擇 [**安裝**]
 
@@ -203,18 +201,18 @@ az vm create \
    * 開啟 [開始] 功能表，然後流覽至 [**電腦管理**]
    * 流覽至**儲存體**  >  **磁片管理**
    * 將磁片初始化為 MBR
-   * 建立新的簡單磁片區，並指派磁碟機號 F：（您可以視需要提供磁片區標籤）
+   * 建立新的簡單磁片區，並指派磁碟機號 F： (您可以在需要時提供磁片區標籤) 
 * 使用伺服器管理員安裝 Active Directory Domain Services
 * 升級網域控制站
    * 將網域控制站新增至現有的網域-CONTOSO.com
    * 提供認證以執行操作
    * 變更 C：的路徑，使其指向我們在提示輸入其位置時所建立的 F：磁片磁碟機
-   * 確定已在 [網域控制站選項] 頁面上核取 [網域名稱系統（DNS）伺服器] 和 [通用類別目錄（GC）]
+   * 確定已在網域控制站的 [選項] 頁面上檢查網域名稱系統 (DNS) 伺服器和通用類別目錄 (GC) 
    * 根據您的組織需求指定目錄服務還原模式密碼
    * 檢查在嚮導中所做的選擇，然後選擇 **[下一步]**
 
 > [!NOTE]
-> 必要條件檢查會警告您實體網路介面卡未指派靜態 IP 位址。 您可以放心地忽略此情況，因為 Azure 虛擬網路中已指派靜態 Ip。
+> 必要條件檢查會警告您，實體網路介面卡未指派靜態 IP 位址 (es) 。 您可以放心地忽略此情況，因為 Azure 虛擬網路中已指派靜態 Ip。
 
 * 選擇 [**安裝**]
 
@@ -238,7 +236,7 @@ az vm create \
 
 ### <a name="remove-using-the-azure-portal"></a>使用 Azure 入口網站移除
 
-從 Azure 入口網站中，流覽至 [**資源群組**]，然後選擇我們所建立的資源群組（在此範例中為 ADonAzureVMs），然後選取 [**刪除資源群組**]。 在刪除資源群組內包含的所有資源之前，進程會要求確認。
+從 [Azure 入口網站] 中，流覽至 [**資源群組**]，然後選擇我們在此範例中建立的資源群組 (ADonAzureVMs) ，然後選取 [**刪除資源群組**]。 在刪除資源群組內包含的所有資源之前，進程會要求確認。
 
 ### <a name="remove-using-the-azure-cli"></a>使用 Azure CLI 移除
 
@@ -248,7 +246,7 @@ az vm create \
 az group delete --name ADonAzureVMs
 ```
 
-## <a name="next-steps"></a>接下來的步驟
+## <a name="next-steps"></a>後續步驟
 
 * [安全的虛擬化 Active Directory Domain Services (AD DS)](../../Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)
 * [Azure AD Connect](/azure/active-directory/connect/active-directory-aadconnect-get-started-express)

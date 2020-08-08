@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 5e758e2335d8a5b536b0f0db9626dc88337de631
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 535c1e2ccff14f01f015b67fd0fc2c6be4a04729
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896733"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992407"
 ---
 # <a name="power-and-performance-tuning"></a>電源與效能調整
 
@@ -63,7 +63,7 @@ Windows Server 2016 已針對各種客戶工作負載的最小效能影響，優
 
 縮短計時器滴答率、缺少電源管理支援的驅動程式，以及過多的 CPU 使用率，是**powercfg/energy**命令所偵測到的一些行為問題。 這項工具提供簡單的方式來識別並修正電源管理問題，可能會導致大型資料中心的大量成本節約。
 
-如需 PowerCfg.exe 的詳細資訊，請參閱[使用 PowerCfg 評估系統能源效率](https://msdn.microsoft.com/windows/hardware/gg463250.aspx)。
+如需 PowerCfg.exe 的詳細資訊，請參閱[使用 PowerCfg 評估系統能源效率](/previous-versions/windows/hardware/download/dn550976(v=vs.85))。
 
 ## <a name="using-power-plans-in-windows-server"></a>在 Windows Server 中使用電源計劃
 
@@ -78,7 +78,7 @@ Windows Server 2016 有三個內建的電源計劃，是為了符合不同的商
 
 這些電源計劃存在於 Windows 中，可用於替代目前的 (AC) ，並將目前的 (DC) 電源系統，但我們會假設伺服器一律使用 AC 電源。
 
-如需電源計劃和電源原則設定的詳細資訊，請參閱[Windows 中的電源原則設定和部署](https://msdn.microsoft.com/windows/hardware/gg463243.aspx)。
+如需電源計劃和電源原則設定的詳細資訊，請參閱[Windows 中的電源原則設定和部署](/previous-versions/windows/hardware/design/dn642106(v=vs.85))。
 
 > [!Note]
 > 有些伺服器製造商有自己的電源管理選項可透過 BIOS 設定來取得。 如果作業系統無法控制電源管理，變更 Windows 中的電源計劃將不會影響系統電源和效能。
@@ -87,7 +87,7 @@ Windows Server 2016 有三個內建的電源計劃，是為了符合不同的商
 
 每個電源計劃都代表許多基礎電源管理參數的組合。 內建方案是三個建議設定的集合，其中涵蓋各種不同的工作負載和案例。 不過，我們認為這些計畫不會符合每個客戶的需求。
 
-下列各節將說明如何調整某些特定處理器電源管理參數，以符合三個內建計畫未解決的目標。 如果您需要瞭解更多的電源參數陣列，請參閱[Windows 中的電源原則設定和部署](https://msdn.microsoft.com/windows/hardware/gg463243.aspx)。
+下列各節將說明如何調整某些特定處理器電源管理參數，以符合三個內建計畫未解決的目標。 如果您需要瞭解更多的電源參數陣列，請參閱[Windows 中的電源原則設定和部署](/previous-versions/windows/hardware/design/dn642106(v=vs.85))。
 
 ## <a name="processor-performance-boost-mode"></a>處理器效能提升模式
 
@@ -111,8 +111,8 @@ Intel Turbo 加速和 AMD Turbo CORE 技術是一種功能，可讓處理器在�
 | **名稱** | **P-以狀態為基礎的行為** | **CPPC 行為** |
 |--------------------------|------------------------|-------------------|
 | 0 (停用)  | 已停用 | 已停用 |
-| 已啟用1個 ()  | 啟用 | 有效率的啟用 |
-| 2 (積極的)  | 啟用 | 主動 |
+| 已啟用1個 ()  | 已啟用 | 有效率的啟用 |
+| 2 (積極的)  | 已啟用 | 主動 |
 | 3 (有效率的啟用)  | 有效率 | 有效率的啟用 |
 | 4 (有效率的積極)  | 有效率 | 主動 |
 
