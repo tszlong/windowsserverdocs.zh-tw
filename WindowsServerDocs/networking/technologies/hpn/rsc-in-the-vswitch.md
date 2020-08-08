@@ -6,12 +6,12 @@ ms.topic: article
 ms.author: dacuo
 author: dcuomo
 ms.date: 09/07/2018
-ms.openlocfilehash: 26f4a5fc028ebe134e6eff8ff22c348d52ba3f90
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 66f0f72dc6a577030ad43103e5f9d08a9458e64d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962042"
+ms.locfileid: "87995097"
 ---
 # <a name="rsc-in-the-vswitch"></a>VSwitch 中的 RSC
 >適用於：Windows Server 2019
@@ -77,4 +77,4 @@ Set-VMSwitch -Name vSwitchName -EnableSoftwareRsc $false
 ```PowerShell
 Set-VMSwitch -Name vSwitchName -EnableSoftwareRsc $True
 ```
-如需詳細資訊，請參閱[設定-VMSwitch](https://docs.microsoft.com/powershell/module/hyper-v/set-vmswitch?view=win10-ps)。
+如需詳細資訊，請參閱[設定-VMSwitch](/powershell/module/hyper-v/set-vmswitch?view=win10-ps)。

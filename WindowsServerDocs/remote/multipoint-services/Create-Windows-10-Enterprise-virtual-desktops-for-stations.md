@@ -7,12 +7,12 @@ ms.assetid: 63f08b5b-c735-41f4-b6c8-411eff85a4ab
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: fb36cb13f9a78ae028f1217dd667a106a81e5c94
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9f41b203ff14923c991f56b7166b37200bee6910
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87937310"
+ms.locfileid: "87994973"
 ---
 # <a name="create-windows-10-enterprise-virtual-desktops-for-stations"></a>建立站台的 Windows 10 企業版虛擬桌面
 MultiPoint 服務中的這項選擇性設定主要適用于基本應用程式需要每個使用者自己的用戶端作業系統實例的情況。 範例包括無法安裝在 Windows Server 上的應用程式，以及不會在同一部主機電腦上執行多個實例的應用程式。
@@ -31,7 +31,7 @@ MultiPoint 服務中的這項選擇性設定主要適用于基本應用程式需
 | 圖形 | DX11 |
 | BIOS | 設定為啟用虛擬化的 BIOS CPU 設定-第二層位址轉譯 (SLAT)  |
 
--   **工作站**-設定 MultiPoint 服務系統的工作站。 如需詳細資訊，請參閱[將其他工作站附加至 MultiPoint 服務](Attach-additional-stations-to-your-MultiPoint-services-computer.md)。
+-   **工作站**-設定 MultiPoint 服務系統的工作站。 如需詳細資訊，請參閱[將其他工作站附加至 MultiPoint 服務](./multipoint-attach-additional-stations.md)。
 
 -   **網域**-在網域環境中，Windows MultiPoint Server 電腦已加入網域，而且網域使用者已新增至 MultiPoint 服務主機作業系統上的本機系統管理員群組。
 

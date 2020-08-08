@@ -6,19 +6,19 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: ad4275bf7b6231692171209b19c4c60190e30126
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ad3184dbe43cfa108aa1b178421102880b3ef4d7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87942974"
+ms.locfileid: "87994984"
 ---
 # <a name="appendix-a-reviewing-ad-fs-requirements"></a>附錄 A：檢閱 AD FS 需求
 
 因此，您 Active Directory 同盟服務中 (AD FS) 部署的組織夥伴可以成功共同作業，您必須先確定您的公司網路基礎結構已設定為支援帳戶、名稱解析和憑證的 AD FS 需求。 AD FS 具有以下類型的需求：
 
 > [!TIP]
-> 您可以在[瞭解重要的 AD FS 概念](https://docs.microsoft.com/windows-server/identity/ad-fs/technical-reference/understanding-key-ad-fs-concepts)中找到其他 AD FS 資源連結。
+> 您可以在[瞭解重要的 AD FS 概念](../technical-reference/understanding-key-ad-fs-concepts.md)中找到其他 AD FS 資源連結。
 
 ## <a name="hardware-requirements"></a>硬體需求
 下列最低和建議硬體需求適用于同盟伺服器和同盟伺服器 proxy 電腦。

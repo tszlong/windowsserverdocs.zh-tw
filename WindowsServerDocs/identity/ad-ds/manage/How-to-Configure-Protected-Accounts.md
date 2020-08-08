@@ -6,12 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 08065e153a7f0c09e305e87fc2d745b3daa0b3f0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7e69a808a48c3dedcc29d8876dc460559157f191
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943867"
+ms.locfileid: "87994829"
 ---
 # <a name="guidance-about-how-to-configure-protected-accounts"></a>如何設定受保護帳戶的指引
 
@@ -114,7 +114,7 @@ Protected Users 群組的成員必須能夠使用具備進階加密標準 (AES) 
 -   拒絕 Kerberos 預先驗證中的 RC4：無法設定。
 
     > [!NOTE]
-    > 雖然可以 [變更支援之加密類型的設定](https://blogs.msdn.com/b/openspecification/archive/2011/05/31/windows-configurations-for-kerberos-supported-encryption-type.aspx)，但是不建議未在目標環境中測試過，就變更電腦帳戶的這些設定。
+    > 雖然可以 [變更支援之加密類型的設定](/archive/blogs/openspecification/windows-configurations-for-kerberos-supported-encryption-type)，但是不建議未在目標環境中測試過，就變更電腦帳戶的這些設定。
 
 -   限制使用者票證 (TGT) 為初始 4 小時存留期：使用驗證原則。
 

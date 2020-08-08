@@ -8,12 +8,12 @@ ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 8af6294ab604c0535040ba4aaa149d674854484c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 60f79b7bb624f6e64c0c32033335ddcd2eea262e
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87958196"
+ms.locfileid: "87995082"
 ---
 # <a name="advanced-features-of-always-on-vpn"></a>Always On VPN 進階功能
 
@@ -39,7 +39,7 @@ ms.locfileid: "87958196"
 
 |選項  |描述  |
 |---------|---------|
-|Windows Hello 企業版     |在 Windows 10 中，Windows Hello 企業版會藉由在電腦和行動裝置上提供強式雙因素驗證來取代密碼。 這項驗證是由一種新的使用者認證類型所組成，該認證系結至裝置，並使用 (PIN) 的生物識別或個人識別碼。<p>Windows 10 VPN 用戶端與 Windows Hello 企業版相容。 使用者使用手勢登入後，VPN 連線會使用 Windows Hello 企業版憑證來進行以憑證為基礎的驗證。<p>相關檔：<ul><li>[Windows Hello 企業版](/windows/access-protection/hello-for-business/hello-identity-verification)</li><li>技術案例研究：[在 windows 10 中啟用 Windows Hello 企業版的遠端存取](/previous-versions//mt728163(v=technet.10))</li></ul>         |
+|Windows Hello 企業版     |在 Windows 10 中，Windows Hello 企業版會藉由在電腦和行動裝置上提供強式雙因素驗證來取代密碼。 這項驗證是由一種新的使用者認證類型所組成，該認證系結至裝置，並使用 (PIN) 的生物識別或個人識別碼。<p>Windows 10 VPN 用戶端與 Windows Hello 企業版相容。 使用者使用手勢登入後，VPN 連線會使用 Windows Hello 企業版憑證來進行以憑證為基礎的驗證。<p>相關檔：<ul><li>[Windows Hello 企業版](/windows/access-protection/hello-for-business/hello-identity-verification)</li><li>技術案例研究：[在 windows 10 中啟用 Windows Hello 企業版的遠端存取](/previous-versions/mt728163(v=technet.10))</li></ul>         |
 |Azure 多重要素驗證 (MFA)      |Azure MFA 具有雲端和內部部署版本，您可以將其與 Windows VPN 驗證機制整合。<p>如需此機制運作方式的詳細資訊，請參閱[整合 RADIUS 驗證與 Azure 多因素驗證服務器](/azure/multi-factor-authentication/multi-factor-authentication-get-started-server-radius)。         |
 
 ## <a name="advanced-vpn-features"></a>Advanced VPN 功能
@@ -151,7 +151,7 @@ ms.locfileid: "87958196"
 
 - [Windows Hello 企業版](/windows/access-protection/hello-for-business/hello-identity-verification)：本主題提供必要條件，例如僅限雲端部署和混合式部署。  本主題也會列出 Windows Hello 企業版的相關常見問題。
 
-- [技術案例研究：在 windows 10 中啟用 Windows Hello 企業版的遠端存取](/previous-versions//mt728163(v=technet.10))：在此技術案例研究中，您會瞭解 Microsoft 如何使用 Windows Hello 企業版來執行遠端存取。  對於組織和取用者來說，Windows Hello 企業版是超越密碼的私密金鑰/公開金鑰或憑證式驗證方法。 這種形式的驗證依賴金鑰組認證，其可取代密碼且能抵抗漏洞、竊取及網路釣魚。
+- [技術案例研究：在 windows 10 中啟用 Windows Hello 企業版的遠端存取](/previous-versions/mt728163(v=technet.10))：在此技術案例研究中，您會瞭解 Microsoft 如何使用 Windows Hello 企業版來執行遠端存取。  對於組織和取用者來說，Windows Hello 企業版是超越密碼的私密金鑰/公開金鑰或憑證式驗證方法。 這種形式的驗證依賴金鑰組認證，其可取代密碼且能抵抗漏洞、竊取及網路釣魚。
 
 - 將[radius 驗證與 Azure 多因素驗證服務器整合](/azure/multi-factor-authentication/multi-factor-authentication-get-started-server-radius)：本主題將逐步引導您使用 Azure 多因素驗證服務器來新增和設定 radius 用戶端驗證。 RADIUS 是接受驗證要求並處理這些要求的標準通訊協定。 Azure Multi-Factor Authentication Server 可作為 RADIUS 伺服器。
 

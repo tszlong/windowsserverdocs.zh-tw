@@ -2,34 +2,32 @@
 title: 虛擬網路中的客體叢集
 description: 連線到虛擬網路的虛擬機器只能使用網路控制站已指派來在網路上進行通訊的 IP 位址。  需要浮動 IP 位址的叢集技術（例如 Microsoft 容錯移轉叢集）需要一些額外的步驟，才能正常運作。
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 8e9e5c81-aa61-479e-abaf-64c5e95f90dc
 ms.author: grcusanz
 author: AnirbanPaul
 ms.date: 08/26/2018
-ms.openlocfilehash: 6889b58f5d49a4932ef8277b11e1002e85606f3f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6d597d4ced923c751e54ed4678ffb2d956a7b471
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854451"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87994766"
 ---
 # <a name="guest-clustering-in-a-virtual-network"></a>虛擬網路中的客體叢集
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 連線到虛擬網路的虛擬機器只能使用網路控制站已指派來在網路上進行通訊的 IP 位址。  需要浮動 IP 位址的叢集技術（例如 Microsoft 容錯移轉叢集）需要一些額外的步驟，才能正常運作。
 
-讓浮動 IP 得以連線的方法，是使用軟體 Load Balancer \(SLB\) 虛擬 IP \(VIP\)。  軟體負載平衡器必須在該 IP 的埠上設定健康情況探查，讓 SLB 將流量導向目前具有該 IP 的電腦。
+讓浮動 IP 得以連線的方法，是使用軟體 Load Balancer \( SLB \) 虛擬 IP \( VIP \) 。  軟體負載平衡器必須在該 IP 的埠上設定健康情況探查，讓 SLB 將流量導向目前具有該 IP 的電腦。
 
 
 ## <a name="example-load-balancer-configuration"></a>範例：負載平衡器設定
 
-這個範例假設您已經建立將成為叢集節點的 Vm，並將它們附加至虛擬網路。  如需指導方針，請參閱[建立 VM 並聯機至租使用者虛擬網路或 VLAN](https://technet.microsoft.com/windows-server-docs/networking/sdn/manage/create-a-tenant-vm)。  
+這個範例假設您已經建立將成為叢集節點的 Vm，並將它們附加至虛擬網路。  如需指導方針，請參閱[建立 VM 並聯機至租使用者虛擬網路或 VLAN](./create-a-tenant-vm.md)。
 
-在此範例中，您將建立代表叢集的浮動 IP 位址的虛擬 IP 位址（192.168.2.100），並設定健康情況探查來監視 TCP 通訊埠59999，以判斷哪一個節點是作用中的節點。
+在此範例中，您將建立一個虛擬 IP 位址 (192.168.2.100) 來代表叢集的浮動 IP 位址，並設定健康情況探查來監視 TCP 埠59999，以判斷哪一個節點是作用中的節點。
 
 1. 選取 VIP。<p>藉由指派 VIP IP 位址來準備，這可以是與叢集節點位於相同子網中任何未使用或保留的位址。  VIP 必須符合叢集的可重置位址。
 
@@ -46,7 +44,7 @@ ms.locfileid: "80854451"
    $LoadBalancerProperties = new-object Microsoft.Windows.NetworkController.LoadBalancerProperties
    ```
 
-3. 建立 front\-的結束 IP 位址。
+3. 建立前端 \- IP 位址。
 
    ```PowerShell
    $LoadBalancerProperties.frontendipconfigurations += $FrontEnd = new-object Microsoft.Windows.NetworkController.LoadBalancerFrontendIpConfiguration
@@ -59,7 +57,7 @@ ms.locfileid: "80854451"
    $FrontEnd.properties.privateIPAllocationMethod = "Static"
    ```
 
-4. 建立後端\-結束集區，以包含叢集節點。
+4. 建立後 \- 端集區以包含叢集節點。
 
    ```PowerShell
    $BackEnd = new-object Microsoft.Windows.NetworkController.LoadBalancerBackendAddressPool
@@ -69,10 +67,10 @@ ms.locfileid: "80854451"
    $LoadBalancerProperties.backendAddressPools += $BackEnd
    ```
 
-5. 新增探查以偵測可重置位址目前作用中的叢集節點。 
+5. 新增探查以偵測可重置位址目前作用中的叢集節點。
 
    >[!NOTE]
-   >在下列定義的埠上針對 VM 的永久位址進行探查查詢。  埠只能回應使用中的節點。 
+   >在下列定義的埠上針對 VM 的永久位址進行探查查詢。  埠只能回應使用中的節點。
 
    ```PowerShell
    $LoadBalancerProperties.probes += $lbprobe = new-object Microsoft.Windows.NetworkController.LoadBalancerProbe
@@ -94,9 +92,9 @@ ms.locfileid: "80854451"
    $lbrule.ResourceId = "Rules1"
 
    $lbrule.properties.frontendipconfigurations += $FrontEnd
-   $lbrule.properties.backendaddresspool = $BackEnd 
+   $lbrule.properties.backendaddresspool = $BackEnd
    $lbrule.properties.protocol = "TCP"
-   $lbrule.properties.frontendPort = $lbrule.properties.backendPort = 1433 
+   $lbrule.properties.frontendPort = $lbrule.properties.backendPort = 1433
    $lbrule.properties.IdleTimeoutInMinutes = 4
    $lbrule.properties.EnableFloatingIP = $true
    $lbrule.properties.Probe = $lbprobe
@@ -124,9 +122,9 @@ ms.locfileid: "80854451"
    $nic = new-networkcontrollernetworkinterface  -connectionuri $uri -resourceid $nic.resourceid -properties $nic.properties -force
    ```
 
-   建立負載平衡器並將網路介面新增至後端集區之後，您就可以開始設定叢集。  
+   建立負載平衡器並將網路介面新增至後端集區之後，您就可以開始設定叢集。
 
-9. 選擇性如果您使用的是 Microsoft 容錯移轉叢集，請繼續進行下一個範例。 
+9.  (選擇性) 如果您使用的是 Microsoft 容錯移轉叢集，請繼續進行下一個範例。
 
 ## <a name="example-2-configuring-a-microsoft-failover-cluster"></a>範例2：設定 Microsoft 容錯移轉叢集
 
@@ -139,10 +137,10 @@ ms.locfileid: "80854451"
    Import-module failoverclusters
 
    $ClusterName = "MyCluster"
-   
+
    $ClusterNetworkName = "Cluster Network 1"
-   $IPResourceName =  
-   $ILBIP = "192.168.2.100" 
+   $IPResourceName =
+   $ILBIP = "192.168.2.100"
 
    $nodes = @("DB1", "DB2")
    ```

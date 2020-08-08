@@ -7,12 +7,12 @@ manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
 ms.date: 07/16/2018
-ms.openlocfilehash: 3e08541b1bfd6dd07d134560c9d03306566b18db
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 4344357db92a65725a7bcdc749966d3889d20695
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953914"
+ms.locfileid: "87995088"
 ---
 # <a name="performance-tools-for-network-workloads"></a>網路工作負載的效能工具
 
@@ -42,6 +42,6 @@ Microsoft Server Performance Advisor \( SPA \) 可協助 IT 系統管理員收�
 
 SPA 會產生完整的診斷報告和圖表，並提供建議，協助您快速分析問題並開發更正動作。
 
- 如需詳細資訊及下載 advisor，請參閱 Windows 硬體開發人員中心的[Microsoft Server Performance advisor](https://msdn.microsoft.com/library/windows/hardware/dn481522.aspx) 。
+ 如需詳細資訊及下載 advisor，請參閱 Windows 硬體開發人員中心的[Microsoft Server Performance advisor](/previous-versions/dn481522(v=vs.85)) 。
 
 如需本指南中所有主題的連結，請參閱[網路子系統效能調整](net-sub-performance-top.md)。

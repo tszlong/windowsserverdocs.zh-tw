@@ -6,12 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 7f8624b23a746eed5df9ab55c7c01d0dfbd9cb0f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 944e71b546f6e5a7484f533b5c6dc86840484e46
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943857"
+ms.locfileid: "87994918"
 ---
 # <a name="appendix-i-creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>附錄 I︰為 Active Directory 中的受保護帳戶和群組建立管理帳戶
 
@@ -141,7 +141,7 @@ ms.locfileid: "87943857"
    >
    > 雖然為主機執行更安全的加密類型並不會減輕認證竊取攻擊，但安全主機的適當使用和設定也會受到保護。 為僅供特殊許可權帳戶使用的主機設定更強的加密類型，只會減少電腦的整體攻擊面。
    >
-   > 如需有關在系統和帳戶上設定加密類型的詳細資訊，請參閱[適用于 Kerberos 支援的加密類型的 Windows](https://blogs.msdn.com/b/openspecification/archive/2011/05/31/windows-configurations-for-kerberos-supported-encryption-type.aspx)設定。
+   > 如需有關在系統和帳戶上設定加密類型的詳細資訊，請參閱[適用于 Kerberos 支援的加密類型的 Windows](/archive/blogs/openspecification/windows-configurations-for-kerberos-supported-encryption-type)設定。
    >
    > 只有執行 Windows Server 2012、Windows Server 2008 R2、Windows 8 或 Windows 7 的電腦才支援這些設定。
 

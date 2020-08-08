@@ -7,12 +7,12 @@ ms.assetid: 3c62f533-1815-4f08-96b1-dc271f5a2b36
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/24/2018
-ms.openlocfilehash: 0b82128c703f5f3d1fe357beae90a15481232d5c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2ca1c308ee38726d02ef19ebdfa4c83086fef0a7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970775"
+ms.locfileid: "87995146"
 ---
 # <a name="create-a-vm-and-connect-to-a-tenant-virtual-network-or-vlan"></a>建立 VM 並連線至租用戶虛擬網路或 VLAN
 
@@ -31,9 +31,9 @@ ms.locfileid: "87970775"
 
 2. 如果 VM 在啟動時需要網路存取，請勿啟動 VM，直到在 VM 網路介面卡埠上設定介面識別碼為止。 如果您在設定介面識別碼之前啟動 VM，且網路介面不存在，VM 就無法在網路控制站的網路上通訊，並套用所有原則。
 
-3. 如果您需要此網路介面的自訂 Acl，請使用[使用存取控制清單 (acl) 來管理資料中心網路流量流程](../../sdn/manage/Use-Access-Control-Lists--ACLs--to-Manage-Datacenter-Network-Traffic-Flow.md)中的指示，立即建立 acl
+3. 如果您需要此網路介面的自訂 Acl，請使用[使用存取控制清單 (acl) 來管理資料中心網路流量流程](./use-acls-for-traffic-flow.md)中的指示，立即建立 acl
 
-請確定您已建立虛擬網路，然後再使用此範例命令。 如需詳細資訊，請參閱[建立、刪除或更新租使用者虛擬網路](https://technet.microsoft.com/windows-server-docs/networking/sdn/manage/create%2c-delete%2c-or-update-tenant-virtual-networks)。
+請確定您已建立虛擬網路，然後再使用此範例命令。 如需詳細資訊，請參閱[建立、刪除或更新租使用者虛擬網路](./create,-delete,-or-update-tenant-virtual-networks.md)。
 
 ## <a name="create-a-vm-and-connect-to-a-virtual-network-by-using-the-windows-powershell-network-controller-cmdlets"></a>使用 Windows PowerShell 網路控制卡 Cmdlet 建立 VM 並聯機至虛擬網路
 
@@ -221,6 +221,3 @@ ms.locfileid: "87970775"
    ```
 
 您已成功建立 VM、將 VM 連線至 VLAN，並已啟動 VM，使其可以處理租使用者工作負載。
-
-
-

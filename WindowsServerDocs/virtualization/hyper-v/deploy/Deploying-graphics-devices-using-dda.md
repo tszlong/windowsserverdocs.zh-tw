@@ -1,23 +1,21 @@
 ---
 title: 使用離散裝置指派來部署圖形裝置
 description: 瞭解如何在 Windows Server 中使用 DDA 部署圖形裝置
-ms.prod: windows-server
-ms.technology: hyper-v
 ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
 ms.assetid: 67a01889-fa36-4bc6-841d-363d76df6a66
 ms.date: 08/21/2019
-ms.openlocfilehash: 07f0ba19aaf998bb7b2fe8cf4ef1ba6cf8cae322
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0e9a79ff12b89a5b99ce95213078406eb2d21ea2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860911"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945971"
 ---
 # <a name="deploy-graphics-devices-using-discrete-device-assignment"></a>使用離散裝置指派來部署圖形裝置
 
-> 適用于： Microsoft Hyper-v Server 2016、Windows Server 2016、Windows Server 2019、Microsoft Hyper-v Server 2019  
+> 適用于： Microsoft Hyper-v Server 2016、Windows Server 2016、Windows Server 2019、Microsoft Hyper-v Server 2019
 
 從 Windows Server 2016 開始，您可以使用離散裝置指派或 DDA，將整個 PCIe 裝置傳遞至 VM。  這可讓您對裝置的高效能存取，例如從 VM 內[NVMe 儲存體](./Deploying-storage-devices-using-dda.md)或圖形卡，同時能夠利用裝置原生驅動程式。  請流覽[使用離散裝置指派來部署裝置的計畫](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)，以取得更多裝置的工作、可能的安全性含意等等。
 
@@ -53,7 +51,7 @@ Set-VM -Name VMName -AutomaticStopAction TurnOff
    ```
    Set-VM -HighMemoryMappedIoSpace 33280Mb -VMName VMName
    ```
-   > [!TIP] 
+   > [!TIP]
    > 上述的 MMIO 空間值是合理的值，可設定為使用單一 GPU 進行實驗。  如果啟動 VM 之後，裝置會報告與資源不足相關的錯誤，您可能需要修改這些值。 請參閱[使用離散裝置指派部署裝置的計畫](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)，以瞭解如何精確地計算 MMIO 需求。
 
 ## <a name="dismount-the-device-from-the-host-partition"></a>從主機磁碟分割卸載裝置
@@ -62,10 +60,10 @@ Set-VM -Name VMName -AutomaticStopAction TurnOff
 > 如果未提供任何資料分割驅動程式，在卸載期間，您必須使用 `-force` 選項來略過安全性警告。 請在[規劃使用離散裝置指派來部署裝置](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)時，閱讀更多關於此動作的安全性含意。
 
 ### <a name="locating-the-devices-location-path"></a>尋找裝置的位置路徑
-必須要有 PCI 位置路徑，才能從主機卸載並掛接裝置。  範例位置路徑看起來如下所示： `"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"`。  如需位置路徑的詳細資訊，請參閱：[規劃使用離散裝置指派來部署裝置](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)。
+必須要有 PCI 位置路徑，才能從主機卸載並掛接裝置。  範例位置路徑看起來如下所示： `"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"` 。  如需位置路徑的詳細資訊，請參閱：[規劃使用離散裝置指派來部署裝置](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)。
 
 ### <a name="disable-the-device"></a>停用裝置
-使用 Device Manager 或 PowerShell，確定裝置已「停用」。  
+使用 Device Manager 或 PowerShell，確定裝置已「停用」。
 
 ### <a name="dismount-the-device"></a>卸載裝置
 根據廠商是否提供緩和驅動程式而定，您將需要使用 "-force" 選項。
@@ -85,7 +83,7 @@ Set-VM -Name VMName -AutomaticStopAction TurnOff
 Add-VMAssignableDevice -LocationPath $locationPath -VMName VMName
 ```
 
-## <a name="whats-next"></a>下一步
+## <a name="whats-next"></a>後續步驟
 在 VM 中成功掛接裝置之後，您現在可以啟動該 VM 並與裝置互動，如同您在裸機系統上執行一般。  這表示您現在可以在 VM 中安裝硬體廠商的驅動程式，應用程式將能夠看到硬體存在。  您可以在來賓 VM 中開啟 [裝置管理員]，並看到硬體現在顯示，以驗證這一點。
 
 ## <a name="removing-a-device-and-returning-it-to-the-host"></a>移除裝置並將它傳回主機
@@ -101,7 +99,7 @@ Mount-VMHostAssignableDevice -LocationPath $locationPath
 ## <a name="example"></a>範例
 
 ### <a name="mounting-a-gpu-to-a-vm"></a>將 GPU 掛接至 VM
-在此範例中，我們使用 PowerShell 來設定名為 "ddatest1" 的 VM，以取得製造商 NVIDIA 提供的第一個 GPU，並將其指派給 VM。  
+在此範例中，我們使用 PowerShell 來設定名為 "ddatest1" 的 VM，以取得製造商 NVIDIA 提供的第一個 GPU，並將其指派給 VM。
 ```
 #Configure the VM for a Discrete Device Assignment
 $vm =   "ddatest1"
@@ -139,4 +137,4 @@ Add-VMAssignableDevice -LocationPath $locationPath -VMName $vm
 - 請確定您的裝置在 VM 內配置了足夠的 MMIO 空間。 若要深入瞭解，請參閱[MMIO Space](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md#mmio-space)。
 - 請確定您使用的是廠商支援在此設定中使用的 GPU。 例如，某些廠商會在傳遞至 VM 時，防止取用者卡運作。
 - 請確定正在執行的應用程式支援在 VM 內執行，而且應用程式支援 GPU 及其關聯的驅動程式。 有些應用程式具有 Gpu 和環境的允許清單。
-- 如果您在來賓上使用遠端桌面工作階段主機角色或 Windows Multipoint 服務，則必須確定已將特定的群組原則專案設定為允許使用預設 GPU。 使用套用至來賓的群組原則物件（或來賓上的本機群組原則編輯器），流覽至下列群組原則專案：**電腦**設定 > **系統管理員範本** > **Windows 元件** > **遠端桌面服務** > **遠端桌面工作階段主機 > ** **遠端會話環境** > **針對所有遠端桌面服務會話使用硬體預設圖形配接器**。 將此值設定為 [已啟用]，然後在套用原則之後重新開機 VM。
+- 如果您在來賓上使用遠端桌面工作階段主機角色或 Windows Multipoint 服務，則必須確定已將特定的群組原則專案設定為允許使用預設 GPU。 使用套用至來賓 (的群組原則物件或來賓) 上的本機群組原則編輯器，流覽至下列群組原則專案：**電腦**設定  >  **系統管理員範本**  >  **Windows 元件**  >  **遠端桌面服務**  >  **遠端桌面工作階段主機**  >  **遠端會話環境**  >  **使用所有遠端桌面服務會話的硬體預設圖形配接器**。 將此值設定為 [已啟用]，然後在套用原則之後重新開機 VM。

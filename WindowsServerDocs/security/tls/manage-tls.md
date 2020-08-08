@@ -6,12 +6,12 @@ author: justinha
 ms.author: justinha
 manager: brianlic
 ms.date: 05/16/2018
-ms.openlocfilehash: 30ab0547fd538eec3f50120a5d536eb9a48de54b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8f5f18452c158b2e1c8d14173d80193465ead17f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971285"
+ms.locfileid: "87994795"
 ---
 # <a name="manage-transport-layer-security-tls"></a>管理傳輸層安全性 (TLS)
 
@@ -19,10 +19,10 @@ ms.locfileid: "87971285"
 
 ## <a name="configuring-tls-cipher-suite-order"></a>正在設定 TLS 加密套件順序
 
-不同的 Windows 版本支援不同的 TLS 加密套件和優先順序順序。 請參閱[TLS/SSL (SCHANNEL SSP) 中的加密套件](https://docs.microsoft.com/windows/win32/secauthn/cipher-suites-in-schannel)，以取得不同 Windows 版本中 Microsoft Schannel 提供者所支援的預設順序。
+不同的 Windows 版本支援不同的 TLS 加密套件和優先順序順序。 請參閱[TLS/SSL (SCHANNEL SSP) 中的加密套件](/windows/win32/secauthn/cipher-suites-in-schannel)，以取得不同 Windows 版本中 Microsoft Schannel 提供者所支援的預設順序。
 
 > [!NOTE]
-> 您也可以使用 CNG 函式來修改加密套件的清單，如需詳細資訊，請參閱為[Schannel 加密套件排序](https://docs.microsoft.com/windows/win32/secauthn/prioritizing-schannel-cipher-suites)。
+> 您也可以使用 CNG 函式來修改加密套件的清單，如需詳細資訊，請參閱為[Schannel 加密套件排序](/windows/win32/secauthn/prioritizing-schannel-cipher-suites)。
 
 TLS 加密套件順序的變更會在下次開機時生效。 在重新開機或關機之前，現有的訂單會生效。
 
@@ -52,11 +52,11 @@ TLS 加密套件順序的變更會在下次開機時生效。 在重新開機或
 
 ### <a name="configuring-tls-cipher-suite-order-by-using-mdm"></a>使用 MDM 設定 TLS 加密套件順序
 
-Windows 10 原則 CSP 支援 TLS 加密套件的設定。 如需詳細資訊，請參閱[密碼編譯/TLSCipherSuites](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-cryptography#cryptography-tlsciphersuites) 。
+Windows 10 原則 CSP 支援 TLS 加密套件的設定。 如需詳細資訊，請參閱[密碼編譯/TLSCipherSuites](/windows/client-management/mdm/policy-csp-cryptography#cryptography-tlsciphersuites) 。
 
 ### <a name="configuring-tls-cipher-suite-order-by-using-tls-powershell-cmdlets"></a>使用 TLS PowerShell Cmdlet 設定 TLS 加密套件順序
 
-TLS PowerShell 模組支援取得已排序的 TLS 加密套件清單、停用加密套件，以及啟用加密套件。 如需詳細資訊，請參閱[TLS 模組](https://docs.microsoft.com/powershell/module/tls/?view=win10-ps)。
+TLS PowerShell 模組支援取得已排序的 TLS 加密套件清單、停用加密套件，以及啟用加密套件。 如需詳細資訊，請參閱[TLS 模組](/powershell/module/tls/?view=win10-ps)。
 
 ## <a name="configuring-tls-ecc-curve-order"></a>設定 TLS ECC 曲線順序
 
@@ -136,4 +136,3 @@ Certutil.exe –deleteEccCurve curveName
 ![GPP 分佈曲線](../media/Transport-Layer-Security-protocol/gp-managing-tls-curve-priority-order.png)
 
 *[圖 4] 使用群組原則管理 TLS 曲線優先順序*
-

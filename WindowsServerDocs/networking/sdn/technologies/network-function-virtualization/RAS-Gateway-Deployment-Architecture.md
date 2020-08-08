@@ -6,12 +6,12 @@ ms.topic: get-started-article
 ms.assetid: d46e4e91-ece0-41da-a812-af8ab153edc4
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 0de90508ec3a7db2624047d23de47e79d9ea2a39
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e15131291f14f8e7affc45d49f1b81e7c8b29ba7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952289"
+ms.locfileid: "87994755"
 ---
 # <a name="ras-gateway-deployment-architecture"></a>RAS 閘道部署架構
 
@@ -91,7 +91,7 @@ RAS 閘道包含多項新功能，可變更並改善您在資料中心內部署�
     > -   當網路控制站設定了租使用者的 RAS 閘道和路由反映程式後，每當相同的租使用者需要新的網站間 VPN 連線時，網路控制卡會檢查此 RAS 閘道 VM 上的可用容量。 如果原始閘道可以服務所需的容量，則也會在相同的 RAS 閘道 VM 上設定新的網路連線。 如果 RAS 閘道 VM 無法處理額外的容量，網路控制卡會選取新的可用 RAS 閘道 VM，並在其上設定新的連接。 與租使用者相關聯的新 RAS 閘道 VM 會成為原始租使用者 RAS 閘道路由反射器的路由反映器用戶端。
     > -   因為 RAS 閘道集區位於軟體負載平衡器後方 (SLBs) ，租使用者的站對站 VPN 位址會分別使用單一公用 IP 位址（稱為「虛擬 IP 位址」 (VIP) ），其會針對路由企業租使用者流量的 RAS 閘道，從 SLBs 轉譯為「動態 IP 位址 (DIP) 」。 此由 SLB 進行的公用到私人 IP 位址對應可確保在企業網站與 CSP RAS 閘道和路由反映程式之間，已正確建立站對站 VPN 通道。
     >
-    >     如需 SLB、Vip 和 Dip 的詳細資訊，請參閱[適用于 SDN 的軟體負載平衡 &#40;SLB&#41;](../../../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md)。
+    >     如需 SLB、Vip 和 Dip 的詳細資訊，請參閱[適用于 SDN 的軟體負載平衡 &#40;SLB&#41;](./software-load-balancing-for-sdn.md)。
 
 5.  針對新的租使用者建立企業網站與 CSP 資料中心 RAS 閘道之間的站對站 VPN 通道之後，與通道相關聯的靜態路由會自動布建在通道的企業和 CSP 端。
 
@@ -154,8 +154,3 @@ RAS 閘道包含多項新功能，可變更並改善您在資料中心內部署�
 **快速修復閘道失敗**
 
 若要確保快速的容錯移轉回應，您可以將邊緣路由與控制路由器之間的 BGP Keepalive 參數時間設定為短時間間隔，例如小於或等於10秒。 在這個短暫的保持運作間隔中，如果 RAS 閘道 BGP 邊緣路由器失敗，則會快速偵測到失敗，而網路控制卡會遵循先前各節中所提供的步驟。 這種優點可能會減少個別失敗偵測通訊協定的需求，例如雙向轉送偵測 (BFD) 通訊協定。
-
-
-
-
-

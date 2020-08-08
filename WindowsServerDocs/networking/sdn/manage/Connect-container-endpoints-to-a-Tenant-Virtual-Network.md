@@ -7,12 +7,12 @@ ms.assetid: f7af1eb6-d035-4f74-a25b-d4b7e4ea9329
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/24/2018
-ms.openlocfilehash: fd05441ecc64c05778234dc00fa315bb406dfb40
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: af8232de75005ae295079eb2207bce303629acaa
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970805"
+ms.locfileid: "87995193"
 ---
 # <a name="connect-container-endpoints-to-a-tenant-virtual-network"></a>將容器端點連線至租用戶虛擬網路
 
@@ -20,7 +20,7 @@ ms.locfileid: "87970805"
 
 在本主題中，我們將示範如何將容器端點連線至透過 SDN 建立的現有租使用者虛擬網路。 您可以使用*l2bridge* (，並選擇性地*L2tunnel*適用于 Docker 的 Windows libnetwork 外掛程式提供的) 網路驅動程式，以在租使用者 VM 上建立容器網路。
 
-在[容器網路驅動程式](https://docs.microsoft.com/virtualization/windowscontainers/container-networking/network-drivers-topologies)主題中，我們討論了透過 Windows 上的 Docker 提供的多個網路驅動程式。 針對 SDN，請使用*l2bridge*和*l2tunnel*驅動程式。 對於這兩個驅動程式而言，每個容器端點都位於與容器主機 (租使用者) 虛擬機器相同的虛擬子網中。
+在[容器網路驅動程式](/virtualization/windowscontainers/container-networking/network-drivers-topologies)主題中，我們討論了透過 Windows 上的 Docker 提供的多個網路驅動程式。 針對 SDN，請使用*l2bridge*和*l2tunnel*驅動程式。 對於這兩個驅動程式而言，每個容器端點都位於與容器主機 (租使用者) 虛擬機器相同的虛擬子網中。
 
 主機網路服務 (HNS) ，透過私用雲端外掛程式，以動態方式指派容器端點的 IP 位址。 容器端點具有唯一的 IP 位址，但會因為第2層位址轉譯而共用容器主機的相同 MAC 位址 (租使用者) 虛擬機器。
 
@@ -50,7 +50,7 @@ ms.locfileid: "87970805"
    ```
 
 >[!Note]
->除非使用 Hyper-v 容器，否則不需要[嵌套虛擬化](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/nesting)和公開虛擬化延伸模組。
+>除非使用 Hyper-v 容器，否則不需要[嵌套虛擬化](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization)和公開虛擬化延伸模組。
 
 
 ## <a name="workflow"></a>工作流程
@@ -148,5 +148,4 @@ C:\> docker run -it --network=MyContainerOverlayNetwork <image> <cmd>
 >搭配 Microsoft SDN 堆疊使用時， *l2bridge*或*l2tunnel*容器網路不支援靜態 IP 指派。
 
 ## <a name="more-information"></a>更多資訊
-如需部署 SDN 基礎結構的詳細資訊，請參閱[部署軟體定義的網路基礎結構](https://docs.microsoft.com/windows-server/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure)。
-
+如需部署 SDN 基礎結構的詳細資訊，請參閱[部署軟體定義的網路基礎結構](../deploy/deploy-a-software-defined-network-infrastructure.md)。

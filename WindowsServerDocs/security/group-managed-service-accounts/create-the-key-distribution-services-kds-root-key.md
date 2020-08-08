@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 90fa1203f09bc04b27885034895e52db5fa1c5f0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b90ea772874c2a5731e03f4bcbc44de6efc34a20
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971485"
+ms.locfileid: "87995042"
 ---
 # <a name="create-the-key-distribution-services-kds-root-key"></a>建立金鑰發佈服務 KDS 根金鑰
 
@@ -25,7 +25,7 @@ ms.locfileid: "87971485"
 > [!NOTE]
 > 刪除和重新建立根金鑰可能會導致問題，因為索引鍵的快取會在刪除之後繼續使用舊金鑰。 如果重新建立根金鑰，則應該在所有網域控制站上重新啟動金鑰發佈服務 (KDC) 。
 
-若要完成此程序，至少需要 **Domain Admins** 或 **Enterprise Admins** 群組的成員資格或同等權限。 如需使用適當帳戶和群組成員資格的詳細資訊，請參閱[本機與網域預設群組](https://technet.microsoft.com/library/dd728026(WS.10).aspx)。
+若要完成此程序，至少需要 **Domain Admins** 或 **Enterprise Admins** 群組的成員資格或同等權限。 如需使用適當帳戶和群組成員資格的詳細資訊，請參閱[本機與網域預設群組](/previous-versions/orphan-topics/ws.10/dd728026(v=ws.10))。
 
 > [!NOTE]
 > 若要執行用來管理群組「受管理的服務帳戶」的 Windows PowerShell 命令，必須有 64 位元架構。
@@ -61,5 +61,3 @@ ms.locfileid: "87971485"
 
 ## <a name="see-also"></a>另請參閱
 [使用群組受管理的服務帳戶消費者入門](getting-started-with-group-managed-service-accounts.md)
-
-
