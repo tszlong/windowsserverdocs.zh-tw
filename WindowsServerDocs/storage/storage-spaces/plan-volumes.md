@@ -1,20 +1,18 @@
 ---
 ms.assetid: 342173ca-4e10-44f4-b2c9-02a6c26f7a4a
 title: 規劃儲存空間直接存取中的磁碟區
-ms.prod: windows-server
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 06/28/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d5c45b68f18fe3126867a9b6608b0911bb3f63b2
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: dcc98fba7194da322f9fc97b67eb43d481f50133
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474755"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971145"
 ---
 # <a name="planning-volumes-in-storage-spaces-direct"></a>規劃儲存空間直接存取中的磁碟區
 
@@ -65,23 +63,23 @@ ms.locfileid: "85474755"
 
 透過叢集中的兩部伺服器，您可以使用雙向鏡像。 如果您執行的是 Windows Server 2019，也可以使用嵌套的復原功能。
 
-雙向鏡像會保留兩份資料複本，每個伺服器的磁片磁碟機上都有一個複本。 其儲存效率為 50%-若要寫入 1 TB 的資料，存放集區中至少需要 2 TB 的實體儲存體容量。 雙向鏡像可以安全地容忍一次硬體失敗（一部伺服器或磁片磁碟機）。
+雙向鏡像會保留兩份資料複本，每個伺服器的磁片磁碟機上都有一個複本。 其儲存效率為 50%-若要寫入 1 TB 的資料，存放集區中至少需要 2 TB 的實體儲存體容量。 雙向鏡像可以安全地容忍一次硬體失敗， (一部伺服器或磁片磁碟機) 。
 
 ![雙向鏡像](media/plan-volumes/two-way-mirror.png)
 
-Nested 復原（僅適用于 Windows Server 2019）提供具有雙向鏡像之伺服器之間的資料復原，然後在具有雙向鏡像或鏡像加速同位的伺服器內新增復原功能。 即使其中一部伺服器正在重新開機或無法使用，嵌套也會提供資料復原。 其儲存效率為25%，具有嵌套的雙向鏡像，以及大約35-40% 的嵌套鏡像加速同位。 Nested 復原可以安全地容忍兩個硬體失敗（兩個磁片磁碟機，或是伺服器和其餘伺服器上的磁片磁碟機）。 基於這項新增的資料恢復功能，如果您執行的是 Windows Server 2019，建議您在兩個伺服器叢集的生產部署上使用嵌套的復原功能。 如需詳細資訊，請參閱[Nested 復原](nested-resiliency.md)。
+僅適用于 Windows Server) 2019 的 Nested 復原 (可在具有雙向鏡像的伺服器之間提供資料復原功能，然後在具有雙向鏡像或鏡像加速同位的伺服器內新增復原功能。 即使其中一部伺服器正在重新開機或無法使用，嵌套也會提供資料復原。 其儲存效率為25%，具有嵌套的雙向鏡像，以及大約35-40% 的嵌套鏡像加速同位。 Nested 復原可以安全地容忍兩個硬體失敗，一次 (兩個磁片磁碟機，或在其餘伺服器上) 的伺服器和磁片磁碟機。 基於這項新增的資料恢復功能，如果您執行的是 Windows Server 2019，建議您在兩個伺服器叢集的生產部署上使用嵌套的復原功能。 如需詳細資訊，請參閱[Nested 復原](nested-resiliency.md)。
 
 ![嵌套鏡像加速同位](media/nested-resiliency/nested-mirror-accelerated-parity.png)
 
 ### <a name="with-three-servers"></a>具有三部伺服器
 
-有三種伺服器，您應該使用三向鏡像，以取得更好的容錯和效能。 三向鏡像保留所有資料的三份複本，每個伺服器的磁碟機上各有一份複本。 其儲存效率是 33.3%，因此若要撰寫 1 TB 的資料，儲存集區需要至少 3 TB 的實體儲存容量。 三向鏡像一次可以安全地容忍[至少兩個硬體問題（磁片磁碟機或伺服器）](storage-spaces-fault-tolerance.md#examples)。 如果有2個節點變成無法使用，存放集區將會失去仲裁，因為2/3 的磁片無法使用，而且將會無法存取虛擬磁片。 不過，節點可能會關閉，而且另一個節點上的一或多個磁片可能會失敗，且虛擬磁片仍會保持連線。 例如，如果您在一個磁碟機或伺服器突然故障時重新啟動另一部伺服器，所有資料都將保有安全性，且持續可供存取。
+有三種伺服器，您應該使用三向鏡像，以取得更好的容錯和效能。 三向鏡像保留所有資料的三份複本，每個伺服器的磁碟機上各有一份複本。 其儲存效率是 33.3%，因此若要撰寫 1 TB 的資料，儲存集區需要至少 3 TB 的實體儲存容量。 三向鏡像可以安全地容忍[至少兩個硬體問題， (磁片磁碟機或伺服器) 一次](storage-spaces-fault-tolerance.md#examples)。 如果有2個節點變成無法使用，存放集區將會失去仲裁，因為2/3 的磁片無法使用，而且將會無法存取虛擬磁片。 不過，節點可能會關閉，而且另一個節點上的一或多個磁片可能會失敗，且虛擬磁片仍會保持連線。 例如，如果您在一個磁碟機或伺服器突然故障時重新啟動另一部伺服器，所有資料都將保有安全性，且持續可供存取。
 
 ![three-way-mirror](media/plan-volumes/three-way-mirror.png)
 
 ### <a name="with-four-or-more-servers"></a>具有四個以上伺服器
 
-有四部以上的伺服器，您可以選擇每個磁片區，不論是使用三向鏡像、雙重同位檢查（通常稱為「抹除編碼」），或混用鏡像加速同位的兩個。
+有四部以上的伺服器，您可以選擇每個磁片區，不論是使用三向鏡像、雙重同位 (通常稱為「抹除編碼」 ) ，或是混用鏡像加速同位的兩個。
 
 雙同位提供與三向鏡像相同的容錯功能，但具有更佳的儲存效率。 有四部伺服器，其儲存體效率50.0% —若要儲存 2 TB 的資料，您需要在存放集區中使用 4 TB 的實體儲存體容量。 使用七部伺服器時增加到 66.7% 儲存效率，並持續增至 80.0% 儲存效率。 缺點是同位編碼大量耗用運算資源，這可能會限制其效能。
 
@@ -133,7 +131,7 @@ Nested 復原（僅適用于 Windows Server 2019）提供具有雙向鏡像之�
 | 最高 32 TB         | 最高 64 TB         |
 
    > [!TIP]
-   > 如果您使用的備份解決方案依賴磁片區陰影複製服務（VSS）和 Volsnap 軟體提供者（如同檔案伺服器工作負載的常見情況），將磁片區大小限制為 10 TB，將可改善效能和可靠性。 使用較新 Hyper-V RCT API 和/或 ReFS 區塊複製和/或原生 SQL 備份 API 的備份解決方案，磁碟區大小達到 32 TB 以上時也可以順利執行。
+   > 如果您使用依賴磁片區陰影複製服務的備份解決方案 (VSS) 和 Volsnap 軟體提供者（如同檔案伺服器工作負載的常見），將磁片區大小限制為 10 TB，將可改善效能和可靠性。 使用較新 Hyper-V RCT API 和/或 ReFS 區塊複製和/或原生 SQL 備份 API 的備份解決方案，磁碟區大小達到 32 TB 以上時也可以順利執行。
 
 ### <a name="footprint"></a>使用量
 
@@ -199,7 +197,7 @@ Nested 復原（僅適用于 Windows Server 2019）提供具有雙向鏡像之�
 
 請參閱[建立儲存空間直接存取中的磁碟區](create-volumes.md)。
 
-### <a name="additional-references"></a>其他參考
+### <a name="additional-references"></a>其他參考資料
 
 - [儲存空間直接存取總覽](storage-spaces-direct-overview.md)
 - [選擇儲存空間直接存取的磁碟機](choosing-drives.md)

@@ -1,24 +1,22 @@
 ---
 title: Hyper-v 技術總覽
 description: 說明什麼是 Hyper-v、如何取得、主要功能，以及常見的用法。
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: ac069fed-7bf5-4cc3-aff5-25a2766040b8
 author: kbdazure
 ms.author: kathydav
 ms.date: 11/29/2016
-ms.openlocfilehash: d21bec24a22607213771bdad0b48df18fd88eb4d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5fd4c0199cea04d6697b593ad70b4f31b55afad0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853241"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87960761"
 ---
 # <a name="hyper-v-technology-overview"></a>Hyper-v 技術總覽
 
->適用于： Windows Server 2016、Microsoft Hyper-v Server 2016、Windows Server 2019、Microsoft Hyper-v Server 2019
+>適用於：Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
 Hyper-v 是 Microsoft 的硬體虛擬化產品。 它可讓您建立及執行電腦的軟體版本，稱為「*虛擬機器*」。 每部虛擬機器的作用就像完整的電腦，執行作業系統和程式。 當您需要計算資源時，虛擬機器可提供更大的彈性、協助節省時間和金錢，而且比起在實體硬體上執行一個作業系統，更有效率的方法是使用硬體。
 
@@ -32,9 +30,9 @@ Hyper-v 可協助您：
 
 - **更有效率地使用您的硬體。** 將伺服器和工作負載合併到較少、功能更強大的實體電腦，以使用較少的電源和實體空間。
 
-- **提升商務持續性。** 將工作負載的排程和非計畫停機的影響降至最低。
+- **提升業務連續性。** 將工作負載的排程和非計畫停機的影響降至最低。
 
-- **建立或擴充虛擬桌面基礎結構（VDI）。** 透過 VDI 使用集中式桌面策略可協助您提升商業彈性和資料安全性，以及簡化法規合規性並管理桌面作業系統和應用程式。 將 Hyper-v 和遠端桌面虛擬主機（RD 虛擬主機）部署在同一部伺服器上，讓您的使用者可以使用個人虛擬桌面或虛擬桌面集區。
+- **建立或擴充虛擬桌面基礎結構 (VDI)。** 透過 VDI 使用集中式桌面策略可協助您提升商業彈性和資料安全性，以及簡化法規合規性並管理桌面作業系統和應用程式。 在相同的伺服器上部署 Hyper-v 和遠端桌面虛擬主機 (RD 虛擬主機) ，讓您的使用者可以使用個人虛擬桌面或虛擬桌面集區。
 
 - **讓開發和測試更有效率。** 重現不同的計算環境，而不需要購買或維護您只使用實體系統時所需的所有硬體。
 
@@ -50,7 +48,7 @@ Hyper-v 提供許多功能。 這是一項總覽，依據功能提供的內容�
 
 **計算環境**-hyper-v 虛擬機器包含與實體電腦相同的基本元件，例如記憶體、處理器、儲存體和網路。 所有這些元件都有功能和選項，可讓您設定不同的方式來滿足不同的需求。 儲存體和網路可以視為自己的類別，因為有許多方式可以進行設定。
 
-嚴重損壞**修復與備份**-針對嚴重損壞修復，hyper-v 複本會建立虛擬機器的複本，並將其儲存在另一個實體位置，讓您可以從複本還原虛擬機器。 針對備份，Hyper-v 提供兩種類型。 其中一個使用儲存狀態，另一個使用磁碟區陰影複製服務（VSS），因此您可以針對支援 VSS 的程式進行應用程式一致備份。
+嚴重損壞**修復與備份**-針對嚴重損壞修復，hyper-v 複本會建立虛擬機器的複本，並將其儲存在另一個實體位置，讓您可以從複本還原虛擬機器。 針對備份，Hyper-v 提供兩種類型。 其中一個使用儲存狀態，另一個使用磁碟區陰影複製服務 (VSS) ，讓您可以針對支援 VSS 的程式進行應用程式一致備份。
 
 **優化**-每個支援的客體作業系統都有一組自訂的服務和驅動程式，稱為*integration services*，可讓您更輕鬆地在 hyper-v 虛擬機器中使用作業系統。
 
@@ -82,13 +80,13 @@ Hyper-v 是以虛擬機器為基礎的虛擬化技術。 Hyper-v 使用的是 Wi
 
 ## <a name="what-does-hyper-v-consist-of"></a>Hyper-v 包含哪些專案？
 
-Hyper-v 具有共同運作的必要元件，讓您可以建立和執行虛擬機器。 這些元件統稱為虛擬化平臺。 當您安裝 Hyper-v 角色時，它們會安裝成一組集合。 所需的部分包括 Windows 虛擬程式、Hyper-v 虛擬機器管理服務、虛擬化 WMI 提供者、虛擬機器匯流排（VMbus）、虛擬化服務提供者（VSP）和虛擬基礎結構驅動程式（VID）。
+Hyper-v 具有共同運作的必要元件，讓您可以建立和執行虛擬機器。 這些元件統稱為虛擬化平臺。 當您安裝 Hyper-v 角色時，它們會安裝成一組集合。 所需的部分包括 Windows 虛擬程式、Hyper-v 虛擬機器管理服務、虛擬化 WMI 提供者、虛擬機器匯流排 (VMbus) 、虛擬化服務提供者 (VSP) 和虛擬基礎結構驅動程式 (VID) 。
 
 Hyper-v 也有管理和連線能力的工具。 您可以將這些安裝在 Hyper-v 角色安裝所在的同一部電腦上，以及安裝在未安裝 Hyper-v 角色的電腦上。 這些工具組括：
 
 - Hyper-V 管理員
 - [適用于 Windows PowerShell 的 hyper-v 模組](https://docs.microsoft.com/powershell/module/hyper-v/index)
-- [虛擬機器連接](https://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/hyper-v-virtual-machine-connect)\(有時稱為 VMConnect\)
+- [虛擬機器連接](https://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/hyper-v-virtual-machine-connect) \(有時稱為 VMConnect\)
 - [Windows PowerShell Direct](manage/Manage-Windows-virtual-machines-with-PowerShell-Direct.md)
 
 ## <a name="related-technologies"></a>相關技術
@@ -96,7 +94,7 @@ Hyper-v 也有管理和連線能力的工具。 您可以將這些安裝在 Hype
 以下是一些通常與 Hyper-v 搭配使用的 Microsoft 技術：
 
 - [容錯移轉叢集](../../failover-clustering/whats-new-in-failover-clustering.md)
-- [Host desktops and apps in Remote Desktop Services on Azure](../../remote/remote-desktop-services/Host-desktops-and-apps-in-Remote-Desktop-Services.md) (主機桌上型電腦和應用程式在 Azure 上的遠端桌面服務)
+- [遠端桌面服務](../../remote/remote-desktop-services/Host-desktops-and-apps-in-Remote-Desktop-Services.md)
 - [System Center Virtual Machine Manager](https://docs.microsoft.com/system-center/vmm/overview)
 
 各種存放裝置技術：叢集共用磁片區、SMB 3.0、儲存空間直接存取

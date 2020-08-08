@@ -6,18 +6,18 @@ ms.topic: article
 ms.assetid: 5dc529f7-7bc3-48dd-b83d-92a09e4055c4
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: c52c26d44e50075f9c28dfdec7c2ab4fc420e163
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a93302ee89bf8c4b9a78fc6651e77fb566d1e9c6
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948951"
+ms.locfileid: "87996996"
 ---
 # <a name="step-1-configure-the-directaccess-infrastructure"></a>步驟1設定 DirectAccess 基礎結構
 
 >適用於：Windows Server (半年度管道)、Windows Server 2016
 
-本主題說明如何在現有 VPN 部署中設定啟用 DirectAccess 所需的基礎結構。 開始部署步驟之前，請確定您已完成[步驟1：規劃 DirectAccess 基礎結構](Step-1-Plan-DirectAccess-Infrastructure.md)中所述的規劃步驟。
+本主題說明如何在現有 VPN 部署中設定啟用 DirectAccess 所需的基礎結構。 開始部署步驟之前，請確定您已完成[步驟1：規劃 DirectAccess 基礎結構](./step-1-plan-da-inf-davpn.md)中所述的規劃步驟。
 
 |Task|描述|
 |----|--------|
@@ -328,6 +328,3 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
 13. 依序按一下 [確定]****、[註冊]****，然後按一下 [完成]****。
 
 14. 在 [憑證] 嵌入式管理單元的詳細資料窗格中，確認已註冊新憑證且「使用目的」為「伺服器驗證」。
-
-
-

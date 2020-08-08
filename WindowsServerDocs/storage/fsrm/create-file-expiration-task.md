@@ -2,18 +2,16 @@
 title: 建立檔案到期工作
 description: 本文說明針對即將到期檔案建立檔案管理工作的程序
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: ce458ab84e7f6ba40ab3578c9b4a3e5d58755dc5
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 0ff4b46064ca780d63c6f06898c114cb180c3665
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473765"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971125"
 ---
 # <a name="create-a-file-expiration-task"></a>建立檔案到期工作
 
@@ -41,7 +39,7 @@ ms.locfileid: "85473765"
 
 4. 在 [動作]**** 索引標籤中，輸入下列資訊：
 
-   - [類型]****。 從下拉式清單方塊中選取 **\[檔案到期\]**。
+   - **類型**。 從下拉式清單方塊中選取 **\[檔案到期\]**。
 
    - [到期目錄]****。 選取檔案到期後要移到的目錄。
 
@@ -96,7 +94,7 @@ ms.locfileid: "85473765"
 
 8. 在 **\[排程\]** 索引標籤上，按一下 **\[建立排程\]**，然後按一下 **\[排程\]** 對話方塊中的 **\[新增\]**。 如此會顯示每天上午 9:00 設定的預設排程， 但您還是可以修改預設排程。 當您設定排程完畢時，按一下 **\[確定\]**，然後再按一次 **\[確定\]**。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [分類管理](classification-management.md)
 -   [檔案管理工作](file-management-tasks.md)

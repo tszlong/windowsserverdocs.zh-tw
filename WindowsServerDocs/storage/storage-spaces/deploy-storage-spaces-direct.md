@@ -1,21 +1,19 @@
 ---
 title: 部署儲存空間直接存取
-ms.prod: windows-server
 manager: eldenc
 ms.author: stevenek
-ms.technology: storage-spaces
 ms.topic: get-started-article
 ms.assetid: 20fee213-8ba5-4cd3-87a6-e77359e82bc0
 author: stevenek
 ms.date: 07/24/2020
 description: 使用 Windows Server 中的儲存空間直接存取部署軟體定義的存放裝置的逐步指示，做為超大範圍基礎結構或聚合式 (也稱為分類式) 基礎結構。
 ms.localizationpriority: medium
-ms.openlocfilehash: ba9287cebe1cf35c151335e59476f63ae3e01a56
-ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
+ms.openlocfilehash: a15f9df55fd5650443f4d0220dee6b4ada9253d2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87863935"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971105"
 ---
 # <a name="deploy-storage-spaces-direct"></a>部署儲存空間直接存取
 

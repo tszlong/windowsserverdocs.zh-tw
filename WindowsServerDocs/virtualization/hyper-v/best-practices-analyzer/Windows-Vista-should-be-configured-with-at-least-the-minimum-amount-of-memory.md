@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 49f6f9b6-c290-4b1b-b6f3-cc9a0acd8fb2
 author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 4d497f88403da2df7fec3c15c93835c59d67b7c7
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 74f563cb19bf480f3c5dfa8df639f4b75adbaf4e
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948167"
+ms.locfileid: "87996713"
 ---
 # <a name="windows-vista-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>Windows Vista 至少應設定最少的記憶體數量
 
@@ -68,7 +68,4 @@ Set-VMMemory <MyVM> -StartupBytes 512MB
 ```
 
 ## <a name="see-also"></a>另請參閱
-[設定-Set-vmmemory](https://technet.microsoft.com/library/hh848572.aspx)
-
-
-
+[設定-Set-vmmemory](/powershell/module/hyper-v/set-vmmemory?view=win10-ps)

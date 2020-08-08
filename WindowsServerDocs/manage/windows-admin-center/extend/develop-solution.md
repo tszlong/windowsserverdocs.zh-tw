@@ -1,19 +1,17 @@
 ---
 title: 開發解決方案擴充功能
-description: 開發解決方案延伸模組 Windows 系統管理中心 SDK （Project 檀香山）
-ms.technology: manage
+description: '開發解決方案延伸模組 Windows 系統管理中心 SDK (Project 檀香山) '
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 6ac9c6296fdf9159c9f50a1304dd345932052ac9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 27ded378a40537455423f79869dfd07dcd2ba625
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357152"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949593"
 ---
 # <a name="develop-a-solution-extension"></a>開發解決方案擴充功能
 
@@ -47,9 +45,9 @@ wac create --company "{!Company Name}" --solution "{!Solution Name}" --tool "{!T
 
 | 值 | 說明 | 範例 |
 | ----- | ----------- | ------- |
-| ```{!Company Name}``` | 您的公司名稱（含空格） | ```Contoso Inc``` |
-| ```{!Solution Name}``` | 您的方案名稱（含空格） | ```Contoso Foo Works Suite``` |
-| ```{!Tool Name}``` | 您的工具名稱（含空格） | ```Manage Foo Works``` |
+| ```{!Company Name}``` | 您的公司名稱 (空格)  | ```Contoso Inc``` |
+| ```{!Solution Name}``` | 您的方案名稱 (空格)  | ```Contoso Foo Works Suite``` |
+| ```{!Tool Name}``` | 您的工具名稱 (空格)  | ```Manage Foo Works``` |
 
 這裡提供一個範例用法：
 
@@ -57,7 +55,7 @@ wac create --company "{!Company Name}" --solution "{!Solution Name}" --tool "{!T
 wac create --company "Contoso Inc" --solution "Contoso Foo Works Suite" --tool "Manage Foo Works"
 ```
 
-這會使用您為解決方案指定的名稱，在目前的工作目錄內建立新的資料夾，將所有必要的範本檔案複製到您的專案中，並使用您的公司、解決方案和工具名稱來設定檔案。  
+這會使用您為解決方案指定的名稱，在目前的工作目錄內建立新的資料夾，將所有必要的範本檔案複製到您的專案中，並使用您的公司、解決方案和工具名稱來設定檔案。
 
 接下來，將目錄切換到剛才建立的資料夾，然後執行下列命令來安裝必要的本機相依性：
 
@@ -65,7 +63,7 @@ wac create --company "Contoso Inc" --solution "Contoso Foo Works Suite" --tool "
 npm install
 ```
 
-完成後，您就可以設定將新延伸模組載入 Windows 管理中心所需的所有專案。 
+完成後，您就可以設定將新延伸模組載入 Windows 管理中心所需的所有專案。
 
 ## <a name="add-content-to-your-extension"></a>將內容新增至您的擴充功能
 
@@ -75,7 +73,7 @@ npm install
 - 新增[iFrame](guides/add-iframe.md)
 - 建立[自訂連接提供者](guides/create-connection-provider.md)
 - 修改[根導覽行為](guides/modify-root-navigation.md)
- 
+
 如需更多範例，請參閱我們的[GITHUB SDK 網站](https://aka.ms/wacsdk)：
 -  [開發人員工具](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/windows-admin-center-developer-tools)是功能完整的延伸模組，可以側載到 Windows 系統管理中心，而且包含豐富的範例功能和工具範例集合，可讓您在自己的延伸模組中流覽和使用。
 

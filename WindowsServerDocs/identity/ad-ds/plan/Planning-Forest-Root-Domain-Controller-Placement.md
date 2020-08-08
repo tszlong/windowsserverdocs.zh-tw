@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 33dc64cbbfe8eeb7f6593c45d9afc691e75eb0d5
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 125aa57086a396c643cc3c042376b7fecc17ede8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966560"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970965"
 ---
 # <a name="planning-forest-root-domain-controller-placement"></a>規劃設置樹系根網域控制站
 
@@ -23,6 +21,6 @@ ms.locfileid: "86966560"
 
 快捷方式信任有助於優化來自任一網域的使用者所提出的驗證要求。 如需有關網域之間的快捷方式信任的詳細資訊，請參閱[瞭解何時建立快捷方式信任一](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc754538(v=ws.11))文。
 
-如需協助您記載樹系根網域控制站位置的工作表，請參閱[Windows Server 2003 部署套件的工作輔助工具](https://microsoft.com/download/details.aspx?id=9608)、下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，並開啟「網域控制站位置」（DSSTOPO_4.doc）。
+如需協助您記載樹系根網域控制站位置的工作表，請參閱[Windows Server 2003 部署套件的工作輔助工具](https://microsoft.com/download/details.aspx?id=9608)、下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，然後開啟「網域控制站位置」 ( # A1) 。
 
 當您建立樹系根域時，您將需要參考這則資訊。 如需部署樹系根域的詳細資訊，請參閱[部署 Windows Server 2008 樹系根域](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc731174(v=ws.10))。

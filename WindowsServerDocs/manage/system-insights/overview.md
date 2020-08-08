@@ -1,19 +1,17 @@
 ---
 title: 系統深入解析概觀
 description: System Insights 是 Windows Server 2019 中新的預測性分析功能。 System Insights 預測功能-每個都是由機器學習模型所支援-在本機分析 Windows Server 系統資料（例如效能計數器和事件），讓您深入瞭解伺服器的運作，並協助您降低與被動管理部署中問題相關聯的營運費用。
-ms.prod: windows-server
-ms.technology: system-insights
 ms.topic: article
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 5/23/2018
-ms.openlocfilehash: b1f0fc5343c5228a02369a64bff2de50ab3f863e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 9bedd593cdd26b67e6e16ddea73955bb926a87a5
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471763"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996681"
 ---
 # <a name="system-insights-overview"></a>系統深入解析概觀
 
@@ -23,7 +21,7 @@ System Insights 是 Windows Server 2019 中新的預測性分析功能。 System
 
 在 Windows Server 2019 中，System Insights 隨附四個預設功能，著重于容量預測，根據您先前的使用模式來預測計算、網路和儲存體的未來資源。 System Insights 也隨附可延伸的[基礎結構](adding-and-developing-capabilities.md)，因此 Microsoft 和協力廠商可以將新的預測功能新增至系統深入解析，而不需要更新作業系統。
 
-您可以透過直覺的[Windows 管理中心](https://docs.microsoft.com/windows-server/manage/windows-admin-center/overview)延伸模組或[直接透過 PowerShell](https://aka.ms/SystemInsightsPowerShell)來管理系統深入解析，而系統深入解析可讓您根據部署的需求，分別設定每個預測功能。 所有的預測結果都會發佈至事件記錄檔，讓您可以使用[Azure 監視器](https://azure.microsoft.com/services/monitor/)或[System Center Operations Manager](https://docs.microsoft.com/system-center/scom/welcome?view=sc-om-1807) ，輕鬆地匯總並查看一組電腦的預測。
+您可以透過直覺的[Windows 管理中心](../windows-admin-center/overview.md)延伸模組或[直接透過 PowerShell](https://aka.ms/SystemInsightsPowerShell)來管理系統深入解析，而系統深入解析可讓您根據部署的需求，分別設定每個預測功能。 所有的預測結果都會發佈至事件記錄檔，讓您可以使用[Azure 監視器](https://azure.microsoft.com/services/monitor/)或[System Center Operations Manager](/system-center/scom/welcome?view=sc-om-1807) ，輕鬆地匯總並查看一組電腦的預測。
 
 ![Windows 系統管理中心的 System Insights 延伸模組，以圖表繪製預測來顯示 CPU 容量預測功能](media/cpu-forecast-2.png)
 
@@ -65,7 +63,7 @@ Add-WindowsFeature System-Insights -IncludeManagementTools
 - **Uservoice**：透過我們的[uservoice 頁面](https://windowsserver.uservoice.com/forums/295071-management-tools)提交功能要求。 與您的同事共用，以附議對您很重要的專案。
 - **電子郵件**：如果您想要私下向功能小組提交意見反應，請將電子郵件傳送至 system-insights-feed@microsoft.com 。 請記住，我們仍會要求您使用意見反應中樞或 UserVoice。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 若要深入瞭解「系統深入解析」，請使用下列資源：
 
 - [了解功能](understanding-capabilities.md)

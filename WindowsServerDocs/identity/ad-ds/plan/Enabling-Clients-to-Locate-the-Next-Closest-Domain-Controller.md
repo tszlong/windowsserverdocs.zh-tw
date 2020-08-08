@@ -6,20 +6,18 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/08/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: ce946fb0fe581a66f4a4e29cf8491f00294b5bcb
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 54b830df42a99712c28bb49be7e89ee84a43b088
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953580"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941197"
 ---
 # <a name="enabling-clients-to-locate-the-next-closest-domain-controller"></a>讓用戶端找出下一個最近的網域控制站
 
 > 適用於：Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-如果您的網域控制站執行 Windows Server 2008 或更新版本，您可以藉由啟用 [**嘗試下一個最接近的網站]** 群組原則設定，讓執行 windows Vista 或更新版本或 Windows Server 2008 或更新版本的用戶端電腦更有效率地找出網域控制站。 這項設定藉由協助簡化網路流量（特別是在有許多分公司和網站的大型企業），藉此改善網域控制站定位器（DC 定位程式）。
+如果您的網域控制站執行 Windows Server 2008 或更新版本，您可以藉由啟用 [**嘗試下一個最接近的網站]** 群組原則設定，讓執行 windows Vista 或更新版本或 Windows Server 2008 或更新版本的用戶端電腦更有效率地找出網域控制站。 這項設定可協助簡化網路流量（尤其是在擁有許多分公司和網站的大型企業中），藉此改善網域控制站定位器 (DC 定位器) 。
 
 這項新設定可能會影響您設定站台連結成本的方式，因為它會影響網域控制站的位置順序。 對於具有許多中樞網站和分公司的企業，您可以藉由確保用戶端在最接近的中樞網站中找不到網域控制站時，容錯移轉至下一個最接近的中樞網站，藉以大幅減少網路上 Active Directory 流量。
 
@@ -41,7 +39,7 @@ ms.locfileid: "86953580"
 
 [**嘗試下一個最接近的網站]** 設定會與自動網站涵蓋範圍協調運作。 例如，如果下一個最接近的網站沒有網域控制站，DC 定位程式會嘗試找出執行網站自動網站涵蓋範圍的網域控制站。
 
-根據預設，DC 定位程式在判斷下一個最接近的網站時，不會考慮包含唯讀網域控制站（RODC）的任何網站。 此外，當用戶端從執行 Windows Server 2008 之前版本的網域控制站取得回應時，DC 定位程式的行為會與未啟用 [設定] 時相同。
+根據預設，DC 定位器在判斷下一個最接近的網站時，並不會考慮包含唯讀網域控制站 (RODC) 的任何網站。 此外，當用戶端從執行 Windows Server 2008 之前版本的網域控制站取得回應時，DC 定位程式的行為會與未啟用 [設定] 時相同。
 
 例如，假設網站拓撲具有四個網站，其中包含下圖中的站台連結值。 在此範例中，所有網域控制站都是執行 Windows Server 2008 或更新版本的可寫入網域控制站。
 
@@ -54,4 +52,4 @@ ms.locfileid: "86953580"
 > [!NOTE]
 > [**嘗試下一個最接近的網站]** 設定會與自動網站涵蓋範圍協調運作。 例如，如果下一個最接近的網站沒有網域控制站，DC 定位程式會嘗試找出執行網站自動網站涵蓋範圍的網域控制站。
 
-若要套用 [**嘗試下一個最接近的網站]** 設定，您可以建立群組原則物件（GPO），並將它連結到您組織的適當物件，也可以修改預設網域原則，讓它影響網域中執行 Windows Vista 或更新版本和 Windows Server 2008 或更新版本的所有用戶端。 如需有關如何設定 [**嘗試下一個最接近的網站]** 設定的詳細資訊，請參閱在[下一個最接近的網站中啟用用戶端以尋找網域控制站](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc772592(v=ws.10))。
+若要套用 [**嘗試下一個最接近的網站]** 設定，您可以 (GPO) 建立群組原則物件，並將它連結到您組織的適當物件，也可以修改預設網域原則，讓它影響網域中執行 Windows Vista 或更新版本和 Windows Server 2008 或更新版本的所有用戶端。 如需有關如何設定 [**嘗試下一個最接近的網站]** 設定的詳細資訊，請參閱在[下一個最接近的網站中啟用用戶端以尋找網域控制站](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc772592(v=ws.10))。

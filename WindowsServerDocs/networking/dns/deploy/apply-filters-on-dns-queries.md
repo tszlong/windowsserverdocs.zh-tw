@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: b86beeac-b0bb-4373-b462-ad6fa6cbedfa
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 81afa40adc51a89a12e096000de1f11f13730df6
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 79e0a0c0e99c49fc251d8aebc3fc76e68603e45c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964174"
+ms.locfileid: "87996913"
 ---
 # <a name="use-dns-policy-for-applying-filters-on-dns-queries"></a>使用 DNS 原則進行 DNS 查詢上的篩選套用
 
@@ -41,7 +41,7 @@ DNS 原則中的查詢篩選器可讓您設定 DNS 伺服器，以自訂的方�
 下列範例示範如何針對封鎖或允許 DNS 名稱解析查詢的 DNS 原則建立篩選器。
 
 >[!NOTE]
->本主題中的範例命令會使用 Windows PowerShell 命令**DnsServerQueryResolutionPolicy**。 如需詳細資訊，請參閱[DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
+>本主題中的範例命令會使用 Windows PowerShell 命令**DnsServerQueryResolutionPolicy**。 如需詳細資訊，請參閱[DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
 
 ## <a name="block-queries-from-a-domain"></a><a name="bkmk_block1"></a>封鎖來自網域的查詢
 

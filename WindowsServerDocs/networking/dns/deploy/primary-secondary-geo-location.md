@@ -2,18 +2,16 @@
 title: 透過主要-次要部署使用地理位置流量管理的 DNS 原則
 description: 本主題是 Windows Server 2016 DNS 原則案例指南的一部分
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-dns
 ms.topic: article
 ms.assetid: a9ee7a56-f062-474f-a61c-9387ff260929
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: e819cf2e3e0b4803e9efc9886a679e5128432087
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 45bff2c65f0497216cb8c7e7dc9dd670c5387ba2
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518264"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996855"
 ---
 # <a name="use-dns-policy-for-geo-location-based-traffic-management-with-primary-secondary-deployments"></a>透過主要-次要部署使用地理位置流量管理的 DNS 原則
 
@@ -23,10 +21,10 @@ ms.locfileid: "87518264"
 
 先前的案例是[使用 Dns 原則進行地理位置型流量管理與主伺服器，並](primary-geo-location.md)提供在主要 DNS 伺服器上針對地理位置型流量管理設定 DNS 原則的指示。 不過，在網際網路基礎結構中，DNS 伺服器會廣泛部署在主要-次要模型中，其中區域的可寫入複本會儲存在選取和保護的主伺服器上，而區域的唯讀複本則會保留在多個次要伺服器上。
 
-次要伺服器會使用「區域傳輸通訊協定授權傳輸」（AXFR）和「增量區域傳輸」（IXFR）來要求和接收包含主要 DNS 伺服器上之區域新變更的區域更新。
+次要伺服器使用區域傳輸通訊協定授權傳輸 (AXFR) 和增量區域轉送 (IXFR) 來要求和接收包含主要 DNS 伺服器上之區域新變更的區域更新。
 
 > [!NOTE]
-> 如需 AXFR 的詳細資訊，請參閱網際網路工程任務推動小組（IETF）[要求建議 5936](https://tools.ietf.org/rfc/rfc5936.txt)。 如需有關 IXFR 的詳細資訊，請參閱網際網路工程任務推動小組（IETF）[要求建議 1995](https://tools.ietf.org/html/rfc1995)。
+> 如需有關 AXFR 的詳細資訊，請參閱網際網路工程任務推動小組 (IETF) [要求意見 5936](https://tools.ietf.org/rfc/rfc5936.txt)。 如需有關 IXFR 的詳細資訊，請參閱網際網路工程任務推動小組 (IETF) [要求意見 1995](https://tools.ietf.org/html/rfc1995)。
 
 ## <a name="primary-secondary-geo-location-based-traffic-management-example"></a>主要-次要地理位置型流量管理範例
 以下範例說明如何在主要-次要部署中使用 DNS 原則，以根據執行 DNS 查詢的用戶端實體位置來進行流量重新導向。
@@ -39,7 +37,7 @@ Contoso 雲端服務有兩個資料中心，一個位於美國，另一個位於
 
 Contoso DNS 部署包含兩部次要伺服器： **SecondaryServer1**，IP 位址為 10.0.0.2;和**SecondaryServer2**，並使用 IP 位址10.0.0.3。 這些次要伺服器會作為兩個不同區域中的名稱伺服器，SecondaryServer1 位於歐洲，而 SecondaryServer2 位於美國
 
-**PrimaryServer** （IP 位址10.0.0.1）上有一個主要的可寫入區域複本，其中會進列區域變更。 透過一般區域轉送到次要伺服器，次要伺服器一律會保持最新狀態，而對 PrimaryServer 上的區域有任何新的變更。
+在**PrimaryServer** (IP 位址 10.0.0.1) 上有一個主要的可寫入區域複本，其中會進列區域變更。 透過一般區域轉送到次要伺服器，次要伺服器一律會保持最新狀態，而對 PrimaryServer 上的區域有任何新的變更。
 
 下圖描述此案例。
 
@@ -58,9 +56,9 @@ Contoso DNS 部署包含兩部次要伺服器： **SecondaryServer1**，IP 位�
 1. 當您安裝 DNS 時，主要區域會建立在主要 DNS 伺服器上。
 2. 在次要伺服器上，建立區域並指定主伺服器。
 3. 在主伺服器上，您可以在主要區域上將次要伺服器新增為受信任的次要複本。
-4. 次要區域會進行完整的區域轉送要求（AXFR）並接收區域的複本。
+4. 次要區域會 (AXFR) 進行完整的區域轉送要求，並接收區域的複本。
 5. 如有需要，主伺服器會將有關區域更新的通知傳送到次要伺服器。
-6. 次要伺服器會進行增量區域轉送要求（IXFR）。 因此，次要伺服器會與主伺服器保持同步。
+6. 次要伺服器會 (IXFR) 進行增量區域轉送要求。 因此，次要伺服器會與主伺服器保持同步。
 
 ### <a name="zone-scope-level-transfers-in-a-dns-primary-secondary-deployment"></a>DNS 主要-次要部署中的區域範圍層級傳輸
 
@@ -68,11 +66,11 @@ Contoso DNS 部署包含兩部次要伺服器： **SecondaryServer1**，IP 位�
 
 設定具有主要和次要伺服器的 DNS 基礎結構之後，DNS 會使用下列程式自動執列區域範圍層級的傳輸。
 
-為確保區域範圍層級的傳輸，DNS 伺服器會使用 DNS （EDNS0） OPT RR 的擴充機制。 具有範圍的區域的所有區域轉送（AXFR 或 IXFR）要求都是源自于 EDNS0 OPT RR，其選項識別碼預設為 "65433"。 如需有關 EDNSO 的詳細資訊，請參閱 IETF[提出意見要求 6891](https://tools.ietf.org/html/rfc6891)。
+為確保區域範圍層級的傳輸，DNS 伺服器會使用 DNS 的擴充機制 (EDNS0) OPT RR。 所有區域轉送 (AXFR 或 IXFR) 來自具有範圍之區域的要求，並以 EDNS0 OPT RR 起始，其選項 ID 預設會設定為 "65433"。 如需有關 EDNSO 的詳細資訊，請參閱 IETF[提出意見要求 6891](https://tools.ietf.org/html/rfc6891)。
 
 OPT RR 的值是正在傳送要求的區域範圍名稱。 當主要 DNS 伺服器從受信任的次要伺服器接收此封包時，它會將要求轉譯為該區域範圍的即將到來。
 
-如果主伺服器具有該區域範圍，它會以該範圍的傳輸（XFR）資料回應。 回應包含 OPT RR，其選項識別碼為 "65433"，值設定為相同的區域範圍。 次要伺服器會接收此回應、從回應中取出範圍資訊，並更新該區域的特定範圍。
+如果主伺服器具有該區域範圍，它會以傳輸來回應 (XFR 從該範圍) 資料。 回應包含 OPT RR，其選項識別碼為 "65433"，值設定為相同的區域範圍。 次要伺服器會接收此回應、從回應中取出範圍資訊，並更新該區域的特定範圍。
 
 在此程式之後，主伺服器會維護一份受信任次要複本的清單，這些次要複本已傳送通知的區域範圍要求。
 
@@ -80,7 +78,7 @@ OPT RR 的值是正在傳送要求的區域範圍名稱。 當主要 DNS 伺服�
 
 ## <a name="how-to-configure-dns-policy-for-primary-secondary-geo-location-based-traffic-management"></a>如何設定主要-次要地理位置型流量管理的 DNS 原則
 
-開始之前，請確定您已完成將[DNS 原則用於以地理位置為基礎的流量管理](../../dns/deploy/Scenario--Use-DNS-Policy-for-Geo-Location-Based-Traffic-Management-with-Primary-Servers.md)主題中的所有步驟，並使用區域、區域範圍、Dns 用戶端子網和 dns 原則設定主要 DNS 伺服器。
+開始之前，請確定您已完成將[DNS 原則用於以地理位置為基礎的流量管理](./primary-geo-location.md)主題中的所有步驟，並使用區域、區域範圍、Dns 用戶端子網和 dns 原則設定主要 DNS 伺服器。
 
 > [!NOTE]
 > 本主題中將 DNS 用戶端子網、區域範圍和 DNS 原則從 DNS 主伺服器複製到 DNS 次要伺服器的指示，適用于您的初始 DNS 設定和驗證。 未來，您可能會想要變更主伺服器上的 DNS 用戶端子網、區域範圍和原則設定。 在此情況下，您可以建立自動化腳本，讓次要伺服器與主伺服器保持同步。
@@ -102,7 +100,7 @@ OPT RR 的值是正在傳送要求的區域範圍名稱。 當主要 DNS 伺服�
 
 ### <a name="create-the-secondary-zones"></a>建立次要區域
 
-您可以建立要複寫至 SecondaryServer1 和 SecondaryServer2 之區域的次要複本（假設 Cmdlet 是從單一管理用戶端遠端執行）。
+您可以建立想要複寫至 SecondaryServer1 和 SecondaryServer2 (的次要複本，假設 Cmdlet 是從單一管理用戶端) 遠端執行。
 
 例如，您可以在 SecondaryServer1 和 SecondarySesrver2 上建立 www.woodgrove.com 的次要複本。
 
@@ -113,7 +111,7 @@ Add-DnsServerSecondaryZone -Name "woodgrove.com" -ZoneFile "woodgrove.com.dns" -
 Add-DnsServerSecondaryZone -Name "woodgrove.com" -ZoneFile "woodgrove.com.dns" -MasterServers 10.0.0.1 -ComputerName SecondaryServer2
 ```
 
-如需詳細資訊，請參閱[DnsServerSecondaryZone](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserversecondaryzone?view=win10-ps)。
+如需詳細資訊，請參閱[DnsServerSecondaryZone](/powershell/module/dnsserver/add-dnsserversecondaryzone?view=win10-ps)。
 
 ### <a name="configure-the-zone-transfer-settings-on-the-primary-zone"></a>在主要區域上設定區域轉移設定
 
@@ -131,7 +129,7 @@ Add-DnsServerSecondaryZone -Name "woodgrove.com" -ZoneFile "woodgrove.com.dns" -
 Set-DnsServerPrimaryZone -Name "woodgrove.com" -Notify Notify -SecondaryServers "10.0.0.2,10.0.0.3" -SecureSecondaries TransferToSecureServers -ComputerName PrimaryServer
 ```
 
-如需詳細資訊，請參閱[add-dnsserverprimaryzone](https://docs.microsoft.com/powershell/module/dnsserver/set-dnsserverprimaryzone?view=win10-ps)。
+如需詳細資訊，請參閱[add-dnsserverprimaryzone](/powershell/module/dnsserver/set-dnsserverprimaryzone?view=win10-ps)。
 
 ### <a name="copy-the-dns-client-subnets"></a>複製 DNS 用戶端子網
 
@@ -144,7 +142,7 @@ Get-DnsServerClientSubnet -ComputerName PrimaryServer | Add-DnsServerClientSubne
 Get-DnsServerClientSubnet -ComputerName PrimaryServer | Add-DnsServerClientSubnet -ComputerName SecondaryServer2
 ```
 
-如需詳細資訊，請參閱[DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)。
+如需詳細資訊，請參閱[DnsServerClientSubnet](/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)。
 
 ### <a name="create-the-zone-scopes-on-the-secondary-server"></a>在次要伺服器上建立區域範圍
 
@@ -160,11 +158,11 @@ Get-DnsServerZoneScope -ZoneName "woodgrove.com" -ComputerName PrimaryServer|Add
 > [!NOTE]
 > 在這些範例命令中，會包含 **-ErrorAction Ignore**參數，因為每個區域上都有預設區域範圍。 無法建立或刪除預設區域範圍。 管線會導致嘗試建立該範圍，而且將會失敗。 或者，您可以在兩個次要區域上建立非預設的區域範圍。
 
-如需詳細資訊，請參閱[DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)。
+如需詳細資訊，請參閱[DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)。
 
 ### <a name="configure-dns-policy"></a>設定 DNS 原則
 
-建立子網、分割區（區域範圍）並新增記錄之後，您必須建立用來連接子網和分割區的原則，如此一來，當查詢來自其中一個 DNS 用戶端子網中的來源時，就會從該區域的正確範圍傳回查詢回應。 對應預設區域範圍不需要任何原則。
+建立子網之後，分割區 (區域範圍) ，而且您已新增記錄，您必須建立用來連接子網和資料分割的原則，如此一來，當查詢來自其中一個 DNS 用戶端子網中的來源時，就會從該區域的正確範圍傳回查詢回應。 對應預設區域範圍不需要任何原則。
 
 您可以使用下列 Windows PowerShell 命令來建立連結 DNS 用戶端子網和區域範圍的 DNS 原則。
 
@@ -174,7 +172,7 @@ $policy | Add-DnsServerQueryResolutionPolicy -ZoneName "woodgrove.com" -Computer
 $policy | Add-DnsServerQueryResolutionPolicy -ZoneName "woodgrove.com" -ComputerName SecondaryServer2
 ```
 
-如需詳細資訊，請參閱[DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
+如需詳細資訊，請參閱[DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
 
 現在，次要 DNS 伺服器會使用必要的 DNS 原則進行設定，以根據地理位置來重新導向流量。
 

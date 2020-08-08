@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 4846b548-8fbc-4a7f-af13-09e834acdec0
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 04e4d33f6c5894a59547e84a6066d3af04f80a9b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d7df84e26ef86f553d57b2019d4d46581d7c17fa
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964104"
+ms.locfileid: "87996902"
 ---
 # <a name="dns-responses-based-on-time-of-day-with-an-azure-cloud-app-server"></a>使用 Azure 雲端應用程式伺服器以時間為基礎的 DNS 回應
 
@@ -22,7 +22,7 @@ ms.locfileid: "87964104"
 當您想要將一個時區的流量導向至替代的應用程式伺服器（例如，Microsoft Azure 上所裝載的 Web 服務器）時，此案例很有用。 這可讓您在主伺服器以流量超載時的尖峰時段，對應用程式實例之間的流量進行負載平衡。
 
 > [!NOTE]
-> 若要瞭解如何使用 DNS 原則來取得智慧型 DNS 回應，而不使用 Azure，請參閱[根據一天的時間使用 Dns 原則來進行智慧型 Dns 回應](Scenario--Use-DNS-Policy-for-Intelligent-DNS-Responses-Based-on-the-Time-of-Day.md)。
+> 若要瞭解如何使用 DNS 原則來取得智慧型 DNS 回應，而不使用 Azure，請參閱[根據一天的時間使用 Dns 原則來進行智慧型 Dns 回應](./dns-tod-intelligent.md)。
 
 ## <a name="example-of-intelligent-dns-responses-based-on-the-time-of-day-with-azure-cloud-app-server"></a>以 Azure 雲端應用程式伺服器當天的時間為基礎的智慧型 DNS 回應範例
 
@@ -91,7 +91,7 @@ Azure 記錄上10分鐘的 TTL 可確保從 LDNS 快取中的記錄過期後，�
 Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "AzureZoneScope"
 ```
 
-如需詳細資訊，請參閱[DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
+如需詳細資訊，請參閱[DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
 ### <a name="add-records-to-the-zone-scopes"></a>將記錄新增至區域範圍
 下一個步驟是將代表 Web 服務器主機的記錄新增到區域範圍中。
@@ -110,7 +110,7 @@ Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -
 Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "192.68.30.2"
 ```
 
-如需詳細資訊，請參閱[DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。
+如需詳細資訊，請參閱[DnsServerResourceRecord](/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。
 
 ### <a name="create-the-dns-policies"></a>建立 DNS 原則
 建立區域範圍之後，您可以建立 DNS 原則，將傳入的查詢分散到這些範圍，以便發生下列情況。
@@ -126,7 +126,7 @@ Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -
 Add-DnsServerQueryResolutionPolicy -Name "Contoso6To9Policy" -Action ALLOW -ZoneScope "contosogiftservices.com,7;AzureZoneScope,3" –TimeOfDay “EQ,18:00-21:00” -ZoneName "contosogiftservices.com" –ProcessingOrder 1
 ```
 
-如需詳細資訊，請參閱[DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
+如需詳細資訊，請參閱[DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
 
 現在，DNS 伺服器已設定必要的 DNS 原則，以根據一天的時間將流量重新導向至 Azure Web 服務器。
 

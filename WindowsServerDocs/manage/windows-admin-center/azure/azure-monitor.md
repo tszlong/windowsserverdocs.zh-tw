@@ -6,18 +6,18 @@ author: haley-rowland
 ms.author: harowl
 ms.localizationpriority: medium
 ms.date: 03/24/2019
-ms.openlocfilehash: 81501cb5f4255b7a65ebc5f9f6cb9413938864f0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 440c0e3235f2891f1e6866d3a6638833c70d1eb4
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87940119"
+ms.locfileid: "87996838"
 ---
 # <a name="monitor-servers-and-configure-alerts-with-azure-monitor-from-windows-admin-center"></a>使用 Windows 管理中心的 Azure 監視器監視伺服器和設定警示
 
-[深入瞭解 Azure 與 Windows 管理中心的整合。](../plan/azure-integration-options.md)
+[深入瞭解 Azure 與 Windows 管理中心的整合。](./index.md)
 
-[Azure 監視器](https://docs.microsoft.com/azure/azure-monitor/overview)是一種解決方案，可從各種不同的資源（包括內部部署和雲端的 Windows 伺服器和 vm）收集、分析及採取遙測。 雖然 Azure 監視器會從 Azure Vm 和其他 Azure 資源提取資料，本文著重于 Azure 監視器如何與內部部署伺服器和 Vm 搭配使用，特別是 Windows 系統管理中心。 如果您有興趣瞭解如何使用 Azure 監視器來取得有關超交集叢集的電子郵件警示，請參閱[使用 Azure 監視器傳送電子郵件以健全狀況服務錯誤](https://docs.microsoft.com/windows-server/storage/storage-spaces/configure-azure-monitor)。
+[Azure 監視器](/azure/azure-monitor/overview)是一種解決方案，可從各種不同的資源（包括內部部署和雲端的 Windows 伺服器和 vm）收集、分析及採取遙測。 雖然 Azure 監視器會從 Azure Vm 和其他 Azure 資源提取資料，本文著重于 Azure 監視器如何與內部部署伺服器和 Vm 搭配使用，特別是 Windows 系統管理中心。 如果您有興趣瞭解如何使用 Azure 監視器來取得有關超交集叢集的電子郵件警示，請參閱[使用 Azure 監視器傳送電子郵件以健全狀況服務錯誤](../../../storage/storage-spaces/configure-azure-monitor.md)。
 
 ## <a name="how-does-azure-monitor-work"></a>Azure 監視器如何運作？
 ![](../media/azure-monitor-diagram.png)從內部部署 Windows 伺服器產生的 img 資料會收集在 Azure 監視器的 Log Analytics 工作區中。 在工作區中，您可以啟用各種監視解決方案 (多組提供特定案例深入解析的邏輯)。 例如，Azure 更新管理、Azure 資訊安全中心和適用於 VM 的 Azure 監視器，都是可以在工作區中啟用的監視解決方案。
@@ -64,21 +64,21 @@ Azure 監視器免費提供每位客戶每月 5 GB 的資料額度，您可以�
 
 ### <a name="create-email-alerts"></a>**建立電子郵件警示**
 
-將伺服器連結至 Azure 監視器之後，您就可以使用 [設定 > 監視和警示] 頁面中的智慧型超連結，流覽至 Azure 入口網站。 系統管理中心會自動啟用效能計數器的收集，因此您可以藉由自訂許多預先定義的查詢之一或自行撰寫，輕鬆[建立新的警示](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-log)。
+將伺服器連結至 Azure 監視器之後，您就可以使用 [設定 > 監視和警示] 頁面中的智慧型超連結，流覽至 Azure 入口網站。 系統管理中心會自動啟用效能計數器的收集，因此您可以藉由自訂許多預先定義的查詢之一或自行撰寫，輕鬆[建立新的警示](/azure/azure-monitor/platform/alerts-log)。
 
 ### <a name="get-a-consolidated-view-across-multiple-servers-"></a>* * 在多部伺服器之間取得匯總的觀點 * *
 
-如果您將多部伺服器上線至 Azure 監視器內的單一 Log Analytics 工作區，您可以從 Azure 監視器內的[虛擬機器 Insights 解決方案](https://docs.microsoft.com/azure/azure-monitor/insights/vminsights-overview)，取得所有這些伺服器的匯總視圖。   (請注意，只有適用于 Azure 監視器的虛擬機器深入解析的 [效能] 和 [對應] 索引標籤，才可與內部部署伺服器搭配運作– [健康情況] 索引標籤只適用于 Azure Vm。 ) 若要在 Azure 入口網站中查看這項功能，請移至 [深入解析 Azure 監視器] 底下 > 虛擬機器 (]，然後流覽至 [效能]
+如果您將多部伺服器上線至 Azure 監視器內的單一 Log Analytics 工作區，您可以從 Azure 監視器內的[虛擬機器 Insights 解決方案](/azure/azure-monitor/insights/vminsights-overview)，取得所有這些伺服器的匯總視圖。   (請注意，只有適用于 Azure 監視器的虛擬機器深入解析的 [效能] 和 [對應] 索引標籤，才可與內部部署伺服器搭配運作– [健康情況] 索引標籤只適用于 Azure Vm。 ) 若要在 Azure 入口網站中查看這項功能，請移至 [深入解析 Azure 監視器] 底下 > 虛擬機器 (]，然後流覽至 [效能]
 
 ### <a name="visualize-apps-systems-and-services-connected-to-a-given-server"></a>**將連接到指定伺服器的應用程式、系統和服務視覺化**
 
-當系統管理中心將伺服器將上線到 Azure 監視器內的 VM insights 解決方案中時，它也會亮起一項稱為[服務對應](https://docs.microsoft.com/azure/azure-monitor/insights/service-map)的功能。 這項功能會自動探索應用程式元件，並對應服務之間的通訊，讓您可以輕鬆地從 Azure 入口網站中，以絕佳的詳細資料視覺化伺服器之間的連線。 若要找到此項，請移至 [Azure 入口網站] > Azure 監視器 > 虛擬機器] 底下的 [深入解析] (，然後流覽至 [地圖] 索引標籤。
+當系統管理中心將伺服器將上線到 Azure 監視器內的 VM insights 解決方案中時，它也會亮起一項稱為[服務對應](/azure/azure-monitor/insights/service-map)的功能。 這項功能會自動探索應用程式元件，並對應服務之間的通訊，讓您可以輕鬆地從 Azure 入口網站中，以絕佳的詳細資料視覺化伺服器之間的連線。 若要找到此項，請移至 [Azure 入口網站] > Azure 監視器 > 虛擬機器] 底下的 [深入解析] (，然後流覽至 [地圖] 索引標籤。
 
 > [!NOTE]
-> 適用于 Azure 監視器的虛擬機器深入解析的視覺效果目前會在6個公開區域中提供。  如需最新資訊，請參閱[適用於 VM 的 Azure 監視器文件](https://docs.microsoft.com/azure/azure-monitor/insights/vminsights-onboard#log-analytics)。  您必須在其中一個支援的區域中部署 Log Analytics 工作區，以取得上述虛擬機器 Insights 解決方案所提供的其他好處。
+> 適用于 Azure 監視器的虛擬機器深入解析的視覺效果目前會在6個公開區域中提供。  如需最新資訊，請參閱[適用於 VM 的 Azure 監視器文件](/azure/azure-monitor/insights/vminsights-onboard#log-analytics)。  您必須在其中一個支援的區域中部署 Log Analytics 工作區，以取得上述虛擬機器 Insights 解決方案所提供的其他好處。
 
 ## <a name="disabling-monitoring"></a>停用監視
 
 若要完全中斷伺服器與 Log Analytics 工作區的連線，請卸載 MMA 代理程式。 這表示此伺服器將不會再將資料傳送到工作區，而安裝在該工作區中的所有解決方案都將無法再收集和處理來自該伺服器的資料。 不過，這不會影響工作區本身–向該工作區回報的所有資源都會繼續執行此動作。 若要在 Windows 系統管理中心內卸載 MMA 代理程式，請連接到伺服器，然後移至 [**已安裝的應用程式**]，尋找 Microsoft Monitoring Agent，然後選取 [**移除**]。
 
-如果您想要關閉工作區中的特定解決方案，您將需要[從 Azure 入口網站移除監視解決方案](https://docs.microsoft.com/azure/azure-monitor/insights/solutions#remove-a-management-solution)。 若移除監視解決方案，表示將不再為向該工作區報告的「任何」伺服器產生該解決方案所建立的深入解析。 例如，如果我卸載適用於 VM 的 Azure 監視器解決方案，我就不會再從連線到 [我的工作區] 的任何電腦，看到 VM 或伺服器效能的深入解析。
+如果您想要關閉工作區中的特定解決方案，您將需要[從 Azure 入口網站移除監視解決方案](/azure/azure-monitor/insights/solutions#remove-a-management-solution)。 若移除監視解決方案，表示將不再為向該工作區報告的「任何」伺服器產生該解決方案所建立的深入解析。 例如，如果我卸載適用於 VM 的 Azure 監視器解決方案，我就不會再從連線到 [我的工作區] 的任何電腦，看到 VM 或伺服器效能的深入解析。

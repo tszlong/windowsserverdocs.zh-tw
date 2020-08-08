@@ -2,18 +2,16 @@
 title: 透過主要伺服器使用地理位置流量管理的 DNS 原則
 description: 本主題是 Windows Server 2016 DNS 原則案例指南的一部分
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-dns
 ms.topic: article
 ms.assetid: ef9828f8-c0ad-431d-ae52-e2065532e68f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 47124531c3e516efeceda57574bd6a648667f90f
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 9a1abc00bd8683c716563159aac889a98f364f87
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518274"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996875"
 ---
 # <a name="use-dns-policy-for-geo-location-based-traffic-management-with-primary-servers"></a>透過主要伺服器使用地理位置流量管理的 DNS 原則
 
@@ -32,11 +30,11 @@ ms.locfileid: "87518274"
 - **傳輸通訊協定**。 查詢中使用的傳輸通訊協定。 可能的專案為**UDP**和**TCP**。
 - **網際網路通訊協定**。 查詢中使用的網路通訊協定。 可能的專案為**IPv4**和**IPv6**。
 - **伺服器介面 IP 位址**。 接收 DNS 要求的 DNS 伺服器網路介面的 IP 位址。
-- **FQDN**。 查詢中記錄的完整功能變數名稱（FQDN），而且可能會使用萬用字元。
-- **查詢類型**。 查詢的記錄類型（A、SRV、TXT 等）。
+- **FQDN**。 查詢中記錄的完整功能變數名稱 (FQDN) ，而且可能會使用萬用字元。
+- **查詢類型**。 所查詢的記錄類型 (A、SRV、TXT 等等 ) 。
 - **一天中的時間**。 接收查詢的當日時間。
 
-您可以使用邏輯運算子（和/或）來結合下列準則，以制訂原則運算式。 當這些運算式相符時，原則應該會執行下列其中一項動作。
+您可以將下列準則與邏輯運算子結合 (和/或) ，以制訂原則運算式。 當這些運算式相符時，原則應該會執行下列其中一項動作。
 
 - **忽略**。 DNS 伺服器會以無訊息方式卸載查詢。
 - **拒絕**。 DNS 伺服器會以失敗回應來回應該查詢。
@@ -60,7 +58,7 @@ Contoso 雲端服務有兩個資料中心，一個位於美國，另一個在歐
 
 在名稱解析程式期間，使用者會嘗試連接到 www.woodgrove.com。 這會導致 DNS 名稱解析要求傳送至使用者電腦上網路線上內容中所設定的 DNS 伺服器。 一般來說，這是由本機 ISP 提供作為快取解析程式的 DNS 伺服器，稱為「LDNS」（caching）。
 
-如果 DNS 名稱不存在於 LDNS 的本機快取中，則 LDNS 伺服器會將查詢轉送到具有 woodgrove.com 授權的 DNS 伺服器。 授權 DNS 伺服器會以要求的記錄（www.woodgrove.com）回應 LDNS 伺服器，然後在將記錄傳送到使用者的電腦之前，先在本機上快取記錄。
+如果 DNS 名稱不存在於 LDNS 的本機快取中，則 LDNS 伺服器會將查詢轉送到具有 woodgrove.com 授權的 DNS 伺服器。 授權 DNS 伺服器會以要求的記錄來回應 LDNS 伺服器 (www.woodgrove.com) ，這會在將記錄傳送到使用者的電腦之前，先在本機上快取記錄。
 
 因為 Contoso 雲端服務使用 DNS 伺服器原則，所以裝載 contoso.com 的授權 DNS 伺服器會設定為傳回以地理位置為基礎的流量管理回應。 這會導致歐洲的用戶端到歐洲資料中心的方向，以及美國資料中心的美國用戶端方向，如下圖所示。
 
@@ -98,7 +96,7 @@ Add-DnsServerClientSubnet -Name "USSubnet" -IPv4Subnet "192.0.0.0/24"
 Add-DnsServerClientSubnet -Name "EuropeSubnet" -IPv4Subnet "141.1.0.0/24"
 ```
 
-如需詳細資訊，請參閱[DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)。
+如需詳細資訊，請參閱[DnsServerClientSubnet](/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)。
 
 ### <a name="create-zone-scopes"></a><a name="bkmk_scopes"></a>建立區域範圍
 設定用戶端子網之後，您必須將想要重新導向其流量的區域分割成兩個不同的區域範圍，也就是您已設定的每個 DNS 用戶端子網都有一個範圍。
@@ -117,12 +115,12 @@ Add-DnsServerZoneScope -ZoneName "woodgrove.com" -Name "USZoneScope"
 Add-DnsServerZoneScope -ZoneName "woodgrove.com" -Name "EuropeZoneScope"
 ```
 
-如需詳細資訊，請參閱[DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)。
+如需詳細資訊，請參閱[DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)。
 
 ### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>將記錄新增至區域範圍
 現在您必須將代表 web 伺服器主機的記錄新增到這兩個區域範圍中。
 
-例如， **USZoneScope**和**EuropeZoneScope**。 在 USZoneScope 中，您可以使用位於美國資料中心的 IP 位址192.0.0.1 來新增記錄 www.woodgrove.com;而在 EuropeZoneScope 中，您可以使用歐洲資料中心內的 IP 位址141.1.0.1 來新增相同的記錄（www.woodgrove.com）。
+例如， **USZoneScope**和**EuropeZoneScope**。 在 USZoneScope 中，您可以使用位於美國資料中心的 IP 位址192.0.0.1 來新增記錄 www.woodgrove.com;而在 EuropeZoneScope 中，您可以使用歐洲資料中心內的 IP 位址141.1.0.1 新增相同的記錄 (www.woodgrove.com) 。
 
 您可以使用下列 Windows PowerShell 命令，將記錄新增至區域範圍。
 
@@ -140,10 +138,10 @@ Add-DnsServerResourceRecord -ZoneName "woodgrove.com" -A -Name "www" -IPv4Addres
 
 當您在預設範圍中新增記錄時，不會包含**ZoneScope**參數。 這與將記錄新增至標準 DNS 區域相同。
 
-如需詳細資訊，請參閱[DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。
+如需詳細資訊，請參閱[DnsServerResourceRecord](/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。
 
 ### <a name="create-the-policies"></a><a name="bkmk_policies"></a>建立原則
-建立子網、分割區（區域範圍）並新增記錄之後，您必須建立用來連接子網和分割區的原則，如此一來，當查詢來自其中一個 DNS 用戶端子網中的來源時，就會從該區域的正確範圍傳回查詢回應。 對應預設區域範圍不需要任何原則。
+建立子網之後，分割區 (區域範圍) ，而且您已新增記錄，您必須建立用來連接子網和資料分割的原則，如此一來，當查詢來自其中一個 DNS 用戶端子網中的來源時，就會從該區域的正確範圍傳回查詢回應。 對應預設區域範圍不需要任何原則。
 
 您可以使用下列 Windows PowerShell 命令來建立連結 DNS 用戶端子網和區域範圍的 DNS 原則。
 
@@ -152,7 +150,7 @@ Add-DnsServerQueryResolutionPolicy -Name "USPolicy" -Action ALLOW -ClientSubnet 
 Add-DnsServerQueryResolutionPolicy -Name "EuropePolicy" -Action ALLOW -ClientSubnet "eq,EuropeSubnet" -ZoneScope "EuropeZoneScope,1" -ZoneName "woodgrove.com"
 ```
 
-如需詳細資訊，請參閱[DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
+如需詳細資訊，請參閱[DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
 
 現在，DNS 伺服器已設定必要的 DNS 原則，以根據地理位置來重新導向流量。
 

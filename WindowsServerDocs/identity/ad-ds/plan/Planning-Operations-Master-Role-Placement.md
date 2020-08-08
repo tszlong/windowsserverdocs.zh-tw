@@ -6,46 +6,44 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/08/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: ad4e89be7eeb6190d27ee0e15e370bcaa1806cb8
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 9437992e5e12622b132380b63aaccd56140bd21d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959370"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970945"
 ---
 # <a name="planning-operations-master-role-placement"></a>規劃設置操作主機角色
 
 > 適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-Active Directory Domain Services （AD DS）支援目錄資料的多宿主複寫，這表示任何網域控制站都可以接受目錄變更，並將變更複寫到所有其他網域控制站。 不過，某些變更（例如架構修改）並不實用，無法以多宿主方式執行。 基於此原因，某些網域控制站（稱為「操作主機」）會保留負責接受特定變更之要求的角色。
+Active Directory Domain Services (AD DS) 支援目錄資料的多宿主複寫，這表示任何網域控制站都可以接受目錄變更，並將變更複寫到所有其他網域控制站。 不過，某些變更（例如架構修改）並不實用，無法以多宿主方式執行。 基於此原因，某些網域控制站（稱為「操作主機」）會保留負責接受特定變更之要求的角色。
 
 > [!NOTE]
-> 操作主機角色持有者必須能將資訊寫入 Active Directory 資料庫。 由於唯讀網域控制站（RODC）上 Active Directory 資料庫的唯讀性質， **rodc 無法作為操作主機角色持有**者。
+> 操作主機角色持有者必須能將資訊寫入 Active Directory 資料庫。 因為唯讀網域控制站上 Active Directory 資料庫的唯讀性質 (RODC) ，所以**rodc 無法做為操作主機角色持有**者。
 
-每個網域中都有三個操作主機角色（也稱為彈性單一主機操作或 FSMO）：
+三個操作主機角色 (也稱為彈性單一主機操作或 FSMO) 存在於每個網域中：
 
-- 主域控制站（PDC）模擬器操作主機會處理所有密碼更新。
+- 主域控制站 (PDC) 模擬器操作主機會處理所有的密碼更新。
 
-- 相對識別碼（RID）操作主機會維護網域的全域 RID 集區，並將本機 Rid 池配置給所有網域控制站，以確保在網域中建立的所有安全性主體都具有唯一識別碼。
+- 相對識別碼 (RID) 操作主機會維護網域的全域 RID 集區，並將本機 Rid 集區配置給所有網域控制站，以確保在網域中建立的所有安全性主體都具有唯一識別碼。
 - 指定網域的基礎結構操作主機會維護來自網域內群組成員之其他網域的安全性主體清單。
 
 除了三個網域層級操作主機角色以外，每個樹系中都有兩個操作主機角色：
 
 - 架構操作主機負責控制架構的變更。
-- 網域命名操作主機會在樹系中新增和移除網域和其他目錄分割（例如網域名稱系統（DNS）應用程式磁碟分割）。
+- 網域命名操作主機會新增和移除網域和其他目錄分割 (例如，網域名稱系統 (DNS) 應用程式磁碟分割) 與樹系之間進行。
 
 將裝載這些操作主機角色的網域控制站放在網路可靠性很高的區域中，並確保 PDC 模擬器和 RID 主機一致地可用。
 
-建立特定網域中的第一個網域控制站時，會自動指派操作主機角色持有者。 這兩個樹系層級角色（架構主機和網網域命名主機）會指派給樹系中建立的第一個網域控制站。 此外，這三個網域層級角色（RID 主機、基礎結構主機和 PDC 模擬器）會指派給在網域中建立的第一個網域控制站。
+建立特定網域中的第一個網域控制站時，會自動指派操作主機角色持有者。 兩個樹系層級角色 (架構主機和網網域命名主機) 會指派給樹系中建立的第一個網域控制站。 此外， (RID 主機、基礎結構主機和 PDC 模擬器) 的三個網域層級角色會指派給在網域中建立的第一個網域控制站。
 
 > [!NOTE]
 > 自動操作主機角色持有者指派只會在建立新的網域以及降級目前的角色持有者時進行。 角色擁有者的所有其他變更都必須由系統管理員起始。
 
-這些自動操作主機角色指派可能會在樹系或網域中建立的第一個網域控制站上造成非常高的 CPU 使用量。 若要避免這種情況，請將（轉移）操作主機角色指派給樹系或網域中的各個網域控制站。 將主控操作主機角色的網域控制站放在網路可靠的區域，以及樹系中所有其他網域控制站可存取的操作主機。
+這些自動操作主機角色指派可能會在樹系或網域中建立的第一個網域控制站上造成非常高的 CPU 使用量。 若要避免這種情況，請將 (傳輸) 操作主機角色指派給樹系或網域中的各個網域控制站。 將主控操作主機角色的網域控制站放在網路可靠的區域，以及樹系中所有其他網域控制站可存取的操作主機。
 
-您也應該為所有操作主機角色指定待命（替代）操作主機。 待命操作主機是網域控制站，您可以在原始角色持有者失敗時轉移操作主機角色。 確定待命操作主機是實際操作主機的直接複寫合作夥伴。
+您也應該為所有操作主機角色指定待命 (替代) 操作主機。 待命操作主機是網域控制站，您可以在原始角色持有者失敗時轉移操作主機角色。 確定待命操作主機是實際操作主機的直接複寫合作夥伴。
 
 ## <a name="planning-the-pdc-emulator-placement"></a>規劃 PDC 模擬器放置
 
@@ -55,7 +53,7 @@ PDC 模擬器會處理用戶端密碼變更。 只有一個網域控制站會作
 
 如有需要，請將 PDC 模擬器放在包含來自該網域之大量使用者的位置，以進行密碼轉送作業。 此外，請確定該位置已妥善連接到其他位置，以將複寫延遲降到最低。
 
-如需協助您記錄規劃放置 PDC 模擬器之位置的相關資訊，以及每個位置所代表每個網域的使用者數目，請參閱[Windows Server 2003 部署套件的工作輔助工具](https://microsoft.com/download/details.aspx?id=9608)、下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，以及開啟網域控制站放置（DSSTOPO_4.doc）。
+如需可協助您記錄有關放置 PDC 模擬器之位置的資訊，以及每個位置中所代表每個網域的使用者數目，請參閱[Windows Server 2003 部署套件的工作輔助工具](https://microsoft.com/download/details.aspx?id=9608)、下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，以及開啟 ( # A1) 的網域控制站位置。
 
 當您部署地區網域時，您必須參考需要放置 PDC 模擬器之位置的相關資訊。 如需部署地區網域的詳細資訊，請參閱[部署 Windows Server 2008 地區網域](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755118(v=ws.10))。
 
@@ -82,10 +80,10 @@ PDC 模擬器會處理用戶端密碼變更。 只有一個網域控制站會作
 - 網站 C 和 D 中的網域控制站無法新增或移除目錄、DNS 或自訂的應用程式磁碟分割。
 - 網站 C 和 D 中的網域控制站無法進行架構變更。
 
-如需協助您規劃操作主機角色位置的工作表，請參閱[Windows Server 2003 部署套件的工作輔助工具](https://microsoft.com/download/details.aspx?id=9608)、下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，以及開啟網域控制站位置（DSSTOPO_4.doc）。
+如需協助您規劃操作主機角色位置的工作表，請參閱[Windows Server 2003 部署套件的工作輔助工具](https://microsoft.com/download/details.aspx?id=9608)、下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，以及開啟 ( # A1) 的網域控制站位置。
 
 當您建立樹系根域和地區網域時，您將需要參考這則資訊。 如需部署樹系根域的詳細資訊，請參閱部署[部署 Windows Server 2008 樹系根域](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731174(v=ws.10))。 如需部署地區網域的詳細資訊，請參閱[部署 Windows Server 2008 地區網域](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755118(v=ws.10))。
 
-## <a name="next-steps"></a>接下來的步驟
+## <a name="next-steps"></a>後續步驟
 
 如需有關 FSMO 角色位置的詳細資訊，請參閱[Active Directory 網域控制站上的 fsmo 位置和優化](https://support.microsoft.com/help/223346)支援主題

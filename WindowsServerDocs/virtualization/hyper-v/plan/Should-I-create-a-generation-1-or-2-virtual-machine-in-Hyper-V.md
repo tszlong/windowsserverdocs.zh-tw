@@ -7,23 +7,23 @@ ms.assetid: 02e31413-6140-4723-a8d6-46c7f667792d
 author: kbdazure
 ms.author: kathydav
 ms.date: 12/05/2016
-ms.openlocfilehash: 35023f1b6c217da45dc0c0f5a27d0ce26a298567
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b41cefc34bce2a9d1e2e29e9d31353d4f9b8a669
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87938887"
+ms.locfileid: "87996980"
 ---
 # <a name="should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v"></a>我應在 Hyper-V 建立第 1 或 2 代的虛擬機器嗎？
 
 >適用于： Windows 10、Windows Server 2016、Microsoft Hyper-v Server 2016、Windows Server 2019、Microsoft Hyper-v Server 2019
 
 > [!NOTE]
-> 如果您打算將 Windows 虛擬機器上傳 (Vm 從內部部署) 至 Microsoft Azure、第1代和第2代 Vm 以 VHD 檔案格式，並可支援固定大小的磁片。 若要深入瞭解 Azure 上支援的第2代功能，請參閱[azure 上的第2代 vm](https://docs.microsoft.com/azure/virtual-machines/windows/generation-2) 。 如需上傳 Windows VHD 或 VHDX 的詳細資訊，請參閱[準備要上傳至 Azure 的 WINDOWS vhd 或 vhdx](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image)。
+> 如果您打算將 Windows 虛擬機器上傳 (Vm 從內部部署) 至 Microsoft Azure、第1代和第2代 Vm 以 VHD 檔案格式，並可支援固定大小的磁片。 若要深入瞭解 Azure 上支援的第2代功能，請參閱[azure 上的第2代 vm](/azure/virtual-machines/windows/generation-2) 。 如需上傳 Windows VHD 或 VHDX 的詳細資訊，請參閱[準備要上傳至 Azure 的 WINDOWS vhd 或 vhdx](/azure/virtual-machines/windows/prepare-for-upload-vhd-image)。
 
 您選擇建立第1代或第2代虛擬機器的方式，取決於您想要安裝的客體作業系統，以及您要用來部署虛擬機器的開機方法。 我們建議您建立第2代虛擬機器，以利用安全開機之類的功能，除非下列其中一個陳述為 true：
 
-- 您要從中開機的 VHD 與 UEFI 不[相容](https://technet.microsoft.com/library/hh824898.aspx)。
+- 您要從中開機的 VHD 與 UEFI 不[相容](/previous-versions/windows/it-pro/windows-8.1-and-8/hh824898(v=win.10))。
 - 第2代不支援您想要在虛擬機器上執行的作業系統。
 - 第2代不支援您想要使用的開機方法。
 
@@ -167,11 +167,11 @@ ms.locfileid: "87938887"
 ## <a name="what-are-the-advantages-of-using-generation-2-virtual-machines"></a>使用第2代虛擬機器的優點為何？
 
 以下是您在使用第2代虛擬機器時取得的一些優點：
-- **安全開機**這項功能可確認開機載入器是由 UEFI 資料庫中的受信任授權單位所簽署，以協助防止未經授權的固件、作業系統或 UEFI 驅動程式在開機時執行。 第 2 代虛擬機器預設會啟用安全開機。 如果您需要執行安全開機不支援的客體作業系統，可以在建立虛擬機器之後將它停用。  如需詳細資訊，請參閱[安全開機](https://technet.microsoft.com/library/dn486875.aspx)。
+- **安全開機**這項功能可確認開機載入器是由 UEFI 資料庫中的受信任授權單位所簽署，以協助防止未經授權的固件、作業系統或 UEFI 驅動程式在開機時執行。 第 2 代虛擬機器預設會啟用安全開機。 如果您需要執行安全開機不支援的客體作業系統，可以在建立虛擬機器之後將它停用。  如需詳細資訊，請參閱[安全開機](/previous-versions/windows/it-pro/windows-8.1-and-8/dn486875(v=ws.11))。
 
     若要保護開機第2代 Linux 虛擬機器，您必須在建立虛擬機器時選擇 UEFI CA 安全開機範本。
 
-- **較大的開機磁碟區**第2代虛擬機器的開機磁碟區上限為 64 TB。 這是所支援的最大磁片大小。VHDX. 針對第1代虛擬機器，開機磁碟區的最大值為2TB。的 VHDX 和2040GB。VHD. 如需詳細資訊，請參閱[Hyper-v 虛擬硬碟格式總覽](https://technet.microsoft.com/library/hh831446.aspx)。
+- **較大的開機磁碟區**第2代虛擬機器的開機磁碟區上限為 64 TB。 這是所支援的最大磁片大小。VHDX. 針對第1代虛擬機器，開機磁碟區的最大值為2TB。的 VHDX 和2040GB。VHD. 如需詳細資訊，請參閱[Hyper-v 虛擬硬碟格式總覽](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831446(v=ws.11))。
 
   您也可能會看到第2代虛擬機器的虛擬機器開機和安裝時間稍微改善。
 
@@ -202,7 +202,7 @@ ms.locfileid: "87938887"
 
 ### <a name="attach-or-add-a-dvd-drive"></a>連接或新增 DVD 光碟機
 
-- 您無法將實體 CD 或 DVD 光碟機連接到第2代虛擬機器。 第 2 代虛擬 DVD 光碟機只支援 ISO 映像檔。 若要建立 Windows 環境的 ISO 映像檔，可以使用 Oscdimg 命令列工具。 如需詳細資訊，請參閱＜[Oscdimg 命令列選項](https://msdn.microsoft.com/library/hh824847.aspx)＞。
+- 您無法將實體 CD 或 DVD 光碟機連接到第2代虛擬機器。 第 2 代虛擬 DVD 光碟機只支援 ISO 映像檔。 若要建立 Windows 環境的 ISO 映像檔，可以使用 Oscdimg 命令列工具。 如需詳細資訊，請參閱＜[Oscdimg 命令列選項](/previous-versions/windows/it-pro/windows-8.1-and-8/hh824847(v=win.10))＞。
 - 當您使用新的-VM Windows PowerShell Cmdlet 建立新的虛擬機器時，第2代虛擬機器沒有 DVD 光碟機。 當虛擬機器正在執行時，您可以新增 DVD 光碟機。
 
 ### <a name="use-uefi-firmware"></a>使用 UEFI 固件
@@ -220,7 +220,7 @@ ms.locfileid: "87938887"
 
 ### <a name="use-ipv6-instead-of-ipv4"></a>使用 IPv6，而不是 IPv4
 
-第 2 代虛擬機器預設使用 IPv4。 若要改為使用 IPv6，請執行[Set-vmfirmware](https://technet.microsoft.com/library/dn464287.aspx) Windows PowerShell Cmdlet。 例如，下列命令會將名為 TestVM 之虛擬機器的慣用通訊協定設定為 IPv6：
+第 2 代虛擬機器預設使用 IPv4。 若要改為使用 IPv6，請執行[Set-vmfirmware](/powershell/module/hyper-v/set-vmfirmware?view=win10-ps) Windows PowerShell Cmdlet。 例如，下列命令會將名為 TestVM 之虛擬機器的慣用通訊協定設定為 IPv6：
 
 ```powershell
 Set-VMFirmware -VMName TestVM -IPProtocolPreference IPv6
@@ -232,13 +232,13 @@ Set-VMFirmware -VMName TestVM -IPProtocolPreference IPv6
 
 若要新增 COM 埠：
 
-1. 停用安全開機。 內核調試與安全開機不相容。 請確定虛擬機器處於關閉狀態，然後使用[set-vmfirmware 指令程式](https://technet.microsoft.com/library/dn464287.aspx)。 例如，下列命令會在虛擬機器 TestVM 上停用安全開機：
+1. 停用安全開機。 內核調試與安全開機不相容。 請確定虛擬機器處於關閉狀態，然後使用[set-vmfirmware 指令程式](/powershell/module/hyper-v/set-vmfirmware?view=win10-ps)。 例如，下列命令會在虛擬機器 TestVM 上停用安全開機：
 
     ```powershell
     Set-VMFirmware -Vmname TestVM -EnableSecureBoot Off
     ```
 
-2. 新增 COM 通訊埠。 使用[set-vmcomport](https://technet.microsoft.com/library/hh848616.aspx) Cmdlet 來執行此動作。 例如，下列命令會將虛擬機器（TestVM）上的第一個 COM 埠設定為連接到本機電腦上的具名管道（TestPipe）：
+2. 新增 COM 通訊埠。 使用[set-vmcomport](/powershell/module/hyper-v/set-vmcomport?view=win10-ps) Cmdlet 來執行此動作。 例如，下列命令會將虛擬機器（TestVM）上的第一個 COM 埠設定為連接到本機電腦上的具名管道（TestPipe）：
 
     ```powershell
     Set-VMComPort -VMName TestVM 1 \\.\pipe\TestPipe
@@ -251,4 +251,4 @@ Set-VMFirmware -VMName TestVM -IPProtocolPreference IPv6
 
 - [Hyper-V 上的 Linux 和 FreeBSD 虛擬機器](../Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
 - [使用 VMConnect 在 Hyper-V 虛擬機器上使用本機資源](../learn-more/Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md)
-- [規劃 Windows Server 2016 中的 Hyper-v 擴充性](Plan-for-Hyper-V-scalability-in-Windows-Server-2016.md)
+- [規劃 Windows Server 2016 中的 Hyper-v 擴充性](./plan-hyper-v-scalability-in-windows-server.md)

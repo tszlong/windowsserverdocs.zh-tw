@@ -6,22 +6,20 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: e04f82094128dac3e00d28014541da480e56999d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d4ddc2d88e4849ac35eaf21f092f5cc0ed85ec33
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959780"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970995"
 ---
 # <a name="mapping-your-requirements-to-an-ad-ds-deployment-strategy"></a>將您的需求和 AD DS 部署策略對應
 
 > 適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-在您完成檢查並識別 Active Directory Domain Services （AD DS）設計和部署需求，並判斷哪些專案與您的特定部署有關之後，您可以將這些需求對應到特定的 AD DS 部署策略。
+在您完成檢查並識別 Active Directory Domain Services 之後 (AD DS) 設計和部署需求，並判斷哪些是與特定部署相關的，您可以將這些需求對應到特定的 AD DS 部署策略。
 
-請使用下表來判斷哪一種 AD DS 部署策略會對應至組織 AD DS 設計和部署需求的適當組合。 （[是] 表示您的部署策略需要特定需求;「否」表示您的部署策略不需要特定需求）。
+請使用下表來判斷哪一種 AD DS 部署策略會對應至組織 AD DS 設計和部署需求的適當組合。  ( [是] 表示您的部署策略需要特定需求;「否」表示您的部署策略不需要特定需求。 ) 
 
 此資料表只會參考本指南中所述的三個主要 AD DS 部署策略：
 
@@ -42,5 +40,5 @@ ms.locfileid: "86959780"
 | [部署 Windows Server 2008 地區網域](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc755118(v=ws.10)) | 是 | 是 | 是 |
 | [啟用 AD DS 的進階功能](../../ad-ds/plan/Enabling-Advanced-Features-for-AD-DS.md) | 是 |是，但在將網域或樹系功能等級設定為 Windows Server 2008 之前，環境中的所有網域控制站都必須執行 Windows Server 2008。 | 是，但在將網域或樹系功能等級設定為 Windows Server 2008 之前，環境中的所有網域控制站都必須執行 Windows Server 2008。 |
 | [將 Active Directory 網域升級至 Windows Server 2008 和 Windows Server 2008 R2 AD DS 網域](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc731188(v=ws.10)) | 否 | 是 | 是 |
-| [ADMT 指南：遷移和重構 Active Directory 網域](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc974332(v=ws.10)) | 可以，如果您想要將試驗網域遷移到生產環境，請與另一個組織合併，併合並兩個資訊技術（IT）基礎結構，或合併從 Windows 2000 或 Windows Server 2003 環境就地升級的資源和帳戶網域。 | 可以，如果您想要與另一個組織合併，併合並兩個 IT 基礎結構，或是合併從 Windows 2000 或 Windows Server 2003 環境就地升級的資源和帳戶網域。 | 可以，如果您想要與另一個組織合併，併合並兩個 IT 基礎結構，或是合併從 Windows 2000 或 Windows Server 2003 環境就地升級的資源和帳戶網域。 |
+| [ADMT 指南：遷移和重構 Active Directory 網域](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc974332(v=ws.10)) | 可以，如果您想要將試驗網域遷移到生產環境，請與另一個組織合併，並將這兩項資訊技術整合 () 基礎結構，或是合併從 Windows 2000 或 Windows Server 2003 環境就地升級的資源和帳戶網域。 | 可以，如果您想要與另一個組織合併，併合並兩個 IT 基礎結構，或是合併從 Windows 2000 或 Windows Server 2003 環境就地升級的資源和帳戶網域。 | 可以，如果您想要與另一個組織合併，併合並兩個 IT 基礎結構，或是合併從 Windows 2000 或 Windows Server 2003 環境就地升級的資源和帳戶網域。 |
 | [ADMT 指南：遷移和重構 Active Directory 網域](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc974332(v=ws.10)) | 否 | 是，如果您需要減少網域數目，請減少複寫流量和必要的使用者和群組管理量，或簡化群組原則的管理。 | 是，如果您需要減少網域數目，請減少複寫流量和必要的使用者和群組管理量，或簡化群組原則的管理。 |

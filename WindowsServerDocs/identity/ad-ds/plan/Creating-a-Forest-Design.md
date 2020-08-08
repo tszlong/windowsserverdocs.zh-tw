@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/07/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 77e091c1c1990e5cd30ac485c1ea3b085531df53
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: d14a65a25041cc8d1932d291483c1833156c5956
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624356"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941346"
 ---
 # <a name="creating-a-forest-design"></a>建立樹系設計
 
@@ -23,7 +21,7 @@ ms.locfileid: "81624356"
 
 將所有的設計需求對應至樹系模型，並選取符合組織需求的樹系模型之後，請記錄建議的樹系設計。 在您的檔中包含為其設計樹系的組名、樹系擁有者的連絡人資訊、您所包含之每個樹系的樹系類型，以及每個樹系所要符合的需求。 這份檔將協助設計團隊，確保所有適當的人員都參與設計程式，以及澄清部署專案的範圍。
 
-如需協助您記錄建議的樹系設計的工作表，請從[Windows Server 2003 部署套件的作業輔助](https://microsoft.com/download/details.aspx?id=9608)下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，並開放「樹系設計」（DSSLOGI_3 .doc）。
+如需協助您記錄建議的樹系設計的工作表，請從[Windows Server 2003 部署套件的工作輔助程式](https://microsoft.com/download/details.aspx?id=9608)下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，並開啟「樹系設計」 ( # A1) 。
 
 ## <a name="in-this-section"></a>本節內容
 

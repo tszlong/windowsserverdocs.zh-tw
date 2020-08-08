@@ -1,20 +1,18 @@
 ---
 title: 管理 Hyper-v Integration Services
 description: 描述如何開啟和關閉 integration services，並視需要加以安裝
-ms.technology: compute-hyper-v
 author: kbdazure
 ms.author: kathydav
 manager: dongill
 ms.date: 12/20/2016
 ms.topic: article
-ms.prod: windows-server
 ms.assetid: 9cafd6cb-dbbe-4b91-b26c-dee1c18fd8c2
-ms.openlocfilehash: 4237da8ee393953a8eb2a2b577c2df201f96a7be
-ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
+ms.openlocfilehash: 5d5f69e1c71df9746421329d8fdf11a9786a948b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235055"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996758"
 ---
 # <a name="manage-hyper-v-integration-services"></a>管理 Hyper-v Integration Services
 
@@ -22,7 +20,7 @@ ms.locfileid: "83235055"
 
 Hyper-v Integration Services 藉由利用與 Hyper-v 主機的雙向通訊，加強虛擬機器效能並提供便利的功能。 其中許多服務都是便利的，例如來賓檔案複製，有些則對虛擬機器的功能很重要，例如綜合設備磁碟機。 這組服務和驅動程式有時稱為「整合元件」。 您可以控制個別的便利性服務是否會針對任何指定的虛擬機器運作。 驅動程式元件不適合以手動方式服務。
 
-如需每個整合服務的詳細資訊，請參閱[hyper-v Integration Services](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/integration-services)。
+如需每個整合服務的詳細資訊，請參閱[hyper-v Integration Services](/virtualization/hyper-v-on-windows/reference/integration-services)。
 
 > [!IMPORTANT]
 > 您要使用的每個服務都必須同時在主機和來賓中啟用，才能正常運作。 除了「Hyper-v 來賓服務介面」以外的所有整合服務，預設會在 Windows 客體作業系統上開啟。 服務可以個別開啟和關閉。 下一節將為您示範作法。
@@ -37,7 +35,7 @@ Hyper-v Integration Services 藉由利用與 Hyper-v 主機的雙向通訊，加
 
 ### <a name="turn-an-integration-service-on-or-off-using-powershell"></a>使用 PowerShell 開啟或關閉整合服務
 
-若要在 PowerShell 中執行這項操作，請使用[enable-vmintegrationservice](https://technet.microsoft.com/library/hh848500.aspx)和[Disable-enable-vmintegrationservice](https://technet.microsoft.com/library/hh848488.aspx)。
+若要在 PowerShell 中執行這項操作，請使用[enable-vmintegrationservice](/powershell/module/hyper-v/enable-vmintegrationservice?view=win10-ps)和[Disable-enable-vmintegrationservice](/powershell/module/hyper-v/disable-vmintegrationservice?view=win10-ps)。
 
 下列範例示範如何針對名為 "demovm" 的虛擬機器，開啟和關閉來賓檔案複製整合服務。
 
@@ -113,7 +111,7 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
     Get-Service -Name vm*
     ```
 
-1.  輸出應該如下：
+1.  輸出應類似以下的內容：
 
     ```PowerShell
     Status   Name               DisplayName
@@ -128,7 +126,7 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
     Running  vmicvss            Hyper-V Volume Shadow Copy Requestor
     ```
 
-1. 執行 [[啟動-服務](https://technet.microsoft.com/library/hh849825.aspx)] 或 [[停止服務](https://technet.microsoft.com/library/hh849790.aspx)]。 例如，若要關閉 Windows PowerShell Direct，請執行：
+1. 執行 [[啟動-服務](/powershell/module/microsoft.powershell.management/start-service?view=powershell-7)] 或 [[停止服務](/powershell/module/microsoft.powershell.management/stop-service?view=powershell-7)]。 例如，若要關閉 Windows PowerShell Direct，請執行：
 
     ```
     Stop-Service -Name vmicvmsession
@@ -144,7 +142,7 @@ Linux 整合服務通常是透過 Linux 核心提供。 Linux integration servic
    lsmod | grep hv_utils
    ```
 
-2. 輸出應該如下：
+2. 輸出應類似以下的內容：
 
     ``` BASH
     Module                  Size   Used by
@@ -158,7 +156,7 @@ Linux 整合服務通常是透過 Linux 核心提供。 Linux integration servic
     ps -ef | grep hv
     ```
 
-4. 輸出應該如下：
+4. 輸出應類似以下的內容：
 
     ```BASH
     root       236     2  0 Jul11 ?        00:00:00 [hv_vmbus_con]
@@ -177,7 +175,7 @@ Linux 整合服務通常是透過 Linux 核心提供。 Linux integration servic
     compgen -c hv_
     ```
 
-6. 輸出應該如下：
+6. 輸出應類似以下的內容：
 
     ``` BASH
     hv_vss_daemon
@@ -188,7 +186,7 @@ Linux 整合服務通常是透過 Linux 核心提供。 Linux integration servic
     hv_fcopy_daemon
     ```
 
-   可能列出的整合服務守護套裝程式括下列各項。 如果遺失，可能是您的系統不支援它們，或者它們可能尚未安裝。 尋找詳細資料，請參閱[Windows 上的 Hyper-v 支援的 Linux 和 FreeBSD 虛擬機器](https://technet.microsoft.com/library/dn531030.aspx)。
+   可能列出的整合服務守護套裝程式括下列各項。 如果遺失，可能是您的系統不支援它們，或者它們可能尚未安裝。 尋找詳細資料，請參閱[Windows 上的 Hyper-v 支援的 Linux 和 FreeBSD 虛擬機器](../supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows.md)。
    - **hv_vss_daemon**：建立即時 Linux 虛擬機器備份時，必須要有此 daemon。
    - **hv_kvp_daemon**：此背景程式可讓您設定及查詢內建和外來機碼值組。
    - **hv_fcopy_daemon**：此後台處理常式會在主機和來賓之間執行檔案複製服務。
@@ -243,13 +241,13 @@ Linux 整合服務通常是透過 Linux 核心提供。 Linux integration servic
 | Windows Server 2012 R2 | Windows Update | |
 | Windows Server 2012 | Windows Update | 需要資料交換整合服務。* |
 | Windows Server 2008 R2 (SP 1) | Windows Update | 需要資料交換整合服務。* |
-| Windows Server 2008 (SP 2) | Windows Update | 僅限 Windows Server 2016 中的擴充支援（[閱讀更多](https://support.microsoft.com/lifecycle?p1=12925)）。 |
-| Windows Home Server 2011 | Windows Update | Windows Server 2016 中將不支援（[閱讀更多](https://support.microsoft.com/lifecycle?p1=15820)）。 |
-| Windows Small Business Server 2011 | Windows Update | 不在主流支援下（[閱讀更多](https://support.microsoft.com/lifecycle?p1=15817)）。 |
+| Windows Server 2008 (SP 2) | Windows Update | 僅 Windows Server 2016 中的擴充支援 ([閱讀更多](https://support.microsoft.com/lifecycle?p1=12925)) 。 |
+| Windows Home Server 2011 | Windows Update | Windows Server 2016 不支援 ([閱讀更多](https://support.microsoft.com/lifecycle?p1=15820)) 。 |
+| Windows Small Business Server 2011 | Windows Update | 不在主流支援下 ([閱讀更多](https://support.microsoft.com/lifecycle?p1=15817)) 。 |
 | - | | |
 | Linux 客體 | 封裝管理員 | 適用于 Linux 的 Integration services 已內建于散發版本中，但可能有選擇性的更新可供使用。 ******** |
 
-\*如果無法啟用資料交換整合服務，則可以從[下載中心](https://support.microsoft.com/kb/3071740)以封包（cab）檔案的形式取得這些來賓的整合服務。 此[blog 文章](https://techcommunity.microsoft.com/t5/virtualization/integration-components-available-for-virtual-machines-not/ba-p/382247)提供套用 cab 的指示。
+\*如果無法啟用資料交換整合服務，這些來賓的整合服務可從[下載中心](https://support.microsoft.com/kb/3071740)以封包 (cab) 檔案的形式提供。 此[blog 文章](https://techcommunity.microsoft.com/t5/virtualization/integration-components-available-for-virtual-machines-not/ba-p/382247)提供套用 cab 的指示。
 
 **針對在 Windows 8.1/Windows Server 2012R2 主機上執行的虛擬機器：**
 
@@ -297,7 +295,7 @@ Linux 整合服務通常是透過 Linux 核心提供。 Linux integration servic
 | - | | |
 | Linux 客體 | 封裝管理員 | 適用于 Linux 的 Integration services 已內建于散發版本中，但可能有選擇性的更新可供使用。 ** |
 
-如需 Linux 來賓的詳細資訊，請參閱[支援的 linux 和 FreeBSD 虛擬機器（適用于 Windows 上的 hyper-v](https://technet.microsoft.com/windows-server-docs/virtualization/hyper-v/supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows)）。
+如需 Linux 來賓的詳細資訊，請參閱[支援的 linux 和 FreeBSD 虛擬機器（適用于 Windows 上的 hyper-v](../supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows.md)）。
 
 ## <a name="install-or-update-integration-services"></a>安裝或更新 integration services
 
@@ -316,5 +314,5 @@ Linux 整合服務通常是透過 Linux 核心提供。 Linux integration servic
 
 > [!NOTE]
 > 在**線上**虛擬機器的 Windows PowerShell 會話中，**無法自動**或完成這些步驟。
-> 您可以將它們套用到**離線**VHDX 映射;請參閱[如何在虛擬機器未執行時安裝 integration services](https://docs.microsoft.com/virtualization/community/team-blog/2013/20130418-how-to-install-integration-services-when-the-virtual-machine-is-not-running)。
-> 您也可以透過與 Vm**連線**的**Configuration Manager**來自動化整合服務的部署，但必須在安裝結束時重新開機 vm;請參閱[使用 Config Manager 和 DISM 將 hyper-v Integration Services 部署至 vm](https://docs.microsoft.com/archive/blogs/manageabilityguys/deploying-hyper-v-integration-services-to-vms-using-config-manager-and-dism)
+> 您可以將它們套用到**離線**VHDX 映射;請參閱[如何在虛擬機器未執行時安裝 integration services](/virtualization/community/team-blog/2013/20130418-how-to-install-integration-services-when-the-virtual-machine-is-not-running)。
+> 您也可以透過與 Vm**連線**的**Configuration Manager**來自動化整合服務的部署，但必須在安裝結束時重新開機 vm;請參閱[使用 Config Manager 和 DISM 將 hyper-v Integration Services 部署至 vm](/archive/blogs/manageabilityguys/deploying-hyper-v-integration-services-to-vms-using-config-manager-and-dism)

@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: bcdfd575b0f8cf2be739e70317560542afa2fed1
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: b3e384eaa85e0becfa501743fc4d7efa45eac02a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518655"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941562"
 ---
 # <a name="virtualized-domain-controller-troubleshooting"></a>虛擬網域控制站的疑難排解
 
@@ -61,7 +59,7 @@ ms.locfileid: "87518655"
 
 內建的記錄檔是用來疑難排解網域控制站複製問題的最重要工具。 預設會啟用並設定這所有的記錄檔，以取得最多的詳細資料。
 
-| **作業** | **Log** |
+| **運算** | **Log** |
 |--|--|
 | **複製** | -Event 檢視器 \windows 記錄 \ 系統<br />-事件 viewer\Applications 和服務 logs\Directory 服務<br />-%systemroot%\debug\dcpromo.log |
 | **促銷** | -%systemroot%\debug\dcpromo.log<br />-事件 viewer\Applications 和服務 logs\Directory 服務<br />-Event 檢視器 \windows 記錄 \ 系統<br />-事件 viewer\Applications 和服務 logs\File 複寫服務<br />-事件 viewer\Applications 和服務 logs\DFS 複寫 |
@@ -166,7 +164,7 @@ ms.locfileid: "87518655"
 
 - 在本機執行 PowerShell Cmdlet Get-WinEvent
 
-- 如果您已啟用「遠端事件記錄檔管理」群組（或對等埠）的 Windows Advanced 防火牆規則以允許輸入通訊，您可以使用 Eventvwr.exe、wevtutil.exe 或 New-winevent，從遠端管理事件記錄檔。 這可以在 Server Core 安裝中，使用 NETSH.exe、群組原則或 Windows PowerShell 3.0 中的新 Set-NetFirewallRule Cmdlet 來完成。
+- 如果您已啟用「遠端事件記錄檔管理」群組的 Windows Advanced Firewall 規則 (或對等的埠) 若要允許輸入通訊，您可以使用 Eventvwr.exe、wevtutil.exe 或 New-winevent，從遠端管理事件記錄檔。 這可以在 Server Core 安裝中，使用 NETSH.exe、群組原則或 Windows PowerShell 3.0 中的新 Set-NetFirewallRule Cmdlet 來完成。
 
 > [!WARNING]
 > 請勿在電腦處於 DSRM 時，嘗試將圖形化介面新增回電腦。 Windows 服務堆疊 (CBS) 無法在安全模式或 DSRM 中正常運作。 嘗試在處於 DSRM 時新增功能或角色將無法完成，而且會讓電腦在重新開機之前都處於不穩定狀態。 由於 DSRM 中的虛擬網域控制站複製品無法正常開機，而且在大部分情況下應該都無法正常開機，因此無法安全新增圖形化介面。 此動作不受支援，而且可能使得伺服器無法使用。
@@ -814,18 +812,18 @@ dcpromo.log 是第一個檢查複製失敗的地方。 根據列出的失敗而�
 | **1000** | ActiveDirectory_DomainService | Microsoft Active Directory 網域服務啟動完成。 |
 | **1394** | ActiveDirectory_DomainService | 已經清除所有妨礙更新至 Active Directory 網域服務資料庫的問題。 已經成功更新 Active Directory 網域服務資料庫。 Net Logon 服務已經重新啟動 |
 | **2163** | ActiveDirectory_DomainService | 已啟動 DsRoleSvc 服務以複製本機虛擬網域控制站。 |
-| **326** | NTDS ISAM | NTDS （536） NTDSA：資料庫引擎已連接資料庫（1，C:\Windows\NTDS\ntds.dit）。 (時間=0 秒)<p>內部計時順序：[1] 0.000、[2] 0.000、[3] 0.000、[4] 0.000、[5] 0.000、[6] 0.016、[7] 0.000、[8] 0.000、[9] 0.000、[10] 0.000、[11] 0.000、[12] 0.000。<p>儲存的快取：1 |
-| **103** | NTDS ISAM | NTDS （536） NTDSA：資料庫引擎已停止實例（0）。<p>異常關機：0<p>內部計時順序：[1] 0.000、[2] 0.000、[3] 0.000、[4] 0.000、[5] 0.032、[6] 0.000、[7] 0.000、[8] 0.000、[9] 0.031、[10] 0.000、[11] 0.000、[12] 0.000、[13] 0.000、[14] 0.000、[15] 0.000。 |
-| **102** | NTDS ISAM | NTDS （536） NTDSA：資料庫引擎（6.02.8225.0000）正在啟動新的實例（0）。 |
-| **105** | NTDS ISAM | NTDS （536） NTDSA：資料庫引擎已啟動新的實例（0）。 (時間=0 秒)<p>內部計時順序：[1] 0.016、[2] 0.000、[3] 0.015、[4] 0.078、[5] 0.000、[6] 0.000、[7] 0.000、[8] 0.000、[9] 0.046、[10] 0.000、[11] 0.000。 |
+| **326** | NTDS ISAM | NTDS (536) NTDSA：資料庫引擎已附加資料庫 (1，C:\Windows\NTDS\ntds.dit) 。 (時間=0 秒)<p>內部計時順序：[1] 0.000、[2] 0.000、[3] 0.000、[4] 0.000、[5] 0.000、[6] 0.016、[7] 0.000、[8] 0.000、[9] 0.000、[10] 0.000、[11] 0.000、[12] 0.000。<p>儲存的快取：1 |
+| **103** | NTDS ISAM | NTDS (536) NTDSA：資料庫引擎已停止實例 (0) 。<p>異常關機：0<p>內部計時順序：[1] 0.000、[2] 0.000、[3] 0.000、[4] 0.000、[5] 0.032、[6] 0.000、[7] 0.000、[8] 0.000、[9] 0.031、[10] 0.000、[11] 0.000、[12] 0.000、[13] 0.000、[14] 0.000、[15] 0.000。 |
+| **102** | NTDS ISAM | NTDS (536) NTDSA：資料庫引擎 (6.02.8225.0000) 正在啟動新的實例 (0) 。 |
+| **105** | NTDS ISAM | NTDS (536) NTDSA：資料庫引擎已啟動新的實例 (0) 。 (時間=0 秒)<p>內部計時順序：[1] 0.016、[2] 0.000、[3] 0.015、[4] 0.078、[5] 0.000、[6] 0.000、[7] 0.000、[8] 0.000、[9] 0.046、[10] 0.000、[11] 0.000。 |
 | **1004** | ActiveDirectory_DomainService | Active Directory 網域服務成功地關閉。 |
-| **102** | NTDS ISAM | NTDS （536） NTDSA：資料庫引擎（6.02.8225.0000）正在啟動新的實例（0）。 |
-| **326** | NTDS ISAM | NTDS （536） NTDSA：資料庫引擎已連接資料庫（1，C:\Windows\NTDS\ntds.dit）。 (時間=0 秒)<p>內部計時順序：[1] 0.000、[2] 0.015、[3] 0.016、[4] 0.000、[5] 0.031、[6] 0.000、[7] 0.000、[8] 0.000、[9] 0.000、[10] 0.000、[11] 0.000、[12] 0.000。<p>儲存的快取：1 |
-| **105** | NTDS ISAM | NTDS （536） NTDSA：資料庫引擎已啟動新的實例（0）。 (時間=1 秒)<p>內部計時順序：[1] 0.031、[2] 0.000、[3] 0.000、[4] 0.391、[5] 0.000、[6] 0.000、[7] 0.000、[8] 0.000、[9] 0.031、[10] 0.000、[11] 0.000。 |
+| **102** | NTDS ISAM | NTDS (536) NTDSA：資料庫引擎 (6.02.8225.0000) 正在啟動新的實例 (0) 。 |
+| **326** | NTDS ISAM | NTDS (536) NTDSA：資料庫引擎已附加資料庫 (1，C:\Windows\NTDS\ntds.dit) 。 (時間=0 秒)<p>內部計時順序：[1] 0.000、[2] 0.015、[3] 0.016、[4] 0.000、[5] 0.031、[6] 0.000、[7] 0.000、[8] 0.000、[9] 0.000、[10] 0.000、[11] 0.000、[12] 0.000。<p>儲存的快取：1 |
+| **105** | NTDS ISAM | NTDS (536) NTDSA：資料庫引擎已啟動新的實例 (0) 。 (時間=1 秒)<p>內部計時順序：[1] 0.031、[2] 0.000、[3] 0.000、[4] 0.391、[5] 0.000、[6] 0.000、[7] 0.000、[8] 0.000、[9] 0.031、[10] 0.000、[11] 0.000。 |
 | **1109** | ActiveDirectory_DomainService | 這個目錄伺服器的 invocationID 屬性已變更。 在建立備份時最高的更新序號如下：<p>InvocationID 屬性 (舊值)：<p>*<GUID>*<p>InvocationID 屬性 (新值)：<p>*<GUID>*<p>更新序號：<p>*<Number>*<p>當目錄伺服器從備份媒體還原、設定為裝載可寫入的應用程式目錄分割，或在套用虛擬機器快照後、虛擬機器匯入作業後或即時移轉作業後恢復執行時，invocationID 即會變更。 虛擬的網域控制站不應使用虛擬機器快照來還原。 要還原或復原 Active Directory 網域服務資料庫的內容，支援的方法是還原以 Active Directory 網域服務感知備份應用程式建立的系統狀態備份。 |
 | **1168** | ActiveDirectory_DomainService | 內部錯誤：發生 Active Directory Domain Services 錯誤。<p>其他資料<p>錯誤值 (十進位)：<p>2<p>錯誤值 (十六進位)：<p>2<p>內部識別碼：<p>7011658 |
 | **1110** | ActiveDirectory_DomainService | 將這個網域控制站升級為通用類別目錄將會延遲下列間隔。<p>間隔 (分鐘)：<p>5<p>這個延遲是必要的，這樣在通告通用類別目錄前，可以先準備所需的目錄分割。 在登錄中，您可以指定將本機網域控制站升級為通用類別目錄前，目錄系統代理程式將等候的秒數。 請參閱《Resource Kit Distributed Systems Guide》，以取得有關通用類別目錄延遲通告登錄值的資訊 |
-| **103** | NTDS ISAM | NTDS （536） NTDSA：資料庫引擎已停止實例（0）。<p>異常關機：0<p>內部計時順序：[1] 0.000、[2] 0.000、[3] 0.000、[4] 0.000、[5] 0.047、[6] 0.000、[7] 0.000、[8] 0.000、[9] 0.016、[10] 0.000、[11] 0.000、[12] 0.000、[13] 0.000、[14] 0.000、[15] 0.000。 |
+| **103** | NTDS ISAM | NTDS (536) NTDSA：資料庫引擎已停止實例 (0) 。<p>異常關機：0<p>內部計時順序：[1] 0.000、[2] 0.000、[3] 0.000、[4] 0.000、[5] 0.047、[6] 0.000、[7] 0.000、[8] 0.000、[9] 0.016、[10] 0.000、[11] 0.000、[12] 0.000、[13] 0.000、[14] 0.000、[15] 0.000。 |
 | **1004** | ActiveDirectory_DomainService | Active Directory 網域服務成功地關閉。 |
 | **1539** | ActiveDirectory_DomainService | Active Directory 網域服務無法停用下列硬碟上的軟體磁碟寫入快取。<p>硬碟：<p>c:<p>資料可能已在系統失敗時遺失 |
 | **2179** | ActiveDirectory_DomainService | 網域控制站電腦物件的 msDS-GenerationId 屬性已設為下列參數：<p>GenerationID 屬性：<p>*<Number>* |
@@ -871,7 +869,7 @@ dcpromo.log 是第一個檢查複製失敗的地方。 根據列出的失敗而�
 |**29219**|DirectoryServices-DSROLE-Server|虛擬網域控制站複製成功。|
 |**29223**|DirectoryServices-DSROLE-Server|這個伺服器現在已經是網域控制站。|
 |**29265**|DirectoryServices-DSROLE-Server|虛擬網域控制站複製成功。 虛擬網域控制站複製設定檔 C:\Windows\NTDS\DCCloneConfig.xml 已重新命名為 C:\Windows\NTDS\DCCloneConfig.20120207-151533.xml。|
-|**1074**|User32|進程 C:\Windows\system32\lsass.exe （DC2）已代表使用者 NT AUTHORITY\SYSTEM 起始電腦 DC2 的重新開機，原因如下：作業系統：重新設定（已規劃）<p>原因代碼：0x80020004<p>關機類型：重新啟動<p>註解：「|
+|**1074**|User32|C:\Windows\system32\lsass.exe (DC2) 的處理常式已起始代表使用者 NT AUTHORITY\SYSTEM 重新開機電腦 DC2，原因如下：作業系統：重新設定 (規劃的) <p>原因代碼：0x80020004<p>關機類型：重新啟動<p>註解：「|
 
 ##### <a name="dcpromolog"></a>DCPROMO.LOG
 Dcpromo.log 包含複製中 [目錄服務] 事件記錄檔不會描述的實際升級部分。 由於記錄檔不提供事件記錄檔項目所傳達的說明層級，因此本單元的這一節將包含額外的註釋。
@@ -1408,7 +1406,7 @@ DFSR 服務會在複製期間，進行來自協力電腦的非權威同步處理
 #### <a name="logging-options"></a>記錄選項
 內建的記錄檔是用來疑難排解網域控制站安全快照還原問題的最重要工具。 預設會啟用並設定這所有的記錄檔，以取得最多的詳細資料。
 
-|**作業**|**Log**|
+|**運算**|**Log**|
 |--|--|
 |**建立快照集**|-事件 viewer\Applications 和服務 logs\Microsoft\Windows\Hyper-V-Worker|
 |**還原快照**|-事件 viewer\Applications 和服務 logs\Directory 服務<br />-Event 檢視器 \windows 記錄 \ 系統<br />-Event 檢視器 \windows logs\Application<br />-事件 viewer\Applications 和服務 logs\File 複寫服務<br />-事件 viewer\Applications 和服務 logs\DFS 複寫<br />-事件 viewer\Applications 和服務 logs\DNS<br />-事件 viewer\Applications 和服務 logs\Microsoft\Windows\Hyper-V-Worker|
@@ -1654,10 +1652,10 @@ DFSR 服務會在複製期間，進行來自協力電腦的非權威同步處理
 
 | **事件識別碼** | **Source** | **Message** |
 |--|--|--|
-| **103** | ESENT | DFSRs （1360） \\ \\ .\C： \System Volume Information\DFSR\database <em> _ <GUID> </em> \dfsr.db：資料庫引擎已停止實例（0）。<p>異常關機：0<p>內部計時順序：[1] 0.000、[2] 0.000、[3] 0.000、[4] 0.000、[5] 0.141、[6] 0.000、[7] 0.000、[8] 0.000、[9] 0.000、[10] 0.000、[11] 0.016、[12] 0.000、[13] 0.000、[14] 0.000、[15] 0.000。 |
-| **102** | ESENT | DFSRs （532） \\ \\ .\C： \System Volume Information\DFSR\database <em> _ <GUID> </em> \dfsr.db：資料庫引擎（6.02.8189.0000）正在啟動新的實例（0）。 |
-| **105** | ESENT | DFSRs （532） \\ \\ .\C： \System Volume Information\DFSR\database <em> _ <GUID> </em> \dfsr.db：資料庫引擎已啟動新的實例（0）。 (時間=0 秒)<p>內部計時順序：[1] 0.000、[2] 0.000、[3] 0.000、[4] 0.000、[5] 0.000、[6] 0.000、[7] 0.000、[8] 0.000、[9] 0.031、[10] 0.000、[11] 0.000。 |
-|  |  | DFSRs （532） \\ \\ .\C： \System Volume Information\DFSR\database <em> _ <GUID> </em> \dfsr.db：資料庫引擎已建立新的資料庫（1， \\ \\ .\C： \System Volume Information\DFSR\database <em> _ <GUID> </em> \dfsr.db）。 (時間=0 秒)<p>內部計時順序：[1] 0.000、[2] 0.000、[3] 0.016、[4] 0.062、[5] 0.000、[6] 0.016、[7] 0.000、[8] 0.000、[9] 0.015、[10] 0.000、[11] 0.000。 |
+| **103** | ESENT | DFSRs (1360) \\ \\ .\C： \System Volume Information\DFSR\database <em> _ <GUID> </em> \dfsr.db：資料庫引擎已停止實例 (0) 。<p>異常關機：0<p>內部計時順序：[1] 0.000、[2] 0.000、[3] 0.000、[4] 0.000、[5] 0.141、[6] 0.000、[7] 0.000、[8] 0.000、[9] 0.000、[10] 0.000、[11] 0.016、[12] 0.000、[13] 0.000、[14] 0.000、[15] 0.000。 |
+| **102** | ESENT | DFSRs (532) \\ \\ .\C： \System Volume Information\DFSR\database <em> _ <GUID> </em> \dfsr.db：資料庫引擎 (6.02.8189.0000) 正在啟動新的實例 (0) 。 |
+| **105** | ESENT | DFSRs (532) \\ \\ .\C： \System Volume Information\DFSR\database <em> _ <GUID> </em> \dfsr.db：資料庫引擎已啟動新的實例 (0) 。 (時間=0 秒)<p>內部計時順序：[1] 0.000、[2] 0.000、[3] 0.000、[4] 0.000、[5] 0.000、[6] 0.000、[7] 0.000、[8] 0.000、[9] 0.031、[10] 0.000、[11] 0.000。 |
+|  |  | DFSRs (532) \\ \\ .\C： \System Volume Information\DFSR\database <em> _ <GUID> </em> \dfsr.db：資料庫引擎已建立新的資料庫 (1、 \\ \\ .\C： \System Volume Information\DFSR\database <em> _ <GUID> </em> \dfsr.db) 。 (時間=0 秒)<p>內部計時順序：[1] 0.000、[2] 0.000、[3] 0.016、[4] 0.062、[5] 0.000、[6] 0.016、[7] 0.000、[8] 0.000、[9] 0.015、[10] 0.000、[11] 0.000。 |
 
 ##### <a name="dfs-replication-event-log"></a>DFS 複寫事件記錄檔
 DFSR 服務已停止，並已刪除包含 SYSVOL 的資料庫，強制執行輸入的非權威同步處理。

@@ -1,19 +1,17 @@
 ---
 title: 延伸儲存空間直接存取中的磁碟區
 description: 如何使用 Windows 管理中心和 PowerShell 調整儲存空間直接存取中的磁片區大小。
-ms.prod: windows-server
 ms.reviewer: cosmosdarwin
 author: cosmosdarwin
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.date: 03/10/2020
-ms.openlocfilehash: 4526bdc87bfbb8cdaf6cc3b0e8f3cd1cd80f4a9d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: dccc8d25505fb1ac94af81b23334b7f8639dcc01
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474605"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971075"
 ---
 # <a name="extending-volumes-in-storage-spaces-direct"></a>延伸儲存空間直接存取中的磁碟區
 > 適用於：Windows Server 2019、Windows Server 2016
@@ -137,12 +135,12 @@ $Partition | Resize-Partition -Size ($Partition | Get-PartitionSupportedSize).Si
 
 ![Resize-Partition](media/resize-volumes/Resize-Partition.gif)
 
-大功告成！
+就這麼簡單！
 
 > [!TIP]
 > 您可以執行 **Get-Volume** 檢查磁碟區是否有新的大小。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [Windows Server 2016 中的儲存空間直接存取](storage-spaces-direct-overview.md)
 - [規劃儲存空間直接存取中的磁碟區](plan-volumes.md)

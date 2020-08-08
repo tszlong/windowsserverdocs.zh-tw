@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 4d39ee3053133286c07a93d18b5c3bd5809e3b54
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 03e45cbeadf25391522728bf3d30006bec76e1e0
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182394"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996692"
 ---
 # <a name="dynamic-access-control-scenario-overview"></a>動態存取控制：案例概觀
 
@@ -60,9 +58,9 @@ ms.locfileid: "87182394"
 
 |內容類型|參考|
 |----------------|--------------|
-|**產品評估**|- [動態存取控制審核者指南](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc732148(v=ws.10))<br>- [動態存取控制開發人員指導方針](https://docs.microsoft.com/previous-versions/windows/desktop/dacx/dynamic-access-control-developer-extensibility-roadmap)|
-|**規劃**|- [規劃集中存取原則部署](https://docs.microsoft.com/windows-server/identity/solution-guides/scenario--central-access-policy)<br>- [規劃檔案存取審核](Plan-for-File-Access-Auditing.md)|
-|**部署**|- [Active Directory 部署](https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/ad-ds-deployment)<br>- [檔案和存放服務部署](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831487(v=ws.11))|
-|**作業**|[動態存取控制 PowerShell 參考](https://docs.microsoft.com/powershell/module/addsadministration/?view=win10-ps)|
+|**產品評估**|- [動態存取控制審核者指南](/previous-versions/orphan-topics/ws.10/cc732148(v=ws.10))<br>- [動態存取控制開發人員指導方針](/previous-versions/windows/desktop/dacx/dynamic-access-control-developer-extensibility-roadmap)|
+|**規劃**|- [規劃集中存取原則部署](./scenario--central-access-policy.md)<br>- [規劃檔案存取審核](Plan-for-File-Access-Auditing.md)|
+|**部署**|- [Active Directory 部署](../ad-ds/deploy/ad-ds-deployment.md)<br>- [檔案和存放服務部署](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831487(v=ws.11))|
+|**作業**|[動態存取控制 PowerShell 參考](/powershell/module/addsadministration/?view=win10-ps)|
 |**工具及設定**|[資料分類工具組](https://www.microsoft.com/download/details.aspx?id=27123)|
-|**社群資源**|[目錄服務論壇](https://docs.microsoft.com/answers/topics/windows-active-directory.html)|
+|**社群資源**|[目錄服務論壇](/answers/topics/windows-active-directory.html)|

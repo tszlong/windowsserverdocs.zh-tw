@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 4b66f517-b17d-408c-828f-a3793086bc1f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6ba9221707ffdea76236cd8f94c80a1220a750d5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 32e54b5129bf2215758adf35bd23c4d99ab2d8e9
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971825"
+ms.locfileid: "87996971"
 ---
 # <a name="wireless-access-deployment"></a>無線存取部署
 
@@ -489,7 +489,7 @@ Install-WindowsFeature NPAS -IncludeManagementTools
     >[!TIP]
     >如果您收到錯誤訊息，指出找不到與驗證方法搭配使用的憑證，您已設定 Active Directory 憑證服務自動將憑證發行至網路上的 RAS 和 資訊存取伺服器，請先確定您已遵循在 Active Directory Domain Services 中註冊 NPS 的步驟，然後使用下列步驟來更新群組原則：依序按一下 [**開始**]、[ **Windows 系統**] 和 [**執行**]，然後在 [**開啟**] 中輸入**gpupdate**，再按 enter 鍵。 當此命令傳回的結果指出使用者和電腦群組原則已成功更新時，請再次選取 [ **Microsoft： PROTECTED EAP \( PEAP \) ** ]，然後按一下 [**設定**]。
     >
-    >在重新整理之後群組原則您會繼續收到錯誤訊息，指出找不到與驗證方法搭配使用的憑證時，不會顯示憑證，因為它不符合核心網路附屬指南：[部署 802.1 x 有線和無線部署的伺服器憑證](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/cncg/server-certs/deploy-server-certificates-for-802.1x-wired-and-wireless-deployments)中所述的最低伺服器憑證需求。 如果發生這種情況，您必須中止 NPS 設定、撤銷發給 NPS 的憑證 \( \) ，然後依照指示使用伺服器憑證部署指南來設定新的憑證。
+    >在重新整理之後群組原則您會繼續收到錯誤訊息，指出找不到與驗證方法搭配使用的憑證時，不會顯示憑證，因為它不符合核心網路附屬指南：[部署 802.1 x 有線和無線部署的伺服器憑證](../server-certs/deploy-server-certificates-for-802.1x-wired-and-wireless-deployments.md)中所述的最低伺服器憑證需求。 如果發生這種情況，您必須中止 NPS 設定、撤銷發給 NPS 的憑證 \( \) ，然後依照指示使用伺服器憑證部署指南來設定新的憑證。
 
 7.  在 [**編輯受保護的 EAP 屬性**wizard] 頁面的 [已**發出憑證**] 中，確定已選取正確的 NPS 憑證，然後執行下列動作：
 
@@ -554,7 +554,7 @@ Install-WindowsFeature NPAS -IncludeManagementTools
 3. 將新的無線電腦加入網域 \( ，例如，透過不需要 IEEE 802.1 x 驗證的乙太網路連線， \) 並使用 netsh wlan 的 [**新增設定檔**] 命令將啟動載入器無線設定檔新增至電腦。
 
     >[!NOTE]
-    >如需詳細資訊，請參閱無線區域網路 WLAN 的 Netsh 命令（ \( \) 位於[HTTP： \/ \/ technet.microsoft.com \/ library \/ dd744890 .aspx](https://technet.microsoft.com/library/dd744890)）。
+    >如需詳細資訊，請參閱無線區域網路 WLAN 的 Netsh 命令（ \( \) 位於[HTTP： \/ \/ technet.microsoft.com \/ library \/ dd744890 .aspx](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd744890(v=ws.10))）。
 
 4. 將新的無線電腦散發給使用者，並提供「使用執行 Windows 10 的電腦登入網域」程式。
 
@@ -586,7 +586,7 @@ Install-WindowsFeature NPAS -IncludeManagementTools
     >若要將電腦加入網域，使用者必須使用本機系統管理員帳戶登入電腦。 或者，使用者必須在將電腦加入網域的過程中，提供本機系統管理員帳戶的認證。 此外，使用者必須在使用者想要加入電腦的網域中擁有使用者帳戶。 在將電腦加入網域的過程中，系統會提示使用者輸入網域帳號憑證的 \( 使用者名稱和密碼 \) 。
 
 2. 如下列**設定啟動程式無線設定檔**的程式所述，為您的網域使用者提供設定啟動程式無線設定檔的指示。
-3. 此外，為使用者提供本機電腦認證的 \( 使用者名稱和密碼 \) ，以及網域認證 \( 的網域使用者帳戶名稱和密碼，格式為 \) *DomainName \\ UserName*，以及「將電腦加入網域」和「登入網域」的程式（如《 Windows Server 2016[核心網路指南》](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/core-network-guide)所述）。
+3. 此外，為使用者提供本機電腦認證的 \( 使用者名稱和密碼 \) ，以及網域認證 \( 的網域使用者帳戶名稱和密碼，格式為 \) *DomainName \\ UserName*，以及「將電腦加入網域」和「登入網域」的程式（如《 Windows Server 2016[核心網路指南》](../../core-network-guide.md)所述）。
 
 #### <a name="to-configure-a-bootstrap-wireless-profile"></a>設定啟動程式無線設定檔
 

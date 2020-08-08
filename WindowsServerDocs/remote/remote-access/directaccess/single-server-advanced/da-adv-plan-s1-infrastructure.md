@@ -2,18 +2,16 @@
 title: 步驟1規劃 Advanced DirectAccess 基礎結構
 description: 本主題是使用 Windows Server 2016 部署單一 DirectAccess 伺服器與 Advanced Settings 指南的一部分
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-da
 ms.topic: article
 ms.assetid: aa3174f3-42af-4511-ac2d-d8968b66da87
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 759caf09531b2c09034c715fa6cc479fea6d6c07
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 8f60a960d76e7c24ff3dc9afaf931792713f06af
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518134"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970405"
 ---
 # <a name="step-1-plan-the-advanced-directaccess-infrastructure"></a>步驟1規劃 Advanced DirectAccess 基礎結構
 
@@ -21,7 +19,7 @@ ms.locfileid: "87518134"
 
 為單一伺服器上的進階 DirectAccess 部署做規劃的第一步，就是規劃部署所需的基礎結構。 本主題描述基礎結構規劃步驟。 這些規劃工作不需要依特定的順序完成。
 
-|Task|說明|
+|Task|描述|
 |----|--------|
 |[1.1 規劃網路拓撲和設定](#11-plan-network-topology-and-settings)|決定 DirectAccess 伺服器的放置位置 (在邊緣，或在「網路位址轉譯」(NAT) 裝置或防火牆後面)，並規劃 IP 位址指定、路由及強制通道。|
 |[1.2 規劃防火牆需求](#12-plan-firewall-requirements)|為允許 DirectAccess 流量通過邊緣防火牆做規劃。|
@@ -60,7 +58,7 @@ ms.locfileid: "87518134"
 
 3. 根據下表設定所需的介面卡和位址。 針對使用單一網路介面卡並設定在 NAT 裝置後面的部署，請只使用**內部網路介面卡**欄來設定您的 IP 位址。
 
-    | 說明 | 外部網路介面卡 | 內部網路介面卡 | 路由需求 |
+    | 描述 | 外部網路介面卡 | 內部網路介面卡 | 路由需求 |
     |--|--|--|--|
     | IPv4 網際網路和 IPv4 內部網路 | 請設定兩個靜態連續公用 IPv4 位址搭配適當的子網路遮罩 (只有 Teredo 才需要)。<br/><br/>另外，也請設定網際網路防火牆或本機網際網路服務提供者 (ISP) 路由器的預設閘道 IPv4 位址。 **注意：** DirectAccess 伺服器需要兩個連續的公用 IPv4 位址，使其可作為 Teredo 伺服器，而 Windows 型用戶端可以使用 DirectAccess 伺服器來偵測其背後的 NAT 裝置類型。 | 設定下列各項：<br/><br/>-具有適當子網路遮罩的 IPv4 內部網路位址。<br/>-內部網路命名空間的連線特定 DNS 尾碼。 此外，也應該在內部介面上設定 DNS 伺服器。 **注意：** 請勿在任何內部網路介面上設定預設閘道。 | 若要設定 DirectAccess 伺服器連線到內部 IPv4 網路上的所有子網路，請執行下列動作：<br/><br/>-列出內部網路上所有位置的 IPv4 位址空間。<br/>-使用**route add-p**或**netsh interface ipv4 add route**命令來新增 ipv4 位址空間，做為 DirectAccess 伺服器之 ipv4 路由表中的靜態路由。 |
     | IPv6 網際網路與 IPv6 內部網路 | 設定下列各項：<br/><br/>-使用 ISP 所提供的位址設定。<br/>-使用**Route Print**命令來確保預設的 ipv6 路由存在，並且指向 ipv6 路由表中的 ISP 路由器。<br/>-判斷 ISP 和內部網路路由器是否使用 RFC 4191 中所述的預設路由器喜好設定，以及使用高於您近端內部網路路由器的預設喜好設定。<br/>    如果這兩項都是肯定的，預設路由就不需要其他設定。 ISP 路由器的喜好設定等級較高時，可確保 DirectAccess 伺服器的作用中預設 IPv6 路由指向 IPv6 網際網路。<br/><br/>由於 DirectAccess 伺服器是 IPv6 路由器，因此如果您有原生的 IPv6 基礎結構，網際網路介面也可以連線到內部網路上的網域控制站。 在此情況下，請將封包篩選器新增到周邊網路中的網域控制站，以防止連線到 DirectAccess 伺服器之網際網路對向介面的 IPv6 位址。 | 設定下列各項：<br/><br/>-如果您不是使用預設的喜好設定層級，您可以使用下列命令：**netsh interface ipv6 Set InterfaceIndex ignoredefaultroutes = enabled**來設定內部網路介面。<br/>    這個命令可確保指向內部網路路由器的其他預設路由將不會新增到 IPv6 路由表。 您可以使用下列命令來取得您內部網路介面的介面索引：**netsh interface ipv6 show interface**。 | 當您有 IPv6 內部網路時，若要設定 DirectAccess 伺服器來連線到所有 IPv6 位置，請執行下列動作：<br/><br/>-列出內部網路上所有位置的 IPv6 位址空間。<br/>-使用**netsh interface ipv6 add route**命令來新增 ipv6 位址空間，做為 DirectAccess 伺服器之 ipv6 路由表中的靜態路由。 |
@@ -115,11 +113,11 @@ ms.locfileid: "87518134"
 
 如果 DirectAccess 伺服器是在邊緣防火牆後面，當 DirectAccess 伺服器位於 IPv4 網際網路上時，必須為「遠端存取」流量設定下列例外：
 
-- Teredo 流量-使用者資料包協定（UDP）目的地埠3544輸入，以及 UDP 來源埠3544輸出。
+- Teredo 流量-使用者資料包協定 (UDP) 目的地埠3544輸入，以及 UDP 來源埠3544輸出。
 
 - 6to4 流量-IP 通訊協定41輸入和輸出。
 
-- IP-HTTPS-傳輸控制通訊協定（TCP）目的地埠443，以及 TCP 來源埠443輸出。
+- IP-HTTPS-傳輸控制通訊協定 (TCP) 目的地埠443，以及 TCP 來源埠443輸出。
 
 - 如果您是以單一網路介面卡部署「遠端存取」，並且將網路位置伺服器安裝在 DirectAccess 伺服器上，則也應該豁免 TCP 連接埠 62000。
 
@@ -354,7 +352,7 @@ DNS 會被用來解析來自不位於內部 (或公司) 網路上的 DirectAcces
 
     -   **directaccess-directaccess-webprobehost**-應解析為 directaccess 伺服器的內部 IPv4 位址，或解析為僅 ipv6 環境中的 ipv6 位址。
 
-    -   **directaccess-directaccess-corpconnectivityhost**-應解析為本機主機（回送）位址。 應該會建立下列主機 (A) 和 (AAAA) 資源記錄：一個值為 127.0.0.1 的主機 (A) 資源記錄，以及一個值從 NAT64 首碼建構且最後 32 位元為 127.0.0.1 的主機 (AAAA) 資源記錄。 執行下列 Windows PowerShell 命令即可抓取 NAT64 首碼：**get-netnattransitionconfiguration**。
+    -   **directaccess-directaccess-corpconnectivityhost**-應解析為本機主機 (回送) 位址。 應該會建立下列主機 (A) 和 (AAAA) 資源記錄：一個值為 127.0.0.1 的主機 (A) 資源記錄，以及一個值從 NAT64 首碼建構且最後 32 位元為 127.0.0.1 的主機 (AAAA) 資源記錄。 執行下列 Windows PowerShell 命令即可抓取 NAT64 首碼：**get-netnattransitionconfiguration**。
 
         > [!NOTE]
         > 這只適用於僅支援 IPv4 的環境。 在 IPv4 加 IPv6 或僅支援 IPv6 的環境中，只有主機 (AAAA) 資源記錄在建立時應該加上回送 IP 位址 ::1。
@@ -415,7 +413,7 @@ DNS 會被用來解析來自不位於內部 (或公司) 網路上的 DirectAcces
 
 **DirectAccess 用戶端的本機名稱解析行為**
 
-如果無法使用 DNS 解析名稱，若要解析本機子網上的名稱，Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows 8 和 Windows 7 中的 DNS 用戶端服務可以使用本機名稱解析，並搭配連結本機多播名稱解析（LLMNR）和 NetBIOS over TCP/IP 通訊協定。
+如果無法使用 DNS 解析名稱，若要解析本機子網上的名稱，Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows 8 和 Windows 7 中的 DNS 用戶端服務可以使用本機名稱解析，連結本機多播名稱解析 (LLMNR) 和 NetBIOS over TCP/IP 通訊協定。
 
 當電腦位於私人網路 (例如單一子網路的家用網路) 時，通常需要本機名稱解析，才能進行對等連線。 當 DNS 用戶端服務執行內部網路伺服器名稱的本機名稱解析，並且電腦連線到網際網路上的共用子網路時，惡意使用者將可以擷取 LLMNR 和 NetBIOS over TCP/IP 訊息來判斷內部網路伺服器名稱。 在 [基礎結構伺服器安裝精靈] 的 [DNS] 頁面上，您可以根據從內部網路 DNS 伺服器收到的回應類型，設定本機名稱解析行為。 有下列選項可供使用：
 
@@ -478,7 +476,7 @@ DirectAccess 用戶端會起始與提供服務 (例如 Windows Update 和防毒�
 
 -   [1.7.2 規劃多個網域](#172-plan-multiple-domains)
 
-DirectAccess 會使用 AD DS 並 Active Directory 群組原則物件（Gpo），如下所示：
+DirectAccess 會使用 AD DS 並 Active Directory 群組原則物件 (Gpo) 如下所示：
 
 -   **驗證**
 
@@ -671,7 +669,7 @@ DirectAccess 可讓您選擇使用憑證來進行 IPsec 電腦驗證，或使用
 ### <a name="185-recover-from-a-deleted-gpo"></a>1.8.5 從已刪除的 GPO 復原
 如果不小心刪除了某個用戶端、DirectAccess 伺服器或應用程式伺服器 GPO，而且沒有備份可用，您就必須移除組態設定，然後重新設定。 如果有備份可用，您便可以從備份還原 GPO。
 
-[遠端存取管理] 主控台會顯示下列錯誤訊息：**找不到 gpo （gpo 名稱）**。 若要移除組態設定，請執行下列步驟：
+[遠端存取管理] 主控台將會顯示下列錯誤訊息：**找不到 gpo (gpo 名稱) **。 若要移除組態設定，請執行下列步驟：
 
 1.  執行 Windows PowerShell Cmdlet **Uninstall-remoteaccess**。
 

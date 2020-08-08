@@ -1,20 +1,18 @@
 ---
 title: 將儲存空間直接存取伺服器離線以進行維護
-ms.prod: windows-server
 ms.author: eldenc
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
 ms.date: 10/08/2018
 ms.assetid: 73dd8f9c-dcdb-4b25-8540-1d8707e9a148
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dba155f8b8d7312a823dedc72d23268d7d13fbf
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d3fd3e1c6ca9a7493ac0bcdc809f68fe22f8fa67
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955910"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971085"
 ---
 # <a name="taking-a-storage-spaces-direct-server-offline-for-maintenance"></a>將儲存空間直接存取伺服器離線以進行維護
 
@@ -173,7 +171,7 @@ MyVolume3    Mirror                OK                Healthy      True          
 2. 讓虛擬磁片離線。
 3. 停止叢集讓存放集區離線。 執行「**停止**叢集」 Cmdlet，或使用容錯移轉叢集管理員來停止叢集。
 4. 將每個節點上 services.msc 中的 [叢集服務] 設定為 [**停用**]。 這可避免叢集服務在修補時啟動。
-5. 將 Windows Server 累計更新和任何必要的服務堆疊更新套用到所有節點。 （您可以同時更新所有節點，而不需要等到叢集關閉後再等待）。
+5. 將 Windows Server 累計更新和任何必要的服務堆疊更新套用到所有節點。  (您可以同時更新所有節點，而不需要等到叢集關閉) 。
 6. 重新開機節點，並確定一切看起來良好。
 7. 將每個節點上的叢集服務設回 [**自動**]。
 8. 啟動叢集。 執行**啟動**叢集 Cmdlet，或使用容錯移轉叢集管理員。
@@ -183,7 +181,7 @@ MyVolume3    Mirror                OK                Healthy      True          
 10. 執行**取得磁片**區和**VirtualDisk**指令程式，以監視虛擬磁片的狀態。
 
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [儲存空間直接存取總覽](storage-spaces-direct-overview.md)
 - [叢集感知更新 (CAU)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831694(v=ws.11))

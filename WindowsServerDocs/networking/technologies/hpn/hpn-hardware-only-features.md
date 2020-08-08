@@ -7,12 +7,12 @@ manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/12/2018
-ms.openlocfilehash: b2cbb47262033d5149e47704e3f232b7662f69e6
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 30055b7954674b1cea99e7ef60d45cfa33543c3d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955663"
+ms.locfileid: "87996742"
 ---
 # <a name="hardware-only-ho-features-and-technologies"></a>僅限硬體 (HO) 功能和技術
 
@@ -79,4 +79,4 @@ LSO 允許應用程式將大型資料區塊傳遞至 NIC，而 NIC 會將資料�
 
 ## <a name="receive-segment-coalescing-rsc"></a>Receive Segment Coalescing (RSC)
 
-接收區段聯合（也稱為大型接收卸載）是一項 NIC 功能，它會將封包視為位於網路中斷之間的相同資料流程，並將它們合併成單一封包，然後再將它們傳遞給作業系統。 已系結至 Hyper-v 虛擬交換器的 Nic 上無法使用 RSC。 如需詳細資訊，請參閱[ (RSC) 的接收區段](https://docs.microsoft.com/windows-server/networking/technologies/hpn/rsc-in-the-vswitch)聯合。
+接收區段聯合（也稱為大型接收卸載）是一項 NIC 功能，它會將封包視為位於網路中斷之間的相同資料流程，並將它們合併成單一封包，然後再將它們傳遞給作業系統。 已系結至 Hyper-v 虛擬交換器的 Nic 上無法使用 RSC。 如需詳細資訊，請參閱[ (RSC) 的接收區段](./rsc-in-the-vswitch.md)聯合。

@@ -2,18 +2,16 @@
 title: 建立檔案檢測
 description: 本文說明如何建立檔案檢測
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: e7827f1e80b1cfe2288bee968cc3c4e3cd428e15
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4efa2add790e4284865a54eaedf3cbb7d9c0589c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474375"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971095"
 ---
 # <a name="create-a-file-screen"></a>建立檔案檢測
 
@@ -52,9 +50,9 @@ ms.locfileid: "85474375"
     -   若要儲存以這些自訂內容為基礎的範本 (建議)，請按一下 **\[將自訂內容儲存成範本\]**，然後輸入範本的名稱。 這個選項會將範本套用至新的檔案檢測，您日後可以此範本建立其他的檔案檢測。 這可讓您事後藉由更新範本，自動更新檔案檢測。
     -   如果您不想在儲存檔案檢測時儲存範本，請按一下 **\[儲存自訂檔案檢測，但不建立範本\]**。
 
-12. 按一下 [確定]****。
+12. 按一下 [確定]  。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [檔案檢測管理](file-screening-management.md)
 -   [定義檢測的檔案群組](define-file-groups-for-screening.md)

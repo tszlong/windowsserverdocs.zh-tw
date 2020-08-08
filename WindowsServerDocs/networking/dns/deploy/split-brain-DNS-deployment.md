@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: a255a4a5-c1a0-4edc-b41a-211bae397e3c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: f0274eddba5aa81a0910ca2f22841029c699bb3e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: bc1e63ff865a7eb6d4d83c75d6c2680dcf8ddb49
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962302"
+ms.locfileid: "87996869"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-deployment"></a>使用適用于分割 \- 大腦 Dns 部署的 Dns 原則
 
@@ -121,7 +121,7 @@ Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4A
 
 `Add-DnsServerQueryResolutionPolicy -Name "SplitBrainZonePolicy" -Action ALLOW -ServerInterface "eq,10.0.0.56" -ZoneScope "internal,1" -ZoneName contoso.com`
 
-如需詳細資訊，請參閱[DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
+如需詳細資訊，請參閱[DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
 
 ## <a name="example-of-dns-selective-recursion-control"></a><a name="bkmk_recursion"></a>DNS 選擇性遞迴控制的範例
 
@@ -183,7 +183,7 @@ Set-DnsServerRecursionScope -Name . -EnableRecursion $False
 Add-DnsServerRecursionScope -Name "InternalClients" -EnableRecursion $True
 ```
 
-如需詳細資訊，請參閱[DnsServerRecursionScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverrecursionscope?view=win10-ps)
+如需詳細資訊，請參閱[DnsServerRecursionScope](/powershell/module/dnsserver/add-dnsserverrecursionscope?view=win10-ps)
 
 #### <a name="create-dns-recursion-policies"></a><a name="bkmk_recpolicy"></a>建立 DNS 遞迴原則
 
@@ -199,7 +199,7 @@ Add-DnsServerRecursionScope -Name "InternalClients" -EnableRecursion $True
 Add-DnsServerQueryResolutionPolicy -Name "SplitBrainRecursionPolicy" -Action ALLOW -ApplyOnRecursion -RecursionScope "InternalClients" -ServerInterfaceIP "EQ,10.0.0.39"
 ```
 
-如需詳細資訊，請參閱[DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
+如需詳細資訊，請參閱[DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
 
 現在，DNS 伺服器已使用針對內部用戶端啟用選擇性遞迴控制的分割大腦名稱伺服器或 DNS 伺服器，來設定所需的 DNS 原則。
 

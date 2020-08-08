@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 161446ff-a072-4cc4-b339-00a04857ff3a
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: f371b91ecd87e07af90a7a2f7a0c802fb3d6c7e5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 771b87776e6530f330e68f1f06b39fef191cb7c7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955935"
+ms.locfileid: "87996885"
 ---
 # <a name="use-dns-policy-for-intelligent-dns-responses-based-on-the-time-of-day"></a>使用 DNS 原則以時間為基礎進行智慧型 DNS 回應
 
@@ -80,7 +80,7 @@ Add-DnsServerClientSubnet -Name "AmericaSubnet" -IPv4Subnet "192.0.0.0/24, 182.0
 Add-DnsServerClientSubnet -Name "EuropeSubnet" -IPv4Subnet "141.1.0.0/24, 151.1.0.0/24"
 
 ```
-如需詳細資訊，請參閱[DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)。
+如需詳細資訊，請參閱[DnsServerClientSubnet](/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)。
 
 #### <a name="create-the-zone-scopes"></a><a name="bkmk_zscopes"></a>建立區域範圍
 設定用戶端子網之後，您必須將想要重新導向其流量的區域分割成兩個不同的區域範圍，也就是您已設定的每個 DNS 用戶端子網都有一個範圍。
@@ -100,7 +100,7 @@ Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "SeattleZoneSco
 Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "DublinZoneScope"
 
 ```
-如需詳細資訊，請參閱[DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)。
+如需詳細資訊，請參閱[DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)。
 
 #### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>將記錄新增至區域範圍
 現在您必須將代表 web 伺服器主機的記錄新增到這兩個區域範圍中。
@@ -117,7 +117,7 @@ Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -
 ```
 當您在預設範圍中新增記錄時，不會包含 ZoneScope 參數。 這與將記錄新增至標準 DNS 區域相同。
 
-如需詳細資訊，請參閱[DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。
+如需詳細資訊，請參閱[DnsServerResourceRecord](/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。
 
 #### <a name="create-the-dns-policies"></a><a name="bkmk_policies"></a>建立 DNS 原則
 建立子網之後，分割區 (區域範圍) ，而且您已新增記錄，您必須建立用來連接子網和資料分割的原則，如此一來，當查詢來自其中一個 DNS 用戶端子網中的來源時，就會從該區域的正確範圍傳回查詢回應。 對應預設區域範圍不需要任何原則。
@@ -148,12 +148,10 @@ Add-DnsServerQueryResolutionPolicy -Name "EuropePolicy" -Action ALLOW -ClientSub
 Add-DnsServerQueryResolutionPolicy -Name "RestOfWorldPolicy" -Action ALLOW --ZoneScope "DublinZoneScope,1;SeattleZoneScope,1" -ZoneName "contosogiftservices.com" -ProcessingOrder 5
 
 ```
-如需詳細資訊，請參閱[DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
+如需詳細資訊，請參閱[DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
 
 現在，DNS 伺服器已設定必要的 DNS 原則，以根據地理位置和一天的時間重新導向流量。
 
 當 DNS 伺服器收到名稱解析查詢時，DNS 伺服器會根據所設定的 DNS 原則來評估 DNS 要求中的欄位。 如果名稱解析要求中的來源 IP 位址符合任何原則，則會使用相關聯的區域範圍來回應查詢，而使用者會被導向到地理位置最接近的資源。
 
 您可以根據您的流量管理需求來建立數以千計的 DNS 原則，而所有的新原則都會以動態方式套用，而不需要重新開機 DNS 伺服器上的傳入查詢。
-
-

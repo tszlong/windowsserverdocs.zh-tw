@@ -2,18 +2,16 @@
 title: 使用 DNS 原則進行具有地理位置感知的應用程式負載平衡
 description: 本主題是 Windows Server 2016 DNS 原則案例指南的一部分
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-dns
 ms.topic: article
 ms.assetid: b6e679c6-4398-496c-88bc-115099f3a819
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: b66ae0ef1bf319b991efc01c062ec156bf277c31
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 00195c4993f3e5bef9688adbfd09f62f908b6276
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518393"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996933"
 ---
 # <a name="use-dns-policy-for-application-load-balancing-with-geo-location-awareness"></a>使用 DNS 原則進行具有地理位置感知的應用程式負載平衡
 
@@ -21,10 +19,10 @@ ms.locfileid: "87518393"
 
 您可以使用本主題來瞭解如何設定 DNS 原則，以對具有地理位置感知的應用程式進行負載平衡。
 
-本指南中的上一個主題[使用適用于應用程式負載平衡的 DNS 原則](https://technet.microsoft.com/windows-server-docs/networking/dns/deploy/app-lb)，使用虛構公司的範例-Contoso 禮物服務-提供線上贈與服務，以及具有名為 Contosogiftservices.com 的網站。 Contoso 禮品服務會在位於美國西雅圖、WA、芝加哥、IL 和達拉斯、德克薩斯州的北美資料中心內的伺服器之間，進行其線上 Web 應用程式的負載平衡。
+本指南中的上一個主題[使用適用于應用程式負載平衡的 DNS 原則](./app-lb.md)，使用虛構公司的範例-Contoso 禮物服務-提供線上贈與服務，以及具有名為 Contosogiftservices.com 的網站。 Contoso 禮品服務會在位於美國西雅圖、WA、芝加哥、IL 和達拉斯、德克薩斯州的北美資料中心內的伺服器之間，進行其線上 Web 應用程式的負載平衡。
 
 >[!NOTE]
->在執行此案例中的指示之前，建議您先熟悉[使用適用于應用程式負載平衡的 DNS 原則](https://technet.microsoft.com/windows-server-docs/networking/dns/deploy/app-lb)主題。
+>在執行此案例中的指示之前，建議您先熟悉[使用適用于應用程式負載平衡的 DNS 原則](./app-lb.md)主題。
 
 本主題使用相同的虛構公司和網路基礎結構，作為包含地理位置感知的新範例部署基礎。
 
@@ -60,7 +58,7 @@ Add-DnsServerClientSubnet -Name "AmericaSubnet" -IPv4Subnet 192.0.0.0/24,182.0.0
 Add-DnsServerClientSubnet -Name "EuropeSubnet" -IPv4Subnet 141.1.0.0/24,151.1.0.0/24
 ```
 
-如需詳細資訊，請參閱[DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)。
+如需詳細資訊，請參閱[DnsServerClientSubnet](/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)。
 
 ### <a name="create-the-zone-scopes"></a><a name="bkmk_zscopes2"></a>建立區域範圍
 
@@ -84,7 +82,7 @@ Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "DublinZoneScop
 Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "AmsterdamZoneScope"
 ```
 
-如需詳細資訊，請參閱[DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
+如需詳細資訊，請參閱[DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
 ### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records2"></a>將記錄新增至區域範圍
 
@@ -97,11 +95,11 @@ Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -
 Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "141.1.0.1" -ZoneScope "AmsterdamZoneScope"
 ```
 
-如需詳細資訊，請參閱[DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。
+如需詳細資訊，請參閱[DnsServerResourceRecord](/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。
 
 ### <a name="create-the-dns-policies"></a><a name="bkmk_policies2"></a>建立 DNS 原則
 
-建立分割區（區域範圍）並新增記錄之後，您必須建立可將傳入查詢分散到這些範圍的 DNS 原則。
+建立分割區 (區域範圍之後) 並新增記錄之後，您必須建立可將傳入查詢分散到這些範圍的 DNS 原則。
 
 在此範例中，跨不同資料中心的應用程式伺服器的查詢散發符合下列準則。
 
@@ -117,7 +115,7 @@ Add-DnsServerQueryResolutionPolicy -Name "EuropeLBPolicy" -Action ALLOW -ClientS
 Add-DnsServerQueryResolutionPolicy -Name "WorldWidePolicy" -Action ALLOW -FQDN "eq,*.contoso.com" -ZoneScope "SeattleZoneScope,1;ChicagoZoneScope,1; TexasZoneScope,1;DublinZoneScope,1;AmsterdamZoneScope,1" -ZoneName "contosogiftservices.com" -ProcessingOrder 3
 ```
 
-如需詳細資訊，請參閱[DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
+如需詳細資訊，請參閱[DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
 
 您現在已成功建立 DNS 原則，以在多洲的五個不同資料中心內的網頁伺服器上提供應用程式負載平衡。
 

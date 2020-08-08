@@ -1,20 +1,18 @@
 ---
 title: 在虛擬機器中使用儲存空間直接存取
 description: 如何在虛擬機器來賓叢集中部署儲存空間直接存取-例如，在 Microsoft Azure 中。
-ms.prod: windows-server
 ms.author: eldenc
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
 ms.date: 07/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b930df382adfc9641175eb4ee3ce531d7eaf8bbc
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: d124e26f0605b8e1a4678abebb9039b597f1c18a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769057"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971055"
 ---
 # <a name="using-storage-spaces-direct-in-guest-virtual-machine-clusters"></a>使用來賓虛擬機器叢集中的儲存空間直接存取
 

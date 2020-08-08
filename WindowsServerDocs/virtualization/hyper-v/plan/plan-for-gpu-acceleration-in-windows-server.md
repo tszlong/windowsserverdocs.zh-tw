@@ -7,12 +7,12 @@ ms.author: rickman
 manager: stevelee
 ms.topic: article
 ms.date: 07/14/2020
-ms.openlocfilehash: afdb856fc84bcee634381f04054a97f545056882
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8cba3ac4d2e4680f480ff76db12c10553c1857d3
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87938791"
+ms.locfileid: "87996962"
 ---
 # <a name="plan-for-gpu-acceleration-in-windows-server"></a>在 Windows Server 中規劃 GPU 加速
 
@@ -37,7 +37,7 @@ GPU 虛擬化技術可在虛擬化環境中啟用 GPU 加速，通常是在虛�
 - [ (DDA) 的離散裝置指派](#discrete-device-assignment-dda)
 - [RemoteFX vGPU](#remotefx-vgpu)
 
-除了 VM 工作負載，Windows Server 也支援 Windows 容器中容器化工作負載的 GPU 加速。 如需詳細資訊，請參閱[Windows 容器中的 GPU 加速](https://docs.microsoft.com/virtualization/windowscontainers/deploy-containers/gpu-acceleration)。
+除了 VM 工作負載，Windows Server 也支援 Windows 容器中容器化工作負載的 GPU 加速。 如需詳細資訊，請參閱[Windows 容器中的 GPU 加速](/virtualization/windowscontainers/deploy-containers/gpu-acceleration)。
 
 ## <a name="discrete-device-assignment-dda"></a> (DDA) 的離散裝置指派
 

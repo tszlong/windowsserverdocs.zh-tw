@@ -1,18 +1,16 @@
 ---
 title: 用於設定 Hyper-v Vm 之持續性記憶體裝置的 Cmdlet
 description: 如何設定 Hyper-v Vm 的持續性記憶體裝置
-ms.prod: windows-server
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: b5715c02-a90f-4de9-a71e-0fc08039ba1d
 author: coreyp-at-msft
 ms.author: coreyp
-ms.openlocfilehash: 4e981185f5ba3ff8e6ad7dc22acc51591d5d32dc
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 471dd9a7c3feb148b9ce27ec7ac4d714be0e86af
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769036"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996694"
 ---
 # <a name="cmdlets-for-configuring-persistent-memory-devices-for-hyper-v-vms"></a>用於設定 Hyper-v Vm 之持續性記憶體裝置的 Cmdlet
 
@@ -22,7 +20,7 @@ ms.locfileid: "87769036"
 
 ## <a name="create-a-persistent-memory-device-for-a-vm"></a>為 VM 建立持續性記憶體裝置
 
-使用**[新的-VHD](https://docs.microsoft.com/powershell/module/hyper-v/new-vhd?view=win10-ps)** Cmdlet 來建立 VM 的持續性記憶體裝置。 裝置必須在現有的 NTFS DAX 磁片區上建立。  新的檔案名延伸 (. vhdpmem) 用來指定裝置是持續性記憶體裝置。 僅支援固定的 VHD 檔案格式。
+使用**[新的-VHD](/powershell/module/hyper-v/new-vhd?view=win10-ps)** Cmdlet 來建立 VM 的持續性記憶體裝置。 裝置必須在現有的 NTFS DAX 磁片區上建立。  新的檔案名延伸 (. vhdpmem) 用來指定裝置是持續性記憶體裝置。 僅支援固定的 VHD 檔案格式。
 
 **範例：** `New-VHD d:\VMPMEMDevice1.vhdpmem -Fixed -SizeBytes 4GB`
 
@@ -40,7 +38,7 @@ Add-VMPmemController ProductionVM1x
 
 ## <a name="attach-a-persistent-memory-device-to-a-vm"></a>將持續性記憶體裝置連接至 VM
 
-使用**[add-vmharddiskdrive](https://docs.microsoft.com/powershell/module/hyper-v/add-vmharddiskdrive?view=win10-ps)** 將持續性記憶體裝置附加至 VM
+使用**[add-vmharddiskdrive](/powershell/module/hyper-v/add-vmharddiskdrive?view=win10-ps)** 將持續性記憶體裝置附加至 VM
 
 **範例：** `Add-VMHardDiskDrive ProductionVM1 PMEM -ControllerLocation 1 -Path D:\VPMEMDevice1.vhdpmem`
 

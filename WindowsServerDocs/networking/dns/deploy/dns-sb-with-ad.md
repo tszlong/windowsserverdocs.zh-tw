@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: f9533204-ad7e-4e49-81c1-559324a16aeb
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 1f6da8584f7a2b2221fb1a283b8ea4de842ddc58
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 4aa18e3f93cdb0a50cac3db697a10dd40c1f05e0
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964134"
+ms.locfileid: "87996911"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-in-active-directory"></a>在 Active Directory 中使用適合拆分式 DNS 部署的 DNS 原則
 
@@ -75,8 +75,8 @@ $policies |  Add-DnsServerQueryResolutionPolicy -ZoneName "contoso.com" -Compute
 
 如需詳細資訊，請參閱下列 Windows PowerShell 參考主題。
 
-- [DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/get-dnsserverqueryresolutionpolicy?view=win10-ps)
-- [新增-DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)
+- [DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/get-dnsserverqueryresolutionpolicy?view=win10-ps)
+- [新增-DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)
 
 ## <a name="how-to-configure-dns-policy-for-split-brain-dns-in-active-directory"></a>如何 \- 在 Active Directory 中設定分割大腦 dns 的 Dns 原則
 
@@ -90,7 +90,7 @@ $policies |  Add-DnsServerQueryResolutionPolicy -ZoneName "contoso.com" -Compute
 Add-DnsServerPrimaryZone -Name "contoso.com" -ReplicationScope "Domain" -PassThru
 ```
 
-如需詳細資訊，請參閱[add-dnsserverprimaryzone](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverprimaryzone?view=win10-ps)。
+如需詳細資訊，請參閱[add-dnsserverprimaryzone](/powershell/module/dnsserver/add-dnsserverprimaryzone?view=win10-ps)。
 
 ### <a name="create-the-scopes-of-the-zone"></a>建立區域的範圍
 
@@ -108,7 +108,7 @@ Add-DnsServerPrimaryZone -Name "contoso.com" -ReplicationScope "Domain" -PassThr
 Add-DnsServerZoneScope -ZoneName "contoso.com" -Name "external"
 ```
 
-如需詳細資訊，請參閱[DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)。
+如需詳細資訊，請參閱[DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)。
 
 ### <a name="add-records-to-the-zone-scopes"></a>將記錄新增至區域範圍
 
@@ -128,7 +128,7 @@ Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4A
 > [!NOTE]
 > 當記錄新增至預設區域範圍時，不會包含 **– ZoneScope**參數。 此動作等同于將記錄新增至一般區域。
 
-如需詳細資訊，請參閱[DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。
+如需詳細資訊，請參閱[DnsServerResourceRecord](/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。
 
 ### <a name="create-the-dns-policies"></a>建立 DNS 原則
 
@@ -149,7 +149,7 @@ Add-DnsServerQueryResolutionPolicy -Name "SplitBrainZonePolicy" -Action ALLOW -S
 > [!NOTE]
 > 208.84.0.53 是公用網路介面上的 IP 位址。
 
-如需詳細資訊，請參閱[DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
+如需詳細資訊，請參閱[DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
 
 現在，DNS 伺服器已針對具有 Active Directory 整合式 DNS 區域的分割大腦名稱伺服器，使用必要的 DNS 原則進行設定。
 

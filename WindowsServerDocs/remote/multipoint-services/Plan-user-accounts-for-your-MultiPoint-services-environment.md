@@ -7,12 +7,12 @@ ms.assetid: d47be540-e891-47bd-85da-6df4bbf93b2f
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 63acb44d5b5015d1fb1d560f52ffde8cd37f8cbf
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 096d09a78abb8902225432a358692d00f460e91c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87951763"
+ms.locfileid: "87996813"
 ---
 # <a name="plan-user-accounts-for-your-multipoint-services-environment"></a>為您的 MultiPoint 服務環境規劃使用者帳戶
 在 MultiPoint 服務中執行使用者帳戶的最佳方式，會視部署的大小和複雜度而定：
@@ -22,7 +22,7 @@ ms.locfileid: "87951763"
 -   **網域帳戶**-如果您的環境有許多執行 MultiPoint 服務和許多使用者的電腦，您可能會發現設定 Active Directory Domain Services \( AD DS \) 網域和使用*網域使用者帳戶*會更有用，這可讓使用者從網域中的任何工作站存取自己的使用者設定檔和設定。 網域使用者帳戶必須由網域系統管理員在網域控制站上建立。
 
 > [!NOTE]
-> 下列各節將討論您可能會針對 MultiPoint 服務中的本機使用者帳戶所執行的案例。 如果您使用網域使用者帳戶，請參閱[範例案例： MultiPoint 服務使用者帳戶](Example-scenarios--MultiPoint-Services-user-accounts.md)中的「網域網路環境中的一或多個 MultiPoint 伺服器」案例。
+> 下列各節將討論您可能會針對 MultiPoint 服務中的本機使用者帳戶所執行的案例。 如果您使用網域使用者帳戶，請參閱[範例案例： MultiPoint 服務使用者帳戶](./multipoint-users-scenario.md)中的「網域網路環境中的一或多個 MultiPoint 伺服器」案例。
 
 ## <a name="planning-local-user-accounts"></a>規劃本機使用者帳戶
 下列各節將針對在 Windows MultiPoint 服務環境中執行個別或共用本機使用者帳戶的數種方式，考慮其優點、缺點和需求。

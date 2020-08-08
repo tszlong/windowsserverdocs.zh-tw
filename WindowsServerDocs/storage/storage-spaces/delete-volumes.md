@@ -1,19 +1,17 @@
 ---
 title: 刪除儲存空間直接存取中的磁片區
 description: 如何使用 Windows 系統管理中心刪除儲存空間直接存取中的磁片區。
-ms.prod: windows-server
 ms.reviewer: cosmosdarwin
 author: iangpgh
 ms.author: jgerend
 manager: daveba
-ms.technology: storage-spaces
 ms.date: 05/07/2019
-ms.openlocfilehash: 34df5ecc2ff085535878133db98cf345990165e0
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 9a45b2e6ce84368fdeca9019b7c188b2bc053013
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475225"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87960891"
 ---
 # <a name="deleting-volumes-in-storage-spaces-direct"></a>刪除儲存空間直接存取中的磁片區
 > 適用於：Windows Server 2019、Windows Server 2016
@@ -31,7 +29,7 @@ ms.locfileid: "85475225"
 4. 在 [磁碟區詳細資料] 頁面的頂端，選取 [刪除]  。
 5. 在確認對話方塊中，選取核取方塊以確認您要刪除該磁碟區，然後選取 [刪除]  。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [Windows Server 2016 中的儲存空間直接存取](storage-spaces-direct-overview.md)
 - [規劃儲存空間直接存取中的磁碟區](plan-volumes.md)

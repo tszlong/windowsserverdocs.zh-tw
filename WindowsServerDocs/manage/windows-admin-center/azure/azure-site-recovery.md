@@ -6,18 +6,18 @@ author: haley-rowland
 ms.author: harowl
 ms.date: 07/17/2018
 ms.localizationpriority: low
-ms.openlocfilehash: 265589789f2966e7b6140543876f41058aa5d705
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 651eff1819a7ec867febd86005415e5044e6bbd0
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87940079"
+ms.locfileid: "87996823"
 ---
 # <a name="protect-your-hyper-v-virtual-machines-with-azure-site-recovery-and-windows-admin-center"></a>使用 Azure Site Recovery 和 Windows 系統管理中心保護您的 Hyper-v 虛擬機器
 
 >適用於：Windows Admin Center 預覽版、Windows Admin Center
 
-[深入瞭解 Azure 與 Windows 管理中心的整合。](../plan/azure-integration-options.md)
+[深入瞭解 Azure 與 Windows 管理中心的整合。](./index.md)
 
 Windows Admin Center 簡化在您的 Hyper-V 伺服器或叢集上複寫虛擬機器的程序，讓您更輕鬆地從自己的資料中心運用 Azure 的強大功能。 若要將安裝工作自動化，您可以將 Windows Admin Center 閘道連線至 Azure。
 
@@ -25,7 +25,7 @@ Windows Admin Center 簡化在您的 Hyper-V 伺服器或叢集上複寫虛擬�
 
 ## <a name="what-is-azure-site-recovery-and-how-does-it-work-with-windows-admin-center"></a>什麼是 Azure Site Recovery，以及它如何與 Windows Admin Center 搭配使用？
 
-**Azure Site Recovery** 是一個 Azure 服務，可複寫 VM 上執行的工作負載，這樣您的業務關鍵基礎結構就會在發生嚴重損壞時受到保護。  [深入瞭解 Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview)。
+**Azure Site Recovery** 是一個 Azure 服務，可複寫 VM 上執行的工作負載，這樣您的業務關鍵基礎結構就會在發生嚴重損壞時受到保護。  [深入瞭解 Azure Site Recovery](/azure/site-recovery/site-recovery-overview)。
 
 Azure Site Recovery 由兩個元件組成：「複寫」  和「容錯移轉」  。 複寫部分將目標 VM 的 VHD 複寫至 Azure 儲存體帳戶，以備於發生嚴重損壞時保護您的 VM。 您可以接著容錯移轉這些 VM，並在發生嚴重損壞時使用 Azure 執行它們。 您也可以在不影響主要 VM 的情況下執行測試容錯移轉，以測試 Azure 中的復原程序。
 
@@ -36,7 +36,7 @@ Azure Site Recovery 由兩個元件組成：「複寫」  和「容錯移轉」 
 
 - 裝載所要保護之 VM 的目標伺服器必須可以存取網際網路，才能複寫至 Azure。
 - [將 Windows Admin Center 閘道連線至 Azure](azure-integration.md)。
-- 請[參閱容量規劃工具，以評估成功複寫和容錯移轉的需求](https://docs.microsoft.com/azure/site-recovery/hyper-v-site-walkthrough-capacity)。
+- 請[參閱容量規劃工具，以評估成功複寫和容錯移轉的需求](/azure/site-recovery/hyper-v-site-walkthrough-capacity)。
 
 ## <a name="step-1-set-up-vm-protection-on-your-target-host"></a>步驟 1:在目標主機上設定 VM 保護
 
@@ -68,9 +68,9 @@ Azure Site Recovery 由兩個元件組成：「複寫」  和「容錯移轉」 
 1. 瀏覽回到您在上述步驟 2 中設定的伺服器或叢集，然後移至 **\[虛擬機器\] > \[清查\]**。
 2. 選取您想要保護的 VM。
 3. 選取 [**更多**  >  **保護 VM**]。
-4. 檢閱[保護 VM 的容量需求](https://docs.microsoft.com/azure/site-recovery/site-recovery-capacity-planner)。
+4. 檢閱[保護 VM 的容量需求](/azure/site-recovery/site-recovery-capacity-planner)。
 
-    如果您想要使用 premium 儲存體帳戶，請[在 Azure 入口網站中建立一個](https://docs.microsoft.com/azure/storage/common/storage-premium-storage)。 Windows Admin Center 窗格中提供的 **\[新建\]** 選項會建立標準儲存體帳戶。
+    如果您想要使用 premium 儲存體帳戶，請[在 Azure 入口網站中建立一個](/azure/storage/common/storage-premium-storage)。 Windows Admin Center 窗格中提供的 **\[新建\]** 選項會建立標準儲存體帳戶。
 
 5. 輸入要用於此 VM 複寫的 **\[儲存體帳戶\]** 的名稱，然後選取 **\[保護 VM\]**。 此步驟會啟用所選虛擬機器的複寫。
 
@@ -80,13 +80,13 @@ Azure Site Recovery 由兩個元件組成：「複寫」  和「容錯移轉」 
 
  雖然開始 VM 複寫 (VM 只是使用複寫即已受保護) 時您不需要完成此步驟，但還是建議您在設定 Azure Site Recovery 時設定容錯移轉時設定。 如果您想要準備 Azure VM 的容錯移轉，請完成下列步驟：
 
-1. [設定 Azure 網路](https://docs.microsoft.com/azure/site-recovery/hyper-v-site-walkthrough-prepare-azure)容錯移轉 VM 將會附加至此 VNET。 請注意，連結頁面列出的其他步驟已由 Windows Admin Center 自動完成；您只需要設定 Azure 網路。
+1. [設定 Azure 網路](/azure/site-recovery/hyper-v-site-walkthrough-prepare-azure)容錯移轉 VM 將會附加至此 VNET。 請注意，連結頁面列出的其他步驟已由 Windows Admin Center 自動完成；您只需要設定 Azure 網路。
 
-2. [執行測試容錯移轉](https://docs.microsoft.com/azure/site-recovery/hyper-v-site-walkthrough-test-failover)。
+2. [執行測試容錯移轉](/azure/site-recovery/hyper-v-site-walkthrough-test-failover)。
 
 ## <a name="step-4-create-recovery-plans"></a>步驟 4：建立復原計劃
 
-**復原計劃**是 Azure Site Recovery 中的一項功能，可讓您容錯移轉和復原整個組成 VM 集合的應用程式。 雖然可以個別個別復原受保護的 VM，但是將組成應用程式的 VM 新增至復原計劃，您就可以透過復原計劃容錯移轉整個應用程式。 您也可以使用復原計劃的測試容錯移轉功能來測試應用程式的復原。 復原計劃可讓您將 VM 組成群組、將它們依其應在容錯移轉期間提出的順序排列，以及將其他要在復原過程中執行的步驟自動化。 VM 受到保護後，您即可移至 Azure 入口網站中的 Azure Site Recovery 保存庫，並建立這些 VM 的復原計劃。 [深入瞭解復原方案](https://docs.microsoft.com/azure/site-recovery/site-recovery-create-recovery-plans)。
+**復原計劃**是 Azure Site Recovery 中的一項功能，可讓您容錯移轉和復原整個組成 VM 集合的應用程式。 雖然可以個別個別復原受保護的 VM，但是將組成應用程式的 VM 新增至復原計劃，您就可以透過復原計劃容錯移轉整個應用程式。 您也可以使用復原計劃的測試容錯移轉功能來測試應用程式的復原。 復原計劃可讓您將 VM 組成群組、將它們依其應在容錯移轉期間提出的順序排列，以及將其他要在復原過程中執行的步驟自動化。 VM 受到保護後，您即可移至 Azure 入口網站中的 Azure Site Recovery 保存庫，並建立這些 VM 的復原計劃。 [深入瞭解復原方案](/azure/site-recovery/site-recovery-create-recovery-plans)。
 
 ## <a name="monitoring-replicated-vms-in-azure"></a>在 Azure 中監視複寫的 VM ##
 

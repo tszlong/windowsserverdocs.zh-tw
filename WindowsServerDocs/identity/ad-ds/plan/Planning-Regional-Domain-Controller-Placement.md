@@ -6,34 +6,32 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/08/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 574c5a4c0d009a34b1d327ac4aef3b9f5210b0bf
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 65f47f485b7aded16506cdce91502c0918aacba2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959390"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970955"
 ---
 # <a name="planning-regional-domain-controller-placement"></a>規劃區域網域控制站放置
 
 > 適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-若要確保成本效率，請盡可能將最少的地區網域控制站放在其中。 首先，請參閱用來[收集網路資訊](../../ad-ds/plan/Collecting-Network-Information.md)的「地理位置和通訊連結」（DSSTOPO_1.doc）工作表，以判斷某個位置是否為中樞。
+若要確保成本效率，請盡可能將最少的地區網域控制站放在其中。 首先，請參閱用來[收集網路資訊](../../ad-ds/plan/Collecting-Network-Information.md)的「地理位置和通訊連結」 ( # A0) 工作表，以判斷某個位置是否為中樞。
 
 規劃放置每個中樞位置中所代表每個網域的地區網域控制站。 將區域網域控制站放在所有中樞位置之後，請評估將區域網域控制站放在附屬位置的需求。 從附屬位置排除不必要的區域網域控制站，可減少維護遠端伺服器基礎結構所需的支援成本。
 
 此外，請確保中樞和衛星位置中網域控制站的實體安全性，讓未經授權的人員無法存取它們。 請勿將可寫入的網域控制站放在中樞和附屬位置，您無法保證網域控制站的實體安全性。 具有可寫入網域控制站實體存取權的人員，可以藉由下列方式來攻擊系統：
 
 - 藉由在網域控制站上啟動替代作業系統來存取實體磁片。
-- 移除（也可能取代）網域控制站上的實體磁片。
+- 移除 (，而且可能會取代網域控制站上) 的實體磁片。
 - 取得和操作網域控制站系統狀態備份的複本。
 
 僅將可寫入的區域網域控制站新增至可確保其實體安全性的位置。
 
-在實體安全性不適當的位置中，建議您部署唯讀網域控制站（RODC）。 除了帳戶密碼，RODC 還會保有可寫入網域控制站所保有的所有 Active Directory 物件及屬性。 不過，您無法對儲存於 RODC 上的資料庫進行變更。 變更必須在可寫入的網域控制站上進行，然後複寫回 RODC。
+在實體安全性不適當的位置中， (RODC) 部署唯讀網域控制站是建議的解決方案。 除了帳戶密碼，RODC 還會保有可寫入網域控制站所保有的所有 Active Directory 物件及屬性。 不過，您無法對儲存於 RODC 上的資料庫進行變更。 變更必須在可寫入的網域控制站上進行，然後複寫回 RODC。
 
-若要驗證用戶端登入和存取本機檔案伺服器，大部分的組織會針對指定位置中所代表的所有地區網域，各放置區域網域控制站。 不過，在評估企業位置是否需要其用戶端進行本機驗證，或用戶端可以依賴廣域網路（WAN）連結的驗證和查詢時，您必須考慮許多變數。 下圖顯示如何決定是否要將網域控制站放在附屬位置。
+若要驗證用戶端登入和存取本機檔案伺服器，大部分的組織會針對指定位置中所代表的所有地區網域，各放置區域網域控制站。 不過，在評估企業位置是否需要其用戶端進行本機驗證，或用戶端可以透過 (廣域網路) 連結進行驗證和查詢時，您必須考慮許多變數。 下圖顯示如何決定是否要將網域控制站放在附屬位置。
 
 ![規劃區域 dc 放置](media/Planning-Regional-Domain-Controller-Placement/49892c8c-2c99-4aab-92ba-808dbc8048e2.gif)
 
@@ -69,7 +67,7 @@ ms.locfileid: "86959390"
 
 ### <a name="logon-network-traffic-vs-replication-traffic"></a>登入網路流量與複寫流量的比較
 
-如果網域控制站在與 Active Directory 用戶端相同的位置中無法使用，用戶端會在網路上建立登入流量。 在實體網路上建立的登入網路流量量會受到數個因素的影響，包括群組成員資格;群組原則物件（Gpo）的數目和大小;登入腳本;以及離線資料夾、資料夾重新導向和漫遊設定檔等功能。
+如果網域控制站在與 Active Directory 用戶端相同的位置中無法使用，用戶端會在網路上建立登入流量。 在實體網路上建立的登入網路流量量會受到數個因素的影響，包括群組成員資格; (Gpo) 的群組原則物件數目和大小;登入腳本;以及離線資料夾、資料夾重新導向和漫遊設定檔等功能。
 
 另一方面，放在指定位置的網域控制站會在網路上產生複寫流量。 在網域控制站上裝載的磁碟分割上進行的更新頻率和數量，會影響網路上所建立的複寫流量量。 可以在網域控制站上裝載的分割區上進行的不同類型的更新，包括新增或變更使用者和使用者屬性、變更密碼，以及新增或變更全域群組、印表機或磁片區。
 
@@ -79,6 +77,6 @@ ms.locfileid: "86959390"
 
 如果降低維護網域控制站的成本比網路流量更重要，請將該網域的網域控制站集中化，而不要將任何地區網域控制站放在該位置，或考慮將 Rodc 放在該位置。
 
-如需協助您記錄地區網域控制站位置的工作表，以及每個位置中所代表每個網域的使用者數目，請參閱[適用于 Windows Server 2003 部署套件的工作輔助工具](https://microsoft.com/download/details.aspx?id=9608)、下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，以及開啟「網域控制站位置」（DSSTOPO_4.doc）。
+如需協助您記錄地區網域控制站位置的工作表，以及每個位置中所代表每個網域的使用者數目，請參閱[Windows Server 2003 部署套件的工作輔助工具](https://microsoft.com/download/details.aspx?id=9608)、下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，以及開啟「網域控制站位置」 ( # A1) 。
 
 當您部署地區網域時，您必須參考您需要放置區域網域控制站之位置的相關資訊。 如需部署地區網域的詳細資訊，請參閱[部署 Windows Server 2008 地區網域](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755118(v=ws.10))。
