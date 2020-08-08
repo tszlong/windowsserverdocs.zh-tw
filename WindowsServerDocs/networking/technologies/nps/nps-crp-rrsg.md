@@ -2,24 +2,22 @@
 title: 遠端 RADIUS 伺服器群組
 description: 本主題提供 Windows Server 2016 中網路原則伺服器遠端 RADIUS 伺服器群組的總覽。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: d81678a7-be21-48f2-9b3f-5a75d6aef013
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 8275c3e8902ed78d77d01a2ff5d769d3e99abf97
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 36c1f50b840404c16c67a6252826f76ef5e2b5ec
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316169"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87969365"
 ---
 # <a name="remote-radius-server-groups"></a>遠端 RADIUS 伺服器群組
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-當您將網路原則伺服器（NPS）設定為遠端驗證撥入使用者服務（RADIUS） proxy 時，您可以使用 NPS 將連線要求轉送到能夠處理連線要求的 RADIUS 伺服器，因為它們可以執行使用者或電腦帳戶所在網域中的驗證和授權。 例如，如果您要將連線要求轉送到不受信任網域中的一或多個 RADIUS 伺服器，可以設定 NPS 做為 RADIUS Proxy，將要求轉送到不受信任網域中的遠端 RADIUS 伺服器。
+當您設定網路原則伺服器 (NPS) 作為遠端驗證撥入使用者服務 (RADIUS) proxy 時，您可以使用 NPS 將連線要求轉送到能夠處理連線要求的 RADIUS 伺服器，因為它們可以在使用者或電腦帳戶所在的網域中執行驗證和授權。 例如，如果您要將連線要求轉送到不受信任網域中的一或多個 RADIUS 伺服器，可以設定 NPS 做為 RADIUS Proxy，將要求轉送到不受信任網域中的遠端 RADIUS 伺服器。
 
 >[!NOTE]
 >遠端 RADIUS 伺服器群組與 Windows 群組無關，而且與不同。
@@ -42,4 +40,4 @@ ms.locfileid: "80316169"
 
 設定遠端 RADIUS 伺服器群組之後，您可以在連線要求原則的驗證和帳戶處理設定中指定群組。 因此，您可以先設定遠端 RADIUS 伺服器群組。 接著，您可以設定連線要求原則使用新設定的遠端 RADIUS 伺服器群組。 或者，您可以使用 [新增連線要求原則精靈]，在建立連線要求原則時，建立新的遠端 RADIUS 伺服器群組。
 
-如需 NPS 的詳細資訊，請參閱[網路原則伺服器（NPS）](nps-top.md)。
+如需有關 NPS 的詳細資訊，請參閱[網路原則伺服器 (NPS) ](nps-top.md)。

@@ -5,12 +5,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 11/21/2018
-ms.openlocfilehash: aefff380a1320898ff342f813498b8f45dfa6122
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 53b0610e32f8cd3c6b7e3d086690ef4b72612ed6
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943998"
+ms.locfileid: "87996139"
 ---
 # <a name="upgrade-a-guarded-fabric-to-windows-server-2019"></a>將受防護網狀架構升級至 Windows Server 2019
 
@@ -54,7 +54,7 @@ ms.locfileid: "87943998"
 若要升級 HGS 叢集，請在叢集的每個節點上（一次一個節點）執行下列步驟：
 
 1.  `Clear-HgsServer`在提高許可權的 PowerShell 提示字元中執行，以從您的叢集中移除 HGS 伺服器。 此 Cmdlet 會從容錯移轉叢集移除 HGS 複寫的存放區、HGS 網站和節點。
-2.  如果您的 HGS 伺服器是 (預設設定) 的網域控制站，您必須在要 `adprep /forestprep` `adprep /domainprep` 升級的第一個節點上執行和，以準備網域以進行 OS 升級。 如需詳細資訊，請參閱[Active Directory Domain Services 升級檔](https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/upgrade-domain-controllers#supported-in-place-upgrade-paths)。
+2.  如果您的 HGS 伺服器是 (預設設定) 的網域控制站，您必須在要 `adprep /forestprep` `adprep /domainprep` 升級的第一個節點上執行和，以準備網域以進行 OS 升級。 如需詳細資訊，請參閱[Active Directory Domain Services 升級檔](../../identity/ad-ds/deploy/upgrade-domain-controllers.md#supported-in-place-upgrade-paths)。
 3.  執行 Windows Server 2019 的就地[升級](../../get-started-19/install-upgrade-migrate-19.md)。
 4.  執行[HgsServer](guarded-fabric-configure-additional-hgs-nodes.md) ，將節點聯結回叢集。
 
@@ -68,9 +68,9 @@ Set-HgsServerVersion  v2
 
 在您將 Hyper-v 主機升級至 Windows Server 2019 之前，請確定您的 HGS 叢集已升級至 Windows Server 2019，而且您已將所有 Vm 從 Hyper-v 伺服器移出。
 
-1.  如果您在伺服器上使用 Windows Defender 應用程式控制程式碼完整性原則 (一律是使用 TPM 證明) 的情況，請在嘗試升級伺服器之前，先確定該原則處於 audit 模式或已停用。 [瞭解如何停用 WDAC 原則](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/disable-windows-defender-application-control-policies)
+1.  如果您在伺服器上使用 Windows Defender 應用程式控制程式碼完整性原則 (一律是使用 TPM 證明) 的情況，請在嘗試升級伺服器之前，先確定該原則處於 audit 模式或已停用。 [瞭解如何停用 WDAC 原則](/windows/security/threat-protection/windows-defender-application-control/disable-windows-defender-application-control-policies)
 2.  遵循[Windows server 升級內容](../../upgrade/upgrade-overview.md)中的指導方針，將您的主機升級至 Windows server 2019。 如果您的 Hyper-v 主機是容錯移轉叢集的一部分，請考慮使用叢集[作業系統輪流升級](../../failover-clustering/Cluster-Operating-System-Rolling-Upgrade.md)。
-3.  [測試並重新啟用](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/audit-windows-defender-application-control-policies)您的 Windows Defender 應用程式控制原則（如果您已在升級前啟用）。
+3.  [測試並重新啟用](/windows/security/threat-protection/windows-defender-application-control/audit-windows-defender-application-control-policies)您的 Windows Defender 應用程式控制原則（如果您已在升級前啟用）。
 4.  執行 `Get-HgsClientConfiguration` 以檢查**IsHostGuarded = True**，這表示主機已成功地將證明傳遞至您的 HGS 伺服器。
 5.  如果您使用 TPM 證明，則在升級至通過證明之後，您可能需要[重新捕獲 TPM 基準或程式碼完整性原則](guarded-fabric-add-host-information-for-tpm-trusted-attestation.md)。
 6.  再次開始在主機上執行受防護的 Vm！

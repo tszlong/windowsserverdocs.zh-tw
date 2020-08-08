@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 398440ac-5988-41ce-b91e-eab343a255d3
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: e8722e5ff925bca1d99c39d7eb6bf360dc12c065
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1e2db53f28ff5262778b36b8a5cb91e6062ca9c0
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87968695"
+ms.locfileid: "87995707"
 ---
 # <a name="hyper-v-virtual-switch"></a>Hyper-V 虛擬交換器
 
@@ -26,13 +26,13 @@ ms.locfileid: "87968695"
 >
 > - [管理 Hyper-V 虛擬交換器](Manage-Hyper-V-Virtual-Switch.md)
 > - [遠端直接記憶體存取 (RDMA) 和交換器內嵌小組 (SET)](RDMA-and-Switch-Embedded-Teaming.md)
-> - [Windows PowerShell 中的網路交換器小組 Cmdlet](https://docs.microsoft.com/powershell/module/netswitchteam/new-netswitchteam?view=win10-ps)
-> - [VMM 2016 中的新功能](https://docs.microsoft.com/system-center/vmm/whats-new#networking)
-> - [設定 VMM 網路光纖](https://docs.microsoft.com/system-center/vmm/manage-networks)
-> - [Hyper-V 論壇](https://docs.microsoft.com/answers/topics/windows-server-hyper-v.html)
-> - [Hyper-V：若第三方擴充功能需要 WFP 虛擬交換器擴充功能，應加以啟用](https://docs.microsoft.com/answers/topics/windows-server-hyper-v.html)
+> - [Windows PowerShell 中的網路交換器小組 Cmdlet](/powershell/module/netswitchteam/new-netswitchteam?view=win10-ps)
+> - [VMM 2016 中的新功能](/system-center/vmm/whats-new#networking)
+> - [設定 VMM 網路光纖](/system-center/vmm/manage-networks)
+> - [Hyper-V 論壇](/answers/topics/windows-server-hyper-v.html)
+> - [Hyper-V：若第三方擴充功能需要 WFP 虛擬交換器擴充功能，應加以啟用](/answers/topics/windows-server-hyper-v.html)
 >
-> 如需其他網路技術的詳細資訊，請參閱[Windows Server 2016 中的網路](https://docs.microsoft.com/windows-server/networking/networking)功能。
+> 如需其他網路技術的詳細資訊，請參閱[Windows Server 2016 中的網路](../../networking/index.yml)功能。
 
 \- \- 當您安裝 hyper-v 伺服器角色時，Hyper-v 虛擬交換器是一種以軟體為基礎的第2層 Ethernet 網路交換器，可在 [hyper-v 管理員] 中使用 \- 。
 

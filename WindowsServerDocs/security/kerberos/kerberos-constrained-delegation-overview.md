@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: bd34723d1f5223c2576237c768d9da55172eebc6
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fb0c35d51c0aa2a0f63f61c0be48099bb6aa5269
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943888"
+ms.locfileid: "87996178"
 ---
 # <a name="kerberos-constrained-delegation-overview"></a>Kerberos Constrained Delegation Overview
 
@@ -28,7 +28,7 @@ Windows Server 2003 推出的 Kerberos 限制委派，可提供一種較安全�
 
 在 Windows Server 2012 R2 和 Windows Server 2012 中，為服務設定限制委派的能力已從網域系統管理員轉移給服務系統管理員。 使用這種方式，後端服務系統管理員可以允許或拒絕前端服務。
 
-如需 Windows Server 2003 推出之限制委派的詳細資訊，請參閱 [Kerberos 通訊協定轉換與限制委派](https://technet.microsoft.com/library/cc739587(v=ws.10))。
+如需 Windows Server 2003 推出之限制委派的詳細資訊，請參閱 [Kerberos 通訊協定轉換與限制委派](/previous-versions/windows/it-pro/windows-server-2003/cc739587(v=ws.10))。
 
 Kerberos 通訊協定的 Windows Server 2012 R2 和 Windows Server 2012 的執行包含特別用於限制委派的延伸模組。  Service for User to Proxy (S4U2Proxy) 讓服務能夠針對使用者使用它的 Kerberos 服務票證，取得從金鑰發佈中心 (KDC) 到後端服務的服務票證。 這些擴充功能可讓您在後端服務的帳戶上設定限制委派，這可以位於另一個網域中。 如需這些擴充功能的詳細資訊，請參閱 MSDN Library 中的[ \[ MS-SFU \] ： Kerberos 通訊協定延伸： Service For User 和限制委派通訊協定規格](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx)。
 
@@ -54,7 +54,7 @@ Kerberos 通訊協定的 Windows Server 2012 R2 和 Windows Server 2012 的執�
 
 如需有關這些延伸模組的執行資訊，請參閱 MSDN 中的[ \[ MS-SFU \] ： Kerberos 通訊協定延伸： Service For User 和限制委派通訊協定規格](https://msdn.microsoft.com/library/cc246071(PROT.10).aspx)。
 
-相較於 Service for User (S4U) 延伸，如需有關含轉送票證授權票證 (TGT) 之 Kerberos 委派基本訊息順序的詳細資訊，請參閱 [1.3.3 通訊協定概觀](https://msdn.microsoft.com/library/cc246080(v=prot.10).aspx) 一節，位於＜[MS-SFU]：Kerberos 通訊協定延伸：Service for User 與限制委派通訊協定規格＞中。
+相較於 Service for User (S4U) 延伸，如需有關含轉送票證授權票證 (TGT) 之 Kerberos 委派基本訊息順序的詳細資訊，請參閱 [1.3.3 通訊協定概觀](/openspecs/windows_protocols/ms-sfu/1fb9caca-449f-4183-8f7a-1a5fc7e7290a) 一節，位於＜[MS-SFU]：Kerberos 通訊協定延伸：Service for User 與限制委派通訊協定規格＞中。
 
 **以資源為基礎之限制委派的安全性含意**
 

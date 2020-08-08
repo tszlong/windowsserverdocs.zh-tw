@@ -2,18 +2,16 @@
 title: 領域名稱
 description: 本主題提供在 Windows Server 2016 中的網路原則伺服器連線要求處理中使用領域名稱的總覽。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: d011eaad-f72a-4a83-8099-8589c4ee8994
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 7a855087647b86486eaf5358e0e713d6fab6dd02
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: e219169ba3132a18c0a76219fa8da96e30902090
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517873"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87969395"
 ---
 # <a name="realm-names"></a>領域名稱
 
@@ -41,7 +39,7 @@ User-Name RADIUS 屬性是一種字元字串，通常會包含使用者帳戶位
 
 您可以指定網路使用者在網路連線嘗試期間輸入其認證時提供領域名稱。
 
-例如，您可以要求使用者在進行撥號或虛擬私人網路（VPN）連線時，于 [**連線] 對話方塊**的 [**使用者名稱**] 中輸入使用者名稱，包括使用者帳戶名稱和領域名稱。
+例如，您可以要求使用者在進行撥號或虛擬私人網路時，于 [**連線] 對話方塊**的 [**使用者名稱**] 中輸入使用者名稱，包括使用者帳戶名稱和領域名稱 (VPN) 連接。
 
 此外，如果您使用連線管理員系統管理組件 (CMAK) 建立自訂撥號封裝，就可以協助使用者將領域名稱自動加入安裝在使用者電腦上的 CM 設定檔使用者帳戶名稱。 例如，您可以在 CM 設定檔中指定領域名稱與使用者名稱語法，這樣使用者就只需要在輸入認證時指定使用者帳戶名稱。 在此情況下，使用者不需要知道或記得使用者帳戶所在的網域。
 
@@ -65,9 +63,9 @@ User-Name RADIUS 屬性是一種字元字串，通常會包含使用者帳戶位
 
 在根據您設定的屬性操作規則修改 User-Name 屬性之後，第一次符合連線要求原則的其他設定是用以判斷：
 
-- NPS 會在本機處理存取要求訊息（當 NPS 做為 RADIUS 伺服器使用時）。
+- 當 NPS 做為 RADIUS 伺服器) 時，NPS 會 (本機處理存取要求訊息。
 
-- NPS 會將訊息轉送至另一個 RADIUS 伺服器（當 NPS 做為 RADIUS proxy 使用時）。
+- 當 NPS 做為 RADIUS proxy) 使用時，NPS 會將訊息轉送至另一個 RADIUS 伺服器 (。
 
 ## <a name="configuring-the-nps-supplied-domain-name"></a>設定 NPS 提供的功能變數名稱
 

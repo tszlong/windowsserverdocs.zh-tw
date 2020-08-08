@@ -4,23 +4,22 @@ title: 將 AD RMS 升級至 Windows Server 2016
 author: msmbaldwin
 ms.author: esaggese
 ms.date: 05/30/2019
-ms.prod: windows-server
 ms.topic: article
-ms.openlocfilehash: cb27477f71dbded1f1171fde613f55f6267fc2cb
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 8a2d0ec94619f74260f1fbc934e8e3328201ffa9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965470"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947208"
 ---
 # <a name="upgrading-ad-rms-to-windows-server-2016"></a>將 AD RMS 升級至 Windows Server 2016
 
 ## <a name="introduction"></a>簡介
 
-Active Directory Rights Management Services （AD RMS）是保護機密檔和電子郵件的 Microsoft 服務。 不同于傳統的保護方法（例如防火牆和 Acl），不論檔案的位置或傳輸方式為何，AD RMS 加密和保護都是持續性的。 
+Active Directory Rights Management Services (AD RMS) 是一種可保護機密檔和電子郵件的 Microsoft 服務。 不同于傳統的保護方法（例如防火牆和 Acl），不論檔案的位置或傳輸方式為何，AD RMS 加密和保護都是持續性的。
 
 本檔提供從 Windows Server 2012 R2 （含 SQL Server 2012）遷移至 Windows Server 2016 和 SQL Server 2016 的指引。 您可以使用相同的程式，從舊版但支援的 AD RMS 版本進行遷移。
-請注意，Active Directory Rights Management Services 已不再進行開發，而且客戶應該考慮遷移至[Azure 資訊保護](https://azure.microsoft.com/services/information-protection/)的最新功能，以提供更完整的裝置和應用程式支援的一組更全面的功能。 
+請注意，Active Directory Rights Management Services 已不再進行開發，而且客戶應該考慮遷移至[Azure 資訊保護](https://azure.microsoft.com/services/information-protection/)的最新功能，以提供更完整的裝置和應用程式支援的一組更全面的功能。
 
 如需從 AD RMS 遷移至 Azure 資訊保護，而不需要重新保護內容的詳細資訊，請參閱[Azure 資訊保護遷移檔](/azure/information-protection/migrate-from-ad-rms-to-azure-rms)。
 
@@ -28,7 +27,8 @@ Active Directory Rights Management Services （AD RMS）是保護機密檔和電
 
 AD FS 是 AD RMS 安裝的選擇性元件。 在本指南中，會假設使用 ADFS。 如果您的環境中未使用 ADFS 來支援 AD RMS 使用者，您可以略過參照 ADFS 的所有步驟。
 
-在本指南中，SQL Server 會藉由執行平行安裝並透過備份移動資料庫，升級至 SQL Server 2016。 或者，如果您可以就地將 AD RMS 和 ADFS 資料庫伺服器升級為 SQL Server 2016，您可以在完成之後移至本檔的下一節，而不必依照本節中的步驟進行。  
+在本指南中，SQL Server 會藉由執行平行安裝並透過備份移動資料庫，升級至 SQL Server 2016。
+或者，如果您可以就地將 AD RMS 和 ADFS 資料庫伺服器升級為 SQL Server 2016，您可以在完成之後移至本檔的下一節，而不必依照本節中的步驟進行。
 
 ## <a name="installation"></a>安裝
 
@@ -36,7 +36,7 @@ AD FS 是 AD RMS 安裝的選擇性元件。 在本指南中，會假設使用 A
 
 下一節將詳細說明直接與 SQL Server 2016 設定相關的執行工作。 本指南著重于使用伺服器管理員和 SQL Server Management Studio 來完成這些工作。
 
-這些步驟必須在 SQL Server 2016 安裝完成。 根據貴組織的標準做法和原則，在適當的硬體上安裝 SQL Server 2016。 
+這些步驟必須在 SQL Server 2016 安裝完成。 根據貴組織的標準做法和原則，在適當的硬體上安裝 SQL Server 2016。
 
 #### <a name="preparing-the-sql-server"></a>準備 SQL Server
 
@@ -57,11 +57,11 @@ CNAME 是用來協助確保 Windows Server 2016 安裝程式將會取得適當�
 
 4.  從左側流覽窗格中，展開 [DC]，然後開啟 [**向前對應區域**]。
 
-5.  開啟適當的網域資源，然後以滑鼠右鍵按一下右視圖窗格，再選取 [**新增別名（CNAME）** ] 開始建立 CNAME。
+5.  開啟適當的網域資源，然後以滑鼠右鍵按一下右視圖窗格，然後選取 [**新增別名 (CNAME) **開始建立 cname。
 
-6.  在 [別名名稱] 中輸入邏輯名稱，以區別它與可能存在的其他類型（例如 SQLADRMS 或 SQLADFS）
+6.  在 [別名名稱] 中輸入邏輯名稱，以區別可能出現 (例如， SQLADRMS 或 SQLADFS) 
 
-7.  輸入名稱之後，請提供目標主機的 FQDN，這會是新的 SQL Server 2016 伺服器。 (例如 SQL2016.contoso.com）
+7.  輸入名稱之後，請提供目標主機的 FQDN，這會是新的 SQL Server 2016 伺服器。 (例如 SQL2016.contoso.com) 
 
 8.  輸入所有資訊後，按一下 **[確定]**。
 
@@ -83,7 +83,7 @@ AD RMS 和 ADFS 資料庫保留 AD RMS 所需的重要資訊，例如伺服器�
 
 3.  在 [**連接到伺服器**] 視窗中，確認主控 AD RMS 資料庫的伺服器位於 [**伺服器名稱**] 方塊中，然後按一下 **[連接]**。
 
-4.  展開 **[資料庫]** 。 以滑鼠右鍵按一下適當的資料庫（**drm**和**Adfs**），**指向 [工作]，然後**選取 [**備份**]。
+4.  展開 **[資料庫]** 。 以滑鼠右鍵按一下適當的資料庫， (**drm**和**Adfs**) **]，指向**[工作]，然後選取 [**備份**]。
 
 5.  針對其餘的資料庫重複步驟4。
 
@@ -103,11 +103,11 @@ AD RMS 和 ADFS 資料庫保留 AD RMS 所需的重要資訊，例如伺服器�
 
 3.  在 [連線**到伺服器**] 視窗中，確認主控 AD RMS 資料庫的伺服器位於 [**伺服器名稱**] 方塊中，然後在 [驗證] 中按一下下拉式功能表，然後選取 [ **SQL Server 驗證**]。
 
-4.  在 [**登**入] 欄位中，輸入本機系統管理員帳戶的名稱（例如 localadmin），然後提供適當的密碼，再按一下 **[連線]**。
+4.  在 [**登**入] 欄位中，輸入本機系統管理員帳戶的名稱 (例如。 localadmin) 然後提供適當的密碼，然後按一下 **[連線]**。
 
 5.  展開 [**安全性**]，然後以滑鼠**按右鍵 [** 登入]，然後從出現的內容功能表中選取 [**新增登**入]
 
-6.  視窗出現之後，請在 [**登入名稱**] 欄位的 [網域系統管理員帳戶] 中輸入（例如， Contoso \\ ContosoAdmin）
+6.  視窗出現之後，請在 [**登入名稱**] 欄位中輸入網域系統管理員帳戶， (例如。 Contoso \\ ContosoAdmin) 
 
 7.  從左側導覽窗格中，選擇 [**伺服器角色**]。
 
@@ -133,9 +133,9 @@ AD RMS 和 ADFS 資料庫保留 AD RMS 所需的重要資訊，例如伺服器�
 
 5.  請確認所有資料庫檔案都已新增，並按一下 **[確定]** 完成程式。
 
-### <a name="configuring-windows-server-2016-active-directory-federation-services-ad-fs"></a>設定 Windows Server 2016 Active Directory 同盟服務（AD FS）
+### <a name="configuring-windows-server-2016-active-directory-federation-services-ad-fs"></a>設定 Windows Server 2016 Active Directory 同盟服務 (AD FS) 
 
-已部署 AD FS，以提供應用程式 AD RMS 單一登入（SSO）存取權。 它也已設定 AD RMS 的行動裝置延伸模組（MDE），可為使用者提供 Mac 和行動裝置支援。
+已部署 AD FS，以提供單一登入 (SSO) 以應用程式的形式存取 AD RMS。 它也已設定 AD RMS 的行動裝置延伸模組 (MDE) ，讓使用者能夠使用 Mac 和行動裝置支援。
 
 下列各節提供有關您可能需要在 AD FS 部署上執行之作業工作的指引。
 
@@ -219,15 +219,15 @@ AD RMS 和 ADFS 資料庫保留 AD RMS 所需的重要資訊，例如伺服器�
 
 下列各節提供有關如何將 Windows Server 2016 型 AD RMS 伺服器新增至目前 Windows Server 2012 R2 叢集中的指導方針。 伺服器將會新增到叢集中，而且資訊會複寫到其中，讓先前的 AD RMS 伺服器可以被取代，以釋放資源。
 
-新增一部 Windows Server 2016 型 AD RMS 伺服器已加入至 AD RMS 叢集之後，以舊版 Windows 為基礎的所有節點將會變成非作用中。 完成此作業之後，您可以取消布建這些伺服器（例如，關機、重新規劃，或使用 Windows Server 2016 重新安裝以加入 AD RMS 叢集）。 
+新增一部 Windows Server 2016 型 AD RMS 伺服器已加入至 AD RMS 叢集之後，以舊版 Windows 為基礎的所有節點將會變成非作用中。 完成此作業之後，您可以取消布建這些伺服器 (例如關閉、重新規劃，或在 Windows Server 2016 中重新安裝，以加入 AD RMS 叢集) 。
 
 您可以將其他 AD RMS 伺服器部署到叢集，以支援 AD RMS 部署上的負載。 您也可以選擇在增加 AD RMS 伺服器流量的情況下執行此動作。
 
-本指南並未涵蓋改變您在環境中使用的負載平衡機制所需的步驟，以排除您正在淘汰的伺服器，並包含您要新增至叢集的伺服器。 
+本指南並未涵蓋改變您在環境中使用的負載平衡機制所需的步驟，以排除您正在淘汰的伺服器，並包含您要新增至叢集的伺服器。
 
 #### <a name="adding-a-2016-ad-rms-server"></a>新增 2016 AD RMS 伺服器
 
-如果您的 AD RMS 叢集使用硬體安全性模組，而非集中管理的金鑰做為其伺服器授權人憑證，則在安裝 AD RMS 之前，您必須先在伺服器上安裝軟體和其他 HSM 成品（例如金鑰和 configuragtion 檔）。 您也需要將 HSM 連線到伺服器，不論是實體或透過相關的網路設定。 請遵循您的 HSM 指引來進行這些步驟。 
+如果您的 AD RMS 叢集使用硬體安全性模組，而不是集中管理的金鑰做為其伺服器授權人憑證，則必須先安裝軟體和其他 HSM 成品， (例如伺服器上) 的金鑰和 configuragtion 檔，然後再安裝 AD RMS。 您也需要將 HSM 連線到伺服器，不論是實體或透過相關的網路設定。 請遵循您的 HSM 指引來進行這些步驟。
 
 **新增 2016 AD RMS 伺服器**
 
@@ -237,7 +237,7 @@ AD RMS 和 ADFS 資料庫保留 AD RMS 所需的重要資訊，例如伺服器�
 
 3.  選取 [**加入現有的 AD RMS**叢集]，然後按 **[下一步]**。
 
-4.  在 [**選取設定資料庫**] 頁面上，輸入 2016 SQL SERVER （FQDN）的 DNS 中指定的 CNAME。
+4.  在 [**選取設定資料庫**] 頁面上，輸入 2016 SQL SERVER 的 DNS 中指定的 CNAME， (FQDN) 。
 
 5.  按一下第二行上的 [清單]，然後從下拉式**清單**中選取 **[defaultinstance** 。
 
@@ -257,11 +257,12 @@ AD RMS 和 ADFS 資料庫保留 AD RMS 所需的重要資訊，例如伺服器�
 
 13. 重新登入後，開啟**伺服器管理員**選取 [**工具**]，然後**Active Directory Rights Management**]。 [管理] 視窗應該會出現，並指出叢集具有叢集中的其他伺服器。
 
-14. 如果 AD RMS 的行動裝置延伸模組已安裝在原始 AD RMS 叢集中，您也必須在更新的叢集節點中安裝 MDE。 依照 MDE 檔案中的指示，將 MDE 新增至您的 AD RMS 叢集。 此時，您可以重新規劃所有預先存在的節點，或將它們升級至 Windows Server 2016，然後使用上述相同的程式，將它們重新加入至 AD RMS 叢集。 
+14. 如果 AD RMS 的行動裝置延伸模組已安裝在原始 AD RMS 叢集中，您也必須在更新的叢集節點中安裝 MDE。 依照 MDE 檔案中的指示，將 MDE 新增至您的 AD RMS 叢集。
+此時，您可以重新規劃所有預先存在的節點，或將它們升級至 Windows Server 2016，然後使用上述相同的程式，將它們重新加入至 AD RMS 叢集。
 
-### <a name="configuring-windows-server-2016-web-application-proxy-wap"></a>設定 Windows Server 2016 Web 應用程式 Proxy （WAP）
+### <a name="configuring-windows-server-2016-web-application-proxy-wap"></a>設定 Windows Server 2016 Web 應用程式 Proxy (WAP) 
 
-下列各節提供您可能需要在 Web 應用程式 Proxy 部署上執行之作業工作的指引。 這是選擇性步驟，如果您透過其他機制將 AD RMS 發佈到網際網路，則不需要。 
+下列各節提供您可能需要在 Web 應用程式 Proxy 部署上執行之作業工作的指引。 這是選擇性步驟，如果您透過其他機制將 AD RMS 發佈到網際網路，則不需要。
 
 #### <a name="adding-a-windows-server-2016-wap-server"></a>新增 Windows Server 2016 WAP 伺服器
 
@@ -287,7 +288,7 @@ AD RMS 和 ADFS 資料庫保留 AD RMS 所需的重要資訊，例如伺服器�
 
 9.  在 [遠端存取管理] 主控台中，按一下 [**執行 Web 應用程式 Proxy 設定向導]**。 在嚮導中，按 **[下一步]**。
 
-10. 在 [同盟伺服器] 畫面上，輸入 AD FS 伺服器的完整功能變數名稱（例如 adfs.contoso.com），然後輸入 AD FS 伺服器上系統管理員的認證。
+10. 在 [同盟伺服器] 畫面上，輸入 AD FS 伺服器的完整功能變數名稱， (例如。 adfs.contoso.com) 然後在 AD FS 伺服器上輸入系統管理員的認證。
 
 11. 在 [AD FS Proxy 憑證] 畫面上，在 Web 應用程式 Proxy 伺服器上目前安裝的憑證清單中，選取要供 Web 應用程式 Proxy 用於 AD FS Proxy 的憑證，然後按 **[下一步]**。
 
@@ -301,7 +302,7 @@ AD RMS 和 ADFS 資料庫保留 AD RMS 所需的重要資訊，例如伺服器�
 
 **將 DNS 指向 WAP 伺服器**
 
-1.  流覽至您提供者的網站（例如 GoDaddy）。
+1.  流覽至您提供者的網站 (例如。 GoDaddy) 。
 
 2.  進入 [網域管理]，然後按 [DNS 管理]。
 
@@ -347,7 +348,7 @@ AD RMS 和 ADFS 資料庫保留 AD RMS 所需的重要資訊，例如伺服器�
 
 3.  選取 [**加入現有的 AD RMS**叢集]，然後按 **[下一步]**。
 
-4.  在 [**選取設定資料庫**] 頁面上，輸入 2016 SQL SERVER （FQDN）的 DNS 中指定的 CNAME。
+4.  在 [**選取設定資料庫**] 頁面上，輸入 2016 SQL SERVER 的 DNS 中指定的 CNAME， (FQDN) 。
 
 5.  按一下第二行上的 [清單]，然後從下拉式**清單**中選取 **[defaultinstance** 。
 
@@ -371,7 +372,7 @@ AD RMS 和 ADFS 資料庫保留 AD RMS 所需的重要資訊，例如伺服器�
 
 #### <a name="adding-a-windows-server-2016-ad-fs-server-for-high-availability"></a>新增 Windows Server 2016 AD FS 伺服器以取得高可用性
 
-您可以部署額外的 AD FS 伺服器，以設定高可用性。 當流量增加到 AD FS 伺服器時，您可以選擇執行此動作。 **注意：引發伺服器陣列行為層級之後，將會在 SQL Server 2016 （Adfs Configv3）中輸入新的資料庫專案，而且必須先刪除舊的設定資料庫，然後再繼續進行這些步驟。**
+您可以部署額外的 AD FS 伺服器，以設定高可用性。 當流量增加到 AD FS 伺服器時，您可以選擇執行此動作。 **注意：引發伺服器陣列行為層級之後，會在 SQL Server 2016 (Adfs Configv3) 中輸入新的資料庫專案，而且必須先刪除舊的設定資料庫，然後再繼續進行這些步驟。**
 
 **新增 Windows Server 2016 AD FS 伺服器以取得高可用性**
 
@@ -419,7 +420,7 @@ AD RMS 和 ADFS 資料庫保留 AD RMS 所需的重要資訊，例如伺服器�
 
 9.  在 [遠端存取管理] 主控台中，按一下 [**執行 Web 應用程式 Proxy 設定向導]**。 在嚮導中，按 **[下一步]**。
 
-10. 在 [同盟伺服器] 畫面上，輸入 AD FS 伺服器的完整功能變數名稱（例如 adfs.contoso.com），然後輸入 AD FS 伺服器上系統管理員的認證。
+10. 在 [同盟伺服器] 畫面上，輸入 AD FS 伺服器的完整功能變數名稱， (例如。 adfs.contoso.com) 然後在 AD FS 伺服器上輸入系統管理員的認證。
 
 11. 在 [AD FS Proxy 憑證] 畫面上，在 Web 應用程式 Proxy 伺服器上目前安裝的憑證清單中，選取要供 Web 應用程式 Proxy 用於 AD FS Proxy 的憑證，然後按 **[下一步]**。
 
@@ -483,7 +484,7 @@ AD RMS 和 ADFS 資料庫保留 AD RMS 所需的重要資訊，例如伺服器�
 
 24. 現在，開啟 [**開始**] 功能表並搜尋**SQL Server Management Studio** ，然後從左側流覽窗格中，以滑鼠右鍵按一下 [**可用性群組**]，再按一下 [**新增可用性群組嚮導]** ，然後按 **[下一步]**。
 
-25. 在 [**指定可用性組名**] 頁面中，挑選組名（例如 SQLAvailabilityGroup2016）。 然後按一下 [下一步]。
+25. 在 [**指定可用性組名**] 頁面中，挑選組名 (例如 SQLAvailabilityGroup2016) 。 然後按一下 [下一步]。
 
 26. 在 [**選取資料庫**] 區段下，指定資料庫。 接著按 [下一步]。 **注意：某些資料庫可能需要重新備份或進入完整復原模式**。
 
@@ -497,7 +498,7 @@ AD RMS 和 ADFS 資料庫保留 AD RMS 所需的重要資訊，例如伺服器�
 
 31. 移**至 [接聽**程式] 索引標籤。
 
-32. 指定名稱（例如 SQLListener），並確定埠為**1433** ，然後按 **[下一步]**。
+32. 指定 (的名稱，例如。 SQLListener) 並確定埠為**1433** ，然後按 **[下一步]**。
 
 33. 在嚮導的 [**選取初始資料同步**處理] 頁面中，選擇 [**完整**] 選項，並指定所有 SQL server 可存取的網路位置，然後按 **[下一步]**。
 

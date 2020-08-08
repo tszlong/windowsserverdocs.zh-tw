@@ -7,18 +7,18 @@ ms.assetid: 623b7c21-dcbb-402e-8b5a-8e434cd225bd
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 2956bd47bb2c4ac538b3b9828a6e5cdcef739eff
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8e1f1249ac3670a550e70cc09a9862306fd85658
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970495"
+ms.locfileid: "87995951"
 ---
 # <a name="join-the-multipoint-services-computer-to-a-domain-optional"></a>將 MultiPoint 服務電腦加入網域 (選擇性) 
 如果您將透過 Active Directory 網域存取 MultiPoint 服務電腦，下一步就是將電腦新增至網域。
 
 > [!IMPORTANT]
-> 將電腦加入網域之前，您必須先驗證您的時區。 如需指示，請參閱[設定日期、時間和時區](Set-the-date--time--and-time-zone.md)。
+> 將電腦加入網域之前，您必須先驗證您的時區。 如需指示，請參閱[設定日期、時間和時區](./set-the-date-time.md)。
 
 1.  從 [開始]**** 畫面，開啟 [控制台]****。 按一下 [**系統及安全性**]，然後按一下 [**系統**]。
 

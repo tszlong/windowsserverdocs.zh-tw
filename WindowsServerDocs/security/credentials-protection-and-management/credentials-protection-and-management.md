@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 3dc1d0ae3658e4379d3a358211471ac7f675651c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: be120eda25b4d01da60faa2af241cd3ce243abfc
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948701"
+ms.locfileid: "87995830"
 ---
 # <a name="credentials-protection-and-management"></a>認證保護和管理
 
@@ -64,10 +64,7 @@ Protected Users 群組的成員進一步受到下列驗證方法的限制：
 
 如需詳細資訊，請參閱[驗證原則和驗證原則定址接收器](authentication-policies-and-authentication-policy-silos.md)。
 
-如需如何設定受保護帳戶的詳細資訊，請參閱[如何設定受保護帳戶](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts)。
+如需如何設定受保護帳戶的詳細資訊，請參閱[如何設定受保護帳戶](../../identity/ad-ds/manage/how-to-configure-protected-accounts.md)。
 
 ## <a name="additional-references"></a>其他參考資料
-如需 LSA 與 LSASS 的詳細資訊，請參閱 [Windows Logon and Authentication Technical Overview](https://technet.microsoft.com/library/dn169029(v=ws.10).aspx) (Windows 登入及驗證技術概觀)。
-
-
-
+如需 LSA 與 LSASS 的詳細資訊，請參閱 [Windows Logon and Authentication Technical Overview](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dn169029(v=ws.10)) (Windows 登入及驗證技術概觀)。

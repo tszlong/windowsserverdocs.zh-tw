@@ -1,20 +1,18 @@
 ---
 title: 管理軟體定義網路的憑證
-description: 當您在 Windows Server 2016 Datacenter 中部署軟體定義網路功能（SDN）時，您可以使用本主題來瞭解如何管理網路控制站 Northbound 和 Southbound 通訊的憑證。
+description: 當您在 Windows Server 2016 Datacenter 中部署軟體定義網路 (SDN) 時，您可以使用本主題來瞭解如何管理網路控制站 Northbound 和 Southbound 通訊的憑證。
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: c4e2f6c7-0364-4bf8-bb66-9af59c0bbd74
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/22/2018
-ms.openlocfilehash: 0eee5110eb875d95b187242f6f0ec51b487268c6
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 3156b2ed40415226e094485fba224e7d95a12ca2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520257"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947104"
 ---
 # <a name="manage-certificates-for-software-defined-networking"></a>管理軟體定義網路的憑證
 
@@ -105,11 +103,11 @@ New-SelfSignedCertificate -KeyUsageProperty All -Provider "Microsoft Strong Cryp
 當您在下一個步驟中設定憑證範本時，請確定您設定的範本包含下列必要元素。
 
 1. 憑證主體名稱必須是 Hyper-v 主機的 FQDN
-2. 憑證必須放在本機電腦的個人存放區中（My – cert： \ localmachine\my）
-3. 憑證必須同時具有伺服器驗證（EKU：1.3.6.1.5.5.7.3.1）和用戶端驗證（EKU：1.3.6.1.5.5.7.3.2）應用程式原則。
+2. 憑證必須放在本機電腦的個人存放區 (My – cert： \ localmachine\my) 
+3. 憑證必須同時具備伺服器驗證 (EKU： 1.3.6.1.5.5.7.3.1) 和用戶端驗證 (EKU： 1.3.6.1.5.5.7.3.2) 應用程式原則。
 
 >[!NOTE]
->如果在 \( hyper-v 主機上的個人 My – cert： \ localmachine\my \) 憑證存放區 \- 有一個以上的 X.509 憑證具有主體名稱（CN）做為主機的完整功能變數名稱 \( FQDN \) ，請確定 SDN 使用的憑證具有額外的自訂 [增強金鑰使用方法] 屬性和 [OID 1.3.6.1.4.1.311.95.1.1.1]。 否則，網路控制站與主機之間的通訊可能無法正常執行。
+>如果在 \( hyper-v 主機上的個人 My – cert： \ localmachine\my \) 憑證存放區 \- 有一個以上的 X.509 憑證具有主體名稱 (CN) 做為主機的完整功能變數名稱 \( FQDN \) ，請確定 SDN 使用的憑證具有額外的自訂 [增強金鑰使用方法] 屬性與 [OID 1.3.6.1.4.1.311.95.1.1.1]。 否則，網路控制站與主機之間的通訊可能無法正常執行。
 
 #### <a name="to-configure-the-certificate-template"></a>設定憑證範本
 
@@ -137,7 +135,7 @@ New-SelfSignedCertificate -KeyUsageProperty All -Provider "Microsoft Strong Cryp
 
 1. 開啟電腦的 [憑證] 嵌入式管理單元。
 2. 在主控台樹中，按一下 [憑證] [ ** \( 本機電腦 \) **]。 選取 [**個人**] 憑證存放區。
-3. 在 [**動作**] 功能表上，指向 [所有工作]<strong>，然後按一下 [要求新憑證</strong>] 以啟動 [憑證註冊嚮導]。 按 [下一步] 。
+3. 在 [**動作**] 功能表上，指向 [所有工作]<strong>，然後按一下 [要求新憑證</strong>] 以啟動 [憑證註冊嚮導]。 按 [下一步]  。
 4. 選取**您的系統管理員**憑證註冊原則所設定的，然後按 **[下一步]**。
 5. **Active Directory Enrollment Policy** \( 根據您在上一節中設定的 CA 範本，選取 [Active Directory 註冊原則] \) 。
 6. 展開 [**詳細資料**] 區段，並設定下列專案。
@@ -156,10 +154,10 @@ New-SelfSignedCertificate -KeyUsageProperty All -Provider "Microsoft Strong Cryp
 
 接著，您必須將兩個匯出的檔案複製到您在匯入 NC 服務範本時所指定的**ServerCertificate.cr**和**NCCertificate.cr**資料夾。
 
-1. 開啟 [憑證] 嵌入式管理單元（certlm.msc），並在本機電腦的 [個人] 憑證存放區中尋找憑證。
-2. 以滑鼠右鍵 \- 按一下憑證，按一下 [**所有**工作]，然後按一下 [**匯出**]。 [憑證匯出精靈] 隨即開啟。 按 [下一步] 。
+1. 開啟 (certlm.msc 的 [憑證] 嵌入式管理單元) ，並在本機電腦的 [個人] 憑證存放區中尋找憑證。
+2. 以滑鼠右鍵 \- 按一下憑證，按一下 [**所有**工作]，然後按一下 [**匯出**]。 [憑證匯出精靈] 隨即開啟。 按 [下一步]  。
 3. 選取 **[是**，匯出私密金鑰] 選項，然後按 **[下一步]**。
-4. 選擇 [**個人資訊交換-PKCS #12] （。PFX）** ，並接受預設值以**包含憑證路徑中的所有憑證**（如果可能的話）。
+4. 選擇 [**個人資訊交換-PKCS #12 (]。PFX) **並接受預設值以**包含憑證路徑中的所有憑證**（如果可能的話）。
 5. 指派您要匯出之憑證的 [使用者/群組] 和密碼，然後按一下 [下一步]****。
 6. 在 [要匯出的檔案] 頁面上，瀏覽您要放置匯出檔案的位置，並指定其名稱。
 7. 同樣地，匯出中的憑證。CER 格式。 注意︰若要匯出為 .CER 格式，請取消核取 [是，匯出私密金鑰] 選項。
@@ -176,7 +174,7 @@ New-SelfSignedCertificate -KeyUsageProperty All -Provider "Microsoft Strong Cryp
 
 若要透過 OVSDB 與 Hyper-v 主機通訊，網路控制站必須向主機電腦出示憑證。 根據預設，SCVMM 會挑選網路控制站上設定的 SSL 憑證，並使用它來與主機進行 southbound 通訊。
 
-這就是 SSL 憑證必須設定用戶端驗證 EKU 的原因。 此憑證是在「伺服器」 REST 資源上設定（Hyper-v 主機在網路控制站中是以伺服器資源表示），而且可以藉由執行 Windows PowerShell 命令**NetworkControllerServer**來查看。
+這就是 SSL 憑證必須設定用戶端驗證 EKU 的原因。 此憑證設定于「伺服器」 REST 資源上 (Hyper-v 主機在網路控制卡中是以伺服器資源) 表示，而且可以藉由執行 Windows PowerShell 命令**NetworkControllerServer**來查看。
 
 以下是伺服器 REST 資源的部分範例。
 

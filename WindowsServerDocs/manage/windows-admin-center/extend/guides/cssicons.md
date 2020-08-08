@@ -1,19 +1,17 @@
 ---
 title: Windows 系統管理中心內目前的圖示清單
-description: Windows Admin Center SDK 中目前的圖示清單（Project 檀香山）
-ms.technology: manage
+description: 'Windows Admin Center SDK 中目前的圖示清單 (Project 檀香山) '
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 06/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 4b9ffe55b97bac93ab983b25e0971e2c07eeb520
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4b4514fcb1cbc1b027d17f3143f8eefd44ad2738
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357088"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87969665"
 ---
 # <a name="current-list-of-icons-in-windows-admin-center"></a>Windows 系統管理中心內目前的圖示清單
 

@@ -6,19 +6,19 @@ manager: dongill
 author: justinha
 ms.author: justinha
 ms.date: 01/30/2019
-ms.openlocfilehash: 8ddd4699358a6725ed5e2f80683a363a1120caf7
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 35e95204e076c0e0c96eb1669ff267b87ba7242a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87944248"
+ms.locfileid: "87996327"
 ---
 # <a name="quick-start-for-guarded-fabric-deployment"></a>針對受防護網狀架構部署快速入門
 
 >適用於：Windows Server (半年度管道)、Windows Server 2016
 
 本主題說明什麼是受防護的網狀架構、其需求，以及部署程式的摘要。
-如需詳細的部署步驟，請參閱為[受防護的主機和受防護的 Vm 部署主機守護者服務](https://technet.microsoft.com/windows-server-docs/security/guarded-fabric-shielded-vm/guarded-fabric-deploying-hgs-overview)。
+如需詳細的部署步驟，請參閱為[受防護的主機和受防護的 Vm 部署主機守護者服務](./guarded-fabric-deploying-hgs-overview.md)。
 
 想要看影片？ 請參閱 Microsoft 虛擬學院課程[部署受防護的 vm 和具有 Windows Server 2016 的受保護網狀架構](https://mva.microsoft.com/training-courses/deploying-shielded-vms-and-a-guarded-fabric-with-windows-server-2016-17131?l=WFLef7vUD_4604300474)。
 
@@ -72,7 +72,7 @@ ms.locfileid: "87944248"
 
 ## <a name="step-1-deploy-the-hyper-v-hosts-running-windows-server-2016"></a>步驟1：部署執行 Windows Server 2016 的 Hyper-v 主機
 
-Hyper-v 主機必須執行 Windows Server 2016 Datacenter edition 或更新版本。 如果您要升級主機，可以從 Standard edition[升級](https://technet.microsoft.com/windowsserver/dn527667.aspx)到 Datacenter edition。
+Hyper-v 主機必須執行 Windows Server 2016 Datacenter edition 或更新版本。 如果您要升級主機，可以從 Standard edition[升級](../../get-started/installation-and-upgrade.md)到 Datacenter edition。
 
 ![升級 Hyper-v 主機](../../security/media/Guarded-Fabric-Shielded-VM/guarded-fabric-deployment-step-one-upgrade-hyper-v.png)
 
@@ -159,7 +159,7 @@ Install-WindowsFeature RSAT-Shielded-VM-Tools -Restart
 
     ![支援新的加密 VM](../media/Guarded-Fabric-Shielded-VM/guarded-fabric-new-shielded-vm.png)
 
-您可以新增選用的管理元件，例如 VMM 或 Windows Azure 套件。 如果您想要在不安裝這些部分的情況下建立 VM，請參閱[逐步執行–不使用 VMM 建立受防護的 vm](https://blogs.technet.microsoft.com/datacentersecurity/2016/06/06/step-by-step-creating-shielded-vms-without-vmm/)。
+您可以新增選用的管理元件，例如 VMM 或 Windows Azure 套件。 如果您想要在不安裝這些部分的情況下建立 VM，請參閱[逐步執行–不使用 VMM 建立受防護的 vm](/archive/blogs/datacentersecurity/step-by-step-creating-shielded-vms-without-vmm)。
 
 ## <a name="step-6-create-a-shielded-vm"></a>步驟6：建立受防護的 VM
 

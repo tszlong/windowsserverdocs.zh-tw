@@ -5,12 +5,12 @@ ms.assetid: 8e7b77a4-1c6a-4c21-8844-0df89b63f68d
 author: brianlic-msft
 ms.author: brianlic
 ms.date: 10/12/2016
-ms.openlocfilehash: 8ed6e2aafeeca0486bdb45019ba879e391af9934
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fc5b0a3e3b3da3b329baec37888fd04c9f3adc0e
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936730"
+ms.locfileid: "87995725"
 ---
 # <a name="device-health-attestation"></a>裝置健康情況證明
 
@@ -142,7 +142,7 @@ AIKCert 驗證模式已經針對可存取網際網路的作業環境最佳化。
 
 ### <a name="install-the-signing-and-encryption-certificates"></a>安裝簽署和加密憑證
 
-使用下列 Windows PowerShell 指令碼安裝簽署和加密憑證。 如需指紋的詳細資訊，請參閱[如何：取出憑證的指紋](https://msdn.microsoft.com/library/ms734695.aspx)。
+使用下列 Windows PowerShell 指令碼安裝簽署和加密憑證。 如需指紋的詳細資訊，請參閱[如何：取出憑證的指紋](/dotnet/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate)。
 
 ```
 $key = Get-ChildItem Cert:\LocalMachine\My | Where-Object {$_.Thumbprint -like "<thumbprint>"}

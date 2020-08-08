@@ -6,19 +6,19 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 01/29/2019
-ms.openlocfilehash: fedfce4980cd36a904ef4f2c49a68fa3016a4359
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c52581eda53c595c45fb906fabf8d147bdc0562f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87939649"
+ms.locfileid: "87996274"
 ---
 # <a name="create-a-windows-shielded-vm-template-disk"></a>建立 Windows 受防護的 VM 範本磁片
 
 >適用于： Windows Server (半年通道) 、Windows Server 2016、Windows Server 2019
 
 
-如同一般 Vm，您可以建立 VM 範本 (例如， [Virtual Machine Manager 中的 vm 範本 (VMM) ](https://technet.microsoft.com/system-center-docs/vmm/manage/manage-library-add-vm-templates)) ，讓租使用者和系統管理員可以輕鬆地使用範本磁片在網狀架構上部署新的 vm。 由於受防護的 Vm 是安全性敏感的資產，因此有額外的步驟可建立支援防護的 VM 範本。 本主題涵蓋在 VMM 中建立受防護的範本磁片和 VM 範本的步驟。
+如同一般 Vm，您可以建立 VM 範本 (例如， [Virtual Machine Manager 中的 vm 範本 (VMM) ](/system-center/vmm/library-vm-templates?view=sc-vmm-2019)) ，讓租使用者和系統管理員可以輕鬆地使用範本磁片在網狀架構上部署新的 vm。 由於受防護的 Vm 是安全性敏感的資產，因此有額外的步驟可建立支援防護的 VM 範本。 本主題涵蓋在 VMM 中建立受防護的範本磁片和 VM 範本的步驟。
 
 若要瞭解本主題如何適用于部署受防護 Vm 的整體程式，請參閱[主機服務提供者設定步驟中的受防護主機和受防護的 vm](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)。
 
@@ -138,7 +138,7 @@ ms.locfileid: "87939649"
 
 ## <a name="prepare-and-protect-the-vhdx-using-powershell"></a>使用 PowerShell 來準備和保護 VHDX
 
-除了執行「範本磁片」 Wizard 以外，您還可以將您的範本磁片和憑證複製到執行 RSAT 的電腦，並執行 TemplateDisk 來起始簽署[程式](https://docs.microsoft.com/powershell/module/shieldedvmtemplate/protect-templatedisk?view=win10-ps
+除了執行「範本磁片」 Wizard 以外，您還可以將您的範本磁片和憑證複製到執行 RSAT 的電腦，並執行 TemplateDisk 來起始簽署[程式](/powershell/module/shieldedvmtemplate/protect-templatedisk?view=win10-ps
 )。
 下列範例會使用_TemplateName_和_version_參數所指定的名稱和版本資訊。
 您提供給參數的 VHDX `-Path` 會被更新的範本磁片覆寫，因此請務必在執行命令之前複製複本。

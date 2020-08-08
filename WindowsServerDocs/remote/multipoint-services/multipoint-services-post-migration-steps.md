@@ -2,22 +2,20 @@
 title: MultiPoint 服務-遷移後工作
 description: 瞭解如何驗證和關閉您的 MultiPoint 服務遷移
 ms.date: 07/29/2016
-ms.prod: windows-server
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: 1497cae0-071e-467d-89b8-a7050815d7de
 author: lizap
 manager: dongill
-ms.openlocfilehash: a1d304e95037ad67a8d4f02e1dc17ec3e0485ed8
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ed3937cd6830de642c21616071e86eca3ad6cd5b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858891"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87969245"
 ---
 # <a name="multipoint-services---post-migration-tasks"></a>MultiPoint 服務-遷移後工作
 
->適用於︰Windows Server 2016
+>適用於：Windows Server 2016
 
 在您遷移至 Windows Server 2016 中的 MultiPoint 服務之後，請使用下列資訊來驗證遷移和執行清理步驟。
 
@@ -25,7 +23,7 @@ ms.locfileid: "80858891"
 
 您可以在生產環境中建立試驗專案，以驗證您的 MultiPoint 服務遷移。 將遷移的角色服務放入生產環境之前，先在伺服器上執行試驗專案，以確認您的部署如預期般運作。 請考慮先限制連線數目，慢慢增加存取 MultiPoint 服務的使用者數目。
 
-> [!NOTE] 
+> [!NOTE]
 > 請一律使用測試帳戶來測試遷移。 使用具有系統管理許可權的帳戶，以及有效使用者的帳戶。
 
 ## <a name="retire-the-source-server"></a>淘汰來源伺服器

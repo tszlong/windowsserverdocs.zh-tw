@@ -6,12 +6,12 @@ ms.topic: article
 author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 638b4879d7980d817863ad0cd45397ac4a095569
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b31d942e8d7890a8f699f743bcd24953d2a3e760
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948005"
+ms.locfileid: "87996070"
 ---
 # <a name="plan-for-hyper-v-networking-in-windows-server"></a>規劃 Windows Server 中的 Hyper-v 網路功能
 
@@ -52,7 +52,7 @@ Hyper-v 提供三種類型的虛擬交換器和兩種類型的虛擬網路介面
 
 某些功能依賴特定的網路設定，或在特定設定下執行得更好。 在規劃或更新您的網路基礎結構時，請考慮這些事項。
 
-**容錯移轉**叢集-最佳作法是隔離叢集流量，並使用虛擬交換器上的 Hyper-v 服務品質 (QoS) 。 如需詳細資訊，請參閱[hyper-v 叢集的網路建議](https://technet.microsoft.com/library/dn550728.aspx)
+**容錯移轉**叢集-最佳作法是隔離叢集流量，並使用虛擬交換器上的 Hyper-v 服務品質 (QoS) 。 如需詳細資訊，請參閱[hyper-v 叢集的網路建議](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn550728(v=ws.11))
 
 **即時移轉**-使用效能選項來降低網路和 CPU 使用量，以及完成即時移轉所需的時間。 如需指示，請參閱[設定不含容錯移轉叢集的即時移轉主機](../deploy/set-up-hosts-for-live-migration-without-failover-clustering.md)。
 

@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 7e62b5dab69676e15494ff531ffe0fce0e550c1a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3d6af6e6dea584485e2517d8e54c107c5cc2af90
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970085"
+ms.locfileid: "87996268"
 ---
 # <a name="shielded-vms---hosting-service-provider-sets-up-windows-azure-pack"></a>受防護的 VM - 託管服務提供者會設定 Windows Azure Pack
 
@@ -25,7 +25,7 @@ ms.locfileid: "87970085"
 
 1. 針對您的主機網狀架構，完成 System Center 2016-Virtual Machine Manager (VMM) 的設定。 這包括設定 VM 範本和 VM 雲端，這會透過 Windows Azure 套件公開：
 
-    [案例 - 在 VMM 中部署受防護主機和受防護的虛擬機器](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-overview)
+    [案例 - 在 VMM 中部署受防護主機和受防護的虛擬機器](/system-center/vmm/deploy-guarded-host-fabric?view=sc-vmm-2019)
 
 2. 安裝和設定 System Center 2016-Service Provider Foundation (SPF) 。 此軟體可讓 Windows Azure 套件與您的 VMM 伺服器進行通訊：
 
@@ -44,7 +44,7 @@ ms.locfileid: "87970085"
 
 在您要裝載租使用者入口網站的電腦上，安裝和設定 Windows Azure 套件 (WAP) 。 這部電腦必須能夠連線到 SPF 伺服器，並可供您的租使用者連接。
 
-1.  查看[WAP 系統需求](https://technet.microsoft.com/library/dn296442.aspx)，並安裝[先決條件軟體](https://technet.microsoft.com/library/dn469335.aspx)。
+1.  查看[WAP 系統需求](/previous-versions/azure/windows-server-azure-pack/dn296442(v=technet.10))，並安裝[先決條件軟體](/previous-versions/azure/windows-server-azure-pack/dn469335(v=technet.10))。
 
 2.  下載並安裝[Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)。 如果電腦未連線到網際網路，請遵循[離線安裝指示](https://www.iis.net/learn/install/web-platform-installer/web-platform-installer-v4-command-line-webpicmdexe-rtw-release)。
 
@@ -52,7 +52,7 @@ ms.locfileid: "87970085"
 
 4.  繼續安裝。 安裝完成之後，就會在您的網頁瀏覽器中開啟設定網站 (*HTTPs:// &lt; wapserver &gt; ： 30101/*) 。 在此網站上，提供 SQL server 的相關資訊，並完成 WAP 的設定。
 
-如需設定 Windows Azure 套件的說明，請參閱[安裝 Windows Azure 套件的快速部署](https://technet.microsoft.com/dn296439.aspx)。
+如需設定 Windows Azure 套件的說明，請參閱[安裝 Windows Azure 套件的快速部署](/previous-versions/azure/windows-server-azure-pack/dn296439(v=technet.10))。
 
 > [!NOTE]
 > 如果您已在環境中執行 Windows Azure 套件，您可以使用現有的安裝。 不過，若要使用最新的受防護 VM 功能，您必須將安裝升級至至少更新彙總套件10。

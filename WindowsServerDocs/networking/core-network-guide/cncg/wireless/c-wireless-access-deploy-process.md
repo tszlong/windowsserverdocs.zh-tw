@@ -2,28 +2,26 @@
 title: 無線存取部署程序
 description: 本主題是 Windows Server 2016 網路指南「部署以密碼為基礎的 802.1 X 驗證無線存取」的一部分
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 2555f238-926e-4b20-9bfb-9774831062da
 author: eross-msft
 ms.author: lizross
-ms.openlocfilehash: 30e3da7e1365585bf9dc5ff34a72a367e1ed28f7
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 9c2326df824288b6adf4453d6ef272ba632eb6c2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318086"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87969595"
 ---
 # <a name="wireless-access-deployment-process"></a>無線存取部署程序
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 您用來部署無線存取的程式會發生在下列階段：
 
 ## <a name="stage-1--ap-deployment"></a>第1階段– AP 部署
 
-規劃、部署和設定您的 Ap 以進行無線用戶端連線，以及與 NPS 搭配使用。 根據您的喜好和網路相依性，您可以在無線 Ap 上預先\-進行設定，然後再將它們安裝在您的網路上，也可以在安裝之後從遠端設定。
+規劃、部署和設定您的 Ap 以進行無線用戶端連線，以及與 NPS 搭配使用。 視您的喜好和網路相依性而定，您可以在無線 Ap 上預先進行設定，然後再將 \- 它們安裝在您的網路上，或是在安裝後從遠端設定。
 
 ## <a name="stage-2--adds-group-configuration"></a>第2階段– AD DS 群組設定
 
@@ -38,11 +36,11 @@ ms.locfileid: "80318086"
 
 ## <a name="stage-3--group-policy-configuration"></a>第3階段–群組原則設定
 
-使用群組原則管理編輯器 Microsoft Management Console \(MMC\)，設定群組原則的無線網路 \(IEEE 802.11\) 原則延伸。
+\( \) 使用群組原則管理編輯器 Microsoft Management Console MMC，設定群組原則的無線網路 IEEE 802.11 原則延伸 \( \) 。
 
-若要使用無線網路原則中的設定來設定網域\-成員電腦，您必須套用群組原則。 當電腦第一次加入網域時，會自動套用群組原則。 如果對群組原則進行變更，則會自動套用新的設定：
+若要 \- 使用無線網路原則中的設定來設定網域成員電腦，您必須套用群組原則。 當電腦第一次加入網域時，會自動套用群組原則。 如果對群組原則進行變更，則會自動套用新的設定：
 
-- 以預先\-的已決定間隔群組原則
+- 依群組原則預先 \- 決定的間隔
 
 - 如果網域使用者登出後再重新登入網路
 
@@ -62,7 +60,7 @@ ms.locfileid: "80318086"
 
 對於可登入有線 LAN 的網域成員電腦，當群組原則重新整理時，就會自動套用必要的無線配置設定。
 
-如果您已啟用無線網路中的設定 \(IEEE 802.11\) 原則在電腦位於無線網路的廣播範圍內時自動連線，則您的無線\-加入網域的電腦將會自動嘗試連線到無線區域網路。
+如果您已啟用無線網路 IEEE 802.11 原則中的設定， \( \) 以便在電腦在無線網路的廣播範圍內時自動連線，您的無線、 \- 加入網域的電腦將會自動嘗試連線到無線區域網路。
 
 若要連接到無線網路，使用者只需要在 Windows 提示時提供其網域使用者名稱和密碼認證。
 

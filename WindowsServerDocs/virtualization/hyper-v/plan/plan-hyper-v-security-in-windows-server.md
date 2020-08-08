@@ -7,12 +7,12 @@ manager: dongill
 author: larsiwer
 ms.author: kathydav
 ms.date: 08/03/2018
-ms.openlocfilehash: b9cb34a7d7c790bb7eee939f9247609e7cee6e3e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: af974edfb94ccf1a0a4844df43885198ab68d416
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87947974"
+ms.locfileid: "87996010"
 ---
 # <a name="plan-for-hyper-v-security-in-windows-server"></a>規劃 Windows Server 中的 Hyper-v 安全性
 
@@ -22,18 +22,18 @@ ms.locfileid: "87947974"
 
 ## <a name="secure-the-hyper-v-host"></a>保護 Hyper-v 主機
 - **確保主機 OS 安全。**
-    - 使用管理作業系統所需的最小 Windows Server 安裝選項，將受攻擊面降至最低。 如需詳細資訊，請參閱 Windows Server 技術內容庫的[安裝選項一節](/windows-server/windows-server#installation-options)。 我們不建議您在 Windows 10 上的 Hyper-v 上執行生產工作負載。
+    - 使用管理作業系統所需的最小 Windows Server 安裝選項，將受攻擊面降至最低。 如需詳細資訊，請參閱 Windows Server 技術內容庫的[安裝選項一節](../../../get-started-19/install-upgrade-migrate-19.md)。 我們不建議您在 Windows 10 上的 Hyper-v 上執行生產工作負載。
     - 使用最新的安全性更新，讓 Hyper-v 主機作業系統、固件和設備磁碟機保持在最新狀態。 請檢查廠商的建議以更新固件和驅動程式。
     - 請勿使用 Hyper-v 主機做為工作站，或安裝任何不必要的軟體。
-    - 從遠端系統管理 Hyper-v 主機。 如果您必須在本機管理 Hyper-v 主機，請使用 Credential Guard。 如需詳細資訊，請參閱[使用 Credential Guard 保護衍生的網域認證](https://docs.microsoft.com/windows/access-protection/credential-guard/credential-guard)。
-    - 啟用程式碼完整性原則。 使用虛擬化安全性保護的程式碼完整性服務。 如需詳細資訊，請參閱[Device Guard 部署指南](https://docs.microsoft.com/windows/device-security/device-guard/device-guard-deployment-guide)。
+    - 從遠端系統管理 Hyper-v 主機。 如果您必須在本機管理 Hyper-v 主機，請使用 Credential Guard。 如需詳細資訊，請參閱[使用 Credential Guard 保護衍生的網域認證](/windows/access-protection/credential-guard/credential-guard)。
+    - 啟用程式碼完整性原則。 使用虛擬化安全性保護的程式碼完整性服務。 如需詳細資訊，請參閱[Device Guard 部署指南](/windows/device-security/device-guard/device-guard-deployment-guide)。
 - **使用安全的網路。**
     - 針對實體 Hyper-v 電腦使用具有專用網路介面卡的個別網路。
     - 使用私人或安全網路來存取 VM 設定和虛擬硬碟檔案。
     - 針對您的即時移轉流量使用私人/私人網路絡。 請考慮在此網路上啟用 IPSec，以使用加密，並在遷移期間保護 VM 的資料。 如需詳細資訊，請參閱[設定不含容錯移轉叢集的即時移轉主機](../deploy/set-up-hosts-for-live-migration-without-failover-clustering.md)。
 - **保護儲存體遷移流量。**
 
-    使用 SMB 3.0 進行 SMB 資料的端對端加密，以及在不受信任的網路上進行資料保護的篡改或竊聽。 使用私人網路來存取 SMB 共用內容，以防止攔截式攻擊。 如需詳細資訊，請參閱[SMB 安全性增強功能](https://technet.microsoft.com/library/dn551363.aspx)。
+    使用 SMB 3.0 進行 SMB 資料的端對端加密，以及在不受信任的網路上進行資料保護的篡改或竊聽。 使用私人網路來存取 SMB 共用內容，以防止攔截式攻擊。 如需詳細資訊，請參閱[SMB 安全性增強功能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn551363(v=ws.11))。
 - **將主機設定為受防護網狀架構的一部分。**
 
     如需詳細資訊，請參閱受防護的網狀[架構](../../../security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms-top-node.md)。
@@ -47,7 +47,7 @@ ms.locfileid: "87947974"
 
 - **強化 Hyper-v 主機作業系統。**
 
-    使用[Windows Server 安全性基準](https://docs.microsoft.com/windows/device-security/windows-security-baselines)中所述的基準安全性設定建議。
+    使用[Windows Server 安全性基準](/windows/device-security/windows-security-baselines)中所述的基準安全性設定建議。
 
 - **授與適當的許可權。**
     - 將需要管理 Hyper-v 主機的使用者新增至 Hyper-v 系統管理員群組。
@@ -55,7 +55,7 @@ ms.locfileid: "87947974"
 
 - **設定 Hyper-v 的防毒程式排除專案和選項。**
 
-    Windows Defender 已設定[自動排除](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/configure-server-exclusions-windows-defender-antivirus)專案。 如需有關排除的詳細資訊，請參閱[建議的 hyper-v 主機防毒程式排除](https://support.microsoft.com/kb/3105657)專案。
+    Windows Defender 已設定[自動排除](/windows/security/threat-protection/windows-defender-antivirus/configure-server-exclusions-windows-defender-antivirus)專案。 如需有關排除的詳細資訊，請參閱[建議的 hyper-v 主機防毒程式排除](https://support.microsoft.com/kb/3105657)專案。
 
 - **請勿掛接未知的 Vhd。** 這可能會讓主機暴露在檔案系統層級的攻擊之下。
 
@@ -82,7 +82,7 @@ ms.locfileid: "87947974"
 
     - 在生產環境中開啟虛擬機器之前，請先安裝最新的安全性更新。
     - 為需要的支援的客體作業系統安裝整合服務，並將其保持在最新狀態。 執行支援的 Windows 版本之來賓的整合服務更新可透過 Windows Update 取得。
-    - 根據執行的角色，強化每部虛擬機器中執行的作業系統。 使用[Windows 安全性基準](https://docs.microsoft.com/windows/device-security/windows-security-baselines)中所述的基準安全性設定建議。
+    - 根據執行的角色，強化每部虛擬機器中執行的作業系統。 使用[Windows 安全性基準](/windows/device-security/windows-security-baselines)中所述的基準安全性設定建議。
 
 - **使用安全的網路。**
 
@@ -98,7 +98,7 @@ ms.locfileid: "87947974"
 
 - **針對執行 Windows 10 或 Windows Server 2016 或更新版本的來賓啟用以虛擬化為基礎的安全性。**
 
-    如需詳細資訊，請參閱[Device Guard 部署指南](https://docs.microsoft.com/windows/device-security/device-guard/device-guard-deployment-guide)。
+    如需詳細資訊，請參閱[Device Guard 部署指南](/windows/device-security/device-guard/device-guard-deployment-guide)。
 
 - **只有在特定工作負載需要時，才啟用離散裝置指派**。
 

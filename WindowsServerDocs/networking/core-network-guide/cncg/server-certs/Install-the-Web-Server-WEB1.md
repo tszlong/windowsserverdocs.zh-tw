@@ -2,31 +2,30 @@
 title: 安裝網頁伺服器 WEB1
 description: 本主題是 802.1 X 有線和無線部署的部署伺服器憑證指南的一部分
 manager: brianlic
-ms.technology: networking
 ms.topic: article
 ms.assetid: f51c9e38-98bb-49c1-9d39-427d07021499
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 2d68b83f24a9948d42ee425218646cc5f44d5f4a
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 97ee8c257d9c84b63ee069d87d7bfa6ebf3299e4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409639"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949462"
 ---
 # <a name="install-the-web-server-web1"></a>安裝網頁伺服器 WEB1
 
 >適用於：Windows Server (半年度管道)、Windows Server 2016
 
-Windows Server 2016 中的網頁伺服器（IIS）角色提供安全、容易管理、模組化且可擴充的平臺，讓您能夠可靠地裝載網站、服務和應用程式。 使用 IIS 時，您可以與網際網路、內部網路或外部網路上的使用者共用資訊。 IIS 是整合 IIS、ASP.NET、FTP 服務、PHP 和 Windows Communication Foundation （WCF）的統一 web 平臺。
+Windows Server 2016 中的 Web 服務器 (IIS) 角色提供安全、容易管理、模組化且可擴充的平臺，讓您能夠可靠地裝載網站、服務和應用程式。 使用 IIS 時，您可以與網際網路、內部網路或外部網路上的使用者共用資訊。 IIS 是整合的 web 平臺，可將 IIS、ASP.NET、FTP 服務、PHP 及 Windows Communication Foundation (WCF) 。
 
-當您部署伺服器憑證時，您的網頁伺服器會提供一個位置，讓您可以為憑證授權單位單位（CA）發佈憑證撤銷清單（CRL）。 發行後，您網路上的所有電腦都可存取 CRL，以便在驗證程式期間使用此清單，以確認其他電腦所提供的憑證不會被撤銷。
+當您部署伺服器憑證時，您的網頁伺服器會提供一個位置，讓您在憑證授權單位單位 (CA)  (CRL) 發佈憑證撤銷清單。 發行後，您網路上的所有電腦都可存取 CRL，以便在驗證程式期間使用此清單，以確認其他電腦所提供的憑證不會被撤銷。
 
 如果憑證在 CRL 上被撤銷，則驗證工作會失敗，且您的電腦會受到保護，使其無法信任憑證不再有效的實體。
 
-安裝網頁伺服器（IIS）角色之前，請確定您已設定伺服器名稱和 IP 位址，並已將電腦加入網域。
+在您安裝 Web 服務器 (IIS) 角色之前，請確定您已設定伺服器名稱和 IP 位址，並已將電腦加入網域。
 
-## <a name="to-install-the-web-server-iis-server-role"></a>若要安裝網頁伺服器（IIS）伺服器角色
+## <a name="to-install-the-web-server-iis-server-role"></a>若要安裝 Web 服務器 (IIS) 伺服器角色
 若要完成此程序，您必須是 **Administrators** 群組的成員。
 
 >[!NOTE]
@@ -40,6 +39,6 @@ Windows Server 2016 中的網頁伺服器（IIS）角色提供安全、容易管
 
 3. 在 [安裝類型]**** 頁面上，按 [下一步]****。
 4. 在 [**伺服器選取專案**] 頁面上，按 **[下一步]**。
-5. 在 [**伺服器角色**] 頁面上，選取 [**網頁伺服器（IIS）**]，然後按 **[下一步]**。
+5. 在 [**伺服器角色**] 頁面上，選取 [**網頁伺服器 (IIS) **]，然後按 **[下一步]**。
 6. 在您接受所有的預設網頁伺服器設定之後，按 [下一步]****，然後按一下 [安裝]****。
 7. 確認所有安裝成功，然後按一下 [關閉]****。

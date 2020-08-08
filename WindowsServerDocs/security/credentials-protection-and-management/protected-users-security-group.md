@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 450279f5af907e4643f8ee8c1ea0ff36edd9aea5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fb8fef4b954416e7ed284db9cf57b77f5a84c594
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948691"
+ms.locfileid: "87995804"
 ---
 # <a name="protected-users-security-group"></a>Protected Users 安全性群組
 
@@ -37,7 +37,7 @@ ms.locfileid: "87948691"
 
 - Protected Users 全域安全性群組已複寫到帳戶網域中的所有網域控制站。
 
-- Windows 8.1 和 Windows Server 2012 R2 預設會新增支援。 [Microsoft 安全性諮詢 2871997](https://technet.microsoft.com/library/security/2871997)新增對 windows 7、windows Server 2008 R2 和 windows server 2012 的支援。
+- Windows 8.1 和 Windows Server 2012 R2 預設會新增支援。 [Microsoft 安全性諮詢 2871997](/security-updates/SecurityAdvisories/2016/2871997)新增對 windows 7、windows Server 2008 R2 和 windows server 2012 的支援。
 
 為 Protected Users 群組的成員提供網域控制站保護的需求包括：
 
@@ -50,7 +50,7 @@ ms.locfileid: "87948691"
 > [!Note]
 > 網域控制站將不支援網域保護。
 
-藉由將[主域控制站 (PDC) 模擬器角色轉移](https://technet.microsoft.com/library/cc816944(v=ws.10).aspx)至執行 Windows Server 2012 R2 的網域控制站，即可建立 Protected Users 群組。 該群組物件複寫到其他網域控制站之後，可以在執行舊版 Windows Server 的網域控制站上裝載 PDC 模擬器角色。
+藉由將[主域控制站 (PDC) 模擬器角色轉移](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc816944(v=ws.10))至執行 Windows Server 2012 R2 的網域控制站，即可建立 Protected Users 群組。 該群組物件複寫到其他網域控制站之後，可以在執行舊版 Windows Server 的網域控制站上裝載 PDC 模擬器角色。
 
 ### <a name="protected-users-group-ad-properties"></a><a name="BKMK_ADgroup"></a>Protected Users 群組 AD 屬性
 
@@ -83,7 +83,7 @@ ms.locfileid: "87948691"
 - 從 Windows 8.1 和 Windows Server 2012 R2 開始，即使啟用 Windows 摘要，Windows 摘要式也不會快取使用者的純文字認證。
 
 > [!Note]
-> 安裝[Microsoft 安全性諮詢 2871997](https://technet.microsoft.com/library/security/2871997)之後，Windows 摘要式會繼續快取認證，直到設定登錄機碼為止。 如需指示，請參閱[Microsoft 安全性摘要報告：更新以改善認證保護和管理： 2014 5 月13日](https://support.microsoft.com/help/2871997/microsoft-security-advisory-update-to-improve-credentials-protection-a)。
+> 安裝[Microsoft 安全性諮詢 2871997](/security-updates/SecurityAdvisories/2016/2871997)之後，Windows 摘要式會繼續快取認證，直到設定登錄機碼為止。 如需指示，請參閱[Microsoft 安全性摘要報告：更新以改善認證保護和管理： 2014 5 月13日](https://support.microsoft.com/help/2871997/microsoft-security-advisory-update-to-improve-credentials-protection-a)。
 
 - NTLM 不會快取使用者的純文字認證或 NT 單向函數 (NTOWF) 。
 
@@ -106,7 +106,7 @@ ms.locfileid: "87948691"
 
 系統會為 Protected Users 群組中的每個帳戶建立 TGT 到期時間的不可設定的設定。 一般而言，網域控制站會根據網域原則、[使用者票證最長存留期]**** 及 [使用者票證更新的最長存留期]****，設定 TGT 存留期和更新。 以 Protected Users 群組來說，會為這些網域原則設定 600 分鐘。
 
-如需詳細資訊，請參閱[如何設定受保護的帳戶](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts)。
+如需詳細資訊，請參閱[如何設定受保護的帳戶](../../identity/ad-ds/manage/how-to-configure-protected-accounts.md)。
 
 ## <a name="troubleshooting"></a>疑難排解
 有兩個操作系統管理記錄檔可用來協助排解 Protected Users 相關事件的疑難。 這些新的記錄檔位於事件檢視器中，而且預設為停用，且位於 [**應用程式和服務 Logs\Microsoft\Windows\Authentication**] 底下。
@@ -126,4 +126,4 @@ ms.locfileid: "87948691"
 
 - [驗證原則和驗證原則定址接收器](authentication-policies-and-authentication-policy-silos.md)
 
-- [如何設定受保護的帳戶](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts)
+- [如何設定受保護的帳戶](../../identity/ad-ds/manage/how-to-configure-protected-accounts.md)

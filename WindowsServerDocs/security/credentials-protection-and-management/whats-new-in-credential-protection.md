@@ -7,12 +7,12 @@ author: gitmichiko
 ms.author: michikos
 manager: dongill
 ms.date: 03/06/2017
-ms.openlocfilehash: 9522988946fbf5aa060ff81ab7a54077f5ca28f4
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 521562b938b002e4c5fe5ffee5fcd7c677551f98
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948711"
+ms.locfileid: "87995753"
 ---
 # <a name="whats-new-in-credential-protection"></a>認證保護的新功能
 
@@ -24,7 +24,7 @@ ms.locfileid: "87948711"
 
 從 Windows 10 版本1607開始，獨立的使用者模式會包含在 Hyper-v 中，因此不會再針對 Credential Guard 部署另行安裝。
 
-[深入瞭解 Credential Guard](https://technet.microsoft.com/itpro/windows/keep-secure/credential-guard)。
+[深入瞭解 Credential Guard](/windows/security/identity-protection/credential-guard/credential-guard)。
 
 
 ## <a name="remote-credential-guard-for-signed-in-user"></a>已登入使用者的遠端認證防護
@@ -33,7 +33,7 @@ ms.locfileid: "87948711"
 
 從 Windows 10 版本1703開始，遠端認證防護會在使用遠端桌面時，保護提供的使用者認證。
 
-[深入瞭解遠端認證防護](https://technet.microsoft.com/itpro/windows/keep-secure/remote-credential-guard)。
+[深入瞭解遠端認證防護](/windows/security/identity-protection/remote-credential-guard)。
 
 ## <a name="domain-protections"></a>網域保護
 
@@ -45,7 +45,7 @@ ms.locfileid: "87948711"
 
 從 Windows Server 2016 開始，Kdc 支援使用 Kerberos 金鑰信任進行驗證。
 
-[深入瞭解 & Kerberos 金鑰信任的已加入網域裝置的公開金鑰支援](https://technet.microsoft.com/windows-server-docs/security/kerberos/whats-new-in-kerberos-authentication)。
+[深入瞭解 & Kerberos 金鑰信任的已加入網域裝置的公開金鑰支援](../kerberos/whats-new-in-kerberos-authentication.md)。
 
 ### <a name="pkinit-freshness-extension-support"></a>PKINIT Freshness extension 支援
 
@@ -53,7 +53,7 @@ ms.locfileid: "87948711"
 
 從 Windows Server 2016 開始，Kdc 可以支援 PKInit freshness extension。  根據預設，Kdc 不會提供 PKInit freshness extension。
 
-[深入瞭解 PKINIT 時效性 extension 支援](https://technet.microsoft.com/windows-server-docs/security/kerberos/whats-new-in-kerberos-authentication)。
+[深入瞭解 PKINIT 時效性 extension 支援](../kerberos/whats-new-in-kerberos-authentication.md)。
 
 ### <a name="rolling-public-key-only-users-ntlm-secrets"></a>僅滾動公開金鑰使用者的 NTLM 秘密
 
@@ -80,4 +80,4 @@ ms.locfileid: "87948711"
 
 設定：在 [驗證原則] 上，按一下 **[當使用者受限於選取的裝置時，允許 NTLM 網路驗證**]。
 
-[深入瞭解驗證原則](https://technet.microsoft.com/windows-server-docs/security/credentials-protection-and-management/authentication-policies-and-authentication-policy-silos)。
+[深入瞭解驗證原則](./authentication-policies-and-authentication-policy-silos.md)。

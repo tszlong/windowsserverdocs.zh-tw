@@ -4,12 +4,12 @@ ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.openlocfilehash: b56b2d4f74f18e68a3849b01e84b0aca5ca7412e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 140888bdaa27d5040ff723b94df2e28f3bbab167
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87957906"
+ms.locfileid: "87996159"
 ---
 # <a name="branch-office-considerations"></a>分公司考量
 
@@ -39,7 +39,7 @@ Set-HgsClientConfiguration -KeyProtectionServerUrl 'https://hgs.primary.com/KeyP
 此外，用來解密虛擬機器 TPM 的憑證必須同時在兩個 HGS 叢集內提供。
 您可以使用不同的憑證來設定每個 HGS，並將 VM 設定為信任這兩個，或將共用的一組憑證新增至這兩個 HGS 叢集。
 
-如需有關使用回溯 Url 在分公司中設定 HGS 的詳細資訊，請參閱在[Windows Server 版本1709中，針對受防護的 Vm 改進分公司支援](https://blogs.technet.microsoft.com/datacentersecurity/2017/11/15/improved-branch-office-support-for-shielded-vms-in-windows-server-version-1709/)的文章。
+如需有關使用回溯 Url 在分公司中設定 HGS 的詳細資訊，請參閱在[Windows Server 版本1709中，針對受防護的 Vm 改進分公司支援](/archive/blogs/datacentersecurity/improved-branch-office-support-for-shielded-vms-in-windows-server-version-1709)的文章。
 
 
 ## <a name="offline-mode"></a>離線模式
