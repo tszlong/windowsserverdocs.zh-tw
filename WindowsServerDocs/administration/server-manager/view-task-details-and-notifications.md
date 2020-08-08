@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b347f5cf3a3d752c500e602b84889afa9c580ab0
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 479105e7f1e605142ec54103825b1ba4934fb127
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895693"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993107"
 ---
 # <a name="view-task-details-and-notifications"></a>檢視工作詳細資料與通知
 
@@ -37,7 +37,7 @@ ms.locfileid: "87895693"
 
 通知對於安裝或卸載角色、角色服務和功能特別有用。 例如，如果您在遠端伺服器上啟動功能安裝，當安裝仍在進行中時，您可以關閉 [新增角色及功能嚮導]，但作用中工作會保留在 [**通知**] 清單中。 [**通知**] 專案會顯示安裝的進度列，並可讓您按一下 [**新增角色及功能嚮導]**，視需要重新開啟 [新增角色及功能]。 這份清單中的項目會通知您安裝是否失敗，或者是否需要額外的設定步驟才能完成部署功能。
 
-通知也會在伺服器管理員中的工作或處理常式的問題疑難排解方面扮演重要的部分。 如需如何使用 [**通知**] 區域中的訊息和 [工作**詳細資料**] 對話方塊來疑難排解失敗的工作或處理常式的詳細資訊，請參閱[伺服器管理員論壇](https://docs.microsoft.com/answers/topics/windows-server-manager.html)。
+通知也會在伺服器管理員中的工作或處理常式的問題疑難排解方面扮演重要的部分。 如需如何使用 [**通知**] 區域中的訊息和 [工作**詳細資料**] 對話方塊來疑難排解失敗的工作或處理常式的詳細資訊，請參閱[伺服器管理員論壇](/answers/topics/windows-server-manager.html)。
 
 若要刪除您不想再從 [**通知**] 清單中看到的通知，請將滑鼠游標暫留在通知上，然後按一下 [**移除**工作] (**X**) 。
 
@@ -48,4 +48,4 @@ ms.locfileid: "87895693"
 
 ## <a name="see-also"></a>另請參閱
 [在伺服器管理員磚中篩選、排序及查詢資料](filter-sort-and-query-data-in-server-manager-tiles.md) 
-[伺服器管理員論壇](https://docs.microsoft.com/answers/topics/windows-server-manager.html)。
+[伺服器管理員論壇](/answers/topics/windows-server-manager.html)。

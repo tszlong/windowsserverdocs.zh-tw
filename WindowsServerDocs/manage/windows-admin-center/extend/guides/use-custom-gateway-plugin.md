@@ -1,19 +1,17 @@
 ---
 title: 使用工具擴充功能中的自訂閘道外掛程式
-description: 開發工具擴充功能 Windows 系統管理中心 SDK （Project 檀香山）-使用您工具延伸模組中的自訂閘道外掛程式
-ms.technology: manage
+description: 開發工具擴充功能 Windows 管理中心 SDK (Project 檀香山) -在您的工具延伸模組中使用自訂閘道外掛程式
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 5bcaaa452a2b42a54cbc3b1d8f9a296504054e34
-ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
+ms.openlocfilehash: 739b9e6769d1f2314e73a66d932586863063c7be
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81269225"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952675"
 ---
 # <a name="use-a-custom-gateway-plugin-in-your-tool-extension"></a>使用工具擴充功能中的自訂閘道外掛程式
 
@@ -27,7 +25,7 @@ ms.locfileid: "81269225"
 
 ## <a name="add-a-module-to-your-project"></a>將模組新增至您的專案 ##
 
-如果您還沒有這麼做，請將新的[空白模組](add-module.md)新增至您的專案，我們將在下一個步驟中使用它。  
+如果您還沒有這麼做，請將新的[空白模組](add-module.md)新增至您的專案，我們將在下一個步驟中使用它。
 
 ## <a name="add-integration-to-custom-gateway-plugin"></a>將整合新增至自訂閘道外掛程式 ##
 
@@ -35,7 +33,7 @@ ms.locfileid: "81269225"
 
 ### <a name="create-pluginservicets"></a>建立外掛程式。 ts
 
-切換至上面所建立之新工具模組的目錄（```\src\app\{!Module-Name}```），並建立新的檔案 ```plugin.service.ts```。
+將 () 上所建立之新工具模組的目錄變更為 [] ```\src\app\{!Module-Name}``` ，然後建立新的檔案 ```plugin.service.ts``` 。
 
 將下列程式碼新增至剛建立的檔案：
 ``` ts
@@ -48,7 +46,7 @@ import { AjaxResponse, Observable } from 'rxjs';
 export class PluginService {
     constructor(private appContextService: AppContextService, private http: Http) {
     }
-    
+
     public getGatewayRestResponse(): Observable<any> {
         let callUrl = this.appContextService.activeConnection.nodeName;
 
@@ -61,14 +59,14 @@ export class PluginService {
 }
 ```
 
-視需要變更 ```Sample Uno``` 的參考，並 ```Sample%20Uno``` 至您的功能名稱。
+視需要將和的參考變更為 ```Sample Uno``` ```Sample%20Uno``` 您的功能名稱。
 
 > [!WARNING]
-> 建議使用內建的 ```this.appContextService.node``` 來呼叫自訂閘道外掛程式中定義的任何 API。 這可確保您的閘道外掛程式內必須有認證，才會正確處理它們。
+> 建議使用內建 ```this.appContextService.node``` 來呼叫自訂閘道外掛程式中定義的任何 API。 這可確保您的閘道外掛程式內必須有認證，才會正確處理它們。
 
 ### <a name="modify-modulets"></a>修改模組。 ts
 
-開啟稍早建立之新模組的 ```module.ts``` 檔案（亦即 ```{!Module-Name}.module.ts```）：
+開啟稍 ```module.ts``` 早建立的新模組檔案 (也就是 ```{!Module-Name}.module.ts```) ：
 
 新增下列 import 語句：
 
@@ -78,7 +76,7 @@ import { Http } from '@microsoft/windows-admin-center-sdk/core';
 import { PluginService } from './plugin.service';
 ```
 
-新增下列提供者（在宣告之後）：
+在宣告) 後面新增下列提供者 (：
 
 ``` ts
   ,
@@ -91,7 +89,7 @@ import { PluginService } from './plugin.service';
 
 ### <a name="modify-componentts"></a>修改元件。 ts
 
-開啟稍早建立之新模組的 ```component.ts``` 檔案（亦即 ```{!Module-Name}.component.ts```）：
+開啟稍 ```component.ts``` 早建立的新模組檔案 (也就是 ```{!Module-Name}.component.ts```) ：
 
 新增下列 import 語句：
 
@@ -133,9 +131,9 @@ import { PluginService } from './plugin.service';
   }
 ```
 
-### <a name="modify-componenthtml"></a>修改元件 .html ###
+### <a name="modify-componenthtml"></a>修改 component.html ###
 
-開啟稍早建立之新模組的 ```component.html``` 檔案（亦即 ```{!Module-Name}.component.html```）：
+開啟稍 ```component.html``` 早建立的新模組檔案 (也就是 ```{!Module-Name}.component.html```) ：
 
 將下列內容新增至 html 檔案：
 ``` html

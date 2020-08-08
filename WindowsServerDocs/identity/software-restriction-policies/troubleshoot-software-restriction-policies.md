@@ -1,26 +1,24 @@
 ---
 title: 為軟體限制原則進行疑難排解
 description: Windows Server 安全性
-ms.prod: windows-server
-ms.technology: security-software-restriction-policies
 ms.topic: article
 ms.assetid: 4fd53736-03e7-4bf9-ba90-d1212d93e19a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: c6b3a475f21925b506d073bd3618d78e2ee0c1d7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6e4d31dd6e434c5a5b18491ea7f73b92c993e05a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80819721"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953005"
 ---
 # <a name="troubleshoot-software-restriction-policies"></a>為軟體限制原則進行疑難排解
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-本主題說明從 Windows Server 2008 和 Windows Vista 開始針對軟體限制原則（SRP）進行疑難排解時，常見的問題及其解決方案。
+本主題說明從 Windows Server 2008 和 Windows Vista 開始針對軟體限制原則進行疑難排解時， (SRP) 的常見問題及其解決方案。
 
 ## <a name="introduction"></a>簡介
 軟體限制原則 (SRP) 是以群組原則為依據的功能，可以識別在網域的電腦上執行的軟體程式，並控制執行這些程式的能力。 您可以使用軟體限制原則來建立高限制性的電腦設定，您可以只允許執行特別識別出的應用程式。 這些會與 Microsoft Active Directory Domain Services 和群組原則整合，但也可以在獨立電腦上設定。 如需 SRP 的詳細資訊，請參閱[軟體限制原則](software-restriction-policies.md)。
@@ -30,7 +28,7 @@ ms.locfileid: "80819721"
 ### <a name="windows-cannot-open-a-program"></a>Windows 無法開啟程式
 使用者會收到一則訊息，指出「Windows 無法開啟此程式，因為軟體限制原則已防止它。 如需詳細資訊，請開啟事件檢視器或聯絡您的系統管理員。」 或者，在命令列上，顯示「系統無法執行指定的程式」的訊息。
 
-**原因：** 預設的安全性層級（或規則）已建立，讓軟體程式設定為不**允許**，因此不會啟動。
+**原因：** 預設的安全性層級 (或規則) 已建立，因此軟體程式已設定為 [不**允許**]，因此不會啟動。
 
 **解決方案：** 查看事件記錄檔，以取得訊息的深入描述。 事件記錄檔訊息會指出哪些軟體程式設為 [不**允許**]，以及要套用到程式的規則。
 
@@ -45,7 +43,7 @@ ms.locfileid: "80819721"
 
 2.  登出網路，然後再次登入網路，以重新整理原則。 如果透過群組原則套用任何原則，登入將會重新整理這些原則。
 
-3.  您可以使用命令列公用程式 gpupdate 或登出，然後重新登入您的電腦，以更新原則設定。 為獲得最佳結果，請執行 gpupdate，然後登出再重新登入您的電腦。 一般來說，在工作站或伺服器上每90分鐘都會重新整理安全性設定，而在網域控制站上每隔5分鐘重新整理一次。 此外，無論是否有變更，這些設定每 16 小時也都會重新整理一次。 這些是可設定的設定值，因此每個網域中的重新整理間隔可能會不同。
+3.  您可以使用命令列公用程式 gpupdate 或登出，然後重新登入您的電腦，以更新原則設定。 為獲得最佳結果，請執行 gpupdate，然後登出再重新登入您的電腦。 一般來說，在工作站或伺服器上每90分鐘都會重新整理安全性設定，而在網域控制站上每隔5分鐘重新整理一次。 而且不管有無變更皆每隔 16 小時更新一次。 這些是可設定的設定值，因此每個網域中的重新整理間隔可能會不同。
 
 4.  檢查適用的原則。 檢查網域層級原則是否**沒有覆寫**設定。
 
@@ -66,7 +64,7 @@ ms.locfileid: "80819721"
 軟體限制原則解決了控制不明或不受信任程式碼的問題。 軟體限制原則是一種安全性設定，用以識別軟體並控制其在本機電腦、網站、網域或 OU 中執行的能力，並可透過 GPO 來執行。
 
 ### <a name="a-default-rule-is-not-restricting-as-expected"></a>預設規則未如預期般地進行限制
-**原因：** 以特定順序套用的規則，可能會導致特定規則覆寫預設規則。 SRP 會依照下列順序套用規則（最特定為一般）：
+**原因：** 以特定順序套用的規則，可能會導致特定規則覆寫預設規則。 SRP 會依照下列順序套用規則 (最特定的一般) ：
 
 1.  雜湊規則
 

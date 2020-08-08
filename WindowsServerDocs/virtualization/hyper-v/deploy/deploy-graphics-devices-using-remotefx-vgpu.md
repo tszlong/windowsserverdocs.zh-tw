@@ -1,26 +1,25 @@
 ---
 title: 使用 RemoteFX vGPU 部署圖形裝置
 description: 瞭解如何在 Windows Server 中部署和設定 RemoteFX vGPU
-ms.prod: windows-server
 ms.reviewer: rickman
 author: rick-man
 ms.author: rickman
 manager: stevelee
 ms.topic: article
 ms.date: 07/14/2020
-ms.openlocfilehash: ab16dcdc8ce29f2440207ea5bbc7c421f171ed4a
-ms.sourcegitcommit: f81aa22739d818382d314561dece59a9341dfb6f
+ms.openlocfilehash: 9a060f1650d20a029d64739e1fc7f9be44d8355c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86390085"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953434"
 ---
 # <a name="deploy-graphics-devices-using-remotefx-vgpu"></a>使用 RemoteFX vGPU 部署圖形裝置
 
 > 適用于： Windows Server 2016、Microsoft Hyper-v Server 2016
 
 > [!NOTE]
-> 基於安全性考慮，自2020年7月14日起，預設會在所有 Windows 版本上停用 RemoteFX vGPU。 若要深入瞭解，請參閱[KB 4570006](https://support.microsoft.com/help/4570006)。
+> 基於安全性考量，自 2020 年 7 月 14 日的安全性更新開始，預設會停用所有 Windows 版本上的 RemoteFX vGPU。 若要深入了解，請參閱 [KB 4570006](https://support.microsoft.com/help/4570006)。
 
 RemoteFX 的 vGPU 功能可以讓多部虛擬機器共用實體 GPU。 轉譯和計算資源會在虛擬機器之間動態共用，使 RemoteFX vGPU 適用于不需要專用 GPU 資源的高載工作負載。 例如，在 VDI 服務中，您可以使用 RemoteFX vGPU 將應用程式轉譯成本卸載至 GPU，其效果是減少 CPU 負載並改善服務的擴充性。
 
@@ -30,15 +29,15 @@ RemoteFX 的 vGPU 功能可以讓多部虛擬機器共用實體 GPU。 轉譯和
 
 - Windows Server 2016
 - 含 WDDM 1.2 相容驅動程式的 DirectX 11.0 相容 GPU
-- 具有第二層位址轉譯（SLAT）支援的 CPU
+- 具有第二層位址轉譯 (SLAT) 支援的 CPU
 
 客體 VM 需求：
 
-- 支援的客體作業系統。 如需詳細資訊，請參閱[RemoteFX 3D 視訊卡（vGPU）支援](../../../remote/remote-desktop-services/rds-supported-config.md#remotefx-3d-video-adapter-vgpu-support)。
+- 支援的客體作業系統。 如需詳細資訊，請參閱[RemoteFX 3D 視訊卡 (vGPU) 支援](../../../remote/remote-desktop-services/rds-supported-config.md#remotefx-3d-video-adapter-vgpu-support)。
 
 客體 VM 的其他考量事項：
 
-- OpenGL 和 OpenCL 功能僅適用于執行 Windows 10 或 Windows Server 2016 的來賓。  
+- OpenGL 和 OpenCL 功能僅適用于執行 Windows 10 或 Windows Server 2016 的來賓。
 - DirectX 11.0 僅適用于執行 Windows 8 或更新版本的來賓。
 
 ## <a name="enable-remotefx-vgpu"></a>啟用 RemoteFX vGPU
@@ -46,7 +45,7 @@ RemoteFX 的 vGPU 功能可以讓多部虛擬機器共用實體 GPU。 轉譯和
 若要在 Windows Server 2016 主機上設定 RemoteFX vGPU：
 
 1. 安裝適用于 Windows Server 2016 的 GPU 廠商建議的圖形驅動程式。
-2. 建立執行 RemoteFX vGPU 支援之客體作業系統的 VM。 若要深入瞭解，請參閱[RemoteFX 3D 視訊卡（vGPU）支援](../../../remote/remote-desktop-services/rds-supported-config.md#remotefx-3d-video-adapter-vgpu-support)。
+2. 建立執行 RemoteFX vGPU 支援之客體作業系統的 VM。 若要深入瞭解，請參閱[RemoteFX 3D 視訊卡 (vGPU) 支援](../../../remote/remote-desktop-services/rds-supported-config.md#remotefx-3d-video-adapter-vgpu-support)。
 3. 將 RemoteFX 3D 圖形介面卡新增至 VM。 若要深入瞭解，請參閱[設定 RemoteFX VGPU 3d 介面卡](#configure-the-remotefx-vgpu-3d-adapter)。
 
 根據預設，RemoteFX vGPU 會使用所有可用和支援的 Gpu。 若要限制 RemoteFX vGPU 使用哪些 Gpu，請遵循下列步驟：
@@ -68,7 +67,7 @@ RemoteFX 的 vGPU 功能可以讓多部虛擬機器共用實體 GPU。 轉譯和
 
    > [!NOTE]
    > - 為這些選項設定較高的值將會影響您的服務規模，因此您應該只設定所需的功能。
-   > - 當您需要使用 1 GB 的專用 VRAM 時，請使用64位的來賓 VM，而不是32位（x86）以獲得最佳結果。
+   > - 當您需要使用 1 GB 的專用 VRAM 時，請使用64位的來賓 VM，而不是32位的 (x86) 以獲得最佳結果。
 
 5. 選取 **[確定**] 以完成設定。
 
@@ -97,7 +96,7 @@ RemoteFX 的 vGPU 功能可以讓多部虛擬機器共用實體 GPU。 轉譯和
 
 ### <a name="host-cpu"></a>主機 CPU
 
-虛擬程式會將主機和 Vm 排定在 CPU 上。 已啟用 RemoteFX 的主機上會增加額外負荷，因為系統會針對每個啟用 vGPU 的虛擬桌面執行額外的進程（rdvgm.exe）。 此程式會使用圖形設備磁碟機在 GPU 上執行命令。 編解碼器也會使用 CPU 來壓縮需要傳送回用戶端的螢幕資料。
+虛擬程式會將主機和 Vm 排定在 CPU 上。 已啟用 RemoteFX 的主機上會增加額外負荷，因為系統會針對每個已啟用 vGPU 的虛擬桌面執行額外的進程 ( # A0) 。 此程式會使用圖形設備磁碟機在 GPU 上執行命令。 編解碼器也會使用 CPU 來壓縮需要傳送回用戶端的螢幕資料。
 
 更多虛擬處理器表示更好的使用者體驗。 建議您為每個啟用 vGPU 的虛擬桌面配置至少兩個虛擬 Cpu。 我們也建議將 x64 架構用於已啟用 vGPU 的虛擬桌面，因為與 x86 虛擬機器相比，x64 虛擬機器上的效能比較好。
 

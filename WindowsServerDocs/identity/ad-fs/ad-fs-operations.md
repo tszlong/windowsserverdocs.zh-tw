@@ -6,20 +6,18 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 3442ada27e8e01b72561850f724d7e28d740f43b
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3fb672d9557e7f10245e8c29ea1585cf9f4aadf9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964960"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953185"
 ---
 # <a name="ad-fs-operations"></a>AD FS 操作
 
 
 
-本檔包含 AD FS 的所有檔作業的清單。 
+本檔包含 AD FS 的所有檔作業的清單。
 
 ## <a name="service-configuration"></a>服務組態
 - [更新 AD FS 和 WAP 2016 中的 SSL 憑證](./operations/manage-ssl-certificates-ad-fs-wap.md)
@@ -29,13 +27,13 @@ ms.locfileid: "86964960"
 - [使用 AD FS 2019 自訂 HTTP 安全性回應標頭](../ad-fs/operations/customize-http-security-headers-ad-fs.md)
 - [將 AD FS Powershell Cmdlet 存取權委派給非系統管理員使用者](../ad-fs/operations/delegate-ad-fs-pshell-access.md)
 - [微調 SQL 並解決延遲](../ad-fs/operations/adfs-sql-latency.md)
-- [AlwaysOn 可用性群組](../ad-fs/operations/ad-fs-always-on.md) 
+- [AlwaysOn 可用性群組](../ad-fs/operations/ad-fs-always-on.md)
 
 
 ## <a name="authentication-configuration"></a>驗證設定
-### <a name="strong-authentication-mfa--password-less"></a>增強式驗證（MFA） & 不限密碼
-- [在 AD FS 中將外部驗證提供者設定為主要（2019或更新版本）](../ad-fs/operations/Additional-Authentication-Methods-AD-FS.md)
-- [設定 AD FS （2016或更新版本）和 Azure MFA](./operations/configure-ad-fs-and-azure-mfa.md)
+### <a name="strong-authentication-mfa--password-less"></a>增強式驗證 (MFA) & 不限密碼
+- [將外部驗證提供者設定為 AD FS (2019 或更新版本中的主要) ](../ad-fs/operations/Additional-Authentication-Methods-AD-FS.md)
+- [設定 AD FS (2016 或更新版本) 和 Azure MFA](./operations/configure-ad-fs-and-azure-mfa.md)
 - [設定 AD FS 的其他驗證方法](../ad-fs/operations/Configure-Additional-Authentication-Methods-for-AD-FS.md)
 
 ### <a name="lockout-protection"></a>鎖定保護
@@ -55,7 +53,7 @@ ms.locfileid: "86964960"
 
 
 ### <a name="device"></a>裝置
-- [AD FS 中的裝置驗證控制項](../ad-fs/operations/device-authentication-controls-in-AD-FS.md) 
+- [AD FS 中的裝置驗證控制項](../ad-fs/operations/device-authentication-controls-in-AD-FS.md)
 
 
 ## <a name="authorization-configuration"></a>授權設定
@@ -64,11 +62,11 @@ ms.locfileid: "86964960"
 
 ## <a name="rpt--cpt-configuration"></a>RPT & CPT 設定
 - [設定 AD FS 驗證 LDAP 目錄中儲存的使用者](../ad-fs/operations/Configure-AD-FS-to-authenticate-users-stored-in-LDAP-directories.md)
-- [設定宣告規則](../ad-fs/operations/Configure-Claim-Rules.md) 
-- [建立宣告提供者信任](../ad-fs/operations/Create-a-Claims-Provider-Trust.md) 
+- [設定宣告規則](../ad-fs/operations/Configure-Claim-Rules.md)
+- [建立宣告提供者信任](../ad-fs/operations/Create-a-Claims-Provider-Trust.md)
 - [建立一個非宣告感知信賴憑證者信任](../ad-fs/operations/Create-a-Non-Claims-Aware-Relying-Party-Trust.md)
 - [建立信賴憑證者信任](../ad-fs/operations/Create-a-Relying-Party-Trust.md)
-- [設定 AD FS 以使用匯總的同盟提供者（例如 InCommon）](../ad-fs/operations/Improved-interoperability-with-SAML-2.0.md)
+- [設定 AD FS 以使用匯總的同盟提供者， (例如 InCommon) ](../ad-fs/operations/Improved-interoperability-with-SAML-2.0.md)
 
 ## <a name="sign-in-experience-configuration"></a>登入體驗設定
 - [設定 AD FS 2016 單一登入設定](./operations/ad-fs-single-sign-on-settings.md)
@@ -87,4 +85,4 @@ ms.locfileid: "86964960"
 - [逐步解說：將 Windows 裝置加入工作地點網路](../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
 - [逐步解說：將 iOS 裝置加入工作地點網路](../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
 
-  
+

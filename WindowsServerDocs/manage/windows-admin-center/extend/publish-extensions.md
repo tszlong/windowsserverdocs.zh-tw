@@ -6,12 +6,12 @@ author: daniellee-msft
 ms.author: jol
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c817a28494104a1bfed1d7e19eaebaa04fd5138e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 910ed2733d01fe502a93d43f46530d781ba8c7e5
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971965"
+ms.locfileid: "87992698"
 ---
 # <a name="publishing-extensions"></a>發行延伸模組
 
@@ -32,7 +32,7 @@ Windows 系統管理中心支援的可設定套件來源有三個主要選項：
 
 ### <a name="publishing-to-a-different-nuget-feed"></a>發行至不同的 NuGet 摘要
 
-您也可以建立自己的 NuGet 摘要來發行您的擴充功能，以使用[設定私人來源或使用 NuGet 主機服務的許多不同選項](https://docs.microsoft.com/nuget/hosting-packages/overview)之一。 NuGet 摘要必須支援 NuGet v2 API。 由於 Windows 管理中心目前不支援摘要驗證，因此必須將摘要設定為允許任何人的讀取權限。
+您也可以建立自己的 NuGet 摘要來發行您的擴充功能，以使用[設定私人來源或使用 NuGet 主機服務的許多不同選項](/nuget/hosting-packages/overview)之一。 NuGet 摘要必須支援 NuGet v2 API。 由於 Windows 管理中心目前不支援摘要驗證，因此必須將摘要設定為允許任何人的讀取權限。
 
 ### <a name="publishing-to-a-file-share"></a>發行至檔案共用
 
@@ -72,7 +72,7 @@ Windows 管理中心會利用 NuGet 套件和摘要來散發和下載延伸模�
 
 若要建立 NuGet 封裝，您必須先建立 nuspec 檔案。 Nuspec 檔案是包含 NuGet 套件中繼資料的 XML 資訊清單。 此資訊清單用來建置套件和向取用者提供資訊。  將此檔案放在「NuGet 套件」資料夾的根目錄。
 
-以下是 nuspec 檔案的範例，以及必要或建議屬性的清單。 如需完整的架構，請參閱[nuspec 參考](https://docs.microsoft.com/nuget/reference/nuspec)。 將 nuspec 檔案儲存到您的專案根資料夾中，並使用您選擇的檔案名。
+以下是 nuspec 檔案的範例，以及必要或建議屬性的清單。 如需完整的架構，請參閱[nuspec 參考](/nuget/reference/nuspec)。 將 nuspec 檔案儲存到您的專案根資料夾中，並使用您選擇的檔案名。
 
 > [!IMPORTANT]
 > ```<id>```Nuspec 檔案中的值必須符合專案檔案中的 ```"name"``` 值 ```manifest.json``` ，否則您發行的延伸模組將不會在 Windows 系統管理中心成功載入。
@@ -106,7 +106,7 @@ Windows 管理中心會利用 NuGet 套件和摘要來散發和下載延伸模�
 | 屬性名稱 | 必要/建議 | 描述 |
 | ---- | ---- | ---- |
 | packageType | 必要 | 使用 "WindowsAdminCenterExtension"，這是針對 Windows 管理中心延伸模組所定義的 NuGet 套件類型。 |
-| id | 必要 | 摘要內的唯一封裝識別碼。 這個值必須符合專案的 manifest.js檔案中的 "name" 值。  如需指導方針，請參閱[選擇唯一的套件識別碼](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)。 |
+| id | 必要 | 摘要內的唯一封裝識別碼。 這個值必須符合專案的 manifest.js檔案中的 "name" 值。  如需指導方針，請參閱[選擇唯一的套件識別碼](/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)。 |
 | title | 發行至 Windows 系統管理中心摘要所需 | 顯示在 Windows 管理中心擴充管理員中之套件的易記名稱。 |
 | version | 必要 | 延伸模組版本。 建議使用[ (SemVer 慣例) 的語義版本](http://semver.org/spec/v1.0.0.html)設定，但並非必要。 |
 | authors | 必要 | 如果代表您的公司發行，請使用您的公司名稱。 |
@@ -120,7 +120,7 @@ Windows 管理中心會利用 NuGet 套件和摘要來散發和下載延伸模�
 
 使用您在上面建立的 nuspec 檔案，您現在將建立 NuGet nupkg 檔案，您可以將其上傳併發布至 NuGet 摘要。
 
-1. 從[NuGet 用戶端工具網站](https://docs.microsoft.com/nuget/install-nuget-client-tools)下載 nuget.exe CLI 工具。
+1. 從[NuGet 用戶端工具網站](/nuget/install-nuget-client-tools)下載 nuget.exe CLI 工具。
 2. 執行 "nuget.exe pack [. nuspec file name]" 以建立 nupkg 檔案。
 
 ### <a name="4-signing-your-extension-nuget-package"></a>4. 簽署您的擴充功能 NuGet 套件

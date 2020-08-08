@@ -1,18 +1,16 @@
 ---
 title: 健全狀況服務設定
-ms.prod: windows-server
 manager: eldenc
 ms.author: cosdar
-ms.technology: storage-health-service
 ms.topic: article
 author: cosmosdarwin
 ms.date: 08/14/2017
-ms.openlocfilehash: d2284587ca68bbcf8648adeb2de361cb95e0f6d2
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 389dfa8890e67b3caf7d9ec6fb69b16ae6a8083b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473255"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953380"
 ---
 # <a name="health-service-settings"></a>健全狀況服務設定
 
@@ -99,7 +97,7 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.V
 "System.LogLevel" = 4
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [Windows Server 2016 中的健全狀況服務](health-service-overview.md)
 - [Windows Server 2016 中的儲存空間直接存取](../storage/storage-spaces/storage-spaces-direct-overview.md)

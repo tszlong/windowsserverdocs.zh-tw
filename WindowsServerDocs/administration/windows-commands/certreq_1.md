@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4e9276acbad0f9e9d403d3e172b4935f1de43475
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e3beb043272de304edfcac294bc9b831a60b1003
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880355"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992993"
 ---
 # <a name="certreq"></a>certreq
 
@@ -109,7 +109,7 @@ subject = CN=W2K8-BO-DC.contoso2.com
 | KeyContainer | 我們不建議針對產生新金鑰材料的新要求，設定此參數。 金鑰容器是由系統自動產生和維護。<p>對於應該使用現有金鑰材料的要求，此值可以設定為現有金鑰的金鑰容器名稱。 使用 `certutil –key` 命令來顯示機器內容可用的金鑰容器清單。 `certutil –key –user`針對目前使用者的內容使用命令。| 隨機字串值<p>**秘訣：** 使用雙引號括住具有空白或特殊字元的任何 INF 金鑰值，以避免可能的 INF 剖析問題。 | `KeyContainer = {C347BD28-7F69-4090-AA16-BC58CF4D749C}` |
 | KeyLength | 定義公開和私密金鑰的長度。 金鑰長度會影響憑證的安全性層級。 較大的金鑰長度通常會提供較高的安全性層級;不過，某些應用程式可能會有關于金鑰長度的限制。 | 密碼編譯服務提供者所支援的任何有效金鑰長度。 | `KeyLength = 2048` |
 | KeySpec | 決定金鑰是否可用於簽章、Exchange (加密) 或兩者。 | `AT_NONE, AT_SIGNATURE, AT_KEYEXCHANGE` | `KeySpec = AT_KEYEXCHANGE` |
-| KeyUsage | 定義應使用的憑證金鑰。 | <ul><li>`CERT_DIGITAL_SIGNATURE_KEY_USAGE -- 80 (128)`</li><li>`CERT_NON_REPUDIATION_KEY_USAGE -- 40 (64)`</li><li>`CERT_KEY_ENCIPHERMENT_KEY_USAGE -- 20 (32)`</li><li>`CERT_DATA_ENCIPHERMENT_KEY_USAGE -- 10 (16)`</li><li>`CERT_KEY_AGREEMENT_KEY_USAGE -- 8`</li><li>`CERT_KEY_CERT_SIGN_KEY_USAGE -- 4`</li><li>`CERT_OFFLINE_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_ENCIPHER_ONLY_KEY_USAGE -- 1`</li><li>`CERT_DECIPHER_ONLY_KEY_USAGE -- 8000 (32768)`</li></ul> | `KeyUsage = CERT_DIGITAL_SIGNATURE_KEY_USAGE | CERT_KEY_ENCIPHERMENT_KEY_USAGE`<p>**秘訣：** 多個值使用管線 (|) 符號分隔符號。 使用多個值時，請確定您使用雙引號來避免 INF 剖析問題。 所顯示的值為每個位定義的十六進位 (十進位) 值。 也可以使用較舊的語法：已設定多個位的單一十六進位值，而不是符號標記法。 例如： `KeyUsage = 0xa0` 。 |
+| KeyUsage | 定義應使用的憑證金鑰。 | <ul><li>`CERT_DIGITAL_SIGNATURE_KEY_USAGE -- 80 (128)`</li><li>`CERT_NON_REPUDIATION_KEY_USAGE -- 40 (64)`</li><li>`CERT_KEY_ENCIPHERMENT_KEY_USAGE -- 20 (32)`</li><li>`CERT_DATA_ENCIPHERMENT_KEY_USAGE -- 10 (16)`</li><li>`CERT_KEY_AGREEMENT_KEY_USAGE -- 8`</li><li>`CERT_KEY_CERT_SIGN_KEY_USAGE -- 4`</li><li>`CERT_OFFLINE_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_ENCIPHER_ONLY_KEY_USAGE -- 1`</li><li>`CERT_DECIPHER_ONLY_KEY_USAGE -- 8000 (32768)`</li></ul> | `KeyUsage = CERT_DIGITAL_SIGNATURE_KEY_USAGE | CERT_KEY_ENCIPHERMENT_KEY_USAGE`<p>**秘訣：** 多個值使用管線 (|) 符號分隔符號。 使用多個值時，請確定您使用雙引號來避免 INF 剖析問題。 所顯示的值為每個位定義的十六進位 (十進位) 值。 也可以使用較舊的語法：已設定多個位的單一十六進位值，而不是符號標記法。 例如，`KeyUsage = 0xa0`。 |
 | KeyUsageProperty | 抓取值，識別可使用私密金鑰的特定目的。 | <ul><li>`NCRYPT_ALLOW_DECRYPT_FLAG -- 1`</li><li>`NCRYPT_ALLOW_SIGNING_FLAG -- 2`</li><li>`NCRYPT_ALLOW_KEY_AGREEMENT_FLAG -- 4`</li><li>`NCRYPT_ALLOW_ALL_USAGES -- ffffff (16777215)`</li></ul> | `KeyUsageProperty = NCRYPT_ALLOW_DECRYPT_FLAG | NCRYPT_ALLOW_SIGNING_FLAG` |
 | MachineKeySet | 當您需要建立由電腦所擁有而不是使用者所擁有的憑證時，此金鑰很重要。 產生的金鑰資料會保留在安全性主體的安全性內容中， (已建立要求的使用者或電腦帳戶) 。 當系統管理員代表電腦建立憑證要求時，必須在電腦的安全性內容中建立金鑰內容，而不是系統管理員的安全性內容。 否則，電腦無法存取其私密金鑰，因為它會在系統管理員的安全性內容中。 | `true | false`. 預設為 false。 | `MachineKeySet = true` |
 | NotBefore | 指定無法發出要求的日期或日期和時間。 `NotBefore`可以與和搭配 `ValidityPeriod` 使用 `ValidityPeriodUnits` 。 | 日期或日期和時間 | `NotBefore = 7/24/2012 10:31 AM`<p>**秘訣：** `NotBefore`和 `NotAfter` 僅適用于 R `equestType=cert` 。 日期剖析嘗試區分地區設定。 使用月份名稱會區分其意義，且應該在每個地區設定中使用。 |
@@ -339,7 +339,7 @@ certreq –enroll -machine –cert 61 2d 3c fe 00 00 00 00 00 05 renew
 
 - [如何手動建立網頁伺服器 SSL 憑證](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/how-to-create-a-web-server-ssl-certificate-manually/ba-p/1128529)
 
-- [System Center Operations Manager 代理程式的憑證註冊](https://docs.microsoft.com/system-center/scom/plan-planning-agent-deployment?view=sc-om-2019)
+- [System Center Operations Manager 代理程式的憑證註冊](/system-center/scom/plan-planning-agent-deployment?view=sc-om-2019)
 
 - [Active Directory 憑證服務概觀](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11))
 

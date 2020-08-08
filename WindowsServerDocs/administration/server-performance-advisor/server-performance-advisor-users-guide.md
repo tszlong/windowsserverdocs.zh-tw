@@ -7,12 +7,12 @@ ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
 ms.topic: article
-ms.openlocfilehash: dd6270f1aadea058a1b0fb6ffb3f7dad59a54811
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 1a7ea3b902793f281156930a8e666c1d32d05cbe
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895716"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993116"
 ---
 # <a name="server-performance-advisor-users-guide"></a>Server Performance Advisor 使用者指南
 
@@ -591,7 +591,7 @@ SPA 主控台支援透過 UI 進行週期性資料收集。 如果該功能不�
 | SpaServer | **-SqlInstanceName**SQL Server 實例的名稱。<br>**-SqlDatabaseName**SPA 專案資料庫的名稱。 | 取得資料庫中的伺服器清單。 它會傳回物件的清單，包括下列屬性：名稱、狀態、檔案共用和批註。 |
 | SpaAdvisorPacks | **-SqlInstanceName**SQL Server 實例的名稱<br>**-SqlDatabaseName**SPA 專案資料庫的名稱 | 取得資料庫中的 advisor 套件清單。 它會傳回物件的清單，包括下列屬性： Name、DisplayName、Author 和 Version。 |
 
-Windows PowerShell 提供透過加密檔案傳遞認證的功能，以啟用自動化案例。 如需使用加密檔案將認證傳遞給 Cmdlet 的詳細資訊，請參閱[建立可接受認證的 Windows PowerShell 腳本](https://technet.microsoft.com/magazine/ff714574.aspx)。
+Windows PowerShell 提供透過加密檔案傳遞認證的功能，以啟用自動化案例。 如需使用加密檔案將認證傳遞給 Cmdlet 的詳細資訊，請參閱[建立可接受認證的 Windows PowerShell 腳本](/previous-versions/technet-magazine/ff714574(v=msdn.10))。
 
 ### <a name="automating-spa-report-collection-by-using-windows-powershell"></a>使用 Windows PowerShell 自動化 SPA 報表集合
 
@@ -774,7 +774,7 @@ SPA 會保護 SPA 成功產生之每個報告的完整性。 同時，SPA 並不
 
 * **資料分析會話**特定目標伺服器上的效能分析。 資料分析會話可以包含多個 advisor 套件。 來自這些 advisor 套件的資料收集器集合會合並成單一資料收集器集合。 單一資料分析會話的所有效能記錄都會在同一時間週期內收集。 分析在相同資料分析會話中執行的 advisor 套件所產生的報表，可協助使用者瞭解整體效能狀況，並找出效能問題的根本原因。
 
-* **Windows 事件追蹤**Windows 中提供的高效能、低負擔、可擴充的追蹤系統。 它提供程式碼剖析和偵錯工具功能，可用於針對各種案例進行疑難排解。 SPA 會使用 ETW 事件做為產生效能報告的資料來源。 如需 ETW 的一般資訊，請參閱[使用 Etw 改善偵錯工具和效能微調](https://msdn.microsoft.com/magazine/cc163437.aspx)。
+* **Windows 事件追蹤**Windows 中提供的高效能、低負擔、可擴充的追蹤系統。 它提供程式碼剖析和偵錯工具功能，可用於針對各種案例進行疑難排解。 SPA 會使用 ETW 事件做為產生效能報告的資料來源。 如需 ETW 的一般資訊，請參閱[使用 Etw 改善偵錯工具和效能微調](/archive/msdn-magazine/2007/april/event-tracing-improve-debugging-and-performance-tuning-with-etw)。
 
 * **Windows Management Instrumentation (WMI) **Windows 中管理資料和作業的基礎結構。 您可以撰寫 WMI 腳本或應用程式，將遠端電腦上的系統管理工作自動化。 WMI 也會提供管理資料給作業系統的其他部分和產品。 SPA 會使用 WMI 類別資訊和資料點做為產生效能報告的來源。
 

@@ -1,19 +1,17 @@
 ---
 title: SDN 的內部 DNS 服務 (iDNS)
-description: 本主題說明如何使用內部 DNS （Idn）（與 Windows Server 2016 中的軟體定義網路整合），為您的託管租使用者工作負載提供 DNS 服務。
+description: 本主題說明如何使用內部 DNS (Idn) （與 Windows Server 2016 中的軟體定義網路整合），為託管的租使用者工作負載提供 DNS 服務。
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: get-started-article
 ms.assetid: ad848a5b-0811-4c67-afe5-6147489c0384
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 47765dc6a08821b0b7032261467bef78239f8369
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 2980e073c34d6177846175563e4d374b439ced44
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520247"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952598"
 ---
 # <a name="internal-dns-service-idns-for-sdn"></a>SDN 的內部 DNS 服務 (iDNS)
 

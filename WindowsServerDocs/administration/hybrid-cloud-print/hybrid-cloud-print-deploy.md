@@ -7,12 +7,12 @@ author: msjimwu
 ms.author: coreyp
 manager: dongill
 ms.date: 3/15/2018
-ms.openlocfilehash: 3e5b732beb502bb0bf365136947ff380caf71545
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 253cf78e39809473fc865de90915b6a9f870d098
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879909"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992763"
 ---
 # <a name="deploy-windows-server-hybrid-cloud-print"></a>部署 Windows Server 混合式雲端列印
 
@@ -34,19 +34,19 @@ ms.locfileid: "87879909"
 
 - 執行 Active Directory 的 Windows Server 2016 或更新版本電腦。
 
-  如需設定 Active Directory 的說明，請參閱逐步解說[：在 Windows Server 2016 中設定 Active Directory](https://blogs.technet.microsoft.com/canitpro/2017/02/22/step-by-step-setting-up-active-directory-in-windows-server-2016/) 。
+  如需設定 Active Directory 的說明，請參閱逐步解說[：在 Windows Server 2016 中設定 Active Directory](/archive/blogs/canitpro/step-by-step-setting-up-active-directory-in-windows-server-2016) 。
 
 - 以「列印伺服器」執行的專用、已加入網域的 Windows Server 2016 或更新版本電腦。
 
 - 執行為連接器伺服器的專用、已加入網域的 Windows Server 2016 或更新版本電腦。
 
-  如需詳細資訊，請參閱[瞭解 Azure AD 應用程式 Proxy 連接器](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-connectors)。
+  如需詳細資訊，請參閱[瞭解 Azure AD 應用程式 Proxy 連接器](/azure/active-directory/manage-apps/application-proxy-connectors)。
 
 - Windows 10 秋季建立者更新或更新版本的電腦，用於發佈印表機。
 
 - 公開的功能變數名稱。
 
-  您可以使用 Azure (*domainname*. onmicrosoft.com) 所建立的功能變數名稱，或購買您自己的功能變數名稱。 請參閱[使用 Azure Active Directory 入口網站新增自訂功能變數名稱](https://docs.microsoft.com/azure/active-directory/fundamentals/add-custom-domain)。
+  您可以使用 Azure (*domainname*. onmicrosoft.com) 所建立的功能變數名稱，或購買您自己的功能變數名稱。 請參閱[使用 Azure Active Directory 入口網站新增自訂功能變數名稱](/azure/active-directory/fundamentals/add-custom-domain)。
 
 ## <a name="deployment-steps"></a>部署步驟
 
@@ -54,13 +54,13 @@ ms.locfileid: "87879909"
 
 ### <a name="step-1---install-azure-ad-connect"></a>步驟 1-安裝 Azure AD Connect
 
-1. Azure AD connect 會同步處理 Azure AD 至內部部署 AD。 在具有 Active Directory 的 Windows Server 電腦上，下載並安裝具有快速設定的 Azure AD Connect 軟體。 請參閱[使用快速設定開始使用 Azure AD Connect](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-express)。
+1. Azure AD connect 會同步處理 Azure AD 至內部部署 AD。 在具有 Active Directory 的 Windows Server 電腦上，下載並安裝具有快速設定的 Azure AD Connect 軟體。 請參閱[使用快速設定開始使用 Azure AD Connect](/azure/active-directory/hybrid/how-to-connect-install-express)。
 
 ### <a name="step-2---install-application-proxy"></a>步驟 2-安裝應用程式 Proxy
 
 1. 應用程式 proxy 可讓您組織中的使用者從雲端存取內部部署應用程式。 在連接器伺服器上安裝應用程式 Proxy。
-    - 如需安裝指示，請參閱[教學課程：在 Azure Active Directory 中新增透過應用程式 Proxy 進行遠端存取的內部部署應用程式](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-add-on-premises-application)。
-    - 如果組織具有複雜的網路拓撲，則建議使用專用的連接器群組。 請參閱[使用連接器群組在個別的網路和位置上發佈應用程式](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-connector-groups)。
+    - 如需安裝指示，請參閱[教學課程：在 Azure Active Directory 中新增透過應用程式 Proxy 進行遠端存取的內部部署應用程式](/azure/active-directory/manage-apps/application-proxy-add-on-premises-application)。
+    - 如果組織具有複雜的網路拓撲，則建議使用專用的連接器群組。 請參閱[使用連接器群組在個別的網路和位置上發佈應用程式](/azure/active-directory/manage-apps/application-proxy-connector-groups)。
 
 ### <a name="step-3---register-and-configure-applications"></a>步驟 3-註冊及設定應用程式
 
@@ -174,7 +174,7 @@ ms.locfileid: "87879909"
     - 安裝下列伺服器角色：
         - 列印伺服器角色
         - Internet Information Service (IIS)
-    - 如需如何安裝伺服器角色的詳細資訊，請參閱[使用新增角色及功能嚮導來安裝角色、角色服務和功能](https://docs.microsoft.com/windows-server/administration/server-manager/install-or-uninstall-roles-role-services-or-features#BKMK_installarfw)。
+    - 如需如何安裝伺服器角色的詳細資訊，請參閱[使用新增角色及功能嚮導來安裝角色、角色服務和功能](../server-manager/install-or-uninstall-roles-role-services-or-features.md#install-roles-role-services-and-features-by-using-the-add-roles-and-features-wizard)。
 
     ![列印伺服器角色](../media/hybrid-cloud-print/PrintServer-Roles.png)
 
@@ -297,13 +297,13 @@ ms.locfileid: "87879909"
         `sqlite3.exe MopriaDeviceDb.db .read MopriaSQLiteDb.sql`
 
     - 在 [檔案管理器] 中，開啟 [MopriaDeviceDb] 檔案內容，以新增允許在 [安全性] 索引標籤中發佈至 Mopria 資料庫的使用者或群組。使用者或群組必須存在於內部部署 Active Directory，並與 Azure AD 同步處理。
-    - 如果將解決方案部署到不可路由傳送的網域 (例如*mydomain*) ，Azure AD 網域 (例如*domainname*. onmicrosoft.com，或是從協力廠商購買的) 必須在內部部署 ACTIVE DIRECTORY 中新增為 UPN 尾碼。 如此一來，就可以在資料庫檔案的 [安全性] 設定中，新增與發行印表機相同的使用者 (例如 admin@*domainname*. onmicrosoft.com) 。 如需目錄同步作業，請參閱[準備無法路由](https://docs.microsoft.com/office365/enterprise/prepare-a-non-routable-domain-for-directory-synchronization)傳送的網域。
+    - 如果將解決方案部署到不可路由傳送的網域 (例如*mydomain*) ，Azure AD 網域 (例如*domainname*. onmicrosoft.com，或是從協力廠商購買的) 必須在內部部署 ACTIVE DIRECTORY 中新增為 UPN 尾碼。 如此一來，就可以在資料庫檔案的 [安全性] 設定中，新增與發行印表機相同的使用者 (例如 admin@*domainname*. onmicrosoft.com) 。 如需目錄同步作業，請參閱[準備無法路由](/office365/enterprise/prepare-a-non-routable-domain-for-directory-synchronization)傳送的網域。
 
     ![列印伺服器 Mopria 登錄機碼](../media/hybrid-cloud-print/PrintServer-SQLiteDB.png)
 
 ### <a name="step-5-optional---configure-pre-authentication-with-azure-ad"></a>步驟 5 \[ 選擇性 \] -使用 Azure AD 設定預先驗證
 
-1. 請參閱檔[Kerberos 限制委派，以使用應用程式 Proxy 單一登入您的應用程式](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-configure-single-sign-on-with-kcd)。
+1. 請參閱檔[Kerberos 限制委派，以使用應用程式 Proxy 單一登入您的應用程式](/azure/active-directory/manage-apps/application-proxy-configure-single-sign-on-with-kcd)。
 
 2. 設定內部部署 Active Directory。
     - 在 Active Directory 機上，開啟伺服器管理員並移至 [ **工具**] [  >  **Active Directory 使用者和電腦**]。
@@ -357,7 +357,7 @@ ms.locfileid: "87879909"
 |印表機探索服務資源 URI  |MopriaDiscoveryResourceId      |
 
 > [!NOTE]
-> 如果 [雲端列印原則] 群組無法使用，但 MDM 提供者支援 OMA-URI 設定，則您可以設定相同的原則。  如需其他資訊，請參閱[這裡](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-enterprisecloudprint#enterprisecloudprint-cloudprintoauthauthority)。
+> 如果 [雲端列印原則] 群組無法使用，但 MDM 提供者支援 OMA-URI 設定，則您可以設定相同的原則。  如需其他資訊，請參閱[這裡](/windows/client-management/mdm/policy-csp-enterprisecloudprint#enterprisecloudprint-cloudprintoauthauthority)。
 
 - OMA-URI 的值
   - CloudPrintOAuthAuthority =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthAuthority
@@ -446,9 +446,9 @@ ms.locfileid: "87879909"
 
 |錯誤 |建議的步驟 |
 |------|------|
-|CloudPrintDeploy PowerShell 腳本失敗 | <ul><li>確定 Windows Server 有最新的更新。</li><li>如果您使用 Windows Server Update Services (WSUS) ，請參閱[如何在使用 wsus/SCCM 時，讓功能隨選和語言套件](https://docs.microsoft.com/windows/deployment/update/fod-and-lang-packs)使用。</li></ul> |
+|CloudPrintDeploy PowerShell 腳本失敗 | <ul><li>確定 Windows Server 有最新的更新。</li><li>如果您使用 Windows Server Update Services (WSUS) ，請參閱[如何在使用 wsus/SCCM 時，讓功能隨選和語言套件](/windows/deployment/update/fod-and-lang-packs)使用。</li></ul> |
 |SQLite 安裝失敗，訊息：偵測到封裝 ' System.object ' 的相依性迴圈 | Install-Package system.object-providername nuget-SkipDependencies<br>Install-Package EF6-providername nuget-SkipDependencies<br>Install-Package system.string-providername nuget-SkipDependencies<br><br>成功下載套件之後，請確定它們都是相同的版本。 如果不是，請將-requiredversion 參數新增至上述命令，並將它們設定為相同的版本。 |
-|發行印表機失敗 | <ul><li>針對 [傳遞預先驗證]，請確定發行印表機的使用者已獲得發行資料庫的適當許可權。</li><li>針對 Azure AD 預先驗證，請確定已在 IIS 中啟用 Windows 驗證。 請參閱步驟5.3。 此外，請先嘗試傳遞預先驗證。 如果通過預先驗證運作，問題可能與應用程式 proxy 相關。 請參閱針對[應用程式 Proxy 問題和錯誤訊息進行疑難排解](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-troubleshoot)。 請注意，切換到 [通過] 會重設單一登入設定;再次流覽步驟5以重新設定 Azure AD 預先驗證。</li></ul> |
+|發行印表機失敗 | <ul><li>針對 [傳遞預先驗證]，請確定發行印表機的使用者已獲得發行資料庫的適當許可權。</li><li>針對 Azure AD 預先驗證，請確定已在 IIS 中啟用 Windows 驗證。 請參閱步驟5.3。 此外，請先嘗試傳遞預先驗證。 如果通過預先驗證運作，問題可能與應用程式 proxy 相關。 請參閱針對[應用程式 Proxy 問題和錯誤訊息進行疑難排解](/azure/active-directory/manage-apps/application-proxy-troubleshoot)。 請注意，切換到 [通過] 會重設單一登入設定;再次流覽步驟5以重新設定 Azure AD 預先驗證。</li></ul> |
 |列印工作會保持傳送至印表機狀態 | <ul><li>請確定連接器伺服器上已啟用 TLS 1.2。 請參閱步驟2.1 中的連結文章。</li><li>請確定連接器伺服器上的 HTTP2 已停用。 請參閱步驟2.1 中的連結文章。</li></ul> |
 
 以下是可協助疑難排解的記錄檔位置

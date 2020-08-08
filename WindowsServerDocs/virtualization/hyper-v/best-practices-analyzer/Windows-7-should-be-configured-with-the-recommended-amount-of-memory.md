@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: d77d648c-6e26-43fa-be0a-6eb4b28f9cb4
 author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 57fea56317f61d2fee270fb62c2540afb2adf971
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e88f2e96c4862cb89caf328546488566ebd96c18
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963625"
+ms.locfileid: "87992625"
 ---
 # <a name="windows-7-should-be-configured-with-the-recommended-amount-of-memory"></a>應該使用建議的記憶體數量來設定 Windows 7
 
@@ -68,7 +68,4 @@ Set-VMMemory <MyVM> -StartupBytes 1GB
 ```
 
 ## <a name="see-also"></a>另請參閱
-[設定-Set-vmmemory](https://technet.microsoft.com/library/hh848572.aspx)
-
-
-
+[設定-Set-vmmemory](/powershell/module/hyper-v/set-vmmemory?view=win10-ps)

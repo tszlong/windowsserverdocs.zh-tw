@@ -1,19 +1,17 @@
 ---
 title: 建立解決方案延伸模組的連接提供者
-description: 開發解決方案延伸模組 Windows 管理中心 SDK （Project 檀香山）-建立連接提供者
-ms.technology: manage
+description: 開發解決方案延伸模組 Windows 管理中心 SDK (Project 檀香山) -建立連線提供者
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 9c04db3196d1e806e50af9164b3c8bcdfb19b079
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ec11b8a6b9129348ec2405548c21fa9d6ec5deff
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406886"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952679"
 ---
 # <a name="create-a-connection-provider-for-a-solution-extension"></a>建立解決方案延伸模組的連接提供者
 
@@ -23,7 +21,7 @@ ms.locfileid: "71406886"
 
 根據預設，Windows 管理中心會隨附下列連接提供者：
 
-* Server
+* 伺服器
 * Windows 用戶端
 * 容錯移轉叢集
 * HCI 叢集
@@ -34,15 +32,15 @@ ms.locfileid: "71406886"
 * 定義連接狀態提供者
 * 在應用層中執行連接提供者
 
-## <a name="add-connection-provider-details-to-manifestjson"></a>將連接提供者詳細資料新增至資訊清單 json
+## <a name="add-connection-provider-details-to-manifestjson"></a>將連接提供者詳細資料新增至 manifest.js
 
-現在，我們將逐步解說您在專案的```manifest.json```檔案中定義連接提供者所需知道的事項。
+現在，我們將逐步解說您在專案的檔案中定義連接提供者所需知道的事項 ```manifest.json``` 。
 
-### <a name="create-entry-in-manifestjson"></a>在資訊清單中建立專案。 json
+### <a name="create-entry-in-manifestjson"></a>在 manifest.js中建立專案
 
-此```manifest.json```檔案位於 \src 資料夾中，其中包含專案的進入點定義。 進入點的類型包括工具、解決方案和連接提供者。 我們將定義連接提供者。
+此檔案 ```manifest.json``` 位於 \src 資料夾中，其中包含專案的進入點定義。 進入點的類型包括工具、解決方案和連接提供者。 我們將定義連接提供者。
 
-在資訊清單中，連接提供者專案的範例如下：
+manifest.js上的連接提供者專案範例如下：
 
 ``` json
     {
@@ -75,29 +73,29 @@ ms.locfileid: "71406886"
 
 | 屬性 | 描述 |
 | -------- | ----------- |
-| entryPointType | 這是必要的屬性。 有三個有效的值： "tool"、"solution" 和 "connectionProvider"。 | 
-| name | 識別解決方案範圍內的連接提供者。 這個值在完整的 Windows 管理中心實例（而不只是解決方案）內必須是唯一的。 |
+| entryPointType | 這是必要的屬性。 有三個有效的值： "tool"、"solution" 和 "connectionProvider"。 |
+| NAME | 識別解決方案範圍內的連接提供者。 這個值在完整的 Windows 管理中心實例內必須是唯一的， (不只是解決方案) 。 |
 | path | 表示「新增連接」 UI 的 URL 路徑（如果它將由方案設定）。 此值必須對應至在應用程式路由中設定的路由。模組. ts 檔案。 當方案進入點設定為使用 [連線] rootNavigationBehavior 時，此路由會載入命令介面所使用的模組，以顯示 [新增連線] UI。 RootNavigationBehavior 一節中提供的詳細資訊。 |
 | displayName | 在這裡輸入的值會顯示在命令介面的右手邊，在使用者載入解決方案的 [連線] 頁面時，會在黑色 Windows 系統管理中心列底下。 |
-| 圖示 | 表示解決方案下拉式功能表中用來表示方案的圖示。 |
+| icon | 表示解決方案下拉式功能表中用來表示方案的圖示。 |
 | description | 輸入進入點的簡短描述。 |
-| connectionType | 表示提供者將載入的連線類型。 這裡輸入的值也會用於解決方案進入點，以指定解決方案可以載入這些連接。 這裡輸入的值也會用在工具進入點中，表示該工具與這個型別相容。 在此輸入的這個值也會用於在「新增視窗」上提交至 RPC 呼叫的連線物件（在應用層的執行步驟中）。 |
+| connectionType | 表示提供者將載入的連線類型。 這裡輸入的值也會用於解決方案進入點，以指定解決方案可以載入這些連接。 這裡輸入的值也會用於工具進入點 (s) ，以指出此工具與此類型相容。 在此輸入的這個值也會用於在「新增視窗」上提交至 RPC 呼叫的連線物件（在應用層的執行步驟中）。 |
 | connectionTypeName | 在 connections 資料表中用來代表使用您連接提供者的連接。 這應該是類型的複數名稱。 |
 | connectionTypeUrlName | 在 Windows 系統管理中心已連接到實例之後，用來建立 URL 以代表載入的方案。 此專案會在連接之後和目標之前使用。 在此範例中，"connectionexample" 是此值出現在 URL 中的位置：`http://localhost:6516/solutionexample/connections/connectionexample/con-fake1.corp.contoso.com` |
-| connectionTypeDefaultSolution | 表示連接提供者應該載入的預設元件。 這個值是的組合： <br>[a] 在資訊清單頂端定義的擴充套件名稱; <br>[b] 驚嘆號（！）; <br>[c] 方案進入點名稱。    <br>對於名稱為 "msft. mySample-extension" 的專案，以及名稱為 "example" 的方案進入點，此值會是 "msft. solutionExample-extension！ example"。 |
-| connectionTypeDefaultTool | 表示應該在成功連接時載入的預設工具。 這個屬性值是由兩個部分所組成，類似于 connectionTypeDefaultSolution。 這個值是的組合： <br>[a] 在資訊清單頂端定義的擴充套件名稱; <br>[b] 驚嘆號（！）; <br>[c] 應該一開始載入之工具的工具進入點名稱。 <br>對於名稱為 "msft. solutionExample-extension" 的專案，以及名稱為 "example" 的方案進入點，此值會是 "msft. solutionExample-extension！ example"。 |
+| connectionTypeDefaultSolution | 表示連接提供者應該載入的預設元件。 這個值是的組合： <br>[a] 在資訊清單頂端定義的擴充套件名稱; <br>[b] 驚嘆號 (！ ) ; <br>[c] 方案進入點名稱。    <br>對於名稱為 "msft. mySample-extension" 的專案，以及名稱為 "example" 的方案進入點，此值會是 "msft. solutionExample-extension！ example"。 |
+| connectionTypeDefaultTool | 表示應該在成功連接時載入的預設工具。 這個屬性值是由兩個部分所組成，類似于 connectionTypeDefaultSolution。 這個值是的組合： <br>[a] 在資訊清單頂端定義的擴充套件名稱; <br>[b] 驚嘆號 (！ ) ; <br>[c] 應該一開始載入之工具的工具進入點名稱。 <br>對於名稱為 "msft. solutionExample-extension" 的專案，以及名稱為 "example" 的方案進入點，此值會是 "msft. solutionExample-extension！ example"。 |
 | connectionStatusProvider | 請參閱「定義連接狀態提供者」一節。 |
 
 ## <a name="define-connection-status-provider"></a>定義連接狀態提供者
 
-「線上狀態提供者」是一種機制，可讓目標驗證為線上且可用，同時確保連接的使用者具有存取目標的許可權。 目前有兩種類型的連接狀態提供者：PowerShell 和 RelativeGatewayUrl。
+「線上狀態提供者」是一種機制，可讓目標驗證為線上且可用，同時確保連接的使用者具有存取目標的許可權。 目前有兩種類型的線上狀態提供者： PowerShell 和 RelativeGatewayUrl。
 
 *   <strong>Powershell 線上狀態提供者</strong>-判斷目標是否在線上，以及是否可以使用 PowerShell 腳本來存取。 結果必須在具有單一屬性 "status" 的物件中傳回，如下所定義。
 *   <strong>RelativeGatewayUrl 連接狀態提供者</strong>-判斷目標是否在線上，以及是否可透過 rest 呼叫來存取。 結果必須在具有單一屬性 "status" 的物件中傳回，如下所定義。
 
 ### <a name="define-status"></a>定義狀態
 
-連接狀態提供者必須傳回具有符合下列格式之單一屬性```status```的物件：
+連接狀態提供者必須傳回具有符合下列格式之單一屬性的物件 ```status``` ：
 
 ``` json
 {
@@ -115,16 +113,16 @@ ms.locfileid: "71406886"
 
 * <strong>類型</strong>-狀態傳回類型。 類型具有下列列舉值。 若為任何值2或以上，平臺將不會流覽至已連接的物件，而且 UI 中會顯示錯誤。
 
-   各種
+   型別：
 
   | 值 | 描述 |
   | ----- | ----------- |
-  | 0 | Online |
+  | 0 | 線上 |
   | 1 | 警告 |
   | 2 | 未經授權 |
-  | 3 | Error |
-  | 4 | 時發生 |
-  | 5 | 不明 |
+  | 3 | 錯誤 |
+  | 4 | 嚴重 |
+  | 5 | Unknown |
 
 * <strong>詳細資料</strong>-描述狀態傳回類型的其他詳細資料。
 
@@ -132,7 +130,7 @@ ms.locfileid: "71406886"
 
 線上狀態提供者 PowerShell 腳本會判斷目標是否在線上，以及是否可以使用 PowerShell 腳本來存取。 必須在具有單一屬性「狀態」的物件中傳回結果。 範例腳本如下所示。
 
-範例 PowerShell 腳本：
+範例 PowerShell 指令碼：
 
 ```PowerShell
 ## Get-My-Status ##
@@ -162,7 +160,7 @@ Get-Status
 
 ### <a name="define-relativegatewayurl-connection-status-provider-method"></a>定義 RelativeGatewayUrl 連接狀態提供者方法
 
-線上狀態提供者```RelativeGatewayUrl```方法會呼叫 rest API，以判斷目標是否在線上且可供存取。 必須在具有單一屬性「狀態」的物件中傳回結果。 RelativeGatewayUrl 的範例連接提供者專案如下所示。
+線上狀態提供者 ```RelativeGatewayUrl``` 方法會呼叫 REST API，以判斷目標是否在線上且可供存取。 必須在具有單一屬性「狀態」的物件中傳回結果。 RelativeGatewayUrl 的 manifest.js中的連接提供者專案範例如下所示。
 
 ``` json
     {
@@ -198,7 +196,7 @@ Get-Status
 
 您可以在提供者的 "defaultValueMap" 屬性中包含索引鍵和值，以微調時間來格式化狀態傳回物件中的標籤和詳細資料值。
 
-例如，如果您新增下列值，則每當「defaultConnection_test」顯示為標籤或詳細資料的值時，Windows 管理中心會自動將金鑰取代為設定的資源字串值。
+例如，如果您新增下列值，每當「defaultConnection_test」顯示為標籤或詳細資料的值時，Windows 管理中心會自動以設定的資源字串值取代金鑰。
 
 ``` json
     "defaultConnection_test": "resources:strings:addServer_status_defaultConnection_label"
@@ -208,12 +206,12 @@ Get-Status
 
 現在，我們將建立可執行 OnInit 的 TypeScript 類別，以在應用層中實作為連接提供者。 類別具有下列函數：
 
-| 函數 | 描述 |
+| 函式 | 描述 |
 | -------- | ----------- |
-| 函數（私用 appCoNtextService：AppCoNtextService，私用路由：ActivatedRoute) |  |
-| 公用 ngOnInit （） |  |
-| 公用 onSubmit （） | 包含在嘗試進行新增連接時，用來更新 shell 的邏輯 |
-| 公用 onCancel （） | 包含在取消新增連接嘗試時，用來更新 shell 的邏輯 |
+|  (私用 appCoNtextService 的構造函式： AppCoNtextService、私用路由： ActivatedRoute)  |  |
+| 公用 ngOnInit ( # A1 |  |
+| 公用 onSubmit ( # A1 | 包含在嘗試進行新增連接時，用來更新 shell 的邏輯 |
+| 公用 onCancel ( # A1 | 包含在取消新增連接嘗試時，用來更新 shell 的邏輯 |
 
 ### <a name="define-onsubmit"></a>定義 onSubmit
 
@@ -311,7 +309,7 @@ this.appContextService.rpc.updateData(EnvironmentModule.nameOfShell, '##', <RpcU
 
 ## <a name="connection-provider-example"></a>連接提供者範例
 
-執行連接提供者的完整 TypeScript 類別如下。 請注意，"connectionType" 字串符合在資訊清單中的連線提供者中所定義的 connectionType。
+執行連接提供者的完整 TypeScript 類別如下。 請注意，"connectionType" 字串符合中的連接提供者 manifest.js中所定義的 connectionType。
 
 ``` ts
 import { Component, OnInit } from '@angular/core';
@@ -331,7 +329,7 @@ export class AddExampleComponent implements OnInit {
   public newConnectionName: string;
   public strings = MsftSme.resourcesStrings<Strings>().SolutionExample;
   private connectionType = 'msft.sme.connection-type.example'; // This needs to match the connectionTypes value used in the manifest.json.
-  
+
   constructor(private appContextService: AppContextService, private route: ActivatedRoute) {
     // TODO:
   }

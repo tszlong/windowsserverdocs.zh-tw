@@ -7,12 +7,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 940c5d7795ff4dcf84bad0727d1f92d155b3ea1b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: a8584b5e2cf1048e0bba5c217aa3e6031600839a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895660"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993046"
 ---
 # <a name="get-started-with-software-inventory-logging"></a>軟體清查記錄入門
 
@@ -39,9 +39,8 @@ Windows Server 中的軟體清查記錄功能有一組簡單的 PowerShell Cmdle
 -   藉由啟用每部伺服器的軟體清查記錄功能，並選擇網頁伺服器目標 URI 和憑證指紋以進行驗證，來匯總各種軟體資產管理案例的軟體和伺服器清查資訊。
 
 ## <a name="see-also"></a>另請參閱
-[軟體清查記錄彙總工具](https://technet.microsoft.com/library/mt572043.aspx)<br>
+[軟體清查記錄彙總工具](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/mt572043(v=ws.11))<br>
 [管理軟體清查記錄](manage-software-inventory-logging.md)<br>
-[Windows PowerShell 中的軟體清查記錄 Cmdlet](https://technet.microsoft.com/library/dn283390.aspx)<br>
+[Windows PowerShell 中的軟體清查記錄 Cmdlet](/powershell/module/softwareinventorylogging/?view=winserver2012R2-ps)<br>
 [Microsoft 評估及規劃工具](https://www.microsoft.com/download/en/details.aspx?id=7826) 
  組[大量啟用管理工具](https://blogs.technet.com/b/volume-licensing/)
-

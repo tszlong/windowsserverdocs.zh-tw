@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 03/20/2019
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: e3f215abaccbd1f95ee46eca93a573aa1db9e065
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 3615d7a0a536a0bb54efee2e8982f9b4e3686c8d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519406"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953327"
 ---
 # <a name="troubleshooting-domain-controller-deployment"></a>疑難排解網域控制站部署
 
@@ -112,7 +110,7 @@ ms.locfileid: "87519406"
 
 ### <a name="promotion-and-demotion-success-codes"></a>升級與降級成功代碼
 
-| 錯誤碼 | 說明 | 注意 |
+| 錯誤碼 | 說明 | 注意事項 |
 |--|--|--|
 | 1 | 順利結束 | 您仍然必須重新開機，這只是已移除自動重新啟動旗標的附註 |
 | 2 | 順利結束，需重新開機 |  |
@@ -284,7 +282,7 @@ ms.locfileid: "87519406"
 
 | 問題 | 取消選取/選取 [必要時自動重新啟動目的地伺服器] 時未執行任何動作 |
 |--|--|
-| 徵狀 | 如果選取（或不選取）伺服器管理員選項**會在必要時自動重新開機每個目的地伺服器**，以透過移除角色來 whendemoting 網域控制站，不論選擇為何，伺服器一律會重新開機。 |
+| 徵狀 | 如果選取 (或不選取) 伺服器管理員選項**會在需要時自動重新開機每個目的地伺服器**whendemoting 透過移除角色的網域控制站，不論選擇為何，伺服器一律會重新開機。 |
 | 解決方式和注意事項 | 這是刻意設計的。 無論此設定為何，降級處理程序都會重新啟動伺服器。 |
 
 | 問題 | Dcpromo.log 顯示「[錯誤] 伺服器檔案設定安性失敗，發生 2 項失敗」 |
@@ -294,12 +292,12 @@ ms.locfileid: "87519406"
 
 | 問題 | 先決條件 adprep 檢查失敗，發生「 無法執行 Exchange 架構衝突檢查 」錯誤 |
 |--|--|
-| 徵狀 | 嘗試將 Windows Server 2012 網域控制站升級到現有的 Windows Server 2003、Windows Server 2008 或 Windows Server 2008 R2 樹系時，先決條件檢查失敗並發生錯誤：<p>AD 準備的必要條件的程式碼驗證失敗。 無法執行網域的 Exchange 架構衝突檢查 *<domain name>* （例外狀況： RPC 伺服器無法使用）<p>adprep.log 顯示錯誤：<p>Code-Adprep 無法從伺服器抓取資料*<domain controller>*<p>透過 Windows Management Instrumentation （WMI）。 |
-| 解決方式和注意事項 | 新的網域控制站無法透過 DCOM/RPC 通訊協定對現有網域控制站存取 WMI。 到目前為止，有三個原因造成此問題：<p>-防火牆規則會封鎖對現有網域控制站的存取<p>-現有網域控制站上的「以服務方式登入」（SeServiceLogonRight）許可權遺漏網路服務帳戶<p>-在網域控制站上停用 NTLM，使用[Ntlm 驗證的限制簡介](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560653(v=ws.10))中所述的安全性原則 |
+| 徵狀 | 嘗試將 Windows Server 2012 網域控制站升級到現有的 Windows Server 2003、Windows Server 2008 或 Windows Server 2008 R2 樹系時，先決條件檢查失敗並發生錯誤：<p>AD 準備的必要條件的程式碼驗證失敗。 無法執行網域 (的 Exchange 架構衝突檢查 *<domain name>* ： RPC 伺服器無法使用) <p>adprep.log 顯示錯誤：<p>Code-Adprep 無法從伺服器抓取資料*<domain controller>*<p>透過 Windows Management Instrumentation (WMI) 。 |
+| 解決方式和注意事項 | 新的網域控制站無法透過 DCOM/RPC 通訊協定對現有網域控制站存取 WMI。 到目前為止，有三個原因造成此問題：<p>-防火牆規則會封鎖對現有網域控制站的存取<p>-「以服務方式登入」的網路服務帳戶遺失 (SeServiceLogonRight 在現有網域控制站上) 許可權<p>-在網域控制站上停用 NTLM，使用[Ntlm 驗證的限制簡介](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560653(v=ws.10))中所述的安全性原則 |
 
 | 問題 | 建立新的 AD DS 樹系一律會顯示 DNS 警告 |
 |--|--|
-| 徵狀 | 在新的網域控制站上為其本身建立新的 AD DS 樹系及建立 DNS 區域時，您一定會收到警告訊息：<p>程式碼-在 DNS 設定中偵測到錯誤。 <br />此電腦所使用的 DNS 伺服器都不會在逾時間隔內回應。<br />（錯誤碼 0x000005B4 "ERROR_TIMEOUT"） |
+| 徵狀 | 在新的網域控制站上為其本身建立新的 AD DS 樹系及建立 DNS 區域時，您一定會收到警告訊息：<p>程式碼-在 DNS 設定中偵測到錯誤。 <br />此電腦所使用的 DNS 伺服器都不會在逾時間隔內回應。<br /> (錯誤碼0x000005B4 「ERROR_TIMEOUT」 )  |
 | 解決方式和注意事項 | 忽略。 這個警告是在新樹系之根網域中第一個網域控制站上刻意設計的，以方便您指向現有 DNS 伺服器和區域。 |
 
 | 問題 | Windows PowerShell-whatif 引數傳回不正確的 DNS 伺服器資訊 |
@@ -319,7 +317,7 @@ ms.locfileid: "87519406"
 
 | 問題 | 升級或降級失敗，且顯示 [無法啟動服務] 訊息 |
 |--|--|
-| 徵狀 | 如果您嘗試升級、降級，或複製網域控制站，會收到錯誤：<p>程式碼-無法啟動服務，可能是因為它已停用或沒有任何已啟用的裝置」（0x80070422）<p>可能是互動，事件，或寫入記錄檔 (例如 dcpromoui.log 或 dcpromo.log) 錯誤 |
+| 徵狀 | 如果您嘗試升級、降級，或複製網域控制站，會收到錯誤：<p>程式碼-無法啟動服務，可能是因為它已停用或沒有任何已啟用的裝置與其關聯的 (0x80070422) <p>可能是互動，事件，或寫入記錄檔 (例如 dcpromoui.log 或 dcpromo.log) 錯誤 |
 | 解決方式和注意事項 | DS 角色伺服器服務 (DsRoleSvc) 已停用。 安裝 AD DS 角色時預設會安裝此服務，並設定為手動啟動類型。 請勿停用此服務。 將服務設回手動並允許 DS 角色作業在需要時啟動及停止該服務。 這是設計的行為。 |
 
 | 問題 | 伺服器管理員仍然會顯示您需要升級 DC 的警告 |
@@ -345,4 +343,4 @@ ms.locfileid: "87519406"
 | 問題 | 在建立 NTDS 設定物件時升級「停止回應」，永遠不會完成 |
 |--|--|
 | 徵狀 | 如果您升級複本 DC 或 RODC，升級會到達「建立 NTDS 設定物件」，而且永遠不會繼續或完成。 記錄檔也停止更新。 |
-| 解決方式和注意事項 | 這是因提供了與內建網域系統管理員帳戶密碼相同之內建本機系統管理員帳戶的認證而產生的已知問題。 這會導致核心安裝程式引擎失敗，但不會發生錯誤，而是會無限期等待 (odd 迴圈)。 這是預期的-但不需要的行為。<p>修正伺服器：<p>1. 重新開機它。<p>1. 在 AD 中，刪除該伺服器的成員電腦帳戶（它還不會是 DC 帳戶）<p>1. 在該伺服器上，強制從網域退出後它<p>1. 在該伺服器上，移除 AD DS 角色。<p>1. 重新開機<p>1. 重新加入 AD DS 角色並重試升級，確保您一律將***domain\admin***格式的認證提供給 DC 升級，而不只是內建的本機系統管理員帳戶。 |
+| 解決方式和注意事項 | 這是因提供了與內建網域系統管理員帳戶密碼相同之內建本機系統管理員帳戶的認證而產生的已知問題。 這會導致核心安裝程式引擎失敗，但不會發生錯誤，而是會無限期等待 (odd 迴圈)。 這是預期的-但不需要的行為。<p>修正伺服器：<p>1. 重新開機它。<p>1. 在 AD 中，刪除該伺服器的成員電腦帳戶 (它還不會是 DC 帳戶) <p>1. 在該伺服器上，強制從網域退出後它<p>1. 在該伺服器上，移除 AD DS 角色。<p>1. 重新開機<p>1. 重新加入 AD DS 角色並重試升級，確保您一律將***domain\admin***格式的認證提供給 DC 升級，而不只是內建的本機系統管理員帳戶。 |

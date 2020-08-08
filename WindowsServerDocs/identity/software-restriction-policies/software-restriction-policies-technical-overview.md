@@ -1,20 +1,18 @@
 ---
 title: 軟體限制原則技術概觀
 description: Windows Server 安全性
-ms.prod: windows-server
-ms.technology: security-software-restriction-policies
 ms.topic: article
 ms.assetid: dc7013b0-0efd-40fd-bd6d-75128adbd0b8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 9a9a44cd4ab1f4c8ee1c4dadf5cc09de2208b46a
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f98075cd8e662b3344f426bd8d69181994096a5f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966160"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953047"
 ---
 # <a name="software-restriction-policies-technical-overview"></a>軟體限制原則技術概觀
 
@@ -23,7 +21,7 @@ ms.locfileid: "86966160"
 本主題描述軟體限制原則、使用此功能的時機與方式、過去版本中已實行的變更，並提供其他資源的連結，協助您建立及部署從 Windows Server 2008 和 Windows Vista 開始的軟體限制原則。
 
 ## <a name="introduction"></a>簡介
-軟體限制原則可為系統管理員提供群組原則導向的機制，以識別軟體並控制其在本機電腦上執行的能力。 這些原則可以用來保護執行 Microsoft Windows 作業系統的電腦（從 Windows Server 2003 和 Windows XP Professional 開始），以防範已知的衝突，並保護電腦免于遭受安全性威脅，例如惡意病毒和特洛伊木馬程式。 您也可以使用軟體限制原則，來建立高限制性的電腦設定，您可以只允許執行特別識別出的應用程式。 軟體限制原則已與 Microsoft Active Directory 和群組原則整合。 您也可以在獨立電腦上建立軟體限制原則。
+軟體限制原則可為系統管理員提供群組原則導向的機制，以識別軟體並控制其在本機電腦上執行的能力。 這些原則可以用來保護執行 Microsoft Windows 作業系統的電腦， (從 Windows Server 2003 和 Windows XP Professional) 開始針對已知的衝突，並保護電腦免于遭受安全性威脅，例如惡意病毒和特洛伊木馬程式。 您也可以使用軟體限制原則，來建立高限制性的電腦設定，您可以只允許執行特別識別出的應用程式。 軟體限制原則已與 Microsoft Active Directory 和群組原則整合。 您也可以在獨立電腦上建立軟體限制原則。
 
 軟體限制原則是信任原則，這些原則是由系統管理員設定的規範，可以限制未受到完全信任的指令碼和其他程式碼的執行。 本機群組原則編輯器的軟體限制原則延伸提供單一使用者介面，可讓您在本機電腦或整個網域中管理用來限制應用程式使用的設定。
 
@@ -42,7 +40,7 @@ ms.locfileid: "86966160"
 ## <a name="software-restriction-policy-usage-scenarios"></a>軟體限制原則使用案例
 商務使用者使用電子郵件、立即訊息和對等應用程式共同作業。 隨著這些共同作業的增加，特別是在商務運算中使用網際網路時，就會面臨惡意程式碼的威脅，例如蠕蟲、病毒和惡意使用者或攻擊者的威脅。
 
-使用者可能會從原生 Windows 可執行檔（.exe 檔），到檔（例如 .doc 檔案）中的宏，到腳本（例如 .vbs 檔案）中，收到有害的程式碼。 惡意使用者或攻擊者通常會使用社交工程方法，讓使用者執行包含病毒和蠕蟲的程式碼。 （社交工程是一種用來誘騙使用者洩漏其密碼或某種形式的安全性資訊）的詞彙。如果啟用這類程式碼，它可能會在網路上產生阻絕服務攻擊、將敏感或私人資料傳送至網際網路、將電腦的安全性放在風險中，或損毀硬碟的內容。
+使用者可能會在許多形式中收到有害的程式碼，範圍從原生 Windows 可執行檔 ( .exe 檔案) ，到檔 (的宏（例如 .doc 檔案) ）到腳本 (之類的 .vbs 檔案。 惡意使用者或攻擊者通常會使用社交工程方法，讓使用者執行包含病毒和蠕蟲的程式碼。  (社交工程是誘騙使用者洩漏其密碼或某種形式的安全性資訊的一詞。 ) 如果這類程式碼已啟動，它可能會在網路上產生阻絕服務攻擊、將敏感或私人資料傳送至網際網路、將電腦的安全性放在風險中，或損毀硬碟的內容。
 
 IT 組織和使用者必須能夠判斷哪些軟體可以安全執行，哪些則否。 有了惡意程式碼可以採用的大量和表單，這就變得很棘手。
 
@@ -58,13 +56,13 @@ IT 組織和使用者必須能夠判斷哪些軟體可以安全執行，哪些�
 
 具體而言，系統管理員可以基於下列目的使用軟體限制原則：
 
--   指定可在用戶端電腦上執行的軟體（可執行檔）
+-   指定) 可在用戶端電腦上執行的軟體 (可執行檔
 
 -   防止使用者在共用電腦上執行特定的程式
 
 -   指定可以將受信任的發行者新增至用戶端電腦的人員
 
--   設定軟體限制原則的範圍（指定原則是否會影響用戶端電腦上的所有使用者或使用者子集）
+-   設定軟體限制原則的範圍 (指定原則是否會影響用戶端電腦上的所有使用者或使用者子集) 
 
 -   防止可執行檔在本機電腦、組織單位 (OU)、站台或網域上執行。 當您未使用軟體限制原則來處理惡意使用者的潛在問題時，這個狀況便適用此做法。
 
@@ -80,20 +78,20 @@ Windows Server 2012 和 Windows 8 的 SRP 功能不會有任何變更。
 
 **比較軟體限制原則和 AppLocker 中的應用程式控制功能**
 
-下表比較軟體限制原則（SRP）功能和 AppLocker 的功能和功能。
+下表比較軟體限制原則 (SRP) 功能和 AppLocker 的功能和功能。
 
 |應用程式控制函式|SRP|AppLocker|
 |----------------|----|-------|
 |影響範圍|SRP 原則可以套用到從 Windows XP 和 Windows Server 2003 開始的所有 Windows 作業系統。|AppLocker 原則僅適用于 Windows Server 2008 R2、Windows Server 2012、Windows 7 和 Windows 8。|
 |原則建立|SRP 原則會透過群組原則進行維護，而且只有 GPO 的系統管理員可以更新 SRP 原則。 本機電腦上的系統管理員可以修改本機 GPO 中定義的 SRP 原則。|AppLocker 原則會透過群組原則維護，只有 GPO 的系統管理員可以更新原則。 本機電腦上的系統管理員可以修改本機 GPO 中定義的 AppLocker 原則。<p>AppLocker 允許自訂錯誤訊息，將使用者導向至網頁尋求協助。|
-|原則維護|SRP 原則必須使用本機安全性原則嵌入式管理單元（如果原則是在本機建立）或群組原則管理主控台（GPMC）來更新。|您可以使用本機安全性原則嵌入式管理單元（如果原則是在本機建立）、GPMC 或 Windows PowerShell AppLocker Cmdlet 來更新 AppLocker 原則。|
+|原則維護|SRP 原則必須使用 [本機安全性原則] 嵌入式管理單元來更新 (如果原則是在本機建立) 或群組原則管理主控台 (GPMC) 。|如果原則是在本機建立) 或 GPMC，或 Windows PowerShell AppLocker Cmdlet，則可以使用本機安全性原則嵌入式管理單元來更新 AppLocker 原則 (。|
 |原則應用程式|SRP 原則會透過群組原則散發。|AppLocker 原則會透過群組原則散發。|
 |強制模式|SRP 以「拒絕清單模式」運作，其中系統管理員可以針對不想要在此企業中允許的檔案建立規則，而其餘的檔案則預設為可執行。<p>SRP 也可以在「允許清單模式」中設定，如此一來，預設會封鎖所有檔案，而且系統管理員必須為想要允許的檔案建立允許規則。|根據預設，AppLocker 會在「允許清單模式」中運作，其中只有那些檔案允許執行，其中有相符的允許規則。|
-|可控制的檔案類型|SRP 可以控制下列檔案類型：<p>-可執行檔<br />-Dll<br />-腳本<br />-Windows 安裝程式<p>SRP 無法分別控制每個檔案類型。 所有 SRP 規則都在單一規則集合中。|AppLocker 可以控制下列檔案類型：<p>-可執行檔<br />-Dll<br />-腳本<br />-Windows 安裝程式<br />-已封裝的應用程式和安裝程式（Windows Server 2012 和 Windows 8）<p>AppLocker 會針對五種檔案類型分別維護一個規則集合。|
-|指定的檔案類型|SRP 支援已被視為可執行檔案類型的可擴充清單。 系統管理員可以為應該視為可執行檔的檔案新增擴充功能。|AppLocker 不支援此功能。 AppLocker 目前支援下列副檔名：<p>-可執行檔（.exe、.com）<br />-Dll （.ocx、.dll）<br />-腳本（.vbs、.js、ps1、.cmd、.bat）<br />-Windows 安裝程式（.msi、.mst、.msp）<br />-已封裝的應用程式安裝程式（.appx）|
+|可控制的檔案類型|SRP 可以控制下列檔案類型：<p>-可執行檔<br />-Dll<br />-腳本<br />-Windows 安裝程式<p>SRP 無法分別控制每個檔案類型。 所有 SRP 規則都在單一規則集合中。|AppLocker 可以控制下列檔案類型：<p>-可執行檔<br />-Dll<br />-腳本<br />-Windows 安裝程式<br />- ( Windows Server 2012 和 Windows 8 的已封裝應用程式和安裝程式) <p>AppLocker 會針對五種檔案類型分別維護一個規則集合。|
+|指定的檔案類型|SRP 支援已被視為可執行檔案類型的可擴充清單。 系統管理員可以為應該視為可執行檔的檔案新增擴充功能。|AppLocker 不支援此功能。 AppLocker 目前支援下列副檔名：<p>-可執行檔 ( .exe、.com) <br />-Dll ( .ocx、.dll) <br />-腳本 ( .vbs、.js、ps1、.cmd、.bat) <br />-Windows 安裝程式 ( .msi、.mst、.msp) <br />-已封裝的應用程式安裝程式 ( .appx) |
 |規則類型|SRP 支援四種類型的規則：<p>-Hash<br />-Path<br />-Signature<br />-網際網路區域|AppLocker 支援三種類型的規則：<p>-Hash<br />-Path<br />-發行者|
-|編輯雜湊值|SRP 可讓系統管理員提供自訂的雜湊值。|AppLocker 會計算雜湊值本身。 在內部，它會針對可移植的可執行檔（Exe 和 Dll）和 Windows 安裝程式使用 SHA1 Authenticode 雜湊，並針對其餘部分使用 SHA1 一般檔案雜湊。|
-|支援不同的安全性層級|透過 SRP 系統管理員，可以指定應用程式可以執行的許可權。 因此，系統管理員可以設定規則，讓「記事本」一律以限制許可權執行，而不使用管理許可權。<p>Windows Vista 和更早版本上的 SRP 支援多個安全性層級。 在 Windows 7 上，清單僅限於兩個層級：不允許和不受限制（基本使用者會轉譯為不允許）。|AppLocker 不支援安全性層級。|
+|編輯雜湊值|SRP 可讓系統管理員提供自訂的雜湊值。|AppLocker 會計算雜湊值本身。 在內部，它會針對可移植的可執行檔使用 SHA1 Authenticode 雜湊， (Exe 和 Dll) 和 Windows 安裝程式，以及適用于其餘部分的 SHA1 一般檔案雜湊。|
+|支援不同的安全性層級|透過 SRP 系統管理員，可以指定應用程式可以執行的許可權。 因此，系統管理員可以設定規則，讓「記事本」一律以限制許可權執行，而不使用管理許可權。<p>Windows Vista 和更早版本上的 SRP 支援多個安全性層級。 在 Windows 7 上，此清單僅限於兩個層級：不允許和不受限制的 (基本使用者會轉譯為不允許的) 。|AppLocker 不支援安全性層級。|
 |管理已封裝的應用程式和已封裝的應用程式安裝程式|無法|.appx 是 AppLocker 可以管理的有效檔案類型。|
 |將規則的目標設為使用者或使用者群組|SRP 規則適用于特定電腦上的所有使用者。|AppLocker 規則可以鎖定特定使用者或使用者群組。|
 |支援規則例外狀況|SRP 不支援規則例外狀況|AppLocker 規則可能有例外狀況，可讓系統管理員建立規則，例如「允許來自 Windows 的所有專案，但 Regedit.exe 除外」。|
@@ -109,7 +107,7 @@ Windows Server 2012 和 Windows 8 的 SRP 功能不會有任何變更。
 
 概括而言，軟體限制原則是由下列元件所組成：
 
--   軟體限制原則 API。 應用程式開發介面（Api）是用來建立及設定構成軟體限制原則的規則。 還有一些軟體限制原則 Api 可用於查詢、處理及強制執行軟體限制原則。
+-   軟體限制原則 API。 應用程式開發介面 (Api) 用來建立和設定構成軟體限制原則的規則。 還有一些軟體限制原則 Api 可用於查詢、處理及強制執行軟體限制原則。
 
 -   軟體限制原則管理工具。 這是由**本機群組原則物件編輯器**嵌入式管理單元的**軟體限制原則**延伸所組成，系統管理員會使用此擴充功能來建立和編輯軟體限制原則。
 
@@ -121,7 +119,7 @@ Windows Server 2012 和 Windows 8 的 SRP 功能不會有任何變更。
 
 -   事件檢視器。 軟體限制原則用來將事件記錄到事件檢視器記錄的功能。
 
--   原則結果組（RSoP），可協助診斷將套用至用戶端的有效原則。
+-   原則結果組 (RSoP) ，這可以協助診斷將套用至用戶端的有效原則。
 
 如需 SRP 架構的詳細資訊，SRP 如何管理規則、處理常式和互動，請參閱 Windows Server 2003 技術文件庫中的[軟體限制原則的使用方式](/previous-versions/windows/it-pro/windows-server-2003/cc786941(v=ws.10))。
 
@@ -133,7 +131,7 @@ Windows Server 2012 和 Windows 8 的 SRP 功能不會有任何變更。
 
 ### <a name="create-a-separate-group-policy-object-for-software-restriction-policies"></a>為軟體限制原則建立個別的群組原則物件。
 
--   如果您為軟體限制原則建立個別的群組原則物件（GPO），您可以在緊急情況下停用軟體限制原則，而不需要停用其餘的網域原則。
+-   如果您為軟體限制原則建立個別的群組原則物件 (GPO) ，您可以在緊急情況下停用軟體限制原則，而不需要停用其餘的網域原則。
 
 ### <a name="if-you-experience-problems-with-applied-policy-settings-restart-windows-in-safe-mode"></a>如果您遇到套用原則設定的問題，請在安全模式中重新開機 Windows。
 
@@ -147,7 +145,7 @@ Windows Server 2012 和 Windows 8 的 SRP 功能不會有任何變更。
 
 ### <a name="for-best-security-use-access-control-lists-in-conjunction-with-software-restriction-policies"></a>為了獲得最佳安全性，請使用存取控制清單搭配軟體限制原則。
 
--   使用者可能會嘗試藉由重新命名或移動不允許的檔案，或覆寫不受限制的檔案來規避軟體限制原則。 因此，建議您使用存取控制清單（Acl）來拒絕使用者執行這些工作所需的存取權。
+-   使用者可能會嘗試藉由重新命名或移動不允許的檔案，或覆寫不受限制的檔案來規避軟體限制原則。 因此，建議您使用存取控制清單 (Acl) 拒絕使用者執行這些工作所需的存取權。
 
 ### <a name="test-new-policy-settings-thoroughly-in-test-environments-before-applying-the-policy-settings-to-your-domain"></a>請先在測試環境中徹底測試新的原則設定，再將原則設定套用至您的網域。
 
@@ -175,7 +173,7 @@ Windows Server 2012 和 Windows 8 的 SRP 功能不會有任何變更。
 |--------|-------|
 |**規劃**|[軟體限制原則技術參考](/previous-versions/windows/it-pro/windows-server-2003/cc728085(v=ws.10))|
 |**作業**|[管理軟體限制原則](administer-software-restriction-policies.md)|
-|**疑難排解**|[軟體限制原則疑難排解（2003）](/previous-versions/windows/it-pro/windows-server-2003/cc737011(v=ws.10))|
-|**安全性**|[軟體限制原則的威脅和因應對策（2008）](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349795(v=ws.10))<p>[軟體限制原則的威脅和因應對策（2008 R2）](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/hh125926(v=ws.10))|
-|**工具及設定**|[軟體限制原則工具和設定（2003）](/previous-versions/windows/it-pro/windows-server-2003/cc782454(v=ws.10))|
+|**疑難排解**|[軟體限制原則疑難排解 (2003) ](/previous-versions/windows/it-pro/windows-server-2003/cc737011(v=ws.10))|
+|**安全性**|[軟體限制原則的威脅和因應對策 (2008) ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349795(v=ws.10))<p>[軟體限制原則的威脅和因應對策 (2008 R2) ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/hh125926(v=ws.10))|
+|**工具及設定**|[軟體限制原則工具和設定 (2003) ](/previous-versions/windows/it-pro/windows-server-2003/cc782454(v=ws.10))|
 |**社群資源**|[使用軟體限制原則鎖定應用程式](/previous-versions/technet-magazine/cc510322(v=msdn.10)?pr=blog)|

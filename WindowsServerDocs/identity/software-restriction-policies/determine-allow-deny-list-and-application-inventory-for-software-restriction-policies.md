@@ -1,26 +1,24 @@
 ---
 title: 決定軟體限制原則的允許拒絕清單和應用程式清查
 description: Windows Server 安全性
-ms.prod: windows-server
-ms.technology: security-software-restriction-policies
 ms.topic: article
 ms.assetid: 0abb73b6-b5d8-4505-8ab1-2f29e4bf0411
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: c0fdb5c1d7c4b03610a173c6cd0575d39646a7d0
-ms.sourcegitcommit: af1cf89632d62a94943d3ad9f6b5234b88499278
+ms.openlocfilehash: 831508de2aae56aab53cbd1ff7820ea1af0da565
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81524903"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953035"
 ---
 # <a name="determine-allow-deny-list-and-application-inventory-for-software-restriction-policies"></a>決定軟體限制原則的允許拒絕清單和應用程式清查
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-本主題適用于 IT 專業人員，提供如何建立應用程式的允許和拒絕清單，以供從 Windows Server 2008 和 Windows Vista 開始的軟體限制原則（SRP）管理。
+本主題適用于 IT 專業人員，提供如何建立可由軟體限制原則管理之應用程式的允許和拒絕清單 (SRP) 從 Windows Server 2008 和 Windows Vista 開始。
 
 ## <a name="introduction"></a>簡介
 軟體限制原則 (SRP) 是以群組原則為依據的功能，可以識別在網域的電腦上執行的軟體程式，並控制執行這些程式的能力。 您可以使用軟體限制原則來建立高限制性的電腦設定，您可以只允許執行特別識別出的應用程式。 這些會與 Microsoft Active Directory Domain Services 和群組原則整合，但也可以在獨立電腦上設定。 如需 SRP 的起點，請參閱[軟體限制原則](software-restriction-policies.md)。
@@ -58,7 +56,7 @@ ms.locfileid: "81524903"
 
     每個記錄專案的狀態如下：
 
-    -   軟體限制原則的呼叫端，以及呼叫進程的處理序識別碼（PID）
+    -   軟體限制原則的呼叫端，以及呼叫進程的處理序識別碼 (PID) 
 
     -   要評估的目標
 
@@ -68,5 +66,5 @@ ms.locfileid: "81524903"
 
     寫入記錄檔的輸出範例：
 
-**explorer .exe （PID = 4728） identifiedC： \ Windows\system32\onenote.exe as 不受限制的 usingpath 規則，Guid = {320bd852-aa7c-4674-82c5-9a80321670a3}**   SRP 檢查和設定為 [封鎖] 的所有應用程式和相關程式碼都會記錄在記錄檔中，接著您可以使用該檔案來判斷哪些可執行檔應視為允許清單。
+**explorer.exe (PID = 4728) identifiedC:\Windows\system32\onenote.exe 為不受限制的 usingpath 規則，Guid = {320bd852-aa7c-4674-82c5-9a80321670a3}**   SRP 檢查和設定為 [封鎖] 的所有應用程式和相關程式碼都會記錄在記錄檔中，接著您可以使用該檔案來判斷哪些可執行檔應視為允許清單。
 

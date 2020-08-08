@@ -1,31 +1,29 @@
 ---
 title: 使用軟體限制原則來協助保護電腦免於電子郵件病毒
 description: Windows Server 安全性
-ms.prod: windows-server
-ms.technology: security-software-restriction-policies
 ms.topic: article
 ms.assetid: 02f23979-f832-4e46-bdea-21fd77db35b2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 3b9f727107ac9d392b52ab683aca510849fc534a
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: de636bf4e1783d1d6aaf1b78a45442c80e0a6d27
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964690"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952995"
 ---
 # <a name="use-software-restriction-policies-to-help-protect-your-computer-against-an-email-virus"></a>使用軟體限制原則來協助保護電腦免於電子郵件病毒
 
 >適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-本主題提供的資訊說明如何使用軟體限制原則（SRP）來設定應用程式控制原則，以協助保護您的電腦免于從 Windows Server 2008 和 Windows Vista 開始的電子郵件病毒。
+本主題提供的資訊說明如何使用軟體限制原則 (SRP) 設定應用程式控制原則，以協助保護您的電腦免于從 Windows Server 2008 和 Windows Vista 開始的電子郵件病毒。
 
 ## <a name="introduction"></a>簡介
 軟體限制原則 (SRP) 是以群組原則為依據的功能，可以識別在網域的電腦上執行的軟體程式，並控制執行這些程式的能力。 您可以使用軟體限制原則來建立高限制性的電腦設定，您可以只允許執行特別識別出的應用程式。 這些會與 Microsoft Active Directory Domain Services 和群組原則整合，但也可以在獨立電腦上設定。 如需 SRP 的起點，請參閱[軟體限制原則](software-restriction-policies.md)。
 
-從 Windows Server 2008 R2 和 Windows 7 開始，Windows AppLocker 可以用來取代或與 SRP 搭配使用，以進行部分的應用程式控制策略。 
+從 Windows Server 2008 R2 和 Windows 7 開始，Windows AppLocker 可以用來取代或與 SRP 搭配使用，以進行部分的應用程式控制策略。
 
 #### <a name="configure-srp-to-help-protect-against-an-e-mail-virus"></a>設定 SRP 以協助防範電子郵件病毒
 
@@ -55,7 +53,7 @@ ms.locfileid: "86964690"
 
 6.  修改原則設定，使其適用于您想要的使用者和群組：
 
-    -   指定您不想要套用群組原則物件（GPO）原則設定的使用者或群組。
+    -   指定您不想要套用群組原則物件 (GPO) 原則設定的使用者或群組。
 
     -   將本機系統管理員從群組原則中特定原則設定的軟體限制原則中排除，並繼續將其餘的群組原則套用至系統管理員。
 

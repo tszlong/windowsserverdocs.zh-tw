@@ -6,20 +6,18 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: c92f2633bea6def335ab50f93f0c95b48b9677b0
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 3cef76347bcd5a341b96a71fed58d2fe0085a46c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519435"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953404"
 ---
 # <a name="simplified-administration-appendix"></a>簡化的系統管理附錄
 
 >適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
--   [伺服器管理員新增伺服器] 對話方塊（Active Directory）](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_AddServers)
+-   [伺服器管理員新增伺服器] 對話方塊 (Active Directory) ](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_AddServers)
 
 -   [伺服器管理員遠端伺服器狀態](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_ServerMgrStatus)
 
@@ -29,7 +27,7 @@ ms.locfileid: "87519435"
 
 -   [Ntdsutil.exe 從媒體變更安裝](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_IFM)
 
-## <a name="server-manager-add-servers-dialog-active-directory"></a><a name="BKMK_AddServers"></a>伺服器管理員新增伺服器] 對話方塊（Active Directory）
+## <a name="server-manager-add-servers-dialog-active-directory"></a><a name="BKMK_AddServers"></a>伺服器管理員新增伺服器] 對話方塊 (Active Directory) 
 
 [**新增伺服器**] 對話方塊可讓您搜尋伺服器、作業系統、使用萬用字元和位置的 Active Directory。 此對話方塊也可讓您依完整功能變數名稱或首碼名稱使用 DNS 查詢。 這些搜尋會使用透過 .NET 執行的原生 DNS 和 LDAP 通訊協定，而非透過 SOAP 的 ad 管理閘道進行 AD Windows PowerShell，這表示伺服器管理員聯繫的網域控制站甚至可以執行 Windows Server 2003。 您也可以匯入具有伺服器名稱的檔案，以供布建之用。
 
@@ -92,7 +90,7 @@ dir
 查看有[更新可用來偵測並防止在執行 Windows Server 2008 R2 的網域控制站上過度使用全域 RID 集](https://support.microsoft.com/kb/2618669)區。
 
 ## <a name="ntdsutilexe-install-from-media-changes"></a><a name="BKMK_IFM"></a>Ntdsutil.exe 從媒體變更安裝
-Windows Server 2012 會針對**ifm （Ifm 媒體建立）** 功能表，將兩個額外的選項新增至 Ntdsutil.exe 命令列工具。 這些可讓您建立 IFM 存放區，而不需要先對匯出的 NTDS 執行離線磁碟重組。DIT 資料庫檔案。 當磁碟空間不是 premium 時，這會節省建立 IFM 的時間。
+Windows Server 2012 會針對**ifm (Ifm 媒體建立) **功能表，將兩個額外的選項新增至 Ntdsutil.exe 命令列工具。 這些可讓您建立 IFM 存放區，而不需要先對匯出的 NTDS 執行離線磁碟重組。DIT 資料庫檔案。 當磁碟空間不是 premium 時，這會節省建立 IFM 的時間。
 
 下表描述兩個新的功能表項目：
 

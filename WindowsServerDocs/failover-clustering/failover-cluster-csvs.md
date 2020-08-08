@@ -7,12 +7,12 @@ ms.author: jgerend
 manager: lizross
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0dbfaea12444de607cc28a33be334f86ee273d78
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1293abac44cc648442939784ed5bb2b8049e702f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87945861"
+ms.locfileid: "87992864"
 ---
 # <a name="use-cluster-shared-volumes-in-a-failover-cluster"></a>在容錯移轉叢集中使用叢集共用磁片區
 
@@ -45,7 +45,7 @@ Windows Server 2012 R2 引進額外的功能，例如分散式 CSV 擁有權、�
 
 - **多個網路與多個網路介面卡**。 若要在發生網路失敗時能夠容錯，我們建議您使用多個叢集網路承載 CSV 流量或設定網路介面卡小組。
 
-    如果叢集節點連線到不應由叢集使用的網路，您應該將它們停用。 例如，我們建議您停用 iSCSI 網路來防止叢集使用，以避免 CSV 流量佔用那些網路。 若要停用網路，請在容錯移轉叢集管理員中選取 [**網路**]，選取 [網路]，選取 [內容 **] 動作，** 然後選取 [**此網路上不允許叢集網路通訊**]。 或者，您可以使用[Get-clusternetwork](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusternetwork?view=win10-ps) Windows PowerShell Cmdlet 來設定網路的**Role**屬性。
+    如果叢集節點連線到不應由叢集使用的網路，您應該將它們停用。 例如，我們建議您停用 iSCSI 網路來防止叢集使用，以避免 CSV 流量佔用那些網路。 若要停用網路，請在容錯移轉叢集管理員中選取 [**網路**]，選取 [網路]，選取 [內容 **] 動作，** 然後選取 [**此網路上不允許叢集網路通訊**]。 或者，您可以使用[Get-clusternetwork](/powershell/module/failoverclusters/get-clusternetwork?view=win10-ps) Windows PowerShell Cmdlet 來設定網路的**Role**屬性。
 - **網路介面卡內容**。 在執行叢集通訊之所有介面卡的內容中，請確定已啟用下列設定：
 
   - [Microsoft 網路用戶端]**** 和 [Microsoft 網路檔案及印表機共用]****。 這些設定支援伺服器訊息區 (SMB) 3.0，預設用來承載節點之間的 CSV 流量。 若要啟用 SMB，也請確定伺服器服務和工作站服務正在執行，而且它們設定為在每個叢集節點上自動啟動。
@@ -64,7 +64,7 @@ Windows Server 2012 R2 引進額外的功能，例如分散式 CSV 擁有權、�
 
 #### <a name="about-io-synchronization-and-io-redirection-in-csv-communication"></a>關於 CSV 通訊中 I/O 同步處理和 I/O 重新導向
 
-- **I/o 同步**處理： CSV 可讓多個節點同時讀寫存取相同的共用存放裝置。 當節點在 CSV 磁碟區中執行磁碟輸入/輸出 (I/O) 時，節點是與存放裝置直接通訊，例如，透過存放區域網路 (SAN)。 不過，在任何時間， (稱為協調器節點的單一節點) 「擁有」與 LUN 相關聯的實體磁片資源。 CSV 磁碟區的協調器節點在 [容錯移轉叢集管理員] 是顯示為 [磁碟]**** 底下的 [擁有者節點]****。 它也會出現在[Get-clustersharedvolume](https://docs.microsoft.com/powershell/module/failoverclusters/get-clustersharedvolume?view=win10-ps) Windows PowerShell Cmdlet 的輸出中。
+- **I/o 同步**處理： CSV 可讓多個節點同時讀寫存取相同的共用存放裝置。 當節點在 CSV 磁碟區中執行磁碟輸入/輸出 (I/O) 時，節點是與存放裝置直接通訊，例如，透過存放區域網路 (SAN)。 不過，在任何時間， (稱為協調器節點的單一節點) 「擁有」與 LUN 相關聯的實體磁片資源。 CSV 磁碟區的協調器節點在 [容錯移轉叢集管理員] 是顯示為 [磁碟]**** 底下的 [擁有者節點]****。 它也會出現在[Get-clustersharedvolume](/powershell/module/failoverclusters/get-clustersharedvolume?view=win10-ps) Windows PowerShell Cmdlet 的輸出中。
 
   >[!NOTE]
   >在 Windows Server 2012 R2 中，CSV 擁有權會根據每個節點所擁有的 CSV 磁片區數目，平均分散到容錯移轉叢集節點之間。 此外，出現 CSV 容錯移轉、 節點重新加入叢集、新增節點到叢集、重新啟動叢集節點，或在關閉容錯移轉叢集後啟動容錯移轉叢集之類的情況時，會自動重新平衡擁有權。
@@ -256,5 +256,5 @@ CSV 快取會將系統記憶體 (RAM) 配置為直接寫入式快取，以便在
 
 ## <a name="more-information"></a>更多資訊
 
-- [容錯移轉叢集](failover-clustering.md)
+- [容錯移轉叢集](./failover-clustering-overview.md)
 - [部署叢集儲存空間](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11)>)

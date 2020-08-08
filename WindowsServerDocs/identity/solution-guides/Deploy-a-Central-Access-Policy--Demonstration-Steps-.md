@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: f83e828dd8ce90da4265eb03f94b498933d9c2a6
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 406674f26039f80cbca5ed3ba96e041bc8624729
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518606"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952789"
 ---
 # <a name="deploy-a-central-access-policy-demonstration-steps"></a>部署集中存取原則 (示範步驟)
 
@@ -23,7 +21,7 @@ ms.locfileid: "87518606"
 
 部署集中存取原則包含下列階段：
 
-| 階段 | 說明 |
+| 階段 | 描述 |
 |--|--|
 | [規劃：識別原則的需求和部署所需的設定](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.2) | 識別原則的需求，以及部署所需的設定。 |
 | [執行：設定元件和原則](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.3) | 設定元件與原則。 |
@@ -40,7 +38,7 @@ ms.locfileid: "87518606"
 |--|--|--|
 | 1.1 | 公司決定需要集中存取原則。 | 為了保護儲存在檔案伺服器的財務資訊，財務部門安全性作業使用中央資訊安全性，指定需要集中存取原則。 |  |
 | 1.2 | 表達存取原則 | 財務文件只應該由財務部門的成員讀取。 財務部門的成員應該只能存取他們自己國家/地區的文件。 只有財務系統管理員具有寫入存取權。 對於 FinanceException 群組的成員，可允許例外狀況。 此群組將具有讀取存取權。 |  |
-| 1.3 | 在 Windows Server 2012 結構中表達存取原則 | 目標：<p>-Resource. 部門包含財務<p>存取規則：<p>-允許讀取使用者。國家/地區 = 資源。國家/地區和使用者. 部門 = 資源部門<br />-允許完全控制使用者。 MemberOf （FinanceAdmin）<p>例外狀況：<p>Allow read memberOf(FinanceException) |  |
+| 1.3 | 在 Windows Server 2012 結構中表達存取原則 | 目標：<p>-Resource. 部門包含財務<p>存取規則：<p>-允許讀取使用者。國家/地區 = 資源。國家/地區和使用者. 部門 = 資源部門<br />-允許完全控制使用者。 MemberOf (FinanceAdmin) <p>例外狀況：<p>Allow read memberOf(FinanceException) |  |
 | 1.4 | 決定原則所需的檔案屬性 | 標記檔案：<p>-部門<br />-國家/地區 |  |
 | 1.5 | 判斷原則所需的宣告類型和群組 | 宣告類型：<p>-國家/地區<br />-部門<p>使用者群組：<p>-FinanceAdmin<br />-FinanceException |  |
 | 1.6 | 決定要套用此原則的伺服器 | 將原則套用到所有的財務檔案伺服器。 |  |
@@ -72,7 +70,7 @@ ms.locfileid: "87518606"
    > [!TIP]
    > 您也可以從 [工作]**** 窗格開啟 [建立宣告類型:]**** 視窗。 在 [工作]**** 窗格中，依序按一下 [新增]**** 和 [宣告類型]****。
 
-4. 在 [來源屬性]**** 清單中，向下捲動屬性清單，按一下 [部門]****。 如此會在 [顯示名稱]**** 欄位填入 [部門]****。 按一下 [確定]。
+4. 在 [來源屬性]**** 清單中，向下捲動屬性清單，按一下 [部門]****。 如此會在 [顯示名稱]**** 欄位填入 [部門]****。 按一下 [確定]  。
 
 5. 在 [工作]**** 窗格中，依序按一下 [新增]**** 和 [宣告類型]****。
 
@@ -235,7 +233,7 @@ New-ADCentralAccessPolicy "Finance Policy" Add-ADCentralAccessPolicyMember
     > [!TIP]
     > 在生產環境中，您應該建立檔案伺服器組織單位 (OU)，並將所有的檔案伺服器新增至要套用此原則的這個 OU 中。 接著您可以建立群組原則，然後將這個 OU 新增到該原則。
 
-2.  在這個步驟中，您會編輯在＜測試環境＞中[建立網域控制站](Appendix-B--Setting-Up-the-Test-Environment.md#BKMK_Build)所建立的群組原則物件，以包含剛才建立的集中存取原則。 在 [群組原則管理編輯器中，流覽至並選取網域中的組織單位（在此範例中為 contoso.com）：**群組原則管理**、**樹系： contoso.com**、**網域**、 **contoso.com**、 **contoso**、 **[fileserverou]**。
+2.  在這個步驟中，您會編輯在＜測試環境＞中[建立網域控制站](Appendix-B--Setting-Up-the-Test-Environment.md#BKMK_Build)所建立的群組原則物件，以包含剛才建立的集中存取原則。 在 [群組原則管理編輯器中，流覽至，並在此範例中選取網域 (contoso.com 中的組織單位) ：**群組原則 Management**，**樹系： contoso.com** **，domain**， **contoso.com**， **contoso**， **[fileserverou]**。
 
 3.  以滑鼠右鍵按一下 [FlexibleAccessGPO]****，然後按一下 [編輯]****。
 
@@ -355,7 +353,7 @@ New-ADCentralAccessPolicy "Finance Policy" Add-ADCentralAccessPolicyMember
 
 3. 按一下 [樹狀檢視]****，展開 [動態存取控制]****，按兩下 [宣告類型]****，按兩下 [國家/地區]**** 宣告。
 
-4. 在 [可以針對下列類別發行此類型的宣告]**** 中，選取 [電腦]**** 核取方塊。 按一下 [確定]。
+4. 在 [可以針對下列類別發行此類型的宣告]**** 中，選取 [電腦]**** 核取方塊。 按一下 [確定]  。
    [使用者]**** 和 [電腦]**** 兩個核取方塊現在應該都已選取。 國家/地區宣告現在除了可以搭配使用者以外，還可以搭配裝置。
 
 下一個步驟是建立暫存原則規則。 暫存原則可以用來在啟用新的原則項目之前先監視它的效果。 在下列步驟中，您將建立暫存原則項目，並監視它在共用資料夾上的效果。
@@ -377,7 +375,7 @@ New-ADCentralAccessPolicy "Finance Policy" Add-ADCentralAccessPolicyMember
 7. 再次按一下 [**新增條件**]，並新增下列條件： [**和**] [**裝置**] [**國家/地區**] [**任何**] [**資源**] [**國家/地區**]
 
 8. 再次按一下 [新增條件]**** 並新增下列條件。
-   和[**使用者**][**群組**][**Any 的成員**][**值**] \(**FinanceException**）
+   和[**使用者**][**群組**][**Any 的成員**][**值**] \(**FinanceException**) 
 
 9. 若要設定 FinanceException 群組，按一下 [新增項目]****，然後在 [選取使用者、電腦、服務帳戶或群組]**** 視窗中，輸入 **FinanceException**。
 

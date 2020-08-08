@@ -7,12 +7,12 @@ ms.topic: article
 author: JasonGerend
 ms.date: 01/18/2019
 description: 如何使用 Microsoft Azure 來裝載雲端中 Windows Server 容錯移轉叢集的見證，亦即如何部署雲端見證。
-ms.openlocfilehash: 937fb6c2d4aaabfd6399a6bebdce50e351b78fc6
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fa0fee044b0a5e702cb56816bf9a878f209d6117
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87950192"
+ms.locfileid: "87993012"
 ---
 # <a name="deploy-a-cloud-witness-for-a-failover-cluster"></a>部署容錯移轉叢集的雲端見證
 
@@ -111,7 +111,7 @@ ms.locfileid: "87950192"
 ![雲端見證端點連結的快照 ](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_5.png)
  **圖5：雲端見證端點 URL 連結**
 
-如需建立和管理 Azure 儲存體帳戶的詳細資訊，請參閱[關於 Azure 儲存體帳戶](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/)
+如需建立和管理 Azure 儲存體帳戶的詳細資訊，請參閱[關於 Azure 儲存體帳戶](/azure/storage/common/storage-account-create)
 
 ## <a name="configure-cloud-witness-as-a-quorum-witness-for-your-cluster"></a>將雲端見證設定為叢集的仲裁見證
 雲端見證設定已妥善整合到內建于容錯移轉叢集管理員的現有仲裁設定向導中。
@@ -146,7 +146,7 @@ ms.locfileid: "87950192"
 ### <a name="configuring-cloud-witness-using-powershell"></a>使用 PowerShell 設定雲端見證
 現有的 Set-clusterquorum PowerShell 命令有對應至雲端見證的新額外參數。
 
-您可以使用下列 PowerShell 命令來設定雲端見證 [`Set-ClusterQuorum`](https://technet.microsoft.com/library/ee461013.aspx) ：
+您可以使用下列 PowerShell 命令來設定雲端見證 [`Set-ClusterQuorum`](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee461013(v=technet.10)) ：
 
 ```PowerShell
 Set-ClusterQuorum -CloudWitness -AccountName <StorageAccountName> -AccessKey <StorageAccountAccessKey>

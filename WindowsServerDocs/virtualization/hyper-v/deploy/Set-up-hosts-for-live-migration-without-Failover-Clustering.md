@@ -7,12 +7,12 @@ ms.assetid: b5e3c405-cb76-4ff2-8042-c2284448c435
 author: kbdazure
 ms.author: kathydav
 ms.date: 9/30/2016
-ms.openlocfilehash: 7bcd4e625f340ba7358a8ce9bdd860581c390e96
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e07910b6f822ca29769fb398434f83272867dbe7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948017"
+ms.locfileid: "87992712"
 ---
 # <a name="set-up-hosts-for-live-migration-without-failover-clustering"></a>設定主機以進行即時移轉而不需要容錯移轉叢集
 
@@ -112,7 +112,7 @@ ms.locfileid: "87948017"
 
 ### <a name="use-windows-powershell-to-set-up-the-source-and-destination-computers-for-live-migration"></a>使用 Windows PowerShell 設定來源和目的電腦以進行即時移轉
 
-有三個 Cmdlet 可用於設定非叢集主機上的即時移轉： [Enable-enable-vmmigration](https://technet.microsoft.com/library/hh848544.aspx)、 [get-vmmigrationnetwork](https://technet.microsoft.com/library/hh848467.aspx)和[VMHost](https://technet.microsoft.com/library/hh848524.aspx)。 這個範例會使用這三個，並執行下列動作：
+有三個 Cmdlet 可用於設定非叢集主機上的即時移轉： [Enable-enable-vmmigration](/powershell/module/hyper-v/enable-vmmigration?view=win10-ps)、 [get-vmmigrationnetwork](/powershell/module/hyper-v/set-vmmigrationnetwork?view=win10-ps)和[VMHost](/powershell/module/hyper-v/set-vmhost?view=win10-ps)。 這個範例會使用這三個，並執行下列動作：
   - 設定本機主機上的即時移轉
   - 只允許特定網路上的傳入遷移流量
   - 選擇 Kerberos 做為驗證通訊協定
@@ -139,7 +139,7 @@ PS C:\> Set-VMHost -VirtualMachineMigrationPerformanceOption SMB
 |----------|---------------|
     |TCP/IP|透過 TCP/IP 連接，將虛擬機器的記憶體複製到目的地伺服器。|
     |壓縮|會先壓縮虛擬機器的記憶體內容，再透過 TCP/IP 連接將它複製到目的地伺服器。 **注意：** 這是**預設**設定。|
-    |SMB|透過 SMB 3.0 連線，將虛擬機器的記憶體複製到目的地伺服器。<p>-當來源和目的地伺服器上的網路介面卡已啟用 (RDMA) 功能的遠端直接記憶體存取時，會使用 SMB 直接傳輸。<br />-當識別出適當的 SMB 多重通道設定時，SMB 多重通道會自動偵測並使用多個連接。<p>如需詳細資訊，請參閱[使用 SMB 直接傳輸改善檔案伺服器的效能](https://technet.microsoft.com/library/jj134210(WS.11).aspx)。|
+    |SMB|透過 SMB 3.0 連線，將虛擬機器的記憶體複製到目的地伺服器。<p>-當來源和目的地伺服器上的網路介面卡已啟用 (RDMA) 功能的遠端直接記憶體存取時，會使用 SMB 直接傳輸。<br />-當識別出適當的 SMB 多重通道設定時，SMB 多重通道會自動偵測並使用多個連接。<p>如需詳細資訊，請參閱[使用 SMB 直接傳輸改善檔案伺服器的效能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134210(v=ws.11))。|
 
  ## <a name="next-steps"></a>後續步驟
 

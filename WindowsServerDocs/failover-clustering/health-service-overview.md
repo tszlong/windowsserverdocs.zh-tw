@@ -1,19 +1,17 @@
 ---
 title: Windows Server 中的健全狀況服務
-ms.prod: windows-server
 manager: eldenc
 ms.author: cosdar
-ms.technology: storage-health-service
 ms.topic: article
 ms.assetid: 5bc71e71-920e-454f-8195-afebd2a23725
 author: cosmosdarwin
 ms.date: 02/09/2018
-ms.openlocfilehash: 1b607869245ff46bd01824ebe4392e283be50b0d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 69bf8d66fdd3e7fac4066791d0521173484a894f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473075"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953414"
 ---
 # <a name="health-service-in-windows-server"></a>Windows Server 中的健全狀況服務
 
@@ -37,7 +35,7 @@ ms.locfileid: "85473075"
 
 請參閱[健全狀況服務動作](health-service-actions.md)。
 
-## <a name="automation"></a>自動化
+## <a name="automation"></a>Automation
 
 本節說明「健全狀況服務」在磁碟生命週期內自動執行的工作流程。
 
@@ -80,7 +78,7 @@ ms.locfileid: "85473075"
 
 #### <a name="verification"></a>驗證
 
-插入更換磁片時，將會針對支援的元件檔進行驗證（請參閱下一節）。
+插入更換磁片時，將會針對支援的元件檔進行驗證， (請參閱下一節) 。
 
 #### <a name="pooling"></a>Pooling
 
@@ -88,7 +86,7 @@ ms.locfileid: "85473075"
 
 ## <a name="supported-components-document"></a>支援的元件檔
 
-健全狀況服務提供強制機制，將儲存空間直接存取所使用的元件限制為系統管理員或解決方案廠商所提供的支援元件檔。 這可以防止您或其他人誤用不支援的硬體，這有助於符合保固或支援合約的規定。 此功能目前僅限於實體磁片裝置，包括 Ssd、Hdd 和 NVMe 磁片磁碟機。 支援的元件檔可以限制型號、製造商（選擇性）和固件版本（選擇性）。
+健全狀況服務提供強制機制，將儲存空間直接存取所使用的元件限制為系統管理員或解決方案廠商所提供的支援元件檔。 這可以防止您或其他人誤用不支援的硬體，這有助於符合保固或支援合約的規定。 此功能目前僅限於實體磁片裝置，包括 Ssd、Hdd 和 NVMe 磁片磁碟機。 支援的元件檔可以限制型號、製造商 (選擇性) ，以及 (選用) 的固件版本。
 
 ### <a name="usage"></a>使用量
 
@@ -98,9 +96,9 @@ ms.locfileid: "85473075"
 
 檔有兩個獨立的區段： `Disks` 和 `Cache` 。
 
-如果 `Disks` 已提供區段，則只允許列出的磁片磁碟機（as `Disk` ）來聯結集區。 任何未列出的磁片磁碟機都無法加入集區，這可有效地避免其在生產環境中使用。 如果此區段保留空白，則會允許任何磁片磁碟機加入集區。
+如果 `Disks` 已提供區段，則只允許 (列為) 的磁片磁碟機加入集區 `Disk` 。 任何未列出的磁片磁碟機都無法加入集區，這可有效地避免其在生產環境中使用。 如果此區段保留空白，則會允許任何磁片磁碟機加入集區。
 
-如果 `Cache` 提供區段，則只會使用列出的磁片磁碟機（as `CacheDisk` ）來進行快取。 如果此區段保留空白，儲存空間直接存取會嘗試[根據媒體類型和匯流排類型來猜測](../storage/storage-spaces/understand-the-cache.md#cache-drives-are-selected-automatically)。 這裡所列的磁片磁碟機也應該列在中 `Disks` 。
+如果 `Cache` 已提供區段，則只會使用列出 (作為) 的磁片磁碟機 `CacheDisk` 來進行快取。 如果此區段保留空白，儲存空間直接存取會嘗試[根據媒體類型和匯流排類型來猜測](../storage/storage-spaces/understand-the-cache.md#cache-drives-are-selected-automatically)。 這裡所列的磁片磁碟機也應該列在中 `Disks` 。
 
 >[!IMPORTANT]
 > 支援的元件檔並不會將追溯套用到已集區和使用中的磁片磁碟機。
@@ -170,7 +168,7 @@ Get-PhysicalDisk | Select Model, Manufacturer, FirmwareVersion
 
 請參閱[健全狀況服務設定](health-service-settings.md)。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [健全狀況服務報表](health-service-reports.md)
 - [健全狀況服務錯誤](health-service-faults.md)

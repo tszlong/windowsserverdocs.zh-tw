@@ -1,33 +1,31 @@
 ---
 title: 加入網域的裝置公開金鑰驗證
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 7bd17803-6e42-4a3b-803f-e47c74725813
 manager: alanth
 author: michikos
-ms.technology: security-authentication
 ms.date: 08/18/2017
-ms.openlocfilehash: 450d3e64ff753a718c2e72e69cb60d51c8c18f78
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 37710710bc301173503450a46fc1ccc2b0614cf4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856331"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943948"
 ---
 # <a name="domain-joined-device-public-key-authentication"></a>加入網域的裝置公開金鑰驗證
 
 >適用于： Windows Server 2016、Windows 10
 
-Kerberos 新增了已加入網域的裝置支援，以使用從 Windows Server 2012 和 Windows 8 開始的憑證進行登入。 這種變更可讓協力廠商的廠商建立解決方案，以布建及初始化已加入網域之裝置的憑證，以用於網域驗證。 
+Kerberos 新增了已加入網域的裝置支援，以使用從 Windows Server 2012 和 Windows 8 開始的憑證進行登入。 這種變更可讓協力廠商的廠商建立解決方案，以布建及初始化已加入網域之裝置的憑證，以用於網域驗證。
 
 ## <a name="automatic-public-key-provisioning"></a>自動公開金鑰布建
 
-從 Windows 10 版本1507和 Windows Server 2016 開始，已加入網域的裝置會自動將系結的公開金鑰布建到 Windows Server 2016 網域控制站（DC）。 布建金鑰後，Windows 就可以對網域使用公開金鑰驗證。
+從 Windows 10 版本1507和 Windows Server 2016 開始，已加入網域的裝置會自動將系結公開金鑰布建到 Windows Server 2016 網域控制站 (DC) 。 布建金鑰後，Windows 就可以對網域使用公開金鑰驗證。
 
 ### <a name="key-generation"></a>金鑰產生
-如果裝置正在執行 Credential Guard，則會建立公開/私密金鑰組，並受到 Credential Guard 的保護。 
+如果裝置正在執行 Credential Guard，則會建立公開/私密金鑰組，並受到 Credential Guard 的保護。
 
-如果 Credential Guard 無法使用，而且 TPM 為，則會建立受 TPM 保護的公開/私密金鑰組。 
+如果 Credential Guard 無法使用，而且 TPM 為，則會建立受 TPM 保護的公開/私密金鑰組。
 
 如果兩者都無法使用，則不會產生金鑰組，且裝置只能使用密碼進行驗證。
 
