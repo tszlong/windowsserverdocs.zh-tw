@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 4358f48b2373ee0c521c3970c4cb235a0d19dfca
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 61961acf9fc1c858fddb4da70b4899e229ec6a3d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519035"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956975"
 ---
 # <a name="ad-ds-simplified-administration"></a>AD DS 簡化的系統管理
 
@@ -203,7 +201,7 @@ ADDSDeployment Windows PowerShell Managed 程式碼內建的先決條件檢查�
 | CheckRODCPrep<p>GroupMembership | LDAP、<p>RPC over SMB (LSARPC) | 驗證使用者是否為 Enterprise Admins 群組的成員，而且對現有的網域控制站具有管理稽核及安全性事件記錄檔 (SesScurityPrivilege) 的權限 |
 | VerifyInitSync<p>AfterReboot | LDAP | 透過在 rootDSE 屬性 becomeSchemaMaster 設定虛擬值，以驗證架構主機自重新啟動後是否至少複寫過一次 |
 | VerifySFUHotFix<p>已套用 | LDAP | 驗證現有的樹系架構未包含 OID 為 1.2.840.113556.1.4.7000.187.102 的 UID 屬性的已知問題 SFU2 延伸<p>([https://support.microsoft.com/kb/821732](https://support.microsoft.com/kb/821732)) |
-| VerifyExchange<p>SchemaFixed | LDAP、WMI、DCOM、RPC | 驗證現有的樹系架構是否仍未包含問題 Exchange 2000 延伸模組-Ms-exch-assistant-name-Assistant-Name、Ms-exch-assistant-name-LabeledURI 和 ms-chap-Ms-exch-assistant-name-內部識別碼（ [https://support.microsoft.com/kb/314649](https://support.microsoft.com/kb/314649) ） |
+| VerifyExchange<p>SchemaFixed | LDAP、WMI、DCOM、RPC | 驗證現有的樹系架構仍然不會包含問題 Exchange 2000 延伸模組： Ms-exch-assistant-name-Assistant-Name、ms-Ms-exch-assistant-name-LabeledURI 和 ms Ms-exch-assistant-name-內部識別碼 ([https://support.microsoft.com/kb/314649](https://support.microsoft.com/kb/314649))  |
 | VerifyWin2KSchema<p>一致性 | LDAP | 驗證現有的樹系架構是否有一致 (未經其他廠商不當修改) 的核心屬性及類別。 |
 | DCPromo | DRSR over RPC、<p>LDAP、<p>DNS<p>RPC over SMB (SAMR) | 驗證命令列語法已傳送到升級程式碼和測試升級。 如果是新建樹系或網域，驗證其是否尚未存在 |
 | VerifyOutbound<p>ReplicationEnabled | LDAP、DRSR over SMB、RPC over SMB (LSARPC) | 檢查 NTDS 設定物件的選項屬性是否為 NTDSDSA_OPT_DISABLE_OUTBOUND_REPL (0x00000004)，以驗證指定為複寫協力電腦的現有網域控制站是否已啟用連出複寫 |

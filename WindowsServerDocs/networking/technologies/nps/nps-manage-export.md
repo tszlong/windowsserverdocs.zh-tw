@@ -2,18 +2,16 @@
 title: 匯出 NPS 設定以在另一部伺服器上匯入
 description: 您可以使用本主題來瞭解如何在 Windows Server 2016 中匯出網路原則伺服器設定。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: d268dc57-78f8-47ba-9a7a-a607e8b9225c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: bbc4982057c306e6f4b94c3c4bf8e8a2761db12a
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 20b3f933565e8170e99f1eed2bfda24bd7705e1b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517803"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949111"
 ---
 # <a name="export-an-nps-configuration-for-import-on-another-server"></a>匯出 NPS 設定以在另一部伺服器上匯入
 
@@ -46,7 +44,7 @@ Export-NpsConfiguration -Path <filename>
 
 下表列出 Windows PowerShell 中**import-npsconfiguration** Cmdlet 的參數。 需要粗體的參數。
 
-|參數|說明|
+|參數|描述|
 |---------|-----------|
 |Path|指定您要匯出 NPS 設定之 XML 檔案的名稱和位置。|
 
@@ -84,7 +82,7 @@ Import-NpsConfiguration -Path "C:\Npsconfig.xml"
 
 ## <a name="export-and-import-the-nps-configuration-by-using-netsh"></a>使用 Netsh 匯出和匯入 NPS 設定
 
-您可以使用 Network Shell （Netsh），透過**Netsh NPS export**命令匯出 NPS 設定。
+您可以使用 (Netsh) 的網路介面，使用**netsh NPS export**命令匯出 NPS 設定。
 
 執行**netsh nps import**命令時，nps 會自動以更新的設定進行重新整理。 您不需要在目的地電腦上停止 NPS 來執行**netsh NPS import**命令，不過，如果 nps 主控台或 nps mmc 嵌入式管理單元在設定匯入期間已開啟，則在您重新整理此視圖之前，不會顯示伺服器設定的變更。
 
@@ -103,12 +101,12 @@ Import-NpsConfiguration -Path "C:\Npsconfig.xml"
 
 3. 在**netsh nps**提示字元中，輸入**export filename =**"*path\file.xml*" **exportPSK = YES**，其中*path*是您要儲存 nps 設定檔的資料夾位置，而*file*是您想要儲存的 XML 檔案名。 按 Enter 鍵。
 
-    這會將設定（包括登錄設定）儲存在 XML 檔案中。 路徑可以是相對或絕對路徑，也可以是通用命名慣例（UNC）路徑。 按下 Enter 之後，會出現一則訊息，指出匯出至檔案是否成功。
+    這會儲存設定 (包括 XML 檔案中) 的登錄設定。 路徑可以是相對或絕對路徑，也可以是 (UNC) 路徑的通用命名慣例。 按下 Enter 之後，會出現一則訊息，指出匯出至檔案是否成功。
 
 4. 將您建立的檔案複製到目的地 NPS。
 
 5. 在目的地 NPS 的命令提示字元中，輸入**netsh NPS import filename =**"*path\file.xml*"，然後按 enter。 此時會出現一則訊息，指出是否已成功從 XML 檔案匯入。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [網路殼層 (Netsh)](../netsh/netsh.md)

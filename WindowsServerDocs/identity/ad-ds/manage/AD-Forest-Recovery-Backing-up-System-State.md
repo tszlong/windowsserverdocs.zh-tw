@@ -5,15 +5,13 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server
 ms.assetid: 9238cb27-0020-42f7-90d6-fcebf7e3c0bc
-ms.technology: identity-adds
-ms.openlocfilehash: 5083e6987edc353b373b1048ceeaeb28b5790d23
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 675b8edd5425238b838df2c2bb7e09d0c0232c92
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519025"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956885"
 ---
 # <a name="ad-forest-recovery---backing-up-the-system-state-data"></a>AD 樹系復原-備份系統狀態資料
 
@@ -35,7 +33,7 @@ ms.locfileid: "87519025"
 
    ![安裝備份](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup3.png)
 
-6. 在 [**選取備份**設定] 頁面上，按一下 [**自訂**]，然後按 **[下一步]**。
+6. 在 [**選取備份**設定] 頁面上，按一下 [**自訂) **]，然後按 **[下一步]**。
 7. 在 [**選取備份的專案**] 畫面上，按一下 [**新增專案**] 並選取 [**系統狀態**]，然後按一下 **[確定]**。
    - 在 Windows Server 2008 R2 和 Windows Server 2008 中，選取要包含在備份中的磁片區。 如果您選取 [**啟用系統修復**] 核取方塊，則會選取所有重要的磁片區。
 

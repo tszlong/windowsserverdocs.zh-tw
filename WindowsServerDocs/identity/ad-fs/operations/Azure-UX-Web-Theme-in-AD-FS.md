@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: ce9bddbc9b03a9019860e9b831bb928326098b76
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: a7cb3a037d074fc4a61e6c805bca181316643bb3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965950"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956675"
 ---
 # <a name="using-an-azure-ad-ux-web-theme-in-active-directory-federation-services"></a>在 Active Directory 同盟服務中使用 Azure AD UX Web 主題
 AD FS 表單登入目前不會反映 Azure/O365 登入體驗。  為了為使用者提供更一致且流暢的體驗，我們發行了遵循的級聯樣式表 web 主題，可套用至您的 AD FS 伺服器。  目前，Windows Server 2016 上 AD FS 的表單登入如下所示：
@@ -37,7 +35,7 @@ AD FS 表單登入目前不會反映 Azure/O365 登入體驗。  為了為使用
     ![ powershell](media/Azure-UX-Web-Theme-in-AD-FS/two.png)
 4. 前往 HTTPs:///adfs/ls/idpinitiatedsignon.htm 登入來測試登入 <AD FS name.domain> ![](media/Azure-UX-Web-Theme-in-AD-FS/three.png)
 
-> !下您必須確定已啟用 iDPInitiatedsignon.aspx)。  預設不會啟用此記錄。  若要啟用 iDPInitiatedsignon.aspx)，請使用下列 PowerShell 命令：`Set-AdfsProperties –EnableIdpInitiatedSignonPage $True`
+> !下您必須確定已啟用 iDPInitiatedsignon.aspx) 。  預設不會啟用此記錄。  若要啟用 iDPInitiatedsignon.aspx) ，請使用下列 PowerShell 命令：`Set-AdfsProperties –EnableIdpInitiatedSignonPage $True`
 
 ## <a name="image-recommendations"></a>映射建議
 啟用中央 UI 可讓您將相同的影像用於背景和標誌，而您可能已經有 Azure Active Directory 公司商標。 一般來說，大小、比例和格式的相同建議也適用。

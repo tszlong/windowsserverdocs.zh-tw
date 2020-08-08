@@ -1,23 +1,21 @@
 ---
 ms.assetid: 5052f13c-ff35-471d-bff5-00b5dd24f8aa
-title: 使用 OAuth 搭配 AD FS 2016 或更新版本，以使用代理程式（OBO）建立多層式應用程式
+title: '使用 OAuth 搭配 AD FS 2016 或更新版本，建立多層式應用程式，使用 (OBO) '
 author: billmath
 ms.author: billmath
 manager: mtillman
 ms.date: 02/22/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: d13cd27efc2387911f8c66bf083509e60e7e5b31
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: c313754b315b48982342fe2797d1ed766ce354a9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519877"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965165"
 ---
-# <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016-or-later"></a>使用 OAuth 搭配 AD FS 2016 或更新版本，以使用代理程式（OBO）建立多層式應用程式
+# <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016-or-later"></a>使用 OAuth 搭配 AD FS 2016 或更新版本，建立多層式應用程式，使用 (OBO) 
 
-本逐步解說提供使用 Windows Server 2016 TP5 或更新版本中的 AD FS 來執行代理程式（OBO）驗證的指示。 若要深入瞭解 OBO authentication，請閱讀[AD FS OpenID connect/OAuth 流程和應用程式案例](../../ad-fs/overview/ad-fs-openid-connect-oauth-flows-scenarios.md)
+本逐步解說提供在 Windows Server 2016 TP5 或更新版本中使用 AD FS 來執行代理 (OBO) 驗證的指示。 若要深入瞭解 OBO authentication，請閱讀[AD FS OpenID connect/OAuth 流程和應用程式案例](../../ad-fs/overview/ad-fs-openid-connect-oauth-flows-scenarios.md)
 
 > [!WARNING]
 > 您可以在這裡建立的範例僅供教育目的之用。 這些指示適用于公開模型所需元素的最簡單且最基本的執行方式。 此範例可能不包含錯誤處理和其他相關功能的所有層面，而且只著重于取得成功的 OBO authentication。
@@ -42,7 +40,7 @@ ms.locfileid: "87519877"
 
 範例會包含三個模組
 
-模組 | 說明
+課程模組 | 描述
 -------|------------
 ToDoClient | 使用者互動的 Native client
 ToDoService | 仲介層 Web API，作為後端 WebAPI 的用戶端
@@ -50,7 +48,7 @@ WebAPIOBO | ToDoService 在使用者新增 ToDoItem 時，用來執行必要作�
 
 ## <a name="setting-up-the-development-box"></a>設定開發箱
 
-本逐步解說會使用 Visual Studio 2015。 專案大量使用 Active Directory 驗證程式庫（ADAL）。 若要瞭解 ADAL，請參閱[Active Directory 驗證程式庫 .net](/dotnet/api/microsoft.identitymodel.clients.activedirectory?view=azure-dotnet)
+本逐步解說會使用 Visual Studio 2015。 專案大量使用 Active Directory 驗證程式庫 (ADAL) 。 若要瞭解 ADAL，請參閱[Active Directory 驗證程式庫 .net](/dotnet/api/microsoft.identitymodel.clients.activedirectory?view=azure-dotnet)
 
 此範例也會使用 SQL LocalDB 11.0。 在使用範例之前，請先安裝 SQL LocalDB。
 
@@ -113,7 +111,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapi-onbeha
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO1.PNG)
 
-按 [下一步]，您會看到 [設定應用程式許可權] 頁面。 在此頁面上，選取 [允許的範圍] 作為 openid （預設為已選取），然後 user_impersonation]。 必須要有範圍 ' user_impersonation '，才能成功地從 AD FS 要求代理者存取權杖。
+按 [下一步]，您會看到 [設定應用程式許可權] 頁面。 在此頁面上，選取 [允許的範圍作為 openid (預設) 和 [user_impersonation]。 必須要有範圍 ' user_impersonation '，才能成功地從 AD FS 要求代理者存取權杖。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO12.PNG)
 
@@ -204,7 +202,7 @@ private static string todoListResourceId = ConfigurationManager.AppSettings["ida
 private static string todoListBaseAddress = ConfigurationManager.AppSettings["ida:TodoListBaseAddress"];
 ```
 
-在函數 Mainwindow.xaml （）中，將 authcoNtext 初始化變更為：
+在函數 Mainwindow.xaml ( # A1 中，將 authcoNtext 初始化變更為：
 
 ```
 authContext = new AuthenticationContext(authority, false);
@@ -221,7 +219,7 @@ authContext = new AuthenticationContext(authority, false);
 
 * 在下一個提示中，按一下 [變更驗證]
 * 選取 [公司和學校帳戶]，然後在右邊的下拉式清單中選取 [內部部署]
-* 輸入 AD FS 部署的 federationmetadata.xml 路徑，並提供應用程式 URI （現在提供任何 URI，稍後您將會變更），然後按一下 [確定] 將專案新增至方案。
+* 輸入 AD FS 部署的 federationmetadata.xml 路徑，並提供應用程式 URI， (目前提供任何 URI，稍後您將會變更) 然後按一下 [確定]，將專案新增至方案。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO9.PNG)
 
@@ -264,7 +262,7 @@ authContext = new AuthenticationContext(authority, false);
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO6.PNG)
 
-在 [設定 Web API] 頁面上，為 WebAPI 專案和識別碼提供適當的名稱。 在 visual studio 中，識別碼應該是來自 WebAPIOBO 專案的 SSL URL 值（與我們針對 BackendWebAPIAdfsAdd 所做的一樣）。
+在 [設定 Web API] 頁面上，為 WebAPI 專案和識別碼提供適當的名稱。 識別碼應該是 visual studio 中 WebAPIOBO 專案的 [SSL URL] 值， (與我們針對 BackendWebAPIAdfsAdd) 所做的相同。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO8.PNG)
 
@@ -281,7 +279,7 @@ authContext = new AuthenticationContext(authority, false);
 * 開啟 Web.config 檔案
 * 修改下列金鑰
 
-| Key | 值 |
+| 機碼 | 值 |
 |:-|:-|
 | ida：物件 | 設定 ToDoListService WebAPI 時 AD FS 所指定的 ToDoListService 識別碼，例如https://localhost:44321/ |
 | ida： ClientID | 設定 ToDoListService WebAPI 時 AD FS 所指定的 ToDoListService 識別碼，例如<https://localhost:44321/> </br>**Ida：受眾和 ida： ClientID 彼此相符非常重要** |
@@ -367,7 +365,7 @@ private static string OBOWebAPIBase = ConfigurationManager.AppSettings["ida:OBOW
 
 從 AD FS 我們會發行 Nmae 宣告，但我們不會發出 NameIdentifier 宣告。 此範例會在 ToDo 專案中使用 NameIdentifier 的唯一索引鍵。 為了簡單起見，您可以在程式碼中安全地移除具有名稱宣告的 NameIdentifier。 尋找並以名稱取代所有出現的 NameIdentifier。
 
-**修改 Post 常式和 CallGraphAPIOnBehalfOfUser （）**
+**修改 Post 常式和 CallGraphAPIOnBehalfOfUser ( # B1**
 
 複製下列程式碼並貼到 ToDoListController.cs 中，並取代 Post 和 CallGraphAPIOnBehalfOfUser 的程式碼
 

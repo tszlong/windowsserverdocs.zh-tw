@@ -5,15 +5,13 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server
 ms.assetid: 398918dc-c8ab-41a6-a377-95681ec0b543
-ms.technology: identity-adds
-ms.openlocfilehash: 3792a1e9b5c8978fdc8db5201ff4d439dbfb98d6
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: cb7e6f7b8e8786ad816a9ec5e3211fa617723a9c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519015"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956935"
 ---
 # <a name="ad-forest-recovery---backing-up-a-full-server"></a>AD 樹系復原-備份完整伺服器
 
@@ -56,7 +54,7 @@ ms.locfileid: "87519015"
 
    ![安裝備份](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup3.png)
 
-6. 在 [**選取備份**設定] 頁面上，按一下 [**完整伺服器（建議選項）**]，然後按 **[下一步]**。
+6. 在 [**選取備份**設定] 頁面上，按一下 [**完整伺服器 (建議) **]，然後按 **[下一步]**。
 7. 按一下 [**指定目的地類型**] 頁面上的 [**本機磁片磁碟機**] 或 [**遠端共用資料夾**]，然後按 **[下一步]**。
 8. 在 [**選取備份目的地**] 頁面上，選擇備份位置。  如果您選取 [本機磁片磁碟機]，請選擇本機磁片磁碟機，或如果您選取 [遠端共用]，請選擇網路共用。
 9. 在 [確認] 畫面上，按一下 [**備份**]。

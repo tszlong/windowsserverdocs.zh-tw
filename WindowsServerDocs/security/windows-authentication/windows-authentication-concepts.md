@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: ee204320696ac10eaf341df06d7c458198b3ec28
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7ef3b9fde0ca9b9364a1fdcc99690b58f4f14f68
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936532"
+ms.locfileid: "87990005"
 ---
 # <a name="windows-authentication-concepts"></a>Windows 驗證概念
 
@@ -55,7 +55,7 @@ Passport 和可能相關的 visas 是用於出差的已接受認證。 不過，
 出差的多重要素驗證形式可能需要攜帶和呈現多份檔，以驗證他的身分識別，例如 passport 和會議註冊資訊。 Windows 透過智慧卡、虛擬智慧卡和生物識別技術來實行此表單或驗證。
 
 ## <a name="security-principals-and-accounts"></a>安全性主體和帳戶
-在 Windows 中，任何可以起始動作的使用者、服務、群組或電腦都是安全性主體。 安全性主體具有可在電腦本機或以網域為基礎的帳戶。 例如，即使沒有任何人為登入，Windows 用戶端已加入網域的電腦也可以與網域控制站通訊來參與網路網域。 若要起始通訊，電腦在網域中必須有使用中的帳戶。 在接受來自電腦的通訊之前，網域控制站上的本地安全機構會驗證電腦的身分識別，然後定義電腦的安全性內容，就像針對人類安全性主體所做的一樣。 此安全性內容會定義特定電腦或網路上的使用者、服務、群組或電腦上的使用者或服務的身分識別和功能。 例如，它會定義可存取的資源（例如檔案共用或印表機），以及可由使用者、服務或電腦在該資源上執行的動作，例如讀取、寫入或修改。 如需詳細資訊，請參閱[安全性主體](https://technet.microsoft.com/itpro/windows/keep-secure/security-principals)。
+在 Windows 中，任何可以起始動作的使用者、服務、群組或電腦都是安全性主體。 安全性主體具有可在電腦本機或以網域為基礎的帳戶。 例如，即使沒有任何人為登入，Windows 用戶端已加入網域的電腦也可以與網域控制站通訊來參與網路網域。 若要起始通訊，電腦在網域中必須有使用中的帳戶。 在接受來自電腦的通訊之前，網域控制站上的本地安全機構會驗證電腦的身分識別，然後定義電腦的安全性內容，就像針對人類安全性主體所做的一樣。 此安全性內容會定義特定電腦或網路上的使用者、服務、群組或電腦上的使用者或服務的身分識別和功能。 例如，它會定義可存取的資源（例如檔案共用或印表機），以及可由使用者、服務或電腦在該資源上執行的動作，例如讀取、寫入或修改。 如需詳細資訊，請參閱[安全性主體](/windows/security/identity-protection/access-control/security-principals)。
 
 帳戶是識別 claimant （使用者或服務）要求存取權或資源的一種方式。 持有擁有正版 passport 的旅行者擁有具有主機國家/地區的帳戶。 使用者、使用者群組、物件和服務都可以有個別的帳戶或共用帳戶。 帳戶可以是群組的成員，而且可以指派特定的權利和許可權。 帳戶可以限制為本機電腦、工作組、網路，或被指派網域的成員資格。
 
@@ -65,17 +65,17 @@ Passport 和可能相關的 visas 是用於出差的已接受認證。 不過，
 
 如需帳戶的詳細資訊，請參閱：
 
--   [Active Directory 帳戶](https://technet.microsoft.com/itpro/windows/keep-secure/active-directory-accounts)
+-   [Active Directory 帳戶](/windows/security/identity-protection/access-control/active-directory-accounts)
 
--   [Active Directory 安全性群組](https://technet.microsoft.com/itpro/windows/keep-secure/active-directory-security-groups)
+-   [Active Directory 安全性群組](/windows/security/identity-protection/access-control/active-directory-security-groups)
 
 -   [本機帳戶](https://technet.microsoft.com/itpro/windows/keep-bastion.local-accounts)
 
--   [Microsoft 帳戶](https://technet.microsoft.com/itpro/windows/keep-secure/microsoft-accounts)
+-   [Microsoft 帳戶](/windows/security/identity-protection/access-control/microsoft-accounts)
 
--   [服務帳戶](https://technet.microsoft.com/itpro/windows/keep-secure/service-accounts)
+-   [服務帳戶](/windows/security/identity-protection/access-control/service-accounts)
 
--   [特殊身分](https://technet.microsoft.com/itpro/windows/keep-secure/special-identities)
+-   [特殊身分](/windows/security/identity-protection/access-control/special-identities)
 
 ## <a name="delegated-authentication"></a>委派的驗證
 若要使用旅遊比喻，國家（地區）可能會對官方政府委派的所有成員發出相同的存取權，只要委派知名就可以了。 此委派可讓一個成員在另一個成員的授權單位上作用。 在 Windows 中，當網路服務接受來自使用者的驗證要求，並採用該使用者的身分識別來起始第二個網路服務的新連線時，就會進行委派的驗證。 若要支援委派的驗證，您必須建立前端或第一層伺服器（例如網頁伺服器），負責處理負責儲存資訊的用戶端驗證要求和後端或多層式伺服器（例如大型資料庫）。 您可以委派許可權來設定委派驗證給組織中的使用者，以降低系統管理員的系統管理負載。
@@ -89,12 +89,12 @@ Passport 和可能相關的 visas 是用於出差的已接受認證。 不過，
 
 特定信任通過驗證要求的方式，取決於其設定方式。 信任關係可以是單向的，方法是提供來自受信任網域的存取權給信任網域中的資源，或將存取權提供給另一個網域中的資源，藉此雙向。 信任也是不可轉移的，在這種情況下，信任只存在於兩個信任夥伴網域之間，或可轉移，在此情況下，信任會自動延伸到任何夥伴信任的其他任何網域。
 
-如需信任運作方式的相關資訊，請參閱[網域和樹系信任的運作方式](https://technet.microsoft.com/library/cc773178(v=ws.10).aspx)。
+如需信任運作方式的相關資訊，請參閱[網域和樹系信任的運作方式](/previous-versions/windows/it-pro/windows-server-2003/cc773178(v=ws.10))。
 
 ### <a name="protocol-transition"></a>通訊協定轉換
 通訊協定轉換可協助應用程式設計人員，讓應用程式在使用者驗證層支援不同的驗證機制，並在後續的應用層中切換至安全性功能的 Kerberos 通訊協定，例如相互驗證和限制委派。
 
-如需通訊協定轉換的詳細資訊，請參閱[Kerberos 通訊協定轉換和限制委派](https://technet.microsoft.com/library/cc758097(v=ws.10).aspx)。
+如需通訊協定轉換的詳細資訊，請參閱[Kerberos 通訊協定轉換和限制委派](/previous-versions/windows/it-pro/windows-server-2003/cc758097(v=ws.10))。
 
 ### <a name="constrained-delegation"></a>限制委派
 限制委派讓系統管理員能夠指定並強制執行應用程式信任界限，方法是限制應用程式服務可以代表使用者採取行動的範圍。 您可以指定特定服務，讓受信任委派的電腦可以要求資源。 限制服務授權許可權的彈性有助於提升應用程式安全性的設計，方法是降低不受信任服務危害的機會。
@@ -103,5 +103,3 @@ Passport 和可能相關的 visas 是用於出差的已接受認證。 不過，
 
 ## <a name="additional-references"></a>其他參考資料
 [Windows 登入和驗證技術總覽](https://technet.microsoft.com/library/dn269029.aspx)
-
-

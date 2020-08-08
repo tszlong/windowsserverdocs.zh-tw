@@ -6,15 +6,13 @@ ms.author: billmath
 manager: mtillman
 ms.date: 04/29/2020
 ms.topic: article
-ms.prod: windows-server
 ms.reviewer: anandy
-ms.technology: identity-adfs
-ms.openlocfilehash: 9ffc8351c2c5033346f04e3cd4dc6f8ba4914149
-ms.sourcegitcommit: fea590c092d7abcb55be2b424458faa413795f5c
+ms.openlocfilehash: 9ab9a22e471a576a2632e3dbb054d21dd4534e46
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85372205"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940546"
 ---
 # <a name="customize-claims-to-be-emitted-in-id_token-when-using-openid-connect-or-oauth-with-ad-fs-2016-or-later"></a>自訂使用 OpenID Connect 或 OAuth 搭配 AD FS 2016 或更新版本時，要在 id_token 中發出的宣告
 
@@ -34,7 +32,7 @@ ms.locfileid: "85372205"
 
 1. `response_mode`設定為`form_post`
 2. 只有公用用戶端可以取得識別碼權杖中的自訂宣告
-3. 信賴憑證者識別碼（Web API 識別碼）應與用戶端識別碼相同
+3. 信賴憑證者識別碼 (Web API 識別碼) 應該與用戶端識別碼相同
 
 ### <a name="scenario-2"></a>案例 2
 
@@ -58,43 +56,43 @@ Grant-AdfsApplicationPermission -ClientRoleIdentifier "https://my/privateclient"
 ### <a name="create-and-configure-an-application-group-in-ad-fs-2016-or-later"></a>在 AD FS 2016 或更新版本中建立和設定應用程式群組
 
 1. 在 AD FS 管理] 中，以滑鼠右鍵按一下 [應用程式群組]，然後選取 [**新增應用程式群組**]。
-2. 在 [應用程式群組] 上，針對 [名稱] 輸入**ADFSSSO** ，然後在 [用戶端-伺服器應用程式] 下，選取**存取 web 應用程式範本的原生應用程式** 按一下 [下一步] 。
+2. 在 [應用程式群組] 上，針對 [名稱] 輸入**ADFSSSO** ，然後在 [用戶端-伺服器應用程式] 下，選取**存取 web 應用程式範本的原生應用程式** 按 [下一步]  。
 
-   ![Client](media/Custom-Id-Tokens-in-AD-FS/clientsnap1.png)
+   ![用戶端](media/Custom-Id-Tokens-in-AD-FS/clientsnap1.png)
 
 3. 複製 [**用戶端識別碼**] 值。  稍後在應用程式 web.config 檔中，將會使用它做為 ida： ClientId 的值。
-4. 針對 [重新導向 URI] 輸入下列**內容：**  -  **https://localhost:44320/** 。  按一下 [新增] 。 按一下 [下一步] 。
+4. 針對 [重新導向 URI] 輸入下列**內容：**  -  **https://localhost:44320/** 。  按一下 [新增] 。 按 [下一步]  。
 
-   ![Client](media/Custom-Id-Tokens-in-AD-FS/clientsnap2.png)
+   ![用戶端](media/Custom-Id-Tokens-in-AD-FS/clientsnap2.png)
 
-5. 在 [**設定 WEB API** ] 畫面上，針對 [**識別碼**] 輸入下列各項  -  **https://contoso.com/WebApp** 。  按一下 [新增] 。 按一下 [下一步] 。  稍後在應用程式 web.config 檔中，將會使用此值進行**ida： ResourceID** 。
+5. 在 [**設定 WEB API** ] 畫面上，針對 [**識別碼**] 輸入下列各項  -  **https://contoso.com/WebApp** 。  按一下 [新增] 。 按 [下一步]  。  稍後在應用程式 web.config 檔中，將會使用此值進行**ida： ResourceID** 。
 
-   ![Client](media/Custom-Id-Tokens-in-AD-FS/clientsnap3.png)
+   ![用戶端](media/Custom-Id-Tokens-in-AD-FS/clientsnap3.png)
 
 6. 在 [**選擇存取控制原則**] 畫面上選取 [**允許每個人**]，然後按 **[下一步]**
 
-   ![Client](media/Custom-Id-Tokens-in-AD-FS/clientsnap4.png)
+   ![用戶端](media/Custom-Id-Tokens-in-AD-FS/clientsnap4.png)
 
 7. 在 [**設定應用程式許可權**] 畫面上，確認已選取**openid**和**Allatclaims** ，然後按 **[下一步]**。
 
-   ![Client](media/Custom-Id-Tokens-in-AD-FS/clientsnap5.PNG)
+   ![用戶端](media/Custom-Id-Tokens-in-AD-FS/clientsnap5.PNG)
 
 8. 在 [**摘要**] 畫面上，按 **[下一步]**。
 
-   ![Client](media/Custom-Id-Tokens-in-AD-FS/clientsnap6.PNG)
+   ![用戶端](media/Custom-Id-Tokens-in-AD-FS/clientsnap6.PNG)
 
 9. 在 [**完成**] 畫面上，按一下 [**關閉**]。
 10. 在 AD FS 管理] 中，按一下 [應用程式群組] 以取得所有應用程式群組的清單。 以滑鼠右鍵按一下 [ **ADFSSSO** ]，然後選取 [**屬性**]。 選取 [ **ADFSSSO-WEB API** ]，然後按一下 [**編輯**]
 
-    ![Client](media/Custom-Id-Tokens-in-AD-FS/clientsnap7.PNG)
+    ![用戶端](media/Custom-Id-Tokens-in-AD-FS/clientsnap7.PNG)
 
 11. 在 [ **ADFSSSO-WEB API 屬性**] 畫面上，選取 [**發行轉換規則**] 索引標籤，然後按一下 [**新增規則 ...** ]
 
-    ![Client](media/Custom-Id-Tokens-in-AD-FS/clientsnap8.PNG)
+    ![用戶端](media/Custom-Id-Tokens-in-AD-FS/clientsnap8.PNG)
 
 12. 在 [**新增轉換宣告規則嚮導]** 畫面上，從下拉式選單選取 [**使用自訂規則傳送宣告**]，然後按 **[下一步]**
 
-    ![Client](media/Custom-Id-Tokens-in-AD-FS/clientsnap9.PNG)
+    ![用戶端](media/Custom-Id-Tokens-in-AD-FS/clientsnap9.PNG)
 
 13. 在 [**新增轉換宣告規則嚮導]** 畫面上的 [宣告**規則名稱**] 和 [**自訂規則**中的下列宣告規則] 中，輸入**ForCustomIDToken** 。 按一下 [完成]
 
@@ -103,7 +101,7 @@ Grant-AdfsApplicationPermission -ClientRoleIdentifier "https://my/privateclient"
     => issue(claim=x);
     ```
 
-    ![Client](media/Custom-Id-Tokens-in-AD-FS/clientsnap10.PNG)
+    ![用戶端](media/Custom-Id-Tokens-in-AD-FS/clientsnap10.PNG)
 
     > [!NOTE]
     > 您也可以使用 PowerShell 來指派 `allatclaims` 和 `openid` 範圍。

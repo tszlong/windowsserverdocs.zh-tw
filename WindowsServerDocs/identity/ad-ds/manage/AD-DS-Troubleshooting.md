@@ -7,14 +7,12 @@ author: MicrosoftGuyJFlo
 manager: dcscontentpm
 ms.date: 11/22/2019
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 0cd49e4eee2d68209fa016547cdd2d0626128204
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: e7ba33d7471dff72c102658262a2e41983c0a2e5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961290"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956918"
 ---
 # <a name="ad-ds-troubleshooting"></a>對 AD DS 進行疑難排解
 
@@ -27,6 +25,6 @@ ms.locfileid: "86961290"
 - [設定電腦進行疑難排解 Active Directory](../manage/troubleshoot/Configuring-a-Computer-for-Troubleshooting.md)
 - [進行 Active Directory 複寫問題疑難排解](../manage/troubleshoot/Troubleshooting-Active-Directory-Replication-Problems.md)
 
-另一個有用的技術是 Windows 事件追蹤（ETW）。 您可以使用 ETW 來疑難排解網域控制站之間的 LDAP 通訊。 如需詳細資訊，請參閱[使用 ETW 針對 LDAP 連接進行疑難排解](../manage/troubleshoot/troubleshoot-ldap-using-etw.md)。
+另一個有用的技術是 Windows (ETW) 的事件追蹤。 您可以使用 ETW 來疑難排解網域控制站之間的 LDAP 通訊。 如需詳細資訊，請參閱[使用 ETW 針對 LDAP 連接進行疑難排解](../manage/troubleshoot/troubleshoot-ldap-using-etw.md)。
 
-您也可以在執行 Windows 10 的成員伺服器上安裝遠端伺服器管理工具（RSAT）。 如需有關如何安裝 RSAT 的詳細資訊，請參閱[遠端伺服器管理工具](../../../remote/remote-server-administration-tools.md)。
+您也可以在執行 Windows 10 的成員伺服器上安裝遠端伺服器管理工具 (RSAT) 。 如需有關如何安裝 RSAT 的詳細資訊，請參閱[遠端伺服器管理工具](../../../remote/remote-server-administration-tools.md)。

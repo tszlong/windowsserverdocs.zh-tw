@@ -5,15 +5,13 @@ author: billmath
 manager: femila
 ms.date: 04/09/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: b6fc6c662630af5658e5f186c958f4ddaffccc42
-ms.sourcegitcommit: 4af8ab2e5c199ecff0697e5331fa7f61f2556a8f
+ms.openlocfilehash: cf8a12957621ce86492cc4216c56d9a159f1ee5c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86866027"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940564"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-using-a-wid-database"></a>升級至使用 WID 資料庫的 Windows Server 2016 AD FS
 
@@ -24,8 +22,8 @@ ms.locfileid: "86866027"
 ## <a name="upgrading-a-windows-server-2012-r2-or-2016-ad-fs-farm-to-windows-server-2019"></a>將 Windows Server 2012 R2 或 2016 AD FS 伺服器陣列升級至 Windows Server 2019
 下列檔將說明當您使用 WID 資料庫時，如何將 AD FS 伺服器陣列升級至 Windows Server 2019 中的 AD FS。
 
-### <a name="ad-fs-farm-behavior-levels-fbl"></a>AD FS 伺服器陣列行為層級（FBL）
-在 Windows Server 2016 的 AD FS 中，會引進伺服器陣列行為層級（FBL）。 這是整個伺服器陣列的設定，用來決定 AD FS 伺服器陣列可以使用的功能。
+### <a name="ad-fs-farm-behavior-levels-fbl"></a>AD FS 伺服器陣列行為層級 (FBL) 
+在 Windows Server 2016 的 AD FS 中，會引進伺服器陣列行為層級 (FBL) 。 這是整個伺服器陣列的設定，用來決定 AD FS 伺服器陣列可以使用的功能。
 
 下表依 Windows Server 版本列出 FBL 值：
 
@@ -41,7 +39,7 @@ ms.locfileid: "86866027"
 ### <a name="new-vs-upgraded-farms"></a>新的 vs 升級的伺服器陣列
 根據預設，新 AD FS 伺服器陣列中的 FBL 會符合所安裝第一個伺服器陣列節點之 Windows Server 版本的值。
 
-較新版本的 AD FS 伺服器可以聯結至 AD FS 2012 R2 或2016伺服器陣列，而伺服器陣列會在與現有節點相同的 FBL 上運作。 當您有多個 Windows Server 版本在 FBL 值最低版本的相同伺服器陣列中運作時，您的伺服器陣列就會被視為「混合」。 不過，在 FBL 引發之前，您將無法利用較新版本的功能。 使用混合伺服器陣列：
+較新版本的 AD FS 伺服器可以聯結至 AD FS 2012 R2 或2016伺服器陣列，而伺服器陣列將會與現有節點 (的) 在相同的 FBL 上運作。 當您有多個 Windows Server 版本在 FBL 值最低版本的相同伺服器陣列中運作時，您的伺服器陣列就會被視為「混合」。 不過，在 FBL 引發之前，您將無法利用較新版本的功能。 使用混合伺服器陣列：
 
 - 系統管理員可以將新的 Windows Server 2019 同盟伺服器新增至現有的 Windows Server 2012 R2 或2016伺服器陣列。 因此，伺服器陣列會處於「混合模式」，並與原始伺服器陣列在相同的伺服器陣列行為層級上運作。 為了確保整個伺服器陣列的行為一致，無法設定或使用較新的 Windows Server AD FS 版本的功能。
 
@@ -156,8 +154,9 @@ Set-WebApplicationProxyConfiguration -UpgradeConfigurationVersion
 這將會完成 WAP 伺服器的升級。
 
 
-> [!NOTE] 
-> 如果執行具有混合式憑證信任的 Windows Hello 企業版，則 AD FS 2019 中存在已知的 PRT 問題。 您可能會在 ADFS 系統管理員事件記錄檔中遇到此錯誤：收到不正確 Oauth 要求。 已禁止用戶端 'NAME' 存取範圍為 'ugs' 的資源。 若要補救此錯誤： 
+> [!NOTE]
+> 如果執行具有混合式憑證信任的 Windows Hello 企業版，則 AD FS 2019 中存在已知的 PRT 問題。 您可能會在 ADFS 系統管理員事件記錄檔中遇到此錯誤：收到不正確 Oauth 要求。 已禁止用戶端 'NAME' 存取範圍為 'ugs' 的資源。
+> 若要補救此錯誤：
 > 1. 啟動 AD FS 管理主控台。 瀏覽至「服務 > 範圍描述」
 > 2. 以滑鼠右鍵按一下 [範圍描述]，然後選取 [新增範圍描述]
 > 3. 在名稱下輸入 "ugs"，然後按一下 [套用] > [確定]

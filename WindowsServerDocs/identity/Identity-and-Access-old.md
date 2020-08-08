@@ -6,15 +6,13 @@ ms.author: billmath
 manager: femila
 ms.date: 03/16/2018
 ms.topic: article
-ms.prod: windows-server
 ms.localizationpriority: medium
-ms.technology: identity-adds
-ms.openlocfilehash: 971622f0680d1a1b864a1f98332bc836dbdc3b00
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 92584ba048791df5de3e525ee7d5456e1a44f3e7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965660"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965175"
 ---
 # <a name="identity-and-access-in-windows-server-2016"></a>Windows Server 2016 中的身分識別與存取
 
@@ -27,10 +25,10 @@ ms.locfileid: "86965660"
 
 
 ## <a name="whats-new-in-active-directory-federation-services-for-windows-server-2016"></a>[Windows Server 2016 的 Active Directory 同盟服務新功能](ad-fs/overview/whats-new-active-directory-federation-services-windows-server.md)
-Windows Server 2016 中 AD FS 所有可用新功能的概觀。  
+Windows Server 2016 中 AD FS 所有可用新功能的概觀。
 
 ## <a name="whats-new-in-active-directory-domain-services-for-windows-server-2016"></a>[Windows Server 2016 的 Active Directory Domain Services 新功能](whats-new-active-directory-domain-services.md)
-列出 Windows Server 2016 中 AD DS 所有可用的新功能。  
+列出 Windows Server 2016 中 AD DS 所有可用的新功能。
 
 ## <a name="privileged-access-management-for-active-directory-domain-services-40ad-ds41"></a>[Active Directory Domain Services &#40;AD DS 的特殊許可權存取管理&#41;](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services)
 Active Directory Domain Services (AD DS) 的 Privileged Access Management (PAM) 是根據 Microsoft Identity Manager (MIM) 與 Windows Server 2012 R2 和 Windows Server 2016 的解決方案。
@@ -42,10 +40,10 @@ Windows 10 可讓您運用 Azure Active Directory。 Windows 10 裝置可以連�
 Windows Server 2016 中 AD DS 所有可用功能的詳細記載。
 
 ## <a name="active-directory-federation-services"></a>[Active Directory 同盟服務](Active-Directory-Federation-Services.md) \(英文\)
-Windows Server 2016 中 AD FS 所有可用功能的詳細記載。  
+Windows Server 2016 中 AD FS 所有可用功能的詳細記載。
 
-## <a name="solutions-and-scenario-guides"></a>解決方案和案例指南  
-* [確保從任意地點使用任意裝置存取公司資源時的安全](/previous-versions/windows/it-pro/solutions-guidance/dn550982(v=ws.11))  
-*  [從任何裝置加入工作地點網路，並在公司的各個應用程式提供 SSO 和無縫式的次要因素驗證](./ad-fs/operations/join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications.md)  
-* [透過其他多重要素驗證管理機密應用程式的風險](./ad-fs/operations/manage-risk-with-additional-multi-factor-authentication-for-sensitive-applications.md)  
+## <a name="solutions-and-scenario-guides"></a>解決方案和案例指南
+* [確保從任意地點使用任意裝置存取公司資源時的安全](/previous-versions/windows/it-pro/solutions-guidance/dn550982(v=ws.11))
+*  [從任何裝置加入工作地點網路，並在公司的各個應用程式提供 SSO 和無縫式的次要因素驗證](./ad-fs/operations/join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications.md)
+* [透過其他多重要素驗證管理機密應用程式的風險](./ad-fs/operations/manage-risk-with-additional-multi-factor-authentication-for-sensitive-applications.md)
 * [使用條件式存取控制管理風險](./ad-fs/operations/manage-risk-with-conditional-access-control.md)

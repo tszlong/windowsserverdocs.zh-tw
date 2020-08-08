@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 93b02f79753f4e861c141ced84b29efd078fd227
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 78e245767857111f71a6252094ef0e74fda7f714
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961050"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965265"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2016"></a>將網域控制站升級到 Windows Server 2016
 
@@ -93,7 +91,7 @@ Windows Server 2016 需要 Windows Server 2003 樹系功能等級。 也就是�
 
 ### <a name="rolling-back-functional-levels"></a>回復功能等級
 
-將樹系功能等級（FFL）設定為某個值之後，您就無法回復或降低樹系功能等級，但有下列例外狀況：
+將樹系功能等級 (FFL) 設定為某個值之後，就無法回復或降低樹系功能等級，但有下列例外狀況：
 
 - 如果您要從 Windows Server 2012 R2 FFL 升級，可以將它降低回 Windows Server 2012 R2。
 - 如果您要從 Windows Server 2008 R2 FFL 升級，可以將它降低回 Windows Server 2008 R2。
@@ -143,7 +141,7 @@ AD DS 無法安裝在同時執行下列伺服器角色或角色服務的伺服�
 
    ![升級](media/Upgrade-Domain-Controllers-to-Windows-Server-2016/upgrade5.png)
 
-1. 在 [**網域控制站選項**] 畫面上，輸入**目錄服務還原模式（DSRM）** 密碼，然後按 [下一步]。
+1. 在 [**網域控制站選項**] 畫面上， ** (DSRM) 密碼中輸入目錄服務還原模式**，然後按 [下一步]。
 1. 針對其餘畫面，請按 [**下一步]**。
 1. 在 [**先決條件檢查**] 畫面上，按一下 [**安裝**]。 重新開機完成後，您就可以重新登入。
 1. 在 Windows Server 2012 R2 伺服器的**伺服器管理員**中，于 [工具] 底下，選取 [**適用于 Windows PowerShell 的 Active Directory 模組**]。
@@ -171,4 +169,4 @@ AD DS 無法安裝在同時執行下列伺服器角色或角色服務的伺服�
 
 - [Active Directory Domain Services 安裝和移除的新功能](../../ad-ds/deploy/What-s-New-in-Active-Directory-Domain-Services-Installation-and-Removal.md)
 - [安裝 Active Directory Domain Services &#40;層級 100&#41;](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md)
-- [Windows Server 2016 功能等級](../active-directory-functional-levels.md)  
+- [Windows Server 2016 功能等級](../active-directory-functional-levels.md)

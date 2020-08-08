@@ -2,23 +2,22 @@
 title: 網路介面卡的效能歷程記錄
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 02/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b4391812c89a193113fcd442d220e45fbb8c257
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ee8204d14ff1d54d3a4a5b1760055fecdc952d05
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964480"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957255"
 ---
 # <a name="performance-history-for-network-adapters"></a>網路介面卡的效能歷程記錄
 
 > 適用於：Windows Server 2019
 
-[儲存空間直接存取的效能歷程記錄](performance-history.md)的子主題會詳細說明針對網路介面卡收集的效能歷程記錄。 網路介面卡效能歷程記錄適用于叢集中每部伺服器的每個實體網路介面卡。 啟用 RDMA 的每個實體網路介面卡都可以使用遠端直接記憶體存取（RDMA）效能歷程記錄。
+[儲存空間直接存取的效能歷程記錄](performance-history.md)的子主題會詳細說明針對網路介面卡收集的效能歷程記錄。 網路介面卡效能歷程記錄適用于叢集中每部伺服器的每個實體網路介面卡。  (RDMA 的遠端直接記憶體存取) 效能歷程記錄可供已啟用 RDMA 的每個實體網路介面卡使用。
 
    > [!NOTE]
    > 無法為關閉的伺服器中的網路介面卡收集效能歷程記錄。 當伺服器恢復運作時，集合會自動繼續。
@@ -79,6 +78,6 @@ ms.locfileid: "86964480"
 Get-NetAdapter <Name> | Get-ClusterPerf
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [儲存空間直接存取的效能歷程記錄](performance-history.md)

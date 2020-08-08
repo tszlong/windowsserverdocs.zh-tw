@@ -2,19 +2,17 @@
 ms.assetid: 289cbd10-e7ec-4f2e-8dd1-eb5692565578
 title: 容錯移轉叢集主題的變更歷程記錄
 description: Windows Server 2016 的容錯移轉叢集檔中新增和更新的主題
-ms.prod: windows-server
-ms.technology: storage-failover-clustering
 ms.topic: article
 author: JasonGerend
 manager: lizross
 ms.author: jgerend
 ms.date: 01/07/2020
-ms.openlocfilehash: 2bc64479c5615e356158b83ee41402f425f4ea3b
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 9305935046db6e4185e07c703eb9caa83d263b2a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87177894"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965295"
 ---
 # <a name="change-history-for-failover-clustering-topics"></a>容錯移轉叢集主題的變更歷程記錄
 
@@ -101,7 +99,7 @@ ms.locfileid: "87177894"
 |[叢集感知更新的 advanced 選項](cluster-aware-updating-options.md)|新主題。|
 |[叢集感知更新常見問題](cluster-aware-updating-faq.md)|新主題。|
 |[叢集感知更新外掛程式](cluster-aware-updating-plug-ins.md)|新主題。|
-|[為容錯移轉叢集部署雲端見證](deploy-cloud-witness.md)|澄清所需的儲存體帳戶類型（您無法使用 Azure 進階儲存體或 Blob 儲存體帳戶）。|
+|[為容錯移轉叢集部署雲端見證](deploy-cloud-witness.md)|澄清 (您無法使用 Azure 進階儲存體或 Blob 儲存體帳戶) 所需的儲存體帳戶類型。|
 
 ## <a name="march-2017"></a>2017 年 3 月
 

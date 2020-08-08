@@ -1,22 +1,20 @@
 ---
 title: 復原檔案系統 (ReFS) 概觀
-ms.prod: windows-server
 ms.author: gawatu
 manager: mchad
-ms.technology: storage-file-systems
 ms.topic: article
 author: gawatu
 ms.date: 06/29/2019
-ms.openlocfilehash: 5bcdbc76259d1dfecaaa5266bb952a21bcbc7825
-ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
+ms.openlocfilehash: 668ee7a0c9e948c12140d3e25309a68ad3b2148b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85548893"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957265"
 ---
 # <a name="resilient-file-system-refs-overview"></a>復原檔案系統 (ReFS) 概觀
 
->適用于： Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server （半年通道）
+>適用于： Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server (半年通道) 
 
 復原檔案系統 (ReFS) 是 Microsoft 最新的檔案系統，設計用來將資料可用性最大化、在各種工作負載間有效率地調整為極大型的資料集，以及透過復原損毀來提供資料完整性。 其會設法因應一組擴充的儲存體案例，並建立基礎供未來創新所用。
 
@@ -47,7 +45,7 @@ ReFS 除了提供復原改善外，還引入了供重視效能的虛擬工作負
 
     - 這些階層設定後，ReFS 會加以使用為經常存取的資料提供快速的儲存體，並為非經常存取的資料提供容量有效率的儲存體。
         - 所有寫入都會在效能層發生，而維持在效能層中的大型資料區塊將有效率地即時移至容量層。
-        - 如果使用混合式部署（混合 flash 和 HDD 磁片磁碟機），[儲存空間直接存取中的](../storage-spaces/understand-the-cache.md)快取有助於加速讀取，進而降低虛擬化工作負載的資料分散特性的影響。 否則，如果使用全閃部署，則也會在效能層級中進行讀取。
+        - 如果使用混合式部署 (混用快閃記憶體和 HDD 磁片磁碟機) ，[儲存空間直接存取中的](../storage-spaces/understand-the-cache.md)快取有助於加速讀取，進而降低虛擬化工作負載的資料片段特性影響。 否則，如果使用全閃部署，則也會在效能層級中進行讀取。
 
 > [!NOTE]
 > 對於伺服器部署，鏡像加速的同位僅支援[儲存空間直接存取](../storage-spaces/storage-spaces-direct-overview.md)。 我們建議您只將鏡像加速同位檢查與封存和備份工作負載搭配使用。 針對虛擬化和其他高效能的隨機工作負載，我們建議使用三向鏡像，以獲得更好的效能。
@@ -84,7 +82,7 @@ Microsoft 已特別針對一般用途搭配各種設定和工作負載開發 NTF
 - 在具有共用 SAS 主機殼的儲存空間上部署 ReFS，適合用來裝載封存資料和儲存使用者檔。
 
 > [!NOTE]
-> 儲存空間支援透過 BusTypes SATA、SAS、NVME 或透過 HBA （也就是在傳遞模式中為 RAID 控制器）連接的本機非可移動式直接連接。
+> 儲存空間支援透過 BusTypes SATA、SAS、NVME，或透過 HBA 連接的本機非卸載式直接連接， (也就是傳遞模式) 的 RAID 控制器。
 
 ### <a name="basic-disks"></a>基本磁碟
 
@@ -100,7 +98,7 @@ Microsoft 已特別針對一般用途搭配各種設定和工作負載開發 NTF
 - 自行導入復原及可用性軟體解決方案的應用程式可以善加利用完整性資料流、區塊複製，以及擴充和支援大型資料集的功能。
 
 > [!NOTE]
-> 備份目標包括上述支援的設定。 如需光纖通道和 iSCSI San 的支援詳細資料，請洽詢應用程式和存放裝置陣列廠商。 針對 San，如果需要精簡布建、修剪/取消對應或卸載資料傳輸（ODX）等功能，則必須使用 NTFS。
+> 備份目標包括上述支援的設定。 如需光纖通道和 iSCSI San 的支援詳細資料，請洽詢應用程式和存放裝置陣列廠商。 針對 San，如果需要精簡布建、修剪/取消對應或卸載資料傳輸等功能 (ODX) 是必要的，則必須使用 NTFS。
 
 ## <a name="feature-comparison"></a>功能比較
 
@@ -110,7 +108,7 @@ Microsoft 已特別針對一般用途搭配各種設定和工作負載開發 NTF
 |----------------|------------------------------------------------|-----------------------|
 | 檔案名稱長度上限 | 255 個 Unicode 字元  | 255 個 Unicode 字元               |
 | 路徑名稱長度上限 |32K Unicode 字元 | 32K Unicode 字元                |
-| 檔案大小上限 | 35 PB （pb）  | 256 TB               |
+| 檔案大小上限 | 35 PB (pb)   | 256 TB               |
 | 磁碟區大小上限 | 35 PB                           | 256 TB                |
 
 ### <a name="functionality"></a>功能
@@ -155,10 +153,10 @@ Microsoft 已特別針對一般用途搭配各種設定和工作負載開發 NTF
 |---------------------------|------------------|-----------------------|
 | 檔案系統壓縮 | 否 | 是 |
 | 檔案系統加密 | 否 | 是 |
-| 交易 | 否 | 是 |
-| 永久連結 | 否 | 是 |
+| 異動 | 否 | 是 |
+| 硬式連結 | 否 | 是 |
 | 物件識別碼 | 否 | 是 |
-| 卸載的資料傳輸（ODX） | 否 | 是 |
+| 卸載的資料傳輸 (ODX)  | 否 | 是 |
 | 簡短名稱 | 否 | 是 |
 | 擴充屬性 | 否 | 是 |
 | 磁碟配額 | 否 | 是 |

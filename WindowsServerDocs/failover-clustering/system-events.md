@@ -1,25 +1,23 @@
 ---
 title: 容錯移轉叢集系統記錄檔事件
 description: Windows Server 系統記錄中的容錯移轉叢集事件清單。 這些事件可以用來對叢集進行疑難排解。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 manager: lizross
-ms.technology: storage-failover-clustering
 ms.date: 01/14/2020
-ms.openlocfilehash: 5988842ef2a88687bca95781b996babb4e4f3faa
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 17d61291822586013fa77bb1c7c399ab87dfef17
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181704"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957155"
 ---
 # <a name="failover-clustering-system-log-events"></a>容錯移轉叢集系統記錄檔事件
 
 > 適用於：Windows Server 2019、Windows Server 2016
 
-本主題列出 Windows Server 系統記錄檔中的容錯移轉叢集事件（可在事件檢視器中看到）。 這些事件全都共用**故障叢集**的事件來源，而且在疑難排解叢集時很有説明。
+本主題列出 Windows Server 系統記錄檔中的容錯移轉叢集事件 (可在事件檢視器) 中看到。 這些事件全都共用**故障叢集**的事件來源，而且在疑難排解叢集時很有説明。
 
 ## <a name="critical-events"></a>重大事件
 
@@ -50,7 +48,7 @@ ms.locfileid: "87181704"
 
 ### <a name="event-1080-cs_diskwrite_failure"></a>事件1080： CS_DISKWRITE_FAILURE
 
-叢集服務無法更新叢集資料庫（錯誤碼 ' %1 '）。
+叢集服務無法更新叢集資料庫， (錯誤碼 ' %1 ' ) 。
 可能的原因是磁碟空間不足或檔案系統損毀。
 
 ### <a name="event-1090-cs_event_reg_operation_failed"></a>事件1090： CS_EVENT_REG_OPERATION_FAILED
@@ -69,7 +67,7 @@ ms.locfileid: "87181704"
 
 ### <a name="event-1105-cs_event_rpc_init_failed"></a>事件1105： CS_EVENT_RPC_INIT_FAILED
 
-叢集服務無法啟動，因為它無法向 RPC 服務登錄介面。 錯誤碼為 ' %1 '。
+叢集服務無法啟動，因為它無法向 RPC 服務註冊介面 (s) 。 錯誤碼為 ' %1 '。
 
 ### <a name="event-1135-event_node_down"></a>事件1135： EVENT_NODE_DOWN
 
@@ -78,7 +76,7 @@ ms.locfileid: "87181704"
 
 ### <a name="event-1146-rcm_event_resmon_died"></a>事件1146： RCM_EVENT_RESMON_DIED
 
-叢集資源主控子系統（RHS）進程已終止，將會重新開機。 這通常與資源的叢集健全狀況偵測和復原相關聯。 請參閱系統事件記錄檔，以判斷造成此問題的資源和資源 DLL。
+叢集資源主控子系統 (RHS) 進程已終止，將會重新開機。 這通常與資源的叢集健全狀況偵測和復原相關聯。 請參閱系統事件記錄檔，以判斷造成此問題的資源和資源 DLL。
 
 ### <a name="event-1177-mm_event_arbitration_failed"></a>事件1177： MM_EVENT_ARBITRATION_FAILED
 
@@ -92,11 +90,11 @@ ms.locfileid: "87181704"
 
 ### <a name="event-1247-cluster_event_invalid_service_sid_type"></a>事件1247： CLUSTER_EVENT_INVALID_SERVICE_SID_TYPE
 
-叢集服務的安全識別碼（SID）類型已設定為 ' %1 '，但預期的 SID 類型為「不受限制」。 叢集服務會自動使用服務控制管理員（SCM）來修改其 SID 類型設定，而且會重新開機，這項變更才會生效。
+叢集服務 (SID) 類型的安全識別碼已設定為 ' %1 '，但預期的 SID 類型為「不受限制」。 叢集服務會自動使用服務控制管理員來修改其 SID 類型設定 (SCM) 並會重新開機，這項變更才會生效。
 
 ### <a name="event-1248-cluster_event_service_sid_missing"></a>事件1248： CLUSTER_EVENT_SERVICE_SID_MISSING
 
-與叢集服務相關聯的安全識別碼（SID） ' %1 ' 不存在於處理常式權杖中。 叢集服務會自動修正此問題，並重新啟動。
+與叢集服務相關聯 (SID) ' %1 ' 的安全識別碼不存在於進程權杖中。 叢集服務會自動修正此問題，並重新啟動。
 
 ### <a name="event-1282-sm_event_handshake_timeout"></a>事件1282： SM_EVENT_HANDSHAKE_TIMEOUT
 
@@ -108,7 +106,7 @@ ms.locfileid: "87181704"
 
 ### <a name="event-1543-service_postrestore_failed"></a>事件1543： SERVICE_POSTRESTORE_FAILED
 
-叢集設定資料的還原操作失敗。 此還原在「還原後」階段期間失敗，通常表示組成叢集的某些節點目前無法運作。 建議您將目前的叢集設定資料檔案（ClusDB）取代為 ' %1 '。
+叢集設定資料的還原操作失敗。 此還原在「還原後」階段期間失敗，通常表示組成叢集的某些節點目前無法運作。 建議您將目前的叢集設定資料檔案 (ClusDB) 取代為 ' %1 '。
 
 ### <a name="event-1546-service_form_version_incompatible"></a>事件1546： SERVICE_FORM_VERSION_INCOMPATIBLE
 
@@ -136,7 +134,7 @@ ms.locfileid: "87181704"
 
 #### <a name="guidance"></a>指導方針
 
-嘗試在叢集中的所有節點上啟動叢集服務，讓具有最新叢集設定資料複本的節點可以先形成叢集。 這個節點接著就能夠加入叢集，並自動取得更新的叢集設定資料。 如果最新的叢集設定資料複本沒有可用的節點，請執行 ' Start-clusternode-FQ ' Windows PowerShell Cmdlet。 使用 ForceQuorum （FQ）參數會啟動叢集服務，並將此節點的叢集設定資料複本標示為已授權。 在具有過期叢集資料庫複本的節點上強制仲裁，可能會導致叢集設定變更，因為節點未參與叢集而無法中斷。
+嘗試在叢集中的所有節點上啟動叢集服務，讓具有最新叢集設定資料複本的節點可以先形成叢集。 這個節點接著就能夠加入叢集，並自動取得更新的叢集設定資料。 如果最新的叢集設定資料複本沒有可用的節點，請執行 ' Start-clusternode-FQ ' Windows PowerShell Cmdlet。 使用 ForceQuorum (FQ) 參數將會啟動叢集服務，並將此節點的叢集設定資料複本標示為已授權。 在具有過期叢集資料庫複本的節點上強制仲裁，可能會導致叢集設定變更，因為節點未參與叢集而無法中斷。
 
 ### <a name="event-1564-res_fsw_arbitratefailure"></a>事件1564： RES_FSW_ARBITRATEFAILURE
 
@@ -163,7 +161,7 @@ ms.locfileid: "87181704"
 
 ### <a name="event-1575-dm_database_corrupt_or_missing_fixquorum"></a>事件1575： DM_DATABASE_CORRUPT_OR_MISSING_FIXQUORUM
 
-嘗試強制啟動叢集服務失敗，因為此節點上的叢集設定資料遺失或損毀。 請先在具有完整且有效的叢集設定資料複本的另一個節點上啟動叢集服務。 然後，重新嘗試此節點上的啟動作業（這會嘗試自動取得更新的有效設定資訊）。 如果沒有其他可用的節點，請使用 WBAdmin 執行此節點的系統狀態還原，以便還原設定資料。
+嘗試強制啟動叢集服務失敗，因為此節點上的叢集設定資料遺失或損毀。 請先在具有完整且有效的叢集設定資料複本的另一個節點上啟動叢集服務。 然後，重新嘗試此節點上的啟動作業 (這會嘗試自動取得更新的有效設定資訊) 。 如果沒有其他可用的節點，請使用 WBAdmin 執行此節點的系統狀態還原，以便還原設定資料。
 
 ### <a name="event-1593-dm_could_not_discard_changes"></a>事件1593： DM_COULD_NOT_DISCARD_CHANGES
 
@@ -191,7 +189,7 @@ ms.locfileid: "87181704"
 ### <a name="event-1034-res_disk_missing"></a>事件1034： RES_DISK_MISSING
 
 因為找不到相關聯的磁片，所以無法讓叢集實體磁片資源 ' %1 ' 上線。 磁片的預期簽章為 ' %2 '。
-如果更換或復原磁碟，您可以在 [容錯移轉叢集管理員] 嵌入式管理單元中，使用 [修復] 功能（在磁片的 [內容] 工作表中）來修復新的或已還原的磁片。 如果磁片將不會被取代，請刪除相關聯的磁片資源。
+如果更換或復原磁碟，在 [容錯移轉叢集管理員] 嵌入式管理單元中，您可以在 [磁片) ] 的 [內容] 工作表中，使用 [修復] 功能 (，以修復新的或已還原的磁片。 如果磁片將不會被取代，請刪除相關聯的磁片資源。
 
 ### <a name="event-1035-res_disk_mount_failed"></a>事件1035： RES_DISK_MOUNT_FAILED
 
@@ -207,15 +205,15 @@ ms.locfileid: "87181704"
 
 ### <a name="event-1039-res_genapp_create_failed"></a>事件1039： RES_GENAPP_CREATE_FAILED
 
-嘗試建立進程時，一般應用程式 ' %1 ' 無法上線（錯誤為 ' %2 '）。 可能的原因包括：應用程式可能不存在於此節點上，路徑名稱可能指定不正確，二進位檔名稱可能未正確指定。
+在嘗試建立進程時，一般應用程式 ' %1 ' 無法上線 (，發生錯誤 ' %2 ' ) 。 可能的原因包括：應用程式可能不存在於此節點上，路徑名稱可能指定不正確，二進位檔名稱可能未正確指定。
 
 ### <a name="event-1040-res_gensvc_open_failed"></a>事件1040： RES_GENSVC_OPEN_FAILED
 
-嘗試開啟服務時，一般服務 ' %1 ' 無法上線（錯誤為 ' %2 '）。 可能的原因包括：未安裝服務，或指定的服務名稱無效。
+在嘗試開啟服務時，一般服務 ' %1 ' 無法上線 (，發生錯誤 ' %2 ' ) 。 可能的原因包括：未安裝服務，或指定的服務名稱無效。
 
 ### <a name="event-1041-res_gensvc_start_failed"></a>事件1041： RES_GENSVC_START_FAILED
 
-嘗試啟動服務時，一般服務 ' %1 ' 無法上線（錯誤為 ' %2 '）。 可能的原因：指定的服務參數可能無效。
+在嘗試啟動服務時，一般服務 ' %1 ' 無法上線 (，發生錯誤 ' %2 ' ) 。 可能的原因：指定的服務參數可能無效。
 
 ### <a name="event-1042-res_gensvc_failed_after_start"></a>事件1042： RES_GENSVC_FAILED_AFTER_START
 
@@ -223,7 +221,7 @@ ms.locfileid: "87181704"
 
 ### <a name="event-1044-res_ipaddr_nbt_interface_create_failed"></a>事件1044： RES_IPADDR_NBT_INTERFACE_CREATE_FAILED
 
-嘗試建立新的 NetBIOS 介面時，發生失敗，同時將資源 ' %1 ' 上線（錯誤碼 ' %2 '）。 可能已超過 NetBIOS 名稱的最大數目。
+當資源 ' %1 ' 上線時，嘗試建立新的 NetBIOS 介面時發生失敗 (錯誤碼 ' %2 ' ) 。 可能已超過 NetBIOS 名稱的最大數目。
 
 ### <a name="event-1046-res_ipaddr_invalid_subnet"></a>事件1046： RES_IPADDR_INVALID_SUBNET
 
@@ -235,7 +233,7 @@ ms.locfileid: "87181704"
 
 ### <a name="event-1048-res_ipaddr_invalid_adapter"></a>事件1048： RES_IPADDR_INVALID_ADAPTER
 
-叢集 IP 位址資源 ' %1 ' 無法上線。 無法判斷對應至叢集網路介面 ' %2 ' 之網路介面卡的設定資料（錯誤碼為 ' %3 '）。 請檢查 IP 位址資源是否已設定正確的位址和網路屬性。
+叢集 IP 位址資源 ' %1 ' 無法上線。 無法判斷對應至叢集網路介面 ' %2 ' 之網路介面卡的設定資料， (錯誤碼為 ' %3 ' ) 。 請檢查 IP 位址資源是否已設定正確的位址和網路屬性。
 
 ### <a name="event-1049-res_ipaddr_in_use"></a>事件1049： RES_IPADDR_IN_USE
 
@@ -259,11 +257,11 @@ ms.locfileid: "87181704"
 
 ### <a name="event-1054-res_smb_share_not_found"></a>事件1054： RES_SMB_SHARE_NOT_FOUND
 
-檔案共用資源 ' %1 ' 的健全狀況檢查失敗。 正在抓取共用 ' %2 ' （範圍限定在網路名稱 %3）的資訊，傳回錯誤碼 ' %4 '。 請確認共用存在且可供存取。
+檔案共用資源 ' %1 ' 的健全狀況檢查失敗。 正在抓取共用 ' %2 ' 的資訊 (範圍設定為網路名稱 %3) 傳回錯誤碼 ' %4 '。 請確認共用存在且可供存取。
 
 ### <a name="event-1055-res_smb_share_failed"></a>事件1055： RES_SMB_SHARE_FAILED
 
-檔案共用資源 ' %1 ' 的健全狀況檢查失敗。 正在抓取共用 ' %2 ' 的資訊（範圍限定在網路名稱 %3），表示共用不存在（錯誤碼 ' %4 '）。 請確認共用存在且可供存取。
+檔案共用資源 ' %1 ' 的健全狀況檢查失敗。 正在抓取共用 ' %2 ' 的資訊 (範圍限定在網路名稱 %3) 指出該共用不存在 (錯誤碼 ' %4 ' ) 。 請確認共用存在且可供存取。
 
 ### <a name="event-1069-rcm_resource_failure"></a>事件1069： RCM_RESOURCE_FAILURE
 
@@ -275,7 +273,7 @@ ms.locfileid: "87181704"
 
 ### <a name="event-1069-rcm_resource_failure_with_cause"></a>事件1069： RCM_RESOURCE_FAILURE_WITH_CAUSE
 
-叢集角色 ' %2 ' 中類型 ' %3 ' 的叢集資源 ' %1 ' 失敗。 錯誤碼為 ' %5 ' （' %4 '）。<br><br>根據資源和角色的失敗原則，叢集服務可能會嘗試讓此節點上的資源上線，或將群組移至叢集的另一個節點，然後重新開機它。 使用容錯移轉叢集管理員或 Get-clusterresource Windows PowerShell Cmdlet 來檢查資源和群組狀態。
+叢集角色 ' %2 ' 中類型 ' %3 ' 的叢集資源 ' %1 ' 失敗。 錯誤碼為 ' %5 '， ( ' %4 ' ) 。<br><br>根據資源和角色的失敗原則，叢集服務可能會嘗試讓此節點上的資源上線，或將群組移至叢集的另一個節點，然後重新開機它。 使用容錯移轉叢集管理員或 Get-clusterresource Windows PowerShell Cmdlet 來檢查資源和群組狀態。
 
 ### <a name="event-1069-rcm_resource_failure_with_error_code"></a>事件1069： RCM_RESOURCE_FAILURE_WITH_ERROR_CODE
 
@@ -287,7 +285,7 @@ ms.locfileid: "87181704"
 
 ### <a name="event-1077-res_ipaddr_ipv4_address_interface_failed"></a>事件1077： RES_IPADDR_IPV4_ADDRESS_INTERFACE_FAILED
 
-IP 介面 ' %1 ' （位址 ' %2 '）的健康情況檢查失敗（狀態為 ' %3 '）。 執行 [驗證設定向導] 以確保網路介面卡正常運作。
+IP 介面 ' %1 ' (位址 ' %2 ' 的健康情況檢查 ) 失敗 (狀態為 ' %3 ' ) 。 執行 [驗證設定向導] 以確保網路介面卡正常運作。
 
 ### <a name="event-1078-res_ipaddr_wins_address_failed"></a>事件1078： RES_IPADDR_WINS_ADDRESS_FAILED
 
@@ -331,7 +329,7 @@ IP 介面 ' %1 ' （位址 ' %2 '）的健康情況檢查失敗（狀態為 ' %3
 
 ### <a name="event-1183-res_disk_invalid_mp_source_not_clustered"></a>事件1183： RES_DISK_INVALID_MP_SOURCE_NOT_CLUSTERED
 
-叢集磁片資源 ' %1 ' 包含不正確掛接點。 與掛接點關聯的來源和目標磁片都必須是叢集磁片，而且必須是相同群組的成員。 <br>磁片區 ' %3 ' 的掛接點 ' %2 ' 參照了不正確來源磁片。 請確定來源磁片也是叢集磁片，而且位於與目標磁片相同的群組中（裝載掛接點）。
+叢集磁片資源 ' %1 ' 包含不正確掛接點。 與掛接點關聯的來源和目標磁片都必須是叢集磁片，而且必須是相同群組的成員。 <br>磁片區 ' %3 ' 的掛接點 ' %2 ' 參照了不正確來源磁片。 請確定來源磁片也是叢集磁片，而且位於與目標磁片相同的群組中， (裝載掛接點) 。
 
 ### <a name="event-1191-res_netname_delete_computer_account_failed_status"></a>事件1191： RES_NETNAME_DELETE_COMPUTER_ACCOUNT_FAILED_STATUS
 
@@ -362,11 +360,11 @@ IP 介面 ' %1 ' （位址 ' %2 '）的健康情況檢查失敗（狀態為 ' %3
 
 ### <a name="event-1195-res_netname_dns_registration_failed_status"></a>事件1195： RES_NETNAME_DNS_REGISTRATION_FAILED_STATUS
 
-叢集網路名稱資源 ' %1 ' 無法註冊一或多個相關聯的 DNS 名稱。 錯誤碼為 ' %2 '。 確定與相依 IP 位址資源相關聯的網路介面卡已設定至少有一部 DNS 伺服器的存取權。
+叢集網路名稱資源 ' %1 ' 無法註冊一或多個相關聯的 DNS 名稱 (s) 。 錯誤碼為 ' %2 '。 確定與相依 IP 位址資源相關聯的網路介面卡已設定至少有一部 DNS 伺服器的存取權。
 
 ### <a name="event-1196-res_netname_dns_registration_failed"></a>事件1196： RES_NETNAME_DNS_REGISTRATION_FAILED
 
-因為下列原因，叢集網路名稱資源 ' %1 ' 無法註冊一或多個相關聯的 DNS 名稱：<br>%2。<br><br>確定與相依 IP 位址資源相關聯的網路介面卡已設定至少一個可存取的 DNS 伺服器。
+因為下列原因，叢集網路名稱資源 ' %1 ' 無法將一或多個相關聯的 DNS 名稱註冊 (s) ：<br>%2。<br><br>確定與相依 IP 位址資源相關聯的網路介面卡已設定至少一個可存取的 DNS 伺服器。
 
 ### <a name="event-1205-rcm_event_group_failed_online_offline"></a>事件1205： RCM_EVENT_GROUP_FAILED_ONLINE_OFFLINE
 
@@ -382,16 +380,16 @@ IP 介面 ' %1 ' （位址 ' %2 '）的健康情況檢查失敗（狀態為 ' %3
 
 ### <a name="event-1208-res_disk_invalid_mp_target_not_clustered"></a>事件1208： RES_DISK_INVALID_MP_TARGET_NOT_CLUSTERED
 
-叢集磁片資源 ' %1 ' 包含不正確掛接點。 與掛接點關聯的來源和目標磁片都必須是叢集磁片，而且必須是相同群組的成員。 <br>磁片區 ' %3 ' 的掛接點 ' %2 ' 參照了不正確目標磁片。 請確定目標磁片也是叢集磁片，而且位於與來源磁片相同的群組中（裝載掛接點）。
+叢集磁片資源 ' %1 ' 包含不正確掛接點。 與掛接點關聯的來源和目標磁片都必須是叢集磁片，而且必須是相同群組的成員。 <br>磁片區 ' %3 ' 的掛接點 ' %2 ' 參照了不正確目標磁片。 請確定目標磁片也是叢集磁片，而且位於與來源磁片相同的群組中， (裝載掛接點) 。
 
 ### <a name="event-1211-res_netname_no_writeable_dc_status"></a>事件1211： RES_NETNAME_NO_WRITEABLE_DC_STATUS
 
-叢集網路名稱資源 ' %1 ' 無法上線。 嘗試找出可寫入的網域控制站（在網域 %2 中），以建立或更新與資源相關聯的電腦物件失敗。 錯誤碼為 ' %3 '。
+叢集網路名稱資源 ' %1 ' 無法上線。 嘗試在網域 %2) 中找出可寫入的網域控制站 (，以便建立或更新與資源相關聯的電腦物件失敗。 錯誤碼為 ' %3 '。
 請確定已設定網域內的這個節點可以存取可寫入的網域控制站。 此外，請確定 DNS 伺服器正在執行中，以便解析網域控制站的名稱。
 
 ### <a name="event-1212-res_netname_no_writeable_dc"></a>事件1212： RES_NETNAME_NO_WRITEABLE_DC
 
-叢集網路名稱資源 ' %1 ' 無法上線。 嘗試找出可寫入的網域控制站（在網域 %2 中），以建立或更新與資源相關聯的電腦物件失敗，原因如下：<br>%3。<br><br> 錯誤碼為 ' %4 '。 請確定已設定網域內的這個節點可以存取可寫入的網域控制站。 此外，請確定 DNS 伺服器正在執行中，以便解析網域控制站的名稱。
+叢集網路名稱資源 ' %1 ' 無法上線。 嘗試在網域 %2) 中找出可寫入的網域控制站 (，以便建立或更新與資源相關聯的電腦物件失敗，原因如下：<br>%3。<br><br> 錯誤碼為 ' %4 '。 請確定已設定網域內的這個節點可以存取可寫入的網域控制站。 此外，請確定 DNS 伺服器正在執行中，以便解析網域控制站的名稱。
 
 ### <a name="event-1213-res_netname_rename_restore_failed"></a>事件1213： RES_NETNAME_RENAME_RESTORE_FAILED
 
@@ -407,7 +405,7 @@ IP 介面 ' %1 ' （位址 ' %2 '）的健康情況檢查失敗（狀態為 ' %3
 
 ### <a name="event-1218-res_netname_online_rename_recovery_missing_account"></a>事件1218： RES_NETNAME_ONLINE_RENAME_RECOVERY_MISSING_ACCOUNT
 
-叢集網路名稱資源 ' %1 ' 無法執行名稱變更作業（嘗試將原始名稱 ' %3 ' 變更為名稱 ' %4 '）。 在網域控制站 ' %2 ' （建立所在的位置）找不到電腦物件。 下次資源上線時，將會嘗試重新建立電腦物件。 此外，請與您的網域系統管理員合作，以確保該電腦物件存在於網域中。
+叢集網路名稱資源 ' %1 ' 無法執行名稱變更作業 (嘗試將原始名稱 ' %3 ' 變更為名稱 ' %4 ' ) 。 在網域控制站 ' %2 ' 上找不到電腦物件， (在其建立所在的) 。 下次資源上線時，將會嘗試重新建立電腦物件。 此外，請與您的網域系統管理員合作，以確保該電腦物件存在於網域中。
 
 ### <a name="event-1219-res_netname_online_rename_dc_not_found"></a>事件1219： RES_NETNAME_ONLINE_RENAME_DC_NOT_FOUND
 
@@ -426,11 +424,11 @@ IP 介面 ' %1 ' （位址 ' %2 '）的健康情況檢查失敗（狀態為 ' %3
 
 ### <a name="event-1226-res_netname_tcb_not_held"></a>事件1226： RES_NETNAME_TCB_NOT_HELD
 
-網路名稱資源 ' %1 ' （具有相關聯的網路名稱 ' %2 '）已啟用 Kerberos 驗證支援。 無法將必要的認證新增至 LSA-相關聯的錯誤碼 ' %3 ' 指出這種作業通常不需要足夠的許可權。 必要的許可權是「信任的運算基礎」，而且必須在組成叢集的每個節點上啟用本機。
+網路名稱資源 ' %1 ' (與相關聯的網路名稱 ' %2 ' ) 已啟用 Kerberos 驗證支援。 無法將必要的認證新增至 LSA-相關聯的錯誤碼 ' %3 ' 指出這種作業通常不需要足夠的許可權。 必要的許可權是「信任的運算基礎」，而且必須在組成叢集的每個節點上啟用本機。
 
 ### <a name="event-1227-res_netname_lsa_error"></a>事件1227： RES_NETNAME_LSA_ERROR
 
-網路名稱資源 ' %1 ' （具有相關聯的網路名稱 ' %2 '）已啟用 Kerberos 驗證支援。 無法將必要的認證新增至 LSA-相關聯的錯誤碼為 ' %3 '。
+網路名稱資源 ' %1 ' (與相關聯的網路名稱 ' %2 ' ) 已啟用 Kerberos 驗證支援。 無法將必要的認證新增至 LSA-相關聯的錯誤碼為 ' %3 '。
 
 ### <a name="event-1228-res_netname_clone_failure"></a>事件1228： RES_NETNAME_CLONE_FAILURE
 
@@ -442,12 +440,12 @@ IP 介面 ' %1 ' （位址 ' %2 '）的健康情況檢查失敗（狀態為 ' %3
 
 ### <a name="event-1230-rcm_deadlock_or_crash_detected"></a>事件1230： RCM_DEADLOCK_OR_CRASH_DETECTED
 
-伺服器上的元件未及時回應。 這會導致叢集資源 ' %1 ' （資源類型 ' %2 '、DLL ' %3 '）超過其超時閾值。 作為叢集健全狀況偵測的一部分，將會採取修復動作。
-叢集會嘗試終止並重新啟動執行此資源的資源主控子系統（RHS）程式，以自動復原。 確認與資源相關聯的基礎結構（例如儲存體、網路或服務）是否正常運作。
+伺服器上的元件未及時回應。 這會導致叢集資源 ' %1 ' (資源類型 ' %2 '、DLL ' %3 ' ) 超過其超時閾值。 作為叢集健全狀況偵測的一部分，將會採取修復動作。
+叢集會嘗試藉由終止並重新啟動執行此資源的資源主控子系統 (RHS) 進程來自動復原。 確認基礎結構 (例如與資源相關聯的儲存體、網路或服務) 是否正常運作。
 
 ### <a name="event-1230-rcm_resource_control_deadlock_detected"></a>事件1230： RCM_RESOURCE_CONTROL_DEADLOCK_DETECTED
 
-伺服器上的元件未及時回應。 這會導致叢集資源 ' %1 ' （資源類型 ' %2 '、DLL ' %3 '）在處理控制碼 ' %4; ' 時超過其超時閾值。 作為叢集健全狀況偵測的一部分，將會採取修復動作。 叢集會嘗試終止並重新啟動執行此資源的資源主控子系統（RHS）程式，以自動復原。 確認與資源相關聯的基礎結構（例如儲存體、網路或服務）是否正常運作。
+伺服器上的元件未及時回應。 這會導致叢集資源 ' %1 ' (資源類型 ' %2 '、DLL ' %3 ' ) 在處理控制碼 ' %4; ' 時超過其超時閾值。 作為叢集健全狀況偵測的一部分，將會採取修復動作。 叢集會嘗試藉由終止並重新啟動執行此資源的資源主控子系統 (RHS) 進程來自動復原。 確認基礎結構 (例如與資源相關聯的儲存體、網路或服務) 是否正常運作。
 
 ### <a name="event-1231-res_netname_logon_failure"></a>事件1231： RES_NETNAME_LOGON_FAILURE
 
@@ -464,7 +462,7 @@ IP 介面 ' %1 ' （位址 ' %2 '）的健康情況檢查失敗（狀態為 ' %3
 
 ### <a name="event-1234-cluster_event_account_missing_privs"></a>事件1234： CLUSTER_EVENT_ACCOUNT_MISSING_PRIVS
 
-叢集服務偵測到其服務帳戶遺漏了一或多個必要的許可權。 遺漏許可權清單為： ' %1 '，且目前未授與服務帳戶。 使用「sc.exe qprivs clussvc」來確認叢集服務（ClusSvc）的許可權。 此外，請檢查 Active Directory Domain Services 中可能已改變預設許可權的任何安全性原則或群組原則。 輸入下列命令，授與叢集服務必要的許可權才能正常運作：
+叢集服務偵測到其服務帳戶遺漏了一或多個必要的許可權。 遺漏許可權清單為： ' %1 '，且目前未授與服務帳戶。 使用「sc.exe qprivs clussvc」來確認叢集服務 (ClusSvc) 的許可權。 此外，請檢查 Active Directory Domain Services 中可能已改變預設許可權的任何安全性原則或群組原則。 輸入下列命令，授與叢集服務必要的許可權才能正常運作：
 
 ```
 sc.exe privs
@@ -496,7 +494,7 @@ SeBackupPrivilege/SeRestorePrivilege/SeIncreaseQuotaPrivilege/SeIncreaseBasePrio
 
 ### <a name="event-1256-res_netname_dns_registration_failed_dynamic_dns_zone"></a>事件1256： RES_NETNAME_DNS_REGISTRATION_FAILED_DYNAMIC_DNS_ZONE
 
-叢集網路名稱資源無法註冊一或多個相關聯的 DNS 名稱，因為對應的 DNS 區域不接受動態更新。<br><br>叢集網路名稱： ' %1 '<br>DNS 區域： ' %2 '
+叢集網路名稱資源無法將一或多個相關聯的 DNS 名稱註冊 (s) ，因為對應的 DNS 區域不接受動態更新。<br><br>叢集網路名稱： ' %1 '<br>DNS 區域： ' %2 '
 
 #### <a name="guidance"></a>指導方針
 
@@ -504,15 +502,15 @@ SeBackupPrivilege/SeRestorePrivilege/SeIncreaseQuotaPrivilege/SeIncreaseBasePrio
 
 ### <a name="event-1257-res_netname_dns_registration_failed_secure_dns_zone"></a>事件1257： RES_NETNAME_DNS_REGISTRATION_FAILED_SECURE_DNS_ZONE
 
-叢集網路名稱資源無法註冊一或多個相關聯的 DNS 名稱，因為已拒絕更新安全 DNS 區域的存取權。<br><br>叢集網路名稱： ' %1 '<br>DNS 區域： ' %2 '<br><br>請確定叢集名稱物件（CNO）已授與安全 DNS 區域的許可權。
+叢集網路名稱資源無法將一或多個相關聯的 DNS 名稱註冊 (s) ，因為已拒絕更新安全 DNS 區域的存取權。<br><br>叢集網路名稱： ' %1 '<br>DNS 區域： ' %2 '<br><br>請確定已將叢集名稱物件 (CNO) 授與安全 DNS 區域的許可權。
 
 ### <a name="event-1258-res_netname_dns_registration_failed_timeout"></a>事件1258： RES_NETNAME_DNS_REGISTRATION_FAILED_TIMEOUT
 
-叢集網路名稱資源無法註冊一或多個相關聯的 DNS 名稱，因為無法連線到 DNS 伺服器。<br><br>叢集網路名稱： ' %1 '<br>DNS 區域： ' %2 '<br>DNS 伺服器： ' %3 '<br><br>確定與相依 IP 位址資源相關聯的網路介面卡已設定至少一個可存取的 DNS 伺服器。
+叢集網路名稱資源無法註冊一或多個相關聯的 DNS 名稱 (s) ，因為無法連線到 DNS 伺服器。<br><br>叢集網路名稱： ' %1 '<br>DNS 區域： ' %2 '<br>DNS 伺服器： ' %3 '<br><br>確定與相依 IP 位址資源相關聯的網路介面卡已設定至少一個可存取的 DNS 伺服器。
 
 ### <a name="event-1259-res_netname_dns_registration_failed_cleanup"></a>事件1259： RES_NETNAME_DNS_REGISTRATION_FAILED_CLEANUP
 
-叢集網路名稱資源無法註冊一或多個相關聯的 DNS 名稱，因為叢集服務無法清除對應至網路名稱的現有記錄。<br><br>叢集網路名稱： ' %1 '<br>DNS 區域： ' %2 '<br><br>請確定叢集名稱物件（CNO）已授與安全 DNS 區域的許可權。
+叢集網路名稱資源無法註冊一或多個相關聯的 DNS 名稱 (s) ，因為叢集服務無法清除對應至網路名稱的現有記錄。<br><br>叢集網路名稱： ' %1 '<br>DNS 區域： ' %2 '<br><br>請確定已將叢集名稱物件 (CNO) 授與安全 DNS 區域的許可權。
 
 ### <a name="event-1260-res_netname_dns_registration_modify_failed"></a>事件1260： RES_NETNAME_DNS_REGISTRATION_MODIFY_FAILED
 
@@ -548,7 +546,7 @@ SeBackupPrivilege/SeRestorePrivilege/SeIncreaseQuotaPrivilege/SeIncreaseBasePrio
 
 ### <a name="event-1265-res_type_control_timed_out"></a>事件1265： RES_TYPE_CONTROL_TIMED_OUT
 
-在處理控制碼 %2 時，叢集資源類型 ' %1 ' 超時。 叢集會嘗試藉由終止並重新啟動處理呼叫的資源主控子系統（RHS）程式，來自動復原。
+在處理控制碼 %2 時，叢集資源類型 ' %1 ' 超時。 叢集會嘗試藉由終止並重新啟動處理呼叫的資源主控子系統 (RHS) 進程來自動復原。
 
 ### <a name="event-1289-netft_adapter_not_found"></a>事件1289： NETFT_ADAPTER_NOT_FOUND
 
@@ -560,7 +558,7 @@ SeBackupPrivilege/SeRestorePrivilege/SeIncreaseQuotaPrivilege/SeIncreaseBasePrio
 
 ### <a name="event-1361-res_ipaddr_missing_dependant"></a>事件1361： RES_IPADDR_MISSING_DEPENDANT
 
-IPv6 通道位址資源 ' %1 ' 無法上線，因為它不依存于 IP 位址（IPv4）資源。 至少需要一個 IP 位址（IPv4）資源的相依性。
+IPv6 通道位址資源 ' %1 ' 無法上線，因為它不依存于 (IPv4) 資源的 IP 位址。 必須至少有一個 IP 位址 (IPv4) 資源的相依性。
 
 ### <a name="event-1362-res_ipaddr_missing_data"></a>事件1362： RES_IPADDR_MISSING_DATA
 
@@ -568,7 +566,7 @@ IPv6 通道位址資源 ' %1 ' 無法上線，因為它不依存于 IP 位址（
 
 ### <a name="event-1363-res_ipaddr_no_isatap_support"></a>事件1363： RES_IPADDR_NO_ISATAP_SUPPORT
 
-IPv6 通道位址資源 ' %1 ' 無法上線。 與相依 IP 位址（IPv4）資源 ' %3 ' 相關聯的叢集網路 ' %2 ' 不支援 ISATAP 通道。 請確定叢集網路支援 ISATAP 通道。
+IPv6 通道位址資源 ' %1 ' 無法上線。 與依存的 IP 位址相關聯的叢集網路 ' %2 ' (IPv4) 資源 ' %3 ' 不支援 ISATAP 通道。 請確定叢集網路支援 ISATAP 通道。
 
 ### <a name="event-1540-service_backup_noquorum"></a>事件1540： SERVICE_BACKUP_NOQUORUM
 
@@ -604,7 +602,7 @@ IPv6 通道位址資源 ' %1 ' 無法上線。 與相依 IP 位址（IPv4）資�
 
 ### <a name="event-1567-res_vipaddr_address_interface_failed"></a>事件1567： RES_VIPADDR_ADDRESS_INTERFACE_FAILED
 
-IP 介面 ' %1 ' （位址 ' %2 '）的健康情況檢查失敗（狀態為 ' %3 '）。 檢查與實體或虛擬網路介面卡相關的硬體或軟體錯誤。
+IP 介面 ' %1 ' (位址 ' %2 ' 的健康情況檢查 ) 失敗 (狀態為 ' %3 ' ) 。 檢查與實體或虛擬網路介面卡相關的硬體或軟體錯誤。
 
 ### <a name="event-1568-res_cloud_witness_cant_communicate_to_azure"></a>事件1568： RES_CLOUD_WITNESS_CANT_COMMUNICATE_TO_AZURE
 
@@ -656,7 +654,7 @@ IP 介面 ' %1 ' （位址 ' %2 '）的健康情況檢查失敗（狀態為 ' %3
 
 ### <a name="event-1600-clusapi_create_cannot_set_ad_dacl"></a>事件1600： CLUSAPI_CREATE_CANNOT_SET_AD_DACL
 
-叢集服務無法在叢集電腦物件 ' %1 ' 上設定許可權。 請洽詢您的網路系統管理員，以檢查 Active Directory 中電腦物件的叢集安全描述項，確認 DACL 不太大，並在必要時移除物件上任何不必要的額外 ACE。
+叢集服務無法在叢集電腦物件 ' %1 ' 上設定許可權。 請洽詢您的網路系統管理員，以檢查 Active Directory 中電腦物件的叢集安全描述項，確認 DACL 不太大，並在必要時移除物件上任何不必要的額外 ACE (s) 。
 
 ### <a name="event-1603-res_fileserver_clone_failed"></a>事件1603： RES_FILESERVER_CLONE_FAILED
 
@@ -664,11 +662,11 @@ IP 介面 ' %1 ' （位址 ' %2 '）的健康情況檢查失敗（狀態為 ' %3
 
 ### <a name="event-1606-res_disk_cno_check_failed"></a>事件1606： RES_DISK_CNO_CHECK_FAILED
 
-叢集磁片資源 ' %1 ' 包含受 BitLocker 保護的磁片區 ' %2 '，但針對此磁片區，Active Directory 叢集名稱帳戶（也稱為叢集名稱物件或 CNO）不是磁片區的 BitLocker 保護裝置。 這是受 BitLocker 保護之磁片區的必要參數。 若要修正此錯誤，請先從叢集移除該磁片。 接下來，使用 Manage-bde.exe 命令列工具，將叢集名稱新增為 ADAccountOrGroup 保護裝置，並針對叢集名稱使用 domain \\ ClusterName 格式 \$ 。 然後將磁片新增回叢集。 如需詳細資訊，請參閱 Manage-bde.exe 的檔
+叢集磁片資源 ' %1 ' 包含受 BitLocker 保護的磁片區 ' %2 '，但針對此磁片區，Active Directory 叢集名稱帳戶 (也稱為叢集名稱物件或 CNO) 不是磁片區的 BitLocker 保護裝置。 這是受 BitLocker 保護之磁片區的必要參數。 若要修正此錯誤，請先從叢集移除該磁片。 接下來，使用 Manage-bde.exe 命令列工具，將叢集名稱新增為 ADAccountOrGroup 保護裝置，並針對叢集名稱使用 domain \\ ClusterName 格式 \$ 。 然後將磁片新增回叢集。 如需詳細資訊，請參閱 Manage-bde.exe 的檔
 
 ### <a name="event-1607-res_disk_cno_unlock_failed"></a>事件1607： RES_DISK_CNO_UNLOCK_FAILED
 
-叢集磁片資源 ' %1 ' 無法解除鎖定受 BitLocker 保護的磁片區 ' %2 '。 叢集名稱物件（CNO）未設定為此磁片區的有效 BitLocker 保護裝置。 若要修正此錯誤，請將磁片從叢集移除。 然後，使用 Manage-bde.exe 命令列工具，將叢集名稱新增為 ADAccountOrGroup 保護裝置，並使用格式 domain \\ ClusterName \$ ，然後將該磁片新增回叢集。 如需詳細資訊，請參閱 Manage-bde.exe 的檔。
+叢集磁片資源 ' %1 ' 無法解除鎖定受 BitLocker 保護的磁片區 ' %2 '。  (CNO) 的叢集名稱物件未設定為此磁片區的有效 BitLocker 保護裝置。 若要修正此錯誤，請將磁片從叢集移除。 然後，使用 Manage-bde.exe 命令列工具，將叢集名稱新增為 ADAccountOrGroup 保護裝置，並使用格式 domain \\ ClusterName \$ ，然後將該磁片新增回叢集。 如需詳細資訊，請參閱 Manage-bde.exe 的檔。
 
 ### <a name="event-1608-res_fileserver_leader_failed"></a>事件1608： RES_FILESERVER_LEADER_FAILED
 
@@ -684,15 +682,15 @@ Scale Out 檔案伺服器無法啟動，因為找不到「分散式網路名稱�
 
 ### <a name="event-1652-service_tcp_connection_failure"></a>事件1652： SERVICE_TCP_CONNECTION_FAILURE
 
-叢集節點 ' %1 ' 無法加入叢集。 無法為節點 ' %2 ' 建立 TCP 連線。 確認網路連線和網路防火牆的設定。
+叢集節點 ' %1 ' 無法加入叢集。 無法建立與節點 (s) ' %2 ' 的 TCP 連接。 確認網路連線和網路防火牆的設定。
 
 ### <a name="event-1652-service_udp_connection_failure"></a>事件1652： SERVICE_UDP_CONNECTION_FAILURE
 
-叢集節點 ' %1 ' 無法加入叢集。 無法建立節點 ' %2 ' 的 UDP 連接。 確認網路連線和網路防火牆的設定。
+叢集節點 ' %1 ' 無法加入叢集。 無法建立節點 (s) ' %2 ' 的 UDP 連接。 確認網路連線和網路防火牆的設定。
 
 ### <a name="event-1652-service_virtual_tcp_connection_failure"></a>事件1652： SERVICE_VIRTUAL_TCP_CONNECTION_FAILURE
 
-叢集節點 ' %1 ' 無法加入叢集。 無法為節點 ' %2 ' 建立使用 Microsoft 容錯移轉叢集虛擬介面卡的 TCP 連線。 確認網路連線和網路防火牆的設定。
+叢集節點 ' %1 ' 無法加入叢集。 無法建立使用 Microsoft 容錯移轉叢集虛擬介面卡的 TCP 連線，) ' %2 ' 節點 (。 確認網路連線和網路防火牆的設定。
 
 ### <a name="event-1653-service_no_connectivity"></a>事件1653： SERVICE_NO_CONNECTIVITY
 
@@ -700,15 +698,15 @@ Scale Out 檔案伺服器無法啟動，因為找不到「分散式網路名稱�
 
 ### <a name="event-1654-res_vipaddr_invalid_adaptername"></a>事件1654： RES_VIPADDR_INVALID_ADAPTERNAME
 
-叢集脫離的 IP 位址資源 ' %1 ' 無法上線。 無法判斷對應至網路介面卡 ' %2 ' 之網路介面卡的設定資料（錯誤碼為 ' %3 '）。 檢查 IP 位址資源是否已設定正確的位址和網路屬性。
+叢集脫離的 IP 位址資源 ' %1 ' 無法上線。 無法判斷對應至網路介面卡 ' %2 ' 之網路介面卡的設定資料， (錯誤碼為 ' %3 ' ) 。 檢查 IP 位址資源是否已設定正確的位址和網路屬性。
 
 ### <a name="event-1655-res_vipaddr_invalid_vsid"></a>事件1655： RES_VIPADDR_INVALID_VSID
 
-叢集脫離的 IP 位址資源 ' %1 ' 無法上線。 無法判斷對應至虛擬子網識別碼 ' %2 ' 和路由網域識別碼 ' %3 ' 之網路介面卡的設定資料（錯誤碼為 ' %4 '）。 檢查 IP 位址資源是否已設定正確的位址和網路屬性。
+叢集脫離的 IP 位址資源 ' %1 ' 無法上線。 無法判斷對應至虛擬子網識別碼 ' %2 ' 和路由網域識別碼 ' %3 ' 之網路介面卡的設定資料， (錯誤碼為 ' %4 ' ) 。 檢查 IP 位址資源是否已設定正確的位址和網路屬性。
 
 ### <a name="event-1656-res_vipaddr_address_create_failed"></a>事件1656： RES_VIPADDR_ADDRESS_CREATE_FAILED
 
-無法為斷續的 IP 位址資源 ' %1 ' 新增 IP 位址 ' %2 ' （錯誤碼為 ' %3 '）。 檢查與實體或虛擬網路介面卡相關的硬體或軟體錯誤。
+無法為斷續的 IP 位址資源 ' %1 ' 新增 IP 位址 ' %2 ' (錯誤碼為 ' %3 ' ) 。 檢查與實體或虛擬網路介面卡相關的硬體或軟體錯誤。
 
 ### <a name="event-1664-cluster_upgrade_incomplete"></a>事件1664： CLUSTER_UPGRADE_INCOMPLETE
 
@@ -815,7 +813,7 @@ Scale Out 檔案伺服器無法啟動，因為找不到「分散式網路名稱�
 
 ### <a name="event-4629-nodecleanup_delete_local_account_failed"></a>事件4629： NODECLEANUP_DELETE_LOCAL_ACCOUNT_FAILED
 
-在節點清除期間，不會刪除由叢集管理的本機使用者帳戶。 錯誤碼為 ' %1 '。 開啟 [本機使用者和群組] （lusrmgr.msc）以刪除帳戶。
+在節點清除期間，不會刪除由叢集管理的本機使用者帳戶。 錯誤碼為 ' %1 '。 開啟 [本機使用者和群組] (lusrmgr.msc]) 以刪除帳戶。
 
 ### <a name="event-4864-res_vsstask_open_failed"></a>事件4864： RES_VSSTASK_OPEN_FAILED
 
@@ -864,16 +862,16 @@ Scale Out 檔案伺服器無法啟動，因為找不到「分散式網路名稱�
 
 ### <a name="event-5142-dcm_volume_no_access"></a>事件5142： DCM_VOLUME_NO_ACCESS
 
-因為發生錯誤 ' %3 '，所以無法再從這個叢集節點存取叢集共用磁碟區 ' %1 ' （' %2 '）。 請針對此節點對存放裝置和網路連線能力的連線進行疑難排解。
+無法再從這個叢集節點存取叢集共用磁碟區 ' %1 ' ( ' %2 ' ) ，因為發生錯誤 ' %3 '。 請針對此節點對存放裝置和網路連線能力的連線進行疑難排解。
 
 ### <a name="event-5143-dcm_veto_resource_move_due_to_cc"></a>事件5143： DCM_VETO_RESOURCE_MOVE_DUE_TO_CC
 
-根據節點 ' %1 ' 上快取管理員的目前狀態，無法移動磁片（' %2 '），以避免潛在的鎖死。 「快取管理員中途分頁閾值 ' 是 %3，而「快取管理員中途分頁」是 %4。 如果「快取管理員中途分頁」小於70% 的「快取管理員中途分頁閾值」，或如果「快取管理員中途分頁閾值」減去「快取管理員中途分頁」大於128000頁（關於頁面大小為4096個位元組的500MB），則允許移動。
+根據節點 ' %1 ' 上快取管理員的目前狀態，不允許移動磁片 ( ' %2 ' ) ，以避免潛在的鎖死。 「快取管理員中途分頁閾值 ' 是 %3，而「快取管理員中途分頁」是 %4。 如果「快取管理員中途分頁」小於70% 的「快取管理員中途分頁閾值」，或如果頁面大小是 4096 bytes) ，則允許移動， (關於500MB 的「快取管理員中途分頁」已超過128000頁。
 叢集拒絕資源移動以防止因快取管理員節流緩衝寫入而造成可能的鎖死，而此磁片上的叢集共用磁片區正在暫停。
 
 ### <a name="event-5144-dcm_snapshot_diff_area_failure"></a>事件5144： DCM_SNAPSHOT_DIFF_AREA_FAILURE
 
-將磁片（' %1 '）新增至叢集共用磁片區時，為磁片區（' %2 '）設定明確的快照差異區域關聯失敗，錯誤為 ' %3 '。 叢集共用磁片區唯一支援的軟體快照差異區域關聯為自我。
+將磁片 ( ' %1 ' ) 新增至叢集共用磁片區時，為磁片區 ( ' %2 ' 設定明確的快照差異區域關聯 ) 失敗，錯誤為 ' %3 '。 叢集共用磁片區唯一支援的軟體快照差異區域關聯為自我。
 
 ### <a name="event-5145-dcm_snapshot_diff_area_delete_failure"></a>事件5145： DCM_SNAPSHOT_DIFF_AREA_DELETE_FAILURE
 
@@ -889,7 +887,7 @@ Scale Out 檔案伺服器無法啟動，因為找不到「分散式網路名稱�
 
 ### <a name="event-5148-dcm_veto_resource_move_due_to_io_mode_change"></a>事件5148： DCM_VETO_RESOURCE_MOVE_DUE_TO_IO_MODE_CHANGE
 
-叢集共用磁碟區資源 ' %1 ' 的移動被否決，因為 IO 模式變更作業（直接 IO 到重新導向的 IO，反之亦然）正在其中一個磁片區上的資源中。 請在作業完成後重試此動作。
+叢集共用磁碟區資源 ' %1 ' 的移動被否決，因為 IO 模式變更作業 (直接 IO 重新導向 IO，或反之亦然，) 正在屬於該資源的其中一個磁片區上進行。 請在作業完成後重試此動作。
 
 ### <a name="event-5150-dcm_set_resource_in_failed_state"></a>事件5150： DCM_SET_RESOURCE_IN_FAILED_STATE
 
@@ -901,15 +899,15 @@ Scale Out 檔案伺服器無法啟動，因為找不到「分散式網路名稱�
 
 ### <a name="event-5216-csv_sw_snapshot_failed"></a>事件5216： CSV_SW_SNAPSHOT_FAILED
 
-在叢集共用磁碟區 ' %1 ' （' %2 '）上建立軟體快照集失敗，錯誤為 %3。 資源必須在線上，才能支援建立快照集。 請檢查資源的狀態。
+在叢集共用磁碟區 ' %1 ' 上建立的軟體快照集 ( ' %2 ' ) 失敗，錯誤為 %3。 資源必須在線上，才能支援建立快照集。 請檢查資源的狀態。
 
 ### <a name="event-5217-csv_sw_snapshot_set_failed"></a>事件5217： CSV_SW_SNAPSHOT_SET_FAILED
 
-建立快照集識別碼為 ' %2 ' 的叢集共用磁碟區（' %1 '）上的軟體快照集失敗，發生錯誤 ' %3 '。 請檢查 CSV 資源的狀態和資源擁有者節點的系統事件。
+在叢集共用磁碟區 (s)  ( ' %1 ' 上建立的軟體快照集識別碼 ' %2 ' ) 失敗，錯誤為 ' %3 '。 請檢查 CSV 資源的狀態和資源擁有者節點的系統事件。
 
 ### <a name="event-5219-csv_register_snapshot_prov_with_vss_failed"></a>事件5219： CSV_REGISTER_SNAPSHOT_PROV_WITH_VSS_FAILED
 
-叢集服務無法使用磁片區陰影服務（VSS）註冊叢集共用磁片區快照集提供者。 這可能是因為 VSS 服務關閉或可能是因為 VSS 服務發生問題而導致它無法接受連入要求所致。 <br>錯誤: %1
+叢集服務無法使用磁片區陰影服務 (VSS) 註冊叢集共用磁片區快照集提供者。 這可能是因為 VSS 服務關閉或可能是因為 VSS 服務發生問題而導致它無法接受連入要求所致。 <br>錯誤: %1
 
 ### <a name="event-5377-operation_exceeded_timeout"></a>事件5377： OPERATION_EXCEEDED_TIMEOUT
 
@@ -917,7 +915,7 @@ Scale Out 檔案伺服器無法啟動，因為找不到「分散式網路名稱�
 
 ### <a name="event-5396-two_partitions_have_quorum"></a>事件5396： TWO_PARTITIONS_HAVE_QUORUM
 
-此節點上的叢集服務已關閉，因為它偵測到有其他具有仲裁的叢集節點。 當叢集服務偵測到另一個使用強制仲裁交換器（/fq）啟動的節點時，就會發生這種情況。 以強制仲裁交換器啟動的節點將會繼續執行。 當叢集服務重新開機時，請使用容錯移轉叢集管理員來確認此節點已自動加入叢集。
+此節點上的叢集服務已關閉，因為它偵測到有其他具有仲裁的叢集節點。 當叢集服務偵測到另一個以強制仲裁交換器啟動 (/fq) 的節點時，就會發生這種情況。 以強制仲裁交換器啟動的節點將會繼續執行。 當叢集服務重新開機時，請使用容錯移轉叢集管理員來確認此節點已自動加入叢集。
 
 ### <a name="event-5397-rlua_account_failed"></a>事件5397： RLUA_ACCOUNT_FAILED
 
@@ -929,7 +927,7 @@ Scale Out 檔案伺服器無法啟動，因為找不到「分散式網路名稱�
 
 #### <a name="guidance"></a>指導方針
 
-嘗試在叢集中的所有節點上啟動叢集服務，讓具有最新叢集設定資料複本的節點可以先形成叢集。 叢集將能夠啟動，而且節點會自動取得更新的叢集設定資料。 如果最新的叢集設定資料複本沒有可用的節點，請執行 ' Start-clusternode-FQ ' Windows PowerShell Cmdlet。 使用 ForceQuorum （FQ）參數會啟動叢集服務，並將此節點的叢集設定資料複本標示為已授權。 在具有過期叢集資料庫複本的節點上強制仲裁，可能會導致叢集設定變更，因為節點未參與叢集而無法中斷。
+嘗試在叢集中的所有節點上啟動叢集服務，讓具有最新叢集設定資料複本的節點可以先形成叢集。 叢集將能夠啟動，而且節點會自動取得更新的叢集設定資料。 如果最新的叢集設定資料複本沒有可用的節點，請執行 ' Start-clusternode-FQ ' Windows PowerShell Cmdlet。 使用 ForceQuorum (FQ) 參數將會啟動叢集服務，並將此節點的叢集設定資料複本標示為已授權。 在具有過期叢集資料庫複本的節點上強制仲裁，可能會導致叢集設定變更，因為節點未參與叢集而無法中斷。
 
 ## <a name="warning-events"></a>警告事件
 
@@ -939,7 +937,7 @@ Scale Out 檔案伺服器無法啟動，因為找不到「分散式網路名稱�
 
 ### <a name="event-1045-res_ipaddr_ipv4_address_create_failed"></a>事件1045： RES_IPADDR_IPV4_ADDRESS_CREATE_FAILED
 
-找不到資源 ' %1 ' IP 位址 ' %2 ' （傳回碼為 ' %3 '）的相符網路介面。 如果您的叢集節點跨越不同的子網，這可能是正常的。
+找不到資源 ' %1 ' IP 位址 ' %2 ' 的相符網路介面 (傳回碼為 ' %3 ' ) 。 如果您的叢集節點跨越不同的子網，這可能是正常的。
 
 ### <a name="event-1066-res_disk_corrupt_disk"></a>事件1066： RES_DISK_CORRUPT_DISK
 
@@ -948,7 +946,7 @@ Chkdsk 輸出將會記錄到檔案 ' %3 '。<br> Chkdsk 也可以將資訊寫入
 
 ### <a name="event-1068-res_smb_share_cant_add"></a>事件1068： RES_SMB_SHARE_CANT_ADD
 
-叢集檔案共用資源 ' %1 ' 無法上線。 建立檔案共用 ' %2 ' （範圍限定在網路名稱 %3）失敗，因為發生錯誤 ' %4 '。 將會自動重試此操作。
+叢集檔案共用資源 ' %1 ' 無法上線。 檔案共用 ' %2 ' 的建立 (範圍設定為網路名稱 %3) 因錯誤 ' %4 ' 而失敗。 將會自動重試此操作。
 
 ### <a name="event-1071-rcm_resource_online_blocked_by_locked_mode"></a>事件1071： RCM_RESOURCE_ONLINE_BLOCKED_BY_LOCKED_MODE
 
@@ -972,16 +970,16 @@ Chkdsk 輸出將會記錄到檔案 ' %3 '。<br> Chkdsk 也可以將資訊寫入
 
 ### <a name="event-1149-res_netname_cant_delete_dns_records"></a>事件1149： RES_NETNAME_CANT_DELETE_DNS_RECORDS
 
-與叢集資源 ' %1 ' 相關聯的 DNS 主機（A）和指標（PTR）記錄並未從資源的相關聯 DNS 伺服器移除。 如有必要，可以手動刪除它們。 請洽詢您的 DNS 系統管理員，協助您完成這方面的工作。
+DNS 主機 (與叢集資源 ' %1 ' 相關聯的) 和指標 (PTR) 記錄並未從資源的相關聯 DNS 伺服器移除。 如有必要，可以手動刪除它們。 請洽詢您的 DNS 系統管理員，協助您完成這方面的工作。
 
 ### <a name="event-1150-res_netname_dns_ptr_record_delete_failed"></a>事件1150： RES_NETNAME_DNS_PTR_RECORD_DELETE_FAILED
 
-移除與叢集網路名稱資源 ' %1 ' 相關聯之主機 ' %3 ' 的 DNS 指標（PTR）記錄 ' %2 ' 失敗，錯誤為 ' %4 '。
+移除與叢集網路名稱資源 ' %1 ' 相關聯之主機 ' %3 ' 的 DNS 指標 (PTR) 記錄 ' %2 ' 失敗，錯誤為 ' %4 '。
 如有必要，可以手動刪除記錄。 請洽詢您的 DNS 系統管理員以取得協助。
 
 ### <a name="event-1151-res_netname_dns_a_record_delete_failed"></a>事件1151： RES_NETNAME_DNS_A_RECORD_DELETE_FAILED
 
-移除與叢集網路名稱資源 ' %1 ' 相關聯的 DNS 主機（A）記錄 ' %2 ' 失敗，錯誤為 ' %3 '。 如有必要，可以手動刪除記錄。 請洽詢您的 DNS 系統管理員以取得協助。
+移除 DNS 主機 (與叢集網路名稱資源 ' %1 ' 相關聯的) 記錄 ' %2 ' 失敗，錯誤為 ' %3 '。 如有必要，可以手動刪除記錄。 請洽詢您的 DNS 系統管理員以取得協助。
 
 ### <a name="event-1155-rcm_event_exited_queuing"></a>事件1155： RCM_EVENT_EXITED_QUEUING
 
@@ -1022,7 +1020,7 @@ Chkdsk 輸出將會記錄到檔案 ' %3 '。<br> Chkdsk 也可以將資訊寫入
 
 ### <a name="event-1544-service_vss_onabort"></a>事件1544： SERVICE_VSS_ONABORT
 
-叢集設定資料的備份操作已取消。 叢集磁碟區陰影複製服務（VSS）寫入器已收到中止要求。
+叢集設定資料的備份操作已取消。 叢集磁碟區陰影複製服務 (VSS) 寫入器已收到中止要求。
 
 ### <a name="event-1548-service_connect_version_compatible"></a>事件1548： SERVICE_CONNECT_VERSION_COMPATIBLE
 
@@ -1082,7 +1080,7 @@ Chkdsk 輸出將會記錄到檔案 ' %3 '。<br> Chkdsk 也可以將資訊寫入
 
 ### <a name="event-1581-clussvc_unable_to_move_hive_to_safe_file"></a>事件1581： CLUSSVC_UNABLE_TO_MOVE_HIVE_TO_SAFE_FILE
 
-叢集設定資料的還原要求無法建立現有叢集設定資料檔案（ClusDB）的複本。 嘗試保留現有的設定時，還原作業無法在位置 ' %1 ' 建立複本。 如果現有的設定資料檔案已損毀，可能會發生這種情況。 還原作業已繼續，但嘗試還原至現有的叢集設定可能無法正常運作。
+叢集設定資料的還原要求無法建立現有叢集設定資料檔案的複本 (ClusDB) 。 嘗試保留現有的設定時，還原作業無法在位置 ' %1 ' 建立複本。 如果現有的設定資料檔案已損毀，可能會發生這種情況。 還原作業已繼續，但嘗試還原至現有的叢集設定可能無法正常運作。
 
 ### <a name="event-1582-clussvc_unable_to_move_restored_hive_to_current"></a>事件1582： CLUSSVC_UNABLE_TO_MOVE_RESTORED_HIVE_TO_CURRENT
 
@@ -1090,11 +1088,11 @@ Chkdsk 輸出將會記錄到檔案 ' %3 '。<br> Chkdsk 也可以將資訊寫入
 
 ### <a name="event-1583-clussvc_netft_disable_connectionsecurity_failed"></a>事件1583： CLUSSVC_NETFT_DISABLE_CONNECTIONSECURITY_FAILED
 
-叢集服務無法停用容錯移轉叢集虛擬介面卡 ' %1 ' 上的網際網路通訊協定安全性（IPsec）。 這可能會對叢集通訊效能造成負面影響。 如果此問題持續發生，請驗證您的本機和網域連線安全性原則是否套用至 IPSec 和 Windows 防火牆。 此外，請檢查與基礎篩選引擎服務相關的事件。
+叢集服務無法在容錯移轉叢集虛擬配接器 ' %1 ' 上停用網際網路通訊協定安全性 (IPsec) 。 這可能會對叢集通訊效能造成負面影響。 如果此問題持續發生，請驗證您的本機和網域連線安全性原則是否套用至 IPSec 和 Windows 防火牆。 此外，請檢查與基礎篩選引擎服務相關的事件。
 
 ### <a name="event-1584-shared_volume_not_ready_for_snapshot"></a>事件1584： SHARED_VOLUME_NOT_READY_FOR_SNAPSHOT
 
-備份應用程式已在叢集共用磁碟區 ' %1 ' （' %3 '）上起始 VSS 快照集，但未正確準備快照集的磁片區。 此快照集可能無效，而且備份可能無法用於還原作業。 請洽詢您的備份應用程式廠商，以確認與叢集共用磁片區的相容性。
+備份應用程式已在叢集共用磁碟區 ' %1 ' ( ' %3 ) ' 上起始 VSS 快照集，但未正確準備快照集的磁片區。 此快照集可能無效，而且備份可能無法用於還原作業。 請洽詢您的備份應用程式廠商，以確認與叢集共用磁片區的相容性。
 
 ### <a name="event-1589-res_netname_dns_returning_ip_that_is_not_provider"></a>事件1589： RES_NETNAME_DNS_RETURNING_IP_THAT_IS_NOT_PROVIDER
 
@@ -1112,7 +1110,7 @@ Chkdsk 輸出將會記錄到檔案 ' %3 '。<br> Chkdsk 也可以將資訊寫入
 
 ### <a name="event-1671-res_disk_online_set_attributes_completed_failure"></a>事件1671： RES_DISK_ONLINE_SET_ATTRIBUTES_COMPLETED_FAILURE
 
-叢集實體磁片資源無法上線。<br><br>實體磁片資源名稱： %1<br>錯誤碼： %2<br>經過時間（秒）： %3
+叢集實體磁片資源無法上線。<br><br>實體磁片資源名稱： %1<br>錯誤碼： %2<br>經過時間 (秒數) ： %3
 
 #### <a name="guidance"></a>指導方針
 
@@ -1145,7 +1143,7 @@ Chkdsk 輸出將會記錄到檔案 ' %3 '。<br> Chkdsk 也可以將資訊寫入
 
 ### <a name="event-5120-dcm_volume_auto_pause_after_failure"></a>事件5120： DCM_VOLUME_AUTO_PAUSE_AFTER_FAILURE
 
-叢集共用磁碟區 ' %1 ' （' %2 '）已進入暫停狀態，因為 ' %3 '。
+叢集共用磁碟區 ' %1 ' ( ' %2 ' ) 已進入暫停狀態，因為 ' %3 '。
 所有 i/o 都會暫時排入佇列，直到磁片區的路徑重新建立為止。
 
 ### <a name="event-5123-dcm_event_root_rename_success"></a>事件5123： DCM_EVENT_ROOT_RENAME_SUCCESS
@@ -1154,11 +1152,11 @@ Chkdsk 輸出將會記錄到檔案 ' %3 '。<br> Chkdsk 也可以將資訊寫入
 
 ### <a name="event-5124-dcm_unsafe_filters_found"></a>事件5124： DCM_UNSAFE_FILTERS_FOUND
 
-叢集共用磁碟區 ' %1 ' （' %3 '）已在此裝置堆疊上識別出可能會干擾 CSV 作業的一或多個作用中篩選器驅動程式。 I/o 存取將會透過網路上的另一個叢集節點重新導向至存放裝置。 這可能會導致效能降低。 請洽詢篩選驅動程式廠商，以確認與叢集共用磁片區的互通性。 <br><br>找到的 Active filter 驅動程式：<br>%2
+叢集共用磁碟區 ' %1 ' ( ' %3 ' ) 識別出此裝置堆疊上的一或多個作用中篩選驅動程式可能會干擾 CSV 作業。 I/o 存取將會透過網路上的另一個叢集節點重新導向至存放裝置。 這可能會導致效能降低。 請洽詢篩選驅動程式廠商，以確認與叢集共用磁片區的互通性。 <br><br>找到的 Active filter 驅動程式：<br>%2
 
 ### <a name="event-5125-dcm_unsafe_volfilter_found"></a>事件5125： DCM_UNSAFE_VOLFILTER_FOUND
 
-叢集共用磁碟區 ' %1 ' （' %3 '）已在此裝置堆疊上識別出可能會干擾 CSV 作業的一或多個作用中磁片區驅動程式。 I/o 存取將會透過網路上的另一個叢集節點重新導向至存放裝置。 這可能會導致效能降低。 請洽詢大量驅動程式廠商，以確認與叢集共用磁片區的互通性。 <br><br>找到的有效磁片區驅動程式：<br>%2
+叢集共用磁碟區 ' %1 ' ( ' %3 ' ) 識別出此裝置堆疊上的一或多個作用中磁片區驅動程式可能會干擾 CSV 作業。 I/o 存取將會透過網路上的另一個叢集節點重新導向至存放裝置。 這可能會導致效能降低。 請洽詢大量驅動程式廠商，以確認與叢集共用磁片區的互通性。 <br><br>找到的有效磁片區驅動程式：<br>%2
 
 ### <a name="event-5126-dcm_event_cannot_disable_short_names"></a>事件5126： DCM_EVENT_CANNOT_DISABLE_SHORT_NAMES
 
@@ -1170,19 +1168,19 @@ Chkdsk 輸出將會記錄到檔案 ' %3 '。<br> Chkdsk 也可以將資訊寫入
 
 ### <a name="event-5133-dcm_cannot_restore_drive_letters"></a>事件5133： DCM_CANNOT_RESTORE_DRIVE_LETTERS
 
-已移除叢集磁片 ' %1 '，並將其放回「可用的存放裝置」叢集群組。 在此過程中，還原原始磁碟機號的嘗試時間超過預期，可能是因為那些磁碟機號已在使用中。
+已移除叢集磁片 ' %1 '，並將其放回「可用的存放裝置」叢集群組。 在此過程中，嘗試還原原始磁碟機號 (s) 花費的時間超過預期，可能是因為那些磁碟機號已在使用中。
 
 ### <a name="event-5134-dcm_cannot_set_acl_on_root"></a>事件5134： DCM_CANNOT_SET_ACL_ON_ROOT
 
-叢集服務無法在叢集共用磁片區根目錄 ' %1 ' 上設定許可權（ACL）。 錯誤為 ' %2 '。
+叢集服務無法在叢集共用磁片區根目錄 ' %1 ' 上設定 (ACL) 的許可權。 錯誤為 ' %2 '。
 
 ### <a name="event-5135-dcm_cannot_set_acl_on_volume_folder"></a>事件5135： DCM_CANNOT_SET_ACL_ON_VOLUME_FOLDER
 
-叢集服務無法在叢集共用磁碟區目錄 ' %1 ' （' %2 '）上設定許可權。 錯誤為 ' %3 '。
+叢集服務無法在叢集共用磁碟區目錄 ' %1 ' 上設定許可權 ( ' %2 ' ) 。 錯誤為 ' %3 '。
 
 ### <a name="event-5136-dcm_csv_into_redirected_mode"></a>事件5136： DCM_CSV_INTO_REDIRECTED_MODE
 
-已開啟叢集共用磁碟區 ' %1 ' （' %2 '）重新導向存取。 存放裝置的存取將會透過網路從所有存取此磁片區的叢集節點重新導向。 這可能會導致效能降低。 關閉此磁片區的重新導向存取以繼續正常作業。
+叢集共用磁碟區 ' %1 ' ( ' %2 ' ) 重新導向存取已開啟。 存放裝置的存取將會透過網路從所有存取此磁片區的叢集節點重新導向。 這可能會導致效能降低。 關閉此磁片區的重新導向存取以繼續正常作業。
 
 ### <a name="event-5149-dcm_csv_block_cache_resized"></a>事件5149： DCM_CSV_BLOCK_CACHE_RESIZED
 
@@ -1190,12 +1188,12 @@ Chkdsk 輸出將會記錄到檔案 ' %3 '。<br> Chkdsk 也可以將資訊寫入
 
 ### <a name="event-5156-dcm_volume_auto_pause_after_snapshot_failure"></a>事件5156： DCM_VOLUME_AUTO_PAUSE_AFTER_SNAPSHOT_FAILURE
 
-叢集共用磁碟區 ' %1 ' （' %2 '）已進入暫停狀態，因為 ' %3 '。
+叢集共用磁碟區 ' %1 ' ( ' %2 ' ) 已進入暫停狀態，因為 ' %3 '。
 當 CSV 磁片區基礎的 volsnap 快照集在使用者要求之外遭到刪除時，就會發生此錯誤。 快照集被刪除的可能原因是空間不足，所以快照集無法成長，或嘗試更新快照集資料時發生 IO 失敗。 所有 i/o 都會暫時排入佇列，直到快照集狀態與 volsnap 同步為止。
 
 ### <a name="event-5157-dcm_volume_auto_pause_after_failure_expected"></a>事件5157： DCM_VOLUME_AUTO_PAUSE_AFTER_FAILURE_EXPECTED
 
-叢集共用磁碟區 ' %1 ' （' %2 '）已進入暫停狀態，因為 ' %3 '。
+叢集共用磁碟區 ' %1 ' ( ' %2 ' ) 已進入暫停狀態，因為 ' %3 '。
 所有 i/o 都會暫時排入佇列，直到磁片區的路徑重新建立為止。
 此錯誤通常是因基礎結構失敗所造成。 例如，失去對存放裝置的連線，或擁有從作用中叢集成員資格中移除之叢集共用磁碟區的節點。
 
@@ -1244,13 +1242,13 @@ Chkdsk 輸出將會記錄到檔案 ' %3 '。<br> Chkdsk 也可以將資訊寫入
 
 ### <a name="event-5121-dcm_volume_no_direct_io_due_to_failure"></a>事件5121： DCM_VOLUME_NO_DIRECT_IO_DUE_TO_FAILURE
 
-無法再直接從這個叢集節點存取叢集共用磁碟區 ' %1 ' （' %2 '）。 I/o 存取會透過網路重新導向至擁有該磁片區的節點。 如果這會導致效能降低，請針對此節點與存放裝置的連線問題進行疑難排解，並在重新建立與存放裝置的連線後，i/o 將恢復為狀況良好的狀態。
+叢集共用磁碟區 ' %1 ' ( ' %2 ' ) 無法再從此叢集節點直接存取。 I/o 存取會透過網路重新導向至擁有該磁片區的節點。 如果這會導致效能降低，請針對此節點與存放裝置的連線問題進行疑難排解，並在重新建立與存放裝置的連線後，i/o 將恢復為狀況良好的狀態。
 
 ### <a name="event-5218-csv_old_sw_snapshot_deleted"></a>事件5218： CSV_OLD_SW_SNAPSHOT_DELETED
 
-叢集實體磁片資源 ' %1 ' 已刪除軟體快照集。 叢集共用磁碟區 ' %2 ' 上的軟體快照集已刪除，因為它早于 ' %3 ' 天。 快照集識別碼是 ' %4 '，而它是從 ' %6 ' 的節點 ' %5 ' 所建立。
+叢集實體磁片資源 ' %1 ' 已刪除軟體快照集。 叢集共用磁碟區 ' %2 ' 上的軟體快照集已刪除，因為它早于 ' %3 ' 天 (s) 。 快照集識別碼是 ' %4 '，而它是從 ' %6 ' 的節點 ' %5 ' 所建立。
 在備份作業完成之後，備份應用程式應該會刪除快照集。 此快照集超過快照集存在所需的時間。 請向備份應用程式確認備份作業已順利完成。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [Windows Server 2008 中容錯移轉叢集元件的詳細事件資訊](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753362(v%3dws.10))

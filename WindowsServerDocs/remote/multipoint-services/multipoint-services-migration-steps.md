@@ -2,23 +2,21 @@
 title: 遷移 MultiPoint 服務的步驟
 description: 逐步引導您在 Windows Server 2016 中遷移至 MultiPoint 服務的步驟
 ms.date: 07/29/2016
-ms.prod: windows-server
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: 3ee77efa-7cc5-4ddf-aaff-b5634a717014
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: f2e293fafb8d6f5d84e9ea5a4ad8ef3b7fe2ba7d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0d76e3518801829b852c94d0b112b906abbd92c0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858691"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87948931"
 ---
 # <a name="migrate-to--multipoint-services-in-windows-server-2016"></a>遷移至 Windows Server 2016 中的 MultiPoint 服務
 
->適用於︰Windows Server 2016
+>適用於：Windows Server 2016
 
 使用下列步驟，再加上您在「遷移規劃」工作表中所收集的資訊，以遷移至 Windows Server 2016 中的 MultiPoint 服務。
 
@@ -41,7 +39,7 @@ ms.locfileid: "80858691"
 4. 按一下 [匯**入虛擬桌面範本**]。 依照指示從來源伺服器匯入範本。
 
 > [!NOTE]
-> 當您匯入虛擬桌面範本時，將會重設任何套用至範本的自訂。 
+> 當您匯入虛擬桌面範本時，將會重設任何套用至範本的自訂。
 
 ## <a name="next-step"></a>後續步驟
 [驗證新的 MultiPoint 服務部署。](multipoint-services-post-migration-steps.md)

@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 3e3876680031cdb31f2fa3e6ce200efdf6fb5185
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b1a7783e02746f53d818066eb20ceb3094bd2707
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936448"
+ms.locfileid: "87990031"
 ---
 # <a name="windows-logon-scenarios"></a>Windows 登入案例
 
@@ -103,14 +103,12 @@ RDP 會管理使用者使用遠端桌面用戶端輸入的認證。 這些認證
 
 使用智慧卡而非密碼時，儲存在使用者智慧卡上的私用/公開金鑰組，會取代為衍生自使用者密碼的共用秘密金鑰。 私密金鑰只會儲存在智慧卡上。 公開金鑰可供擁有者想要交換機密資訊的任何人使用。
 
-如需 Windows 中智慧卡登入程式的詳細資訊，請參閱[windows 中的智慧卡登入運作](https://technet.microsoft.com/library/ff404285.aspx)方式。
+如需 Windows 中智慧卡登入程式的詳細資訊，請參閱[windows 中的智慧卡登入運作](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff404285(v=ws.10))方式。
 
 ## <a name="biometric-logon"></a><a name="BKMK_BioLogon"></a>生物識別登入
 裝置可用來捕捉和建立成品的數位特性，例如指紋。 這個數位標記法接著會與相同成品的範例進行比較，而當兩者成功比較時，就會發生驗證。 執行本主題開頭的 [**適用**于] 清單中指定的任何作業系統的電腦，都可以設定為接受這種形式的登入。 不過，如果僅針對本機登入設定生物識別登入，則使用者在存取 Active Directory 網域時，必須提供網域認證。
 
 ## <a name="additional-resources"></a>其他資源
-如需 Windows 如何管理在登入程式期間所提交之認證的相關資訊，請參閱[Windows 驗證中的認證管理](https://technet.microsoft.com/library/dn169014.aspx)。
+如需 Windows 如何管理在登入程式期間所提交之認證的相關資訊，請參閱[Windows 驗證中的認證管理](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dn169014(v=ws.10))。
 
-[Windows 登入和驗證技術總覽](https://technet.microsoft.com/library/dn169029.aspx)
-
-
+[Windows 登入和驗證技術總覽](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dn169029(v=ws.10))
