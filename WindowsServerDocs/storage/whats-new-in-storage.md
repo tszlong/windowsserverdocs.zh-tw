@@ -1,19 +1,17 @@
 ---
 ms.assetid: 0f2a7f7b-aca8-4e5d-ad67-4258e88bc52f
 title: Windows Server 中存放裝置的新功能
-ms.prod: windows-server
 ms.author: jgerend
 manager: dongill
-ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms.date: 05/29/2019
-ms.openlocfilehash: 447c8fe33a0454179d8c9aacc9c324ac7bcf1f49
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3b1a3fa120e27439c1ec55f68521b813588d330b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965820"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965945"
 ---
 # <a name="whats-new-in-storage-in-windows-server"></a>Windows Server 中存放裝置的新功能
 
@@ -65,13 +63,13 @@ ms.locfileid: "86965820"
 
 儲存空間移轉服務是新的技術，可讓您更輕鬆地將伺服器移轉至較新版本的 Windows Server。 它提供圖形化工具，可用於清查伺服器上的資料、將資料與設定傳輸到較新的伺服器，然後選擇性地將舊伺服器的身分識別移動至新伺服器，因此應用程式和使用者不需要變更任何項目。 如需詳細資訊，請參閱[存放裝置移轉服務](storage-migration-service/overview.md)。
 
-### <a name="storage-spaces-direct-windows-server-2019-only"></a><a id="storage-spaces-direct"></a>儲存空間直接存取（僅限 Windows Server 2019）
+### <a name="storage-spaces-direct-windows-server-2019-only"></a><a id="storage-spaces-direct"></a>僅 (Windows Server 2019 儲存空間直接存取) 
 
-Windows Server 2019 中的儲存空間直接存取有一些改良功能（儲存空間直接存取不包含在 Windows Server、半年通道）：
+Windows server 2019 中的儲存空間直接存取有一些改良功能 (儲存空間直接存取並未包含在 Windows Server、半年通道) 中：
 
 - **ReFS 磁碟區的重複資料刪除和壓縮**
 
-    使用 ReFS 檔案系統的重復資料刪除和壓縮，在相同的磁片區上儲存多達10倍的資料。 （[只需按一下](https://www.youtube.com/watch?v=PRibTacyKko&feature=youtu.be)即可開啟 Windows 系統管理中心。）具有選擇性壓縮的可變大社區塊存放區會最大化節省率，而多執行緒的後置處理架構則會使效能影響降到最低。 支援高達 64 TB 的磁片區，並將刪除重複每個檔案的前 4 TB。
+    使用 ReFS 檔案系統的重復資料刪除和壓縮，在相同的磁片區上儲存多達10倍的資料。  ([只需按一下](https://www.youtube.com/watch?v=PRibTacyKko&feature=youtu.be)就可以開啟 Windows 系統管理中心。使用選擇性壓縮來 ) 可變大小的區塊存放區，可將節省成本降到最低，而多執行緒的後置處理架構則會使效能影響最小。 支援高達 64 TB 的磁片區，並將刪除重複每個檔案的前 4 TB。
 
 - **原生支援持續性記憶體**
 
@@ -99,7 +97,7 @@ Windows Server 2019 中的儲存空間直接存取有一些改良功能（儲存
 
 - **鏡像加速的同位加快 2 倍**
 
-    使用鏡像加速的同位，您可以建立部分鏡像、部分同位的儲存空間直接存取磁碟區，例如混合 RAID-1 和 RAID-5/6 來充分發揮兩者的優點。 （這比您在 Windows 系統管理中心的[想法更簡單](https://www.youtube.com/watch?v=R72QHudqWpE)）。在 Windows Server 2019 中，由於優化的關係，鏡像加速同位的效能比 Windows Server 2016 多兩倍。
+    使用鏡像加速的同位，您可以建立部分鏡像、部分同位的儲存空間直接存取磁碟區，例如混合 RAID-1 和 RAID-5/6 來充分發揮兩者的優點。  ([比您](https://www.youtube.com/watch?v=R72QHudqWpE)在 Windows 系統管理中心中的想法來得容易。 ) 在 windows Server 2019 中，鏡像加速同位的效能比 windows server 2016 更多，但感謝優化。
 
 - **磁碟機延遲極端值偵測**
 
@@ -154,13 +152,13 @@ Windows Server 2019 中的儲存空間直接存取有一些改良功能（儲存
 
 ### <a name="file-server-resource-manager"></a>File Server Resource Manager
 
-Windows Server 2019 包括在服務啟動時，防止檔案伺服器 Resource Manager 服務在所有磁片區上建立變更日誌（也稱為 USN 日誌）的功能。 這可以節省每個磁碟區的空間，但會停用即時檔案分類。 如需詳細資訊，請參閱[檔案伺服器資源管理員概觀](fsrm/fsrm-overview.md)。
+Windows Server 2019 包括防止檔案伺服器 Resource Manager 服務在啟動服務時，在所有磁片區上建立變更日誌 (也稱為 USN 日誌) 的功能。 這可以節省每個磁碟區的空間，但會停用即時檔案分類。 如需詳細資訊，請參閱[檔案伺服器資源管理員概觀](fsrm/fsrm-overview.md)。
 
 ## <a name="whats-new-in-storage-in-windows-server-version-1803"></a>Windows Server （版本1803）中存放裝置的新功能
 
 ### <a name="file-server-resource-manager"></a>File Server Resource Manager
 
-Windows Server 1803 版包含在服務啟動時，防止檔案伺服器 Resource Manager 服務在所有磁片區上建立變更日誌（也稱為 USN 日誌）的功能。 這可以節省每個磁碟區的空間，但會停用即時檔案分類。 如需詳細資訊，請參閱[檔案伺服器資源管理員概觀](fsrm/fsrm-overview.md)。
+Windows Server （版本1803）包括防止檔案伺服器 Resource Manager 服務在啟動服務時，在所有磁片區上建立變更日誌 (也稱為 USN 日誌) 的功能。 這可以節省每個磁碟區的空間，但會停用即時檔案分類。 如需詳細資訊，請參閱[檔案伺服器資源管理員概觀](fsrm/fsrm-overview.md)。
 
 ## <a name="whats-new-in-storage-in-windows-server-version-1709"></a>Windows Server （版本1709）中存放裝置的新功能
 
@@ -247,7 +245,7 @@ Windows Server （版本1709）是半年通道中的第一個 Windows Server 版
 
 如需詳細資訊，請參閱[存放裝置服務品質](storage-qos/storage-qos-overview.md)
 
-### <a name="data-deduplication"></a><a name="dedup"></a>重復資料刪除
+### <a name="data-deduplication"></a><a name="dedup"></a>重複資料刪除
 | 功能 | 新功能或更新功能 | 描述 |
 |---------------|----------------|-------------|
 | [支援大型磁片區](data-deduplication/whats-new.md#large-volume-support) | 已更新 | 在 Windows Server 2016 之前，使用者必須特別針對預期的變動設定磁碟區大小，而大於 10 TB 的磁碟區並不是重複資料刪除的良好候選項目。 在 Windows Server 2016 中，重復資料刪除支援**最多 64 TB**的磁片區大小。 |
@@ -296,5 +294,5 @@ ReFS 引入下列改善：
 **有哪些不同？**<br>
 這些為 Windows Server 2016 的新功能。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 * [Windows Server 2016 中的新功能](../get-started/whats-new-in-windows-server-2016.md)

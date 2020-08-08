@@ -7,12 +7,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6b5e8ae365fbf8130d134ab2f9fa555e952d012a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: da8bb60ea455578eff96aed6173e4662fffd6ade
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895631"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991754"
 ---
 # <a name="get-started-with-user-access-logging"></a>開始使用使用者存取記錄
 
@@ -126,7 +126,5 @@ UAL 可以支援下列伺服器角色和服務：
 在 Windows Server 2012 之後執行 Windows Server 版本的任何電腦上，都可以使用 UAL。
 
 ## <a name="additional-references"></a>其他參考資料
-MSDN 上的[使用者存取記錄](https://msdn.microsoft.com/library/windows/desktop/hh437528(v=vs.85).aspx)。
+MSDN 上的[使用者存取記錄](/previous-versions/windows/desktop/ual/user-access-logging)。
 [管理使用者存取記錄](Manage-User-Access-Logging.md)
-
-

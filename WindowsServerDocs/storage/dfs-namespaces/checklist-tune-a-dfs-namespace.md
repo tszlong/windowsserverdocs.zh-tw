@@ -2,24 +2,22 @@
 title: 檢查清單：調整 DFS 命名空間
 description: 本文說明如何最佳化 DFS 命名空間為更新的命名空間資料處理轉介和輪詢 AD DS 的方式
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 67e272657c23926adbbf9f0db5174d00f4852137
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 9e5759579b86c2ed7721a31aada5ddaa345fc256
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961750"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957686"
 ---
 # <a name="checklist-tune-a-dfs-namespace"></a>檢查清單：調整 DFS 命名空間
 
-> 適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用于： Windows Server 2019、Windows Server (半年通道) 、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
-建立命名空間並新增資料夾和目標之後，請使用下列檢查清單來微調或優化 DFS 命名空間處理參考和輪詢的方式 Active Directory Domain Services （AD DS），以取得更新的命名空間資料。
+建立命名空間並新增資料夾和目標之後，請使用下列檢查清單來微調或優化 DFS 命名空間處理參考和輪詢的方式 Active Directory Domain Services (AD DS) 更新的命名空間資料。
 
 -   防止使用者查看命名空間中他們不具有存取權限的資料夾。 [在命名空間上啟用以存取為基礎的列舉](enable-access-based-enumeration-on-a-namespace.md)
 -   啟用或防止使用者在存取命名空間中的資料夾時，被轉介至命名空間或資料夾目標。 [啟用或停用轉介和用戶端容錯回復](enable-or-disable-referrals-and-client-failback.md)
@@ -32,7 +30,7 @@ ms.locfileid: "86961750"
 -   指定使用者應轉介的資料夾目標順序。 [設定轉介中目標的排序方法](set-the-ordering-method-for-targets-in-referrals.md)
 -   覆寫特定命名空間伺服器或資料夾目標的轉介順序。 [設定目標優先順序以覆寫轉介順序](set-target-priority-to-override-referral-ordering.md)
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [命名空間](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771914(v=ws.11))
 -   [檢查清單：部署 DFS 命名空間](checklist-deploy-dfs-namespaces.md)

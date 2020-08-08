@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 731d73c8aa7ea5ad7f7b2777b2694da232fae12a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 480b03f49b806ca0096c64d824679473b02695c5
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895756"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991847"
 ---
 # <a name="manage-multiple-remote-servers-with-server-manager"></a>使用伺服器管理員管理多部遠端伺服器
 
@@ -132,7 +132,7 @@ ms.locfileid: "87895756"
 
     -   若要在執行 Windows Server 2008 的伺服器上啟用遠端系統管理，請參閱[在 Windows PowerShell 中啟用和使用遠端命令](https://go.microsoft.com/fwlink/p/?LinkId=242565)。
 
-    -   若要在執行 Windows Server 2003 的伺服器上啟用遠端管理，請在 Windows 防火牆中啟用 WMI DCOM 例外。 如需如何在執行 Windows Server 2003 的伺服器上進行這項操作的詳細資訊，請參閱 MSDN 上的＜ [透過 Windows 防火牆連線](https://msdn.microsoft.com/library/aa389286.aspx) ＞。
+    -   若要在執行 Windows Server 2003 的伺服器上啟用遠端管理，請在 Windows 防火牆中啟用 WMI DCOM 例外。 如需如何在執行 Windows Server 2003 的伺服器上進行這項操作的詳細資訊，請參閱 MSDN 上的＜ [透過 Windows 防火牆連線](/windows/win32/wmisdk/connecting-to-wmi-remotely-with-vbscript) ＞。
 
 ## <a name="tasks-that-you-can-perform-in-server-manager"></a><a name=BKMK_tasks></a>可以在伺服器管理員中執行的工作
 伺服器管理員藉由允許系統管理員使用單一工具執行下表中的工作，讓伺服器管理變得更有效率。 在 Windows Server 2012 R2 和 Windows Server 2012 中，伺服器的標準使用者和 Administrators 群組成員都可以在伺服器管理員中執行管理工作，但根據預設，標準使用者無法執行某些工作，如下表所示。
@@ -237,5 +237,3 @@ ms.locfileid: "87895756"
     -   %*appdata*% \Microsoft\Windows\ServerManager\Serverlist.xml
 
     -   %*localappdata*% \Microsoft_Corporation\ServerManager.exe_StrongName_*GUID*\6.2.0.0\user.config
-
-

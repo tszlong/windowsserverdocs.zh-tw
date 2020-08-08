@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b0d2369bd42fc884b1a401fc1450dbe9d1e47663
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 0a39eaaff5497ee85cb823907cd8b57f1888dd08
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895804"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991879"
 ---
 # <a name="configure-remote-management-in-server-manager"></a>在伺服器管理員中設定遠端系統管理
 
@@ -153,7 +153,7 @@ ms.locfileid: "87895804"
 
 ### <a name="to-disable-remote-management-by-using-an-answer-file-during-unattended-installation"></a>在自動安裝期間使用回應檔案停用遠端管理
 
-1.  使用 Windows 系統映射管理員 (Windows SIM) ，建立 Windows Server 2016 安裝的自動安裝回應檔案。 如需如何建立回應檔案與使用 Windows SIM 的詳細資訊，請參閱[何謂 Windows 系統映像管理員？](https://technet.microsoft.com/library/cc766347.aspx)及[逐步說明：IT 專業人員的基本 Windows 部署](https://technet.microsoft.com/library/dd349348.aspx)。
+1.  使用 Windows 系統映射管理員 (Windows SIM) ，建立 Windows Server 2016 安裝的自動安裝回應檔案。 如需如何建立回應檔案與使用 Windows SIM 的詳細資訊，請參閱[何謂 Windows 系統映像管理員？](/previous-versions/windows/it-pro/windows-vista/cc766347(v=ws.10))及[逐步說明：IT 專業人員的基本 Windows 部署](/previous-versions/windows/it-pro/windows-7/dd349348(v=ws.10))。
 
 2.  在您的回應檔案中，找出 [設定**microsoft-windows-web-services-for-management-core\enableserverremotemanagement 設定**]。
 
@@ -183,8 +183,5 @@ WinRM 與遠端電腦通訊的預設連接埠號碼為 5985。
 
 ## <a name="see-also"></a>另請參閱
 [將伺服器新增至伺服器管理員](add-servers-to-server-manager.md) 
-[Windows PowerShell： Windows Server 技術中心](https://technet.microsoft.com/library/dd347642.aspx) 
+[Windows PowerShell： Windows Server 技術中心](/previous-versions/dd347642(v=technet.10)) 
  上的 about_remote_Troubleshooting[使用者帳戶控制的描述](https://support.microsoft.com/kb/951016)
-
-
-

@@ -6,12 +6,12 @@ ms.assetid: a6615411-83d9-495f-8a6a-1ebc8b12f164
 manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
-ms.openlocfilehash: 0ba4f52df35c3b78f948bdfdf40500965a9be278
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c1095f3f5ea44b22c4cec4a871f6fc6210e92ab1
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953954"
+ms.locfileid: "87991633"
 ---
 # <a name="choosing-a-network-adapter"></a>選擇網路介面卡
 
@@ -22,7 +22,7 @@ ms.locfileid: "87953954"
 需要大量網路的應用程式需要高效能的網路介面卡。 本節將探討選擇網路介面卡的一些考慮，以及如何設定不同的網路介面卡設定，以達到最佳的網路效能。
 
 > [!TIP]
->  您可以使用 Windows PowerShell 來設定網路介面卡。 如需詳細資訊，請參閱[Windows PowerShell 中的網路介面卡 Cmdlet](https://docs.microsoft.com/powershell/module/netadapter)。
+>  您可以使用 Windows PowerShell 來設定網路介面卡。 如需詳細資訊，請參閱[Windows PowerShell 中的網路介面卡 Cmdlet](/powershell/module/netadapter)。
 
 ##  <a name="offload-capabilities"></a><a name="bkmk_offload"></a>卸載功能
 
@@ -63,13 +63,13 @@ RSS 也會對 UDP 單播和多播流量進行負載平衡，並將 \( 來源和�
 >[!NOTE]
 >如需每個 Cmdlet 的詳細命令參考，包括語法和參數，您可以按一下下列連結。 此外，您可以在 Windows PowerShell 提示字元中傳遞 Cmdlet 名稱，以**取得**每個命令的詳細資料。
 
-- [停用-set-netadapterrss](https://docs.microsoft.com/powershell/module/netadapter/Disable-NetAdapterRss)。 此命令會在您指定的網路介面卡上停用 RSS。
+- [停用-set-netadapterrss](/powershell/module/netadapter/Disable-NetAdapterRss)。 此命令會在您指定的網路介面卡上停用 RSS。
 
-- [啟用-set-netadapterrss](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterRss)。 此命令會在您指定的網路介面卡上啟用 RSS。
+- [啟用-set-netadapterrss](/powershell/module/netadapter/Enable-NetAdapterRss)。 此命令會在您指定的網路介面卡上啟用 RSS。
 
-- [Set-netadapterrss](https://docs.microsoft.com/powershell/module/netadapter/Get-NetAdapterRss)。 此命令會抓取您指定之網路介面卡的 RSS 屬性。
+- [Set-netadapterrss](/powershell/module/netadapter/Get-NetAdapterRss)。 此命令會抓取您指定之網路介面卡的 RSS 屬性。
 
-- [Set-netadapterrss](https://docs.microsoft.com/powershell/module/netadapter/Set-NetAdapterRss)。 此命令會在您指定的網路介面卡上設定 RSS 屬性。
+- [Set-netadapterrss](/powershell/module/netadapter/Set-NetAdapterRss)。 此命令會在您指定的網路介面卡上設定 RSS 屬性。
 
 #### <a name="rss-profiles"></a>RSS 設定檔
 
@@ -210,28 +210,28 @@ CoalescingExceptions : 0
 
 使用下列 Windows PowerShell Cmdlet 可簡化設定網路介面卡資源。
 
-- [NetAdapterAdvancedProperty](https://docs.microsoft.com/powershell/module/netadapter/Get-NetAdapterAdvancedProperty)
+- [NetAdapterAdvancedProperty](/powershell/module/netadapter/Get-NetAdapterAdvancedProperty)
 
-- [設定-NetAdapterAdvancedProperty](https://docs.microsoft.com/powershell/module/netadapter/Set-NetAdapterAdvancedProperty)
+- [設定-NetAdapterAdvancedProperty](/powershell/module/netadapter/Set-NetAdapterAdvancedProperty)
 
-- [啟用-Get-netadapter](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapte)
+- [啟用-Get-netadapter](/powershell/module/netadapter/Enable-NetAdapte)
 
-- [啟用-NetAdapterBinding](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterBinding)
+- [啟用-NetAdapterBinding](/powershell/module/netadapter/Enable-NetAdapterBinding)
 
-- [啟用-NetAdapterChecksumOffload](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterChecksumOffload)
+- [啟用-NetAdapterChecksumOffload](/powershell/module/netadapter/Enable-NetAdapterChecksumOffload)
 
-- [啟用-NetAdapterIPSecOffload](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterChecksumOffload)
+- [啟用-NetAdapterIPSecOffload](/powershell/module/netadapter/Enable-NetAdapterChecksumOffload)
 
-- [啟用-NetAdapterLso](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterLso)
+- [啟用-NetAdapterLso](/powershell/module/netadapter/Enable-NetAdapterLso)
 
-- [啟用-NetAdapterPowerManagement](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterPowerManagement)
+- [啟用-NetAdapterPowerManagement](/powershell/module/netadapter/Enable-NetAdapterPowerManagement)
 
-- [啟用-Get-netadapterqos](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterQos)
+- [啟用-Get-netadapterqos](/powershell/module/netadapter/Enable-NetAdapterQos)
 
-- [啟用-NetAdapterRDMA](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterRDMA)
+- [啟用-NetAdapterRDMA](/powershell/module/netadapter/Enable-NetAdapterRDMA)
 
-- [啟用-Get-netadaptersriov](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterSriov)
+- [啟用-Get-netadaptersriov](/powershell/module/netadapter/Enable-NetAdapterSriov)
 
-如需詳細資訊，請參閱[Windows PowerShell 中的網路介面卡 Cmdlet](https://docs.microsoft.com/powershell/module/netadapter)。
+如需詳細資訊，請參閱[Windows PowerShell 中的網路介面卡 Cmdlet](/powershell/module/netadapter)。
 
 如需本指南中所有主題的連結，請參閱[網路子系統效能調整](net-sub-performance-top.md)。

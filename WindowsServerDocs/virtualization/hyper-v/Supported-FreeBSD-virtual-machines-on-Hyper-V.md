@@ -1,20 +1,18 @@
 ---
 title: Hyper-v 上支援的 FreeBSD 虛擬機器
 description: 列出每個版本中包含的 Linux 整合服務和功能
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: 930e758f-bd50-46b4-a3a4-9857110f17b4
 author: shirgall
 ms.author: kathydav
 ms.date: 04/07/2020
-ms.openlocfilehash: 9394ff04b32ab34cbdad6a46573fd3674051db36
-ms.sourcegitcommit: 7b1ebc4934998af2472962ca8cce1c872f39946f
+ms.openlocfilehash: 3767c56640dd4e4e07e2cdd4a578ec0c3db2f470
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80994525"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965635"
 ---
 # <a name="supported-freebsd-virtual-machines-on-hyper-v"></a>Hyper-v 上支援的 FreeBSD 虛擬機器
 
@@ -24,33 +22,33 @@ ms.locfileid: "80994525"
 
 ## <a name="table-legend"></a>資料表圖例
 
-* 此 FreeBSD 版本包含**內建**的 BIS （FreeBSD 整合服務）。
+* 此 FreeBSD 版本包含**內建**的 BIS (FreeBSD 整合服務) 。
 
-* &#10004;-可用的功能
+* &#10004; 功能可供使用
 
-* （*空白*）-無法使用功能
+*  (*空白*) -不提供功能
 
-|**特徵**|**Windows Server 作業系統版本**|**12-12。1**|**11.1-11。3**|**11.0**|**10.3**|**10.2**|**10.0-10。1**|**9.1-9.3、8。4**|
+|**功能**|**Windows Server 作業系統版本**|**12-12。1**|**11.1-11。3**|**11.0**|**10.3**|**10.2**|**10.0-10。1**|**9.1-9.3、8。4**|
 |-|-|-|-|-|-|-|-|-|
-|**可用性**||內建|內建|內建|內建|內建|內建|[埠](https://svnweb.freebsd.org/ports/branches/2015Q1/emulators/hyperv-is/) |
-|**[雙核處理器](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|**可用性**||內建|內建|內建|內建|內建|內建|[連接埠](https://svnweb.freebsd.org/ports/branches/2015Q1/emulators/hyperv-is/) |
+|**[核心](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Windows Server 2016 精確時間|2019、2016|&#10004;|&#10004;||||||
-|**[連](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**||||||||
-|Jumbo 框架|2019、2016、2012 R2|&#10004;附注3|&#10004;附注3|&#10004;附注3|&#10004;附注3|&#10004;附注3|&#10004;附注3|&#10004;附注3|
+|**[網路功能](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**||||||||
+|大型訊框|2019、2016、2012 R2|&#10004; 附注3|&#10004; 附注3|&#10004; 附注3|&#10004; 附注3|&#10004; 附注3|&#10004; 附注3|&#10004; 附注3|
 |VLAN 標記和中繼|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |即時移轉|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|靜態 IP 插入|2019、2016、2012 R2|&#10004;注4|&#10004;注4|&#10004;注4|&#10004;注4|&#10004;注4|&#10004;注4|&#10004;|
+|靜態 IP 插入|2019、2016、2012 R2|&#10004; 附注4|&#10004; 附注4|&#10004; 附注4|&#10004; 附注4|&#10004; 附注4|&#10004; 附注4|&#10004;|
 |vRSS|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|||||
 |TCP 分割和總和檢查碼卸載|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|||
-|大型接收卸載（LRO）|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;||||
+|大型接收卸載 (LRO) |2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;||||
 |SR-IOV|2019、2016|&#10004;|&#10004;|&#10004;|||||
-|**[容量](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**||Note1|附註 1|附註 1|附註 1|附註 1|附注1、2|附注1、2|
-|VHDX 調整大小|2019、2016、2012 R2|&#10004;附注6|&#10004;附注6|&#10004;附注6|||||
+|**[儲存體](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**||Note1|附註 1|附註 1|附註 1|附註 1|附注1、2|附注1、2|
+|VHDX 調整大小|2019、2016、2012 R2|&#10004; 附注6|&#10004; 附注6|&#10004; 附注6|||||
 |虛擬光纖通道|2019、2016、2012 R2||||||||
 |即時虛擬機器備份|2019、2016、2012 R2|&#10004;|&#10004;||||||
 |修剪支援|2019、2016、2012 R2|&#10004;|&#10004;||||||
 |SCSI WWN|2019、2016、2012 R2||||||||
-|**[快閃記憶體](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||||||
+|**[Memory](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||||||
 |PAE 核心支援|2019、2016、2012 R2||||||||
 |設定 MMIO 間隙|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |動態記憶體-熱新增|2019、2016、2012 R2||||||||
@@ -59,17 +57,17 @@ ms.locfileid: "80994525"
 |**[影片](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**|||||||||
 |Hyper-v 特定的影片裝置|2019、2016、2012 R2||||||||
 |**[其他](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**|||||||||
-|索引鍵/值組|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;附注5|&#10004;|
+|索引鍵/值組|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004; 附注5|&#10004;|
 |非遮罩式插斷|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |從主機到來賓的檔案複製|2019、2016、2012 R2||||||||
 |lsvmbus 命令|2019、2016、2012 R2||||||||
 |Hyper-v 通訊端|2019、2016||||||||
 |PCI 通過/DDA|2019、2016|&#10004;|&#10004;||||||
-|**[第2代虛擬機器](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)**|||||||||
+|**[第 2 代虛擬機器](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)**|||||||||
 |使用 UEFI 開機|2019、2016、2012 R2|&#10004;|&#10004;||||||
 |安全開機|2019、2016||||||||
 
-## <a name="notes"></a><a name="BKMK_notes"></a>紀錄
+## <a name="notes"></a><a name="BKMK_notes"></a>附註
 
 1. 建議您為[磁片裝置加上標籤]( https://www.freebsd.org/doc/handbook/geom-glabel.html)，以避免在啟動期間發生根掛接錯誤。
 
@@ -90,8 +88,8 @@ ms.locfileid: "80994525"
     # dd if=/dev/da1 of=/dev/da1 count=0
     # gpart recover da1
     ```
-   
-**其他注意事項**：10穩定和11穩定的功能對照表與 FreeBSD 11.1 版本相同。 此外，FreeBSD 10.2 和舊版（10.1，10.0，9. x，8. x）的生命週期結束。 如需最新的支援版本清單和最新的資訊安全摘要報告，請參閱[這裡](https://security.freebsd.org/)。
+
+**其他注意事項**：10穩定和11穩定的功能對照表與 FreeBSD 11.1 版本相同。 此外，FreeBSD 10.2 和舊版 (10.1、10.0、9. x、8.x) 都是生命週期結束。 如需最新的支援版本清單和最新的資訊安全摘要報告，請參閱[這裡](https://security.freebsd.org/)。
 
 ## <a name="see-also"></a>另請參閱
 

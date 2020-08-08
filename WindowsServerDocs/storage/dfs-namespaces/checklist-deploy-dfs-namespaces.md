@@ -2,22 +2,20 @@
 title: 檢查清單：部署 DFS 命名空間
 description: 本文說明如何設定和部署 DFS 命名空間。
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 389d02ae7269ef48ef77d066db3064759d9253c1
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 43cb085eb8af627609371f37f61eab22be91d606
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961960"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957716"
 ---
 # <a name="checklist-deploy-dfs-namespaces"></a>檢查清單：部署 DFS 命名空間
 
-> 適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用于： Windows Server 2019、Windows Server (半年通道) 、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 分散式檔案系統 (DFS) 命名空間與 DFS 複寫可用來發佈文件、軟體和特定業務資料給整個組織的使用者。 雖然單靠 DFS 複寫來分送資料即已足夠，但是您可以使用 DFS 命名空間來設定命名空間，讓其中的同一資料夾由多部伺服器裝載，而每部伺服器各保留一份該資料夾的更新複本。 這可增加資料可用性並且跨伺服器分散用戶端負載。
 
@@ -36,7 +34,7 @@ ms.locfileid: "86961960"
 -   使用 DFS 複寫在資料夾目標之間複寫內容 (選擇性)。 [使用 DFS 複寫複寫資料夾目標](replicate-folder-targets-using-dfs-replication.md)
 
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [命名空間](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771914(v=ws.11))
 -   [檢查清單：調整 DFS 命名空間](checklist-tune-a-dfs-namespace.md)

@@ -2,22 +2,20 @@
 title: 選擇命名空間類型
 description: 本文說明如何選擇命名空間類型。
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: ce991a628b63732f645e859a4855a18eacbacd77
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c78e97148dffba920be5e65b19d97594c1b302d1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953730"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957676"
 ---
 # <a name="choose-a-namespace-type"></a>選擇命名空間類型
 
-> 適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用于： Windows Server 2019、Windows Server (半年通道) 、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 建立命名空間時，您必須選擇兩種命名空間其中一種：獨立命名空間或網域型命名空間。 此外，如果選擇網域型命名空間，您必須選擇命名空間模式：Windows 2000 Server 模式或 Windows Server 2008 模式。
 
@@ -69,7 +67,7 @@ ms.locfileid: "86953730"
 |確保命名空間可用性的支援方法|在容錯移轉叢集上建立獨立命名空間。|使用多個命名空間伺服器來裝載命名空間。 (命名空間伺服器必須位於相同的網域中)。|使用多個命名空間伺服器來裝載命名空間。 (命名空間伺服器必須位於相同的網域中)。|
 |支援使用 DFS 複寫來複寫資料夾目標|加入 AD DS 網域時支援|支援|支援|
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [部署 DFS 命名空間](deploying-dfs-namespaces.md)
 -   [將網域型命名空間移轉到 Windows Server 2008 模式](migrate-a-domain-based-namespace-to-windows-server-2008-mode.md)

@@ -7,12 +7,12 @@ ms.assetid: e74961a2-bd38-48ae-b1c0-4b3eff761b4a
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 37fd4d30183d626caf0891fea2a41f79046030e9
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 4a38b26604ae6089acf6e9b64c20fd9115edcade
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970465"
+ms.locfileid: "87997203"
 ---
 # <a name="selecting-hardware-for-your-multipoint-services-system"></a>選取適用於 MultiPoint 服務系統的硬體
 
@@ -51,7 +51,7 @@ MultiPoint 服務系統通常包含下列元件：
 
 MultiPoint 服務系統是多個 \- 使用者環境，所有使用者都連接到單一主機電腦。 這會增加 CPU 使用量，因為所有使用者都共用相同的電腦。 某些工作（例如多媒體程式 \( 、媒體播放機或影片 \- 編輯軟體 \) ）有較大的處理需求。 因此，請務必選取可處理使用者人數和所需支援之使用者案例類型處理需求的 CPU。
 
-MultiPoint 服務需要以 x64 \- 為基礎的 CPU，而且必須符合電腦的系統需求，如[硬體需求和效能建議](Hardware-Requirements-and-Performance-Recommendations.md)中所述。
+MultiPoint 服務需要以 x64 \- 為基礎的 CPU，而且必須符合電腦的系統需求，如[硬體需求和效能建議](./hardware-and-performance-recommendations.md)中所述。
 
 下列的處理器類型已經過測試，可用於具有高 \- 需求處理常式（例如多媒體程式）的 MultiPoint 服務系統：
 

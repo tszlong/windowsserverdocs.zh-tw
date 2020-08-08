@@ -2,18 +2,16 @@
 title: 定義檢測的檔案群組
 description: '本文說明如何定義檔案群組，以建立檔案檢測、檔案檢測例外或 [檔案: 依檔案群組列表] 存放裝置報告的命名空間'
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: e38dee0381b33bb9d11b038de715a4420906e131
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: cbcf96a4ab5c6516b87ebde57f6adaf1cf4df17f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474325"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957475"
 ---
 # <a name="define-file-groups-for-screening"></a>定義檢測的檔案群組
 
@@ -43,9 +41,9 @@ ms.locfileid: "85474325"
     -   在 **\[排除的檔案\]** 方塊中，為您要從檔案群組中排除的每一組檔案輸入檔案名稱模式，然後按一下 **\[新增\]**。
         請注意，標準萬用字元規則適用，例如， ** \* .exe**會選取所有可執行檔。
 
-5.  按一下 [確定]****。
+5.  按一下 [確定]  。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [檔案檢測管理](file-screening-management.md)
 -   [建立檔案檢測](create-file-screen.md)

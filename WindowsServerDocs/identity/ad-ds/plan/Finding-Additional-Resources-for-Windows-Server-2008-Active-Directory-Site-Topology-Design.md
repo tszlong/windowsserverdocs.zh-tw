@@ -6,19 +6,18 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.openlocfilehash: 5682eb98854441b35719fc0c2048f07db76cbead
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: dd08192558457a014b6884316de7a22900dded2f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181834"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941062"
 ---
 # <a name="finding-additional-resources-for-windows-server-2008-active-directory-site-topology-design"></a>尋找其他 Windows Server 2008 Active Directory 站台拓撲設計資源
 
 > 適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-您可以在 Windows Server 2003 和 Windows Server 2008 技術中心網站上找到下列關於 Active Directory Domain Services （AD DS）的檔：
+您可以在 Windows Server 2003 和 Windows Server 2008 技術中心網站上找到下列有關 Active Directory Domain Services (AD DS) 的檔：
 
 - 如需尋找網域控制站之程式的詳細資訊，請參閱[Active Directory 集合](/previous-versions/windows/it-pro/windows-server-2003/cc780036(v=ws.10))。
 
@@ -50,6 +49,6 @@ ms.locfileid: "87181834"
 
 - 如需透過防火牆管理複寫的相關資訊，請參閱[由防火牆分割的網路中的 Active Directory](https://microsoft.com/download/details.aspx?familyid=c2ef3846-43f0-4caf-9767-a9166368434e)。
 
-- 如需唯讀網域控制站（RODC）功能的詳細資訊，請參閱[AD DS：唯讀網域控制站](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc732801(v=ws.10))。
+- 如需唯讀網域控制站 (RODC) 功能的詳細資訊，請參閱[AD DS：唯讀網域控制站](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc732801(v=ws.10))。
 
 - 如需有關如何部署 RODC 的詳細資訊，請參閱《[唯讀網域控制站逐步指南》](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc772234(v=ws.10))。

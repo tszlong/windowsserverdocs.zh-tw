@@ -1,19 +1,17 @@
 ---
 title: 了解功能
 description: 本主題定義系統深入解析中的功能概念，並介紹 Windows Server 2019 中提供的預設功能。
-ms.prod: windows-server
-ms.technology: system-insights
 ms.topic: article
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 6/05/2018
-ms.openlocfilehash: c6738e6e914d97c70aa31af2fe3b6987b0b9ea33
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 195ab01ded24742a26e1d7558529044c9883b8fc
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471743"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991708"
 ---
 # <a name="understanding-capabilities"></a>了解功能
 
@@ -40,7 +38,7 @@ ms.locfileid: "85471743"
 - **錯誤**-未知的問題導致功能失敗。
 - **無**-不進行預測。 這可能是因為資料不足或其他任何功能特定的原因而未進行預測。
 
-此外，結果中包含的任何功能特定資料都會放在使用者可存取的 JSON 檔案中，而且[可以使用 PowerShell 來尋找](https://docs.microsoft.com/windows-server/manage/system-insights/managing-capabilities#retrieving-capability-results)檔案路徑。
+此外，結果中包含的任何功能特定資料都會放在使用者可存取的 JSON 檔案中，而且[可以使用 PowerShell 來尋找](./managing-capabilities.md#retrieving-capability-results)檔案路徑。
 
 ## <a name="default-capabilities"></a>預設功能
 在 Windows Server 2019 中，System Insights 引進四個著重于容量預測的預設功能：
@@ -71,7 +69,7 @@ ms.locfileid: "85471743"
 每項功能都會分析每日資料，以預測未來的使用量。 不過，CPU、網路功能，甚至是儲存使用量，通常會在一天內經常變更，以動態方式調整至電腦上的工作負載。 因為在一天內的使用量不會變大，所以請務必適當地表示單一資料點中的每日使用量。 下表詳細說明特定的資料點，以及資料的處理方式：
 
 
-| 功能名稱 | 資料來源 | 篩選邏輯 |
+| 功能名稱 | 資料來源 (s)  | 篩選邏輯 |
 | --------------- | -------------- | ---------------- |
  磁片區耗用量預測          | 磁碟區大小                    | 每日使用量上限
  總儲存體耗用量預測   | 磁片區大小總和，磁片大小總和              | 每日使用量上限
@@ -94,7 +92,7 @@ ms.locfileid: "85471743"
 >如果功能預測多個實例（例如多個磁片區或網路介面卡），則狀態會反映所有實例中最嚴重的狀態。 每個磁片區或網路介面卡的個別狀態會顯示在 Windows 系統管理中心，或是在每個功能的輸出中所包含的資料內。 如需有關如何剖析預設功能之 JSON 輸出的指示，請造訪[此 blog](https://aka.ms/systeminsights-mitigationscripts)。
 
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 若要深入瞭解「系統深入解析」，請使用下列資源：
 
 - [系統深入解析概觀](overview.md)

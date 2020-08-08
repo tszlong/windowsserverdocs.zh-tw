@@ -2,17 +2,16 @@
 title: 磁片磁碟機的效能歷程記錄
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 02/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f54f06462818ca21ae10acee40d788211b38e37
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 4d344db75539e4455c11c02f336edc9275d3c813
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964520"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965965"
 ---
 # <a name="performance-history-for-drives"></a>磁片磁碟機的效能歷程記錄
 
@@ -91,6 +90,6 @@ ms.locfileid: "86964520"
 Get-PhysicalDisk -SerialNumber <SerialNumber> | Get-ClusterPerf
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [儲存空間直接存取的效能歷程記錄](performance-history.md)

@@ -1,35 +1,33 @@
 ---
 title: 具有單一網路介面卡的聚合式 NIC 設定
 description: 在本主題中，我們會提供指示，說明如何使用 Hyper-v 主機中的單一 NIC 來設定交集 NIC。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: eed5c184-fa55-43a8-a879-b1610ebc70ca
 manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/14/2018
-ms.openlocfilehash: 5a088df043190de9e7f1df4dccdc2fc832751093
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 7c936d12d1d3025c6b3f6fcd104658dcad1407b0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309626"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949262"
 ---
 # <a name="converged-nic-configuration-with-a-single-network-adapter"></a>具有單一網路介面卡的聚合式 NIC 設定
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 在本主題中，我們會提供指示，說明如何使用 Hyper-v 主機中的單一 NIC 來設定交集 NIC。
 
-本主題中的範例設定說明兩個 Hyper-v 主機、 **Hyper-v 主機 A**和**hyper-v 主機 B**。兩部主機都已安裝單一實體 NIC （pNIC），而 Nic 會連線到機架 \(ToR\) 實體交換器的頂端。 此外，主機位於相同的子網，也就是 192.168.1. x/24。
+本主題中的範例設定說明兩個 Hyper-v 主機、 **Hyper-v 主機 A**和**hyper-v 主機 B**。兩部主機都有一個 (pNIC) 安裝的實體 NIC，而且 Nic 會連線到機架 \( ToR \) 實體交換器的頂端。 此外，主機位於相同的子網，也就是 192.168.1.. x/24。
 
 ![Hyper-V 主機](../../media/Converged-NIC/1-single-test-conn.jpg)
 
 
-## <a name="step-1-test-the-connectivity-between-source-and-destination"></a>步驟 1. 測試來源與目的地之間的連線能力
+## <a name="step-1-test-the-connectivity-between-source-and-destination"></a>步驟 1： 測試來源與目的地之間的連線能力
 
-確定實體 NIC 可以連接到目的地主機。 這項測試會使用第3層 \(L3\) 或 IP 層，以及第2層 \(L2\)來示範連線能力。
+確定實體 NIC 可以連接到目的地主機。 這項測試會使用第3層 \( L3 \) 或 IP 層，以及第2層 L2 來示範連線能力 \( \) 。
 
 1. 查看網路介面卡屬性。
 
@@ -37,12 +35,12 @@ ms.locfileid: "80309626"
    Get-NetAdapter
    ```
 
-   _**更**_  
+   _**更**_
 
 
-   | 名稱 |    InterfaceDescription     | IfIndex | 狀態 |    MacAddress     | LinkSpeed |
+   | 名稱 |    InterfaceDescription     | ifIndex | 狀態 |    MacAddress     | LinkSpeed |
    |------|-----------------------------|---------|--------|-------------------|-----------|
-   |  M1  | Mellanox ConnectX-3 Pro 。 |    4    |   上移   | 7C-FE-90-93-8F-A1 |  40 Gbps  |
+   |  M1  | Mellanox ConnectX-3 Pro .。。 |    4    |   Up   | 7C-FE-90-93-8F-A1 |  40 Gbps  |
 
    ---
 
@@ -54,7 +52,7 @@ ms.locfileid: "80309626"
 
    _**更**_
 
-   ```PowerShell   
+   ```PowerShell
     MacAddress   : 7C-FE-90-93-8F-A1
     Status   : Up
     LinkSpeed: 40 Gbps
@@ -96,11 +94,11 @@ ms.locfileid: "80309626"
     AdditionalAvailability   :
     Availability :
     CreationClassName: MSFT_NetAdapter
-   ``` 
+   ```
 
-## <a name="step-2-ensure-that-source-and-destination-can-communicate"></a>步驟 2. 確定來源和目的地可以通訊
+## <a name="step-2-ensure-that-source-and-destination-can-communicate"></a>步驟 2： 確定來源和目的地可以通訊
 
-在此步驟中，我們會使用**Test-netconnection** Windows PowerShell 命令，但如果您想要的話，也可以使用**ping**命令。 
+在此步驟中，我們會使用**Test-netconnection** Windows PowerShell 命令，但如果您想要的話，也可以使用**ping**命令。
 
 >[!TIP]
 >如果您確定主機可以彼此通訊，可以略過此步驟。
@@ -121,7 +119,7 @@ ms.locfileid: "80309626"
    |      InterfaceAlias      |     M1      |
    |      SourceAddress       | 192.168.1.3 |
    |      PingSucceeded       |    True     |
-   | PingReplyDetails \(RTT\) |    0毫秒     |
+   | PingReplyDetails \( RTT\) |    0毫秒     |
 
    ---
 
@@ -133,7 +131,7 @@ ms.locfileid: "80309626"
    Set-NetFirewallProfile -All -Enabled False
    ```
 
-3. 停用防火牆設定檔之後，請再次測試連線。 
+3. 停用防火牆設定檔之後，請再次測試連線。
 
    ```PowerShell
    Test-NetConnection 192.168.1.5
@@ -148,20 +146,20 @@ ms.locfileid: "80309626"
    |      RemoteAddress       | 192.168.1.5 |
    |      InterfaceAlias      | 測試-40G-1  |
    |      SourceAddress       | 192.168.1.3 |
-   |      PingSucceeded       |    False    |
-   | PingReplyDetails \(RTT\) |    0毫秒     |
+   |      PingSucceeded       |    否    |
+   | PingReplyDetails \( RTT\) |    0毫秒     |
 
    ---
 
 
 
-## <a name="step-3-optional-configure-the-vlan-ids-for-nics-installed-in-your-hyper-v-hosts"></a>步驟 3： 選擇性設定安裝在 Hyper-v 主機中的 Nic 的 VLAN 識別碼
+## <a name="step-3-optional-configure-the-vlan-ids-for-nics-installed-in-your-hyper-v-hosts"></a>步驟 3：  (選擇性) 為安裝在 Hyper-v 主機中的 Nic 設定 VLAN 識別碼
 
 許多網路設定都會使用 Vlan，如果您打算在網路中使用 Vlan，就必須重複先前的測試，並設定 Vlan。 此外，如果您打算將 RoCE 用於 RDMA 服務，則必須啟用 Vlan。
 
-在此步驟中，Nic 處於**存取**模式。 不過，當您在本指南稍後的 \(vSwitch 建立 Hyper-v 虛擬交換器\) 時，會在 vSwitch 埠層級套用 VLAN 屬性。 
+在此步驟中，Nic 處於**存取**模式。 不過，當您 \( 稍後在本指南中建立 Hyper-v 虛擬交換器 vSwitch 時 \) ，會在 vSwitch 埠層級套用 VLAN 屬性。
 
-由於交換器可以裝載多個 Vlan，因此在機架的頂端 \(ToR\) 實體交換器必須擁有主機連線的埠，以在主幹模式中設定。
+由於交換器可以裝載多個 Vlan，因此，機架 \( ToR \) 實體交換器的頂端必須擁有主機連線的埠，以在主幹模式中設定。
 
 >[!NOTE]
 >如需有關如何在交換器上設定主幹模式的指示，請參閱 ToR 交換器檔。
@@ -182,7 +180,7 @@ ms.locfileid: "80309626"
 
    ```PowerShell
    Set-NetAdapterAdvancedProperty -Name M1 -RegistryKeyword VlanID -RegistryValue "101"
-   Get-NetAdapterAdvancedProperty -Name M1 | Where-Object {$_.RegistryKeyword -eq "VlanID"} 
+   Get-NetAdapterAdvancedProperty -Name M1 | Where-Object {$_.RegistryKeyword -eq "VlanID"}
    ```
 
    _**更**_
@@ -209,30 +207,30 @@ ms.locfileid: "80309626"
    _**更**_
 
 
-   | 名稱 |          InterfaceDescription           | IfIndex | 狀態 |    MacAddress     | LinkSpeed |
+   | 名稱 |          InterfaceDescription           | ifIndex | 狀態 |    MacAddress     | LinkSpeed |
    |------|-----------------------------------------|---------|--------|-------------------|-----------|
-   |  M1  | Mellanox ConnectX-3 Pro Ethernet 的 Ada 。 |    4    |   上移   | 7C-FE-90-93-8F-A1 |  40 Gbps  |
+   |  M1  | Mellanox ConnectX-3 Pro Ethernet 的 Ada .。。 |    4    |   Up   | 7C-FE-90-93-8F-A1 |  40 Gbps  |
 
    ---
 
    >[!IMPORTANT]
-   >可能需要幾秒鐘的時間，裝置才會重新開機並在網路上變成可用。 
+   >可能需要幾秒鐘的時間，裝置才會重新開機並在網路上變成可用。
 
-4. 確認連線能力。<p>如果連線失敗，請檢查相同 VLAN 中的交換器 VLAN 設定或目的地參與。 
+4. 確認連線能力。<p>如果連線失敗，請檢查相同 VLAN 中的交換器 VLAN 設定或目的地參與。
 
    ```PowerShell
    Test-NetConnection 192.168.1.5
    ```
 
-## <a name="step-4-configure-quality-of-service-qos"></a>步驟 4. 設定服務品質 \(QoS\)
+## <a name="step-4-configure-quality-of-service-qos"></a>步驟 4： 設定服務品質 \( QoS\)
 
 >[!NOTE]
 >您必須在所有想要彼此通訊的主機上執行下列所有 DCB 和 QoS 設定步驟。
 
-1. 在每部 Hyper-v 主機上安裝資料中心橋接 \(DCB\)。
+1. \( \) 在每個 hyper-v 主機上安裝資料中心橋接 DCB。
 
    - **選擇性**適用于使用 IWARP 進行 RDMA 服務的網路設定。
-   - 使用 RoCE \(任何 RDMA 服務版本\) 的網路設定**所需**。
+   - **Required**對於使用 ROCE \( 任何 RDMA 服務版本的網路設定而言是必要的 \) 。
 
    ```PowerShell
    Install-WindowsFeature Data-Center-Bridging
@@ -255,7 +253,7 @@ ms.locfileid: "80309626"
    |   參數    |          值           |
    |----------------|--------------------------|
    |      名稱      |           SMB            |
-   |     擁有者      | 群組原則 \(機\) |
+   |     擁有者      | 群組原則 \( 機\) |
    | NetworkProfile |           全部            |
    |   優先順序   |           127            |
    |   JobObject    |          &nbsp;          |
@@ -276,14 +274,14 @@ ms.locfileid: "80309626"
 
    | 優先順序 | 已啟用 | PolicySet | IfIndex | IfAlias |
    |----------|---------|-----------|---------|---------|
-   |    0     |  False  |  全域   | &nbsp;  | &nbsp;  |
-   |    1     |  False  |  全域   | &nbsp;  | &nbsp;  |
-   |    2     |  False  |  全域   | &nbsp;  | &nbsp;  |
-   |    3     |  True   |  全域   | &nbsp;  | &nbsp;  |
-   |    4     |  False  |  全域   | &nbsp;  | &nbsp;  |
-   |    5     |  False  |  全域   | &nbsp;  | &nbsp;  |
-   |    6     |  False  |  全域   | &nbsp;  | &nbsp;  |
-   |    7     |  False  |  全域   | &nbsp;  | &nbsp;  |
+   |    0     |  否  |  全球   | &nbsp;  | &nbsp;  |
+   |    1     |  False  |  全球   | &nbsp;  | &nbsp;  |
+   |    2     |  否  |  全球   | &nbsp;  | &nbsp;  |
+   |    3     |  True   |  全球   | &nbsp;  | &nbsp;  |
+   |    4     |  否  |  全球   | &nbsp;  | &nbsp;  |
+   |    5     |  否  |  全球   | &nbsp;  | &nbsp;  |
+   |    6     |  否  |  全球   | &nbsp;  | &nbsp;  |
+   |    7     |  否  |  全球   | &nbsp;  | &nbsp;  |
 
    ---
 
@@ -299,35 +297,34 @@ ms.locfileid: "80309626"
 
    _**更**_
 
-   **名稱**： M1  
-   **已啟用**： True  
+   **名稱**： M1**已啟用**： True
 
-   _**功能**_   
+   _**功能**_
 
 
    |      參數      |   硬體   |   目前    |
    |---------------------|--------------|--------------|
    |    MacSecBypass     | NotSupported | NotSupported |
-   |     DcbxSupport     |     無     |     無     |
-   | NumTCs （Max/ETS/PFC） |    8/8/8     |    8/8/8     |
+   |     DcbxSupport     |     None     |     None     |
+   | NumTCs (Max/ETS/PFC)  |    8/8/8     |    8/8/8     |
 
    ---
 
-   _**OperationalTrafficClasses:**_ 
+   _**OperationalTrafficClasses:**_
 
 
-   | TC | TSA | 頻寬 | 重點 |
+   | TC | TSA | 頻寬 | 優先順序 |
    |----|-----|-----------|------------|
    | 0  | ETS |    70%    |  0-2、4-7   |
-   | 1  | ETS |    大約    |     3      |
+   | 1  | ETS |    30%    |     3      |
 
    ---
 
-   _**OperationalFlowControl:**_  
+   _**OperationalFlowControl:**_
 
-   已啟用優先順序3  
+   已啟用優先順序3
 
-   _**OperationalClassifications:**_  
+   _**OperationalClassifications:**_
 
 
    | 通訊協定  | 埠/類型 | 優先順序 |
@@ -337,9 +334,9 @@ ms.locfileid: "80309626"
 
    ---
 
-5. 保留 SMB Direct \(RDMA\)的頻寬百分比。
+5. 保留 SMB 直接 RDMA 的頻寬百分比 \( \) 。
 
-    在此範例中，會使用30% 的頻寬保留。 您應該選取一個值，代表您預期儲存體流量所需的內容。 
+    在此範例中，會使用30% 的頻寬保留。 您應該選取一個值，代表您預期儲存體流量所需的內容。
 
    ```PowerShell
    New-NetQosTrafficClass "SMB" -Priority 3 -BandwidthPercentage 30 -Algorithm ETS
@@ -348,13 +345,13 @@ ms.locfileid: "80309626"
    _**更**_
 
 
-   | 名稱 | 演算法 | 頻寬（%） | 優先順序 | PolicySet | IfIndex | IfAlias |
+   | 名稱 | 演算法 | 頻寬 (% )  | 優先順序 | PolicySet | IfIndex | IfAlias |
    |------|-----------|--------------|----------|-----------|---------|---------|
-   | SMB  |    ETS    |      30      |    3     |  全域   | &nbsp;  | &nbsp;  |
+   | SMB  |    ETS    |      30      |    3     |  全球   | &nbsp;  | &nbsp;  |
 
-   ---                                      
+   ---
 
-6. 查看頻寬保留設定。  
+6. 查看頻寬保留設定。
 
    ```PowerShell
    Get-NetQosTrafficClass
@@ -363,24 +360,24 @@ ms.locfileid: "80309626"
    _**更**_
 
 
-   |   名稱    | 演算法 | 頻寬（%） | 優先順序 | PolicySet | IfIndex | IfAlias |
+   |   名稱    | 演算法 | 頻寬 (% )  | 優先順序 | PolicySet | IfIndex | IfAlias |
    |-----------|-----------|--------------|----------|-----------|---------|---------|
-   | [預設] |    ETS    |      70      | 0-2、4-7  |  全域   | &nbsp;  | &nbsp;  |
-   |    SMB    |    ETS    |      30      |    3     |  全域   | &nbsp;  | &nbsp;  |
+   | [預設] |    ETS    |      70      | 0-2、4-7  |  全球   | &nbsp;  | &nbsp;  |
+   |    SMB    |    ETS    |      30      |    3     |  全球   | &nbsp;  | &nbsp;  |
 
    ---
 
-## <a name="step-5-optional-resolve-the-mellanox-adapter-debugger-conflict"></a>步驟 5. 選擇性解決 Mellanox 介面卡偵錯工具衝突 
+## <a name="step-5-optional-resolve-the-mellanox-adapter-debugger-conflict"></a>步驟 5。  (選擇性) 解決 Mellanox 介面卡偵錯工具衝突
 
 根據預設，當使用 Mellanox 介面卡時，附加的偵錯工具會封鎖 NetQos，這是已知的問題。 因此，如果您是從 Mellanox 使用介面卡，並想要附加偵錯工具，請使用下列命令來解決此問題。 如果您不想要附加偵錯工具，或如果您不是使用 Mellanox 介面卡，則不需要執行此步驟。
 
-   ```PowerShell    
+   ```PowerShell
    Set-ItemProperty HKLM:"\SYSTEM\CurrentControlSet\Services\NDIS\Parameters" AllowFlowControlUnderDebugger -type DWORD -Value 1 –Force
-   ``` 
+   ```
 
-## <a name="step-6-verify-the-rdma-configuration-native-host"></a>步驟 6. 確認 RDMA 設定（原生主機）
+## <a name="step-6-verify-the-rdma-configuration-native-host"></a>步驟 6. 確認 RDMA 設定 (原生主機) 
 
-您想要確保在建立 vSwitch 並轉換至 RDMA （交集 NIC）之前，已正確設定網狀架構。 
+您想要確定在建立 vSwitch 並轉換至 RDMA (交集的 NIC) 之前，已正確設定網狀架構。
 
 下圖顯示 Hyper-v 主機的目前狀態。
 
@@ -406,7 +403,7 @@ ms.locfileid: "80309626"
    Get-NetIPConfiguration -InterfaceAlias "M*" | ft InterfaceAlias,InterfaceIndex,IPv4Address
    ```
 
-   _**更**_ 
+   _**更**_
 
 
    | InterfaceAlias | InterfaceIndex |  IPv4Address  |
@@ -415,11 +412,11 @@ ms.locfileid: "80309626"
 
    ---
 
-3. 下載[DiskSpd 公用程式](https://aka.ms/diskspd)，並將其解壓縮至 C:\TEST\.
+3. 下載[DiskSpd.exe 公用程式](https://aka.ms/diskspd)，並將其解壓縮至 C:\TEST\.
 
-4. 將[測試-RDMA powershell 腳本](https://github.com/Microsoft/SDN/blob/master/Diagnostics/Test-Rdma.ps1)下載到本機磁片磁碟機上的測試檔案夾，例如，C:\TEST\.
+4. 將[測試 RDMA powershell 腳本](https://github.com/Microsoft/SDN/blob/master/Diagnostics/Test-Rdma.ps1)下載到本機磁片磁碟機上的測試檔案夾，例如 C:\TEST\.
 
-5. 執行**Test-Rdma** PowerShell 腳本，將 ifIndex 值連同相同 VLAN 上遠端介面卡的 IP 位址傳遞給腳本。<p>在此範例中，腳本會在遠端網路介面卡 IP 位址192.168.1.5 上傳遞14的**ifIndex**值。
+5. 執行**Test-Rdma.ps1** PowerShell 腳本，將 ifIndex 值傳遞至腳本，以及相同 VLAN 上遠端介面卡的 IP 位址。<p>在此範例中，腳本會在遠端網路介面卡 IP 位址192.168.1.5 上傳遞14的**ifIndex**值。
 
    ```PowerShell
     C:\TEST\Test-RDMA.PS1 -IfIndex 14 -IsRoCE $true -RemoteIpAddress 192.168.1.5 -PathToDiskspd C:\TEST\Diskspd-v2.0.17\amd64fre\
@@ -448,22 +445,22 @@ ms.locfileid: "80309626"
 
 ## <a name="step-7-remove-the-access-vlan-setting"></a>步驟 7： 移除存取 VLAN 設定
 
-在準備建立 Hyper-v 交換器時，您必須移除先前安裝的 VLAN 設定。  
+在準備建立 Hyper-v 交換器時，您必須移除先前安裝的 VLAN 設定。
 
 1. 從實體 NIC 移除存取 VLAN 設定，以防止 NIC 以不正確的 VLAN ID 自動標記輸出流量。<p>移除此設定也會讓它無法篩選不符合存取 VLAN 識別碼的輸入流量。
 
    ```PowerShell
    Set-NetAdapterAdvancedProperty -Name M1 -RegistryKeyword VlanID -RegistryValue "0"
-   ```    
+   ```
 
 2. 確認**VlanID 設定**將 [VLAN ID] 值顯示為零。
 
-   ```PowerShell    
-   Get-NetAdapterAdvancedProperty -name m1 | Where-Object {$_.RegistryKeyword -eq 'VlanID'} 
-   ```  
+   ```PowerShell
+   Get-NetAdapterAdvancedProperty -name m1 | Where-Object {$_.RegistryKeyword -eq 'VlanID'}
+   ```
 
 
-## <a name="step-8-create-a-hyper-v-vswitch-on-your-hyper-v-hosts"></a>步驟 8： 在您的 Hyper-v 主機上建立 Hyper-v vSwitch
+## <a name="step-8-create-a-hyper-v-vswitch-on-your-hyper-v-hosts"></a>步驟 8。 在您的 Hyper-v 主機上建立 Hyper-v vSwitch
 
 下圖描述 Hyper-v 主機1與 vSwitch。
 
@@ -478,7 +475,7 @@ ms.locfileid: "80309626"
    _**更**_
 
 
-   |  名稱   | Switchtype |      NetAdapterInterfaceDescription      |
+   |  名稱   | [Switchtype |      NetAdapterInterfaceDescription      |
    |---------|------------|------------------------------------------|
    | VMSTEST |  外部  | Mellanox ConnectX-3 Pro 乙太網路介面卡 |
 
@@ -493,16 +490,16 @@ ms.locfileid: "80309626"
    _**更**_
 
 
-   |         名稱          |        InterfaceDescription         | IfIndex | 狀態 |    MacAddress     | LinkSpeed |
+   |         名稱          |        InterfaceDescription         | ifIndex | 狀態 |    MacAddress     | LinkSpeed |
    |-----------------------|-------------------------------------|---------|--------|-------------------|-----------|
-   | vEthernet \(VMSTEST\) | Hyper-v 虛擬乙太網路介面卡 #2 |   27    |   上移   | E4-1D-2D-07-40-71 |  40 Gbps  |
+   | vEthernet \( VMSTEST\) | Hyper-v 虛擬乙太網路介面卡 #2 |   27    |   Up   | E4-1D-2D-07-40-71 |  40 Gbps  |
 
    ---
 
-3. 以兩種方式的其中一種來管理主機 vNIC。 
+3. 以兩種方式的其中一種來管理主機 vNIC。
 
-   - **Get-netadapter** view 會根據 "VETHERNET \(VMSTEST\)" 名稱來運作。 並非所有的網路介面卡屬性都會顯示在此視圖中。
-   - **VMNetworkAdapter** view 會卸載 "vEthernet" 前置詞，而只會使用 vmswitch 名稱。 (建議使用) 
+   - **Get-netadapter** view 會根據 "vEthernet \( VMSTEST \) " 名稱來運作。 並非所有的網路介面卡屬性都會顯示在此視圖中。
+   - **VMNetworkAdapter** view 會卸載 "vEthernet" 前置詞，而只會使用 vmswitch 名稱。 (建議使用)
 
    ```PowerShell
    Get-VMNetworkAdapter –ManagementOS | ft -AutoSize
@@ -520,11 +517,11 @@ ms.locfileid: "80309626"
 
 4. 測試連接。
 
-   ```Powershell    
+   ```Powershell
    Test-NetConnection 192.168.1.5
    ```
 
-   _**更**_ 
+   _**更**_
 
    ```
     ComputerName   : 192.168.1.5
@@ -540,20 +537,20 @@ ms.locfileid: "80309626"
    ```PowerShell
    Set-VMNetworkAdapterVlan -VMNetworkAdapterName "VMSTEST" -VlanId "101" -Access -ManagementOS
    Get-VMNetworkAdapterVlan -ManagementOS -VMNetworkAdapterName "VMSTEST"
-   ```    
+   ```
 
    _**更**_
 
 
-   | VMName | VMNetworkAdapterName |  Mode  | Vlanlist 下面 |
+   | VMName | VMNetworkAdapterName |  模式  | [Vlanlist 下面 |
    |--------|----------------------|--------|----------|
-   | &nbsp; |       VMSTEST        | 存取 |   101    |
+   | &nbsp; |       VMSTEST        | Access |   101    |
 
-   ---  
+   ---
 
-6. 測試連接。<p>可能需要幾秒鐘的時間才會成功，才能順利 ping 其他介面卡。  
+6. 測試連接。<p>可能需要幾秒鐘的時間才會成功，才能順利 ping 其他介面卡。
 
-   ```PowerShell    
+   ```PowerShell
    Test-NetConnection 192.168.1.5
    ```
 
@@ -568,7 +565,7 @@ ms.locfileid: "80309626"
     PingReplyDetails (RTT) : 0 ms
    ```
 
-## <a name="step-9-test-hyper-v-virtual-switch-rdma-mode-2"></a>步驟 9： 測試 Hyper-v 虛擬交換器 RDMA （模式2）
+## <a name="step-9-test-hyper-v-virtual-switch-rdma-mode-2"></a>步驟 9. 測試 Hyper-v 虛擬交換器 RDMA (模式 2) 
 
 下圖描述 Hyper-v 主機的目前狀態，包括 Hyper-v 主機1上的 vSwitch。
 
@@ -577,28 +574,28 @@ ms.locfileid: "80309626"
 
 1. 在主機 vNIC 上設定優先順序標記。
 
-   ```PowerShell    
+   ```PowerShell
    Set-VMNetworkAdapter -ManagementOS -Name "VMSTEST" -IeeePriorityTag on
    Get-VMNetworkAdapter -ManagementOS -Name "VMSTEST" | fl Name,IeeePriorityTag
-   ```  
+   ```
 
    _**更**_
 
     名稱： VMSTEST IeeePriorityTag： On
 
 
-2. 查看網路介面卡 RDMA 資訊。 
+2. 查看網路介面卡 RDMA 資訊。
 
    ```PowerShell
    Get-NetAdapterRdma
-   ```   
+   ```
 
    _**更**_
 
 
    |         名稱          |        InterfaceDescription         | 已啟用 |
    |-----------------------|-------------------------------------|---------|
-   | vEthernet \(VMSTEST\) | Hyper-v 虛擬乙太網路介面卡 #2 |  False  |
+   | vEthernet \( VMSTEST\) | Hyper-v 虛擬乙太網路介面卡 #2 |  否  |
 
    ---
 
@@ -612,12 +609,12 @@ ms.locfileid: "80309626"
    Get-NetAdapter
    ```
 
-   _**更**_   
+   _**更**_
 
 
-   |        名稱         |        InterfaceDescription         | IfIndex | 狀態 |    MacAddress     | LinkSpeed |
+   |        名稱         |        InterfaceDescription         | ifIndex | 狀態 |    MacAddress     | LinkSpeed |
    |---------------------|-------------------------------------|---------|--------|-------------------|-----------|
-   | vEthernet （VMSTEST） | Hyper-v 虛擬乙太網路介面卡 #2 |   27    |   上移   | E4-1D-2D-07-40-71 |  40 Gbps  |
+   | vEthernet (VMSTEST)  | Hyper-v 虛擬乙太網路介面卡 #2 |   27    |   Up   | E4-1D-2D-07-40-71 |  40 Gbps  |
 
    ---
 
@@ -634,7 +631,7 @@ ms.locfileid: "80309626"
 
    |         名稱          |        InterfaceDescription         | 已啟用 |
    |-----------------------|-------------------------------------|---------|
-   | vEthernet \(VMSTEST\) | Hyper-v 虛擬乙太網路介面卡 #2 |  True   |
+   | vEthernet \( VMSTEST\) | Hyper-v 虛擬乙太網路介面卡 #2 |  True   |
 
    ---
 
@@ -643,7 +640,7 @@ ms.locfileid: "80309626"
 
 5. 執行 RDMA 流量測試。
 
-   ```PowerShell    
+   ```PowerShell
     C:\TEST\Test-RDMA.PS1 -IfIndex 27 -IsRoCE $true -RemoteIpAddress 192.168.1.5 -PathToDiskspd C:\TEST\Diskspd-v2.0.17\amd64fre\
     VERBOSE: Diskspd.exe found at C:\TEST\Diskspd-v2.0.17\amd64fre\\diskspd.exe
     VERBOSE: The adapter vEthernet (VMSTEST) is a virtual adapter

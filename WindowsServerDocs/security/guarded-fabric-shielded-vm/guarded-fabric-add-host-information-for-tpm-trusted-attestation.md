@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 06/21/2019
-ms.openlocfilehash: 7ec49467b3875ba552f5b92fb3776892a2d54c13
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fc879fda0f6a708a8a1d4ebd60834f4e6543f3ba
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971405"
+ms.locfileid: "87997168"
 ---
 # <a name="add-host-information-for-tpm-trusted-attestation"></a>新增 TPM 信任證明的主機資訊
 
@@ -55,7 +55,7 @@ ms.locfileid: "87971405"
     Add-HgsAttestationTpmPolicy -Path <Filename>.tcglog -Name '<PolicyName>'
     ```
 
-這會完成為 TPM 模式設定 HGS 叢集的程式。 網狀架構系統管理員可能會要求您從 HGS 提供兩個 Url，然後才能完成主機的設定。 若要取得這些 Url，請在 HGS 伺服器上執行[HgsServer](https://docs.microsoft.com/powershell/module/hgsserver/get-hgsserver?view=win10-ps)。
+這會完成為 TPM 模式設定 HGS 叢集的程式。 網狀架構系統管理員可能會要求您從 HGS 提供兩個 Url，然後才能完成主機的設定。 若要取得這些 Url，請在 HGS 伺服器上執行[HgsServer](/powershell/module/hgsserver/get-hgsserver?view=win10-ps)。
 
 ## <a name="next-step"></a>後續步驟
 

@@ -1,26 +1,24 @@
 ---
-title: 如何判斷複寫資料夾的最小臨時區域 DFSR 需求
+title: 如何判斷複寫資料夾的最小暫存區域 DFSR 需求
 description: 本文是快速參考指南，說明如何計算 DFSR 正常運作所需的最小臨時區域。
-ms.prod: windows-server
-ms.technology: server-general
 ms.date: 06/10/2020
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: 5e5bfdbb90d2b3e631aaa020a173eca779f0d6b3
-ms.sourcegitcommit: fa9a8badf4eb366aeeca7d2905e2cad711ee8dae
+ms.openlocfilehash: 581b485f219e960ecd467baa1f7dff7742c3acf8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84715002"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965785"
 ---
-# <a name="how-to-determine-the-minimum-staging-area-dfsr-needs-for-a-replicated-folder"></a>如何判斷複寫資料夾的最小臨時區域 DFSR 需求
+# <a name="how-to-determine-the-minimum-staging-area-dfsr-needs-for-a-replicated-folder"></a>如何判斷複寫資料夾的最小暫存區域 DFSR 需求
 
-本文是快速參考指南，說明如何計算 DFSR 正常運作所需的最小臨時區域。 低於這些值可能會導致複寫速度變慢或完全停止。 
+本文是快速參考指南，說明如何計算 DFSR 正常運作所需的最小臨時區域。 低於這些值可能會導致複寫速度變慢或完全停止。
 
 請記住，這些*只是最低*的。 考慮臨時區域大小時，暫存區域愈大，最高可達複寫資料夾的大小。 請參閱本文結尾的「如何判斷您是否有臨時區域問題」一節，以取得更多有關為何要有適當大小的臨時區域的詳細資訊。
 
 > [!Note]
-> 我們也有可協助您計算預備大小的修復程式。 [DFS 複寫（DFSR）管理介面的更新可供使用](https://support.microsoft.com/kb/2607047)
+> 我們也有可協助您計算預備大小的修復程式。 [DFS 複寫 (DFSR) 管理介面的更新可供使用](https://support.microsoft.com/kb/2607047)
 
 ## <a name="rules-of-thumb"></a>經驗法則
 
@@ -36,25 +34,25 @@ PowerShell 包含在 Windows 2008 和更新版本中。 您必須在 Windows Ser
 
 ## <a name="how-do-you-find-these-x-largest-files"></a>您要如何找到這些 X 個最大的檔案？
 
-使用 PowerShell 腳本來尋找32或9個最大的檔案，並判斷它們加上多少 gb （感謝 Ned Pyle 的 PowerShell 命令）。 我實際上會提供三個 PowerShell 腳本。 每個都有其專屬的功能;不過，數位3最有用。
+您可以使用 PowerShell 腳本來尋找32或9個最大的檔案，並判斷它們加到 (的 gb 數，因為) PowerShell 命令的 Ned Pyle。 我實際上會提供三個 PowerShell 腳本。 每個都有其專屬的功能;不過，數位3最有用。
 
-1. 執行以下命令：  
+1. 執行下列命令：
    ```Powershell
    Get-ChildItem c:\\temp -recurse | Sort-Object length -descending | select-object -first 32 | ft name,length -wrap –auto
    ```
-   
+
    此命令會傳回檔案名和檔案大小（以位元組為單位）。 如果您想要知道複寫資料夾中最大的32檔案，讓您可以「造訪」其擁有者，這就很有用。
 
-2. 執行以下命令：  
+2. 執行下列命令：
    ```Poswershell
    Get-ChildItem c:\\temp -recurse | Sort-Object length -descending | select-object -first 32 | measure-object -property length –sum
    ```
    此命令會傳回資料夾中32最大檔案的總位元組數，而不列出檔案名。
 
-3. 執行以下命令：  
+3. 執行下列命令：
    ```Poswershell
    $big32 = Get-ChildItem c:\\temp -recurse | Sort-Object length -descending | select-object -first 32 | measure-object -property length –sum
-   
+
    $big32.sum /1gb
    ```
    此命令會取得資料夾中32個最大檔案的總位元組數，並執行數學以將位元組轉換成 gb。 此命令是兩個不同的行。 您可以一次將這兩個專案貼入 PowerShell 命令 shell，或將其重新執行回來。
@@ -174,30 +172,25 @@ PowerShell 包含在 Windows 2008 和更新版本中。 您必須在 Windows Ser
 
 ### <a name="staging-area-events"></a>臨時區域事件
 
-> 事件識別碼： **4202**  
-> 嚴重性：**警告**
-> 
-> DFS 複寫服務偵測到本機路徑（路徑）上用於複寫資料夾的暫存空間高於高水位線。 服務會嘗試刪除最舊的暫存檔案。 效能可能會受到影響。
-> 
-> 事件識別碼： **4204**  
-> 嚴重性：**資訊**
-> 
-> DFS 複寫服務已成功刪除本機路徑（路徑）上複寫資料夾的舊暫存檔案。 接下來的空間低於高水位線。
-> 
-> 事件識別碼： **4206**  
-> 嚴重性：**警告**
-> 
-> DFS 複寫服務無法清除本機路徑（路徑）上複寫資料夾的舊暫存檔案。 服務可能無法複寫一些大型檔案，且複寫資料夾可能無法同步。服務會自動在（x）分鐘內重試暫存空間清除。 如果服務偵測到某些暫存檔案已解除鎖定，可能會稍早啟動清理。
-> 
-> 事件識別碼： **4208**  
-> 嚴重性：**警告**
-> 
-> DFS 複寫服務偵測到暫存空間使用量高於本機路徑（路徑）上複寫資料夾的暫存配額。 服務可能無法複寫一些大型檔案，且複寫資料夾可能無法同步。服務會嘗試自動清除暫存空間。
-> 
-> 事件識別碼： **4212**  
-> 嚴重性：**錯誤**
-> 
-> DFS 複寫服務無法在本機路徑（路徑）複寫複寫資料夾，因為暫存路徑無效或無法存取。
+> 事件識別碼： **4202**嚴重性：**警告**
+>
+> DFS 複寫服務偵測到，在本機路徑 (路徑) 的複寫資料夾所使用的暫存空間高於高水位線。 服務會嘗試刪除最舊的暫存檔案。 效能可能會受到影響。
+>
+> 事件識別碼： **4204**嚴重性：**資訊**
+>
+> DFS 複寫服務已成功刪除本機路徑 (路徑) 上複寫資料夾的舊暫存檔案。 接下來的空間低於高水位線。
+>
+> 事件識別碼： **4206**嚴重性：**警告**
+>
+> DFS 複寫服務無法在本機路徑 (路徑) ，清除複寫資料夾的舊暫存檔案。 服務可能無法複寫一些大型檔案，且複寫資料夾可能無法同步。服務會在 (x) 分鐘內自動重試暫存空間清除。 如果服務偵測到某些暫存檔案已解除鎖定，可能會稍早啟動清理。
+>
+> 事件識別碼： **4208**嚴重性：**警告**
+>
+> DFS 複寫服務偵測到暫存空間使用量高於本機路徑 (路徑) 上複寫資料夾的暫存配額。 服務可能無法複寫一些大型檔案，且複寫資料夾可能無法同步。服務會嘗試自動清除暫存空間。
+>
+> 事件識別碼： **4212**嚴重性：**錯誤**
+>
+> DFS 複寫服務無法在本機路徑 (路徑) 複寫複寫資料夾，因為暫存路徑無效或無法存取。
 
 ## <a name="what-is-the-difference-between-4202-and-4208"></a>4202與4208之間的差異為何？
 
@@ -207,7 +200,7 @@ PowerShell 包含在 Windows 2008 和更新版本中。 您必須在 Windows Ser
 
 此問題沒有單一答案。 不同于4206、4208或4212事件，它們一律是不良的，並且表示需要採取動作，4202和4204事件會在正常操作條件下發生。 看到許多4202和4204事件*可能*表示有問題。 需考量的事項：
 
-1.  複寫資料夾（RF）記錄4202正在執行初始複寫嗎？ 若是如此，記錄4202和4204事件是正常的。 在初始複寫期間，您可以盡可能提供最多的暫存區域，以盡可能減少這些內容
+1.  複寫資料夾 (RF) 記錄4202執行初始複寫嗎？ 若是如此，記錄4202和4204事件是正常的。 在初始複寫期間，您可以盡可能提供最多的暫存區域，以盡可能減少這些內容
 2.  只要檢查4202事件的總數並不足夠。 您必須知道每個 RF 記錄的數目。 如果您在24小時內記錄一個 RF 的 20 4202 事件，這是高的時間。 不過，如果您有20個複寫的資料夾，而且每個資料夾都有一個事件，那麼您就會很順利。
 3.  您應該檢查數天的資料來建立趨勢。
 

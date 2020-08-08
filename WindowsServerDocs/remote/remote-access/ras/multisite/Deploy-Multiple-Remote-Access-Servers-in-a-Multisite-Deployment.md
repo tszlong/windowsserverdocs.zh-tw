@@ -2,24 +2,22 @@
 title: 以多站台部署方式部署多個遠端存取伺服器
 description: 本主題是在 Windows Server 2016 的多網站部署中部署多部遠端存取服務器指南的一部分。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: ac2f6015-50a5-4909-8f67-8565f9d332a2
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d8f12839deb1279b9f6c095068a85f528dad4a72
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 8f0d8b4416c8480921d43fd4e705b837082152fb
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181754"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991345"
 ---
 # <a name="deploy-multiple-remote-access-servers-in-a-multisite-deployment"></a>以多站台部署方式部署多個遠端存取伺服器
 
 >適用於：Windows Server (半年度管道)、Windows Server 2016
 
- Windows Server 2016 和 Windows Server 2012 將 DirectAccess 與遠端存取服務（RAS） VPN 結合成一個遠端存取角色。 在多個企業案例中，我們可以部署「遠端存取」。 本總覽提供在多網站設定中部署遠端存取服務器的企業案例簡介。
+ Windows Server 2016 和 Windows Server 2012 將 DirectAccess 與遠端存取服務 (RAS) VPN 合併成一個遠端存取角色。 在多個企業案例中，我們可以部署「遠端存取」。 本總覽提供在多網站設定中部署遠端存取服務器的企業案例簡介。
 
 ## <a name="scenario-description"></a><a name="BKMK_OVER"></a>案例描述
 在多網站部署中，會部署兩個或更多部遠端存取服務器或伺服器叢集，並將其設定為單一位置或散佈地理位置中的不同進入點。 在單一位置部署多個進入點，可允許伺服器的冗余，或與現有網路架構的遠端存取服務器一致。 依地理位置部署可確保有效率地使用資源，因為遠端用戶端電腦可以使用最接近它們的進入點連線到內部網路資源。 跨多網站部署的流量可以透過外部全域負載平衡器來散發和平衡。
@@ -39,13 +37,13 @@ ms.locfileid: "87181754"
 
 -   [部署具有 Advanced 設定的單一 DirectAccess 伺服器](../../directaccess/single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md)必須先部署，然後再部署多網站。
 
--   Windows 7 用戶端一律會連接到特定網站。 他們將無法根據用戶端的位置（不同于 Windows 10、8或8.1 用戶端）連接到最接近的網站。
+-   Windows 7 用戶端一律會連接到特定網站。 它們將無法根據用戶端的位置 (連線到最接近的網站，而不像 Windows 10、8或8.1 用戶端) 。
 
 -   不支援在 DirectAccess 管理主控台以外或使用 PowerShell Cmdlet 來變更原則。
 
 -   必須部署公開金鑰基礎結構。
 
-    如需詳細資訊，請參閱： [測試實驗室指南小單元：Windows Server 2012 的基本 PKI。](https://docs.microsoft.com/answers/topics/windows-server-2012.html)
+    如需詳細資訊，請參閱： [測試實驗室指南小單元：Windows Server 2012 的基本 PKI。](/answers/topics/windows-server-2012.html)
 
 -   公司網路必須啟用 IPv6。 如果您使用 ISATAP，則應該將它移除，然後使用原生的 IPv6。
 
@@ -54,7 +52,7 @@ ms.locfileid: "87181754"
 
 1. [使用 [advanced] 設定部署單一 DirectAccess 伺服器](../../directaccess/single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md)。 在設定多網站部署之前，必須先部署具有 advanced 設定的單一遠端存取服務器。
 
-2. [規劃多網站部署](plan/Plan-a-Multisite-Deployment.md)。 若要從單一伺服器建立多網站部署，需要一些額外的規劃步驟，包括符合多網站必要條件的規範，以及規劃 Active Directory 安全性群組、群組原則物件（Gpo）、DNS 和用戶端設定。
+2. [規劃多網站部署](plan/Plan-a-Multisite-Deployment.md)。 若要從單一伺服器建立多網站部署，需要一些額外的規劃步驟，包括與多網站必要條件的相容性，以及規劃 Active Directory 安全性群組、群組原則物件 (Gpo) 、DNS 和用戶端設定。
 
 3. [設定多網站部署](configure/Configure-a-Multisite-Deployment.md)。 這包含幾個設定步驟，包括準備 Active Directory 基礎結構、設定現有的遠端存取服務器，以及新增多部遠端存取服務器做為多網站部署的進入點。
 
@@ -65,15 +63,15 @@ ms.locfileid: "87181754"
 
 -   改善的效能-多網站部署可讓用戶端電腦使用遠端存取來存取內部資源，以使用最接近且最適合的進入點進行連線。 用戶端會有效率地存取內部資源，並改善透過 DirectAccess 路由傳送的用戶端網際網路要求速度。 您可以使用外部全域負載平衡器來平衡進入點之間的流量。
 
--   易於管理-多網站可讓系統管理員將遠端存取部署與 Active Directory 網站部署保持一致，以提供簡化的架構。 您可以輕鬆地在進入點伺服器或叢集之間設定共用設定。 遠端存取設定可以從部署中的任何伺服器進行管理，或從遠端使用遠端伺服器管理工具（RSAT）。 此外，您可以從單一遠端存取管理主控台監視整個多網站部署。
+-   易於管理-多網站可讓系統管理員將遠端存取部署與 Active Directory 網站部署保持一致，以提供簡化的架構。 您可以輕鬆地在進入點伺服器或叢集之間設定共用設定。 遠端存取設定可以從部署中的任何伺服器進行管理，或使用遠端伺服器管理工具 (RSAT) 從遠端進行管理。 此外，您可以從單一遠端存取管理主控台監視整個多網站部署。
 
 ## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>這個案例包含的角色與功能
 下表列出此案例中使用的角色和功能。
 
 |角色/功能|如何支援本案例|
 |---------|-----------------|
-|遠端存取角色|這個角色是利用伺服器管理員主控台安裝和解除安裝。 它包含 DirectAccess (以前是 Windows Server 2008 R2 的功能)、 路由及遠端存取服務 (RRAS，以前是網路原則與存取服務 (NPAS) 伺服器角色底下的角色服務)。 遠端存取角色包含兩個元件：<p>-DirectAccess 與路由及遠端存取服務（RRAS） VPN-DirectAccess 和 VPN 會在 [遠端存取管理] 主控台中一起管理。<br />-RRAS 路由-在舊版路由及遠端存取主控台中管理 RRAS 路由功能。<p>相依性如下所示：<p>-Internet Information Services （IIS）網頁伺服器-設定網路位置伺服器和預設 Web 探查時，需要這項功能。<br />-Windows 內部資料庫-用於遠端存取服務器上的本機帳戶處理。|
-|遠端存取管理工具功能|這個功能的安裝方式如下：<p>-安裝遠端存取角色時，預設會將它安裝在遠端存取服務器上，並支援遠端管理主控台使用者介面。<br />-您可以選擇性地將它安裝在未執行遠端存取服務器角色的伺服器上。 在這種情況下，它是用於從遠端管理那些執行 DirectAccess 和 VPN 的遠端存取電腦。<p>遠端存取管理工具功能包含以下各項：<p>-遠端存取 GUI 和命令列工具<br />-適用于 Windows PowerShell 的遠端存取模組<p>依存項目包括：<p>-群組原則管理主控台<br />-RAS 連線管理員系統管理元件（CMAK）<br />-Windows PowerShell 3。0<br />-圖形化管理工具與基礎結構|
+|遠端存取角色|這個角色是利用伺服器管理員主控台安裝和解除安裝。 它包含 DirectAccess (以前是 Windows Server 2008 R2 的功能)、 路由及遠端存取服務 (RRAS，以前是網路原則與存取服務 (NPAS) 伺服器角色底下的角色服務)。 遠端存取角色包含兩個元件：<p>-DirectAccess 與路由及遠端存取服務 (RRAS) VPN-DirectAccess 和 VPN 會在 [遠端存取管理] 主控台中一起管理。<br />-RRAS 路由-在舊版路由及遠端存取主控台中管理 RRAS 路由功能。<p>相依性如下所示：<p>-Internet Information Services (IIS) Web 服務器-設定網路位置伺服器和預設 Web 探查時，需要這項功能。<br />-Windows 內部資料庫-用於遠端存取服務器上的本機帳戶處理。|
+|遠端存取管理工具功能|這個功能的安裝方式如下：<p>-安裝遠端存取角色時，預設會將它安裝在遠端存取服務器上，並支援遠端管理主控台使用者介面。<br />-您可以選擇性地將它安裝在未執行遠端存取服務器角色的伺服器上。 在這種情況下，它是用於從遠端管理那些執行 DirectAccess 和 VPN 的遠端存取電腦。<p>遠端存取管理工具功能包含以下各項：<p>-遠端存取 GUI 和命令列工具<br />-適用于 Windows PowerShell 的遠端存取模組<p>依存項目包括：<p>-群組原則管理主控台<br />-RAS 連線管理員系統管理元件 (CMAK) <br />-Windows PowerShell 3。0<br />-圖形化管理工具與基礎結構|
 
 ## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>硬體需求
 本案例需要的硬體如下所示：
@@ -109,7 +107,7 @@ ms.locfileid: "87181754"
 
         -   每個網域都需要唯一的用戶端 GPO。
 
-        -   在進入點所在的網域中，每個進入點都需要伺服器 GPO。 因此，如果有多個進入點位於相同的網域中，網域中就會有多個伺服器 Gpo （每個進入點各一個）。
+        -   在進入點所在的網域中，每個進入點都需要伺服器 GPO。 因此，如果有多個進入點位於相同的網域中，則會有多個伺服器 Gpo (網域中的每個進入點) 。
 
         -   針對每個網域啟用 Windows 7 用戶端支援的每個進入點都需要唯一的 Windows 7 用戶端 GPO。
 
@@ -135,7 +133,7 @@ ms.locfileid: "87181754"
 
     若用戶端已升級，請將用戶端電腦移至 Windows 8 安全性群組。
 
--   使用 Windows PowerShell Cmdlet **DAEntryPointDC**修改網域控制站設定時，如果指定的 ComputerName 參數是進入點的遠端存取服務器，而不是最後一個新增到多網站部署的專案，則會顯示警告，指出指定的伺服器在下一次原則重新整理之前不會更新。 在 [**遠端存取管理] 主控台**的 [**儀表板**] 中，您可以使用 [設定**狀態**] 看到未更新的實際伺服器。 這不會造成任何功能上的問題，不過，您可以在未更新的伺服器上執行**gpupdate/force** ，以立即更新設定狀態。
+-   使用 Windows PowerShell Cmdlet **DAEntryPointDC**修改網域控制站設定時，如果指定的 ComputerName 參數是進入點的遠端存取服務器，而不是最後一個新增到多網站部署的專案，則會顯示警告，指出指定的伺服器在下一次原則重新整理之前不會更新。 在 [**遠端存取管理] 主控台**的 [**儀表板**] 中，您可以使用 [設定**狀態**] 看到未更新的實際伺服器 (s) 。 這不會造成任何功能上的問題，不過，您可以在未更新的)  (伺服器上執行**gpupdate/force** ，以立即更新設定狀態。
 
 -   當多網站部署在僅 IPv4 的公司網路時，變更內部網路 IPv6 首碼也會變更 DNS64 位址，但不會更新允許 DNS 查詢至 DNS64 服務的防火牆規則上的位址。 若要解決此問題，請在變更內部網路 IPv6 首碼之後，執行下列 Windows PowerShell 命令：
 
@@ -156,6 +154,3 @@ ms.locfileid: "87181754"
 -   如果在現有的 ISATAP 基礎結構存在時部署 DirectAccess，則移除屬於 ISATAP 主機的進入點時，將會從 NRPT 中所有 DNS 尾碼的 DNS 伺服器位址移除 DNS64 服務的 IPv6 位址。
 
     若要解決此問題，請在 [**基礎結構伺服器安裝程式**] 的 [ **dns** ] 頁面上 **，按一下 [** **dns 伺服器位址**] 對話方塊上的 [偵測]，移除已修改的 dns 尾碼，並使用正確的 DNS 伺服器位址再次新增。
-
-
-

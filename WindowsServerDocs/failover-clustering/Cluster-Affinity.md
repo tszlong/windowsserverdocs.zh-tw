@@ -1,29 +1,27 @@
 ---
 title: 叢集同質
-ms.prod: windows-server
 manager: eldenc
-ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
 ms.author: johnmar
 ms.date: 03/07/2019
 description: 本文說明容錯移轉叢集親和性和 antiAffinity 層級
-ms.openlocfilehash: 5fdc40e31b61a74965bf60ac907a198c7ef92521
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 9e0c16b376201567552ef959e045027527c7c1d1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409588"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965555"
 ---
 # <a name="cluster-affinity"></a>叢集同質
 
 > 適用於：Windows Server 2019、Windows Server 2016
 
-容錯移轉叢集可以保存許多可在節點之間移動並執行的角色。 有些時候，某些角色（例如虛擬機器、資源群組等）不應該在相同的節點上執行。  這可能是因為資源耗用量、記憶體使用量等。 例如，有兩部虛擬機器耗用記憶體和 CPU，而且如果兩部虛擬機器在相同的節點上執行，則其中一部或兩部虛擬機器可能會影響效能問題。  本文將說明叢集 antiaffinity 層級，以及您可以如何使用它們。
+容錯移轉叢集可以保存許多可在節點之間移動並執行的角色。 有些時候，某些角色 (也就是虛擬機器、資源群組等等) 不應該在相同的節點上執行。  這可能是因為資源耗用量、記憶體使用量等。 例如，有兩部虛擬機器耗用記憶體和 CPU，而且如果兩部虛擬機器在相同的節點上執行，則其中一部或兩部虛擬機器可能會影響效能問題。  本文將說明叢集 antiaffinity 層級，以及您可以如何使用它們。
 
 ## <a name="what-is-affinity-and-antiaffinity"></a>什麼是親和性和 AntiAffinity？
 
-[相似性] 是您設定的規則，可在兩個或多個角色（i、e、虛擬機器、資源群組等）之間建立關聯性，以將它們保持在一起。  AntiAffinity 是相同的，但用於嘗試並讓指定的角色彼此分開。 容錯移轉叢集會使用 AntiAffinity 作為其角色。  更明確地說，在角色上定義的[AntiAffinityClassNames](/previous-versions/windows/desktop/mscs/groups-antiaffinityclassnames)參數，因此不會在相同的節點上執行。
+[親和性] 是您設定的規則，其會在兩個或多個角色之間建立關聯性 (i、e、虛擬機器、資源群組等) ，以將它們保持在一起。  AntiAffinity 是相同的，但用於嘗試並讓指定的角色彼此分開。 容錯移轉叢集會使用 AntiAffinity 作為其角色。  更明確地說，在角色上定義的[AntiAffinityClassNames](/previous-versions/windows/desktop/mscs/groups-antiaffinityclassnames)參數，因此不會在相同的節點上執行。
 
 ## <a name="antiaffinityclassnames"></a>AntiAffinityClassnames
 
@@ -67,14 +65,14 @@ AntiAffinityClassName 參數是「軟性」區塊。  也就是說，它會嘗�
 
 在這些情況下，有一個額外的 cluster 屬性 ClusterEnforcedAntiAffinity。  此 antiaffinity 層級可避免在相同節點上執行相同 AntiAffinityClassNames 值的所有成本。
 
-若要查看屬性和值，PowerShell 命令（和結果）會是：
+若要查看屬性和值，PowerShell 命令 (，而 result) 會是：
 
 ```powershell
 Get-Cluster | fl ClusterEnforcedAntiAffinity
     ClusterEnforcedAntiAffinity : 0
 ```
 
-"0" 的值表示它已停用而不會強制執行。  "1" 的值會啟用它，而是硬區塊。  若要啟用此硬區塊，命令（和結果）為：
+"0" 的值表示它已停用而不會強制執行。  "1" 的值會啟用它，而是硬區塊。  若要啟用此硬區塊，命令 (和結果) 為：
 
 ```powershell
 (Get-Cluster).ClusterEnforcedAntiAffinity = 1

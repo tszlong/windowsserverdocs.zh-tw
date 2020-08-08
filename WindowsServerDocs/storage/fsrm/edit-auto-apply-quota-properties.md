@@ -2,18 +2,16 @@
 title: 編輯自動套用配額內容
 description: 本文說明如何編輯自動套用配額內容
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 2d520d80dc06969f21211d461fc33e2e9336df12
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 558f6b094e97a6196177e728c238f5bb7a38e7a1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474935"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957445"
 ---
 # <a name="edit-auto-apply-quota-properties"></a>編輯自動套用配額內容
 
@@ -32,7 +30,7 @@ ms.locfileid: "85474935"
 
 3.  在 **\[從這個配額範本衍生內容\]** 中，選取您要套用的配額範本。 您可以在摘要清單方塊中檢閱每個配額範本的內容。
 
-4.  按一下 [確定]****。 這樣會開啟 **\[更新衍生自自動套用配額的配額\]** 對話方塊。
+4.  按一下 [確定]  。 這樣會開啟 **\[更新衍生自自動套用配額的配額\]** 對話方塊。
 
 5.  選取您要套用的更新類型：
 
@@ -40,9 +38,9 @@ ms.locfileid: "85474935"
     -   如果您想要修改自動套用配額路徑中的所有現有配額，請選取 **\[將自動套用配額套用到所有的衍生配額\]**。
     -   如果您想要保持現有的配額不變，但是會讓修改過的自動套用配額對自動套用配額路徑中新的子資料夾生效時，請選取 **\[不要將自動套用配額套用到衍生配額\]**。
 
-6.  按一下 [確定]****。
+6.  按一下 [確定]  。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [配額管理](quota-management.md)
 -   [建立自動套用配額](create-auto-apply-quota.md)

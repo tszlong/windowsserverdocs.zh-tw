@@ -2,18 +2,16 @@
 title: 使用 OTP 驗證部署遠端存取
 description: 本主題是在 Windows Server 2016 中使用 OTP 驗證部署遠端存取指南的一部分。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: b1b2fe70-7956-46e8-a3e3-43848868df09
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d1b38f753e2e4d8333299c369042a72e0dc3a6e6
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 8cc47a3a94425b4f77e5ed430cffe86429bf9b23
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182004"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991292"
 ---
 # <a name="deploy-remote-access-with-otp-authentication"></a>使用 OTP 驗證部署遠端存取
 
@@ -35,7 +33,7 @@ ms.locfileid: "87182004"
 
 -   必須部署公開金鑰基礎結構。
 
-    如需詳細資訊，請參閱： [測試實驗室指南小單元：Windows Server 2012 的基本 PKI。](https://docs.microsoft.com/answers/topics/windows-server-2012.html)
+    如需詳細資訊，請參閱： [測試實驗室指南小單元：Windows Server 2012 的基本 PKI。](/answers/topics/windows-server-2012.html)
 
 -   不支援在 DirectAccess 管理主控台或 Windows PowerShell Cmdlet 以外變更原則。
 
@@ -48,7 +46,7 @@ OTP 驗證案例包含一些步驟：
 
 3.  [使用 OTP 驗證來設定 DirectAccess](/configure/Configure-RA-with-OTP-Authentication.md)。 OTP 部署包含數個設定步驟，包括準備 OTP 驗證的基礎結構、設定 OTP 伺服器、設定遠端存取服務器上的 OTP 設定，以及更新 DirectAccess 用戶端設定。
 
-4.  [針對 OTP 部署進行疑難排解]((/troubleshoot/Troubleshoot-an-OTP-Deployment.md). 此疑難排解章節說明使用 OTP 驗證部署「遠端存取」時，可能發生的一些最常見錯誤。
+4.  [針對 OTP 部署進行疑難排解] ( # A1/疑難排解/疑難排解-OTP-部署 md) 。 此疑難排解章節說明使用 OTP 驗證部署「遠端存取」時，可能發生的一些最常見錯誤。
 
 ## <a name="practical-applications"></a><a name="BKMK_APP"></a>實際應用
 增加安全性-使用 OTP 可增加 DirectAccess 部署的安全性。 使用者一定要有 OTP 認證，才能連通內部網路。 使用者可透過 Windows 10 或 Windows 8 用戶端電腦上網路連線中的「工作場所連線」，或在執行 \( \) Windows 7 的用戶端電腦上使用 DirectAccess 連線助理 DCA，來提供 OTP 認證。 OTP 驗證程序運作方式如下：
@@ -129,4 +127,3 @@ OTP 驗證案例包含一些步驟：
         -   HKEY \_ 本機 \_ 電腦 \\ 軟體 \\ Microsoft \\ DirectAccess \\ OTP \\ RadiusProbePass
 
 -   如果您在已設定並執行中的 DirectAccess 部署中變更 IPsec 根憑證，OTP 將會停止運作。 若要解決此問題，請在每個 DirectAccess 伺服器上的 Windows PowerShell 提示字元中，執行下列命令：`iisreset`
-

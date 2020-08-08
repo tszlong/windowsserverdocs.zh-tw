@@ -1,19 +1,17 @@
 ---
 title: 儲存體複本的常見問題集
-ms.prod: windows-server
 manager: siroy
 ms.author: nedpyle
-ms.technology: storage-replica
 ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/15/2020
 ms.assetid: 12bc8e11-d63c-4aef-8129-f92324b2bf1b
-ms.openlocfilehash: 04477ac9d7aa7905a4d5fc4dd58c7891c91f5baf
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 01bda8c501ca1416ebc887a98a4369f99c60f0f2
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769696"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989371"
 ---
 # <a name="frequently-asked-questions-about-storage-replica"></a>儲存體複本的常見問題集
 
@@ -254,7 +252,7 @@ Remove-SmbBandwidthLimit -Category StorageReplication
 
 ## <a name="how-do-i-report-an-issue-with-storage-replica-or-this-guide"></a><a name="FAQ17"></a>如何? 報告儲存體複本或本指南的問題嗎？
 
-如需儲存體複本的技術協助，您可以在[Microsoft 論壇](https://docs.microsoft.com/answers/index.html)張貼文章。 您也可以透過電子郵件，將「儲存體複本」相關問題或與此文件的相關問題寄送到 srfeed@microsoft.com。 [Windows Server 一般意見反應網站](https://windowsserver.uservoice.com/forums/295047-general-feedback)慣用於設計變更要求，因為它可讓您的客戶為您的想法提供支援和意見反應。
+如需儲存體複本的技術協助，您可以在[Microsoft 論壇](/answers/index.html)張貼文章。 您也可以透過電子郵件，將「儲存體複本」相關問題或與此文件的相關問題寄送到 srfeed@microsoft.com。 [Windows Server 一般意見反應網站](https://windowsserver.uservoice.com/forums/295047-general-feedback)慣用於設計變更要求，因為它可讓您的客戶為您的想法提供支援和意見反應。
 
 ## <a name="can-storage-replica-be-configured-to-replicate-in-both-directions"></a><a name="FAQ18"></a>儲存體複本是否可以設定為雙向複寫？
 

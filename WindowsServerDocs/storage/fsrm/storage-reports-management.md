@@ -2,22 +2,20 @@
 title: 存放裝置報告管理
 description: 本文說明如何產生、排程和監視存放裝置報告
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 5bdcada1b445298c8743bdb39491726b594d0a66
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a43dbeac08c1cb851df48cb8412343928e07b1d0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475475"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957345"
 ---
 # <a name="storage-reports-management"></a>存放裝置報告管理
 
-> 適用于： Windows Server 2019、Windows Server 2016、Windows Server （半年通道）、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用于： Windows Server 2019、Windows Server 2016、Windows Server (半年通道) 、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 在檔案伺服器資源管理員 Microsoft<sup>®</sup> Management Console (MMC) 嵌入式管理單元的 **\[存放裝置報告管理\]** 節點，您可以執行下列工作：
 
@@ -40,7 +38,7 @@ ms.locfileid: "85475475"
 > [!Note]
 > 若要設定電子郵件通知和某些報告功能，您必須先設定檔案伺服器資源管理員的一般選項。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [設定檔案伺服器資源管理員選項](setting-file-server-resource-manager-options.md)
 

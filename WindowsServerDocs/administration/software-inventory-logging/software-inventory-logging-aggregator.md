@@ -7,12 +7,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 697ca5e27db6a937c31b4dad072eef19a6f3df06
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 4f8e7743e51a5316df474ad97768cf01292db668
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895671"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991918"
 ---
 # <a name="software-inventory-logging-aggregator"></a>軟體清查記錄彙總工具
 
@@ -178,7 +178,7 @@ SIL 和 SIL 彙總工具在已驗證的通訊上依賴 SSL 憑證。 一般的�
 
 6.  在 [選擇帳戶類型] **** 中，隨您的喜好選取 [本機使用者] **** 或 [gMSA] ****。
 
-    選擇 [本機使用者] 帳戶選項會以自動產生的強式密碼建立本機使用者。 此帳戶將用於本機伺服器上的所有 SIL 彙總工具服務和工作作業。  如果彙總工具是 Active Directory 網域的一部分 (Windows Server 2012 及更高版本)，建議使用群組受管理的服務帳戶 (gMSA)。 如需 gMSA 的詳細資訊，請參閱：[群組受管理的服務帳戶概觀](https://technet.microsoft.com/library/hh831782.aspx)。
+    選擇 [本機使用者] 帳戶選項會以自動產生的強式密碼建立本機使用者。 此帳戶將用於本機伺服器上的所有 SIL 彙總工具服務和工作作業。  如果彙總工具是 Active Directory 網域的一部分 (Windows Server 2012 及更高版本)，建議使用群組受管理的服務帳戶 (gMSA)。 如需 gMSA 的詳細資訊，請參閱：[群組受管理的服務帳戶概觀](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831782(v=ws.11))。
 
     -   如果您打算在 SIL 彙總工具以外的不同伺服器上執行 SQL Server 資料庫，則必須使用 gMSA 帳戶選項。
 
@@ -233,11 +233,11 @@ SIL 和 SIL 彙總工具在已驗證的通訊上依賴 SSL 憑證。 一般的�
 
 -   在 SIL 彙總工具上：
 
-    -   `Start-SilAggregator`執行
+    -   執行 `Start-SilAggregator`
 
         需要如此，彙總工具才能主動從您已經 (或將要) 設定要清查的伺服器，透過 HTTPS 接收轉送給它的資料。 請注意，即使您已經先啟用伺服器來轉送到此彙總工具，也沒有問題，因為它們會將資料內容快取在本機長達 30 天。 在匯總工具之後，其 "targeturi" 會啟動並執行，所有快取的資料會一次轉送到匯總工具，並處理所有資料。
 
-    -   `Add-SilVMHost`執行
+    -   執行 `Add-SilVMHost`
 
         範例： `add-silvmhost –vmhostname contoso1 –hostcredential get-credential`
 
@@ -253,7 +253,7 @@ SIL 和 SIL 彙總工具在已驗證的通訊上依賴 SSL 憑證。 一般的�
 
 -   在您要清查的 Windows Server 上，以系統管理員身分開啟 PowerShell 並執行下列命令：
 
-    -   `Set-SilLogging –TargetUri "https://contososilaggregator" –CertificateThumbprint "your client certificate's thumbprint"`執行
+    -   執行 `Set-SilLogging –TargetUri "https://contososilaggregator" –CertificateThumbprint "your client certificate's thumbprint"`
 
         -   這會指告 Windows Server 中的 SIL 將清查資料傳送至何處，以及要用於驗證的憑證。
 
@@ -265,11 +265,11 @@ SIL 和 SIL 彙總工具在已驗證的通訊上依賴 SSL 憑證。 一般的�
             > [!IMPORTANT]
             > 如果這些值不正確，或憑證未安裝在正確的存放區 (或無效)，當 SIL 記錄啟動時，轉送至目標將會失敗。 資料會快取在本機長達 30 天。
 
-    -   `Start-SilLogging`執行
+    -   執行 `Start-SilLogging`
 
         這會啟動 SIL 記錄。 SIL 會每小時依隨機間隔時間，將其清查資料轉送至 `–targeturi` 參數所指定的彙總工具。 第一次會轉送一組完整的資料。 後續每次轉送都會是「信號」更多，只會識別沒有任何變更的資料。 如果資料集有任何變更，將會轉送另一組完整的資料。
 
-    -   `Publish-SilData`執行
+    -   執行 `Publish-SilData`
 
         -   第一次啟用 SIL 來記錄時，這個步驟為選擇性。
 
@@ -397,7 +397,7 @@ SIL 同時以推入和提取模式運作，由兩個平行運作的元件組成�
 |前次看到主機的日期時間|彙總工具前次透過 HTTPS 從這個 Windows Server 實體伺服器收到資料清查的日期和時間。<p>它支援執行 Windows Server 和 HyperV 的實體主機啟用 SIL，並透過 HTTPS 將清查資料轉送至 SIL 彙總工具。|
 
 ## <a name="sil-aggregator-cmdlets-detail"></a>SIL 彙總工具 Cmdlet 詳細資料
-以下是 SIL 彙總工具 Cmdlet 的詳細資料。 如需完整的 Cmdlet 文件，請參閱：[SIL 彙總工具 PowerShell Cmdlet](https://technet.microsoft.com/library/mt548455.aspx)
+以下是 SIL 彙總工具 Cmdlet 的詳細資料。 如需完整的 Cmdlet 文件，請參閱：[SIL 彙總工具 PowerShell Cmdlet](/previous-versions/windows/powershell-scripting/mt548455(v=wps.640))
 
 ### <a name="publish-silreport"></a>Publish-SilReport
 
@@ -591,8 +591,7 @@ Copyright (c) 2010, RENCI</pre>
 
 ## <a name="see-also"></a>另請參閱
 [適用於 Windows Server 的軟體清查記錄彙總工具 1.0](https://www.microsoft.com/download/details.aspx?id=49046)<br>
-[SIL 彙總工具 PowerShell Cmdlet](https://technet.microsoft.com/library/mt548455.aspx)<br>
-[SIL PowerShell Cmdlet](https://technet.microsoft.com/library/dn283390.aspx)<br>
-[SIL 概觀](https://technet.microsoft.com/library/dn268301.aspx)<br>
-[管理 SIL](https://technet.microsoft.com/library/dn383584.aspx)
-
+[SIL 彙總工具 PowerShell Cmdlet](/previous-versions/windows/powershell-scripting/mt548455(v=wps.640))<br>
+[SIL PowerShell Cmdlet](/powershell/module/softwareinventorylogging/?view=winserver2012R2-ps)<br>
+[SIL 概觀](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn268301(v=ws.11))<br>
+[管理 SIL](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383584(v=ws.11))

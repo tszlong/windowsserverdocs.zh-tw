@@ -1,17 +1,15 @@
 ---
 title: 調整容錯移轉基準網路閾值
 description: 本文介紹調整容錯移轉叢集網路閾值的解決方案。
-ms.prod: windows-server
-ms.technology: server-general
 ms.date: 05/28/2020
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: 86a7023f6480e68f917cb8cdd9d0c69c417d3145
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 9f28aa9c10fe64e0b86a405c1feb480396bcb76b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409789"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965805"
 ---
 # <a name="iaas-with-sql-alwayson---tuning-failover-cluster-network-thresholds"></a>IaaS 與 SQL AlwaysOn - 微調容錯移轉叢集網路閾值
 
@@ -19,11 +17,11 @@ ms.locfileid: "87409789"
 
 ## <a name="symptom"></a>徵狀
 
-使用 SQL Server AlwaysOn 在 IaaS 中執行 Windows 容錯移轉叢集節點時，建議您將叢集設定變更為較寬鬆的監視狀態。 現成的叢集設定會受到限制，而且可能會造成不必要的中斷。 預設設定是專為對內部部署網路進行高度調整而設計，並不會考慮因多租使用者環境（例如 Windows Azure （IaaS））而造成延遲的可能性。
+使用 SQL Server AlwaysOn 在 IaaS 中執行 Windows 容錯移轉叢集節點時，建議您將叢集設定變更為較寬鬆的監視狀態。 現成的叢集設定會受到限制，而且可能會造成不必要的中斷。 預設設定是專為對內部部署網路進行高度調整而設計，並不會考慮因多租使用者環境（例如 Windows Azure (IaaS) ）而造成延遲的可能性。
 
 Windows Server 容錯移轉叢集會持續監視 Windows 叢集中節點的網路連線和健全狀況。  如果無法透過網路連線到節點，則會採取復原動作來復原，並讓叢集中另一個節點上的應用程式和服務恢復連線。 叢集節點之間通訊的延遲可能會導致下列錯誤：
 
-> 錯誤1135（系統事件記錄檔）
+> 錯誤 1135 (系統事件記錄檔) 
 
 叢集節點**1**叢集已從作用中的容錯移轉叢集成員資格中移除。 此節點上的叢集服務可能已停止。 這也可能是因為節點與容錯移轉叢集中的其他使用中節點失去通訊。 執行 [驗證設定向導] 來檢查您的網路設定。 如果此狀況持續發生，請檢查與此節點上網路介面卡相關的硬體或軟體錯誤。 另請檢查節點所連接的任何其他網路元件是否發生失敗，例如集線器、交換器或橋接器。
 
@@ -75,9 +73,9 @@ Cluster .log 範例：
 
 **閾值**–這會定義在叢集採取復原動作之前，所遺漏的「心跳」數目。  臨界值是一些心跳。  在相同的叢集中，相同子網上的節點與位於不同子網的節點之間，可能會有不同的閾值。
 
-根據預設，Windows Server 2016 會將**SameSubnetThreshold**設定為10，並將**SameSubnetDelay**設為1000毫秒。 例如，如果連線監視失敗10秒，就會達到容錯移轉閾值，導致無法連線到該節點從叢集成員資格中移除。 這會導致資源移到叢集上的另一個可用節點。 系統會回報叢集錯誤，包括回報叢集錯誤1135（上方）。
+根據預設，Windows Server 2016 會將**SameSubnetThreshold**設定為10，並將**SameSubnetDelay**設為1000毫秒。 例如，如果連線監視失敗10秒，就會達到容錯移轉閾值，導致無法連線到該節點從叢集成員資格中移除。 這會導致資源移到叢集上的另一個可用節點。 系統會回報叢集錯誤，包括) 回報的叢集錯誤 1135 (。
 
-## <a name="resolution"></a>解決方案
+## <a name="resolution"></a>解決方法
 
 在 IaaS 環境中，放寬叢集網路設定。
 
@@ -91,7 +89,7 @@ C:\Windows\system32> get-cluster | fl *subnet*
 
 每個支援作業系統的預設、最小值、最大值和建議值
 
-| 描述 | OS | 最小值 | 最大值 | 預設 | 建議 |
+| 描述 | OS | 最小值 | 最大值 | 預設值 | 建議 |
 |--|--|--|--|--|--|
 | CrossSubnetThreshold | 2008 R2 | 3 | 20 | 5 | 20 |
 | CrossSubnet 臨界值 | 2012 | 3 | 120 | 5 | 20 |
@@ -108,7 +106,7 @@ C:\Windows\system32> get-cluster | fl *subnet*
 
 **閾值**會定義在叢集採取復原動作之前，會遺漏的心跳數。  臨界值是一些心跳。  在相同的叢集中，同一個子網上的節點與位於不同子網的節點之間，可能會有不同的閾值。
 
-## <a name="recommendations-for-changing-to-more-relaxed-settings-for-multi-tenant-environments-like-azure-iaas"></a>針對多租使用者環境（例如 Azure （IaaS））變更為更寬鬆設定的建議
+## <a name="recommendations-for-changing-to-more-relaxed-settings-for-multi-tenant-environments-like-azure-iaas"></a>針對多租使用者環境（例如 Azure (IaaS) ）變更為更寬鬆設定的建議
 
 > [!NOTE]
 > 藉由調整叢集網路設定值來增加叢集環境的復原能力，可能會導致停機時間增加。 如需詳細資訊，請參閱[調整容錯移轉叢集網路閾值](https://techcommunity.microsoft.com/t5/failover-clustering/tuning-failover-cluster-network-thresholds/ba-p/371834)。

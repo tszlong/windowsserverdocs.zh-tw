@@ -7,12 +7,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1df4ffbb0cdc79527bef0fd2e3400d78995d5474
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 548158fd1df4ee4fbd8d6f1bcee28693961c8d79
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895669"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991862"
 ---
 # <a name="manage-software-inventory-logging"></a>管理軟體清查記錄
 
@@ -91,7 +91,7 @@ ms.locfileid: "87895669"
 在執行 Windows Server 2012 R2 的電腦上必須啟用軟體清查記錄每日收集和透過網路轉送，才能記錄軟體清查。
 
 > [!NOTE]
-> 您可以使用 **[Get-SilLogging](https://technet.microsoft.com/library/dn283396.aspx)** PowerShell Cmdlet 來擷取軟體清查記錄服務的相關資訊，包括服務是執行中還是已停止等資訊。
+> 您可以使用 **[Get-SilLogging](/previous-versions/windows/powershell-scripting/dn283396(v=wps.630))** PowerShell Cmdlet 來擷取軟體清查記錄服務的相關資訊，包括服務是執行中還是已停止等資訊。
 
 #### <a name="to-start-software-inventory-logging"></a>啟動軟體清查記錄
 
@@ -99,7 +99,7 @@ ms.locfileid: "87895669"
 
 2.  以系統管理員身分開啟 PowerShell。
 
-3.  在 PowerShell 命令提示字元中，輸入 **[Start-SilLogging](https://technet.microsoft.com/library/dn283391.aspx)**
+3.  在 PowerShell 命令提示字元中，輸入 **[Start-SilLogging](/previous-versions/windows/powershell-scripting/dn283391(v=wps.630))**
 
 > [!NOTE]
 > 在無需設定憑證指紋的情況下設定目標是可行的，但是如果您這樣做，轉送便會失敗，而且資料會被儲存在本機高達預設值 30 天 (之後便會被刪除)。 為目標設定了有效的憑證雜湊 (以及在本機電腦/個人存放區安裝了對應的有效憑證) 之後，只要將目標設定為接受設有此憑證的資料，便會將儲存在本機上的資料轉寄至目標 (如需詳細資訊，請參閱 [Software Inventory Logging Aggregator](Software-Inventory-Logging-Aggregator.md) )。
@@ -110,7 +110,7 @@ ms.locfileid: "87895669"
 
 2.  以系統管理員身分開啟 PowerShell。
 
-3.  在 PowerShell 命令提示字元中，輸入 **[Stop-SilLogging](https://technet.microsoft.com/library/dn283394.aspx)**
+3.  在 PowerShell 命令提示字元中，輸入 **[Stop-SilLogging](/previous-versions/windows/powershell-scripting/dn283394(v=wps.630))**
 
 ## <a name="configuring-software-inventory-logging"></a>設定軟體清查記錄
 設定軟體清查記錄將隨著時間推移所產生的資料轉寄至彙總伺服器，須執行下列三個步驟：
@@ -126,7 +126,7 @@ ms.locfileid: "87895669"
 如需設定整個 SIL framework 的完整指南，請參閱 [Software Inventory Logging Aggregator](software-inventory-logging-aggregator.md)。  特別是當 **Publish-SilData** 產生錯誤或 SIL 記錄失敗時，請參閱疑難排解一節。
 
 ## <a name="software-inventory-logging-over-time"></a><a name="BKMK_Step2"></a>長時間的軟體清查記錄
-如果軟體清查記錄是由系統管理員啟動，系統便會開始進行每小時的收集和將資料轉送到彙總伺服器 (目標 URI)。 第一次轉送的資料會是與 [Get-SilData](https://technet.microsoft.com/library/dn283388.aspx) 在時間點擷取並顯示於主控台時相同的完整資料集。 此後，SIL 會每隔一段時間檢查資料，如果自上次收集後資料沒有變更，則只會將小型識別通知轉送至目標彙總伺服器。 如果已變更任何值，則 SIL 會再次傳送完整的資料集。
+如果軟體清查記錄是由系統管理員啟動，系統便會開始進行每小時的收集和將資料轉送到彙總伺服器 (目標 URI)。 第一次轉送的資料會是與 [Get-SilData](/previous-versions/windows/powershell-scripting/dn283388(v=wps.630)) 在時間點擷取並顯示於主控台時相同的完整資料集。 此後，SIL 會每隔一段時間檢查資料，如果自上次收集後資料沒有變更，則只會將小型識別通知轉送至目標彙總伺服器。 如果已變更任何值，則 SIL 會再次傳送完整的資料集。
 
 > [!IMPORTANT]
 > 如果在隔一段時間後，無法存取目標 URI 或因為任何理由而無法透過網路進行資料傳輸，則收集的資料會被儲存在本機高達預設值 30 天 (這個時間之後便會被刪除)。 下一次成功轉送資料至目標彙總伺服器時，將會轉送所有儲存在本機的資料，並刪除本機快取資料。
@@ -134,19 +134,19 @@ ms.locfileid: "87895669"
 ## <a name="displaying-software-inventory-logging-data"></a><a name="BKMK_Step3"></a>顯示軟體清查記錄資料
 除了先前章節所述的 PowerShell Cmdlet 之外，還有其他 6 個 Cmdlet 可以用來收集軟體清查記錄資料：
 
--   **[Get-SilComputer](https://technet.microsoft.com/library/dn283392.aspx)**：顯示特定伺服器和作業系統相關資料的時間點值，以及實體主機的 FQDN 或主機名稱 (如果有的話)。
+-   **[Get-SilComputer](/previous-versions/windows/powershell-scripting/dn283392(v=wps.630))**：顯示特定伺服器和作業系統相關資料的時間點值，以及實體主機的 FQDN 或主機名稱 (如果有的話)。
 
--   **[Get-SilComputerIdentity (KB 3000850)](https://technet.microsoft.com/library/dn858074.aspx)**：顯示 SIL 用於個別伺服器的識別碼。
+-   **[Get-SilComputerIdentity (KB 3000850)](/previous-versions/windows/powershell-scripting/dn858074(v=wps.630))**：顯示 SIL 用於個別伺服器的識別碼。
 
--   **[Get-SilData](https://technet.microsoft.com/library/dn283388.aspx)**：顯示所有軟體清查記錄資料的時間點集合。
+-   **[Get-SilData](/previous-versions/windows/powershell-scripting/dn283388(v=wps.630))**：顯示所有軟體清查記錄資料的時間點集合。
 
--   **[Get-SilSoftware](https://technet.microsoft.com/library/dn283397.aspx)**：顯示安裝於電腦上的所有軟體的時間點識別。
+-   **[Get-SilSoftware](/previous-versions/windows/powershell-scripting/dn283397(v=wps.630))**：顯示安裝於電腦上的所有軟體的時間點識別。
 
--   **[Get-SilUalAccess](https://technet.microsoft.com/library/dn283389.aspx)**：顯示唯一用戶端裝置要求和兩天前伺服器的用戶端使用者要求的總數。
+-   **[Get-SilUalAccess](/previous-versions/windows/powershell-scripting/dn283389(v=wps.630))**：顯示唯一用戶端裝置要求和兩天前伺服器的用戶端使用者要求的總數。
 
--   **[Get-SilWindowsUpdate](https://technet.microsoft.com/library/dn283393.aspx)**：顯示安裝於電腦上的所有 Windows 更新的時間點清單。
+-   **[Get-SilWindowsUpdate](/previous-versions/windows/powershell-scripting/dn283393(v=wps.630))**：顯示安裝於電腦上的所有 Windows 更新的時間點清單。
 
-軟體清查記錄 Cmdlet 的典型使用案例是系統管理員使用 [Get SilSoftware](https://technet.microsoft.com/library/dn283397.aspx) 查詢軟體清查記錄，以取得所有軟體清查記錄資料的時間點集合。
+軟體清查記錄 Cmdlet 的典型使用案例是系統管理員使用 [Get SilSoftware](/previous-versions/windows/powershell-scripting/dn283397(v=wps.630)) 查詢軟體清查記錄，以取得所有軟體清查記錄資料的時間點集合。
 
 **輸出範例**
 
@@ -200,7 +200,7 @@ SystemManufacturer        : Microsoft Corporation
 
 #### <a name="to-delete-data-logged-by-software-inventory-logging"></a>刪除軟體清查記錄所記錄的資料
 
-1. 在 PowerShell 中，使用 **[Stop-SilLogging](https://technet.microsoft.com/library/dn283394.aspx)** 命令停止軟體清查記錄。
+1. 在 PowerShell 中，使用 **[Stop-SilLogging](/previous-versions/windows/powershell-scripting/dn283394(v=wps.630))** 命令停止軟體清查記錄。
 
 2. 開啟 [Windows 檔案總管]。
 
@@ -223,17 +223,17 @@ SIL 記錄的資料，但是會儲存在本機 (如果轉送到目標 URI) ，�
 ## <a name="software-inventory-logging-security"></a><a name="BKMK_Step7"></a>軟體清查記錄安全性
 若要順利地從軟體清查記錄 WMI 與 PowerShell API 中擷取資料，您必須要有本機伺服器上的系統管理權限。
 
-若要成功運用軟體清查記錄功能的完整功能，並在一段時間內持續 (以每個小時為間隔) 將資料轉送至彙總點，則系統管理員必須採用用戶端憑證，以確保安全的 SSL 工作階段以供透過 HTTPS 傳輸資料使用。 您可以在這裡找到 HTTPS 驗證的基本概觀： [HTTPS 驗證](https://technet.microsoft.com/library/cc736680(v=WS.10).aspx)。
+若要成功運用軟體清查記錄功能的完整功能，並在一段時間內持續 (以每個小時為間隔) 將資料轉送至彙總點，則系統管理員必須採用用戶端憑證，以確保安全的 SSL 工作階段以供透過 HTTPS 傳輸資料使用。 您可以在這裡找到 HTTPS 驗證的基本概觀： [HTTPS 驗證](/previous-versions/windows/it-pro/windows-server-2003/cc736680(v=ws.10))。
 
 只有本機伺服器上的系統管理權限，才能存取在 Windows Server 上本機儲存的任何資料 (只有當已啟動此功能，但因故無法存取目標時才會發生這個情況)。
 
 ## <a name="working-with-date-and-time-settings-in-windows-server-2012-r2-software-inventory-logging"></a><a name="BKMK_Step8"></a>使用 Windows Server 2012 R2 軟體清查記錄中的日期和時間設定
 
--   使用 [Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TimeOfDay 來設定執行 SIL 記錄的時間時，您必須指定日期和時間。設定行事曆日期，且在未到達日期之前不會發生記錄 (以本機系統時間為準)。
+-   使用 [Set-SilLogging](/previous-versions/windows/powershell-scripting/dn283387(v=wps.630)) -TimeOfDay 來設定執行 SIL 記錄的時間時，您必須指定日期和時間。設定行事曆日期，且在未到達日期之前不會發生記錄 (以本機系統時間為準)。
 
--   使用[SilSoftware](https://technet.microsoft.com/library/dn283397.aspx)或[get-silwindowsupdate](https://technet.microsoft.com/library/dn283393.aspx)時，"InstallDate" 一律會顯示12：00：上午 10:00 pst，這是無意義的值。
+-   使用[SilSoftware](/previous-versions/windows/powershell-scripting/dn283397(v=wps.630))或[get-silwindowsupdate](/previous-versions/windows/powershell-scripting/dn283393(v=wps.630))時，"InstallDate" 一律會顯示12：00：上午 10:00 pst，這是無意義的值。
 
--   使用[get-silualaccess](https://technet.microsoft.com/library/dn283389.aspx)時，"SampleDate" 一律會顯示11：59：00，這是無意義的值。在這些 Cmdlet 查詢中，日期是相關資料。
+-   使用[get-silualaccess](/previous-versions/windows/powershell-scripting/dn283389(v=wps.630))時，"SampleDate" 一律會顯示11：59：00，這是無意義的值。在這些 Cmdlet 查詢中，日期是相關資料。
 
 ## <a name="enabling-and-configuring-software-inventory-logging-in-a-mounted-virtual-hard-disk"></a><a name="BKMK_Step10"></a>在掛接虛擬硬碟中啟用及設定軟體清查記錄
 離線虛擬機器也支援軟體清查記錄的設定及啟用。 這適用于這種情況的實際用途，是為了涵蓋跨資料中心進行寬部署的「黃金影像」安裝，以及設定從部署到雲端部署的終端使用者映射。
@@ -242,20 +242,20 @@ SIL 記錄的資料，但是會儲存在本機 (如果轉送到目標 URI) ，�
 
 | 函式 | 值名稱 | 資料 | 對應的 Cmdlet (僅適用於正在執行的作業系統) |
 | --- | --- | --- | --- |
-|啟動/停止功能|CollectionState|1 或 0|[Start-SilLogging](https://technet.microsoft.com/library/dn283391.aspx)、 [Stop-SilLogging](https://technet.microsoft.com/library/dn283394.aspx)|
-|在網路上指定目標彙總點|TargetUri|字串|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TargetURI|
-|指定用於目標 Web 伺服器 SSL 驗證的憑證指紋或憑證雜湊|CertificateThumbprint|字串|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -CertificateThumbprint|
-|指定應該開始功能的日期和時間 (如果值設定在未來，以本機系統時間為準)|CollectionTime|預設：2000-01-01T03:00:00|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TimeOfDay|
+|啟動/停止功能|CollectionState|1 或 0|[Start-SilLogging](/previous-versions/windows/powershell-scripting/dn283391(v=wps.630))、 [Stop-SilLogging](/previous-versions/windows/powershell-scripting/dn283394(v=wps.630))|
+|在網路上指定目標彙總點|TargetUri|string|[Set-SilLogging](/previous-versions/windows/powershell-scripting/dn283387(v=wps.630)) -TargetURI|
+|指定用於目標 Web 伺服器 SSL 驗證的憑證指紋或憑證雜湊|CertificateThumbprint|string|[Set-SilLogging](/previous-versions/windows/powershell-scripting/dn283387(v=wps.630)) -CertificateThumbprint|
+|指定應該開始功能的日期和時間 (如果值設定在未來，以本機系統時間為準)|CollectionTime|預設：2000-01-01T03:00:00|[Set-SilLogging](/previous-versions/windows/powershell-scripting/dn283387(v=wps.630)) -TimeOfDay|
 
 若要在離線 VHD 上修改這些值 (未執行 VM OS)，則 VHD 必須先掛接，然後才可以使用下列命令來進行變更：
 
--   [Reg load](https://technet.microsoft.com/library/cc742053.aspx)
+-   [Reg load](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc742053(v=ws.11))
 
--   [Reg delete](https://technet.microsoft.com/library/cc742145.aspx)
+-   [Reg delete](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc742145(v=ws.11))
 
--   [Reg add](https://technet.microsoft.com/library/cc742162.aspx)
+-   [Reg add](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc742162(v=ws.11))
 
--   [Reg unload](https://technet.microsoft.com/library/cc742043.aspx)
+-   [Reg unload](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc742043(v=ws.11))
 
 啟動作業系統時，軟體清查記錄會檢查這些值並照著執行。
 
@@ -291,6 +291,6 @@ SIL 記錄的資料，但是會儲存在本機 (如果轉送到目標 URI) ，�
 ## <a name="see-also"></a>另請參閱
 [軟體清查記錄入門](get-started-with-software-inventory-logging.md) 
 [軟體清查記錄](software-inventory-logging-aggregator.md) 
- 匯總工具[Windows PowerShell](https://technet.microsoft.com/library/dn283390.aspx) 
+ 匯總工具[Windows PowerShell](/powershell/module/softwareinventorylogging/?view=winserver2012R2-ps) 
  中的軟體清查記錄 Cmdlet匯[入-import-binarymilog](https://technet.microsoft.com/library/dn262592.aspx) 
 [匯出-import-binarymilog](https://technet.microsoft.com/library/dn262591.aspx)

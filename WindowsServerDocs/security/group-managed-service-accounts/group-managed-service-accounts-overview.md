@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 51b9b0d7b912cfc2fbf123cf4c666f8653dc86a1
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 09405b940e9fd862372fe80c4a5194caa205e5ea
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971455"
+ms.locfileid: "87991499"
 ---
 # <a name="group-managed-service-accounts-overview"></a>Group Managed Service Accounts Overview
 
@@ -42,7 +42,7 @@ Gmsa 為在伺服器陣列上執行的服務，或在網路 Load Balancer 後方
 受管理的服務帳戶依存於 Kerberos 受支援的加密類型。當用戶端電腦向使用 Kerberos 的伺服器進行驗證，DC 會建立使用 DC 和伺服器都支援的加密來保護的 Kerberos 服務票證。 DC 會使用帳戶的 [ \- msds-supportedencryptiontypes] 屬性來判斷伺服器支援的加密，如果沒有屬性，則會假設用戶端電腦不支援更強的加密類型。 如果主機設定為不支援 RC4，則驗證一律會失敗。 基於這個原因，AES 應一律針對 MSA 進行明確設定。
 
 > [!NOTE]
-> 從 Windows Server 2008 R2 開始，DES 預設為停用。 如需受支援加密類型的詳細資訊，請參閱 [Kerberos 驗證的變更](https://technet.microsoft.com/library/dd560670(WS.10).aspx)。
+> 從 Windows Server 2008 R2 開始，DES 預設為停用。 如需受支援加密類型的詳細資訊，請參閱 [Kerberos 驗證的變更](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560670(v=ws.10))。
 
 Gmsa 不適用於 Windows Server 2012 之前的 Windows 作業系統。
 
@@ -54,14 +54,12 @@ Gmsa 不適用於 Windows Server 2012 之前的 Windows 作業系統。
 
 |內容類型|參考|
 |--------|-------|
-|**產品評估**|[What's New for Managed Service Accounts](what-s-new-for-managed-service-accounts.md)<p>[適用於 Windows 7 和 Windows Server 2008 R2 的受管理的服務帳戶的說明文件](https://technet.microsoft.com/library/ff641731(v=ws.10).aspx)<p>[服務帳戶逐步 \- \- 指南](https://technet.microsoft.com/library/dd548356(v=ws.10).aspx)|
+|**產品評估**|[What's New for Managed Service Accounts](what-s-new-for-managed-service-accounts.md)<p>[適用於 Windows 7 和 Windows Server 2008 R2 的受管理的服務帳戶的說明文件](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff641731(v=ws.10))<p>[服務帳戶逐步 \- \- 指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd548356(v=ws.10))|
 |**規劃**|尚未提供|
 |**部署**|尚未提供|
-|**作業**|[Active Directory 中的受管理的服務帳戶](https://technet.microsoft.com/library/dd378925(v=ws.10).aspx)|
+|**作業**|[Active Directory 中的受管理的服務帳戶](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378925(v=ws.10))|
 |**疑難排解**|尚未提供|
 |**評估**|[使用群組受管理的服務帳戶消費者入門](getting-started-with-group-managed-service-accounts.md)|
-|**工具及設定**|[Active Directory 網域服務中的受管理的服務帳戶](https://technet.microsoft.com/library/dd378925(v=WS.10).aspx)|
-|**社群資源**|[受管理的服務帳戶了解、實作、最佳做法以及疑難排解](https://blogs.technet.com/b/askds/archive/2009/09/10/managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)|
+|**工具及設定**|[Active Directory 網域服務中的受管理的服務帳戶](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378925(v=ws.10))|
+|**社群資源**|[受管理的服務帳戶了解、實作、最佳做法以及疑難排解](/archive/blogs/askds/managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting)|
 |**相關技術**|[Active Directory Domain Services 概觀](active-directory-domain-services-overview.md)|
-
-

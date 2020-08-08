@@ -1,32 +1,30 @@
 ---
 title: Windows 上的 Hyper-v 支援的 Linux 和 FreeBSD 虛擬機器
 description: 列出每個版本中包含的 Linux 整合服務和功能
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: 990ff94a-30fb-434b-b4a2-3804a5245ba6
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: dff7a0f829f11a92f2c87305da806b9be43f42fe
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3c971b3b802f1059454bc8935b638ddcc10c825c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855941"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965625"
 ---
 # <a name="supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows"></a>Windows 上的 Hyper-v 支援的 Linux 和 FreeBSD 虛擬機器
 
 >適用于： Windows Server 2019、Windows Server 2016、Hyper-v Server 2016、Windows Server 2012 R2、Hyper-v server 2012 R2、Windows Server 2012、Hyper-v Server 2012、Windows Server 2008 R2、Windows 10、Windows 8.1、Windows 8、Windows 7.1、Windows 7
 
-Hyper-v 支援適用于 Linux 和 FreeBSD 虛擬機器的模擬和 Hyper-v 特定裝置。 使用模擬裝置執行時，不需要安裝任何其他軟體。 不過，模擬裝置不提供高效能，而且無法利用 Hyper-v 技術所提供的豐富虛擬機器管理基礎結構。 為了充分利用 Hyper-v 提供的所有優點，最好使用適用于 Linux 和 FreeBSD 的 Hyper-v 特定裝置。 執行 Hyper-v 特定裝置所需的驅動程式集合稱為 Linux Integration Services （.LIS）或 FreeBSD Integration Services （BIS）。
+Hyper-v 支援適用于 Linux 和 FreeBSD 虛擬機器的模擬和 Hyper-v 特定裝置。 使用模擬裝置執行時，不需要安裝任何其他軟體。 不過，模擬裝置不提供高效能，而且無法利用 Hyper-v 技術所提供的豐富虛擬機器管理基礎結構。 為了充分利用 Hyper-v 提供的所有優點，最好使用適用于 Linux 和 FreeBSD 的 Hyper-v 特定裝置。 執行 Hyper-v 特定裝置所需的驅動程式集合稱為 Linux Integration Services (.LIS) 或 FreeBSD Integration Services (BIS) 。
 
 已將 .LIS 新增至 Linux 核心，並已針對新版本進行更新。 但是以較舊核心為基礎的 Linux 散發套件可能沒有最新的增強功能或修正。 Microsoft 提供下載內容，其中包含以這些舊版核心為基礎的部分 Linux 安裝的可安裝的 .LIS 驅動程式。 因為散發廠商包含 Linux Integration Services 的版本，所以最好在安裝時安裝最新可下載版本的 .LIS （如果適用的話）。
 
 針對其他 Linux 散發版本，系統會定期將這些變更整合到作業系統核心和應用程式中，因此不需要個別下載或安裝。
 
-針對較舊的 FreeBSD 版本（10.0 之前），Microsoft 提供埠，其中包含可安裝的 BIS 驅動程式，以及 FreeBSD 虛擬機器的對應守護程式。 對於較新的 FreeBSD 版本，BIS 內建于 FreeBSD 作業系統中，不需要個別下載或安裝，除了 FreeBSD 10.0 所需的 KVP 埠下載。
+針對 10.0) 之前 (的舊版 FreeBSD 版本，Microsoft 提供的埠包含可安裝的 BIS 驅動程式，以及 FreeBSD 虛擬機器的對應守護程式。 對於較新的 FreeBSD 版本，BIS 內建于 FreeBSD 作業系統中，不需要個別下載或安裝，除了 FreeBSD 10.0 所需的 KVP 埠下載。
 
 > [!TIP]
 > - 從評估中心下載[Windows Server 2019](https://www.microsoft.com/evalcenter/evaluate-windows-server-2019) 。

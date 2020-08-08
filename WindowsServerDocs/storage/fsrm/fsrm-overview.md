@@ -1,29 +1,27 @@
 ---
 title: 檔案伺服器資源管理員 (FSRM) 概觀
-ms.prod: windows-server
 ms.author: jgerend
 manager: brianlic
-ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms.date: 5/14/2018
-description: 檔案伺服器 Resource Manager （FSRM）是一種工具，可讓您管理和分類 Windows Server 檔案伺服器上的資料。
-ms.openlocfilehash: 58b410e51dae3ea102bb1a15f5bb60f00ab702fa
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+description: 檔案伺服器 Resource Manager (FSRM) 是一種工具，可讓您管理和分類 Windows Server 檔案伺服器上的資料。
+ms.openlocfilehash: f09e262176d0e5741c60390497fd2f241eaa965a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964560"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957385"
 ---
 # <a name="file-server-resource-manager-fsrm-overview"></a>檔案伺服器資源管理員 (FSRM) 概觀
 
-> 適用于： Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server （半年通道）、
+> 適用于： Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server (半年通道) 、
 
 檔案伺服器資源管理員 (FSRM) 是 Windows Server 中的角色服務，可讓您管理和分類儲存在檔案伺服器上的資料。 您可以使用 [檔案伺服器 Resource Manager] 自動分類檔案、根據這些分類執行工作、設定資料夾配額，以及建立監視儲存體使用量的報表。
 
 這是個小點，但我們也新增了在 Windows Server 版本1803中[停用變更日誌的功能](#whats-new)。
 
-## <a name="features"></a>功能
+## <a name="features"></a>特性
 
 檔案伺服器資源管理員包含下列功能：
 
@@ -55,7 +53,7 @@ ms.locfileid: "86964560"
 
 ## <a name="whats-new---prevent-fsrm-from-creating-change-journals"></a><a name="whats-new"></a>新功能-防止 FSRM 建立變更日誌
 
-從 Windows Server 版本1803開始，您現在可以在服務啟動時，防止檔案伺服器 Resource Manager 服務在磁片區上建立變更日誌（也稱為 USN 日誌）。 這可以節省每個磁片區上的空間，但會停用即時檔案分類。
+從 Windows Server 版本1803開始，您現在可以防止檔案伺服器 Resource Manager 服務在啟動服務時，建立磁片區上的變更日誌 (也稱為 USN 日誌) 。 這可以節省每個磁片區上的空間，但會停用即時檔案分類。
 
 如需舊版的新功能，請參閱[檔案伺服器 Resource Manager 的新](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383587(v=ws.11))功能。
 
@@ -67,14 +65,14 @@ ms.locfileid: "86964560"
       ```
       fsutil usn deletejournal /d <VolumeName>
       ```
-    例如：`fsutil usn deletejournal /d c:`
+    例如： `fsutil usn deletejournal /d c:`
 
 3. 開啟 [登錄編輯程式]，例如， `regedit` 在相同的 PowerShell 會話中輸入。
 4. 流覽至下列機碼： **HKEY_LOCAL_MACHINE \system\currentcontrolset\services\srmsvc\settings**
-5. 選擇性地略過整部伺服器的變更日誌建立（如果您只想要在特定磁片區上停用，請略過此步驟）：
-    1. 在 [**設定**] 機碼上按一下滑鼠右鍵，然後選取 [**新增**  >  **DWORD （32-位）值**]。
+5. 若要選擇性地略過整部伺服器的變更日誌建立 (如果您只想要在特定磁片區上停用，請略過此步驟) ：
+    1. 在 [**設定**] 機碼上按一下滑鼠右鍵，然後選取 [**新增**  >  **DWORD] (32-bit) 值**]。
     1. 將值命名為 `SkipUSNCreationForSystem` 。
-    1. 將值設為**1** （十六進位）。
+    1. 將十六進位) 中的值設定為**1** (。
 6. 若要選擇性地略過特定磁片區的變更日誌建立：
     1. 使用 `fsutil volume list` 命令或下列 PowerShell 命令來取得您想要略過的磁片區路徑：
         ```PowerShell
@@ -104,6 +102,6 @@ ms.locfileid: "86964560"
 
 
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [動態存取控制](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn408191(v=ws.11))

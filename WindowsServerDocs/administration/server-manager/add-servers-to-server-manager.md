@@ -8,12 +8,12 @@ ms.author: coreyp
 manager: dongill
 ms.localizationpriority: medium
 ms.date: 02/01/2018
-ms.openlocfilehash: 2280dd901756c033a16e5203ad60bc0b6cad5ce4
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b1c3e2f1c521615ff365642566745411db8aa612
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895830"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991938"
 ---
 # <a name="add-servers-to-server-manager"></a>Add Servers to Server Manager
 
@@ -157,7 +157,7 @@ ms.locfileid: "87895830"
 
 5.  登出您正在執行伺服器管理員的電腦，然後使用內建的 Administrator 帳戶重新登入。 重複執行上述步驟，確認伺服器管理員可以連線至遠端伺服器並從中收集資料。
 
-如果您已遵循本節中的程式，但在管理工作組電腦或從工作組電腦中管理其他電腦時仍繼續發生問題，請參閱 Microsoft 網站上的[about_remote_Troubleshooting](https://technet.microsoft.com/library/dd347642.aspx) 。
+如果您已遵循本節中的程式，但在管理工作組電腦或從工作組電腦中管理其他電腦時仍繼續發生問題，請參閱 Microsoft 網站上的[about_remote_Troubleshooting](/previous-versions/dd347642(v=technet.10)) 。
 
 ### <a name="add-and-manage-servers-in-clusters"></a>在叢集中新增和管理伺服器
 您可以使用伺服器管理員來管理容錯移轉叢集 (也稱為伺服器叢集或 MSCS) 中的伺服器。 容錯移轉叢集中的伺服器 (不論是實體或虛擬叢集節點) 在伺服器管理員中有一些獨特的行為和管理限制。

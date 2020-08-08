@@ -4,16 +4,14 @@ description: 本主題是 802.1 X 有線和無線部署的部署伺服器憑證�
 manager: brianlic
 ms.topic: article
 ms.assetid: 7eb746e0-1046-4123-b532-77d5683ded44
-ms.prod: windows-server
-ms.technology: networking
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 131fb7d51e703abfdfb3f3e07790b52daa1b7b82
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: d73cee05c36176755e70796c1190620223327306
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518513"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949352"
 ---
 # <a name="server-certificate-deployment-planning"></a>伺服器憑證部署規劃
 
@@ -27,7 +25,7 @@ ms.locfileid: "87518513"
 
 - [規劃 Web 服務器上虛擬目錄的位置和名稱](#bkmk_virtual)
 
-- [規劃 Web 服務器的 DNS 別名（CNAME）記錄](#bkmk_cname)
+- [規劃 Web 服務器 (CNAME) 記錄的 DNS 別名](#bkmk_cname)
 
 - [規劃 Capolicy.inf 的設定](#bkmk_capolicy)
 
@@ -50,10 +48,10 @@ ms.locfileid: "87518513"
 ## <a name="plan-the-location-and-name-of-the-virtual-directory-on-your-web-server"></a><a name="bkmk_virtual"></a>規劃 Web 服務器上虛擬目錄的位置和名稱
 若要將 CRL 和 CA 憑證的存取權提供給其他電腦，您必須將這些專案儲存在 Web 服務器上的虛擬目錄中。 在本指南中，虛擬目錄位於 Web 服務器 WEB1 上。 此資料夾位於 "C：" 磁片磁碟機上，且名稱為 "pki"。 您可以在您的部署適用的任何資料夾位置上，找出 Web 服務器上的虛擬目錄。
 
-## <a name="plan-a-dns-alias-cname-record-for-your-web-server"></a><a name="bkmk_cname"></a>規劃 Web 服務器的 DNS 別名（CNAME）記錄
-別名 (CNAME) 資源記錄有時也稱為正式名稱資源記錄。 您可以使用這些記錄，將一個以上的名稱指向單一主機，讓在相同電腦上裝載檔案傳輸通訊協定 (FTP) 伺服器和網頁伺服器變得容易。 例如，已知的伺服器名稱（ftp、www）是使用別名（CNAME）資源記錄（對應至裝載這些服務之伺服器電腦的網域名稱系統（DNS）主機名稱，例如 WEB1）來註冊。
+## <a name="plan-a-dns-alias-cname-record-for-your-web-server"></a><a name="bkmk_cname"></a>規劃 Web 服務器 (CNAME) 記錄的 DNS 別名
+別名 (CNAME) 資源記錄有時也稱為正式名稱資源記錄。 您可以使用這些記錄，將一個以上的名稱指向單一主機，讓在相同電腦上裝載檔案傳輸通訊協定 (FTP) 伺服器和網頁伺服器變得容易。 例如，已知的伺服器名稱 (ftp，www) 會使用別名 (CNAME) 資源記錄來註冊，以對應至裝載這些服務之伺服器電腦的網域名稱系統 (DNS) 主機名稱，例如 WEB1。
 
-本指南提供設定 Web 服務器以裝載憑證授權單位單位（CA）之憑證撤銷清單（CRL）的指示。 因為您可能也會想要使用網頁伺服器來進行其他用途，例如裝載 FTP 或網站，所以最好是在 DNS 中為您的 Web 服務器建立別名資源記錄。 在本指南中，CNAME 記錄名為「pki」，但您可以選擇適合您部署的名稱。
+本指南提供的指示說明如何設定您的網頁伺服器，以裝載憑證授權單位單位 (CA)  (CRL) 的憑證撤銷清單。 因為您可能也會想要使用網頁伺服器來進行其他用途，例如裝載 FTP 或網站，所以最好是在 DNS 中為您的 Web 服務器建立別名資源記錄。 在本指南中，CNAME 記錄名為「pki」，但您可以選擇適合您部署的名稱。
 
 ## <a name="plan-configuration-of-capolicyinf"></a><a name="bkmk_capolicy"></a>規劃 Capolicy.inf 的設定
 安裝 AD CS 之前，您必須在 CA 上設定 Capolicy.inf，並提供您部署的正確資訊。 Capolicy.inf .inf 檔案包含下列資訊：
@@ -101,7 +99,7 @@ Critical=Yes
 > 不建議您變更 Capolicy.inf .inf 檔案中的任何其他設定，除非您有特定原因要這麼做。
 
 ## <a name="plan-configuration-of-the-cdp-and-aia-extensions-on-ca1"></a><a name="bkmk_cdp"></a>在 CA1 上規劃 CDP 和 AIA 延伸模組的設定
-當您在 CA1 上設定憑證撤銷清單（CRL）發佈點（CDP）和授權單位資訊存取（AIA）設定時，您需要 Web 服務器的名稱和功能變數名稱。 您也需要在 Web 服務器上建立的虛擬目錄名稱，其中會儲存憑證撤銷清單（CRL）和憑證授權單位單位憑證。
+當您在 CA1 上設定憑證撤銷清單 (CRL) 發佈點 (CDP) 和授權資訊存取 (AIA) 設定時，您需要 Web 服務器的名稱和功能變數名稱。 您也需要在 Web 服務器上建立的虛擬目錄名稱，其中憑證撤銷清單 (CRL) 並儲存憑證授權單位單位憑證。
 
 您在此部署步驟中必須輸入的 CDP 位置格式如下：
 

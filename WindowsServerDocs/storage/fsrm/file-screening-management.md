@@ -2,22 +2,20 @@
 title: 檔案檢測管理
 description: 本文說明如何建立檔案檢測、產生通知、定義檔檢測範本，以及建立檔案檢測例外
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 43aed09aead02883f91c168e1cfaf6388aedfa85
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: c189386ac340e9362c8774340732f8689f17effe
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473975"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957435"
 ---
 # <a name="file-screening-management"></a>檔案檢測管理
 
-> 適用于： Windows Server 2019、Windows Server 2016、Windows Server （半年通道）、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用于： Windows Server 2019、Windows Server 2016、Windows Server (半年通道) 、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 在檔案伺服器資源管理員 Microsoft® Management Console (MMC) 嵌入式管理單元的 **\[檔案檢測管理\]** 節點，您可以執行下列工作：
 
@@ -41,7 +39,7 @@ ms.locfileid: "85473975"
 > [!Note]
 > 若要設定電子郵件通知和某些報告功能，您必須先設定檔案伺服器資源管理員的一般選項。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [設定檔案伺服器資源管理員選項](setting-file-server-resource-manager-options.md)
 

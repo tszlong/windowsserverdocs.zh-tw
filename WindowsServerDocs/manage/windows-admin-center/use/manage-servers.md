@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 11/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 69f8f20aa9e1b222ff112f91df8d6b3d7767fc84
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 25edd2851638fec99b6afda0415fdf8e8c8f1699
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962382"
+ms.locfileid: "87997189"
 ---
 # <a name="manage-servers-with-windows-admin-center"></a>使用 Windows 系統管理中心管理伺服器
 
@@ -411,7 +411,7 @@ PowerShell 支援下列功能：
 ### <a name="features"></a>特性
 
 - 查看和修改使用者和系統內容變數
-- 從[Azure 監視器](azure-monitor.md)查看監視警示的設定
+- 從[Azure 監視器](../azure/azure-monitor.md)查看監視警示的設定
 - 查看和修改電源設定
 - 查看和修改遠端桌面設定
 - 查看和修改以角色為基礎的存取控制設定
@@ -436,7 +436,7 @@ PowerShell 支援下列功能：
 - 編輯磁片區屬性
 - 刪除磁碟區
 - 安裝配額管理
-- 管理檔案伺服器 Resource Manager 配額[儲存體->建立/更新配額](https://docs.microsoft.com/windows-server/storage/fsrm/quota-management)
+- 管理檔案伺服器 Resource Manager 配額[儲存體->建立/更新配額](../../../storage/fsrm/quota-management.md)
 
 [**查看儲存裝置的意見反應和建議的功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BStorage%5D)
 
@@ -451,7 +451,7 @@ PowerShell 支援下列功能：
 ## <a name="storage-replica"></a>儲存體複本
 
 使用**儲存體複本**來管理伺服器對伺服器儲存體複寫。
- [深入了解儲存體複本](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-ui)
+ [深入了解儲存體複本](../../../storage/storage-replica/server-to-server-storage-replication.md)
 
 ## <a name="system-insights"></a>系統深入解析
 
@@ -473,7 +473,7 @@ PowerShell 支援下列功能：
 - 查看更新歷程記錄清單
 - 安裝更新
 - 線上檢查是否有更新 Microsoft Update
-- 管理[Azure 更新管理](https://docs.microsoft.com/azure/automation/automation-update-management)整合
+- 管理[Azure 更新管理](/azure/automation/automation-update-management)整合
 
 [**查看更新的意見反應和建議的功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BUpdates%5D)
 

@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7819bdfe1c5a65adc126ab902e6138d372982f20
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ffe38a896e7913d03cc8f4ad62d1e520cec6a0c2
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895817"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991925"
 ---
 # <a name="configure-features-on-demand-in-windows-server"></a>Configure Features on Demand in Windows Server
 
@@ -71,7 +71,7 @@ ms.locfileid: "87895817"
 
 -   `remove`Cmdlet 的參數 `Uninstall-WindowsFeature` 可讓您從執行 Windows Server 2012 R2 或 Windows server 2012 的伺服器或離線虛擬硬碟 (VHD) 刪除功能檔案。 參數的有效值為 `remove` 角色、角色服務和功能的名稱。
 
--   部署映像服務與管理 (DISM) 命令可讓您建立自訂 WIM 檔，藉由省略不需要或是可以從其他遠端來源取得的功能檔案來節省磁碟空間。 如需有關使用 DISM 準備自訂映像的詳細資訊，請參閱[如何啟用或停用 Windows 功能](https://technet.microsoft.com/library/hh824822.aspx)。
+-   部署映像服務與管理 (DISM) 命令可讓您建立自訂 WIM 檔，藉由省略不需要或是可以從其他遠端來源取得的功能檔案來節省磁碟空間。 如需有關使用 DISM 準備自訂映像的詳細資訊，請參閱[如何啟用或停用 Windows 功能](/previous-versions/windows/it-pro/windows-8.1-and-8/hh824822(v=win.10))。
 
 ## <a name="remove-feature-files-by-using-uninstall-windowsfeature"></a><a name=BKMK_remove></a>使用 Uninstall-WindowsFeature 移除功能檔案
 您可以使用 Uninstall Cmdlet，從執行 Windows Server 2012 R2 或 Windows Server 2012 的伺服器和離線 Vhd 卸載角色、角色服務和功能，以及刪除功能檔案。 如有需要，您可以在相同的命令中卸載和刪除相同的角色、角色服務和功能。
@@ -117,8 +117,6 @@ ms.locfileid: "87895817"
 
 ## <a name="see-also"></a>另請參閱
 [安裝或卸載角色、角色服務或功能](install-or-uninstall-roles-role-services-or-features.md) 
-[Windows Server 安裝選項](https://technet.microsoft.com/library/hh831786.aspx) 
-[如何啟用或停用 Windows 功能](https://technet.microsoft.com/library/hh824822.aspx) 
-[部署映像服務與管理 (DISM) 總覽](https://technet.microsoft.com/library/hh825236.aspx)
-
-
+[Windows Server 安裝選項](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831786(v=ws.11)) 
+[如何啟用或停用 Windows 功能](/previous-versions/windows/it-pro/windows-8.1-and-8/hh824822(v=win.10)) 
+[部署映像服務與管理 (DISM) 總覽](/previous-versions/windows/it-pro/windows-8.1-and-8/hh825236(v=win.10))

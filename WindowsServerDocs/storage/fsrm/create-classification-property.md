@@ -2,18 +2,16 @@
 title: 建立分類屬性
 description: 本文說明用於指派值給指定之資料夾或磁碟區中檔案的分類屬性。
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: f8e0ba45883385a2b2bf161b04f99f8077fdef28
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 8a5d044ae78ad45b59fa4cb97694c15aad3c4bbe
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473755"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957495"
 ---
 # <a name="create-a-classification-property"></a>建立分類屬性
 
@@ -47,9 +45,9 @@ ms.locfileid: "85473755"
 
 5.  在 **\[屬性類型]** 下拉式功能表中，從清單選取屬性類型。
 
-6.  按一下 [確定]****。
+6.  按一下 [確定]  。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [建立自動分類規則](create-automatic-classification-rule.md)
 -   [分類管理](classification-management.md)

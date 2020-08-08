@@ -7,12 +7,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fad4586b4d510fd22ecd90855b3afa1c8870c1bf
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 75f0395afbcbefcdc4ac3a9fc4dc4de3bf962428
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895627"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991743"
 ---
 # <a name="manage-user-access-logging"></a>管理使用者存取記錄
 
@@ -233,11 +233,11 @@ UAL 可以記錄的存取數目上限為每天 65,535 個。不建議在直接�
 ## <a name="recovering-from-a-corrupt-state"></a>從損毀狀態中修復
 本節將討論 UAL 使用可延伸儲存引擎 (ESE) 的高階功能，以及當 UAL 資料損毀或無法復原時，系統管理員可以執行的動作。
 
-UAL 使用 ESE 來最佳化系統資源的使用方式，並且防止資料損毀。  如需 ESE 優點的詳細資訊，請參閱 MSDN 上的 [可延伸儲存引擎](https://msdn.microsoft.com/library/windows/desktop/gg269259(v=exchg.10).aspx) 。
+UAL 使用 ESE 來最佳化系統資源的使用方式，並且防止資料損毀。  如需 ESE 優點的詳細資訊，請參閱 MSDN 上的 [可延伸儲存引擎](/windows/win32/extensible-storage-engine/extensible-storage-engine) 。
 
-每次 UAL 服務啟動時，ESE 就會執行軟修復。 如需詳細資訊，請參閱 MSDN 上的 [可延伸儲存引擎檔案](https://msdn.microsoft.com/library/windows/desktop/gg294069(v=exchg.10).aspx) 。
+每次 UAL 服務啟動時，ESE 就會執行軟修復。 如需詳細資訊，請參閱 MSDN 上的 [可延伸儲存引擎檔案](/windows/win32/extensible-storage-engine/extensible-storage-engine-files) 。
 
-如果軟修復發生問題，ESE 會執行損毀修復。 如需詳細資訊，請參閱 MSDN 上的 [JetInit 函式](https://msdn.microsoft.com/library/windows/desktop/gg294068(v=exchg.10).aspx) 。
+如果軟修復發生問題，ESE 會執行損毀修復。 如需詳細資訊，請參閱 MSDN 上的 [JetInit 函式](/windows/win32/extensible-storage-engine/jetinit-function) 。
 
 如果仍然無法使用現有的 ESE 檔案集來啟動 UAL，將會刪除 \Windows\System32\LogFiles\SUM\ 目錄中的所有檔案。 這些檔案刪除之後， User Access Logging Service 會重新啟動並建立新的檔案。 UAL 服務將會繼續執行，就像是在全新安裝的電腦上執行一樣。
 
@@ -258,5 +258,3 @@ Reg add HKLM\Software\Microsoft\Windows\CurrentVersion\SyncShareSrv /v EnableWor
 ## <a name="see-also"></a><a name="BKMK_Links"></a>另請參閱
 
 - [開始使用使用者存取記錄](get-started-with-user-access-logging.md)
-
-
