@@ -2,17 +2,16 @@
 title: 儲存空間直接存取的效能歷程記錄
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 09/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ce984d3a88f46b77773c524e5b75135930e1bb03
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f3c0babfad0ebecdac40262a783ecf683d6dc1e8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961790"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87968785"
 ---
 # <a name="performance-history-for-storage-spaces-direct"></a>儲存空間直接存取的效能歷程記錄
 
@@ -57,7 +56,7 @@ ms.locfileid: "86961790"
 
 ## <a name="timeframes"></a>段
 
-效能歷程記錄最多儲存一年，而且資料細微性會降低。 在最近的一小時內，每十秒就會提供測量。 之後，它們會以智慧方式合併（依適當情況平均或總和）至較不細微的數列，而更多時間。 在最近的一天，每五分鐘可取得度量;最近一周，每十五分鐘;以此類推。
+效能歷程記錄最多儲存一年，而且資料細微性會降低。 在最近的一小時內，每十秒就會提供測量。 之後，它們會透過平均或總和，以智慧方式合併 (，以適當的) 到更多時間的較細微數列。 在最近的一天，每五分鐘可取得度量;最近一周，每十五分鐘;以此類推。
 
 在 Windows 系統管理中心內，您可以選取圖表右上方的時間範圍。
 
@@ -146,13 +145,13 @@ Get-VM "MyVM" | Get-ClusterPerf -VMSeriesName "VM.Cpu.Usage" -TimeFrame LastHour
 
 ### <a name="performance-history-storage"></a>效能歷程記錄儲存體
 
-一旦啟用儲存空間直接存取之後，就會建立大約 10 GB 的磁片區， `ClusterPerformanceHistory` 並在該處布建可延伸儲存引擎（也稱為 MICROSOFT JET）的實例。 這個輕量資料庫會儲存效能歷程記錄，而不需要任何系統管理員介入或管理。
+一旦啟用儲存空間直接存取之後，就會建立大約 10 GB 的磁片區， `ClusterPerformanceHistory` 並在其中布建可延伸儲存引擎 (（也稱為 MICROSOFT JET) ）的實例。 這個輕量資料庫會儲存效能歷程記錄，而不需要任何系統管理員介入或管理。
 
 ![效能記錄儲存的磁片區](media/performance-history/perf-history-volume.png)
 
 磁片區是由儲存空間支援，而且會根據叢集中的節點數目，使用簡單、雙向鏡像或三向鏡像復原功能。 它會在磁片磁碟機或伺服器失敗之後修復，就像儲存空間直接存取中的任何其他磁片區一樣。
 
-磁片區使用 ReFS，但不叢集共用磁碟區（CSV），因此它只會出現在叢集群組擁有者節點上。 除了自動建立以外，此磁片區沒有任何特別的內容：您可以查看、流覽、調整其大小，或將它刪除（不建議）。 如果發生錯誤，請參閱[疑難排解](#troubleshooting)。
+磁片區使用 ReFS，但不叢集共用磁碟區 (CSV) ，因此它只會出現在 [叢集群組擁有者] 節點上。 除了自動建立以外，此磁片區沒有任何特別的內容：您可以查看、流覽、調整大小，或將它刪除 (不建議) 。 如果發生錯誤，請參閱[疑難排解](#troubleshooting)。
 
 ### <a name="object-discovery-and-data-collection"></a>物件探索和資料收集
 
@@ -162,7 +161,7 @@ Get-VM "MyVM" | Get-ClusterPerf -VMSeriesName "VM.Cpu.Usage" -TimeFrame LastHour
 
 ### <a name="handling-measurement-gaps"></a>處理測量間隙
 
-當量值合併到較不精確的數列時（如時間[範圍中所述），會](#timeframes)排除遺失資料的期間。 例如，如果伺服器已關閉30分鐘，然後在接下來的30分鐘內于 50% CPU 執行， `ClusterNode.Cpu.Usage` 則該小時的平均將會正確地記錄為50% （不是25%）。
+當量值合併到較不精確的數列時（如時間[範圍中所述），會](#timeframes)排除遺失資料的期間。 例如，如果伺服器已關閉30分鐘，然後在接下來的30分鐘內于 50% CPU 執行， `ClusterNode.Cpu.Usage` 則該小時的平均將會正確地記錄為 50% (不是 25% ) 。
 
 ### <a name="extensibility-and-customization"></a>擴充性和自訂
 
@@ -216,16 +215,16 @@ Stop-ClusterPerformanceHistory -DeleteHistory
 
 ![沒有可用資料](media/performance-history/no-data-available.png)
 
-1. 如果是新加入或建立的物件，請等候它被探索（最多15分鐘）。
+1. 如果是新加入或建立的物件，請等候它被探索 (最多15分鐘的) 。
 
-2. 重新整理頁面，或等候下一個背景重新整理（最多30秒）。
+2. 重新整理頁面，或等候下一個背景重新整理 (最多30秒的) 。
 
-3. 某些特殊物件會從效能歷程中排除（例如，未叢集化的虛擬機器），以及未使用叢集共用磁碟區（CSV）檔案系統的磁片區。 檢查物件類型的子主題（例如磁片區的[效能歷程記錄](performance-history-for-volumes.md)），以進行微調列印。
+3. 某些特殊物件會從效能歷程中排除（例如，未叢集化的虛擬機器），而不會使用叢集共用磁碟區 (CSV) 檔案系統的磁片區。 檢查物件類型的子主題（例如磁片區的[效能歷程記錄](performance-history-for-volumes.md)），以進行微調列印。
 
 4. 如果問題持續發生，請以系統管理員身分開啟 PowerShell 並執行 `Get-ClusterPerf` Cmdlet。 此 Cmdlet 包含可識別常見問題的疑難排解邏輯，例如，如果 ClusterPerformanceHistory 磁片區遺失，則會提供補救指示。
 
-5. 如果上一個步驟中的命令未傳回任何內容，您可以嘗試重新開機健全狀況服務（這會收集效能歷程記錄），方法是 `Stop-ClusterResource Health ; Start-ClusterResource Health` 在 PowerShell 中執行。
+5. 如果上一個步驟中的命令不會傳回任何內容，您可以嘗試重新開機健全狀況服務 (以收集效能歷程記錄) 藉由 `Stop-ClusterResource Health ; Start-ClusterResource Health` 在 PowerShell 中執行。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [儲存空間直接存取總覽](storage-spaces-direct-overview.md)

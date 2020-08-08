@@ -1,20 +1,18 @@
 ---
 title: 了解儲存空間直接存取中的快取
 ms.assetid: 69b1adc0-ee64-4eed-9732-0fb216777992
-ms.prod: windows-server
 ms.author: cosdar
 manager: dongill
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 07/17/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b5c4ddf6575979722aa246e541902544551fe577
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 315b645cf3c2adc60bd8eeed0406e1226b2d2128
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769436"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87968845"
 ---
 # <a name="understanding-the-cache-in-storage-spaces-direct"></a>了解儲存空間直接存取中的快取
 
@@ -117,7 +115,7 @@ ms.locfileid: "87769436"
 
 當三種類型的磁碟機都齊全時，NVMe 磁碟機可以快取 SSD 和 HDD。 此行為如前文所述：SSD 只快取寫入，HDD 則讀取和寫入都快取。 快取 HDD 的負荷會平均分散到快取磁碟。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本表摘要說明哪些磁碟機用於快取、哪些用於容量，以及各種部署可能出現的快取行為。
 

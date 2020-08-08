@@ -1,20 +1,18 @@
 ---
 title: 在 Hyper-v 中啟用或停用檢查點
 description: 提供開啟或關閉檢查點功能的指示。
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: 92e1d0d0-f2c1-4ba2-8510-c8eb091cf5d6
 author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 77148346fb2e4964897b3b28643bf74a7295d062
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: d8d88c0dfdd6d423efa5a3d9e43fbb804de9542d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473855"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87968105"
 ---
 # <a name="enable-or-disable-checkpoints-in-hyper-v"></a>在 Hyper-v 中啟用或停用檢查點
 
@@ -28,9 +26,9 @@ ms.locfileid: "85473855"
 
 3.  若要允許此虛擬機器執行檢查點，請確定已選取 [**啟用檢查點**]。 若要停用檢查點，請清除 [**啟用檢查點**] 核取方塊。
 
-4.  按一下 [套用]**** 以套用變更。 完成之後，請按一下 [確定]**** 以關閉對話方塊。
+4.  按一下 [套用] 以套用變更。 完成之後，請按一下 [確定]**** 以關閉對話方塊。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 [在 Hyper-v 中的標準或生產檢查點之間選擇](Choose-between-standard-or-production-checkpoints-in-Hyper-V.md)
 

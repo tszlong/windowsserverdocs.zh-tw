@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 273651b8be1352218feb76c50cfd39cf9580a8a3
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 0b83588268e6a6c8dd685082b3862520fcbd80d5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519545"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87968255"
 ---
 # <a name="install-a-new-windows-server-2012-active-directory-forest-level-200"></a>安裝新的 Windows Server 2012 Active Directory 樹系 (等級 200)
 
@@ -565,10 +563,10 @@ ADDSDeployment Cmdlet 提供略過自動設定 DNS 用戶端設定、轉寄站�
 > 建議您不要覆寫重新開機設定。 網域控制站必須重新開機才能正常運作。
 
 ## <a name="see-also"></a>另請參閱
-[Active Directory Domain Services （TechNet 入口網站）](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770946(v=ws.10)) 
+[Active Directory Domain Services (TechNet 入口網站) ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770946(v=ws.10)) 
 [適用于 Windows Server 2008 R2](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378801(v=ws.10)) 
  的 Active Directory Domain Services[適用于 Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378891(v=ws.10)) 
- 的 Active Directory Domain Services[Windows Server 技術參考（Windows server 2003）](/previous-versions/windows/it-pro/windows-server-2003/cc739127(v=ws.10)) 
-[Active Directory 管理中心：消費者入門（Windows Server 2008 R2）](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560651(v=ws.10)) 
-[使用 Windows PowerShell 進行 Active Directory 管理（Windows Server 2008 R2）](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378937(v=ws.10)) 
-[詢問目錄服務小組（官方 Microsoft 商業技術支援 Blog）](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378937(v=ws.10))
+ 的 Active Directory Domain ServicesWindows server[技術參考 (Windows server 2003) ](/previous-versions/windows/it-pro/windows-server-2003/cc739127(v=ws.10)) 
+[Active Directory 管理中心：消費者入門 (Windows Server 2008 R2) ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560651(v=ws.10)) 
+Windows [PowerShell (Windows Server 2008 R2 的 Active Directory 管理) ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378937(v=ws.10)) 
+[詢問目錄服務小組 (官方的 Microsoft 商業技術支援 Blog) ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378937(v=ws.10))

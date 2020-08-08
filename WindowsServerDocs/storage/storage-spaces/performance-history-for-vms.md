@@ -2,23 +2,22 @@
 title: 虛擬機器的效能歷程記錄
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 09/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6077e72ba36c0ef2d0d34da4768aaf9fa5137fbe
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: dcf866d1de675f914d469783b1194e55adf63cb8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955220"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87968725"
 ---
 # <a name="performance-history-for-virtual-machines"></a>虛擬機器的效能歷程記錄
 
 > 適用於：Windows Server 2019
 
-[儲存空間直接存取效能歷程記錄](performance-history.md)的子主題會詳細說明針對虛擬機器（VM）所收集的效能歷程記錄。 效能歷程記錄適用于每個執行中的叢集 VM。
+[儲存空間直接存取的效能歷程記錄](performance-history.md)的子主題詳細說明針對 (VM) 的虛擬機器所收集的效能歷程記錄。 效能歷程記錄適用于每個執行中的叢集 VM。
 
    > [!NOTE]
    > 針對新建立或重新命名的 Vm，可能需要幾分鐘的時間才能開始收集。
@@ -41,14 +40,14 @@ ms.locfileid: "86955220"
 | `vmnetworkadapter.bandwidth.outbound` | 每秒位數 |
 | `vmnetworkadapter.bandwidth.total`    | 每秒位數 |
 
-此外，所有虛擬硬碟（VHD）系列（例如 `vhd.iops.total` ）都會針對連接至 VM 的每個 VHD 進行匯總。
+此外， `vhd.iops.total` 系統會針對連接至 VM 的每個 vhd 匯總所有虛擬硬碟 (vhd) 系列，例如）。
 
 ## <a name="how-to-interpret"></a>如何解讀
 
 
 | 數列                            | 描述                                                                                                  |
 |-----------------------------------|--------------------------------------------------------------------------------------------------------------|
-| `vm.cpu.usage`                    | 虛擬機器正在使用其主機伺服器處理器的百分比。                                   |
+| `vm.cpu.usage`                    | 虛擬機器使用其主機伺服器處理器 (s) 的百分比。                                   |
 | `vm.memory.assigned`              | 指派給虛擬機器的記憶體數量。                                                      |
 | `vm.memory.available`             | 已指派數量的可用記憶體數量。                                       |
 | `vm.memory.maximum`               | 如果使用動態記憶體，這就是可能指派給虛擬機器的記憶體數量上限。 |
@@ -72,8 +71,8 @@ Get-VM <Name> | Get-ClusterPerf
 ```
 
    > [!NOTE]
-   > 「取得 VM」 Cmdlet 只會傳回本機（或指定）伺服器上的虛擬機器，而不是在整個叢集中。
+   > 「取得 VM」 Cmdlet 只會傳回本機 (上的虛擬機器，或指定) 伺服器，而不是跨叢集。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [儲存空間直接存取的效能歷程記錄](performance-history.md)

@@ -1,20 +1,18 @@
 ---
 title: 在 Hyper-v 中的標準或生產檢查點之間選擇
 description: 提供將虛擬機器設定為使用標準或生產檢查點的指示
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: 92bb573b-03b7-470e-b72e-e35edf52b349
 author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 4e5e3d2d81f9ee1b7cbb4a60a1ade2c218d1e769
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 9aeff8371b357d9e4b063d48c310b32843dc00af
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474285"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87968155"
 ---
 # <a name="choose-between-standard-or-production-checkpoints-in-hyper-v"></a>在 Hyper-v 中的標準或生產檢查點之間選擇
 
@@ -42,9 +40,9 @@ ms.locfileid: "85474285"
 5.  按一下 **[** 套用] 以儲存變更。 如果您已經完成，請按一下 **[確定**] 關閉對話方塊。
 
 > [!NOTE]
-> 只有執行 Active Directory Domain Services 角色（網域控制站）或 Active Directory 輕量型目錄服務角色的來賓，才支援**生產檢查點**。
+> 只有執行 Active Directory Domain Services 角色 (網域控制站) 或 Active Directory 輕量型目錄服務角色的來賓，才支援**生產檢查點**。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [生產檢查點](../What-s-new-in-Hyper-V-on-Windows.md#production-checkpoints-new)
 
