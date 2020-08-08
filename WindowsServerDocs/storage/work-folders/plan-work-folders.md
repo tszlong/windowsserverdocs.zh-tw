@@ -1,20 +1,18 @@
 ---
 ms.assetid: a7c39656-81ee-4c2b-80ef-4d017dd11b07
 title: 工作資料夾部署的規劃
-ms.prod: windows-server
-ms.technology: storage-work-folders
 ms.topic: article
 author: JasonGerend
 manager: dongill
 ms.author: jgerend
 ms.date: 4/5/2017
 description: 如何規劃工作資料夾的部署，包括系統需求以及如何準備您的網路環境。
-ms.openlocfilehash: 603711676aa5f35047b0623694f3a16922a2b240
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3f082a9542853f822b2b493cf3dabafe2cd65add
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86960000"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954585"
 ---
 # <a name="planning-a-work-folders-deployment"></a>工作資料夾部署的規劃
 
@@ -74,7 +72,7 @@ ms.locfileid: "86960000"
 
 -   Windows 7 電腦必須執行下列其中一個 Windows 版本：
 
-    -   Windows 7 Professional
+    -   Windows 7 專業版
 
     -   Windows 7 旗艦版
 
@@ -128,7 +126,7 @@ ms.locfileid: "86960000"
   您也可以使用群組原則，強制為每個使用者或每個電腦設定工作資料夾，但是這樣做會導致使用者登入的每個電腦進行工作資料夾同步 (使用每個使用者原則設定時)，並阻止使用者為自己電腦上的工作資料夾指定其他位置 (例如，指定 microSD 記憶卡以節省主要磁碟機上的空間)。 建議您強制進行自動設定之前，先審慎評估使用者的需求。
 
 ### <a name="windows-intune"></a>Windows Intune
- Windows Intune 也為未加入網域的裝置提供安全性和管理能力等級，否則將不會顯示這些裝置。 您可以使用 Windows Intune 來設定和管理使用者透過網際網路連線到工作資料夾的個人裝置 (如平板電腦)。 Windows Intune 可以提供具有同步處理伺服器 URL 的裝置，否則使用者必須輸入其工作電子郵件地址來查閱設定（如果您發佈的公用工作資料夾 URL 的格式為） https://workfolders 。<em>contoso.com</em>），或直接輸入同步伺服器 URL。
+ Windows Intune 也為未加入網域的裝置提供安全性和管理能力等級，否則將不會顯示這些裝置。 您可以使用 Windows Intune 來設定和管理使用者透過網際網路連線到工作資料夾的個人裝置 (如平板電腦)。 Windows Intune 可以提供具有同步處理伺服器 URL 的裝置，否則使用者必須輸入其工作電子郵件地址來查閱設定 (如果您以形式發行公用工作資料夾 URL https://workfolders 。<em>contoso.com</em>) ]，或直接輸入同步伺服器 URL。
 
  如果不使用 Windows Intune 部署，使用者必須手動設定外部裝置，這會增加客戶對支援工程師人員的需求。
 
@@ -247,13 +245,13 @@ ms.locfileid: "86960000"
 
     -   裝置需要裝置註冊才能連線嗎？
 
-## <a name="next-steps"></a>接下來的步驟
+## <a name="next-steps"></a>後續步驟
  設計工作資料夾實作之後，就該部署工作資料夾了。 如需詳細資訊，請參閱[部署工作資料夾](deploy-work-folders.md)。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
  如需其他相關資訊，請參閱下列資源。
 
 |內容類型|參考|
 |------------------|----------------|
 |**產品評估**|-   [工作資料夾](work-folders-overview.md)<br />-   [適用於 Windows 7 的工作資料夾](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (部落格文章) (英文)|
-|**部署**|-   [設計工作資料夾的執行](plan-work-folders.md)<br />-   [部署工作資料夾](deploy-work-folders.md)<br />-   [使用 AD FS 和 Web 應用程式 Proxy （WAP）部署工作資料夾](deploy-work-folders-adfs-overview.md)<br />- [搭配 Azure AD 應用程式 Proxy 部署工作資料夾](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />-   [工作資料夾部署的效能考量](../../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md)<br />-   [適用於 Windows 7 的工作資料夾 (64 位元下載)](https://www.microsoft.com/download/details.aspx?id=42558)<br />-   [適用於 Windows 7 的工作資料夾 (32 位元下載)](https://www.microsoft.com/download/details.aspx?id=42559)<br />-   [工作資料夾測試實驗室部署](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (部落格文章)|
+|**部署**|-   [設計工作資料夾的執行](plan-work-folders.md)<br />-   [部署工作資料夾](deploy-work-folders.md)<br />-   [使用 AD FS 和 Web 應用程式 Proxy 部署工作資料夾 (WAP) ](deploy-work-folders-adfs-overview.md)<br />- [搭配 Azure AD 應用程式 Proxy 部署工作資料夾](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />-   [工作資料夾部署的效能考量](../../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md)<br />-   [適用於 Windows 7 的工作資料夾 (64 位元下載)](https://www.microsoft.com/download/details.aspx?id=42558)<br />-   [適用於 Windows 7 的工作資料夾 (32 位元下載)](https://www.microsoft.com/download/details.aspx?id=42559)<br />-   [工作資料夾測試實驗室部署](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (部落格文章)|

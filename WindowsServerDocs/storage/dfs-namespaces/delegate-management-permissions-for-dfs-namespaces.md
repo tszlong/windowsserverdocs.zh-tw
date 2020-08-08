@@ -2,26 +2,24 @@
 title: 委派 DFS 命名空間的管理權限
 description: 本文描述如何委派 DFS 命名空間的管理權限，以及哪些群組預設可以執行命名空間工作
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 838b8c716618bf10b900c12b118e940e318b56a2
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: a986c47416de79c9ff24d9104a2fa599dd5f8640
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965870"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954785"
 ---
 # <a name="delegate-management-permissions-for-dfs-namespaces"></a>委派 DFS 命名空間的管理權限
 
-> 適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用于： Windows Server 2019、Windows Server (半年通道) 、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 下表描述預設可以執行基本命名空間工作的群組，以及委派執行這些工作之能力的方法：
 
-|工作 | 預設可以執行此工作的群組 | 委派方法 |
+|Task | 預設可以執行此工作的群組 | 委派方法 |
 |---|---|---|
 |建立網域型命名空間|設定命名空間之網域中的 Domain Admins 群組|在主控台樹狀目錄的 **\[命名空間\]** 節點上按一下滑鼠右鍵，然後按一下 **\[委派管理權限\]**。 或使用 [Set-DfsnRoot GrantAdminAccounts](/powershell/module/dfsn/set-dfsnroot?view=win10-ps) 和 [Set-DfsnRoot RevokeAdminAccounts](/powershell/module/dfsn/set-dfsnroot?view=win10-ps)。 Windows PowerShell Cmdlet (於 Windows Server 2012 中引進)。 您也必須新增使用者至命名空間伺服器上的本機系統管理員群組。|
 |新增命名空間伺服器至網域型命名空間|設定命名空間之網域中的 Domain Admins 群組| 在主控台樹狀目錄的網域型命名空間上按一下滑鼠右鍵，然後按一下 **\[委派管理權限\]**。 或使用 [Set-DfsnRoot GrantAdminAccounts](/powershell/module/dfsn/set-dfsnroot?view=win10-ps) 和 [Set-DfsnRoot RevokeAdminAccounts](/powershell/module/dfsn/set-dfsnroot?view=win10-ps)。 Windows PowerShell Cmdlet (於 Windows Server 2012 中引進)。 您也必須新增使用者至要新增的命名空間伺服器上的本機系統管理員群組。|

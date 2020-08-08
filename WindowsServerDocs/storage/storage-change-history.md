@@ -1,20 +1,18 @@
 ---
 ms.assetid: 87174225-a60f-4718-b4cc-9b172f205b72
 title: 儲存空間主題的變更歷程記錄
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.date: 1/16/2019
 description: 適用于 IT 專業人員之 Windows Server 的內部部署儲存體檔中的新增和更新的主題。
-ms.openlocfilehash: 3d43166d8f5e931d2677ff394c1c4ad69b0f302f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c4ba7edcbd2a0cf4949c986dec2e2aef385326c8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966260"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954625"
 ---
 # <a name="change-history-for-storage-topics-in-windows-server"></a>Windows Server 中的儲存空間主題變更歷程記錄
 
@@ -49,7 +47,7 @@ ms.locfileid: "86966260"
 
 | 新增或已變更的主題                                        | 描述 |
 | ---                                                         | ---           |
-| [磁碟清理](file-server/disk-cleanup.md)                                              | 新增（從先前的[版本](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc770278(v%3dws.11))遷移）
+| [磁碟清理](file-server/disk-cleanup.md)                                              | 從[舊版本](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc770278(v%3dws.11))遷移的新 () 
 | [儲存體遷移服務常見問題](storage-migration-service/faq.md#can-i-consolidate-multiple-servers-into-one-server) | 已新增效能優化資訊。 |
 
 ## <a name="may-2019"></a>2019 年 5 月
@@ -114,7 +112,7 @@ ms.locfileid: "86966260"
 |---|---|
 |[儲存體遷移服務總覽](storage-migration-service/overview.md)| 新主題 |
 |[使用儲存體遷移服務來遷移伺服器](storage-migration-service/migrate-data.md)| 新主題 |
-|[儲存體遷移服務常見問題（FAQ）](storage-migration-service/faq.md)| 新主題 |
+|[儲存體遷移服務的常見問題 (常見問題) ](storage-migration-service/faq.md)| 新主題 |
 | [iSCSI 目標伺服器](iscsi/iscsi-target-server.md) | 從[舊版](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012)程式庫遷移。|
 | [iSCSI 目標伺服器延展性限制](iscsi/iscsi-target-server-limits.md) |從[舊版](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012)程式庫遷移。|
 
@@ -190,7 +188,7 @@ ms.locfileid: "86966260"
 
 |新增或已變更的主題|描述|
 |---|---|
-|[儲存體的新功能](whats-new-in-storage.md)|已新增 Windows Server 1709 版中新功能的相關資訊。|
+|[儲存空間的新功能](whats-new-in-storage.md)|已新增 Windows Server 1709 版中新功能的相關資訊。|
 |[新增伺服器或磁碟機](storage-spaces/add-nodes.md)|已新增有關儲存空間直接存取如何在新增磁片磁碟機之後自動優化磁片磁碟機使用量的資訊。|
 
 ## <a name="october-2017"></a>2017年 10 月

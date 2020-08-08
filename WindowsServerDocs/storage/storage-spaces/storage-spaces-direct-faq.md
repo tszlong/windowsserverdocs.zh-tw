@@ -1,21 +1,19 @@
 ---
 title: 儲存空間直接存取的常見問題
 description: 深入瞭解儲存空間直接存取
-ms.prod: windows-server
 ms.author: kaushik
-ms.technology: storage-spaces
 ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c033a5a810d1cdedeb4c733ba4bf0ac99e669f0
-ms.sourcegitcommit: 3483f886f331b9d954a0e5dba8e910dbe5ee5765
+ms.openlocfilehash: 9371403fedce0383be117728da48eec70745c3a7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82977246"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954615"
 ---
-# <a name="storage-spaces-direct---frequently-asked-questions-faq"></a>儲存空間直接存取-常見問題（FAQ）
+# <a name="storage-spaces-direct---frequently-asked-questions-faq"></a>儲存空間直接存取-常見問題 (常見問題) 
 
 本文列出一些與[儲存空間直接存取](storage-spaces-direct-overview.md)相關的常見常見問題和常見問題。
 
@@ -39,7 +37,7 @@ ms.locfileid: "82977246"
 
 根據預設，當您使用 enable-S2D Cmdlet 設定儲存空間直接存取時，此 Cmdlet 會為您執行所有工作。 它會建立集區和層級。 使用自動設定時：0時，必須以手動方式完成所有作業。 如果您只建立集區，就不一定會建立該層。 如果您未以對應于所連接裝置的方式建立所有層或尚未建立的階層，您將會收到「Enable-clusters2d 再次出現」錯誤訊息。 我們建議您不要在生產環境中使用自動設定參數。
 
-## <a name="is-it-possible-to-add-a-spinning-disk-hdd-to-the-storage-spaces-direct-pool-after-you-have-created-storage-spaces-direct-with-ssd-devices"></a>在建立 SSD 裝置的儲存空間直接存取之後，是否可以將旋轉磁片（HDD）新增至儲存空間直接存取集區？
+## <a name="is-it-possible-to-add-a-spinning-disk-hdd-to-the-storage-spaces-direct-pool-after-you-have-created-storage-spaces-direct-with-ssd-devices"></a>在建立 SSD 裝置的儲存空間直接存取之後，是否可以將旋轉的磁片 (HDD) 新增至儲存空間直接存取集區？
 
 否。 根據預設，如果您使用單一裝置類型來建立集區，它不會設定快取磁片，而且所有磁片都會用於容量。 您可以在設定中新增 NVME 磁片，而 NVME 磁片則會針對快取進行設定。
 
@@ -49,7 +47,7 @@ ms.locfileid: "82977246"
 
 ## <a name="what-should-the-cache-size-be-when-i-am-configuring-storage-spaces-direct"></a>當我設定儲存空間直接存取時，快取大小應該為何？
 
-應該調整快取大小，以容納應用程式和工作負載的工作集（在任何指定時間主動讀取或寫入的資料）。
+應該調整快取的大小，以配合工作集 (在任何指定時間) 應用程式和工作負載時主動讀取或寫入的資料。
 
 ## <a name="how-can-i-determine-the-size-of-cache-that-is-being-used-by-storage-spaces-direct"></a>如何判斷儲存空間直接存取所使用的快取大小？
 
@@ -57,7 +55,7 @@ ms.locfileid: "82977246"
 
 ## <a name="is-there-a-calculator-that-shows-the-exact-size-of-the-disks-that-are-being-set-aside-for-cache-capacity-and-resiliency-that-would-enable-me-to-plan-better"></a>是否有計算機會顯示針對快取、容量和復原所設定的確切磁片大小，讓我能夠更好地進行規劃？
 
-您可以使用「儲存空間」計算機協助您進行規劃。 可以在https://aka.ms/s2dcalc取得。
+您可以使用「儲存空間」計算機協助您進行規劃。 可以在取得 https://aka.ms/s2dcalc 。
 
 ## <a name="what-is-the-best-configuration-that-you-would-recommend-when-configuring-6-servers-and-3-racks"></a>設定6部伺服器和3個機架時，建議您最好的設定為何？
 
@@ -79,7 +77,7 @@ Get-PhysicalDisk -SerialNumber <SerialNumber> | Enable-StorageMaintenanceMode
 
 ## <a name="how-does-storage-spaces-direct-make-use-of-ses"></a>儲存空間直接存取如何利用 SES？
 
-儲存空間直接存取使用 SCSI 主機殼服務（SES）對應，以確保 slab 的資料和中繼資料會以彈性的方式分散到容錯網域。 如果硬體不支援 SES，就不會有機箱的對應，而且資料放置也不具復原能力。
+儲存空間直接存取使用 SCSI 主機殼服務 (SES) 對應，以確保 slab 的資料和中繼資料會以彈性的方式分散到容錯網域。 如果硬體不支援 SES，就不會有機箱的對應，而且資料放置也不具復原能力。
 
 ## <a name="which-command-can-you-use-to-check-the-physical-extent-for-a-virtual-disk"></a>您可以使用哪一個命令來檢查虛擬磁片的實體範圍？
 

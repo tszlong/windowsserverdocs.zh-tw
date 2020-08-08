@@ -1,17 +1,15 @@
 ---
 title: SMB-檔案和印表機共用埠應開啟
 ms.date: 07/02/2012
-ms.prod: windows-server
-ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: d9d24f1ce66ca691bfa31479a00b9ecf719abe1e
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: dc2e1d7f5408ad123297b8df2dc06f59053fe870
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961300"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954765"
 ---
 # <a name="smb-file-and-printer-sharing-ports-should-be-open"></a>SMB：檔案和印表機共用連接埠應該開啟
 
@@ -50,13 +48,13 @@ ms.locfileid: "86961300"
 
 ## <a name="issue"></a>問題
 
-> *檔案及印表機共用所需的防火牆埠未開啟（埠445和139）。*
+> *檔案及印表機共用所需的防火牆埠未開啟 (埠445和 139) 。*
 
 ## <a name="impact"></a>影響
 
-> *電腦將無法存取此伺服器上的共用資料夾和其他伺服器訊息區（SMB）型網路服務。*
+> *電腦將無法存取此伺服器上 (SMB) 型網路服務的共用資料夾和其他伺服器訊息區。*
 
-## <a name="resolution"></a>解決方案
+## <a name="resolution"></a>解決方法
 
 > *啟用 [檔案及印表機共用] 以透過電腦的防火牆進行通訊。*
 
@@ -68,10 +66,10 @@ ms.locfileid: "86961300"
 
 2.  在左窗格中，按一下 [ **Advanced settings**]，然後在主控台樹中，按一下 [**輸入規則**]。
 
-3.  在 [**輸入規則**] 底下，找出 [檔案**及印表機共用（NB-會話）** ] 和 [檔案**及印表機共用（SMB）**] 規則。
+3.  在 [**輸入規則**] 底下，找出 [規則] [檔案**和印表機共用 (]-[會話) ** ] 和 [檔案**及印表機共用] ([SMB-in) **]。
 
 4.  針對每個規則，以滑鼠右鍵按一下該規則，然後按一下 [啟用規則]****。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
-[瞭解共用資料夾與 Windows 防火牆](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731402(v=ws.11))（https://technet.microsoft.com/library/cc731402.aspx)
+[瞭解共用資料夾與 Windows 防火牆](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731402(v=ws.11)) (https://technet.microsoft.com/library/cc731402.aspx)

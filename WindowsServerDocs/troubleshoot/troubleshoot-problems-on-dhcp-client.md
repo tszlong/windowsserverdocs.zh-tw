@@ -1,22 +1,20 @@
 ---
-title: 疑難排解 DHCP 用戶端上的問題
+title: 針對 DHCP 用戶端上的問題進行疑難排解
 description: 本 artilce 介紹如何疑難排解 DHCP 用戶端上的問題並收集資料。
-ms.prod: windows-server
 ms.service: na
 manager: dcscontentpm
-ms.technology: server-general
 ms.date: 5/26/2020
 ms.topic: article
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: a6064b9e497fcd54671292ade77a08c06ba42920
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: 650b3f83ebd0467df2a747d865db2d0a346bcddc
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84150296"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954575"
 ---
-# <a name="troubleshoot-problems-on-the-dhcp-client"></a>疑難排解 DHCP 用戶端上的問題
+# <a name="troubleshoot-problems-on-the-dhcp-client"></a>針對 DHCP 用戶端上的問題進行疑難排解
 
 本文討論如何疑難排解 DHCP 用戶端上發生的問題。
 
@@ -36,14 +34,14 @@ ms.locfileid: "84150296"
 
   - 用戶端電腦上沒有防火牆封鎖埠67和 68 UDP。
 
-## <a name="event-logs"></a>事件記錄
+## <a name="event-logs"></a>事件記錄檔
 
-檢查 Microsoft-Windows DHCP 用戶端事件/操作和 Microsoft Windows DHCP 用戶端事件/系統管理事件記錄檔。 所有與 DHCP 用戶端服務相關的事件都會傳送至這些事件記錄檔。  
+檢查 Microsoft-Windows DHCP 用戶端事件/操作和 Microsoft Windows DHCP 用戶端事件/系統管理事件記錄檔。 所有與 DHCP 用戶端服務相關的事件都會傳送至這些事件記錄檔。
 Microsoft-Windows DHCP 用戶端事件位於 [**應用程式及服務記錄**檔] 下的 [事件檢視器。
 
 "Get-netadapter-IncludeHidden" PowerShell 命令會提供必要的資訊，以解讀記錄中列出的事件。 例如，介面識別碼、MAC 位址等等。
 
-## <a name="data-collection"></a>資料收集
+## <a name="data-collection"></a>資料集合
 
 我們建議您在發生問題時，同時在 DHCP 用戶端和伺服器端同時收集資料。 不過，視實際的問題而定，您也可以使用 DHCP 用戶端或 DHCP 伺服器上的單一資料集開始進行調查。
 
@@ -52,7 +50,7 @@ Microsoft-Windows DHCP 用戶端事件位於 [**應用程式及服務記錄**檔
 在遇到問題的用戶端上執行下列命令：
 
 ```console
-ipconfig /release  
+ipconfig /release
 ipconfig /renew
 ```
 

@@ -2,22 +2,20 @@
 title: 部署 DFS 命名空間
 description: 本文說明如何部署 DFS 命名空間
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 5ce0b24c723d2bdb311a83af63714ca0a4344252
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3f31e1f58acd5273986f0d1e1c1d9c7db5e93ec3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402239"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954775"
 ---
 # <a name="deploying-dfs-namespaces"></a>部署 DFS 命名空間
 
-> 適用於：Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用于： Windows Server 2019、Windows Server (半年通道) 、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 若要部署 DFS 命名空間，請參考下列主題：
 

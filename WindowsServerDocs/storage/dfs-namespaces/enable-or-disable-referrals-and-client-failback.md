@@ -2,22 +2,20 @@
 title: 啟用或停用轉介和用戶端容錯回復
 description: 本文說明如何啟用或停用轉介和用戶端容錯回復。
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 3896b411ee8b02a0efde6b46484e043b27ffea77
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 0336588dcf0c170698c89b32a29952916bd26100
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966510"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954755"
 ---
 # <a name="enable-or-disable-referrals-and-client-failback"></a>啟用或停用轉介和用戶端容錯回復
 
-> 適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用于： Windows Server 2019、Windows Server (半年通道) 、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 轉介是伺服器的排序清單，當使用者存取命名空間根目錄或包含目標的 DFS 資料夾時，用戶端電腦就會收到來自網域控制站或命名空間伺服器的轉介。 電腦接收轉介之後，就會嘗試存取清單中的第一部伺服器。 如果伺服器無法使用，用戶端電腦就會嘗試存取下一部伺服器。 如果伺服器變得無法使用，則可將用戶端設定成在恢復可用之後容錯回復到偏好的伺服器。
 
@@ -68,7 +66,7 @@ ms.locfileid: "86966510"
 
 3.  在 [轉介]**** 索引標籤上，按一下 [用戶端容錯回復至慣用目標]**** 核取方塊。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [調整 DFS 命名空間](tuning-dfs-namespaces.md)
 -   [檢視 DFS 命名空間用戶端需求](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771913(v=ws.11))

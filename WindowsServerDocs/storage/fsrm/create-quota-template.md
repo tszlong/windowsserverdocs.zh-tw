@@ -2,18 +2,16 @@
 title: 建立配額範本
 description: 本文說明如何建立配額範本以定義儲存空間限制
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: ad05d72098851e39bc245711b73e5ad721c5a784
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 785540c9b8e436ba994af5408b769ea37528c8ba
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473555"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954635"
 ---
 # <a name="create-a-quota-template"></a>建立配額範本
 
@@ -88,7 +86,7 @@ ms.locfileid: "85473555"
 
 8. 如果您想要設定配額範本的其他通知閾值，請重複這些步驟。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [配額管理](quota-management.md)
 -    [設定檔案伺服器資源管理員選項](setting-file-server-resource-manager-options.md)

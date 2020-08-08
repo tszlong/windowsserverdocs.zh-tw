@@ -1,19 +1,17 @@
 ---
 title: Windows Admin Center SDK 案例研究-DataON
 description: Windows Admin Center SDK 案例研究-DataON
-ms.technology: extend
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 01/11/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 0e4def5cd8a88cd5cb5d4df71d2f3a192ae23701
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bd7a7d66d0f842fc0f9592f21309e2eec9723a1d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406961"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87966755"
 ---
 # <a name="dataon-must-extension"></a>DataON 必須擴充
 
@@ -21,7 +19,7 @@ ms.locfileid: "71406961"
 
 [DataON](http://www.dataonstorage.com/)是專為 Microsoft Windows Server 環境優化的超融合式基礎結構和儲存系統的業界領先提供者。 其專門著重于傳遞 Microsoft 應用程式、虛擬化、資料保護和混合式雲端服務，其具有超過650的企業部署，以及120PB 的儲存空間直接存取部署。
 
-[DataON 的](http://www.dataonstorage.com/must)Windows 系統管理中心的延伸模組，是整合兩個互補產品可以提供給客戶的價值的主要範例，讓監視和管理以及對硬體和軟體的端對端深入瞭解統一體驗中的整個叢集。
+[DataON 的](http://www.dataonstorage.com/must)Windows 管理中心的延伸模組是整合兩個互補產品可以提供給客戶的價值的最佳例子，讓監視和管理，以及跨整個叢集中的硬體和軟體的端對端深入解析，以一致的體驗。
 
 > <cite>「我們已採用獨立的可見度、監視和管理工具，讓它能夠在 Windows 系統管理中心內工作。客戶將受益于必須提供的擴充功能，而來自單一主控台的「必須」和「Windows 系統管理中心」的組合將會提供 Windows Server 架構基礎結構的絕佳管理體驗。」</cite>
 >
@@ -33,15 +31,15 @@ ms.locfileid: "71406961"
 - **系統警示**–利用 Windows 健全狀況服務錯誤來找出硬體故障、設定問題和資源飽和。 它也提供特定位置、錯誤描述和復原動作的多層級評估。 您也可以利用協力廠商 SNMP 監視陷阱，在需要磁片或硬體更換時向您發出警示。
 - **類似 SAN 的呼叫首頁服務**–系統警示的提示，系統管理員可以將自動化的電子郵件警示傳送給金鑰連絡人。
 
-![Windows 系統](../../media/extend-case-study-dataon/dataon-1.png)
-*管理中心的 DataON 中的 DataON 延伸磁片對應必須具備擴充*功能
+![Windows 系統 ](../../media/extend-case-study-dataon/dataon-1.png)
+ *管理中心的 DataON 中的 DataON 延伸磁片對應必須具備擴充*功能
 
 > <cite>「Windows 系統管理中心允許 DataON 等延伸模組，因此我可以在相同的主控台內同時使用這兩種工具，而我也喜歡整合的順暢程度。Windows Admin Center 和 DataON 必須搭配運作，才能讓我們更有效率，並將小組節省大量時間。這讓我們能夠以比以往更快的速度來完成系統管理員工作。」</cite>
 >
-> --Matt Roper，技術支援服務、切羅者縣（GA）學區的推動者
+> --Matt Roper，技術支援服務的講授者， (GA) School 學區
 
-![DataON 中](../../media/extend-case-study-dataon/dataon-2.png)
-的 DataON 擴充功能*必須擴充 Windows 系統管理中心*
+![DataON 中的 DataON 擴充功能 ](../../media/extend-case-study-dataon/dataon-2.png)
+ *必須擴充 Windows 系統管理中心*
 
 > <cite>「必須非常寶貴，而且是一個很大的賣點。對我們來說，它示範了從 DataON 到支援 Microsoft 超融合基礎結構的承諾。包含的 S2D 設備必須是完成解決方案的工作，並以儲存空間直接存取做為可行的 SAN 更換。」</cite>
 >

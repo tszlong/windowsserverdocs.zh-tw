@@ -2,18 +2,16 @@
 title: 建立自訂檔案管理工作
 description: 本文說明如何建立自訂檔案管理工作及自訂工作。
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: bf1329c47fd5746bf0777415331ebcd7b882c5f1
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7fcfd9958787817a6945b220115c507f48924cbf
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475575"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954675"
 ---
 # <a name="create-a-custom-file-management-task"></a>建立自訂檔案管理工作
 
@@ -32,14 +30,14 @@ ms.locfileid: "85475575"
 
 3.  在 [動作]**** 索引標籤中，輸入下列資訊：
 
-    -   [類型]****。 從下拉式功能表選取 **\[自訂\]**。
+    -   **類型**。 從下拉式功能表選取 **\[自訂\]**。
     -   **可執行檔**。 輸入要在檔案管理工作處理檔案時執行的命令，或瀏覽至該命令。 這個可執行檔必須設定為僅可由系統管理員及系統寫入。 如果任何其他使用者擁有可執行檔的寫入存取權，可執行檔將無法正確執行。
     -   **\[命令設定\]**。 若要設定要在檔案管理工作處理檔案時傳遞給可執行檔的引數，請編輯標籤為 **\[引數\]** 的文字方塊。 若要在文字中插入其他變數，請將游標放在要插入變數的文字方塊中、選取您想要插入的變數，然後按一下 **\[插入變數\]**。 方括弧中的文字會插入可執行檔可以接收的變數資訊。 例如，[ \[ 來源檔案路徑] \] 變數會插入可執行檔所應處理的檔案名。 或者，按一下 **\[工作目錄\]** 按鈕以指定自訂可執行檔的位置。
     -   **\[命令安全性\]**。 設定這個可執行檔的安全性設定。 預設會以本機服務身分執行命令，這是限制最多的可用帳戶。
 
-4.  按一下 [確定]****。
+4.  按一下 [確定]  。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [分類管理](classification-management.md)
 -   [檔案管理工作](file-management-tasks.md)

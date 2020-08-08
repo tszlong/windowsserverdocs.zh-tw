@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 42131ef5e149c62dd5449d8ada196b1068fd30ac
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: c47649e5a60de646de331a6c723c18c3b041bca6
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519717"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87967005"
 ---
 # <a name="update-password-customization"></a>更新密碼自訂
 
@@ -21,7 +19,7 @@ ms.locfileid: "87519717"
 
 您可以提供更新密碼頁面的描述，以自訂該頁面。
 
-若要啟用密碼更新頁面，請移至 [端點] 下的 [AD FS 管理]。 更新密碼的端點位於 [其他] 底部 - /adfs/portal/updatepassword/。 啟用端點之後，您必須重新啟動 AD FS 服務。 這必須手動完成。 如果您預期會在外部使用 [更新密碼] 網頁，且使用 Web 應用程式 Proxy 時，您必須在相同的選項下啟用它（在 proxy 上啟用）。 接著，您可以 `https://<fqdn>/adfs/portal/updatepassword/` 在已加入工作場所的裝置上流覽至，您應該會看到 [更新密碼] 頁面。
+若要啟用密碼更新頁面，請移至 [端點] 下的 [AD FS 管理]。 更新密碼的端點位於 [其他] 底部 - /adfs/portal/updatepassword/。 啟用端點之後，您必須重新啟動 AD FS 服務。 這必須手動完成。 如果您預期會在外部使用 [更新密碼] 網頁，且使用 Web 應用程式 Proxy 時，您必須在 [proxy) 上的 [ (啟用] 的相同選項上啟用它。 接著，您可以 `https://<fqdn>/adfs/portal/updatepassword/` 在已加入工作場所的裝置上流覽至，您應該會看到 [更新密碼] 頁面。
 
 ![update](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom5.png)
 
@@ -33,6 +31,6 @@ ms.locfileid: "87519717"
 Set-AdfsGlobalWebContent -UpdatePasswordPageDescriptionText "This is the Contoso Update Password page."
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 [AD FS 使用者登入自訂](AD-FS-user-sign-in-customization.md)

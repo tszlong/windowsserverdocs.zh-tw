@@ -1,19 +1,17 @@
 ---
 title: 儲存空間直接存取疑難排解
 description: 瞭解如何針對您的儲存空間直接存取部署進行疑難排解。
-ms.prod: windows-server
 ms.author: ''
-ms.technology: storage-spaces
 ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ca3a1ec8462f96c1f6a018d1148b7824cdf8cc20
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 719a44a6c442f64b83a804c9ca20eb6ceaa791e9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769466"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954605"
 ---
 # <a name="troubleshoot-storage-spaces-direct"></a>疑難排解儲存空間直接存取
 
@@ -37,10 +35,10 @@ ms.locfileid: "87769466"
 
 |FriendlyName|ResiliencySettingName| OperationalStatus| HealthStatus| IsManualAttach|大小| PSComputerName|
 |------------|---------------------| -----------------| ------------| --------------|-----| --------------|
-|Disk4| 鏡像| 確定|  Healthy| 是|  10 TB|  節點-01. conto .。。|
-|Disk3         |鏡像                 |確定                          |Healthy       |是            |10 TB | 節點-01. conto .。。|
-|Disk2         |鏡像                 |無冗余               |Unhealthy     |是            |10 TB | 節點-01. conto .。。|
-|Disk1         |鏡像                 |{沒有冗余，InService}  |Unhealthy     |是            |10 TB | 節點-01. conto .。。|
+|Disk4| 鏡像| 確定|  Healthy| True|  10 TB|  節點-01. conto .。。|
+|Disk3         |鏡像                 |確定                          |Healthy       |True            |10 TB | 節點-01. conto .。。|
+|Disk2         |鏡像                 |無冗余               |Unhealthy     |True            |10 TB | 節點-01. conto .。。|
+|Disk1         |鏡像                 |{沒有冗余，InService}  |Unhealthy     |True            |10 TB | 節點-01. conto .。。|
 
 此外，在嘗試讓虛擬磁片上線之後，下列資訊會記錄在叢集記錄檔中 (DiskRecoveryAction) 。
 
@@ -100,10 +98,10 @@ ms.locfileid: "87769466"
 
 |FriendlyName|  ResiliencySettingName|  OperationalStatus|   HealthStatus|  IsManualAttach|  大小|   PSComputerName|
 |-|-|-|-|-|-|-|
-|Disk4|         鏡像|                 確定|                  Healthy|       是|            10 TB|  節點-01. conto .。。|
-|Disk3|         鏡像|                 確定|                  Healthy|       是|            10 TB|  節點-01. conto .。。|
-|Disk2|         鏡像|                 已卸離|            Unknown|       是|            10 TB|  節點-01. conto .。。|
-|Disk1|         鏡像|                 已卸離|            Unknown|       是|            10 TB|  節點-01. conto .。。|
+|Disk4|         鏡像|                 確定|                  Healthy|       True|            10 TB|  節點-01. conto .。。|
+|Disk3|         鏡像|                 確定|                  Healthy|       True|            10 TB|  節點-01. conto .。。|
+|Disk2|         鏡像|                 已卸離|            Unknown|       True|            10 TB|  節點-01. conto .。。|
+|Disk1|         鏡像|                 已卸離|            Unknown|       True|            10 TB|  節點-01. conto .。。|
 
 
 此外，節點上可能會記錄下列事件：
@@ -400,10 +398,10 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
 |               uniqueid               | deviceid | MediaType | BusType |               serialnumber               |      大小      | canpool | friendlyname | OperationalStatus |
 |--------------------------------------|----------|-----------|---------|------------------------------------------|----------------|---------|--------------|-------------------|
 |           5000CCA251D12E30           |    0     |    HDD    |   SAS   |                 7PKR197G                 | 10000831348736 |  否  |     HGST     |  HUH721010AL4200  |
-| eui. 0100000001000000E4D25C000014E214 |    4     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214。 | 1600321314816  |  是   |    迅馳     |   SSDPE2KE016T7   |
-| eui. 0100000001000000E4D25C000014E214 |    5     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214。 | 1600321314816  |  是   |    迅馳     |   SSDPE2KE016T7   |
-| eui. 0100000001000000E4D25C0000EEE214 |    6     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214。 | 1600321314816  |  是   |    迅馳     |   SSDPE2KE016T7   |
-| eui. 0100000001000000E4D25C0000EEE214 |    7     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214。 | 1600321314816  |  是   |    迅馳     |   SSDPE2KE016T7   |
+| eui. 0100000001000000E4D25C000014E214 |    4     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214。 | 1600321314816  |  True   |    迅馳     |   SSDPE2KE016T7   |
+| eui. 0100000001000000E4D25C000014E214 |    5     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214。 | 1600321314816  |  True   |    迅馳     |   SSDPE2KE016T7   |
+| eui. 0100000001000000E4D25C0000EEE214 |    6     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214。 | 1600321314816  |  True   |    迅馳     |   SSDPE2KE016T7   |
+| eui. 0100000001000000E4D25C0000EEE214 |    7     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214。 | 1600321314816  |  True   |    迅馳     |   SSDPE2KE016T7   |
 
 若要修正此問題，請將 Intel 磁片磁碟機上的固件更新為最新版本。  已知從2018年5月 QDV101B1 的固件版本可解決此問題。
 

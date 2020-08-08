@@ -2,18 +2,16 @@
 title: 設定電子郵件通知
 description: 本文說明如何設定電子郵件通知
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: b80aef85d6f4a1d6bd8c05b56d7c1a12b456d1ed
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 71a9f75d84aafcd852ae71494d133dda91e848f1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474185"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954685"
 ---
 # <a name="configure-e-mail-notifications"></a>設定電子郵件通知
 
@@ -37,9 +35,9 @@ ms.locfileid: "85474185"
 
 5. 若要測試您的設定，請按一下 **\[傳送測試電子郵件\]**。
 
-6. 按一下 [確定]****。
+6. 按一下 [確定]  。
 
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [設定檔案伺服器資源管理員選項](setting-file-server-resource-manager-options.md)

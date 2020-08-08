@@ -2,23 +2,22 @@
 title: 磁片區的效能歷程記錄
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 02/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b12c4e2c23601d6948d4bd2c432cb2c63c605ae
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 367866739f18e426ad7c61dba3dac60b12692bbe
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955160"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954645"
 ---
 # <a name="performance-history-for-volumes"></a>磁片區的效能歷程記錄
 
 > 適用於：Windows Server 2019
 
-[儲存空間直接存取效能歷程記錄](performance-history.md)的子主題詳細說明為磁片區收集的效能歷程記錄。 效能歷程記錄適用于叢集中的每個叢集共用磁碟區（CSV）。 不過，它不適用於 OS 開機磁碟區或其他任何非 CSV 存放裝置。
+[儲存空間直接存取效能歷程記錄](performance-history.md)的子主題詳細說明為磁片區收集的效能歷程記錄。 效能歷程記錄適用于叢集中的每個叢集共用磁碟區 (CSV) 。 不過，它不適用於 OS 開機磁碟區或其他任何非 CSV 存放裝置。
 
    > [!NOTE]
    > 可能需要幾分鐘的時間，才能開始收集新建立或重新命名的磁片區。
@@ -94,6 +93,6 @@ ms.locfileid: "86955160"
 Get-Volume -FriendlyName <FriendlyName> | Get-ClusterPerf
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [儲存空間直接存取的效能歷程記錄](performance-history.md)
