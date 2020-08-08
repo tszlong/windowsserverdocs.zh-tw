@@ -2,18 +2,16 @@
 title: 編輯檔案檢測範本內容
 description: 本文說明如何編輯檔案檢測範本內容
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: cb0ab9105aeded58b2ef3de9e5eb86fe823d6b5b
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 86a6a6233c1a2092a5a54b807215c12b1f0a1bae
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473525"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942076"
 ---
 # <a name="edit-file-screen-template-properties"></a>編輯檔案檢測範本內容
 
@@ -42,9 +40,9 @@ ms.locfileid: "85473525"
     -   如果您想要修改所有使用原始範本所建立的現有檔案檢測，請按一下 **\[將範本套用到所有的衍生檔案檢測\]**。
     -   如果您想要保持現有的檔案檢測不變，請按一下 **\[不要將範本套用到衍生檔案檢測\]**。
 
-7.  按一下 [確定]****。
+7.  按一下 [確定]  。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [檔案檢測管理](file-screening-management.md)
 -   [-建立檔案檢測範本](create-file-screen-template.md)

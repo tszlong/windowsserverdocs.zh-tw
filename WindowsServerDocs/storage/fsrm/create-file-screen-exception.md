@@ -2,18 +2,16 @@
 title: 建立檔案檢測例外
 description: 本文說明如何建立檔案檢測例外
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: c496151ed1f38cd1f2c604bd227627a586e582c6
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 9d8f0e4a8bc89312b846421c64b14518a9246aaa
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473695"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942137"
 ---
 # <a name="create-a-file-screen-exception"></a>建立檔案檢測例外
 
@@ -43,9 +41,9 @@ ms.locfileid: "85473695"
     -   如果您想要查看檔案群組包含和排除的檔案類型，請按一下 [檔案群組] 標籤，然後按一下 [ **編輯**]。
     -   若要建立新的檔案群組，按一下 **\[建立\]**。
 
-5.  按一下 [確定]****。
+5.  按一下 [確定]  。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [檔案檢測管理](file-screening-management.md)
 -   [定義檢測的檔案群組](define-file-groups-for-screening.md)

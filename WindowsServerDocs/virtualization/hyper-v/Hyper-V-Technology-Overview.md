@@ -7,12 +7,12 @@ ms.assetid: ac069fed-7bf5-4cc3-aff5-25a2766040b8
 author: kbdazure
 ms.author: kathydav
 ms.date: 11/29/2016
-ms.openlocfilehash: 5fd4c0199cea04d6697b593ad70b4f31b55afad0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2d69a16dc49c34872d3787338a1fd130aaf7241d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960761"
+ms.locfileid: "87997037"
 ---
 # <a name="hyper-v-technology-overview"></a>Hyper-v 技術總覽
 
@@ -58,11 +58,11 @@ Hyper-v 提供許多功能。 這是一項總覽，依據功能提供的內容�
 
 **安全性**安全開機和受防護的虛擬機器有助於防止惡意程式碼和其他未經授權的虛擬機器和其資料存取。
 
-如需此版本中引進之功能的摘要，請參閱[Windows Server 上的 hyper-v 的新](What-s-new-in-Hyper-V-on-Windows.md)功能。 某些功能或部分會限制可設定的數量。 如需詳細資訊，請參閱[在 Windows Server 2016 中規劃 hyper-v 擴充性](plan/Plan-for-Hyper-V-scalability-in-Windows-Server-2016.md)。
+如需此版本中引進之功能的摘要，請參閱[Windows Server 上的 hyper-v 的新](What-s-new-in-Hyper-V-on-Windows.md)功能。 某些功能或部分會限制可設定的數量。 如需詳細資訊，請參閱[在 Windows Server 2016 中規劃 hyper-v 擴充性](./plan/plan-hyper-v-scalability-in-windows-server.md)。
 
 ## <a name="how-to-get-hyper-v"></a>如何取得 Hyper-v
 
-Hyper-v 可在 Windows Server 和 Windows 中使用，做為 Windows Server x64 版本可用的伺服器角色。 如需伺服器指示，請參閱[在 Windows server 上安裝 hyper-v 角色](get-started/Install-the-Hyper-V-role-on-Windows-Server.md)。 在 Windows 上，它在某些64位版本的 Windows 中是以[功能](https://docs.microsoft.com/virtualization/hyper-v-on-windows/index)的形式提供。 它也可作為可下載的獨立伺服器產品、 [Microsoft Hyper-v 伺服器](https://www.microsoft.com/evalcenter/evaluate-hyper-v-server-2019)。
+Hyper-v 可在 Windows Server 和 Windows 中使用，做為 Windows Server x64 版本可用的伺服器角色。 如需伺服器指示，請參閱[在 Windows server 上安裝 hyper-v 角色](get-started/Install-the-Hyper-V-role-on-Windows-Server.md)。 在 Windows 上，它在某些64位版本的 Windows 中是以[功能](/virtualization/hyper-v-on-windows/index)的形式提供。 它也可作為可下載的獨立伺服器產品、 [Microsoft Hyper-v 伺服器](https://www.microsoft.com/evalcenter/evaluate-hyper-v-server-2019)。
 
 ## <a name="supported-operating-systems"></a>支援的作業系統
 
@@ -85,8 +85,8 @@ Hyper-v 具有共同運作的必要元件，讓您可以建立和執行虛擬機
 Hyper-v 也有管理和連線能力的工具。 您可以將這些安裝在 Hyper-v 角色安裝所在的同一部電腦上，以及安裝在未安裝 Hyper-v 角色的電腦上。 這些工具組括：
 
 - Hyper-V 管理員
-- [適用于 Windows PowerShell 的 hyper-v 模組](https://docs.microsoft.com/powershell/module/hyper-v/index)
-- [虛擬機器連接](https://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/hyper-v-virtual-machine-connect) \(有時稱為 VMConnect\)
+- [適用于 Windows PowerShell 的 hyper-v 模組](/powershell/module/hyper-v/index)
+- [虛擬機器連接](./learn-more/hyper-v-virtual-machine-connect.md) \(有時稱為 VMConnect\)
 - [Windows PowerShell Direct](manage/Manage-Windows-virtual-machines-with-PowerShell-Direct.md)
 
 ## <a name="related-technologies"></a>相關技術
@@ -94,9 +94,9 @@ Hyper-v 也有管理和連線能力的工具。 您可以將這些安裝在 Hype
 以下是一些通常與 Hyper-v 搭配使用的 Microsoft 技術：
 
 - [容錯移轉叢集](../../failover-clustering/whats-new-in-failover-clustering.md)
-- [遠端桌面服務](../../remote/remote-desktop-services/Host-desktops-and-apps-in-Remote-Desktop-Services.md)
-- [System Center Virtual Machine Manager](https://docs.microsoft.com/system-center/vmm/overview)
+- [遠端桌面服務](../../remote/remote-desktop-services/welcome-to-rds.md)
+- [System Center Virtual Machine Manager](/system-center/vmm/overview)
 
 各種存放裝置技術：叢集共用磁片區、SMB 3.0、儲存空間直接存取
 
-Windows 容器提供另一種虛擬化方法。 請參閱 MSDN 上的[Windows 容器](https://docs.microsoft.com/virtualization/windowscontainers/index)庫。
+Windows 容器提供另一種虛擬化方法。 請參閱 MSDN 上的[Windows 容器](/virtualization/windowscontainers/index)庫。

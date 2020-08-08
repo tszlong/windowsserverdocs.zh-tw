@@ -1,23 +1,21 @@
 ---
 title: QoS 原則的運作方式
-description: 本主題提供「服務品質」（QoS）原則的總覽，讓您可以使用群組原則來設定 Windows Server 2016 中特定應用程式和服務的網路流量頻寬優先順序。
-ms.prod: windows-server
-ms.technology: networking
+description: 本主題概述服務品質 (QoS) 原則，這可讓您使用群組原則來設定 Windows Server 2016 中特定應用程式和服務的網路流量頻寬優先順序。
 ms.topic: article
 ms.assetid: 25097cb8-b9b1-41c9-b3c7-3610a032e0d8
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 65d2635744e7d49e45d8f878be9a5e734dea9e6d
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: fe91bba99000be307ed011cb5636dc49d65c389a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315399"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942528"
 ---
 # <a name="how-qos-policy-works"></a>QoS 原則的運作方式
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
 當啟動或取得更新的使用者或電腦設定群組原則的 QoS 時，將會發生下列進程。
 
@@ -29,15 +27,15 @@ ms.locfileid: "80315399"
 
 4. QoS 偵測模組會抓取使用者或電腦的 QoS 原則，並加以儲存。
 
-當新的傳輸層端點 \(TCP 連線或 UDP 流量\) 建立時，就會發生下列進程。
+當新的傳輸層端點 \( TCP 連線或 UDP 流量 \) 建立時，會發生下列程式。
 
 1. TCP/IP 堆疊的傳輸層元件會通知 QoS 偵測模組。
 
 2. QoS 檢查模組會將傳輸層端點的參數與儲存的 QoS 原則做比較。
 
-3. 如果找到相符的結果，QoS 偵測模組會連線到 Pacer 來建立流程，這是包含 DSCP 值的資料結構，以及相符 QoS 原則的流量節流設定。 如果有多個 QoS 原則符合傳輸層端點的參數，則會使用最特定的 QoS 原則。
+3. 如果找到相符的資料，QoS 偵測模組會聯絡 Pacer.sys 以建立流程，這是一個包含 DSCP 值和符合 QoS 原則之流量節流設定的資料結構。 如果有多個 QoS 原則符合傳輸層端點的參數，則會使用最特定的 QoS 原則。
 
-4. Pacer 會儲存流程，並傳回對應至 QoS 偵測模組流程的流程號碼。
+4. Pacer.sys 儲存流程，並傳回對應至 QoS 偵測模組流程的流程號碼。
 
 5. QoS 偵測模組會將流量號碼傳回傳輸層。
 
@@ -47,19 +45,19 @@ ms.locfileid: "80315399"
 
 1. 傳輸層在內部以流量號碼標示封包。
 
-2. 網路層會針對對應至封包之流量編號的 DSCP 值，查詢 Pacer. sys。
+2. 網路層查詢 Pacer.sys，以取得對應至封包之流量號碼的 DSCP 值。
 
-3. Pacer 會將 DSCP 值傳回網路層。
+3. Pacer.sys 會將 DSCP 值傳回網路層。
 
-4. 網路層會將 [IPv4 TOS] 欄位或 [IPv6 流量類別] 欄位變更為 [Pacer] 所指定的 DSCP 值，而針對 IPv4 封包，則會計算最終的 IPv4 標頭總和檢查碼。
+4. 網路層會將 [IPv4 TOS] 欄位或 [IPv6 流量類別] 欄位變更為 Pacer.sys 所指定的 DSCP 值，而針對 IPv4 封包，則會計算最終的 IPv4 標頭總和檢查碼。
 
 5. 網路層將封包交給框架層。
 
-6. 因為封包已標記為流量號碼，所以框架層會透過 NDIS 6.x 將封包交給 Pacer. x。
+6. 因為封包已標記為流量號碼，所以框架層會將封包交給透過 NDIS 6.x Pacer.sys。
 
-7. Pacer 會使用封包的流量號碼來判斷封包是否需要進行節流，如果是，則會排程封包以供傳送。
+7. Pacer.sys 使用封包的流量號碼來判斷封包是否需要進行節流處理，如果是，則會排程封包以進行傳送。
 
-8. Pacer 會立即 \(如果沒有流量節流\) 或排定的 \(如果有流量節流\) 至 NDIS 6.x，以透過適當的網路介面卡進行傳輸。
+8. 如果沒有流量節流，請 Pacer.sys 直接將封包， \( \) 或在流量節流處理至 NDIS 6.x 以透過 \( \) 適當的網路介面卡進行傳輸時，立即取得封包。
 
 以原則為依據的 QoS 的這些程式會提供下列優點。
 
@@ -73,4 +71,4 @@ ms.locfileid: "80315399"
 
 如需本指南中的下一個主題，請參閱[QoS 原則架構](qos-policy-architecture.md)。
 
-如需本指南的第一個主題，請參閱[服務品質（QoS）原則](qos-policy-top.md)。
+如需本指南的第一個主題，請參閱[服務品質 (QoS) 原則](qos-policy-top.md)。

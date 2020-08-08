@@ -5,15 +5,13 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
 ms.assetid: 08724d45-9be4-4c56-a5f1-2cf40864e136
-ms.technology: identity-adfs
-ms.openlocfilehash: c4c775ac330c1a5f81bf97f1f6aa29204efbf75c
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 47a03b43d8ac1a52453741974d4243f8aafc391c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519727"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949782"
 ---
 # <a name="multi-factor-authentication-and-external-authentication-providers-customization"></a>多重要素驗證和外部驗證提供者自訂
 
@@ -47,5 +45,5 @@ Export-AdfsWebTheme -Name default -DirectoryPath C:\theme
 
 如需其他資訊，請參閱[解決方案指南：使用多 \- 因素管理風險存取控制](./manage-risk-with-conditional-access-control.md)和[解決方案指南：透過其他多 \- 因素驗證管理機密應用程式的風險](https://tnstage.redmond.corp.microsoft.com/library/dn280949.aspx)。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 [AD FS 使用者登入自訂](AD-FS-user-sign-in-customization.md)

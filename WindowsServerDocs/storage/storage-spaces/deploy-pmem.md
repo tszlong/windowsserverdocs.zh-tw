@@ -1,29 +1,27 @@
 ---
 title: 了解和部署持續性記憶體
 description: 有關什麼是持續性記憶體的詳細資訊，以及如何在 Windows Server 2019 中使用儲存空間直接存取來設定它。
-ms.prod: windows-server
 ms.author: adagashe
-ms.technology: storage-spaces
 ms.topic: article
 author: adagashe
 ms.date: 1/27/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f5f88ac2ec728e176735ad58d9d67112583c527
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 512b53be7af89fe9e0fd017af14425264062ed29
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469643"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87960901"
 ---
 # <a name="understand-and-deploy-persistent-memory"></a>了解和部署持續性記憶體
 
 > 適用於：Windows Server 2019
 
-持續性記憶體（或 PMem）是一種新型的記憶體技術，可提供經濟實惠的大型容量和持續性的獨特組合。 本文提供有關 PMem 的背景，以及使用儲存空間直接存取在 Windows Server 2019 中部署它的步驟。
+持續性記憶體 (或 PMem) 是一種新的記憶體技術，可提供實惠的大型容量和持續性的獨特組合。 本文提供有關 PMem 的背景，以及使用儲存空間直接存取在 Windows Server 2019 中部署它的步驟。
 
 ## <a name="background"></a>背景
 
-「PMem」是一種非動態 RAM （NVDIMM-N），可透過電源週期保留其內容。 即使在發生非預期的電源中斷、使用者起始關機、系統損毀等情況下，系統電源中斷，仍然會保留記憶體內容。 此唯一特性表示您也可以使用 PMem 作為儲存體。 這就是您可能會聽到人們將 PMem 稱為「儲存類別記憶體」的原因。
+「PMem」是一種非動態的 RAM， (NVDIMM) 透過電源週期保留其內容。 即使在發生非預期的電源中斷、使用者起始關機、系統損毀等情況下，系統電源中斷，仍然會保留記憶體內容。 此唯一特性表示您也可以使用 PMem 作為儲存體。 這就是您可能會聽到人們將 PMem 稱為「儲存類別記憶體」的原因。
 
 若要查看其中一些優點，讓我們看看 Microsoft Ignite 2018 的下列示範。
 
@@ -35,13 +33,13 @@ ms.locfileid: "85469643"
 
 ![13.7 m IOPS 記錄螢幕擷取畫面](media/deploy-pmem/iops-record.png)
 
-如果您仔細觀賞影片，您會發現更多的 jaw 捨棄是延遲。 即使在超過 13.7 M IOPS，Windows 中的檔案系統仍會回報持續低於40μs 的延遲！ （這是毫秒的符號，一秒的百萬分之一秒）。這種速度比平常極光榮公告的一般全 flash 廠商快很多。
+如果您仔細觀賞影片，您會發現更多的 jaw 捨棄是延遲。 即使在超過 13.7 M IOPS，Windows 中的檔案系統仍會回報持續低於40μs 的延遲！  (這是毫秒的百萬分之一秒，一秒的一次。 ) 此速度比平常極光榮公告的一般所有 flash 廠商更快。
 
 同時，Windows Server 2019 和 Intel Optane DC 持續性記憶體中的儲存空間直接存取會 &reg; &trade; 提供突破性的效能。 這項領先業界的 13.7 M IOPS 基準測試，加上可預測且非常低的延遲，而不是我們先前領先的 6.7 M IOPS 基準測試的兩倍。 更多，這次我們只需要12個伺服器節點， &mdash; 少於兩年前的25%。
 
 ![IOPS 增益](media/deploy-pmem/iops-gains.png)
 
-測試硬體是12部伺服器的叢集，已設定為使用三向鏡像和分隔的 ReFS 磁片區、 **12** x Intel &reg; S2600WFT、 **384 GiB**記憶體、2 x 28-核心 "CascadeLake"、 **1.5 TB** Intel &reg; Optane &trade; DC 持續性記憶體作為快取、 **32 TB** NVMe （4 x 8 TB Intel &reg; DC P4510）作為容量， **2** x Mellanox ConnectX-4 25 Gbps。
+測試硬體是12部伺服器的叢集，已設定為使用三向鏡像和分隔的 ReFS 磁片區、 **12** x Intel &reg; S2600WFT、 **384 GiB**記憶體、2 x 28-核心 "CascadeLake"、 **1.5 TB** intel &reg; Optane &trade; DC 持續性記憶體作為快取、 **32 TB** NVMe (4 x 8 TB Intel &reg; DC P4510) 為容量， **2** x Mellanox ConnectX-4 25 Gbps。
 
 下表顯示完整的效能數位。
 
@@ -62,7 +60,7 @@ ms.locfileid: "85469643"
 | **Intel Optane &trade;** 記憶體模式中的 DC 持續性記憶體 | 支援            | 支援                |
 
 > [!NOTE]
-> Intel Optane 支援*記憶體*（volatile）和*應用程式直接*（持續）模式。
+> Intel Optane 同時支援 (volatile) 和*應用程式直接* (持續) 模式中的*記憶體*。
 
 > [!NOTE]
 > 當您重新開機的系統 &reg; &trade; 在應用程式直接模式中有多個 Intel Optane PMem 模組，分割成多個命名空間時，您可能會失去部分或所有相關邏輯儲存體磁片的存取權。 此問題發生在版本1903之前的 Windows Server 2019 版本上。
@@ -79,7 +77,7 @@ ms.locfileid: "85469643"
 
 ### <a name="understanding-interleaved-sets"></a>瞭解交錯集合
 
-回想一下，NVDIMM-N 位於標準 DIMM （記憶體）插槽中，將資料放在較接近處理器的位置。 此設定可減少延遲並改善提取效能。 若要進一步增加輸送量，有兩個或多個 NVDIMMs 建立 n 向交錯式集合以進行等量讀取/寫入作業。 最常見的設定是雙向或四向交錯。 交錯式集合也會讓多個持續性記憶體裝置顯示為 Windows Server 的單一邏輯磁片。 您可以使用 Windows PowerShell **PmemDisk** Cmdlet 來檢查這類邏輯磁片的設定，如下所示：
+回想一下，NVDIMM-N 位於標準 DIMM (記憶體) 插槽中，將資料放在較接近處理器的位置。 此設定可減少延遲並改善提取效能。 若要進一步增加輸送量，有兩個或多個 NVDIMMs 建立 n 向交錯式集合以進行等量讀取/寫入作業。 最常見的設定是雙向或四向交錯。 交錯式集合也會讓多個持續性記憶體裝置顯示為 Windows Server 的單一邏輯磁片。 您可以使用 Windows PowerShell **PmemDisk** Cmdlet 來檢查這類邏輯磁片的設定，如下所示：
 
 ```PowerShell
 Get-PmemDisk
@@ -160,7 +158,7 @@ Windows Server 2019 上的儲存空間直接存取支援使用持續性記憶體
 
 有兩種方法可存取持續性記憶體。 其中包括：
 
-1. **直接存取（DAX）**，其運作方式就像記憶體，以取得最低延遲。 應用程式會直接修改持續性記憶體，略過堆疊。 請注意，您只能搭配使用 DAX 與 NTFS。
+1. **直接存取 (DAX) **，其運作方式就像記憶體，以取得最低延遲。 應用程式會直接修改持續性記憶體，略過堆疊。 請注意，您只能搭配使用 DAX 與 NTFS。
 1. **封鎖存取**，其運作方式類似于應用程式相容性的儲存體。 在此組態中，資料會流經堆疊。 您可以搭配使用此設定與 NTFS 和 ReFS。
 
 下圖顯示 DAX 設定的範例：
@@ -268,11 +266,11 @@ DeviceId DeviceType           HealthStatus OperationalStatus PhysicalLocation Fi
 20       Intel INVDIMM device Unhealthy    {HardwareError}   CPU1_DIMM_C1     102005310        126 GB                 0 GB
 ```
 
-此 Cmdlet 會顯示哪一個持續性記憶體裝置狀況不良。 狀況不良的裝置（**DeviceId** 20）符合上一個範例中的案例。 BIOS 中的**PhysicalLocation**有助於識別哪一個持續性記憶體裝置處於錯誤狀態。
+此 Cmdlet 會顯示哪一個持續性記憶體裝置狀況不良。 狀況不良的裝置 (**DeviceId** 20) 符合前一個範例中的案例。 BIOS 中的**PhysicalLocation**有助於識別哪一個持續性記憶體裝置處於錯誤狀態。
 
 ## <a name="replacing-persistent-memory"></a>取代持續性記憶體
 
-本文說明如何查看持續性記憶體的健全狀況狀態。 如果您必須更換失敗的模組，您必須重新布建 PMem 磁片（請參閱先前所述的步驟）。
+本文說明如何查看持續性記憶體的健全狀況狀態。 如果您必須更換失敗的模組，您必須重新布建 PMem 磁片 (請參閱我們先前所述) 的步驟。
 
 當您進行疑難排解時，您可能必須使用**PmemDisk**。 此 Cmdlet 會移除特定的持續性記憶體磁片。 我們可以藉由執行下列 Cmdlet 來移除所有目前的 PMem 磁片：
 
@@ -309,7 +307,7 @@ Initializing the physical persistent memory device. This may take a few moments.
 > [!IMPORTANT]
 > **PmemPhysicalDevice**會導致持續性記憶體中的資料遺失。 使用它做為修正持續性記憶體相關問題的最後手段。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [儲存空間直接存取總覽](storage-spaces-direct-overview.md)
 - [Windows 中的存放裝置類別記憶體 (NVDIMM-N) 健全狀況管理](storage-class-memory-health.md)

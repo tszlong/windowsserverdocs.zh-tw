@@ -1,25 +1,23 @@
 ---
 title: Windows Admin Center SDK 案例研究-聯想
 description: Windows Admin Center SDK 案例研究-聯想
-ms.technology: extend
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 1/7/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: a51b4bb5f6dc7dcd002b8e7a8998ce731fa374ed
-ms.sourcegitcommit: fe89b8001ad664b3618708b013490de93501db05
+ms.openlocfilehash: 74afb81918512b45b39e3ba85649cd3edac1d3d7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84942321"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949712"
 ---
 # <a name="lenovo-xclarity-integrator-extension"></a>聯想 XClarity 整合器擴充功能
 
 ## <a name="integrated-hardware-management-everywhere"></a>隨處整合硬體管理！
 
-Windows[系統管理中心的聯想 XClarity](https://www.lenovo.com/us/en/data-center/software/systems-management/XClarity-Integrator/p/WMD00000370)整合器擴充功能，可讓系統管理員直接從 Windows 管理中心管理聯想基礎結構。 XClarity 整合器擴充功能包含獨立的解決方案延伸模組，也會在單一、統一的 UI 中擴充現有的伺服器管理員、容錯移轉叢集管理員和超交集的叢集管理員解決方案，以啟用簡單的伺服器管理。 
+Windows[系統管理中心的聯想 XClarity](https://www.lenovo.com/us/en/data-center/software/systems-management/XClarity-Integrator/p/WMD00000370)整合器擴充功能，可讓系統管理員直接從 Windows 管理中心管理聯想基礎結構。 XClarity 整合器擴充功能包含獨立的解決方案延伸模組，也會在單一、統一的 UI 中擴充現有的伺服器管理員、容錯移轉叢集管理員和超交集的叢集管理員解決方案，以啟用簡單的伺服器管理。
 
 XClarity 整合器延伸模組中包含的解決方案延伸模組，可讓您一次連線到聯想 XClarity 系統管理員、聯想機架或塔式伺服器，或整個底座中的所有伺服器。 新增伺服器之後，您就可以看到所有已加入節點的整體健全狀況狀態。
 
@@ -38,7 +36,7 @@ XClarity 整合器延伸模組中包含的解決方案延伸模組，可讓您�
 ![聯想延伸模組 ](../../media/extend-case-study-lenovo/lenovo-4.png)
  ![ 聯想延伸模組](../../media/extend-case-study-lenovo/lenovo-5.png)
 
-Windows 伺服器和叢集的解決方案延伸模組和工具擴充提供了輪流（叢集感知）伺服器更新功能。 這有助於防止任何工作負載在伺服器更新期間中斷。 目前，延伸模組支援任何聯想伺服器的個別固件更新和合規性政策固件更新。 它們也支援聯想 ThinkAgile MX HCI 叢集伺服器的最佳規格固件/驅動程式更新。
+適用于 Windows 伺服器和叢集的解決方案延伸模組和工具擴充功能提供滾動 (叢集感知) 伺服器更新函式。 這有助於防止任何工作負載在伺服器更新期間中斷。 目前，延伸模組支援任何聯想伺服器的個別固件更新和合規性政策固件更新。 它們也支援聯想 ThinkAgile MX HCI 叢集伺服器的最佳規格固件/驅動程式更新。
 
 ![聯想延伸模組](../../media/extend-case-study-lenovo/lenovo-6-fwupdate.png)
 

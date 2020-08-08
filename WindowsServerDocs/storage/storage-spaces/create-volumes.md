@@ -1,19 +1,17 @@
 ---
 title: 建立儲存空間直接存取中的磁碟區
 description: 如何使用 Windows 管理中心和 PowerShell 在儲存空間直接存取中建立磁片區。
-ms.prod: windows-server
 ms.reviewer: cosmosdarwin
 author: cosmosdarwin
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.date: 02/25/2020
-ms.openlocfilehash: 40750acb260335e858a7763c950dfc4ad2cd7979
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 417deaf61b111b6ba54939505c65e8e0f854e604
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473825"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87960941"
 ---
 # <a name="creating-volumes-in-storage-spaces-direct"></a>建立儲存空間直接存取中的磁碟區
 
@@ -31,7 +29,7 @@ ms.locfileid: "85473825"
 1. 在 Windows 系統管理中心，連接到儲存空間直接存取叢集，然後從 [**工具**] 窗格中選取 [**磁片**區]。
 2. 在 [磁片區] 頁面上，選取 [**清查**] 索引**標籤**，然後選取 [建立磁片區]。
 3. 在 [**建立磁片**區] 窗格中，輸入磁片區的名稱，並將 [**復原**] 保留為 [**三向鏡像**]。
-4. 在 [ **HDD 大小**] 中，指定磁片區的大小。 例如，5 TB （tb）。
+4. 在 [ **HDD 大小**] 中，指定磁片區的大小。 例如，5 TB (tb) 。
 5. 選取 [建立]。
 
 視大小而定，建立磁片區可能需要幾分鐘的時間。 右上方的通知可讓您知道何時建立磁片區。 新的磁片區會出現在清查清單中。
@@ -151,7 +149,7 @@ New-Volume -FriendlyName "Volume4" -FileSystem CSVFS_ReFS -StoragePoolFriendlyNa
 
 大功告成！ 如有需要，可重複步驟來建立一個以上的磁碟區。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [儲存空間直接存取總覽](storage-spaces-direct-overview.md)
 - [規劃儲存空間直接存取中的磁碟區](plan-volumes.md)

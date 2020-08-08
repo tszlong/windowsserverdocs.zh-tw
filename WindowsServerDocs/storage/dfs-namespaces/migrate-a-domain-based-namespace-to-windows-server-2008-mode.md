@@ -2,22 +2,20 @@
 title: 將網域型命名空間移轉到 Windows Server 2008 模式
 description: 本文說明如何將網域型命名空間移轉到 Windows Server 2008 模式
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 3aa7743773a8a6e9ed22c0f626c2c6a0dbafce56
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a7326584e2889fc0fd451b56ca4af065040f408d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475465"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942272"
 ---
 # <a name="migrate-a-domain-based-namespace-to-windows-server-2008-mode"></a>將網域型命名空間移轉到 Windows Server 2008 模式
 
-> 適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用于： Windows Server 2019、Windows Server (半年通道) 、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 網域型命名空間的 Windows Server 2008 模式包含支援存取型列舉和提高延展性。
 
@@ -29,7 +27,7 @@ ms.locfileid: "85475465"
      ```
      Dfsutil root export \\domain\namespace path\filename.xml
      ```
-2.  記下 \\ \\ *server* \\ 每個命名空間伺服器的路徑（伺服器*共用*）。 您必須手動新增命名空間伺服器至重新建立的命名空間，因為 Dfsutil 無法匯入命名空間伺服器。
+2.  記下 \\ \\ *server* \\ 每個命名空間伺服器 ( server *share* ) 的路徑。 您必須手動新增命名空間伺服器至重新建立的命名空間，因為 Dfsutil 無法匯入命名空間伺服器。
 3.  在 DFS 管理中，在命名空間上按一下滑鼠右鍵，然後按一下 **\[刪除\]**，或在命令提示字元中輸入下列命令， <br /> 其中 \\ \\ *domain* \\ *namespace*是適當網域和命名空間的名稱：
      ```
      Dfsutil root remove \\domain\namespace
@@ -53,6 +51,6 @@ ms.locfileid: "85475465"
     > [!NOTE]
     > 您可以在匯入命名空間之前先新增命名空間伺服器，但這樣做會導致命名空間伺服器在新增命名空間伺服器之後，以遞增方式下載命名空間的中繼資料，而非立即下載整個命名空間。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 -   [部署 DFS 命名空間](deploying-dfs-namespaces.md)
 -   [選擇命名空間類型](choose-a-namespace-type.md)

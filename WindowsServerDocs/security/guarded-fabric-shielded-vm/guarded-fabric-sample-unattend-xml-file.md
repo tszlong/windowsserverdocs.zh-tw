@@ -1,25 +1,23 @@
 ---
 title: 建立 OS 特殊化回應檔案
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 299aa38e-28d2-4cbe-af16-5b8c533eba1f
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 526ded03c877613766b8a0b762f1db1a693d2019
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7ae16c6a923b8d9bb9cd0c8b345be0fc1655c9ca
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474995"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971305"
 ---
 # <a name="create-os-specialization-answer-file"></a>建立 OS 特殊化回應檔案
 
->適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016
+>適用于： Windows Server 2019、Windows Server (半年通道) 、Windows Server 2016
 
-在準備部署受防護的 Vm 時，您可能需要建立作業系統特製化回應檔案。 在 Windows 上，這通常稱為「unattend.xml」檔案。 ShieldingDataAnswerFile 的 Windows PowerShell 函**式**可協助您執行此動作。 然後，當您使用 System Center Virtual Machine Manager （或任何其他網狀架構控制器）從範本建立受防護的 Vm 時，就可以使用回應檔案。
+在準備部署受防護的 Vm 時，您可能需要建立作業系統特製化回應檔案。 在 Windows 上，這通常稱為「unattend.xml」檔案。 ShieldingDataAnswerFile 的 Windows PowerShell 函**式**可協助您執行此動作。 當您從範本建立受防護的 Vm 時，您可以使用 [System Center Virtual Machine Manager (] 或任何其他網狀架構控制器) ，來使用回應檔案。
 
 如需受防護 Vm 之自動安裝檔案的一般指導方針，請參閱[建立回應](guarded-fabric-tenant-creates-shielding-data.md#create-an-answer-file)檔案。
 
@@ -128,7 +126,7 @@ $rootPassword = Read-Host -Prompt "Root password" -AsSecureString
 New-ShieldingDataAnswerFile -Path '.\ShieldedVMAnswerFile.xml' -RootPassword $rootPassword -RootSshKey '~\.ssh\id_rsa.pub'
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [部署受防護的 VM](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [受防護網狀架構與受防護的 VM](guarded-fabric-and-shielded-vms-top-node.md)

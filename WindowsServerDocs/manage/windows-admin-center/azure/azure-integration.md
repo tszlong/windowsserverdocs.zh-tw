@@ -6,18 +6,18 @@ author: haley-rowland
 ms.author: harowl
 ms.date: 09/19/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b56960a531c8d7d8cf42cb0462d2fe4d422dfba7
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c0a19e9bf00667e142c3aa6585c26b69c63e2aa7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970895"
+ms.locfileid: "87997351"
 ---
 # <a name="configuring-azure-integration"></a>正在設定 Azure 整合
 
 >適用於：Windows Admin Center、Windows Admin Center 預覽版
 
-Windows 系統管理中心支援數個與 Azure 服務整合的選用功能。 [瞭解 Windows 管理中心提供的 Azure 整合選項。](../plan/azure-integration-options.md)
+Windows 系統管理中心支援數個與 Azure 服務整合的選用功能。 [瞭解 Windows 管理中心提供的 Azure 整合選項。](./index.md)
 
 若要允許 Windows 管理中心閘道與 Azure 通訊，以利用 Azure Active Directory 驗證來進行閘道存取，或代表您建立 Azure 資源 (例如，若要使用 Azure Site Recovery) 來保護在 Windows 管理中心內管理的 Vm，您必須先向 Azure 註冊您的 Windows 管理中心閘道。 您只需要針對您的 Windows 管理中心閘道執行此動作-當您將閘道更新為較新版本時，會保留此設定。
 

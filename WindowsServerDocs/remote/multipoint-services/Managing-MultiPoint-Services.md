@@ -7,12 +7,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 2376ff176d9031cae69629e1181febe25a5ebd3a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 5ed2895bf582483e92d378b4df5d767ff6542a21
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955485"
+ms.locfileid: "87997313"
 ---
 # <a name="managing-multipoint-services"></a>管理 MultiPoint 服務
 MultiPoint &trade; 服務可讓多個使用者，各自擁有各自獨立的 Windows 體驗，同時共用一部電腦。 使用者站台是由監視器、鍵盤和滑鼠組成，可透過 USB、視訊纜線或網路直接連接到主機電腦。
@@ -32,4 +32,4 @@ MultiPoint &trade; 服務可讓多個使用者，各自擁有各自獨立的 Win
 
 ## <a name="additional-references"></a>其他參考資料
 
-- [MultiPoint 服務](https://docs.microsoft.com/windows-server/remote/multipoint-services/introducing-multipoint-services)
+- [MultiPoint 服務](./introducing-multipoint-services.md)

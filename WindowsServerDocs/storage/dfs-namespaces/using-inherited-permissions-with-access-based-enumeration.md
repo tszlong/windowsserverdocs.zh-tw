@@ -2,22 +2,20 @@
 title: 使用繼承的權限搭配存取型列舉
 description: 本文說明如何使用繼承的權限搭配存取型列舉
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 112ec4363177ac6dd560493843c8937bdfbac4de
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 96b6280b8f69325a9f5c819430dd7a5249247302
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475145"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971205"
 ---
 # <a name="using-inherited-permissions-with-access-based-enumeration"></a>使用繼承的權限搭配存取型列舉
 
-> 適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用于： Windows Server 2019、Windows Server (半年通道) 、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 根據預設，用於 DFS 資料夾的權限是繼承自命名空間伺服器的本機檔案系統。 許可權繼承自系統磁片磁碟機的根目錄，並將讀取權限授與網域 \\ 使用者群組。 因此，就算啟用存取型列舉，命名空間中的所有資料夾仍維持顯示給所有網域使用者。
 
@@ -52,12 +50,12 @@ ms.locfileid: "85475145"
 
 1.  在主控台的 **\[命名空間\]** 節點下方，找到您要控制其可見性的含目標資料夾，以滑鼠右鍵按一下該資料夾，然後按一下 **\[屬性\]**。
 
-2.  按一下 [**進階**] 索引標籤。
+2.  按一下 [進階] 索引標籤。
 
 3.  按一下 **\[使用從本機檔案系統繼承的權限\]**，然後按一下 **\[確認使用繼承的權限\]** 對話方塊中的 **\[確定\]**。 這樣會移除此資料夾上所有明確設定的權限、還原命名空間伺服器的本機檔案系統的繼承 NTFS 權限。
 
 4.  若要變更 DFS 命名空間中資料夾或命名空間根目錄的繼承權限，請使用 Windows 檔案總管或 **ICacls** 命令。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [建立 DFS 命名空間](create-a-dfs-namespace.md)

@@ -2,22 +2,20 @@
 title: 設定目標優先順序以覆寫轉介順序
 description: 本文說明如何設定目標優先順序以覆寫轉介順序
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 77fe5b82b73a0f37ba81dda210f15d6017788822
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 04a295b8f6249521c809770af2c85fdce5dd54b4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966820"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971215"
 ---
 # <a name="set-target-priority-to-override-referral-ordering"></a>設定目標優先順序以覆寫轉介順序
 
-> 適用于： Windows Server 2019、Windows Server （半年通道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用于： Windows Server 2019、Windows Server (半年通道) 、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 轉介是排序的目標清單，當使用者存取命名空間根目錄或命名空間中包含目標的資料夾時，用戶端電腦會從網域控制站或命名空間伺服器收到轉介。 轉介中的每一個目標皆根據命名空間根目錄或資料夾的排序方法來排序。
 
@@ -55,7 +53,7 @@ ms.locfileid: "86966820"
 > [!NOTE]
 > 若要使用 Windows PowerShell 來設定目標優先順序，請使用 [Set-DfsnRootTarget](/powershell/module/dfsr/update-dfsrconfigurationfromad?view=win10-ps) 和 [Set-DfsnFolderTarget](/powershell/module/dfsr/update-dfsrconfigurationfromad?view=win10-ps) Cmdlet 與 **ReferralPriorityClass** 和 **ReferralPriorityRank** 參數。 這些 Cmdlet 於 Windows Server 2012 中引進。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [調整 DFS 命名空間](tuning-dfs-namespaces.md)
 -   [委派 DFS 命名空間的管理權限](delegate-management-permissions-for-dfs-namespaces.md)

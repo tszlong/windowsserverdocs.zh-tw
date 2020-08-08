@@ -1,19 +1,17 @@
 ---
 title: 儲存體複本概觀
-ms.prod: windows-server
 manager: siroy
 ms.author: nedpyle
-ms.technology: storage-replica
 ms.topic: get-started-article
 author: nedpyle
 ms.date: 4/26/2019
 ms.assetid: e9b18e14-e692-458a-a39f-d5b569ae76c5
-ms.openlocfilehash: 400af7c4fb5db6e6740b1140688602c55d8ca0a9
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 1d8997edf1354a49b9b67e417906eeaa307fdee6
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469803"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961222"
 ---
 # <a name="storage-replica-overview"></a>儲存體複本概觀
 
@@ -38,7 +36,7 @@ ms.locfileid: "85469803"
 
 ## <a name="supported-configurations"></a><a name="BKMK_SRSupportedScenarios"></a>支援的設定
 
-您可以在延展式叢集中、叢集對叢集之間，以及伺服器對伺服器設定中部署儲存體複本（請參閱 [圖 1-3]）。
+您可以在延展式叢集中、叢集對叢集之間，以及伺服器對伺服器設定中部署儲存體複本 (參閱) 的圖1-3。
 
 「延展式叢集」**** 允許在單一叢集中設定電腦與儲存體，其中某些節點會共用一組非對稱式儲存體，而其他節點則會共用另一組非對稱式儲存體，並會以同步或非同步的方式搭配網站感知進行複寫。 此案例可以運用具有共用 SAS 儲存體、SAN 和連接 iSCSI 的 LUN 的儲存空間。 它是以 PowerShell 和容錯移轉叢集管理員圖形工具進行管理，而且允許自動化的工作負載容錯移轉。
 
@@ -89,7 +87,7 @@ ms.locfileid: "85469803"
 | ----------- | ----------- |
 | 類型 | 主機型 |
 | 同步 | 是 |
-| 非同步的 | 是 |
+| 非同步 | 是 |
 | 儲存硬體無關 | 是 |
 | 複寫單位 | 磁碟區 (磁碟分割) |
 | Windows Server stretch cluster 建立 | 是 |
@@ -138,9 +136,9 @@ ms.locfileid: "85469803"
 
 當應用程式寫入在來源資料複本上發生時，原始儲存體將不會立即確認 IO。 相反地，那些資料變更會複寫到遠端目的地複本並傳回確認。 只有在那時，應用程式才會接收到 IO 確認。 這可確保遠端站台與來源站台持續同步處理，因而將儲存體 IO 延伸到整個網路。 如果來源站台失敗，應用程式可以容錯移轉至遠端站台，並繼續執行其作業並保證零資料遺失。
 
-| [模式] | 圖表 | 步驟 |
+| 模式 | 圖表 | 步驟 |
 | -------- | ----------- | --------- |
-| **同步**<p>零資料遺失<p>RPO | ![這個圖表顯示儲存體複本如何在同步複寫中寫入資料](./media/Storage-Replica-Overview/Storage_SR_SynchronousV2.png) | 1.應用程式寫入資料<br />2.記錄檔資料已寫入，且資料已複寫至遠端站台<br />3.記錄檔資料已在遠端站台寫入<br />4.遠端站台做出確認<br />5.應用程式寫入已確認<p>t & t1：資料排清到磁碟區，記錄一律直接寫入 |
+| **同步**<p>零資料遺失<p>復原點目標 (RPO) | ![這個圖表顯示儲存體複本如何在同步複寫中寫入資料](./media/Storage-Replica-Overview/Storage_SR_SynchronousV2.png) | 1.應用程式寫入資料<br />2.記錄檔資料已寫入，且資料已複寫至遠端站台<br />3.記錄檔資料已在遠端站台寫入<br />4.遠端站台做出確認<br />5.應用程式寫入已確認<p>t & t1：資料排清到磁碟區，記錄一律直接寫入 |
 
 ### <a name="asynchronous-replication"></a>非同步複寫
 
@@ -150,9 +148,9 @@ ms.locfileid: "85469803"
 
 由於非同步複寫具有高於零的 RPO，因此比較不適合做為容錯移轉叢集之類的 HA 解決方案，因為它們是針對具有備援能力且不會遺失資料的連續作業而設計。
 
-| [模式] | 圖表 | 步驟 |
+| 模式 | 圖表 | 步驟 |
 | -------- | ----------- | --------- |
-| **非同步的**<p>接近零的資料遺失<p>(取決於多個因素)<p>RPO | ![這個圖表顯示儲存體複本如何在非同步複寫中寫入資料](./media/Storage-Replica-Overview/Storage_SR_AsynchronousV2.png)|1.應用程式寫入資料<br />2.記錄檔資料已寫入<br />3.應用程式寫入已確認<br />4.資料複寫到遠端站台<br />5.記錄檔資料已在遠端站台寫入<br />6.遠端站台做出確認<p>t & t1：資料排清到磁碟區，記錄一律直接寫入 |
+| **非同步**<p>接近零的資料遺失<p>(取決於多個因素)<p>復原點目標 (RPO) | ![這個圖表顯示儲存體複本如何在非同步複寫中寫入資料](./media/Storage-Replica-Overview/Storage_SR_AsynchronousV2.png)|1.應用程式寫入資料<br />2.記錄檔資料已寫入<br />3.應用程式寫入已確認<br />4.資料複寫到遠端站台<br />5.記錄檔資料已在遠端站台寫入<br />6.遠端站台做出確認<p>t & t1：資料排清到磁碟區，記錄一律直接寫入 |
 
 ### <a name="key-evaluation-points-and-behaviors"></a>重要的評估點和行為
 
@@ -188,7 +186,7 @@ Windows Server （版本1709）中的**測試容錯移轉**Cmdlet 推出也包�
 
 如需 Windows Server 2019 中儲存體複本的新功能清單，請參閱[儲存體的新](../whats-new-in-storage.md#storage-replica2019)功能
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [使用共用存放裝置的延展叢集複寫](stretch-cluster-replication-using-shared-storage.md)
 - [伺服器對伺服器儲存體複寫](server-to-server-storage-replication.md)

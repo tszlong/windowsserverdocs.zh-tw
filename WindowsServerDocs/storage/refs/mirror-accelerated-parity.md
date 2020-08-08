@@ -1,19 +1,17 @@
 ---
 title: 鏡像加速的同位
-ms.prod: windows-server
 ms.author: gawatu
 manager: masriniv
-ms.technology: storage-file-systems
 ms.topic: article
 author: gawatu
 ms.date: 10/17/2018
 ms.assetid: ''
-ms.openlocfilehash: 3efbc6ae29ddaa4f3a4a4f2a2409bbeb87fec2ed
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: f54eb8db2a71fe8576913d7d2123e822661b0732
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475165"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942167"
 ---
 # <a name="mirror-accelerated-parity"></a>鏡像加速的同位
 
@@ -153,7 +151,7 @@ Resize-StorageTier -InputObject (Get-StorageTier -FriendlyName “Performance”
 New-Volume – FriendlyName “TestVolume” -FileSystem CSVFS_ReFS -StoragePoolFriendlyName “StoragePoolName” -StorageTierFriendlyNames Performance, Capacity -StorageTierSizes 200GB, 800GB
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [ReFS 概觀](refs-overview.md)
 -   [ReFS 區塊複製](block-cloning.md)

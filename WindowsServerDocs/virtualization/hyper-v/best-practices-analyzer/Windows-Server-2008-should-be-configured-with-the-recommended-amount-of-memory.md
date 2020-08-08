@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: a98a8594-603b-487a-8739-78887c568e57
 author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 0f8472bac05945b240c6b9602b4a7f836536253e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 6ff1915b789e28d0bc05fb2313e1c7e95b7dc12a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948230"
+ms.locfileid: "87997266"
 ---
 # <a name="windows-server-2008-should-be-configured-with-the-recommended-amount-of-memory"></a>應該使用建議的記憶體數量來設定 Windows Server 2008
 
@@ -68,7 +68,4 @@ Set-VMMemory <MyVM> -StartupBytes 2GB
 ```
 
 ## <a name="see-also"></a>另請參閱
-[設定-Set-vmmemory](https://technet.microsoft.com/library/hh848572.aspx)
-
-
-
+[設定-Set-vmmemory](/powershell/module/hyper-v/set-vmmemory?view=win10-ps)

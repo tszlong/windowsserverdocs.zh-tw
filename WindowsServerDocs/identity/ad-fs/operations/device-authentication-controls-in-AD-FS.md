@@ -6,14 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 11/09/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: f9cc811c6a78e58ff3550343e89c19806b9914fb
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 976a8db89d8ffdb08f5f453619b7a341fb4dcdb4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966870"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949692"
 ---
 # <a name="device-authentication-controls-in-ad-fs"></a>AD FS 中的裝置驗證控制項
 下列檔說明如何在 Windows Server 2016 和 2012 R2 中啟用裝置驗證控制項。
@@ -37,7 +35,7 @@ PS:\>Set-AdfsGlobalAuthenticationPolicy –DeviceAuthenticationEnabled $true
 - PKeyAuth
 - PRT
 
-為了控制新的行為，此 `DeviceAuthenticationEnabled` 屬性會搭配名為的新屬性一起使用 `DeviceAuthenticationMethod` 。  
+為了控制新的行為，此 `DeviceAuthenticationEnabled` 屬性會搭配名為的新屬性一起使用 `DeviceAuthenticationMethod` 。
 
 裝置驗證方法會決定要完成的裝置驗證類型： PRT、PKeyAuth、Clienttls 是或某種組合。
 其值如下：
@@ -48,7 +46,7 @@ PS:\>Set-AdfsGlobalAuthenticationPolicy –DeviceAuthenticationEnabled $true
 
 如您所見，PRT 是所有裝置驗證方法的一部分，使其作用於設定為時一律啟用的預設方法 `DeviceAuthenticationEnabled` `$true` 。
 
-範例：若要設定方法，請使用上述的 DeviceAuthenticationEnabled Cmdlet，連同新的屬性：
+範例：若要設定 (s) 的方法，請使用上述的 DeviceAuthenticationEnabled Cmdlet，以及新的屬性：
 
 ``` powershell
 PS:\>Set-AdfsGlobalAuthenticationPolicy –DeviceAuthenticationEnabled $true
@@ -62,7 +60,7 @@ PS:\>Set-AdfsRelyingPartyTrust -DeviceAuthenticationMethod ClientTLS
 ```
 
 >[!NOTE]
-> 啟用裝置驗證（將設定 `DeviceAuthenticationEnabled` 為 `$true` ）表示 `DeviceAuthenticationMethod` 會隱含地設定為 `SignedToken` ，這等同于**PRT**。
+> 啟用裝置驗證 (設定 `DeviceAuthenticationEnabled` 為 `$true`) 表示 `DeviceAuthenticationMethod` 會隱含地設定為 `SignedToken` ，這等同于**PRT**。
 
 
 ``` powershell
@@ -79,8 +77,8 @@ PS:\>Set-AdfsGlobalAuthenticationPolicy –DeviceAuthenticationMethod All
 |2016 RTM|SignedToken|PRT + PkeyAuth|
 ||Clienttls 是|Clienttls 是|
 ||全部|PRT + PkeyAuth + Clienttls 是|
-|2016 RTM + Windows Update 的最新狀態|SignedToken （已變更的意義）|PRT （僅限）|
-||PkeyAuth （新增）|PRT + PkeyAuth|
+|2016 RTM + Windows Update 的最新狀態|SignedToken (變更意義) |僅) PRT (|
+||PkeyAuth (新) |PRT + PkeyAuth|
 ||Clienttls 是|PRT + Clienttls 是|
 ||全部|PRT + PkeyAuth + Clienttls 是|
 

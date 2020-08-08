@@ -1,18 +1,16 @@
 ---
 title: 瞭解和設定 Azure 監視器
 description: Azure 監視器的詳細設定資訊，以及如何在 Windows Server 2016 和2019中設定儲存空間直接存取叢集的電子郵件和 sms 警示。
-ms.prod: windows-server
 ms.author: adagashe
-ms.technology: storage-spaces
 ms.topic: article
 author: adagashe
 ms.date: 01/10/2020
-ms.openlocfilehash: 72d08b3e4461eeea07e161de1073f5320830028c
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 40ee23fa8c1fa88c54e5c8ee1e2c3ebd3453bfff
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953982"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961132"
 ---
 # <a name="use-azure-monitor-to-send-emails-for-health-service-faults"></a>使用 Azure 監視器來傳送健全狀況服務錯誤的電子郵件
 
@@ -20,7 +18,7 @@ ms.locfileid: "86953982"
 
 Azure 監視器可藉由提供全方位的解決方案，以便收集、分析及處理來自雲端和內部部署環境的遙測資料，進而將應用程式的可用性和效能最大化。 它可協助您了解您的應用程式表現如何，並主動識別影響它們的問題以及它們所依賴的資源。
 
-這對您的內部部署超融合式叢集特別有用。 在 Azure 監視器整合後，您將能夠設定電子郵件、文字（SMS）和其他警示，以便在叢集發生問題時 ping 您（或者，當您想要根據所收集的資料來標示一些其他活動時）。 以下將簡短說明 Azure 監視器的運作方式、如何安裝 Azure 監視器，以及如何設定它來傳送通知給您。
+這對您的內部部署超融合式叢集特別有用。 Azure 監視器整合後，您將能夠設定電子郵件、文字 (SMS) ，以及其他警示，以便在您的叢集發生錯誤時向您進行 ping (，或者當您想要根據所) 收集的資料來標示某個其他活動時。 以下將簡短說明 Azure 監視器的運作方式、如何安裝 Azure 監視器，以及如何設定它來傳送通知給您。
 
 如果您使用的是 System Center，請查看同時監視 Windows Server 2019 和 Windows Server 2016 儲存空間直接存取叢集的[儲存空間直接存取管理元件](https://www.microsoft.com/download/details.aspx?id=100782)。
 
@@ -98,7 +96,7 @@ get-storagesubsystem clus* | Set-StorageHealthSetting -Name "Platform.ETW.MasTyp
 
    * 為新的 [Log Analytics 工作區] 提供名稱，例如，*DefaultLAWorkspace*。
    * 如果選取的預設值不合適，請從下拉式清單中選取要連結的 [訂用帳戶]。
-   * 對於 [資源群組]，選取包含一或多個 Azure 虛擬機器的現有資源群組。 <br><br>
+   * 對於 [資源群組]  ，選取包含一或多個 Azure 虛擬機器的現有資源群組。 <br><br>
 
       ![[建立 Log Analytics] 資源刀鋒視窗](media/configure-azure-monitor/create-loganalytics-workspace-02.png) <br><br>
 
@@ -164,7 +162,7 @@ get-storagesubsystem clus* | Set-StorageHealthSetting -Name "Platform.ETW.MasTyp
 
 Log Analytics 可以從 Windows 事件記錄檔收集事件，以及收集您針對長期分析和報告指定的效能計數器，並在偵測到特定條件時採取動作。  請依照下列步驟來設定從 Windows 事件記錄檔收集事件，以及收集數個常用的效能計數器，來開始進行作業。
 
-1. 在 Azure 入口網站中，按一下左下角的 [更多服務]。 在資源清單中輸入 **Log Analytics**。 當您開始輸入時，清單會根據您的輸入來篩選。 選取 [Log Analytics]。
+1. 在 Azure 入口網站中，按一下左下角的 [更多服務]。 在資源清單中輸入 **Log Analytics**。 當您開始輸入時，清單會根據您輸入的文字進行篩選。 選取 [Log Analytics]。
 2. 選取 [進階設定]。<br><br> ![Log Analytics 進階設定](media/configure-azure-monitor/log-analytics-advanced-settings-01.png)<br><br>
 3. 選取 [資料]，然後選取 [Windows 事件記錄]。
 4. 在這裡輸入下列名稱來新增健全狀況服務事件通道，然後按一下加號 **+** 。
@@ -206,14 +204,14 @@ Event
 Event | where (EventLevelName == "Error")
 ```
 
-![篩選](media/configure-azure-monitor/log-analytics-portal-eventlist-02.png)
+![Filter](media/configure-azure-monitor/log-analytics-portal-eventlist-02.png)
 
 在您針對所關心的事件進行 approriate 查詢之後，請加以儲存以供下一個步驟使用。
 
 ### <a name="create-alerts"></a>建立警示
 現在，讓我們逐步解說建立警示的範例。
 
-1. 在 Azure 入口網站中，按一下 [所有服務]。 在資源清單中輸入 **Log Analytics**。 當您開始輸入時，清單會根據您的輸入來篩選。 選取 [Log Analytics]。
+1. 在 Azure 入口網站中，按一下 [所有服務]。 在資源清單中輸入 **Log Analytics**。 當您開始輸入時，清單會根據您輸入的文字進行篩選。 選取 [Log Analytics]。
 2. 在左側窗格中選取 [警示]，然後按一下頁面頂端的 [新增警示規則]，即可建立新的警示。<br><br> ![建立新的警示規則](media/configure-azure-monitor/alert-rule-02.png)<br>
 3. 第一步驟，在 [建立警示]**** 區段下選取您的 Log Analytics 工作區作為資源，因為這是以記錄為基礎的警示訊號。  從下拉式清單中選擇特定**訂用帳戶**可篩選結果 (如果您有多個訂用帳戶)，其中包含稍早建立的 Log Analytics 工作區。  從下拉式清單選取 **Log Analytics** 可篩選**資源類型**。  最後，選取**資源** **DefaultLAWorkspace**，然後按一下 [完成]。<br><br> ![建立警示步驟 1 的工作](media/configure-azure-monitor/alert-rule-03.png)<br>
 4. 在 [警示準則] 區段下按一下 [新增準則]，可選取我們已儲存的查詢，然後指定警示規則所遵循的邏輯。
@@ -246,7 +244,7 @@ Azure 中的範例警示會像下面這樣 (僅供參考)。
 
 ![警示電子郵件範例](media/configure-azure-monitor/warning.png)
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [儲存空間直接存取總覽](storage-spaces-direct-overview.md)
 - 如需詳細資訊，請閱讀[Azure 監視器檔](/azure/azure-monitor/learn/tutorial-viewdata)。

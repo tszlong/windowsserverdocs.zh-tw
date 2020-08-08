@@ -2,19 +2,17 @@
 title: 部署 MultiPoint 服務
 description: MultiPoint 服務部署程式的總覽
 ms.date: 07/22/2016
-ms.prod: windows-server
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: 594bc09e-5d2d-4984-a9de-79d40b1308d6
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: 0e24fadf1914c43bf6270e1d84c5a5535518d9bd
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 7188e6db4d3b0f6c7846f1e8e4d8847980f2605a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182034"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942447"
 ---
 # <a name="deploying-multipoint-services"></a>部署 MultiPoint 服務
 
@@ -26,7 +24,7 @@ ms.locfileid: "87182034"
 部署資訊會以下列方式組織。 您至少需要完成部署系統的工作，並為使用者準備您的環境。 其他工作可能或不適用於您的環境。
 -   [部署新的 MultiPoint 服務系統](Deploy-a-new-MultiPoint-services-system.md)
 
-    設定 MultiPoint 服務電腦和工作站。 安裝和設定 MultiPoint 服務;設定您的工作站;安裝驅動程式、更新和軟體;選擇性地加入網域;新增每個工作站的用戶端授權（Cal）。
+    設定 MultiPoint 服務電腦和工作站。 安裝和設定 MultiPoint 服務;設定您的工作站;安裝驅動程式、更新和軟體;選擇性地加入網域;為每個工作站新增 (Cal) 的用戶端授權。
 
 -   [MultiPoint 服務部署的選用設定工作](Optional-configuration-tasks-for-a-MultiPoint-services-deployment.md)
 
@@ -40,6 +38,6 @@ ms.locfileid: "87182034"
 
     開始使用伺服器之前，請先執行一些基本的伺服器管理工作。 開啟磁片保護;安裝伺服器備份;若要節省電源，請設定睡眠設定;設定網域部署的群組原則和登錄。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [MultiPoint 服務](MultiPoint-Services.md)

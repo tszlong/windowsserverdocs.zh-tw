@@ -1,20 +1,18 @@
 ---
 title: 在 Hyper-V 中建立虛擬機器
 description: 提供使用 Hyper-v 管理員或 Windows PowerShell 建立虛擬機器的指示
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: get-started-article
 ms.assetid: 59297022-a898-456c-b299-d79cd5860238
 author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 703c3f739200fafa4934681c300a61d8039d660c
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 5f4e07919503f283add8da1c8dd522f3d2b7f222
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475655"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942014"
 ---
 # <a name="create-a-virtual-machine-in-hyper-v"></a>在 Hyper-V 中建立虛擬機器
 
@@ -42,9 +40,9 @@ ms.locfileid: "85475655"
 
 1. 在 Windows 桌面上，按一下 [開始] 按鈕，然後輸入 **Windows PowerShell** 名稱的任何一部分。
 
-2. 以滑鼠右鍵按一下 [Windows PowerShell]****，然後選取 [以系統管理員身分執行]****。
+2. 以滑鼠右鍵按一下 [Windows PowerShell]，然後選取 [以系統管理員身分執行]。
 
-3. 取得您想[要讓虛擬](https://technet.microsoft.com/library/hh848499.aspx)機使用的虛擬交換器名稱。  例如，
+3. 取得您想[要讓虛擬](https://technet.microsoft.com/library/hh848499.aspx)機使用的虛擬交換器名稱。  例如
 
    ```
    Get-VMSwitch  * | Format-Table Name
@@ -58,7 +56,7 @@ ms.locfileid: "85475655"
    - **現有虛擬硬碟**-若要建立具有現有虛擬硬碟的虛擬機器，您可以使用下列命令，其中
      - **-Name** 是您為要建立的虛擬機器提供的名稱。
      - **-MemoryStartupBytes** 是虛擬機器在啟動時可用的記憶體數量。
-     - **-BootDevice**是虛擬機器啟動時的裝置，例如網路介面卡（NetworkAdapter）或虛擬硬碟（VHD）。
+     - **-BootDevice**是虛擬機器啟動時啟動的裝置（例如網路介面卡） (NetworkAdapter) 或虛擬硬碟 (VHD) 。
      - **-VHDPath** 是您要使用的虛擬機器磁碟所在的路徑。
      - **-Path** 是用來儲存虛擬機器組態檔的路徑。
      - **-Generation** 是虛擬機器的世代。 VHD 應使用第 1 代，VHDX 則使用第 2 代。 請參閱[我應該在 hyper-v 中建立第1代或第2代虛擬機器嗎？。](../plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md)
@@ -76,7 +74,7 @@ ms.locfileid: "85475655"
 
        這會建立名為 Win10VM 的第2代虛擬機器，其記憶體為4GB。 該機器會從現行目錄中的 VMs\Win10.vhdx 資料夾開機，並使用名為 ExternalSwitch 的虛擬交換器。 虛擬機器組態檔會儲存在 VMData 資料夾中。
 
-   - **新增虛擬硬碟**-若要使用新的虛擬硬碟來建立虛擬機器，請使用 **-NewVHDPath**取代上述範例中的 **-VHDPath**參數，並新增 **-NewVHDSizeBytes**參數。 例如，
+   - **新增虛擬硬碟**-若要使用新的虛擬硬碟來建立虛擬機器，請使用 **-NewVHDPath**取代上述範例中的 **-VHDPath**參數，並新增 **-NewVHDSizeBytes**參數。 例如
 
      ```
      New-VM -Name Win10VM -MemoryStartupBytes 4GB -BootDevice VHD -NewVHDPath .\VMs\Win10.vhdx -Path .\VMData -NewVHDSizeBytes 20GB -Generation 2 -Switch ExternalSwitch
@@ -96,7 +94,7 @@ ms.locfileid: "85475655"
    Start-VM -Name Win10VM
    ```
 
-6. 使用虛擬機器連線（VMConnect）連接到虛擬機器。
+6. 使用虛擬機器連線 (VMConnect) 連接到虛擬機器。
 
    ```
    VMConnect.exe
@@ -112,10 +110,10 @@ ms.locfileid: "85475655"
 |**指派記憶體**|啟動記憶體： 1024 MB<p>動態記憶體：**未選取**|您可以將啟動記憶體從32MB 設定為5902MB。<p>您也可以選擇使用動態記憶體。 如需詳細資訊，請參閱[hyper-v 動態記憶體總覽](https://technet.microsoft.com/library/hh831766.aspx)。|
 |**設定網路功能**|Not connected|您可以從現有的虛擬交換器清單中選取要用於虛擬機器的網路連線。 請參閱[為 hyper-v 虛擬機器建立虛擬交換器](Create-a-virtual-switch-for-Hyper-V-virtual-machines.md)。|
 |**連接虛擬硬碟**|建立虛擬硬碟<p>名稱： <*vmname*> .vhdx<p>**位置**： **C:\Users\Public\Documents\Hyper-V\Virtual \\ 硬碟**<p>**大小**：127GB|您也可以選擇使用現有的虛擬硬碟，或稍後等候並連接虛擬硬碟。|
-|**安裝選項**|稍後安裝作業系統|這些選項會變更虛擬機器的開機順序，讓您可以從 .iso 檔案、可開機的磁片或網路安裝服務（如 Windows 部署服務（WDS））進行安裝。|
-|**摘要**|顯示您所選擇的選項，讓您可以確認它們是否正確。<p>-   Name<br />-產生<br />-   記憶體<br />-網路<br />-硬碟<br />-作業系統|**秘訣：** 您可以從頁面複製摘要，並將其貼到電子郵件或其他地方，以協助您追蹤虛擬機器。|
+|**安裝選項**|稍後安裝作業系統|這些選項會變更虛擬機器的開機順序，讓您可以從 .iso 檔案、可開機的磁片或網路安裝服務（如 Windows 部署服務 (WDS) ）進行安裝。|
+|**總結**|顯示您所選擇的選項，讓您可以確認它們是否正確。<p>-   Name<br />-產生<br />-   記憶體<br />-網路<br />-硬碟<br />-作業系統|**秘訣：** 您可以從頁面複製摘要，並將其貼到電子郵件或其他地方，以協助您追蹤虛擬機器。|
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [New-VM](https://technet.microsoft.com/library/hh848537.aspx)
 

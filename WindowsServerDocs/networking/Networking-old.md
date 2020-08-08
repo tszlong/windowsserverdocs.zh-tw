@@ -1,8 +1,6 @@
 ---
 title: 網路功能
 description: 本主題提供 Windows Server 2016 中可用的「軟體定義網路」和「網路平台」技術概觀。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.date: 05/08/2018
 ms.assetid: daaf6b61-5953-4c2d-b6b8-7c885b552646
@@ -10,19 +8,19 @@ manager: dougkim
 ms.author: anpaul
 author: AnirbanPaul
 ms.localizationpriority: medium
-ms.openlocfilehash: 39bda1ac3a8b3cbac61435b65baf538f2d71e20e
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 30939a702f0856461e7b8a08af2dfd40b4a4456d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87408907"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997353"
 ---
 # <a name="networking"></a>網路功能
 
 > 適用於：Windows Server (半年度管道)、Windows Server 2016
 
 > [!TIP]
-> 尋找舊版 Windows Server 的相關資訊嗎？ 查看我們其他位於 docs.microsoft.com 的 [Windows Server 文件庫](/previous-versions/windows/)。 您也可以[搜尋這個網站](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)以取得特定資訊。
+> 尋找舊版 Windows Server 的相關資訊嗎？ 查看我們其他位於 docs.microsoft.com 的 [Windows Server 文件庫](/previous-versions/windows/)。 您也可以[搜尋這個網站](/search/index?dataSource=previousVersions&search=Windows+Server)以取得特定資訊。
 
 <img src="../media/landing-icons/network.png" style='float:left; padding:.5em;' alt="Icon depicting two networked computers"> 網路功能是軟體定義的資料中心 SDDC 平臺的基礎部分 \( \) ，而 Windows Server 2016 則提供全新和改良的軟體定義網路 \( SDN \) 技術，協助您為組織移至完全實現的 SDDC 解決方案。
 
@@ -61,7 +59,7 @@ Windows Server 2016 新增了下列新的網路技術：
 
 ### <a name="software-load-balancing-40slb41-for-sdn"></a>[適用于 SDN 的軟體負載平衡 &#40;SLB&#41;](sdn/technologies/network-function-virtualization/software-load-balancing-for-sdn.md)
 
-\( \) 在 Windows Server 2016 中部署軟體定義網路（SDN）的雲端服務提供者 Csp 和企業可以使用軟體負載平衡 \( SLB \) ，將租使用者和租使用者客戶網路流量平均分散到虛擬網路資源。 Windows Server SLB 讓多部伺服器能夠裝載相同的工作負載，並提供高度可用性和延展性。
+\( \) 在 Windows Server 2016 中部署軟體定義網路 (SDN) 的雲端服務提供者 Csp 和企業可以使用軟體負載平衡 \( SLB \) ，將租使用者和租使用者客戶網路流量平均分散到虛擬網路資源。 Windows Server SLB 讓多部伺服器能夠裝載相同的工作負載，並提供高度可用性和延展性。
 
 ### <a name="ras-gateway-for-sdn"></a>[適用於 SDN 的 RAS 閘道](sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md)
 
@@ -95,7 +93,7 @@ BranchCache 是一種廣域網路 \( WAN \) 頻寬優化技術。 為了在使�
 
 DirectAccess 可允許遠端使用者連線至組織網路資源。
 
-DirectAccess 文件現在位於 Windows Server 2016 目錄的[遠端存取和伺服器管理](https://docs.microsoft.com/windows-server/remote/)區段中，[遠端存取](https://docs.microsoft.com/windows-server/remote/remote-access/remote-access)下方。 如需詳細資訊，請參閱 [DirectAccess](../remote/remote-access/directaccess/DirectAccess.md)。
+DirectAccess 文件現在位於 Windows Server 2016 目錄的[遠端存取和伺服器管理](../remote/index.yml)區段中，[遠端存取](../remote/remote-access/remote-access.md)下方。 如需詳細資訊，請參閱 [DirectAccess](../remote/remote-access/directaccess/DirectAccess.md)。
 
 ### <a name="domain-name-system-40dns41"></a>[網域名稱系統 &#40;DNS&#41;](dns/dns-top.md)
 
@@ -130,7 +128,7 @@ Windows Server 2016 中的網路卸載和最佳化技術包含「僅限軟體」
 此外也提供下列卸載和最佳化技術文件。
 
 - [Converged Network Interface Card (NIC) 設定指南](technologies/conv-nic/cnic-top.md)
-- [資料中心橋接（DCB）](technologies/dcb/dcb-top.md)
+- [資料中心橋接 (DCB) ](technologies/dcb/dcb-top.md)
 - [虛擬接收端調整 (vRSS)](technologies/vrss/vrss-top.md)
 
 
@@ -150,7 +148,7 @@ Windows Server 2016 中的網路卸載和最佳化技術包含「僅限軟體」
 
 NIC 小組可讓您將實體的乙太網路介面卡群組為一或多個以軟體為基礎的虛擬網路介面卡。 這些虛擬網路介面卡可在網路介面卡故障時，提供快速的效能與容錯。
 
-### <a name="quality-of-service-qos-policy"></a>[服務品質（QoS）原則](technologies/qos/qos-policy-top.md)
+### <a name="quality-of-service-qos-policy"></a>[服務品質 (QoS) 原則](technologies/qos/qos-policy-top.md)
 
 您可以透過建立 QoS 設定檔並使用群組原則發佈其設定，來使用 QoS 原則做為整體 Active Directory 基礎結構的網路頻寬管理中心點。
 
@@ -158,9 +156,9 @@ NIC 小組可讓您將實體的乙太網路介面卡群組為一或多個以軟�
 
 您可以使用遠端存取技術（例如 DirectAccess 和虛擬私人網路 VPN）， \( \) 為遠端工作者提供內部網路資源的連線能力。 此外，您可以針對區域網路 \( LAN \) 路由和 Web 應用程式 Proxy 使用「遠端存取」。 這可為您公司網路內部的 Web 應用程式提供反向 Proxy 功能，以允許任何裝置上的使用者從公司網路外部存取這些應用程式。
 
-「遠端存取」文件現在位於 Windows Server 2016 目錄的[遠端存取和伺服器管理區段](https://docs.microsoft.com/windows-server/remote/)中。 如需詳細資訊，請參閱[遠端存取](../remote/remote-access/remote-access.md)。
+「遠端存取」文件現在位於 Windows Server 2016 目錄的[遠端存取和伺服器管理區段](../remote/index.yml)中。 如需詳細資訊，請參閱[遠端存取](../remote/remote-access/remote-access.md)。
 
-如需 Web 應用程式 Proxy （也就是遠端存取服務器角色的角色服務）的詳細資訊，請參閱[Windows server 2016 中的 Web 應用程式 proxy](https://docs.microsoft.com/windows-server/remote/remote-access/web-application-proxy/web-application-proxy-windows-server)。
+如需 Web 應用程式 Proxy （也就是遠端存取服務器角色的角色服務）的詳細資訊，請參閱[Windows server 2016 中的 Web 應用程式 proxy](../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md)。
 
 ### <a name="virtual-private-networking-vpn"></a>[虛擬私人網路 (VPN)](../remote/remote-access/vpn/vpn-top.md)
 
@@ -170,14 +168,14 @@ NIC 小組可讓您將實體的乙太網路介面卡群組為一或多個以軟�
 
 運用 Windows Server 2016 遠端存取 VPN (以及 Windows 10 用戶端電腦)，您現在可以部署 Always On VPN。 Always On VPN 能讓您管理永遠保持連線的遠端 VPN 用戶端，同時也方便遠端工作者，讓他們不再需要手動連線和中斷連線您組織網路的 VPN。
 
-如需詳細資訊，請參閱 [Windows Server 2016 和 Windows 10 的遠端存取 Always On VPN 部署指南](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy)。
+如需詳細資訊，請參閱 [Windows Server 2016 和 Windows 10 的遠端存取 Always On VPN 部署指南](../remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy.md)。
 
 >[!NOTE]
->VPN 文件現在位於 Windows Server 2016 目錄的[遠端存取和伺服器管理](https://docs.microsoft.com/windows-server/remote/)區段中，[遠端存取](https://docs.microsoft.com/windows-server/remote/remote-access/remote-access)下方。
+>VPN 文件現在位於 Windows Server 2016 目錄的[遠端存取和伺服器管理](../remote/index.yml)區段中，[遠端存取](../remote/remote-access/remote-access.md)下方。
 
-如需 VPN 的詳細資訊，請參閱[虛擬私人網路 (VPN)](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/vpn-top)。
+如需 VPN 的詳細資訊，請參閱[虛擬私人網路 (VPN)](../remote/remote-access/vpn/vpn-top.md)。
 
-### <a name="windows-container-networking"></a>[Windows 容器的網路功能](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking)
+### <a name="windows-container-networking"></a>[Windows 容器的網路功能](/virtualization/windowscontainers/manage-containers/container-networking)
 
 Windows 容器網路功能可讓您使用業界標準工具和工作流程，來建立和管理用於連線 Windows 10 和 Windows Server 主機上容器端點的網路。 Windows 容器網路支援多拓撲，包括私人、flat-L2 和 routed-L3。
 
@@ -191,6 +189,6 @@ Windows 網際網路名稱服務 (WINS) 是舊版電腦名稱登錄與解析服�
 
 您可以在下列位置取得 Windows Server 2016 之前的作業系統網路資源。
 
-- Windows Server 2012 和 Windows Server 2012 R2 [網路功能概觀](https://technet.microsoft.com/library/hh831357.aspx)
-- Windows Server 2008 和 Windows Server 2008 R2[網路](https://technet.microsoft.com/library/cc753940)功能
+- Windows Server 2012 和 Windows Server 2012 R2 [網路功能概觀](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831357(v=ws.11))
+- Windows Server 2008 和 Windows Server 2008 R2[網路](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753940(v=ws.10))功能
 - Windows Server 2003 [Windows server 2003/2003 R2 已淘汰的內容](https://www.microsoft.com/download/details.aspx?id=53314)

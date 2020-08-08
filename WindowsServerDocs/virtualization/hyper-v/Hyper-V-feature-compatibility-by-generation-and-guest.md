@@ -7,12 +7,12 @@ ms.assetid: 81c1f32d-7814-4992-8a66-dd4b77c939b4
 author: kbdazure
 ms.author: kathydav
 ms.date: 12/05/2016
-ms.openlocfilehash: 1ea9e0d86e61f574af45b85701bae941bb9f6ad5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 5de7f55d9fead7b720991749dd1c83aa727636c4
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960751"
+ms.locfileid: "87997028"
 ---
 # <a name="hyper-v-feature-compatibility-by-generation-and-guest"></a>由世代和來賓的 hyper-v 功能相容性
 
@@ -32,13 +32,13 @@ ms.locfileid: "87960751"
 檢查點 | 1和2 | 任何支援的來賓
 來賓叢集 | 1和2 | 執行叢集感知應用程式並已安裝 iSCSI 目標軟體的來賓
 複寫 | 1和2 | 任何支援的來賓
-網域控制站 | 1和2 | 任何支援的 Windows Server 來賓僅使用生產檢查點。 請參閱[支援的 Windows Server 客體作業系統](https://docs.microsoft.com/windows-server/virtualization/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows#supported-windows-server-guest-operating-systems)
+網域控制站 | 1和2 | 任何支援的 Windows Server 來賓僅使用生產檢查點。 請參閱[支援的 Windows Server 客體作業系統](./supported-windows-guest-operating-systems-for-hyper-v-on-windows.md#supported-windows-server-guest-operating-systems)
 
 ## <a name="compute"></a>計算
 
 功能  | 世代 | 客體作業系統
 ------------- | ------------- | -----------
-動態記憶體 | 1和2 | 支援來賓的特定版本。 如需比 Windows Server 2016 和 Windows 10 更舊的版本，請參閱[hyper-v 動態記憶體總覽](https://technet.microsoft.com/library/hh831766.aspx)。
+動態記憶體 | 1和2 | 支援來賓的特定版本。 如需比 Windows Server 2016 和 Windows 10 更舊的版本，請參閱[hyper-v 動態記憶體總覽](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831766(v=ws.11))。
 熱新增/移除記憶體 | 1和2 | Windows Server 2016、Windows 10
 虛擬 NUMA | 1和2 | 任何支援的來賓
 
@@ -87,10 +87,3 @@ SMB3 | 1和2 | 所有支援 SMB3 的
 儲存空間直接存取 | 2 | Windows Server 2016
 虛擬光纖通道 | 1和2 | Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 VHDX 格式 | 1和2 | 任何支援的來賓
-
-
-
-
-
-
-

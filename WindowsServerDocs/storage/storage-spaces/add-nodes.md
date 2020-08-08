@@ -1,21 +1,19 @@
 ---
 ms.assetid: 898d72f1-01e7-4b87-8eb3-a8e0e2e6e6da
 title: 將伺服器或磁碟機新增至儲存空間直接存取
-ms.prod: windows-server
 ms.author: cosdar
 manager: dongill
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 11/06/2017
 description: 如何將伺服器或磁片磁碟機新增至儲存空間直接存取叢集
 ms.localizationpriority: medium
-ms.openlocfilehash: 773bb3a55de27d049d26fa76659d3a4d8057f0fe
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b9a26d3ac982cccf4471f3a3e03bfdae55b55eed
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966390"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961062"
 ---
 # <a name="adding-servers-or-drives-to-storage-spaces-direct"></a>將伺服器或磁碟機新增至儲存空間直接存取
 
@@ -45,7 +43,7 @@ ms.locfileid: "86966390"
 2. 在叢集上執行下列 Cmdlet 以完成新增伺服器：
 
 ```
-Add-ClusterNode -Name NewNode 
+Add-ClusterNode -Name NewNode
 ```
 
    >[!NOTE]
@@ -59,7 +57,7 @@ Add-ClusterNode -Name NewNode
 
 雙向鏡像磁碟區無法就地升級至三向鏡像。 然而，您可建立新的磁碟區並將資料移轉 (複製，例如透過使用[儲存體複本](../storage-replica/server-to-server-storage-replication.md)) 至其中，然後移除舊的磁碟區。
 
-若要開始建立三向鏡像磁碟區，您有數個好用的選項： 您可任意選擇想用的選項。 
+若要開始建立三向鏡像磁碟區，您有數個好用的選項： 您可任意選擇想用的選項。
 
 #### <a name="option-1"></a>選項 1
 
@@ -84,7 +82,7 @@ New-Volume -FriendlyName <Name> -FileSystem CSVFS_ReFS -StoragePoolFriendlyName 
 在名為 *Capacity* 的 **StorageTier** 範本上設定 **PhysicalDiskRedundancy = 2**，然後藉由參考該層來建立磁碟區。
 
 ```PowerShell
-Set-StorageTier -FriendlyName Capacity -PhysicalDiskRedundancy 2 
+Set-StorageTier -FriendlyName Capacity -PhysicalDiskRedundancy 2
 
 New-Volume -FriendlyName <Name> -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -StorageTierFriendlyNames Capacity -StorageTierSizes <Size>
 ```
@@ -135,7 +133,7 @@ New-StorageTier -StoragePoolFriendlyName S2D* -MediaType HDD -PhysicalDiskRedund
 #### <a name="example"></a>範例
 
 ```PowerShell
-New-Volume -FriendlyName "Sir-Mix-A-Lot" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -StorageTierFriendlyNames Performance, Capacity -StorageTierSizes <Size, Size> 
+New-Volume -FriendlyName "Sir-Mix-A-Lot" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -StorageTierFriendlyNames Performance, Capacity -StorageTierSizes <Size, Size>
 ```
 
 ### <a name="beyond-4-servers-greater-parity-efficiency"></a>超越 4 個伺服器：絕佳同位效率
@@ -153,13 +151,13 @@ New-Volume -FriendlyName "Sir-Mix-A-Lot" -FileSystem CSVFS_ReFS -StoragePoolFrie
 1. 藉由開啟已提升許可權的 PowerShell 會話，然後使用下列命令（其中是新叢集節點的名稱），建立節點的暫時容錯網域 *\<NewNode>* ：
 
    ```PowerShell
-   New-ClusterFaultDomain -Type Node -Name <NewNode> 
+   New-ClusterFaultDomain -Type Node -Name <NewNode>
    ```
 
 2. 將此暫時容錯網域移到新伺服器所在的底座或機架中，如下所指定 *\<ParentName>* ：
 
    ```PowerShell
-   Set-ClusterFaultDomain -Name <NewNode> -Parent <ParentName> 
+   Set-ClusterFaultDomain -Name <NewNode> -Parent <ParentName>
    ```
 
    如需詳細資訊，請參閱 [Windows Server 2016 中的容錯網域感知](../../failover-clustering/fault-domains.md)。
@@ -192,7 +190,7 @@ Get-PhysicalDisk | Select SerialNumber, CanPool, CannotPoolReason
 
 經過一段時間後，隨著磁片磁碟機的新增或移除，集區中的磁片磁碟機之間的資料分佈可能會變得不平均。 在某些情況下，這可能會導致特定磁片磁碟機變滿，而集區中的其他磁片磁碟機則耗用較低的耗用量。
 
-為了協助在集區上保留磁片磁碟機配置，儲存空間直接存取在您將磁片磁碟機或伺服器新增至集區之後，自動將磁片磁碟機的使用優化（這是使用共用 SAS 主機殼之儲存空間系統的手動程式）。 優化會在您將新磁片磁碟機新增至集區後的15分鐘開始。 集區優化會以低優先順序的背景作業來執行，因此可能需要數小時或數天才能完成，特別是當您使用的是大型硬碟時。
+為了協助您在集區上保留磁片磁碟機配置，儲存空間直接存取會在您將磁片磁碟機或伺服器新增至集區之後，自動將磁片磁碟機的使用優化 (這是使用共用 SAS 主機殼) 的儲存空間系統手動處理。 優化會在您將新磁片磁碟機新增至集區後的15分鐘開始。 集區優化會以低優先順序的背景作業來執行，因此可能需要數小時或數天才能完成，特別是當您使用的是大型硬碟時。
 
 優化會使用兩個作業-一個稱為「*優化*」，另一個稱為「重新*平衡*」，您可以使用下列命令來監視其進度：
 

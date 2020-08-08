@@ -1,20 +1,18 @@
 ---
 title: 儲存空間直接存取的硬體需求
-ms.prod: windows-server
 description: 測試儲存空間直接存取的最低硬體需求。
 ms.author: eldenc
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
 ms.date: 07/24/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 45ef438d58c9d36275f2e7a32ce93a383bd21a70
-ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
+ms.openlocfilehash: 8c53179f32f0e6837297859413fa0cb88d66a0d2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87864273"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961122"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>儲存空間直接存取的硬體需求
 
@@ -60,19 +58,19 @@ ms.locfileid: "87864273"
 
 ## <a name="networking"></a>網路功能
 
-儲存空間直接存取在每個節點之間需要可靠的高頻寬、低延遲的網路連接。  
+儲存空間直接存取在每個節點之間需要可靠的高頻寬、低延遲的網路連接。
 
 小型縮放2-3 節點的最小互連
 - 10 Gbps 網路介面卡 (NIC) 或更快
 - 每個節點中的兩個或多個網路連線，建議用於冗余和效能
 
-適用于高效能、大規模或部署 4 + 的建議互連 
+適用于高效能、大規模或部署 4 + 的建議互連
 -  (RDMA) 支援的遠端直接記憶體存取 Nic，) 或 RoCE 的建議使用 iWARP (
 - 每個節點中的兩個或多個網路連線，建議用於冗余和效能
 - 25 Gbps NIC 或更快
 
 切換或 switchless 的節點互連
-- 已切換：網路交換器必須正確設定，才能處理頻寬和網路類型。  如果使用執行 RoCE 通訊協定的 RDMA，網路裝置和交換器設定更為重要。 
+- 已切換：網路交換器必須正確設定，才能處理頻寬和網路類型。  如果使用執行 RoCE 通訊協定的 RDMA，網路裝置和交換器設定更為重要。
 - Switchless：您可以使用直接連線來連接節點，避免使用參數。  每個節點都必須與叢集的每個其他節點具有直接連線。
 
 

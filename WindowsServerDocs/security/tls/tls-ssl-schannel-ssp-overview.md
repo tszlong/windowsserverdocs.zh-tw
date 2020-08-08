@@ -1,26 +1,24 @@
 ---
-title: TLS/SSL 總覽（Schannel SSP）
+title: " (Schannel SSP) 的 TLS/SSL 總覽"
 description: Windows Server 安全性
-ms.prod: windows-server
-ms.technology: security-tls-ssl
 ms.topic: article
 ms.assetid: 1b7b0432-1bef-4912-8c9a-8989d47a4da9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/16/2018
-ms.openlocfilehash: 0d963116fc9f22482398b38482f0c3c49f4be505
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 512dd20e658f610ac9de7247380eed5d2aed54f6
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475515"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989475"
 ---
-# <a name="tlsssl-overview-schannel-ssp"></a>TLS/SSL 總覽（Schannel SSP）
+# <a name="tlsssl-overview-schannel-ssp"></a> (Schannel SSP) 的 TLS/SSL 總覽
 
 >適用於：Windows Server (半年通道)、Windows Server 2016、Windows 10
 
-本主題適用于 IT 專業人員，透過描述實際應用、Microsoft 的實行變更和軟體需求，以及 Windows Server 2012 和 Windows 8 的其他資源，來介紹 Windows 中的 TLS 和 SSL 的使用安全。
+本主題適用于 IT 專業人員，介紹使用安全通道安全性服務提供者的 Windows 中的 TLS 和 SSL， (SSP) 藉由描述實際應用、Microsoft 的實施變更和軟體需求，以及 Windows Server 2012 和 Windows 8 的其他資源。
 
 ## <a name="description"></a><a name="BKMK_OVER"></a>描述
 安全通道是安全性支援提供者 (SSP)，可以實作安全通訊端層 (SSL) 和傳輸層安全性 (TLS) 網際網路標準驗證通訊協定。
@@ -46,8 +44,8 @@ TLS 和 SSL 通訊協定會使用用戶端/伺服器模型，並以憑證驗證�
 ## <a name="server-manager-information"></a><a name="BKMK_INSTALL"></a>伺服器管理員資訊
 執行 TLS、SSL 或 Schannel 不需要任何設定步驟。
 
-## <a name="additional-references"></a>其他參考 ##
+## <a name="additional-references"></a>其他參考資料 ##
 
--   [安全通道安全性封裝](https://docs.microsoft.com/windows/desktop/com/schannel)
--   [安全通道](https://docs.microsoft.com/windows/desktop/SecAuthN/secure-channel) \(英文\)
--   [傳輸層安全性通訊協定](https://docs.microsoft.com/windows/desktop/SecAuthN/transport-layer-security-protocol)
+-   [安全通道安全性封裝](/windows/desktop/com/schannel)
+-   [安全通道](/windows/desktop/SecAuthN/secure-channel) \(英文\)
+-   [傳輸層安全性通訊協定](/windows/desktop/SecAuthN/transport-layer-security-protocol)

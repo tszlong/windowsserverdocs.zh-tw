@@ -1,21 +1,19 @@
 ---
 title: 儲存空間直接存取中的容錯和儲存效率
-ms.prod: windows-server
 ms.author: cosmosdarwin
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/11/2017
 ms.assetid: 5e1d7ecc-e22e-467f-8142-bad6d82fc5d0
 description: 討論儲存空間直接存取中的復原選項，包括鏡像和同位。
 ms.localizationpriority: medium
-ms.openlocfilehash: 517b5484bc02e377f40df84422a1910014c9b830
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 83a38655f1fa40522de84372e270b85f64128e6f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955390"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961182"
 ---
 # <a name="fault-tolerance-and-storage-efficiency-in-storage-spaces-direct"></a>儲存空間直接存取中的容錯和儲存效率
 
@@ -33,7 +31,7 @@ ms.locfileid: "86955390"
 
 ## <a name="mirroring"></a>鏡像
 
-鏡像可為所有資料保存多個複本，以提供容錯能力。 其行為最像 RAID-1。 該資料的等量和放置方式並不簡單（請參閱[此 blog](https://techcommunity.microsoft.com/t5/storage-at-microsoft/deep-dive-the-storage-pool-in-storage-spaces-direct/ba-p/425959)以深入瞭解），但要說的是，使用鏡像儲存的任何資料，都是以完整、多次寫入。 每個複本會寫入至不同的硬體 (不同伺服器中的不同磁碟機)，而理論上其故障只會單獨發生。
+鏡像可為所有資料保存多個複本，以提供容錯能力。 其行為最像 RAID-1。 該資料的等量和放置方式並不簡單 (請參閱[此 blog](https://techcommunity.microsoft.com/t5/storage-at-microsoft/deep-dive-the-storage-pool-in-storage-spaces-direct/ba-p/425959)以深入瞭解) ，但請務必說，使用鏡像儲存的任何資料，都是以完整的方式寫入多次。 每個複本會寫入至不同的硬體 (不同伺服器中的不同磁碟機)，而理論上其故障只會單獨發生。
 
 在 Windows Server 2016 中，儲存空間會提供兩種鏡像：「雙向」和「三向」。
 
@@ -50,7 +48,7 @@ ms.locfileid: "86955390"
 
 三向鏡像會為所有內容寫入三個複本。 其儲存效率是 33.3%，因此若要撰寫 1 TB 的資料，您會需要至少 3 TB 的實體儲存容量。 同樣地，您也需要至少三個硬體「容錯網域」，在使用儲存空間直接存取時，這表示需要三部伺服器。
 
-三向鏡像一次可以安全地容忍至少[兩個硬體問題（磁片磁碟機或伺服器）](#examples)。 例如，如果您在一個磁碟機或伺服器突然故障時重新啟動另一部伺服器，所有資料都將保有安全性，且持續可供存取。
+三向鏡像可以安全地容忍至少[兩個硬體問題， (磁片磁碟機或伺服器) 一次](#examples)。 例如，如果您在一個磁碟機或伺服器突然故障時重新啟動另一部伺服器，所有資料都將保有安全性，且持續可供存取。
 
 ![three-way-mirror](media/Storage-Spaces-Fault-Tolerance/three-way-mirror-180px.png)
 
@@ -108,7 +106,7 @@ Windows Server 2016 的儲存空間引進了 Microsoft Research 所開發的進
 
 ### <a name="resiliency-types"></a>復原類型
 
-|    復原          |    容錯       |    儲存效率      |
+|    災害復原          |    容錯       |    儲存效率      |
 |------------------------|----------------------------|----------------------------|
 |    雙向鏡像      |    1                       |    50.0%                   |
 |    三向鏡像    |    2                       |    33.3%                   |
@@ -117,7 +115,7 @@ Windows Server 2016 的儲存空間引進了 Microsoft Research 所開發的進
 
 ### <a name="minimum-scale-requirements"></a>最小規模需求
 
-|    復原          |    最小必要容錯網域   |
+|    災害復原          |    最小必要容錯網域   |
 |------------------------|-------------------------------------|
 |    雙向鏡像      |    2                                |
 |    三向鏡像    |    3                                |
@@ -131,7 +129,7 @@ Windows Server 2016 的儲存空間引進了 Microsoft Research 所開發的進
 
 下表顯示同時包含硬碟 (HDD) 和固態硬碟 (SSD) 的混合式部署中，雙同位和本機重建程式碼在各種規模的儲存效率。
 
-|    容錯網域      |    Layout           |    效率   |
+|    容錯網域      |    版面配置           |    效率   |
 |-----------------------|---------------------|-----------------|
 |    2                  |    –                |    –            |
 |    3                  |    –                |    –            |
@@ -153,7 +151,7 @@ Windows Server 2016 的儲存空間引進了 Microsoft Research 所開發的進
 
 下表顯示只包含固態硬碟 (SSD) 的全快閃部署中，雙同位和本機重建程式碼在各種規模的儲存效率。 在全快閃組態中，同位配置可使用較大的群組大小，並達到更好的儲存效率。
 
-|    容錯網域      |    Layout           |    效率   |
+|    容錯網域      |    版面配置           |    效率   |
 |-----------------------|---------------------|-----------------|
 |    2                  |    –                |    –            |
 |    3                  |    –                |    –            |
@@ -205,11 +203,11 @@ Windows Server 2016 的儲存空間引進了 Microsoft Research 所開發的進
 
 ![fault-tolerance-examples-7-and-8](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-78.png)
 
-## <a name="usage"></a>使用方式
+## <a name="usage"></a>使用量
 
 請查看[建立儲存空間直接存取中的磁碟區](create-volumes.md)。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 下列每個連結都內嵌在本主題的內文中。
 

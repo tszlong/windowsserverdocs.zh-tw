@@ -1,20 +1,18 @@
 ---
 title: 超融合式基礎結構的嚴重損壞修復案例
-ms.prod: windows-server
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: johnmarlin-msft
 ms.author: johnmar
 ms.date: 03/29/2018
 description: '本文說明 Microsoft HCI (儲存空間直接存取的嚴重損壞修復可立即使用的案例) '
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ebe54cf6823f65fae484960ff21cee2baac0131
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: e154cd4bbb5039e2a35237ec2a4644ebecff8d06
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769085"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961142"
 ---
 # <a name="disaster-recovery-with-storage-spaces-direct"></a>使用儲存空間直接存取的嚴重損壞修復
 
@@ -123,6 +121,6 @@ ms.locfileid: "87769085"
 
 進行還原之後，此節點必須是要先啟動叢集服務的節點，並形成叢集。 接著，所有其他節點都必須啟動並加入叢集。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 為了加總，超交集的嚴重損壞修復是應該仔細規劃的專案。 有幾個案例最適合您的需求，而且應該進行徹底測試。 其中一個要注意的事項是，如果您在過去已熟悉容錯移轉叢集，延展叢集在多年中已經是非常受歡迎的選項。 超融合解決方案有一些設計變更，而它是以復原為基礎。 如果您遺失超交集叢集中的兩個節點，則整個叢集將會關閉。 就這種情況而言，在超融合式環境中，不支援延展案例。

@@ -1,19 +1,17 @@
 ---
 title: 儲存體複本的已知問題
-ms.prod: windows-server
 manager: siroy
 ms.author: nedpyle
-ms.technology: storage-replica
 ms.topic: get-started-article
 author: nedpyle
 ms.date: 06/25/2019
 ms.assetid: ceddb0fa-e800-42b6-b4c6-c06eb1d4bc55
-ms.openlocfilehash: 665d137673c3229f2b06283965c085ae25a2287c
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: ed566e5db46cb147925799b055e8bde8ead57b25
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769616"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961172"
 ---
 # <a name="known-issues-with-storage-replica"></a>儲存體複本的已知問題
 

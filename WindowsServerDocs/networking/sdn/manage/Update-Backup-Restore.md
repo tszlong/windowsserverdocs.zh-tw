@@ -2,37 +2,35 @@
 title: 升級、備份及還原 SDN 基礎結構
 description: 在本主題中，您將瞭解如何更新、備份及還原 SDN 基礎結構。
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: e9a8f2fd-48fe-4a90-9250-f6b32488b7a4
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/27/2018
-ms.openlocfilehash: 7d3e504f0fed5bc6d17333504548fe78d1345f2a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: daca883456a32c707fc2c7b9bfd6193b0d917b58
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854461"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942578"
 ---
 # <a name="upgrade-backup-and-restore-sdn-infrastructure"></a>升級、備份及還原 SDN 基礎結構
 
->適用於：Windows Server (半年通道)、Windows Server 2016
+>適用於：Windows Server (半年度管道)、Windows Server 2016
 
-在本主題中，您將瞭解如何更新、備份及還原 SDN 基礎結構。 
+在本主題中，您將瞭解如何更新、備份及還原 SDN 基礎結構。
 
 ## <a name="upgrade-the-sdn-infrastructure"></a>升級 SDN 基礎結構
 SDN 基礎結構可以從 Windows Server 2016 升級至 Windows Server 2019。 針對升級順序，遵循「更新 SDN 基礎結構」一節中所述的相同步驟順序。 升級之前，建議您先備份網路控制卡資料庫。
 
-針對網路控制站機器，請在完成升級之後，使用 NetworkControllerNode Cmdlet 來檢查節點的狀態。 在升級其他節點之前，請先確定節點回到「上線」狀態。 當您升級所有網路控制站節點之後，網路控制站會在一小時內更新網路控制卡叢集中執行的微服務。 您可以使用 networkcontroller Cmdlet 來觸發立即更新。 
+針對網路控制站機器，請在完成升級之後，使用 NetworkControllerNode Cmdlet 來檢查節點的狀態。 在升級其他節點之前，請先確定節點回到「上線」狀態。 當您升級所有網路控制站節點之後，網路控制站會在一小時內更新網路控制卡叢集中執行的微服務。 您可以使用 networkcontroller Cmdlet 來觸發立即更新。
 
-在軟體定義網路（SDN）系統的所有作業系統元件上安裝相同的 Windows 更新，其中包括：
+在軟體定義網路 (SDN) 系統的所有作業系統元件上安裝相同的 Windows 更新，其中包括：
 
 - 已啟用 SDN 的 Hyper-v 主機
 - 網路控制站 Vm
 - 軟體 Load Balancer Mux Vm
-- RAS 閘道 Vm 
+- RAS 閘道 Vm
 
 >[!IMPORTANT]
 >如果您使用 System Center Virtual Manager，您必須使用最新的更新彙總套件來更新它。
@@ -43,9 +41,9 @@ SDN 基礎結構可以從 Windows Server 2016 升級至 Windows Server 2019。 �
 
 2. 在第一個網路控制站 VM 上，安裝所有更新並重新啟動。
 
-3. 繼續進行下一個網路控制站 VM 之前，請使用 `get-networkcontrollernode` Cmdlet 來檢查已更新並重新啟動之節點的狀態。
+3. 繼續進行下一個網路控制站 VM 之前，請使用 `get-networkcontrollernode` Cmdlet 來檢查您已更新並重新啟動之節點的狀態。
 
-4. 在重新開機迴圈期間，等候網路控制卡節點關閉，然後再次返回。<p>重新開機 VM 之後，可能需要幾分鐘的時間才能回到 [ **_啟動_** ] 狀態。 如需輸出的範例，請參閱 
+4. 在重新開機迴圈期間，等候網路控制卡節點關閉，然後再次返回。<p>重新開機 VM 之後，可能需要幾分鐘的時間才能回到 [**_啟動_**] 狀態。 如需輸出的範例，請參閱
 
 5. 在每個 SLB Mux VM 上一次安裝一個更新，以確保負載平衡器基礎結構的持續可用性。
 
@@ -55,7 +53,7 @@ SDN 基礎結構可以從 Windows Server 2016 升級至 Windows Server 2019。 �
 
     b. 在此主機上的每個閘道 VM 上安裝更新。
 
-    c. 如果更新需要閘道 VM 重新開機，請重新開機 VM。  
+    c. 如果更新需要閘道 VM 重新開機，請重新開機 VM。
 
     d. 在包含剛更新之閘道 VM 的主機上安裝更新。
 
@@ -64,9 +62,9 @@ SDN 基礎結構可以從 Windows Server 2016 升級至 Windows Server 2019。 �
     f. 針對包含待命閘道的每個額外主機重複此動作。<p>如果沒有待命閘道，則請針對所有剩餘的主機遵循這些相同的步驟。
 
 
-### <a name="example-use-the-get-networkcontrollernode-cmdlet"></a>範例：使用 networkcontrollernode Cmdlet 
+### <a name="example-use-the-get-networkcontrollernode-cmdlet"></a>範例：使用 networkcontrollernode Cmdlet
 
-在此範例中，您會看到從其中一個網路控制站 Vm 執行 `get-networkcontrollernode` Cmdlet 的輸出。  
+在此範例中，您會在 `get-networkcontrollernode` 其中一個網路控制站 vm 中看到 Cmdlet 的輸出。
 
 您在範例輸出中看到的節點狀態為：
 
@@ -75,12 +73,12 @@ SDN 基礎結構可以從 Windows Server 2016 升級至 Windows Server 2019。 �
 - NCNode3.contoso.com = Up
 
 >[!IMPORTANT]
->您必須等候幾分鐘，直到節點的狀態變更為 [已 _**啟動**_ ]，然後再更新任何其他節點（一次一個）。
+>您必須等候幾分鐘，直到節點的狀態變更為 [已_**啟動**_]，然後再更新任何其他節點（一次一個）。
 
-更新所有網路控制站節點之後，網路控制站會在一小時內更新網路控制卡叢集中執行的微服務。 
+更新所有網路控制站節點之後，網路控制站會在一小時內更新網路控制卡叢集中執行的微服務。
 
 >[!TIP]
->您可以使用 `update-networkcontroller` Cmdlet 來觸發立即更新。
+>您可以使用 Cmdlet 來觸發立即更新 `update-networkcontroller` 。
 
 
 ```Powershell
@@ -108,7 +106,7 @@ Status          : Up
 ```
 
 ### <a name="example-use-the-update-networkcontroller-cmdlet"></a>範例：使用 networkcontroller Cmdlet
-在此範例中，您會看到 `update-networkcontroller` Cmdlet 的輸出，以強制網路控制站更新。 
+在此範例中，您會看到 Cmdlet 的輸出 `update-networkcontroller` ，以強制網路控制站更新。
 
 >[!IMPORTANT]
 >當您沒有其他要安裝的更新時，請執行此 Cmdlet。
@@ -127,20 +125,20 @@ NetworkControllerClusterVersion NetworkControllerVersion
 
 **需求：**
 * SMB 共用和認證，具有共用和檔案系統的讀取/寫入權限。
-* 如果也使用 GMSA 來安裝網路控制站，您可以選擇使用群組受管理的服務帳戶（GMSA）。
+* 您可以選擇性地使用群組受管理的服務帳戶 (GMSA) 如果也使用 GMSA 安裝網路控制站。
 
 **步**
 
-1. 使用您選擇的 VM 備份方法，或使用 Hyper-v 匯出每個網路控制站 VM 的複本。<p>備份網路控制站 VM 可確保存在解密資料庫所需的憑證。  
+1. 使用您選擇的 VM 備份方法，或使用 Hyper-v 匯出每個網路控制站 VM 的複本。<p>備份網路控制站 VM 可確保存在解密資料庫所需的憑證。
 
-2. 如果使用 System Center Virtual Machine Manager （SCVMM），請停止 SCVMM 服務，並透過 SQL Server 將其備份。<p>此處的目標是要確保在這段期間不會對 SCVMM 進行任何更新，這可能會造成網路控制站備份和 SCVMM 之間的不一致。  
+2. 如果您使用 System Center Virtual Machine Manager (SCVMM) ，請停止 SCVMM 服務，並透過 SQL Server 將其備份。<p>此處的目標是要確保在這段期間不會對 SCVMM 進行任何更新，這可能會造成網路控制站備份和 SCVMM 之間的不一致。
 
    >[!IMPORTANT]
    >在網路控制卡備份完成之前，請勿重新開機 SCVMM 服務。
 
-3. 使用 `new-networkcontrollerbackup` Cmdlet 來備份網路控制站資料庫。
+3. 使用 Cmdlet 備份網路控制站資料庫 `new-networkcontrollerbackup` 。
 
-4. 使用 `get-networkcontrollerbackup` Cmdlet 檢查備份的完成和成功。
+4. 使用 Cmdlet 檢查備份的完成和成功 `get-networkcontrollerbackup` 。
 
 5. 如果使用 SCVMM，請啟動 SCVMM 服務。
 
@@ -264,7 +262,7 @@ PS C:\ > Get-NetworkControllerBackup -ConnectionUri $URI -Credential $Credential
 
 ## <a name="restore-the-sdn-infrastructure-from-a-backup"></a>從備份還原 SDN 基礎結構
 
-當您從備份還原所有必要的元件時，SDN 環境會回到操作狀態。  
+當您從備份還原所有必要的元件時，SDN 環境會回到操作狀態。
 
 >[!IMPORTANT]
 >這些步驟會根據所還原的元件數目而有所不同。
@@ -272,7 +270,7 @@ PS C:\ > Get-NetworkControllerBackup -ConnectionUri $URI -Credential $Credential
 
 1. 如有必要，請重新部署 Hyper-v 主機和所需的存放裝置。
 
-2. 如有需要，請從備份還原網路控制站 Vm、RAS 閘道 Vm 和 Mux Vm。 
+2. 如有需要，請從備份還原網路控制站 Vm、RAS 閘道 Vm 和 Mux Vm。
 
 3. 停止所有 Hyper-v 主機上的 NC 主機代理程式和 SLB 主機代理程式：
 
@@ -286,7 +284,7 @@ PS C:\ > Get-NetworkControllerBackup -ConnectionUri $URI -Credential $Credential
 
 5. 停止 SLB Mux Vm。
 
-6. 使用 `new-networkcontrollerrestore` Cmdlet 還原網路控制卡。
+6. 使用 Cmdlet 還原網路控制卡 `new-networkcontrollerrestore` 。
 
 7. 檢查 [還原] **ProvisioningState** ，以瞭解還原順利完成的時間。
 
@@ -310,7 +308,7 @@ Fetching ResourceType:     Gateways
 ```
 
 ### <a name="example-restoring-a-network-controller-database"></a>範例：還原網路控制卡資料庫
- 
+
 ```Powershell
 $URI = "https://NC.contoso.com"
 $Credential = Get-Credential
