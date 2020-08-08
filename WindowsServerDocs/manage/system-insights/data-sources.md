@@ -1,19 +1,17 @@
 ---
 title: System Insights 資料來源
 description: 在系統深入解析中撰寫新功能時，您可以指定要在本機收集的現有或新資料來源，並進行分析。 本主題描述您在註冊新功能時可以選擇的資料來源。
-ms.prod: windows-server
-ms.technology: system-insights
 ms.topic: article
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 7/31/2018
-ms.openlocfilehash: 5dc44d9309c25ca1475e512a11d9868d7fa49e97
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 23150a741c9ec218077f63ca65e6948b1c48f8bf
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473665"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972005"
 ---
 # <a name="system-insights-data-sources"></a>System Insights 資料來源
 
@@ -68,15 +66,15 @@ System Insights 引進可擴充的資料收集功能。 撰寫新的功能時，
 | 資料來源 | 彙總類型 |
 | --------------- | --------------- |
 | 效能計數器 | 加總、平均、最大值、最小值 |
-| 系統事件 | Count |
-| 磁片知名系列 | Last （收集間隔中的最新值） |
-| 磁片區知名系列 | Last （收集間隔中的最新值） |
-| CPU 已知系列 | Average |
-| 網路知名系列 | Average |
+| 系統事件 | 計數 |
+| 磁片知名系列 | 上次 (收集間隔中的最新值)  |
+| 磁片區知名系列 | 上次 (收集間隔中的最新值)  |
+| CPU 已知系列 | 平均 |
+| 網路知名系列 | 平均 |
 
 ## <a name="data-footprint"></a>資料使用量
 
-System Insights 會收集本機 C 磁片磁碟機（C：）上的所有資料。 一般而言，系統深入解析資料使用量適中。 它會直接相依于每個功能所指定的資料來源類型和數目，下表詳細說明每種資料類型的儲存使用量：
+System Insights 會收集 C 磁片磁碟機本機上的所有資料， (C： ) 。 一般而言，系統深入解析資料使用量適中。 它會直接相依于每個功能所指定的資料來源類型和數目，下表詳細說明每種資料類型的儲存使用量：
 
 | 資料來源 | 最大使用量 |
 | --------------- | --------------- |
@@ -90,7 +88,7 @@ System Insights 會收集本機 C 磁片磁碟機（C：）上的所有資料。
 >[!NOTE]
 >**針對預設的預測功能，大部分的獨立機器的最大使用量應小於 10 MB。**
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 若要深入瞭解「系統深入解析」，請使用下列資源：
 
 - [系統深入解析概觀](overview.md)

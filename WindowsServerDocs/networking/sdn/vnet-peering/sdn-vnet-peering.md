@@ -1,24 +1,22 @@
 ---
 title: 虛擬網路對等互連
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: d4dadcabfb911c7722da493c45db112477eab34c
-ms.sourcegitcommit: a1641b80c88205c0253f354f2d427d77bb879643
+ms.openlocfilehash: 21008268f14435852c7de78ce826bc380f9017a1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85345412"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955815"
 ---
 # <a name="virtual-network-peering"></a>虛擬網路對等互連
 
 >適用于： Windows Server
 
-虛擬網路對等互連可讓您順暢地連接兩個虛擬網路。 一旦對等互連，基於連線目的，虛擬網路會顯示為一。 
+虛擬網路對等互連可讓您順暢地連接兩個虛擬網路。 一旦對等互連，基於連線目的，虛擬網路會顯示為一。
 
 使用虛擬網路對等互連的優點包括︰
 
@@ -59,7 +57,7 @@ ms.locfileid: "85345412"
 
 -   虛擬網路中的虛擬機器可以存取對等互連虛擬網路中的內部負載平衡器。
 
-如有需要，您可以在任一虛擬網路中套用存取控制清單（Acl），以封鎖其他虛擬網路或子網的存取。 如果您開啟對等互連虛擬網路（這是預設選項）之間的完整連線，您可以將 Acl 套用至特定子網或虛擬機器，以封鎖或拒絕特定的存取。 若要深入瞭解 Acl，請參閱[使用存取控制清單（acl）來管理資料中心網路流量](https://docs.microsoft.com/windows-server/networking/sdn/manage/use-acls-for-traffic-flow)。
+您可以在任何一個虛擬網路中 (Acl) 套用存取控制清單，以封鎖其他虛擬網路或子網的存取（如有需要）。 如果您開啟對等互連虛擬網路之間的完整連線 (這是) 的預設選項，您可以將 Acl 套用至特定子網或虛擬機器，以封鎖或拒絕特定的存取。 若要深入瞭解 Acl，請參閱[使用存取控制清單 (acl) 來管理資料中心網路流量](https://docs.microsoft.com/windows-server/networking/sdn/manage/use-acls-for-traffic-flow)。
 
 ## <a name="service-chaining"></a>服務鏈結
 
@@ -71,7 +69,7 @@ ms.locfileid: "85345412"
 
 ## <a name="gateways-and-on-premises-connectivity"></a>閘道及內部部署連線能力
 
-無論是否有另一個虛擬網路對等互連，每個虛擬網路仍然可以有自己的閘道連接到內部部署網路。 當您對等互連虛擬網路時，您也可以將對等互連虛擬網路中的閘道設定為內部部署網路的傳輸點。 在此情況下，使用遠端閘道的虛擬網路不能有自己的閘道。 虛擬網路只能有一個閘道可以是本機或遠端閘道（在對等互連虛擬網路中）。
+無論是否有另一個虛擬網路對等互連，每個虛擬網路仍然可以有自己的閘道連接到內部部署網路。 當您對等互連虛擬網路時，您也可以將對等互連虛擬網路中的閘道設定為內部部署網路的傳輸點。 在此情況下，使用遠端閘道的虛擬網路不能有自己的閘道。 虛擬網路只能有一個閘道可以是本機或遠端閘道 (在對等互連虛擬網路) 中。
 
 ## <a name="monitor"></a>監視
 

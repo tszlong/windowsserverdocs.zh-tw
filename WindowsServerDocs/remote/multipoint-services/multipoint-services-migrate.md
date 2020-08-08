@@ -2,26 +2,24 @@
 title: 遷移至 Windows Server 2016 中的 MultiPoint 服務
 description: 瞭解如何從舊版 MultiPoint 服務遷移
 ms.date: 07/29/2016
-ms.prod: windows-server
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: 16c217ad-700a-48a3-8398-4a7f7e9edb52
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 1609ff02c8e1b1480d004104bdc7e37f1240729a
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ce5fb28f92808d736f66f1f900228aac09d98bf5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959270"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955335"
 ---
 # <a name="multipoint-services-migration-in-windows-server-2016"></a>Windows Server 2016 中的 MultiPoint 服務遷移
 >適用於：Windows Server 2016
 
 您可以從舊版的 Windows Server 2016 MultiPoint 服務遷移至 MultiPoint 服務的 RTM 版本。 下列資訊提供準備資訊以及遷移和驗證步驟。
 
-遷移檔和工具可讓您輕鬆地將伺服器角色設定和資料從現有的伺服器遷移到執行 Windows Server 2016 的目的地伺服器。 使用本指南中所述的程序，即可簡化移轉程序、縮短移轉時間、提高移轉程序的準確性，並且有助於消除可能在移轉過程中發生的衝突。 
+遷移檔和工具可讓您輕鬆地將伺服器角色設定和資料從現有的伺服器遷移到執行 Windows Server 2016 的目的地伺服器。 使用本指南中所述的程序，即可簡化移轉程序、縮短移轉時間、提高移轉程序的準確性，並且有助於消除可能在移轉過程中發生的衝突。
 
 ## <a name="what-to-know-before-you-begin"></a>開始之前要知道的事項
 開始進行遷移程式之前，請注意下列事項：
@@ -29,7 +27,7 @@ ms.locfileid: "86959270"
 - 此遷移程式不會自動收集或記錄 MultiPoint 服務角色上的應用程式設定。 您應該為任何您想要遷移的應用程式建立自訂的遷移計畫。 這也適用于在 MultiPoint 服務中使用虛擬桌面功能的情況。
 - 本指南不提供將儲存在 MultiPoint 伺服器上的使用者或共用資料夾中的資料移動的指引。 這適用于一般工作站和虛擬桌面工作站。
 - 本指南不包含如何在來源伺服器執行多個角色時進行遷移的指示。 如果您的伺服器執行多個角色，您必須根據角色遷移指南中提供的資訊，設計伺服器環境特有的自訂遷移程式。
-- 本指南不包含遷移遠端桌面服務 CAL 的資訊。 如需這份資訊，請參閱[遷移遠端桌面服務用戶端存取使用權（RDS cal）](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))。
+- 本指南不包含遷移遠端桌面服務 CAL 的資訊。 如需這份資訊，請參閱[ (RDS cal) 遷移遠端桌面服務用戶端存取授權](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))。
 
 ## <a name="supported-migration-scenarios-for-multipoint-services-in-windows-server-2016"></a>Windows Server 2016 中 MultiPoint 服務支援的遷移案例
 MultiPoint 服務角色服務適用于 Windows Server 2016 Standard 和 Datacenter。 此遷移指南說明如何將 Multipoint 服務角色服務從執行 Windows Server 2016 的來源伺服器遷移至執行相同版本的目的地伺服器。

@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: b9ba6ca7900f33880fda6d77398ffa819cf1038c
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 30dc33bec01cf4a9ab0b944464d4bbc60f6ca74e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87177794"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87938230"
 ---
 # <a name="set-up-the-lab-environment-for-ad-fs-in-windows-server-2012-r2"></a>在 Windows Server 2012 R2 設定 AD FS 實驗室環境
 
@@ -36,7 +34,7 @@ ms.locfileid: "87177794"
 
 1.  [步驟 1：設定網域控制站 (DC1)](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_1)
 
-2.  [步驟2：使用裝置註冊服務設定同盟伺服器（ADFS1）](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_4)
+2.  [步驟2：使用裝置註冊服務設定同盟伺服器 (ADFS1) ](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_4)
 
 3.  [步驟 3：設定網頁伺服器 (WebServ1) 與範例宣告式應用程式](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_5)
 
@@ -45,7 +43,7 @@ ms.locfileid: "87177794"
 ## <a name="step-1-configure-the-domain-controller-dc1"></a><a name="BKMK_1"></a>步驟 1：設定網域控制站 (DC1)
 基於此測試環境的目的，您可以呼叫根 Active Directory 網域**contoso.com** ，並指定 <strong>pass@word1</strong> 做為系統管理員密碼。
 
--   安裝 AD DS 角色服務並安裝 Active Directory Domain Services （AD DS），讓您的電腦成為 Windows Server 2012 R2 中的網域控制站。 此動作會在建立網域控制站的過程中升級您的 AD DS 架構。 如需詳細資訊和逐步指示，請參閱 [https://technet.microsoft.com/library/hh472162.aspx](../../ad-ds/deploy/install-active-directory-domain-services--level-100-.md) 。
+-   安裝 AD DS 角色服務，並安裝 Active Directory Domain Services (AD DS) ，讓您的電腦成為 Windows Server 2012 R2 中的網域控制站。 此動作會在建立網域控制站的過程中升級您的 AD DS 架構。 如需詳細資訊和逐步指示，請參閱 [https://technet.microsoft.com/library/hh472162.aspx](../../ad-ds/deploy/install-active-directory-domain-services--level-100-.md) 。
 
 ### <a name="create-test-active-directory-accounts"></a><a name="BKMK_2"></a>建立測試 Active Directory 帳戶
 在您的網域控制站開始運作之後，您可以在此網域中建立測試群組與測試使用者帳戶，並將該使用者帳戶新增到群組帳戶。 您可以使用這些帳戶來完成此主題稍早所述之逐步解說指南中的逐步解說。
@@ -56,12 +54,12 @@ ms.locfileid: "87177794"
 
 - 群組︰ **Finance**
 
-如需如何在 Active Directory （AD）中建立使用者和群組帳戶的相關資訊，請參閱 [https://technet.microsoft.com/library/cc783323%28v.aspx](/previous-versions/windows/it-pro/windows-server-2003/cc783323(v=ws.10)) 。
+如需如何在 Active Directory (AD) 中建立使用者和群組帳戶的相關資訊，請參閱 [https://technet.microsoft.com/library/cc783323%28v.aspx](/previous-versions/windows/it-pro/windows-server-2003/cc783323(v=ws.10)) 。
 
 新增 **Robert Hatley** 帳戶至 **Finance** 群組。 如需如何在 Active Directory 中將使用者新增至群組的詳細資訊，請參閱 [https://technet.microsoft.com/library/cc737130%28v=ws.10%29.aspx](/previous-versions/windows/it-pro/windows-server-2003/cc737130(v=ws.10)) 。
 
 ### <a name="create-a-gmsa-account"></a>建立 GMSA 帳戶
-Active Directory 同盟服務（AD FS）安裝和設定期間需要群組受管理的服務帳戶（GMSA）帳戶。
+在 Active Directory 同盟服務 (AD FS) 安裝和設定期間，需要群組受管理的服務帳戶 (GMSA) 帳戶。
 
 ##### <a name="to-create-a-gmsa-account"></a>建立 GMSA 帳戶
 
@@ -180,7 +178,7 @@ Active Directory 同盟服務（AD FS）安裝和設定期間需要群組受管�
 
 您可以使用下列程序，針對同盟伺服器與「裝置註冊服務」將主機 (A) 資源記錄到新增公司 DNS 名稱伺服器。
 
-若要完成此程序，至少需要 Administrators 群組的成員資格或同等權限。 請參閱超連結 " <https://go.microsoft.com/fwlink/?LinkId=83477> " 本機和網域預設群組（）中有關使用適當帳戶和群組成員資格的詳細資料 <https://go.microsoft.com/fwlink/p/?LinkId=83477> 。
+若要完成此程序，至少需要 Administrators 群組的成員資格或同等權限。 如需使用適當帳戶和群組成員資格的詳細資訊，請參閱超連結 " <https://go.microsoft.com/fwlink/?LinkId=83477> " 本機和網域預設群組 (<https://go.microsoft.com/fwlink/p/?LinkId=83477>) 。
 
 ##### <a name="to-add-a-host-a-and-alias-cname-resource-records-to-dns-for-your-federation-server"></a>為您的同盟伺服器將主機 (A) 與別名 (CNAME) 資源記錄新增至 DNS
 
@@ -202,11 +200,11 @@ Active Directory 同盟服務（AD FS）安裝和設定期間需要群組受管�
     > 在真實世界的部署中，若您的公司有多個使用者主體名稱 (UPN) 尾碼，您必須建立多個 CNAME 記錄 (每個記錄適用於 DNS 中的一個 UPN 尾碼)。
 
 ## <a name="step-3-configure-the-web-server-webserv1-and-a-sample-claims-based-application"></a><a name="BKMK_5"></a>步驟 3：設定網頁伺服器 (WebServ1) 與範例宣告式應用程式
-藉由安裝 Windows Server 2012 R2 作業系統並將它連線到網域**contoso.com**，來設定虛擬機器（WebServ1）。 當它加入該網域後，您可以繼續安裝及設定「網頁伺服器」角色。
+藉由安裝 Windows Server 2012 R2 作業系統並將它連線到網域**contoso.com**， (WebServ1) 設定虛擬機器。 當它加入該網域後，您可以繼續安裝及設定「網頁伺服器」角色。
 
 若要完成此主題稍早所述的逐步解說，您必須有受您的同盟伺服器 (ADFS1) 所保護的簡單應用程式。
 
-您可以下載 Windows Identity Foundation SDK （ [https://www.microsoft.com/download/details.aspx?id=4451](https://www.microsoft.com/download/details.aspx?id=4451) ，其中包含以宣告為基礎的範例應用程式。
+您可以下載 Windows Identity Foundation SDK ([https://www.microsoft.com/download/details.aspx?id=4451](https://www.microsoft.com/download/details.aspx?id=4451) ，其中包括以宣告為基礎的範例應用程式。
 
 您必須完成下列步驟，才能使用此宣告式應用程式來設定網頁伺服器。
 
@@ -248,7 +246,7 @@ Active Directory 同盟服務（AD FS）安裝和設定期間需要群組受管�
 
 ### <a name="install-windows-identity-foundation-sdk"></a><a name="BKMK_13"></a>安裝 Windows Identity Foundation SDK
 
-1.  執行 WindowsIdentityFoundation-SDK-3.5.msi 以安裝 Windows Identity Foundation SDK 3.5 （ https://www.microsoft.com/download/details.aspx?id=4451) 。 選擇所有預設選項。
+1.  執行 WindowsIdentityFoundation-SDK-3.5.msi 以安裝 Windows Identity Foundation SDK 3.5 (https://www.microsoft.com/download/details.aspx?id=4451) 。 選擇所有預設選項。
 
 ### <a name="configure-the-simple-claims-app-in-iis"></a><a name="BKMK_9"></a>在 IIS 中設定簡單宣告應用程式
 
@@ -262,7 +260,7 @@ Active Directory 同盟服務（AD FS）安裝和設定期間需要群組受管�
 
     2.  搜尋該檔案中的第二個 `ExpectedClaims`執行個體。
 
-    3.  將整個 `IF` 陳述式及其大括弧變更為註解。 在行首輸入 "//" （不含引號）來表示批註。
+    3.  將整個 `IF` 陳述式及其大括弧變更為註解。 輸入 "//" (，並在行首的) 不加引號，表示批註。
 
     4.  您的 `FOREACH` 陳述式現在看起來應該像此程式碼範例一樣。
 

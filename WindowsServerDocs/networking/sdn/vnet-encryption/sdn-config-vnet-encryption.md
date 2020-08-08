@@ -2,19 +2,17 @@
 title: 設定虛擬網路的加密
 description: 虛擬網路加密可讓虛擬機器之間的虛擬網路流量進行加密，這兩者會在子網內彼此通訊，並標示為「啟用加密」。
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: 378213f5-2d59-4c9b-9607-1fc83f8072f1
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: 11ec399ab9c63b27711b19987c6e070b47545fdd
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 24b716283eeab929f09db3c4e9cf3ec577211d32
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520227"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955855"
 ---
 # <a name="configure-encryption-for-a-virtual-subnet"></a>設定虛擬子網的加密
 
@@ -33,7 +31,7 @@ ms.locfileid: "87520227"
 >與相同子網上的另一個 VM 通訊時，不論其目前是否已連線或已連線，流量都會自動加密。
 
 >[!TIP]
->如果您必須將應用程式限制為只能在加密的子網上進行通訊，您只能使用存取控制清單（Acl），以允許目前子網內的通訊。 如需詳細資訊，請參閱[使用存取控制清單（acl）管理資料中心網路流量](https://docs.microsoft.com/windows-server/networking/sdn/manage/use-acls-for-traffic-flow)。
+>如果您必須將應用程式限制為只能在加密的子網上進行通訊，您可以使用存取控制清單 (Acl) 只允許目前子網內的通訊。 如需詳細資訊，請參閱[使用存取控制清單 (acl) 來管理資料中心網路流量](https://docs.microsoft.com/windows-server/networking/sdn/manage/use-acls-for-traffic-flow)。
 
 
 ## <a name="step-1-create-the-encryption-certificate"></a>步驟 1： 建立加密憑證

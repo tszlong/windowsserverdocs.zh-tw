@@ -5,27 +5,25 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 7ed7caad187181b4ad52cf4032d6343a3353c9f7
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 5aee90e28ae233cf7c96013537d82cc77bc9ba2e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519977"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972155"
 ---
 # <a name="install-the-federation-service-role-service"></a>安裝同盟服務角色服務
 
-既然您已使用必要的應用程式和憑證正確設定電腦，就可以準備安裝 Active Directory 同盟服務（AD FS）的同盟服務角色服務。 當您在電腦上安裝同盟服務時，該電腦會變成同盟伺服器。
+既然您已使用必要的應用程式和憑證正確設定電腦，您就可以安裝 Active Directory 同盟服務 (AD FS) 的同盟服務角色服務。 當您在電腦上安裝同盟服務時，該電腦會變成同盟伺服器。
 
 > [!NOTE]
-> 針對同盟網頁單一登入（SSO）設計，您必須在帳戶夥伴組織中至少有一部同盟伺服器，並在資源夥伴組織中至少要有一部同盟伺服器。 如需詳細資訊，請參閱[同盟伺服器放置位置](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dd807127(v=ws.11))。
+> 針對同盟 Web 單一登入 (SSO) 設計，您必須在帳戶夥伴組織中至少有一部同盟伺服器，並在資源夥伴組織中至少要有一部同盟伺服器。 如需詳細資訊，請參閱[同盟伺服器放置位置](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dd807127(v=ws.11))。
 
 您可以使用下列程式，在將成為第一部同盟伺服器的電腦上，或在將成為現有同盟伺服器陣列之同盟伺服器的電腦上，安裝 AD FS 的同盟服務角色服務。
 
-## <a name="prerequisites"></a>先決條件
-開始此程式之前，請先確認已安裝具有私密金鑰的 SSL 憑證，或已將其匯入本機憑證存放區（個人存放區）。 如果您要使用憑證授權單位單位（CA）所發行的權杖簽署憑證，請在開始此程式之前，請先確認已將具有私密金鑰的權杖簽署憑證安裝或匯入到本機憑證存放區（個人存放區）。 或者，您可以使用 [新增角色] [Wizard] 建立自我簽署權杖簽署憑證，如本程式中所述。 如需權杖簽署憑證的詳細資訊，請參閱[同盟伺服器的憑證需求](../design/certificate-requirements-for-federation-servers.md)。
+## <a name="prerequisites"></a>必要條件
+在您開始此程式之前，請先確認已將具有私密金鑰的 SSL 憑證安裝或匯入本機憑證存放區 (Personal store) 。 如果您將使用由憑證授權單位單位 (CA) 所發行的權杖簽署憑證，請確認已在開始此程式之前，已將含有私密金鑰的權杖簽署憑證安裝或匯入到本機憑證存放區 (個人存放區) 。 或者，您可以使用 [新增角色] [Wizard] 建立自我簽署權杖簽署憑證，如本程式中所述。 如需權杖簽署憑證的詳細資訊，請參閱[同盟伺服器的憑證需求](../design/certificate-requirements-for-federation-servers.md)。
 
 若要完成此程序，至少需要本機電腦之 **Administrators** 群組的成員資格或同等權限。 請參閱在[本機與網域預設群組](https://go.microsoft.com/fwlink/?LinkId=83477)中使用適當帳戶和群組成員資格的詳細資料。
 

@@ -2,20 +2,18 @@
 title: 效能調整網路介面卡
 description: 本主題是 Windows Server 2016 的網路子系統效能微調指南的一部分。
 audience: Admin - CI ID 111485 - CSSTroubleshoot
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 0b9b0f80-415c-4f5e-8377-c09b51d9c5dd
 manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
 ms.date: 12/23/2019
-ms.openlocfilehash: eb402c9cd7bb4f9ae472859fcd45fcc050d1df85
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: a29830fe5f6f23138b5872b95926ae7dc8834ae4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182134"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955585"
 ---
 # <a name="performance-tuning-network-adapters"></a>效能調整網路介面卡
 
@@ -45,12 +43,12 @@ ms.locfileid: "87182134"
 > [!NOTE]
 > 某些網路介面卡需要您個別啟用傳送和接收路徑的卸載功能。
 
-##  <a name="enabling-receive-side-scaling-rss-for-web-servers"></a><a name="bkmk_rss_web"></a>啟用網頁伺服器的接收端調整（RSS）
+##  <a name="enabling-receive-side-scaling-rss-for-web-servers"></a><a name="bkmk_rss_web"></a>針對網頁伺服器啟用接收端調整 (RSS) 
 
 當伺服器上的網路介面卡比邏輯處理器少時，RSS 可以改善 Web 延展性和效能。 當所有網路流量都通過支援 RSS 的網路介面卡時，伺服器可以跨不同的 Cpu 同時處理來自不同連線的傳入 web 要求。
 
 > [!IMPORTANT]
-> 請避免在同一部伺服器上同時使用非 RSS 網路介面卡和支援 RSS 的網路介面卡。 由於 RSS 和超文字傳輸協議（HTTP）中的負載分佈邏輯，如果不支援 RSS 的網路介面卡在具有一或多個支援 RSS 的網路介面卡的伺服器上接受網路流量，則效能可能會嚴重降低。 在這種情況下，您應該使用支援 RSS 的網路介面卡，或是在網路介面卡內容 [進階內容]**** 索引標籤上停用 RSS。
+> 請避免在同一部伺服器上同時使用非 RSS 網路介面卡和支援 RSS 的網路介面卡。 由於 RSS 和超文字傳輸通訊協定中的負載分配邏輯 (HTTP) ，如果不支援 RSS 的網路介面卡在具有一或多個支援 RSS 的網路介面卡的伺服器上接受網路流量，則效能可能會嚴重降低。 在這種情況下，您應該使用支援 RSS 的網路介面卡，或是在網路介面卡內容 [進階內容]**** 索引標籤上停用 RSS。
 >
 > 若要判斷網路介面卡是否支援 RSS，您可以檢視網路介面卡內容 [進階內容]**** 索引標籤上的 RSS 資訊。
 
@@ -71,7 +69,7 @@ ms.locfileid: "87182134"
 
 ### <a name="enabling-interrupt-moderation"></a>啟用中斷仲裁
 
-為了控制插斷仲裁，某些網路介面卡會公開不同的插斷仲裁層級、不同的緩衝區聯合參數（有時分別用於傳送和接收緩衝區），或兩者。
+為了控制插斷仲裁，某些網路介面卡會公開不同的插斷仲裁層級，不同的緩衝區聯合參數 (有時分別用於傳送和接收緩衝區) 或兩者。
 
 針對 CPU 系結的工作負載，您應該考慮中斷仲裁。 使用中斷仲裁時，請考慮主機 CPU 節約和延遲與增加的主機 CPU 節約之間的取捨，因為有更多中斷和較少的延遲。 如果網路介面卡不會執行中斷仲裁，但它確實會公開緩衝區聯合，您可以增加結合的緩衝區數目，以允許每個傳送或接收更多的緩衝區，藉此改善效能。
 
@@ -87,7 +85,7 @@ ms.locfileid: "87182134"
    > [!NOTE]
    > 如果系統 BIOS 已設定為停用電源管理的作業系統控制，則此設定無法正常運作。
 
-- 啟用靜態卸載。 例如，啟用 [UDP 總和檢查碼]、[TCP 總和檢查碼] 和 [傳送大型卸載（LSO）] 設定。
+- 啟用靜態卸載。 例如，啟用 UDP 總和檢查碼、TCP 總和檢查碼，然後將大型卸載 (LSO) 設定。
 
 - 如果流量是多資料流程處理，例如接收大量多播流量時，請啟用 RSS。
 
@@ -97,7 +95,7 @@ ms.locfileid: "87182134"
 
 ##  <a name="system-management-interrupts"></a><a name="bkmk_smi"></a>系統管理中斷
 
-許多硬體系統都會使用系統管理中斷（SMI-S）來進行各種維護功能，例如回報錯誤修正程式碼（ECC）記憶體錯誤、維持舊版 USB 相容性、控制風扇，以及管理 BIOS 控制的電源設定。
+許多硬體系統都會針對各種維護功能使用系統管理中斷 (SMI-S) ，例如報告錯誤更正程式碼 (ECC) 記憶體錯誤、維持舊版 USB 相容性、控制風扇，以及管理 BIOS 控制的電源設定。
 
 SMI-S 是系統上最高優先順序的插斷，會將 CPU 放在管理模式中。 此模式會比所有其他的活動，而 SMI-S 會執行插斷服務常式，通常包含在 BIOS 中。
 
@@ -116,19 +114,19 @@ SMI-S 是系統上最高優先順序的插斷，會將 CPU 放在管理模式中
 
 在 Windows Vista、Windows Server 2008 和更新版本的 Windows 中，Windows 網路堆疊會使用名為*tcp 接收視窗自動調整層級*的功能來協調 tcp 接收視窗大小。 這項功能可以在 TCP 交握期間，針對每個 TCP 通訊，協調定義的接收視窗大小。
 
-在舊版的 Windows 中，Windows 網路堆疊使用固定大小的接收視窗（65535個位元組），這會限制連接的整體潛在輸送量。 TCP 連線的可用輸送量總計可能會限制網路使用案例。 TCP 接收視窗自動優化可讓這些案例完全使用網路。
+在舊版的 Windows 中，Windows 網路堆疊使用固定大小的接收視窗 (65535 個位元組，) 限制連接的整體潛在輸送量。 TCP 連線的可用輸送量總計可能會限制網路使用案例。 TCP 接收視窗自動優化可讓這些案例完全使用網路。
 
 若為具有特定大小的 TCP 接收視窗，您可以使用下列方程式來計算單一連接的總輸送量。
 
-> 可*達到的輸送量總計（以位元組為單位）*  = *TCP 接收視窗大小（位元組）* \*（1/*連接延遲（秒*））
+> 可*達到的輸送量總計（以位元組為單位）*  = *TCP 接收視窗大小（位元組）* \* (1/*連接延遲（秒）*) 
 
 例如，如果連接的延遲為10毫秒，則可達成的總輸送量只有 51 Mbps。 這個值對於大型商業網路基礎結構而言是合理的。 不過，藉由使用自動調整來調整接收視窗，連接可以達到 1 Gbps 連接的完整行速率。
 
 有些應用程式會定義 TCP 接收視窗的大小。 如果應用程式未定義接收視窗大小，連結速度會決定大小，如下所示：
 
-- 小於每秒1百萬位元（Mbps）： 8 kb
+- 每秒小於 1 mb (Mbps) ： 8 kb (KB) 
 - 1 mbps 到 100 Mbps： 17 KB
-- 100 Mbps 到每秒 10 gb （Gbps）： 64 KB
+- 100 Mbps 到每秒 10 gb (Gbps) ： 64 KB
 - 10 Gbps 或更快： 128 KB
 
 例如，在已安裝 1 Gbps 網路介面卡的電腦上，視窗大小應為 64 KB。
@@ -230,15 +228,15 @@ Set-NetTCPSetting -AutoTuningLevelLocal <Value>
 
 |層級 |十六進位值 |註解 |
 | --- | --- | --- |
-|標準 (預設) |0x8 （調整因數為8） |將 [TCP 接收] 視窗設定為 [成長]，以容納幾乎所有的案例。 |
-|停用 |沒有可用的縮放比例 |將 TCP 接收視窗設定為預設值。 |
-|受限制 |0x4 （4的縮放因數） |將 TCP 接收視窗設定為超過其預設值，但在某些情況下限制這類成長。 |
-|高度限制 |0x2 （調整因數為2） |將 [TCP 接收] 視窗設定為超過其預設值，但非常保守地這麼做。 |
-|實驗 |0xE （調整因數為14） |將 [TCP 接收] 視窗設定為「成長」，以容納極端的案例。 |
+|標準 (預設) |0x8 (8) 的縮放因數 |將 [TCP 接收] 視窗設定為 [成長]，以容納幾乎所有的案例。 |
+|已停用 |沒有可用的縮放比例 |將 TCP 接收視窗設定為預設值。 |
+|受限制 |0x4 (4) 的比例因數 |將 TCP 接收視窗設定為超過其預設值，但在某些情況下限制這類成長。 |
+|高度限制 |0x2 (的比例因數 2)  |將 [TCP 接收] 視窗設定為超過其預設值，但非常保守地這麼做。 |
+|實驗 |0xE (擴展因數為 14)  |將 [TCP 接收] 視窗設定為「成長」，以容納極端的案例。 |
 
 如果您使用應用程式來捕捉網路封包，應用程式應該針對不同的視窗自動優化層級設定，報告類似以下的資料。
 
-- 自動優化層級：**一般（預設狀態）**
+- 自動調諧層級：**一般 (預設狀態) **
 
    ```
    Frame: Number = 492, Captured Frame Length = 66, MediaType = ETHERNET
@@ -375,7 +373,7 @@ Set-NetTCPSetting -AutoTuningLevelLocal <Value>
 
 ###  <a name="windows-filtering-platform"></a><a name="bkmk_wfp"></a>Windows 篩選平台
 
-Windows Vista 和 Windows Server 2008 引進了 Windows 篩選平台（WFP）。 WFP 提供 Api 給非 Microsoft 獨立軟體廠商（Isv），以建立封包處理篩選器。 範例包括防火牆和防毒軟體。
+Windows Vista 和 Windows Server 2008 引進了 (WFP) 的 Windows 篩選平台。 WFP 會為非 Microsoft 獨立軟體廠商提供 Api， (Isv) 建立封包處理篩選器。 範例包括防火牆和防毒軟體。
 
 > [!NOTE]
 > 撰寫不良的 WFP 篩選器可能會大幅降低伺服器的網路效能。 如需詳細資訊，請參閱 Windows 開發人員中心的將封[包處理驅動程式和應用程式移植到 WFP](https://docs.microsoft.com/windows-hardware/drivers/network/porting-packet-processing-drivers-and-apps-to-wfp) 。

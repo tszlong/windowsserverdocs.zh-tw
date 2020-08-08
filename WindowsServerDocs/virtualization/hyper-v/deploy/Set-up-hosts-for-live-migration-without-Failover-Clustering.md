@@ -1,24 +1,22 @@
 ---
 title: 設定主機以進行即時移轉而不需要容錯移轉叢集
 description: 提供在非叢集環境中設定即時移轉的指示
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: b5e3c405-cb76-4ff2-8042-c2284448c435
 author: kbdazure
 ms.author: kathydav
 ms.date: 9/30/2016
-ms.openlocfilehash: 2c2f671bf59e95de2604c91944fab3d65f82410e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7bcd4e625f340ba7358a8ce9bdd860581c390e96
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860881"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87948017"
 ---
 # <a name="set-up-hosts-for-live-migration-without-failover-clustering"></a>設定主機以進行即時移轉而不需要容錯移轉叢集
 
->適用于： Windows Server 2016、Microsoft Hyper-v Server 2016、Windows Server 2019、Microsoft Hyper-v Server 2019
+>適用於：Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
 本文說明如何設定未叢集化的主機，讓您可以在它們之間進行即時移轉。 如果您未在安裝 Hyper-v 時設定即時移轉，或想要變更設定，請使用這些指示。 若要設定叢集主機，請使用容錯移轉叢集的工具。
 
@@ -50,14 +48,14 @@ ms.locfileid: "80860881"
 
 -  **網路喜好**設定：您是否允許透過任何可用的網路進行即時移轉流量，或將流量隔離到特定網路？ 最佳的安全性做法，建議您將流量隔離到受信任的私用網路，因為在網路上傳送即時移轉時不會加密。 透過實際隔離的網路或另一種受信任的網路技術 (例如 Vlan) 可以達成網路隔離。
 
-## <a name="step-1-configure-constrained-delegation-optional"></a><a name="BKMK_Step1"></a>步驟1：設定限制委派（選擇性）
+## <a name="step-1-configure-constrained-delegation-optional"></a><a name="BKMK_Step1"></a>步驟1：設定限制委派 (選擇性) 
 如果您已決定使用 Kerberos 來驗證即時移轉流量，請使用網域系統管理員群組成員的帳戶來設定限制委派。
 
 ### <a name="use-the-users-and-computers-snap-in-to-configure-constrained-delegation"></a>使用 [使用者和電腦] 嵌入式管理單元來設定限制委派
 
-1.  開啟 [Active Directory 使用者和電腦] 嵌入式管理單元。 （從伺服器管理員，選取未選取的伺服器，然後按一下 **工具** >> **Active Directory 使用者和電腦**）。
+1.  開啟 [Active Directory 使用者和電腦] 嵌入式管理單元。 從伺服器管理員 (，選取未選取的伺服器，然後按一下 [**工具**]  >>  **Active Directory [使用者和電腦**] [) ]。
 
-2.  從**Active Directory 使用者和電腦** 的流覽窗格中，選取網域，然後按兩下 **電腦** 資料夾。
+2.  從**Active Directory 使用者和電腦**] 的流覽窗格中，選取網域，然後按兩下 [**電腦**] 資料夾。
 
 3.  在 [**電腦**] 資料夾中，以滑鼠**按右鍵來源**伺服器的電腦帳戶，然後按一下 [內容]。
 
@@ -65,21 +63,21 @@ ms.locfileid: "80860881"
 
 5.  在 [委派] 索引標籤上，選取 [**信任這台電腦，但只委派指定的服務**]，然後選取 [**使用任何驗證通訊協定**]。
 
-6.  按一下 [加入]。
+6.  按一下 [新增] 。
 
 7.  在 [**新增服務**] 中，按一下 [**使用者或電腦**]。
 
-8.  在 [**選取使用者或電腦**] 中，輸入目的地伺服器的名稱。 按一下 [**檢查名稱**] 進行驗證，然後按一下 **[確定]** 。
+8.  在 [**選取使用者或電腦**] 中，輸入目的地伺服器的名稱。 按一下 [**檢查名稱**] 進行驗證，然後按一下 **[確定]**。
 
-9. 從 [**新增服務**]，在 [可用的服務] 清單中執行下列動作，然後按一下 **[確定]** ：
+9. 從 [**新增服務**]，在 [可用的服務] 清單中執行下列動作，然後按一下 **[確定]**：
 
-    -   若要移動虛擬機器存放裝置，請選取 [cifs]。 如果您想要將存放裝置與虛擬機器一起移動，以及只想要移動虛擬機器的存放裝置，就必須這麼做。 如果伺服器設定為在 Hyper-V 使用 SMB 存放裝置，這個選項應該已經選取。
+    -   若要移動虛擬機器存放裝置，請選取 [cifs]****。 如果您想要將存放裝置與虛擬機器一起移動，以及只想要移動虛擬機器的存放裝置，就必須這麼做。 如果伺服器設定為在 Hyper-V 使用 SMB 存放裝置，這個選項應該已經選取。
 
-    -   若要移動虛擬機器，請選取 [Microsoft 虛擬系統移轉服務]。
+    -   若要移動虛擬機器，請選取 [Microsoft 虛擬系統移轉服務]****。
 
-10. 在 [內容] 對話方塊的 [委派] 索引標籤上，確認您在上一個步驟中選取的服務已經列示為目的電腦可以顯示委派認證的服務。 按一下 [確定]。
+10. 在 [內容] 對話方塊的 [委派]**** 索引標籤上，確認您在上一個步驟中選取的服務已經列示為目的電腦可以顯示委派認證的服務。 按一下 [確定]  。
 
-11. 從 [Computers] 資料夾，選取目的地伺服器的電腦帳戶，然後重複這個程序。 在 [選取使用者或電腦] 對話方塊中，確定指定了來源伺服器的名稱。
+11. 從 [Computers]**** 資料夾，選取目的地伺服器的電腦帳戶，然後重複這個程序。 在 [選取使用者或電腦]**** 對話方塊中，確定指定了來源伺服器的名稱。
 
 設定變更會在下列兩種情況發生之後生效：
 
@@ -91,24 +89,24 @@ ms.locfileid: "80860881"
 
 ### <a name="use-hyper-v-manager-to-set-up-the-source-and-destination-computers-for-live-migration"></a>使用 Hyper-v 管理員設定來源和目的地電腦以進行即時移轉
 
-1.  開啟 \[Hyper-V 管理員\]。 （從伺服器管理員按一下 [**工具** >>**hyper-v 管理員**]）。
+1.  開啟 Hyper-V 管理員。 從伺服器管理員 (，按一下 [**工具**] [  >> **hyper-v 管理員**]。 ) 
 
-2.  在流覽窗格中，選取其中一部伺服器。 （如果未列出，請以滑鼠右鍵按一下 [ **Hyper-v 管理員**]，按一下 **[連線到伺服器]** ，輸入伺服器名稱，然後按一下 **[確定]** 。 重複以新增更多伺服器。）
+2.  在流覽窗格中，選取其中一部伺服器。  (如果未列出，請以滑鼠右鍵按一下 [ **Hyper-v 管理員**]，按一下 **[連線到伺服器]**，輸入伺服器名稱，然後按一下 **[確定]**。 重複以新增更多伺服器。 ) 
 
-3.  在 [**動作**] 窗格中，按一下 [ **hyper-v 設定**] >>[**即時移轉**]。
+3.  在 [**動作**] 窗格中，按一下 [ **hyper-v 設定**] [  >> **即時移轉**]。
 
-4.  在 [即時移轉] 窗格中，核取 [啟用連入與連出即時移轉]。
+4.  在 [即時移轉]**** 窗格中，核取 [啟用連入與連出即時移轉]****。
 
 5.  如果您不想使用預設值2，請在 [**同時即時移轉**] 底下，指定不同的數位。
 
-6.  在 [連入即時移轉] 下，如果您想要使用特定網路連線來接受即時移轉流量，請按一下 [新增] 以便輸入 IP 位址資訊。 否則，請按一下 [使用任何可用的網路來進行即時移轉]。 按一下 [確定]。
+6.  在 [連入即時移轉]**** 下，如果您想要使用特定網路連線來接受即時移轉流量，請按一下 [新增]**** 以便輸入 IP 位址資訊。 否則，請按一下 [使用任何可用的網路來進行即時移轉]****。 按一下 [確定]  。
 
 7.  若要選擇 Kerberos 和效能選項，請展開 [**即時移轉**]，然後選取 [ **Advanced Features**]。
 
     - 如果您已設定限制委派，請在 [**驗證通訊協定**] 底下選取 [ **Kerberos**]。
     - 在 [**效能選項**] 底下，檢查詳細資料，如果適用于您的環境，請選擇不同的選項。
 
-8. 按一下 [確定]。
+8. 按一下 [確定]  。
 
 9. 在 [Hyper-v 管理員] 中選取其他伺服器，並重複執行步驟。
 
@@ -129,7 +127,7 @@ PS C:\> Set-VMMigrationNetwork 192.168.10.1
 PS C:\> Set-VMHost -VirtualMachineMigrationAuthenticationType Kerberos
 ```
 
-VMHost 也可讓您選擇效能選項（以及許多其他主機設定）。 例如，若要選擇 SMB，但讓驗證通訊協定保持設定為預設的 CredSSP，請輸入：
+VMHost 也可讓您選擇 (和其他許多主機設定) 的效能選項。 例如，若要選擇 SMB，但讓驗證通訊協定保持設定為預設的 CredSSP，請輸入：
 
 ```PowerShell
 PS C:\> Set-VMHost -VirtualMachineMigrationPerformanceOption SMB
@@ -141,7 +139,7 @@ PS C:\> Set-VMHost -VirtualMachineMigrationPerformanceOption SMB
 |----------|---------------|
     |TCP/IP|透過 TCP/IP 連接，將虛擬機器的記憶體複製到目的地伺服器。|
     |壓縮|會先壓縮虛擬機器的記憶體內容，再透過 TCP/IP 連接將它複製到目的地伺服器。 **注意：** 這是**預設**設定。|
-    |SMB|透過 SMB 3.0 連線，將虛擬機器的記憶體複製到目的地伺服器。<p>-當來源和目的地伺服器上的網路介面卡已啟用遠端直接記憶體存取（RDMA）功能時，會使用 SMB 直接傳輸。<br />-當識別出適當的 SMB 多重通道設定時，SMB 多重通道會自動偵測並使用多個連接。<p>如需詳細資訊，請參閱[使用 SMB 直接傳輸改善檔案伺服器的效能](https://technet.microsoft.com/library/jj134210(WS.11).aspx)。|
+    |SMB|透過 SMB 3.0 連線，將虛擬機器的記憶體複製到目的地伺服器。<p>-當來源和目的地伺服器上的網路介面卡已啟用 (RDMA) 功能的遠端直接記憶體存取時，會使用 SMB 直接傳輸。<br />-當識別出適當的 SMB 多重通道設定時，SMB 多重通道會自動偵測並使用多個連接。<p>如需詳細資訊，請參閱[使用 SMB 直接傳輸改善檔案伺服器的效能](https://technet.microsoft.com/library/jj134210(WS.11).aspx)。|
 
  ## <a name="next-steps"></a>後續步驟
 

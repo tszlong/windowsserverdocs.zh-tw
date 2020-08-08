@@ -1,19 +1,17 @@
 ---
 title: 新增與開發功能
 description: 「系統深入解析」可讓您將新的預測功能新增至「系統深入解析」，而不需要任何作業系統更新。 這可讓開發人員（包括 Microsoft 和協力廠商）建立並提供新功能，以處理您關心的案例。 新功能可以指定要收集和分析的自訂資料，而且它們也會與現有的 System Insights 管理平面整合。
-ms.prod: windows-server
-ms.technology: system-insights
 ms.topic: article
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 7/31/2018
-ms.openlocfilehash: 891edb108bc2c298c70b29c596fb8d0ca0e06b7e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b28621b24b321cdc22f07c03e9c04f0dde22759b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475185"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972015"
 ---
 # <a name="adding-and-developing-new-capabilities"></a>加入和開發新功能
 
@@ -39,7 +37,7 @@ ms.locfileid: "85475185"
 >[!NOTE]
 >這是發行前版本功能。 因為我們新增了新功能並納入意見反應，所以可能會有所變更。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 若要深入瞭解「系統深入解析」，請使用下列資源：
 
 - [系統深入解析概觀](overview.md)

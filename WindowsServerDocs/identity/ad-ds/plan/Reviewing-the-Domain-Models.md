@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/08/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: db49a7e3c99e468e27c390acd58002eb09e72b3e
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 326c9f5727fa529fc131fe7bac6589a30c54c30a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959360"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972255"
 ---
 # <a name="reviewing-the-domain-models"></a>檢查領域模型
 
@@ -21,7 +19,7 @@ ms.locfileid: "86959360"
 
 下列因素會影響您所選取的網域設計模型：
 
-- 您的網路上願意配置給 Active Directory Domain Services （AD DS）的可用容量數量。 其目標是要選取可有效率地複寫資訊的模型，並對可用的網路頻寬造成最小的影響。
+- 您的網路上您願意配置給 Active Directory Domain Services (AD DS) 的可用容量數量。 其目標是要選取可有效率地複寫資訊的模型，並對可用的網路頻寬造成最小的影響。
 
 - 您組織中的使用者數目。 如果您的組織包含大量的使用者，部署多個網域可讓您分割資料，並讓您更充分掌控將透過指定的網路連接傳遞的複寫流量量。 這可讓您控制資料的複寫位置，並減少網路中低速連結上的複寫流量所建立的負載。
 
@@ -53,7 +51,7 @@ ms.locfileid: "86959360"
 
 ## <a name="regional-domain-model"></a>地區網域模型
 
-網域內的所有物件資料都會複寫到該網域中的所有網域控制站。 基於這個理由，如果您的樹系包含大量的使用者散佈在廣域網路（WAN）所連接的不同地理位置，您可能需要部署地區網域，以減少透過 WAN 連結的複寫流量。 以地理位置為基礎的地區網域可以根據網路 WAN 連線來組織。
+網域內的所有物件資料都會複寫到該網域中的所有網域控制站。 基於這個理由，如果您的樹系包含大量的使用者散佈于廣域網路 (WAN) 所連接的不同地理位置，您可能需要部署地區網域，以減少透過 WAN 連結的複寫流量。 以地理位置為基礎的地區網域可以根據網路 WAN 連線來組織。
 
 區域領域模型可讓您在一段時間內維持穩定的環境。 根據穩定元素（例如大陸界限），用來在模型中定義網域的區域。 以其他因素為基礎的網域（例如組織內的群組）可能會經常變更，而且可能需要您重新組織環境。
 

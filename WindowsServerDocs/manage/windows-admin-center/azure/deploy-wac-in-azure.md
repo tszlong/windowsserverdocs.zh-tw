@@ -1,33 +1,31 @@
 ---
 title: 在 Azure 中部署 Windows 管理中心閘道
 description: 如何在 Azure 中部署 Windows 管理中心閘道
-ms.technology: manage
 ms.topic: article
 author: jwwool
 ms.author: jeffrew
 ms.date: 04/12/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 1da4df284febbf18b5796322868451c45ab247ab
-ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
+ms.openlocfilehash: b4ae232d47398800ecae8500cff6726128f22b83
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74903930"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971985"
 ---
-# <a name="deploy-windows-admin-center-in-azure"></a>在 Azure 中部署 Windows 管理中心
+# <a name="deploy-windows-admin-center-in-azure"></a>在 Azure 中部署 Windows Admin Center
 
 ## <a name="deploy-using-script"></a>使用腳本部署
 
-您可以從[Azure Cloud Shell](https://shell.azure.com)下載[Deploy-WACAzVM](https://aka.ms/deploy-wacazvm) ，以便在 Azure 中設定 Windows 管理中心閘道。 此腳本可以建立整個環境，包括資源群組。
+您可以從[Azure Cloud Shell](https://shell.azure.com)下載[Deploy-WACAzVM.ps1](https://aka.ms/deploy-wacazvm) ，以便在 Azure 中設定 Windows 系統管理中心閘道。 此腳本可以建立整個環境，包括資源群組。
 
 [跳至手動部署步驟](#deploy-manually-on-an-existing-azure-virtual-machine)
 
 ### <a name="prerequisites"></a>必要條件
 
 * 在[Azure Cloud Shell](https://shell.azure.com)中設定您的帳戶。 如果這是您第一次使用 Cloud Shell，系統會要求您將 Azure 儲存體帳戶與 Cloud Shell 建立關聯。
-* 在**PowerShell** Cloud Shell 中，流覽至您的主目錄： ```PS Azure:\> cd ~```
-* 若要上傳 ```Deploy-WACAzVM.ps1``` 檔案，請將它從本機電腦拖放到 [Cloud Shell] 視窗上的任何位置。
+* 在**PowerShell** Cloud Shell 中，流覽至您的主目錄：```PS Azure:\> cd ~```
+* 若要上傳檔案 ```Deploy-WACAzVM.ps1``` ，請將它從本機電腦拖放到 [Cloud Shell] 視窗上的任何位置。
 
 如果指定您自己的憑證：
 
@@ -41,7 +39,7 @@ ms.locfileid: "74903930"
 
 * **認證**-[PSCredential] 指定 VM 的認證。
 
-* **MsiPath** -[String] 指定在現有 VM 上部署 windows 管理中心時，Windows 系統管理中心 MSI 的本機路徑。 [http://aka.ms/WACDownload](https://aka.ms/WACDownload ) 如果省略，則預設為的版本。
+* **MsiPath** -[String] 指定在現有 VM 上部署 windows 管理中心時，Windows 系統管理中心 MSI 的本機路徑。 如果省略，則預設為的版本 https://aka.ms/WACDownload 。
 
 * **VaultName** -[String] 指定包含憑證的金鑰保存庫名稱。
 
@@ -76,7 +74,7 @@ ms.locfileid: "74903930"
 首先，定義腳本參數所需的一般變數。
 
 ```PowerShell
-$ResourceGroupName = "wac-rg1" 
+$ResourceGroupName = "wac-rg1"
 $VirtualNetworkName = "wac-vnet"
 $SecurityGroupName = "wac-nsg"
 $SubnetName = "wac-subnet"
@@ -135,7 +133,7 @@ $scriptParams = @{
 
 ### <a name="requirements-for-vm-running-the-windows-admin-center-gateway"></a>執行 Windows 管理中心閘道的 VM 需求
 
-埠443（HTTPS）必須開啟。
+埠 443 (HTTPS) 必須開啟。
 使用針對腳本定義的相同變數，您可以使用下列 Azure Cloud Shell 中的程式碼來更新網路安全性群組：
 
 ```powershell
@@ -146,8 +144,8 @@ Set-AzNetworkSecurityGroup -NetworkSecurityGroup $newNSG
 
 ### <a name="requirements-for-managed-azure-vms"></a>受控 Azure VM 的需求
 
-埠5985（WinRM over HTTP）必須開啟並具有作用中的接聽程式。
-您可以使用 Azure Cloud Shell 中的下列程式碼來更新受管理的節點。 ```$ResourceGroupName``` 和 ```$Name``` 使用與部署腳本相同的變數，但您必須使用您所管理之 VM 的特定 ```$Credential```。
+埠 5985 (WinRM over HTTP) 必須開啟並具有作用中的接聽程式。
+您可以使用 Azure Cloud Shell 中的下列程式碼來更新受管理的節點。 ```$ResourceGroupName```和 ```$Name``` 會使用與部署腳本相同的變數，但您必須使用 ```$Credential``` 您所管理之 VM 的特定。
 
 ```powershell
 Enable-AzVMPSRemoting -ResourceGroupName $ResourceGroupName -Name $Name
@@ -157,10 +155,10 @@ Invoke-AzVMCommand -ResourceGroupName $ResourceGroupName -Name $Name -ScriptBloc
 
 ## <a name="deploy-manually-on-an-existing-azure-virtual-machine"></a>在現有的 Azure 虛擬機器上手動部署
 
-在您想要的閘道 VM 上安裝 Windows 管理中心之前，請先安裝 SSL 憑證以用於 HTTPS 通訊，或者選擇使用由 Windows 系統管理中心產生的自我簽署憑證。 不過，如果您選擇第二個選項，當您嘗試從瀏覽器連線時，將會收到警告。 若要在 Edge 中略過此警告，請按一下 [**詳細資料] > 前往網頁**，或在 Chrome 中選取 **[Advanced] > 繼續進行 [網頁]** 。 我們建議您只在測試環境中使用自我簽署憑證。
+在您想要的閘道 VM 上安裝 Windows 管理中心之前，請先安裝 SSL 憑證以用於 HTTPS 通訊，或者選擇使用由 Windows 系統管理中心產生的自我簽署憑證。 不過，如果您選擇第二個選項，當您嘗試從瀏覽器連線時，將會收到警告。 若要在 Edge 中略過此警告，請按一下 [**詳細資料] > 前往網頁**，或在 Chrome 中選取 **[Advanced] > 繼續進行 [網頁]**。 我們建議您只在測試環境中使用自我簽署憑證。
 
 > [!NOTE]
-> 這些指示適用于在具有桌面體驗的 Windows Server 上安裝，而不是在 Server Core 安裝上。 
+> 這些指示適用于在具有桌面體驗的 Windows Server 上安裝，而不是在 Server Core 安裝上。
 
 1. 將[Windows 管理中心下載](https://aka.ms/windowsadmincenter)至您的本機電腦。
 
@@ -168,32 +166,32 @@ Invoke-AzVMCommand -ResourceGroupName $ResourceGroupName -Name $Name -ScriptBloc
 
 3. 按兩下 MSI 以開始安裝，並遵循嚮導中的指示進行。 請注意以下事項：
 
-   - 根據預設，安裝程式會使用建議的埠443（HTTPS）。 如果您想要選取不同的埠，請注意，您也必須在防火牆中開啟該埠。 
+   - 根據預設，安裝程式會使用建議的埠 443 (HTTPS) 。 如果您想要選取不同的埠，請注意，您也必須在防火牆中開啟該埠。
 
    - 如果您已在 VM 上安裝 SSL 憑證，請務必選取該選項，然後輸入指紋。
 
-4. 啟動 Windows 系統管理中心服務（執行 C：/Program Files/Windows Admin Center/sme）
+4. 啟動 Windows Admin Center 服務 (執行 C：/Program Files/Windows 管理中心/sme.exe) 
 
 [深入瞭解如何部署 Windows 管理中心。](../deploy/install.md)
 
-### <a name="configure-the-gateway-vm-to-enable-https-port-access"></a>設定閘道 VM 以啟用 HTTPS 埠存取： 
+### <a name="configure-the-gateway-vm-to-enable-https-port-access"></a>設定閘道 VM 以啟用 HTTPS 埠存取：
 
-1. 在 Azure 入口網站中流覽至您的 VM，然後選取 [**網路**]。 
+1. 在 Azure 入口網站中流覽至您的 VM，然後選取 [**網路**]。
 
-2. 選取 [**新增輸入連接埠規則**]，然後選取 [**服務**] 下的 [ **HTTPS** ]。 
+2. 選取 [**新增輸入連接埠規則**]，然後選取 [**服務**] 下的 [ **HTTPS** ]。
 
 > [!NOTE]
-> 如果您選擇預設443以外的通訊埠，請選擇 [服務] 下的 [**自訂**]，然後輸入您在步驟3的 [**埠範圍**] 底下選擇的埠。 
+> 如果您選擇預設443以外的通訊埠，請選擇 [服務] 下的 [**自訂**]，然後輸入您在步驟3的 [**埠範圍**] 底下選擇的埠。
 
 ### <a name="accessing-a-windows-admin-center-gateway-installed-on-an-azure-vm"></a>存取安裝在 Azure VM 上的 Windows 管理中心閘道
 
-此時，您應該能夠流覽至閘道 VM 的 DNS 名稱，以從本機電腦上的新式瀏覽器（邊緣或 Chrome）存取 Windows 管理中心。 
+此時，您應該能夠透過流覽至閘道 VM 的 DNS 名稱，從本機電腦上的新式瀏覽器 (Edge 或 Chrome) 存取 Windows 系統管理中心。
 
 > [!NOTE]
-> 如果您選取了443以外的埠，您可以流覽至 HTTPs://\<您 VM 的 DNS 名稱\>：\<自訂埠，以存取 Windows 管理中心\>
+> 如果您選取了443以外的埠，您可以流覽至 HTTPs://來存取 Windows 系統管理中心 \<DNS name of your VM\> ：\<custom port\>
 
-當您嘗試存取 Windows 管理中心時，瀏覽器會提示您提供認證，以存取已安裝 Windows 系統管理中心的虛擬機器。 在這裡，您將需要輸入虛擬機器的 [本機使用者] 或 [本機系統管理員] 群組中的認證。 
+當您嘗試存取 Windows 管理中心時，瀏覽器會提示您提供認證，以存取已安裝 Windows 系統管理中心的虛擬機器。 在這裡，您將需要輸入虛擬機器的 [本機使用者] 或 [本機系統管理員] 群組中的認證。
 
-若要在 VNet 中新增其他 Vm，請確定 WinRM 是在目標 vm 上執行，方法是在 PowerShell 或目標 VM 上的命令提示字元中執行下列命令： `winrm quickconfig`
+若要在 VNet 中新增其他 Vm，請確定 WinRM 是在目標 vm 上執行，方法是在 PowerShell 或目標 VM 上的命令提示字元中執行下列命令：`winrm quickconfig`
 
 如果您尚未加入 Azure VM 的網域，VM 的行為就像工作組中的伺服器，因此您必須確定您[是在工作組中使用 Windows 系統管理中心](../support/troubleshooting.md#using-windows-admin-center-in-a-workgroup)的帳戶。

@@ -2,19 +2,17 @@
 title: Network Load Balancing
 description: 在本主題中，我們將概述 \( Windows Server 2016 中的網路負載平衡 NLB \) 功能。 您可以使用 NLB，將兩部或多部伺服器當做單一虛擬叢集來管理。 NLB 可增強網際網路伺服器應用程式的可用性和擴充性，例如 web、FTP、防火牆、proxy、虛擬私人網路 \( VPN \) 和其他關鍵伺服器上所使用的 \- 。
 manager: dougkim
-ms.prod: windows-server
-ms.technology: networking-nlb
 ms.topic: article
 ms.assetid: 244a4b48-06e5-4796-8750-a50e4f88ac72
 ms.author: lizross
 author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: f6631920fd4df056447d702df78145d4b375e0f5
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: ecea87a3716ef68c599594851037e774ad589998
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409608"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955805"
 ---
 # <a name="network-load-balancing"></a>Network Load Balancing
 
@@ -23,7 +21,7 @@ ms.locfileid: "87409608"
 在本主題中，我們將概述 \( Windows Server 2016 中的網路負載平衡 NLB \) 功能。 您可以使用 NLB，將兩部或多部伺服器當做單一虛擬叢集來管理。 NLB 可增強網際網路伺服器應用程式的可用性和擴充性，例如 web、FTP、防火牆、proxy、虛擬私人網路 \( VPN \) 和其他關鍵伺服器上所使用的 \- 。
 
 > [!NOTE]
-> Windows Server 2016 包含新的 Azure 靈感軟體 Load Balancer \( SLB， \) 做為軟體定義網路 \( SDN \) 基礎結構的元件。 如果您使用 SDN、使用非 Windows 工作負載、需要輸出網路位址轉譯 \( NAT \) ，或需要第3層 \( L3 \) 或非 TCP 型負載平衡，請使用 SLB 而非 NLB。 針對非 SDN 部署，您可以繼續使用 NLB 搭配 Windows Server 2016。 如需 SLB 的詳細資訊，請參閱[適用于 SDN 的軟體負載平衡（SLB）](../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md)。
+> Windows Server 2016 包含新的 Azure 靈感軟體 Load Balancer \( SLB， \) 做為軟體定義網路 \( SDN \) 基礎結構的元件。 如果您使用 SDN、使用非 Windows 工作負載、需要輸出網路位址轉譯 \( NAT \) ，或需要第3層 \( L3 \) 或非 TCP 型負載平衡，請使用 SLB 而非 NLB。 針對非 SDN 部署，您可以繼續使用 NLB 搭配 Windows Server 2016。 如需 SLB 的詳細資訊，請參閱[適用于 SDN 的軟體負載平衡 (SLB) ](../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md)。
 
 網路負載平衡 \( NLB \) 功能會使用 TCP \/ IP 網路通訊協定，將流量分散到多部伺服器。 藉由將兩部或多部執行應用程式的電腦結合成單一虛擬叢集，NLB 可為網頁伺服器和其他關鍵伺服器提供可靠性和效能 \- 。
 
@@ -61,7 +59,7 @@ NLB 適用于確保無狀態應用程式（例如執行 Internet Information Ser
 ### <a name="manageability"></a>管理能力
 您可以使用 NLB 來執行下列動作以支援管理性：
 
--   使用 NLB 管理員或[Windows PowerShell 中的網路負載平衡（NLB） Cmdlet](https://technet.microsoft.com/library/hh801274.aspx)，從單一電腦管理和設定多個 NLB 叢集與叢集主機。
+-   [在 Windows PowerShell 中使用 Nlb 管理員或網路負載平衡 (nlb) Cmdlet](https://technet.microsoft.com/library/hh801274.aspx)，從單一電腦管理和設定多個 NLB 叢集與叢集主機。
 
 -   使用連接埠管理規則來指定單一 IP 連接埠或連接埠群組的負載平衡行為。
 

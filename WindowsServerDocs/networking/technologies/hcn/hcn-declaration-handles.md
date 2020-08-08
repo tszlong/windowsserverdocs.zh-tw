@@ -2,23 +2,22 @@
 title: HCN 的 RPC 內容控點
 ms.author: jmesser
 author: jmesser81
-ms.prod: windows-server
 ms.date: 11/05/2018
-ms.openlocfilehash: d55a990b2158f8dfbc61d8e75e9b0606edc9bf7c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b837b2003beaf192c8f01be9e6c6edb2465bbe66
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859861"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955695"
 ---
 # <a name="rpc-context-handles-for-hcn"></a>HCN 的 RPC 內容控點
 
->適用于： Windows Server （半年通道）、Windows Server 2019
+>適用于： Windows Server (半年通道) 、Windows Server 2019
 
 
 ## <a name="hcn_network"></a>HCN_Network
 
-HCN 網路是一個實體，用來代表主機計算網路及其相關聯的系統資源和原則。 例如，HCN 網路通常包含一組中繼資料（例如識別碼、名稱、類型）、虛擬交換器、主機虛擬網路介面卡（做為網路的預設閘道）、NAT 實例（如果網路類型需要）、一組子網和 MAC 集區，以及要套用的任何全網路原則（例如 Acl）。
+HCN 網路是一個實體，用來代表主機計算網路及其相關聯的系統資源和原則。 例如，HCN 網路通常包含一組 (的中繼資料，例如識別碼、名稱、類型) 、虛擬交換器、主機虛擬網路介面卡 (做為網路) 的預設閘道、NAT 實例 (（如果網路類型) 需要）、一組子網和 MAC 集區，以及要套用的任何網路範圍原則 (例如 Acl) 。
 
 HCN 網路實體會使用 HCN_NETWORK RPC 內容控制碼來表示。
 
@@ -146,12 +145,12 @@ HRESULT
 WINAPI
 HcnCloseNetwork(
     _In_ HCN_NETWORK Network
-    ); 
+    );
 ```
 
 ## <a name="hcn_endpoint"></a>HCN_Endpoint
 
-HCN 端點是一個實體，用來代表 HCN 網路上的 IP 端點及其相關聯的系統資源和原則。 例如，HCN 端點通常會包含一組中繼資料（例如識別碼、名稱、父網路識別碼）、其網路識別（例如 IP 位址、MAC 位址），以及要套用的任何端點特定原則（例如 Acl、路由）。
+HCN 端點是一個實體，用來代表 HCN 網路上的 IP 端點及其相關聯的系統資源和原則。 例如，HCN 端點通常包含一組 (的中繼資料，例如識別碼、名稱、父網路識別碼) 、其網路身分識別 (例如，IP 位址、MAC 位址) ，以及要套用的任何端點特定原則 (例如 Acl、路由) 。
 HCN 端點實體會使用 HCN_ENDPOINT RPC 內容控制碼來表示。
 
 ```
@@ -280,7 +279,7 @@ WINAPI
 HcnCloseEndpoint(
     _In_ HCN_ENDPOINT Endpoint
     );
- 
+
 ```
 
 ## <a name="hcn_namespace"></a>HCN_Namespace
@@ -560,7 +559,7 @@ HcnCloseLoadBalancer(
 
 ## <a name="hcn_notification_callback"></a>HCN_Notification_Callback
 
-函式可讓您存取服務範圍的作業，例如通知（例如接收新網路建立的通知）。
+其中的函式可讓您存取整個服務的作業，例如通知 (例如接收新網路建立) 的通知。
 
 ```
 /// Registers a callback function to receive notifications of service-wide events such as network

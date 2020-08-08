@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/07/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: a71e1b92962ae9904262367f2c2697ecaa206ed8
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 05aa12b16d67a8f91ed82064c8464927546bfee8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965930"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947902"
 ---
 # <a name="configuring-a-computer-for-troubleshooting"></a>設定電腦進行疑難排解
 
@@ -25,17 +23,17 @@ ms.locfileid: "86965930"
 
 ## <a name="configuration-tasks-for-troubleshooting"></a>疑難排解的設定工作
 
-若要設定電腦以進行疑難排解 Active Directory Domain Services （AD DS），請執行下列工作：
+若要設定電腦以進行疑難排解 Active Directory Domain Services (AD DS) ，請執行下列工作：
 
 ### <a name="install-remote-server-administration-tools-for-ad-ds"></a>安裝 AD DS 的遠端伺服器管理工具
 
-當您安裝 AD DS 來建立網域控制站時，系統會自動安裝您用來管理 AD DS 的系統管理工具。 如果您想要從不是網域控制站的電腦遠端系統管理網域控制站，您可以在執行支援的 Windows 版本的成員伺服器或工作站上安裝遠端伺服器管理工具（RSAT）。 RSAT 取代 Windows Server 2003 的 Windows 支援工具。
+當您安裝 AD DS 來建立網域控制站時，系統會自動安裝您用來管理 AD DS 的系統管理工具。 如果您想要從不是網域控制站的電腦遠端系統管理網域控制站，您可以在執行支援的 Windows 版本的成員伺服器或工作站上，安裝 (RSAT) 的遠端伺服器管理工具。 RSAT 取代 Windows Server 2003 的 Windows 支援工具。
 
 如需安裝 RSAT 的詳細資訊，請參閱[遠端伺服器管理工具](../../../../remote/remote-server-administration-tools.md)一文。
 
 ### <a name="configure-reliability-and-performance-monitor"></a>設定可靠性和效能監視器
 
-Windows Server 包含 Windows 可靠性和效能監視器，這是一個 Microsoft Management Console （MMC）嵌入式管理單元，結合了舊版獨立工具的功能，包括效能記錄檔及警示、Server Performance Advisor 和系統監視器。 此嵌入式管理單元提供圖形化使用者介面（GUI），可用於自訂資料收集器集合和事件追蹤會話。
+Windows Server 包含 Windows 可靠性和效能監視器，這是一個 Microsoft Management Console (MMC) 嵌入式管理單元，結合了舊版獨立工具的功能，包括效能記錄檔及警示、Server Performance Advisor 和系統監視器。 此嵌入式管理單元提供圖形化使用者介面 (GUI) ，用於自訂資料收集器集合和事件追蹤會話。
 
 可靠性和效能監視器也包括可靠性監視器，此 MMC 嵌入式管理單元會追蹤系統的變更，並將其與系統穩定性的變更進行比較，以提供其關聯性的圖形化視圖。
 

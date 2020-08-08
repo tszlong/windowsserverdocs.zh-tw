@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: d9fb0503bfdf51ebaf3ff22d487777fd55f408c8
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 5b5ce5e7b53c7b82732613022c8309efe044143f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520137"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972225"
 ---
 # <a name="audit-policy-recommendations"></a>稽核原則建議
 
@@ -237,7 +235,7 @@ ms.locfileid: "87520137"
 
 第一個事件的範例如下：
 
-如果禁止網域系統管理員（DAs）登入不是網域控制站的電腦，單一出現的 DA 成員登入使用者工作站時，應該會產生警示並進行調查。 使用 Audit 特殊登入事件4964（已將特殊群組指派給新的登入），即可輕鬆產生這種類型的警示。 單一實例警示的其他範例包括：
+如果禁止 (DAs) 的網域系統管理員登入不是網域控制站的電腦，單一出現的 DA 成員登入使用者工作站時，應該會產生警示並進行調查。 您可以使用 Audit 特殊登入事件4964來產生這種類型的警示， (特殊群組已指派給新的登入) 。 單一實例警示的其他範例包括：
 
 - 如果伺服器 A 永遠不應連接到伺服器 B，則會在彼此連接時發出警示。
 
@@ -260,21 +258,21 @@ ms.locfileid: "87520137"
 ## <a name="active-directory-objects-and-attributes-to-monitor"></a>Active Directory 要監視的物件和屬性
 以下是您應該監視的帳戶、群組和屬性，以協助您偵測危害 Active Directory Domain Services 安裝的嘗試。
 
-- 停用或移除防毒軟體和反惡意程式碼軟體的系統（在手動停用時自動重新開機保護）
+- 停用或移除防毒軟體和反惡意程式碼軟體的系統 (會在手動停用時自動重新開機保護) 
 
 - 未獲授權變更的系統管理員帳戶
 
-- 使用特殊許可權帳戶執行的活動（當可疑活動完成或配置時間已過期時，自動移除帳戶）
+- 使用特殊許可權帳戶執行的活動 (在可疑的活動完成或配置的時間過期時，自動移除帳戶) 
 
-- AD DS 中的特殊許可權和 VIP 帳戶。 監視變更，特別是 [帳戶] 索引標籤上的屬性變更（例如 cn、name、sAMAccountName、userPrincipalName 或 userAccountControl）。 除了監視帳戶，限制誰可以將帳戶修改為一組較小的系統管理使用者。
+- AD DS 中的特殊許可權和 VIP 帳戶。 監視變更，特別是 [帳戶] 索引標籤上屬性的變更 (例如 cn、name、sAMAccountName、userPrincipalName 或 userAccountControl) 。 除了監視帳戶，限制誰可以將帳戶修改為一組較小的系統管理使用者。
 
 請參閱[附錄 L：監視的事件](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md)以取得要監視的建議事件清單、其重要性評等，以及事件訊息摘要。
 
 - 依據工作負載的分類來分組伺服器，可讓您快速識別應該是最嚴密監視且最而更加嚴格設定的伺服器
 
-- 下列 AD DS 群組的屬性和成員資格變更： Enterprise Admins （EA）、Domain Admins （DA）、Administrators （BA）和 Schema Admins （SA）
+- 下列 AD DS 群組的屬性和成員資格變更： Enterprise Admins (EA) 、Domain Admins (DA) 、Administrators (BA) 和 Schema Admins (SA) 
 
-- 已停用特殊許可權帳戶（例如 Active Directory 和成員系統上的內建系統管理員帳戶）來啟用帳戶
+- 已停用特殊許可權帳戶 (例如 Active Directory 中的內建系統管理員帳戶，以及在啟用帳戶的成員系統上) 
 
 - 用來記錄所有寫入帳戶的管理帳戶
 
@@ -291,14 +289,14 @@ ms.locfileid: "87520137"
 
 - [Windows server 2008 和 Windows vista 中的一次性審核](/archive/blogs/askds/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista)-包含 windows server 2008 和 windows vista 中包含的審核功能和資訊的編譯。
 
-- [AD DS 審核逐步指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731607(v=ws.10))-說明 Windows Server 2008 中的新 Active Directory Domain Services （AD DS）審核功能。 它也會提供執行這項新功能的程式。
+- [AD DS 審核逐步指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731607(v=ws.10))-說明 Windows Server 2008 中 Active Directory Domain Services (AD DS) 的新功能。 它也會提供執行這項新功能的程式。
 
 ## <a name="general-list-of-security-event-id-recommendation-criticalities"></a>安全性事件識別碼建議嚴重性的一般清單
 所有事件識別碼建議都會伴隨著重要性評等，如下所示：
 
 **高：** 具有高重要性評等的事件識別碼應一律會立即收到警示並進行調查。
 
-**中：** 具有「中」重要性評等的事件識別碼可能表示惡意活動，但必須伴隨一些其他異常（例如，在特定時段發生不尋常的數位、非預期的出現次數，或通常不會記錄事件的電腦發生）。 中等重要性事件可能也會收集為計量，並在一段時間內進行比較。
+**中：** 具有「中」重要性評等的事件識別碼可能表示惡意活動，但必須伴隨一些其他異常 (例如，在特定時段內發生不尋常的數位、未預期的出現次數，或通常不會記錄事件的電腦發生錯誤。 ) 。 中等重要性事件可能也會收集為計量，並在一段時間內進行比較。
 
 **低：** 而且具有低重要性事件的事件識別碼不應獲得注意或引發警示，除非與中等或高重要性事件相互關聯。
 

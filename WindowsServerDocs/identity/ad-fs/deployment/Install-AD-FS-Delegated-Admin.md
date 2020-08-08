@@ -7,14 +7,12 @@ ms.author: billmath
 manager: daveba
 ms.date: 04/01/2020
 ms.topic: article
-ms.prod: windows-server-threshold
-ms.technology: identity-adfs
-ms.openlocfilehash: 1716c1e3684ed09d051970a2ab3b43938b5eeb5e
-ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
+ms.openlocfilehash: 7dff0b19b4d8783dcd43344c6152be9d2c36441d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81269439"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972185"
 ---
 # <a name="creating-an-ad-fs-farm-without-domain-admin-privileges"></a>建立沒有網域系統管理員許可權的 AD FS 伺服器陣列
 
@@ -23,7 +21,7 @@ ms.locfileid: "81269439"
 ## <a name="overview"></a>概觀
 從 Windows Server 2016 中的 AD FS 開始，您可以在同盟伺服器上以本機系統管理員身分執行 Cmdlet AdfsFarm，前提是您的網域系統管理員已準備好 Active Directory。  本文中的下列腳本可用於準備 AD。  步驟如下：
 
-1) 以網域系統管理員身分執行腳本（或手動建立 Active Directory 物件和許可權）。
+1) 身為網域系統管理員，請 (執行腳本，或手動建立 Active Directory 物件和許可權) 。
 2) 腳本會傳回 AdminConfiguration 物件，其中包含新建立之 AD 物件的 DN。
 3) 在同盟伺服器上，請在以本機系統管理員身分登入時執行 AdfsFarm Cmdlet，並從上述 #2 傳遞物件作為 AdminConfiguration 參數
 
@@ -32,7 +30,7 @@ ms.locfileid: "81269439"
 - Contoso\FsSvcAcct 是將會是 AD FS 服務帳戶的網域帳戶
 - Contoso\FsGmsaAcct $ 是 gMSA 帳戶，將會是 AD FS 服務帳戶
 - $svcCred 是 AD FS 服務帳戶的認證
-- $localAdminCred 是同盟伺服器上本機（非 DA）系統管理員帳戶的認證
+- $localAdminCred 是同盟伺服器上本機 (非 DA) 系統管理員帳戶的認證
 
 ## <a name="using-a-domain-account-as-ad-fs-service-account"></a>使用網域帳戶做為 AD FS 服務帳戶
 ### <a name="prepare-ad"></a>準備 AD
@@ -40,7 +38,7 @@ ms.locfileid: "81269439"
 ```
 PS:\>$adminConfig=(.\New-AdfsDkmContainer.ps1 -ServiceAccount contoso\fssvcacct -AdfsAdministratorAccount contoso\localadmin)
 ```
-### <a name="sample-output"></a>取樣輸出
+### <a name="sample-output"></a>範例輸出
 ```
 $adminconfig.DkmContainerDN
 CN=9530440c-bc84-4fe6-a3f9-8d60162a7bcf,CN=ADFS,CN=Microsoft,CN=Program Data,DC=contoso,DC=com
@@ -65,7 +63,7 @@ PS:\>Install-AdfsFarm -CertificateThumbprint 270D041785C579D75C1C981DA0F9C36ECFD
 PS:\>$adminConfig=(.\New-AdfsDkmContainer.ps1 -ServiceAccount contoso\FsGmsaAcct$ -AdfsAdministratorAccount contoso\localadmin)
 ```
 
-### <a name="sample-output"></a>取樣輸出
+### <a name="sample-output"></a>範例輸出
 ```
 $adminconfig.DkmContainerDN
 CN=8065f653-af9d-42ff-aec8-56e02be4d5f3,CN=ADFS,CN=Microsoft,CN=Program Data,DC=contoso,DC=com
@@ -165,7 +163,7 @@ if ($pscmdlet.ShouldProcess("$ou", "Creating DKM container and assinging access"
     }
     else
     {
-        write-verbose "ADFS administrator account is a standard AD user"    
+        write-verbose "ADFS administrator account is a standard AD user"
         $objUser = New-Object System.Security.Principal.NTAccount($AdfsAdministratorAccount)
         $strSID = $objUser.Translate([System.Security.Principal.SecurityIdentifier])
     }
