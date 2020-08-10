@@ -1,23 +1,21 @@
 ---
 title: 超文字傳輸通訊協定 (HTTP) 的 netsh 命令
 description: 使用 netsh http 查詢和設定 HTTP.sys 設定和參數。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 manager: dougkim
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 81053e71040d2a0cd125af9fb7f3802dfd535781
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: a2bf580dff85463306767b6a129819b82f4fc85c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80853751"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946982"
 ---
 # <a name="netsh-http-commands"></a>netsh http 命令
 
 
-使用 **netsh http** 查詢和設定 HTTP.sys 設定和參數。  
+使用 **netsh http** 查詢和設定 HTTP.sys 設定和參數。
 
 >[!TIP]
 >如果您在執行 Windows Server 2016 或 Windows 10 的電腦上使用 Windows PowerShell，請輸入 **netsh**，然後按 Enter 鍵。 在 netsh 提示字元中輸入 **http**，然後按 Enter 鍵，以取得 netsh http 提示字元。
@@ -115,7 +113,7 @@ add sslcert ipport=1.1.1.1:443 certhash=0102030405060708090A0B0C0D0E0F1011121314
 
 將全域逾時新增至服務。
 
-**語法** 
+**語法**
 
 ```powershell
 add timeout [ timeouttype= ] IdleConnectionTimeout | HeaderWaitTimeout [ value=] U-Short

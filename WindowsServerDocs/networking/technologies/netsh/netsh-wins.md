@@ -1,19 +1,17 @@
 ---
 title: 網路殼層 (Netsh) 範例批次檔
 description: 您可以利用本主題了解如何建立批次檔，以使用 Netsh 在 Windows Server 2016 中執行多項工作。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: c94e37a4-3637-4613-9eb5-ed604e831eca
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: f0cc6818b589c6ee2ac64115fe9e7fb71c3d20b1
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 35690e25fa18512d729bbd323b8983284a41781d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517903"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953974"
 ---
 # <a name="network-shell-netsh-example-batch-file"></a>網路殼層 (Netsh) 範例批次檔
 

@@ -6,16 +6,14 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 10/29/2018
 ms.topic: article
-ms.prod: windows-server
 ms.custom: it-pro
 ms.reviewer: maheshu
-ms.technology: identity-adds
-ms.openlocfilehash: b6a9a5c08e24f5c7bb7ac50ac1c72386ef8a6d0f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 75ba30502c7de1b0a88886f42c3a8ef9a84a7e18
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963050"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87938627"
 ---
 # <a name="forest-and-domain-functional-levels"></a>樹系和網域功能等級
 
@@ -133,7 +131,7 @@ ms.locfileid: "86963050"
 
 ### <a name="windows-server-2008-forest-functional-level-features"></a>Windows Server 2008 樹系功能等級的功能
 
-* 可以在 Windows Server 2003 樹系功能等級使用的所有功能，沒有其他功能。 
+* 可以在 Windows Server 2003 樹系功能等級使用的所有功能，沒有其他功能。
 
 ### <a name="windows-server-2008-domain-functional-level-features"></a>Windows Server 2008 網域功能等級的功能
 
@@ -145,7 +143,7 @@ ms.locfileid: "86963050"
       > 從 Windows Server 2012 R2 開始，檔案複寫服務 (FRS) 已被取代。 在至少執行 Windows Server 2012 R2 的網域控制站中建立的新網域，必須設為 Windows Server 2008 網域功能等級或更高版本。
 
   * 網域型 DFS 命名空間，在 Windows Server 2008 模式中執行，此模式支援存取型列舉和更高的延展性。 Windows Server 2008 模式中的網域型命名空間也需要樹系使用 Windows Server 2003 樹系功能等級。 如需詳細資訊，請參閱[選擇命名空間類型](https://go.microsoft.com/fwlink/?LinkId=180400)。
-  * 支援 Kerberos 通訊協定的進階加密標準 (AES 128 與 AES 256)。 為了要使用 AES 來釋放 TGT，網域功能等級必須是 Windows Server 2008 或更高版本，而且需要變更網域密碼。 
+  * 支援 Kerberos 通訊協定的進階加密標準 (AES 128 與 AES 256)。 為了要使用 AES 來釋放 TGT，網域功能等級必須是 Windows Server 2008 或更高版本，而且需要變更網域密碼。
     * 如需詳細資訊，請參閱[Kerberos 增強功能](/previous-versions/windows/it-pro/windows-vista/cc749438(v=ws.10))。
 
       > [!NOTE]
@@ -182,7 +180,7 @@ ms.locfileid: "86963050"
       - 站台間拓撲產生器 (ISTG) 使用改進的演算法擴大對樹系的支援，它可支援的站台數量遠超過 Windows 2000 樹系功能等級中 AD DS 所能夠支援的數量。 改良的 ISTG 選擇演算法是在 Windows 2000 樹系功能等級中選擇 ISTG 時較無干擾的機制。
    * 在網域目錄磁碟分割中建立名為 **dynamicObject** 的動態輔助類別執行個體的能力
    * 將 **inetOrgPerson** 物件執行個體轉換為 **User** 物件執行個體的能力，以及反向轉換的能力
-   * 建立新群組類型的執行個體以支援角色型授權的能力。 
+   * 建立新群組類型的執行個體以支援角色型授權的能力。
       - 這些類型稱為應用程式基本群組和 LDAP 查詢群組。
    * 停用和重新定義架構中的屬性及類別。 下列屬性可以重複使用：ldapDisplayName、schemaIdGuid、OID、mapiID。
    * 網域型 DFS 命名空間，在 Windows Server 2008 模式中執行，此模式支援存取型列舉和更高的延展性。 如需詳細資訊，請參閱[選擇命名空間類型](https://go.microsoft.com/fwlink/?LinkId=180400)。
@@ -226,5 +224,5 @@ ms.locfileid: "86963050"
 
 ## <a name="next-steps"></a>後續步驟
 
-* [提高網域功能等級](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753104(v=ws.11))  
+* [提高網域功能等級](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753104(v=ws.11))
 * [提高樹系功能等級](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730985(v=ws.11))

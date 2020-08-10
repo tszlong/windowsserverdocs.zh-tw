@@ -5,14 +5,12 @@ author: dcuomo
 ms.author: dacuo
 ms.date: 06/06/2020
 ms.topic: article
-ms.prod: windows-server
-ms.technology: networking
-ms.openlocfilehash: b96da79679e7ee56067d49e74adead80804705fe
-ms.sourcegitcommit: 8b4876ece80c8ab267eb1fbf2f6fa255bcf77cb7
+ms.openlocfilehash: 6a07290efff6d36f58a75c409eb9f50284218bd1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84454291"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953884"
 ---
 # <a name="insider-preview"></a>Insider Preview
 

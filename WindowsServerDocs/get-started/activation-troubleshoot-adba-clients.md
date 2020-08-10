@@ -3,17 +3,16 @@ title: ADBA 用戶端疑難排解
 description: 逐步解說 Windows 啟用問題的疑難排解程序
 ms.topic: troubleshooting
 ms.date: 09/24/2019
-ms.technology: server-general
 author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: d56b2d002b0403971dc50fab639f77bddf1f8809
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: cb3e6e76b7f8086f23b5b107c5a45bfd50aacd19
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959880"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941962"
 ---
 # <a name="example-troubleshooting-active-directory-based-activation-adba-clients-that-do-not-activate"></a>範例：針對未啟用的 Active Directory 型啟用 (ADBA) 用戶端進行疑難排解
 

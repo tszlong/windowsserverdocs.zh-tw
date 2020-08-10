@@ -2,18 +2,16 @@
 title: 變更磁碟機代號
 description: 如何使用 [磁碟管理] 在 Windows 中變更或指派磁碟機代號。
 ms.date: 06/08/2020
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 424fa2c81954e022d7e1b297a60bd3415fdafa39
-ms.sourcegitcommit: a538474d2c0a9520567f4e6ad0933f8660273098
+ms.openlocfilehash: 52665f239bec56ad81d0300ed3312ec57b32cb1f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84505770"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936069"
 ---
 # <a name="change-a-drive-letter"></a>變更磁碟機代號
 

@@ -1,19 +1,17 @@
 ---
 title: SMB 安全性增強功能
 description: 說明 Windows Server 2012 R2、Windows Server 2012 和 Windows Server 2016 中的 SMB 加密功能。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9052e9e6a1327b67fd75b07ab2ee6fc56b1190ac
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: e81b5ca5d28c33187b90fbabebc3d3f36073124c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962131"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954695"
 ---
 # <a name="smb-security-enhancements"></a>SMB 安全性增強功能
 
@@ -43,17 +41,17 @@ SMB 加密可提供 SMB 資料的端對端加密，並保護資料免於在不�
 ### <a name="enable-smb-encryption-with-windows-powershell"></a>使用 Windows PowerShell 啟用 SMB 加密
 
 1. 若要為個別的檔案共用啟用 SMB 加密，請在伺服器上輸入下列指令碼：
-    
+
     ```PowerShell
     Set-SmbShare –Name <sharename> -EncryptData $true
     ```
 2. 若要為整個檔案伺服器啟用 SMB 加密，請在伺服器上輸入下列指令碼：
-    
+
     ```PowerShell
     Set-SmbServerConfiguration –EncryptData $true
     ```
 3. 若要新建啟用 SMB 加密的 SMB 檔案共用，請輸入下列指令碼：
-    
+
     ```PowerShell
     New-SmbShare –Name <sharename> -Path <pathname> –EncryptData $true
     ```

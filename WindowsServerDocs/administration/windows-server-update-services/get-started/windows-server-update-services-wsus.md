@@ -1,20 +1,18 @@
 ---
 title: 開始使用 Windows Server Update Services (WSUS)
 description: Windows Server Update Service (WSUS) 主題 - 伺服器角色及其實際應用的概觀
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: get-started article
 ms.assetid: 90e3464c-49d8-4861-96db-ee6f8a09ec5b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 5/22/2017
-ms.openlocfilehash: 07095fbbe16464645564f07434285c76b8cfd4a1
-ms.sourcegitcommit: fb808a6fc851a3e5c47e6a7654366145d2f19554
+ms.openlocfilehash: 45f88b9295bfc2d48d8e1a599b33bea05717ef0f
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84740631"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881049"
 ---
 # <a name="windows-server-update-services-wsus"></a>Windows Server Update Services (WSUS)
 
@@ -38,9 +36,9 @@ WSUS 為您企業提供附加價值的核心案例如下：
 
 > [!NOTE]
 > 從支援 WSUS 3.2 的任何 Windows Server 版本升級到 Windows Server 2012 R2 時，需要先解除安裝 WSUS 3.2。
-> 
+>
 > 在 Windows Server 2012 中，如果在安裝程序中偵測到 WSUS 3.2，就會封鎖安裝了 WSUS 3.2 的任何 Windows Server 版本進行升級。 在這種情況下，系統會提示您在升級伺服器之前，必須先解除安裝 Windows Server Update Services。
-> 
+>
 > 不過，因為此版本 Windows Server 和 Windows Server 2012 R2 中的變更，所以從任何 Windows Server 版本與 WSUS 3.2 升級時，並不會封鎖安裝。 在執行 Windows Server 2012 R2 升級前沒有先解除安裝 WSUS 3.2，會造成 Windows Server 2012 R2 中 WSUS 安裝後工作失敗。 在此情況下，唯一已知的修正方法是格式化硬碟並重新安裝 Windows Server。
 
 Windows Server Update Services 是內建的伺服器角色，包含了下列增強功能：

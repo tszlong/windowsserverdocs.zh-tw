@@ -1,17 +1,15 @@
 ---
 title: 將 SYSVOL 複寫移轉至 DFS 複寫
 ms.date: 07/02/2012
-ms.prod: windows-server
-ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 09c17ac9459f5fc1d9da6c03ec88fc365e6dcbde
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 6e022e4fdae631199bacca5f67c7953125ddd141
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966120"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950732"
 ---
 # <a name="migrate-sysvol-replication-to-dfs-replication"></a>將 SYSVOL 複寫移轉至 DFS 複寫
 
@@ -36,37 +34,37 @@ ms.locfileid: "86966120"
 
 [SYSVOL 移轉概念資訊](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd640170(v=ws.10))
 
-  - [SYSVOL 移轉狀態](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd641052(v=ws.10))  
-      
-  - [SYSVOL 移轉程序概觀](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd639809(v=ws.10))  
-      
+  - [SYSVOL 移轉狀態](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd641052(v=ws.10))
+
+  - [SYSVOL 移轉程序概觀](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd639809(v=ws.10))
+
 
 [SYSVOL 移轉程序](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd639860(v=ws.10))
 
-  - [遷移為就緒狀態](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd641193(v=ws.10))  
-      
-  - [遷移為重新導向狀態](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd641340(v=ws.10))  
-      
-  - [遷移為排除狀態](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd640254(v=ws.10))  
-      
+  - [遷移為就緒狀態](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd641193(v=ws.10))
+
+  - [遷移為重新導向狀態](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd641340(v=ws.10))
+
+  - [遷移為排除狀態](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd640254(v=ws.10))
+
 
 [SYSVOL 移轉疑難排解](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd640395(v=ws.10))
 
-  - [SYSVOL 移轉問題疑難排解](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd639976(v=ws.10))  
-      
-  - [將 SYSVOL 移轉回復到先前的穩定狀態](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd640509(v=ws.10))  
-      
+  - [SYSVOL 移轉問題疑難排解](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd639976(v=ws.10))
+
+  - [將 SYSVOL 移轉回復到先前的穩定狀態](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd640509(v=ws.10))
+
 
 [SYSVOL 移轉參考資訊](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd640293(v=ws.10))
 
-  - [支援的 SYSVOL 移轉](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd639854(v=ws.10))  
-      
-  - [驗證 SYSVOL 移轉狀態](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd639789(v=ws.10))  
-      
-  - [Dfsrmig](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd641227(v=ws.10))  
-      
-  - [SYSVOL 移轉工具動作](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd639712(v=ws.10))  
-      
+  - [支援的 SYSVOL 移轉](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd639854(v=ws.10))
+
+  - [驗證 SYSVOL 移轉狀態](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd639789(v=ws.10))
+
+  - [Dfsrmig](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd641227(v=ws.10))
+
+  - [SYSVOL 移轉工具動作](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd639712(v=ws.10))
+
 
 ## <a name="additional-references"></a>其他參考資料
 

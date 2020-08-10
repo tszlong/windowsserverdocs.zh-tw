@@ -1,7 +1,6 @@
 ---
 title: 保護特殊權限存取
 description: 保護特殊權限存取的分段式方法
-ms.prod: windows-server
 ms.topic: conceptual
 ms.assetid: f5dec0c2-06fe-4c91-9bdc-67cc6a3ede60
 ms.date: 02/25/2019
@@ -9,12 +8,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 4165561524dcb8572dbafc3904638fcb4513d06d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 5db041be6aa9a61bc248296ade4296afeaa4fb3e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964721"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953057"
 ---
 # <a name="securing-privileged-access"></a>保護特殊權限存取
 
@@ -69,7 +68,7 @@ Microsoft 建議的藍圖分成 3 個階段︰
 * [階段 3：進行中](#phase-3-security-improvement-and-sustainment)
    * 安全性改善和持續維護。
 
-藍圖已根據我們對這些攻擊的經驗和解決方案的實作經驗，優先排定最有效、最快速的實作。 
+藍圖已根據我們對這些攻擊的經驗和解決方案的實作經驗，優先排定最有效、最快速的實作。
 
 Microsoft 建議您遵循這份藍圖來保護特殊權限存取以對抗積極的攻擊者。 您可能需要調整這份藍圖以容納您現有的功能以及您組織中的特定需求。
 

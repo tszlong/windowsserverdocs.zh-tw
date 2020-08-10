@@ -1,20 +1,18 @@
 ---
 title: 管理 RDS 集合中的使用者
 description: 了解如何管理遠端桌面服務中的使用者。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 2727e1ab-69b8-46f3-9f6d-2540324fe596
 author: christianmontoya
 ms.author: chrimo
 ms.date: 03/27/2018
 manager: scottman
-ms.openlocfilehash: 430c38f98dd9aec3034e023d737952e3015622eb
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: a0ddb8ddc26df58e130315a3e1e0b70953c61dc4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80858681"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954805"
 ---
 # <a name="manage-users-in-your-rds-collection"></a>管理 RDS 集合中的使用者
 
@@ -82,7 +80,7 @@ ms.locfileid: "80858681"
    1. 在 [伺服器管理員] 中，按一下 [遠端桌面服務] > [概觀]  ，然後按一下特定的集合。
    2. 在 [屬性]  下方，按一下 [工作] > [編輯屬性]  。
    3. 按一下 [使用者群組]  。
-   4. 按一下 [新增]  ，然後輸入您想要使其有權存取集合的使用者或群組。 您也可以從這個視窗中選取要移除的使用者或群組，然後按一下 [移除]  來移除使用者或群組。 
-   
-   >[!NOTE] 
+   4. 按一下 [新增]  ，然後輸入您想要使其有權存取集合的使用者或群組。 您也可以從這個視窗中選取要移除的使用者或群組，然後按一下 [移除]  來移除使用者或群組。
+
+   >[!NOTE]
    > [使用者群組] 視窗絕對不能是空的。 若要縮小有權存取集合的使用者範圍，您必須先新增特定的使用者或群組，然後再移除較大範圍的群組。

@@ -1,20 +1,18 @@
 ---
 title: Windows 10 支援遠端桌面服務 VDI 的安全性設定
 description: 提供在 Windows Server 2016 中支援使用 RDS 進行哪些 Windows 10 VDI 設定的相關資訊。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 10/27/2016
 ms.topic: article
 ms.assetid: 8f164f5d-a498-4f91-a12f-3e01d554f810
 author: lizap
 manager: dongill
-ms.openlocfilehash: 4ecd290a910ddbb1aba85b26764fb86e30731172
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 7fd8de56d02dfe83add67b740405265a232747d9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963350"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946341"
 ---
 # <a name="supported-windows-10-security-configurations-for-remote-desktop-services-vdi"></a>Windows 10 支援遠端桌面服務 VDI 的安全性設定
 
@@ -40,10 +38,10 @@ Remote Credential Guard 僅支援對目標機器的直接連線，而不支援�
 > [!NOTE]
 > 如果您在單一執行個體環境中有連線代理人，且 DNS 名稱符合電腦名稱，則或許可以使用 Remote Credential Guard，雖然此功能不受支援。
 
-## <a name="shielded-vms-and-encryption-supported-vms"></a>受防護的 VM 和支援加密的 VM： 
+## <a name="shielded-vms-and-encryption-supported-vms"></a>受防護的 VM 和支援加密的 VM：
 
-- 遠端桌面服務 VDI 中不支援受防護的 VM 
+- 遠端桌面服務 VDI 中不支援受防護的 VM
 
 若要使用支援加密的 VM：
-- 在遠端桌面服務集合建立程序以外使用未受管理的集合和佈建技術，以佈建虛擬機器。 
-- 使用者設定檔磁碟依賴不同的磁碟，因此不受支援 
+- 在遠端桌面服務集合建立程序以外使用未受管理的集合和佈建技術，以佈建虛擬機器。
+- 使用者設定檔磁碟依賴不同的磁碟，因此不受支援

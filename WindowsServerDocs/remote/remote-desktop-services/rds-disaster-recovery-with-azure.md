@@ -1,27 +1,25 @@
 ---
 title: 使用 Azure 災害復原設定 RDS 的災害復原
 description: 了解如何使用 Azure 災害復原設定 RDS 部署的災害復原
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 06/12/2017
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 68fa7026a3198b7800c4855f8472f4a0bec62009
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 6c0e9b97a436f51babf679d6ce0aa67c09bcfe26
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80858991"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936903"
 ---
 # <a name="set-up-disaster-recovery-for-rds-using-azure-site-recovery"></a>使用 Azure Site Recovery 設定 RDS 的災害復原
 
 >適用於：Windows Server (半年通道)、Windows Server 2019、Windows Server 2016
 
-您可以使用 Azure Site Recovery 為您的遠端桌面服務部署建立災害復原解決方案。 
+您可以使用 Azure Site Recovery 為您的遠端桌面服務部署建立災害復原解決方案。
 
-[Azure Site Recovery](/azure/site-recovery/site-recovery-overview) 是一項以 Azure 為基礎的服務，可協調虛擬機器的複寫、容錯移轉和復原，以提供災害復原功能。 Azure Site Recovery 支援以多種複寫技術持續複寫、保護虛擬機器和應用程式，並順暢地將其容錯移轉至私人/公用或主機服務提供者的雲端。 
+[Azure Site Recovery](/azure/site-recovery/site-recovery-overview) 是一項以 Azure 為基礎的服務，可協調虛擬機器的複寫、容錯移轉和復原，以提供災害復原功能。 Azure Site Recovery 支援以多種複寫技術持續複寫、保護虛擬機器和應用程式，並順暢地將其容錯移轉至私人/公用或主機服務提供者的雲端。
 
 請使用下列資訊來建立和驗證災害復原解決方案。
 
@@ -42,7 +40,7 @@ ms.locfileid: "80858991"
 - 建立[內部部署 RDS 部署](rds-deploy-infrastructure.md)。
 - 將 [Azure Site Recovery 服務保存庫](/azure/site-recovery/site-recovery-vmm-to-azure#create-a-recovery-services-vault)新增至您的 Microsoft Azure 訂用帳戶。
 - 如果您要使用 Azure 作為復原網站，請在您的 VM 上執行 [Azure 虛擬機器整備評估工具](https://azure.microsoft.com/downloads/vm-readiness-assessment/)，以確保這些 VM 與 Azure VM 和 Azure Site Recovery 服務相容。
- 
+
 ## <a name="implementation-checklist"></a>實作檢查清單
 
 我們日後將詳細說明為 RDS 部署啟用 Azure Site Recovery 服務的各種步驟，但此處僅提供概略的實作步驟。

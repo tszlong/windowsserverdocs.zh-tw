@@ -1,20 +1,18 @@
 ---
 title: 追蹤您的遠端桌面服務用戶端存取使用權 (RDS CAL)
 description: 了解如何在您的 RDS 部署中追蹤 CAL。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 80d82d30-3ad0-4a8c-9a9b-2773c47eee19
 author: lizap
 ms.author: elizapo
 ms.date: 05/11/2017
 manager: dongill
-ms.openlocfilehash: 7e5793427b4a294d90c7b9ebeb66bb27578be190
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 7804b0339a9c086a6e68dd83d63b0da5ff292665
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857331"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954815"
 ---
 # <a name="track-your-remote-desktop-services-client-access-licenses-rds-cals"></a>追蹤您的遠端桌面服務用戶端存取使用權 (RDS CAL)
 
@@ -23,7 +21,7 @@ ms.locfileid: "80857331"
 您可以使用遠端桌面授權管理員工具，建立報表來追蹤 RDS 每個使用者的 CAL (已由遠端桌面授權伺服器發行)。
 
 > [!NOTE]
->  如果您在環境中使用 Azure AD Domain Services，遠端桌面授權管理員工具將無法取得每個使用者的 CAL。 您需要改為手動追蹤授權，不論是透過登入事件、透過連線代理人輪詢使用中的遠端桌面連線，或是其他適合您的機制均可。 
+>  如果您在環境中使用 Azure AD Domain Services，遠端桌面授權管理員工具將無法取得每個使用者的 CAL。 您需要改為手動追蹤授權，不論是透過登入事件、透過連線代理人輪詢使用中的遠端桌面連線，或是其他適合您的機制均可。
 
 使用下列步驟來產生每個使用者的 CAL 報表：
 

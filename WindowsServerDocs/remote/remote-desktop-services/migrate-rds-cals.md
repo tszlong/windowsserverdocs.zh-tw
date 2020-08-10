@@ -1,26 +1,24 @@
 ---
 title: 移轉遠端桌面服務用戶端存取使用權 (RDS CAL)
 description: 本文說明如何將遠端桌面服務用戶端存取授權移轉到新的 Windows Server 2016 授權伺服器。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: chrimo
 ms.date: 11/01/2016
 ms.topic: article
 ms.assetid: 91bdedce-6145-469f-b72e-7e113c4391e9
 author: christianmontoya
 manager: scottman
-ms.openlocfilehash: 5d95c2bc3a92a8cdcba4b308c88d94cb9af6d2a5
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: b3f1fb102f08e8947feba0c522cd43c462154c36
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80855991"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936997"
 ---
 # <a name="migrate-your-remote-desktop-services-client-access-licenses-rds-cals"></a>移轉遠端桌面服務用戶端存取使用權 (RDS CAL)
 
 移轉 RDS CAL 有三個選擇：
-1. 自動連線方法：這個建議的方法會透過 TCP 連接埠 443，經由網際網路直接與 Microsoft Clearinghouse 輸出通訊。  
-2. 使用網頁瀏覽器：此方法允許在執行遠端桌面授權管理員工具的伺服器沒有網際網路連線，但系統管理員在另一個裝置上有網際網路連線時移轉。 Web 移轉方法的 URL 會顯示在 [管理 RDS CAL 精靈] 中。 
+1. 自動連線方法：這個建議的方法會透過 TCP 連接埠 443，經由網際網路直接與 Microsoft Clearinghouse 輸出通訊。
+2. 使用網頁瀏覽器：此方法允許在執行遠端桌面授權管理員工具的伺服器沒有網際網路連線，但系統管理員在另一個裝置上有網際網路連線時移轉。 Web 移轉方法的 URL 會顯示在 [管理 RDS CAL 精靈] 中。
 3. 使用電話：此方法可讓系統管理員透過電話，與 Microsoft 代表共同完成移轉程序。 相應的電話號碼取決您在 [啟用伺服器精靈] 中選擇，並顯示在 [管理 RDS CAL 精靈] 中的國家/地區。
 
 在本文中，[建立 RDS CAL 移轉方法](#establish-rds-cal-migration-method)強調任何 RDS CAL 移轉方法通用的一般步驟，而[移轉 RDS CAL](#migrate-rds-cals) 則強調每個移轉方法專屬的步驟。
@@ -38,7 +36,7 @@ ms.locfileid: "80855991"
     - 來源授權伺服器已不再運作。
 7. 精靈中的下一個頁面取決於您選擇的移轉原因。
     - 如果您選擇 [來源授權伺服器已由這部授權伺服器取代]  作為移轉 RDS CAL 的原因，則會顯示 [來源授權伺服器資訊]  頁面。
-    
+
        在 [來源授權伺服器資訊] 頁面上，輸入來源授權伺服器的名稱或 IP 位址。
 
        如果網路上可以使用來源授權伺服器，按一下 [下一步]  。 精靈隨即連絡來源授權伺服器。 如果來源授權伺服器執行的是 Windows Server 2008 R2 之前的作業系統，或者來源授權伺服器遭到停用，系統會提醒您必須在精靈完成後，從來源授權伺服器手動移除 RDS CAL。 確認您了解這項需求之後，[取得用戶端授權金鑰包]  頁面隨即出現。
@@ -66,7 +64,7 @@ ms.locfileid: "80855991"
 
 ### <a name="using-a-web-browser"></a>使用網頁瀏覽器
 1. 在 [取得用戶端授權金鑰包]  頁面上，按一下超連結可連線到遠端桌面服務授權網站。
-   如果您在沒有網際網路連線的電腦上執行遠端桌面授權管理員，請記下遠端桌面服務授權網站的位址，然後從具有網際網路連線的電腦連線至該網站。 
+   如果您在沒有網際網路連線的電腦上執行遠端桌面授權管理員，請記下遠端桌面服務授權網站的位址，然後從具有網際網路連線的電腦連線至該網站。
 2. 在遠端桌面服務授權網頁的 [選取選項]  底下，選取 [管理 CAL]  ，然後按一下 [下一步]  。
 3. 提供下列必要的資訊，然後按一下 [下一步]  ：
     - **目標授權伺服器識別碼**： 35 位數字，以 5 個數字為一組，顯示在 [管理 RDS CAL] 精靈中的 [取得用戶端授權金鑰包]  頁面上。
@@ -84,7 +82,7 @@ ms.locfileid: "80855991"
 6. 輸入所需的資訊之後，請按 [**下一步**]。
 7. 確認您所輸入的所有資訊正確無誤，然後按一下 [下一步]  可將要求提交到 Microsoft Clearinghouse。 接著，此網頁會顯示 Microsoft Clearinghouse 所產生的授權金鑰包識別碼。
 
-   > [!IMPORTANT] 
+   > [!IMPORTANT]
    > 請保留一份授權金鑰包識別碼的複本。 萬一您需要復原 RDS CAL 的相關協助，這項資訊將有助於與 Microsoft Clearinghouse 進行通訊。
 
 8. 在相同的 [取得用戶端授權金鑰包]  頁面上，輸入授權金鑰包識別碼，然後按一下 [下一步]  ，將 RDS CAL 移轉至授權伺服器。

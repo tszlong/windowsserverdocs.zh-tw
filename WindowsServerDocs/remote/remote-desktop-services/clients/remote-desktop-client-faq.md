@@ -1,8 +1,6 @@
 ---
 title: 遠端桌面用戶端常見問題集
 description: 關於遠端桌面用戶端的常見問題集
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 785a18cf-a5d0-4bc2-95e4-9ef53ee8f65a
 author: lizap
@@ -10,18 +8,18 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a91980477b34bb529e3e6f3c6ff66da9ea7f3c84
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 672a9d1b33137d9559d88b8773d3c7ccd2493ddc
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80856051"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955055"
 ---
 # <a name="frequently-asked-questions-about-the-remote-desktop-clients"></a>關於遠端桌面用戶端的常見問題集
 
 >適用於：Windows 10、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2
 
-現在您已在裝置 (Android、Mac、iOS 或 Windows) 上設定遠端桌面用戶端，您可能會有疑問。 以下是有關遠端桌面用戶端最常見問題的解答。 
+現在您已在裝置 (Android、Mac、iOS 或 Windows) 上設定遠端桌面用戶端，您可能會有疑問。 以下是有關遠端桌面用戶端最常見問題的解答。
 
 - [設定](#setting-up)
 - [連線、閘道和網路](#connection-gateway-and-networks)
@@ -44,7 +42,7 @@ ms.locfileid: "80856051"
 
 我已設定好裝置，但我認為電腦尚未就緒。 需要協助嗎？
 
-首先，您是否看到了遠端桌面設定精靈？ 它會引導您為電腦做好遠端存取的準備。 請在您的電腦下載並執行該工具，將一切設定妥當。 
+首先，您是否看到了遠端桌面設定精靈？ 它會引導您為電腦做好遠端存取的準備。 請在您的電腦下載並執行該工具，將一切設定妥當。
 
 否則，如果您想要手動執行，請繼續往下閱讀。
 
@@ -74,17 +72,17 @@ ms.locfileid: "80856051"
 以下是您在嘗試連線至遠端電腦遇到常見問題時可採行的一些解決方案。 如果這些解決方案沒有作用，您可以在 [Microsoft 社群網站](https://go.microsoft.com/fwlink/p/?LinkId=242079)尋求進一步協助。
 
 - **找不到遠端電腦。** 請確定您具有正確的電腦名稱，然後查看是否您已正確輸入該名稱。 如果仍然無法連線，請嘗試使用遠端電腦的 IP 位址，而不使用電腦名稱。
-- **網路有問題。** 請確定您有網際網路連線。 
+- **網路有問題。** 請確定您有網際網路連線。
 - **遠端桌面連接埠可能會被防火牆封鎖。** 如果您使用 Windows 防火牆，請遵循下列步驟：
 
-  1. 開啟 [Windows 防火牆]。 
-  2. 按一下 [允許應用程式或功能通過 Windows 防火牆]  。 
+  1. 開啟 [Windows 防火牆]。
+  2. 按一下 [允許應用程式或功能通過 Windows 防火牆]  。
   3. 按一下 [變更設定]  。 系統可能會要求您輸入系統管理員密碼，以確認您的選擇。
   4. 在 [允許應用程式和功能]  下方選取 [遠端桌面]  ，然後點選或按一下 [確定]  。
 
      如果您使用不同的防火牆，請確定遠端桌面的連接埠 (通常為 3389) 已開啟。
 - **遠端電腦上可能未設定遠端連線。** 若要修正此問題，請往回參考本主題中的[如何為電腦進行遠端桌面設定？](#how-do-i-set-up-a-pc-for-remote-desktop)問題。
-- **遠端電腦可能僅允許電腦連接已設定網路層級驗證的目標。** 
+- **遠端電腦可能僅允許電腦連接已設定網路層級驗證的目標。**
 - **遠端電腦可能關閉。** 您無法連線至處於關閉、睡眠或休眠狀態的電腦，因此請確定遠端電腦的睡眠和休眠設為 [永不]  (並非所有電腦都有休眠功能)。
 
 ### <a name="why-cant-i-find-or-connect-to-my-pc"></a>為何找不到我的電腦或無法加以連線？
@@ -97,7 +95,7 @@ ms.locfileid: "80856051"
    > [!IMPORTANT]
    > 要使用電腦名稱，您的網路必須能透過 DNS 正確解析名稱。 在許多家用網路中，您必須使用 IP 位址來連線，而不是主機名稱。
 - 電腦是否位於不同的網路上？ 您是否將電腦設定成允許外部連線通過？  如需說明，請參閱[允許從網路外部存取您的電腦](remote-desktop-allow-outside-access.md)。
-- 您是否連線至支援的 Windows 版本？ 
+- 您是否連線至支援的 Windows 版本？
 
    > [!NOTE]
    > 在沒有第三方軟體的情況下，不支援 Windows XP Home、Windows Media Center Edition、Windows Vista Home、Windows 7 家用版或簡易版。
@@ -192,7 +190,7 @@ Web 用戶端支援 Windows、macOS、Linux 和 ChromeOS。 目前不支援行�
 您可以手動設定遠端工作階段的鍵盤語言，以修正此問題。 請參閱下一節中的步驟。
 
 ### <a name="how-do-language-settings-affect-keyboards-in-a-remote-session"></a>語言設定對遠端工作階段中的鍵盤有何影響？
-Mac 鍵盤有許多類型的配置。 其中有些是 Mac 的特定配置或自訂配置，在您從遠端連線的 Windows 版本上可能沒有完全相符的項目。 遠端工作階段會將您的鍵盤對應至遠端電腦上最相符的可用鍵盤語言。 
+Mac 鍵盤有許多類型的配置。 其中有些是 Mac 的特定配置或自訂配置，在您從遠端連線的 Windows 版本上可能沒有完全相符的項目。 遠端工作階段會將您的鍵盤對應至遠端電腦上最相符的可用鍵盤語言。
 
 如果您的 Mac 鍵盤配置設定為電腦版的語言鍵盤 (例如，法文 – 電腦)，則您所有的按鍵應該都會正確對應，且鍵盤應可正常運作。
 

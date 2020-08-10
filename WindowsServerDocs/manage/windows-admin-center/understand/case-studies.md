@@ -1,19 +1,17 @@
 ---
 title: Windows Admin Center 案例研究
 description: Windows Admin Center 案例研究 (Project Honolulu)
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 06/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: b0707f8aa7a09fdd18c2107e375ad06d3909955e
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: a2a027840c092696b03813de35cb3085f494266a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71356902"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87937557"
 ---
 # <a name="windows-admin-center-case-studies"></a>Windows Admin Center 案例研究
 
@@ -34,7 +32,7 @@ ms.locfileid: "71356902"
 
 [Ava6](http://www.avassys.com/) 是一間 IT 諮詢公司，專門從事 IT 基礎結構的設計、評估與整合，而在虛擬化、網路、儲存、備份及雲端運算方面尤為擅長。
 
-Ava6 採用 Windows Server 2016 Core、Hyper-V、容錯移轉叢集和 S2D。 
+Ava6 採用 Windows Server 2016 Core、Hyper-V、容錯移轉叢集和 S2D。
 
 ### <a name="the-challenge"></a>**挑戰**
 
@@ -82,7 +80,7 @@ Convergent Computing 有三個不同環境：託管、安全和 Web 作業。  �
 
 Convergent Computing 採用 Windows Admin Center 來管理三個包含 40 多部主機、執行超過 200 項工作負載的環境。
 
-在採用 Windows Admin Center 之前，Convergent Computing 使用各種工具和技術來執行管理工作，包括 System Center 和自訂指令碼。  Convergent Computing 以盡可能減少管理其伺服器陣列的額外負荷和工作負載為目標，且發現管理層愈是「精簡」就變得愈複雜；因此得到的結果是，為了簡單起見它們反而讓額外負荷攀高。  採用 Windows Admin Center 之後，「針對管理系統進行管理」所花費的時間每月節省超過 20 小時，其減少了 75% 的時間和精力，讓營運小組可以專注於更有價值的工作，包括安全性、合規性、生產力規劃以及整體系統最佳化。 
+在採用 Windows Admin Center 之前，Convergent Computing 使用各種工具和技術來執行管理工作，包括 System Center 和自訂指令碼。  Convergent Computing 以盡可能減少管理其伺服器陣列的額外負荷和工作負載為目標，且發現管理層愈是「精簡」就變得愈複雜；因此得到的結果是，為了簡單起見它們反而讓額外負荷攀高。  採用 Windows Admin Center 之後，「針對管理系統進行管理」所花費的時間每月節省超過 20 小時，其減少了 75% 的時間和精力，讓營運小組可以專注於更有價值的工作，包括安全性、合規性、生產力規劃以及整體系統最佳化。
 
 ## <a name="fzi-research-center-for-information-technology"></a>FZI 資訊技術研究中心
 
@@ -141,7 +139,7 @@ Inside Technologies 正在使用 Windows Admin Center，在歸功於多重要素
 ## <a name="secureguard--copa-data"></a><a id="secureguard-copa-data"></a>SecureGUARD / COPA-DATA
 
 [SecureGUARD GmbH](http://www.secureguard.at/) 運用一系列產品和自訂工程服務，協助各個公司解決安全性與雲端基礎結構方面的複雜 IT 問題。 SecureGUARD 建置 IT 安全性設備以及 Microsoft Windows Server 型的設備，而近來則在打造雲端基礎結構的機架等級融合式設備。 SecureGUARD 是應用程式開發與資料中心的 Microsoft 金級合作夥伴。
- 
+
 [COPA-DATA](https://www.copadata.com) 開發可用作端對端 (從現場層級到雲端和行動裝置) 工業 IoT 解決方案的 “zenon” 軟體解決方案。 COPA-DATA 已將系統部署到世界各地食品與飲料、能源與基礎建設、汽車以及製藥產業部門中的各個公司。
 
 ### <a name="the-challenge"></a>**挑戰**

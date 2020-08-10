@@ -1,8 +1,6 @@
 ---
 title: 遠端桌面 - 允許存取您的電腦
 description: 深入了解您從遠端存取電腦的選項
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 0f1557ed-53f7-4333-b023-c8e0f4b58bf4
 author: lizap
@@ -10,21 +8,21 @@ manager: dongill
 ms.author: elizapo
 ms.date: 06/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 27f6a361ffd3bc5082cea57f6e09264520110d40
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f581aeee099c906c970fdc320150fd1d6c102e17
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959130"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946521"
 ---
 # <a name="remote-desktop---allow-access-to-your-pc"></a>遠端桌面 - 允許存取您的電腦
 
 >適用於：Windows 10、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2
 
-您可以使用 [Microsoft 遠端桌面用戶端](remote-desktop-clients.md) (適用於 Windows、iOS、macOS 和 Android)，從遠端裝置使用遠端桌面連線至您的電腦，並加以控制。 當您允許從遠端連線至電腦時，您可以使用其他裝置連線至您的電腦並存取所有應用程式、檔案和網路資源，就像是坐在辦公桌前面一樣。  
+您可以使用 [Microsoft 遠端桌面用戶端](remote-desktop-clients.md) (適用於 Windows、iOS、macOS 和 Android)，從遠端裝置使用遠端桌面連線至您的電腦，並加以控制。 當您允許從遠端連線至電腦時，您可以使用其他裝置連線至您的電腦並存取所有應用程式、檔案和網路資源，就像是坐在辦公桌前面一樣。
 
 > [!NOTE]
-> 您可以使用遠端桌面連線至 Windows 10 專業版和企業版、Windows 8.1 與 8 企業版與專案版、Windows 7 專業版、企業版和旗艦版，以及比 Windows Server 2008 更新的 Windows Server 版本。 您無法連線至執行家用版 (例如 Windows 10 家用版) 的電腦。 
+> 您可以使用遠端桌面連線至 Windows 10 專業版和企業版、Windows 8.1 與 8 企業版與專案版、Windows 7 專業版、企業版和旗艦版，以及比 Windows Server 2008 更新的 Windows Server 版本。 您無法連線至執行家用版 (例如 Windows 10 家用版) 的電腦。
 
 若要連線至遠端電腦，該電腦必須開啟且必須有網路連線、遠端桌面必須啟用、您必須具有遠端電腦的網路存取權 (可透過網際網路)，且您必須有連線的權限。 若要有連線的權限，您必須列於使用者清單中。 開始連線之前，建議您先查閱您要連接的電腦名稱，並確定遠端桌面連線可通過該電腦的防火牆。
 
@@ -45,7 +43,7 @@ ms.locfileid: "86959130"
 
 ### <a name="windows-7-and-early-version-of-windows-10"></a>Windows 7 和舊版的 Windows 10
 
-若要為電腦進行遠端存取設定，請下載並執行 [Microsoft 遠端桌面小幫手](https://www.microsoft.com/download/details.aspx?id=50042)。 這個小幫手會更新您的系統設定以啟用遠端存取、確保您的電腦可辨識連線，並確認您的防火牆允許遠端桌面連線。 
+若要為電腦進行遠端存取設定，請下載並執行 [Microsoft 遠端桌面小幫手](https://www.microsoft.com/download/details.aspx?id=50042)。 這個小幫手會更新您的系統設定以啟用遠端存取、確保您的電腦可辨識連線，並確認您的防火牆允許遠端桌面連線。
 
 ### <a name="all-versions-of-windows-legacy-method"></a>所有版本的 Windows (舊有方法)
 
@@ -59,7 +57,7 @@ ms.locfileid: "86959130"
 
 您應確定可存取您的電腦的每個帳戶都已設定了強式密碼。
 
-## <a name="why-allow-connections-only-with-network-level-authentication"></a>為何僅允許使用網路層級驗證的連線？ 
+## <a name="why-allow-connections-only-with-network-level-authentication"></a>為何僅允許使用網路層級驗證的連線？
 
 如果您想要限制可存取電腦的人員，請選擇僅允許使用網路層級驗證 (NLA) 的存取。 此選項啟用時，使用者必須向網路進行身分驗證，才能連線至您的電腦。 僅允許執行遠端桌面的電腦使用 NLA 進行連線是較安全的驗證方法，有助於保護電腦不受惡意使用者和軟體的侵害。 若要深入了解 NLA 和遠端桌面，請參閱[為 RDS 連線設定 NLA](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732713(v=ws.11))。
 

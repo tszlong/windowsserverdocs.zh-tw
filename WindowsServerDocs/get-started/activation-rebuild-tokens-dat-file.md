@@ -3,17 +3,16 @@ title: 重建 Tokens.dat 檔案
 description: 在對 Windows 啟用問題進行疑難排解時如何重建 Tokens.dat 檔案
 ms.topic: troubleshooting
 ms.date: 09/18/2019
-ms.technology: server-general
 author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a5835cd601b2eb327c8605d70bf075e6c8e8414
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: bc44dae97422e4d9d9e55b32004f806bbb7860f7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71962994"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941780"
 ---
 # <a name="rebuild-the-tokensdat-file"></a>重建 Tokens.dat 檔案
 
@@ -23,11 +22,10 @@ ms.locfileid: "71962994"
 
 若要重建 Tokens.dat 檔案，請遵循下列步驟：
 
-1. 開啟提升權限的 [命令提示字元] 視窗：  
-   **針對 Windows 10**
+1. 開啟提升權限的 [命令提示字元] 視窗：**針對 Windows 10**
 
    1. 開啟 [開始]  功能表，然後輸入 **cmd**。
-   1. 在搜尋結果中，以滑鼠右鍵按一下 [命令提示字元]  ，然後選取 [以系統管理員身分執行]  。  
+   1. 在搜尋結果中，以滑鼠右鍵按一下 [命令提示字元]  ，然後選取 [以系統管理員身分執行]  。
 
    **針對 Windows 8.1**
    1. 從螢幕右邊緣向內撥動，然後點選 [搜尋]  。 或者，如果您使用滑鼠，請指向螢幕右下角，然後選取 [搜尋]  。
@@ -39,7 +37,7 @@ ms.locfileid: "71962994"
    1. 開啟 [開始]  功能表，然後輸入 **cmd**。
    1. 在搜尋結果中，以滑鼠右鍵按一下 **cmd.exe**，然後選取 [以系統管理員身分執行]  。
 
-1. 輸入您的作業系統適用的命令清單。  
+1. 輸入您的作業系統適用的命令清單。
 
    針對 Windows 10、Windows Server 2016 和更新版本的 Windows，請依序輸入下列命令：
    ```cmd

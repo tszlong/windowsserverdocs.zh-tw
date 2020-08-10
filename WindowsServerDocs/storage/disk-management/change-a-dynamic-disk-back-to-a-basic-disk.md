@@ -2,18 +2,16 @@
 title: 將動態磁碟變更回基本磁碟
 description: 描述如何將動態磁碟轉換回基本磁碟。
 ms.date: 12/18/2019
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: f866127bc43df307ac1a6a1fa44daac91ada5dcd
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3ffaf5db818377a3c75fda98255e7881fe6731aa
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966080"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936007"
 ---
 # <a name="change-a-dynamic-disk-back-to-a-basic-disk"></a>將動態磁碟變更回基本磁碟
 

@@ -1,26 +1,24 @@
 ---
 title: 使用用戶端存取使用權 (CAL) 授權您的 RDS 部署
 description: 在遠端桌面服務中授權的用戶端概觀。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 5be6546b-df16-4475-bcba-aa75aabef3e3
 author: lizap
 ms.author: elizapo
 ms.date: 02/12/2020
 manager: dongill
-ms.openlocfilehash: a11820b9c75bbcb928da562f3f74e4130e9c8096
-ms.sourcegitcommit: 599162b515c50106fd910f5c180e1a30bbc389b9
+ms.openlocfilehash: d257893e19286ab2a4c8293a2cf2b2e6697898ce
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83775316"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936987"
 ---
 # <a name="license-your-rds-deployment-with-client-access-licenses-cals"></a>使用用戶端存取使用權 (CAL) 授權您的 RDS 部署
 
 >適用於：Windows Server (半年通道)、Windows Server 2019、Windows Server 2016
 
-每個連線到遠端桌面工作階段主機的使用者和裝置都需要用戶端存取使用權 (CAL)。 您使用 RD 授權來安裝、發出及追蹤 RDS CAL。  
+每個連線到遠端桌面工作階段主機的使用者和裝置都需要用戶端存取使用權 (CAL)。 您使用 RD 授權來安裝、發出及追蹤 RDS CAL。
 
 當使用者或裝置連線到 RD 工作階段主機伺服器時，RD 工作階段主機伺服器會判斷是否需要 RDS CAL。 接著，RD 工作階段主機伺服器會向遠端桌面授權伺服器要求 RDS CAL。 如果授權伺服器可提供適當的 RDS CAL，就會發出 RDS CAL 給用戶端，用戶端即可連線到 RD 工作階段主機伺服器，並從該伺服器連線到其嘗試使用的桌面或應用程式。
 

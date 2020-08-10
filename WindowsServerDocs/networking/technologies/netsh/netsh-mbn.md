@@ -1,17 +1,15 @@
 ---
 title: 適用於行動寬頻網路 (MBN) 的 Netsh 命令
 description: 使用 netsh mbn 來查詢及設定行動寬頻設定和參數。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 author: apdutta
 ms.date: 02/20/2020
-ms.openlocfilehash: 478f87db4d520a133b3d70c0ed2dbb4e91db60d9
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 50c0bbf441e3109189117cbfd8df9ee597712bcd
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80853731"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953984"
 ---
 # <a name="netsh-mbn-commands"></a>Netsh mbn 命令
 
@@ -19,7 +17,7 @@ ms.locfileid: "80853731"
 使用 **netsh mbn** 來查詢及設定行動寬頻設定和參數。
 
 > [!TIP]
-> 若要取得有關 netsh mbn 命令的協助，請使用： 
+> 若要取得有關 netsh mbn 命令的協助，請使用：
 >
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;netsh mbn /?
 
@@ -227,7 +225,7 @@ disconnect interface="Cellular"
 
 ## <a name="dump"></a>dump
 
-顯示組態指令碼。 
+顯示組態指令碼。
 
 建立包含目前組態的設定檔。  如果儲存到檔案中，此指令碼即可用來還原已變更的組態設定。
 
@@ -529,7 +527,7 @@ set tracing mode=yes
 - [tracing](#tracing)
 - [visibleproviders](#visibleproviders)
 
-### <a name="acstate"></a>acstate  
+### <a name="acstate"></a>acstate
 
 針對指定的介面顯示行動寬頻資料自動連線狀態。
 
@@ -667,7 +665,7 @@ show dmprofiles [[name=]<string>] [[interface=]<string>]
 | **interface** | 介面名稱。 這是 "netsh mbn show interfaces" 命令所顯示的其中一個介面名稱。 | 選用 |
 
 **備註**
-    
+
 顯示設定檔資料，或列出系統上的設定檔。
 
 若已指定設定檔名稱，則會顯示設定檔的內容。 否則會列出介面的設定檔。
@@ -789,7 +787,7 @@ show netlteattachinfo [interface=]<string>
 show netlteattachinfo interface="Cellular"
 ```
 
-### <a name="pin"></a>釘選      
+### <a name="pin"></a>釘選
 
 針對指定的介面顯示 pin 資訊。
 
@@ -813,7 +811,7 @@ show pin interface="Cellular"
 ```
 
 
-### <a name="pinlist"></a>pinlist  
+### <a name="pinlist"></a>pinlist
 
 針對指定的介面顯示 pin 清單資訊。
 
@@ -861,7 +859,7 @@ show preferredproviders interface="Cellular"
 ```
 
 
-### <a name="profiles"></a>profiles 
+### <a name="profiles"></a>profiles
 
 顯示系統上設定的設定檔清單。
 
@@ -886,7 +884,7 @@ show profiles [[name=]<string>] [[interface=]<string>] [[purpose=]<string>]
 若已指定介面名稱，則只會列出指定介面上指定的設定檔。 否則會顯示第一個相符的設定檔。
 
 若已提供目的，則只會顯示具有相符目的 GUID 的設定檔。  否則設定檔不會依照目的進行篩選。  字串可以是具有大括弧或下列其中一個字串的 GUID：internet、supl、mms、ims 或 allhost。
-    
+
 **範例**
 
 ```powershell
@@ -943,7 +941,7 @@ show provisionedcontexts interface="Cellular"
 ```
 
 
-### <a name="purpose"></a>purpose  
+### <a name="purpose"></a>purpose
 
 顯示可用來篩選裝置上設定檔的目的群組 GUID。 這個命令沒有參數。
 
@@ -954,7 +952,7 @@ show purpose
 ```
 
 
-### <a name="radio"></a>radio    
+### <a name="radio"></a>radio
 
 針對指定的介面顯示無線電狀態資訊。
 
@@ -1002,7 +1000,7 @@ show readyinfo interface="Cellular"
 ```
 
 
-### <a name="signal"></a>signal   
+### <a name="signal"></a>signal
 
 針對指定的介面顯示訊號資訊。
 
@@ -1098,14 +1096,14 @@ show smsconfig interface="Cellular"
 ```
 
 
-### <a name="tracing"></a>tracing  
+### <a name="tracing"></a>tracing
 
 顯示行動寬頻追蹤已啟用或已停用。
 
 **語法**
 
 ```powershell
-show tracing 
+show tracing
 ```
 
 

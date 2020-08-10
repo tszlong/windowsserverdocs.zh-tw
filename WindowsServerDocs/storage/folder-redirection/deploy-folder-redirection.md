@@ -1,19 +1,17 @@
 ---
 title: 使用離線檔案搭配離線 FilesDeploy 資料夾重新導向來部署資料夾重新導向
 description: 如何使用 Windows Server，使用離線檔案將資料夾重新導向部署至 Windows 用戶端電腦。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 21af2aae837b7a570638c2eb3f3c96cb8997fa84
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 368feec41fbecee57eb82bbe54a6fe31a9d0e3b5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182064"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954705"
 ---
 # <a name="deploy-folder-redirection-with-offline-files"></a>使用離線檔案部署資料夾重新導向
 

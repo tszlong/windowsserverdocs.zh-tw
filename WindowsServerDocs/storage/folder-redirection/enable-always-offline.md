@@ -1,19 +1,17 @@
 ---
 title: 啟用永遠離線模式以供更快存取檔案
 description: 如何使用離線檔案的永遠離線模式，以供更快存取快取的檔案和重新導向的資料夾。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 389fdd26a7e1d9824f1eaf0136a544547f08eb05
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 2a4526a70379ad414cdf866419a3b893e42256d5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71401952"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942219"
 ---
 # <a name="enable-always-offline-mode-for-faster-access-to-files"></a>啟用永遠離線模式以供更快存取檔案
 

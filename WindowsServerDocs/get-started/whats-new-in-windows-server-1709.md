@@ -1,19 +1,17 @@
 ---
 title: Windows Server 版本 1709 中的新功能
 description: 關於運算、身分識別、管理、自動化、網路功能、安全性、存放裝置的新功能。
-ms.prod: windows-server
-ms.technology: server-general
 ms.topic: article
 author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
 ms.date: 06/03/2019
-ms.openlocfilehash: c814098aeb73ca186e0a0db668f477f9cc1f5cf9
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: cfbe25604ee517a522c9d29b1320db4cd032d162
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409568"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941680"
 ---
 # <a name="whats-new-in-windows-server-version-1709"></a>Windows Server 版本 1709 中的新功能
 

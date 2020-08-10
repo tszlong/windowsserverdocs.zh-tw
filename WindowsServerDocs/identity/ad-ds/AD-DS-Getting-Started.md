@@ -6,21 +6,19 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/07/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 4880145d385498e6191937272495ddf8def07ba5
-ms.sourcegitcommit: 599162b515c50106fd910f5c180e1a30bbc389b9
+ms.openlocfilehash: a920b1b6abfb109aacb2de91bf18cb24066a0d60
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83775330"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87938754"
 ---
 # <a name="ad-ds-getting-started"></a>AD DS 快速入門
 
 >適用於：Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-Active Directory 會將物件的相關資訊儲存在網路上，並讓系統管理員和使用者輕鬆地尋找和使用此資訊。 Active Directory 使用結構化資料存放區作為目錄資訊的邏輯階層式組織基礎。  
-  
+Active Directory 會將物件的相關資訊儲存在網路上，並讓系統管理員和使用者輕鬆地尋找和使用此資訊。 Active Directory 使用結構化資料存放區作為目錄資訊的邏輯階層式組織基礎。
+
 | 主題 | 說明 |
 | --------- | --------- |
 | [Active Directory Domain Services 概觀](../ad-ds/get-started/virtual-dc/Active-Directory-Domain-Services-Overview.md) | 提供基本 AD DS 功能的相關資訊。 包含技術概念、規劃與部署的連結。|

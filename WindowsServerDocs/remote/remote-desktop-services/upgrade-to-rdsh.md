@@ -1,20 +1,18 @@
 ---
 title: 將遠端桌面工作階段主機升級至 Windows Server 2016
 description: 本文說明如何將現有的遠端桌面服務部署升級至 Windows Server 2016。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: spatnaik
 ms.date: 08/01/2016
 ms.topic: article
 ms.assetid: 5c9b98b8-4eca-4a39-b10b-2bac729f7f44
 author: spatnaik
 manager: scottman
-ms.openlocfilehash: e685c51a003a7121dab19c74d82796311ef0889a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: b825c79ac698f2a61c81628180f1d7cc14b826e8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857121"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87948841"
 ---
 # <a name="upgrading-your-remote-desktop-session-host-to-windows-server-2016"></a>將遠端桌面工作階段主機升級至 Windows Server 2016
 
@@ -31,7 +29,7 @@ ms.locfileid: "80857121"
 
 1. 識別要升級的伺服器，例如集合中一半的伺服器。
 2. 將 [允許新連線]  設為 false，以防止對這些伺服器建立新連線。
-3. 登出這些伺服器上的所有工作階段。 
+3. 登出這些伺服器上的所有工作階段。
 4. 從集合中移除這些伺服器。
 5. 將伺服器升級至 Windows Server 2016。
 6. 在集合中的其餘伺服器上，將 [允許新連線]  設為 "false"。

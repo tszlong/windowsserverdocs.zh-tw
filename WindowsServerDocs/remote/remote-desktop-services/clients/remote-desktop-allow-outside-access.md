@@ -1,20 +1,18 @@
 ---
 title: 遠端桌面 - 允許從網路外部存取您的電腦
 description: 深入了解您從電腦網路外部遠端存取電腦的選項
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 author: haley-rowland
 manager: dongill
 ms.author: elizapo
 ms.date: 04/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cc1b7568006ef9e32132d772702212c5fd78ec4
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 109f60ec099606dfc031fc07a8f457287f8fb50d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857421"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946431"
 ---
 # <a name="remote-desktop---allow-access-to-your-pc-from-outside-your-pcs-network"></a>遠端桌面 - 允許從電腦網路外部存取您的電腦
 
@@ -24,7 +22,7 @@ ms.locfileid: "80857421"
 
 ## <a name="enable-port-forwarding-on-your-router"></a>在路由器上啟用連接埠轉送
 
-連接埠轉送會直接將您的路由器 IP 位址 (您的公用 IP) 上的連接埠對應至您要存取之電腦的連接埠和 IP 位址。 
+連接埠轉送會直接將您的路由器 IP 位址 (您的公用 IP) 上的連接埠對應至您要存取之電腦的連接埠和 IP 位址。
 
 啟用連接埠轉送的具體步驟取決於您所使用的路由器，因此您必須在線上搜尋您路由器的指示。 如需相關步驟的一般討論，請參閱 [Wiki：如何在路由器上設定連接埠轉送](https://www.wikihow.com/Set-Up-Port-Forwarding-on-a-Router) (英文)。
 
@@ -36,7 +34,7 @@ ms.locfileid: "80857421"
 
 - 您的公用 IP 位址 (路由器的 IP)。 有許多方法可以找到這項資訊 - 您可以在 Bing 或 Google 中搜尋「我的 IP」，或檢視 [Wi-Fi 網路內容](https://binged.it/2Gwob34) (適用於 Windows 10)。
 - 要對應的連接埠號碼。 在大部分情況下，此連接埠為 3389 - 這是遠端桌面連線所使用的預設連接埠。
-- 系統管理員對您路由器的存取權。  
+- 系統管理員對您路由器的存取權。
 
    >[!WARNING]
    > 您將對網際網路開放您的電腦 - 請確實為您的電腦設定強式密碼。

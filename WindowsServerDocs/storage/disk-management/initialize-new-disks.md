@@ -2,18 +2,16 @@
 title: 將新磁碟初始化
 description: 如何使用 [磁碟管理] 將新磁碟初始化，以準備開始使用。 也包含問題的疑難排解連結。
 ms.date: 12/20/2019
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 68e51cff5b70ed0b11488e44cebba057e7432d99
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: adfc298c460bfa55516898df1781217dfe55d129
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965270"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942293"
 ---
 # <a name="initialize-new-disks"></a>將新磁碟初始化
 
@@ -29,7 +27,7 @@ ms.locfileid: "86965270"
 以下說明如何使用 [磁碟管理] 將新磁碟初始化。 如果您偏好使用 PowerShell，請改用 [initialize-disk](/powershell/module/storage/initialize-disk) Cmdlet。
 
 1. 使用系統管理員權限開啟 [磁碟管理]。
- 
+
     若要執行這項操作，請在工作列的搜尋方塊中鍵入**磁碟管理**，選取並按住 (或以滑鼠右鍵按一下) [磁碟管理]  ，然後選取 [以系統管理員身分執行]   > [是]  。 如果無法以系統管理員身分將它開啟，請改鍵入**電腦管理**，然後移至 [儲存體]   > [磁碟管理]  。
 1. 在 [磁碟管理] 中，以滑鼠右鍵按一下您要初始化的磁碟，然後按一下 [初始化磁碟]  (如下所示)。 如果磁碟列為「離線」  ，請先以滑鼠右鍵按一下它，然後選取 [線上]  。
 
