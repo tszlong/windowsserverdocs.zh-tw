@@ -1,19 +1,17 @@
 ---
 title: 為 Windows Admin Center 閘道的所有使用者設定共用連線
 description: 了解系統管理員如何只需設定其 Windows Admin Center (Honolulu 專案) 閘道一次，就能讓所有使用者都能共用單一連線清單。
-ms.technology: manage
 ms.topic: article
 author: haley-rowland
 ms.author: harowl
 ms.date: 03/28/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: e0e78ac8feb4e008e060ba318bd5693e841b91b2
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: eea0e467629a6110d38ed3081a1320e002496cfb
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518595"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970875"
 ---
 # <a name="configure-shared-connections-for-all-users-of-the-windows-admin-center-gateway"></a>為 Windows Admin Center 閘道的所有使用者設定共用連線
 

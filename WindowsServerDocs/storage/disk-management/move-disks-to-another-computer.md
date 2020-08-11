@@ -2,18 +2,16 @@
 title: 將磁碟移至另一部電腦
 description: 本文描述如何將磁碟移至另一部電腦
 ms.date: 10/12/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 6db73f963766e480f8ec478657354a51bcb1f456
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 1527dbd567eb72e407023ecdcfade04856a3127a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71385817"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971185"
 ---
 # <a name="move-disks-to-another-computer"></a>將磁碟移至另一部電腦
 
@@ -58,14 +56,14 @@ ms.locfileid: "71385817"
 
 ## <a name="detect-new-disks"></a>偵測新磁碟
 
-1. 在新電腦上開啟 [磁碟管理]。 
+1. 在新電腦上開啟 [磁碟管理]。
 2. 依序按一下 [動作]  和 [重新掃描磁碟]  。
-3. 以滑鼠右鍵按一下任何標示為 [外部]  的磁碟。 
+3. 以滑鼠右鍵按一下任何標示為 [外部]  的磁碟。
 4. 按一下 [匯入外部磁碟]  ，然後遵循畫面上的指示操作。
 
 ## <a name="additional-considerations"></a>其他考量
 
--   移至另一部電腦時，基本磁碟區會收到該電腦上的下一個可用磁碟機代號。 
+-   移至另一部電腦時，基本磁碟區會收到該電腦上的下一個可用磁碟機代號。
 -   動態磁碟區會保留它們在先前電腦上的磁碟機代號。 如果動態磁碟區沒有先前電腦上的磁碟機代號，將不會在移至另一部電腦時收到磁碟機代號。 如果磁碟機代號在磁碟區移至的電腦上已經使用，磁碟區會收到下一個可用的磁碟機代號。
 
 -   如果系統管理員使用過 **mountvol /n** 或 **diskpart automount** 命令來防止將新磁碟區新增至系統，則從其他電腦移過來的磁碟區將無法進行掛接且收不到磁碟機代號。 若要使用磁碟區，您必須使用 [磁碟管理] 或是 **DiskPart** 及 **mountvol** 命令，手動掛接磁碟區並指派其磁碟機代號。

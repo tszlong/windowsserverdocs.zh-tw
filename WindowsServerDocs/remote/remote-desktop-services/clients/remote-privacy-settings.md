@@ -1,20 +1,18 @@
 ---
 title: 受控應用程式和桌面的隱私權設定
 description: 使用受控應用程式和桌面時，遠端系統的隱私權設定相關資訊。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 author: davidbel
 manager: daveba
 ms.author: davidbel
 ms.date: 04/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 996f084b86b0a363b0903476598d9edb086b9985
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 848a2b1493c8022da7b6fcfa0fb6bf1a7441391b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80859481"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87958036"
 ---
 # <a name="privacy-settings-for-managed-apps-and-desktops"></a>受控應用程式和桌面的隱私權設定
 

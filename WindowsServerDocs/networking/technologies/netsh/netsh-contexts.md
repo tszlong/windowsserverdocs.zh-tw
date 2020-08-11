@@ -1,19 +1,17 @@
 ---
 title: Netsh 命令語法、內容與格式
 description: 您可以使用本主題來了解如何輸入 netsh 內容和子內容、了解 netsh 語法和命令格式，以及如何在執行 Windows Server 2016 或 Windows 10 的本機和遠端電腦上執行 netsh 命令。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 8cb9b59f-0255-4261-b49a-562c5ea50ee0
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 061d7252d5a7bbe09d3dca245d9b77ed20a4dedf
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: f72d3dfc3cd6f54b123cb00baf9ba75e4faeb906
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80854761"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87969465"
 ---
 # <a name="netsh-command-syntax-contexts-and-formatting"></a>Netsh 命令語法、內容與格式
 
@@ -27,7 +25,7 @@ Netsh 也提供指令碼處理功能，讓您針對特定電腦以批次模式�
 
 ## <a name="netsh-contexts"></a>Netsh 內容
 
-Netsh 會使用動態連結程式庫 \(DLL\) 檔案來與其他作業系統元件互動。 
+Netsh 會使用動態連結程式庫 \(DLL\) 檔案來與其他作業系統元件互動。
 
 每個 netsh 協助程式 DLL 都會提供一組延伸功能，稱之為「內容」  ，這是一組網路伺服器角色或功能專屬的命令。 這些內容會提供一或多個服務、公用程式或通訊協定的設定和監視支援，藉此擴充 netsh 的功能。 例如，Dhcpmon.dll 提供的 netsh 包含設定及管理 DHCP 伺服器所需的內容和命令集。
 
@@ -40,9 +38,9 @@ Netsh 會使用動態連結程式庫 \(DLL\) 檔案來與其他作業系統元�
 >    ```
 >   PS C:\Windows\system32> netsh
 >   netsh>/?
->    
+>
 >    The following commands are available:
->    
+>
 >    Commands in this context:
 >    ..            - Goes up one context level.
 >    ?             - Displays a list of commands.
@@ -83,10 +81,10 @@ Netsh 會使用動態連結程式庫 \(DLL\) 檔案來與其他作業系統元�
 >    wfp           - Changes to the `netsh wfp' context.
 >    winhttp       - Changes to the `netsh winhttp' context.
 >    winsock       - Changes to the `netsh winsock' context.
->    
+>
 >    The following sub-contexts are available:
 >     advfirewall branchcache bridge dhcpclient dnsclient firewall http interface ipsec ipsecdosprotection lan namespace netio ras rpc trace wfp winhttp winsock
->    
+>
 >    To view help for a command, type the command, followed by a space, and then type ?.
 >    ```
 
@@ -149,7 +147,7 @@ Netsh 是命令列指令碼處理公用程式，可讓您在本機或從遠端�
 
 **`Context`**
 
-選擇性。 指定您要輸入的 **netsh** 內容。 
+選擇性。 指定您要輸入的 **netsh** 內容。
 
 **`-r`**
 

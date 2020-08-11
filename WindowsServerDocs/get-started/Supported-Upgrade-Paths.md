@@ -1,21 +1,19 @@
 ---
 title: Windows Server 2016 的升級和轉換選項
 description: 說明到 Windows Server 2016 的所有支援升級路徑。
-ms.prod: windows-server
 ms.date: 01/18/2017
-ms.technology: server-general
 ms.topic: article
 ms.assetid: 74aa1da3-7076-4a1f-ad5b-9e17bd46dba2
 author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 31bbda5de44e249504551d29c23382d735af146d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 862349c0601981f064becd8bd02a1b26b308dc48
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954240"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959256"
 ---
 # <a name="upgrade-and-conversion-options-for-windows-server-2016"></a>Windows Server 2016 的升級和轉換選項
 
@@ -35,13 +33,13 @@ ms.locfileid: "86954240"
 
 - **升級**表示從現有作業系統版本移至更新的版本，但仍使用相同硬體。 (這有時稱為就地用戶端。)例如，如果您的伺服器執行 Windows Server 2012 或 Windows Server 2012 R2，則可以將它升級到 Windows Server 2016。 您可以從評估版的作業系統升級到零售版，或從較舊的零售版升級到較新的版本，而在某些情況下，您甚至可以從大量授權版本的作業系統升級到一般的零售版。
 
-> [!IMPORTANT]  
-> 虛擬機器中的升級效果最佳，因為虛擬機器不需要特定 OEM 硬體驅動程式，就能成功升級。  
+> [!IMPORTANT]
+> 虛擬機器中的升級效果最佳，因為虛擬機器不需要特定 OEM 硬體驅動程式，就能成功升級。
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > 對於 14393.0.161119-1705.RS1_REFRESH 之前的 Windows Server 2016 版本，**您只能執行從已使用 [桌面體驗] 選項 (非 [Server Core] 選項) 安裝之 Windows Server 2016 的評估版轉換為零售版的這項轉換**。 從 14393.0.161119-1705.RS1_REFRESH 版本開始與未來的版本，您可以將評估版本轉換零售，無論使用何種安裝選項。
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > 如果您的伺服器使用 NIC 小組，請在升級之前停用 NIC 小組，然後在完成升級之後重新予以啟用。 如需詳細資訊，請參閱 [NIC 小組概觀](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831648(v=ws.11))。
 
 ## <a name="upgrading-previous-retail-versions-of-windows-server-to-windows-server-2016"></a>將舊的 Windows Server 零售版升級到 Windows Server 2016
@@ -61,8 +59,8 @@ ms.locfileid: "86954240"
 
 如果您在右欄看到多個版本，則支援從相同版本開始升級到列出的**任一**版本。
 
-|如果您執行這個版本：|您可以升級到這些版本：|  
-|-------------------|----------|  
+|如果您執行這個版本：|您可以升級到這些版本：|
+|-------------------|----------|
 |Windows Server 2012 Standard|Windows Server 2016 Standard 或 Datacenter|
 |Windows Server 2012 Datacenter|Windows Server 2016 Datacenter|
 |Windows Server 2012 R2 Standard|Windows Server 2016 Standard 或 Datacenter|
@@ -82,7 +80,7 @@ ms.locfileid: "86954240"
 
 您可以將 Windows Server 2016 Standard 評估版轉換為 Windows Server 2016 Standard (零售) 或 Datacenter (零售)。 同樣地，您也可以將 Windows Server 2016 Datacenter 評估版轉換為零售版。
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > 對於 14393.0.161119-1705.RS1_REFRESH 之前的 Windows Server 2016 版本，您只能執行從已使用 [桌面體驗] 選項 (非 [Server Core] 選項) 安裝之 Windows Server 2016 的評估版轉換為零售版的這項轉換。 從 14393.0.161119-1705.RS1_REFRESH 版本開始與未來的版本，您可以將評估版本轉換零售，無論使用何種安裝選項。
 
 嘗試從評估版轉換為零售版之前，請確認您的伺服器的確是執行評估版。 若要這樣做，請執行下列其中一項：
@@ -105,7 +103,7 @@ ms.locfileid: "86954240"
 
 對於 Windows Server 2016 Standard 的評估版，您也可以使用這個相同的命令及適當的產品金鑰，以一個步驟轉換成 Windows Server 2016 Datacenter 的零售版。
 
-> [!TIP] 
+> [!TIP]
 > 如需 Dism.exe 的詳細資訊，請參閱 [DISM 命令列選項](https://go.microsoft.com/fwlink/?LinkId=192466) (英文)。
 
 ## <a name="converting-a-current-retail-edition-to-a-different-current-retail-edition"></a>將目前的零售版轉換為不同的目前零售版

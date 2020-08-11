@@ -1,20 +1,18 @@
 ---
 title: Windows Store 用戶端中的新功能
 description: 了解適用於 Windows Store 的遠端桌面用戶端最新的變更
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
 ms.date: 04/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fd9e353c18293d22b18c6ffb6a57ad97a819a4a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 985d7b015c2ff3fe1d117e8277b445744f6a51e6
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81650045"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961852"
 ---
 # <a name="whats-new-in-the-windows-store-client"></a>Windows Store 用戶端中的新功能
 

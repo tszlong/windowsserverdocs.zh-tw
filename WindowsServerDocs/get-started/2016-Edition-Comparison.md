@@ -1,30 +1,28 @@
 ---
 title: Windows Server 2016 產品與版本
 description: 說明 Windows Server Standard 與 Windows Server Datacenter 版本的差異
-ms.prod: windows-server
 ms.date: 10/04/2019
-ms.technology: server-general
 ms.topic: article
 ms.assetid: c5ca3bfe-7ced-49f6-a932-80cab33f419e
 author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: ce4c35f0b65d0461e9dc2e23404d2637aecff415
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 50d0c603e5134c716c50e3aa8286cb33578ee06e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80827101"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959906"
 ---
 # <a name="comparison-of-standard-and-datacenter-editions-of-windows-server-2016"></a>Windows Server 2016 Standard 和 Datacenter 版本的比較
 
 > 適用於：Windows Server 2016
-  
+
 ## <a name="locks-and-limits"></a>鎖定與限制
 
 | 鎖定與限制 | Windows Server 2016 Standard | Windows Server 2016 Datacenter |
-| ------------------- |---------- | --------------------------- |  
+| ------------------- |---------- | --------------------------- |
 | 最大使用者數量 | 以 CAL 為依據   | 以 CAL 為依據     |
 | SMB 連線數上限 | 16,777,216      | 16,777,216          |
 | RRAS 連線數上限| 無限制       | 無限制         |
@@ -41,8 +39,8 @@ ms.locfileid: "80827101"
 
 ## <a name="server-roles"></a>伺服器角色
 
-| 可用的 Windows Server 角色     | 角色服務 | Windows Server 2016 Standard | Windows Server 2016 Datacenter |  
-| -------------------                | ----------    | ----------                   | ---------------------------    |  
+| 可用的 Windows Server 角色     | 角色服務 | Windows Server 2016 Standard | Windows Server 2016 Datacenter |
+| -------------------                | ----------    | ----------                   | ---------------------------    |
 | Active Directory 憑證服務|              | 是                          | 是                            |
 | Active Directory 網域服務    |               | 是                          | 是                            |
 | Active Directory Federation Services|               | 是                          | 是                            |
@@ -80,8 +78,8 @@ ms.locfileid: "80827101"
 
 ## <a name="features"></a>功能
 
-|可透過伺服器管理員 (或 PowerShell) 安裝的 Windows Server 功能|Windows Server 2016 Standard|Windows Server 2016 Datacenter|  
-|-------------------|----------|---------------------------|  
+|可透過伺服器管理員 (或 PowerShell) 安裝的 Windows Server 功能|Windows Server 2016 Standard|Windows Server 2016 Datacenter|
+|-------------------|----------|---------------------------|
 |.NET Framework 3.5|是|是|
 |.NET Framework 4.6|是|是|
 |背景智慧型傳送服務 (BITS)|是|是|
@@ -144,8 +142,8 @@ ms.locfileid: "80827101"
 |WoW64 支援|已安裝|已安裝|
 |XPS 檢視器|是，以桌面體驗安裝為伺服器時|是，以桌面體驗安裝為伺服器時|
 
-|正式運作的功能|Windows Server 2016 Standard|Windows Server 2016 Datacenter|  
-|-------------------|----------|---------------------------|  
+|正式運作的功能|Windows Server 2016 Standard|Windows Server 2016 Datacenter|
+|-------------------|----------|---------------------------|
 |最佳做法分析程式|是|是|
 |直接存取|是|是|
 |動態記憶體 (虛擬環境中)|是|是|

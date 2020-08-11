@@ -1,8 +1,6 @@
 ---
 title: 遠端桌面 - 比較用戶端應用程式
 description: 了解不同的 RD 應用程式在支援特性和功能方面的比較。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 12efe858-6b76-4e08-9f72-b9603aceb0fc
 author: heidilohr
@@ -10,12 +8,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 04/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c41d2691f22e7feb89518a02736f3607940a2f6
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 524b90965ca1dfca726294d4518fcefa4a470cf2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80856221"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970105"
 ---
 # <a name="compare-the-clients"></a>比較用戶端
 

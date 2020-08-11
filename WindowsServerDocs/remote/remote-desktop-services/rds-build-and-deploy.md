@@ -1,24 +1,22 @@
 ---
 title: RDS - 建置和部署
 description: 建置遠端桌面部署的步驟
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 04/18/2017
 ms.topic: article
 ms.assetid: 176ae424-96e9-4c78-88f5-da418e76c3d7
 author: lizap
 manager: dongill
-ms.openlocfilehash: c0a2676cc5e7043cd1f96d6c1d393d7b0e443fe8
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: be58880108f84aa6141157dbe730e18fcff4c6c2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961210"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961802"
 ---
 # <a name="build-and-deploy-your-remote-desktop-services-deployment"></a>建置和部署您的遠端桌面服務部署
 
-遠端桌面服務部署是用來與使用者共用應用程式和資源的基礎結構。 根據您想要提供的體驗，您可以視需要讓它變得更小或更複雜。 輕鬆地調整遠端桌面部署。 您可以隨意地增加和減少遠端桌面 Web 存取、閘道、連線代理人和工作階段主機伺服器。 您可以使用遠端桌面連線代理人來散發工作負載。 Active Directory 型驗證可提供高度安全的環境。 
+遠端桌面服務部署是用來與使用者共用應用程式和資源的基礎結構。 根據您想要提供的體驗，您可以視需要讓它變得更小或更複雜。 輕鬆地調整遠端桌面部署。 您可以隨意地增加和減少遠端桌面 Web 存取、閘道、連線代理人和工作階段主機伺服器。 您可以使用遠端桌面連線代理人來散發工作負載。 Active Directory 型驗證可提供高度安全的環境。
 
 [遠端桌面用戶端](clients/remote-desktop-clients.md)能夠從任何 Windows、Apple 或 Android 電腦、平板電腦或手機存取。
 
@@ -34,7 +32,7 @@ ms.locfileid: "86961210"
 - [部署遠端桌面服務基礎結構](rds-deploy-infrastructure.md)
 - [建立工作階段集合來保存您想要共用的應用程式和資源](rds-create-collection.md)
 - [授權您的 RDS 部署](rds-client-access-license.md)
-- 讓使用者安裝[遠端桌面用戶端](clients/remote-desktop-clients.md)，如此一來，他們就能夠存取應用程式和資源。 
+- 讓使用者安裝[遠端桌面用戶端](clients/remote-desktop-clients.md)，如此一來，他們就能夠存取應用程式和資源。
 - 藉由新增其他連線代理人和工作階段主機來啟用高可用性：
    - [使用 RD 工作階段主機伺服器陣列向外延展現有的 RDS 集合](rds-scale-rdsh-farm.md)
    - [新增高可用性到 RD 連線代理人基礎結構](rds-connection-broker-cluster.md)

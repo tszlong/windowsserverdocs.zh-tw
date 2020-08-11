@@ -1,7 +1,6 @@
 ---
 title: Nano Server 在 Windows Server 半年通道中的變更
 description: 在新的 Windows Server 服務模式中，Nano Server 只是有一些功能變更的容器作業系統。
-ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: jasongerend
@@ -10,12 +9,12 @@ ms.localizationpriority: medium
 ms.date: 05/21/2019
 ms.topic: get-started-article
 ms.assetid: a270334d-42a7-46ff-8eed-d8656a276544
-ms.openlocfilehash: 0ede3b13c1180b5cf8031738d69b68abd9e4c631
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: c1b25402a209bf460c130f4fd76928f95dc7c0a7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826131"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87967915"
 ---
 # <a name="changes-to-nano-server-in-windows-server-semi-annual-channel"></a>Nano Server 在 Windows Server 半年通道中的變更
 

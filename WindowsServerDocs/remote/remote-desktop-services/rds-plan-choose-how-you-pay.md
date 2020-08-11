@@ -1,20 +1,18 @@
 ---
 title: 遠端桌面服務 - 選擇支付方式
 description: 規劃 RDS 授權的相關資訊。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: c796f832-e7cf-4bad-baeb-bb13f65612e7
 author: spatnaik
 ms.author: spatnaik
 ms.date: 09/23/2016
 manager: scottman
-ms.openlocfilehash: ab1185fc90eb67882b8cde5f126be3bda62268a4
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 3bbc449423d1d2865eba3c7e1baea301bde75bc3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857361"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971555"
 ---
 # <a name="remote-desktop-services---choose-how-you-pay"></a>遠端桌面服務 - 選擇支付方式
 

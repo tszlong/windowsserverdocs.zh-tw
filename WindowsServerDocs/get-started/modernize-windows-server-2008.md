@@ -1,7 +1,6 @@
 ---
 title: 升級 Windows Server 2008 與 Windows Server 2008 R2
 description: Windows Server 2008 與 2008 R2 即將終止服務。 了解如何升級內部部署或重新裝載至 Azure。
-ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: mikeblodge
@@ -9,12 +8,12 @@ ms.author: mikeblodge
 ms.date: 07/12/2018
 ms.topic: get-started-article
 ms.localizationpriority: high
-ms.openlocfilehash: 271c571229f18d596a67616a1b0dd93743928002
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 30ba7fcd97b9735319872b55f649fe4f84014faa
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961331"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87967995"
 ---
 # <a name="upgrade-windows-server-2008-and-windows-server-2008-r2"></a>升級 Windows Server 2008 與 Windows Server 2008 R2
 
@@ -35,10 +34,10 @@ Windows Server 2008 和 Windows Server 2008 R2 的延伸支援即將於 2020 年
 您可以將內部部署的 Windows Server 2008 與 Windows Server 2008 R2 伺服器移轉至 Azure，在此您可以繼續在虛擬機器上執行這些伺服器。 在 Azure 中，您將持續符合規範、變得更安全，並在您的工作中新增雲端創意。 移轉至 Azure 的優點包括：
 
 - Azure 中的安全性更新。
-- 取得超過三年的 Windows Server 2008 R2 或 2008 重大和重要安全性更新 (免費隨附)。 
+- 取得超過三年的 Windows Server 2008 R2 或 2008 重大和重要安全性更新 (免費隨附)。
 - Azure 中的免費升級。
 - 當您準備好時採用更多的雲端服務。
-- 透過將 SQL Server 移轉至 Azure 受管理執行個體或 VM，您可以得到超過三年的 Windows Server 2008 R2 或 2008 重大安全性更新 (免費隨附)。 
+- 透過將 SQL Server 移轉至 Azure 受管理執行個體或 VM，您可以得到超過三年的 Windows Server 2008 R2 或 2008 重大安全性更新 (免費隨附)。
 - 運用現有的 SQL Server 與 Windows Server 授權來達到只有 Azure 才有的雲端節省。
 
 [![開始使用特製化映像來遷移至 Azure](./media/WS08-image-banner-small.png)](uploading-specialized-WS08-image-to-azure.md)

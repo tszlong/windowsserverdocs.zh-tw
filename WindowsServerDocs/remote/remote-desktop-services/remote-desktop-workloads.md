@@ -1,19 +1,17 @@
 ---
 title: 遠端桌面工作負載
 description: 簡單介紹由遠端桌面所管理的不同虛擬機器工作負載類型。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: helohr
 ms.date: 12/02/2019
 ms.topic: article
 author: Heidilohr
 manager: lizross
-ms.openlocfilehash: 53c120be0ca91f0a9331a0585be8b4335f863a56
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 360155def9a1313fcd1cb61af27c372297b76f7f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857241"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971515"
 ---
 # <a name="remote-desktop-workloads"></a>遠端桌面工作負載
 

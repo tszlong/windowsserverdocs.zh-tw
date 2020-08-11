@@ -1,21 +1,19 @@
 ---
 title: Windows Server 安裝與升級
 description: 如何安裝、升級或移轉到較新版本的 Windows Server。
-ms.prod: windows-server
 ms.date: 05/14/2019
-ms.technology: server-general
 ms.topic: article
 ms.assetid: 98f876bd-63ff-4c3a-95d4-a8dd8d0d119c
 author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d282e2aa543070fcea0f4931419de0be5745c7d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 4a51fbe19722f381407803e2d8ba1e876898ccce
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959630"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959686"
 ---
 # <a name="windows-server-installation-and-upgrade"></a>Windows Server 安裝與升級
 
@@ -46,10 +44,10 @@ Windows Server 移轉文件可協助您一次將一個角色或功能從執行 W
 
 ## <a name="upgrade"></a>升級
 如果您想要在不使伺服器平階化的情況下保留相同硬體和所有伺服器角色，**升級**是一種選擇，但還有許多方式可以達到此目的。 在傳統型升級過程中，您會從舊版作業系統轉變到新版本，而您的設定、伺服器角色和資料則維持不變。 例如，如果伺服器執行 Windows Server 2012 R2，您可以將其升級至 Windows Server 2016。 不過，並非所有的舊版作業系統都有路徑可以轉到每一個較新版本。
- 
+
 >[!NOTE]
 >虛擬機器中的升級效果最佳，因為虛擬機器不需要特定 OEM 硬體驅動程式，就能成功升級。
- 
+
 您可以從評估版的作業系統升級到零售版，或從較舊的零售版升級到較新的版本，而在某些情況下，您甚至可以從大量授權版本的作業系統升級到一般的零售版。
 
 在您開始進行升級之前，請查看本頁面上表格以了解如何從您目前版本轉換到您想要的版本。
@@ -58,14 +56,14 @@ Windows Server 移轉文件可協助您一次將一個角色或功能從執行 W
 
 >[!NOTE]
 >每當您移轉或升級到任何 Windows Server 版本時，都應該檢閱和了解該版本的[支援週期原則](https://support.microsoft.com/lifecycle)與時間範圍，並進行適當規劃。 您可以針對感興趣的特定 Windows Server 版本[搜尋週期資訊](https://support.microsoft.com/lifecycle)。
- 
- 
+
+
 ## <a name="upgrading-to-windows-server-2016"></a>升級至 Windows Server 2016
 如需詳細資訊 (包括升級的重要注意事項和限制、Windows Server 2016 版本之間的授權轉換，以及評估版到零售版的轉換)，請參閱 [Supported Upgrade Paths for Windows Server 2016](https://go.microsoft.com/fwlink/?LinkId=828602) (Windows Server 2016 支援的升級路徑)。
- 
+
 >[!NOTE]
 >注意：不支援將 Server Core 安裝切換到含桌面的伺服器安裝，以及將含桌面的伺服器安裝切換到 Server Core 安裝的升級。 如果您要升級或轉換的舊版作業系統為 Server Core 安裝，則結果仍然會是新版作業系統的 Server Core 安裝。
- 
+
 從舊版 Windows Server 零售版升級至 Windows Server 2016 零售版的支援路徑快速參考表：
 
 
@@ -81,7 +79,7 @@ Windows Server 移轉文件可協助您一次將一個角色或功能從執行 W
 |Windows Storage Server 2012 Workgroup|Windows Storage Server 2016 Workgroup|
 |Windows Storage Server 2012 R2 Standard|Windows Storage Server 2016 Standard|
 |Windows Storage Server 2012 R2 Workgroup|Windows Storage Server 2016 Workgroup|
- 
+
 ### <a name="license-conversion"></a>授權轉換
 您可以將 Windows Server 2016 Standard (零售) 轉換為 Windows Server 2016 Datacenter (零售)。
 
@@ -90,7 +88,7 @@ Windows Server 移轉文件可協助您一次將一個角色或功能從執行 W
 您可以將 Windows Server 2016 Standard 評估版轉換為 Windows Server 2016 Standard (零售) 或 Datacenter (零售)。
 
 您可以將 Windows Server 2016 Datacenter 評估版轉換為 Windows Server 2016 Datacenter (零售)。
- 
+
 ## <a name="upgrading-to-windows-server-2012-r2"></a>升級至 Windows Server 2012 R2
 如需詳細資料 (包括升級的重要注意事項和限制、Windows Server 2012 R2 版本之間的授權轉換，以及評估版到零售版的轉換)，請參閱 [Upgrade Options for Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303416(v=ws.11)) (Windows Server 2012 R2 升級選項)。
 
@@ -115,7 +113,7 @@ Windows Server 移轉文件可協助您一次將一個角色或功能從執行 W
 
 ## <a name="upgrading-to-windows-server-2012"></a>升級至 Windows Server 2012
 如需詳細資料 (包括升級的重要注意事項和限制，以及評估版到零售版的轉換)，請參閱 [Evaluation Versions and Upgrade Options for Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj574204(v=ws.11)) (Windows Server 2012 評估版和升級選項)。
- 
+
 從舊版 Windows Server 零售版升級至 Windows Server 2012 零售版的支援路徑快速參考表：
 
 |如果您執行：|您可以升級到這些版本：|
@@ -147,5 +145,5 @@ Windows Server 移轉文件可協助您一次將一個角色或功能從執行 W
   - 僅支援相同語言的就地升級。 您無法從某種語言升級為另一種語言。
 
   - 您無法從 Windows Server 2008 Server Core 安裝移轉到含有伺服器 GUI 的 Windows Server 2012 R2 (在 Windows Server 中稱為「含有完整桌面的伺服器」)。 您可以將升級的 Server Core 安裝切換到含有完整桌面的伺服器，但僅限在 Windows Server 2012 R2 上。 Windows Server 2016 和更新版本「不」  支援從 Server Core 切換到完整桌面，因此請在升級為 Windows Server 2016 之前進行切換。
-  
+
 如需詳細資訊，請參閱 [Evaluation Versions and Upgrade Options for Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj574204\(v=ws.11\)) (Windows Server 2012 評估版和升級選項)，其中包含角色特定的升級詳細資料。

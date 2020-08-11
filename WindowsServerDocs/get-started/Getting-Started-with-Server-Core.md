@@ -1,26 +1,24 @@
 ---
 title: 安裝 Server Core
 description: 如何在 Windows Server 2019、Windows Server 2016 或 Windows Server (半年通道) 上取得和安裝 Server Core 安裝。
-ms.prod: windows-server
 ms.date: 05/21/2019
-ms.technology: server-general
 ms.topic: article
 ms.assetid: 2d22818c-fbb7-487a-bb82-81ef0a3f7ede
 author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 13d36c233094511216483f0fb37dc6a004212a50
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 93b4cb477ce31543e67dd9f973637e830e0fd478
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826971"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959786"
 ---
 # <a name="install-server-core"></a>安裝 Server Core
 
 > 適用於：Windows Server 2019、Windows Server 2016、Windows Server (半年通道)
-  
+
 第一次安裝 Windows Server 時，您會有下列安裝選項：
 
 >[!NOTE]
@@ -33,10 +31,10 @@ ms.locfileid: "80826971"
 
 安裝 Windows Server (半年通道) 時，您會有下列安裝選項：
 
--    Windows Server Standard 
+-    Windows Server Standard
 -    Windows Server Datacenter
 
-[Server Core] 選項可以減少所需磁碟空間和潛在的受攻擊面；因此，除非您對 [含有桌面體驗的伺服器] 選項所包含的額外使用者介面項目與圖形化管理工具有特定需求，否則建議您選擇 Server Core 安裝。 如果您確實認為需要額外的使用者介面項目，請參閱[安裝含有桌面體驗的伺服器](Getting-Started-with-Server-with-Desktop-Experience.md)。 
+[Server Core] 選項可以減少所需磁碟空間和潛在的受攻擊面；因此，除非您對 [含有桌面體驗的伺服器] 選項所包含的額外使用者介面項目與圖形化管理工具有特定需求，否則建議您選擇 Server Core 安裝。 如果您確實認為需要額外的使用者介面項目，請參閱[安裝含有桌面體驗的伺服器](Getting-Started-with-Server-with-Desktop-Experience.md)。
 
 [Server Core] 選項不會安裝標準使用者介面 (桌面體驗)；您可以使用命令列、Windows PowerShell 或透過遠端方法來管理伺服器。
 

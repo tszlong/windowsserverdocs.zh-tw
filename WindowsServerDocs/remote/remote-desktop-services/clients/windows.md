@@ -1,8 +1,6 @@
 ---
 title: 開始使用 Windows Store 用戶端
 description: 適用於 Microsoft Store 的遠端桌面用戶端的基本設定步驟。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: lizap
@@ -10,12 +8,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 06/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ed87f2d03ef725c3efdfc2453b53201017e66e0
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 05e32c05aaafb941958e025253e67c856d81257d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181944"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990367"
 ---
 # <a name="get-started-with-the-windows-store-client"></a>開始使用 Windows Store 用戶端
 
@@ -58,7 +56,7 @@ ms.locfileid: "87181944"
    - **剪貼簿** - 啟用時，可讓您從遠端電腦來回複製文字和影像。
    - **音訊播放** - 選取要在遠端工作階段期間用於音訊的裝置。 您可以選擇在本機裝置、遠端電腦上播放音效，或者完全不要播放音效。
    - **音訊錄製** - 啟用時，可讓您搭配遠端電腦上的應用程式來使用本機麥克風。
-4. 點選 [儲存]  。
+4. 點選 [儲存]。
 
 需要編輯這些設定嗎？ 點選桌面名稱旁邊的溢位功能表 ( **...** )，然後點選 [編輯]。
 
@@ -203,4 +201,4 @@ ms.locfileid: "87181944"
 | 滑鼠指標 | 縮放                 | 利用兩個手指，捏合以放大，將手指分開以縮小 |
 
 > [!TIP]
-> 隨時都歡迎提出問題和意見。 不過，如果您在本文的意見區段中張貼支援要求或產品意見反應，我們將無法回應您的意見反應。 如果需要協助或想要針對用戶端進行疑難排解，強烈建議您移至[遠端桌面用戶端論壇](https://docs.microsoft.com/answers/topics/windows-remote-desktop-client.html)，並開始新的對話。 如果您有相關的功能建議，可以利用[意見反應中樞](feedback-hub://?tabid=2&contextid=605)告訴我們。
+> 隨時都歡迎提出問題和意見。 不過，如果您在本文的意見區段中張貼支援要求或產品意見反應，我們將無法回應您的意見反應。 如果需要協助或想要針對用戶端進行疑難排解，強烈建議您移至[遠端桌面用戶端論壇](/answers/topics/windows-remote-desktop-client.html)，並開始新的對話。 如果您有相關的功能建議，可以利用[意見反應中樞](feedback-hub://?tabid=2&contextid=605)告訴我們。

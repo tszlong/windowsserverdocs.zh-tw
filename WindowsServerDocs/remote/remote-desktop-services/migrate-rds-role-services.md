@@ -1,20 +1,18 @@
 ---
 title: 將遠端桌面服務部署移轉至 Windows Server 2016
 description: 本文描述如何將遠端桌面服務部署移轉到新的 Windows Server 2016 伺服器。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: chrimo
 ms.date: 11/01/2016
 ms.topic: article
 ms.assetid: 9b1fa833-4325-48a8-bf34-46265f40c001
 author: christianmontoya
 manager: scottman
-ms.openlocfilehash: 2e4628e9ec7b5d75b88bb07282e2183a2f16fff2
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 62c2cc99277b3cf74f6bde5be59b69569c27a31b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959150"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961812"
 ---
 # <a name="migrate-your-remote-desktop-services-deployment-to-windows-server-2016"></a>將遠端桌面服務部署移轉至 Windows Server 2016
 
@@ -53,8 +51,9 @@ ms.locfileid: "86959150"
 
 3. 將 Windows Server 2016 RD 連線代理人伺服器新增至高可用性部署。
 
-> [!NOTE] 
-> RD 連線代理人伺服器不支援 Windows Server 2016 和 Windows Server 2012 R2 的混合高可用性設定。 執行 Windows Server 2016 的 RD 連線代理人可以提供具有執行 Windows Server 2012 R2 之 RD 工作階段主機伺服器的工作階段集合，且可提供具有執行 Windows Server 2012 R2 之 RD 虛擬主機伺服器的虛擬桌面集合。
+> [!NOTE]
+> RD 連線代理人伺服器不支援 Windows Server 2016 和 Windows Server 2012 R2 的混合高可用性設定。
+> 執行 Windows Server 2016 的 RD 連線代理人可以提供具有執行 Windows Server 2012 R2 之 RD 工作階段主機伺服器的工作階段集合，且可提供具有執行 Windows Server 2012 R2 之 RD 虛擬主機伺服器的虛擬桌面集合。
 
 ## <a name="migrate-session-collections"></a>移轉工作階段集合
 

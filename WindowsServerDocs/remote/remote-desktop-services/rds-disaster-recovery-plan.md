@@ -1,19 +1,17 @@
 ---
 title: 建立您的災害復原方案
 description: 了解如何建立您的 RDS 部署災害復原方案。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 05/05/2017
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 18342bb7fd3ad26427ae1e1a051e20444fdff7c2
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: e7bf323d1a0506e9f9718d2afb8da392f0118929
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80859021"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961732"
 ---
 # <a name="create-your-disaster-recovery-plan-for-rds"></a>建立您的 RDS 災害復原方案
 
@@ -38,7 +36,7 @@ ms.locfileid: "80859021"
 2. 容錯移轉群組 2：連線代理人 VM
 3. 容錯移轉群組 3：Web 存取 VM
 
-您的方案看起來會像這樣： 
+您的方案看起來會像這樣：
 
 ![工作階段型 RDS 部署的災害復原方案](media/rds-asr-session-drplan.png)
 
@@ -62,20 +60,20 @@ ms.locfileid: "80859021"
    Broker - broker.contoso.com
    Virtualization host - VH1.contoso.com
 
-   ipmo RemoteDesktop; 
-   add-rdserver –ConnectionBroker broker.contoso.com –Role RDS-VIRTUALIZATION –Server VH1.contoso.com 
+   ipmo RemoteDesktop;
+   add-rdserver –ConnectionBroker broker.contoso.com –Role RDS-VIRTUALIZATION –Server VH1.contoso.com
    ```
 4. 容錯移轉群組 2：範本 VM
 5. 群組 2 指令碼 1：關閉範本 VM
-   
+
    復原至次要站台時，範本 VM 將會啟動，但由於該 VM 是 Sysprep VM，因此無法完全啟動。 此外，RDS 需要關閉 VM，以從中建立集區 VM 設定。 因此，我們需要將其關閉。 如果您只有一部 VMM 伺服器，則範本 VM 名稱在主要和次要站台上都會相同。 因此，我們使用由以下指令碼中 *Context* 變數指定的 VM 識別碼。 如果您有多個範本，請將這些範本全部關閉。
 
    ```powershell
-   ipmo virtualmachinemanager; 
+   ipmo virtualmachinemanager;
    Foreach($vm in $VMsAsTemplate)
    {
       Get-SCVirtualMachine -ID $vm | Stop-SCVirtualMachine –Force
-   } 
+   }
    ```
 6. 群組 2 指令碼 2：移除現有的 VM 集區
 
@@ -83,7 +81,7 @@ ms.locfileid: "80859021"
 
    ```powershell
    ipmo RemoteDesktop
-   $desktops = Get-RDVirtualDesktop -CollectionName Win8Desktops; 
+   $desktops = Get-RDVirtualDesktop -CollectionName Win8Desktops;
    Foreach($vm in $desktops){
       Remove-RDVirtualDesktopFromCollection -CollectionName Win8Desktops -VirtualDesktopName $vm.VirtualDesktopName –Force
    }
@@ -98,8 +96,8 @@ ms.locfileid: "80859021"
    集區 VM 名稱必須為是唯一且使用前置詞和後置詞。 如果 VM 名稱已經存在，指令碼將會失敗。 此外，如果主要端 VM 的編號是 1 到 5，則復原站台的編號會從 6 繼續。
 
    ```powershell
-   ipmo RemoteDesktop; 
-   Add-RDVirtualDesktopToCollection -CollectionName Win8Desktops -VirtualDesktopAllocation @{"RDVH1.contoso.com" = 1} 
+   ipmo RemoteDesktop;
+   Add-RDVirtualDesktopToCollection -CollectionName Win8Desktops -VirtualDesktopAllocation @{"RDVH1.contoso.com" = 1}
    ```
 9. 容錯移轉群組 3：Web 存取和閘道伺服器 VM
 
@@ -120,27 +118,27 @@ ms.locfileid: "80859021"
    ipconfig /registerdns
    ```
 3. 群組 1 指令碼：新增虛擬主機
-      
+
    修改以下指令碼以針對雲端中的每部虛擬主機執行。 通常，在您將虛擬主機新增至連線代理人之後，您需要重新啟動主機。 請先確認主機沒有擱置中的重新開機再執行指令碼，否則指令碼將會失敗。
 
    ```powershell
    Broker - broker.contoso.com
    Virtualization host - VH1.contoso.com
 
-   ipmo RemoteDesktop; 
-   add-rdserver –ConnectionBroker broker.contoso.com –Role RDS-VIRTUALIZATION –Server VH1.contoso.com 
+   ipmo RemoteDesktop;
+   add-rdserver –ConnectionBroker broker.contoso.com –Role RDS-VIRTUALIZATION –Server VH1.contoso.com
    ```
 4. 容錯移轉群組 2：範本 VM
 5. 群組 2 指令碼 1：關閉範本 VM
-   
+
    復原至次要站台時，範本 VM 將會啟動，但由於該 VM 是 Sysprep VM，因此無法完全啟動。 此外，RDS 需要關閉 VM，以從中建立集區 VM 設定。 因此，我們需要將其關閉。 如果您只有一部 VMM 伺服器，則範本 VM 名稱在主要和次要站台上都會相同。 因此，我們使用由以下指令碼中 *Context* 變數指定的 VM 識別碼。 如果您有多個範本，請將這些範本全部關閉。
 
    ```powershell
-   ipmo virtualmachinemanager; 
+   ipmo virtualmachinemanager;
    Foreach($vm in $VMsAsTemplate)
    {
       Get-SCVirtualMachine -ID $vm | Stop-SCVirtualMachine –Force
-   } 
+   }
    ```
 6. 容錯移轉群組 3：個人 VM
 7. 群組 3 指令碼 1：移除現有並新增個人 VM
@@ -149,17 +147,17 @@ ms.locfileid: "80859021"
 
    ```powershell
    ipmo RemoteDesktop
-   $desktops = Get-RDVirtualDesktop -CollectionName CEODesktops; 
-   Export-RDPersonalVirtualDesktopAssignment -CollectionName CEODesktops -Path ./Desktopallocations.txt -ConnectionBroker broker.contoso.com 
+   $desktops = Get-RDVirtualDesktop -CollectionName CEODesktops;
+   Export-RDPersonalVirtualDesktopAssignment -CollectionName CEODesktops -Path ./Desktopallocations.txt -ConnectionBroker broker.contoso.com
 
    Foreach($vm in $desktops){
      Remove-RDVirtualDesktopFromCollection -CollectionName CEODesktops -VirtualDesktopName $vm.VirtualDesktopName –Force
    }
-   
-   Import-RDPersonalVirtualDesktopAssignment -CollectionName CEODesktops -Path ./Desktopallocations.txt -ConnectionBroker broker.contoso.com 
+
+   Import-RDPersonalVirtualDesktopAssignment -CollectionName CEODesktops -Path ./Desktopallocations.txt -ConnectionBroker broker.contoso.com
    ```
 8. 容錯移轉群組 3：Web 存取和閘道伺服器 VM
 
-您的方案看起來會像這樣： 
+您的方案看起來會像這樣：
 
 ![個人桌面 RDS 部署的災害復原方案](media/rds-asr-personal-desktops-drplan.png)

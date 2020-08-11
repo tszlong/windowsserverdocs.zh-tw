@@ -1,18 +1,16 @@
 ---
 title: 安裝和管理擴充功能
 description: 在 Windows Admin Center 中安裝和管理擴充功能 (Honolulu 專案)
-ms.technology: manage
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 4ba2e760d57f1c3f59e40b78b449a8831b8093d2
-ms.sourcegitcommit: fe89b8001ad664b3618708b013490de93501db05
+ms.openlocfilehash: c2feaaff614d00afeaf5d132c446eebe5fdf0989
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84942307"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87966775"
 ---
 # <a name="install-and-manage-extensions"></a>安裝和管理擴充功能
 
@@ -24,7 +22,7 @@ Windows Admin Center 是建置在可擴充的平台上，其中每個連線類�
 
 Windows Admin Center 會顯示指定 NuGet 摘要中可用的擴充功能。 根據預設，Windows Admin Center 會指向 Microsoft 官方 NuGet 摘要，其裝載由 Microsoft 和其他開發人員所發行的擴充功能組。
 
-1. 按一下右上方的 [設定] 按鈕，然後在左側窗格中按一下 [擴充功能]。 
+1. 按一下右上方的 [設定] 按鈕，然後在左側窗格中按一下 [擴充功能]。
 2. [可用擴充功能] 索引標籤會列出摘要上可供安裝的擴充功能。
 3. 按一下擴充功能，即可在 [詳細資料] 窗格中檢視擴充功能描述、版本、發行者和其他資訊。
 4. 按一下 [安裝] 來安裝擴充功能。 如果閘道必須在提高權限的模式中執行才能進行此變更，您會看到 UAC 提高權限的提示。 安裝完成之後，您的瀏覽器將會自動重新整理，而且 Windows Admin Center 將會重新載入並安裝新的擴充功能。 如果您嘗試安裝的擴充功能是先前所安裝擴充功能的更新，您可以按一下 [更新為最新版本] 按鈕來安裝更新。 您也可以移至 [安裝的擴充功能] 索引標籤來檢視已安裝的擴充功能，並查看 [狀態] 資料行中是否有可用的更新。
@@ -44,7 +42,7 @@ Windows Admin Center 支援多個摘要，而且您可以一次從多個摘要�
 
 您可以解除安裝任何先前已安裝的擴充功能，或甚至解除安裝已預先安裝為 Windows Admin Center 安裝一部分的任何工具。
 
-1. 按一下右上方的 [設定] 按鈕，然後在左側窗格中按一下 [擴充功能]。 
+1. 按一下右上方的 [設定] 按鈕，然後在左側窗格中按一下 [擴充功能]。
 2. 按一下 [安裝的擴充功能] 索引標籤來檢視所有已安裝的擴充功能。
 3. 選擇要解除安裝的擴充功能，然後按一下 [解除安裝]。
 
@@ -56,7 +54,7 @@ Windows Admin Center 支援多個摘要，而且您可以一次從多個摘要�
 
 ### <a name="manually-downloading-extension-packages"></a>手動下載擴充套件
 
-1. 在另一部具有網際網路連線的電腦上，開啟網頁瀏覽器並瀏覽至下列 URL：[https://dev.azure.com/WindowsAdminCenter/Windows%20Admin%20Center%20Feed/_packaging?_a=feed&feed=WAC](https://dev.azure.com/WindowsAdminCenter/Windows%20Admin%20Center%20Feed/_packaging?_a=feed&feed=WAC) 
+1. 在另一部具有網際網路連線的電腦上，開啟網頁瀏覽器並瀏覽至下列 URL：[https://dev.azure.com/WindowsAdminCenter/Windows%20Admin%20Center%20Feed/_packaging?_a=feed&feed=WAC](https://dev.azure.com/WindowsAdminCenter/Windows%20Admin%20Center%20Feed/_packaging?_a=feed&feed=WAC)
 
    * 您可能需要建立 Microsoft 帳戶，並登入以查看擴充套件。
 

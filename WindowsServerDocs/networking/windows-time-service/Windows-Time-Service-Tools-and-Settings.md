@@ -5,14 +5,12 @@ author: Teresa-Motiv
 ms.author: v-tea
 ms.date: 02/24/2020
 ms.topic: article
-ms.prod: windows-server
-ms.technology: networking
-ms.openlocfilehash: b73b6bf2150b8c97b858f41d7a4864a5d6fd5546
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: cb549f951865a065c70a6bfbfa9d49faf71ffd97
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182114"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989795"
 ---
 # <a name="windows-time-service-tools-and-settings"></a>Windows 時間服務工具和設定
 
@@ -255,7 +253,7 @@ Windows 時間服務會將資訊儲存在下列登錄子機碼下：
 > 登錄中的某些參數會以時鐘刻度為單位來測量，某些則會以秒為單位來測量。 若要將時間從時鐘刻度轉換為秒，請使用這些轉換因數：
 > - 1 分鐘 = 60 秒
 > - 1 秒 = 1000 毫秒
-> - 1 毫秒 = Windows 系統上的 10,000 時鐘刻度，如 [DateTime.Ticks 屬性](https://docs.microsoft.com/dotnet/api/system.datetime.ticks)所述。
+> - 1 毫秒 = Windows 系統上的 10,000 時鐘刻度，如 [DateTime.Ticks 屬性](/dotnet/api/system.datetime.ticks)所述。
 >
 > 例如，5 分鐘會變成 5 &times; 60 &times; 1000 &times; 10000 = 3,000,000,000 時鐘刻度。
 

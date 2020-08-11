@@ -1,19 +1,17 @@
 ---
 title: 變更遠端桌面中的接聽連接埠
 description: 了解如何變更遠端桌面用戶端的接聽連接埠。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 author: lizap
 ms.author: elizapo
 ms.date: 07/19/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 818ae5217d0144b2a4ec6e45f3a7757455cfabf1
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 0add2c2d577c475044064394b7bd77e5eab5d802
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80854661"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87958106"
 ---
 # <a name="change-the-listening-port-for-remote-desktop-on-your-computer"></a>變更電腦上的遠端桌面接聽連接埠
 
@@ -24,7 +22,7 @@ ms.locfileid: "80854661"
 1. 啟動登錄編輯程式。 (在搜尋方塊中鍵入 regedit。)
 2. 巡覽至下列登錄子機碼：HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp\PortNumber
 3. 依序按一下 [編輯] > [修改]  和 [十進位]  。
-4. 鍵入新的連接埠號碼，然後按一下 [確認]  。 
+4. 鍵入新的連接埠號碼，然後按一下 [確認]  。
 5. 關閉登錄編輯程式，並重新啟動您的電腦。
 
 下次您使用遠端桌面連線連線到此電腦時，必須鍵入新的連接埠。 如果您使用防火牆，請務必設定防火牆以允許連線至新的連接埠號碼。

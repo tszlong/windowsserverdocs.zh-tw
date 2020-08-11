@@ -2,24 +2,22 @@
 title: 管理虛擬硬碟 (VHD)
 description: 本文描述如何管理虛擬硬碟
 ms.date: 10/12/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 6ffa7e9dc769b8d8c892d0af1ceae5246df62d3e
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: c00fcec3e27f3c91b429419fe25b5dc84125a720
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71385815"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957666"
 ---
 # <a name="manage-virtual-hard-disks-vhd"></a>管理虛擬硬碟 (VHD)
 
 > **適用於：** Windows 10、Windows 8.1、Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-本主題描述如何使用 [磁碟管理] 建立、連結和中斷連結虛擬硬碟。 虛擬硬碟 (VHD) 是虛擬化硬碟檔案，一經掛接就會幾乎如同實體硬碟一般地顯示和運作。 它們最常與 Hyper-V 虛擬機器搭配使用。 
+本主題描述如何使用 [磁碟管理] 建立、連結和中斷連結虛擬硬碟。 虛擬硬碟 (VHD) 是虛擬化硬碟檔案，一經掛接就會幾乎如同實體硬碟一般地顯示和運作。 它們最常與 Hyper-V 虛擬機器搭配使用。
 
 ## <a name="viewing-vhds-in-disk-management"></a>在磁碟管理中檢視 VHD
 
@@ -40,7 +38,7 @@ VHD 如同實體磁碟一般地顯示在 [磁碟管理] 中。 VHD 連結後 (�
 
 ## <a name="attaching-and-detaching-a-vhd"></a>連結和中斷連結 VHD
 
-若要讓 VHD 可供使用 (無論是剛建立或其他現有的 VHD)： 
+若要讓 VHD 可供使用 (無論是剛建立或其他現有的 VHD)：
 
 1. 在 [動作]  功能表上，選取 [連結 VHD]  。
 

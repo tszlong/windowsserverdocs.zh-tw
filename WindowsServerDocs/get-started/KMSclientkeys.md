@@ -1,7 +1,6 @@
 ---
 title: KMS 用戶端安裝識別碼
 description: 從 KMS 伺服器啟動 Windows 產品所需的識別碼
-ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: jasongerend
@@ -9,12 +8,12 @@ ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 11/12/2019
 ms.topic: get-started-article
-ms.openlocfilehash: 1eeaa76af345d3f05effe2afe35c40d594adfc3a
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 399a79588c91be0ab5cf553fc29636e5ab768c16
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959620"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959696"
 ---
 # <a name="kms-client-setup-keys"></a>KMS 用戶端安裝識別碼
 
@@ -23,7 +22,7 @@ ms.locfileid: "86959620"
 根據預設，執行 Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012、Windows 7、Windows Server 2008 R2、Windows Vista 以及 Windows Server 2008 大量授權版本的電腦為不需要另外設定的 KMS 用戶端。
 
 > [!NOTE]
-> 在下列表格中，"LTSC" 代表「長期維護通道」，而 "LTSB" 是指「長期維護分支」。 
+> 在下列表格中，"LTSC" 代表「長期維護通道」，而 "LTSB" 是指「長期維護分支」。
 
 **若要使用此處所列的金鑰 (它們是 GVLK)，您的部署中必須已有執行中的 KMS 主機。** 如果您尚未設定 KMS 主機，請參閱 [Deploy KMS Activation](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn502531(v=ws.11)) 的步驟來安裝一部 KMS 主機。
 
@@ -57,7 +56,7 @@ ms.locfileid: "86959620"
 ### <a name="windows-server-2019"></a>Windows Server 2019
 | 作業系統版本       | KMS 用戶端安裝識別碼          |
 |--------------------------------|-------------------------------|
-| Windows Server 2019 Datacenter | WMDGN-G9PQG-XVVXX-R3X43-63DFG | 
+| Windows Server 2019 Datacenter | WMDGN-G9PQG-XVVXX-R3X43-63DFG |
 | Windows Server 2019 Standard   | N69G4-B89J2-4G8F4-WWYCC-J464C |
 | Windows Server 2019 Essentials | WVDHN-86M7X-466P6-VHXV7-YY726 |
 
@@ -104,7 +103,7 @@ ms.locfileid: "86959620"
 | Windows 10 Enterprise LTSB 2016   | DCPHK-NFMTC-H88MJ-PFHPY-QJ4BJ |
 | Windows 10 Enterprise N LTSB 2016 | QFFDN-GRT3P-VKWWX-X7T3R-8B639 |
 
-### <a name="windows-10-ltsb-2015"></a>Windows 10 LTSB 2015 
+### <a name="windows-10-ltsb-2015"></a>Windows 10 LTSB 2015
 
 | 作業系統版本          | KMS 用戶端安裝識別碼          |
 |-----------------------------------|-------------------------------|
@@ -117,14 +116,14 @@ ms.locfileid: "86959620"
 
 | 作業系統版本  | KMS 用戶端安裝識別碼          |
 |---------------------------|-------------------------------|
-| Windows Server Datacenter | 2HXDN-KRXHB-GPYC7-YCKFJ-7FVDG | 
+| Windows Server Datacenter | 2HXDN-KRXHB-GPYC7-YCKFJ-7FVDG |
 | Windows Server Standard   | PTXN8-JFHJM-4WC78-MPCBR-9W4KR |
 
 ### <a name="windows-server-version-1709"></a>Windows Server 1709 版
 
 | 作業系統版本  | KMS 用戶端安裝識別碼          |
 |---------------------------|-------------------------------|
-| Windows Server Datacenter | 6Y6KB-N82V8-D8CQV-23MJW-BWTG6 | 
+| Windows Server Datacenter | 6Y6KB-N82V8-D8CQV-23MJW-BWTG6 |
 | Windows Server Standard   | DPCNP-XQFKJ-BJF7R-FRC8D-GF6G4 |
 
 ### <a name="windows-server-2012-r2"></a>Windows Server 2012 R2
@@ -195,7 +194,7 @@ ms.locfileid: "86959620"
 | Windows 8 企業版 N   | JMNMF-RHW7P-DMY6X-RF3DR-X2BQT |
 
 
-### <a name="windows-7"></a>Windows 7 
+### <a name="windows-7"></a>Windows 7
 
 | 作業系統版本 | KMS 用戶端安裝識別碼          |
 |--------------------------|-------------------------------|

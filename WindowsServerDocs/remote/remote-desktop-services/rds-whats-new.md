@@ -1,29 +1,27 @@
 ---
 title: 遠端桌面服務的新功能
 description: 提供 Windows Server 2016 中 RDS 新功能的描述。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: chrimo
 ms.date: 10/11/2016
 ms.topic: article
 ms.assetid: 04d52dff-e61b-4633-9908-be8600abc2ba
 author: ChristianMontoya
 manager: scottman
-ms.openlocfilehash: 43c280996334ea3b371c54f86b1cd4f86072124b
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 2048b78e17b4888492e252fb4b5454f9428a5e34
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963310"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961592"
 ---
 # <a name="whats-new-in-remote-desktop-services"></a>遠端桌面服務的新功能
 
 在 Windows Server 2016 上建置的遠端桌面服務 (RDS) 是一個虛擬化平台，可啟用各種不同的客戶案例。 整體 RDS 解決方案的改進包括遠端桌面小組和其他 Microsoft 技術合作夥伴所完成的工作。 以下是 Windows Server 2016 中全新或改進的案例與技術。
 
-此外，請務必查看我們的 Ignite 2016 會議：[充分利用 Windows Server 2016 中的 RDS 改進功能](https://channel9.msdn.com/Events/Ignite/2016/BRK3098) \(英文\)。 在這段影片中，產品小組會檢閱遠端桌面服務中所有全新和改進的功能，包括 vGPU 支援。 
+此外，請務必查看我們的 Ignite 2016 會議：[充分利用 Windows Server 2016 中的 RDS 改進功能](https://channel9.msdn.com/Events/Ignite/2016/BRK3098) \(英文\)。 在這段影片中，產品小組會檢閱遠端桌面服務中所有全新和改進的功能，包括 vGPU 支援。
 
 ## <a name="app-compatibility---windows-server-2016-and-windows-10"></a>應用程式相容性 - Windows Server 2016 與 Windows 10
-Windows Server 2016 建置 Windows 10 的相同基礎上，不只具有您期望的相同外觀及操作，也可以執行許多相同的應用程式。 Windows Server 2016 搭配圖形功能 (下方) 可讓您為所有使用者提供一個更有生產力的環境。 
+Windows Server 2016 建置 Windows 10 的相同基礎上，不只具有您期望的相同外觀及操作，也可以執行許多相同的應用程式。 Windows Server 2016 搭配圖形功能 (下方) 可讓您為所有使用者提供一個更有生產力的環境。
 
 ## <a name="azure-sql-database---the-new-database-for-your-highly-available-environment"></a>Azure SQL Database - 適用於高度可用環境的新資料庫
 RD 連線代理人可以在共用的 SQL 資料庫 (例如 Azure SQL 資料庫) 中儲存所有部署資訊 (例如連線狀態和使用者/主機對應)。 拋棄 SQL Server Always On 可用性群組部署手冊、抓取 Azure SQL 資料庫的連接字串，然後開始使用高度可用的環境。
@@ -41,7 +39,7 @@ RD 連線代理人可以在共用的 SQL 資料庫 (例如 Azure SQL 資料庫) 
 其他資訊：[提升遠端桌面連線代理人效能](https://techcommunity.microsoft.com/t5/microsoft-security-and/improved-remote-desktop-connection-broker-performance-with/ba-p/249559) \(英文\)
 
 ## <a name="rdp-10---new-capabilities-built-into-the-protocol"></a>RDP 10 - 通訊協定內建的新功能
-RDP 10 現在使用 H.264/AVC 444 轉碼器，適當地將影片和文字最佳化。 此版本也支援畫筆遠端處理。 透過這些功能，您的遠端工作階段開始感覺更像是本機工作階段。  
+RDP 10 現在使用 H.264/AVC 444 轉碼器，適當地將影片和文字最佳化。 此版本也支援畫筆遠端處理。 透過這些功能，您的遠端工作階段開始感覺更像是本機工作階段。
 
 其他資訊：[Windows 10 和 Windows Server 2016 中的 RDP 10 AVC/H.264 改進功能](https://techcommunity.microsoft.com/t5/microsoft-security-and/remote-desktop-protocol-rdp-10-avc-h-264-improvements-in-windows/ba-p/249588) \(英文\)
 

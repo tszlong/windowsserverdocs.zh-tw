@@ -2,18 +2,16 @@
 title: 延伸基本磁碟區
 description: 您可以在 Windows 中的現有磁碟區上新增空間，並將其延伸至磁碟機上的可用空間中，但此做法僅限於可用空間中沒有磁碟區 (未配置)，並且緊接在您要延伸的磁碟區之後，而中間沒有其他的磁碟區的情況。 本文說明如何執行這項作業。
 ms.date: 12/19/2019
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 19b48bd74dad4e20780b41852afbee15f5ec1ade
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d0cd4c0c2bd6909c82ee39c97b58909e85aeef9f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966100"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961612"
 ---
 # <a name="extend-a-basic-volume"></a>延伸基本磁碟區
 

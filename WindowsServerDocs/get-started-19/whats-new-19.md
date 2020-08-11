@@ -1,19 +1,17 @@
 ---
 title: Windows Server 2019 的新功能
 description: Windows Server 2019 新功能的完整概觀，包括桌面體驗、存放裝置移轉服務、系統深入解析、Azure 網路介面卡、儲存空間直接存取增強功能，以及其他變更。
-ms.prod: windows-server
-ms.technology: server-general
 ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 06/04/2019
-ms.openlocfilehash: fd094347679d147a04faefdf3741a06addda2026
-ms.sourcegitcommit: 78b59522234825c43b00c271a04c35f3fd9d65e3
+ms.openlocfilehash: 6337a3812cb6e1ca838c463bc811f8959d1f0714
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86946576"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972365"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Windows Server 2019 的新功能
 
@@ -45,9 +43,9 @@ Windows Admin Center 是以瀏覽器為基礎在本機部署的應用程式，�
 
 ### <a name="server-core-app-compatibility-feature-on-demand"></a>Server Core 應用程式相容性功能隨選安裝
 
-[Server Core 應用程式相容性功能隨選安裝 (FOD)](./install-fod-19.md) 無須加入 Windows Server 桌面體驗圖形環境，即可納入包含桌面體驗的 Windows Server 二進位檔和元件子集，藉以大幅改進 Windows Server Core 安裝選項的應用程式相容性。  這樣做是為了增加 Server Core 的功能與相容性，同時盡可能保持精簡。  
+[Server Core 應用程式相容性功能隨選安裝 (FOD)](./install-fod-19.md) 無須加入 Windows Server 桌面體驗圖形環境，即可納入包含桌面體驗的 Windows Server 二進位檔和元件子集，藉以大幅改進 Windows Server Core 安裝選項的應用程式相容性。  這樣做是為了增加 Server Core 的功能與相容性，同時盡可能保持精簡。
 
-這個選用的功能隨選安裝可用於不同的 ISO，僅能使用 DISM 新增到 Windows Server Core 安裝和映像。 
+這個選用的功能隨選安裝可用於不同的 ISO，僅能使用 DISM 新增到 Windows Server Core 安裝和映像。
 
 ## <a name="security"></a>安全性
 
@@ -75,7 +73,7 @@ ATP 的深度平台感應器和回應動作會公開記憶體和核心層級攻�
 
 ### <a name="security-with-software-defined-networking-sdn"></a>軟體定義網路 (SDN) 的安全性
 
-[SDN 的安全性](../networking/sdn/security/sdn-security-top.md)提供許多功能以提高執行中工作負載的客戶信賴度，無論是內部部署或是雲端中服務提供者的形式。 
+[SDN 的安全性](../networking/sdn/security/sdn-security-top.md)提供許多功能以提高執行中工作負載的客戶信賴度，無論是內部部署或是雲端中服務提供者的形式。
 
 這些安全性增強功能已整合至 Windows Server 2016 中推出的完整 SDN 平台。
 
@@ -91,7 +89,7 @@ ATP 的深度平台感應器和回應動作會公開記憶體和核心層級攻�
 
 - **疑難排解改進功能**
 
-    我們也透過啟用 VMConnect 加強的工作階段模式和 PowerShell Direct 支援，簡化[疑難排解受防護的虛擬機器](../security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-shielded-vms.md)。 如果您遺失 VM 的網路連線，並且需要更新其設定來還原存取，這些工具會非常有用。 
+    我們也透過啟用 VMConnect 加強的工作階段模式和 PowerShell Direct 支援，簡化[疑難排解受防護的虛擬機器](../security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-shielded-vms.md)。 如果您遺失 VM 的網路連線，並且需要更新其設定來還原存取，這些工具會非常有用。
 
     這些功能不需要進行設定，當受防護 VM 放置於執行 Windows Server 版本 1803 或更新版本的 Hyper-V 主機時，就會自動變為可用。
 
@@ -168,7 +166,7 @@ Windows Server 2019 會透過支援 Windows 上的 Kubernetes 所需的半年通
 - Kubernetes 上的部署工作負載將能使用網路安全性，使用內嵌工具來保護 Linux 和 Windows 服務。
 
 ### <a name="container-improvements"></a>容器改進功能
-    
+
 - **改進整合式身分識別**
 
     我們將容器中的整合式 Windows 驗證調整的更簡單也更可靠，以解決舊版 Windows Server 中的數個限制。
@@ -187,7 +185,8 @@ Windows Server 2019 會透過支援 Windows 上的 Kubernetes 所需的半年通
 
 ### <a name="encrypted-networks"></a>加密的網路
 
-[加密的網路](../networking/sdn/sdn-whats-new.md) - 虛擬網路加密可讓虛擬網路流量在彼此於標示為 **「加密已啟用」** 的子網路內通訊的虛擬機器之間進行加密。 這項功能也利用虛擬子網路上的資料包傳輸層安全性 (DTLS) 來加密封包。 DTLS 提供保護以防止任何可存取實體網路的人進行竊聽、竄改和偽造。
+[加密的網路](../networking/sdn/sdn-whats-new.md) - 虛擬網路加密可讓虛擬網路流量在彼此於標示為 **「加密已啟用」** 的子網路內通訊的虛擬機器之間進行加密。
+這項功能也利用虛擬子網路上的資料包傳輸層安全性 (DTLS) 來加密封包。 DTLS 提供保護以防止任何可存取實體網路的人進行竊聽、竄改和偽造。
 
 ### <a name="network-performance-improvements-for-virtual-workloads"></a>虛擬工作負載的網路效能改進功能
 
@@ -199,7 +198,7 @@ Windows Server 2019 會透過支援 Windows 上的 Kubernetes 所需的半年通
 
 ### <a name="low-extra-delay-background-transport"></a>低額外延遲背景傳輸
 
-低額外延遲背景傳輸 (LEDBAT) 是最佳化延遲的網路壅塞控制提供者，專門設定來自動產生頻寬給使用者和應用程式，並在網路未使用時消耗整個可用的頻寬。   
+低額外延遲背景傳輸 (LEDBAT) 是最佳化延遲的網路壅塞控制提供者，專門設定來自動產生頻寬給使用者和應用程式，並在網路未使用時消耗整個可用的頻寬。
 這項技術適用於在 IT 環境間部署大型的重大更新，而不至於影響客戶面向服務和相關頻寬。
 
 ### <a name="windows-time-service"></a>Windows Time 服務
@@ -214,7 +213,7 @@ Windows Server 2019 中的[高效能 SDN 閘道](../networking/sdn/gateway-perfo
 
 ### <a name="new-deployment-ui-and-windows-admin-center-extension-for-sdn"></a>適用於 SDN 的新部署 UI 以及 Windows Admin Center 擴充功能
 
-現在，使用 Windows Server 2019，透過新的部署 UI 和 Windows Admin Center 擴充功能輕鬆進行部署與管理，可讓任何人運用 SDN 的強大功能。 
+現在，使用 Windows Server 2019，透過新的部署 UI 和 Windows Admin Center 擴充功能輕鬆進行部署與管理，可讓任何人運用 SDN 的強大功能。
 
 ### <a name="persistent-memory-support-for-hyper-v-vms"></a>Hyper-V VM 的持續性記憶體支援
 

@@ -1,20 +1,18 @@
 ---
 title: RDS - 託管桌面和應用程式的合作夥伴
 description: 可使用 RDS 託管桌面和應用程式的合作夥伴清單。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 04/27/2017
 ms.topic: article
 ms.assetid: 9a3cb426-fb39-40c5-ae07-26dbe9e3aed9
 author: lizap
 manager: dongill
-ms.openlocfilehash: 503a9917e271c69a78e5f26db6556d788254c823
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: fb004a0dd833a3b90f7d9be6fe946bf6238e8b1f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80861361"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971585"
 ---
 # <a name="remote-desktop-services-hosting-partners-and-assessment"></a>遠端桌面服務託管合作夥伴
 
@@ -27,10 +25,10 @@ ms.locfileid: "80861361"
 3. 接受[技術評定](https://mspartnerlp.partner.microsoft.com/LearningPath/LearningPath/DLPaths?trackId=1660&rowId=2220&trackPathId=9871)。
 4. 確定您符合[雲端平台專長認證的需求](https://partner.microsoft.com/membership/cloud-platform-competency)。
 
-已是 Microsoft 合作夥伴，而有任何問題嗎？ 請遠端桌面小組連絡：<rdhostingpartners@microsoft.com>。  
+已是 Microsoft 合作夥伴，而有任何問題嗎？ 請遠端桌面小組連絡：<rdhostingpartners@microsoft.com>。
 
 
-## <a name="partners-who-have-passed-the-learning-path-assessment"></a>已通過學習路徑評估的合作夥伴 
+## <a name="partners-who-have-passed-the-learning-path-assessment"></a>已通過學習路徑評估的合作夥伴
 
 如果您是一名客戶，正在尋找合作夥伴協助您為使用者在 Azure 中託管 Windows 桌面和應用程式，我們編譯了已通過評估的合作夥伴清單，可供您參考。 這是截至 2017/03/28 為止的[合作夥伴清單](rds-hosting-partners.md)，可供您下載。
 
