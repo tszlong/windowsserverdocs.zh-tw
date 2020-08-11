@@ -1,20 +1,18 @@
 ---
 title: 步驟 4 - 設定自動更新的群組原則設定
 description: Windows Server Update Service (WSUS) 主題 - 設定自動更新的群組原則設定是部署 WSUS 的四步驟程序中的第四個步驟
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: 62177d05-d832-4ea8-bca4-47a8cd34a19c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d678c139ae2327eeecdff2731f1edb57d358a28a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: ca59369cda4c38af111b9ccd3141219b1516cbd7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80828841"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991103"
 ---
 # <a name="step-4-configure-group-policy-settings-for-automatic-updates"></a>步驟 4：設定自動更新的群組原則設定
 
@@ -639,7 +637,7 @@ ms.locfileid: "80828841"
 
     -   **開啟 [電腦設定] > [群組原則的維護排程器延伸]** 。 在 GPOE 中，瀏覽至 [PolicyName]   > [電腦設定]   > [原則]   > [系統管理範本]   > [Windows 元件]   > [維護排程器]  。
 
-如需群組原則的詳細資訊，請參閱[群組原則概觀](https://technet.microsoft.com/library/hh831791.aspx(v=ws.12))。
+如需群組原則的詳細資訊，請參閱[群組原則概觀](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831791(v=ws.11))。
 
 > [!TIP]
 > 開啟您想要的群組原則延伸之後，您可以使用下列步驟來啟用、停用或瀏覽設定：

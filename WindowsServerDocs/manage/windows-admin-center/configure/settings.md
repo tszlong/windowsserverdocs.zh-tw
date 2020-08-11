@@ -1,19 +1,17 @@
 ---
 title: Settings
 description: 了解有關 Windows Admin Center (Project Honolulu) 的設定。 使用者設定可讓使用者變更其語言/區域和其他喜好設定。 閘道設定可讓系統管理員設定閘道。
-ms.technology: manage
 ms.topic: article
 author: haley-rowland
 ms.author: harowl
 ms.date: 04/12/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: e0fd6618f275058d4e22fe9abb9e484d4752ac9a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: ff06a19d85858b8332412a51c029c9aeeba2af50
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71407050"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997433"
 ---
 # <a name="windows-admin-center-settings"></a>Windows Admin Center 設定
 
@@ -56,6 +54,6 @@ Windows Admin Center 設定包含使用者層級和閘道層級的設定。 對�
 
 [存取]  索引標籤可讓系統管理員設定可存取 Windows Admin Center 閘道的人員，以及用來驗證使用者的身分識別提供者。 [深入了解控制閘道的存取權。](user-access-control.md)
 
-從 [Azure]  索引標籤中，系統管理員可以向 Azure 註冊閘道，以在 Windows Admin Center 中啟用 [Azure 整合功能](azure-integration.md)。
+從 [Azure]  索引標籤中，系統管理員可以向 Azure 註冊閘道，以在 Windows Admin Center 中啟用 [Azure 整合功能](../azure/azure-integration.md)。
 
 系統管理員可以使用 [共用連線]  索引標籤，設定要在 Windows Admin Center 閘道的所有使用者之間共用的單一連線清單。 [深入了解如何一次設定所有閘道使用者的連線。](shared-connections.md)

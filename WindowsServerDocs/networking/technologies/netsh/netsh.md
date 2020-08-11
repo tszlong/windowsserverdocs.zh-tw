@@ -1,20 +1,18 @@
 ---
 title: 網路殼層 (Netsh)
 description: 本主題提供 Windows Server 2016 中的網路殼層 (Netsh) 命令列公用程式概觀。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: aedef092-8445-4e53-b9d4-525ecd98b02d
 manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: d9103585d1868f586f169f01096c4d37961e7033
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 1f331a7ea987f413f814dcb1b0e4173714b1153b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80316681"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87994617"
 ---
 # <a name="network-shell-netsh"></a>網路殼層 \(Netsh\)
 
@@ -29,14 +27,14 @@ ms.locfileid: "80316681"
 此外，還有適用於網路技術的 netsh 命令 (例如 IPv6、網路橋接器，以及遠端程序呼叫 \(RPC\))，無法在 Windows Server 中作為 MMC 嵌入式管理單元使用。
 
 >[!IMPORTANT]
->建議您使用 Windows PowerShell 來管理 [Windows Server 2016 和 Windows 10](https://technet.microsoft.com/library/mt156917.aspx) 中的網路技術，而不是使用網路殼層。 不過，為了與您的指令碼相容，系統會納入網路殼層，並可支援使用。
+>建議您使用 Windows PowerShell 來管理 [Windows Server 2016 和 Windows 10](/powershell/windows/get-started?view=win10-ps) 中的網路技術，而不是使用網路殼層。 不過，為了與您的指令碼相容，系統會納入網路殼層，並可支援使用。
 
 ## <a name="network-shell-netsh-technical-reference"></a>網路殼層 (Netsh) 技術參考
 
-Netsh 技術參考提供完整的 netsh 命令參考，包括語法、參數和 Netsh 命令範例。 您可以使用 Netsh 技術參考，在執行 Windows Server 2016 和 Windows 10 的電腦上，使用 netsh 命令來建立指令碼和批次檔，以在本機或遠端管理網路技術。  
-  
-### <a name="content-availability"></a>內容可用性  
-  
-您可以從 TechNet 資源庫中以 Windows Help \(* .chm\) 格式下載網路殼層技術參考：[ 技術參考](https://gallery.technet.microsoft.com/Netsh-Technical-Reference-c46523dc)  
-  
+Netsh 技術參考提供完整的 netsh 命令參考，包括語法、參數和 Netsh 命令範例。 您可以使用 Netsh 技術參考，在執行 Windows Server 2016 和 Windows 10 的電腦上，使用 netsh 命令來建立指令碼和批次檔，以在本機或遠端管理網路技術。
+
+### <a name="content-availability"></a>內容可用性
+
+您可以從 TechNet 資源庫中以 Windows Help \(* .chm\) 格式下載網路殼層技術參考：[ 技術參考](https://gallery.technet.microsoft.com/Netsh-Technical-Reference-c46523dc)
+
 ---

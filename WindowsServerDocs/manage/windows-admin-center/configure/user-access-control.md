@@ -1,19 +1,17 @@
 ---
 title: 設定使用者存取控制與權限
 description: 了解如何使用 Active Directory 或 Azure AD 設定使用者存取控制與權限 (Honolulu 專案)
-ms.technology: manage
 ms.topic: article
 author: haley-rowland
 ms.author: harowl
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 0de38560301d4d793214846036850a05a5d5a326
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 99fafcb5a42133baeb119a9857a2e05b7e3dbd89
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182204"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997417"
 ---
 # <a name="configure-user-access-control-and-permissions"></a>設定使用者存取控制與權限
 
@@ -82,7 +80,7 @@ ms.locfileid: "87182204"
 
 ### <a name="configuring-azure-active-directory-authentication-for-windows-admin-center"></a>為 Windows Admin Center 設定 Azure Active Directory 驗證
 
-[若要設定 Azure AD 驗證，您必須先向 Azure 註冊您的閘道](azure-integration.md) (您只需要針對您的 Windows Admin Center 閘道執行一次此動作)。 此步驟會建立 Azure AD 應用程式，您可以在其中管理閘道使用者和閘道系統管理員存取權。
+[若要設定 Azure AD 驗證，您必須先向 Azure 註冊您的閘道](../azure/azure-integration.md) (您只需要針對您的 Windows Admin Center 閘道執行一次此動作)。 此步驟會建立 Azure AD 應用程式，您可以在其中管理閘道使用者和閘道系統管理員存取權。
 
 如果您想要將 Windows Admin Center 服務的閘道使用者或閘道系統管理員存取權提供給特定的 Azure AD 使用者或群組，您必須執行下列動作：
 
@@ -103,7 +101,7 @@ ms.locfileid: "87182204"
 
 使用 Azure AD 作為另一個安全性層級來控制 Windows Admin Center 閘道存取權的其中一項優點是，您可以運用 Azure AD 強大的安全性功能，例如條件式存取和多重要素驗證。
 
-[深入了解如何使用 Azure Active Directory 來設定條件式存取。](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal-get-started)
+[深入了解如何使用 Azure Active Directory 來設定條件式存取。](/azure/active-directory/active-directory-conditional-access-azure-portal-get-started)
 
 ## <a name="configure-single-sign-on"></a>設定單一登入
 
@@ -111,7 +109,7 @@ ms.locfileid: "87182204"
 
 當您在 Windows 10 上安裝 Windows Admin Center 時，您便可以使用單一登入。 不過，如果您要在 Windows Server 上使用 Windows Admin Center，您必須在您的環境中設定某種形式的 Kerberos 委派，才能使用單一登入。 委派會將閘道電腦設定為受信任的項目，進而委派給目標節點。
 
-若要在您的環境中設定[以資源為基礎的限制委派](https://docs.microsoft.com/windows-server/security/kerberos/kerberos-constrained-delegation-overview)，請使用下列 PowerShell 範例。 此範例會示範如何設定 Windows Server [node01.contoso.com]，以接受 contoso.com 網域中 Windows Admin Center 閘道 [wac.contoso.com] 的委派。
+若要在您的環境中設定[以資源為基礎的限制委派](../../../security/kerberos/kerberos-constrained-delegation-overview.md)，請使用下列 PowerShell 範例。 此範例會示範如何設定 Windows Server [node01.contoso.com]，以接受 contoso.com 網域中 Windows Admin Center 閘道 [wac.contoso.com] 的委派。
 
 ```powershell
 Set-ADComputer -Identity (Get-ADComputer node01) -PrincipalsAllowedToDelegateToAccount (Get-ADComputer wac)

@@ -1,20 +1,18 @@
 ---
 title: 開始使用 Windows Server 2016
 description: Server 2016 的基本概念︰系統需求、版本資訊、升級選項
-ms.prod: windows-server
 manager: dongill
-ms.technology: get-started
 ms.date: 03/16/2018
 ms.topic: article
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 6387b5daf2346a0ad88509dbefd68ba8b8bbb69a
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: a0c16a148867e34a1b83de491aefb81fa79fa365
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519565"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990548"
 ---
 # <a name="get-started-with-windows-server-2016"></a>開始使用 Windows Server 2016
 
@@ -23,7 +21,7 @@ ms.locfileid: "87519565"
 > [!TIP]
 > 尋找舊版 Windows Server 的相關資訊嗎？ 查看我們其他位於 docs.microsoft.com 的 [Windows Server 文件庫](/previous-versions/windows/)。 您也可以[搜尋這個網站](/search/index?dataSource=previousVersions&search=Windows Server)以取得特定資訊。
 
-![圖示顯示包含核取記號的方塊](../media/landing-icons/getstarted.png)此集合包含詳細資訊，可協助您判斷是否已準備好移至 Windows Server 2016。 檢查系統需求、升級選項，以及移至 Windows Server 2016 的其他資訊之後，即可回到主要 [Windows Server 2016](Windows-Server-2016.md) 中樞，並開始往下安裝您需要的最佳版本和安裝選項。
+![圖示顯示包含核取記號的方塊](../media/landing-icons/getstarted.png)此集合包含詳細資訊，可協助您判斷是否已準備好移至 Windows Server 2016。 檢查系統需求、升級選項，以及移至 Windows Server 2016 的其他資訊之後，即可回到主要 [Windows Server 2016](../index.yml) 中樞，並開始往下安裝您需要的最佳版本和安裝選項。
 
 > [!Note]
 > 若要下載 Windows Server 2016，請參閱 [Windows Server 評估版](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016)。

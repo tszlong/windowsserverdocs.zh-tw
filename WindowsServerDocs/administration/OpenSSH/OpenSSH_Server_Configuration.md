@@ -4,14 +4,13 @@ description: 與適用於 Windows 10 1809 和 Server 2019 的 OpenSSH 伺服器�
 ms.date: 09/27/2018
 ms.topic: conceptual
 contributor: maertendMSFT
-ms.product: windows-server
 author: maertendmsft
-ms.openlocfilehash: abd156936bbd26479b0fe6bb7ffb98c1dd122f8e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4e2052ef9bf67eea241b6668a734f2f3e166bb61
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469753"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992388"
 ---
 # <a name="openssh-server-configuration-for-windows-10-1809-and-server-2019"></a>適用於 Windows 10 1809 和 Server 2019 的 OpenSSH 伺服器設定
 
@@ -64,7 +63,7 @@ Windows 允許使用多種格式來指定網域主體，但是許多格式與標
 此外，這種方法會使用 "?"，而不是 @，以避免與 username@host 格式發生衝突。
 
 工作群組使用者/群組和網際網路連線帳戶一律會解析為其本機帳戶名稱 (沒有網域部分，類似於標準 Unix 名稱)。
-網域使用者和群組會嚴格地解析為 [NameSamCompatible](https://docs.microsoft.com/windows/desktop/api/secext/ne-secext-extended_name_format) 格式 - domain_short_name\user_name。
+網域使用者和群組會嚴格地解析為 [NameSamCompatible](/windows/desktop/api/secext/ne-secext-extended_name_format) 格式 - domain_short_name\user_name。
 所有以使用者/群組為基礎的設定規則都必須遵守此格式。
 
 網域使用者和群組的範例
@@ -149,4 +148,3 @@ AllowGroups sshusers
 * X11Forwarding
 * X11UseLocalhost
 * XAuthLocation
-

@@ -1,25 +1,23 @@
 ---
 title: 安裝含有桌面體驗的伺服器
 description: 說明如何取得並安裝含有桌面體驗的伺服器安裝
-ms.prod: windows-server
 ms.date: 01/18/2017
-ms.technology: server-general
 ms.topic: article
 ms.assetid: 5b38b8a0-4dfc-4130-be00-fc58bba99595
 author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: a1ac967743dcb9e38cb36e5c16f7e3dd6ec0c7d2
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 43a483df0f9ad8c6961f9309249a5c2eef88c085
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953550"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990541"
 ---
 # <a name="install-server-with-desktop-experience"></a>安裝含有桌面體驗的伺服器
 > 適用於：Windows Server 2016
-  
+
 
 當您使用安裝精靈安裝 Windows Server 2016 時，您可以在 **Windows Server 2016**和 **Windows Server (含有桌面體驗的伺服器)** 之間進行選擇。 Windows Server 2016 的 [含有桌面體驗的伺服器] 選項，相當於已安裝桌面體驗功能之 Windows Server 2012 R2 中的 [完整] 安裝選項。 如果您不在安裝精靈中做出選擇，系統將會安裝 **Windows Server 2016**，這是 [Server Core]  安裝選項。
 
@@ -42,7 +40,7 @@ ms.locfileid: "86953550"
 ### <a name="evaluation"></a>評估
 您可以從 [Windows Server 評估版](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016)取得 Windows Server 的 180 天授權評估版。 選擇 [Windows Server 2016] | [64 位元 ISO] 選項  進行下載，您也可以瀏覽 [Windows Server 2016] | [虛擬實驗室]  。
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > 對於 14393.0.161119-1705.RS1_REFRESH 之前的 Windows Server 2016 版本，您只能執行從已使用 [桌面體驗] 選項 (非 [Server Core] 選項) 安裝之 Windows Server 2016 的評估版轉換為零售版的這項轉換。 從 14393.0.161119-1705.RS1_REFRESH 版本開始與未來的版本，您可以將評估版本轉換零售，無論使用何種安裝選項。
 
 
@@ -55,8 +53,8 @@ ms.locfileid: "86953550"
 
 如果您已經有適當 Windows Server 產品的完整安裝，您可以將它升級至適當 Windows Server 2016 版本的 [含有桌面體驗的伺服器] 安裝，如下所示。
 
-> [!IMPORTANT]  
-> 在此版本中，虛擬機器中的升級效果最佳，因為虛擬機器不需要特定 OEM 硬體驅動程式，就能成功升級。 否則，建議使用移轉選項。  
+> [!IMPORTANT]
+> 在此版本中，虛擬機器中的升級效果最佳，因為虛擬機器不需要特定 OEM 硬體驅動程式，就能成功升級。 否則，建議使用移轉選項。
 
 - 不支援從 32 位元到 64 位元架構的就地升級。 所有 Windows Server 2016 版本只支援 64 位元。
 - 不支援從某種語言到另一種語言的就地升級。
@@ -68,8 +66,8 @@ ms.locfileid: "86953550"
 
 如果您在右欄看到多個版本，則支援從相同版本開始升級到列出的**任一**版本。
 
-|如果您執行這個版本：|您可以升級到這些版本：|  
-|-------------------|----------|  
+|如果您執行這個版本：|您可以升級到這些版本：|
+|-------------------|----------|
 |Windows Server 2012 Standard|Windows Server 2016 Standard 或 Datacenter|
 |Windows Server 2012 Datacenter|Windows Server 2016 Datacenter|
 |Windows Server 2012 R2 Standard|Windows Server 2016 Standard 或 Datacenter|
@@ -87,8 +85,8 @@ ms.locfileid: "86953550"
 
 移轉的功能會因不同的伺服器角色而異。 下表說明移至 Windows Server 2016 的特定伺服器角色升級和移轉選項。 如需個別角色移轉指南，請瀏覽[在 Windows Server 中移轉角色與功能](./migrate-roles-and-features.md)。 如需安裝和升級的詳細資訊，請參閱 [Windows Server Installation, Upgrade, and Migration](./installation-and-upgrade.md) (Windows Server 安裝、升級和移轉)。
 
-|伺服器角色|是否可從 Windows Server 2012 R2 升級？|是否可從 Windows Server 2012 升級？|是否支援移轉？|是否可以在不停機的情況下完成移轉？|  
-|-------------------|----------|--------------|--------------|----------|  
+|伺服器角色|是否可從 Windows Server 2012 R2 升級？|是否可從 Windows Server 2012 升級？|是否支援移轉？|是否可以在不停機的情況下完成移轉？|
+|-------------------|----------|--------------|--------------|----------|
 |Active Directory 憑證服務|    是|    是|    是|    否|
 |Active Directory 網域服務|    是|    是|    是|    是|
 |Active Directory Federation Services|    否|    否|    是|    否 (不需要新增節點至伺服器陣列)|
@@ -103,8 +101,8 @@ ms.locfileid: "86953550"
 |Windows Server Update Services|    是|    是|    是|    否|
 |工作資料夾|    是|    是|    是|    是，使用[叢集作業系統輪流升級](../failover-clustering/cluster-operating-system-rolling-upgrade.md)時從 WS 2012 R2 叢集進行。|
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > 一旦安裝程式完成，而且您已安裝所有必要的伺服器角色和功能之後，請立即使用 Windows Update 或其他更新方法來檢查並安裝 Windows Server 2016 的可用更新。
 
 ---------------------------------------
-如果您需要其他安裝選項，或者如果您已經完成安裝，並準備好要部署特定工作負載，您可以[回到 Windows Server 2016 主頁面](Windows-Server-2016.md)。
+如果您需要其他安裝選項，或者如果您已經完成安裝，並準備好要部署特定工作負載，您可以[回到 Windows Server 2016 主頁面](../index.yml)。

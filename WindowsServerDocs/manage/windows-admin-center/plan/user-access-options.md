@@ -1,19 +1,17 @@
 ---
 title: Windows Admin Center 的使用者存取選項
 description: Windows Admin Center 的使用者存取選項和識別提供者 (Project Honolulu)
-ms.technology: manage
 ms.topic: article
 author: haley-rowland
 ms.author: harowl
 ms.date: 03/07/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 084cdae0bf8ca0eb3aff1f4679d30978b860efef
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 3c96968f55a06c7ccffd9f7919001f21bff6a75c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71356924"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996988"
 ---
 # <a name="user-access-options-with-windows-admin-center"></a>Windows Admin Center 的使用者存取選項
 
@@ -33,7 +31,7 @@ Windows Admin Center 會定義兩個可存取閘道服務的角色：閘道使�
 **閘道系統管理員**可以設定取得存取權的人員，以及使用者向閘道進行驗證的方式。
 
 >[!NOTE]
-> 如果 Windows Admin Center 內沒有定義任何存取群組，則這些角色會反映 Windows 帳戶對閘道伺服器的存取權。 
+> 如果 Windows Admin Center 內沒有定義任何存取群組，則這些角色會反映 Windows 帳戶對閘道伺服器的存取權。
 
 [在 Windows Admin Center 中設定閘道使用者和系統管理員的存取權。](../configure/user-access-control.md)
 
@@ -51,7 +49,7 @@ Windows Admin Center 會定義兩個可存取閘道服務的角色：閘道使�
 
 ### <a name="conditional-access-and-multi-factor-authentication"></a>條件式存取和多重要素驗證
 
-藉由針對閘道來要求進行 Azure AD 驗證，您可以利用 Azure AD 所提供的其他安全性功能，例如條件式存取和多重要素驗證。 [深入了解如何使用 Azure Active Directory 來設定條件式存取。](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal-get-started)
+藉由針對閘道來要求進行 Azure AD 驗證，您可以利用 Azure AD 所提供的其他安全性功能，例如條件式存取和多重要素驗證。 [深入了解如何使用 Azure Active Directory 來設定條件式存取。](/azure/active-directory/active-directory-conditional-access-azure-portal-get-started)
 
 ## <a name="role-based-access-control"></a>角色型存取控制
 

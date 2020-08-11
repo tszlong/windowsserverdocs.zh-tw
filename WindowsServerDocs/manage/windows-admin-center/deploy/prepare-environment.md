@@ -1,19 +1,17 @@
 ---
 title: 準備您的 Windows Admin Center 環境
 description: 準備您的 Windows Admin Center 環境 (專案 Honolulu)
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: a37c7e8765ba6f83fc1ebe20aaba3dfb8bc29a3d
-ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
+ms.openlocfilehash: 5506918ed8da3a71c5ca078ce84502a3d889a386
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86891343"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997458"
 ---
 # <a name="prepare-your-environment-for-windows-admin-center"></a>準備您的 Windows Admin Center 環境
 
@@ -35,7 +33,7 @@ Windows Admin Center 需要使用預設未包含在 Windows Server 2012 和 2012
 
 請在 PowerShell 中輸入 `$PSVersiontable`，確認已安裝 WMF，且版本是 5.1 或更新版本。
 
-如果未安裝，您可以[下載並安裝 WMF 5.1](https://docs.microsoft.com/powershell/scripting/wmf/setup/install-configure)。
+如果未安裝，您可以[下載並安裝 WMF 5.1](/powershell/scripting/wmf/setup/install-configure)。
 
 ## <a name="prepare-microsoft-hyper-v-server-2016"></a>準備 Microsoft Hyper-V Server 2016
 
@@ -93,7 +91,7 @@ Windows Admin Center 需要使用預設未包含在 Microsoft Hyper-V Server 201
 
 請在 PowerShell 中輸入 `$PSVersiontable`，確認已安裝 WMF，且版本是 5.1 或更新版本。
 
-如果尚未安裝，您可以[下載 WMF 5.1](https://docs.microsoft.com/powershell/scripting/wmf/setup/install-configure)。
+如果尚未安裝，您可以[下載 WMF 5.1](/powershell/scripting/wmf/setup/install-configure)。
 
 ### <a name="step-2-enable-remote-management"></a>步驟 2：啟用遠端管理
 
@@ -129,4 +127,4 @@ Microsoft Hyper-V Server 2012 R2 現已準備好可以使用 Windows Admin Cente
 Windows Admin Center 會針對某些檔案複製工作 (例如在遠端伺服器上匯入憑證) 使用 SMB 檔案共用通訊協定。 若要讓這些檔案複製作業成功，遠端伺服器上的防火牆必須允許連接埠 445 的傳入連線。  您可以使用 Windows Admin Center 的防火牆工具，確認「檔案伺服器遠端系統管理 (SMB-In)」的傳入規則已設定為允許此連接埠上的存取。
 
 > [!Tip]
-> 準備好安裝 Windows Admin Center 了嗎？ [立即下載](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center#download-now)
+> 準備好安裝 Windows Admin Center 了嗎？ [立即下載](../overview.md#download-now)

@@ -1,20 +1,18 @@
 ---
 title: 針對虛擬桌面基礎結構 (VDI) 角色將 Windows 10 版本 1909 最佳化
 description: 將當作 VDI 映像的 Windows 10 版本 1909 桌面的額外負荷降至最低的建議設定和組態。
-ms.prod: windows-server
 ms.reviewer: robsmi
-ms.technology: remote-desktop-services
 ms.author: helohr
 ms.topic: article
 author: heidilohr
 manager: lizross
 ms.date: 02/19/2020
-ms.openlocfilehash: 7568db50f09273b398955c314491b903f627d1a9
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 7b9500c11ca5dba7ed2f51d1d6b32b7cf689f070
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182094"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997130"
 ---
 # <a name="optimizing-windows-10-version-1909-for-a-virtual-desktop-infrastructure-vdi-role"></a>針對虛擬桌面基礎結構 (VDI) 角色將 Windows 10 版本 1909 最佳化
 
@@ -195,7 +193,7 @@ Remove-AppxProvisionedPackage -Online -PackageName
 
 ### <a name="manage-windows-optional-features-using-powershell"></a>使用 PowerShell 管理 Windows 選用功能
 
-您可以使用 PowerShell 管理 Windows 選用功能。 如需詳細資訊，請參閱 [Windows Server PowerShell 論壇](https://docs.microsoft.com/answers/topics/windows-server-powershell.html)。 若要列舉目前已安裝的 Windows 功能，請執行下列 PowerShell 命令：
+您可以使用 PowerShell 管理 Windows 選用功能。 如需詳細資訊，請參閱 [Windows Server PowerShell 論壇](/answers/topics/windows-server-powershell.html)。 若要列舉目前已安裝的 Windows 功能，請執行下列 PowerShell 命令：
 
 ```powershell
 Get-WindowsOptionalFeature -Online
@@ -715,7 +713,7 @@ Microsoft 近期發佈了關於在 VDI 環境中使用 Windows Defender 的文�
 >[!NOTE]
 > 本節中的某些設定僅以登錄為基礎，且應在映像部署至生產環境之前納入基底映像中。
 
-下列設定值記載於 [Windows Server 2016 效能微調指導方針](/windows-server/administration/performance-tuning/)中，由 Windows 產品小組發佈於 Microsoft.com 上。
+下列設定值記載於 [Windows Server 2016 效能微調指導方針](../../administration/performance-tuning/index.md)中，由 Windows 產品小組發佈於 Microsoft.com 上。
 
 #### <a name="disablebandwidththrottling"></a>DisableBandwidthThrottling
 

@@ -1,20 +1,18 @@
 ---
 title: 規劃 WSUS 部署
 description: Windows Server Update Service (WSUS) 主題 - 部署規劃程序的概觀，其中包含相關主題的聯結
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: 35865398-b011-447a-b781-1c52bc0c9e3a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/24/2018
-ms.openlocfilehash: de4fe62b179286f058a9c4508e9f907eeb9ae806
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 8e6aaaef666577db134d5d5bb42feffb38cb5a36
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87178574"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990942"
 ---
 # <a name="plan-your-wsus-deployment"></a>規劃 WSUS 部署
 
@@ -101,14 +99,14 @@ ms.locfileid: "87178574"
 2. Windows 用戶端版本無法視需要從網站上安裝 .NET 3.5。 伺服器角色的考量同樣適用於 .NET 3.5。
 
    > [!NOTE]
-   > 設定功能隨選安裝的安裝來源並不會影響 WSUS。 如需如何設定功能的相關資訊，請參閱[設定 Windows Server 中的功能隨選安裝](https://technet.microsoft.com/library/jj127275.aspx)。
+   > 設定功能隨選安裝的安裝來源並不會影響 WSUS。 如需如何設定功能的相關資訊，請參閱[設定 Windows Server 中的功能隨選安裝](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127275(v=ws.11))。
 
 3. 執行 Windows 10 版本 1709 或版本 1803 的企業裝置，無法直接從 WSUS 安裝任何功能隨選安裝。 若要安裝功能隨選安裝，請[建立功能檔案 (並列存放)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127275%28v=ws.11%29#create-a-feature-file-or-side-by-side-store)，或從下列其中一個來源取得功能隨選安裝套件：
    - [大量授權服務中心](https://www.microsoft.com/licensing/servicecenter) (VLSC) - 需要 VL 存取權
    - OEM 入口網站 - 需要 OEM 存取權
    - MSDN 下載 - 需要 MSDN 訂用帳戶
 
-     您可以使用 [DISM 命令列選項](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism-operating-system-package-servicing-command-line-options)來安裝個別取得的功能隨選安裝套件。
+     您可以使用 [DISM 命令列選項](/windows-hardware/manufacture/desktop/dism-operating-system-package-servicing-command-line-options)來安裝個別取得的功能隨選安裝套件。
 
 ### <a name="wsus-database-requirements"></a>WSUS 資料庫需求
 WSUS 需要下列其中一個資料庫：
@@ -244,9 +242,9 @@ WSUS 僅支援資料庫的 Windows 驗證。 您不能在 WSUS 使用 SQL Server
 
 Windows 內部資料庫不提供使用者介面或任何資料庫管理工具。 如果您為 WSUS 選用這個資料庫，必須使用外部工具來管理資料庫。 如需詳細資訊，請參閱：
 
--   [備份和還原 WSUS 資料以及備份您的伺服器](https://technet.microsoft.com/library/dd939904(WS.10).aspx)
+-   [備份和還原 WSUS 資料以及備份您的伺服器](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd939904(v=ws.10))
 
--   [重新建立 WSUS 資料庫索引](https://technet.microsoft.com/library/dd939795(WS.10).aspx)
+-   [重新建立 WSUS 資料庫索引](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd939795(v=ws.10))
 
 #### <a name="wsus-with-sql-server"></a>WSUS 搭配 SQL Server
 建議您在下列情況下使用 SQL Server 搭配 WSUS：
@@ -324,7 +322,7 @@ WSUS 組態精靈中的 [選擇語言]  頁面能讓您取得所有語言或語�
 WSUS 允許您針對用戶端電腦選擇更新，這樣就可以確保特定電腦永遠可以在最便利的時間取得正確的更新。 例如，如果一個部門 (例如會計部門) 中所有的電腦都有特定的設定，您可以為該部門設定一個群組，決定這些電腦需要哪些更新以及安裝更新的時間，然後使用 WSUS 報告來評估部門的更新。
 
 > [!NOTE]
-> 如果 WSUS 伺服器是在複寫模式中執行，這部伺服器上就不能建立電腦群組。 複本伺服器用戶端電腦需要的所有電腦群組，必須在 WSUS 伺服器階層的根 WSUS 伺服器上建立。 如需有關複本模式的詳細資訊，請參閱《WSUS 3.0 SP2 操作指南》中的管理 WSUS 複本伺服器[管理 WSUS 複本伺服器](https://technet.microsoft.com/library/dd939893(WS.10).aspx)。
+> 如果 WSUS 伺服器是在複寫模式中執行，這部伺服器上就不能建立電腦群組。 複本伺服器用戶端電腦需要的所有電腦群組，必須在 WSUS 伺服器階層的根 WSUS 伺服器上建立。 如需有關複本模式的詳細資訊，請參閱《WSUS 3.0 SP2 操作指南》中的管理 WSUS 複本伺服器[管理 WSUS 複本伺服器](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd939893(v=ws.10))。
 
 電腦一律指派到 [所有電腦]  群組，而且在指派到另一個群組前，都會持續指派到 [尚未指派的電腦]  群組。 電腦可以屬於多個群組。
 
@@ -436,14 +434,14 @@ WSUS 可讓您依語言、產品及分類篩選更新同步處理。 在 WSUS �
 ### <a name="large-update-deployment"></a>大型更新部署
 在您部署大型更新 (例如 Service Pack) 的時候，可以使用下列做法避免讓網路飽和：
 
-1.  使用背景智慧型傳送服務 (BITS) 節流。 BITS 頻寬限制可以日期時間進行控制，但是它們會套用到所有使用 BITS 的應用程式。 若要了解如何控制 BITS 節流，請參閱[群組原則](https://msdn.microsoft.com/library/windows/desktop/aa362844(v=vs.85).aspx)。
+1.  使用背景智慧型傳送服務 (BITS) 節流。 BITS 頻寬限制可以日期時間進行控制，但是它們會套用到所有使用 BITS 的應用程式。 若要了解如何控制 BITS 節流，請參閱[群組原則](/windows/win32/bits/group-policies)。
 
 2.  使用網際網路資訊服務 (IIS) 節流來限制一或多個 Web 服務的節流。
 
 3.  使用電腦群組控制首次發行。 用戶端電腦傳送資訊到 WSUS 伺服器的時候，會將自己識別為特定電腦群組的成員。 WSUS 伺服器會使用這項資訊來判斷這部電腦應該部署的更新。 您可以設定多個電腦群組，接著為這些群組子集核准大型 Service Pack 下載。
 
 ### <a name="background-intelligent-transfer-service"></a>背景智慧型傳送服務
-WSUS 會在所有的檔案傳送工作使用背景智慧型傳送服務 (BITS) 通訊協定。 這包括用戶端電腦下載及伺服器同步處理。 BITS 可讓程式使用閒置的頻寬下載檔案。 BITS 透過網路中斷連線及電腦重新啟動來維持檔案的傳送。 如需詳細資訊，請參閱：[背景智慧型傳送服務](https://msdn.microsoft.com/library/bb968799.aspx)。
+WSUS 會在所有的檔案傳送工作使用背景智慧型傳送服務 (BITS) 通訊協定。 這包括用戶端電腦下載及伺服器同步處理。 BITS 可讓程式使用閒置的頻寬下載檔案。 BITS 透過網路中斷連線及電腦重新啟動來維持檔案的傳送。 如需詳細資訊，請參閱：[背景智慧型傳送服務](/windows/win32/bits/background-intelligent-transfer-service-portal)。
 
 ## <a name="17-plan-automatic-updates-settings"></a>1.7. 規劃自動更新設定
 您可以指定在 WSUS 伺服器核准更新的截止日期。 截止日期可讓用戶端電腦在特定時間安裝更新，但是這有各種不同的情況，取決於截止日期是否到期、佇列中是否有電腦可以安裝的其他更新，以及更新 (或佇列中的其他更新) 是否需要重新啟動。
@@ -463,4 +461,3 @@ WSUS 會在所有的檔案傳送工作使用背景智慧型傳送服務 (BITS) �
 如果必須重新啟動電腦且有使用者登入，則會顯示類似的倒數計時對話方塊，警告使用者正在等待重新啟動。 您可以使用群組原則來操作電腦重新啟動的設定。
 
 下載新的更新之後，自動更新會輪詢 WSUS 伺服器檢查核准的套件清單，確認下載的套件仍是有效且已核准。 這表示如果自動更新正在下載更新，而 WSUS 系統管理員從核准的更新清單中移除更新，則實際上只會安裝仍是核准狀態的更新。
-

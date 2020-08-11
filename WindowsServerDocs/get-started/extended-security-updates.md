@@ -1,20 +1,18 @@
 ---
 title: Windows Server 2008 和 2008 R2 延伸安全性更新
 description: 瞭解如何在其支援週期結束後，使用 Windows Server 2008 和 2008 R2 延伸安全性更新 (ESU)。
-ms.prod: windows-server
-ms.technology: server-general
 ms.mktglfcycl: manage
 author: iainfoulds
 ms.author: iainfou
 ms.topic: get-started-article
 ms.localizationpriority: high
 ms.date: 02/21/2020
-ms.openlocfilehash: 19a65f2a254fe14f7cddfbda2a84e9d00f47da56
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: c74c8a278612d2ca47346ad95105f1258761494a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181844"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990473"
 ---
 # <a name="how-to-use-windows-server-2008-and-2008-r2-extended-security-updates-esu"></a>如何使用 Windows Server 2008 和 2008 R2 延伸安全性更新 (ESU)
 
@@ -101,7 +99,7 @@ Windows Server 2008 和 Windows Server 2008 R2 支援週期已於 2020 年 1 月
 
     如果該小組未核准您的要求，您便會看到下列錯誤：
 
-    [在命名空間 'Microsoft.WindowsESU' 中找不到資源類型](https://docs.microsoft.com/windows-server/get-started/extended-security-updates)
+    [在命名空間 'Microsoft.WindowsESU' 中找不到資源類型]()
 
 6. 在 [Azure 詳細資料]  底下，選取您的 Azure 訂用帳戶、資源群組和金鑰的位置。
 

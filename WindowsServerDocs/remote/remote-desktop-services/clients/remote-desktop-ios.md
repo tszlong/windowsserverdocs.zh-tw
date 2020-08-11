@@ -1,8 +1,6 @@
 ---
 title: 開始使用 iOS 用戶端
 description: 了解如何設定適用於 iOS 的遠端桌面用戶端
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 03ec5a3d-d3f2-4afd-9405-ae58b6ecc91c
 author: Heidilohr
@@ -10,12 +8,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 07/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f51a60e66a3e1452ed66c94c409c5e4e5cb191f
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 723fa40e1c2d446381b333eee1289a25adefd5d8
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181964"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997370"
 ---
 # <a name="get-started-with-the-ios-client"></a>開始使用 iOS 用戶端
 
@@ -192,4 +190,4 @@ ms.locfileid: "87181964"
 雖然某些按鍵組合在遠端工作階段中可能無法如預期般運作，但許多常見的 Windows 按鍵組合 (例如 CTRL+C、CTRL+V 和 ALT+TAB) 都可以運作。
 
 > [!TIP]
-> 隨時都歡迎提出問題和意見。 不過，如果您在本文的意見區段中張貼支援要求或產品意見反應，我們將無法回應您的意見反應。 如果需要協助或想要針對用戶端進行疑難排解，強烈建議您移至[遠端桌面用戶端論壇](https://docs.microsoft.com/answers/topics/windows-remote-desktop-client.html)，並開始新的對話。 如果您有相關的功能建議，可以利用[用戶端使用者意見論壇](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android)告訴我們。
+> 隨時都歡迎提出問題和意見。 不過，如果您在本文的意見區段中張貼支援要求或產品意見反應，我們將無法回應您的意見反應。 如果需要協助或想要針對用戶端進行疑難排解，強烈建議您移至[遠端桌面用戶端論壇](/answers/topics/windows-remote-desktop-client.html)，並開始新的對話。 如果您有相關的功能建議，可以利用[用戶端使用者意見論壇](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android)告訴我們。

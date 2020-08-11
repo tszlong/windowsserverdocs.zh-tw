@@ -1,27 +1,25 @@
 ---
 title: 不含 WSUS 的每月差異更新 ISV 支援
 description: Windows Server Update Service (WSUS) 主題 - 獨立軟體廠商 (ISV) 如何使用每月差異更新而非 WSUS 快速更新傳遞來減少套件大小
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: get-started article
 author: sakitong
 ms.author: coreyp
 manager: dougkim
 ms.date: 10/16/2017
-ms.openlocfilehash: 3ccddd3bfd55ae340dc5273905bb475e7d2cb98a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 103e52d140ee70ff2ee6ac7817371c9b80d037ca
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80828741"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990999"
 ---
 # <a name="monthly-delta-update-isv-support-without-wsus"></a>不含 WSUS 的每月差異更新 ISV 支援
 
 >適用於：Windows Server (半年通道)、Windows Server 2016、Windows 10
 
-Windows 10 更新下載大小可能會很大，因為每個套件都包含所有先前發行的修正，以確保一致性與簡易性。  
+Windows 10 更新下載大小可能會很大，因為每個套件都包含所有先前發行的修正，以確保一致性與簡易性。
 
-從第 7 版開始，Windows 已可使用名為[快速 (Express)](https://technet.microsoft.com/library/cc708456(v=ws.10).aspx#Anchor_2) 的功能來減少 Windows Update 下載的大小，而雖然取用者裝置依預設可加以支援，但 Windows 10 企業版裝置仍需要 Windows Server Update Services (WSUS) 才能使用「快速 (Express)」。 如果您已有 WSUS，請參閱[快速更新傳遞的 ISV 支援](express-update-delivery-ISV-support.md)。 我們建議使用此功能來啟用快速更新傳遞。 
+從第 7 版開始，Windows 已可使用名為[快速 (Express)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc708456(v=ws.10)#Anchor_2) 的功能來減少 Windows Update 下載的大小，而雖然取用者裝置依預設可加以支援，但 Windows 10 企業版裝置仍需要 Windows Server Update Services (WSUS) 才能使用「快速 (Express)」。 如果您已有 WSUS，請參閱[快速更新傳遞的 ISV 支援](express-update-delivery-ISV-support.md)。 我們建議使用此功能來啟用快速更新傳遞。
 
 如果您目前未安裝 WSUS，但在過渡期間需要較小的更新套件大小，則可以使用每月差異更新。 差異更新可大幅減少套件大小，但減少的量比 WSUS 快速更新傳遞所減少的量較少。 我們建議您盡可能部署 WSUS 快速更新，以將套件大小減到最小。 以下圖表比較 Windows 10 版本 1607 的差異 (Delta)、累積 (Cumulative)、快速 (Express) 下載的大小：
 
@@ -47,7 +45,7 @@ Windows 10 更新下載大小可能會很大，因為每個套件都包含所有
 差異與累積具有相同的 KB 號碼、相同的分類，且同時發行。 可透過目錄中的更新標題或 msu 的名稱來區別更新：
 
 - 2017-02 *\***差異更新**\**  適用於 x64 型系統的 Windows 10 版本 1607 (KB1234567)
-- 2017-02 *\***累積更新**\**  適用於 x86 型系統的 Windows 10 版本 1607 (KB1234567)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+- 2017-02 *\***累積更新**\**  適用於 x86 型系統的 Windows 10 版本 1607 (KB1234567)
 
 ### <a name="when-to-use-monthly-delta-update"></a>何時使用每月差異更新
 
@@ -67,15 +65,15 @@ Windows 10 更新下載大小可能會很大，因為每個套件都包含所有
 2. 列出擱置狀態的套件：
 
     `x:\windows\system32\dism.exe /image:<drive letter for windows directory> /Get-Packages >> <path to text file>`
- 
+
     > **範例**：` x:\windows\system32\dism.exe /image:c:\ /Get-Packages >> c:\temp\packages.txt`
- 
+
 3. 開啟您用來傳送 **get-packages** 結果的文字檔。 如果您看到任何安裝擱置修補程式，請對每個套件名稱執行 **remove-package**：
- 
+
    `dism.exe /image:<drive letter for windows directory> /remove-package /packagename:<package name>`
- 
+
     > **範例**：`x:\windows\system32\dism.exe /image:c:\ /remove-package /packagename:Package_for_KB4014329~31bf3856ad364e35~amd64~~10.0.1.0`
- 
+
     >[!NOTE]
     >請勿移除解除安裝擱置修補程式。
 

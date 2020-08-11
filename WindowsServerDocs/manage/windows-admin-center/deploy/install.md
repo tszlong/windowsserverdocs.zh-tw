@@ -1,19 +1,17 @@
 ---
 title: 安裝 Windows Admin Center
 description: 如何在 Windows 電腦或伺服器上安裝 Windows Admin Center，讓多個使用者可以使用網頁瀏覽器來存取 Windows Admin Center。
-ms.technology: manage
 ms.topic: article
 author: jwwool
 ms.author: jeffrew
 ms.date: 07/17/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: cab128a3da9fa58c598cebcdf188058631c33977
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: df5e7e2c23b9120a890b34448868ec4d5b1c99b3
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "75950002"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997411"
 ---
 # <a name="install-windows-admin-center"></a>安裝 Windows Admin Center
 
@@ -27,7 +25,7 @@ ms.locfileid: "75950002"
 
 ## <a name="determine-your-installation-type"></a>判斷您的安裝類型
 
-請參閱[安裝選項](../plan/installation-options.md)，其中包括[支援的作業系統](https://docs.microsoft.com/windows-server/manage/windows-admin-center/plan/installation-options#installation-supported-operating-systems)。 若要在 Azure 中的 VM 上安裝 Windows Admin Center，請參閱＜[在 Azure 中部署 Windows Admin Center](../azure/deploy-wac-in-azure.md)＞。
+請參閱[安裝選項](../plan/installation-options.md)，其中包括[支援的作業系統](../plan/installation-options.md#installation-supported-operating-systems)。 若要在 Azure 中的 VM 上安裝 Windows Admin Center，請參閱＜[在 Azure 中部署 Windows Admin Center](../azure/deploy-wac-in-azure.md)＞。
 
 ## <a name="install-on-windows-10"></a>安裝在 Windows 10 上
 
@@ -61,7 +59,7 @@ ms.locfileid: "75950002"
 
 執行下列命令以安裝 Windows Admin Center，並自動產生自我簽署憑證：
 
-```   
+```
 msiexec /i <WindowsAdminCenterInstallerName>.msi /qn /L*v log.txt SME_PORT=<port> SSL_CERTIFICATE_OPTION=generate
 ```
 

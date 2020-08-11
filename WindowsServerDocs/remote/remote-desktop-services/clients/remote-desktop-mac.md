@@ -1,8 +1,6 @@
 ---
 title: 開始使用 macOS 用戶端
 description: 了解如何設定適用於 Mac 的遠端桌面用戶端
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 7afc65f8-3158-49c9-9d48-4dab1c69afba
 author: lizap
@@ -10,12 +8,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 57072fe5a92bcc59a1ccd46b1c0db7a6828a165d
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 2a0c93ddc6bf891a3f8157d36b67f60241d4d41b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181954"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991598"
 ---
 # <a name="get-started-with-the-macos-client"></a>開始使用 macOS 用戶端
 
@@ -164,4 +162,4 @@ Windows Server 2012 R2 導入了新式驗證方法的支援，也就是遠端桌
 若要深入了解這項功能，請參閱 [https://aka.ms/paa-sample](https://aka.ms/paa-sample)。
 
 > [!TIP]
-> 隨時都歡迎提出問題和意見。 不過，請「勿」使用本文結尾的留言功能來張貼需要疑難排解協助的要求。 請改為前往[遠端桌面用戶端論壇](https://docs.microsoft.com/answers/topics/windows-remote-desktop-client.html)，並開始新的對話。 有功能建議嗎？ 請在[用戶端使用者意見論壇](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android)中告訴我們。
+> 隨時都歡迎提出問題和意見。 不過，請「勿」使用本文結尾的留言功能來張貼需要疑難排解協助的要求。 請改為前往[遠端桌面用戶端論壇](/answers/topics/windows-remote-desktop-client.html)，並開始新的對話。 有功能建議嗎？ 請在[用戶端使用者意見論壇](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android)中告訴我們。

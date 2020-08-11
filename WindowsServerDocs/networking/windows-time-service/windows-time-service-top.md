@@ -1,19 +1,17 @@
 ---
 ms.assetid: e34622ff-b2d0-4f81-8d00-dacd5d6c215e
-title: Windows Time 服務
+title: Windows Time 服務 (W32Time)
 author: dcuomo
 ms.author: dacuo
 manager: dougkim
 ms.date: 05/08/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: networking
-ms.openlocfilehash: 5dbb0db20f7100ed7dbe99587f201f38abf632ad
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 2bd28bc9e774ebdd30c81397bfe3a3bb6320a679
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80815901"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997389"
 ---
 # <a name="windows-time-service-w32time"></a>Windows Time 服務 (W32Time)
 
@@ -32,9 +30,9 @@ Windows Time 服務 (W32Time) 主題中包含下列內容：
 
 
 ## <a name="related-topics"></a>[相關主題]
-如需有關網域階層和計分系統的詳細資訊，請參閱[「Windows Time 服務是什麼？」](https://blogs.msdn.microsoft.com/w32time/2007/07/07/what-is-windows-time-service/) 部落格文章。
+如需有關網域階層和計分系統的詳細資訊，請參閱[「Windows Time 服務是什麼？」](/archive/blogs/w32time/what-is-windows-time-service) 部落格文章。
 
-Windows 時間提供者外掛程式模型已[記載於 TechNet](https://msdn.microsoft.com/library/windows/desktop/ms725475%28v=vs.85%29.aspx) 上。
+Windows 時間提供者外掛程式模型已[記載於 TechNet](/windows/win32/sysinfo/time-provider) 上。
 
 在[這裡](https://windocs.blob.core.windows.net/windocs/WindowsTimeSyncAccuracy_Addendum.pdf)可以下載「Windows 2016 準確時間」一文所參考的附錄
 

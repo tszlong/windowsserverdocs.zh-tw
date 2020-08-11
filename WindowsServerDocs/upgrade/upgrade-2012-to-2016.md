@@ -1,18 +1,16 @@
 ---
 title: 將 Windows Server 2012 升級至 Windows Server 2016 | Microsoft Docs
 description: 了解如何執行就地升級，從 Windows Server 2012 升級至 Windows Server 2016。
-ms.prod: windows-server
-ms.technology: server-general
 ms.topic: upgrade
 author: RobHindman
 ms.author: robhind
 ms.date: 09/16/2019
-ms.openlocfilehash: c6cc52e24b7ba66b349b3715bacf3a0f671ff0d0
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: ea67496a0e094c68133dfd9315d070bb87c99dbc
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80854271"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997236"
 ---
 # <a name="upgrade-windows-server-2012-to-windows-server-2016"></a>將 Windows Server 2012 升級至 Windows Server 2016
 
@@ -106,4 +104,4 @@ ms.locfileid: "80854271"
 
 ## <a name="related-articles"></a>相關文章
 
-- 如需關於 Windows Server 2016 的詳細資訊，請參閱[開始使用 Windows Server 2016](https://docs.microsoft.com/windows-server/get-started/server-basics)。
+- 如需關於 Windows Server 2016 的詳細資訊，請參閱[開始使用 Windows Server 2016](../get-started/server-basics.md)。

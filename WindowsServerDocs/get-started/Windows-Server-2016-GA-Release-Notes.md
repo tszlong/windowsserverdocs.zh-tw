@@ -1,19 +1,17 @@
 ---
 title: 版本資訊 - Windows Server 2016 的重要問題
 description: 摘要說明需要因應措施以避免損毀、停止回應、安裝失敗、資料遺失的重要問題。
-ms.prod: windows-server
 ms.date: 11/13/2018
-ms.technology: server-general
 ms.topic: article
 ms.assetid: 134aab85-664f-4d44-87ef-9e5fd389071f
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: 8ceff837c2b85466f5583eed03f39e73f32fd4a4
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: b7e86b0841023548b1df1937bdf0820d59e12292
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826381"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990507"
 ---
 # <a name="release-notes-important-issues-in-windows-server-2016"></a>版本資訊：Windows Server 2016 中的重要問題
 
@@ -62,7 +60,7 @@ ms.locfileid: "80826381"
 
 ## <a name="shielded-virtual-machines"></a>受防護的虛擬機器
 
-[comment]: # (ID:369; Submitter: nirb; state: 已核准)  
+[comment]: # (ID:369; Submitter: nirb; state: 已核准)
 - 請確定您在生產環境中部署受防護的虛擬機器之前，已安裝所有可用的更新。
 
 - 如果您使用虛擬化型的程式碼完整性保護或受防護的虛擬機器 (其使用虛擬化型的程式碼完整性保護)，您應該注意，這些技術可能會與某些裝置和應用程式不相容。 您應該先在實驗室測試此類設定，才在生產系統上啟用這些功能。 若沒有這麼做，將可能導致未預期的資料遺失或停止回應錯誤。
@@ -74,22 +72,22 @@ ms.locfileid: "80826381"
 
 如果您在安裝應用程式時將捷徑項目新增至 [開始]  功能表的資料夾內，則除非先登出再重新登入，否則捷徑無法運作。
 
-回到主要 [Windows Server 2016](Windows-Server-2016.md) 中樞。
+回到主要 [Windows Server 2016](../index.yml) 中樞。
 
 ## <a name="storport-performance"></a>Storport 效能
 
-相較於 Windows Server 2012 R2，執行 Windows Server 2016 的全新安裝時，部分系統可能會出現儲存空間效能降低的情形。  在 Windows Server 2016 的開發期間我們做了一些變更，以改善平台的安全性及可靠性。 其中有些變更 (像是預設啟用 Windows Defender)，會導致較長的 I/O 路徑，因此降低特定工作負載和模式中的 I/O 效能。 Microsoft 不建議停用 Windows Defender，因為它是您系統很重要的一層保護。  
+相較於 Windows Server 2012 R2，執行 Windows Server 2016 的全新安裝時，部分系統可能會出現儲存空間效能降低的情形。  在 Windows Server 2016 的開發期間我們做了一些變更，以改善平台的安全性及可靠性。 其中有些變更 (像是預設啟用 Windows Defender)，會導致較長的 I/O 路徑，因此降低特定工作負載和模式中的 I/O 效能。 Microsoft 不建議停用 Windows Defender，因為它是您系統很重要的一層保護。 
 
 ## <a name="copyright"></a>著作權
 
-本文件是以原本的形式提供。 本文件中提供的資訊及檢視 (包括 URL 及其他網際網路網站參照) 如有變更，恕不另行通知。  
+本文件是以原本的形式提供。 本文件中提供的資訊及檢視 (包括 URL 及其他網際網路網站參照) 如有變更，恕不另行通知。
 
-本文件不為您提供對任何 Microsoft 產品中的任何智慧財產的法定權利。 您可以複製本文件供內部參照之用。  
+本文件不為您提供對任何 Microsoft 產品中的任何智慧財產的法定權利。 您可以複製本文件供內部參照之用。
 
-&copy; 2016 Microsoft Corporation. 著作權所有，並保留一切權利。  
+&copy; 2016 Microsoft Corporation. 著作權所有，並保留一切權利。
 
-Microsoft、Active Directory、Hyper-V、Windows 及 Windows Server 係 Microsoft Corporation 在美國及/或其他國家/地區的註冊商標或商標。  
+Microsoft、Active Directory、Hyper-V、Windows 及 Windows Server 係 Microsoft Corporation 在美國及/或其他國家/地區的註冊商標或商標。
 
-本項產品含有圖形篩選軟體，這個軟體有一部分是以 Independent JPEG Group 的作品為基礎。  
+本項產品含有圖形篩選軟體，這個軟體有一部分是以 Independent JPEG Group 的作品為基礎。
 
 1.0

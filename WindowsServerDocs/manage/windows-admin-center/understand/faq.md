@@ -1,19 +1,17 @@
 ---
 title: Windows Admin Center 常見問題集
 description: 取得有關 Windows Admin Center (Project Honolulu) 的問題解答
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 12/02/2019
-ms.prod: windows-server
-ms.openlocfilehash: 4125a3f427bd19ae7461aaaef058a558722d1987
-ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
+ms.openlocfilehash: 2b1b6c8665e289647fe793125e7cc4c5024b4135
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86891373"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993535"
 ---
 # <a name="windows-admin-center-frequently-asked-questions"></a>Windows Admin Center 常見問題集
 
@@ -104,12 +102,12 @@ Windows Admin Center **不再支援**管理 Windows Server 2008 R2 的功能。 
 
 是的，在少數情況下，Windows Admin Center 會需要 CredSSP。 除了傳送認證至您鎖定的特定伺服器來進行管理外，您還必須傳送認證至機器以用於驗證。 例如，如果您要管理**伺服器 B** 上的虛擬機器，但想要將這些虛擬機器的 vhdx 檔案儲存在由**伺服器 C** 所託管的檔案共用上，Windows Admin Center 就必須使用 CredSSP 來向**伺服器 C** 存取檔案共用。
 
-Windows Admin Center 會在提示您進行同意後，自動處理 CredSSP 的設定。 設定 CredSSP 之前，Windows Admin Center 會檢查並確定系統具有最新的 CredSSP [更新](https://support.microsoft.com/help/4093492/credssp-updates-for-cve-2018-0886-march-13-2018)。 
+Windows Admin Center 會在提示您進行同意後，自動處理 CredSSP 的設定。 設定 CredSSP 之前，Windows Admin Center 會檢查並確定系統具有最新的 CredSSP [更新](https://support.microsoft.com/help/4093492/credssp-updates-for-cve-2018-0886-march-13-2018)。
 
 CredSSP 目前會在下列區域中使用：
 
 - 在虛擬機器工具使用分離式 SMB 存放區 (上述範例)。
-- 在更容錯移轉或超融合式叢集管理解決方案中使用更新工具，以執行[叢集感知更新](https://docs.microsoft.com/windows-server/failover-clustering/cluster-aware-updating) 
+- 在更容錯移轉或超融合式叢集管理解決方案中使用更新工具，以執行[叢集感知更新](../../../failover-clustering/cluster-aware-updating.md)
 
 ## <a name="are-there-any-cloud-dependencies"></a>是否有任何雲端相依性？
 
@@ -164,4 +162,4 @@ Windows Admin Center 是「Project Honolulu」的正式產品名稱，加強了�
 
 ## <a name="im-having-an-issue-with-windows-admin-center-where-can-i-get-help"></a>我的 Windows Admin Center 發生問題，我可以在哪裡取得協助？
 
-請參閱我們的[疑難排解指南](../use/troubleshooting.md)和[已知問題](../use/known-issues.md)清單。
+請參閱我們的[疑難排解指南](../support/troubleshooting.md)和[已知問題](../support/known-issues.md)清單。

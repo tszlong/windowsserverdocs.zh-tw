@@ -1,20 +1,18 @@
 ---
 ms.assetid: c9844427-27cf-4d76-b5bb-e06368b092f7
 title: 容錯移轉叢集
-ms.prod: windows-server
 ms.topic: landing-page
 manager: lizross
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage-failover-clustering
 ms.date: 06/06/2019
 ms.localizationpriority: high
-ms.openlocfilehash: 657cf161086047ca87ca7dbd2adcd2b8e6bde892
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 41f5eef75e20a4da740141620493d2daa254b0a1
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87177884"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992861"
 ---
 # <a name="failover-clustering-in-windows-server"></a>Windows Server 中的容錯移轉叢集
 
@@ -44,7 +42,7 @@ ms.locfileid: "87177884"
 
 |**管理**  |  **工具及設定**  |  **社群資源**       |
 | ------------- |  -------------- | --------------------- |
-| [叢集感知更新](cluster-aware-updating.md)    |   [容錯移轉叢集 PowerShell Cmdlet](https://docs.microsoft.com/powershell/module/failoverclusters/?view=win10-ps)      |  [高可用性 (叢集) 論壇](https://go.microsoft.com/fwlink/p/?LinkId=230641)       |
-|  [健康情況服務](health-service-overview.md)   |   [叢集感知更新 PowerShell Cmdlet](https://docs.microsoft.com/powershell/module/clusterawareupdating/?view=win10-ps)      | [容錯移轉叢集和網路負載平衡小組部落格](https://blogs.msdn.com/b/clustering/)        |
+| [叢集感知更新](cluster-aware-updating.md)    |   [容錯移轉叢集 PowerShell Cmdlet](/powershell/module/failoverclusters/?view=win10-ps)      |  [高可用性 (叢集) 論壇](https://go.microsoft.com/fwlink/p/?LinkId=230641)       |
+|  [健康情況服務](health-service-overview.md)   |   [叢集感知更新 PowerShell Cmdlet](/powershell/module/clusterawareupdating/?view=win10-ps)      | [容錯移轉叢集和網路負載平衡小組部落格](https://blogs.msdn.com/b/clustering/)        |
 |  [叢集網域移轉](cluster-domain-migration.md)   |         |         |
 |  [使用 Windows 錯誤報告進行疑難排解](troubleshooting-using-wer-reports.md)   |         |         |
