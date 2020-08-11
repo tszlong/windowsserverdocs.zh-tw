@@ -72,6 +72,7 @@
 ## [網域名稱系統 (DNS)](dns/dns-top.md)
 ### [Windows Server 中 DNS 用戶端的新功能](dns/What-s-New-in-DNS-Client.md)
 ### [Windows Server 中 DNS 伺服器的新功能](dns/What-s-New-in-DNS-Server.md)
+### [任一傳播 DNS](dns/deploy/anycast.md)
 ### [DNS 原則案例指導方針](dns/deploy/DNS-Policy-Scenario-Guide.md)
 #### [DNS 原則概觀](dns/deploy/DNS-Policies-Overview.md)
 #### [透過主要伺服器使用地理位置流量管理的 DNS 原則](dns/deploy/primary-geo-location.md)
