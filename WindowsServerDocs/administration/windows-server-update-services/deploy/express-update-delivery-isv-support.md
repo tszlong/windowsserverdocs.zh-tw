@@ -1,39 +1,37 @@
 ---
 title: 快速更新傳遞 ISV 支援
 description: Windows Server Update Service (WSUS) 主題 - 獨立軟體廠商 (ISV) 如何使用 WSUS 來設定快速更新傳遞
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: get-started article
 author: sakitong
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: 60d01ef425ed96160cd76afdd7c27c081c778add
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 3c56c9ac0f2899f03ce1b32b699b577c2dc3de0c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80828771"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991076"
 ---
 # <a name="express-update-delivery-isv-support"></a>快速更新傳遞 ISV 支援
 
 >適用於：Windows 10、Windows Server 2016
 
-Windows 10 更新下載大小可能會很大，因為每個套件都包含所有先前發行的修正，以確保一致性與簡易性。  
+Windows 10 更新下載大小可能會很大，因為每個套件都包含所有先前發行的修正，以確保一致性與簡易性。
 
-從第 7 版開始，Windows 已可使用名為[快速 (Express)](https://technet.microsoft.com/library/cc708456(v=ws.10).aspx#Anchor_2) 的功能來減少 Windows Update 下載的大小，而雖然取用者裝置依預設可加以支援，但 Windows 10 企業版裝置仍需要 Windows Server Update Services (WSUS) 才能使用「快速 (Express)」。
+從第 7 版開始，Windows 已可使用名為[快速 (Express)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc708456(v=ws.10)#Anchor_2) 的功能來減少 Windows Update 下載的大小，而雖然取用者裝置依預設可加以支援，但 Windows 10 企業版裝置仍需要 Windows Server Update Services (WSUS) 才能使用「快速 (Express)」。
 
 ## <a name="how-microsoft-supports-express"></a>Microsoft 支援「快速」的方式
 
 - **單獨 WSUS 上的快速功能**
 
-    快速更新傳遞已[適用於所有支援的 WSUS 版本](https://technet.microsoft.com/library/cc708456(v=ws.10).aspx)。
+    快速更新傳遞已[適用於所有支援的 WSUS 版本](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc708456(v=ws.10))。
 
-- **直接連線至 Windows Update 的裝置上的快速功能** 
+- **直接連線至 Windows Update 的裝置上的快速功能**
 
     取用者裝置支援快速下載：他們可使用 Windows Update (WU) 用戶端來掃描、下載及安裝更新。 在下載階段，WU 用戶端會要求「快速」套件，並下載適當的位元組範圍。
 
--  **使用[商務用 Windows Update](https://technet.microsoft.com/itpro/windows/manage/waas-manage-updates-wufb)** 進行管理的企業裝置不需要變更任何設定，也能受益於快速更新傳遞支援。
+-  **使用[商務用 Windows Update](/windows/deployment/update/waas-manage-updates-wufb)** 進行管理的企業裝置不需要變更任何設定，也能受益於快速更新傳遞支援。
 
 ## <a name="how-isvs-can-take-advantage-of-express"></a>ISV 可如何使用快速功能
 
@@ -41,7 +39,7 @@ ISV 可以使用 WSUS 和 WU 用戶端來支援快速更新傳遞。 Microsoft �
 
 1.  [**設定 WSUS**](#BKMK_1)
 
-    需要使用 WSUS 伺服器來掃描和更新同步處理 (可在[這裡](https://technet.microsoft.com/library/dn800972(v=ws.11).aspx)找到其他資訊)
+    需要使用 WSUS 伺服器來掃描和更新同步處理 (可在[這裡](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn800972(v=ws.11))找到其他資訊)
 
 2.  [**指定並填入 ISV 檔案快取**](#BKMK_2)
 
@@ -51,19 +49,19 @@ ISV 可以使用 WSUS 和 WU 用戶端來支援快速更新傳遞。 Microsoft �
 
 >[!NOTE]
 >需要安裝 2017 年 1 月 (或之後) 的 Windows 10 版本 1607 累計更新 ([KB3213986 (作業系統組建 14393.693)](https://support.microsoft.com/help/4009938/january-10-2017-kb3213986-os-build-14393-693)。
-    
+
    - ISV 用戶端代理程式會決定要核准的更新，以及下載和安裝更新的時間
    - WU 用戶端會決定要下載的位元組範圍，並起始下載要求
 
 ### <a name="step-1-configure-wsus"></a><a name=BKMK_1></a>步驟 1：設定 WSUS
 
-WSUS 會作為 Windows Update 的介面，並管理所有對需要下載的「快速」套件進行說明的中繼資料。 如果您需要部署，請參閱 [**Windows Server Update Services 3.0 SP2**](https://technet.microsoft.com/library/dd939931(v=ws.10).aspx) 的概觀。 部署 WSUS 後，主要考量將是是否要將更新內容儲存在 WSUS 伺服器的本機上。 在設定 WSUS 時，建議您不要將更新儲存於本機。 若您這麼做，系統會假設您已讓軟體將這些套件的部署導入環境中。 如需如何設定 WSUS 本機儲存的詳細資訊，請參閱[**決定要將更新儲存在何處**](https://technet.microsoft.com/library/cc720494(v=ws.10).aspx)。
+WSUS 會作為 Windows Update 的介面，並管理所有對需要下載的「快速」套件進行說明的中繼資料。 如果您需要部署，請參閱 [**Windows Server Update Services 3.0 SP2**](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd939931(v=ws.10)) 的概觀。 部署 WSUS 後，主要考量將是是否要將更新內容儲存在 WSUS 伺服器的本機上。 在設定 WSUS 時，建議您不要將更新儲存於本機。 若您這麼做，系統會假設您已讓軟體將這些套件的部署導入環境中。 如需如何設定 WSUS 本機儲存的詳細資訊，請參閱[**決定要將更新儲存在何處**](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc720494(v=ws.10))。
 
-### <a name="step-2-specify-and-populate-the-isv-file-cache"></a><a name=BKMK_2></a>步驟2：指定並填入 ISV 檔案快取 
+### <a name="step-2-specify-and-populate-the-isv-file-cache"></a><a name=BKMK_2></a>步驟2：指定並填入 ISV 檔案快取
 
 #### <a name="specify-the-isv-file-cache"></a>指定 ISV 檔案快取
 
-[**設定服務提供者參考**](https://msdn.microsoft.com/windows/hardware/commercialize/customize/mdm/configuration-service-provider-reference)中詳述的新用戶端群組原則和行動裝置管理 (MDM) 設定，會定義 ISV 檔案快取的位置。
+[**設定服務提供者參考**](/windows/client-management/mdm/configuration-service-provider-reference)中詳述的新用戶端群組原則和行動裝置管理 (MDM) 設定，會定義 ISV 檔案快取的位置。
 
 | **名稱**                                              | **描述**                                                                                                                                                      |
 |-------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -72,29 +70,28 @@ WSUS 會作為 Windows Update 的介面，並管理所有對需要下載的「�
 設定 ISV 檔案快取的替代下載位置時，有兩個選項可供使用：
 
 1. **指定 ISV HTTP 伺服器主機名稱**，也就是 ISV 檔案快取
-    
+
     此方法會設定 WU 用戶端，以對原則中指定的 HTTP 伺服器提出下載要求
 
 2. **指定 localhost**
- 
+
     此方法會設定 WU 用戶端，以對 localhost 提出下載要求。 如此，ISV 用戶端代理程式就可以適當處理這些要求和路由，以因應下載要求。
 
 > [!IMPORTANT]
-> ISV 檔案快取有下列需求：                                                          
-> - 根據 RFC，伺服器必須與 HTTP 1.1 相容：<http://www.w3.org/Protocols/rfc2616/rfc2616.html>                                                                                                                                                                
-> 具體而言，Web 伺服器必須支援 [**HEAD**](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) 和 [**GET**](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.htm) 要求<br>                                                                                                                                                                                                                                                                                                  - 部分範圍要求<br>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   - 保持連線<br>                                                                                                                                                                                                                                                                                                                                                                                                                            - 請勿使用 Transfer-Encoding:chunked                                                                                                 
+> ISV 檔案快取有下列需求：
+> - 根據 RFC，伺服器必須與 HTTP 1.1 相容：<http://www.w3.org/Protocols/rfc2616/rfc2616.html> 具體而言，Web 伺服器必須支援                                                                                                                                                                                                                                       [**HEAD**](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) 和 [**GET**](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.htm) 要求<br>                                                                                                                                                                                                                                                                                                  - 部分範圍要求<br>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   - 保持連線<br>                                                                                                                                                                                                                                                                                                                                                                                                                            - 請勿使用 Transfer-Encoding:chunked
 
 #### <a name="populate-the-isv-file-cache"></a>填入 ISV 檔案快取
 
-ISV 檔案快取必須填入與要安裝在受管理用戶端上的更新相關聯的檔案。 
+ISV 檔案快取必須填入與要安裝在受管理用戶端上的更新相關聯的檔案。
 
 **若要填入 ISV 檔案快取：**
 
-1. 使用 [WSUS API](https://msdn.microsoft.com/library/windows/desktop/microsoft.updateservices.administration.updatefile(v=vs.85).aspx) 存取 MU 服務更新的檔案路徑和檔案名稱。
+1. 使用 [WSUS API](/previous-versions/windows/desktop/aa354524(v=vs.85)) 存取 MU 服務更新的檔案路徑和檔案名稱。
 
     WSUS 伺服器上每個更新的中繼資料都會包含更新在 Microsoft Update 上的檔案路徑和檔案名稱，如下所示 (以粗體顯示的 Microsoft Update 主機名稱，後面接著檔案路徑和檔案名稱)： **<http://download.windowsupdate.com>** /c/msdownload/update/software/updt/2016/09/windows10.0-kb3195781-x64_0c06079bccc35cba35a48bd2b1ec46f818bd2e74.msu
 
-2. 從 Microsoft Update 下載檔案，並使用下列兩種方法之一將檔案儲存在 ISV 檔案快取中： 
+2. 從 Microsoft Update 下載檔案，並使用下列兩種方法之一將檔案儲存在 ISV 檔案快取中：
 
    - 使用**與 MU 服務相同的資料夾路徑**來儲存檔案
 
@@ -116,7 +113,7 @@ ISV 用戶端代理程式會使用下列建議的工作流程，為已核准的�
 
 5.  下載更新之後，ISV 用戶端代理程式會呼叫 WU 用戶端，以安裝核准的更新
 
-如需使用 WU 用戶端來掃描、下載及安裝更新的詳細資訊，請參閱[搜尋、下載及安裝更新](https://msdn.microsoft.com/library/windows/desktop/aa387102(v=vs.85).aspx)。
+如需使用 WU 用戶端來掃描、下載及安裝更新的詳細資訊，請參閱[搜尋、下載及安裝更新](/windows/win32/wua_sdk/searching--downloading--and-installing-updates)。
 
 ### <a name="download-workflow-options"></a>下載工作流程選項
 
@@ -131,9 +128,9 @@ ISV 用戶端代理程式會使用下列建議的工作流程，為已核准的�
 
   - **完整版** -- 基本上會取代更新二進位檔的本機版本
 
-  - **快速版** -- 包含修補裝置上現有二進位檔的差異。 
+  - **快速版** -- 包含修補裝置上現有二進位檔的差異。
 
-    更新的中繼資料中都會參照完整版和快速版，這已在掃描階段下載至用戶端。 
+    更新的中繼資料中都會參照完整版和快速版，這已在掃描階段下載至用戶端。
 
     **快速下載的運作方式如下︰**
 
@@ -155,4 +152,4 @@ ISV 用戶端代理程式會使用下列建議的工作流程，為已核准的�
 
 根據預設，在「Windows 10 企業版」和「教育版」中，DO 只允許在組織本身的網路上進行對等共用，但您可以使用「群組原則」和行動裝置管理 (MDM) 設定進行不同的設定。
 
-如需 DO 的詳細資訊，請參閱[設定 Windows 10 更新的傳遞最佳化](https://technet.microsoft.com/itpro/windows/manage/waas-delivery-optimization)。
+如需 DO 的詳細資訊，請參閱[設定 Windows 10 更新的傳遞最佳化](/windows/deployment/update/waas-delivery-optimization)。

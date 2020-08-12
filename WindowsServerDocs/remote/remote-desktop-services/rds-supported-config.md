@@ -1,20 +1,18 @@
 ---
 title: 支援遠端桌面服務的設定
 description: 提供 Windows Server 2016 和 Windows Server 2019 中支援 RDS 設定的相關資訊。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 07/14/2020
 ms.topic: article
 ms.assetid: c925c7eb-6880-411f-8e59-bd0f57cc5fc3
 author: lizap
 manager: dongill
-ms.openlocfilehash: 1285a63b3b283914a439817886cd84c4b93b59c8
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 47aa9327e70d07ce46477024fb0c734ea1d64603
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965680"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954835"
 ---
 # <a name="supported-configurations-for-remote-desktop-services"></a>支援遠端桌面服務的設定
 
@@ -137,4 +135,4 @@ Windows Server 2016 和 Windows Server 2019 RDS 支援兩種主要的 SSO 體驗
 
 ## <a name="using-remote-desktop-services-with-application-proxy-services"></a>搭配應用程式 Proxy 服務使用遠端桌面服務
 
-您可以搭配 [Azure AD 應用程式 Proxy](/azure/active-directory/application-proxy-publish-remote-desktop) \(部分機器翻譯\) 使用遠端桌面服務 (但 Web 用戶端除外)。 遠端桌面服務不支援使用 [Web 應用程式 Proxy](../remote-access/web-application-proxy/web-application-proxy-windows-server.md) \(部分機器翻譯\)，其隨附於 Windows Server 2016 和更早版本。
+您可以使用遠端桌面服務搭配 [Azure AD 應用程式 Proxy](/azure/active-directory/application-proxy-publish-remote-desktop)。 遠端桌面服務不支援使用 [Web 應用程式 Proxy](../remote-access/web-application-proxy/web-application-proxy-windows-server.md) \(部分機器翻譯\)，其隨附於 Windows Server 2016 和更早版本。

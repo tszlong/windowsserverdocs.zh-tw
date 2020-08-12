@@ -1,17 +1,15 @@
 ---
 title: 磁碟區陰影複製服務
 ms.date: 01/30/2019
-ms.prod: windows-server
-ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 9948fab77ab4869c27fd63e623315bd1b3e9ff47
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 44f0db935e50bf7976612edc4317b4212818f84d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966690"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950742"
 ---
 # <a name="volume-shadow-copy-service"></a>磁碟區陰影複製服務
 
@@ -22,7 +20,6 @@ ms.locfileid: "86966690"
   - 您通常需要在產生資料的應用程式仍在執行時備份資料。 這表示某些資料檔案可能已開啟，或可能處於不一致的狀態。
 
   - 如果資料集很大，要一次備份所有檔案可能很困難。
-
 
 若要正確執行備份及還原作業，備份應用程式、要備份的企業營運應用程式，以及儲存管理硬體和軟體之間都需要密切協調。 Windows Server®2003 中引進的磁碟區陰影複製服務 (VSS) 可協助這些元件進行交談，使其更完美地搭配運作。 當所有元件都支援 VSS 時，您就可以使用這些元件來備份應用程式資料，而不需要使應用程式離線。
 
@@ -62,7 +59,7 @@ VSS 會針對要備份的資料，協調用於建立一致陰影複製 (也稱�
 
 下圖說明 VSS 服務如何與要求者、寫入器和提供者合作，以建立磁碟區的陰影複製。
 
-![](media/volume-shadow-copy-service/Ee923636.94dfb91e-8fc9-47c6-abc6-b96077196741(WS.10).jpg)
+![磁碟區陰影複製服務的架構圖](media/volume-shadow-copy-service/Ee923636.94dfb91e-8fc9-47c6-abc6-b96077196741(WS.10).jpg)
 
 **圖 1**   磁碟區陰影複製服務的架構圖
 
@@ -70,7 +67,7 @@ VSS 會針對要備份的資料，協調用於建立一致陰影複製 (也稱�
 
 本節藉由列出建立陰影複製所需採取的步驟，將要求者、寫入器和提供者的各種角色放入內容中。 下圖顯示磁碟區陰影複製服務如何控制要求者、寫入器和提供者的整體協調工作。
 
-![](media/volume-shadow-copy-service/Ee923636.1c481a14-d6bc-4796-a3ff-8c6e2174749b(WS.10).jpg)
+![磁碟區陰影複製服務運作方式的圖表](media/volume-shadow-copy-service/Ee923636.1c481a14-d6bc-4796-a3ff-8c6e2174749b(WS.10).jpg)
 
 **圖 2** 陰影複製建立程序
 
@@ -309,7 +306,7 @@ LUN 重新同步與 LUN 交換不同。 LUN 交換是在 Windows Server 2003 SP
 
 3.  資料現在已可供使用。
 
-![](media/volume-shadow-copy-service/Ee923636.633752e0-92f6-49a7-9348-f451b1dc0ed7(WS.10).jpg)
+![如何在兩個伺服器之間傳輸陰影複製的圖表](media/volume-shadow-copy-service/Ee923636.633752e0-92f6-49a7-9348-f451b1dc0ed7(WS.10).jpg)
 
 **圖 3**   在兩部伺服器之間建立和轉移陰影複製
 
@@ -577,7 +574,7 @@ VssAdmin 可在 Windows 用戶端和 Windows Server 作業系統版本上使用�
 </colgroup>
 <thead>
 <tr class="header">
-<th><img src="media/volume-shadow-copy-service/Dd560667.note(WS.10).gif" />注意</th>
+<th>注意</th>
 </tr>
 </thead>
 <tbody>

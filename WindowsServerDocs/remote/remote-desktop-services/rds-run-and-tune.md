@@ -1,24 +1,22 @@
 ---
-title: RDS - 執行並調整
+title: RDS - 執行並調整您的遠端桌面服務環境
 description: 提供遠端桌面服務的管理資訊。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: spatnaik
 ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: 79909767-a4c3-4ecf-8d3f-77d37a663153
 author: spatnaik
 manager: scottman
-ms.openlocfilehash: 8ce006894376ad120d9d23b6c5f0f891615657fb
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 2b7443255f5490a0b67633abbc9ea5bbb6a5bb82
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80859061"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954885"
 ---
 # <a name="run-and-tune-your-remote-desktop-services-environment"></a>執行並調整您的遠端桌面服務環境
 
-調整部署需要時間，而需要檢測和監視。 使用下列程序來精簡您的遠端桌面部署，讓它保持運作中，並視需要，啟用相應放大 (和縮小)。 
+調整部署需要時間，而需要檢測和監視。 使用下列程序來精簡您的遠端桌面部署，讓它保持運作中，並視需要，啟用相應放大 (和縮小)。
 
 持續評估指標並平衡營運成本是一種不錯的做法。
 
@@ -26,14 +24,14 @@ ms.locfileid: "80859061"
 
 如需有關如何管理您桌面和遠端資源存取的資訊，請參閱[管理 RDS 集合中的使用者](rds-user-management.md)。
 
-使用 **Microsoft Operations Management Suite (OMS)** 監視遠端桌面部署中是否有潛在的瓶頸，並使用下列其中一種方法加以管理： 
+使用 **Microsoft Operations Management Suite (OMS)** 監視遠端桌面部署中是否有潛在的瓶頸，並使用下列其中一種方法加以管理：
 
-- **伺服器管理員**：使用內建在 Windows Server 中的 RD 管理工具來管理最多 500 個並行遠端使用者的部署。 
+- **伺服器管理員**：使用內建在 Windows Server 中的 RD 管理工具來管理最多 500 個並行遠端使用者的部署。
 - **PowerShell**：使用內建在 Windows Server 中的 RD PowerShell 模組來管理最多 5000 個並行遠端使用者的部署。
 
 ## <a name="scale-bigger-better-faster"></a>擴充：更大、更好、更快
 
-透過對部署的可見度，您可以更精確地控制比例。 根據擴充需求，輕鬆地新增或移除遠端桌面主機伺服器。 
+透過對部署的可見度，您可以更精確地控制比例。 根據擴充需求，輕鬆地新增或移除遠端桌面主機伺服器。
 
 在 Azure 上建置的遠端桌面部署可以使用 Azure 服務 (例如 Azure SQL)，依需求自動擴充。
 
@@ -43,4 +41,4 @@ ms.locfileid: "80859061"
 
 ## <a name="load-testing-avoid-surprises"></a>負載測試：避免意外狀況
 
-同時以壓力測試和實際使用量模擬對部署進行負載測試。 請改變負載大小以避免意外狀況！ 請確定回應性符合使用者需求，且整個系統具復原能力。 請使用模擬工具 (如 LoginVSI) 建立負載測試，以確認部署的能力符合使用者需求。 
+同時以壓力測試和實際使用量模擬對部署進行負載測試。 請改變負載大小以避免意外狀況！ 請確定回應性符合使用者需求，且整個系統具復原能力。 請使用模擬工具 (如 LoginVSI) 建立負載測試，以確認部署的能力符合使用者需求。

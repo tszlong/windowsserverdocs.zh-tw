@@ -1,19 +1,17 @@
 ---
 title: 網路指導方針
 description: 遠端桌面部署的頻寬建議。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: helohr
 ms.date: 12/12/2019
 ms.topic: article
 author: Heidilohr
 manager: lizross
-ms.openlocfilehash: ba084c58e725627e838c07b5b5b9849d131b2038
-ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
+ms.openlocfilehash: 3817178ef303573490cc98af8a35844715286e8e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83203542"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87948891"
 ---
 # <a name="network-guidelines"></a>網路指導方針
 
@@ -54,6 +52,10 @@ ms.locfileid: "83203542"
 | 約 1920 × 1080 像素                     | 5 Mbps                |
 | 約 3840 × 2160 像素 (4K)                | 15 Mbps               |
 
-## <a name="additional-resources"></a>其他資源
+## <a name="windows-virtual-desktop-experience-estimator"></a>Windows 虛擬桌面體驗評估工具
 
 您所在的 Azure 區域可能會對使用者體驗產生與網路條件同等的影響。 若要深入了解，請參閱 [Windows 虛擬桌面體驗評估工具](https://azure.microsoft.com/services/virtual-desktop/assessment/)。
+
+## <a name="assistive-technologies"></a>輔助技術
+
+例如在遠端工作階段中使用「朗讀程式」之類的輔助技術工作負載，要求連線的來回行程時間 (RTT) 為 20毫秒 (ms) 或更短的連線時間，以獲得最佳使用者體驗。

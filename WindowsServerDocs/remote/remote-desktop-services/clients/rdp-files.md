@@ -1,20 +1,18 @@
 ---
 title: 支援的遠端桌面 RDP 檔案設定
 description: 了解遠端桌面的 RDP 檔案設定
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
 ms.date: 06/30/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8132c6d996a3e814b15eb34b713832fb6a98d6a0
-ms.sourcegitcommit: 643a9916efb95ad0bb5cc0a9b115ac29af4cb076
+ms.openlocfilehash: 5303bb696131d4e122da11c2d72152bf304716b4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85586704"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961932"
 ---
 # <a name="supported-remote-desktop-rdp-file-settings"></a>支援的遠端桌面 RDP 檔案設定
 
@@ -59,17 +57,18 @@ ms.locfileid: "85586704"
 | 重新導向影片擷取編碼品質:i:value | 控制編碼影片的品質。 | - 0：高度壓縮影片。 當有很多動作時，品質可能會受影響。 </br>- 1：中度壓縮。</br>- 2：高圖片品質的低度壓縮影片。 | 0 | 是 |
 | audiomode:i:value | 音訊輸出位置：</br>決定本機或遠端電腦是否播放音訊。 | - 0：在本機電腦上播放聲音 (在這部電腦上播放)</br>- 1：在遠端電腦上播放聲音 (在遠端電腦上播放)</br>- 2：不要播放聲音 (不要播放) | 0 | 是 |
 | camerastoredirect:s:value | 相機重新導向：</br>設定要重新導向的相機。 此設定使用已啟用相機的 KSCATEGORY_VIDEO_CAMERA 介面清單 (以分號分隔) 進行重新導向。 | - * :重新導向所有相機</br> - 相機清單，例如 camerastoredirect:s:\\?\usb#vid_0bda&pid_58b0&mi</br>- 若要排除特定相機，請在符號連結字串前面加上 "-" | 不要重新導向任何相機 | 是 |
-| devicestoredirect:s:value | USB 裝置重新導向：</br>決定本機電腦上要重新導向至遠端工作階段以供使用的裝置。 | - *:重新導向所有支援的裝置，包括稍後連線的裝置</br> - 一或多個裝置的有效硬體識別碼 | 不要重新導向任何裝置 | 是 |
+| devicestoredirect:s:value | 隨插即用的裝置重新導向：</br>決定本機電腦上要重新導向至遠端工作階段以供使用的裝置。 | - *:重新導向所有支援的裝置，包括稍後連線的裝置</br> - 一或多個裝置的有效硬體識別碼</br> - DynamicDevices：重新導向稍後連線的所有支援裝置 | 不要重新導向任何裝置 | 是 |
 | drivestoredirect:s:value | 磁碟機/儲存體重新導向：</br>決定本機電腦上要重新導向至遠端工作階段以供使用的磁碟機。 | - 未指定值：不要重新導向任何磁碟機</br>- * :重新導向所有磁碟機，包括稍後連接的磁碟機</br>- DynamicDrives：重新導向稍後連接的任何磁碟機</br>- 一或多個磁碟機的磁碟機和標籤 (例如 "drivestoredirect:s:C:;E:;")：重新導向指定的磁碟機 | 不要重新導向任何磁碟機 | 是 |
 | redirectclipboard:i:value | 剪貼簿重新導向：</br>決定是否啟用剪貼簿重新導向。 | - 0：無法在遠端工作階段中使用本機電腦上的剪貼簿</br>- 1：可以在遠端工作階段中使用本機電腦上的剪貼簿 | 1 | 是 |
 | redirectprinters:i:value | 印表機重新導向：</br>決定是否將本機電腦上所設定的印表機重新導向至遠端工作階段以供使用 | - 0：無法在遠端工作階段中使用本機電腦上的印表機</br>- 1：可以在遠端工作階段中使用本機電腦上的印表機 | 1 | 是 |
 | redirectsmartcards:i:value | 智慧卡重新導向：</br>決定是否將本機電腦上的智慧卡裝置重新導向至遠端工作階段以供使用。 |- 0：無法在遠端工作階段中使用本機電腦上的智慧卡裝置</br>- 1：可以在遠端工作階段中使用本機電腦上的智慧卡裝置 | 1 | 是 |
+| usbdevicestoredirect:s:value | USB 重新導向 | - *:將尚未由另一個高階重新導向來重新導向的所有 USB 裝置，進行重新導向</br> - {Device Setup Class GUID}：將屬於指定[裝置安裝類別](/windows-hardware/drivers/install/system-defined-device-setup-classes-available-to-vendors/)成員的所有裝置進行重新導向</br> - USBInstanceID：將執行個體識別碼所識別的特定 USB 裝置進行重新導向| 不要重新導向任何 USB 裝置 | 是 |
 
 ## <a name="display-settings"></a>顯示器設定
 
 | RDP 設定                        | 說明            | 值                 | 預設值          | Windows 虛擬桌面支援 |
 |------------------------------------|------------------------|------------------------|:----------------------:|:-----------------------:|
-| use multimon:i:value | 決定遠端工作階段會使用本機電腦上的一部顯示器還是多部顯示器。 | - 0：不要啟用多部顯示器支援</br>- 1：啟用多部顯示器支援 | 0 | 是 |
+| use multimon:i:value | 決定遠端工作階段會使用本機電腦上的一部顯示器還是多部顯示器。 | - 0：不要啟用多部顯示器支援</br>- 1：啟用多部顯示器支援 | 1 | 是 |
 | selectedmonitors:s:value | 指定要從遠端工作階段使用的本機顯示器。 所選取的顯示器必須是連續的。 需要將 multimon 設定為 1。</br></br>僅適用於 Windows 收件匣 (MSTSC) 和 Windows 桌面 (MSRDC) 用戶端。 | 以逗號分隔的電腦特定顯示器識別碼清單。 您可以藉由呼叫 mstsc.exe /l 來擷取識別碼。 第一個列出的識別碼將會設定為工作階段中的主顯示器。 | 所有顯示器 | 是 |
 | maximizetocurrentdisplays:i:value | 決定在最大化時，遠端工作階段要在哪部顯示器上進入全螢幕模式。 需要將 multimon 設定為 1。</br></br>僅適用於 Windows 桌面 (MSRDC) 用戶端。 | - 0：最大化時，工作階段會在一開始選取的顯示器上進入全螢幕模式</br>- 1：最大化時，會動態地在工作階段視窗所觸及的顯示器上進入全螢幕模式 | 0 | 是 |
 | singlemoninwindowedmode:i:value | 決定在結束全螢幕模式時，多部顯示器遠端工作階段是否會自動切換為單一顯示器。 需要將 multimon 設定為 1。</br></br>僅適用於 Windows 桌面 (MSRDC) 用戶端。 | - 0：結束全螢幕模式時，工作階段會保留所有顯示器</br>- 1：結束全螢幕模式時，工作階段會切換為單一顯示器 | 0 | 是 |

@@ -1,19 +1,17 @@
 ---
 title: 透過有事件對使用者設定檔進行疑難排解
 description: 如何使用事件和追蹤記錄，針對載入和卸載使用者設定檔的問題進行疑難排解。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e927a77627e786015a928d798aafee13a2cc34b
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: e6417fc6453499387fbf721ef31121e07eccdfdd
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71394375"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957626"
 ---
 # <a name="troubleshoot-user-profiles-with-events"></a>透過有事件對使用者設定檔進行疑難排解
 
@@ -71,7 +69,7 @@ Windows 應用程式記錄檔和使用者設定檔服務作業記錄檔預設會
 
 1. 使用本機系統管理員群組成員的帳戶登入使用者遇到問題的電腦。
 2. 在提升權限的命令提示字元中輸入下列命令，其中 *\<Path\>* 是您先前建立的本機資料夾路徑，C:\\logs:
-        
+
     ```PowerShell
     logman create trace -n RUP -o <Path>\RUP.etl -ets
     logman update RUP -p {eb7428f5-ab1f-4322-a4cc-1f1a9b2c5e98} 0x7FFFFFFF 0x7 -ets
@@ -80,12 +78,12 @@ Windows 應用程式記錄檔和使用者設定檔服務作業記錄檔預設會
 4. 重現問題。 重現問題的程序通常是以遇到問題的使用者身分登入、登出使用者，或同時進行。
 5. 問題重現之後，再次以本機系統管理員的身分登入。
 6. 在提升權限的命令提示字元中執行下列命令，將記錄儲存到 ETL 檔案中：
-  
+
     ```PowerShell
     logman stop -n RUP -ets
     ```
 7. 輸入下列命令，將 ETL 檔案匯出至目前目錄中人類可讀取的檔案 (可能是您的主資料夾或 % WINDIR%\\System32 資料夾)：
-    
+
     ```PowerShell
     Tracerpt <path>\RUP.etl
     ```

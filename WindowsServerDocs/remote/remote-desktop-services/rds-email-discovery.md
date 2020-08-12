@@ -1,19 +1,17 @@
 ---
 title: 設定電子郵件探索以訂閱您的 RDS 摘要
 description: 了解如何將 Azure AD Domain Services 與您的 RDS 部署整合。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: chrimo
 ms.date: 3/27/2018
 ms.localizationpriority: medium
 ms.topic: article
 author: christianmontoya
-ms.openlocfilehash: c56a233adf28270aac809dc960e32b5363e4b8ab
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 1f44257e5ce8ebea1b55acaa399d55aa772ab106
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71387514"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936858"
 ---
 # <a name="set-up-email-discovery-to-subscribe-to-your-rds-feed"></a>設定電子郵件探索以訂閱您的 RDS 摘要
 
@@ -25,7 +23,7 @@ ms.locfileid: "71387514"
 在設定電子郵件探索之前，請執行下列作業：
 
 - 確定您有權將 TXT 記錄新增至與您的電子郵件相關聯的網域 (例如，如果您的使用者具有 @contoso.com 電子郵件地址，您就需要 contoso.com 網域的權限)
-- 建立 RD Web 摘要 URL (https://\<rdweb-dns-name\>.domain/RDWeb/Feed/webfeed.aspx，例如 https://rdweb.contoso.com/RDWeb/Feed/webfeed.aspx)
+- 建立 RD Web 摘要 URL (https://\<rdweb-dns-name\>.domain/RDWeb/Feed/webfeed.aspx, such as https://rdweb.contoso.com/RDWeb/Feed/webfeed.aspx)
 
 接著，請使用下列步驟設定電子郵件探索：
 
@@ -33,7 +31,7 @@ ms.locfileid: "71387514"
 2. 瀏覽至您已註冊的網域可供檢視、新增和編輯 DNS 記錄的適當頁面。
 3. 輸入具有下列屬性的新 DNS 記錄：
    - **Host：** _msradc
-   - **文字：** \<RD Web 摘要 URL\>
+   - **Text：** \<RD Web Feed URL\>
    - **TTL：** 300
 
    DNS 記錄欄位的名稱會隨著網域名稱註冊機構而不同，但此程序將產生名為 _msradc.\<domain_name\> (例如 _msradc.contoso.com)、具有完整 RD Web 摘要值的 TXT 記錄。

@@ -1,25 +1,23 @@
 ---
 title: 搭配使用個人工作階段桌面與遠端桌面服務
 description: 了解如何透過 RDS 共用指派的個人化桌面。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 author: lizap
 ms.author: elizapo
 ms.date: 10/22/2019
 manager: dongill
-ms.openlocfilehash: c0c36793d08391ad98fa797004ed6dec9883e9f1
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: ccb8bd5a91af6e4b9a8d1a610bf22747433bf913
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857401"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946421"
 ---
 # <a name="use-personal-session-desktops-with-remote-desktop-services"></a>搭配使用個人工作階段桌面與遠端桌面服務
 
 >適用於：Windows Server (半年通道)、Windows Server 2019、Windows Server 2016
 
-您可以使用個人工作階段桌面，將以伺服器為基礎的個人桌面部署到雲端運算環境中。  (雲端運算環境會分隔網狀架構 Hyper-V 伺服器與客體虛擬機器，例如 Microsoft Azure 雲端或 Microsoft 雲端平台)。個人工作階段桌面功能會延伸遠端桌面服務中以工作階段為基礎的桌面部署案例，以建立新類型的工作階段集合，而讓每個使用者都會被指派具有系統管理權限的個人工作階段主機。 
+您可以使用個人工作階段桌面，將以伺服器為基礎的個人桌面部署到雲端運算環境中。  (雲端運算環境會分隔網狀架構 Hyper-V 伺服器與客體虛擬機器，例如 Microsoft Azure 雲端或 Microsoft 雲端平台)。個人工作階段桌面功能會延伸遠端桌面服務中以工作階段為基礎的桌面部署案例，以建立新類型的工作階段集合，而讓每個使用者都會被指派具有系統管理權限的個人工作階段主機。
 
 請使用下列資訊來建立和管理個人工作階段桌面集合。
 
@@ -36,7 +34,7 @@ ms.locfileid: "80857401"
 
 -CollectionName \<string\>
 
--ConnectionBroker \<string\> 
+-ConnectionBroker \<string\>
 
 -User \<string\>
 
@@ -56,7 +54,7 @@ ms.locfileid: "80857401"
 -Path \<string>
 
 **–Path** 會指定要匯入之檔案的路徑和檔案名稱。
- 
+
 ## <a name="removing-a-user-assignment-from-a-personal-session-host"></a>從個人工作階段主機中移除使用者指派
 使用 **Remove-RDPersonalSessionDesktopAssignment** Cmdlet，可移除個人工作階段桌面與使用者之間的關聯。 此 Cmdlet 支援下列參數：
 
@@ -83,7 +81,7 @@ ms.locfileid: "80857401"
 
 -Name \<string\>
 
-您可以執行此 Cmdlet，以依集合名稱、使用者名稱或工作階段桌面名稱進行查詢。 如果您僅指定 **–CollectionName** 參數，則 Cmdlet 會傳回工作階段主機和相關使用者的清單。 當您也指定了 **–User** 參數，則會傳回與該使用者相關聯的工作階段主機。 如果您提供 **–Name** 參數，則會傳回與該工作階段主機相關聯的使用者。 
+您可以執行此 Cmdlet，以依集合名稱、使用者名稱或工作階段桌面名稱進行查詢。 如果您僅指定 **–CollectionName** 參數，則 Cmdlet 會傳回工作階段主機和相關使用者的清單。 當您也指定了 **–User** 參數，則會傳回與該使用者相關聯的工作階段主機。 如果您提供 **–Name** 參數，則會傳回與該工作階段主機相關聯的使用者。
 
 
 **Export-RDPersonalPersonalDesktopAssignment** Cmdlet 會將使用者與個人虛擬桌面目前的關聯匯出至文字檔。 此 Cmdlet 支援下列參數：

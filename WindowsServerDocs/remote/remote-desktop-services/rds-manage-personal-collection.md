@@ -1,19 +1,17 @@
 ---
 title: 管理 RDS 中的個人桌面工作階段集合
 description: 了解如何將 RDSH 和 RemoteApp 程式新增至您的 RDS 部署。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 11/08/2016
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 7088d164ecdd7211894b004ed580eecb33d1ba60
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: bd6c91b7f022e60e488c90776e0981523da7bccb
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80861061"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961652"
 ---
 # <a name="manage-your-personal-desktop-session-collections"></a>管理您的個人桌面工作階段集合
 
@@ -24,7 +22,7 @@ ms.locfileid: "80861061"
 
 -CollectionName \<string\>
 
--ConnectionBroker \<string\> 
+-ConnectionBroker \<string\>
 
 -User \<string\>
 
@@ -44,7 +42,7 @@ ms.locfileid: "80861061"
 -Path \<string>
 
 **–Path** 會指定要匯入之檔案的路徑和檔案名稱。
- 
+
 ## <a name="removing-a-user-assignment-from-a-personal-session-host"></a>從個人工作階段主機中移除使用者指派
 使用 **Remove-RDPersonalSessionDesktopAssignment** Cmdlet，可移除個人工作階段桌面與使用者之間的關聯。 此 Cmdlet 支援下列參數：
 
@@ -71,7 +69,7 @@ ms.locfileid: "80861061"
 
 -Name \<string\>
 
-您可以執行此 Cmdlet，以依集合名稱、使用者名稱或工作階段桌面名稱進行查詢。 如果您僅指定 **–CollectionName** 參數，則 Cmdlet 會傳回工作階段主機和相關使用者的清單。 當您也指定了 **–User** 參數，則會傳回與該使用者相關聯的工作階段主機。 如果您提供 **–Name** 參數，則會傳回與該工作階段主機相關聯的使用者。 
+您可以執行此 Cmdlet，以依集合名稱、使用者名稱或工作階段桌面名稱進行查詢。 如果您僅指定 **–CollectionName** 參數，則 Cmdlet 會傳回工作階段主機和相關使用者的清單。 當您也指定了 **–User** 參數，則會傳回與該使用者相關聯的工作階段主機。 如果您提供 **–Name** 參數，則會傳回與該工作階段主機相關聯的使用者。
 
 
 **Export-RDPersonalPersonalDesktopAssignment** Cmdlet 會將使用者與個人虛擬桌面目前的關聯匯出至文字檔。 此 Cmdlet 支援下列參數：

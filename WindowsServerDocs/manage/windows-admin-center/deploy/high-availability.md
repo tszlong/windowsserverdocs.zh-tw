@@ -1,24 +1,22 @@
 ---
 title: 部署具有高可用性的 Windows Admin Center
 description: 部署具有高可用性的 Windows Admin Center (Project Honolulu)
-ms.technology: manage
 ms.topic: article
 author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 6ae7bd9ed7aee5835ac1f53b9e10879ad8824f52
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 132f566e8467179c1a58e3555d26ab834dae7129
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71406945"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970855"
 ---
 # <a name="deploy-windows-admin-center-with-high-availability"></a>部署具有高可用性的 Windows Admin Center
 
 >適用於：Windows Admin Center、Windows Admin Center 預覽版
 
-您可以在容錯移轉叢集中部署 Windows Admin Center，為您的 Windows Admin Center 閘道服務提供高可用性。 提供的解決方案是主動-被動解決方案，其中只有一個作用中的 Windows Admin Center 執行個體。 如果叢集中的其中一個節點失敗，則 Windows Admin Center 會適當地容錯移轉到另一個節點，讓您繼續順暢地管理環境中的伺服器。 
+您可以在容錯移轉叢集中部署 Windows Admin Center，為您的 Windows Admin Center 閘道服務提供高可用性。 提供的解決方案是主動-被動解決方案，其中只有一個作用中的 Windows Admin Center 執行個體。 如果叢集中的其中一個節點失敗，則 Windows Admin Center 會適當地容錯移轉到另一個節點，讓您繼續順暢地管理環境中的伺服器。
 
 [了解其他 Windows Admin Center 部署選項。](../plan/installation-options.md)
 
@@ -35,12 +33,12 @@ ms.locfileid: "71406945"
 2. 透過 RDP 連線到節點，並使用下列參數從該節點執行 ```Install-WindowsAdminCenterHA.ps1``` 指令碼：
     - `-clusterStorage`：叢集共用磁碟區的本機路徑，其用於儲存 Windows Admin Center 資料。
     - `-clientAccessPoint`：選擇您將用來存取 Windows Admin Center 的名稱。 例如，如果您使用 `-clientAccessPoint contosoWindowsAdminCenter` 參數執行指令碼，您將藉由造訪 `https://contosoWindowsAdminCenter.<domain>.com` 來存取 Windows Admin Center 服務
-    - `-staticAddress`:選擇性。 叢集一般服務的一或多個靜態位址。 
+    - `-staticAddress`:選擇性。 叢集一般服務的一或多個靜態位址。
     - `-msiPath`:Windows Admin Center .msi 檔案的路徑。
     - `-certPath`:選擇性。 憑證 .pfx 檔案的路徑。
     - `-certPassword`:選擇性。 在 `-certPath` 中所提供憑證 .pfx 的 SecureString 密碼
     - `-generateSslCert`:選擇性。 如果您不想提供已簽署的憑證，請包含此參數旗標以產生自我簽署的憑證。 請注意，自我簽署的憑證將於 60 天後過期。
-    - `-portNumber`:選擇性。 如果您未指定連接埠，閘道服務會部署於連接埠 443 (HTTPS)。 若要使用不同的連接埠，請在此參數中指定。 請注意，如果您使用自訂連接埠 (443 以外的連接埠)，您將前往 https://\<clientAccessPoint\>:\<port\> 來存取 Windows Admin Center。
+    - `-portNumber`:選擇性。 如果您未指定連接埠，閘道服務會部署於連接埠 443 (HTTPS)。 若要使用不同的連接埠，請在此參數中指定。 請注意，如果您使用自訂連接埠 (443 以外的連接埠)，您將前往 https://\<clientAccessPoint\>:\<port\>來存取 Windows Admin Center。
 
 > [!NOTE]
 > ```Install-WindowsAdminCenterHA.ps1``` 指令碼支援 ```-WhatIf ``` 和 ```-Verbose``` 參數
@@ -86,7 +84,7 @@ $certPassword = Read-Host -AsSecureString
 ```powershell
 $certPassword = Read-Host -AsSecureString
 .\Install-WindowsAdminCenterHA.ps1 -msiPath ".\WindowsAdminCenter.msi" -certPath "cert.pfx" -certPassword $certPassword -Verbose
-``` 
+```
 
 ## <a name="uninstall"></a>解除安裝
 
