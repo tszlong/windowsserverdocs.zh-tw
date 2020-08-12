@@ -6,12 +6,12 @@ author: JasonGerend
 ms.author: jgerend
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f98ec982601281d5b16a5ec369ca275de189c85
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 5eddc639fd07516b95b23684ec4137f328b7c105
+ms.sourcegitcommit: 08da40966c5d633f8748c8ae348f12656a54d3b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996480"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88140295"
 ---
 # <a name="deploy-storage-spaces-on-a-stand-alone-server"></a>在獨立伺服器上部署儲存空間
 
@@ -37,14 +37,14 @@ ms.locfileid: "87996480"
 >[!NOTE]
 >本主題包含可讓您用來將部分所述的程序自動化的 Windows PowerShell Cmdlet 範例。 如需詳細資訊，請參閱[PowerShell](/powershell/scripting/powershell-scripting?view=powershell-6)。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 若要在獨立的 Windows Server 2012 −伺服器上使用儲存空間，請確定您想要使用的實體磁片符合下列必要條件。
 
 > [!IMPORTANT]
 > 如果您想要瞭解如何在容錯移轉叢集上部署儲存空間，請參閱[在 Windows Server 2012 R2 上部署儲存空間](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/mt270997(v%3dws.11)>)叢集。 容錯移轉叢集部署有不同的必要條件，例如支援的磁片匯流排類型、支援的復原類型，以及所需的最小磁片數目。
 
-|區域|需求|附註|
+|區域|需求|注意|
 |---|---|---|
 |磁碟匯流排類型|-序列連接 SCSI (SAS) <br>-串列先進技術附件 (SATA) <br>-iSCSI 和光纖通道控制器。 |您也可以使用 USB 磁碟機。 不過，在伺服器環境中使用 USB 磁片磁碟機並不是最佳作法。<br>ISCSI 和光纖通道 (FC) 控制器上都支援「儲存空間」，只要在其上建立的虛擬磁片為非復原性， (簡單的資料行數目) 。<br>|
 |磁碟設定|-實體磁片必須至少為 4 GB<br>-磁片必須為空白且未格式化。 請勿建立磁碟區。||
@@ -100,19 +100,19 @@ ms.locfileid: "87996480"
 下列範例示範原始集區中有哪些實體磁碟可用。
 
 ```PowerShell
-Get-StoragePool -IsPrimordial $true | Get-PhysicalDisk | Where-Object CanPool -eq $True
+Get-StoragePool -IsPrimordial $true | Get-PhysicalDisk -CanPool $True
 ```
 
 下列範例會建立名為*StoragePool1*的新存放集區，並使用所有可用的磁片。
 
 ```PowerShell
-New-StoragePool –FriendlyName StoragePool1 –StorageSubsystemFriendlyName “Storage Spaces*” –PhysicalDisks (Get-PhysicalDisk –CanPool $True)
+New-StoragePool –FriendlyName StoragePool1 –StorageSubsystemFriendlyName "Windows Storage*" –PhysicalDisks (Get-PhysicalDisk –CanPool $True)
 ```
 
 下列範例會建立新的存放集區*StoragePool1*，它會使用四個可用的磁片。
 
 ```PowerShell
-New-StoragePool –FriendlyName StoragePool1 –StorageSubsystemFriendlyName “Storage Spaces*” –PhysicalDisks (Get-PhysicalDisk PhysicalDisk1, PhysicalDisk2, PhysicalDisk3, PhysicalDisk4)
+New-StoragePool –FriendlyName StoragePool1 –StorageSubsystemFriendlyName "Windows Storage*" –PhysicalDisks (Get-PhysicalDisk PhysicalDisk1, PhysicalDisk2, PhysicalDisk3, PhysicalDisk4)
 ```
 
 下列範例 Cmdlet 序列示範如何新增可用的實體磁碟 *PhysicalDisk5* 做為儲存集區 *StoragePool1* 的熱備援。
