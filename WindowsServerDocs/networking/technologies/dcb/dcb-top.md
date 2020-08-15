@@ -6,12 +6,12 @@ ms.assetid: da58f312-bd3b-4bb6-98ca-6177869dd6ad
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 646660c1371b592670737b7d7d208b62208bfec9
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 81c35d1a5673793220ec860266d129a4ecdb4046
+ms.sourcegitcommit: b18effcba95c85d6e08e7d29808b576491a5352e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993933"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88243190"
 ---
 # <a name="data-center-bridging-dcb"></a>\(資料中心橋接 (DCB)\)
 
@@ -38,7 +38,7 @@ DCB 提供以硬體為主 \- 的頻寬配置給特定類型的網路流量，並
 DCB 包含下列一組通訊協定。
 
 - 增強型傳輸服務 \( ETS \) – IEEE 802.1 qaz，以 802.1 p 和 802.1 q 標準為基礎
-- 優先順序流程式控制制 \( PFS \) ，IEEE 802.1 qbb
+- 優先順序流程式控制制 \( PFC \) ，IEEE 802.1 qbb
 - DCB Exchange Protocol \( DCBX \) ，IEEE 802.1 ab，已在 802.1 qaz standard 中擴充。
 
 DCBX 通訊協定可讓您在交換器上設定 DCB，然後再自動設定終端裝置，例如執行 Windows Server 2016 的電腦。
@@ -63,7 +63,7 @@ Windows 應用程式通常不是用來參與 DCBX 交換。 因此，主機必�
 
 4. 能讓伺服器系統管理員或網路系統管理員將應用程式指派給特定流量類別，或是根據這個應用程式使用的已知通訊協定、已知 TCP/UDP 連接埠或 NetworkDirect 連接埠來設定優先順序。
 
-5. 透過 Windows Server 2016 Windows Management Instrumentation \( WMI \) 和 windows POWERSHELL 提供 DCB 管理。 如需詳細資訊，請參閱本主題稍後的[適用于 DCB 的 Windows PowerShell 命令](#bkmk_wps)一節，以及下列主題。
+5. 透過 Windows Server 2016 Windows Management Instrumentation \( WMI \) 和 windows POWERSHELL 提供 DCB 管理。 如需詳細資訊，請參閱本主題稍後的 [適用于 DCB 的 Windows PowerShell 命令](#bkmk_wps) 一節，以及下列主題。
     - [系統提供的 DCB 元件](/windows-hardware/drivers/network/system-provided-dcb-components)
     - [資料中心橋接的 NDIS QoS 需求](/windows-hardware/drivers/network/ndis-qos-requirements-for-data-center-bridging)
 
@@ -72,7 +72,7 @@ Windows 應用程式通常不是用來參與 DCBX 交換。 因此，主機必�
 7. 支援 Windows Server 2016 服務品質 QoS 解決方案的共存 \( \) 。
 
 >[!NOTE]
->使用 RDMA 的聚合式 Ethernet \( RoCE 版本的任何 rdma 之前 \) ，您必須先啟用 DCB。 雖然網際網路範圍 RDMA 通訊協定 \( iWARP 網路不需要 \) ，但測試已判定所有以乙太網路 \- 為基礎的 rdma 技術，都能更適合 DCB。 因此，您應該考慮使用 DCB 來進行 iWARP RDMA 部署。 如需詳細資訊，請參閱[ (RDMA 的遠端直接記憶體存取) 和切換內嵌小組 (設定) ](../../../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)。
+>使用 RDMA 的聚合式 Ethernet \( RoCE 版本的任何 rdma 之前 \) ，您必須先啟用 DCB。 雖然網際網路範圍 RDMA 通訊協定 \( iWARP 網路不需要 \) ，但測試已判定所有以乙太網路 \- 為基礎的 rdma 技術，都能更適合 DCB。 因此，您應該考慮使用 DCB 來進行 iWARP RDMA 部署。 如需詳細資訊，請參閱 [ (RDMA 的遠端直接記憶體存取) 和切換內嵌小組 (設定) ](../../../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)。
 
 ##  <a name="practical-applications-of-dcb"></a>DCB 的實際應用
 

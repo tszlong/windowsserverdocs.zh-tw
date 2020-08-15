@@ -6,12 +6,12 @@ ms.author: billmath
 manager: daveba
 ms.date: 08/09/2019
 ms.topic: article
-ms.openlocfilehash: 46e78e74781f4a85f279299745d841fd0bcaf7c3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 18e480200bf2d22c5f46dd67d1ee6a704f566d55
+ms.sourcegitcommit: b18effcba95c85d6e08e7d29808b576491a5352e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964855"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88243200"
 ---
 # <a name="ad-fs-openid-connectoauth-concepts"></a>AD FS OpenID Connect/OAuth 概念
 適用於 AD FS 2016 和更新版本
@@ -21,7 +21,7 @@ ms.locfileid: "87964855"
 |Actor| 描述|
 |-----|-----|
 |使用者|這是需要存取資源 (使用者、應用程式、服務和群組) 的安全性主體。|
-|用戶端|這是您的 web 應用程式，以其用戶端識別碼來識別。 用戶端通常是與使用者互動的合作物件，而且會向授權伺服器要求權杖。
+|Client|這是您的 web 應用程式，以其用戶端識別碼來識別。 用戶端通常是與使用者互動的合作物件，而且會向授權伺服器要求權杖。
 | (IdP) 的授權伺服器/識別提供者| 這是您的 AD FS 伺服器。 負責驗證存在於組織目錄中的安全性主體的身分識別。 它會在成功驗證這些安全性主體時，發出 (持有人存取權杖、識別碼權杖、重新整理權杖) 的安全性權杖。
 |資源伺服器/資源提供者/信賴憑證者| 這是資源或資料所在的位置。 它會信任授權伺服器來安全地驗證和授權用戶端，並使用持有人存取權杖來確保能夠授與資源的存取權。
 
@@ -34,8 +34,8 @@ ms.locfileid: "87964855"
 
 |應用程式類型|描述|角色|
 |-----|-----|-----|
-|原生應用程式|有時也稱為**公用用戶端**，這是要在電腦或裝置上執行的用戶端應用程式，並與使用者互動。|向授權伺服器要求權杖 (AD FS) 以供使用者存取資源。 使用權杖做為 HTTP 標頭，將 HTTP 要求傳送至受保護的資源。|
-|伺服器應用程式 (Web 應用程式) |在伺服器上執行的 web 應用程式，通常可透過瀏覽器存取使用者。 因為它能夠維護自己的用戶端「秘密」或認證，有時也稱為「**機密用戶端**」。 |向授權伺服器要求權杖 (AD FS) 以供使用者存取資源。 在要求權杖之前，用戶端 (Web 應用程式) 必須使用其密碼進行驗證。 |
+|原生應用程式|有時也稱為 **公用用戶端**，這是要在電腦或裝置上執行的用戶端應用程式，並與使用者互動。|向授權伺服器要求權杖 (AD FS) 以供使用者存取資源。 使用權杖做為 HTTP 標頭，將 HTTP 要求傳送至受保護的資源。|
+|伺服器應用程式 (Web 應用程式) |在伺服器上執行的 web 應用程式，通常可透過瀏覽器存取使用者。 因為它能夠維護自己的用戶端「秘密」或認證，有時也稱為「 **機密用戶端**」。 |向授權伺服器要求權杖 (AD FS) 以供使用者存取資源。 在要求權杖之前，用戶端 (Web 應用程式) 必須使用其密碼進行驗證。 |
 |Web API|使用者所存取的終端資源。 請將這些視為「信賴憑證者」的新標記法。|取用用戶端取得的持有人存取權杖|
 
 ## <a name="application-group"></a>應用程式群組
@@ -56,7 +56,7 @@ ms.locfileid: "87964855"
 - aza-如果使用訊息 [代理程式用戶端的 OAuth 2.0 通訊協定延伸](/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706)模組，   且範圍參數包含「aza」範圍，則伺服器會發出新的主要重新整理權杖，並將它設定在回應的 [refresh_token] 欄位中，以及將 [refresh_token_expires_in] 欄位設定為新主要重新整理權杖的存留期（如果有強制執行）。
 - openid - 可讓應用程式要求使用 OpenID Connect 授權通訊協定。
 - logon_cert - logon_cert 範圍可讓應用程式要求登入憑證，以便用來以互動方式登入已經過驗證的使用者。 AD FS 伺服器會省略回應中的 access_token 參數，並改為提供 base64 編碼的 CMS 憑證鏈或 CMC 完整 PKI 回應。  [這裡](/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e)提供更多詳細資料。
-- user_impersonation - 必須有 user_impersonation 範圍，才能成功向 AD FS 要求代理者存取權杖。 如需如何使用此範圍的詳細資訊，請參閱使用[OAuth 搭配 AD FS 2016 來建立多層式應用程式，使用代理 (OBO) ](ad-fs-on-behalf-of-authentication-in-windows-server.md)。
+- user_impersonation - 必須有 user_impersonation 範圍，才能成功向 AD FS 要求代理者存取權杖。 如需如何使用此範圍的詳細資訊，請參閱使用 [OAuth 搭配 AD FS 2016 來建立多層式應用程式，使用代理 (OBO) ](ad-fs-on-behalf-of-authentication-in-windows-server.md)。
 - allatclaims – allatclaims 範圍可讓應用程式要求存取權杖中的宣告，以便在識別碼權杖中新增。
 - vpn_cert - vpn_cert 範圍可讓應用程式要求 VPN 憑證，其可用來建立使用 EAP-TLS 驗證的 VPN 連線。 不再支援此範圍。
 - 電子郵件 - 可讓應用程式要求已登入使用者的電子郵件宣告。
@@ -79,17 +79,17 @@ ms.locfileid: "87964855"
 
  2. AD FS 會在驗證要求中驗證用戶端識別碼，並在 AD FS 中的用戶端和資源註冊期間取得用戶端識別碼。 如果使用的是機密用戶端，則 AD FS 也會驗證驗證要求中提供的用戶端密碼。 AD FS 也會驗證用戶端的重新導向 uri。
 
- 3. AD FS 會識別用戶端想要透過在驗證要求中傳遞的資源參數來存取的資源。 如果使用 MSAL 用戶端程式庫，則不會傳送資源參數。 相反地，資源 url 會當做範圍參數的一部分來傳送： *scope = [resource url]//[範圍值，例如 openid]*。
+ 3. AD FS 會識別用戶端想要透過在驗證要求中傳遞的資源參數來存取的資源。 如果使用 MSAL 用戶端程式庫，則不會傳送資源參數。 相反地，資源 url 會當做範圍參數的一部分來傳送： *scope = [resource url]/[範圍值，例如 openid]*。
 
     如果資源不是使用資源或範圍參數來傳遞，ADFS 會使用預設資源 urn： microsoft：使用者資訊，其原則 (例如 MFA、發行或授權原則) 無法設定。
 
  4. 下一個 AD FS 會驗證用戶端是否具有存取資源的許可權。 AD FS 也會驗證傳入驗證要求的範圍是否符合註冊資源時所設定的範圍。 如果用戶端沒有許可權，或未在驗證要求中傳送正確的範圍，則會終止驗證流程。
 
- 5. 一旦驗證許可權和範圍之後，AD FS 使用已設定的[驗證方法](../operations/configure-authentication-policies.md)來驗證使用者。
+ 5. 一旦驗證許可權和範圍之後，AD FS 使用已設定的 [驗證方法](../operations/configure-authentication-policies.md)來驗證使用者。
 
- 6. 如果根據資源原則或全域驗證原則需要[額外的驗證方法](../operations/configure-additional-authentication-methods-for-ad-fs.md)，AD FS 會觸發額外的驗證。
+ 6. 如果根據資源原則或全域驗證原則需要 [額外的驗證方法](../operations/configure-additional-authentication-methods-for-ad-fs.md) ，AD FS 會觸發額外的驗證。
 
- 7. AD FS 使用[AZURE mfa](../operations/configure-ad-fs-and-azure-mfa.md)或[協力廠商 mfa](../operations/additional-authentication-methods-ad-fs.md)來執行驗證。
+ 7. AD FS 使用 [AZURE mfa](../operations/configure-ad-fs-and-azure-mfa.md) 或 [協力廠商 mfa](../operations/additional-authentication-methods-ad-fs.md) 來執行驗證。
 
  8. 一旦使用者通過驗證，AD FS 會套用宣告規則， (判斷作為安全性權杖一部分傳送至資源的宣告) 和[存取控制](../operations/ad-fs-client-access-policies.md)[原則](../deployment/configuring-claim-rules.md) (判斷使用者是否符合存取資源) 所需的條件。
 
@@ -97,7 +97,7 @@ ms.locfileid: "87964855"
 
  10. AD FS 也會產生識別碼權杖。
 
- 11. 如果 scope = allatclaims 包含在驗證要求中，則會根據定義的宣告規則，[自訂識別碼權杖](custom-id-tokens-in-ad-fs.md)以在存取權杖中包含宣告。
+ 11. 如果 scope = allatclaims 包含在驗證要求中，則會根據定義的宣告規則， [自訂識別碼權杖](custom-id-tokens-in-ad-fs.md) 以在存取權杖中包含宣告。
 
  12. 一旦產生並自訂所需的權杖，AD FS 會回應用戶端，包括權杖。 只有在驗證要求包含範圍 = openid 時，識別碼權杖才會包含在回應中。 用戶端一律可以使用權杖端點，取得驗證後的識別碼權杖。
 
@@ -129,11 +129,11 @@ ms.locfileid: "87964855"
 
 ![AD FS 自訂權杖選項2](media/adfs-modern-auth-concepts/option2.png)
 
-若要進一步瞭解如何在 ADFS 中設定 Web 應用程式以取得自訂的識別碼權杖，請參閱在[使用 OpenID connect 或 OAuth 搭配 AD FS 2016 或更新版本時，自訂要在 id_token 中發出的宣告](Custom-Id-Tokens-in-AD-FS.md)。
+若要進一步瞭解如何在 ADFS 中設定 Web 應用程式以取得自訂的識別碼權杖，請參閱在 [使用 OpenID connect 或 OAuth 搭配 AD FS 2016 或更新版本時，自訂要在 id_token 中發出的宣告](Custom-Id-Tokens-in-AD-FS.md)。
 
 ## <a name="single-log-out"></a>單一登出
 
-單一登出會導致所有使用會話識別碼的用戶端會話結束。AD FS 2016 和更新版本支援 OpenID Connect/OAuth 的單一登出。 如需詳細資訊，請參閱[使用 AD FS 的 OpenID Connect 單一登出](ad-fs-logout-openid-connect.md)。
+單一登出會導致所有使用會話識別碼的用戶端會話結束。AD FS 2016 和更新版本支援 OpenID Connect/OAuth 的單一登出。 如需詳細資訊，請參閱 [使用 AD FS 的 OpenID Connect 單一登出](ad-fs-logout-openid-connect.md)。
 
 
 ## <a name="ad-fs-endpoints"></a>AD FS 端點
