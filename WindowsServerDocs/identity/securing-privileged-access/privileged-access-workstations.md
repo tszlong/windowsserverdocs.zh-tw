@@ -8,12 +8,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 6a7e916c78ad7b2711268f02bcf028dfb2621303
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 014e19088394135c00d1df63a46ba74f400fa411
+ms.sourcegitcommit: 08da40966c5d633f8748c8ae348f12656a54d3b2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991870"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88140305"
 ---
 # <a name="privileged-access-workstations"></a>特殊權限存取工作站
 
@@ -28,7 +28,7 @@ ms.locfileid: "87991870"
 > [!NOTE]
 > PAW 架構不需要帳戶與工作站的 1:1 對應，但這是一般設定。 PAW 會建立可由一個或多個帳戶所使用的受信任工作站環境。
 
-為了提供最大的安全性，PAW 應該一律執行最新且最安全的作業系統：︰Microsoft 強烈建議使用 Windows 10 企業版，其中包含一些其他版本未提供的額外安全性功能 (特別是 [Credential Guard](/windows/security/identity-protection/credential-guard/credential-guard) 和 [Device Guard](/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control)。
+為了提供最大的安全性，PAW 應該一律執行最新且最安全的作業系統：︰Microsoft 強烈建議使用 Windows 10 企業版，其中包含一些其他版本未提供的額外安全性功能 (特別是 [Credential Guard](/windows/security/identity-protection/credential-guard/credential-guard) 和 [Device Guard](/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control))。
 
 > [!NOTE]
 > 無法存取 Windows 10 企業版的組織可以使用 Windows 10 專業版，其中包含 PAW 的許多重要基本技術，包括信任式開機、BitLocker 和遠端桌面。  教育客戶可以使用 Windows 10 教育版。  Windows 10 家用版不應用於 PAW。
