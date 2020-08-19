@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 07/28/2020
+ms.date: 08/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0077837fc03fbff37ed2a152ee68bfa4f1e24fa8
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 5f3a2ff6268cbccc2d354227b577441a270faf9f
+ms.sourcegitcommit: f3a72c06e739d9ee9d8cd7e8259ccee8db7c7523
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961822"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88089967"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面用戶端的新功能
 
@@ -25,7 +25,19 @@ ms.locfileid: "87961822"
 |使用者群組 |版本  |
 |-----------|---------|
 |公用     |1.2.1186 |
-|Insider    |1.2.1186 |
+|Insider    |1.2.1272 |
+
+## <a name="updates-for-version-121272-insider"></a>1\.2.1272 版的更新 [INSIDER]
+
+*發行日期：2020/8/11*
+
+下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4D7LK)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4D5aF)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4Dan3)
+
+- 已新增從使用者身分識別自動偵測主權雲端的功能。
+- 已新增為所有使用者啟用自訂 URL 訂用帳戶的功能。
+- 已修正摘要工作列上應用程式釘選的問題。
+- 已修正訂閱 URL 時會損毀的問題。
+- 改善使用觸控或手寫筆拖曳遠端應用程式視窗時的體驗。
 
 ## <a name="updates-for-version-121186"></a>1\.2.1186 版的更新
 

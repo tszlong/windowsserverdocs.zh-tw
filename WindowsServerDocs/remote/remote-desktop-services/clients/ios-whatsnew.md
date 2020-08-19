@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 05/06/2020
+ms.date: 08/17/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 16e142a299b43ac6167fa4bf34d5782899f28846
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0afb5a64a86d3b33ea5d78756abe09bf87564928
+ms.sourcegitcommit: 3ed5dd72451b494e17d508fed82fdc5559ba4ef0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970155"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88270140"
 ---
 # <a name="whats-new-in-the-ios-client"></a>iOS 用戶端中的新功能
 
@@ -21,6 +21,15 @@ ms.locfileid: "87970155"
 ## <a name="how-to-report-issues"></a>如何回報問題
 
 我們致力於讓 iOS 的遠端桌面用戶端發揮出最佳效果，因此我們非常重視您的意見反應。 您可以在 [說明]   > [報告問題]  中回報任何問題。
+
+## <a name="updates-for-version-1012"></a>10.1.2 版的更新
+
+*發行日期：2020/8/17*
+
+在此更新中，我們已解決版本 10.1.1 更新中所報告的問題。
+
+- 已修正使用非代理驗證來訂閱 Windows 虛擬桌面摘要時，某些使用者會當機的問題。
+- 修正 iPhone X、iPhone XS 和 iPhone 11 Pro 上工作區圖示的版面配置。
 
 ## <a name="updates-for-version-1007"></a>10.0.7 版的更新
 
