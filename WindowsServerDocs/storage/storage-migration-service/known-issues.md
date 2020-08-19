@@ -6,77 +6,77 @@ ms.author: nedpyle
 manager: tiaascs
 ms.date: 07/29/2020
 ms.topic: article
-ms.openlocfilehash: 818fca0ed62c140b3b0c4bbb1394380d42201f79
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0dc49603099427fb00507db021c391500a7c42f2
+ms.sourcegitcommit: 3d59c2aaebcd190b20d24bc8a449eee0681b6a3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961312"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88583313"
 ---
 # <a name="storage-migration-service-known-issues"></a>儲存體遷移服務的已知問題
 
-本主題包含使用[儲存體遷移服務](overview.md)來遷移伺服器時的已知問題的解答。
+本主題包含使用 [儲存體遷移服務](overview.md) 來遷移伺服器時的已知問題答案。
 
-儲存體遷移服務的發行分為兩個部分： Windows Server 中的服務，以及 Windows 系統管理中心內的使用者介面。 此服務適用于 Windows Server、長期維護通道，以及 Windows Server、半年通道、雖然 Windows 系統管理中心可供個別下載。 我們也會定期包含 Windows Server 累計更新中的變更（透過 Windows Update 發行）。
+儲存體遷移服務分為兩個部分： Windows Server 中的服務，以及 Windows Admin Center 中的使用者介面。 這項服務可在 Windows Server、長期維護通道以及 Windows Server 半年通道;雖然 Windows Admin Center 可作為個別下載。 我們也會定期包含 Windows Server 累計更新中的變更，並透過 Windows Update 發行。
 
-例如，Windows Server 1903 版包含儲存體遷移服務的新功能和修正，其也適用于 Windows Server 2019 和 Windows Server 1809 版，安裝[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)。
+例如，Windows Server 1903 版包含適用于儲存體遷移服務的新功能和修正程式，這些功能也適用于 Windows Server 2019 和 Windows Server 1809 版（藉由安裝 [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)）。
 
-## <a name="how-to-collect-log-files-when-working-with-microsoft-support"></a><a name="collecting-logs"></a>如何在使用 Microsoft 支援服務時收集記錄檔
+## <a name="how-to-collect-log-files-when-working-with-microsoft-support"></a><a name="collecting-logs"></a> 使用 Microsoft 支援服務時如何收集記錄檔
 
-儲存體遷移服務包含 Orchestrator 服務和 Proxy 服務的事件記錄檔。 Orchestrator 伺服器一律會同時包含事件記錄檔，以及已安裝 proxy 服務的目的地伺服器包含 proxy 記錄。 這些記錄檔位於：
+儲存體遷移服務包含 Orchestrator 服務和 Proxy 服務的事件記錄檔。 Orchestrator 伺服器一律會包含事件記錄檔，而安裝 proxy 服務的目的地伺服器則包含 proxy 記錄。 這些記錄位於：
 
 - 應用程式和服務記錄檔 \ Microsoft \ Windows \ StorageMigrationService
 - 應用程式和服務記錄檔 \ Microsoft \ Windows \ StorageMigrationService-Proxy
 
-如果您需要收集這些記錄以進行離線查看或傳送至 Microsoft 支援服務，GitHub 上有開放原始碼 PowerShell 腳本可供使用：
+如果您需要收集這些記錄檔以進行離線的查看或傳送至 Microsoft 支援服務，可在 GitHub 上取得開放原始碼 PowerShell 腳本：
 
- [儲存體遷移服務協助程式](https://aka.ms/smslogs)
+ [儲存體遷移服務 Helper](https://aka.ms/smslogs)
 
 請參閱讀我檔案以取得使用方式。
 
-## <a name="storage-migration-service-doesnt-show-up-in-windows-admin-center-unless-managing-windows-server-2019"></a>除非管理 Windows Server 2019，否則存放裝置遷移服務不會顯示在 Windows 系統管理中心
+## <a name="storage-migration-service-doesnt-show-up-in-windows-admin-center-unless-managing-windows-server-2019"></a>儲存體遷移服務不會顯示在 Windows Admin Center 除非管理 Windows Server 2019
 
-使用1809版的 Windows 管理中心來管理 Windows Server 2019 orchestrator 時，您看不到儲存體遷移服務的工具選項。
+使用1809版的 Windows Admin Center 來管理 Windows Server 2019 協調器時，您看不到儲存體遷移服務的工具選項。
 
-Windows 系統管理中心儲存體遷移服務延伸模組的版本系結只會管理 Windows Server 2019 1809 版或更新版本的作業系統。 如果您使用它來管理舊版的 Windows Server 作業系統或 insider preview，則不會顯示此工具。 這是設計的行為。
+Windows Admin Center 儲存體遷移服務延伸模組的版本系結，只管理 Windows Server 2019 1809 版或更新版本的作業系統。 如果您使用它來管理舊版 Windows Server 作業系統或 insider preview，則不會顯示此工具。 這是設計的行為。
 
-若要解決此問題，請使用或升級至 Windows Server 2019 build 1809 或更新版本。
+若要解決，請使用或升級至 Windows Server 2019 組建1809或更新版本。
 
-## <a name="storage-migration-service-cutover-validation-fails-with-error-access-is-denied-for-the-token-filter-policy-on-destination-computer"></a>儲存體遷移服務轉換驗證失敗，錯誤為「目的地電腦上的權杖篩選原則拒絕存取」
+## <a name="storage-migration-service-cutover-validation-fails-with-error-access-is-denied-for-the-token-filter-policy-on-destination-computer"></a>儲存體遷移服務轉換驗證失敗，並出現「目的地電腦上的權杖篩選原則拒絕存取」錯誤
 
-執行轉換驗證時，您會收到「失敗：存取目的地電腦上的權杖篩選原則」錯誤。 即使您為來源和目的電腦提供正確的本機系統管理員認證，也會發生這種情況。
+執行切換驗證時，您會收到錯誤「失敗：目的地電腦上的權杖篩選原則拒絕存取」。 即使您為來源和目的地電腦提供正確的本機系統管理員認證，也會發生這種情況。
 
-此問題已在[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)更新中修正。
+此問題已在 [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) 更新中修正。
 
-## <a name="storage-migration-service-isnt-included-in-windows-server-2019-evaluation-or-windows-server-2019-essentials-edition"></a>儲存體遷移服務未包含在 Windows Server 2019 評估或 Windows Server 2019 Essentials 版本中
+## <a name="storage-migration-service-isnt-included-in-windows-server-2019-evaluation-or-windows-server-2019-essentials-edition"></a>儲存體遷移服務未包含在 Windows Server 2019 評估或 Windows Server 2019 Essentials edition 中
 
-使用 Windows 系統管理中心連線到[Windows server 2019 評估版](https://www.microsoft.com/evalcenter/evaluate-windows-server-2019)或 windows Server 2019 Essentials edition 時，不會有管理儲存體遷移服務的選項。 儲存體遷移服務也不包含在角色和功能中。
+使用 Windows Admin Center 連接到 [Windows server 2019 評估版](https://www.microsoft.com/evalcenter/evaluate-windows-server-2019) 或 windows Server 2019 Essentials 版本時，並沒有管理儲存體遷移服務的選項。 儲存體遷移服務也不包含在角色和功能中。
 
 此問題是由 Windows Server 2019 和 Windows Server 2019 Essentials 評估媒體中的服務問題所造成。
 
-若要解決此問題以進行評估，請安裝零售、MSDN、OEM 或大量授權版本的 Windows Server 2019，而不要啟動它。 如果沒有啟用，所有版本的 Windows Server 都會在評估模式下運作達180天。
+若要解決此問題以進行評估，請安裝零售、MSDN、OEM 或大量授權版本的 Windows Server 2019，而不要加以啟動。 如果沒有啟用，所有版本的 Windows Server 都會在評估模式下運作180天。
 
-我們已在較新版本的 Windows Server 中修正此問題。
+我們已在 Windows Server 的較新版本中修正此問題。
 
-## <a name="storage-migration-service-times-out-downloading-the-transfer-error-csv"></a>儲存體遷移服務超時下載傳輸錯誤 CSV
+## <a name="storage-migration-service-times-out-downloading-the-transfer-error-csv"></a>儲存體遷移服務時間下載傳輸錯誤 CSV
 
-使用 Windows Admin Center 或 PowerShell 下載傳輸作業詳細的錯誤-僅限 CSV 記錄檔時，您會收到錯誤：
+使用 Windows Admin Center 或 PowerShell 下載傳送作業詳細的錯誤（僅限錯誤） CSV 記錄檔時，您會收到錯誤訊息：
 
 ```
 Transfer Log - Please check file sharing is allowed in your firewall. : This request operation sent to net.tcp://localhost:28940/sms/service/1/transfer did not receive a reply within the configured timeout (00:01:00). The time allotted to this operation may have been a portion of a longer timeout. This may be because the service is still processing the operation or because the service was unable to send a reply message. Please consider increasing the operation timeout (by casting the channel/proxy to IContextChannel and setting the OperationTimeout property) and ensure that the service is able to connect to the client.
 ```
 
-此問題是因為儲存體遷移服務允許的預設一分鐘時間內，無法篩選出的傳輸檔案數量非常大。
+發生此問題的原因是，傳輸檔案數量過多，無法在儲存體遷移服務所允許的預設一分鐘時間內進行篩選。
 
 若要解決這個問題：
 
-1. 在 orchestrator 電腦上，使用 Notepad.exe 來編輯 *% SYSTEMROOT% \SMS\Microsoft.StorageMigration.Service.exe.config*檔案，將 "sendTimeout" 從預設的1分鐘變更為10分鐘
+1. 在 orchestrator 電腦上，使用 Notepad.exe 來編輯 *% SYSTEMROOT% \SMS\Microsoft.StorageMigration.Service.exe.config* 檔案，將 "sendTimeout" 的預設值從1分鐘變更為10分鐘
 
     ```
     <bindings>
       <netTcpBinding>
         <binding name="NetTcpBindingSms"
-                 sendTimeout="00:01:00"
+                 sendTimeout="00:10:00"
     ```
 
 2. 重新開機 orchestrator 電腦上的「儲存體遷移服務」服務。
@@ -93,19 +93,19 @@ Transfer Log - Please check file sharing is allowed in your firewall. : This req
 
 7. 在 [WcfOperationTimeoutInMinutes] 上按一下滑鼠右鍵，然後按一下 [修改]。
 
-8. 在 [基本資料] 方塊中，按一下 [十進位]
+8. 在 [基本資料] 方塊中，按一下 [Decimal]
 
 9. 在 [數值資料] 方塊中，輸入 "10"，然後按一下 [確定]。
 
 10. 結束 [登錄編輯器]。
 
-11. 嘗試再次下載僅限錯誤的 CSV 檔案。
+11. 嘗試再次下載錯誤-唯一的 CSV 檔案。
 
-我們想要在較新版本的 Windows Server 2019 中變更此行為。
+我們打算在較新版本的 Windows Server 2019 中變更此行為。
 
 ## <a name="validation-warnings-for-destination-proxy-and-credential-administrative-privileges"></a>目的地 proxy 和認證系統管理許可權的驗證警告
 
-驗證傳送作業時，您會看到下列警告：
+驗證傳送工作時，您會看到下列警告：
 
 ```
 The credential has administrative privileges.
@@ -114,11 +114,11 @@ The destination proxy is registered.
 Warning: The destination proxy wasn't found.
 ```
 
-如果您尚未在 Windows Server 2019 目的地電腦上安裝儲存體遷移服務 Proxy 服務，或目的地電腦是 Windows Server 2016 或 Windows Server 2012 R2，則此行為是依設計而定。 我們建議您遷移至已安裝 proxy 的 Windows Server 2019 電腦，以大幅改善傳輸效能。
+如果您尚未在 Windows Server 2019 目的地電腦上安裝儲存體遷移服務 Proxy 服務，或者目的地電腦是 Windows Server 2016 或 Windows Server 2012 R2，則這是設計的行為。 建議您遷移至已安裝 proxy 的 Windows Server 2019 電腦，以大幅改善傳輸效能。
 
 ## <a name="certain-files-dont-inventory-or-transfer-error-5-access-is-denied"></a>某些檔案不會進行清查或傳輸，錯誤5「拒絕存取」
 
-從來源清查或傳輸檔案到目的地電腦時，使用者已移除系統管理員群組許可權的檔案無法遷移。 檢查儲存體遷移服務-Proxy 調試顯示：
+從來源清查或傳輸檔案到目的地電腦時，使用者已移除系統管理員群組許可權的檔案將無法遷移。 檢查儲存體遷移服務-Proxy 調試顯示：
 
 ```
 Log Name: Microsoft-Windows-StorageMigrationService-Proxy/Debug
@@ -142,13 +142,13 @@ at Microsoft.StorageMigration.Proxy.Service.Transfer.FileTransfer.InitializeSour
 at Microsoft.StorageMigration.Proxy.Service.Transfer.FileTransfer.TryTransfer()
 ```
 
-此問題是由儲存體遷移服務中的程式碼缺失所造成，其中不會叫用備份許可權。
+發生此問題的原因是儲存體遷移服務中的程式碼缺失，但未叫用備份許可權。
 
-若要解決此問題，請在[2019 年4月2日 Windows Update 安裝 KB4490481 (作業系統組建 17763.404) ](https://support.microsoft.com/help/4490481/windows-10-update-kb4490481)在 orchestrator 電腦和目的地電腦上（如果已安裝 proxy 服務）。 請確定來源遷移使用者帳戶是來源電腦上的本機系統管理員，以及儲存體遷移服務協調器。 請確定目的地遷移使用者帳戶是目的地電腦上的本機系統管理員，以及儲存體遷移服務協調器。
+若要解決此問題，請安裝 [Windows Update 2019 年4月2日： ](https://support.microsoft.com/help/4490481/windows-10-update-kb4490481) 在 orchestrator 電腦和目的地電腦上，如果已安裝 proxy 服務，則 KB4490481 (OS 組建 17763.404) 。 確定來源遷移使用者帳戶是來源電腦上的本機系統管理員和儲存體遷移服務協調器。 確定目的地遷移使用者帳戶是目的地電腦上的本機系統管理員和儲存體遷移服務協調器。
 
 ## <a name="dfsr-hashes-mismatch-when-using-storage-migration-service-to-preseed-data"></a>使用儲存體遷移服務預置資料時，DFSR 雜湊不相符
 
-當使用儲存體遷移服務將檔案傳輸到新的目的地，然後將 DFS 複寫設定為透過 preseeded 複寫或 DFS 複寫資料庫複製來複寫該資料與現有的伺服器時，所有檔案都會發生雜湊不相符的情況，而且會重新複寫。 資料流程、安全性資料流程、大小和屬性，在使用儲存體遷移服務來傳輸它們之後，全都看起來完全相符。 使用 ICACLS 或 DFS 複寫資料庫複製調試記錄來檢查檔案，會顯示：
+使用儲存體遷移服務將檔案傳送至新的目的地，然後將 DFS 複寫設定為透過 preseeded 複寫或 DFS 複寫資料庫複製將該資料複寫到現有的伺服器，所有檔案都會經歷雜湊不相符的情況，並會重新複寫。 資料流程、安全性資料流程、大小和屬性在使用儲存體遷移服務進行傳輸之後，全都看起來完全相符。 使用 ICACLS 或 DFS 複寫資料庫複製調試記錄檔來檢查檔案，會顯示：
 
 ### <a name="source-file"></a>來源檔案
 ```
@@ -184,20 +184,20 @@ at Microsoft.StorageMigration.Proxy.Service.Transfer.FileTransfer.TryTransfer()
 
 [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)更新已修正此問題。
 
-## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-when-transferring-from-windows-server-2008-r2"></a>從 Windows Server 2008 R2 傳輸時，發生錯誤「無法在任何端點上轉移存放裝置」
+## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-when-transferring-from-windows-server-2008-r2"></a>從 Windows Server 2008 R2 傳輸時，發生「無法在任何端點上傳送存放裝置」錯誤
 
-嘗試從 Windows Server 2008 R2 來源電腦傳輸資料時，不會傳輸任何資料，而且您會收到錯誤訊息：
+嘗試從 Windows Server 2008 R2 來源電腦傳送資料時，不會傳輸任何資料，而且您會收到錯誤：
 
 ```
 Couldn't transfer storage on any of the endpoints.
 0x9044
 ```
 
-如果您的 Windows Server 2008 R2 電腦未使用 Windows Update 的所有重大和重要更新進行完整修補，則預期會發生此錯誤。 為了安全起見，讓 Windows Server 2008 R2 電腦更新是很重要的，因為該作業系統不會包含較新版本 Windows Server 的安全性改進。
+如果您的 Windows Server 2008 R2 電腦未完全以 Windows Update 的重大和重要更新進行修補，則預期會發生此錯誤。 為了安全起見，請務必為 Windows Server 2008 R2 電腦更新，因為該作業系統不包含較新版本 Windows Server 的安全性改良功能。
 
-## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-and-check-if-the-source-device-is-online---we-couldnt-access-it"></a>「無法在任何端點上轉移儲存體」和「檢查來源裝置是否在線上-我們無法存取它」錯誤。
+## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-and-check-if-the-source-device-is-online---we-couldnt-access-it"></a>「無法在任何端點上傳送儲存體」和「檢查來源裝置是否在線上-無法存取」錯誤。
 
-嘗試從來源電腦傳送資料時，部分或所有共用不會傳輸，錯誤如下：
+嘗試從來源電腦傳送資料時，部分或所有共用都不會傳送，錯誤如下：
 
 ```
 Couldn't transfer storage on any of the endpoints.
@@ -232,11 +232,11 @@ at Microsoft.StorageMigration.Proxy.Service.Transfer.TransferOperation.Validate(
 at Microsoft.StorageMigration.Proxy.Service.Transfer.TransferRequestHandler.ProcessRequest(FileTransferRequest fileTransferRequest, Guid operationId)
 ```
 
-這是一個程式碼缺失，如果您的遷移帳戶至少沒有 SMB 共用的讀取權限，就會產生資訊清單。 此問題先在累計更新[4520062](https://support.microsoft.com/help/4520062/windows-10-update-kb4520062)中修正。
+如果您的遷移帳戶沒有 SMB 共用的讀取權限，就會出現程式碼缺失。 此問題是在累積更新 [4520062](https://support.microsoft.com/help/4520062/windows-10-update-kb4520062)中最先修正。
 
 ## <a name="error-0x80005000-when-running-inventory"></a>執行清查時發生錯誤0x80005000
 
-安裝[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)並嘗試執行清查之後，清查會失敗，並出現錯誤：
+安裝 [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) 並嘗試執行清查之後，清查會失敗，並出現錯誤：
 
 ```
 EXCEPTION FROM HRESULT: 0x80005000
@@ -290,13 +290,13 @@ Description:
 02/14/2020-13:18:21.097 [Erro] Failed device discovery stage SystemInfo with error: (0x80005000) Unknown error (0x80005000)
 ```
 
-當您以使用者主體名稱的形式提供遷移認證 (UPN) ，例如 ' ' 時，儲存體遷移服務中的程式碼缺失會造成此錯誤 meghan@contoso.com 。 儲存體遷移服務協調器服務無法正確剖析此格式，這會導致在 KB4512534 和19H1 中針對叢集遷移支援新增的網域查閱發生失敗。
+當您以使用者主體名稱的形式提供遷移認證 (UPN) （例如 ' '）時，儲存體遷移服務中的程式碼缺失就會導致此錯誤 meghan@contoso.com 。 儲存體遷移服務協調器服務無法正確剖析此格式，導致在 KB4512534 和19H1 中針對叢集遷移支援新增的網域查閱失敗。
 
-若要解決此問題，請以 domain\user 格式提供認證，例如 ' Contoso\Meghan '。
+若要解決此問題，請提供 domain\user 格式的認證，例如 ' Contoso\Meghan '。
 
 ## <a name="error-serviceerror0x9006-or-the-proxy-isnt-currently-available-when-migrating-to-a-windows-server-failover-cluster"></a>錯誤「ServiceError0x9006」或「目前無法使用 proxy」。 遷移至 Windows Server 容錯移轉叢集時
 
-嘗試傳輸叢集檔案伺服器的資料時，您會收到如下的錯誤：
+嘗試針對叢集檔案伺服器傳送資料時，您會收到如下的錯誤：
 
 ```
 Make sure the proxy service is installed and running, and then try again. The proxy isn't currently available.
@@ -304,21 +304,21 @@ Make sure the proxy service is installed and running, and then try again. The pr
 ServiceError0x9006,Microsoft.StorageMigration.Commands.UnregisterSmsProxyCommand
 ```
 
-如果檔案伺服器資源從其原始的 Windows Server 2019 叢集擁有者節點移至新節點，而該節點上未安裝儲存體遷移服務 Proxy 功能，就會發生此錯誤。
+如果檔案伺服器資源從原始的 Windows Server 2019 叢集擁有者節點移至新的節點，且該節點上未安裝儲存體遷移服務 Proxy 功能，則預期會發生此錯誤。
 
-因應措施是將目的地檔案伺服器資源移回您第一次設定傳輸配對時所使用的原始擁有者叢集節點。
+因應措施是，將目的地檔案伺服器資源移回您第一次設定轉移配對時使用的原始擁有者叢集節點。
 
-另一個因應措施：
+替代方法：
 
-1. 在叢集中的所有節點上安裝儲存體遷移服務 Proxy 功能。
+1. 在叢集中的所有節點上安裝「儲存體遷移服務 Proxy」功能。
 2. 在 orchestrator 電腦上執行下列儲存體遷移服務 PowerShell 命令：
 
    ```PowerShell
    Register-SMSProxy -ComputerName <destination server> -Force
    ```
-## <a name="error-dll-was-not-found-when-running-inventory-from-a-cluster-node"></a>從叢集節點執行清查時發生「找不到 Dll」錯誤
+## <a name="error-dll-was-not-found-when-running-inventory-from-a-cluster-node"></a>從叢集節點執行清查時，發生「找不到 Dll」錯誤
 
-嘗試使用儲存體遷移服務執行清查，並將目標設為 Windows Server 容錯移轉叢集一般使用檔案伺服器來源時，您會收到下列錯誤：
+嘗試以儲存體遷移服務執行清查並以 Windows Server 容錯移轉叢集為目標時，請使用檔案伺服器來源，您會收到下列錯誤：
 
 ```
 DLL not found
@@ -327,21 +327,21 @@ DLL not found
 
 若要解決此問題，請在執行儲存體遷移服務協調器的伺服器上安裝「容錯移轉叢集管理工具」 (RSAT-叢集-管理) 。
 
-## <a name="error-there-are-no-more-endpoints-available-from-the-endpoint-mapper-when-running-inventory-against-a-windows-server-2003-source-computer"></a>針對 Windows Server 2003 來源電腦執行清查時，發生「端點對應程式中沒有其他可用的端點」錯誤
+## <a name="error-there-are-no-more-endpoints-available-from-the-endpoint-mapper-when-running-inventory-against-a-windows-server-2003-source-computer"></a>針對 Windows Server 2003 來源電腦執行清查時，出現「端點對應程式中沒有可用的端點」錯誤
 
-嘗試對 Windows Server 2003 來源電腦使用儲存體遷移服務協調器執行清查時，您會收到下列錯誤：
+嘗試對 Windows Server 2003 來源電腦執行儲存體遷移服務協調器的清查時，您會收到下列錯誤：
 
 ```
 There are no more endpoints available from the endpoint mapper
 ```
 
-[KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818)更新已解決此問題。
+[KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818)更新會解決此問題。
 
-## <a name="uninstalling-a-cumulative-update-prevents-storage-migration-service-from-starting"></a>卸載累計更新可防止儲存體遷移服務啟動
+## <a name="uninstalling-a-cumulative-update-prevents-storage-migration-service-from-starting"></a>卸載累積更新會導致儲存體遷移服務無法啟動
 
-卸載 Windows Server 累積更新可能會導致儲存體遷移服務無法啟動。 若要解決此問題，您可以備份和刪除儲存體遷移服務資料庫：
+卸載 Windows Server 累計更新可能會導致儲存體遷移服務無法啟動。 若要解決此問題，您可以備份和刪除儲存體遷移服務資料庫：
 
-1. 開啟提升許可權的 cmd 提示字元，其中您是儲存體遷移服務 orchestrator 伺服器上的系統管理員成員，並執行：
+1. 開啟提升許可權的 cmd 提示字元，其中您是儲存體遷移服務協調器伺服器上的系統管理員成員，並執行：
 
      ```DOS
      TAKEOWN /d y /a /r /f c:\ProgramData\Microsoft\StorageMigrationService
@@ -359,11 +359,11 @@ There are no more endpoints available from the endpoint mapper
      ICACLS c:\ProgramData\Microsoft\StorageMigrationService /GRANT networkservice:(GA) /T /C
      ```
 
-2. 啟動儲存體遷移服務服務，這會建立新的資料庫。
+2. 啟動儲存體遷移服務服務，這將會建立新的資料庫。
 
-## <a name="error-clusctl_resource_netname_repair_vco-failed-against-netname-resource-and-windows-server-2008-r2-cluster-cutover-fails"></a>錯誤「針對網路服務名稱的 CLUSCTL_RESOURCE_NETNAME_REPAIR_VCO 失敗」和 Windows Server 2008 R2 叢集轉換失敗
+## <a name="error-clusctl_resource_netname_repair_vco-failed-against-netname-resource-and-windows-server-2008-r2-cluster-cutover-fails"></a>「針對網路服務資源 CLUSCTL_RESOURCE_NETNAME_REPAIR_VCO 失敗」錯誤，且 Windows Server 2008 R2 叢集轉換失敗
 
-嘗試在 Windows Server 2008 R2 叢集來源上執行剪下時，切換會停滯在階段「重新命名來源電腦 ...」而且您會收到下列錯誤：
+當您嘗試執行 Windows Server 2008 R2 叢集來源的剪下時，剪下會停滯于「重新命名來源電腦 ...」階段您會收到下列錯誤：
 
 ```
 Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Debug
@@ -381,11 +381,11 @@ at Microsoft.FailoverClusters.Framework.ClusterUtils.RenameFSNetName(SafeCluster
 at Microsoft.StorageMigration.Proxy.Cutover.CutoverUtils.RenameFSNetName(NetworkCredential networkCredential, Boolean isLocal, String clusterName, String fsResourceId, String nnResourceId, String newDnsName, CancellationToken ct)    [d:\os\src\base\dms\proxy\cutover\cutoverproxy\CutoverUtils.cs::RenameFSNetName::1510]
 ```
 
-這個問題是由舊版 Windows Server 中遺失的 API 所造成。 目前沒有任何方法可以遷移 Windows Server 2008 和 Windows Server 2003 叢集。 您可以在 Windows Server 2008 R2 叢集上執行清查和傳輸，而不會發生問題，然後手動變更叢集的來源檔案伺服器資源網路名稱和 IP 位址，然後將目的地叢集的網路名稱和 IP 位址變更為符合原始來源，以手動執行轉換。
+此問題是舊版 Windows Server 中遺失的 API 所造成。 目前沒有任何方法可以遷移 Windows Server 2008 和 Windows Server 2003 叢集。 您可以在 Windows Server 2008 R2 叢集上執行清查和傳輸，而不會發生問題，然後手動變更叢集的來源檔案伺服器資源網路名稱和 IP 位址，然後將目的地叢集的網路名稱和 IP 位址變更為符合原始來源，以手動方式執行切換。
 
-## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer-when-using-static-ips"></a>在來源電腦上的「38% 對應網路介面已停止回應」使用靜態 Ip 時
+## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer-when-using-static-ips"></a>切換停止回應來源電腦上的「38% 對應網路介面 ...」使用靜態 Ip 時
 
-當嘗試在來源電腦上執行剪下時，已將來源電腦設定為使用新的靜態 (不是 DHCP) 在一或多個網路介面上的 IP 位址時，切換會停滯在階段「38% 對應來源電腦上的網路介面 ...」而且您會在儲存體遷移服務事件記錄檔中收到下列錯誤：
+當您嘗試在來源電腦上執行剪下時，已將來源電腦設定為使用新的靜態 (而非 DHCP) 一個或多個網路介面上的 IP 位址，則會停滯于來源電腦上的「38% 對應網路介面 ...」階段而且您會在儲存體遷移服務事件記錄檔中收到下列錯誤：
 
 ```
 Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Admin
@@ -410,29 +410,29 @@ Error Message: Unknown error (0xa00a)
 Guidance: Confirm that the Netlogon service on the computer is reachable through RPC and that the credentials provided are correct.
 ```
 
-檢查來源電腦顯示原始 IP 位址無法變更。
+檢查來源電腦會顯示原始 IP 位址無法變更。
 
-如果您在 Windows 系統管理中心的 [設定轉換] 畫面上選取 [使用 DHCP]，則只有在指定新的靜態 IP 位址時，才會發生此問題。
+只有當您指定新的靜態 IP 位址時，才會在 Windows Admin Center 的「設定轉換」畫面上選取 [使用 DHCP]，就不會發生此問題。
 
 此問題有兩個解決方案：
 
-1. [KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818)更新會先解決此問題。 先前的程式碼缺失導致無法使用靜態 IP 位址。
+1. 此問題最初是由 [KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818) 更新所解決。 先前的程式碼缺失阻礙了靜態 IP 位址的所有使用。
 
-2. 如果您尚未在來源電腦的網路介面上指定預設閘道 IP 位址，即使 KB4537818 更新，仍會發生此問題。 若要解決此問題，請使用網路連線小程式，在網路介面上設定有效的預設 IP 位址 ( # A0) 或 New-netroute Powershell Cmdlet。
+2. 如果您未在來源電腦的網路介面上指定預設閘道 IP 位址，即使是 KB4537818 更新，也會發生此問題。 若要解決此問題，請使用網路連線小程式（ ( # A0) 或 >new-netroute Powershell Cmdlet）在網路介面上設定有效的預設 IP 位址。
 
 ## <a name="slower-than-expected-re-transfer-performance"></a>比預期的重新傳輸效能慢
 
-完成傳輸之後，如果來源伺服器上的資料同時發生變更，則在傳輸時間執行後續的重新傳輸時，您可能不會看到更大的改善。
+完成轉移之後，執行後續的相同資料重新傳送，即使來源伺服器上的資料同時變更，您也可能不會看到傳輸時間的大幅改善。
 
-傳輸非常大量的檔案和嵌套資料夾時，這是預期的行為。 資料的大小不相關。 我們先對[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)中的這項行為進行改良，並繼續優化傳輸效能。 若要進一步調整效能，請參閱[優化清查和傳輸效能](https://docs.microsoft.com/windows-server/storage/storage-migration-service/faq#optimizing-inventory-and-transfer-performance)。
+這是傳輸大量檔案和嵌套資料夾時的預期行為。 資料的大小不相關。 我們先在 [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) 中改進這項行為，並持續將傳輸效能優化。 若要進一步調整效能，請參閱將 [清查和傳輸效能優化](https://docs.microsoft.com/windows-server/storage/storage-migration-service/faq#optimizing-inventory-and-transfer-performance)。
 
-## <a name="data-does-not-transfer-user-renamed-when-migrating-to-or-from-a-domain-controller"></a>在網域控制站上進行遷移時，資料不會傳輸、使用者重新命名
+## <a name="data-does-not-transfer-user-renamed-when-migrating-to-or-from-a-domain-controller"></a>資料不會傳輸，使用者在遷移至網域控制站或從網域控制站遷移時重新命名
 
-開始從或到網域控制站的傳輸之後：
+從或到網域控制站的傳輸開始之後：
 
- 1. 不會遷移任何資料，也不會在目的地上建立任何共用。
- 2. Windows 系統管理中心顯示紅色錯誤符號，沒有錯誤訊息
- 3. 一或多個 AD 使用者和網域本機群組已變更其名稱和/或 Windows 前2000的登入屬性
+ 1. 不會遷移任何資料，也不會在目的地建立任何共用。
+ 2. Windows Admin Center 中顯示紅色錯誤符號，且沒有錯誤訊息
+ 3. 一或多個 AD 使用者和網域本機群組已變更其名稱和/或 Windows 2000 之前的登入屬性
 
  4. 您會在儲存體遷移服務協調器上看到事件3509：
 
@@ -458,27 +458,27 @@ Guidance: Confirm that the Netlogon service on the computer is reachable through
         at Microsoft.StorageMigration.Service.DeviceHelper.MigrateSecurity(IDeviceRecord sourceDeviceRecord, IDeviceRecord destinationDeviceRecord, TransferConfiguration config, Guid proxyId, CancellationToken cancelToken)
     ```
 
-    如果您嘗試使用儲存體遷移服務從網域控制站進行遷移，並使用 [遷移使用者和群組] 選項來重新命名或重複使用帳戶，這是預期的行為。 而不是選取 [不要傳輸使用者和群組]。 [儲存體遷移服務不支援](faq.md)DC 遷移。 因為 DC 不具有真正的本機使用者和群組，所以儲存體遷移服務會將這些安全性主體視為在兩部成員伺服器之間進行遷移時的處理方式，並嘗試依照指示來調整 Acl，因而導致錯誤和已損壞或複製的帳戶。
+    如果您嘗試使用儲存體遷移服務從網域控制站遷移或移至網域控制站，並使用 [遷移使用者和群組] 選項來重新命名或重複使用帳戶，則這是預期的行為。 而不是選取 [不要傳送使用者和群組]。 [儲存體遷移服務不支援](faq.md)DC 遷移。 因為 DC 沒有真正的本機使用者和群組，所以儲存體遷移服務會將這些安全性主體視為在兩個成員伺服器之間進行遷移，並嘗試依指示調整 Acl，進而導致錯誤和損壞或複製的帳戶。
 
-如果您已多次執行轉移，請執行下列動作：
+如果您已經執行轉移一次或多次：
 
- 1. 對 DC 使用下列 AD PowerShell 命令，以找出任何修改過的使用者或群組 (變更 SearchBase 以符合您的網域辨別名稱) ：
+ 1. 針對 DC 使用下列 AD PowerShell 命令，以找出任何修改過的使用者或群組 (變更 SearchBase 以符合網域辨別名稱) ：
 
     ```PowerShell
     Get-ADObject -Filter 'Description -like "*storage migration service renamed*"' -SearchBase 'DC=<domain>,DC=<TLD>' | ft name,distinguishedname
     ```
 
- 2. 對於以原始名稱傳回的任何使用者，請編輯其「使用者登入名稱 (Windows 2000 前) 」，以移除儲存體遷移服務所新增的隨機字元尾碼，讓此使用者可以登入。
+ 2. 若為任何以其原始名稱傳回的使用者，請編輯其「使用者登入名稱 (Windows 2000 前) 」，以移除儲存體遷移服務新增的隨機字元尾碼，讓此使用者可以登入。
 
- 3. 針對以原始名稱傳回的任何群組，編輯其「組名 (Windows 2000 前) 」，以移除儲存體遷移服務所新增的隨機字元尾碼。
+ 3. 針對以其原始名稱傳回的任何群組，請編輯其「組名 (Windows 2000 之前的) 」，以移除儲存體遷移服務新增的隨機字元尾碼。
 
- 4. 針對任何已停用的使用者或名稱現在包含儲存體遷移服務所新增之後綴的群組，您可以刪除這些帳戶。 您可以確認稍後新增的是使用者帳戶，因為它們只會包含網域使用者群組，而且會有與儲存體遷移服務傳輸開始時間相符的建立日期/時間。
+ 4. 對於任何已停用的使用者或名稱現在包含儲存體遷移服務新增尾碼的群組，您可以刪除這些帳戶。 您可以確認稍後新增使用者帳戶，因為這些帳戶只會包含網域使用者群組，而且會建立符合儲存體遷移服務傳輸開始時間的日期/時間。
 
-    如果您想要使用儲存體遷移服務搭配網域控制站來進行傳輸，請務必在 Windows 系統管理中心的 [傳輸設定] 頁面上，選取 [不要傳輸使用者和群組]。
+    如果您想要使用儲存體遷移服務搭配網域控制站來進行傳輸，請務必在 Windows Admin Center 的 [傳輸設定] 頁面上，選取 [不要傳送使用者和群組]。
 
-## <a name="error-53-failed-to-inventory-all-specified-devices-when-running-inventory"></a>執行清查時，發生錯誤53「無法清查所有指定的裝置」
+## <a name="error-53-failed-to-inventory-all-specified-devices-when-running-inventory"></a>執行清查時，出現錯誤53：「無法清查所有指定的裝置」
 
-嘗試執行清查時，您會收到：
+當您嘗試執行清查時，您會收到：
 
 ```
 Failed to inventory all specified devices
@@ -530,16 +530,16 @@ Stack trace:
     at Microsoft.Win32.RegistryKey.OpenRemoteBaseKey(RegistryHive hKey, String machineName, RegistryView view)
 ```
 
-在這個階段，儲存體遷移服務協調器正在嘗試進行遠端登入讀取以判斷來源電腦設定，但來源伺服器拒絕，指出登錄路徑不存在。 可能的原因如下：
+在這個階段，儲存體遷移服務協調器正在嘗試遠端登入讀取以判斷來源機器設定，但來源伺服器正在拒絕，指出登錄路徑不存在。 可能的原因如下：
 
  - 來源電腦上沒有執行遠端登入服務。
- - 防火牆不允許從 Orchestrator 對來源伺服器進行遠端登入連線。
+ - 防火牆不允許從 Orchestrator 對來源伺服器進行遠端登入連接。
  - 來源遷移帳戶沒有連接到來源電腦的遠端登入權利。
- - 來源遷移帳戶在來源電腦的登錄中，沒有 [HKEY_LOCAL_MACHINE \Software\microsoft\windows server\ NT\CurrentVersion] 或 [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\LanmanServer] 底下的 [讀取] 許可權
+ - 來源遷移帳戶在來源電腦的登錄、"HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows NT\CurrentVersion" 或 "HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\LanmanServer" 底下沒有讀取權限
 
-## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer"></a>在來源電腦上的「38% 對應網路介面已停止回應」
+## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer"></a>切換停止回應來源電腦上的「38% 對應網路介面 ...」
 
-嘗試在來源電腦上執行剪下時，切換會停滯在來源電腦上的「38% 對應網路介面 ...」而且您會在儲存體遷移服務事件記錄檔中收到下列錯誤：
+當您嘗試在來源電腦上執行剪下時，剪住會停滯于來源電腦上的「38% 對應網路介面 ...」階段而且您會在儲存體遷移服務事件記錄檔中收到下列錯誤：
 
 ```
 Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Admin
@@ -562,27 +562,27 @@ Error Message: Unknown error (0xa00a)
 Guidance: Confirm that the Netlogon service on the computer is reachable through RPC and that the credentials provided are correct.
 ```
 
-此問題是由在來源電腦上設定下列登錄值的群組原則所造成： "HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\LocalAccountTokenFilterPolicy = 0"
+發生此問題的原因是在來源電腦上設定下列登錄值的群組原則： "HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\LocalAccountTokenFilterPolicy = 0"
 
-這項設定不是標準群組原則的一部分，而是使用[Microsoft 安全性合規性工具](https://www.microsoft.com/download/details.aspx?id=55319)組所設定的附加元件：
+這項設定不是標準群組原則的一部分，而是使用 [Microsoft 安全性合規性工具](https://www.microsoft.com/download/details.aspx?id=55319)組設定的附加元件：
 
-- Windows Server 2012 R2：「電腦建構管理的 Templates\SCM：將雜湊 Mitigations\Apply UAC 限制傳遞至網路登入上的本機帳戶」
+- Windows Server 2012 R2：「電腦管理 \ Templates\SCM：將 UAC 限制傳遞至網路登入時的本機帳戶」
 
-- 孤行伺服器2016：「電腦建構管理的 Templates\MS 安全性 Guide\Apply 在網路登入上對本機帳戶的 UAC 限制」
+- 孤行伺服器2016：「電腦的 Templates\MS 安全性 Guide\Apply 安全性將 UAC 限制用於網路登入上的本機帳戶」
 
-您也可以使用群組原則喜好設定，搭配自訂的登錄設定。 您可以使用 GPRESULT 工具來判斷哪個原則要將此設定套用至來源電腦。
+您也可以使用群組原則喜好設定來設定自訂登錄設定。 您可以使用 GPRESULT 工具來判斷要將此設定套用到來源電腦的原則。
 
-儲存體遷移服務會暫時啟用[LocalAccountTokenFilterPolicy](https://support.microsoft.com/help/951016/description-of-user-account-control-and-remote-restrictions-in-windows)做為剪下程式的一部分，然後在完成時將其移除。 當群組原則 (GPO) 套用衝突的群組原則物件時，它會覆寫儲存體遷移服務並防止剪下。
+儲存體遷移服務會暫時啟用 [LocalAccountTokenFilterPolicy](https://support.microsoft.com/help/951016/description-of-user-account-control-and-remote-restrictions-in-windows) 作為剪下流程的一部分，然後在完成時將其移除。 當群組原則將衝突的群組原則物件套用 (GPO) 時，它會覆寫儲存體遷移服務並防止剪下。
 
 若要解決此問題，請使用下列其中一個選項：
 
-1. 暫時將來源電腦從套用此衝突 GPO 的 Active Directory OU 中移出。
+1. 暫時將來源電腦從套用此衝突 GPO 的 Active Directory OU 移出。
 2. 暫時停用套用此衝突原則的 GPO。
-3. 暫時建立新的 GPO，將此設定設為停用，並套用至來源伺服器的特定 OU，其優先順序高於任何其他 Gpo。
+3. 暫時建立新的 GPO，將此設定設為 [停用]，並套用至來源伺服器的特定 OU，優先順序高於其他任何 Gpo。
 
 ## <a name="inventory-or-transfer-fail-when-using-credentials-from-a-different-domain"></a>使用來自不同網域的認證時，清查或傳輸失敗
 
-當您嘗試使用儲存體遷移服務執行清查或轉移，並以 Windows Server 為目標，而同時從目標伺服器以外的其他網域使用遷移認證時，您會收到下列錯誤
+當您在使用與目標伺服器不同的網域中使用遷移認證時，嘗試執行清查或傳送儲存體遷移服務，並以 Windows Server 為目標時，您會收到下列錯誤
 ```
 Exception from HRESULT:0x80131505
 
@@ -591,7 +591,7 @@ The server was unable to process the request due to an internal error
 04/28/2020-11:31:01.169 [Error] Failed device discovery stage SystemInfo with error: (0x490) Could not find computer object 'myserver' in Active Directory    [d:\os\src\base\dms\proxy\discovery\discoveryproxy\DeviceDiscoveryOperation.cs::TryStage::1042]
 ```
 
-進一步檢查記錄，會顯示遷移帳戶和從或兩者遷移的伺服器位於不同的網域中：
+進一步檢查記錄，會顯示從或兩個遷移的遷移帳戶和伺服器位於不同的網域中：
 
 ```
 06/25/2020-10:11:16.543 [Info] Creating new job=NedJob user=**CONTOSO**\ned
@@ -602,13 +602,13 @@ The server was unable to process the request due to an internal error
 GetOsVersion(fileserver75.**corp**.contoso.com)    [d:\os\src\base\dms\proxy\common\proxycommon\CimSessionHelper.cs::GetOsVersion::66] 06/25/2020-10:20:45.368 [Info] Computer 'fileserver75.corp.contoso.com': OS version
 ```
 
-此問題是由儲存體遷移服務中的程式碼脫離所造成。 若要解決此問題，請使用來源與目的地電腦所屬的相同網域中的遷移認證。 例如，如果來源和目的地電腦屬於 "contoso.com" 樹系中的 "corp.contoso.com" 網域，請使用 ' corp\myaccount ' 來執行遷移，而不是 ' contoso\myaccount ' 認證。
+此問題是因為儲存體遷移服務中的程式碼缺失所造成。 若要解決此問題，請使用來源和目的地電腦所屬的相同網域中的遷移認證。 比方說，如果來源和目的地電腦屬於 "contoso.com" 樹系中的 "corp.contoso.com" 網域，請使用 ' corp\myaccount ' 來執行遷移，而不是 ' contoso\myaccount ' 認證。
 
-## <a name="inventory-fails-with-element-not-found"></a>清查失敗，發生「找不到元素」
+## <a name="inventory-fails-with-element-not-found"></a>清查失敗，並出現「找不到元素」
 
 請考慮下列案例：
 
-您的來源伺服器具有 DNS 主機名稱，Active Directory 名稱超過15個 unicode 字元，例如 "iamaverylongcomputername"。 根據設計，Windows 不會讓您設定此長時間的舊版 NetBIOS 名稱，並在伺服器名為時警告您將 NetBIOS 名稱截斷為15個 unicode 寬字元 (範例： "iamaverylongcom" ) 。 當您嘗試清查這部電腦時，您會在 Windows 系統管理中心和事件記錄檔中收到：
+您有一個來源伺服器的 DNS 主機名稱，且 Active Directory 名稱超過15個 unicode 字元，例如 "iamaverylongcomputername"。 根據設計，Windows 不會讓您設定舊的 NetBIOS 名稱，如此一來，當伺服器的名稱會截斷為15個 unicode 寬字元時，就會收到警告， (範例： "iamaverylongcom" ) 。 當您嘗試清查這部電腦時，您會在 Windows Admin Center 和事件記錄檔中收到：
 
 ```DOS
 "Element not found"
@@ -635,7 +635,7 @@ Error Message:
 Guidance: Check the detailed error and make sure the inventory requirements are met. The inventory couldn't determine any aspects of the specified source computer. This could be because of missing permissions or privileges on the source or a blocked firewall port.
 ```
 
-此問題是由儲存體遷移服務中的程式碼脫離所造成。 唯一的解決方法是將電腦重新命名為與 NetBIOS 名稱相同的名稱，然後使用[NETDOM COMPUTERNAME/add](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc835082(v=ws.11))來新增其他電腦名稱稱，其中包含開始清查之前所使用的較長名稱。 儲存體遷移服務支援遷移替代的電腦名稱稱。
+此問題是因為儲存體遷移服務中的程式碼缺失所造成。 唯一的因應措施是將電腦重新命名為具有與 NetBIOS 名稱相同的名稱，然後使用 [NETDOM COMPUTERNAME/add](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc835082(v=ws.11)) 來新增替代的電腦名稱稱，其中包含在啟動清查之前所使用的較長名稱。 儲存體遷移服務支援遷移替代的電腦名稱稱。
 
 ## <a name="see-also"></a>另請參閱
 
