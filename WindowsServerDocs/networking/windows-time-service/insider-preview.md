@@ -1,16 +1,16 @@
 ---
 title: Windows Server 2019 中 Windows Time Service 功能的 Insider Preview
 description: Windows Server 2019 中新的 Windows Time Service 功能
-author: dcuomo
-ms.author: dacuo
+author: dahavey
+ms.author: dahavey
 ms.date: 06/06/2020
 ms.topic: article
-ms.openlocfilehash: 6a07290efff6d36f58a75c409eb9f50284218bd1
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 01968fe51d25f394e346cebc8dbeafd2dd17ca4a
+ms.sourcegitcommit: b5b040a47cf48c94852de9aad8b91475f891d2f7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953884"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88563368"
 ---
 # <a name="insider-preview"></a>Insider Preview
 
