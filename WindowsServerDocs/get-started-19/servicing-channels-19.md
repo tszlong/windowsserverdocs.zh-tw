@@ -1,17 +1,17 @@
 ---
-title: 維護通道
-description: Windows Server 服務通道說明 - LTSC 和 SAC
+title: Windows Server 維護通道
+description: Windows Server 維護通道說明 - LTSC 和 SAC
 ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 05/21/2019
-ms.openlocfilehash: 47fd1d50e9f90fb6617e2ded4bff3efeab5cd117
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 49de69c5a21a9c16012d79609784ff89395358db
+ms.sourcegitcommit: 893b9a24fd2efe30f5af909e3aa1f25907a17427
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969965"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88681279"
 ---
 # <a name="windows-server-servicing-channels-ltsc-and-sac"></a>Windows Server 維護通道：LTSC 和 SAC
 
@@ -36,8 +36,8 @@ Windows Server 客戶有兩個適用的主要發行通道：長期維護通道�
 
 半年通道可供大量授權客戶搭配[軟體保證](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx)，以及透過 Azure Marketplace 或其他雲端/主機服務提供者和忠誠度方案 (例如 Visual Studio 訂閱) 來享用。
 
-> [!NOTE]
-> **目前的半年通道版本是 Windows Server 版本 1909**。 如果您想將伺服器加入這個通道，就應該安裝 Windows Server 版本 1909，而您可以在 Server Core 模式下進行安裝，或是將其安裝成執行於容器中的 Nano 伺服器。 不支援從長期維護通道版本中進行就地升級，因為這些升級位在**不同的發行管道**。 半年通道版本未更新 – 這是半年通道中的下一個 Windows Server 版本。
+> [!Note]
+> **目前的半年通道版本是 Windows Server 版本 2004**。 如果您想將伺服器加入這個通道，就應該安裝 Windows Server 版本 2004，其可以在 Server Core 模式下進行安裝，或是將其安裝成執行於容器中的 Nano 伺服器。 不支援從長期維護通道版本中進行就地升級，因為這些升級位在**不同的發行管道**。 半年通道版本未更新 – 這是半年通道中的下一個 Windows Server 版本。
 
 在此模型中，Windows Server 版本可依發行年份及月份來識別：例如，2017 年 9 月發行的版本會以**版本 1709** 做為識別。 半年通道中的 Windows Server 全新版本會每年發行兩次。 每個發行版本的支援週期為 18 個月。
 
@@ -45,7 +45,8 @@ Windows Server 客戶有兩個適用的主要發行通道：長期維護通道�
 
 以下是要考慮的關鍵差異：
 
-- 您是否需要針對 Devops、容器和微服務加強新技術？ 若是，您應該考慮透過安裝 **Windows Server 版本 1909** 來**加入半年通道**。 如本主題所述，您將會每年收到兩次新版本，每個版本各有 18 個月的主要生產環境支援。 您可以透過大量授權、Azure 或 Visual Studio 訂閱服務取得項目。 目前，如果您想在生產環境中執行產品，半年通道發行需要大量授權和軟體保證。
+- 您需要迅速創新嗎？ 您需要優先取得最新的 Windows Server 功能嗎？ 您需要支援快節奏的混合式應用程式、DevOps 和 Hyper-V 網狀架構嗎？ 若是，您應該考慮透過安裝 **Windows Server 版本 2004** 來**加入半年通道**。 如本主題所述，您將會每年收到兩次新版本，每個版本各有 18 個月的主要生產環境支援。 您可以透過大量授權、Azure 或 Visual Studio 訂閱服務取得項目。 目前，如果您想在生產環境中執行產品，半年通道發行需要大量授權和軟體保證。
+
 - 您需要穩定性與可預測性嗎？ 您需要在實體伺服器上執行虛擬機器和傳統工作負載嗎？ 若是，您應該考慮**將那些伺服器保持在長期維護通道**。 目前的 LTSC 版本是 **Windows Server 2019**。 如本主題所述，您可以每 2-3 年存取新版本，每個版本具備 5 年主要支援外加 5 年延伸支援。 LTSC 版本可透過所有發行機制提供。 無論使用何種授權模型，任何人都能取得 LTSC 中的發行版本。
 
 下表摘要說明通道間的主要差異：
@@ -170,12 +171,12 @@ State   :     Installed
 
 ## <a name="additional-references"></a>其他參考資料
 
-[Nano Server 在 Windows Server 半年通道中的變更](../get-started/nano-in-semi-annual-channel.md)
+- [Nano Server 在 Windows Server 半年通道中的變更](../get-started/nano-in-semi-annual-channel.md)
 
-[Windows Server 支援週期](https://support.microsoft.com/lifecycle)
+- [Windows Server 支援週期](https://support.microsoft.com/lifecycle)
 
-[判斷是否正在執行 Server Core](/previous-versions/windows/desktop/legacy/hh846315(v=vs.85)?f=255&MSPPError=-2147217396)
+- [判斷是否正在執行 Server Core](https://msdn.microsoft.com/library/hh846315%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396)
 
-[GetProductInfo 函式](/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getproductinfo)
+- [GetProductInfo 函式](https://docs.microsoft.com/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getproductinfo)
 
-[軟體清查記錄 Cmdlet](/powershell/module/softwareinventorylogging/?view=winserver2012R2-ps)
+- [軟體清查記錄 Cmdlet](https://docs.microsoft.com/powershell/module/softwareinventorylogging/?view=winserver2012R2-ps)
