@@ -5,18 +5,34 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 04/20/2020
+ms.date: 08/19/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 985d7b015c2ff3fe1d117e8277b445744f6a51e6
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: dbaaafe2c01d41a9786d6718bad850dc08deaa81
+ms.sourcegitcommit: 6d991b16a6d9129e1f5d1ca7d688bd621b72d586
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961852"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88638875"
 ---
 # <a name="whats-new-in-the-windows-store-client"></a>Windows Store 用戶端中的新功能
 
 我們會定期更新 [Windows Store 用戶端](windows.md)，進而新增功能並修正問題。 您可以在這裡找到最新的更新。
+
+## <a name="updates-for-version-1021519-insider"></a>10.2.1519 版的更新 (測試人員)
+
+*發行日期：2020/8/19*
+
+- 重新編寫用戶端以使用與 iOS、macOS 和 Android 用戶端相同的基礎 RDP 核心引擎。
+- 已新增對 Windows 虛擬桌面的 Azure Resource Manager 整合版支援。
+- 已新增對 x64 和 ARM64 的支援。
+- 已將側邊面板設計更新為全螢幕。
+- 已新增對淺色和深色模式的支援。
+- 已新增訂閱和連線至主權雲端部署的功能。
+- 已新增可在發行至製造 (RTM) 中啟用工作區 (書籤) 備份與還原的功能。
+- 已新增功能，可在訂閱過程中使用現有 Azure Active Directory (Azure AD) 權杖，減少使用者必須登入的次數。
+- 更新的訂用帳戶現在可以偵測您所使用的是 Windows 虛擬桌面或 Windows 虛擬桌面 (傳統)。
+- 已修正將檔案複製到遠端電腦的問題。
+- 已修正按鈕經常回報的協助工具問題。
 
 ## <a name="updates-for-version-1011215"></a>10.1.1215 版的更新
 
@@ -60,7 +76,7 @@ ms.locfileid: "87961852"
 - 已修正在連線仍處於作用中狀態時，關閉用戶端視窗會當機的問題。
 - 已修正在將用戶端最小化之後，重新連線會造成停止回應的問題。
 - 允許在群組中的任何位置拖曳桌面。
-- 確保從 jumplist 啟動連線時，會按照需要產生個別的視窗。
+- 確保從捷徑清單結果啟動連線時，會視需要在單獨的視窗中顯示。
 - 其他 Bug 修正。
 
 ## <a name="updates-for-version-1011060"></a>10.1.1060 版的更新

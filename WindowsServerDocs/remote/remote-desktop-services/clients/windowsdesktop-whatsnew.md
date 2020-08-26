@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 08/11/2020
+ms.date: 08/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f3a2ff6268cbccc2d354227b577441a270faf9f
-ms.sourcegitcommit: f3a72c06e739d9ee9d8cd7e8259ccee8db7c7523
+ms.openlocfilehash: b23c19304aa7773dbb3c4e1406e065fb68947c5d
+ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88089967"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88702837"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面用戶端的新功能
 
@@ -57,7 +57,7 @@ ms.locfileid: "88089967"
 
 下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zeHS)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zrAd)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zeHR)
 
-- 已更新 [訂閱] 選項的自動探索邏輯，以支援 Windows 虛擬桌面 2020 年春季版更新。 只有春季版更新資源的客戶應該不再需要提供 2019 年秋季版的同意。
+- 已更新 [訂閱] 選項的自動探索邏輯，以支援 Windows 虛擬桌面的 Azure Resource Manager 整合版本。 只有 Windows 虛擬桌面資源的客戶，應不再需要同意 Windows 虛擬桌面 (傳統)。
 - 已改善對高 DPI 裝置的支援，縮放比例最高可達 400%。
 - 已修正未顯示中斷連線對話方塊的問題。
 - 已修正命令列工具提示的顯示期間超出預期的問題。
@@ -71,7 +71,7 @@ ms.locfileid: "88089967"
 下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xsGB)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xd8P)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xq7m)
 
 - 訂閱時，您現在可以選擇您的帳戶，而不用輸入電子郵件地址。
-- 新增一個新的**使用 URL 訂閱**選項，您可以使用該選項指定要訂閱的工作區 URL，或當無法自動找到您的資源時利用[電子郵件探索](../rds-email-discovery.md) (如果有的話)。 這類似於其他遠程桌面用戶端中的訂用帳戶處理程序。 這可以用來直接訂閱 WVD 2020 年春季更新工作區。
+- 新增一個新的**使用 URL 訂閱**選項，您可以使用該選項指定要訂閱的工作區 URL，或當無法自動找到您的資源時利用[電子郵件探索](../rds-email-discovery.md) (如果有的話)。 這類似於其他遠程桌面用戶端中的訂用帳戶處理程序。 這可以用來直接訂閱 Windows 虛擬桌面工作區。
 - 新增了對使用新的 [URI 配置](remote-desktop-uri.md)來訂閱工作區的支援，其可透過電子郵件傳送給使用者或新增至支援網站。
 - 已新增新的 [連線資訊] 對話方塊，以提供桌面和應用程式工作階段的用戶端、網路和伺服器詳細資料。 在全螢幕模式下，您可以從連線列存取此對話方塊，而在視窗模式下，則可以從 [系統] 功能表存取。
 - 在視窗模式下啟動的桌面工作階段現在一律會最大化，而不是在視窗最大化時進入全螢幕模式。 使用 [系統] 功能表中的 [全螢幕] 選項，即可進入全螢幕模式。

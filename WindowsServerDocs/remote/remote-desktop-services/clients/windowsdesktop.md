@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 05/26/2020
+ms.date: 08/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: fa1c713b06e63c919bc2e42e8d4ba3c14eecf8f0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 5bd3e1d5f06e5c415b4f300d9a2c8a9b390e5051
+ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971605"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88702827"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>開始使用 Windows 桌面用戶端
 
@@ -70,8 +70,8 @@ ms.locfileid: "87971605"
 1. 從用戶端的主頁面中，點選 [訂閱 URL]。
 2. 輸入工作區 URL 或您的電子郵件地址：
    - 如果您使用**工作區 URL**，請使用系統管理員提供的帳戶。 如果從 Windows 虛擬桌面存取資源，您可以使用下列其中一個 URL：
-     - Windows 虛擬桌面 2019 年秋季版：`https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`
-     - Windows 虛擬桌面 2020 年春季版：`https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`
+     - Windows 虛擬桌面 (傳統)：`https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`
+     - Windows 虛擬桌面：`https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`
    - 若要使用**電子郵件**，請輸入您的電子郵件地址。 這會告訴用戶端搜尋與您的電子郵件地址相關聯的 URL (如果系統管理員已設定[電子郵件探索](../rds-email-discovery.md))。
 3. 點選 [下一步]。
 4. 出現提示時，使用您的使用者帳戶登入。

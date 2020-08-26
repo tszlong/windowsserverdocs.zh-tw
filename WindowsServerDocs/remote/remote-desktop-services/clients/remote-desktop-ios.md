@@ -6,14 +6,14 @@ ms.assetid: 03ec5a3d-d3f2-4afd-9405-ae58b6ecc91c
 author: Heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 07/16/2020
+ms.date: 08/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 723fa40e1c2d446381b333eee1289a25adefd5d8
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: fd8e1da0edd1e49ad0f43420e662a79871ee28f0
+ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997370"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88702847"
 ---
 # <a name="get-started-with-the-ios-client"></a>開始使用 iOS 用戶端
 
@@ -72,8 +72,8 @@ ms.locfileid: "87997370"
 2. 在 [摘要 URL] 欄位中，輸入所要新增摘要的 URL。 此 URL 可以是 URL 或電子郵件地址。
    - 如果您使用 URL，請使用系統管理員提供給您的帳戶。
       - 此 URL 通常是 Windows 虛擬桌面 URL。 您要使用的版本取決於您所使用的 Windows 虛擬桌面版本。
-        - 若為 2019 秋季版，請使用 `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`。
-        - 若為 2020 春季版，請使用 `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`。
+        - 若為 Windows 虛擬桌面 (傳統)，請使用 `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`。
+        - 若為 Windows 虛擬桌面，請使用 `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`。
    - 如果您使用電子郵件地址，請輸入您的電子郵件地址。 輸入您的電子郵件地址會告訴用戶端搜尋與您的電子郵件地址相關聯的 URL (如果系統管理員是這樣設定伺服器的話)。
 3. 點選 [下一步]。
 4. 出現提示時，請提供您的認證。

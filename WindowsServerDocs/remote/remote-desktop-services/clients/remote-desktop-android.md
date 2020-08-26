@@ -6,14 +6,14 @@ ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 07/16/2020
+ms.date: 08/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 70d334aa13b96a210a2b168129119d09b0297f20
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 90a0796818a2beb7e592eae1556999729b2d9ab2
+ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970145"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88702867"
 ---
 # <a name="get-started-with-the-android-client"></a>開始使用 Android 用戶端
 
@@ -75,8 +75,8 @@ ms.locfileid: "87970145"
 1. 在 [連線中心] 上，點選 **+** ，然後點選 [遠端資源摘要]。
 2. 輸入**摘要 URL**。 這可以是 URL 或電子郵件地址：
    - 此 **URL** 是由您的系統管理員提供給您的 RD Web 存取伺服器。如果從 Windows 虛擬桌面存取資源，則可以視您所用的版本使用下列其中一個 URL：
-     - 如果使用的是 2019 秋季版，請使用：`https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`。
-     - 如果使用的是 2020 春季版，請使用：`https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`。
+     - 若正在使用 Windows 虛擬桌面 (傳統)，請使用：`https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`。
+     - 若正在使用 Windows 虛擬桌面，請使用：`https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`。
    - 如果您打算使用**電子郵件**，請在此欄位中輸入您的電子郵件地址。 這會指示用戶端搜尋與您電子郵件地址相關聯的 RD Web 存取伺服器 (如果系統管理員已加以設定)。
 3. 點選 [下一步]。
 4. 出現提示時，請提供您的登入資訊。 提示內容可能會根據部署而有所不同，可能包括：

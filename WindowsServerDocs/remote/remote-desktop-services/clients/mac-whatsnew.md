@@ -5,20 +5,64 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 04/08/2020
+ms.date: 08/19/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e8769dd5784bcbac5c5384316564150801c1eb0e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 72d828099d8dfe29639789f526533a7bb1ba159d
+ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87946511"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88702857"
 ---
 # <a name="whats-new-in-the-macos-client"></a>macOS 用戶端中的新功能
 
 我們會定期更新[適用於 macOS 的遠端桌面用戶端](remote-desktop-mac.md)，進而新增功能並修正問題。 您可以在這裡找到最新的更新。
 
 如果您遇到任何問題，可以隨時導覽至 [協助]   > [回報問題]  與我們連絡。
+
+## <a name="updates-for-version-1040"></a>10.4.0 版的更新
+
+*發行日期：2020/8/20*
+
+在此版本中，我們已對基礎程式碼進行重大更新，這些程式碼可為所有用戶端提供遠端桌面體驗。 我們也加入了一些新功能，並解決了錯誤報表中顯示的錯誤 (Bug) 和損毀。 進行的一些變更如下：
+
+- 電腦快速連線 (Cmd+K) 可讓您連接到電腦，而不需要建立書籤。
+- 自動重新連線現在可從電腦連線的暫時性網路問題中復原。
+- 當暫停的 MacBook 繼續執行時，可以使用自動重新連線來重新連線至任何已中斷連線的電腦連線。
+- 已新增在訂閱和連線到 Windows 虛擬桌面資源時，對 HTTP Proxy 的支援。
+- 已實作使用 PAC 檔案對 HTTP Proxy 自動設定的支援。
+- 提供對 NETBIOS 名稱解析的整合支援，讓您可以更輕鬆地連線到區域網路上的電腦。
+- 已修正當應用程式處於焦點狀態時，系統功能表列無法回應的問題。
+- 已修正可能造成伺服器上解密錯誤的用戶端競爭情形。
+- 針對涉及 Retina 類別監視器的 multimon 案例，改善了監視器版面配置和幾何啟發學習法的功能。
+- 現在，會在跨工作階段重新導向案例中維護 multimon 版面配置設定。
+- 已解決無法在 multimon 案例中卸除功能表列的問題。
+- 與 macOS Keychain 互動的使用者帳戶 UI，現在會呈現 Keychain 存取錯誤。
+- 現在，在工作區訂用帳戶期間按下 [取消]，會導致沒有任何內容新增到「連線中心」。
+- 已為 Cmd + Z 和 Cmd + F 新增按鍵對應，以分別對應至 Ctrl+Z 和 Ctrl+F。
+- 已修正導致遠端應用程式在啟動時在「連線中心」後開啟的錯誤。
+- 已解決在 macOS 10.15 上播放 AAC 音訊會導致用戶端停頓的問題。
+- Shift + 按滑鼠左鍵，現在可以在 Unicode 模式中運作。
+- 已修正在 Unicode 模式中使用 Shift 鍵觸發 [相黏鍵] 警示的錯誤。
+- 已在連線起始之前，新增網路可用性的檢查。
+- 已解決連線順序期間有時會發生電腦縮圖脈衝的問題。
+- 已修正 [新增/編輯使用者帳戶] 工作表中的 [密碼] 欄位變成多行的錯誤。
+- 如果所有工作區都已全部折疊，則 [全部折疊] 選項現在會呈現灰色。
+- 如果所有工作區都已全部展開，則 [全部展開] 選項現在會呈現灰色。
+- 第一次執行權限 UI 不會再顯示於 High Sierra。
+- 已修正使用者無法使用 DOMAIN\USERNAME 格式儲存的認證，來連接到 Windows 虛擬桌面端點的問題。
+- 對 Windows 虛擬桌面連接，現在一律預先填入認證提示中的 [使用者名稱] 欄位。
+- 已修正當「連線中心」寬度不足時，會針對工作區裁剪 [編輯]、[刪除] 和 [重新整理] 按鈕的錯誤。
+- [新增工作區] 工作表中的 [電子郵件或工作區 URL] 欄位不再區分大小寫。
+- 已修正許多影響 VoiceOver 和鍵盤瀏覽案例的協助工具問題。
+- 許多更新功能可改善 Windows 虛擬桌面服務中，目前和即將推出之功能的互通性。
+- 您現在可以從終端機提示中，設定由用戶端所公告的 AVC 支援層級。 您可以設定的支援層級如下：
+  
+   - 不要將 AVC 支援公告到伺服器：`defaults write com.microsoft.rdc.macos AvcSupportLevel disabled`
+   - 將 AVC420 支援公告到伺服器：`defaults write com.microsoft.rdc.macos AvcSupportLevel avc420`
+   - 將 AVC444 支援公告到伺服器：`defaults write com.microsoft.rdc.macos AvcSupportLevel avc444`
+
+再次感謝大家回報錯誤並花時間協助我們診斷問題！
 
 ## <a name="updates-for-version-1039"></a>10.3.9 版的更新
 
@@ -332,8 +376,8 @@ ms.locfileid: "87946511"
 - 解決 RemoteApp 視窗出現在連線中心後方的問題。
 - 修正從遠端桌面 8 匯入之後編輯本機資源時所發生的問題。
 - 您現在可以在桌面磚上按 ENTER 鍵來啟動連線。
-- 當您在全螢幕檢視時，CMD+M 現在會正確對應至 WIN+M。
-- [連線中心]、[喜好設定] 和 [關於] 視窗現在會回應 CMD+M。
+- 當您在全螢幕檢視時， Cmd+M 現在會正確對應至 WIN+M。
+- [連線中心]、[喜好設定] 和 [關於] 視窗現在會回應 Cmd+M。
 - 您現在可以在 *[新增遠端資源]  頁面上按 ENTER 鍵來開始探索摘要。
 - 修正在您重新整理之前，新遠端資源摘要在連線中心顯示空白的問題。
 

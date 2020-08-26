@@ -6,14 +6,14 @@ ms.assetid: 7afc65f8-3158-49c9-9d48-4dab1c69afba
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 07/16/2020
+ms.date: 08/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a0c93ddc6bf891a3f8157d36b67f60241d4d41b
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: e0ce10cbdc1dfe70156d36a96978222395afaa94
+ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991598"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88702817"
 ---
 # <a name="get-started-with-the-macos-client"></a>開始使用 macOS 用戶端
 
@@ -49,8 +49,8 @@ ms.locfileid: "87991598"
 1. 選取主頁面上的 [新增摘要]，以連線至服務並擷取您的資源。
 2. 輸入摘要 URL。 這可以是 URL 或電子郵件地址：
    - 此 URL 通常是 Windows 虛擬桌面 URL。 您要使用的版本取決於正在使用的 Windows 虛擬桌面版本。
-      - 若為 2019 秋季版，請使用 `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`。
-      - 若為 2020 春季版，請使用 `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`。
+      - 若為 Windows 虛擬桌面 (傳統)，請使用 `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`。
+      - 若為 Windows 虛擬桌面，請使用 `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`。
    - 若要使用電子郵件，請輸入您的電子郵件地址。 這會告訴用戶端搜尋與您的電子郵件地址相關聯的 URL (如果系統管理員是這樣設定伺服器的話)。
 3. 選取 [訂閱]。
 4. 出現提示時，使用您的使用者帳戶登入。
