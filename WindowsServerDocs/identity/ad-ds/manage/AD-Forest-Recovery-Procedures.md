@@ -1,25 +1,25 @@
 ---
 title: AD 樹系復原 - 程序
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 47a471fb-3b0b-4aa8-8525-1c92d0d51e93
-ms.openlocfilehash: c59990486da26847884aec3052818bce1ebe450d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2bd333d2ae6d27facf5e3c5b31a113b13a1cd11c
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969855"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939477"
 ---
 # <a name="ad-forest-recovery---procedures"></a>AD 樹系復原 - 程序
 
 >適用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
-本節包含與樹系復原程式相關的程式。 這些程式適用于 Windows Server 2016、2012 R2 和2012，而且也適用于 Windows Server 2008 R2 和2008，但有一些次要的例外狀況。
+本章節包含與樹系修復程式相關的程式。 這些程式適用于 Windows Server 2016、2012 R2、2012，而且也適用于 Windows Server 2008 R2 和2008（有一些次要例外狀況）。
 
-包含 windows Server 2003 各項步驟的程式，可在[Windows server 2003 網域控制站的樹](AD-Forest-Recovery-Windows-Server-2003.md)系復原中找到。
+包含 windows Server 2003 各項步驟的程式，可在 [具有 Windows server 2003 網域控制站的樹](AD-Forest-Recovery-Windows-Server-2003.md)系復原中找到。
 
 以下是用來備份和還原網域控制站和 Active Directory 的程式清單。
 
@@ -36,22 +36,22 @@ ms.locfileid: "87969855"
 - [提高可用 RID 集區的值](AD-Forest-Recovery-Raise-RID-Pool.md)
 - [使目前的 RID 集區失效](AD-Forest-Recovery-Invaildate-RID-Pool.md)
 - [佔用操作主機角色](AD-Forest-Recovery-Seizing-Operations-Master-Role.md)
-- [還原後清理](AD-Forest-Recovery-Cleanup.md)
-- [清理已移除可寫入網域控制站的中繼資料](AD-Forest-Recovery-Cleaning-Metadata.md)
+- [在還原之後清除](AD-Forest-Recovery-Cleanup.md)
+- [清除已移除可寫入網域控制站的中繼資料](AD-Forest-Recovery-Cleaning-Metadata.md)
 - [重設網域控制站的電腦帳戶密碼](AD-Forest-Recovery-Reset-Computer-Account-DC.md)
 - [重設 krbtgt 密碼](AD-Forest-Recovery-Resetting-the-krbtgt-password.md)
 - [在信任的一端重設信任密碼](AD-Forest-Recovery-Reset-Trust.md)
 - [新增通用類別目錄](AD-Forest-Recovery-Add-GC.md)
-- [確認複寫正在運作的資源](AD-Forest-Recovery-Verify-Replication.md)
+- [確認複寫運作的資源](AD-Forest-Recovery-Verify-Replication.md)
 
 ## <a name="next-steps"></a>後續步驟
 
 - [AD 樹系復原 - 先決條件](AD-Forest-Recovery-Prerequisties.md)
-- [AD 樹系復原-設計自訂樹系復原計畫](AD-Forest-Recovery-Devising-a-Plan.md)
-- [AD 樹系復原-識別問題](AD-Forest-Recovery-Identify-the-Problem.md)
-- [AD 樹系復原-決定如何復原](AD-Forest-Recovery-Determine-how-to-Recover.md)
+- [AD 樹系復原-設計自訂樹系復原方案](AD-Forest-Recovery-Devising-a-Plan.md)
+- [AD 樹系修復-找出問題](AD-Forest-Recovery-Identify-the-Problem.md)
+- [AD 樹系復原-決定復原方式](AD-Forest-Recovery-Determine-how-to-Recover.md)
 - [AD 樹系復原-執行初始復原](AD-Forest-Recovery-Perform-initial-recovery.md)
 - [AD 樹系復原 - 程序](AD-Forest-Recovery-Procedures.md)
 - [AD 樹系復原-常見問題](AD-Forest-Recovery-FAQ.md)
-- [AD 樹系復原-修復多網域樹系中的單一網域](AD-Forest-Recovery-Single-Domain-in-Multidomain-Recovery.md)
-- [AD 樹系復原-具有 Windows Server 2003 網域控制站的樹系復原](AD-Forest-Recovery-Windows-Server-2003.md)
+- [AD 樹系復原-復原多網域樹系中的單一網域](AD-Forest-Recovery-Single-Domain-in-Multidomain-Recovery.md)
+- [AD 樹系復原-含 Windows Server 2003 網域控制站的樹系復原](AD-Forest-Recovery-Windows-Server-2003.md)

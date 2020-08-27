@@ -1,35 +1,35 @@
 ---
 ms.assetid: 0abe0976-4b49-45d6-a7b3-81d28bdb8210
 title: 稽核原則建議
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 5b5ce5e7b53c7b82732613022c8309efe044143f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 33ce3713f95b995fdab63b9e3bd27650fae58347
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87972225"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88938228"
 ---
 # <a name="audit-policy-recommendations"></a>稽核原則建議
 
 >適用於︰Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10、Windows 8.1、Windows 7
 
-本節說明 Windows 預設稽核原則設定、基準建議的稽核原則設定，以及 Microsoft 針對工作站和伺服器產品提供的更積極建議。
+本節說明 Windows 預設稽核原則設定、基準建議的稽核原則設定，以及 Microsoft 針對工作站和伺服器產品提出的更積極建議。
 
-此處顯示的 SCM 基準建議，以及我們建議用來協助偵測危害的設定，僅供系統管理員開始使用基準指南。 每個組織都必須自行決定其所面臨的威脅、其可接受的風險承受度，以及應啟用的稽核原則類別或子類別。 如需有關威脅的進一步資訊，請參閱[威脅和對策指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/hh125921(v=ws.10))。 如果系統管理員沒有仔細的稽核原則，建議您先從此處建議的設定開始著手，然後再進行修改和測試，再于其生產環境中執行。
+此處所示的 SCM 基準建議，以及我們建議用來協助偵測危害的設定，只是系統管理員的起始基準指南。 每個組織都必須自行決定他們所面臨的威脅、可接受的風險承受度，以及應啟用的稽核原則類別或子類別。 如需威脅的詳細資訊，請參閱 [威脅與對策指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/hh125921(v=ws.10))。 如果系統管理員沒有審慎稽核原則，建議您從此處建議的設定開始，然後在生產環境中執行之前進行修改和測試。
 
-這些建議適用于企業級電腦，Microsoft 會將其定義為具有平均安全性需求的電腦，而且需要高層級的操作功能。 需要較高安全性需求的實體應該考慮更嚴格的稽核原則。
+這些建議適用于企業級的電腦，Microsoft 會將其定義為具有平均安全性需求，且需要高階作業功能的電腦。 需要更高安全性需求的實體應考慮更積極的稽核原則。
 
 > [!NOTE]
-> Microsoft Windows 預設值和基準建議取自[Microsoft 安全性合規性管理員工具](/previous-versions/tn-archive/cc677002(v=technet.10))。
+> Microsoft Windows 預設值和基準建議取自 [Microsoft 安全性合規性管理員工具](/previous-versions/tn-archive/cc677002(v=technet.10))。
 
-下列基準稽核原則設定建議用於不知道作用中、透過判斷敵人或惡意程式碼而成功攻擊的一般安全性電腦。
+下列基準稽核原則設定建議適用于一般安全性電腦，這些電腦已知處於作用中、成功的攻擊，藉由判斷敵人或惡意程式碼。
 
-## <a name="recommended-audit-policies-by-operating-system"></a>依作業系統建議的稽核原則
-本節包含的資料表會列出適用于下列作業系統的審核設定建議：
+## <a name="recommended-audit-policies-by-operating-system"></a>依作業系統的建議稽核原則
+本節包含的資料表列出適用于下列作業系統的審核設定建議：
 
 - Windows Server 2016
 
@@ -51,11 +51,11 @@ ms.locfileid: "87972225"
 
 |**表示法**|**建議**|
 |--|--|
-|YES|在一般案例中啟用|
-|否|在一般案例中**不**啟用|
-|IF|視需要針對特定案例啟用，或如果電腦上已安裝所需的審核角色或功能，則為|
+|YES|在一般情況下啟用|
+|否|一般情況下**請勿啟用**|
+|IF|視需要針對特定案例啟用，或如果電腦上已安裝所需的審核角色或功能|
 |DC|在網域控制站上啟用|
-|著|不推薦|
+|張|不推薦|
 
 **Windows 10、Windows 8 和 Windows 7 Audit 設定建議**
 
@@ -89,7 +89,7 @@ ms.locfileid: "87972225"
 | 稽核帳戶鎖定 | 是否 |  | 是否 |
 | 稽核使用者/裝置宣告 |  |  |  |
 | 稽核 IPsec 延伸模式 |  |  |  |
-| 稽核 IPsec 主要模式 |  |  | IF IF |
+| 稽核 IPsec 主要模式 |  |  | 如果為 |
 | 稽核 IPsec 快速模式 |  |  |  |
 | 稽核登出 | 是否 | 是否 | 是否 |
 | Audit Logon <sup>1</sup> | 是的 | 是的 | 是的 |
@@ -128,14 +128,14 @@ ms.locfileid: "87972225"
 | 稽核安全性狀態變更 | 是否 | 是的 | 是的 |
 | 稽核安全性系統延伸 |  | 是的 | 是的 |
 | 稽核系統整合性 | 是的 | 是的 | 是的 |
-| **全域物件存取的審核** |  |  |  |
+| **全域物件存取權審核** |  |  |  |
 | 稽核 IPSec 驅動程式 |  |  |  |
 | 稽核其他系統事件 |  |  |  |
 | 稽核安全性狀態變更 |  |  |  |
 | 稽核安全性系統延伸 |  |  |  |
 | 稽核系統整合性 |  |  |  |
 
-<sup>1</sup>從 Windows 10 1809 版開始，預設會針對成功和失敗啟用 Audit 登入。 在舊版的 Windows 中，預設只會啟用 [成功]。
+<sup>1</sup> 從 Windows 10 版本1809開始，成功和失敗都預設會啟用審核登入。 在舊版的 Windows 中，預設只會啟用 [成功]。
 
 **Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 和 Windows Server 2008 Audit 設定建議**
 
@@ -167,7 +167,7 @@ ms.locfileid: "87972225"
 | 稽核帳戶鎖定 | 是否 |  | 是否 |
 | 稽核使用者/裝置宣告 |  |  |  |
 | 稽核 IPsec 延伸模式 |  |  |  |
-| 稽核 IPsec 主要模式 |  |  | IF IF |
+| 稽核 IPsec 主要模式 |  |  | 如果為 |
 | 稽核 IPsec 快速模式 |  |  |  |
 | 稽核登出 | 是否 | 是否 | 是否 |
 | 稽核登入 | 是的 | 是的 | 是的 |
@@ -206,100 +206,100 @@ ms.locfileid: "87972225"
 | 稽核安全性狀態變更 | 是否 | 是的 | 是的 |
 | 稽核安全性系統延伸 |  | 是的 | 是的 |
 | 稽核系統整合性 | 是的 | 是的 | 是的 |
-| **全域物件存取的審核** |  |  |  |
+| **全域物件存取權審核** |  |  |  |
 | 稽核 IPSec 驅動程式 |  |  |  |
 | 稽核其他系統事件 |  |  |  |
 | 稽核安全性狀態變更 |  |  |  |
 | 稽核安全性系統延伸 |  |  |  |
 | 稽核系統整合性 |  |  |  |
 
-## <a name="set-audit-policy-on-workstations-and-servers"></a>在工作站和伺服器上設定稽核原則
-所有事件記錄檔管理計畫都應該監視工作站和伺服器。 常見的錯誤是只監視伺服器或網域控制站。 因為惡意駭客一開始會在工作站上發生，而不是監視工作站會忽略最佳和最舊的資訊來源。
+## <a name="set-audit-policy-on-workstations-and-servers"></a>設定工作站和伺服器的稽核原則
+所有事件日誌管理計畫都應該監視工作站和伺服器。 常見的錯誤是只監視伺服器或網域控制站。 由於惡意攻擊通常是在工作站上發生，而不是監視工作站會忽略最理想且最早的資訊來源。
 
-系統管理員應該先 thoughtfully 審查並測試任何稽核原則，然後才在其生產環境中執行。
+系統管理員應該在實際執行環境中，thoughtfully 審查並測試任何稽核原則。
 
 ## <a name="events-to-monitor"></a>要監視的事件
 產生安全性警示的完美事件識別碼應該包含下列屬性：
 
-- 發生的機率很高，表示未經授權的活動
+- 出現的機率很高，表示未授權的活動
 
 - 誤判數字低
 
-- 發生的情況應會產生調查/辯論回應
+- 發生次數應該會產生調查/辯論回應
 
-應該監視和警示的事件種類有兩種：
+應監視和警示的事件種類有兩種：
 
-1.  這些事件甚至是發生單一事件，都表示未經授權的活動
+1.  甚至是單一出現的事件，都會表示未經授權的活動
 
 2.  累積的事件高於預期和接受的基準
 
-第一個事件的範例如下：
+第一個事件的範例為：
 
-如果禁止 (DAs) 的網域系統管理員登入不是網域控制站的電腦，單一出現的 DA 成員登入使用者工作站時，應該會產生警示並進行調查。 您可以使用 Audit 特殊登入事件4964來產生這種類型的警示， (特殊群組已指派給新的登入) 。 單一實例警示的其他範例包括：
+如果 Domain Admins (DAs) 禁止登入不是網域控制站的電腦，則一次登入使用者工作站的 DA 成員應該會產生警示並進行調查。 您可以使用 Audit 特殊登入事件4964（ (特殊群組已指派給新的登入) ，輕鬆地產生此類型的警示。 單一實例警示的其他範例包括：
 
-- 如果伺服器 A 永遠不應連接到伺服器 B，則會在彼此連接時發出警示。
+- 如果伺服器 A 絕對不應連接到伺服器 B，請在彼此連接時發出警示。
 
-- 如果一般使用者帳戶未預期地新增至敏感性安全性群組，則發出警示。
+- 當一般使用者帳戶未預期地新增至機密安全性群組時發出警示。
 
-- 如果工廠位置 A 的員工永遠不會在夜間工作，則會在使用者于午夜登入時發出警示。
+- 如果工廠地點 A 的員工永遠不會在夜間運作，請在使用者于午夜登入時發出警示。
 
-- 在網域控制站上安裝未經授權的服務時發出警示。
+- 如果網域控制站上已安裝未經授權的服務，則發出警示。
 
-- 調查一般使用者是否嘗試直接登入 SQL Server，而他們並沒有清楚的理由這麼做。
+- 調查一般使用者是否嘗試直接登入 SQL Server，但他們沒有明確的原因。
 
-- 如果您的 DA 群組中沒有任何成員，而有人在該處加入，請立即進行檢查。
+- 如果您的 DA 群組中沒有任何成員，而有人將自己新增至該處，請立即檢查。
 
 第二個事件的範例如下：
 
-登入失敗的 aberrant 數目可能表示密碼猜測攻擊。 若要讓企業提供異常大量失敗登入的警示，他們必須先瞭解其環境內失敗登入的一般層級，再進行惡意的安全性事件。
+異常的失敗登入次數可能表示密碼猜測攻擊。 若要讓企業針對異常大量的失敗登入提供警示，他們必須先瞭解其環境內的一般失敗登入層級，再進行惡意的安全性事件。
 
-如需監視入侵徵兆時應包含的完整事件清單，請參閱[附錄 L：要監視的事件](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md)。
+如需監視入侵徵兆時應包含的完整事件清單，請參閱 [附錄 L：要監視的事件](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md)。
 
 ## <a name="active-directory-objects-and-attributes-to-monitor"></a>Active Directory 要監視的物件和屬性
-以下是您應該監視的帳戶、群組和屬性，以協助您偵測危害 Active Directory Domain Services 安裝的嘗試。
+以下是您應該監視的帳戶、群組和屬性，以協助您偵測嘗試危害 Active Directory Domain Services 安裝。
 
-- 停用或移除防毒軟體和反惡意程式碼軟體的系統 (會在手動停用時自動重新開機保護) 
+- 停用或移除防毒軟體和反惡意程式碼軟體的系統 (在手動停用時自動重新開機保護) 
 
 - 未獲授權變更的系統管理員帳戶
 
-- 使用特殊許可權帳戶執行的活動 (在可疑的活動完成或配置的時間過期時，自動移除帳戶) 
+- 使用特殊許可權帳戶執行的活動 (在可疑的活動完成或分配時間已過期時，自動移除帳戶) 
 
-- AD DS 中的特殊許可權和 VIP 帳戶。 監視變更，特別是 [帳戶] 索引標籤上屬性的變更 (例如 cn、name、sAMAccountName、userPrincipalName 或 userAccountControl) 。 除了監視帳戶，限制誰可以將帳戶修改為一組較小的系統管理使用者。
+- AD DS 中的特殊許可權和 VIP 帳戶。 監視變更的情況，特別是 [帳戶] 索引標籤上的屬性變更 (例如 cn、name、sAMAccountName、userPrincipalName 或 userAccountControl) 。 除了監視帳戶之外，也請將可將帳戶修改為一組較小的系統管理使用者。
 
-請參閱[附錄 L：監視的事件](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md)以取得要監視的建議事件清單、其重要性評等，以及事件訊息摘要。
+請參閱 [附錄 L：要監視的事件](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md) 清單中要監視的建議事件清單、其重要性分級和事件訊息摘要。
 
-- 依據工作負載的分類來分組伺服器，可讓您快速識別應該是最嚴密監視且最而更加嚴格設定的伺服器
+- 依工作負載的分類將伺服器分組，讓您能夠快速識別出應最嚴密監視且最 stringently 設定的伺服器
 
 - 下列 AD DS 群組的屬性和成員資格變更： Enterprise Admins (EA) 、Domain Admins (DA) 、Administrators (BA) 和 Schema Admins (SA) 
 
-- 已停用特殊許可權帳戶 (例如 Active Directory 中的內建系統管理員帳戶，以及在啟用帳戶的成員系統上) 
+- 停用的特殊許可權帳戶 (例如 Active Directory 和成員系統上的內建系統管理員帳戶，) 用來啟用帳戶
 
-- 用來記錄所有寫入帳戶的管理帳戶
+- 用來記錄帳戶所有寫入的管理帳戶
 
-- 內建的安全性設定向導，可設定服務、登錄、audit 和防火牆設定，以減少伺服器的受攻擊面。 如果您在系統管理主機策略中執行跳躍伺服器，請使用此嚮導。
+- 內建安全性設定向導，用來設定服務、登錄、audit 和防火牆設定，以降低伺服器的攻擊面。 如果您在系統管理主機策略中執行跳躍伺服器，請使用此嚮導。
 
 ## <a name="additional-information-for-monitoring-active-directory-domain-services"></a>監視 Active Directory Domain Services 的其他資訊
-請參閱下列連結，以取得有關監視 AD DS 的其他資訊：
+如需有關監視 AD DS 的其他資訊，請參閱下列連結：
 
-- [全域物件存取審核非常神奇](/archive/blogs/askds/global-object-access-auditing-is-magic)-提供有關設定和使用已新增至 windows 7 和 windows Server 2008 R2 之 Advanced Audit Policy Configuration 的資訊。
+- [全域物件存取審核是魔術](/archive/blogs/askds/global-object-access-auditing-is-magic) -提供有關設定和使用已新增至 windows 7 和 windows Server 2008 R2 的 Advanced Audit Policy Configuration 的資訊。
 
-- [Windows 2008 中的「審核」變更簡介](/archive/blogs/askds/introducing-auditing-changes-in-windows-2008)-引進 windows 2008 中所做的審核變更。
+- [Windows 2008 中的審核變更簡介](/archive/blogs/askds/introducing-auditing-changes-in-windows-2008) -介紹在 windows 2008 中進行的審核變更。
 
-- [Vista 和2008中](/archive/blogs/askds/cool-auditing-tricks-in-vista-and-2008)的非經常性的審核技巧-說明 Windows Vista 和 windows Server 2008 中的有趣新功能，可用於疑難排解問題或查看環境中發生的狀況。
+- [Vista 和2008中的酷炫審核技巧](/archive/blogs/askds/cool-auditing-tricks-in-vista-and-2008) -說明 Windows Vista 和 windows Server 2008 中的一些有趣的新功能，可用於疑難排解問題或查看環境中發生的狀況。
 
-- [Windows server 2008 和 Windows vista 中的一次性審核](/archive/blogs/askds/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista)-包含 windows server 2008 和 windows vista 中包含的審核功能和資訊的編譯。
+- [Windows server 2008 和 Windows vista 中的一項-停用一次進行審核](/archive/blogs/askds/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista) -包含 windows server 2008 和 windows vista 所包含的審核功能和資訊的編譯。
 
-- [AD DS 審核逐步指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731607(v=ws.10))-說明 Windows Server 2008 中 Active Directory Domain Services (AD DS) 的新功能。 它也會提供執行這項新功能的程式。
+- [AD DS 《逐步解說》逐步指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731607(v=ws.10)) -說明 Windows Server 2008 中的新 Active Directory Domain Services (AD DS) 審核功能。 它也提供執行這項新功能的程式。
 
 ## <a name="general-list-of-security-event-id-recommendation-criticalities"></a>安全性事件識別碼建議嚴重性的一般清單
-所有事件識別碼建議都會伴隨著重要性評等，如下所示：
+所有事件識別碼建議都會伴隨著嚴重性評等，如下所示：
 
-**高：** 具有高重要性評等的事件識別碼應一律會立即收到警示並進行調查。
+**高：** 具有高重要性評等的事件識別碼應該一律和立即進行警示和調查。
 
-**中：** 具有「中」重要性評等的事件識別碼可能表示惡意活動，但必須伴隨一些其他異常 (例如，在特定時段內發生不尋常的數位、未預期的出現次數，或通常不會記錄事件的電腦發生錯誤。 ) 。 中等重要性事件可能也會收集為計量，並在一段時間內進行比較。
+**中：** 具有中度重要性評等的事件識別碼可能會指出惡意活動，但必須伴隨著其他異常 (例如，在特定期間內發生不尋常的數位、未預期的出現次數，或通常不會預期會記錄事件的電腦上發生的情況。 ) 。 您也可以將 $ 危急事件收集為計量，並在一段時間後進行比較。
 
-**低：** 而且具有低重要性事件的事件識別碼不應獲得注意或引發警示，除非與中等或高重要性事件相互關聯。
+**低：** 具有低重要性事件的事件識別碼不應獲得注意或造成警示，除非與中度或高重要性事件相互關聯。
 
-這些建議旨在提供系統管理員的基準指南。 在生產環境中執行之前，應該先徹底檢查所有建議。
+這些建議旨在提供系統管理員的基準指南。 在生產環境中執行之前，應該徹底檢查所有建議。
 
-請參閱[附錄 L：監視的事件](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md)以取得要監視的建議事件清單、其重要性評等，以及事件訊息摘要。
+請參閱 [附錄 L：要監視的事件](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md) 清單中要監視的建議事件清單、其重要性分級和事件訊息摘要。

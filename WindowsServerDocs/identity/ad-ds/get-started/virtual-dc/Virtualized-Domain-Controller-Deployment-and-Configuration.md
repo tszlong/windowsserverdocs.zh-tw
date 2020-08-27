@@ -1,17 +1,17 @@
 ---
 ms.assetid: b146f47e-3081-4c8e-bf68-d0f993564db2
 title: 虛擬網域控制站的部署與設定
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 6804df686635e441c667ab395ca486d3791a2aa5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7c2ae279a39566a30670111198d0e4840f57f6fc
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87959406"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939068"
 ---
 # <a name="virtualized-domain-controller-deployment-and-configuration"></a>虛擬網域控制站的部署與設定
 
@@ -96,7 +96,7 @@ ms.locfileid: "87959406"
 
 - 步驟 1：驗證 Hypervisor 是否支援 VM 世代識別碼，且可進行複製
 
-- 步驟2：確認 PDC 模擬器角色是由執行 Windows Server 2012 的網域控制站主控，且在複製期間已上線，而且已由複製的網域控制站連線。
+- 步驟2：確認 PDC 模擬器角色是由執行 Windows Server 2012 的網域控制站所主控，而且該角色在複製期間已上線並可由複製的網域控制站連線。
 
 **準備來源網域控制站**
 
@@ -127,9 +127,9 @@ ms.locfileid: "87959406"
 ### <a name="step-1---validate-the-hypervisor"></a>步驟 1 - 驗證 Hypervisor
 檢閱廠商文件，以確定來源網域控制站正在支援的 Hypervisor 上執行。 虛擬網域控制站與 Hypervisor 無關，不需要 Hyper-V。
 
-如果虛擬程式是 Microsoft Hyper-v，請確定它正在 Windows Server 2012 上執行。 您可以使用 [裝置管理] 來驗證這一點
+如果 Microsoft Hyper-V 的虛擬程式，請確定它是在 Windows Server 2012 上執行。 您可以使用 [裝置管理] 來驗證這一點
 
-開啟 [Devmgmt.msc]****，然後針對已安裝的 Microsoft Hyper-V 裝置和驅動程式檢查 [系統裝置]****。 虛擬網域控制站所需的特定系統裝置是**Microsoft Hyper-v 世代計數器** (驅動程式： vmgencounter.sys) 。
+開啟 [Devmgmt.msc]****，然後針對已安裝的 Microsoft Hyper-V 裝置和驅動程式檢查 [系統裝置]****。 虛擬網域控制站所需的特定系統裝置是 (驅動程式的 **Microsoft Hyper-V 產生計數器** ： vmgencounter.sys) 。
 
 ![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_HyperVVMGenIDCounter.png)
 
@@ -422,12 +422,12 @@ Export-vm
 > Windows Server 2012 Hyper-V 支援新的匯出和匯入功能 (這些功能已超出本訓練的範圍)。 如需詳細資訊，請檢閱 TechNet。
 
 #### <a name="exporting-merged-disks-using-hyper-v"></a>使用 Hyper-V 匯出合併的磁碟
-最後一個選擇是使用 Hyper-V 中的 [磁碟合併] 與 [轉換] 選項。 這些選項可讓您製作現有磁碟結構的複本 (即使在包含快照集 AVHD/AVHDX 檔案時也一樣)，使其成為單一的新磁碟。 就像手動磁碟複製案例，這主要是針對只使用單一磁片磁碟機的較簡單虛擬機器，例如 C： \\ 。 它的唯一優點是不需要先刪除快照，這是它與手動複製的不同。 這個操作的速度必然會比只刪除快照並複製磁碟的程序還要慢。
+最後一個選擇是使用 Hyper-V 中的 [磁碟合併] 與 [轉換] 選項。 這些選項可讓您製作現有磁碟結構的複本 (即使在包含快照集 AVHD/AVHDX 檔案時也一樣)，使其成為單一的新磁碟。 如同手動磁碟複製案例，這主要是用於只使用單一磁片磁碟機的較簡單虛擬機器，例如 C： \\ 。 它的唯一優點是不需要先刪除快照，這是它與手動複製的不同。 這個操作的速度必然會比只刪除快照並複製磁碟的程序還要慢。
 
 ##### <a name="hyper-v-manager-method"></a>HYPER-V 管理員方法
 使用 [HYPER-V 管理員] 建立合併的磁碟：
 
-1. 按一下 [**編輯磁片**]。
+1. 按一下 [ **編輯磁片**]。
 
 2. 瀏覽最低階的子磁碟。 例如，如果您使用的是差異磁碟，子磁碟就是最低階的子項。 如果虛擬機器有一個 (或多個) 快照，則目前選取的快照就是最低階的子磁碟。
 
@@ -473,7 +473,7 @@ Convert-vm
 
 您可以使用 New-ADDCCloneConfigFile 搭配 **-offline** 引數來執行 (也稱為離線模式)，以建立 DcCloneConfig.xml 檔案，並將它放入正確的位置。 下列範例示範如何在離線模式中執行 New-ADDCCloneConfigFile。
 
-若要在離線模式中建立名為 CloneDC1 的複製網域控制站，請在名為「REDMOND」的網站中，使用靜態 IPv4 位址輸入：
+若要在離線模式中建立名為 CloneDC1 的複製網域控制站，請在名為 "REDMOND" 且具有靜態 IPv4 位址的網站中輸入：
 
 ```
 New-ADDCCloneConfigFile -Offline -CloneComputerName CloneDC1 -SiteName REDMOND -IPv4Address "10.0.0.2" -IPv4DNSResolver "10.0.0.1" -IPv4SubnetMask "255.255.0.0" -IPv4DefaultGateway "10.0.0.1" -Static -Path F:\Windows\NTDS
@@ -642,7 +642,7 @@ Remove-VMSnapshot
 > [!WARNING]
 > 確定在匯入電腦時，不會將靜態 MAC 位址指派給來源網域控制站。 如果複製的來源電腦具有靜態 MAC，這些複製的電腦將不會正確傳送或接收任何網路流量。 如果是這種情況，請設定新的唯一靜態或動態 MAC 位址。 您可以使用下列命令來查看 VM 是否使用靜態 MAC 位址：
 >
-> **取得 vm-VMName** ***測試-vm* |VMNetworkAdapter |佛羅里達\\***
+> **VMName** ***測試-* vm |VMNetworkAdapter |佛羅里達州 \\***
 
 ### <a name="step-9---clone-the-new-virtual-machine"></a>步驟 9 - 複製新的虛擬機器
 (選擇性) 開始複製之前，請重新啟動離線複製來源網域控制站。 無論如何，請確定 PDC 模擬器已在線上。

@@ -1,31 +1,31 @@
 ---
 ms.assetid: 9ad81367-f3fe-4b2e-bd7c-5900b2b9f77f
 title: 設計邏輯結構
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 1fca7f7b3166a6f9f9e9a9dc79e1b9a70fe832e4
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 627446e894f42eac6bfa73f6e734216506a2e6ac
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943166"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939468"
 ---
 # <a name="designing-the-logical-structure"></a>設計邏輯結構
 
 >適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-Active Directory Domain Services (AD DS) 可讓組織為使用者與資源管理建立可擴充、安全且可管理的基礎結構。 它也可讓他們支援啟用目錄的應用程式。
+Active Directory Domain Services (AD DS) 可讓組織為使用者與資源管理建立可擴充、安全且可管理的基礎結構。 它也可讓它們支援啟用目錄的應用程式。
 
-設計良好的 Active Directory 邏輯結構提供下列優點：
+設計完善的 Active Directory 邏輯結構提供下列優點：
 
--   簡化包含大量物件的 Microsoft Windows 網路管理
+-   簡化包含大量物件之 Microsoft Windows 網路的管理
 
--   合併的網域結構和降低的系統管理成本
+-   合併網域結構和降低系統管理成本
 
--   能夠適當地委派資源的系統管理控制權
+-   適當地委派資源的系統管理控制能力
 
 -   降低對網路頻寬的影響
 
@@ -35,9 +35,9 @@ Active Directory Domain Services (AD DS) 可讓組織為使用者與資源管理
 
 -   低擁有權總成本
 
-設計良好的 Active Directory 邏輯結構，有助於有效率地將這類功能整合到群組原則;桌面鎖定;軟體發佈;以及使用者、群組、工作站和伺服器系統管理。 此外，仔細設計的邏輯結構可協助整合 Microsoft 和非 Microsoft 應用程式和服務，例如 Microsoft Exchange Server、公開金鑰基礎結構 (PKI) ，以及 (DFS) 的網域型分散式檔案系統。
+設計完善的 Active Directory 邏輯結構有助於有效率地整合這類功能，例如群組原則;桌面鎖定;軟體發佈;以及使用者、群組、工作站和伺服器的系統管理。 此外，經過精心設計的邏輯結構有助於將 Microsoft 與非 Microsoft 應用程式和服務（例如 Microsoft Exchange Server、公開金鑰基礎結構 (PKI) ，以及以網域為基礎的分散式檔案系統 (DFS) ）整合。
 
-當您在部署 AD DS 之前，設計 Active Directory 邏輯結構時，您可以將部署程式優化，以充分利用 Active Directory 的功能。 若要設計 Active Directory 邏輯結構，您的設計小組會先識別組織的需求，並根據此資訊決定樹系和網域界限的放置位置。 然後，設計小組會決定如何設定網域名稱系統 (DNS) 環境，以符合樹系的需求。 最後，設計小組會識別委派組織中資源管理所需的組織單位 (OU) 結構。
+當您在部署 AD DS 之前設計 Active Directory 邏輯結構時，可以將部署程式優化，以充分利用 Active Directory 功能。 為了設計 Active Directory 邏輯結構，您的設計小組會先找出組織的需求，並根據此資訊，決定樹系和網域界限的放置位置。 然後，設計小組決定如何設定網域名稱系統 (DNS) 環境，以符合樹系的需求。 最後，設計小組會識別在組織中委派資源管理所需的組織單位 (OU) 結構。
 
 ## <a name="in-this-guide"></a>本指南內容
 

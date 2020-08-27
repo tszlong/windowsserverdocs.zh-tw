@@ -1,17 +1,17 @@
 ---
 ms.assetid: 341614c6-72c2-444f-8b92-d2663aab7070
 title: 虛擬網域控制站架構
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: c56b55ad3617293b495d78e6ceedabed1e76463f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 04d50961aeb6190c15ba4c772afd8767d9d24f9b
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954445"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939008"
 ---
 # <a name="virtualized-domain-controller-architecture"></a>虛擬網域控制站架構
 
@@ -30,18 +30,18 @@ ms.locfileid: "87954445"
 
 在有些 Hypervisor 支援「VM 世代識別碼」，而有些不支援的混合環境中，可能會不小心在不支援「VM 世代識別碼」的 Hypervisor 上部署複製媒體。 DCCloneConfig.xml 檔案存在表示系統管理員意圖複製 DC。 因此，如果在開機期間發現 DCCloneConfig.xml 檔案，但主機未提供「VM 世代識別碼」，表示複製 DC 開機進入目錄服務還原模式 (DSRM)，以防止環境中的其他部分受影響。 接著，您可以將複製媒體移動到支援「VM 世代識別碼」的 Hypervisor，然後重試複製。
 
-如果複製媒體部署在支援「VM 世代識別碼」的 Hypervisor 上，但未提供 DCCloneConfig.xml 檔案，當 DC 偵測到來自其 DIT 的「VM 世代識別碼」與來自新 VM 的「VM 世代識別碼」不同，就會觸發防護功能，以防止重複使用 USN 並避免 SID 重複。 不過，將不會起始複製程序，因此次要 DC 會以和來源 DC 相同的身分識別繼續執行。 您應該儘快將此次要 DC 從網路移除，以避免環境中的不一致。 如需有關如何回收此次要 DC，同時確保更新已輸出的詳細資訊，請參閱 Microsoft 知識庫文章[2742970](https://support.microsoft.com/kb/2742970)。
+如果複製媒體部署在支援「VM 世代識別碼」的 Hypervisor 上，但未提供 DCCloneConfig.xml 檔案，當 DC 偵測到來自其 DIT 的「VM 世代識別碼」與來自新 VM 的「VM 世代識別碼」不同，就會觸發防護功能，以防止重複使用 USN 並避免 SID 重複。 不過，將不會起始複製程序，因此次要 DC 會以和來源 DC 相同的身分識別繼續執行。 您應該儘快將此次要 DC 從網路移除，以避免環境中的不一致。 如需如何回收此次要 DC 的詳細資訊，並確保已複寫輸出的更新，請參閱 Microsoft 知識庫文章 [2742970](https://support.microsoft.com/kb/2742970)。
 
 ### <a name="cloning-detailed-processing"></a><a name="BKMK_CloneProcessDetails"></a>複製的詳細程序
 下圖顯示初始複製操作和複製重試操作的架構。 本主題稍後將詳細說明這些程序。
 
 **初始複製操作**
 
-![虛擬化的 DC 架構](media/Virtualized-Domain-Controller-Architecture/ADDS_VDC_InitialCloningProcess.png)
+![虛擬化 DC 架構](media/Virtualized-Domain-Controller-Architecture/ADDS_VDC_InitialCloningProcess.png)
 
 **複製重試操作**
 
-![虛擬化的 DC 架構](media/Virtualized-Domain-Controller-Architecture/ADDS_VDC_CloningRetryProcess.png)
+![虛擬化 DC 架構](media/Virtualized-Domain-Controller-Architecture/ADDS_VDC_CloningRetryProcess.png)
 
 下列步驟詳細說明此程序：
 
@@ -99,7 +99,7 @@ ms.locfileid: "87954445"
 
 12. 若在 DCCloneConfig.xml 中有指定的名稱，AD DS 電腦物件名稱會設定為與其相同，若沒有則會在 PDCE 上自動產生。 NTDS 會為適當的 Active Directory 邏輯站台建立正確的 NTDS 設定物件。
 
-    1.  如果這是 PDC 複製，客體會重新命名本機電腦，然後重新開機。 重新開機之後，它會再次執行步驟 1-10，然後移至步驟13。
+    1.  如果這是 PDC 複製，客體會重新命名本機電腦，然後重新開機。 重新開機之後，會再次完成步驟 1-10，然後移至步驟13。
 
     2.  如果這是複本 DC 複製，則此階段不會重新開機。
 
@@ -109,7 +109,7 @@ ms.locfileid: "87954445"
 
 15. 客體會強制 NT5DS (Windows NTP) 的時間與另一部網域控制站同步 (在預設的「Windows 時間服務」階層中，這表示使用 PDCE)。 客體會連絡 PDCE。 所有現有的 Kerberos 票證都會被排清。
 
-16. 客體會將 DFSR 或 NTFRS 服務設定為自動執行。 Guest 會刪除所有現有的 DFSR 和 NTFRS 資料庫檔案 (預設值： c:\windows\ntfrs 和 c:\system volume information\dfsr \\ *<database_GUID>*) ，以便在下次啟動服務時強制執行 SYSVOL 的非權威同步處理。 稍後當同步開始後，客體不會刪除 SYSVOL 的檔案內容以先植 SYSVOL。
+16. 客體會將 DFSR 或 NTFRS 服務設定為自動執行。 來賓會刪除所有現有的 DFSR 和 NTFRS 資料庫檔案 (預設值： c:\windows\ntfrs 和 c:\system volume information\dfsr \\ *<database_GUID>*) ，以便在下次啟動服務時強制執行 SYSVOL 的非權威同步處理。 稍後當同步開始後，客體不會刪除 SYSVOL 的檔案內容以先植 SYSVOL。
 
 17. 系統會重新命名客體。 客體上的「DS 角色伺服器」服務會開始進行 AD DS 設定 (升級)，並使用現有的 NTDS.DIT 資料庫檔案做為來源，而不是使用位在 c:\windows\system32 的範本資料庫做為來源 (升級程序通常會這樣做)。
 
@@ -155,7 +155,7 @@ AD DS 依賴 Hypervisor 平台公開稱為「VM 世代識別碼」**** 的識別
 ### <a name="safe-restore-detailed-processing"></a>安全還原的詳細程序
 下列流程圖顯示當虛擬網域控制站在快照還原 (在它關閉時) 後啟動時，安全還原如何進行。
 
-![虛擬化的 DC 架構](media/Virtualized-Domain-Controller-Architecture/ADDS_VDC_VirtualizationSafeguardsDuringNormalBoot.png)
+![虛擬化 DC 架構](media/Virtualized-Domain-Controller-Architecture/ADDS_VDC_VirtualizationSafeguardsDuringNormalBoot.png)
 
 1.  當虛擬機器在快照還原後開機，它會因快照還原而有 Hypervisor 主機提供的新「VM 世代識別碼」。
 
@@ -172,24 +172,24 @@ AD DS 依賴 Hypervisor 平台公開稱為「VM 世代識別碼」**** 的識別
 
 下圖顯示當快照在執行中的虛擬網域控制站上還原時，「虛擬化防護」如何防止 USN 復原引起的分歧。
 
-![虛擬化的 DC 架構](media/Virtualized-Domain-Controller-Architecture/ADDS_VDC_VirtualizationSafeguardsDuringSnapShotRestore.png)
+![虛擬化 DC 架構](media/Virtualized-Domain-Controller-Architecture/ADDS_VDC_VirtualizationSafeguardsDuringSnapShotRestore.png)
 
 > [!NOTE]
 > 上圖經過簡化以說明概念。
 
 1.  在時間點 T1，Hypervisor 系統管理員建立虛擬機器 DC1 的快照。 此時 DC1 的 USN 值 (實際為 **highestCommittedUsn**) 為 100、InvocationId (在上圖中以 ID 表示) 的值為 A (實務上為 GUID)。 savedVMGID 值是 DC 之 DIT 檔案中的「VM 世代識別碼」(儲存在 DC 的電腦物件中名為 **msDS-GenerationId** 的屬性)。 VMGID 是目前「VM 世代識別碼」的值 (來自虛擬機器驅動程式)。 這個值是由 Hypervisor 所提供。
 
-2.  在稍後的時間點 T2，100 位使用者被新增至此 DC (將使用者視為在 T1 與 T2 時間點間執行更新的範例，這些更新實際上可以是使用者建立、群組建立、密碼更新、屬性更新等等的混合)。 在此範例中，每一個更新都會使用一個唯一的 USN (但實際上使用者建立可能使用多個 USN)。 認可這些更新之前，DC1 會檢查其資料庫中的「VM 世代識別碼」(savedVMGID) 與目前來自驅動程式的值 (VMGID) 是否相同。 兩個值相同 (因為尚未發生復原)，因此更新已被認可，且 USN 提升至 200，表示下次更新時可以使用 USN 201。 InvocationId、savedVMGID 或 VMGID 都沒有變更。 這些更新會在下一個複寫週期複寫至 DC2。 DC2 更新了高水位線 (和**UptoDatenessVector**) 在這裡顯示，就像 DC1 () @USN = 200 一樣。 也就是說，DC2 知道來自 DC1 的所有更新 (透過 USN 200 的 InvocationId A 內容)。
+2.  在稍後的時間點 T2，100 位使用者被新增至此 DC (將使用者視為在 T1 與 T2 時間點間執行更新的範例，這些更新實際上可以是使用者建立、群組建立、密碼更新、屬性更新等等的混合)。 在此範例中，每一個更新都會使用一個唯一的 USN (但實際上使用者建立可能使用多個 USN)。 認可這些更新之前，DC1 會檢查其資料庫中的「VM 世代識別碼」(savedVMGID) 與目前來自驅動程式的值 (VMGID) 是否相同。 兩個值相同 (因為尚未發生復原)，因此更新已被認可，且 USN 提升至 200，表示下次更新時可以使用 USN 201。 InvocationId、savedVMGID 或 VMGID 都沒有變更。 這些更新會在下一個複寫週期複寫至 DC2。 DC2 更新了它的高水位線 (和 **UptoDatenessVector**) 在此表示，就像 DC1 () @USN = 200 一樣。 也就是說，DC2 知道來自 DC1 的所有更新 (透過 USN 200 的 InvocationId A 內容)。
 
 3.  在時間點 T3，在時間點 T1 所建立的快照會套用到 DC1。 DC1 已復原，因此它的 USN 復原到 100，表示它可以從 USN 101 開始使用，來與後續的更新關聯。 但此時 VMGID 的值會與支援「VM 世代識別碼」的 Hypervisor 不同。
 
-4.  此後，當 DC1 執行任何更新時，它會檢查其資料庫中的「VM 世代識別碼」的值 (savedVMGID) 與來自虛擬機器驅動程式的值 (VMGID) 是否相同。 在此例中識別碼不相同，因此 DC1 會推斷這表示復原，並觸發「虛擬化防護」；換句話說，它會重設其 InvocationId (ID = B) 並捨棄 RID 集區 (未顯示在上圖中)。 然後，它會將 VMGID 的新值儲存在其資料庫中，並在新 InvocationId B 的內容中認可這些更新 (USN 101-250) 。在下一個複寫週期中，DC2 在 InvocationId B 的內容中不知道 DC1，因此它會要求 DC1 與 InvocationID B 相關的所有專案。如此一來，在 DC1 上執行的快照集後續的更新將會安全地融合。 此外，DC1 在 T2 時執行的更新組 (這些更新在 DC1 的快照還原後遺失) 會在排定的下一次複寫時間會複寫回 DC1，因為這些更新已被複寫至 DC2 (用連回 DC1 的虛線表示)。
+4.  此後，當 DC1 執行任何更新時，它會檢查其資料庫中的「VM 世代識別碼」的值 (savedVMGID) 與來自虛擬機器驅動程式的值 (VMGID) 是否相同。 在此例中識別碼不相同，因此 DC1 會推斷這表示復原，並觸發「虛擬化防護」；換句話說，它會重設其 InvocationId (ID = B) 並捨棄 RID 集區 (未顯示在上圖中)。 然後，它會將新的 VMGID 值儲存在其資料庫中，並在新的 InvocationId B 內容中認可這些更新 (USN 101-250) 。在下一個複寫週期中，DC2 在 InvocationId B 的內容中無法從 DC1 得知任何專案，因此它會向 DC1 要求與 InvocationID B 相關聯的所有專案。因此，在 DC1 上執行的更新會安全地收斂。 此外，DC1 在 T2 時執行的更新組 (這些更新在 DC1 的快照還原後遺失) 會在排定的下一次複寫時間會複寫回 DC1，因為這些更新已被複寫至 DC2 (用連回 DC1 的虛線表示)。
 
 在客體採用「虛擬化防護」後，NTDS 會以非權威方式將 Active Directory 物件差異從夥伴網域控制站複寫回來。 「目的地目錄服務」的最新狀態向量也會一併更新。 接著，客體會同步 SYSVOL：
 
 -   若使用 FRS，客體會停止 NTFRS 服務，並設定 D2 BURFLAGS 登錄值。 接著，它會啟動 NTFRS 服務，此服務會以非權威方式進行複寫，並盡可能地重複使用未變更的 SYSVOL 資料。
 
--   若使用 DFSR，來賓會停止 DFSR 服務，並刪除 (預設位置的 DFSR 資料庫檔案：%systemroot%\system volume volume information\dfsr \\ *<database GUID>*) 。 接著，它會啟動 DFSR 服務，此服務會以非權威方式進行複寫，並盡可能地重複使用現有且未變更的 SYSVOL 資料。
+-   如果使用 DFSR，來賓會停止 DFSR 服務並刪除 DFSR 資料庫檔案 (預設位置：%systemroot%\system volume information\dfsr \\ *<database GUID>*) 。 接著，它會啟動 DFSR 服務，此服務會以非權威方式進行複寫，並盡可能地重複使用現有且未變更的 SYSVOL 資料。
 
 > [!NOTE]
 > -   如果 Hypervisor 未提供「VM 世代識別碼」供比較，表示 Hypervisor 不支援「虛擬化防護」，客體將以執行 Windows Server 2008 R2 或更早版本之虛擬網域控制站的方式運作。 若嘗試用非夥伴 DC 所見過的上一個最高 USN 啟用複寫，客體會實作 USN 復原隔離保護。 如需有關 USN 復原隔離保護的詳細資訊，請參閱＜[USN 和 USN 復原](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd363553(v=ws.10))＞。

@@ -1,38 +1,38 @@
 ---
 ms.assetid: 680e05ac-f9be-4b07-a9f4-cd6da5835952
-title: Active Directory 樹系復原指南
-description: 本指南提供備份、還原和 active directory 嚴重損壞修復的指引。
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+title: Active Directory 樹系修復指南
+description: 本指南提供有關備份、還原及 active directory 嚴重損壞修復的指引。
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: bf8356f49ce505db053ec37c6a91e4f8bccb8ac1
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 94f6235c06e89d506f24b71d7f086c8ca007d7b3
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969905"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939678"
 ---
-# <a name="active-directory-forest-recovery-guide"></a>Active Directory 樹系復原指南
+# <a name="active-directory-forest-recovery-guide"></a>Active Directory 樹系修復指南
 
 >適用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2、Windows Server 2003
 
-本指南包含復原 Active Directory®樹系的最佳做法建議，如果全樹系失敗會將樹系中 (Dc) 的所有網域控制站都轉譯為無法正常運作。 它所包含的步驟可作為您樹系復原計畫的範本，您可以針對特定環境進行自訂。 這些步驟適用于執行 Microsoft® Windows Server 2016、2012 R2、2012、2008 R2、2008和2003作業系統的 Dc。
+本指南包含最佳做法建議，以在整個樹系的樹系中將所有網域控制站) 在樹系中無法正常運作的域 (控制器時，復原 Active Directory®樹系。 其所包含的步驟可作為樹系復原方案的範本，您可以針對特定環境自訂此範本。 這些步驟適用于執行 Microsoft® Windows Server 2016、2012 R2、2012、2008 R2、2008和2003作業系統的 Dc。
 
 > [!NOTE]
-> 執行 Windows Server 2003 的 Dc 獨有的程式會合並在[AD 樹系復原 Windows Server 2003](AD-Forest-Recovery-Windows-Server-2003.md)中。
+> 執行 Windows Server 2003 的 Dc 唯一的程式會合並在 [AD 樹系復原 Windows server 2003](AD-Forest-Recovery-Windows-Server-2003.md)中。
 
-## <a name="steps-outlined-in-this-guide"></a>本指南中所述的步驟
+## <a name="steps-outlined-in-this-guide"></a>本指南概述的步驟
 
 - [AD 樹系復原 - 先決條件](AD-Forest-Recovery-Prerequisties.md)
-- [AD 樹系復原-設計自訂樹系復原計畫](AD-Forest-Recovery-Devising-a-Plan.md)
+- [AD 樹系復原-設計自訂樹系復原方案](AD-Forest-Recovery-Devising-a-Plan.md)
 - [AD 樹系復原 - 復原步驟](AD-Forest-Recovery-Steps-For-Restoring.md)
-- [AD 樹系復原-識別問題](AD-Forest-Recovery-Identify-the-Problem.md)
-- [AD 樹系復原-決定如何復原](AD-Forest-Recovery-Determine-how-to-Recover.md)
+- [AD 樹系修復-找出問題](AD-Forest-Recovery-Identify-the-Problem.md)
+- [AD 樹系復原-決定復原方式](AD-Forest-Recovery-Determine-how-to-Recover.md)
 - [AD 樹系復原-執行初始復原](AD-Forest-Recovery-Perform-initial-recovery.md)
 - [AD 樹系復原 - 程序](AD-Forest-Recovery-Procedures.md)
 - [AD 樹系復原-常見問題](AD-Forest-Recovery-FAQ.md)
-- [AD 樹系復原-修復多網域樹系中的單一網域](AD-Forest-Recovery-Single-Domain-in-Multidomain-Recovery.md)
+- [AD 樹系復原-復原多網域樹系中的單一網域](AD-Forest-Recovery-Single-Domain-in-Multidomain-Recovery.md)
 - [AD 樹系復原 - 虛擬化](AD-Forest-Recovery-Virtualization.md)
-- [AD 樹系復原-具有 Windows Server 2003 網域控制站的樹系復原](AD-Forest-Recovery-Windows-Server-2003.md)
+- [AD 樹系復原-含 Windows Server 2003 網域控制站的樹系復原](AD-Forest-Recovery-Windows-Server-2003.md)
