@@ -7,31 +7,31 @@ manager: daveba
 ms.reviewer: zhvolosh
 ms.date: 01/31/2019
 ms.topic: article
-ms.openlocfilehash: 151c212017b32f865d9ae4be5e3263305919d08f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 836a40ffa9df8fa308d1005fbac3a9e087488949
+ms.sourcegitcommit: 52a8d5d7e969eaa07fd3a45ed6d3cb5a5173b6d1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87949732"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88970625"
 ---
 # <a name="delegate-ad-fs-powershell-commandlet-access-to-non-admin-users"></a>將 AD FS Powershell Cmdlet 存取權委派給非系統管理員使用者
-根據預設，透過 PowerShell 的 AD FS 管理只能由 AD FS 系統管理員完成。 對於許多大型組織而言，處理其他角色（例如技術支援人員）時，這可能不是可行的營運模式。
+根據預設，透過 PowerShell 的 AD FS 管理只能由 AD FS 系統管理員完成。 對於許多大型組織而言，在處理其他人員（例如技術支援人員）時，這可能不是可行的營運模式。
 
-只要有足夠的系統管理 (JEA) ，客戶現在就可以將特定 commandlet 委派給不同的人員群組。
-此使用案例的一個良好範例，是讓技術支援人員在通過使用者時，查詢 AD FS 帳戶鎖定狀態，並在 AD FS 中重設帳戶鎖定狀態。 在此情況下，需要委派的 commandlet 如下：
+只有足夠的系統管理 (JEA) ，客戶現在可以將特定 commandlet 委派給不同的人員群組。
+此使用案例的一個良好範例，是讓技術支援人員在通過使用者之後，查詢 AD FS 中的 AD FS 帳戶鎖定狀態和重設帳戶鎖定狀態。 在此情況下，需要委派的 commandlet 如下：
 - `Get-ADFSAccountActivity`
 - `Set-ADFSAccountActivity`
 - `Reset-ADFSAccountLockout`
 
-我們會在本檔的其餘部分使用此範例。 不過，您可以自訂此功能，以允許委派設定信賴憑證者的屬性，並將此內容交給組織內的應用程式擁有者。
+本檔的其餘部分將使用此範例。 不過，您可以自訂此項，以允許委派設定信賴憑證者的屬性，並將其交給組織內的應用程式擁有者。
 
 
-##  <a name="create-the-required-groups-necessary-to-grant-users-permissions"></a>建立將許可權授與使用者所需的群組
-1. 建立[群組受管理的服務帳戶](../../../security/group-managed-service-accounts/group-managed-service-accounts-overview.md)。 GMSA 帳戶是用來允許 JEA 使用者以其他電腦或 web 服務的方式存取網路資源。 它會提供網域身分識別，可用來對網域內任何電腦上的資源進行驗證。 GMSA 帳戶會在稍後的安裝程式中被授與必要的系統管理許可權。 在此範例中，我們會呼叫帳戶**gMSAContoso**。
-2. 建立 Active Directory 群組可以填入需要授與委派命令之許可權的使用者。 在此範例中，技術支援人員會被授與讀取、更新及重設 ADFS 鎖定狀態的許可權。 在整個範例中，我們將此群組稱為**JEAContoso**。
+##  <a name="create-the-required-groups-necessary-to-grant-users-permissions"></a>建立將許可權授與使用者所需的必要群組
+1. 建立 [群組受管理的服務帳戶](../../../security/group-managed-service-accounts/group-managed-service-accounts-overview.md)。 GMSA 帳戶是用來允許 JEA 使用者以其他電腦或 web 服務存取網路資源。 它會提供網域身分識別，可用來對網域內任何電腦上的資源進行驗證。 GMSA 帳戶稍後會在安裝程式中被授與必要的系統管理許可權。 在此範例中，我們會呼叫帳戶 **gMSAContoso**。
+2. 建立 Active Directory 群組可填入必須授與委派命令之許可權的使用者。 在此範例中，技術支援人員會獲得讀取、更新及重設 ADFS 鎖定狀態的許可權。 在整個範例中，我們會將此群組參考為 **JEAContoso**。
 
 ### <a name="install-the-gmsa-account-on-the-adfs-server"></a>在 ADFS 伺服器上安裝 gMSA 帳戶：
-建立具有 ADFS 伺服器系統管理許可權的服務帳戶。 只要已安裝 AD RSAT 套件，就可以在網域控制站或遠端執行此作業。服務帳戶必須建立在與 ADFS 伺服器相同的樹系中。
+建立具有 ADFS 伺服器系統管理許可權的服務帳戶。 只要安裝了 AD RSAT 封裝，就可以在網域控制站上或從遠端執行這項作業。服務帳戶必須建立在與 ADFS 伺服器相同的樹系中。
 將範例值修改為伺服器陣列的設定。
 
 ```powershell
@@ -55,18 +55,18 @@ Install-ADServiceAccount gMSAcontoso
 ```
 
 ### <a name="grant-the-gmsa-account-admin-rights"></a>授與 gMSA 帳戶系統管理員許可權
-如果伺服器陣列使用委派系統管理，請將其新增至具有委派系統管理員存取權的現有群組，以授與 gMSA 帳戶系統管理員許可權。
+如果伺服器陣列使用委派的系統管理，請將其新增至擁有委派系統管理員存取權的現有群組，以授與 gMSA 帳戶系統管理員許可權。
 
-如果伺服器陣列不使用委派系統管理，請將其設為所有 ADFS 伺服器上的本機管理群組，以授與 gMSA 帳戶系統管理員許可權。
+如果伺服器陣列未使用委派系統管理，請將其設為所有 ADFS 伺服器上的本機系統管理群組，以授與 gMSA 帳戶系統管理員許可權。
 
 
 ### <a name="create-the-jea-role-file"></a>建立 JEA 角色檔案
 
-在 AD FS 伺服器上，于 [記事本] 檔案中建立 JEA 角色。 [JEA 角色功能](/powershell/jea/role-capabilities)提供建立角色的指示。
+在 AD FS 伺服器上，在 [記事本] 檔案中建立 JEA 角色。 [JEA 角色功能](https://docs.microsoft.com/powershell/scripting/learn/remoting/jea/role-capabilities)提供建立角色的指示。
 
 在此範例中委派的 commandlet 是 `Reset-AdfsAccountLockout, Get-ADFSAccountActivity, and Set-ADFSAccountActivity` 。
 
-委派「重設-ADFSAccountLockout」、「ADFSAccountActivity」和「ADFSAccountActivity」 commandlet 存取權的範例 JEA 角色：
+JEA 角色委派存取 ' Reset-ADFSAccountLockout '、' ADFSAccountActivity ' 和 ' Set-ADFSAccountActivity ' commandlet 的範例：
 
 ```powershell
 @{
@@ -78,11 +78,11 @@ VisibleCmdlets = 'Reset-AdfsAccountLockout', 'Get-ADFSAccountActivity', 'Set-ADF
 
 
 ### <a name="create-the-jea-session-configuration-file"></a>建立 JEA 會話設定檔
-遵循指示來建立[JEA 會話配置](/powershell/jea/session-configurations)檔。 設定檔會決定誰可以使用 JEA 端點，以及他們有權存取的功能。
+請依照指示來建立 [JEA 會話配置](https://docs.microsoft.com/powershell/scripting/learn/remoting/jea/session-configurations) 檔。 設定檔會決定誰可以使用 JEA 端點，以及他們可以存取的功能。
 
-一般名稱會參考角色功能 (檔案名，而不會有角色功能檔案的延伸) 。 如果系統上有多個具有相同一般名稱的角色功能，則 PowerShell 會使用其隱含搜尋順序來選取有效的角色功能檔案。 它不會授與所有具有相同名稱的角色功能檔案的存取權。
+角色功能是由一般名稱 (檔案名所參考，而不含角色功能檔案的擴充) 。 如果系統上有多個具有相同一般名稱的角色功能，PowerShell 會使用其隱含搜尋順序來選取有效的角色功能檔案。 它不會授與具有相同名稱的所有角色功能檔案的存取權。
 
-若要指定具有路徑的角色功能檔案，請使用 `RoleCapabilityFiles` 引數。 針對子資料夾，JEA 會尋找包含子資料夾的有效 Powershell 模組 `RoleCapabilities` ，其中 `RoleCapabilityFiles` 引數應修改為 `RoleCapabilities` 。
+若要指定具有路徑的角色功能檔案，請使用 `RoleCapabilityFiles` 引數。 針對子資料夾，JEA 會尋找包含子資料夾的有效 Powershell 模組， `RoleCapabilities` 其中的 `RoleCapabilityFiles` 引數應修改為 `RoleCapabilities` 。
 
 會話設定檔範例：
 
@@ -98,7 +98,7 @@ RoleDefinitions = @{ JEAcontoso = @{ RoleCapabilityFiles = 'C:\Program Files\Win
 
 儲存會話設定檔。
 
-如果您已使用文字編輯器手動編輯 .pssc 檔案，以確保語法正確，則強烈建議您[測試您的會話設定檔](/powershell/module/microsoft.powershell.core/test-pssessionconfigurationfile?view=powershell-5.1)。 如果會話設定檔案未通過此測試，就不會成功地在系統上註冊。
+如果您已使用文字編輯器手動編輯 .pssc 檔案，以確保語法正確，強烈建議您 [測試會話設定檔](/powershell/module/microsoft.powershell.core/test-pssessionconfigurationfile) 。 如果會話設定檔未通過此測試，就不會在系統上成功註冊。
 
 ### <a name="install-the-jea-session-configuration-on-the-ad-fs-server"></a>在 AD FS 伺服器上安裝 JEA 會話設定
 
@@ -108,9 +108,9 @@ RoleDefinitions = @{ JEAcontoso = @{ RoleCapabilityFiles = 'C:\Program Files\Win
 Register-PSSessionConfiguration -Path .\JEASessionConfig.pssc -name "AccountActivityAdministration" -force
 ```
 ## <a name="operational-instructions"></a>操作指示
-設定好之後，如果正確的使用者有權存取 JEA 端點，就可以使用 JEA 記錄和審核來判斷。
+設定好之後，JEA 記錄和審核可以用來判斷正確的使用者是否具有 JEA 端點的存取權。
 
-若要使用委派的命令：
+使用委派的命令：
 
 ```powershell
 Enter-pssession -ComputerName server01.contoso.com -ConfigurationName "AccountActivityAdministration" -Credential <User Using JEA>
