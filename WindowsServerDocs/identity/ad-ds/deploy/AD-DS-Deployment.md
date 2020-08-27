@@ -1,23 +1,23 @@
 ---
 ms.assetid: 241d93f9-06cf-4327-96a3-70dfe656f19d
 title: AD DS 部署
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: 689a443d3a3998368a9c9c4a08110995e9b846bd
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e38a56d8d2cf4b8d2ba4301ce5a47308fb184e56
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87938564"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940898"
 ---
 # <a name="ad-ds-deployment"></a>AD DS 部署
 
 >適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-本指南說明如何安裝和移除 Windows Server 2012 中的 Active Directory Domain Services (AD DS) ，以及當您將新的網域控制站新增至現有的 Active Directory 環境時要注意的重要問題。
+本指南說明如何在 Windows Server 2012 中安裝和移除 Active Directory Domain Services (AD DS) ，以及當您將新的網域控制站新增至現有的 Active Directory 環境時要注意的重要問題。
 
 - [Active Directory Domain Services 安裝和移除的新功能](../../ad-ds/deploy/What-s-New-in-Active-Directory-Domain-Services-Installation-and-Removal.md)
 
@@ -27,7 +27,7 @@ ms.locfileid: "87938564"
 
 - [移除 Active Directory 網域服務的步驟](assetId:///99b97af0-aa7e-41ed-8c81-4eee6c03eb4c)
 
-- [AD DS 安裝和移除嚮導頁面描述](../../ad-ds/deploy/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions.md)
+- [AD DS 安裝和移除嚮導頁面說明](../../ad-ds/deploy/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions.md)
 
 - [由 Adprep.exe 所做的變更](../../ad-ds/deploy/adprep/Changes-Made-by-Adprep.md)
 

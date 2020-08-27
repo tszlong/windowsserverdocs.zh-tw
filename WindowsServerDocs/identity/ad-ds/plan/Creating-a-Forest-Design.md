@@ -1,27 +1,27 @@
 ---
 ms.assetid: e92bdf05-d888-4935-af6a-8ded6ad13fab
 title: 建立樹系設計
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: d14a65a25041cc8d1932d291483c1833156c5956
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 174836970980b9941421f7c8c21bf06e8a980c55
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87941346"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941158"
 ---
 # <a name="creating-a-forest-design"></a>建立樹系設計
 
 > 適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-建立樹系設計牽涉到先識別組織內的群組，其中具有可供裝載 Active Directory 樹系的資源，然後定義您的樹系設計需求。 最後，您需要判斷符合組織需求所需的樹係數目。
+建立樹系設計牽涉到先識別組織內具有可用資源的群組，以裝載 Active Directory 樹系，然後定義您的樹系設計需求。 最後，您必須判斷您需要符合組織需求的樹係數目。
 
-將所有的設計需求對應至樹系模型，並選取符合組織需求的樹系模型之後，請記錄建議的樹系設計。 在您的檔中包含為其設計樹系的組名、樹系擁有者的連絡人資訊、您所包含之每個樹系的樹系類型，以及每個樹系所要符合的需求。 這份檔將協助設計團隊，確保所有適當的人員都參與設計程式，以及澄清部署專案的範圍。
+將所有設計需求對應至樹系模型，並選取符合組織需求的樹系模型之後，請記載建議的樹系設計。 請在您的檔中包含樹系所設計的組名、樹系擁有者的連絡人資訊、您所包含之每個樹系的樹系類型，以及每個樹系的設計所要符合的需求。 本檔將協助設計小組確保所有適當的人員都參與設計程式，並清楚說明部署專案的範圍。
 
-如需協助您記錄建議的樹系設計的工作表，請從[Windows Server 2003 部署套件的工作輔助程式](https://microsoft.com/download/details.aspx?id=9608)下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，並開啟「樹系設計」 ( # A1) 。
+若要協助您記載建議的樹系設計，請從 [Windows Server 2003 部署套件的工作輔助](https://microsoft.com/download/details.aspx?id=9608) 程式下載 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，並開啟「樹系設計」 ( # A1) 。
 
 ## <a name="in-this-section"></a>本節內容
 

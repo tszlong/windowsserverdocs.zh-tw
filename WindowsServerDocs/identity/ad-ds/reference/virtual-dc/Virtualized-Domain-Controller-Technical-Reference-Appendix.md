@@ -1,17 +1,17 @@
 ---
 ms.assetid: 73a4deba-7da6-4eae-8fdd-2a4d369f9cbb
 title: 虛擬網域控制站技術參考附錄
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 058dbc3082a5d35f29e049d2eb8661e4d2624961
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 6387abbe150630d2fd8f6f14724618a6ab32b94a
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954404"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940278"
 ---
 # <a name="virtualized-domain-controller-technical-reference-appendix"></a>虛擬網域控制站技術參考附錄
 
@@ -23,23 +23,23 @@ ms.locfileid: "87954404"
 
 -   [FixVDCPermissions.ps1](../../../ad-ds/reference/virtual-dc/../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Technical-Reference-Appendix.md#BKMK_FixPDCPerms)
 
-## <a name="terminology"></a><a name="BKMK_Terms"></a>術語
+## <a name="terminology"></a><a name="BKMK_Terms"></a>詞彙
 
--   **快照**-虛擬機器在特定時間點的狀態。 它相依于先前拍攝的快照集、硬體上和虛擬化平臺上的鏈。
+-   **快照** 集-虛擬機器在特定時間點的狀態。 它相依于先前拍攝的快照集、硬體上和虛擬化平臺上的鏈。
 
--   **複製**-完整且獨立的虛擬機器複本。 它相依于虛擬硬體 (系統管理) 。
+-   **複製** -完整和個別的虛擬機器複本。 它相依于虛擬硬體 (程式管理) 。
 
--   **完整複製**-完整複製是一種獨立的虛擬機器複本，在複製操作之後，與父虛擬機器共用沒有資源。 完整複製的持續操作與父虛擬機器完全分開。
+-   **完整複製** -完整複製品是虛擬機器的獨立複本，在複製作業之後，不會與父虛擬機器共用任何資源。 完整複製的進行中作業與父虛擬機器完全分開。
 
--   **差異磁片**-一種虛擬機器複本，它會以持續的方式與父系虛擬機器共用虛擬磁片。 這通常會節省磁碟空間，並允許多部虛擬機器使用相同的軟體安裝。
+-   **差異磁片** ：虛擬機器的複本，此複本會以持續的方式與父系虛擬機器共用虛擬磁片。 這通常可節省磁碟空間，並可讓多部虛擬機器使用相同的軟體安裝。
 
--   **VM 複製**-虛擬機器所有相關檔案和資料夾的檔案系統複本。
+-   **VM 複製**-虛擬機器的所有相關檔案和資料夾的檔案系統複本。
 
--   **Vhd 檔案複製**-虛擬機器的 vhd 複本
+-   **Vhd 檔案複製** -虛擬機器的 vhd 複本
 
--   **VM 世代識別碼**-由管理者提供給虛擬機器的128位整數。 此識別碼會儲存在記憶體中，並在每次套用快照集時重設。 此設計會使用不受虛擬程式管理的機制，在虛擬機器中呈現 VM 世代識別碼。 Hyper-v 執行會公開虛擬機器的 ACPI 資料表中的識別碼。
+-   **VM 世代識別碼** -由虛擬機器提供給虛擬機器的128位整數。 此識別碼會儲存在記憶體中，並在每次套用快照集時重設。 此設計使用不受程式管理的機制，來呈現虛擬機器中的 VM 世代識別碼。 Hyper-v 實作為虛擬機器的 ACPI 資料表中的識別碼。
 
--   匯**入/匯出**-hyper-v 功能，可讓使用者將整個虛擬機器儲存 (VM 檔案、VHD 和電腦設定) 。 接著，它可讓使用者使用該檔案集，將機器恢復與相同的 VM 相同的電腦上 (還原) 、在不同的電腦上作為相同的 VM (移動) 或新的 VM (複製) 
+-   匯**入/匯出**-hyper-v 功能，可讓使用者將整部虛擬機器儲存 (VM 檔案、VHD 和電腦設定) 。 然後，它可讓使用者使用該檔案集合，將電腦恢復為與相同 vm 相同的電腦 (還原) 、在不同的電腦上與相同的 VM (移動) ，或新的 VM (複製) 
 
 ## <a name="fixvdcpermissionsps1"></a><a name="BKMK_FixPDCPerms"></a>FixVDCPermissions.ps1
 

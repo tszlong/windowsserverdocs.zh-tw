@@ -1,23 +1,23 @@
 ---
 ms.assetid: 2a25bf86-a8ec-4b1a-9cbb-924d5b574481
 title: 建立網域設計
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 2d0ec1d5213db3afac60e1d9cf50b1dae69b9b8b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: db68dad118f8326f65c32683e586e06c700efde9
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969785"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941168"
 ---
 # <a name="creating-a-domain-design"></a>建立網域設計
 
 >適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-樹系擁有者負責建立樹系的網域設計。 建立網域設計牽涉到檢查複寫需求和網路基礎結構的現有容量，然後建立網域結構，讓 Active Directory Domain Services (AD DS) 以最有效率的方式運作。 系統會使用網域來分割目錄，以便在整個企業中有效率地散佈和管理目錄中的資訊。 您的網域設計目標是將 Active Directory 複寫拓撲的效率最大化，同時確保複寫不會使用太多可用的網路頻寬，而且不會干擾網路的每日作業。
+樹系擁有者負責建立樹系的網域設計。 建立網域設計牽涉到檢查複寫需求和網路基礎結構的現有容量，然後建立網域結構，讓 Active Directory Domain Services (AD DS) 以最有效率的方式運作。 網域是用來分割目錄，如此一來，就可以在整個企業中有效率地散發和管理目錄中的資訊。 您的網域設計目標是要最大化 Active Directory 複寫拓撲的效率，同時確保複寫未使用太多可用的網路頻寬，且不會干擾網路的每日作業。
 
 ## <a name="in-this-section"></a>本節內容
 

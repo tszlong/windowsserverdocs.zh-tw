@@ -1,17 +1,17 @@
 ---
 ms.assetid: 7e87ce2b-062e-479f-bcf2-585b6c42026a
 title: 身分識別元件更新
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 419a51800670db24bc77cae5ef1b11ed6090e055
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0a10e39b6bbf2fcefc57cbd7e3566db74bef52e3
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87972305"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941308"
 ---
 # <a name="identity-component-updates"></a>身分識別元件更新
 
@@ -38,7 +38,7 @@ ms.locfileid: "87972305"
 
     -   [認證保護和管理](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn408190(v=ws.11))
 
-**作者**： Justin Turner，具備 Windows 群組的資深支援提升工程師
+**作者**： Justin Turner，與 Windows 群組的資深支援擴大工程師
 
 > [!NOTE]
 > 本內容由 Microsoft 客戶支援工程師編寫，適用對象為經驗豐富的系統管理員和系統架構​​師，如果 TechNet 提供的主題已無法滿足您，您要找的是 Windows Server 2012 R2 中功能和解決方案的更深入技術講解，則您是本文的適用對象。 不過，本文未經過相同的編輯階段，因此部分語句也許不如 TechNet 文章那樣洗鍊。

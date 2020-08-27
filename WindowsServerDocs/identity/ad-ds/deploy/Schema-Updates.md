@@ -1,24 +1,24 @@
 ---
 ms.assetid: abf69b09-6528-42e0-b164-813c7c2c78e7
 title: Windows Server 中的架構更新
-description: 由 adprep 根據作業系統版本所做的架構變更
-author: MicrosoftGuyJFlo
-ms.author: joflore
+description: 由 adprep 依作業系統版本進行的架構變更
+author: iainfoulds
+ms.author: iainfou
 manager: daveba
 ms.date: 12/02/2019
 ms.topic: article
-ms.openlocfilehash: 0347dd6d3abb25d666914546331968db02574125
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 6a699bc82cdb536f6b611cc5b1158f751b65d65b
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953347"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940148"
 ---
 # <a name="windows-server-active-directory-schema-updates"></a>Windows Server Active Directory 架構更新
 
 >適用於：Windows Server
 
-本主題列出的 LDF 檔案包含 Adprep.exe 進行的變更。
+本主題會列出包含 Adprep.exe 所做變更的 LDF 檔案。
 
 ## <a name="schema-update-in-windows-server-2019"></a>Windows Server 2019 中的架構更新
 
@@ -85,7 +85,7 @@ schemaUpdateNow: 1
 
 ## <a name="schema-updates-in-windows-server-2016"></a>Windows Server 2016 中的架構更新
 
-Windows Server 2016 引進了 Sch70 到 Sch87。
+Sch70 .ldf 透過 Sch87，在 Windows Server 2016 中引進。
 
 ### <a name="sch70ldf"></a>Sch70 .ldf
 
@@ -1371,7 +1371,7 @@ schemaUpdateNow: 1
 
 ## <a name="schema-updates-in-windows-server-2012-r2"></a>Windows Server 2012 R2 中的架構更新
 
-Sch57 透過 Sch69 引進 Windows Server 2012 R2。
+Windows Server 2012 R2 引進了 Sch57 .ldf 至 Sch69。
 
 ### <a name="sch57ldf"></a>Sch57 .ldf
 
@@ -3028,7 +3028,7 @@ schemaUpdateNow: 1
 
 ## <a name="schema-updates-in-windows-server-2012"></a>Windows Server 2012 中的架構更新
 
-Windows Server 2012 引進了 Sch48 到 Sch56。
+Sch48 .ldf 透過 Sch56，在 Windows Server 2012 中引進。
 
 ### <a name="sch48ldf"></a>Sch48.ldf
 
@@ -5888,7 +5888,7 @@ objectVersion: 56
 
 ## <a name="schema-updates-in-previous-versions-of-windows-server"></a>舊版 Windows Server 中的架構更新
 
-Sch0 透過 Sch47 引進 Windows Server 2000 到 Windows Server 2008 R2。
+Sch0 .ldf 透過 Sch47，在 Windows Server 2000 中引進 Windows server 2008 R2。
 
 ### <a name="sch0ldf"></a>Sch0 .ldf
 
@@ -32291,7 +32291,7 @@ objectVersion: 13
 
 ```
 
-### <a name="sch14ldf"></a>Sch14.ldf .ldf
+### <a name="sch14ldf"></a>Sch14 .ldf
 
 ```
 
@@ -48574,6 +48574,6 @@ objectVersion: 47
 
 ## <a name="next-steps"></a>後續步驟
 
-[全網域架構更新作業](Domain-Wide-Updates.md)
+[整個網域的架構更新作業](Domain-Wide-Updates.md)
 
-[全樹系架構更新作業](../deploy/rodc/forest-wide-updates.md)
+[整個樹系架構更新作業](../deploy/rodc/forest-wide-updates.md)

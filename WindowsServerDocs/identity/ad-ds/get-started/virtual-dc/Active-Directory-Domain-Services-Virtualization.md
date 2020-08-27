@@ -1,17 +1,17 @@
 ---
 ms.assetid: 2f536fb8-16e5-471d-bafc-21b96197efb8
 title: Active Directory 網域服務虛擬化
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 6a28c6f24d0935785210896163fb735692069769
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 59b0029fd5ff55b31a6a4581e5cc065b5a921982
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954424"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940288"
 ---
 # <a name="active-directory-domain-services-virtualization"></a>Active Directory 網域服務虛擬化
 
@@ -19,7 +19,7 @@ ms.locfileid: "87954424"
 
 這個主題列出使用虛擬網域控制站時的可用資源。
 
--   [Active Directory Domain Services &#40;AD DS&#41; 虛擬化的簡介 &#40;層級 100&#41;](../../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)
+-   [Active Directory Domain Services &#40;AD DS&#41; 虛擬化的簡介 &#40;等級 100&#41;](../../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)
 
 -   [虛擬網域控制站技術參考 &#40;層級 300&#41;](../../../ad-ds/deploy/virtual-dc/Virtualized-Domain-Controller-Technical-Reference--Level-300-.md)
 

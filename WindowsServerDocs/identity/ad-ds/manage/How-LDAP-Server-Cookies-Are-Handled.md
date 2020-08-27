@@ -1,17 +1,17 @@
 ---
 ms.assetid: 3acaa977-ed63-4e38-ac81-229908c47208
 title: 如何處理 LDAP 伺服器 Cookie
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 077c40d6ed61da1d36bdfd792af41ea5067421fc
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7e01afeeef7bb9751b4c23839569a9395fbd9c51
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943592"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941348"
 ---
 # <a name="how-ldap-server-cookies-are-handled"></a>如何處理 LDAP 伺服器 Cookie
 
@@ -26,14 +26,14 @@ ms.locfileid: "87943592"
 這些容量和羅吉斯問題促使 Microsoft LDAP 開發人員建立稱為「分頁查詢」的 LDAP 延伸模組。 此延伸模組會實作一個 LDAP 控制項，將一個大型查詢拆開成為較小型的結果集區塊。 它已成為 rfc [2696](http://www.ietf.org/rfc/rfc2696)的 rfc 標準。
 
 ## <a name="cookie-handling-on-client"></a>用戶端的 Cookie 處理
-分頁查詢方法使用用戶端設定的頁面大小，或透過[LDAP 原則](https://support.microsoft.com/kb/315071/en-us) ( "MaxPageSize" ) 。 用户端一律需要透過傳送 LDAP 控制項才能啟用分頁。
+分頁查詢方法會使用用戶端設定的頁面大小，或透過 [LDAP 原則](https://support.microsoft.com/kb/315071/en-us) ( "MaxPageSize" ) 。 用户端一律需要透過傳送 LDAP 控制項才能啟用分頁。
 
 
 在處理具有許多結果的查詢時，某些時候會達到允許的物件數目上限。 LDAP 伺服器會將回應訊息封裝起來，再加上一個 Cookie，其中包含稍後繼續搜尋所需的資訊。
 
 用户端應用程式必須將 Cookie 視為不透明的 Blob。 它可以擷取回應中的物件計數，也能根據存在的 Cookie 繼續執行搜尋。用户端透過將具備相同參數 (例如基本物件和篩選器) 的查詢再次傳送給 LDAP 伺服器，並加入前次回應傳回的 Cookie 值，即可繼續搜尋。
 
-如果物件數目未填滿頁面，則 LDAP 查詢會完成，而且回應中不會包含任何頁面 cookie。 如果伺服器未傳回任何 Cookie，用户端必須將分頁搜尋視為成功完成。
+如果物件數目未填滿頁面，LDAP 查詢就會完成，回應不會包含任何頁面 cookie。 如果伺服器未傳回任何 Cookie，用户端必須將分頁搜尋視為成功完成。
 
 如果伺服器傳回錯誤，用户端必須將分頁搜尋視為不成功。 重試搜尋會導致從第一頁重新開始搜尋。
 
@@ -69,10 +69,10 @@ LDAP 伺服器不允許集區中每個 LDAP 連線超過 MaxResultSetsPerConn �
 ```
 
 > [!NOTE]
-> "DSID-031A0AE5" 後面的十六進位值會根據 LDAP 伺服器二進位檔的組建版本而有所不同。
+> "DSID" 後面的十六進位值會根據 LDAP 伺服器二進位檔的組建版本而有所不同。
 
 ## <a name="reporting-on-the-cookie-pool"></a>報告 Cookie 集區
-LDAP 伺服器能夠透過[NTDS 診斷機碼](https://support.microsoft.com/kb/314980/en-us)中的 "16 LDAP Interface" 類別來記錄事件。 如果您將此類別設定為 "2"，您可以取得下列事件：
+LDAP 伺服器能夠透過 [NTDS 診斷機碼](https://support.microsoft.com/kb/314980/en-us)中的 "16 LDAP Interface" 類別來記錄事件。 如果您將此類別設定為 "2"，您可以取得下列事件：
 
 ```
 Log Name:      Directory Service
@@ -121,11 +121,11 @@ The client should consider a more efficient search filter.  The limit for Maximu
 
 事件 2898 和 2899 是唯一可得知 LDAP 伺服器是否已達到系統管理員限制的方式。 如果您的 LDAP 查詢錯誤是由於上述控制項處理錯誤而發生，您應根據所取得的事件，查看第 4 節所述的「提高一或多個 LDAP 原則設定的限制」。
 
-如果您的 DC/LDAP 伺服器上出現事件 2898，建議您將 MaxResultSetsPerConn 設為 25。 單一 LDAP 連線中超過 25 個並行分頁搜尋並不常見。 如果您持續看到事件 2898，請調查發生錯誤的 LDAP 用戶端應用程式。 有可能在擷取其他分頁結果時停滯住了，因而讓 Cookie 擱置，並重新啟動一個新查詢。 所以請查看應用程式在某個時候是否具有足夠的 Cookie 可供使用，您也可以將 MaxResultSetsPerConn 的值提高到 25 以上。如果是網域控制站上記錄了事件 2899，處理方法將有所不同。 如果您的 DC/LDAP 伺服器在具有足夠記憶體的電腦上執行 (數 Gb 的可用記憶體) ，建議您將 LDAP 伺服器上的 MaxResultsetSize 設定為 >= 250MB。 此上限已夠大，足以容納在極大目錄上進行的大量 LDAP 頁面搜尋。
+如果您的 DC/LDAP 伺服器上出現事件 2898，建議您將 MaxResultSetsPerConn 設為 25。 單一 LDAP 連線中超過 25 個並行分頁搜尋並不常見。 如果您持續看到事件 2898，請調查發生錯誤的 LDAP 用戶端應用程式。 有可能在擷取其他分頁結果時停滯住了，因而讓 Cookie 擱置，並重新啟動一個新查詢。 所以請查看應用程式在某個時候是否具有足夠的 Cookie 可供使用，您也可以將 MaxResultSetsPerConn 的值提高到 25 以上。如果是網域控制站上記錄了事件 2899，處理方法將有所不同。 如果您的 DC/LDAP 伺服器是在具有足夠記憶體的電腦上執行 (數 Gb 的可用記憶體) ，建議您將 LDAP 伺服器上的 Maxresultsetsize 262144 設定為 >= 250MB。 此上限已夠大，足以容納在極大目錄上進行的大量 LDAP 頁面搜尋。
 
-如果在 250MB 以上的集區中仍然出現事件 2899，則您可能有許多用戶端以很頻繁的方式進行查詢，並傳回極大量物件。 您可以使用[Active Directory 資料收集器集合](/archive/blogs/askds/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond)檔收集的資料，可以協助您尋找重複的分頁查詢，讓您的 LDAP 伺服器忙碌。 這些查詢都會顯示一些符合所用頁面大小的「傳回的專案」。
+如果在 250MB 以上的集區中仍然出現事件 2899，則您可能有許多用戶端以很頻繁的方式進行查詢，並傳回極大量物件。 您可以使用 [Active Directory 資料收集器集合](/archive/blogs/askds/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond) 人員收集的資料，可協助您找出可讓 LDAP 伺服器保持忙碌的重複分頁查詢。 這些查詢都會顯示符合所使用頁面大小的「傳回的專案數」。
 
-可能的話，您應該檢查應用程式設計，並以較低的頻率、資料量及/或較少的用戶端實例查詢此資料來執行不同的方法。如果您有原始程式碼存取權的應用程式，本指南可讓您瞭解應用程式存取 AD 的最佳方式，以[建立有效率的啟用 Ad 應用程式](/previous-versions/ms808539(v=msdn.10))。
+可能的話，您應該檢查應用程式設計，並以較低的頻率、資料量及/或較少的用戶端實例來查詢此資料來實行不同的方法。如果您具有原始程式碼存取權的應用程式，本指南可協助您瞭解  [應用程式存取](/previous-versions/ms808539(v=msdn.10)) ad 的最佳方式。
 
-如果無法變更查詢行為，其中一種方法也會為所需的命名內容加入更多複寫的實例，並重新發佈用戶端，最後減少個別 LDAP 伺服器上的負載。
+如果無法變更查詢行為，其中一個方法也會新增所需命名內容的複寫實例，並重新發佈用戶端，最後減少個別 LDAP 伺服器上的負載。
 

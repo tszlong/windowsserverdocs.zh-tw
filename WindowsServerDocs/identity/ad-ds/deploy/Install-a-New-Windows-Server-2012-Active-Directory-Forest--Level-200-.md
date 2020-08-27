@@ -1,17 +1,17 @@
 ---
 ms.assetid: b3d6fb87-c4d4-451c-b3de-a53d2402d295
 title: 安裝新的 Windows Server 2012 Active Directory 樹系 (等級 200)
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 0b83588268e6a6c8dd685082b3862520fcbd80d5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 50fd78a480a369030e8874054f583dc163a3a0b3
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87968255"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941028"
 ---
 # <a name="install-a-new-windows-server-2012-active-directory-forest-level-200"></a>安裝新的 Windows Server 2012 Active Directory 樹系 (等級 200)
 
@@ -73,11 +73,11 @@ Active Directory 網域服務安裝使用伺服器管理員與 Windows PowerShel
 #### <a name="ad-ds-role-configuration"></a>AD DS 角色設定
 ![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_DeploymentConfiguration_Forest.gif)
 
-Active Directory Domain Services 設定「先前稱為 DCPROMO」，現在是來自角色安裝的離散操作。 安裝 AD DS 角色後，系統管理員要使用伺服器管理員中獨立的精靈或使用 ADDSDeployment Windows PowerShell 模組，將伺服器設定為網域控制站。
+Active Directory Domain Services 設定「先前稱為 DCPROMO」現在是角色安裝的獨立作業。 安裝 AD DS 角色後，系統管理員要使用伺服器管理員中獨立的精靈或使用 ADDSDeployment Windows PowerShell 模組，將伺服器設定為網域控制站。
 
 AD DS 角色設定有十二年的實際經驗做基礎，現在可依據最新的 Microsoft 最佳做法來設定網域控制站。 例如，網域名稱系統和通用類別目錄預設會安裝在每個網域控制站。
 
-伺服器管理員 AD DS configuration wizard 將許多個別的對話合併成較少的提示，而且不會再以「先進」模式隱藏設定。 安裝期間，整個升級程序是在一個擴充的對話方塊中進行。 精靈和 ADDSDeployment Windows PowerShell 模組會顯示值得注意的變更與安全性考量，以及進一步資訊的連結。
+伺服器管理員 AD DS configuration wizard 會將許多個別的對話合併為較少的提示，而且不會再隱藏「advanced」模式中的設定。 安裝期間，整個升級程序是在一個擴充的對話方塊中進行。 精靈和 ADDSDeployment Windows PowerShell 模組會顯示值得注意的變更與安全性考量，以及進一步資訊的連結。
 
 Dcpromo.exe 保留在 Windows Server 2012 中只是為了執行命令列的自動安裝，但不會再執行圖形化安裝精靈。 強烈建議您不要繼續使用 Dcpromo.exe 進行自動安裝，而是改用 ADDSDeployment 模組來替代，因為這個現已被取代的可執行檔不會包含在下一版的 Windows 中。
 
@@ -88,11 +88,11 @@ Dcpromo.exe 保留在 Windows Server 2012 中只是為了執行命令列的自�
 > [!IMPORTANT]
 > Dcpromo.exe 不再包含圖形化精靈，因而不會再安裝角色或功能二進位檔。 嘗試透過 Explorer Shell 執行 Dcpromo.exe 會傳回：
 >
-> 「Active Directory Domain Services 安裝精靈重新置放在伺服器管理員中。 如需詳細資訊，請參閱 <https://go.microsoft.com/fwlink/?LinkId=220921> 。
+> 「Active Directory Domain Services 安裝精靈在伺服器管理員重新置放。 如需詳細資訊，請參閱 <https://go.microsoft.com/fwlink/?LinkId=220921> 。
 >
 > 與在舊版的作業系統中一樣，嘗試執行 Dcpromo.exe /unattend 仍會安裝二進位檔，但會發出警告：
 >
-> 「Dcpromo 自動操作是由適用于 Windows PowerShell 的 ADDSDeployment 模組所取代。 如需詳細資訊，請參閱 <https://go.microsoft.com/fwlink/?LinkId=220924> 。
+> 「Dcpromo 自動作業已由 Windows PowerShell 的 ADDSDeployment 模組取代。 如需詳細資訊，請參閱 <https://go.microsoft.com/fwlink/?LinkId=220924> 。
 >
 > dcpromo.exe 在 Windows Server 2012 中是不建議使用的功能 ，因此它將不會包含在未來的 Windows 版本中，在此作業系統中也不會有進一步的增強。 系統管理員應停止繼續使用它，如果他們想透過命令列建立網域控制站，應改用支援的 Windows PowerShell 模組。
 
@@ -179,7 +179,7 @@ Dcpromo.exe 保留在 Windows Server 2012 中只是為了執行命令列的自�
 #### <a name="active-directory-domain-services"></a>Active Directory Domain Services
 ![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ADDSIntro.png)
 
-[Active Directory 網域服務]**** 對話方塊提供有限的需求及最佳做法資訊。 它主要是做為確認您已選擇 [AD DS 角色]，如果未顯示此畫面，表示您未選取 [AD DS]。
+[Active Directory 網域服務]**** 對話方塊提供有限的需求及最佳做法資訊。 它主要是做為確認您選擇的 AD DS 角色」。如果此畫面未出現，表示您未選取 AD DS。
 
 #### <a name="confirmation"></a>確認
 ![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_Confirmation.png)
@@ -217,7 +217,7 @@ Dcpromo.exe 保留在 Windows Server 2012 中只是為了執行命令列的自�
 ### <a name="uninstallingdisabling"></a>解除安裝/停用
 無論您是否已將伺服器升級為網域控制站，移除 AD DS 角色的方法和任何其他的角色一樣。 不過，移除 AD DS 角色需要在完成時重新啟動電腦。
 
-Active Directory 網域服務角色移除不同於安裝，它需要先將網域控制站降級才能完成。 這是為了避免網域控制站在未適當清除樹系中的中繼資料的情況下便解除安裝其角色二進位檔。 如需詳細資訊，請參閱將[網域控制站和網域降級 &#40;層級 200&#41;](../../ad-ds/deploy/Demoting-Domain-Controllers-and-Domains--Level-200-.md)。
+Active Directory 網域服務角色移除不同於安裝，它需要先將網域控制站降級才能完成。 這是為了避免網域控制站在未適當清除樹系中的中繼資料的情況下便解除安裝其角色二進位檔。 如需詳細資訊，請參閱 [降級網域控制站和網域 &#40;層級 200&#41;](../../ad-ds/deploy/Demoting-Domain-Controllers-and-Domains--Level-200-.md)。
 
 > [!WARNING]
 > 不支援在升級為網域控制站之後使用 Dism.exe 或 Windows PowerShell DISM 模組移除 AD DS 角色，這樣做將會導致伺服器無法正常開機。
@@ -248,7 +248,7 @@ Active Directory 網域服務角色移除不同於安裝，它需要先將網域
 #### <a name="domain-controller-options"></a>網域控制站選項
 ![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_DCOptions_Forest.gif)
 
-[網域控制站選項]**** 可讓您設定新的樹系根網域的 [樹系功能等級]**** 和 [網域功能等級]****。 根據預設，這些設定是新樹系根域中的 Windows Server 2012。 Windows Server 2012 樹系功能等級不會提供 Windows Server 2008 R2 樹系功能等級的任何新功能。 只有在執行新的 Kerberos 設定「永遠提供宣告」和「未受防護的驗證要求失敗」時，才需要 Windows Server 2012 網域功能等級。 Windows Server 2012 中功能等級的主要用途是將網域限制為符合最低允許作業系統需求的網域控制站。 換句話說，您可以指定 Windows Server 2012 網域功能等級，只有執行 Windows Server 2012 的網域控制站可以裝載網域。  Windows Server 2012 會在以獨佔方式找出 Windows Server 2012 網域控制站的 NetLogon 的**DSGetDcName**功能中，執行名為**DS_WIN8_REQUIRED**的新網域控制站旗標。 就何種作業系統可在網域控制站上執行而言，這可讓您彈性擁有更同質或異質的樹系。
+[網域控制站選項]**** 可讓您設定新的樹系根網域的 [樹系功能等級]**** 和 [網域功能等級]****。 根據預設，這些設定是新樹系根域中的 Windows Server 2012。 Windows Server 2012 樹系功能等級不提供 Windows Server 2008 R2 樹系功能等級的任何新功能。 只有在執行新的 Kerberos 設定「永遠提供宣告」和「未受防護驗證要求失敗」時，才需要 Windows Server 2012 網域功能等級。 Windows Server 2012 中功能等級的主要用途是將網域的參與限制為符合最低允許作業系統需求的網域控制站。 換句話說，您可以指定 Windows Server 2012 網域功能等級，只有執行 Windows Server 2012 的網域控制站可以裝載網域。  Windows Server 2012 在 NetLogon 的**DSGetDcName**函式中，會將稱為**DS_WIN8_REQUIRED**的新網域控制站旗標，以獨佔方式找出 Windows Server 2012 網域控制站。 就何種作業系統可在網域控制站上執行而言，這可讓您彈性擁有更同質或異質的樹系。
 
 如需網域控制站定位的詳細資訊，請檢閱 [目錄服務功能](/windows/win32/ad/directory-service-functions)。
 
@@ -566,7 +566,7 @@ ADDSDeployment Cmdlet 提供略過自動設定 DNS 用戶端設定、轉寄站�
 [Active Directory Domain Services (TechNet 入口網站) ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770946(v=ws.10)) 
 [適用于 Windows Server 2008 R2](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378801(v=ws.10)) 
  的 Active Directory Domain Services[適用于 Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378891(v=ws.10)) 
- 的 Active Directory Domain ServicesWindows server[技術參考 (Windows server 2003) ](/previous-versions/windows/it-pro/windows-server-2003/cc739127(v=ws.10)) 
-[Active Directory 管理中心：消費者入門 (Windows Server 2008 R2) ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560651(v=ws.10)) 
-Windows [PowerShell (Windows Server 2008 R2 的 Active Directory 管理) ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378937(v=ws.10)) 
-[詢問目錄服務小組 (官方的 Microsoft 商業技術支援 Blog) ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378937(v=ws.10))
+ 的 Active Directory Domain ServicesWindows server [2003) ](/previous-versions/windows/it-pro/windows-server-2003/cc739127(v=ws.10)) 
+ (Windows server 技術參考[Active Directory 管理中心：消費者入門 (Windows Server 2008 R2) ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560651(v=ws.10)) 
+[Active Directory Windows PowerShell (Windows Server 2008 R2) 管理](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378937(v=ws.10)) 
+[詢問目錄服務小組 (官方 Microsoft 商用技術支援的 Blog) ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378937(v=ws.10))

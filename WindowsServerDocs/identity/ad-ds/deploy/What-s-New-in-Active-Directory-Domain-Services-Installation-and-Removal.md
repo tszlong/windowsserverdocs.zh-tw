@@ -1,31 +1,31 @@
 ---
 ms.assetid: ba7f2b9f-7351-4680-b7d8-a5f270614f1c
 title: Active Directory 網域服務安裝和移除的新功能
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: 09863123a69eec72b3d8bfaaf138bb2d2562f687
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 9658fe8ea7c9c11cda10989bfe9d1568c21d9704
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994512"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940588"
 ---
 # <a name="whats-new-in-active-directory-domain-services-installation-and-removal"></a>Active Directory 網域服務安裝和移除的新功能
 
 >適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-Windows Server 2012 中的 Active Directory Domain Services (AD DS) 部署比舊版 Windows Server 更簡單且更快速。 AD DS 安裝程序現在建置於 Windows PowerShell 上，而且與 [伺服器管理員] 整合。 將網域控制站引入現有 Active Directory 環境所需執行的步驟也減少了。 這樣讓建立新 Active Directory 環境的程序變得更簡單且更有效率。 新的 AD DS 部署程序將可能阻止安裝的錯誤的機率降到最低。
+Windows Server 2012 中的 Active Directory Domain Services (AD DS) 部署比舊版的 Windows Server 更簡單且更快速。 AD DS 安裝程序現在建置於 Windows PowerShell 上，而且與 [伺服器管理員] 整合。 將網域控制站引入現有 Active Directory 環境所需執行的步驟也減少了。 這樣讓建立新 Active Directory 環境的程序變得更簡單且更有效率。 新的 AD DS 部署程序將可能阻止安裝的錯誤的機率降到最低。
 
-此外，您還可以同時在多部伺服器上安裝 AD DS 伺服器角色二進位檔 (它是 AD DS 伺服器角色)。 您也可以從遠端在個別伺服器上執行 AD DS 安裝精靈。 這些改良功能為部署執行 Windows Server 2012 的網域控制站提供更多的彈性，特別是針對大規模的全域部署，其中許多網域控制站需要部署到不同區域的辦公室。
+此外，您還可以同時在多部伺服器上安裝 AD DS 伺服器角色二進位檔 (它是 AD DS 伺服器角色)。 您也可以從遠端在個別伺服器上執行 AD DS 安裝精靈。 這些增強功能可提供更大的彈性來部署執行 Windows Server 2012 的網域控制站，特別是針對大規模的全域部署，其中許多網域控制站需要部署到不同區域的辦公室。
 
 AD DS 安裝包括下列功能：
 
 - **Adprep.exe 整合到 AD DS 安裝程序。** 準備現有 Active Directory 所需的繁複步驟，像是需要使用各種不同的認證、複製 Adprep.exe 檔案或登入特定網域控制站等，現在都已經簡化或可以自動執行了。 這樣就縮短了安裝 AD DS 所需的時間，並減少了可能阻止網域控制站升級的錯誤的機率。
 
-   對於在安裝新網域控制站之前最好預先執行 adprep.exe 命令的環境而言，您仍然可以將 adprep.exe 命令與 AD DS 安裝分開執行。 Windows Server 2012 版的 adprep.exe 會在遠端執行，因此您可以從執行64位版 Windows Server 2008 或更新版本的伺服器執行所有必要的命令。
+   對於在安裝新網域控制站之前最好預先執行 adprep.exe 命令的環境而言，您仍然可以將 adprep.exe 命令與 AD DS 安裝分開執行。 adprep.exe 的 Windows Server 2012 版本會從遠端執行，因此您可以從執行64位版 Windows Server 2008 或更新版本的伺服器執行所有必要的命令。
 
 - **新的 AD DS 安裝建置於 Windows PowerShell 上，並可從遠端叫用。** 新的 AD DS 安裝與 [伺服器管理員] 整合，所以您可以使用與安裝其他伺服器角色所用的相同介面來安裝 AD DS。 對於 Windows PowerShell 使用者，AD DS 部署 Cmdlet 提供了更多的功能及彈性。 命令列與 GUI 的安裝選項功能是對等的。
 - **新的 AD DS 安裝包含先決條件驗證。** 任何可能出現的錯誤會在安裝開始前就先發現。 您可以在錯誤狀況發生之前就進行修正，而不用擔心會出現部分完整升級的錯誤。 例如，如果必須執行 adprep /domainprep，安裝精靈會確認使用者的權限足以執行操作。
@@ -35,25 +35,25 @@ AD DS 安裝包括下列功能：
 
 ## <a name="the-active-directory-domain-services-configuration-wizard"></a><a name="BKMK_ADConfigurationWizard"></a>Active Directory 網域服務設定精靈
 
-從 Windows Server 2012 開始，Active Directory Domain Services Configuration Wizard 會將舊版 Active Directory Domain Services 安裝精靈取代為使用者介面 (UI) 選項，以在安裝網域控制站時指定設定。 [Active Directory 網域服務設定精靈] 在 [新增角色精靈] 完成後開始。
+從 Windows Server 2012 開始，Active Directory Domain Services Configuration Wizard 會將舊版 Active Directory Domain Services 安裝精靈取代為使用者介面 (UI) 選項，以在您安裝網域控制站時指定設定。 [Active Directory 網域服務設定精靈] 在 [新增角色精靈] 完成後開始。
 
 > [!WARNING]
 > 從 Windows Server 2012 開始，舊版 Active Directory Domain Services 安裝精靈 ( # A0) 已淘汰。
 
-在[安裝 Active Directory Domain Services &#40;層級 100&#41;](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md)中，UI 程式會示範如何啟動 [新增角色] 嚮導來安裝 AD DS 伺服器角色二進位檔，然後執行 [Active Directory Domain Services 設定] 嚮導來完成網域控制站安裝。 Windows PowerShell 範例示範如何使用 AD DS 部署 Cmdlet 完成這兩個程序的步驟。
+在 [ [安裝 Active Directory Domain Services &#40;層級 100]&#41;](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md)中，UI 程式會示範如何啟動 [新增角色] Wizard 以安裝 AD DS 伺服器角色二進位檔，然後執行 [Active Directory Domain Services 設定向導] 以完成網域控制站安裝。 Windows PowerShell 範例示範如何使用 AD DS 部署 Cmdlet 完成這兩個程序的步驟。
 
 ## <a name="adprepexe-integration"></a><a name="BKMK_NewAdprep"></a>Adprep.exe 整合
 
-從 Windows Server 2012 開始，只有一個版本的 Adprep.exe (沒有32位版本，adprep32.exe) 。 當您將執行 Windows Server 2012 的網域控制站安裝到現有的 Active Directory 網域或樹系時，會視需要自動執行 Adprep 命令。
+從 Windows Server 2012 開始，只有一個版本的 Adprep.exe (沒有32位版本，adprep32.exe) 。 當您將執行 Windows Server 2012 的網域控制站安裝到現有的 Active Directory 網域或樹系時，就會視需要自動執行 Adprep 命令。
 
-雖然 adprep 作業會自動執行，但是您可以個別執行 Adprep.exe。 例如，如果安裝 AD DS 的使用者不是 Enterprise Admins 群組的成員 (必須是這個群組的成員才能執行 Adprep /forestprep)，那麼可能需要另外執行命令。 但是，如果您計畫就地升級您的第一個 Windows Server 2012 網域控制站 (換句話說，您打算就地升級執行 Windows Server 2012) 的網域控制站作業系統，您只需要執行 adprep.exe。
+雖然 adprep 作業會自動執行，但是您可以個別執行 Adprep.exe。 例如，如果安裝 AD DS 的使用者不是 Enterprise Admins 群組的成員 (必須是這個群組的成員才能執行 Adprep /forestprep)，那麼可能需要另外執行命令。 但是，如果您打算就地升級第一個 Windows Server 2012 網域控制站，您就只需要執行 adprep.exe (換句話說，您計畫就地升級執行 Windows Server 2012) 的網域控制站作業系統。
 
-Adprep.exe 位於 Windows Server 2012 安裝光碟的 \support\adprep 資料夾中。Windows Server 2012 版本的 adprep 能夠從遠端執行。
+Adprep.exe 位於 Windows Server 2012 安裝光碟的 \support\adprep 資料夾中。Windows Server 2012 版的 adprep 能夠從遠端執行。
 
-Windows Server 2012 版的 adprep.exe 可以在執行64位版本的 Windows Server 2008 或更新版本的任何伺服器上執行。 伺服器需要建立網路連線到您想要新增網域控制站的樹系架構主機和網域基礎結構主機。 如果這些角色的任一個是裝載於執行 Windows Server 2003 的伺服器上，則 adprep 必須從遠端執行。 執行 adprep 的伺服器不需要是網域控制站。 它可以是加入網域或屬於工作群組的伺服器。
+Windows Server 2012 版的 adprep.exe 可以在任何執行 Windows Server 2008 或更新版本之64位版本的伺服器上執行。 伺服器需要建立網路連線到您想要新增網域控制站的樹系架構主機和網域基礎結構主機。 如果這些角色的任一個是裝載於執行 Windows Server 2003 的伺服器上，則 adprep 必須從遠端執行。 執行 adprep 的伺服器不需要是網域控制站。 它可以是加入網域或屬於工作群組的伺服器。
 
 > [!NOTE]
-> 如果您嘗試在執行 Windows Server 2003 的伺服器上執行 Windows Server 2012 版的 adprep.exe，就會出現下列錯誤：
+> 如果您嘗試在執行 Windows Server 2003 的伺服器上執行 Windows Server 2012 版的 adprep.exe，則會出現下列錯誤：
 >
 > Adprep.exe 不是有效的 Win32 應用程式。
 
@@ -67,7 +67,7 @@ Windows Server 2012 版的 adprep.exe 可以在執行64位版本的 Windows Serv
 
 /User 和/userdomain 是 Windows Server 2012 中 Adprep.exe 的新參數。 這些參數分別指定執行 adprep 命令之使用者的使用者帳戶名稱及使用者網域。 Adprep.exe 命令列公用程式會阻止指定 /userdomain 和 /user 的其中一個，但略過另一個。
 
-不過，Adprep 操作也可以做為使用 Windows PowerShell 或 [伺服器管理員] 進行 AD DS 安裝的一部分來執行。 這些經驗與 adprep.exe 共用相同的基礎實作 (adprep.dll)。 Windows PowerShell 與 [伺服器管理員] 經驗有自己的個別認證輸入，其需求與 adprep.exe 不完全相同。 使用 Windows PowerShell 或 [伺服器管理員]，就可以將 /user (但不是 /userdomain) 的值傳送給 adprep.dll。 如果指定/user，但未指定/userdomain，則會使用本機電腦的網域來執行檢查。 如果電腦沒有加入網域，就無法檢查群組成員資格。
+不過，Adprep 操作也可以做為使用 Windows PowerShell 或 [伺服器管理員] 進行 AD DS 安裝的一部分來執行。 這些經驗與 adprep.exe 共用相同的基礎實作 (adprep.dll)。 Windows PowerShell 與 [伺服器管理員] 經驗有自己的個別認證輸入，其需求與 adprep.exe 不完全相同。 使用 Windows PowerShell 或 [伺服器管理員]，就可以將 /user (但不是 /userdomain) 的值傳送給 adprep.dll。 如果指定了/user，但未指定/userdomain，則會使用本機電腦的網域來執行檢查。 如果電腦沒有加入網域，就無法檢查群組成員資格。
 
 當無法檢查群組成員資格的時候，Adprep 會在 adprep 記錄檔中顯示警告訊息，並繼續進行：
 
@@ -91,7 +91,7 @@ Adprep.exe /forestprep /forest <forest name> /userdomain <user domain name> /use
 
 ### <a name="running-adprep-using-smartcard"></a>使用智慧卡執行 adprep
 
-Windows Server 2012 版的 adprep.exe 會使用智慧卡做為認證，但沒有簡單的方法可透過命令列指定智慧卡認證。 有一個方式是透過 PowerShell Cmdlet Get-Credential 獲取智慧卡認證。 然後使用傳回的 PSCredential 物件的使用者名稱 (顯示為 `@@...`)。 密碼是智慧卡的 PIN。
+Windows Server 2012 版的 adprep.exe 可以使用智慧卡作為認證，但無法透過命令列輕鬆地指定智慧卡認證。 有一個方式是透過 PowerShell Cmdlet Get-Credential 獲取智慧卡認證。 然後使用傳回的 PSCredential 物件的使用者名稱 (顯示為 `@@...`)。 密碼是智慧卡的 PIN。
 
 如果有指定 /user，Adprep.exe 就需要 /userdomain。 對於智慧卡認證，/userdomain 應該是智慧卡代表的基礎使用者帳戶的網域。
 
@@ -121,9 +121,9 @@ AD DS 安裝精靈會在安裝開始之前，先檢查是否符合下列先決�
 
 ## <a name="system-requirements"></a><a name="BKMK_SystemReqs"></a>系統需求
 
-Windows server 2012 的系統需求與 Windows Server 2008 R2 保持不變。 如需詳細資訊，請參閱[Windows Server 2008 R2 SP1 系統需求](https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx) (https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx) 。
+Windows server 2012 的系統需求與 Windows Server 2008 R2 不相同。 如需詳細資訊，請參閱 [Windows Server 2008 R2 SP1 系統需求](https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx) (https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx) 。
 
-某些功能可能會有其他的需求。 例如，虛擬網域控制站複製功能需要 PDC 模擬器執行 Windows Server 2012，以及安裝有 Hyper-v 角色的 Windows Server 2012 電腦。
+某些功能可能會有其他的需求。 例如，虛擬網域控制站複製功能要求 PDC 模擬器執行 Windows Server 2012，以及執行 Windows Server 2012 且已安裝 Hyper-v 角色的電腦。
 
 ## <a name="known-issues"></a><a name="BKMK_KnownIssues"></a>已知問題
 
@@ -169,12 +169,12 @@ Windows server 2012 的系統需求與 Windows Server 2008 R2 保持不變。 �
 
    如果將目標伺服器加入網域，然後使用智慧卡執行安裝，則安裝會成功。
 
-- **ADDSDeployment 模組不會在 32 位元程序下執行。** 如果您要使用包含 ADDSDeployment Cmdlet 的腳本以及不支援原生64位程式的任何其他 Cmdlet 來自動化 Windows Server 2012 的部署和設定，腳本可能會失敗並出現錯誤，指出找不到 ADDSDeployment Cmdlet。
+- **ADDSDeployment 模組不會在 32 位元程序下執行。** 如果您要使用包含 ADDSDeployment Cmdlet 的腳本和不支援原生64位進程的任何其他 Cmdlet 來自動化 Windows Server 2012 的部署和設定，腳本可能會失敗並出現錯誤，指出找不到 ADDSDeployment Cmdlet。
 
    在這個情況下，您需要將 ADDSDeployment Cmdlet 與不支援原生 64 位元程序的 Cmdlet 分開執行。
 
-- Windows Server 2012 中有一個新的檔案系統，稱為復原檔案系統。 請不要將 Active Directory 資料庫、記錄檔或 SYSVOL 儲存到使用復原檔案系統 (ReFS) 格式化的資料磁碟區。 如需 ReFS 的詳細資訊，請參閱 [Building the next generation file system for Windows: ReFS](/archive/blogs/b8/building-the-next-generation-file-system-for-windows-refs)(為 Windows 建立新一代的檔案系統：ReFS)。
-- 在伺服器管理員中，在 Server Core 安裝上執行 AD DS 或其他伺服器角色並已升級至 Windows Server 2012 的伺服器，伺服器角色可能會出現紅色狀態，即使事件和狀態已如預期般收集也一樣。 執行初步發行版本 Windows Server 2012 的 Server Core 安裝的伺服器也可能受到影響。
+- Windows Server 2012 中有一個名為復原檔案系統的新檔案系統。 請不要將 Active Directory 資料庫、記錄檔或 SYSVOL 儲存到使用復原檔案系統 (ReFS) 格式化的資料磁碟區。 如需 ReFS 的詳細資訊，請參閱 [Building the next generation file system for Windows: ReFS](/archive/blogs/b8/building-the-next-generation-file-system-for-windows-refs)(為 Windows 建立新一代的檔案系統：ReFS)。
+- 在伺服器管理員中，在 Server Core 安裝上執行 AD DS 或其他伺服器角色，並已升級為 Windows Server 2012 的伺服器，伺服器角色可能會顯示為紅色狀態，即使事件和狀態是如預期般收集也一樣。 執行初步發行 Windows Server 2012 之 Server Core 安裝的伺服器也會受到影響。
 
 ### <a name="active-directory-domain-services-installation-hangs-if-an-error-prevents-critical-replication"></a>如果錯誤阻止關鍵性複寫，Active Directory 網域服務安裝會停滯
 
@@ -209,7 +209,7 @@ Windows server 2012 的系統需求與 Windows Server 2008 R2 保持不變。 �
 
    系統會在開始安裝之前，於先決條件檢查期間驗證網路連線與名稱解析的 AD DS 安裝需求。 但是，部分錯誤狀況可能會在先決條件驗證發生之後且在安裝完成之前出現，例如，如果複寫夥伴在安裝期間無法使用。
 
-- 在複本網域控制站安裝期間，會為安裝認證指定目標伺服器的本機 Administrator 帳戶，而且本機 Administrator 帳戶的密碼與網域管理員帳戶的密碼相符。 在此情況下，您可以完成安裝精靈並開始安裝，然後才會遇到「拒絕存取」失敗。
+- 在複本網域控制站安裝期間，會為安裝認證指定目標伺服器的本機 Administrator 帳戶，而且本機 Administrator 帳戶的密碼與網域管理員帳戶的密碼相符。 在此情況下，您可以完成安裝精靈並開始安裝，然後才會發生「拒絕存取」失敗。
 
    例如，dcpromo.log 會顯示：
 
@@ -231,15 +231,15 @@ Windows server 2012 的系統需求與 Windows Server 2008 R2 保持不變。 �
 
 如果您建立新的網域或樹系，且指定包含非標準化的國際化字元的 DNS 網域名稱，那麼 [Active Directory 網域服務設定精靈] 會顯示警告，說明名稱的 DNS 查詢可能會失敗。 雖然 DNS 網域名稱是在 [部署設定] 頁面上指定的，但是警告是在精靈稍後的 [先決條件檢查] 頁面上出現。
 
-如果使用非正規化的名稱（例如 füßball）或 ' ΣΤ ' 來指定 DNS 功能變數名稱，則 (正規化版本為： füssball.com 和) βστα，而嘗試使用 WinHTTP 存取它的用戶端應用程式將會在呼叫名稱解析 Api 之前，先將名稱標準化。 如果使用者在某個對話上輸入 "' ΣΤ ' .com"，DNS 查詢將會以 "βστα" 的形式傳送，而且沒有任何 DNS 伺服器會與 "' ΣΤ ' .com" 的資源記錄相符。 使用者將無法解析名稱。
+如果使用非標準化名稱（如 füßball .com 或 ' ΣΤ '）指定 DNS 功能變數名稱， (正規化版本為： füssball.com 和βστα .com) ，嘗試以 WinHTTP 存取它的用戶端應用程式將會在呼叫名稱解析 Api 之前將名稱正規化。 如果使用者在某個對話方塊上輸入 "' ΣΤ ' .com"，DNS 查詢將會以 "βστα .com" 的形式傳送，而且沒有任何 DNS 伺服器會將它與 "' ΣΤ ' .com" 的資源記錄相符。 使用者將無法解析名稱。
 
 下列範例說明使用非標準化的 IDN 名稱時可能發生的其中一個問題：
 
-1. 使用非正規化名稱的網域會在 dns 伺服器上建立並註冊： füßball .com
-2. 電腦 "nps" 已加入網域，並已註冊其名稱： nps. füßball .com
-3. 用戶端應用程式嘗試連接到伺服器 füßball .com
-4. 用戶端應用程式會嘗試解析名稱 füßball，呼叫名稱解析 Api。
-5. 由於正規化的緣故，名稱會轉換成 nps.füssball.com，並透過網路查詢為 füßball .com
+1. 在 dns 伺服器上建立並註冊使用非標準化名稱的網域： füßball .com
+2. 電腦 "nps" 已加入網域，並已註冊其名稱： füßball .com
+3. 用戶端應用程式嘗試連接到 füßball 的伺服器
+4. 用戶端應用程式會嘗試解析名稱為 füßball 的名稱解析 Api。
+5. 由於正規化，名稱會轉換成 nps.füssball.com，並以 füßball 的方式在網路上進行查詢。
 6. 用戶端應用程式無法解析名稱，因為註冊的名稱是 füßball .com
 
 如果 [Active Directory 網域服務設定精靈] 中的 [先決條件檢查] 頁面上出現警告，請返回 [部署設定] 頁面，指定標準化的 DNS 網域名稱。 如果您使用 Windows PowerShell 安裝新的網域，請為 -DomainName 選項指定標準化的 DNS 名稱。

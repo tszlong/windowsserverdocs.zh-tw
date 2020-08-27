@@ -1,34 +1,34 @@
 ---
 ms.assetid: e4c31187-f15f-410b-bb79-8d63e2f2b421
 title: 將網域控制站升級為 Windows Server 2012 R2 與 Windows Server 2012
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: ae0aa44dba50c467dd1bd2423e9eb67104387cd3
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 4034ea96fbe1f758d6948b2bc52ba9786158b0ba
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994483"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940558"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012"></a>將網域控制站升級為 Windows Server 2012 R2 與 Windows Server 2012
 
 >適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-本主題提供有關 Windows Server 2012 R2 和 Windows Server 2012 中 Active Directory Domain Services 的背景資訊，並說明從 Windows Server 2008 或 Windows Server 2008 R2 升級網域控制站的程式。
+本主題提供有關 Windows Server 2012 R2 和 Windows Server 2012 中 Active Directory Domain Services 的背景資訊，以及說明從 Windows Server 2008 或 Windows Server 2008 R2 升級網域控制站的程式。
 
 ## <a name="domain-controller-upgrade-steps"></a><a name="BKMK_UpgradeWorkflow"></a>網域控制站升級步驟
-升級網域的建議方式是視需要升級執行較新版 Windows Server 的網域控制站，以及降級舊版網域控制站。 該方法是升級現有網域控制站之作業系統的慣用方法。 這份清單涵蓋執行較新版本之 Windows Server 的網域控制站升級之前要遵循的一般步驟：
+升級網域的建議方式是視需要升級執行較新版 Windows Server 的網域控制站，以及降級舊版網域控制站。 該方法是升級現有網域控制站之作業系統的慣用方法。 這份清單涵蓋您升級執行較新版本 Windows Server 的網域控制站之前，要遵循的一般步驟：
 
 1. 確認目標伺服器符合 [系統需求](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303418(v=ws.11))。
 2. 確認[應用程式相容性](../../ad-ds/deploy/Upgrade-Domain-Controllers-to-Windows-Server-2012-R2-and-Windows-Server-2012.md#BKMK_AppCompat)。
-3. 確認安全性設定。 如需詳細資訊，請參閱[與 Windows server 2012 中的 AD DS 相關的已淘汰功能和行為變更](../../ad-ds/deploy/Upgrade-Domain-Controllers-to-Windows-Server-2012-R2-and-Windows-Server-2012.md#BKMK_DeprecatedFeatures)和 windows server [2008 和 Windows server 2008 R2 中的安全預設設定](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee522994(v=ws.10)#BKMK_SecureDefault)。
+3. 確認安全性設定。 如需詳細資訊，請參閱 [Windows server 2012 中 AD DS 的已淘汰功能和行為變更](../../ad-ds/deploy/Upgrade-Domain-Controllers-to-Windows-Server-2012-R2-and-Windows-Server-2012.md#BKMK_DeprecatedFeatures) ，以及 [windows Server 2008 和 Windows server 2008 R2 中的安全預設設定](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee522994(v=ws.10)#BKMK_SecureDefault)。
 4. 檢查要執行安裝的電腦與目標伺服器的連線。
 5. 檢查必要操作主機角色的可用性：
 
-   - 若要在現有網域和樹系中安裝執行 Windows Server 2012 的第一個 DC，執行安裝的電腦必須連線到架構主機才能執行 adprep/forestprep 和基礎結構主機，以便執行 adprep/domainprep。
+   - 若要在現有網域和樹系中安裝第一個執行 Windows Server 2012 的 DC，執行安裝的電腦必須連線到架構主機才能執行 adprep/forestprep 和基礎結構主機，以便執行 adprep/domainprep。
    - 若要在已經延伸樹系架構的網域中安裝第一個 DC，則只需要連線到基礎結構主機即可。
    - 若要在現有樹系中安裝或移除網域，您需要連線到網域命名主機。
    - 任何網域控制站安裝也需要連線到 RID 主機。
@@ -65,7 +65,7 @@ Windows 8 與 Windows Server 2012 引進一項名為 [自動維護](/windows/win
 
 因為 Windows Update 是 Windows 8 和 Windows Server 2012 中自動維護的一部分，其本身設定日期和時間來安裝更新的內部排程已不再有效。 為協助確保您企業中的所有裝置與電腦 (包括執行 Windows 8 與 Windows Server 2012 的所有裝置與電腦) 有一致且可預期的重新啟動行為，請參閱 Microsoft 知識庫文章 [2885694](https://support.microsoft.com/kb/2885694) (或參閱 2013 年 10 月的累積彙總套件 [2883201](https://support.microsoft.com/kb/2883201))，然後設定下列 WSUS 部落格文章中描述的原則設定： [為 Windows 8 與 Windows Server 2012 啟用更好預測的 Windows Update 體驗 (KB 2885694)](/archive/blogs/wsus/enabling-a-more-predictable-windows-update-experience-for-windows-8-and-windows-server-2012-kb-2885694)。
 
-## <a name="whats-new-in-ad-ds-in-windows-server-2012-r2"></a><a name="BKMK_NewWS2012R2"></a>Windows Server 2012 R2 中 AD DS 的新功能
+## <a name="whats-new-in-ad-ds-in-windows-server-2012-r2"></a><a name="BKMK_NewWS2012R2"></a>Windows Server 2012 R2 中 AD DS 有哪些新功能？
 
 下表摘要說明 Windows Server 2012 R2 中的 AD DS 新功能，並附上含有詳細資訊的連結。 如需某些功能更詳細的說明，包含這些功能的需求，請參閱 [Windows Server 2012 R2 中 Active Directory 的新功能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn268294(v=ws.11))。
 
@@ -78,15 +78,15 @@ Windows 8 與 Windows Server 2012 引進一項名為 [自動維護](/windows/win
 |[Winlogon 自動重新啟動登入 (ARSO)](../manage/component-updates/winlogon-automatic-restart-sign-on--arso-.md)|讓鎖定螢幕應用程式可在 Windows 8.1 裝置上重新啟動並使用。|
 |[TPM 金鑰證明](../manage/component-updates/tpm-key-attestation.md)|讓 CA 以密碼編譯方式證明發行的憑證中，憑證要求者私密金鑰實際上受信賴平台模組 (TPM) 的保護。|
 |[認證保護和管理](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn408190(v=ws.11))|新的認證保護與網域驗證控制可減少認證被盜的機會。|
-|[檔案複寫服務 (FRS) 過時](../manage/component-updates/directory-services-component-updates.md)|Windows Server 2003 網域功能等級也已被取代，因為在該功能等級中，FRS 是用來複寫 SYSVOL。 那表示當您在執行 Windows Server 2012 R2 的伺服器上建立新網域時，網域功能等級需為 Windows Server 2008 或更新版本。 您仍然可以將執行 Windows Server 2012 R2 的網域控制站新增至具有 Windows Server 2003 網域功能等級的現有網域;您就無法在該層級建立新的網域。|
+|[檔案複寫服務 (FRS) 過時](../manage/component-updates/directory-services-component-updates.md)|Windows Server 2003 網域功能等級也已被取代，因為在該功能等級中，FRS 是用來複寫 SYSVOL。 那表示當您在執行 Windows Server 2012 R2 的伺服器上建立新網域時，網域功能等級需為 Windows Server 2008 或更新版本。 您仍然可以將執行 Windows Server 2012 R2 的網域控制站新增到具有 Windows Server 2003 網域功能等級的現有網域;您只是無法在該層級建立新的網域。|
 |[新網域與樹系功能等級](../active-directory-functional-levels.md)|Windows Server 2012 R2 有新的功能等級。 Windows Server 2012 R2 DFL 有新功能。|
 |[LDAP 查詢最佳化工具變更](../manage/component-updates/directory-services-component-updates.md)|LDAP 對於複雜查詢的搜尋效率與搜尋時間的效能改善。|
 |[1644 事件改進](../manage/component-updates/directory-services-component-updates.md)|LDAP 搜尋結果統計資料已加入事件識別碼 1644 以協助疑難排解。|
 |[Active Directory 複寫輸送量改進](../manage/component-updates/directory-services-component-updates.md)|將最大 AD 複寫輸送量由 40Mbps 調整為約 600 Mbps|
 
-## <a name="whats-new-in-ad-ds-in-windows-server-2012"></a><a name="BKMK_WhatsNewAD"></a>Windows Server 2012 中 AD DS 的新功能
+## <a name="whats-new-in-ad-ds-in-windows-server-2012"></a><a name="BKMK_WhatsNewAD"></a>Windows Server 2012 中 AD DS 有哪些新功能？
 
-下表摘要說明 Windows Server 2012 中的 AD DS 新功能，並附上含有詳細資訊的連結。 如需某些功能的詳細說明，包括其需求，請參閱[Active Directory Domain Services (AD DS) 的新](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831477(v=ws.11))功能。
+下表摘要說明 Windows Server 2012 中的 AD DS 新功能，並附上含有詳細資訊的連結。 如需某些功能的詳細說明，包括它們的需求，請參閱 [Active Directory Domain Services (AD DS) 的新 ](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831477(v=ws.11))功能。
 
 |功能|描述|
 |-----------|---------------|
@@ -122,9 +122,9 @@ Windows 8 與 Windows Server 2012 引進一項名為 [自動維護](/windows/win
 |||
 |-|-|
 |**案例**|**建議的 configuration (s) **|
-|**WSUS 管理的**<p>-每週安裝一次更新<br />-在晚上11點時重新開機星期五|設定機器自動安裝，防止在需要的時間之前重新開機<p>**原則**：設定自動更新 (啟用)<p>設定自動更新： 4-自動下載和排程安裝<p>**原則**： (停用登入的使用者時，不會自動重新開機) <p>**WSUS 期限**：設定為星期五晚上 11 點|
-|**WSUS 管理的**<p>-在不同的小時/天內錯開安裝|為應該一起更新的不同電腦群組設定目標群組<p>為先前的案例使用上述步驟<p>為不同的目標群組設定不同期限|
-|**不受 WSUS 管理-不支援期限**<p>-在不同時間錯開安裝|**原則**：設定自動更新 (啟用)<p>設定自動更新： 4-自動下載和排程安裝<p>**登錄機碼：** 如需啟用登錄機碼的資訊，請參閱 Microsoft 知識庫文章 [2835627](https://support.microsoft.com/kb/2835627)<p>**原則：** 自動維護隨機延遲 (啟用)<p>將 [定期維護隨機延遲]**** 設為 PT6H 以設定 6 小時的隨機延遲，可提供下列行為：<p>-更新將會在設定的維護時間加上隨機延遲後進行安裝。<p>-每台機器的重新開機只會在3天后進行<p>或者，為每個電腦群組設定不同的維護時間|
+|**WSUS 管理的**<p>-每週安裝更新一次<br />-晚上11點重新開機星期五|設定機器自動安裝，防止在需要的時間之前重新開機<p>**原則**：設定自動更新 (啟用)<p>設定自動更新： 4-自動下載並排程安裝<p>**原則**： (停用登入的使用者不會自動重新開機) <p>**WSUS 期限**：設定為星期五晚上 11 點|
+|**WSUS 管理的**<p>-在不同的小時/天錯開安裝|為應該一起更新的不同電腦群組設定目標群組<p>為先前的案例使用上述步驟<p>為不同的目標群組設定不同期限|
+|**不受 WSUS 管理-不支援期限**<p>-錯開不同時間的安裝|**原則**：設定自動更新 (啟用)<p>設定自動更新： 4-自動下載並排程安裝<p>**登錄機碼：** 如需啟用登錄機碼的資訊，請參閱 Microsoft 知識庫文章 [2835627](https://support.microsoft.com/kb/2835627)<p>**原則：** 自動維護隨機延遲 (啟用)<p>將 [定期維護隨機延遲]**** 設為 PT6H 以設定 6 小時的隨機延遲，可提供下列行為：<p>-更新將會安裝在設定的維護時間加上隨機延遲<p>-每台電腦的重新開機將會在3天后進行<p>或者，為每個電腦群組設定不同的維護時間|
 
 如需 Windows 工程小組為何實作這些變更的詳細資訊，請參閱 [最小化在 Windows Update 執行自動更新後的重新啟動次數](https://blogs.msdn.com/b/b8/archive/2011/11/14/minimizing-restarts-after-automatic-updating-in-windows-update.aspx)。
 
@@ -132,7 +132,7 @@ Windows 8 與 Windows Server 2012 引進一項名為 [自動維護](/windows/win
 
 從 Windows Server 2003 到 Windows Server 2008 R2，您都是在執行 Active Directory 安裝精靈 Dcpromo.exe 之前執行 x86 或 X64 版本的 Adprep.exe 命令列工具，而且 Dcpromo.exe 擁有選擇性變數可從媒體安裝或進行自動安裝。
 
-自 Windows Server 2012 起，命令列安裝是使用 Windows PowerShell 的 ADDSDeployment 模組執行。 GUI 升級是在伺服器管理員中使用全新的 AD DS 設定精靈執行。 為簡化安裝程序，ADPREP 已經整合在 AD DS 安裝之中，視需要自動執行。 以 Windows PowerShell 為基礎的 AD DS Configuration Wizard 會自動以新增 Dc 的網域中的架構和結構主機角色為目標，然後在相關的網域控制站上遠端執行必要的 ADPREP 命令。
+自 Windows Server 2012 起，命令列安裝是使用 Windows PowerShell 的 ADDSDeployment 模組執行。 GUI 升級是在伺服器管理員中使用全新的 AD DS 設定精靈執行。 為簡化安裝程序，ADPREP 已經整合在 AD DS 安裝之中，視需要自動執行。 以 Windows PowerShell 為基礎的 AD DS 設定向導會自動以要新增 Dc 的網域中的架構和基礎結構主機角色為目標，然後從遠端在相關的網域控制站上執行所需的 ADPREP 命令。
 
 AD DS 安裝精靈的先決條件檢查會在安裝開始前識別可能的錯誤。 您可以更正錯誤狀況，以排除升級不完全的問題。 此精靈也可匯出包含圖形化安裝期間指定之所有選項的 Windows PowerShell 指令碼。
 
@@ -146,17 +146,17 @@ AD DS 安裝精靈的先決條件檢查會在安裝開始前識別可能的錯�
 - **Adprep32.exe 過時**
    - Adprep.exe 只有一個版本，可以視需要在執行 Windows Server 2008 或更新版本的 64 位元伺服器執行。 它可以在遠端執行，而且如果目標作業主機角色裝載在 32 位元作業系統或 Windows Server 2003 上，就必須要在遠端執行。
 - **Dcpromo.exe 過時**
-   - 雖然在 Windows Server 2012 中，Dcpromo 已被取代，但仍可使用回應檔案或命令列參數來執行，讓組織有時間將現有的自動化轉換成新的 Windows PowerShell 安裝選項。
+   - 雖然在 Windows Server 2012 中，Dcpromo 仍會被取代，但仍然可以使用回應檔案或命令列參數來執行，讓組織有時間將現有的自動化轉換到新的 Windows PowerShell 安裝選項。
 - **使用者帳戶停用 LMHash**
   - Windows Server 2008、Windows Server 2008 R2 和 Windows Server 2012 安全性範本的安全預設會啟用 NoLMHash 原則，此原則在 Windows 2000 和 Windows Server 2003 網域控制站的安全性範本為停用。 可使用知識庫文章 [946405](https://support.microsoft.com/kb/946405)中的步驟，視需要停用與 LMHash 相依之用戶端的 NoLMHash 原則。
 
-從 Windows Server 2008 開始，相較于執行 Windows Server 2003 或 Windows 2000 的網域控制站，網域控制站也具有下列安全預設設定。
+從 Windows Server 2008 開始，相較于執行 Windows Server 2003 或 Windows 2000 的網域控制站，網域控制站也有下列安全的預設設定。
 
 | 加密類型或原則 | Windows Server 2008 預設值 | Windows Server 2012 和 Windows Server 2008 R2 預設值 | 註解 |
 |--|--|--|--|
-| AllowNT4Crypto | 已停用 | 已停用 | 協力廠商伺服器訊息區 (SMB) 用戶端可能與網域控制站上的安全預設設定不相容。 在所有情況下，這些設定可放寬以允許交互操作性，但同時也會產生安全風險。 如需詳細資訊，請參閱 Microsoft 知識庫中的[文章 942564](https://go.microsoft.com/fwlink/?LinkId=164558) (https://go.microsoft.com/fwlink/?LinkId=164558) 。 |
+| AllowNT4Crypto | 已停用 | 已停用 | 協力廠商伺服器訊息區 (SMB) 用戶端可能與網域控制站上的安全預設設定不相容。 在所有情況下，這些設定可放寬以允許交互操作性，但同時也會產生安全風險。 如需詳細資訊，請參閱 Microsoft 知識庫中的 [文章 942564](https://go.microsoft.com/fwlink/?LinkId=164558) (https://go.microsoft.com/fwlink/?LinkId=164558) 。 |
 | DES | 啟用 | 已停用 | Microsoft 知識庫中的[文章 977321](https://go.microsoft.com/fwlink/?LinkId=177717) (https://go.microsoft.com/fwlink/?LinkId=177717) |
-| CBT/整合式驗證的擴充保護 | N/A | 已啟用 | 請參閱 microsoft 知識庫 (中的[Microsoft 資訊安全諮詢 (937811) ](https://go.microsoft.com/fwlink/?LinkId=164559) (https://go.microsoft.com/fwlink/?LinkId=164559) 和[文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) https://go.microsoft.com/fwlink/?LinkId=178251) 。<p>如有需要，請在 Microsoft 知識庫[文章 977073](https://go.microsoft.com/fwlink/?LinkId=186394) (中，檢查並安裝此修補程式 https://go.microsoft.com/fwlink/?LinkId=186394) 。 |
+| CBT/整合式驗證的擴充保護 | N/A | 已啟用 | 請參閱 microsoft 知識庫 (中的 [Microsoft 資訊安全諮詢 (937811) ](https://go.microsoft.com/fwlink/?LinkId=164559) (https://go.microsoft.com/fwlink/?LinkId=164559) 和 [文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) https://go.microsoft.com/fwlink/?LinkId=178251) 。<p>如有必要，請在 Microsoft 知識庫的 [文章 977073](https://go.microsoft.com/fwlink/?LinkId=186394) (中，檢查並安裝此修正程式 https://go.microsoft.com/fwlink/?LinkId=186394) 。 |
 | LMv2 | 啟用 | 已停用 | Microsoft 知識庫中的[文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) (https://go.microsoft.com/fwlink/?LinkId=178251) |
 
 ## <a name="operating-system-requirements"></a><a name="BKMK_SysReqs"></a>作業系統需求
@@ -173,7 +173,7 @@ AD DS 安裝精靈的先決條件檢查會在安裝開始前識別可能的錯�
 
 ### <a name="disk-space-requirements-for-upgrading-domain-controllers"></a><a name="BKMK_DiskSpaceDCWin8"></a>升級網域控制站的磁碟空間需求
 
-本節只涵蓋從 Windows Server 2008 或 Windows Server 2008 R2 升級網域控制站的磁碟空間需求。 如需將網域控制站升級到舊版 Windows Server 之磁碟空間需求的詳細資訊，請參閱 [升級到 Windows Server 2008 的磁碟空間需求](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754463(v=ws.10)#BKMK_2008) 或 [升級到 Windows Server 2008 R2 的磁碟空間需求](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754463(v=ws.10)#BKMK_2008R2)。
+本節僅涵蓋從 Windows Server 2008 或 Windows Server 2008 R2 升級網域控制站的磁碟空間需求。 如需將網域控制站升級到舊版 Windows Server 之磁碟空間需求的詳細資訊，請參閱 [升級到 Windows Server 2008 的磁碟空間需求](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754463(v=ws.10)#BKMK_2008) 或 [升級到 Windows Server 2008 R2 的磁碟空間需求](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754463(v=ws.10)#BKMK_2008R2)。
 
 估計裝載 Active Directory 資料庫和記錄檔之磁碟的大小，這個大小必須能夠容納自訂和應用程式驅動的架構延伸、應用程式和由系統管理員起始的索引，還需要網域控制站部署存留期 (通常為 5 到 8 年) 新增到目錄之物件和屬性所需的空間。 與部署之後擴充磁碟存放裝置所需的更多成本相較之下，在部署階段決定正確的大小是一項非常有價值的投資。 如需詳細資訊，請參閱 [Active Directory 網域服務容量規劃](../../../administration/performance-tuning/role/active-directory-server/capacity-planning-for-active-directory-domain-services.md)。
 
@@ -186,7 +186,7 @@ AD DS 安裝精靈的先決條件檢查會在安裝開始前識別可能的錯�
 有 4 個版本的 Windows Server：Foundation、Essentials、Standard 及 Datacenter。
 Standard 和 Datacenter 這兩個版本可支援 AD DS 角色。
 
-在之前的版本中，Windows Server 版本的差異在於伺服器角色的支援、處理器計數以及大型記憶體支援。 Standard 和 Datacenter 版本的 Windows Server 支援所有功能和基礎硬體，但不同于其虛擬化許可權-Standard edition 允許兩個虛擬實例，Datacenter edition 允許無限制的虛擬實例。
+在之前的版本中，Windows Server 版本的差異在於伺服器角色的支援、處理器計數以及大型記憶體支援。 Standard 和 Datacenter edition 的 Windows Server 支援所有功能和基礎硬體，但其虛擬化許可權不同-Standard edition 允許兩個虛擬實例，且 Datacenter edition 允許無限制的虛擬實例。
 
 ### <a name="windows-client-and-windows-server-operating-systems-that-are-supported-to-join-windows-server-domains"></a>可加入 Windows Server 網域的 Windows 用戶端和 Windows Server 作業系統
 
@@ -196,20 +196,20 @@ Standard 和 Datacenter 這兩個版本可支援 AD DS 角色。
 
 ## <a name="supported-in-place-upgrade-paths"></a><a name="BKMK_UpgradePaths"></a>支援的就地升級路徑
 
-執行64位版本的 Windows Server 2008 或 Windows Server 2008 R2 的網域控制站可以升級至 Windows Server 2012。 您不能升級執行 Windows Server 2003 或 32 位元版本 Windows Server 2008 的網域控制站。 若要取代它們，請在網域中安裝執行更新版 Windows Server 的網域控制站，然後移除執行 Windows Server 2003 的網域控制站。
+執行64位版 Windows Server 2008 或 Windows Server 2008 R2 的網域控制站可以升級至 Windows Server 2012。 您不能升級執行 Windows Server 2003 或 32 位元版本 Windows Server 2008 的網域控制站。 若要取代它們，請在網域中安裝執行更新版 Windows Server 的網域控制站，然後移除執行 Windows Server 2003 的網域控制站。
 
 | 如果您執行這些版本 | 您可以升級到這些版本 |
 |--|--|
-| Windows Server 2008 Standard (含 SP2)<p>或者<p>Windows Server 2008 Enterprise (含 SP2) | Windows Server 2012 Standard<p>或者<p>Windows Server 2012 Datacenter |
+| Windows Server 2008 Standard (含 SP2)<p>或<p>Windows Server 2008 Enterprise (含 SP2) | Windows Server 2012 Standard<p>或<p>Windows Server 2012 Datacenter |
 | Windows Server 2008 Datacenter (含 SP2) | Windows Server 2012 Datacenter |
 | Windows Web Server 2008 | Windows Server 2012 Standard |
-| Windows Server 2008 R2 Standard (含 SP1)<p>或者<p>Windows Server 2008 R2 Enterprise (含 SP1) | Windows Server 2012 Standard<p>或者<p>Windows Server 2012 Datacenter |
+| Windows Server 2008 R2 Standard (含 SP1)<p>或<p>Windows Server 2008 R2 Enterprise (含 SP1) | Windows Server 2012 Standard<p>或<p>Windows Server 2012 Datacenter |
 | Windows Server 2008 R2 Datacenter (含 SP1) | Windows Server 2012 Datacenter |
 | Windows Web Server 2008 R2 | Windows Server 2012 Standard |
 
 如需支援的升級路徑詳細資訊，請參閱 [適用於 Windows Server 2012 的評估版與升級選項](https://go.microsoft.com/fwlink/?LinkId=260917)。 請注意，您不能將執行評估版 Windows Server 2012 的網域控制站直接轉換為零售版。 您必須在執行零售版的伺服器上安裝另一個網域控制站，然後從在評估版執行的網域控制站移除 AD DS。
 
-由於已知問題，您無法將執行 Windows Server 2008 R2 之 Server Core 安裝的網域控制站升級至 Windows Server 2012 的 Server Core 安裝。 在升級程序後期，升級會當機並呈現全黑的螢幕。 重新啟動這類 DC 會在 boot.ini 檔案中看到一個選項，回復到之前的作業系統版本。 再次重新開機會觸發自動回復到之前的作業系統版本。 在有解決方案可用之前，建議您安裝新的網域控制站，執行 Windows Server 2012 的 Server Core 安裝，而不是就地升級執行 Windows Server 2008 R2 之 Server Core 安裝的現有網域控制站。 如需詳細資訊，請參閱知識庫文章 [2734222](https://support.microsoft.com/kb/2734222)。
+由於已知的問題，您無法將執行 Windows Server 2008 R2 之 Server Core 安裝的網域控制站升級至 Windows Server 2012 的 Server Core 安裝。 在升級程序後期，升級會當機並呈現全黑的螢幕。 重新啟動這類 DC 會在 boot.ini 檔案中看到一個選項，回復到之前的作業系統版本。 再次重新開機會觸發自動回復到之前的作業系統版本。 在有解決方案可用之前，建議您安裝新的網域控制站，執行 Windows Server 2012 的 Server Core 安裝，而不是就地升級執行 Windows Server 2008 R2 之 Server Core 安裝的現有網域控制站。 如需詳細資訊，請參閱知識庫文章 [2734222](https://support.microsoft.com/kb/2734222)。
 
 ## <a name="functional-level-features-and-requirements"></a><a name="BKMK_FunctionalLevels"></a>功能等級功能和需求
 
@@ -223,17 +223,17 @@ Windows 2000 網域控制站必須先行移除，才能將 Windows Server 2012 �
 4. 安裝執行 Windows Serer 2012 的網域控制站。
 5. 移除執行舊版 Windows Server 的網域控制站。
 
-新的 Windows Server 2012 網域功能等級可提供一項新功能：**宣告、複合驗證和 Kerberos**防護 kdc 系統管理範本原則的 kdc 支援有兩個設定 (**一律提供宣告**，並使需要 Windows Server 2012 網域功能等級的**未受防護 authentication 要求失敗**) 。
+新的 Windows Server 2012 網域功能等級啟用了一項新功能： **宣告、複合驗證和 Kerberos** 防護 kdc 系統管理範本原則的 KDC 支援有兩項設定 (**一律提供宣告** ，以及 **未受防護驗證要求失敗** ，) 需要 Windows Server 2012 網域功能等級。
 
-Windows Server 2012 樹系功能等級不提供任何新功能，但可確保樹系中建立的任何新網域都能自動在 Windows Server 2012 網域功能等級上運作。 Windows Server 2012 網域功能等級不提供宣告、複合驗證和 Kerberos 防護的 KDC 支援以外的其他新功能。 但它可以確保網域中的任何網域控制站都執行 Windows Server 2012。 如需不同功能等級可用之其他功能的詳細資訊，請參閱 [了解 Active Directory 網域服務 (AD DS) 功能等級](../active-directory-functional-levels.md)。
+Windows Server 2012 樹系功能等級不提供任何新功能，但可確保樹系中建立的任何新網域都會自動在 Windows Server 2012 網域功能等級運作。 Windows Server 2012 網域功能等級不提供宣告、複合驗證和 Kerberos 防護的 KDC 支援以外的其他新功能。 但它可以確保網域中的任何網域控制站都執行 Windows Server 2012。 如需不同功能等級可用之其他功能的詳細資訊，請參閱 [了解 Active Directory 網域服務 (AD DS) 功能等級](../active-directory-functional-levels.md)。
 
-將樹系功能等級設定為某個值之後，就無法回復或降低樹系功能等級，下列情況除外：將樹系功能等級提高至 Windows Server 2012 之後，您可以將它降低為 Windows Server 2008 R2。 如果 Active Directory 回收站尚未啟用，您也可以將樹系功能等級從 Windows Server 2012 降低到 Windows Server 2008 R2 或 Windows Server 2008，或從 Windows Server 2008 R2 降回 Windows Server 2008。 例如，如果樹系功能等級設定為 Windows Server 2008 R2，就無法回復到 Windows Server 2003。
+將樹系功能等級設定為某個值之後，您就無法回復或降低樹系功能等級，但有下列例外：當您將樹系功能等級提高至 Windows Server 2012 之後，您可以將它降低為 Windows Server 2008 R2。 如果未啟用 Active Directory 資源回收筒，您也可以將樹系功能等級從 Windows Server 2012 降低為 Windows Server 2008 R2 或 Windows Server 2008，或從 Windows Server 2008 R2 降低為 Windows Server 2008。 如果樹系功能等級設定為 Windows Server 2008 R2，則無法復原到 Windows Server 2003。
 
-將網域功能等級設定為某個值之後，您無法回復或降低網域功能等級，但有下列例外：當您將網域功能等級提高至 Windows Server 2008 R2 或 Windows Server 2012 時，如果樹系功能等級是 Windows Server 2008 或更低，您可以選擇將網域功能等級回復為 Windows Server 2008 或 Windows Server 2008 R2。 您只能將網域功能等級從 Windows Server 2012 降低到 Windows Server 2008 R2 或 Windows Server 2008，或從 Windows Server 2008 R2 降到 Windows Server 2008。 例如，如果網域功能等級設定為 Windows Server 2008 R2，就無法回復至 Windows Server 2003。
+將網域功能等級設定為某個值之後，您無法回復或降低網域功能等級，但有下列例外狀況：當您將網域功能等級提高至 Windows Server 2008 R2 或 Windows Server 2012 時，如果樹系功能等級為 Windows Server 2008 或更低，您可以選擇將網域功能等級回復至 Windows Server 2008 或 Windows Server 2008 R2。 您只能將網域功能等級從 Windows Server 2012 降低為 Windows Server 2008 R2 或 windows server 2008，或從 Windows Server 2008 R2 降低至 Windows Server 2008。 如果網域功能等級設定為 Windows Server 2008 R2，則無法復原到 Windows Server 2003。
 
 如需較低功能等級上可用之功能的詳細資訊，請參閱 [了解 Active Directory 網域服務 (AD DS) 功能等級](../active-directory-functional-levels.md)。
 
-除了功能等級之外，執行 Windows Server 2012 的網域控制站還提供執行舊版 Windows Server 之網域控制站上無法使用的其他功能。 例如，執行 Windows Server 2012 的網域控制站可以用於虛擬網域控制站複製，而執行舊版 Windows Server 的網域控制站則不能。 但是 Windows Server 2012 中的虛擬網域控制站複製和虛擬網域控制站保護沒有任何功能等級的需求。
+除了功能等級之外，執行 Windows Server 2012 的網域控制站提供執行舊版 Windows Server 之網域控制站上無法使用的其他功能。 例如，執行 Windows Server 2012 的網域控制站可以用於虛擬網域控制站複製，而執行舊版 Windows Server 的網域控制站則無法使用。 但是 Windows Server 2012 中的虛擬網域控制站複製和虛擬網域控制站保護沒有任何功能等級需求。
 
 > [!NOTE]
 > Microsoft Exchange Server 2013 需要 Windows Server 2003 或更高的樹系功能等級。
@@ -254,38 +254,38 @@ AD DS 無法安裝在同時執行下列伺服器角色或角色服務的伺服�
 
 Windows Server 2012 中的一些新功能會影響操作主機角色：
 
-- PDC 模擬器必須執行 Windows Server 2012，才能支援複製虛擬網域控制站。 複製 DC 需要額外的先決條件。 如需詳細資訊，請參閱 [Active Directory 網域服務 (AD DS) 虛擬化](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd464018(v=ws.10))。
-- 當 PDC 模擬器執行 Windows Server 2012 時，會建立新的安全性主體。
+- PDC 模擬器必須正在執行 Windows Server 2012，才能支援複製虛擬網域控制站。 複製 DC 需要額外的先決條件。 如需詳細資訊，請參閱 [Active Directory 網域服務 (AD DS) 虛擬化](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd464018(v=ws.10))。
+- 當 PDC 模擬器執行 Windows Server 2012 時，就會建立新的安全性主體。
 - RID 主機具有新的 RID 發行和監視功能。 這些改進包括更好的事件記錄、更適當的限制，以及 (在緊急情況下) 將整體 RID 集區配置提高一些的能力。 如需詳細資訊，請參閱[管理 RID 發行](../../ad-ds/manage/Managing-RID-Issuance.md)。
 
 > [!NOTE]
-> 雖然它們不是操作主機角色，但 AD DS 安裝的另一項變更是，預設會在執行 Windows Server 2012 的所有網域控制站上安裝 DNS 伺服器角色和通用類別目錄。
+> 雖然它們不是操作主機角色，但 AD DS 安裝的另一項變更是，預設會在執行 Windows Server 2012 的所有網域控制站上安裝 DNS 伺服器角色及通用類別目錄。
 
 ## <a name="virtualizing-domain-controllers"></a><a name="BKMK_Virtual"></a>虛擬化網域控制站
 
-從 Windows Server 2012 開始的 AD DS 增強功能可讓網域控制站的虛擬化更安全，以及複製網域控制站的能力。 複製網域控制站的能力接著能夠在新的網域中快速部署其他網域控制站並提供其他好處。 如需詳細資訊，請參閱[Active Directory Domain Services &#40;AD DS 簡介&#41; 虛擬化 &#40;層級 100&#41;](../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)。
+從 Windows Server 2012 開始的 AD DS 增強功能，可讓您更安全地虛擬化網域控制站和複製網域控制站的能力。 複製網域控制站的能力接著能夠在新的網域中快速部署其他網域控制站並提供其他好處。 如需詳細資訊，請參閱 [Active Directory Domain Services &#40;AD DS&#41; 虛擬化 &#40;層級 100&#41;的簡介 ](../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)。
 
 ## <a name="administration-of-windows-server-2012-servers"></a><a name="BKMK_Admin"></a>Windows Server 2012 伺服器的管理
 
-使用[windows 8 的遠端伺服器管理工具](https://www.microsoft.com/download/details.aspx?id=28972)來管理網域控制站和執行 windows Server 2012 的其他伺服器。 您可以在執行 Windows 8 的電腦上執行 Windows Server 2012 遠端伺服器管理工具。
+使用 [Windows 8 的遠端伺服器管理工具](https://www.microsoft.com/download/details.aspx?id=28972) 管理執行 Windows Server 2012 的網域控制站及其他伺服器。 您可以在執行 Windows 8 的電腦上執行 Windows Server 2012 遠端伺服器管理工具。
 
 ## <a name="application-compatibility"></a><a name="BKMK_AppCompat"></a>應用程式相容性
 
 下表涵蓋常見的整合 Active Directory Microsoft 應用程式。 表格內容包含應用程式可以安裝在哪些版本的 Windows Server 上，以及採用 Windows Server 2012 DC 是否會對應用程式相容性產生影響。
 
-|Products|附註|
+|產品|備註|
 |-----------|---------|
-|[Microsoft SharePoint 2010](https://support.microsoft.com/kb/2724471)|需要 SharePoint 2010 Service Pack 2，才能在  <br />Windows Server 2012 伺服器上 安裝和操作 SharePoint 2010<p>在 Windows Server 2012 伺服器上安裝和操作 SharePoint 2010 Foundation 需要有 SharePoint 2010 Foundation Service Pack 2<p>SharePoint Server 2010 (不含 Service Pack) 安裝程序在 Windows Server 2012 上會失敗<p>SharePoint Server 2010 必要條件安裝程式 ( # A0) 失敗，並出現「此程式有相容性問題」錯誤。 按一下 [執行程式而不取得說明] 會顯示錯誤訊息：「正在驗證 SharePoint 是否可以安裝 &#124; SharePoint Server 2010 (不支援 service pack) 無法安裝在 Windows Server 2012 上。」|
+|[Microsoft SharePoint 2010](https://support.microsoft.com/kb/2724471)|需要 SharePoint 2010 Service Pack 2，才能在  <br />Windows Server 2012 伺服器上 安裝和操作 SharePoint 2010<p>在 Windows Server 2012 伺服器上安裝和操作 SharePoint 2010 Foundation 需要有 SharePoint 2010 Foundation Service Pack 2<p>SharePoint Server 2010 (不含 Service Pack) 安裝程序在 Windows Server 2012 上會失敗<p>SharePoint Server 2010 必要條件安裝程式 ( # A0) 失敗，並出現錯誤「此程式有相容性問題」。 按一下 [執行程式而不取得說明]，會顯示錯誤「正在驗證是否可以在不含 service pack &#124; SharePoint Server 2010 (中安裝 SharePoint) 無法在 Windows Server 2012 上安裝。」|
 |[Microsoft SharePoint 2013](/SharePoint/install/hardware-and-software-requirements-0)|伺服器陣列中的資料庫伺服器最低需求：<p>64 位元版本的 Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise 或 Datacenter，或是 64 位元版本的 Windows Server 2012 Standard 或 Datacenter<p>含內建資料庫的單一伺服器最低需求：<p>64 位元版本的 Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise 或 Datacenter，或是 64 位元版本的 Windows Server 2012 Standard 或 Datacenter<p>伺服器陣列中的前端網頁伺服器和應用程式伺服器最低需求：<p>64 位元版本的 Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise 或 Datacenter，或是 64 位元版本的 Windows Server 2012 Standard 或 Datacenter。|
-|[Configuration Manager 2012](/SharePoint/install/hardware-and-software-requirements-0)|Configuration Manager 2012 Service Pack 1：<p>Microsoft 會在發行 Service Pack 1 時，在我們的用戶端支援基礎新增下列作業系統：<p>-Windows 8 專業版<br />-Windows 8 企業版<br />-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter<p>所有站台伺服器角色 (包含站台伺服器、SMS 提供者和管理點) 都可以部署在含下列作業系統版本的伺服器：<p>-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter|
+|[Configuration Manager 2012](/SharePoint/install/hardware-and-software-requirements-0)|Configuration Manager 2012 Service Pack 1：<p>Microsoft 會在發行 Service Pack 1 時，在我們的用戶端支援基礎新增下列作業系統：<p>-Windows 8 Pro<br />-Windows 8 企業版<br />-Windows Server 2012 標準版<br />-Windows Server 2012 Datacenter<p>所有站台伺服器角色 (包含站台伺服器、SMS 提供者和管理點) 都可以部署在含下列作業系統版本的伺服器：<p>-Windows Server 2012 標準版<br />-Windows Server 2012 Datacenter|
 |[Microsoft Endpoint Configuration Manager (最新分支) ](/configmgr/core/plan-design/configs/supported-configurations)|[Configuration Manager 網站系統伺服器支援的作業系統](/configmgr/core/plan-design/configs/supported-operating-systems-for-site-system-servers)。|
 |[Microsoft Lync Server 2013](/lyncserver/lync-server-2013-server-and-tools-operating-system-support)|Lync Server 2013 需要搭配 Windows Server 2008 R2 或 Windows Server 2012。 它不能在 Server Core 安裝上執行， 可以在 [虛擬伺服器](/lyncserver/lync-server-2013-running-lync-server-on-virtual-servers)上執行。|
 |[Lync Server 2010](https://support.microsoft.com/kb/2777359)|如果安裝了 [Lync Server 的 2012 年 10 月累計更新](https://support.microsoft.com/?kbid=2493736) ，Lync Server 2010 便無法安裝在新的 (而非升級的) Windows Server 2012 安裝。 不支援將現有 Lync Server 2010 安裝的作業系統升級到 Windows Server 2012。 Windows Server 2012 也不支援 Microsoft Lync Server 2010 群組聊天伺服器。|
-|[System Center 2012 Endpoint Protection](/SharePoint/install/hardware-and-software-requirements-0)|System Center 2012 Endpoint Protection Service Pack 1 會更新用戶端支援基礎，以包含下列作業系統：<p>-Windows 8 專業版<br />-Windows 8 企業版<br />-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter|
-|[System Center 2012 Forefront Endpoint Protection](/SharePoint/install/hardware-and-software-requirements-0)|FEP 2010 含更新彙總套件 1 會更新用戶端支援基礎，以包含下列作業系統：<p>-Windows 8 專業版<br />-Windows 8 企業版<br />-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter|
+|[System Center 2012 Endpoint Protection](/SharePoint/install/hardware-and-software-requirements-0)|System Center 2012 Endpoint Protection Service Pack 1 會更新用戶端支援基礎，以包含下列作業系統：<p>-Windows 8 Pro<br />-Windows 8 企業版<br />-Windows Server 2012 標準版<br />-Windows Server 2012 Datacenter|
+|[System Center 2012 Forefront Endpoint Protection](/SharePoint/install/hardware-and-software-requirements-0)|FEP 2010 含更新彙總套件 1 會更新用戶端支援基礎，以包含下列作業系統：<p>-Windows 8 Pro<br />-Windows 8 企業版<br />-Windows Server 2012 標準版<br />-Windows Server 2012 Datacenter|
 |Forefront Threat Management Gateway (TMG)|僅支援 TMG 在 Windows Server 2008 和 Windows Server 2008 R2 上執行。 如需詳細資訊，請參閱 [Forefront TMG 的系統需求](/previous-versions/tn-archive/dd896981(v=technet.10))。|
 |Windows Server Update Services|這個版本的 WSUS 已經可以支援 Windows 8 電腦或 Windows Server 2012 電腦做為用戶端。|
-|Windows Server Update Services 3.0|更新知識庫文章[2734608](https://support.microsoft.com/kb/2734608)讓執行 Windows Server Update Services 的伺服器 (WSUS) 3.0 SP2 提供對執行 Windows 8 或 Windows server 2012 的電腦的更新：**注意：** 具有獨立 wsus 3.0 SP2 環境的客戶，或具有 WSUS 2007 SP2 的 Configuration Manager 3.0 Service Pack 2 環境需要[2734608](https://support.microsoft.com/kb/2734608)以適當的方式管理 windows 8 電腦或 windows Server 2012 電腦做為用戶端。|
+|Windows Server Update Services 3.0|Update KB 文章 [2734608](https://support.microsoft.com/kb/2734608) 可讓執行 WINDOWS SERVER UPDATE SERVICES (WSUS) 3.0 SP2 的伺服器為執行 Windows 8 或 Windows Server 2012 的電腦提供更新： **注意：** 具有獨立 wsus 3.0 SP2 環境或 Configuration Manager 2007 Service PACK 2 環境搭配 wsus 3.0 SP2 的客戶需要 [2734608](https://support.microsoft.com/kb/2734608) 才能適當地管理 Windows 8 型電腦或 windows server 2012 電腦做為用戶端。|
 |[Exchange 2013](/Exchange/plan-and-deploy/prerequisites?view=exchserver-2019)|Windows Server 2012 Standard 和 Datacenter 支援下列角色：架構主機、通用類別目錄伺服器、網域控制站、信箱和用戶端存取伺服器角色<p>樹系功能等級：Windows Server 2003 或更新版本<p>來源：Exchange 2013 系統需求|
 |Exchange 2010|[來源：Exchange 2010 Service Pack 3](https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange)<p>Exchange 2010 (含 Service Pack 3) 可以安裝在 Windows Server 2012 成員伺服器上。<p>[Exchange 2010 系統需求](/previous-versions/office/exchange-server-2010/aa996719(v=exchg.141)) 會列出最新支援的架構主機、通用類別目錄和網域控制站，如同 Windows Server 2008 R2。<p>樹系功能等級：Windows Server 2003 或更新版本|
 |SQL Server 2012|來源：KB [2681562](https://support.microsoft.com/kb/2681562)<p>Windows Server 2012 支援 SQL Server 2012 RTM。|
@@ -307,7 +307,7 @@ Windows Server 2012 中的一些新功能會影響操作主機角色：
 | [2737516](https://support.microsoft.com/kb/2737516)：Windows Server 2012 伺服器管理員的 IFM 驗證限制 | AD DS 安裝 | IFM 驗證有所限制，如同知識庫文章中的說明。 |
 | [2737535](https://support.microsoft.com/kb/2737535)：Install-AddsDomainController Cmdlet 傳回 RODC 的參數設定錯誤 | AD DS 安裝 | 如果您指定的引數已經填入預先建立的 RODC 帳戶，當您嘗試將伺服器連結到 RODC 帳戶時會收到錯誤。 |
 | [2737560](https://support.microsoft.com/kb/2737560)：「無法執行 Exchange 架構衝突檢查」錯誤和先決條件檢查失敗 | AD DS 安裝 | 當您在現有的網域中設定第一個 Windows Server 2012 DC 時，因為 DC 遺失網路服務的 SeServiceLogonRight 或因為 WMI 或 DCOM 通訊協定被封鎖，先決條件檢查會失敗。 |
-| [2737797](https://support.microsoft.com/kb/2737797)：AddsDeployment 模組搭配 -Whatif 引數顯示不正確的 DNS 結果 | AD DS 安裝 | -WhatIf 參數會顯示 DNS 伺服器將不會安裝，但會是。 |
+| [2737797](https://support.microsoft.com/kb/2737797)：AddsDeployment 模組搭配 -Whatif 引數顯示不正確的 DNS 結果 | AD DS 安裝 | -WhatIf 參數會顯示將不會安裝 DNS 伺服器，但它將會是。 |
 | [2737807](https://support.microsoft.com/kb/2737807)：[網域控制站選項] 頁面的 [下一步] 按鈕無法使用 | AD DS 安裝 | 因為目標 DC 的 IP 位址沒有對應到現有的子網路或站台，或是因為並未正確輸入和確認 DSRM 密碼，所以會停用 [網域控制站選項] 頁面的 [下一步] 按鈕。 |
 | [2737935](https://support.microsoft.com/kb/2737935)：Active Directory 安裝在「建立 NTDS 設定物件」階段停止 | AD DS 安裝 | 因為本機系統管理員密碼與網域系統管理員密碼相同，或因為網路問題而無法完成關鍵性複寫，因此安裝停滯。 |
 | [2738060](https://support.microsoft.com/kb/2738060)：使用 Install-AddsDomain 遠端建立子網域時出現「拒絕存取」錯誤訊息 | AD DS 安裝 | 如果 DNSDelegationCredential 密碼錯誤，當您使用 Invoke-Command Cmdlet 執行 Install-ADDSDomain 時，會收到這個錯誤。 |
@@ -318,7 +318,7 @@ Windows Server 2012 中的一些新功能會影響操作主機角色：
 | [2753560](https://support.microsoft.com/kb/2753560)：Windows Server 2012 發生 ADMT 3.2 和 PES 3.1 安裝錯誤 | ADMT | Windows Server 2012 的設計不能安裝 ADMT 3.2。 |
 | [2750857](https://support.microsoft.com/kb/2750857)：Internet Explorer 10 無法正確顯示 DFS 複寫診斷報告 | DFS 複寫 | 因為 Internet Explorer 10 有所變更，所以無法正確顯示 DFS 複寫診斷報告。 |
 | [2741537](https://support.microsoft.com/kb/2741537)：使用者可以看見遠端群組原則更新 | 群組原則 | 這是因為排程工作會在每個登入的使用者內容執行。 Windows 工作排程器的設計在這種情況下需要互動式提示。 |
-| [2741591](https://support.microsoft.com/kb/2741591)：GPMC 基礎結構狀態選項的 SYSVOL 中沒有 ADM 檔案 | 群組原則 | GP 複寫可以報告「複寫進行中」，因為 GPMC 基礎結構狀態不會遵循自訂篩選規則。 |
+| [2741591](https://support.microsoft.com/kb/2741591)：GPMC 基礎結構狀態選項的 SYSVOL 中沒有 ADM 檔案 | 群組原則 | GP 複寫可以報告「複寫進行中」，因為 GPMC 基礎結構狀態不符合自訂篩選規則。 |
 | [2737880](https://support.microsoft.com/kb/2737880)：AD DS 設定期間發生「無法啟動服務」錯誤 | 虛擬 DC 複製 | 因為 DS 角色伺服器服務停用，所以安裝、移除 AD DS 或複製時會收到這個錯誤。 |
 | [2742836](https://support.microsoft.com/kb/2742836)：使用 VDC 複製功能時會為每個網域控制站建立兩個 DHCP 租用 | 虛擬 DC 複製 | 因為複製的網域控制站會在複製之前和複製完成時各收到一個租用，所以會發生這種狀況。 |
 | [2742844](https://support.microsoft.com/kb/2742844)：在 Windows Server 2012，網域控制站複製失敗且伺服器以 DSRM 重新啟動 | 虛擬 DC 複製 | 因為知識庫文章中所列的各種理由，複製的 DC 會因複製失敗而以 DSRM 啟動。 |
@@ -331,7 +331,7 @@ Windows Server 2012 中的一些新功能會影響操作主機角色：
 | [2743278](https://support.microsoft.com/kb/2743278)：網域控制站複製錯誤 0x80041005 | 虛擬 DC 複製 | 因為只指定一個 WINS 伺服器，所以複製的 DC 開機到 DSRM。 如果指定了 WINS 伺服器，也必須同時指定慣用和其他 WINS 伺服器。 |
 | [2745013](https://support.microsoft.com/kb/2745013)：在 Windows Server 2012 執行 New-AdDcCloneConfigFile 會出現「無法操作伺服器」錯誤訊息 | 虛擬 DC 複製 | 因為伺服器無法連線到通用類別目錄伺服器，所以執行 New-ADDCCloneConfigFile Cmdlet 之後會收到這個錯誤。 |
 | [2747974](https://support.microsoft.com/kb/2747974)：網域控制站複製事件 2224 提供不正確的指導 | 虛擬 DC 複製 | 事件識別碼 2224 不正確的說明必須在複製之前移除受管理的服務帳戶。 獨立 MSA 必須移除，但群組 MSA 不會封鎖複製。 |
-| [2748266](https://support.microsoft.com/kb/2748266)：升級至 Windows 8 之後無法解除鎖定 BitLocker 加密的磁碟機 | BitLocker | 當您嘗試在已從 Windows 7 升級的電腦上解除鎖定磁片磁碟機時，會收到「找不到應用程式」錯誤。 |
+| [2748266](https://support.microsoft.com/kb/2748266)：升級至 Windows 8 之後無法解除鎖定 BitLocker 加密的磁碟機 | BitLocker | 當您嘗試在已從 Windows 7 升級的電腦上解除鎖定磁片磁碟機時，收到「找不到應用程式」錯誤。 |
 
 ## <a name="see-also"></a>另請參閱
 

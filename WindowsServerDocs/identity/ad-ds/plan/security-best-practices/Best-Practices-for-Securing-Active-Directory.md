@@ -1,23 +1,23 @@
 ---
 ms.assetid: e2651dc8-4b31-4cd8-a400-3b8123890210
 title: 保護 Active Directory 的最佳做法
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 250db00d8b761e7d5dd0681047372d7085b26fef
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 444ba28da788ca5986b49eaf84675c1eacfe5522
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87958996"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941538"
 ---
 # <a name="best-practices-for-securing-active-directory"></a>保護 Active Directory 的最佳做法
 
 >適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-本檔提供實踐者的觀點，並包含一組實用的技術，可協助 IT 主管保護企業 Active Directory 環境。 Active Directory 在 IT 基礎結構中扮演了關鍵角色，並確保全域互聯環境中不同網路資源的協調和安全性。 所討論的方法主要是以 Microsoft 資訊安全和風險管理 (ISRM) 組織的經驗為基礎，除了建議所選的 Microsoft 全球500客戶，還負責保護 Microsoft IT 和其他 Microsoft 營業單位的資產。
+本檔提供實踐者的觀點，並包含一組可協助 IT 主管保護企業 Active Directory 環境的實用技巧。 Active Directory 在 IT 基礎結構中扮演了關鍵角色，並確保全域互聯環境中不同網路資源的協調和安全性。 討論的方法主要是以 Microsoft 資訊安全性和風險管理為基礎， (ISRM) 組織的經驗，除了建議所選的 Microsoft 全球500客戶之外，還負責保護 Microsoft IT 和其他 Microsoft 營業單位的資產。
 
 -   [執行摘要](../../../ad-ds/manage/component-updates/Executive-Summary.md)
 
@@ -35,11 +35,11 @@ ms.locfileid: "87958996"
 
 -   [保護網域控制站免于遭受攻擊](../../../ad-ds/plan/security-best-practices/Securing-Domain-Controllers-Against-Attack.md)
 
--   [監視 Active Directory 危害的徵兆](../../../ad-ds/plan/security-best-practices/Monitoring-Active-Directory-for-Signs-of-Compromise.md)
+-   [監視入侵徵兆 Active Directory](../../../ad-ds/plan/security-best-practices/Monitoring-Active-Directory-for-Signs-of-Compromise.md)
 
 -   [稽核原則建議](../../../ad-ds/plan/security-best-practices/Audit-Policy-Recommendations.md)
 
--   [規劃危害](../../../ad-ds/plan/security-best-practices/Planning-for-Compromise.md)
+-   [規劃入侵](../../../ad-ds/plan/security-best-practices/Planning-for-Compromise.md)
 
 -   [維護更安全的環境](../../../ad-ds/plan/security-best-practices/Maintaining-a-More-Secure-Environment.md)
 

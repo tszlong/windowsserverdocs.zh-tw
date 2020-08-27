@@ -1,17 +1,17 @@
 ---
 ms.assetid: 70c99703-ff0d-4278-9629-b8493b43c833
 title: 如何設定受保護帳戶的指引
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 7e69a808a48c3dedcc29d8876dc460559157f191
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: e8d16d1d33e8e0bd55457daa98b4aad454dafe3f
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994829"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940758"
 ---
 # <a name="guidance-about-how-to-configure-protected-accounts"></a>如何設定受保護帳戶的指引
 
@@ -32,9 +32,9 @@ Windows 8.1 與 Windows Server 2012 R2 都內建額外的安全防護功能以�
 -   [LSA 保護](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn408187(v=ws.11))
 
 ## <a name="protected-users"></a><a name="BKMK_AddtoProtectedUsers"></a>Protected Users
-Protected Users 是新的全域安全性群組，您可以將新的或現有的使用者新增到其中。 Windows 8.1 裝置和 Windows Server 2012 R2 主機對此群組的成員有特殊的行為，以提供更佳的保護以防止認證遭竊。 針對群組的成員，Windows 8.1 裝置或 Windows Server 2012 R2 主機不會快取受保護使用者不支援的認證。 如果此群組的成員登入執行早于 Windows 8.1 之 Windows 版本的裝置，則不會有額外的保護。
+Protected Users 是新的全域安全性群組，您可以將新的或現有的使用者新增到其中。 Windows 8.1 裝置和 Windows Server 2012 R2 主機與此群組的成員有特殊的行為，以提供更好的保護以防止認證遭竊。 針對群組的成員，Windows 8.1 裝置或 Windows Server 2012 R2 主機不會快取受保護使用者不支援的認證。 如果此群組的成員登入執行早于 Windows 8.1 的 Windows 版本的裝置，則不會提供額外的保護。
 
-已登入 Windows 8.1 裝置和 Windows Server 2012 R2 主機的 Protected Users 群組成員無法*再*使用：
+已登入 Windows 8.1 裝置和 Windows Server 2012 R2 主機的 Protected Users 群組成員，無法 *再* 使用：
 
 -   預設認證委派 (CredSSP) - 這是即使啟用「允許委派預設認證」**** 原則，也不會被快取的純文字認證
 
@@ -46,7 +46,7 @@ Protected Users 是新的全域安全性群組，您可以將新的或現有的�
 
 -   離線登入 - 不會建立快取的登入檢查器
 
-如果網域功能等級是 Windows Server 2012 R2，群組的成員就不能再：
+如果網域功能等級為 Windows Server 2012 R2，則群組的成員將無法再：
 
 -   使用 NTLM 驗證進行驗證
 
@@ -56,32 +56,32 @@ Protected Users 是新的全域安全性群組，您可以將新的或現有的�
 
 -   在初始 4 小時存留期之後更新使用者票證 (TGT)
 
-若要將使用者新增至群組，您可以使用[UI 工具](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753515(v=ws.11))，例如 ACTIVE DIRECTORY 管理中心 (ADAC) 或 Active Directory 使用者和電腦，或命令列工具（例如[Dsmod 群組](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732423(v=ws.11))）或 Windows PowerShell[add-adgroupmember](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee617210(v=technet.10)) Cmdlet。 服務和電腦的帳戶*不應該*是 Protected Users 群組的成員。 因為主機上的密碼或憑證永遠都可使用，所以那些帳戶的成員資格不提供任何本機的保護。
+若要將使用者新增至群組，您可以使用 [UI 工具](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753515(v=ws.11)) ，例如 ACTIVE DIRECTORY 管理中心 (ADAC) 或 Active Directory 消費者和電腦，或命令列工具（例如 [Dsmod group](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732423(v=ws.11))）或 Windows PowerShell[add-adgroupmember](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee617210(v=technet.10)) Cmdlet。 服務和電腦的帳戶*不應該*是 Protected Users 群組的成員。 因為主機上的密碼或憑證永遠都可使用，所以那些帳戶的成員資格不提供任何本機的保護。
 
 > [!WARNING]
-> 驗證限制沒有因應措施，表示高特殊權限群組 (例如 Enterprise Admins 群組或 Domain Admins 群組) 的成員與 Protected Users 群組的其他成員受到一樣的限制。 如果將這類群組的所有成員新增到 Protected Users 群組，則所有這些帳戶都可能被鎖定。您絕對不應該將所有高許可權的帳戶新增到 Protected Users 群組，直到您徹底測試過可能的影響。
+> 驗證限制沒有因應措施，表示高特殊權限群組 (例如 Enterprise Admins 群組或 Domain Admins 群組) 的成員與 Protected Users 群組的其他成員受到一樣的限制。 如果將這類群組的所有成員新增至 Protected Users 群組，則可能會鎖定這些帳戶。您絕對不應該將所有高度特殊許可權的帳戶新增至 Protected Users 群組，直到徹底測試可能的影響。
 
-Protected Users 群組的成員必須能夠使用具備進階加密標準 (AES) 的 Kerberos 進行驗證。 此方法需要 Active Directory 中帳戶的 AES 金鑰。 內建的系統管理員沒有 AES 金鑰，除非在執行 Windows Server 2008 或更新版本的網域控制站上變更了密碼。 此外，在執行舊版 Windows Server 的網域控制站上變更密碼的任何帳戶都會被鎖定。因此，請遵循下列最佳作法：
+Protected Users 群組的成員必須能夠使用具備進階加密標準 (AES) 的 Kerberos 進行驗證。 此方法需要 Active Directory 中帳戶的 AES 金鑰。 內建的系統管理員沒有 AES 金鑰，除非在執行 Windows Server 2008 或更新版本的網域控制站上變更密碼。 此外，在執行舊版 Windows Server 的網域控制站上，任何已變更密碼的帳戶都會遭到鎖定。因此，請遵循下列最佳作法：
 
--   請勿在網域中進行測試，除非**所有網域控制站都執行 Windows Server 2008 或更新版本**。
+-   不要在網域中進行測試，除非 **所有網域控制站都執行 Windows Server 2008 或更新版本**。
 
 -   為在建立網域「之前」**** 就建立的所有網域帳戶*變更密碼*。 否則，這些帳戶都會無法驗證。
 
--   請先變更每個使用者的**密碼**，再將帳戶新增到 Protected Users 群組，或確定最近在執行 Windows Server 2008 或更新版本的網域控制站上變更了密碼。
+-   請在將帳戶新增到 Protected Users 群組之前變更每位使用者的**密碼**，或確定最近在執行 Windows Server 2008 或更新版本的網域控制站上變更密碼。
 
 ### <a name="requirements-for-using-protected-accounts"></a><a name="BKMK_Prereq"></a>使用受保護的帳戶的需求
 受保護的帳戶有下列部署需求：
 
--   若要為受保護的使用者提供用戶端限制，主機必須執行 Windows 8.1 或 Windows Server 2012 R2。 使用者只需以 Protected Users 群組的成員帳戶登入。 在此情況下，可以藉由將[主域控制站 (PDC) 模擬器角色轉移](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc816944(v=ws.10))到執行 Windows Server 2012 R2 的網域控制站來建立 Protected Users 群組。 該群組物件複寫到其他網域控制站之後，可以在執行舊版 Windows Server 的網域控制站上裝載 PDC 模擬器角色。
+-   若要提供受保護使用者的用戶端限制，主機必須執行 Windows 8.1 或 Windows Server 2012 R2。 使用者只需以 Protected Users 群組的成員帳戶登入。 在此情況下，您可以將 [網域主控站 (PDC) 模擬器角色傳送](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc816944(v=ws.10)) 到執行 Windows Server 2012 R2 的網域控制站，以建立 Protected Users 群組。 該群組物件複寫到其他網域控制站之後，可以在執行舊版 Windows Server 的網域控制站上裝載 PDC 模擬器角色。
 
--   若要為受保護的使用者提供網域控制站端限制，也就是限制 NTLM 驗證的使用方式，以及其他限制，網域功能等級必須是 Windows Server 2012 R2。 如需功能等級的詳細資訊，請參閱 [了解 Active Directory 網域服務 (AD DS) 功能等級](../active-directory-functional-levels.md)。
+-   若要提供受保護使用者的網域控制站端限制，亦即限制使用 NTLM 驗證及其他限制，網域功能等級必須是 Windows Server 2012 R2。 如需功能等級的詳細資訊，請參閱 [了解 Active Directory 網域服務 (AD DS) 功能等級](../active-directory-functional-levels.md)。
 
 ### <a name="troubleshoot-events-related-to-protected-users"></a><a name="BKMK_TrubleshootingEvents"></a>疑難排解與 Protected Users 相關的事件
 本節涵蓋的新記錄檔可協助疑難排解與 Protected Users 相關的事件，以及 Protected Users 影響變更的方式，以疑難排解票證授權票證 (TGT) 到期或委派的問題。
 
 #### <a name="new-logs-for-protected-users"></a>Protected Users 的新記錄檔
 
-有兩個新的作業系統記錄管理檔可協助您疑難排解與受保護使用者相關的事件：受保護的使用者-用戶端記錄檔和受保護的使用者失敗-網域控制站記錄檔。 這些新的記錄檔位於 [事件檢視器] 中，且預設為停用。 若要啟用記錄檔，請依序按一下 [應用程式及服務記錄檔]****、[Microsoft]****、[Windows]****、[驗證]****，然後按一下記錄檔的名稱，再按一下 [動作]**** (或在記錄檔上按一下滑鼠右鍵)，按一下 [啟用記錄]****。
+有兩個新的作業系統管理記錄可協助您針對與受保護使用者相關的事件進行疑難排解：受保護的使用者-用戶端記錄檔和受保護的使用者失敗-網域控制站記錄檔。 這些新的記錄檔位於 [事件檢視器] 中，且預設為停用。 若要啟用記錄檔，請依序按一下 [應用程式及服務記錄檔]****、[Microsoft]****、[Windows]****、[驗證]****，然後按一下記錄檔的名稱，再按一下 [動作]**** (或在記錄檔上按一下滑鼠右鍵)，按一下 [啟用記錄]****。
 
 如需這些記錄檔中的事件的詳細資訊，請參閱 [驗證原則和驗證原則定址接收器](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486813(v=ws.11))。
 
@@ -102,14 +102,14 @@ Protected Users 群組的成員必須能夠使用具備進階加密標準 (AES) 
 ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_TshootDelegation.gif)
 
 ### <a name="audit-authentication-attempts"></a><a name="BKMK_AuditAuthNattempts"></a>稽核驗證嘗試
-若要對 **Protected Users** 群組的成員明確稽核驗證嘗試，您可以繼續收集安全性記錄檔稽核事件或在新的操作系統管理記錄檔中收集資料。 如需這些事件的詳細資訊，請參閱[驗證原則和驗證原則定址接收器](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486813(v=ws.11))
+若要對 **Protected Users** 群組的成員明確稽核驗證嘗試，您可以繼續收集安全性記錄檔稽核事件或在新的操作系統管理記錄檔中收集資料。 如需這些事件的詳細資訊，請參閱 [驗證原則和驗證原則定址接收器](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486813(v=ws.11))
 
 ### <a name="provide-dc-side-protections-for-services-and-computers"></a><a name="BKMK_ProvidePUdcProtections"></a>提供服務與電腦的 DC 端保護
 服務與電腦的帳戶不能是 **Protected Users** 的成員。 本節說明可對這些帳戶提供的網域控制站型保護：
 
 -   拒絕 NTLM 驗證：僅可透過 [NTLM 封鎖原則](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/jj865674(v=ws.10))設定
 
--   拒絕 Kerberos 預先驗證中的資料加密標準 (DES) ： Windows Server 2012 R2 網域控制站不接受電腦帳戶的 DES，除非已針對 DES 進行設定，因為使用 Kerberos 發行的每個 Windows 版本也支援 RC4。
+-   拒絕 Kerberos 預先驗證中的資料加密標準 (DES) ： Windows Server 2012 R2 網域控制站不接受電腦帳戶的 DES，除非已針對電腦帳戶設定 des，因為使用 Kerberos 發行的每個 Windows 版本也支援 RC4。
 
 -   拒絕 Kerberos 預先驗證中的 RC4：無法設定。
 
@@ -125,7 +125,7 @@ Protected Users 群組的成員必須能夠使用具備進階加密標準 (AES) 
 ## <a name="authentication-policies"></a><a name="BKMK_CreateAuthNPolicies"></a>驗證原則
 「驗證原則」是 AD DS 中包含驗證原則物件的新容器。 驗證原則可以指定設定，協助降低認證竊取的機會，例如限制帳戶的 TGT 存留期或新增其他與宣告相關條件。
 
-在 Windows Server 2012 中，Dynamic 存取控制引進了稱為「集中存取原則」的 Active Directory 樹系範圍物件類別，以提供簡單的方式來設定整個組織的檔案伺服器。 在 Windows Server 2012 R2 中，新的物件類別稱為「驗證原則」 (objectClass Msds-authnpolicies) 可用來將驗證設定套用至 Windows Server 2012 R2 網域中的帳戶類別。 Active Directory 帳戶類別包括：
+在 Windows Server 2012 中，動態存取控制引進了一個 Active Directory 樹系範圍物件類別，稱為「集中存取原則」，可讓您輕鬆地在整個組織中設定檔案伺服器。 在 Windows Server 2012 R2 中，有一個新的物件類別稱為「驗證原則」 (objectClass Msds-authnpolicies) 可用來將驗證設定套用至 Windows Server 2012 R2 網域中的帳戶類別。 Active Directory 帳戶類別包括：
 
 -   User
 
@@ -144,9 +144,9 @@ Kerberos 驗證通訊協定由三種類型的交換 (也稱為子通訊協定) �
 
 -   用戶端/伺服器 (AP) 交換 (KRB_AP_ *)
 
-AS exchange 是用戶端使用帳戶的密碼或私密金鑰來建立預先驗證器以要求票證授與票證 (TGT) 。 這會發生在使用者登入或第一次需要服務票證時。
+AS exchange 是用戶端使用帳戶的密碼或私密金鑰來建立預先驗證器，以要求 (TGT) 的票證授權票證。 這會發生在使用者登入或第一次需要服務票證時。
 
-TGS 交換是用來建立驗證器以要求服務票證的帳戶 TGT。 這會發生在需要已驗證的連線時。
+TGS 交換是使用帳戶的 TGT 來建立驗證者來要求服務票證的位置。 這會發生在需要已驗證的連線時。
 
 AP 交換通常會發生在應用程式通訊協定內的資料，且不會受到驗證原則的影響。
 
@@ -169,19 +169,19 @@ AP 交換通常會發生在應用程式通訊協定內的資料，且不會受�
 
 ### <a name="requirements-for-using-authentication-policies"></a><a name="BKMK_ReqForAuthnPolicies"></a>使用驗證原則的需求
 
-|原則|需求|
+|原則|規格需求|
 |----------|----------------|
 |提供自訂 TGT 存留期| Windows Server 2012 R2 網域功能等級帳戶網域|
-|限制使用者登入|-Windows Server 2012 R2 網域功能等級帳戶網域（含動態存取控制支援）<br />-Windows 8、Windows 8.1、Windows Server 2012 或具有動態存取控制支援的 Windows Server 2012 R2 裝置|
+|限制使用者登入|-具備動態存取控制支援的 Windows Server 2012 R2 網域功能等級帳戶網域<br />-具備動態存取控制支援的 Windows 8、Windows 8.1、Windows Server 2012 或 Windows Server 2012 R2 裝置|
 |根據使用者帳戶與安全性群組來限制服務票證發行| Windows Server 2012 R2 網域功能等級資源網域|
-|根據使用者宣告或裝置帳戶、安全性群組或宣告來限制服務票證發行| Windows Server 2012 R2 網域功能等級資源網域（具有動態存取控制支援）|
+|根據使用者宣告或裝置帳戶、安全性群組或宣告來限制服務票證發行| 具有動態存取控制支援的 Windows Server 2012 R2 網域功能等級資源網域|
 
 ### <a name="restrict-a-user-account-to-specific-devices-and-hosts"></a>限制使用者帳戶存取特定裝置與主機
 具備系統管理權限的高價值帳戶必須是 **Protected Users** 群組的成員。 依照預設，沒有任何帳戶是 **Protected Users** 群組的成員。 在將帳戶新增至群組之前，請設定網域控制站支援並建立稽核原則，以確保沒有任何封鎖問題。
 
 #### <a name="configure-domain-controller-support"></a>設定網域控制站支援
 
-使用者的帳戶網域必須是 Windows Server 2012 R2 網域功能等級 (DFL) 。 請確定所有網域控制站都是 Windows Server 2012 R2，然後使用 Active Directory 網域和信任]，將[DFL 提升](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753104(v=ws.11))至 windows Server 2012 r2。
+使用者的帳戶網域必須在 Windows Server 2012 R2 網域功能等級 (DFL) 。 確定所有網域控制站都是 Windows Server 2012 R2，然後使用 Active Directory 網域和信任，將 [DFL 提升](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753104(v=ws.11)) 至 windows Server 2012 R2。
 
 **設定動態存取控制的支援**
 
@@ -192,12 +192,12 @@ AP 交換通常會發生在應用程式通訊協定內的資料，且不會受�
 2.  在 [選項]**** 下的下拉式清單方塊中，選取 [永遠提供宣告]****。
 
     > [!NOTE]
-    > 也可以設定**支援**，但因為網域是在 Windows Server 2012 R2 DFL，所以當使用非宣告感知裝置和主機連接到宣告感知服務時，dc 一律會提供宣告，讓使用者宣告式存取檢查發生。
+    > 也可以設定**支援**，但因為網域是在 Windows Server 2012 R2 DFL，所以 dc 一律會提供宣告，讓使用者以宣告為基礎的存取檢查在使用非宣告感知裝置和主機連接到宣告感知服務時進行。
 
     ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AlwaysProvideClaims.png)
 
     > [!WARNING]
-    > 設定**Fail 未受防護驗證要求**會導致來自不支援 Kerberos 防護之任何作業系統（例如 windows 7 和舊版作業系統），或從 windows 8 開始的作業系統（尚未明確設定為支援它）的驗證失敗。
+    > 設定 **Fail 未受防護 authentication 要求** 會導致來自不支援 Kerberos 防護之任何作業系統（例如 Windows 7 和舊版作業系統，或從 Windows 8 （尚未明確設定為支援的作業系統）的驗證失敗。
 
 #### <a name="create-a-user-account-audit-for-authentication-policy-with-adac"></a>使用 ADAC 建立驗證原則的使用者帳戶稽核
 
@@ -206,7 +206,7 @@ AP 交換通常會發生在應用程式通訊協定內的資料，且不會受�
     ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_OpenADAC.gif)
 
     > [!NOTE]
-    > 在 Windows Server 2012 R2 DFL 的網域中，會顯示選取的 [**驗證**] 節點。 如果節點未出現，請使用 Windows Server 2012 R2 DFL 網域中的網域系統管理員帳戶，再試一次。
+    > 針對位於 Windows Server 2012 R2 DFL 的網域，可以看到選取的 **驗證** 節點。 如果節點沒有出現，請使用 Windows Server 2012 R2 DFL 網域的網域系統管理員帳戶再試一次。
 
 2.  按一下 [驗證原則]****，然後按一下 [新增]**** 以建立新的原則。
 
@@ -296,7 +296,7 @@ AP 交換通常會發生在應用程式通訊協定內的資料，且不會受�
 ##### <a name="troubleshoot-missing-computer-claims"></a>疑難排解遺失的電腦宣告
 如果宣告已佈建但無法使用，它可能只適用於 [電腦]**** 類別。
 
-假設您想要根據已設定之電腦的組織單位 (OU) 限制驗證，但僅適用于**電腦**類別。
+假設您想要根據電腦的組織單位 (OU) 來限制驗證，該電腦已設定，但僅適用于 **電腦** 類別。
 
 ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_RestrictComputers.gif)
 
@@ -333,7 +333,7 @@ AP 交換通常會發生在應用程式通訊協定內的資料，且不會受�
 ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AccountsAssigned.gif)
 
 #### <a name="use-the-authentication-policy-failures---domain-controller-administrative-log"></a>使用驗證原則失敗-網域控制站系統管理記錄
-新的**驗證原則失敗-** [**應用程式及服務記錄**檔] 下的 [網域控制站系統管理記錄]  >  **Microsoft**  >  已建立 Microsoft**Windows**  >  **驗證**，讓您更輕鬆地探索因驗證原則而造成的失敗。 該記錄檔預設為停用。 若要啟用它，請在記錄檔名稱上按一下滑鼠右鍵，然後按一下 [啟用記錄]****。 新的事件在內容上非常類似現有的 Kerberos TGT 與服務票證稽核事件。 如需這些事件的詳細資訊，請參閱 [驗證原則和驗證原則定址接收器](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486813(v=ws.11))。
+新的**驗證原則失敗-** **應用程式和服務記錄**下的網域控制站系統管理記錄檔已  >  建立**Microsoft**  >  **Windows**  >  **驗證**，讓您更輕鬆地探索由於驗證原則所造成的失敗。 該記錄檔預設為停用。 若要啟用它，請在記錄檔名稱上按一下滑鼠右鍵，然後按一下 [啟用記錄]****。 新的事件在內容上非常類似現有的 Kerberos TGT 與服務票證稽核事件。 如需這些事件的詳細資訊，請參閱 [驗證原則和驗證原則定址接收器](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486813(v=ws.11))。
 
 ### <a name="manage-authentication-policies-by-using-windows-powershell"></a><a name="BKMK_ManageAuthnPoliciesUsingPSH"></a>使用 Windows PowerShell 管理驗證原則
 此命令會建立一個名為 **TestAuthenticationPolicy** 的驗證原則。 **UserAllowedToAuthenticateFrom** 參數指定使用者可透過名為 someFile.txt 之檔案中的 SDDL 字串，從其驗證的裝置。
@@ -382,11 +382,11 @@ PS C:\> Get-ADAuthenticationPolicy -Filter 'Enforce -eq $false' | Remove-ADAuthe
 
 您可以設定新的安全性描述元，根據下列項目控制服務票證的發行：
 
--   使用者、使用者的安全性群組和/或使用者的宣告
+-   使用者、使用者的安全性群組及/或使用者的宣告
 
 -   裝置、裝置的安全性群組和/或裝置的宣告
 
-將此資訊取得資源的 Dc 需要動態存取控制：
+將此資訊取得至資源的 Dc 需要動態存取控制：
 
 -   使用者宣告：
 
@@ -413,7 +413,7 @@ PS C:\> Get-ADAuthenticationPolicy -Filter 'Enforce -eq $false' | Remove-ADAuthe
 > [!NOTE]
 > 一個驗證原則可以套用到一個驗證原則定址接收器的多個成員，或者分別套用到多個定址接收器以限制特定的帳戶範圍。 例如，若要保護單一帳戶或一小組帳戶，可針對那些帳戶設定原則，而不需要將那些帳戶加入定址接收器。
 
-您可以使用 Active Directory 管理中心或 Windows PowerShell 來建立驗證原則定址接收器。 根據預設，驗證原則定址接收器只會審核定址接收器原則，這相當於在 Windows PowerShell Cmdlet 中指定**WhatIf**參數。 在此情況下，不會套用原則定址接收器限制，但是會產生稽核，指出若套用限制是否發生失敗。
+您可以使用 Active Directory 管理中心或 Windows PowerShell 來建立驗證原則定址接收器。 根據預設，驗證原則定址接收器只會審核定址接收器原則，這相當於在 Windows PowerShell Cmdlet 中指定 **WhatIf** 參數。 在此情況下，不會套用原則定址接收器限制，但是會產生稽核，指出若套用限制是否發生失敗。
 
 #### <a name="to-create-an-authentication-policy-silo-by-using-active-directory-administrative-center"></a>使用 Active Directory 管理中心建立驗證原則定址接收器
 

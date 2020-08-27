@@ -1,25 +1,25 @@
 ---
 ms.assetid: f74eec9a-2485-4ee0-a0d8-cce01250a294
 title: AD DS 簡化的系統管理
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: 61961acf9fc1c858fddb4da70b4899e229ec6a3d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 5fec303bb5681147d1a2d9ab008ad40ac6a1b52c
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87956975"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940048"
 ---
 # <a name="ad-ds-simplified-administration"></a>AD DS 簡化的系統管理
 
 >適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-本主題說明 Windows Server 2012 網域控制站部署和管理的功能和優點，以及先前的作業系統 DC 部署和新的 Windows Server 2012 執行之間的差異。
+本主題說明 Windows Server 2012 網域控制站部署與管理的功能和優點，以及先前的作業系統 DC 部署與新的 Windows Server 2012 執行之間的差異。
 
-Windows Server 2012 引進新一代的 Active Directory Domain Services 簡化的系統管理，而且是自 Windows 2000 伺服器以來最基本的網域重新構想。 AD DS 簡化的系統管理參考 Active Directory 十二年的經驗，為架構設計人員和系統管理員提供更耐久、更有彈性、更直覺的系統管理經驗。 這意味著以現有技術建立新版本，以及擴充 Windows Server 2008 R2 中所發行元件的功能。
+Windows Server 2012 推出新一代的 Active Directory Domain Services 簡化的管理，而且是自 Windows 2000 伺服器起，最基本的網域重新構想。 AD DS 簡化的系統管理參考 Active Directory 十二年的經驗，為架構設計人員和系統管理員提供更耐久、更有彈性、更直覺的系統管理經驗。 這意味著以現有技術建立新版本，以及擴充 Windows Server 2008 R2 中所發行元件的功能。
 
 AD DS 簡化的系統管理是網域部署的重新構思。
 
@@ -30,7 +30,7 @@ AD DS 簡化的系統管理是網域部署的重新構思。
 - Windows PowerShell 的 Active Directory 模組現在包含複寫拓撲管理、 動態存取控制及其他操作的 Cmdlet。
 - Windows Server 2012 樹系功能等級不會實作新功能，而且只有新的 Kerberos 功能子集需要網域功能等級，系統管理員就不會經常需要同質性的網域控制站環境。
 - 新增了對虛擬網域控制站的完整支援，以包含自動化的部署和復原保護。
-   - 如需虛擬網域控制站的詳細資訊，請參閱[Active Directory Domain Services &#40;AD DS 簡介&#41; 虛擬化 &#40;層級 100&#41;](../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)。
+   - 如需虛擬網域控制站的詳細資訊，請參閱 [Active Directory Domain Services &#40;AD DS&#41; 虛擬化 &#40;層級 100&#41;的簡介 ](../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)。
 
 此外，還有許多系統管理和維護改良功能：
 
@@ -57,11 +57,11 @@ Adprep.exe 保留在 DVD 上是為了個別的樹系與網域準備。 隨附於
 
 ## <a name="server-manager-ad-ds-integration"></a>伺服器管理員 AD DS 整合
 
-![簡化的系統管理](media/AD-DS-Simplified-Administration/ADDS_SMI_TR_Dashboard.png)
+![簡化管理](media/AD-DS-Simplified-Administration/ADDS_SMI_TR_Dashboard.png)
 
 伺服器管理員是伺服器管理工作的集線器。 其儀表板樣式外觀會定期重新整理已安裝角色和遠端伺服器群組的檢視。 伺服器管理員提供本機與遠端伺服器的集中管理，而且不需存取主控台。
 
-Active Directory Domain Services 是其中一個中樞角色;藉由在網域控制站或 Windows 8 上的遠端伺服器管理工具上執行伺服器管理員，您會看到樹系中網域控制站上最近的重要問題。
+Active Directory Domain Services 是其中一個中樞角色;藉由在網域控制站上執行伺服器管理員或 Windows 8 上的遠端伺服器管理工具，您會看到樹系中網域控制站的重要最近問題。
 
 這些檢視包括：
 
@@ -73,7 +73,7 @@ Active Directory Domain Services 是其中一個中樞角色;藉由在網域控�
 
 ## <a name="active-directory-administrative-center-recycle-bin"></a>Active Directory 管理中心資源回收筒
 
-![簡化的系統管理](media/AD-DS-Simplified-Administration/ADDS_SMI_TR_ADAC.png)
+![簡化管理](media/AD-DS-Simplified-Administration/ADDS_SMI_TR_ADAC.png)
 
 Windows Server 2008 R2 引進 Active Directory 資源回收筒，可復原已刪除的 Active Directory 物件，而不需要從備份還原、重新啟動 AD DS 服務，或重新啟動網域控制站。
 
@@ -83,7 +83,7 @@ Windows Server 2012 增強了現有的 Windows PowerShell 還原功能，在 Act
 
 ## <a name="active-directory-administrative-center-fine-grained-password-policy"></a>Active Directory 管理中心更細緻的密碼原則
 
-![簡化的系統管理](media/AD-DS-Simplified-Administration/ADDS_SMI_TR_FGPP.png)
+![簡化管理](media/AD-DS-Simplified-Administration/ADDS_SMI_TR_FGPP.png)
 
 Windows Server 2008 中引進更細緻的密碼原則，可讓系統管理員依網域設定多個密碼及帳戶鎖定原則。 這可讓網域依據使用者和群組，彈性選擇強制執行較嚴格或較寬鬆的密碼規則。 它有沒有管理介面，需要系統管理員使用 Ldp.exe 或 Adsiedit.msc 來設定。 Windows Server 2008 R2 中引進 Windows PowerShell 的 Active Directory 模組，為系統管理員提供使用 FGPP 的命令列介面。
 
@@ -93,7 +93,7 @@ Windows Server 2012 則引進更細緻的密碼原則的圖形化介面。 Activ
 
 ## <a name="active-directory-administrative-center-windows-powershell-history-viewer"></a>Active Directory 管理中心 Windows PowerShell 歷程記錄檢視器
 
-![簡化的系統管理](media/AD-DS-Simplified-Administration/ADDS_SMI_TR_HistoryViewer.png)
+![簡化管理](media/AD-DS-Simplified-Administration/ADDS_SMI_TR_HistoryViewer.png)
 
 Windows Server 2008 R2 引進 Active Directory 管理中心，取代 Windows 2000 中舊版的 Active Directory 使用者和電腦嵌入式管理單元。 Active Directory 管理中心會建立一個圖形化的管理介面到 Windows PowerShell 的新 Active Directory 模組。
 
@@ -101,7 +101,7 @@ Windows Server 2008 R2 引進 Active Directory 管理中心，取代 Windows 200
 
 ## <a name="ad-replication-windows-powershell"></a>AD 複寫 Windows PowerShell
 
-![簡化的系統管理](media/AD-DS-Simplified-Administration/ADDS_PSNewADReplSite.png)
+![簡化管理](media/AD-DS-Simplified-Administration/ADDS_PSNewADReplSite.png)
 
 Windows Server 2012 新增額外的 Active Directory 複寫 Cmdlet 到 Active Directory Windows PowerShell 模組。 它們可用來設定新的或現有的站台、子網路、連線、站台連結與橋接器。 它們也會傳回 Active Directory 複寫中繼資料、複寫狀態、佇列和最新版向量資訊。 複寫 Cmdlet 的引進，再加上部署和其他現有的 AD DS Cmdlet，讓您只要使用 Windows PowerShell 即可管理樹系。 這使得想要佈建和管理 Windows Server 2012 的系統管理員不需使用圖形化介面即能達成目的，並能減少作業系統的攻擊面和服務的需求。 將伺服器部署到高安全性的網路 (例如機密網際網路通訊協定路由器 (SIPR) 與公司 DMZ) 時，這一點尤其重要。
 
@@ -111,7 +111,7 @@ Windows Server 2012 新增額外的 Active Directory 複寫 Cmdlet 到 Active Di
 
 Windows 2000 Active Directory 引進 RID 主機，其可將相關的識別元集區發行到網域控制站，以建立安全性信任者 (如使用者、群組及電腦) 的安全性識別碼 (SID)。  根據預設，這個全域的 RID 空間大小限制為 2<sup>30</sup> (或網域中共建立 1,073,741,823 個 SID) 。 SID 無法傳回集區或重新發行。 經過一段時間，大型網域的 RID 可能會開始不足，或意外可能導致不必要的 RID 消耗，最後終究匱乏。
 
-Windows Server 2012 可解決自 1999 年首次建立 Active Directory 網域以來，隨著 AD DS 成熟而有許多客戶和 Microsoft 客戶支援未發現的 RID 發行與管理問題。 其中包括：
+Windows Server 2012 可解決自 1999 年首次建立 Active Directory 網域以來，隨著 AD DS 成熟而有許多客戶和 Microsoft 客戶支援未發現的 RID 發行與管理問題。 其中包含：
 
 - 定期的 RID 消耗警告會寫入事件記錄檔
 - 當系統管理員使 RID 集區失效時會產生事件記錄檔
@@ -136,7 +136,7 @@ Windows Server 2012 可解決自 1999 年首次建立 Active Directory 網域以
 
 同時依賴 Windows PowerShell 和其遠端叫用命令，以執行遠端角色安裝和設定。
 
-![簡化的系統管理](media/AD-DS-Simplified-Administration/ADDS_SMI_TR_DepDLLs.png)
+![簡化管理](media/AD-DS-Simplified-Administration/ADDS_SMI_TR_DepDLLs.png)
 
 Windows Server 2012 也會將出自 LSASS.EXE 的一些先前的升級作業重構，以做為下列的一部分：
 
@@ -165,7 +165,7 @@ Adprep 不再需要於架構主機上執行。 它可以從執行 Windows Server
 
 先前在 ADprep.exe 中的 AD 準備程式碼已重構為 adprep.dll。 這可讓 ADPrep.exe 和 ADDSDeployment Windows PowerShell 模組使用媒體櫃執行相同的工作，並具備相同的功能。 Adprep.exe 隨附於安裝媒體中，但自動化程序不會直接呼叫它 - 只有系統管理員可以手動執行。 它只能在 Windows Server 2008 x 64 及更新版本的作業系統上執行。 Ldifde.exe 和 csvde.exe 也有 DLL 格式的重構版本，由準備程序載入。 結構描述延伸仍會使用簽章驗證的 LDF 檔案，就像在先前的作業系統版本中一樣。
 
-![簡化的系統管理](media/AD-DS-Simplified-Administration/ADDS_SMI_TR_AdprepDLLs.png)
+![簡化管理](media/AD-DS-Simplified-Administration/ADDS_SMI_TR_AdprepDLLs.png)
 
 > [!IMPORTANT]
 > Windows Server 2012 沒有 32 位元的 Adprep32.exe 工具。 您必須至少擁有一部 Windows Server 2008 x64、Windows Server 2008 R2 或 Windows Server 2012 電腦執行為網域控制站、成員伺服器或在工作群組中執行，才能夠準備樹系和網域。 Adprep.exe 無法在 Windows Server 2003 x64 的作業系統上執行。
@@ -201,7 +201,7 @@ ADDSDeployment Windows PowerShell Managed 程式碼內建的先決條件檢查�
 | CheckRODCPrep<p>GroupMembership | LDAP、<p>RPC over SMB (LSARPC) | 驗證使用者是否為 Enterprise Admins 群組的成員，而且對現有的網域控制站具有管理稽核及安全性事件記錄檔 (SesScurityPrivilege) 的權限 |
 | VerifyInitSync<p>AfterReboot | LDAP | 透過在 rootDSE 屬性 becomeSchemaMaster 設定虛擬值，以驗證架構主機自重新啟動後是否至少複寫過一次 |
 | VerifySFUHotFix<p>已套用 | LDAP | 驗證現有的樹系架構未包含 OID 為 1.2.840.113556.1.4.7000.187.102 的 UID 屬性的已知問題 SFU2 延伸<p>([https://support.microsoft.com/kb/821732](https://support.microsoft.com/kb/821732)) |
-| VerifyExchange<p>SchemaFixed | LDAP、WMI、DCOM、RPC | 驗證現有的樹系架構仍然不會包含問題 Exchange 2000 延伸模組： Ms-exch-assistant-name-Assistant-Name、ms-Ms-exch-assistant-name-LabeledURI 和 ms Ms-exch-assistant-name-內部識別碼 ([https://support.microsoft.com/kb/314649](https://support.microsoft.com/kb/314649))  |
+| VerifyExchange<p>SchemaFixed | LDAP、WMI、DCOM、RPC | 驗證現有的樹系架構未包含問題 Exchange 2000 延伸模組的 Ms-exch-assistant-name-Assistant-Name、ms-Ms-exch-assistant-name-LabeledURI 和 ms Ms-exch-assistant-name 房子-識別碼 ([https://support.microsoft.com/kb/314649](https://support.microsoft.com/kb/314649))  |
 | VerifyWin2KSchema<p>一致性 | LDAP | 驗證現有的樹系架構是否有一致 (未經其他廠商不當修改) 的核心屬性及類別。 |
 | DCPromo | DRSR over RPC、<p>LDAP、<p>DNS<p>RPC over SMB (SAMR) | 驗證命令列語法已傳送到升級程式碼和測試升級。 如果是新建樹系或網域，驗證其是否尚未存在 |
 | VerifyOutbound<p>ReplicationEnabled | LDAP、DRSR over SMB、RPC over SMB (LSARPC) | 檢查 NTDS 設定物件的選項屬性是否為 NTDSDSA_OPT_DISABLE_OUTBOUND_REPL (0x00000004)，以驗證指定為複寫協力電腦的現有網域控制站是否已啟用連出複寫 |

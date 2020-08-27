@@ -1,17 +1,17 @@
 ---
 ms.assetid: e6da5984-d99d-4c34-9c11-4a18cd413f06
 title: 在現有網域中安裝複本 Windows Server 2012 網域控制站 (等級 200)
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 76bda25100766524fde490c0afc4b92b9d9fb7b7
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a7a9b59d9676484ea39262fb023b56374533e6ec
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87968035"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940878"
 ---
 # <a name="install-a-replica-windows-server-2012-domain-controller-in-an-existing-domain-level-200"></a>在現有網域中安裝複本 Windows Server 2012 網域控制站 (等級 200)
 
@@ -302,7 +302,7 @@ Install-addsdomaincontroller
 
 ![安裝複本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_PSUpgradeProgress.png)
 
-若要使用 Windows PowerShell 從遠端設定網域控制站，請將**uninstall-addsdomaincontroller** Cmdlet 包裝在**調用命令**Cmdlet*內*。 這需要使用大括號。
+若要使用 Windows PowerShell 從遠端設定網域控制站，請將**uninstall-addsdomaincontroller 指令程式**包裝在**invoke 命令**Cmdlet*內*。 這需要使用大括號。
 
 ```
 invoke-command {install-addsdomaincontroller "domainname <domain> -credential (get-credential)} -computername <dc name>

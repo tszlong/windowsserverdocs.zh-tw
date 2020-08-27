@@ -1,17 +1,17 @@
 ---
 ms.assetid: e3d55565-ad45-4504-ad73-8103d1a92170
 title: 安裝新的 Windows Server 2012 Active Directory 子網域或樹狀目錄網域 (等級 200)
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: a20b58b6d32f3b69106bcaa7716b4f86a750ce6b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 98c2226fac7d280745a065cefab5b5e5bb5e1707
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970015"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940858"
 ---
 # <a name="install-a-new-windows-server-2012-active-directory-child-or-tree-domain-level-200"></a>安裝新的 Windows Server 2012 Active Directory 子網域或樹狀目錄網域 (等級 200)
 

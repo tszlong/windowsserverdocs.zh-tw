@@ -1,18 +1,18 @@
 ---
 title: Active Directory 網域服務元件更新
 description: 本檔討論 Windows Server 2012 R2 的 AD DS 元件更新
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 09/08/2017
 ms.topic: article
 ms.assetid: a3a91034-a4da-4ad7-93f8-0cd2ec3e7824
-ms.openlocfilehash: 41e696ffd7339269311a9ccf21e096b48ef37439
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: bb8beb409fda5c5c64618bfd8502db1a71024f39
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943431"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940358"
 ---
 # <a name="active-directory-domain-services-component-updates"></a>Active Directory 網域服務元件更新
 
