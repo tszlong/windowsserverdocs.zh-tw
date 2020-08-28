@@ -1,18 +1,18 @@
 ---
 title: ftp pwd
-description: Ftp pwd 命令的參考文章，它會顯示目前的遠端電腦目錄。
-ms.topic: article
+description: Ftp pwd 命令的參考文章，此命令會顯示目前的遠端電腦目錄。
+ms.topic: reference
 ms.assetid: bf40dede-5dd8-4d06-bfe4-17c8bada681f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c229db2b7b245b2b6e5dd252015ec22ab223d73f
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 5d4ec8f922488b872106ca37de9b0998780e7483
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889109"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037726"
 ---
 # <a name="ftp-pwd"></a>ftp pwd
 
@@ -38,4 +38,4 @@ pwd
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [其他 FTP 指引](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [其他 FTP 指導方針](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

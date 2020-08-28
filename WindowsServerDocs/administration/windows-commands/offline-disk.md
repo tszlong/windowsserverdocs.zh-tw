@@ -1,27 +1,27 @@
 ---
 title: offline disk
-description: 離線磁片命令的參考文章，這會將線上磁片的焦點放在離線狀態。
-ms.topic: article
+description: 離線磁片命令的參考文章，此命令會將焦點放在離線狀態的線上磁片。
+ms.topic: reference
 ms.assetid: 8fb9b3c3-0b2c-4192-a2e7-f706292653e3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b570336bba8da402adb848c465148dabc49b0f6a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 186acfaf297e6b94faf11a235f36082672524e75
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87885281"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037246"
 ---
 # <a name="offline-disk"></a>offline disk
 
-將具有焦點的線上磁片帶到離線狀態。 如果磁片群組中的動態磁碟已離線，則磁片的狀態會變更為 [**遺失**]，而群組會顯示離線的磁片。 遺失的磁片會移至不正確群組。 如果動態磁碟是群組中的最後一個磁片，則磁片的狀態會變更為 [**離線**]，而空的群組則會被移除。
+將具有焦點的線上磁片帶到離線狀態。 如果磁片群組中的動態磁碟離線，磁片的狀態將會變更為 [ **遺失** ]，而群組會顯示已離線的磁片。 遺失的磁片會移至不正確群組。 如果動態磁碟是群組中的最後一個磁片，則磁片的狀態會變更為 [ **離線**]，並移除空白群組。
 
 > [!NOTE]
-> 必須選取磁片，[**離線磁片**] 命令才會成功。 使用 [[選取磁片](select-disk.md)] 命令來選取磁片，並將焦點移至它。
+> 必須選取磁片， **離線磁片** 命令才能成功。 使用 [ [選取磁片](select-disk.md) ] 命令來選取磁片，並將焦點移至該磁片。
 >
-> 此命令也適用于 SAN online 模式中的磁片，方法是將 SAN 模式變更為離線。
+> 此命令也可透過將 SAN 模式變更為離線，在 SAN 線上模式中的磁片上運作。
 
 ## <a name="syntax"></a>語法
 
@@ -33,11 +33,11 @@ offline disk [noerr]
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| noerr | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
+| noerr | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 如果沒有這個參數，錯誤會導致 DiskPart 結束，並產生錯誤碼。 |
 
 ### <a name="examples"></a>範例
 
-若要讓磁片具有離線焦點，請輸入：
+若要讓具有焦點的磁片離線，請輸入：
 
 ```
 offline disk

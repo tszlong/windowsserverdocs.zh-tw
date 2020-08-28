@@ -1,22 +1,22 @@
 ---
 title: chcp
-description: Chcp 命令的參考文章，其會變更作用中的主控台字碼頁。
-ms.topic: article
+description: 適用于 chcp 命令的參考文章，此命令會變更活動主控台字碼頁。
+ms.topic: reference
 ms.assetid: dc7b1c71-7b80-443d-9cf1-9bcf305aa1fd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 21dcdc1e663656439bece576287877653d0dcd8c
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8e725bb3220546864642b2e6a39ddcc0163b1b98
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892817"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031086"
 ---
 # <a name="chcp"></a>chcp
 
-變更 active 主控台字碼頁。 如果使用時不含參數，則**chcp**會顯示作用中主控台字碼頁的數目。
+變更活動主控台字碼頁。 如果使用時不含 **參數，則** 會顯示作用中主控台字碼頁的數目。
 
 ## <a name="syntax"></a>語法
 
@@ -31,18 +31,18 @@ chcp [<nnn>]
 | `<nnn>` | 指定字碼頁。 |
 | /? | 在命令提示字元顯示說明。 |
 
-下表列出每個支援的字碼頁和其國家/地區或語言：
+下表列出每個支援的字碼頁以及其國家/地區或語言：
 
 | 字碼頁 | 國家/地區或語言 |
 | --------- | -------------------------- |
 | 437 | 美國 |
-| 850 | 多語系 (拉丁 I)  |
+| 850 | 多語系 (拉丁)  |
 | 852 | 斯拉夫 (拉丁 II)  |
 | 855 | 斯拉夫文 (俄文)  |
 | 857 | 土耳其文 |
 | 860 | 葡萄牙文 |
 | 861 | 冰島文 |
-| 863 | 加拿大-法文 |
+| 863 | 加拿大（法文） |
 | 865 | 北歐 |
 | 866 | 俄文 |
 | 869 | 新式希臘文 |
@@ -50,11 +50,11 @@ chcp [<nnn>]
 
 #### <a name="remarks"></a>備註
 
-- 只有在使用點陣字型的 [命令提示字元] 視窗中，才會正確顯示隨 Windows 安裝的原始設備製造商 (OEM) 字碼頁。 其他字碼頁會以全螢幕模式或在使用 TrueType 字型的命令提示字元視窗中正確地顯示。
+- 使用點陣字型的命令提示字元視窗中，只有原始設備製造商 (OEM) 與 Windows 一起安裝的字碼頁會正確出現。 在全螢幕模式或使用 TrueType 字型的命令提示字元視窗中，會正確地顯示其他字碼頁。
 
-- 您不需要在 MS-DOS) 中準備 (的字碼頁。
+- 您不需要像在 MS-DOS) 中一樣準備字碼頁 (。
 
-- 您在指派新字碼頁之後啟動的程式會使用新的字碼頁。 不過，除非您在指派新字碼頁之前啟動的 Cmd.exe) 以外的程式 (，否則會繼續使用原始的字碼頁。
+- 您在指派新字碼頁之後啟動的程式會使用新的字碼頁。 不過，除了您在指派新的字碼頁之前所啟動的 Cmd.exe) 之外，程式 (會繼續使用原始字碼頁。
 
 ## <a name="examples"></a>範例
 
@@ -64,15 +64,15 @@ chcp [<nnn>]
 chcp
 ```
 
-此時會出現類似下列的訊息：`Active code page: 437`
+會出現類似下列的訊息： `Active code page: 437`
 
-若要將使用中的字碼頁變更為 850 (多語系) ，請輸入：
+若要將使用中字碼頁變更為 850 (多語系) ，請輸入：
 
 ```
 chcp 850
 ```
 
-如果指定的字碼頁無效，則會出現下列錯誤訊息：`Invalid code page`
+如果指定的字碼頁無效，則會出現下列錯誤訊息： `Invalid code page`
 
 ## <a name="additional-references"></a>其他參考資料
 

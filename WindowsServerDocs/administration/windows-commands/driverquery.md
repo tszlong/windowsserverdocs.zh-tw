@@ -1,22 +1,22 @@
 ---
 title: driverquery
-description: Driverquery 命令的參考文章，可讓系統管理員顯示已安裝的設備磁碟機及其屬性的清單。
-ms.topic: article
+description: Driverquery 命令的參考文章，可讓系統管理員顯示已安裝的設備磁碟機及其屬性清單。
+ms.topic: reference
 ms.assetid: 92ca4b84-e4e2-405b-9f31-bf6db9f66839
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a996d48927215f8304e5a16f9da67419cbf7de65
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: dbd8ca2de7f15a5b5fb8682dae3a3aa2e105d7cd
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890757"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030796"
 ---
 # <a name="driverquery"></a>driverquery
 
-可讓系統管理員顯示已安裝的設備磁碟機及其內容的清單。 如果在沒有參數的情況下使用， **driverquery**會在本機電腦上執行。
+可讓系統管理員顯示已安裝的設備磁碟機及其屬性清單。 如果使用時不含參數， **driverquery** 會在本機電腦上執行。
 
 ## <a name="syntax"></a>語法
 
@@ -28,15 +28,15 @@ driverquery [/s <system> [/u [<domain>\]<username> [/p <password>]]] [/fo {table
 
 | 參數 | 描述 |
 | --------- |------------ |
-| /s`<system>` | 指定遠端電腦的名稱或 IP 位址。 請勿使用反斜線。 預設是本機電腦。 |
-| u`[<domain>]<username>` | 以*user*或*domain\user*所指定的使用者帳號憑證來執行命令。 根據預設， */s*會使用目前登入發出命令之電腦的使用者認證。 除非指定了 **/s** ，否則無法使用 **/u** 。 |
-| /p`<password>` | 指定 **/u**參數中指定之使用者帳戶的密碼。 除非指定 **/u** ，否則無法使用 **/p** 。 |
+| /s `<system>` | 指定遠端電腦的名稱或 IP 位址。 請勿使用反斜線。 預設是本機電腦。 |
+| u `[<domain>]<username>` | 使用 *user* 或 *domain\user*所指定之使用者帳戶的認證來執行命令。 根據預設， */s* 會使用目前登入發出命令之電腦的使用者認證。 除非指定了 **/s** ，否則無法使用 **/u** 。 |
+| /p `<password>` | 指定 **/u** 參數中指定之使用者帳戶的密碼。 除非指定 **/u** ，否則無法使用 **/p** 。 |
 | /fo 資料表 | 將輸出格式化為表格。 這是預設值。 |
 | /fo 清單 | 將輸出格式化為清單。 |
-| /fo csv | 使用逗號分隔值來格式化輸出。 |
-| /nh | 省略顯示的驅動程式資訊中的標頭資料列。 如果 **/fo**參數設定為**list**，則無效。 |
-| /v | 顯示詳細資訊輸出。 **/v**對已簽署的驅動程式無效。 |
-| /si | 提供已簽署驅動程式的相關資訊。 |
+| /fo csv | 使用逗點分隔值將輸出格式化。 |
+| /nh | 從顯示的驅動程式資訊中省略標頭資料列。 如果 **/fo** 參數設定為 **list**，則無效。 |
+| /v | 顯示詳細資訊輸出。 **/v** 簽署的驅動程式無效。 |
+| /si | 提供簽署驅動程式的相關資訊。 |
 | /? | 在命令提示字元顯示說明。 |
 
 ### <a name="examples"></a>範例
@@ -47,7 +47,7 @@ driverquery [/s <system> [/u [<domain>\]<username> [/p <password>]]] [/fo {table
 driverquery
 ```
 
-若要顯示逗號分隔值中的輸出 (CSV) 格式，請輸入：
+若要以逗點分隔值顯示輸出 (CSV) 格式，請輸入：
 
 ```
 driverquery /fo csv
@@ -59,13 +59,13 @@ driverquery /fo csv
 driverquery /nh
 ```
 
-若要在本機電腦上使用目前的認證，在名為*server1*的遠端伺服器上使用**driverquery**命令，請輸入：
+若要使用本機電腦上目前的認證，在名為*server1*的遠端伺服器上使用**driverquery**命令，請輸入：
 
 ```
 driverquery /s server1
 ```
 
-若要在名為*server1*的遠端伺服器上使用**driverquery**命令，並使用 domain *maindom*上*user1*的認證，請輸入：
+若要在名為*server1*的遠端伺服器上使用**driverquery**命令，請在網域*maindom*上使用*user1*的認證，輸入：
 
 ```
 driverquery /s server1 /u maindom\user1 /p p@ssw3d

@@ -1,18 +1,18 @@
 ---
 title: ftp put
-description: Ftp put 命令的參考文章，它會使用目前的檔案傳輸類型，將本機檔案複製到遠端電腦。
-ms.topic: article
+description: Ftp put 命令的參考文章，此命令會使用目前的檔案傳輸類型，將本機檔案複製到遠端電腦。
+ms.topic: reference
 ms.assetid: 95cc1e3f-523d-4374-98b8-16e6c276b2ca
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/30/2020
-ms.openlocfilehash: e0794c12d7e613f92546903586fe14d23319185a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 518ef051b0e515351a14a0d6895ad50100f1dbd8
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889127"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030566"
 ---
 # <a name="ftp-put"></a>ftp put
 
@@ -21,7 +21,7 @@ ms.locfileid: "87889127"
 使用目前的檔案傳輸類型，將本機檔案複製到遠端電腦。
 
 > [!NOTE]
-> 此命令與[ftp send 命令](ftp-send_1.md)相同。
+> 此命令與 [ftp send 命令](ftp-send_1.md)相同。
 
 ## <a name="syntax"></a>語法
 
@@ -34,17 +34,17 @@ put <localfile> [<remotefile>]
 | 參數 | 描述 |
 | --------- | ----------- |
 | `<localfile>` | 指定要複製的本機檔案。 |
-| `[<remotefile>]` | 指定要在遠端電腦上使用的名稱。 如果您未指定*remotefile*，檔案就會提供*localfile*名稱。|
+| `[<remotefile>]` | 指定要在遠端電腦上使用的名稱。 如果您未指定 *remotefile*，檔案就會提供 *localfile* 名稱。|
 
 ### <a name="examples"></a>範例
 
-若要複製本機檔案*test.txt*並將它命名為*test1.txt*在遠端電腦上，請輸入：
+若要複製本機檔案 *test.txt* 並將它命名 *test1.txt* 在遠端電腦上，請輸入：
 
 ```
 put test.txt test1.txt
 ```
 
-若要將本機檔案*program.exe*複製到遠端電腦，請輸入：
+若要將本機檔案 *program.exe* 複製到遠端電腦，請輸入：
 
 ```
 put program.exe
@@ -58,4 +58,4 @@ put program.exe
 
 - [ftp 二進位命令](ftp-binary.md)
 
-- [其他 FTP 指引](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [其他 FTP 指導方針](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

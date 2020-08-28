@@ -1,22 +1,22 @@
 ---
 title: bitsadmin peercaching and setconfigurationflags
-description: Bitsadmin 對等互連和 setconfigurationflags 命令的參考文章，其會設定決定電腦是否可以將內容提供給對等，以及是否可以從對等下載內容的設定旗標。
-ms.topic: article
+description: Bitsadmin 對等互連和 setconfigurationflags 命令的參考文章，此命令會設定設定旗標，以判斷電腦是否可以將內容提供給對等，以及是否可以從對等下載內容。
+ms.topic: reference
 ms.assetid: ff0a2b49-66e3-4d40-824c-6a3816055d2e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6ed6f638766378a24bc06c488cb90703d05f9c05
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 0027fa5c926f09b95541906f168e852292b19aaf
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87893587"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89026518"
 ---
 # <a name="bitsadmin-peercaching-and-setconfigurationflags"></a>bitsadmin peercaching and setconfigurationflags
 
-設定決定電腦是否可以將內容提供給對等，以及是否可以從對等下載內容的設定旗標。
+設定旗標，以判斷電腦是否可以將內容提供給對等，以及是否可以從對等下載內容。
 
 ## <a name="syntax"></a>語法
 
@@ -29,11 +29,11 @@ bitsadmin /peercaching /setconfigurationflags <job> <value>
 | 參數 | 描述 |
 | -------------- | -------------- |
 | 作業 | 作業的顯示名稱或 GUID。 |
-| value | 不帶正負號的整數，具有二進位標記法中的位的下列解讀：<ul><li>若要允許從對等體下載作業的資料，請設定最不重要的位。</li><li>若要允許將作業的資料提供給對等，請從右邊設定第二個位。</li></ul>|
+| value | 針對二進位標記法中的位，具有下列解釋的不帶正負號的整數：<ul><li>若要允許從對等下載作業的資料，請設定最不重要的位。</li><li>若要允許將作業的資料提供給對等，請設定右邊的第二位。</li></ul>|
 
 ## <a name="examples"></a>範例
 
-針對名為*myDownloadJob*的作業，指定要從對等電腦下載的作業資料：
+若要針對名為 *myDownloadJob*的作業指定要從對等下載的作業資料：
 
 ```
 bitsadmin /peercaching /setconfigurationflags myDownloadJob 1
@@ -45,4 +45,4 @@ bitsadmin /peercaching /setconfigurationflags myDownloadJob 1
 
 - [bitsadmin 命令](bitsadmin.md)
 
-- [bitsadmin 對等命令](bitsadmin-peercaching.md)
+- [bitsadmin 對等的命令](bitsadmin-peercaching.md)

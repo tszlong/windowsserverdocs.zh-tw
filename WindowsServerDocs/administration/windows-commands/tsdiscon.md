@@ -1,18 +1,18 @@
 ---
 title: tsdiscon
-description: Tsdiscon 的參考文章，它會中斷會話與遠端桌面工作階段主機伺服器的連線。
-ms.topic: article
+description: Tsdiscon 的參考文章，會中斷與遠端桌面工作階段主機伺服器的會話連線。
+ms.topic: reference
 ms.assetid: 13139674-7dee-4965-8cac-32f4928e8b9a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e81a1c7f68af0bb1d16ce64bb4985e3ddb8d18f2
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 9fd0292ab1bd53a424c0acaa4b6a2dc98cb1f0a0
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87897071"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89026856"
 ---
 # <a name="tsdiscon"></a>tsdiscon
 
@@ -23,7 +23,7 @@ ms.locfileid: "87897071"
 
 
 > [!NOTE]
-> 在 Windows Server 2008 R2 中，終端機服務已重新命名為遠端桌面服務。 若要瞭解最新版本的新功能，請參閱 Windows Server TechNet Library 中的[Windows server 2012 遠端桌面服務的新功能](/previous-versions/orphan-topics/ws.11/hh831527(v=ws.11))。
+> 若要瞭解最新版本的新功能，請參閱 Windows server TechNet Library 中的 [Windows server 2012 遠端桌面服務的新功能](/previous-versions/orphan-topics/ws.11/hh831527(v=ws.11)) 。
 
 ## <a name="syntax"></a>語法
 ```
@@ -34,18 +34,18 @@ tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
 
 |參數|描述|
 |-------|--------|
-|\<SessionId>|指定要中斷連線之會話的識別碼。|
-|\<SessionName>|指定要中斷連線之會話的名稱。|
-|/server:\<ServerName>|指定包含您要中斷連線之會話的終端機伺服器。 否則，會使用目前的 rd 工作階段主機伺服器。|
+|\<SessionId>|指定要中斷連接之會話的識別碼。|
+|\<SessionName>|指定要中斷連接之會話的名稱。|
+|/server:\<ServerName>|指定包含您要中斷連線之會話的終端機伺服器。 否則，就會使用目前的 rd 工作階段主機伺服器。|
 |/v|顯示正在執行之動作的相關資訊。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
--   您必須擁有 [完全控制] 許可權或 [中斷連線] 特殊存取權限，才能中斷其他使用者與會話的連線。
--   如果未指定會話識別碼或會話名稱， **tsdiscon**會中斷目前會話的連線。
--   當您在中斷連線會話時執行的任何應用程式，都會在您重新連線到該會話時自動執行，而不會遺失資料。 使用 [**重設會話**] 來結束已中斷連線會話的執行中應用程式，但請注意，這可能會導致會話的資料遺失。
+-   您必須擁有 [完全控制] 許可權或 [中斷連線] 特殊存取權限，才能中斷另一位使用者與會話的連線。
+-   如果未指定會話識別碼或會話名稱， **tsdiscon** 會中斷目前會話的連線。
+-   當您重新連線到不會遺失資料的會話時，任何在中斷連線會話時執行的應用程式都會自動執行。 使用 **重設會話** 來結束已中斷連線會話的執行中應用程式，但請注意，這可能會導致會話的資料遺失。
 -   只有當您從遠端伺服器使用**tsdiscon**時，才需要 **/server**參數。
--   無法中斷連接主控台會話。
+-   主控台會話無法中斷連線。
 
 ## <a name="examples"></a>範例
 - 若要中斷目前會話的連線，請輸入：

@@ -1,22 +1,22 @@
 ---
 title: 設定內容
-description: Set coNtext 的參考文章，可設定陰影複製建立的內容。
-ms.topic: article
+description: Set coNtext 的參考文章，可設定陰影複製的建立內容。
+ms.topic: reference
 ms.assetid: fc16c7dd-e8f0-4c2a-8742-0bddb2848bfd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3506a79ec713f26b16f58cd8cda3903ce6503adf
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d9097db093d10203c3cbdf753666408cd3932aaf
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882699"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037396"
 ---
 # <a name="set-contex"></a>設定操作
 
-設定陰影複製建立的內容。 如果使用時不含參數， **set coNtext**會在命令提示字元中顯示 help。
+設定用於建立陰影複製的內容。 如果使用時不含參數，請在命令提示字元中 **設定 coNtext** 顯示說明。
 
 
 
@@ -31,13 +31,13 @@ set context {clientaccessible | persistent [nowriters] | volatile [nowriters]}
 |參數|描述|
 |---------|-----------|
 |clientaccessible|指定陰影複製可供用戶端版本的 Windows 使用。|
-|持續|指定陰影複製在程式結束、重設或重新開機時持續存在。|
+|持續|指定在程式結束、重設或重新開機期間保存陰影複製。|
 |volatile|在結束或重設時刪除陰影複製。|
-|nowriters|指定排除所有寫入器。|
+|nowriters|指定排除所有的寫入器。|
 
 ## <a name="remarks"></a>備註
 
--   根據預設， *clientaccessible*內容是持續性的。
+-   *Clientaccessible*內容預設為持續性。
 
 ## <a name="examples"></a>範例
 

@@ -1,24 +1,24 @@
 ---
 title: Fsutil fsinfo
-description: 適用于 fsutil fsinfo 命令的參考文章，其中會列出所有磁片磁碟機、查詢磁片磁碟機類型、查詢磁片區資訊、查詢 NTFS 特定磁片區資訊，或查詢檔案系統統計資料。
+description: Fsutil fsinfo 命令的參考文章，它會列出所有磁片磁碟機、查詢磁片磁碟機類型、查詢磁片區資訊、查詢 NTFS 特定的磁片區資訊，或查詢檔案系統統計資料。
 manager: dmoss
 ms.author: toklima
 author: toklima
 ms.assetid: 7787a72e-a26b-415f-b700-a32806803478
-ms.topic: article
+ms.topic: reference
 ms.date: 10/16/2017
-ms.openlocfilehash: 5642355769225fada014a98cce8d4533e72f7410
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e921b8572b7d1d87a1baf40cfdbc955adce3ec01
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889988"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037366"
 ---
 # <a name="fsutil-fsinfo"></a>fsutil fsinfo
 
 > 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8
 
-列出所有磁片磁碟機、查詢磁片磁碟機類型、查詢磁片區資訊、查詢 NTFS 特定磁片區資訊，或查詢檔案系統統計資料。
+列出所有磁片磁碟機、查詢磁片磁碟機類型、查詢磁片區資訊、查詢 NTFS 特定的磁片區資訊，或查詢檔案系統統計資料。
 
 ## <a name="syntax"></a>語法
 
@@ -36,11 +36,11 @@ fsutil fsinfo [volumeinfo] <rootpath>
 | --------- |------------ |
 | 磁碟機 | 列出電腦中的所有磁片磁碟機。 |
 | drivetype | 查詢磁片磁碟機並列出其類型，例如 CD-ROM 光碟機。 |
-| ntfsinfo | 列出指定磁片區的 NTFS 特定磁片區資訊，例如磁區數目、叢集總計、可用叢集，以及 MFT 區域的開始和結束。 |
-| sectorinfo | 列出硬體磁區大小和對齊的相關資訊。 |
-| 統計資料 | 列出指定磁片區（例如中繼資料、記錄檔和 MFT 讀取和寫入）的檔案系統統計資料。 |
-| volumeinfo | 列出指定磁片區的資訊（例如檔案系統），以及該磁片區是否支援區分大小寫的檔案名、檔案名中的 unicode、磁片配額，或是 DirectAccess (DAX) 磁片區的名稱。 |
-| `<volumepath>:` | 指定 (後面接著冒號) 的磁碟機號。 |
+| ntfsinfo | 列出指定磁片區的 NTFS 特定磁片區資訊，例如磁區數目、總叢集數、可用叢集，以及 MFT 區域的開頭和結尾。 |
+| sectorinfo | 列出硬體磁區大小和對齊方式的相關資訊。 |
+| 統計資料 | 列出指定磁片區的檔案系統統計資料，例如中繼資料、記錄檔以及 MFT 讀取和寫入。 |
+| volumeinfo | 列出指定磁片區的資訊，例如檔案系統，以及磁片區是否支援區分大小寫的檔案名、檔案名中的 unicode、磁片配額，或是 (DAX) 磁片區的 DirectAccess。 |
+| `<volumepath>:` | 指定磁碟機號 (後面加上冒號) 。 |
 | `<rootpath>:` | 指定磁碟機號 (後面接著根磁片磁碟機的冒號) 。 |
 
 ### <a name="examples"></a>範例
@@ -51,7 +51,7 @@ fsutil fsinfo [volumeinfo] <rootpath>
 fsutil fsinfo drives
 ```
 
-輸出類似下列顯示：
+如下所示的輸出：
 
 ```
 Drives: A:\ C:\ D:\ E:\
@@ -63,7 +63,7 @@ Drives: A:\ C:\ D:\ E:\
 fsutil fsinfo drivetype c:
 ```
 
-可能的查詢結果包括：
+查詢可能的結果包括：
 
 ```
 Unknown Drive
@@ -81,7 +81,7 @@ Ram Disk
 fsinfo volumeinfo e:\
 ```
 
-輸出類似下列顯示：
+如下所示的輸出：
 
 ```
 Volume Name : Volume
@@ -92,13 +92,13 @@ Supports Named Streams
 Is DAX Volume
 ```
 
-若要查詢 NTFS 特定磁片區資訊的磁片磁碟機 F，請輸入：
+若要針對 NTFS 特定磁片區資訊來查詢磁片磁碟機 F，請輸入：
 
 ```
 fsutil fsinfo ntfsinfo f:
 ```
 
-輸出類似下列顯示：
+如下所示的輸出：
 
 ```
 NTFS Volume Serial Number : 0xe660d46a60d442cb
@@ -107,13 +107,13 @@ Total Clusters : 0x000000000021d409
 Mft Zone End : 0x0000000000004700
 ```
 
-若要查詢檔案系統的基礎硬體以取得磁區資訊，請輸入：
+若要查詢檔案系統的基礎硬體中的磁區資訊，請輸入：
 
 ```
 fsinfo sectorinfo d:
 ```
 
-輸出類似下列顯示：
+如下所示的輸出：
 
 ```
 D:\>fsutil fsinfo sectorinfo d:
@@ -129,7 +129,7 @@ DAX capable
 fsinfo statistics e:
 ```
 
-輸出類似下列顯示：
+如下所示的輸出：
 
 ```
 File System Type : NTFS

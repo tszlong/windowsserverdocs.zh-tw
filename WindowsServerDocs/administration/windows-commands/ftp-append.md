@@ -1,18 +1,18 @@
 ---
 title: ftp append
-description: Ftp append 命令的參考文章，它會使用目前的檔案類型設定，將本機檔案附加至遠端電腦上的檔案。
-ms.topic: article
+description: Ftp append 命令的參考文章，此命令會使用目前的檔案類型設定，將本機檔案附加至遠端電腦上的檔案。
+ms.topic: reference
 ms.assetid: 7c1a133c-31dc-41a4-9eb9-258efd79804d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0c98e9eb4ed5d2dc560deac0720158cf90d801e4
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 58f85a99eed60bffafaa71d9b0af1cc67462453b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889689"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037746"
 ---
 # <a name="ftp-append"></a>ftp append
 
@@ -31,17 +31,17 @@ append <localfile> [remotefile]
 | 參數 | 描述 |
 | --------- | ----------- |
 | `<localfile>` | 指定要加入的本機檔案。 |
-| [remotefile] | 指定在新增的遠端電腦上的檔案 <localfile> 。 如果您未使用此參數，則 `<localfile>` 會使用此名稱來取代遠端檔案名。 |
+| [remotefile] | 指定遠端電腦上新增的檔案 <localfile> 。 如果您未使用此參數，則 `<localfile>` 會使用該名稱來取代遠端檔案名。 |
 
 ### <a name="examples"></a>範例
 
-若要將*file1.txt*附加至遠端電腦上的*file2.txt* ，請輸入：
+若要將 *file1.txt* 附加至遠端電腦上的 *file2.txt* ，請輸入：
 
 ```
 append file1.txt file2.txt
 ```
 
-將本機*file1.txt*附加至遠端電腦上名為*file1.txt*的檔案。
+將本機 *file1.txt* 附加至遠端電腦上名為 *file1.txt* 的檔案。
 
 ```
 append file1.txt
@@ -51,4 +51,4 @@ append file1.txt
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [其他 FTP 指引](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [其他 FTP 指導方針](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

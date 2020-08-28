@@ -1,18 +1,18 @@
 ---
 title: ksetup addenctypeattr
-description: Ksetup addenctypeattr 命令的參考文章，它會將 [加密類型] 屬性加入至網域的可能類型清單。
-ms.topic: article
+description: '>ksetup addenctypeattr 命令的參考文章，此命令會將 [加密類型] 屬性新增至網域的可能類型清單。'
+ms.topic: reference
 ms.assetid: 32cc87d7-b9e1-4d14-9eb7-3b439c55aa3a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d1520451b7802c5e7cdd308cf40e61de356d3fab
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8a49780a7a229c1c30d827632b1a6d71584f09c6
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888153"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037706"
 ---
 # <a name="ksetup-addenctypeattr"></a>ksetup addenctypeattr
 
@@ -28,16 +28,16 @@ ksetup /addenctypeattr <domainname> {DES-CBC-CRC | DES-CBC-MD5 | RC4-HMAC-MD5 | 
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| `<domainname>` | 您想要建立連接的網功能變數名稱稱。 使用完整功能變數名稱或簡單格式的名稱，例如 corp.contoso.com 或 contoso。 |
+| `<domainname>` | 您要建立連線的功能變數名稱。 使用完整功能變數名稱或簡單格式的名稱，例如 corp.contoso.com 或 contoso。 |
 | 加密類型 | 必須是下列其中一種支援的加密類型：<ul><li>DES-CBC-CRC</li><li>DES-CBC-MD5</li><li>RC4-HMAC-MD5</li><li>AES128-CTS-HMAC-SHA1-96</li><li>AES256-CTS-HMAC-SHA1-96</li></ul> |
 
 #### <a name="remarks"></a>備註
 
-- 您可以藉由將命令中的加密類型與空格分隔，來設定或新增多個加密類型。 不過，您一次只能針對一個網域執行此動作。
+- 您可以藉由將命令中的加密類型與空格分隔，來設定或新增多個加密類型。 不過，您一次只能對一個網域進行此作業。
 
 ### <a name="examples"></a>範例
 
-若要查看 Kerberos 票證授權票證的加密類型 (TGT) 和工作階段金鑰，請輸入：
+若要查看 Kerberos 票證授權票證 (TGT) 和工作階段金鑰的加密類型，請輸入：
 
 ```
 klist
@@ -49,19 +49,19 @@ klist
 ksetup /domain corp.contoso.com
 ```
 
-若要將加密類型*AES-256-CTS-HMAC-SHA1-96*新增至*corp.contoso.com*網域的可能類型清單，請輸入：
+若要將加密類型 *AES-256-CTS-HMAC-SHA1-96* 新增至網域 *corp.contoso.com*可能的類型清單，請輸入：
 
 ```
 ksetup /addenctypeattr corp.contoso.com AES-256-CTS-HMAC-SHA1-96
 ```
 
-若要將加密類型屬性設定為*corp.contoso.com*網域的*AES-256-CTS-HMAC-96* ，請輸入：
+若要將 [加密類型] 屬性設定為 [ *corp.contoso.com*] 的 [ *AES-256-CTS-HMAC-SHA1-96* ]，請輸入：
 
 ```
 ksetup /setenctypeattr corp.contoso.com AES-256-CTS-HMAC-SHA1-96
 ```
 
-若要確認加密類型屬性已設定為適用于網域，請輸入：
+若要確認已將 [加密類型] 屬性設定為適用于網域，請輸入：
 
 ```
 ksetup /getenctypeattr corp.contoso.com
@@ -73,12 +73,12 @@ ksetup /getenctypeattr corp.contoso.com
 
 - [klist 命令](klist.md)
 
-- [ksetup 命令](ksetup.md)
+- [>ksetup 命令](ksetup.md)
 
-- [ksetup 網域命令](ksetup-domain.md)
+- [>ksetup 網域命令](ksetup-domain.md)
 
-- [ksetup setenctypeattr 命令](ksetup-setenctypeattr.md)
+- [>ksetup setenctypeattr 命令](ksetup-setenctypeattr.md)
 
-- [ksetup getenctypeattr 命令](ksetup-getenctypeattr.md)
+- [>ksetup getenctypeattr 命令](ksetup-getenctypeattr.md)
 
-- [ksetup delenctypeattr 命令](ksetup-delenctypeattr.md)
+- [>ksetup delenctypeattr 命令](ksetup-delenctypeattr.md)

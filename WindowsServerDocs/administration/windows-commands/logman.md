@@ -1,18 +1,18 @@
 ---
 title: logman
-description: Logman 命令的參考文章，它會建立和管理事件追蹤會話和效能記錄檔，並從命令列支援效能監視器的許多功能。
-ms.topic: article
+description: Logman 命令的參考文章，可建立和管理事件追蹤會話和效能記錄，並支援從命令列效能監視器的許多功能。
+ms.topic: reference
 ms.assetid: 574a5203-5b3b-4759-a678-f26d00dde447
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f5983ff4534f2f017de92cbd672352084f6a7552
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b155e3cca0b9f5e35c1c817cfee4e96ca79b6610
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887103"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030546"
 ---
 # <a name="logman"></a>logman
 
@@ -32,10 +32,10 @@ logman [create | query | start | stop | delete| update | import | export | /?] [
 | --------- | ----------- |
 | [logman create](logman-create.md) | 建立計數器、追蹤、設定資料收集器或 API。 |
 | [logman query](logman-query.md) | 查詢資料收集器屬性。 |
-| [logman start &#124; stop](logman-start-stop.md) | 開始或停止資料收集。 |
+| [logman start &#124; stop](logman-start-stop.md) | 啟動或停止資料收集。 |
 | [logman delete](logman-delete.md) | 刪除現有的資料收集器。 |
 | [logman update](logman-update.md) | 更新現有資料收集器的屬性。 |
-| [logman import &#124; export](logman-import-export.md) | 從 XML 檔案匯入資料收集器集合檔，或將資料收集器集合匯出至 XML 檔案。 |
+| [logman import &#124; export](logman-import-export.md) | 從 XML 檔案匯入資料收集器集合，或將資料收集器集合匯出至 XML 檔案。 |
 
 ## <a name="additional-references"></a>其他參考資料
 
