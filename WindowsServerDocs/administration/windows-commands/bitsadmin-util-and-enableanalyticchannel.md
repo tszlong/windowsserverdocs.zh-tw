@@ -1,18 +1,18 @@
 ---
 title: bitsadmin util and enableanalyticchannel
-description: Bitsadmin util 和 enableanalyticchannel 命令的參考文章，可啟用或停用 BITS 用戶端分析通道。
-ms.topic: article
+description: Bitsadmin util and enableanalyticchannel 命令的參考文章，可啟用或停用 BITS 用戶端分析通道。
+ms.topic: reference
 ms.assetid: 0d7645aa-b91b-4ed7-b630-a1e1be6f6ae9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2c4577f635444c1830e232e1baeb12fac8c75476
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b4b6dd18fada99d63fcea7e3ca7338567fcb3894
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880956"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033336"
 ---
 # <a name="bitsadmin-util-and-enableanalyticchannel"></a>bitsadmin util and enableanalyticchannel
 
@@ -26,7 +26,7 @@ bitsadmin /util /enableanalyticchannel TRUE|FALSE
 
 | 參數 | 描述 |
 | --------- | ---------- |
-| TRUE 或 FALSE | **TRUE**會開啟指定檔案的內容驗證，而**FALSE**則關閉它。 |
+| TRUE 或 FALSE | **TRUE** 會開啟指定檔案的內容驗證，而 **FALSE** 則會關閉它。 |
 
 ## <a name="examples"></a>範例
 

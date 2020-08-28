@@ -1,26 +1,26 @@
 ---
 title: fsutil sparse
-description: 用於管理稀疏檔案之 fsutil sparse 命令的參考文章。
+description: 用於管理稀疏檔案的 fsutil sparse 命令的參考文章。
 manager: dmoss
 ms.author: toklima
 author: toklima
 ms.assetid: 77545920-2d13-4f35-a4d1-14dbec8340dc
-ms.topic: article
+ms.topic: reference
 ms.date: 10/16/2017
-ms.openlocfilehash: d79144d3894e9e181ebd889ce7bf281b827dea26
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 50b8fb1428de955b38d2f6e3a059046d7f670558
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889832"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89032996"
 ---
 # <a name="fsutil-sparse"></a>fsutil sparse
 
 > 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8
 
-管理稀疏檔案。 「稀疏檔案」（sparse file）是一個檔案，其中包含一或多個未配置資料的區域。
+管理稀疏檔。 「稀疏檔案」（sparse file）是一種檔案，其中包含一或多個未配置資料的區域。
 
-程式會將這些未配置的區域視為包含零值的位元組，而且沒有代表這些零的磁碟空間。 當讀取稀疏檔案時，配置的資料會以預存的形式傳回，而且根據 C2 安全性需求規格，預設會將未配置的資料傳回為零。 稀疏檔案支援可讓資料從檔案中的任何位置解除配置。
+程式會將這些未配置的區域視為包含零值的位元組，而且沒有代表這些零的磁碟空間。 讀取稀疏檔案時，會以預存方式傳回配置的資料，並根據 C2 安全性需求規格，預設會將未配置的資料傳回零。 稀疏檔案支援可讓您將資料從檔案中的任何位置解除配置。
 
 ## <a name="syntax"></a>語法
 
@@ -36,22 +36,22 @@ fsutil sparse [setrange] <filename> <beginningoffset> <length>
 | 參數 | 描述 |
 | --------- | ----------- |
 | queryflag | 查詢稀疏。 |
-| queryrange | 掃描檔案，並搜尋可能包含非零資料的範圍。 |
-| setflag | 將指定的檔案標示為 sparse。 |
+| queryrange | 掃描檔案並搜尋可能包含非零資料的範圍。 |
+| setflag | 將指定的檔案標示為稀疏。 |
 | setrange | 以零填滿指定的檔案範圍。 |
-| `<filename>` | 指定檔案的完整路徑，包括檔案名和副檔名，例如*C:\documents\filename.txt*。 |
-| `<beginningoffset>` | 指定要標記為稀疏的檔案中的位移。 |
-| `<length>` | 指定檔案中要標示為稀疏 (的區域長度（以位元組為單位）) 。 |
+| `<filename>` | 指定檔案的完整路徑，包括檔案名和副檔名，例如 *C:\documents\filename.txt*。 |
+| `<beginningoffset>` | 指定檔案內要標示為稀疏的位移。 |
+| `<length>` | 以位元組為單位，指定要標示為稀疏 (的檔案中區域的長度（以位元組為單位）) 。 |
 
 #### <a name="remarks"></a>備註
 
-- 會配置所有有意義或非零的資料，而所有不具意義的資料 (由零) 組成的大型資料字串，則不會進行配置。
+- 配置所有有意義或非零的資料，而所有不具意義的資料 (不會配置由零) 組成的大型字串資料。
 
-- 在稀疏檔案中，大型的零範圍可能不需要磁片配置。 當寫入檔案時，會視需要配置非零資料的空間。
+- 在稀疏檔案中，大範圍的零可能不需要磁片配置。 寫入檔案時，會視需要配置非零資料的空間。
 
-- 只有壓縮檔案或稀疏檔案可以有作業系統已知的零範圍。
+- 只有壓縮或稀疏檔案可以有作業系統已知的零範圍。
 
-- 如果檔案為稀疏或壓縮檔案，NTFS 可能會在檔案內解除配置磁碟空間。 這會將位元組範圍設定為零，而不會延伸檔案大小。
+- 如果檔案是稀疏或壓縮，NTFS 可能會在檔案內解除配置磁碟空間。 這會將位元組範圍設定為零，而不擴充檔案大小。
 
 ### <a name="examples"></a>範例
 

@@ -1,18 +1,18 @@
 ---
 title: ftp open
-description: Ftp open 命令的參考文章，它會連接到指定的 ftp 伺服器。
-ms.topic: article
+description: Ftp open 命令的參考文章，此命令會連接到指定的 ftp 伺服器。
+ms.topic: reference
 ms.assetid: 4b61926a-dc60-4b4c-96d3-64e5c91c18ba
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cd80ef5a8a3e4efa36a5fce0d228fd01f3a26bdc
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: a7599eb4728a46655b4c3274a9d7708061c3a9ee
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889143"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89032816"
 ---
 # <a name="ftp-open"></a>ftp open
 
@@ -30,12 +30,12 @@ open <computer> [<port>]
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| `<computer>` | 指定您嘗試連接的遠端電腦。 您可以使用 IP 位址或電腦名稱稱 (在此情況下，DNS 伺服器或主機檔案必須可供使用) 。 |
-| `[<port>]` | 指定要用來連接到 ftp 伺服器的 TCP 通訊埠編號。 預設會使用 TCP 埠21。 |
+| `<computer>` | 指定您嘗試連接的遠端電腦。 您可以使用 IP 位址或電腦名稱稱 (在這種情況下，DNS 伺服器或 Hosts 檔案必須可供使用) 。 |
+| `[<port>]` | 指定用來連接到 ftp 伺服器的 TCP 通訊埠編號。 預設會使用 TCP 埠21。 |
 
 ### <a name="examples"></a>範例
 
-若要連接到位於*ftp.microsoft.com*的 ftp 伺服器，請輸入：
+若要連接到 *ftp.microsoft.com*上的 ftp 伺服器，請輸入：
 
 ```
 open ftp.microsoft.com
@@ -51,4 +51,4 @@ open ftp.microsoft.com 755
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [其他 FTP 指引](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [其他 FTP 指導方針](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

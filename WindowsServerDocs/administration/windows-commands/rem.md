@@ -1,22 +1,22 @@
 ---
 title: rem
-description: Rem 命令的參考文章，會記錄腳本、批次或 config.sys 檔案中的批註。
-ms.topic: article
+description: Rem 命令的參考文章，會在腳本、批次或 config.sys 檔案中記錄批註。
+ms.topic: reference
 ms.assetid: 1a45b585-a83c-4ff6-badd-ff40f34cec23
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6593e7700853af3658206b741817a86933fa66d1
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 741b3e8930188957fde0efc66b7d5584233f6877
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87883853"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027406"
 ---
 # <a name="rem"></a>rem
 
-記錄腳本、批次檔或 config.sys 檔案中的批註。 如果未指定任何批註， **rem**會加入垂直間距。
+記錄腳本、批次或 config.sys 檔案中的批註。 如果未指定批註，則 **rem** 會新增垂直間距。
 
 ## <a name="syntax"></a>語法
 
@@ -28,16 +28,16 @@ rem [<comment>]
 
 | 參數 | 描述 |
 |--|--|
-| `<comment>` | 指定要包含在批註中的字元字串。 |
+| `<comment>` | 指定要包含為批註的字元字串。 |
 | /? | 在命令提示字元顯示說明。 |
 
 #### <a name="remarks"></a>備註
 
-- **Rem**命令不會在螢幕上顯示批註。 若要在螢幕上顯示批註，您必須在檔案中包含**echo on**命令。
+- **Rem**命令不會在螢幕上顯示批註。 若要在螢幕上顯示批註，您必須在檔案中包含 **echo on** 命令。
 
 - 您無法 `<` 在批次檔批註中使用重新導向字元 (或 `>`) 或管道 (`|`) 。
 
-- 雖然您可以使用**rem**而不加批註來將垂直間距新增至批次檔，但您也可以使用空白行。 處理批次程式時，會忽略空白行。
+- 雖然您可以在沒有批註的情況下使用 **rem** 來將垂直間距新增至批次檔，您也可以使用空白行。 處理批次程式時，會忽略空白行。
 
 ### <a name="examples"></a>範例
 
@@ -53,14 +53,14 @@ pause
 format b: /v chkdsk b:
 ```
 
-若要在 config.sys 檔案中的**prompt**命令前面加入說明批註，請輸入：
+若要在 config.sys 檔案中的 **prompt** 命令之前包含說明批註，請輸入：
 
 ```
 rem Set prompt to indicate current directory
 prompt $p$g
 ```
 
-若要提供腳本用途的批註，請輸入：
+若要提供腳本的相關批註，請輸入：
 
 ```
 rem The commands in this script set up 3 drives.

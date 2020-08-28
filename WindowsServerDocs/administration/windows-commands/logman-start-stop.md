@@ -1,24 +1,24 @@
 ---
 title: logman start and logman stop
-description: Logman start 和 logman stop 命令的參考文章，其會啟動資料收集器並將開始時間設為手動，或停止資料收集器集合，並將結束時間設為手動。
-ms.topic: article
+description: Logman start 和 logman stop 命令的參考文章，可啟動資料收集器並將開始時間設定為手動，或停止資料收集器集合，並將結束時間設為手動。
+ms.topic: reference
 ms.assetid: a40006a1-876e-474b-aaf1-f365c730deea
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7a3ce29afa974a65ac86e9e17dd4ec7eb65135fd
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 5b573ecd78ad9f062162d2c1ad16d59aebe740ee
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887264"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038859"
 ---
 # <a name="logman-start-and-logman-stop"></a>logman start and logman stop
 
 > 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-**Logman start**命令會啟動資料收集器，並將開始時間設為手動。 **Logman stop**命令會停止資料收集器集合，並將結束時間設為手動。
+**Logman start**命令會啟動資料收集器，並將開始時間設定為手動。 **Logman stop**命令會停止資料收集器集合，並將結束時間設為手動。
 
 ## <a name="syntax"></a>語法
 
@@ -31,16 +31,16 @@ logman stop <[-n] <name>> [options]
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| -s`<computer name>` | 在指定的遠端電腦上執行命令。 |
-| -config`<value>` | 指定包含命令選項的設定檔案。 |
-| [-n]`<name>` | 指定目標物件的名稱。 |
-| -ets | 直接將命令傳送至事件追蹤會話，而不會儲存或排程。 |
+| -s `<computer name>` | 在指定的遠端電腦上執行命令。 |
+| -config `<value>` | 指定包含命令選項的設定檔。 |
+| [-n] `<name>` | 指定目標物件的名稱。 |
+| -ets | 直接將命令傳送至事件追蹤會話，而不儲存或排程。 |
 | -as | 以非同步方式執行要求的作業。 |
 | -? | 顯示即時線上說明。 |
 
 ### <a name="examples"></a>範例
 
-若要啟動資料收集器*perf_log*，請在遠端電腦*server_1*上，輸入：
+若要啟動資料收集器 *perf_log*，請在 [遠端電腦] *server_1*上，輸入：
 
 ```
 logman start perf_log -s server_1

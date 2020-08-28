@@ -1,18 +1,18 @@
 ---
 title: bitsadmin setproxysettings
-description: Bitsadmin setproxysettings 命令的參考文章，其會設定指定之作業的 proxy 設定。
-ms.topic: article
+description: Bitsadmin setproxysettings 命令的參考文章，此命令會設定指定工作的 proxy 設定。
+ms.topic: reference
 ms.assetid: be8edb1b-614e-4d0b-a8f8-64b4bde3e64b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0fb4e8893aa4becac49e5837baef3148541136ff
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 398da89b251fd7ebf181a819f35870984e05e6ab
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892969"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033426"
 ---
 # <a name="bitsadmin-setproxysettings"></a>bitsadmin setproxysettings
 
@@ -29,13 +29,13 @@ bitsadmin /setproxysettings <job> <usage> [list] [bypass]
 | 參數 | 描述 |
 | --------- | ----------- |
 | 作業 | 作業的顯示名稱或 GUID。 |
-| usage | 設定 proxy 使用方式，包括：<ul><li>**LNK-WHAT-ARE-PRECONFIG-SOLUTIONS.** 使用擁有者的 Internet Explorer 預設值。</li><li>**NO_PROXY。** 不要使用 proxy 伺服器。</li><li>**覆寫.** 使用明確的 proxy 清單和略過清單。 Proxy 清單和 proxy 略過資訊必須遵循。</li><li>**檢測.** 會自動偵測 proxy 設定。</li></ul> |
-| list | 當*Usage*參數設定為 OVERRIDE 時使用。 必須包含要使用的 proxy 伺服器清單（以逗號分隔）。 |
-| 略過 | 當*Usage*參數設定為 OVERRIDE 時使用。 必須包含以空格分隔的主機名稱或 IP 位址清單，或兩者都不會透過 proxy 路由傳送。 這可能是 `<local>` 指在相同 LAN 上的所有伺服器。 Null 的值可用於空的 proxy 略過清單。 |
+| usage | 設定 proxy 使用方式，包括：<ul><li>**PRECONFIG.** 使用擁有者的 Internet Explorer 預設值。</li><li>**NO_PROXY。** 請勿使用 proxy 伺服器。</li><li>**覆蓋。** 使用明確的 proxy 清單和略過清單。 Proxy 清單和 proxy 略過資訊必須遵循。</li><li>**自動.** 自動偵測 proxy 設定。</li></ul> |
+| list | 當 *Usage* 參數設定為 OVERRIDE 時使用。 必須包含要使用的 proxy 伺服器清單（以逗號分隔）。 |
+| 略過 | 當 *Usage* 參數設定為 OVERRIDE 時使用。 必須包含以空格分隔的主機名稱或 IP 位址清單，或兩者都不會透過 proxy 路由傳送。 這可以 `<local>` 參考相同 LAN 上的所有伺服器。 Null 的值可用於空的 proxy 略過清單。 |
 
 ## <a name="examples"></a>範例
 
-若要使用名為*myDownloadJob*之作業的各種使用方式選項來設定 proxy 設定：
+若要使用名為 *myDownloadJob*之作業的各種使用方式選項來設定 proxy 設定：
 
 ```
 bitsadmin /setproxysettings myDownloadJob PRECONFIG

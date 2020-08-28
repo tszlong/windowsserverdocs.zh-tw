@@ -1,24 +1,24 @@
 ---
 title: fsutil wim
-description: Fsutil wim 命令的參考文章，其提供探索和管理 Windows 映像 (WIM) 支援檔案的功能。
+description: Fsutil wim 命令的參考文章，可提供探索及管理 Windows 映像 (WIM) 支援檔案的功能。
 manager: dmoss
 ms.author: toklima
 author: toklima
 ms.assetid: 6c6ff819-f349-4aea-b0be-1f637f631736
-ms.topic: article
+ms.topic: reference
 ms.date: 10/16/2017
-ms.openlocfilehash: f709ec86924f24e7321e4de14d3e21615f207903
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 6e1bb492911250161e1e4a57983ea9c58f3a34ff
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889743"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89032866"
 ---
 # <a name="fsutil-wim"></a>fsutil wim
 
 > 適用於：Windows Server (半年通道)、Windows Server 2019、Windows Server 2016、Windows 10
 
-提供探索和管理 Windows 映像 (WIM) 支援檔案的功能。
+提供用來探索和管理 Windows 映像 (WIM) 支援檔案的功能。
 
 ## <a name="syntax"></a>語法
 
@@ -33,13 +33,13 @@ fsutil wim [removewim] <drive name> <data source>
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| enumfiles | 列舉支援 WIM 的檔案。 |
+| enumfiles | 列舉 WIM 備份的檔案。 |
 | `<drive name>` | 指定磁片磁碟機名稱。 |
 | `<data source>` | 指定資料來源。 |
 | enumwims | 列舉支援的 WIM 檔案。 |
-| queryfile | 查詢檔案是否受到 WIM 的支援，如果是，則會顯示 WIM 檔案的詳細資料。 |
+| queryfile | 查詢檔案是否受 WIM 支援，如果是，則會顯示 WIM 檔案的詳細資料。 |
 | `<filename>` | 指定檔案名。 |
-| removewim | 從備份檔案移除 WIM。 |
+| removewim | 從備份檔案中移除 WIM。 |
 
 ### <a name="examples"></a>範例
 
@@ -49,13 +49,13 @@ fsutil wim [removewim] <drive name> <data source>
 fsutil wim enumfiles C: 0
 ```
 
-若要列舉磁片磁碟機 C：的支援 WIM 檔案，請輸入：
+若要列舉磁片磁碟機 C：的備份 WIM 檔案，請輸入：
 
 ```
 fsutil wim enumwims C:
 ```
 
-若要查看檔案是否受到 WIM 的支援，請輸入：
+若要查看 WIM 是否支援檔案，請輸入：
 
 ```
 fsutil wim C:\Windows\Notepad.exe

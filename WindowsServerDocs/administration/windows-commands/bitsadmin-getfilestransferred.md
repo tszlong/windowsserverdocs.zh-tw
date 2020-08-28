@@ -1,22 +1,22 @@
 ---
 title: bitsadmin getfilestransferred
-description: Bitsadmin getfilestransferred 命令的參考文章，它會抓取針對指定工作所傳輸的檔案數目。
-ms.topic: article
+description: Bitsadmin getfilestransferred 命令的參考文章，此命令會抓取針對指定工作傳輸的檔數目。
+ms.topic: reference
 ms.assetid: e282815c-938b-4ac0-a09d-9baafb656dcb
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c089dc8a122f558a396fdffb77b173b7586ee900
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e86e35d80e8e6b00d973b60e314f22068f7d115b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87894300"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033586"
 ---
 # <a name="bitsadmin-getfilestransferred"></a>bitsadmin getfilestransferred
 
-抓取指定作業所傳輸的檔案數目。
+抓取針對指定工作傳輸的檔案數目。
 
 ## <a name="syntax"></a>語法
 
@@ -32,7 +32,7 @@ bitsadmin /getfilestransferred <job>
 
 ## <a name="examples"></a>範例
 
-若要取得名為*myDownloadJob*之作業中傳輸的檔案數目：
+若要取出在名為 *myDownloadJob*的作業中傳輸的檔案數目：
 
 ```
 bitsadmin /getfilestransferred myDownloadJob

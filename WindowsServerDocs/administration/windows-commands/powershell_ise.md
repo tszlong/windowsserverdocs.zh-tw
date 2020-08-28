@@ -1,46 +1,46 @@
 ---
 title: PowerShell_ise
-description: PowerShell_ise 命令的參考文章，它會啟動 Windows PowerShell 整合式腳本環境， (ISE) 會話。
-ms.topic: article
+description: PowerShell_ise 命令的參考文章，此命令會啟動 Windows PowerShell 整合式腳本環境 (ISE) 會話。
+ms.topic: reference
 ms.assetid: 32c41b5b-a210-47d9-bd8c-91eb9830b4f0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f82779d122d3fedf3dac7ecf51b6da0601373421
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ec82a8ca484e8392339be9489990da4e633da475
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884875"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89032465"
 ---
 # <a name="powershell_ise"></a>PowerShell_ise
 
-Windows PowerShell 整合式腳本環境 (ISE) 是一個圖形化主機應用程式，可讓您在圖形輔助的環境中讀取、寫入、執行、偵測及測試腳本和模組。 IntelliSense、顯示命令、程式碼片段、tab 鍵自動完成、語法著色、視覺化調試和即時線上說明等主要功能提供豐富的腳本撰寫體驗。
+Windows PowerShell 整合式腳本環境 (ISE) 是一種圖形化主機應用程式，可讓您在圖形輔助的環境中讀取、寫入、執行、偵測及測試腳本和模組。 IntelliSense、顯示命令、程式碼片段、tab 鍵自動完成、語法著色、視覺效果調試和即時線上說明等主要功能，提供豐富的腳本撰寫體驗。
 
 ## <a name="using-powershellexe"></a>使用 PowerShell.exe
 
-**PowerShell_ISE.exe**工具會啟動 Windows PowerShell ISE 會話。 當您使用**PowerShell_ISE.exe**時，您可以使用它的選擇性參數，在 Windows PowerShell ISE 中開啟檔案，或啟動不含設定檔或多執行緒單元的 Windows PowerShell ISE 會話。
+**PowerShell_ISE.exe**工具會啟動 Windows PowerShell ISE 會話。 當您使用 **PowerShell_ISE.exe**時，您可以使用它的選擇性參數來開啟 Windows PowerShell ISE 中的檔案，或啟動不含設定檔或多執行緒單元的 Windows PowerShell ISE 會話。
 
-- 若要在 [命令提示字元] 視窗中啟動 Windows PowerShell ISE 會話，請在 Windows PowerShell 中，或在 [**開始**] 功能表上輸入：
+- 若要在 [命令提示字元] 視窗中啟動 Windows PowerShell ISE 會話，請在 Windows PowerShell 或 [ **開始** ] 功能表中輸入：
 
   ```powershell
   PowerShell_Ise.exe
   ```
 
-- 若要在 ( 中開啟腳本 ( ps1) )  (、模組資訊清單) .psd1 Windows PowerShell ISE、XML 檔案或任何其他支援的檔案，請輸入：
+- 若要開啟腳本 ( ps1) 、腳本模組 (. .psm1) 、模組資訊清單 (. .psd1) 、XML 檔或任何其他支援的檔案（Windows PowerShell ISE），請輸入：
 
   ```powershell
   PowerShell_Ise.exe <filepath>
   ```
 
-  在 Windows PowerShell 3.0 中，您可以使用選擇性的**File**參數，如下所示：
+  在 Windows PowerShell 3.0 中，您可以使用選用的 **File** 參數，如下所示：
 
   ```powershell
   PowerShell_Ise.exe -file <filepath>
   ```
 
-- 若要在沒有 Windows PowerShell 設定檔的情況下啟動 Windows PowerShell ISE 會話，請使用**NoProfile**參數。  (**NoProfile**參數是在 Windows PowerShell 3.0 引進。 ) ，請輸入：
+- 若要在不使用 Windows PowerShell 設定檔的情況下啟動 Windows PowerShell ISE 會話，請使用 **NoProfile** 參數。  (**NoProfile** 參數是在 Windows PowerShell 3.0 中引進。 ) ，請輸入：
 
   ```powershell
   PowerShell_Ise.exe -NoProfile
@@ -56,11 +56,11 @@ Windows PowerShell 整合式腳本環境 (ISE) 是一個圖形化主機應用程
 
 ### <a name="remarks"></a>備註
 
-- 如需**PowerShell_ISE.exe**命令列參數的完整清單，請參閱[about_PowerShell_Ise.Exe](/powershell/module/microsoft.powershell.core/about/about_powershell_ise_exe)。
+- 如需 **PowerShell_ISE.exe** 命令列參數的完整清單，請參閱 [about_PowerShell_Ise.Exe](/powershell/module/microsoft.powershell.core/about/about_powershell_ise_exe)。
 
-- 如需啟動 Windows PowerShell 的其他方式的詳細資訊，請參閱[啟動 Windows powershell](/powershell/scripting/windows-powershell/starting-windows-powershell)。
+- 如需其他開始 Windows PowerShell 方式的詳細資訊，請參閱 [開始 Windows PowerShell](/powershell/scripting/windows-powershell/starting-windows-powershell)。
 
-- Windows PowerShell 會在 Windows Server 作業系統的 Server Core 安裝選項上執行。 不過，由於 Windows PowerShell ISE 需要圖形使用者介面，因此不會在 Server Core 安裝上執行。
+- Windows PowerShell 在 Windows Server 作業系統的 Server Core 安裝選項上執行。 不過，因為 Windows PowerShell ISE 需要圖形化使用者介面，所以它不會在 Server Core 安裝上執行。
 
 ## <a name="additional-references"></a>其他參考資料
 

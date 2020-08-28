@@ -1,18 +1,18 @@
 ---
 title: create volume simple
-description: Create volume simple 命令的參考文章，它會在指定的動態磁碟上建立簡單磁片區。
-ms.topic: article
+description: Create volume simple 命令的參考文章，此命令會在指定的動態磁碟上建立簡單的磁片區。
+ms.topic: reference
 ms.assetid: da0f208d-7fda-471a-9db2-5de5ba5207c6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a434cc959eac79011cf57e2aca101ffc536b7633
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e1eeca9aedfcd473d937017b5889c1f58880e10a
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87891625"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033116"
 ---
 # <a name="create-volume-simple"></a>create volume simple
 
@@ -32,12 +32,12 @@ create volume simple [size=<n>] [disk=<n>] [align=<n>] [noerr]
 | --------- | ----------- |
 | 大小 =`<n>`  | 磁碟區大小以 MB 表示。 如果未指定大小，則新磁碟區會佔用磁碟上剩餘的空間。 |
 | 磁片 =`<n>`  | 要在其上建立磁片區的動態磁碟。 如果未指定任何磁片，則會使用目前的磁片。 |
-| align =`<n>` | 將所有磁片區範圍對齊最接近的對齊界限。 通常用於硬體 RAID 邏輯單元編號 (LUN) 陣列以改善效能。 `<n>`這是從磁片開始到最接近的對齊界限的 kb (KB) 數。 |
-| noerr | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
+| align =`<n>` | 將所有磁片區範圍對齊到最接近的對齊界限。 通常會與硬體 RAID 邏輯單元編號搭配使用 (LUN) 陣列以改善效能。 `<n>` 這是從磁片開頭到最接近對齊界限的 kb (KB) 數目。 |
+| noerr | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 如果沒有這個參數，錯誤會導致 DiskPart 結束，並產生錯誤碼。 |
 
 ## <a name="examples"></a>範例
 
-若要建立大小為 1000 mb 的磁片區，請在 disk 1 上輸入：
+若要建立大小為 1000 mb 的磁片區，請在磁片1上輸入：
 
 ```
 create volume simple size=1000 disk=1
@@ -47,4 +47,4 @@ create volume simple size=1000 disk=1
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [建立命令](create.md)
+- [create 命令](create.md)

@@ -1,18 +1,18 @@
 ---
 title: fsutil transaction
-description: 適用于管理 NTFS 交易之 fsutil transaction 命令的參考文章。
+description: 用於管理 NTFS 交易的 fsutil transaction 命令的參考文章。
 manager: dmoss
 ms.author: toklima
 author: toklima
 ms.assetid: f2eefaaf-2817-4ac7-abac-d2b65fa971dc
-ms.topic: article
+ms.topic: reference
 ms.date: 10/16/2017
-ms.openlocfilehash: f70281af6ecf652cc1dba95ec09b07529f71752e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 4eeefc4e98e621cf44baa881c69ccbe36d20a689
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889799"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89032936"
 ---
 # <a name="fsutil-transaction"></a>fsutil transaction
 
@@ -34,17 +34,17 @@ fsutil transaction [rollback] <GUID>
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| 認可 | 標示成功的隱含或明確指定交易的結尾。 |
+| 認可 | 標記成功隱含或明確指定之交易的結尾。 |
 | `<GUID>` | 指定代表交易的 GUID 值。 |
 | fileinfo  | 顯示指定檔案的交易資訊。 |
 | `<filename>` | 指定完整路徑和檔案名。 |
 | list | 顯示目前正在執行的交易清單。 |
-| 查詢 | 顯示指定之交易的資訊。<ul><li>如果 `fsutil transaction query files` 指定了，就只會針對指定的交易顯示檔案資訊。</li><li>如果 `fsutil transaction query all` 指定了，就會顯示該交易的所有資訊。</li></ul> |
+| 查詢 | 顯示指定之交易的資訊。<ul><li>如果 `fsutil transaction query files` 指定了，就只會針對指定的交易顯示檔案資訊。</li><li>如果 `fsutil transaction query all` 指定了，則會顯示交易的所有資訊。</li></ul> |
 | 復原 | 將指定的交易回復到一開始。 |
 
 ### <a name="examples"></a>範例
 
-若要顯示檔*c:\test.txt*的交易資訊，請輸入：
+若要顯示檔 *c:\test.txt*的交易資訊，請輸入：
 
 ```
 fsutil transaction fileinfo c:\test.txt
