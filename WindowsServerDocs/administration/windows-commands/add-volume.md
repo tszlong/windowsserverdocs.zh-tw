@@ -1,26 +1,26 @@
 ---
 title: add volume
-description: Add volume 命令的參考文章，它會將磁片區新增到陰影複製組，這是要陰影複製的一組磁片區。
-ms.topic: article
+description: '[新增磁片區] 命令的參考文章，此命令會將磁片區新增至陰影複製集，也就是要陰影複製的磁片區集合。'
+ms.topic: reference
 ms.assetid: b7d4d35d-8bda-46d2-8df5-eb598cecaaba
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 374fec353397916fa76952401571dee92073dd59
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 4cf64e98c498f16032963f0b09a5aec4df162452
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895593"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029436"
 ---
 # <a name="add-volume"></a>add volume
 
-將磁片區新增至陰影複製組，這是要陰影複製的一組磁片區。 建立陰影複製時，環境變數會將別名連結到陰影識別碼，因此別名可以用於腳本處理。
+將磁片區新增至陰影複製集，這是要陰影複製的磁片區集合。 建立陰影複製時，環境變數會將別名連結至陰影識別碼，讓別名可以用來編寫腳本。
 
-磁片區會一次新增一個。 每次新增磁片區時，會進行檢查以確定 VSS 支援該磁片區的陰影複製建立。 這項檢查可能會在稍後使用**set coNtext**命令而失效。
+磁片區會一次新增一個。 每次新增磁片區時，就會進行檢查以確定 VSS 支援該磁片區的陰影複製建立。 稍後使用 **set coNtext** 命令可能會使此檢查失效。
 
-此為建立陰影複製的必要命令。 如果使用時不含參數， **add volume**會在命令提示字元中顯示說明。
+此命令是建立陰影複製的必要命令。 如果使用時不含參數，請在命令提示字元中 **新增磁片** 區顯示說明。
 
 ## <a name="syntax"></a>語法
 
@@ -32,18 +32,18 @@ add volume <volume> [provider <providerid>]
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| `<volume>` | 指定要加入陰影複製組的磁片區。 必須至少有一個磁片區，才能建立陰影複製。 |
-| `[provider \<providerid>]` | 指定要用來建立陰影複製之已註冊提供者的提供者識別碼。 如果未指定**provider** ，則會使用預設提供者。 |
+| `<volume>` | 指定要新增至陰影複製集的磁片區。 至少需要一個磁片區才能建立陰影複製。 |
+| `[provider \<providerid>]` | 指定用於建立陰影複製之已註冊提供者的提供者識別碼。 如果未指定 **provider** ，則會使用預設提供者。 |
 
 ## <a name="examples"></a>範例
 
-若要查看目前已註冊的提供者清單，請在 `diskshadow>` 命令提示字元中輸入：
+若要查看目前已註冊的提供者清單，請在 `diskshadow>` 提示中輸入：
 
 ```
 list providers
 ```
 
-下列輸出會顯示單一提供者，預設將會用到：
+下列輸出會顯示預設將使用的單一提供者：
 
 ```
 * ProviderID: {b5946137-7b9f-4925-af80-51abd60b20d5}
@@ -54,7 +54,7 @@ list providers
 1 provider registered.
 ```
 
-若要將磁片磁碟機 C：新增至陰影複製組，並指派名為*System1*的別名，請輸入：
+若要將磁片磁碟機 C：新增至陰影複製集，並指派名為 *系統 1*的別名，請輸入：
 
 ```
 add volume c: alias System1

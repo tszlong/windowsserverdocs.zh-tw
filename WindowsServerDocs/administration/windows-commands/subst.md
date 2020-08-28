@@ -1,24 +1,24 @@
 ---
 title: subst
-description: 瞭解如何建立路徑與磁碟機號的關聯。
-ms.topic: article
+description: 瞭解如何將路徑與磁碟機號建立關聯。
+ms.topic: reference
 ms.assetid: 3e69234c-2312-4343-868b-afc1017c622a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 385359a49ee1cc4df95a17bef6c2aed4704a2dcd
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 680a3118d284d18946980ff8dc246ce08b5ea727
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881954"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024612"
 ---
 # <a name="subst"></a>subst
 
 
 
-建立路徑與磁碟機號的關聯。 如果使用時不含參數， **subst**會顯示作用中虛擬磁片磁碟機的名稱。
+將路徑與磁碟機號產生關聯。 如果使用時不含參數，則 **subst** 會顯示作用中虛擬磁片磁碟機的名稱。
 
 
 
@@ -33,14 +33,14 @@ subst <Drive1>: /d
 
 |參數|描述|
 |---------|-----------|
-|\<Drive1>:|指定您要指派路徑的虛擬磁片磁碟機。|
-|[\<Drive2>:]\<Path>|指定您要指派給虛擬磁片磁碟機的實體磁片磁碟機和路徑。|
+|\<Drive1>:|指定要指派路徑的虛擬磁片磁碟機。|
+|[\<Drive2>:]\<Path>|指定要指派給虛擬磁片磁碟機的實體磁片磁碟機和路徑。|
 |/d|刪除替代的 (虛擬) 磁片磁碟機。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
 
--   下列命令無法使用，且不應用於**subst**命令中指定的磁片磁碟機：
+-   下列命令無法運作，且不應該用於 **subst** 命令中指定的磁片磁碟機：
 
     **chkdsk**
 
@@ -53,17 +53,17 @@ subst <Drive1>: /d
     **label**
 
     **recover**
--   *Drive1*參數必須在**lastdrive**命令所指定的範圍內。 如果不是，則**subst**會顯示下列錯誤訊息：
+-   *Drive1*參數必須在**lastdrive**命令所指定的範圍內。 如果沒有，則 **subst** 會顯示下列錯誤訊息：
 
     `Invalid parameter - drive1:`
 
-## <a name="examples"></a><a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name="BKMK_examples"></a>範例
 
 若要建立路徑 B:\User\Betty\Forms 的虛擬磁片磁碟機 Z，請輸入：
 ```
 subst z: b:\user\betty\forms
 ```
-您可以輸入虛擬磁片磁碟機的字母，後面加上冒號，而不是輸入完整路徑，如下所示：
+您可以輸入虛擬磁片磁碟機的字母，並在後面加上冒號，而不是輸入完整路徑，如下所示：
 ```
 z:
 ```

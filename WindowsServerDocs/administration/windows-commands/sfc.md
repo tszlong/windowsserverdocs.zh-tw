@@ -1,24 +1,24 @@
 ---
 title: sfc
-description: Sfc 的參考文章，它會掃描並確認所有受保護系統檔案的完整性，並以正確的版本取代不正確的版本。
-ms.topic: article
+description: Sfc 的參考文章，會掃描並確認所有受保護系統檔案的完整性，並以正確的版本取代不正確的版本。
+ms.topic: reference
 ms.assetid: c58c25da-e028-42a6-9e10-973484a4b953
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 56aa6a1f07b75e37111d265fc15253ba1d3a7f1d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 6aa1fd38eaab1ffe3d6c3b9f2e4913d6a1e0ca4d
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882471"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024882"
 ---
 # <a name="sfc"></a>sfc
 
 > 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-會掃描並確認所有受保護系統檔案的完整性，並以正確的版本取代不正確的版本。
+掃描並驗證所有受保護系統檔案的完整性，並以正確的版本取代不正確的版本。
 
 
 ## <a name="syntax"></a>語法
@@ -29,28 +29,28 @@ sfc [/scannow] [/verifyonly] [/scanfile=<file>] [/verifyfile=<file>] [/offwindir
 #### <a name="parameters"></a>參數
 |參數|描述|
 |-------|--------|
-|/scannow|會掃描所有受保護系統檔案的完整性，並在可能時修復有問題的檔案。|
-|/verifyonly|掃描所有受保護系統檔案的完整性。 不會執行任何修復操作。|
-|/scanfile|如果偵測到問題，請掃描指定檔案的完整性，並修復檔案（如果可能的話）。|
+|/scannow|掃描所有受保護系統檔案的完整性，並盡可能修復有問題的檔案。|
+|/verifyonly|掃描所有受保護系統檔案的完整性。 未執行任何修復操作。|
+|/scanfile|盡可能掃描指定檔案的完整性，並在偵測到問題時修復檔案。|
 |\<file>|指定的完整路徑和檔案名|
-|/verifyfile|驗證指定檔案的完整性。 不會執行任何修復操作。|
-|/offwindir|針對離線修復指定離線 windows 目錄的位置。|
-|/offbootdir|指定離線開機目錄的位置以供離線|
+|/verifyfile|確認指定檔案的完整性。 未執行任何修復操作。|
+|/offwindir|指定離線修復的離線 windows 目錄位置。|
+|/offbootdir|指定離線開機目錄離線的位置|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
--   您必須以 Administrators 群組成員的身分登入，才能執行**sfc.exe**。
--   如果**sfc**發現受保護的檔案已遭到覆寫，則會從**systemroot\system32\dllcache**資料夾抓取檔案的正確版本，然後取代不正確的檔案。
--   Windows Server 2003、Windows Server 2008 和 Windows Server 2008 R2 上的**sfc**之間有功能上的差異：
--   如需有關 Windows Server 2003 上**sfc**的詳細資訊，請參閱 Microsoft 知識庫中的[文章 310747](https://go.microsoft.com/fwlink/?LinkId=227069) 。
--   如需有關 Windows Server 2008 和 Windows Server 2008 R2 上**sfc**的詳細資訊，請參閱[系統檔案檢查](https://go.microsoft.com/fwlink/?LinkId=227071)程式。
+-   您必須以 Administrators 群組成員的身分登入，才能執行 **sfc.exe**。
+-   如果 **sfc** 發現已覆寫受保護的檔案，它會從 **systemroot\system32\dllcache** 資料夾中抓取正確的檔案版本，然後取代不正確的檔案。
+-   Windows Server 2003、Windows Server 2008 和 Windows Server 2008 R2 上的 **sfc** 有一些功能上的差異：
+-   如需有關 Windows Server 2003 上 **sfc** 的詳細資訊，請參閱 Microsoft 知識庫中的 [文章 310747](https://go.microsoft.com/fwlink/?LinkId=227069) 。
+-   如需有關 Windows Server 2008 和 Windows Server 2008 R2 上的 **sfc** 的詳細資訊，請參閱 [系統檔案檢查工具](https://go.microsoft.com/fwlink/?LinkId=227071)。
 
 ## <a name="examples"></a>範例
-若要確認**kernel32.dll**檔案，請輸入：
+若要驗證 **kernel32.dll**檔案，請輸入：
 ```
 sfc /verifyfile=c:\windows\system32\kernel32.dll
 ```
-若要設定離線修復**kernel32.dll**檔案，並將離線開機目錄設為**d：** ，並將離線 windows 目錄設為**d:\windows**，請輸入：
+若要設定離線修復 **kernel32.dll** 檔，並將離線開機目錄設定為 **d：** 和離線 windows 目錄設為 **d:\windows**，請輸入：
 ```
 sfc /scanfile=d:\windows\system32\kernel32.dll /offbootdir=d:\ /offwindir=d:\windows
 ```

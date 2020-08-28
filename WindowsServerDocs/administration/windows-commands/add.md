@@ -1,25 +1,25 @@
 ---
 title: add
-description: Add 命令的參考文章，其會將磁片區新增至要陰影複製的磁片區集合，或將別名新增至別名環境。
-ms.topic: article
+description: Add 命令的參考文章，會將磁片區新增至要陰影複製的磁片區集，或將別名新增至別名環境。
+ms.topic: reference
 ms.assetid: 47efce7a-86d2-4872-ae31-baa108757afd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8ba5f425617fe48d10a900c82fbfcf9c174214f5
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e2a4d8e73799c2e2f2f93af4e85ebbeb6af4c69a
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895587"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029416"
 ---
 # <a name="add"></a>add
 
-將磁片區新增至要陰影複製的磁片區集合，或將別名新增至別名環境。 如果使用時不含子命令， **add**會列出目前的磁片區和別名。
+將磁片區新增至要陰影複製的磁片區集合，或將別名新增至別名環境。 如果未使用子命令， **add** 會列出目前的磁片區和別名。
 
 > [!NOTE]
-> 在建立陰影複製之前，別名不會新增至別名環境。 您應該立即使用 [新增**別名**] 來新增您需要的別名。
+> 在建立陰影複製之前，不會將別名新增至別名環境。 您需要立即使用 [ **新增別名**] 來新增您需要的別名。
 
 ## <a name="syntax"></a>語法
 
@@ -33,19 +33,19 @@ add alias <aliasname> <aliasvalue>
 
 | 參數 | 描述 |
 | ---------- | ----------- |
-| 磁碟區 | 將磁片區新增至陰影複製組，這是要陰影複製的一組磁片區。 如需語法和參數，請參閱[新增磁片](add-volume.md)區。 |
-| alias | 將指定的名稱和值加入至別名環境。 如需語法和參數，請參閱[add alias](add-alias.md) 。 |
-| /? | 在命令列中顯示說明。 |
+| 磁碟區 | 將磁片區新增至陰影複製集，這是要陰影複製的磁片區集合。 請參閱 [加入磁片](add-volume.md) 區以取得語法和參數。 |
+| alias | 將指定的名稱和值新增至別名環境。 請參閱加入語法和參數的 [別名](add-alias.md) 。 |
+| /? | 在命令列顯示說明。 |
 
 ## <a name="examples"></a>範例
 
-若要顯示新增的磁片區和目前在環境中的別名，請輸入：
+若要顯示已新增的磁片區，以及目前在環境中的別名，請輸入：
 
 ```
 add
 ```
 
-下列輸出顯示磁片磁碟機 C 已新增至陰影複製組：
+下列輸出顯示已將磁片磁碟機 C 新增至陰影複製集：
 
 ```
 Volume c: alias System1    GUID \\?\Volume{XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX}\

@@ -1,22 +1,22 @@
 ---
 title: add alias
-description: 新增別名命令的參考文章，其會將別名新增至別名環境。
-ms.topic: article
+description: 新增別名命令的參考文章，此命令會將別名新增至別名環境。
+ms.topic: reference
 ms.assetid: 5fe12f5d-11e9-4f3d-b7f9-40b26c8685e5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cc2cddd53c99cc63fd53a5ab828a868e34632a97
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 6b89617643896957d2be9ca8e3c50e71cf011601
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895601"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029466"
 ---
 # <a name="add-alias"></a>add alias
 
-將別名新增至別名環境。 如果在沒有參數的情況下使用， **add alias**會在命令提示字元中顯示說明。 別名會儲存在中繼資料檔案中，並且會使用 [**載入中繼資料**] 命令載入。
+將別名新增至別名環境。 如果使用時不含任何參數，請在命令提示字元中 **加入別名** 顯示說明。 別名會儲存在中繼資料檔案中，並且會以 **load metadata** 命令載入。
 
 ## <a name="syntax"></a>語法
 
@@ -40,14 +40,14 @@ add alias <aliasname> <aliasvalue>
 list shadows all
 ```
 
-下列摘錄顯示已指派預設別名*VSS_SHADOW_x*的陰影複製：
+下列摘錄顯示已指派預設別名（ *VSS_SHADOW_x*）的陰影複製：
 
 ```
 * Shadow Copy ID = {ff47165a-1946-4a0c-b7f4-80f46a309278}
 %VSS_SHADOW_1%
 ```
 
-若要將名稱為*System1*的新別名指派給此陰影複製，請輸入：
+若要將名為 *系統 1* 的新別名指派給此陰影複製，請輸入：
 
 ```
 add alias System1 %VSS_SHADOW_1%

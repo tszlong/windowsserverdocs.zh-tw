@@ -1,18 +1,18 @@
 ---
 title: 子命令開始-命名空間
-description: 子命令啟動的參考文章-命名空間，它會啟動已排程的轉換命名空間。
-ms.topic: article
+description: 子命令開始-命名空間的參考文章，它會啟動已排程的轉換命名空間。
+ms.topic: reference
 ms.assetid: 2dd1c11e-6ab7-4129-9e3a-3f80e0ba59c0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7a80664fb4a4f90f58823b87f278b344561422ef
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 38a0dd1b4988977d14a2be68966a6eb53df71ce8
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882088"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024752"
 ---
 # <a name="subcommand-start-namespace"></a>子命令： start-Namespace
 
@@ -28,8 +28,8 @@ wdsutil /start-Namespace /Namespace:<Namespace name[/Server:<Server name>]
 
 |          參數          |                                                                                                                                                                                             描述                                                                                                                                                                                             |
 |-----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| /Namespace： <命名空間名稱| 指定命名空間的名稱。 請注意，這不是易記的名稱，而且必須是唯一的。<p>-   **部署伺服器**：命名空間名稱的語法是/NAMSPACE： WDS： <Image group> / <Image name> / <Index> 。 例如： **WDS： ImageGroup1/install .wim/1**<br />-   **傳輸伺服器**：此名稱必須符合在伺服器上建立命名空間時所指定的名稱。 |
-|   [/Server： <Server name> ]   |                                                                                                           指定伺服器的名稱。 這可以是 NetBIOS 名稱或 (FQDN) 的完整功能變數名稱。 如果未指定伺服器名稱，則會使用本機伺服器。                                                                                                           |
+| /Namespace： <命名空間名稱| 指定命名空間的名稱。 請注意，這不是易記的名稱，而且必須是唯一的。<p>-   **部署伺服器**：命名空間名稱的語法為/NAMSPACE： WDS： <Image group> / <Image name> / <Index> 。 例如： **WDS： ImageGroup1/install .wim/1**<br />-   **傳輸伺服器**：此名稱必須符合在伺服器上建立命名空間時所提供的名稱。 |
+|   [/Server： <Server name> ]   |                                                                                                           指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱 (FQDN) 。 如果未指定伺服器名稱，則會使用本機伺服器。                                                                                                           |
 
 ## <a name="examples"></a>範例
 若要啟動命名空間，請輸入下列其中一項：
@@ -41,4 +41,4 @@ wdsutil /start-Namespace /Server:MyWDSServer /Namespace:Custom Auto 1
 - [命令列語法索引鍵](command-line-syntax-key.md) 
 [使用 AllNamespaces 命令](using-the-get-allnamespaces-command.md) 
 [使用新的-Namespace 命令](using-the-new-namespace-command.md) 
-[使用 remove-Namespace 命令](using-the-remove-namespace-command.md)
+[使用 Remove 命名空間命令](using-the-remove-namespace-command.md)

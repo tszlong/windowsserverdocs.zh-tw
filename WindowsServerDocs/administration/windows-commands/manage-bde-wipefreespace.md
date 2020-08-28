@@ -1,22 +1,22 @@
 ---
 title: manage-bde wipefreespace
-description: Wipefreespace 命令的參考文章，它會抹除磁片區上的可用空間，以移除可能已存在於空間中的任何資料片段。
-ms.topic: article
+description: Manage-bde wipefreespace 命令的參考文章，它會清除磁片區上的可用空間，以移除空間中可能存在的任何資料片段。
+ms.topic: reference
 ms.assetid: b8d83a2a-c5c8-4019-9041-23d1d6abf282
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ca4737eae6c152ac01e674efb3e674c88f5d1538
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 1a2499ef3d4aa290cbcd6a6e3626555032506eb4
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886587"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036516"
 ---
 # <a name="manage-bde-wipefreespace"></a>manage-bde wipefreespace
 
-抹除磁片區上的可用空間，移除空間中可能存在的任何資料片段。 在使用 [**僅使用的空間**加密] 方法加密的磁片區上執行這個命令，會提供與**完整磁片區加密**加密方法相同的保護層級。
+清除磁片區上的可用空間，以移除空間中可能存在的任何資料片段。 在使用「 **僅限使用的空間** 加密」方法加密的磁片區上執行此命令，會提供與 **完整磁片區加密** 加密方法相同的保護層級。
 
 ## <a name="syntax"></a>語法
 
@@ -28,16 +28,16 @@ manage-bde -wipefreespace|-w [<drive>] [-cancel] [-computername <name>] [{-?|/?}
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| `<drive>` | 表示後面接著冒號的磁碟機號。 |
-| -取消 | 取消清除正在處理的可用空間。 |
-| -computername | 指定 manage-bde.exe 將用來修改另一部電腦上的 BitLocker 保護。 您也可以使用 **-cn**做為此命令的縮寫版本。 |
+| `<drive>` | 代表後面加上冒號的磁碟機號。 |
+| -取消 | 取消抹除正在處理中的可用空間。 |
+| -computername | 指定 manage-bde.exe 將用來修改不同電腦上的 BitLocker 保護。 您也可以使用 **-cn** 作為此命令的縮寫版本。 |
 | `<name>` | 代表要修改 BitLocker 保護的電腦名稱稱。 接受的值包括電腦的 NetBIOS 名稱和電腦的 IP 位址。 |
 | -? 或/？ | 在命令提示字元中顯示簡短說明。 |
-| -help 或-h | 在命令提示字元中顯示完整的說明。 |
+| -help 或-h | 在命令提示字元中顯示完整說明。 |
 
 ### <a name="examples"></a>範例
 
-若要抹除 C 磁片磁碟機上的可用空間，請輸入： \
+若要抹除磁片磁碟機 C 的可用空間，請輸入： \
 
 ```
 manage-bde -w C:

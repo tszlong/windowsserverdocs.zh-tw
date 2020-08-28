@@ -1,18 +1,18 @@
 ---
 title: ksetup setrealm
-description: Ksetup setrealm 命令的參考文章，其會設定 Kerberos 領域的名稱。
-ms.topic: article
+description: '>ksetup setrealm 命令的參考文章，此命令會設定 Kerberos 領域的名稱。'
+ms.topic: reference
 ms.assetid: ab268c40-276b-46ef-ab16-d5ce7667fbed
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 501660d072cdb651a26098f8ac63cee21dfcba88
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 53de8c94e20f496a6f3078d3ad03a817f23e326a
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887725"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025362"
 ---
 # <a name="ksetup-setrealm"></a>ksetup setrealm
 
@@ -31,7 +31,7 @@ ksetup /setrealm <DNSdomainname>
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| `<DNSdomainname>` | 指定大寫 DNS 名稱，例如 CORP。CONTOSO.COM。 您可以使用完整功能變數名稱或簡單格式的名稱。 如果您的 DNS 名稱未使用大寫，系統會要求您進行驗證以繼續進行。 |
+| `<DNSdomainname>` | 指定大寫 DNS 名稱，例如 CORP。CONTOSO.COM。 您可以使用完整功能變數名稱或簡單的名稱格式。 如果您未針對 DNS 名稱使用大寫，系統會要求您進行驗證以繼續。 |
 
 ### <a name="examples"></a>範例
 
@@ -45,6 +45,6 @@ ksetup /setrealm CONTOSO
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [ksetup 命令](ksetup.md)
+- [>ksetup 命令](ksetup.md)
 
 - [ksetup removerealm](ksetup-removerealm.md)

@@ -1,24 +1,24 @@
 ---
 title: time
 description: 瞭解如何設定和顯示系統時間。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 1276a257-7283-41da-ae80-fb4cfb311f9d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1548952c7fcd6d3edcc2dcc0fb3459e27cd0efbb
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ca279bfacbc3fab3c1a4b56f33f5000fcab9d589
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881419"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024532"
 ---
 # <a name="time"></a>time
 
 
 
-顯示或設定系統時間。 如果在沒有參數的情況下使用， **time**會顯示目前的系統時間，並提示您輸入新的時間。
+顯示或設定系統時間。 如果使用時不含參數， **時間** 會顯示目前的系統時間，並提示您輸入新的時間。
 
 
 
@@ -32,18 +32,18 @@ time [/t | [<HH>[:<MM>[:<SS>]] [am|pm]]]
 
 |參數|描述|
 |---------|-----------|
-|\<HH>[:\<MM>[:\<SS>[.\<NN>]]][am \| pm]|將系統時間設定為指定的新時間，其中*HH*是以小時為單位 (需要) 、 *MM*是以分鐘為單位，而*SS*則以秒為單位。 *NN*可以用來指定百分之一秒。 如果未指定**am**或**pm** ，**時間**預設會使用24小時制格式。|
-|/t|顯示目前的時間，而不提示您輸入新的時間。|
+|\<HH>[:\<MM>[:\<SS>[.\<NN>]]][ \| pm]|將系統時間設定為指定的新時間，其中 *HH* 是以小時 (所需的時間) ， *MM* 是以分鐘為單位，而 *SS* 則以秒為單位。 *NN* 可以用來指定百分之一秒。 如果未指定 **am** 或 **pm** ，則 **時間** 預設會使用24小時制。|
+|/t|顯示目前的時間，而不提示您新的時間。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
 
--   若要變更目前的時間，您必須具有系統管理認證。
--   您必須將*HH*、 *MM*和*SS*的值與冒號 (： ) 分隔。 *SS*和*NN*必須以 ( 的句點分隔。 ) 。
--   有效的*HH*值為0到24。
--   有效的*MM*和*SS*值為0到59。
+-   若要變更目前的時間，您必須擁有系統管理認證。
+-   您必須將 *HH*、 *MM*和 *SS* 的值分隔為冒號 (： ) 。 *SS* 和 *NN* 必須以句號分隔 (。 ) 。
+-   有效的 *HH* 值為0到24。
+-   有效的 *MM* 和 *SS* 值為0到59。
 
-## <a name="examples"></a><a name="BKMK_examples"></a>典型
+## <a name="examples"></a><a name="BKMK_examples"></a>範例
 
 如果已啟用命令延伸模組，若要顯示目前的系統時間，請輸入：
 ```
@@ -54,12 +54,12 @@ time /t
 time 17:30:00
 time 5:30 pm
 ```
-若要顯示目前的系統時間，接著輸入新時間的提示，請輸入：
+若要顯示目前的系統時間，然後輸入新時間的提示，請輸入：
 ```
 The current time is: 17:33:31.35
 Enter the new time:
 ```
-若要保留目前的時間並返回命令提示字元，請按 ENTER。 若要變更目前的時間，請輸入新的時間，然後按 ENTER 鍵。
+若要保留目前的時間並返回命令提示字元，請按 ENTER 鍵。 若要變更目前的時間，請輸入新的時間，然後按 ENTER。
 
 ## <a name="additional-references"></a>其他參考資料
 
