@@ -1,24 +1,24 @@
 ---
 title: 匯入 diskshadow
-description: 匯入命令的參考文章，它會將可轉移的陰影複製從已載入的中繼資料檔案匯入到系統中。
-ms.topic: article
+description: 匯入命令的參考文章，此命令會將可傳送的陰影複製從載入的中繼資料檔案匯入系統中。
+ms.topic: reference
 ms.assetid: 7bd78d76-0560-4d47-944c-fe960be2c10b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4d0d76c9565904d6e24c41f4c728bf43061f5040
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 96f55be187b540151c23c84ae414575f20dcbe8f
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888359"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037996"
 ---
 # <a name="import-diskshadow"></a>匯入 (diskshadow) 
 
-從載入的中繼資料檔案，將可轉移的陰影複製匯入到系統中。
+從載入的中繼資料檔案，將可轉移的陰影複製匯入系統中。
 
-> 重大您必須先使用 [[載入中繼資料] 命令](load-metadata.md)來載入 DiskShadow 中繼資料檔案，才能使用此命令。
+> 須知您必須使用 [load metadata 命令](load-metadata.md) 載入 DiskShadow 中繼資料檔案，才能使用此命令。
 
 ## <a name="syntax"></a>語法
 
@@ -28,11 +28,11 @@ import
 
 #### <a name="remarks"></a>備註
 
-- 可轉移的陰影複製不會立即儲存在系統上。 其詳細資料會儲存在備份元件檔 XML 檔案中，而 DiskShadow 會自動要求並將其儲存在工作目錄中的 .cab 中繼資料檔案。 使用 [[設定中繼資料] 命令](set-metadata.md)來變更此 XML 檔案的路徑和名稱。
+- 可轉移的陰影複製不會立即儲存在系統上。 其詳細資料會儲存在備份元件檔 XML 檔中，而 DiskShadow 會自動要求並儲存在工作目錄中的 .cab 中繼資料檔案。 使用 [ [設定中繼資料] 命令](set-metadata.md) 來變更這個 XML 檔案的路徑和名稱。
 
 ## <a name="examples"></a>範例
 
-以下是範例 DiskShadow 腳本，示範如何使用匯**入**命令：
+以下是範例 DiskShadow 腳本，示範如何使用匯 **入** 命令：
 
 ```
 #Sample DiskShadow script demonstrating IMPORT

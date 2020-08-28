@@ -1,25 +1,25 @@
 ---
 title: icacls
-description: Icacls 命令的參考文章，它會顯示或修改指定檔案上 (DACL) 的任意存取控制清單，並將預存的 Dacl 套用到指定目錄中的檔案。
-ms.topic: article
+description: Icacls 命令的參考文章，可顯示或修改指定檔案 (DACL) 上的任意存取控制清單，並將預存 Dacl 套用至指定目錄中的檔案。
+ms.topic: reference
 ms.assetid: 403edfcc-328a-479d-b641-80c290ccf73e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/21/2018
-ms.openlocfilehash: 5bb8842cdc91823a83d1b8ccfa305c6393433901
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 7b6d045b26adcbee31447e950533b1013288a910
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888399"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038016"
 ---
 # <a name="icacls"></a>icacls
 
 顯示或修改指定檔案上的判別存取控制清單 (DACL)，及套用預存的 DACL 到指定目錄中的檔案。
 
 > [!NOTE]
-> 此命令會取代已被取代的[cacls 命令](cacls.md)。
+> 此命令會取代已被取代的 [cacls 命令](cacls.md)。
 
 ## <a name="syntax"></a>語法
 
@@ -32,24 +32,24 @@ icacls <directory> [/substitute <sidold> <sidnew> [...]] [/restore <aclfile> [/c
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| `<filename>` | 指定要顯示其 Dacl 的檔案。 |
-| `<directory>` | 指定要顯示其 Dacl 的目錄。 |
-| /t | 對目前目錄及其子目錄中的所有指定檔案執行作業。 |
-| /C | 即使有任何檔案錯誤，仍繼續操作。 仍然會顯示錯誤訊息。 |
-| /l | 在符號連結（而不是其目的地）上執行作業。 |
-| /q | 隱藏成功訊息。 |
-| [/save `<ACLfile>`一起/c/l[/q]] | 將所有相符檔案的 Dacl 儲存至*ACLfile* ，以供稍後用於 **/restore**。 |
-| [/setowner `<username>`一起/c/l[/q]] | 將所有相符檔案的擁有者變更為指定的使用者。 |
-| [/findsid `<sid>`一起/c/l[/q]] | 尋找包含 DACL 的所有相符檔案，明確提及指定的安全識別碼 (SID) 。 |
-| [/verify [/t] [/c] [/l] [/q]] | 尋找具有不符合標準之 Acl 的所有檔案，或長度不一致的檔案 (存取控制專案) 計數。 |
+| `<filename>` | 指定要顯示 Dacl 的檔案。 |
+| `<directory>` | 指定要顯示 Dacl 的目錄。 |
+| /t | 在目前目錄及其子目錄中的所有指定檔案上執行作業。 |
+| /C | 即使有任何檔案錯誤，仍繼續操作。 仍會顯示錯誤訊息。 |
+| /l | 在符號連結（而不是其目的地）上執行運算。 |
+| /q | 抑制成功訊息。 |
+| [/save `<ACLfile>` 一起/c/l[/q]] | 將所有相符檔案的 Dacl 儲存到 *ACLfile* 中，以供稍後搭配 **/restore**使用。 |
+| [/setowner `<username>` 一起/c/l[/q]] | 將所有相符檔案的擁有者變更為指定的使用者。 |
+| [/findsid `<sid>` 一起/c/l[/q]] | 尋找包含 DACL 的所有相符檔案，這些檔案會明確提及指定的安全識別碼 (SID) 。 |
+| [/verify [/t] [/c] [/l] [/q]] | 尋找具有不標準 Acl 的所有檔案，或長度不一致的檔案 (存取控制專案) 計數。 |
 | [/reset [/t] [/c] [/l] [/q]] | 以預設繼承的 Acl 取代所有相符檔案的 Acl。 |
-| [/grant [： r] \<sid> ： <perm> [...]] | 授與指定的使用者存取權限。 許可權會取代先前授與的明確許可權。<p>未新增 **： r**，表示許可權會加入至任何先前授與的明確許可權。 |
-| [/deny \<sid> ： <perm> [...]] | 明確拒絕指定的使用者存取權限。 系統會為指定的許可權新增明確的拒絕 ACE，並移除任何明確授與中的相同許可權。 |
-| [/remove `[:g | :d]]` `<sid>`[...]一起/c/l一起 | 從 DACL 中移除所有出現的指定 SID。 此命令也可以使用：<ul><li>**： g** -移除所有已授與指定 SID 的許可權。</li><li>**:d** -移除指定之 SID 的所有已拒絕許可權。 |
-| [/setintegritylevel [ (CI) # B2 OI) ] `<Level>:<Policy>`[...]] | 將完整性 ACE 明確新增至所有相符的檔案。 層級可以指定為：<ul><li>**l** -低</li><li>**m**-中型</li><li>**h** -高</li></ul>完整性 ACE 的繼承選項可能在層級之前，而且僅適用于目錄。 |
-| [/substitute `<sidold> <sidnew>`[...]] | 以新的 SID 取代現有的 SID (*sidold*)  (*sidnew*) 。 需要搭配參數使用 `<directory>` 。 |
-| /restore `<ACLfile>` [/c] [/l] [/q] | 將儲存的 Dacl 從套用 `<ACLfile>` 至指定目錄中的檔案。 需要搭配參數使用 `<directory>` 。 |
-| /inheritancelevel:`[e | d | r]` | 設定繼承層級，可以是：<ul><li>**e** -啟用繼承</li><li>**d** -停用繼承並複製 ace</li><li>**r** -移除所有繼承的 ace</li></ul> |
+| [/grant [： r] \<sid> ： <perm> [...]] | 授與指定的使用者存取權限。 許可權會取代先前授與的明確許可權。<p>若未新增 **： r**，表示會將許可權新增至任何先前授與的明確許可權。 |
+| [/deny \<sid> ： <perm> [...]] | 明確拒絕指定的使用者存取權限。 系統會為指定的許可權新增明確的 deny ACE，並移除任何明確授與中的相同許可權。 |
+| [/remove `[:g | :d]]` `<sid>`[...]一起/c/l一起 | 從 DACL 中移除所有出現的指定 SID。 此命令也可以使用：<ul><li>**： g** -移除指定之 SID 的所有已授與許可權。</li><li>**:d** -移除指定之 SID 的所有已拒絕許可權。 |
+| [/setintegritylevel [ (CI) # B2 OI) ] `<Level>:<Policy>`[...]] | 明確地將完整性 ACE 新增至所有相符的檔案。 層級可以指定為：<ul><li>**l** -低</li><li>**m**-中型</li><li>**h** -高</li></ul>完整性 ACE 的繼承選項可以在層級之前，而且只會套用至目錄。 |
+| [/substitute `<sidold> <sidnew>` [...]] | 以新的 SID 取代現有的 SID (*sidold*)  (*sidnew*) 。 需要搭配參數使用 `<directory>` 。 |
+| /restore `<ACLfile>` [/c] [/l] [/q] | 將預存的 Dacl 套用 `<ACLfile>` 至指定目錄中的檔案。 需要搭配參數使用 `<directory>` 。 |
+| /inheritancelevel:`[e | d | r]` | 設定繼承層級，它可以是：<ul><li>**e** -啟用繼承</li><li>**d** -停用繼承並複製 ace</li><li>**r** -移除所有繼承的 ace</li></ul> |
 
 ## <a name="remarks"></a>備註
 
@@ -65,7 +65,7 @@ icacls <directory> [/substitute <sidold> <sidnew> [...]] [/restore <aclfile> [/c
 
     - 繼承的授與
 
-- 此 `<perm>` 選項是可使用下列其中一種形式指定的許可權遮罩：
+- 此 `<perm>` 選項是一種許可權遮罩，可使用下列其中一種形式來指定：
 
     - 一系列的簡單許可權：
 
@@ -77,7 +77,7 @@ icacls <directory> [/substitute <sidold> <sidnew> [...]] [/restore <aclfile> [/c
 
       - **R** -唯讀存取
 
-      - **W** -僅限寫入的存取
+      - **W** -僅限寫入存取
 
     - 以括弧括住的特定許可權清單（以逗號分隔）：
 
@@ -91,25 +91,25 @@ icacls <directory> [/substitute <sidold> <sidnew> [...]] [/restore <aclfile> [/c
 
       - **S** -同步處理
 
-      - **AS**存取系統安全性
+      - **作為** 存取系統安全性
 
       - **MA** -允許的最大值
 
-      - **GR** -一般讀取
+      - **GR** -泛型讀取
 
       - **GW** -一般寫入
 
-      - **GE** -一般執行
+      - **GE** -泛型執行
 
-      - **GA** -全部通用
+      - **GA** -一般全部
 
       - **RD** -讀取資料/清單目錄
 
-      - **WD** -寫入資料/新增檔案
+      - **WD** -Write data/add file
 
       - **AD** -附加資料/新增子目錄
 
-      - **反應**-讀取擴充屬性
+      - **反應** -讀取擴充屬性
 
       - **WEA** -寫入擴充屬性
 
@@ -121,13 +121,13 @@ icacls <directory> [/substitute <sidold> <sidnew> [...]] [/restore <aclfile> [/c
 
       - **WA** -寫入屬性
 
-  - 繼承許可權可能會在任一 `<perm>` 形式之前，而且只會套用至目錄：
+  - 繼承許可權可以在其中一個 `<perm>` 表單上，而且只會套用至目錄：
 
       - ** (OI) ** -物件繼承
 
       - ** (CI) ** -容器繼承
 
-      - ** (IO) ** -僅繼承
+      - ** (IO) ** -僅限繼承
 
       - ** (NP) ** -不要傳播繼承
 
@@ -139,19 +139,19 @@ icacls <directory> [/substitute <sidold> <sidnew> [...]] [/restore <aclfile> [/c
 icacls c:\windows\* /save aclfile /t
 ```
 
-若要還原 ACLFile 中存在於 C：\Windows 目錄及其子目錄中的每個檔案的 Dacl，請輸入：
+若要針對存在於 C：\Windows 目錄及其子目錄中的 ACLFile 中的每個檔案還原 Dacl，請輸入：
 
 ```
 icacls c:\windows\ /restore aclfile
 ```
 
-若要將使用者 User1 刪除和寫入 DAC 許可權授與名為 Test1 的檔案，請輸入：
+若要授與使用者 User1 刪除和寫入 DAC 許可權至名為 Test1 的檔案，請輸入：
 
 ```
 icacls test1 /grant User1:(d,wdac)
 ```
 
-若要將 SID S-1-1-0 Delete 和 Write DAC 許可權所定義的使用者授與名為 Test2 的檔案，請輸入：
+若要授與 SID S-1-1-0 所定義的使用者-刪除和寫入 DAC 許可權至名為 Test2 的檔案，請輸入：
 
 ```
 icacls test2 /grant *S-1-1-0:(d,wdac)

@@ -1,22 +1,22 @@
 ---
 title: list writers
-description: '[清單寫入器] 命令的參考文章，其中列出系統上的寫入器。'
-ms.topic: article
+description: 清單寫入器命令的參考文章，此命令會列出系統上的寫入器。
+ms.topic: reference
 ms.assetid: 1c30cbc4-f568-4fa7-b564-66c41d3ca82d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1a7176c949eb20af3488abe772c6ba683e1789f8
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 2fd3f035db63281b75ab2232503587dd535ef8d9
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887558"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037906"
 ---
 # <a name="list-writers"></a>list writers
 
-列出系統上的寫入器。 如果使用時不含參數，[**清單**] 預設會顯示**清單中繼資料**的輸出。
+列出系統上的寫入器。 如果使用時不含參數， **清單** 預設會顯示 **清單中繼資料** 的輸出。
 
 ## <a name="syntax"></a>語法
 
@@ -28,9 +28,9 @@ list writers [metadata | detailed | status]
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| 中繼資料 | 列出寫入器的身分識別和狀態，並顯示中繼資料，例如元件詳細資料和排除的檔案。 這是預設參數。 |
-| 詳細 | 會列出與**中繼資料**相同的資訊，但也包含所有元件的完整檔案清單。 |
-| status | 只會列出已註冊的寫入器的身分識別與狀態。 |
+| 中繼資料 | 列出寫入器的身分識別和狀態，並顯示元件詳細資料和排除的檔案等中繼資料。 這是預設參數。 |
+| 詳細 | 列出與 **中繼資料**相同的資訊，但也包含所有元件的完整檔案清單。 |
+| status | 僅列出已註冊之寫入器的身分識別和狀態。 |
 
 ### <a name="examples"></a>範例
 

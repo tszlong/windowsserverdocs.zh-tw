@@ -1,27 +1,27 @@
 ---
 title: change logon
-description: 變更登入命令的參考文章，可啟用或停用用戶端會話的登入，或顯示目前的登入狀態。
-ms.topic: article
+description: 變更登入命令的參考文章，此命令會啟用或停用用戶端會話的登入，或顯示目前的登入狀態。
+ms.topic: reference
 ms.assetid: 41466260-aee9-4333-bcb6-178112c22afd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f1196ec063ce6ab6d2ede64d58d22608e2e76c48
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 67f6a5b93fbe5ec16c4cece1c5c8429de06ce494
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880275"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031166"
 ---
 # <a name="change-logon"></a>change logon
 
 > 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-啟用或停用來自用戶端會話的登入，或顯示目前的登入狀態。 這個公用程式適用于系統維護。 您必須是系統管理員才能執行此命令。
+啟用或停用用戶端會話的登入，或顯示目前的登入狀態。 此公用程式適用于系統維護。 您必須是系統管理員才能執行此命令。
 
 > [!NOTE]
-> 在 Windows Server 2008 R2 中，終端機服務已重新命名為遠端桌面服務。 若要瞭解最新版本的新功能，請參閱[Windows Server 中遠端桌面服務的新功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
+> 若要瞭解最新版本的新功能，請參閱 [Windows Server 遠端桌面服務中的新功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
 
 ## <a name="syntax"></a>語法
 
@@ -33,18 +33,18 @@ change logon {/query | /enable | /disable | /drain | /drainuntilrestart}
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| /query | 顯示目前的登入狀態，無論是已啟用或已停用。 |
+| /query | 顯示目前的登入狀態，無論啟用或停用。 |
 | /enable | 允許來自用戶端會話的登入，但無法從主控台進行登入。 |
-| /disable | 停用用戶端會話的後續登入，但不從主控台。 不會影響目前登入的使用者。 |
-| /drain | 停用來自新用戶端會話的登入，但允許重新附加至現有的會話。 |
-| /drainuntilrestart | 停用來自新用戶端會話的登入，直到電腦重新開機，但允許重新附加至現有的會話。 |
+| /disable | 停用來自用戶端會話的後續登入，而不是從主控台。 不會影響目前登入的使用者。 |
+| /drain | 停用新用戶端會話的登入，但允許重新加入現有的會話。 |
+| /drainuntilrestart | 停用新用戶端會話的登入，直到電腦重新開機為止，但允許重新加入現有的會話。 |
 | /? | 在命令提示字元顯示說明。 |
 
 #### <a name="remarks"></a>備註
 
 - 當您重新開機系統時，會重新啟用登入。
 
-- 如果您是從用戶端會話連線到遠端桌面工作階段主機伺服器，然後在重新啟用登入之前停用登入並登出，您將無法重新連線到您的會話。 若要從用戶端會話重新啟用登入，請在主控台登入。
+- 如果您是從用戶端會話連線到遠端桌面工作階段主機伺服器，然後在重新啟用登入之前停用登入和登出，您將無法重新連線到您的會話。 若要重新啟用來自用戶端會話的登入，請在主控台登入。
 
 ### <a name="examples"></a>範例
 
@@ -54,7 +54,7 @@ change logon {/query | /enable | /disable | /drain | /drainuntilrestart}
   change logon /query
   ```
 
-- 若要啟用用戶端會話的登入，請輸入：
+- 若要從用戶端會話啟用登入，請輸入：
 
   ```
   change logon /enable

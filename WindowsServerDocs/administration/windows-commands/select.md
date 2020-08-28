@@ -1,24 +1,24 @@
 ---
 title: select
 description: '* * * * 的參考文章'
-ms.topic: article
+ms.topic: reference
 ms.assetid: 9eeb40c0-4258-46e2-8dbc-94f63497e771
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a41d240cfdcb15068d479fb96fce09880db7c1f9
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 6fb6230c24f723e20b09449967b157dd86347202
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882769"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89032220"
 ---
 # <a name="select"></a>select
 
 
 
-將焦點移至磁片、分割區、磁片區或虛擬硬碟 (VHD) 。
+將焦點移到磁片、磁碟分割、磁片區或虛擬硬碟 (VHD) 。
 
 ## <a name="syntax"></a>語法
 
@@ -40,8 +40,8 @@ select vdisk
 
 ## <a name="remarks"></a>備註
 
--   如果選取了具有對應磁碟分割的磁片區，則會自動選取該磁碟分割。
--   如果選取的資料分割具有對應的磁片區，則會自動選取該磁片區。
+-   如果選取的磁片區具有對應的磁碟分割，則會自動選取該磁碟分割。
+-   如果選取磁碟分割與對應的磁片區，則會自動選取該磁片區。
 
 ## <a name="additional-references"></a>其他參考資料
 

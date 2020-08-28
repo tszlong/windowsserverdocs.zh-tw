@@ -1,18 +1,18 @@
 ---
 title: ftp delete
-description: Ftp delete 命令的參考文章，它會刪除遠端電腦上的檔案。
-ms.topic: article
+description: Ftp delete 命令的參考文章，此命令會刪除遠端電腦上的檔案。
+ms.topic: reference
 ms.assetid: 067c45f3-e4e8-4450-b8b6-836994f6adfe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 315a73f0ebfbefdf4a7033f42c2cad02e2ab77bc
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ebf1a770144409dca91ddea0a18a85536e05b926
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889526"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038056"
 ---
 # <a name="ftp-delete"></a>ftp delete
 
@@ -34,7 +34,7 @@ delete <remotefile>
 
 ### <a name="examples"></a>範例
 
-若要刪除遠端電腦上的*test.txt*檔案，請輸入：
+若要刪除遠端電腦上的 *test.txt* 檔案，請輸入：
 
 ```
 delete test.txt
@@ -44,4 +44,4 @@ delete test.txt
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [其他 FTP 指引](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [其他 FTP 指導方針](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

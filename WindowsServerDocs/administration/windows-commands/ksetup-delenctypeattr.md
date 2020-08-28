@@ -1,24 +1,24 @@
 ---
 title: ksetup delenctypeattr
-description: Ksetup delenctypeattr 的參考文章，它會移除網域的加密類型屬性。
-ms.topic: article
+description: '>ksetup delenctypeattr 的參考文章，它會移除網域的加密類型屬性。'
+ms.topic: reference
 ms.assetid: 4fc25ef3-e271-4229-a712-72c507df55aa
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7901cdb53c051885e5e4040cbc28b7cae0ed2a4d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8427d76170156ff2cd01047cc0732bfa6b385e30
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888031"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037926"
 ---
 # <a name="ksetup-delenctypeattr"></a>ksetup delenctypeattr
 
 移除網域的加密類型屬性。 成功或失敗完成時，會顯示狀態訊息。
 
-您可以藉由執行**klist**命令並查看輸出，來查看 Kerberos 票證授與票證 (TGT) 和工作階段金鑰的加密類型。 您可以藉由執行命令來設定要連接及使用的網域 `ksetup /domain <domainname>` 。
+您可以藉由執行 **klist** 命令並查看輸出，來查看 Kerberos 票證授與票證 (TGT) 和工作階段金鑰的加密類型。 您可以藉由執行命令來設定要連接和使用的網域 `ksetup /domain <domainname>` 。
 
 ## <a name="syntax"></a>語法
 
@@ -30,11 +30,11 @@ ksetup /delenctypeattr <domainname>
 
 | 參數 | 描述 |
 | ----------| ----------- |
-| `<domainname>` | 您想要建立連接的網功能變數名稱稱。 您可以使用完整功能變數名稱或簡單格式的名稱，例如 corp.contoso.com 或 contoso。 |
+| `<domainname>` | 您要建立連線的功能變數名稱。 您可以使用完整功能變數名稱或簡單格式的名稱，例如 corp.contoso.com 或 contoso。 |
 
 ### <a name="examples"></a>範例
 
-若要判斷這部電腦上設定的目前加密類型，請輸入：
+若要判斷這部電腦上所設定的目前加密類型，請輸入：
 
 ```
 klist
@@ -46,7 +46,7 @@ klist
 ksetup /domain mit.contoso.com
 ```
 
-若要確認網域的 [加密類型] 屬性為何，請輸入：
+若要確認網域的加密類型屬性是什麼，請輸入：
 
 ```
 ksetup /getenctypeattr mit.contoso.com
@@ -64,10 +64,10 @@ ksetup /delenctypeattr mit.contoso.com
 
 - [klist 命令](klist.md)
 
-- [ksetup 命令](ksetup.md)
+- [>ksetup 命令](ksetup.md)
 
-- [ksetup 網域命令](ksetup-domain.md)
+- [>ksetup 網域命令](ksetup-domain.md)
 
-- [ksetup addenctypeattr 命令](ksetup-addenctypeattr.md)
+- [>ksetup addenctypeattr 命令](ksetup-addenctypeattr.md)
 
-- [ksetup setenctypeattr 命令](ksetup-setenctypeattr.md)
+- [>ksetup setenctypeattr 命令](ksetup-setenctypeattr.md)

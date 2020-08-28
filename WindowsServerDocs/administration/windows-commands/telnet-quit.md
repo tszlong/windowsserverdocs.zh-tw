@@ -1,24 +1,24 @@
 ---
 title: telnet quit
-description: Telnet 結束的參考文章，它會結束 telnet。
-ms.topic: article
+description: Telnet quit 的參考文章會結束 telnet。
+ms.topic: reference
 ms.assetid: a6e033f2-f0c2-404c-9cb4-abd1d7af0eea
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7c0adc74610a864cc6406a7f86b3e65bb1bfde01
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: cfcea5a4f24cce4236b229c483ef14e4b7e99828
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881681"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027026"
 ---
 # <a name="telnet-quit"></a>telnet： quit
 
 > 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-結束 telnet。
+離開 telnet。
 
 ## <a name="syntax"></a>語法
 ```
@@ -27,7 +27,7 @@ q[uit]
 #### <a name="parameters"></a>參數
 無
 ## <a name="examples"></a>範例
-結束 telnet。
+離開 telnet。
 ```
 q
 ```

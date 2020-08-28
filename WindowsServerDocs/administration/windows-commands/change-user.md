@@ -1,18 +1,18 @@
 ---
 title: change user
-description: 變更使用者命令的參考文章，這會變更遠端桌面工作階段主機伺服器的安裝模式。
-ms.topic: article
+description: 變更使用者命令的參考文章，此命令會變更遠端桌面工作階段主機伺服器的安裝模式。
+ms.topic: reference
 ms.assetid: 6202f024-8cf5-411e-89b1-ee37ff46499d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ca78126095b11ca7bf900d10c253cd7ad19fcc12
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 7c473349b75a5963cb66997ea568f5634eea194d
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892891"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031146"
 ---
 # <a name="change-user"></a>change user
 
@@ -21,7 +21,7 @@ ms.locfileid: "87892891"
 變更遠端桌面工作階段主機伺服器的安裝模式。
 
 > [!NOTE]
-> 在 Windows Server 2008 R2 中，終端機服務已重新命名為遠端桌面服務。 若要瞭解最新版本的新功能，請參閱[Windows Server 中遠端桌面服務的新功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
+> 若要瞭解最新版本的新功能，請參閱 [Windows Server 遠端桌面服務中的新功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
 
 ## <a name="syntax"></a>語法
 
@@ -33,28 +33,28 @@ change user {/execute | /install | /query}
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| /execute | 讓 .ini 檔案能夠對應到主目錄。 這是預設值。 |
-| /install | 停用 .ini 檔案與主目錄的對應。 所有 .ini 檔案都會讀取並寫入至系統目錄。 在遠端桌面工作階段主機伺服器上安裝應用程式時，您必須停用 .ini 檔案對應。 |
+| /execute | 啟用 .ini 檔案對應至主目錄。 這是預設值。 |
+| /install | 停用 .ini 檔案對應至主目錄。 所有 .ini 檔案都會讀取並寫入系統目錄。 在遠端桌面工作階段主機伺服器上安裝應用程式時，您必須停用 .ini 檔案對應。 |
 | /query | 顯示 .ini 檔案對應的目前設定。 |
 | /? | 在命令提示字元顯示說明。 |
 
 #### <a name="remarks"></a>備註
 
-- 在安裝應用程式之前，請先使用 [**變更使用者/install** ]，為系統目錄中的應用程式建立 .ini 檔案。 建立使用者特定的 .ini 檔案時，會使用這些檔案作為來源。 安裝應用程式之後，請使用 [**變更使用者/execute** ] 還原為標準 .ini 檔案對應。
+- 在安裝應用程式之前，請先使用 [ **變更使用者/install** ]，為系統目錄中的應用程式建立 .ini 檔案。 建立使用者專屬的 .ini 檔案時，會使用這些檔案作為來源。 安裝應用程式之後，請使用 **變更使用者/execute** 來還原為標準 .ini 檔案對應。
 
-- 第一次執行應用程式時，它會在主目錄中搜尋其 .ini 檔案。 如果在主目錄中找不到 .ini 檔案，但是在系統目錄中找到，遠端桌面服務將 .ini 檔案複製到主目錄，確保每個使用者都有一個應用程式 .ini 檔案的唯一複本。 所有新的 .ini 檔案都會建立在主目錄中。
+- 當您第一次執行應用程式時，它會在主目錄中搜尋其 .ini 檔案。 如果在主目錄中找不到 .ini 檔案，但在系統目錄中找不到 .ini 檔案，遠端桌面服務將 .ini 檔案複製到主目錄，以確保每位使用者都有一份唯一的應用程式 .ini 檔案。 系統會在主目錄中建立任何新的 .ini 檔案。
 
-- 每位使用者都應該有一個應用程式的 .ini 檔案的唯一複本。 這可防止不同使用者可能會有不相容的應用程式設定 (例如，不同的預設目錄或螢幕解析度) 。
+- 每個使用者都應該有一個適用于應用程式之 .ini 檔案的唯一複本。 這可防止不同使用者可能有不相容的應用程式設定 (例如，不同的預設目錄或螢幕解析度) 。
 
-- 當系統執行**變更使用者/install**時，會發生幾件事。 所有建立的登錄專案都會以**HKEY_LOCAL_MACHINE \Software\microsoft\windows server\ NT\Currentversion\Terminal Server\Install**為依據，在**\SOFTWARE**子機碼或**\MACHINE**子機碼中。 新增至**HKEY_CURRENT_USER**的子機碼會在**\SOFTWARE**子機碼下複製，而新增至**HKEY_LOCAL_MACHINE**的子機碼會複製到**\MACHINE**子機碼下。 如果應用程式使用系統呼叫（例如 GetWindowsdirectory）來查詢 Windows 目錄，rd 工作階段主機伺服器會傳回 systemroot 目錄。 如果使用系統呼叫（例如 WritePrivateProfileString）新增任何 .ini 檔案專案，則會將它們新增至 systemroot 目錄底下的 .ini 檔案。
+- 當系統正在執行 **變更使用者/install**時，會發生幾件事。 所有建立的登錄專案都會遮蔽于 **HKEY_LOCAL_MACHINE \Software\microsoft\windows NT\Currentversion\Terminal Server\Install**（在 **\SOFTWARE** 子機碼或 **\MACHINE** 子機碼中）。 新增至 **HKEY_CURRENT_USER** 的子機碼會在 **\SOFTWARE** 子機碼下複製，並新增至 **HKEY_LOCAL_MACHINE** 的子機碼會在 **\MACHINE** 子機碼下複製。 如果應用程式使用系統呼叫（例如 GetWindowsdirectory）查詢 Windows 目錄，rd 工作階段主機伺服器會傳回 systemroot 目錄。 如果使用系統呼叫（例如 WritePrivateProfileString）新增任何 .ini 檔案專案，則會將這些專案加入至 systemroot 目錄下的 .ini 檔案。
 
-- 當系統返回**變更使用者/execute**，而應用程式嘗試讀取**HKEY_CURRENT_USER**不存在的登錄專案時，遠端桌面服務檢查是否有金鑰複本存在於**\Terminal Server\Install**子機碼底下。 如果有，子機碼就會複製到**HKEY_CURRENT_USER**底下的適當位置。 如果應用程式嘗試從不存在的 .ini 檔案讀取，遠端桌面服務會在系統根目錄下搜尋該 .ini 檔案。 如果 .ini 檔案位於系統根目錄中，它會複製到使用者主目錄的 \Windows 子目錄中。 如果應用程式查詢 Windows 目錄，rd 工作階段主機伺服器會傳回使用者主目錄的 \Windows 子目錄。
+- 當系統返回以 **變更使用者/execute**，而且應用程式嘗試讀取 **HKEY_CURRENT_USER** 不存在的登錄專案時，遠端桌面服務會查看該金鑰的複本是否存在於 **\Terminal Server\Install** 子機碼下方。 如果有的話，會將子機碼複製到 **HKEY_CURRENT_USER**下的適當位置。 如果應用程式嘗試從不存在的 .ini 檔案讀取，遠端桌面服務在系統根目錄下搜尋該 .ini 檔案。 如果 .ini 檔在系統根目錄中，它會複製到使用者主目錄的 \Windows 子目錄中。 如果應用程式查詢 Windows 目錄，rd 工作階段主機伺服器會傳回使用者主目錄的 \Windows 子目錄。
 
-- 當您登入時，遠端桌面服務會檢查其 system .ini 檔案是否比您電腦上的 .ini 檔案更新。 如果系統版本較新，則您的 .ini 檔案會被取代或與較新的版本合併。 這取決於是否為這個 .ini 檔案設定 INISYNC 位0x40。 您先前版本的 .ini 檔案已重新命名為 Inifile. ctx。 如果**\Terminal Server\Install**子機碼下的系統登錄值比**HKEY_CURRENT_USER**下的版本還新，則會刪除您的子機碼版本，並以**\Terminal Server\Install**中的新子機碼取代。
+- 當您登入時，遠端桌面服務檢查其 system .ini 檔案是否比您電腦上的 .ini 檔案更新。 如果系統版本較新，則會將您的 .ini 檔案取代或與較新的版本合併。 這取決於是否已針對此 .ini 檔案設定 INISYNC 位0x40。 您先前版本的 .ini 檔案會重新命名為 Inifile. ctx。 如果 **\Terminal Server\Install** 子機碼底下的系統登錄值比您在 **HKEY_CURRENT_USER**下的版本新，則會刪除您的子機碼，並將其取代為 **\Terminal Server\Install**中的新子機碼。
 
 ## <a name="examples"></a>範例
 
-- 若要在主目錄中停用 .ini 檔對應，請輸入：
+- 若要在主目錄中停用 .ini 檔案對應，請輸入：
 
   ```
   change user /install

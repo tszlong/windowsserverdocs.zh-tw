@@ -1,18 +1,18 @@
 ---
 title: ftp mls
-description: Ftp mls 命令的參考文章，它會在遠端目錄中顯示檔案和子目錄的縮寫清單。
-ms.topic: article
+description: Ftp mls 命令的參考文章，此命令會顯示遠端目錄中的檔案和子目錄的縮寫清單。
+ms.topic: reference
 ms.assetid: 4738fd49-0e80-4bdf-a773-0f973db3a710
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c2e0dc4ff4b516cc436e5b8a0a9c5ca2e4d77b5d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 9b4eaf9a4b31fb233d281514bcc50ddc754d398a
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889234"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038026"
 ---
 # <a name="ftp-mls"></a>ftp mls
 
@@ -30,12 +30,12 @@ mls <remotefile>[ ] <localfile>
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| `<remotefile>` | 指定您要查看其清單的檔案。 指定*remotefiles*時，請使用連字號來代表遠端電腦上的目前工作目錄。 |
-| `<localfile>` | 指定用來儲存清單的本機檔案。 指定*localfile*時，請使用連字號來顯示幕幕上的清單。 |
+| `<remotefile>` | 指定您想要查看清單的檔案。 指定 *remotefiles*時，請使用連字號來代表遠端電腦上的目前工作目錄。 |
+| `<localfile>` | 指定要在其中儲存清單的本機檔案。 指定 *localfile*時，請使用連字號來顯示畫面上的清單。 |
 
 ### <a name="examples"></a>範例
 
-若要顯示*dir1*和*dir2*的檔案和子目錄的縮寫清單，請輸入：
+若要顯示 *dir1* 和 *dir2*的檔案和子目錄的縮寫清單，請輸入：
 
 ```
 mls dir1 dir2 -
@@ -51,4 +51,4 @@ mls dir1 dir2 dirlist.txt
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [其他 FTP 指引](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [其他 FTP 指導方針](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

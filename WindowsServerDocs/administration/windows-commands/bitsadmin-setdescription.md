@@ -1,18 +1,18 @@
 ---
 title: bitsadmin setdescription
-description: Bitsadmin setdescription 命令的參考文章，其會設定指定之作業的描述。
-ms.topic: article
+description: Bitsadmin setdescription 命令的參考文章，此命令會設定指定工作的描述。
+ms.topic: reference
 ms.assetid: 1e46a5dd-4637-4a2e-b88f-d3f85b177db8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d499b152f5cb3a846cc1de6ec65f07903421cf49
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 86f63a553b9d308ef3e8bfe5bfc2a2334b5d28e8
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87893179"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031256"
 ---
 # <a name="bitsadmin-setdescription"></a>bitsadmin setdescription
 
@@ -33,7 +33,7 @@ bitsadmin /setdescription <job> <description>
 
 ## <a name="examples"></a>範例
 
-若要取得名為*myDownloadJob*之作業的描述：
+若要取得名為 *myDownloadJob*之作業的描述：
 
 ```
 bitsadmin /setdescription myDownloadJob music_downloads

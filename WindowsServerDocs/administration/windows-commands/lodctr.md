@@ -1,18 +1,18 @@
 ---
 title: lodctr
 description: Lodctr 命令的參考文章，可讓您在檔案中註冊或儲存效能計數器名稱和登錄設定，並指定信任的服務。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 5a849abd-6b31-4833-bc8a-306c05eca29a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 428830b06796914e66434c90f7624cc7c64eec5b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 61b449678fae62e0909d19b8cae8411102898bd8
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887476"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037876"
 ---
 # <a name="lodctr"></a>lodctr
 
@@ -30,20 +30,20 @@ lodctr <filename> [/s:<filename>] [/r:<filename>] [/t:<servicename>]
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| `<filename>` | 指定用來註冊效能計數器名稱設定和解說文字之初始化檔的名稱。 |
-| /s`<filename>` | 指定要儲存效能計數器登錄設定和解說文字的檔案名。 |
+| `<filename>` | 指定註冊效能計數器名稱設定和解說文字的初始化檔案名稱。 |
+| /s`<filename>` | 指定效能計數器登錄設定和解說文字儲存的檔案名。 |
 | /r | 從目前的登錄設定和與登錄相關的快取效能檔案還原計數器登錄設定和解說文字。 |
-| /r`<filename>` | 指定還原效能計數器登錄設定和解說文字的檔案名。<p>**警告：** 如果您使用此命令，將會覆寫所有效能計數器登錄設定和解說文字，並以指定檔案中定義的設定來取代。 |
-| /t:`<servicename>` | 指出服務 `<servicename>` 是受信任的。 |
+| /r`<filename>` | 指定可還原效能計數器登錄設定和解說文字的檔案名。<p>**警告：** 如果您使用此命令，將會覆寫所有效能計數器登錄設定和解說文字，並以指定的檔案中所定義的設定來取代。 |
+| /t:`<servicename>` | 表示服務 `<servicename>` 是受信任的。 |
 | /? | 在命令提示字元顯示說明。 |
 
 #### <a name="remarks"></a>備註
 
-- 如果您提供的資訊包含空格，請使用引號括住文字 (例如，"file name 1" ) 。
+- 如果您提供的資訊包含空格，請使用引號括住文字 (例如「檔案名1」 ) 。
 
 ### <a name="examples"></a>範例
 
-若要將目前的效能登錄設定和解說文字儲存到檔案 *"perf backup1.txt"*，請輸入：
+若要將目前的效能登錄設定和解說文字儲存到檔案 *"performance backup1.txt"*，請輸入：
 
 ```
 lodctr /s:"perf backup1.txt"

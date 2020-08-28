@@ -1,22 +1,22 @@
 ---
 title: tree
-description: 樹狀結構的參考文章，會以圖形方式顯示路徑的目錄結構，或磁片磁碟機中的磁片。
-ms.topic: article
+description: 樹狀目錄的參考文章，以圖形方式顯示路徑或磁片磁碟機中磁片的目錄結構。
+ms.topic: reference
 ms.assetid: 345d3192-401e-4a3b-a8ac-36a85c7be79d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 44e3e54f986cc4bd4459d4e007c5111b664a6a45
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: c164fe8999313ffd40ec12b29c7ad8cf2bd7c7a5
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87897097"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89026886"
 ---
 # <a name="tree"></a>tree
 
-以圖形方式顯示磁片磁碟機中路徑或磁片的目錄結構。
+以圖形方式顯示磁片磁碟機路徑或磁片的目錄結構。
 
 
 
@@ -30,15 +30,15 @@ tree [<Drive>:][<Path>] [/f] [/a]
 
 |參數|描述|
 |---------|-----------|
-|\<Drive>:|指定包含您想要顯示目錄結構之磁片的磁片磁碟機。|
+|\<Drive>:|指定包含您要顯示其目錄結構之磁片的磁片磁碟機。|
 |\<Path>|指定您想要顯示目錄結構的目錄。|
-|/f|顯示每個目錄中的檔案名。|
-|/a|指定**樹狀結構**是使用文字字元，而不是圖形字元，以顯示連結子目錄的線條。|
+|/f|顯示每個目錄中檔案的名稱。|
+|/a|指定 **樹狀結構** 是使用文字字元而非圖形字元來顯示連結子目錄的行。|
 |/?|在命令提示字元顯示說明。|
 
 ## <a name="remarks"></a>備註
 
-**Tree**所顯示的結構取決於您在命令提示字元中指定的參數。 如果您未指定磁片磁碟機或路徑，**樹狀**結構會顯示以目前磁片磁碟機目前目錄開頭的樹狀結構。
+**樹狀**結構所顯示的結構需視您在命令提示字元中指定的參數而定。 如果您未指定磁片磁碟機或路徑， **樹狀** 結構會顯示以目前磁片磁碟機的目前的目錄開頭的樹狀結構。
 
 ## <a name="examples"></a>範例
 
@@ -46,7 +46,7 @@ tree [<Drive>:][<Path>] [/f] [/a]
 ```
 tree \
 ```
-若要顯示，一次一個畫面，磁片磁碟機 C 的所有目錄中的檔案，請輸入：
+若要一次顯示一個畫面、磁片磁碟機 C 上所有目錄中的檔案，請輸入：
 ```
 tree c:\ /f | more
 ```

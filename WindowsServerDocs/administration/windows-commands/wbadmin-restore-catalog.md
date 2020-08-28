@@ -1,24 +1,24 @@
 ---
 title: wbadmin restore catalog
 description: Wbadmin restore catalog 的參考文章，它會從您指定的儲存位置復原本機電腦的備份類別目錄。
-ms.topic: article
+ms.topic: reference
 ms.assetid: ce1e24a0-821d-4353-b09d-8f82c5c4ad56
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7cf9304140825620ec1eae118e24a5a611a2a384
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 46ebe9d8479ffe7b940cfe31c84176c3c1ef0aa9
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87891706"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031926"
 ---
 # <a name="wbadmin-restore-catalog"></a>wbadmin restore catalog
 
 從您指定的儲存位置復原本機電腦的備份類別目錄。
 
-若要使用這個子命令復原備份類別目錄，您必須是**Backup Operators**群組或**Administrators**群組的成員，或者必須已被委派適當的許可權。 此外，您必須從提升許可權的命令提示字元執行**wbadmin** 。  (開啟已提升許可權的命令提示字元，以滑鼠右鍵按一下**命令提示**字元，然後按一下 [以**系統管理員身分執行**]。 ) 
+若要使用此子命令復原備份類別目錄，您必須是 **Backup Operators** 群組或 **Administrators** 群組的成員，或者必須已被委派適當的許可權。 此外，您必須從提升許可權的命令提示字元中執行 **wbadmin** 。  (開啟提升許可權的命令提示字元，以滑鼠右鍵按一下 **命令提示**字元，然後按一下 [以 **系統管理員身分執行**]。 ) 
 
 ## <a name="syntax"></a>語法
 
@@ -34,12 +34,12 @@ wbadmin restore catalog
 |參數|描述|
 |---------|-----------|
 |-backupTarget|指定在建立備份之後，系統備份類別目錄的位置。|
-|-機器|指定您想要復原備份類別目錄之電腦的名稱。 當多部電腦的備份儲存在相同的位置時，請使用。 當指定 **-backupTarget**時，應該使用。|
+|-電腦|指定您想要復原備份類別目錄的電腦名稱稱。 當多部電腦的備份儲存在相同位置時使用。 當指定 **-backupTarget** 時，應該使用。|
 |-quiet|執行子命令，而不提示使用者。|
 
 ## <a name="remarks"></a>備註
 
-如果您用來儲存備份的磁片、DVD 或遠端共用資料夾)  (位置已損毀或遺失，而且無法用來還原備份類別目錄，請使用**wbadmin delete catalog**來刪除損毀的目錄。 在此情況下，您應該在刪除備份類別目錄後建立新的備份。
+如果您儲存備份的 (磁片、DVD 或遠端共用資料夾) 位置已損毀或遺失，且無法用來還原備份類別目錄，請使用 **wbadmin delete catalog** 來刪除損毀的目錄。 在此情況下，您應該在刪除備份類別目錄之後建立新的備份。
 
 ## <a name="examples"></a>範例
 
@@ -47,7 +47,7 @@ wbadmin restore catalog
 ```
 wbadmin restore catalog -backupTarget:d
 ```
-若要從 server01 的共用資料夾 servername\share 中儲存的備份還原目錄 \\ \\ ，請輸入：
+若要從 server01 的共用資料夾 servername\share 中儲存的備份還原類別目錄 \\ \\ ，請輸入：
 ```
 wbadmin restore catalog -backupTarget:\\servername\share -machine:server01
 ```
@@ -55,5 +55,5 @@ wbadmin restore catalog -backupTarget:\\servername\share -machine:server01
 ## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
--   [Restore](wbadmin.md)
+-   [Backup](wbadmin.md)
 -   [Restore-WBCatalog](/powershell/module/windowserverbackup/?view=winserver2012r2-ps) Cmdlet

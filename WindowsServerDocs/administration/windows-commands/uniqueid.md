@@ -1,25 +1,25 @@
 ---
-title: uniqueid
-description: Uniqueid 的參考文章，它會顯示或設定 GUID 磁碟分割表格 (GPT) 識別碼或主要開機記錄 (MBR) 簽章，以取得具有焦點的磁片。
-ms.topic: article
+title: 唯一
+description: Uniqueid 的參考文章，可顯示或設定 GUID 磁碟分割表格 (GPT) 識別碼或主開機記錄 (MBR) 具有焦點磁片的簽章。
+ms.topic: reference
 ms.assetid: 64235a4a-b91c-46da-b9b0-68ee90571c2a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ef76189e3377ecdb11605acf449ba68424d1588f
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 42b3bcc50ad5f13a941a0ff81a7c74f40b45b48d
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87897056"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89032193"
 ---
-# <a name="uniqueid"></a>uniqueid
+# <a name="uniqueid"></a>唯一
 
 針對具有焦點的磁片，顯示或設定 GUID 磁碟分割表格 (GPT) 識別碼或主開機記錄 (MBR) 簽章。
 
 > [!IMPORTANT]
-> Windows Vista 的任何版本都無法使用此 DiskPart 命令。
+> 所有版本的 Windows Vista 都無法使用此 DiskPart 命令。
 
 ## <a name="syntax"></a>語法
 
@@ -32,12 +32,12 @@ uniqueid disk [id={<dword> | <GUID>}] [noerr]
 |  參數   |                                                                                             描述                                                                                              |
 |--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 識別碼 = {\<dword> |                                                                                               <GUID>}                                                                                                |
-|    noerr     | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
+|    noerr     | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 如果沒有這個參數，錯誤會導致 DiskPart 結束，並產生錯誤碼。 |
 
 ## <a name="remarks"></a>備註
 
 -   此命令適用于基本和動態磁碟。
--   必須選取磁片，此命令才會成功。 使用 [**選取磁片**] 命令來選取磁片，並將焦點移至它。
+-   必須選取磁片，此命令才會成功。 使用 [ **選取磁片** ] 命令來選取磁片，並將焦點移至該磁片。
 
 ## <a name="examples"></a>範例
 

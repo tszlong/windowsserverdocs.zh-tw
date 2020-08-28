@@ -1,18 +1,18 @@
 ---
 title: mklink
-description: Mklink 命令的參考文章，它會建立目錄或檔案符號或硬式連結。
-ms.topic: article
+description: Mklink 命令的參考文章，此命令會建立目錄或檔案符號或硬式連結。
+ms.topic: reference
 ms.assetid: 0ce4df22-2dbc-48fc-9c16-b721ae85f857
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 76c97032874fe23fea773dbf5e2d1d862a6048af
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 13d842dcad62392fa36dc705233f292b7aa1d48f
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886438"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037816"
 ---
 # <a name="mklink"></a>mklink
 
@@ -32,12 +32,12 @@ mklink [[/d] | [/h] | [/j]] <link> <target>
 | /h | 建立硬式連結，而不是符號連結。 |
 | /j | 建立目錄連接點。 |
 | `<link>` | 指定要建立之符號連結的名稱。 |
-| `<target>` | 指定新符號連結所參考的路徑 (相對或絕對) 。 |
+| `<target>` | 指定新符號連結所參考 (相對或絕對) 路徑。 |
 | /? | 在命令提示字元顯示說明。 |
 
 ### <a name="examples"></a>範例
 
-若要建立和移除名為、MyFolder 和 Myfile.txt 的符號連結，請從根目錄到 \Users\User1\Documents 目錄，以及位於目錄內的範例檔案中，輸入：
+若要建立和移除名為、MyFolder 和 Myfile.txt 的符號連結，請從根目錄到 \Users\User1\Documents 目錄，並將檔案放在目錄中，輸入：
 
 ```
 mklink /d \MyFolder \Users\User1\Documents

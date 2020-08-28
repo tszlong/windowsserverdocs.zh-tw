@@ -1,18 +1,18 @@
 ---
 title: change port
-description: '[變更埠] 命令的參考文章，其會列出或變更 COM 埠對應，以與 MS-DOS 應用程式相容。'
+description: 變更埠命令的參考文章，此命令會列出或變更 COM 埠對應，以與 MS-DOS 應用程式相容。
 ms.topic: article
 ms.assetid: 3d772c90-e849-4e74-b9ec-b6cae1159336 Lizap
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 64c0d012d8106d99f1d7a167dd8f2d1d9107150b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8014ba67b2c4383aa56a6fce5eb486bbccfba7e7
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880260"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031156"
 ---
 # <a name="change-port"></a>change port
 
@@ -21,7 +21,7 @@ ms.locfileid: "87880260"
 列出或變更 COM 埠對應，以與 MS-DOS 應用程式相容。
 
 > [!NOTE]
-> 在 Windows Server 2008 R2 中，終端機服務已重新命名為遠端桌面服務。 若要瞭解最新版本的新功能，請參閱[Windows Server 中遠端桌面服務的新功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
+> 若要瞭解最新版本的新功能，請參閱 [Windows Server 遠端桌面服務中的新功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
 
 ## <a name="syntax"></a>語法
 
@@ -33,20 +33,20 @@ change port [<portX>=<portY| /d <portX | /query]
 
 | 參數 | 描述 |
 |-----------------|----------------------------------------|
-| <portX>=<portY> | 將 COM 對應 `<*portX*>` 至`<*portY*>` |
-| /d<portX> | 刪除 COM 的對應`<*portX*>` |
+| <portX>=<portY> | 將 COM 對應 `<*portX*>` 至 `<*portY*>` |
+| /d <portX> | 刪除 COM 的對應 `<*portX*>` |
 | /query | 顯示目前的埠對應。 |
 | /? | 在命令提示字元顯示說明。 |
 
 #### <a name="remarks"></a>備註
 
-- 大部分的 MS-DOS 應用程式僅支援 COM1 到 COM4 的序列埠。 [**變更埠**] 命令會將序列埠對應至不同的埠號碼，允許不支援高編號 COM 埠的應用程式存取序列埠。 重新對應只適用于目前的會話，如果您登出會話然後再次登入，則不會保留。
+- 大部分的 MS-DOS 應用程式僅支援透過 COM4 序列埠的 COM1。 **變更埠**命令會將序列埠對應至不同的埠號碼，讓不支援高編號 COM 埠的應用程式存取序列埠。 重新對應僅適用于目前的會話，如果您登出會話，然後重新登入，則不會保留。
 
-- 使用不含任何參數的**變更埠**，以顯示可用的 COM 埠和其目前的對應。
+- 使用不含任何參數的 **變更埠** 來顯示可用的 COM 埠及其目前的對應。
 
 ## <a name="examples"></a>範例
 
-- 若要將 COM12 對應到 COM1 以供以 MS-DOS 為基礎的應用程式使用，請輸入：
+- 若要將 COM12 對應至 COM1 以供以 MS-DOS 為基礎的應用程式使用，請輸入：
 
   ```
   change port com12=com1

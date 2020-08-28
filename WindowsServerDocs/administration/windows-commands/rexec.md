@@ -1,23 +1,22 @@
 ---
 title: rexec
-description: '* * * * 的參考文章'
-ms.topic: article
+description: Rexec 命令的參考文章，此命令會在遠端主機上執行指定的命令。 此命令已被取代，而且在未來的 Windows 版本中不保證會受到支援。
+ms.topic: reference
 ms.assetid: 7c637fb3-c92f-40bf-ad06-6330daaa3b5f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1cddd1d1b8f1a9b891004c66caae378cd172451a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 56a2e96b7c5b8b87895554ffdcc54c634931653f
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87883591"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027246"
 ---
 # <a name="rexec"></a>rexec
 
+在遠端主機上執行指定的命令。 遠端主機必須執行 rexecd 服務 (或背景程式) ，讓 rexec 連接至。
 
-
-Rexec 已被取代，在未來的 Windows 版本中不保證會受到支援。
-
-此工具組含在 Windows Server 2003 中。 如需詳細資訊，請參閱[Rexec](/previous-versions/orphan-topics/ws.10/cc755410(v=ws.10))。
+> [!IMPORTANT]
+> **Rexec**命令已被取代，不保證會在 Windows 中支援。

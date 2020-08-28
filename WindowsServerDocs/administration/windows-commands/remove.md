@@ -1,27 +1,27 @@
 ---
 title: remove
-description: '[移除] 命令的參考文章，會從磁片區移除磁碟機號或掛接點。'
-ms.topic: article
+description: 移除命令的參考文章，此命令會從磁片區移除磁碟機號或掛接點。
+ms.topic: reference
 ms.assetid: b0886140-da8b-4231-8cb2-f280874d99c0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 469b3ac1783dfff5228778d11532448bee49346c
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 5b8e2fc967a4ebe22ba1f7932be9d14a00511ddb
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87883830"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027316"
 ---
 # <a name="remove"></a>remove
 
 從帶有焦點的磁碟區移除磁碟機代號或掛接點。 如果使用 all 參數，則會移除全部目前磁碟機代號及掛接點。 如果未指定磁碟機號或掛接點，則 DiskPart 會移除第一個遇到的磁碟機號或掛接點。
 
-[移除] 命令也可以用來變更與卸載式磁片磁碟機相關聯的磁碟機號。 您無法移除系統、開機或分頁磁片區上的磁碟機號。 此外，您無法移除 OEM 磁碟分割的磁碟機號、任何具有無法辨識 GUID 的 GPT 磁碟分割，或任何特殊、非資料、GPT 磁碟分割（如 EFI 系統磁碟分割）。
+[移除] 命令也可以用來變更與卸載式磁片磁碟機相關聯的磁碟機號。 您無法在系統、開機或分頁磁片區上移除磁碟機號。 此外，您無法移除 OEM 磁碟分割的磁碟機號、具有無法辨識 GUID 的 GPT 磁碟分割，或任何特殊、非資料的 GPT 磁碟分割，例如 EFI 系統磁碟分割。
 
 > [!NOTE]
-> 必須選取磁片區，[**移除**] 命令才會成功。 使用 [[選取](select-volume.md)磁片區] 命令來選取磁片，並將焦點移至它。
+> 必須選取磁片區，才能讓 [ **移除** ] 命令成功。 使用 [ [選取](select-volume.md) 磁片區] 命令來選取磁片，並將焦點移至該磁片。
 
 ## <a name="syntax"></a>語法
 
@@ -36,11 +36,11 @@ remove [{letter=<drive> | mount=<path> [all]}] [noerr]
 | 字母 =`<drive>` | 要移除的磁碟機號。 |
 | 掛接 =`<path>` | 要移除的掛接點路徑。 |
 | all | 移除全部目前磁碟機代號及掛接點。 |
-| noerr | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
+| noerr | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 如果沒有這個參數，錯誤會導致 DiskPart 結束，並產生錯誤碼。 |
 
 ### <a name="examples"></a>範例
 
-移除 d:\磁片磁碟機，請輸入：
+移除 d:\磁片磁碟機，輸入：
 
 ```
 remove letter=d

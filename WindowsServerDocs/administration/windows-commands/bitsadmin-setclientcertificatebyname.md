@@ -1,22 +1,22 @@
 ---
 title: bitsadmin setclientcertificatebyname
-description: Bitsadmin setclientcertificatebyname 命令的參考文章，它會指定用戶端憑證的主體名稱，以在 HTTPS (SSL) 要求中用於用戶端驗證。
-ms.topic: article
+description: Bitsadmin setclientcertificatebyname 命令的參考文章，此命令會指定用戶端憑證的主體名稱，以用於 HTTPS (SSL) 要求中的用戶端驗證。
+ms.topic: reference
 ms.assetid: f308a6d9-d0da-48be-ae41-eced14b3cccb
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3d51924153af90991c9417307d1f57e5d745dfa3
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ac3a05733f10853074d111c8995879922440f833
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87893256"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031326"
 ---
 # <a name="bitsadmin-setclientcertificatebyname"></a>bitsadmin setclientcertificatebyname
 
-在 HTTPS (SSL) 要求中指定用戶端憑證的主體名稱，以用於用戶端驗證。
+指定用戶端憑證的主體名稱，以用於 HTTPS (SSL) 要求中的用戶端驗證。
 
 ## <a name="syntax"></a>語法
 
@@ -35,7 +35,7 @@ bitsadmin /setclientcertificatebyname <job> <store_location> <store_name> <subje
 
 ## <a name="examples"></a>範例
 
-若要在 HTTPS 中指定要用於用戶端驗證的用戶端憑證*我憑證*名稱 (SSL) 名為*myDownloadJob*的作業要求：
+若要在 HTTPS 中指定要用於用戶端驗證的用戶端憑證 *myCertificate* 名稱，請在名為 *myDownloadJob*的工作 (SSL) 要求：
 
 ```
 bitsadmin /setclientcertificatebyname myDownloadJob 1 MY myCertificate
