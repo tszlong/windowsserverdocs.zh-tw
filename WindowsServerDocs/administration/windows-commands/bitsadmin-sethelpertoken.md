@@ -1,24 +1,24 @@
 ---
 title: bitsadmin sethelpertoken
-description: Bitsadmin sethelpertoken 命令的參考文章，其會設定目前命令提示字元的主要權杖 (或任意本機使用者帳戶的權杖（如果指定) 做為 BITS 傳送作業的協助程式權杖）。
-ms.topic: article
+description: Bitsadmin sethelpertoken 命令的參考文章，如果指定) 作為 BITS 傳送工作的協助程式權杖，則會將目前命令提示字元的主要權杖 (或任意本機使用者帳戶的權杖。
+ms.topic: reference
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: 15d0288919b16c038c3b310b6ea42c184b11b5a8
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 37adfc2145089a871dca819745160794ed93a68e
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87893152"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89028526"
 ---
 # <a name="bitsadmin-sethelpertoken"></a>bitsadmin sethelpertoken
 
-如果指定) 做為 BITS 傳送作業的協助程式 [權杖](/windows/win32/bits/helper-tokens-for-bits-transfer-jobs)，則設定目前命令提示字元的主要權杖 (或任意本機使用者帳戶的權杖。
+如果指定) 作為 BITS 傳送工作的協助程式 [權杖](/windows/win32/bits/helper-tokens-for-bits-transfer-jobs)，則設定目前命令提示字元的主要權杖 (或任意本機使用者帳戶的權杖。
 
 > [!NOTE]
-> BITS 3.0 和更早版本不支援此命令。
+> BITS 3.0 及更早版本不支援此命令。
 
 ## <a name="syntax"></a>語法
 

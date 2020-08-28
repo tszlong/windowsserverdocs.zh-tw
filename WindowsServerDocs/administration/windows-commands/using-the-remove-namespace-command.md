@@ -1,20 +1,20 @@
 ---
-title: 移除-Namespace
-description: 移除-Namespace 的參考文章，它會移除自訂命名空間。
-ms.topic: article
+title: 移除-命名空間
+description: 移除命名空間的參考文章，移除自訂命名空間。
+ms.topic: reference
 ms.assetid: 4eb758b6-8519-4e26-9fe0-2e19bb0e8702
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a85552109f85e0c4de5f3d09c9c0335dccc5af1f
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 3bef563a91ed4eb445cdf3c555025873078d2716
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87891901"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023082"
 ---
-# <a name="using-the-remove-namespace-command"></a>使用 remove-Namespace 命令
+# <a name="using-the-remove-namespace-command"></a>使用 remove 命名空間命令
 
 > 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -27,11 +27,11 @@ wdsutil /remove-Namespace /Namespace:<Namespace name> [/Server:<Server name>] [/
 ### <a name="parameters"></a>參數
 |參數|描述|
 |-------|--------|
-|命名空間<Namespace name>|指定命名空間的名稱。 這不是易記的名稱，而且必須是唯一的。<p>-   **部署伺服器角色服務**：命名空間名稱的語法是/NAMESPACE： WDS： <ImageGroup> / <ImageName> / <Index> 。 例如： **WDS： ImageGroup1/install .wim/1**<br />-   **傳輸伺服器角色服務**：此值必須符合在伺服器上建立命名空間時所提供的名稱。|
-|[/Server： <Server name> ]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或 (FQDN) 的完整功能變數名稱。 如果未指定伺服器名稱，則會使用本機伺服器。|
-|/force|立即移除命名空間，並終止所有用戶端。 請注意，除非您指定 **/force**，否則現有的用戶端可以完成轉移，但新的用戶端無法加入。|
+|命名空間<Namespace name>|指定命名空間的名稱。 這不是易記的名稱，而且必須是唯一的。<p>-   **部署伺服器角色服務**：命名空間名稱的語法為/NAMESPACE： WDS： <ImageGroup> / <ImageName> / <Index> 。 例如： **WDS： ImageGroup1/install .wim/1**<br />-   **傳輸伺服器角色服務**：此值必須符合在伺服器上建立命名空間時所提供的名稱。|
+|[/Server： <Server name> ]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱 (FQDN) 。 如果未指定伺服器名稱，則會使用本機伺服器。|
+|/force|立即移除命名空間，並終止所有用戶端。 請注意，除非您指定 **/force**，否則現有的用戶端可以完成傳送，但新的用戶端無法加入。|
 ## <a name="examples"></a>範例
-若要停止命名空間 (目前的用戶端可以完成轉移，但新的用戶端無法加入) ，請輸入：
+若要停止命名空間 (目前的用戶端可以完成傳送，但新的用戶端無法加入) ，請輸入：
 ```
 wdsutil /remove-Namespace /Namespace:Custom Auto 1
 ```

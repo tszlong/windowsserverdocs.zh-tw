@@ -1,18 +1,18 @@
 ---
 title: list providers
-description: '[清單提供者] 命令的參考文章，其中列出目前在系統上註冊的陰影複製提供者。'
-ms.topic: article
+description: 列出提供者命令的參考文章，其中列出目前在系統上註冊的陰影複製提供者。
+ms.topic: reference
 ms.assetid: 844b4036-c0b9-449d-8347-7d58ef9bf16d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 81ca0a90276eeab824846f441ea9aa2a7396a009
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: cab1277a79f71268b5e82702b39887b541918907
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887625"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89028176"
 ---
 # <a name="list-providers"></a>list providers
 
@@ -26,7 +26,7 @@ list providers
 
 ### <a name="examples"></a>範例
 
-若要列出目前已註冊的陰影複製提供者，請輸入：
+若要列出目前註冊的陰影複製提供者，請輸入：
 
 ```
 list providers

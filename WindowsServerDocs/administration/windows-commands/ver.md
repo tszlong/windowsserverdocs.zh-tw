@@ -1,18 +1,18 @@
 ---
 title: ver
-description: Ver 的參考文章，會顯示作業系統版本號碼。
-ms.topic: article
+description: 適用于 ver 的參考文章，會顯示作業系統版本號碼。
+ms.topic: reference
 ms.assetid: 5a9c6cd4-b67d-4b30-8c56-5f9798eafd2a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: de080395c2e26f03371e0b27609238b66d7317f5
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 543aceee52be60b6dc90509c326ba1172b2d1ca6
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87891889"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023042"
 ---
 # <a name="ver"></a>ver
 
@@ -20,7 +20,7 @@ ms.locfileid: "87891889"
 
 顯示作業系統版本號碼。
 
-Windows 命令提示字元 ( # A0) ，但 PowerShell 中不支援此命令。
+Windows 命令提示字元 ( # A0) 中支援這個命令，但在 PowerShell 中則不支援。
 
 
 
@@ -44,7 +44,7 @@ ver
 ver
 ```
 
-Ver 命令無法在 PowerShell 中運作。 若要從 PowerShell 取得 OS 版本，請輸入：
+Ver 命令在 PowerShell 中無法運作。 若要從 PowerShell 取得作業系統版本，請輸入：
 
 ```powershell
 $PSVersionTable.BuildVersion

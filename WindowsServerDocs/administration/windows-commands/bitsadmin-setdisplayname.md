@@ -1,18 +1,18 @@
 ---
 title: bitsadmin setdisplayname
-description: Bitsadmin setdisplayname 命令的參考文章，其會設定指定之作業的顯示名稱。
-ms.topic: article
+description: Bitsadmin setdisplayname 命令的參考文章，此命令會設定指定作業的顯示名稱。
+ms.topic: reference
 ms.assetid: 13706c53-fb5f-4879-b5ca-82531361d6e1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ac83fee33703555f1a8ba4b65ae8dc4d0f947916
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 4726d4d1dec867e72ab542222a71289994ed12fd
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87893164"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89028536"
 ---
 # <a name="bitsadmin-setdisplayname"></a>bitsadmin setdisplayname
 
@@ -29,11 +29,11 @@ bitsadmin /setdisplayname <job> <display_name>
 | 參數 | 描述 |
 | --------- | ----------- |
 | 作業 | 作業的顯示名稱或 GUID。 |
-| display_name | 用來做為特定工作之顯示名稱的文字。 |
+| display_name | 用來當做特定工作之顯示名稱的文字。 |
 
 ## <a name="examples"></a>範例
 
-若要將作業的顯示名稱設定為*myDownloadJob*：
+若要將作業的顯示名稱設定為 *myDownloadJob*：
 
 ```
 bitsadmin /setdisplayname myDownloadJob

@@ -1,22 +1,22 @@
 ---
-title: 新增-D g e
-description: D g e 的參考文章，它會從現有的開機映射建立新的探索映射。
-ms.topic: article
+title: 新 G e
+description: 新 G e 的參考文章，可從現有的開機映射建立新的探索映射。
+ms.topic: reference
 ms.assetid: ede9fbbb-0bba-4309-8c21-3cc13e1dc3cd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b6c84735b868af92c6a3f2f16dc872e12c9f38c1
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 94860a992dcc781cfdbf07916cc383526a12202b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892406"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023272"
 ---
-# <a name="new-discoverimage"></a>新增-D g e
+# <a name="new-discoverimage"></a>新 G e
 
-從現有的開機映射建立新的探索映射。 探索映射是強制在 Windows 部署服務模式下啟動 Setup.exe 程式，然後探索 Windows 部署服務伺服器的開機映射。 這些映射通常是用來將映射部署到無法開機至 PXE 的電腦。 如需詳細資訊，請參閱 ([https://go.microsoft.com/fwlink/?LinkId=115311](https://go.microsoft.com/fwlink/?LinkId=115311)) 建立映射。
+從現有的開機映射建立新的探索映射。 探索映射是強制 Setup.exe 程式在 Windows 部署服務模式下啟動，然後探索 Windows 部署服務伺服器的開機映射。 這些映射通常是用來將映射部署到無法開機至 PXE 的電腦。 如需詳細資訊，請參閱建立映射 ([https://go.microsoft.com/fwlink/?LinkId=115311](https://go.microsoft.com/fwlink/?LinkId=115311)) 。
 
 ## <a name="syntax"></a>語法
 
@@ -37,19 +37,19 @@ WDSUTIL [Options] /New-DiscoverImage [/Server:<Server name>]
 
 |        參數         |                                                                                                                                                                                                                                                                                                                                                                                                                       描述                                                                                                                                                                                                                                                                                                                                                                                                                       |
 |--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [/Server： \<Server name> ] |                                                                                                                                                                                                                                                                                                                                     指定伺服器的名稱。 這可以是 NetBIOS 名稱或 (FQDN) 的完整功能變數名稱。 如果未指定伺服器名稱，則會使用本機伺服器。                                                                                                                                                                                                                                                                                                                                     |
-|   包\<Image name>   |                                                                                                                                                                                                                                                                                                                                                                                                      指定來源開機映射的名稱。                                                                                                                                                                                                                                                                                                                                                                                                       |
+| [/Server： \<Server name> ] |                                                                                                                                                                                                                                                                                                                                     指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱 (FQDN) 。 如果未指定伺服器名稱，則會使用本機伺服器。                                                                                                                                                                                                                                                                                                                                     |
+|   圖符\<Image name>   |                                                                                                                                                                                                                                                                                                                                                                                                      指定來源開機映射的名稱。                                                                                                                                                                                                                                                                                                                                                                                                       |
 |    /Architecture： {x86    |                                                                                                                                                                                                                                                                                                                                                                                                                          ia64                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| [/Filename： \<File name> ] |                                                                                                                                                                                                                                                                                                                                                                         如果無法以名稱唯一識別映射，您就必須使用這個選項來指定檔案名。                                                                                                                                                                                                                                                                                                                                                                          |
-|    /DestinationImage     | 指定目的地映射的設定。 您可以使用下列選項來指定設定：</br>-/FilePath： < 檔案路徑和名稱>-設定新映射的完整檔案路徑。</br>-[/Name： \<Name> ]-設定影像的顯示名稱。 如果未指定顯示名稱，則會使用來源影像的顯示名稱。</br>-[/Description： \<Description> ]-設定影像的描述。</br>-[/WDSServer： \<Server name> ]-指定從指定的映射開機的所有用戶端都應連線的伺服器名稱，以下載安裝映射。 根據預設，所有啟動此映射的用戶端都會發現有效的 Windows 部署服務伺服器。 使用此選項會略過探索功能，並強制開機用戶端與指定的伺服器連線。</br>-[/Overwrite： {Yes |
+| [/Filename： \<File name> ] |                                                                                                                                                                                                                                                                                                                                                                         如果映射無法依名稱唯一識別，您必須使用此選項來指定檔案名。                                                                                                                                                                                                                                                                                                                                                                          |
+|    /DestinationImage     | 指定目的地映射的設定。 您可以使用下列選項來指定設定：</br>-/FilePath： < 檔案路徑和名稱>-設定新映射的完整檔案路徑。</br>-[/Name： \<Name> ]-設定影像的顯示名稱。 如果未指定顯示名稱，將會使用來源影像的顯示名稱。</br>-[/Description： \<Description> ]-設定影像的描述。</br>-[/WDSServer： \<Server name> ]-指定從指定映射開機的所有用戶端都必須聯絡才能下載安裝映射的伺服器名稱。 根據預設，啟動此映射的所有用戶端將會探索有效的 Windows 部署服務伺服器。 使用這個選項會略過探索功能，並強制開機的用戶端連接到指定的伺服器。</br>-[/Overwrite： {Yes |
 
 ## <a name="examples"></a>範例
 
-若要從開機映射建立探索映射，並將其命名為 WinPEDiscover，請輸入：
+若要從開機映射建立探索映射並將它命名為 WinPEDiscover，請輸入：
 ```
 WDSUTIL /New-DiscoverImage /Image:WinPE boot image /Architecture:x86 /DestinationImage /FilePath:C:\Temp\WinPEDiscover.wim
 ```
-若要從開機映射建立探索映射，並使用指定的設定將其命名為 WinPEDiscover，請輸入：
+若要從開機映射建立探索映射，並使用指定的設定將它命名為 WinPEDiscover，請輸入：
 ```
 WDSUTIL /Verbose /Progress /New-DiscoverImage /Server:MyWDSServer
 /Image:WinPE boot image /Architecture:x64 /Filename:boot.wim /DestinationImage /FilePath:\\Server\Share\WinPEDiscover.wim

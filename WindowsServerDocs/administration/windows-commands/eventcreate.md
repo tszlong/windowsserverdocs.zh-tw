@@ -1,18 +1,18 @@
 ---
 title: eventcreate
 description: Eventcreate 命令的參考文章，可讓系統管理員在指定的事件記錄檔中建立自訂事件。
-ms.topic: article
+ms.topic: reference
 ms.assetid: f2b1b26d-a70e-49a6-832b-91eb5a1a159a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bf5cc7e1c36dc0af7325172325a55edb314664ab
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 374dd015cdccbac308fa099854e46765a672ef9f
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890590"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035196"
 ---
 # <a name="eventcreate"></a>eventcreate
 
@@ -31,19 +31,19 @@ eventcreate [/s <computer> [/u <domain\user> [/p <password>]] {[/l {APPLICATION|
 
 | 參數 | 描述 |
 | --------- |------------ |
-| /s`<computer>` | 指定遠端電腦的名稱或 IP 位址， (不要使用反斜線) 。 預設是本機電腦。 |
-| u`<domain\user>` | 以或指定之使用者的帳戶許可權來執行命令 `<user>` `<domain\user>` 。 預設為發出命令之電腦上目前登入使用者的許可權。 |
-| /p`<password>` | 指定 **/u**參數中指定之使用者帳戶的密碼。 |
-| /l`{APPLICATION | SYSTEM}` | 指定將建立事件的事件記錄檔名稱。 有效的記錄檔名稱為**APPLICATION**或**SYSTEM**。 |
-| /so`<srcname>` | 指定事件要使用的來源。 有效的來源可以是任何字串，而且應該代表正在產生事件的應用程式或元件。 |
-| 一起`{ERROR | WARNING | INFORMATION | SUCCESSAUDIT | FAILUREAUDIT}` | 指定要建立的事件種類。 有效的類型為**ERROR**、 **WARNING**、 **INFORMATION**、 **SUCCESSAUDIT**和**FAILUREAUDIT**。 |
-| /id`<eventID>` | 指定事件的事件識別碼。 有效的識別碼是從1到1000的任何數位。 |
-| /d`<description>` | 指定要用於新建立事件的描述。 |
+| /s `<computer>` | 指定遠端電腦的名稱或 IP 位址 (不要使用反斜線) 。 預設是本機電腦。 |
+| u `<domain\user>` | 使用或所指定之使用者的帳戶許可權來執行命令 `<user>` `<domain\user>` 。 預設值是發出命令的電腦上目前登入之使用者的許可權。 |
+| /p `<password>` | 指定 **/u** 參數中指定之使用者帳戶的密碼。 |
+| /l `{APPLICATION | SYSTEM}` | 指定將在其中建立事件的事件記錄檔名稱。 有效的記錄檔名稱是 **應用程式** 或 **系統**。 |
+| /so `<srcname>` | 指定事件要使用的來源。 有效的來源可以是任何字串，而且應該表示產生事件的應用程式或元件。 |
+| 一起 `{ERROR | WARNING | INFORMATION | SUCCESSAUDIT | FAILUREAUDIT}` | 指定要建立的事件種類。 有效的類型為 **ERROR**、 **WARNING**、 **INFORMATION**、 **SUCCESSAUDIT**和 **FAILUREAUDIT**。 |
+| /id `<eventID>` | 指定事件的事件識別碼。 有效的識別碼是從1到1000的任何數位。 |
+| /d `<description>` | 指定要用於新建立事件的描述。 |
 | /? | 在命令提示字元顯示說明。 |
 
 ### <a name="examples"></a>範例
 
-下列範例會示範如何使用**eventcreate**命令：
+下列範例會示範如何使用 **eventcreate** 命令：
 
 ```
 eventcreate /t error /id 100 /l application /d Create event in application log

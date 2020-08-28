@@ -1,18 +1,18 @@
 ---
 title: bootcfg copy
-description: 適用于 bootcfg copy 命令的參考文章，它會建立現有開機專案的複本，您可以在其中新增命令列選項。
-ms.topic: article
+description: 適用于 bootcfg copy 命令的參考文章，此命令會複製現有的開機專案，讓您可以新增命令列選項。
+ms.topic: reference
 ms.assetid: 2a236c2a-8675-444d-b695-9cbc9aff643b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5082f5d7e0cd585039b0ceb198052d528f1170cc
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 03ecf61074b19f161ea98111f3500f5920c72de9
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880726"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034536"
 ---
 # <a name="bootcfg-copy"></a>bootcfg copy
 
@@ -31,15 +31,15 @@ bootcfg /copy [/s <computer> [/u <domain>\<user> /p <password>]] [/d <descriptio
 | 參數 | 描述 |
 | --------- | ----------- |
 | `/s <computer>` | 指定遠端電腦的名稱或 IP 位址 (不要使用反斜線) 。 預設是本機電腦。 |
-| `/u <domain>\<user>`  | 以或指定之使用者的帳戶許可權來執行命令 `<user>` `<domain>\<user>` 。 預設為發出命令之電腦上目前登入使用者的許可權。 |
-| `/p <password>` | 指定 **/u**參數中指定之使用者帳戶的密碼。 |
+| `/u <domain>\<user>`  | 使用或所指定之使用者的帳戶許可權來執行命令 `<user>` `<domain>\<user>` 。 預設值是發出命令的電腦上目前登入之使用者的許可權。 |
+| `/p <password>` | 指定 **/u** 參數中指定之使用者帳戶的密碼。 |
 | `/d <description>` | 指定新作業系統專案的描述。 |
-| `/id <osentrylinenum>` | 在新增作業系統載入選項的 Boot.ini 檔案的 [作業系統] 區段中，指定作業系統專案行號。 [作業系統] 區段標頭後面的第一行是1。 |
+| `/id <osentrylinenum>` | 在新增作業系統載入選項的 Boot.ini 檔案的 [作業系統] 區段中，指定作業系統專案行號。 [作業系統] 區段標頭之後的第一行是1。 |
 | /? | 在命令提示字元顯示說明。 |
 
 ## <a name="examples"></a>範例
 
-若要複製開機專案1，並輸入 \ABC Server \ 作為描述：
+若要複製開機專案1並輸入 \ABC Server \ 作為描述：
 
 ```
 bootcfg /copy /d \ABC Server\ /id 1

@@ -1,18 +1,18 @@
 ---
 title: 取代-影像
-description: 取代-映射的參考文章，會以該映射的新版本取代現有的映射。
-ms.topic: article
+description: 取代映射的參考文章，會以該映射的新版本取代現有的映射。
+ms.topic: reference
 ms.assetid: 68ded3df-e309-420f-9f5d-caeb609385a5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 599b1141d857d1fe5e70eab879af0f456dc13bea
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 405a8465c043250ee3177febc2ceab9b50b924b4
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87891894"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023062"
 ---
 # <a name="using-the-replace-image-command"></a>使用取代映射命令
 
@@ -20,7 +20,7 @@ ms.locfileid: "87891894"
 
 以該映射的新版本取代現有的映射。
 ## <a name="syntax"></a>語法
-開機映射：
+針對開機映射：
 ```
 wdsutil [Options] /replace-Imagmedia:<Image name> [/Server:<Server name>]
    mediatype:Boot
@@ -46,12 +46,12 @@ wdsutil [Options] /replace-Imagmedia:<Image name> [/Server:<Server name>]
 ### <a name="parameters"></a>參數
 |參數|描述|
 |-------|--------|
-媒介<Image name>|指定要取代之影像的名稱。|
-|[/Server： <Server name> ]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或 (FQDN) 的完整功能變數名稱。 如果未指定伺服器名稱，則會使用本機伺服器。|
-媒體： {Boot &#124; 安裝}|指定要取代的影像類型。|
-|/Architecture： {x86 &#124; ia64 &#124; x64}|指定要取代之影像的架構。 因為不同架構中的不同開機映射可能會有相同的映射名稱，所以指定架構可確保更換正確的映射。|
-|[/Filename： <File name> ]|如果無法以名稱唯一識別映射，您就必須使用這個選項來指定檔案名。|
-|/replacementImage|指定取代映射的設定。 您可以使用下列選項來設定這些設定：<p>-mediaFile： <file path> -指定新 .wim 檔案的名稱和位置 (完整路徑) 。<br />-[/SourceImage： <image name> ]-如果 .wim 檔案包含多個映射，則指定要使用的映射。 此選項只適用于安裝映射。<br />-[/Name： <Image name> ] 設定影像的顯示名稱。<br />-[/Description： <Image description> ]-設定影像的描述。|
+媒體：<Image name>|指定要取代之映射的名稱。|
+|[/Server： <Server name> ]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱 (FQDN) 。 如果未指定伺服器名稱，則會使用本機伺服器。|
+媒體媒體： {Boot &#124; Install}|指定要取代的影像類型。|
+|/Architecture： {x86 &#124; ia64 &#124; x64}|指定要取代之映射的架構。 由於不同架構的不同開機映射可以有相同的映射名稱，因此指定架構可確保取代正確的映射。|
+|[/Filename： <File name> ]|如果映射無法依名稱唯一識別，您必須使用此選項來指定檔案名。|
+|/replacementImage|指定取代映射的設定。 您可以使用下列選項來設定這些設定：<p>-mediaFile： <file path> 指定新 .wim 檔案的名稱和位置 (完整路徑) 。<br />-[/SourceImage： <image name> ]-指定 .wim 檔案包含多個映射時所要使用的映射。 此選項只適用于安裝映射。<br />-[/Name： <Image name> ] 設定影像的顯示名稱。<br />-[/Description： <Image description> ]-設定影像的描述。|
 ## <a name="examples"></a>範例
 若要取代開機映射，請輸入下列其中一項：
 ```
@@ -69,7 +69,7 @@ wdsutil /verbose /Progress /replace-Imagmedia:Windows Vista Pro /Server:MyWDSSer
 - [命令列語法索引鍵](command-line-syntax-key.md) 
 [使用新增映射命令](using-the-add-image-command.md) 
 [使用複製映射命令](using-the-copy-image-command.md) 
-[使用匯出-映射命令](using-the-export-image-command.md) 
+[使用 Export-Image 命令](using-the-export-image-command.md) 
 [使用取得映射命令](using-the-get-image-command.md) 
 [使用取代映射命令](using-the-replace-image-command.md) 
-[子命令：設定-影像](subcommand-set-image.md)
+[子命令：設定映射](subcommand-set-image.md)

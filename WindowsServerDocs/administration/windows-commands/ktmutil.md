@@ -1,22 +1,22 @@
 ---
 title: ktmutil
-description: 適用于 ktmutil 命令的參考文章，它會啟動核心交易管理員公用程式。
-ms.topic: article
+description: 用於啟動核心交易管理員公用程式之 ktmutil 命令的參考文章。
+ms.topic: reference
 ms.assetid: 53bc56df-f0e5-443b-ab20-bbf8b11d4a9a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ff65e7e228f4876e51e3132d3a430ceec3837053
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 2bc69964d0fbf7ad93a91b16f78ed86515e537b3
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887667"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89028256"
 ---
 # <a name="ktmutil"></a>ktmutil
 
-啟動核心交易管理員公用程式。 如果使用時不含參數，則**ktmutil**會顯示可用的子命令。
+啟動核心交易管理員公用程式。 如果使用時不含參數，則 **ktmutil** 會顯示可用的子命令。
 
 ## <a name="syntax"></a>語法
 
@@ -34,7 +34,7 @@ ktmutil forget
 ## <a name="examples"></a>範例
 
 
-若要強制具有 GUID 311a9209-03f4-11dc-918f-00188b8f707b 的 Indoubt 交易認可，請輸入：
+若要強制使用 GUID 311a9209-03f4-11dc-918f-00188b8f707b 認可 Indoubt 交易，請輸入：
 
 ```
 ktmutil force commit {311a9209-03f4-11dc-918f-00188b8f707b}

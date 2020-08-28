@@ -1,24 +1,24 @@
 ---
 title: bitsadmin getsecurityflags
-description: Bitsadmin getsecurityflags 命令的參考文章，它會報告 URL 重新導向的 HTTP 安全性旗標，以及在傳送期間在伺服器憑證上執行的檢查。
-ms.topic: article
+description: Bitsadmin getsecurityflags 命令的參考文章，此命令會在傳輸期間報告 URL 重新導向的 HTTP 安全性旗標和伺服器憑證上執行的檢查。
+ms.topic: reference
 ms.assetid: c2e73519-34f4-487b-af11-97d5d08ef9bb
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ec6b5f4a52f1ecbf40b9374dd96914d4334eaf07
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 39e5df028d687de22e8e6bf54731bf0067cd5319
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87893866"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034856"
 ---
 # <a name="bitsadmin-getsecurityflags"></a>bitsadmin getsecurityflags
 
 > 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-報告用於 URL 重新導向的 HTTP 安全性旗標，以及在傳送期間在伺服器憑證上執行的檢查。
+報告傳輸期間在伺服器憑證上執行的 URL 重新導向和檢查的 HTTP 安全性旗標。
 
 ## <a name="syntax"></a>語法
 
@@ -34,7 +34,7 @@ bitsadmin /getsecurityflags <job>
 
 ## <a name="examples"></a>範例
 
-若要從名為*myDownloadJob*的作業中取出安全性旗標：
+若要從名為 *myDownloadJob*的作業取出安全性旗標：
 
 ```
 bitsadmin /getsecurityflags myDownloadJob

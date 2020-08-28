@@ -1,24 +1,24 @@
 ---
 title: 移除-MulticastTransmission
-description: MulticastTransmission 的參考文章，這會停用映射的多播傳輸。
-ms.topic: article
+description: MulticastTransmission 的參考文章，可停用映射的多播傳輸。
+ms.topic: reference
 ms.assetid: 9a7f5c31-bfbf-425d-9129-a6f9173fe83d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8c3de852ab09b2cc17badf9b3aefcca9b7f4d069
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: cfb3a83c975aa14752e2a9538079f67a5dd94b8e
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87891913"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023122"
 ---
 # <a name="using-the-remove-multicasttransmission-command"></a>使用 MulticastTransmission 命令
 
 > 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-停用映射的多播傳輸。 除非您指定 **/force**，否則現有的用戶端將會完成映射傳輸，但不會允許新的用戶端加入。
+停用映射的多播傳輸。 除非您指定 **/force**，否則現有的用戶端將會完成映射傳送，但不允許新的用戶端加入。
 
 ## <a name="syntax"></a>語法
 **Windows Server 2008**
@@ -44,15 +44,15 @@ wdsutil [Options] /remove-MulticastTransmissiomedia:<Image name>
 ### <a name="parameters"></a>參數
 |參數|描述|
 |-------|--------|
-媒介<Image name>|指定映像的名稱。|
-|[/Server： <Server name> ]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或 (FQDN) 的完整功能變數名稱。 如果未指定伺服器名稱，則會使用本機伺服器。|
-媒體： {Install&#124;Boot}|指定映射類型。 請注意，此選項必須設定為 [針對 Windows Server 2008**安裝**]。|
-|/Architecture： {x86 &#124; ia64 &#124; x64}|指定與要啟動之傳輸相關聯之開機映射的架構。 由於不同架構中的開機映射可能會有相同的映射名稱，因此您應該指定架構，以確保使用正確的傳輸。|
-|\mediaGroup： <Image group name> ]|指定包含影像的映射群組。 如果未指定映射組名，且伺服器上只存在一個映射群組，則會使用該映射群組。 如果伺服器上有一個以上的映射群組，您就必須使用這個選項來指定映射組名。|
-|[/Filename： <File name> ]|指定檔案名稱。 如果來源映射無法以名稱唯一識別，您就必須使用這個選項來指定檔案名。|
-|/force|移除傳輸並終止所有用戶端。 除非您指定 **/force**選項的值，否則現有的用戶端可以完成映射傳輸，但新的用戶端無法加入。|
+媒體：<Image name>|指定映像的名稱。|
+|[/Server： <Server name> ]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱 (FQDN) 。 如果未指定伺服器名稱，則會使用本機伺服器。|
+媒體媒體： {安裝&#124;Boot}|指定影像類型。 請注意，此選項必須設定為 Windows Server 2008 的 [ **安裝** ]。|
+|/Architecture： {x86 &#124; ia64 &#124; x64}|指定與要啟動的傳輸相關聯之開機映射的架構。 由於不同架構中的開機映射可以有相同的映射名稱，因此您應該指定架構，以確保使用正確的傳輸。|
+|\mediaGroup： <Image group name> ]|指定包含映射的映射群組。 如果未指定映射組名，且伺服器上只有一個映射群組，則會使用該映射群組。 如果伺服器上有一個以上的映射群組，您必須使用此選項來指定映射組名。|
+|[/Filename： <File name> ]|指定檔案名稱。 如果來源映射無法依名稱唯一識別，您必須使用此選項來指定檔案名。|
+|/force|移除傳輸並終止所有用戶端。 除非您指定 **/force** 選項的值，否則現有的用戶端可以完成映射傳送，但無法加入新的用戶端。|
 ## <a name="examples"></a>範例
-若要停止命名空間 (目前的用戶端將會完成傳輸，但新的用戶端將無法加入) ，請輸入：
+若要停止命名空間 (目前的用戶端會完成傳輸，但新的用戶端將無法加入) ，請輸入：
 ```
 wdsutil /remove-MulticastTransmissiomedia:Vista with Office
 /Imagetype:Install
@@ -72,4 +72,4 @@ wdsutil /remove-MulticastTransmission /Server:MyWDSServer
 [使用 AllMulticastTransmissions 命令](using-the-get-allmulticasttransmissions-command.md) 
 [使用 MulticastTransmission 命令](using-the-get-multicasttransmission-command.md) 
 [使用 MulticastTransmission 命令](using-the-new-multicasttransmission-command.md) 
-[子命令： start-MulticastTransmission](subcommand-start-multicasttransmission.md)
+[子命令：啟動-MulticastTransmission](subcommand-start-multicasttransmission.md)

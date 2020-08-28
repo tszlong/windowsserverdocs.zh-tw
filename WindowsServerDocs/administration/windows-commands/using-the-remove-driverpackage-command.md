@@ -1,18 +1,18 @@
 ---
 title: 移除-DriverPackage
-description: DriverPackage 的參考文章，它會從伺服器移除驅動程式套件。
-ms.topic: article
+description: DriverPackage 的參考文章，此文章會從伺服器移除驅動程式套件。
+ms.topic: reference
 ms.assetid: 6b201e91-0d44-4e4a-8252-8b0235df1002
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d6f391ed7a5e2a991c0d38e35ac3d08565b32765
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 5745b83fdb817f90a835fe2243aff21f9892be47
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881222"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023202"
 ---
 # <a name="remove-driverpackage"></a>移除-DriverPackage
 
@@ -30,7 +30,7 @@ wdsutil /remove-DriverPackage [/Server:<Server name>] {/DriverPackage:<Package N
 |-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [/Server： <Server name> ] |              指定伺服器的名稱。 這可以是 NetBIOS 名稱或 FQDN。 如果未指定伺服器名稱，則會使用本機伺服器。              |
 | [/DriverPackage： <Name> ] |                                                        指定要移除之驅動程式套件的名稱。                                                         |
-|    [/PackageId： <ID> ]    | 指定要移除之驅動程式套件的 Windows 部署服務識別碼。 如果驅動程式套件無法以名稱唯一識別，您就必須指定識別碼。 |
+|    [/PackageId： <ID> ]    | 指定要移除之驅動程式套件的 Windows 部署服務識別碼。 如果驅動程式套件無法依名稱唯一識別，則必須指定識別碼。 |
 
 ## <a name="examples"></a>範例
 若要查看影像的相關資訊，請輸入下列其中一項：

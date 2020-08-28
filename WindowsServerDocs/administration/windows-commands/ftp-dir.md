@@ -1,18 +1,18 @@
 ---
 title: ftp dir
-description: Ftp dir 命令的參考文章，它會顯示遠端電腦上的目錄檔案和子目錄清單。
-ms.topic: article
+description: Ftp dir 命令的參考文章，此命令會顯示遠端電腦上的目錄檔案和子目錄清單。
+ms.topic: reference
 ms.assetid: a29a92a5-7b79-4e6e-95cf-2ccb38bb6fb2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0a4f65cee67ec91b6871649fece4f580684c2e3f
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 7954e389772195d153e5a21fda96da883300b972
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889479"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035056"
 ---
 # <a name="ftp-dir"></a>ftp dir
 
@@ -30,18 +30,18 @@ dir [<remotedirectory>] [<localfile>]
 
 | 參數 | 描述 |
 | ------- | -------- |
-| `[<remotedirectory>]` | 指定您要查看其清單的目錄。 如果未指定任何目錄，則會使用遠端電腦上的目前工作目錄。 |
-| `[<localfile>]` | 指定用來儲存目錄清單的本機檔案。 如果未指定本機檔案，結果會顯示在畫面上。 |
+| `[<remotedirectory>]` | 指定您想要查看清單的目錄。 如果未指定目錄，則會使用遠端電腦上的目前工作目錄。 |
+| `[<localfile>]` | 指定要在其中儲存目錄清單的本機檔案。 如果未指定本機檔案，結果會顯示在畫面上。 |
 
 ### <a name="examples"></a>範例
 
-若要在遠端電腦上顯示*dir1*的目錄清單，請輸入：
+若要在遠端電腦上顯示 *dir1* 的目錄清單，請輸入：
 
 ```
 dir dir1
 ```
 
-若要將遠端電腦上目前目錄的清單儲存在本機檔案*dirlist.txt*中，請輸入：
+若要在本機檔案 *dirlist.txt*中儲存遠端電腦上當前目錄的清單，請輸入：
 
 ```
 dir . dirlist.txt
@@ -51,4 +51,4 @@ dir . dirlist.txt
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [其他 FTP 指引](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [其他 FTP 指導方針](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

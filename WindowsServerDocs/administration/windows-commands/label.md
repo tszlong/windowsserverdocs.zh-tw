@@ -1,22 +1,22 @@
 ---
 title: label
-description: 標籤命令的參考文章，會建立、變更或刪除磁片區標籤， (也就是磁片的名稱) 。
-ms.topic: article
+description: 標籤命令的參考文章，可建立、變更或刪除磁片區標籤 (也就是磁片的名稱) 。
+ms.topic: reference
 ms.assetid: bbae8bdd-97d4-4566-9118-7c95aa07645f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e7656078b87a74db789ed85c10be9f30cabfd971
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 486461059e90d0d1e1c6fa413e6db595f82924bb
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887630"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89028196"
 ---
 # <a name="label"></a>label
 
-建立、變更或刪除磁片區標籤 (也就是磁片的名稱) 。 如果使用時不含參數， **label**命令會變更目前的磁片區標籤，或刪除現有的標籤。
+建立、變更或刪除磁片區標籤 (也就是磁片的名稱) 。 如果未使用參數，卷 **標** 命令會變更目前的磁片區標籤，或刪除現有的標籤。
 
 ## <a name="syntax"></a>語法
 
@@ -28,26 +28,26 @@ label [/mp] [<volume>] [<label>]
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| /mp | 指定應該將磁片區視為掛接點或磁片區名稱。 |
-| `<volume>` | 指定 (後面接著冒號) 、掛接點或磁片區名稱的磁碟機號。 如果指定了磁片區名稱， **/mp**參數就是不必要的。 |
+| /mp | 指定應將磁片區視為掛接點或磁片區名稱。 |
+| `<volume>` | 指定磁碟機號 (後面接著冒號) 、掛接點或磁片區名稱。 如果指定了磁片區名稱，則不需要 **/mp** 參數。 |
 | `<label>` | 指定磁片區的標籤。 |
 | /? | 在命令提示字元顯示說明。 |
 
 ## <a name="remarks"></a>備註
 
-- Windows 會顯示磁片區標籤和序號， (如果它有一個) 作為目錄清單的一部分。
+- Windows 會顯示磁片區標籤和序號 (如果它有一個) 作為目錄清單的一部分。
 
-- NTFS 磁片區標籤的長度最多可達32個字元，包括空格。 NTFS 磁片區標籤會保留，並顯示建立標籤時所使用的大小寫。
+- NTFS 磁片區標籤的長度最多可達32個字元，包括空格。 NTFS 磁片區標籤會保留並顯示建立標籤時所使用的大小寫。
 
 ## <a name="examples"></a>範例
 
-若要將磁片磁碟機 A 中包含七月銷售資訊的磁片加上標籤，請輸入：
+若要為磁片磁碟機 A 中包含七月銷售資訊的磁片加上標籤，請輸入：
 
 ```
 label a:sales-july
 ```
 
-若要查看及刪除 C 磁片磁碟機的目前標籤，請遵循下列步驟：
+若要查看並刪除磁片磁碟機 C 的目前標籤，請遵循下列步驟：
 
 1. 在命令提示字元中，輸入：
 
@@ -69,7 +69,7 @@ label a:sales-july
    Delete current volume label (Y/N)?
    ```
 
-3. 按**Y**以刪除目前的標籤，如果您想要保留現有的標籤，則按**N** 。
+3. 按 **Y** 刪除目前的標籤，如果您想要保留現有的標籤，則為 **N** 。
 
 ## <a name="additional-references"></a>其他參考資料
 

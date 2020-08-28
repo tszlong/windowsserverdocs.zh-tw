@@ -1,18 +1,18 @@
 ---
 title: logman create api
-description: Logman create api 命令的參考文章，它會建立 API 追蹤資料收集器。
-ms.topic: article
+description: Logman create api 命令的參考文章，可建立 API 追蹤資料收集器。
+ms.topic: reference
 ms.assetid: 2ecc0a75-2613-464a-8616-c5dc404bb736
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a2e3e9291bcd113ced9c27eb7cc3449f715f9893
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 12d22cb323891f0c227442f959d6f62a52396de4
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887449"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035026"
 ---
 # <a name="logman-create-api"></a>logman create api
 
@@ -30,52 +30,52 @@ logman create api <[-n] <name>> [options]
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| -s`<computer name>` | 在指定的遠端電腦上執行命令。 |
-| -config`<value>` | 指定包含命令選項的設定檔案。 |
-| [-n]`<name>` | 目標物件的名稱。 |
-| -f`<bin|bincirc>` | 指定資料收集器的記錄格式。 |
-| -[-] u`<user [password]>` | 指定要當做執行身分的使用者。 輸入密碼時，會 `*` 產生密碼的提示。 當您在密碼提示字元中輸入密碼時，不會顯示該密碼。 |
-| -m`<[start] [stop] [[start] [stop] [...]]>` | 已變更為手動啟動或停止，而不是排程的開始或結束時間。 |
-| -rf`<[[hh:]mm:]ss>` | 在指定的時間內執行資料收集器。 |
-| -b`<M/d/yyyy h:mm:ss[AM|PM]>` | 在指定的時間開始收集資料。 |
-| -e `<M/d/yyyy h:mm:ss[AM|PM]>` | 在指定的時間結束資料收集。 |
-| -si`<[[hh:]mm:]ss>` | 指定效能計數器資料收集器的取樣間隔。 |
-| -o`<path|dsn!log>` | 指定 SQL 資料庫中的輸出記錄檔或 DSN 和記錄集名稱。 |
-| -[-] r | 在指定的開始和結束時間，每日重複資料收集器。 |
+| -s `<computer name>` | 在指定的遠端電腦上執行命令。 |
+| -config `<value>` | 指定包含命令選項的設定檔。 |
+| [-n] `<name>` | 目標物件的名稱。 |
+| -f `<bin|bincirc>` | 指定資料收集器的記錄檔格式。 |
+| -[-] u `<user [password]>` | 指定要執行的使用者。 輸入 `*` 密碼會產生密碼提示。 當您在密碼提示字元中輸入密碼時，不會顯示該密碼。 |
+| -m `<[start] [stop] [[start] [stop] [...]]>` | 已變更為手動啟動或停止，而不是排程的開始或結束時間。 |
+| -rf `<[[hh:]mm:]ss>` | 執行資料收集器一段指定的時間。 |
+| -b `<M/d/yyyy h:mm:ss[AM|PM]>` | 在指定的時間開始收集資料。 |
+| -e `<M/d/yyyy h:mm:ss[AM|PM]>` | 在指定時間結束資料收集。 |
+| -si `<[[hh:]mm:]ss>` | 指定效能計數器資料收集器的取樣間隔。 |
+| -o `<path|dsn!log>` | 指定 SQL 資料庫中的輸出記錄檔或 DSN 和記錄集名稱。 |
+| -[-] r | 每日在指定的開始和結束時間重複資料收集器。 |
 | -[-] a | 附加現有的記錄檔。 |
 | -[-] 允許 | 覆寫現有的記錄檔。 |
-| -[-] v`<nnnnnn|mmddhhmm>` | 將檔案版本設定資訊附加至記錄檔名稱的結尾。 |
-| -[-] rc`<task>` | 每次關閉記錄檔時，執行指定的命令。 |
-| -[-] max`<value>` | 最大記錄檔大小（MB）或 SQL 記錄檔的最大記錄數目。 |
-| -[-] my.cnf`<[[hh:]mm:]ss>` | 當指定時間時，會在指定的時間已過時建立新的檔案。 未指定時間時，會在超過最大大小時建立新的檔案。 |
-| -y | 對所有問題回答 [是] 而不提示。 |
-| -mods`<path [path [...]]>` | 指定要從中記錄 API 呼叫的模組清單。 |
+| -[-] v `<nnnnnn|mmddhhmm>` | 將檔案版本設定資訊附加至記錄檔名稱的結尾。 |
+| -[-] rc `<task>` | 每次關閉記錄檔時，執行指定的命令。 |
+| -[-] max `<value>` | 最大記錄檔大小（以 MB 為單位）或 SQL 記錄檔的最大記錄數目。 |
+| -[-] my.cnf `<[[hh:]mm:]ss>` | 當指定時間時，會在經過指定的時間時建立新的檔案。 如果未指定時間，當超過大小上限時，就會建立新的檔案。 |
+| -y | 回答所有問題而不提示。 |
+| -mods > `<path [path [...]]>` | 指定要從中記錄 API 呼叫的模組清單。 |
 | -inapis` <module!api [module!api [...]]>` | 指定要包含在記錄中的 API 呼叫清單。 |
-| -exapis`<module!api [module!api [...]]>` | 指定要排除在記錄之外的 API 呼叫清單。 |
-| -[-] ano | 記錄 (-僅 ano) API 名稱，或不只記錄 (-ano) API 名稱。 |
-| -[-] 遞迴 | 記錄 (-遞迴) 或不會以遞迴方式記錄在第一層以外的 ( 遞迴) Api。 |
-| -exe`<value>` | 為 API 追蹤指定可執行檔的完整路徑。 |
+| -exapis `<module!api [module!api [...]]>` | 指定要從記錄中排除的 API 呼叫清單。 |
+| -[-] ano | 記錄 (-只會 ano) 的 API 名稱，或不要記錄 ( ano) API 名稱。 |
+| -[-] 遞迴 | Log (-遞迴) 或不記錄 (-遞迴) Api （遞迴）超過第一層。 |
+| -exe `<value>` | 指定 API 追蹤之可執行檔的完整路徑。 |
 | /? | 顯示即時線上說明。 |
 
 #### <a name="remarks"></a>備註
 
-- 其中列出 [-]，加入額外的連字號 (-) 會將選項否定。
+- 列出 [-] 時，新增額外的連字號 (-) 會否定選項。
 
 ### <a name="examples"></a>範例
 
-若要建立名為 trace_notepad 的 API 追蹤計數器，針對可執行檔 c:\windows\notepad.exe，並將結果放在 c:\notepad.etl 檔案中，請輸入：
+若要建立名為 trace_notepad 的 API 追蹤計數器，可執行檔 c:\windows\notepad.exe，並將結果放在檔案 c:\notepad.etl 中，請輸入：
 
 ```
 logman create api trace_notepad -exe c:\windows\notepad.exe -o c:\notepad.etl
 ```
 
-若要建立名為 trace_notepad 的 API 追蹤計數器，針對可執行檔 c:\windows\notepad.exe，在 c:\windows\system32\advapi32.dll 收集模組所產生的值，請輸入：
+若要建立名為 trace_notepad 的 API 追蹤計數器，請針對可執行檔 c:\windows\notepad.exe，收集模組在 c:\windows\system32\advapi32.dll 所產生的值，並輸入：
 
 ```
 logman create api trace_notepad -exe c:\windows\notepad.exe -mods c:\windows\system32\advapi32.dll
 ```
 
-若要建立名為 trace_notepad 的 API 追蹤計數器，針對可執行檔 c:\windows\notepad.exe （不包括由模組 kernel32.dll 產生的 API 呼叫 TlsGetValue），請輸入：
+若要建立名為 trace_notepad 的 API 追蹤計數器，請針對可執行檔 c:\windows\notepad.exe，排除模組 kernel32.dll 所產生的 API 呼叫 TlsGetValue，請輸入：
 ```
 logman create api trace_notepad -exe c:\windows\notepad.exe -exapis kernel32.dll!TlsGetValue
 ```
