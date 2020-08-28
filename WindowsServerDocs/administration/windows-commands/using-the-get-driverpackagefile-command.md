@@ -1,22 +1,22 @@
 ---
 title: DriverPackageFile
-description: DriverPackageFile 的參考文章，它會顯示驅動程式套件的相關資訊，包括其內含的驅動程式和檔案。
-ms.topic: article
+description: DriverPackageFile 的參考文章，其會顯示驅動程式套件的相關資訊，包括驅動程式套件的相關資訊，包括驅動程式和所包含的檔案。
+ms.topic: reference
 ms.assetid: f01a2c67-7e9c-4aad-b625-383f5a1fca25
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6c80267f90608dca36ef9460eb23b66689022517
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 5d1990cd307aaf5a378eaf55ac95247fe5b92405
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879758"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029656"
 ---
 # <a name="get-driverpackagefile"></a>DriverPackageFile
 
-顯示驅動程式套件的相關資訊，包括其內含的驅動程式和檔案。
+顯示驅動程式套件的相關資訊，包括驅動程式和其包含的檔案。
 
 ## <a name="syntax"></a>語法
 

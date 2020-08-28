@@ -1,18 +1,18 @@
 ---
 title: reg compare
-description: Reg compare 命令的參考文章，它會比較指定的登錄子機碼或專案。
-ms.topic: article
+description: Reg compare 命令的參考文章，可比較指定的登錄子機碼或專案。
+ms.topic: reference
 ms.assetid: 177dc6a3-034e-4846-a394-330d03c14e0b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cac4b4f0e2e00cfc6d121ca27155b122291d0829
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 3541ac56a59725d966e726301796f4467044cf6b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884193"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037056"
 ---
 # <a name="reg-compare"></a>reg compare
 
@@ -28,14 +28,14 @@ reg compare <keyname1> <keyname2> [{/v Valuename | /ve}] [{/oa | /od | /os | on}
 
 | 參數 | 描述 |
 |--|--|
-| `<keyname1>` | 指定要新增之子機碼或專案的完整路徑。 若要指定遠端電腦，請將電腦名稱稱的格式加上 `\\<computername>\`) 作為*keyname*的一部分 (。 省略 `\\<computername>\` 會使操作預設為本機電腦。 *Keyname*必須包含有效的根金鑰。 本機電腦的有效根金鑰為： **HKLM**、 **HKCU**、 **HKCR**、 **HKU**和**HKCC**。 如果指定遠端電腦，有效的根金鑰為： **HKLM**和**HKU**。 如果登錄機碼名稱包含空格，請用引號括住機碼名稱。 |
-| `<keyname2>` | 指定要比較之第二個子機碼的完整路徑。 若要指定遠端電腦，請將電腦名稱稱的格式加上 `\\<computername>\`) 作為*keyname*的一部分 (。 省略 `\\<computername>\` 會使操作預設為本機電腦。 只在*keyname2*中指定電腦名稱稱，會使作業使用*keyname1*中指定之子機碼的路徑。 *Keyname*必須包含有效的根金鑰。 本機電腦的有效根金鑰為： **HKLM**、 **HKCU**、 **HKCR**、 **HKU**和**HKCC**。 如果指定遠端電腦，有效的根金鑰為： **HKLM**和**HKU**。 如果登錄機碼名稱包含空格，請用引號括住機碼名稱。 |
-| 停`<Valuename>` | 指定要在子機碼底下比較的值名稱。 |
+| `<keyname1>` | 指定要新增之子機碼或專案的完整路徑。 若要指定遠端電腦，請將電腦名稱稱 (以 `\\<computername>\`) 作為 *keyname*一部分的格式來包含。 省略 `\\<computername>\` 會導致操作預設為本機電腦。 *Keyname*必須包含有效的根金鑰。 本機電腦的有效根金鑰為： **HKLM**、 **HKCU**、 **HKCR**、 **HKU**和 **HKCC**。 如果指定遠端電腦，有效的根金鑰為： **HKLM** 和 **HKU**。 如果登錄機碼名稱包含空格，請將金鑰名稱括在引號中。 |
+| `<keyname2>` | 指定要比較之第二個子機碼的完整路徑。 若要指定遠端電腦，請將電腦名稱稱 (以 `\\<computername>\`) 作為 *keyname*一部分的格式來包含。 省略 `\\<computername>\` 會導致操作預設為本機電腦。 在 *keyname2* 中只指定電腦名稱稱會導致作業使用 *keyname1*中所指定子機碼的路徑。 *Keyname*必須包含有效的根金鑰。 本機電腦的有效根金鑰為： **HKLM**、 **HKCU**、 **HKCR**、 **HKU**和 **HKCC**。 如果指定遠端電腦，有效的根金鑰為： **HKLM** 和 **HKU**。 如果登錄機碼名稱包含空格，請將金鑰名稱括在引號中。 |
+| /v `<Valuename>` | 指定要在子機碼下比較的值名稱。 |
 | /ve | 指定只應比較值名稱為 null 的專案。 |
-| /oa | 指定顯示所有差異和相符專案。 根據預設，只會列出差異。 |
+| /oa | 指定顯示所有差異和相符專案。 依預設，只會列出差異。 |
 | /od | 指定只顯示差異。 此為預設行為。 |
-| /os | 指定只顯示相符專案。 根據預設，只會列出差異。 |
-| /on | 指定不顯示任何內容。 根據預設，只會列出差異。 |
+| /os | 指定只顯示相符專案。 依預設，只會列出差異。 |
+| /on | 指定不顯示任何內容。 依預設，只會列出差異。 |
 | /s | 以遞迴方式比較所有子機碼和專案。 |
 | /? | 在命令提示字元顯示說明。 |
 
@@ -45,33 +45,33 @@ reg compare <keyname1> <keyname2> [{/v Valuename | /ve}] [{/oa | /od | /os | on}
 
     | 值 | 描述 |
     |--|--|
-    | 0 | 比較成功，且結果完全相同。 |
+    | 0 | 比較成功，結果也相同。 |
     | 1 | 比較失敗。 |
-    | 2 | 比較成功，而且發現差異。 |
+    | 2 | 比較成功，併發現差異。 |
 
-- 結果中顯示的符號，包括：
+- 結果中顯示的符號包括：
 
     | 符號 | 描述 |
     |--|--|
-    | = | *KeyName1*資料等於*KeyName2*資料。 |
-    | < | *KeyName1*資料小於*KeyName2*的資料。 |
-    | > | *KeyName1*資料大於*KeyName2*資料。 |
+    | = | *KeyName1* 資料等於 *KeyName2* 資料。 |
+    | < | *KeyName1* 資料小於 *KeyName2* 的資料。 |
+    | > | *KeyName1* 資料大於 *KeyName2* 的資料。 |
 
 ### <a name="examples"></a>範例
 
-若要比較 key **MyApp**底下的所有值與機碼**SaveMyApp**下的所有值，請輸入：
+若要將機碼 **MyApp** 下的所有值與金鑰 **SaveMyApp**下的所有值進行比較，請輸入：
 
 ```
 reg compare HKLM\Software\MyCo\MyApp HKLM\Software\MyCo\SaveMyApp
 ```
 
-若要比較 [金鑰] **MyCo**下的 [版本] 值和 [金鑰] **MyCo1**下的 [版本] 值，請輸入：
+若要比較 [金鑰] **MyCo** 下的版本值和 [金鑰 **MyCo1**] 下的版本值，請輸入：
 
 ```
 reg compare HKLM\Software\MyCo HKLM\Software\MyCo1 /v Version
 ```
 
-若要比較電腦上 HKLM\Software\MyCo 的所有子機碼和值（名稱為天干//），並在本機電腦上的 HKLM\Software\MyCo 底下包含所有子機碼和值，請輸入：
+若要比較名為天干的電腦上 HKLM\Software\MyCo 下的所有子機碼和值，並在本機電腦上以 HKLM\Software\MyCo 的所有子機碼和值進行比較，請輸入：
 
 ```
 reg compare \\ZODIAC\HKLM\Software\MyCo \\. /s

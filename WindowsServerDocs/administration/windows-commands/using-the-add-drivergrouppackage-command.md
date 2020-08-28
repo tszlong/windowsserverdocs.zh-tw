@@ -1,18 +1,18 @@
 ---
 title: 新增-DriverGroupPackage
 description: DriverGroupPackage 的參考文章，可將驅動程式套件新增至驅動程式群組。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 7cd323ae-9049-448e-a460-6c7d6462d4c8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1aedf8ee37feb6a0ee9c26f917aad5f93b9dd91e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8a6507e4367b64439dbef57327e71b9bd6c14fde
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879356"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029876"
 ---
 # <a name="add-drivergrouppackage"></a>新增-DriverGroupPackage
 
@@ -30,8 +30,8 @@ wdsutil /add-DriverGroupPackage /DriverGroup:<Group Name> [/Server:<Server Name>
 |---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | /DriverGroup:<Group Name> |                                                                                                                                 指定驅動程式群組的名稱。                                                                                                                                 |
 |   伺服器<Server name>   |                                                                                  指定伺服器的名稱。 這可以是 NetBIOS 名稱或 FQDN。 如果未指定伺服器名稱，則會使用本機伺服器。                                                                                  |
-|   /DriverPackage:<Name>   |                                                                      指定要加入至群組之驅動程式套件的名稱。 如果驅動程式套件無法以名稱唯一識別，您就必須指定此選項。                                                                       |
-|      PackageId<ID>      | 指定封裝的識別碼。 若要尋找封裝識別碼，請按一下封裝所在的驅動程式群組 (或 [**所有封裝**] 節點) ，以滑鼠右鍵按一下套件，然後按一下 [**屬性**]。 套件識別碼會列在 [**一般**] 索引標籤上，例如： **{DD098D20-1850-4fc8-8E35-EA24A1BEFF5E}**。 |
+|   /DriverPackage:<Name>   |                                                                      指定要新增至群組之驅動程式套件的名稱。 如果您無法依名稱唯一識別驅動程式套件，則必須指定此選項。                                                                       |
+|      PackageId<ID>      | 指定封裝的識別碼。 若要尋找封裝識別碼，請按一下套件所在的驅動程式群組 (或 [ **所有套件** ] 節點) 中，以滑鼠 **按右鍵封裝**，然後按一下 [內容]。 封裝識別碼會列在 [ **一般** ] 索引標籤上，例如： **{DD098D20-1850-4fc8-8E35-EA24A1BEFF5E}**。 |
 
 ## <a name="examples"></a>範例
 若要新增驅動程式套件，請輸入下列其中一項：

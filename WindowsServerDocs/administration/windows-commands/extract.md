@@ -1,18 +1,18 @@
 ---
 title: extract
-description: 解壓縮命令的參考文章，它會從來源位置解壓縮檔案。
-ms.topic: article
+description: 可從來源位置解壓縮檔案的 [解壓縮] 命令的參考文章。
+ms.topic: reference
 ms.assetid: 20dab03e-f6e1-4eb8-b8a1-fd6f1d97ee83
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 130f9ee22e0603deaa50dfde267df1c39342e38c
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 557ee765a40703d2781613549992c7668753f5a9
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890375"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036636"
 ---
 # <a name="extract"></a>extract
 
@@ -30,16 +30,16 @@ extract [/y] /c source destination
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| 檔案櫃 | 如果您想要解壓縮兩個或多個檔案，請使用。 |
-| filename | 要從封包檔解壓縮的檔案名。 萬用字元和多個檔案名 (以空格分隔，) 可以使用。 |
+| 內閣 | 如果您想要解壓縮兩個以上的檔案，請使用。 |
+| filename | 要從封包解壓縮的檔案名。 萬用字元和多個檔案名 (使用空格分隔，) 可能會用到。 |
 | source | 壓縮檔 (只有一個檔案) 的封包。 |
 | newname | 要提供解壓縮檔案的新檔案名。 如果未提供，則會使用原始名稱。 |
-| /a | 處理所有的封包。 遵循第一個封包中所述的機櫃鏈。 |
-| /C | 將來源檔案複製到目的地 (從 DMF 磁碟複製) 。 |
-| /d | 顯示封包目錄 (搭配 filename 使用，以避免解壓縮) 。 |
-| /e | 解壓縮 (使用，而不是 *。* ) 解壓縮所有檔案。 |
-| /l dir | 要放置解壓縮檔案的位置 (預設為目前目錄) 。 |
-| /y | 在覆寫現有的檔案之前，不要提示。 |
+| /a | 處理所有的封包。 接下來的封包鏈從第一封的第一封包開始。 |
+| /C | 將來源檔案複製到目的地 (從 DMF 磁片) 複製。 |
+| /d | 顯示 (使用檔案名的封包目錄，以避免解壓縮) 。 |
+| /e |  (使用而不是來解壓縮 *。* ) 解壓縮所有檔案。 |
+| /l dir | 放置解壓縮檔案的位置 (預設為目前目錄) 。 |
+| /y | 覆寫現有檔案之前不要提示。 |
 
 ## <a name="additional-references"></a>其他參考資料
 

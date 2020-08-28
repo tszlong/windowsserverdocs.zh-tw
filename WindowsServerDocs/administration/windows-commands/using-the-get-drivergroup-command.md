@@ -1,18 +1,18 @@
 ---
 title: DriverGroup
-description: DriverGroup 的參考文章，它會顯示伺服器上驅動程式群組的相關資訊。
-ms.topic: article
+description: DriverGroup 的參考文章，會顯示伺服器上驅動程式群組的相關資訊。
+ms.topic: reference
 ms.assetid: 7cfe10c3-a63f-48e7-bef9-f6b474b4ddbe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 95981c1821117f6a4a634df001b901ee76816b75
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 545bf634382e562221438295e5d015f7dbb97bf3
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896956"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029676"
 ---
 # <a name="get-drivergroup"></a>DriverGroup
 
@@ -29,7 +29,7 @@ wdsutil /Get-DriverGroup /DriverGroup:<Group Name> [/Server:<Server name>]
 |-------|--------|
 |/DriverGroup:<Group Name>|指定驅動程式群組的名稱。|
 |[/Server： <Server name> ]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或 FQDN。  如果未指定伺服器名稱，則會使用本機伺服器。|
-|[/Show： {PackageMetaData &#124; 篩選 &#124; 全部]|顯示指定群組中所有驅動程式套件的中繼資料。 **PackageMetaData**顯示驅動程式群組所有篩選器的相關資訊。 [**篩選**] 會顯示群組之所有驅動程式套件和篩選器的中繼資料。|
+|[/Show： {PackageMetaData &#124; 濾波器 &#124; All}]|顯示指定群組中所有驅動程式套件的中繼資料。 **PackageMetaData** 會顯示驅動程式群組所有篩選器的相關資訊。 **篩選器** 會顯示群組之所有驅動程式套件和篩選器的中繼資料。|
 ## <a name="examples"></a>範例
 若要查看驅動程式檔案的相關資訊，請輸入：
 ```

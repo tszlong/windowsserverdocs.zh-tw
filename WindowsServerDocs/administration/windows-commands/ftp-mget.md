@@ -1,18 +1,18 @@
 ---
 title: ftp mget
-description: Ftp mget 命令的參考文章，它會使用目前的檔案傳輸類型，將遠端檔案複製到本機電腦。
-ms.topic: article
+description: Ftp mget 命令的參考文章，此命令會使用目前的檔案傳輸類型，將遠端檔案複製到本機電腦。
+ms.topic: reference
 ms.assetid: 6c85ae96-ec51-48a9-a227-7f02c7332c69
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9074df66e70961c74ef1b479f31ac316e34ff051
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e72d253fec35f366e2ab80a491c256e0de6c948f
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889337"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025742"
 ---
 # <a name="ftp-mget"></a>ftp mget
 
@@ -34,7 +34,7 @@ mget <remotefile>[ ]
 
 ### <a name="examples"></a>範例
 
-若要使用目前的檔案傳輸類型，將遠端檔案複製*a.exe*並*b.exe*到本機電腦，請輸入：
+若要使用目前的檔案傳輸類型複製遠端檔案 *a.exe* 並 *b.exe* 至本機電腦，請輸入：
 
 ```
 mget a.exe b.exe
@@ -48,4 +48,4 @@ mget a.exe b.exe
 
 - [ftp 二進位命令](ftp-binary.md)
 
-- [其他 FTP 指引](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [其他 FTP 指導方針](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

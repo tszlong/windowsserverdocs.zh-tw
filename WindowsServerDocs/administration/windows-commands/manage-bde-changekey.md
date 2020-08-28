@@ -1,18 +1,18 @@
 ---
 title: manage-bde changekey
-description: Changekey 命令的參考文章，可修改作業系統磁片磁碟機的啟動金鑰。
-ms.topic: article
+description: Manage-bde changekey 命令的參考文章，此命令會修改作業系統磁片磁碟機的啟動金鑰。
+ms.topic: reference
 ms.assetid: 69463db9-7e03-47ff-b233-a95d5055725f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3b1ac3801fe78494d33ae57fd869986b55f886d0
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: cfef099e1f596428fdbf7fd4389f4bd44846efce
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886956"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030116"
 ---
 # <a name="manage-bde-changekey"></a>manage-bde changekey
 
@@ -28,15 +28,15 @@ manage-bde -changekey [<drive>] [<pathtoexternalkeydirectory>] [-computername <n
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| `<drive>` | 表示後面接著冒號的磁碟機號。 |
-| -computername | 指定 manage-bde.exe 將用來修改另一部電腦上的 BitLocker 保護。 您也可以使用 **-cn**做為此命令的縮寫版本。 |
+| `<drive>` | 代表後面加上冒號的磁碟機號。 |
+| -computername | 指定 manage-bde.exe 將用來修改不同電腦上的 BitLocker 保護。 您也可以使用 **-cn** 作為此命令的縮寫版本。 |
 | `<name>` | 代表要修改 BitLocker 保護的電腦名稱稱。 接受的值包括電腦的 NetBIOS 名稱和電腦的 IP 位址。 |
 | -? 或/？ | 在命令提示字元中顯示簡短說明。 |
-| -help 或-h | 在命令提示字元中顯示完整的說明。 |
+| -help 或-h | 在命令提示字元中顯示完整說明。 |
 
 ### <a name="examples"></a>範例
 
-若要在磁片磁碟機 E 上建立新的啟動金鑰，以在磁片磁碟機 C 上搭配 BitLocker 加密使用，請輸入：
+若要在磁片磁碟機 E 上建立新的啟動金鑰，以在磁片磁碟機 C 上使用 BitLocker 加密，請輸入：
 
 ```
 manage-bde -changekey C: E:\

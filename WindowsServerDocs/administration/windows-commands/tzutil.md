@@ -1,18 +1,18 @@
 ---
 title: tzutil
-description: Tzutil 的參考文章，可顯示 Windows 時區公用程式。
-ms.topic: article
+description: Tzutil 的參考文章，它會顯示 Windows 時區公用程式。
+ms.topic: reference
 ms.assetid: bcf6e007-c9b6-4df5-83c5-ed7b4b1b5913
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4727423ed6752b3a0c2b578f5838a1108d1d14d4
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 1d8eae64faf58d404c49afa5b469c61d44807ae0
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896639"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029936"
 ---
 # <a name="tzutil"></a>tzutil
 
@@ -29,11 +29,11 @@ tzutil [/?] [/g] [/s <timeZoneID>[_dstoff]] [/l]
 |-------|--------|
 |/?|在命令提示字元顯示說明。|
 |/g|顯示目前的時區識別碼。|
-|/s \<timeZoneID> [_dstoff]|使用指定的時區識別碼來設定目前的時區。 **_Dstoff**尾碼會針對 (適用) 的時區，停用日光節約時間調整。|
+|/s \<timeZoneID> [_dstoff]|使用指定的時區識別碼，設定目前的時區。 **_Dstoff**尾碼會針對適用) 的時區 (停用日光節約時間調整。|
 |/l|列出所有有效的時區識別碼和顯示名稱。 輸出將是：<p>-   \<display name><br />-   \<time zone ID>|
 
 ## <a name="remarks"></a>備註
-結束代碼為**0**表示命令已順利完成。
+結束代碼為 **0** 表示已順利完成命令。
 
 ## <a name="examples"></a>範例
 若要顯示目前的時區識別碼，請輸入：
@@ -44,7 +44,7 @@ tzutil /g
 ```
 tzutil /s Pacific Standard time
 ```
-若要將目前的時區設定為太平洋標準時間並停用日光節約時間調整，請輸入：
+若要將目前的時區設定為太平洋標準時間，並停用日光節約時間調整，請輸入：
 ```
 tzutil /s Pacific Standard time_dstoff
 ```

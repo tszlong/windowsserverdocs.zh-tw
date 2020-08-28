@@ -1,18 +1,18 @@
 ---
 title: ksetup delkpasswd
-description: Ksetup delkpasswd 命令的參考文章，它會移除領域 (kpasswd) 的 Kerberos 密碼伺服器。
-ms.topic: article
+description: '>ksetup delkpasswd 命令的參考文章，此命令會移除領域的 Kerberos 密碼伺服器 (kpasswd) 。'
+ms.topic: reference
 ms.assetid: 2db0bfcd-bc08-48e3-9f30-65b6411839c6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f507b259b77e8be15ade8d01f3666221e94f9192
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: c8918b429bc29cd2eec88f5c32d1e0c358fa2610
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887964"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025562"
 ---
 # <a name="ksetup-delkpasswd"></a>ksetup delkpasswd
 
@@ -30,23 +30,23 @@ ksetup /delkpasswd <realmname> <kpasswdname>
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| `<realmname>` |  指定大寫 DNS 名稱，例如 CORP。CONTOSO.COM，且在執行**ksetup**時列為預設領域或**領域 =** 。 |
-| `<kpasswdname>` | 指定 Kerberos 密碼伺服器。 它會指定為不區分大小寫的完整功能變數名稱，例如 mitkdc.contoso.com。 如果省略 KDC 名稱，則可能會使用 DNS 來尋找 Kdc。 |
+| `<realmname>` |  指定大寫 DNS 名稱，例如 CORP。CONTOSO.COM，並在 **>ksetup**執行時列為預設領域或**領域 =** 。 |
+| `<kpasswdname>` | 指定 Kerberos 密碼伺服器。 它會被視為不區分大小寫的完整功能變數名稱，例如 mitkdc.contoso.com。 如果省略 KDC 名稱，則可能會使用 DNS 來尋找 Kdc。 |
 
 ### <a name="examples"></a>範例
 
-確保領域 CORP。CONTOSO.COM 使用非 Windows KDC 伺服器 mitkdc.contoso.com 作為密碼伺服器，請輸入：
+確認領域 CORP。CONTOSO.COM 使用非 Windows KDC 伺服器 mitkdc.contoso.com 作為密碼伺服器，請輸入：
 
 ```
 ksetup /delkpasswd CORP.CONTOSO.COM mitkdc.contoso.com
 ```
 
-確保領域 CORP。CONTOSO.COM 未對應至 (KDC 名稱) 的 Kerberos 密碼伺服器，請 `ksetup` 在 Windows 電腦上輸入，然後再查看輸出。
+確認領域 CORP。CONTOSO.COM 未對應到 Kerberos 密碼伺服器 (KDC 名稱) ，請 `ksetup` 在 Windows 電腦上輸入，然後查看輸出。
 
 ## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [ksetup 命令](ksetup.md)
+- [>ksetup 命令](ksetup.md)
 
-- [ksetup delkpasswd 命令](ksetup-delkpasswd.md)
+- [>ksetup delkpasswd 命令](ksetup-delkpasswd.md)

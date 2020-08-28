@@ -1,18 +1,18 @@
 ---
 title: 新增-DriverPackage
-description: DriverPackage 的參考文章，它會將驅動程式套件新增至伺服器。
-ms.topic: article
+description: DriverPackage 的參考文章，可將驅動程式套件加入至伺服器。
+ms.topic: reference
 ms.assetid: 3ac9e8d5-63ec-4ce8-86fc-85d28011050b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bd7ba7897006a4db144fc8bd92317fb07a34b55f
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 0a1876727d4d79cf4ce3c86c654a9be0b7c6795d
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881273"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029846"
 ---
 # <a name="add-driverpackage"></a>新增-DriverPackage
 
@@ -28,7 +28,7 @@ WDSUTIL /Add-DriverPackage /InfFile:<Inf File path> [/Server:<Server name>] [/Ar
 
 |          參數           |                                                              描述                                                              |
 |------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-|   InfFile:\<Inf File path>   |                                           指定要加入之 .inf 檔案的完整路徑。                                            |
+|   InfFile:\<Inf File path>   |                                           指定要新增之 .inf 檔案的完整路徑。                                            |
 |    伺服器\<Server name>    | 指定伺服器的名稱。 這可以是 NetBIOS 名稱或 FQDN。 如果未指定伺服器名稱，則會使用本機伺服器。 |
 |      /Architecture： {x86      |                                                                 ia64                                                                  |
 | [/DriverGroup： \<Group Name> ] |                             指定要新增封裝的驅動程式組名。                              |
