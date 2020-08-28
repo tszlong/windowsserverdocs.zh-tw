@@ -1,22 +1,22 @@
 ---
 title: bitsadmin getnotifyinterface
-description: Bitsadmin getnotifyinterface 命令的參考文章，可判斷另一個程式是否已為指定的作業註冊 COM 回呼介面。
-ms.topic: article
+description: Bitsadmin getnotifyinterface 命令的參考文章，可判斷其他程式是否已針對指定的作業註冊 COM 回呼介面。
+ms.topic: reference
 ms.assetid: 40bf9dd8-b167-406a-80a6-a5a6f1b8cf7f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c0e22b240f16aa417cf46b715527cd9098c60794
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 1455975083ac6afb25a02dc19c6df282928af587
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87894053"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027806"
 ---
 # <a name="bitsadmin-getnotifyinterface"></a>bitsadmin getnotifyinterface
 
-判斷另一個程式是否已註冊 COM 回呼介面， (指定之作業的通知介面) 。
+判斷其他程式是否已針對指定的作業， (通知介面) 註冊 COM 回呼介面。
 
 ## <a name="syntax"></a>語法
 
@@ -32,14 +32,14 @@ bitsadmin /getnotifyinterface <job>
 
 #### <a name="output"></a>輸出
 
-此命令的輸出會顯示、**已註冊或已**取消**註冊**。
+此命令的輸出會顯示、 **已註冊或已** 取消 **註冊**。
 
 > [!NOTE]
-> 您無法判斷註冊回呼介面的程式。
+> 無法判斷註冊回呼介面的程式。
 
 ## <a name="examples"></a>範例
 
-若要取得名為*myDownloadJob*之作業的通知介面：
+若要取得名為 *myDownloadJob*之作業的通知介面：
 
 ```
 bitsadmin /getnotifyinterface myDownloadJob

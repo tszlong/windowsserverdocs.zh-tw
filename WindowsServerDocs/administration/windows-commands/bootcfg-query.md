@@ -1,24 +1,24 @@
 ---
 title: bootcfg query
 description: Bootcfg 查詢命令的參考文章，它會查詢並顯示 Boot.ini 的開機載入器和作業系統區段專案。
-ms.topic: article
+ms.topic: reference
 ms.assetid: a4cacfd1-10a6-4a11-b0c5-f8abde72bfc8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bb4ff06e8c0e5f31c0132f7fbc4fad49be53dd62
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 9e6b5a34a0af467c12549f4921d8d5c99e79aaa9
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880561"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034436"
 ---
 # <a name="bootcfg-query"></a>bootcfg query
 
 > 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-查詢並顯示 Boot.ini 的 [開機載入器] 和 [作業系統] 區段專案。
+查詢並顯示 Boot.ini 中的 [開機載入器] 和 [作業系統] 區段專案。
 
 ## <a name="syntax"></a>語法
 
@@ -31,8 +31,8 @@ bootcfg /query [/s <computer> [/u <domain>\<user> /p <password>]]
 | 參數 | 描述 |
 | --------- | ----------- |
 | `/s <computer>` | 指定遠端電腦的名稱或 IP 位址 (不要使用反斜線) 。 預設是本機電腦。 |
-| `/u <domain>\<user>`  | 以或指定之使用者的帳戶許可權來執行命令 `<user>` `<domain>\<user>` 。 預設為發出命令之電腦上目前登入使用者的許可權。 |
-| `/p <password>` | 指定 **/u**參數中指定之使用者帳戶的密碼。 |
+| `/u <domain>\<user>`  | 使用或所指定之使用者的帳戶許可權來執行命令 `<user>` `<domain>\<user>` 。 預設值是發出命令的電腦上目前登入之使用者的許可權。 |
+| `/p <password>` | 指定 **/u** 參數中指定之使用者帳戶的密碼。 |
 | /? | 在命令提示字元顯示說明。 |
 
 #### <a name="sample-output"></a>範例輸出
@@ -52,13 +52,13 @@ path: multi(0)disk(0)rdisk(0)partition(1)\WINDOWS
 OS Load Options: /fastdetect /debug /debugport=com1:
 ```
 
-- [**開機載入器設定**] 區域會顯示 Boot.ini [開機載入器] 區段中的每個專案。
+- [ **開機載入器設定** ] 區域會顯示 Boot.ini [開機載入器] 區段中的每個專案。
 
-- [**開機專案**] 區域會針對 [作業系統] 區段中的每個作業系統專案顯示更多詳細資料 Boot.ini
+- [ **開機專案** ] 區域會在 Boot.ini 的 [作業系統] 區段中，針對每個作業系統專案顯示更多詳細資料。
 
 ## <a name="examples"></a>範例
 
-若要使用**bootcfg/query**命令：
+若要使用 **bootcfg/query** 命令：
 
 ```
 bootcfg /query

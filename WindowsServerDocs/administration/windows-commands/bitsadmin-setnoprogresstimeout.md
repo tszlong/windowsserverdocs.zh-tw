@@ -1,18 +1,18 @@
 ---
 title: bitsadmin setnoprogresstimeout
-description: Bitsadmin setnoprogresstimeout 命令的參考文章，設定服務在發生暫時性錯誤之後，嘗試傳輸檔案的時間長度（以秒為單位）。
-ms.topic: article
+description: Bitsadmin setnoprogresstimeout 命令的參考文章，此命令會設定服務在發生暫時性錯誤之後嘗試傳輸檔案的時間長度（以秒為單位）。
+ms.topic: reference
 ms.assetid: 7fac50d9-cc6b-46a4-a96f-fab751ee1756
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 521f841c3b60c95486fc6e92088a37ae2b7fde2f
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: dc2559a963900234fd3111edb1a32e3f13b27e40
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87893011"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027796"
 ---
 # <a name="bitsadmin-setnoprogresstimeout"></a>bitsadmin setnoprogresstimeout
 
@@ -29,19 +29,19 @@ bitsadmin /setnoprogresstimeout <job> <timeoutvalue>
 | 參數 | 描述 |
 | --------- | ----------- |
 | 作業 | 作業的顯示名稱或 GUID。 |
-| timeoutvalue | 在第一個錯誤之後，BITS 等待傳輸檔案的時間長度（以秒為單位）。 |
+| timeoutvalue | BITS 在第一個錯誤之後等候傳送檔案的時間長度（以秒為單位）。 |
 
 ### <a name="remarks"></a>備註
 
 - 當作業遇到第一個暫時性錯誤時，就會開始「沒有進度」逾時間隔。
 
-- 當成功傳輸位元組的資料時，會停止或重設逾時間隔。
+- 當資料位元組成功傳輸時，逾時間隔就會停止或重設。
 
-- 如果「沒有進度」逾時間隔超過*timeoutvalue*，則會將工作置於嚴重的錯誤狀態。
+- 如果「沒有進度」逾時間隔超過 *timeoutvalue*，則會將工作置於嚴重的錯誤狀態。
 
 ## <a name="examples"></a>範例
 
-若要針對名為*myDownloadJob*的作業，將「沒有進度」超時值設定為20秒：
+若要針對名為 *myDownloadJob*的作業將「沒有進度」超時值設定為20秒：
 
 ```
 bitsadmin /setnoprogresstimeout myDownloadJob 20

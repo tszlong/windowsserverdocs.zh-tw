@@ -1,18 +1,18 @@
 ---
 title: manage-bde 狀態
-description: Manage-bde status 命令的參考文章，它會提供電腦上所有磁片磁碟機的相關資訊，不論它們是否受 BitLocker 保護。
-ms.topic: article
+description: Manage-bde status 命令的參考文章，可提供電腦上所有磁片磁碟機的相關資訊，不論它們是否受 BitLocker 保護。
+ms.topic: reference
 ms.assetid: 1444a360-fabf-4dd3-b67f-188e6ea3fa5b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cab8f552cd633e5e71a13993fd2223062125f02f
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 632e286b15d65c066a6f2229b98e12a23014f998
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886695"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027476"
 ---
 # <a name="manage-bde-status"></a>manage-bde 狀態
 
@@ -24,7 +24,7 @@ ms.locfileid: "87886695"
 
 - 轉換狀態
 
-- 已加密百分比
+- 加密百分比
 
 - 加密方法
 
@@ -46,12 +46,12 @@ manage-bde -status [<drive>] [-protectionaserrorlevel] [-computername <name>] [{
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| `<drive>` | 表示後面接著冒號的磁碟機號。 |
-| -protectionaserrorlevel | 如果磁片區受到保護，則會導致 manage-bde 命令列工具傳送傳回碼**0** ; 如果磁片區未受保護，則傳回**1** ;最常用於批次腳本，用來判斷磁片磁碟機是否受 BitLocker 保護。 您也可以使用 **-p**作為此命令的縮寫版本。 |
-| -computername | 指定 manage-bde.exe 將用來修改另一部電腦上的 BitLocker 保護。 您也可以使用 **-cn**做為此命令的縮寫版本。 |
+| `<drive>` | 代表後面加上冒號的磁碟機號。 |
+| -protectionaserrorlevel | 如果磁片區受到保護，則會導致 manage-bde 命令列工具傳送傳回碼 **0** ，如果磁片區未受保護，則為 **1** 。最常用於批次腳本，以判斷磁片磁碟機是否受 BitLocker 保護。 您也可以使用 **-p** 作為此命令的縮寫版本。 |
+| -computername | 指定 manage-bde.exe 將用來修改不同電腦上的 BitLocker 保護。 您也可以使用 **-cn** 作為此命令的縮寫版本。 |
 | `<name>` | 代表要修改 BitLocker 保護的電腦名稱稱。 接受的值包括電腦的 NetBIOS 名稱和電腦的 IP 位址。 |
 | -? 或/？ | 在命令提示字元中顯示簡短說明。 |
-| -help 或-h | 在命令提示字元中顯示完整的說明。 |
+| -help 或-h | 在命令提示字元中顯示完整說明。 |
 
 ### <a name="examples"></a>範例
 

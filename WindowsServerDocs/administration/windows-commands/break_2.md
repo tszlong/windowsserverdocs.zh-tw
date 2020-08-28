@@ -1,27 +1,27 @@
 ---
 title: '中斷 (陰影複製磁片區) '
-description: '[中斷] 命令的參考文章，這會解除陰影複製磁片區與 VSS 的對應，並使其可做為一般磁片區存取。'
-ms.topic: article
+description: Break 命令的參考文章，此命令會解除陰影複製磁片區與 VSS 的對應，並使其可作為一般磁片區存取。
+ms.topic: reference
 ms.assetid: de2b6c95-1c2e-4a43-bec5-341a9014371b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 125f986152d10844bbab5a7b57a1a2ea4080aa3e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d94275b83ad65f70db4bd1850f55ea527292d1bc
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880465"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034306"
 ---
 # <a name="break-shadow-copy-volume"></a>中斷 (陰影複製磁片區) 
 
-將陰影複製磁片區與 VSS 解除，使其可做為一般磁片區存取。 然後，如果指派) 或磁片區名稱，則可以使用磁碟機號 (來存取磁片區。 如果在沒有參數的情況下使用， **break**會在命令提示字元中顯示說明。
+將陰影複製磁片區與 VSS 解除區隔，並使其可作為一般磁片區來存取。 然後，您可以使用磁碟機號 (（如果指派的) 或磁片區名稱）來存取磁片區。 如果使用時不含參數，請在命令提示字元中使用 **break** 來顯示說明。
 
 > [!NOTE]
-> 此命令只與匯入後的硬體陰影複製相關。
+> 此命令只與匯入後的硬體陰影複製有關。
 >
-> 公開的磁片區（例如它們源自的陰影複製）預設為唯讀。 磁片區的存取權會直接對硬體提供者進行，而不會記錄具有陰影複製的磁片區。
+> 公開的磁片區（例如它們所源自的陰影複製）預設是唯讀的。 磁片區的存取權會直接對硬體提供者進行，而不需記錄磁片區的陰影複製。
 
 ## <a name="syntax"></a>語法
 
@@ -33,12 +33,12 @@ break [writable] <setid>
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| 314.cs | 啟用磁片區上的讀取/寫入存取。 |
-| \<setid> | 指定陰影複製組的識別碼。 「**載入中繼資料**」命令儲存為環境變數的陰影複製識別碼別名，可用於*SetID*參數。 |
+| 寫 | 啟用磁片區的讀取/寫入存取。 |
+| \<setid> | 指定陰影複製集的識別碼。 陰影複製識別碼的別名（由 **load metadata** 命令儲存為環境變數）可以在 *SetID* 參數中使用。 |
 
 ## <a name="examples"></a>範例
 
-若要使用別名名稱 Alias1 來建立陰影複製，可在作業系統中作為可寫入的磁片區：
+若要使用別名名稱 Alias1 來建立陰影複製，可作為作業系統中的可寫入磁片區：
 
 ```
 break writable %Alias1%

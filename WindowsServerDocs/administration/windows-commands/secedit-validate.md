@@ -1,18 +1,18 @@
 ---
 title: secedit：驗證
 description: '* * * * 的參考文章'
-ms.topic: article
+ms.topic: reference
 ms.assetid: 9fb06354-f55a-4ca4-9fbc-9a872eb9b9cf
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 30bb02f0d7947aa77f7ac41d5f7b179ca8fd236b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 47c0ec78cb49da3ce256e7a74ce8be003b0db85b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882931"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027976"
 ---
 # <a name="seceditvalidate"></a>secedit：驗證
 
@@ -35,13 +35,13 @@ Secedit /validate <configuration file name>
 
 ## <a name="remarks"></a>備註
 
-如果驗證安全性範本已損毀或設定不正確，則可協助您。
+如果安全性範本已損毀或不當設定，則驗證安全性範本可以協助您。
 
 將不會套用不正確安全性範本。
 
 記錄檔將不會更新。
 
-在 Windows Server 2008 中，已 `Secedit /refreshpolicy` 取代為 `gpupdate` 。 如需有關如何重新整理安全性設定的詳細資訊，請參閱[Gpupdate](gpupdate.md)。
+在 Windows Server 2008 中，已將 `Secedit /refreshpolicy` 取代為 `gpupdate` 。 如需有關如何重新整理安全性設定的詳細資訊，請參閱 [Gpupdate](gpupdate.md)。
 
 ## <a name="examples"></a>範例
 

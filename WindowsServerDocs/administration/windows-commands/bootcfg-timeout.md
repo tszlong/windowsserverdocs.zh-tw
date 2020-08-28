@@ -1,18 +1,18 @@
 ---
 title: bootcfg timeout
-description: Bootcfg timeout 命令的參考文章，其會變更作業系統超時值。
-ms.topic: article
+description: 適用于 bootcfg timeout 命令的參考文章，此命令會變更作業系統超時值。
+ms.topic: reference
 ms.assetid: aa858eac-2bb7-4a27-a9bc-3e4a6eb8b2c6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2b68956620d5f53e6d2898df80193080ca109e16
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ed3e94447dba6cb09be986c2c482a42e9d83fe22
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880534"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034346"
 ---
 # <a name="bootcfg-timeout"></a>bootcfg timeout
 
@@ -30,15 +30,15 @@ bootcfg /timeout <timeoutvalue> [/s <computer> [/u <domain>\<user> /p <password>
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| `/timeout <timeoutvalue>` | 指定 [開機載入器] 區段中的超時值。 `<timeoutvalue>`是在 NTLDR 載入預設值之前，使用者必須從開機載入器畫面中選取作業系統的秒數。 的有效範圍 `<timeoutvalue>` 為0-999。 如果值為0，NTLDR 會立即啟動預設作業系統，而不會顯示開機載入器畫面。 |
+| `/timeout <timeoutvalue>` | 在 [開機載入器] 區段中指定超時值。 `<timeoutvalue>`是在 NTLDR 載入預設值之前，使用者必須從開機載入器畫面選取作業系統的秒數。 的有效範圍 `<timeoutvalue>` 是0-999。 如果值為0，NTLDR 會立即啟動預設的作業系統，而不會顯示開機載入器畫面。 |
 | `/s <computer>` | 指定遠端電腦的名稱或 IP 位址 (不要使用反斜線) 。 預設是本機電腦。 |
-| `/u <domain>\<user>`  | 以或指定之使用者的帳戶許可權來執行命令 `<user>` `<domain>\<user>` 。 預設為發出命令之電腦上目前登入使用者的許可權。 |
-| `/p <password>` | 指定 **/u**參數中指定之使用者帳戶的密碼。 |
+| `/u <domain>\<user>`  | 使用或所指定之使用者的帳戶許可權來執行命令 `<user>` `<domain>\<user>` 。 預設值是發出命令的電腦上目前登入之使用者的許可權。 |
+| `/p <password>` | 指定 **/u** 參數中指定之使用者帳戶的密碼。 |
 | /? | 在命令提示字元顯示說明。 |
 
 ## <a name="examples"></a>範例
 
-若要使用**bootcfg/timeout**命令：
+若要使用 **bootcfg/timeout** 命令：
 
 ```
 bootcfg /timeout 30

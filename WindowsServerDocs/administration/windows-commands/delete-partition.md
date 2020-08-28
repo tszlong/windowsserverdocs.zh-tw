@@ -1,27 +1,27 @@
 ---
 title: delete partition
-description: 刪除資料分割命令的參考文章，這會刪除具有焦點的資料分割。
-ms.topic: article
+description: 刪除資料分割命令的參考文章，此命令會刪除具有焦點的資料分割。
+ms.topic: reference
 ms.assetid: 65752312-cb16-46f6-870f-1b95c507b101
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5a783a7d94b48f088eeb868ac64ca355d8829c25
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 9a3b0f6b57f700201c05bd81c706d07de589e9f7
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87891431"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027736"
 ---
 # <a name="delete-partition"></a>delete partition
 
-刪除具有焦點的資料分割。 開始之前，您必須選取資料分割，此作業才會成功。 使用 [[選取資料分割](select-partition.md)] 命令來選取磁碟分割，並將焦點移至該資料分割。
+刪除具有焦點的資料分割。 開始之前，您必須選取分割區，此作業才會成功。 使用 [ [選取資料分割](select-partition.md) ] 命令來選取分割區，並將焦點移至該分割區。
 
 > [!WARNING]
-> 刪除動態磁碟上的磁碟分割可以刪除磁片上的所有動態磁碟區，終結任何資料並讓磁片處於損毀狀態。
+> 刪除動態磁碟上的磁碟分割可以刪除磁片上的所有動態磁碟區，終結任何資料並使磁片處於損毀狀態。
 >
-> 您無法刪除系統磁碟分割、開機磁碟分割，或包含作用中分頁檔案或損毀傾印資訊的任何磁碟分割。
+> 您無法刪除系統磁碟分割、開機磁碟分割或任何包含作用中分頁檔案或損毀傾印資訊的磁碟分割。
 
 ## <a name="syntax"></a>語法
 
@@ -33,18 +33,18 @@ delete partition [noerr] [override]
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| noerr | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
+| noerr | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 如果沒有這個參數，錯誤會導致 DiskPart 結束，並產生錯誤碼。 |
 | override | 啟用 DiskPart 來刪除各種類型的磁碟分割。 一般來說，DiskPart 只允許您刪除已知的資料磁碟分割。 |
 
 #### <a name="remarks"></a>備註
 
-- 若要刪除動態磁碟區，請一律改用 [[刪除磁片](delete-volume.md)區] 命令。
+- 若要刪除動態磁碟區，請一律改用 [刪除磁片](delete-volume.md) 區命令。
 
-- 磁碟分割可以從動態磁碟中刪除，但不應建立。 例如，您可以刪除無法辨識的 GUID 磁碟分割表格， (在動態 GPT 磁片上的 GPT) 磁碟分割。 刪除這類資料分割並不會導致產生的可用空間變成可用。 相反地，此命令的目的是讓您在無法使用 DiskPart 中的[clean](clean.md)命令的緊急情況下，回收損毀離線動態磁碟上的空間。
+- 您可以從動態磁碟刪除磁碟分割，但是不應該建立。 例如，您可以在動態 GPT 磁片上刪除無法辨識的 GUID 磁碟分割表 (GPT) 磁碟分割。 刪除這類分割區並不會導致產生的可用空間變成可用空間。 相反地，此命令的目的是要讓您在不能使用 DiskPart 中的 [clean](clean.md) 命令的緊急情況下，回收損毀離線動態磁碟上的空間。
 
 ## <a name="examples"></a>範例
 
-若要刪除具有焦點的資料分割，請輸入：
+若要刪除具有焦點的磁碟分割，請輸入：
 
 ```
 delete partition
