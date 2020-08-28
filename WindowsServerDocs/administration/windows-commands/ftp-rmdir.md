@@ -1,18 +1,18 @@
 ---
 title: ftp rmdir
-description: Ftp rmdir 命令的參考文章，它會刪除根目錄。
-ms.topic: article
+description: Ftp rmdir 命令的參考文章，此命令會刪除根目錄。
+ms.topic: reference
 ms.assetid: cf4778a4-9534-49c7-a061-850dc3504a67
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dfdb8f8638d12a70e526e7165367807260a4ca8f
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 6a9989a8d0c26820eb92c9f5794b4c877fe1efa8
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888962"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035746"
 ---
 # <a name="ftp-rmdir"></a>ftp rmdir
 
@@ -34,7 +34,7 @@ rmdir <directory>
 
 ### <a name="examples"></a>範例
 
-若要刪除 [*圖片*] 遠端目錄，請輸入：
+若要刪除 *圖片* 遠端目錄，請輸入：
 
 ```
 rmdir pictures
@@ -44,4 +44,4 @@ rmdir pictures
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [其他 FTP 指引](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [其他 FTP 指導方針](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

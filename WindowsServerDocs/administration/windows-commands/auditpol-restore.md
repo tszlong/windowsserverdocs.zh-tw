@@ -1,26 +1,26 @@
 ---
 title: auditpol restore
-description: Auditpol restore 命令的參考文章，可還原系統稽核原則設定、所有使用者的每個使用者稽核原則設定，以及 (與/備份選項所使用之 CSV) 檔案格式一致的檔案中，所有的審核選項。
-ms.topic: article
+description: Auditpol restore 命令的參考文章，此命令會還原系統稽核原則設定、所有使用者的每一使用者稽核原則設定，以及與/backup 選項所使用的逗點分隔值 (CSV) 檔案格式語法一致的檔案中的所有審核選項。
+ms.topic: reference
 ms.assetid: ad73e520-484f-4cf1-a7f9-ae7488e9edf6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3a9f5b159280631c42cc22c6b59fd571a5550835
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: dcf4f85da5955f49e644962de82a66a4dedaea64
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895311"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029006"
 ---
 # <a name="auditpol-restore"></a>auditpol restore
 
 > 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-針對所有使用者還原系統稽核原則設定、每個使用者的稽核原則設定，以及與/備份選項所使用之 CSV) 檔案格式一致的檔案中的所有審核選項（以逗號分隔值 (）。
+還原系統稽核原則設定、所有使用者的每一使用者稽核原則設定，以及與/backup 選項所使用的逗點分隔值 (CSV) 檔案格式一致之檔案中的所有審核選項。
 
-若要對*每個使用者*和*系統*策略執行*還原*作業，您必須擁有安全描述項中該物件集的 [**寫入**] 或 [**完全控制**] 許可權。 如果您的 [**管理審核及安全性記錄**檔 (SeSecurityPrivilege) ] 使用者權限，您也可以執行*還原*作業，這在發生錯誤或惡意攻擊時還原安全描述項時非常有用。
+若要對*每個使用者*和*系統*策略執行*還原*作業，您必須擁有安全描述項中該物件集的 [**寫入**] 或 [**完全控制**] 許可權。 如果您有 [**管理審核和安全性記錄**檔 (SeSecurityPrivilege) ] 使用者權限，也可以執行*還原*作業，這在發生錯誤或惡意攻擊的情況下還原安全描述項時相當實用。
 
 ## <a name="syntax"></a>語法
 
@@ -32,12 +32,12 @@ auditpol /restore /file:<filename>
 
 | 參數 | 描述 |
 | ------- | -------- |
-| /file | 指定應該從中還原稽核原則的檔案。 檔案必須已經使用/備份選項建立，或必須與/備份選項所使用的 CSV 檔案格式一致。 |
+| /file | 指定應從中還原稽核原則的檔案。 檔案必須使用/backup 選項來建立，或必須與/backup 選項所使用的 CSV 檔案格式一致。 |
 | /? |在命令提示字元顯示說明。 |
 
 ## <a name="examples"></a>範例
 
-若要從使用/備份命令建立的檔案中還原系統稽核原則設定、每個使用者的稽核原則設定，以及名為 auditpolicy.csv 的所有審核選項，請輸入：
+若要還原系統稽核原則設定、所有使用者的每個使用者稽核原則設定，以及使用/backup 命令所建立之檔案中名為 auditpolicy.csv 的所有審核選項，請輸入：
 
 ```
 auditpol /restore /file:c:\auditpolicy.csv

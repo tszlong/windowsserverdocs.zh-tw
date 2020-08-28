@@ -1,22 +1,22 @@
 ---
 title: bitsadmin listfiles
-description: Bitsadmin listfile 命令的參考文章，其中列出指定之作業中的檔案。
-ms.topic: article
+description: Bitsadmin listfile 命令的參考文章，此命令會列出指定工作中的檔案。
+ms.topic: reference
 ms.assetid: ad0d1eaa-3bd8-45e5-8f72-4da7366f0d59
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a5dcd9092f2d9a8d150496e4cf89595537885d62
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b6afadf78acd187b336484db47b128afb49e27fe
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87893682"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024302"
 ---
 # <a name="bitsadmin-listfiles"></a>bitsadmin listfiles
 
-列出指定之作業中的檔案。
+列出指定工作中的檔案。
 
 ## <a name="syntax"></a>語法
 
@@ -32,7 +32,7 @@ bitsadmin /listfiles <job>
 
 ## <a name="examples"></a>範例
 
-若要取得名為*myDownloadJob*之作業的檔案清單：
+若要取得名為 *myDownloadJob*之作業的檔案清單：
 
 ```
 bitsadmin /listfiles myDownloadJob

@@ -1,18 +1,18 @@
 ---
 title: ftp remotehelp
-description: Ftp remotehelp 命令的參考文章，它會顯示遠端命令的說明。
-ms.topic: article
+description: Ftp remotehelp 命令的參考文章，此命令會顯示遠端命令的說明。
+ms.topic: reference
 ms.assetid: ef23adf3-ead4-44c8-ac1d-c8a6f4b2bf73
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8e428a43ddcf36f1125c3fa83ddeeeff3cae979d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e404b9c75d28c45feebb300d8538d9998b2d9753
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889017"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035786"
 ---
 # <a name="ftp-remotehelp"></a>ftp remotehelp
 
@@ -30,7 +30,7 @@ remotehelp [<command>]
 
 | 參數 | 描述 |
 | ------- | -------- |
-| `[<command>]` | 指定您想要協助的命令名稱。 如果 `<command>` 未指定，此命令會顯示所有遠端命令的清單。 您也可以使用 [ [ftp 引號](ftp-quote.md)] 或 [ [ftp 常](ftp-literal_1.md)值] 來執行遠端命令。 |
+| `[<command>]` | 指定您想要協助的命令名稱。 如果 `<command>` 未指定，此命令會顯示所有遠端命令的清單。 您也可以使用 [ftp 引號](ftp-quote.md) 或 [ftp 常](ftp-literal_1.md)值來執行遠端命令。 |
 
 ### <a name="examples"></a>範例
 
@@ -40,7 +40,7 @@ remotehelp [<command>]
 remotehelp
 ```
 
-若要顯示 [*適用于] 遠端命令*的語法，請輸入：
+若要顯示 [ *操作遠端] 命令的語法* ，請輸入：
 
 ```
 remotehelp feat
@@ -54,4 +54,4 @@ remotehelp feat
 
 - [ftp literal](ftp-literal_1.md)
 
-- [其他 FTP 指引](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [其他 FTP 指導方針](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

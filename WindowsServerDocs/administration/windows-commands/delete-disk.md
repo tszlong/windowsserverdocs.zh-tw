@@ -1,25 +1,25 @@
 ---
 title: delete disk
-description: 刪除磁片命令的參考文章，它會從磁片清單刪除遺失的動態磁碟。
-ms.topic: article
+description: Delete disk 命令的參考文章，此命令會從磁片清單中刪除遺失的動態磁碟。
+ms.topic: reference
 ms.assetid: 44079900-e4ed-49d0-81e4-d652c38cd636
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 85657e571fb5f0f4e0a55cf54065056a8f28c385
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b02f88027d3fa7d425d65024350805eb2279185b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87891447"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024212"
 ---
 # <a name="delete-disk"></a>delete disk
 
-從磁片清單刪除遺失的動態磁碟。
+從磁片清單中刪除遺失的動態磁碟。
 
 > [!NOTE]
-> 如需如何使用此命令的詳細指示，請參閱[移除遺失的動態磁碟](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc753029(v=ws.11))。
+> 如需有關如何使用此命令的詳細指示，請參閱 [移除遺失的動態磁碟](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc753029(v=ws.11))。
 
 ## <a name="syntax"></a>語法
 
@@ -31,7 +31,7 @@ delete disk [noerr] [override]
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| noerr | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
+| noerr | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 如果沒有這個參數，錯誤會導致 DiskPart 結束，並產生錯誤碼。 |
 | override | 啟用 DiskPart 來刪除磁碟上的全部簡單磁碟區。 如果磁碟包含鏡像磁碟區的一半，則會刪除磁碟上的一半鏡像。 如果磁碟屬於 RAID-5 磁碟區，則 delete disk override 命令失敗。 |
 
 ## <a name="examples"></a>範例

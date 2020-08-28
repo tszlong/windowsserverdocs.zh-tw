@@ -1,18 +1,18 @@
 ---
 title: ftp user
-description: Ftp 使用者命令的參考文章，其指定遠端電腦的使用者。
-ms.topic: article
+description: Ftp user 命令的參考文章，可指定遠端電腦的使用者。
+ms.topic: reference
 ms.assetid: 0a77bfeb-27a9-4f2f-a3c4-2fef529fb569
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bd015b7f84a6f5a4f3ee10a3cbe351a5bfa4a563
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 7c1e928dd3aa30784d607da6f84ad9ae024881f3
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888819"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035656"
 ---
 # <a name="ftp-user"></a>ftp user
 
@@ -31,12 +31,12 @@ user <username> [<password>] [<account>]
 | 參數 | 描述 |
 | --------- | ----------- |
 | `<username>` | 指定用來登入遠端電腦的使用者名稱。 |
-| `[<password>]` | 指定使用者*名稱*的密碼。 如果未指定密碼，但這是必要的， **ftp**命令會提示您輸入密碼。 |
-| `[<account>]` | 指定用來登入遠端電腦的帳戶。 如果未指定*帳戶*，但這是必要的， **ftp**命令會提示您輸入該帳戶。 |
+| `[<password>]` | 指定使用者 *名稱*的密碼。 如果未指定密碼，但這是必要的， **ftp** 命令會提示您輸入密碼。 |
+| `[<account>]` | 指定用來登入遠端電腦的帳戶。 如果未指定 *帳戶* ，但這是必要的， **ftp** 命令會提示您輸入帳戶。 |
 
 ### <a name="examples"></a>範例
 
-若要指定具有密碼*Password1*的*User1* ，請輸入：
+若要使用密碼*Password1*指定*User1* ，請輸入：
 
 ```
 user User1 Password1
@@ -46,4 +46,4 @@ user User1 Password1
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [其他 FTP 指引](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [其他 FTP 指導方針](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

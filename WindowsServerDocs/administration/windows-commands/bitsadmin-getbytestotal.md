@@ -1,22 +1,22 @@
 ---
 title: bitsadmin getbytestotal
-description: Bitsadmin getbytestotal 命令的參考文章，它會抓取指定工作的大小。
-ms.topic: article
+description: Bitsadmin getbytestotal 命令的參考文章，此命令會抓取指定作業的大小。
+ms.topic: reference
 ms.assetid: 784e0bfa-7b09-4262-9104-adbc9beb479b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8b26773578d4c9a24f969df1506828c202e12b41
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 6a8496234c0907061997ddd790e03f78d84c5380
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87894565"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024422"
 ---
 # <a name="bitsadmin-getbytestotal"></a>bitsadmin getbytestotal
 
-抓取指定之作業的大小。
+抓取指定作業的大小。
 
 ## <a name="syntax"></a>語法
 
@@ -32,7 +32,7 @@ bitsadmin /getbytestotal <job>
 
 ## <a name="examples"></a>範例
 
-若要取出名為*myDownloadJob*的作業大小：
+若要取得名為 *myDownloadJob*的作業大小：
 
 ```
 bitsadmin /getbytestotal myDownloadJob

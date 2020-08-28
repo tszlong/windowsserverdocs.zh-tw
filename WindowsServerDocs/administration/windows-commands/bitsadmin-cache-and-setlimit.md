@@ -1,22 +1,22 @@
 ---
 title: bitsadmin cache and setlimit
-description: Bitsadmin cache 和 setlimit 命令的參考文章，其會設定快取大小限制。
-ms.topic: article
+description: Bitsadmin cache and setlimit 命令的參考文章，可設定快取大小的限制。
+ms.topic: reference
 ms.assetid: 46578835-d5ce-423b-be4d-62ddb9e1908d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 41a1331a19f66e7d84dc3eb57b04d42596a40628
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: edcd83ace72e301471b03ac0c1fc85439a1c4d94
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87894707"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89028786"
 ---
 # <a name="bitsadmin-cache-and-setlimit"></a>bitsadmin cache and setlimit
 
-設定快取大小限制。
+設定快取大小的限制。
 
 ## <a name="syntax"></a>語法
 

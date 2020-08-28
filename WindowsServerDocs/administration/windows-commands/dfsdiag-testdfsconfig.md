@@ -1,26 +1,26 @@
 ---
 title: dfsdiag testdfsconfig
-description: Dfsdiag testdfsconfig 的參考文章，它會檢查分散式檔案系統 (DFS) 命名空間的設定。
-ms.topic: article
+description: Dfsdiag testdfsconfig 的參考文章，會檢查分散式檔案系統 (DFS) 命名空間的設定。
+ms.topic: reference
 ms.assetid: 106aeeb9-ea79-4e6e-829c-eca06309bab2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c714780d43f0fbd95c18f2041c54df8fd23282e8
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 60070b9f4076ee90cf0705992f31aff583f92968
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87891170"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024002"
 ---
 # <a name="dfsdiag-testdfsconfig"></a>dfsdiag testdfsconfig
 
 > 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-藉由執行下列動作，檢查分散式檔案系統 (DFS) 命名空間的設定：
+藉由執行下列動作來檢查分散式檔案系統 (DFS) 命名空間的設定：
 
-- 確認 DFS 命名空間服務正在執行，且其啟動類型已在所有命名空間伺服器上設定為 [**自動**]。
+- 確認 DFS 命名空間服務正在執行，而且在所有命名空間伺服器上的啟動類型都設定為 [ **自動** ]。
 
 - 確認 DFS 登錄設定在命名空間伺服器之間是一致的。
 
@@ -28,9 +28,9 @@ ms.locfileid: "87891170"
 
   - 網路名稱資源的命名空間根資源相依性。
 
-  - IP 位址資源的網路名稱資源相依性。
+  - IP 位址資源上的網路名稱資源相依性。
 
-  - 實體磁片資源上的命名空間根資源相依性。
+  - 實體磁片資源的命名空間根資源相依性。
 
 ## <a name="syntax"></a>語法
 
@@ -42,11 +42,11 @@ dfsdiag /testdfsconfig /DFSroot:<namespace>
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| /DFSroot:`<namespace>` | 要診斷 (DFS 根) 的命名空間。 |
+| /DFSroot:`<namespace>` | 命名空間 (DFS 根目錄) 以進行診斷。 |
 
 ## <a name="examples"></a>範例
 
-若要確認*com\MyNamespace*中分散式檔案系統 (DFS) 命名空間的設定，請輸入：
+若要確認 *com\MyNamespace*中 (DFS) 命名空間分散式檔案系統的設定，請輸入：
 
 ```
 dfsdiag /testdfsconfig /DFSroot:\contoso.com\MyNamespace

@@ -1,18 +1,18 @@
 ---
 title: logman delete
-description: Logman delete 命令的參考文章，它會刪除現有的資料收集器。
-ms.topic: article
+description: Logman delete 命令的參考文章，此命令會刪除現有的資料收集器。
+ms.topic: reference
 ms.assetid: 8f3b2422-3dce-4fb4-adbb-8536b1d7da2b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5f83e903d6e9c3b9679f736bdba309498473ce52
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: dbcae06f149f0ea1c443f91fec45d87b5a358136
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887311"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023802"
 ---
 # <a name="logman-delete"></a>logman delete
 
@@ -30,16 +30,16 @@ logman delete <[-n] <name>> [options]
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| -s`<computer name>` | 在指定的遠端電腦上執行命令。 |
-| -config`<value>` | 指定包含命令選項的設定檔案。 |
-| [-n]`<name>` | 目標物件的名稱。 |
+| -s `<computer name>` | 在指定的遠端電腦上執行命令。 |
+| -config `<value>` | 指定包含命令選項的設定檔。 |
+| [-n] `<name>` | 目標物件的名稱。 |
 | -ets | 直接將命令傳送至事件追蹤會話，而不儲存或排程。 |
-| -[-] u`<user [password]>` | 指定要當做執行身分的使用者。 輸入密碼時，會 \* 產生密碼的提示。 當您在密碼提示字元中輸入密碼時，不會顯示該密碼。 |
+| -[-] u `<user [password]>` | 指定要執行的使用者。 輸入 \* 密碼會產生密碼提示。 當您在密碼提示字元中輸入密碼時，不會顯示該密碼。 |
 | /? | 顯示即時線上說明。 |
 
 ### <a name="examples"></a>範例
 
-若要刪除資料收集器*perf_log*，請輸入：
+若要刪除資料收集器 *perf_log*，請輸入：
 
 ```
 logman delete perf_log

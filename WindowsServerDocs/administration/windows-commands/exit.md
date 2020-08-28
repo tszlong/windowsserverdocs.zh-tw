@@ -1,18 +1,18 @@
 ---
 title: exit
-description: Exit 的參考文章，它會結束命令直譯器。
-ms.topic: article
+description: Exit 的參考文章，結束命令直譯器。
+ms.topic: reference
 ms.assetid: d3cee4a2-6210-46f0-b8e4-7381c3c4e530
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 058e41d49ece470421fbd2b160037885b92c1bed
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 9e065a25f339a093492a05102b10455b11da5ecb
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890466"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035856"
 ---
 # <a name="exit"></a>exit
 
@@ -30,8 +30,8 @@ exit [/b] [<exitcode>]
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| /b | 結束目前的批次腳本，而不是結束 Cmd.exe。 如果是從批次腳本外部執行，則會結束 Cmd.exe。 |
-| `<exitcode>` | 指定數位。 如果指定 **/b** ，ERRORLEVEL 環境變數會設定為該數位。 如果您要結束命令直譯器，進程結束代碼會設定為該數位。 |
+| /b | 結束目前的批次腳本，而不是結束 Cmd.exe。 如果是從批次腳本外部執行，則結束 Cmd.exe。 |
+| `<exitcode>` | 指定數位。 如果指定 **/b** ，ERRORLEVEL 環境變數就會設定為該數位。 如果您要結束命令直譯器，進程結束代碼會設定為該數位。 |
 | /? | 在命令提示字元顯示說明。 |
 
 ## <a name="examples"></a>範例

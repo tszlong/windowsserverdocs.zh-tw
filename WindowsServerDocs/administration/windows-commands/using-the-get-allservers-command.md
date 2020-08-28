@@ -1,25 +1,25 @@
 ---
 title: AllServers
-description: AllServers 的參考文章，它會抓取所有 Windows 部署服務伺服器的相關資訊。
-ms.topic: article
+description: AllServers 的參考文章，可取得所有 Windows 部署服務伺服器的相關資訊。
+ms.topic: reference
 ms.assetid: fe2e3c69-8f2e-457d-af55-d249ebf70f53
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6218b3dba4e87758322a7d33865b9a1a69dcb9fa
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 3cd70245754ff544524ed9511f1b6cc5c9574e2f
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896389"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035886"
 ---
 # <a name="get-allservers"></a>AllServers
 
 抓取所有 Windows 部署服務伺服器的相關資訊。
 
 > [!NOTE]
-> 如果您的環境中有許多 Windows 部署服務伺服器，或連結伺服器的網路連線速度緩慢，此命令可能需要相當長的時間才能完成。
+> 如果您的環境中有許多 Windows 部署服務伺服器，或連結伺服器的網路連接速度很慢，此命令可能需要很長的時間才能完成。
 
 ## <a name="syntax"></a>語法
 
@@ -31,8 +31,8 @@ WDSUTIL [Options] /Get-AllServers /Show:{Config | Images | All} [/Detailed] [/Fo
 
 |   參數   |                                                                                                                 描述                                                                                                                  |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| /Show： {Config |                                                                                                                    影像                                                                                                                    |
-|  [/Detailed]  | 與 **/show： Images**或 **/show： All**一起使用時，會傳回每個影像中的所有影像中繼資料。 如果未指定 **/Detailed**選項，則預設行為是傳回映射名稱、描述和檔案名。 |
+| /Show： {Config |                                                                                                                    映像                                                                                                                    |
+|  [/Detailed]  | 搭配使用 **/show： Images** 或 **/show： all**時，會傳回每個影像的所有影像中繼資料。 如果未指定 **/Detailed** 選項，則預設行為是傳回映射名稱、描述和檔案名。 |
 | [/Forest： {Yes |                                                                                                                     否}]                                                                                                                     |
 
 ## <a name="examples"></a>範例

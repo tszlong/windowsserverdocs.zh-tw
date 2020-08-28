@@ -1,26 +1,26 @@
 ---
 title: auditpol set
-description: Auditpol set 命令的參考文章，它會設定每個使用者的稽核原則、系統稽核原則或 [審核選項]。
-ms.topic: article
+description: Auditpol set 命令的參考文章，它會設定每個使用者稽核原則、系統稽核原則或審核選項。
+ms.topic: reference
 ms.assetid: f4947486-87bd-48cb-ba81-7230c8e70895
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 06dcac123a56adbab93aab4dfa44fcc47d26220d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 674de256eba3ee4b55f2b889717b7c2ed2defa3d
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895330"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89028966"
 ---
 # <a name="auditpol-set"></a>auditpol set
 
 > 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-設定每位使用者的稽核原則、系統稽核原則或審核選項。
+設定每個使用者稽核原則、系統稽核原則或審核選項。
 
-若要對*每個使用者*和*系統*策略執行*設定*作業，您必須擁有安全描述項中該物件集的 [**寫入**] 或 [**完全控制**] 許可權。 您也可以執行*設定*作業（如果您的 [管理] [**審核及安全性記錄** (SeSecurityPrivilege) ] 使用者權限）。 不過，此許可權允許執行整體*設定*作業所需的其他存取權。
+若要對*每個使用者*和*系統*策略執行*設定*作業，您必須擁有安全描述項中該物件集的 [**寫入**] 或 [**完全控制**] 許可權。 如果您有 [**管理審核和安全性記錄**檔 (SeSecurityPrivilege) 使用者權限，也可以執行*設定*作業。 不過，此許可權可讓您不需要執行整體 *設定* 作業的額外存取權。
 
 ## <a name="syntax"></a>語法
 
@@ -38,53 +38,53 @@ auditpol /set
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| /user | 設定類別或子類別所指定之每個使用者稽核原則的安全性主體。 必須指定 [類別] 或 [子類別] 選項，做為 (SID) 或名稱的安全識別碼。 |
-| /include | 使用/user 指定;指出使用者的每個使用者原則，即使系統稽核原則未指定，也會產生 audit。 此設定是預設值，如果未明確指定/include 或/exclude 參數，則會自動套用。 |
-| /exclude | 使用/user 指定;指出使用者的每一使用者原則，不論系統稽核原則為何，都會使 audit 遭到抑制。 對於身為本機 Administrators 群組成員的使用者，會忽略此設定。 |
-| /類別 | 全域唯一識別碼所指定的一或多個 audit 分類 (GUID) 或名稱。 如果未指定任何使用者，則會設定系統原則。 |
-| /subcategory | GUID 或名稱所指定的一或多個 audit 子類別。 如果未指定任何使用者，則會設定系統原則。 |
-| /success | 指定成功的審核。 此設定是預設值，如果未明確指定/success 或/failure 參數，則會自動套用。 此設定必須與指出是否啟用或停用設定的參數搭配使用。 |
-| /failure | 指定失敗的審核。 此設定必須與指出是否啟用或停用設定的參數搭配使用。 |
+| /user | 已設定類別或子類別所指定之每個使用者稽核原則的安全性主體。 您必須指定類別或子類別目錄選項，做為 (SID) 或名稱的安全識別碼。 |
+| /include | 以/user 指定;指出使用者的每個使用者原則將會產生審核，即使系統稽核原則未指定也是一樣。 這項設定是預設值，如果未明確指定/include 或/exclude 參數，則會自動套用。 |
+| /exclude | 以/user 指定;指出不論系統稽核原則為何，使用者的每個使用者原則都會導致隱藏的審核。 針對身為本機 Administrators 群組成員的使用者，系統會忽略此設定。 |
+| /類別 | 全域唯一識別碼指定的一或多個審核分類 (GUID) 或名稱。 如果未指定使用者，則會設定系統原則。 |
+| /subcategory | GUID 或名稱所指定的一或多個審核子類別。 如果未指定使用者，則會設定系統原則。 |
+| /success | 指定成功的審核。 這項設定是預設值，如果未明確指定/success 或/failure 參數，則會自動套用。 此設定必須搭配指出是否要啟用或停用設定的參數使用。 |
+| /failure | 指定失敗的審核。 此設定必須搭配指出是否要啟用或停用設定的參數使用。 |
 | /option | 設定 CrashOnAuditFail、FullprivilegeAuditing、AuditBaseObjects 或 AuditBasedirectories 選項的稽核原則。 |
-| /sd | 設定用來將存取權委派給稽核原則的安全描述項。 安全描述項必須使用安全描述項定義語言 (SDDL) 來指定。 安全描述項必須具有任意存取控制清單 (DACL) 。 |
+| /sd | 設定用來將存取權委派給稽核原則的安全描述項。 您必須使用安全描述項定義語言 (SDDL) 來指定安全描述項。 安全描述項必須有 (DACL) 的任意存取控制清單。 |
 | /? | 在命令提示字元顯示說明。 |
 
 ## <a name="examples"></a>範例
 
-若要為使用者 mikedan 的 [詳細追蹤] 類別底下的所有子類別目錄設定個別使用者稽核原則，讓所有使用者成功的嘗試都能通過審核，請輸入：
+若要在使用者 mikedan 的詳細追蹤類別下設定所有子類別的每個使用者稽核原則，以便進行所有使用者的成功嘗試，請輸入：
 
 ```
 auditpol /set /user:mikedan /category:detailed Tracking /include /success:enable
 ```
 
-若要針對 [名稱] 和 [GUID] 指定的分類，以及 GUID 指定的子類別來設定每個使用者的稽核原則，以隱藏任何成功或失敗嘗試的審核，請輸入：
+若要針對名稱和 GUID 所指定的類別設定依使用者稽核原則，以及 GUID 指定的子類別來抑制任何成功或失敗嘗試的審核，請輸入：
 
 ```
 auditpol /set /user:mikedan /exclude /category:Object Access,System,{6997984b-797a-11d9-bed3-505054503030}
 /subcategory:{0ccee9210-69ae-11d9-bed3-505054503030},:{0ccee9211-69ae-11d9-bed3-505054503030}, /success:enable /failure:enable
 ```
 
-若要針對指定的使用者設定每個使用者的稽核原則，以顯示所有可成功嘗試的所有類別，請輸入：
+若要為指定的使用者設定每個使用者的稽核原則，讓所有類別都能順利進行所有但成功的嘗試，請輸入：
 ```
 auditpol /set /user:mikedan /exclude /category:* /success:enable
 ```
 
-若要將 [詳細追蹤] 分類底下所有子類別的系統稽核原則設定為僅包含成功嘗試的審核，請輸入：
+若要針對詳細追蹤類別下的所有子類別設定系統稽核原則，使其只包含成功嘗試的審核，請輸入：
 
 ```
 auditpol /set /category:detailed Tracking /success:enable
 ```
 
 > [!NOTE]
-> 失敗設定不會改變。
+> 失敗設定未變更。
 
-若要為 [物件存取] 和 [系統類別] 設定 [系統稽核原則] (這是隱含的，因為子類別會列在 Guid 所指定) 和子類別目錄中，以隱藏失敗的嘗試和成功的嘗試次數，請輸入：
+若要為 [物件存取] 和 [系統類別目錄] 設定系統稽核原則 (這是隱含的，因為子類別會列出) 和 Guid 指定的子類別，以顯示失敗的嘗試和成功的嘗試，請輸入：
 
 ```
 auditpol /set /subcategory:{0ccee9210-69ae-11d9-bed3-505054503030},{0ccee9211-69ae-11d9-bed3-505054503030}, /failure:disable /success:enable
 ```
 
-若要將 [CrashOnAuditFail] 選項的 [審核選項] 設定為 [已啟用] 狀態，請輸入：
+若要將審核選項設定為 [CrashOnAuditFail] 選項的 [已啟用] 狀態，請輸入：
 
 ```
 auditpol /set /option:CrashOnAuditFail /value:enable

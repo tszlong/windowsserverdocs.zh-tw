@@ -1,18 +1,18 @@
 ---
 title: ftp hash
-description: 'Ftp hash 命令的參考文章，它會針對每個傳送的資料區塊切換數位記號 ( # ) 列印。'
-ms.topic: article
+description: 'Ftp hash 命令的參考文章，此命令會切換每個已傳輸資料區塊的數位記號 ( # ) 列印。'
+ms.topic: reference
 ms.assetid: 76bed9b3-3efd-4a3e-831f-460626d02c44
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: daadc68bc52426164024c5c54c251d2aa0962765
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 67ac838ce17d5b270767ea7a4d1cb2aa472fc0a1
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889404"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023932"
 ---
 # <a name="ftp-hash"></a>ftp hash
 
@@ -28,7 +28,7 @@ hash
 
 ### <a name="examples"></a>範例
 
-若要針對每個傳輸的資料區塊切換數位記號 ( # ) 列印，請輸入：
+若要切換傳送的每個資料區塊的數位正負號 ( # ) 列印，請輸入：
 
 ```
 hash
@@ -38,4 +38,4 @@ hash
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
-- [其他 FTP 指引](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [其他 FTP 指導方針](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

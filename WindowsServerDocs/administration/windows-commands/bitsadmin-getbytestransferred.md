@@ -1,22 +1,22 @@
 ---
 title: bitsadmin getbytestransferred
-description: Bitsadmin getbytestransferred 命令的參考文章，它會抓取針對指定工作所傳輸的位元組數目。
-ms.topic: article
+description: Bitsadmin getbytestransferred 命令的參考文章，此命令會抓取針對指定工作傳輸的位元組數目。
+ms.topic: reference
 ms.assetid: 47bbf184-e06f-4be0-b2ba-d32b10d82002
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1d6b8ebb8d03a2498796325de8878840f36c6b71
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 67e1432f2fbef32ac47320d87993f5d62053bb71
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87894525"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89028736"
 ---
 # <a name="bitsadmin-getbytestransferred"></a>bitsadmin getbytestransferred
 
-抓取指定作業所傳輸的位元組數目。
+抓取針對指定工作傳輸的位元組數目。
 
 ## <a name="syntax"></a>語法
 
@@ -32,7 +32,7 @@ bitsadmin /getbytestransferred <job>
 
 ## <a name="examples"></a>範例
 
-若要取得名為*myDownloadJob*之作業所傳輸的位元組數：
+若要取出針對名為 *myDownloadJob*的作業所傳送的位元組數目：
 
 ```
 bitsadmin /getbytestransferred myDownloadJob

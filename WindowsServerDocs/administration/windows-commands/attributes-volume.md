@@ -1,18 +1,18 @@
 ---
 title: attributes volume
-description: '[屬性] [volume] 命令的參考文章，可顯示、設定或清除磁片區的屬性。'
-ms.topic: article
+description: 屬性磁片區命令的參考文章，可顯示、設定或清除磁片區的屬性。
+ms.topic: reference
 ms.assetid: e40e8284-3d57-4de8-a46c-e4ade34a0d53
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a4e0e7110bd23d1a8127e867dd991d1dc620c164
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 71f11eb692676cec4121e2ea24aed123f6a7d7d5
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895486"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029186"
 ---
 # <a name="attributes-volume"></a>attributes volume
 
@@ -36,15 +36,15 @@ attributes volume [{set | clear}] [{hidden | readonly | nodefaultdriveletter | s
 | 隱藏 | 指定磁碟區為隱藏。 |
 | nodefaultdriveletter | 指定磁碟區根據預設不接受磁碟機代號。 |
 | shadowcopy | 指定磁碟區為陰影複製磁碟區。 |
-| noerr | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 若沒有此參數，錯誤會導致 DiskPart 結束，錯誤碼為。 |
+| noerr | 僅適合執行指令。 遇到錯誤時，DiskPart 會像沒有發生錯誤一般繼續處理命令。 如果沒有這個參數，錯誤會導致 DiskPart 結束，並產生錯誤碼。 |
 
 ### <a name="remarks"></a>備註
 
-- 在基本的主要開機記錄 (MBR) 磁片上， **hidden**、 **readonly**和**nodefaultdriveletter**參數適用于磁片上的所有磁片區。
+- 在基本主機開機記錄 (MBR) 磁片上， **hidden**、 **readonly**和 **nodefaultdriveletter** 參數適用于磁片上的所有磁片區。
 
-- 在基本 GUID 磁碟分割表格上 (GPT) 磁片，而在動態 MBR 和 GPT 磁片上， **hidden**、 **readonly**和**nodefaultdriveletter**參數只適用于選取的磁片區。
+- 在基本 GUID 磁碟分割表格上 (GPT) 磁片，而在動態 MBR 和 GPT 磁片上， **hidden**、 **readonly**和 **nodefaultdriveletter** 參數只適用于選取的磁片區。
 
-- 必須選取磁片區，**屬性 volume**命令才會成功。 使用 [**選取磁片**區] 命令來選取磁片區，並將焦點移至該磁片區。
+- 必須選取磁片區， **屬性磁片** 區命令才能成功。 使用 [ **選取磁片** 區] 命令來選取磁片區，並將焦點移至該磁片區。
 
 ## <a name="examples"></a>範例
 
