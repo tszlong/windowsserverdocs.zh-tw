@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 684ab29a9e1ded85443a2ec2d05ad4f55ec2cd5c
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 0a9c1eb46e2d6802c50dfc89e4a3085e6a6afca2
+ms.sourcegitcommit: fe356f95188b7ce8e719765f44c0789c065832fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89025212"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89057560"
 ---
 # <a name="mstsc"></a>mstsc
 
@@ -59,7 +59,15 @@ mstsc.exe /migrate
 ```
 mstsc /f
 ```
+或
+```
+mstsc /v:computer1 /f
+```
+若要指派寬度/高度，請輸入：
 
+```
+mstsc /v:computer1 /w:1920 /h:1080
+```
 若要開啟名為 *.rdp* 的檔案進行編輯，請輸入：
 
 ```

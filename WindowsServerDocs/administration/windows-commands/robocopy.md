@@ -7,18 +7,18 @@ author: jasongerend
 ms.author: jgerend
 manager: lizapo
 ms.date: 06/07/2020
-ms.openlocfilehash: b149294436c78c3c9c223973fb3e9b423ff3dfd0
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 48d9d564c7badf8ea34c77ce7004d0ce642b78cb
+ms.sourcegitcommit: fe356f95188b7ce8e719765f44c0789c065832fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036206"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89057580"
 ---
 # <a name="robocopy"></a>robocopy
 
 將檔案資料從某個位置複製到另一個位置。
 
-## <a name="syntax"></a>語法
+## <a name="syntax"></a>Syntax
 
 ```
 robocopy <source> <destination> [<file>[ ...]] [<options>]
@@ -44,7 +44,7 @@ robocopy c:\reports '\\marketing\videos' yearly-report.mov /mt /z
 | 選項 | 描述 |
 |--|--|
 | /s | 複製子目錄。 此選項會自動排除空白目錄。 |
-| /e | 複製子目錄。 此選項會自動排除空白目錄。 |
+| /e | 複製子目錄。 此選項會自動包含空的目錄。 |
 | /lev:`<n>` | 只複製來原始目錄樹狀結構的前 *n* 個層級。 |
 | /z | 以可重新開機的模式複製檔案。 |
 | /b | 以備份模式複製檔案。 |
