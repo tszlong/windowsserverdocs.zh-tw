@@ -2,17 +2,17 @@
 title: 安全的虛擬化 Active Directory Domain Services (AD DS)
 description: USN 回復和安全的 Active Directory 虛擬化
 ms.topic: article
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 03/22/2019
 ms.assetid: 7a3114c8-bda8-49bb-83a8-4e04340ab221
-ms.openlocfilehash: b7485b0465bdcacdbe23604c390fa4218cb7365d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fbacb87d99bf5b396e119028e15e8a4aa0c9ef53
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87938693"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940978"
 ---
 # <a name="safely-virtualizing-active-directory-domain-services-ad-ds"></a>安全的虛擬化 Active Directory Domain Services (AD DS)
 
