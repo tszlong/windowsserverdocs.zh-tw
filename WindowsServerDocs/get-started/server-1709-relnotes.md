@@ -8,12 +8,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f509a7bcea56c0791ef649f341e7b4b11c7c6e3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: afadca07931284e975aaf18192664fa1ed81e184
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87967875"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033736"
 ---
 # <a name="release-notes-important-issues-in-windows-server-version-1709"></a>版本資訊：Windows Server 1709 版中的重要問題
 
@@ -29,7 +29,7 @@ ms.locfileid: "87967875"
 
 此外，也不支援將執行 Windows Server 1709 版的伺服器導入 Windows Server 2016 儲存空間直接存取部署。
 
-Windows Server 發行模式提供新的選項，使它其模式與 [Windows 10](/windows/deployment/update/waas-overview) 和 [Office 365 專業增強版](https://support.office.com/article/Overview-of-the-upcoming-changes-to-Office-365-ProPlus-update-management-78b33779-9356-4cdf-9d2c-08350ef05cca?ui=en-US&rs=en-US&ad=US)的發行及維護模式一致。 半年通道發行會提供新功能給想要以快速節奏進展的客戶，且每年可取得兩次新版本，分別在春季和秋季推出。
+Windows Server 發行模式提供新的選項，使其模式與 [Windows 10](/windows/deployment/update/waas-overview) 和 [Microsoft 365 應用程式](https://docs.microsoft.com/DeployOffice/overview-update-channels)的發行及維護模式一致。 半年通道發行會提供新功能給想要以快速節奏進展的客戶，且每年可取得兩次新版本，分別在春季和秋季推出。
 
 Windows Server 半年通道著重受益於快速創新的容器和應用程式案例，請參閱此[部落格](https://cloudblogs.microsoft.com/windowsserver/2018/03/29/windows-server-semi-annual-channel-update)以取得詳細資訊。 需要基礎結構角色 (如儲存空間直接存取) 的客戶，應使用長期維護通道版本，像是 Windows Server 2016 (現已推出) 和 [Windows Server 2019](https://cloudblogs.microsoft.com/windowsserver/2018/03/20/introducing-windows-server-2019-now-available-in-preview) \(今年稍後推出\)。 我們致力於建立超融合式基礎結構的最佳平台，且我們持續開發新功能，並根據您的意見反應改善現有功能。
 

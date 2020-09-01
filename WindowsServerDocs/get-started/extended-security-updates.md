@@ -7,12 +7,12 @@ ms.author: iainfou
 ms.topic: get-started-article
 ms.localizationpriority: high
 ms.date: 02/21/2020
-ms.openlocfilehash: c74c8a278612d2ca47346ad95105f1258761494a
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: f405486c5ea34b26f23a16552c24527939ca1fd4
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990473"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024562"
 ---
 # <a name="how-to-use-windows-server-2008-and-2008-r2-extended-security-updates-esu"></a>如何使用 Windows Server 2008 和 2008 R2 延伸安全性更新 (ESU)
 
@@ -44,6 +44,9 @@ Windows Server 2008 和 Windows Server 2008 R2 支援週期已於 2020 年 1 月
 ## <a name="how-to-use-extended-security-updates"></a>使用延伸安全性更新的方法
 
 如果您在 Azure 中執行 Windows Server 2008 或 2008 R2 VM，這些 VM 會自動啟用延伸安全性更新。 您不需要執行任何設定，也不需額外付費即可使用 Azure VM 的延伸安全性更新。 如果設定為接收更新，則延伸安全性更新會自動傳遞至 Azure VM。
+
+> [!NOTE]
+> Microsoft.ClassicCompute VM 需要進行延伸安全性更新部署的額外設定，因為其無法存取 [Azure Instance Metadata Service](https://docs.microsoft.com/azure/virtual-machines/windows/instance-metadata-service)，這會決定延伸安全性更新的資格。 請連絡 [Microsoft 支援服務](https://support.microsoft.com/contactus?PID=17336)尋求協助。
 
 針對其他環境 (例如內部部署 VM 或實體伺服器)，您必須手動要求並設定延伸安全性更新。 您可以透過大量授權方案 (例如 Enterprise 合約 (EA)、Enterprise 合約訂用帳戶 (EAS)、教育版解決方案註冊 (EES) 或伺服器和雲端註冊 (SCE)) 來購買延伸安全性更新。
 

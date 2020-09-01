@@ -6,14 +6,14 @@ ms.assetid: 12efe858-6b76-4e08-9f72-b9603aceb0fc
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 04/06/2020
+ms.date: 08/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 524b90965ca1dfca726294d4518fcefa4a470cf2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a44926d50fae9dea38e3f5c46db423991a414a87
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970105"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941508"
 ---
 # <a name="compare-the-clients"></a>比較用戶端
 
@@ -34,7 +34,7 @@ ms.locfileid: "87970105"
 | 鍵盤    | X                         | X                           | X             | X       | X   | X     | X             |
 | 滑鼠       | X                         | X                           | X             | X       | X\* | X     | X             |
 | 觸控       | X                         | X                           | X             | X       | X   |       | X (IE 除外) |
-| 手寫筆         | X                         | X                           |               |         |     |       |               |
+| 手寫筆         | X                         | X                           |               | X (如觸控) |  X (如觸控)  |       |               |
 
 *檢視[遠端桌面 iOS 用戶端支援的輸入裝置清單](remote-desktop-ios.md#supported-input-devices)。
 
@@ -51,7 +51,7 @@ ms.locfileid: "87970105"
 
 | 重新導向         | Windows 收件匣</br>(MSTSC) | Windows 桌面</br>(MSRDC) | Windows 市集 | Android | iOS         | macOS                           | 網頁用戶端    |
 |---------------------|---------------------------|-----------------------------|---------------|---------|-------------|---------------------------------|---------------|
-| 相機             | X                         | X                           |               |         |   X         | X                               |               |
+| 相機             | X                         | X                           |               |     X    |   X         | X                               |               |
 | 剪貼簿           | X                         | X                           | X             | Text    | 文字、影像 | X                               | 文字          |
 | 本機磁碟機/存放區 | X                         | X                           |               | X       |   X        | X                               |               |
 | 位置            | X                         | X                           |               |         |             |                                 |               |

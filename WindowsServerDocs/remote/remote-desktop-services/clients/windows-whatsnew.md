@@ -5,22 +5,22 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 08/19/2020
+ms.date: 08/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: dbaaafe2c01d41a9786d6718bad850dc08deaa81
-ms.sourcegitcommit: 6d991b16a6d9129e1f5d1ca7d688bd621b72d586
+ms.openlocfilehash: 56e2a5f91983f8fe64382e162ecf18b30e75b41d
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88638875"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88938788"
 ---
 # <a name="whats-new-in-the-windows-store-client"></a>Windows Store 用戶端中的新功能
 
 我們會定期更新 [Windows Store 用戶端](windows.md)，進而新增功能並修正問題。 您可以在這裡找到最新的更新。
 
-## <a name="updates-for-version-1021519-insider"></a>10.2.1519 版的更新 (測試人員)
+## <a name="updates-for-version-1021522"></a>10.2.1522 版的更新
 
-*發行日期：2020/8/19*
+*發行日期：2020/8/26*
 
 - 重新編寫用戶端以使用與 iOS、macOS 和 Android 用戶端相同的基礎 RDP 核心引擎。
 - 已新增對 Windows 虛擬桌面的 Azure Resource Manager 整合版支援。

@@ -7,12 +7,12 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.date: 02/19/2020
-ms.openlocfilehash: 7b9500c11ca5dba7ed2f51d1d6b32b7cf689f070
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: eeadbdea10f08372cd927808b4b433d8ba7ee85f
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997130"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037826"
 ---
 # <a name="optimizing-windows-10-version-1909-for-a-virtual-desktop-infrastructure-vdi-role"></a>針對虛擬桌面基礎結構 (VDI) 角色將 Windows 10 版本 1909 最佳化
 
@@ -666,7 +666,7 @@ VDI 環境中的許多 Windows 10 最佳化都可使用 Windows 原則來進行�
 就 Windows Defender 而言，建議即使在非持續性 VDI 中，也應允許更新執行。 更新幾乎在每個登入工作階段都會套用，但這類更新都很小，應該不會有問題。 此外，由於只會套用最新的可用更新，VM 的更新將不會過時。 第三方定義檔可能也是如此。
 
 > [!NOTE]
-> 市集應用程式 (UWP 應用程式) 會透過 Windows 市集進行更新。 新版的 Office (例如 Office 365) 在直接連線至網際網路時會透過其本身的機制進行更新，而在未連線至網際網路時，則會透過管理技術進行更新。
+> 市集應用程式 (UWP 應用程式) 會透過 Windows 市集進行更新。 新版的 Office (例如 Microsoft 365) 在直接連線至網際網路時會透過其本身的機制進行更新，而在未連線至網際網路時，則會透過管理技術進行更新。
 
 ### <a name="windows-system-startup-event-traces"></a>Windows 系統啟動事件追蹤
 

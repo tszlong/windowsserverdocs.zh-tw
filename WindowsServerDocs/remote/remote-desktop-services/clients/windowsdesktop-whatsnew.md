@@ -5,18 +5,18 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 08/20/2020
+ms.date: 08/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b23c19304aa7773dbb3c4e1406e065fb68947c5d
-ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
+ms.openlocfilehash: 4ce718db142ac34a51642e1ed2128899a0e77dbf
+ms.sourcegitcommit: 47dc2671330c2ecc56cce39ef006cbfe108b4759
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88702837"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88821331"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面用戶端的新功能
 
-您可以在[開始使用 Windows 桌面用戶端](windowsdesktop.md)找到更多有關 Windows 桌面用戶端的詳細資訊。 您可以在下方找到最新的用戶端更新。
+您可以在[開始使用 Windows 桌面用戶端](windowsdesktop.md)找到更多有關 Windows 桌面用戶端的詳細資訊。 您可以在本文中找到最新的用戶端更新。
 
 ## <a name="latest-client-versions"></a>最新的用戶端版本
 
@@ -24,12 +24,12 @@ ms.locfileid: "88702837"
 
 |使用者群組 |版本  |
 |-----------|---------|
-|公用     |1.2.1186 |
+|公用     |1.2.1272 |
 |Insider    |1.2.1272 |
 
-## <a name="updates-for-version-121272-insider"></a>1\.2.1272 版的更新 [INSIDER]
+## <a name="updates-for-version-121272"></a>1\.2.1272 版的更新
 
-*發行日期：2020/8/11*
+*發行日期：2020/8/25*
 
 下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4D7LK)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4D5aF)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4Dan3)
 

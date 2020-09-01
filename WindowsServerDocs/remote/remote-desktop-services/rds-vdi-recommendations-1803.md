@@ -6,12 +6,12 @@ ms.author: jaimeo, robsmi
 ms.topic: article
 author: jaimeo
 manager: dougkim
-ms.openlocfilehash: e7bd68264f60b61a5c1063a51217bedb0c6c80ec
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: eb222547518dc0ee13e2c7a47037ffae74fee1fa
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989833"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036766"
 ---
 # <a name="optimizing-windows-10-version-1803-for-a-virtual-desktop-infrastructure-vdi-role"></a>針對虛擬桌面基礎結構 (VDI) 角色最佳化 Windows 10 1803 版
 
@@ -566,7 +566,7 @@ Windows 依預設設定會收集並儲存有限的診斷資料。 其目的是�
 就 Windows Defender 而言，建議即使在非持續性 VDI 中，也應允許更新執行。 更新幾乎在每個登入工作階段都會套用，但這類更新都很小，應該不會有問題。 此外，由於只會套用最新的可用更新，VM 的更新將不會過時。 非 Microsoft 定義檔可能也是如此。
 
 > [!NOTE]
-> 市集應用程式 (UWP 應用程式) 會透過 Windows 市集進行更新。 新版的 Office (例如 Office 365) 在直接連線至網際網路時會透過其本身的機制進行更新，而在未連線至網際網路時，則會透過管理技術進行更新。
+> 市集應用程式 (UWP 應用程式) 會透過 Windows 市集進行更新。 新版的 Office (例如 Microsoft 365) 在直接連線至網際網路時會透過其本身的機制進行更新，而在未連線至網際網路時，則會透過管理技術進行更新。
 
 ### <a name="windows-defender-optimization-with-vdi"></a>Windows Defender 對 VDI 的最佳化
 
