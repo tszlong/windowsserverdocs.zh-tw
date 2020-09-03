@@ -72,9 +72,9 @@
 #### [開始使用 Windows 桌面用戶端](clients/windowsdesktop.md)
 #### [適用於系統管理員的 Windows 桌面用戶端](clients/windowsdesktop-admin.md)
 #### [Windows 桌面用戶端的新功能](clients/windowsdesktop-whatsnew.md)
-### Windows Store 用戶端
-#### [ Windows Store 用戶端](clients/windows.md)
-#### [Windows Store 用戶端中的新功能](clients/windows-whatsnew.md)
+### Microsoft Store 用戶端
+#### [開始使用 Microsoft Store 用戶端](clients/windows.md)
+#### [Microsoft Store 用戶端的新功能](clients/windows-whatsnew.md)
 ### Android 用戶端
 #### [開始使用 Android 用戶端](clients/remote-desktop-android.md)
 #### [Android 用戶端中的新功能](clients/android-whatsnew.md)
