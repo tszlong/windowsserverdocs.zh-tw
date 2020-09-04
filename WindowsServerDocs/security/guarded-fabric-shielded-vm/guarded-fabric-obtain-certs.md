@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 09/25/2019
-ms.openlocfilehash: 0f9499402a5788cd3dc9ad9cd262d65636f9284c
-ms.sourcegitcommit: 076504a92cddbd4b84bfcd89da1bf1c8c9e79495
+ms.openlocfilehash: 392065ac9fe9e32e84550e14cd9ef39349ac8d67
+ms.sourcegitcommit: 664ed9bb0bbac2c9c0727fc2416d8c437f2d5cbe
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89427490"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89472018"
 ---
 # <a name="obtain-certificates-for-hgs"></a>取得 HGS 的憑證
 
@@ -59,15 +59,23 @@ ms.locfileid: "89427490"
 若要建立自我簽署的憑證，並將其匯出至 PFX 檔案，請在 PowerShell 中執行下列命令：
 
 ```powershell
-$certificatePassword = Read-Host -AsSecureString -Prompt "Enter a password for the PFX file"
+$certificatePassword = Read-Host -AsSecureString -Prompt 'Enter a password for the PFX file'
 
-$signCert = New-SelfSignedCertificate -Subject "CN=HGS Signing Certificate" -KeyUsage DataEncipherment, DigitalSignature
-Export-PfxCertificate -FilePath .\signCert.pfx -Password $certificatePassword -Cert $signCert
+$signCert = New-SelfSignedCertificate -Subject 'CN=HGS Signing Certificate' -KeyUsage DataEncipherment, DigitalSignature
+Export-PfxCertificate -FilePath '.\signCert.pfx' -Password $certificatePassword -Cert $signCert
+
+# Remove the certificate from "Personal" container
 Remove-Item $signCert.PSPath
+# Remove the certificate from "Intermediate certification authorities" container
+Remove-Item -Path "Cert:\LocalMachine\CA\$($signCert.Thumbprint)"
 
-$encCert = New-SelfSignedCertificate -Subject "CN=HGS Encryption Certificate" -KeyUsage DataEncipherment, DigitalSignature
-Export-PfxCertificate -FilePath .\encCert.pfx -Password $certificatePassword -Cert $encCert
+$encCert = New-SelfSignedCertificate -Subject 'CN=HGS Encryption Certificate' -KeyUsage DataEncipherment, DigitalSignature
+Export-PfxCertificate -FilePath '.\encCert.pfx' -Password $certificatePassword -Cert $encCert
+
+# Remove the certificate from "Personal" container
 Remove-Item $encCert.PSPath
+# Remove the certificate from "Intermediate certification authorities" container
+Remove-Item -Path "Cert:\LocalMachine\CA\$($encCert.Thumbprint)"
 ```
 
 ## <a name="request-an-ssl-certificate"></a>要求 SSL 憑證
@@ -79,8 +87,8 @@ Hyper-v 主機和 HGS 節點都必須信任您提供的 SSL 憑證，因此建�
 
 SSL 憑證屬性 | 必要值
 -------------------------|---------------
-主體名稱             | HGS 叢集的名稱 (稱為「分散式網路名稱」或「虛擬電腦物件 FQDN) 。 這將是您提供的 HGS 服務名稱與 `Initialize-HgsServer` hgs 功能變數名稱的串連。
-主體別名 | 如果您要使用不同的 DNS 名稱來連線到 HGS 叢集 (例如，如果它是在負載平衡器) 後方，請務必在您的憑證要求的 SAN 欄位中包含這些 DNS 名稱。
+主體名稱             | 請解決 HGS 用戶端 (也就是 Guraded 主機) 將用來存取 HGS 伺服器。 這通常是 HGS 叢集（稱為「分散式網路名稱」或「虛擬電腦」物件） (VCO) 的 DNS 位址。 這將是您提供的 HGS 服務名稱與 `Initialize-HgsServer` hgs 功能變數名稱的串連。
+主體別名 | 如果您要使用不同的 DNS 名稱來連線 HGS 叢集 (例如，如果它是在負載平衡器後方，或您針對複雜拓撲) 中的節點子集使用不同的位址，請務必在您的憑證要求的 [SAN] 欄位中包含這些 DNS 名稱。 請注意，如果已填入 SAN 延伸模組，則會忽略主體名稱，因此 SAN 應該包含所有值，包括通常會放入主體名稱的所有值。
 
 [設定第一個 hgs 節點](guarded-fabric-initialize-hgs.md)時，會涵蓋在初始化 hgs 伺服器時指定此憑證的選項。
 您也可以稍後使用 [HgsServer](/powershell/module/hgsserver/set-hgsserver?view=win10-ps) 指令 Cmdlet 來新增或變更 SSL 憑證。
