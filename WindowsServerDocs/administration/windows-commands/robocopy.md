@@ -7,18 +7,18 @@ author: jasongerend
 ms.author: jgerend
 manager: lizapo
 ms.date: 06/07/2020
-ms.openlocfilehash: 48d9d564c7badf8ea34c77ce7004d0ce642b78cb
-ms.sourcegitcommit: fe356f95188b7ce8e719765f44c0789c065832fb
+ms.openlocfilehash: d08e969d0296c9ca1efc34bfd0ac6ad7e42519cf
+ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89057580"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89554541"
 ---
 # <a name="robocopy"></a>robocopy
 
 將檔案資料從某個位置複製到另一個位置。
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>語法
 
 ```
 robocopy <source> <destination> [<file>[ ...]] [<options>]
@@ -61,8 +61,8 @@ robocopy c:\reports '\\marketing\videos' yearly-report.mov /mt /z
 | /mir | 鏡像目錄樹狀結構 (相當於 **/e** plus **/purge**) 。 使用這個選項搭配 **/e** 選項和目的地目錄，會覆寫目的地目錄安全性設定。 |
 | /mov | 移動檔案，並在複製後從來源刪除它們。 |
 | /move | 移動檔案和目錄，並在複製後從來源刪除它們。 |
-| /a +： [RASHCNET] | 將指定的屬性加入至複製的檔案。 |
-| /a-： [RASHCNET] | 從複製的檔案中移除指定的屬性。 |
+| /a +： [RASHCNET] | 將指定的屬性加入至複製的檔案。  此選項的有效值為： <ul><li>**R** -唯讀</li><li>**A**封存</li><li>**S** -系統</li><li>**H** -隱藏</li><li>**C** -壓縮</li><li>**N** -未編制內容索引</li><li>**電子** 加密</li><li>**T** -暫存</li></ul> |
+| /a-： [RASHCNET] | 從複製的檔案中移除指定的屬性。 此選項的有效值為： <ul><li>**R** -唯讀</li><li>**A**封存</li><li>**S** -系統</li><li>**H** -隱藏</li><li>**C** -壓縮</li><li>**N** -未編制內容索引</li><li>**電子** 加密</li><li>**T** -暫存</li></ul> |
 | /create | 只建立樹狀目錄和長度為零的檔案。 |
 | /fat | 只使用8.3 字元長度的 FAT 檔案名來建立目的地檔案。 |
 | /256 | 關閉路徑超過256個字元的支援。 |
@@ -89,8 +89,8 @@ robocopy c:\reports '\\marketing\videos' yearly-report.mov /mt /z
 |--|--|
 | /a | 只複製已設定 Archive 屬性的 **檔案** 。 |
 | /m | 只會複製已設定**archive**屬性的檔案，並重設封存**屬性。** |
-| ia`[RASHCNETO]` | 只包含已設定任何指定屬性的檔案。 |
-| xa`[RASHCNETO]` | 排除已設定任何指定屬性的檔案。 |
+| ia`[RASHCNETO]` | 只包含已設定任何指定屬性的檔案。  此選項的有效值為： <ul><li>**R** -唯讀</li><li>**A**封存</li><li>**S** -系統</li><li>**H** -隱藏</li><li>**C** -壓縮</li><li>**N** -未編制內容索引</li><li>**電子** 加密</li><li>**T** -暫存</li><li>**O** -離線</li></ul> |
+| xa`[RASHCNETO]` | 排除已設定任何指定屬性的檔案。 此選項的有效值為： <ul><li>**R** -唯讀</li><li>**A**封存</li><li>**S** -系統</li><li>**H** -隱藏</li><li>**C** -壓縮</li><li>**N** -未編制內容索引</li><li>**電子** 加密</li><li>**T** -暫存</li><li>**O** -離線</li></ul> |
 | /xf `<filename>[ ...]` | 排除符合指定名稱或路徑的檔案。 支援萬用字元 (**&#42;** 和 **？**) 。 |
 | /xd `<directory>[ ...]` | 排除符合指定名稱和路徑的目錄。 |
 | /xc | 排除變更的檔案。 |

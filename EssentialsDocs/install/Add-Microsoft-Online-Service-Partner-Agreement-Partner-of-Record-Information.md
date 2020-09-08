@@ -7,19 +7,19 @@ ms.assetid: 9bd191d6-ecc5-4230-a88e-f3fc281cb956
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c1d6d9b056c4ccc5b6961023e1f0c22034321960
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 807aacc5039bf90ea4dd7c7859c232d8c8b3011a
+ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181574"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89554341"
 ---
 # <a name="add-microsoft-online-service-partner-agreement-partner-of-record-information"></a>新增 Microsoft Online Service 合作夥伴合約列名的合作夥伴資訊
 
 >適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 ##  <a name="BKMK_3rdLevelDomanNames"></a>
- 如果您是 Office 365 的 Microsoft Online Service 合作夥伴合約（MOSPA）合作夥伴，為了確保您在透過 Office 365 整合模組從 Windows Server Essentials 衍生訂閱要求時，能正確獲得報酬，您需要建立一個登錄機碼，其中包含您的記錄夥伴識別（POR 識別碼）。 會讀取下列資訊，並透過 Office 365 註冊 URL 將資訊傳遞給服務提供者。
+ 如果您是 Microsoft Online Service 合作夥伴合約 (MOSPA) 合作夥伴提供 Microsoft 365，以確保當訂用帳戶要求是從 Windows Server Essentials 透過 Microsoft 365 整合模組產生時，您需要建立一個登錄機碼，其中包含記錄的夥伴識別碼 (POR 識別碼) 。 下列資訊會透過 Microsoft 365 的註冊 Url 讀取並傳遞給服務提供者。
 
 -   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\MSO
 
@@ -49,5 +49,5 @@ ms.locfileid: "87181574"
 
 ## <a name="see-also"></a>另請參閱
 
- [建立和自訂映射額外的](Creating-and-Customizing-the-Image.md)[自訂](Additional-Customizations.md)[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)
+ [建立和自訂映射](Creating-and-Customizing-the-Image.md)[其他自訂](Additional-Customizations.md)專案[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)
 

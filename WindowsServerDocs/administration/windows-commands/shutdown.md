@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 44ee776ec2ec199fe39cfd17a05dfc3b8ba4502c
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: f83788b4d8e8f92ea1375b9a0f245f9bfa63bc85
+ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036446"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89554381"
 ---
 # <a name="shutdown"></a>shutdown
 
@@ -23,7 +23,7 @@ ms.locfileid: "89036446"
 ## <a name="syntax"></a>語法
 
 ```
-shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t <XXX>] [/d [p|u:]<XX>:<YY> [/c comment]]
+shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t <XXX>] [/d [p|u:]<XX>:<YY> [/c "descriptive comment"]]
 ```
 
 ### <a name="parameters"></a>參數
@@ -47,23 +47,23 @@ shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t 
 
 ## <a name="remarks"></a>備註
 
--   使用者必須被指派 [ **關閉系統** ] 使用者權限，以關閉使用 **shutdown** 命令的本機或遠端系統管理的電腦。
--   使用者必須是 Administrators 群組的成員，才能針對本機或遠端系統管理的電腦，標注非預期的關機。 如果目的電腦已加入網域，則 Domain Admins 群組的成員可能可以執行此程式。 如需詳細資訊，請參閱
-    -   [預設本機群組](/previous-versions/windows/it-pro/windows-server-2003/cc785098(v=ws.10))
-    -   [預設群組](/previous-versions/windows/it-pro/windows-server-2003/cc756898(v=ws.10))
--   如果您想要一次關閉一部以上的電腦，您可以使用腳本針對每部電腦呼叫 **shutdown** ，也可以使用 **shutdown** **/I** 來顯示 [遠端關機] 對話方塊。
--   如果您指定主要和次要原因代碼，您必須先在規劃使用原因的每部電腦上定義這些原因代碼。 如果目的電腦上未定義原因代碼，則關機事件追蹤器無法記錄正確的原因文字。
--   請記得使用 **p：** 參數來表示已規劃關機。 省略 **p：** 表示關閉未計畫。 如果您在未規劃的關機中輸入 **p：** 後面接著原因碼，命令將不會執行關機。 相反地，如果您省略 **p：** 並輸入規劃關機的原因代碼，則命令不會執行關機。
+- 使用者必須被指派 [ **關閉系統** ] 使用者權限，以關閉使用 **shutdown** 命令的本機或遠端系統管理的電腦。
+- 使用者必須是 Administrators 群組的成員，才能針對本機或遠端系統管理的電腦，標注非預期的關機。 如果目的電腦已加入網域，則 Domain Admins 群組的成員可能可以執行此程式。 如需詳細資訊，請參閱：
+    - [預設本機群組](/previous-versions/windows/it-pro/windows-server-2003/cc785098(v=ws.10))
+    - [預設群組](/previous-versions/windows/it-pro/windows-server-2003/cc756898(v=ws.10))
+- 如果您想要一次關閉一部以上的電腦，您可以使用腳本針對每部電腦呼叫 **shutdown** ，也可以使用 **shutdown** **/I** 來顯示 [遠端關機] 對話方塊。
+- 如果您指定主要和次要原因代碼，您必須先在規劃使用原因的每部電腦上定義這些原因代碼。 如果目的電腦上未定義原因代碼，則關機事件追蹤器無法記錄正確的原因文字。
+- 請記得使用 **p：** 參數來表示已規劃關機。 省略 **p：** 表示關閉未計畫。 如果您在未規劃的關機中輸入 **p：** 後面接著原因碼，命令將不會執行關機。 相反地，如果您省略 **p：** 並輸入規劃關機的原因代碼，則命令不會執行關機。
 
 ## <a name="examples"></a>範例
 
 若要強制應用程式在一分鐘的時間延遲之後關閉並重新啟動本機電腦，原因是應用程式：維護 (規劃的) ，以及重新設定 myapp.exe 類型的批註：
 ```
-shutdown /r /t 60 /c Reconfiguring myapp.exe /f /d p:4:1
+shutdown /r /t 60 /c "Reconfiguring myapp.exe" /f /d p:4:1
 ```
 若要使用相同的參數重新開機遠端電腦 \\ \\ 伺服器名稱，請輸入：
 ```
-shutdown /r /m \\servername /t 60 /c Reconfiguring myapp.exe /f /d p:4:1
+shutdown /r /m \\servername /t 60 /c "Reconfiguring myapp.exe" /f /d p:4:1
 ```
 
 ## <a name="additional-references"></a>其他參考資料
