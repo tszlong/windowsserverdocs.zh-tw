@@ -3,16 +3,16 @@ title: icacls
 description: Icacls 命令的參考文章，可顯示或修改指定檔案 (DACL) 上的任意存取控制清單，並將預存 Dacl 套用至指定目錄中的檔案。
 ms.topic: reference
 ms.assetid: 403edfcc-328a-479d-b641-80c290ccf73e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 08/21/2018
-ms.openlocfilehash: 7b6d045b26adcbee31447e950533b1013288a910
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 82c24b529aaaf364b4a1e67e853c464e21bfd349
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038016"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634585"
 ---
 # <a name="icacls"></a>icacls
 

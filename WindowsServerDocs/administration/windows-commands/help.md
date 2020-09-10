@@ -3,16 +3,16 @@ title: help
 description: 說明命令的參考文章，此命令會顯示所指定命令的可用命令或詳細說明資訊的清單。
 ms.topic: reference
 ms.assetid: c65b5ac3-711a-4368-95b8-ba82e2d00713
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 701b3a1840ac56e399bb4febf0765c2f69a84633
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 5e1ee94be773d546b2ef441d370c7cb91ee6c167
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89035456"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634625"
 ---
 # <a name="help"></a>help
 

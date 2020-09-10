@@ -3,16 +3,16 @@ title: dfsdiag testsites
 description: Dfsdiag testsites 的參考文章，藉由確認作為命名空間伺服器或資料夾的伺服器 (連結) 目標在所有網域控制站上具有相同的網站關聯，檢查 active directory 網域服務的設定 (AD DS) 網站。
 ms.topic: reference
 ms.assetid: 39a0d415-7eb7-4a26-861b-7ff00c45dcda
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: f024059f8b67b783da6a9ce574695aac7d7829b3
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: c4c1b2eb578245b3d5f1ece443a78e9c0c00372b
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89034156"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634319"
 ---
 # <a name="dfsdiag-testsites"></a>dfsdiag testsites
 

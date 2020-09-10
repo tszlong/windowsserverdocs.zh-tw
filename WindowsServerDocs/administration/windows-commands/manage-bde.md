@@ -3,16 +3,16 @@ title: manage-bde
 description: Manage-bde 命令的參考文章（開啟或關閉 BitLocker）指定解除鎖定機制、更新修復方法，以及解除鎖定受 BitLocker 保護的資料磁片磁碟機。
 ms.topic: reference
 ms.assetid: 276a7841-7289-48d4-a57d-bc7c300affbb
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: baac43d9dcd7ec752ae1348358de3f84526f774d
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: d29b123e6087106e3697c3343b023ed19967664b
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027466"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634086"
 ---
 # <a name="manage-bde"></a>manage-bde
 

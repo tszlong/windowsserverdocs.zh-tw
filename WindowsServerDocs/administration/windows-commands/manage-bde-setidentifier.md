@@ -3,16 +3,16 @@ title: manage-bde setidentifier
 description: Manage-bde setidentifier 命令的參考文章，此命令會將磁片磁碟機上的磁片磁碟機識別碼欄位設定為 [為您的組織提供唯一識別碼] 群組原則設定中指定的值。
 ms.topic: reference
 ms.assetid: 7092d18f-4ac9-4c73-a20f-1246ca60e75e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: f790efb56ddb3c8785d89930069c5be42e7a5b0c
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 861eca94cb15c70857138b6f9c76b5dcf59089a9
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027486"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634348"
 ---
 # <a name="manage-bde-setidentifier"></a>manage-bde setidentifier
 

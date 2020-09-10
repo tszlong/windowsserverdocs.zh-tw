@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 11/15/2019
+ms.date: 09/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 80663da151137d093634c36a25d4d061c8038e60
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 18142988108e1eafe59ca7fd83a29dd4dfb87720
+ms.sourcegitcommit: 664ed9bb0bbac2c9c0727fc2416d8c437f2d5cbe
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961862"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89472028"
 ---
 # <a name="whats-new-in-the-web-client"></a>Web 用戶端中的新功能
 
@@ -20,6 +20,17 @@ ms.locfileid: "87961862"
 
 > [!NOTE]
 > 我們已變更 Web 用戶端的版本控制系統。 從 1.0.18.0 版開始，所有 Web 用戶端發行版本將包含數字 (採用 "W.X.Y.Z" 的格式)。 遠端桌面 Web 用戶端的版本號碼結尾一律是 0 (例如，W.X.Y.0)。 每個 Windows 虛擬桌面 Web 用戶端版本都會變更最後一位數，直到發行下一版遠端桌面 Web 用戶端為止 (例如 1.0.18.1)。
+
+## <a name="updates-for-10220"></a>1\.0.22.0 版的更新
+*發行日期：2020/9/2*
+
+- 使用者現在可以移動最小化功能表。
+- 已改進對 4K 和 Ultra-wide 監視器的支援，並修正了複製大量資料時會導致工作階段當機的問題。
+- 已改進在遠端工作階段中使用輸入法編輯器的支援。 若要深入了解透過 Web 用戶端使用輸入法編輯器，請參閱[透過 Web 用戶端連線到 Windows 虛擬桌面](/azure-docs/articles/virtual-desktop/connect-web.md)。
+- 已變更 [所有資源] 頁面 UI。
+- 已修正 Web 用戶端傳回 [一般通訊協定錯誤] 的數個連線順序失敗。
+- 已修正某些特定按鍵順序未適當處理的鍵盤輸入問題。
+- 協助工具改善。
 
 ## <a name="updates-for-version-10210"></a>1\.0.21.0 版的更新
 *發行日期：11/15/2019*

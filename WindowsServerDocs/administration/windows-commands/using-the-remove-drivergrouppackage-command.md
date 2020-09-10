@@ -3,16 +3,16 @@ title: 移除-DriverGroupPackage
 description: DriverGroupPackage 的參考文章，它會從伺服器上的驅動程式群組移除驅動程式套件。
 ms.topic: reference
 ms.assetid: 2e48616d-d6a4-45f0-a5c6-efe62bf6a0ed
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: e71482859adb9cb9a0f4f848a41c7f526f54fc91
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 2cddeca84ba4993d8d77a4b55062d6ba4255abf9
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89023232"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89635068"
 ---
 # <a name="remove-drivergrouppackage"></a>移除-DriverGroupPackage
 

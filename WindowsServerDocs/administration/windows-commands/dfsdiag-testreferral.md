@@ -3,16 +3,16 @@ title: dfsdiag testreferral
 description: Dfsdiag testreferral 命令的參考文章，此命令會檢查分散式檔案系統 (DFS) 參考。
 ms.topic: reference
 ms.assetid: 877c60dc-e993-4bd5-87dd-e892e3f98a1a
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 245238c83a9795dd4976836bae612f5e00a25a5b
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: e1fb5526f49994ddbfb35c0c64f53933ab67674f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89034176"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634134"
 ---
 # <a name="dfsdiag-testreferral"></a>dfsdiag testreferral
 

@@ -3,16 +3,16 @@ title: mmc
 description: Mmc 命令的參考文章，此命令可讓您開啟特定 mmc 主控台、在作者模式中開啟 mmc，或指定以開啟32位或64位版本的 mmc。
 ms.topic: reference
 ms.assetid: 7bfa4030-ce42-40fb-922f-2f5145a80872
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8705cf2e2cd7eced344bcc412283dc88c829849a
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a2a342e0a72835ac16130ddf54a16e2333ed73c1
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037806"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634202"
 ---
 # <a name="mmc"></a>mmc
 

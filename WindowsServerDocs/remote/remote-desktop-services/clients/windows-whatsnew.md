@@ -1,5 +1,5 @@
 ---
-title: Windows Store 用戶端中的新功能
+title: Microsoft Store 用戶端的新功能
 description: 了解適用於 Windows Store 的遠端桌面用戶端最新的變更
 ms.topic: article
 author: heidilohr
@@ -7,16 +7,16 @@ manager: lizross
 ms.author: helohr
 ms.date: 08/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 56e2a5f91983f8fe64382e162ecf18b30e75b41d
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: f33c60cb318466b6dbbff2edb3ab8efa7bb4be78
+ms.sourcegitcommit: 9a59e00db5e68b1a12769b5cd5523b8c501776ad
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88938788"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89282100"
 ---
-# <a name="whats-new-in-the-windows-store-client"></a>Windows Store 用戶端中的新功能
+# <a name="whats-new-in-the-microsoft-store-client"></a>Microsoft Store 用戶端的新功能
 
-我們會定期更新 [Windows Store 用戶端](windows.md)，進而新增功能並修正問題。 您可以在這裡找到最新的更新。
+我們會定期更新 [ 用戶端](windows.md)，進而新增功能並修正問題。 您可以在這裡找到最新的更新。
 
 ## <a name="updates-for-version-1021522"></a>10.2.1522 版的更新
 

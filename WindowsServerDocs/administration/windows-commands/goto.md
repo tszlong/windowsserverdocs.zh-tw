@@ -3,16 +3,16 @@ title: goto
 description: Goto 命令的參考文章，會將 cmd.exe 導向至批次程式中標示的行。
 ms.topic: reference
 ms.assetid: e0de1458-1f78-48ff-a746-c285a945a510
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 6f99a0c438f66e243a310cc715f12cab1543f41a
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 537026fc2b4faafa57b7a4f2842d79775759cdc9
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038879"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634806"
 ---
 # <a name="goto"></a>goto
 
@@ -33,7 +33,7 @@ goto <label>
 
 #### <a name="remarks"></a>備註
 
--  如果 (預設) 啟用命令延伸模組，而且您使用 **goto** 命令搭配目標標籤 **： EOF**，您就可以將控制權轉移到目前批次腳本檔案的結尾，並在不定義標籤的情況下結束批次腳本檔案。 當您使用此命令搭配 **： EOF** 標籤時，您必須在標籤前面插入冒號。 例如： `goto:EOF` 。
+-  如果 (預設) 啟用命令延伸模組，而且您使用 **goto** 命令搭配目標標籤 **： EOF**，您就可以將控制權轉移到目前批次腳本檔案的結尾，並在不定義標籤的情況下結束批次腳本檔案。 當您使用此命令搭配 **： EOF** 標籤時，您必須在標籤前面插入冒號。 例如：`goto:EOF`。
 
 - 您可以在 *label* 參數中使用空格，但是不能包含其他分隔符號 (例如，分號 (; ) 或等號 (=) # A5。
 

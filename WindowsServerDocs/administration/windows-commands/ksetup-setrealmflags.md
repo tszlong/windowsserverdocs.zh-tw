@@ -3,16 +3,16 @@ title: ksetup setrealmflags
 description: '>ksetup setrealmflags 命令的參考文章，此命令會為指定的領域設定領域旗標。'
 ms.topic: reference
 ms.assetid: bcb2824e-fba7-4ebe-be62-e62b4fae5b17
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 3f716e1da0a5804df9fa42534d5d4aa0b63672b1
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 08cb63da37f72cf0fd0e26f90ce7a9c2ec7839ac
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89025322"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634306"
 ---
 # <a name="ksetup-setrealmflags"></a>ksetup setrealmflags
 

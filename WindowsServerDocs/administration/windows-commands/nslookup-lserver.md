@@ -3,16 +3,16 @@ title: nslookup lserver
 description: Nslookup lserver 命令的參考文章，此命令會將初始伺服器變更為指定的網域名稱系統 (DNS) 網域。
 ms.topic: reference
 ms.assetid: aee5ea0b-bb17-4c14-bde7-2f7a91f2f22b
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 99d3dbeac4073b35abd540c185e4cf69b723b61e
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: d1f507b1a61e9fd4fc506fb4e74f869c83e95335
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89023472"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89635674"
 ---
 # <a name="nslookup-lserver"></a>nslookup lserver
 

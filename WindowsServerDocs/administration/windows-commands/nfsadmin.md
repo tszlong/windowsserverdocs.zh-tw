@@ -3,16 +3,16 @@ title: nfsadmin
 description: Nfsadmin 命令的參考文章，可管理 Server for NFS 和 Client for NFS。
 ms.topic: reference
 ms.assetid: 7375b2cf-c6b8-45b5-abf6-6c10e462defd
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: e7329b26b201bd99a71bb30f50e9f5ba95953846
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 2c5cb4ba3b90542688fd3a7ea894a2039a10cafd
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89023642"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634109"
 ---
 # <a name="nfsadmin"></a>nfsadmin
 

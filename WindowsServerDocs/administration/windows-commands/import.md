@@ -3,16 +3,16 @@ title: 匯入 diskshadow
 description: 匯入命令的參考文章，此命令會將可傳送的陰影複製從載入的中繼資料檔案匯入系統中。
 ms.topic: reference
 ms.assetid: 7bd78d76-0560-4d47-944c-fe960be2c10b
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 96f55be187b540151c23c84ae414575f20dcbe8f
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: bf86c069bf0f5de4d6fa773d319bdd75beeb93eb
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037996"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634522"
 ---
 # <a name="import-diskshadow"></a>匯入 (diskshadow) 
 

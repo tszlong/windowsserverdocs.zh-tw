@@ -3,16 +3,16 @@ title: helpctr
 description: Helpctr 命令的參考文章。 此命令已被取代，而且在未來的 Windows 版本中不保證會受到支援。
 ms.topic: reference
 ms.assetid: d19ff7dc-57fb-49b2-aad7-b6b040f3fb49
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 0b91d532dbc4cfea896b0eb4c0412cc496c1a26f
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 8365dd54106510c2f30f9bc000b2418664b6891c
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89035046"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634606"
 ---
 # <a name="helpctr"></a>helpctr
 

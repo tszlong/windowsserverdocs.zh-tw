@@ -3,16 +3,16 @@ title: netsh
 description: Netsh 命令的參考文章，它是命令列腳本公用程式，可讓您在本機或遠端顯示或修改目前正在執行之電腦的網路設定。
 ms.topic: reference
 ms.assetid: 96fc069d-53c0-4d0a-9f7f-f9f3d49a02bd carmonmills
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: fc8f6aff94494422150643fed6ce6681dfe54036
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: e848003ced9161f0ae07778a2a16d50b7e97d51c
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037776"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89635868"
 ---
 # <a name="netsh"></a>netsh
 

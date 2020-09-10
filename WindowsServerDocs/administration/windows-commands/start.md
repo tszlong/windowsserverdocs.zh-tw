@@ -3,16 +3,16 @@ title: start
 description: 開始的參考文章，它會啟動個別的命令提示字元視窗來執行指定的程式或命令。
 ms.topic: reference
 ms.assetid: 0173f9b3-5cd7-4edb-b01e-d02193b4fadc
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 5f17b4093bbe82d869ad561dce45437389dc347e
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 3276374d13854e865755a7a87b9d35af2f4e6f46
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036926"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634191"
 ---
 # <a name="start"></a>start
 

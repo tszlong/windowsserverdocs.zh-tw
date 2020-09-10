@@ -3,16 +3,16 @@ title: 非使用中
 description: 非作用中命令的參考文章，會將系統磁碟分割或開機磁碟分割標示為非作用中的基本主開機記錄， (MBR) 磁片。
 ms.topic: reference
 ms.assetid: f4fb4695-4e66-4166-b4ab-2c86a4605580
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 50b9145b809eb7a0f8605a27db97b2c7ac36d539
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 265e1ca2ef7c352aead87ab19bdabed3a0abe476
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037976"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634507"
 ---
 # <a name="inactive"></a>非使用中
 

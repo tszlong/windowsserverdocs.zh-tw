@@ -3,16 +3,16 @@ title: netstat
 description: Netstat 命令的參考文章，會顯示作用中的 TCP 連接、電腦正在接聽的埠、乙太網路統計資料、IP 路由表、IPv4 統計資料，以及 IPv6 統計資料。
 ms.topic: reference
 ms.assetid: 60e2718f-93cc-4ceb-bf0e-58a6a6e4fc8b
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 4d68ec2e21c4248769973b3409896ba9d5bd15e5
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 17c2251fd493041b0b39665a785d6aad8010e1d9
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038799"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89635837"
 ---
 # <a name="netstat"></a>netstat
 

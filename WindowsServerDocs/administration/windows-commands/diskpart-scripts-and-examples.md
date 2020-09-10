@@ -3,16 +3,16 @@ title: diskpart 腳本和範例
 description: 有關 diskpart 腳本的參考文章，以及如何將磁片相關工作自動化的範例，例如建立磁片區或將磁片轉換成動態磁碟。
 ms.topic: reference
 ms.assetid: 319c0795-11df-47c8-b203-eadb0577ee0d
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 94dbcba1ff88cc265e8006511bb3831ac7d12831
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 820b83ab9c6c70c24c10c16678da9bf90892135f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028276"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89635139"
 ---
 # <a name="diskpart-scripts-and-examples"></a>diskpart 腳本和範例
 

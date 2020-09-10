@@ -3,16 +3,16 @@ title: secedit：匯入
 description: '* * * * 的參考文章'
 ms.topic: reference
 ms.assetid: 1dd59d4c-9d48-444a-871b-b957eb682597
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8ad13d04ac894bc11aa26790239370147ce9d140
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a45261e83593014d8c50ce78cb8420cd35d85eb4
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037426"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89635602"
 ---
 # <a name="seceditimport"></a>secedit：匯入
 

@@ -3,16 +3,16 @@ title: inuse
 description: Inuse 命令的參考文章。 此命令已被取代，而且在未來的 Windows 版本中不保證會受到支援。
 ms.topic: reference
 ms.assetid: 62ff1af0-adba-4beb-8e3c-d1c87e0b38f3
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: f2f0cbeafa57f0dc4c4c996e7f612b1279cc1226
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 55793611c8ee676a07c55bc2a8280ae4e64f7ba6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028266"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634481"
 ---
 # <a name="inuse"></a>inuse
 

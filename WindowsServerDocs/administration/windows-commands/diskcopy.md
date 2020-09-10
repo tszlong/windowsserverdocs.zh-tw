@@ -3,16 +3,16 @@ title: diskcopy
 description: Diskcopy 命令的參考文章，此命令會將來源磁片磁碟機中的磁片內容複寫到目的地磁片磁碟機中格式化或未格式化的磁片。
 ms.topic: reference
 ms.assetid: 5fd21efa-52cc-4e70-a7fe-35125a435106
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 05/07/2018
-ms.openlocfilehash: dd60148c798cd69e1f1e4aa2ce79d7acc0f16a84
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 5ed6c3eee6f096e6069e5752441229015db8ed86
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89025842"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634954"
 ---
 # <a name="diskcopy"></a>diskcopy
 

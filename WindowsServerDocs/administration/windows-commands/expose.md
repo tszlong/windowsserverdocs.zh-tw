@@ -3,16 +3,16 @@ title: expose
 description: 公開命令的參考文章，此命令會將持續性陰影複製公開為磁碟機號、共用或掛接點。
 ms.topic: reference
 ms.assetid: 9b0a21cf-3bef-4ade-b8f1-ac42f9203947
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 67e6b230b780e6ae84ea1ff30804c5722ca2337d
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 3d36ec0a1c4f85282c1949700dad1f4568356748
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036686"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89635907"
 ---
 # <a name="expose"></a>expose
 

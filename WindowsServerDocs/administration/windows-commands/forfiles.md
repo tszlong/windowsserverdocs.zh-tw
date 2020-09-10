@@ -3,16 +3,16 @@ title: forfiles
 description: Forfiles 命令的參考文章，會在檔案或一組檔案上選取並執行命令。
 ms.topic: reference
 ms.assetid: 43f6b004-446d-4fdd-91c5-5653613524a4
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 05/20/2020
-ms.openlocfilehash: c79aeddec4a2ea74eb79c7d807428b6bc5955ce2
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: b5b2511e49c379be20c7be5abf08581a17f0a463
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027626"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634792"
 ---
 # <a name="forfiles"></a>forfiles
 
