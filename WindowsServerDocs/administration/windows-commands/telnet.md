@@ -3,16 +3,16 @@ title: telnet
 description: Telnet 的參考文章，與執行 telnet 伺服器服務的電腦通訊。
 ms.topic: reference
 ms.assetid: b70a6156-9413-4300-84ce-a34c467e2b4e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: fdf379a8d827ced295f1c36ac6c44ab5e167e66f
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 9110bd2f3d4c701e46c8a52af48773f7d5a1026b
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038287"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640809"
 ---
 # <a name="telnet"></a>telnet
 

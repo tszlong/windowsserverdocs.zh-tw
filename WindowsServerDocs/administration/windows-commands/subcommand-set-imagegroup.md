@@ -3,16 +3,16 @@ title: 子命令集-ImageGroup
 description: 子命令集的參考文章-ImageGroup，可變更映射群組的屬性。
 ms.topic: reference
 ms.assetid: 4d86946a-e261-4d41-8b0c-1ab0ba2e3430
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 49f5145c9a4c4612a6ee8088f6a52b91234a9a01
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 19a4ed7b8dff69a6fdba5d97e6c9c56e44fe4a06
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036746"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640849"
 ---
 # <a name="subcommand-set-imagegroup"></a>子命令： set-ImageGroup
 

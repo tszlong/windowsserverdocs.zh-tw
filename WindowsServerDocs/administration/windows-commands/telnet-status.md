@@ -3,16 +3,16 @@ title: telnet status
 description: Telnet 狀態的參考文章，會顯示狀態資訊。
 ms.topic: reference
 ms.assetid: 4e819f11-3dc4-44d1-957b-1bcecf9fc1fc
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 721ca2d8cded7b1a092de6eabdf868a4978e7776
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 4a383316ba9f860e362081ea2bc84b6ffad386af
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038316"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640826"
 ---
 # <a name="telnet-status"></a>telnet：狀態
 

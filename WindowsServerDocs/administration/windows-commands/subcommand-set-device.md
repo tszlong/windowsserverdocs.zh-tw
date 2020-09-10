@@ -3,16 +3,16 @@ title: 子命令組-裝置
 description: 子命令設定裝置的參考文章-裝置會變更預先設置電腦的屬性。
 ms.topic: reference
 ms.assetid: 401567f8-eaeb-4a2d-b811-140bb007028d
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8d259a06918e5cf0f8983f84533a37d42f146ece
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: f2eef4d1061e0cd78e4fbb53ae276368318b6d26
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036886"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640903"
 ---
 # <a name="subcommand-set-device"></a>子命令：設定裝置
 

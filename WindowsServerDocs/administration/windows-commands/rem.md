@@ -3,16 +3,16 @@ title: rem
 description: Rem 命令的參考文章，會在腳本、批次或 config.sys 檔案中記錄批註。
 ms.topic: reference
 ms.assetid: 1a45b585-a83c-4ff6-badd-ff40f34cec23
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 741b3e8930188957fde0efc66b7d5584233f6877
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: c56595a45eba3fd841f1f455c189164b240191e8
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027406"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640645"
 ---
 # <a name="rem"></a>rem
 

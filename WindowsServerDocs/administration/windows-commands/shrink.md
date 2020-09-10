@@ -3,16 +3,16 @@ title: shrink
 description: DiskPart 壓縮的參考文章，可根據您指定的數量減少所選磁片區的大小。
 ms.topic: reference
 ms.assetid: ec87cc7c-9846-465e-a10d-4ee10db4f4e6
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 1e0c995323e1f417e139be05d2ea662015c9e70c
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 2fdfc8ba34f4e91bfafa1f8bf5341f9e4186cb5d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036476"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640951"
 ---
 # <a name="shrink"></a>shrink
 

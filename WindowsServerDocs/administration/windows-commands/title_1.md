@@ -3,16 +3,16 @@ title: title
 description: 標題的參考文章，會建立 [命令提示字元] 視窗的標題。
 ms.topic: reference
 ms.assetid: c0bbe8bd-201a-4b6c-b617-5d9809881dc8
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 20d0baf3c006fafd3ef6fb45a8cb69724c19929a
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 1160326d2627b62da120e364941627b64730f721
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036066"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640421"
 ---
 # <a name="title"></a>title
 

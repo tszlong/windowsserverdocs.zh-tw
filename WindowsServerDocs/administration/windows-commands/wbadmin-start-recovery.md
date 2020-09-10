@@ -3,16 +3,16 @@ title: wbadmin start recovery
 description: Wbadmin 開始復原的參考文章，它會根據您指定的參數來執行復原操作。
 ms.topic: reference
 ms.assetid: 52381316-a0fa-459f-b6a6-01e31fb21612
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: bf0afcd4999bb74efd2ce4e2ec3e146cbbe2141c
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 96c38a74f0a7f10e761ce1478e207666741eecc9
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031906"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640254"
 ---
 # <a name="wbadmin-start-recovery"></a>wbadmin start recovery
 

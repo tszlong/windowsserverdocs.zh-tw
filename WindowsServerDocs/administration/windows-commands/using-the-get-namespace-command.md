@@ -3,16 +3,16 @@ title: 取得命名空間
 description: 取得命名空間的參考文章，以顯示自訂命名空間的相關資訊。
 ms.topic: reference
 ms.assetid: ea641bab-e97b-4909-918e-447730027dc1
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 1fddc140936643b32bbb27ff82578a01b8b7c893
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 2ebbabfea1dee0b3d7265bf4977ad93dd5ff47c0
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029506"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640585"
 ---
 # <a name="get-namespace"></a>取得命名空間
 

@@ -3,16 +3,16 @@ title: tcmsetup
 description: 瞭解如何設定和停用 TAPI 用戶端。
 ms.topic: reference
 ms.assetid: 15e0c10f-996f-4301-92e5-943f7ee8212d
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: b2d148a273aaf6de917cec546f487fab5e8ebea0
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 52f9fe860fb34b110572f3b8b55585201f7a37af
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027086"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640104"
 ---
 # <a name="tcmsetup"></a>tcmsetup
 

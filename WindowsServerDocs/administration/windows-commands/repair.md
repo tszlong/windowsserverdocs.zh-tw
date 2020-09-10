@@ -3,16 +3,16 @@ title: 修復
 description: 修復命令的參考文章，此命令會藉由將失敗的磁片區域取代為指定的動態磁碟來修復 RAID-5 磁片區。
 ms.topic: reference
 ms.assetid: 9f84f661-f3cd-48c8-bf08-87819cf626fe
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: a0768a82f2de22a424b4979aa8844e9fbb4f67e5
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 969a677f72af9ab5e99770983308db6e88c28c29
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027286"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640998"
 ---
 # <a name="repair"></a>修復
 

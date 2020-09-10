@@ -3,16 +3,16 @@ title: Tasklist
 description: 瞭解如何顯示在本機或遠端電腦上執行的處理常式清單。
 ms.topic: reference
 ms.assetid: 8dbe30ee-1484-46be-917b-5ca3ff4fdc9c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8250828310b42646a48a5dbf454a01643fbb8ef3
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a57fc47473be3d8d5eb3fabab6f613da283fa231
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027106"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640125"
 ---
 # <a name="tasklist"></a>Tasklist
 

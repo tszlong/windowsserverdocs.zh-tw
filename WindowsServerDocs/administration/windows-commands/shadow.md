@@ -3,16 +3,16 @@ title: shadow
 description: Shadow 的參考文章，可讓您從遠端控制遠端桌面工作階段主機伺服器上另一位使用者的作用中會話。
 ms.topic: reference
 ms.assetid: f81d9717-6883-4e14-9508-4b2a87e48ea7 Lizap
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 0db1150ac8e0b6382e07e032f780a9cab28bf870
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: de11fe6b6db44d21bd289f7158f7cdacc6bc9706
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89024862"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640991"
 ---
 # <a name="shadow"></a>shadow
 

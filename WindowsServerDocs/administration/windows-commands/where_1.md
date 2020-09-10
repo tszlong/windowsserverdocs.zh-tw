@@ -1,20 +1,20 @@
 ---
-title: 其中
+title: where
 description: Where 的參考文章，顯示符合指定搜尋模式之檔案的位置。
 ms.topic: reference
 ms.assetid: 0b3486a5-896b-4d92-84b8-e463a0b76487
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 58fa70d1635035321a7ffac1779dc3ad02e0a35d
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 683f467e3f023e7f859bb7543e1a3feef17ce294
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031716"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89641231"
 ---
-# <a name="where"></a>其中
+# <a name="where"></a>where
 
 
 

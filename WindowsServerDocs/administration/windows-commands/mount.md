@@ -3,16 +3,16 @@ title: mount
 description: 掛接命令的參考文章，此命令會將網路檔案系統掛接 (NFS) 網路共用。
 ms.topic: reference
 ms.assetid: dd9d7ecb-ef00-4aaa-bcd0-423fa636e34a
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 1a5ef3a621f34cf2abc0350c8ccc61accdd58557
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: cb4f3ce9d6e15aa7c6a504c1bb8e936b49f56267
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038829"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640142"
 ---
 # <a name="mount"></a>mount
 

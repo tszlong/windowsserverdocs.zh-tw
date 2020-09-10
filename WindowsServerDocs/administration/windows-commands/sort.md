@@ -3,16 +3,16 @@ title: sort
 description: 排序的參考文章，可讀取輸入、排序資料，以及將結果寫入螢幕、檔案或其他裝置。
 ms.topic: reference
 ms.assetid: 77116469-4790-4442-8a21-9fa73b65ef9f
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 092fe9d7ce96b172237bb44c2ce4a460bfc1a8e4
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: c0809f6a44ee25507f944ce2882305c44215b8f1
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036946"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640917"
 ---
 # <a name="sort"></a>sort
 

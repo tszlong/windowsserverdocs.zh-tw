@@ -3,16 +3,16 @@ title: tlntadmn
 description: 用於管理本機或遠端電腦，並執行 telnet 伺服器服務之 tlntadmn 的參考文章。
 ms.topic: reference
 ms.assetid: 78b61e8d-b953-44bb-8d57-f3b42da9e7a8
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 2293db2da93dfbac301cac516cd03a882e112a4a
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: d7cadac684b8cba2ea0120946f174d2cba0342f7
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027016"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640411"
 ---
 # <a name="tlntadmn"></a>tlntadmn
 

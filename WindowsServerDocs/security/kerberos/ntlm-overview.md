@@ -3,32 +3,32 @@ title: NTLM Overview
 description: Windows Server 安全性
 ms.topic: article
 ms.assetid: 773909fd-c0bc-498a-95fc-bb452ec04d90
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: b81d59a350f5549cdb83af7299b8636fb917cc24
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: b7597e5c7cea656bd1c1e4edf8ed9c8ef3f0436a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996087"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89641068"
 ---
 # <a name="ntlm-overview"></a>NTLM Overview
 
 >適用於：Windows Server (半年度管道)、Windows Server 2016
 
-本主題適用于 IT 專業人員，說明 NTLM、任何功能變更，並提供 windows 驗證的技術資源連結，以及 Windows Server 2012 和舊版的 NTLM。
+本主題適用于 IT 專業人員，說明 NTLM、任何功能變更，以及提供 windows Server 2012 和舊版的 Windows 驗證與 NTLM 技術資源連結。
 
 ## <a name="feature-description"></a><a name="BKMK_OVER"></a>功能描述
-NTLM 驗證是包含在 Windows Msv10.dll 中的一系列驗證通訊協定 \_ 。 NTLM 驗證通訊協定包含 LAN Manager 版本 1 與 2，以及 NTLM 版本 1 與 2。 NTLM 驗證通訊協定會根據挑戰回應機制來驗證使用者和電腦， \/ 以向伺服器或網域控制站證明使用者知道與帳戶相關聯的密碼。 使用 NTLM 通訊協定時，資源伺服器必須採取下列其中一項動作，以便在每次需要新的存取權杖時，驗證電腦或使用者的身分識別：
+NTLM 驗證是包含在 Windows Msv10.dll 中的一系列驗證通訊協定 \_ 。 NTLM 驗證通訊協定包含 LAN Manager 版本 1 與 2，以及 NTLM 版本 1 與 2。 NTLM 驗證通訊協定會根據挑戰回應機制來驗證使用者和電腦 \/ ，並向伺服器或網域控制站證明使用者知道與帳戶相關聯的密碼。 使用 NTLM 通訊協定時，資源伺服器必須採取下列其中一項動作，以便在每次需要新的存取權杖時，驗證電腦或使用者的身分識別：
 
 -   如果帳戶是網域帳戶，請連絡網域控制站上的網域驗證服務，以取得電腦或使用者的帳戶網域。
 
 -   如果帳戶是本機帳戶，請查詢本機帳戶資料庫中的電腦或使用者帳戶。
 
 ## <a name="current-applications"></a><a name="BKMK_APP"></a>目前的應用程式
-目前仍然支援 NTLM 驗證，但是必須用於已設為工作群組成員之系統的 Windows 驗證。 NTLM 驗證也用於非網域控制站上的本機登入驗證 \- 。 Kerberos 第5版驗證是 Active Directory 環境慣用的驗證方法，但非 \- microsoft 或 Microsoft 應用程式可能仍使用 NTLM。
+目前仍然支援 NTLM 驗證，但是必須用於已設為工作群組成員之系統的 Windows 驗證。 NTLM 驗證也用於非網域控制站上的本機登入驗證 \- 。 Kerberos 第5版驗證是 Active Directory 環境的慣用驗證方法，但非 \- microsoft 或 Microsoft 應用程式可能仍會使用 NTLM。
 
 在需要 NTLM 上已部署應用程式需求的知識以及設定運算環境所需策略和步驟的 IT 環境中，減少使用 NTLM 通訊協定以使用其他通訊協定。 已加入新的工具和設定，協助您探索如何使用 NTLM 以便選擇性地限制 NTLM 流量。 如需了解如何分析和限制您的環境中的 NTLM 使用量，請參閱 [NTLM 驗證的限制簡介](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560653(v=ws.10)) 來存取稽核及限制 NTLM 使用量指南。
 
@@ -36,7 +36,7 @@ NTLM 驗證是包含在 Windows Msv10.dll 中的一系列驗證通訊協定 \_ �
 Windows Server 2012 的 NTLM 功能沒有任何變更。
 
 ## <a name="removed-or-deprecated-functionality"></a><a name="BKMK_DEP"></a>已移除或過時的功能
-Windows Server 2012 的 NTLM 沒有已移除或過時的功能。
+Windows Server 2012 的 NTLM 沒有移除或淘汰的功能。
 
 ## <a name="server-manager-information"></a><a name="BKMK_INSTALL"></a>伺服器管理員資訊
 無法從伺服器管理員設定 NTLM。 您可以使用安全性原則設定或群組原則來管理電腦系統之間的 NTLM 驗證使用。 在網域中，Kerberos 是預設的驗證通訊協定。

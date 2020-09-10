@@ -3,16 +3,16 @@ title: mstsc
 description: Mstsc 命令的參考文章，可建立遠端桌面工作階段主機伺服器或其他遠端電腦的連線、編輯現有的遠端桌面連線 ( .rdp) 設定檔，以及將使用用戶端連線管理員建立的舊版連接檔案遷移至新的 .rdp 連接檔案。
 ms.topic: reference
 ms.assetid: 59801227-1e7e-4dbd-96e6-f54102a3ce92
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 0a9c1eb46e2d6802c50dfc89e4a3085e6a6afca2
-ms.sourcegitcommit: fe356f95188b7ce8e719765f44c0789c065832fb
+ms.openlocfilehash: f47a8ad0db569c82d64e74b10c30bec9aca958ab
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89057560"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640548"
 ---
 # <a name="mstsc"></a>mstsc
 

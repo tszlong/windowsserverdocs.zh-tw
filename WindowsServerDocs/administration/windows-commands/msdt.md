@@ -3,16 +3,16 @@ title: msdt
 description: Msdt 命令的參考文章，此命令會在命令列上叫用疑難排解套件或作為自動化腳本的一部分，並在不需要使用者輸入的情況下啟用其他選項。
 ms.topic: reference
 ms.assetid: ead1b672-a120-4e16-94aa-a8e13602c1d0
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: fd61fd80f6b1a0249c506bcaa5ff2cda99c49820
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 3e2a28ce747df9223e609392ab46abe2e947bb92
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89030066"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640614"
 ---
 # <a name="msdt"></a>msdt
 

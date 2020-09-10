@@ -3,15 +3,15 @@ title: wecutil
 description: '>wecutil 的參考文章，可讓您建立和管理從遠端電腦轉送之事件的訂閱。'
 ms.topic: reference
 ms.assetid: 0c82a6cb-d652-429c-9c3d-0f568c78d54b
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dansimps
-ms.openlocfilehash: e7cfa4a093277afece0722538ca33914d1609ec1
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.author: lizross
+author: eross-msft
+manager: mtillman
+ms.openlocfilehash: fbf236082b710ef5f4319b1924856fe98784b1ce
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031736"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89641250"
 ---
 # <a name="wecutil"></a>wecutil
 
@@ -46,7 +46,7 @@ wecutil  [{es | enum-subscription}]
 |{rs \| 重試-訂用帳戶} \<Subid> [ \<Eventsource> ...]|重試建立連線，並將遠端訂閱要求傳送至非使用中的訂用帳戶。 嘗試重新開機所有事件來源或指定的事件來源。 停用的來源不會重試。 \<Subid> 這是可唯一識別訂閱的字串。 \<Subid> 與 \<SubscriptionId> 用來建立訂閱之 XML 設定檔的標記中所指定的字串相同。 \<Eventsource> 這是識別作為事件來源之電腦的字串。 \<Eventsource> 應該是完整功能變數名稱、NetBIOS 名稱或 IP 位址。|
 |{qc \| 快速設定} [/q： [ \<Quiet> ]]|設定 Windows 事件收集器服務，以確保可以在重新開機時建立和持續訂用帳戶。 這包括下列步驟：</br>1. 啟用 ForwardedEvents 通道（如果已停用）。</br>2. 將 Windows 事件收集器服務設定為延遲啟動。</br>3. 如果 Windows 事件收集器服務未執行，請加以啟動。|
 
-## <a name="options"></a>選項
+## <a name="options"></a>選項。
 
 |選項|描述|
 |------|-----------|

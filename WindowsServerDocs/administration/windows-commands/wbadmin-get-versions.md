@@ -3,16 +3,16 @@ title: wbadmin get versions
 description: Wbadmin get 版本的參考文章，其中列出儲存在本機電腦或另一部電腦上之可用備份的詳細資料。
 ms.topic: reference
 ms.assetid: b986acc4-d083-4d32-9434-862314ed5e97
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 390d9152b53578ef26ff978d9cdcf43ac8f5f64e
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: f3b9f5ca967e3d125575809bc4bd882d37eef5ff
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031936"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640276"
 ---
 # <a name="wbadmin-get-versions"></a>wbadmin get versions
 

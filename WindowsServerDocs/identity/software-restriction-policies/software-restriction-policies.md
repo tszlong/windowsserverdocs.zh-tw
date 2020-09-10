@@ -3,16 +3,16 @@ title: Software Restriction Policies
 description: Windows Server 安全性
 ms.topic: article
 ms.assetid: 5c0befad-07c3-4262-b418-372d01850305
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 44f917beaa7b1e13171d2c8ade6f0172b450350d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: f4019902622b667267562a8490b6540a6c27d1e4
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953015"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640239"
 ---
 # <a name="software-restriction-policies"></a>Software Restriction Policies
 
@@ -20,7 +20,7 @@ ms.locfileid: "87953015"
 
 本主題適用于 IT 專業人員，說明 Windows Server 2012 和 Windows 8 中 (SRP) 的軟體限制原則，並提供從 Windows Server 2003 開始之 SRP 技術資訊的連結。
 
-如需程式和疑難排解秘訣，請參閱[管理軟體限制原則](administer-software-restriction-policies.md)和[疑難排解軟體限制原則](troubleshoot-software-restriction-policies.md)。
+如需程式和疑難排解秘訣，請參閱 [管理軟體限制原則](administer-software-restriction-policies.md) 和 [疑難排解軟體限制原則](troubleshoot-software-restriction-policies.md)。
 
 ## <a name="software-restriction-policies-description"></a><a name="BKMK_OVER"></a>軟體限制原則說明
 軟體限制原則 (SRP) 是以群組原則為依據的功能，可以識別在網域的電腦上執行的軟體程式，並控制執行這些程式的能力。 軟體限制原則是 Microsoft 安全性與管理策略的一部分，可以協助企業提高電腦的可靠性、完整性及管理性。
@@ -86,8 +86,8 @@ ms.locfileid: "87953015"
 |**產品評估**|[使用軟體限制原則鎖定應用程式](/previous-versions/technet-magazine/cc510322(v=msdn.10)?pr=blog)|
 |**規劃**|[軟體限制原則技術總覽](software-restriction-policies-technical-overview.md) ( Windows Server 2012 ) <p>[軟體限制原則技術參考](/previous-versions/windows/it-pro/windows-server-2003/cc728085(v=ws.10)) (Windows Server 2003)|
 |**部署**|沒有可用資源。|
-|**作業**|管理 Windows Server 2012 ( 的[軟體限制原則](administer-software-restriction-policies.md)) <p>[軟體限制原則產品](/previous-versions/windows/it-pro/windows-server-2003/cc779607(v=ws.10))說明 (Windows Server 2003) |
-|**疑難排解**|針對 Windows Server 2012 ( 的[軟體限制原則進行疑難排解](troubleshoot-software-restriction-policies.md)) <p>[軟體限制原則疑難排解](/previous-versions/windows/it-pro/windows-server-2003/cc737011(v=ws.10)) (Windows Server 2003) |
-|**安全性**|[軟體限制原則的安全威脅與因應對策](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349795(v=ws.10)) (Windows  Server 2008)<p>[軟體限制原則的威脅和因應對策](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/hh125926(v=ws.10)) (Windows Server 2008 R2) |
-|**工具及設定**|Windows Server 2003 ([的軟體限制原則工具和設定](/previous-versions/windows/it-pro/windows-server-2003/cc782454(v=ws.10))) |
+|**作業**| ( Windows Server 2012 ) [管理軟體限制原則](administer-software-restriction-policies.md)<p>[軟體限制原則產品](/previous-versions/windows/it-pro/windows-server-2003/cc779607(v=ws.10)) 說明 (Windows Server 2003) |
+|**疑難排解**|疑難排解 Windows Server 2012 ( 的[軟體限制原則](troubleshoot-software-restriction-policies.md)) <p>疑難排解 Windows Server 2003 (的[軟體限制原則](/previous-versions/windows/it-pro/windows-server-2003/cc737011(v=ws.10))) |
+|**安全性**|[軟體限制原則的安全威脅與因應對策](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349795(v=ws.10)) (Windows  Server 2008)<p>[軟體限制原則的威脅和因應措施](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/hh125926(v=ws.10)) (Windows Server 2008 R2) |
+|**工具及設定**|Windows Server 2003) [的軟體限制原則工具和設定](/previous-versions/windows/it-pro/windows-server-2003/cc782454(v=ws.10)) (|
 |**社群資源**|[使用軟體限制原則鎖定應用程式](/previous-versions/technet-magazine/cc510322(v=msdn.10)?pr=blog)|

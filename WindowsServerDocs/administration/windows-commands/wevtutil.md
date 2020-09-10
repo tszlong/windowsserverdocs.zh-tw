@@ -3,16 +3,16 @@ title: wevtutil
 description: Wevtutil 的參考文章，可讓您取得事件記錄和發行者的相關資訊。
 ms.topic: reference
 ms.assetid: d4c791e0-7e59-45c5-aa55-0223b77a4822
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8b36619def02434a253f0e6e97ef47cb78190b8a
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 4679c8b8245b0db2e4dff7cf179e198201d4910d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031726"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89641234"
 ---
 # <a name="wevtutil"></a>wevtutil
 
@@ -51,7 +51,7 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
 |{al 封存 \| -記錄} \<Logpath> [/l： \<Locale> ]|以自主格式封存指定的記錄檔。 會建立具有地區設定名稱的子目錄，並在該子目錄中儲存所有地區設定特定的資訊。 藉由執行 **wevtutil al**來建立目錄和記錄檔之後，無論是否安裝發行者，都可以讀取檔案中的事件。|
 |{cl \| clear-log} \<Logname> [/bu： \<Backup> ]|從指定的事件記錄檔清除事件。 **/Bu**選項可以用來備份已清除的事件。|
 
-## <a name="options"></a>選項
+## <a name="options"></a>選項。
 
 |       選項       |                                                                                                                                                                                                                                                                 描述                                                                                                                                                                                                                                                                  |
 |--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

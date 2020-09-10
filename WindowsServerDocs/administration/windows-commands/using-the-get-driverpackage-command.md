@@ -3,16 +3,16 @@ title: DriverPackage
 description: DriverPackage 的參考文章，會顯示伺服器上驅動程式套件的相關資訊。
 ms.topic: reference
 ms.assetid: 94d231e4-ff01-48e7-9bc8-7b0d97a4339e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 914effe6e2776f3bc66537beff5ea9e4bed65f3e
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: aa8ce1a8a989dd5e3551a3beccd11944f237c6b5
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029666"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640099"
 ---
 # <a name="get-driverpackage"></a>DriverPackage
 

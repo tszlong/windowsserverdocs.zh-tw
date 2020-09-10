@@ -3,16 +3,16 @@ title: wbadmin start backup
 description: Wbadmin 開始備份的參考文章，會使用指定的參數建立備份。
 ms.topic: reference
 ms.assetid: 56f3e752-d99a-4c3d-8e97-10303c37dd78
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 4ee8b52ef7a84b53f07e6ff9ada6e49addbebdf9
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: cc59c24e84d7dd5eb4455df656ee1bb3193c6af5
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031916"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640267"
 ---
 # <a name="wbadmin-start-backup"></a>wbadmin start backup
 

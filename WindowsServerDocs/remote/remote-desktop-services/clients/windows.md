@@ -1,5 +1,5 @@
 ---
-title: 開始使用 Windows Store 用戶端
+title: 開始使用 Microsoft Store 用戶端
 description: 適用於 Microsoft Store 的遠端桌面用戶端的基本設定步驟。
 ms.topic: article
 ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
@@ -8,14 +8,14 @@ manager: dongill
 ms.author: elizapo
 ms.date: 06/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 05e32c05aaafb941958e025253e67c856d81257d
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: c28ccbe0cfd49f1cf774031b002bf7b6142d0a00
+ms.sourcegitcommit: 9a59e00db5e68b1a12769b5cd5523b8c501776ad
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990367"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89282110"
 ---
-# <a name="get-started-with-the-windows-store-client"></a>開始使用 Windows Store 用戶端
+# <a name="get-started-with-the-microsoft-store-client"></a>開始使用 Microsoft Store 用戶端
 
 >適用於：Windows 10
 
@@ -24,7 +24,7 @@ ms.locfileid: "87990367"
 使用下列資訊立即開始。 如果您有任何問題，請務必查看[常見問題集](remote-desktop-client-faq.md)。
 
 > [!NOTE]
-> - 想知道適用於 Windows Store 用戶端的新版本嗎？ 查看 [Windows Store 用戶端中的新功能](windows-whatsnew.md)
+> - 想知道適用於 Microsoft Store 用戶端的新版本嗎？ 請查看 [Microsoft Store 用戶端的新功能](windows-whatsnew.md)
 > - 您可以在任何支援的 Windows 10 版本上執行該用戶端。
 
 ## <a name="get-the-rd-client-and-start-using-it"></a>取得 RD 用戶端並開始使用

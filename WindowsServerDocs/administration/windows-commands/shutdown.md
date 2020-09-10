@@ -3,16 +3,16 @@ title: shutdown
 description: 關機的參考文章，可讓您一次關閉或重新開機本機或遠端電腦。
 ms.topic: reference
 ms.assetid: c432f5cf-c5aa-4665-83af-0ec52c87112e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: f83788b4d8e8f92ea1375b9a0f245f9bfa63bc85
-ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
+ms.openlocfilehash: 362bec4106fadc0f68973bec9a128313b0039b43
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89554381"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640933"
 ---
 # <a name="shutdown"></a>shutdown
 

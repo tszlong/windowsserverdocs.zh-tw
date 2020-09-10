@@ -3,16 +3,16 @@ title: rpcping
 description: Rpcping 命令的參考文章，可確認執行 Microsoft Exchange Server 的電腦與網路上任何支援的 Microsoft Exchange 用戶端工作站之間的 RPC 連線能力。
 ms.topic: reference
 ms.assetid: 7382aa0d-90fc-47c0-84b3-15f52dd656d0
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 380c52f9e567b5f185160e8b6ab068fc791d1029
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 7351195d8206cb13b334ca3e06ffb794e4a13461
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89030516"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89641182"
 ---
 # <a name="rpcping"></a>rpcping
 

@@ -3,16 +3,16 @@ title: simulate restore
 description: 模擬還原的參考檔，它會測試寫入器對電腦上的還原會話進行的操作，而不會將 PreRestore 或 PostRestore 事件發行到寫入器。
 ms.topic: reference
 ms.assetid: d883d94c-3cb1-4848-9d74-1b4378044b31
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 5640f69f421d65588251ff1e15b63cbeaffde613
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: d72e4b473b3913bff744ff7a34b6508bde52ae0e
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036976"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640929"
 ---
 # <a name="simulate-restore"></a>模擬還原
 

@@ -3,16 +3,16 @@ title: lpr
 description: Lpr 命令的參考文章，此命令會將檔案傳送到執行線上印表機背景工作的電腦或印表機共用裝置， (LPD) 服務以準備進行列印。
 ms.topic: reference
 ms.assetid: afc8790b-8b52-45c4-acdf-be0ffa9da534
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 5ab663ab089c6727e7354accda5dc43b2d94c946
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 802527251b56b1955544a4131a7bcf1aa9f11153
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036336"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640356"
 ---
 # <a name="lpr"></a>lpr
 

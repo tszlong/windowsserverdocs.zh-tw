@@ -3,16 +3,16 @@ title: winnt32
 description: 適用于 winnt32.exe 的參考文章，可執行 Windows Server 2003 中的產品安裝或升級。
 ms.topic: reference
 ms.assetid: 5a0a6fb3-ba4e-4ace-8984-7f6d3875560e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 5c74f0645ccbe4745b155eb8b687d4c8ea5ff159
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: e941dbbf1bc0a26092fa6616d58c4186bfbaf42a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89022692"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89641125"
 ---
 # <a name="winnt32"></a>winnt32
 

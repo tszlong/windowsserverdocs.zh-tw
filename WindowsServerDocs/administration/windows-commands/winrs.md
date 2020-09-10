@@ -3,16 +3,16 @@ title: winrs
 description: Winrs 的參考文章，可讓您從遠端系統管理和執行程式。
 ms.topic: reference
 ms.assetid: c370de31-5651-400a-872d-ef229aae2309
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 2cf659e06f43a26ae95e4ff218758c21d3cf78e9
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a2a92a20a924e36686fb555b90da4fa7d6ef67fd
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89022632"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89641119"
 ---
 # <a name="winrs"></a>winrs
 

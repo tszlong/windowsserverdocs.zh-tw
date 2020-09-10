@@ -4,15 +4,16 @@ description: Windows Server 2016 的安全性概觀
 ms.topic: article
 ms.date: 07/27/2018
 ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
-author: coreyp-at-msft
-ms.author: coreyp
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.localizationpriority: medium
-ms.openlocfilehash: e6bb0df12ba193cb5b335af3bf05bdca538e148b
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 86011cbe4ba748347e049699a716ec38d462a788
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997310"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89641202"
 ---
 # <a name="security-and-assurance-in-windows-server"></a>Windows Server 的安全性和保證
 

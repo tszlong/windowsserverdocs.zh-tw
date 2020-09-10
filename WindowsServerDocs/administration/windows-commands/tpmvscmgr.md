@@ -3,16 +3,16 @@ title: tpmvscmgr
 description: Tpmvscmgr 的參考文章，這是一種命令列工具，可讓具有系統管理認證的使用者在電腦上建立及刪除 TPM 虛擬智慧卡。
 ms.topic: reference
 ms.assetid: 8b2c8ff4-5c5d-446d-99e7-4daa1b36a163
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 298962ba0796d80328f8ea4209f79b9149553940
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: d5957ff63d7adca1c3800f806b838686cd8aa38f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026976"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640409"
 ---
 # <a name="tpmvscmgr"></a>tpmvscmgr
 

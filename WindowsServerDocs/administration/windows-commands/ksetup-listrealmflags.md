@@ -3,16 +3,16 @@ title: ksetup listrealmflags
 description: '>ksetup listrealmflags 命令的參考文章，其中列出可由 >ksetup 報告的可用領域旗標。'
 ms.topic: reference
 ms.assetid: aa96e4da-6b98-4c05-bccf-73cbf33258c2
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: d7c522449053a18cdd1e2a9e533dbce5d6e9f17c
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ddbc7f2421fc9c4acfcb38d0e83776f550908e28
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89025472"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640021"
 ---
 # <a name="ksetup-listrealmflags"></a>ksetup listrealmflags
 

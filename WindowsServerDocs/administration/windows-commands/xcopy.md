@@ -3,16 +3,16 @@ title: xcopy
 description: Xcopy 的參考檔，它會複製檔案和目錄，包括子目錄。
 ms.topic: reference
 ms.assetid: 76a310d7-9925-4571-a252-0e28960d5f89
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 01/05/2019
-ms.openlocfilehash: 05bc7b2d146a9c0d7e981d3e5bee13e60ffb57b5
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a3925843b80c60c689050c9a28236903e1912b3a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038036"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640671"
 ---
 # <a name="xcopy"></a>xcopy
 

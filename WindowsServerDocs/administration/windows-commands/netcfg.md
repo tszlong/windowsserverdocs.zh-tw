@@ -3,16 +3,16 @@ title: netcfg
 description: Netcfg 命令的參考文章，此命令會安裝 Windows 預先安裝環境 (WinPE) 是用來部署工作站的輕量版本 Windows。
 ms.topic: reference
 ms.assetid: e2daaab7-12db-4e36-b70c-db8906d084f7
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 1f2238fcde1de109298801fea985100bffabf8f7
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 8680e2e4265f36058f8f0d7c57be144633060bba
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038809"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640335"
 ---
 # <a name="netcfg"></a>netcfg
 

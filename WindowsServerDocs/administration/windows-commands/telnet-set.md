@@ -3,16 +3,16 @@ title: telnet set
 description: Telnet set 的參考文章，可設定選項。
 ms.topic: reference
 ms.assetid: 67316b5f-9c6f-43e3-86d5-dcff9ae2ac3e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 90b25b24da8af743d6e027bd26c2de7f155544b6
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 858a73e8f4a379361ac7158b70d0718abc800410
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038346"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640833"
 ---
 # <a name="telnet-set"></a>telnet：設定
 

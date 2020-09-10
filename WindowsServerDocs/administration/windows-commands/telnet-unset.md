@@ -3,16 +3,16 @@ title: telnet unset
 description: Telnet 取消設定的參考文章，這會關閉先前設定的選項。
 ms.topic: reference
 ms.assetid: da9a0d99-1930-4858-93c7-0e9c3797ee09
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8e6e15e3f4b5a74c77f4a184c6641d0c14a18662
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 96b8126d758d5277129f88f193cfea4b25e80584
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038295"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640817"
 ---
 # <a name="telnet-unset"></a>telnet： unset
 

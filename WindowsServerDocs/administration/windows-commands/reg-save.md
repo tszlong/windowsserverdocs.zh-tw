@@ -3,16 +3,16 @@ title: reg save
 description: 登錄儲存命令的參考文章，此命令會在指定的檔案中儲存指定的子機碼、專案及登錄值的複本。
 ms.topic: reference
 ms.assetid: b326482b-c8af-467d-a20c-0481eeda3d5c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 17c1bd3439d98ee2e0aa64cb3000f94dfbab41f4
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: f75aedc391eec495a82fe2ea674164552ef66e80
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89025002"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640311"
 ---
 # <a name="reg-save"></a>reg save
 

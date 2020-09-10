@@ -3,16 +3,16 @@ title: 子命令集-影像
 description: 子命令集的參考文章-影像，這會變更影像的屬性。
 ms.topic: reference
 ms.assetid: 2ae03c86-7a13-4e38-9182-32e55fffd504
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: ecb35deed9f938a7498aa282701034b5d9455233
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 3b0df9dd062c537bbfcdb0436fcf8dafe0ce3905
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036816"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640863"
 ---
 # <a name="subcommand-set-image"></a>子命令：設定映射
 

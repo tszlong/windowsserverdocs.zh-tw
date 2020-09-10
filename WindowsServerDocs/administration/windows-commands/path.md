@@ -3,16 +3,16 @@ title: path
 description: 在 PATH 環境變數中設定命令路徑的參考文章，指定用來搜尋可執行檔 ( .exe) 檔的目錄集合。
 ms.topic: reference
 ms.assetid: 1bfa1349-e79a-472b-a9e6-d7a91149ae8f
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: fe60518a70f4fdc9992f70b3b561b067404a31f1
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a6eeeba05b69530091525c65c49606902ca8c165
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89032505"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640666"
 ---
 # <a name="path"></a>path
 

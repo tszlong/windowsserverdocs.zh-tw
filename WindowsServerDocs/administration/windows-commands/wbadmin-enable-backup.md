@@ -3,16 +3,16 @@ title: wbadmin enable backup
 description: Wbadmin enable backup 的參考文章，可建立並啟用每日備份排程，或修改現有的備份排程。
 ms.topic: reference
 ms.assetid: c0e57f8a-70fa-4c60-9754-e762e8ad8772
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 6be32f6134bacf698d6e28998cbed76e8b50155f
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: bcca3c46b4e1314e89626e2ed9c333a2945927bd
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89032066"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640748"
 ---
 # <a name="wbadmin-enable-backup"></a>wbadmin enable backup
 

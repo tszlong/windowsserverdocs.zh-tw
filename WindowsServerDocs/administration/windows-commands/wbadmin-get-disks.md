@@ -3,16 +3,16 @@ title: wbadmin get disks
 description: Wbadmin get 磁片的參考文章，其中列出本機電腦目前在線上的內部和外部磁片。
 ms.topic: reference
 ms.assetid: 320edef1-df11-446b-a183-9f81811ef938
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: d006569eeeeaa41fe5e61ab5f2aa631b810e1a43
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 5965c9106d19fca2619feee610829dbe1c4a0de4
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89032036"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640741"
 ---
 # <a name="wbadmin-get-disks"></a>wbadmin get disks
 

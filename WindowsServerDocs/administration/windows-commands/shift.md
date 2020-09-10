@@ -3,16 +3,16 @@ title: shift
 description: Shift 的參考文章，變更批次檔中批次參數的位置。
 ms.topic: reference
 ms.assetid: b56574e8-570a-4cc9-bbac-1b94fbf6a47a
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 21e27db00b76945fa24b4e46e4f08c74d090d49f
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 0c4cff5e90542f44b4e2e163eacf2d3af6f8346a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89024802"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640972"
 ---
 # <a name="shift"></a>shift
 
