@@ -3,16 +3,16 @@ title: ksetup addenctypeattr
 description: '>ksetup addenctypeattr 命令的參考文章，此命令會將 [加密類型] 屬性新增至網域的可能類型清單。'
 ms.topic: reference
 ms.assetid: 32cc87d7-b9e1-4d14-9eb7-3b439c55aa3a
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8a49780a7a229c1c30d827632b1a6d71584f09c6
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ad11ed42a7a062a8c40d333055f2544a196b42a7
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037706"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639764"
 ---
 # <a name="ksetup-addenctypeattr"></a>ksetup addenctypeattr
 

@@ -3,16 +3,16 @@ title: set
 description: Set 的參考文章，可顯示、設定或移除 cmd.exe 的環境變數。
 ms.topic: reference
 ms.assetid: 5fdd60d6-addf-4574-8c92-8aa53fa73d76
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 30240d4ae286c472cfbce932201435097df33ddb
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 70ce8bf85bbafc68e4ffe09170d9e21738315560
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89023432"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639484"
 ---
 # <a name="set"></a>set
 
@@ -63,7 +63,7 @@ set /a <Variable>=<Expression>
 
   |        運算子         | 執行的作業  |
   |-------------------------|----------------------|
-  |           ( )           |       分組       |
+  |           ( )           |       群組       |
   |          ! ~ -          |        一元 (Unary)         |
   |         \* / %          |      算術      |
   |           + -           |      算術      |

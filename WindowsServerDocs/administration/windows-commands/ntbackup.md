@@ -3,16 +3,16 @@ title: ntbackup
 description: Ntbackup 命令的參考文章，已由 wbadmin 命令取代。
 ms.topic: reference
 ms.assetid: 6bce6b0d-646b-46b6-b833-0ff1d6f082c2
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 47f61968bf153719d050501e553cd4dd0785b7e8
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 49977c6b7bfb33b9537c7892f84eacb0b08a15f7
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037276"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639179"
 ---
 # <a name="ntbackup"></a>ntbackup
 

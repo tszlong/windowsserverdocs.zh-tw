@@ -3,16 +3,16 @@ title: 取得-ImageFile
 description: Get-ImageFile 的參考文章，可抓取 Windows 映像中所含映射的相關資訊 ( .wim) 檔。
 ms.topic: reference
 ms.assetid: e1e296fb-20cf-4a60-9db4-4cbac7d4dab5
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 69696786ee0fe46cf06173f685d462724136cd4b
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: c358c490424406e6eb8d709c879f043ce017164d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029606"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638108"
 ---
 # <a name="get-imagefile"></a>取得-ImageFile
 

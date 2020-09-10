@@ -3,16 +3,16 @@ title: 列印命令列工具參考
 description: 使用列印命令列工具的參考文章。
 ms.topic: reference
 ms.assetid: 88d8fa87-6fa8-4774-9294-080b0157ea8d
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: c0bad2d62add29da39cc7e2b5569f96fd0cfbd08
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 54f69a7dc0841908d9fb4cc2bef81e4b2a85876a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037606"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638395"
 ---
 # <a name="print-command-line-tool-reference"></a>列印命令列工具參考
 

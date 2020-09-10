@@ -3,16 +3,16 @@ title: query session
 description: 查詢會話命令的參考文章，此命令會顯示遠端桌面工作階段主機伺服器上會話的相關資訊。
 ms.topic: reference
 ms.assetid: abc0ace8-0b74-4b6e-a937-a78bb4b61a1f
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 55f0269c57b70944befa4483cdeab96ec89b2bd9
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 2842aa9b0a38438a92ee2b7072b1a1054642fd62
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038406"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639882"
 ---
 # <a name="query-session"></a>query session
 

@@ -3,16 +3,16 @@ title: query termserver
 description: '[查詢 termserver] 命令的參考文章，此命令會顯示網路上所有遠端桌面工作階段主機伺服器的清單。'
 ms.topic: reference
 ms.assetid: 3b89d3b4-236f-4376-90b6-939a0ec4b288
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 103e1c888f20e368e014eba762b739e099d9e491
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 33abf76e66b2d42cf0368503fa3a6e119dc1fd1c
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038396"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639878"
 ---
 # <a name="query-termserver"></a>query termserver
 

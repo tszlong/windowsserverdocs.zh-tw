@@ -3,16 +3,16 @@ title: logman update alert
 description: Logman 更新警示命令的參考文章，此命令會更新現有警示資料收集器的屬性。
 ms.topic: reference
 ms.assetid: ede94a76-931c-40ed-9fda-6766bed8ff72
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: ba0e94579e7b61992bd81f91ed0906d2472cb226
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 9c870ba5699ec0c804d387f1d1c723032a6ac335
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89035346"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639958"
 ---
 # <a name="logman-update-alert"></a>logman update alert
 

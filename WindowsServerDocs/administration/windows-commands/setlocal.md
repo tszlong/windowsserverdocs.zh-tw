@@ -3,16 +3,16 @@ title: setlocal
 description: 適用于 setlocal 的參考文章，會在批次檔中啟動環境變數的當地語系化。
 ms.topic: reference
 ms.assetid: e4e4b6d3-3f1a-4851-a782-25ee2470e16e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: b82b6027dfe10817a78708c426f934d6543da345
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 807bcb1d5694617f9632e88a4bc200a714048cc9
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89023402"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639465"
 ---
 # <a name="setlocal"></a>setlocal
 

@@ -3,16 +3,16 @@ title: mkdir
 description: Mkdir 命令的參考文章，此命令會建立目錄或子目錄。
 ms.topic: reference
 ms.assetid: 033a57a2-5deb-4c98-aa78-61ce8df2a330
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 3ded16e2befe952541dfaac754b0d10c7c128f0a
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: bfefe4bc040d3e3f28adb6b37529764f28fca25b
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037836"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639504"
 ---
 # <a name="mkdir"></a>mkdir
 

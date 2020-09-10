@@ -3,16 +3,16 @@ title: ftp close
 description: Ftp close 命令的參考文章，此命令會結束與遠端伺服器的 ftp 會話，並保留在 ftp 提示字元中。
 ms.topic: reference
 ms.assetid: 1dc344a9-64f7-45bc-9d44-a48afc844e36
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 37acc186b571a460720c903f6efc19aba120aaf3
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 84aa3a2ce9917cf9e59918d176751d535e526c41
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89025792"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638517"
 ---
 # <a name="ftp-close"></a>ftp close
 

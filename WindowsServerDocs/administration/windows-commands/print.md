@@ -3,16 +3,16 @@ title: print
 description: 列印命令的參考文章，可將文字檔傳送至印表機。
 ms.topic: reference
 ms.assetid: aa2325d5-a993-4ed3-b996-255165452db8
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: ecd679a3891a073bd73c0526c395dc67c2cf0933
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 7155056219fd080674885146f62a5aa4a033366d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89035216"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638375"
 ---
 # <a name="print"></a>print
 

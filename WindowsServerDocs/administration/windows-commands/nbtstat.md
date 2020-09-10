@@ -3,16 +3,16 @@ title: nbtstat
 description: Nbtstat 命令的參考文章，會顯示 NetBIOS over TCP/IP 的 (NetBT) 通訊協定統計資料、本機電腦和遠端電腦的 NetBIOS 名稱表格，以及 NetBIOS 名稱快取。
 ms.topic: reference
 ms.assetid: 1d2ea99e-72f1-471f-9525-d2c49bf3be82
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 273aaadcf537864512d6dc7aedff0c9872c3cd05
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: f56068baab8832cb25f62e43f550fdcf7c4e1092
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037796"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637975"
 ---
 # <a name="nbtstat"></a>nbtstat
 
@@ -59,7 +59,7 @@ nbtstat [/a <remotename>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
     | 本機名稱 | 與連接相關聯的本機 NetBIOS 名稱。 |
     | 遠端主機 | 與遠端電腦相關聯的名稱或 IP 位址。 |
     | `<03>` | NetBIOS 名稱的最後一個位元組已轉換為十六進位。 每個 NetBIOS 名稱長度都是16個字元。 最後一個位元組的重要性通常很高，因為在電腦上可能會出現數次相同的名稱，但只有最後一個位元組不同。 例如， `<20>` 是 ASCII 文字中的一個空格。 |
-    | type | 名稱的類型。 名稱可以是唯一的名稱或組名。 |
+    | 類型 | 名稱的類型。 名稱可以是唯一的名稱或組名。 |
     | 狀態 | 遠端電腦上的 NetBIOS 服務是否正在執行 (註冊) 或重複的電腦名稱稱已註冊相同的服務 (衝突) 。 |
     | State | NetBIOS 連接的狀態。 |
 

@@ -3,16 +3,16 @@ title: ksetup delenctypeattr
 description: '>ksetup delenctypeattr 的參考文章，它會移除網域的加密類型屬性。'
 ms.topic: reference
 ms.assetid: 4fc25ef3-e271-4229-a712-72c507df55aa
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8427d76170156ff2cd01047cc0732bfa6b385e30
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: fe8b97fc2ea6d25dc547ccf8742e9e49d2b6e1bc
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037926"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639704"
 ---
 # <a name="ksetup-delenctypeattr"></a>ksetup delenctypeattr
 

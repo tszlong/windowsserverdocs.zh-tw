@@ -3,16 +3,16 @@ title: tracert
 description: Tracert 的參考文章，藉由將網際網路控制訊息通訊協定 (ICMP) echo 要求或 ICMPv6 訊息傳送至目的地，並以累加的時間 (TTL) 域值的方式，來判斷目的地所採用的路徑。
 ms.topic: reference
 ms.assetid: 9032a032-2e5e-49d4-9e86-f821600e4ba6
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 7316daf691ff6f95ca4eb1608caea382885024ce
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: c5a3cce92d5745ac3ef8dcb50d49012f5909a537
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026896"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638330"
 ---
 # <a name="tracert"></a>tracert
 

@@ -3,16 +3,16 @@ title: set_2
 description: Set_2 的參考文章，可設定用於建立陰影複製的內容、選項、詳細資訊模式和中繼資料檔案。
 ms.topic: reference
 ms.assetid: acf24663-1a50-4321-b48d-1717655e9476
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 5b2751b7fd5d550f9499f12acde6f5f7e993d095
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 685f66692e324b29bb0a33aaaefaec44b52b218d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89023412"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639471"
 ---
 # <a name="set_2"></a>set_2
 

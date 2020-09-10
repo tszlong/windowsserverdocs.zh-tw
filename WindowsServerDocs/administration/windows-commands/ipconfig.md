@@ -3,16 +3,16 @@ title: ipconfig
 description: Ipconfig 命令的參考文章，此命令會顯示所有目前的 TCP/IP 網路設定值，並重新整理動態主機設定通訊協定 (DHCP) 和網域名稱系統 (DNS) 設定。
 ms.topic: reference
 ms.assetid: 15071c2c-4815-4893-93b2-ab30232e312e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: d683053c1a696ec2aa0f0f2441fdde22eccb479d
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 20005fff04df421e5f3699600278d51b8711337d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89035446"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639590"
 ---
 # <a name="ipconfig"></a>ipconfig
 

@@ -3,16 +3,16 @@ title: nslookup
 description: Nslookup 命令的參考文章，顯示您可用來診斷網域名稱系統 (DNS) 基礎結構的資訊。
 ms.topic: reference
 ms.assetid: 41516932-7833-434a-aa92-b4cf0f9a7ef7
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: c06121384ec18a879eaccbb34c926ce68cff9f49
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a8132bfb01bf05b1a92042ea804c2206f009c2fd
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89032776"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639276"
 ---
 # <a name="nslookup"></a>nslookup
 

@@ -3,16 +3,16 @@ title: list providers
 description: 列出提供者命令的參考文章，其中列出目前在系統上註冊的陰影複製提供者。
 ms.topic: reference
 ms.assetid: 844b4036-c0b9-449d-8347-7d58ef9bf16d
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: cab1277a79f71268b5e82702b39887b541918907
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 9c6f62c852ea41a9cc355afcaaaf083e68ad1d7a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028176"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639563"
 ---
 # <a name="list-providers"></a>list providers
 

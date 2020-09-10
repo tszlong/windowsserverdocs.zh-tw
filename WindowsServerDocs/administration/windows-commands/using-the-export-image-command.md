@@ -3,16 +3,16 @@ title: 匯出-影像
 description: 適用于匯出的參考文章-映射會將現有映射從映射存放區匯出至另一個 Windows 映像 ( .wim) 檔。
 ms.topic: reference
 ms.assetid: a9b8b467-0f2d-4754-8998-55503a262778
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: f31159d0cfaeb135bf1e5db6f1dec48352fbcf48
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: fb7cb7d955d507c6c4a3bd4ddb7434123f37b296
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026776"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638339"
 ---
 # <a name="export-image"></a>匯出-影像
 

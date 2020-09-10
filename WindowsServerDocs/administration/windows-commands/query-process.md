@@ -3,16 +3,16 @@ title: 查詢處理序
 description: 查詢程式命令的參考檔，它會顯示在遠端桌面工作階段主機伺服器上執行之進程的相關資訊。
 ms.topic: reference
 ms.assetid: 36ce3ffc-0092-4eb1-a374-28e6616ca946
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: c0cf1952be3e7885c4631c229061b4630ef4598c
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: eb2deaeac012eba4dad06ae6084474942536adfd
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037226"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639897"
 ---
 # <a name="query-process"></a>查詢處理序
 

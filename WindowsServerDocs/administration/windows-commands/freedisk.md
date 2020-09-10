@@ -3,16 +3,16 @@ title: freedisk
 description: Freedisk 命令的參考文章，此命令會在繼續安裝程式之前，檢查是否有指定的可用磁碟空間量。
 ms.topic: reference
 ms.assetid: 91c15166-5baa-4b80-9e0c-4cd815d00530
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 6a3f8543e6fd2cff9a4e086068155d84526d9377
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ad9c7faf65ffe8d4547f6a6de88e299b76ac05b2
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027606"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638010"
 ---
 # <a name="freedisk"></a>freedisk
 

@@ -3,16 +3,16 @@ title: ksetup delkdc
 description: '>ksetup delkdc 命令的參考文章，此命令會刪除 Kerberos 領域金鑰發佈中心 (KDC) 名稱的實例。'
 ms.topic: reference
 ms.assetid: 7d6ec389-094c-4a7b-a78b-605497ddc289
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 0ecc6048fb9c2b916603f2b30313dc21521fd821
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 6bdc53a77f822130553af9d88e18658227c899fa
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89025602"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639685"
 ---
 # <a name="ksetup-delkdc"></a>ksetup delkdc
 

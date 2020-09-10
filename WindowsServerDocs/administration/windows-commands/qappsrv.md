@@ -3,16 +3,16 @@ title: qappsrv
 description: Qappsrv 命令的參考文章，此命令會顯示網路上所有遠端桌面工作階段主機伺服器的清單。
 ms.topic: reference
 ms.assetid: 7df68283-2484-418c-a8f0-d273884919ad
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 91a178ceef700bb58a78743a88b3fde530e9ff59
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: c00d321f5818a30fb683de81911e2e8d6474d61a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028126"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639917"
 ---
 # <a name="qappsrv"></a>qappsrv
 

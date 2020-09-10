@@ -3,16 +3,16 @@ title: logman import and logman export
 description: Logman 匯入和 logman 匯出的參考文章，可從 XML 檔案匯入資料收集器集合，或將資料收集器集合器匯出至 XML 檔案。
 ms.topic: reference
 ms.assetid: c258daba-fb93-47c0-a53b-2fe83ed2c743
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 5fb750b2ba514c28b05b7b7817994aef3b83eb62
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: eeb0c30011b70a6fa72bffca18b16ec11e27b958
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89023792"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639981"
 ---
 # <a name="logman-import-and-logman-export"></a>logman import and logman export
 

@@ -3,16 +3,16 @@ title: logman update api
 description: Logman update api 命令的參考文章，此命令會更新現有 API 追蹤資料收集器的屬性。
 ms.topic: reference
 ms.assetid: 6f322e52-0f9f-42b1-bd64-8b8f8fe086fc
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 9b95c69b4e4b334155c1a22327b1acb8f756c7cd
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 016a6728d032393990e1ff1fd0cb5e4e9a20df94
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89035336"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639941"
 ---
 # <a name="logman-update-api"></a>logman update api
 

@@ -3,16 +3,16 @@ title: ksetup addhosttorealmmap
 description: '>ksetup addhosttorealmmap 命令的參考文章，此命令會在指定的主機和領域之間新增服務主體名稱 (SPN) 對應。'
 ms.topic: reference
 ms.assetid: 237742d5-fa68-466c-b97e-636f489248ea
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 900bab0d86da82d8c81ca10f0f23fec9a44b198c
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 16ffe4431167ef63c73d4889febed49c40344e8b
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038869"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639757"
 ---
 # <a name="ksetup-addhosttorealmmap"></a>ksetup addhosttorealmmap
 
