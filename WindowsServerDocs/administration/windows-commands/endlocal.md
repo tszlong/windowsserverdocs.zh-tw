@@ -3,16 +3,16 @@ title: endlocal
 description: Endlocal 命令的參考文章，此命令會結束批次檔中環境變更的當地語系化，並在執行對應的 setlocal 命令之前，將環境變數還原為其值。
 ms.topic: reference
 ms.assetid: 765fae3c-0c0a-4639-99a4-cf613489b949
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 82fa050ef9f2ed35368a6eaf356c6aa6f70e5465
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 4220d143be2e3af9378854aa1a649c2358b44560
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89030696"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636114"
 ---
 # <a name="endlocal"></a>endlocal
 

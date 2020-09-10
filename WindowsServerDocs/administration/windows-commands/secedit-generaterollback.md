@@ -3,16 +3,16 @@ title: secedit： generaterollback
 description: '* * * * 的參考文章'
 ms.topic: reference
 ms.assetid: 385a6799-51a7-4fe3-bd73-10c7998b6680
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: e3ccbd0071b5975682a7c52fcbe7cf9b6300adf3
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 28b8fedf952bfa5466bc0a893a46f2e7f69165f6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037436"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636793"
 ---
 # <a name="seceditgeneraterollback"></a>secedit： generaterollback
 

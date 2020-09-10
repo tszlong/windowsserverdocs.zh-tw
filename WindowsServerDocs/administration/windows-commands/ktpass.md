@@ -3,16 +3,16 @@ title: ktpass
 description: Ktpass 命令的參考文章，此命令會在 AD DS 中設定主機或服務的伺服器主體名稱，並產生 keytab 檔案，其中包含服務的共用秘密金鑰。
 ms.topic: reference
 ms.assetid: 47087676-311e-41f1-8414-199740d01444
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 3ef7e2ba1aa84faa44cf4bf77e842e8d3bcdc235
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 65ec74f1e89cd20973d4418659eb3c8de6a5bf93
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028236"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636608"
 ---
 # <a name="ktpass"></a>ktpass
 
@@ -47,7 +47,7 @@ ktpass
 | /out `<filename>` | 指定要產生之 Kerberos 版本 5. keytab 檔案的名稱。 **注意：** 這是您傳送到不是執行 Windows 作業系統之電腦的 keytab 檔案，然後以您現有的 keytab 檔 */Etc/Krb5.keytab*取代或合併。 |
 | /princ `<principalname>` | 指定表單中的主體名稱 host/computer.contoso.com@CONTOSO.COM 。 **警告：** 此參數會區分大小寫。 |
 | /mapuser `<useraccount>` | 將 **princ** 參數所指定的 Kerberos 主體名稱對應至指定的網域帳戶。 |
-| /mapop `{add|set}` | 指定如何設定對應屬性。<ul><li>**Add** -加入指定之本機使用者名稱的值。 這是預設值。</li><li>**設定** -將資料加密標準 (DES 的值設定為指定的本機使用者名稱僅) 加密。</li></ul> |
+| /mapop `{add|set}` | 指定如何設定對應屬性。<ul><li>**Add** -加入指定之本機使用者名稱的值。 此為預設值。</li><li>**設定** -將資料加密標準 (DES 的值設定為指定的本機使用者名稱僅) 加密。</li></ul> |
 | `{-|+}`desonly | 預設會設定 DES 加密。<ul><li>**+** 設定僅限 DES 加密的帳戶。</li><li>**-** 針對僅限 DES 加密的帳戶釋放限制。 **重要事項：** Windows 預設不支援 DES。</li></ul> |
 | /in `<filename>` | 指定要從不是執行 Windows 作業系統的主機電腦讀取的 keytab 檔案。 |
 | /pass `{password|*|{-|+}rndpass}` | 指定 **princ** 參數所指定之主體使用者名稱的密碼。 使用 `*` 提示輸入密碼。 |

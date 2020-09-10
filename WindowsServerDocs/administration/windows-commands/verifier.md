@@ -3,16 +3,16 @@ title: verifier
 description: 執行驅動程式驗證器管理員的 verifier 參考文章。
 ms.topic: reference
 ms.assetid: 782173d6-f196-4bc4-a547-76109829453c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 5374fb5e9c56cc288496ff7077587b1576399d0e
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 1cdad5521d4ed6eb5b31bcbed9d09fd662200f71
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89023032"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636324"
 ---
 # <a name="verifier"></a>verifier
 

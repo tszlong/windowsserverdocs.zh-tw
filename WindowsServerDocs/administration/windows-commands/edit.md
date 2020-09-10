@@ -3,16 +3,16 @@ title: 編輯
 description: 編輯命令的參考文章，此命令會啟動 MS-DOS 編輯器，讓您可以建立和變更 ASCII 文字檔。
 ms.topic: reference
 ms.assetid: 4e0ff2e8-3518-47c1-8c69-5e93f895fa0e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 892eaa2751ba9374b375145c5e9a0dfc1c069d4f
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: b3723c65456fd7e17395cd7a9bc931ddc56a09b3
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89030734"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636169"
 ---
 # <a name="edit"></a>編輯
 

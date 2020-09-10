@@ -3,16 +3,16 @@ title: Set 選項
 description: Set 選項的參考文章，設定建立陰影複製的選項。
 ms.topic: reference
 ms.assetid: 4d8d4921-9fdd-4a3c-bb0f-9df5458c4b84
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 0569e93ee5c732369b9bc07e4452d27558412b81
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 143530ce3f781b7635cd596a376c5bea71994bf4
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036506"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637698"
 ---
 # <a name="set-option"></a>Set 選項
 

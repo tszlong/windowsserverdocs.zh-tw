@@ -3,16 +3,16 @@ title: 移除-DriverGroup
 description: DriverGroup 的參考文章，會從伺服器移除驅動程式群組。
 ms.topic: reference
 ms.assetid: 1fefe9df-9782-433c-8abe-3f1a35e50da2
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: b2e0112ab1b85f37d148cb3f2b1c26b217b1047d
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 55cb50d43bf433d5421f4152053844f89d45f379
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038106"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636448"
 ---
 # <a name="remove-drivergroup"></a>移除-DriverGroup
 

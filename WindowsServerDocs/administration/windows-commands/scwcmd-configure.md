@@ -3,16 +3,16 @@ title: Scwcmd 設定
 description: '* * * * 的參考文章'
 ms.topic: reference
 ms.assetid: 6528b9dc-3d82-4228-b734-ed717458d74c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 54faae6fd24aac91a94ec9ab1f373737569dda78
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: eff97910907aca9db2f8e8f40c15058a21e2fac3
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036186"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637012"
 ---
 # <a name="scwcmd-configure"></a>Scwcmd: configure
 

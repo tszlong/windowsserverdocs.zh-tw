@@ -3,16 +3,16 @@ title: quser
 description: Quser 命令的參考文章，此命令會顯示遠端桌面工作階段主機伺服器上的使用者會話相關資訊。
 ms.topic: reference
 ms.assetid: 8056204f-ed11-4c91-bb1d-c799283a48a4
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 0697fd6ef780f177f0905d2f2af5deb316c61037
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 89820143ffaf656b2f022e1f19796a03576b615b
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028076"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637435"
 ---
 # <a name="quser"></a>quser
 

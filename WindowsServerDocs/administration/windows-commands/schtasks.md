@@ -3,16 +3,16 @@ title: schtasks
 description: '* * * * 的參考文章'
 ms.topic: reference
 ms.assetid: 2e713203-3dd8-491b-b9e1-9423618dc7e8
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: d83211a0933e6dea38b099798ad5cb51db2868c5
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 9710e0b8156ae6a09302c3ffdeaea3e48e7953d1
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037516"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637032"
 ---
 # <a name="schtasks"></a>schtasks
 

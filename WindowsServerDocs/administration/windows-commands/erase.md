@@ -3,16 +3,16 @@ title: erase
 description: 清除命令的參考文章，會刪除一或多個檔案。
 ms.topic: reference
 ms.assetid: 024a4d0f-8679-4e06-b46f-61fdaf5464bc
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: ae0eafd5dad4b37ba710eee1b66f6e276353271b
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 5545e63efc87527506704ecd6ff956c8000b95a5
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89030625"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636094"
 ---
 # <a name="erase"></a>erase
 

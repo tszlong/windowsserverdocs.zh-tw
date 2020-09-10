@@ -3,16 +3,16 @@ title: waitfor
 description: Waitfor 的參考文章，會傳送或等候系統上的信號。 **Waitfor** 可用來同步處理網路上的電腦。
 ms.topic: reference
 ms.assetid: a48ef70d-4d28-4035-b6b0-7d7b46ac2157
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 1a55629f6715e8b1d2e1aaede4153f74ac05ac98
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 1dec723db998c26796f5f61929073e12903c045b
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89022910"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637894"
 ---
 # <a name="waitfor"></a>waitfor
 

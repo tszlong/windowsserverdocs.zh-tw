@@ -3,16 +3,16 @@ title: wbadmin delete catalog
 description: Wbadmin delete catalog 的參考文章，會刪除儲存在本機電腦上的備份類別目錄。
 ms.topic: reference
 ms.assetid: d3041407-4577-4716-a39f-2c8ab48818d1
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: b238e43eac784607a8f42175023eca88e13f2bfd
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 64b5664ffeb676bf63ece83bd419f154cb96bb20
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89022822"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637881"
 ---
 # <a name="wbadmin-delete-catalog"></a>wbadmin delete catalog
 

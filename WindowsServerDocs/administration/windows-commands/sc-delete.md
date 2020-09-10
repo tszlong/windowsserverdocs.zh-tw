@@ -3,16 +3,16 @@ title: Sc.exe 刪除
 description: 瞭解如何使用 sc.exe 公用程式取消註冊服務
 ms.topic: reference
 ms.assetid: 2fe94fb3-e4d1-47b5-b999-39995ecbb644
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 09a3f43824c3e0c895331326341b92c7c6aa5727
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 8ce9eb203fd9db68629ce5412836eb694eb67162
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037536"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637103"
 ---
 # <a name="scexe-delete"></a>Sc.exe 刪除
 

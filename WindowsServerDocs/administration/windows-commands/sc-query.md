@@ -3,16 +3,16 @@ title: Sc.exe 查詢
 description: 瞭解如何使用 sc.exe 公用程式來取得服務、驅動程式、服務類型或驅動程式類型的相關資訊
 ms.topic: reference
 ms.assetid: ac365f89-4b20-4de6-a582-b204c5e7d0eb
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 9b3d7967597724dfae4ab5a12ecee9698a43236f
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: e961badf867237c0725441e138bf4f0ea948155f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037526"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637047"
 ---
 # <a name="scexe-query"></a>Sc.exe 查詢
 

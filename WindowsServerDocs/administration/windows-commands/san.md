@@ -3,16 +3,16 @@ title: san
 description: '* * * * 的參考文章'
 ms.topic: reference
 ms.assetid: d57c2df1-eb82-4b81-b8cd-e30564c6a929
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: c047dc99ac8c1584ce92ea5b8ab1367c298b0900
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: d0104bad1cf93e4ec33db23ec088e41eb6348d07
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036196"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637166"
 ---
 # <a name="san"></a>san
 

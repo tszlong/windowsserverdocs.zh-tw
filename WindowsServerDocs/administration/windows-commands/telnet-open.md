@@ -1,18 +1,18 @@
 ---
 title: telnet open
-description: Telnet 開啟的參考文章，它會連線到 telnet 伺服器。
+description: Telnet open 的參考文章，可連接到 telnet 伺服器。
 s.topic: article
 ms.assetid: e30ad68c-2366-4754-ac36-311a2392902a
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 11498b2d2f38b96725608e6e72d30d0d563fd88a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 892d797c4b56acb46e8119237fd38296e4ae411c
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881700"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636785"
 ---
 # <a name="telnet-open"></a>telnet：開啟
 
@@ -32,7 +32,7 @@ o[pen] <hostname> [<Port>]
 |  [<Port>]  | 指定 telnet 伺服器正在接聽的 TCP 通訊埠。 預設值為 TCP 埠23。 |
 
 ## <a name="examples"></a>範例
-連接到 telnet 伺服器，網址為 telnet.microsoft.com。
+在 telnet.microsoft.com 連線到 telnet 伺服器。
 ```
 o telnet.microsoft.com
 ```

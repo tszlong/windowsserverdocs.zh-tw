@@ -3,16 +3,16 @@ title: fveupdate
 description: Fveupdate 工具的參考文章，這是安裝程式在電腦升級時所使用的內部工具。
 ms.topic: reference
 ms.assetid: f2603607-9421-4e8d-b9bf-c5519814b39f
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 0ff9d1e1d661b1b06f560ae727ced6e6f92f38f4
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: c3e3cc3264e38c3432d8f6010f71a15e2e13c8f3
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89035526"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636615"
 ---
 # <a name="fveupdate"></a>fveupdate
 

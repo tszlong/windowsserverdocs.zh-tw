@@ -3,16 +3,16 @@ title: Scwcmd 註冊
 description: '* * * * 的參考文章'
 ms.topic: reference
 ms.assetid: fe4d126a-9f27-4076-b7b1-fbefa45f378a
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: fe54d69cde4607e2d99d4d1f0507fddd428bddd6
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 644e4bff424b64b8e6a9a49b0b19320526b49a11
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037506"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636992"
 ---
 # <a name="scwcmd-register"></a>Scwcmd: register
 

@@ -3,16 +3,16 @@ title: evntcmd
 description: Evntcmd 命令的參考文章，此命令會根據設定檔中的資訊，將事件的轉譯設定為陷阱、陷阱目的地或兩者。
 ms.topic: reference
 ms.assetid: c1aabb74-76e7-4304-95a6-50ad87e92fd9
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 173cb9c2f1528748986daf753a9d213c5060e5d4
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 50347e8ef8c007fa89b1b226f705d4dcd6935e60
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89035866"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636035"
 ---
 # <a name="evntcmd"></a>evntcmd
 

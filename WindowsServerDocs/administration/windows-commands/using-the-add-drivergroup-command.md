@@ -3,16 +3,16 @@ title: 新增-DriverGroup
 description: DriverGroup 的參考文章，可將驅動程式群組新增至伺服器。
 ms.topic: reference
 ms.assetid: 2a92fe8f-03f9-462a-b99e-f23275259807
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: ab211593adb3e39ad82c7acc0cf7ac8b511ef3ea
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 62a82c410e304408cbe28d73f9f482871519cf74
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89032153"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636776"
 ---
 # <a name="add-drivergroup"></a>新增-DriverGroup
 
@@ -35,7 +35,7 @@ wdsutil /add-DriverGroup /DriverGroup:<Group Name>\n\
 | /Applicability： {符合 &#124; All} |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        指定符合篩選準則時要安裝的封裝。 [**符合**] 表示只安裝符合用戶端硬體的驅動程式套件。 **所有方法都** 是將所有套件安裝至用戶端，不論其硬體為何。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 |      Filtertype<Filtertype>       |                                                                                                                                                                                                                                                                          指定要加入至群組之篩選的類型。 您可以在單一命令中指定多個篩選器類型。 每個篩選類型後面都必須接著 **/policy** 和至少一個 **/Value**。 <Filtertype> 可以是下列其中一項：<p>**BiosVendor**<p>**Biosversion**<p>**Chassistype**<p>**製造商**<p>**Uuid**<p>**Osversion**<p>**Osedition**<p>**OsLanguage**<p>如需取得其他所有篩選器類型值的相關資訊，請參閱 () 的 [驅動程式群組篩選](https://go.microsoft.com/fwlink/?LinkID=155158) <https://go.microsoft.com/fwlink/?LinkID=155158> 。                                                                                                                                                                                                                                                                           |
 | [/Policy： {Include &#124; Exclude}]  |                                                                                                                                                                                                                                                                                                                                                                                                                                                 指定要在篩選準則上設定的原則。 如果 **/policy** 設定為 [ **包含**]，則會允許符合篩選準則的用戶端電腦安裝此群組中的驅動程式。 如果 **/policy** 設定為 [ **排除**]，則不允許符合篩選準則的用戶端電腦安裝此群組中的驅動程式。                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-|          [/Value:<Value>]           | 指定對應至 **/Filtertype**的用戶端值。 您可以為單一類型指定多個值。 請參閱下列清單，以取得特定篩選類型的有效值。 下列是 **Chassistype**的屬性。 如需取得其他所有篩選器類型值的相關資訊，請參閱 () 的 [驅動程式群組篩選](https://go.microsoft.com/fwlink/?LinkID=155158) <https://go.microsoft.com/fwlink/?LinkID=155158> 。<p>**其他**<p>**UnknownChassis**<p>**桌上型電腦**<p>**LowProfileDesktop**<p>**PizzaBox**<p>**MiniTower**<p>**塔**<p>**可擕式**<p>**[膝上型電腦]**<p>**Notebook**<p>**手持**<p>**DockingStation**<p>**AllInOne**<p>**SubNotebook**<p>**SpaceSaving**<p>**午餐 盒**<p>**MainSystemChassis**<p>**ExpansionChassis**<p>**SubChassis**<p>**BusExpansionChassis**<p>**PeripheralChassis**<p>**StoraeChassis**<p>**RackmountChassis**<p>**SealedCasecomputer**<p>**MultiSystemChassis**<p>**compactPci**<p>**AdvancedTca** |
+|          [/Value:<Value>]           | 指定對應至 **/Filtertype**的用戶端值。 您可以為單一類型指定多個值。 請參閱下列清單，以取得特定篩選類型的有效值。 下列是 **Chassistype**的屬性。 如需取得其他所有篩選器類型值的相關資訊，請參閱 () 的 [驅動程式群組篩選](https://go.microsoft.com/fwlink/?LinkID=155158) <https://go.microsoft.com/fwlink/?LinkID=155158> 。<p>**其他**<p>**UnknownChassis**<p>**Desktop** (電腦)<p>**LowProfileDesktop**<p>**PizzaBox**<p>**MiniTower**<p>**塔**<p>**可擕式**<p>**[膝上型電腦]**<p>**Notebook**<p>**手持**<p>**DockingStation**<p>**AllInOne**<p>**SubNotebook**<p>**SpaceSaving**<p>**午餐 盒**<p>**MainSystemChassis**<p>**ExpansionChassis**<p>**SubChassis**<p>**BusExpansionChassis**<p>**PeripheralChassis**<p>**StoraeChassis**<p>**RackmountChassis**<p>**SealedCasecomputer**<p>**MultiSystemChassis**<p>**compactPci**<p>**AdvancedTca** |
 
 ## <a name="examples"></a>範例
 若要新增驅動程式群組，請輸入下列其中一項：

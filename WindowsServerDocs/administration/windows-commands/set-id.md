@@ -3,16 +3,16 @@ title: 設定識別碼
 description: Diskpart 集合識別碼的參考文章，會變更具有焦點之分割區的資料分割類型欄位。
 ms.topic: reference
 ms.assetid: 5793d7ad-827e-4285-b2c6-ae60eeb0e886
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: e3b9ce5b885ca9c8277842b16c816274fff0ead8
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 30ed8fc2c4c6e6bc3039be018a303ba7dea15492
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89024952"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637700"
 ---
 # <a name="set-id"></a>設定識別碼
 

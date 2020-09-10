@@ -3,16 +3,16 @@ title: 子命令集-TransportServer
 description: 子命令集的參考文章-TransportServer，可設定傳輸伺服器的設定。
 ms.topic: reference
 ms.assetid: 7863225c-f4b2-4cd0-b929-78a454bef249
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 59833701a88af6280d7f033a8430d2fec882decd
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 59cd0a77decf2151dff1948db619692b47a75101
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89024772"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637908"
 ---
 # <a name="subcommand-set-transportserver"></a>子命令： set-TransportServer
 

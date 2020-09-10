@@ -3,16 +3,16 @@ title: doskey
 description: Doskey 命令的參考文章和 Doskey.exe，其會重新叫用先前輸入的命令列命令、編輯命令行，以及建立宏。
 ms.topic: reference
 ms.assetid: 4874fd43-d5ea-45f3-ae24-388ae925ed76
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8cda337419253ebdb9a390e5d8ba3bfa07fd1a91
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ed732f7b90f66fa5c0df595480f34f028d912aa8
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89030786"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636244"
 ---
 # <a name="doskey"></a>doskey
 

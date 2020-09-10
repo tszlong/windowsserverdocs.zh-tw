@@ -3,16 +3,16 @@ title: 取代-影像
 description: 取代映射的參考文章，會以該映射的新版本取代現有的映射。
 ms.topic: reference
 ms.assetid: 68ded3df-e309-420f-9f5d-caeb609385a5
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 405a8465c043250ee3177febc2ceab9b50b924b4
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 0b6abc378f133670e33898693bb2b9f8b149a097
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89023062"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636343"
 ---
 # <a name="using-the-replace-image-command"></a>使用取代映射命令
 

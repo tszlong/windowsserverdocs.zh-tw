@@ -3,16 +3,16 @@ title: secedit：匯出
 description: '* * * * 的參考文章'
 ms.topic: reference
 ms.assetid: 49a8b241-aa8c-45b7-844d-67a29fab708e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 04a03dd392fb333bb95bbd73a2694ce6bf548d9c
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 977d21659ccc14b01c0190522ca7e02080b2268f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037446"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636809"
 ---
 # <a name="seceditexport"></a>secedit：匯出
 

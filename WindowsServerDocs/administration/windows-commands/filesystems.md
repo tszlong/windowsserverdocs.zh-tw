@@ -3,16 +3,16 @@ title: filesystems
 description: 檔案系統命令的參考文章，其中顯示具有焦點之磁片區的目前檔案系統的相關資訊，並列出支援格式化磁片區的檔案系統。
 ms.topic: reference
 ms.assetid: 3c4915a6-bd20-4af6-a94a-5fc7c20410bf
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: e34edbf582ddfe366740bf08b6cb34082b06ec34
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: c4c322e874e06fcb9b6d5d3e8ffc293821db8757
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036606"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636691"
 ---
 # <a name="filesystems"></a>filesystems
 
