@@ -3,16 +3,16 @@ title: delete partition
 description: 刪除資料分割命令的參考文章，此命令會刪除具有焦點的資料分割。
 ms.topic: reference
 ms.assetid: 65752312-cb16-46f6-870f-1b95c507b101
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 9a3b0f6b57f700201c05bd81c706d07de589e9f7
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 2833039c9237a271910c43ff8acb7b8fb94828f1
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027736"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628835"
 ---
 # <a name="delete-partition"></a>delete partition
 

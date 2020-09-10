@@ -3,16 +3,16 @@ title: convert gpt
 description: Convert gpt 命令的參考文章，此命令會將具有主開機記錄的空白基本磁碟轉換成具有 GUID 磁碟分割)  (表格的基本磁碟 (MBR) 磁碟分割樣式。
 ms.topic: reference
 ms.assetid: b3b1b747-0a7a-4be2-8487-2c4be16ee190
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 04b1bacee89e7553aa4ed37337c4667bc93d5da3
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 040bf89e020076e923f01f5cd20450c7d7fb820a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89025882"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629317"
 ---
 # <a name="convert-gpt"></a>convert gpt
 

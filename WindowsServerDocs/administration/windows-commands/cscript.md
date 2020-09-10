@@ -3,16 +3,16 @@ title: cscript
 description: Cscript 命令的參考文章，此命令會啟動腳本，以便在命令列環境中執行。
 ms.topic: reference
 ms.assetid: fba3cbca-594e-4663-bb22-4ee0f63a1ac6
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 6b5c711d59f69267f8e2de51f34cb1c450e95fab
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 2e35efeccc219a7e678e2eccab74de5d0c4d6837
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89033026"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628995"
 ---
 # <a name="cscript"></a>cscript
 
@@ -38,7 +38,7 @@ cscript <scriptname.extension> [/b] [/d] [/e:<engine>] [{/h:cscript | /h:wscript
 | /d | 啟動偵錯工具。 |
 | /e:`<engine>` | 指定用來執行腳本的引擎。 |
 | /h： cscript | 將 cscript.exe 註冊為執行腳本的預設腳本主機。 |
-| /h： wscript.echo | 將 wscript.exe 註冊為執行腳本的預設腳本主機。 這是預設值。 |
+| /h： wscript.echo | 將 wscript.exe 註冊為執行腳本的預設腳本主機。 此為預設值。 |
 | /i | 指定可顯示警示、腳本錯誤和輸入提示的互動模式。 這是預設值，相反的 `/b` 。 |
 | 工作<identifier> | 執行 w2kmiguser.wsf 腳本檔案中的 *識別碼* 所識別的作業。 |
 | /logo | 指定在執行腳本之前，主控台中顯示 Windows Script Host 橫幅。 這是預設值，相反的 `/nologo` 。 |

@@ -3,16 +3,16 @@ title: detail volume
 description: 詳細資料磁片區的參考文章，顯示目前磁片區所在的磁片。
 ms.topic: reference
 ms.assetid: 38f2bc75-2ed6-4e80-aa74-ab83133db1cd
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 5e5760c7555c5a2a1fdf746c5e8418213479d6da
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: b486e20c71a8147a4d97be1dd7fe6a7d07ff2084
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89024052"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628669"
 ---
 # <a name="detail-volume"></a>detail volume
 

@@ -1,32 +1,32 @@
 ---
-title: 開始使用使用者存取記錄
+title: 使用使用者存取記錄進行開始
 desctription: Describes the User Access Logging feature and how to start using it.
 ms.topic: article
 ms.assetid: 5c395b8b-3b35-4042-b9cc-07e438f86d50
 author: brentfor
-ms.author: coreyp
-manager: dongill
+ms.author: brentf
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: da8bb60ea455578eff96aed6173e4662fffd6ade
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 24471aca151a59306e8bf51119232f08dacdc606
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991754"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628157"
 ---
-# <a name="get-started-with-user-access-logging"></a>開始使用使用者存取記錄
+# <a name="get-started-with-user-access-logging"></a>使用使用者存取記錄進行開始
 
 >適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-使用者存取記錄 (UAL) 是 Windows Server 中的功能，可依角色和產品在本機伺服器上匯總用戶端使用狀況資料。 它可協助 Windows server 系統管理員針對本機伺服器上的角色和服務，量化用戶端電腦的要求。
+使用者存取記錄 (UAL) 是 Windows Server 中的一項功能，可依本機伺服器上的角色和產品匯總用戶端使用狀況資料。 它可協助 Windows server 系統管理員從用戶端電腦量化本機伺服器上角色和服務的要求。
 
-預設會安裝並啟用 UAL，並以近乎即時的方式收集資料。 不需要系統管理員設定，雖然可以停用或啟用 UAL。 如需詳細資訊，請參閱[管理使用者存取記錄](Manage-User-Access-Logging.md)。 使用者存取記錄服務會將角色和產品的用戶端使用量資料匯總至本機資料庫檔案。  IT 系統管理員稍後可以使用 Windows Management Instrumentation (WMI) 或 Windows PowerShell Cmdlet 來擷取依伺服器角色 (或軟體產品)、依使用者、依裝置、依本機伺服器以及依日期的數量和執行個體。
+預設會安裝並啟用 UAL，並以近乎即時的方式收集資料。 不需要系統管理員設定，雖然可以停用或啟用 UAL。 如需詳細資訊，請參閱[管理使用者存取記錄](Manage-User-Access-Logging.md)。 「使用者存取記錄」服務會依角色和產品將用戶端使用量資料匯總至本機資料庫檔案。  IT 系統管理員稍後可以使用 Windows Management Instrumentation (WMI) 或 Windows PowerShell Cmdlet 來擷取依伺服器角色 (或軟體產品)、依使用者、依裝置、依本機伺服器以及依日期的數量和執行個體。
 
 > [!NOTE]
 > UAL 支援 [Microsoft Assessment and Planning Toolkit](https://go.microsoft.com/fwlink/?LinkID=111000)。
 
 ## <a name="practical-applications"></a><a name="BKMK_APP"></a>實際應用
-UAL 會匯總登入本機資料庫的唯一用戶端裝置和使用者要求事件。 然後，這些記錄可供使用 (透過伺服器管理員的查詢)，依伺服器角色、使用者、裝置、本機伺服器以及日期來抓取數量和執行個體。  此外，UAL 也已擴充，可讓非 Microsoft 軟體發展人員檢測其 UAL 事件，以由 Windows Server 進行匯總。
+UAL 會匯總登入本機資料庫的唯一用戶端裝置和使用者要求事件。 然後，這些記錄可供使用 (透過伺服器管理員的查詢)，依伺服器角色、使用者、裝置、本機伺服器以及日期來抓取數量和執行個體。  此外，UAL 已擴充，可讓非 Microsoft 軟體發展人員檢測其 UAL 事件，以供 Windows Server 匯總。
 
 UAL 可以執行下列工作：
 
@@ -38,7 +38,7 @@ UAL 可以執行下列工作：
 
 -   從多個遠端伺服器抓取 UAL 資料。
 
-此外，軟體發展人員可以檢測 UAL 事件，然後使用 WMI 和 Windows PowerShell 介面來加以匯總和抓取。
+此外，軟體發展人員也可以檢測 UAL 事件，然後使用 WMI 和 Windows PowerShell 介面進行匯總及抓取。
 
 UAL 可以支援下列伺服器角色和服務：
 
@@ -84,14 +84,14 @@ UAL 可以支援下列伺服器角色和服務：
 -   Windows Server Update Services (WSUS)
 
 > [!IMPORTANT]
-> 不建議在直接連線到網際網路的伺服器上 (例如可存取網際網路位址空間的網頁伺服器)，或當伺服器的主要功能是提供極高效能的情況下 (例如在 HPC 工作負載環境) 使用 UAL。 UAL 主要是用於需要高容量的小型、中型和企業內部網路案例，但不像是定期提供網際網路面向流量的部署一樣高。
+> 不建議在直接連線到網際網路的伺服器上 (例如可存取網際網路位址空間的網頁伺服器)，或當伺服器的主要功能是提供極高效能的情況下 (例如在 HPC 工作負載環境) 使用 UAL。 UAL 主要是用在預期有高容量的小型、中型和企業內部網路案例中，但不像定期提供網際網路對應流量的部署高。
 
 ## <a name="important-functionality"></a><a name="BKMK_NEW"></a>重要功能
 下表描述 UAL 的主要功能和其潛在價值。
 
 |功能|值|
 |-----------------|---------|
-|以接近即時的方式收集並彙總用戶端要求事件資料。|可以儲存最多三年的資料。 **重要事項：** 系統管理員必須利用組織的隱私權原則和當地法規，強制執行所收集資料和資料保留週期的合規性。|
+|以接近即時的方式收集並彙總用戶端要求事件資料。|可以儲存最多三年的資料。 **重要事項：** 系統管理員必須使用組織的隱私權原則和當地法規，強制執行所收集資料的相容性和資料保留期限。|
 |使用 WMI 或 Windows PowerShell 介面來查詢 UAL，以擷取本機或遠端伺服器上的用戶端要求資料。|UAL 可以啟用進行中使用資料的單一檢視。 伺服器和企業系統管理員可以擷取這項資料，並且與商務管理員協調以最佳化其大量軟體授權的使用。|
 |預設為啟用。|伺服器系統管理員不需要設定這項功能，就可以使用所有核心功能。|
 
@@ -100,7 +100,7 @@ UAL 可以支援下列伺服器角色和服務：
 
 |資料|描述|
 |--------|---------------|
-|**使用者名稱**|伴隨已安裝角色及產品之 UAL 項目的用戶端上的使用者名稱 (如果有的話)。|
+|**UserName**|伴隨已安裝角色及產品之 UAL 項目的用戶端上的使用者名稱 (如果有的話)。|
 |**活動計數**|特定使用者存取角色或服務的次數。|
 |**FirstSeen**|使用者第一次存取角色或服務的日期和時間。|
 |**LastSeen**|使用者最後一次存取角色或服務的日期和時間。|
@@ -123,7 +123,7 @@ UAL 可以支援下列伺服器角色和服務：
 |**TenantIdentifier**|已安裝角色之租用戶用戶端及伴隨 UAL 資料之產品的唯一 GUID (如果有的話)。|
 
 ## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>軟體需求
-在 Windows Server 2012 之後執行 Windows Server 版本的任何電腦上，都可以使用 UAL。
+UAL 可在 Windows Server 2012 之後，于任何執行 Windows Server 版本的電腦上使用。
 
 ## <a name="additional-references"></a>其他參考資料
 MSDN 上的[使用者存取記錄](/previous-versions/windows/desktop/ual/user-access-logging)。

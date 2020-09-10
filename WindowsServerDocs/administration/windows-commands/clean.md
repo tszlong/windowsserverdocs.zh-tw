@@ -3,16 +3,16 @@ title: clean
 description: Diskpart clean 命令的參考文章，此命令會從磁片移除具有焦點的所有磁碟分割或磁片區格式化。
 ms.topic: reference
 ms.assetid: 9bbe6fd3-e07e-487b-9035-910957a1d326
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: a7fd0ccfef5a15e3289b8d9a3b2b1f0b62bfe76a
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 82026520c456c76823993d34a4fb09bcd4b79808
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89025972"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629654"
 ---
 # <a name="clean"></a>clean
 

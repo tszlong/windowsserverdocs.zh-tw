@@ -3,16 +3,16 @@ title: 寫入器
 description: 寫入器的參考文章，可驗證寫入器或元件是否包含在備份或還原程式中，或從備份或還原程式中排除寫入器或元件。
 ms.topic: reference
 ms.assetid: 7cf98295-411d-4705-8573-f898ff45c140
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: db18b7f03bed4fc43da2ebee71c2e2a536d5e1d5
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 061def6ad0aa0240f1c50b92fa567bc1636650d8
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038076"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628496"
 ---
 # <a name="writer"></a>寫入器
 

@@ -3,16 +3,16 @@ title: defrag
 description: 重組命令的參考檔，它會尋找併合並本機磁片區上的分散檔案，以改善系統效能。
 ms.topic: reference
 ms.assetid: aaf1d1ac-996a-4282-9b4d-1e8245ff162c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 45bf8f07a44432eac45f4a5ccaf43697c5de17fe
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 81f6aba6dce5bce28311a789f803ac2c7117fd0f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89024232"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628899"
 ---
 # <a name="defrag"></a>defrag
 
@@ -77,7 +77,7 @@ defrag <volume> [<parameters>]
 
 - 依預設，如果您未指定 **/a**或 **/v**參數，重組會顯示分析和**磁碟重組報表**的摘要。
 
-- 您可以輸入FileName.txt，將報表傳送至文字檔 **>** <em> </em>，其中*FileName.txt*是您指定的檔案名。 例如：`defrag volume /v > FileName.txt`
+- 您可以輸入FileName.txt，將報表傳送至文字檔 **>** <em> </em>，其中*FileName.txt*是您指定的檔案名。 例如： `defrag volume /v > FileName.txt`
 
 - 若要中斷磁碟重組程式，請在命令列中按下 **CTRL + C**。
 

@@ -3,16 +3,16 @@ title: create partition logical
 description: Create partition logical 命令的參考文章，會在現有的延伸磁碟分割中建立邏輯資料分割。
 ms.topic: reference
 ms.assetid: 1f59b79a-d690-4d0e-ad38-40df5a0ce38e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: a9a95e735fcaed0e7f588a3d4ba643c1787782b5
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a36cac4c74840e9f92ed5fc286988da72c69d488
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89033236"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629172"
 ---
 # <a name="create-partition-logical"></a>create partition logical
 

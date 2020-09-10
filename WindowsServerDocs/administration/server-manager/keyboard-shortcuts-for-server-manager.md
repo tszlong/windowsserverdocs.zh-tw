@@ -3,35 +3,35 @@ title: 伺服器管理員的鍵盤快速鍵
 description: 伺服器管理員
 ms.topic: article
 ms.assetid: 96a2a8be-cbeb-4799-9034-284ea057915c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 182a99ff3c20ff8a62b36714967b25603ff055b3
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d2848398fa232d45f4229238d641db7b858f3032
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895765"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627845"
 ---
 # <a name="keyboard-shortcuts-for-server-manager"></a>伺服器管理員的鍵盤快速鍵
 
 >適用於：Windows Server (半年通道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-因為從 Windows Server 2012 開始已完全重新設計伺服器管理員，所以在 Windows Server 2008 R2 或 Windows Server 2008 的伺服器管理員主控台中工作的鍵盤快速鍵不一定是相同的命令。 本主題說明 Windows Server 2012 和更新版本的 Windows Server 中伺服器管理員的新鍵盤快速鍵和存取金鑰。
+由於伺服器管理員是從 Windows Server 2012 開始重新設計的，因此在 Windows Server 2008 R2 或 Windows Server 2008 的伺服器管理員主控台中運作的鍵盤快速鍵不一定是相同的命令。 本主題說明 Windows Server 2012 和更新版本的 Windows Server 中伺服器管理員的新鍵盤快速鍵和存取金鑰。
 
 若為沒有自己的鍵盤快速鍵或便捷鍵的命令，則可以藉由在取得焦點時按 **Tab** 鍵於控制項群組中切換的方式存取。
 
-## <a name="access-keys"></a>存取金鑰
+## <a name="access-keys"></a>便捷鍵
 **伺服器管理員中的現用控制區域**
 
 **歡迎使用磚**
 
 |控制項群組|存取金鑰|
 |---------|-------|
-|歡迎使用磚-快速入門索引標籤|**Alt+Q**|
+|[歡迎使用] 磚-快速入門索引標籤|**Alt+Q**|
 |歡迎使用磚 - [最新內容] 索引標籤|**Alt + W**|
-|歡迎使用磚-深入瞭解索引標籤|**Alt + L**|
+|[歡迎使用] 磚-深入瞭解索引標籤|**Alt + L**|
 |歡迎使用磚 [隱藏] 命令|**Alt + D**|
 
 **角色和群組縮圖**
@@ -46,17 +46,17 @@ ms.locfileid: "87895765"
 |---------|-------|
 |網址列中的上一頁按鈕|**Alt+向左鍵**或**退格鍵**|
 |網址列中的 [下一頁] 按鈕|**Alt + 向右鍵**|
-|Refresh|**F5**|
+|重新整理|**F5**|
 |通知區域，開啟工作詳細資料對話方塊|**Alt + N**|
 |[管理] 功能表|**Alt+M**|
 |檢視功能表|**Alt + V**|
-|[說明] 功能表|**Alt+H**|
+|說明功能表|**Alt+H**|
 |開啟伺服器管理員說明|**F1**|
 |放大|**Ctrl+加號 (+)**|
 |縮小|**Ctrl+減號 (-)**|
 |以 100% 大小顯示主控台|**Ctrl + 0**|
 
-**角色、群組或本機伺服器頁面上的磚**
+**[角色]、[群組] 或 [本機伺服器] 頁面上的磚**
 
 |控制項群組|存取金鑰|
 |---------|-------|

@@ -3,16 +3,16 @@ title: create volume raid
 description: 建立磁片區 raid 命令的參考文章，此命令會使用三個或多個指定的動態磁碟來建立 RAID-5 磁片區。
 ms.topic: reference
 ms.assetid: 9f257950-9240-4d5f-9537-8ad653d48ebf
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: c936205f6132a8a2bc06e455dd07761715df684f
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: dc971212bf620ba3abd176b8fb3c2b98e3634344
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89033146"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629069"
 ---
 # <a name="create-volume-raid"></a>create volume raid
 

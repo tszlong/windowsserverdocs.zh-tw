@@ -3,16 +3,16 @@ title: mqsvc
 description: Mqsvc 命令的參考文章，可讓在不同時間執行的應用程式在不同的網路和系統之間進行通訊，而這些網路可能會暫時離線。
 ms.topic: reference
 ms.assetid: 8bfd7874-ccb4-453f-b908-3a5b9aee0ad6
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 1c89ca33c46212cb29cf35bed3c3cca80419e04e
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 070a45b2d42c16e00dbd5bc0a180c20377ff97bf
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89034976"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628145"
 ---
 # <a name="mqsvc"></a>mqsvc
 

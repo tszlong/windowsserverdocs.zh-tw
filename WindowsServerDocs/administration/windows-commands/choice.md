@@ -3,16 +3,16 @@ title: 選項
 description: Choice 命令的參考文章，此命令會提示使用者從 batch 程式中的單一字元挑選清單中選取一個專案，然後傳回所選選項的索引。
 ms.topic: reference
 ms.assetid: c65a9119-410b-4dcf-9fa7-4e07d2a7238b
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 367f52ee41e72fe1c4c94c37a07e3a4227dec8a7
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 382e3618e66f56e05ebd0a7d6b6034e6d7543d64
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026042"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629679"
 ---
 # <a name="choice"></a>選項
 

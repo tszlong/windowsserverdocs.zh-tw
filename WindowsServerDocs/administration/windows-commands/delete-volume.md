@@ -3,16 +3,16 @@ title: delete volume
 description: 刪除磁片區命令的參考文章，此命令會刪除選取的磁片區。
 ms.topic: reference
 ms.assetid: f625933d-0f47-409e-93b2-a3e234049a5d
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 7c88834b800414bcf3ff246272ec187fb98d47db
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 66793e9d7c22b337164807bf76ee82c10d70547c
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89024152"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628808"
 ---
 # <a name="delete-volume"></a>delete volume
 

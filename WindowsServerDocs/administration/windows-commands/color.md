@@ -3,16 +3,16 @@ title: color
 description: Color 命令的參考文章，此命令會在目前的會話中變更命令提示字元視窗的前景和背景色彩。
 ms.topic: reference
 ms.assetid: f5b67131-d196-45ec-a3f9-b5d9f091fd86
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 3ce7aa8e927e3796917d2720495f394636d9c240
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: feb4d4a2de9491636a1c96b7a16c80e2e18f5865
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028456"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629499"
 ---
 # <a name="color"></a>color
 
@@ -36,7 +36,7 @@ color [[<b>]<f>]
 
 下表列出您可以用來做為和值的有效十六進位數位 `<b>` `<f>` ：
 
-| 值 | 色彩 |
+| 值 | Color |
 | ----- | ----- |
 | 0 | 黑色 |
 | 1 | 藍色 |

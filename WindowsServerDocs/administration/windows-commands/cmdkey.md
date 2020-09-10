@@ -3,16 +3,16 @@ title: cmdkey
 description: Cmdkey 命令的參考文章，此命令會建立、列出及刪除已儲存的使用者名稱和密碼或認證。
 ms.topic: reference
 ms.assetid: 5fcd68ee-a14a-4b71-9300-c3f5c5d31e8e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 7ead7a9c3b5168789136c895c6cc6febcbb486f1
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: fb96624ee45e2b526ed2092c0593451d0492bf74
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89030966"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629539"
 ---
 # <a name="cmdkey"></a>cmdkey
 

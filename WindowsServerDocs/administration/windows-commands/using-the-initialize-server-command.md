@@ -3,16 +3,16 @@ title: Initialize-Server
 description: 初始化伺服器的參考文章，會在安裝伺服器角色之後設定 Windows 部署服務伺服器以供初始使用。
 ms.topic: reference
 ms.assetid: 68a26ad9-5eb2-4490-b782-b7cd46b8000d
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: e751ad7b035c82481eed29dcad36b33a64895d57
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ca7e959aa41c8b9de359e35db7b22889b4786a37
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036416"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628033"
 ---
 # <a name="initialize-server"></a>Initialize-Server
 

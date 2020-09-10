@@ -3,16 +3,16 @@ title: detail disk
 description: 詳細資料磁片命令的參考文章，此命令會顯示所選磁片的屬性以及該磁片上的磁片區。
 ms.topic: reference
 ms.assetid: 6b09cf40-8d93-452b-b449-5242e62a4102
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: f0cff2685bf75989baf9af16091f134ee8655ac4
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a9b8c5b84de2fc0a0e4188ac3c6d055a2e023577
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027666"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628783"
 ---
 # <a name="detail-disk"></a>detail disk
 

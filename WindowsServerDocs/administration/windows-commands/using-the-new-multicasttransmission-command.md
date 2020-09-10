@@ -3,16 +3,16 @@ title: 新 MulticastTransmission
 description: 新 MulticastTransmission 的參考文章，會為映射建立新的多播傳輸。
 ms.topic: reference
 ms.assetid: c1f1dc46-dd50-4eb9-9f72-cf0e5d71bd3d
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 30988ad23151f12533b75323f9376859a4c5d2a5
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ae5c3056fb6a5d2259a630c114ec7a24fc8d0b71
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038146"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627932"
 ---
 # <a name="new-multicasttransmission"></a>新 MulticastTransmission
 

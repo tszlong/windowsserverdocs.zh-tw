@@ -3,16 +3,16 @@ title: cmd
 description: Cmd 命令的參考文章，此命令會啟動新的命令直譯器實例，Cmd.exe。
 ms.topic: reference
 ms.assetid: 6ec588db-31a9-4a73-a970-65a2c6f4abbe
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: b782a93d4c61f43bbe45497871fe66f29ef972a4
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 96af9d997d9163631f3da364d960a83edb7bfe5a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89030976"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629592"
 ---
 # <a name="cmd"></a>cmd
 
@@ -47,7 +47,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<b><f> | <f>}] [/e:{on | off}] [/f:{on |
 
 下表列出您可以用來做為和值的有效十六進位數位 `<b>` `<f>` ：
 
-| 值 | 色彩 |
+| 值 | Color |
 | ----- | ----- |
 | 0 | 黑色 |
 | 1 | 藍色 |

@@ -3,22 +3,22 @@ title: prnmngr
 description: Prnmngr 命令的參考文章，除了設定和顯示預設印表機外，還會新增、刪除和列出印表機或印表機連線。
 ms.topic: reference
 ms.assetid: 39eee1a8-4b41-4c9f-941e-486495135eb8
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 07/11/2018
-ms.openlocfilehash: 27196fcea2694b1f49bcd6f9ee74b88f16a853d8
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: cfbba48747dfca7230f0ef397201cea610fdc3dd
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038416"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628052"
 ---
 # <a name="prnmngr"></a>prnmngr
 
 > 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-除了設定和顯示預設印表機外，還會新增、刪除和列出印表機或印表機連接。 此命令是位於目錄中的 Visual Basic 腳本 `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 若要在命令提示字元中使用此命令，請輸入 **cscript** ，後面接著 prnmngr 檔案的完整路徑，或將目錄變更為適當的資料夾。 例如： `cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnmngr` 。
+除了設定和顯示預設印表機外，還會新增、刪除和列出印表機或印表機連接。 此命令是位於目錄中的 Visual Basic 腳本 `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 若要在命令提示字元中使用此命令，請輸入 **cscript** ，後面接著 prnmngr 檔案的完整路徑，或將目錄變更為適當的資料夾。 例如：`cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnmngr`。
 
 ## <a name="syntax"></a>語法
 

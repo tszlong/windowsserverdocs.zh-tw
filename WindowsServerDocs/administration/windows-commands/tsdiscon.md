@@ -3,16 +3,16 @@ title: tsdiscon
 description: Tsdiscon 的參考文章，會中斷與遠端桌面工作階段主機伺服器的會話連線。
 ms.topic: reference
 ms.assetid: 13139674-7dee-4965-8cac-32f4928e8b9a
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 9fd0292ab1bd53a424c0acaa4b6a2dc98cb1f0a0
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: b116dfe8dc5ac3a689cae23ebba17b202b509897
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026856"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628550"
 ---
 # <a name="tsdiscon"></a>tsdiscon
 
