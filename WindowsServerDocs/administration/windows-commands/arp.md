@@ -3,16 +3,16 @@ title: arp
 description: Arp 命令的參考文章，此命令會顯示並修改位址解析通訊協定中的專案， (arp) 快取，用來儲存 IP 位址及其已解析的實體位址。
 ms.topic: reference
 ms.assetid: 827e96eb-1945-483f-980f-714703456f7c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: b97c285f36bac3fd8587abddaf0a70423eb26155
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 33b636bb27a6dcb9bc5d744e164fb16051cf4f05
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029386"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633453"
 ---
 # <a name="arp"></a>arp
 

@@ -3,16 +3,16 @@ title: auditpol remove
 description: Auditpol remove 命令的參考文章，此命令會移除指定帳戶或所有帳戶的每個使用者稽核原則。
 ms.topic: reference
 ms.assetid: be42ec55-235c-44f7-9abd-ed1cf3f5b1f5
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: eee48822a082c3e7f5aa37cbd09a24059c94624e
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a86d5e76daa7023b73760347fb5656fa13ca6418
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029026"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633172"
 ---
 # <a name="auditpol-remove"></a>auditpol remove
 

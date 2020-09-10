@@ -3,16 +3,16 @@ title: auditpol get
 description: Auditpol get 命令的參考文章，此命令會抓取系統原則、每個使用者的原則、審核選項和 audit 安全描述項物件。
 ms.topic: reference
 ms.assetid: fe13de4e-836c-4207-b47c-64b6272d6c41
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 23de44ebc9bc91ad4db52ee7362b14d9c93648d8
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 309e54170b7a154629a17e5fde1ed4943d0b180c
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029086"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633234"
 ---
 # <a name="auditpol-get"></a>auditpol get
 

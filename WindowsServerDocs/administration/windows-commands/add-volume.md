@@ -3,16 +3,16 @@ title: add volume
 description: '[新增磁片區] 命令的參考文章，此命令會將磁片區新增至陰影複製集，也就是要陰影複製的磁片區集合。'
 ms.topic: reference
 ms.assetid: b7d4d35d-8bda-46d2-8df5-eb598cecaaba
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 4cf64e98c498f16032963f0b09a5aec4df162452
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 2a1dc6f00ebc497e9276d1f3b5a74a1f1a10dbfc
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029436"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633547"
 ---
 # <a name="add-volume"></a>add volume
 

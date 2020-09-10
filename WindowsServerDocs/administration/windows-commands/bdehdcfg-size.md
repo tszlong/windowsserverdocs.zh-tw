@@ -3,16 +3,16 @@ title: bdehdcfg size
 description: Bdehdcfg size 命令的參考文章，這個命令會在建立新的系統磁片磁碟機時，指定系統磁碟分割的大小。
 ms.topic: reference
 ms.assetid: 80f55b1d-a28d-4edf-9997-1fb918b7b5a1
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: f4aaedbbac5783fdf54814d7cf97ef9c70c9d346
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: c68322fe999a39c4a2913826f520f0b401a9d0ac
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031476"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89632824"
 ---
 # <a name="bdehdcfg-size"></a>bdehdcfg：大小
 

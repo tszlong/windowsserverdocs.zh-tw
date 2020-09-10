@@ -3,16 +3,16 @@ title: auditpol set
 description: Auditpol set 命令的參考文章，它會設定每個使用者稽核原則、系統稽核原則或審核選項。
 ms.topic: reference
 ms.assetid: f4947486-87bd-48cb-ba81-7230c8e70895
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 674de256eba3ee4b55f2b889717b7c2ed2defa3d
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ac9baa7a8936e4b664cb767f7eb626f4f69fafed
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028966"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633106"
 ---
 # <a name="auditpol-set"></a>auditpol set
 

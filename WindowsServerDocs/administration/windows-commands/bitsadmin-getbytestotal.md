@@ -3,16 +3,16 @@ title: bitsadmin getbytestotal
 description: Bitsadmin getbytestotal 命令的參考文章，此命令會抓取指定作業的大小。
 ms.topic: reference
 ms.assetid: 784e0bfa-7b09-4262-9104-adbc9beb479b
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 6a8496234c0907061997ddd790e03f78d84c5380
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 50b926b8d89e402ef4fd9e58896963edd3c368c9
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89024422"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89632339"
 ---
 # <a name="bitsadmin-getbytestotal"></a>bitsadmin getbytestotal
 

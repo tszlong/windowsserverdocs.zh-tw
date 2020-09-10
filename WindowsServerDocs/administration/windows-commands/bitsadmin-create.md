@@ -3,16 +3,16 @@ title: bitsadmin create
 description: Bitsadmin create 命令的參考文章，此命令會建立具有指定顯示名稱的傳送工作。
 ms.topic: reference
 ms.assetid: 9a8c53af-900b-4c24-9265-5b8b08213fac
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 516f751109724688579f084fd0ccdb5f5bda85a3
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 7d621f3c03f2b002c88792bc2cf2b8f2c70351c2
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026676"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89632360"
 ---
 # <a name="bitsadmin-create"></a>bitsadmin create
 

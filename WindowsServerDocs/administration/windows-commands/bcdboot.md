@@ -3,16 +3,16 @@ title: bcdboot
 description: Bcdboot 命令的參考文章，可快速設定系統磁碟分割，或修復位於系統磁碟分割上的開機環境。
 ms.topic: reference
 ms.assetid: e62a250e-08e9-47f6-89d1-e6002560ab57
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: fedbd771efb3d2bba63f906b446632114fa91858
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: b7cc67c47093686882f0a7bfa1fcc47f8c444210
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031616"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89632987"
 ---
 # <a name="bcdboot"></a>bcdboot
 

@@ -3,16 +3,16 @@ title: at
 description: At 命令的參考文章，此命令會排程命令和程式在指定的時間和日期執行于電腦上。
 ms.topic: reference
 ms.assetid: ff18fd16-9437-4c53-8794-bfc67f5256b3
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 017e6bb59b891fddfff9e695f8e3040f678bd611
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 8cd6762c6a88e24b6092dcce519582a0f627c77f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029286"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633424"
 ---
 # <a name="at"></a>at
 

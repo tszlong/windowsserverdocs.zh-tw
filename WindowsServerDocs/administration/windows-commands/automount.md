@@ -3,16 +3,16 @@ title: 自動掛接
 description: 自動掛接命令的參考文章，可啟用或停用自動掛接功能。
 ms.topic: reference
 ms.assetid: 4635fc91-a477-4f17-8dcc-aa08854bfe45
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 92fa9f66db510d887af793882a2400b31a1517c4
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 0f4be54f7610929627e0cc0332a7f5d65eafc8b2
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031636"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89632997"
 ---
 # <a name="automount"></a>自動掛接
 

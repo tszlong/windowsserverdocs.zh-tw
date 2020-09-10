@@ -3,16 +3,16 @@ title: auditpol restore
 description: Auditpol restore 命令的參考文章，此命令會還原系統稽核原則設定、所有使用者的每一使用者稽核原則設定，以及與/backup 選項所使用的逗點分隔值 (CSV) 檔案格式語法一致的檔案中的所有審核選項。
 ms.topic: reference
 ms.assetid: ad73e520-484f-4cf1-a7f9-ae7488e9edf6
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: dcf4f85da5955f49e644962de82a66a4dedaea64
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: d6dc8dde77189cbd1134779bf89f253402f181dc
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029006"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633116"
 ---
 # <a name="auditpol-restore"></a>auditpol restore
 

@@ -3,16 +3,16 @@ title: bitsadmin geterrorcount
 description: Bitsadmin geterrorcount 命令的參考文章，此命令會抓取指定作業產生暫時性錯誤的次數計數。
 ms.topic: reference
 ms.assetid: 8840ae78-52b0-4c7e-b592-0547359a237e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 1b6a4d3f0e77d8ffc0d7e538affe0fb8e77a5281
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 7266af9244218cf4a6434c838390eac8149c80ab
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89030346"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89632112"
 ---
 # <a name="bitsadmin-geterrorcount"></a>bitsadmin geterrorcount
 

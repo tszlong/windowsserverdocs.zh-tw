@@ -3,16 +3,16 @@ title: 附加 vdisk
 description: Attach vdisk 命令的參考文章，此命令會將 (（有時稱為掛接或介面）) 虛擬硬碟 (VHD) ，使其以本機硬碟的形式出現在主機電腦上。
 ms.topic: reference
 ms.assetid: 882ab875-0c14-4eb3-98ef-fd0e8fa40d9c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: bf2b5bb435be441410eeb39ca84ad9a2bd2e0736
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: aa94847ceaf4d978d50f0e00d9376c4f6b67691b
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029256"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633367"
 ---
 # <a name="attach-vdisk"></a>附加 vdisk
 

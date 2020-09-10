@@ -3,16 +3,16 @@ title: bcdedit
 description: Bcdedit 命令的參考文章，此命令會建立新的存放區、修改現有的存放區，以及新增開機功能表參數。
 ms.topic: reference
 ms.assetid: ab2da47d-3aac-44a0-b7fd-bd9561d61553
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 03/27/2018
-ms.openlocfilehash: 81ce7f6964b4ffebdc64056b1bb630bc3eb6d0f7
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: b3cd41f3ba1980718a5e2c0a37df470a94f67657
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031606"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89632978"
 ---
 # <a name="bcdedit"></a>bcdedit
 

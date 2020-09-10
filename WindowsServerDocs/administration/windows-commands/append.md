@@ -3,16 +3,16 @@ title: 附加
 description: Append 命令的參考文章，可讓程式在指定的目錄中開啟資料檔案，就像是在目前的目錄中一樣。
 ms.topic: reference
 ms.assetid: 9c3fea20-9502-40ad-a442-7a927aad88eb
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 6a92b87a9e35af45480c01f0a2422abc14fb3ca1
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 0002adabaa8c9cbd2235383d997c77670d33d522
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029406"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633471"
 ---
 # <a name="append"></a>附加
 

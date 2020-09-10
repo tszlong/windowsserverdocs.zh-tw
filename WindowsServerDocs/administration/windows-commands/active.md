@@ -3,16 +3,16 @@ title: 作用中
 description: 作用中命令的參考文章（在基本磁碟上）會將具有焦點的磁碟分割標記為作用中。
 ms.topic: reference
 ms.assetid: 1f25da2e-87fc-4392-a7ee-f38d09b7873c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 6baad8bd60307eeddf7b777f059ab5ba3846e1d4
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 8c8a90b2341bd74cf37c1431987d0d47403e1de6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029475"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633590"
 ---
 # <a name="active"></a>作用中
 

@@ -3,16 +3,16 @@ title: auditpol backup
 description: Auditpol backup 命令的參考文章，它會備份系統稽核原則設定、所有使用者的每個使用者稽核原則設定，以及以逗號分隔值 (CSV) 文字檔的所有審核選項。
 ms.topic: reference
 ms.assetid: dc84e581-aa0f-4c91-b13b-1d970bad5517
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 4c5dc71ef737c3c939d895a0693ff8213105caa1
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 1bee18b3bbad093364301543dda1199598e8ad00
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029146"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633245"
 ---
 # <a name="auditpol-backup"></a>auditpol backup
 

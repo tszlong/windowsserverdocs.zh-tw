@@ -3,16 +3,16 @@ title: bitsadmin cache and info
 description: Bitsadmin cache 和 info 命令的參考文章，此命令會傾印特定的快取專案。
 ms.topic: reference
 ms.assetid: 15975cbf-dba6-49ca-a725-d15ce1952de5
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: cce96d25b3968c1f975b6426ce8c25e7420f7bd3
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 16eda9ddd04a270fbfd754186fd5c9f4a6152cd5
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028886"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89632551"
 ---
 # <a name="bitsadmin-cache-and-info"></a>bitsadmin cache and info
 

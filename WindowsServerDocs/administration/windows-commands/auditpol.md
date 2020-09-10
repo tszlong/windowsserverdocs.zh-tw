@@ -3,16 +3,16 @@ title: auditpol
 description: Auditpol 命令的參考文章，它會顯示和執行函式以操作稽核原則的相關資訊。
 ms.topic: reference
 ms.assetid: a02cfb9d-732f-4e77-aeba-f18265daa3af
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: b4a945d1779c3a55fd6647e366770e7ee3d9ec67
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 83798a38f304a9e3ef1e32fe189bf37949e205ec
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028956"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633057"
 ---
 # <a name="auditpol"></a>auditpol
 

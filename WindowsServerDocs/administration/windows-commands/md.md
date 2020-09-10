@@ -3,16 +3,16 @@ title: md
 description: Md 命令的參考文章，此命令會建立目錄或子目錄。
 ms.topic: reference
 ms.assetid: 82162d00-cc34-4776-9e55-4b4836dbd6a9
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: f3da07c6e9d2e6fd7499f74e8ef10fdf3ba85586
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 1026d14c39b4058ba3e775356d27f3be8d4e8bf9
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037846"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633708"
 ---
 # <a name="md"></a>md
 
