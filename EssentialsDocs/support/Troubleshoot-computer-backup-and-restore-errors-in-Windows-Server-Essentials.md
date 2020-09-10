@@ -5,14 +5,14 @@ ms.date: 06/25/2013
 ms.topic: article
 ms.assetid: 5cc73aff-d2c0-4cf9-a23d-ef928ae5ddc9
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 933dab3e0471ef4b9d8e4f603a1c177ecc6fc70c
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: ce2d6d51f230d4a06f2e1b9acfd378d61bfaf863
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838287"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625106"
 ---
 # <a name="troubleshoot-computer-backup-and-restore-errors-in-windows-server-essentials"></a>疑難排解 Windows Server Essentials 中的電腦備份與還原錯誤
 
@@ -21,7 +21,7 @@ ms.locfileid: "87838287"
 使用下列程序可疑難排解在 Windows Server Essentials 中的電腦備份，包括備份設定問題、不完整或不成功的備份、備份的健康情況警示，以及檔案、資料夾或完整系統還原的問題。
 
 > [!NOTE]
-> 如需 Windows Server Essentials 社區的最新疑難排解資訊，請造訪[Windows Server Essentials 論壇](/answers/topics/windows-server-essentials.html)。
+> 如需 Windows Server Essentials 社區中最新的疑難排解資訊，請造訪 [Windows Server Essentials 論壇](/answers/topics/windows-server-essentials.html)。
 
 ## <a name="troubleshoot-backup-configuration-issues-for-a-connected-computer"></a>疑難排解連線電腦的備份設定問題
 

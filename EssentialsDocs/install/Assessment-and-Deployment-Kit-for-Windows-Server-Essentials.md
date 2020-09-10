@@ -5,20 +5,20 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: ef3a7934-e36f-40d8-9e0b-7ed59089f85e
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 2ac063330cc1ae99bfd7d0d65950ba17ad815c87
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 6198e8d8e06a76b9768f5c1166b438639d2ffca2
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181514"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623970"
 ---
 # <a name="assessment-and-deployment-kit-for-windows-server-essentials"></a>Windows Server Essentials 的評定及部署套件
 
 >適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-Windows Server &reg; 2012 Essentials 評定及部署套件（ADK）是一組工具、二進位檔與作業系統語言套件的集合，您可以用來在新電腦上自訂、評估和部署 Windows Server Essentials。 本文件中包含要為客戶預先安裝作業系統之合作夥伴的特定資訊，並包含下列主題：
+Windows Server &reg; 2012 Essentials 評定及部署套件 (ADK) 是一組工具、二進位檔與作業系統語言套件的集合，可用來在新電腦上自訂、評估和部署 Windows Server Essentials。 本文件中包含要為客戶預先安裝作業系統之合作夥伴的特定資訊，並包含下列主題：
 
 
 -   [Windows Server Essentials ADK 快速入門](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)
@@ -71,7 +71,7 @@ Windows Server &reg; 2012 Essentials 評定及部署套件（ADK）是一組工�
 
     -   [新增 Microsoft Online Service 合作夥伴合約列名的合作夥伴資訊](Add-Microsoft-Online-Service-Partner-Agreement-Partner-of-Record-Information.md)
 
-    -   [在 Microsoft Online Service 經銷商合約的支援下，取代 O365 整合模組並購買-嘗試端點 URL](Replace-O365-Integration-Module-Buy-Try-Endpoint-URL-in-Support-of-Microsoft-Online-Service-Reseller-Agreement.md)
+    -   [取代 Microsoft 365 整合模組購買-Try 端點 URL 支援 Microsoft Online Service 轉售商合約](Replace-O365-Integration-Module-Buy-Try-Endpoint-URL-in-Support-of-Microsoft-Online-Service-Reseller-Agreement.md)
 
     -   [針對遠端管理的伺服器建立伺服器復原 DVD](Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md)
 
@@ -87,4 +87,4 @@ Windows Server &reg; 2012 Essentials 評定及部署套件（ADK）是一組工�
 
  Active Directory、Microsoft、Windows Live、Windows PowerShell、Windows 及 Windows Server 為 Microsoft 集團公司的商標。 所有其他商標為各所有人所有之商標。
 
- &copy;2012 Microsoft。 著作權所有，並保留一切權利。
+ &copy; 2012 Microsoft。 著作權所有，並保留一切權利。

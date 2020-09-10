@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 99e258bc-0695-48c9-b694-a7f3cbe2a2d0
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: f23acf905e1c0b090076efd75d2e104a1cb0d186
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 5a3ae6711d54d1c1f2bebdae6db3065fce970312
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181354"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623717"
 ---
 # <a name="create-the-posticcmd-file-for-running-post-initial-configuration-tasks"></a>建立 PostIC.cmd 檔案以便執行初始設定後續的工作
 
@@ -38,7 +38,7 @@ ms.locfileid: "87181354"
 
 4.  (選用) 建立 SetupFailure.cmd 檔案，使其在 PostIC.cmd 傳回非 0 的值時執行程式碼。
 
-###  <a name="setupfailurecmd"></a><a name="BKMK_SetupFailure"></a>Setupfailure.cmd .cmd
+###  <a name="setupfailurecmd"></a><a name="BKMK_SetupFailure"></a> Setupfailure.cmd .cmd
  您可以使用 SetupFailure.cmd，在初始設定中提供問題通知。 SetupFailure.cmd 檔案包含您要在發生問題時執行的程式碼。 SetupFailure.cmd 檔案會放置於 C:\Windows\Setup\Scripts 中，且會在設定工作發生問題或是 PostIC.cmd 檔案傳回非 0 的值時執行。
 
 ##### <a name="to-define-notifications"></a>若要定義通知
@@ -50,4 +50,4 @@ ms.locfileid: "87181354"
 3.  在 C:\Windows\Setup\Scripts 中儲存 SetupFailure.cmd。
 
 ## <a name="see-also"></a>另請參閱
- [使用 Windows Server ESSENTIALS ADK 消費者入門](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)[建立和自訂映射額外的](Creating-and-Customizing-the-Image.md)[自訂](Additional-Customizations.md)[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)
+ [使用 Windows Server ESSENTIALS ADK 消費者入門](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)[建立和自訂映射](Creating-and-Customizing-the-Image.md)[其他自訂](Additional-Customizations.md)專案[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)

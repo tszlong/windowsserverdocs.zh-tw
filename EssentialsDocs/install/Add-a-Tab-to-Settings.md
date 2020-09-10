@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: aac6b7f3-9020-46c3-a83f-b81542300385
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: d974f4dc53b9ce389254b162a3305b277181ceed
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 17f2d7c8a409ed49ea0f9bfa50952467e4694243
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181534"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623997"
 ---
 # <a name="add-a-tab-to-settings"></a>將索引標籤加入 [設定]
 
@@ -29,7 +29,7 @@ ms.locfileid: "87181534"
 
 -   [將組件安裝到參照電腦上](Add-a-Tab-to-Settings.md#BKMK_InstallAssembly)。
 
-###  <a name="add-an-implementation-of-the-isettingsdata-interface-to-the-assembly"></a><a name="BKMK_ISettingsData"></a>將 ISettingsData 介面的執行加入至元件
+###  <a name="add-an-implementation-of-the-isettingsdata-interface-to-the-assembly"></a><a name="BKMK_ISettingsData"></a> 將 ISettingsData 介面的執行新增至元件
  ISettingsData 介面包含在 AdminCommon.dll 組件 (位於 \Program Files\Windows Server\Bin 中) 的 Microsoft.WindowsServerSolutions.Settings 命名空間中。
 
 ##### <a name="to-add-the-isettingsdata-code-to-the-assembly"></a>若要將 ISettingsData 程式碼新增至組件
@@ -43,7 +43,7 @@ ms.locfileid: "87181534"
     > [!IMPORTANT]
     >  安裝在伺服器上的組件，名稱必須為 DashboardSettingsPage.dll，然後將 dll 複製到 %ProgramFiles%\Windows Server\Bin\OEM。
 
-4.  建立您想要在索引標籤中使用的控制項。在此範例中，settings 控制項的名稱為 MySettingsControl。
+4.  建立您要在索引標籤中使用的控制項。在此範例中，設定控制項的名稱是 MySettingsControl。
 
 5.  重新命名 Class1.cs 檔案。 例如，MySettingTab.cs。
 
@@ -104,7 +104,7 @@ ms.locfileid: "87181534"
     }
     ```
 
-13. 新增 TabId 方法，它會提供索引標籤的唯一識別碼。下列程式碼範例顯示 TabId 方法：
+13. 加入 TabId 方法，它會提供索引標籤的唯一識別碼。下列程式碼範例顯示 TabId 方法：
 
     ```
 
@@ -116,7 +116,7 @@ ms.locfileid: "87181534"
     }
     ```
 
-14. 加入 TabOrder 方法，以傳回索引標籤的順序。下列程式碼範例顯示 TabOrder 方法：
+14. 加入 TabOrder 方法，此方法會傳回索引標籤的順序。下列程式碼範例顯示 TabOrder 方法：
 
     ```
 
@@ -129,7 +129,7 @@ ms.locfileid: "87181534"
     > [!NOTE]
     >  使用從 0 開始的數字來定義索引標籤順序。 Microsoft 內建的設定索引標籤會先顯示，然後才根據您定義的索引標籤順序來顯示您的索引標籤。 例如，如果您有三個設定索引標籤，就要依據所要的索引標籤顯示順序，指定索引標籤順序 0、1 和 2。
 
-15. 新增 TabTitle 方法，以提供索引標籤的標題。下列程式碼範例顯示 TabTitle 方法：
+15. 加入 TabTitle 方法，它會提供索引標籤的標題。下列程式碼範例顯示 TabTitle 方法：
 
     ```
 
@@ -144,13 +144,13 @@ ms.locfileid: "87181534"
 
 16. 儲存並建置方案。
 
-###  <a name="sign-the-assembly-with-an-authenticode-signature"></a><a name="BKMK_SignAssembly"></a>使用 Authenticode 簽章簽署元件
+###  <a name="sign-the-assembly-with-an-authenticode-signature"></a><a name="BKMK_SignAssembly"></a> 使用 Authenticode 簽章簽署元件
  您必須使用 Authenticode 來簽署組件，才能在作業系統中使用這些組件。 如需簽署組件的相關詳細資訊，請參閱 [使用 Authenticode 簽署和檢查程式碼](https://msdn.microsoft.com/library/ms537364\(VS.85\).aspx#SignCode)。
 
-###  <a name="install-the-assembly-on-the-reference-computer"></a><a name="BKMK_InstallAssembly"></a>將元件安裝在參照電腦上
+###  <a name="install-the-assembly-on-the-reference-computer"></a><a name="BKMK_InstallAssembly"></a> 在參照電腦上安裝元件
  在您成功建置方案之後，請將 DashboardSettingsPage.dll 檔案複製一份到參照電腦上的下列資料夾中：
 
  **%Programfiles%\Windows Server\Bin\OEM**
 
 ## <a name="see-also"></a>另請參閱
- [建立和自訂映射額外的](Creating-and-Customizing-the-Image.md)[自訂](Additional-Customizations.md)[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)
+ [建立和自訂映射](Creating-and-Customizing-the-Image.md)[其他自訂](Additional-Customizations.md)專案[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)

@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: a7eafbb3-7728-487e-b287-90bbd6fee7f0
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 77d1c98688f58e767d4ad76c0abf5456ef7ba052
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: c424be2d0815fbcb217e0453b27f4b7aceb07ee6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181304"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623632"
 ---
 # <a name="customize-sign-up-for-microsoft-online-backup-service-task"></a>自訂註冊 Microsoft Online Backup Service 工作
 
@@ -27,4 +27,4 @@ ms.locfileid: "87181304"
 -   您可以隱藏工作。 若要隱藏工作，請開啟登錄編輯程式，並建立登錄機碼：**HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\OnlineBackup\OnlineBackupInstalled**。
 
 ## <a name="see-also"></a>另請參閱
- [建立和自訂映射額外的](Creating-and-Customizing-the-Image.md)[自訂](Additional-Customizations.md)[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)
+ [建立和自訂映射](Creating-and-Customizing-the-Image.md)[其他自訂](Additional-Customizations.md)專案[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)

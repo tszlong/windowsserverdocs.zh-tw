@@ -5,20 +5,20 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: e6ba701d-7183-4c26-960e-44cc280bf3e6
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: beb2a97478ced3dd757b76aa066065948953456f
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 25a991668f56bcb24606738a9a510d92b3d8f9eb
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180394"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625333"
 ---
 # <a name="step-8-run-the-windows-server-essentials-best-practices-analyzer"></a>步驟 8：執行 Windows Server Essentials 最佳做法分析程式
 
 >適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials
 
-當您完成將設定和資料移轉到 Windows Server Essentials 時，您應該在目的地伺服器上執行 Windows Server Essentials 最佳做法分析程式（BPA）。 BPA 會檢查正在執行 Windows Server Essentials 的伺服器，並顯示描述問題的報告，並提供解決它們的建議。 建議是由適用于 Windows Server Essentials 的產品支援組織所開發。
+當您完成將設定和資料移轉到 Windows Server Essentials 時，您應該在目的地伺服器上執行 Windows Server Essentials 最佳做法分析程式 (BPA) 。 BPA 會檢查執行 Windows Server Essentials 的伺服器，並提供描述問題的報告，並提供解決問題的建議。 建議是由 Windows Server Essentials 的產品支援組織所開發。
 
 ### <a name="to-run-the--windows-server-essentials-bpa-on-the-destination-server"></a>在目的地伺服器上執行 Windows Server Essentials BPA
 
@@ -36,5 +36,5 @@ ms.locfileid: "87180394"
  您已執行 Windows Server Essentials 最佳做法分析程式。 您的 Windows Server Essentials 遷移現在已完成。
 
 
-若要查看所有步驟，請參閱[遷移至 Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。
+若要查看所有步驟，請參閱 [遷移至 Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。
 

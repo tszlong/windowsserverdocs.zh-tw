@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 16b24026-2fe3-4bd0-b82f-900e1564be99
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 1828eab791cb32a7af1aee62325a4270b1a2d983
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 6a961f8bb201f9746b4e212801576ff287dc43b2
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180547"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625669"
 ---
 # <a name="move-windows-sbs-2011-standard-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>將 Windows SBS 2011 Standard 設定和資料移至進行 Windows Server Essentials 移轉的目的地伺服器
 
@@ -22,13 +22,13 @@ ms.locfileid: "87180547"
 
 1. [將資料複製到目的地伺服器](#copy-data-to-the-destination-server)
 
-2. [將 Active Directory 使用者帳戶匯入 Windows Server Essentials 儀表板（選擇性）](#import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard)
+2. [將 Active Directory 使用者帳戶匯入 Windows Server Essentials 儀表板 (選擇性) ](#import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard)
 
 3. [將 DHCP 伺服器角色從來源伺服器移動到路由器](#move-the-dhcp-server-role-from-the-source-server-to-the-router)
 
 4. [設定網路](#configure-the-network)
 
-5. [移除舊版 Active Directory 群組原則物件（選擇性）](#remove-legacy-active-directory-group-policy-objects)
+5. [移除舊版 Active Directory 群組原則物件 (選擇性) ](#remove-legacy-active-directory-group-policy-objects)
 
 6. [將允許的電腦對應到使用者帳戶](#map-permitted-computers-to-user-accounts)
 
@@ -52,13 +52,13 @@ ms.locfileid: "87180547"
  其中：
  - \<SourceServerName\> 是來源伺服器的名稱
  - \<SharedSourceFolderName\> 是來源伺服器上共用資料夾的名稱
- - \<DestinationServerName\>這是目的地伺服器的名稱，
- - \<SharedDestinationFolderName\>這是要將資料複製到其中的目的地伺服器上的共用資料夾。
+ - \<DestinationServerName\> 這是目的地伺服器的名稱，
+ - \<SharedDestinationFolderName\> 這是目的地伺服器上要將資料複製到其中的共用資料夾。
 
 3. 在每一個從來源伺服器移轉的共用資料夾重複上述步驟。
 
 ## <a name="import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard"></a>將 Active Directory 使用者帳戶匯入 Windows Server Essentials 儀表板
- 根據預設，在來源伺服器上建立的所有使用者帳戶都會自動遷移至 Windows Server Essentials 中的儀表板。 不過，如果某些屬性不符合移轉需求，Active Directory 使用者帳戶的自動移轉會失敗。 您可以使用以下 Windows PowerShell Cmdlet 匯入 Active Directory 使用者。
+ 根據預設，在來源伺服器上建立的所有使用者帳戶都會自動遷移到 Windows Server Essentials 中的儀表板。 不過，如果某些屬性不符合移轉需求，Active Directory 使用者帳戶的自動移轉會失敗。 您可以使用以下 Windows PowerShell Cmdlet 匯入 Active Directory 使用者。
 
 #### <a name="to-import-an-active-directory-user-account-to-the-windows-server-essentials-dashboard"></a>將 Active Directory 使用者帳戶匯入 Windows Server Essentials 儀表板
 
@@ -115,7 +115,7 @@ ms.locfileid: "87180547"
 > 如果您已經在第二個伺服器上設定內部部署 Exchange Server，您必須確定連接埠 25 (SMTP) 也已開啟，而且會重新導向到內部部署 Exchange Server 的 IP 位址。
 
 ## <a name="remove-legacy-active-directory-group-policy-objects"></a>移除舊版 Active Directory 群組原則物件
- 已針對 Windows Server Essentials 更新群組原則物件（Gpo）。 它們是 Windows Small Business Server 2011 GPO 的超集。 對於 Windows Server Essentials，必須手動刪除一些 Windows Small Business Server 2011 Gpo 和 Windows Management Instrumentation （WMI）篩選器，以避免與 Windows Server Essentials Gpo 和 WMI 篩選器發生衝突。
+ 適用于 Windows Server Essentials 的群組原則物件 (Gpo) 更新。 它們是 Windows Small Business Server 2011 GPO 的超集。 若為 Windows Server Essentials，必須以手動方式刪除一些 Windows Small Business Server 2011 Gpo 和 Windows Management Instrumentation (WMI) 篩選器，以避免與 Windows Server Essentials Gpo 和 WMI 篩選器發生衝突。
 
 > [!NOTE]
 > 如果您修改了原始 Windows Small Business Server 2011 群組原則物件，您應該將其複本儲存在不同的位置，然後再從 Windows Small Business Server 2011 中刪除它們。
@@ -126,7 +126,7 @@ ms.locfileid: "87180547"
 
 2. 按一下 [開始]****，然後按一下 [伺服器管理]****。
 
-3. 在流覽窗格中，按一下 [ **Advanced Management**]，按一下 [**群組原則 Management**]，然後按一下 [**樹系：** _<您功能變數名稱 \> _]。
+3. 在流覽窗格中，依序按一下 [ **Advanced Management**]、[**群組原則管理**]，然後按一下 [**樹系：** _<您功能變數名稱 \> _]。
 
 4. 按一下 [**網域**]，再按一下 [ *<\> 您功能變數名稱*]，然後按一下 [**群組原則物件**]。
 
@@ -158,18 +158,18 @@ ms.locfileid: "87180547"
 
 3. 在流覽窗格中，按一下 [**功能**]，按一下 [**群組原則管理**]，然後按一下 [**樹系：** _<YourNetworkDomainName \> _
 
-4. 依序按一下 [**網域**] 和 [ *<YourNetworkDomainName \> *]，然後按一下 [ **WMI 篩選器**]。
+4. 按一下 [**網域**]，然後按一下 [ *<YourNetworkDomainName \> *]，再按一下 [ **WMI 篩選器**]。
 
 5. 以滑鼠右鍵按一下 [Windows SBS 用戶端]****，按一下 [刪除]****，然後按一下 [是]****。
 
-6. 以滑鼠右鍵按一下 [ **WINDOWS SBS 用戶端 windows 7 和 Windows Vista**]，按一下 [**刪除**]，然後按一下 **[是]**。
+6. 以滑鼠右鍵按一下 [ **WINDOWS SBS 用戶端 windows 7 和 Windows Vista**]，按一下 [ **刪除**]，然後按一下 **[是]**。
 
-7. 以滑鼠右鍵按一下 [ **WINDOWS SBS Client WINDOWS XP**]，按一下 [**刪除**]，然後按一下 **[是]**。
+7. 在 [ **WINDOWS SBS 用戶端 WINDOWS XP**] 上按一下滑鼠右鍵，按一下 [ **刪除**]，然後按一下 **[是]**。
 
 8. 請確認已刪除這三個 WMI 篩選器。
 
 ## <a name="map-permitted-computers-to-user-accounts"></a>將允許的電腦對應到使用者帳戶
- 在 Windows Small Business Server 2011 中，如果使用者連線到遠端 Web 存取，就會顯示網路中的所有電腦。 這可能包括使用者沒有存取權限的電腦。 在 Windows Server Essentials 中，必須明確地將使用者指派給電腦，才會顯示在遠端 Web 存取。 從 Windows Small Business Server 2011 移轉的每個使用者帳戶都必須對應至一或多部電腦。
+ 在 Windows Small Business Server 2011 中，如果使用者連線到遠端 Web 存取，就會顯示網路中的所有電腦。 這可能包括使用者沒有存取權限的電腦。 在 Windows Server Essentials 中，必須明確地將使用者指派給電腦，才能在遠端 Web 存取中顯示該使用者。 從 Windows Small Business Server 2011 移轉的每個使用者帳戶都必須對應至一或多部電腦。
 
 #### <a name="to-map-user-accounts-to-computers"></a>將使用者帳戶對應至電腦
 

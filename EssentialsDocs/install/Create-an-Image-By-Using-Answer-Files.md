@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 72809c9d-c2c9-478c-a867-65d3b9a08b95
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 1fbf60f4b24ae1bb67adbe6e66f8bbc34550b466
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 4bd06e993af6712d2bcd38241777a4131647cce3
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181384"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623796"
 ---
 # <a name="create-an-image-by-using-answer-files"></a>使用回應檔案建立映像
 
@@ -27,4 +27,4 @@ ms.locfileid: "87181384"
 -   [建立 PostIC.cmd 檔案以便執行初始設定後續的工作](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md)
 
 ## <a name="see-also"></a>另請參閱
- [建立和自訂映射額外的](Creating-and-Customizing-the-Image.md)[自訂](Additional-Customizations.md)[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)
+ [建立和自訂映射](Creating-and-Customizing-the-Image.md)[其他自訂](Additional-Customizations.md)專案[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)

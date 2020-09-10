@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 270e0aac-dc42-46f3-a20b-a68ffbded06d
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: a0a9cb5e5a89b7eb5c83c09d49b228f4773ba521
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 3a3c04a48e06ef0040943b866eaf1ddb0be8fa89
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181584"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624078"
 ---
 # <a name="add-health-alerts"></a>新增健康狀態警示
 
@@ -45,4 +45,4 @@ ms.locfileid: "87181584"
     >  此工作不會安裝二進位檔案。 您必須手動將二進位檔案複製到用戶端電腦上的 **%ProgramFiles%\Windows Server\Bin** 資料夾。
 
 ## <a name="see-also"></a>另請參閱
- [建立和自訂映射額外的](Creating-and-Customizing-the-Image.md)[自訂](Additional-Customizations.md)[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)
+ [建立和自訂映射](Creating-and-Customizing-the-Image.md)[其他自訂](Additional-Customizations.md)專案[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)

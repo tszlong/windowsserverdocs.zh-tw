@@ -5,26 +5,26 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: c6985518-b42d-4cfb-9761-eaa75306b6d7
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 2a3e4d55addc493beb4a7561f2db11a41dc49e30
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 07e849fa8db3cdc4204de402c6fc0cb823881480
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180004"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624996"
 ---
 # <a name="use-the-windows-server-essentials-log-collector"></a>使用 Windows Server Essentials 記錄檔收集器
 
 >適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-當您對電腦問題進行疑難排解時，Microsoft 客戶服務和支援的代表可能會要求您從伺服器、網路上的電腦，或使用 Windows Server Essentials 記錄檔收集器來收集記錄。
+當您疑難排解電腦問題時，Microsoft 客戶服務和支援人員可能會要求您使用 Windows Server Essentials 記錄檔收集器，從伺服器、網路上的電腦或兩者收集記錄。
 
  記錄檔收集器會將程式記錄檔、事件檢閱者記錄檔及相關的環境資訊，複製到指定位置的單一 zip 檔案中。 您可直接從伺服器或網路上的任一部電腦執行記錄檔收集器，也可使用與電腦的遠端連線。
 
 > [!NOTE]
 >記錄檔收集器不會分析網路問題，或對任何伺服器或網路上的電腦進行變更。 如需有關如何疑難排解網路問題的資訊，請參閱您的伺服器產品的說明文件。
->在本指南中，您的網路上的電腦（而非您的伺服器）稱為網路電腦。
+>在本指南中，您的網路上的電腦（而不是您的伺服器）則稱為網路電腦。
 >
 >[下載 Windows Server Essentials 記錄檔收集器安裝套件](https://www.microsoft.com/download/details.aspx?id=34821)。
 
@@ -103,7 +103,7 @@ ms.locfileid: "87180004"
 
 ### <a name="server-logs-and-registry-information"></a>伺服器記錄檔和登錄資訊
 
--   伺服器產品記錄檔，來自 <ProgramData \> \Microsoft\Windows Server\Logs
+-   伺服器產品記錄檔，從 <ProgramData \> \Microsoft\Windows Server\Logs
 
 -   排定的工作
 
@@ -123,7 +123,7 @@ ms.locfileid: "87180004"
 
 -   登錄機碼，來自於：
 
-    -   \\\ HKEY_LOCAL_MACHINE \Software\microsoft\windows server\ 伺服器 \
+    -   \\\ HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows 伺服器 \
 
     -   \\\ HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\DevicesProviderSvc
 
@@ -133,7 +133,7 @@ ms.locfileid: "87180004"
 
 -   網路電腦產品記錄檔，位於 <ProgramData \> \Microsoft\Windows Server\Logs
 
--   健康狀態警示檔案位於 <ProgramData \> \Microsoft\Windows Server\Data
+-   健康情況警示檔案位於 <ProgramData \> \Microsoft\Windows Server\Data
 
 -   Windows Update 記錄檔
 
@@ -141,7 +141,7 @@ ms.locfileid: "87180004"
 
 -   排定的工作資訊
 
--   來自 \\ \ HKEY_LOCAL_MACHINE \Software\microsoft\windows server\ 伺服器 \ 的登錄機碼
+-   來自 \\ \ HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows 伺服器 \ 的登錄機碼
 
 ## <a name="logs-for-computers-that-do-not-run-a-version-of-the-windows-operating-system"></a>不是執行 Windows 作業系統版本的電腦的記錄檔
  記錄檔收集器不會從不是執行 Windows 作業系統版本的電腦收集記錄檔 對於非 Windows 電腦，請以手動方式將下列記錄檔複製到您儲存記錄檔收集器檔案的相同位置。
@@ -150,9 +150,9 @@ ms.locfileid: "87180004"
 
 -   Library/Logs/Windows Server.log
 
--   Library/Logs/CrashReporter/啟動列-<nnn \> （複製所有的啟動控制板-<nnn \> . 損毀檔案）
+-   Library/Logs/CrashReporter/啟動控制板-<nnn \> (複製所有啟動控制板-<nnn \> . 損毀檔案) 
 
--   Library/Logs/DiagnosticReports/啟動列-<nnn \> （複製所有的啟動控制板-<nnn \> . 損毀檔案）
+-   Library/Logs/DiagnosticReports/啟動控制板-<nnn \> (複製所有啟動控制板-<nnn \> . 損毀檔案) 
 
 ## <a name="see-also"></a>另請參閱
 

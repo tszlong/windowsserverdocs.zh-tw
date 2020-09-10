@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: d3642575-b3ee-4488-b654-5bf9d3b8c935
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: ebb256876114c9c3260311fa09eb30f3067905b8
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: fc51555f680126cbd1b6e9fe2c672cbcbc5da7e9
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180314"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625143"
 ---
 # <a name="troubleshoot-remote-web-access-connectivity-in-windows-server-essentials"></a>Windows Server Essentials 的遠端 Web 存取連線問題疑難排解
 
@@ -38,7 +38,7 @@ ms.locfileid: "87180314"
 
 - 確認連線到網際網路服務提供者 (ISP) 的寬頻裝置已開啟、運作正常，而且路由器已連線到寬頻裝置。
 
-- 開啟路由器的 UPnP 設定。 連線到路由器的設定網頁以開啟 UPnP 設定。 如需如何登入路由器及如何開啟 UPnP 設定的相關資訊，請參閱路由器的文件。 開啟 UPnP 設定之後，請再次執行 [開啟遠端 Web 存取]，以設定您的路由器。
+- 開啟路由器的 UPnP 設定。 連線到路由器的設定網頁以開啟 UPnP 設定。 如需如何登入路由器及如何開啟 UPnP 設定的相關資訊，請參閱路由器的文件。 開啟 UPnP 設定之後，請再次執行 [開啟遠端 Web 存取嚮導] 來設定您的路由器。
 
 - 如果路由器不完全支援 UPnP 標準，便無法自動設定。 您必須手動設定路由器，或購買支援 UPnP 標準的路由器。
 
@@ -48,7 +48,7 @@ ms.locfileid: "87180314"
 
      手動設定路由器將必要的連接埠轉送到 Windows Server Essentials 之前，必須為在路由器上執行 Windows Server Essentials 的伺服器設定動態主機設定通訊協定 (DHCP) 保留區。 這個步驟可確保所要轉送之連接埠的 IP 位址不會變更。
 
-     如需如何在路由器上手動設定伺服器的 DHCP 保留區的詳細資訊，請參閱製造商的路由器檔。
+     如需有關如何在路由器上手動設定伺服器 DHCP 保留區的詳細資訊，請參閱製造商的路由器檔。
 
   - 請針對下列連接埠，在路由器上設定連接埠轉送：
 
@@ -57,7 +57,7 @@ ms.locfileid: "87180314"
     |HTTP|TCP 80|
     |HTTPS|TCP 443|
 
-    如需如何在路由器上手動設定埠轉送的詳細資訊，請參閱製造商的檔。
+    如需有關如何在路由器上手動設定埠轉送的詳細資訊，請參閱製造商的檔。
 
     一般路由器設定頁包含類似如下的表格。
 
@@ -69,7 +69,7 @@ ms.locfileid: "87180314"
   |192.168.0.100|TCP 80|一律|全部允許|
   |192.168.0.100|TCP 443|一律|全部允許|
 
-   在您手動設定路由器之後，請執行 [開啟遠端 Web 存取] Wizard，確保您在 [**開始**使用] 頁面上選取 [**略過路由器設定**] 選項。
+   手動設定路由器之後，請執行 [開啟遠端 Web 存取 Wizard]，確定您在 **[開始使用] 頁面上**選取 [**略過路由器設定**] 選項。
 
 - 如果路由器不完全支援 UPnP 標準，請購買新的路由器。
 

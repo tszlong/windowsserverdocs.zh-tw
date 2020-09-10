@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: dec690d2-f80c-4b09-99d6-3bba41331972
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 5001d16a3bcdfbb02e7578c61298108ef84c8536
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 041a7f53b02d9b6b6368bd2b2f4ac991a14a61fa
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181474"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623887"
 ---
 # <a name="change-media-streaming-settings"></a>變更媒體串流設定
 
@@ -28,7 +28,7 @@ ms.locfileid: "87181474"
 
 -   [以程式設計方式啟用或停用媒體串流](Change-Media-Streaming-Settings.md#BKMK_Program)
 
-##  <a name="hide-remote-media-streaming-add-in"></a><a name="BKMK_DisableRemote"></a>隱藏遠端媒體串流增益集
+##  <a name="hide-remote-media-streaming-add-in"></a><a name="BKMK_DisableRemote"></a> 隱藏遠端媒體串流增益集
  您可以在登錄中新增項目，以隱藏遠端媒體串流。
 
 #### <a name="to-hide-the-remote-media-streaming-add-in"></a>若要隱藏遠端媒體串流增益集
@@ -49,7 +49,7 @@ ms.locfileid: "87181474"
 
 7.  針對數值資料輸入 **1**，然後按一下 **[確定]**。
 
-##  <a name="set-the-media-library-name"></a><a name="BKMK_LibraryName"></a>設定媒體程式庫名稱
+##  <a name="set-the-media-library-name"></a><a name="BKMK_LibraryName"></a> 設定媒體櫃名稱
  您可以使用 Windows Server 解決方案 SDK 中的類別來設定媒體櫃的名稱。 若要設定媒體櫃的名稱，您可以使用 **Microsoft.WindowsServerSolutions.MediaStreaming** 命名空間 **MediaStreamingManager** 類別的 **SetMediaLibraryName** 方法。 下列範例顯示如何設定媒體櫃的名稱：
 
 ```c#
@@ -62,10 +62,10 @@ mediaStreamingManager.SetMediaLibraryName(mediaLibraryName);
 
  如需詳細資訊，請參閱 [Windows Server 解決方案 SDK](https://go.microsoft.com/fwlink/?LinkID=248648)。
 
-##  <a name="set-video-streaming-quality"></a><a name="BKMK_StreamingQuality"></a>設定影片串流品質
+##  <a name="set-video-streaming-quality"></a><a name="BKMK_StreamingQuality"></a> 設定影片串流品質
  取得 WinSAT CPU 分數，然後建立並安裝含有 WinSAT 分數資訊的 .xml 檔案，即可設定視訊串流品質。 如果含有 WinSAT 分數資訊的 .xml 檔案是在初始設定執行之前所安裝，則客戶看不到用來設定視訊品質的使用者介面。 如需詳細資訊，請參閱[在伺服器上設定 WinSAT 分數](Set-the-WinSAT-Score-on-the-Server.md)。
 
-##  <a name="programmatically-enable-or-disable-media-streaming"></a><a name="BKMK_Program"></a>以程式設計方式啟用或停用媒體串流處理
+##  <a name="programmatically-enable-or-disable-media-streaming"></a><a name="BKMK_Program"></a> 以程式設計方式啟用或停用媒體串流
  您可以使用 Windows Server 解決方案 SDK 中的類別，以程式設計方式啟用或停用媒體串流。 若要啟用或停用媒體串流，您可以使用 **Microsoft.WindowsServerSolutions.MediaStreaming** 命名空間 **MediaStreamingManager** 類別中的 **SetMediaStreamingEnabled** 方法。 下列程式碼範例顯示如何啟用媒體串流：
 
 ```c#
@@ -84,4 +84,4 @@ mediaStreamingManager.SetMediaStreamingEnabled(false);
 ```
 
 ## <a name="see-also"></a>另請參閱
- [建立和自訂映射額外的](Creating-and-Customizing-the-Image.md)[自訂](Additional-Customizations.md)[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)
+ [建立和自訂映射](Creating-and-Customizing-the-Image.md)[其他自訂](Additional-Customizations.md)專案[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)

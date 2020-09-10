@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: d382e3fd-d393-4bd0-883f-db50104a969f
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: b8819b654d05a1e63c7f30b4359cabcc2906c7b8
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 5186cc808b46aa334dc994186e3d7d8d898f9d96
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180404"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625365"
 ---
 # <a name="step-7-perform-post-migration-tasks-for-the-windows-server-essentials-migration"></a>步驟 7：執行 Windows Server Essentials 移轉的移轉後工作
 
@@ -24,7 +24,7 @@ ms.locfileid: "87180404"
 
 2.  [共用企業營運應用程式與其他應用程式資料資料夾](Step-7--Perform-post-migration-tasks-for-the-Windows-Server-Essentials-migration.md#BKMK_ShareLineOfBusinessAndOtherApplications)
 
-##  <a name="delete-dns-entries-for-the-source-server"></a><a name="BKMK_DeleteDNSEntries"></a>刪除來源伺服器的 DNS 專案
+##  <a name="delete-dns-entries-for-the-source-server"></a><a name="BKMK_DeleteDNSEntries"></a> 刪除來源伺服器的 DNS 專案
  在您解除委任來源伺服器之後，網域名稱服務 (DNS) 伺服器可能仍然會包含指向來源伺服器的項目。 請刪除這些 DNS 項目。
 
 #### <a name="to-delete-dns-entries-that-point-to-the-source-server"></a>若要刪除指向來源伺服器的 DNS 項目
@@ -49,14 +49,14 @@ ms.locfileid: "87180404"
 
 10. 重複步驟 6 到 9，移除所有指向來源伺服器的反向對應區域。
 
-##  <a name="share-line-of-business-and-other-application-data-folders"></a><a name="BKMK_ShareLineOfBusinessAndOtherApplications"></a>共用企業營運和其他應用程式資料檔案夾
+##  <a name="share-line-of-business-and-other-application-data-folders"></a><a name="BKMK_ShareLineOfBusinessAndOtherApplications"></a> 共用企業營運和其他應用程式資料檔案夾
  您必須對複製到目的地伺服器的企業營運應用程式與其他應用程式資料資料夾，設定共用資料夾權限和 NTFS 權限。 設定權限之後，共用資料夾會顯示在儀表板的 [儲存體]**** 索引標籤上。
 
  若使用登入指令碼將磁碟機對應至共用資料夾，您必須更新指令碼為對應至目的地伺服器上的磁碟機。
 
 ## <a name="next-steps"></a>後續步驟
- 您已執行 Windows Server Essentials 遷移的遷移後工作。 現在請移至[步驟 8--執行 Windows Server Essentials 最佳做法分析程式](Step-8--Run-the-Windows-Server-Essentials-Best-Practices-Analyzer.md)。
+ 您已執行 Windows Server Essentials 遷移的遷移後工作。 現在移至 [步驟 8--執行 Windows Server Essentials 最佳做法分析程式](Step-8--Run-the-Windows-Server-Essentials-Best-Practices-Analyzer.md)。
 
 
-若要查看所有步驟，請參閱[遷移至 Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。
+若要查看所有步驟，請參閱 [遷移至 Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。
 

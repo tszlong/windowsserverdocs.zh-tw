@@ -5,22 +5,22 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: d271c54f-1ffa-464e-afa5-27b8df61854e
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: ead1f75ce459523fbb2678ed369949f679fb3124
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 7e10da0d87b98ef84f8b8b7ea2ec74bdd02a909e
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180364"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625320"
 ---
 # <a name="install-the-windows-server-essentials-log-collector"></a>安裝 Windows Server Essentials 記錄檔收集器
 
 >適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-Windows Server Essentials 記錄檔收集器安裝精靈會將記錄檔收集器安裝為啟動控制板增益集。 您可以在網路電腦或伺服器 (或兩者) 上安裝並使用記錄檔收集器。 安裝後，記錄檔收集器會顯示在儀表板上。
+Windows Server Essentials 記錄收集器安裝精靈會將記錄檔收集器安裝為啟動控制板增益集。 您可以在網路電腦或伺服器 (或兩者) 上安裝並使用記錄檔收集器。 安裝後，記錄檔收集器會顯示在儀表板上。
 
-###  <a name="to-install-the-log-collector"></a><a name="BKMK_ToInstall"></a>若要安裝記錄檔收集器
+###  <a name="to-install-the-log-collector"></a><a name="BKMK_ToInstall"></a> 若要安裝記錄檔收集器
 
 1.  將記錄檔收集器安裝套件下載至任一伺服器或網路上的電腦。
 
@@ -37,7 +37,7 @@ Windows Server Essentials 記錄檔收集器安裝精靈會將記錄檔收集器
 
 6.  按一下 [安裝增益集]****。
 
-###  <a name="reinstalling-the-log-collector"></a><a name="BKMK_Reinstall"></a>重新安裝記錄檔收集器
+###  <a name="reinstalling-the-log-collector"></a><a name="BKMK_Reinstall"></a> 重新安裝記錄檔收集器
  如果需要重新安裝記錄檔收集器，您必須在伺服器和網路電腦上解除安裝記錄檔收集器後再重新安裝。 透過從儀表板解除安裝伺服器上的記錄檔收集器，所有網路電腦都將自動解除安裝記錄檔收集器。
 
 ##### <a name="to-uninstall-and-reinstall-the-log-collector"></a>解除安裝記錄檔收集器並重新安裝
@@ -53,12 +53,12 @@ Windows Server Essentials 記錄檔收集器安裝精靈會將記錄檔收集器
 
 ##### <a name="to-manually-install-the-log-collector"></a>手動安裝記錄檔收集器
 
-1.  將下載之安裝檔案的副檔名從. onlinebackupaddin.wssx 重新命名為 .cab。
+1.  將已下載之安裝檔案的副檔名從 .wssx 重新命名為 .cab。
 
 2.  按兩下安裝檔案名稱。
 
 3.  在系統提示時按一下 [確定]****。
 
-4.  按兩下以 ' .msi ' 結尾的檔案名，然後選取要在其中解壓縮的資料夾。
+4.  按兩下結尾為 ' .msi ' 的檔案名，然後選取要在其中解壓縮的資料夾。
 
 5.  瀏覽到含有解壓縮檔案的資料夾，按兩下安裝檔案以使用精靈完成安裝。

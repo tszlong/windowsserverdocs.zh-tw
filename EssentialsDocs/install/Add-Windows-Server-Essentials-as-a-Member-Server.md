@@ -5,20 +5,20 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: d09dd82f-f7d2-47ce-862d-fd9869f2021c
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: aef9b8ca8e96b9d5c7a6670301a70e35fc72dfb9
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 3325799dc8fb81ab15f8cb03102b9c6248526b74
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181544"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623999"
 ---
 # <a name="add-windows-server-essentials-as-a-member-server"></a>新增 Windows Server Essentials 做為成員伺服器
 
 >適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-本主題適用于執行 Windows Server 2012 R2 Standard、Windows Server 2012 R2 Datacenter 或 Windows Server 2016 且已安裝 Windows Server Essentials 體驗角色的伺服器。 在本文件的其餘部分，Windows Server Essentials 體驗角色會稱為 Windows Server Essentials。
+本主題適用于執行 Windows Server 2012 R2 Standard、Windows Server 2012 R2 Datacenter 或 Windows Server 2016 且已安裝「Windows Server Essentials 體驗」角色的伺服器。 在本文件的其餘部分，Windows Server Essentials 體驗角色會稱為 Windows Server Essentials。
 
 > [!NOTE]
 >   Windows Server Essentials 只能部署為網域控制站。 在本檔中，Windows Server Essentials 不包含 Windows Server Essentials。
@@ -29,16 +29,16 @@ ms.locfileid: "87181544"
 
 -   在分公司地點新增 Windows Server Essentials，並且使用原生工具將它加入位於不同地點之總公司的網域控制站。 您可以在此成員伺服器上開啟 BranchCache 功能以使用最佳的頻寬。
 
--   在 Windows Server Essentials 網路內新增 Windows Server Essentials 做為成員伺服器，藉由在您的成員伺服器上新增額外的伺服器資料夾，協助擴充網路上的存放裝置。
+-   將 Windows Server Essentials 新增為 Windows Server Essentials 網路內的成員伺服器，藉由在成員伺服器上新增額外的伺服器資料夾，以協助擴充網路上的存放裝置。
 
--   如果執行 Windows Server Essentials 的主伺服器裝載在 Microsoft Azure 中，或由協力廠商主機服務提供者裝載，請將 Windows Server Essentials 新增為本機 office 中的成員伺服器。 在當地分公司讓 Windows Server Essentials 成為成員伺服器有助於最佳化頻寬使用量。
+-   如果您執行 Windows Server Essentials 的主伺服器裝載于 Microsoft Azure 或由協力廠商主機服務提供者託管，則在本機 office 中新增 Windows Server Essentials 為成員伺服器。 在當地分公司讓 Windows Server Essentials 成為成員伺服器有助於最佳化頻寬使用量。
 
 ## <a name="adding-windows-server-essentials-as-a-member-server"></a>新增 Windows Server Essentials 為成員伺服器
- 若要在現有的 Active Directory 環境中，將 Windows Server Essentials 新增為執行 Windows Server 2012 R2 或 Windows Server Essentials 的主伺服器，您必須完成下列步驟：
+ 若要將 Windows Server Essentials 以成員伺服器新增至現有 Active Directory 環境中執行 Windows Server 2012 R2 或 Windows Server Essentials 的主伺服器，您必須完成下列步驟：
 
 1.  將執行 Windows Server Essentials 的伺服器加入工作群組。
 
-2.  將執行 Windows Server Essentials 的伺服器加入主要 Windows Server Essentials 伺服器的網域。
+2.  將執行 Windows Server Essentials 的伺服器加入至主要 Windows Server Essentials 伺服器的網域。
 
 3.  從伺服器管理員設定 Windows Server Essentials 體驗。
 
@@ -52,7 +52,7 @@ ms.locfileid: "87181544"
 
 4. 在 [電腦名稱]**** 的 [網域]**** 區段中，按一下 [變更]****。
 
-5. 在 [**電腦名稱稱/網域變更**] 的 [**成員**] 區段中，選擇是否要將執行 Windows server Essentials 的伺服器加入**工作組**或**網域**。
+5. 在 [ **電腦名稱稱/網域變更**] 的 [ **成員** ] 區段中，選擇是否要將執行 Windows server Essentials 的伺服器加入 **工作組** 或 **網域**。
 
    -   若要將伺服器加入工作群組，請輸入 **workgroup**，然後按一下 [確定]****。
 
@@ -60,14 +60,14 @@ ms.locfileid: "87181544"
 
 6. 重新啟動伺服器以套用變更。
 
-   將伺服器加入主伺服器的網域之後，您可以從伺服器管理員執行 [設定 Windows Server Essentials Wizard]，繼續設定 Windows Server Essentials。
+   當您將伺服器加入主伺服器的網域之後，您可以從伺服器管理員執行 [設定 Windows Server Essentials Wizard]，繼續設定 Windows Server Essentials。
 
 #### <a name="to-configure-windows-server-essentials-experience-on-a-member-server"></a>在成員伺服器上設定 Windows Server Essentials 體驗
 
 1.  (選擇性) 如果需要，變更伺服器名稱。
 
     > [!IMPORTANT]
-    >  設定 Windows Server Essentials 體驗之後，即無法變更伺服器名稱。
+    >  設定 Windows Server Essentials 經驗之後，您就無法變更伺服器名稱。
 
 2.  使用您的網域系統管理員帳戶登入伺服器。
 
@@ -81,7 +81,7 @@ ms.locfileid: "87181544"
 
 7.  在桌面上，按一下儀表板圖示以啟動伺服器儀表板。 在 [首頁] 頁面上，完成 [設定]**** 索引標籤上所列的 [快速入門]**** 工作。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 
 -   [安裝 Windows Server Essentials](Install-Windows-Server-Essentials.md)

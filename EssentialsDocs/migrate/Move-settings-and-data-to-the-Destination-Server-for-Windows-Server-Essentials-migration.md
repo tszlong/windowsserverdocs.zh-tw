@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 2b882e87-347a-4010-b7fd-9599d61198dd
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: a3e80eb391f913b4d62d8224afb7745eb2671289
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 4a37d8e39dde95a143c15a5573be0deb0291d827
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180534"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625655"
 ---
 # <a name="move-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>將設定和資料移至目的地伺服器以進行 Windows Server Essentials 移轉
 
@@ -46,8 +46,8 @@ ms.locfileid: "87180534"
  其中：
  - \<SourceServerName\> 是來源伺服器的名稱
  - \<SharedSourceFolderName\> 是來源伺服器上共用資料夾的名稱
- - \<DestinationServerName\>這是目的地伺服器的名稱，
- - \<SharedDestinationFolderName\>這是要將資料複製到其中的目的地伺服器上的共用資料夾。
+ - \<DestinationServerName\> 這是目的地伺服器的名稱，
+ - \<SharedDestinationFolderName\> 這是目的地伺服器上要將資料複製到其中的共用資料夾。
 
 3. 在每一個從來源伺服器移轉的共用資料夾重複上述步驟。
 

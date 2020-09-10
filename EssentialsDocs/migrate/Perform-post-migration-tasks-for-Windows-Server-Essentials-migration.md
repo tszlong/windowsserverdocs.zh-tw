@@ -1,20 +1,20 @@
 ---
-title: 執行 Windows Server Essentials migration1 的後續遷移工作
+title: 執行 Windows Server Essentials migration1 的遷移後工作
 description: 說明如何使用 Windows Server Essentials
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: f2d236a4-0d62-4961-9d1f-332054e06f6d
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 3fda095624260c1f44a5a46887c1e8e1cbdcdca7
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: abd092b3e6b4176c83b51995f140aad0dafc6e0f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180524"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625634"
 ---
-# <a name="perform-post-migration-tasks-for-windows-server-essentials-migration1"></a>執行 Windows Server Essentials migration1 的後續遷移工作
+# <a name="perform-post-migration-tasks-for-windows-server-essentials-migration1"></a>執行 Windows Server Essentials migration1 的遷移後工作
 
 >適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
@@ -30,7 +30,7 @@ ms.locfileid: "87180524"
 -   [提供內建的 Administrators 群組以批次工作登入的權限](Perform-post-migration-tasks-for-Windows-Server-Essentials-migration.md#BKMK_AdminGroup)
 
 
-##  <a name="delete-dns-entries-of-the-source-server"></a><a name="BKMK_DeleteDNSEntries"></a>刪除來源伺服器的 DNS 專案
+##  <a name="delete-dns-entries-of-the-source-server"></a><a name="BKMK_DeleteDNSEntries"></a> 刪除來源伺服器的 DNS 專案
  在您解除委任來源伺服器之後，網域名稱服務 (DNS) 伺服器可能仍然會包含指向來源伺服器的項目。 請刪除這些 DNS 項目。
 
 #### <a name="to-delete-dns-entries-that-point-to-the-source-server"></a>若要刪除指向來源伺服器的 DNS 項目
@@ -55,13 +55,13 @@ ms.locfileid: "87180524"
 
 10. 重複步驟 6 到 9，移除所有指向來源伺服器的反向對應區域。
 
-##  <a name="share-line-of-business-and-other-application-data-folders"></a><a name="BKMK_ShareLineOfBusinessAndOtherApplications"></a>共用企業營運和其他應用程式資料檔案夾
- 您必須對複製到目的地伺服器的企業營運應用程式與其他應用程式資料資料夾，設定共用資料夾權限和 NTFS 權限。 設定許可權之後，共用資料夾會顯示在 [Windows Server Essentials 儀表板] 的 [**儲存體**] 區段中。
+##  <a name="share-line-of-business-and-other-application-data-folders"></a><a name="BKMK_ShareLineOfBusinessAndOtherApplications"></a> 共用企業營運和其他應用程式資料檔案夾
+ 您必須對複製到目的地伺服器的企業營運應用程式與其他應用程式資料資料夾，設定共用資料夾權限和 NTFS 權限。 設定許可權之後，共用資料夾會顯示在 [ **儲存體** ] 區段的 [Windows Server Essentials 儀表板] 中。
 
  若使用登入指令碼將磁碟機對應至共用資料夾，您必須更新指令碼為對應至目的地伺服器上的磁碟機。
 
-##  <a name="fix-client-computer-issues-after-migrating"></a><a name="BKMK_FixClientComputerIssuesAfterMigrating"></a>修正遷移後的用戶端電腦問題
- 如果您從已安裝 Microsoft Internet Security and 加速（ISA） Server 的 Windows Small Business Server 2003 Premium Edition 遷移到 Windows Server Essentials，則網路上的用戶端電腦仍會將 Microsoft 防火牆用戶端和 Internet Explorer 設定為使用 proxy 伺服器。
+##  <a name="fix-client-computer-issues-after-migrating"></a><a name="BKMK_FixClientComputerIssuesAfterMigrating"></a> 修正遷移後的用戶端電腦問題
+ 如果您是從 Windows Small Business Server 2003 Premium Edition 遷移至 Windows Server Essentials，並已安裝 Microsoft Internet Security and 加速 (ISA) Server，網路上的用戶端電腦仍會有 Microsoft 防火牆用戶端，並 Internet Explorer 設定為使用 proxy 伺服器。
 
  這會導致用戶端電腦的連線問題，因為 Proxy 伺服器已不存在。 如果未設定其他 Proxy 伺服器，用戶端電腦會繼續使用執行 Windows SBS 2003 的伺服器做為 Proxy 伺服器。 為修正此問題，您必須將 Internet Explorer 重新設定為不使用 Proxy 伺服器或使用新的 Proxy 伺服器。
 
@@ -87,18 +87,18 @@ ms.locfileid: "87180524"
 
 4.  瀏覽至網站以確保連線設定正確。
 
-##  <a name="give-the-built-in-administrators-group-the-right-to-log-on-as-a-batch-job"></a><a name="BKMK_AdminGroup"></a>提供內建的 Administrators 群組以批次工作登入的許可權
+##  <a name="give-the-built-in-administrators-group-the-right-to-log-on-as-a-batch-job"></a><a name="BKMK_AdminGroup"></a> 提供內建的 Administrators 群組以批次工作登入的許可權
  將現有的 Windows Small Business Server 2003 網域遷移到 Windows Server Essentials 之後，您應該提供內建的 Administrators 群組以批次工作登入的許可權。 確認內建的 Administrators 群組仍具有以批次工作登入目的地伺服器的權限。 系統管理員需要此權限，才能在未登入的情況下於目的地伺服器上管理警示。
 
 #### <a name="to-give-the-built-in-administrators-group-the-right-to-log-on-as-a-batch-job"></a>提供內建的 Administrators 群組以批次工作登入的權限
 
 1. 在目的地伺服器上，開啟 [群組原則管理]**** 系統管理工具。
 
-2. 在 [**群組原則管理**] 主控台樹中，展開 [**樹系：** *<ServerName \> *]，展開 [網域]，然後展開您的伺服器。
+2. 在**群組原則管理**主控台樹中，依序展開 [**樹系：** ]、[樹系 *<\> *：]、[網域]，然後展開您的伺服器。
 
 3. 展開 [網域控制站****，以滑鼠右鍵按一下 [預設網域控制站原則]****，然後按一下 [編輯]****。
 
-4. 在**群組原則管理編輯器**中，依序按一下 [**預設網域控制站原則**]<em><\> ServerName</em>**原則**]，然後展開 [**電腦**設定]。
+4. 在**群組原則管理編輯器**中，按一下 [**預設網域控制站原則**]<em><[伺服器名稱 \> </em>**原則**]，然後展開 [**電腦**設定]。
 
 5. 展開 [原則]****、[Windows 設定]****，然後展開 [安全性設定]****。
 

@@ -5,20 +5,20 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 2e6ff6e4-8d68-4d49-9e38-8088bc8bf95e
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: b75b201f655e13fd367bfedc523f5b21b8e88b43
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: ebfd0950c585e2383f736818789e8a2dce67ad4d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181504"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623964"
 ---
 # <a name="automate-installation-of-add-ins-during-setup"></a>安裝期間自動安裝增益集
 
 >適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-##  <a name="automate-installing-add-ins-during-setup"></a><a name="BKMK_AddIns"></a>在安裝期間自動安裝增益集
+##  <a name="automate-installing-add-ins-during-setup"></a><a name="BKMK_AddIns"></a> 在安裝期間自動安裝增益集
  若要在安裝過程中安裝增益集，請使用本文件中的[建立 PostIC.cmd 檔案以便執行初始設定後續的工作](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md)一節中描述的 PostIC.cmd 方法。
 
  將下列項目新增到您的 PostIC.cmd：
@@ -113,4 +113,4 @@ C:\Program Files\Windows Server\bin\Installaddin.exe <full path to wssx file> -q
   任何叫用 exefile 失敗的情況，都會導致與 exefile 傳回非 0 或 1 字碼相同的行為。
 
 ## <a name="see-also"></a>另請參閱
- [建立和自訂映射額外的](Creating-and-Customizing-the-Image.md)[自訂](Additional-Customizations.md)[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)
+ [建立和自訂映射](Creating-and-Customizing-the-Image.md)[其他自訂](Additional-Customizations.md)專案[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)

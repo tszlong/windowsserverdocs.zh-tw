@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 47bc4986-14eb-4a29-9930-83a25704a3a0
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: f6b5de8ea45ea219f55b04ef675a3853b403fafb
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: c1a6276199964ac7fd2eb3953cb3fac828063dfc
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181314"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623674"
 ---
 # <a name="customize-shared-folders"></a>自訂共用資料夾
 
@@ -48,11 +48,11 @@ ms.locfileid: "87181314"
 
    或者，合作夥伴也可以將資料夾保留在磁碟機 C 上。如此可讓使用者或轉銷商判斷資料磁碟機上的資料夾配置。
 
-###  <a name="example-1-create-a-custom-folder-and-move-the-default-folders-to-a-new-location-from-posticcmd-by-using-windows-powershell"></a><a name="BKMK_Example1"></a>範例1：使用 Windows PowerShell 建立自訂資料夾，並將預設資料夾移至 Postic.cmd 中的新位置
+###  <a name="example-1-create-a-custom-folder-and-move-the-default-folders-to-a-new-location-from-posticcmd-by-using-windows-powershell"></a><a name="BKMK_Example1"></a> 範例1：使用 Windows PowerShell 從 Postic.cmd 建立自訂資料夾，並將預設資料夾移至新位置
 
 1.  依照[建立 PostIC.cmd 檔案以便執行初始設定後續的工作](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md)一節中的詳細說明，建立用來執行初始設定後續工作的 PostIC.cmd 檔案。
 
-2.  使用 [記事本]，在 C:\Windows\Setup\Scripts 資料夾中建立名為**customizefolders.ps1**的檔案，然後將下列 Windows PowerShell 命令貼入檔案中 &reg; （根據所要的行為取消標示適當的行）。
+2.  使用 [記事本]，在 C:\Windows\Setup\Scripts 資料夾中建立名為 **customizefolders.ps1** 的檔案，然後將下列 Windows PowerShell 命令貼入檔案中， &reg; (根據所需的行為) 來解除標記適當的行。
 
     ```
     # Move the Documents folder to D:\ServerFolders
@@ -94,7 +94,7 @@ ms.locfileid: "87181314"
     Set ERRORLEVEL=%error_level%
     ```
 
-###  <a name="example-2-create-a-custom-folder-and-move-an-existing-folder-by-using-the-windows-server-solutions-sdk"></a><a name="BKMK_Example2"></a>範例2：使用 Windows Server 解決方案 SDK 建立自訂資料夾並移動現有資料夾
+###  <a name="example-2-create-a-custom-folder-and-move-an-existing-folder-by-using-the-windows-server-solutions-sdk"></a><a name="BKMK_Example2"></a> 範例2：使用 Windows Server 解決方案 SDK 建立自訂資料夾並移動現有資料夾
  您所建立的程式碼可編譯為可執行檔，然後從 PostIC.cmd 檔案加以呼叫，或直接從已安裝的增益集呼叫。
 
 ```
@@ -139,4 +139,4 @@ static void Main(string[] args)
 ```
 
 ## <a name="see-also"></a>另請參閱
- [建立和自訂映射額外的](Creating-and-Customizing-the-Image.md)[自訂](Additional-Customizations.md)[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)
+ [建立和自訂映射](Creating-and-Customizing-the-Image.md)[其他自訂](Additional-Customizations.md)專案[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)

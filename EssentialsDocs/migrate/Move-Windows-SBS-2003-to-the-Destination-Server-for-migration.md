@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 67087ccb-d820-4642-8ca2-7d2d38714014
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 427f695b36f7a062bdc570ba816560a6a1721b90
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: f2fe4a1bb9277ae5b314aa02ee5c94896d1eefd9
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180584"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625720"
 ---
 # <a name="move-windows-sbs-2003-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>將 Windows SBS 2003 設定和資料移至進行 Windows Server Essentials 移轉的目的地伺服器
 
@@ -22,7 +22,7 @@ ms.locfileid: "87180584"
 
 1. [將資料複製到目的地伺服器](#copy-data-to-the-destination-server)
 
-2. [將 Active Directory 使用者帳戶匯入 Windows Server Essentials 儀表板（選擇性）](#import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard)
+2. [將 Active Directory 使用者帳戶匯入 Windows Server Essentials 儀表板 (選擇性) ](#import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard)
 
 3. [移除舊的登入指令碼 (選擇性)](#remove-old-logon-scripts)
 
@@ -54,13 +54,13 @@ ms.locfileid: "87180584"
 其中：
  - \<SourceServerName\> 是來源伺服器的名稱
  - \<SharedSourceFolderName\> 是來源伺服器上共用資料夾的名稱
- - \<DestinationServerName\>這是目的地伺服器的名稱，
- - \<SharedDestinationFolderName\>這是要將資料複製到其中的目的地伺服器上的共用資料夾。
+ - \<DestinationServerName\> 這是目的地伺服器的名稱，
+ - \<SharedDestinationFolderName\> 這是目的地伺服器上要將資料複製到其中的共用資料夾。
 
 4. 在每一個從來源伺服器移轉的共用資料夾重複上述步驟。
 
 ## <a name="import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard"></a>將 Active Directory 使用者帳戶匯入 Windows Server Essentials 儀表板
- 根據預設，在來源伺服器上建立的所有使用者帳戶都會自動遷移至 Windows Server Essentials 中的儀表板。 不過，如果某些屬性不符合移轉需求，Active Directory 使用者帳戶的自動移轉會失敗。 您可以使用以下 Windows PowerShell Cmdlet 匯入 Active Directory 使用者。
+ 根據預設，在來源伺服器上建立的所有使用者帳戶都會自動遷移到 Windows Server Essentials 中的儀表板。 不過，如果某些屬性不符合移轉需求，Active Directory 使用者帳戶的自動移轉會失敗。 您可以使用以下 Windows PowerShell Cmdlet 匯入 Active Directory 使用者。
 
 #### <a name="to-import-an-active-directory-user-account-to-the-windows-server-essentials-dashboard"></a>將 Active Directory 使用者帳戶匯入 Windows Server Essentials 儀表板
 
@@ -93,7 +93,7 @@ Windows SBS 2003 使用登入指令碼處理像是安裝軟體和自訂桌面等
 5. 針對每個使用者重複步驟 3 和 4。
 
 ## <a name="remove-legacy-active-directory-group-policy-objects"></a>移除舊版 Active Directory 群組原則物件
-已針對 Windows Server Essentials 更新群組原則物件（Gpo）。 它們是 Windows SBS 2003 GPO 的超集。 對於 Windows Server Essentials，必須手動刪除一些 Windows SBS 2003 Gpo 和 Windows Management Instrumentation （WMI）篩選器，以避免與 Windows Server Essentials Gpo 和 WMI 篩選器發生衝突。
+適用于 Windows Server Essentials 的群組原則物件 (Gpo) 更新。 它們是 Windows SBS 2003 GPO 的超集。 若為 Windows Server Essentials，必須以手動方式刪除一些 Windows SBS 2003 Gpo 和 Windows Management Instrumentation (WMI) 篩選器，以避免與 Windows Server Essentials Gpo 和 WMI 篩選器發生衝突。
 
 > [!NOTE]
 > 如果您已修改原始的 Windows SBS 2003 群組原則物件，您應將它們的複本儲存在不同的位置，然後再從 Windows SBS 2003 刪除它們。
@@ -104,7 +104,7 @@ Windows SBS 2003 使用登入指令碼處理像是安裝軟體和自訂桌面等
 
 2. 按一下 [開始]****，然後按一下 [伺服器管理]****。
 
-3. 在流覽窗格中，按一下 [ **Advanced Management**]，按一下 [**群組原則 Management**]，然後按一下 [**樹系：** _<您功能變數名稱 \> _]。
+3. 在流覽窗格中，依序按一下 [ **Advanced Management**]、[**群組原則管理**]，然後按一下 [**樹系：** _<您功能變數名稱 \> _]。
 
 4. 按一下 [**網域**]，再按一下 [ *<\> 您功能變數名稱*]，然後按一下 [**群組原則物件**]。
 
@@ -116,7 +116,7 @@ Windows SBS 2003 使用登入指令碼處理像是安裝軟體和自訂桌面等
 
  - Small Business Server 網域密碼原則
 
-我們建議您在 Windows Server Essentials 中設定密碼原則，以強制執行強式密碼。 如果要設定密碼原則，請使用儀表板，將設定寫入預設網域原則。 密碼原則設定不會寫入 Small Business Server 網域密碼原則物件，這與在 Windows SBS 2003 中的行為一樣。
+建議您在 Windows Server Essentials 中設定密碼原則以強制執行強式密碼。 如果要設定密碼原則，請使用儀表板，將設定寫入預設網域原則。 密碼原則設定不會寫入 Small Business Server 網域密碼原則物件，這與在 Windows SBS 2003 中的行為一樣。
 
  - Small Business Server 網際網路連線防火牆
 
@@ -146,9 +146,9 @@ Windows SBS 2003 使用登入指令碼處理像是安裝軟體和自訂桌面等
 
 2. 按一下 [開始]****，然後按一下 [伺服器管理]****。
 
-3. 在流覽窗格中，按一下 [ **Advanced Management**]，按一下 [**群組原則 Management**]，然後按一下 [**樹系：** _<YourNetworkDomainName \> _ ]
+3. 在流覽窗格中，依序按一下 [ **Advanced Management**]、[**群組原則管理**]，然後按一下 [**樹系：** _<YourNetworkDomainName \> _
 
-4. 依序按一下 [**網域**] 和 [ *<YourNetworkDomainName \> *]，然後按一下 [ **WMI 篩選器**]。
+4. 按一下 [**網域**]，然後按一下 [ *<YourNetworkDomainName \> *]，再按一下 [ **WMI 篩選器**]。
 
 5. 以滑鼠右鍵按一下 [PostSP2]****，按一下 [刪除]****，然後按一下 [是]****。
 
@@ -176,7 +176,7 @@ Windows SBS 2003 使用登入指令碼處理像是安裝軟體和自訂桌面等
 > 如果您已經在第二個伺服器上設定內部部署 Exchange Server，您必須確定連接埠 25 (SMTP) 也已開啟，而且會重新導向到內部部署 Exchange Server 的 IP 位址。
 
 ## <a name="map-permitted-computers-to-user-accounts"></a>將允許的電腦對應到使用者帳戶
- 在 Windows SBS 2003 中，如果使用者連線到遠端 Web 存取，就會顯示網路中的所有電腦。 這可能包括使用者沒有存取權限的電腦。 在 Windows Server Essentials 中，必須明確地將使用者指派給電腦，才會顯示在遠端 Web 存取。 從 Windows SBS 2003 移轉的每個使用者帳戶都必須對應至一或多部電腦。
+ 在 Windows SBS 2003 中，如果使用者連線到遠端 Web 存取，就會顯示網路中的所有電腦。 這可能包括使用者沒有存取權限的電腦。 在 Windows Server Essentials 中，必須明確地將使用者指派給電腦，才能在遠端 Web 存取中顯示該使用者。 從 Windows SBS 2003 移轉的每個使用者帳戶都必須對應至一或多部電腦。
 
 #### <a name="to-map-user-accounts-to-computers"></a>將使用者帳戶對應至電腦
 

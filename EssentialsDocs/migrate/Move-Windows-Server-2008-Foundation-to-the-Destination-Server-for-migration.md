@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 3ff7d040-ebd1-421c-80db-765deacedd4c
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 99c7eb77c0bd768cb8e74d476bd2ffcf6b468a53
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: c2426e535ff67b1e76668e5fd2abefbd3f5569bb
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180546"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625667"
 ---
 # <a name="move-windows-server-2008-foundation-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>將 Windows Server 2008 Foundation 的設定和資料移至目的地伺服器以進行 Windows Server Essentials 移轉
 
@@ -22,7 +22,7 @@ ms.locfileid: "87180546"
 
 1. [將資料複製到目的地伺服器 (選擇性)](#copy-data-to-the-destination-server)
 
-2. [將 Active Directory 使用者帳戶匯入 Windows Server Essentials 儀表板（選擇性）](#import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard)
+2. [將 Active Directory 使用者帳戶匯入 Windows Server Essentials 儀表板 (選擇性) ](#import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard)
 
 3. [將 DHCP 伺服器角色從來源伺服器移動到路由器](#move-the-dhcp-server-role-from-the-source-server-to-the-router)
 
@@ -50,13 +50,13 @@ ms.locfileid: "87180546"
      其中：
      - \<SourceServerName\> 是來源伺服器的名稱
      - \<SharedSourceFolderName\> 是來源伺服器上共用資料夾的名稱
-     - \<DestinationServerName\>這是目的地伺服器的名稱，
-     - \<SharedDestinationFolderName\>這是要將資料複製到其中的目的地伺服器上的共用資料夾。
+     - \<DestinationServerName\> 這是目的地伺服器的名稱，
+     - \<SharedDestinationFolderName\> 這是目的地伺服器上要將資料複製到其中的共用資料夾。
 
 3.  在每一個從來源伺服器移轉的共用資料夾重複上述步驟。
 
 ## <a name="import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard"></a>將 Active Directory 使用者帳戶匯入 Windows Server Essentials 儀表板
- 根據預設，在來源伺服器上建立的所有使用者帳戶都會自動遷移至 Windows Server Essentials 中的儀表板。 不過，如果所有內容都不符合移轉需求，Active Directory 使用者帳戶的自動移轉將會失敗。 您可以使用以下 Windows PowerShell Cmdlet 匯入 Active Directory 使用者。
+ 根據預設，在來源伺服器上建立的所有使用者帳戶都會自動遷移到 Windows Server Essentials 中的儀表板。 不過，如果所有內容都不符合移轉需求，Active Directory 使用者帳戶的自動移轉將會失敗。 您可以使用以下 Windows PowerShell Cmdlet 匯入 Active Directory 使用者。
 
 #### <a name="to-import-an-active-directory-user-account-to-the-windows-server-essentials-dashboard"></a>將 Active Directory 使用者帳戶匯入 Windows Server Essentials 儀表板
 
@@ -110,7 +110,7 @@ ms.locfileid: "87180546"
 -   連接埠 443：HTTP 網路流量
 
 ## <a name="map-permitted-computers-to-user-accounts"></a>將允許的電腦對應到使用者帳戶
- 在 Windows Server Essentials 中，必須明確地將使用者指派給電腦，才會顯示在遠端 Web 存取。 從 Windows Server 2008 Foundation 移轉的每個使用者帳戶都必須對應至一或多部電腦。
+ 在 Windows Server Essentials 中，必須明確地將使用者指派給電腦，才能在遠端 Web 存取中顯示該使用者。 從 Windows Server 2008 Foundation 移轉的每個使用者帳戶都必須對應至一或多部電腦。
 
 #### <a name="to-map-user-accounts-to-computers"></a>將使用者帳戶對應至電腦
 

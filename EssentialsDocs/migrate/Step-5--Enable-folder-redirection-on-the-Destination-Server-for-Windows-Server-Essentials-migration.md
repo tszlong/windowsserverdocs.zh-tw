@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: d3925f80-552d-431f-b2a6-2af202e50ca4
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: d75a81460df90022dfec8195866599c159b78c63
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 2fa628429a692f77620116ed0db2ef052abc8a22
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180444"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625449"
 ---
 # <a name="step-5-enable-folder-redirection-on-the-destination-server-for-windows-server-essentials-migration"></a>步驟 5：在進行 Windows Server Essentials 移轉的目的地伺服器上啟用資料夾重新導向
 
@@ -38,7 +38,7 @@ ms.locfileid: "87180444"
 
 1. 在目的地伺服器上，開啟 [群組原則管理]**** 系統管理工具。
 
-2. 在**群組原則管理**] 中，展開 [**樹系：**<em>YourNetworkDomainName</em>]，展開 [**網域**]，展開 [ *YourNetworkDomainName*]，然後展開 [**群組原則物件**]。
+2. 在 **群組原則管理**] 中，展開 [ **樹系：**<em>YourNetworkDomainName</em>]，展開 [ **網域**]，展開 [ *YourNetworkDomainName*]，然後展開 [ **群組原則物件**]。
 
 3. 以滑鼠右鍵按一下您想要刪除的原則，然後按一下 [刪除]****。
 
@@ -49,8 +49,8 @@ ms.locfileid: "87180444"
    若要套用資料夾重新導向的變更，網路使用者必須登出電腦，然後再重新登入。 這可確保將所有重新導向資料夾都傳輸到目的地伺服器。
 
 ## <a name="next-steps"></a>後續步驟
- 您已經啟用目的地伺服器上的資料夾重新導向。 現在請移至[步驟6：從新的 Windows Server Essentials 網路降級和移除來源伺服器](Step-6--Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md)。
+ 您已經啟用目的地伺服器上的資料夾重新導向。 現在移至 [步驟6：從新的 Windows Server Essentials 網路降級和移除來源伺服器](Step-6--Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md)。
 
 
-若要查看所有步驟，請參閱[遷移至 Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。
+若要查看所有步驟，請參閱 [遷移至 Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。
 

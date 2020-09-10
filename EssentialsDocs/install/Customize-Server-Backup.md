@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 19b2559c-6090-45af-9a08-2eefc28473c8
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: a0992ed2858adbe713a25ec73f35c4b74a54ccd5
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 9cf27c09e2b6946b5daa584ff27b1da95788a4ea
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181324"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623683"
 ---
 # <a name="customize-server-backup"></a>自訂伺服器備份
 
@@ -23,7 +23,7 @@ ms.locfileid: "87181324"
 
  設定此機碼時，不會透過儀表板或啟動列公開 Server Backup 使用者介面。 這可讓您利用 Server Backup 的協力廠商應用程式。
 
-#### <a name="to-add-serverbackupproviderdisabled-registry-key-and-set-the-value-to-1"></a>新增 ServerBackup\ProviderDisabled？登錄機碼，並將值設為1
+#### <a name="to-add-serverbackupproviderdisabled-registry-key-and-set-the-value-to-1"></a>要加入 ServerBackup\ProviderDisabled 嗎？登錄機碼，並將值設定為1
 
 1.  在伺服器上，請依序按一下 **[開始]** 及 **[執行]**，並在 **[開啟]** 文字方塊中輸入 **regedit**，然後按一下 **[確定]**。
 

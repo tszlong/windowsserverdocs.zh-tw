@@ -3,16 +3,16 @@ title: 使用 Windows Server Update Services 進行更新管理
 description: Windows Server Update Service (WSUS) 主題-包含相關主題連結的更新管理總覽
 ms.topic: article
 ms.assetid: 28fde77a-f5fc-4e51-835d-8bc304dcfa54
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 7775d9116e386a4e8093c2f236110674701c70a6
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: a18d1f46c782a07a32f8402ec7f1eacc0a2ae682
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87891663"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624369"
 ---
 # <a name="update-management-with-windows-server-update-services"></a>使用 Windows Server Update Services 進行更新管理
 

@@ -5,25 +5,25 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 68f2b05c-09eb-4cba-8db4-a91353b513c6
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 241e2225c9e1dfdea3189e938a04c4af4c033c3f
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 4de71e30e4dd706a52587dc1c869960c9b83bc5c
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838317"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625233"
 ---
 # <a name="troubleshoot-anywhere-access-in-windows-server-essentials"></a>Windows Server 2012 Essentials 中的隨處存取問題疑難排解
 
 >適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-本主題提供在 Windows Server Essentials 中使用「修復隨處存取嚮導」的一般指示，以疑難排解阻止網路使用者存取伺服器資源的問題。 隨處存取功能-遠端 Web 存取、虛擬私人網路 (VPN) 和 DirectAccess-讓網路使用者可以隨時從任何裝置使用網際網路連線存取伺服器資源。
+本主題提供在 Windows Server Essentials 中使用 [修復隨處存取] 的一般指示，疑難排解阻止網路使用者存取伺服器資源的問題。 隨處存取功能-遠端 Web 存取、虛擬私人網路 (VPN) ，以及 DirectAccess 讓網路使用者隨時都能從任何裝置存取具有網際網路連線的任何位置的伺服器資源。
 
 「修復隨處存取」精靈會嘗試找出並修復路由器、網域名稱或防火牆阻止網路使用者從遠端存取伺服器資源的問題。
 
 > [!NOTE]
-> 如需 Windows Server Essentials 社區最新的疑難排解資訊，建議您流覽[Windows Server Essentials 論壇](/answers/topics/windows-server-essentials.html)。 Windows Server Essentials 論壇是一個搜尋協助或詢問問題的好地方。
+> 如需 Windows Server Essentials 社區中最新的疑難排解資訊，建議您造訪 [Windows Server Essentials 論壇](/answers/topics/windows-server-essentials.html)。 Windows Server Essentials 論壇是一個搜尋協助或詢問問題的好地方。
 
 ## <a name="to-repair-anywhere-access"></a>修復隨處存取
 
@@ -50,4 +50,4 @@ ms.locfileid: "87838317"
 
 - [疑難排解您的防火牆](Troubleshoot-your-firewall-in-Windows-Server-Essentials.md)
 
-- 查看[windows Server Essentials 論壇](/answers/topics/windows-server-essentials.html)，瞭解 Windows server essentials 社區回報的最新問題。
+- 請查看 [windows Server Essentials 論壇](/answers/topics/windows-server-essentials.html) ，以取得 Windows server essentials 社區所報告的最新問題。

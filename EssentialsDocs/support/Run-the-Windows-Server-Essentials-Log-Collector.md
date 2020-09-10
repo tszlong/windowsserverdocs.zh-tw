@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 0d340223-fa24-4c75-ba8e-b654feb120ab
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 10871d4b0fef4e3d0271d0d94ef114cc5d882abf
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 34c853abb19424d94fa768c70fcb6c9d8d8feea8
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180354"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625288"
 ---
 # <a name="run-the-windows-server-essentials-log-collector"></a>執行 Windows Server Essentials 記錄檔收集器
 您可以從伺服器或網路上的電腦執行 Windows Server Essentials 記錄檔收集器。 如果從伺服器執行記錄檔收集器，您只能收集伺服器中的記錄檔。 如果從網路電腦執行記錄檔收集器，則除了該電腦的記錄檔以外，您還可選擇收集伺服器中的記錄檔。
@@ -21,13 +21,13 @@ ms.locfileid: "87180354"
 
 #### <a name="to-run-the-log-collector-on-the-server-by-using-the-wizard"></a>使用精靈在伺服器上執行記錄檔收集器
 
-1. 在伺服器的 [**開始**] 頁面上，按一下 [ **Windows server Essentials 記錄檔收集器**]。
+1. 在伺服器的 [ **開始** ] 頁面上，按一下 [ **Windows server Essentials 記錄檔收集器**]。
 
    > [!NOTE]
-   > - 如果記錄檔收集器程式並未出現在 [**開始**] 頁面上，請流覽至 **%system%\program files Files （X86） \Windows Server Essentials 記錄檔收集器**，然後按兩下 [ **LogCollector**]。
+   > - 如果記錄檔收集器程式未出現在 [ **開始** ] 頁面上，請流覽至 **%system%\Program Files (X86) \Windows Server Essentials 記錄檔收集器**，然後按兩下 [ **LogCollector**]。
    >   -   如果您不是以具有系統管理權限的身分登入伺服器，記錄檔收集器會提示您輸入您的認證。
 
-2. 當系統提示您輸入儲存所收集記錄檔的位置時，您可以選擇預設位置** \\ \\<ServerName \> \logs**，或指定其他位置。 如果接受預設位置，請按一下 [下一步]****。 如果要變更位置，請按一下 [瀏覽]****，瀏覽至您要儲存記錄檔的資料夾，然後按一下 [儲存]****。
+2. 當系統提示您提供儲存所收集之記錄檔的位置時，您可以選擇預設位置， ** \\ \\<ServerName \> \logs**或指定其他位置。 如果接受預設位置，請按一下 [下一步]****。 如果要變更位置，請按一下 [瀏覽]****，瀏覽至您要儲存記錄檔的資料夾，然後按一下 [儲存]****。
 
    > [!NOTE]
    >  您不需提供記錄檔的檔案名稱。 記錄檔收集器會藉由串連檔案的電腦名稱稱和時間戳記來命名 zip 檔案集合。
@@ -38,7 +38,7 @@ ms.locfileid: "87180354"
 
 #### <a name="to-run-the-log-collector-on-a-network-computer-by-using-the-wizard"></a>使用精靈在網路電腦上執行記錄檔收集器
 
-1.  流覽至 **%System%\program files Files （x86） \Windows Server Essentials 記錄檔收集器**，然後按兩下**LogCollector.exe**的檔案。
+1.  流覽至 **%System%\Program Files (x86) \Windows Server Essentials 記錄檔收集器**，然後按兩下 **LogCollector.exe**的檔案。
 
     > [!NOTE]
     >  如果您不是以具有系統管理權限的身分登入網路電腦，當系統提示時，請輸入您的使用者名稱和密碼，然後按 [下一步]****。
@@ -73,7 +73,7 @@ ms.locfileid: "87180354"
 
 3.  在 [工作排程器程式庫]**** 的根目錄中，瀏覽至名為 [LogCollector]**** 的排程工作。
 
-4.  以滑鼠右鍵按一下 [LogCollector]****，然後按一下 [執行]****。 記錄檔收集器會將記錄檔放在伺服器上的預設資料夾中， ** \\ \\<ServerName \> \Logs**。 如果您沒有資料夾的寫入權限，或該資料夾不存在，則記錄會放在 **<暫存 \> **子目錄中。
+4.  以滑鼠右鍵按一下 [LogCollector]****，然後按一下 [執行]****。 記錄檔收集器會將記錄檔放在伺服器上的預設資料夾中， ** \\ \\<ServerName \> \Logs**。 如果您沒有資料夾的寫入權限或資料夾不存在，則會將記錄檔放在 **<暫存 \> **子目錄中。
 
 ##### <a name="to-manually-run-the-log-collector-on-a-network-computer"></a>在網路電腦上手動執行記錄檔收集器
 
@@ -83,4 +83,4 @@ ms.locfileid: "87180354"
 
 3.  在 [工作排程器程式庫]**** 的根目錄中，瀏覽至名為 [LogCollector]**** 的排程工作。
 
-4.  以滑鼠右鍵按一下 [LogCollector]****，然後按一下 [執行]****。 記錄檔收集器會將記錄檔放在網路電腦上的 **<temp \> **資料夾中。
+4.  以滑鼠右鍵按一下 [LogCollector]****，然後按一下 [執行]****。 記錄檔收集器會將記錄檔放在網路電腦上 **<temp \> **資料夾中。

@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: ac12e9a9-ba7a-480a-9249-6e216c70941b
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: d09b5a6425c2921bf2ad3cae57aecad9e4f35098
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 45a81150168e0b1f21a39b8d773872a1d5daef6b
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838327"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625269"
 ---
 # <a name="support-windows-server-essentials"></a>支援 Windows Server Essentials
 
@@ -26,15 +26,15 @@ ms.locfileid: "87838327"
 
 - [Windows Server Essentials 遷移準備工具的更新](https://support.microsoft.com/kb/2908176) (2013 年12月) 
 
-- [Windows Server Essentials 的更新彙總套件 1](https://support.microsoft.com/kb/2887595) (2013 年11月) 
+- [適用于 Windows Server Essentials 的更新彙總套件 1](https://support.microsoft.com/kb/2887595) (2013 年11月) 
 
-- [Windows Server Essentials 的更新彙總套件 3](https://support.microsoft.com/kb/2862551) (2013 年10月) 
+- [適用于 Windows Server Essentials 的更新彙總套件 3](https://support.microsoft.com/kb/2862551) (2013 年10月) 
 
-- [Windows Server Essentials 的更新彙總套件 2](https://support.microsoft.com/kb/2824160) (6 月 2013) 
+- [適用于 Windows Server Essentials 的更新彙總套件 2](https://support.microsoft.com/kb/2824160) (2013 年6月) 
 
-- [Windows Server Essentials 的更新彙總套件 1](https://support.microsoft.com/kb/2781267) (2013 年2月) 
+- [適用于 Windows Server Essentials 的更新彙總套件 1](https://support.microsoft.com/kb/2781267) (2013 年2月) 
 
-- [修補程式：您無法在2013年2月 (啟用 Windows Server Essentials 中的 Windows Server Update Services 角色](https://support.microsoft.com/kb/2762663)) 
+- 修正[程式：您無法在 Windows Server Essentials 中啟用 Windows Server Update Services 角色](https://support.microsoft.com/kb/2762663) (2013 年2月) 
 
 ## <a name="troubleshoot"></a>疑難排解
 

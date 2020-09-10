@@ -5,36 +5,36 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 8d0893bd-e2b7-4494-9537-02b1cbbcd57a
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: d3dde053a47dbc45a05486ed89b0484c297a132e
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: ceb5d81490b46513b540901413d8923d61d87e40
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181494"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623940"
 ---
 # <a name="before-you-install-windows-server-essentials"></a>在您安裝 Windows Server Essentials 之前
 
 >適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-##  <a name="before-you-begin-your-installation-of--windows-server-essentials-perform-the-following-tasks"></a><a name="BKMK_BeforeYouBegin"></a>開始安裝 Windows Server Essentials 之前，請執行下列工作：
+##  <a name="before-you-begin-your-installation-of--windows-server-essentials-perform-the-following-tasks"></a><a name="BKMK_BeforeYouBegin"></a> 開始安裝 Windows Server Essentials 之前，請先執行下列工作：
 
--   **確認您的電腦符合最低硬體需求**。 這包括判斷您是否需要額外的硬體，並確認 Windows Server Essentials 是否支援硬體的驅動程式。 如需詳細資訊，請參閱[Windows Server Essentials 的系統需求](../get-started/system-requirements.md)。
+-   **確認您的電腦符合最低硬體需求**。 這包括判斷您是否需要額外的硬體，以及驗證 Windows Server Essentials 是否支援硬體的驅動程式。 如需詳細資訊，請參閱 [Windows Server Essentials 的系統需求](../get-started/system-requirements.md)。
 
 > [!IMPORTANT]
-> 在預先存在的電腦上安裝 Windows Server Essentials 之前，建議您先將預先存在之電腦的硬碟完全格式化，再重新分割。 透過硬碟格式化以及重新分割，您將移除硬碟上可能殘留在的隱藏式磁碟分割。
+> 在預先存在的電腦上安裝 Windows Server Essentials 之前，建議您先完整格式化，然後重新分割預先存在電腦的硬碟。 透過硬碟格式化以及重新分割，您將移除硬碟上可能殘留在的隱藏式磁碟分割。
 
-- **準備您的網路**若要準備您的網路以安裝 Windows Server Essentials，請執行下列動作：
+- **準備您的網路** 若要準備您的網路以安裝 Windows Server Essentials，請執行下列動作：
 
 
-  - **升級用戶端電腦上的作業系統** Windows Server Essentials 支援下列作業系統： Windows 8、Windows 7、Windows 10 和 Macintosh OS X Lion 或更新版本。 這些作業系統可提供區域網路必要的安全功能、可靠性效能以及功能。
+  - **升級用戶端電腦上的作業系統**  Windows Server Essentials 支援下列作業系統： Windows 8、Windows 7、Windows 10 和 Macintosh OS X Lion 或更新版本。 這些作業系統可提供區域網路必要的安全功能、可靠性效能以及功能。
 
   - **設定您的路由器** 請確認您的路由器已按照下面的方式設定：
 
     -   已在路由器上啟用 UPnP 架構。
 
-    -   可以啟用或停用 LAN 的動態主機設定通訊協定 (DHCP) 伺服器服務。  Windows Server Essentials 可確保 DHCP 不會同時在伺服器與路由器上執行嗎？ 在路由器上啟用 DHCP 時，在安裝期間不會在伺服器上啟用 DHCP。
+    -   可以啟用或停用 LAN 的動態主機設定通訊協定 (DHCP) 伺服器服務。  Windows Server Essentials 可確保 DHCP 不會同時在伺服器與路由器上執行？ 當路由器上已啟用 DHCP 時，在安裝期間不會在伺服器上啟用 DHCP。
 
     -   您擁有由網際網路服務提供者 (ISP) 提供的路由器外部介面的 IP 位址。 IP 位址可由位在 ISP 的 DHCP 伺服器服務動態指派，否則您就需要使用路由器管理主控台手動設定靜態 IP 位址。
 
@@ -50,9 +50,9 @@ ms.locfileid: "87181494"
   |連接埠 443|HTTPS 網路流量|
 
 
-- **閱讀 Windows Server Essentials 版本檔**。 版本檔包含正確安裝和設定 Windows Server Essentials 可能非常重要的最新資訊。 若要查看或列印版本檔，請參閱[Windows Server Essentials 的發行檔](../get-started/release-notes.md)。
+- **閱讀 Windows Server Essentials 版本檔**。 版本檔包含正確安裝和設定 Windows Server Essentials 的最新資訊。 若要查看或列印版本檔，請參閱 [Windows Server Essentials 的版本檔](../get-started/release-notes.md)。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [安裝 Windows Server Essentials](Install-Windows-Server-Essentials.md)
 

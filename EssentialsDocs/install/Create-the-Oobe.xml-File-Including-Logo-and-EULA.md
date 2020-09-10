@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 8a7b3cc1-21bb-4344-8110-f5d5959b370d
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 498fa182c74a40f5a4b6b9c3b1dbc43df1a5d6a2
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: d6c1a721107d96f8a2a5de89f95c97ab87bf740a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181364"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623762"
 ---
 # <a name="create-the-oobexml-file-including-logo-and-eula"></a>建立包含標誌和 EULA 的 Oobe.xml 檔案
 
@@ -26,11 +26,11 @@ ms.locfileid: "87181364"
 
 1. 在文字編輯器 (例如「記事本」) 中開啟 Oobe.xml 檔案。
 
-2. 在 [<l h \></logopath \> 標記] 中，輸入標誌檔案的絕對路徑。 此檔案應包含 32 位元可攜式網路圖形 (.png) 檔案 (大小為 240x 100 像素)。
+2. 在 <l h \></logopath \> 標記內，輸入您標誌檔案的絕對路徑。 此檔案應包含 32 位元可攜式網路圖形 (.png) 檔案 (大小為 240x 100 像素)。
 
-3. 在 [<eulafilename \></eulafilename \> 標記] 中，輸入 EULA 檔案的絕對路徑。 EULA 檔案必須是 RTF 格式 (.rtf) 的檔案。
+3. 在 <eulafilename \></eulafilename \> 標記內，輸入 EULA 檔案的絕對路徑。 EULA 檔案必須是 RTF 格式 (.rtf) 的檔案。
 
-4. 在 [<名稱] \></name 標記] 中 \> ，輸入您的公司名稱。
+4. 在 <名稱 \></name \> 標記內，輸入您的公司名稱。
 
     下列範例顯示 Oobe.xml 檔案中的標記：
 
@@ -54,9 +54,9 @@ ms.locfileid: "87181364"
 
    |Oobe.xml 位置|用於決定位置的條件|
    |-----------------------|----------------------------------------|
-   |%windir%\system32\oobe\info \| 伺服器會在單一國家/地區和單一語言系統中出貨。|
+   |%windir%\system32\oobe\info \| 伺服器是在單一國家/地區和單一語言系統中運送。|
    |%windir%\system32\oobe\info\default \\<語言\>|伺服器會以單一國家/地區和多語言系統出貨。|
-   |%windir%\system32\oobe\info \\<國家/地區> \ 和%windir%\system32\oobe\info \\<國家/地區>\\<語言， \> \| 伺服器會寄送到多個國家/地區，而設定則需要以每個國家/地區為基礎的自訂，且各有一種語言。 其中 <的國家/地區> 是部署伺服器所在國家或地區之地理位置識別碼（GeoID）的十進位版本，而 <語言 \> 則是地區設定識別碼（LCID）的十進位版本。|
+   |%windir%\system32\oobe\info \\<國家/地區> \ 和%windir%\system32\oobe\info \\<國家/地區>\\<語言， \> \| 而伺服器會傳送給多個國家/地區，而設定則需要以每個國家/地區為基礎的自訂，每個都有單一語言。 其中 <國家/地區> 是要部署伺服器所在國家或地區之地理位置識別碼 (GeoID) 的十進位版本，而 <language \> 是地區設定識別碼 (LCID) 的十進位版本。|
 
    如果您另有白色文字的公司標誌，則此標誌可以在設定流程中的藍色背景顯示得更好。  您可以透過選擇設定登錄機碼和值來指定此標誌。
 
@@ -83,4 +83,4 @@ ms.locfileid: "87181364"
 8.  輸入含有標誌影像的路徑，然後按一下 [確定]。
 
 ## <a name="see-also"></a>另請參閱
- [使用 Windows Server ESSENTIALS ADK 消費者入門](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)[建立和自訂映射額外的](Creating-and-Customizing-the-Image.md)[自訂](Additional-Customizations.md)[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)
+ [使用 Windows Server ESSENTIALS ADK 消費者入門](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)[建立和自訂映射](Creating-and-Customizing-the-Image.md)[其他自訂](Additional-Customizations.md)專案[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)

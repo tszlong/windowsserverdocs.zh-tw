@@ -3,16 +3,16 @@ title: diskperf
 description: Diskperf 命令的參考文章，可用來在執行 Windows 的電腦上遠端啟用或停用實體或邏輯磁片效能計數器。
 ms.topic: reference
 ms.assetid: f06916e8-069b-4ec8-a6eb-59f1d9f77111
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 09f095f5e6184b7961d02c05da4c2ca0c56a0482
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: f0e7700b3fbe1cec79aa9cf2b5c93eab9bd8372d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89034116"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624819"
 ---
 # <a name="diskperf"></a>diskperf
 
@@ -24,7 +24,7 @@ ms.locfileid: "89034116"
 diskperf [-y[d|v] | -n[d|v]] [\\computername]
 ```
 
-## <a name="options"></a>選項
+## <a name="options"></a>選項。
 
 | 選項 | 描述 |
 | ------ | ----------- |

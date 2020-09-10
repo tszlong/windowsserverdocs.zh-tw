@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: e143df43-e227-4629-a4ab-9f70d9bf6e84
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 73a2d714b80a414fbe6c3716d8e73393877a7aa4
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 888ecc5c5ab8fd609264f0f184686a144e2f8ce8
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180454"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625474"
 ---
 # <a name="step-4-move-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>步驟 4：將設定和資料移至進行 Windows Server Essentials 移轉的目的地伺服器
 
@@ -26,7 +26,7 @@ ms.locfileid: "87180454"
 
 -   [將允許的電腦對應到使用者帳戶](Step-4--Move-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md#BKMK_MapPermittedComputers)
 
-##  <a name="copy-data-to-the-destination-server"></a><a name="BKMK_CopyData"></a>將資料複製到目的地伺服器
+##  <a name="copy-data-to-the-destination-server"></a><a name="BKMK_CopyData"></a> 將資料複製到目的地伺服器
  在您將資料從來源伺服器複製到目的地伺服器之前，請執行下列工作：
 
 -   檢閱來源伺服器上共用資料夾的清單，包括每個資料夾的權限。 建立或自訂目的地伺服器上的資料夾，以符合您從來源伺服器移轉的資料夾結構。
@@ -37,7 +37,7 @@ ms.locfileid: "87180454"
 
 -   [用戶端電腦備份]**** 資料夾無法移轉到目的地伺服器。 伺服器移轉之前，請確定所有用戶端電腦都處於健康的狀態。 伺服器移轉之後，建議您設定和啟動用戶端電腦備份，確保已為所有重要的用戶端電腦備份資料。
 
--   [檔案歷程**記錄備份**] 資料夾無法直接遷移到目的地伺服器，因為 Windows Server Essentials 中的資料夾結構和備份中繼資料有所變更。 不過，還是可以移轉特定使用者在特定電腦上的 [檔案歷程記錄備份]**** 資料夾。 若要這麼做，您必須找出該使用者和電腦之 [檔案歷程記錄備份]**** 資料夾中的 [資料]**** 資料夾，然後複製該 [資料]**** 資料夾到目的伺服器上的 [檔案歷程記錄備份]**** 資料夾。
+-   由於 Windows Server Essentials 中的資料夾結構和備份中繼資料有所變更，因此 **檔案歷程記錄備份** ] 資料夾無法直接遷移至目的地伺服器。 不過，還是可以移轉特定使用者在特定電腦上的 [檔案歷程記錄備份]**** 資料夾。 若要這麼做，您必須找出該使用者和電腦之 [檔案歷程記錄備份]**** 資料夾中的 [資料]**** 資料夾，然後複製該 [資料]**** 資料夾到目的伺服器上的 [檔案歷程記錄備份]**** 資料夾。
 
 #### <a name="to-copy-data-from-the-source-server-to-the-destination-server"></a>從來源伺服器將資料複製到目的地伺服器
 
@@ -53,7 +53,7 @@ ms.locfileid: "87180454"
 
    - \<SharedSourceFolderName\> 是來源伺服器上共用資料夾的名稱
 
-   - \<PathOfTheDestination\>是您要移動資料夾的絕對路徑
+   - \<PathOfTheDestination\> 是您要移動資料夾的絕對路徑
 
    - \<SharedDestinationFolderName\> 是將資料複製到其中之目的地伺服器上的資料夾
 
@@ -65,7 +65,7 @@ ms.locfileid: "87180454"
 
 4. 針對您要從來源伺服器移轉的每個共用資料夾，重複此程序。
 
-##  <a name="configure-the-network"></a><a name="BKMK_Network"></a>設定網路
+##  <a name="configure-the-network"></a><a name="BKMK_Network"></a> 設定網路
 
 #### <a name="to-configure-the-network"></a>若要設定網路
 
@@ -84,7 +84,7 @@ ms.locfileid: "87180454"
 > [!NOTE]
 >  如果您想要在目的地伺服器上設定公用網域名稱，您必須從來源伺服器釋放網域名稱以避免競爭動態 DNS 更新。
 
-##  <a name="map-permitted-computers-to-user-accounts"></a><a name="BKMK_MapPermittedComputers"></a>將允許的電腦對應到使用者帳戶
+##  <a name="map-permitted-computers-to-user-accounts"></a><a name="BKMK_MapPermittedComputers"></a> 將允許的電腦對應到使用者帳戶
  從舊版的 Windows Small Business Server 或 Windows Server Essentials 移轉的每個使用者帳戶必須對應至一個或多部電腦。
 
 #### <a name="to-map-user-accounts-to-computers"></a>將使用者帳戶對應至電腦
@@ -110,8 +110,8 @@ ms.locfileid: "87180454"
 >  完成移轉之後，如果您在目的伺服器上建立第一個新的使用者帳戶時遇到問題，請移除您新增的使用者帳戶，然後再重新建立一次。
 
 ## <a name="next-steps"></a>後續步驟
- 您已經將設定和資料移動到目的地伺服器。 現在請移至[步驟5：在目的地伺服器上啟用 Windows Server Essentials 遷移的資料夾](Step-5--Enable-folder-redirection-on-the-Destination-Server-for-Windows-Server-Essentials-migration.md)重新導向。
+ 您已經將設定和資料移動到目的地伺服器。 現在移至 [步驟5：在目的地伺服器上啟用資料夾重新導向，以進行 Windows Server Essentials 遷移](Step-5--Enable-folder-redirection-on-the-Destination-Server-for-Windows-Server-Essentials-migration.md)。
 
 
-若要查看所有步驟，請參閱[遷移至 Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。
+若要查看所有步驟，請參閱 [遷移至 Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。
 

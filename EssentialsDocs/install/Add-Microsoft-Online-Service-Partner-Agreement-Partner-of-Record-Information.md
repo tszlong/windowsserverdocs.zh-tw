@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 9bd191d6-ecc5-4230-a88e-f3fc281cb956
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 807aacc5039bf90ea4dd7c7859c232d8c8b3011a
-ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 0f8a1b769b207bd40add46f3e7e9273c67409ac1
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89554341"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624039"
 ---
 # <a name="add-microsoft-online-service-partner-agreement-partner-of-record-information"></a>新增 Microsoft Online Service 合作夥伴合約列名的合作夥伴資訊
 

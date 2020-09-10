@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 29f9a09f-e4e8-476d-ada1-ab9202a670d7
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 8e2d4b20de9cee6617ab5b0f32b161eab3bc4a8e
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: c4b1d0bde98ee162d099976f4ac4db49c9deb773
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181394"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623834"
 ---
 # <a name="create-a-simple-customized-image"></a>建立簡單自訂映象
 
@@ -41,4 +41,4 @@ ms.locfileid: "87181394"
 9. 如[準備用於部屬的映像](Preparing-the-Image-for-Deployment.md)中所述，準備用於部屬的映像。
 
 ## <a name="see-also"></a>另請參閱
- [使用 Windows Server ESSENTIALS ADK 消費者入門](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)[建立和自訂映射額外的](Creating-and-Customizing-the-Image.md)[自訂](Additional-Customizations.md)[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)
+ [使用 Windows Server ESSENTIALS ADK 消費者入門](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)[建立和自訂映射](Creating-and-Customizing-the-Image.md)[其他自訂](Additional-Customizations.md)專案[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)

@@ -5,23 +5,23 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: f1e6b377-4a24-4d28-9b25-05910914826b
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 3d1428fa258f661636d599dd8dcf41acaaf59082
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 55daffa3c1db284d3772fa39eb64e0411ad1c7a6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838277"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625092"
 ---
 # <a name="troubleshoot-computer-monitoring-in-windows-server-essentials"></a>Windows Server Essentials 中的電腦監視問題疑難排解
 
 > 適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-本主題提供在 [警示檢視器] 中監視電腦的健全狀況狀態，以及透過 Windows Server Essentials 中的電子郵件通知，所遇到的問題疑難排解。
+本主題提供在監視警示檢視器中電腦的健全狀況狀態，以及透過 Windows Server Essentials 中的電子郵件通知時所發生之問題的疑難排解。
 
 > [!NOTE]
-> 如需 Windows Server Essentials 社區最新的疑難排解資訊，建議您流覽[Windows Server Essentials 論壇](/answers/topics/windows-server-essentials.html)。 Windows Server Essentials 論壇是一個搜尋協助或詢問問題的好地方。
+> 如需 Windows Server Essentials 社區中最新的疑難排解資訊，建議您造訪 [Windows Server Essentials 論壇](/answers/topics/windows-server-essentials.html)。 Windows Server Essentials 論壇是一個搜尋協助或詢問問題的好地方。
 
 ## <a name="troubleshooting-email-notifications-for-alerts"></a>疑難排解警示的電子郵件通知
 
@@ -29,7 +29,7 @@ ms.locfileid: "87838277"
 
 ### <a name="cannot-send-the-test-email-for-the-alert"></a>無法傳送警示的測試電子郵件
 
- **問題**您會收到錯誤訊息，指出「無法傳送警示的測試電子郵件」。
+ **問題** 您會收到一則錯誤訊息，指出無法傳送警示的測試電子郵件。
 
  **原因** 這個錯誤可能是因為警示通知的設定中有下列問題：
 
@@ -50,7 +50,7 @@ ms.locfileid: "87838277"
     ` %ProgramData%\Microsoft\Windows Server\Logs\SharedServiceHost-AlertServiceConfig.log`
 
     > [!TIP]
-    > 若要查看 [ProgramData] 資料夾，您必須顯示隱藏的項目。 如果您沒有看到 [ProgramData] 資料夾，請在功能區的 [**視圖**] 索引標籤上，于 [**顯示/隱藏**] 群組中選取 [**隱藏專案**] 文字方塊。
+    > 若要查看 [ProgramData] 資料夾，您必須顯示隱藏的項目。 如果您沒有看到 [ProgramData] 資料夾，請在功能區的 [ **視圖** ] 索引標籤上，于 [ **顯示/隱藏** ] 群組中選取 [ **隱藏的專案** ] 文字方塊。
 
 #### <a name="to-update-your-email-notification-setup-for-alerts"></a>更新警示的電子郵件通知設定
 
