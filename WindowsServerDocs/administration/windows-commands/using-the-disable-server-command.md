@@ -3,16 +3,16 @@ title: 停用-伺服器
 description: 停用伺服器的參考文章，會停用 Windows 部署服務 Server 的所有服務。
 ms.topic: reference
 ms.assetid: b69fcfe0-b744-4794-bc75-2c9218c0ba66
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8fbb6a08aef24b20a9bd1b0124b39624ae4ec919
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ed8fafb9c35f54656ab4551876dc0461ea1a2c55
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038176"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622029"
 ---
 # <a name="disable-server"></a>停用-伺服器
 

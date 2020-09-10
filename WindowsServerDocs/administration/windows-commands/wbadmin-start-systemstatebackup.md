@@ -3,16 +3,16 @@ title: wbadmin start systemstatebackup
 description: Wbadmin start systemstatebackup 的參考文章，它會建立本機電腦的系統狀態備份，並將它儲存在指定的位置。
 ms.topic: reference
 ms.assetid: 998366c1-0a64-45e6-9ed3-4c3f5b8406f0
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 5b2910a6c6cbcd9fbf6bd8d8564425128b98af24
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 7bd0df6e0cbfd7e34439e858865420002f5fb364
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031856"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89621481"
 ---
 # <a name="wbadmin-start-systemstatebackup"></a>wbadmin start systemstatebackup
 

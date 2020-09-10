@@ -3,16 +3,16 @@ title: ksetup mapuser
 description: '>ksetup mapuser 命令的參考文章，此命令會將 Kerberos 主體的名稱對應至帳戶。'
 ms.topic: reference
 ms.assetid: 84113e6e-89ff-488a-9cd0-f14bbf23b543
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: de3eeafdcd1ef94bf1e6c50009742b2981d0d7dc
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: e8e676218455147e68f84b42bcbad2dcd7285a01
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89025462"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622789"
 ---
 # <a name="ksetup-mapuser"></a>ksetup mapuser
 

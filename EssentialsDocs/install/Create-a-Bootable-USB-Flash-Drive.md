@@ -5,14 +5,14 @@ ms.date: 05/04/2018
 ms.topic: article
 ms.assetid: 2fe8e35c-69f9-40b3-a270-22e2402510d8
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: a4a92a3ec4641b314213afe9b53d8dc033f41037
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: a5adc33cf0177ef6134d293a448cdf9a3999fcdb
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181424"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89621801"
 ---
 # <a name="create-a-bootable-usb-flash-drive"></a>建立可開機的 USB 快閃磁碟機
 
@@ -22,7 +22,7 @@ ms.locfileid: "87181424"
 
 
 > [!TIP]
-> 若要建立可開機的 USB 快閃磁片磁碟機，以用於復原或重新安裝電腦上的 Windows，而不是伺服器，請參閱[建立修復磁片磁碟機](https://support.microsoft.com/help/4026852/windows-create-a-recovery-drive)。
+> 若要建立可開機的 USB 快閃磁片磁碟機，以在電腦上復原或重新安裝 Windows，而不是在伺服器上執行，請參閱 [建立修復磁片磁碟機](https://support.microsoft.com/help/4026852/windows-create-a-recovery-drive)。
 
  如需建立或使用可開機的 USB 快閃磁碟機之其他案例，請參閱下列主題：
 
@@ -62,6 +62,6 @@ ms.locfileid: "87181424"
 
 ## <a name="see-also"></a>另請參閱
 
- [使用 Windows Server ESSENTIALS ADK 消費者入門](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)[建立和自訂映射額外的](Creating-and-Customizing-the-Image.md)[自訂](Additional-Customizations.md)[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)
+ [使用 Windows Server ESSENTIALS ADK 消費者入門](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)[建立和自訂映射](Creating-and-Customizing-the-Image.md)[其他自訂](Additional-Customizations.md)專案[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)
 
  [我們要如何協助您？](https://windows.microsoft.com/windows/support)

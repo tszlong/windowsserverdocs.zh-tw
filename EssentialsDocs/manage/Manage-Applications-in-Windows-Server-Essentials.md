@@ -5,26 +5,26 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: ae89c46a-0afd-4858-9150-ec97650f45a4
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 7f83d595b56c1c6e2ae0e2565dd607a403b429b0
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 30b8dfa2087e76cc80011eb359715c95564ec1b6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181044"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623274"
 ---
 # <a name="manage-applications-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的應用程式
 
 >適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
- 已安裝 Windows server Essentials 體驗角色的 Windows Server Essentials 和 Windows Server 2012 R2 中的伺服器儀表板，可讓您執行一般系統管理工作。 若要執行這些工作，請參閱下列各節：
+ 已安裝 Windows Server Essentials 體驗角色的 Windows Server Essentials 和 Windows Server 2012 R2 中的伺服器儀表板，可讓您執行一般的系統管理工作。 若要執行這些工作，請參閱下列各節：
 
 -   [儀表板中的應用程式管理工作](Manage-Applications-in-Windows-Server-Essentials.md#BKMK_1)
 
 -   [使用儀表板來安裝或移除增益集](Manage-Applications-in-Windows-Server-Essentials.md#BKMK_2)
 
-##  <a name="application-management-tasks-in-the-dashboard"></a><a name="BKMK_1"></a>儀表板中的應用程式管理工作
+##  <a name="application-management-tasks-in-the-dashboard"></a><a name="BKMK_1"></a> 儀表板中的應用程式管理工作
  [儀表板] 的 [應用程式]**** 管理頁面提供：
 
 - 一份已安裝的增益集清單，當中顯示：
@@ -43,7 +43,7 @@ ms.locfileid: "87181044"
 
   下表說明伺服器 [儀表板] 中可用的各種增益集管理工作。 部分工作是增益集特定的工作，只有當您選取清單中的某個增益集時才能看見。
 
-|工作名稱|說明|
+|工作名稱|描述|
 |---------------|-----------------|
 |移除增益集|會將選取的增益集從伺服器及網路中的所有其他電腦中移除。|
 |在網路電腦上安裝增益集|會協助您在網路中的所有其他電腦上排定安裝選取的增益集。|
@@ -53,14 +53,14 @@ ms.locfileid: "87181044"
 |閱讀增益集的隱私權聲明|會將您的網際網路瀏覽器開啟至可供您檢視隱私權聲明的網站。|
 |我要如何安裝或移除增益集？|會將您的網際網路瀏覽器開啟至顯示主體說明主題的網頁。|
 
-##  <a name="install-or-remove-add-ins-using-the-dashboard"></a><a name="BKMK_2"></a>使用儀表板安裝或移除增益集
+##  <a name="install-or-remove-add-ins-using-the-dashboard"></a><a name="BKMK_2"></a> 使用儀表板安裝或移除增益集
  增益集是為您的伺服器提供額外特性和功能的軟體應用程式。 Microsoft 及其他獨立軟體廠商 (ISV) 皆提供越來越多的增益集。
 
  您必須先將增益集安裝在伺服器上，才能利用增益集所提供的擴充功能。
 
 #### <a name="to-install-an-add-in-from-microsoft-pinpoint"></a>安裝來自 Microsoft Pinpoint 的增益集
 
-1.  在 [伺服器儀表板] 中，按一下 [**應用程式**]，然後按一下 [ **Microsoft 定點**] 索引標籤。 可用的增益集清單隨即出現。
+1.  在 [伺服器儀表板] 中，按一下 [ **應用程式**]，然後按一下 [ **Microsoft 定點** ] 索引標籤。 可用的增益集清單隨即出現。
 
 2.  按一下您想要安裝的增益集。 增益集資訊頁面隨即出現。
 
@@ -93,7 +93,7 @@ ms.locfileid: "87181044"
     > [!NOTE]
     >  您可能需要重新啟動 [儀表板]，才能將增益集完全移除。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [儀表板總覽](Overview-of-the-Dashboard-in-Windows-Server-Essentials.md)
 

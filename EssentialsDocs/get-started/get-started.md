@@ -4,20 +4,20 @@ description: 說明如何使用 Windows Server Essentials
 ms.topic: article
 ms.assetid: 2d0eb084-09dd-4d85-a41a-5d449cc3b504
 author: nnamuhcs
-ms.author: coreyp
-manager: jasgro
-ms.openlocfilehash: df3eb1b5a1704dcd5a1fc05fab4023c7faaeabe7
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: ef30f70be32f0e8e277375118c539bc8283f9fb9
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838107"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622415"
 ---
 # <a name="get-started-with-windows-server-essentials"></a>開始使用 Windows Server Essentials
 
 >適用于： Windows Server 2016 Essentials;Windows Server 2019 Essentials
 
-**Windows Server Essentials** edition 是雲端連線的第一部伺服器，專為擁有多達25位使用者和50裝置的小型企業所設計。 不過，如果您考慮安裝任何版本的 Windows Server Essentials，我們會建議您考慮**Microsoft 365**。 如需超越 Windows Server Essentials 移至 Microsoft 365 的詳細資訊，請參閱[Windows server 2019 Essentials 的新功能](what-s-new-19.md)。
+**Windows Server Essentials** edition 是雲端連線的第一部伺服器，專為最多25位使用者和50裝置的小型企業所設計。 但是，如果您正在考慮安裝任何版本的 Windows Server Essentials，我們建議您考慮 **Microsoft 365**。 如需移至 Windows Server Essentials 以外 Microsoft 365 的詳細資訊，請參閱 [Windows server 2019 essentials 的新功能](what-s-new-19.md)。
 
 ## <a name="in-this-library"></a>本文件庫內容
  如需有關安裝、設定、管理、使用及排解 Windows Server Essentials 問題的資訊，請參閱下列文件：
@@ -39,7 +39,7 @@ ms.locfileid: "87838107"
 
 -   [Windows Server Essentials 健康情況報告](https://www.microsoft.com/download/details.aspx?id=35565)
 
--   [Windows Server Essentials 管理元件](https://www.microsoft.com/download/details.aspx?id=35560)
+-   [Windows Server Essentials 管理封包](https://www.microsoft.com/download/details.aspx?id=35560)
 
 
 -   **更新：** 請參閱[支援 Windows Server Essentials](../support/Support-Windows-Server-Essentials.md)

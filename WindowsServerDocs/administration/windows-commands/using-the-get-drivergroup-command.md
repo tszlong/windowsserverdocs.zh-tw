@@ -3,16 +3,16 @@ title: DriverGroup
 description: DriverGroup 的參考文章，會顯示伺服器上驅動程式群組的相關資訊。
 ms.topic: reference
 ms.assetid: 7cfe10c3-a63f-48e7-bef9-f6b474b4ddbe
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 545bf634382e562221438295e5d015f7dbb97bf3
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ec0341403140a0aaab2ec43dab960e81935cefa8
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029676"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622574"
 ---
 # <a name="get-drivergroup"></a>DriverGroup
 

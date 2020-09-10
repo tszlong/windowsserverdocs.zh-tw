@@ -3,16 +3,16 @@ title: ftp mget
 description: Ftp mget 命令的參考文章，此命令會使用目前的檔案傳輸類型，將遠端檔案複製到本機電腦。
 ms.topic: reference
 ms.assetid: 6c85ae96-ec51-48a9-a227-7f02c7332c69
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: e72d253fec35f366e2ab80a491c256e0de6c948f
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ca56e43df4a03fd52f8028d390cb2da62901ca06
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89025742"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89621621"
 ---
 # <a name="ftp-mget"></a>ftp mget
 

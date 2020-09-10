@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 441c2d6c-435a-42cb-90f2-6d680d279d34
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 8342c542861598411570c4e702aea5a94f992c79
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 464b30d610dcf25dc53c12bf38f8ec3da8691e2a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180804"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622942"
 ---
 # <a name="set-up-or-customize-server-backup"></a>設定或自訂伺服器備份
 
@@ -30,7 +30,7 @@ ms.locfileid: "87180804"
 
 -   [要備份的項目](Set-up-or-customize-server-backup.md#BKMK_4)
 
-##  <a name="set-up-or-change-server-backup-settings"></a><a name="BKMK_1"></a>設定或變更伺服器備份設定
+##  <a name="set-up-or-change-server-backup-settings"></a><a name="BKMK_1"></a> 設定或變更伺服器備份設定
 
 #### <a name="to-set-up-or-change-server-backup-settings"></a>設定或變更伺服器備份設定
 
@@ -49,7 +49,7 @@ ms.locfileid: "87180804"
     >  如果您先啟動精靈才將外部硬碟連接至伺服器，請在連接硬碟後，按一下 [選取備份目的地]**** 頁面上的 [重新整理清單]****。
 
 > [!NOTE]
->  在 Windows Server Essentials 的預設安裝中，伺服器會設定為每週自動執行一次磁碟重組。 如果您使用非 Microsoft 映像處理軟體，這可能會導致比一般備份還要大。 如果沒有必要定期進行伺服器磁碟重組，您可以依照下列步驟關閉磁碟重組排程：
+>  在預設安裝的 Windows Server Essentials 中，伺服器會設定為每週自動執行一次磁碟重組。 如果您使用非 Microsoft 映像處理軟體，這可能會導致比一般備份還要大。 如果沒有必要定期進行伺服器磁碟重組，您可以依照下列步驟關閉磁碟重組排程：
 >
 > 1. 按 Windows 鍵 + W 鍵來開啟 [搜尋]****。
 >    2. 在 [搜尋] 文字方塊中，輸入 **Defragment**。
@@ -57,10 +57,10 @@ ms.locfileid: "87180804"
 >    4. 在 [最佳化磁碟機]**** 頁面中，選取一個磁碟機，然後按一下 [變更設定]****。
 >    5. 在 [最佳化排程]**** 視窗中，取消選取 [依排程執行 (建議)]**** 核取方塊，然後按一下 [確定]**** 來儲存變更。
 
-##  <a name="server-backup-schedule"></a><a name="BKMK_2"></a>伺服器備份排程
+##  <a name="server-backup-schedule"></a><a name="BKMK_2"></a> 伺服器備份排程
  當您使用「設定伺服器備份精靈」或「自訂伺服器備份精靈」時，可以選擇在一日內多次備份伺服器資料。 因為精靈排程的是增量備份，因此備份執行地很迅速，而且不會大幅影響伺服器效能。 精靈預設會排程在每日中午 12:00 與晚上 11:00 執行備份。 不過，您可以根據您組織的需求調整備份排程。 您應該偶爾評估您備份計劃的有效性，然後視需要變更計劃。
 
-##  <a name="backup-target-drive"></a><a name="BKMK_Target"></a>備份目標磁片磁碟機
+##  <a name="backup-target-drive"></a><a name="BKMK_Target"></a> 備份目標磁片磁碟機
  您可以使用多個外部存放磁碟機進行備份，然後讓這些磁碟機在站上與離站位置之間輪替。 這樣可在站上硬體發生實體損害時協助您復原資料，藉以改善您的災害防範規劃。
 
  為您的伺服器備份選擇存放磁碟機時，請考慮下列各項：
@@ -76,9 +76,9 @@ ms.locfileid: "87180804"
 
 -   如果您選擇包含先前備份的磁碟機做為備份目標，精靈會讓您選擇是否要保留先前的備份。 如果您要保留那些備份，精靈就不會將磁碟機格式化。
 
--   您應該造訪外部存放磁片磁碟機製造商的網站，以確保執行 Windows Server Essentials 的電腦支援您的備份磁片磁碟機。
+-   您應該造訪外部存放磁片磁碟機製造商的網站，以確保在執行 Windows Server Essentials 的電腦上支援備份磁片磁碟機。
 
--   磁碟機不能包含「可延伸韌體介面 (EFI)」系統磁碟分割。 如果 USB 磁碟機上有 EFI 磁碟分割，則會假設該磁碟是開機磁碟。 如果您確定磁片上不需要資料，可以重新格式化磁片，並將它用於備份。
+-   磁碟機不能包含「可延伸韌體介面 (EFI)」系統磁碟分割。 如果 USB 磁碟機上有 EFI 磁碟分割，則會假設該磁碟是開機磁碟。 如果您確定不需要磁片上的資料，您可以將磁片重新格式化，並將其用於備份。
 
     > [!CAUTION]
     >  當您重新格式化磁碟時，所有資料都會被刪除。
@@ -100,19 +100,19 @@ ms.locfileid: "87180804"
     2.  選取您想要停止共用的資料夾，然後在工作窗格中，按一下 [停止]****。
 
 > [!NOTE]
->  如果備份因為備份磁片磁碟機的空間不足而失敗，則會從 Windows Server Essentials 資料庫中移除備份目標磁片磁碟機的磁碟機號，而儀表板不會顯示磁片磁碟機。 如果您想要在未來的備份中使用該磁碟機，您必須使用原生工具重新指派磁碟機代號。
+>  如果備份因為磁碟空間不足而失敗，則會從 Windows Server Essentials 資料庫中移除備份目標磁片磁碟機的磁碟機號，而儀表板不會顯示該磁片磁碟機。 如果您想要在未來的備份中使用該磁碟機，您必須使用原生工具重新指派磁碟機代號。
 >
 >  **重新指派現有磁碟區的磁碟機代號**
 >
 > 1. 在 [控制台] 中開啟 [系統及安全性]****。
 >    2. 在 [系統管理工具]**** 下，按一下 [建立及格式化硬碟磁碟分割]****。
 >    3. 以滑鼠右鍵按一下磁碟機，然後按一下 [變更磁碟機代號及路徑]****。
->    4. 按一下 [新增]  。
->    5. 在 [新增磁碟機代號或路徑] 對話方塊中，選取要指派的磁碟機代號。 （您可以重新指派相同的磁碟機號。）然後按一下 **[確定]**。
+>    4. 按一下 [新增] 。
+>    5. 在 [新增磁碟機代號或路徑] 對話方塊中，選取要指派的磁碟機代號。  (您可以重新指派相同的磁碟機號。 ) 然後按一下 **[確定]**。
 >
 >    磁碟機會立即出現在儀表板上。
 
-##  <a name="items-to-be-backed-up"></a><a name="BKMK_4"></a>要備份的專案
+##  <a name="items-to-be-backed-up"></a><a name="BKMK_4"></a> 要備份的專案
  您可以選擇備份伺服器上所有的磁碟機、檔案和資料夾，或選取個別的磁碟機、檔案或資料夾進行備份。
 
  當您新增或移除磁碟機，或者新增或移除共用的檔案和資料夾時，您應重新檢查伺服器備份設定，以確定這些項目加入備份設定或從備份設定中移除。 若要新增或移除要備份的項目，請執行下列其中一個動作：
@@ -128,7 +128,7 @@ ms.locfileid: "87180804"
 
   例如，您可能有資料夾包含使用大量硬碟空間的錄製電視節目。 您可以選擇不要備份這些檔案，因為您通常在看過它們之後就會將它們刪除。 或者，您可能有一個資料夾包含您不想保留的暫存檔。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [管理伺服器備份](Manage-Server-Backup-in-Windows-Server-Essentials.md)
 

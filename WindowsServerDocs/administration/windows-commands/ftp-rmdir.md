@@ -3,16 +3,16 @@ title: ftp rmdir
 description: Ftp rmdir 命令的參考文章，此命令會刪除根目錄。
 ms.topic: reference
 ms.assetid: cf4778a4-9534-49c7-a061-850dc3504a67
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 6a9989a8d0c26820eb92c9f5794b4c877fe1efa8
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 53ba40b22b7bf83794ed2bc05d00fc02f79598c1
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89035746"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89621596"
 ---
 # <a name="ftp-rmdir"></a>ftp rmdir
 

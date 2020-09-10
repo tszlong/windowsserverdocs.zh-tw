@@ -3,16 +3,16 @@ title: 新增-DriverGroupPackages
 description: 新增驅動程式群組套件的 DriverGroupPackages 的參考文章。
 ms.topic: reference
 ms.assetid: 29022f53-ce14-4b2d-a81a-679c18e022b2
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 27ed9e79f517dd3a59ae3af92ce6b4718d5eae72
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 838a11b3348540b8ff5217250f50071d55922c02
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029856"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622349"
 ---
 # <a name="add-drivergrouppackages"></a>新增-DriverGroupPackages
 

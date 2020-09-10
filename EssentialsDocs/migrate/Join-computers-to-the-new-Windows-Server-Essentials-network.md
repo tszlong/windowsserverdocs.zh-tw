@@ -1,20 +1,20 @@
 ---
-title: 將電腦加入新的 Windows Server Essentials 的伺服器
+title: 將電腦加入新的 Windows Server Essentials
 description: 說明如何使用 Windows Server Essentials
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: d94de050-3300-4323-a5ea-c824cb9cecc9
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: f6b4db262d3eda9f1497ffce9c604d7dd72290b3
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 9a1133623af3a05f8aa0e867b1d3d66cbadd717f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180754"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622811"
 ---
-# <a name="join-computers-to-the-new-windows-server-essentials-network1"></a>將電腦加入新的 Windows Server Essentials 的伺服器
+# <a name="join-computers-to-the-new-windows-server-essentials-network1"></a>將電腦加入新的 Windows Server Essentials
 
 >適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
@@ -44,7 +44,7 @@ ms.locfileid: "87180754"
 
 2.  在命令提示字元中輸入 **GPRESULT /R**，然後按 Enter。
 
-3.  檢查套用的群組原則區段所產生的輸出：並確定它會列出目的地伺服器，例如**列示 destinationsrv.domain.local**。 例如：
+3.  檢查從套用群組原則區段的輸出結果：並確定它列出目的地伺服器，例如**列示 destinationsrv.domain.local。** 例如：
 
     ```
     USER SETTINGS
@@ -64,6 +64,6 @@ ms.locfileid: "87180754"
 
     1.  按一下 [開始]****、[執行]****，輸入 **rsop.msc** (原則的結果集)，然後按 ENTER。
 
-    2.  展開具有 X 的樹狀結構，直到到達節點為止。
+    2.  展開樹狀結構上的 X，直到到達節點為止。
 
     3.  以滑鼠右鍵按一下節點，並按一下 [檢視錯誤]****，了解群組原則設定為何在列示的電腦上失敗。

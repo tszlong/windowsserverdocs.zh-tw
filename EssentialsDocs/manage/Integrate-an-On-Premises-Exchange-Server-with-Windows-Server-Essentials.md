@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: b56a21e2-c9e3-4ba9-97d9-719ea6a0854b
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 7975f70d75a33549d0a3c7616b5260064d5cb323
-ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: a0dd4b7469aa44773d978da7d5afd68eac57bff3
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89554421"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623317"
 ---
 # <a name="integrate-an-on-premises-exchange-server-with-windows-server-essentials"></a>整合內部部署 Exchange Server 與 Windows Server Essentials
 
@@ -25,7 +25,7 @@ ms.locfileid: "89554421"
 > [!NOTE]
 >  Exchange Server 2010 不支援在執行 Windows Server 2012 的電腦上進行安裝。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
  在 Windows Server Essentials 網路上安裝 Exchange Server 之前，請確定您已完成本節所述的工作。
 
 -   [設定執行 Windows Server Essentials 的伺服器](Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md#BKMK_SetUpSBS8)

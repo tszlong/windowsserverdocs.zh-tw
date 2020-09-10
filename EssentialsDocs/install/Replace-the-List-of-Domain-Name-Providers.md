@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 104d0412-2d77-4cd4-99f7-65a885522850
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 736d7c2271752c79678c2d332ed450e6ba35b299
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 74509a7d64e718fe1d2b62f806306235e7d827e4
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181104"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623367"
 ---
 # <a name="replace-the-list-of-domain-name-providers"></a>取代網域名稱提供者清單
 
@@ -30,14 +30,14 @@ ms.locfileid: "87181104"
 -   [在參照電腦上新增登錄項目](../install/Replace-the-List-of-Domain-Name-Providers.md#BKMK_AddRegistry)
 
 
-###  <a name="create-the-referral-service-files"></a><a name="BKMK_ReferralFiles"></a>建立參考服務檔案
+###  <a name="create-the-referral-service-files"></a><a name="BKMK_ReferralFiles"></a> 建立參考服務檔案
  轉介服務管理工具會建立一組檔案，這些檔案用來定義設定網域名稱精靈中顯示的網域名稱提供者清單。 會針對全球每個地區各建立一個 XML 格式的檔案，檔案中會包含您在工具中指定的網域名稱提供者。 此工具建立的檔案必須位於可在網際網路上透過您所管理的安全連結 (HTTPS) 存取的資料夾中。
 
 ##### <a name="to-create-the-referral-files"></a>若要建立轉介檔案
 
 1.  開啟 [轉介服務管理工具]。
 
-2.  按一下 [新增]  。
+2.  按一下 [新增] 。
 
 3.  在 [新增網域名稱提供者] 對話方塊中，輸入網域名稱提供者的名稱。
 
@@ -57,7 +57,7 @@ ms.locfileid: "87181104"
 
 11. 按一下 **[產生檔案至檔案系統]**。
 
-###  <a name="add-an-entry-to-the-registry-on-the-reference-computer"></a><a name="BKMK_AddRegistry"></a>將專案新增至參照電腦上的登錄
+###  <a name="add-an-entry-to-the-registry-on-the-reference-computer"></a><a name="BKMK_AddRegistry"></a> 在參照電腦上將專案新增至登錄
  您必須新增登錄項目，以指定作業系統可以找到轉介服務檔案的位置。
 
 ##### <a name="to-add-a-key-to-the-registry"></a>若要新增登錄機碼
@@ -83,12 +83,12 @@ ms.locfileid: "87181104"
 >  A slash (/) is required at the end of the URL.
 ~~~
 
-###  <a name="domain-name-status-issues"></a><a name="BKMK_ReplaceDomainNameProviders"></a>功能變數名稱狀態問題
- 如果合作夥伴新增功能變數名稱提供者，並在 Windows Server Essentials SDK 中使用應用程式開發介面（API）來設定憑證的「未知」、「失敗」和「CertificateRequestNotSubmitted」狀態，則客戶會收到不正確的訊息和設定結果。 這是因為此情況是依例外狀況處理，而不是傳回狀態。
+###  <a name="domain-name-status-issues"></a><a name="BKMK_ReplaceDomainNameProviders"></a> 功能變數名稱狀態問題
+ 如果夥伴新增了功能變數名稱提供者，並在 Windows Server Essentials SDK 中使用應用程式開發介面 (API) 來設定憑證的 Unknown、Failed 和 CertificateRequestNotSubmitted 狀態，則客戶會收到錯誤的訊息和設定結果。 這是因為此情況是依例外狀況處理，而不是傳回狀態。
 
  下列網域狀態為失敗，而且應該報告為錯誤：
 
-- 失敗
+- Failed
 
 - PendingCustomerInterventionRequired
 
@@ -110,5 +110,5 @@ ms.locfileid: "87181104"
 
 ## <a name="see-also"></a>另請參閱
 
- [建立和自訂映射額外的](Creating-and-Customizing-the-Image.md)[自訂](Additional-Customizations.md)[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)
+ [建立和自訂映射](Creating-and-Customizing-the-Image.md)[其他自訂](Additional-Customizations.md)專案[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)
 

@@ -5,38 +5,38 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: f6e05aec-d07c-4e0b-94ab-f20279e9ffd1
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: aae5c0c8a3a98b25d13d7bf11f6fb14963714c24
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 52493dae886eb8f74a6276854c7b7cce2f77470f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87837917"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623204"
 ---
 # <a name="manage-branchcache-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的 BranchCache
 
 >適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-BranchCache 可協助您優化網際網路使用方式、改善網路應用程式的效能，以及降低廣域網路的流量 (WAN) 當 Windows Server Essentials 伺服器位於您辦公室的遠端時，或當用戶端電腦連接到本機伺服器時，使用 SharePoint Online 程式庫之類的雲端資源。
+BranchCache 可協助您優化網際網路使用方式、改善網路應用程式的效能，並減少廣域網路的流量 (WAN) 當 Windows Server Essentials 伺服器位於您辦公室的遠端時，或當用戶端電腦連線到本機伺服器時，使用的是 SharePoint Online 程式庫之類的雲端資源。
 
- 啟用 BranchCache 時，當用戶端電腦從遠端 Windows Server Essentials 伺服器要求內容時，會在本機辦公室快取內容。 之後，同一個辦公室內的其他電腦便可以在本機取得內容，而不需要透過 WAN 從伺服器重新下載內容。 這會提升網路應用程式的效能，並降低 WAN 上的頻寬使用量。
+ 在啟用 BranchCache 的情況下，當用戶端電腦從遠端 Windows Server Essentials 伺服器要求內容時，會在本機辦公室快取內容。 之後，同一個辦公室內的其他電腦便可以在本機取得內容，而不需要透過 WAN 從伺服器重新下載內容。 這會提升網路應用程式的效能，並降低 WAN 上的頻寬使用量。
 
- 無論您的 Windows Server Essentials 伺服器是本機或遠端，BranchCache 都可以改善伺服器共用資料夾的回應時間，以及裝載于伺服器 (的 Web 內容（例如 SharePoint Online 程式庫) ）。
+ 無論您的 Windows Server Essentials 伺服器是本機或遠端，BranchCache 都可以改善伺服器共用資料夾的回應時間，以及伺服器上裝載的 Web 內容 (例如 SharePoint Online 文件庫) 。
 
  由於 BranchCache 不需要新增硬體或網路拓撲變更，因此這項功能可讓您輕鬆地最佳化 WAN 上的頻寬使用量，並改善透過 WAN 存取之服務和資源的回應時間。
 
 ## <a name="branchcache-scenarios"></a>BranchCache 案例
  搭配遠端伺服器使用 BranchCache 的基本案例有三種：
 
--   您的 Windows Server Essentials 伺服器裝載在 Microsoft Azure 中。
+-   您的 Windows Server Essentials 伺服器裝載于 Microsoft Azure。
 
 -   您的 Windows Server Essentials 伺服器裝載于協力廠商服務提供者的資料中心。
 
 -   您的 Windows Server Essentials 伺服器位於不同實體位置的另一個辦公室。
 
 ## <a name="distributed-cache-mode"></a>分散式快取模式
- 在 Windows Server Essentials 中，BranchCache 會以*分散式*快取模式實行，這是 branchcache 中可用的兩種快取模式之一。 在分散式快取模式中，分公司的內容快取會分散在用戶端電腦之間。 由於不需要額外的硬體或拓撲變更，因此這種模式非常適合使用遠端伺服器或本機伺服器來存取 SharePoint Online 等雲端架構服務的小型辦公室。 當您開啟 Windows Server Essentials 中的 BranchCache 時，會執行分散式快取模式。
+ 在 Windows Server Essentials 中，BranchCache 會以 *分散式*快取模式（branchcache 中可用的兩個快取模式之一）來執行。 在分散式快取模式中，分公司的內容快取會分散在用戶端電腦之間。 由於不需要額外的硬體或拓撲變更，因此這種模式非常適合使用遠端伺服器或本機伺服器來存取 SharePoint Online 等雲端架構服務的小型辦公室。 當您在 Windows Server Essentials 中開啟 BranchCache 時，會實作為分散式快取模式。
 
 > [!NOTE]
 >  在有幾個或許多員工使用網路應用程式的較大型分公司中，以「託管快取模式」**(hosted cache mode) 實作 BranchCache 會很有幫助。 在託管快取模式中，內容快取會儲存在分公司的一或多部託管快取伺服器上。
@@ -44,11 +44,11 @@ BranchCache 可協助您優化網際網路使用方式、改善網路應用程�
 ## <a name="requirements"></a>需求
  若要在 Windows Server Essentials 中使用 BranchCache，您的伺服器和用戶端電腦必須符合下列需求：
 
--   伺服器必須執行 Windows Server Essentials 作業系統或具有 Windows Server Essentials 體驗角色的 Windows Server 2012 R2 Standard 或 Windows Server 2012 R2 Datacenter 作業系統。
+-   伺服器必須執行 Windows server Essentials 作業系統或 windows server 2012 R2 Standard 或 windows server 2012 R2 Datacenter 作業系統與 Windows Server Essentials 體驗角色。
 
-     在 Windows Server 2012 R2 Standard 或 Windows Server 2012 R2 Datacenter 伺服器上，當您新增 Windows Server Essentials 體驗角色時，會新增 BranchCache。 若要開啟 BranchCache，您必須使用網域系統管理員認證來登入 Windows Server Essentials 儀表板。
+     在 Windows Server 2012 R2 Standard 或 Windows Server 2012 R2 Datacenter Server 上，當您新增 Windows Server Essentials 體驗角色時，就會新增 BranchCache。 若要開啟 BranchCache，您將需要使用網域系統管理員認證登入 Windows Server Essentials 儀表板。
 
--   用戶端電腦必須執行 Windows 7 企業版、Windows 7 旗艦版、Windows 8 企業版或 Windows 8.1 企業作業系統。
+-   用戶端電腦必須執行 Windows 7 企業版、Windows 7 旗艦版、Windows 8 企業版或 Windows 8.1 企業版作業系統。
 
 -   在分散式快取模式中，所有用戶端電腦都必須在同一個子網路上。
 
@@ -57,13 +57,13 @@ BranchCache 可協助您優化網際網路使用方式、改善網路應用程�
 
 
 ## <a name="turn-branchcache-on"></a>開啟 BranchCache
- 若要在分散式快取模式中開啟 BranchCache，您只要按一下 [Windows Server Essentials 儀表板] 上的按鈕即可。 快取會立即開始並無障礙地執行。
+ 若要以分散式快取模式開啟 BranchCache，只要按一下 [Windows Server Essentials 儀表板] 上的按鈕即可。 快取會立即開始並無障礙地執行。
 
 #### <a name="to-turn-on-branchcache-in-windows-server-essentials"></a>開啟 Windows Server Essentials 中的 BranchCache
 
 1.  使用您的系統管理員帳戶登入 Windows Server Essentials 伺服器。
 
-2.  在 [Windows Server Essentials 儀表板] 上，按一下 [**設定**]。
+2.  在 [Windows Server Essentials 儀表板] 上，按一下 [ **設定**]。
 
      [設定精靈] 隨即開啟。
 

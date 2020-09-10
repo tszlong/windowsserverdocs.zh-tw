@@ -3,16 +3,16 @@ title: 新增-ImageDriverPackages
 description: ImageDriverPackages 的參考文章，可將驅動程式套件從驅動程式存放區新增至開機映射。
 ms.topic: reference
 ms.assetid: 9dc78909-a4d1-42a2-af8f-21ebcbfe8302
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 96717d5d906a56d9fd126f1cd06d4efdfe47db79
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 7ed7b9d8447cb797b3184bc4ca5b0cead13cc76a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029766"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622228"
 ---
 # <a name="add-imagedriverpackages"></a>新增-ImageDriverPackages
 

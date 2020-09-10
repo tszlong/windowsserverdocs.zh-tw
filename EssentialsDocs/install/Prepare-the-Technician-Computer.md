@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 8841c3aa-7aaa-4cc0-b1e1-ab0643f29586
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 4556a58e87f4ec57271979be0e00ada9f04a9f5b
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 8f25b7834cfd5752a556f537f6ced487142563a7
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181134"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623419"
 ---
 # <a name="prepare-the-technician-computer"></a>準備技術人員電腦
 
@@ -22,9 +22,9 @@ ms.locfileid: "87181134"
 
 -   準備具有 Windows 7、Windows 8 或 Windows 10 的電腦。
 
--   從[Microsoft 網站](https://go.microsoft.com/fwlink/?LinkID=248647)在執行 windows 7、windows 8 或 windows 10 的電腦上安裝 windows ADK。
+-   在執行 Windows 7 的電腦上安裝 Windows ADK，Windows 8 或從 [Microsoft 網站](https://go.microsoft.com/fwlink/?LinkID=248647)Windows 10。
 
 ## <a name="see-also"></a>另請參閱
 
- [使用 Windows Server ESSENTIALS ADK 消費者入門](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)[建立和自訂映射額外的](Creating-and-Customizing-the-Image.md)[自訂](Additional-Customizations.md)[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)
+ [使用 Windows Server ESSENTIALS ADK 消費者入門](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)[建立和自訂映射](Creating-and-Customizing-the-Image.md)[其他自訂](Additional-Customizations.md)專案[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)
 

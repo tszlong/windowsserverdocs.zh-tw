@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: f5fe1088-ebe7-4799-a47d-075b0048dea1
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 5b183ef2900d1ced267e991f43827438b57fb728
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 96d99bb41a528a3a2f86be2d876df6e777e4b790
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181004"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623143"
 ---
 # <a name="manage-devices-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的裝置
 
@@ -32,7 +32,7 @@ ms.locfileid: "87181004"
 
 -   [檢視電腦內容](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_8)
 
-##  <a name="manage-devices-by-using-the-dashboard"></a><a name="BKMK_1"></a>使用儀表板管理裝置
+##  <a name="manage-devices-by-using-the-dashboard"></a><a name="BKMK_1"></a> 使用儀表板來管理裝置
  Windows Server Essentials 可讓您使用 [Windows Server Essentials 儀表板] 來執行一般系統管理工作。 [儀表板] 的 [裝置]**** 頁面提供下列各項：
 
 -   一份網路電腦清單，當中顯示：
@@ -84,7 +84,7 @@ ms.locfileid: "87181004"
 |如何將電腦連線到伺服器？|會開啟說明主題，說明將電腦加入網路所需執行的步驟。|
 |實作群組原則|會將原則設定套用到加入網域的 Windows 8 和 Windows 7 電腦。|
 
-##  <a name="assign-user-accounts-permission-to-log-on-to-specific-network-computers"></a><a name="BKMK_2"></a>指派使用者帳戶許可權以登入特定網路電腦
+##  <a name="assign-user-accounts-permission-to-log-on-to-specific-network-computers"></a><a name="BKMK_2"></a> 將登入特定網路電腦的許可權指派給使用者帳戶
  您可以指派權限給使用者帳戶，讓使用者在從遠端位置存取 Windows Server Essentials 網路時，只能登入特定的網路電腦。
 
 #### <a name="to-change-the-computer-access-for-a-user-account"></a>變更使用者帳戶的電腦存取權
@@ -95,15 +95,15 @@ ms.locfileid: "87181004"
 
 3.  在使用者帳戶清單中，選取您想要變更的使用者帳戶。
 
-4.  在 [ **<使用者帳戶 \> **工作] 窗格中，按一下 **[查看帳戶屬性**]。 使用者帳戶的 [內容]**** 頁面隨即出現。
+4.  在 [ **<使用者帳戶 \> ** 工作] 窗格中，按一下 [ **查看帳戶屬性**]。 使用者帳戶的 [內容]**** 頁面隨即出現。
 
 5.  在 [電腦存取]**** 索引標籤上，選取這個使用者可以從遠端存取的電腦，然後按一下 [確定]****。
 
-##  <a name="remove-a-computer-from-the-server"></a><a name="BKMK_3"></a>從伺服器移除電腦
+##  <a name="remove-a-computer-from-the-server"></a><a name="BKMK_3"></a> 從伺服器移除電腦
  當您使用 [儀表板] 將電腦從執行 Windows Server Essentials 的伺服器中移除時，它就不再受伺服器管理。 如此一來，在將它從網路中移除之後，伺服器就會停止建立電腦備份或監視它的健康情況。
 
 > [!NOTE]
->  將電腦從伺服器中移除並不會中斷電腦與網路的連線。 電腦仍然可以存取網路上的資源，就像在它連線到伺服器之前一樣。 若要防止電腦存取伺服器資源並中斷其與伺服器的連線，您必須將電腦從網域中移除。 此外，將電腦從伺服器中移除並不會自動將「連線程式」軟體或「啟動列」從被移除的電腦中解除安裝。 您必須手動從電腦移除「連線程式」軟體。 如需詳細資訊，請參閱在[取得連線](../use/Get-Connected-in-Windows-Server-Essentials.md)中卸載連接器軟體一節。
+>  將電腦從伺服器中移除並不會中斷電腦與網路的連線。 電腦仍然可以存取網路上的資源，就像在它連線到伺服器之前一樣。 若要防止電腦存取伺服器資源並中斷其與伺服器的連線，您必須將電腦從網域中移除。 此外，將電腦從伺服器中移除並不會自動將「連線程式」軟體或「啟動列」從被移除的電腦中解除安裝。 您必須手動從電腦移除「連線程式」軟體。 如需詳細資訊，請參閱「 [取得連接](../use/Get-Connected-in-Windows-Server-Essentials.md)時卸載連接器軟體」一節。
 
 #### <a name="to-remove-a-computer-from-the-network-by-using-the-dashboard"></a>使用儀表板將電腦從網路中移除
 
@@ -113,7 +113,7 @@ ms.locfileid: "87181004"
 
 3.  在電腦清單中，於您想要從網路中移除的電腦上按一下滑鼠右鍵，然後按一下 [移除電腦]****。
 
-##  <a name="configure-group-policy-settings-for-folder-redirection-and-security"></a><a name="BKMK_5"></a>設定資料夾重新導向和安全性的群組原則設定
+##  <a name="configure-group-policy-settings-for-folder-redirection-and-security"></a><a name="BKMK_5"></a> 設定資料夾重新導向和安全性的群組原則設定
  您可以使用 [Windows Server Essentials 儀表板] 來設定「群組原則」並將它部署到 Windows Server Essentials 網路中的電腦。 Windows Server Essentials 中的「群組原則」包括會影響 Windows Update、Windows Defender 及網路防火牆的資料夾重新導向和安全性設定。
 
 #### <a name="to-configure-group-policy-in-windows-server-essentials"></a>設定 Windows Server Essentials 中的群組原則
@@ -122,9 +122,9 @@ ms.locfileid: "87181004"
 
 2.  在瀏覽列上，按一下 [裝置]****。
 
-3.  針對 Windows Server Essentials：在全域 [**使用者**工作] 窗格中，按一下 [**執行群組原則**]。
+3.  若為 Windows Server Essentials：在 [全域 **使用者** 工作] 窗格中，按一下 [ **執行群組原則**]。
 
-     針對 Windows Server Essentials：在 [全域**裝置**工作] 窗格中，按一下 [**執行群組原則**]。
+     若為 Windows Server Essentials：在 [全域 **裝置** 工作] 窗格中，按一下 [ **執行群組原則**]。
 
 4.  [實作群組原則精靈] 隨即開啟。
 
@@ -134,8 +134,8 @@ ms.locfileid: "87181004"
 
 7.  按一下 [完成]**** 來實作「群組原則」設定。
 
-##  <a name="connect-to-a-network-computer-by-using-a-remote-desktop-session"></a><a name="BKMK_7"></a>使用遠端桌面會話連接到網路電腦
- 當您不在辦公室時，若要從遠端存取您的 Windows Server Essentials 網路電腦，請使用您的網頁瀏覽器登入組織的遠端 Web 存取網站，然後在 [**電腦**] 索引標籤上，按一下電腦的名稱。
+##  <a name="connect-to-a-network-computer-by-using-a-remote-desktop-session"></a><a name="BKMK_7"></a> 使用遠端桌面會話連接到網路電腦
+ 當您離開辦公室時，若要從遠端存取您的 Windows Server Essentials 網路電腦，請使用網頁瀏覽器登入您組織的遠端 Web 存取網站，然後在 [ **電腦** ] 索引標籤上，按一下電腦的名稱。
 
  [狀態]**** 欄會顯示您是否可以連線到網路上的某部電腦，並且可包含下列值：
 
@@ -155,7 +155,7 @@ ms.locfileid: "87181004"
 
      電腦連線被防火牆封鎖，或遠端桌面在電腦上被停用或被「群組原則」停用。 如果這個狀態有變更，可能需要多達 6 小時的時間才會在伺服器上更新。
 
-##  <a name="view-computer-properties"></a><a name="BKMK_8"></a>View computer properties
+##  <a name="view-computer-properties"></a><a name="BKMK_8"></a> 查看電腦屬性
  [Windows Server Essentials 儀表板] 的 [裝置]**** 區段會顯示網路電腦的清單。 這份清單也會提供每部電腦的其他相關資訊。
 
 #### <a name="to-view-a-list-of-computers"></a>檢視電腦清單
@@ -170,13 +170,13 @@ ms.locfileid: "87181004"
 
 1.  在電腦清單中，選取您想要檢視或變更內容的帳戶。
 
-2.  在 [ **<Computername \> **工作] 窗格中，按一下 **[查看電腦**內容]。 電腦的 [內容]**** 頁面隨即出現。
+2.  在 [ **<Computername \> ** 工作] 窗格中，按一下 **[流覽電腦**內容]。 電腦的 [內容]**** 頁面隨即出現。
 
 3.  按一下索引標籤以顯示該電腦的內容。
 
 4.  若要儲存您對電腦內容所做的任何變更，請按一下 [套用]****。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [管理遠端 Web 存取](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)
 

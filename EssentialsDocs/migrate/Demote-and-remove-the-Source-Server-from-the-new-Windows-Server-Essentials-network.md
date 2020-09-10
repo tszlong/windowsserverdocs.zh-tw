@@ -1,24 +1,24 @@
 ---
-title: 從新的 Windows Server Essentials 中降級和移除來源伺服器
+title: 從新的 Windows Server Essentials 的伺服器降級和移除來源伺服器
 description: 說明如何使用 Windows Server Essentials
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: d9f18b29-8e03-439e-bdf0-1dac5e4f70c5
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: e55c717b1eeb5b8f75ebfb7b48abd656dd4ddaa3
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 3e0902f99be96e3197b90b4892f78849a5c84125
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838425"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622888"
 ---
-# <a name="demote-and-remove-the-source-server-from-the-new-windows-server-essentials-network1"></a>從新的 Windows Server Essentials 中降級和移除來源伺服器
+# <a name="demote-and-remove-the-source-server-from-the-new-windows-server-essentials-network1"></a>從新的 Windows Server Essentials 的伺服器降級和移除來源伺服器
 
 >適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-在您完成安裝 Windows Server Essentials 並完成 [遷移嚮導] 中的工作之後，您必須執行下列工作：
+在您完成安裝 Windows Server Essentials 並在 [遷移嚮導] 中完成工作之後，您必須執行下列工作：
 
 
 1.  [卸載 Exchange Server 2003](Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_UninstallExchangeServer2003)。
@@ -32,10 +32,10 @@ ms.locfileid: "87838425"
 5.  [移除和重新規劃來源伺服器](Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_RemoveTheSourceServer)。
 
 
-###  <a name="uninstall-exchange-server-2003"></a><a name="BKMK_UninstallExchangeServer2003"></a>卸載 Exchange Server 2003
+###  <a name="uninstall-exchange-server-2003"></a><a name="BKMK_UninstallExchangeServer2003"></a> 卸載 Exchange Server 2003
 
 > [!IMPORTANT]
->  如果您新增使用者帳戶的時間是在信箱移到目的地伺服器之後和從來源伺服器解除安裝 Exchange Server 2003 之前，則信箱會新增到來源伺服器上。 這是原廠設定。 您必須將這段時間內新增的所有使用者帳戶的信箱移到目的地伺服器。 在卸載 Exchange Server 2003 之前，請重複移動 Exchange Server 的信箱和設定以進行 Windows Server Essentials 遷移中的指示。
+>  如果您新增使用者帳戶的時間是在信箱移到目的地伺服器之後和從來源伺服器解除安裝 Exchange Server 2003 之前，則信箱會新增到來源伺服器上。 這是原廠設定。 您必須將這段時間內新增的所有使用者帳戶的信箱移到目的地伺服器。 在卸載 Exchange Server 2003 之前，請重複「移動 Exchange Server 信箱及設定以進行 Windows Server Essentials 遷移」中的指示。
 
  在您將來源伺服器降級之前，您必須從來源伺服器解除安裝 Exchange Server 2003。 這樣會移除在 Active Directory 網域服務 (AD DS) 中對來源伺服器上 Exchange Server 的所有參照。 您必須備妥您的 Windows Small Business Server 2003 媒體才能移除 Exchange Server 2003。
 
@@ -53,17 +53,17 @@ ms.locfileid: "87838425"
 
    > [!NOTE]
    >
-   >  Exchange Server 會檢查伺服器上是否已沒有信箱或公用資料夾。 如果有遺留的資料，當您按一下 [移除]**** 時會出現錯誤訊息。 若要避免這個問題，請確定您已完成[將 SBS 2003 設定和資料移至目的地伺服器](./move-windows-sbs-2003-to-the-destination-server-for-migration.md)主題中的所有程式。
+   >  Exchange Server 會檢查伺服器上是否已沒有信箱或公用資料夾。 如果有遺留的資料，當您按一下 [移除]**** 時會出現錯誤訊息。 若要避免這個問題，請確定您已完成將 [SBS 2003 設定和資料移至目的地伺服器](./move-windows-sbs-2003-to-the-destination-server-for-migration.md)主題中的所有程式。
 
 
 6. 按 [下一步] 。
 
 7. 出現提示時，插入 Windows Small Business Server 2003 CD#3，並依照畫面上的指示進行。
 
-###  <a name="disconnect-printers-that-are-directly-connected-to-the-source-server"></a><a name="BKMK_PhysicallyDisconnect"></a>中斷直接連線到來源伺服器的印表機
+###  <a name="disconnect-printers-that-are-directly-connected-to-the-source-server"></a><a name="BKMK_PhysicallyDisconnect"></a> 中斷直接連線到來源伺服器的印表機
  在降級來源伺服器之前，請中斷任何直接連線到來源伺服器，並透過來源伺服器共用的印表機。 請確定沒有保留任何直接連線到來源伺服器的印表機的 Active Directory 物件。 然後，印表機可以直接連接到目的地伺服器，並從 Windows Server Essentials 共用。
 
-###  <a name="demote-the-source-server"></a><a name="BKMK_DemoteTheSourceServer"></a>將來源伺服器降級
+###  <a name="demote-the-source-server"></a><a name="BKMK_DemoteTheSourceServer"></a> 降級來源伺服器
  在將來源伺服器從 AD DS 網域控制站的角色降級到網域成員伺服器角色之前，請確定群組原則設定會套用到所有的用戶端電腦，如下列程序所述。
 
 > [!IMPORTANT]
@@ -77,7 +77,7 @@ ms.locfileid: "87838425"
 
 3.  在命令提示字元中，輸入 **gpupdate /force**，然後按 ENTER。
 
-4.  可能需要您登出再重新登入，以完成處理程序。 按一下 [是]**** 以確認。
+4.  可能需要您登出再重新登入，以完成處理程序。 按一下 [是]  確認。
 
 ##### <a name="to-demote-the-source-server"></a>將來源伺服器降級
 
@@ -108,7 +108,7 @@ ms.locfileid: "87838425"
 
 4.  請確認沒有列出來源伺服器，並關閉 [Active Directory 使用者和電腦]****。
 
-###  <a name="move-the-dhcp-server-role-from-the-source-server-to-the-router"></a><a name="BKMK_MoveTheDHCPRole"></a>將 DHCP 伺服器角色從來源伺服器移到路由器
+###  <a name="move-the-dhcp-server-role-from-the-source-server-to-the-router"></a><a name="BKMK_MoveTheDHCPRole"></a> 將 DHCP 伺服器角色從來源伺服器移至路由器
 
 > [!NOTE]
 >
@@ -138,7 +138,7 @@ ms.locfileid: "87838425"
     > [!IMPORTANT]
     >  如果您沒有為目的地伺服器的路由器設定靜態 IP 或 DHCP 保留區，且 DHCP 範圍與來源伺服器的 DHCP 範圍不相同，路由器可能為目的地伺服器發出新的 IP 位址。 如果發生這種情況，請重設路由器的連接埠轉送規則，轉送至目的地伺服器的新 IP 位址。
 
-###  <a name="remove-and-repurpose-the-source-server"></a><a name="BKMK_RemoveTheSourceServer"></a>移除和重新規劃來源伺服器
+###  <a name="remove-and-repurpose-the-source-server"></a><a name="BKMK_RemoveTheSourceServer"></a> 移除和重新規劃來源伺服器
  關閉來源伺服器，並中斷其網路連線。 建議您至少一週不要重新格式化來源伺服器，以確保所有必要的資料都移轉到目的地伺服器。 確認已移轉所有資料後，如有必要，您可以在網路上重新安裝這部伺服器，作為其他工作的次要伺服器。
 
 > [!NOTE]

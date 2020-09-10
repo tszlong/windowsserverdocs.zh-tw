@@ -3,16 +3,16 @@ title: 移除-映射
 description: 移除映射的參考文章，這會從伺服器刪除影像。
 ms.topic: reference
 ms.assetid: ce5e2384-2264-4b22-92af-74eec8c10ae0
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: d720a924424840224afd1ecd88c48c4f9a9a1163
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: b09735e552024abb09b59b9e1c9831988fbc601f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89023182"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622544"
 ---
 # <a name="remove-image"></a>移除-映射
 

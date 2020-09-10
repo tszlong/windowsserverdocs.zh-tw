@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 681c6cad-7fde-494f-86a5-f4c7c15d23f9
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 32f0e0b29b949c52f15834e8bf1b3a2a2da8f005
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: a08b8f284701cf486f23a22604ea0c90740146d4
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181114"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623408"
 ---
 # <a name="preparing-the-image-for-deployment"></a>準備用於部署的映像
 
@@ -118,7 +118,7 @@ ms.locfileid: "87181114"
     ```
 
     > [!IMPORTANT]
-    >  您也可以將 unattend.xml 新增至 %systemdrive% 之下而不新增為 sysprep 參數。 如果檔案位於 c：\ 之下它會由使用者的設定涵蓋，但如果做為 sysprep 的參數使用，則不會由使用者的設定涵蓋。 %systemdrive% 之下的 unattend.xml 將會在每次重新啟動伺服器時刪除。 因此，當您在 %systemdrive% 之下建立 unattend.xml 後，請確認伺服器並未重新啟動。
+    >  您也可以將 unattend.xml 新增至 %systemdrive% 之下而不新增為 sysprep 參數。 如果檔案位於 c：\ 底下它會由使用者的設定所涵蓋，但如果作為 sysprep 的參數，則不會包含在使用者的設定中。 %systemdrive% 之下的 unattend.xml 將會在每次重新啟動伺服器時刪除。 因此，當您在 %systemdrive% 之下建立 unattend.xml 後，請確認伺服器並未重新啟動。
 
 10. 執行下列命令新增登錄機碼以略過 Windows OOBE 機碼頁面。
 

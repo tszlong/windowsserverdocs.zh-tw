@@ -6,14 +6,14 @@ ms.topic: article
 H1: 在 Windows Server Essentials 目的地伺服器上啟用資料夾重新導向
 ms.assetid: f67d195e-36f6-495a-8361-6d5faa889441
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: d473ebe95ef4b230968d258e1d0087421d49d86e
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 9ea3b7b6c42c85ef553e56f017d068fabea42eee
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180774"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622872"
 ---
 # <a name="enable-folder-redirection-on-the-windows-server-essentials-destination-server1"></a>啟用 Windows Server Essentials 目的地伺服器 1 的資料夾重新導向
 
@@ -39,7 +39,7 @@ ms.locfileid: "87180774"
 
 1. 在目的地伺服器上，開啟 [群組原則管理]**** 系統管理工具。
 
-2. 在**群組原則管理**] 中，展開 [**樹系：**<em>YourNetworkDomainName</em>]，展開 [**網域**]，展開 [ *YourNetworkDomainName*]，然後展開 [**群組原則物件**]。
+2. 在 **群組原則管理**] 中，展開 [ **樹系：**<em>YourNetworkDomainName</em>]，展開 [ **網域**]，展開 [ *YourNetworkDomainName*]，然後展開 [ **群組原則物件**]。
 
 3. 以滑鼠右鍵按一下 [W7PVP 資料夾重新導向]****，然後按一下 [刪除]****。
 

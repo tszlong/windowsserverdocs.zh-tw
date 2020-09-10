@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 47e498a6-1b71-47de-88f6-8c13c221d108
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 885a10ee9b5a684c385de9baa0ebcdfac61f2c0e
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 6b93e0e31c592a11d44aca74029012a1b6229227
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180824"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622986"
 ---
 # <a name="restore-a-full-system-from-an-existing-client-computer-backup"></a>從現有的用戶端電腦備份還原完整的系統
 
@@ -32,7 +32,7 @@ ms.locfileid: "87180824"
 
 -   [我可以在哪裡找到硬碟的驅動程式？](Restore-a-full-system-from-an-existing-client-computer-backup.md#BKMK_FindDrivers)
 
-##  <a name="what-is-computer-full-system-restore"></a><a name="BKMK_WhatIs"></a>什麼是電腦完整系統還原？
+##  <a name="what-is-computer-full-system-restore"></a><a name="BKMK_WhatIs"></a> 什麼是電腦完整系統還原？
  如果是更換硬碟，或您的電腦因故障而無法使用或啟動的程度，您可以從電腦先前的備份還原系統。 完整系統還原會將系統還原至其備份時的狀態。
 
 > [!IMPORTANT]
@@ -43,30 +43,30 @@ ms.locfileid: "87180824"
  當您規劃或準備還原完整系統到網路電腦時，請考慮下列事項：
 
 ### <a name="windows-preinstallation-environment"></a>Windows 預先安裝環境
- Windows 預先安裝環境 (Windows PE) 的設計是為了準備電腦以安裝 Windows 的最小作業系統。 對於執行 Windows Server Essentials 的伺服器，當您將還原媒體插入要還原的電腦上時，系統會自動安裝 Windows PE。 對於執行 Windows Server Essentials 的伺服器，當您使用用戶端還原服務或 USB 快閃磁片磁碟機啟動電腦時，系統會自動安裝 Windows PE。
+ Windows 預先安裝環境 (Windows PE) 的設計是為了準備電腦以安裝 Windows 的最小作業系統。 若為執行 Windows Server Essentials 的伺服器，當您在要還原的電腦上插入還原媒體時，會自動安裝 Windows PE。 若為執行 Windows Server Essentials 的伺服器，當您使用用戶端還原服務或 USB 快閃磁片磁碟機啟動電腦時，就會自動安裝 Windows PE。
 
  Windows PE 不支援無線連線。 因此，要進行還原的電腦必須實際連接到小型企業網路。
 
 ### <a name="bitlocker"></a>BitLocker
- BitLocker 磁碟機加密（BitLocker）是一種資料保護功能，可在某些版本的 Windows Vista、Windows 7 和 Windows 8 中使用。 BitLocker 可保護遺失或遭竊電腦上的資料免於遭竊或外洩，並在解除委任電腦時，提供更安全的資料刪除作業。
+ BitLocker 磁碟機加密 (BitLocker) 是在某些 Windows Vista、Windows 7 和 Windows 8 版本中提供的資料保護功能。 BitLocker 可保護遺失或遭竊電腦上的資料免於遭竊或外洩，並在解除委任電腦時，提供更安全的資料刪除作業。
 
- 若**為 Windows Server Essentials：** 如果您需要還原的電腦使用 BitLocker 加密（無論是只有作業系統磁片磁碟機，或是作業系統磁片磁碟機和單一或多個其他硬碟磁片磁碟機），您仍然可以使用伺服器隨附的 CD 所包含的完整系統還原媒體和 [完整系統還原嚮導]，從備份重新安裝硬碟映射（包括作業系統），並將資料還原到新的或修復的電腦。
+ 若**為 Windows Server Essentials：** 如果您需要還原的電腦使用 BitLocker 加密 (是否只是作業系統磁片磁碟機、作業系統磁片磁碟機以及單一或多個其他固定磁片磁碟機) 您仍然可以使用伺服器隨附的完整系統還原媒體，以及完整的系統還原 Wizard，從備份重新安裝硬碟映射（包括作業系統），並將資料還原到新的或修復的電腦。
 
- 若**為 Windows Server Essentials：** 如果您需要還原的電腦使用 BitLocker 加密（無論是只有作業系統磁片磁碟機，還是作業系統磁片磁碟機，以及單一或多個其他硬碟磁片磁碟機），您仍然可以使用 [完整系統還原嚮導]，從備份重新安裝硬碟映射（包括作業系統），並將資料還原到新的或修復的電腦。
+ 若**為 Windows Server Essentials：** 如果您需要還原的電腦使用 BitLocker 加密 (無論是只有作業系統磁片磁碟機，或是作業系統磁片磁碟機與單一或多個其他固定磁片磁碟機) ，您仍然可以使用完整的系統還原 Wizard，從備份重新安裝硬碟映射（包括作業系統），並將資料還原到新的或修復的電腦。
 
  當伺服器備份磁碟機、資料夾和檔案時，未加密的版本會儲存到伺服器。 在完整系統還原期間，會將這份未加密的版本複製到電腦中。
 
 > [!NOTE]
 >  成功完成完整系統還原之後，您必須在電腦上重新啟用 BitLocker。
 >
->  如需有關如何在執行 Windows 8 的電腦上啟用 BitLocker 的指示，請參閱[BitLocker：如何啟用 bitlocker](https://go.microsoft.com/fwlink/p/?LinkID=254918)。
+>  如需有關如何在執行 Windows 8 的電腦上啟用 BitLocker 的指示，請參閱 [bitlocker：如何啟用 bitlocker](https://go.microsoft.com/fwlink/p/?LinkID=254918)。
 >
->  如需有關如何在執行 Windows 7 的電腦上啟用 BitLocker 的指示，請參閱[Windows 7 BitLocker 磁碟機加密逐步指南](https://go.microsoft.com/fwlink/p/?LinkId=140225)。
+>  如需有關如何在執行 Windows 7 的電腦上啟用 BitLocker 的指示，請參閱 [BitLocker 磁碟機加密 windows 7 的逐步指南](https://go.microsoft.com/fwlink/p/?LinkId=140225)。
 
  如需 BitLocker 磁碟機加密基本概念的詳細資訊，請參閱 [BitLocker 常見問題集 (FAQ)](https://go.microsoft.com/fwlink/p/?LinkID=254917)。
 
 ### <a name="encrypting-file-system-encrypted-files"></a>加密檔案系統加密的檔案
- Windows 中的加密檔案系統 (EFS) 功能可以針對相同電腦的多個使用者，提供以使用者為基礎的額外檔案層級加密，以達到不同的安全性層級。 值得注意的是，與使用 BitLocker 加密的磁碟機不同，EFS 加密的資料夾及檔案在任何電腦備份中會持續加密。 EFS 不適用於 Windows XP Home Edition、Windows Vista Starter、Windows Vista Home Basic、Windows Vista Home Premium、Windows 7 Starter、Windows 7 Home Basic、Windows 7 Home Premium 或 Windows 8。 它只在 Windows 8 專業版中提供。
+ Windows 中的加密檔案系統 (EFS) 功能可以針對相同電腦的多個使用者，提供以使用者為基礎的額外檔案層級加密，以達到不同的安全性層級。 值得注意的是，與使用 BitLocker 加密的磁碟機不同，EFS 加密的資料夾及檔案在任何電腦備份中會持續加密。 EFS 在 Windows XP Home Edition、Windows Vista Starter、Windows Vista Home Basic、Windows Vista Home Premium、Windows 7 Starter、Windows 7 Home Basic、Windows 7 Home Premium 或 Windows 8 中無法使用。 它只在 Windows 8 專業版中提供。
 
 > [!WARNING]
 >  與 BitLocker 不同，您只能從為 EFS 保護的檔案進行加密的作業系統存取這些檔案。
@@ -85,8 +85,8 @@ ms.locfileid: "87180824"
 ### <a name="raid-and-dynamic-disks"></a>RAID 和動態磁碟
  不支援備份獨立磁碟容錯陣列 (RAID) 及動態磁碟。
 
-##  <a name="how-does-the-system-restore-environment-work"></a><a name="BKMK_HowDoes"></a>系統還原環境如何運作？
- Windows Server 2012 Essentials 提供的系統還原媒體會在 &reg; 電腦上安裝 Windows 預先安裝環境（WINDOWS PE）。 Windows PE 會取代 MS-DOS 環境並且包含適用於 Windows 的核心程式檔案。 在 Windows Server Essentials 中，有兩種支援的方法可以還原系統：使用用戶端還原服務，其使用網路且不依賴媒體，或使用 USB 快閃磁片磁碟機。
+##  <a name="how-does-the-system-restore-environment-work"></a><a name="BKMK_HowDoes"></a> 系統還原環境如何運作？
+ Windows ServerÂ 2012 Essentials 提供的系統還原媒體會在 &reg; 電腦上安裝 Windows 預先安裝環境 (Windows PE) 。 Windows PE 會取代 MS-DOS 環境並且包含適用於 Windows 的核心程式檔案。 在 Windows Server Essentials 中，還原系統有兩種支援的方法：使用用戶端還原服務，該服務使用網路而不依賴媒體或使用 USB 快閃磁片磁碟機。
 
 > [!NOTE]
 >  Windows PE 不支援無線連線。 因此，要進行還原的電腦必須實際連接到小型企業網路。
@@ -97,8 +97,8 @@ ms.locfileid: "87180824"
 
  在大多數的狀況下，系統還原環境中所包含的程式檔案和驅動程式，就是您重新啟動全新或已還原電腦所需的一切。 視新的或還原的電腦硬體而定，系統還原環境可能不包含您重新啟動全新或已還原電腦時，所需要的所有存放裝置與網路介面卡驅動程式。 如有必要，完整系統還原精靈會讓您安裝驅動程式。 如需如何尋找硬體驅動程式的相關資訊，請參閱[我可以在哪裡找到硬體的驅動程式？](Restore-a-full-system-from-an-existing-client-computer-backup.md#BKMK_FindDrivers)。 如需如何使用系統還原媒體的相關資訊，請參閱[使用完整系統還原精靈](Restore-a-full-system-from-an-existing-client-computer-backup.md#BKMK_Using)。
 
-##  <a name="create-a-bootable-usb-flash-drive-to-restore-a-client-computer"></a><a name="BKMK_CreateBootable"></a>建立可開機的 USB 快閃磁片磁碟機，以還原用戶端電腦
- 如果您需要從現有的備份還原用戶端電腦，但找不到伺服器隨附的還原光碟（在 Windows Server Essentials 中），或您不想在伺服器上設定用戶端還原服務（在 Windows Server Essentials 中），您可以建立可開機的 USB 快閃磁片磁碟機。 然後您便可使用 USB 快閃磁碟機開啟用戶端電腦並還原系統。 您所使用的 USB 快閃磁碟機必須至少為 1 GB 或更大。
+##  <a name="create-a-bootable-usb-flash-drive-to-restore-a-client-computer"></a><a name="BKMK_CreateBootable"></a> 建立可開機的 USB 快閃磁片磁碟機以還原用戶端電腦
+ 如果您需要從現有的備份還原用戶端電腦，但是在 Windows Server Essentials 中找不到伺服器 (的還原 CD) 或者您不想要在 Windows Server Essentials) 的伺服器 (上設定用戶端還原服務，可以建立可開機的 USB 快閃磁片磁碟機。 然後您便可使用 USB 快閃磁碟機開啟用戶端電腦並還原系統。 您所使用的 USB 快閃磁碟機必須至少為 1 GB 或更大。
 
 #### <a name="to-create-a-bootable-usb-flash-drive"></a>建立可開機的 USB 快閃磁碟機
 
@@ -109,7 +109,7 @@ ms.locfileid: "87180824"
 3.  在 **[工作]** 窗格中，按一下 **[自訂電腦備份和檔案記錄設定]**。
 
     > [!NOTE]
-    >  在 Windows Server Essentials 中，按一下 [**用戶端電腦備份工作**]。
+    >  在 Windows Server Essentials 中，按一下 [ **用戶端電腦備份工作**]。
 
 4.  按一下 **[工具]** 標籤，然後在 **[電腦復原]** 中按一下 **[建立金鑰]**。 便會開啟 [建立電腦金鑰修復精靈]。
 
@@ -118,13 +118,13 @@ ms.locfileid: "87180824"
     > [!CAUTION]
     >  將會刪除 USB 快閃磁碟機上的所有資料。
 
-##  <a name="using-the-full-system-restore-wizard"></a><a name="BKMK_Using"></a>使用完整系統還原嚮導
+##  <a name="using-the-full-system-restore-wizard"></a><a name="BKMK_Using"></a> 使用完整的系統還原 Wizard
  在成功使用還原媒體、用戶端還原服務或 USB 快閃磁碟機啟動您的電腦並驗證所有硬碟驅動程式都載入已還原或新的用戶端電腦上之後，[完整系統還原精靈] 就會出現。 此精靈可讓您存取伺服器、電腦備份以及您想要還原到電腦的來源磁碟區，並執行實際的還原程序。
 
 > [!NOTE]
 >   Windows Server Essentials 不支援下列還原案例：
 >
-> - 將主開機記錄（MBR）磁片還原至整合可延伸韌體介面（UEFI）架構的電腦。
+> - 將主開機記錄 (MBR) 磁片還原至統一的可延伸韌體介面 (UEFI) 型電腦。
 >   -   將 UEFI/GPT 備份還原到 BIOS 系統。
 >
 >   如果您在以下任一案例中還原資料，便無法將系統開機。 此外，您可能無法使用大小大於 2 TB 的硬碟。
@@ -136,7 +136,7 @@ ms.locfileid: "87180824"
     > [!WARNING]
     >  請勿嘗試對透過無線方式連線網路的電腦執行完整系統還原。
 
--   如果您知道電腦遺失重要網路或存放裝置驅動程式，您需要尋找並將這些驅動程式複製到快閃磁碟機，才能開始完整系統還原程序。 針對 Windows Server Essentials：如果您使用 CD 上所提供的完整系統還原媒體，則在完整系統還原程式的開始部分期間，該 CD 必須留在磁片磁碟機中。 因此，除非您擁有第二部 CD/DVD 光碟機，否則不應將遺失的驅動程式複製到 CD 或 DVD。 改將遺失的驅動程式複製到 USB 快閃磁碟機。
+-   如果您知道電腦遺失重要網路或存放裝置驅動程式，您需要尋找並將這些驅動程式複製到快閃磁碟機，才能開始完整系統還原程序。 若為 Windows Server Essentials：如果您使用 CD 上所提供的完整系統還原媒體，則該 CD 必須在完整系統還原程式的開始部分期間留在磁片磁碟機中。 因此，除非您擁有第二部 CD/DVD 光碟機，否則不應將遺失的驅動程式複製到 CD 或 DVD。 改將遺失的驅動程式複製到 USB 快閃磁碟機。
 
      如需如何尋找電腦驅動程式的相關資訊，請參閱[我可以在哪裡找到硬體的驅動程式？](Restore-a-full-system-from-an-existing-client-computer-backup.md#BKMK_FindDrivers)
 
@@ -144,13 +144,13 @@ ms.locfileid: "87180824"
 
 #### <a name="to-use-the-full-system-restore-wizard"></a>若要使用完整系統還原精靈
 
-1. 請執行下列其中一項：
+1. 執行下列其中一個動作：
 
-   -   Windows Server Essentials：開啟您要還原的用戶端電腦、插入還原媒體，然後關閉電腦。
+   -   Windows Server Essentials：開啟您要還原的用戶端電腦，插入還原媒體，然後關閉電腦。
 
         重新開啟電腦，並在開機自我測試 (POST) 期間，按一下適當的功能鍵 (F 鍵) 以存取開機裝置功能表，然後選取 CD/DVD 光碟機。 Windows 開機管理程式隨即啟動。
 
-   -   Windows Server Essentials：如果您要使用用戶端還原服務，請使用 [**從網路開機**] 選項重新開機電腦。 否則，請使用 USB 金鑰啟動電腦。
+   -   Windows Server Essentials：如果您使用用戶端還原服務，請使用 [ **從網路開機** ] 選項重新開機電腦。 否則，請使用 USB 金鑰啟動電腦。
 
         再次開啟電腦，在開機自我測試 (POST) 期間，按下適當的功能鍵 (F 鍵) 來存取開機裝置功能表，然後選取 [從網路開機]**** (或可選擇從 USB 金鑰開機)。 Windows 開機管理程式隨即啟動。
 
@@ -163,7 +163,7 @@ ms.locfileid: "87180824"
 
 4. 選擇這部電腦適合的 **[時間及貨幣格式]**，以及 **[鍵盤或輸入法]**。 按一下 **[繼續]** 。
 
-5. 如果驅動程式遺失，則會顯示 [還原程式無法確認驅動程式] 訊息。 按一下 **[關閉]**，然後按一下 [歡迎使用] 對話方塊上的 **[載入驅動程式]**。
+5. 如果缺少驅動程式，則會顯示還原程式無法驗證驅動程式的訊息。 按一下 **[關閉]**，然後按一下 [歡迎使用] 對話方塊上的 **[載入驅動程式]**。
 
    1.  在 **[偵測硬體]** 對話方塊上，按一下 **[安裝驅動程式]**。
 
@@ -185,12 +185,12 @@ ms.locfileid: "87180824"
 
    3.  如果您的伺服器位於，則會顯示 [**登入 \> <您伺服器名稱**] 頁面。
 
-9. 在 [**登入 <您伺服器名稱 \> ** ] 頁面上，于 [**使用者名稱**] 文字方塊中輸入 *<系統 \> * ，並在 [**密碼**] 文字方塊中鍵入系統管理員帳戶密碼，然後按 **[下一步]**。
+9. 在 [**登入 <您伺服器名稱 \> ** ] 頁面上，于 [**使用者名稱**] 文字方塊中輸入 *<系統 \> * ，並在 [**密碼**] 文字方塊中輸入系統管理員帳戶密碼，然後按 **[下一步]**。
 
     > [!IMPORTANT]
     >  您必須使用以英文建立的系統管理員帳戶。 如果您沒有系統管理員帳戶，必須新建一個。 若要這麼做，請先開啟伺服器儀表板上的 [使用者]**** 索引標籤，接著將鍵盤語言格式設為英文，然後再執行 [新增使用者帳戶]**** 工作以建立系統管理員帳戶。 接下來，使用新的系統管理員帳戶繼續還原用戶端電腦。
 
-10. 在 **[選取要還原的電腦]** 頁面上，選取您要還原的電腦，然後按 **[下一步]**。 您可以選擇 [ **<ComputerName \> ：（這部電腦）** ] 或從 [**其他電腦**] 下拉式清單中選擇網路上的其他電腦。
+10. 在 **[選取要還原的電腦]** 頁面上，選取您要還原的電腦，然後按 **[下一步]**。 您可以選擇 **<ComputerName \> ： (這部電腦) ** 或從 [ **其他電腦** ] 下拉式清單中選擇網路上的其他電腦。
 
     > [!NOTE]
     >  如果這部電腦是伺服器未知的電腦 (例如新的或重新規劃的電腦)，則不會顯示 **[這部電腦]** 選項。
@@ -235,14 +235,14 @@ ms.locfileid: "87180824"
        1. 按一下 **[執行磁碟管理員 (進階)]**，並建立一個大小和系統保留磁碟區相同的新磁碟區。
 
           > [!NOTE]
-          >  如果用戶端電腦是以整合可延伸韌體介面（UEFI）為基礎，您必須使用**diskpart**工具來初始化系統磁片。 若要執行此作業，請開啟命令視窗 (在 WinPE 環境中按 Ctrl+Alt+Shift 5 秒鐘)，執行 **diskpart.exe**，然後執行下列 DiskPart 命令：
+          >  如果用戶端電腦是整合可延伸韌體介面 (UEFI) 型，則您必須使用 **diskpart** 工具來初始化系統磁片。 若要執行此作業，請開啟命令視窗 (在 WinPE 環境中按 Ctrl+Alt+Shift 5 秒鐘)，執行 **diskpart.exe**，然後執行下列 DiskPart 命令：
           >
           > 1. **DISKPART> 列出磁片**
           >    2. **DISKPART> 選取磁片 #** *<磁片 \> *
           >    3. **DISKPART&gt;clean**
           >    4. **DISKPART>convert gpt**
-          >    5. **DISKPART> 建立磁碟分割 efi 大小 =** *100* （其中*100*是範例分割區大小，以 MB 為單位），應與原始分割區相同）
-          >    6. **DISKPART> 建立磁碟分割 msr 大小 =** *128* （其中*128*是範例分割區大小，以 MB 為單位），應與原始分割區相同）
+          >    5. **DISKPART> 建立磁碟分割 efi 大小 =** *100* (其中 *100* 是磁碟分割大小（MB）的範例，其應與原始磁碟分割相同) 
+          >    6. **DISKPART> 建立分割 msr 大小 =** *128* (其中 *128* 是範例分割區大小（MB），應與原始磁碟分割相同) 
           >    7. **DISKPART>exit**
 
        2. *(選用)* 選取選項 **[不要指定磁碟機代號或磁碟路徑]**。
@@ -261,15 +261,15 @@ ms.locfileid: "87180824"
 
 16. 在 **[確認要還原的磁碟區]** 頁面上檢閱對應，然後按 **[下一步]**。 如果您需要進行變更，按一下 **[上一步]**，然後重複步驟 14。
 
-17. ** \> 從 [ \> 備份的 <日期和時間] 還原 <ComputerName**會報告還原程式的進度。
+17. ** \> 從 [備份 \> 的 <日期和時間] 分頁還原 <ComputerName**會報告還原程式的進度。
 
 18. 在 **[還原已成功完成]** 頁面上，取出還原媒體，然後按一下 **[完成]**。 電腦會重新啟動。
 
     > [!IMPORTANT]
     >  如果還原之前已在電腦上啟用 BitLocker 磁碟機加密，則您必須在電腦重新啟動之後手動啟用 BitLocker。
 
-##  <a name="where-can-i-find-the-drivers-for-my-hardware"></a><a name="BKMK_FindDrivers"></a>我可以在哪裡找到硬體的驅動程式？
- 視新的或還原的電腦硬體而定，還原媒體可能不包含您重新啟動已還原電腦時，所需要的所有存放裝置與網路介面卡驅動程式。 您必須判斷遺失哪些驅動程式、在現有的媒體或製造商的網站上尋找這些驅動程式、將它們複製到快閃磁片磁碟機，然後在執行 [完整系統還原嚮導] 時，將它們從快閃磁片磁碟機複製到新的或已還原的電腦。
+##  <a name="where-can-i-find-the-drivers-for-my-hardware"></a><a name="BKMK_FindDrivers"></a> 我可以在哪裡找到硬體的驅動程式？
+ 視新的或還原的電腦硬體而定，還原媒體可能不包含您重新啟動已還原電腦時，所需要的所有存放裝置與網路介面卡驅動程式。 您必須判斷遺失的驅動程式、在現有媒體或製造商的網站上找出這些驅動程式、將它們複製到快閃磁片磁碟機，然後在執行完整的系統還原 Wizard 時，從快閃磁片磁碟機將它們複製到新的或已還原的電腦。
 
  備份電腦時，會在備份中儲存電腦的驅動程式。 如果復原媒體未包含您需要的所有驅動程式，您可以開啟該電腦的備份，然後將驅動程式複製到 USB 快閃磁碟機。
 
@@ -294,7 +294,7 @@ ms.locfileid: "87180824"
 
    當您還原電腦時，可以使用此 USB 快閃磁碟機來安裝電腦的驅動程式。 使用 [完整系統還原精靈] 時，還原檔案或資料夾精靈會在此 USB 快閃磁碟機上尋找其他驅動程式。 您最可能需要的驅動程式是網路卡驅動程式與存放裝置驅動程式。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [管理備份與還原](Manage-Backup-and-Restore-in-Windows-Server-Essentials.md)
 

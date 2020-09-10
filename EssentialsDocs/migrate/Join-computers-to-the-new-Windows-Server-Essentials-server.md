@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: cdfa9504-9881-4265-b308-c7ee8721bfaa
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: cbc2276eb3c627ebb94469e0acef2b57d086b5e7
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 92bdcc107b3246fb1d288ab9b56f6c65d9b0634a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180744"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622820"
 ---
 # <a name="join-computers-to-the-new-windows-server-essentials-server1"></a>將電腦加入新的 Windows Server Essentials server1
 
@@ -38,11 +38,11 @@ ms.locfileid: "87180744"
 
  當來源伺服器與目的地伺服器仍保持線上狀態時，您應該確保群組原則設定已從目的地伺服器複寫到用戶端電腦上。 請在每部用戶端電腦上執行下列步驟：
 
-1.  開啟命令提示字元視窗。
+1.  開啟 [命令提示字元] 視窗。
 
 2.  在命令提示字元中輸入 **GPRESULT /R**，然後按 Enter。
 
-3.  檢查套用的群組原則區段所產生的輸出：並確定它會列出目的地伺服器，例如**列示 destinationsrv.domain.local**。 例如：
+3.  檢查從套用群組原則區段的輸出結果：並確定它列出目的地伺服器，例如**列示 destinationsrv.domain.local。** 例如：
 
     ```
     USER SETTINGS
@@ -62,6 +62,6 @@ ms.locfileid: "87180744"
 
     1.  按一下 [開始]****、[執行]****，輸入 **rsop.msc** (原則的結果集)，然後按 ENTER。
 
-    2.  展開具有 X 的樹狀結構，直到到達節點為止。
+    2.  展開樹狀結構上的 X，直到到達節點為止。
 
     3.  以滑鼠右鍵按一下節點，並按一下 [檢視錯誤]****，了解群組原則設定為何在列示的電腦上失敗。

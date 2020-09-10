@@ -3,16 +3,16 @@ title: 複製映射
 description: 複製映射的參考文章，會複製相同映射群組內的影像。
 ms.topic: reference
 ms.assetid: bea41cf4-36e6-4181-afa5-00170ebd4fdc
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 4907aa76e17059b101a3bbeb793eb159dcf24b91
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 15b838dff8c3b7a1ceb372416eaef5617a00f7ba
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038206"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622158"
 ---
 # <a name="copy-image"></a>複製映射
 

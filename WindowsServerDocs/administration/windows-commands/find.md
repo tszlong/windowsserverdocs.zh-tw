@@ -3,16 +3,16 @@ title: 尋找
 description: Find 命令的參考文章，會搜尋檔案中的文字字串，並在檔案中顯示指定的文字字串。
 ms.topic: reference
 ms.assetid: 2ca66b22-3b7c-4166-8503-eb75fc53ab46
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 34eb1f1cf3071147878f421307a91de921678cfc
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: b0317e856153c014df2656f0a98452b0c6428e82
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036535"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622375"
 ---
 # <a name="find"></a>尋找
 

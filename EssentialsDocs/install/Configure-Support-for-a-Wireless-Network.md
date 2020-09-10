@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 4d7020d4-fd46-4858-a406-de5c0f21ea06
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: e4ea807ad7620a333d069422bd45d3c1c17956c0
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 07bc83c7757111483305822ea5323f045ffe0252
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181434"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89621818"
 ---
 # <a name="configure-support-for-a-wireless-network"></a>設定無線網路支援
 
@@ -45,4 +45,4 @@ ms.locfileid: "87181434"
 >  如需設定網路連線的詳細資訊，請參閱[預先設定路由器](Preconfiguring-a-Router.md)。
 
 ## <a name="see-also"></a>另請參閱
- [建立和自訂映射額外的](Creating-and-Customizing-the-Image.md)[自訂](Additional-Customizations.md)[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)
+ [建立和自訂映射](Creating-and-Customizing-the-Image.md)[其他自訂](Additional-Customizations.md)專案[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)

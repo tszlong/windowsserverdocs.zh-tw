@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: c20b06b9-ce0d-4c20-bf49-257c3f5dc01b
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 9cb68b88bc19b8f0f62c5586e39e010d9caad151
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 1672c8168dd206c166ca44392ca290ebb311dcc6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181234"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623509"
 ---
 # <a name="hardware-requirements-for-the-target-computer"></a>目標電腦的硬體需求
 
@@ -36,10 +36,10 @@ ms.locfileid: "87181234"
 ## <a name="additional-hardware-and-software-requirements"></a>其他硬體和軟體需求
  下表列出其他硬體和軟體需求。
 
-|元件|說明|
+|元件|描述|
 |---------------|-----------------|
 |網路介面卡|Gigabit Ethernet 介面卡 (10/100/1000baseT PHY/MAC)|
-|Internet|某些功能可能需要存取網際網路（可能須收取費用）或 Windows Live &reg; ID 帳戶|
+|網際網路|某些功能可能需要網際網路存取 (費用可能會套用) 或 Windows Live &reg; ID 帳戶|
 |支援的用戶端作業系統|-Windows 7<br />-Windows 8<br />-Macintosh OS X 10.5 至10.8。<br /><br /> **注意：** 某些功能需要專業版或更高版本。<br /><br /> 1 GB 的可用硬碟空間 (安裝之後將會釋放此磁碟的某一部分)|
 |路由器|支援 IPv4 NAT 的路由器或防火牆|
 |其他需求|DVD-ROM 光碟機|
@@ -48,9 +48,9 @@ ms.locfileid: "87181234"
 
  如需硬體需求的詳細資訊，請參閱 [Windows Server Catalog](https://www.windowsservercatalog.com)。
 
- 所有伺服器硬體都應符合為系統的 Windows Server 2012 標誌計畫所建立的需求。 如需詳細資訊，請參閱 [Windows Logo Program](https://www.microsoft.com/whdc/winlogo/hwrequirements.mspx)。
+ 所有伺服器硬體都應符合為系統的 Windows Server 2012 標誌程式所建立的需求。 如需詳細資訊，請參閱 [Windows Logo Program](https://www.microsoft.com/whdc/winlogo/hwrequirements.mspx)。
 
 ## <a name="see-also"></a>另請參閱
 
- [使用 Windows Server ESSENTIALS ADK 消費者入門](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)[建立和自訂映射額外的](Creating-and-Customizing-the-Image.md)[自訂](Additional-Customizations.md)[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)
+ [使用 Windows Server ESSENTIALS ADK 消費者入門](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)[建立和自訂映射](Creating-and-Customizing-the-Image.md)[其他自訂](Additional-Customizations.md)專案[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)
 

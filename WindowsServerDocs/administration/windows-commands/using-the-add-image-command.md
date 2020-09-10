@@ -3,16 +3,16 @@ title: 新增映射
 description: 新增映射的參考文章，可將影像新增至 Windows 部署服務伺服器。
 ms.topic: reference
 ms.assetid: d5b6f4da-90ba-4b0e-9423-66c8ef5172e2
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 03f7a024b2d396f54db66a48353557f776552db1
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 6239cab5d4da67c5a115a0261bc0446022a1080c
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029826"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622251"
 ---
 # <a name="add-image"></a>新增映射
 

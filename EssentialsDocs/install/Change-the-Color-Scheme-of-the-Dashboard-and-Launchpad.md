@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: b2913e51-7979-4d48-a431-d2ec5f1042be
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 47d29fd8960de3f85031e59552219166946474f7
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 8450d96caede5a08d123f9bf5844953735d4c2b4
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181464"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89621911"
 ---
 # <a name="change-the-color-scheme-of-the-dashboard-and-launchpad"></a>變更儀表板及啟動列的色彩配置
 
@@ -137,34 +137,34 @@ ms.locfileid: "87181464"
 
 8.  將檔案複製到 %programFiles%\Windows Server\Bin\OEM。 如果 OEM 目錄不存在，請建立該目錄。
 
-##  <a name="dashboard-and-launchpad-areas-that-can-be-changed"></a><a name="BKMK_Dashboard"></a>可以變更的儀表板和啟動欄區域
+##  <a name="dashboard-and-launchpad-areas-that-can-be-changed"></a><a name="BKMK_Dashboard"></a> 可變更的儀表板和啟動欄區域
  本節包含可以自訂的儀表板和啟動列區域的範例。
 
 ### <a name="examples"></a>範例
 
-####  <a name="figure-1-sign-in-page-of-the-dashboard"></a><a name="BKMK_Figure1"></a>圖1：儀表板的登入頁面
+####  <a name="figure-1-sign-in-page-of-the-dashboard"></a><a name="BKMK_Figure1"></a> 圖1：儀表板的登入頁面
  ![Windows Server Essentials 儀表板](media/SBS8_ADK_Dashboard_Signin_RC.png "SBS8_ADK_Dashboard_Signin_RC")
 
-####  <a name="figure-2-launchpad"></a><a name="BKMK_Figure2"></a>圖2：啟動列
- ![Windows SBS 啟動控制板登&#45;于](media/SBS8_ADK_LaunchpadSignin2.png "SBS8_ADK_LaunchpadSignin2")
+####  <a name="figure-2-launchpad"></a><a name="BKMK_Figure2"></a> 圖2：啟動控制板
+ ![Windows SBS 啟動控制板簽署&#45;于](media/SBS8_ADK_LaunchpadSignin2.png "SBS8_ADK_LaunchpadSignin2")
 
-####  <a name="figure-3-sign-in-page-of-the-launchpad"></a><a name="BKMK_Figure3"></a>圖3：啟動列的登入頁面
+####  <a name="figure-3-sign-in-page-of-the-launchpad"></a><a name="BKMK_Figure3"></a> 圖3：啟動控制板的登入頁面
  ![Windows Server Essentials 啟動控制板](media/SBS8_ADK_Launchpad_Signin_RC.png "SBS8_ADK_Launchpad_Signin_RC")
 
-####  <a name="figure-4-dashboard-text"></a><a name="BKMK_Figure4"></a>圖4：儀表板文字
+####  <a name="figure-4-dashboard-text"></a><a name="BKMK_Figure4"></a> 圖4：儀表板文字
  ![Windows Server Essentials 流覽窗格](media/SBS8_ADK_Navigation_RC.png "SBS8_ADK_Navigation_RC")
 
-####  <a name="figure-5-subtab-border"></a><a name="BKMK_Figure5"></a>圖5：子標籤框線
+####  <a name="figure-5-subtab-border"></a><a name="BKMK_Figure5"></a> 圖5：子標籤框線
  ![Windows SBS 儀表板子索引標籤框線](media/SBS8_ADK_DashboardSubtabborder.png "SBS8_ADK_DashboardSubtabborder")
 
-####  <a name="figure-6-task-pane"></a><a name="BKMK_Figure6"></a>圖6：工作窗格
+####  <a name="figure-6-task-pane"></a><a name="BKMK_Figure6"></a> 圖6：工作窗格
  ![Windows SBS 儀表板工作窗格](media/SBS8_ADK_DashboardTaskPane.png "SBS8_ADK_DashboardTaskPane")
 
-####  <a name="figure-7a-product-splash-screen"></a><a name="BKMK_Figure9"></a>圖7a：產品啟動顯示畫面
+####  <a name="figure-7a-product-splash-screen"></a><a name="BKMK_Figure9"></a> 圖7a：產品啟動顯示畫面
  ![Windows Server Essentials 啟動顯示畫面](media/SBS8_ADK_productspalshscreen_RC.png "SBS8_ADK_productspalshscreen_RC")
 
 #### <a name="figure-7b-home-page"></a>圖 7b：首頁
  ![Windows Server Essentials 首頁](media/SBS8_ADK_Dashboard_HomePage_RC.png "SBS8_ADK_Dashboard_HomePage_RC")
 
 ## <a name="see-also"></a>另請參閱
- [建立和自訂映射額外的](Creating-and-Customizing-the-Image.md)[自訂](Additional-Customizations.md)[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)
+ [建立和自訂映射](Creating-and-Customizing-the-Image.md)[其他自訂](Additional-Customizations.md)專案[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)

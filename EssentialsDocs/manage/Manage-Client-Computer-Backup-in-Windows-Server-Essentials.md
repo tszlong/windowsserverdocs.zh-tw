@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 1b4776e8-9504-4b98-ae80-11da797d9819
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: ba0c7a6e9adf4700754d01800ec80a805e10c9d5
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: c743e0a30796eac374052787f7c47b0af6e656b6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181014"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623157"
 ---
 # <a name="manage-client-computer-backup-in-windows-server-essentials"></a>在 Windows Server Essentials 中管理用戶端電腦備份
 
@@ -56,7 +56,7 @@ ms.locfileid: "87181014"
 
 -   [了解檔案歷程記錄](Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md#BKMK_FileHistory)
 
-##  <a name="how-the-repair-the-backup-database-wizard-works"></a><a name="BKMK_1"></a>[修復備份資料庫] Wizard 的運作方式
+##  <a name="how-the-repair-the-backup-database-wizard-works"></a><a name="BKMK_1"></a> 修復備份資料庫 Wizard 的運作方式
  如果 Windows Server Essentials 在您的備份資料庫中偵測到錯誤，它就會傳送健康情況通知給您，警示狀態則會變成紅色，表示有重要狀況。
 
  請在 [Windows Server Essentials 儀表板] 上，按一下警示狀態圖示來查看備份資料庫錯誤通知。 這個通知會包含一個 [修復]**** 按鈕，用來啟動 [修復備份資料庫精靈]。 精靈可能需要幾小時的時間才能完成作業。
@@ -66,7 +66,7 @@ ms.locfileid: "87181014"
 > [!CAUTION]
 >  您應該先備份資料庫，再嘗試修復它。 視在備份資料庫中找到的錯誤類型而定，精靈可能會無法復原某些備份。 部份或全部備份可能會永久遺失。
 
-##  <a name="understand-the-computer-backup-settings"></a><a name="BKMK_2"></a>瞭解電腦備份設定
+##  <a name="understand-the-computer-backup-settings"></a><a name="BKMK_2"></a> 瞭解電腦備份設定
  設定妥用戶端電腦的備份之後，您可以指定不同的時間範圍來進行備份。 同樣地，您也可以指定比預設值還要長或短的備份保留時間。
 
  [還原成預設值]**** 選項可讓您將備份時間範圍和保留原則重設為在初始備份設定期間提供的預設值。
@@ -81,7 +81,7 @@ ms.locfileid: "87181014"
 |保留每週備份|4 週|指定保留上次週備份的週數。 例如，使用預設設定時，會保留 4 週的每週備份。 在第 5 週及之後的每一週，都會刪除最舊的每週備份。|
 |保留每月備份|6 個月|指定保留上次月備份的月數。 例如，使用預設設定時，會保留 6 個月的備份。 在第 7 個月及之後的每一個月，都會刪除最舊的每月備份。|
 
-##  <a name="set-up-backup-for-a-client-computer"></a><a name="BKMK_3"></a>設定用戶端電腦的備份
+##  <a name="set-up-backup-for-a-client-computer"></a><a name="BKMK_3"></a> 設定用戶端電腦的備份
  如果停用備份，您便可以從 [儀表板] 設定電腦的備份。 當您設定電腦的備份時，您可以選擇備份電腦上的所有項目，或是選取您想要備份的磁碟區和資料夾。
 
 > [!NOTE]
@@ -104,7 +104,7 @@ ms.locfileid: "87181014"
 4.  為電腦設定妥備份之後，按一下 [關閉]****。
 
 ### <a name="critical-system-files"></a>重要系統檔案
- 當您安裝 Windows 作業系統時，安裝程式會在它放置系統啟動和執行所需之檔案的系統磁碟機上建立資料夾。 重要系統檔案包含副檔名為 .dll、.exe、.ocx 及 .sys 的檔案。 這當中有些檔案是 True Type 字型。 此外，也需要系統狀態檔案（例如系統的登錄），作業系統才能正常執行。
+ 當您安裝 Windows 作業系統時，安裝程式會在它放置系統啟動和執行所需之檔案的系統磁碟機上建立資料夾。 重要系統檔案包含副檔名為 .dll、.exe、.ocx 及 .sys 的檔案。 這當中有些檔案是 True Type 字型。 此外，必須要有系統狀態檔案（例如系統的登錄），作業系統才能正常執行。
 
 ### <a name="find-the-file-you-are-looking-for"></a>尋找您要尋找的檔案
  您可以從現有的備份還原電腦的所有資料夾、多個檔案和資料夾，或是單一檔案或資料夾。
@@ -129,7 +129,7 @@ ms.locfileid: "87181014"
 > [!IMPORTANT]
 >  磁碟區陰影複製服務 (VSS) 不支援在同一個快照集中建立虛擬磁碟區和主機磁碟區的陰影複製。 有必要備份虛擬磁碟區時，VSS 支援在虛擬硬碟 (VHD) 上建立磁碟區的快照集。 如需詳細資訊，請參閱 [為虛擬硬碟提供服務和備份](https://go.microsoft.com/fwlink/p/?LinkId=256577)。
 
-##  <a name="change-the-time-that-backup-is-scheduled-to-run"></a><a name="BKMK_4"></a>變更排定備份執行的時間
+##  <a name="change-the-time-that-backup-is-scheduled-to-run"></a><a name="BKMK_4"></a> 變更排程執行備份的時間
  備份程序應該排定在越少人使用其連線到網路的電腦時越好。 這通常是在深夜或清晨的時段。 預設的備份時間是下午 6:00 到上午 9:00。 伺服器只有在排定的時間範圍內才會嘗試備份用戶端電腦。
 
  不過，如果您的公司在這些傳統上的下班時間處於營運狀態，您可能會想要變更這些預設設定。
@@ -141,13 +141,13 @@ ms.locfileid: "87181014"
 2.  在 [裝置工作]**** 中，按一下 [自訂電腦備份和檔案歷程記錄設定]****。
 
     > [!NOTE]
-    >  在 Windows Server Essentials 中，這項工作已重新命名為 [**用戶端電腦備份工作**]。
+    >  在 Windows Server Essentials 中，這項工作已重新命名為 [ **用戶端電腦備份工作**]。
 
 3.  在 [用戶端電腦備份設定和工具]**** 的 [電腦備份]**** 索引標籤上，您可以變更開始和結束時間以符合您需求。
 
 4.  按一下 [套用]****，然後按一下 [確定]****。
 
-##  <a name="change-the-computer-backup-retention-policy"></a><a name="BKMK_5"></a>變更電腦備份保留原則
+##  <a name="change-the-computer-backup-retention-policy"></a><a name="BKMK_5"></a> 變更電腦備份保留原則
  您所有電腦的每日備份會在您的伺服器上隨時間累積。 為了協助您管理這些備份，Windows Server Essentials 可協助您管理電腦備份的資料庫。 您可以設定要為您所有的電腦保留多少備份。
 
  備份保留原則可決定要將備份保留多久之後再於備份清理程序期間刪除。 備份清理執行時間是每星期六的下午 11:59。 它會刪除在備份保留原則範圍外的所有備份。 備份保留原則的預設值是：
@@ -167,7 +167,7 @@ ms.locfileid: "87181014"
 3.  在 [裝置工作]**** 窗格中，按一下 [自訂電腦備份和檔案歷程記錄設定]****。
 
     > [!NOTE]
-    >  在 Windows Server Essentials 中，這項工作已重新命名為 [**用戶端電腦備份工作**]。
+    >  在 Windows Server Essentials 中，這項工作已重新命名為 [ **用戶端電腦備份工作**]。
 
 4.  在 [用戶端電腦備份設定和工具]**** 的 [用戶端電腦備份保留原則]**** 區段中，對保留原則進行符合您需求的變更。
 
@@ -176,7 +176,7 @@ ms.locfileid: "87181014"
     > [!NOTE]
     >  更新的保留原則會套用到您網路上所有設定要進行備份的用戶端電腦上。
 
-##  <a name="reset-backup-to-default-settings"></a><a name="BKMK_6"></a>將備份重設為預設設定
+##  <a name="reset-backup-to-default-settings"></a><a name="BKMK_6"></a> 將備份重設為預設設定
  為用戶端電腦設定備份之後，網路系統管理員可能指定了不同的時間範圍。 同樣地，系統管理員也可能指定了比預設值還要長或短的備份保留時間。 [重設為預設值]**** 按鈕可讓您將備份時間範圍和保留原則重設為在初始備份設定期間提供的預設值。
 
  預設為：
@@ -198,7 +198,7 @@ ms.locfileid: "87181014"
 2.  在 [裝置工作]**** 中，按一下 [自訂電腦備份和檔案歷程記錄設定]****。
 
     > [!NOTE]
-    >  在 Windows Server Essentials 中，按一下 [**用戶端電腦備份工作**]。
+    >  在 Windows Server Essentials 中，按一下 [ **用戶端電腦備份工作**]。
 
 3.  在 [用戶端電腦備份設定和工具]**** 頁面的 [電腦備份]**** 索引標籤上，按一下 [重設為預設值]****。
 
@@ -207,7 +207,7 @@ ms.locfileid: "87181014"
 
 4.  按一下 [套用]****，然後按一下 [確定]****。
 
-##  <a name="use-repair-and-recovery-tools"></a><a name="BKMK_7"></a>使用修復及復原工具
+##  <a name="use-repair-and-recovery-tools"></a><a name="BKMK_7"></a> 使用修復和復原工具
  **修復備份：** 如果電腦備份的資料庫損毀或因某種原因而無法使用，您可以使用 [修復備份資料庫精靈] 來嘗試修復資料庫。 精靈會分析備份檔案，以判斷是否有任何可修復的問題。 然後精靈會嘗試修正任何找到的問題。
 
 > [!WARNING]
@@ -215,7 +215,7 @@ ms.locfileid: "87181014"
 
  **電腦復原：** 您可以建立可開機的 USB 快閃磁碟機，用來將電腦從現有的備份還原。 您必須使用 1 GB 以上的 USB 快閃磁碟機。 建立可開機的 USB 快閃磁碟機之後，您需將它插入您想要還原的電腦，然後以 USB 快閃磁碟機開機來啟動完整的系統還原程序。
 
-##  <a name="repair-the-backup-database"></a><a name="BKMK_8"></a>修復備份資料庫
+##  <a name="repair-the-backup-database"></a><a name="BKMK_8"></a> 修復備份資料庫
  如果您收到通知您電腦備份資料庫發生問題的警示，您可以嘗試修復它。
 
 #### <a name="to-repair-the-backup-database"></a>修復備份資料庫
@@ -227,7 +227,7 @@ ms.locfileid: "87181014"
 3.  在 [裝置工作]**** 窗格中，按一下 [自訂電腦備份和檔案歷程記錄設定]****。
 
     > [!NOTE]
-    >  在 Windows Server Essentials 中，按一下 [**用戶端電腦備份工作**]。
+    >  在 Windows Server Essentials 中，按一下 [ **用戶端電腦備份工作**]。
 
 4.  在 [用戶端電腦備份設定和工具]**** 中，按一下 [工具]**** 索引標籤。
 
@@ -238,7 +238,7 @@ ms.locfileid: "87181014"
 7.  視備份資料庫的大小而定，資料庫修復可能需要花費幾小時的時間。 按一下 [關閉]****，然後按一下 [確定]**** 來關閉 [自訂電腦備份和檔案歷程記錄設定]**** 頁面。
 
     > [!NOTE]
-    >  在 Windows Server Essentials 中，按一下 [**用戶端電腦備份設定和工具**]。
+    >  在 Windows Server Essentials 中，按一下 [ **用戶端電腦備份設定和工具**]。
 
 #### <a name="to-review-the-results-of-the-backup-database-repair"></a>檢閱備份資料庫修復結果
 
@@ -249,13 +249,13 @@ ms.locfileid: "87181014"
 3.  在 [裝置工作]**** 窗格中，按一下 [自訂電腦備份和檔案歷程記錄設定]****。
 
     > [!NOTE]
-    >  在 Windows Server Essentials 中，按一下 [**用戶端電腦備份工作**]。
+    >  在 Windows Server Essentials 中，按一下 [ **用戶端電腦備份工作**]。
 
 4.  在 [用戶端電腦備份設定和工具]**** 中，按一下 [工具]**** 索引標籤。
 
 5.  結果會顯示在 [修復備份]**** 區段中。
 
-##  <a name="disable-backup-for-a-computer"></a><a name="BKMK_9"></a>停用電腦的備份
+##  <a name="disable-backup-for-a-computer"></a><a name="BKMK_9"></a> 停用電腦的備份
  使用 [儀表板] 可快速停用您網路上電腦的備份。
 
 #### <a name="to-disable-backup-for-a-computer"></a>停用電腦的備份
@@ -274,7 +274,7 @@ ms.locfileid: "87181014"
 
    如需有關如何在停用備份之後啟用電腦備份的資訊，請參閱[設定用戶端電腦的備份](Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md#BKMK_3)。
 
-##  <a name="run-the-backup-cleanup-task"></a><a name="BKMK_10"></a>執行備份清除工作
+##  <a name="run-the-backup-cleanup-task"></a><a name="BKMK_10"></a> 執行備份清除工作
  用戶端電腦備份清理工作是排定在每星期六的下午 11:59 於所有備份完成之後執行。 清理工作會根據備份保留原則，從用戶端電腦備份資料庫刪除備份。 備份保留原則的預設設定是：
 
 - 保留每日備份的天數：5 天
@@ -295,7 +295,7 @@ ms.locfileid: "87181014"
 
 4.  按一下 [備份清理]**** 工作，然後按一下 [動作]**** 窗格中的 [執行]****。 [狀態] 會變成 [執行中]****，直到工作完成為止。
 
-##  <a name="view-alerts-in-the-task-bar-on-a-client-computer"></a><a name="BKMK_11"></a>在用戶端電腦上的工作列中查看警示
+##  <a name="view-alerts-in-the-task-bar-on-a-client-computer"></a><a name="BKMK_11"></a> 在用戶端電腦上的工作列中查看警示
  您可以在您電腦上的工作列收到因下列原因而發出的備份通知：
 
 -   備份開始。
@@ -304,9 +304,9 @@ ms.locfileid: "87181014"
 
 -   最近沒有成功的備份。 通知中會包含自上次成功備份後的天數。
 
--    僅限 Windows Server Essentials：新的磁片區已新增至您的電腦。 管理您網路的人員必須執行 [自訂備份精靈]，才能納入或排除要供未來備份的磁碟區。
+-    僅限 Windows Server Essentials：將新的磁片區新增至您的電腦。 管理您網路的人員必須執行 [自訂備份精靈]，才能納入或排除要供未來備份的磁碟區。
 
-##  <a name="view-backup-status-from-the-launchpad"></a><a name="BKMK_12"></a>從啟動列查看備份狀態
+##  <a name="view-backup-status-from-the-launchpad"></a><a name="BKMK_12"></a> 從啟動控制板查看備份狀態
  使用 [啟動列] 可檢視您電腦的快速備份狀態。
 
 > [!TIP]
@@ -343,7 +343,7 @@ ms.locfileid: "87181014"
 
 4.  按一下 [確定]**** 以關閉 [備份內容]**** 對話方塊。
 
-##  <a name="stop-a-backup-in-progress-from-the-launchpad"></a><a name="BKMK_13"></a>從啟動列停止進行中的備份
+##  <a name="stop-a-backup-in-progress-from-the-launchpad"></a><a name="BKMK_13"></a> 從啟動控制板停止進行中的備份
  您可以輕鬆地停止進行中的備份。
 
 #### <a name="to-stop-a-backup-in-progress"></a>停止進行中的備份
@@ -361,7 +361,7 @@ ms.locfileid: "87181014"
 
 5.  按一下 [確定]**** 以關閉 [備份內容]**** 對話方塊。
 
-##  <a name="start-a-backup-from-the-launchpad"></a><a name="BKMK_14"></a>從啟動列開始備份
+##  <a name="start-a-backup-from-the-launchpad"></a><a name="BKMK_14"></a> 從啟動控制板啟動備份
  有時，您可能會想要在於伺服器上定期排定的備份時間之前，先備份您的檔案和資料夾。 [啟動列] 可讓您手動起始您的電腦備份。
 
 #### <a name="to-start-a-backup"></a>啟動備份
@@ -383,7 +383,7 @@ ms.locfileid: "87181014"
 
 7.  按一下 [確定]**** 以關閉 [備份內容]**** 對話方塊。
 
-##  <a name="how-computer-backup-works"></a><a name="BKMK_15"></a>電腦備份的運作方式
+##  <a name="how-computer-backup-works"></a><a name="BKMK_15"></a> 電腦備份的運作方式
  在每日備份期間會發生下列事件：
 
 -   依序備份網路電腦。
@@ -397,12 +397,12 @@ ms.locfileid: "87181014"
 > [!IMPORTANT]
 >  磁碟區陰影複製服務 (VSS) 不支援在同一個快照集中建立虛擬磁碟區和主機磁碟區的陰影複製。 有必要備份虛擬磁碟區時，VSS 支援在虛擬硬碟 (VHD) 上建立磁碟區的快照集。 如需詳細資訊，請參閱 [為虛擬硬碟提供服務和備份](https://go.microsoft.com/fwlink/p/?LinkId=256577)。
 
-##  <a name="tips-to-help-prevent-data-loss-due-to-corruption-of-the-client-backup-database"></a><a name="BKMK_16"></a>協助防止因用戶端備份資料庫損毀而遺失資料的秘訣
+##  <a name="tips-to-help-prevent-data-loss-due-to-corruption-of-the-client-backup-database"></a><a name="BKMK_16"></a> 協助防止因用戶端備份資料庫損毀而造成資料遺失的秘訣
  如果用戶端備份資料庫損毀，您可能會遺失重要資料。
 
  若要協助防止因用戶端備份資料庫損毀而導致資料遺失，請考慮執行下列動作：
 
--   啟用其他備份用戶端備份資料庫的方法。 例如，視您正在執行的 Windows Server Essentials 版本而定，使用 [伺服器備份]、[線上備份] 或 [Microsoft Azure 備份] 來備份資料庫。
+-   啟用其他備份用戶端備份資料庫的方法。 例如，視您正在執行的 Windows Server Essentials 版本而定，請使用伺服器備份、線上備份或 Microsoft Azure 備份來備份資料庫。
 
     > [!IMPORTANT]
     >  請確定您選取備份 [用戶端電腦備份]**** 資料夾中的所有檔案。
@@ -413,11 +413,11 @@ ms.locfileid: "87181014"
 
      如果您執行的是 Windows Server Essentials，您也應該停止 Windows Server 用戶端電腦備份服務和 Windows Server 用戶端電腦備份提供者服務。
 
-     如果您執行的是 Windows Server Essentials，您也應該停止 Windows Server 電腦備份服務。
+     如果您執行的是 Windows Server Essentials，您也應該停止 Windows Server Computer Backup Service。
 
      完成還原操作之後，請重新啟動服務。
 
-##  <a name="restore-files-or-folders-from-a-client-computer-backup"></a><a name="BKMK_17"></a>從用戶端電腦備份還原檔案或資料夾
+##  <a name="restore-files-or-folders-from-a-client-computer-backup"></a><a name="BKMK_17"></a> 從用戶端電腦備份還原檔案或資料夾
  您可以從備份瀏覽並還原個別的檔案和資料夾。
 
 > [!NOTE]
@@ -436,25 +436,25 @@ ms.locfileid: "87181014"
 
 4.  遵循精靈的指示進行。
 
-##  <a name="understanding-file-history"></a><a name="BKMK_FileHistory"></a>瞭解檔案歷程記錄
+##  <a name="understanding-file-history"></a><a name="BKMK_FileHistory"></a> 瞭解檔案歷程記錄
  Windows Server Essentials 的「檔案歷程記錄」功能會自動備份有「檔案歷程記錄」能力之網路電腦的 [媒體櫃]、[連絡人]、[桌面] 及 [我的最愛] 資料夾中的檔案。 如果原始資料遺失、損毀或被刪除，您可以將它們還原。 您也可以從特定的時間點找出您檔案的各種不同版本。 經過一段時間後，您就會擁有您檔案的完整歷程記錄。
 
- 在 Windows Server Essentials 中，您可以從 [**用戶端電腦備份設定和工具**] 的 [檔案歷程**記錄**] 頁面自訂 [檔案歷程記錄] 設定。
+ 在 Windows Server Essentials 中，您可以從 [**用戶端電腦備份設定和工具**] 的 [**檔案歷程記錄**] 頁面自訂檔案歷程記錄設定。
 
- 在 Windows Server Essentials 中，您可以前往 [**使用者**] 索引標籤，然後選取 [變更檔案歷程**記錄] 設定**工作，以自訂 [檔案歷程記錄] 設定。
+ 在 Windows Server Essentials 中，您可以前往 [ **使用者** ] 索引標籤來自訂檔案歷程記錄設定，然後選取 [ **變更檔案歷程記錄設定** ] 工作。
 
  [檔案歷程記錄] 頁面提供下列選項：
 
 |備份設定|預設|描述|
 |--------------------|-------------|-----------------|
 |開啟/關閉|開啟|當您安裝 Windows Server Essentials 時，預設會開啟「檔案歷程記錄」。|
-|備份資料|文件和桌面|有三種預先設定的設定，可讓您指定各種不同的備份解決方案。 您可以選擇下列其中一個選項：<br /><br /> -檔和桌面<br /><br /> -所有媒體櫃、桌面、連絡人和我的最愛<br /><br /> -[媒體櫃]、[桌面]、[連絡人] 和 [我的最愛] 中的所有資料，不包括音樂、影片和圖片|
+|備份資料|文件和桌面|有三種預先設定的設定，可讓您指定各種不同的備份解決方案。 您可以選擇下列其中一個選項：<br /><br /> -檔和桌面<br /><br /> -所有文件庫、桌面、連絡人和我的最愛<br /><br /> -媒體櫃、桌面、連絡人和我的最愛中的所有資料，不包括音樂、影片和圖片庫中的資料|
 |備份頻率|每小時|指定「檔案歷程記錄」建立所選資料之備份的頻率。 您可以從數個選項中選擇，範圍從每 10 分鐘到每天。|
 |保留複本期限|1 年|指定的「檔案歷程記錄」保留備份複本的時間長短。|
 
  如需有關檔案歷程記錄問題的資訊，請參閱[檔案歷程記錄問題疑難排解](../support/Troubleshoot-File-History-in-Windows-Server-Essentials.md)。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [管理備份與還原](Manage-Backup-and-Restore-in-Windows-Server-Essentials.md)
 

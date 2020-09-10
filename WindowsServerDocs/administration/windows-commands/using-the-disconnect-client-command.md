@@ -3,16 +3,16 @@ title: 中斷連線-用戶端
 description: 中斷連線用戶端的參考文章-用戶端會中斷用戶端與多播傳輸或命名空間的連線。
 ms.topic: reference
 ms.assetid: 876bbe6c-76ab-4de5-879b-d2066e700326
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 9ba2db5d5c768459a5e99259e450dedce3c9ecf4
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 902d488a20391cb4317931aeb2572655d9aa291a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036086"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622017"
 ---
 # <a name="disconnect-client"></a>中斷連線-用戶端
 

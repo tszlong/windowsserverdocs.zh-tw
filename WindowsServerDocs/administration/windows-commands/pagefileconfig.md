@@ -3,16 +3,16 @@ title: pagefileconfig
 description: Pagefileconfig 命令的參考文章。 此命令已被取代，而且在未來的 Windows 版本中不保證會受到支援。
 ms.topic: reference
 ms.assetid: a18c98ce-a0dc-41cc-8d44-dc7eee0131e8
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 4c3482b6922fd9173beb314e3a784fdf81fd5608
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: f56e55273cd967ee969610ad45c398e18842871c
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89032552"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89621571"
 ---
 # <a name="pagefileconfig"></a>pagefileconfig
 

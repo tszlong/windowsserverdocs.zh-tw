@@ -3,16 +3,16 @@ title: 轉換-RiprepImage
 description: RiprepImage 的參考文章，可將現有的遠端安裝準備 (RIPrep) 映射轉換成 Windows 映像 ( .wim) 格式。
 ms.topic: reference
 ms.assetid: 88c2b96f-5947-4b64-9dcf-1946b3c013cf
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: e9d9ec388a2f4cdd59bcf8c9b59abf8b6c5e3383
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: d9f29d4409389feb862278539105b10c54629bc9
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038236"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622185"
 ---
 # <a name="convert-riprepimage"></a>轉換-RiprepImage
 

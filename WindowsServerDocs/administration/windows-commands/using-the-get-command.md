@@ -3,16 +3,16 @@ title: 使用 get 命令
 description: Get 的參考文章，可抓取指定物件的屬性或屬性。
 ms.topic: reference
 ms.assetid: fbd44c67-0670-4dfe-a1c0-2ab8abe327b5
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 43633a8fe0bc91892b584277dd5d59feaee00c50
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 78e4aba693cb60e4cce4240e0c4fd205baefdeac
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029706"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622605"
 ---
 # <a name="using-the-get-command"></a>使用 get 命令
 

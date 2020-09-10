@@ -3,16 +3,16 @@ title: manage-bde forcerecovery
 description: Manage-bde forcerecovery 命令的參考文章，此命令會在重新開機時強制受 BitLocker 保護的磁片磁碟機進入修復模式。
 ms.topic: reference
 ms.assetid: eecae37c-c9a3-46c5-b615-a0ace1f1d778
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 11dd4754ffebbd204e7ad463c56bce47f2a15714
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: b88aa4bb52ea6bcb50f34a6e8d42c6e14e0b1e59
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037686"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622609"
 ---
 # <a name="manage-bde-forcerecovery"></a>manage-bde forcerecovery
 

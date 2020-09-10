@@ -5,25 +5,25 @@ ms.date: 04/29/2020
 ms.topic: article
 ms.assetid: fd7196ac-cfa6-46a5-ba77-6962b47a825e
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
+ms.author: geschuma
+manager: mtillman
 ms.custom:
 - CI ID 117135
 - CSSTroubleshoot
-ms.openlocfilehash: 5e6db88b9888726fbec62d953b3510142ff1a699
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: ada3b5fa3b95fa6de45177513b26589c4180696d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180764"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622835"
 ---
 # <a name="install-windows-server-essentials-in-migration-mode"></a>以移轉模式安裝 Windows Server Essentials
 
 > 適用于： Windows Server 2012 Essentials
 
-您的網路上只能有一部執行 Windows Server Essentials 的伺服器，而且該伺服器必須是網路的網域控制站。
+您的網路上只能有一部執行 Windows Server Essentials 的伺服器，且該伺服器必須是網路的網域控制站。
 
- 當您以移轉模式安裝 Windows Server Essentials 時，安裝精靈會執行下列工作：
+ 當您在 [遷移] 模式中安裝 Windows Server Essentials 時，安裝精靈會執行下列工作：
 
 1.  在目的地伺服器上安裝和設定 Windows Server Essentials 伺服器軟體。
 
@@ -40,7 +40,7 @@ ms.locfileid: "87180764"
 
 6.  將目的地伺服器設定成站台授權伺服器。
 
-##  <a name="install-windows-server-essentials-on-the-destination-server"></a><a name="BKMK_Install"></a>在目的地伺服器上安裝 Windows Server Essentials
+##  <a name="install-windows-server-essentials-on-the-destination-server"></a><a name="BKMK_Install"></a> 在目的地伺服器上安裝 Windows Server Essentials
  若要在目的地伺服器上以移轉模式安裝和設定 Windows Server Essentials，請執行下列程式。
 
 #### <a name="to-install-windows-server-essentials-on-the-destination-server"></a>在目的地伺服器上安裝 Windows Server Essentials
@@ -48,7 +48,7 @@ ms.locfileid: "87180764"
 1. 開啟目的地伺服器，並將 Windows Server Essentials DVD1 插入 DVD 光碟機。 如果您看到一則訊息，詢問您是否要從 CD 或 DVD 開機，請按任一鍵以執行這項操作。
 
    > [!NOTE]
-   >  如果目的地伺服器支援從 USB 快閃磁片磁碟機開機，您可以使用**windows 7 USB/DVD 下載工具**，從 Windows SERVER Essentials ISO 檔案建立可開機的 Usb 快閃磁片磁碟機。 使用 USB 快閃磁碟機可以明顯加速安裝程序，因為快閃磁碟機讀取資料比 DVD-ROM 光碟機更快。 建立可開機的 USB 快閃磁碟機之後，您可以將回應檔案新增到快閃磁碟機。 您可以在 Microsoft Store 網站免費[下載 Windows 7 USB/DVD 下載工具](https://go.microsoft.com/fwlink/p/?LinkId=248282)。
+   >  如果目的地伺服器支援從 USB 快閃磁片磁碟機開機，您可以使用 **windows 7 USB/DVD 下載工具** ，從 Windows SERVER Essentials ISO 檔案建立可開機的 Usb 快閃磁片磁碟機。 使用 USB 快閃磁碟機可以明顯加速安裝程序，因為快閃磁碟機讀取資料比 DVD-ROM 光碟機更快。 建立可開機的 USB 快閃磁碟機之後，您可以將回應檔案新增到快閃磁碟機。 您可以從 Microsoft Store 網站免費 [下載 Windows 7 USB/DVD 下載工具](https://go.microsoft.com/fwlink/p/?LinkId=248282) 。
 
    > [!NOTE]
    >  如果目的地伺服器不會從 DVD 開機，請重新啟動電腦並檢查 BIOS 設定，以確保開機順序中會先列出 [DVD-ROM]****。 如需如何變更 BIOS 設定開機順序的相關詳細資訊，請參閱硬體製造商的說明文件。
@@ -66,14 +66,14 @@ ms.locfileid: "87180764"
    安裝完成後，會自動以您在移轉回應檔案中提供的系統管理員使用者帳戶與密碼登入。
 
 > [!NOTE]
->  若要在 Windows Server Essentials 安裝時解除鎖定桌面，請使用內建的系統管理員帳戶，並將密碼保留空白。
+>  若要在安裝 Windows Server Essentials 時解除鎖定桌面，請使用內建的系統管理員帳戶，並將密碼保留空白。
 
-##  <a name="verify-the-health-of-the-domain-controller"></a><a name="BKMK_VerifyTheHealthOfDC"></a>確認網域控制站的健全狀況
+##  <a name="verify-the-health-of-the-domain-controller"></a><a name="BKMK_VerifyTheHealthOfDC"></a> 確認網域控制站的健全狀況
  繼續進行遷移之前，您應該確定網域控制站和 Windows Server Essentials 網路的狀況良好。
 
  下表列出您可以用來診斷目的地伺服器、網路和網域問題的工具：
 
-|工具|說明|
+|工具|描述|
 |----------|-----------------|
 |Netdiag|協助隔離網路和連線問題。 如需詳細資訊及下載資訊，請參閱 [Netdiag](https://go.microsoft.com/fwlink/?LinkId=217388)。|
 |Dcdiag.exe|分析樹系或企業的網域控制站狀態，然後回報問題以協助您疑難排解。 如需詳細資訊及下載資訊，請參閱 [Dcdiag](https://go.microsoft.com/fwlink/?LinkId=217389)。|
@@ -82,4 +82,4 @@ ms.locfileid: "87180764"
  您應該修正這些工具回報的所有問題，然後再繼續移轉作業。
 
 > [!NOTE]
->  如果您打算將電子郵件遷移至另一個內部部署 Exchange 伺服器，請參閱[整合內部部署 Exchange server 與 Windows Server Essentials](../manage/Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md) ，以取得如何設定內部部署 exchange server 的相關資訊。
+>  如果您打算將電子郵件遷移到另一個內部部署 Exchange server，請參閱 [整合內部部署 Exchange server 與 Windows Server Essentials](../manage/Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md) ，以取得如何設定您的內部部署 exchange server 的相關資訊。
