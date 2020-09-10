@@ -3,16 +3,16 @@ title: ksetup setrealm
 description: '>ksetup setrealm 命令的參考文章，此命令會設定 Kerberos 領域的名稱。'
 ms.topic: reference
 ms.assetid: ab268c40-276b-46ef-ab16-d5ce7667fbed
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 53de8c94e20f496a6f3078d3ad03a817f23e326a
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a06c5fef1127236319b580fbd6810269c58d1377
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89025362"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627129"
 ---
 # <a name="ksetup-setrealm"></a>ksetup setrealm
 

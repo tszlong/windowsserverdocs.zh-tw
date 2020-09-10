@@ -3,16 +3,16 @@ title: AllMulticastTransmissions
 description: AllMulticastTransmissions 的參考文章，可顯示伺服器上所有多播傳輸的相關資訊。
 ms.topic: reference
 ms.assetid: 95b8fb79-7a8a-4f0c-88f4-92bc1111c67f
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: c0c7c4e77c2ad23fab864839cde03ed4f4806c80
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 6bae5e1487c78091149b04fd2f8a67de9e8bbd93
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89035956"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626396"
 ---
 # <a name="get-allmulticasttransmissions"></a>AllMulticastTransmissions
 

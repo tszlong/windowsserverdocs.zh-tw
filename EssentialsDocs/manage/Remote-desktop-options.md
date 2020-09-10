@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 51076946-ea9b-4ac7-9a6e-d6023816b97d
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 7de65cdbed7fc1995f6729a49e9398ce948a63c6
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: f4603adb7da1df0853b4c816254241d21b969fc5
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409528"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625939"
 ---
 # <a name="remote-desktop-options"></a>遠端桌面選項
 
@@ -56,7 +56,7 @@ ms.locfileid: "87409528"
 ## <a name="enable-the-remote-computer-to-access-drives-on-my-local-computer"></a>讓遠端電腦存取我的本機電腦上的磁碟機
  預設不啟用。 此選項可讓您從遠端電腦存取連接到本機電腦之硬碟上的檔案和資料夾。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [管理遠端 Web 存取](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)
 

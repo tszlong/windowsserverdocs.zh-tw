@@ -3,16 +3,16 @@ title: tsprof
 description: Tsprof 的參考文章，可將遠端桌面服務使用者設定資訊從一位使用者複製到另一位使用者。
 ms.topic: reference
 ms.assetid: 27047868-b706-4208-b7e0-1437a2325dd3
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: f676b1d11586d413e544d451043da242861083e1
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: de1acc0c99f91f3ebf01d09d39d9fb0685d7f8f6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89023392"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626694"
 ---
 # <a name="tsprof"></a>tsprof
 

@@ -3,16 +3,16 @@ title: tskill
 description: Tskill 的參考文章，此文章會結束在遠端桌面工作階段主機伺服器上的會話中執行的處理常式。
 ms.topic: reference
 ms.assetid: 08986e6a-6900-4ece-85a1-8f73b14db1b3 Lizap
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 357523ce9806910bfddc8ed8992a7ac7be388d3f
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 24785d10cc09d494850bad5442f72111260dd261
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026806"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626709"
 ---
 # <a name="tskill"></a>tskill
 

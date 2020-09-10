@@ -3,16 +3,16 @@ title: unexpose
 description: Diskshadow.exe 取消公開的參考文章，unexposes 使用公開命令公開的陰影複製。
 ms.topic: reference
 ms.assetid: 58dc7d0f-52e9-4587-9487-d3b4c3e52640
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 13e14941e2c67aa0361dcc0af2cdb1a36bf7e651
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 76e1666bd87a3304dcbe8de3025a0ec790cf83d7
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036406"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626588"
 ---
 # <a name="unexpose"></a>unexpose
 

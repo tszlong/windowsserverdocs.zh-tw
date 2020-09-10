@@ -3,16 +3,16 @@ title: tsecimp
 description: 'Tsecimp 的參考文章，會將可延伸標記語言 (XML)  (XML) 檔案中的指派資訊匯入至 TAPI 伺服器安全性檔案 ( # A0) 。'
 ms.topic: reference
 ms.assetid: d7488ec6-0eff-45ff-89ee-9cbe752416bf
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: f8ad2f4f29537c2f575ba96d172c9405d9680187
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 3ddc56b959f716840d033508ea253efbc446d74f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026866"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626703"
 ---
 # <a name="tsecimp"></a>tsecimp
 

@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: dff2bf27-5d97-409b-81e8-286f7d933d90
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 57fa74bbae9e8604dfbc31042f8a315abe34a817
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: dbcffdfb89edc56503521937909542d136854e1a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838412"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625931"
 ---
 # <a name="migrate-server-data-to-windows-server-essentials"></a>移轉伺服器資料到 Windows Server Essentials
 
@@ -21,7 +21,7 @@ ms.locfileid: "87838412"
 下列指南提供有關如何從現有的 Windows Small Business Server 或 Windows Server Essentials 安裝移轉到 Windows Server Essentials 的資訊，並且包含有關如何為特定的 Windows Server Essentials 移轉案例做準備和規劃的資訊。
 
 ## <a name="migrate-to-windows-server-essentials"></a>遷移至 Windows Server Essentials
- 若要避免在將現有的伺服器遷移至 Windows Server Essentials 時發生問題，請先閱讀遷移指南，再開始進行遷移。
+ 若要避免將現有伺服器遷移到 Windows Server Essentials 時發生問題，請在開始進行遷移之前，先閱讀遷移指南。
 
 
 -   [遷移至 Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)
@@ -30,7 +30,7 @@ ms.locfileid: "87838412"
 
 
 ## <a name="migrate-to-windows-server-essentials"></a>遷移至 Windows Server Essentials
- 若要避免在將現有的伺服器遷移至 Windows Server Essentials 時發生問題，請先閱讀適用于您的商務案例的遷移指南，再開始進行遷移。
+ 若要避免將現有伺服器遷移到 Windows Server Essentials 時發生問題，請閱讀適用于您的商務案例的遷移指南，再開始進行遷移。
 
 
 -   [轉換到 Windows Server 2012 Standard](Transition-from-Windows-Server-2012-Essentials-to-Windows-Server-2012-Standard.md)

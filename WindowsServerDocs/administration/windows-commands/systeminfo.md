@@ -3,16 +3,16 @@ title: systeminfo
 description: Systeminfo 的參考文章會顯示有關電腦及其作業系統的詳細設定資訊，包括作業系統設定、安全性資訊、產品識別碼和硬體內容 (例如 RAM、磁碟空間和網路卡) 。
 ms.topic: reference
 ms.assetid: 39954968-3c2e-4d3e-9d89-c9c43347461e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 40bb15fc79be45874b0047f1755259be34bccb2b
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: b8db86467c6d3190edd6c041951bf3c30eb21cc4
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027206"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626748"
 ---
 # <a name="systeminfo"></a>systeminfo
 

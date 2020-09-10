@@ -3,16 +3,16 @@ title: typeperf
 description: Typeperf 的參考文章，會將效能資料寫入至命令視窗或記錄檔。
 ms.topic: reference
 ms.assetid: 0c7ca89a-03b3-4626-afcf-ef8565e90043
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 856279c96a8c1904dcf182dbf613447e02291330
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: b7c28b77bb374d8a7ece9163458cfd09418ca890
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89023382"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626589"
 ---
 # <a name="typeperf"></a>typeperf
 
@@ -36,7 +36,7 @@ typeperf -qx [object] [options]
 > [!NOTE]
 > **\<counter>** 這是* \\ \\ Computer\Object (實例) \counter*格式之效能計數器的完整名稱，例如** \\ \\ Server1\Processor (0) \% 使用者時間**。
 
-## <a name="options"></a>選項
+## <a name="options"></a>選項。
 
 |                   選項                   |                                                         描述                                                          |
 |--------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|

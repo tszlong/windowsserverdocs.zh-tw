@@ -3,16 +3,16 @@ title: AllNamespaces
 description: AllNamespaces 的參考文章，會顯示伺服器上所有命名空間的相關資訊。
 ms.topic: reference
 ms.assetid: e8fe896d-a69a-4180-923b-9f18185f5941
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 9cd6010e759c5b33abe011263abf3464e3d7a356
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: b87b1fb3b2a7a1a7bb21f9c5a6a389494532dde5
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89035966"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626375"
 ---
 # <a name="get-allnamespaces"></a>AllNamespaces
 

@@ -3,16 +3,16 @@ title: Diskraid
 description: 適用于 Diskraid 命令列工具的參考文章，可讓您設定和管理獨立 (的多餘陣列，或 (RAID) 儲存子系統的低成本) 磁片。
 ms.topic: reference
 ms.assetid: 20aef1e5-7641-47cf-b4eb-cda117f65b6e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: b153d0ab1ec52f023c12b240518c6304d76e9093
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 49d190f257c93a026f29188fa26af7409c611f44
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89030916"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627165"
 ---
 # <a name="diskraid"></a>Diskraid
 
@@ -183,7 +183,7 @@ create tpgroup [noerr]
 | 磁片磁碟機 = | 指定要用來建立 LUN 之磁片磁碟機的 *drive_number* 。 必須指定 **size**= 或 **磁片磁碟機**= 參數。 它們也可以一起使用。 如果未指定 **size =** 參數，則建立的 LUN 會是所有指定磁片磁碟機所允許的最大可能大小。 如果指定 **size =** 參數，提供者會從指定的磁片磁碟機清單中選取磁片磁碟機，以建立 LUN。 提供者會嘗試使用盡可能指定的順序來使用磁片磁碟機。 |
 | stripesize = | 指定 *stripe* 或 *raid* LUN 的大小（以 mb 為單位）。 建立 LUN 之後，就無法變更 stripesize。 若要使用其他單位來指定大小，請在大小之後立即使用下列其中一個可辨識的尾碼：<ul><li>**B** 位元組</li><li>**Kb** -kb</li><li>**Mb** -mb</li><li>**Gb** -gb</li><li>**Tb** -tb</li><li>**Pb** -pb。</li></ul> |
 | 目標 | 在目前選取的子系統上建立新的 iSCSI 目標。 |
-| NAME | 提供目標的易記名稱。 |
+| 名稱 | 提供目標的易記名稱。 |
 | iscsiname | 提供目標的 iSCSI 名稱，而且可以省略，讓提供者產生名稱。 |
 | tpgroup | 在目前選取的目標上建立新的 iSCSI 目標入口網站群組。 |
 | noerr | 僅適合執行指令。 當發生錯誤時，Diskraid 會繼續處理命令，就像未發生錯誤一樣。 |
@@ -464,7 +464,7 @@ maintenance <object operation> [count=<iteration>]
 | `<operation>` | 指定要執行的維護作業。 作業 *類型可以* 是 **spinup**、 **spindown**、 **閃爍**、 **嗶聲** 或 **偵測**。 必須指定 *操作* 。 |
 | 計數 = | 指定重複 *操作*的次數。 這通常用於 **閃爍**、 **嗶聲**或 **偵測**。 |
 
-### <a name="name"></a>NAME
+### <a name="name"></a>名稱
 
 將目前所選子系統、LUN 或 iSCSI 目標的易記名稱設定為指定的名稱。
 

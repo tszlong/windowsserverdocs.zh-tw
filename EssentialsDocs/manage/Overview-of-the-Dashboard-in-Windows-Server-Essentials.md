@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: f70a79de-9c56-4496-89b5-20a1bff2293e
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: f1d9beed01d17abfd88a135fb5ade48d0b6178ab
-ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 50f610bec8573916edffd3efb5e551a45fc6e72a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89554511"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625953"
 ---
 # <a name="overview-of-the-dashboard-in-windows-server-essentials"></a>Windows Server Essentials 中的儀表板概觀
 
@@ -94,7 +94,7 @@ ms.locfileid: "89554511"
 |裝置|在您將電腦連線到 Windows Server Essentials 網路之後，您可以從 [儀表板] 的 [裝置]**** 頁面管理電腦。 您可以在這個頁面上執行的工作包括：<br /><br /> -查看已加入網路的電腦清單。<br /><br /> -利用 Microsoft 365 行動裝置管理功能來管理行動裝置。<br /><br /> **注意：** 這項功能僅適用于已啟用「Windows Server Essentials 體驗」角色的 Windows Server Essentials 和 Windows Server 2012 R2 Standard。<br /><br /> -查看每部電腦的電腦內容和健全狀況警示。<br /><br /> -設定和管理電腦備份。<br /><br /> -將檔案和資料夾還原至電腦。<br /><br /> -建立與電腦的遠端桌面連線<br /><br /> -自訂電腦備份和檔案歷程記錄設定<br /><br /> 如需管理電腦和備份的相關資訊，請參閱 [管理裝置](Manage-Devices-in-Windows-Server-Essentials.md)。|
 |儲存體|視您目前執行的 Windows Server Essentials 版本而定，[儀表板] 的 [存放]**** 區段預設會包含下列各區段：<br /><br /> -[ **伺服器資料夾** ] 子區段包含可協助您查看和管理伺服器資料夾屬性的工作。 這個頁面也包含可開啟和新增伺服器資料夾的工作。<br /><br /> -[ **硬碟** ] 頁面包含可協助您查看和檢查連接到伺服器之磁片磁碟機健康情況的工作。<br /><br /> -在 Windows Server Essentials 和已啟用「Windows Server Essentials 體驗」角色的 Windows server 2012 R2 Standard 中，[ **SharePoint 程式庫** ] 頁面包含的工作可協助您管理 Microsoft 365 service 中的 SharePoint 文件庫。<br /><br /> 如需管理伺服器資料夾的相關資訊，請參閱 [管理伺服器資料夾](Manage-Server-Folders-in-Windows-Server-Essentials.md)。<br /><br /> 如需管理硬碟的相關資訊，請參閱 [管理伺服器儲存體](Manage-Server-Storage-in-Windows-Server-Essentials.md)。|
 |應用程式|-Windows Server Essentials 儀表板的 [ **應用程式** ] 區段預設包含兩個子區段。<br /><br /> 如需管理增益集應用程式的相關資訊，請參閱 [管理應用程式](Manage-Applications-in-Windows-Server-Essentials.md)。<br /><br /> -[ **增益集** ] 子區段會顯示已安裝的增益集清單，並提供可讓您移除增益集及存取所選增益集之其他相關資訊的工作。<br /><br /> -Microsoft 的 [ **找** 出] 子區段會顯示可從 Microsoft 定點取得的應用程式清單。|
-|Office 365|只有當 Windows Server Essentials 已與 Microsoft 365 整合時，才會顯示 [ **Office 365** ] 索引標籤。 這個區段包含 Office 365 訂用帳戶和系統管理員帳戶資訊。|
+|Microsoft 365|只有當 Windows Server Essentials 已與 Microsoft 365 整合時，才會顯示 [ **Microsoft 365** ] 索引標籤。 本節包含 Microsoft 365 的訂用帳戶和系統管理員帳戶資訊。|
 
 > [!NOTE]
 >  如果您安裝適用於 [Windows Server Essentials 儀表板] 的增益集，該增益集可能會建立額外的系統管理區段。 這些區段可能會出現在主導覽列或子區段索引標籤上。

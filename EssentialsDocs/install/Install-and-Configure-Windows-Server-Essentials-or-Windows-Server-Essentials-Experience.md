@@ -5,28 +5,28 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 48ea6cd4-3955-4aaf-9236-2515a6c3e730
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 804a3ed902606e52f25977601e4edc2e2fc5e04f
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: dfd0611d47c159e629efff11073bec084e175a43
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181184"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626274"
 ---
 # <a name="install-and-configure-windows-server-essentials-or-windows-server-essentials-experience"></a>安裝和設定 Windows Server Essentials 或 Windows Server Essentials 體驗
 
 >適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-對於擁有多達25位使用者和50裝置的小型企業而言，Windows Server Essentials 是理想的第一部伺服器。 對於擁有多達100使用者和200裝置的組織，您現在可以使用已安裝 Windows Server Essentials 體驗角色的 Windows Server 2012 R2。 本主題描述這兩種案例。
+對於最多25位使用者和50裝置的小型企業而言，Windows Server Essentials 是理想的第一部伺服器。 針對具有最多100使用者和200裝置的組織，您現在可以使用已安裝 Windows Server Essentials 體驗角色的 Windows Server 2012 R2。 本主題描述這兩種案例。
 
-Windows Server Essentials 體驗是 Windows Server 2016 中的一項角色，可讓您利用 windows Server Essentials 中可供您使用的所有功能（例如遠端 Web 存取和 PC 備份），而不需要在 Windows Server Essentials 中強制執行鎖定和限制。 Windows Server Essentials 也提供此伺服器角色，且預設為啟用。
+Windows server Essentials 體驗是 Windows Server 2016 中的一項角色，可讓您利用 windows server Essentials 中的所有功能 (例如遠端 Web 存取和電腦備份) ，而不需要在 Windows Server Essentials 中強制執行鎖定和限制。 此伺服器角色也可在 Windows Server Essentials 中使用，且預設為啟用。
 
-在您安裝 Windows Server Essentials 或 Essentials 體驗角色之前，請注意下列限制。
+在您安裝 Windows Server Essentials 或 Essentials Experience 角色之前，請注意下列限制。
 
-|Windows Server essentials 中的 windows Server Essentials 體驗|Windows Server 2016 中的 windows Server Essentials 體驗
+|Windows Server Essentials 中的 windows Server Essentials 體驗|Windows Server 2016 中的 windows Server Essentials 體驗
 |----|----|
-|-必須是位於樹系和網域根目錄的網域控制站，而且必須保留所有 FSMO 角色。<br /><br /> -無法安裝在具有既有 Active Directory 網域的環境中（不過，有21天的寬限期可執行遷移）。|-如果是安裝在具有既有 Active Directory 網域的環境中，則不一定要是網域控制站。<br /><br /> -如果 Active Directory 網域不存在，安裝角色將會建立 Active Directory 網域，而伺服器會成為樹系和網域根目錄的網域控制站，並保留所有 FSMO 角色。
+|-必須是位於樹系和網域根目錄的網域控制站，而且必須保留所有 FSMO 角色。<br /><br /> -無法安裝在具有預先存在 Active Directory 網域的環境中 (不過，執行遷移) 有21天的寬限期。|-如果是安裝在具有既有 Active Directory 網域的環境中，則不一定要是網域控制站。<br /><br /> -如果 Active Directory 網域不存在，安裝角色將會建立 Active Directory 網域，而伺服器將會成為樹系和網域根目錄的網域控制站，並保留所有 FSMO 角色。
 |只能部署到單一網域。|只能部署到單一網域。
 |您的網域中不能有唯讀網域控制站。|您的網域中不能有唯讀網域控制站。
 
@@ -40,9 +40,9 @@ Windows Server Essentials 體驗是 Windows Server 2016 中的一項角色，可
 ## <a name="installation-options"></a>安裝選項
  本文件提供安裝與設定 Windows Server Essentials 的逐步指示。 根據您的網路環境，您會有下列安裝選項：
 
--    Windows Server Essentials （預設已啟用 Windows Server Essentials 體驗角色）
+-    Windows Server Essentials (預設啟用 Windows Server Essentials 體驗角色) 
 
--    已安裝 Windows Server Essentials 體驗角色的 windows Server 2016
+-    已安裝「Windows Server Essentials 體驗」角色的 windows Server 2016
 
 |部署環境|描述|相關章節|
 |----------------------------|-----------------|---------------------|
@@ -60,11 +60,11 @@ Windows Server Essentials 體驗是 Windows Server 2016 中的一項角色，可
 -   [Windows Server Essentials 系統需求](../get-started/system-requirements.md)
 
 
-##  <a name="deploy-windows-server-essentials-to-set-up-a-new-active-directory-environment"></a><a name="BKMK_NewAD"></a>部署 Windows Server Essentials 以設定新的 Active Directory 環境
+##  <a name="deploy-windows-server-essentials-to-set-up-a-new-active-directory-environment"></a><a name="BKMK_NewAD"></a> 部署 Windows Server Essentials 以設定新的 Active Directory 環境
  Windows Server Essentials 可讓您快速設定 Active Directory 環境及相關的伺服器功能。
 
-###  <a name="deploying-windows-server-essentials"></a><a name="BKMK_WSEDeploy"></a>部署 Windows Server Essentials
- 如果您使用 Windows Server Essentials，則已啟用 Windows Server Essentials 體驗。 不過，您必須先完成某些步驟，才能設定您的伺服器。
+###  <a name="deploying-windows-server-essentials"></a><a name="BKMK_WSEDeploy"></a> 部署 Windows Server Essentials
+ 如果您使用的是 Windows Server Essentials，則已啟用 Windows Server Essentials 體驗。 不過，您必須先完成某些步驟，才能設定您的伺服器。
 
 ##### <a name="to-configure-windows-server-essentials-on-a-physical-server"></a>在實體伺服器上設定 Windows Server Essentials
 
@@ -91,8 +91,8 @@ Windows Server Essentials 體驗是 Windows Server 2016 中的一項角色，可
 
    完成伺服器設定之後，執行 Windows Server Essentials 的伺服器會設定為網域控制站。
 
-###  <a name="deploying-the-windows-server-essentials-experience-role-in-windows-server-2012-r2-standard-and-datacenter"></a><a name="BKMK_DeployWSERole"></a>在 Windows Server 2012 R2 Standard 和 Datacenter 中部署 Windows Server Essentials 體驗角色
- 您可以使用伺服器管理員，在 Windows Server 2012 R2 Standard 或 Windows Server 2012 R2 Datacenter 中啟用和設定 Windows Server Essentials 體驗角色，方法是使用下列程式。
+###  <a name="deploying-the-windows-server-essentials-experience-role-in-windows-server-2012-r2-standard-and-datacenter"></a><a name="BKMK_DeployWSERole"></a> 在 Windows Server 2012 R2 Standard 和 Datacenter 中部署 Windows Server Essentials 體驗角色
+ 您可以使用下列程式，在 Windows Server 2012 R2 Standard 或 Windows Server 2012 R2 Datacenter 中使用伺服器管理員來啟用和設定 Windows Server Essentials 體驗角色。
 
 ##### <a name="to-deploy-the-windows-server-essentials-experience-role-in-windows-server-2012-r2"></a>在 Windows Server 2012 R2 中部署 Windows Server Essentials 體驗角色
 
@@ -108,7 +108,7 @@ Windows Server Essentials 體驗是 Windows Server 2016 中的一項角色，可
 
 6.  在接下來的頁面中，按 [下一步]****，然後在確認頁面中按一下 [安裝]****。
 
-7.  安裝完成之後，Windows Server Essentials 體驗應該會在伺服器管理員中列為伺服器角色。
+7.  安裝完成之後，Windows Server Essentials 體驗應該在伺服器管理員中列為伺服器角色。
 
 8.  在伺服器管理員中的旗標通知區域按一下旗標，然後按一下 [設定 Windows Server Essentials]****。
 
@@ -118,16 +118,16 @@ Windows Server Essentials 體驗是 Windows Server 2016 中的一項角色，可
     >  設定 Windows Server Essentials 之後，就無法再變更伺服器名稱。
 
 
-10. 依照先前的[部署 Windows Server essentials](Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md#BKMK_WSEDeploy)一節中所述，遵循嚮導來設定 Windows server essentials。
+10. 依照稍早在 [部署 Windows Server essentials](Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md#BKMK_WSEDeploy) 一節中所述的步驟，依照嚮導設定 Windows server essentials。
 
-10. 依照先前的[部署 Windows Server essentials](Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md#BKMK_WSEDeploy)一節中所述，遵循嚮導來設定 Windows server essentials。
+10. 依照稍早在 [部署 Windows Server essentials](Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md#BKMK_WSEDeploy) 一節中所述的步驟，依照嚮導設定 Windows server essentials。
 
 
-##  <a name="deploy-windows-server-essentials-in-an-existing-active-directory-environment"></a><a name="BKMK_ExistingAD"></a>在現有的 Active Directory 環境中部署 Windows Server Essentials
+##  <a name="deploy-windows-server-essentials-in-an-existing-active-directory-environment"></a><a name="BKMK_ExistingAD"></a> 在現有的 Active Directory 環境中部署 Windows Server Essentials
  如果您的組織已經有現有的 Active Directory 環境，您也可以部署 Windows Server Essentials。 此外，您還可以選擇是否要部署 Windows Server Essentials 為網域控制站。
 
 > [!IMPORTANT]
->  只有當您在 Windows Server 2012 R2 Standard 或 Windows Server 2012 R2 Datacenter 中部署 Windows Server Essentials 體驗角色時，才可以使用此選項。
+>  只有當您在 Windows Server 2012 R2 Standard 或 Windows Server 2012 R2 Datacenter 中部署 Windows Server Essentials 體驗角色時，才能使用此選項。
 
 #### <a name="to-deploy-windows-server-essentials-in-an-existing-active-directory-environment"></a>在現有的 Active Directory 環境中部署 Windows Server Essentials
 
@@ -156,25 +156,25 @@ Windows Server Essentials 體驗是 Windows Server 2016 中的一項角色，可
 
 9. 在接下來的頁面中，按 [下一步]****，然後在確認頁面中按一下 [安裝]****。
 
-10. 安裝完成之後，Windows Server Essentials 體驗會在伺服器管理員中列為伺服器角色。
+10. 安裝完成之後，Windows Server Essentials 體驗將會在伺服器管理員中列為伺服器角色。
 
 11. 在 [伺服器管理員]**** 的旗標通知區域中，按一下旗標，然後按一下 [設定 Windows Server Essentials]****。
 
 12. 依照精靈設定 Windows Server Essentials。 根據您的 Active Directory 組態，您會在網域控制站上設定 Windows Server Essentials 或做為網域成員。 按一下 [設定]**** 開始設定。 設定過程需要花費大約 10 分鐘的時間。
 
-##  <a name="virtualize-your-environment"></a><a name="BKMK_VirtualWSE"></a>虛擬化您的環境
-  Windows Server Essentials、Windows Server 2012 R2 Standard 和 Windows Server 2012 R2 Datacenter 可以做為虛擬機器來執行。 您可以在執行 HYPER-V 的伺服器上，使用 HYPER-V 管理工具來執行虛擬機器。 從授權的觀點來看，Windows Server Essentials 可讓您設定 Hyper-v 角色並虛擬化您的環境。 授權可讓您設定另一個正在執行 Windows Server Essentials 的客體作業系統。 Windows Server Essentials 可讓您順暢地設定虛擬化環境，這取決於您的系統提供者「存儲設置」。
+##  <a name="virtualize-your-environment"></a><a name="BKMK_VirtualWSE"></a> 虛擬化您的環境
+  Windows Server Essentials、Windows Server 2012 R2 Standard 和 Windows Server 2012 R2 Datacenter 可作為虛擬機器執行。 您可以在執行 HYPER-V 的伺服器上，使用 HYPER-V 管理工具來執行虛擬機器。 從授權的觀點來看，Windows Server Essentials 可讓您設定 Hyper-v 角色和虛擬化您的環境。 授權可讓您設定另一個執行 Windows Server Essentials 的客體作業系統。 Windows Server Essentials 可讓您順暢地設定虛擬化環境，這取決於您的系統提供者「設定」。
 
 #### <a name="to-deploy-windows-server-essentials-as-a-virtual-machine"></a>部署 Windows Server Essentials 為虛擬機器。
 
-1.  在 Windows 歡迎頁面（取決於您的系統提供者「設定」）之後，[在**您開始前**] 頁面會提供選項，將 Windows Server Essentials 設定為虛擬實例或在實體硬體上。 這些選項是否可用由您的系統提供者預先定義，這兩個選項都可能永遠無法使用。 若要將 Windows Server Essentials 安裝為虛擬機器，請在 [**安裝 Windows Server essentials**] 中選取 [**安裝為虛擬實例**]，然後按一下 [**設定**]。
+1.  在 [Windows 歡迎畫面] 頁面 (，取決於您的系統提供者的 [設定) ]，[ **開始之前** ] 頁面會提供選項，讓您將 Windows Server Essentials 設定為虛擬實例或在實體硬體上。 這些選項是否可用由您的系統提供者預先定義，這兩個選項都可能永遠無法使用。 若要將 Windows Server Essentials 安裝為虛擬機器，請在 [ **安裝 Windows Server essentials**] 中選取 [ **安裝為虛擬實例**]，然後按一下 [ **設定**]。
 
 2.  精靈將花費大約五分鐘的時間佈建虛擬機器。
 
-3.  接下來，設定 Windows Server Essentials，如先前的[部署 Windows Server essentials](Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md#BKMK_WSEDeploy)一節中所述。
+3.  接下來，如先前在 [部署 Windows Server essentials](Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md#BKMK_WSEDeploy) 一節中所述，設定 Windows server essentials。
 
 
-##  <a name="install-and-configure-windows-server-essentials-by-using-windows-powershell"></a><a name="BKMK_PowerShell"></a>使用 Windows PowerShell 安裝和設定 Windows Server Essentials
+##  <a name="install-and-configure-windows-server-essentials-by-using-windows-powershell"></a><a name="BKMK_PowerShell"></a> 使用 Windows PowerShell 安裝和設定 Windows Server Essentials
  您可以使用 Windows PowerShell Cmdlet 來自動化安裝 Windows Server Essentials。
 
 #### <a name="to-install-windows-server-essentials-by-using-windows-powershell"></a>使用 Windows PowerShell 安裝 Windows Server Essentials
@@ -214,4 +214,4 @@ Windows Server Essentials 體驗是 Windows Server 2016 中的一項角色，可
 
 -   [安裝 Windows Server Essentials](Install-Windows-Server-Essentials.md)
 
--   [Windows Server Essentials 入門](../get-started/get-started.md)
+-   [開始與 Windows Server Essentials](../get-started/get-started.md)

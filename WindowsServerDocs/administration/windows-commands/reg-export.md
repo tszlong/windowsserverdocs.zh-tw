@@ -3,16 +3,16 @@ title: reg export
 description: Reg export 命令的參考文章，此命令會將指定的子機碼、專案和本機電腦的值複製到檔案中，以傳送到其他伺服器。
 ms.topic: reference
 ms.assetid: 0ad9526f-1e29-4fa5-9d2d-feaa92f12d7c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 258fde37c886335073c7eac660297e1dcce083c0
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a7bf8abe5dd97463202a024da90523a52020a986
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028056"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627057"
 ---
 # <a name="reg-export"></a>reg export
 

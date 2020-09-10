@@ -3,16 +3,16 @@ title: reg load
 description: Reg load 命令的參考文章，此命令會將已儲存的子機碼和專案寫入登錄中的不同子機碼。
 ms.topic: reference
 ms.assetid: 3b0b2b1b-f510-4108-9e9d-7057e924aa6e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8647b417999459b210986187bd523b3953a8b2d6
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 31b0baf4f4c6e903c7dc9716f8a9dc47d29227b5
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028026"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627062"
 ---
 # <a name="reg-load"></a>reg load
 

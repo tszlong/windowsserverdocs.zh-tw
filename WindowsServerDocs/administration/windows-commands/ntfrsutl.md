@@ -3,16 +3,16 @@ title: ntfrsutl
 description: Ntfrsutl 命令的參考文章，此命令會傾印 NT 檔案複寫服務 (NTFRS) 的內部資料表、執行緒和記憶體資訊。
 ms.topic: reference
 ms.assetid: d7721a19-5a87-4ab6-b816-65d2da2c811f
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 6fdbb82322e2aaa130d396b4917f01e7b4391a31
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: c59563329edc57a785c02329d8cd93110cd8abaf
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037256"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627425"
 ---
 # <a name="ntfrsutl"></a>ntfrsutl
 

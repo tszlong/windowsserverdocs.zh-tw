@@ -3,16 +3,16 @@ title: AllImages
 description: AllImages 的參考文章，可取得伺服器上所有影像的相關資訊。
 ms.topic: reference
 ms.assetid: 19de3720-4315-415a-8dc6-486caa0b2100
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: c4ebc0b36d832b6ce35168f6160b36c1c2ff896e
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 79b28d3649e18b192504bf6eb012984cb43218e2
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89035986"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626389"
 ---
 # <a name="get-allimages"></a>AllImages
 

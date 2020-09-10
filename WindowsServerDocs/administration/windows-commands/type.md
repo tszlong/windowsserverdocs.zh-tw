@@ -1,19 +1,19 @@
 ---
-title: type
+title: 類型
 description: Type 的參考文章，會顯示文字檔的內容。
 ms.topic: reference
 ms.assetid: c44fe905-a865-4c97-8cc5-fb95fec7d4d5
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dansimp
-ms.openlocfilehash: a7e188ec816b4ad16d86018bf7fe92954e778cbf
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.author: lizross
+author: eross-msft
+manager: mtillman
+ms.openlocfilehash: 7b944037c6dc73de89fa92b54a41b07ff09fcf69
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036076"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626663"
 ---
-# <a name="type"></a>type
+# <a name="type"></a>類型
 
 在 Windows 命令列介面中， **類型** 是內建命令，可顯示文字檔的內容。 使用 **type** 命令來查看文字檔，而不加以修改。
 

@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: e5b4a362-1881-4024-ae4e-cc3b05e50103
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 48bfc36ba6f3fa369b694b2e160a5ee1282517f2
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: dd68308646eba5fba2f79593cba82de467c1888b
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181564"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626366"
 ---
 # <a name="add-third-level-domain-names"></a>新增第三層網域名稱
 
@@ -33,7 +33,7 @@ ms.locfileid: "87181564"
 
 -   [重新啟動 Windows Server Domain Name Management 服務](Add-Third-Level-Domain-Names.md#BKMK_RestartService)
 
-###  <a name="add-an-implementation-of-the-idomainsignupprovider-interface-to-the-assembly"></a><a name="BKMK_DomainSignup"></a>將 IDomainSignupProvider 介面的執行加入至元件
+###  <a name="add-an-implementation-of-the-idomainsignupprovider-interface-to-the-assembly"></a><a name="BKMK_DomainSignup"></a> 將 IDomainSignupProvider 介面的執行新增至元件
  IDomainSignupProvider 介面可用來新增網域供應項目至精靈。
 
 ##### <a name="to-add-the-idomainsignupprovider-code-to-the-assembly"></a>若要將 IDomainSignupProvider 程式碼新增至組件
@@ -273,7 +273,7 @@ ms.locfileid: "87181564"
 
 21. 儲存但不要關閉專案，因為您會在下一個程序中新增專案內容。 除非您完成下一個程序，否則無法建置專案。
 
-###  <a name="add-an-implementation-of-the-idomainmaintenanceprovider-interface-to-the-assembly"></a><a name="BKMK_DomainMaintenance"></a>將 IDomainMaintenanceProvider 介面的執行加入至元件
+###  <a name="add-an-implementation-of-the-idomainmaintenanceprovider-interface-to-the-assembly"></a><a name="BKMK_DomainMaintenance"></a> 將 IDomainMaintenanceProvider 介面的執行新增至元件
  IDomainMaintenanceProvider 用來在網域建立之後維護網域。
 
 ##### <a name="to-add-the-idomainmaintenanceprovider-code-to-the-assembly"></a>若要將 IDomainMaintenanceProvider 程式碼新增至組件
@@ -512,10 +512,10 @@ ms.locfileid: "87181564"
 
 14. 儲存並建置方案。
 
-###  <a name="sign-the-assembly-with-an-authenticode-signature"></a><a name="BKMK_SignAssembly"></a>使用 Authenticode 簽章簽署元件
+###  <a name="sign-the-assembly-with-an-authenticode-signature"></a><a name="BKMK_SignAssembly"></a> 使用 Authenticode 簽章簽署元件
  您必須使用 Authenticode 來簽署組件，才能在作業系統中使用這些組件。 如需簽署組件的相關詳細資訊，請參閱 [使用 Authenticode 簽署和檢查程式碼](https://msdn.microsoft.com/library/ms537364\(VS.85\).aspx#SignCode)。
 
-###  <a name="install-the-assembly-on-the-reference-computer"></a><a name="BKMK_InstallAssembly"></a>將元件安裝在參照電腦上
+###  <a name="install-the-assembly-on-the-reference-computer"></a><a name="BKMK_InstallAssembly"></a> 在參照電腦上安裝元件
  將組件放置在參照電腦上的資料夾中。 記下資料夾位置，因為在下一個步驟您將會在登錄中輸入此位置。
 
 ### <a name="add-a-key-to-the-registry"></a>新增登錄機碼
@@ -555,7 +555,7 @@ ms.locfileid: "87181564"
 
 16. 輸入組件中所定義之提供者的完整類別名稱，然後按一下 **[確定]**。
 
-###  <a name="restart-the-windows-server-domain-name-management-service"></a><a name="BKMK_RestartService"></a>重新開機 Windows Server 功能變數名稱管理服務
+###  <a name="restart-the-windows-server-domain-name-management-service"></a><a name="BKMK_RestartService"></a> 重新開機 Windows Server 網功能變數名稱稱管理服務
  您必須重新啟動 Windows Server Domain Management 服務，讓提供者在作業系統中生效。
 
 ##### <a name="restart-the-service"></a>重新啟動服務
@@ -575,4 +575,4 @@ ms.locfileid: "87181564"
 3.  按兩下 **[服務]**，向下捲動並選取 **[Windows Server Domain Management]**，然後按一下 **[重新啟動服務]**。
 
 ## <a name="see-also"></a>另請參閱
- [建立和自訂映射額外的](Creating-and-Customizing-the-Image.md)[自訂](Additional-Customizations.md)[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)
+ [建立和自訂映射](Creating-and-Customizing-the-Image.md)[其他自訂](Additional-Customizations.md)專案[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)

@@ -3,16 +3,16 @@ title: tzutil
 description: Tzutil 的參考文章，它會顯示 Windows 時區公用程式。
 ms.topic: reference
 ms.assetid: bcf6e007-c9b6-4df5-83c5-ed7b4b1b5913
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 1d8eae64faf58d404c49afa5b469c61d44807ae0
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 4ed266c0a8f8b8e45c6da76958a770dec5328db6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029936"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626602"
 ---
 # <a name="tzutil"></a>tzutil
 

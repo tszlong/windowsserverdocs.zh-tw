@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: e62e4f07-c2ba-4c5e-b30c-bdc287cd654e
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 12bdaa86cf102ac85d2d2d8f2f2caf492f465dec
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 32bb6be1ff24823d628e23945849b5030d6e0723
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181204"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626321"
 ---
 # <a name="install-add-ins"></a>安裝增益集
 
@@ -27,7 +27,7 @@ ms.locfileid: "87181204"
 
 1.  (選用) 如果您要使用 .wssx 檔案安裝增益集，請完成下列步驟：
 
-    1.  將 <AddinName \> . onlinebackupaddin.wssx 檔案儲存在參照電腦上。
+    1.  將 <AddinName .wssx 檔案儲存 \> 在參照電腦上。
 
     2.  按兩下 .wssx 檔案以開啟 [增益集安裝精靈]。
 
@@ -36,4 +36,4 @@ ms.locfileid: "87181204"
 2.  (選用) 將個別增益集檔案安裝在適當位置中，如 SDK 中針對每個增益集類型的定義。
 
 ## <a name="see-also"></a>另請參閱
- [建立和自訂映射額外的](Creating-and-Customizing-the-Image.md)[自訂](Additional-Customizations.md)[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)
+ [建立和自訂映射](Creating-and-Customizing-the-Image.md)[其他自訂](Additional-Customizations.md)專案[準備映射以進行部署](Preparing-the-Image-for-Deployment.md)[測試客戶體驗](Testing-the-Customer-Experience.md)

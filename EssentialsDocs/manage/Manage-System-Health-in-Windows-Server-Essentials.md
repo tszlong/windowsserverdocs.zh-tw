@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 3043f83b-389c-4f37-a1ff-85afe99314fa
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 98a4b154a9b3cea9ebc92da1eb807bc73e98d5d2
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 78b0b9f8cb2056bc307fd66b9fa70f3d128012cf
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180884"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626048"
 ---
 # <a name="manage-system-health-in-windows-server-essentials"></a>在 Windows Server Essentials 中管理系統健康情況
 
@@ -21,9 +21,9 @@ ms.locfileid: "87180884"
  本主題討論如何使用 [儀表板] 來檢視和回應您網路中的所有警示。
 
 > [!NOTE]
->  在已安裝 Windows Server Essentials 體驗角色的 Windows Server Essentials 和 Windows Server 2012 R2 中，系統不會再于 [警示檢視器] 中顯示伺服器和用戶端電腦的健康情況警示，而是可以在**首頁**的 [**健康情況報告**] 索引標籤上查看。
+>  在已安裝「Windows Server Essentials 體驗」角色的 Windows Server Essentials 和 Windows Server 2012 R2 中，[警示檢視器] 中不會再顯示伺服器和用戶端電腦的健康情況警示，而是改為在**首頁**的 [**健康情況報告**] 索引標籤上查看。
 
- Windows Server Essentials 會主動監視連線到伺服器的每一部電腦，並警示系統管理員與系統健康狀態相關的問題，包括重大更新、遺失惡意程式碼防護、用戶端電腦上的病毒定義過時，以及其他需要採取行動的重要問題。 這些問題會在 [警示檢視器] 中顯示為警示，您可以從伺服器的 [儀表板] 或 Windows Server Essentials 中的用戶端電腦的 [啟動列]，或在 Windows Server Essentials 的 [**健康情況報告**] 索引標籤上啟動。 警示預設是每 30 分鐘重新整理一次，但是您也可以按一下 [警示檢視器] 中或 [健康情況報告]**** 索引標籤上的 [重新整理]****，來隨時評估您的網路是否有警示。
+ Windows Server Essentials 會主動監視連接至伺服器的每一部電腦，並警示系統管理員與系統健康狀態相關的問題，包括重大更新、遺失的惡意程式碼防護、用戶端電腦上的過期病毒定義，以及其他需要採取行動的重要問題。 這些問題會在 [警示檢視器] 中顯示為警示，您可以從伺服器的儀表板或 Windows Server Essentials 中的用戶端電腦的啟動控制板，或在 Windows Server Essentials 的 [ **健康情況報告** ] 索引標籤中，啟動這些問題。 警示預設是每 30 分鐘重新整理一次，但是您也可以按一下 [警示檢視器] 中或 [健康情況報告]**** 索引標籤上的 [重新整理]****，來隨時評估您的網路是否有警示。
 
  下列主題將協助您了解、檢視及回應 [警示檢視器] 中的警示，同時也提供設定您的伺服器以透過電子郵件接收警示通知的指示：
 
@@ -39,7 +39,7 @@ ms.locfileid: "87180884"
 
 -   [潛在的電腦警示](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Potential)
 
-##  <a name="about-the-health-report-add-in"></a><a name="BKMK_AddIn"></a>關於健全狀況報告增益集
+##  <a name="about-the-health-report-add-in"></a><a name="BKMK_AddIn"></a> 關於健康情況報告增益集
  適用於 Windows Server Essentials 的「健康狀況報告」增益集可提供您 Windows Server Essentials 網路的相關彙總資訊，並可讓您將這項資訊散佈給其他人。 您可以在 [儀表板] 的 [報告]**** 索引標籤檢視這項資訊。 使用 [報告]**** 索引標籤時，您可以執行下列動作：
 
 -   [依需求或排程產生報告](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Generate)
@@ -49,18 +49,18 @@ ms.locfileid: "87180884"
 -   [以電子郵件傳送報告](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_emailreport)
 
 > [!NOTE]
->  **Windows Server Essentials：** 您可以從[Microsoft 下載中心](https://go.microsoft.com/fwlink/p/?LinkId=266342)下載適用于 Windows Server Essentials 的健康情況報告增益集。
+>  **Windows Server Essentials：** 您可以從 [Microsoft 下載中心](https://go.microsoft.com/fwlink/p/?LinkId=266342)下載適用于 Windows Server Essentials 的健康情況報告增益集。
 >
->  **Windows Server Essentials：** 根據預設，健康情況報告增益集已與 Windows server Essentials 或已安裝 Windows Server Essentials 體驗角色的 Windows Server 2012 R2 整合，而且健康情況報告會顯示在儀表板 [**首頁**] 的 [**健康情況報告**] 索引標籤上。
+>  **Windows Server Essentials：** 根據預設，健康情況報告增益集已與 Windows server Essentials 或已安裝 Windows Server Essentials 體驗角色的 Windows Server 2012 R2 整合，而且健康情況報告會顯示在儀表板**首頁**的 [**健康情況報告**] 索引標籤上。
 
-###  <a name="generate-a-report-on-demand-or-on-schedule"></a><a name="BKMK_Generate"></a>依需求或排程產生報表
+###  <a name="generate-a-report-on-demand-or-on-schedule"></a><a name="BKMK_Generate"></a> 視需要或依排程產生報表
  安裝「健康情況報告」增益集並重新啟動 [儀表板] 之後，會在 [儀表板] 中新增一個 [報告]**** 索引標籤。 您只要在 [報告]**** 索引標籤上按一下 [產生健康情況報告]**** 工作，即可隨時依需求產生健康情況報告。
 
  產生健康情況報告之後，會在清單窗格中建立一個新項目，以報告的產生日期和時間做為識別。 若要開啟項目，您可以在清單窗格中按兩下該項目，或是選取它，然後按一下工作窗格中的 [開啟健康情況報告]****。 該報告會以 HTML 格式顯示在新視窗中。
 
- 除了手動產生報告之外，您可能也會想要依每日或每小時排程自動產生報告。 若要這樣做，請在工作窗格中，按一下 [**自訂健康情況報告設定**]，然後按一下 [**排程與電子郵件**] 索引標籤。[**排程**] 功能預設為關閉，而您可以選取 [在**排程的時間產生健康情況報告**] 核取方塊來開啟它。
+ 除了手動產生報告之外，您可能也會想要依每日或每小時排程自動產生報告。 若要這樣做，請在工作窗格中，按一下 [ **自訂健康情況報告設定**]，然後按一下 [ **排程與電子郵件** ] 索引標籤。[ **排程** ] 功能預設為關閉，而您可以選取 [ **在排定的時間產生健康情況報告** ] 核取方塊來開啟它。
 
-###  <a name="customize-the-content-of-the-report"></a><a name="BKMK_Customize"></a>自訂報表的內容
+###  <a name="customize-the-content-of-the-report"></a><a name="BKMK_Customize"></a> 自訂報表的內容
  健康情況報告包含下列內容：
 
 - **重要警示和警告** 這與您在 [儀表板] 上的 [警示檢視器] 中看到的重要警示和警告相同。 健康情況報告中不包含資訊警示。
@@ -77,16 +77,16 @@ ms.locfileid: "87180884"
 
   在「健康情況報告」中，請先檢視 [摘要]****，然後針對那些帶有紅色錯誤圖示或黃色警告圖示的項目，按一下同一列中的 [詳細資料]**** 連結，以檢視該項目的相關詳細資料。
 
-  如果您對報表中預設包含的某些資料點不感興趣，您可以在工作窗格中按一下 [**自訂健康情況報告設定**]，然後按一下 [**內容**] 索引標籤，以自訂報表的內容。請清除您不想要在報表中看到之內容的核取方塊。 例如，如果您有自己的伺服器備份計畫，而不想要看到有關伺服器備份的警告，您可以藉由清除 [**伺服器備份**] 核取方塊，將伺服器備份從報告中排除。
+  如果您對報表中預設包含的某些資料點不感興趣，您可以在工作窗格中按一下 [ **自訂健康情況報告設定** ]，然後按一下 [ **內容** ] 索引標籤，以自訂報表的內容。清除您不想在報表中看到的內容的核取方塊。 例如，如果您有自己的伺服器備份計畫，而不想要看到有關伺服器備份的警告，您可以藉由清除 [ **伺服器備份** ] 核取方塊，將伺服器備份從報告中排除。
 
-###  <a name="email-the-report"></a><a name="BKMK_emailreport"></a>以電子郵件傳送報表
+###  <a name="email-the-report"></a><a name="BKMK_emailreport"></a> 以電子郵件傳送報表
  對某些系統管理員來說，必須登入 [儀表板] 才能讀取報告，仍然不是很方便，尤其是當他們有多個伺服器要管理的時候。 一旦開啟電子郵件功能，在產生報告之後，系統就會將含有報告內容的電子郵件傳送給指定的電子郵件地址清單。 系統管理員可以從任何裝置或任何用戶端應用程式輕鬆地檢視這份報告，以確定伺服器處於最佳執行狀態。
 
  在您啟用電子郵件功能之後，請在 [自訂健康情況報告設定]**** 對話方塊中，變更 SMTP 設定並指定電子郵件收件者清單，您會發現工作窗格中出現一項新工作：**電子郵件健康情況報告**。 如需有關「SMTP 設定」的詳細資訊，請參閱[設定警示的電子郵件通知](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Email)。
 
  您可以選取現有的報告，然後按一下 [以電子郵件傳送健康情況報告]****。 您也可以產生一份新報告，並讓它自動傳送到您的 [收件匣]。 如果您已經設定排程來自動產生報告，系統將會依排程在每天 (或每小時) 產生報告之後，自動將報告傳遞到您的 [收件匣] 中。
 
-##  <a name="view-alerts-by-using-the-alert-viewer"></a><a name="BKMK_View"></a>使用警示檢視器來查看警示
+##  <a name="view-alerts-by-using-the-alert-viewer"></a><a name="BKMK_View"></a> 使用警示檢視器來查看警示
  本節討論如何使用 [儀表板] 或 [啟動列] 來開啟 [警示檢視器]，以檢視伺服器網路上所有電腦的健全狀態。
 
 #### <a name="to-open-the-alert-viewer-by-using-the-dashboard"></a>使用儀表板來開啟警示檢視器
@@ -101,7 +101,7 @@ ms.locfileid: "87180884"
 
 2.  按一下 [啟動列] 底部任何顯示的警示圖示 (重要、警告及資訊) 以開啟 [警示檢視器]，然後依照 [警示檢視器] 之詳細資料窗格中的指示來解決警示。
 
-##  <a name="organize-alerts-in-the-alert-viewer"></a><a name="BKMK_Organize"></a>在 [警示檢視器] 中組織警示
+##  <a name="organize-alerts-in-the-alert-viewer"></a><a name="BKMK_Organize"></a> 在警示檢視器中組織警示
  您可以組織 [警示檢視器] 中的警示，讓它們根據其嚴重性 (重要、警告或資訊) 或根據電腦名稱來顯示。
 
 #### <a name="to-organize-alerts-in-the-alert-viewer"></a>組織警示檢視器中的警示
@@ -116,7 +116,7 @@ ms.locfileid: "87180884"
 
     2.  選取 [依警示類型篩選]****，然後按一下您要檢視警示的警示類型 (重要、警告或資訊)。 這會在 [警示檢視器] 中僅顯示所選取的警示類型。
 
-##  <a name="respond-to-alerts"></a><a name="BKMK_Respond"></a>回應警示
+##  <a name="respond-to-alerts"></a><a name="BKMK_Respond"></a> 回應警示
  當您遇到警示時，您可以選擇執行下列其中一個動作：
 
 -   [解決警示](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Resolve)
@@ -127,10 +127,10 @@ ms.locfileid: "87180884"
 
 -   [刪除警示](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_4)
 
-###  <a name="resolve-an-alert"></a><a name="BKMK_Resolve"></a>解決警示
+###  <a name="resolve-an-alert"></a><a name="BKMK_Resolve"></a> 解決警示
  請依照 [警示檢視器] 中的解決方法指示來解決警示。 解決警示之後，它仍會顯示在 [警示檢視器] 中，直到重新整理為止。
 
-###  <a name="ignore-an-alert"></a><a name="BKMK_3"></a>忽略警示
+###  <a name="ignore-an-alert"></a><a name="BKMK_3"></a> 忽略警示
  如果您想要稍後再回應警示，您可以選擇忽略它。 當您忽略警示時，它仍會列在 [警示檢視器] 中，但是會處於停用狀態並且變暗。 已忽略的警示不會被納入電腦的整體健康情況評估中。 若要解決已忽略的警示，您必須先啟用該警示。
 
 ##### <a name="to-ignore-an-alert"></a>忽略警示
@@ -143,7 +143,7 @@ ms.locfileid: "87180884"
 
    若要回應已停用的警示，您將必須先啟用該警示。
 
-###  <a name="enable-an-alert"></a><a name="BKMK_5"></a>啟用警示
+###  <a name="enable-an-alert"></a><a name="BKMK_5"></a> 啟用警示
  您可以啟用您先前選擇忽略的警示。 將警示啟用之後，您就可以視需要將它解決或刪除。 當警示被標示為忽略時，就會顯示為停用。 當您啟用先前停用的警示時，它會變成作用中，並且會再次被納入電腦的整體健康情況評估中。
 
 ##### <a name="to-enable-an-alert"></a>啟用警示
@@ -154,7 +154,7 @@ ms.locfileid: "87180884"
 
 3.  在 [警示檢視器] 中，於您想要啟用的警示上按一下滑鼠右鍵，然後按一下 [啟用警示]****。
 
-###  <a name="delete-an-alert"></a><a name="BKMK_4"></a>刪除警示
+###  <a name="delete-an-alert"></a><a name="BKMK_4"></a> 刪除警示
  如果您不想要解決或忽略警示，您可以將它刪除。 您可以使用 [啟動列] 上的 [警示檢視器] 來刪除針對您的電腦產生的警示。 如果您刪除警示，而伺服器在下一個網路健康情況評估週期中再次偵測到問題，就會產生新的警示。
 
 ##### <a name="to-delete-an-alert"></a>若要刪除警示
@@ -165,14 +165,14 @@ ms.locfileid: "87180884"
 
 3.  在 [警示檢視器] 中，於您想要刪除的警示上按一下滑鼠右鍵，然後按一下 [刪除警示]****。
 
-##  <a name="set-up-email-notifications-for-alerts"></a><a name="BKMK_Email"></a>設定警示的電子郵件通知
+##  <a name="set-up-email-notifications-for-alerts"></a><a name="BKMK_Email"></a> 設定警示的電子郵件通知
  您可以設定讓伺服器在警示發生時透過電子郵件通知您。 這些警示的電子郵件通知會包含網路問題及其解決方法步驟的相關資訊，此資訊與 [警示檢視器] 中顯示的資訊相同。 部分網路健康情況評估是以程式設計的方式執行。
 
  當您設定讓伺服器以電子郵件傳送警示通知時，就會針對在網路健康情況評估期間發現的警示傳送電子郵件通知。 不過，並非所有在 [警示檢視器] 中回報的警示都會以電子郵件來回報。
 
  [警示電子郵件評估] 工作會每 30 分鐘在伺服器上執行一次，以評估網路是否有警示。 當有任何為電子郵件通知設定的警示發生時，就會送出電子郵件通知。 如果警示在下一個評估週期中仍然為作用中，為避免塞爆您的信箱，系統並不會傳送第二封電子郵件。 不過，如果在未來的警示評估週期內偵測到新的警示，就會傳送電子郵件通知，當中會包含新的和先前的警示。
 
-###  <a name="alerts-that-result-in-email-notifications"></a><a name="BKMK_list"></a>導致電子郵件通知的警示
+###  <a name="alerts-that-result-in-email-notifications"></a><a name="BKMK_list"></a> 導致電子郵件通知的警示
  當您已設定讓伺服器傳送警示的電子郵件通知時，下列 [警示檢視器] 中的警示會導致傳送電子郵件通知：
 
 -   用戶端電腦備份中有錯誤。
@@ -221,17 +221,17 @@ ms.locfileid: "87180884"
 
 -   授權錯誤：Active Directory 網域服務。
 
--   您的 Office 365 訂閱已到期。
+-   您的 Microsoft 365 訂用帳戶已過期。
 
--   Office 365 驗證失敗。
+-   Microsoft 365 的驗證失敗。
 
 -   密碼原則不正確。
 
--   「密碼同步處理服務」無法將使用者密碼與 Office 365 同步。
+-   密碼同步服務無法與 Microsoft 365 同步處理使用者密碼。
 
 -   變更您的 Windows 密碼。
 
--   您的 Office 365 密碼與您的 Windows 密碼不同。
+-   您 Microsoft 365 的密碼與您的 Windows 密碼不同。
 
 -   無法連線到 Exchange Server。
 
@@ -255,11 +255,11 @@ ms.locfileid: "87180884"
 
 -   一個或多個磁碟機未運作且離線。
 
-###  <a name="configuring-smtp-on-your-server-to-send-alert-notifications-by-email-in-windows-server-essentials"></a><a name="BKMK_SMTP"></a>在 Windows Server Essentials 中設定伺服器上的 SMTP 以透過電子郵件傳送警示通知
+###  <a name="configuring-smtp-on-your-server-to-send-alert-notifications-by-email-in-windows-server-essentials"></a><a name="BKMK_SMTP"></a> 在您的伺服器上設定 SMTP，以在 Windows Server Essentials 中透過電子郵件傳送警示通知
  本節討論如何設定讓伺服器傳送警示的電子郵件通知。
 
 > [!NOTE]
->  您可以從[Microsoft 下載中心](https://go.microsoft.com/fwlink/p/?LinkId=266342)下載適用于 Windows Server Essentials 的健康情況報告增益集。
+>  您可以從 [Microsoft 下載中心](https://go.microsoft.com/fwlink/p/?LinkId=266342)下載適用于 Windows Server Essentials 的健康情況報告增益集。
 
 ##### <a name="to-set-up-email-notification-for-alerts"></a>設定警示的電子郵件通知
 
@@ -304,7 +304,7 @@ ms.locfileid: "87180884"
  本節討論如何為您的的伺服器設定 SMTP 設定，讓您可以透過電子郵件接收健康情況報告。
 
 > [!NOTE]
->  根據預設，健康情況報告增益集已與 Windows server Essentials 或已安裝 Windows Server Essentials 體驗角色的 Windows Server 2012 R2 整合，而且健康情況報告會顯示在儀表板 [**首頁**] 的 [**健康情況報告**] 索引標籤上。
+>  根據預設，健康情況報告增益集已與 Windows server Essentials 或已安裝 Windows Server Essentials 體驗角色的 Windows Server 2012 R2 整合，而且健康情況報告會顯示在儀表板**首頁**的 [**健康情況報告**] 索引標籤上。
 
 ##### <a name="to-set-up-email-notification-for-health-reports"></a>設定健康情況報告的電子郵件通知
 
@@ -316,7 +316,7 @@ ms.locfileid: "87180884"
 
 4.  在 [排程與電子郵件]**** 索引標籤的 [電子郵件]**** 區段中，執行下列動作：
 
-    1.  按一下 [啟用]****，然後輸入要用來傳送健康情況報告的寄件者電子郵件地址。 此電子郵件地址會在以電子郵件傳送的健康狀態報表中顯示為寄件者的位址。
+    1.  按一下 [啟用]****，然後輸入要用來傳送健康情況報告的寄件者電子郵件地址。 在以電子郵件傳送的健康狀態報表中，此電子郵件地址會顯示為寄件者的位址。
 
         1.  在 [SMTP 伺服器名稱]**** 中，輸入 SMTP 伺服器的名稱。 (請參閱「表 1」所提供的部分 SMTP 伺服器名稱清單)。
 
@@ -347,7 +347,7 @@ ms.locfileid: "87180884"
 
 7.  若要確認您已正確設定 SMTP 伺服器設定來透過電子郵件傳送健康情況報告，請從 [儀表板] 上的 [健康情況報告] 索引標籤選取報告，然後從工作窗格中按一下 [以電子郵件傳送健康情況報告]****。
 
-##  <a name="potential-computer-alerts"></a><a name="BKMK_Potential"></a>可能的電腦警示
+##  <a name="potential-computer-alerts"></a><a name="BKMK_Potential"></a> 可能的電腦警示
  本節討論了解和管理連線到伺服器之電腦所特定並且會出現在電腦之 [啟動列] 的警示。
 
  下表列出了一些可以產生並顯示在 [警示檢視器] (如果它們適用於您的電腦) 上的電腦警示。
@@ -360,13 +360,13 @@ ms.locfileid: "87180884"
 |Windows Update 已關閉。|除非開啟 Windows Update，否則您將無法享有更新項目既新穎又已修正之功能的好處。 若要開啟 Windows Update，請在 [警示檢視器] 中按一下 [開啟 Windows Update]****。<br /><br /> 如果未顯示 [開啟 Windows Update]**** 工作，表示您沒有登入發生警示的電腦。 您必須登入發生警示的電腦，才能在 [警示檢視器] 中執行這項工作。|
 |應該安裝重要的更新。|除非開啟 Windows Update，否則您將無法享有更新項目既新穎又已修正之功能的好處。 若要開啟 Windows Update，請在 [警示檢視器] 中按一下 [開啟 Windows Update]****。<br /><br /> 如果未顯示 [開啟 Windows Update]**** 工作，表示您沒有登入發生警示的電腦。 您必須登入發生警示的電腦，才能在 [警示檢視器] 中執行這項工作。|
 |重新啟動電腦以套用更新。|在套用更新之前，您無法享有更新項目既新穎又已修正之功能的好處。 請儲存您的所有資料，然後重新啟動電腦以套用更新。|
-|硬碟上的可用空間不足。|如果沒有釋出空間，您將無法儲存其他資訊。 若要增加電腦上的可用空間，請考慮下列選項：<br /><br /> -加入新的硬碟。<br /><br /> -執行 [**磁片清理**] 來移除舊檔案和暫存檔案。<br /><br /> -將您的檔案移至另一部電腦上的共用資料夾。<br /><br /> -封存卸載式媒體（例如 CD、DVD 或外部硬碟）上的檔案。|
+|硬碟上的可用空間不足。|如果沒有釋出空間，您將無法儲存其他資訊。 若要增加電腦上的可用空間，請考慮下列選項：<br /><br /> -加入新的硬碟。<br /><br /> -執行 **磁片清理** 以移除舊檔案和暫存檔案。<br /><br /> -將檔案移至另一部電腦上的共用資料夾。<br /><br /> -將檔案封存在卸載式媒體上，例如 CD、DVD 或外部硬碟。|
 |[檔案歷程記錄]**** 代理程式未正確設定，無法在這部電腦上執行。|無法建立「檔案歷程記錄」備份。|
 |一或多個服務未執行。||
 |變更您的 Windows 密碼。||
-|您的 Microsoft Office 365 密碼與您的 Windows 密碼不同。||
+|您的 Microsoft Microsoft 365 密碼與您的 Windows 密碼不同。||
 
-###  <a name="to-protect-your-computer"></a><a name="BKMK_Protect"></a>保護您的電腦
+###  <a name="to-protect-your-computer"></a><a name="BKMK_Protect"></a> 保護您的電腦
 
 1.  開啟 [資訊安全中心]。
 
@@ -380,7 +380,7 @@ ms.locfileid: "87180884"
 
     -   如果未安裝防毒保護，請考慮安裝它。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [使用 Windows Server Essentials](../use/Use-Windows-Server-Essentials.md)
 
