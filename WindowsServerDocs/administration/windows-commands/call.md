@@ -3,16 +3,16 @@ title: call
 description: 呼叫命令的參考文章，此命令會從另一個批次程式呼叫，而不需要停止父批次程式。
 ms.topic: reference
 ms.assetid: d34a41dc-e6c7-4467-bf6a-15cec704833e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 06/05/2018
-ms.openlocfilehash: 749f073fa3f96f51aec5bf47e4e09ce7263d3205
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ff00048be6cc44b91d2a2a67bd186a39b13e2ac7
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89034256"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630015"
 ---
 # <a name="call"></a>call
 

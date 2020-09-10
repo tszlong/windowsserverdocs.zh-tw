@@ -3,16 +3,16 @@ title: change port
 description: 變更埠命令的參考文章，此命令會列出或變更 COM 埠對應，以與 MS-DOS 應用程式相容。
 ms.topic: article
 ms.assetid: 3d772c90-e849-4e74-b9ec-b6cae1159336 Lizap
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8014ba67b2c4383aa56a6fce5eb486bbccfba7e7
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a38f4f4885ac13c40a7e2a340bf94623bcbdd77d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031156"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629898"
 ---
 # <a name="change-port"></a>change port
 

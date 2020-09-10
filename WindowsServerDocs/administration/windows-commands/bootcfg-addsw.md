@@ -3,16 +3,16 @@ title: bootcfg addsw
 description: 適用于 bootcfg addsw 命令的參考文章，此命令會為指定的作業系統專案新增作業系統載入選項。
 ms.topic: reference
 ms.assetid: d8389293-ecd9-42f0-b84b-b9ead4cf52e6
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: e47d9001dc9b2bac7f08036f15408a1e35aaf075
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 45f8d0b567e1fa2bd9e5ddd084e7f63c5d6c6c74
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89034546"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630359"
 ---
 # <a name="bootcfg-addsw"></a>bootcfg addsw
 

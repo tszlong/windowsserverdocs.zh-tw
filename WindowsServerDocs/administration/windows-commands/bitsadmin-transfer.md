@@ -3,16 +3,16 @@ title: bitsadmin transfer
 description: Bitsadmin transfer 命令的參考文章，會傳輸一或多個檔案。
 ms.topic: reference
 ms.assetid: fe302141-b33a-4a05-835e-dc4fc4db7d5a
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 989c2ace5aa8cb0f123dec6f2ad490c1c8c778cd
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 6f4171e5544b468012e308910b4601cd9bde1406
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89033346"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630557"
 ---
 # <a name="bitsadmin-transfer"></a>bitsadmin transfer
 
@@ -34,7 +34,7 @@ bitsadmin /transfer <name> [<type>] [/priority <job_priority>] [/ACLflags <flags
 | 參數 | 描述 |
 | --------- | ----------- |
 | NAME | 作業的名稱。 此命令不能是 GUID。 |
-| type | 選擇性。 設定作業的類型，包括：<ul><li>**內容.** 預設值。 針對下載作業選擇此類型。</li><li>**上.** 針對上傳作業選擇此類型。</li></ul> |
+| 類型 | 選擇性。 設定作業的類型，包括：<ul><li>**內容.** 預設值。 針對下載作業選擇此類型。</li><li>**上.** 針對上傳作業選擇此類型。</li></ul> |
 | priority | 選擇性。 設定工作的優先順序，包括：<ul><li>FOREGROUND</li><li>HIGH</li><li>NORMAL</li><li>LOW</li></ul> |
 | ACLflags | 選擇性。 指出您想要使用所下載的檔案來維護擁有者和 ACL 資訊。 指定一或多個值，包括：<ul><li>**o** -複製具有檔案的擁有者資訊。</li><li>**g** -使用 file 複製群組資訊。</li><li>**d** -複製任意存取控制清單 (DACL) 資訊與檔案。</li><li>**s** -複製系統存取控制清單 (SACL) 具有檔案的資訊。</li></ul> |
 | /DYNAMIC | 使用 [**BITS_JOB_PROPERTY_DYNAMIC_CONTENT**](/windows/win32/api/bits5_0/ne-bits5_0-bits_job_property_id)來設定作業，放寬伺服器端需求。 |

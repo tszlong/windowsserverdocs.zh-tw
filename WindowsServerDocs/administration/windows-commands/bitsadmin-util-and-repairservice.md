@@ -3,16 +3,16 @@ title: bitsadmin util and repairservice
 description: Bitsadmin util and repairservice 命令的參考文章，可修正各種 BITS 服務版本的已知問題。
 ms.topic: reference
 ms.assetid: 2ac7baeb-4340-4186-bfcb-66478195378d
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 1f0a33030e6036eacdf39c29f7cd2e5e88775905
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 0bef08a3e0db8973de9370279144be5951445cc3
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89034696"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630443"
 ---
 # <a name="bitsadmin-util-and-repairservice"></a>bitsadmin util and repairservice
 

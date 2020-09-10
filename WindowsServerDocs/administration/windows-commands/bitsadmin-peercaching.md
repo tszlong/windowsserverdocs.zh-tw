@@ -3,16 +3,16 @@ title: bitsadmin peercaching
 description: Bitsadmin 對等專案命令的參考文章，其中列出/peercaching 參數。
 ms.topic: reference
 ms.assetid: c2eaa3c7-9d30-4731-8a78-4b6e6041d29a
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 4b6887b715ee3239150360cd8d128b5a1a413e21
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: e0e9bc8d0bf6fcaabdd0ad2ea6febdeb5c827e1f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89034756"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89631311"
 ---
 # <a name="bitsadmin-peercaching"></a>bitsadmin peercaching
 

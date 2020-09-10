@@ -3,16 +3,16 @@ title: bitsadmin setproxysettings
 description: Bitsadmin setproxysettings 命令的參考文章，此命令會設定指定工作的 proxy 設定。
 ms.topic: reference
 ms.assetid: be8edb1b-614e-4d0b-a8f8-64b4bde3e64b
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 398da89b251fd7ebf181a819f35870984e05e6ab
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 199cb3f4b4259a52a8960cac23b9e408e71ded23
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89033426"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630688"
 ---
 # <a name="bitsadmin-setproxysettings"></a>bitsadmin setproxysettings
 

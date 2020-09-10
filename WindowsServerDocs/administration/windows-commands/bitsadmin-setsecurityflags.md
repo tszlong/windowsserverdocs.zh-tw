@@ -3,16 +3,16 @@ title: bitsadmin setsecurityflags
 description: Bitsadmin setsecurityflags 命令的參考文章，此命令會設定 HTTP 的安全性旗標，以判斷 BITS 是否應該檢查憑證撤銷清單、忽略某些憑證錯誤，以及定義伺服器重新導向 HTTP 要求時要使用的原則。
 ms.topic: reference
 ms.assetid: 0da5cbf5-5f7f-4833-bbbe-c4e8379a78ab
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 56f1888eef89a0d6ef6dbe70ea08e99503e0d8b6
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 771ff8ba34f82e942877158d351ed8ff760bda9d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89034736"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630631"
 ---
 # <a name="bitsadmin-setsecurityflags"></a>bitsadmin setsecurityflags
 

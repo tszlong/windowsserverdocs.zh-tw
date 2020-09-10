@@ -3,16 +3,16 @@ title: bootcfg copy
 description: 適用于 bootcfg copy 命令的參考文章，此命令會複製現有的開機專案，讓您可以新增命令列選項。
 ms.topic: reference
 ms.assetid: 2a236c2a-8675-444d-b695-9cbc9aff643b
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 03ecf61074b19f161ea98111f3500f5920c72de9
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 14d3a124c1c52b985ecff96da28e828f73abc1e3
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89034536"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630347"
 ---
 # <a name="bootcfg-copy"></a>bootcfg copy
 

@@ -3,16 +3,16 @@ title: bitsadmin setcredentials
 description: Bitsadmin setcredentials 命令的參考文章，此命令會將認證新增至作業。
 ms.topic: reference
 ms.assetid: 3cd099a4-9e85-46d8-8527-edb6dfab7f97
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 00e97d41fb021668465d714903480a4e86222f32
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: f3045bc584e420da215b02111a61c3e7b8a50e8a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031286"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89631016"
 ---
 # <a name="bitsadmin-setcredentials"></a>bitsadmin setcredentials
 

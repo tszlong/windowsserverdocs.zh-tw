@@ -3,16 +3,16 @@ title: bitsadmin util and setieproxy
 description: Bitsadmin util 和 setieproxy 命令的參考文章，此命令會設定使用服務帳戶傳輸檔案時所使用的 proxy 設定。
 ms.topic: reference
 ms.assetid: 0e9f31ba-3070-4ffd-a94c-388c8d78f688
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 442e76a55a3bf469b680e8bbb97be790f867af55
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 7c341a3fffad0951b800c618605c15b47d4d9308
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89034686"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630422"
 ---
 # <a name="bitsadmin-util-and-setieproxy"></a>bitsadmin util and setieproxy
 

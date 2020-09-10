@@ -3,16 +3,16 @@ title: 變更
 description: 變更命令的參考文章，此命令會變更登入遠端桌面工作階段主機伺服器設定、COM 埠對應和安裝模式。
 ms.topic: reference
 ms.assetid: 90012116-0fb3-4f34-a819-cf4d4b4f8981
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: f1dc7af27d1ada36013e5d8d44237a1d2b07f926
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: bda2f4507b4ad6b6bcca7cc0ab58efcc91a8cc02
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031136"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629839"
 ---
 # <a name="change"></a>變更
 

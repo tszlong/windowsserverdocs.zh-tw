@@ -3,16 +3,16 @@ title: bitsadmin setnoprogresstimeout
 description: Bitsadmin setnoprogresstimeout 命令的參考文章，此命令會設定服務在發生暫時性錯誤之後嘗試傳輸檔案的時間長度（以秒為單位）。
 ms.topic: reference
 ms.assetid: 7fac50d9-cc6b-46a4-a96f-fab751ee1756
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: dc2559a963900234fd3111edb1a32e3f13b27e40
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 9ffe7280e6a27d1fbc8a95b6b4c8375a8df844f8
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027796"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630806"
 ---
 # <a name="bitsadmin-setnoprogresstimeout"></a>bitsadmin setnoprogresstimeout
 

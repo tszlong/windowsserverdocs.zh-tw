@@ -3,16 +3,16 @@ title: bootcfg query
 description: Bootcfg 查詢命令的參考文章，它會查詢並顯示 Boot.ini 的開機載入器和作業系統區段專案。
 ms.topic: reference
 ms.assetid: a4cacfd1-10a6-4a11-b0c5-f8abde72bfc8
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 9e6b5a34a0af467c12549f4921d8d5c99e79aaa9
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 8debee9f799a89f80c82b25242127c42fd00189f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89034436"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630192"
 ---
 # <a name="bootcfg-query"></a>bootcfg query
 

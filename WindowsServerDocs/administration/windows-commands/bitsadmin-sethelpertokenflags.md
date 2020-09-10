@@ -2,16 +2,16 @@
 title: bitsadmin sethelpertokenflags
 description: Bitsadmin sethelpertokenflags 命令的參考文章，此命令會針對與 BITS 傳送工作相關聯的 helper token 設定使用旗標。
 ms.topic: reference
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 03/01/2019
-ms.openlocfilehash: 9cb562debae43be41ba1c126b0270ffbcf1e4f25
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 23a2626fcd1eb92c388ea1dc24682526bac59af5
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028516"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630881"
 ---
 # <a name="bitsadmin-sethelpertokenflags"></a>bitsadmin sethelpertokenflags
 

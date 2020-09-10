@@ -3,16 +3,16 @@ title: bitsadmin setdisplayname
 description: Bitsadmin setdisplayname 命令的參考文章，此命令會設定指定作業的顯示名稱。
 ms.topic: reference
 ms.assetid: 13706c53-fb5f-4879-b5ca-82531361d6e1
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 4726d4d1dec867e72ab542222a71289994ed12fd
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 57a72d198b7d262f3a7958920e5d54955f8b6270
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028536"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630937"
 ---
 # <a name="bitsadmin-setdisplayname"></a>bitsadmin setdisplayname
 

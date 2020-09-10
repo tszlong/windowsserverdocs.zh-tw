@@ -2,16 +2,16 @@
 title: bitsadmin sethttpmethod
 description: Bitsadmin setHTTPmethod 命令的參考文章，此命令會設定要使用的 HTTP 動詞命令。
 ms.topic: reference
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 03/01/2019
-ms.openlocfilehash: 8374a8e306f88cbdbad079d99233171712cc00bc
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 0c8d2357e35831db89365eabbe0b97cdec88b6aa
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026266"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630878"
 ---
 # <a name="bitsadmin-sethttpmethod"></a>bitsadmin sethttpmethod
 

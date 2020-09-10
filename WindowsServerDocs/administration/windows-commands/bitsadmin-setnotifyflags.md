@@ -3,16 +3,16 @@ title: bitsadmin setnotifyflags
 description: Bitsadmin setnotifyflags 命令的參考文章，此命令會為指定的工作設定事件通知旗標。
 ms.topic: reference
 ms.assetid: d5763d95-94a6-45ca-9e03-891c20047e06
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: a3b00d057659b2664098093c0a7e3b13b28cd806
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 48eb165ecb32e53868f9636418437d66c56542c0
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026216"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630771"
 ---
 # <a name="bitsadmin-setnotifyflags"></a>bitsadmin setnotifyflags
 

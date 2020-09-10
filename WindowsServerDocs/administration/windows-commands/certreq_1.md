@@ -3,16 +3,16 @@ title: certreq
 description: Certreq 命令的參考文章，此命令會向憑證授權單位單位 (CA) 取得憑證、從 .inf 檔案建立新的要求、接受並安裝對要求的回應、從現有的 CA 憑證或要求中建立跨憑證或限定的從屬要求，以及簽署跨憑證或限定的從屬要求。
 ms.topic: reference
 ms.assetid: 7a04e51f-f395-4bff-b57a-0e9efcadf973
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: eb910415c46a57353eeffe7168ce71c055d82eca
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 1f2cdc1123595dae9c0c72bcdc77c2f55382c760
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031246"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629945"
 ---
 # <a name="certreq"></a>certreq
 
@@ -101,7 +101,7 @@ INF 檔案的這個區域對於任何新的憑證要求範本是必要的，而�
 
 | 金鑰<sup>1</sup> | 描述 | 值<sup>2</sup> | 範例 |
 | --- | ---------- | ----- | ------- |
-| 主旨 | 有幾個應用程式依賴憑證中的主體資訊。 建議您為此金鑰指定一個值。 如果此處未設定主體，建議您在主體別名憑證延伸中包括主體名稱。 | 相對辨別名稱字串值 | Subject = CN = computer1 .com Subject = CN = John Smith，CN = Users，DC = Contoso，DC = com |
+| 主體 | 有幾個應用程式依賴憑證中的主體資訊。 建議您為此金鑰指定一個值。 如果此處未設定主體，建議您在主體別名憑證延伸中包括主體名稱。 | 相對辨別名稱字串值 | Subject = CN = computer1 .com Subject = CN = John Smith，CN = Users，DC = Contoso，DC = com |
 | Exportable | 如果設定為 TRUE，則可以使用憑證匯出私密金鑰。 為了確保高層級的安全性，不應該匯出私密金鑰;不過，在某些情況下，如果有數部電腦或使用者必須共用相同的私密金鑰，可能就需要用到此金鑰。 | `true | false` | `Exportable = TRUE`. CNG 金鑰可以區分此和純文字可匯出。 CAPI1 索引鍵不能。 |
 | ExportableEncrypted | 指定是否應將私密金鑰設定為可匯出。 | `true | false` | `ExportableEncrypted = true`<p>**秘訣：** 並非所有的公開金鑰大小和演算法都適用于所有的雜湊演算法。 指定的 CSP 也必須支援指定的雜湊演算法。 若要查看支援的雜湊演算法清單，您可以執行命令： `certutil -oid 1 | findstr pwszCNGAlgid | findstr /v CryptOIDInfo` |
 | HashAlgorithm | 要用於此要求的雜湊演算法。 | `Sha256, sha384, sha512, sha1, md5, md4, md2` | `HashAlgorithm = sha1`. 若要查看支援的雜湊演算法清單，請使用： certutil-oid 1 | findstr pwszCNGAlgid | findstr/v CryptOIDInfo|
@@ -129,8 +129,8 @@ INF 檔案的這個區域對於任何新的憑證要求範本是必要的，而�
 | 假如 useexistingkeyset | 這個參數是用來指定要在建立憑證要求時使用現有的金鑰組。 如果此機碼設為 TRUE，您也必須指定 RenewalCert 索引鍵或 KeyContainer 名稱的值。 您不得設定可匯出的金鑰，因為您無法變更現有金鑰的屬性。 在此情況下，建立憑證要求時不會產生任何金鑰材料。 | `true | false` | `UseExistingKeySet = true` |
 | KeyProtection | 指定值，這個值會指出如何在使用之前保護私密金鑰。 | <ul><li>`XCN_NCRYPT_UI_NO_PROTCTION_FLAG -- 0`</li><li>`XCN_NCRYPT_UI_PROTECT_KEY_FLAG -- 1`</li><li>`XCN_NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG -- 2`</li></ul> | `KeyProtection = NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG` |
 | SuppressDefaults | 指定布林值，指出要求中是否包含預設的擴充功能和屬性。 預設值是以 (Oid) 的物件識別碼來表示。 | `true | false` | `SuppressDefaults = true` |
-| FriendlyName | 新憑證的易記名稱。 | 文字 | `FriendlyName = Server1` |
-| ValidityPeriodUnits | 指定要搭配 ValidityPeriod 使用的單位數。 注意：這只適用于 `request type=cert` 。 | 數值 | `ValidityPeriodUnits = 3` |
+| FriendlyName | 新憑證的易記名稱。 | Text | `FriendlyName = Server1` |
+| ValidityPeriodUnits | 指定要搭配 ValidityPeriod 使用的單位數。 注意：這只適用于 `request type=cert` 。 | 數字 | `ValidityPeriodUnits = 3` |
 | ValidityPeriod | ValidityPeriod 必須是 US 英文複數的時間週期。 注意：只有在要求類型 = cert 時，才會使用這個。 | `Years |  Months | Weeks | Days | Hours | Minutes | Seconds` | `ValidityPeriod = Years` |
 
 <sup>1</sup>等號 (=) 左邊的參數
@@ -290,7 +290,7 @@ certreq –enroll -machine –cert 61 2d 3c fe 00 00 00 00 00 05 renew
 
 您只能更新有效的憑證。 過期的憑證無法更新，必須取代為新的憑證。
 
-## <a name="options"></a>選項
+## <a name="options"></a>選項。
 
 | 選項。 | 描述 |
 | ------- | ----------- |

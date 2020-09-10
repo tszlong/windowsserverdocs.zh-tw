@@ -3,16 +3,16 @@ title: certutil
 description: Certutil 命令的參考文章，也就是將憑證授權單位單位傾印並顯示 (CA) 設定資訊、設定憑證服務、備份和還原 CA 元件，以及驗證憑證、金鑰組和憑證鏈的命令列程式。
 ms.topic: reference
 ms.assetid: c264ccf0-ba1e-412b-9dd3-d77dd9345ad9
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 99c9d0ddca6ce1b91d86733995c30c46b747b7af
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: fc1065ab3853f6098c725f4ccaaafc483cb6015d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031206"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629917"
 ---
 # <a name="certutil"></a>certutil
 
@@ -789,7 +789,7 @@ certutil [options] -store [certificatestorename [certID [outputfile]]]
 [-f] [-user] [-enterprise] [-service] [-grouppolicy] [-silent] [-split] [-dc DCName]
 ```
 
-#### <a name="options"></a>選項
+#### <a name="options"></a>選項。
 
 - `-user`選項會存取使用者存放區，而不是電腦存放區。
 
@@ -926,7 +926,7 @@ certutil [options] -viewstore [certificatestorename [certID [outputfile]]]
 [-f] [-user] [-enterprise] [-service] [-grouppolicy] [-dc DCName]
 ```
 
-#### <a name="options"></a>選項
+#### <a name="options"></a>選項。
 
 - `-user`選項會存取使用者存放區，而不是電腦存放區。
 
@@ -966,7 +966,7 @@ certutil [options] -viewdelstore [certificatestorename [certID [outputfile]]]
 [-f] [-user] [-enterprise] [-service] [-grouppolicy] [-dc DCName]
 ```
 
-#### <a name="options"></a>選項
+#### <a name="options"></a>選項。
 
 - `-user`選項會存取使用者存放區，而不是電腦存放區。
 
@@ -1958,7 +1958,7 @@ certutil -? -v
 
 - **-?-v** 會顯示參數和選項的完整清單。
 
-## <a name="options"></a>選項
+## <a name="options"></a>選項。
 
 此區段會根據命令定義您能夠指定的所有選項。 每個參數都包含哪些選項可供使用的相關資訊。
 

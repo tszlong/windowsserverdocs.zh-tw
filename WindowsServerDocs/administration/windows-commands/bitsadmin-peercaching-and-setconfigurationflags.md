@@ -3,16 +3,16 @@ title: bitsadmin peercaching and setconfigurationflags
 description: Bitsadmin 對等互連和 setconfigurationflags 命令的參考文章，此命令會設定設定旗標，以判斷電腦是否可以將內容提供給對等，以及是否可以從對等下載內容。
 ms.topic: reference
 ms.assetid: ff0a2b49-66e3-4d40-824c-6a3816055d2e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 0027fa5c926f09b95541906f168e852292b19aaf
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 73daad6a915ee39f166d54efd79290ce92df60db
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026518"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89631339"
 ---
 # <a name="bitsadmin-peercaching-and-setconfigurationflags"></a>bitsadmin peercaching and setconfigurationflags
 

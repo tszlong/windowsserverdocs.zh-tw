@@ -3,16 +3,16 @@ title: bitsadmin setaclflag
 description: Bitsadmin setaclflag 命令的參考文章，此命令會將存取控制清單 (ACL) 傳播旗標。
 ms.topic: reference
 ms.assetid: 6e3bcda0-827d-4dfd-8384-d1da018f3e10
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 89b605e94505610a2b355de9e4bcbc485a2bb7bf
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 0cc0dac9027bd76735592620f89118318548dbdb
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026296"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89631052"
 ---
 # <a name="bitsadmin-setaclflag"></a>bitsadmin setaclflag
 

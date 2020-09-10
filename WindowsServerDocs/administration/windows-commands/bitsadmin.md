@@ -3,16 +3,16 @@ title: bitsadmin
 description: Bitsadmin 命令的參考文章，這是用來建立、下載或上傳作業和監視其進度的命令列工具。
 ms.topic: reference
 ms.assetid: 4853036e-1df8-45ad-8be6-cfb097b8dd27
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 3744d45265b0b0ae7143d1e37c5e53511a23e26a
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 90a0d02bc06cc994f704328402ee03cc55407365
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89034607"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630378"
 ---
 # <a name="bitsadmin"></a>bitsadmin
 

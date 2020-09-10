@@ -3,16 +3,16 @@ title: bitsadmin setpriority
 description: Bitsadmin setpriority 命令的參考文章，此命令會設定指定工作的優先順序。
 ms.topic: reference
 ms.assetid: 90788363-01a2-4d7c-a560-a3eba45b5e9e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: b1fe6a2b3981697a4a8c287fe4fb49c31a4f4244
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 25bf7026ceef21fb37824ce99f56389941426b79
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028466"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630719"
 ---
 # <a name="bitsadmin-setpriority"></a>bitsadmin setpriority
 
