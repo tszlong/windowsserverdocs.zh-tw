@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 08/20/2020
+ms.date: 09/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bd3e1d5f06e5c415b4f300d9a2c8a9b390e5051
-ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
+ms.openlocfilehash: cb1c519e6da55bb6ee8187db4b388870f1d4b42f
+ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88702827"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89554463"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>開始使用 Windows 桌面用戶端
 
@@ -132,18 +132,17 @@ ms.locfileid: "88702827"
 - **解析度**可讓您指定遠端桌面的解析度。 工作階段會在整個持續時間保留此解析度。 此設定僅適用於 [單一顯示器] 模式以及 [調整大小時更新解析度] 已停用時。
 - **變更文字和應用程式大小**指定工作階段內容的大小。 此設定僅適用於連接到 Windows 8.1 和更新版本或 Windows Server 2012 R2 和更新版本時。 此設定僅適用於 [單一顯示器] 模式以及 [調整大小時更新解析度] 已停用時。
 
-## <a name="provide-feedback"></a>提供意見反應
+## <a name="give-us-feedback"></a>提供意見反應
 
-有功能建議或想要回報問題嗎？ 請使用[意見反應中樞](feedback-hub://?tabid=2&contextid=883)告知我們。 您也可以透過用戶端存取意見反應中樞：
+有功能建議或想要回報問題嗎？ 請透過[意見反應中樞](https://aka.ms/rddesktopfeedback)提供意見給我們。
 
-1. 透過連線中心，在用戶端頂端的命令列上點選 [傳送意見反應] 選項，以開啟「意見反應中樞」應用程式。
-2. 在 [摘要] 和 [詳細資料] 欄位中輸入必要資訊。 完成後，請點選 [下一步]。
-3. 選取 [問題] 或 [建議]。
-4. 確認類別是否位於 [應用程式] > [遠端桌面] 中。 如果是，請點選 [下一步]。
-5. 查看現有的意見反應主題，以確認是否有其他人已回報相同的問題。 如果沒有，請選取 [提出新的錯誤]，然後點選 [下一步]。
-6. 在下一個頁面上，您可以提供更多資訊，以便我們協助您解決問題。 您可以撰寫更詳細的資訊、提交螢幕擷取畫面，甚至進行問題的錄製，以說明發生了什麼情況。 若要進行錄製，請選取 [開始錄製]，然後執行發生問題的時間點之前的操作。 完成後請返回 [意見反應中樞]，然後選取 [停止錄製]。
-7. 在提供了齊備的資訊後，請點選 [提交]。
-8. 在 [感謝您提供的意見！] 頁面上，按一下 [分享我的意見反應]，以產生您可以視需要與其他人分享的意見反應連結。
+您也可以選擇用戶端應用程式中看起來像笑臉圖示的按鈕，來提供意見反應，如下圖所示：
+
+> [!div class="mx-imgBorder"]
+> ![笑臉圖示的螢幕擷取畫面，會帶您前往意見反應中樞。](../media/smiley-face-icon.png)
+
+>[!NOTE]
+>為了提供最好的協助，我們需要您盡可能提供問題的詳細資訊給我們。 例如，您可以加入螢幕擷取畫面或記錄導致問題時所採取的動作。 如需如何提供有用意見反應的更多提示，請參閱[意見反應](/windows-insider/at-home/feedback#add-new-feedback)。
 
 ### <a name="access-client-logs"></a>存取用戶端記錄
 

@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 08/25/2020
+ms.date: 09/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ce718db142ac34a51642e1ed2128899a0e77dbf
-ms.sourcegitcommit: 47dc2671330c2ecc56cce39ef006cbfe108b4759
+ms.openlocfilehash: 8f0b5453265bc96cdeb7ba02795da8fa0f39ba1c
+ms.sourcegitcommit: 0407bd30eaf06358257cf88c3969a2cd8b77dca4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88821331"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90027163"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面用戶端的新功能
 
@@ -25,19 +25,28 @@ ms.locfileid: "88821331"
 |使用者群組 |版本  |
 |-----------|---------|
 |公用     |1.2.1272 |
-|Insider    |1.2.1272 |
+|Insider    |1.2.1357 |
 
-## <a name="updates-for-version-121272"></a>1\.2.1272 版的更新
+## <a name="updates-for-version-121357-insiders"></a>1\.2.1357 版的更新 (測試人員)
+
+*發行日期：2020/09/09*
+
+下載：[Windows 64 位元](https://go.microsoft.com/fwlink/?linkid=2139233)、[Windows 32 位元](https://go.microsoft.com/fwlink/?linkid=2139144)、[Windows ARM64](https://go.microsoft.com/fwlink/?linkid=2139368)
+
+- 已修正安全登入 (SSO) 在 Windows 7 上無法使用的問題。
+
+## <a name="updates-for-version-121275"></a>1\.2.1275 版的更新
 
 *發行日期：2020/8/25*
 
-下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4D7LK)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4D5aF)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4Dan3)
+下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4FpYR)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4FpYS)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4Fg3H)
 
 - 已新增從使用者身分識別自動偵測主權雲端的功能。
 - 已新增為所有使用者啟用自訂 URL 訂用帳戶的功能。
 - 已修正摘要工作列上應用程式釘選的問題。
 - 已修正訂閱 URL 時會損毀的問題。
 - 改善使用觸控或手寫筆拖曳遠端應用程式視窗時的體驗。
+- 已修正當地語系化的問題。
 
 ## <a name="updates-for-version-121186"></a>1\.2.1186 版的更新
 
@@ -55,8 +64,6 @@ ms.locfileid: "88821331"
 
 *發行日期：06/23/2020*
 
-下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zeHS)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zrAd)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zeHR)
-
 - 已更新 [訂閱] 選項的自動探索邏輯，以支援 Windows 虛擬桌面的 Azure Resource Manager 整合版本。 只有 Windows 虛擬桌面資源的客戶，應不再需要同意 Windows 虛擬桌面 (傳統)。
 - 已改善對高 DPI 裝置的支援，縮放比例最高可達 400%。
 - 已修正未顯示中斷連線對話方塊的問題。
@@ -67,8 +74,6 @@ ms.locfileid: "88821331"
 ## <a name="updates-for-version-121026"></a>1\.2.1026 版的更新
 
 *發行日期：2020/05/27*
-
-下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xsGB)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xd8P)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xq7m)
 
 - 訂閱時，您現在可以選擇您的帳戶，而不用輸入電子郵件地址。
 - 新增一個新的**使用 URL 訂閱**選項，您可以使用該選項指定要訂閱的工作區 URL，或當無法自動找到您的資源時利用[電子郵件探索](../rds-email-discovery.md) (如果有的話)。 這類似於其他遠程桌面用戶端中的訂用帳戶處理程序。 這可以用來直接訂閱 Windows 虛擬桌面工作區。
@@ -88,8 +93,6 @@ ms.locfileid: "88821331"
 ## <a name="updates-for-version-12945"></a>1\.2.945 版的更新
 
 *發行日期：2020/04/28*
-
-下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4vhNM)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4vhNO)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4vuSV)
 
 - 當您以滑鼠右鍵按一下連線中心上的桌面圖示時，就可以新增桌面連線的 [顯示設定] 選項。
   - 現在有三個顯示組態選項：**所有顯示**、**單一顯示**，以及**選取 顯示**。

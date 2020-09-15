@@ -6,14 +6,14 @@ ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 06/01/2020
+ms.date: 09/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c28ccbe0cfd49f1cf774031b002bf7b6142d0a00
-ms.sourcegitcommit: 9a59e00db5e68b1a12769b5cd5523b8c501776ad
+ms.openlocfilehash: 9bad174ad596ffc0262947464f2353b91a92872c
+ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89282110"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89554523"
 ---
 # <a name="get-started-with-the-microsoft-store-client"></a>開始使用 Microsoft Store 用戶端
 
@@ -198,7 +198,16 @@ ms.locfileid: "89282110"
 | 滑鼠指標 | 以滑鼠右鍵按一下          | 使用兩指點選                                                          |
 | 滑鼠指標 | 按滑鼠右鍵並拖曳 | 使用兩指點兩下並按住，然後拖曳                              |
 | 滑鼠指標 | 滑鼠滾輪          | 使用兩指點選並按住，然後向上或向下拖曳                          |
-| 滑鼠指標 | 縮放                 | 利用兩個手指，捏合以放大，將手指分開以縮小 |
+| 滑鼠指標 | 縮放                 | 利用兩個手指，捏合以縮小，將手指分開以放大 |
 
-> [!TIP]
-> 隨時都歡迎提出問題和意見。 不過，如果您在本文的意見區段中張貼支援要求或產品意見反應，我們將無法回應您的意見反應。 如果需要協助或想要針對用戶端進行疑難排解，強烈建議您移至[遠端桌面用戶端論壇](/answers/topics/windows-remote-desktop-client.html)，並開始新的對話。 如果您有相關的功能建議，可以利用[意見反應中樞](feedback-hub://?tabid=2&contextid=605)告訴我們。
+## <a name="give-us-feedback"></a>提供意見反應
+
+有功能建議或想要回報問題嗎？ 請透過[意見反應中樞](https://aka.ms/rdstorefeedback)提供意見給我們。
+
+您也可以選擇用戶端應用程式中的省略號按鈕 ( **...** )，然後選取 [意見反應]，來提供意見反應，如下圖所示。
+
+> [!div class="mx-imgBorder"]
+> ![螢幕擷取畫面顯示以紅色醒目提示的省略號按鈕。 下拉式功能表會在按鈕下方開啟，而且 [意見反應] 選項也會以紅色醒目提示。](../media/ellipsis-icon.png)
+
+>[!NOTE]
+>為了提供最好的協助，我們需要您盡可能提供問題的詳細資訊給我們。 例如，您可以加入螢幕擷取畫面或記錄導致問題時所採取的動作。 如需如何提供有用意見反應的更多提示，請參閱[意見反應](/windows-insider/at-home/feedback#add-new-feedback)。

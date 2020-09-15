@@ -4,12 +4,12 @@ ms.date: 07/02/2012
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 6e022e4fdae631199bacca5f67c7953125ddd141
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d4c34484f7eb12b9876dcca7809a31c0c291bcce
+ms.sourcegitcommit: 3da6fcf4d853f6ff24b785b87787d0677b878253
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87950732"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90044825"
 ---
 # <a name="migrate-sysvol-replication-to-dfs-replication"></a>將 SYSVOL 複寫移轉至 DFS 複寫
 
@@ -68,16 +68,16 @@ ms.locfileid: "87950732"
 
 ## <a name="additional-references"></a>其他參考資料
 
-[SYSVOL 移轉系列：第 1 部分 - SYSVOL 移轉流簡介](https://go.microsoft.com/fwlink/?linkid=121756)
+[SYSVOL 移轉系列：第 1 部分 - SYSVOL 移轉流程簡介](https://techcommunity.microsoft.com/t5/storage-at-microsoft/sysvol-migration-series-part-1-8211-introduction-to-the-sysvol/ba-p/423456)
 
-[SYSVOL 移轉系列：第 2 部分 - Dfsrmig.exe：SYSVOL 移轉工具](https://go.microsoft.com/fwlink/?linkid=121757)
+[SYSVOL 移轉系列：第 2 部分 - Drsrmig .exe：SYSVOL 移轉工具](https://techcommunity.microsoft.com/t5/storage-at-microsoft/sysvol-migration-series-part-2-8211-dfsrmig-exe-the-sysvol/ba-p/423470)
 
-[SYSVOL 移轉系列：第 3 部分 - 遷移為「就緒」狀態](https://go.microsoft.com/fwlink/?linkid=121758)
+[SYSVOL 移轉系列：第 3 部分 - 遷移為「就緒」狀態](https://techcommunity.microsoft.com/t5/storage-at-microsoft/sysvol-migration-series-part-3-migrating-to-the-prepared-state/ba-p/423503)
 
-[SYSVOL 移轉系列：第 4 部分 - 遷移為「重新導向」狀態](https://go.microsoft.com/fwlink/?linkid=121759)
+[SYSVOL 移轉系列：第 4 部分 - 遷移為「重新導向」狀態](https://techcommunity.microsoft.com/t5/storage-at-microsoft/sysvol-migration-series-part-4-8211-migrating-to-the-8216/ba-p/423514)
 
-[SYSVOL 移轉系列：第 5 部分 - 遷移為「排除」狀態](https://go.microsoft.com/fwlink/?linkid=121760)
+[SYSVOL 移轉系列：第 5 部分 - 遷移為「排除」狀態](https://techcommunity.microsoft.com/t5/storage-at-microsoft/sysvol-migration-series-part-5-8211-migrating-to-the-8216/ba-p/423516)
 
-[Windows Server 2008 中分散式檔案系統逐步指南](https://go.microsoft.com/fwlink/?linkid=85231)
+[Windows Server 2008 的分散式檔案系統逐步指南](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732863(v=ws.10))
 
-[FRS 技術參考](https://go.microsoft.com/fwlink/?linkid=121764)
+[FRS 技術參考](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc759297(v=ws.10))
