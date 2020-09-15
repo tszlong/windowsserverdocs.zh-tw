@@ -2,15 +2,15 @@
 title: Hyper-V 伺服器的效能調整
 description: Hyper-V 的效能調整指導方針
 ms.topic: article
-ms.author: asmahi; sandysp; jopoulso
+ms.author: asmahi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: e9a81c2ea6e9d3eef7edc6c1742a0d9d8bc33ac0
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 0a19740212f10821dcd0276f3c27f892268dc415
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896126"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078306"
 ---
 # <a name="performance-tuning-hyper-v-servers"></a>Hyper-V 伺服器的效能調整
 

@@ -2,15 +2,15 @@
 title: Windows Server 容器的效能調整
 description: Windows Server 16 上容器的效能調整建議
 ms.topic: landing-page
-ms.author: davso; ericam; yashi
+ms.author: ericam
 author: akino
 ms.date: 10/16/2017
-ms.openlocfilehash: 53201ee17829ec82eb8d661b5f76689e00d22df8
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: bffee08e21d261fbe80ce7c6c146cc42942ac0c7
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895986"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078035"
 ---
 # <a name="performance-tuning-windows-server-containers"></a>Windows Server 容器的效能調整
 

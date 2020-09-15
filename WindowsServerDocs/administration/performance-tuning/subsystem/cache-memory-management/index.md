@@ -2,15 +2,15 @@
 title: 快取與記憶體管理員子系統的效能調整
 description: 快取與記憶體管理員子系統的效能調整
 ms.topic: landing-page
-ms.author: pavel; atales
+ms.author: pavel
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 07a8b12b9d4be5f9105baefaae0ef4030e02f69f
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 8c5800dc0f4d55d7cb240496a304dd56b97077f1
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993330"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078015"
 ---
 # <a name="performance-tuning-cache-and-memory-manager"></a>快取與記憶體管理員的效能調整
 

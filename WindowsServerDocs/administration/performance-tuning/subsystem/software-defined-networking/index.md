@@ -2,15 +2,15 @@
 title: 效能微調軟體定義網路
 description: 軟體定義網路 (SDN) 效能調整指導方針
 ms.topic: article
-ms.author: grcusanz; anpaul
+ms.author: grcusanz
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 9c097d9b777676da1caef062e8aee4267d2e4dac
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: fb55b9f063572194c9821d061c9836944c236e68
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895950"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077955"
 ---
 # <a name="performance-tuning-software-defined-networks"></a>效能微調軟體定義網路
 
