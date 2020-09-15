@@ -1,31 +1,29 @@
 ---
 title: HCN 的 RPC 內容控點
-ms.author: jmesser
-author: jmesser81
+description: HCN 網路實體的相關資訊，使用 HCN_NETWORK RPC 內容控制碼來表示。
+ms.author: daschott
+author: daschott
 ms.date: 11/05/2018
-ms.openlocfilehash: b837b2003beaf192c8f01be9e6c6edb2465bbe66
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 88bf3654e241e7369db75a176f73607767ef0e1a
+ms.sourcegitcommit: 0b3d6661c44aa1a697087e644437279142726d84
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955695"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90083729"
 ---
 # <a name="rpc-context-handles-for-hcn"></a>HCN 的 RPC 內容控點
 
->適用于： Windows Server (半年通道) 、Windows Server 2019
-
+> 適用于： Windows Server (半年通道) 、Windows Server 2019
 
 ## <a name="hcn_network"></a>HCN_Network
 
-HCN 網路是一個實體，用來代表主機計算網路及其相關聯的系統資源和原則。 例如，HCN 網路通常包含一組 (的中繼資料，例如識別碼、名稱、類型) 、虛擬交換器、主機虛擬網路介面卡 (做為網路) 的預設閘道、NAT 實例 (（如果網路類型) 需要）、一組子網和 MAC 集區，以及要套用的任何網路範圍原則 (例如 Acl) 。
+HCN 網路是一種實體，用來代表主機計算網路及其相關聯的系統資源和原則。 例如，HCN 網路通常會包含一組中繼資料 (例如識別碼、名稱、類型) 、虛擬交換器、主機虛擬網路介面卡 (作為網路) 的預設閘道、NAT 實例 (（如果網路類型) 、一組子網和 MAC 集區，以及要套用的任何網路範圍原則 (例如 Acl) ）。
 
 HCN 網路實體會使用 HCN_NETWORK RPC 內容控制碼來表示。
 
 ```
-
 /// Handle to an operation
 DECLARE_HANDLE(HCN_NETWORK);
-
 /// Return a list of existing Networks
 ///
 /// \param  Query          Optionally specifies a JSON document for a query
@@ -98,7 +96,6 @@ HcnModifyNetwork(
     _In_ PCWSTR Settings,
     _Outptr_opt_ PWSTR* ErrorRecord
     );
-
 /// Query Network properties
 ///
 /// \param  Network        Handle to a Network.
@@ -150,14 +147,12 @@ HcnCloseNetwork(
 
 ## <a name="hcn_endpoint"></a>HCN_Endpoint
 
-HCN 端點是一個實體，用來代表 HCN 網路上的 IP 端點及其相關聯的系統資源和原則。 例如，HCN 端點通常包含一組 (的中繼資料，例如識別碼、名稱、父網路識別碼) 、其網路身分識別 (例如，IP 位址、MAC 位址) ，以及要套用的任何端點特定原則 (例如 Acl、路由) 。
+HCN 端點是一個實體，用來代表 HCN 網路上的 IP 端點及其相關聯的系統資源和原則。 例如，HCN 端點通常會包含一組中繼資料 (例如識別碼、名稱、父網路識別碼) 、其網路身分識別 (例如 IP 位址、MAC 位址) ，以及要套用的任何端點特定原則 (例如 Acl、路由) 。
 HCN 端點實體會使用 HCN_ENDPOINT RPC 內容控制碼來表示。
 
 ```
-
 /// Handle to an operation
 DECLARE_HANDLE(HCN_ENDPOINT);
-
 /// Return a list of existing Endpoints
 ///
 /// \param  Query          Optionally specifies a JSON document for a query
@@ -279,19 +274,17 @@ WINAPI
 HcnCloseEndpoint(
     _In_ HCN_ENDPOINT Endpoint
     );
-
 ```
 
 ## <a name="hcn_namespace"></a>HCN_Namespace
 
-HCN 命名空間是用來代表主機計算網路命名空間的實體。 命名空間可讓您在單一主機上擁有隔離的網路環境，其中每個命名空間都有自己的網路介面和路由表（與其他命名空間分隔）。
+HCN 命名空間是用來代表主機計算網路命名空間的實體。 命名空間可讓您在單一主機上擁有隔離的網路環境，其中每個命名空間都有自己的網路介面和路由表，並與其他命名空間分開。
 
-HCN 命名空間實體會使用 HCN_NAMESPACE RPC 內容控制碼來表示。
+HCN 命名空間實體是使用 HCN_NAMESPACE RPC 內容控制碼來表示。
 
 ```
 /// Handle to an operation
 DECLARE_HANDLE(HCN_NAMESPACE);
-
 /// Return a list of existing Namespaces
 ///
 /// \param  Query          Optionally specifies a JSON document for a query
@@ -311,7 +304,6 @@ HcnEnumerateNamespaces(
     _Outptr_ PWSTR* Namespaces,
     _Outptr_opt_ PWSTR* ErrorRecord
     );
-
 /// Create a Namespace
 ///
 /// \param  Id             Specifies the unique ID for the new Namespace.
@@ -331,7 +323,6 @@ HcnCreateNamespace(
     _Out_ PHCN_NAMESPACE Namespace,
     _Outptr_opt_ PWSTR* ErrorRecord
     );
-
 /// Opens a handle to an existing Namespace.
 ///
 /// \param  Id             Unique ID of the existing Namespace.
@@ -366,7 +357,6 @@ HcnModifyNamespace(
     _In_ PCWSTR Settings,
     _Outptr_opt_ PWSTR* ErrorRecord
     );
-
 /// Query Namespace properties
 ///
 /// \param  Namespace      Handle to a Namespace.
@@ -403,7 +393,6 @@ HcnDeleteNamespace(
     _In_ REFGUID Id,
     _Outptr_opt_ PWSTR* ErrorRecord
     );
-
 /// Close a handle to a Namespace
 ///
 /// \param  Namespace      Handle to a Namespace.
@@ -415,21 +404,18 @@ WINAPI
 HcnCloseNamespace(
     _In_ HCN_NAMESPACE Namespace
     );
-
 ```
 
 ## <a name="hcn_loadbalancer"></a>HCN_LoadBalancer
 
-HCN LoadBalancer 是用來代表主機計算網路 LoadBalancer 的實體。 LoadBalancers 可讓您擁有負載平衡的主機計算網路端點。
+HCN LoadBalancer 是一種實體，用來代表主機計算網路平衡器。 LoadBalancers 可讓您擁有負載平衡的主機計算網路端點。
 HCN LoadBalancer 實體會使用 HCN_LOADBALANCER RPC 內容控制碼來表示。
 
 ```
 /// Handle to an operation
 DECLARE_HANDLE(HCN_LOADBALANCER);
-
 //////
 /// LoadBalancer Methods
-
 /// Return a list of existing LoadBalancers
 ///
 /// \param  Query          Optionally specifies a JSON document for a query
@@ -449,7 +435,6 @@ HcnEnumerateLoadBalancers(
     _Outptr_ PWSTR* LoadBalancer,
     _Outptr_opt_ PWSTR* ErrorRecord
     );
-
 /// Create a LoadBalancer
 ///
 /// \param  Id             Specifies the unique ID for the new LoadBalancer.
@@ -469,7 +454,6 @@ HcnCreateLoadBalancer(
     _Out_ PHCN_LOADBALANCER LoadBalancer,
     _Outptr_opt_ PWSTR* ErrorRecord
     );
-
 /// Opens a handle to an existing LoadBalancer.
 ///
 /// \param  Id             Unique ID of the existing LoadBalancer.
@@ -487,7 +471,6 @@ HcnOpenLoadBalancer(
     _Out_ PHCN_LOADBALANCER LoadBalancer,
     _Outptr_opt_ PWSTR* ErrorRecord
     );
-
 /// Modify the settings of a PolcyList
 ///
 /// \param  PolcyList      Handle to a PolcyList.
@@ -505,7 +488,6 @@ HcnModifyLoadBalancer(
     _In_ PCWSTR Settings,
     _Outptr_opt_ PWSTR* ErrorRecord
     );
-
 /// Query LoadBalancer properties
 ///
 /// \param  LoadBalancer     Handle to a LoadBalancer.
@@ -527,7 +509,6 @@ HcnQueryLoadBalancerProperties(
     _Outptr_ PWSTR* Properties,
     _Outptr_opt_ PWSTR* ErrorRecord
     );
-
 /// Delete a LoadBalancer
 ///
 /// \param  Id             Unique ID of the existing LoadBalancer.
@@ -543,7 +524,6 @@ HcnDeleteLoadBalancer(
     _In_ REFGUID Id,
     _Outptr_opt_ PWSTR* ErrorRecord
     );
-
 /// Close a handle to a LoadBalancer
 ///
 /// \param  LoadBalancer     Handle to a LoadBalancer.
@@ -554,12 +534,11 @@ HRESULT
 WINAPI
 HcnCloseLoadBalancer(
     _In_ HCN_LOADBALANCER LoadBalancer
-
 ```
 
 ## <a name="hcn_notification_callback"></a>HCN_Notification_Callback
 
-其中的函式可讓您存取整個服務的作業，例如通知 (例如接收新網路建立) 的通知。
+有一些函數可讓您存取整個服務的作業，例如通知 (例如接收新網路建立) 的通知。
 
 ```
 /// Registers a callback function to receive notifications of service-wide events such as network
@@ -577,7 +556,6 @@ HcnRegisterServiceCallback(
     _In_ void* Context,
     _Out_ HCN_CALLBACK* CallbackHandle
     );
-
 /// Unregisters from service-wide notifications
 ///
 /// \retval CallbackHandle     Handle to a callback registered on a Service.
@@ -589,5 +567,3 @@ HcnUnregisterServiceCallback(
     _In_ HCN_CALLBACK CallbackHandle
     );
 ```
-
-
