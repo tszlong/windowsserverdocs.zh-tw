@@ -2,16 +2,16 @@
 title: 快速更新傳遞 ISV 支援
 description: Windows Server Update Service (WSUS) 主題 - 獨立軟體廠商 (ISV) 如何使用 WSUS 來設定快速更新傳遞
 ms.topic: get-started article
-author: sakitong
-ms.author: coreyp
-manager: lizapo
+author: brentfor
+ms.author: brentf
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 3c56c9ac0f2899f03ce1b32b699b577c2dc3de0c
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: a94ac8d85d8a86bb834f56a445bebf888fde71e0
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991076"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624515"
 ---
 # <a name="express-update-delivery-isv-support"></a>快速更新傳遞 ISV 支援
 

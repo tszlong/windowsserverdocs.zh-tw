@@ -7,13 +7,13 @@ manager: mtillman
 ms.assetid: a14bc870-9fad-45ed-acd5-a90ccd432e54
 ms.topic: get-started-article
 ms.date: 09/01/2016
-ms.author: anandy;billmath
-ms.openlocfilehash: 1beb08cc3a135f034ce5493d7e7360680dbeef9a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.author: billmath
+ms.openlocfilehash: 9ce16db4a50fbb31c8454b085a6d0471ebbdf32c
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87940925"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078655"
 ---
 # <a name="high-availability-cross-geographic-ad-fs-deployment-in-azure-with-azure-traffic-manager"></a>使用 Azure 流量管理員在 Azure 中部署高可用性跨地區 AD FS
 [Azure 中的 AD FS 部署](how-to-connect-fed-azure-adfs.md) 提供有關如何在 Azure 中為您的組織部署簡單 AD FS 基礎結構的逐步指導方針。 本文會提供後續的步驟，以使用 [Azure 流量管理員](/azure/traffic-manager/)在 Azure 中建立跨地區的 AD FS 部署。 Azure 流量管理員會使用各種可用的路由方法來順應基礎結構的不同需求，而有助於為您的組織建立分散各地的高可用性和高效能 AD FS 基礎結構。
@@ -33,7 +33,7 @@ ms.locfileid: "87940925"
 * **儲存體帳戶︰** 儲存體帳戶會與某個區域相關聯。 因為您即將在新的地理區域中部署機器，所以您必須建立要在此區域中使用的新儲存體帳戶。
 * **網路安全性群組︰** 如同儲存體帳戶，在區域中建立的網路安全性群組不能用於另一個地理區域。 因此，您必須為新地理區域中的 INT 和 DMZ 子網路，建立類似於第一個地理區域中的新網路安全性群組。
 * **公用 IP 位址的 DNS 標籤︰** Azure 流量管理員只能透過 DNS 標籤參考端點。 因此，您必須為外部負載平衡器的公用 IP 位址建立 DNS 標籤。
-* **Azure 流量管理員** ：Microsoft Azure 流量管理員可讓您控制使用者流量，將流量分散到您在世界各地的不同資料中心執行的服務端點。 Azure 流量管理員是在 DNS 層級上運作。 它會使用 DNS 回應，將使用者流量導向全域散佈的端點。 接著用戶端會直接連接到這些端點。 透過不同的效能、加權和優先順序路由選項，您可以輕鬆地選擇最適合您組織需求的路由選項。
+* **Azure 流量管理員** ：Microsoft Azure 流量管理員可讓您控制使用者流量，將流量分散到您在世界各地的不同資料中心執行的服務端點。 Azure 流量管理員是在 DNS 層級上運作。 它會使用 DNS 回應，將使用者流量導向全域散佈的端點。 接著用戶端會直接連接到這些端點。 您可以使用不同的效能、加權和優先順序路由選項，輕鬆地選擇最適合貴組織需求的路由選項。
 * **兩個區域之間的 VNet 對 VNet 連線︰** 您不需要具備虛擬網路本身之間的連線。 因為每個虛擬網路都可存取網域控制站，而且本身都有 AD FS 和 WAP 伺服器，所以不同區域中的虛擬網路之間不需要任何連線，即可運作。
 
 ## <a name="steps-to-integrate-azure-traffic-manager"></a>整合 Azure 流量管理員的步驟
@@ -79,7 +79,7 @@ ms.locfileid: "87940925"
     ![設定探查](./media/active-directory-adfs-in-azure-with-azure-traffic-manager/mystsconfig.png)
 
    > [!NOTE]
-   > **確保在設定完成時，端點的狀態會處於線上狀態**。 如果所有端點都處於「已降級」狀態，Azure 流量管理員將會盡力路由傳送流量，假設診斷不正確，且所有端點都可連線。
+   > **確保在設定完成時，端點的狀態會處於線上狀態**。 如果所有端點都處於「降級」狀態，Azure 流量管理員將會嘗試路由傳送流量（假設診斷錯誤），而且所有端點都可以連線。
    >
    >
 5. **修改 Azure 流量管理員的 DNS 記錄︰** 您的同盟服務應該是 Azure 流量管理員 DNS 名稱的 CNAME。 在公用 DNS 記錄中建立 CNAME，以便正嘗試觸達同盟服務的人員實際觸達 Azure 流量管理員。

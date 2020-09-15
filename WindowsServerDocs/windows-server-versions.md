@@ -4,16 +4,17 @@ description: 取得適用於 IT 專業人員的 Windows Server 新版與舊版�
 ms.topic: article
 ms.date: 01/17/2018
 ms.assetid: 0c3dc323-8beb-4d7d-a2e0-12bda848ddcb
+ms.prod: windows-server
 author: lizap
 ms.author: elizapo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: f11f63dd05676fd0f16a1c0d71db9482ca1b86fc
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 53542ba4a9f54b6455ed283cd5776fe6b54c30a1
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992497"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078445"
 ---
 # <a name="windows-server---it-administrator-content-for-current-and-previous-releases"></a>Windows Server - 新版與舊版的 IT 管理員內容
 

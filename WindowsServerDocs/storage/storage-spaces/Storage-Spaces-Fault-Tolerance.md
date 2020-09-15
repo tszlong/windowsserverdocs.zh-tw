@@ -1,19 +1,19 @@
 ---
 title: 儲存空間直接存取中的容錯和儲存效率
-ms.author: cosmosdarwin
 manager: eldenc
 ms.topic: article
 author: cosmosdarwin
+ms.author: cosdar
 ms.date: 10/11/2017
 ms.assetid: 5e1d7ecc-e22e-467f-8142-bad6d82fc5d0
 description: 討論儲存空間直接存取中的復原選項，包括鏡像和同位。
 ms.localizationpriority: medium
-ms.openlocfilehash: 83a38655f1fa40522de84372e270b85f64128e6f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c6ef53927a1c6ed4e5275bc2412faa97510c024e
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961182"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078505"
 ---
 # <a name="fault-tolerance-and-storage-efficiency-in-storage-spaces-direct"></a>儲存空間直接存取中的容錯和儲存效率
 
@@ -31,13 +31,13 @@ ms.locfileid: "87961182"
 
 ## <a name="mirroring"></a>鏡像
 
-鏡像可為所有資料保存多個複本，以提供容錯能力。 其行為最像 RAID-1。 該資料的等量和放置方式並不簡單 (請參閱[此 blog](https://techcommunity.microsoft.com/t5/storage-at-microsoft/deep-dive-the-storage-pool-in-storage-spaces-direct/ba-p/425959)以深入瞭解) ，但請務必說，使用鏡像儲存的任何資料，都是以完整的方式寫入多次。 每個複本會寫入至不同的硬體 (不同伺服器中的不同磁碟機)，而理論上其故障只會單獨發生。
+鏡像可為所有資料保存多個複本，以提供容錯能力。 其行為最像 RAID-1。 資料的等量和放置方式不是很簡單的 (請參閱 [此 blog](https://techcommunity.microsoft.com/t5/storage-at-microsoft/deep-dive-the-storage-pool-in-storage-spaces-direct/ba-p/425959) ，以深入瞭解) ，但是假設使用鏡像所儲存的任何資料都會完整地寫入多次。 每個複本會寫入至不同的硬體 (不同伺服器中的不同磁碟機)，而理論上其故障只會單獨發生。
 
 在 Windows Server 2016 中，儲存空間會提供兩種鏡像：「雙向」和「三向」。
 
 ### <a name="two-way-mirror"></a>雙向鏡像
 
-雙向鏡像會為所有內容寫入兩個複本。 其儲存效率是 50%，因此若要撰寫 1 TB 的資料，您會需要至少 2 TB 的實體儲存容量。 同樣地，您至少需要兩個[硬體「容錯網域](../../failover-clustering/fault-domains.md)」–儲存空間直接存取，這表示兩部伺服器。
+雙向鏡像會為所有內容寫入兩個複本。 其儲存效率是 50%，因此若要撰寫 1 TB 的資料，您會需要至少 2 TB 的實體儲存容量。 同樣地，您需要至少兩個 [硬體「容錯網域](../../failover-clustering/fault-domains.md) 」–使用儲存空間直接存取，這表示兩部伺服器。
 
 ![雙向鏡像](media/Storage-Spaces-Fault-Tolerance/two-way-mirror-180px.png)
 
@@ -48,13 +48,13 @@ ms.locfileid: "87961182"
 
 三向鏡像會為所有內容寫入三個複本。 其儲存效率是 33.3%，因此若要撰寫 1 TB 的資料，您會需要至少 3 TB 的實體儲存容量。 同樣地，您也需要至少三個硬體「容錯網域」，在使用儲存空間直接存取時，這表示需要三部伺服器。
 
-三向鏡像可以安全地容忍至少[兩個硬體問題， (磁片磁碟機或伺服器) 一次](#examples)。 例如，如果您在一個磁碟機或伺服器突然故障時重新啟動另一部伺服器，所有資料都將保有安全性，且持續可供存取。
+三向鏡像可以安全地容忍至少 [兩個硬體問題 (磁片磁碟機或伺服器) 一次](#examples)。 例如，如果您在一個磁碟機或伺服器突然故障時重新啟動另一部伺服器，所有資料都將保有安全性，且持續可供存取。
 
 ![three-way-mirror](media/Storage-Spaces-Fault-Tolerance/three-way-mirror-180px.png)
 
 ## <a name="parity"></a>Parity
 
-同位編碼（通常稱為「抹除編碼」）提供使用位運算的容錯功能，這可能會變[得很複雜](https://www.microsoft.com/research/wp-content/uploads/2016/02/LRC12-cheng20webpage.pdf)。 相較於鏡像，同位的運作方式較不容易理解，但有許多絕佳的線上資源 (例如，這個由第三方提供的[清除編碼傻瓜指南](http://smahesh.com/blog/2012/07/01/dummies-guide-to-erasure-coding/)) 可協助您了解。 可以這麼說，它提供更好的儲存效率，卻又不會犧牲容錯能力。
+同位編碼（通常稱為「抹除編碼」）會使用位算術提供容錯功能，這可能會變 [得很複雜](https://www.microsoft.com/research/wp-content/uploads/2016/02/LRC12-cheng20webpage.pdf)。 相較於鏡像，同位的運作方式較不容易理解，但有許多絕佳的線上資源 (例如，這個由第三方提供的[清除編碼傻瓜指南](http://smahesh.com/blog/2012/07/01/dummies-guide-to-erasure-coding/)) 可協助您了解。 可以這麼說，它提供更好的儲存效率，卻又不會犧牲容錯能力。
 
 在 Windows Server 2016 中，儲存空間會提供兩種同位：「單同位」和「雙同位」，後者採用稱為「本機重建程式碼」的較大規模進階技術。
 
@@ -87,7 +87,7 @@ Windows Server 2016 的儲存空間引進了 Microsoft Research 所開發的進
 
 ![local-reconstruction-codes](media/Storage-Spaces-Fault-Tolerance/local-reconstruction-codes-180px.png)
 
-我們建議您深入[瞭解如何使用本機重建程式碼來處理各種不同的失敗案例，以及為什麼它們是吸引](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)人的[Claus Joergensen](https://twitter.com/clausjor)。
+我們建議您深入 [瞭解本機重建程式碼如何處理各種不同的失敗案例，以及它們的吸引](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)人，原因是我們的 [Claus Joergensen](https://twitter.com/clausjor)。
 
 ## <a name="mirror-accelerated-parity"></a>鏡像加速的同位
 
@@ -203,7 +203,7 @@ Windows Server 2016 的儲存空間引進了 Microsoft Research 所開發的進
 
 ![fault-tolerance-examples-7-and-8](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-78.png)
 
-## <a name="usage"></a>使用量
+## <a name="usage"></a>使用方式
 
 請查看[建立儲存空間直接存取中的磁碟區](create-volumes.md)。
 

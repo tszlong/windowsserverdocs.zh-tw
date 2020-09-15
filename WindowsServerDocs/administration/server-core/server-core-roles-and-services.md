@@ -1,32 +1,33 @@
 ---
-title: Windows Server Core 中包含的角色、角色服務和功能
+title: Windows Server 中包含的角色、角色服務和功能-Server Core
 description: Windows Server 的 Server Core 安裝選項包含哪些角色和功能？
 ms.mktglfcycl: manage
 ms.sitesec: library
-author: lizap
+author: pronichkin
+ms.author: artemp
 ms.localizationpriority: medium
 ms.date: 02/23/2018
-ms.openlocfilehash: 1569feb27a75815771cf84317bebb2fde9d83dfa
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ded40a119d0d1ae759ec0b29ce9ee4808653ea50
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895870"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077755"
 ---
-# <a name="roles-role-services-and-features-included-in-windows-server---server-core"></a>Windows Server Core 中包含的角色、角色服務和功能
+# <a name="roles-role-services-and-features-included-in-windows-server---server-core"></a>Windows Server 中包含的角色、角色服務和功能-Server Core
 
 > 適用于： Windows Server 2019、Windows Server 2016 和 Windows Server (半年通道) 
 
-我們通常會討論[*不*在 Server Core 中的內容](server-core-removed-roles.md)-現在我們將嘗試不同的方法，並告訴您所*包含*的內容，以及是否*預設會安裝*某些專案。 下列角色、角色服務和功能位於 Windows Server 的 Server Core 安裝選項*中*。 使用這項資訊有助於找出伺服器核心選項是否適用于您的環境。 因為這是大型清單，請考慮搜尋您感興趣的特定角色或功能-如果該搜尋不會傳回您要尋找的內容，則不會包含在 Server Core 中。
+我們通常會討論[*不*在 Server Core 中的內容](server-core-removed-roles.md)-現在我們要嘗試不同的方法，並告訴您有哪些內容 *，以及是否**預設安裝*了任何東西。 下列角色、角色服務和功能都是在 Windows Server 的 Server Core 安裝選項 *中* 。 使用此資訊來協助找出伺服器核心選項是否適用于您的環境。 因為這是大型清單，所以請考慮搜尋您感興趣的特定角色或功能。如果該搜尋不會傳回您要尋找的內容，則不會包含在 Server Core 中。
 
-例如，如果您搜尋「遠端桌面工作階段主機」，您就不會在此頁面上找到它。 這是因為 RD 工作階段主機不包含在 Server Core 映射中。
+例如，如果您搜尋「遠端桌面工作階段主機」，就不會在此頁面上找到它。 這是因為 RD 工作階段主機並未包含在 Server Core 映射中。
 
-請記住，您[一律可以查看](server-core-removed-roles.md)*未*包含的內容。 這只是查看專案的不同方式。
+請記住，您[一律可以查看](server-core-removed-roles.md)*未*包含的內容。 這只是查看事物的不同方式。
 
 ## <a name="roles-included-in-server-core"></a>Server Core 中包含的角色
-[Server Core] 安裝選項包含下列伺服器角色。
+Server Core 安裝選項包含下列伺服器角色。
 
-| 角色                                            | 名稱                           | 預設會安裝嗎？ |
+| 角色                                            | 名稱                           | 預設會安裝？ |
 |-------------------------------------------------|--------------------------------|-----------------------|
 | Active Directory 憑證服務           | AD-Certificate                 | N                     |
 | Active Directory Domain Services                | AD-網域服務             | N                     |
@@ -41,29 +42,29 @@ ms.locfileid: "87895870"
 | Hyper-V                                         | Hyper-V                        | N                     |
 | 列印和文件服務                     | Print-Services                 | N                     |
 | 遠端存取                                   | RemoteAccess                   | N                     |
-| 遠端桌面服務問題                         | 遠端桌面-服務        | N                     |
+| 遠端桌面服務                         | 遠端桌面服務        | N                     |
 | 大量啟用服務                      | Volumeactivation-full-role               | N                     |
 | 網頁伺服器 (IIS)                                  | Web-Server                     | N                     |
 | Windows Server Essentials 體驗            | ServerEssentialsRole           | N                     |
 | Windows Server Update Services                  | UpdateServices                 | N                     |
 
-## <a name="role-services-included-in-server-core"></a>Server Core 中包含的角色服務
-[Server Core] 安裝選項包含下列角色服務。
+## <a name="role-services-included-in-server-core"></a>包含在 Server Core 中的角色服務
+Server Core 安裝選項包含下列角色服務。
 
-| 角色                                  | 角色服務                                                   | 名稱                    | 預設會安裝嗎？ |
+| 角色                                  | 角色服務                                                   | 名稱                    | 預設會安裝？ |
 |---------------------------------------|----------------------------------------------------------------|-------------------------|-----------------------|
 | Active Directory 憑證服務 | 憑證授權單位                                        | ADCS-Cert-Authority     | N                     |
-|                                       | 憑證註冊原則 Web 服務                      | ADCS-註冊-Web-Pol     | N                     |
-|                                       | 憑證註冊 Web 服務                             | ADCS-註冊-Web-Svc     | N                     |
-|                                       | 憑證授權單位網頁註冊。                         | ADCS-Web 註冊     | N                     |
-|                                       | 網路裝置註冊服務                              | ADCS-裝置註冊  | N                     |
+|                                       | 憑證註冊原則 Web 服務                      | ADC-註冊-Web-Pol     | N                     |
+|                                       | 憑證註冊 Web 服務                             | ADC-註冊-Web-Svc     | N                     |
+|                                       | 憑證授權單位網頁註冊。                         | ADC-Web-註冊     | N                     |
+|                                       | 網路裝置註冊服務                              | ADC-裝置註冊  | N                     |
 |                                       | 線上回應                                               | ADCS-Online-Cert        | N                     |
 | Active Directory Rights Management    | Active Directory Rights Management Server                      | ADRMS-伺服器            | N                     |
 |                                       | 識別身分同盟支援                                    | ADRMS-身分識別          | N                     |
-| 檔案和存放服務             | 檔案和 iSCSI 服務                                        | 檔案服務           | N                     |
-|                                       | 檔案伺服器                                                    | FS-檔案伺服器           | N                     |
+| 檔案和存放服務             | 檔案和 iSCSI 服務                                        | 檔服務           | N                     |
+|                                       | 檔案伺服器                                                    | FS-檔           | N                     |
 |                                       | 網路檔案的 BranchCache                                  | FS-BranchCache          | N                     |
-|                                       | 重複資料刪除                                             | FS-資料重復資料刪除   | N                     |
+|                                       | 重複資料刪除                                             | FS-資料刪除   | N                     |
 |                                       | DFS 命名空間                                                 | FS-DFS-Namespace        | N                     |
 |                                       | DFS 複寫                                                | FS-DFS-Replication      | N                     |
 |                                       | File Server Resource Manager                                   | FS-Resource-Manager     | N                     |
@@ -72,19 +73,19 @@ ms.locfileid: "87895870"
 |                                       | iSCSI 目標儲存提供者 (VDS 和 VSS 硬體提供者)  | iSCSITarget-VSS-VDS     | N                     |
 |                                       | NFS 伺服器                                                 | FS-NFS-服務          | N                     |
 |                                       | 工作資料夾                                                   | FS-SyncShareService     | N                     |
-|                                       | 儲存體服務                                               | 儲存體-服務        | Y                     |
+|                                       | 儲存體服務                                               | 儲存體服務        | Y                     |
 | 列印和文件服務           | 列印伺服器                                                   | Print-Server            | N                     |
 |                                       | LPD 服務                                                    | Print-LPD-Service       | N                     |
-| 遠端存取                         |  (RAS) 的 DirectAccess 和 VPN                                     | DirectAccess-VPN        | N                     |
+| 遠端存取                         | DirectAccess 和 VPN (RAS)                                      | DirectAccess-VPN        | N                     |
 |                                       | 路由                                                        | 路由                 | N                     |
 |                                       | Web 應用程式 Proxy                                          | Web 應用程式-Proxy   | N                     |
-| 遠端桌面服務問題               | 遠端桌面連線代理人                               | RDS-連接-代理程式   | N                     |
+| 遠端桌面服務               | 遠端桌面連線代理人                               | RDS-連接-Broker   | N                     |
 |                                       | 遠端桌面授權                                       | RDS-授權           | N                     |
 |                                       | 遠端桌面虛擬主機                             | RDS-虛擬化      | N                     |
 | Web 伺服器 (IIS)                      | Web 伺服器                                                     | Web-WebServer           | N                     |
 |                                       | 一般 HTTP 功能                                           | Web-Common-Http         | N                     |
 |                                       | 預設文件                                               | Web-Default-Doc         | N                     |
-|                                       | 瀏覽目錄                                             | Web-Dir-Browsing        | N                     |
+|                                       | 目錄瀏覽                                             | Web-Dir-Browsing        | N                     |
 |                                       | HTTP 錯誤                                                    | Web-Http-Errors         | N                     |
 |                                       | 靜態內容                                                 | Web-Static-Content      | N                     |
 |                                       | HTTP 重新導向                                               | Web-Http-Redirect       | N                     |
@@ -109,10 +110,10 @@ ms.locfileid: "87895870"
 |                                       | IP 及網域限制                                     | Web-IP-Security         | N                     |
 |                                       | URL 授權                                              | Web-Url-Auth            | N                     |
 |                                       | Windows 驗證                                         | Web-Windows-Auth        | N                     |
-|                                       | 應用程式開發                                        | Web 應用程式開發             | N                     |
+|                                       | 應用程式開發                                        | Web 應用程式-開發人員             | N                     |
 |                                       | .NET 擴充性 3.5                                         | Web-Net-Ext             | N                     |
-|                                       | .NET 擴充性4。6                                         | 網路-Ext45           | N                     |
-|                                       | 應用程式初始化                                     | Web-Appinit.reg             | N                     |
+|                                       | .NET 擴充性4。6                                         | 網路-網路-Ext45           | N                     |
+|                                       | 應用程式初始化                                     | Web-AppInit             | N                     |
 |                                       | ASP                                                            | Web-ASP                 | N                     |
 |                                       | ASP.NET 3.5                                                    | Web-Asp-Net             | N                     |
 |                                       | ASP.NET 4。6                                                    | Web-Asp-Net45           | N                     |
@@ -122,8 +123,8 @@ ms.locfileid: "87895870"
 |                                       | 伺服器端包含                                           | Web-Includes            | N                     |
 |                                       | WebSocket 通訊協定                                             | Web-Websocket          | N                     |
 |                                       | FTP 伺服器                                                     | Web-Ftp-Server          | N                     |
-|                                       | FTP 服務                                                    | Web-Ftp-服務         | N                     |
-|                                       | FTP 擴充性                                              | Web-Ftp-Ext             | N                     |
+|                                       | FTP 服務                                                    | Web Ftp-服務         | N                     |
+|                                       | FTP 擴充性                                              | Web Ftp-Ext             | N                     |
 |                                       | 管理工具                                               | Web-Mgmt-Tools          | N                     |
 |                                       | IIS 6 管理相容性                                 | Web-Mgmt-Compat         | N                     |
 |                                       | IIS 6 Metabase 相容性                                   | Web-Metabase            | N                     |
@@ -136,21 +137,21 @@ ms.locfileid: "87895870"
 |                                       | SQL Server 連線能力                                        | UpdateServices-DB       | N                     |
 
 ## <a name="features-included-in-server-core"></a>Server Core 中包含的功能
-[Server Core] 安裝選項包含下列功能。
+Server Core 安裝選項包含下列功能。
 
-| 特徵                                                | 名稱                               | 預設會安裝嗎？ |
+| 功能                                                | 名稱                               | 預設會安裝？ |
 |--------------------------------------------------------|------------------------------------|-----------------------|
-| .NET Framework 3.5 功能                            | NET Framework-功能             | N                     |
-| .NET Framework 3.5 (包含 .NET 2.0 和 3.0)        | NET-Framework-Core                 | 已移除 ()              |
+| .NET Framework 3.5 功能                            | .NET Framework-功能             | N                     |
+| .NET Framework 3.5 (包含 .NET 2.0 和 3.0)        | NET-Framework-Core                 |  (移除)              |
 | HTTP 啟用                                        | NET-HTTP-Activation                | N                     |
 | 非 HTTP 啟用                                    | NET-Non-HTTP-Activ                 | N                     |
-| .NET Framework 4.6 功能                            | NET Framework-45-功能          | Y                     |
-| .NET Framework 4.6                                     | NET Framework-45-核心              | Y                     |
-| ASP.NET 4。6                                            | NET Framework-45-ASPNET            | N                     |
+| .NET Framework 4.6 功能                            | NET-Framework-45-功能          | Y                     |
+| .NET Framework 4.6                                     | .NET Framework-45-核心              | Y                     |
+| ASP.NET 4。6                                            | NET-Framework-45-ASPNET            | N                     |
 | WCF Services                                           | NET-WCF-Services45                 | Y                     |
 | HTTP 啟用                                        | NET-WCF-HTTP-Activation45          | N                     |
-| 訊息佇列 (MSMQ) 啟用                      | NET-WCF-Activation45          | N                     |
-| 具名管道啟用                                  | NET-WCF-管線-Activation45          | N                     |
+| 訊息佇列 (MSMQ) 啟用                      | NET-WCF-MSMQ-Activation45          | N                     |
+| 具名管道啟用                                  | NET-WCF-管道-Activation45          | N                     |
 | TCP 啟用                                         | NET-WCF-TCP-Activation45           | N                     |
 | TCP 連接埠共用                                       | NET-WCF-TCP-PortSharing45          | Y                     |
 | 背景智慧型傳送服務 (BITS)         | BITS                               | N                     |
@@ -179,7 +180,7 @@ ms.locfileid: "87895870"
 | 訊息佇列 DCOM Proxy                             | MSMQ-DCOM                          | N                     |
 | 多重路徑 I/O                                          | Multipath-IO                       | N                     |
 | MultiPoint 連線程式                                   | MultiPoint-連接器               | N                     |
-| MultiPoint Connector 服務                          | MultiPoint-連接器-服務      | N                     |
+| MultiPoint 連接器服務                          | MultiPoint-連接器-服務      | N                     |
 | MultiPoint 管理員和 MultiPoint 儀表板            | MultiPoint-工具                   | N                     |
 | Network Load Balancing                                 | NLB                                | N                     |
 | 對等名稱解析通訊協定                          | PNRP                               | N                     |
@@ -187,15 +188,15 @@ ms.locfileid: "87895870"
 | 遠端差異壓縮                        | RDC                                | N                     |
 | 遠端伺服器管理工具                     | RSAT                               | N                     |
 | 功能管理工具                           | RSAT-Feature-Tools                 | N                     |
-| BitLocker 磁碟機加密系統管理公用程式  | RSAT-功能-工具-BitLocker       | N                     |
-| DataCenterBridging LLDP 工具                          | RSAT-DataCenterBridging-LLDP-工具 | N                     |
+| BitLocker 磁碟機加密管理公用程式  | RSAT-功能-工具-BitLocker       | N                     |
+| DataCenterBridging LLDP Tools                          | RSAT-DataCenterBridging-LLDP-工具 | N                     |
 | 容錯移轉叢集工具                              | RSAT-Clustering                    | N                     |
-| 適用于 Windows PowerShell 的容錯移轉叢集模組         | RSAT-Clustering-PowerShell         | N                     |
-| 容錯移轉叢集自動化伺服器                     | RSAT-叢集-AutomationServer   | N                     |
-| 容錯移轉叢集命令介面                     | RSAT-叢集-CmdInterface       | N                     |
-| IPAM) 用戶端 (的 IP 位址管理                    | IPAM-用戶端功能                | N                     |
+| Windows PowerShell 的容錯移轉叢集模組         | RSAT-Clustering-PowerShell         | N                     |
+| 容錯移轉叢集 Automation 伺服器                     | RSAT-群集-AutomationServer   | N                     |
+| 容錯移轉叢集命令介面                     | RSAT-群集-CmdInterface       | N                     |
+| IP 位址管理 (IPAM) 用戶端                    | IPAM-用戶端功能                | N                     |
 | 受防護的 VM 工具                                      | RSAT-受防護-VM-工具             | N                     |
-| 適用于 Windows PowerShell 的儲存體複本模組          | RSAT-儲存體-複本               | N                     |
+| Windows PowerShell 的儲存體複本模組          | RSAT-儲存體-複本               | N                     |
 | 角色管理工具                              | RSAT-Role-Tools                    | N                     |
 | AD DS 和 AD LDS 工具                                 | RSAT-AD-工具                      | N                     |
 | 適用於 Windows PowerShell 的 Active Directory 模組         | RSAT-AD-PowerShell                 | N                     |
@@ -212,7 +213,7 @@ ms.locfileid: "87895870"
 | 遠端存取管理工具                         | RSAT-RemoteAccess                  | N                     |
 | 適用於 Windows PowerShell 的遠端存取模組            | RSAT-RemoteAccess-PowerShell       | N                     |
 | RPC over HTTP Proxy                                    | RPC-over-HTTP-Proxy                | N                     |
-| 安裝並啟動事件收集                        | 設定與開機-事件收集    | N                     |
+| 安裝並啟動事件收集                        | 設定和開機-事件收集    | N                     |
 | 簡單 TCP/IP 服務                                 | Simple-TCPIP                       | N                     |
 | SMB 1.0/CIFS 檔案共用支援                      | FS-SMB1                            | Y                     |
 | SMB 頻寬限制                                    | FS-SMBBW                           | N                     |
@@ -222,10 +223,10 @@ ms.locfileid: "87895870"
 | 適用於網狀架構管理的 VM 防護工具               | FabricShieldedTools                | N                     |
 | Windows Defender 功能                              | Windows-Defender-功能          | Y                     |
 | Windows Defender                                       | Windows-Defender                   | Y                     |
-| Windows 內部資料庫                              | Windows-內部-資料庫          | N                     |
+| Windows 內部資料庫                              | Windows-內部資料庫          | N                     |
 | Windows PowerShell                                     | PowerShellRoot                     | Y                     |
 | Windows PowerShell 5.1                                 | PowerShell                         | Y                     |
-| Windows PowerShell 2.0 引擎                          | PowerShell-V2                      | 已移除 ()              |
+| Windows PowerShell 2.0 引擎                          | PowerShell-V2                      |  (移除)              |
 | Windows PowerShell Desired State Configuration 服務 | DSC-服務                        | N                     |
 | Windows PowerShell Web 存取                          | WindowsPowerShellWebAccess         | N                     |
 | Windows 處理序啟用服務                     | WAS                                | N                     |

@@ -3,15 +3,15 @@ title: tpmtool
 description: Tpmtool 的參考文章，可取得可信賴平臺模組的相關資訊。
 ms.topic: reference
 author: ashleytqy
-ms.author: ashleytqy
-manager: ronaldai
+ms.author: asteoh
+manager: raigner
 ms.date: 05/07/2019
-ms.openlocfilehash: b0f234755eefdca15f214dad428f02631592e8c2
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: f9d1a7c0bc1516feea3afaf00d750e54871ad818
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026996"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077585"
 ---
 # <a name="tpmtool"></a>tpmtool
 

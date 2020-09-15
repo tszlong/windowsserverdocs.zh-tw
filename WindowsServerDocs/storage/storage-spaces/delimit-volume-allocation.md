@@ -1,79 +1,79 @@
 ---
-title: 分隔儲存空間直接存取中的磁片區配置
-ms.author: cosmosdarwin
+title: 在儲存空間直接存取中分隔磁片區的配置
 manager: eldenc
 ms.topic: article
 author: cosmosdarwin
+ms.author: cosdar
 ms.date: 03/29/2018
-ms.openlocfilehash: 6dac775d3e92a0f7a076800d5c07af2776720c1d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 394d9dbb41f502fe9be273e97177237dea79fde7
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960951"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078493"
 ---
-# <a name="delimit-the-allocation-of-volumes-in-storage-spaces-direct"></a>分隔儲存空間直接存取中的磁片區配置
+# <a name="delimit-the-allocation-of-volumes-in-storage-spaces-direct"></a>在儲存空間直接存取中分隔磁片區的配置
 > 適用於：Windows Server 2019
 
-Windows Server 2019 引進了一個選項，可手動將儲存空間直接存取中的磁片區配置加以分隔。 這麼做可以在某些情況下大幅增加容錯能力，但會強加一些額外的管理考慮和複雜度。 本主題說明其運作方式，並提供 PowerShell 中的範例。
+Windows Server 2019 引進了在儲存空間直接存取中手動分隔磁片區配置的選項。 這樣做可能會在特定情況下大幅提高容錯，但會強加一些新增的管理考慮和複雜度。 本主題說明其運作方式，並在 PowerShell 中提供範例。
 
    > [!IMPORTANT]
-   > 這是 Windows Server 2019 中的新功能。 它在 Windows Server 2016 中無法使用。
+   > 這項功能是 Windows Server 2019 中的新功能。 它無法在 Windows Server 2016 中使用。
 
 ## <a name="prerequisites"></a>必要條件
 
-### <a name="green-checkmark-icon-consider-using-this-option-if"></a>![綠色核取記號圖示。](media/delimit-volume-allocation/supported.png) 如果是下列情況，請考慮使用此選項：
+### <a name="green-checkmark-icon-consider-using-this-option-if"></a>![綠色核取記號圖示。](media/delimit-volume-allocation/supported.png) 如果有下列情況，請考慮使用此選項：
 
 - 您的叢集有六部以上的伺服器;和
-- 您的叢集僅使用[三向鏡像](storage-spaces-fault-tolerance.md#mirroring)復原
+- 您的叢集只使用 [三向鏡像](storage-spaces-fault-tolerance.md#mirroring) 復原
 
-### <a name="red-x-icon-do-not-use-this-option-if"></a>![紅色 X 圖示。](media/delimit-volume-allocation/unsupported.png) 如果是下列情況，請勿使用此選項：
+### <a name="red-x-icon-do-not-use-this-option-if"></a>![紅色 X 圖示。](media/delimit-volume-allocation/unsupported.png) 如果有下列情況，請勿使用此選項：
 
-- 您的叢集少於六部伺服器;或
-- 您[的叢集使用同](storage-spaces-fault-tolerance.md#parity)位檢查或[鏡像加速同位](storage-spaces-fault-tolerance.md#mirror-accelerated-parity)復原
+- 您的叢集有少於六部伺服器;或
+- 您 [的叢集使用](storage-spaces-fault-tolerance.md#parity) 同 [位或鏡像加速同位](storage-spaces-fault-tolerance.md#mirror-accelerated-parity) 復原
 
 ## <a name="understand"></a>了解
 
-### <a name="review-regular-allocation"></a>審查：一般配置
+### <a name="review-regular-allocation"></a>審核：一般配置
 
-使用一般的三向鏡像時，磁片區會分割成多個小型的「slab」，並複製三次，並平均分散到叢集中每部伺服器上的每個磁片磁碟機。 如需詳細資訊，請閱讀[這篇深入探討的 blog](https://techcommunity.microsoft.com/t5/storage-at-microsoft/deep-dive-the-storage-pool-in-storage-spaces-direct/ba-p/425959)。
+使用一般的三向鏡像時，磁片區會分割成許多較小的「slab」，並複製三次，並平均分散到叢集中每部伺服器的每個磁片磁碟機。 如需詳細資訊，請閱讀 [這篇深入探討的 blog](https://techcommunity.microsoft.com/t5/storage-at-microsoft/deep-dive-the-storage-pool-in-storage-spaces-direct/ba-p/425959)。
 
-![此圖顯示分割成三個 slab 堆疊，並在每部伺服器上平均散發的磁片區。](media/delimit-volume-allocation/regular-allocation.png)
+![此圖顯示將磁片區分割成三個 slab 堆疊，並平均分散在每部伺服器上。](media/delimit-volume-allocation/regular-allocation.png)
 
-此預設配置可將平行讀取和寫入最大化，進而提升效能，而且非常方便：每部伺服器都同樣忙碌，每個磁片磁碟機都有相同的空間，而且所有磁片區都保持上線或離線。 每個磁片區保證最多可承受兩個並行失敗，如[下列範例](storage-spaces-fault-tolerance.md#examples)所示。
+此預設配置可將平行讀取和寫入最大化，進而提升效能，並在簡化時吸引人：每部伺服器都同樣忙碌、每個磁片磁碟機都同樣地滿，且所有磁片區都保持上線或離線。 每個磁片區保證最多可承受兩個並行失敗，如 [下列範例](storage-spaces-fault-tolerance.md#examples) 所示。
 
-不過，使用此配置時，磁片區不能在三個並行失敗的情況下存活。 如果有三部伺服器一次失敗，或三部伺服器中的磁片磁碟機一次失敗，磁片區就會變得無法存取，因為至少有一些 slab (是非常高的機率) 配置給第三個磁片磁碟機或失敗的伺服器。
+不過，使用此配置時，磁片區無法存活三個並行失敗。 如果三部伺服器一次失敗，或三部伺服器中的磁片磁碟機一次失敗，磁片區就會變成無法存取，因為至少有一些 (slab 的機率很高，) 配置給第三個磁片磁碟機或失敗的伺服器。
 
 在下列範例中，伺服器1、3和5會同時失敗。 雖然許多 slab 都有存活的複本，但有些則不會：
 
-![顯示六部伺服器以紅色醒目提示的圖表，而整體磁片區則為紅色。](media/delimit-volume-allocation/regular-does-not-survive.png)
+![顯示六部伺服器中以紅色醒目提示的三部伺服器的圖表，且整體磁片區為紅色。](media/delimit-volume-allocation/regular-does-not-survive.png)
 
-磁片區會離線，並在伺服器復原之前變成無法存取。
+磁片區會離線且無法存取，直到伺服器復原為止。
 
 ### <a name="new-delimited-allocation"></a>新增：分隔配置
 
-使用分隔配置時，您可以指定要使用的伺服器子集， (最少四) 。 磁片區會分割成複製三次（如先前）的 slab，而不是在每一部伺服器上配置，而是**只會將 slab 配置給您指定的伺服器子集**。
+使用分隔配置，您可以指定要使用 (最少四個) 的伺服器子集。 磁片區會分割成複製三次的 slab （如先前所示），但不會在每一部伺服器上配置，而是 **只會將 slab 配置給您指定的伺服器子集**。
 
-例如，如果您有8個節點的叢集 (節點1到 8) ，您可以指定只在節點1、2、3、4中的磁片上找出磁片區。
+例如，如果您有8個節點叢集 (節點1到 8) ，您可以將磁片區指定為只能在節點1、2、3、4中的磁片上找到。
 #### <a name="advantages"></a>優點
 
-使用範例配置時，磁片區可能會存活三個並行失敗。 如果節點1、2和6停止，只有2個節點的資料會保留3個磁片區，且磁片區會保持線上狀態。
+使用範例配置時，磁片區可能會存活三個並行失敗。 如果節點1、2和6停止運作，則只有2個節點會保留磁片區的3個數據複本，而磁片區會保持在線上。
 
-生存機率取決於伺服器的數目和其他因素–如需詳細資訊，請參閱[分析](#analysis)。
+生存機率取決於伺服器數目和其他因素-請參閱 [分析](#analysis) 以取得詳細資料。
 
 #### <a name="disadvantages"></a>缺點
 
-分隔配置會強加一些新增的管理考慮和複雜度：
+分隔配置會有一些新增的管理考慮和複雜性：
 
-1. 系統管理員會負責分隔每個磁片區的配置，以平衡伺服器間的儲存使用量，並以[最佳做法](#best-practices)一節中所述的方式來維持高機率的生存率。
+1. 系統管理員必須負責分隔每個磁片區的配置，以平衡伺服器之間的儲存使用率，並保持存活的高機率，如 [最佳作法](#best-practices) 一節中所述。
 
-2. 使用分隔配置時，**每個伺服器 (保留一個容量磁片磁碟機的對應，而不會有) 上限**。 這不是一般配置的[已發佈建議](plan-volumes.md#choosing-the-size-of-volumes)，會到超出出四個容量磁片磁碟機總計。
+2. 使用分隔配置時，請為 **每個伺服器 (保留同一個容量磁片磁碟機，而沒有最大) **。 這不是一般配置的 [發佈建議](plan-volumes.md#choosing-the-size-of-volumes) ，而是到超出在四個容量磁片磁碟機總計。
 
-3. 如果伺服器失敗且需要取代（如[移除伺服器和其磁片磁碟機](remove-servers.md#remove-a-server-and-its-drives)中所述），系統管理員會負責新增新的伺服器並移除失敗的其中一個範例，以更新受影響的磁片區 delimitation。
+3. 如果伺服器失敗且需要被取代（如 [移除伺服器及其磁片磁碟機](remove-servers.md#remove-a-server-and-its-drives)中所述），系統管理員必須藉由新增新的伺服器並移除失敗的單一範例（以下範例），負責更新受影響磁片區的 delimitation。
 
 ## <a name="usage-in-powershell"></a>PowerShell 中的使用方式
 
-您可以使用 `New-Volume` Cmdlet 在儲存空間直接存取中建立磁片區。
+您可以使用 `New-Volume` Cmdlet，在儲存空間直接存取中建立磁片區。
 
 例如，若要建立一般的三向鏡像磁片區：
 
@@ -81,20 +81,20 @@ Windows Server 2019 引進了一個選項，可手動將儲存空間直接存取
 New-Volume -FriendlyName "MyRegularVolume" -Size 100GB
 ```
 
-### <a name="create-a-volume-and-delimit-its-allocation"></a>建立磁片區並界定其配置
+### <a name="create-a-volume-and-delimit-its-allocation"></a>建立磁片區並將其配置加以分隔
 
-建立三向鏡像磁片區，並將其配置分隔：
+若要建立三向鏡像磁片區並分隔其配置：
 
-1. 首先，將您叢集中的伺服器指派給變數 `$Servers` ：
+1. 首先，將叢集中的伺服器指派給變數 `$Servers` ：
 
     ```PowerShell
     $Servers = Get-StorageFaultDomain -Type StorageScaleUnit | Sort FriendlyName
     ```
 
    > [!TIP]
-   > 在儲存空間直接存取中，「存放裝置縮放單位」一詞指的是連接到一部伺服器的所有原始存放裝置，包括直接連接的磁片磁碟機，以及具有磁片磁碟機的直接連接外部主機殼。 在此內容中，它與「伺服器」相同。
+   > 在儲存空間直接存取中，「存放裝置縮放單位」一詞是指連接到一部伺服器的所有原始儲存體，包括直接連接的磁片磁碟機，以及具有磁片磁碟機的直接連結的外部主機殼。 在此內容中，它與「伺服器」相同。
 
-2. 指定要搭配新參數使用的伺服器 `-StorageFaultDomainsToUse` ，並藉由編制索引 `$Servers` 。 例如，若要將配置分隔到第一個、第二、第三和第四部伺服器， (索引0、1、2和 3) ：
+2. 指定要搭配新參數使用的伺服器 `-StorageFaultDomainsToUse` ，以及將加入的 `$Servers` 索引。 例如，若要將配置分割為第一個、第二、第三和第四部伺服器， (索引0、1、2和 3) ：
 
     ```PowerShell
     New-Volume -FriendlyName "MyVolume" -Size 100GB -StorageFaultDomainsToUse $Servers[0,1,2,3]
@@ -102,7 +102,7 @@ New-Volume -FriendlyName "MyRegularVolume" -Size 100GB
 
 ### <a name="see-a-delimited-allocation"></a>查看分隔的配置
 
-若要查看*MyVolume*的配置方式，請使用 `Get-VirtualDiskFootprintBySSU.ps1` [附錄](#appendix)中的腳本：
+若要查看 *MyVolume* 的配置方式，請使用 `Get-VirtualDiskFootprintBySSU.ps1` [附錄](#appendix)中的腳本：
 
 ```PowerShell
 PS C:\> .\Get-VirtualDiskFootprintBySSU.ps1
@@ -112,27 +112,27 @@ VirtualDiskFriendlyName TotalFootprint Server1 Server2 Server3 Server4 Server5 S
 MyVolume                300 GB         100 GB  100 GB  100 GB  100 GB  0       0
 ```
 
-請注意，只有 Server1、Server2、Server3 和伺服器4包含*MyVolume*的 slab。
+請注意，只有 Server1、Server2、Server3 和 Server4 包含 *MyVolume*的 slab。
 
-### <a name="change-a-delimited-allocation"></a>變更分隔的配置
+### <a name="change-a-delimited-allocation"></a>變更分隔配置
 
 使用新的 `Add-StorageFaultDomain` 和 `Remove-StorageFaultDomain` Cmdlet 來變更配置的分隔方式。
 
-例如，若要將*MyVolume*移到一部伺服器上：
+例如，若要將 *MyVolume* 移到一部伺服器上：
 
-1. 指定第五個伺服器**可以**儲存*MyVolume*的 slab：
+1. 指定第五部伺服器 **可以** 儲存 *MyVolume*的 slab：
 
     ```PowerShell
     Get-VirtualDisk MyVolume | Add-StorageFaultDomain -StorageFaultDomains $Servers[4]
     ```
 
-2. 指定第一部伺服器**無法**儲存*MyVolume*的 slab：
+2. 指定第一部伺服器 **無法** 儲存 *MyVolume*的 slab：
 
     ```PowerShell
     Get-VirtualDisk MyVolume | Remove-StorageFaultDomain -StorageFaultDomains $Servers[0]
     ```
 
-3. 重新平衡存放集區，讓變更生效：
+3. 重新平衡儲存集區，變更才會生效：
 
     ```PowerShell
     Get-StoragePool S2D* | Optimize-StoragePool
@@ -140,7 +140,7 @@ MyVolume                300 GB         100 GB  100 GB  100 GB  100 GB  0       0
 
 您可以使用監視重新平衡的進度 `Get-StorageJob` 。
 
-完成後，請再次執行以確認*MyVolume*已移動 `Get-VirtualDiskFootprintBySSU.ps1` 。
+完成之後，請再次執行，以確認 *MyVolume* 已移動 `Get-VirtualDiskFootprintBySSU.ps1` 。
 
 ```PowerShell
 PS C:\> .\Get-VirtualDiskFootprintBySSU.ps1
@@ -150,7 +150,7 @@ VirtualDiskFriendlyName TotalFootprint Server1 Server2 Server3 Server4 Server5 S
 MyVolume                300 GB         0       100 GB  100 GB  100 GB  100 GB  0
 ```
 
-請注意，Server1 不再包含*MyVolume*的 slab，而是 Server5。
+請注意，Server1 不再包含 *MyVolume* 的 slab，而是 Server5。
 
 ## <a name="best-practices"></a>最佳作法
 
@@ -158,44 +158,44 @@ MyVolume                300 GB         0       100 GB  100 GB  100 GB  100 GB  0
 
 ### <a name="choose-four-servers"></a>選擇四部伺服器
 
-將每個三向鏡像磁片區分隔成四部伺服器，而不是更多。
+將每個三向鏡像磁片區分隔成四部伺服器，而不是其他。
 
 ### <a name="balance-storage"></a>平衡儲存體
 
-平衡配置給每部伺服器的儲存空間量，會計入磁片區大小。
+平衡配置給每部伺服器的儲存體量、磁片區大小的帳戶處理量。
 
 ### <a name="stagger-delimited-allocation-volumes"></a>錯開分隔的配置磁片區
 
-若要最大化容錯，請將每個磁片區的配置設為唯一，這表示它不會與另一個磁片區共用其*所有*伺服器 (有些重迭) 。
+為了達到最大容錯，請讓每個磁片區的配置變成唯一的，這表示它不會與另一個磁片區共用其 *所有* 伺服器 (部分重迭) 。
 
 例如，在八個節點的系統上：磁片區1：伺服器1、2、3、4磁片區2：伺服器5、6、7、8磁片區3：伺服器3、4、5、6磁片區4：伺服器1、2、7、8
 
 ## <a name="analysis"></a>分析
 
-這一節衍生的是磁片區保持連線且可供存取的數學機率 (或同等性，這是維持在線上且可存取的整體儲存體的預期部分，) 為失敗次數和叢集大小的功能。
+本節會衍生出磁片區維持在線上且可存取 (或相同的數學機率，也就是在線上且可存取的整體儲存空間的預期比例，) 為失敗數目和叢集大小的功能。
 
    > [!NOTE]
-   > 這是選擇性的閱讀區段。 如果您想要查看數學，請繼續閱讀！ 但如果沒有，別擔心： [PowerShell 中的使用方式](#usage-in-powershell)，以及[最佳作法](#best-practices)，您只需要成功執行已分隔的配置即可。
+   > 此區段是選擇性讀取。 如果您想要查看數學，請繼續閱讀！ 但如果沒有，請別擔心： [PowerShell 中的使用方式](#usage-in-powershell) 和 [最佳作法](#best-practices) ，都只需要成功執行分隔配置。
 
 ### <a name="up-to-two-failures-is-always-okay"></a>最多有兩個失敗永遠都沒問題
 
-無論其配置為何，每個三向鏡像磁片區都可以同時存活最多兩個失敗。 如果兩個磁片磁碟機失敗，或兩部伺服器故障，或其中一個失敗，則每個三向鏡像磁片區都保持連線並可供使用，即使是一般配置也一樣。
+無論配置為何，每個三向鏡像磁片區最多可存留兩次失敗。 如果有兩個磁片磁碟機故障，或兩部伺服器故障，或其中一個伺服器失敗，則每個三向鏡像磁片區都會保持連線且可供存取，即使是一般配置。
 
-### <a name="more-than-half-the-cluster-failing-is-never-okay"></a>超過一半的叢集失敗，永遠都沒問題
+### <a name="more-than-half-the-cluster-failing-is-never-okay"></a>叢集故障的一半不會有一半
 
-相反地，在叢集中一半以上的伺服器或磁片磁碟機一次失敗時，[仲裁就會遺失](understand-quorum.md)，而且每個三向鏡像磁片區都會離線並變成無法存取，不論其配置為何。
+相反地，如果叢集中有一半以上的伺服器或磁片磁碟機故障， [仲裁就會遺失](understand-quorum.md) ，而且每個三向鏡像磁片區都會離線且無法存取，不論其配置為何。
 
-### <a name="what-about-in-between"></a>在之間有何意義？
+### <a name="what-about-in-between"></a>兩者之間有何差異？
 
-如果一次發生三個以上的失敗，但至少有一半的伺服器和磁片磁碟機仍在運作中，則具有分隔配置的磁片區可能會保持連線並可供存取，視哪些伺服器失敗而定。
+如果發生三個或多個失敗，但至少有一半的伺服器和磁片磁碟機仍在運作中，則具有分隔配置的磁片區可能會保持連線並可供存取，這取決於哪些伺服器故障。
 
 ## <a name="frequently-asked-questions"></a>常見問題集
 
 ### <a name="can-i-delimit-some-volumes-but-not-others"></a>我可以分隔某些磁片區，而不是其他磁片區嗎？
 
-是。 您可以選擇每個磁片區是否要分隔配置。
+可以。 您可以選擇是否要分隔配置的每個磁片區。
 
-### <a name="does-delimited-allocation-change-how-drive-replacement-works"></a>分隔配置是否會變更磁片磁碟機更換的運作方式？
+### <a name="does-delimited-allocation-change-how-drive-replacement-works"></a>分隔配置變更磁片磁碟機更換的運作方式為何？
 
 否，與一般配置相同。
 
@@ -208,7 +208,7 @@ MyVolume                300 GB         0       100 GB  100 GB  100 GB  100 GB  0
 
 此腳本可協助您查看磁片區的配置方式。
 
-如以上所述使用它，請複製/貼上並另存新檔 `Get-VirtualDiskFootprintBySSU.ps1` 。
+如上面所述使用它，複製/貼上並另存新檔 `Get-VirtualDiskFootprintBySSU.ps1` 。
 
 ```PowerShell
 Function ConvertTo-PrettyCapacity {

@@ -3,13 +3,14 @@ title: 適用於行動寬頻網路 (MBN) 的 Netsh 命令
 description: 使用 netsh mbn 來查詢及設定行動寬頻設定和參數。
 ms.topic: article
 author: apdutta
+ms.author: apdutta
 ms.date: 02/20/2020
-ms.openlocfilehash: 50c0bbf441e3109189117cbfd8df9ee597712bcd
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 30d81f8c36c5ba745d0af1d940d8f4f3971d37a0
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953984"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078565"
 ---
 # <a name="netsh-mbn-commands"></a>Netsh mbn 命令
 
@@ -500,32 +501,55 @@ set tracing mode=yes
 
 可用的 netsh mbn set 命令如下：
 
-- [acstate](#acstate)
-- [capability](#capability)
-- [connection](#connection)
-- [dataenablement](#dataenablement)
-- [dataroamcontrol](#dataroamcontrol)
-- [dmprofiles](#dmprofiles)
-- [enterpriseapnparams](#enterpriseapnparams)
-- [highestconncategory](#highestconncategory)
-- [homeprovider](#homeprovider)
-- [interfaces](#interfaces)
-- [netlteattachinfo](#netlteattachinfo)
-- [pin](#pin)
-- [pinlist](#pinlist)
-- [preferredproviders](#preferredproviders)
-- [profiles](#profiles)
-- [profilestate](#profilestate)
-- [provisionedcontexts](#provisionedcontexts)
-- [purpose](#purpose)
-- [radio](#radio)
-- [readyinfo](#readyinfo)
-- [signal](#signal)
-- [slotmapping](#slotmapping)
-- [slotstatus](#slotstatus)
-- [smsconfig](#smsconfig)
-- [tracing](#tracing)
-- [visibleproviders](#visibleproviders)
+- [Netsh mbn 命令](#netsh-mbn-commands)
+  - [add](#add)
+    - [dmprofile](#dmprofile)
+    - [profile](#profile)
+  - [connect](#connect)
+  - [delete](#delete)
+    - [dmprofile](#dmprofile-1)
+    - [profile](#profile-1)
+  - [diagnose](#diagnose)
+  - [disconnect](#disconnect)
+  - [dump](#dump)
+  - [說明](#help)
+  - [set](#set)
+    - [acstate](#acstate)
+    - [dataenablement](#dataenablement)
+    - [dataroamcontrol](#dataroamcontrol)
+    - [enterpriseapnparams](#enterpriseapnparams)
+    - [highestconncategory](#highestconncategory)
+    - [powerstate](#powerstate)
+    - [profileparameter](#profileparameter)
+    - [slotmapping](#slotmapping)
+    - [tracing](#tracing)
+  - [show](#show)
+    - [acstate](#acstate-1)
+    - [capability](#capability)
+    - [connection](#connection)
+    - [dataenablement](#dataenablement-1)
+    - [dataroamcontrol](#dataroamcontrol-1)
+    - [dmprofiles](#dmprofiles)
+    - [enterpriseapnparams](#enterpriseapnparams-1)
+    - [highestconncategory](#highestconncategory-1)
+    - [homeprovider](#homeprovider)
+    - [interfaces](#interfaces)
+    - [netlteattachinfo](#netlteattachinfo)
+    - [pin](#pin)
+    - [pinlist](#pinlist)
+    - [preferredproviders](#preferredproviders)
+    - [profiles](#profiles)
+    - [profilestate](#profilestate)
+    - [provisionedcontexts](#provisionedcontexts)
+    - [purpose](#purpose)
+    - [radio](#radio)
+    - [readyinfo](#readyinfo)
+    - [signal](#signal)
+    - [slotmapping](#slotmapping-1)
+    - [slotstatus](#slotstatus)
+    - [smsconfig](#smsconfig)
+    - [tracing](#tracing-1)
+    - [visibleproviders](#visibleproviders)
 
 ### <a name="acstate"></a>acstate
 

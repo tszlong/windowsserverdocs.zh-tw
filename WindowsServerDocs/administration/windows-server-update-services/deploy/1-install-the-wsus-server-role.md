@@ -3,16 +3,16 @@ title: 步驟 1 - 安裝 WSUS 伺服器角色
 description: Windows Server Update Service (WSUS) 主題 - 述如何使用伺服器管理員安裝伺服器角色
 ms.topic: article
 ms.assetid: fabc8619-350e-403b-96f8-116424931300
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 980aa106b9ed4cb1ebc5b091fa308906dcdb2d6a
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: c311ecb5c3d00e09fd1b7443a3a8ef9f82003902
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991034"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640713"
 ---
 # <a name="step-1-install-the-wsus-server-role"></a>步驟 1：安裝 WSUS 伺服器角色
 

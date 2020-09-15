@@ -2,15 +2,15 @@
 title: 概述適用於 Windows 的 OpenSSH
 description: 概述由 Linux 系統管理員和其他非 Windows 的系統管理員用於跨平台遠端系統管理的 OpenSSH 工具。
 ms.date: 01/07/2019
-contributor: damaerteMSFT
+ms.author: damaerte
 author: maertendmsft
-ms.type: conceptual
-ms.openlocfilehash: 1c0686d7bbe6e78baf924919c6733b733fe65f64
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.type: overview
+ms.openlocfilehash: f39e80bbeb3f610131ffcab67c271a792d5127e9
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879497"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078365"
 ---
 # <a name="openssh-in-windows"></a>Windows 的 OpenSSH
 

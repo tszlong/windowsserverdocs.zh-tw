@@ -3,14 +3,14 @@ title: 安裝適用於 Windows Server 的 OpenSSH
 description: 使用 Windows 設定選項或 Windows PowerShell 安裝適用於 Windows Server 的 OpenSSH 用戶端和伺服器。
 ms.date: 09/27/2019
 ms.topic: conceptual
-contributor: maertendMSFT
+ms.author: damaerte
 author: maertendmsft
-ms.openlocfilehash: 8ed486adb9519fbc0f87cc3142386bec8211d783
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 2496ee056dec9fc5b39578d889d8279574e76ba5
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469783"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078405"
 ---
 # <a name="installation-of-openssh-for-windows-server-2019-and-windows-10"></a>安裝適用於 Windows Server 2019 和 Windows 10 的 OpenSSH
 
