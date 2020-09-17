@@ -1,18 +1,17 @@
 ---
 title: Hyper-v 上支援的 Ubuntu 虛擬機器
 description: 列出每個版本中所包含的 Linux integration services 和功能
-manager: dongill
 ms.topic: article
 ms.assetid: 95ea5f7c-25c6-494b-8ffd-2a77f631ee94
-author: shirgall
-ms.author: shirgall
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 08/29/2020
-ms.openlocfilehash: 5bd5f7a129cbc5c69bc6b909e292c096a3812af1
-ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
+ms.openlocfilehash: cc59a9c45a1dee797196c8a12550945d3d834cd7
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89554551"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746573"
 ---
 # <a name="supported-ubuntu-virtual-machines-on-hyper-v"></a>Hyper-v 上支援的 Ubuntu 虛擬機器
 
@@ -33,7 +32,7 @@ ms.locfileid: "89554551"
 |**可用性**||內建|內建|內建|內建|
 |**[核心](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |Windows Server 2016 精確時間|2019、2016|&#10004;|&#10004;|&#10004;||
-|**[網路](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**||||||
+|**[網路功能](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**||||||
 |大型訊框|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |VLAN 標記和中繼|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |即時移轉|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
@@ -47,7 +46,7 @@ ms.locfileid: "89554551"
 |即時虛擬機器備份|2019、2016、2012 R2|&#10004; 附注3、4、5|&#10004; 附注3、4、5|&#10004; 附注3、4、5|&#10004; 附注3、4、5|
 |TRIM 支援|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |SCSI WWN|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
-|**[記憶體](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||
+|**[記憶](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||
 |PAE 核心支援|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |設定 MMIO 間距|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |動態記憶體-熱新增|2019、2016、2012 R2|&#10004; 附注6、7、8|&#10004; 附注6、7、8|&#10004; 附注6、7、8|&#10004; 附注6、7、8|

@@ -1,18 +1,17 @@
 ---
 title: 系結至虛擬交換器的小組應該只有一個公開的小組介面
-description: 此最佳做法分析程式規則的線上版本文字。
-manager: dongill
-ms.author: kathydav
+description: 此最佳做法分析程式規則之文字的線上版本。
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 1074f086-1a2e-42e1-b58c-f55e657d5ce1
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 7ec4c25a86bf90f1b2416e0d53ded8f5319960ad
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e600efe56c68f59ed8587e78a1d82576ff0c5c85
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87968515"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746363"
 ---
 # <a name="a-team-bound-to-a-virtual-switch-should-only-have-one-exposed-team-interface"></a>系結至虛擬交換器的小組應該只有一個公開的小組介面
 
@@ -25,9 +24,9 @@ ms.locfileid: "87968515"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|組態|
+|**類別**|設定|
 
-在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。
+在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 
 ## <a name="issue"></a>問題
 *一或多個虛擬交換器系結至具有多個小組介面的小組。*
@@ -37,8 +36,8 @@ ms.locfileid: "87968515"
 
 \<list of virtual switches>
 
-## <a name="resolution"></a>解決方法
-*使用 Windows PowerShell Cmdlet NetLbfoTeamNic，從預設的小組介面以外的小組移除所有小組介面。*
+## <a name="resolution"></a>解決方案
+*使用 Windows PowerShell Cmdlet NetLbfoTeamNic，從小組移除預設 team 介面以外的所有小組介面。*
 
 
 

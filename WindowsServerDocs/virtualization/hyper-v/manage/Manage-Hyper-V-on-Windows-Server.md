@@ -1,18 +1,17 @@
 ---
 title: 管理 Windows Server 上的 Hyper-v
-description: 提供管理 Hyper-v 文章的連結
-manager: dongill
+description: 提供有關管理 Hyper-v 的文章連結
 ms.topic: article
 ms.assetid: 5c06b632-dd19-46ca-9f51-130c321963d8
 author: jasongerend
 ms.author: jgerend
 ms.date: 01/08/2018
-ms.openlocfilehash: 8c58236004b78902eed07cd5117e4aa6543c7245
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fec48249d44aa9747846fbb63d2f808bae3f9a95
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87941983"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746433"
 ---
 # <a name="manage-hyper-v-on-windows-server"></a>管理 Windows Server 上的 Hyper-v
 

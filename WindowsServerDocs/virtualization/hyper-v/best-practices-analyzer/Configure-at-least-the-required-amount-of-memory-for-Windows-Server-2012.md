@@ -1,20 +1,19 @@
 ---
-title: 至少為執行 Windows Server 2012 並啟用動態記憶體的虛擬機器設定所需的記憶體數量
-description: 此最佳做法分析程式規則的線上版本文字。
-manager: dongill
-ms.author: kathydav
+title: 針對執行 Windows Server 2012 並啟用動態記憶體的虛擬機器，至少設定所需的記憶體數量
+description: 此最佳做法分析程式規則之文字的線上版本。
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 46f9a5dc-355b-415b-863d-fb740609d6b6
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 5edba71a6aa294c2d4204c0e90095e4367236b7f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d32bfafd8fa50ffcc9864f7b426e6bea4a70c8bc
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954555"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746903"
 ---
-# <a name="configure-at-least-the-required-amount-of-memory-for-a-virtual-machine-running-windows-server-2012-and-enabled-for-dynamic-memory"></a>至少為執行 Windows Server 2012 並啟用動態記憶體的虛擬機器設定所需的記憶體數量
+# <a name="configure-at-least-the-required-amount-of-memory-for-a-virtual-machine-running-windows-server-2012-and-enabled-for-dynamic-memory"></a>針對執行 Windows Server 2012 並啟用動態記憶體的虛擬機器，至少設定所需的記憶體數量
 
 >適用於：Windows Server 2016
 
@@ -25,42 +24,42 @@ ms.locfileid: "87954555"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|錯誤|
-|**類別**|組態|
+|**類別**|設定|
 
-在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。
+在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 
 ## <a name="issue"></a>**問題**
-*一或多部虛擬機器已設定為使用動態記憶體，且小於 Windows Server 2012 所需的記憶體數量。*
+*一或多部虛擬機器設定為使用的動態記憶體，少於 Windows Server 2012 所需的記憶體數量。*
 
 ## <a name="impact"></a>**影響**
 *下列虛擬機器上的客體作業系統可能無法執行，或可能執行 unreliably：*
 
 \<list of virtual machines>
 
-## <a name="resolution"></a>**解決方案**
-*使用 [Hyper-v 管理員] 將最小記憶體增加到至少 256 MB，並將 [啟動記憶體] 和 [最大記憶體] 設為此虛擬機器至少 512 MB。*
+## <a name="resolution"></a>**解決方法**
+*使用 Hyper-v 管理員將最小記憶體增加到至少 256 MB，並將此虛擬機器的啟動記憶體和最大記憶體增加到至少 512 MB。*
 
-### <a name="increase-memory-using-hyper-v-manager"></a>使用 Hyper-v 管理員增加記憶體
+### <a name="increase-memory-using-hyper-v-manager"></a>使用 Hyper-v 管理員來增加記憶體
 
-1.  開啟 Hyper-V 管理員。 從伺服器管理員 (，按一下 [**工具**] [  >  **hyper-v 管理員**]。 ) 
+1.  開啟 Hyper-V 管理員。 從伺服器管理員 (，請按一下 [**工具**  >  **hyper-v 管理員**]。 ) 
 
-2.  從虛擬機器清單中，以滑鼠右鍵按一下您想要的，然後按一下 [**設定**]。
+2.  從虛擬機器清單中，以滑鼠右鍵按一下您想要的虛擬機器，然後按一下 [ **設定**]。
 
-3.  在流覽窗格中，按一下 [**記憶體**]。
+3.  在流覽窗格中，按一下 [ **記憶體**]。
 
-4.  請將**RAM**變更為至少 512 MB。
+4.  將 **RAM** 變更為至少 512 MB。
 
-5.  在 [**動態記憶體**] 底下，將**最小 ram**變更為至少 256 Mb，並將**最大 ram**變更為 512 mb。
+5.  在 [ **動態記憶體**] 下，將 **最小 Ram 的最小值** 變更為至少 256 MB， **最大 ram** 變更為 512 MB。
 
-6.  按一下 [確定]  。
+6.  按一下 [確定]。
 
-### <a name="increase-memory-using-windows-powershell"></a>使用 Windows PowerShell 增加記憶體
+### <a name="increase-memory-using-windows-powershell"></a>使用 Windows PowerShell 來增加記憶體
 
-1.  開啟 Windows PowerShell。 從桌面上 (，按一下 [**開始**]，然後開始鍵入**Windows PowerShell**。 ) 
+1.  開啟 Windows PowerShell。 從桌面 (中，按一下 [ **開始** ]，然後開始輸入 **Windows PowerShell**。 ) 
 
-2.  以滑鼠右鍵按一下 [ **Windows PowerShell** ]，然後按一下 [**以系統管理員身分執行**]。
+2.  以滑鼠右鍵按一下 **Windows PowerShell** ，然後按一下 [以 **系統管理員身分執行**]。
 
-3.  執行類似下列的命令，以您的虛擬機器名稱取代 MyVM，並以至少如下所示的值取代記憶體值。
+3.  執行類似下列的命令，將 MyVM 取代為您虛擬機器的名稱，並以至少如下所示的值來取代記憶體值。
 
 ```
 Get-VM MyVM | Set-VMMemory -DynamicMemoryEnabled $True -MaximumBytes 512MB -MinimumBytes 256MB -StartupBytes 512MB

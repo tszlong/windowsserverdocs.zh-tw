@@ -1,32 +1,32 @@
 ---
-title: 使用離散裝置指派部署 NVMe 存放裝置
+title: 使用離散裝置指派部署 NVMe 儲存裝置
 description: 瞭解如何使用 DDA 來部署存放裝置
 ms.topic: article
-author: chrishuybregts
-ms.author: chrihu
+ms.author: benarm
+author: BenjaminArmstrong
 ms.assetid: 1c36107e-78c9-4ec0-a313-6ed557ac0ffc
-ms.openlocfilehash: fdf6372d642a2e1413a2ed5029d9e9f25af4ce3f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 66da2888a5d7ce0777cb1976cdd484287362f691
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87945941"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746083"
 ---
-# <a name="deploy-nvme-storage-devices-using-discrete-device-assignment"></a>使用離散裝置指派部署 NVMe 存放裝置
+# <a name="deploy-nvme-storage-devices-using-discrete-device-assignment"></a>使用離散裝置指派部署 NVMe 儲存裝置
 
->適用于： Microsoft Hyper-v Server 2016、Windows Server 2016
+>適用于： Microsoft Hyper-V Server 2016、Windows Server 2016
 
-從 Windows Server 2016 開始，您可以使用離散裝置指派或 DDA，將整個 PCIe 裝置傳遞至 VM。  這可讓您對裝置的高效能存取，例如從 VM 內 NVMe 儲存體或圖形卡，同時能夠利用裝置原生驅動程式。  請流覽[使用離散裝置指派來部署裝置的計畫](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)，以取得更多裝置的工作、可能的安全性含意等等。使用具有 DDA 的裝置有三個步驟：
--   為 DDA 設定 VM
+從 Windows Server 2016 開始，您可以使用離散裝置指派（或 DDA）將整個 PCIe 裝置傳遞至 VM。  這可讓裝置的高效能存取，例如 NVMe 儲存體或來自 VM 內的圖形卡，同時能夠利用裝置原生驅動程式。  請參閱 [使用離散裝置指派部署裝置的規劃](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md) ，以取得哪些裝置適用的詳細資料、可能有哪些安全性含意等等。使用具有 DDA 的裝置有三個步驟：
+-   設定 VM 以進行 DDA
 -   從主機磁碟分割卸載裝置
 -   將裝置指派給來賓 VM
 
-所有命令都可以在 Windows PowerShell 主控台的主機上，以系統管理員身分執行。
+所有命令都可以在 Windows PowerShell 主控台的主機上以系統管理員身分執行。
 
-## <a name="configure-the-vm-for-dda"></a>為 DDA 設定 VM
-個別的裝置指派會對 Vm 施加一些限制，而且必須採取下列步驟。
+## <a name="configure-the-vm-for-dda"></a>設定 VM 以進行 DDA
+離散裝置指派會對 Vm 強加一些限制，而且必須採取下列步驟。
 
-1.  藉由執行，將 VM 的「自動停止動作」設定為 Turnon
+1.  藉由執行，將 VM 的「自動停止動作」設定為 TurnOff
 
 ```
 Set-VM -Name VMName -AutomaticStopAction TurnOff
@@ -34,11 +34,11 @@ Set-VM -Name VMName -AutomaticStopAction TurnOff
 
 ## <a name="dismount-the-device-from-the-host-partition"></a>從主機磁碟分割卸載裝置
 
-### <a name="locating-the-devices-location-path"></a>尋找裝置的位置路徑
-必須要有 PCI 位置路徑，才能從主機卸載並掛接裝置。  範例位置路徑看起來如下所示： `"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"` 。   如需位置路徑的詳細資訊，請參閱：[規劃使用離散裝置指派來部署裝置](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)。
+### <a name="locating-the-devices-location-path"></a>找出裝置的位置路徑
+必須要有 PCI 位置路徑，才能從主機卸載並掛接裝置。  範例位置路徑看起來如下所示： `"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"` 。   您可以在這裡找到位置路徑的詳細資訊： [規劃使用離散裝置指派來部署裝置](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)。
 
 ### <a name="disable-the-device"></a>停用裝置
-使用 Device Manager 或 PowerShell，確定裝置已「停用」。
+使用裝置管理員或 PowerShell，確認裝置為「已停用」。
 
 ### <a name="dismount-the-device"></a>卸載裝置
 ```
@@ -46,21 +46,21 @@ Dismount-VMHostAssignableDevice -LocationPath $locationPath
 ```
 
 ## <a name="assigning-the-device-to-the-guest-vm"></a>將裝置指派給來賓 VM
-最後一個步驟是告訴 Hyper-v，VM 應具有裝置的存取權。  除了上面找到的位置路徑，您還必須知道 vm 的名稱。
+最後一個步驟是告知 Hyper-v VM 應該具有裝置的存取權。  除了上述的位置路徑之外，您還需要知道 vm 的名稱。
 
 ```
 Add-VMAssignableDevice -LocationPath $locationPath -VMName VMName
 ```
 
 ## <a name="whats-next"></a>後續步驟
-在 VM 中成功掛接裝置之後，您現在可以啟動該 VM 並與裝置互動，如同您在裸機系統上執行一般。  您可以在來賓 VM 中開啟 [裝置管理員]，並看到硬體現在顯示，以驗證這一點。
+在裝置成功掛接到 VM 之後，您現在可以啟動該 VM，並與裝置互動，如同您在裸機系統上執行一般。  您可以在來賓 VM 中開啟 [裝置管理員]，並看到現在已顯示硬體，來確認這一點。
 
-## <a name="removing-a-device-and-returning-it-to-the-host"></a>移除裝置並將它傳回主機
-如果您想要讓裝置回到其原始狀態，您將需要停止 VM 併發出下列問題：
+## <a name="removing-a-device-and-returning-it-to-the-host"></a>移除裝置並將它返回主機
+如果您想要讓裝置回到其原始狀態，您將需要停止 VM 併發出下列各項：
 ```
 #Remove the device from the VM
 Remove-VMAssignableDevice -LocationPath $locationPath -VMName VMName
 #Mount the device back in the host
 Mount-VMHostAssignableDevice -LocationPath $locationPath
 ```
-接著，您可以在 [裝置管理員] 中重新啟用裝置，主機作業系統將能夠再次與裝置互動。
+然後您可以在 [裝置管理員] 中重新啟用裝置，主機作業系統就能夠再次與裝置互動。
