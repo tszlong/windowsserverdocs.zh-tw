@@ -1,19 +1,18 @@
 ---
-title: 設定您希望複本虛擬機器在容錯移轉時使用的容錯移轉 TCP/IP 設定
-description: 此最佳做法分析程式規則的線上版本文字。
-manager: dongill
-ms.author: kathydav
+title: 設定您希望複本虛擬機器在發生容錯移轉時使用的容錯移轉 TCP/IP 設定
+description: 此最佳做法分析程式規則之文字的線上版本。
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 713be5cf428617287e0be0bc65b3e2beb2d11400
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a84d7e6c4e5366642ac559e397af4a267bf19be5
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948446"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90745833"
 ---
-# <a name="configure-the-failover-tcpip-settings-that-you-want-the-replica-virtual-machine-to-use-in-the-event-of-a-failover"></a>設定您希望複本虛擬機器在容錯移轉時使用的容錯移轉 TCP/IP 設定
+# <a name="configure-the-failover-tcpip-settings-that-you-want-the-replica-virtual-machine-to-use-in-the-event-of-a-failover"></a>設定您希望複本虛擬機器在發生容錯移轉時使用的容錯移轉 TCP/IP 設定
 
 >適用於：Windows Server 2016
 
@@ -24,20 +23,20 @@ ms.locfileid: "87948446"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|組態|
+|**類別**|設定|
 
-在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的 UI 文字。
+在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 
 ## <a name="issue"></a>問題
-*使用靜態 IP 位址設定的複本虛擬機器，應該設定為在容錯移轉時，使用其主要虛擬機器對應項的不同 IP 位址。*
+*使用靜態 IP 位址設定的複本虛擬機器，應設定為在容錯移轉時，使用與其主要虛擬機器對應的不同 IP 位址。*
 
 ## <a name="impact"></a>影響
-*使用主要虛擬機器所支援之工作負載的用戶端，可能無法在容錯移轉之後連線到複本虛擬機器。此外，主要虛擬機器的原始 IP 位址在複本虛擬機器網路拓撲中將無效。這會影響下列虛擬機器：*
+*使用主要虛擬機器所支援之工作負載的用戶端，在容錯移轉之後可能無法連線到複本虛擬機器。此外，主要虛擬機器的原始 IP 位址在複本虛擬機器網路拓撲中將無效。這會影響下列虛擬機器：*
 
 \<list of virtual machines>
 
-## <a name="resolution"></a>解決方法
-*使用 [Hyper-v 管理員] 來設定複本虛擬機器在容錯移轉時應使用的 IP 位址。*
+## <a name="resolution"></a>解決方案
+*使用 Hyper-v 管理員來設定複本虛擬機器在容錯移轉時應使用的 IP 位址。*
 
 
 

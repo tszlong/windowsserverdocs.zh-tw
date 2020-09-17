@@ -3,15 +3,14 @@ title: 用於設定 Hyper-v Vm 的持續性記憶體裝置的 Cmdlet
 description: 如何設定 Hyper-v Vm 的持續性記憶體裝置
 ms.topic: article
 ms.assetid: b5715c02-a90f-4de9-a71e-0fc08039ba1d
-ms.author: lizross
-author: eross-msft
-manager: mtillman
-ms.openlocfilehash: 68f4d4121513973e97a28ad26cea7856a842b302
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.author: benarm
+author: BenjaminArmstrong
+ms.openlocfilehash: 882e63b2119a2c6483234ef7993b47f0aeaf7915
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89640191"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90744053"
 ---
 # <a name="cmdlets-for-configuring-persistent-memory-devices-for-hyper-v-vms"></a>用於設定 Hyper-v Vm 的持續性記憶體裝置的 Cmdlet
 
@@ -29,7 +28,7 @@ ms.locfileid: "89640191"
 
 使用 **新的-VM Cmdlet** 來建立第2代 VM，其中具有指定的記憶體大小和 VHDX 映射的路徑。 然後，使用 **VMPmemController** 將持續性記憶體控制器新增至 VM。
 
-**範例：**
+**範例︰**
 
 ```powershell
 New-VM -Name "ProductionVM1" -MemoryStartupBytes 1GB -VHDPath c:\vhd\BaseImage.vhdx
