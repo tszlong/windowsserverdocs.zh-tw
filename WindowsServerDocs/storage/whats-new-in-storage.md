@@ -6,22 +6,22 @@ manager: dongill
 ms.topic: article
 author: jasongerend
 ms.date: 05/29/2019
-ms.openlocfilehash: 3b1a3fa120e27439c1ec55f68521b813588d330b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b186f664411bde60351c949c0ca16e7b4d3bb40c
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87965945"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766991"
 ---
-# <a name="whats-new-in-storage-in-windows-server"></a>Windows Server 中存放裝置的新功能
+# <a name="whats-new-in-storage-in-windows-server"></a>Windows Server 儲存體的新功能
 
 >適用於：Windows Server 2019、Windows Server 2016、Windows Server (半年通道)
 
-本主題說明 Windows Server 2019、Windows Server 2016 和 Windows Server 半年通道版本中存放裝置的新功能和已變更的功能。
+本主題說明 Windows Server 2019、Windows Server 2016 和 Windows Server 半年通道版本中儲存空間的新功能和變更的功能。
 
-## <a name="whats-new-in-storage-in-windows-server-version-1903"></a>Windows Server （版本1903）中存放裝置的新功能
+## <a name="whats-new-in-storage-in-windows-server-version-1903"></a>Windows Server 中儲存體的新功能，版本1903
 
-這一版的 Windows Server 加入了下列變更和技術。
+這一版的 Windows Server 新增了下列變更和技術。
 
 ### <a name="storage-migration-service-now-migrates-local-accounts-clusters-and-linux-servers"></a>儲存空間移轉服務現在可遷移本機帳戶、叢集和 Linux 伺服器
 
@@ -49,27 +49,27 @@ ms.locfileid: "87965945"
 
 新版 Windows Admin Center 已推出，並在 Windows Server 中加入新功能。 如需最新的功能資訊，請參閱 [Windows Admin Center](../manage/windows-admin-center/overview.md)。
 
-## <a name="whats-new-in-storage-in-windows-server-2019-and-windows-server-version-1809"></a>Windows Server 2019 和 Windows Server （版本1809）中存放裝置的新功能
+## <a name="whats-new-in-storage-in-windows-server-2019-and-windows-server-version-1809"></a>Windows Server 2019 和 Windows Server 1809 版中儲存體的新功能
 
-這一版的 Windows Server 加入了下列變更和技術。
+這一版的 Windows Server 新增了下列變更和技術。
 
-### <a name="manage-storage-with-windows-admin-center"></a>使用 Windows 管理中心管理存放裝置
+### <a name="manage-storage-with-windows-admin-center"></a>使用 Windows Admin Center 管理儲存體
 
-[Windows 管理中心](../manage/windows-admin-center/overview.md)是新的本機部署、以瀏覽器為基礎的應用程式，可用於管理伺服器、叢集、具有儲存空間直接存取的超融合式基礎結構，以及 Windows 10 電腦。 除了 Windows 之外，它還沒有額外的成本，並且可供生產環境使用。
+[Windows Admin Center](../manage/windows-admin-center/overview.md) 是新的本機部署、以瀏覽器為基礎的應用程式，用於管理伺服器、叢集、超融合式基礎結構與儲存空間直接存取和 Windows 10 的電腦。 它在 Windows 以外沒有額外的成本，並且可供生產環境使用。
 
-就公平而言，Windows 管理中心是一種獨立的下載，它會在 Windows Server 2019 和其他版本的 Windows 上執行，但這是新的，我們不希望您錯過它 .。。
+Windows Admin Center 是一種獨立的下載，可在 Windows Server 2019 和其他版本的 Windows 上執行，但這是新的，我們不希望您錯過 .。。
 
 ### <a name="storage-migration-service"></a>存放裝置移轉服務
 
 儲存空間移轉服務是新的技術，可讓您更輕鬆地將伺服器移轉至較新版本的 Windows Server。 它提供圖形化工具，可用於清查伺服器上的資料、將資料與設定傳輸到較新的伺服器，然後選擇性地將舊伺服器的身分識別移動至新伺服器，因此應用程式和使用者不需要變更任何項目。 如需詳細資訊，請參閱[存放裝置移轉服務](storage-migration-service/overview.md)。
 
-### <a name="storage-spaces-direct-windows-server-2019-only"></a><a id="storage-spaces-direct"></a>僅 (Windows Server 2019 儲存空間直接存取) 
+### <a name="storage-spaces-direct-windows-server-2019-only"></a><a id="storage-spaces-direct"></a>儲存空間直接存取 (僅限 Windows Server 2019) 
 
-Windows server 2019 中的儲存空間直接存取有一些改良功能 (儲存空間直接存取並未包含在 Windows Server、半年通道) 中：
+Windows server 2019 中的儲存空間直接存取有一些改善 (儲存空間直接存取不包含在 Windows Server 中，半年通道) ：
 
 - **ReFS 磁碟區的重複資料刪除和壓縮**
 
-    使用 ReFS 檔案系統的重復資料刪除和壓縮，在相同的磁片區上儲存多達10倍的資料。  ([只需按一下](https://www.youtube.com/watch?v=PRibTacyKko&feature=youtu.be)就可以開啟 Windows 系統管理中心。使用選擇性壓縮來 ) 可變大小的區塊存放區，可將節省成本降到最低，而多執行緒的後置處理架構則會使效能影響最小。 支援高達 64 TB 的磁片區，並將刪除重複每個檔案的前 4 TB。
+    使用 ReFS 檔案系統的重復資料刪除和壓縮，最多可在相同的磁片區上儲存十倍以上的資料。  ([只需按一下](https://www.youtube.com/watch?v=PRibTacyKko&feature=youtu.be) 就能開啟 Windows Admin Center。 ) 具有選擇性壓縮的可變大社區塊存放區，可將節省率降至最大，而多執行緒的後置處理架構會讓效能的影響降至最小。 支援高達 64 TB 的磁片區，並將刪除每個檔案的前 4 TB。
 
 - **原生支援持續性記憶體**
 
@@ -81,7 +81,7 @@ Windows server 2019 中的儲存空間直接存取有一些改良功能 (儲存�
 
 - **使用 USB 快閃磁碟做為見證的兩個伺服器叢集**
 
-    使用插入路由器的低成本 USB 快閃磁片磁碟機，做為兩個伺服器叢集中的見證。 如果伺服器關閉後再備份，則 USB 磁片磁碟機叢集知道哪一台伺服器擁有最新的資料。 如需詳細資訊，請參閱[Microsoft blog 的儲存體](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)。
+    使用插入您路由器的低成本 USB 快閃磁片磁碟機，作為兩部伺服器叢集中的見證。 如果伺服器關閉後再備份，USB 磁片磁碟機叢集就會知道哪一台伺服器具有最新的資料。 如需詳細資訊，請參閱 [Microsoft blog 的儲存體](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)。
 
 - **Windows Admin Center**
 
@@ -89,59 +89,59 @@ Windows server 2019 中的儲存空間直接存取有一些改良功能 (儲存�
 
 - **效能歷程記錄**
 
-    使用[內建歷程](storage-spaces/performance-history.md)，輕鬆掌握資源利用率和效能。 跨越運算、記憶體、網路和儲存空間的超過 50 個基本計數器，會自動收集並在叢集上存放高達一年。 最棒的是，沒有辦法可以安裝、設定或啟動–它只是運作。 可在 Windows Admin Center 中視覺化呈現以及在 PowerShell 中查詢並處理。
+    使用[內建歷程](storage-spaces/performance-history.md)，輕鬆掌握資源利用率和效能。 跨越運算、記憶體、網路和儲存空間的超過 50 個基本計數器，會自動收集並在叢集上存放高達一年。 最棒的是，不需要安裝、設定或啟動，它就可以正常運作。 可在 Windows Admin Center 中視覺化呈現以及在 PowerShell 中查詢並處理。
 
 - **每個叢集可擴充到最多 4 PB**
 
-    達到 PB 等級規模 – 適合用於媒體、備份和保存使用案例。 在 Windows Server 2019 中，儲存空間直接存取支援每個儲存集區高達 4 PB = 4,000 TB 的原始容量。 相關容量指導方針也增加了：例如，您可以建立兩倍數量的磁碟區 (64 個，而不是 32 個)，每個磁碟區也比以前大兩倍 (64 TB，而不是 32 TB)。 將多個叢集結合成一個叢集[集](storage-spaces/cluster-sets.md)，以便在一個儲存體命名空間內進行更大規模的調整。 如需詳細資訊，請參閱[Microsoft blog 的儲存體](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)。
+    達到 PB 等級規模 – 適合用於媒體、備份和保存使用案例。 在 Windows Server 2019 中，儲存空間直接存取支援每個儲存集區高達 4 PB = 4,000 TB 的原始容量。 相關容量指導方針也增加了：例如，您可以建立兩倍數量的磁碟區 (64 個，而不是 32 個)，每個磁碟區也比以前大兩倍 (64 TB，而不是 32 TB)。 將多個叢集串連成叢集 [集合](storage-spaces/cluster-sets.md) ，以在一個儲存體命名空間內更大的調整規模。 如需詳細資訊，請參閱 [Microsoft blog 的儲存體](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)。
 
 - **鏡像加速的同位加快 2 倍**
 
-    使用鏡像加速的同位，您可以建立部分鏡像、部分同位的儲存空間直接存取磁碟區，例如混合 RAID-1 和 RAID-5/6 來充分發揮兩者的優點。  ([比您](https://www.youtube.com/watch?v=R72QHudqWpE)在 Windows 系統管理中心中的想法來得容易。 ) 在 windows Server 2019 中，鏡像加速同位的效能比 windows server 2016 更多，但感謝優化。
+    使用鏡像加速的同位，您可以建立部分鏡像、部分同位的儲存空間直接存取磁碟區，例如混合 RAID-1 和 RAID-5/6 來充分發揮兩者的優點。  (比您在 Windows Admin Center 中 [所想的還要簡單](https://www.youtube.com/watch?v=R72QHudqWpE) 。 ) 在 windows server 2019 中，鏡像加速同位的效能比 windows server 2016 更有兩倍，因為這是優化的。
 
 - **磁碟機延遲極端值偵測**
 
-    透過主動式監控和內建極端值偵測，輕鬆地找出具有異常延遲的磁片磁碟機，並 Microsoft Azure 長期且成功的方法。 不論是第99百分位延遲的平均延遲或更細微的東西，緩慢的磁片磁碟機會在 PowerShell 和 Windows 系統管理中心自動標示為「異常延遲」狀態。
+    利用主動式監視和內建的極端值偵測，輕鬆找出具有異常延遲的磁片磁碟機，並以 Microsoft Azure 的長期和成功方法來啟發。 不論是平均延遲，還是較微妙的第99百分位數延遲，在 PowerShell 中會自動標記速度較慢的磁片磁碟機，並以「異常延遲」狀態 Windows Admin Center。
 
 - **以手動方式分隔分隔磁碟區配置來增加容錯能力**
 
-    這可讓系統管理員以手動方式分隔儲存空間直接存取中的磁片區配置。 這麼做可以在某些情況下大幅增加容錯能力，但會強加一些額外的管理考慮和複雜度。 如需詳細資訊，請參閱[分隔磁片區配置](storage-spaces/delimit-volume-allocation.md)。
+    這可讓系統管理員在儲存空間直接存取中手動分隔磁片區的配置。 這樣做可能會在特定情況下大幅提高容錯，但會強加一些新增的管理考慮和複雜度。 如需詳細資訊，請參閱 [分隔磁片區的配置](storage-spaces/delimit-volume-allocation.md)。
 
 ### <a name="storage-replica"></a><a name="storage-replica2019"></a>儲存體複本
 
-在此版本中，[儲存體複本](storage-replica/storage-replica-overview.md)有一些改良功能：
+在此版本中， [儲存體複本](storage-replica/storage-replica-overview.md) 有一些改良功能：
 
 #### <a name="storage-replica-in-windows-server-standard-edition"></a>Windows Server Standard Edition 中的儲存體複本
 
-除了 Datacenter Edition 以外，您現在可以搭配 Windows Server Standard Edition 使用儲存體複本。 在 Windows Server Standard Edition 上執行的儲存體複本具有下列限制：
+除了 Datacenter Edition 之外，您現在還可以使用 Windows Server Standard Edition 的儲存體複本。 在 Windows Server Standard Edition 上執行的儲存體複本有下列限制：
 
-- 儲存體複本會複寫單一磁片區，而不是不限數目的磁片區。
-- 磁片區的大小最高可達 2 TB，而不是無限制大小。
+- 儲存體複本會複寫單一磁片區，而不是不限數量的磁片區。
+- 磁片區的大小最多可達 2 TB，而不是無限制大小。
 
 #### <a name="storage-replica-log-performance-improvements"></a>儲存體複本記錄檔效能改進
 
-我們也改進了儲存體複本記錄檔追蹤複寫的方式、改善複寫輸送量和延遲，特別是在所有的快閃儲存體以及彼此之間複寫儲存空間直接存取叢集。
+此外，我們也改善了儲存體複本記錄檔追蹤複寫的方式、改善複寫輸送量和延遲，特別是在全部快閃儲存體上，以及在彼此之間複寫儲存空間直接存取叢集。
 
-若要獲得更高的效能，複寫群組的所有成員都必須執行 Windows Server 2019。
+為了提升效能，複寫群組的所有成員都必須執行 Windows Server 2019。
 
 #### <a name="test-failover"></a>測試容錯移轉
 
-您現在可以暫時將複寫儲存體的快照集掛接在目的地伺服器上，以供測試或備份之用。 如需詳細資訊，請參閱[儲存體複本的常見問題集](https://aka.ms/srfaq)。
+您現在可以暫時將複寫儲存體的快照集掛接到目的地伺服器上，以供測試或備份之用。 如需詳細資訊，請參閱[儲存體複本的常見問題集](./storage-replica/storage-replica-frequently-asked-questions.md)。
 
 #### <a name="windows-admin-center-support"></a>Windows Admin Center 支援
 
-透過 [伺服器管理員] 工具，Windows 管理中心現已提供複寫的圖形化管理支援。 這包括伺服器對伺服器複寫、叢集對叢集，以及延展叢集複寫。
+在 Windows Admin Center 中，現在可透過伺服器管理員工具來支援複寫的圖形管理。 這包括伺服器對伺服器複寫、叢集到叢集，以及 stretch cluster 複寫。
 
-#### <a name="miscellaneous-improvements"></a>其他改良功能
+#### <a name="miscellaneous-improvements"></a>其他改進
 
-儲存體複本也包含下列增強功能：
+儲存體複本也包含下列改良功能：
 
 -   改變異步延展叢集行為，以便立即進行自動容錯移轉
 -   多個 bug 修正
 
 ### <a name="smb"></a>SMB
 
-- **Smb1 和來賓驗證移除**： Windows Server 預設不會再安裝 smb1 用戶端和伺服器。 此外，在 SMB2 和更新版本中以客體身分驗證的功能也預設為關閉。 如需詳細資訊，請檢閱[在 Windows 10 版本 1709 及 Windows Server 版本 1709 中，預設不安裝 SMBv1](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server)。
+- **移除 smb1 和來賓驗證**： Windows Server 預設不會再安裝 smb1 用戶端和伺服器。 此外，在 SMB2 和更新版本中以客體身分驗證的功能也預設為關閉。 如需詳細資訊，請檢閱[在 Windows 10 版本 1709 及 Windows Server 版本 1709 中，預設不安裝 SMBv1](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server)。
 
 - **SMB2/SMB3 安全性與相容性**：已新增安全性及應用程式相容性的額外選項，包括可在 SMB2+ 中停用舊版應用程式 Oplocks 的功能，以及向用戶端要求對每一連線的簽署或加密。 如需詳細資訊，請檢閱 SMBShare PowerShell 模組說明。
 
@@ -152,17 +152,17 @@ Windows server 2019 中的儲存空間直接存取有一些改良功能 (儲存�
 
 ### <a name="file-server-resource-manager"></a>File Server Resource Manager
 
-Windows Server 2019 包括防止檔案伺服器 Resource Manager 服務在啟動服務時，在所有磁片區上建立變更日誌 (也稱為 USN 日誌) 的功能。 這可以節省每個磁碟區的空間，但會停用即時檔案分類。 如需詳細資訊，請參閱[檔案伺服器資源管理員概觀](fsrm/fsrm-overview.md)。
+Windows Server 2019 包括在服務啟動時，防止檔案伺服器 Resource Manager 服務在所有磁片區上建立變更日誌 (也稱為 USN 日誌) 的功能。 這可以節省每個磁碟區的空間，但會停用即時檔案分類。 如需詳細資訊，請參閱[檔案伺服器資源管理員概觀](fsrm/fsrm-overview.md)。
 
-## <a name="whats-new-in-storage-in-windows-server-version-1803"></a>Windows Server （版本1803）中存放裝置的新功能
+## <a name="whats-new-in-storage-in-windows-server-version-1803"></a>Windows Server 中儲存體的新功能，版本1803
 
 ### <a name="file-server-resource-manager"></a>File Server Resource Manager
 
-Windows Server （版本1803）包括防止檔案伺服器 Resource Manager 服務在啟動服務時，在所有磁片區上建立變更日誌 (也稱為 USN 日誌) 的功能。 這可以節省每個磁碟區的空間，但會停用即時檔案分類。 如需詳細資訊，請參閱[檔案伺服器資源管理員概觀](fsrm/fsrm-overview.md)。
+Windows Server 1803 版包含在服務啟動時，防止檔案伺服器 Resource Manager 服務在所有磁片區上建立變更日誌 (也稱為 USN 日誌) 的功能。 這可以節省每個磁碟區的空間，但會停用即時檔案分類。 如需詳細資訊，請參閱[檔案伺服器資源管理員概觀](fsrm/fsrm-overview.md)。
 
-## <a name="whats-new-in-storage-in-windows-server-version-1709"></a>Windows Server （版本1709）中存放裝置的新功能
+## <a name="whats-new-in-storage-in-windows-server-version-1709"></a>Windows Server 中儲存體的新功能，版本1709
 
-Windows Server （版本1709）是半年通道中的第一個 Windows Server 版本。 「半年通道」是一項軟體保證權益，在生產環境中完全支援18個月，每六個月有一個新版本。
+Windows Server 1709 版是半年通道中的第一個 Windows Server 版本。 半年通道是一項軟體保證的權益，並在生產環境中受到完整支援18個月，每六個月會有一個新的版本。
 
 如需詳細資訊，請參閱 [Windows Server 半年通道概觀](../get-started-19/servicing-channels-19.md)。
 
@@ -170,10 +170,10 @@ Windows Server （版本1709）是半年通道中的第一個 Windows Server 版
 
 儲存體複本所新增的嚴重損壞修復保護現在已擴充為包含：
 
-- **測試容錯移轉**：掛接目的地存放裝置的選項現在可以透過測試容錯移轉功能來使用。 您可以在目的地節點上暫時掛接已複寫存放裝置的快照集以作測試或備份之用。 如需詳細資訊，請參閱[儲存體複本的常見問題集](https://aka.ms/srfaq)。
-- **Windows 系統管理中心支援**： Windows 系統管理中心已透過伺服器管理員工具提供複寫的圖形化管理支援。 這包括伺服器對伺服器複寫、叢集對叢集，以及延展叢集複寫。
+- **測試容錯移轉**：掛接目的地存放裝置的選項現在可以透過測試容錯移轉功能來使用。 您可以在目的地節點上暫時掛接已複寫存放裝置的快照集以作測試或備份之用。 如需詳細資訊，請參閱[儲存體複本的常見問題集](./storage-replica/storage-replica-frequently-asked-questions.md)。
+- **Windows Admin Center 支援**：透過伺服器管理員工具，Windows Admin Center 現在可支援複寫的圖形管理。 這包括伺服器對伺服器複寫、叢集到叢集，以及 stretch cluster 複寫。
 
-儲存體複本也包含下列增強功能：
+儲存體複本也包含下列改良功能：
 
 -   改變異步延展叢集行為，以便立即進行自動容錯移轉
 -   多個 bug 修正
@@ -197,7 +197,7 @@ Windows Server （版本1709）是半年通道中的第一個 Windows Server 版
 **這個變更增加了什麼價值？**
 「儲存空間直接存取」能讓服務提供者和企業使用具本機存放區的業界標準伺服器，建立高可用且可調整的軟體定義儲存空間。 使用具本機存放區的伺服器可降低複雜性、提升延展性，並能夠使用之前不支援的存放裝置 (例如 SATA 固態硬碟) 以降低快閃儲存體成本，或是使用 NVMe 固態硬碟以取得較佳的效能。
 
-「儲存空間直接存取」免除了共用 SAS 結構的需求，以針對部署及設定做出簡化。 它改為以網路做為存放結構，利用 SMB3 和 SMB 直接傳輸 (RDMA) 來取得高速、低延遲，並能有效運用 CPU 的儲存空間。 若要相應放大，只需新增更多伺服器來增加儲存容量和 i/o 效能以取得詳細資訊，請參閱[Windows Server 2016 中的儲存空間直接存取](storage-spaces/storage-spaces-direct-overview.md)。
+「儲存空間直接存取」免除了共用 SAS 結構的需求，以針對部署及設定做出簡化。 它改為以網路做為存放結構，利用 SMB3 和 SMB 直接傳輸 (RDMA) 來取得高速、低延遲，並能有效運用 CPU 的儲存空間。 若要相應放大，只要新增更多伺服器來提高儲存容量和 i/o 效能，如需詳細資訊，請參閱 [Windows Server 2016 中的儲存空間直接存取](storage-spaces/storage-spaces-direct-overview.md)。
 
 **有哪些不同？**
 這是 Windows Server 2016 中的新功能。
@@ -243,13 +243,13 @@ Windows Server （版本1709）是半年通道中的第一個 Windows Server 版
 **有哪些不同？**
 這是 Windows Server 2016 中的新功能。 在舊版 Windows Server 中，無法管理最小保留值、透過單一命令來監視叢集中所有虛擬磁碟的流程，以及進行集中式原則管理。
 
-如需詳細資訊，請參閱[存放裝置服務品質](storage-qos/storage-qos-overview.md)
+如需詳細資訊，請參閱 [儲存體服務品質](storage-qos/storage-qos-overview.md)
 
 ### <a name="data-deduplication"></a><a name="dedup"></a>重複資料刪除
 | 功能 | 新功能或更新功能 | 描述 |
 |---------------|----------------|-------------|
-| [支援大型磁片區](data-deduplication/whats-new.md#large-volume-support) | 已更新 | 在 Windows Server 2016 之前，使用者必須特別針對預期的變動設定磁碟區大小，而大於 10 TB 的磁碟區並不是重複資料刪除的良好候選項目。 在 Windows Server 2016 中，重復資料刪除支援**最多 64 TB**的磁片區大小。 |
-| [大型檔案的支援](data-deduplication/whats-new.md#large-file-support) | 已更新 | 在 Windows Server 2016 之前，大小接近 1 TB 的檔案並不是重複資料刪除的良好候選項目。 在 Windows Server 2016 中，完全支援**高達 1 TB**的檔案。 |
+| [支援大型磁片區](data-deduplication/whats-new.md#large-volume-support) | 已更新 | 在 Windows Server 2016 之前，使用者必須特別針對預期的變動設定磁碟區大小，而大於 10 TB 的磁碟區並不是重複資料刪除的良好候選項目。 在 Windows Server 2016 中，重復資料刪除支援 **最多 64 TB**的磁片區大小。 |
+| [支援大型檔案](data-deduplication/whats-new.md#large-file-support) | 已更新 | 在 Windows Server 2016 之前，大小接近 1 TB 的檔案並不是重複資料刪除的良好候選項目。 在 Windows Server 2016 中，完全支援 **最多 1 TB** 的檔案。 |
 | [支援 Nano 伺服器](data-deduplication/whats-new.md#nano-server-support) | 新增 | Windows Server 2016 的新 Nano 伺服器部署選項可以使用並且完全支援重複資料刪除。 |
 | [簡化的備份支援](data-deduplication/whats-new.md#simple-backup-support) | 新增 | 在 Windows Server 2012 R2 中，虛擬備份應用程式 (例如 Microsoft 的 [Data Protection Manager](/previous-versions/system-center/system-center-2012-R2/hh758173(v=sc.12))) 必須透過一系列的手動設定步驟來取得支援。 在 Windows Server 2016 中，已加入新的預設使用類型 "Backup"，以無接縫地針對虛擬備份應用程式部署重複資料刪除。 |
 | [支援叢集 OS 輪流升級](data-deduplication/whats-new.md#cluster-upgrade-support) | 新增 | 重複資料刪除完整支援 Windows Server 2016 新的[叢集 OS 輪流升級](..//failover-clustering/cluster-operating-system-rolling-upgrade.md)功能。 |
@@ -269,10 +269,10 @@ Windows Server （版本1709）是半年通道中的第一個 Windows Server 版
 如需這些安全性改進 (也稱為 UNC 強化) 的詳細資訊，請參閱 Microsoft 知識庫文章 [3000483](https://support.microsoft.com/kb/3000483) 和 [MS15-011 與 MS15-014：強化群組原則](https://msrc-blog.microsoft.com/2015/02/10/ms15-011-ms15-014-hardening-group-policy) (英文)。
 
 ### <a name="work-folders"></a>工作資料夾
-已改善當工作資料夾伺服器執行 Windows Server 2016 和工作資料夾用戶端為 Windows 10 時的變更通知。
+已改進當工作資料夾伺服器正在執行 Windows Server 2016 且工作資料夾用戶端 Windows 10 時的變更通知。
 
 **這個變更增加了什麼價值？**<br>
-在 Windows Server 2012 R2 中，將檔案變更同步處理到工作資料夾伺服器時，用戶端不會收到變更的通知，而且最多等待 10 分鐘就會收到更新。  使用 Windows Server 2016 時，工作資料夾伺服器會立即通知 Windows 10 用戶端，而且檔案變更會立即同步處理。
+在 Windows Server 2012 R2 中，將檔案變更同步處理到工作資料夾伺服器時，用戶端不會收到變更的通知，而且最多等待 10 分鐘就會收到更新。  使用 Windows Server 2016 時，工作資料夾伺服器會立即通知 Windows 10 用戶端，並立即同步處理檔案變更。
 
 **有哪些不同？**<br>
 這是 Windows Server 2016 中的新功能。 這需要 Windows Server 2016 工作資料夾伺服器，而且用戶端必須是 Windows 10。

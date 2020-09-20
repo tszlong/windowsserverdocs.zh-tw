@@ -6,12 +6,12 @@ author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 09/11/2018
-ms.openlocfilehash: 3867df04c83fe536473c227e43700a4758c1294e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3be878629d19542629cc3cbb849ac46fe14de0bd
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87935855"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766831"
 ---
 # <a name="iscsi-target-server-scalability-limits"></a>iSCSI 目標伺服器的擴充性限制
 
@@ -30,7 +30,7 @@ ms.locfileid: "87935855"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>Item</p></th>
+<th><p>項目</p></th>
 <th><p>支援限制</p></th>
 <th><p>執行？</p></th>
 <th><p>註解</p></th>
@@ -71,7 +71,7 @@ ms.locfileid: "87935855"
 <td><p>每個儲存體設備的本機裝載虛擬磁片或快照集</p></td>
 <td><p>32</p></td>
 <td><p>是</p></td>
-<td><p>本機掛接的虛擬磁片 don&#39;t 提供任何 iSCSI 特定功能，並已淘汰-如需詳細資訊，請參閱 <a href="https://technet.microsoft.com/library/dn303411.aspx">Windows Server 2012 R2 中已移除或過時的功能</a>。</p></td>
+<td><p>本機掛接的虛擬磁片 don&#39;t 提供任何 iSCSI 特定功能，並已淘汰-如需詳細資訊，請參閱 <a href="/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303411(v=ws.11)">Windows Server 2012 R2 中已移除或過時的功能</a>。</p></td>
 </tr>
 </tbody>
 </table>
@@ -87,7 +87,7 @@ ms.locfileid: "87935855"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>Item</p></th>
+<th><p>項目</p></th>
 <th><p>支援限制</p></th>
 <th><p>執行？</p></th>
 <th><p>註解</p></th>
@@ -157,7 +157,7 @@ ms.locfileid: "87935855"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>Item</p></th>
+<th><p>項目</p></th>
 <th><p>支援限制</p></th>
 <th><p>執行？</p></th>
 <th><p>註解</p></th>
@@ -238,7 +238,7 @@ ms.locfileid: "87935855"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>Item</p></th>
+<th><p>項目</p></th>
 <th><p>支援限制</p></th>
 <th><p>執行？</p></th>
 <th><p>註解</p></th>
@@ -351,7 +351,7 @@ ms.locfileid: "87935855"
 <td><p>邏輯單元壓縮</p></td>
 <td><p>是 (僅限 Windows Server 2012 R2 和更新版本) </p></td>
 <td><p>N/A</p></td>
-<td><p>使用重 <a href="https://docs.microsoft.com/powershell/module/iscsitarget/resize-iscsivirtualdisk">設大小 convert-iscsivirtualdisk 功能</a> 來壓縮 LUN。</p></td>
+<td><p>使用重 <a href="/powershell/module/iscsitarget/resize-iscsivirtualdisk">設大小 convert-iscsivirtualdisk 功能</a> 來壓縮 LUN。</p></td>
 </tr>
 <tr class="even">
 <td><p>邏輯單元複製</p></td>
@@ -372,7 +372,7 @@ ms.locfileid: "87935855"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>Item</p></th>
+<th><p>項目</p></th>
 <th><p>支援限制</p></th>
 <th><p>註解</p></th>
 </tr>
@@ -421,7 +421,7 @@ ms.locfileid: "87935855"
 <tr class="odd">
 <td><p>本機掛接</p></td>
 <td><p>支援</p></td>
-<td><p>本機掛接的 iSCSI 虛擬磁片已淘汰。如需詳細資訊，請參閱 <a href="https://technet.microsoft.com/library/dn303411.aspx">Windows Server 2012 R2 中已移除或已淘汰的功能</a>。 無法在本機裝載動態磁碟快照集。</p></td>
+<td><p>本機掛接的 iSCSI 虛擬磁片已淘汰。如需詳細資訊，請參閱 <a href="/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303411(v=ws.11)">Windows Server 2012 R2 中已移除或已淘汰的功能</a>。 無法在本機裝載動態磁碟快照集。</p></td>
 </tr>
 </tbody>
 </table>

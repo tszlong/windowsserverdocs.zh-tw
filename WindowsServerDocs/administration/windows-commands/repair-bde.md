@@ -7,19 +7,19 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: e7ebf0f2923e565e16e546a7804ee42771eec83d
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 4caa619c248a30c48cdfc291f2fde25ba51d85f7
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89640634"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766281"
 ---
 # <a name="repair-bde"></a>repair-bde
 
 如果磁片磁碟機已使用 BitLocker 加密，且具有有效的修復密碼或修復金鑰可進行解密，則會嘗試重建嚴重損毀磁片磁碟機的重要部分，並搶救可復原的資料。
 
 > [!IMPORTANT]
-> 如果磁片磁碟機上的 BitLocker 中繼資料資料已損毀，除了修復密碼或修復金鑰之外，您還必須能夠提供備份金鑰套件。 如果您使用 Active Directory Domain Services 的預設金鑰備份設定，則會在此備份您的金鑰套件。 您可以使用 [bitlocker：使用 Bitlocker 修復密碼檢視器](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-use-bitlocker-recovery-password-viewer) 從 AD DS 取得金鑰套件。
+> 如果磁片磁碟機上的 BitLocker 中繼資料資料已損毀，除了修復密碼或修復金鑰之外，您還必須能夠提供備份金鑰套件。 如果您使用 Active Directory Domain Services 的預設金鑰備份設定，則會在此備份您的金鑰套件。 您可以使用 [bitlocker：使用 Bitlocker 修復密碼檢視器](/windows/security/information-protection/bitlocker/bitlocker-use-bitlocker-recovery-password-viewer) 從 AD DS 取得金鑰套件。
 >
 > 使用金鑰封裝和修復密碼或修復金鑰，您可以解密受 BitLocker 保護之磁片磁碟機的部分，即使磁片已損毀。 每個金鑰套件只適用于具有對應磁片磁碟機識別碼的磁片磁碟機。
 

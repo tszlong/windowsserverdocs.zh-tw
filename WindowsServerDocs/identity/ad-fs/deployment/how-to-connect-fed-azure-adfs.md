@@ -7,12 +7,12 @@ ms.assetid: 692a188c-badc-44aa-ba86-71c0e8074510
 ms.topic: get-started-article
 ms.date: 10/28/2018
 ms.author: billmath
-ms.openlocfilehash: 3a53e8bb9e06e51627d14f6e5e3b918f58102478
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: a077a76814cc5ed99d4a1c0eb6c23584b22363e1
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90078675"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766751"
 ---
 # <a name="deploying-active-directory-federation-services-in-azure"></a>在 Azure 中部署 Active Directory 同盟服務
 AD FS 提供簡化、安全的身分識別同盟和 Web 單一登入 (SSO) 功能。 與 Azure AD 或 O365 同盟可讓使用者使用內部部署認證進行驗證，並存取雲端中的所有資源。 如此一來，就一定要有高可用性的 AD FS 基礎結構，以確保能夠存取內部部署和雲端中的資源。 在 Azure 中部署 AD FS 有助於達成執行最低限度的工作所需要的高可用性。
@@ -89,7 +89,7 @@ AD FS 提供簡化、安全的身分識別同盟和 Web 單一登入 (SSO) 功�
 * ExpressRoute
 
 建議您使用 ExpressRoute。 ExpressRoute 可讓您在 Azure 資料中心與內部部署或共置環境中的基礎結構之間建立私人連線。 ExpressRoute 連線不會經過公用網際網路。 相較於透過網際網路的一般連線，其可提供更為可靠、速度更快、延遲更低且安全性更高的網際網路連線。
-雖然建議的是使用 ExpressRoute，您也可以選擇任何最適合貴組織的連線方法。 若要深入了解 ExpressRoute 以及使用 ExpressRoute 的各種連線選項，請閱讀 [ExpressRoute 技術概觀](https://aka.ms/Azure/ExpressRoute)。
+雖然建議的是使用 ExpressRoute，您也可以選擇任何最適合貴組織的連線方法。 若要深入了解 ExpressRoute 以及使用 ExpressRoute 的各種連線選項，請閱讀 [ExpressRoute 技術概觀](/azure/expressroute/expressroute-introduction)。
 
 ### <a name="2-create-storage-accounts"></a>2. 建立儲存體帳戶
 為了維持高可用性，並避免依賴單一儲存體帳戶，您可以建立兩個儲存體帳戶。 將每個可用性設定組中的機器分成兩個群組，然後為每個群組指派不同的儲存體帳戶。
@@ -122,7 +122,7 @@ AD FS 提供簡化、安全的身分識別同盟和 Web 單一登入 (SSO) 功�
 | contosowap1 |WAP |DMZ |contosowapset |contososac1 |Static |
 | contosowap2 |WAP |DMZ |contosowapset |contososac2 |Static |
 
-您可能已注意到我們還未指定 NSG。 這是因為 Azure 可讓您在子網路層級使用 NSG。 然後，您可以使用與子網路或 NIC 物件相關聯的個別 NSG 來控制機器的網路流量。 如需詳細資訊，請閱讀 [什麼是網路安全性群組 (NSG)](https://aka.ms/Azure/NSG)。
+您可能已注意到我們還未指定 NSG。 這是因為 Azure 可讓您在子網路層級使用 NSG。 然後，您可以使用與子網路或 NIC 物件相關聯的個別 NSG 來控制機器的網路流量。 如需詳細資訊，請閱讀 [什麼是網路安全性群組 (NSG)](/azure/virtual-network/tutorial-filter-network-traffic)。
 如果您要管理 DNS，建議使用靜態 IP 位址。 您可以使用 Azure DNS，並改為在網域的 DNS 記錄中依機器的 Azure FQDN 查閱新的機器。
 部署完成之後，虛擬機器的窗格看起來應該會像下圖︰
 
@@ -345,12 +345,12 @@ Web 應用程式 Proxy 伺服器不必加入網域。 請選取「遠端存取�
 
 ## <a name="additional-resources"></a>其他資源
 * [可用性設定組](https://aka.ms/Azure/Availability)
-* [Azure Load Balancer](https://aka.ms/Azure/ILB)
-* [內部負載平衡器](https://aka.ms/Azure/ILB/Internal)
-* [網際網路對向負載平衡器](https://aka.ms/Azure/ILB/Internet)
+* [Azure Load Balancer](/azure/load-balancer/load-balancer-overview)
+* [內部負載平衡器](/azure/load-balancer/quickstart-load-balancer-standard-internal-powershell)
+* [網際網路對向負載平衡器](/azure/load-balancer/quickstart-load-balancer-standard-public-powershell)
 * [儲存體帳戶](https://aka.ms/Azure/Storage)
-* [Azure 虛擬網路](https://aka.ms/Azure/VNet)
-* [AD FS 和 Web 應用程式 Proxy 連結](https://aka.ms/ADFSLinks)
+* [Azure 虛擬網路](/azure/virtual-network/virtual-networks-overview)
+* [AD FS 和 Web 應用程式 Proxy 連結](/archive/blogs/tangent_thoughts/qrg-quick-reference-guide-active-directory-federation-services)
 
 ## <a name="next-steps"></a>後續步驟
 * [整合內部部署身分識別與 Azure Active Directory](/azure/active-directory/hybrid/whatis-hybrid-identity)

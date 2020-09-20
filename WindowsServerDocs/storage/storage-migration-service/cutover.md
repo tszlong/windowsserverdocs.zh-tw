@@ -6,18 +6,18 @@ ms.author: t-chrche
 manager: nedpyle
 ms.date: 08/31/2020
 ms.topic: article
-ms.openlocfilehash: 985fd14b7791d28246b8e9186ca83216df734875
-ms.sourcegitcommit: a640c2d7f2d21d7cd10a9be4496e1574e5e955f0
+ms.openlocfilehash: 1e886c505435976b6495e0460705821086781a62
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89448914"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766901"
 ---
 # <a name="how-cutover-works-in-storage-migration-service"></a>轉換在儲存體遷移服務中的運作方式
 
 切換是將來源電腦的網路識別移動到目的地電腦的遷移階段。 轉換之後，來源電腦仍會包含與之前相同的檔案，但不會提供給使用者和應用程式使用。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 ![轉換設定螢幕擷取畫面 ](media/cutover/cutover_configuration.png)
  __圖1：儲存體遷移服務__轉換設定
@@ -63,10 +63,10 @@ ms.locfileid: "89448914"
 
 您可以透過如下圖所示的每個階段說明來追蹤轉換進度。 下表顯示每個可能的階段，以及其進度、描述和任何闡明的附注。
 
-|  進度 | 說明                                                                                               |  注意 |
+|  進度 | 描述                                                                                               |  注意 |
 |:-----|:--------------------------------------------------------------------------------------------------------------------|:---|
 |  0% | 轉換閒置中。 |   |
-| 2%  | 正在連接到來源電腦 .。。 |   請確定 [來源和目的地電腦的需求](https://docs.microsoft.com/windows-server/storage/storage-migration-service/overview#security-requirements-the-storage-migration-service-proxy-service-and-firewall-ports) 都已完成。|
+| 2%  | 正在連接到來源電腦 .。。 |   請確定 [來源和目的地電腦的需求](./overview.md#security-requirements-the-storage-migration-service-proxy-service-and-firewall-ports) 都已完成。|
 | 5%  | 正在連接到目的地電腦 .。。 |   |
 | 6%  | 正在 Active Directory 中設定電腦物件的安全性許可權 .。。 |   在目的地電腦上複寫來源電腦的 Active Directory 物件安全性許可權。|
 | 8%  | 確定已成功在來源電腦上刪除我們建立的暫存帳戶 .。。 |   確定我們可以建立具有相同名稱的暫時帳戶。|
@@ -95,7 +95,7 @@ ms.locfileid: "89448914"
 | 52% | 正在等候來源電腦在第一次重新開機後回應 .。。 |   |
 | 55% | 等候來源電腦在第2次重新開機之後回應 .。。 |   |
 | 56% | 正在等候來源電腦在第三個重新開機後回應 .。。 |   |
-| 57% | 正在移除來源上的替代電腦名稱稱 .。。 |   確定來源無法與其他使用者和應用程式連線。 如需詳細資訊，請參閱 [Netdom computername](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc835082(v=ws.11))。 |
+| 57% | 正在移除來源上的替代電腦名稱稱 .。。 |   確定來源無法與其他使用者和應用程式連線。 如需詳細資訊，請參閱 [Netdom computername](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc835082(v=ws.11))。 |
 | 58% | 正在移除我們在來源電腦上建立的暫存本機帳戶 .。。 |   |
 | 61% | 正在重設來源電腦上的本機帳戶權杖篩選原則 .。。 |   啟用原則。|
 | 63% | 正在從網域移除目的地電腦 .。。 |   |
@@ -119,20 +119,20 @@ ms.locfileid: "89448914"
 
 ### <a name="__is-domain-controller-migration-supported__"></a>__是否支援網域控制站遷移？__
 
-目前不是，但請參閱 [常見問題頁面](https://docs.microsoft.com/windows-server/storage/storage-migration-service/faq#is-domain-controller-migration-supported) 以取得解決方法。
+目前不是，但請參閱 [常見問題頁面](./faq.md#is-domain-controller-migration-supported) 以取得解決方法。
 
 
 ## <a name="known-issues"></a>已知問題
 >確定您已完成 [儲存體遷移服務](overview.md) 的需求，並已在執行儲存體遷移服務的電腦上安裝最新的 Windows 更新。
 
-如需有關下列問題的詳細資訊，請參閱 [ [已知問題] 頁面](https://docs.microsoft.com/windows-server/storage/storage-migration-service/known-issues) 。
-* [__儲存體遷移服務轉換驗證失敗，並出現「目的地電腦上的權杖篩選原則拒絕存取」錯誤__](https://docs.microsoft.com/windows-server/storage/storage-migration-service/known-issues#storage-migration-service-cutover-validation-fails-with-error-access-is-denied-for-the-token-filter-policy-on-destination-computer)
+如需有關下列問題的詳細資訊，請參閱 [ [已知問題] 頁面](./known-issues.md) 。
+* [__儲存體遷移服務轉換驗證失敗，並出現「目的地電腦上的權杖篩選原則拒絕存取」錯誤__](./known-issues.md#storage-migration-service-cutover-validation-fails-with-error-access-is-denied-for-the-token-filter-policy-on-destination-computer)
 
-* [__「針對網路服務資源 CLUSCTL_RESOURCE_NETNAME_REPAIR_VCO 失敗」錯誤，且 Windows Server 2008 R2 叢集轉換失敗__](https://docs.microsoft.com/windows-server/storage/storage-migration-service/known-issues#error-clusctl_resource_netname_repair_vco-failed-against-netname-resource-and-windows-server-2008-r2-cluster-cutover-fails)
+* [__「針對網路服務資源 CLUSCTL_RESOURCE_NETNAME_REPAIR_VCO 失敗」錯誤，且 Windows Server 2008 R2 叢集轉換失敗__](./known-issues.md#error-clusctl_resource_netname_repair_vco-failed-against-netname-resource-and-windows-server-2008-r2-cluster-cutover-fails)
 
-* [__切換停止回應來源電腦上的「38% 對應網路介面 ...」使用靜態 Ip 時__](https://docs.microsoft.com/windows-server/storage/storage-migration-service/known-issues#cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer-when-using-static-ips)
+* [__切換停止回應來源電腦上的「38% 對應網路介面 ...」使用靜態 Ip 時__](./known-issues.md#cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer-when-using-static-ips)
 
-* [__切換停止回應來源電腦上的「38% 對應網路介面 ...」__](https://docs.microsoft.com/windows-server/storage/storage-migration-service/known-issues#cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer)
+* [__切換停止回應來源電腦上的「38% 對應網路介面 ...」__](./known-issues.md#cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer)
 
 ## <a name="additional-references"></a>其他參考資料
 

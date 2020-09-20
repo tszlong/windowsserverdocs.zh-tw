@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 2cc0a18b3b6de66f5992eb4584c95696e297e858
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: cdee2aaecf8710b9801b689b141b16d0dbacc691
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89641088"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766791"
 ---
 # <a name="kerberos-constrained-delegation-overview"></a>Kerberos Constrained Delegation Overview
 
@@ -30,7 +30,7 @@ Windows Server 2003 推出的 Kerberos 限制委派，可提供一種較安全�
 
 如需 Windows Server 2003 推出之限制委派的詳細資訊，請參閱 [Kerberos 通訊協定轉換與限制委派](/previous-versions/windows/it-pro/windows-server-2003/cc739587(v=ws.10))。
 
-Kerberos 通訊協定的 Windows Server 2012 R2 和 Windows Server 2012 執行包括特別針對限制委派的延伸模組。  Service for User to Proxy (S4U2Proxy) 讓服務能夠針對使用者使用它的 Kerberos 服務票證，取得從金鑰發佈中心 (KDC) 到後端服務的服務票證。 這些延伸模組可讓您在後端服務帳戶上設定限制委派，此帳戶可以位於另一個網域中。 如需有關這些延伸模組的詳細資訊，請參閱 MSDN Library 中的[ \[ Ms-chap \] ： Kerberos 通訊協定延伸： Service For User 與限制委派通訊協定規格](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx)。
+Kerberos 通訊協定的 Windows Server 2012 R2 和 Windows Server 2012 執行包括特別針對限制委派的延伸模組。  Service for User to Proxy (S4U2Proxy) 讓服務能夠針對使用者使用它的 Kerberos 服務票證，取得從金鑰發佈中心 (KDC) 到後端服務的服務票證。 這些延伸模組可讓您在後端服務帳戶上設定限制委派，此帳戶可以位於另一個網域中。 如需有關這些延伸模組的詳細資訊，請參閱 MSDN Library 中的[ \[ Ms-chap \] ： Kerberos 通訊協定延伸： Service For User 與限制委派通訊協定規格](/openspecs/windows_protocols/ms-sfu/3bff5864-8135-400e-bdd9-33b552051d94)。
 
 **實際應用**
 
@@ -52,7 +52,7 @@ Kerberos 通訊協定的 Windows Server 2012 R2 和 Windows Server 2012 執行�
 
 基礎通訊協定中的變更允許跨網域的限制委派。 Kerberos 通訊協定的 Windows Server 2012 R2 和 Windows Server 2012 執行包括服務的擴充功能，可供使用者 Proxy (S4U2Proxy) 通訊協定。 此為一組 Kerberos 通訊協定的延伸，讓服務能夠針對使用者使用它的 Kerberos 服務票證，取得從金鑰發佈中心 (KDC) 到後端服務的服務票證。
 
-如需這些擴充功能的相關資訊，請參閱 MSDN 中的[ \[ Ms-chap \] ： Kerberos 通訊協定延伸： Service For User 與限制委派通訊協定規格](https://msdn.microsoft.com/library/cc246071(PROT.10).aspx)。
+如需這些擴充功能的相關資訊，請參閱 MSDN 中的[ \[ Ms-chap \] ： Kerberos 通訊協定延伸： Service For User 與限制委派通訊協定規格](/openspecs/windows_protocols/ms-sfu/3bff5864-8135-400e-bdd9-33b552051d94)。
 
 相較於 Service for User (S4U) 延伸，如需有關含轉送票證授權票證 (TGT) 之 Kerberos 委派基本訊息順序的詳細資訊，請參閱 [1.3.3 通訊協定概觀](/openspecs/windows_protocols/ms-sfu/1fb9caca-449f-4183-8f7a-1a5fc7e7290a) 一節，位於＜[MS-SFU]：Kerberos 通訊協定延伸：Service for User 與限制委派通訊協定規格＞中。
 

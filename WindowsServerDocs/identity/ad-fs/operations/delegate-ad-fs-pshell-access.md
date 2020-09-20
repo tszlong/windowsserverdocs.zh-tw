@@ -7,12 +7,12 @@ manager: daveba
 ms.reviewer: zhvolosh
 ms.date: 01/31/2019
 ms.topic: article
-ms.openlocfilehash: 836a40ffa9df8fa308d1005fbac3a9e087488949
-ms.sourcegitcommit: 52a8d5d7e969eaa07fd3a45ed6d3cb5a5173b6d1
+ms.openlocfilehash: 7cf8e191fbc6fd9b5ff7cac5b6315ead4ad899ba
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88970625"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766251"
 ---
 # <a name="delegate-ad-fs-powershell-commandlet-access-to-non-admin-users"></a>將 AD FS Powershell Cmdlet 存取權委派給非系統管理員使用者
 根據預設，透過 PowerShell 的 AD FS 管理只能由 AD FS 系統管理員完成。 對於許多大型組織而言，在處理其他人員（例如技術支援人員）時，這可能不是可行的營運模式。
@@ -62,7 +62,7 @@ Install-ADServiceAccount gMSAcontoso
 
 ### <a name="create-the-jea-role-file"></a>建立 JEA 角色檔案
 
-在 AD FS 伺服器上，在 [記事本] 檔案中建立 JEA 角色。 [JEA 角色功能](https://docs.microsoft.com/powershell/scripting/learn/remoting/jea/role-capabilities)提供建立角色的指示。
+在 AD FS 伺服器上，在 [記事本] 檔案中建立 JEA 角色。 [JEA 角色功能](/powershell/scripting/learn/remoting/jea/role-capabilities)提供建立角色的指示。
 
 在此範例中委派的 commandlet 是 `Reset-AdfsAccountLockout, Get-ADFSAccountActivity, and Set-ADFSAccountActivity` 。
 
@@ -78,7 +78,7 @@ VisibleCmdlets = 'Reset-AdfsAccountLockout', 'Get-ADFSAccountActivity', 'Set-ADF
 
 
 ### <a name="create-the-jea-session-configuration-file"></a>建立 JEA 會話設定檔
-請依照指示來建立 [JEA 會話配置](https://docs.microsoft.com/powershell/scripting/learn/remoting/jea/session-configurations) 檔。 設定檔會決定誰可以使用 JEA 端點，以及他們可以存取的功能。
+請依照指示來建立 [JEA 會話配置](/powershell/scripting/learn/remoting/jea/session-configurations) 檔。 設定檔會決定誰可以使用 JEA 端點，以及他們可以存取的功能。
 
 角色功能是由一般名稱 (檔案名所參考，而不含角色功能檔案的擴充) 。 如果系統上有多個具有相同一般名稱的角色功能，PowerShell 會使用其隱含搜尋順序來選取有效的角色功能檔案。 它不會授與具有相同名稱的所有角色功能檔案的存取權。
 

@@ -6,12 +6,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 05/31/2019
-ms.openlocfilehash: 5dcba9b92d9c0d85f99a1d54d50bef187fd51f10
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 04776c46d321a7a5aef19edd2866637c26d79125
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997479"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766321"
 ---
 # <a name="connecting-windows-server-to-azure-hybrid-services"></a>將 Windows Server 連線到 Azure 混合式服務
 
@@ -64,7 +64,7 @@ ms.locfileid: "87997479"
 
 ### <a name="extend-storage-capacity"></a>擴充儲存體容量
 
-- **使用 [Azure 檔案同步](https://aka.ms/afs)來同步您的檔案伺服器與雲端**：同步此伺服器上的檔案與 Azure 檔案共用。 在本機保留所有檔案，或使用雲分層來釋出空間並只快取伺服器上最常使用的檔案，並將冷資料分層放至雲端。 您可以備份雲端中的資料，不必費力備份內部部署伺服器。 此外，多站台同步可讓一組檔案在多部伺服器間保持同步。
+- **使用 [Azure 檔案同步](/azure/storage/files/storage-sync-files-planning)來同步您的檔案伺服器與雲端**：同步此伺服器上的檔案與 Azure 檔案共用。 在本機保留所有檔案，或使用雲分層來釋出空間並只快取伺服器上最常使用的檔案，並將冷資料分層放至雲端。 您可以備份雲端中的資料，不必費力備份內部部署伺服器。 此外，多站台同步可讓一組檔案在多部伺服器間保持同步。
 如需詳細資訊，請參閱[使用 Azure 檔案同步來同步您的檔案伺服器與雲端](azure-file-sync.md)。
 
 - **使用[儲存體移轉服務](../../../storage/storage-migration-service/overview.md)將儲存體遷移至 Azure 中的 VM**：使用逐步工具來清查 Windows 和 Linux 伺服器上的資料，然後將資料傳輸至新的 Azure VM。 Windows Admin Center 可以為工作建立新的 Azure VM，以適當調整大小並正確設定，以接收來自來源伺服器的資料。

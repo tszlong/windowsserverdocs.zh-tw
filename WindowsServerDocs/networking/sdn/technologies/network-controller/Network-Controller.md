@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 31f3fa4e-cd25-4bf3-89e9-a01a6cec7893
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 9623ce4e5e31b905c1c18e9359811389d8d75f23
-ms.sourcegitcommit: 1eaad076ea74e72b36e8893aaa15f3e5f4237bd6
+ms.openlocfilehash: 27ceace93c42ccabdb2db0208c6e3dabce41e1b0
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88659383"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766811"
 ---
 # <a name="network-controller"></a>網路控制站
 
@@ -28,7 +28,7 @@ ms.locfileid: "88659383"
 > - [使用 Windows PowerShell 部署網路控制卡](../../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)
 > - [使用伺服器管理員安裝網路控制卡伺服器角色](Install-the-Network-Controller-server-role-using-Server-Manager.md)
 > - [網路控制站的部署後步驟](post-deploy-steps-nc.md)
-> - [網路控制站 Cmdlet](https://docs.microsoft.com/powershell/module/networkcontroller/?view=win10-ps)
+> - [網路控制站 Cmdlet](/powershell/module/networkcontroller/?view=win10-ps)
 
 ## <a name="network-controller-overview"></a><a name="bkmk_overview"></a>網路控制器概觀
 

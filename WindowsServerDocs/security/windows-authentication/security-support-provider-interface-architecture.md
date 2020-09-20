@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: aec55bca0be096a3866cc49e718743a9c32d8f6b
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: da7c390427a3f0f2348d91e14d0affef905db390
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89638749"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766951"
 ---
 # <a name="security-support-provider-interface-architecture"></a>安全性支援提供者介面架構
 
@@ -83,9 +83,9 @@ SSPI 是在 Windows Server 作業系統中 (GSSAPI) 的一般安全性服務 API
 
 -   [Microsoft Kerberos (Windows) ](/windows/win32/secauthn/microsoft-kerberos)
 
--   [\[KILE \] ： Kerberos 通訊協定延伸](https://msdn.microsoft.com/library/cc233855(PROT.10).aspx)
+-   [\[KILE \] ： Kerberos 通訊協定延伸](/openspecs/windows_protocols/ms-kile/2a32282e-dd48-4ad9-a542-609804b02cc9)
 
--   [\[MS-CHAP \] ： Kerberos 通訊協定延伸： Service For User 與限制委派通訊協定規格](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx)
+-   [\[MS-CHAP \] ： Kerberos 通訊協定延伸： Service For User 與限制委派通訊協定規格](/openspecs/windows_protocols/ms-sfu/3bff5864-8135-400e-bdd9-33b552051d94)
 
 -   [Kerberos SSP/AP (Windows) ](/windows/win32/secauthn/kerberos-ssp-ap)
 
@@ -139,7 +139,7 @@ NTLM 安全性支援提供者 (NTLM SSP) 是安全性支援提供者介面所使
 
 -   [Microsoft Digest (Windows) 的驗證 ](/windows/win32/secauthn/microsoft-digest-ssp)
 
--   [\[DPSP \] ： Digest 通訊協定延伸模組](https://msdn.microsoft.com/library/cc227906(PROT.13).aspx)
+-   [\[DPSP \] ： Digest 通訊協定延伸模組](/openspecs/windows_protocols/ms-dpsp/3e44be62-2067-472a-9ef0-e937298b68fb)
 
 ### <a name="schannel-security-support-provider"></a><a name="BKMK_SchannelSSP"></a>安全通道安全性支援提供者
 安全通道 (Schannel) 用於 web 伺服器驗證，例如當使用者嘗試存取安全的 web 伺服器時。
@@ -177,7 +177,7 @@ TLS 通訊協定、SSL 通訊協定、私用通訊技術 (PCT) 通訊協定，�
 
 -   [TLS/SSL 技術參考](/previous-versions/windows/it-pro/windows-server-2003/cc784149(v=ws.10))
 
--   [\[TLSP \] ：傳輸層安全性 (TLS) 設定檔](https://msdn.microsoft.com/library/dd207968(PROT.13).aspx)
+-   [\[TLSP \] ：傳輸層安全性 (TLS) 設定檔](/openspecs/windows_protocols/ms-tlsp/58aba05b-62b0-4cd1-b88b-dc8a24920346)
 
 ### <a name="negotiate-security-support-provider"></a><a name="BKMK_NegoSSP"></a>協商安全性支援提供者
 簡單且受保護的 GSS-API 協商機制 (SPNEGO) 形成 Negotiate SSP 的基礎，whichcan 是用來協商特定的驗證通訊協定。 當應用程式呼叫 SSPI 以登入網路時，它可以指定 SSP 來處理要求。 如果應用程式指定 Negotiate SSP，則會根據客戶設定的安全性原則，來分析要求並挑選適當的提供者來處理要求。
@@ -194,9 +194,9 @@ SPNEGO 是在 RFC 2478 中指定的。
 
 -   [Microsoft Negotiate (Windows) ](/windows/win32/secauthn/microsoft-negotiate)
 
--   [\[SPNG \] ：簡單且受保護的 GSS-API 協商機制 (SPNEGO) 擴充功能](https://msdn.microsoft.com/library/cc247021(PROT.13).aspx)
+-   [\[SPNG \] ：簡單且受保護的 GSS-API 協商機制 (SPNEGO) 擴充功能](/openspecs/windows_protocols/ms-spng/f377a379-c24f-4a0f-a3eb-0d835389e28a)
 
--   [\[N2HT \] ： Negotiate 和 NEGO2 HTTP 驗證通訊協定規格](https://msdn.microsoft.com/library/dd303576(PROT.13).aspx)
+-   [\[N2HT \] ： Negotiate 和 NEGO2 HTTP 驗證通訊協定規格](/openspecs/windows_protocols/ms-n2ht/4b88aa77-4b12-4933-8740-0f32d8f4eacf)
 
 ### <a name="credential-security-support-provider"></a><a name="BKMK_CredSSP"></a>認證安全性支援提供者
  (CredSSP) 的認證安全性服務提供者，可在啟動新的終端機服務和遠端桌面服務會話時，提供單一登入 (SSO) 使用者體驗。 CredSSP 可讓應用程式根據用戶端的原則，透過伺服器端 ssp) ，從用戶端電腦將使用者的認證委派 (的用戶端電腦)  (。 CredSSP 原則是使用群組原則設定的，而且預設會關閉認證的委派。
@@ -207,7 +207,7 @@ SPNEGO 是在 RFC 2478 中指定的。
 
 **認證 SSP 的其他資源**
 
--   [\[CSSP \] ：認證安全性支援提供者 (CredSSP) 通訊協定規格](https://msdn.microsoft.com/library/cc226764(PROT.13).aspx)
+-   [\[CSSP \] ：認證安全性支援提供者 (CredSSP) 通訊協定規格](/openspecs/windows_protocols/ms-cssp/85f57821-40bb-46aa-bfcb-ba9590b8fc30)
 
 -   [適用于終端機服務登入的認證安全性服務提供者和 SSO](/previous-versions/windows/it-pro/windows-vista/cc749211(v=ws.10))
 

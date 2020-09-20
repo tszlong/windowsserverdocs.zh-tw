@@ -6,12 +6,12 @@ ms.author: nedpyle
 manager: tiaascs
 ms.date: 07/29/2020
 ms.topic: article
-ms.openlocfilehash: ea138d8bb0b804ae4d08ed6ffe330e9714af43f3
-ms.sourcegitcommit: 2b1a12c85acff137e5ac84cd0e62d8353fcdde31
+ms.openlocfilehash: 0c3e52c11f7771856608b86ddd778ef51c4c8516
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89087481"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766911"
 ---
 # <a name="storage-migration-service-known-issues"></a>儲存體遷移服務的已知問題
 
@@ -424,7 +424,7 @@ Guidance: Confirm that the Netlogon service on the computer is reachable through
 
 完成轉移之後，執行後續的相同資料重新傳送，即使來源伺服器上的資料同時變更，您也可能不會看到傳輸時間的大幅改善。
 
-這是傳輸大量檔案和嵌套資料夾時的預期行為。 資料的大小不相關。 我們先在 [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) 中改進這項行為，並持續將傳輸效能優化。 若要進一步調整效能，請參閱將 [清查和傳輸效能優化](https://docs.microsoft.com/windows-server/storage/storage-migration-service/faq#optimizing-inventory-and-transfer-performance)。
+這是傳輸大量檔案和嵌套資料夾時的預期行為。 資料的大小不相關。 我們先在 [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) 中改進這項行為，並持續將傳輸效能優化。 若要進一步調整效能，請參閱將 [清查和傳輸效能優化](./faq.md#optimizing-inventory-and-transfer-performance)。
 
 ## <a name="data-does-not-transfer-user-renamed-when-migrating-to-or-from-a-domain-controller"></a>資料不會傳輸，使用者在遷移至網域控制站或從網域控制站遷移時重新命名
 
