@@ -5,12 +5,12 @@ author: Teresa-Motiv
 ms.author: v-tea
 ms.date: 02/24/2020
 ms.topic: article
-ms.openlocfilehash: cb549f951865a065c70a6bfbfa9d49faf71ffd97
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 60aae8d96107b45ca3ef101780a3f1fec9c5f364
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989795"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766581"
 ---
 # <a name="windows-time-service-tools-and-settings"></a>Windows 時間服務工具和設定
 
@@ -87,7 +87,7 @@ W32tm /query /computer:contosoW1 /configuration
 此命令的輸出是針對 Windows 時間用戶端所設定的設定參數清單。
 
 > [!IMPORTANT]
-> [Windows Server 2016 已改善同步處理演算法的時間](https://aka.ms/WS2016Time)，與 RFC 規格一致。 因此，如果您想要將本機 Windows 時間用戶端設定為指向多個對等互連，則強烈建議您準備三個以上不同的時間伺服器。
+> [Windows Server 2016 已改善同步處理演算法的時間](./accurate-time.md)，與 RFC 規格一致。 因此，如果您想要將本機 Windows 時間用戶端設定為指向多個對等互連，則強烈建議您準備三個以上不同的時間伺服器。
 >
 > 如果您只有兩部時間伺服器，您應該指定 **UseAsFallbackOnly** 旗標 (0x2) 來取消設定其中一個優先順序。 例如，如果您想要在 clock.adatum.com 上設定 ntpserver.contoso.com 的優先順序，請執行下列命令。
 > ```cmd

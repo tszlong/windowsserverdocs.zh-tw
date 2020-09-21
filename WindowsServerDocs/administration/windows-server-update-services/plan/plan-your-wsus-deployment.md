@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 05/24/2018
-ms.openlocfilehash: 45d2dbc330c4277de961943cdd7a97fb50215de1
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 1d3638b7a05c406293035c7f0a0e8854ed2ecee9
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89628548"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766801"
 ---
 # <a name="plan-your-wsus-deployment"></a>規劃 WSUS 部署
 
@@ -113,7 +113,7 @@ WSUS 需要下列其中一個資料庫：
 
 -   Windows 內部資料庫 (WID)
 
--   任何支援的 Microsoft SQL Server 軟體版本。 如需詳細資訊，請參閱 [Microsoft 支援週期原則](https://aka.ms/sqllifecycle)。
+-   任何支援的 Microsoft SQL Server 軟體版本。 如需詳細資訊，請參閱 [Microsoft 支援週期原則](/lifecycle/products/?products=sql-server)。
 
 WSUS 支援下列 SQL Server 版本：
 

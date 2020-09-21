@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 12/02/2019
-ms.openlocfilehash: 2b1b6c8665e289647fe793125e7cc4c5024b4135
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: f33707050f6686ad285fc8ecb786456f0157fef7
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993535"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90767011"
 ---
 # <a name="windows-admin-center-frequently-asked-questions"></a>Windows Admin Center 常見問題集
 
@@ -154,7 +154,7 @@ Windows Admin Center 是「Project Honolulu」的正式產品名稱，加強了�
 
 ## <a name="where-can-i-learn-more-about-windows-admin-center-or-get-more-details-on-the-topics-above"></a>何處可深入了解 Windows Admin Center，或取得更多有關上述主題的詳細資料？
 
-我們的[啟動頁面](https://aka.ms/WindowsAdminCenter)是最適合的起點，其中有連結連到我們新近分類的文件內容、下載位置、意見反應提供方式、參考資訊等資源。
+我們的[啟動頁面](../overview.md)是最適合的起點，其中有連結連到我們新近分類的文件內容、下載位置、意見反應提供方式、參考資訊等資源。
 
 ## <a name="what-is-the-version-history-of-windows-admin-center"></a>Windows Admin Center 的版本記錄為何？
 

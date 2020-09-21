@@ -8,12 +8,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 08/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e0ce10cbdc1dfe70156d36a96978222395afaa94
-ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
+ms.openlocfilehash: c7d05731997aeb9fcdb1fadb73ba80f2ff6655e5
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88702817"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766691"
 ---
 # <a name="get-started-with-the-macos-client"></a>開始使用 macOS 用戶端
 
@@ -159,7 +159,7 @@ Windows Server 2012 R2 導入了新式驗證方法的支援，也就是遠端桌
 > [!IMPORTANT]
 > 雖然本文的前半段有所討論，但 Windows 8.1 之前的自訂驗證和授權模型不受支援。
 
-若要深入了解這項功能，請參閱 [https://aka.ms/paa-sample](https://aka.ms/paa-sample)。
+若要深入了解這項功能，請參閱 [https://aka.ms/paa-sample](/samples/browse/?redirectedfrom=MSDN-samples)。
 
 > [!TIP]
 > 隨時都歡迎提出問題和意見。 不過，請「勿」使用本文結尾的留言功能來張貼需要疑難排解協助的要求。 請改為前往[遠端桌面用戶端論壇](/answers/topics/windows-remote-desktop-client.html)，並開始新的對話。 有功能建議嗎？ 請在[用戶端使用者意見論壇](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android)中告訴我們。

@@ -1,18 +1,17 @@
 ---
 title: Hyper-V 虛擬機器連線
 description: 描述可提供虛擬機器遠端存取的虛擬機器連線。 包含如何執行一般工作的詳細資料，例如傳送 Ctrl-Alt-Delete 至虛擬機器。
-manager: dongill
 ms.topic: article
 ms.assetid: deae35b9-7647-42b8-b6bf-45645a44c9c4
-author: kbdazure
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 10/04/2016
-ms.openlocfilehash: 2ffe54a1699fdb23833adc5e0036747d516e3056
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 80e87fcfa38f441491985ba7bb58b25c7e4cc165
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990175"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90745963"
 ---
 # <a name="hyper-v-virtual-machine-connection"></a>Hyper-V 虛擬機器連線
 

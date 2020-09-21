@@ -7,12 +7,12 @@ author: eross-msft
 manager: mtillman
 ms.localizationpriority: medium
 ms.date: 06/03/2019
-ms.openlocfilehash: 2202658da6d89d3a289e0fd1e6df07e9ba4e4544
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 0e477a404e7bef9ed1e201393a95e875c308e80f
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89621994"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766891"
 ---
 # <a name="whats-new-in-windows-server-version-1709"></a>Windows Server 版本 1709 中的新功能
 
@@ -89,7 +89,7 @@ Project Honolulu 包含直覺式全新管理體驗，適用於管理電腦、Win
 ## <a name="storage"></a>存放裝置
 
 **儲存體複本**：儲存體複本在 Windows Server 2016 中新增的災害復原保護現已擴充到包含：
-- **測試容錯移轉**：掛接目的地存放裝置的選項現在可以透過測試容錯移轉功能來使用。 您可以在目的地節點上暫時掛接已複寫存放裝置的快照集以作測試或備份之用。  如需詳細資訊，請參閱[儲存體複本的常見問題集](https://aka.ms/srfaq)。
+- **測試容錯移轉**：掛接目的地存放裝置的選項現在可以透過測試容錯移轉功能來使用。 您可以在目的地節點上暫時掛接已複寫存放裝置的快照集以作測試或備份之用。  如需詳細資訊，請參閱[儲存體複本的常見問題集](../storage/storage-replica/storage-replica-frequently-asked-questions.md)。
 - **Project Honolulu 支援**：Project Honolulu 現已提供伺服器對伺服器複寫的圖形化管理支援。 這樣就不再需要使用 PowerShell 來管理常見的嚴重損壞狀況保護工作負載。
 
 **SMB**：

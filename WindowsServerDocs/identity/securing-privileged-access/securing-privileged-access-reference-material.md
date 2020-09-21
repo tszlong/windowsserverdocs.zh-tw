@@ -8,12 +8,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: a7eda2d06a91891529ebbe5c7e448c17fdb070f3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d2e7d7a064806646ccc075c96fff2ba20acfe005
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953132"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766211"
 ---
 # <a name="active-directory-administrative-tier-model"></a>Active Directory 系統管理層模型
 
@@ -138,7 +138,7 @@ ms.locfileid: "87953132"
 
 ![此圖顯示您應該盡可能減少 Active Directory 和網域控制站相依的系統數量](../media/securing-privileged-access-reference-material/PAW_RM_Fig010.JPG)
 
-如需強化 Active Directory 最高風險的詳細資訊，請參閱[本頁](https://aka.ms/hardenAD)。
+如需強化 Active Directory 最高風險的詳細資訊，請參閱[本頁](../ad-ds/plan/security-best-practices/reducing-the-active-directory-attack-surface.md)。
 
 ## <a name="operational-standards-based-on-clean-source-principle"></a>以乾淨來源準則為基礎的操作標準
 
@@ -313,7 +313,7 @@ ms.locfileid: "87953132"
 > [!NOTE]
 > 這是必要的，因為以互動方式登入主機會為該主機授與認證的控制權。
 >
-> 如需登入類型、常見管理工具及認證暴露的詳細資訊，請參閱[系統管理工具和登入類型](https://aka.ms/admintoolsecurity)。
+> 如需登入類型、常見管理工具及認證暴露的詳細資訊，請參閱[系統管理工具和登入類型]()。
 
 ##### <a name="use-of-approved-support-technology-and-methods"></a>使用核准的支援技術和方法
 
@@ -329,7 +329,7 @@ ms.locfileid: "87953132"
 確定會在這種情況下套用下列做法：
 
 - **遠端伺服器支援** - 從遠端存取伺服器時，第 0 層系統管理員必須遵循這些指導方針：
-  - **主要 (工具)** - 使用網路登入的遠端工具 (類型 3)。 如需詳細資訊，請參閱[系統管理工具和登入類型](https://aka.ms/admintoolsecurity)。
+  - **主要 (工具)** - 使用網路登入的遠端工具 (類型 3)。 如需詳細資訊，請參閱[系統管理工具和登入類型]()。
   - **主要 (互動式)** - 搭配網域帳戶來使用系統管理工作站的 RDP RestrictedAdmin 或標準的 RDP 工作階段。
 
     > [!NOTE]
@@ -488,7 +488,7 @@ ms.locfileid: "87953132"
 
 - **強化工作站** - 使用 [特殊權限存取工作站](../securing-privileged-access/privileged-access-workstations.md) (透過第 3 階段) 來建置系統管理工作站，但將網域成員資格變更為系統管理樹系，而不是生產環境。
 - **強化伺服器與 DC** - 針對系統管理樹系中的所有網域控制站和伺服器：
-   - 確定使用[安裝媒體的乾淨來源](https://aka.ms/cleansource)中的指引來驗證所有媒體
+   - 確定使用[安裝媒體的乾淨來源]()中的指引來驗證所有媒體
    - 確定系統管理樹系伺服器應該已安裝最新作業系統，即使這在生產環境中並不可行。
    - 應利用安全性更新來自動更新系統管理樹系主機。
 

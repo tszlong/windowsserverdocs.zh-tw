@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 06/07/2019
-ms.openlocfilehash: 3075c571fb933692745a872df138ef5cbfa6b283
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: affbc610484abc5a4e45534a7f75e4f06efc23e9
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995307"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766961"
 ---
 # <a name="what-is-windows-admin-center"></a>什麼是 Windows Admin Center？
 
@@ -25,7 +25,7 @@ Windows Admin Center 是「隨附」管理工具 (例如伺服器管理員和 MM
 
 ## <a name="how-does-windows-admin-center-work"></a>Windows Admin Center 如何運作？
 
-Windows Admin Center 在網頁瀏覽器中執行，並透過 Windows Server 或加入網域的 Windows 10 上安裝的 **Windows Admin Center 閘道**來管理 Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10、Azure Stack HCI 等系統。 閘道使用遠端 PowerShell 和透過 WinRM 的 WMI 來管理伺服器。 閘道以單一輕量型 .msi 套件 (您可以[下載](https://aka.ms/windowsadmincenter)) 隨附於 Windows Admin Center。
+Windows Admin Center 在網頁瀏覽器中執行，並透過 Windows Server 或加入網域的 Windows 10 上安裝的 **Windows Admin Center 閘道**來管理 Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10、Azure Stack HCI 等系統。 閘道使用遠端 PowerShell 和透過 WinRM 的 WMI 來管理伺服器。 閘道以單一輕量型 .msi 套件 (您可以[下載](../overview.md)) 隨附於 Windows Admin Center。
 
 將 Windows Admin Center 閘道發佈至 DNS 並授與通過對應公司防火牆的存取權時，此閘道可讓您隨處透過 Microsoft Edge 或 Google Chrome 安全地連線至伺服器並進行管理。
 
@@ -70,4 +70,4 @@ Windows Admin Center 提供[管理超融合式叢集](../use/manage-hyper-conver
 Windows Admin Center 從一開始即是以擴充性為考量而建置，讓 Microsoft 和協力廠商開發人員有能建置超越目前供應項目的工具和解決方案。 Microsoft 提供可讓開發人員針對 Windows Admin Center 自行建置其工具的 [SDK](../extend/extensibility-overview.md)。
 
 > [!Tip]
-> 準備好安裝 Windows Admin Center 了嗎？ [立即下載](https://aka.ms/windowsadmincenter)
+> 準備好安裝 Windows Admin Center 了嗎？ [立即下載](../overview.md)

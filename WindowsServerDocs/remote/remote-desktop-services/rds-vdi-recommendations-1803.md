@@ -4,12 +4,12 @@ description: 將當作 VDI 映像的 Windows 10 1803 桌面的額外負荷降至
 ms.author: robsmi
 ms.topic: article
 author: jaimeo
-ms.openlocfilehash: 4ba432e13785694844229a41f2966eb7cf65fa7e
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: 38ddd48b6bf5502851615adeb75446f07bc860c1
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90078635"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90767001"
 ---
 # <a name="optimizing-windows-10-version-1803-for-a-virtual-desktop-infrastructure-vdi-role"></a>針對虛擬桌面基礎結構 (VDI) 角色最佳化 Windows 10 1803 版
 
@@ -580,7 +580,7 @@ Microsoft 近期發佈了關於在 VDI 環境中使用 Windows Defender 的文�
 
 請注意，本節中的某些設定是「僅以登錄為基礎的」  ，且應在映像部署至生產環境之前納入基底映像中。
 
-下列設定值記載於 [Windows Server 2016 效能微調指導方針](/windows-server/administration/performance-tuning/)資訊中，由 Windows 產品小組發佈於 Microsoft.com 上。
+下列設定值記載於 [Windows Server 2016 效能微調指導方針](../../administration/performance-tuning/index.md)資訊中，由 Windows 產品小組發佈於 Microsoft.com 上。
 
 #### <a name="disablebandwidththrottling"></a>DisableBandwidthThrottling
 

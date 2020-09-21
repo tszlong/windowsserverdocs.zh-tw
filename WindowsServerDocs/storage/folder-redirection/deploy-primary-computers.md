@@ -6,12 +6,12 @@ author: JasonGerend
 ms.author: jgerend
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8645373f4f8e933e0eaad8e62672ecc16518ed4d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 488a82d7ea4081acbca07f2f699e001f0945d6ce
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87957606"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766651"
 ---
 # <a name="deploy-primary-computers-for-folder-redirection-and-roaming-user-profiles"></a>部署資料夾重新導向及漫遊使用者設定檔的主要電腦
 
@@ -39,7 +39,7 @@ ms.locfileid: "87957606"
 部署主要電腦支援的第一個步驟是指定每個使用者的主要電腦。 若要這麼做，請使用 Active Directory 系統管理中心來取得相關電腦的辨別名稱，然後設定 **msDs-PrimaryComputer** 屬性。
 
 > [!TIP]
-> 若要使用 Windows PowerShell 處理主要電腦，請參閱部落格文章[深入探索 Windows 8 主要電腦](<https://blogs.technet.microsoft.com/askds/2012/10/23/digging-a-little-deeper-into-windows-8-primary-computer/>)。
+> 若要使用 Windows PowerShell 處理主要電腦，請參閱部落格文章[深入探索 Windows 8 主要電腦](/archive/blogs/askds/digging-a-little-deeper-into-windows-8-primary-computer)。
 
 如何為使用者指定主要電腦：
 

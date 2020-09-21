@@ -8,12 +8,12 @@ ms.assetid: 599d6438-a506-4d57-a0ea-1eb7ec19f46e
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 78a869f826bd9d13e627f5710cca1b3ef1cdcdc4
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: cb6ffed04856c1e4fe670893a2af3acedb6da012
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87959626"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90765949"
 ---
 # <a name="manage-nano-server"></a>管理 Nano 伺服器
 
@@ -212,12 +212,12 @@ Get-WindowsPackage -Online
 
 ## <a name="performance-and-event-monitoring-on-nano-server"></a>Nano Server 上的效能和事件監視
 [comment]: # (從 Venkat Yalla。)
-Nano Server 完全支援 [Windows 事件追蹤](https://aka.ms/u2pa0i) (ETW) 架構，但某些用來管理追蹤和效能計數器的熟悉工具目前不適用於 Nano Server。 不過，Nano Server 具有可完成最常見效能分析案例的工具和 Cmdlet。
+Nano Server 完全支援 [Windows 事件追蹤](/windows/win32/etw/event-tracing-portal) (ETW) 架構，但某些用來管理追蹤和效能計數器的熟悉工具目前不適用於 Nano Server。 不過，Nano Server 具有可完成最常見效能分析案例的工具和 Cmdlet。
 
 任何 Window Server 安裝上的高階工作流程會保持不變 -- 在目標 (Nano Server) 電腦上執行低負荷的追蹤，並使用 [Windows Performance Analyzer](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10))、[Message Analyzer](https://www.microsoft.com/download/details.aspx?id=44226) 等工具，在另一部電腦上離線後續處理所產生的追蹤檔案及 (或) 記錄檔。
 
 > [!NOTE]
-> 若要回顧如何使用 PowerShell 遠端執行功能來轉送檔案，請參閱 [How to copy files to and from Nano Server](https://aka.ms/nri9c8) (如何將檔案複製到 Nano Server 及從中複製檔案)。
+> 若要回顧如何使用 PowerShell 遠端執行功能來轉送檔案，請參閱 [How to copy files to and from Nano Server](/previous-versions/windows/desktop/legacy/mt708806(v=vs.85)) (如何將檔案複製到 Nano Server 及從中複製檔案)。
 
 下列各節列出最常見的效能資料收集活動，以及在 Nano Server 上完成這些活動的支援方法。
 
@@ -381,7 +381,7 @@ TimeCreated           Message
 9/15/2016 11:31:16 AM The Virtualization Based Security enablement policy check at phase 0 failed with status: {File...
 ```
 
-Nano Server 也支援 ```wevtutil.exe```，以擷取事件記錄檔和發行者的相關資訊。 如需詳細資訊，請參閱 [wevtutil.exe 文件](https://aka.ms/qvod7p)。
+Nano Server 也支援 ```wevtutil.exe```，以擷取事件記錄檔和發行者的相關資訊。 如需詳細資訊，請參閱 [wevtutil.exe 文件](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732848(v=ws.11))。
 
 ### <a name="graphical-interface-tools"></a>圖形化介面工具
 [網頁伺服器管理工具](https://techcommunity.microsoft.com/t5/windows-admin-center-blog/bg-p/Windows-Admin-Center-Blog)可用來從遠端管理 Nano Server 目標，並使用網頁瀏覽器呈現 Nano Server 事件記錄檔。 最後，MMC 嵌入式管理單元事件檢視器 (eventvwr.msc) 也可用來檢視記錄檔 -- 只要在電腦上使用桌面開啟檔案，並將它指向遠端 Nano Server 即可。

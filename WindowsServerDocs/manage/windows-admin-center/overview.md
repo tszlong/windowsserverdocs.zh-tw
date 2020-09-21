@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 01/07/2020
 ms.localizationpriority: high
-ms.openlocfilehash: 8a1cd07167fd0a73d72dc57708a5f9bd23d2252c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d6fa3e4535748b6c4d5b45755b0336dc26815bee
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87958676"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766731"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -149,7 +149,7 @@ Windows Admin Center 是以瀏覽器為基礎在本機部署的應用程式，�
 - [如何將 Windows Admin Center 和 Windows Server 與 Microsoft Azure 混合式服務搭配使用](https://aka.ms/WAC-THR2073)
 - [即時問與答：使用 Windows Admin Center 管理您的混合式伺服器環境](https://aka.ms/WAC-MLS1055)
 - [學習路徑：混合式管理技術](https://aka.ms/WAC-HybridMgmtTech)
-- [實習實驗室：Windows Admin Center 和混合式部署](https://aka.ms/WAC-HOL2019)
+- [實習實驗室：Windows Admin Center 和混合式部署](/learn/?WT.mc_id=sitertzn_homepage_learn-redirect-handsonlabs)
 
 以下是來自 Windows Server Summit 2019 研討會的一些影片：
 

@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: d0ba6860edd40202da3078ee0ad05eb91901e1f2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 5dfed9e70e4f0406c59c31201c8d2d1a9b3caafe
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87945711"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766861"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>Windows Server 2016 的新功能
 
@@ -55,7 +55,7 @@ Windows Server 2016 提供新的 Hyper-V 型受防護虛擬機器，保護遭入
 
 - 現有安全 Active Directory 的主機守護者服務支援 – 您可以指示主機守護者服務使用現有 Active Directory 樹系作為其 Active Directory，而不是建立它自己的 Active Directory 執行個體。
 
-如需使用受防護虛擬機器的詳細資料和指示，請參閱[適用於 Windows Server 2016 的受防護 VM 和受防護網狀架構驗證指南 (TPM)](https://aka.ms/shieldedvms)。
+如需使用受防護虛擬機器的詳細資料和指示，請參閱[適用於 Windows Server 2016 的受防護 VM 和受防護網狀架構驗證指南 (TPM)](../security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms-top-node.md)。
 
 ## <a name="identity-and-access"></a>[身分識別與存取](../identity/Identity-and-Access.yml)
 「身分識別」中的新功能可提升組織保護 Active Directory 環境的能力，並協助他們移轉至僅限雲端的部署和混合式部署，其中有些應用程式與服務會裝載於雲端，而其他則會裝載於內部部署上。

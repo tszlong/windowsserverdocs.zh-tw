@@ -6,12 +6,12 @@ author: haley-rowland
 ms.author: harowl
 ms.date: 03/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c96968f55a06c7ccffd9f7919001f21bff6a75c
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 184eca56dc14e91220a7fb7eb196c48706562ff7
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996988"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766711"
 ---
 # <a name="user-access-options-with-windows-admin-center"></a>Windows Admin Center 的使用者存取選項
 
@@ -58,7 +58,7 @@ Windows Admin Center 會定義兩個可存取閘道服務的角色：閘道使�
 不過，某些使用者可能不需要獲得機器的無限制存取權就能執行其作業。
 您可以在 Windows Admin Center 中使用**角色型存取控制**，來為這類使用者提供機器的有限存取權，而不是讓其成為完整的本機系統管理員。
 
-Windows Admin Center 中的角色型存取控制運作方式，是使用 PowerShell 的 [Just Enough Administration](https://aka.ms/jeadocs) 端點來設定每部受管理的伺服器。
+Windows Admin Center 中的角色型存取控制運作方式，是使用 PowerShell 的 [Just Enough Administration](/powershell/scripting/learn/remoting/jea/overview) 端點來設定每部受管理的伺服器。
 此端點會定義各種角色，包括每個角色所能夠管理的系統部分，以及要將哪些使用者指派給該角色。
 當使用者連線到受限制的端點時，系統會建立暫時的本機系統管理員帳戶來代表其管理系統。
 這可確保即使是沒有自有委派模型的工具，仍可使用 Windows Admin Center 來管理。

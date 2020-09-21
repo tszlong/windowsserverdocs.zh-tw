@@ -4,12 +4,12 @@ ms.date: 06/18/2014
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 0a19bdd00000e466f2a2af92116356a9ad2a6428
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 346fa77e1a22626094baa33aaf70ead23f2f0db0
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87950783"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766641"
 ---
 # <a name="dfs-replication-frequently-asked-questions-faq"></a>DFS 複寫：常見問題集 (FAQ)
 
@@ -282,7 +282,7 @@ Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows 
 
 
 > [!IMPORTANT]
-> 若要查看或管理包含唯讀複寫資料夾或容錯移轉叢集成員的複寫群組，您必須使用 Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows 8、<a href="https://go.microsoft.com/fwlink/p/?linkid=238560">適用於 Windows 8 的遠端伺服器管理工具</a>，或是<a href="https://technet.microsoft.com/library/ee449475">適用於 Windows 7 的遠端伺服器管理工具</a>隨附的 DFS 管理版本。
+> 若要查看或管理包含唯讀複寫資料夾或容錯移轉叢集成員的複寫群組，您必須使用 Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows 8、<a href="https://go.microsoft.com/fwlink/p/?linkid=238560">適用於 Windows 8 的遠端伺服器管理工具</a>，或是<a href="/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee449475(v=ws.10)">適用於 Windows 7 的遠端伺服器管理工具</a>隨附的 DFS 管理版本。
 <br>
 
 
