@@ -72,6 +72,7 @@
 #### [開始使用 Windows 桌面用戶端](clients/windowsdesktop.md)
 #### [適用於系統管理員的 Windows 桌面用戶端](clients/windowsdesktop-admin.md)
 #### [Windows 桌面用戶端的新功能](clients/windowsdesktop-whatsnew.md)
+#### [快速鍵](/windows/win32/termserv/terminal-services-shortcut-keys)
 ### Microsoft Store 用戶端
 #### [開始使用 Microsoft Store 用戶端](clients/windows.md)
 #### [Microsoft Store 用戶端的新功能](clients/windows-whatsnew.md)

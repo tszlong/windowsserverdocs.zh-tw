@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 08/07/2020
+ms.date: 09/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 65a2a767e89af6d64893de1b8c7949bedd9e7625
-ms.sourcegitcommit: 9f2e04cd7e52c29fa2fbc64f67dcafbd021015ab
+ms.openlocfilehash: 6524c186e42b2c1c39dae5b95f4c6657bdd9dcbf
+ms.sourcegitcommit: 0b3d6661c44aa1a697087e644437279142726d84
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88051842"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90083739"
 ---
 # <a name="supported-remote-desktop-rdp-file-settings"></a>支援的遠端桌面 RDP 檔案設定
 
@@ -58,7 +58,7 @@ ms.locfileid: "88051842"
 | audiomode:i:value | 音訊輸出位置：</br>決定本機或遠端電腦是否播放音訊。 | - 0：在本機電腦上播放聲音 (在這部電腦上播放)</br>- 1：在遠端電腦上播放聲音 (在遠端電腦上播放)</br>- 2：不要播放聲音 (不要播放) | 0 | 是 |
 | camerastoredirect:s:value | 相機重新導向：</br>設定要重新導向的相機。 此設定使用已啟用相機的 KSCATEGORY_VIDEO_CAMERA 介面清單 (以分號分隔) 進行重新導向。 | - * :重新導向所有相機</br> - 相機清單，例如 camerastoredirect:s:\\?\usb#vid_0bda&pid_58b0&mi</br>- 若要排除特定相機，請在符號連結字串前面加上 "-" | 不要重新導向任何相機 | 是 |
 | devicestoredirect:s:value | 隨插即用的裝置重新導向：</br>決定本機電腦上要重新導向至遠端工作階段以供使用的裝置。 | - *:重新導向所有支援的裝置，包括稍後連線的裝置</br> - 一或多個裝置的有效硬體識別碼</br> - DynamicDevices：重新導向稍後連線的所有支援裝置 | 不要重新導向任何裝置 | 是 |
-| drivestoredirect:s:value | 磁碟機/儲存體重新導向：</br>決定本機電腦上要重新導向至遠端工作階段以供使用的磁碟機。 | - 未指定值：不要重新導向任何磁碟機</br>- * :重新導向所有磁碟機，包括稍後連接的磁碟機</br>- DynamicDrives：重新導向稍後連接的任何磁碟機</br>- 一或多個磁碟機的磁碟機和標籤 (例如 "drivestoredirect:s:C:;E:;")：重新導向指定的磁碟機 | 不要重新導向任何磁碟機 | 是 |
+| drivestoredirect:s:value | 磁碟機/儲存體重新導向：</br>決定本機電腦上要重新導向至遠端工作階段以供使用的磁碟機。 | - 未指定值：不要重新導向任何磁碟機</br>- * :重新導向所有磁碟機，包括稍後連接的磁碟機</br>- DynamicDrives：重新導向稍後連接的任何磁碟機</br>- 一或多個磁碟機的磁碟機和標籤 (例如 "drivestoredirect:s:C\:;E\:;")：重新導向指定的磁碟機 | 不要重新導向任何磁碟機 | 是 |
 | keyboardhook:i:value | 決定將 Windows 按鍵組合 (WIN 鍵、ALT + TAB) 應用至遠端桌面工作階段連線的時機。 | - 0：Windows 按鍵組合應用於本機電腦</br>- 1：Windows 按鍵組合在焦點模式時應用於遠端電腦</br>- 2：Windows 按鍵組合僅以全螢幕模式應用於遠端電腦 | 2 | 是 |
 | redirectclipboard:i:value | 剪貼簿重新導向：</br>決定是否啟用剪貼簿重新導向。 | - 0：無法在遠端工作階段中使用本機電腦上的剪貼簿</br>- 1：可以在遠端工作階段中使用本機電腦上的剪貼簿 | 1 | 是 |
 | redirectcomports:i:value | COM 連接埠重新導向：</br>決定是否將本機電腦上的 COM (序列) 連接埠重新導向至遠端工作階段以供使用。 | - 0：無法在遠端工作階段中使用本機電腦上的 COM 連接埠</br>- 1：可在遠端工作階段中使用本機電腦上的 COM 連接埠 | 0 | 是 |

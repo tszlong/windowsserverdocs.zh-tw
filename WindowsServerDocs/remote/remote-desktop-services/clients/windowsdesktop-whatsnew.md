@@ -5,27 +5,27 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 09/10/2020
+ms.date: 09/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f0b5453265bc96cdeb7ba02795da8fa0f39ba1c
-ms.sourcegitcommit: 0407bd30eaf06358257cf88c3969a2cd8b77dca4
+ms.openlocfilehash: 5d45bfad559069f9652768ba7f89bbdd3521ab8a
+ms.sourcegitcommit: d04f8fd54fe9aa5703af2f66a7150f4a6fb5bb37
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90027163"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90718622"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面用戶端的新功能
 
 您可以在[開始使用 Windows 桌面用戶端](windowsdesktop.md)找到更多有關 Windows 桌面用戶端的詳細資訊。 您可以在本文中找到最新的用戶端更新。
 
-## <a name="latest-client-versions"></a>最新的用戶端版本
+## <a name="supported-client-versions"></a>支援的用戶端版本
 
 用戶端可以針對不同的[使用者群組](windowsdesktop-admin.md#configure-user-groups)進行設定。 下表列出每個使用者群組可用的目前版本：
 
-|使用者群組 |版本  |
-|-----------|---------|
-|公用     |1.2.1272 |
-|Insider    |1.2.1357 |
+|使用者群組 |最新版本  |最低支援版本 |
+|-----------|----------------|--------------------------|
+|公用     |1.2.1272        |1.2.945                   |
+|Insider    |1.2.1357        |1.2.1357                  |
 
 ## <a name="updates-for-version-121357-insiders"></a>1\.2.1357 版的更新 (測試人員)
 
@@ -33,7 +33,7 @@ ms.locfileid: "90027163"
 
 下載：[Windows 64 位元](https://go.microsoft.com/fwlink/?linkid=2139233)、[Windows 32 位元](https://go.microsoft.com/fwlink/?linkid=2139144)、[Windows ARM64](https://go.microsoft.com/fwlink/?linkid=2139368)
 
-- 已修正安全登入 (SSO) 在 Windows 7 上無法使用的問題。
+- 已修正單一登入 (SSO) 在 Windows 7 上無法使用的問題。
 
 ## <a name="updates-for-version-121275"></a>1\.2.1275 版的更新
 

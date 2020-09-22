@@ -8,12 +8,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 672a9d1b33137d9559d88b8773d3c7ccd2493ddc
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 420cedebcfc71a5ba78908d244d1f8ca651bee4c
+ms.sourcegitcommit: 0b3d6661c44aa1a697087e644437279142726d84
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955055"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90083669"
 ---
 # <a name="frequently-asked-questions-about-the-remote-desktop-clients"></a>關於遠端桌面用戶端的常見問題集
 
@@ -174,7 +174,7 @@ Web 用戶端支援 Windows、macOS、Linux 和 ChromeOS。 目前不支援行�
 
 - 標準電腦雙按鈕 USB 滑鼠
 - Apple Magic Mouse：若要啟用滑鼠右鍵點按功能，請按一下擴充座中的 [系統喜好設定]  ，再按一下 [滑鼠]  ，然後啟用 [二次點按]  。
-- Apple Magic Trackpad 或 MacBook Trackpad：若要啟用滑鼠右鍵點按功能，請按一下擴充座中的 [系統喜好設定]  ，再按一下 [滑鼠]  ，然後啟用 [二次點按]  。
+- Apple Magic Trackpad 或 MacBook Trackpad：若要啟用滑鼠右鍵點按功能，請按一下擴充座中的 [系統喜好設定]，再按一下 [軌跡板]，然後啟用 [二次點按]。
 
 ### <a name="is-airprint-supported"></a>是否支援 AirPrint？
 否，遠端桌面用戶端不支援 AirPrint。 (Mac 和 iOS 用戶端都不支援)。

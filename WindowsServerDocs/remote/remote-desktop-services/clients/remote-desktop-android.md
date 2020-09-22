@@ -6,14 +6,14 @@ ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 08/20/2020
+ms.date: 09/17/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 90a0796818a2beb7e592eae1556999729b2d9ab2
-ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
+ms.openlocfilehash: 1f59c00e375ab142c4e3dadc480c648cdd8e2396
+ms.sourcegitcommit: 877d6db73d9520e3a23738d6528016235493cff3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88702867"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90779242"
 ---
 # <a name="get-started-with-the-android-client"></a>開始使用 Android 用戶端
 
@@ -21,37 +21,37 @@ ms.locfileid: "88702867"
 
 您可以使用適用於 Android 的遠端桌面用戶端，直接從支援 Google Play 商店的 Android 裝置或 Chromebook 使用 Windows 應用程式和桌面。
 
-使用下列資訊立即開始。 如果您有任何問題，請務必查看[常見問題集](remote-desktop-client-faq.md)。
+本文將說明如何開始使用用戶端。 如果您有任何其他問題，請務必查看我們的[常見問題集](remote-desktop-client-faq.md)。
 
 > [!NOTE]
 > - 想知道 Android 用戶端的新版本嗎？ 查看 [Android 用戶端的新功能](android-whatsnew.md)。
-> - Android 用戶端支援執行 Android 4.1 和更新版本的裝置，以及具有 ChromeOS 53 和更新版本的 Chromebook。 請在[這裡](https://sites.google.com/a/chromium.org/dev/chromium-os/chrome-os-systems-supporting-android-apps)深入了解 Chrome 上的 Android 應用程式。
+> - Android 用戶端支援執行 Android 4.1 和更新版本的裝置，以及具有 ChromeOS 53 和更新版本的 Chromebook。 在[支援 Android 應用程式的 Chrome OS 系統](https://sites.google.com/a/chromium.org/dev/chromium-os/chrome-os-systems-supporting-android-apps)上，深入了解 Chrome 上的 Android 應用程式。
 
-## <a name="set-up-the-remote-desktop-client-for-android"></a>設定適用於 Android 的遠端桌面用戶端
-
-### <a name="download-the-remote-desktop-client-from-the-google-play-store"></a>從 Google Play 商店下載遠端桌面用戶端
+## <a name="download-the-remote-desktop-client"></a>下載遠端桌面用戶端
 
 以下說明如何在您的 Android 裝置上設定遠端桌面用戶端：
 
-1. 從 [Google Play](https://play.google.com/store/apps/details?id=com.microsoft.rdc.androidx) 下載 Microsoft 遠端桌面用戶端。
+1. 從 Google Play [下載 Microsoft 遠端桌面用戶端](https://play.google.com/store/apps/details?id=com.microsoft.rdc.androidx)。
 2. 從您的應用程式清單啟動 **RD 用戶端**。
-3. 新增[遠端桌面連線](#add-a-remote-desktop-connection)或[遠端資源](#add-remote-resources)。 您可以使用連線直接連線到 Windows 電腦和遠端資源，以存取由系統管理員發佈給您的應用程式和桌上型電腦。
+3. 新增[遠端桌面連線](#add-a-remote-desktop-connection)或[遠端資源](#add-remote-resources)。 遠端桌面連線可讓您直接連線到 Windows 電腦和遠端資源，以存取由系統管理員發佈給您的應用程式和桌上型電腦。
 
-> [!NOTE]
-> 如果您想要在新功能發行之前先進行測試，建議從 Google Play 商店下載我們的 [Microsoft 遠端桌面 Beta 版](https://play.google.com/store/apps/details?id=com.microsoft.rdc.android.beta)用戶端。
+## <a name="add-a-remote-desktop-connection"></a>新增遠端桌面連線
 
-### <a name="add-a-remote-desktop-connection"></a>新增遠端桌面連線
+現在您的裝置上已具有用戶端，您可以新增遠端桌面連線來存取您的遠端資源。
 
-若您尚未這麼做，請[將您的電腦設定成接受遠端連線](remote-desktop-allow-access.md)。
+新增連線之前，請[將您的電腦設定成接受遠端連線](remote-desktop-allow-access.md) (若您尚未這麼做)。
 
-建立遠端桌面連線：
+若要新增遠端桌面連線：
 
 1. 在 [連線中心] 內點選 **+** ，然後點選 [桌面]。
-2. 在 [電腦名稱] 中輸入遠端電腦的名稱。 這可以是 Windows 電腦名稱、網際網路網域名稱或 IP 位址。 您也可以將連接埠資訊附加到電腦名稱 (例如 MyDesktop:3389 或 10.0.0.1:3389)。 這是唯一的必要欄位。
+2. 在 [電腦名稱] 中輸入遠端電腦的名稱。 此名稱可以是 Windows 電腦名稱、網際網路網域名稱或 IP 位址。 您也可以將連接埠資訊附加到電腦名稱 (例如 MyDesktop:3389 或 10.0.0.1:3389)。 此欄位是唯一的必要欄位。
 3. 選取您用來存取遠端電腦的**使用者名稱**。
+
    - 選取 [每次都輸入]，讓用戶端在您每次連線到遠端電腦時都要求您提供認證。
-   - 選取 [新增使用者帳戶] 以儲存經常使用的帳戶，如此您就不需在每次登入時都輸入認證。 如需詳細資訊，請參閱[管理您的使用者帳戶](#manage-your-user-accounts)。
+   - 選取 [新增使用者帳戶] 以儲存經常使用的帳戶，如此您就不需在每次登入時都輸入認證。 若要深入了解使用者帳戶，請參閱[管理您的使用者帳戶](#manage-your-user-accounts)。
+
 4. 您也可以點選 [顯示其他選項] 來設定下列選擇性參數：
+
    - 在 [自訂名稱] 中，您可以為連線到的電腦輸入更容易記住的名稱。 如果您未指定自訂名稱，就會改為顯示電腦名稱。
    - **閘道**是您將用來從外部網路連線到電腦的遠端桌面閘道。 如需詳細資訊，請洽詢系統管理員。
    - **音效**會選取您的遠端工作階段用於音訊的裝置。 您可以選擇在本機裝置、遠端裝置上播放音效，或者完全不要播放音效。
@@ -59,6 +59,7 @@ ms.locfileid: "88702867"
    - **交換滑鼠按鈕**可切換右、左滑鼠手勢所傳送的命令。 這適用於左手的使用者。
    - **連線到系統管理員工作階段**可讓您連線到遠端電腦上的系統管理工作階段。
    - **重新導向本機儲存體**可啟用本機儲存體重新導向。 此設定預設為停用。
+
 5. 當您完成時，請點選 [儲存]。
 
 需要編輯這些設定嗎？ 點選桌面名稱旁邊的 [更多選項] 功能表 ( **...** )，然後點選 [編輯]。
@@ -66,20 +67,22 @@ ms.locfileid: "88702867"
 想要移除連線嗎？ 再次點選 [更多選項] 功能表 ( **...** )，然後點選 [移除]。
 
 >[!TIP]
-> 如果您收到有關密碼錯誤的錯誤 0xf07 (無法連線到遠端電腦，因為與使用者帳戶關聯的密碼已過期)，請變更密碼，然後再試一次。
+> 如果您收到名為 "0xf07" 的錯誤，其中內容類似於「無法連線到遠端電腦，因為與使用者帳戶關聯的密碼已過期」，請使用新密碼再試一次。
 
-### <a name="add-remote-resources"></a>新增遠端資源
+## <a name="add-remote-resources"></a>新增遠端資源
 
-遠端資源包括 RemoteApp 程式、工作階段型桌面，以及您的系統管理員所發佈的虛擬桌面。Android 用戶端支援從**遠端桌面服務**和 **Windows 虛擬桌面**部署發佈的資源。 若要新增遠端資源：
+遠端資源包括 RemoteApp 程式、工作階段型桌面，以及您的系統管理員所發佈的虛擬桌面。Android 用戶端支援從**遠端桌面服務**和 **Windows 虛擬桌面**部署發佈的資源。
+
+若要新增遠端資源：
 
 1. 在 [連線中心] 上，點選 **+** ，然後點選 [遠端資源摘要]。
-2. 輸入**摘要 URL**。 這可以是 URL 或電子郵件地址：
+2. 輸入**摘要 URL**。 此 URL 可以是 URL 或電子郵件地址：
    - 此 **URL** 是由您的系統管理員提供給您的 RD Web 存取伺服器。如果從 Windows 虛擬桌面存取資源，則可以視您所用的版本使用下列其中一個 URL：
      - 若正在使用 Windows 虛擬桌面 (傳統)，請使用：`https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`。
      - 若正在使用 Windows 虛擬桌面，請使用：`https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`。
-   - 如果您打算使用**電子郵件**，請在此欄位中輸入您的電子郵件地址。 這會指示用戶端搜尋與您電子郵件地址相關聯的 RD Web 存取伺服器 (如果系統管理員已加以設定)。
+   - 如果您打算使用**電子郵件**，請在此欄位中輸入您的電子郵件地址。 填寫此欄位可指示用戶端搜尋與您電子郵件地址相關聯的 RD Web 存取伺服器 (如果系統管理員已加以設定)。
 3. 點選 [下一步]。
-4. 出現提示時，請提供您的登入資訊。 提示內容可能會根據部署而有所不同，可能包括：
+4. 出現提示時，請提供您的登入資訊。 您應該使用的認證會根據部署而有所不同，可能包括：
    - 有權存取資源的**使用者名稱**。
    - 與使用者名稱相關聯的**密碼**。
    - **其他因素**，這是根據系統管理員所設定的驗證方式而提示的內容。
@@ -87,15 +90,19 @@ ms.locfileid: "88702867"
 
 遠端資源將會顯示於連線中心。
 
+## <a name="remove-remote-resources"></a>移除遠端資源
+
 若要移除遠端資源：
 
 1. 在 [連線中心] 內，點選遠端資源旁邊的溢位功能表 ( **...** )。
 2. 點選 [移除]。
-3. 確認移除。
+3. 確認您已移除資源。
 
-### <a name="use-a-widget-to-pin-a-saved-desktop-to-your-home-screen"></a>使用 Widget 將已儲存的桌面釘選到主畫面
+## <a name="pin-a-connection-to-your-home-screen"></a>將連線釘選到主畫面
 
-遠端桌面用戶端支援使用 Android 的 Widget 功能，將連線釘選到主畫面。 您新增 Widget 的方式取決於您所使用的 Android 裝置與其作業系統的類型。 以下是新增 Widget 最常見的方式：
+遠端桌面用戶端支援使用 Android 的 Widget 功能，將連線釘選到主畫面。 Widget 新增程序取決於您所使用的 Android 裝置類型和 Android OS 版本。
+
+若要新增 Widget：
 
 1. 點選 [應用程式] 以啟動 [應用程式] 功能表。
 2. 點選 [Widget]。
@@ -144,7 +151,7 @@ ms.locfileid: "88702867"
 1. 在 [連線中心] 內，點選 [設定]，然後點選 [閘道]。
 2. 點選 **+** 來新增閘道。
 3. 輸入下列資訊：
-   - 在 [伺服器名稱] 中輸入您想要用來做為閘道的電腦名稱稱。 這可以是 Windows 電腦名稱、網際網路網域名稱或 IP 位址。 您也可以將連接埠資訊新增至伺服器名稱 (例如：RDGateway:443 或 10.0.0.1:443)。
+   - 在 [伺服器名稱] 中輸入您想要用來做為閘道的電腦名稱稱。 此名稱可以是 Windows 電腦名稱、網際網路網域名稱或 IP 位址。 您也可以將連接埠資訊新增至伺服器名稱 (例如：RDGateway:443 或 10.0.0.1:443)。
    - 選取您要用來存取 RD 閘道的 [使用者帳戶]。
      - 選取 [使用桌面使用者帳戶]，以使用您為遠端電腦指定的相同認證。
      - 選取 [新增使用者帳戶] 以儲存經常使用的帳戶，如此您就不需在每次登入時都輸入認證。 如需詳細資訊，請參閱[管理您的使用者帳戶](#manage-your-user-accounts)。
@@ -174,16 +181,16 @@ ms.locfileid: "88702867"
 2. 點選並按住清單中的使用者帳戶以選取它。 您可以同時選取多個使用者。
 3. 點選垃圾筒以刪除選取的使用者。
 
-## <a name="navigate-the-remote-desktop-session"></a>瀏覽遠端桌面工作階段
+## <a name="start-a-remote-desktop-connection"></a>啟動遠端桌面連線
 
-以下簡介如何開啟和瀏覽您的遠端桌面工作階段。
+設定好遠端桌面 Android 用戶端後，接著讓我們來了解如何啟動遠端桌面工作階段。
 
-### <a name="start-a-remote-desktop-connection"></a>啟動遠端桌面連線
+若要啟動工作階段：
 
 1. 點選**遠端桌面連線的名稱**以啟動工作階段。
 2. 如果系統要求您驗證遠端桌面的憑證，請點選 [連線]。 您也可以選取 [不要再詢問我是否要連線到這部電腦] 以一律接受憑證 (預設)。
 
-### <a name="connection-bar"></a>連線列
+## <a name="use-the-connection-bar"></a>使用連線列
 
 連線列可讓您存取其他瀏覽控制項。 根據預設，連線列位於畫面頂端的中間。 向左或右拖曳該列以移動它。
 
@@ -194,7 +201,7 @@ ms.locfileid: "88702867"
 - **其他選項**：點選 [其他選項] 圖示以顯示工作階段選取列和命令列。
 - **鍵盤**：點選 [鍵盤] 圖示以顯示或隱藏鍵盤。 移動瀏覽控制項會在鍵盤顯示時自動顯示。
 
-### <a name="session-selection-bar"></a>工作階段選取列
+## <a name="use-the-session-selection-bar"></a>使用工作階段選取列
 
 您可以同時向不同的電腦開啟多個連線。 點選連線列可顯示畫面左側的工作階段選取列。 工作階段選取列可讓您檢視已開啟的連線，並在兩者之間切換。
 
@@ -204,13 +211,13 @@ ms.locfileid: "88702867"
 
 若要中斷工作階段的連線，請點選 [工作階段] 圖格左側的 **X**。
 
-### <a name="command-bar"></a>命令列
+## <a name="use-the-command-bar"></a>使用命令列
 
-點選連線列以顯示畫面右側的命令列。 在命令列上，您可以在滑鼠模式之間切換 (直接觸控和滑鼠指標)，或點選 [首頁] 按鈕以返回 [連線中心]。 您也可以點選 [上一步] 按鈕返回 [連線中心]。 返回 [連線中心] 不會中斷作用中的工作階段連線。
+點選連線列可在畫面右側顯示命令列。 在命令列上，您可以在滑鼠模式之間切換 (直接觸控和滑鼠指標)，或點選 [首頁] 按鈕以返回 [連線中心]。 您也可以點選 [上一步] 按鈕返回 [連線中心]。 返回 [連線中心] 不會中斷作用中的工作階段連線。
 
-### <a name="use-touch-gestures-and-mouse-modes-in-a-remote-session"></a>在遠端工作階段中使用輕觸手勢和滑鼠模式
+## <a name="touch-gestures-and-mouse-modes"></a>觸控手勢和滑鼠模式
 
-用戶端會使用標準的輕觸手勢。 您也可以使用輕觸手勢來複寫遠端桌面上的滑鼠動作。 下表說明在每個滑鼠模式中，哪些手勢符合哪些滑鼠動作。
+Android 版遠端桌面用戶端會使用標準的觸控手勢。 您也可以使用輕觸手勢來複寫遠端桌面上的滑鼠動作。 下表說明在每個滑鼠模式中，哪些手勢符合哪些滑鼠動作。
 
 > [!NOTE]
 > 在 Windows 8 或更新版本中，直接觸控模式支援原生的觸控手勢。
@@ -228,8 +235,6 @@ ms.locfileid: "88702867"
 
 ## <a name="join-the-beta-channel"></a>加入搶鮮版 (Beta) 通道
 
-如果您想要比其他人更早使用最新功能，或想要在發行新版本之前協助找出問題，則您適合使用 Beta 頻道！ 搶鮮版 (Beta) 通道也是企業系統管理員針對其環境中的使用者，驗證新版 Android 用戶端的絕佳方法。
+如果您願意協助我們測試新組建，或在新版更新發行之前找出問題，請加入我們的搶鮮版 (Beta) 通道。 企業系統管理員可以使用搶鮮版 (Beta) 通道來為使用者驗證 Android 用戶端的新版本。
 
-若要加入搶鮮版 (Beta)，只需同意存取預覽版並下載用戶端即可。 您會直接透過 Google Play 商店收到預覽版。
-
-[加入搶鮮版 (Beta)](https://play.google.com/apps/testing/com.microsoft.rdc.androidx)
+若要加入搶鮮版 (Beta)，請[下載我們的搶鮮版 (Beta) 用戶端](https://play.google.com/apps/testing/com.microsoft.rdc.androidx)，然後同意存取預覽版本並下載用戶端。 您會直接透過 Google Play 商店收到預覽版。
