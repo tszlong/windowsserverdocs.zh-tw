@@ -5,14 +5,14 @@ ms.author: cosdar
 manager: dongill
 ms.topic: article
 author: cosmosdarwin
-ms.date: 07/17/2019
+ms.date: 09/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 315b645cf3c2adc60bd8eeed0406e1226b2d2128
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 502b04676fcb9a9c7342e701e71be473890f9668
+ms.sourcegitcommit: 8a826e992f28a70e75137f876a5d5e61238a24e4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87968845"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365351"
 ---
 # <a name="understanding-the-cache-in-storage-spaces-direct"></a>了解儲存空間直接存取中的快取
 
@@ -28,36 +28,16 @@ ms.locfileid: "87968845"
 
 ## <a name="drive-types-and-deployment-options"></a>磁碟機類型及部署選項
 
-儲存空間直接存取目前適用於三種類型的存放裝置：
+儲存空間直接存取目前適用于四種類型的存放裝置：
 
-<table>
-    <tr style="border: 0;">
-        <td style="padding: 10px; border: 0; width:70px">
-            <img src="media/understand-the-cache/NVMe-100px.png" alt="Image of NVMe (Non-Volatile Memory Express)" >
-        </td>
-        <td style="padding: 10px; border: 0;" valign="middle">
-            NVMe (非揮發性記憶體高速規格)
-        </td>
-    </tr>
-    <tr style="border: 0;">
-        <td style="padding: 10px; border: 0; width:70px">
-            <img src="media/understand-the-cache/SSD-100px.png" alt="Image of SSD" >
-        </td>
-        <td style="padding: 10px; border: 0;" valign="middle">
-            SATA/SAS SSD (固態硬碟)
-        </td>
-    </tr>
-    <tr style="border: 0;">
-        <td style="padding: 10px; border: 0; width:70px">
-            <img src="media/understand-the-cache/HDD-100px.png"alt="Image of HDD" >
-        </td>
-        <td style="padding: 10px; border: 0;" valign="middle">
-            HDD (硬碟)
-        </td>
-    </tr>
-</table>
+| 磁片磁碟機類型 | 說明 |
+|----------------------|--------------------------|
+|![PMem](media/understand-the-cache/pmem-100px.png)|**PMem** 指的是持續性記憶體，這是一種新的低延遲、高效能儲存體。|
+|![NVMe](media/understand-the-cache/NVMe-100px.png)|**NVMe** (Non-Volatile Memory Express) 指的是直接位於 PCIe 匯流排的固態硬碟。 常見的板型規格為 2.5" U.2、PCIe Add-In-Card (AIC) 及 M.2。 NVMe 提供較高的 IOPS 和 IO 輸送量，其延遲低於我們目前支援的任何其他類型磁片磁碟機，但 PMem 除外。|
+|![SSD](media/understand-the-cache/SSD-100px.png)|**SSD** 是指固態硬碟，可透過傳統的 SATA 或 SAS 連接。|
+|![HDD](media/understand-the-cache/HDD-100px.png)|**HDD** 是指可提供大量儲存容量的旋轉磁片磁碟機。|
 
-有六種組合，且分為「全快閃」及「混合式」兩類。
+這些可以透過各種不同的方式來結合，我們會將其分成兩個類別：「全快閃」和「混合式」。
 
 ### <a name="all-flash-deployment-possibilities"></a>全快閃部署可能性
 
@@ -115,7 +95,7 @@ ms.locfileid: "87968845"
 
 當三種類型的磁碟機都齊全時，NVMe 磁碟機可以快取 SSD 和 HDD。 此行為如前文所述：SSD 只快取寫入，HDD 則讀取和寫入都快取。 快取 HDD 的負荷會平均分散到快取磁碟。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本表摘要說明哪些磁碟機用於快取、哪些用於容量，以及各種部署可能出現的快取行為。
 
@@ -169,13 +149,13 @@ Windows 軟體定義的儲存堆疊中還有幾種無關聯的快取。 例如�
 
 使用儲存空間直接存取，不必修改儲存空間回寫式快取的預設行為。 例如，**New-Volume** Cmdlet 不該使用 **-WriteCacheSize** 參數。
 
-您可以選擇是否要使用 CSV 快取，由您作主。 儲存空間直接存取預設予以關閉，但與本主題中所有提及的新快取都不衝突。 在某些情況下，它可提供極佳的效能表現。 如需詳細資訊，請參閱[如何啟用 CSV 快取](../../failover-clustering/failover-cluster-csvs.md#enable-the-csv-cache-for-read-intensive-workloads-optional) (英文)。
+您可以選擇是否要使用 CSV 快取，由您作主。 它不會與本主題中所述的快取發生衝突。 在某些情況下，它可提供極佳的效能表現。 如需詳細資訊，請參閱[如何啟用 CSV 快取](../../failover-clustering/failover-cluster-csvs.md#enable-the-csv-cache-for-read-intensive-workloads-optional) (英文)。
 
 ## <a name="manual-configuration"></a>手動設定
 
-大部分的部署都不需要手動設定。 如果您需要它，請參閱下列各節。
+大部分的部署都不需要手動設定。 如果您需要，請參閱下列各節。
 
-如果您需要在安裝之後對快取裝置模型進行變更，請編輯健全狀況服務的支援元件檔，如[健全狀況服務總覽](../../failover-clustering/health-service-overview.md#supported-components-document)中所述。
+如果您需要在安裝之後變更快取裝置模型，請編輯健全狀況服務的支援元件檔，如 [健全狀況服務總覽](../../failover-clustering/health-service-overview.md#supported-components-document)所述。
 
 ### <a name="specify-cache-drive-model"></a>指定快取磁碟機模型
 
@@ -203,7 +183,7 @@ Count Name
    16 CONTOSO NVME-1520
 ```
 
-然後輸入下列命令，並指定快取裝置型號：
+然後輸入下列命令，並指定快取裝置模型：
 
 ```PowerShell
 Enable-ClusterS2D -CacheDeviceModel "FABRIKAM NVME-1710"
@@ -221,9 +201,9 @@ Enable-ClusterS2D -CacheDeviceModel "FABRIKAM NVME-1710"
 
 有可能覆寫快取的預設行為。 例如，即使在全快間部署中仍可將它設為快取讀取。 除非您確定預設不適合您的工作負載，否則不鼓勵修改行為。
 
-若要覆寫此行為，請使用**ClusterStorageSpacesDirect** Cmdlet 和其 **-CacheModeSSD**和 **-CacheModeHDD**參數。 **CacheModeSSD** 參數設定快取固態硬碟時的快取行為。 **CacheModeHDD** 參數設定快取硬碟時的快取行為。 啟用儲存空間直接存取後隨時可執行此作業。
+若要覆寫此行為，請使用 **ClusterStorageSpacesDirect** Cmdlet 及其 **-CacheModeSSD** 和 **-CacheModeHDD** 參數。 **CacheModeSSD** 參數設定快取固態硬碟時的快取行為。 **CacheModeHDD** 參數設定快取硬碟時的快取行為。 啟用儲存空間直接存取後隨時可執行此作業。
 
-您可以使用**ClusterStorageSpacesDirect**來確認是否已設定此行為。
+您可以使用 **ClusterStorageSpacesDirect** 來確認是否已設定行為。
 
 #### <a name="example"></a>範例
 
@@ -269,7 +249,7 @@ CacheModeSSD : ReadWrite
 
 規則並無標準，但若讀取有太多快取遺漏，就需要縮減，而您應該考慮增加快取磁碟機擴張快取。 您可以隨時獨立新增快取磁碟機或容量磁碟機。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [選擇磁碟機及復原類型](choosing-drives.md)
 - [容錯與儲存空間效率](storage-spaces-fault-tolerance.md)

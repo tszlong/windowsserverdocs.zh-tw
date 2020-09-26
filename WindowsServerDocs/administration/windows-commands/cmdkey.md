@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: fb96624ee45e2b526ed2092c0593451d0492bf74
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: bc4f7bbb711b40f61042a2bfbb88884529cfbb1d
+ms.sourcegitcommit: e164aeffc01069b8f1f3248bf106fcdb7f64f894
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89629539"
+ms.lasthandoff: 09/26/2020
+ms.locfileid: "91388062"
 ---
 # <a name="cmdkey"></a>cmdkey
 
@@ -28,14 +28,14 @@ cmdkey [{/add:<targetname>|/generic:<targetname>}] {/smartcard | /user:<username
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 | ---------- | ----------- |
 | /add`<targetname>` | 將使用者名稱和密碼新增至清單。<p>需要的參數 `<targetname>` 識別此專案將與之建立關聯的電腦或功能變數名稱。 |
 | /一般`<targetname>` | 將一般認證新增至清單。<p>需要的參數 `<targetname>` 識別此專案將與之建立關聯的電腦或功能變數名稱。 |
 | /smartcard | 從智慧卡抓取認證。 如果使用此選項時，如果在系統上找到一個以上的智慧卡， **cmdkey** 會顯示所有可用智慧卡的相關資訊，然後提示使用者指定要使用哪一個。 |
 | /user`<username>` | 指定要與此專案一起儲存的使用者或帳戶名稱。 如果 `<username>` 未提供，則會要求它。 |
 |階段`<password>` | 指定要與此專案一起儲存的密碼。 如果 `<password>` 未提供，則會要求它。 儲存之後不會顯示密碼。 |
-| /delete{:`<targetname>` | ras | 從清單中刪除使用者名稱和密碼。 如果 `<targetname>` 指定了，就會刪除該專案。 如果 `/ras` 指定了，就會刪除儲存的遠端存取專案。 |
+| /delete{:`<targetname> | /ras}` | 從清單中刪除使用者名稱和密碼。 如果 `<targetname>` 指定了，就會刪除該專案。 如果 `/ras` 指定了，就會刪除儲存的遠端存取專案。 |
 | /list`<targetname>` | 顯示已儲存的使用者名稱和認證清單。 如果 `<targetname>` 未指定，則會列出所有儲存的使用者名稱和認證。 |
 | /? | 在命令提示字元顯示說明。 |
 
@@ -71,6 +71,6 @@ cmdkey /delete /ras
 cmdkey /delete:server01
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

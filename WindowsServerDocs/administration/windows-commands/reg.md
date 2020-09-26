@@ -1,5 +1,5 @@
 ---
-title: reg
+title: reg 命令
 description: Reg 命令的參考文章，可針對登錄子機碼資訊和登錄專案中的值執行作業。
 ms.topic: reference
 ms.assetid: c97496b2-d1ff-4887-b5d2-6e1524be465a
@@ -7,14 +7,14 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: a39fc22c2fe845d8cbbb64cf751455316bdc8747
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 619f6ae1d03197754145d0daad029deb817efffe
+ms.sourcegitcommit: e164aeffc01069b8f1f3248bf106fcdb7f64f894
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89639497"
+ms.lasthandoff: 09/26/2020
+ms.locfileid: "91388834"
 ---
-# <a name="reg"></a>reg
+# <a name="reg-commands"></a>reg 命令
 
 針對登錄子機碼資訊和登錄專案中的值執行作業。
 
@@ -41,7 +41,7 @@ reg unload
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | 說明 |
 |--|--|
 | [reg add](reg-add.md) | 將新的子機碼或專案新增至登錄。 |
 | [reg compare](reg-compare.md) | 比較指定的登錄子機碼或專案。 |
@@ -55,6 +55,6 @@ reg unload
 | [reg save](reg-save.md) | 將登錄的指定子機碼、專案和值的複本儲存在指定的檔案中。 |
 | [reg unload](reg-unload.md) | 移除使用 **reg 載入** 作業載入的登錄區段。 |
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
