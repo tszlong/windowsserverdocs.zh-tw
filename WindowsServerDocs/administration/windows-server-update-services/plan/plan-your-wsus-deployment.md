@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 05/24/2018
-ms.openlocfilehash: 1d3638b7a05c406293035c7f0a0e8854ed2ecee9
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: cac6c2af4f0cf900abcfea82f80b07e627c7e1e4
+ms.sourcegitcommit: e164aeffc01069b8f1f3248bf106fcdb7f64f894
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766801"
+ms.lasthandoff: 09/26/2020
+ms.locfileid: "91388422"
 ---
 # <a name="plan-your-wsus-deployment"></a>規劃 WSUS 部署
 
@@ -172,10 +172,10 @@ WSUS 支援下列 SQL Server 版本：
 您可以自發模式 (分散式管理) 或複寫模式 (集中式管理) 連線 WSUS 伺服器。 您不一定只能使用一種模式來部署伺服器階層：您可以部署同時使用自發和複寫 WSUS 伺服器的 WSUS 解決方案。
 
 #### <a name="autonomous-mode"></a>自發模式
-自發模式也稱為分散式管理，是 WSUS 的預設安裝選項。 在自發模式中，上游 WSUS 伺服器會在同步處理期間與下游伺服器共用更新。 下游 WSUS 伺服器是個別管理的，而且不會從上游伺服器收到更新核准狀態或電腦群組資訊。 透過使用分散式管理模型，每個 WSUS 伺服器系統管理員可以選取更新語言、建立電腦群組、指派電腦給群組、測試和核准更新，以及確認已在適當的電腦群組安裝正確的更新。 下圖說明如何在分公司環境部署自發 WSUS 伺服器：
+自發模式也稱為分散式管理，是 WSUS 的預設安裝選項。 在自發模式中，上游 WSUS 伺服器會在同步處理期間與下游伺服器共用更新。 下游 WSUS 伺服器是個別管理的，而且不會從上游伺服器收到更新核准狀態或電腦群組資訊。 透過使用分散式管理模型，每個 WSUS 伺服器系統管理員可以選取更新語言、建立電腦群組、指派電腦給群組、測試和核准更新，以及確認已在適當的電腦群組安裝正確的更新。
 
 #### <a name="replica-mode"></a>複寫模式
-複寫模式也稱為集中式管理，運作方式是由上游 WSUS 伺服器與下游伺服器共用更新、核准狀態以及電腦群組。 複本伺服器會繼承更新核准，而且不會與上游 WSUS 伺服器分開管理。 下圖說明如何在分公司環境中部署複寫 WSUS 伺服器。
+複寫模式也稱為集中式管理，運作方式是由上游 WSUS 伺服器與下游伺服器共用更新、核准狀態以及電腦群組。 複本伺服器會繼承更新核准，而且不會與上游 WSUS 伺服器分開管理。
 
 > [!NOTE]
 > 如果您設定讓數個複本伺服器連線單一上游 WSUS 伺服器，請不要在每個複本伺服器上排定相同的同步處理時間。 這種做法可以避免突然大量使用頻寬。
