@@ -1,17 +1,16 @@
 ---
 title: 轉換在儲存體遷移服務中的運作方式
 description: 儲存體遷移服務中切換階段的摘要和詳細資料
-author: t-chrche
-ms.author: t-chrche
-manager: nedpyle
+author: nedpyle
+ms.author: nedpyle
 ms.date: 08/31/2020
 ms.topic: article
-ms.openlocfilehash: 1e886c505435976b6495e0460705821086781a62
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 2f323b03052f0a920ff064860bf5cbf4c6a2f01e
+ms.sourcegitcommit: 014e730c7fb19ed06393d144a446e4248fc35444
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766901"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91495645"
 ---
 # <a name="how-cutover-works-in-storage-migration-service"></a>轉換在儲存體遷移服務中的運作方式
 
@@ -134,7 +133,7 @@ ms.locfileid: "90766901"
 
 * [__切換停止回應來源電腦上的「38% 對應網路介面 ...」__](./known-issues.md#cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer)
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [儲存體遷移服務總覽](overview.md)
 - [使用儲存體遷移服務遷移檔案伺服器](migrate-data.md)
