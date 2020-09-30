@@ -6,12 +6,12 @@ author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
 ms.date: 06/07/2019
-ms.openlocfilehash: b4d7d039c775b85321d168f8de7415de6b92e784
-ms.sourcegitcommit: 97a65d8f52514848963e8917021bd9a1f6ee3b19
+ms.openlocfilehash: c062531e96e12ca73e001018ac3f640e27fdad99
+ms.sourcegitcommit: f89639d3861c61620275c69f31f4b02fd48327ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89287820"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91517554"
 ---
 # <a name="windows-admin-center-known-issues"></a>Windows Admin Center 已知問題
 
@@ -19,7 +19,7 @@ ms.locfileid: "89287820"
 
 如果您發生本頁面未述及的問題，請[讓我們知道](https://aka.ms/WACfeedback)。
 
-## <a name="installer"></a>Installer
+## <a name="installer"></a>安裝程式
 
 - 使用您自己的憑證安裝 Windows Admin Center 時，要留意的是，如果您從認證管理員 MMC 工具複製憑證指紋，[它會在開頭包含無效的字元。](https://support.microsoft.com/help/2023835/certificate-thumbprint-displayed-in-mmc-certificate-snap-in-has-extra) 此情況的因應措施是，先鍵入憑證指紋的第一個字元，再複製/貼上其餘部分。
 
@@ -57,7 +57,7 @@ ms.locfileid: "89287820"
 
 ### <a name="google-chrome"></a>Google Chrome
 
-- 在70版之前的版 (發行之前，2018) Chrome 有關于 websocket 通訊協定和 NTLM 驗證的 [錯誤](https://bugs.chromium.org/p/chromium/issues/detail?id=423609) 。 這會影響下列工具：事件、PowerShell、遠端桌面。
+- 在70版之前的版 (發行之前，2018) Chrome 有關于 Websocket 通訊協定和 NTLM 驗證的 [錯誤](https://bugs.chromium.org/p/chromium/issues/detail?id=423609) 。 這會影響下列工具：事件、PowerShell、遠端桌面。
 
 - Chrome 可能會快顯多個認證提示，特別是在**工作群組** (非網域) 環境中加入連線體驗時。
 
@@ -195,7 +195,7 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 
   - 若要啟用 Windows 10 用戶端管理，您必須從提升權限的 PowerShell 命令提示字元發出命令 ```Enable-PSRemoting```。
 
-  - 您可能還需要使用 ```Set-NetFirewallRule -Name WINRM-HTTP-In-TCP -RemoteAddress Any``` 更新防火牆，以允許來自外部本機子網路的連線。 如需更多嚴格網路案例，請參閱[此文件](/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-5.1)。
+  - 您可能還需要使用 ```Set-NetFirewallRule -Name WINRM-HTTP-In-TCP -RemoteAddress Any``` 更新防火牆，以允許來自外部本機子網路的連線。 如需更多嚴格網路案例，請參閱[此文件](/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-5.1&preserve-view=true)。
 
 ## <a name="cluster-deployment"></a>叢集部署
 
@@ -244,7 +244,7 @@ Disable-WsmanCredSSP -Role Server
 Test-ComputerSecureChannel -Verbose -Repair -Credential <account name>
 ```
 
-3. 使用命令重設群組原則傳播資料
+3. 使用命令重設群組原則傳播的資料
 ```Command Line
 gpupdate /force
 ```
@@ -288,6 +288,17 @@ Windows Admin Center 2007 版中的叢集部署嚮導不提供 RDMA 設定的支
 - 有些命令 (例如 **Drives - Update firmware**、**Servers - Remove** 和 **Volumes - Open**) 已停用，而且目前不受支援。
 
 ## <a name="azure-services"></a>Azure 服務
+
+### <a name="azure-login-and-gateway-registration"></a>Azure 登入和閘道註冊
+在2009版中，您可能會遇到登入 Azure 或向 Azure 註冊 Windows Admin Center 閘道的問題。 下列指導方針可協助您減輕這些問題： 
+
+* 在使用 Windows Admin Center 內的任何 Azure 功能（包括閘道註冊）之前，請確定您已在不同的索引標籤或視窗中登入您的 Azure 帳戶。 建議您透過 [Azure 入口網站](https://portal.azure.com/)登入。  
+
+* 如果您在閘道註冊期間成功登入 Azure，但在 Windows Admin Center 設定的 [ **Azure** ] 頁面上看不到 [視覺確認]，請嘗試流覽至 [設定] 中的其他頁面，然後再流覽回 **Azure** 頁面。 
+
+* Azure 登入快顯可能會在此組建中更頻繁地出現，可能需要系統管理員更頻繁地授與 Windows Admin Center 許可權。 
+
+* 如果您已在 Azure 入口網站中提供 Windows Admin Center 的系統管理員核准，而您仍看到指出「需要系統管理員核准」的錯誤訊息，請嘗試使用其中一個圍繞 Windows Admin Center 的橫幅來登入 Azure，而不是在 [ **設定** ] 頁面中。 
 
 ### <a name="azure-file-sync-permissions"></a>Azure 檔案同步許可權
 

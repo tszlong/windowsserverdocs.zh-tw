@@ -6,12 +6,12 @@ ms.author: nedpyle
 manager: tiaascs
 ms.date: 07/29/2020
 ms.topic: article
-ms.openlocfilehash: 0c3e52c11f7771856608b86ddd778ef51c4c8516
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 6c3ca3a44665bab08c58853d569823f88c908f35
+ms.sourcegitcommit: f89639d3861c61620275c69f31f4b02fd48327ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766911"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91517514"
 ---
 # <a name="storage-migration-service-known-issues"></a>儲存體遷移服務的已知問題
 
@@ -636,6 +636,17 @@ Guidance: Check the detailed error and make sure the inventory requirements are 
 ```
 
 此問題是因為儲存體遷移服務中的程式碼缺失所造成。 唯一的因應措施是將電腦重新命名為具有與 NetBIOS 名稱相同的名稱，然後使用 [NETDOM COMPUTERNAME/add](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc835082(v=ws.11)) 來新增替代的電腦名稱稱，其中包含在啟動清查之前所使用的較長名稱。 儲存體遷移服務支援遷移替代的電腦名稱稱。
+
+## <a name="storage-migration-service-inventory-fails-with-a-parameter-cannot-be-found-that-matches-parameter-name-includedfsn"></a>儲存體遷移服務清查失敗，並出現「找不到符合參數名稱 ' IncludeDFSN ' 的參數」 
+
+使用2009版的 Windows Admin Center 來管理 Windows Server 2019 協調器時，當您嘗試清查來源電腦時，會收到下列錯誤：
+
+```
+Remote exception : a parameter cannot be found that matches parameter name 'IncludeDFSN'" 
+```
+
+若要解決此問題，請在 Windows Admin Center 中將儲存體遷移服務延伸模組更新為至少版本1.113.0。 更新應該會自動出現在摘要中，並提示您進行安裝。
+
 
 ## <a name="see-also"></a>另請參閱
 

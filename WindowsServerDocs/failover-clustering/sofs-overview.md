@@ -1,24 +1,24 @@
 ---
 title: 用於應用程式資料的向外延展檔案伺服器概觀
-description: 介紹 Windows Server 201 R2 和 Windows Server 2012 的向外延展檔案伺服器功能。
+description: 向外延展檔案伺服器的設計目的是提供可供檔案型伺服器應用程式儲存區持續使用的向外延展檔案共用。 向外延展檔案共用提供從相同叢集的多個節點共用相同資料夾的功能。 此案例主要說明如何規劃和部署向外延展檔案伺服器。
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 manager: lizross
-ms.date: 04/26/2018
+ms.date: 09/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 71c719bb4c148a0ff1b287011086ba75e5a3fc69
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 5aca126d036dffc9b7463edd07e70a3dd02b7dbd
+ms.sourcegitcommit: f89639d3861c61620275c69f31f4b02fd48327ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766571"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91517484"
 ---
 # <a name="scale-out-file-server-for-application-data-overview"></a>用於應用程式資料的向外延展檔案伺服器概觀
 
->適用于： Windows Server 2012 R2、Windows Server 2012
+>適用於：Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-「向外延展檔案伺服器」功能是為了提供向外延展檔案共用而設計的，可供檔案型伺服器應用程式存放裝置持續使用。 向外延展檔案共用提供從相同叢集的多個節點共用相同資料夾的功能。 此案例主要說明如何規劃和部署向外延展檔案伺服器。
+向外延展檔案伺服器的設計目的是提供可供檔案型伺服器應用程式儲存區持續使用的向外延展檔案共用。 向外延展檔案共用提供從相同叢集的多個節點共用相同資料夾的功能。 此案例主要說明如何規劃和部署向外延展檔案伺服器。
 
 您可以使用下列其中一種方法來部署和設定叢集檔案伺服器：
 
@@ -64,7 +64,7 @@ ms.locfileid: "90766571"
 <thead>
 <tr class="header">
 <th>技術範圍</th>
-<th>功能</th>
+<th>特徵</th>
 <th>檔案伺服器叢集的一般用途</th>
 <th>向外延展檔案伺服器</th>
 </tr>
@@ -72,7 +72,7 @@ ms.locfileid: "90766571"
 <tbody>
 <tr class="odd">
 <td>SMB</td>
-<td>SMB 持續可用性</td>
+<td>SMB 持續可用性 ( * ) </td>
 <td>是</td>
 <td>是</td>
 </tr>
@@ -223,7 +223,10 @@ ms.locfileid: "90766571"
 </tbody>
 </table>
 
-\* 資料夾重新導向、離線檔案、漫遊使用者設定檔或主目錄會產生大量寫入，在使用持續可用的檔案共用時，必須立即將大量寫入寫入磁片 (，而不需要緩衝處理) ，相較于一般用途的檔案共用，效能會降低。 持續可用的檔案共用也與檔案伺服器資源管理員和執行 Windows XP 的電腦不相容。 此外，離線檔案可能會在使用者失去共用的存取權之後，在3-6 分鐘內轉換為離線模式，這樣可能會使尚未使用離線檔案的永遠離線模式使用者感到不快。
+\*指標在 Windows Server 2019 中， <a href="https://docs.microsoft.com/windows-server/storage/storage-spaces/cluster-sets#scale-out-file-server-and-cluster-sets">在超融合式設定中 (CA) 的 SMB 回送持續可用性</a> 。 
+
+>[!NOTE]
+>資料夾重新導向、離線檔案、漫遊使用者設定檔或主目錄會產生大量寫入，在使用持續可用的檔案共用時，必須立即將大量寫入寫入磁片 (，而不需要緩衝處理) ，相較于一般用途的檔案共用，效能會降低。 持續可用的檔案共用也與檔案伺服器資源管理員和執行 Windows XP 的電腦不相容。 此外，離線檔案可能會在使用者失去共用的存取權之後，在3-6 分鐘內轉換為離線模式，這樣可能會使尚未使用離線檔案的永遠離線模式使用者感到不快。
 
 ## <a name="practical-applications"></a>實際應用
 
@@ -248,7 +251,7 @@ ms.locfileid: "90766571"
 <table>
 <thead>
 <tr class="header">
-<th>功能</th>
+<th>特徵</th>
 <th>如何支援本案例</th>
 </tr>
 </thead>
@@ -266,7 +269,7 @@ ms.locfileid: "90766571"
 </tbody>
 </table>
 
-## <a name="more-information"></a>更多資訊
+## <a name="more-information"></a>詳細資訊
 
 - [軟體定義的儲存體設計考量指南](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/mt243829(v%3dws.11)>)
 - [Increasing Server, Storage, and Network Availability](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831437(v%3dws.11)>)

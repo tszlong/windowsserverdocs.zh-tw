@@ -5,13 +5,13 @@ author: Deland-Han
 manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
-ms.date: 12/25/2019
-ms.openlocfilehash: f96302242eca58d589586fa44e6e7cd04ef98cc1
-ms.sourcegitcommit: 0b3d6661c44aa1a697087e644437279142726d84
+ms.date: 09/29/2020
+ms.openlocfilehash: 9008a3381ead368afb627bcfdcd8084a389afabb
+ms.sourcegitcommit: f89639d3861c61620275c69f31f4b02fd48327ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90083639"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91517544"
 ---
 # <a name="how-to-detect-enable-and-disable-smbv1-smbv2-and-smbv3-in-windows"></a>如何在 Windows 中偵測、啟用和停用 SMBv1、Smbv2 弱點和 SMBv3
 
@@ -425,6 +425,30 @@ Default: 1 = Enabled (No registry key is created)
    > 當您使用群組原則管理主控台時，不需要使用引號或逗號。 只需在個別行上輸入每個專案。
 
 6. 重新開機目標系統，以完成停用 SMB v1。
+
+### <a name="auditing-smbv1-usage"></a>審核 SMBv1 使用方式
+
+若要判斷哪些用戶端嘗試使用 SMBv1 連接到 SMB 伺服器，您可以在 Windows Server 2016、Windows 10 和 Windows Server 2019 上啟用審核。 您也可以在 Windows 7 和 Windows Server 2008 R2 上進行審核，如果他們安裝了5月2018日更新，以及在 Windows 8、Windows 8.1、Windows Server 2012 和 Windows Server 2012 R2 上，如果他們安裝了7月的2017每月更新。 
+
+- 啟用：
+  
+  ```PowerShell
+  Set-SmbServerConfiguration –AuditSmb1Access $true
+  ```
+
+- 禁用： 
+  
+  ```PowerShell
+  Set-SmbServerConfiguration –AuditSmb1Access $false
+  ```
+  
+- 檢測： 
+  
+  ```PowerShell
+  Get-SmbServerConfiguration | Select AuditSmb1Access
+  ```
+
+啟用 SMBv1 審核時，事件3000會出現在 "Microsoft-Windows-SMBServer\Audit" 事件記錄檔中，識別嘗試與 SMBv1 連接的每個用戶端。
 
 ### <a name="summary"></a>摘要
 

@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 11/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7be02bd7c513d0e7680ed70f107a34c6a9af6ed2
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 1438db87cd59e233328422b03d4d9a6a659d4960
+ms.sourcegitcommit: f89639d3861c61620275c69f31f4b02fd48327ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90765959"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91517526"
 ---
 # <a name="manage-servers-with-windows-admin-center"></a>使用 Windows Admin Center 管理伺服器
 
@@ -45,7 +45,7 @@ ms.locfileid: "90765959"
 
 下列工具適用于伺服器連接：
 
-| 工具 | 描述 |
+| 工具 | 說明 |
 | ---- | ----------- |
 | [概觀](#overview) | View server details 和 control server state |
 | [Active Directory](#active-directory-preview) | 管理 Active Directory |
@@ -56,7 +56,7 @@ ms.locfileid: "90765959"
 | [DHCP](#dhcp) | 查看和管理 DHCP 伺服器設定 |
 | [DNS](#dns) | 查看和管理 DNS 伺服器設定 |
 | [事件](#events) | 檢視事件 |
-| [檔案](#files) | 瀏覽檔案和資料夾 |
+| [檔案和檔案共用](#files-and-file-sharing) | 瀏覽檔案和資料夾 |
 | [防火牆](#firewall) | 查看和修改防火牆規則 |
 | [已安裝的應用程式](#installed-apps) | 查看和移除已安裝的應用程式 |
 | [本機使用者和群組](#local-users-and-groups) | 查看和修改本機使用者和群組 |
@@ -71,7 +71,7 @@ ms.locfileid: "90765959"
 | [排定的工作](#scheduled-tasks) | 查看和修改排程的工作 |
 | [服務](#services) | 查看和修改服務 |
 | [設定](#settings) | 查看和修改服務 |
-| [存放裝置](#storage) | 查看和修改存放裝置 |
+| [Storage](#storage) | 查看和修改存放裝置 |
 | [存放裝置移轉服務](#storage-migration-service) | 將伺服器和檔案共用遷移至 Azure 或 Windows Server 2019 |
 | [儲存體複本](#storage-replica) | 使用儲存體複本來管理伺服器對伺服器儲存體複寫 |
 | [系統深入解析](#system-insights) | 系統深入解析可讓您更深入瞭解伺服器的運作狀況。 |
@@ -83,7 +83,7 @@ ms.locfileid: "90765959"
 
 **總覽** 可讓您查看 CPU、記憶體和網路效能的目前狀態，以及執行作業和修改目的電腦或伺服器上的設定。
 
-### <a name="features"></a>特性
+### <a name="features"></a>功能
 
 伺服器管理員總覽支援下列功能：
 
@@ -103,7 +103,7 @@ ms.locfileid: "90765959"
 
 **Active Directory** 是可在 [延伸](../configure/using-extensions.md)模組摘要中取得的早期預覽版本。
 
-### <a name="features"></a>特性
+### <a name="features"></a>功能
 
 下列 Active Directory 管理可用：
 
@@ -119,14 +119,14 @@ ms.locfileid: "90765959"
 
 [**查看 Active Directory 的意見反應和建議功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BActive%20Directory%5D)。
 
-## <a name="backup"></a>備份
+## <a name="backup"></a>Backup
 
 **Backup** 可讓您藉由直接將伺服器備份到 Microsoft Azure，保護 Windows server 免于損毀、攻擊或災難。
 [深入瞭解 Azure 備份。](https://aka.ms/windows-admin-center-backup)
 
 [在 Windows Admin Center 中提供備份的意見反應](https://aka.ms/backup-wac-feedback)
 
-### <a name="features"></a>特性
+### <a name="features"></a>功能
 
 備份支援下列功能：
 
@@ -141,7 +141,7 @@ ms.locfileid: "90765959"
 
 **憑證** 可讓您管理電腦或伺服器上的憑證存放區。
 
-### <a name="features"></a>特性
+### <a name="features"></a>功能
 
 憑證支援下列功能：
 
@@ -164,7 +164,7 @@ ms.locfileid: "90765959"
 
 **裝置** 可讓您在電腦或伺服器上管理已連線的裝置。
 
-### <a name="features"></a>特性
+### <a name="features"></a>功能
 
 裝置支援下列功能：
 
@@ -179,7 +179,7 @@ ms.locfileid: "90765959"
 
 **DHCP** 可讓您管理電腦或伺服器上的連線裝置。
 
-### <a name="features"></a>特性
+### <a name="features"></a>功能
 
 - 建立/設定/查看 IPV4 和 IPV6 範圍
 - 建立位址排除專案並設定開始和結束 IP 位址
@@ -191,7 +191,7 @@ ms.locfileid: "90765959"
 
 **DNS** 可讓您在電腦或伺服器上管理連線的裝置。
 
-### <a name="features"></a>特性
+### <a name="features"></a>功能
 
 - 查看 DNS 正向對應區域、反向對應區域和 DNS 記錄的詳細資料
 - 建立正向對應區域 (主要、次要或存根) ，以及設定正向對應區域屬性
@@ -206,7 +206,7 @@ ms.locfileid: "90765959"
 
 **事件** 可讓您管理電腦或伺服器上的事件記錄檔。
 
-### <a name="features"></a>特性
+### <a name="features"></a>功能
 
 事件支援下列功能：
 
@@ -217,13 +217,13 @@ ms.locfileid: "90765959"
 
 [**查看事件的意見反應和建議的功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BEvents%5D)。
 
-## <a name="files"></a>檔案儲存體
+## <a name="files-and-file-sharing"></a>檔案和檔案共用
 
-檔案**可讓您**管理電腦或伺服器上的檔案和資料夾。
+檔案**和檔案共用**可讓您管理電腦或伺服器上的檔案和資料夾。
 
-### <a name="features"></a>特性
+### <a name="features"></a>功能
 
-檔案支援下列功能：
+檔案和檔案共用支援下列功能：
 
 - 瀏覽檔案和資料夾
 - 搜尋檔案或資料夾
@@ -237,14 +237,15 @@ ms.locfileid: "90765959"
 - 查看檔案或資料夾屬性
 - 新增、編輯或移除檔案共用
 - 修改檔案共用的使用者和群組許可權
+- 修改檔案伺服器安全性
 
-[**查看檔案的意見反應和建議的功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BFiles%5D)。
+[**查看檔案和檔案共用的意見反應和建議的功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BFiles%5D)。
 
 ## <a name="firewall"></a>防火牆
 
 **防火牆** 可讓您管理電腦或伺服器上的防火牆設定和規則。
 
-### <a name="features"></a>特性
+### <a name="features"></a>功能
 
 防火牆支援下列功能：
 
@@ -270,7 +271,7 @@ ms.locfileid: "90765959"
 
 [**本機使用者和群組**] 可讓您管理在本機電腦或伺服器上存在的安全性群組和使用者。
 
-### <a name="features"></a>特性
+### <a name="features"></a>功能
 
 本機使用者和群組支援下列功能：
 
@@ -287,7 +288,7 @@ ms.locfileid: "90765959"
 
 **網路** 可讓您管理電腦或伺服器上的網路裝置和設定。
 
-### <a name="features"></a>特性
+### <a name="features"></a>功能
 
 網路支援下列功能：
 
@@ -302,7 +303,7 @@ ms.locfileid: "90765959"
 
 **Powershell** 可讓您透過 powershell 會話與電腦或伺服器互動。
 
-### <a name="features"></a>特性
+### <a name="features"></a>功能
 
 PowerShell 支援下列功能：
 
@@ -315,7 +316,7 @@ PowerShell 支援下列功能：
 
 **進程** 可讓您管理電腦或伺服器上執行中的進程。
 
-### <a name="features"></a>特性
+### <a name="features"></a>功能
 
 下列為處理常式支援的功能：
 
@@ -332,7 +333,7 @@ PowerShell 支援下列功能：
 
 登錄**可讓您**管理電腦或伺服器上的登錄機碼和值。
 
-### <a name="features"></a>特性
+### <a name="features"></a>功能
 
 登錄支援下列功能：
 
@@ -346,7 +347,7 @@ PowerShell 支援下列功能：
 
 **遠端桌面** 可讓您透過互動式桌面會話與電腦或伺服器互動。
 
-### <a name="features"></a>特性
+### <a name="features"></a>功能
 
 遠端桌面支援下列功能：
 
@@ -360,7 +361,7 @@ PowerShell 支援下列功能：
 
 **角色和功能** 可讓您管理伺服器上的角色和功能。
 
-### <a name="features"></a>特性
+### <a name="features"></a>功能
 
 角色和功能支援下列功能：
 
@@ -375,7 +376,7 @@ PowerShell 支援下列功能：
 
 **排程** 工作可讓您管理電腦或伺服器上的排程工作。
 
-### <a name="features"></a>特性
+### <a name="features"></a>功能
 
 排程的工作支援下列功能：
 
@@ -391,7 +392,7 @@ PowerShell 支援下列功能：
 
 **服務** 可讓您管理電腦或伺服器上的服務。
 
-### <a name="features"></a>特性
+### <a name="features"></a>功能
 
 服務支援下列功能：
 
@@ -408,7 +409,7 @@ PowerShell 支援下列功能：
 
 **設定** 是在電腦或伺服器上管理設定的集中位置。
 
-### <a name="features"></a>特性
+### <a name="features"></a>功能
 
 - 查看和修改使用者和系統內容變數
 - 從[Azure 監視器](../azure/azure-monitor.md)查看監視警示的設定
@@ -421,7 +422,7 @@ PowerShell 支援下列功能：
 
 **儲存體** 可讓您管理電腦或伺服器上的存放裝置。
 
-### <a name="features"></a>特性
+### <a name="features"></a>功能
 
 儲存體支援下列功能：
 
@@ -465,7 +466,7 @@ PowerShell 支援下列功能：
 
 **更新** 可讓您在電腦或伺服器上管理 Microsoft 及/或 Windows 更新。
 
-### <a name="features"></a>特性
+### <a name="features"></a>功能
 
 更新支援下列功能：
 
@@ -485,7 +486,7 @@ PowerShell 支援下列功能：
 
 **虛擬交換器** 可讓您管理電腦或伺服器上的 hyper-v 虛擬交換器。
 
-### <a name="features"></a>特性
+### <a name="features"></a>功能
 
 虛擬交換器支援下列功能：
 

@@ -1,24 +1,25 @@
 ---
 title: Windows Admin Center 發行歷程記錄
-description: Windows 管理中心版本歷程記錄的摘要，包含下載的連結。
+description: Windows Admin Center 版本歷程記錄的摘要，包含下載這些專案的連結。
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 01/06/2020
-ms.openlocfilehash: b78a8de53e315a3a2f9f546ed49c06b4bccfc682
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9cb7624b2fb9469ecd0af93cdf5251878ecec74c
+ms.sourcegitcommit: f89639d3861c61620275c69f31f4b02fd48327ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87937587"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91517474"
 ---
 # <a name="windows-admin-center-release-history"></a>Windows Admin Center 發行歷程記錄
 
 以下是我們最新發行的功能清單：
 
-- [2007](https://aka.ms/wac2007)版是最新的 GA 版本，其中包括支援新的 Azure Stack HCI 和數個工具的新功能。
+- [2009](https://aka.ms/wac2009)版是最新的 GA 版本，包含對虛擬機器、檔案共用和容器工具的 Azure Stack HCI 和重大更新的 Azure Kubernetes Service 支援。
+- [2007](https://aka.ms/wac2007)版包括支援新的 Azure Stack HCI 以及數個工具的新功能。
 - [1910.2](https://aka.ms/wac1910.2)版包含平臺存取範圍的更新，以及許多 bug 修正
-- [1910](https://aka.ms/wac1910)版引進了數個新的 Azure 混合式服務，並將先前處於預覽狀態的功能帶入 GA 頻道。
+- [1910](https://aka.ms/wac1910)版引進了數個新的 Azure 混合式服務，並將先前處於預覽狀態的功能帶入 GA 通道。
 - 版本 [1909](https://aka.ms/wac1909) 引進了 Azure VM 特定的連線類型，並將傳統容錯移轉叢集和 HCI 叢集的連線類型統一。
 - 版本 [1908](https://aka.ms/wac1908) 新增了視覺更新、Packetmon、FlowLog Audit、叢集的 Azure 監視器上架，以及透過 HTTPS 支援 WinRM (連接埠 5986)。
 - 版本 [1907](https://aka.ms/wac1907) 新增了 Azure 成本預估連結，並改善了匯入/匯出和標記虛擬機器的功能。
