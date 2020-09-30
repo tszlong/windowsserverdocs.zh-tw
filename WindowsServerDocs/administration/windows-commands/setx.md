@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 82ec683f0ed4723e7905daea759965690b8adcd5
-ms.sourcegitcommit: e164aeffc01069b8f1f3248bf106fcdb7f64f894
+ms.openlocfilehash: 417a00dbb037c298784df81f9c5ed5e9c28485f8
+ms.sourcegitcommit: 881a5bd40026288afbcee5fdbf602fd55f833d47
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2020
-ms.locfileid: "91388300"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91586438"
 ---
 # <a name="setx"></a>setx
 
@@ -64,6 +64,14 @@ setx [/s <computer> [/u [<domain>\]<user name> [/p [<password>]]]] /f <filename>
 - REG_DWORD 登錄值會以十六進位模式進行解壓縮和使用。
 
 - 檔案模式僅支援剖析換行字元和換行 (CRLF) 文字檔。
+
+- 在現有的變數上執行這個命令會移除任何變數參考，並使用展開的值。
+
+  比方說，如果變數% PATH% 有% JAVADIR% 的參考，而% PATH% 是使用 **setx**操作的，則% JAVADIR% 會展開，並將其值直接指派給目標變數% PATH%。 這表示% JAVADIR% 的未來更新 **將不** 會反映在% PATH% 變數中。
+
+- 請注意，使用 **setx**將內容指派給變數時，有1024個字元的限制。
+
+  這表示，如果您超過1024個字元，則會裁剪內容，而且裁剪的文字會套用至目標變數。 如果此裁剪文字套用至現有的變數，可能會導致目標變數先前保留的資料遺失。
 
 ## <a name="examples"></a>範例
 
