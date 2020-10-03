@@ -6,12 +6,12 @@ ms.assetid: b5387444-595f-4f38-abb7-163a70ea1895
 author: victorcheng7
 ms.author: vichen
 ms.date: 08/14/2020
-ms.openlocfilehash: dffd07d74e11253457f893d563c0b05272138f41
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: 28ce502a78c58eda74d5b412fe4e4d0d3279d442
+ms.sourcegitcommit: dac52260fdcc3721daf7e32cd45760a0ced96de7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90078416"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91663679"
 ---
 # <a name="linux-software-repository-for-microsoft-products"></a>適用于 Microsoft 產品的 Linux 軟體存放庫
 
@@ -52,7 +52,7 @@ Microsoft 的 Linux 軟體存放庫是由多個子存放庫所組成：
 
  - Ubuntu 18.04 (Bionic) <p>`curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -`<p>`sudo apt-add-repository https://packages.microsoft.com/ubuntu/18.04/prod`<p>`sudo apt-get update`
 
- - Ubuntu 20.04 (Disco) <p>`curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -`<p>`sudo apt-add-repository https://packages.microsoft.com/ubuntu/20.04/prod`<p>`sudo apt-get update`
+ - Ubuntu 20.04 (焦) <p>`curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -`<p>`sudo apt-add-repository https://packages.microsoft.com/ubuntu/20.04/prod`<p>`sudo apt-get update`
 
 ## <a name="manual-configuration"></a>手動組態
 
