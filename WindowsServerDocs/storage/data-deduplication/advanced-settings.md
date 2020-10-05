@@ -6,12 +6,12 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
-ms.openlocfilehash: 73f9ce6e88fa56a645f0ffedba4f38dec87e973b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b8410cb5804e8cbac3ce03e575c2f33c2bc61388
+ms.sourcegitcommit: 00406560a665a24d5a2b01c68063afdba1c74715
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936377"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91716859"
 ---
 # <a name="advanced-data-deduplication-settings"></a>進階重複資料刪除設定
 
@@ -24,10 +24,10 @@ ms.locfileid: "87936377"
 
 ### <a name="changing-a-data-deduplication-schedule"></a><a id="modifying-job-schedules-change-schedule"></a>變更重複資料刪除排程
 重複資料刪除工作是透過 Windows 工作排程器排程，並且可以在 Microsoft\Windows\Deduplication 路徑下檢視及編輯。 重複資料刪除包括數個可讓您輕鬆排程的 Cmdlet。
-* [`Get-DedupSchedule`](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11))顯示目前的排程工作。
-* [`New-DedupSchedule`](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11))建立新的排程工作。
-* [`Set-DedupSchedule`](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11))修改現有的排程工作。
-* [`Remove-DedupSchedule`](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11))移除排程工作。
+* [`Get-DedupSchedule`](https://docs.microsoft.com/powershell/module/deduplication/get-dedupschedule?view=win10-ps) 顯示目前的排程工作。
+* [`New-DedupSchedule`](https://docs.microsoft.com/powershell/module/deduplication/new-dedupschedule?view=win10-ps) 建立新的排程工作。
+* [`Set-DedupSchedule`](https://docs.microsoft.com/powershell/module/deduplication/set-dedupschedule?view=win10-ps) 修改現有的排程工作。
+* [`Remove-DedupSchedule`](https://docs.microsoft.com/powershell/module/deduplication/remove-dedupschedule?view=win10-ps) 移除排程工作。
 
 變更重複資料刪除工作執行時間最常見的原因，是為了確保工作在非尖峰時間執行。 以下的逐步範例示範如何針對「陽光普照的一天」** 案例修改重複資料刪除排程：有一部超交集 Hyper-V 主機會在週末以及工作日下午 7:00 之後閒置。 為了變更排程，請使用系統管理員身分執行下列 PowerShell Cmdlet。
 
@@ -92,7 +92,7 @@ ms.locfileid: "87936377"
                 <ul>
                     <li>高</li>
                     <li>中</li>
-                    <li>低度</li>
+                    <li>低</li>
                 </ul>
             </td>
             <td>這個值有助於系統判斷如何配置 CPU 時間。 <em>High</em> 將使用較多的 CPU 時間，<em>Low</em> 則會使用較少的 CPU 時間。</td>
@@ -121,10 +121,10 @@ ms.locfileid: "87936377"
             <td>DurationHours</td>
             <td>允許工作執行的時數上限</td>
             <td>正整數</td>
-            <td>若要防止工作負載&#39;非空閒時數</td>
+            <td>避免工作負載&#39;的非閒置時間</td>
         </tr>
         <tr>
-            <td>已啟用</td>
+            <td>啟用</td>
             <td>是否將執行工作</td>
             <td>True/false</td>
             <td>停用工作而不移除工作</td>
@@ -139,10 +139,10 @@ ms.locfileid: "87936377"
             <td>InputOutputThrottle</td>
             <td>指定套用至工作的輸出/輸入量節流設定</td>
             <td>整數 0-100 (表示百分比)</td>
-            <td>節流可確保工作不&#39;會干擾其他需要大量 i/o 的進程。</td>
+            <td>節流可確保&#39;作業不會與其他需要大量 i/o 的進程產生干擾。</td>
         </tr>
         <tr>
-            <td>Memory</td>
+            <td>記憶體</td>
             <td>系統上工作應使用之記憶體的百分比</td>
             <td>整數 0-100 (表示百分比)</td>
             <td>控制工作將對系統上的記憶體資源產生的影響程度</td>
@@ -163,7 +163,7 @@ ms.locfileid: "87936377"
             <td>開始</td>
             <td>指定工作應該開始的時間</td>
             <td><code>System.DateTime</code></td>
-            <td>提供給開始的<em>日期</em>部分與 <code>System.Datetime</code> 過去) 中的&#39;s 無關 (，但<em>時間</em>部分會指定作業應從何時開始。 <em>Start</em></td>
+            <td>所提供的開始<em>日期</em>部分與 <code>System.Datetime</code> 過去) 中的&#39;(無關，但時間部分則會指定作業應開始的<em>時間</em>。 <em>Start</em></td>
         </tr>
         <tr>
             <td>StopWhenSystemBusy</td>
@@ -206,9 +206,9 @@ ms.locfileid: "87936377"
     <tbody>
         <tr>
             <td>ChunkRedundancyThreshold</td>
-            <td>區塊在複製到區塊存放區的熱點區段之前，區塊被參考的次數。 作用點區段的值是所謂 &quot; &quot; 經常參考的熱區塊具有多個存取路徑，以改善存取時間。</td>
+            <td>區塊在複製到區塊存放區的熱點區段之前，區塊被參考的次數。 熱點區段的值是所謂的常被參考的 &quot; 熱 &quot; 區塊，會有多個存取路徑可改善存取時間。</td>
             <td>正整數</td>
-            <td>修改此數字的主要原因是為了增加具有高度重複資料磁碟區的儲存速率。 一般來說，預設值 (100) 是建議的設定，因此您不應該&#39;t 修改此項。</td>
+            <td>修改此數字的主要原因是為了增加具有高度重複資料磁碟區的儲存速率。 一般情況下，預設值 (100) 是建議的設定，而您不一定要&#39;t 修改此項。</td>
         </tr>
         <tr>
             <td>ExcludeFileType</td>
@@ -226,7 +226,7 @@ ms.locfileid: "87936377"
             <td>InputOutputScale</td>
             <td>指定後續處理工作期間重複資料刪除要在磁碟區上使用的 IO 平行處理層級 (IO 佇列)</td>
             <td>正整數，範圍 1-36</td>
-            <td>修改此值的主要原因是藉由限制允許重複資料刪除在磁碟區上使用的 IO 佇列數目，減少對高 IO 工作負載的效能影響。 請注意，從預設值修改此設定可能會導致重復資料刪除&#39;s 後處理作業執行速度變慢。</td>
+            <td>修改此值的主要原因是藉由限制允許重複資料刪除在磁碟區上使用的 IO 佇列數目，減少對高 IO 工作負載的效能影響。 請注意，從預設值修改這項設定可能會導致重復資料刪除&#39;的後續處理工作執行得很慢。</td>
         </tr>
         <tr>
             <td>MinimumFileAgeDays</td>
@@ -256,7 +256,7 @@ ms.locfileid: "87936377"
             <td>OptimizeInUseFiles</td>
             <td>啟用時，具有作用中控制代碼的檔案本身會被視為需要依原則進行最佳化。</td>
             <td>True/false</td>
-            <td>如果您的工作負載持續開啟檔案很長的時間，請啟用此設定。 如果未啟用此設定，即使工作負載有開啟的控制碼，檔案也永遠不會獲得優化，即使它&#39;只偶爾會在結尾附加資料。</td>
+            <td>如果您的工作負載持續開啟檔案很長的時間，請啟用此設定。 如果未啟用此設定，則如果工作負載具有開啟的控制碼，則永遠不會優化檔案，即使它&#39;，也只會偶爾在結尾附加資料。</td>
         </tr>
         <tr>
             <td>OptimizePartialFiles</td>
@@ -265,7 +265,7 @@ ms.locfileid: "87936377"
             <td>如果您的工作負載會使用大型、經常編輯的檔案，而其中大部分的檔案內容不會更動，請啟用此設定。 如果未啟用此設定，即使大部分的檔案內容已準備好最佳化，這些檔案也將永遠不會進行最佳化，因為它們持續在變更。</td>
         </tr>
         <tr>
-            <td>驗證</td>
+            <td>Verify</td>
             <td>啟用時，如果區塊的雜湊和我們在區塊存放區中已經擁有的區塊相符，就會逐個位元組比較該區塊以確保它們完全相同。</td>
             <td>True/false</td>
             <td>這是一項完整性功能，可確保比較區塊的雜湊演算法在比較實際上不同但擁有相同雜湊的兩個資料區塊時，不會發生錯誤。 實際上，這幾乎不太可能發生。 啟用驗證功能會對最佳化工作增加相當大的負擔。</td>
@@ -308,7 +308,7 @@ ms.locfileid: "87936377"
         </tr>
         <tr>
             <td>DeepGCInterval</td>
-            <td>此設定可設定一般記憶體回收工作變成<a href="advanced-settings.md#faq-full-v-regular-gc" data-raw-source="[full Garbage Collection jobs](advanced-settings.md#faq-full-v-regular-gc)">完整記憶體回收工作</a>的間隔。 設定為 n 代表每第 n<sup></sup> 次工作將會是完整記憶體回收工作。 請注意，完整記憶體回收對<a href="understand.md#usage-type-backup" data-raw-source="[Backup Usage Type](understand.md#usage-type-backup)">備份使用類型</a>的磁碟區永遠停用（無論登錄值）。 <code>Start-DedupJob -Type GarbageCollection -Full</code>如果需要在備份磁片區上進行完整垃圾收集，則可以使用。</td>
+            <td>此設定可設定一般記憶體回收工作變成<a href="advanced-settings.md#faq-full-v-regular-gc" data-raw-source="[full Garbage Collection jobs](advanced-settings.md#faq-full-v-regular-gc)">完整記憶體回收工作</a>的間隔。 設定為 n 代表每第 n<sup></sup> 次工作將會是完整記憶體回收工作。 請注意，完整記憶體回收對<a href="understand.md#usage-type-backup" data-raw-source="[Backup Usage Type](understand.md#usage-type-backup)">備份使用類型</a>的磁碟區永遠停用（無論登錄值）。 <code>Start-DedupJob -Type GarbageCollection -Full</code> 如果備份磁片區需要完整的垃圾收集，則可使用。</td>
             <td>整數（-1 指出已停用）</td>
             <td>請參閱<a href="advanced-settings.md#faq-why-disable-full-gc" data-raw-source="[this frequently asked question](advanced-settings.md#faq-why-disable-full-gc)">此常見問題集</a></td>
         </tr>
@@ -319,10 +319,10 @@ ms.locfileid: "87936377"
 <a id="faq-use-responsibly"></a>**我變更了重複資料刪除設定，現在工作速度卻變慢或無法完成，或我的工作負載效能降低。為什麼？**
 這些設定提供您許多強大的功能來控制重複資料刪除的執行方式。 請謹慎使用這些設定，並[監視效能](run.md#monitoring-dedup)。
 
-<a id="faq-running-dedup-jobs-manually"></a>**我想要立即執行重復資料刪除工作，但我不想建立新的排程--我可以這麼做嗎？**
+<a id="faq-running-dedup-jobs-manually"></a>**我現在想要執行重復資料刪除工作，但是我不想建立新的排程--我可以這麼做嗎？**
 可以，[所有的工作均可手動執行](run.md#running-dedup-jobs-manually)。
 
-<a id="faq-full-v-regular-gc"></a>**完整和一般垃圾收集之間的差異為何？**
+<a id="faq-full-v-regular-gc"></a>**完整和一般垃圾收集之間有何差異？**
 [記憶體回收](understand.md#job-info-gc)有兩種類型：
 
 - 「一般記憶體回收」** 會使用統計演算法來尋找符合特定條件 (記憶體與 IOPS 不足) 的大型未被參考區塊。 一般記憶體回收只有在未被參考區塊的百分比達到下限時，才會壓縮區塊存放區容器。 相較於完整記憶體回收，此類型記憶體回收的執行速度更快且使用的資源較少。 一般記憶體回收工作的預設排程是一星期執行一次。

@@ -7,13 +7,16 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 9f8759679865c87c11417c64ef130736de2a1e9e
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 912f0e0cb3f3b632b25eda49f6f65338e7782326
+ms.sourcegitcommit: 00406560a665a24d5a2b01c68063afdba1c74715
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89634612"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91716899"
 ---
+> [!IMPORTANT]
+> **Graftabl**命令是舊版的命令，因此已過期。 它通常不會安裝在新式 Windows 版本中。 請參閱適用于字碼頁處理的 [chcp](https://docs.microsoft.com/windows-server/administration/windows-commands/chcp) 頁面。
+
 # <a name="graftabl"></a>graftabl
 
 讓 Windows 作業系統以圖形模式顯示延伸字元集。 如果使用時不含參數， **graftabl** 會顯示上一個和目前的字碼頁。
@@ -67,7 +70,7 @@ graftabl 437
 graftabl 850
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
