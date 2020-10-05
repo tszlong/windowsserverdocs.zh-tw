@@ -1,34 +1,34 @@
 ---
 title: simulate restore
-description: 模擬還原的參考檔，它會測試寫入器對電腦上的還原會話進行的操作，而不會將 PreRestore 或 PostRestore 事件發行到寫入器。
+description: 模擬還原命令的參考文章，此命令會測試電腦上的寫入器介入是否會成功，而不會對寫入器發出 PreRestore 或 PostRestore 事件。
 ms.topic: reference
 ms.assetid: d883d94c-3cb1-4848-9d74-1b4378044b31
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: d72e4b473b3913bff744ff7a34b6508bde52ae0e
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: e9ca1760cd1d6a125267e152274ea26e1a9ae11f
+ms.sourcegitcommit: 720455aad2bac78cf64997d196a13f35ea0acb73
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89640929"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91718295"
 ---
 # <a name="simulate-restore"></a>模擬還原
 
-測試寫入器在電腦上還原會話的參與，而不會將 **PreRestore** 或 **PostRestore** 事件發行到寫入器。
+測試還原會話中的寫入器是否會成功，而不會將 **PreRestore** 或 **PostRestore** 事件發出至寫入器。
 
-## <a name="syntax"></a>語法
+> [!NOTE]
+> 必須選取 DiskShadow 中繼資料檔案， **模擬還原** 命令才能成功。 使用 [load metadata 命令](load-metadata.md) 載入選取的寫入器和用於還原的元件。
+
+## <a name="syntax"></a>Syntax
 
 ```
 simulate restore
 ```
 
-## <a name="remarks"></a>備註
-
--   **模擬還原** 是用來測試 restore with 寫入器是否可以成功。
--   您必須先使用**load metadata**命令載入 DiskShadow 中繼資料檔案，才能使用**模擬還原**。 這會載入選取的寫入器和用於還原的元件。
-
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
+
+- [載入中繼資料命令](load-metadata.md)
