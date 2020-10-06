@@ -6,12 +6,12 @@ ms.assetid: 1a65a98e-54b6-4c41-9732-1e3d32fe3a5f
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 09/21/2017
-ms.openlocfilehash: 49ea6e324a11d2261dae8133e29d86d2c5bacae7
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 2a6107468e63f819e1957db0736c1a07c5dc24a0
+ms.sourcegitcommit: faa5db4cdba4ad2b3a65533b6b49d960080923c9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746703"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91752878"
 ---
 # <a name="whats-new-in-hyper-v-on-windows-server"></a>Windows Server 上的 Hyper-v 新功能
 
@@ -162,7 +162,7 @@ Set-VMFirmware TestVM -SecureBootTemplate MicrosoftUEFICertificateAuthority
 
 -   您可以啟用新的 Hyper-v 功能。
 
--   若要讓新的虛擬機器功能可供使用，請使用 VmConfigurationVersion Cmdlet 來手動更新虛擬機器設定層級。 如需相關指示，請參閱 [升級虛擬機器版本](deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md)。
+-   若要讓新的虛擬機器功能可供使用，請使用 `Update-vmVersion` Cmdlet 手動更新虛擬機器設定層級。 如需相關指示，請參閱 [升級虛擬機器版本](deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md)。
 -   您無法將節點新增至執行 Windows Server 2012 R2 的 Hyper-v 叢集中。
 
 > [!NOTE]
