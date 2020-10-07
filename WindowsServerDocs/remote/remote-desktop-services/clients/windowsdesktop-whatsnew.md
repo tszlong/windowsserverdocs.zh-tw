@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 09/16/2020
+ms.date: 09/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d45bfad559069f9652768ba7f89bbdd3521ab8a
-ms.sourcegitcommit: d04f8fd54fe9aa5703af2f66a7150f4a6fb5bb37
+ms.openlocfilehash: 4edd85e305d30cfe22480021b67f3c0213275926
+ms.sourcegitcommit: c0e0bdc9a1b28bd21951d68b5cfd2cce48a770ef
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90718622"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90999252"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面用戶端的新功能
 
@@ -24,16 +24,20 @@ ms.locfileid: "90718622"
 
 |使用者群組 |最新版本  |最低支援版本 |
 |-----------|----------------|--------------------------|
-|公用     |1.2.1272        |1.2.945                   |
-|Insider    |1.2.1357        |1.2.1357                  |
+|公用     |1.2.1364        |1.2.945                   |
+|Insider    |1.2.1364        |1.2.945                   |
 
-## <a name="updates-for-version-121357-insiders"></a>1\.2.1357 版的更新 (測試人員)
+## <a name="updates-for-version-121364"></a>1\.2.1364 版的更新
 
-*發行日期：2020/09/09*
+*發行日期：09/22/2020*
 
-下載：[Windows 64 位元](https://go.microsoft.com/fwlink/?linkid=2139233)、[Windows 32 位元](https://go.microsoft.com/fwlink/?linkid=2139144)、[Windows ARM64](https://go.microsoft.com/fwlink/?linkid=2139368)
+下載：Windows [64 位元](https://go.microsoft.com/fwlink/?linkid=2139369)、[Windows 32 位元](https://go.microsoft.com/fwlink/?linkid=2139456)、[Windows ARM64](https://go.microsoft.com/fwlink/?linkid=2139370)
 
 - 已修正單一登入 (SSO) 在 Windows 7 上無法使用的問題。
+- 已修正當另一個應用程式具有在專有模式中開啟的音訊串流同時呼叫或加入 Teams 通話時，以及當 Teams 的媒體最佳化已停用時，所發生的連線失敗。
+- 已修正當 Teams 的媒體最佳化停用時，無法列舉音訊或視訊裝置的情形。
+- 已新增「需要設定的協助？」 桌面設定頁面的連結。
+- 已修正使用高對比深色佈景主題時，所發生的 [訂閱] 按鈕問題。
 
 ## <a name="updates-for-version-121275"></a>1\.2.1275 版的更新
 
@@ -51,8 +55,6 @@ ms.locfileid: "90718622"
 ## <a name="updates-for-version-121186"></a>1\.2.1186 版的更新
 
 *發行日期：2020/07/28*
-
-下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4C7Qy)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4Ciex)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4C7Qx)
 
 - 您現在可以使用用戶端頂端命令列上的溢位功能表 ([ **...** ]) 選項，訂閱具有多個使用者帳戶的工作區。 為了區分工作區，工作區標題現在包含使用者名稱，如同所有應用程式捷徑標題一樣。
 - 將其他資訊新增至訂用帳戶錯誤訊息，以改善疑難排解功能。

@@ -5,12 +5,12 @@ ms.topic: article
 author: apdutta
 ms.author: apdutta
 ms.date: 02/20/2020
-ms.openlocfilehash: 30d81f8c36c5ba745d0af1d940d8f4f3971d37a0
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: 926e28cff1815e5f6a82185ad78a3825ed188def
+ms.sourcegitcommit: ad2c13b09044710bf14236308ade8d74877c3e0d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90078565"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91591158"
 ---
 # <a name="netsh-mbn-commands"></a>Netsh mbn 命令
 
@@ -33,6 +33,7 @@ ms.locfileid: "90078565"
 - [說明](#help)
 - [set](#set)
 - [show](#show)
+- [測試](#test)
 
 ## <a name="add"></a>新增
 
@@ -499,57 +500,34 @@ set tracing mode=yes
 
 顯示行動寬頻網路資訊。
 
-可用的 netsh mbn set 命令如下：
+可用的 netsh mbn show 命令如下：
 
-- [Netsh mbn 命令](#netsh-mbn-commands)
-  - [add](#add)
-    - [dmprofile](#dmprofile)
-    - [profile](#profile)
-  - [connect](#connect)
-  - [delete](#delete)
-    - [dmprofile](#dmprofile-1)
-    - [profile](#profile-1)
-  - [diagnose](#diagnose)
-  - [disconnect](#disconnect)
-  - [dump](#dump)
-  - [說明](#help)
-  - [set](#set)
-    - [acstate](#acstate)
-    - [dataenablement](#dataenablement)
-    - [dataroamcontrol](#dataroamcontrol)
-    - [enterpriseapnparams](#enterpriseapnparams)
-    - [highestconncategory](#highestconncategory)
-    - [powerstate](#powerstate)
-    - [profileparameter](#profileparameter)
-    - [slotmapping](#slotmapping)
-    - [tracing](#tracing)
-  - [show](#show)
-    - [acstate](#acstate-1)
-    - [capability](#capability)
-    - [connection](#connection)
-    - [dataenablement](#dataenablement-1)
-    - [dataroamcontrol](#dataroamcontrol-1)
-    - [dmprofiles](#dmprofiles)
-    - [enterpriseapnparams](#enterpriseapnparams-1)
-    - [highestconncategory](#highestconncategory-1)
-    - [homeprovider](#homeprovider)
-    - [interfaces](#interfaces)
-    - [netlteattachinfo](#netlteattachinfo)
-    - [pin](#pin)
-    - [pinlist](#pinlist)
-    - [preferredproviders](#preferredproviders)
-    - [profiles](#profiles)
-    - [profilestate](#profilestate)
-    - [provisionedcontexts](#provisionedcontexts)
-    - [purpose](#purpose)
-    - [radio](#radio)
-    - [readyinfo](#readyinfo)
-    - [signal](#signal)
-    - [slotmapping](#slotmapping-1)
-    - [slotstatus](#slotstatus)
-    - [smsconfig](#smsconfig)
-    - [tracing](#tracing-1)
-    - [visibleproviders](#visibleproviders)
+- [acstate](#acstate-1)
+- [capability](#capability)
+- [connection](#connection)
+- [dataenablement](#dataenablement-1)
+- [dataroamcontrol](#dataroamcontrol-1)
+- [dmprofiles](#dmprofiles)
+- [enterpriseapnparams](#enterpriseapnparams-1)
+- [highestconncategory](#highestconncategory-1)
+- [homeprovider](#homeprovider)
+- [interfaces](#interfaces)
+- [netlteattachinfo](#netlteattachinfo)
+- [pin](#pin)
+- [pinlist](#pinlist)
+- [preferredproviders](#preferredproviders)
+- [profiles](#profiles)
+- [profilestate](#profilestate)
+- [provisionedcontexts](#provisionedcontexts)
+- [purpose](#purpose)
+- [radio](#radio)
+- [readyinfo](#readyinfo)
+- [signal](#signal)
+- [slotmapping](#slotmapping-1)
+- [slotstatus](#slotstatus)
+- [smsconfig](#smsconfig)
+- [tracing](#tracing-1)
+- [visibleproviders](#visibleproviders)
 
 ### <a name="acstate"></a>acstate
 
@@ -1152,4 +1130,49 @@ show visibleproviders [interface=]<string>
 
 ```powershell
 show visibleproviders interface="Cellular"
+```
+
+## <a name="test"></a>test
+
+在收集記錄時，執行特定功能區域的測試。
+
+**語法**
+```
+test [feature=<feature area>] [testPath=<path>] [taefPath=<path>] [param=<test input params>]
+```
+
+**參數**
+
+| 標籤 | 值 | 選擇性？ |
+|---|---|---|
+| **功能** | 下面列出支援功能區域中的功能區 | 必要 |
+| **testpath** | 包含測試二進位檔的路徑 | 如果已安裝 HLK 伺服器，則為選擇性 |
+| **taefpath** | 包含 TAEF 二進位檔的路徑 | 如果已安裝 HLK 伺服器，則為選擇性 |
+| **param** | 以逗號分隔的參數，用於測試 | 對於特定功能區為必要性，對於其他功能區為選擇性 |
+
+**備註**
+
+支援的功能區為：
+- 連線能力
+- power
+- radio
+- esim
+- sms
+- dssa
+- lte
+- bringup
+
+某些測試額外測試參數，這些參數必須在 `param` 欄位中提供。
+以下列出功能的必要參數。
+- **connectivity**：AccessString、UserName (如果適用)、Password (如果適用)
+- **radio**：AccessString、UserName (如果適用)、Password (如果適用)
+- **esim**：ActivationCode
+- **bringup**：AccessString、UserName (如果適用)、Password (如果適用)
+
+**範例**
+
+```
+test feature=connectivity param="AccessString=internet"
+test feature=lte testpath="C:\\data\\test\\bin" taefpath="C:\\data\\test\\bin"
+test feature=lte
 ```

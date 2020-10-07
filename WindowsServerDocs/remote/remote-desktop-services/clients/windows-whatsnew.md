@@ -5,20 +5,20 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 08/26/2020
+ms.date: 10/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f33c60cb318466b6dbbff2edb3ab8efa7bb4be78
-ms.sourcegitcommit: 9a59e00db5e68b1a12769b5cd5523b8c501776ad
+ms.openlocfilehash: a02cc0ba9c373c208cda9e75ea5105ab52ae7432
+ms.sourcegitcommit: ee9253a8ac0d96c1b43bf6d44bba978187931a57
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89282100"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91659512"
 ---
 # <a name="whats-new-in-the-microsoft-store-client"></a>Microsoft Store 用戶端的新功能
 
 我們會定期更新 [ 用戶端](windows.md)，進而新增功能並修正問題。 您可以在這裡找到最新的更新。
 
-## <a name="updates-for-version-1021522"></a>10.2.1522 版的更新
+## <a name="updates-for-version-1021534"></a>10.2.1534 版的更新
 
 *發行日期：2020/8/26*
 

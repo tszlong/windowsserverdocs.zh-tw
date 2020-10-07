@@ -6,18 +6,18 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 01/07/2020
 ms.localizationpriority: high
-ms.openlocfilehash: d6fa3e4535748b6c4d5b45755b0336dc26815bee
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: a62994667322b17d35c90e8bd231adc1d9ba0e6a
+ms.sourcegitcommit: f89639d3861c61620275c69f31f4b02fd48327ab
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766731"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91517564"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
 > 適用於：Windows Admin Center、Windows Admin Center 預覽版
 
-Windows Admin Center 是以瀏覽器為基礎在本機部署的應用程式，用於管理 Windows 伺服器、叢集、超融合式基礎結構以及 Windows 10 電腦。 除了 Windows 本身以外，不需另付費用，而且可以立即使用於生產環境中。
+Windows Admin Center 是以瀏覽器為基礎在本機部署的應用程式，用於管理 Windows 伺服器、叢集、超融合式基礎結構以及 Windows 10 電腦。 這是免費的產品，而且已準備好在實際執行環境中使用。
 
 若要瞭解最新功能，請參閱＜[發行歷程記錄](support/release-history.md)＞。
 

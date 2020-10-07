@@ -5,20 +5,20 @@ ms.date: 09/27/2018
 ms.topic: conceptual
 ms.author: damaerte
 author: maertendmsft
-ms.openlocfilehash: cb17f4289483a76efaa3f848477f47edcf4a85b3
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: c722b9fb81dde8e695d6065d7b2268f862e71d39
+ms.sourcegitcommit: 00406560a665a24d5a2b01c68063afdba1c74715
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90078395"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91716879"
 ---
 # <a name="openssh-key-management"></a>OpenSSH 金鑰管理
 
 Windows 環境中的大部分驗證都是使用使用者名稱-密碼配對來完成。
 這適用於共用通用網域的系統。
-跨網域 (例如在內部部署和雲端託管系統之間) 工作時，會變得更棘手。
+跨網域 (例如在內部部署和雲端託管系統之間) 工作時，會變得容易遭到暴力密碼破解入侵。
 
-相較之下，Linux 環境通常會使用公開金鑰/私密金鑰組來驅動驗證。
+相較之下，Linux 環境通常會使用公開金鑰/私密金鑰組來驅動驗證，不需要使用可猜測的密碼。
 OpenSSH 包含可協助支援此操作的工具，特別是：
 
 * __ssh-keygen__，用來產生安全金鑰

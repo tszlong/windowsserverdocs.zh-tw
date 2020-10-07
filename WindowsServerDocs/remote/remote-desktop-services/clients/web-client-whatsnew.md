@@ -7,12 +7,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 09/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 18142988108e1eafe59ca7fd83a29dd4dfb87720
-ms.sourcegitcommit: 664ed9bb0bbac2c9c0727fc2416d8c437f2d5cbe
+ms.openlocfilehash: e2bf87c27e8e61fa4baba81f234381d342af1343
+ms.sourcegitcommit: ed2b98e06bf7f616432bf8b6ad96544a34d5ce5c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89472028"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91625470"
 ---
 # <a name="whats-new-in-the-web-client"></a>Web 用戶端中的新功能
 
@@ -23,6 +23,9 @@ ms.locfileid: "89472028"
 
 ## <a name="updates-for-10220"></a>1\.0.22.0 版的更新
 *發行日期：2020/9/2*
+
+> [!IMPORTANT]
+> 在版本 1.0.22.0 中，我們引進了會影響部分 Chromebook 作業系統的迴歸。 受影響作業系統上的使用者將無法使用 Web 用戶端連線到遠端工作階段。 我們目前正在調查此問題，並將在我們修正此迴歸時，立即發行新版本的 Web 用戶端。 在此同時，您可以藉由還原至版本1.0.21.0 來避免這個問題。 
 
 - 使用者現在可以移動最小化功能表。
 - 已改進對 4K 和 Ultra-wide 監視器的支援，並修正了複製大量資料時會導致工作階段當機的問題。

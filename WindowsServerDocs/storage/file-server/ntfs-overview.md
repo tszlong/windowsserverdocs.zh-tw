@@ -1,17 +1,17 @@
 ---
 title: NTFS 概觀
-description: NTFS 的說明。
+description: NTFS (最新版 Windows 和 Windows Server 的主要檔案系統) 提供一組完整的功能，包括安全性描述元、加密、磁碟配額，以及豐富的中繼資料，並且可與叢集共用磁碟區 (CSV) 搭配使用，以提供持續可用的磁碟區，讓您可以從容錯移轉叢集的多個節點同時存取。
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.date: 06/17/2019
+ms.date: 09/30/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e781e8c4fda3cc3fe0af995fd26081b9b387f723
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 30fe719b7e36706e59650ab18a82276879f92830
+ms.sourcegitcommit: d04d63d48856bccf5d5a9b1df6b25e254e7eda2b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954725"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91622843"
 ---
 # <a name="ntfs-overview"></a>NTFS 概觀
 
@@ -19,36 +19,43 @@ ms.locfileid: "87954725"
 
 NTFS (最新版 Windows 和 Windows Server 的主要檔案系統) 提供一組完整的功能，包括安全性描述元、加密、磁碟配額，以及豐富的中繼資料，並且可與叢集共用磁碟區 (CSV) 搭配使用，以提供持續可用的磁碟區，讓您可以從容錯移轉叢集的多個節點同時存取。
 
-若要深入了解 Windows Server 2012 R2 中的 NTFS 新功能和已變更的功能，請參閱 [NTFS 的新功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn466520(v%3dws.11))。 如需其他功能資訊，請參閱本主題的[其他資訊](#additional-information)一節。 若要深入了解較新的復原檔案系統 (ReFS)，請參閱[復原檔案系統 (ReFS) 概觀](../refs/refs-overview.md)。
+如需其他功能資訊，請參閱本主題的[其他資訊](#additional-information)一節。 若要深入了解較新的復原檔案系統 (ReFS)，請參閱[復原檔案系統 (ReFS) 概觀](../refs/refs-overview.md)。
 
-## <a name="practical-applications"></a>實際應用
-
-### <a name="increased-reliability"></a>提高的穩定性
+## <a name="increased-reliability"></a>提高的穩定性
 
 當電腦在系統失敗後重新啟動時，NTFS 會使用其記錄檔和檢查點資訊來還原檔案系統的一致性。 在發生磁區損毀錯誤之後，NTFS 會動態地對包含磁區損毀的叢集進行重新對應、為資料配置新的叢集、將原始叢集標示為錯誤，而且不再使用舊的叢集。 例如，在伺服器損毀之後，NTFS 可以藉由重新執行其記錄檔來復原資料。
 
 NTFS 會持續監視並修正背景中的暫時性損毀問題，而且不會讓磁碟區離線 (這項功能稱為[自我修復 NTFS](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc771388(v=ws.10))，是在 Windows Server 2008 中引進的)。 對於較大的損毀問題，Windows Server 2012 和更新版本中的 Chkdsk 公用程式會在磁碟區上線時掃描並分析磁碟機，並將離線時間限制為在磁碟區上還原資料一致性所需的時間。 搭配叢集共用磁碟區使用 NTFS 時，不需要停機。 如需詳細資訊，請參閱 [NTFS 健康情況和 Chkdsk](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831536(v%3dws.11))。
 
-### <a name="increased-security"></a>提升的安全性
+## <a name="increased-security"></a>提升的安全性
 
 - **檔案和資料夾的存取控制清單 (ACL) 安全性**—NTFS 可讓您設定檔案或資料夾的權限、指定您要限制或允許其存取權的群組和使用者，以及選取存取類型。
 
 - **BitLocker 磁碟機加密的支援**—BitLocker 磁碟機加密可為重要的系統資訊和儲存在 NTFS 磁碟區上的其他資料提供額外的安全性。 從 Windows Server 2012 R2 和 Windows 8.1 開始，BitLocker 可透過支援連線待命的信賴平台模組 (TPM) 在 x86 型和 x64 型電腦上支援裝置加密，而此項目之前只能在 Windows RT 裝置上使用。 裝置加密會藉由實際將您的磁碟機從電腦移除並將其安裝在另一個位置，來協助保護 Windows 型電腦上的資料，以及封鎖惡意使用者，使其無法存取仰賴的系統檔案來探索使用者密碼，或存取磁碟機。 如需詳細資訊，請參閱 [BitLocker 的新功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn306081(v%3dws.11))。
 
-- **支援大型磁碟區**—NTFS 可支援的磁碟區大小上限為 256 TB。 支援的磁碟區大小會受到叢集大小和叢集數目的影響。 若有 (2<sup>32</sup> –1) 個叢集 (NTFS 支援的叢集數目上限)，則可支援下列磁碟區和檔案的大小。
+## <a name="support-for-large-volumes"></a>支援大型磁碟區
 
-  |叢集大小|最大磁碟區|最大檔案|
-  |---|---|---|
-  |4 KB (預設大小)|16 TB|16 TB|
-  |8 KB|32 TB|32 TB|
-  |16 KB|64 TB|64 TB|
-  |32 KB|128 TB|128 TB|
-  |64 KB (大小上限)|256 TB|256 TB|
+NTFS 在 Windows Server 2019 和更新版本以及 Windows 10 版本 1709 和更新版本上可以支援最大 8 PB 的磁碟區 (舊版支援最大 256 TB)。 支援的磁碟區大小會受到叢集大小和叢集數目的影響。 若有 (2<sup>32</sup> –1) 個叢集 (NTFS 支援的叢集數目上限)，則可支援下列磁碟區和檔案的大小。
+
+  | 叢集大小         | 最大磁碟區和檔案 |
+  | -------------------  | -------------- |
+  | 4 KB (預設大小)  | 16 TB          |
+  | 8 KB                 | 32 TB          |
+  | 16 KB                | 64 TB          |
+  | 32 KB                | 128 TB         |
+  | 64 KB (較早的最大值)  | 256 TB         |
+  | 128 KB               | 512 TB         |
+  | 256 KB               | 1 PB           |
+  | 512 KB               | 2 PB           |
+  | 1024 KB              | 4 PB           |
+  | 2048 KB (大小上限)   | 8 PB           |
+
+請注意，如果您嘗試掛接其叢集大小大於您正在使用 Windows 版本支援上限的磁碟區，您會收到 STATUS_UNRECOGNIZED_VOLUME 錯誤。
 
 >[!IMPORTANT]
 >服務和應用程式可能會對檔案和磁碟區大小施加額外的限制。 例如，如果您使用的是舊版功能，或是使用磁碟區陰影複製服務 (VSS) 快照集的備份應用程式 (而不是使用 SAN 或 RAID 機箱)，則磁碟區大小限制為 64 TB。 不過，視您的工作負載和儲存體效能而定，您可能需要使用較小的磁碟區大小。
 
-### <a name="formatting-requirements-for-large-files"></a>大型檔案的格式化需求
+## <a name="formatting-requirements-for-large-files"></a>大型檔案的格式化需求
 
 若要允許適當增加大型 .vhdx 檔案的數目，以下是適用於格式化磁碟區的新建議。 若要格式化的磁碟區將與「重複資料刪除」搭配使用或將裝載非常大型的檔案 (例如大於 1 TB 的 .vhdx 檔案)，請在 Windows PowerShell 中使用 **Format-Volume** Cmdlet，並搭配下列參數。
 
@@ -69,7 +76,7 @@ Format-Volume -DriveLetter D -FileSystem NTFS -AllocationUnitSize 64KB -UseLarge
 format /L /A:64k
 ```
 
-### <a name="maximum-file-name-and-path"></a>檔案名稱和路徑的長度上限
+## <a name="maximum-file-name-and-path"></a>檔案名稱和路徑的長度上限
 
 NTFS 支援長檔名和擴充長度的路徑，最大值如下所示：
 
@@ -80,7 +87,7 @@ NTFS 支援長檔名和擴充長度的路徑，最大值如下所示：
 
 - **叢集存放區**—在容錯移轉叢集中使用時，NTFS 支援持續可用磁碟區，在與叢集共用磁碟區 (CSV) 檔案系統搭配使用時，這些磁碟區可同時由多個叢集節點存取。 如需有關詳細資訊，請參閱[使用容錯移轉叢集的叢集共用磁碟區](../../failover-clustering/failover-cluster-csvs.md)。
 
-### <a name="flexible-allocation-of-capacity"></a>彈性的容量配置
+## <a name="flexible-allocation-of-capacity"></a>彈性的容量配置
 
 如果磁碟區上的空間有限，NTFS 會提供下列方法來處理伺服器的儲存容量：
 
