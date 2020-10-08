@@ -109,5 +109,6 @@
 #### [遠端桌面用戶端連線中斷，且無法重新連線至同一工作階段](troubleshoot/rdp-client-disconnects-cannot-reconnect-same-session.md)
 #### [遠端膝上型電腦從無線網路中斷連線](troubleshoot/remote-laptop-disconnects-wireless-network.md)
 #### [遠端桌面連線期間效能不佳或應用程式發生問題](troubleshoot/poor-performance-or-application-problems.md)
+#### [RemoteApp 案例中的輸入方法編輯器問題](troubleshoot/input-method-editor-error.md)
 
 ## [其他資源](rds-get-support.md)
