@@ -6,16 +6,16 @@ ms.assetid: 2d34e98c-6134-479b-8000-3eb360b8b8a3
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 12/06/2016
-ms.openlocfilehash: 2b0a7c93f5a6c6be7340c8d5b0a5bd93d21f1cec
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 1d599555750d2a2e005a3e68b0c70fddd1a54f73
+ms.sourcegitcommit: 6931830a70c5849d8f884cdc7bd4f5afc1a00cce
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746653"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91955803"
 ---
 # <a name="remotely-manage-hyper-v-hosts-with-hyper-v-manager"></a>使用 Hyper-V 管理員管理遠端 Hyper-V 主機
 
->適用于： Windows Server 2016、Windows Server 2012 R2、Windows 10、Windows 8。1
+> 適用于： Windows Server 2016、Windows Server 2012 R2、Windows 10、Windows 8。1
 
 本文列出支援的 Hyper-v 主機和 Hyper-v 管理員版本組合，並說明如何連線到遠端和本機 Hyper-v 主機，讓您可以管理它們。
 
@@ -31,14 +31,14 @@ Hyper-v 管理員可讓您管理少數 Hyper-v 主機（遠端和本機）。 �
 
 |Hyper-v 管理員版本 | Hyper-v 主機版本|
 |---|---|
-|Windows 2016，Windows 10|-Windows Server 2016-所有版本和安裝選項，包括 Nano Server 以及對應版本的 Hyper-v 伺服器 <br>-Windows Server 2012 R2-所有版本與安裝選項，以及對應版本的 Hyper-v 伺服器 <br>-Windows Server 2012 —所有版本與安裝選項，以及對應版本的 Hyper-v 伺服器 <br> - Windows 10 <br> - Windows 8.1  |
+|Windows Server 2016、Windows 10|-Windows Server 2016-所有版本和安裝選項，包括 Nano Server 以及對應版本的 Hyper-v 伺服器 <br>-Windows Server 2012 R2-所有版本與安裝選項，以及對應版本的 Hyper-v 伺服器 <br>-Windows Server 2012 —所有版本與安裝選項，以及對應版本的 Hyper-v 伺服器 <br> - Windows 10 <br> - Windows 8.1  |
 | Windows Server 2012 R2、Windows 8。1 | -Windows Server 2012 R2-所有版本與安裝選項，以及對應版本的 Hyper-v 伺服器 <br>-Windows Server 2012 —所有版本與安裝選項，以及對應版本的 Hyper-v 伺服器 <br>- Windows 8.1
 | Windows Server 2012 | -Windows Server 2012 —所有版本與安裝選項，以及對應版本的 Hyper-v 伺服器
 | Windows Server 2008 R2 Service Pack 1、Windows 7 Service Pack 1 | -Windows Server 2008 R2-所有版本與安裝選項，以及對應版本的 Hyper-v 伺服器
 | Windows Server 2008、Windows Vista Service Pack 2 | -Windows Server 2008-所有版本與安裝選項，以及對應版本的 Hyper-v 伺服器
 
->[!NOTE]
->Service pack 支援于2016年1月12日結束 Windows 8。 如需詳細資訊，請參閱 [WINDOWS 8.1 常見問題](https://support.microsoft.com/help/18581)。
+> [!NOTE]
+> Service pack 支援于2016年1月12日結束 Windows 8。 如需詳細資訊，請參閱 [WINDOWS 8.1 常見問題](https://support.microsoft.com/help/18581)。
 
 ## <a name="connect-to-a-hyper-v-host"></a>連接至 Hyper-v 主機
 
@@ -66,7 +66,7 @@ Hyper-v 管理員可讓您管理少數 Hyper-v 主機（遠端和本機）。 �
 
 或者，從任一作業系統，以系統管理員身分開啟 Windows PowerShell，然後執行：
 
-```
+```PowerShell
 Enable-PSRemoting
 ```
 
@@ -78,7 +78,7 @@ Enable-PSRemoting
 
 Windows Server 2016 和 Windows 10 中的 hyper-v 管理員提供比舊版更多的遠端連線類型，如下列各節所述。
 
-### <a name="connect-to-a-windows-2016-or-windows-10-remote-host-as-a-different-user"></a>以不同的使用者連接到 Windows 2016 或 Windows 10 遠端主機
+### <a name="connect-to-a-windows-server-2016-or-windows-10-remote-host-as-a-different-user"></a>以不同的使用者連接到 Windows Server 2016 或 Windows 10 遠端主機
 
 當您不是在本機電腦上以 hyper-v 系統管理員群組或 Hyper-v 主機上的 Administrators 群組成員的使用者身分執行時，這可讓您連線到 Hyper-v 主機。 若要這樣做：
 
@@ -87,10 +87,10 @@ Windows Server 2016 和 Windows 10 中的 hyper-v 管理員提供比舊版更多
 1. 在 [**選取電腦**] 對話方塊中選取 **[以其他使用者的身份連線]** 。
 1. 選取 [ **設定使用者**]。
 
->[!NOTE]
+> [!NOTE]
 > 這僅適用于 Windows Server 2016 或 Windows 10 **遠端** 主機。
 
-### <a name="connect-to-a-windows-2016-or-windows-10-remote-host-using-ip-address"></a>使用 IP 位址連接到 Windows 2016 或 Windows 10 遠端主機
+### <a name="connect-to-a-windows-server-2016-or-windows-10-remote-host-using-ip-address"></a>使用 IP 位址連接到 Windows Server 2016 或 Windows 10 遠端主機
 
 若要這樣做：
 
@@ -98,10 +98,10 @@ Windows Server 2016 和 Windows 10 中的 hyper-v 管理員提供比舊版更多
 1. 按一下 **[連接到伺服器]**。
 1. 在 [ **另一台電腦** ] 文字欄位中輸入 IP 位址。
 
->[!NOTE]
+> [!NOTE]
 > 這僅適用于 Windows Server 2016 或 Windows 10 **遠端** 主機。
 
-### <a name="connect-to-a-windows-2016-or-windows-10-remote-host-outside-your-domain-or-with-no-domain"></a>連線到 Windows 2016 或 Windows 10 您網域以外的遠端主機，或不含網域的遠端主機
+### <a name="connect-to-a-windows-server-2016-or-windows-10-remote-host-outside-your-domain-or-with-no-domain"></a>連線到 Windows Server 2016 或 Windows 10 您網域以外的遠端主機，或不含網域的遠端主機
 
 若要這樣做：
 
@@ -109,13 +109,13 @@ Windows Server 2016 和 Windows 10 中的 hyper-v 管理員提供比舊版更多
 
 1. 針對私人網路區域建立必要的防火牆規則：
 
-   ```
+   ```PowerShell
    Enable-PSRemoting
    ```
 
 2. 若要允許在公用區域上進行遠端存取，請啟用 CredSSP 和 WinRM 的防火牆規則：
 
-   ```
+   ```PowerShell
    Enable-WSManCredSSP -Role server
    ```
 
@@ -126,12 +126,14 @@ Windows Server 2016 和 Windows 10 中的 hyper-v 管理員提供比舊版更多
 1. 以系統管理員身分開啟 Windows PowerShell 會話。
 1. 執行下列命令：
 
-     ```
-     Set-Item WSMan:\localhost\Client\TrustedHosts -Value "fqdn-of-hyper-v-host"
-     ```
-     ```
-     Enable-WSManCredSSP -Role client -DelegateComputer "fqdn-of-hyper-v-host"
-     ```
+    ```PowerShell
+    Set-Item WSMan:\localhost\Client\TrustedHosts -Value "fqdn-of-hyper-v-host"
+    ```
+
+    ```PowerShell
+    Enable-WSManCredSSP -Role client -DelegateComputer "fqdn-of-hyper-v-host"
+    ```
+
 1. 您可能也需要設定下列群組原則：
     * **電腦設定** \>**系統管理範本** \>**系統** \>**認證委派** \>**允許使用僅限 NTLM 伺服器驗證委派全新的認證**
     * 按一下 [ **啟用** ]，然後新增 [ *wsman/fqdn-hyper-v-主機*]。
@@ -139,7 +141,7 @@ Windows Server 2016 和 Windows 10 中的 hyper-v 管理員提供比舊版更多
 1. 在左窗格中，以滑鼠右鍵按一下 [ **Hyper-v 管理員**]。
 1. 按一下 **[連接到伺服器]**。
 
->[!NOTE]
+> [!NOTE]
 > 這僅適用于 Windows Server 2016 或 Windows 10 **遠端** 主機。
 
 如需 Cmdlet 的詳細資訊，請參閱 [Set-Item](/powershell/module/microsoft.powershell.management/set-item?view=powershell-7) 和 [Enable-WSManCredSSP](/powershell/module/microsoft.wsman.management/enable-wsmancredssp?view=powershell-7)。
@@ -160,10 +162,10 @@ Windows Server 2016 和 Windows 10 中的 hyper-v 管理員提供比舊版更多
 
 若要使用 Windows PowerShell，請以系統管理員身分執行下列命令：
 
-```
+```PowerShell
 add-windowsfeature rsat-hyper-v-tools
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 [安裝 Hyper-V](../get-started/Install-the-Hyper-V-role-on-Windows-Server.md)
