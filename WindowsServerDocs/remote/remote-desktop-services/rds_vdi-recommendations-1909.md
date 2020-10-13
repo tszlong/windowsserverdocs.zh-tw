@@ -7,12 +7,12 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.date: 02/19/2020
-ms.openlocfilehash: b0ff8f353d4536f89d698f362e2998d9682665f2
-ms.sourcegitcommit: e164aeffc01069b8f1f3248bf106fcdb7f64f894
+ms.openlocfilehash: 2caecd2b625de8790ddd0d1ebfeeb9db24d11635
+ms.sourcegitcommit: faa5db4cdba4ad2b3a65533b6b49d960080923c9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2020
-ms.locfileid: "91389012"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91752910"
 ---
 # <a name="optimizing-windows-10-version-1909-for-a-virtual-desktop-infrastructure-vdi-role"></a>針對虛擬桌面基礎結構 (VDI) 角色將 Windows 10 版本 1909 最佳化
 
@@ -38,7 +38,7 @@ VDI 環境可透過網路為電腦使用者提供完整的桌面工作階段，�
 Windows 10 會利用每月更新演算法進行更新，因此用戶端無需嘗試更新。 在大多數情況下，VDI 管理員會透過關閉以「主要」或「黃金」映像為基礎的 VM 來控制更新的流程，將唯讀的映像解密、修補映像，然後重新密封並帶回生產環境。 因此，VDI VM 不需要檢查 Windows Update。 例如，在某些情況下，持續性 VDI VM 會執行一般的修補程序。 您也可以使用 Windows Update 或 Microsoft Intune。 System Center Configuration Manager 可以用來處理更新和其他套件傳遞。 每個組織可以自行決定最適用的 VDI 更新方法。
 
 > [!TIP]
-> 在本主題的討論中用來實作最佳化的指令碼，以及可使用 **LGPO.exe** 匯入的 GPO 匯出檔案，皆可從 GitHub 上的 [TheVDIGuys](https://github.com/TheVDIGuys) 取得。
+> 在本主題的討論中用來實作最佳化的指令碼，以及可使用 **LGPO.exe** 匯入的 GPO 匯出檔案，皆可從 GitHub 上的[虛擬桌面小組](https://github.com/The-Virtual-Desktop-Team/Virtual-Desktop-Optimization-Tool)取得。
 
 此指令碼專為符合您的環境和需求而設計。 主要的程式碼是 PowerShell，並使用輸入檔案 (純文字) 與本機群組原則物件 (LGPO) 工具匯出檔案來完成作業。 這些檔案包含要移除的應用程式清單，以及要停用的各項服務清單。 如果您不想移除特定的應用程式或停用特定的服務，請編輯對應的文字檔，並移除該項目。 最後，您可以將本機原則設定匯入您的裝置。 建議您在基礎映像中使用某些設定，而不是透過群組原則套用設定；因為某些設定會在下次重新開機時生效，或在第一次使用元件時生效。
 
@@ -86,7 +86,7 @@ Windows 10 會利用每月更新演算法進行更新，因此用戶端無需嘗
 > Windows 10 會定期自動執行一組維護工作。 有一項排定工作依預設會在每天凌晨 3:00 執行。 這項排定工作會執行一系列的工作，包括 Windows Update 清理。 您可以使用下列 PowerShell 命令，檢視所有會自動執行的維護工作類別：
 >
 >```powershell
->Get-ScheduledTask | ? {$_.Settings.MaintenanceSettings}
+>Get-ScheduledTask | Where-Object {$_.Settings.MaintenanceSettings}
 >```
 >
 
@@ -115,7 +115,7 @@ Windows 10 有一項名為[系統準備工具](/windows-hardware/manufacture/des
 
 您可以使用慣用的搜尋引擎，使用 ""start value" site:support.microsoft.com" 一詞，提出有關服務預設起始值的已知問題。
 
-您可能會注意到，本文件和 GitHub 上相關的指令碼並不會修改任何預設權限。 如果您想增加安全性設定，請從名為 **AaronLocker** 的專案開始。 如需詳細資訊，請參閱 [“AaronLocker” 概觀](https://github.com/microsoft/AaronLocker)。
+您可能會注意到，本文件和 GitHub 上相關的指令碼並不會修改任何預設權限。 如果您想增加安全性設定，請從名為 **AaronLocker** 的專案開始。 如需詳細資訊，請參閱 [概觀](https://github.com/microsoft/AaronLocker)。
 
 #### <a name="vdi-optimization-categories"></a>VDI 最佳化類別
 
@@ -149,7 +149,7 @@ VDI 映像的目標之一是要越精簡越好。 縮小映像大小的方式之
 
 如果您修改用來安裝 Windows 10 的基礎 .WIM，並在安裝之前從 .WIM 中移除了不必要的 UWP 應用程式，則這些應用程式將不會安裝並啟動，而您的設定檔建立時間應該會縮短。 本節稍後的內容中會說明關於如何從安裝 .WIM 檔案中移除 UWP 應用程式的資訊。
 
-就 VDI 而言，佈建您在基底映像中需要的應用程式，並在其後限制或封鎖對 Microsoft Store 的存取，是不錯的策略。 在一般的電腦上，市集應用程式會定期在背景更新。 UWP 應用程式可在維護期間，於系統套用其他更新時進行更新。 如需詳細資訊，請參閱[通用 Windows 平台應用程式](https://docs.citrix.com/citrix-virtual-apps-desktops/manage-deployment/applications-manage/universal-apps.html)
+就 VDI 而言，佈建您在基底映像中需要的應用程式，並在其後限制或封鎖對 Microsoft Store 的存取，是不錯的策略。 在一般的電腦上，市集應用程式會定期在背景更新。 UWP 應用程式可在維護期間，於系統套用其他更新時進行更新。 如需詳細資訊，請參閱[通用 Windows 平台應用程式](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/manage-deployment/applications-manage/universal-apps.html)
 
 #### <a name="delete-the-payload-of-uwp-apps"></a>刪除 UWP 應用程式的承載
 
@@ -571,7 +571,7 @@ VDI 環境中的許多 Windows 10 最佳化都可使用 Windows 原則來進行�
 | 診斷原則服務 | 啟用對 Windows 元件的問題偵測、疑難排解和解決方案。 如果停止此服務，診斷將不再運作。 | |
 | 已下載的地圖管理員 | 適用於應用程式存取已下載地圖的 Windows 服務。 要存取已下載地圖的應用程式會依需求啟動此服務。 停用此服務將讓應用程式無法存取地圖。 | |
 | 地理位置服務 | 監視目前的系統位置並管理地理柵欄 | |
-| GameDVR 和廣播使用者服務 | 這項使用者服務用於遊戲錄影和即時廣播 | 這是個別使用者的服務，因此範本服務必須停用。 |
+| GameDVR 和廣播使用者服務 | 這項使用者服務用於遊戲錄影和即時廣播 | 這是每一使用者服務，因此*範本服務*必須停用。 |
 | MessagingService | 支援文字訊息和相關功能的服務。 | 這是每一使用者服務，因此*範本服務*必須停用。 |
 | 最佳化磁碟機 | 將儲存磁碟機上的檔案最佳化，有助於提高電腦執行效率。 | VDI 解決方案通常不會受益於磁碟最佳化。 這些「磁碟機」並不是傳統的磁碟機，且通常只是暫時的儲存體配置。 |
 | Superfetch | 維護並改進一段時間後的系統效能。 | 在 VDI 中通常無法改善效能，尤其是非持續性 VDI，因為在每次重新開機後就會捨棄作業系統狀態。 |
@@ -722,7 +722,7 @@ Microsoft 近期發佈了關於在 VDI 環境中使用 Windows Defender 的文�
 
 有些登錄設定可能會提高網路效能。 在 VDI 或電腦的工作負載多半以網路為基礎的環境中，這項調整格外重要。 建議您套用此節中的設定，為目錄項目之類的項目設定額外的緩衝處理和快取，使效能側重於網路的層面。
 
->[!NOTE]
+> [!NOTE]
 > 本節中的某些設定僅以登錄為基礎，且應在映像部署至生產環境之前納入基底映像中。
 
 下列設定值記載於 [Windows Server 2016 效能微調指導方針](../../administration/performance-tuning/index.md)中，由 Windows 產品小組發佈於 Microsoft.com 上。

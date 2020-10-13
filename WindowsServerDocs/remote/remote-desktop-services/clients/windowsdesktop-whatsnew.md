@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 09/22/2020
+ms.date: 10/09/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4edd85e305d30cfe22480021b67f3c0213275926
-ms.sourcegitcommit: c0e0bdc9a1b28bd21951d68b5cfd2cce48a770ef
+ms.openlocfilehash: 96a307b06b0a29cfb66ba52ca5d8ea031bd979e7
+ms.sourcegitcommit: 6931830a70c5849d8f884cdc7bd4f5afc1a00cce
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90999252"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91955759"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面用戶端的新功能
 
@@ -38,6 +38,7 @@ ms.locfileid: "90999252"
 - 已修正當 Teams 的媒體最佳化停用時，無法列舉音訊或視訊裝置的情形。
 - 已新增「需要設定的協助？」 桌面設定頁面的連結。
 - 已修正使用高對比深色佈景主題時，所發生的 [訂閱] 按鈕問題。
+- 每個應用程式最多允許 20 個認證。
 
 ## <a name="updates-for-version-121275"></a>1\.2.1275 版的更新
 

@@ -6,14 +6,14 @@ ms.assetid: 12efe858-6b76-4e08-9f72-b9603aceb0fc
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 08/25/2020
+ms.date: 10/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a44926d50fae9dea38e3f5c46db423991a414a87
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 2c34ab9c769beb25437e26442d85f75d40db163e
+ms.sourcegitcommit: ed77cfe8140a480b025907716e3635d40a5e3303
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941508"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91806633"
 ---
 # <a name="compare-the-clients"></a>比較用戶端
 
@@ -29,7 +29,7 @@ ms.locfileid: "88941508"
 
 ### <a name="input-redirection"></a>輸入重新導向
 
-| 重新導向 | Windows 收件匣</br>(MSTSC) | Windows 桌面</br>(MSRDC) | Windows 市集 | Android | iOS | macOS | 網頁用戶端    |
+| 重新導向 | Windows 收件匣</br>(MSTSC) | Windows 桌面</br>(MSRDC) | Microsoft Store 用戶端</br>(URDC) | Android | iOS | macOS | 網頁用戶端    |
 |-------------|---------------------------|-----------------------------|---------------|---------|-----|-------|---------------|
 | 鍵盤    | X                         | X                           | X             | X       | X   | X     | X             |
 | 滑鼠       | X                         | X                           | X             | X       | X\* | X     | X             |
@@ -40,7 +40,7 @@ ms.locfileid: "88941508"
 
 ### <a name="port-redirection"></a>連接埠重新導向
 
-| 重新導向 | Windows 收件匣</br>(MSTSC) | Windows 桌面</br>(MSRDC) | Windows 市集 | Android | iOS | macOS | 網頁用戶端 |
+| 重新導向 | Windows 收件匣</br>(MSTSC) | Windows 桌面</br>(MSRDC) | Microsoft Store 用戶端</br>(URDC) | Android | iOS | macOS | 網頁用戶端 |
 |-------------|---------------------------|-----------------------------|---------------|---------|-----|-------|------------|
 | 序列埠 | X                         | X                           |               |         |     |       |            |
 | USB         | X                         | X                           |               |         |     |       |            |
@@ -49,7 +49,7 @@ ms.locfileid: "88941508"
 
 ### <a name="other-redirection-devices-etc"></a>其他重新導向 (裝置等)
 
-| 重新導向         | Windows 收件匣</br>(MSTSC) | Windows 桌面</br>(MSRDC) | Windows 市集 | Android | iOS         | macOS                           | 網頁用戶端    |
+| 重新導向         | Windows 收件匣</br>(MSTSC) | Windows 桌面</br>(MSRDC) | Microsoft Store 用戶端</br>(URDC) | Android | iOS         | macOS                           | 網頁用戶端    |
 |---------------------|---------------------------|-----------------------------|---------------|---------|-------------|---------------------------------|---------------|
 | 相機             | X                         | X                           |               |     X    |   X         | X                               |               |
 | 剪貼簿           | X                         | X                           | X             | Text    | 文字、影像 | X                               | 文字          |
