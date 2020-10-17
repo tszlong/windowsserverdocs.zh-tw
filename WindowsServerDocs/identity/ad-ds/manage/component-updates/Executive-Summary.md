@@ -6,12 +6,12 @@ ms.author: iainfou
 manager: daveba
 ms.date: 05/08/2018
 ms.topic: article
-ms.openlocfilehash: b67dbb8c22545b55b7b07565c4c92bc363070bc1
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: ffd3cf45d276445bca36f9e01651b74468446f61
+ms.sourcegitcommit: f45640cf4fda621b71593c63517cfdb983d1dc6a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941328"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92155933"
 ---
 # <a name="executive-summary"></a>執行摘要
 
@@ -78,7 +78,7 @@ ms.locfileid: "88941328"
 
 - Active Directory 一節中的特殊 **許可權帳戶和群組** 會討論 Active Directory 中最高許可權的帳戶和群組，以及用來保護特殊許可權帳戶的機制。 在 Active Directory 中，有三個內建組是目錄中的最高許可權群組 (Enterprise Admins、Domain Admins 和 Administrator) ，不過也應保護許多額外的群組和帳戶。
 
-- 「 **執行最小許可權的系統管理模型** 」一節的重點，是要找出在日常系統管理中使用高度特殊許可權帳戶的風險，以及提供建議來降低風險。
+- 「 **實施 Least-Privilege 系統管理模型** 」一節的重點在於找出使用高特殊許可權帳戶進行日常管理的風險，以及提供建議來降低風險。
 
 在遭盜用的環境 Active Directory 中，不會有過多的許可權。 當組織開發出授與比所需更多許可權的習慣時，通常會在整個基礎結構中找到：
 
@@ -139,11 +139,11 @@ ms.locfileid: "88941328"
 
 - **維護更安全的環境** -包含最高階的建議，目的是用來做為開發不僅有效的安全性，但有效的生命週期管理的指導方針。 本節包含下列主題：
 
-    - **針對 Active Directory 建立以商務為中心的安全性作法** ，以有效管理由 Active Directory 管理之使用者、資料、應用程式和系統的生命週期，請遵循這些原則。
+    - **建立 Active Directory 的 Business-Centric 安全性作法** ，以有效管理 Active Directory 所管理的使用者、資料、應用程式和系統的生命週期，請遵循這些原則。
 
         - **將企業擁有權指派給 Active Directory 資料** -將基礎結構元件的擁有權指派給它;針對新增至 Active Directory Domain Services (AD DS) 以支援業務的資料，例如，新的員工、新的應用程式和新的資訊儲存機制，則應該與資料相關聯的指定業務單位或使用者。
 
-        - **實行業務驅動生命週期管理** -應針對 Active Directory 中的資料來實行生命週期管理。
+        - **實行 Business-Driven 生命週期管理** -應針對 Active Directory 中的資料來實行生命週期管理。
 
         - **分類所有 Active Directory 資料** -商務擁有者應提供 Active Directory 中資料的分類。 在資料分類模型中，應包含下列 Active Directory 資料的分類：
 
@@ -169,7 +169,7 @@ ms.locfileid: "88941328"
 | 排除高許可權群組中的永久成員資格。 | 戰術 | 預防性 |
 | 執行控制項，以在需要時授與許可權群組中的暫時成員資格。 | 戰術 | 預防性 |
 | 執行安全的系統管理主機。 | 戰術 | 預防性 |
-| 在網域控制站、系統管理主機和其他敏感性系統上使用應用程式允許清單。 | 戰術 | 預防性 |
+| 在網域控制站、系統管理主機和其他敏感性系統上使用應用程式 allowslists。 | 戰術 | 預防性 |
 | 識別重要資產，並設定其安全性和監視的優先順序。 | 戰術 | 兩者 |
 | 執行最低許可權、角色型存取控制，以管理目錄、其支援的基礎結構，以及已加入網域的系統。 | 策略 | 預防性 |
 | 隔離舊版系統和應用程式。 | 戰術 | 預防性 |

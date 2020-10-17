@@ -62,11 +62,11 @@
 #### [管理使用者存取記錄](user-access-logging/manage-user-access-logging.md)
 
 ## 調整 Windows Server 效能
-### [效能調整指導方針](performance-tuning/index.md) 
+### [效能調整指導方針](performance-tuning/index.md)
 ### [Microsoft Server Performance Advisor](server-performance-advisor/microsoft-server-performance-advisor.md)
 #### [Server Performance Advisor 使用者指南](server-performance-advisor/server-performance-advisor-users-guide.md)
 #### [Server Performance Advisor 套件開發指南](server-performance-advisor/server-performance-advisor-pack-development-guide.md)
 
 ## 自動化 Windows Server 管理
-### [Windows PowerShell 指令碼](/powershell/scripting/powershell-scripting?view=powershell-5.1)
+### [Windows PowerShell 指令碼](/powershell/scripting/overview)
 ### [Windows 命令](windows-commands/windows-commands.md)

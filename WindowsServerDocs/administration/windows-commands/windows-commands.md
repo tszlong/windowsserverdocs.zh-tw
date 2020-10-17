@@ -7,12 +7,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.date: 06/29/2020
-ms.openlocfilehash: c389d0889d4dfca46472215f014e77e9b2346f87
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ad0c9b5aba9148a2763e8fde6c9ff5eb6556918f
+ms.sourcegitcommit: f45640cf4fda621b71593c63517cfdb983d1dc6a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89022843"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92155840"
 ---
 # <a name="windows-commands"></a>Windows 命令
 
@@ -20,7 +20,7 @@ ms.locfileid: "89022843"
 
 這組檔說明您可以使用腳本或腳本工具將工作自動化的 Windows 命令。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 本主題所包含的資訊適用于：
 
@@ -45,7 +45,7 @@ PowerShell 的設計目的是要擴充命令 shell 的功能，以執行稱為 C
 針對最強大、最新的 Windows 自動化，建議您使用 PowerShell，而不是 windows 自動化的 windows 命令或 Windows Script Host。
 
 > [!NOTE]
->您也可以下載並安裝 [PowerShell Core](/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6)，也就是 PowerShell 的開放原始碼版本。
+>您也可以下載並安裝 [PowerShell Core](/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6&preserve-view=true)，也就是 PowerShell 的開放原始碼版本。
 
 > [!CAUTION]
 > 不正確地編輯登錄可能會對系統造成嚴重的損害。 在對登錄進行下列變更之前，您應該先備份電腦上任何重要的資料。
@@ -53,7 +53,7 @@ PowerShell 的設計目的是要擴充命令 shell 的功能，以執行稱為 C
 > [!NOTE]
 > 若要在電腦或使用者登入會話的命令介面中啟用或停用檔案和目錄名稱完成，請執行 **regedit.exe** ，並設定下列 **reg_DWOrd 值**：
 >
-> HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\completionChar\ reg_DWOrd
+> HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\completionChar\reg_DWOrd
 >
 > 若要設定 **reg_DWOrd** 值，請針對特定函式使用控制字元的十六進位值 (例如， **0 9** 為 Tab， **0 08** 為倒退鍵) 。 使用者指定的設定優先于電腦設定，而命令列選項優先于登錄設定。
 
@@ -769,17 +769,17 @@ PowerShell 的設計目的是要擴充命令 shell 的功能，以執行稱為 C
   - [telnet unset](telnet-unset.md)
 - [tftp](tftp.md)
 - [time](time.md)
-- [timeout](timeout_1.md)
-- [title](title_1.md)
+- [timeout](timeout.md)
+- [title](title.md)
 - [tlntadmn](tlntadmn.md)
 - [tpmtool](tpmtool.md)
 - [tpmvscmgr](tpmvscmgr.md)
-- [tracerpt](tracerpt_1.md)
+- [tracerpt](tracerpt.md)
 - [tracert](tracert.md)
 - [tree](tree.md)
 - [tscon](tscon.md)
 - [tsdiscon](tsdiscon.md)
-- [tsecimp](tsecimp_1.md)
+- [tsecimp](tsecimp.md)
 - [tskill](tskill.md)
 - [tsprof](tsprof.md)
 - [type](type.md)
@@ -790,13 +790,13 @@ PowerShell 的設計目的是要擴充命令 shell 的功能，以執行稱為 C
 
 - [unexpose](unexpose.md)
 - [uniqueid](uniqueid.md)
-- [unlodctr](unlodctr_1.md)
+- [unlodctr](unlodctr.md)
 
 ### <a name="v"></a>V
 
 - [ver](ver.md)
 - [verifier](verifier.md)
-- [verify](verify_1.md)
+- [verify](verify.md)
 - [vol](vol.md)
 - [vssadmin](vssadmin.md)
   - [vssadmin delete shadows](vssadmin-delete-shadows.md)
@@ -826,7 +826,7 @@ PowerShell 的設計目的是要擴充命令 shell 的功能，以執行稱為 C
 - [wdsutil](wdsutil.md)
 - [wecutil](wecutil.md)
 - [wevtutil](wevtutil.md)
-- [where](where_1.md)
+- [where](where.md)
 - [whoami](whoami.md)
 - [winnt](winnt.md)
 - [winnt32](winnt32.md)
