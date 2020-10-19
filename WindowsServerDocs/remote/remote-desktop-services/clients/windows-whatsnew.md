@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 10/02/2020
+ms.date: 10/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a02cc0ba9c373c208cda9e75ea5105ab52ae7432
-ms.sourcegitcommit: ee9253a8ac0d96c1b43bf6d44bba978187931a57
+ms.openlocfilehash: 63f3ccb3b105bf59033214d426650dd727509095
+ms.sourcegitcommit: 45099dfe3682df1e2bc0bd5998594a79cfff16fe
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91659512"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92079827"
 ---
 # <a name="whats-new-in-the-microsoft-store-client"></a>Microsoft Store 用戶端的新功能
 
@@ -33,6 +33,7 @@ ms.locfileid: "91659512"
 - 更新的訂用帳戶現在可以偵測您所使用的是 Windows 虛擬桌面或 Windows 虛擬桌面 (傳統)。
 - 已修正將檔案複製到遠端電腦的問題。
 - 已修正按鈕經常回報的協助工具問題。
+- 每個應用程式最多允許 20 個認證。
 
 ## <a name="updates-for-version-1011215"></a>10.1.1215 版的更新
 
