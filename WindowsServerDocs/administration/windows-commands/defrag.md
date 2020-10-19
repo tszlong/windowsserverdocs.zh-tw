@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 81f6aba6dce5bce28311a789f803ac2c7117fd0f
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: df9866682d96358c63b8ea708c05cdbd8216138a
+ms.sourcegitcommit: ccd38245f1b766be005d0c257962f756ff0c4e76
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89628899"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92175794"
 ---
 # <a name="defrag"></a>defrag
 
@@ -67,8 +67,6 @@ defrag <volume> [<parameters>]
 
   - 非 **NTFS**、 **ReFS**、 **Fat** 或 **Fat32**的檔案系統磁片區。
 
-- 您無法排程將固態硬碟 (SSD) 或位於 SSD 上的虛擬硬碟 (VHD) 上的磁片區進行磁碟重組。
-
 - 若要執行此程序，您必須是本機電腦上的 Administrators 群組成員或是已經委派您適當的權限。 如果該電腦已加入網域，則 Domain Admins 群組的成員便可以執行這項程序。 為了安全性最佳作法，請考慮使用「執行 **身份** 」來執行此程式。
 
 - 磁片區至少必須有 15 **% 的可用空間，重組** 才能完整且適當地重組。 **磁碟重組** 會使用此空間做為檔案片段的排序區域。 如果磁片區的可用空間少於 15 **%，重組** 只會部分重組。 若要增加磁片區的可用空間，請刪除不必要的檔案，或將它們移至另一個磁片。
@@ -77,7 +75,7 @@ defrag <volume> [<parameters>]
 
 - 依預設，如果您未指定 **/a**或 **/v**參數，重組會顯示分析和**磁碟重組報表**的摘要。
 
-- 您可以輸入FileName.txt，將報表傳送至文字檔 **>** <em> </em>，其中*FileName.txt*是您指定的檔案名。 例如： `defrag volume /v > FileName.txt`
+- 您可以輸入FileName.txt，將報表傳送至文字檔 **>** <em> </em>，其中*FileName.txt*是您指定的檔案名。 例如：`defrag volume /v > FileName.txt`
 
 - 若要中斷磁碟重組程式，請在命令列中按下 **CTRL + C**。
 
@@ -115,7 +113,7 @@ defrag /c /h /v
 
 - 從排程工作執行 **時，重組** 會針對 ssd 使用下列原則指導方針：
 
-  - **傳統的優化**程式。 包含 **傳統磁碟重組**，例如移動檔案，使其成為合理的連續和 **retrim**。 這會每個月執行一次。 但是，如果略過 **傳統磁碟重組** 和 **retrim** ，則不會執行 **分析** 。
+  - **傳統的優化**程式。 包含 **傳統磁碟重組**，例如移動檔案，使其成為合理的連續和 **retrim**。 這會每個月執行一次。 但是，如果略過 **傳統磁碟重組** 和 **retrim** ，則不會執行 **分析** 。 變更排程工作的頻率並不會影響 Ssd 每月的頻率。
 
   - 如果您在 SSD 上手動執行 **傳統磁碟重組** ，則在您的一般排程執行之間，下一次排程的工作會執行 **分析** 和 **retrim**，但會略過該 ssd 上的 **傳統磁碟重組** 。
 
@@ -129,7 +127,7 @@ defrag /c /h /v
 
     - 電腦已啟動備份 (從閒置) 繼續。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
