@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 10/09/2020
+ms.date: 10/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 96a307b06b0a29cfb66ba52ca5d8ea031bd979e7
-ms.sourcegitcommit: 6931830a70c5849d8f884cdc7bd4f5afc1a00cce
+ms.openlocfilehash: 8708f8ab6e8fb751f0ca39238574823ae5b499c4
+ms.sourcegitcommit: 45099dfe3682df1e2bc0bd5998594a79cfff16fe
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91955759"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92079837"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面用戶端的新功能
 
@@ -25,20 +25,29 @@ ms.locfileid: "91955759"
 |使用者群組 |最新版本  |最低支援版本 |
 |-----------|----------------|--------------------------|
 |公用     |1.2.1364        |1.2.945                   |
-|Insider    |1.2.1364        |1.2.945                   |
+|Insider    |1.2.1440        |1.2.945                   |
+
+## <a name="updates-for-version-121440-insiders"></a>1\.2.1440 版的更新 (測試人員)
+
+*發行日期：2020/10/13*
+
+下載：[Windows 64 位元](https://go.microsoft.com/fwlink/?linkid=2139233)、[Windows 32 位元](https://go.microsoft.com/fwlink/?linkid=2139144)、[Windows ARM64](https://go.microsoft.com/fwlink/?linkid=2139368)
+
+- 用戶端現在可以在連線中心中區分不同的摘要。
+- 已修正訂用帳戶與使用者登入帳戶不相符的問題。
+- 已修正智慧卡重新導向的問題。
 
 ## <a name="updates-for-version-121364"></a>1\.2.1364 版的更新
 
 *發行日期：09/22/2020*
 
-下載：Windows [64 位元](https://go.microsoft.com/fwlink/?linkid=2139369)、[Windows 32 位元](https://go.microsoft.com/fwlink/?linkid=2139456)、[Windows ARM64](https://go.microsoft.com/fwlink/?linkid=2139370)
+下載：[Windows 64 位元](https://go.microsoft.com/fwlink/?linkid=2139369)、[Windows 32 位元](https://go.microsoft.com/fwlink/?linkid=2139456)、[Windows ARM64](https://go.microsoft.com/fwlink/?linkid=2139370)
 
 - 已修正單一登入 (SSO) 在 Windows 7 上無法使用的問題。
 - 已修正當另一個應用程式具有在專有模式中開啟的音訊串流同時呼叫或加入 Teams 通話時，以及當 Teams 的媒體最佳化已停用時，所發生的連線失敗。
 - 已修正當 Teams 的媒體最佳化停用時，無法列舉音訊或視訊裝置的情形。
 - 已新增「需要設定的協助？」 桌面設定頁面的連結。
 - 已修正使用高對比深色佈景主題時，所發生的 [訂閱] 按鈕問題。
-- 每個應用程式最多允許 20 個認證。
 
 ## <a name="updates-for-version-121275"></a>1\.2.1275 版的更新
 
@@ -86,7 +95,7 @@ ms.locfileid: "91955759"
 - 取消訂閱提示現在會顯示警告圖示，並以項目符號清單的方式顯示工作區名稱。
 - 已在其他錯誤對話方塊中新增 [詳細資料] 區段，以協助診斷問題。
 - 已在錯誤對話方塊的 [詳細資料] 區段中新增時間戳記。
-- 已修正下列問題：RDP 檔案設定 **desktop size id** 無法正常運作。
+- 已修正下列問題：RDP 檔案設定 **desktop size ID** 無法正常運作。
 - 已修正下列問題：在啟動工作階段之後未套用 [調整大小時更新解析度] 顯示器設定。
 - 已修正 [桌面設定] 面板中的當地語系化問題。
 - 已修正在 [桌面設定] 面板上透過 Tab 鍵瀏覽控制項時的焦點方塊大小。

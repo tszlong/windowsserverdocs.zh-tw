@@ -8,12 +8,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 6dbaf3fe76ce6c2ac79a0c835a320241e47f4068
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: b10e9f74fa3ca78a3b35a4b2f9ee5c1448a0d2af
+ms.sourcegitcommit: f45640cf4fda621b71593c63517cfdb983d1dc6a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766351"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92156009"
 ---
 # <a name="privileged-access-workstations"></a>特殊權限存取工作站
 
@@ -929,7 +929,7 @@ PAW 必須為系統管理提供安全且受信任的來源，建置程序安全�
       如需 Windows Hello 企業版的詳細資訊，請參閱 [Windows Hello 企業版](/windows/security/identity-protection/hello-for-business/hello-identity-verification)一文。
    * **Azure 多重要素驗證**：Azure 多重要素驗證 (MFA) 可提供另一個驗證要素的安全性，並透過監視和機器學習式分析，提供增強的防護。  Azure MFA 不僅可以保護 Azure 系統管理員的安全，還可以保護其他許多解決方案，包括 Web 應用程式、Azure Active Directory，以及內部部署解決方案 (例如遠端存取和遠端桌面)。  如需有關 Azure 多重要素驗證的詳細資訊，請參閱[多重要素驗證](https://azure.microsoft.com/services/multi-factor-authentication)一文。
 
-2. **使用 Windows Defender 應用程式控制和/或 AppLocker，將受信任的應用程式加入允許清單**。  透過限制未受信任或未簽署的程式碼在 PAW 上執行的能力，您就可以進一步降低惡意活動及危害的可能性。  Windows 對於應用程式控制，包含兩個主要選項︰
+2. **使用 Windows Defender 應用程式控制項和/或 AppLocker，將受信任的應用程式加入允許清單**。  透過限制未受信任或未簽署的程式碼在 PAW 上執行的能力，您就可以進一步降低惡意活動及危害的可能性。  Windows 對於應用程式控制，包含兩個主要選項︰
 
    * **Applocker**：AppLocker 可協助系統管理員控制可以在指定系統上執行的應用程式。  AppLocker 可以透過群組原則集中加以控制，而且可以套用至特定的使用者或群組 (針對以 PAW 使用者為目標的應用)。  如需有關 AppLocker 的詳細資訊，請參閱 TechNet 文章 [AppLocker 概觀](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831440(v=ws.11))。
    * **Windows Defender 應用程式控制**︰新的 Windows Defender 應用程式控制功能可提供增強的硬體式應用程式控制項，與 AppLocker 不同的是，無法在受影響的裝置上覆寫該控制項。  如同 AppLocker，Windows Defender 應用程式控制可以透過群組原則加以控制，並以特定使用者為目標。  有關如何使用 Windows Defender 應用程式控制限制應用程式使用方式，詳細資訊請參閱 TechNet 文章 [Windows Defender 應用程式控制部署指南](/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide)。
