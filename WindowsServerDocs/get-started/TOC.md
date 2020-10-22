@@ -1,7 +1,8 @@
 # 開始使用
 ## [開始使用 Windows Server 2016](Server-Basics.md)
 ## [Windows Server 2016 中的新功能](whats-new-in-windows-server.md)
-### [Windows Server 版本 2004 中的新功能](whats-new-in-windows-server-2004.md)
+### [Windows Server 版本 2004 和 20H2 中的新功能](whats-new-in-windows-server-2004.md)
+### [Windows Server 版本 1903 和 1909 中的新功能](..\get-started-19\whats-new-in-windows-server-1903-1909.md)
 ### [Windows Server 2019 中的新功能](../get-started-19/whats-new-19.md)
 ### [Windows Server 2016 中的新功能](whats-new-in-windows-server-2016.md)
 ### [適用於 Windows Server 2016 的快速更新](express-updates.md)
