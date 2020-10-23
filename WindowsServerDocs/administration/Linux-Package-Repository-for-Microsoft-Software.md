@@ -6,12 +6,12 @@ ms.assetid: b5387444-595f-4f38-abb7-163a70ea1895
 author: victorcheng7
 ms.author: vichen
 ms.date: 08/14/2020
-ms.openlocfilehash: 28ce502a78c58eda74d5b412fe4e4d0d3279d442
-ms.sourcegitcommit: dac52260fdcc3721daf7e32cd45760a0ced96de7
+ms.openlocfilehash: fb03201ce4f76a25b00fb37365597147e473b306
+ms.sourcegitcommit: 3c6c257526b243e876aed59e3f2dec42697f232d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91663679"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92418161"
 ---
 # <a name="linux-software-repository-for-microsoft-products"></a>適用于 Microsoft 產品的 Linux 軟體存放庫
 
@@ -23,7 +23,7 @@ Microsoft 的 Linux 軟體存放庫是由多個子存放庫所組成：
 
  - 生產-生產子存放庫是針對要在生產環境中使用的封裝而指定。 Microsoft 會根據您與 Microsoft 簽訂的適用支援合約或方案條款，以商業方式支援這些套件。
 
- - mssql-伺服器-這些存放庫包含 Linux 上的 Microsoft SQL Server 的套件-另請參閱： [Linux 上的 SQL Server](https://www.microsoft.com/sql-server/sql-server-vnext-including-Linux)。
+ - mssql-伺服器-這些存放庫包含 Linux 上的 Microsoft SQL Server 的套件-另請參閱： [Linux 上的 SQL Server](https://docs.microsoft.com/sql/linux/sql-server-linux-overview)。
 
 > [!NOTE]
 > Linux 軟體存放庫中的套件會受限於套件中的授權條款。 使用封裝前，請先閱讀授權條款。 安裝及使用套件即表示接受這些授權條款。 如果您不同意授權條款，請勿使用封裝。
