@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: b60fb7710699c4fff6656a0e2a34684a538b116d
-ms.sourcegitcommit: 720455aad2bac78cf64997d196a13f35ea0acb73
+ms.openlocfilehash: 450c864bef3b3f17f3912a06aa72aa56ce6e529a
+ms.sourcegitcommit: 554d274fea48a4d47c19845d969a9ec93dec82de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91729912"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92524443"
 ---
 # <a name="get-allservers"></a>AllServers
 
@@ -24,12 +24,12 @@ ms.locfileid: "91729912"
 ## <a name="syntax"></a>語法
 
 ```
-WDSUTIL [Options] /Get-AllServers /Show:{Config | Images | All} [/Detailed] [/Forest:{Yes | No}]
+wdsutil [Options] /Get-AllServers /Show:{Config | Images | All} [/Detailed] [/Forest:{Yes | No}]
 ```
 
 ### <a name="parameters"></a>參數
 
-|   參數   |                                                                                                                 描述                                                                                                                  |
+|   參數   |                                                                                                                 說明                                                                                                                  |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | /Show： {Config |                                                                                                                    影像                                                                                                                    |
 |  [/Detailed]  | 搭配使用 **/show： Images** 或 **/show： all**時，會傳回每個影像的所有影像中繼資料。 如果未指定 **/Detailed** 選項，則預設行為是傳回映射名稱、描述和檔案名。 |
@@ -39,11 +39,11 @@ WDSUTIL [Options] /Get-AllServers /Show:{Config | Images | All} [/Detailed] [/Fo
 
 若要查看所有伺服器的相關資訊，請輸入：
 ```
-WDSUTIL /Get-AllServers /Show:Config
+wdsutil /Get-AllServers /Show:Config
 ```
 若要查看所有伺服器的詳細資訊，請輸入：
 ```
-WDSUTIL /Verbose /Get-AllServers /Show:All /Detailed /Forest:Yes
+wdsutil /Verbose /Get-AllServers /Show:All /Detailed /Forest:Yes
 ```
 
 ## <a name="additional-references"></a>其他參考

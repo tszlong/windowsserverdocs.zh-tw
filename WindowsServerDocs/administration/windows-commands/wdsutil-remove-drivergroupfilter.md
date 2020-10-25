@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: ed154b0ef50ebf36b716ad93d30768739b39ffb5
-ms.sourcegitcommit: 720455aad2bac78cf64997d196a13f35ea0acb73
+ms.openlocfilehash: 6fa543d353f425ee41b836ecc97e562d77d9c19d
+ms.sourcegitcommit: 554d274fea48a4d47c19845d969a9ec93dec82de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91729866"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92524293"
 ---
 # <a name="remove-drivergroupfilter"></a>移除-DriverGroupFilter
 
@@ -23,12 +23,12 @@ ms.locfileid: "91729866"
 ## <a name="syntax"></a>語法
 
 ```
-WDSUTIL /Remove-DriverGroupFilter /DriverGroup:<Group Name> [/Server:<Server name>] /FilterType:<Filter Type>
+wdsutil /Remove-DriverGroupFilter /DriverGroup:<Group Name> [/Server:<Server name>] /FilterType:<Filter Type>
 ```
 
 ### <a name="parameters"></a>參數
 
-|參數|描述|
+|參數|說明|
 |---------|-----------|
 |/DriverGroup:\<Group Name>|指定驅動程式群組的名稱。|
 |[/Server： \<Server name> ]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或 FQDN。 如果未指定伺服器名稱，則會使用本機伺服器。|
@@ -38,10 +38,10 @@ WDSUTIL /Remove-DriverGroupFilter /DriverGroup:<Group Name> [/Server:<Server nam
 
 若要移除篩選準則，請輸入下列其中一項：
 ```
-WDSUTIL /Remove-DriverGroupFilter /DriverGroup:PrinterDrivers /FilterType:Manufacturer
+wdsutil /Remove-DriverGroupFilter /DriverGroup:PrinterDrivers /FilterType:Manufacturer
 ```
 ```
-WDSUTIL /Remove-DriverGroupFilter /DriverGroup:PrinterDrivers /FilterType:Manufacturer /FilterType:OSLanguage
+wdsutil /Remove-DriverGroupFilter /DriverGroup:PrinterDrivers /FilterType:Manufacturer /FilterType:OSLanguage
 ```
 
 ## <a name="additional-references"></a>其他參考

@@ -1,58 +1,53 @@
 ---
 title: wbadmin start systemstatebackup
-description: Wbadmin start systemstatebackup 的參考文章，它會建立本機電腦的系統狀態備份，並將它儲存在指定的位置。
+description: Wbadmin start systemstatebackup 命令的參考文章，此命令會建立本機電腦的系統狀態備份，並將它儲存在指定的位置。
 ms.topic: reference
 ms.assetid: 998366c1-0a64-45e6-9ed3-4c3f5b8406f0
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 7bd0df6e0cbfd7e34439e858865420002f5fb364
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: afdfb3f4a52ae0f5897517f8d59069bea820bc4a
+ms.sourcegitcommit: 554d274fea48a4d47c19845d969a9ec93dec82de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89621481"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92524723"
 ---
 # <a name="wbadmin-start-systemstatebackup"></a>wbadmin start systemstatebackup
 
-
-
 建立本機電腦的系統狀態備份，並將它儲存在指定的位置。
+
+若要使用此命令執行系統狀態備份，您必須是 **Backup Operators** 群組或 **Administrators** 群組的成員，或者必須已被委派適當的許可權。 此外，您必須從提升許可權的命令提示字元中，以滑鼠右鍵按一下 [**命令提示**字元]，然後選取 [以**系統管理員身分執行**]，以執行**wbadmin** 。
 
 > [!NOTE]
 > Windows Server Backup 不會在系統狀態備份或系統狀態復原時，備份或復原登錄使用者 hive (HKEY_CURRENT_USER) 。
 
-若要使用這個子命令執行系統狀態備份，您必須是 **Backup Operators** 群組或 **Administrators** 群組的成員，或者必須已被委派適當的許可權。 此外，您必須從提升許可權的命令提示字元中執行 **wbadmin** 。  (開啟提升許可權的命令提示字元，以滑鼠右鍵按一下 **命令提示**字元，然後按一下 [以 **系統管理員身分執行**]。 ) 
-
 ## <a name="syntax"></a>語法
 
 ```
-wbadmin start systemstatebackup
--backupTarget:<VolumeName>
-[-quiet]
+wbadmin start systemstatebackup -backupTarget:<VolumeName> [-quiet]
 ```
 
 ### <a name="parameters"></a>參數
 
-|   參數   |                                                                                                                                                                                                                      描述                                                                                                                                                                                                                      |
-|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| -backupTarget | 指定您要儲存備份的位置。 儲存位置需要磁碟機號或格式為： \\ \\ ？ \Volume{*GUID*} 的 GUID 型磁片區。</br>執行 Windows Server 2008 的電腦不支援對共用網路資料夾執行系統狀態備份。 如果您的伺服器執行的是 Windows Server 2008 R2 或更新版本，您可以使用**backuptarget： \\ \\ servername\sharedFolder \\ **來存放系統狀態備份。 |
-|    -quiet     |                                                                                                                                                                                                   執行子命令，而不提示使用者。                                                                                                                                                                                                    |
-
-## <a name="remarks"></a>備註
-
-如需將系統狀態備份儲存到包含系統狀態檔案之磁片區的相關資訊，請參閱 Microsoft 知識庫中的文章 944530 ([https://go.microsoft.com/fwlink/?LinkId=110439](https://go.microsoft.com/fwlink/?LinkId=110439)) 。
+| 參數 | 說明 |
+|--|--|
+| -backupTarget | 指定您要儲存備份的位置。 儲存位置需要磁碟機號或以 GUID 為基礎的格式磁片區： `\\?\Volume{*GUID*}` 。 使用命令 `-backuptarget:\\servername\sharedfolder\` 來存放系統狀態備份。 |
+| -quiet | 在不提示使用者的情況下執行命令。 |
 
 ## <a name="examples"></a>範例
 
 若要建立系統狀態備份並將其儲存在磁片區 f 上，請輸入：
+
 ```
 wbadmin start systemstatebackup -backupTarget:f:
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
--   [Backup](wbadmin.md)
--   [WBBackup](/previous-versions/windows/it-pro/windows-8.1-and-8/hh825173(v=win.10)) Cmdlet
+
+- [wbadmin 命令](wbadmin.md)
+
+- [開始-WBBackup](/powershell/module/windowserverbackup/Start-WBBackup)

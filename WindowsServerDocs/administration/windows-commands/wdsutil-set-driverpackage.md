@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: a4b0b3154f6cc7cee34e6fdcc91f332295164541
-ms.sourcegitcommit: 720455aad2bac78cf64997d196a13f35ea0acb73
+ms.openlocfilehash: 2ff17721282472032cb935f4bbb3e5682c356603
+ms.sourcegitcommit: 554d274fea48a4d47c19845d969a9ec93dec82de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91730554"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92524953"
 ---
 # <a name="subcommand-set-driverpackage"></a>子命令： set-DriverPackage
 
@@ -21,12 +21,12 @@ ms.locfileid: "91730554"
 ## <a name="syntax"></a>語法
 
 ```
-WDSUTIL /Set-DriverPackage [/Server:<Server name>] {/DriverPackage:<Name> | /PackageId:<ID>} [/Name:<New Name>] [/Enabled:{Yes | No}
+wdsutil /Set-DriverPackage [/Server:<Server name>] {/DriverPackage:<Name> | /PackageId:<ID>} [/Name:<New Name>] [/Enabled:{Yes | No}
 ```
 
 ### <a name="parameters"></a>參數
 
-|        參數         |                                                                                                                                                                                                               描述                                                                                                                                                                                                                |
+|        參數         |                                                                                                                                                                                                               說明                                                                                                                                                                                                                |
 |--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [/Server： \<Server name> ] |                                                                                                                                                 指定伺服器的名稱。 這可以是 NetBIOS 名稱或 FQDN。 如果未指定伺服器名稱，則會使用本機伺服器。                                                                                                                                                 |
 | [/DriverPackage： \<Name> ] |                                                                                                                                                                                       指定要修改之驅動程式套件的目前名稱。                                                                                                                                                                                        |
@@ -38,10 +38,10 @@ WDSUTIL /Set-DriverPackage [/Server:<Server name>] {/DriverPackage:<Name> | /Pac
 
 若要變更套件的設定，請輸入下列其中一項：
 ```
-WDSUTIL /Set-DriverPackage /PackageId:{4D36E972-E325-11CE-BFC1-08002BE10318} /Name:MyDriverPackage
+wdsutil /Set-DriverPackage /PackageId:{4D36E972-E325-11CE-BFC1-08002BE10318} /Name:MyDriverPackage
 ```
 ```
-WDSUTIL /Set-DriverPackage /DriverPackage:MyDriverPackage /Name:NewName /Enabled:Yes
+wdsutil /Set-DriverPackage /DriverPackage:MyDriverPackage /Name:NewName /Enabled:Yes
 ```
 
 ## <a name="additional-references"></a>其他參考

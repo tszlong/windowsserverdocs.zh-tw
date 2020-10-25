@@ -1,19 +1,16 @@
 ---
 title: 任意傳播 DNS 總覽
 description: 本主題提供任意傳播 DNS 的簡短總覽
-manager: laurawi
-ms.prod: windows-server
-ms.technology: networking-dns
 ms.topic: article
 ms.assetid: f9c313ac-bb86-4e48-b9b9-de5004393e06
 ms.author: greglin
 author: greg-lindsay
-ms.openlocfilehash: f43c1978e193cbb2212966ab519b002d9fed45f5
-ms.sourcegitcommit: ccd38245f1b766be005d0c257962f756ff0c4e76
+ms.openlocfilehash: 0944b8a825d10dc1338a698d511af27b8502f776
+ms.sourcegitcommit: 554d274fea48a4d47c19845d969a9ec93dec82de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92175796"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92524853"
 ---
 # <a name="anycast-dns-overview"></a>任意傳播 DNS 總覽
 
@@ -25,11 +22,11 @@ ms.locfileid: "92175796"
 
 「任意傳播」是一種技術，可針對每個指派相同 IP 位址的端點群組提供多個路由路徑。 群組中的每個裝置會在網路上通告相同的位址，並使用路由通訊協定來選擇最適合的目的地。
 
-多點傳播可讓您將多個節點放在相同的 IP 位址後面，並使用相等的多重路徑 (ECMP) 路由，將這些節點之間的流量導向，以調整無狀態服務（例如 DNS 或 HTTP）。 多點傳播與單播不同，其中每個端點都有自己的個別 IP 位址。 
+多點傳播可讓您將多個節點放在相同的 IP 位址後面，並使用相等的多重路徑 (ECMP) 路由，將這些節點之間的流量導向，以調整無狀態服務（例如 DNS 或 HTTP）。 多點傳播與單播不同，其中每個端點都有自己的個別 IP 位址。
 
 ## <a name="why-use-anycast-with-dns"></a>為什麼要使用 DNS 的任意傳播？
 
-有了任意傳播 DNS，您就可以啟用 DNS 伺服器或一組伺服器，以根據 DNS 用戶端的地理位置回應 DNS 查詢。 這可以增強 DNS 回應時間，並簡化 DNS 用戶端設定。 任意傳播 DNS 也提供額外的冗余層級，可協助防止 DNS 阻絕服務攻擊。 
+有了任意傳播 DNS，您就可以啟用 DNS 伺服器或一組伺服器，以根據 DNS 用戶端的地理位置回應 DNS 查詢。 這可以增強 DNS 回應時間，並簡化 DNS 用戶端設定。 任意傳播 DNS 也提供額外的冗余層級，可協助防止 DNS 阻絕服務攻擊。
 
 ### <a name="how-anycast-dns-works"></a>任意傳播 DNS 的運作方式
 
@@ -37,17 +34,17 @@ ms.locfileid: "92175796"
 
 有了任意傳播，存在於多個地理位置的伺服器，每個都會將單一的相同 IP 位址公告到其本機閘道 (路由器) 。 當 DNS 用戶端起始對任意傳播位址的查詢時，就會評估可用的路由，並將 DNS 查詢傳送至慣用的位置。 一般而言，這是根據網路拓撲的最接近位置。 請參閱下列範例。
 
-![任一傳播 DNS](../../media/Anycast/anycast.png)
+![四部 DNS 伺服器（位於不同的網站）向網路宣告相同的任意傳播 IP 位址](../../media/Anycast/anycast.png)
 
-**圖 1**：位於網路不同網站上的四部 DNS 伺服器，每個都宣佈相同的任意傳播 IP 位址， (黑色箭號) 至網路。 DNS 用戶端裝置會將要求送出至任意傳播 IP 位址。 網路裝置會分析可用的路由，並將用戶端的 DNS 查詢傳送到最接近的位置， (藍色箭號) 。 
+**圖 1**：位於網路不同網站上的四部 DNS 伺服器，每個都宣佈相同的任意傳播 IP 位址， (黑色箭號) 至網路。 DNS 用戶端裝置會將要求送出至任意傳播 IP 位址。 網路裝置會分析可用的路由，並將用戶端的 DNS 查詢傳送到最接近的位置， (藍色箭號) 。
 
 現在會使用任意傳播 DNS 來路由傳送許多全域 DNS 服務的 DNS 流量。 例如，跟 DNS 伺服器系統的高度相依于任意傳播 DNS。 多點傳播也適用于各種不同的路由通訊協定，並可專門在內部網路上使用。
 
 ## <a name="windows-server-native-bgp-anycast-demo"></a>Windows Server 原生 BGP 任意傳播示範
 
-下列程式示範如何使用 Windows Server 上的原生 BGP 來搭配任意傳播 DNS。  
+下列程式示範如何使用 Windows Server 上的原生 BGP 來搭配任意傳播 DNS。
 
-### <a name="requirements"></a>規格需求
+### <a name="requirements"></a>需求
 
 - 已安裝 Hyper-v 角色的一部實體裝置。
   - Windows Server 2012 R2、Windows 10 或更新版本。
@@ -109,7 +106,7 @@ ms.locfileid: "92175796"
 
 ### <a name="configure-loopback-adapters"></a>設定回送介面卡
 
-在 DC001 和 DC002 上提高許可權的 Windows PowerShell 提示字元中，輸入下列命令以設定回送介面卡。 
+在 DC001 和 DC002 上提高許可權的 Windows PowerShell 提示字元中，輸入下列命令以設定回送介面卡。
 
 > [!NOTE]
 > **Install 模組**命令需要網際網路存取。 這可以藉由暫時將 VM 指派給 Hyper-v 中的外部網路來完成。
@@ -168,7 +165,7 @@ Add-BgpCustomRoute -Network 51.51.51.0/24
 
 ### <a name="summary-diagram"></a>摘要圖表
 
-![任一傳播 DNS](../../media/Anycast/anycast-lab.png)
+![原生 BGP 任意傳播 DNS 示範的實驗室設定](../../media/Anycast/anycast-lab.png)
 
 **圖 2**：原生 BGP 任意傳播 DNS 示範的實驗室設定
 
@@ -250,15 +247,15 @@ Add-BgpCustomRoute -Network 51.51.51.0/24
 
 問：任意傳播 DNS 是在內部部署 DNS 環境中使用的良好解決方案嗎？<br>
 答：任意傳播 DNS 可與內部部署 DNS 服務緊密搭配運作。 不過，DNS 服務並不 *需要* 進行任何傳播，以進行調整。
- 
+
 問：在具有大量 (例如： >50) 的網域控制站的環境中，執行任意傳播 DNS 有何影響？ <br>
 答：不會直接影響功能。 如果使用負載平衡器，則不需要在網域控制站上進行任何額外的設定。
- 
+
 問： Microsoft 客戶服務是否支援任意傳播 DNS 設定？<br>
-答：如果您使用非 Microsoft 負載平衡器轉送 DNS 查詢，Microsoft 將會支援與 DNS 伺服器服務相關的問題。 請參閱負載平衡器廠商，以瞭解與 DNS 轉送相關的問題。 
- 
+答：如果您使用非 Microsoft 負載平衡器轉送 DNS 查詢，Microsoft 將會支援與 DNS 伺服器服務相關的問題。 請參閱負載平衡器廠商，以瞭解與 DNS 轉送相關的問題。
+
 問：以大量 (例如： >50) 的網域控制站而言，任意傳播 DNS 的最佳作法為何？<br>
-答：最佳作法是在每個地理位置使用負載平衡器。 負載平衡器通常是由外部廠商所提供。 
+答：最佳作法是在每個地理位置使用負載平衡器。 負載平衡器通常是由外部廠商所提供。
 
 問：是否有任何可傳播 DNS 和 Azure DNS 有類似的功能？<br>
-答： Azure DNS 使用任意傳播。 若要使用與 Azure DNS 的任意傳播，請將負載平衡器設定為將要求轉寄到 Azure DNS 伺服器。 
+答： Azure DNS 使用任意傳播。 若要使用與 Azure DNS 的任意傳播，請將負載平衡器設定為將要求轉寄到 Azure DNS 伺服器。

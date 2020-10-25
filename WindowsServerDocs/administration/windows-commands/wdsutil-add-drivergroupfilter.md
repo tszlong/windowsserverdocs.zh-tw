@@ -1,18 +1,18 @@
 ---
 title: 新增-DriverGroupFilter
-description: DriverGroupFilter 的參考文章，可將篩選加入至伺服器上的驅動程式群組。
+description: DriverGroupFilter 命令的參考文章，此命令會將篩選新增至伺服器上的驅動程式群組。
 ms.topic: reference
 ms.assetid: a66c5e68-99ea-4e47-b68d-8109633ae336
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: bf11cbe86242a8051b173aa23f53748c20aa4ca6
-ms.sourcegitcommit: 720455aad2bac78cf64997d196a13f35ea0acb73
+ms.openlocfilehash: bd9e26e7bdf6b1a03d01b2993c969bbbcf5b8754
+ms.sourcegitcommit: 554d274fea48a4d47c19845d969a9ec93dec82de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91730017"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92524603"
 ---
 # <a name="add-drivergroupfilter"></a>新增-DriverGroupFilter
 
@@ -21,30 +21,39 @@ ms.locfileid: "91730017"
 ## <a name="syntax"></a>語法
 
 ```
-WDSUTIL /Add-DriverGroupFilter /DriverGroup:<Group Name> [/Server:<Server name>] /FilterType:<Filter Type> /Policy:{Include | Exclude} /Value:<Value> [/Value:<Value> ...]
+wdsutil /Add-DriverGroupFilter /DriverGroup:<Group Name> [/Server:<Server name>] /FilterType:<Filter Type> /Policy:{Include | Exclude} /Value:<Value> [/Value:<Value> ...]
 ```
 
 ### <a name="parameters"></a>參數
 
-|         參數          |                                                                                                                                                                                                                                                                                                                                                                                                                                                                            描述                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-|----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| /DriverGroup:\<Group Name> |                                                                                                                                                                                                                                                                                                                                                                                                                                                              指定驅動程式群組的名稱。                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-|  [/Server： \<Server name> ]  |                                                                                                                                                                                                                                                                                                                                                                                                               指定伺服器的名稱。 這可以是 NetBIOS 名稱或 FQDN。 如果未指定伺服器名稱，則會使用本機伺服器。                                                                                                                                                                                                                                                                                                                                                                                                               |
-| FilterType\<FilterType>  |                                                                                                                                                                                                   指定要加入至群組的篩選準則類型。 您可以在單一命令中指定多個篩選器類型。 每個篩選類型後面都必須接著 **/policy** ，並且至少包含一個 **/Value**。 \<FilterType> 可以是 **BiosVendor**、 **BiosVersion**、 **ChassisType**、 **Manufacturer**、 **Uuid**、 **OsVersion**、 **OsEdition**或 **OsLanguage**。 如需取得其他所有篩選器類型值的相關資訊，請參閱 () 的 [驅動程式群組篩選](https://go.microsoft.com/fwlink/?LinkID=155158) <https://go.microsoft.com/fwlink/?LinkID=155158> 。                                                                                                                                                                                                    |
-|     [/Policy： {Include      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                             排除}]                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-|     [/Value： \<Value> ]      | 指定對應至 **/FilterType**的用戶端值。 您可以為單一類型指定多個值。 請參閱下列清單以取得 **ChassisType**的有效值。 如需取得其他所有篩選器類型值的相關資訊，請參閱 () 的 [驅動程式群組篩選](https://go.microsoft.com/fwlink/?LinkID=155158) <https://go.microsoft.com/fwlink/?LinkID=155158> 。</br>**其他**</br>**UnknownChassis**</br>**Desktop** (電腦)</br>**LowProfileDesktop**</br>**PizzaBox**</br>**MiniTower**</br>**塔**</br>**可擕式**</br>**[膝上型電腦]**</br>**Notebook**</br>**手持**</br>**DockingStation**</br>**AllInOne**</br>**SubNotebook**</br>**SpaceSaving**</br>**午餐 盒**</br>**MainSystemChassis**</br>**ExpansionChassis**</br>**SubChassis**</br>**BusExpansionChassis**</br>**PeripheralChassis**</br>**StorageChassis**</br>**RackMountChassis**</br>**SealedCaseComputer**</br>**MultiSystemChassis**</br>**CompactPci**</br>**AdvancedTca** |
+| 參數 | 說明 |
+|--|--|
+| /DriverGroup:`<Groupname>` | 指定新驅動程式群組的名稱。 |
+| 伺服器`<Servername>` | 指定伺服器的名稱。 這可以是 NetBIOS 名稱或 FQDN。 如果未指定伺服器名稱，則會使用本機伺服器。 |
+| Filtertype`<Filtertype>` | 指定要加入至群組之篩選的類型。 您可以在單一命令中指定多個篩選器類型。 每個篩選類型後面都必須接著 **/policy** 和至少一個 **/Value**。 有效值包括：<ul><li>BiosVendor</li><li>Biosversion</li><li>Chassistype</li><li>製造商</li><li>Uuid</li><li>Osversion</li><li>Osedition</li><li>OsLanguage</li></ul> 如需取得其他所有篩選器類型值的相關資訊，請參閱 [驅動程式群組篩選](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759191(v=ws.11))。 |
+| [/Policy： `{Include|Exclude}` ] | 指定要在篩選準則上設定的原則。 如果 **/policy** 設定為 [ **包含**]，則會允許符合篩選準則的用戶端電腦安裝此群組中的驅動程式。 如果 **/policy** 設定為 [ **排除**]，則不允許符合篩選準則的用戶端電腦安裝此群組中的驅動程式。 |
+| [/Value： `<Value>` ] | 指定對應至 **/Filtertype**的用戶端值。 您可以為單一類型指定多個值。 如需可接受之篩選類型值的相關資訊，請參閱 [驅動程式群組篩選](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759191(v=ws.11))。 |
 
 ## <a name="examples"></a>範例
 
 若要將篩選新增至驅動程式群組，請輸入下列其中一項：
+
 ```
-WDSUTIL /Add-DriverGroupFilter /DriverGroup:PrinterDrivers /FilterType:Manufacturer /Policy:Include /Value:Name1 /Value:Name2
+wdsutil /Add-DriverGroupFilter /DriverGroup:PrinterDrivers /FilterType:Manufacturer /Policy:Include /Value:Name1 /Value:Name2
 ```
+
 ```
-WDSUTIL /Add-DriverGroupFilter /DriverGroup:PrinterDrivers /FilterType:Manufacturer /Policy:Include /Value:Name1 /FilterType:ChassisType /Policy:Exclude /Value:Tower /Value:MiniTower
+wdsutil /Add-DriverGroupFilter /DriverGroup:PrinterDrivers /FilterType:Manufacturer /Policy:Include /Value:Name1 /FilterType:ChassisType /Policy:Exclude /Value:Tower /Value:MiniTower
 ```
 
 ## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)
 
+- [wdsutil add-drivergrouppackage 命令](wdsutil-add-drivergrouppackage.md)
+
+- [wdsutil add-drivergrouppackages 命令](wdsutil-add-drivergrouppackages.md)
+
+- [wdsutil add-drivergroup 命令](wdsutil-add-drivergroup.md)
+
+- [Windows 部署服務 Cmdlet](/powershell/module/wds)

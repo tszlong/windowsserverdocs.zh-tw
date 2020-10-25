@@ -7,24 +7,24 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 42d579b7139f7ff516d9ff239c535ecd2be42474
-ms.sourcegitcommit: 720455aad2bac78cf64997d196a13f35ea0acb73
+ms.openlocfilehash: c61da4f608e825a7cb19c8fb80f8f4b3a5c26fed
+ms.sourcegitcommit: 554d274fea48a4d47c19845d969a9ec93dec82de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91729887"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92524273"
 ---
 # <a name="wdsutil-initialize-server"></a>wdsutil 初始化-伺服器
 
 > 適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-在安裝伺服器角色之後，設定 Windows 部署服務伺服器以供初始使用。 執行此命令之後，您應該使用 [wdsutiladd-Image 命令](wdsutil-add-image.md) 命令將映射新增至伺服器。
+在安裝伺服器角色之後，設定 Windows 部署服務伺服器以供初始使用。 執行此命令之後，您應該使用 wdsutil 的 [ [新增映射命令](wdsutil-add-image.md) ] 命令，將影像加入至伺服器。
 ## <a name="syntax"></a>語法
 ```
 wdsutil /Initialize-Server [/Server:<Server name>] /remInst:<Full path> [/Authorize]
 ```
 ### <a name="parameters"></a>參數
-|參數|描述|
+|參數|說明|
 |-------|--------|
 |[/Server： <Server name> ]|指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱 (FQDN) 。 如果未指定伺服器名稱，則會使用本機伺服器。|
 |remInst<Full path>|指定 remoteInstall 資料夾的完整路徑和名稱。 如果指定的資料夾不存在，則此選項會在執行命令時建立。 即使是在遠端電腦的情況下，您也應該一律輸入本機路徑。 例如： **D:\remoteInstall**。|

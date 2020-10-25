@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: eada7c66b79450e4364d5c65854f0b4659cbde7c
-ms.sourcegitcommit: 720455aad2bac78cf64997d196a13f35ea0acb73
+ms.openlocfilehash: 693b9866dbd19fa649622d5b97b3474351c96a35
+ms.sourcegitcommit: 554d274fea48a4d47c19845d969a9ec93dec82de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91729880"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92524253"
 ---
 # <a name="new-discoverimage"></a>新 G e
 
@@ -21,7 +21,7 @@ ms.locfileid: "91729880"
 ## <a name="syntax"></a>語法
 
 ```
-WDSUTIL [Options] /New-DiscoverImage [/Server:<Server name>]
+wdsutil [Options] /New-DiscoverImage [/Server:<Server name>]
      /Image:<Image name>
      /Architecture:{x86 | ia64 | x64}
      [/Filename:<File name>]
@@ -35,7 +35,7 @@ WDSUTIL [Options] /New-DiscoverImage [/Server:<Server name>]
 
 ### <a name="parameters"></a>參數
 
-|        參數         |                                                                                                                                                                                                                                                                                                                                                                                                                       描述                                                                                                                                                                                                                                                                                                                                                                                                                       |
+|        參數         |                                                                                                                                                                                                                                                                                                                                                                                                                       說明                                                                                                                                                                                                                                                                                                                                                                                                                       |
 |--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [/Server： \<Server name> ] |                                                                                                                                                                                                                                                                                                                                     指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱 (FQDN) 。 如果未指定伺服器名稱，則會使用本機伺服器。                                                                                                                                                                                                                                                                                                                                     |
 |   圖符\<Image name>   |                                                                                                                                                                                                                                                                                                                                                                                                      指定來源開機映射的名稱。                                                                                                                                                                                                                                                                                                                                                                                                       |
@@ -47,11 +47,11 @@ WDSUTIL [Options] /New-DiscoverImage [/Server:<Server name>]
 
 若要從開機映射建立探索映射並將它命名為 WinPEDiscover，請輸入：
 ```
-WDSUTIL /New-DiscoverImage /Image:WinPE boot image /Architecture:x86 /DestinationImage /FilePath:C:\Temp\WinPEDiscover.wim
+wdsutil /New-DiscoverImage /Image:WinPE boot image /Architecture:x86 /DestinationImage /FilePath:C:\Temp\WinPEDiscover.wim
 ```
 若要從開機映射建立探索映射，並使用指定的設定將它命名為 WinPEDiscover，請輸入：
 ```
-WDSUTIL /Verbose /Progress /New-DiscoverImage /Server:MyWDSServer
+wdsutil /Verbose /Progress /New-DiscoverImage /Server:MyWDSServer
 /Image:WinPE boot image /Architecture:x64 /Filename:boot.wim /DestinationImage /FilePath:\\Server\Share\WinPEDiscover.wim
 /Name:New WinPE image /Description:WinPE image for WDS Client discovery /Overwrite:No
 ```

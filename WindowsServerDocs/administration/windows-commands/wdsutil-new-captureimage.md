@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: ab582e65ad3f1c9920071260541fefd0125bf428
-ms.sourcegitcommit: 720455aad2bac78cf64997d196a13f35ea0acb73
+ms.openlocfilehash: 28dfc8d64a1027eced15fb3d09a607a41535975c
+ms.sourcegitcommit: 554d274fea48a4d47c19845d969a9ec93dec82de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91729885"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92524343"
 ---
 # <a name="new-captureimage"></a>新 G e
 
@@ -21,7 +21,7 @@ ms.locfileid: "91729885"
 ## <a name="syntax"></a>語法
 
 ```
-WDSUTIL [Options] /New-CaptureImage [/Server:<Server name>]
+wdsutil [Options] /New-CaptureImage [/Server:<Server name>]
      /Image:<Image name>
      /Architecture:{x86 | ia64 | x64}
      [/Filename:<File name>]
@@ -35,7 +35,7 @@ WDSUTIL [Options] /New-CaptureImage [/Server:<Server name>]
 
 ### <a name="parameters"></a>參數
 
-|        參數         |                                                                                                                                                                                                                         描述                                                                                                                                                                                                                          |
+|        參數         |                                                                                                                                                                                                                         說明                                                                                                                                                                                                                          |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [/Server： \<Server name> ] |                                                                                                                                       指定伺服器的名稱。 這可以是 NetBIOS 名稱或完整功能變數名稱 (FQDN) 。 如果未指定伺服器名稱，則會使用本機伺服器。                                                                                                                                        |
 |   圖符\<Image name>   |                                                                                                                                                                                                         指定來源開機映射的名稱。                                                                                                                                                                                                         |
@@ -47,11 +47,11 @@ WDSUTIL [Options] /New-CaptureImage [/Server:<Server name>]
 
 若要建立 capture 映射並將它命名為 WinPECapture，請輸入：
 ```
-WDSUTIL /New-CaptureImage /Image:WinPE boot image /Architecture:x86 /DestinationImage /FilePath:C:\Temp\WinPECapture.wim
+wdsutil /New-CaptureImage /Image:WinPE boot image /Architecture:x86 /DestinationImage /FilePath:C:\Temp\WinPECapture.wim
 ```
 若要建立 capture 映射並套用指定的設定，請輸入：
 ```
-WDSUTIL /Verbose /Progress /New-CaptureImage /Server:MyWDSServer /Image:WinPE boot image /Architecture:x64 /Filename:boot.wim
+wdsutil /Verbose /Progress /New-CaptureImage /Server:MyWDSServer /Image:WinPE boot image /Architecture:x64 /Filename:boot.wim
 /DestinationImage /FilePath:\\Server\Share\WinPECapture.wim /Name:New WinPE image /Description:WinPE image with capture utility /Overwrite:No /UnattendFilePath:\\Server\Share\WDSCapture.inf
 ```
 

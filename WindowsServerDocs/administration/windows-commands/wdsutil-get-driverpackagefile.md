@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: f85d57a81aa63f6ecb94b4b09a1614403aa19664
-ms.sourcegitcommit: 720455aad2bac78cf64997d196a13f35ea0acb73
+ms.openlocfilehash: 900fc109c52908870733d4892e6d70f4a7b84c07
+ms.sourcegitcommit: 554d274fea48a4d47c19845d969a9ec93dec82de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91729904"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92524263"
 ---
 # <a name="wdsutil-get-driverpackagefile"></a>wdsutil get-driverpackagefile
 
@@ -21,22 +21,22 @@ ms.locfileid: "91729904"
 ## <a name="syntax"></a>語法
 
 ```
-WDSUTIL /Get-DriverPackageFile /InfFile:<Inf File path> [/Architecture:{x86 | ia64 | x64}] [/Show:{Drivers | Files | All}]
+wdsutil /Get-DriverPackageFile /InfFile:<Inf File path> [/Architecture:{x86 | ia64 | x64}] [/Show:{Drivers | Files | All}]
 ```
 
 ### <a name="parameters"></a>參數
 
-|         參數         |                              描述                               |
+|         參數         |                              說明                               |
 |---------------------------|------------------------------------------------------------------------|
 | /InfFile:\<Inf File path> | 指定驅動程式套件 .inf 檔案的完整路徑和檔案名。 |
 |    [/Architecture： {x86    |                                  ia64                                  |
-|     [/Show： {驅動程式      |                                 檔案儲存體                                  |
+|     [/Show： {驅動程式      |                                 檔案                                  |
 
 ## <a name="examples"></a>範例
 
 若要查看驅動程式檔案的相關資訊，請輸入：
 ```
-WDSUTIL /Get-DriverPackageFile /InfFile:C:\temp\1394.inf /Architecture:x86
+wdsutil /Get-DriverPackageFile /InfFile:C:\temp\1394.inf /Architecture:x86
 ```
 
 ## <a name="additional-references"></a>其他參考
