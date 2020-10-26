@@ -19,7 +19,7 @@ ms.locfileid: "92524803"
 
 顯示目前的磁片區陰影複本備份和所有已安裝的陰影複製寫入器和提供者。 在下表中選取命令名稱，以查看其命令語法。
 
-| Command | 描述 | 可用性 |
+| 命令 | 描述 | 可用性 |
 |--|--|--|
 | [vssadmin delete shadows](vssadmin-delete-shadows.md) | 刪除磁片區陰影複製。 | 用戶端與伺服器 |
 | [vssadmin list shadows](vssadmin-list-shadows.md) | 列出現有的磁片區陰影複製。 | 用戶端與伺服器 |
