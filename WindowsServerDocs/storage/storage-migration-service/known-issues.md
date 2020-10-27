@@ -4,20 +4,20 @@ description: 儲存體遷移服務的已知問題和疑難排解支援，例如�
 author: nedpyle
 ms.author: nedpyle
 manager: tiaascs
-ms.date: 07/29/2020
+ms.date: 10/23/2020
 ms.topic: article
-ms.openlocfilehash: 6c3ca3a44665bab08c58853d569823f88c908f35
-ms.sourcegitcommit: f89639d3861c61620275c69f31f4b02fd48327ab
+ms.openlocfilehash: 25d0c6666e0706b1c772957d9328db43ecfc5b18
+ms.sourcegitcommit: 1b214ca5030c77900f095d77c73cedc6381eb0e4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91517514"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92639041"
 ---
 # <a name="storage-migration-service-known-issues"></a>儲存體遷移服務的已知問題
 
 本主題包含使用 [儲存體遷移服務](overview.md) 來遷移伺服器時的已知問題答案。
 
-儲存體遷移服務分為兩個部分： Windows Server 中的服務，以及 Windows Admin Center 中的使用者介面。 這項服務可在 Windows Server、長期維護通道以及 Windows Server 半年通道;雖然 Windows Admin Center 可作為個別下載。 我們也會定期包含 Windows Server 累計更新中的變更，並透過 Windows Update 發行。
+儲存體遷移服務分為兩個部分： Windows Server 中的服務，以及 Windows Admin Center 中的使用者介面。 服務可在 Windows Server、Long-Term 維護通道以及 Windows Server Semi-Annual 通道中使用;雖然 Windows Admin Center 可作為個別下載。 我們也會定期包含 Windows Server 累計更新中的變更，並透過 Windows Update 發行。
 
 例如，Windows Server 1903 版包含適用于儲存體遷移服務的新功能和修正程式，這些功能也適用于 Windows Server 2019 和 Windows Server 1809 版（藉由安裝 [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)）。
 
@@ -118,7 +118,7 @@ Warning: The destination proxy wasn't found.
 
 ## <a name="certain-files-dont-inventory-or-transfer-error-5-access-is-denied"></a>某些檔案不會進行清查或傳輸，錯誤5「拒絕存取」
 
-從來源清查或傳輸檔案到目的地電腦時，使用者已移除系統管理員群組許可權的檔案將無法遷移。 檢查儲存體遷移服務-Proxy 調試顯示：
+從來源清查或傳輸檔案到目的地電腦時，使用者已移除系統管理員群組許可權的檔案將無法遷移。 檢查儲存體遷移 Service-Proxy 的調試顯示：
 
 ```
 Log Name: Microsoft-Windows-StorageMigrationService-Proxy/Debug
@@ -418,13 +418,19 @@ Guidance: Confirm that the Netlogon service on the computer is reachable through
 
 1. 此問題最初是由 [KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818) 更新所解決。 先前的程式碼缺失阻礙了靜態 IP 位址的所有使用。
 
-2. 如果您未在來源電腦的網路介面上指定預設閘道 IP 位址，即使是 KB4537818 更新，也會發生此問題。 若要解決此問題，請使用網路連線小程式（ ( # A0) 或 >new-netroute Powershell Cmdlet）在網路介面上設定有效的預設 IP 位址。
+2. 如果您未在來源電腦的網路介面上指定預設閘道 IP 位址，即使是 KB4537818 更新，也會發生此問題。 若要解決此問題，請使用網路連接小程式 ( # A0) 或 Set-NetRoute Powershell Cmdlet，在網路介面上設定有效的預設 IP 位址。
 
 ## <a name="slower-than-expected-re-transfer-performance"></a>比預期的重新傳輸效能慢
 
-完成轉移之後，執行後續的相同資料重新傳送，即使來源伺服器上的資料同時變更，您也可能不會看到傳輸時間的大幅改善。
+完成轉移之後，執行後續的相同資料重新傳送，即使來源伺服器上的資料同時變更，您也可能不會看到傳輸時間的大幅改善。 
 
-這是傳輸大量檔案和嵌套資料夾時的預期行為。 資料的大小不相關。 我們先在 [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) 中改進這項行為，並持續將傳輸效能優化。 若要進一步調整效能，請參閱將 [清查和傳輸效能優化](./faq.md#optimizing-inventory-and-transfer-performance)。
+[Kb4580390](https://support.microsoft.com/help/4580390/windows-10-update-kb4580390)會解決此問題。 若要進一步調整效能，請參閱將 [清查和傳輸效能優化](./faq.md#optimizing-inventory-and-transfer-performance)。
+
+## <a name="slower-than-expected-inventory-performance"></a>比預期的清查效能慢
+
+清查來源伺服器時，您會發現檔案清查在有許多檔案或嵌套資料夾時，會花費很長的時間。 數百萬個檔案和資料夾可能會導致清查花費數小時的時間，即使是快速的儲存體設定。 
+
+[Kb4580390](https://support.microsoft.com/help/4580390/windows-10-update-kb4580390)會解決此問題。
 
 ## <a name="data-does-not-transfer-user-renamed-when-migrating-to-or-from-a-domain-controller"></a>資料不會傳輸，使用者在遷移至網域控制站或從網域控制站遷移時重新命名
 
@@ -535,7 +541,7 @@ Stack trace:
  - 來源電腦上沒有執行遠端登入服務。
  - 防火牆不允許從 Orchestrator 對來源伺服器進行遠端登入連接。
  - 來源遷移帳戶沒有連接到來源電腦的遠端登入權利。
- - 來源遷移帳戶在來源電腦的登錄、"HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows NT\CurrentVersion" 或 "HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\LanmanServer" 底下沒有讀取權限
+ - 來源遷移帳戶在來源電腦的登錄中，沒有 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion] 或 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer] 下的讀取權限
 
 ## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer"></a>切換停止回應來源電腦上的「38% 對應網路介面 ...」
 
@@ -562,7 +568,7 @@ Error Message: Unknown error (0xa00a)
 Guidance: Confirm that the Netlogon service on the computer is reachable through RPC and that the credentials provided are correct.
 ```
 
-發生此問題的原因是在來源電腦上設定下列登錄值的群組原則： "HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\LocalAccountTokenFilterPolicy = 0"
+發生此問題的原因是在來源電腦上設定下列登錄值的群組原則： "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\LocalAccountTokenFilterPolicy = 0"
 
 這項設定不是標準群組原則的一部分，而是使用 [Microsoft 安全性合規性工具](https://www.microsoft.com/download/details.aspx?id=55319)組設定的附加元件：
 
@@ -606,7 +612,7 @@ GetOsVersion(fileserver75.**corp**.contoso.com)    [d:\os\src\base\dms\proxy\com
 
 ## <a name="inventory-fails-with-element-not-found"></a>清查失敗，並出現「找不到元素」
 
-請考慮下列案例：
+考慮下列案例：
 
 您有一個來源伺服器的 DNS 主機名稱，且 Active Directory 名稱超過15個 unicode 字元，例如 "iamaverylongcomputername"。 根據設計，Windows 不會讓您設定舊的 NetBIOS 名稱，如此一來，當伺服器的名稱會截斷為15個 unicode 寬字元時，就會收到警告， (範例： "iamaverylongcom" ) 。 當您嘗試清查這部電腦時，您會在 Windows Admin Center 和事件記錄檔中收到：
 
@@ -648,6 +654,6 @@ Remote exception : a parameter cannot be found that matches parameter name 'Incl
 若要解決此問題，請在 Windows Admin Center 中將儲存體遷移服務延伸模組更新為至少版本1.113.0。 更新應該會自動出現在摘要中，並提示您進行安裝。
 
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 - [儲存體遷移服務總覽](overview.md)
