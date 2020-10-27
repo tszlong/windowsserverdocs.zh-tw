@@ -1,23 +1,25 @@
 ---
-title: Windows Server 版本 2004 中的新功能
-description: Windows Server 版本 2004 的新功能
+title: Windows Server 版本 2004 和 20H2 中的新功能
+description: Windows Server 版本 2004 和 20H2 的新功能。
 ms.topic: article
 author: Heidilohr
 ms.author: helohr
 ms.date: 05/27/2020
 ms.localizationpriority: high
-ms.openlocfilehash: 210aa06711c67af46d35a38fe4308bc4060691e8
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: f44dcc7a1c7fab2d99f0358794bd5b2aedb87b75
+ms.sourcegitcommit: b82dfbfdc5df1327feb8be053a760739b01e3031
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87957005"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92255865"
 ---
-# <a name="whats-new-in-windows-server-version-2004"></a>Windows Server 版本 2004 中的新功能
+# <a name="whats-new-in-windows-server-version-2004-and-20h2"></a>Windows Server 版本 2004 和 20H2 中的新功能
 
 >適用於：Windows Server (半年通道)
 
-若要深入了解 Windows 的最新功能，請參閱 [Windows Server 的新功能](whats-new-in-windows-server.md)。 本主題說明 Windows Server 版本 2004 中的一些新功能。
+若要深入了解 Windows 的最新功能，請參閱 [Windows Server 的新功能](whats-new-in-windows-server.md)。 本主題說明 Windows Server 版本 2004 和 20H2 中的一些新功能。
+
+Windows Server 版本 20H2 是 Windows Server 版本 2004 的下一個半年通道版本。 這個版本著重於可靠性、效能和其他一般改善項目，但沒有任何新功能。 與其他半年通道版本一樣，該版本在發行後提供 18 個月的支援。 如需半年通道版本支援日期的詳細資訊，請參閱 [Windows Server 版本資訊](windows-server-release-info.md)。
 
 ## <a name="server-core-container-improvements"></a>Server Core 容器改進功能
 
