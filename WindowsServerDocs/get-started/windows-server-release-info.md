@@ -2,16 +2,16 @@
 title: Windows Server 版本資訊
 description: 關於 Windows Server 的版本資訊
 ms.topic: article
-ms.date: 04/14/2020
+ms.date: 10/20/2020
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
-ms.openlocfilehash: ba1f89fed8b1673822c5b5910b6f627483bc07cb
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1be5447047b838196861107fa59bf2e5dd0c9463
+ms.sourcegitcommit: b82dfbfdc5df1327feb8be053a760739b01e3031
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87950022"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92255875"
 ---
 # <a name="windows-server-release-information"></a>Windows Server 版本資訊
 
@@ -23,6 +23,8 @@ Microsoft 已更新其維護模型。 半年度管道是每年兩次的功能更
 
 | Windows Server 版本 | 版本 | 作業系統組建 | 可用性 | 主要支援結束日期|延伸支援結束日期 |
 |----------------|---------|----------|----------|---------|----------|
+| Windows Server 版本 20H2 (半年通道) (Datacenter Core、Standard Core) | 20H2 | 19042.508.200927-1902 | 2020/10/20 | 2022/05/10 | 檢閱附註 |
+| Windows Server 版本 2004 (半年通道) (Datacenter Core、Standard Core) | 2004 | 19041.264.200508-2205 | 05/27/20 | 2021/12/14 | 檢閱附註 |
 | Windows Server 版本 1909 (半年通道) (Datacenter Core、Standard Core) | 1909  | 18363.418.191007-0143 | 11/12/2019 | 2021/05/11 | 檢閱附註 |
 | Windows Server 版本 1903 (半年通道) (Datacenter Core、Standard Core) | 1903  | 18362.30.190401-1528 | 5/21/2019 | 12/08/2020 | 檢閱附註 |
 |Windows Server 2019 (長期維護通道) (Datacenter、 Essentials、Standard)|1809|17763.107.1010129-1455|11/13/2018|01/09/2024|01/09/2029|

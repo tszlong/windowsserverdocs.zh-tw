@@ -1,17 +1,17 @@
 ---
 title: Windows Server 的新功能
 description: 關於運算、身分識別、管理、自動化、網路功能、安全性、存放裝置的新功能。
-ms.date: 08/22/2019
+ms.date: 10/22/2020
 ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: medium
-ms.openlocfilehash: e4cfde0f4a9861f0cf215c301c45559f20b78d2c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1876c2dbfcff9c8ea653885cd12232c3c97891f3
+ms.sourcegitcommit: 5a67672c3ba9e666c29a41c7356006359c639912
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87945650"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92440150"
 ---
 # <a name="whats-new-in-windows-server"></a>Windows Server 的新功能
 
@@ -26,6 +26,7 @@ ms.locfileid: "87945650"
 
 半年通道版本：
 
+- [Windows Server 版本 2004 和 20H2 中的新功能](whats-new-in-windows-server-2004.md)
 - [Windows Server 版本 1903 和 1909 中的新功能](../get-started-19/whats-new-in-windows-server-1903-1909.md)
 - [Windows Server 版本 1809 中的新功能](whats-new-in-windows-server-1809.md)
 - [Windows Server 1803 版中的新功能](whats-new-in-windows-server-1803.md) (2019 年 11 月 12 日支援終止)
