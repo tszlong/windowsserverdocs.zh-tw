@@ -5,12 +5,12 @@ manager: mchad
 ms.topic: article
 author: gawatu
 ms.date: 06/29/2019
-ms.openlocfilehash: 668ee7a0c9e948c12140d3e25309a68ad3b2148b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 65ae84f354f535ba94a7331680234b3ad32d230d
+ms.sourcegitcommit: 92e46b11154bab929e2c622d759ef62ec264c4e6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87957265"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92734742"
 ---
 # <a name="resilient-file-system-refs-overview"></a>復原檔案系統 (ReFS) 概觀
 
@@ -27,7 +27,7 @@ ReFS 所引入的新功能可精準偵測損毀，並在維持上線狀態時修
 - **完整性資料流** - ReFS 對中繼資料使用總和檢查碼，對檔案資料則為予以選用，使 ReFS 可穩固偵測損毀。
 - **儲存空間整合** - 與鏡像或同位空間共用時，ReFS 可使用儲存空間提供的資料其他備份檔，自動修復偵測到的損毀。 修復程序可以將範圍局部縮小為毀損的區域並線上執行，而不需要讓任何磁碟區停機。
 - **殘餘資料** - 若磁碟區變為損毀且該損毀資料的其他備份檔不存在，ReFS 會從命名空間移除損毀資料。 ReFS 會在處理多數無法修正的損毀時使磁碟區維持上線狀態，但極少情況會需要 ReFS 使磁碟區離線。
-- **主動式錯誤修正** - ReFS 除了在讀取與寫入前驗證資料之外，還引入稱作<i>清除程式</i>的資料完整性掃描器。 此清除程式會定期掃描磁碟區、識別隱藏的損毀，以及主動觸發該毀損資料的修復。
+- **主動式錯誤修正** - ReFS 除了在讀取與寫入前驗證資料之外，還引入稱作 <i>清除程式</i>的資料完整性掃描器。 此清除程式會定期掃描磁碟區、識別隱藏的損毀，以及主動觸發該毀損資料的修復。
 
 ### <a name="performance"></a>效能
 
@@ -45,10 +45,10 @@ ReFS 除了提供復原改善外，還引入了供重視效能的虛擬工作負
 
     - 這些階層設定後，ReFS 會加以使用為經常存取的資料提供快速的儲存體，並為非經常存取的資料提供容量有效率的儲存體。
         - 所有寫入都會在效能層發生，而維持在效能層中的大型資料區塊將有效率地即時移至容量層。
-        - 如果使用混合式部署 (混用快閃記憶體和 HDD 磁片磁碟機) ，[儲存空間直接存取中的](../storage-spaces/understand-the-cache.md)快取有助於加速讀取，進而降低虛擬化工作負載的資料片段特性影響。 否則，如果使用全閃部署，則也會在效能層級中進行讀取。
+        - 如果使用混合式部署 (混合快閃記憶體和 HDD 磁片磁碟機) ， [儲存空間直接存取中的](../storage-spaces/understand-the-cache.md) 快取有助於加快讀取速度，進而降低虛擬化工作負載的資料分散特性的影響。 否則，如果使用全快閃部署，則在效能層級中也會發生讀取。
 
 > [!NOTE]
-> 對於伺服器部署，鏡像加速的同位僅支援[儲存空間直接存取](../storage-spaces/storage-spaces-direct-overview.md)。 我們建議您只將鏡像加速同位檢查與封存和備份工作負載搭配使用。 針對虛擬化和其他高效能的隨機工作負載，我們建議使用三向鏡像，以獲得更好的效能。
+> 對於伺服器部署，鏡像加速的同位僅支援[儲存空間直接存取](../storage-spaces/storage-spaces-direct-overview.md)。 建議您只搭配封存和備份工作負載使用鏡像加速同位。 針對虛擬化和其他高效能隨機工作負載，我們建議使用三向鏡像來提高效能。
 
 - **高速 VM 作業** - ReFS 引入新功能，特別將目標擺在改善虛擬工作負載的效能：
     - [區塊複製](./block-cloning.md) - 區塊複製會加快複製作業的速度，達成快速且低影響的 VM 檢查點合併作業。
@@ -62,43 +62,47 @@ ReFS 設計用來支援超大型資料集 (百萬個 TB) 而不會對效能有�
 
 ## <a name="supported-deployments"></a>支援的部署
 
-Microsoft 已特別針對一般用途搭配各種設定和工作負載開發 NTFS，不過對於特別需要 ReFS 提供之可用性、復原和/或規模的客戶，Microsoft 支援 ReFS 以在下列設定和案例下使用。
+Microsoft 開發的 NTFS 專為一般用途，與廣泛的設定和工作負載搭配使用，不過如果客戶特別要求 ReFS 提供的可用性、復原及/或規模調整，則 Microsoft 支援 ReFS，以在下列設定和案例下使用。
 
 > [!NOTE]
-> 所有 ReFS 支援的設定都必須使用[Windows Server Catalog](https://www.WindowsServerCatalog.com)認證的硬體，並符合應用程式需求。
+> 所有 ReFS 支援的設定都必須使用 [Windows Server Catalog](https://www.WindowsServerCatalog.com) 認證的硬體，並符合應用程式需求。
 
-### <a name="storage-spaces-direct"></a>儲存空間 Direct
+### <a name="storage-spaces-direct"></a>儲存空間直接存取
 
 建議針對虛擬工作負載或網路連接儲存裝置，將 ReFS 部署在儲存空間直接存取上：
 - 鏡像加速的同位以及[儲存空間直接存取中的快取](../storage-spaces/understand-the-cache.md)會提供效能高且容量有效率的儲存體。
 - 引入區塊複製與疏鬆 VDL 大幅提升了 .vhdx 檔案作業的速度，例如建立、合併及擴充。
-- 完整性-串流、線上修復和替代資料複本可讓 ReFS 和儲存空間直接存取共同偵測並修正中繼資料和資料中的儲存控制器和儲存媒體損毀。
+- 完整性資料流程、線上修復和替代資料複本可讓 ReFS 和儲存空間直接存取共同偵測和修正儲存控制器以及中繼資料和資料中的儲存媒體損毀。
 - ReFS 提供可擴充和支援大型資料集的功能。
 
 ### <a name="storage-spaces"></a>儲存空間
 
-- 完整性-串流、線上修復和替代資料複本可讓 ReFS 和[儲存空間](../storage-spaces/overview.md)共同偵測並修正中繼資料和資料中的儲存控制器和儲存媒體損毀。
+- 完整性資料流程、線上修復和替代資料複本可讓 ReFS 和 [儲存空間](../storage-spaces/overview.md) 共同偵測和修正儲存控制器以及中繼資料和資料中的儲存媒體損毀。
 - 儲存空間部署也可以使用 ReFS 中的提供的區塊複製和延展性。
-- 在具有共用 SAS 主機殼的儲存空間上部署 ReFS，適合用來裝載封存資料和儲存使用者檔。
+- 在具有共用 SAS 磁片櫃的儲存空間上部署 ReFS 適合用來裝載封存資料和儲存使用者檔。
 
 > [!NOTE]
-> 儲存空間支援透過 BusTypes SATA、SAS、NVME，或透過 HBA 連接的本機非卸載式直接連接， (也就是傳遞模式) 的 RAID 控制器。
+> 儲存空間支援透過 BusTypes SATA、SAS、NVME 或透過 HBA 連接的本機非卸載式直接連接， (也稱為通過模式的 RAID 控制器) 。
 
 ### <a name="basic-disks"></a>基本磁碟
 
 在基本磁碟上部署 ReFS 最適合用來執行自己的軟體復原和可用性解決方案的應用程式。
 - 自行導入復原及可用性軟體解決方案的應用程式可以善加利用完整性資料流、區塊複製，以及擴充和支援大型資料集的功能。
 
+> [!IMPORTANT]
+> 如果您打算將 ReFS 用於 CSV (叢集共用磁片區) ，請考慮使用 ReFS 預先格式化較新 CSV 磁片區的限制。
+> 針對 CSV： NTFS 應該用於傳統 San。 ReFS 應使用於 S2D 之上。
+
 > [!NOTE]
 > 基本磁碟包含透過 BusTypes SATA、SAS、NVME 或 RAID 的本機非卸載式直接連接。 基本磁碟不包含儲存空間。
 
 ### <a name="backup-target"></a>備份目標
 
-將 ReFS 部署為備份目標，最適合用來執行自己的復原和可用性解決方案的應用程式和硬體。
+將 ReFS 部署為備份目標最適合用來執行其專屬復原和可用性解決方案的應用程式和硬體。
 - 自行導入復原及可用性軟體解決方案的應用程式可以善加利用完整性資料流、區塊複製，以及擴充和支援大型資料集的功能。
 
 > [!NOTE]
-> 備份目標包括上述支援的設定。 如需光纖通道和 iSCSI San 的支援詳細資料，請洽詢應用程式和存放裝置陣列廠商。 針對 San，如果需要精簡布建、修剪/取消對應或卸載資料傳輸等功能 (ODX) 是必要的，則必須使用 NTFS。
+> 備份目標包含上述支援的設定。 如需光纖通道和 iSCSI San 的支援詳細資料，請洽詢應用程式和存放裝置陣列廠商。 針對 San，如果需要精簡布建、修剪/取消對應或卸載資料傳輸等功能 (ODX) 是必要的，則必須使用 NTFS。
 
 ## <a name="feature-comparison"></a>功能比較
 
@@ -119,7 +123,7 @@ Microsoft 已特別針對一般用途搭配各種設定和工作負載開發 NTF
 |---------------------------|------------------|-----------------------|
 | BitLocker 加密 | 是 | 是 |
 | 重複資料刪除 | 是<sup>1</sup> | 是 |
-| 叢集共用磁碟區 (CSV) 支援 | 是<sup>2</sup> | 是 |
+| 叢集共用磁碟區 (CSV) 支援 | 是<sup>2</sup> <sup>4</sup> | 是 |
 | 軟式連結 | 是 | 是 |
 | 容錯移轉叢集支援 | 是 | 是 |
 | 存取控制清單 | 是 | 是 |
@@ -135,9 +139,10 @@ Microsoft 已特別針對一般用途搭配各種設定和工作負載開發 NTF
 | 已命名的資料流 | 是 | 是 |
 | 精簡佈建 | 是<sup>3</sup> | 是 |
 | 修剪/取消對應 | 是<sup>3</sup> | 是 |
-1. 適用于 Windows Server，版本1709及更新版本。
-2. 適用于 Windows Server 2012 R2 和更新版本。
+1. 適用于 Windows Server 1709 和更新版本、Windows Server 2019 (1809) LTSC 或更新版本。
+2. 可在 Windows Server 2012 R2 和更新版本上使用。
 3. 僅限儲存空間
+4. CSV 不會在與儲存空間相同的連接中使用直接 i/o，儲存空間直接存取 (S2D) 或 SAN
 
 #### <a name="the-following-features-are-only-available-on-refs"></a>只有在 ReFS 中才可以使用下列功能：
 
@@ -153,16 +158,18 @@ Microsoft 已特別針對一般用途搭配各種設定和工作負載開發 NTF
 |---------------------------|------------------|-----------------------|
 | 檔案系統壓縮 | 否 | 是 |
 | 檔案系統加密 | 否 | 是 |
-| 異動 | 否 | 是 |
-| 硬式連結 | 否 | 是 |
+| 交易 | 否 | 是 |
+| 硬式連結 | 是<sup>1</sup> | 是 |
 | 物件識別碼 | 否 | 是 |
-| 卸載的資料傳輸 (ODX)  | 否 | 是 |
+| 卸載資料傳輸 (ODX)  | 否 | 是 |
 | 簡短名稱 | 否 | 是 |
 | 擴充屬性 | 否 | 是 |
 | 磁碟配額 | 否 | 是 |
 | 可開機 | 否 | 是 |
-| 分頁檔案支援 | 否 | 是 |
+| 分頁檔支援 | 否 | 是 |
 | 在抽取式媒體上受支援 | 否 | 是 |
+
+1. 版本 ReFS 3.5 Windows 10 Enterprise Insider Preview build 19536 格式化。 已新增最 **新格式化磁片區的硬連結支援。如果從舊版升級，則無法使用硬連結**
 
 ## <a name="additional-references"></a>其他參考資料
 
@@ -170,4 +177,6 @@ Microsoft 已特別針對一般用途搭配各種設定和工作負載開發 NTF
 - [儲存空間直接存取總覽](../storage-spaces/storage-spaces-direct-overview.md)
 - [ReFS 區塊複製](block-cloning.md)
 - [ReFS 完整性資料流](integrity-streams.md)
-- [使用 ReFSUtil 針對 ReFS 進行疑難排解](../../administration/windows-commands/refsutil.md)
+- [使用 ReFSUtil 疑難排解 ReFS](../../administration/windows-commands/refsutil.md)
+- [使用 ReFS 搭配 Cluster-Shared 磁片區](../../failover-clustering/failover-cluster-csvs.md)
+- [ReFS 版本和相容性比較表](https://gist.github.com/0xbadfca11/da0598e47dd643d933dc)

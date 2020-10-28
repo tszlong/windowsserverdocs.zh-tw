@@ -6,12 +6,12 @@ ms.author: iainfou
 manager: daveba
 ms.date: 04/11/2019
 ms.topic: article
-ms.openlocfilehash: 98725e194226f048de5bc8332c02ec54c7525ee1
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: e95aea80bea16322f66a14c12b0a1388897c1b11
+ms.sourcegitcommit: 40466c8af1fc60dfca733ea476f088549cedba65
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88940118"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92793585"
 ---
 # <a name="install-a-new-active-directory-forest-using-azure-cli"></a>使用 Azure CLI 安裝新的 Active Directory 樹系
 
@@ -51,7 +51,7 @@ Azure CLI 可用來從命令列或在指令碼中建立和管理 Azure 資源。
 | AdminUsername | 要在每個 VM 上設定為本機系統管理員的使用者名稱。 |
 | AdminPassword | 要在每個 VM 上設定為本機系統管理員密碼的純文字密碼。 |
 | resourceGroupName | 要用於資源群組的名稱。 不應複製現有的名稱。 |
-| Location | 您想要部署的 Azure 位置名稱。 使用列出目前訂用帳戶的支援區域 `az account list-locations` 。 |
+| 位置 | 您想要部署的 Azure 位置名稱。 使用列出目前訂用帳戶的支援區域 `az account list-locations` 。 |
 | VNetName | 指派 Azure 虛擬網路的名稱不應複製現有的名稱。 |
 | VNetAddress | 要用於 Azure 網路的 IP 範圍。 不應複製現有的範圍。 |
 | SubnetName | 指派 IP 子網的名稱。 不應複製現有的名稱。 |
@@ -148,7 +148,6 @@ az vm create \
     --data-disk-caching None \
     --nsg $NetworkSecurityGroup \
     --private-ip-address $DC2IP
-
 ```
 
 ## <a name="dns-and-active-directory"></a>DNS 和 Active Directory
@@ -161,15 +160,15 @@ az vm create \
 
 ## <a name="configure-the-vms-and-install-active-directory-domain-services"></a>設定 Vm 並安裝 Active Directory Domain Services
 
-腳本完成之後，請流覽至 [Azure 入口網站](https://portal.azure.com)，然後流覽至 [ **虛擬機器**]。
+腳本完成之後，請流覽至 [Azure 入口網站](https://portal.azure.com)，然後流覽至 [ **虛擬機器** ]。
 
 ### <a name="configure-the-first-domain-controller"></a>設定第一個網域控制站
 
 使用您在腳本中提供的認證連接到 AZDC01。
 
 * 將資料磁片初始化並格式化為 F：
-   * 開啟 [開始] 功能表並流覽至 [**電腦管理**]
-   * 流覽至**存放裝置**  >  **磁片管理**
+   * 開啟 [開始] 功能表並流覽至 [ **電腦管理** ]
+   * 流覽至 **存放裝置**  >  **磁片管理**
    * 將磁片初始化為 MBR
    * 建立新的簡單磁片區並指派磁碟機號 F：如有需要，您可以提供磁片區標籤
 * 使用伺服器管理員安裝 Active Directory Domain Services
@@ -177,7 +176,7 @@ az vm create \
    * 在 [網域控制站選項] 頁面上，將網域名稱系統 (DNS) 伺服器和通用類別目錄 (GC) 核取
    * 根據您的組織需求指定目錄服務還原模式密碼
    * 變更 C：的路徑，以指向我們在提示您輸入位置時所建立的 F：磁片磁碟機
-   * 查看在嚮導中所做的選擇，然後選擇 **[下一步**]
+   * 查看在嚮導中所做的選擇，然後選擇 **[下一步** ]
 
 > [!NOTE]
 > 必要條件檢查會警告您，實體網路介面卡沒有 (es) 指派的靜態 IP 位址，您可以放心地忽略此情況，因為在 Azure 虛擬網路中指派靜態 ip。
@@ -193,13 +192,17 @@ az vm create \
 
 [Azure 虛擬網路現在支援 ipv6](/azure/virtual-network/virtual-networks-faq#do-vnets-support-ipv6) ，但如果您想要將 vm 設定為優先于 ipv6，請參閱知識庫文章指引，以在 [Windows 中為 Advanced users 設定 IPv6](https://support.microsoft.com/help/929852/guidance-for-configuring-ipv6-in-windows-for-advanced-users)。
 
+### <a name="configure-dns"></a>設定 DNS
+
+升級 Azure 中的第一部伺服器之後，必須將伺服器設定為虛擬網路的主要和次要 DNS 伺服器，而且任何內部部署 DNS 伺服器都會降級為第三個或更高。 如需變更 DNS 伺服器的詳細資訊，請參閱 [建立、變更或刪除虛擬網路一](/azure/virtual-network/manage-virtual-network#change-dns-servers)文。
+
 ### <a name="configure-the-second-domain-controller"></a>設定第二個網域控制站
 
 使用您在腳本中提供的認證連接到 AZDC02。
 
 * 將資料磁片初始化並格式化為 F：
-   * 開啟 [開始] 功能表並流覽至 [**電腦管理**]
-   * 流覽至**存放裝置**  >  **磁片管理**
+   * 開啟 [開始] 功能表並流覽至 [ **電腦管理** ]
+   * 流覽至 **存放裝置**  >  **磁片管理**
    * 將磁片初始化為 MBR
    * 建立新的簡單磁片區並指派磁碟機號 F： (如果想要的話，您可以提供磁片區標籤) 
 * 使用伺服器管理員安裝 Active Directory Domain Services
@@ -209,7 +212,7 @@ az vm create \
    * 變更 C：的路徑，以指向我們在提示您輸入位置時所建立的 F：磁片磁碟機
    * 確定已在 [網域控制站選項] 頁面上檢查網域名稱系統 (DNS) 伺服器和通用類別目錄 (GC) 
    * 根據您的組織需求指定目錄服務還原模式密碼
-   * 查看在嚮導中所做的選擇，然後選擇 **[下一步**]
+   * 查看在嚮導中所做的選擇，然後選擇 **[下一步** ]
 
 > [!NOTE]
 > 必要條件檢查會警告您，實體網路介面卡沒有 (es) 指派的靜態 IP 位址。 您可以放心地忽略這種情況，因為靜態 Ip 是在 Azure 虛擬網路中指派的。
@@ -220,11 +223,7 @@ az vm create \
 
 當 VM 完成重新開機時，請使用之前使用的認證重新登入，但這次以 CONTOSO.com 網域的成員身分登入。
 
-[Azure 虛擬網路現在支援 ipv6](/azure/virtual-network/virtual-networks-faq#do-vnets-support-ipv6) ，但如果您想要將 vm 設定為優先于 ipv6，請參閱知識庫文章指引，以在 [Windows 中為 Advanced users 設定 IPv6](https://support.microsoft.com/help/929852/guidance-for-configuring-ipv6-in-windows-for-advanced-users)。
-
-### <a name="configure-dns"></a>設定 DNS
-
-在 Azure 中升級新的網域控制站之後，必須將這些網域控制站設定為虛擬網路的主要和次要 DNS 伺服器，而且任何內部部署的 DNS 伺服器都會降級為第三個或更高。 如需變更 DNS 伺服器的詳細資訊，請參閱 [建立、變更或刪除虛擬網路一](/azure/virtual-network/manage-virtual-network#change-dns-servers)文。
+[Azure 虛擬網路現在支援 ipv6](/azure/virtual-network/virtual-networks-faq#do-vnets-support-ipv6)，但如果您想要將 vm 設定為優先于 ipv6，請參閱知識庫文章指引，以在 [Windows 中為 Advanced users 設定 IPv6](https://support.microsoft.com/help/929852/guidance-for-configuring-ipv6-in-windows-for-advanced-users)。
 
 ### <a name="wrap-up"></a>總結
 
@@ -236,7 +235,7 @@ az vm create \
 
 ### <a name="remove-using-the-azure-portal"></a>使用 Azure 入口網站移除
 
-在 Azure 入口網站中，流覽至 [ **資源群組** ]，然後選擇我們在此範例 ADonAzureVMs) 所建立的資源群組 (，然後選取 [ **刪除資源群組**]。 此程式會在刪除資源群組內包含的所有資源之前，先要求確認。
+在 Azure 入口網站中，流覽至 [ **資源群組** ]，然後選擇我們在此範例 ADonAzureVMs) 所建立的資源群組 (，然後選取 [ **刪除資源群組** ]。 此程式會在刪除資源群組內包含的所有資源之前，先要求確認。
 
 ### <a name="remove-using-the-azure-cli"></a>使用 Azure CLI 移除
 
