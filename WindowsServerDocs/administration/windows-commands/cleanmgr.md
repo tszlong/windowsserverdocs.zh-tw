@@ -2,16 +2,16 @@
 title: cleanmgr
 description: '設定磁片清理工具 ( # A0) 自動清除某些檔案。'
 ms.reviewer: cosmosdarwin
-author: iangpgh
+author: JasonGerend
 ms.author: jgerend
 manager: daveba
 ms.date: 06/20/2019
-ms.openlocfilehash: 81a9283ef75ef76b14a8ee8a5ecc3ab225207560
-ms.sourcegitcommit: 0b3d6661c44aa1a697087e644437279142726d84
+ms.openlocfilehash: dd8a015ff27809d0ef960241ce9221b4215c20aa
+ms.sourcegitcommit: 7499749ce7baaf58a523cae2dd46737d635475ce
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90083659"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93043879"
 ---
 # <a name="cleanmgr"></a>cleanmgr
 
@@ -29,7 +29,7 @@ cleanmgr [/d <driveletter>] [/sageset:n]  [/sagerun:n] [/TUNEUP:n] [/LOWDISK] [/
 
 | 參數 | 描述 |
 | --------- | ----------- |
-| /d `<driveletter>` | 指定要清理磁片的磁片磁碟機。<p>**注意：****/D**選項未使用 `/sagerun:n` 。 |
+| /d `<driveletter>` | 指定要清理磁片的磁片磁碟機。<p>**注意：****/D** 選項未使用 `/sagerun:n` 。 |
 | /sageset： n | 顯示 [ **磁片清理設定** ] 對話方塊，也會建立登錄機碼來儲存您所選取的設定。 `n`儲存在登錄中的值可讓您指定要執行磁片清理的工作。 `n`值可以是從0到9999的任何整數值。 |
 | /sagerun： n | 如果您使用 **/sageset** 選項，則會執行指派給 n 值的指定工作。 系統會列舉電腦上的所有磁片磁碟機，並針對每個磁片磁碟機執行選取的設定檔。 |
 | /tuneup： n | 執行相同的 **/sageset** 和 **/sagerun** `n` 。 |
@@ -37,7 +37,7 @@ cleanmgr [/d <driveletter>] [/sageset:n]  [/sagerun:n] [/TUNEUP:n] [/LOWDISK] [/
 | /verylowdisk | 以預設設定執行，無使用者提示。 |
 | /? | 在命令提示字元顯示說明。 |
 
-#### <a name="options"></a>選項。
+#### <a name="options"></a>選項
 
 您可以使用 **/sageset** 和 **/Sagerun** 指定進行磁片清理的檔案選項包括：
 
@@ -66,7 +66,7 @@ cleanmgr [/d <driveletter>] [/sageset:n]  [/sagerun:n] [/TUNEUP:n] [/LOWDISK] [/
 
 ## <a name="examples"></a>範例
 
-若要執行 [磁片清理] 應用程式，讓您可以使用其對話方塊來指定稍後使用的選項，將設定儲存至集合 **1**，請輸入下列內容：
+若要執行 [磁片清理] 應用程式，讓您可以使用其對話方塊來指定稍後使用的選項，將設定儲存至集合 **1** ，請輸入下列內容：
 
 ```
 cleanmgr /sageset:1
