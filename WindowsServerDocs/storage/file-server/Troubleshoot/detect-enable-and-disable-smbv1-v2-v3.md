@@ -3,24 +3,37 @@ title: 如何在 Windows 中偵測、啟用和停用 SMBv1、Smbv2 弱點和 SMB
 description: 描述如何在 Windows 用戶端和伺服器環境中啟用和停用伺服器訊息區通訊協定 (SMBv1、Smbv2 弱點和 SMBv3) 。
 author: Deland-Han
 manager: dcscontentpm
-ms.topic: article
+ms.topic: how-to
 ms.author: delhan
-ms.date: 09/29/2020
-ms.openlocfilehash: 9008a3381ead368afb627bcfdcd8084a389afabb
-ms.sourcegitcommit: f89639d3861c61620275c69f31f4b02fd48327ab
+ms.date: 10/29/2020
+ms.openlocfilehash: ebf5617c108d959e4c4e107652f48ad4a4b53c08
+ms.sourcegitcommit: 65eef102021ed2b5abd73dca8a0ffd6eb174d705
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91517544"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035764"
 ---
 # <a name="how-to-detect-enable-and-disable-smbv1-smbv2-and-smbv3-in-windows"></a>如何在 Windows 中偵測、啟用和停用 SMBv1、Smbv2 弱點和 SMBv3
 
-## <a name="summary"></a>摘要
+>適用于： Windows 10、Windows 8.1、Windows 8、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-本文說明如何在 SMB 用戶端和伺服器元件上啟用和停用伺服器訊息區 (SMB) 第1版 (SMBv1) 、SMB 第2版 (Smbv2 弱點) 和 SMB 第3版 (SMBv3) 。 
+本文說明如何在 SMB 用戶端和伺服器元件上啟用和停用伺服器訊息區 (SMB) 第1版 (SMBv1) 、SMB 第2版 (Smbv2 弱點) 和 SMB 第3版 (SMBv3) 。
 
-> [!IMPORTANT]
-> 建議 **您不要** 停用 Smbv2 弱點或 SMBv3。 只停用 Smbv2 弱點或 SMBv3 做為暫時的疑難排解措施。 請勿讓 Smbv2 弱點或 SMBv3 停用。  
+停用或移除 SMBv1 可能會導致某些舊版電腦或軟體的相容性問題，SMBv1 有嚴重的安全性弱點，因此 [強烈建議您不要使用它](https://techcommunity.microsoft.com/t5/storage-at-microsoft/stop-using-smb1/ba-p/425858)。
+
+## <a name="disabling-smbv2-or-smbv3-for-troubleshooting"></a>停用 Smbv2 弱點或 SMBv3 以進行疑難排解
+
+雖然我們建議您讓 Smbv2 弱點和 SMBv3 保持啟用狀態，但在 [SMB 伺服器上偵測狀態、啟用和停用 smb 通訊協定](detect-enable-and-disable-smbv1-v2-v3.md#how-to-detect-status-enable-and-disable-smb-protocols-on-the-smb-server)中所述，您可能會發現暫時停用其中一個來進行疑難排解會很有用。
+
+在 Windows 10、Windows 8.1 和 Windows 8、Windows server 2019、Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 中，停用 SMBv3 會停用下列功能 (以及前述清單) 中所述的 Smbv2 弱點功能：
+
+- 透明容錯移轉-在維護或容錯移轉期間，用戶端重新連線而不中斷叢集節點    
+- Scale Out –平行存取所有檔案叢集節點上的共用資料     
+- 多重通道-如果用戶端與伺服器之間有多個路徑，則會匯總網路頻寬和容錯能力  
+- SMB 直接存取-新增具有低延遲和低 CPU 使用率之高效能的 RDMA 網路支援    
+- 加密-提供端對端加密，並防止無法信任的網路竊聽    
+- 目錄租用-透過快取改善分公司的應用程式回應時間    
+- 效能優化-小型隨機讀取/寫入 i/o 的優化
 
 在 Windows 7 和 Windows Server 2008 R2 中，停用 Smbv2 弱點會停用下列功能： 
  
@@ -35,23 +48,7 @@ ms.locfileid: "91517544"
 - 大型 MTU 支援-可充分利用 10 gigabye (GB) 乙太網路    
 - 提升能源效率-將檔案開啟至伺服器的用戶端可能會睡眠    
 
-在 Windows 8、Windows 8.1、Windows 10、Windows Server 2012、Windows Server 2012 R2、Windows Server 2016 和 Windows Server 2019 中，停用 SMBv3 會停用下列功能 (以及前述清單) 中所述的 Smbv2 弱點功能： 
- 
-- 透明容錯移轉-在維護或容錯移轉期間，用戶端重新連線而不中斷叢集節點    
-- Scale Out –平行存取所有檔案叢集節點上的共用資料     
-- 多重通道-如果用戶端與伺服器之間有多個路徑，則會匯總網路頻寬和容錯能力  
-- SMB 直接存取-新增具有低延遲和低 CPU 使用率之高效能的 RDMA 網路支援    
-- 加密-提供端對端加密，並防止無法信任的網路竊聽    
-- 目錄租用-透過快取改善分公司的應用程式回應時間    
-- 效能優化-小型隨機讀取/寫入 i/o 的優化
-
-##  <a name="more-information"></a>相關資訊
-
-Smbv2 弱點通訊協定是在 Windows Vista 和 Windows Server 2008 中引進。
-
-SMBv3 通訊協定是在 Windows 8 和 Windows Server 2012 中引進。
-
-如需 Smbv2 弱點和 SMBv3 功能功能的詳細資訊，請參閱下列文章：
+Smbv2 弱點通訊協定是在 Windows Vista 和 Windows Server 2008 中引進，而 SMBv3 通訊協定是在 Windows 8 和 Windows Server 2012 引進。 如需 Smbv2 弱點和 SMBv3 功能功能的詳細資訊，請參閱下列文章：
 
 [伺服器訊息區概觀](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831795(v=ws.11))
 
@@ -109,7 +106,7 @@ SMBv3 通訊協定是在 Windows 8 和 Windows Server 2012 中引進。
   Enable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol
   ```
 
-##### <a name="smb-v2v3protocol-only-disables-smb-v2v3-server"></a>SMB v2/v3 通訊協定 (只會停用 SMB v2/v3 伺服器) 
+##### <a name="smb-v2v3-protocol-only-disables-smb-v2v3-server"></a>SMB v2/v3 通訊協定 (只會停用 SMB v2/v3 伺服器) 
 
 - 檢測： 
   
@@ -131,13 +128,13 @@ SMBv3 通訊協定是在 Windows 8 和 Windows Server 2012 中引進。
 
 #### <a name="windows-81-and-windows-10-add-or-remove-programs-method"></a>Windows 8.1 和 Windows 10：新增或移除程式方法
 
-![新增/移除程式用戶端方法](media/detect-enable-and-disable-smbv1-v2-v3-2.png)
+![Add-Remove 程式用戶端方法](media/detect-enable-and-disable-smbv1-v2-v3-2.png)
 
 ## <a name="how-to-detect-status-enable-and-disable-smb-protocols-on-the-smb-server"></a>如何在 SMB 伺服器上偵測狀態、啟用和停用 SMB 通訊協定
 
 ### <a name="for-windows-8-and-windows-server-2012"></a>針對 Windows 8 和 Windows Server 2012
 
-Windows 8 和 Windows Server 2012 引進了新的 **SMBServerConfiguration** Windows PowerShell Cmdlet。 此 Cmdlet 可讓您啟用或停用伺服器元件上的 SMBv1、Smbv2 弱點和 SMBv3 通訊協定。  
+Windows 8 和 Windows Server 2012 引進了新的 **SMBServerConfiguration** Windows PowerShell Cmdlet。 此 Cmdlet 可讓您啟用或停用伺服器元件上的 SMBv1、Smbv2 弱點和 SMBv3 通訊協定。  
 
 > [!NOTE]   
 > 當您在 Windows 8 或 Windows Server 2012 中啟用或停用 Smbv2 弱點時，也會啟用或停用 SMBv3。 發生此行為的原因是這些通訊協定共用相同的堆疊。     
@@ -246,28 +243,28 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Par
  
 若要在 SMB 伺服器上啟用或停用 SMBv1，請設定下列登錄機碼：
 
-**HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters**
+**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters**
 
 ```
 Registry entry: SMB1
 REG_DWORD: 0 = Disabled
 REG_DWORD: 1 = Enabled
-Default: 1 = Enabled (No registry key is created)
+Default: 1 = Enabled (No registry key is created)
 ```
 
 若要在 SMB 伺服器上啟用或停用 Smbv2 弱點，請設定下列登錄機碼： 
 
-**HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters**
+**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters**
 
 ```
 Registry entry: SMB2
 REG_DWORD: 0 = Disabled
 REG_DWORD: 1 = Enabled
-Default: 1 = Enabled (No registry key is created) 
+Default: 1 = Enabled (No registry key is created) 
 ```
 
 > [!NOTE]
-> 進行這些變更之後，您必須重新開機電腦。 
+> 進行這些變更之後，您必須重新開機電腦。 
 
 ## <a name="how-to-detect-status-enable-and-disable-smb-protocols-on-the-smb-client"></a>如何在 SMB 用戶端上偵測狀態、啟用和停用 SMB 通訊協定
 
@@ -330,73 +327,73 @@ Default: 1 = Enabled (No registry key is created)
 
 此程式會在登錄中設定下列新專案：
 
-**HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters** 
+**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters** 
 
 - 登錄專案： **SMB1** 
 - REG_DWORD： **0** = 已停用   
 
 若要使用群組原則來進行設定，請遵循下列步驟：
  
-1. 開啟 [群組原則管理主控台]****。 在應包含新的喜好設定項目之群組原則物件 (GPO) 上按一下滑鼠右鍵，然後按一下 [編輯]****。
+1. 開啟 [群組原則管理主控台]  。 在應包含新的喜好設定項目之群組原則物件 (GPO) 上按一下滑鼠右鍵，然後按一下 [編輯]  。
 
-2. 在 [ **電腦**設定] 底下的主控台樹中，展開 [ **喜好** 設定] 資料夾，然後展開 [ **Windows 設定** ] 資料夾。
+2. 在 [ **電腦** 設定] 底下的主控台樹中，展開 [ **喜好** 設定] 資料夾，然後展開 [ **Windows 設定** ] 資料夾。
 
-3. 以滑鼠右鍵按一下 **[登錄** ] 節點，指向 [ **新增**]，然後選取 [登錄 **專案**]。
+3. 以滑鼠右鍵按一下 **[登錄** ] 節點，指向 [ **新增** ]，然後選取 [登錄 **專案** ]。
 
    ![登錄-新增-登錄專案](media/detect-enable-and-disable-smbv1-v2-v3-3.png)    
  
-在 [ **新**登錄內容] 對話方塊中，選取下列各項： 
+在 [ **新** 登錄內容] 對話方塊中，選取下列各項： 
  
-- **動作**：建立    
-- **Hive**： HKEY_LOCAL_MACHINE    
-- 機**碼路徑**： SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters    
-- **值名稱**： SMB1    
-- **數值型別**： REG_DWORD    
-- **值資料**：0    
+- **動作** ：建立    
+- **Hive** ： HKEY_LOCAL_MACHINE    
+- 機 **碼路徑** ： SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters    
+- **值名稱** ： SMB1    
+- **數值型別** ： REG_DWORD    
+- **值資料** ：0    
  
 ![新登錄屬性-一般](media/detect-enable-and-disable-smbv1-v2-v3-4.png)
 
 這會停用 SMBv1 伺服器元件。 此群組原則必須套用到網域中所有必要的工作站、伺服器和網域控制站。
 
 > [!NOTE]
->您也可以將 [WMI 篩選器](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc947846(v=ws.10))設定為排除不支援的作業系統或選取的排除專案，例如 Windows XP。
+> 您也可以將[WMI 篩選器](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc947846(v=ws.10))設定為排除不支援的作業系統或選取的排除專案，例如 Windows XP。
 
 > [!IMPORTANT]
 > 當您在舊版 Windows XP 或舊版 Linux 和協力廠商系統 (不支援 Smbv2 弱點或 SMBv3 的網域控制站上進行這些變更時，請務必小心) 需要存取 SYSVOL 或停用 SMB v1 的其他檔案共用。     
 
 ## <a name="disable-smbv1-client-with-group-policy"></a>使用群組原則停用 SMBv1 用戶端
 
-若要停用 SMBv1 用戶端，必須更新服務登錄機碼，以停用**MRxSMB10**的開頭，然後必須從**LanmanWorkstation**的專案中移除對**MRxSMB10**的相依性，如此一來，就能在不需要**MRxSMB10**的情況下啟動。
+若要停用 SMBv1 用戶端，必須更新服務登錄機碼，以停用 **MRxSMB10** 的開頭，然後必須從 **LanmanWorkstation** 的專案中移除對 **MRxSMB10** 的相依性，如此一來，就能在不需要 **MRxSMB10** 的情況下啟動。
 
-這會更新並取代登錄中下列2個專案中的預設值： 
+這會更新並取代登錄中下列兩個專案的預設值： 
 
-**HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\services\mrxsmb10** 
+**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\mrxsmb10** 
 
-登錄專案： **啟動** REG_DWORD： **4**= 已停用
+登錄專案： **啟動** REG_DWORD： **4** = 已停用
 
-**HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\LanmanWorkstation** 
+**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanWorkstation** 
 
 登錄專案： **DependOnService** REG_MULTI_SZ： **"Bowser"、"MRxSmb20"、"NSI"**   
 
 > [!NOTE]
-> 預設包含的 MRxSMB10，現在已移除為相依性。
+> 預設包含的 MRxSMB10，現在已移除為相依性。
 
 若要使用群組原則來進行設定，請遵循下列步驟：
  
-1. 開啟 [群組原則管理主控台]****。 在應包含新的喜好設定項目之群組原則物件 (GPO) 上按一下滑鼠右鍵，然後按一下 [編輯]****。
+1. 開啟 [群組原則管理主控台]  。 在應包含新的喜好設定項目之群組原則物件 (GPO) 上按一下滑鼠右鍵，然後按一下 [編輯]  。
 
-2. 在 [ **電腦**設定] 底下的主控台樹中，展開 [ **喜好** 設定] 資料夾，然後展開 [ **Windows 設定** ] 資料夾。
+2. 在 [ **電腦** 設定] 底下的主控台樹中，展開 [ **喜好** 設定] 資料夾，然後展開 [ **Windows 設定** ] 資料夾。
 
-3. 以滑鼠右鍵按一下 **[登錄** ] 節點，指向 [ **新增**]，然後選取 [登錄 **專案**]。    
+3. 以滑鼠右鍵按一下 **[登錄** ] 節點，指向 [ **新增** ]，然後選取 [登錄 **專案** ]。    
 
 4. 在 [ **新** 登錄內容] 對話方塊中，選取下列各項： 
  
-   - **動作**：更新
-   - **Hive**： HKEY_LOCAL_MACHINE
-   - 機**碼路徑**： SYSTEM\CurrentControlSet\services\mrxsmb10
-   - **值名稱**：啟動
-   - **數值型別**： REG_DWORD
-   - **值資料**：4
+   - **動作** ：更新
+   - **Hive** ： HKEY_LOCAL_MACHINE
+   - 機 **碼路徑** ： SYSTEM\CurrentControlSet\services\mrxsmb10
+   - **值名稱** ：啟動
+   - **數值型別** ： REG_DWORD
+   - **值資料** ：4
  
    ![啟動屬性-一般](media/detect-enable-and-disable-smbv1-v2-v3-5.png)
 
@@ -404,12 +401,12 @@ Default: 1 = Enabled (No registry key is created)
 
    在 [ **新** 登錄內容] 對話方塊中，選取下列各項： 
  
-   - **動作**：取代
-   - **Hive**： HKEY_LOCAL_MACHINE
-   - 機**碼路徑**： SYSTEM\CurrentControlSet\Services\LanmanWorkstation
-   - **值名稱**： DependOnService
-   - **數值型別**： REG_MULTI_SZ 
-   - **值資料**：
+   - **動作** ：取代
+   - **Hive** ： HKEY_LOCAL_MACHINE
+   - 機 **碼路徑** ： SYSTEM\CurrentControlSet\Services\LanmanWorkstation
+   - **值名稱** ： DependOnService
+   - **數值型別** ： REG_MULTI_SZ 
+   - **值資料** ：
       - Bowser
       - MRxSmb20
       - NSI
