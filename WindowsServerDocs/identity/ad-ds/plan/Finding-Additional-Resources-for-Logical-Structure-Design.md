@@ -2,16 +2,16 @@
 ms.assetid: 8b900c2b-35b1-4c95-a73d-e5f2e9cf0adb
 title: 尋找其他邏輯結構設計資源
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 25fdb357ae4be103a6c543a6969f72f1a5df91e1
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: c2b445661fb10e03a3d764611a1a3e213613b69e
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88939138"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93068568"
 ---
 # <a name="finding-additional-resources-for-logical-structure-design"></a>尋找其他邏輯結構設計資源
 
@@ -53,8 +53,8 @@ ms.locfileid: "88939138"
 
 - 如需群組原則基礎結構的詳細資訊，請參閱 [設計群組原則基礎結構](/previous-versions/windows/it-pro/windows-server-2003/cc786524(v=ws.10))。
 
-- 如需唯讀網域控制站 (Rodc) 的詳細資訊，請參閱 [AD DS：唯讀網域控制站](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc732801(v=ws.10))。
+- 如需唯讀網域控制站 (Rodc) 的詳細資訊，請參閱 [AD DS： Read-Only 網域控制站](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc732801(v=ws.10))。
 
-- 如需更細緻的密碼和帳戶鎖定原則的詳細資訊，請參閱 AD DS 更細緻的 [密碼和帳戶鎖定原則的逐步指南](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc770842(v=ws.10))。
+- 如需更細緻的密碼和帳戶鎖定原則的詳細資訊，請參閱 [AD DS Fine-Grained 密碼和帳戶鎖定原則的逐步指南](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc770842(v=ws.10))。
 
 - 如需 AD DS 中命名慣例的詳細資訊，請參閱 Microsoft 知識庫中的文章909264、 [電腦、網域、網站和 ou 的 Active Directory 命名慣例](https://support.microsoft.com/help/909264/)。

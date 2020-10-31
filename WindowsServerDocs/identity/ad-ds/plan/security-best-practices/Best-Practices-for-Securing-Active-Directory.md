@@ -2,16 +2,16 @@
 ms.assetid: e2651dc8-4b31-4cd8-a400-3b8123890210
 title: 保護 Active Directory 的最佳做法
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 444ba28da788ca5986b49eaf84675c1eacfe5522
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 79279cb5392234ad6516e9592e87356637782169
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941538"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93069650"
 ---
 # <a name="best-practices-for-securing-active-directory"></a>保護 Active Directory 的最佳做法
 
@@ -29,7 +29,7 @@ ms.locfileid: "88941538"
 
 -   [減少 Active Directory 攻擊面](../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md)
 
--   [執行最低許可權的系統管理模型](../../../ad-ds/plan/security-best-practices/Implementing-Least-Privilege-Administrative-Models.md)
+-   [執行 Least-Privilege 系統管理模型](../../../ad-ds/plan/security-best-practices/Implementing-Least-Privilege-Administrative-Models.md)
 
 -   [實作安全的管理主機](../../../ad-ds/plan/security-best-practices/Implementing-Secure-Administrative-Hosts.md)
 

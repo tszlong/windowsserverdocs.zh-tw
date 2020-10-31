@@ -1,17 +1,18 @@
 ---
 ms.assetid: ac727bd1-a892-47ed-a7ba-439b34187d4e
 title: AD DS 安裝和移除精靈頁面說明
+description: 提供下列 wizard 頁面的控制項描述，這些控制項包含伺服器管理員中的 AD DS 伺服器角色安裝和移除。
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 0eab71426d282bbd1c0411b13286a9cc93dc38ab
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 85b072122c87203d0865f27efe6d584985d0319f
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941018"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93068390"
 ---
 # <a name="ad-ds-installation-and-removal-wizard-page-descriptions"></a>AD DS 安裝和移除精靈頁面說明
 
@@ -48,7 +49,7 @@ ms.locfileid: "88941018"
 -   [確認角色移除選取](../../ad-ds/deploy/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions.md#BKMK_ConfirmRoleRemovalPage)
 
 ## <a name="deployment-configuration"></a><a name="BKMK_DepConfigPage"></a>部署設定
-[伺服器管理員] 會從 [部署設定]**** 頁面開始安裝每個網域控制站。 這個頁面及後續頁面的剩餘選項及必要欄位會隨著您選取的部署操作而變更。 例如，如果您建立新的樹系，[ **準備選項** ] 頁面不會出現，但是如果您在現有的樹系或網域中安裝執行 Windows Server 2012 的第一個網域控制站，則會執行此工作。
+[伺服器管理員] 會從 [部署設定]  頁面開始安裝每個網域控制站。 這個頁面及後續頁面的剩餘選項及必要欄位會隨著您選取的部署操作而變更。 例如，如果您建立新的樹系，[ **準備選項** ] 頁面不會出現，但是如果您在現有的樹系或網域中安裝執行 Windows Server 2012 的第一個網域控制站，則會執行此工作。
 
 有些驗證測試是在這個頁面上執行的，而且之後也會在先決條件檢查時進行。 例如，如果您嘗試在具有 Windows 2000 功能等級的樹系中安裝第一個 Windows Server 2012 網域控制站，此頁面上就會出現錯誤。
 
@@ -71,13 +72,13 @@ ms.locfileid: "88941018"
 > [!NOTE]
 > 如果您建立新的樹狀目錄網域，需要指定樹系根網域的名稱而不是父系網域的名稱，不過剩餘的精靈頁面和選項是相同的。
 
--   按一下 [選取]**** 瀏覽到父系網域或 Active Directory 樹狀結構，或是輸入有效的父系網域或樹狀結構名稱。 接著在 [新網域名稱]**** 輸入新網域的名稱。
+-   按一下 [選取]  瀏覽到父系網域或 Active Directory 樹狀結構，或是輸入有效的父系網域或樹狀結構名稱。 接著在 [新網域名稱]  輸入新網域的名稱。
 
 -   樹狀結構網域：提供有效的完整根網域名稱；該名稱不可以是單一標籤，而且必須符合 DNS 網域名稱需求。
 
 -   子網域：提供有效的單一標籤子網域名稱；該名稱必須符合 DNS 網域名稱需求。
 
--   如果您的目前認證不是來自於網域，[Active Directory 網域服務設定精靈] 會提示您輸入網域認證。 按一下 [變更]**** 提供網域認證。
+-   如果您的目前認證不是來自於網域，[Active Directory 網域服務設定精靈] 會提示您輸入網域認證。 按一下 [變更]  提供網域認證。
 
 如需有關如何建立網域的詳細資訊，請參閱 [安裝新的 Windows Server 2012 Active Directory 子域或樹狀目錄網域 &#40;層級 200&#41;](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md)。
 
@@ -85,7 +86,7 @@ ms.locfileid: "88941018"
 
 ![AD DS 安裝](./media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_DeploymentConfiguration_Replica.gif)
 
--   按一下 [選取]**** 瀏覽到網域，或輸入有效的網域名稱。
+-   按一下 [選取]  瀏覽到網域，或輸入有效的網域名稱。
 
 -   如果需要，[伺服器管理員] 會提示您輸入有效的認證。 安裝其他網域控制站需要 Domain Admins 群組成員資格。
 
@@ -117,14 +118,14 @@ ms.locfileid: "88941018"
 
 -   網域功能等級預設是設定為 Windows Server 2012。 您可以設定任何其他值，這個值必須至少是樹系功能等級的值或更高。
 
--   可以設定的網域控制站選項包括 [DNS 伺服器]**** 和 [通用類別目錄]****；您不能將唯讀網域控制站設定為新網域中的第一部網域控制站。
+-   可以設定的網域控制站選項包括 [DNS 伺服器]  和 [通用類別目錄]  ；您不能將唯讀網域控制站設定為新網域中的第一部網域控制站。
 
     Microsoft 建議所有的網域控制站提供 DNS 和通用類別目錄服務，以便在分散式環境中具有高可用性，這也是為什麼在建立新網域時精靈會預設啟用這些選項的原因。
 
--   [網域控制站選項]**** 頁面也能讓您從樹系設定選擇適當的 Active Directory 邏輯 [站台名稱]****。 它預設會選取包含最正確子網路的站台。 如果只有一個站台，就會自動選取該站台。
+-   [網域控制站選項]  頁面也能讓您從樹系設定選擇適當的 Active Directory 邏輯 [站台名稱]  。 它預設會選取包含最正確子網路的站台。 如果只有一個站台，就會自動選取該站台。
 
     > [!IMPORTANT]
-    > 如果伺服器不屬於 Active Directory 子網路且有一個以上的站台，則不會選取任何站台，而且會等到您從清單選擇一個站台後，[下一步]**** 按鈕才可以使用。
+    > 如果伺服器不屬於 Active Directory 子網路且有一個以上的站台，則不會選取任何站台，而且會等到您從清單選擇一個站台後，[下一步]  按鈕才可以使用。
 
 如需有關如何建立網域的詳細資訊，請參閱 [安裝新的 Windows Server 2012 Active Directory 子域或樹狀目錄網域 &#40;層級 200&#41;](../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md)。
 
@@ -132,14 +133,14 @@ ms.locfileid: "88941018"
 
 ![AD DS 安裝](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_DCOptions_Replica.gif)
 
--   可設定的網域控制站選項包括 [DNS 伺服器]**** 和 [通用類別目錄]****，以及 [唯讀網域控制站]****。
+-   可設定的網域控制站選項包括 [DNS 伺服器]  和 [通用類別目錄]  ，以及 [唯讀網域控制站]  。
 
     Microsoft 建議所有的網域控制站提供 DNS 和通用類別目錄服務，以便在分散式環境中具有高可用性，這也是為什麼精靈預設會啟用這些選項的原因。 如需部署 RODC 的詳細資訊，請參閱[唯讀網域控制站規劃和部署指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771744(v=ws.10))。
 
 如需如何將網域控制站新增至現有網域的詳細資訊，請參閱 [在現有網域中安裝複本 Windows Server 2012 網域控制站 &#40;層級 200&#41;](../../ad-ds/deploy/../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md)。
 
 ## <a name="dns-options"></a><a name="BKMK_DNSOptionsPage"></a>網域控制站選項
-如果您安裝 DNS 伺服器，會出現下列 [DNS 選項]**** 頁面：
+如果您安裝 DNS 伺服器，會出現下列 [DNS 選項]  頁面：
 
 ![AD DS 安裝](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_DNSOptions_Replica.gif)
 
@@ -149,9 +150,9 @@ ms.locfileid: "88941018"
 
 -   主機 (A 或 AAAA) 資源記錄（也稱為黏附記錄）必須存在，才能將名稱伺服器 (NS) 資源記錄中指定的伺服器名稱解析為其 IP 位址。 將此資源記錄中的主機名稱解析成名稱伺服器 (NS) 資源記錄中所委派的 DNS 伺服器的程序，有時也稱為「黏附追蹤」。
 
-您可以讓 [Active Directory 網域服務設定精靈] 自動建立它們。 在您按一下 [網域控制站選項]**** 頁面上的 [下一步]**** 之後，精靈會確認父系 DNS 區域中有無適當的記錄存在。 如果精靈無法確認父系網域中是否有記錄存在，精靈上就會提供選項讓您為新的網域自動建立新的 DNS 委派 (或更新現有委派)，然後繼續進行新的網域控制站安裝。
+您可以讓 [Active Directory 網域服務設定精靈] 自動建立它們。 在您按一下 [網域控制站選項]  頁面上的 [下一步]  之後，精靈會確認父系 DNS 區域中有無適當的記錄存在。 如果精靈無法確認父系網域中是否有記錄存在，精靈上就會提供選項讓您為新的網域自動建立新的 DNS 委派 (或更新現有委派)，然後繼續進行新的網域控制站安裝。
 
-或者，您可以先建立這些 DNS 委派記錄，然後才安裝 DNS 伺服器。 若要建立區域委派，請開啟 [DNS 管理員]****，在父系網域上按一下滑鼠右鍵，然後按一下 [新增委派]****。 請遵循新增委派精靈中的步驟來建立委派。
+或者，您可以先建立這些 DNS 委派記錄，然後才安裝 DNS 伺服器。 若要建立區域委派，請開啟 [DNS 管理員]  ，在父系網域上按一下滑鼠右鍵，然後按一下 [新增委派]  。 請遵循新增委派精靈中的步驟來建立委派。
 
 安裝程序會嘗試建立委派，以確認其他網域中的電腦可以解析 DNS 子網域中主機 (包含網域控制站和成員電腦) 的 DNS 查詢。 請注意，委派記錄只能在 Microsoft DNS 伺服器自動建立。 如果父系 DNS 網域區域位於協力廠商 DNS 伺服器 (如 BIND) 上，[先決條件檢查] 頁面就會出現無法建立 DNS 委派記錄的警告。 如需警告的詳細資訊，請參閱[安裝 AD DS 的已知問題](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754463(v=ws.10))。
 
@@ -178,29 +179,29 @@ ms.locfileid: "88941018"
 
     沒有被允許 (包括隱含) 或拒絕的任何使用者或電腦都不能快取它們的密碼。 如果這些使用者或電腦沒有可寫入網域控制站的存取權，他們就無法存取 AD DS 提供的資源或功能。 如需 PRP 的詳細資訊，請參閱[密碼複寫原則](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730883(v=ws.10))。 如需管理 PRP 的詳細資訊，請參閱[管理密碼複寫原則](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754646(v=ws.10))。
 
-如需安裝 Rodc 的詳細資訊，請參閱 [安裝 Windows Server 2012 Active Directory 唯讀網域控制站 &#40;RODC&#41; &#40;層級 200&#41;](../../ad-ds/deploy/RODC/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-.md)。
+如需安裝 Rodc 的詳細資訊，請參閱 [&#40;RODC 安裝 Windows Server 2012 Active Directory Read-Only 網域控制站&#41; &#40;層級 200&#41;](../../ad-ds/deploy/RODC/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-.md)。
 
 ## <a name="additional-options"></a><a name="BKMK_AdditionalOptionsPage"></a>其他選項
-如果您是建立新的網域，[其他選項]**** 頁面上會出現下列選項：
+如果您是建立新的網域，[其他選項]  頁面上會出現下列選項：
 
 ![AD DS 安裝](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_AdditionalOptions_Child.gif)
 
-如果您是在現有網域中安裝其他網域控制站，[其他選項]**** 頁面上會出現下列選項：
+如果您是在現有網域中安裝其他網域控制站，[其他選項]  頁面上會出現下列選項：
 
 ![AD DS 安裝](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_AdditionalOptions_Replica.gif)
 
 -   您可以指定網域控制站當作複寫來源，或允許精靈選擇任一網域控制站當作複寫來源。
 
--   您也可以使用「從媒體安裝」(IFM) 選項，使用備份的媒體來安裝網域控制站。 如果安裝媒體儲存在本機，[從媒體安裝路徑]**** 選項能讓您瀏覽到檔案位置。 遠端安裝無法使用瀏覽選項。 您可以按一下 [驗證]**** 確定提供的路徑是有效媒體。 IFM 選項使用的媒體，只能使用 Windows Server Backup 或從另一個現有的 Windows Server 2012 電腦建立 Ntdsutil.exe。您無法使用 Windows Server 2008 R2 或舊版作業系統來建立 Windows Server 2012 網域控制站的媒體。 如果媒體使用 SYSKEY 加以保護，[伺服器管理員] 在驗證期間會提示輸入映像的密碼。
+-   您也可以使用「從媒體安裝」(IFM) 選項，使用備份的媒體來安裝網域控制站。 如果安裝媒體儲存在本機，[從媒體安裝路徑]  選項能讓您瀏覽到檔案位置。 遠端安裝無法使用瀏覽選項。 您可以按一下 [驗證]  確定提供的路徑是有效媒體。 IFM 選項使用的媒體，只能使用 Windows Server Backup 或從另一個現有的 Windows Server 2012 電腦建立 Ntdsutil.exe。您無法使用 Windows Server 2008 R2 或舊版作業系統來建立 Windows Server 2012 網域控制站的媒體。 如果媒體使用 SYSKEY 加以保護，[伺服器管理員] 在驗證期間會提示輸入映像的密碼。
 
 如需有關如何建立網域的詳細資訊，請參閱 [安裝新的 Windows Server 2012 Active Directory 子域或樹狀目錄網域 &#40;層級 200&#41;](../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md)。 如需如何將網域控制站新增至現有網域的詳細資訊，請參閱 [在現有網域中安裝複本 Windows Server 2012 網域控制站 &#40;層級 200&#41;](../../ad-ds/deploy/../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md)。
 
 ## <a name="paths"></a><a name="BKMK_Paths"></a>路徑
-[路徑]**** 頁面上會出現下列選項。
+[路徑]  頁面上會出現下列選項。
 
 ![AD DS 安裝](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_Paths.gif)
 
--   [路徑]**** 頁面能讓您覆寫 AD DS 資料庫、資料庫交易記錄以及 SYSVOL 共用的預設資料夾位置。 預設位置永遠是 %systemroot%。
+-   [路徑]  頁面能讓您覆寫 AD DS 資料庫、資料庫交易記錄以及 SYSVOL 共用的預設資料夾位置。 預設位置永遠是 %systemroot%。
 
 指定 AD DS 資料庫 (NTDS.DIT)、記錄檔以及 SYSVOL 的位置。 如果是本機安裝，您可以瀏覽到想要儲存檔案的位置。
 
@@ -220,9 +221,9 @@ ms.locfileid: "88941018"
 ## <a name="review-options"></a><a name="BKMK_ViewInstallOptionsPage"></a>檢閱選項
 ![AD DS 安裝](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_ReviewOptions.gif)
 
--   [檢閱選項]**** 頁面能讓您驗證設定，並確保它們符合您的需求，然後才開始安裝。 這不是使用 [伺服器管理員] 停止安裝的最後機會。 這個頁面只是讓您檢閱並確認設定，然後才繼續設定。
+-   [檢閱選項]  頁面能讓您驗證設定，並確保它們符合您的需求，然後才開始安裝。 這不是使用 [伺服器管理員] 停止安裝的最後機會。 這個頁面只是讓您檢閱並確認設定，然後才繼續設定。
 
--   [伺服器管理員] 中的 [檢閱選項]**** 頁面也提供選用的 [檢視指令碼]**** 按鈕，用來建立一個包含目前的 ADDSDeployment 設定的 Unicode 文字檔，以便做為一個 Windows PowerShell 指令碼。 這樣可以讓您將 [伺服器管理員] 的圖形介面當作 Windows PowerShell 部署工作室一樣操作。 使用 [Active Directory 網域服務設定精靈] 來設定選項、匯出設定，然後取消精靈。 這個程序會建立一個有效且合乎語義的正確範例，以備日後修改或直接使用。
+-   [伺服器管理員] 中的 [檢閱選項]  頁面也提供選用的 [檢視指令碼]  按鈕，用來建立一個包含目前的 ADDSDeployment 設定的 Unicode 文字檔，以便做為一個 Windows PowerShell 指令碼。 這樣可以讓您將 [伺服器管理員] 的圖形介面當作 Windows PowerShell 部署工作室一樣操作。 使用 [Active Directory 網域服務設定精靈] 來設定選項、匯出設定，然後取消精靈。 這個程序會建立一個有效且合乎語義的正確範例，以備日後修改或直接使用。
 
 ## <a name="prerequisites-check"></a><a name="BKMK_PrerqCheckPage"></a>必要條件檢查
 ![AD DS 安裝](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_PrerequisitesCheck.gif)
@@ -249,14 +250,14 @@ ms.locfileid: "88941018"
 ## <a name="role-removal-credentials"></a><a name="BKMK_RemovalCredsPage"></a>角色移除認證
 ![AD DS 安裝](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_RRW_Credentials.gif)
 
-您可以在 [認證]**** 頁面上設定降級選項。 提供執行下列清單降級所需的認證：
+您可以在 [認證]  頁面上設定降級選項。 提供執行下列清單降級所需的認證：
 
 -   降級其他網域控制站需要 Domain Admin 認證。 選取 **[強制移除網域控制站** ] 會降級網域控制站，而不會從 Active Directory 移除網域控制站物件的中繼資料。
 
     > [!IMPORTANT]
-    > 請不要選取這個選項，除非網域控制站無法連絡其他網域控制站，而且沒有其他正當的方法** 可以解決這個網路問題。 強制降級會在樹系的剩餘網域控制站上的 Active Directory 中留下孤立的中繼資料。 不僅如此，該網域控制站上所有未複寫的變更 (如密碼或新的使用者帳戶) 都會永遠遺失。 孤立的中繼資料是 Microsoft 客戶支援遇到大部分 AD DS、Exchange、SQL 及其他軟體問題的根本原因。 如果您強制降級網域控制站，則必須** 立即手動清理中繼資料。 如需相關步驟，請參閱 [清理伺服器中繼資料](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc816907(v=ws.10))。
+    > 請不要選取這個選項，除非網域控制站無法連絡其他網域控制站，而且沒有其他正當的方法  可以解決這個網路問題。 強制降級會在樹系的剩餘網域控制站上的 Active Directory 中留下孤立的中繼資料。 不僅如此，該網域控制站上所有未複寫的變更 (如密碼或新的使用者帳戶) 都會永遠遺失。 孤立的中繼資料是 Microsoft 客戶支援遇到大部分 AD DS、Exchange、SQL 及其他軟體問題的根本原因。 如果您強制降級網域控制站，則必須  立即手動清理中繼資料。 如需相關步驟，請參閱 [清理伺服器中繼資料](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc816907(v=ws.10))。
 
--   降級網域中最後一部網域控制站需要 Enterprise Admins 群組成員資格，因為它會移除網域本身 (如果是樹系的最後一個網域，則會移除樹系)。 如果您目前的網域控制站是網域的最後一部網域控制站，[伺服器管理員] 將會通知您。 選取 [網域中的最後一個網域控制站]****，確認網域控制站是網域中的最後一個網域控制站。
+-   降級網域中最後一部網域控制站需要 Enterprise Admins 群組成員資格，因為它會移除網域本身 (如果是樹系的最後一個網域，則會移除樹系)。 如果您目前的網域控制站是網域的最後一部網域控制站，[伺服器管理員] 將會通知您。 選取 [網域中的最後一個網域控制站]  ，確認網域控制站是網域中的最後一個網域控制站。
 
 如需移除 AD DS 的詳細資訊，請參閱 [移除 Active Directory Domain Services (層級 100) ](assetId:///99b97af0-aa7e-41ed-8c81-4eee6c03eb4c) 和 [降級網域控制站和網域 &#40;層級 200&#41;](Demoting-Domain-Controllers-and-Domains--Level-200-.md)。
 
@@ -267,7 +268,7 @@ ms.locfileid: "88941018"
 
 ![AD DS 安裝](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_RRW_Warnings.gif)
 
-您必須按一下 [繼續移除]**** 了解其他角色已無法使用，才能按 [下一步]**** 繼續。
+您必須按一下 [繼續移除]  了解其他角色已無法使用，才能按 [下一步]  繼續。
 
 如果您強制移除網域控制站，將會遺失任何沒有複寫到網域中其他網域控制路的 Active Directory 物件變更。 此外，如果網域控制站裝載了操作主機角色、通用類別目錄或 DNS 伺服器角色，則可能也會影響網域和樹系中的重大操作，如下所示。 移除裝載任何操作主機角色的網域控制站之前，請試著將角色轉移到另一個網域控制站。 如果無法轉移角色，請先從這部電腦移除 Active Directory 網域服務，然後使用 Ntdsutil.exe 拿取角色。 在打算拿取角色的網域控制站上使用 Ntdsutil；如果可以的話，使用與這個網域控制站位於相同站台中的最新複寫夥伴。 如需轉移和拿取操作主機角色的詳細資訊，請參閱 Microsoft 知識庫[文章 255504](https://go.microsoft.com/fwlink/?LinkId=80395)。 如果精靈無法判斷網域控制站是否裝載了操作主機角色，請執行 netdom.exe 命令來判斷這個網域控制站是否執行任何操作主機角色。
 
@@ -303,7 +304,7 @@ ms.locfileid: "88941018"
 如需移除 AD DS 的詳細資訊，請參閱 [移除 Active Directory Domain Services (層級 100) ](assetId:///99b97af0-aa7e-41ed-8c81-4eee6c03eb4c) 和 [降級網域控制站和網域 &#40;層級 200&#41;](Demoting-Domain-Controllers-and-Domains--Level-200-.md)。
 
 ## <a name="review-options"></a><a name="BKMK_ConfirmRoleRemovalPage"></a>檢閱選項
-[檢閱選項]**** 頁面可以讓您將降級組態設定匯出到 Windows PowerShell 指令碼，以便自動化其他的降級。 按一下 [降級]**** 移除 AD DS。
+[檢閱選項]  頁面可以讓您將降級組態設定匯出到 Windows PowerShell 指令碼，以便自動化其他的降級。 按一下 [降級]  移除 AD DS。
 
 ![AD DS 安裝](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_RRW_ReviewOptions.gif)
 

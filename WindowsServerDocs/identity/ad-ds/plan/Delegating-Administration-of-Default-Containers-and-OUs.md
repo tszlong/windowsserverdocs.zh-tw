@@ -2,22 +2,22 @@
 ms.assetid: ac6604b0-7459-4ff3-af1c-4936897f5d14
 title: 委派預設容器與 OU 的管理
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 0ddd4e6853dfaf08cb04157554209f6725b79936
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 8f52ca20cce86c869f66ea9d0e2e795956a0c75f
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941458"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93069410"
 ---
 # <a name="delegating-administration-of-default-containers-and-ous"></a>委派預設容器與 OU 的管理
 
 >適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-每個 Active Directory 網域都包含一組標準的容器和組織單位 (Ou) 在安裝 Active Directory Domain Services (AD DS) 期間建立。 這些選項包括：
+每個 Active Directory 網域都包含一組標準的容器和組織單位 (Ou) 在安裝 Active Directory Domain Services (AD DS) 期間建立。 其中包括下列各項：
 
 -   網域容器，作為階層的根容器
 

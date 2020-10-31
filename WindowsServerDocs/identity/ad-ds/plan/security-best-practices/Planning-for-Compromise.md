@@ -2,16 +2,16 @@
 ms.assetid: 6f50476c-a1f1-48fb-999b-76c4c3816496
 title: 規劃危害因應措施
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 9be3768f4ac0f95c1c268d9a4efb55af3f74d304
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: b4cdd6d9383a27b97d3368903fed4b41fe5b5952
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941398"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93069570"
 ---
 # <a name="planning-for-compromise"></a>規劃危害因應措施
 
@@ -92,7 +92,7 @@ ms.locfileid: "88941398"
 
 5.  不允許在初始化樹系中安裝舊版作業系統或應用程式。 如果無法更新應用程式並安裝新的應用程式，請將它保留在舊版樹系中，並考慮使用創意的銷毀來取代應用程式的功能。
 
-### <a name="defining-a-limited-risk-based-migration-plan"></a>定義受限、以風險為基礎的遷移計畫
+### <a name="defining-a-limited-risk-based-migration-plan"></a>定義有限的 Risk-Based 遷移計畫
 建立有限、以風險為基礎的遷移計畫，單純地表示在決定要遷移至初始化樹系的使用者、應用程式和資料時，您應該根據組織在其中一個使用者或系統遭到入侵時所公開的風險程度來識別遷移目標。 其帳戶最有可能成為攻擊者目標的 VIP 使用者，應該存放在初始化樹系中。 提供重要商務功能的應用程式應該安裝在初始化樹系中的全新組建伺服器上，而且必須將高度敏感的資料移至初始化樹系中的安全伺服器。
 
 如果您還沒有清楚瞭解 Active Directory 環境中最重要的商務關鍵使用者、系統、應用程式和資料，請與業務單位一起進行識別。 應該識別企業營運所需的任何應用程式，就像執行重要應用程式或儲存重要資料的任何伺服器一樣。 藉由識別貴組織所需的使用者和資源以繼續運作，您可以建立自然優先的資產集合，以專注于工作。

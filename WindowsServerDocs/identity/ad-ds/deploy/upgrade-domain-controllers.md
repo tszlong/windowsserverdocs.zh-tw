@@ -1,17 +1,17 @@
 ---
 title: 將網域控制站升級到 Windows Server 2016
 description: 本檔說明如何從 Windows Server 2012 R2 升級至 Windows Server 2016
-ms.author: iainfou
+ms.author: daveba
 author: iainfoulds
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 747c71d3c0b3dd7afb0fb1dda1b922ac58330e02
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 4a00bc2c6eabd8b5419d3a0d867efba9dfc1592a
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88940238"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93069170"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2016"></a>將網域控制站升級到 Windows Server 2016
 
@@ -30,9 +30,9 @@ ms.locfileid: "88940238"
 1. 檢查要執行安裝的電腦與目標伺服器的連線。
 1. 檢查必要操作主機角色的可用性：
    - 若要在現有網域和樹系中安裝第一個執行 Windows Server 2016 的 DC，執行安裝的電腦必須連線到 **架構主機** 才能執行 adprep/forestprep 和基礎結構主機，以便執行 adprep/domainprep。
-   - 若要在已擴充樹系架構的網域中安裝第一個 DC，您只需要連接到 **基礎結構主機**。
-   - 若要安裝或移除現有樹系中的網域，您需要連線到 **網域命名主機**。
-   - 任何網域控制站安裝也需要與**RID 主機**的連線。
+   - 若要在已擴充樹系架構的網域中安裝第一個 DC，您只需要連接到 **基礎結構主機** 。
+   - 若要安裝或移除現有樹系中的網域，您需要連線到 **網域命名主機** 。
+   - 任何網域控制站安裝也需要與 **RID 主機** 的連線。
    - 如果您要在現有的樹系中安裝第一個唯讀網域控制站，您需要連線到每個應用程式目錄分割的 **基礎結構主機** ，也稱為非網域命名內容或 NDNC。
 
 ### <a name="installation-steps-and-required-administrative-levels"></a>安裝步驟和所需的系統管理層級
@@ -129,11 +129,11 @@ AD DS 無法安裝在同時執行下列伺服器角色或角色服務的伺服�
    ![升級](media/Upgrade-Domain-Controllers-to-Windows-Server-2016/upgrade2.png)
 
 1. 使用網域系統管理員帳戶登入新的 Windows Server 2016。
-1. 在 **伺服器管理員**的 [新增 **角色及功能**] 下，在新的 Windows Server 2016 上安裝 **Active Directory Domain Services** 。 這會自動在 2012 R2 樹系和網域上執行 adprep。
+1. 在 **伺服器管理員** 的 [新增 **角色及功能** ] 下，在新的 Windows Server 2016 上安裝 **Active Directory Domain Services** 。 這會自動在 2012 R2 樹系和網域上執行 adprep。
 
    ![升級](media/Upgrade-Domain-Controllers-to-Windows-Server-2016/upgrade3.png)
 
-1. 在 **伺服器管理員**中，按一下黃色三角形，然後從下拉式清單中按一下 [ **將伺服器升級為網域控制站**]。
+1. 在 **伺服器管理員** 中，按一下黃色三角形，然後從下拉式清單中按一下 [ **將伺服器升級為網域控制站** ]。
 
    ![升級](media/Upgrade-Domain-Controllers-to-Windows-Server-2016/upgrade4.png)
 
@@ -141,14 +141,14 @@ AD DS 無法安裝在同時執行下列伺服器角色或角色服務的伺服�
 
    ![升級](media/Upgrade-Domain-Controllers-to-Windows-Server-2016/upgrade5.png)
 
-1. 在 [ **網域控制站選項** ] 畫面上，輸入 **目錄服務還原模式 (DSRM) ** 密碼，然後按 [下一步]。
-1. 針對其餘的畫面，請按 **[下一步]**。
-1. 在 [必要條件 **檢查** ] 畫面上，按一下 [ **安裝**]。 重新開機完成後，您就可以重新登入。
-1. 在 Windows Server 2012 R2 伺服器的 **伺服器管理員**中，于 [工具] 底下，選取 [ **Windows PowerShell 的 Active Directory 模組**。
+1. 在 [ **網域控制站選項** ] 畫面上，輸入 **目錄服務還原模式 (DSRM)** 密碼，然後按 [下一步]。
+1. 針對其餘的畫面，請按 **[下一步]** 。
+1. 在 [必要條件 **檢查** ] 畫面上，按一下 [ **安裝** ]。 重新開機完成後，您就可以重新登入。
+1. 在 Windows Server 2012 R2 伺服器的 **伺服器管理員** 中，于 [工具] 底下，選取 [ **Windows PowerShell 的 Active Directory 模組** 。
 
    ![升級](media/Upgrade-Domain-Controllers-to-Windows-Server-2016/upgrade6.png)
 
-1. 在 PowerShell 視窗中，使用 ADDirectoryServerOperationMasterRole 移動 FSMO 角色。 您可以輸入每個 OperationMasterRole 的名稱，或使用數位來指定角色。 如需詳細資訊，請參閱 [移動-ADDirectoryServerOperationMasterRole](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd464018(v=ws.10))
+1. 在 PowerShell 視窗中，使用 Move-ADDirectoryServerOperationMasterRole 來移動 FSMO 角色。 您可以輸入每個 OperationMasterRole 的名稱，或使用數位來指定角色。 如需詳細資訊，請參閱 [移動-ADDirectoryServerOperationMasterRole](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd464018(v=ws.10))
 
     ``` powershell
     Move-ADDirectoryServerOperationMasterRole -Identity "DC-W2K16" -OperationMasterRole 0,1,2,3,4
@@ -156,7 +156,7 @@ AD DS 無法安裝在同時執行下列伺服器角色或角色服務的伺服�
 
     ![升級](media/Upgrade-Domain-Controllers-to-Windows-Server-2016/upgrade7.png)
 
-1. 移至 Windows Server 2016 伺服器，並在 **伺服器管理員**的 [ **工具**] 底下，選取 [工具] **Windows PowerShell 的 [Active Directory 模組**]，以確認角色已移動。 使用 `Get-ADDomain` 和 `Get-ADForest` Cmdlet 來查看 FSMO 角色持有者。
+1. 移至 Windows Server 2016 伺服器，並在 **伺服器管理員** 的 [ **工具** ] 底下，選取 [工具] **Windows PowerShell 的 [Active Directory 模組** ]，以確認角色已移動。 使用 `Get-ADDomain` 和 `Get-ADForest` Cmdlet 來查看 FSMO 角色持有者。
 
     ![升級](media/Upgrade-Domain-Controllers-to-Windows-Server-2016/upgrade8.png)
 

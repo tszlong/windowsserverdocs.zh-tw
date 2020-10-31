@@ -2,16 +2,16 @@
 ms.assetid: 2a25bf86-a8ec-4b1a-9cbb-924d5b574481
 title: 建立網域設計
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: db68dad118f8326f65c32683e586e06c700efde9
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 02081f39d9aff0d0334af9ffc7606f4978ca62dc
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941168"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93068890"
 ---
 # <a name="creating-a-domain-design"></a>建立網域設計
 

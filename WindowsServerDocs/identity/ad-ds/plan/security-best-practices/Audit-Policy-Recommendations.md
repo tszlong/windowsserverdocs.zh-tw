@@ -2,16 +2,16 @@
 ms.assetid: 0abe0976-4b49-45d6-a7b3-81d28bdb8210
 title: 稽核原則建議
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 33ce3713f95b995fdab63b9e3bd27650fae58347
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 98751ae022d1915f5363e2ead110511bbb482f90
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88938228"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93069700"
 ---
 # <a name="audit-policy-recommendations"></a>稽核原則建議
 
@@ -49,10 +49,10 @@ ms.locfileid: "88938228"
 
 **稽核原則資料表圖例**
 
-|**表示法**|**建議**|
+|**符號**|**建議**|
 |--|--|
 |YES|在一般情況下啟用|
-|否|一般情況下**請勿啟用**|
+|否|一般情況下 **請勿啟用**|
 |IF|視需要針對特定案例啟用，或如果電腦上已安裝所需的審核角色或功能|
 |DC|在網域控制站上啟用|
 |張|不推薦|

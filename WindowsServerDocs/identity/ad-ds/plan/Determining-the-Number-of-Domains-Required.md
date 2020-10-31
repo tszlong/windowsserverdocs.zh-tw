@@ -1,17 +1,17 @@
 ---
 ms.assetid: 87bca912-b912-4bbe-9533-2c34a7abc52d
 title: 決定所需的網域數
-ms.author: iainfou
+ms.author: daveba
 author: iainfoulds
 manager: daveba
 ms.date: 08/08/2018
 ms.topic: article
-ms.openlocfilehash: 8fe9e6d50bef530d50ba8e7a33432fe2613b871b
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 68daaede92cd835846510d76e41282e03205884e
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88939348"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93068780"
 ---
 # <a name="determining-the-number-of-domains-required"></a>決定所需的網域數
 

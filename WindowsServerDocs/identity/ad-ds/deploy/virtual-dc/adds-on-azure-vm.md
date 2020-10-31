@@ -2,22 +2,22 @@
 title: 在 Azure 虛擬機器上安裝 Active Directory Domain Services
 description: 如何在 Azure 虛擬機器上 (VM) 的虛擬機器上建立新的 Active Directory 樹系。
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 04/11/2019
 ms.topic: article
-ms.openlocfilehash: e95aea80bea16322f66a14c12b0a1388897c1b11
-ms.sourcegitcommit: 40466c8af1fc60dfca733ea476f088549cedba65
+ms.openlocfilehash: fef394aaef059ec83303c903ca5e548f002775c0
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92793585"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93069070"
 ---
 # <a name="install-a-new-active-directory-forest-using-azure-cli"></a>使用 Azure CLI 安裝新的 Active Directory 樹系
 
 AD DS 可以在 Azure 虛擬機器上執行 (VM) 的方式，與在許多內部部署實例中執行的方式相同。 本文將逐步引導您在 Azure 可用性設定組中，使用 Azure 入口網站和 Azure CLI，在兩個新的網域控制站上部署新的 AD DS 樹系。 當您建立實驗室或準備在 Azure 中部署網域控制站時，許多客戶都會發現此指導方針很有用。
 
-## <a name="components"></a>元件
+## <a name="components"></a>單元
 
 * 要將所有專案放在其中的資源群組。
 * [Azure 虛擬網路](/azure/virtual-network/virtual-networks-overview.md)、子網、網路安全性群組和規則，可允許對 VM 進行 RDP 存取。
@@ -245,7 +245,7 @@ az vm create \
 az group delete --name ADonAzureVMs
 ```
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>下一步
 
 * [安全的虛擬化 Active Directory Domain Services (AD DS)](../../Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)
 * [Azure AD Connect](/azure/active-directory/connect/active-directory-aadconnect-get-started-express)

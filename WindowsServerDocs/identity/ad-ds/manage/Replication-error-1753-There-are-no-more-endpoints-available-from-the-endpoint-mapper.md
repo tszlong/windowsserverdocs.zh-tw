@@ -2,16 +2,16 @@
 ms.assetid: 0f21951c-b1bf-43bb-a329-bbb40c58c876
 title: 複寫錯誤 1753：端點對應表中無更多可用的端點
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 9752425c0732c2290642d62239151f20acb99ad0
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 94e63d439217c21c1634e7f1b685267ad98178b4
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88940478"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93067670"
 ---
 # <a name="replication-error-1753-there-are-no-more-endpoints-available-from-the-endpoint-mapper"></a>複寫錯誤 1753：端點對應表中無更多可用的端點
 
@@ -193,7 +193,7 @@ NSLOOKUP -type=hostname <fully qualified computer name of source DC> <secondary 
 * 確認伺服器應用程式 (Active Directory et) 已向 RPC 伺服器 (來源 DC 註冊端點對應程式) 
 * Active Directory 混合使用已知和動態註冊的埠。 下表列出 Active Directory 網域控制站所使用的知名埠和通訊協定。
 
-| RPC 伺服器應用程式 | Port | TCP | UDP |
+| RPC 伺服器應用程式 | 連接埠 | TCP | UDP |
 | --- | --- | --- | --- |
 | DNS 伺服器 | 53 | X | X |
 | Kerberos | 88 | X | X |
@@ -284,9 +284,9 @@ F# SRC    DEST    Operation
 11 x.x.1.2 x.x.1.1 EPM:Response: ept_map: 0x16C9A0D6 - EP_S_NOT_REGISTERED
 ```
 
-在畫面格 **10**，目的地 dc 會針對 Active Directory replication SERVICE Class UUID E351，在埠135上查詢來源 dc 端點對應程式。
+在畫面格 **10** ，目的地 dc 會針對 Active Directory replication SERVICE Class UUID E351，在埠135上查詢來源 dc 端點對應程式。
 
-在畫面格 **11**中，來源 DC （在此案例中為尚未裝載 DC 角色的成員電腦，因此尚未註冊 E351 .。。具有本機 EPM 的複寫服務的 UUID 會回應符號錯誤 EP_S_NOT_REGISTERED 其對應至十進位錯誤1753、十六進位錯誤0x6d9 和易記錯誤「端點對應程式中沒有可用的端點」。
+在畫面格 **11** 中，來源 DC （在此案例中為尚未裝載 DC 角色的成員電腦，因此尚未註冊 E351 .。。具有本機 EPM 的複寫服務的 UUID 會回應符號錯誤 EP_S_NOT_REGISTERED 其對應至十進位錯誤1753、十六進位錯誤0x6d9 和易記錯誤「端點對應程式中沒有可用的端點」。
 
 之後，在 contoso.com 網域中，會將 IP 位址為 x. 1.2 的成員電腦升級為 "MayberryDC" 複本。 同樣地， **現在** 會使用 [立即複寫] 命令來觸發複寫，但這次會失敗，並出現畫面錯誤「目標主體名稱不正確」。 指派了網路介面卡的電腦 IP 位址（x. 1.2 是網域控制站）目前已開機進入正常模式，且已註冊 E351 .。。複寫服務 UUID 與其本機 EPM，但不擁有 DC2 的名稱或安全性識別，因此無法將來自 DC1 的 Kerberos 要求解密，因此要求現在會失敗，並出現錯誤「目標主體名稱不正確」。 錯誤會對應到 decimal error-2146893022/hex error 0x80090322。
 
@@ -294,7 +294,7 @@ F# SRC    DEST    Operation
 
 摘要：此範例失敗，因為在此情況下，主機檔案中的主機對 IP 對應 (無效) 導致目的地 DC 解析為沒有執行 Active Directory Domain Services (服務的「來源」 DC，或甚至是針對) 該情況進行安裝，因此複寫 SPN 尚未註冊，且來源 DC 傳回錯誤1753。 在第二個案例中，主機檔案中的主機對 IP 對應 (重複，) 導致目的地 DC 連接到已註冊 E351 的 DC .。。複寫 SPN，但該來源的主機名稱和安全性識別與預期的來源 DC 不同，因此嘗試失敗併發生錯誤-2146893022：目標主體名稱不正確。
 
-## <a name="related-topics"></a>[相關主題]
+## <a name="related-topics"></a>相關主題
 
 * [針對因錯誤1753而失敗的 Active Directory 作業進行疑難排解：端點對應程式中沒有其他可用的端點。](https://support.microsoft.com/kb/2089874)
 * [知識庫文章839880使用產品 CD 中的 Windows Server 2003 支援工具針對 RPC 端點對應程式錯誤進行疑難排解](https://support.microsoft.com/kb/839880)

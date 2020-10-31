@@ -2,17 +2,17 @@
 ms.assetid: fd3bc84a-48eb-4f00-9dc2-846bf2c2668b
 title: 對 AD DS 進行疑難排解
 description: AD DS 的疑難排解區段總覽
-ms.author: iainfou
+ms.author: daveba
 author: iainfoulds
 manager: dcscontentpm
 ms.date: 11/22/2019
 ms.topic: article
-ms.openlocfilehash: 485b78bcefbdf7d399f5bae041c653f300bc817a
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 923b2442d68590821dfdfccee15f732c47829f3a
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88939958"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93068110"
 ---
 # <a name="ad-ds-troubleshooting"></a>對 AD DS 進行疑難排解
 

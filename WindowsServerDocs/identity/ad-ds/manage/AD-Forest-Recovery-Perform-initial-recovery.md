@@ -1,17 +1,17 @@
 ---
 title: AD 樹系復原-執行初始復原
-ms.author: iainfou
+ms.author: daveba
 author: iainfoulds
 manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
-ms.openlocfilehash: 1b63d2dc379ae4e218bca9f39aab92eb74d6f5e5
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 8b0498b30966c22ec8dca267988e109d976f6b69
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88939498"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93067740"
 ---
 # <a name="perform-initial-recovery"></a>執行初始復原
 
@@ -50,7 +50,7 @@ ms.locfileid: "88939498"
 
       **HKLM\System\CurrentControlSet\Services\NTDS\Parameters\Repl 執行初始同步處理**
 
-      使用資料類型 **REG_DWORD** 建立專案，並以 **0**為值建立專案。 完整復原樹系之後，您可以將此專案的值重設為 **1**，這需要一個網域控制站來重新開機並保存操作主機角色，才能在將本身宣告為網域控制站，並開始為用戶端提供服務時，成功 AD DS 輸入和輸出複寫與其已知的複本夥伴。 如需有關初始同步處理需求的詳細資訊，請參閱知識庫文章 [305476](https://support.microsoft.com/kb/305476)。
+      使用資料類型 **REG_DWORD** 建立專案，並以 **0** 為值建立專案。 完整復原樹系之後，您可以將此專案的值重設為 **1** ，這需要一個網域控制站來重新開機並保存操作主機角色，才能在將本身宣告為網域控制站，並開始為用戶端提供服務時，成功 AD DS 輸入和輸出複寫與其已知的複本夥伴。 如需有關初始同步處理需求的詳細資訊，請參閱知識庫文章 [305476](https://support.microsoft.com/kb/305476)。
 
       請在您還原和驗證資料之後，以及將這部電腦加入生產網路之前，繼續進行下一個步驟。
 
@@ -123,7 +123,7 @@ ms.locfileid: "88939498"
 
 - 若要修正名稱解析，請建立 DNS 委派記錄，並視需要設定 DNS 轉送和根提示。 執行 **repadmin/replsum** 來檢查 dc 之間的複寫。
 - 如果還原的 DC 不是直接複寫的夥伴，則透過在兩者之間建立暫存連線物件，複寫復原會更快。
-- 若要驗證中繼資料清除，請執行**Repadmin/viewlist \\ ***，以取得樹系中所有網域控制站的清單。 執行**Nltest/DCList：** *<網域 \> * ，取得網域中所有網域控制站的清單。
+- 若要驗證中繼資料清除，請執行 **Repadmin/viewlist \\** _ 以取得樹系中所有網域控制站的清單。 執行 _ *Nltest/DCList：* *  *<網域 \>* ，取得網域中所有網域控制站的清單。
 - 若要檢查 DC 和 DNS 的健康情況，請執行 DCDiag/v 來報告樹系中所有 Dc 的錯誤。
 
 ## <a name="add-the-global-catalog-to-a-domain-controller-in-the-forest-root-domain"></a>將通用類別目錄新增至樹系根域中的網域控制站

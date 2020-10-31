@@ -1,17 +1,17 @@
 ---
 ms.assetid: 206b8072-1d0c-4a0b-ba8a-35a868d67b4c
 title: 建立站台連結設計
-ms.author: iainfou
+ms.author: daveba
 author: iainfoulds
 manager: daveba
 ms.date: 08/08/2018
 ms.topic: article
-ms.openlocfilehash: 881ca5f2d932a8e13aaa7467179360ca8bb4af66
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 390cc0d69fa4d43a957500c0078d53dcdc69c10c
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941138"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93068770"
 ---
 # <a name="creating-a-site-link-design"></a>建立站台連結設計
 
@@ -21,7 +21,7 @@ ms.locfileid: "88941138"
 
 ## <a name="connecting-sites-with-site-links"></a>使用站台連結連線站台
 
-若要使用站台連結來連接網站，請找出您想要與站台連結連線的成員網站，在個別的網站間傳輸容器中建立站台連結物件，然後為網站連結命名。 建立站台連結之後，您可以繼續設定站台連結屬性。
+若要使用站台連結來連接網站，請找出您想要與站台連結連線的成員網站，在各自的 Inter-Site 傳輸容器中建立站台連結物件，然後為網站連結命名。 建立站台連結之後，您可以繼續設定站台連結屬性。
 
 建立站台連結時，請確定每個網站都包含在站台連結中。 此外，請確定所有網站都透過其他站台連結彼此連接，以便將變更從任何網站中的網域控制站複寫到所有其他網站。 如果您無法這麼做，則目錄服務記錄檔中會產生一則錯誤訊息，事件檢視器指出網站拓撲未連線。
 
@@ -29,12 +29,12 @@ ms.locfileid: "88941138"
 
 若要識別您想要與站台連結連線的成員網站，請使用您在 [地理位置和通訊連結] 中記錄的位置和連結位置清單 ( # A0) 工作表。 如果多個網站具有相同的連線能力和可用性，您可以使用相同的站台連結來連接它們。
 
-網站間傳輸容器會提供方法，將站台連結對應至連結所使用的傳輸。 當您建立站台連結物件時，您會在 IP 容器中建立它，此容器會將站台連結與遠端程序呼叫產生關聯， (RPC) over IP 傳輸，或使用 Simple Mail Transfer Protocol (SMTP) 容器，這會將站台連結與 SMTP 傳輸產生關聯。
+Inter-Site 傳輸容器提供將站台連結對應至連結所使用之傳輸的方法。 當您建立站台連結物件時，您會在 IP 容器中建立它，此容器會將站台連結與遠端程序呼叫產生關聯， (RPC) over IP 傳輸，或使用 Simple Mail Transfer Protocol (SMTP) 容器，這會將站台連結與 SMTP 傳輸產生關聯。
 
 > [!NOTE]
 > 未來版本的 Active Directory Domain Services (AD DS) ，將不支援 SMTP 複寫。因此，不建議在 SMTP 容器中建立站台連結物件。
 
-當您在個別的網站間傳輸容器中建立站台連結物件時，AD DS 會使用 RPC over IP 來傳送網域控制站之間的站對站和網站間複寫。 為了讓資料在傳輸期間保持安全，RPC over IP 複寫會使用 Kerberos 驗證通訊協定和資料加密。
+當您在個別的 Inter-Site 傳輸容器中建立站台連結物件時，AD DS 會使用 RPC over IP 來傳輸網域控制站之間的站對站和網站間複寫。 為了讓資料在傳輸期間保持安全，RPC over IP 複寫會使用 Kerberos 驗證通訊協定和資料加密。
 
 當直接 IP 連線無法使用時，您可以在網站之間設定複寫以使用 SMTP。 不過，SMTP 複寫功能有限，而且需要 (CA) 的企業憑證授權單位單位。 SMTP 只能複寫設定、架構和應用程式目錄分割，而且不支援複寫網域目錄分割。
 

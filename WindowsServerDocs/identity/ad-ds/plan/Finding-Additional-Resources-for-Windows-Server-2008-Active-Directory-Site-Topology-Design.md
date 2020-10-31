@@ -2,16 +2,16 @@
 ms.assetid: eca5bbf0-088e-4753-bf49-4d6c1125f689
 title: 尋找其他 Windows Server 2008 Active Directory 站台拓撲設計資源
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: f4e444eec232bb6dabfd4acfdce9f4cc7e007bf8
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: b5edda407ce85ec8024f6cc1c9a6e9ec463e7618
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88939098"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93068561"
 ---
 # <a name="finding-additional-resources-for-windows-server-2008-active-directory-site-topology-design"></a>尋找其他 Windows Server 2008 Active Directory 站台拓撲設計資源
 
@@ -25,7 +25,7 @@ ms.locfileid: "88939098"
 
 - 如需跨越樹狀結構和 Active Directory 複寫拓撲的詳細資訊，請參閱 [Active Directory 複寫拓撲技術參考](/previous-versions/windows/it-pro/windows-server-2003/cc755326(v=ws.10))。
 
-- 如需使用 Adlb.exe 以及管理具有100或更多分支網站之環境的詳細資訊，請參閱使用 [Windows Server 2008 Rodc 檢查橋頭伺服器負載平衡的增強功能](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd735927(v%3dws.10))。
+- 如需有關使用 Adlb.exe 以及管理具有100或更多分支網站之環境的詳細資訊，請參閱使用 [Windows Server 2008 rodc 的檢查橋頭伺服器 Load-Balancing 的增強功能](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd735927(v%3dws.10))。
 
 - 如需安裝網路監視器的詳細資訊，請參閱 [監視網路流量](/previous-versions/windows/it-pro/windows-server-2003/cc783075(v=ws.10))。
 
@@ -49,6 +49,6 @@ ms.locfileid: "88939098"
 
 - 如需透過防火牆管理複寫的詳細資訊，請參閱 [以防火牆分割的網路 Active Directory](https://microsoft.com/download/details.aspx?familyid=c2ef3846-43f0-4caf-9767-a9166368434e)。
 
-- 如需唯讀網域控制站 (RODC) 功能的詳細資訊，請參閱 [AD DS：唯讀網域控制站](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc732801(v=ws.10))。
+- 如需唯讀網域控制站 (RODC) 功能的詳細資訊，請參閱 [AD DS： Read-Only 網域控制站](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc732801(v=ws.10))。
 
 - 如需有關如何部署 RODC 的詳細資訊，請參閱《 [唯讀網域控制站的逐步指南》](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc772234(v=ws.10))。

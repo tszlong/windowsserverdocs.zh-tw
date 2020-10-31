@@ -2,16 +2,16 @@
 ms.assetid: 231158d8-5e81-4630-b8d5-93fee16e0cd3
 title: 識別功能等級升級
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: c8541165cb0f745d8603e7f3777c2c7e1a26500c
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 3a3422b49c54894084d8a3442d1f805003076f8d
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941068"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93068410"
 ---
 # <a name="identifying-your-functional-level-upgrade"></a>識別功能等級升級
 

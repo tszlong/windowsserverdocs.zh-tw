@@ -2,16 +2,16 @@
 ms.assetid: aac117a7-aa7a-4322-96ae-e3cc22ada036
 title: 管理 RID 發行
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: fdf4d5c89dfb8d7c4237551a8a67a9e4f63991a7
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 548a060945338d39aa6ef9e604371874e91bb9b1
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88940548"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93067750"
 ---
 # <a name="managing-rid-issuance"></a>管理 RID 發行
 
@@ -70,7 +70,7 @@ RID Block Size
 
 在 Windows Server 2012 中，這個登錄值無法設定為超過 15,000 十進位 (0x3A98 十六進位)。 這樣可防止大量不必要的 RID 配置。
 
-如果該值設為*超過* 15,000，會將該值視為 15,000，而網域控制站會在每次重新開機時在目錄服務中記錄事件 16653，一直到該值更正為止。
+如果該值設為 *超過* 15,000，會將該值視為 15,000，而網域控制站會在每次重新開機時在目錄服務中記錄事件 16653，一直到該值更正為止。
 
 ### <a name="global-rid-space-size-unlock"></a><a name="BKMK_GlobalRidSpaceUnlock"></a>解除全域 RID 空間大小限制
 在 Windows Server 2012 之前，全域 RID 空間大小限制為 2<sup>30</sup> (或共 1,073,741,823 個 RID)。 一旦達到此限制，只能移轉網域或將樹系復原到早期允許新建 SID 的時間範圍內，亦即用盡一切方法執行災難復原。 自 Windows Server 2012 起，已可解除 2<sup>31</sup> 位元大小的限制，以將全域集區增加到 2,147,483,648 個 RID。
@@ -87,12 +87,12 @@ Dcdiag.exe /TEST:RidManager /v | find /i "Available RID Pool for the Domain"
 ![RID 發行](media/Managing-RID-Issuance/ADDS_RID_TR_Dcdiag.png)
 
 > [!WARNING]
-> 解除這項限制*僅*是為了防止 RID 用完，而且*僅*能與「RID 上限強制」方法 (請參閱下一節) 一起使用。 請勿在還有數百萬個剩餘的 RID 且消耗速度慢的環境中先行設定此最大值，因為從解除大小限制的 RID 集區中產生的 SID 可能存在著應用程式相容性問題。
+> 解除這項限制 *僅* 是為了防止 RID 用完，而且 *僅* 能與「RID 上限強制」方法 (請參閱下一節) 一起使用。 請勿在還有數百萬個剩餘的 RID 且消耗速度慢的環境中先行設定此最大值，因為從解除大小限制的 RID 集區中產生的 SID 可能存在著應用程式相容性問題。
 >
 > 除非是將樹系完整復原到較早的備份，否則這項解除大小限制作業無法還原或取消。
 
 #### <a name="important-caveats"></a>重要的注意事項
-Windows Server 2003 與 Windows Server 2008 網域控制站無法在解除全域 RID 集區第 <sup>31</sup> 個位元的大小限制後發行 RID。 Windows Server 2008 R2 網域控制站*可以*使用 31<sup>st</sup>位 rid，但只有在已安裝修補程式[KB 2642658](https://support.microsoft.com/kb/2642658) *時才*可使用。 不支援和未更新的網域控制站在解除大小限制時會將全域 RID 集區視為耗盡。
+Windows Server 2003 與 Windows Server 2008 網域控制站無法在解除全域 RID 集區第 <sup>31</sup> 個位元的大小限制後發行 RID。 Windows Server 2008 R2 網域控制站 *可以* 使用 31 <sup>st</sup>位 rid，但只有在已安裝修補程式 [KB 2642658](https://support.microsoft.com/kb/2642658) *時才* 可使用。 不支援和未更新的網域控制站在解除大小限制時會將全域 RID 集區視為耗盡。
 
 此功能不是由任何網域功能等級強制實行；請特別注意只有 Windows Server 2012 或更新的 Windows Server 2008 R2 網域控制站存在網域中。
 
@@ -103,34 +103,34 @@ Windows Server 2003 與 Windows Server 2008 網域控制站無法在解除全域
 
 2. 執行 LDP.exe
 
-3. 以網域系統管理員的身分按一下 [連線]**** 功能表，針對連接埠 389 上的 Windows Server 2012 RID 主機按一下 [連線]****，然後按一下 [繫結]****。
+3. 以網域系統管理員的身分按一下 [連線]  功能表，針對連接埠 389 上的 Windows Server 2012 RID 主機按一下 [連線]  ，然後按一下 [繫結]  。
 
-4. 按一下 [瀏覽]**** 功能表，再按一下 [修改]****。
+4. 按一下 [瀏覽]  功能表，再按一下 [修改]  。
 
-5. 確認 [DN]**** 為空白。
+5. 確認 [DN]  為空白。
 
-6. 在 [ **編輯專案] 屬性**中，輸入：
+6. 在 [ **編輯專案] 屬性** 中，輸入：
 
     ```
     SidCompatibilityVersion
     ```
 
-1. 在 [值]**** 中輸入：
+1. 在 [值]  中輸入：
 
     ```
     1
     ```
 
-2. 確認已在 [操作]**** 中選取 [新增]****，然後按一下 [Enter]****。 這樣會更新 [項目清單]****。
+2. 確認已在 [操作]  中選取 [新增]  ，然後按一下 [Enter]  。 這樣會更新 [項目清單]  。
 
-3. 選取 [同步]**** 和 [延伸]**** 選項，然後按一下 [執行]****。
+3. 選取 [同步]  和 [延伸]  選項，然後按一下 [執行]  。
 
     ![RID 發行](media/Managing-RID-Issuance/ADDS_RID_TR_LDPModify.png)
 
 4. 如果成功，LDP 輸出視窗會顯示：
 
     ```
-    ***Call Modify...
+    **_Call Modify...
      ldap_modify_ext_s(Id, '(null)',[1] attrs, SvrCtrls, ClntCtrls);
     modified "".
 
@@ -145,13 +145,13 @@ Windows Server 2003 與 Windows Server 2008 網域控制站無法在解除全域
 
 此上限是硬式編碼在剩餘的可用 RID 空間的百分之十。 也就是說，當 RID 主機配置的集區中包含的 RID 是相當於全域 RID 空間的百分之九十 (90) 時，即會啟用上限設定。
 
-- 如果是預設網域，第一個觸發點是 2<sup>30</sup>-1 * 0.90 = 966,367,640 (或剩餘的 107,374,183 個 RID)。
+- 針對預設網域，第一個觸發點是 2<sup>30</sup>-1 _ 0.90 = 966367640 (或 107374183 rid 剩餘) 。
 
 - 對於解除了 31 位元的 RID 空間限制的網域，觸發點是 2<sup>31</sup>-1 * 0.90 = 1,932,735,282 個 RID (或剩餘的 214,748,365 個 RID)。
 
-一旦觸發時，RID 主機會將物件上的 Active Directory 屬性 [msDS-RIDPoolAllocationEnabled]**** (一般名稱 [ms-DS-RID-Pool-Allocation-Enabled]****) 設為 FALSE：
+一旦觸發時，RID 主機會將物件上的 Active Directory 屬性 [msDS-RIDPoolAllocationEnabled]  (一般名稱 [ms-DS-RID-Pool-Allocation-Enabled]  ) 設為 FALSE：
 
-CN = RID 管理員 $，CN = System，DC =*<domain>*
+CN = RID 管理員 $，CN = System，DC = *<domain>*
 
 這會寫入 16657 事件，並防止另外的 RID 區塊發行到所有網域控制站。 網域控制站會繼續使用已發行給它們的任何待處理的 RID 集區。
 
@@ -164,11 +164,11 @@ CN = RID 管理員 $，CN = System，DC =*<domain>*
 
 2. 執行 LDP.exe。
 
-3. 以網域系統管理員的身分按一下 [連線]**** 功能表，針對連接埠 389 上的 Windows Server 2012 RID 主機按一下 [連線]**，然後按一下 [繫結]****。
+3. 以網域系統管理員的身分按一下 [連線]  功能表，針對連接埠 389 上的 Windows Server 2012 RID 主機按一下 [連線]  ，然後按一下 [繫結]  。
 
-4. 按一下 [檢視]**** 功能表，按一下 [樹狀目錄]****，然後為 [基本 DN]**** 選取 RID 主機自己的網域命名內容。 按一下 [確定] 。
+4. 按一下 [檢視]  功能表，按一下 [樹狀目錄]  ，然後為 [基本 DN]  選取 RID 主機自己的網域命名內容。 按一下 [確定]。
 
-5. 在瀏覽窗格中，向下切入至 [CN = 系統]**** 容器，然後按一下 [CN = RID 管理員 $]**** 物件。 以滑鼠右鍵按一下該物件，按一下 [修改]****。
+5. 在瀏覽窗格中，向下切入至 [CN = 系統]  容器，然後按一下 [CN = RID 管理員 $]  物件。 以滑鼠右鍵按一下該物件，按一下 [修改]  。
 
 6. 在 [編輯項目屬性] 中輸入：
 
@@ -176,22 +176,22 @@ CN = RID 管理員 $，CN = System，DC =*<domain>*
     MsDS-RidPoolAllocationEnabled
     ```
 
-7. 在 [值]**** 中輸入 (大寫)：
+7. 在 [值]  中輸入 (大寫)：
 
     ```
     TRUE
     ```
 
-8. 在 [作業]**** 中選取 [取代]****，然後按一下 [Enter]****。 這樣會更新 [項目清單]****。
+8. 在 [作業]  中選取 [取代]  ，然後按一下 [Enter]  。 這樣會更新 [項目清單]  。
 
-9. 啟用 [同步]**** 和 [延伸]**** 選項，然後按一下 [執行]****：
+9. 啟用 [同步]  和 [延伸]  選項，然後按一下 [執行]  ：
 
     ![RID 發行](media/Managing-RID-Issuance/ADDS_RID_TR_LDPRaiseCeiling.png)
 
 10. 如果成功，LDP 輸出視窗會顯示：
 
     ```
-    ***Call Modify...
+    **_Call Modify...
     ldap_modify_ext_s(ld, 'CN=RID Manager$,CN=System,DC=<domain>',[1] attrs, SvrCtrls, ClntCtrls);
     Modified "CN=RID Manager$,CN=System,DC=<domain>".
 
@@ -245,7 +245,7 @@ RID 發行的所有記錄都在系統事件記錄檔的來源 Directory-Services
 
     2. 檢查網域控制站上的系統事件與 RID 主機是否有詳細記載於本主題下方的新區塊指標事件 (16655、16656、16657)。
 
-    3. 使用 Repadmin.exe 驗證 Active Directory 複寫健康情況，使用 [Dcdiag.exe /test:ridmanager /v]**** 驗證 RID 主機可用性。 如果這些測試結果不明，請在網域控制站與 RID 主機之間啟用雙面網路擷取。
+    3. 使用 _ * Dcdiag.exe/test： ridmanager/v * * 驗證具有 Repadmin.exe 和 RID 主機可用性的 Active Directory 複寫健康情況。 如果這些測試結果不明，請在網域控制站與 RID 主機之間啟用雙面網路擷取。
 
 ### <a name="troubleshooting-specific-problems"></a>疑難排解特定問題
 
@@ -254,43 +254,43 @@ RID 發行的所有記錄都在系統事件記錄檔的來源 Directory-Services
 | 事件識別碼 | 16653 |
 |--|--|
 | 來源 | Directory-Services-SAM |
-| 嚴重性 | 警告 |
+| Severity | 警告 |
 | 訊息 | 系統管理員設定的帳戶識別元 (RID) 的集區大小超過支援的最大值。 當網域控制站是 RID 主機時，將使用最大值 %1。<p>如需詳細資訊，請參閱 [RID 區塊大小限制](../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_RIDBlockMaxSize)。 |
 | 注意事項與解決方法 | RID 區塊大小的最大值現在是 15000 十進位 (3A98 十六進位)。 網域控制站無法要求 15000 個以上的 RID。 此事件會在每次開機時記錄，直到此值設為等於或低於此最大值為止。 |
 
 | 事件識別碼 | 16654 |
 |--|--|
 | 來源 | Directory-Services-SAM |
-| 嚴重性 | 資訊 |
-| 訊息 | 帳戶識別碼 (RID) 集區成為無效。 在下列預期情況中可能會發生此問題：<p>1. 從備份還原網域控制站。<p>2. 在虛擬機器上執行的網域控制站會從快照集還原。<p>3. 系統管理員已手動將集區失效。<p>如需相關資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=226247 。 |
+| Severity | 資訊 |
+| 訊息 | 帳戶識別碼 (RID) 集區成為無效。 在下列預期情況中可能會發生此問題：<p>1. 從備份還原網域控制站。<p>2. 在虛擬機器上執行的網域控制站會從快照集還原。<p>3. 系統管理員已手動將集區失效。<p>如需詳細資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=226247。 |
 | 注意事項與解決方法 | 如果此事件是非預期的，請連絡所有網域系統管理員，確定由誰執行了動作。 目錄服務事件記錄檔也包含這些步驟的其中之一是在何時執行時的詳細資訊。 |
 
 | 事件識別碼 | 16655 |
 |--|--|
 | 來源 | Directory-Services-SAM |
-| 嚴重性 | 資訊 |
+| Severity | 資訊 |
 | 訊息 | 帳戶識別元 (RID) 的全域最大值已增加至 %1。 |
 | 注意事項與解決方法 | 如果此事件是非預期的，請連絡所有網域系統管理員，確定由誰執行了動作。 此事件會記錄整體的 RID 集區大小增加到超過預設值 2<sup>30</sup>，但不會自動記錄；需由系統管理員指定。 |
 
 | 事件識別碼 | 16656 |
 |--|--|
 | 來源 | Directory-Services-SAM |
-| 嚴重性 | 警告 |
+| Severity | 警告 |
 | 訊息 | 帳戶識別元 (RID) 的全域最大值已增加至 %1。 |
-| 注意事項與解決方法 | 需要採取動作！ 帳戶識別元 (RID) 集區已配置給此網域控制站。 集區值指示這個網域耗用了可用的帳戶識別元總數中相當大的一部分。<p>當網域達到下列可用帳戶總計的閾值時，將會啟用保護機制-剩餘的識別碼： %1。 直到您在 RID 主機網域控制站上手動重新啟用帳戶識別元配置之前，保護機制可防止建立帳戶。<p>如需相關資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=228610 。 |
+| 注意事項與解決方法 | 需要採取動作！ 帳戶識別元 (RID) 集區已配置給此網域控制站。 集區值指示這個網域耗用了可用的帳戶識別元總數中相當大的一部分。<p>當網域達到下列可用帳戶總計的閾值時，將會啟用保護機制-剩餘的識別碼： %1。 直到您在 RID 主機網域控制站上手動重新啟用帳戶識別元配置之前，保護機制可防止建立帳戶。<p>如需詳細資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=228610。 |
 
 | 事件識別碼 | 16657 |
 |--|--|
 | 來源 | Directory-Services-SAM |
-| 嚴重性 | 錯誤 |
-| 訊息 | 需要採取動作！ 這個網域耗用了可用的帳戶識別元 (RID) 總數中相當大的一部分。 因為剩餘的可用帳戶識別碼總計小於： X% [人工最高引數]，所以已啟用保護機制。<p>直到您在 RID 主機網域控制站上手動重新啟用帳戶識別元配置之前，保護機制可防止建立帳戶。<p>重要的是，在重新啟用帳戶建立功能之前必須執行某些診斷，以確保此網域不會以異常高的速率耗用帳戶識別元。 在重新啟用帳戶建立功能之前，應先解決發現的任何問題。<p>未能診斷和修正導致帳戶識別元以異常高的速率消耗的相關問題，可能會導致網域中的帳戶識別元耗盡，因而使這個網域中的帳戶建立功能永久停用。<p>如需相關資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=228610 。 |
+| Severity | 錯誤 |
+| 訊息 | 需要採取動作！ 這個網域耗用了可用的帳戶識別元 (RID) 總數中相當大的一部分。 因為剩餘的可用帳戶識別碼總計小於： X% [人工最高引數]，所以已啟用保護機制。<p>直到您在 RID 主機網域控制站上手動重新啟用帳戶識別元配置之前，保護機制可防止建立帳戶。<p>重要的是，在重新啟用帳戶建立功能之前必須執行某些診斷，以確保此網域不會以異常高的速率耗用帳戶識別元。 在重新啟用帳戶建立功能之前，應先解決發現的任何問題。<p>未能診斷和修正導致帳戶識別元以異常高的速率消耗的相關問題，可能會導致網域中的帳戶識別元耗盡，因而使這個網域中的帳戶建立功能永久停用。<p>如需詳細資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=228610。 |
 | 注意事項與解決方法 | 連絡所有網域系統管理員，通知他們在覆寫此保護機制前不能在此網域中建立任何安全性主體。 如需如何覆寫保護機制與增加整體 RID 集區 (可能的話) 的詳細資訊，請參閱[解除全域 RID 空間大小限制](../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_GlobalRidSpaceUnlock)。 |
 
 | 事件識別碼 | 16658 |
 |--|--|
 | 來源 | Directory-Services-SAM |
-| 嚴重性 | 警告 |
-| 訊息 | 此事件會定期更新剩餘的可用帳戶識別元 (RID) 總數。 剩餘的帳戶識別碼數目大約是： %1。<p>帳戶建立時會使用帳戶識別元，當帳戶識別元用完後，即無法在網域中建立新帳戶。<p>如需相關資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=228745 。 |
+| Severity | 警告 |
+| 訊息 | 此事件會定期更新剩餘的可用帳戶識別元 (RID) 總數。 剩餘的帳戶識別碼數目大約是： %1。<p>帳戶建立時會使用帳戶識別元，當帳戶識別元用完後，即無法在網域中建立新帳戶。<p>如需詳細資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=228745。 |
 | 注意事項與解決方法 | 連絡所有網域系統管理員，通知他們 RID 耗用量已越過主要里程碑；複查安全信任者建立模式以判斷這是否為預期行為。 看到此事件是極不尋常的，因為這表示至少已配置了上億個 RID。 |
 
 ## <a name="see-also"></a>另請參閱

@@ -1,17 +1,17 @@
 ---
 title: AD 樹系復原-SYSVOL 的授權同步
-ms.author: iainfou
+ms.author: daveba
 author: iainfoulds
 manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 38a1c543-c76d-4b8e-a06b-53742aaa172f
-ms.openlocfilehash: a15d88bf4bf1befa4d65758f319fdf0c35c383a8
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 63b894e8abe0ac50f59f5ebf38566d97050a11c4
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88939928"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93068020"
 ---
 # <a name="ad-forest-recovery---performing-an-authoritative-synchronization-of-dfsr-replicated-sysvol"></a>AD 樹系復原-執行 DFSR 複寫 SYSVOL 的授權同步處理
 
@@ -24,19 +24,19 @@ ms.locfileid: "88939928"
 ## <a name="to-perform-an-authoritative-synchronization-of-dfsr-replicated-sysvol"></a>執行 DFSR 複寫 SYSVOL 的授權同步處理
 
 1. 開啟 [Active Directory 使用者和電腦]。
-2. 按一下 [ **View**]，然後選取 [ **使用者]、[連絡人]、[群組] 和 [電腦] 作為容器** 和 [ **Advanced Features**]
+2. 按一下 [ **View** ]，然後選取 [ **使用者]、[連絡人]、[群組] 和 [電腦] 作為容器** 和 [ **Advanced Features** ]
 
    ![SYSVOL](media/AD-Forest-Recovery-Authoritative-Recovery-SYSVOL/sysvol1.png)
 
-3. 在樹狀檢視中，按一下 [ **網域控制站**]、您還原的 DC 名稱、 **DFSR LocalSettings**，然後 [ **網域系統磁片**區]。
+3. 在樹狀檢視中，按一下 [ **網域控制站** ]、您還原的 DC 名稱、 **DFSR LocalSettings** ，然後 [ **網域系統磁片** 區]。
 
    ![SYSVOL](media/AD-Forest-Recovery-Authoritative-Recovery-SYSVOL/sysvol2.png)
 
-4. 在詳細資料窗格中，以滑鼠右鍵按一下 [ **SYSVOL 訂閱**]，然後按一下 [ **屬性**]，再按一下 [ **屬性編輯器**]。
+4. 在詳細資料窗格中，以滑鼠右鍵按一下 [ **SYSVOL 訂閱** ]，然後按一下 [ **屬性** ]，再按一下 [ **屬性編輯器** ]。
 
    ![SYSVOL](media/AD-Forest-Recovery-Authoritative-Recovery-SYSVOL/sysvol3.png)
 
-5. 按一下 [ **MsDFSR]-[選項**]，按一下 [ **編輯**]，輸入 **1**，然後按一下 **[確定]**
+5. 按一下 [ **MsDFSR]-[選項** ]，按一下 [ **編輯** ]，輸入 **1** ，然後按一下 **[確定]**
 
    ![SYSVOL](media/AD-Forest-Recovery-Authoritative-Recovery-SYSVOL/sysvol4.png)
 

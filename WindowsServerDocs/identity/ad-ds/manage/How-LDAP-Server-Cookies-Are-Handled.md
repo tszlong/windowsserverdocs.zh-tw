@@ -2,16 +2,16 @@
 ms.assetid: 3acaa977-ed63-4e38-ac81-229908c47208
 title: 如何處理 LDAP 伺服器 Cookie
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 7e01afeeef7bb9751b4c23839569a9395fbd9c51
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: a9113dabcae5cb8732a4e8715a4b2fd057ccf312
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941348"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93068970"
 ---
 # <a name="how-ldap-server-cookies-are-handled"></a>如何處理 LDAP 伺服器 Cookie
 
@@ -125,7 +125,7 @@ The client should consider a more efficient search filter.  The limit for Maximu
 
 如果在 250MB 以上的集區中仍然出現事件 2899，則您可能有許多用戶端以很頻繁的方式進行查詢，並傳回極大量物件。 您可以使用 [Active Directory 資料收集器集合](/archive/blogs/askds/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond) 人員收集的資料，可協助您找出可讓 LDAP 伺服器保持忙碌的重複分頁查詢。 這些查詢都會顯示符合所使用頁面大小的「傳回的專案數」。
 
-可能的話，您應該檢查應用程式設計，並以較低的頻率、資料量及/或較少的用戶端實例來查詢此資料來實行不同的方法。如果您具有原始程式碼存取權的應用程式，本指南可協助您瞭解  [應用程式存取](/previous-versions/ms808539(v=msdn.10)) ad 的最佳方式。
+可能的話，您應該檢查應用程式設計，並以較低的頻率、資料量及/或較少的用戶端實例來查詢此資料來實行不同的方法。如果您具有原始程式碼存取權的應用程式，本指南  [建立有效率的 AD-Enabled 應用程式](/previous-versions/ms808539(v=msdn.10)) ，可協助您瞭解應用程式存取 AD 的最佳方式。
 
 如果無法變更查詢行為，其中一個方法也會新增所需命名內容的複寫實例，並重新發佈用戶端，最後減少個別 LDAP 伺服器上的負載。
 

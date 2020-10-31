@@ -2,16 +2,16 @@
 ms.assetid: d7a4d2e1-217d-4ffc-93f0-817149bd9e7f
 title: 危及系統安全的途徑
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 31d936647be758c3f9cf2cd6d922f00ec5554e98
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 58578d96f3a66177f858f78861cb93be51df3a1e
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88938208"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93069680"
 ---
 # <a name="avenues-to-compromise"></a>危及系統安全的途徑
 
@@ -122,7 +122,7 @@ IT 消費化帶來了額外的挑戰，那就是員工所擁有的裝置會用�
 只要另一部電腦的本機帳戶具有相同的使用者名稱和密碼 (或密碼雜湊) 作為所呈現的帳號憑證，登入嘗試就會成功，而攻擊者會取得目的電腦的特殊許可權存取權。 在目前的 Windows 版本中， [預設會停用](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753450(v=ws.11))內建的系統管理員帳戶，但在舊版作業系統中，預設會啟用此帳戶。
 
 > [!NOTE]
-> 某些組織已刻意設定要啟用的本機系統管理員帳戶，在此情況下，如果所有其他特殊許可權的帳戶遭到鎖定，系統便會提供「安全」。 但是，即使本機系統管理員帳戶已停用，而且沒有其他可用來啟用帳戶或以系統管理員許可權登入系統的帳戶，系統仍可開機進入安全模式，並且可以重新啟用內建的本機系統管理員帳戶，如 [Microsoft 支援服務文章 814777](https://support.microsoft.com/kb/814777)所述。 此外，如果系統仍然成功套用 Gpo，則可以將 GPO 修改為暫時 () 重新啟用系統管理員帳戶，或設定限制群組以將網域型帳戶新增至本機系統管理員群組。 您可以執行修復，並再次停用系統管理員帳戶。 若要有效防止使用內建本機系統管理員帳號憑證的橫向入侵，必須為本機系統管理員帳戶設定唯一的使用者名稱和密碼。 若要透過 GPO 部署本機系統管理員帳戶的唯一密碼，請參閱 technet 上的透過 [gpo 管理內建系統管理員帳戶密碼的解決方案](/previous-versions/mt227395(v=msdn.10)) 。  
+> 某些組織已刻意設定要啟用的本機系統管理員帳戶，在此情況下，如果所有其他特殊許可權的帳戶遭到鎖定，系統便會提供「安全」。 但是，即使本機系統管理員帳戶已停用，而且沒有其他可用來啟用帳戶或以系統管理員許可權登入系統的帳戶，系統仍可開機進入安全模式，並且可以重新啟用內建的本機系統管理員帳戶，如 [Microsoft 支援服務文章 814777](https://support.microsoft.com/kb/814777)所述。 此外，如果系統仍然成功套用 Gpo，則可以將 GPO 修改為暫時 () 重新啟用系統管理員帳戶，或設定限制群組以將網域型帳戶新增至本機系統管理員群組。 您可以執行修復，並再次停用系統管理員帳戶。 若要有效防止使用內建本機系統管理員帳號憑證的橫向入侵，必須為本機系統管理員帳戶設定唯一的使用者名稱和密碼。 若要透過 GPO 部署本機系統管理員帳戶的唯一密碼，請參閱 technet 上的透過 [gpo 管理內建系統管理員帳戶密碼的解決方案](/previous-versions/mt227395(v=msdn.10)) 。  
 
 ##### <a name="permitting-installation-of-unauthorized-applications"></a>允許安裝未經授權的應用程式
 *定律1：如果不良的人可以說服您在您的電腦上執行程式，則不是您的電腦。* - [安全性 (2.0 版的十大不可變法則) ](https://www.microsoft.com/en-us/msrc?rtc=1)

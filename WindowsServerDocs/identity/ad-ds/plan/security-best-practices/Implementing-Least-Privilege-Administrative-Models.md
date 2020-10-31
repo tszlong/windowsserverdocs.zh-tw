@@ -1,17 +1,17 @@
 ---
 ms.assetid: 7a7ab95c-9cb3-4a7b-985a-3fc08334cf4f
 title: 實作最低權限管理模型
-ms.author: iainfou
+ms.author: daveba
 author: iainfoulds
 manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: ab4d6f282de88b7d55256ecd3a9ff4a82a7881fb
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 95f8158f5565c57904b7423456eb7189f9e58a2a
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941448"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93069660"
 ---
 # <a name="implementing-least-privilege-administrative-models"></a>實作最低權限管理模型
 
@@ -86,16 +86,16 @@ ms.locfileid: "88941448"
 
 內建的系統管理員帳戶絕不能用來做為成員伺服器上的服務帳戶，也不應該用來登入本機電腦 (但在安全模式下，即使帳戶已停用) 也是如此。 執行此處所述設定的目標是要防止每台電腦的本機系統管理員帳戶可供使用，除非先反轉保護控制項。 藉由執行這些控制項並監視系統管理員帳戶的變更，您可以大幅降低以本機系統管理員帳戶為目標的攻擊成功的可能性。
 
-##### <a name="configuring-gpos-to-restrict-administrator-accounts-on-domain-joined-systems"></a>設定 Gpo 以限制已加入網域之系統上的系統管理員帳戶
+##### <a name="configuring-gpos-to-restrict-administrator-accounts-on-domain-joined-systems"></a>設定 Gpo 以限制 Domain-Joined 系統上的系統管理員帳戶
 
-在您建立並連結到每個網域中的工作站和成員伺服器 Ou 的一或多個 Gpo 中，將系統管理員帳戶新增至 **電腦設定 \windows 設定**設定 \ 使用者權限 \ 使用者權限指派中的下列使用者權限：
+在您建立並連結到每個網域中的工作站和成員伺服器 Ou 的一或多個 Gpo 中，將系統管理員帳戶新增至 **電腦設定 \windows 設定** 設定 \ 使用者權限 \ 使用者權限指派中的下列使用者權限：
 
 - 拒絕從網路存取這部電腦
 - 拒絕以批次工作登入
 - 拒絕以服務方式登入
 - 拒絕透過遠端桌面服務登入
 
-當您將系統管理員帳戶新增至這些使用者權限時，請指定您要以標籤帳戶的方式新增本機系統管理員帳戶或網域的系統管理員帳戶。 例如，若要將 NWTRADERS 網域的系統管理員帳戶新增到這些拒絕許可權，您可以將帳戶輸入為 **NWTRADERS\Administrator**，或流覽至 NWTRADERS 網域的系統管理員帳戶。 為確保您限制本機系統管理員帳戶，請在群組原則物件編輯器的這些使用者權限設定中輸入 **系統管理員** 。
+當您將系統管理員帳戶新增至這些使用者權限時，請指定您要以標籤帳戶的方式新增本機系統管理員帳戶或網域的系統管理員帳戶。 例如，若要將 NWTRADERS 網域的系統管理員帳戶新增到這些拒絕許可權，您可以將帳戶輸入為 **NWTRADERS\Administrator** ，或流覽至 NWTRADERS 網域的系統管理員帳戶。 為確保您限制本機系統管理員帳戶，請在群組原則物件編輯器的這些使用者權限設定中輸入 **系統管理員** 。
 
 > [!NOTE]
 > 即使已重新命名本機系統管理員帳戶，仍會套用原則。
@@ -108,13 +108,13 @@ ms.locfileid: "88941448"
 
 *定律6：電腦的安全，只有系統管理員值得信賴。* - [安全性 (2.0 版的十大不可變法則) ](https://www.microsoft.com/en-us/msrc?rtc=1)
 
-此處提供的資訊旨在提供一般指導方針來保護 Active Directory 中的最高許可權內建帳戶和群組。 如需詳細的逐步指示，請參閱 [附錄 D：保護內建的系統管理員帳戶 Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)、 [附錄 E：保護 Active Directory 的 Enterprise admins 群組](../../../ad-ds/plan/security-best-practices/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory.md)、 [附錄 F：保護 Active Directory 中的 Domain Admins](../../../ad-ds/plan/security-best-practices/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory.md)群組，以及 [附錄 G：保護 Active Directory 中的系統管理員群組](../../../ad-ds/plan/security-best-practices/Appendix-G--Securing-Administrators-Groups-in-Active-Directory.md)。
+此處提供的資訊旨在提供一般指導方針來保護 Active Directory 中的最高許可權內建帳戶和群組。 如需詳細的逐步指示，請參閱 [下列附錄 D：保護 Built-In 系統管理員帳戶 Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)、 [附錄 E：保護 Active Directory 的 Enterprise admins 群組](../../../ad-ds/plan/security-best-practices/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory.md)、 [附錄 F：保護 Active Directory 中的 Domain Admins](../../../ad-ds/plan/security-best-practices/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory.md)群組，以及 [附錄 G：保護 Active Directory 中的系統管理員群組](../../../ad-ds/plan/security-best-practices/Appendix-G--Securing-Administrators-Groups-in-Active-Directory.md)。
 
 在您執行這些設定中的任何一項之前，您也應該徹底測試所有的設定，以判斷它們是否適用于您的環境。 並非所有組織都能執行這些設定。
 
 #### <a name="securing-built-in-administrator-accounts-in-active-directory"></a>在 Active Directory 中保護內建的系統管理員帳戶
 
-在 Active Directory 的每個網域中，系統會在建立網域的過程中建立系統管理員帳戶。 此帳戶預設為網域中 Domain Admins 和 Administrator 群組的成員，如果網域是樹系根域，則帳戶也是 Enterprise Admins 群組的成員。 使用網域的本機系統管理員帳戶應該僅保留給初始的組建活動，以及可能的嚴重損壞修復案例。 若要確保內建的系統管理員帳戶可以在沒有其他帳戶可用的情況下用來生效修復，您不應該在樹系中的任何網域變更系統管理員帳戶的預設成員資格。 相反地，您應該遵循下列指導方針，以協助保護樹系中每個網域的系統管理員帳戶。 下列 [附錄 D：在 Active Directory 中保護內建的系統管理員帳戶](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)，提供執行這些控制項的詳細指示。
+在 Active Directory 的每個網域中，系統會在建立網域的過程中建立系統管理員帳戶。 此帳戶預設為網域中 Domain Admins 和 Administrator 群組的成員，如果網域是樹系根域，則帳戶也是 Enterprise Admins 群組的成員。 使用網域的本機系統管理員帳戶應該僅保留給初始的組建活動，以及可能的嚴重損壞修復案例。 若要確保內建的系統管理員帳戶可以在沒有其他帳戶可用的情況下用來生效修復，您不應該在樹系中的任何網域變更系統管理員帳戶的預設成員資格。 相反地，您應該遵循下列指導方針，以協助保護樹系中每個網域的系統管理員帳戶。 如需如何執行這些控制項的詳細指示，請見 [附錄 D：保護 Active Directory 中的 Built-In 系統管理員帳戶](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)。
 
 #### <a name="controls-for-built-in-administrator-accounts"></a>內建系統管理員帳戶的控制項
 
@@ -130,11 +130,11 @@ ms.locfileid: "88941448"
 
 雖然 **互動式登入旗標需要設定智慧卡** ，才能重設帳戶的密碼，但不會阻止具有重設帳戶密碼許可權的使用者將帳戶設定為已知的值，以及使用帳戶的名稱和新密碼來存取網路上的資源。 因此，您應該在帳戶上執行下列其他控制項。
 
-##### <a name="configuring-gpos-to-restrict-domains-administrator-accounts-on-domain-joined-systems"></a>在已加入網域的系統上設定 Gpo 以限制網域的系統管理員帳戶
+##### <a name="configuring-gpos-to-restrict-domains-administrator-accounts-on-domain-joined-systems"></a>設定 Gpo 以限制 Domain-Joined 系統上的網域系統管理員帳戶
 
 雖然停用網域中的系統管理員帳戶會使帳戶有效無法使用，但您應該在帳戶不小心或惡意啟用時，對帳戶執行其他限制。 雖然系統管理員帳戶最終可以反轉這些控制項，但目標是要建立讓攻擊者的進度變慢的控制項，並限制帳戶可能會造成的損害。
 
-在您建立並連結到每個網域中的工作站和成員伺服器 Ou 的一或多個 Gpo 中，將每個網域的系統管理員帳戶新增至電腦設定 \windows 設定設定 \ 使用者權限 \ 使用者 **權力指派**中的下列使用者權限：
+在您建立並連結到每個網域中的工作站和成員伺服器 Ou 的一或多個 Gpo 中，將每個網域的系統管理員帳戶新增至電腦設定 \windows 設定設定 \ 使用者權限 \ 使用者 **權力指派** 中的下列使用者權限：
 
 - 拒絕從網路存取這部電腦
 - 拒絕以批次工作登入
@@ -142,13 +142,13 @@ ms.locfileid: "88941448"
 - 拒絕透過遠端桌面服務登入
 
 > [!NOTE]
-> 當您將本機系統管理員帳戶加入此設定時，您必須指定是否要設定本機系統管理員帳戶或網域系統管理員帳戶。 例如，若要將 NWTRADERS 網域的本機系統管理員帳戶新增到這些拒絕許可權，您必須將帳戶輸入為 **NWTRADERS\Administrator**，或流覽至 NWTRADERS 網域的本機系統管理員帳戶。 如果您在群組原則物件編輯器的這些使用者權限設定中輸入 **系統管理員** ，您將會限制套用 GPO 之每部電腦上的本機系統管理員帳戶。
+> 當您將本機系統管理員帳戶加入此設定時，您必須指定是否要設定本機系統管理員帳戶或網域系統管理員帳戶。 例如，若要將 NWTRADERS 網域的本機系統管理員帳戶新增到這些拒絕許可權，您必須將帳戶輸入為 **NWTRADERS\Administrator** ，或流覽至 NWTRADERS 網域的本機系統管理員帳戶。 如果您在群組原則物件編輯器的這些使用者權限設定中輸入 **系統管理員** ，您將會限制套用 GPO 之每部電腦上的本機系統管理員帳戶。
 >
 > 建議您以網域系統管理員帳戶的相同方式，限制成員伺服器和工作站上的本機系統管理員帳戶。 因此，您通常應該將樹系中每個網域的系統管理員帳戶，以及本機電腦的系統管理員帳戶新增至這些使用者權限設定。
 
 ##### <a name="configuring-gpos-to-restrict-administrator-accounts-on-domain-controllers"></a>設定 Gpo 以限制網域控制站上的系統管理員帳戶
 
-在樹系中的每個網域中，您應該修改預設網域控制站原則或連結至網域控制站 OU 的原則，以將每個網域的系統管理員帳戶新增至 **電腦設定 \windows 設定**設定 \ 使用者設定 \ 使用者 \ 使用者權限指派中的下列使用者權限：
+在樹系中的每個網域中，您應該修改預設網域控制站原則或連結至網域控制站 OU 的原則，以將每個網域的系統管理員帳戶新增至 **電腦設定 \windows 設定** 設定 \ 使用者設定 \ 使用者 \ 使用者權限指派中的下列使用者權限：
 
 - 拒絕從網路存取這部電腦
 - 拒絕以批次工作登入
@@ -166,13 +166,13 @@ ms.locfileid: "88941448"
 
 #### <a name="securing-enterprise-admin-groups"></a>保護企業系統管理員群組
 
-位於樹系根域中的 Enterprise Admins 群組不應每天包含任何使用者，但網域的本機系統管理員帳戶除外，但前提是它受到保護，如先前所述以及 [附錄 D：在 Active Directory 中保護內建的系統管理員](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)帳戶。
+位於樹系根域中的 Enterprise Admins 群組不應每天包含任何使用者，但網域的本機系統管理員帳戶如先前所述受到保護，如先前所述，以及 [附錄 D：保護 Active Directory 中的 Built-In 系統管理員](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)帳戶。
 
 需要 EA 存取時，必須暫時將帳戶需要 EA 許可權和許可權的使用者放入 Enterprise Admins 群組中。 雖然使用者使用高度特殊許可權的帳戶，但他們的活動應該經過審核，而且最好是由一位使用者執行變更，而另一位使用者觀察變更，將不當誤用或設定錯誤的可能性降至最低。 當活動完成時，應該將帳戶從 EA 群組中移除。 這可以透過手動程式和記載的程式、協力廠商的特殊許可權身分識別/存取管理 (PIM/PAM) 軟體，或兩者的組合來達成。 建立可用來控制 Active Directory 中特殊許可權群組成員資格之帳戶的指導方針，會提供給 [認證遭竊的具吸引力帳戶](../../../ad-ds/plan/security-best-practices/Attractive-Accounts-for-Credential-Theft.md) ，以及 [附錄 I：為 Active Directory 中的受保護帳戶和群組建立管理帳戶](../../../ad-ds/manage/component-updates/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory.md)中提供詳細指示。
 
 依預設，Enterprise Admins 是樹系中每個網域內內建 Administrators 群組的成員。 從每個網域中的系統管理員群組移除 Enterprise Admins 群組是不適當的修改，因為在發生樹系災難復原案例的情況下，可能會需要 EA 許可權。 如果已從樹系中的系統管理員群組移除 Enterprise Admins 群組，則應該將它新增至每個網域中的 Administrators 群組，並執行下列其他控制項：
 
-- 如先前所述，Enterprise Admins 群組不應每天包含任何使用者，但樹系根域的系統管理員帳戶可能例外，如 [附錄 D：保護內建的系統管理員帳戶 Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)中所述。
+- 如先前所述，Enterprise Admins 群組不應每天包含任何使用者，但樹系根域的系統管理員帳戶可能例外，應依照 [附錄 D：保護 Active Directory 中的 Built-In 系統管理員帳戶](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)所述加以保護。
 - 在連結到包含成員伺服器和每個網域中工作站之 Ou 的 Gpo 中，應將 EA 群組新增至下列使用者權限：
    - 拒絕從網路存取這部電腦
    - 拒絕以批次工作登入
@@ -186,7 +186,7 @@ ms.locfileid: "88941448"
 
 #### <a name="securing-domain-admins-groups"></a>保護 Domain Admins 群組
 
-就像 Enterprise Admins 群組一樣，Domain Admins 群組中的成員資格只在建立或災難復原案例中才需要。 如果網域中的本機系統管理員帳戶受到保護，則在 DA 群組中應該不會有每天的使用者帳戶（網域的本機系統管理員帳戶除外），如 [附錄 D：保護內建的系統管理員帳戶 Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)中所述。
+就像 Enterprise Admins 群組一樣，Domain Admins 群組中的成員資格只在建立或災難復原案例中才需要。 如果網域中的本機系統管理員帳戶受到保護，則 DA 群組中應該沒有任何日常的使用者帳戶（網域的本機系統管理員帳戶除外），如 [附錄 D：保護 Built-In 系統管理員帳戶 Active Directory 中](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)所述。
 
 需要 DA 存取時，必須暫時將需要此存取層級的帳戶放到有問題之網域的 DA 群組中。 雖然使用者使用高度特殊許可權的帳戶，但活動應該經過審核，而且最好是由一位使用者執行變更，而另一位使用者觀察變更，將不當誤用或不當設定的可能性降至最低。 當活動完成時，應該從 Domain Admins 群組移除這些帳戶。 這可以透過手動程式和記載的程式，透過協力廠商的特殊許可權身分識別/存取管理 (PIM/PAM) 軟體，或兩者的組合來達成。 [附錄 I：在 Active Directory 中為受保護的帳戶和群組建立管理帳戶](../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory.md)，可用於建立可用來控制 Active Directory 中特殊許可權群組成員資格之帳戶的指導方針。
 
@@ -194,7 +194,7 @@ ms.locfileid: "88941448"
 
 針對樹系中每個網域的 Domain Admins 群組：
 
-1. 移除 DA 群組中的所有成員，但網域的內建系統管理員帳戶可能例外，前提是它已受到保護，如 [附錄 D：保護內建的系統管理員帳戶 Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)中所述。
+1. 移除 DA 群組中的所有成員，但網域的內建系統管理員帳戶可能除外，但前提是已依照 [附錄 D：保護 Built-In 系統管理員帳戶 Active Directory 中](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)所述的方式加以保護。
 2. 在連結到包含成員伺服器和每個網域中工作站之 Ou 的 Gpo 中，應將 DA 群組新增至下列使用者權限：
    - 拒絕從網路存取這部電腦
    - 拒絕以批次工作登入
@@ -208,13 +208,13 @@ ms.locfileid: "88941448"
 
 #### <a name="securing-administrators-groups-in-active-directory"></a>保護 Active Directory 中的 Administrators 群組
 
-就像 EA 和 DA 群組一樣，系統管理員 (BA) 群組中的成員資格，只有在建立或嚴重損壞修復案例中才需要用到。 除了網域的本機系統管理員帳戶（如 [附錄 D：在 Active Directory 中保護內建的系統](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)管理員帳戶），系統管理員群組中應該沒有任何日常使用者帳戶，但網域的本機系統管理員帳戶除外。
+就像 EA 和 DA 群組一樣，系統管理員 (BA) 群組中的成員資格，只有在建立或嚴重損壞修復案例中才需要用到。 除了網域的本機系統管理員帳戶（如 [附錄 D：保護 Active Directory 中的 Built-In 系統管理員](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)帳戶）所述，系統管理員群組中應該沒有任何日常使用者帳戶，但網域的本機系統管理員帳戶除外。
 
 需要系統管理員存取權時，必須暫時將需要此存取層級的帳戶放到有問題之網域的 Administrators 群組中。 雖然使用者使用高度特殊許可權的帳戶，但活動應該經過審核，而且最好是透過執行變更的使用者，以及另一位觀察變更的使用者來執行，以將不當誤用或設定錯誤的可能性降至最低。 當活動完成時，應該立即從 Administrators 群組中移除帳戶。 這可以透過手動程式和記載的程式，透過協力廠商的特殊許可權身分識別/存取管理 (PIM/PAM) 軟體，或兩者的組合來達成。
 
 依預設，系統管理員會在其各自的網域中擁有大多數 AD DS 物件的擁有者。 需要擁有權或取得物件擁有權之能力的組建和嚴重損壞修復案例中，可能需要此群組的成員資格。 此外，DAs 和 EAs 透過其 Administrators 群組中的預設成員資格，繼承了許多權利和許可權。 Active Directory 中的特殊許可權群組的預設群組嵌套不應該修改，而且每個網域的系統管理員群組都應受到保護，如 [附錄 G：保護系統管理員群組中的 Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-G--Securing-Administrators-Groups-in-Active-Directory.md)，以及下列一般指示中所述。
 
-1. 移除 Administrators 群組中的所有成員，但不包括網域的本機系統管理員帳戶，前提是它已受到保護，如 [附錄 D：保護內建的系統管理員帳戶 Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)中所述。
+1. 移除 Administrators 群組中的所有成員，但不包括網域的本機系統管理員帳戶，但前提是已依照 [附錄 D：保護 Built-In 系統管理員帳戶 Active Directory 中](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)所述的方式進行保護。
 2. 網域的 Administrators 群組成員永遠不需要登入成員伺服器或工作站。 在每個網域中連結至工作站和成員伺服器 Ou 的一或多個 Gpo 中，系統管理員群組應新增至下列使用者權限：
    - 拒絕從網路存取這部電腦
    - 拒絕以批次工作登入，
@@ -233,7 +233,7 @@ ms.locfileid: "88941448"
 >
 > ![最低版權管理模型](media/Implementing-Least-Privilege-Administrative-Models/SAD_3.gif)
 
-### <a name="role-based-access-controls-rbac-for-active-directory"></a>Active Directory 的 (RBAC) 的角色型存取控制
+### <a name="role-based-access-controls-rbac-for-active-directory"></a>Role-Based 存取控制 (RBAC) 以進行 Active Directory
 
 一般來說，以角色為基礎的存取控制 (RBAC) 是一種機制，可將使用者分組，並根據商務規則來提供資源的存取權。 在 Active Directory 的情況下，執行 AD DS 的 RBAC 是建立角色的程式，以委派許可權，讓角色的成員可以執行日常的系統管理工作，而不需授與許可權過高的許可權。 您可以透過原生工具和介面來設計和實行 Active Directory 的 RBAC，方法是利用您可能已擁有的軟體、購買協力廠商產品，或這些方法的任何組合。 本節不提供針對 Active Directory 執行 RBAC 的逐步指示，而是會討論在您的 AD DS 安裝中選擇執行 RBAC 的方法時，應考慮的因素。
 

@@ -2,16 +2,16 @@
 ms.assetid: 864ad4bc-8428-4a8b-8671-cb93b68b0c03
 title: 減少 Active Directory 的攻擊面
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 5c151f0b152fadc4c86fc7bc0a414e9a190c0080
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 8802091de7746844176a97acf5e958d55b0b1f92
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941388"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93069510"
 ---
 # <a name="reducing-the-active-directory-attack-surface"></a>減少 Active Directory 的攻擊面
 
@@ -19,14 +19,14 @@ ms.locfileid: "88941388"
 
 本節著重于執行的技術控制項，以降低 Active Directory 安裝的受攻擊面。 此區段包含下列資訊：
 
-- [執行最小許可權的系統管理模型](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Implementing-Least-Privilege-Administrative-Models.md) 著重于找出使用高特殊許可權帳戶進行日常管理的風險，以及提供建議來降低特殊許可權帳戶所呈現的風險。
+- 實行[Least-Privilege 系統管理模型](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Implementing-Least-Privilege-Administrative-Models.md)的重點，是要找出在日常系統管理中使用高度特殊許可權帳戶的風險，以及提供建議來降低特殊許可權帳戶所呈現的風險。
 
 - [執行安全的系統管理主機](../../../ad-ds/plan/security-best-practices/Implementing-Secure-Administrative-Hosts.md) 描述部署專用、安全系統管理系統的準則，以及安全管理主機部署的一些範例方法。
 
 - [保護網域控制站免于遭受攻擊](../../../ad-ds/plan/security-best-practices/Securing-Domain-Controllers-Against-Attack.md) 會討論原則和設定，雖然類似于執行安全管理主機的建議，但是包含一些網域控制站特定的建議，以協助確保用來管理它們的網域控制站和系統受到妥善保護。
 
 ## <a name="privileged-accounts-and-groups-in-active-directory"></a>Active Directory 中具特殊權限的帳戶和群組
-本節提供有關 Active Directory 中的特殊許可權帳戶和群組的背景資訊，以說明 Active Directory 中的特殊許可權帳戶和群組之間的共通性和差異。 藉由瞭解這些差異，無論您是在執行 [最少許可權的系統管理模型](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Implementing-Least-Privilege-Administrative-Models.md) ，或選擇為您的組織自訂它們時，都有必要的工具可以適當地保護每個群組和帳戶。
+本節提供有關 Active Directory 中的特殊許可權帳戶和群組的背景資訊，以說明 Active Directory 中的特殊許可權帳戶和群組之間的共通性和差異。 藉由瞭解這些差異，無論您是在執行 [Least-Privilege 系統管理模型](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Implementing-Least-Privilege-Administrative-Models.md) 的逐字或選擇為您的組織進行自訂的建議，都有適當的工具來保護每個群組和帳戶的安全。
 
 ### <a name="built-in-privileged-accounts-and-groups"></a>內建的特殊許可權帳戶和群組
 Active Directory 有助於委派管理，並支援指派權利和許可權的最低許可權原則。 依預設，在網域中具有帳戶的「一般」使用者可以讀取大部分儲存在目錄中的內容，但只能變更目錄中非常有限的資料集。 需要額外許可權的使用者可以被授與目錄內建的各種「特殊許可權」群組的成員資格，讓他們可以執行與其角色相關的特定工作，但無法執行與其職責無關的工作。 組織也可以建立針對特定工作責任量身訂做的群組，並授與更細微的權利和許可權，讓 IT 人員可以執行日常系統管理功能，而不授與超出這些功能所需的許可權。

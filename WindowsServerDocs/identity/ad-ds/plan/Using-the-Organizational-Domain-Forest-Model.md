@@ -1,17 +1,17 @@
 ---
 ms.assetid: 093ef1ae-ebc1-490f-9fb1-2c000ce89eb6
 title: 使用組織網域樹系模型
-ms.author: iainfou
+ms.author: daveba
 author: iainfoulds
 manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: a464d455712a5796844d5946cc9f6598bee9397e
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 8300633d39e8ba7e5b19bfe8703d0cd9357423b4
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88940398"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93069140"
 ---
 # <a name="using-the-organizational-domain-forest-model"></a>使用組織網域樹系模型
 
@@ -55,4 +55,4 @@ ms.locfileid: "88940398"
 所有網域擁有者都必須注意，如果未來有任何條件變更，就可能需要將組織網域移至多個樹系部署中。
 
 > [!NOTE]
-> 將 Windows Server 2008 Active Directory 網域的安全性風險降至最低的另一種方式是採用系統管理員角色隔離，而這需要在 Active Directory 基礎結構中將唯讀網域控制站部署 (RODC) 。 RODC 是 Windows Server 2008 作業系統中裝載 Active Directory 資料庫之唯讀分割區的新網域控制站類型。 在 Windows Server 2008 發行之前，網域控制站上的任何伺服器維護工作都必須由網域系統管理員執行。 在 Windows Server 2008 中，您可以將 RODC 的本機系統管理許可權委派給任何網域使用者，而不將網域或其他網域控制站的任何系統管理許可權授與該使用者。 這可讓委派的使用者登入 RODC，並在伺服器上執行維護工作，例如升級驅動程式。 不過，此委派的使用者無法登入任何其他網域控制站，或在網域中執行任何其他系統管理工作。 如此一來，任何信任的使用者都能有效地管理 RODC，而不會危及網域其餘部分的安全性。 如需 Rodc 的詳細資訊，請參閱 [AD DS：唯讀網域控制站](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc732801(v=ws.10))。
+> 將 Windows Server 2008 Active Directory 網域的安全性風險降至最低的另一種方式是採用系統管理員角色隔離，而這需要在 Active Directory 基礎結構中將唯讀網域控制站部署 (RODC) 。 RODC 是 Windows Server 2008 作業系統中裝載 Active Directory 資料庫之唯讀分割區的新網域控制站類型。 在 Windows Server 2008 發行之前，網域控制站上的任何伺服器維護工作都必須由網域系統管理員執行。 在 Windows Server 2008 中，您可以將 RODC 的本機系統管理許可權委派給任何網域使用者，而不將網域或其他網域控制站的任何系統管理許可權授與該使用者。 這可讓委派的使用者登入 RODC，並在伺服器上執行維護工作，例如升級驅動程式。 不過，此委派的使用者無法登入任何其他網域控制站，或在網域中執行任何其他系統管理工作。 如此一來，任何信任的使用者都能有效地管理 RODC，而不會危及網域其餘部分的安全性。 如需 Rodc 的詳細資訊，請參閱 [AD DS： Read-Only 網域控制站](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc732801(v=ws.10))。

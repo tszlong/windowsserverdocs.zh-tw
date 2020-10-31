@@ -2,16 +2,16 @@
 ms.assetid: 8f994e2e-6c07-43f0-aef4-75f8b2c9a144
 title: 維護更安全的環境
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 7cde4344a28888c997cfb751b2943429fbc4e686
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 14cbe8a6610a370e20e338f3a09ab24f21334169
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941408"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93069580"
 ---
 # <a name="maintaining-a-more-secure-environment"></a>維護更安全的環境
 
@@ -23,7 +23,7 @@ ms.locfileid: "88941408"
 
 在某些情況下，您的 IT 組織可能已經與業務單位有密切的工作關係，這可簡化這些建議的執行工作。 在 IT 與業務單位未緊密系結的組織中，您可能需要先取得執行贊助，以將 IT 與業務單位之間的關係緊密聯繫。 [執行摘要](../../../ad-ds/manage/component-updates/Executive-Summary.md)旨在作為執行審核的獨立檔，並可簡易性給您組織中的決策者。
 
-## <a name="creating-business-centric-security-practices-for-active-directory"></a>針對 Active Directory 建立以商務為中心的安全性作法
+## <a name="creating-business-centric-security-practices-for-active-directory"></a>建立 Active Directory 的 Business-Centric 安全性作法
 在過去，許多組織內的資訊技術都被視為支援結構和成本中心。 IT 部門通常會與商務使用者分開，而且僅限於商務要求的資源和 IT 回應的要求-回應模型的互動。
 
 隨著技術的發展和擴大，「每一台電腦上的電腦」的願景都能有效地傳遞給世界各地，甚至是由現今提供的各種容易存取的技術所 eclipsed。 資訊技術不再是支援的功能，它是核心商務功能。 如果您的組織無法在所有 IT 服務無法使用的情況下繼續運作，貴組織的業務也至少是資訊技術。
@@ -39,7 +39,7 @@ Active Directory 中的資料應該具有已識別的商務擁有者，也就是
 
 無論您是使用 Active Directory 來記錄目錄中的資料擁有權，或是您是否要執行個別的資料庫來追蹤 IT 資產，都不應該建立任何使用者帳戶，也不應該安裝任何伺服器或工作站，也不應該在沒有指定的記錄擁有者的情況下部署應用程式。 當系統在生產環境中部署之後，嘗試建立系統擁有權可能是最具挑戰性的挑戰，而且在某些情況下可能會是不可能的。 因此，在資料導入 Active Directory 時，應建立擁有權。
 
-### <a name="implement-business-driven-lifecycle-management"></a>實行業務驅動生命週期管理
+### <a name="implement-business-driven-lifecycle-management"></a>實行 Business-Driven 生命週期管理
 生命週期管理應針對 Active Directory 中的所有資料執行。 例如，當新的應用程式引進 Active Directory 的網域時，應用程式的業務擁有者應該定期進行，以證明應用程式是否持續使用。 發行新版本的應用程式時，應該會通知應用程式的商務擁有者，並決定是否要執行新的版本。
 
 如果商務擁有者選擇不核准應用程式新版本的部署，則該商務擁有者應該也會在目前版本不再受到支援時通知該日期，而且應該負責判斷應用程式是否將解除委任或被取代。 保持繼承應用程式的執行和不受支援不是一個選項。

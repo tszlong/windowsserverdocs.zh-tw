@@ -2,16 +2,16 @@
 ms.assetid: 96a6749c-6c9f-4f2f-ad0a-51272d282ace
 title: 決定間隔
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 8230dc9e53184792e91874b1a8b7a44643564999
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 0ad2e92bb0d1264d6e651ae5f5a676a210ad8811
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88939388"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93069180"
 ---
 # <a name="determining-the-interval"></a>決定間隔
 
@@ -29,9 +29,9 @@ ms.locfileid: "88939388"
 
 -   為您網路上的所有網站建立資料表，如下列範例所示：
 
-    |網站|Seattle|波士頓|Los Angeles|紐約|Washington, D.C.|
+    |網站|西雅圖|波士頓|Los Angeles|紐約|Washington, D.C.|
     |---------|-----------|----------|---------------|------------|--------------------|
-    |Seattle|0.25|||||
+    |西雅圖|0.25|||||
     |波士頓||0.25||||
     |Los Angeles|||0.25|||
     |紐約||||0.25||
@@ -51,9 +51,9 @@ ms.locfileid: "88939388"
 
     例如，如果洛杉磯的最大延遲是一天，這組連結的最大複寫延遲 (華盛頓特區（紐約西雅圖-洛杉磯）) 為31小時，也就是 4 (華盛頓特區-紐約) + 3 (紐約西雅圖) + 24 (西雅圖洛杉磯) ，如下表所示。
 
-    |網站|Seattle|波士頓|Los Angeles|紐約|Washington, D.C.|
+    |網站|西雅圖|波士頓|Los Angeles|紐約|Washington, D.C.|
     |---------|-----------|----------|---------------|------------|--------------------|
-    |Seattle|0.25|4 + 3|24.00|3.00|4 + 3|
+    |西雅圖|0.25|4 + 3|24.00|3.00|4 + 3|
     |波士頓||0.25|4 + 3 + 24|4.00|4.00|
     |Los Angeles|||0.25|24 + 3|24 + 3 + 4|
     |紐約||||0.25|4.00|
