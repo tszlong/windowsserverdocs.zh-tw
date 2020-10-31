@@ -1,17 +1,17 @@
 ---
 title: AD 樹系復原-重設信任密碼
-ms.author: iainfou
+ms.author: daveba
 author: iainfoulds
 manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 398918dc-c8ab-41a6-a377-95681ec0b543
-ms.openlocfilehash: d3a0c694e2108ca623f1ba224d2a265314d7800e
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: a4e1c02710b215ff5a527fa8ad39c6f78cdedceb
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941478"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93070820"
 ---
 # <a name="resetting-a-trust-password-on-one-side-of-the-trust"></a>在信任的一端重設信任密碼
 
@@ -45,7 +45,7 @@ ms.locfileid: "88941478"
    ```
 
    > [!NOTE]
-   > 在信任雙方的**passwordT**應該是相同的值。 請只執行此命令一次 (與 **netdom resetpwd** 命令) 一樣，因為它會自動重設密碼兩次。
+   > 在信任雙方的 **passwordT** 應該是相同的值。 請只執行此命令一次 (與 **netdom resetpwd** 命令) 一樣，因為它會自動重設密碼兩次。
 
 ## <a name="next-steps"></a>後續步驟
 

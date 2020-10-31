@@ -2,16 +2,16 @@
 ms.assetid: 5ab76733-804d-4f30-bee6-cb672ad5075a
 title: 疑難排解網域控制站部署
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 03/20/2019
 ms.topic: article
-ms.openlocfilehash: 8c850a9a09af97d9aa377b79aaa87d06aa0d916c
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: cf52ad53a4160235185a2b9c70c73b86bf2eedf3
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88940608"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93069931"
 ---
 # <a name="troubleshooting-domain-controller-deployment"></a>疑難排解網域控制站部署
 
@@ -27,7 +27,7 @@ ms.locfileid: "88940608"
 
 內建記錄檔是疑難排解網域控制站升級和降級問題的最重要工具。 預設會啟用及設定所有的這些記錄檔以提供最詳盡的詳細資訊。
 
-| 階段 | 記錄檔 |
+| 階段 | Log |
 |--|--|
 | 伺服器管理員或 ADDSDeployment Windows PowerShell 作業 | - %systemroot%\debug\dcpromoui.log<p>-%systemroot%\debug\dcpromoui * .log |
 | 網域控制站的安裝/升級 | - %systemroot%\debug\dcpromo.log<p>-%systemroot%\debug\dcpromo * .log<p>-事件檢視器 \windows 記錄 \ 系統<p>-事件檢視器 \windows logs\Application<p>-事件 viewer\Applications 和服務 logs\Directory 服務<p>-事件 viewer\Applications 和服務 logs\File Replication Service<p>-事件 viewer\Applications 和服務 logs\DFS 複寫 |
@@ -51,7 +51,7 @@ ms.locfileid: "88940608"
 
 1.  因簡單的語法問題造成錯誤？
 
-    1.  您是否輸入錯誤或忘記提供 ADDSDeployment Windows PowerShell 引數？ 例如，如果使用 ADDSDeployment Windows PowerShell，您是否忘記新增名稱有效的必要引數 **-domainname**？
+    1.  您是否輸入錯誤或忘記提供 ADDSDeployment Windows PowerShell 引數？ 例如，如果使用 ADDSDeployment Windows PowerShell，您是否忘記新增名稱有效的必要引數 **-domainname** ？
 
     2.  請仔細檢查 Windows PowerShell 主控台輸出，以查看無法剖析所提供之命令列的確切原因。
 
@@ -93,7 +93,7 @@ ms.locfileid: "88940608"
 
 1. 使用伺服器管理員時，請在自動重新開機之前十秒內檢查升級結果。
 
-2. 使用 ADDSDeployment Windows PowerShell 時，請在自動重新開機之前十秒內檢查升級結果。 或者，在完成時選擇不要自動重新啟動。 您應該新增**格式清單**管線以方便閱讀輸出結果。 例如：
+2. 使用 ADDSDeployment Windows PowerShell 時，請在自動重新開機之前十秒內檢查升級結果。 或者，在完成時選擇不要自動重新啟動。 您應該新增 **格式清單** 管線以方便閱讀輸出結果。 例如：
 
    ```
    Install-addsdomaincontroller <options> -norebootoncompletion:$true | format-list
@@ -110,7 +110,7 @@ ms.locfileid: "88940608"
 
 ### <a name="promotion-and-demotion-success-codes"></a>升級和降級成功碼
 
-| 錯誤碼 | 說明 | 注意 |
+| 錯誤碼 | 說明 | 附註 |
 |--|--|--|
 | 1 | 順利結束 | 您仍然必須重新開機，這只是已移除自動重新啟動旗標的附註 |
 | 2 | 順利結束，需重新開機 |  |
@@ -133,7 +133,7 @@ ms.locfileid: "88940608"
 | 18 | windir 中沒有足夠空間 | 請使用 cleanmgr.exe 釋放 %systemdrive% 磁碟區的空間 |
 | 19 | 名稱變更擱置。需要重新開機 | 請將伺服器重新開機 |
 | 20 | 電腦名稱的語法無效 | 請將電腦重新命名為有效名稱 |
-| 21 | 此網域控制站保有 FSMO 角色、是一個 GC，以及 (或) 是一部 DNS 伺服器 | 使用 **-forceremoval**時，新增 **-demoteoperationmasterrole** 。 |
+| 21 | 此網域控制站保有 FSMO 角色、是一個 GC，以及 (或) 是一部 DNS 伺服器 | 使用 **-forceremoval** 時，新增 **-demoteoperationmasterrole** 。 |
 | 22 | 必須安裝 TCP/IP，或 TCP/IP 未運作 | 請確認電腦中已設定、已繫結 TCP/IP，並在正確工作中 |
 | 23 | 必須先設定 DNS 用戶端 | 請在新增網域控制站至網域時設定主要 DNS 伺服器 |
 | 24 | 提供的認證無效或遺失必要項目 | 請確認您的使用者名稱和密碼是否正確 |
@@ -161,15 +161,15 @@ ms.locfileid: "88940608"
 | 47 | 具有指定名稱的樹狀目錄已存在 | 請選擇其他樹狀目錄 DNS 網域名稱 |
 | 48 | 樹狀目錄名稱與樹系結構不符 | 請選擇其他樹狀目錄 DNS 網域名稱 |
 | 49 | 指定的網域不存在 | 請驗證您輸入的網域名稱 |
-| 50 | 在降級期間，偵測到最後一個網域控制站 (即使它並不是)，或已指定最後一個網域控制站 (但它並不是) | 除非網域控制站確實是**網域中最後一個網域控制站**(**-lastdomaincontrollerindomain**)，否則請勿指定此項目。 如果這確實是最後一個網域控制站，而且有虛設網域控制站中繼資料，請使用 **-ignorelastdcindomainmismatch** 來覆寫 |
-| 51 | 此網域控制站上有應用程式磁碟分割存在 | 請指定**移除應用程式磁碟分割**(**-removeapplicationpartitions**) |
+| 50 | 在降級期間，偵測到最後一個網域控制站 (即使它並不是)，或已指定最後一個網域控制站 (但它並不是) | 除非網域控制站確實是 **網域中最後一個網域控制站** ( **-lastdomaincontrollerindomain** )，否則請勿指定此項目。 如果這確實是最後一個網域控制站，而且有虛設網域控制站中繼資料，請使用 **-ignorelastdcindomainmismatch** 來覆寫 |
+| 51 | 此網域控制站上有應用程式磁碟分割存在 | 請指定 **移除應用程式磁碟分割** ( **-removeapplicationpartitions** ) |
 | 52 | 遺失必要的命令列引數 (也就是命令列中必須指定回應檔案) | *只會看到已淘汰的 dcpromo/unattend。請參閱較舊的檔* |
 | 53 | 升級/降級失敗，必須重新開機以清理電腦 | 請檢查延伸錯誤和記錄檔 |
 | 54 | 升級/降級失敗 | 請檢查延伸錯誤和記錄檔 |
 | 55 | 使用者已取消升級/降級 | 請檢查延伸錯誤和記錄檔 |
 | 56 | 使用者已取消升級/降級，必須重新開機以清理電腦 | 請檢查延伸錯誤和記錄檔 |
 | 58 | 必須在 RODC 升級期間指定站台名稱 | 您必須指定 RODC 的站台，它不會像 RWDC 一樣自動偵測站台 |
-| 59 | 此網域控制站在降級期間是其其中一個區域中的最後一部 DNS 伺服器 | 請指定這是**網域中最後一個 DNS 伺服器**或使用 **-ignorelastdnsserverfordomain** |
+| 59 | 此網域控制站在降級期間是其其中一個區域中的最後一部 DNS 伺服器 | 請指定這是 **網域中最後一個 DNS 伺服器** 或使用 **-ignorelastdnsserverfordomain** |
 | 60 | 網域中必須有執行 Windows Server 2008 或更新版本的網域控制站存在才能升級 RODC | 請至少升級一個 Windows Server 2008 或更新版本的模型可寫入網域控制站 |
 | 61 | 您無法在尚未主控 DNS 的現有網域中，安裝具有 DNS 的 Active Directory 網域服務 | *不可能發生這個錯誤* |
 | 62 | 回應檔案中沒有 [DCInstall] 區段 | *只會看到已淘汰的 dcpromo/unattend。請參閱較舊的檔。* |
@@ -177,10 +177,10 @@ ms.locfileid: "88940608"
 | 64 | 升級失敗，因為元件二進位偵測失敗 | 請安裝 AD DS 角色 |
 | 65 | 升級失敗，因為元件二進位安裝失敗 | 請安裝 AD DS 角色 |
 | 66 | 升級失敗，因為作業系統偵測失敗 | 請檢查延伸錯誤和記錄檔。伺服器無法傳回其作業系統版本。 可能必須重新安裝電腦，因為高度懷疑電腦的整體健康狀況不佳 |
-| 68 | 複寫協力電腦無效 | 使用 repadmin.exe 或** \\ get-adreplication** \* Windows PowerShell 驗證夥伴網域控制站健全狀況 |
+| 68 | 複寫協力電腦無效 | 使用 repadmin.exe 或 **\\ get-adreplication** \* Windows PowerShell 驗證夥伴網域控制站健全狀況 |
 | 69 | 必要的連接埠已由其他應用程式使用 | 請使用 **netstat.exe anob** 尋找錯誤地指派給保留 AD DS 連接埠的處理程序 |
 | 70 | 樹系根網域控制站必須是 GC | *只會看到已淘汰的 dcpromo/unattend。請參閱較舊的檔* |
-| 71 | 已安裝 DNS 伺服器 | 如果已安裝 DNS 伺服器，請勿指定安裝 DNS (**-installDNS**) |
+| 71 | 已安裝 DNS 伺服器 | 如果已安裝 DNS 伺服器，請勿指定安裝 DNS ( **-installDNS** ) |
 | 72 | 電腦正以非系統管理模式執行遠端桌面服務 | 您無法升級此網域控制站，因為它也是針對兩個以上的系統管理員使用者設定的 RDS 伺服器。 請勿在未仔細清查 RDS 的使用狀況之前將它移除。如果應用程式或使用者正在使用它，移除它將會導致中斷 |
 | 73 | 指定的樹系功能等級無效。 | 請指定有效的樹系功能等級 |
 | 74 | 指定的網域功能等級無效。 | 請指定有效的網域功能等級 |
@@ -228,12 +228,12 @@ ms.locfileid: "88940608"
 | 問題 | 如果有預先建立、未佔用的 RODC 帳戶，降級網域中最後一個網域控制站就會失敗 |
 |--|--|
 | 徵兆 | 降級失敗時會顯示以下訊息：<p>**Dcpromo.General.54**<p>Active Directory 網域服務找不到另一個 Active Directory 網域控制站以傳輸目錄磁碟分割 CN=Schema,CN=Configuration,DC=corp,DC=contoso,DC=com 中剩餘的資料。<p>「 指定之網域名稱的格式無效。」 |
-| 解決方式和注意事項 | 請先移除任何剩餘之預先建立的 RODC 帳戶，然後再將網域降級 (使用 **Dsa.msc** 或 **Ntdsutil.exe metadata cleanup**)。 |
+| 解決方式和注意事項 | 請先移除任何剩餘之預先建立的 RODC 帳戶，然後再將網域降級 (使用 **Dsa.msc** 或 **Ntdsutil.exe metadata cleanup** )。 |
 
 | 問題 | 自動化樹系和網域準備作業並未執行 GPPREP |
 |--|--|
 | 徵兆 | 群組原則的跨網域計畫功能 (原則結果組 (RSOP) 計劃模式) 需要已針對現有 GP 更新的檔案系統和 Active Directory 權限。 沒有 Gpprep，您就無法跨網域使用 RSOP 計畫。 |
-| 解決方式和注意事項 | 請為之前不是為 Windows Server 2003、Windows Server 2008 或 Windows Server 2008 R2 準備的所有網域手動執行 **adprep.exe /gpprep**。 在網域的紀錄中，系統管理員應只執行一次 GPPrep，而非每次升級都執行。 它不是由自動 Adprep 執行，因為如果您已經設定適當的自訂權限，這會導致在所有網域控制站上複寫所有 SYSVOL 內容。 |
+| 解決方式和注意事項 | 請為之前不是為 Windows Server 2003、Windows Server 2008 或 Windows Server 2008 R2 準備的所有網域手動執行 **adprep.exe /gpprep** 。 在網域的紀錄中，系統管理員應只執行一次 GPPrep，而非每次升級都執行。 它不是由自動 Adprep 執行，因為如果您已經設定適當的自訂權限，這會導致在所有網域控制站上複寫所有 SYSVOL 內容。 |
 
 | 問題 | 在指向 UNC 路徑時驗證「從媒體安裝」失敗 |
 |--|--|
@@ -243,12 +243,12 @@ ms.locfileid: "88940608"
 | 問題 | 在網域控制站升級期間顯示兩次 DNS 委派警告 |
 |--|--|
 | 徵兆 | 使用 ADDSDeployment Windows PowerShell 升階時，會傳回 *兩次* 警告：<p>程式碼-「無法建立此 DNS 伺服器的委派，因為找不到授權的上層區域，或其未執行 Windows DNS 伺服器。 如果您要與現有的 DNS 基礎結構整合，您應該在父區域中手動建立此 DNS 伺服器的委派，以確保從網域外部進行可靠的名稱解析。 否則，不需要採取任何動作。」 |
-| 解決方式和注意事項 | 忽略。 ADDSDeployment Windows PowerShell 會在先決條件檢查時第一次顯示警告，然後在設定網域控制站時再顯示一次。 如果您不想設定 DNS 委派，請使用引數：<p>程式碼--creatednsdelegation： $false<p>請*勿*略過先決條件檢查，以隱藏此訊息 |
+| 解決方式和注意事項 | 忽略。 ADDSDeployment Windows PowerShell 會在先決條件檢查時第一次顯示警告，然後在設定網域控制站時再顯示一次。 如果您不想設定 DNS 委派，請使用引數：<p>程式碼--creatednsdelegation： $false<p>請 *勿* 略過先決條件檢查，以隱藏此訊息 |
 
 | 問題 | 在設定期間指定 UPN 或非網域認證時傳回誤導錯誤 |
 |--|--|
 | 徵兆 | 伺服器管理員傳回錯誤：<p>程式碼-呼叫 "DNSOption" 與 "6" 引數的例外狀況<p>ADDSDeployment Windows PowerShell 傳回錯誤：<p>使用者權限的程式碼驗證失敗。 您必須提供這個使用者帳戶所屬之網域的名稱。 |
-| 解決方式和注意事項 | 請確定您是以**網域 \ 使用者**形式提供有效的網域認證。 |
+| 解決方式和注意事項 | 請確定您是以 **網域 \ 使用者** 形式提供有效的網域認證。 |
 
 | 問題 | 使用 Dism.exe 移除 DirectoryServices-DomainController 角色會導致伺服器無法開機 |
 |--|--|
@@ -258,12 +258,12 @@ ms.locfileid: "88940608"
 | 問題 | 設定 Win2012 的 Forestmode 時安裝新樹系失敗 |
 |--|--|
 | 徵兆 | 使用 ADDSDeployment Windows PowerShell 升級時傳回錯誤：<p>程式碼-VerifyDcPromoCore。 General. 74<p>驗證網域控制站升級的必要條件失敗。 指定的網域功能等級無效 |
-| 解決方式和注意事項 | 請勿在*未*指定 Win2012 網域功能模式的情況下指定 Win2012 樹系功能模式。 以下是沒有產生錯誤的正常運作範例：<p>Code--forestmode Win2012-domainmode Win2012] |
+| 解決方式和注意事項 | 請勿在 *未* 指定 Win2012 網域功能模式的情況下指定 Win2012 樹系功能模式。 以下是沒有產生錯誤的正常運作範例：<p>Code--forestmode Win2012-domainmode Win2012] |
 
 | 問題 | 按一下 [從媒體安裝] 選擇區域中的 [驗證] 之後似乎沒有執行任何作業 |
 |--|--|
-| 徵兆 | 當您指定 IFM 資料夾的路徑時，按一下 [驗證]**** 按鈕時沒有傳回訊息或似乎沒有執行任何動作。 |
-| 解決方式和注意事項 | [驗證]**** 按鈕只有在有錯誤時才會傳回錯誤。 反之，如果您已提供 IFM 路徑，會讓 [下一步]**** 按鈕變成可選取。 如果您已選取 IFM，您必須按一下 [驗證]**** 才能繼續。 |
+| 徵兆 | 當您指定 IFM 資料夾的路徑時，按一下 [驗證]  按鈕時沒有傳回訊息或似乎沒有執行任何動作。 |
+| 解決方式和注意事項 | [驗證]  按鈕只有在有錯誤時才會傳回錯誤。 反之，如果您已提供 IFM 路徑，會讓 [下一步]  按鈕變成可選取。 如果您已選取 IFM，您必須按一下 [驗證]  才能繼續。 |
 
 | 問題 | 使用伺服器管理員執行降級作業時，不會在作業完成之前提供任何意見反應。 |
 |--|--|
@@ -272,13 +272,13 @@ ms.locfileid: "88940608"
 
 | 問題 | 「從媒體安裝驗證」不會偵測針對可寫入網域控制站提供的 RODC 媒體，反之亦然。 |
 |--|--|
-| 徵兆 | 使用 IFM 升級新的網域控制站且提供給 IMF 的媒體不正確時 (例如提供 RODC 媒體給可寫入網域控制站，或提供 RWDC 媒體給 RODC ) [驗證] 按鈕都不會傳回錯誤。 之後，升級會失敗並顯示錯誤：<p>程式碼-嘗試將此電腦設定為網域控制站時發生錯誤。 <br />因為不允許指定的源資料庫，所以無法啟動唯讀 DC 的從媒體安裝升級。 只有來自其他 Rodc 的資料庫可用於 RODC 的 IFM 升級。 |
+| 徵兆 | 使用 IFM 升級新的網域控制站且提供給 IMF 的媒體不正確時 (例如提供 RODC 媒體給可寫入網域控制站，或提供 RWDC 媒體給 RODC ) [驗證] 按鈕都不會傳回錯誤。 之後，升級會失敗並顯示錯誤：<p>程式碼-嘗試將此電腦設定為網域控制站時發生錯誤。 <br />因為不允許指定的源資料庫，所以無法啟動 Read-Only DC 的從媒體安裝升級。 只有來自其他 Rodc 的資料庫可用於 RODC 的 IFM 升級。 |
 | 解決方式和注意事項 | 驗證時只會驗證 IFM 的整體完整性。 請勿提供錯誤的 IFM 類型給伺服器。 請先重新啟動伺服器，然後使用正確的媒體再次嘗試升級。 |
 
 | 問題 | 預先建立之電腦帳戶中的 RODC 升級失敗 |
 |--|--|
 | 徵兆 | 使用 ADDSDeployment Windows PowerShell 來升級具備分段電腦帳戶的新 RODC 時，收到錯誤：<p>無法使用指定的具名引數來解析程式代碼參數集。    <br />InvalidArgument: ParameterBindingException<br />    + FullyQualifiedErrorId： AmbiguousParameterSet，DirectoryServices.. 安裝 |
-| 解決方式和注意事項 | 請勿提供已在預先建立的 RODC 帳戶中定義的參數。 其中包含：<p>程式碼--readonlyreplica<br />-installdns<br />-donotconfigureglobalcatalog<br />-sitename<br />-installdns |
+| 解決方式和注意事項 | 請勿提供已在預先建立的 RODC 帳戶中定義的參數。 它們包括：<p>程式碼--readonlyreplica<br />-installdns<br />-donotconfigureglobalcatalog<br />-sitename<br />-installdns |
 
 | 問題 | 取消選取/選取 [必要時自動重新啟動目的地伺服器] 時未執行任何動作 |
 |--|--|
@@ -308,11 +308,11 @@ ms.locfileid: "88940608"
 | 問題 | 升級之後登入失敗，並顯示 [儲存體不足，無法處理此命令。 ] |
 |--|--|
 | 徵兆 | 在您升級新的網域控制站之後，接著登出並嘗試以互動方式登入時，您收到錯誤：<p>程式碼-沒有足夠的儲存空間可用來處理此命令 |
-| 解決方式和注意事項 | 因為發生錯誤或因為您指定了 ADDSDeployment Windows PowerShell 引數 **-norebootoncompletion**，導致網域控制站沒有在升級之後重新開機。 重新啟動網域控制站。 |
+| 解決方式和注意事項 | 因為發生錯誤或因為您指定了 ADDSDeployment Windows PowerShell 引數 **-norebootoncompletion** ，導致網域控制站沒有在升級之後重新開機。 重新啟動網域控制站。 |
 
 | 問題 | [網域控制站選項] 頁面的 [下一步] 按鈕無法使用 |
 |--|--|
-| 徵兆 | 即使您已設定密碼，伺服器管理員的 [網域控制站選項]**** 頁面中還是無法使用 [下一步]**** 按鈕。 [站台名稱]**** 功能表中沒有列出任何站台。 |
+| 徵兆 | 即使您已設定密碼，伺服器管理員的 [網域控制站選項]  頁面中還是無法使用 [下一步]  按鈕。 [站台名稱]  功能表中沒有列出任何站台。 |
 | 解決方式和注意事項 | 您有多個 AD DS 站台且至少有一個站台遺失子網路。這個新的網域控制站隸屬於那些子網路的其中之一。 您必須從 [站台名稱] 下拉式功能表手動選取子網路。 您也應該使用 DSSITE.MSC 檢閱所有 AD 站台，或使用以下 Windows PowerShell 命令來尋找遺失子網路的所有站台：<p>程式碼-adreplicationsite-filter \* -屬性子網 &#124; 其中-object {！ $ _ subnet-eq " \* "} &#124; 格式-資料表名稱 |
 
 | 問題 | 升級或降級失敗，且顯示 [無法啟動服務] 訊息 |
@@ -322,7 +322,7 @@ ms.locfileid: "88940608"
 
 | 問題 | 伺服器管理員仍然會顯示您需要升級 DC 的警告 |
 |--|--|
-| 徵兆 | 如果您使用過時的 dcpromo.exe /unattend 升級網域控制站，或將現有 Windows Server 2008 R2 網域控制站就地升級至 Windows Server 2012，伺服器管理員仍會顯示部署後組態設定工作：**將此伺服器升級為網域控制站**。 |
+| 徵兆 | 如果您使用過時的 dcpromo.exe /unattend 升級網域控制站，或將現有 Windows Server 2008 R2 網域控制站就地升級至 Windows Server 2012，伺服器管理員仍會顯示部署後組態設定工作： **將此伺服器升級為網域控制站** 。 |
 | 解決方式和注意事項 | 按一下部署後警告連結，訊息就會消失。 此行為沒有實質作用且是預期的行為。 |
 
 | 問題 | 伺服器管理員部署指令碼遺失角色安裝 |

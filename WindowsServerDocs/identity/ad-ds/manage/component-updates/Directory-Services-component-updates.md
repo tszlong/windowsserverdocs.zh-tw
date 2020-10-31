@@ -2,22 +2,22 @@
 ms.assetid: 8a3cf2ae-2511-4eea-afd5-a43179a78613
 title: 目錄服務元件更新
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 39f13d18210a6527c5da2ccb6655150be9608a46
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 85095e1b75ca5c2ae781ffddbeed43e5bb3a3864
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88939588"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93070760"
 ---
 # <a name="directory-services-component-updates"></a>目錄服務元件更新
 
 >適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-**作者**： Justin Turner，與 Windows 群組的資深支援擴大工程師
+**作者** ： Justin Turner，與 Windows 群組的資深支援擴大工程師
 
 > [!NOTE]
 > 本內容由 Microsoft 客戶支援工程師編寫，適用對象為經驗豐富的系統管理員和系統架構​​師，如果 TechNet 提供的主題已無法滿足您，您要找的是 Windows Server 2012 R2 中功能和解決方案的更深入技術講解，則您是本文的適用對象。 不過，本文未經過相同的編輯階段，因此部分語句也許不如 TechNet 文章那樣洗鍊。
@@ -53,9 +53,9 @@ ms.locfileid: "88939588"
 
 ### <a name="the-windows-server-2012-r2-domain-functional-level-enables-support-for-the-following"></a>Windows Server 2012 R2 網域功能等級可支援下列各項：
 
-1.  *受保護使用者*的 DC 端保護
+1.  *受保護使用者* 的 DC 端保護
 
-    對 Windows Server 2012 R2 網域進行驗證的*受保護使用者*無法**再**執行：
+    對 Windows Server 2012 R2 網域進行驗證的 *受保護使用者* 無法 **再** 執行：
 
     -   使用 NTLM 驗證進行驗證
 
@@ -95,7 +95,7 @@ Windows Server 2008 DFL 是新網域建立時支援的最小功能等級。
 Set-ADForestMode -ForestMode Windows2008Forest -Identity contoso.com
 ```
 
-若要使用 Windows PowerShell 提高或降低網域功能等級，請使用 Windows2008r2forestset-addomainmode Cmdlet。
+若要使用 Windows PowerShell 提高或降低網域功能等級，請使用 Set-ADDomainMode Cmdlet。
 
 **若要將 contoso.com DFL 設定為 Windows Server 2008 模式：**
 
@@ -112,7 +112,7 @@ Set-ADDomainMode -DomainMode Windows2008Domain -Identity contoso.com
 ### <a name="adprep"></a>ADPREP.LOG
 此版本中沒有新的樹系或網域作業。
 
-這些 .ldf 檔案包含 **裝置註冊服務**的架構變更。
+這些 .ldf 檔案包含 **裝置註冊服務** 的架構變更。
 
 1.  Sch59
 
@@ -147,7 +147,7 @@ Set-ADDomainMode -DomainMode Windows2008Domain -Identity contoso.com
 ### <a name="overview"></a>概觀
 FRS 已在 Windows Server 2012 R2 中淘汰。  藉由強制執行 Windows Server 2008 (DFL) 的最低網域功能等級，即可完成 FRS 的淘汰。  只有在使用伺服器管理員或 Windows PowerShell 建立新網域時，才會出現這項強制執行。
 
-您可以使用-DomainMode 參數搭配 Install-addsforest 或 Install-addsdomain Cmdlet 來指定網域功能等級。  此參數支援的值可以是有效的整數或對應的列舉字串值。 例如，若要將網域模式層級設定為 Windows Server 2008 R2，您可以指定值4或 "Win2008R2"。  從 Server 2012 R2 中執行這些 Cmdlet 時，有效的值包括 Windows Server 2008 (3、Win2008) Windows Server 2008 R2 (4、Win2008R2) Windows Server 2012 (5、Win2012) 和 Windows Server 2012 R2 (6、Win2012R2) 。 網域功能等級不能低於、但可以高於樹系功能等級。  由於 FRS 在此版本中已被取代，因此從 Windows Server 2012 R2 執行時，Windows Server 2003 (2，Win2003) 不是可辨識的參數與這些 Cmdlet。
+您可以使用-DomainMode 參數搭配 Install-ADDSForest 或 Install-ADDSDomain Cmdlet 來指定網域功能等級。  此參數支援的值可以是有效的整數或對應的列舉字串值。 例如，若要將網域模式層級設定為 Windows Server 2008 R2，您可以指定值4或 "Win2008R2"。  從 Server 2012 R2 中執行這些 Cmdlet 時，有效的值包括 Windows Server 2008 (3、Win2008) Windows Server 2008 R2 (4、Win2008R2) Windows Server 2012 (5、Win2012) 和 Windows Server 2012 R2 (6、Win2012R2) 。 網域功能等級不能低於、但可以高於樹系功能等級。  由於 FRS 在此版本中已被取代，因此從 Windows Server 2012 R2 執行時，Windows Server 2003 (2，Win2003) 不是可辨識的參數與這些 Cmdlet。
 
 ![目錄服務更新](media/Directory-Services-component-updates/GTR_ADDS_PS_Install2003DFL.gif)
 
@@ -269,17 +269,17 @@ Log Record Bytes Generated: 0
 
 1.  開啟 LDP.exe，並連接並系結至網域控制站。
 
-2.  在 [ **選項** ] 功能表上，按一下 [ **控制項**]。
+2.  在 [ **選項** ] 功能表上，按一下 [ **控制項** ]。
 
-3.  在 [控制項] 對話方塊中，展開 [ **載入預先定義** ] 下拉式功能表，然後按一下 [ **搜尋統計** 資料]，再按一下 **[確定]**。
+3.  在 [控制項] 對話方塊中，展開 [ **載入預先定義** ] 下拉式功能表，然後按一下 [ **搜尋統計** 資料]，再按一下 **[確定]** 。
 
     ![目錄服務更新](media/Directory-Services-component-updates/GTR_ADDS_Controls.gif)
 
-4.  在 [**流覽]** 功能表上，按一下 [**搜尋**]
+4.  在 [ **流覽]** 功能表上，按一下 [ **搜尋** ]
 
 5.  在 [搜尋] 對話方塊中，選取 [ **選項** ] 按鈕。
 
-6.  確定已在 [搜尋選項] 對話方塊中選取 [ **擴充** ] 核取方塊，然後選取 **[確定]**。
+6.  確定已在 [搜尋選項] 對話方塊中選取 [ **擴充** ] 核取方塊，然後選取 **[確定]** 。
 
     ![目錄服務更新](media/Directory-Services-component-updates/GTR_ADDS_SearchOptions.gif)
 
@@ -301,7 +301,7 @@ Log Record Bytes Generated: 0
 
 [Active Directory 搜尋的運作方式](/previous-versions/windows/it-pro/windows-server-2003/cc755809(v=ws.10))
 
-[建立更有效率的 Microsoft Active Directory 啟用應用程式](/previous-versions/ms808539(v=msdn.10))
+[建立更有效率的 Microsoft Active Directory-Enabled 應用程式](/previous-versions/ms808539(v=msdn.10))
 
 [951581](https://support.microsoft.com/kb/951581) LDAP 查詢執行速度比 AD 或 LDS/ADAM 目錄服務中的預期更慢，而且可能會記錄事件識別碼1644
 
@@ -323,7 +323,7 @@ Log Record Bytes Generated: 0
 
 -   開始節點
 
--   Filter
+-   篩選
 
 -   搜尋範圍
 

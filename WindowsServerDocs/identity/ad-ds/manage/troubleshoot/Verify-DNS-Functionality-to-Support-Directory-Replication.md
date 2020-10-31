@@ -1,15 +1,15 @@
 ---
 ms.assetid: 709353b0-b913-4367-8580-44745183e2bc
 title: 驗證 DNS 功能以支援目錄複寫
-ms.author: iainfou
+ms.author: daveba
 ms.date: 05/31/2017
 author: Femila
-ms.openlocfilehash: c59160cb3242a91ef8a86d9e8247e0f2d376395b
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 0a79a4b73a9e3d610408076c8e7526f504055d53
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88938058"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93071250"
 ---
 # <a name="verify-dns-functionality-to-support-directory-replication"></a>驗證 DNS 功能以支援目錄複寫
 
@@ -26,11 +26,11 @@ ms.locfileid: "88938058"
 基本 DNS 測試會檢查 DNS 功能的下列層面：
 
 
-- 連線**能力：** 測試會判斷是否已在 DNS 中登錄網域控制站、是否可由<system>ping</system>命令聯繫，以及是否有輕量型目錄存取協定/遠端程序呼叫 (LDAP/RPC) 連線能力。 如果網域控制站上的連線測試失敗，則不會對該網域控制站執行其他測試。 連線能力測試會在執行任何其他 DNS 測試之前自動執行。
+- 連線 **能力：** 測試會判斷是否已在 DNS 中登錄網域控制站、是否可由 <system>ping</system>命令聯繫，以及是否有輕量型目錄存取協定/遠端程序呼叫 (LDAP/RPC) 連線能力。 如果網域控制站上的連線測試失敗，則不會對該網域控制站執行其他測試。 連線能力測試會在執行任何其他 DNS 測試之前自動執行。
 - **基本服務：** 測試會確認下列服務正在執行，且可在測試的網域控制站上使用： DNS 用戶端服務、Net Logon 服務、金鑰發佈中心 (KDC) 服務和 DNS 伺服器服務 (是否已將 DNS 安裝在網域控制站) 上。
 - **DNS 用戶端設定：**  此測試會確認 DNS 用戶端電腦的所有網路介面卡上的 DNS 伺服器都可以連線。
 - **資源記錄註冊：** 此測試會確認主機 (每個網域控制站的) 資源記錄，都至少註冊在用戶端電腦上所設定的其中一部 DNS 伺服器上。
-- ** (SOA) 的區域和啟動授權單位：** 如果網域控制站正在執行 DNS 伺服器服務，則測試會確認 Active Directory 網域區域的 Active Directory 網域區域和啟動授權單位 (SOA) 資源記錄。
+- **(SOA) 的區域和啟動授權單位：** 如果網域控制站正在執行 DNS 伺服器服務，則測試會確認 Active Directory 網域區域的 Active Directory 網域區域和啟動授權單位 (SOA) 資源記錄。
 - **根區域：** 檢查根 (. ) 區域是否存在。
 
 若要完成這些程式，至少需要 Enterprise Admins 的成員資格或同等許可權。
@@ -40,7 +40,7 @@ ms.locfileid: "88938058"
 ### <a name="to-verify-basic-dns-functionality"></a>若要驗證基本 DNS 功能：
 
 
-1. 在您要測試的網域控制站上，或已安裝 Active Directory Domain Services (AD DS) 工具的網域成員電腦上，以系統管理員身分開啟命令提示字元。 若要以系統管理員身分開啟命令提示字元，按一下 [**開始**]。
+1. 在您要測試的網域控制站上，或已安裝 Active Directory Domain Services (AD DS) 工具的網域成員電腦上，以系統管理員身分開啟命令提示字元。 若要以系統管理員身分開啟命令提示字元，按一下 [ **開始** ]。
 2. 在 [開始搜尋] 中輸入 Command Prompt，
 3. 在 [開始] 功能表的頂端，以滑鼠右鍵按一下 [命令提示字元]，然後按一下 [以系統管理員身分執行]。 如果出現 [使用者帳戶控制] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [繼續]。
 4. 在命令提示字元中輸入下列命令，然後按 ENTER 鍵： `dcdiag /test:dns /v /s:<DCName> /DnsBasic /f:dcdiagreport.txt`
@@ -73,8 +73,8 @@ ms.locfileid: "88938058"
 - **別名 (CNAME) ：** 找出複寫夥伴的全域唯一識別碼 (GUID) 架構資源記錄
 - **主機 () ：**  包含網域控制站 IP 位址的主機資源記錄
 - **LDAP SRV：** 服務 (SRV) 找出 LDAP 伺服器的資源記錄
-- **GC SRV**：服務 (SRV) 找出通用類別目錄伺服器的資源記錄
-- **PDC SRV**：服務 (SRV) 資源記錄，以找出網域主控站 (PDC) 模擬器操作主機
+- **GC SRV** ：服務 (SRV) 找出通用類別目錄伺服器的資源記錄
+- **PDC SRV** ：服務 (SRV) 資源記錄，以找出網域主控站 (PDC) 模擬器操作主機
 
 您可以使用下列程式單獨驗證別名 (CNAME) 資源記錄註冊。
 
@@ -83,7 +83,7 @@ ms.locfileid: "88938058"
 1. 開啟 DNS 嵌入式管理單元。 若要開啟 DNS，請按一下 [開始]。 在 [開始搜尋] 中，輸入 dnsmgmt.msc，然後按 ENTER。 如果出現 [使用者帳戶控制] 對話方塊，請確認它顯示您想要的動作，然後按一下 [繼續]。
 2. 您可以使用 DNS 嵌入式管理單元來尋找任何執行 DNS 伺服器服務的網域控制站，其中伺服器會使用與網域控制站的 Active Directory 網域相同的名稱來裝載 DNS 區域。
 3. 在主控台樹中，按一下名為 _msdcs 的區域。Dns_Domain_Name。
-4. 在詳細資料窗格中，確認有下列資源記錄存在：別名 (CNAME) 名為 _msdcs Dsa_Guid 的資源記錄。<placeholder>Dns_Domain_Name</placeholder> 和對應的主機 (Dns 伺服器名稱的) 資源記錄。
+4. 在詳細資料窗格中，確認有下列資源記錄存在：別名 (CNAME) 名為 Dsa_Guid. _msdcs 的資源記錄。<placeholder>Dns_Domain_Name</placeholder> 和對應的主機 (Dns 伺服器名稱的) 資源記錄。
 
 如果別名 (CNAME) 資源記錄未註冊，請確認動態更新是否正常運作。 使用下一節中的測試來驗證動態更新。
 

@@ -2,16 +2,16 @@
 ms.assetid: 0fd7b6aa-3e50-45a3-a3a6-56982844363e
 title: 事件識別碼 2088-複寫成功時發生 DNS 查閱失敗
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: a6e78c458f92e477ddeaf156370f5e254caf4679
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 41ab450c98dd607c3c849fb94a1adbb9f1708375
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941338"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93070710"
 ---
 # <a name="event-id-2088-dns-lookup-failure-occurred-with-replication-success"></a>事件識別碼 2088：發生 DNS 查閱錯誤但複寫成功
 
@@ -39,7 +39,7 @@ DNS 設定無效可能會影響此 Active Directory Domain Services 樹系中成
 
 您應該立即解決此 DNS 設定錯誤，讓此網域控制站可以使用 DNS 解析來源網域控制站的 IP 位址。
 
-替代伺服器名稱： DC1 失敗的 DNS 主機名稱：4a8717eb-8e58-456c-995a-c92e4add7e8e。 _msdcs .com
+替代伺服器名稱： DC1 失敗的 DNS 主機名稱： 4a8717eb-8e58-456c-995a-c92e4add7e8e._msdcs .com
 
 注意：根據預設，任何指定的12小時期間內只會顯示最多10個 DNS 失敗，即使發生10次以上的失敗也是如此。  若要記錄所有個別的失敗事件，請將下列診斷登錄值設定為1：
 
@@ -69,7 +69,7 @@ dcdiag/test： dns
     </content>
   </section>
   <section>
-    <title>解決方法</title>
+    <title>解決方案</title>
     <content>
       <para>繼續進行 DNS 測試，如 &quot; <link xlink:href="85b1d179-f53e-4f95-b0b8-5b1c096a8076">事件識別碼2087中所述： dns 查閱失敗導致複寫失敗</link>。&quot;</para>
     </content>

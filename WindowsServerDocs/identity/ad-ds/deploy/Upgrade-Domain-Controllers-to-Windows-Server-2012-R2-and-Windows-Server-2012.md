@@ -1,17 +1,17 @@
 ---
 ms.assetid: e4c31187-f15f-410b-bb79-8d63e2f2b421
 title: 將網域控制站升級為 Windows Server 2012 R2 與 Windows Server 2012
-ms.author: iainfou
+ms.author: daveba
 author: iainfoulds
 manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: 4034ea96fbe1f758d6948b2bc52ba9786158b0ba
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: edffa7869aa1895a09e7007c375b8973f68e4eed
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88940558"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93069900"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012"></a>將網域控制站升級為 Windows Server 2012 R2 與 Windows Server 2012
 
@@ -121,10 +121,10 @@ Windows 8 與 Windows Server 2012 引進一項名為 [自動維護](/windows/win
 
 |||
 |-|-|
-|**案例**|**建議的 configuration (s) **|
-|**WSUS 管理的**<p>-每週安裝更新一次<br />-晚上11點重新開機星期五|設定機器自動安裝，防止在需要的時間之前重新開機<p>**原則**：設定自動更新 (啟用)<p>設定自動更新： 4-自動下載並排程安裝<p>**原則**： (停用登入的使用者不會自動重新開機) <p>**WSUS 期限**：設定為星期五晚上 11 點|
+|**案例**|**建議的 configuration (s)**|
+|**WSUS 管理的**<p>-每週安裝更新一次<br />-晚上11點重新開機星期五|設定機器自動安裝，防止在需要的時間之前重新開機<p>**原則** ：設定自動更新 (啟用)<p>設定自動更新： 4-自動下載並排程安裝<p>**原則** ： (停用登入的使用者不會自動重新開機) <p>**WSUS 期限** ：設定為星期五晚上 11 點|
 |**WSUS 管理的**<p>-在不同的小時/天錯開安裝|為應該一起更新的不同電腦群組設定目標群組<p>為先前的案例使用上述步驟<p>為不同的目標群組設定不同期限|
-|**不受 WSUS 管理-不支援期限**<p>-錯開不同時間的安裝|**原則**：設定自動更新 (啟用)<p>設定自動更新： 4-自動下載並排程安裝<p>**登錄機碼：** 如需啟用登錄機碼的資訊，請參閱 Microsoft 知識庫文章 [2835627](https://support.microsoft.com/kb/2835627)<p>**原則：** 自動維護隨機延遲 (啟用)<p>將 [定期維護隨機延遲]**** 設為 PT6H 以設定 6 小時的隨機延遲，可提供下列行為：<p>-更新將會安裝在設定的維護時間加上隨機延遲<p>-每台電腦的重新開機將會在3天后進行<p>或者，為每個電腦群組設定不同的維護時間|
+|**不受 WSUS 管理-不支援期限**<p>-錯開不同時間的安裝|**原則** ：設定自動更新 (啟用)<p>設定自動更新： 4-自動下載並排程安裝<p>**登錄機碼：** 如需啟用登錄機碼的資訊，請參閱 Microsoft 知識庫文章 [2835627](https://support.microsoft.com/kb/2835627)<p>**原則：** 自動維護隨機延遲 (啟用)<p>將 [定期維護隨機延遲]  設為 PT6H 以設定 6 小時的隨機延遲，可提供下列行為：<p>-更新將會安裝在設定的維護時間加上隨機延遲<p>-每台電腦的重新開機將會在3天后進行<p>或者，為每個電腦群組設定不同的維護時間|
 
 如需 Windows 工程小組為何實作這些變更的詳細資訊，請參閱 [最小化在 Windows Update 執行自動更新後的重新啟動次數](https://blogs.msdn.com/b/b8/archive/2011/11/14/minimizing-restarts-after-automatic-updating-in-windows-update.aspx)。
 
@@ -155,9 +155,9 @@ AD DS 安裝精靈的先決條件檢查會在安裝開始前識別可能的錯�
 | 加密類型或原則 | Windows Server 2008 預設值 | Windows Server 2012 和 Windows Server 2008 R2 預設值 | 註解 |
 |--|--|--|--|
 | AllowNT4Crypto | 已停用 | 已停用 | 協力廠商伺服器訊息區 (SMB) 用戶端可能與網域控制站上的安全預設設定不相容。 在所有情況下，這些設定可放寬以允許交互操作性，但同時也會產生安全風險。 如需詳細資訊，請參閱 Microsoft 知識庫中的 [文章 942564](https://go.microsoft.com/fwlink/?LinkId=164558) (https://go.microsoft.com/fwlink/?LinkId=164558) 。 |
-| DES | 啟用 | 已停用 | Microsoft 知識庫中的[文章 977321](https://go.microsoft.com/fwlink/?LinkId=177717) (https://go.microsoft.com/fwlink/?LinkId=177717) |
-| CBT/整合式驗證的擴充保護 | N/A | 已啟用 | 請參閱 microsoft 知識庫 (中的 [Microsoft 資訊安全諮詢 (937811) ](https://go.microsoft.com/fwlink/?LinkId=164559) (https://go.microsoft.com/fwlink/?LinkId=164559) 和 [文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) https://go.microsoft.com/fwlink/?LinkId=178251) 。<p>如有必要，請在 Microsoft 知識庫的 [文章 977073](https://go.microsoft.com/fwlink/?LinkId=186394) (中，檢查並安裝此修正程式 https://go.microsoft.com/fwlink/?LinkId=186394) 。 |
-| LMv2 | 啟用 | 已停用 | Microsoft 知識庫中的[文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) (https://go.microsoft.com/fwlink/?LinkId=178251) |
+| DES | 啟用 | 停用 | Microsoft 知識庫中的[文章 977321](https://go.microsoft.com/fwlink/?LinkId=177717) (https://go.microsoft.com/fwlink/?LinkId=177717) |
+| CBT/整合式驗證的擴充保護 | N/A | 啟用 | 請參閱 microsoft 知識庫 (中的 [Microsoft 資訊安全諮詢 (937811) ](https://go.microsoft.com/fwlink/?LinkId=164559) (https://go.microsoft.com/fwlink/?LinkId=164559) 和 [文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) https://go.microsoft.com/fwlink/?LinkId=178251) 。<p>如有必要，請在 Microsoft 知識庫的 [文章 977073](https://go.microsoft.com/fwlink/?LinkId=186394) (中，檢查並安裝此修正程式 https://go.microsoft.com/fwlink/?LinkId=186394) 。 |
+| LMv2 | 啟用 | 停用 | Microsoft 知識庫中的[文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) (https://go.microsoft.com/fwlink/?LinkId=178251) |
 
 ## <a name="operating-system-requirements"></a><a name="BKMK_SysReqs"></a>作業系統需求
 
@@ -200,10 +200,10 @@ Standard 和 Datacenter 這兩個版本可支援 AD DS 角色。
 
 | 如果您執行這些版本 | 您可以升級到這些版本 |
 |--|--|
-| Windows Server 2008 Standard (含 SP2)<p>或<p>Windows Server 2008 Enterprise (含 SP2) | Windows Server 2012 Standard<p>或<p>Windows Server 2012 Datacenter |
+| Windows Server 2008 Standard (含 SP2)<p>OR<p>Windows Server 2008 Enterprise (含 SP2) | Windows Server 2012 Standard<p>OR<p>Windows Server 2012 Datacenter |
 | Windows Server 2008 Datacenter (含 SP2) | Windows Server 2012 Datacenter |
 | Windows Web Server 2008 | Windows Server 2012 Standard |
-| Windows Server 2008 R2 Standard (含 SP1)<p>或<p>Windows Server 2008 R2 Enterprise (含 SP1) | Windows Server 2012 Standard<p>或<p>Windows Server 2012 Datacenter |
+| Windows Server 2008 R2 Standard (含 SP1)<p>OR<p>Windows Server 2008 R2 Enterprise (含 SP1) | Windows Server 2012 Standard<p>OR<p>Windows Server 2012 Datacenter |
 | Windows Server 2008 R2 Datacenter (含 SP1) | Windows Server 2012 Datacenter |
 | Windows Web Server 2008 R2 | Windows Server 2012 Standard |
 
@@ -223,7 +223,7 @@ Windows 2000 網域控制站必須先行移除，才能將 Windows Server 2012 �
 4. 安裝執行 Windows Serer 2012 的網域控制站。
 5. 移除執行舊版 Windows Server 的網域控制站。
 
-新的 Windows Server 2012 網域功能等級啟用了一項新功能： **宣告、複合驗證和 Kerberos** 防護 kdc 系統管理範本原則的 KDC 支援有兩項設定 (**一律提供宣告** ，以及 **未受防護驗證要求失敗** ，) 需要 Windows Server 2012 網域功能等級。
+新的 Windows Server 2012 網域功能等級啟用了一項新功能： **宣告、複合驗證和 Kerberos** 防護 kdc 系統管理範本原則的 KDC 支援有兩項設定 ( **一律提供宣告** ，以及 **未受防護驗證要求失敗** ，) 需要 Windows Server 2012 網域功能等級。
 
 Windows Server 2012 樹系功能等級不提供任何新功能，但可確保樹系中建立的任何新網域都會自動在 Windows Server 2012 網域功能等級運作。 Windows Server 2012 網域功能等級不提供宣告、複合驗證和 Kerberos 防護的 KDC 支援以外的其他新功能。 但它可以確保網域中的任何網域控制站都執行 Windows Server 2012。 如需不同功能等級可用之其他功能的詳細資訊，請參閱 [了解 Active Directory 網域服務 (AD DS) 功能等級](../active-directory-functional-levels.md)。
 

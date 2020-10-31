@@ -2,16 +2,16 @@
 ms.assetid: c911d6c6-98c6-4532-b1db-5724e1ceb96c
 title: 簡化的系統管理附錄
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 34d8af5166df3627e22b268359df5aa8bdb422c9
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 31a04d96f8e742ddb8aa9a94e70ebb2fc1002131
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88940688"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93069970"
 ---
 # <a name="simplified-administration-appendix"></a>簡化的系統管理附錄
 
@@ -90,7 +90,7 @@ dir
 查看是否有可用的更新，可偵測 [並避免在執行 Windows Server 2008 R2 的網域控制站上使用的全域 RID 集區過於過度耗用量](https://support.microsoft.com/kb/2618669)。
 
 ## <a name="ntdsutilexe-install-from-media-changes"></a><a name="BKMK_IFM"></a> 從媒體變更安裝Ntdsutil.exe
-在 Ntdsutil.exe 命令列工具中，Windows Server 2012 新增了另外兩個選項，可供 **ifm (Ifm 媒體建立) ** 功能表。 這些可讓您建立 IFM 存放區，而不需要先執行匯出之 NTDS 的離線磁碟重組。DIT 資料庫檔案。 當磁碟空間不是 premium 時，這會節省建立 IFM 的時間。
+在 Ntdsutil.exe 命令列工具中，Windows Server 2012 新增了另外兩個選項，可供 **ifm (Ifm 媒體建立)** 功能表。 這些可讓您建立 IFM 存放區，而不需要先執行匯出之 NTDS 的離線磁碟重組。DIT 資料庫檔案。 當磁碟空間不是 premium 時，這會節省建立 IFM 的時間。
 
 下表描述兩個新的功能表項目：
 

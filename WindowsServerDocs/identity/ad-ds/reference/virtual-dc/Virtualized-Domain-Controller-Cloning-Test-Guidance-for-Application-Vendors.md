@@ -2,16 +2,16 @@
 ms.assetid: fde99b44-cb9f-49bf-b888-edaeabe6b88d
 title: 適用於應用程式廠商的虛擬網域控制站複製測試指導方針
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: f8a108226f0aff37cd730a477bd6ee5d865399df
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 03272c7dc3afaccac9fb48d591f4f17d84bcccd4
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88940258"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93070910"
 ---
 # <a name="virtualized-domain-controller-cloning-test-guidance-for-application-vendors"></a>適用於應用程式廠商的虛擬網域控制站複製測試指導方針
 
@@ -43,13 +43,13 @@ ms.locfileid: "88940258"
 ### <a name="customdccloneallowlistxml"></a>CustomDCCloneAllowList.xml
 無法複製執行應用程式或服務的網域控制站，直到應用程式或服務可能是：
 
--   使用 ADDCCloningExcludedApplicationList Windows PowerShell Cmdlet 新增至 CustomDCCloneAllowList.xml 檔案
+-   使用 Get-ADDCCloningExcludedApplicationList Windows PowerShell Cmdlet 新增至 CustomDCCloneAllowList.xml 檔案
 
 -或-
 
 -   已從網域控制站移除
 
-使用者第一次執行 ADDCCloningExcludedApplicationList Cmdlet 時，會傳回在網域控制站上執行的服務和應用程式清單，但不在支援複製的預設服務和應用程式清單中。 根據預設，將不會列出您的服務或應用程式。 若要將您的服務或應用程式新增至可安全複製的應用程式和服務清單，使用者會再次執行 ADDCCloningExcludedApplicationList 指令程式，並使用-GenerateXML 選項，以將它新增至 CustomDCCloneAllowList.xml 檔案。 如需詳細資訊，請參閱 [步驟2：執行 ADDCCloningExcludedApplicationList Cmdlet](/powershell/module/addsadministration/get-addccloningexcludedapplicationlist)。
+使用者第一次執行 Get-ADDCCloningExcludedApplicationList Cmdlet 時，會傳回在網域控制站上執行的服務和應用程式清單，但不在支援複製的預設服務和應用程式清單中。 根據預設，將不會列出您的服務或應用程式。 若要將您的服務或應用程式新增至可安全複製的應用程式和服務清單，使用者會再次使用-GenerateXML 選項執行 Get-ADDCCloningExcludedApplicationList Cmdlet，以便將它新增至 CustomDCCloneAllowList.xml 檔案。 如需詳細資訊，請參閱 [步驟2：執行 Get-ADDCCloningExcludedApplicationList Cmdlet](/powershell/module/addsadministration/get-addccloningexcludedapplicationlist)。
 
 ### <a name="distributed-system-interactions"></a>分散式系統互動
 在參與複製時，通常會在本機電腦上隔離或失敗的服務。 分散式服務必須在意網路上的兩個主機電腦實例一小段時間。 這可能會以服務實例的形式出現，該實例會嘗試從夥伴系統提取資訊，其中複製已註冊為身分識別的新廠商。 或服務的兩個實例可能會以不同的結果同時將資訊推送至 AD DS 資料庫。 例如，當兩部具有 Windows 測試技術 (WTT) service 位於網路上具有網域控制站的電腦時，就不具決定性。

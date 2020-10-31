@@ -1,17 +1,17 @@
 ---
 ms.assetid: 155abe09-6360-4913-8dd9-7392d71ea4e6
 title: 設定電腦進行疑難排解
-ms.author: iainfou
+ms.author: daveba
 author: iainfoulds
 manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: 049addf848e231104e844c06627997c71b335d20
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: f340cd9608eec21110efe7d10e936c5320d6e303
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88938738"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93070460"
 ---
 # <a name="configuring-a-computer-for-troubleshooting"></a>設定電腦進行疑難排解
 
@@ -39,9 +39,9 @@ Windows Server 包含 Windows 可靠性和效能監視器，這是一種 Microso
 
 ### <a name="set-logging-levels"></a>設定記錄層級
 
-如果您在目錄服務記錄檔中收到事件檢視器的資訊不足以進行疑難排解，請在 **HKEY_LOCAL_MACHINE \system\currentcontrolset\services\ntds\diagnostics**中使用適當的登錄專案，以提高記錄層級。
+如果您在目錄服務記錄檔中收到事件檢視器的資訊不足以進行疑難排解，請在 **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NTDS\Diagnostics** 中使用適當的登錄專案，以提高記錄層級。
 
-依預設，所有專案的記錄層級會設定為 **0**，這會提供最少量的資訊。 最高的記錄層級為 **5**。 提高專案的層級會在目錄服務事件記錄檔中記錄其他事件。
+依預設，所有專案的記錄層級會設定為 **0** ，這會提供最少量的資訊。 最高的記錄層級為 **5** 。 提高專案的層級會在目錄服務事件記錄檔中記錄其他事件。
 
 使用下列程式來變更診斷專案的記錄層級。 至少要有 **Domain Admins** 的成員資格或是對等成員資格，才能完成此程序。
 
@@ -51,8 +51,8 @@ Windows Server 包含 Windows 可靠性和效能監視器，這是一種 Microso
 
 變更診斷專案的記錄層級
 
-1. 按一下 [**開始**  >  **執行**] > 輸入**regedit** > 按一下 **[確定]**。
+1. 按一下 [ **開始**  >  **執行** ] > 輸入 **regedit** > 按一下 **[確定]** 。
 2. 流覽至您要為其設定登入的專案。
    * 範例： HKEY_LOCAL_MACHINESYSTEMCurrentControlSetServicesNTDSDiagnostics
-3. 按兩下專案，然後按一下 [ **基底**] 中的 [ **小數**]。
-4. 在 [ **值**] 中，輸入從 **0** 到 **5**的整數，然後按一下 **[確定]**。
+3. 按兩下專案，然後按一下 [ **基底** ] 中的 [ **小數** ]。
+4. 在 [ **值** ] 中，輸入從 **0** 到 **5** 的整數，然後按一下 **[確定]** 。

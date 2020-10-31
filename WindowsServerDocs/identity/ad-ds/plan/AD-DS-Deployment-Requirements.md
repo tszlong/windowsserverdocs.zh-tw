@@ -2,16 +2,16 @@
 ms.assetid: e02bb152-d0db-40b0-9942-846dce75f6c7
 title: AD DS 部署需求
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: a74f99afaacef050bc828eff8f84a76875c644fd
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: cfd8e6469dd707cac76a35cf999cb0a91c805864
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941318"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93071240"
 ---
 # <a name="ad-ds-deployment-requirements"></a>AD DS 部署需求
 

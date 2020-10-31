@@ -3,23 +3,23 @@ ms.assetid: cb834273-828a-4141-9387-37dd8270e932
 title: 'Winlogon 自動重新開機登入 (ARSO) '
 description: Windows 自動重新開機登入如何讓您的使用者更具生產力。
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.reviewer: cahick
 ms.date: 08/20/2019
 ms.topic: article
-ms.openlocfilehash: 3f2957d2290934505f67edbcb8a49733452939e2
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: bbeff22ce85e1c108852a0e978ad56b1e70d10c5
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88939868"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93070540"
 ---
 # <a name="winlogon-automatic-restart-sign-on-arso"></a>Winlogon 自動重新開機登入 (ARSO) 
 
 在 Windows Update 期間，需要有使用者特定的進程才能完成更新。 這些進程需要使用者登入其裝置。 在啟動更新後第一次登入時，使用者必須等到這些使用者特定的進程完成之後，才能開始使用其裝置。
 
-## <a name="how-does-it-work"></a>如何運作？
+## <a name="how-does-it-work"></a>運作方式
 
 當 Windows Update 起始自動重新開機時，ARSO 會將目前登入的使用者衍生認證解壓縮，並將其保存到磁片，並設定使用者的自動登入。 以 TCB 許可權執行為系統的 Windows Update 將會起始 RPC 呼叫來執行此動作。
 
@@ -48,7 +48,7 @@ ARSO 會以不同的方式來處理非受控與受控裝置。 若是未受管�
 
 **Intune 原則：**
 
-- 平台：Windows 10 及更新版本
+- 平台：Windows 10 及以上版本
 - 配置檔案類型：系統管理範本
 - 路徑： \Windows \Windows 登入選項
 
@@ -89,7 +89,7 @@ ARSO 會以不同的方式來處理非受控與受控裝置。 若是未受管�
 
 **Intune 原則：**
 
-- 平台：Windows 10 及更新版本
+- 平台：Windows 10 及以上版本
 - 配置檔案類型：系統管理範本
 - 路徑： \Windows \Windows 登入選項
 

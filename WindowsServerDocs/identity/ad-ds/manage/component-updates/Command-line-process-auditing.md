@@ -2,22 +2,22 @@
 ms.assetid: c8597cc8-bdcb-4e59-a09e-128ef5ebeaf8
 title: 命令列程序稽核
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 12bf07aa5fb60f18cdd5b04b7d7f91c00388ed42
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: d08032a01a1c3bf2fd03ba302d6eaba5162c317d
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88939568"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93070740"
 ---
 # <a name="command-line-process-auditing"></a>命令列程序稽核
 
 >適用于： Windows Server 2016、Windows Server 2012 R2
 
-**作者**： Justin Turner，與 Windows 群組的資深支援擴大工程師
+**作者** ： Justin Turner，與 Windows 群組的資深支援擴大工程師
 
 > [!NOTE]
 > 本內容由 Microsoft 客戶支援工程師編寫，適用對象為經驗豐富的系統管理員和系統架構​​師，如果 TechNet 提供的主題已無法滿足您，您要找的是 Windows Server 2012 R2 中功能和解決方案的更深入技術講解，則您是本文的適用對象。 不過，本文未經過相同的編輯階段，因此部分語句也許不如 TechNet 文章那樣洗鍊。

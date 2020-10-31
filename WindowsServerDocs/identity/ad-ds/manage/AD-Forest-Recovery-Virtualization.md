@@ -1,17 +1,17 @@
 ---
 title: AD 樹系修復虛擬化
-ms.author: iainfou
+ms.author: daveba
 author: iainfoulds
 manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: c49b40b2-598d-49aa-85b4-766bce960e0d
-ms.openlocfilehash: aa6598c2a033147928d05c8175886c1c2425b4cd
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 61c28bf5edce2855320669f446e0ade559d10716
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88938048"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93070770"
 ---
 # <a name="active-directory-forest-recovery-virtualization"></a>Active Directory 樹系復原虛擬化
 
@@ -25,13 +25,13 @@ ms.locfileid: "88938048"
 
 虛擬化 DC 複製的需求如下：
 
-- 虛擬程式必須支援 VM >generationid。 Windows Server 2016、2012和 Windows 8 中的 hyper-v 是支援 VM >generationid 的虛擬程式範例。 如果支援 VM >generationid，請洽詢您的虛擬程式廠商。
+- 虛擬程式必須支援 VM >generationid。 Windows Server 2016、2012和 Windows 8 中的 hyper-v 是支援 VM >generationid 的虛擬程式範例。 如果支援 VM-GenerationID，請洽詢您的虛擬程式廠商。
 - 用來作為複製來源的虛擬化 DC 必須執行 Windows Server 2016 或2012，並且是 Cloneable 網域控制站群組的成員。
 - PDC 模擬器必須執行 Windows Server 2016 或2012。 如果 PDC 模擬器已虛擬化，您可以加以複製。
 
 如需有關如何執行虛擬化 DC 複製的逐步指示，請參閱 [Active Directory Domain Services (AD DS) 虛擬化 (層級 100) 的簡介 ](../Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)。 如需虛擬化 DC 複製運作方式的詳細資訊，請參閱 [虛擬網域控制站技術參考 (層級 300) ](../deploy/virtual-dc/virtualized-domain-controller-technical-reference--level-300-.md)。
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>下一步
 
 - [AD 樹系復原 - 先決條件](AD-Forest-Recovery-Prerequisties.md)
 - [AD 樹系復原-設計自訂樹系復原方案](AD-Forest-Recovery-Devising-a-Plan.md)

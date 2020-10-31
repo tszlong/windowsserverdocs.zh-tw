@@ -2,16 +2,16 @@
 ms.assetid: 2971996b-7019-4a08-8e99-89b4b3f688a7
 title: 了解 Active Directory 站台拓撲
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 35407b78bb823201232c6f86278e5ce7b4a06695
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 62a2e1ef1fafd971d30a5809da55a31909578b71
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88938318"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93070940"
 ---
 # <a name="understanding-active-directory-site-topology"></a>了解 Active Directory 站台拓撲
 

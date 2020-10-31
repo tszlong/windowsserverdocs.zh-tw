@@ -2,16 +2,16 @@
 ms.assetid: f6e76ef0-2217-4cdb-980f-22a780a85ebb
 title: AD DS 設計需求
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 5d3cedc70a4dc4f58927a5802e65c90380f839ed
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: ebce13c962cfcebc074e05ed767218b7c89afc57
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941368"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93071230"
 ---
 # <a name="ad-ds-design-requirements"></a>AD DS 設計需求
 

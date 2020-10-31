@@ -2,16 +2,16 @@
 ms.assetid: 4cc9c16c-1928-4dce-a3a8-6229be28eb65
 title: Active Directory 複寫概念
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 403a8be3d6b7fc6330395bf6e4d20141e01b76ba
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 6acd9d1974395cdd4c07df3b09d47ffb104a16ef
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88940318"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93070990"
 ---
 # <a name="active-directory-replication-concepts"></a>Active Directory 複寫概念
 
@@ -65,17 +65,17 @@ KCC 是在所有網域控制站上執行的內建程式，會為 Active Director
 
 針對 Windows Server 2008 Rodc，KCC 的正常運作會提供一些重新平衡，讓您不必使用其他工具（例如 Adlb.exe）。 預設會啟用新的功能。 您可以藉由在 RODC 上新增下列登錄機碼來停用它：
 
-**HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\NTDS\Parameters**
+**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NTDS\Parameters**
 
-「**允許** 
- 隨機 BH 負載平衡」**1 = 已啟用 (預設) ，0 = 停用**
+「 **允許** 
+ 隨機 BH 負載平衡」 **1 = 已啟用 (預設) ，0 = 停用**
 
 如需這些 KCC 改進功能的詳細資訊，請參閱規劃和部署分公司的 Active Directory Domain Services ([https://go.microsoft.com/fwlink/?LinkId=107114](https://go.microsoft.com/fwlink/?LinkId=107114)) 。
 
 ## <a name="failover-functionality"></a><a name="BKMK_3"></a>容錯移轉功能
 網站可確保複寫會在網路失敗和離線網域控制站周圍路由傳送。 KCC 會依照指定的間隔執行，以針對 AD DS 中發生的變更調整複寫拓撲，例如新增新的網域控制站和建立新的網站時。 KCC 會審核現有連線的複寫狀態，以判斷是否有任何連接無法運作。 如果連接因為網域控制站失敗而無法運作，則 KCC 會自動建立與其他複寫協力電腦的暫時連線 (如果有的話) 可確保發生複寫。 如果網站中的所有網域控制站都無法使用，則 KCC 會自動從另一個網站的網域控制站之間建立複寫連接。
 
-## <a name="subnet"></a><a name="BKMK_4"></a>子網路
+## <a name="subnet"></a><a name="BKMK_4"></a>子
 子網是一種 TCP/IP 網路區段，其中會指派一組邏輯 IP 位址。 子網群組電腦的方式，會識別其在網路上的實體鄰近性。 AD DS 中的子網物件會識別用來將電腦對應至網站的網路位址。
 
 ## <a name="site"></a><a name="BKMK_5"></a>網站

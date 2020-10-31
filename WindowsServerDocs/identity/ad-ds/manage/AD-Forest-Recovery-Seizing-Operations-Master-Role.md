@@ -1,17 +1,17 @@
 ---
 title: AD 樹系復原-佔用操作主機角色
-ms.author: iainfou
+ms.author: daveba
 author: iainfoulds
 manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 7e6bb370-f840-4416-b5e2-86b0ba715f4f
-ms.openlocfilehash: 7d7b1abfaf7e3ed4f3780ff2d819340ba8fe98c0
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 76e32be8db1647a209f94b49484898cf88333040
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941528"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93070800"
 ---
 # <a name="ad-forest-recovery---seizing-an-operations-master-role"></a>AD 樹系復原-佔用操作主機角色
 
@@ -42,10 +42,10 @@ ms.locfileid: "88941528"
 4. 在 [ **伺服器連接：** ] 提示字元中輸入下列命令，然後按 enter 鍵：
 
    ```
-   Connect to server ServerFQDN
+   Connect to server ServerFQDN
    ```
 
-   其中 *ServerFQDN* 是此 DC (FQDN) 的完整功能變數名稱，例如： **連接到伺服器 nycdc01.example.com**。
+   其中 *ServerFQDN* 是此 DC (FQDN) 的完整功能變數名稱，例如： **連接到伺服器 nycdc01.example.com** 。
 
    如果 *ServerFQDN* 失敗，請使用 DC 的 NetBIOS 名稱。
 
@@ -57,7 +57,7 @@ ms.locfileid: "88941528"
 
 6. 視您想要收回的角色而定，在 [ **FSMO 維護：** 提示] 下，輸入下表所述的適當命令，然後按 enter。
 
-|[角色]|認證|Command|
+|角色|認證|Command|
 |----------|-----------------|-------------|
 |網網域命名主機|企業系統管理員|**佔用命名主機**|
 |架構主機|Schema Admins|**佔用架構主機**|
@@ -68,7 +68,7 @@ ms.locfileid: "88941528"
 確認要求之後，Active Directory 或 AD DS 嘗試傳輸角色。 當傳輸失敗時，會出現一些錯誤資訊，並 Active Directory 或 AD DS 繼續進行取代。 在完成建立之後，會顯示角色清單以及輕量型目錄存取協定 (LDAP) 目前保存每個角色之伺服器的名稱。 您也可以在提升許可權的命令提示字元中執行 **Netdom 查詢 FSMO** ，以確認目前的角色持有者。
 
 > [!NOTE]
-> 如果這台電腦不是失敗之前的 RID 主機，而您嘗試佔用 RID 主機角色，則電腦會嘗試在接受此角色之前與複寫協力電腦進行同步處理。 不過，因為此步驟是在電腦隔離時執行，所以不會成功與夥伴進行同步處理。 因此，會出現一個對話方塊，詢問您是否要繼續操作，但這台電腦無法與夥伴進行同步處理。 按一下 [是] 。
+> 如果這台電腦不是失敗之前的 RID 主機，而您嘗試佔用 RID 主機角色，則電腦會嘗試在接受此角色之前與複寫協力電腦進行同步處理。 不過，因為此步驟是在電腦隔離時執行，所以不會成功與夥伴進行同步處理。 因此，會出現一個對話方塊，詢問您是否要繼續操作，但這台電腦無法與夥伴進行同步處理。 按一下 [是]  。
 
 ## <a name="next-steps"></a>後續步驟
 

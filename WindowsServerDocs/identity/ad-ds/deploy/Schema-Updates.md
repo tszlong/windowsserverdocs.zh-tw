@@ -3,16 +3,16 @@ ms.assetid: abf69b09-6528-42e0-b164-813c7c2c78e7
 title: Windows Server 中的架構更新
 description: 由 adprep 依作業系統版本進行的架構變更
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 12/02/2019
 ms.topic: article
-ms.openlocfilehash: 6a699bc82cdb536f6b611cc5b1158f751b65d65b
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: d3a435a3e9cafb2d149fc3001e2b6394ab41fe29
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88940148"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93069920"
 ---
 # <a name="windows-server-active-directory-schema-updates"></a>Windows Server Active Directory 架構更新
 
@@ -48572,7 +48572,7 @@ objectVersion: 47
 
 ```
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>下一步
 
 [整個網域的架構更新作業](Domain-Wide-Updates.md)
 

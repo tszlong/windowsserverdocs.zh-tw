@@ -1,17 +1,17 @@
 ---
 title: AD 樹系復原-Windows Server 2003 復原
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 07/07/2017
 ms.topic: article
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
-ms.openlocfilehash: 01557790072d4606cc98c32c7a437078940c258d
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: b5c633ad1e8fd354ae75baf88ef1393e91f8dc12
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88939608"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93070750"
 ---
 # <a name="ad-forest-recovery---windows-server-2003-recovery"></a>AD 樹系復原-Windows Server 2003 復原
 
@@ -26,7 +26,7 @@ ms.locfileid: "88939608"
 ## <a name="backing-up-the-system-state-data"></a>備份系統狀態資料
 使用下列程式來備份系統狀態資料，以及在執行 Windows Server 2003 的 DC 中，針對目前備份作業選取的任何其他資料。 Windows Server 2003 包含 Ntbackup 工具，可用來備份系統狀態資料。
 
-若要備份檔案和資料夾，至少需要 **Administrators** 或 **Backup Operators**的成員資格或同等許可權。
+若要備份檔案和資料夾，至少需要 **Administrators** 或 **Backup Operators** 的成員資格或同等許可權。
 
 如果您要將系統狀態資料備份到磁帶，而且備份程式指出沒有未使用的媒體，您可能必須使用卸除式存放裝置。 這會將您的磁帶新增至可用的媒體集區，讓備份可以使用它。
 
@@ -34,11 +34,11 @@ ms.locfileid: "88939608"
 
 ### <a name="to-back-up-the-system-state-data-on-a-domain-controller-that-runs-windows-server-2003"></a>備份執行 Windows Server 2003 的網域控制站上的系統狀態資料
 
-1. 按一下 [ **開始**]，依序指向 [ **所有程式**]、[ **附屬**應用程式] 和 [ **系統工具**]，然後按一下 [ **備份**]。
-2. 在 [ **歡迎使用** ] 頁面上，按一下 [ **Advanced Mode]**。
+1. 按一下 [ **開始** ]，依序指向 [ **所有程式** ]、[ **附屬** 應用程式] 和 [ **系統工具** ]，然後按一下 [ **備份** ]。
+2. 在 [ **歡迎使用** ] 頁面上，按一下 [ **Advanced Mode]** 。
 3. 在 [ **備份** ] 索引標籤上，選取您要備份之任何磁片磁碟機、資料夾或檔案的核取方塊。
 4. 選取 [ **系統狀態** ] 核取方塊。
-5. 按一下 [ **開始備份**]。
+5. 按一下 [ **開始備份** ]。
 
 ## <a name="performing-a-nonauthoritative-restore"></a>執行非系統授權還原
 
@@ -54,13 +54,13 @@ ms.locfileid: "88939608"
 ### <a name="to-perform-a-nonauthoritative-restore"></a>執行非系統授權還原
 
 1. 啟動 DC 之後，請按 F8 以目錄服務還原模式重新開機電腦 (DSRM) 。
-2. 選取 [ **目錄服務還原模式] (僅限 Windows 網域控制站) **。
+2. 選取 [ **目錄服務還原模式] (僅限 Windows 網域控制站)** 。
 3. 選取您要在還原模式下啟動的作業系統。
 4. 以系統管理員身分登入 (您只能使用本機電腦帳戶，) 沒有任何可用的網域登入選項。
-5. 在命令提示字元中，輸入 **ntbackup**，然後按 enter 鍵。
-6. 在 [ **歡迎使用** ] 頁面上，按一下 [ **Advanced Mode**]，然後選取 [ **還原和管理媒體** ] 索引標籤。 (不要選取 [ **還原嚮導]**。 ) 
+5. 在命令提示字元中，輸入 **ntbackup** ，然後按 enter 鍵。
+6. 在 [ **歡迎使用** ] 頁面上，按一下 [ **Advanced Mode** ]，然後選取 [ **還原和管理媒體** ] 索引標籤。 (不要選取 [ **還原嚮導]** 。 ) 
 7. 選取要從中還原的適當備份檔案，並確認已選取 [ **系統磁片** ] 和 [ **系統狀態** ] 核取方塊。
-8. 按一下 **[開始還原]**。
+8. 按一下 **[開始還原]** 。
 9. 當還原作業完成時，請重新開機電腦。
 
 使用下列程式，在執行 Windows Server 2003 的 DC 上執行授權 (也稱為主要) 還原 SYSVOL。 請只在網域中還原的第一個 Windows Server 2003 DC 上執行此程式。
@@ -68,13 +68,13 @@ ms.locfileid: "88939608"
 ### <a name="to-perform-an-authoritative-restore-of-sysvol"></a>執行 SYSVOL 的授權還原
 
 1. 執行上一個程式中的步驟1到步驟8。
-2. 在 [ **確認還原** ] 對話方塊中，按一下 [ **Advanced**]。
-3. 若要執行 SYSVOL 的授權還原，請選取 [ **還原複寫的資料集時] 的核取方塊，將還原的資料標示為所有複本的主要資料**。
+2. 在 [ **確認還原** ] 對話方塊中，按一下 [ **Advanced** ]。
+3. 若要執行 SYSVOL 的授權還原，請選取 [ **還原複寫的資料集時] 的核取方塊，將還原的資料標示為所有複本的主要資料** 。
 
    > [!NOTE]
    > 將還原的資料標示為備份中的主要資料，相當於在下列登錄子機碼底下將 **BurFlags** 專案設定為 D4：
    >
-   > **HKEY_LOCAL_MACHINE \System\currentcontrolset\services\ntfrs\parameters\cumulative 複本集 \\ ***GUID*
+   > **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NtFrs\Parameters\Cumulative Replica Sets\\***GUID*
 
 4. 當還原作業完成時，請重新開機電腦。
 
@@ -86,16 +86,16 @@ ms.locfileid: "88939608"
 
 1. 開啟 [Windows 元件] Wizard。 若要開啟嚮導：
 
-   - 按一下 [開始]****、[控制台]****，然後按一下 [新增或移除程式]****。
-   - 按一下 [ **新增/移除 Windows 元件**]。
+   - 按一下 [開始]  、[控制台]  ，然後按一下 [新增或移除程式]  。
+   - 按一下 [ **新增/移除 Windows 元件** ]。
 
-2. 在 [ **元件**] 中，選取 [ **網路服務** ] 核取方塊，然後按一下 [ **詳細資料**]。
-3. 在 [ **網路服務的子元件**] 中，選取 [ **網域名稱系統 (DNS) ** ] 核取方塊，按一下 **[確定]**，然後按 **[下一步**]。
-4. 如果出現提示，請在 [ **複製檔案來源**] 中輸入發佈檔案的完整路徑，然後按一下 **[確定]**。
+2. 在 [ **元件** ] 中，選取 [ **網路服務** ] 核取方塊，然後按一下 [ **詳細資料** ]。
+3. 在 [ **網路服務的子元件** ] 中，選取 [ **網域名稱系統 (DNS)** ] 核取方塊，按一下 **[確定]** ，然後按 **[下一步** ]。
+4. 如果出現提示，請在 [ **複製檔案來源** ] 中輸入發佈檔案的完整路徑，然後按一下 **[確定]** 。
 
    安裝之後，請完成下列步驟來設定 DNS 伺服器。
 
-5. 按一下 [ **開始**]，指向 [ **所有程式**]，指向 [系統 **管理工具**]，然後按一下 [ **DNS**]。
+5. 按一下 [ **開始** ]，指向 [ **所有程式** ]，指向 [系統 **管理工具** ]，然後按一下 [ **DNS** ]。
 6. 在發生嚴重錯誤之前，為 DNS 伺服器上裝載的相同 DNS 功能變數名稱建立 DNS 區域。 如需詳細資訊，請參閱新增正向對應區域 ([https://go.microsoft.com/fwlink/?LinkId=74574](https://go.microsoft.com/fwlink/?LinkId=74574)) 。
 7. 在發生嚴重錯誤之前，設定其存在的 DNS 資料。 例如：
 

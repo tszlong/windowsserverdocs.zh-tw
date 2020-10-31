@@ -2,16 +2,16 @@
 ms.assetid: 4981b32f-741e-4afc-8734-26a8533ac530
 title: 將 AD DS 整合至現有 DNS 基礎結構
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 6c9882af6af5901c34b689a0f3de91e1a158187e
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 6c1a2af42d588cf8a8a2d2a940a6f67ccfad9311
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941048"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93071110"
 ---
 # <a name="integrating-ad-ds-into-an-existing-dns-infrastructure"></a>將 AD DS 整合至現有 DNS 基礎結構
 
@@ -28,13 +28,13 @@ ms.locfileid: "88941048"
 
 -   設定每個地區網域的網域控制站，以裝載對應至其 Active Directory 網域的 DNS 區域。
 
--   設定包含 Active Directory 整個樹系定位器記錄的區域， (也就是 _msdcs。*forestname* 區域) 使用整個樹系的 dns 應用程式目錄分割，複寫到樹系中的每一部 dns 伺服器。
+-   設定包含 Active Directory 整個樹系定位器記錄的區域， (也就是 _msdcs。 *forestname* 區域) 使用整個樹系的 dns 應用程式目錄分割，複寫到樹系中的每一部 dns 伺服器。
 
     > [!NOTE]
     > 使用 Active Directory Domain Services 安裝精靈安裝 DNS 伺服器服務時 (建議您) 使用此選項，則會自動執行所有先前的工作。 如需詳細資訊，請參閱 [部署 Windows Server 2008 樹系根域](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731174(v=ws.10))。
 
     > [!NOTE]
-    > AD DS 使用全樹系的定位器記錄，讓複寫夥伴可以彼此尋找，並讓用戶端尋找通用類別目錄伺服器。 AD DS 會將整個樹系定位器記錄儲存在 _msdcs 中。*forestname* 區域。 因為區域中的資訊必須廣泛可用，所以會透過整個樹系的 DNS 應用程式目錄分割，將此區域複寫到樹系中的所有 DNS 伺服器。
+    > AD DS 使用全樹系的定位器記錄，讓複寫夥伴可以彼此尋找，並讓用戶端尋找通用類別目錄伺服器。 AD DS 會將整個樹系定位器記錄儲存在 _msdcs 中。 *forestname* 區域。 因為區域中的資訊必須廣泛可用，所以會透過整個樹系的 DNS 應用程式目錄分割，將此區域複寫到樹系中的所有 DNS 伺服器。
 
 現有的 DNS 結構會保持不變。 您不需要移動任何伺服器或區域。 您只需要從現有的 DNS 階層建立 Active Directory 整合式 DNS 區域的委派。
 

@@ -1,17 +1,17 @@
 ---
 ms.assetid: e727a33d-133b-43c9-b6a4-7c00f9cb6000
 title: 檢查領域模型
-ms.author: iainfou
+ms.author: daveba
 author: iainfoulds
 manager: daveba
 ms.date: 08/08/2018
 ms.topic: article
-ms.openlocfilehash: 00a69dfb4b17c431b1d83d8de0787aaf2481b395
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 9f5cc2b73a06ed8e08820c4eb342484db84d55d0
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88938538"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93070240"
 ---
 # <a name="reviewing-the-domain-models"></a>檢查領域模型
 
@@ -35,7 +35,7 @@ ms.locfileid: "88938538"
 | 提高在網域之間移動物件的可能性 | 網域數目愈大，使用者需要從一個網域移到另一個網域的可能性就愈大。 這種移動可能會影響終端使用者。 |
 
 > [!NOTE]
-> Windows Server 更細緻的密碼和帳戶鎖定原則也可能會影響您所選取的網域設計模型。 在這一版的 Windows Server 2008 之前，您只能將網域預設網域原則中指定的密碼和帳戶鎖定原則套用到網域中的所有使用者。 因此，如果您想要針對不同的使用者集合套用不同的密碼與帳戶鎖定設定，您必須建立密碼篩選或部署多個網域。 您現在可以使用更細緻的密碼原則來指定多個密碼原則，以及將不同的密碼限制和帳戶鎖定原則套用至單一網域中的不同使用者集合。 如需更細緻的密碼和帳戶鎖定原則的詳細資訊，請參閱 [AD DS 更細緻的密碼和帳戶鎖定原則的逐步指南](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc770842(v=ws.10))。
+> Windows Server 更細緻的密碼和帳戶鎖定原則也可能會影響您所選取的網域設計模型。 在這一版的 Windows Server 2008 之前，您只能將網域預設網域原則中指定的密碼和帳戶鎖定原則套用到網域中的所有使用者。 因此，如果您想要針對不同的使用者集合套用不同的密碼與帳戶鎖定設定，您必須建立密碼篩選或部署多個網域。 您現在可以使用更細緻的密碼原則來指定多個密碼原則，以及將不同的密碼限制和帳戶鎖定原則套用至單一網域中的不同使用者集合。 如需更細緻的密碼和帳戶鎖定原則的詳細資訊，請參閱 [AD DS Fine-Grained 密碼和帳戶鎖定原則的逐步指南](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc770842(v=ws.10))。
 
 ## <a name="single-domain-model"></a>單一網域模型
 

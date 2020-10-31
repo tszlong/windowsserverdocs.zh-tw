@@ -2,22 +2,22 @@
 ms.assetid: 40bc24b1-2e7d-4e77-bd0f-794743250888
 title: SPN 和 UPN 的唯一性
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: cafbc577bd025fc30f409385f51f6981fb3ab81d
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: c41b532b6be241a937500485aca723e391ff9210
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941378"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93070720"
 ---
 # <a name="spn-and-upn-uniqueness"></a>SPN 和 UPN 的唯一性
 
 >適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-**作者**： Justin Turner，與 Windows 群組的資深支援擴大工程師
+**作者** ： Justin Turner，與 Windows 群組的資深支援擴大工程師
 
 > [!NOTE]
 > 本內容由 Microsoft 客戶支援工程師編寫，適用對象為經驗豐富的系統管理員和系統架構​​師，如果 TechNet 提供的主題已無法滿足您，您要找的是 Windows Server 2012 R2 中功能和解決方案的更深入技術講解，則您是本文的適用對象。 不過，本文未經過相同的編輯階段，因此部分語句也許不如 TechNet 文章那樣洗鍊。
@@ -48,7 +48,7 @@ ms.locfileid: "88941378"
 
 **表 SEQ 資料表 \\ \* 阿拉伯文2： UPN 和 SPN 唯一性錯誤代碼**
 
-|小數位數|Hex|符號|String|
+|Decimal|Hex|符號|String|
 |-----------|-------|------------|----------|
 |8467|21C7|ERROR_DS_SPN_VALUE_NOT_UNIQUE_IN_FOREST|作業失敗，因為提供用於新增/修改的 SPN 值不是整個樹系的唯一值。|
 |8648|21C8|ERROR_DS_UPN_VALUE_NOT_UNIQUE_IN_FOREST|作業失敗，因為提供來新增/修改的 UPN 值不是全樹系唯一的。|
@@ -179,11 +179,11 @@ DN: CN=Dianne Hunt2\0ADEL:dd3ab8a4-3005-4f2f-814f-d6fc54a1a1c0,CN=Deleted Object
 
 -   選取 [ **轉換為 LDAP** ] 選項按鈕
 
--   輸入 ** (userPrincipalName =*ConflictingUPN*) **
+-   輸入 **(userPrincipalName = *ConflictingUPN* )**
 
-    -   將 ***ConflictingUPN*** 取代為發生衝突的實際 UPN
+    -   以衝突的實際 UPN 取代 * *_ConflictingUPN_* _
 
--   選取 **套用**
+-   Select _ *Apply**
 
 ![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig13_GlobalSearch.gif)
 
@@ -209,7 +209,7 @@ Get-ADObject -LdapFilter "(userPrincipalName=dhunt@blue.contoso.com)" -IncludeDe
 
 **圖 SEQ 圖 \\ \* 阿拉伯文8當新增重複的 SPN 遭到封鎖時，ADSIEdit 中顯示的錯誤訊息**
 
-記錄在目錄服務事件記錄檔中是 **ActiveDirectory_DomainService** 事件識別碼 **2974**。
+記錄在目錄服務事件記錄檔中是 **ActiveDirectory_DomainService** 事件識別碼 **2974** 。
 
 ```
 Operation failed. Error code: 0x21c7
@@ -229,9 +229,9 @@ servicePrincipalName Value=<SPN>
 
     -   不需要 offbox 呼叫，您可以在本機滿足查詢
 
-    -   ***UPN 案例***
+    -   **_UPN 案例_* _
 
-        -   查詢提供的 UPN (UserPrincipalName 的本機整個樹系 UPN 索引， *全域索引*) 
+        -   查詢提供的 UPN (_userPrincipalName 的本機樹系通用 UPN 索引;全域索引 * ) 
 
             -   如果傳回的專案 = = 0-> 寫入繼續
 
@@ -245,9 +245,9 @@ servicePrincipalName Value=<SPN>
 
                         *ERROR_DS_UPN_VALUE_NOT_UNIQUE_IN_FOREST*
 
-    -   ***SPN 案例***
+    -   ***SPN 案例** _
 
-        -   查詢提供的 SPN (ServicePrincipalName 的本機整個樹系 SPN 索引 *、全域索引*) 
+        -   查詢提供的 SPN (_servicePrincipalName 的本機整個樹系 SPN 索引;全域索引 * ) 
 
             -   如果傳回的專案 = = 0-> 寫入繼續
 
@@ -269,9 +269,9 @@ servicePrincipalName Value=<SPN>
 
         -   記錄的事件指出這類
 
-    -   ***UPN 案例***
+    -   **_UPN 案例_* _
 
-        -   對最接近的 GC 提交 LDAP 查詢？ 針對提供的 UPN (UserPrincipalName，查詢 GC 的全樹系 UPN 索引， *全域索引*) 
+        -   對最接近的 GC 提交 LDAP 查詢？ 針對提供的 UPN (_userPrincipalName 查詢 GC 的全樹系 UPN 索引;全域索引 * ) 
 
             -   如果傳回的專案 = = 0-> 寫入繼續
 
@@ -285,9 +285,9 @@ servicePrincipalName Value=<SPN>
 
                         *ERROR_DS_UPN_VALUE_NOT_UNIQUE_IN_FOREST*
 
-    -   ***SPN 案例***
+    -   ***SPN 案例** _
 
-        -   對最接近的 GC 提交 LDAP 查詢？ 查詢 GC 的全樹系 SPN 索引，提供給提供的 SPN (*servicePrincipalName; 全域索引*) 
+        -   對最接近的 GC 提交 LDAP 查詢？ 查詢 GC 的全樹系 SPN 索引，提供給提供的 SPN (_servicePrincipalName;全域索引 * ) 
 
             -   如果傳回的專案 = = 0-> 寫入繼續
 
@@ -320,12 +320,12 @@ servicePrincipalName Value=<SPN>
 如果有任何新的 SPN 值重複，我們就無法進行修改。 在上述清單中，重要的屬性是 ATT_DNS_HOST_NAME (機名稱) 和 ATT_SAM_ACCOUNT_NAME (SAM 帳戶名稱) 。
 
 ### <a name="try-this-exploring-spn-and-upn-uniqueness"></a>試試看：探索 SPN 和 UPN 的唯一性
-這是此課程模組中的幾個「**試試這個**」活動的第一個。  此課程模組沒有個別的實驗室指南。  **試用這**項活動基本上是自由形式的活動，可讓您在實驗室環境中探索課程內容。  您可以選擇遵循提示或關閉腳本，並提出您自己的活動。
+這是此課程模組中的幾個「 **試試這個** 」活動的第一個。  此課程模組沒有個別的實驗室指南。  **試用這** 項活動基本上是自由形式的活動，可讓您在實驗室環境中探索課程內容。  您可以選擇遵循提示或關閉腳本，並提出您自己的活動。
 
 > [!NOTE]
-> -   這是「**試試這個**」活動的第一項。
+> -   這是「 **試試這個** 」活動的第一項。
 > -   此課程模組沒有個別的實驗室指南。
-> -   **試用這**項活動基本上是自由形式的活動，可讓您在實驗室環境中探索課程內容。
+> -   **試用這** 項活動基本上是自由形式的活動，可讓您在實驗室環境中探索課程內容。
 > -   您可以選擇遵循提示或關閉腳本，並提出您自己的活動。
 > -   雖然並非所有章節都有 **試用這個** 提示，但仍建議您在適當的情況下流覽實驗室中的課程內容。
 

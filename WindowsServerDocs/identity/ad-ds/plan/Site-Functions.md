@@ -2,16 +2,16 @@
 ms.assetid: 22c514b2-401e-49e1-a87e-0cbaa2c1dac1
 title: 站台功能
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 20ca1c9e3a4b0ef750d787289bf8563ead5a5ae1
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 633c9557dffd2ce93bb913a2009a265472f4c500
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88938358"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93070150"
 ---
 # <a name="site-functions"></a>站台功能
 

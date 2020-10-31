@@ -2,22 +2,22 @@
 ms.assetid: 16a344a9-f9a6-4ae2-9bea-c79a0075fd04
 title: TPM 金鑰證明
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: aa23d8df4391514d08ff1ef065af14275274dfa9
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 18bf859e6e02d3c01fead9291d31c8dac3f002f1
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88939898"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93070630"
 ---
 # <a name="tpm-key-attestation"></a>TPM 金鑰證明
 
 >適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-**作者**： Justin Turner，與 Windows 群組的資深支援擴大工程師
+**作者** ： Justin Turner，與 Windows 群組的資深支援擴大工程師
 
 > [!NOTE]
 > 本內容由 Microsoft 客戶支援工程師編寫，適用對象為經驗豐富的系統管理員和系統架構​​師，如果 TechNet 提供的主題已無法滿足您，您要找的是 Windows Server 2012 R2 中功能和解決方案的更深入技術講解，則您是本文的適用對象。 不過，本文未經過相同的編輯階段，因此部分語句也許不如 TechNet 文章那樣洗鍊。
@@ -56,7 +56,7 @@ TPM 金鑰證明是要求憑證的實體以密碼編譯方式向 CA 證明憑證
 ### <a name="how-does-tpm-key-attestation-work"></a>TPM 金鑰證明如何運作？
 一般而言，TPM 金鑰證明是根據下列要素：
 
-1.  每個 TPM 都會隨附唯一的非對稱金鑰，稱為「 *簽署金鑰* 」 (EK) ，由製造商燒錄。 我們會將此金鑰的公開部分稱為 *EKPub* ，並將相關聯的私密金鑰稱為 *EKPriv*。 某些 TPM 晶片也有 EKPub 製造商發出的 EK 憑證。 我們將此憑證稱為 *EKCert*。
+1.  每個 TPM 都會隨附唯一的非對稱金鑰，稱為「 *簽署金鑰* 」 (EK) ，由製造商燒錄。 我們會將此金鑰的公開部分稱為 *EKPub* ，並將相關聯的私密金鑰稱為 *EKPriv* 。 某些 TPM 晶片也有 EKPub 製造商發出的 EK 憑證。 我們將此憑證稱為 *EKCert* 。
 
 2.  CA 會透過 EKPub 或 EKCert 在 TPM 中建立信任。
 
@@ -64,7 +64,7 @@ TPM 金鑰證明是要求憑證的實體以密碼編譯方式向 CA 證明憑證
 
 4.  CA 會發行具有特殊發佈原則 OID 的憑證，以表示金鑰現在證明由 TPM 保護。
 
-## <a name="deployment-overview"></a><a name="BKMK_DeploymentOverview"></a>部署總覽
+## <a name="deployment-overview"></a><a name="BKMK_DeploymentOverview"></a>部署概觀
 在此部署中，會假設已設定 Windows Server 2012 R2 企業 CA。 此外，用戶端 (Windows 8.1) 會設定為使用憑證範本對該企業 CA 進行註冊。
 
 部署 TPM 金鑰證明有三個步驟：
@@ -73,9 +73,9 @@ TPM 金鑰證明是要求憑證的實體以密碼編譯方式向 CA 證明憑證
 
     -   **根據使用者認證的信任：** 企業 CA 會信任使用者提供的 EKPub 做為憑證要求的一部分，而不會執行使用者網域認證以外的任何驗證。
 
-    -   以**EKCert 為基礎的信任：** 企業 CA 會根據系統管理員管理的*可接受 EK 憑證鏈*清單來驗證針對憑證要求所提供的 EKCert 鏈。 可接受的鏈是依每個製造商定義，並透過發行 CA 上的兩個自訂憑證存放區來表示 (一個中繼憑證存放區，另一個用於根 CA 憑證) 。 此信任模式表示來自指定制造商的 **所有** tpm 都是受信任的。 請注意，在此模式中，環境中使用的 Tpm 必須包含 EKCerts。
+    -   以 **EKCert 為基礎的信任：** 企業 CA 會根據系統管理員管理的 *可接受 EK 憑證鏈* 清單來驗證針對憑證要求所提供的 EKCert 鏈。 可接受的鏈是依每個製造商定義，並透過發行 CA 上的兩個自訂憑證存放區來表示 (一個中繼憑證存放區，另一個用於根 CA 憑證) 。 此信任模式表示來自指定制造商的 **所有** tpm 都是受信任的。 請注意，在此模式中，環境中使用的 Tpm 必須包含 EKCerts。
 
-    -   以**EKPub 為基礎的信任：** 企業 CA 會驗證在憑證要求中提供的 EKPub，是否出現在系統管理員管理的允許 EKPubs 清單中。 這份清單會以檔目錄的形式來表示，這個目錄中的每個檔案的名稱都是允許 EKPub 的 SHA-1 雜湊。 此選項可提供最高保證等級，但需要更多系統管理工作，因為系統會個別識別每個裝置。 在此信任模型中，只允許已將 TPM EKPub 新增至允許 EKPubs 清單的裝置註冊 TPM 證明憑證。
+    -   以 **EKPub 為基礎的信任：** 企業 CA 會驗證在憑證要求中提供的 EKPub，是否出現在系統管理員管理的允許 EKPubs 清單中。 這份清單會以檔目錄的形式來表示，這個目錄中的每個檔案的名稱都是允許 EKPub 的 SHA-1 雜湊。 此選項可提供最高保證等級，但需要更多系統管理工作，因為系統會個別識別每個裝置。 在此信任模型中，只允許已將 TPM EKPub 新增至允許 EKPubs 清單的裝置註冊 TPM 證明憑證。
 
     根據所使用的方法而定，CA 會將不同的發佈原則 OID 套用至已發行的憑證。 如需有關發佈原則 Oid 的詳細資訊，請參閱本主題中「 [設定憑證範本](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md#BKMK_ConfigCertTemplate) 」一節中的「發行原則 oid」表格。
 
@@ -87,9 +87,9 @@ TPM 金鑰證明是要求憑證的實體以密碼編譯方式向 CA 證明憑證
 
     1.  **根據使用者認證的信任：** 不需要進行任何特定設定。
 
-    2.  以**EKCert 為基礎的信任：** 系統管理員必須從 TPM 製造商取得 EKCert 鏈憑證，並將其匯入至執行 TPM 金鑰證明的 CA 上的兩個新憑證存放區（由系統管理員所建立）。 如需詳細資訊，請參閱本主題中的 [CA](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md#BKMK_CAConfig) 設定一節。
+    2.  以 **EKCert 為基礎的信任：** 系統管理員必須從 TPM 製造商取得 EKCert 鏈憑證，並將其匯入至執行 TPM 金鑰證明的 CA 上的兩個新憑證存放區（由系統管理員所建立）。 如需詳細資訊，請參閱本主題中的 [CA](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md#BKMK_CAConfig) 設定一節。
 
-    3.  以**EKPub 為基礎的信任：** 系統管理員必須為需要 TPM 證明憑證的每個裝置取得 EKPub，並將其新增至允許的 EKPubs 清單。 如需詳細資訊，請參閱本主題中的 [CA](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md#BKMK_CAConfig) 設定一節。
+    3.  以 **EKPub 為基礎的信任：** 系統管理員必須為需要 TPM 證明憑證的每個裝置取得 EKPub，並將其新增至允許的 EKPubs 清單。 如需詳細資訊，請參閱本主題中的 [CA](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md#BKMK_CAConfig) 設定一節。
 
     > [!NOTE]
     > -   這項功能需要 Windows 8.1/Windows Server 2012 R2。
@@ -103,23 +103,23 @@ TPM 金鑰證明是要求憑證的實體以密碼編譯方式向 CA 證明憑證
 ### <a name="configure-a-certificate-template"></a><a name="BKMK_ConfigCertTemplate"></a>設定憑證範本
 若要設定 TPM 金鑰證明的憑證範本，請執行下列設定步驟：
 
-1.  [相容性]**** 索引標籤
+1.  [相容性]  索引標籤
 
     在 [ **相容性設定** ] 區段中：
 
-    -   確定已選取**憑證授權單位**單位的**Windows Server 2012 R2** 。
+    -   確定已選取 **憑證授權單位** 單位的 **Windows Server 2012 R2** 。
 
-    -   確定已選取 [**憑證收件**者] **Windows 8.1/Windows Server 2012 R2** 。
+    -   確定已選取 [ **憑證收件** 者] **Windows 8.1/Windows Server 2012 R2** 。
 
     ![TPM 金鑰證明](media/TPM-Key-Attestation/GTR_ADDS_CompatibilityTab.gif)
 
-2.  [密碼編譯]**** 索引標籤
+2.  [密碼編譯]  索引標籤
 
-    確定已選取 [**提供者] 類別**的 [**金鑰儲存提供者**]，並針對 [**演算法名稱]** 選取 [ **RSA** ]。 確認**要求必須使用下列其中一個提供者**，並在 [**提供者**] 下選取 [ **Microsoft 平臺密碼編譯提供者**] 選項。
+    確定已選取 [ **提供者] 類別** 的 [ **金鑰儲存提供者** ]，並針對 [ **演算法名稱]** 選取 [ **RSA** ]。 確認 **要求必須使用下列其中一個提供者** ，並在 [ **提供者** ] 下選取 [ **Microsoft 平臺密碼編譯提供者** ] 選項。
 
     ![TPM 金鑰證明](media/TPM-Key-Attestation/GTR_ADDS_CryptoTab.gif)
 
-3.  [**金鑰證明**] 索引標籤
+3.  [ **金鑰證明** ] 索引標籤
 
     這是 Windows Server 2012 R2 的新索引標籤：
 
@@ -153,7 +153,7 @@ TPM 金鑰證明是要求憑證的實體以密碼編譯方式向 CA 證明憑證
     |-------|------------------------|---------------|-------------------|
     |1.3.6.1.4.1.311.21.30|Ek|"EK 已驗證"：適用于系統管理員管理的 EK 清單|高|
     |1.3.6.1.4.1.311.21.31|簽署憑證|「已驗證的 EK 憑證」：當已驗證 EK 憑證鏈時|中|
-    |1.3.6.1.4.1.311.21.32|使用者認證|「在使用中受信任的 EK」：適用于使用者-證明 EK|低|
+    |1.3.6.1.4.1.311.21.32|使用者認證|「在使用中受信任的 EK」：適用于使用者-證明 EK|低度|
 
     如果已選取 [ **包含發行原則** ] (預設設定) ，則會將 oid 插入已發行的憑證中。
 
@@ -172,7 +172,7 @@ TPM 金鑰證明是要求憑證的實體以密碼編譯方式向 CA 證明憑證
 
     2.  從您想要在企業環境中允許的製造商 (s) 取得中繼和根 CA 憑證 (s) 。 您必須視需要將這些憑證匯入至先前建立的憑證存放區 (EKCA 和 EKROOT) 。
 
-    下列 Windows PowerShell 腳本會執行這兩個步驟。 在下列範例中，TPM 製造商 Fabrikam 已提供根憑證 *FabrikamRoot .cer* 和發行 CA 憑證 *contoso-fabrikamca .cer*。
+    下列 Windows PowerShell 腳本會執行這兩個步驟。 在下列範例中，TPM 製造商 Fabrikam 已提供根憑證 *FabrikamRoot .cer* 和發行 CA 憑證 *contoso-fabrikamca .cer* 。
 
     ```powershell
     PS C:>\cd cert:
@@ -222,17 +222,17 @@ TPM 金鑰證明是要求憑證的實體以密碼編譯方式向 CA 證明憑證
 
 1.  相容性設定未正確設定。 請確定其設定如下：
 
-    1.  **憑證授權單位**單位： **Windows Server 2012 R2**
+    1.  **憑證授權單位** 單位： **Windows Server 2012 R2**
 
-    2.  **憑證收件**者： **Windows 8.1/Windows Server 2012 R2**
+    2.  **憑證收件** 者： **Windows 8.1/Windows Server 2012 R2**
 
 2.  密碼編譯設定未正確設定。 請確定其設定如下：
 
-    1.  **提供者類別**： **金鑰儲存提供者**
+    1.  **提供者類別** ： **金鑰儲存提供者**
 
-    2.  **演算法名稱**： **RSA**
+    2.  **演算法名稱** ： **RSA**
 
-    3.  **提供者**： **Microsoft 平臺密碼編譯提供者**
+    3.  **提供者** ： **Microsoft 平臺密碼編譯提供者**
 
 3.  要求處理設定未正確設定。 請確定其設定如下：
 
@@ -241,17 +241,17 @@ TPM 金鑰證明是要求憑證的實體以密碼編譯方式向 CA 證明憑證
     2.  不得選取 [ **保存主體的加密私密金鑰** ] 選項。
 
 ### <a name="verification-of-tpm-device-for-attestation"></a>驗證 TPM 裝置以進行證明
-使用 Windows PowerShell Cmdlet **CAEndorsementKeyInfo**，確認特定的 TPM 裝置受信任，可供 ca 證明。 有兩個選項：一個用來驗證 EKCert，另一個用於驗證 EKPub。 指令程式是在 CA 的本機上執行，或使用 Windows PowerShell 遠端 Ca 來執行。
+使用 Windows PowerShell Cmdlet **CAEndorsementKeyInfo** ，確認特定的 TPM 裝置受信任，可供 ca 證明。 有兩個選項：一個用來驗證 EKCert，另一個用於驗證 EKPub。 指令程式是在 CA 的本機上執行，或使用 Windows PowerShell 遠端 Ca 來執行。
 
 1.  若要在 EKPub 上驗證信任，請執行下列兩個步驟：
 
-    1.  **從用戶端電腦解壓縮 EKPub：** EKPub 可以透過 **TpmEndorsementKeyInfo**從用戶端電腦解壓縮。 從提升許可權的命令提示字元中執行下列命令：
+    1.  **從用戶端電腦解壓縮 EKPub：** EKPub 可以透過 **TpmEndorsementKeyInfo** 從用戶端電腦解壓縮。 從提升許可權的命令提示字元中執行下列命令：
 
         ```
         PS C:>\$a=Get-TpmEndorsementKeyInfo -hashalgorithm sha256
         ```
 
-    2.  在**CA 電腦上驗證 EKCert 的信任：** 將解壓縮的字串 (EKPub) 的 SHA-1 雜湊複製到伺服器 (例如，透過電子郵件) ，然後將它傳遞給 CAEndorsementKeyInfo Cmdlet。 請注意，此參數必須是64個字元。
+    2.  在 **CA 電腦上驗證 EKCert 的信任：** 將解壓縮的字串 (EKPub) 的 SHA-1 雜湊複製到伺服器 (例如，透過電子郵件) ，然後將它傳遞給 Confirm-CAEndorsementKeyInfo Cmdlet。 請注意，此參數必須是64個字元。
 
         ```
         Confirm-CAEndorsementKeyInfo [-PublicKeyHash] <string>
@@ -259,14 +259,14 @@ TPM 金鑰證明是要求憑證的實體以密碼編譯方式向 CA 證明憑證
 
 2.  若要在 EKCert 上驗證信任，請執行下列兩個步驟：
 
-    1.  **從用戶端電腦解壓縮 EKCert：** EKCert 可以透過 **TpmEndorsementKeyInfo**從用戶端電腦解壓縮。 從提升許可權的命令提示字元中執行下列命令：
+    1.  **從用戶端電腦解壓縮 EKCert：** EKCert 可以透過 **TpmEndorsementKeyInfo** 從用戶端電腦解壓縮。 從提升許可權的命令提示字元中執行下列命令：
 
         ```
         PS C:>\$a=Get-TpmEndorsementKeyInfo
         PS C:>\$a.manufacturerCertificates|Export-Certificate -filepath c:\myEkcert.cer
         ```
 
-    2.  在**CA 電腦上驗證 EKCert 的信任：** 將解壓縮的 EKCert (EkCert) 複製到 CA (例如透過電子郵件或 xcopy) 。 例如，如果您將憑證檔案複製到 CA 伺服器上的 "c:\diagnose" 資料夾，請執行下列程式來完成驗證：
+    2.  在 **CA 電腦上驗證 EKCert 的信任：** 將解壓縮的 EKCert (EkCert) 複製到 CA (例如透過電子郵件或 xcopy) 。 例如，如果您將憑證檔案複製到 CA 伺服器上的 "c:\diagnose" 資料夾，請執行下列程式來完成驗證：
 
         ```
         PS C:>new-object System.Security.Cryptography.X509Certificates.X509Certificate2 "c:\diagnose\myEKcert.cer" | Confirm-CAEndorsementKeyInfo

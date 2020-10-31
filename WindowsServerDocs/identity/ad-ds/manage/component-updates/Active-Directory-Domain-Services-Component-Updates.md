@@ -2,17 +2,17 @@
 title: Active Directory 網域服務元件更新
 description: 本檔討論 Windows Server 2012 R2 的 AD DS 元件更新
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 09/08/2017
 ms.topic: article
 ms.assetid: a3a91034-a4da-4ad7-93f8-0cd2ec3e7824
-ms.openlocfilehash: bb8beb409fda5c5c64618bfd8502db1a71024f39
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: a5ed47dae3cab9c026656fcccedae30a42325681
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88940358"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93069800"
 ---
 # <a name="active-directory-domain-services-component-updates"></a>Active Directory 網域服務元件更新
 
@@ -38,7 +38,7 @@ ms.locfileid: "88940358"
 
     -   [SPN 和 UPN 的唯一性](../../../ad-ds/manage/component-updates/SPN-and-UPN-uniqueness.md)
 
-    -   [Winlogon 自動重新開機登入 &#40;ARSO&#41;](../../../ad-ds/manage/component-updates/Winlogon-Automatic-Restart-Sign-On--ARSO-.md)
+    -   [Winlogon 自動重新開機 Sign-On &#40;ARSO&#41;](../../../ad-ds/manage/component-updates/Winlogon-Automatic-Restart-Sign-On--ARSO-.md)
 
     -   [TPM 金鑰證明](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md)
 

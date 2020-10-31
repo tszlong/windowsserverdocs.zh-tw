@@ -1,23 +1,23 @@
 ---
 title: AD 樹系復原-確認複寫
-ms.author: iainfou
+ms.author: daveba
 author: iainfoulds
 manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 302e522a-fb40-43bc-bc63-83dcc87ebde5
-ms.openlocfilehash: beb7968dee3b2948aed695864015a02f0aa3b47e
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 6f08871e3ffa27f3bfc063c5962437ae65f8f667
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88938148"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93070780"
 ---
 # <a name="resources-to-verify-replication-is-working"></a>確認複寫運作的資源
 
 >適用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
-在還原或重新安裝所有的 Dc 之後，您可以使用 **repadmin/replsum**（可在任何版本的 Windows Server 上執行）來確認 AD DS 和 SYSVOL 已正確地復原和複寫。
+在還原或重新安裝所有的 Dc 之後，您可以使用 **repadmin/replsum** （可在任何版本的 Windows Server 上執行）來確認 AD DS 和 SYSVOL 已正確地復原和複寫。
 
 > [!TIP]
 > 您也可以下載並執行 [Active Directory 複寫狀態工具](https://www.microsoft.com/download/details.aspx?id=30005) (ADReplStatus) ，這是一項免費的工具，可監視 dc 的複寫狀態並報告錯誤。 ADReplStatus 需要 .NET Framework 4，如果不存在，則會加以安裝。

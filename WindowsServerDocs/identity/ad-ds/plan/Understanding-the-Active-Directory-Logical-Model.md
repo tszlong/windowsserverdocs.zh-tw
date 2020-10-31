@@ -2,16 +2,16 @@
 ms.assetid: 62708b2e-4090-4cf7-8ae6-a557f31f561f
 title: 了解 Active Directory 邏輯模型
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: c04e699fe2069b22aa1bd07ccb34e1e37a3ad9cb
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 0bc7b55e404172c785db03a640aceea056595fcf
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88938288"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93070930"
 ---
 # <a name="understanding-the-active-directory-logical-model"></a>了解 Active Directory 邏輯模型
 
