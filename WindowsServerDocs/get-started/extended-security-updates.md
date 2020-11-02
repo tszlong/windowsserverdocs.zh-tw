@@ -3,16 +3,16 @@ title: Windows Server 2008 和 2008 R2 延伸安全性更新
 description: 瞭解如何在其支援週期結束後，使用 Windows Server 2008 和 2008 R2 延伸安全性更新 (ESU)。
 ms.mktglfcycl: manage
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 ms.topic: get-started-article
 ms.localizationpriority: high
 ms.date: 02/21/2020
-ms.openlocfilehash: aa528b6d3e5858cec6b55f2bcdf866dcda32eaf0
-ms.sourcegitcommit: ad8fe5bb915e616a437be60e1836d3ce891dabaa
+ms.openlocfilehash: c66a008c94927de4b8e3fb4e0042785571272081
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90813430"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93071350"
 ---
 # <a name="how-to-use-windows-server-2008-and-2008-r2-extended-security-updates-esu"></a>如何使用 Windows Server 2008 和 2008 R2 延伸安全性更新 (ESU)
 
@@ -33,7 +33,7 @@ Windows Server 2008 和 Windows Server 2008 R2 支援週期已於 2020 年 1 月
 
 ## <a name="what-are-extended-security-updates-for-windows-server"></a>什麼是 Windows Server 的延伸安全性更新？
 
-適用於 Windows Server 的延伸安全性更新 (ESU) 包含安全性更新和公告，等級為*非常重要*和*重要*，自 2020 年 1月 14 日起最多三年。 延伸安全性更新不包含下列內容：
+適用於 Windows Server 的延伸安全性更新 (ESU) 包含安全性更新和公告，等級為 *非常重要* 和 *重要* ，自 2020 年 1月 14 日起最多三年。 延伸安全性更新不包含下列內容：
 
 * 新功能
 * 客戶要求的非安全性 Hotfix
@@ -110,7 +110,7 @@ Windows Server 2008 和 Windows Server 2008 R2 支援週期已於 2020 年 1 月
 
     | 設定             | 值 |
     |---------------------|-------|
-    | 索引鍵名稱            | 您金鑰的顯示名稱，例如 *Agreement01*。 |
+    | 索引鍵名稱            | 您金鑰的顯示名稱，例如 *Agreement01* 。 |
     | 合約編號    | 大量授權合約管理系統所產生的合約編號，或 Enterprise 合約程式的 MSLicense。 |
     | 電腦數目 | 選擇您想要使用此金鑰安裝延伸安全性更新的電腦數目。 |
     | 作業系統    | 選擇要搭配使用此金鑰的作業系統，例如 Windows Server 2008 或 Windows Server 2008 R2。 |
@@ -146,7 +146,7 @@ Windows Server 2008 和 Windows Server 2008 R2 支援週期已於 2020 年 1 月
 
 ## <a name="download-and-apply-extended-security-updates"></a>下載並套用延伸安全性更新
 
-Windows Server 延伸安全性更新的傳遞、下載及應用程式，與現有的部署程序並無不同。 透過延伸安全性更新提供的更新，僅適用於*安全性*，並會於星期二的每個修補程式發行。
+Windows Server 延伸安全性更新的傳遞、下載及應用程式，與現有的部署程序並無不同。 透過延伸安全性更新提供的更新，僅適用於 *安全性* ，並會於星期二的每個修補程式發行。
 
 您可以使用任何已備妥的工具和流程來安裝更新。 唯一的差別在於系統必須使用上一節產生的金鑰來註冊，才能下載並安裝更新。
 
