@@ -7,12 +7,12 @@ ms.date: 08/14/2018
 ms.topic: article
 ms.localizationpriority: low
 ms.assetid: 6cb13f84-cb50-4e60-a685-54f67c9146be
-ms.openlocfilehash: 1aa270adc30f72f8efcdbbea2162e3c6b925dade
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 8dc2fec785771db4ccefb08e2359506932e11620
+ms.sourcegitcommit: 8c0a419ae5483159548eb0bc159f4b774d4c3d85
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746423"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93235865"
 ---
 # <a name="managing-hyper-v-hypervisor-scheduler-types"></a>管理 Hyper-v 虛擬程式排程器類型
 
@@ -34,7 +34,7 @@ Intel 和 AMD 都提供支援 SMT 的處理器。 Intel 將其 SMT 供應專案�
 
 基於本文的目的，SMT 的說明和 Hyper-v 的使用方式同樣適用于 Intel 和 AMD 系統。
 
-* 如需 Intel HT 技術的詳細資訊，請參閱 [Intel 超執行緒技術](https://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html)
+* 如需 Intel HT 技術的詳細資訊，請參閱 [intel Hyper-Threading 技術](https://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html)
 
 * 如需有關 AMD SMT 的詳細資訊，請參閱「 [Zen」核心架構](https://www.amd.com/en/technologies/zen-core)
 
@@ -135,7 +135,7 @@ Windows Server 2016 Hyper-v 預設會使用傳統的程式管理器排程器模�
 
 ## <a name="windows-server-2019-hyper-v-defaults-to-using-the-core-scheduler"></a>Windows Server 2019 Hyper-v 預設為使用核心排程器
 
-為了協助確保在最佳的安全性設定中部署 Hyper-v 主機，Windows Server 2019 Hyper-v 現在預設會使用核心虛擬程式排程器模型。 主機系統管理員可以選擇將主機設定為使用舊版傳統排程器。 在覆寫排程器類型的預設設定之前，系統管理員應該仔細閱讀、瞭解並考慮每個排程器類型對虛擬化主機安全性和效能的影響。  如需詳細資訊，請參閱 [瞭解 hyper-v 排程器類型選取專案](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/understanding-hyper-v-scheduler-type-selection) 。
+為了協助確保在最佳的安全性設定中部署 Hyper-v 主機，Windows Server 2019 Hyper-v 現在預設會使用核心虛擬程式排程器模型。 主機系統管理員可以選擇將主機設定為使用舊版傳統排程器。 在覆寫排程器類型的預設設定之前，系統管理員應該仔細閱讀、瞭解並考慮每個排程器類型對虛擬化主機安全性和效能的影響。 如需詳細資訊，請參閱 [hyper-v 虛擬程式排程器類型選取專案](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/about-hyper-v-scheduler-type-selection) 。
 
 ### <a name="required-updates"></a>必要的更新
 

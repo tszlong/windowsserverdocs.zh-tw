@@ -6,12 +6,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: b644103342e94a171699efeab238453bdb583eec
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 8d8a200881b8b1acf21afb8eb0b41cff6e390d88
+ms.sourcegitcommit: 8c0a419ae5483159548eb0bc159f4b774d4c3d85
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93067800"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93235855"
 ---
 # <a name="virtualized-domain-controller-architecture"></a>虛擬網域控制站架構
 
@@ -30,7 +30,7 @@ ms.locfileid: "93067800"
 
 在有些 Hypervisor 支援「VM 世代識別碼」，而有些不支援的混合環境中，可能會不小心在不支援「VM 世代識別碼」的 Hypervisor 上部署複製媒體。 DCCloneConfig.xml 檔案存在表示系統管理員意圖複製 DC。 因此，如果在開機期間發現 DCCloneConfig.xml 檔案，但主機未提供「VM 世代識別碼」，表示複製 DC 開機進入目錄服務還原模式 (DSRM)，以防止環境中的其他部分受影響。 接著，您可以將複製媒體移動到支援「VM 世代識別碼」的 Hypervisor，然後重試複製。
 
-如果複製媒體部署在支援「VM 世代識別碼」的 Hypervisor 上，但未提供 DCCloneConfig.xml 檔案，當 DC 偵測到來自其 DIT 的「VM 世代識別碼」與來自新 VM 的「VM 世代識別碼」不同，就會觸發防護功能，以防止重複使用 USN 並避免 SID 重複。 不過，將不會起始複製程序，因此次要 DC 會以和來源 DC 相同的身分識別繼續執行。 您應該儘快將此次要 DC 從網路移除，以避免環境中的不一致。 如需如何回收此次要 DC 的詳細資訊，並確保已複寫輸出的更新，請參閱 Microsoft 知識庫文章 [2742970](https://support.microsoft.com/kb/2742970)。
+如果複製媒體部署在支援「VM 世代識別碼」的 Hypervisor 上，但未提供 DCCloneConfig.xml 檔案，當 DC 偵測到來自其 DIT 的「VM 世代識別碼」與來自新 VM 的「VM 世代識別碼」不同，就會觸發防護功能，以防止重複使用 USN 並避免 SID 重複。 不過，將不會起始複製程序，因此次要 DC 會以和來源 DC 相同的身分識別繼續執行。 您應該儘快將此次要 DC 從網路移除，以避免環境中的不一致。
 
 ### <a name="cloning-detailed-processing"></a><a name="BKMK_CloneProcessDetails"></a>複製的詳細程序
 下圖顯示初始複製操作和複製重試操作的架構。 本主題稍後將詳細說明這些程序。
@@ -59,7 +59,7 @@ ms.locfileid: "93067800"
 
     2.  若兩個識別碼不相符，表示這是新的虛擬機器，其包含來自先前之虛擬網域控制站 (或其還原的快照) 的 NTDS.DIT。 如果 DCCloneConfig.xml 檔案存在，網域控制站會繼續執行複製操作。 如果沒有，它會繼續執行快照還原操作。 請參閱[虛擬網域控制站安全還原架構](../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_SafeRestoreArch)。
 
-    3.  若 Hypervisor 沒有提供「VM 世代識別碼」供比較，但有 DCCloneConfig.xml 檔案存在，客體會重新命名該檔案，並重新開機進入 DSRM 以避免網路上出現重複的網域控制站。 如果沒有 dccloneconfig.xml 檔案，客體會正常開機 (可能會在網路上產生重複的網域控制站)。 如需有關如何回收此重複網域控制站的詳細資訊，請參閱 Microsoft 知識庫文章 [2742970](https://support.microsoft.com/kb/2742970)。
+    3.  若 Hypervisor 沒有提供「VM 世代識別碼」供比較，但有 DCCloneConfig.xml 檔案存在，客體會重新命名該檔案，並重新開機進入 DSRM 以避免網路上出現重複的網域控制站。 如果沒有 dccloneconfig.xml 檔案，客體會正常開機 (可能會在網路上產生重複的網域控制站)。
 
 3.  NTDS 服務會檢查 VDCisCloning DWORD 登錄值名稱 (位在 HKEY_Local_Machine\System\CurrentControlSet\Services\Ntds\Parameters 下) 的值。
 
