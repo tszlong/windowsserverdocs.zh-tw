@@ -4,12 +4,12 @@ ms.date: 01/30/2019
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 7bdcb67c5bcb36d2ebe5ee02d765f3cab63c7bed
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 0a8015096d22cfb384815f1e5b8c5b9c9c248922
+ms.sourcegitcommit: 7499749ce7baaf58a523cae2dd46737d635475ce
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766821"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93043910"
 ---
 # <a name="volume-shadow-copy-service"></a>磁碟區陰影複製服務
 
@@ -31,7 +31,7 @@ VSS 會針對要備份的資料，協調用於建立一致陰影複製 (也稱�
 
   - 您正在執行磁碟到磁碟的備份。
 
-  - 為了快速復原遺失的資料，您需要將資料還原到原始 LUN 或還原至全新的 LUN 以取代失敗的原始 LUN。
+  - 為了快速復原遺失的資料，您需要將資料還原到原始邏輯單元編號 (LUN) 或還原至全新的 LUN 以取代失敗的原始 LUN。
 
 
 使用 VSS 的 Windows 功能和應用程式包含下列各項：
@@ -49,19 +49,19 @@ VSS 會針對要備份的資料，協調用於建立一致陰影複製 (也稱�
 
 完整的 VSS 解決方案需要下列所有基本元件：
 
-**VSS 服務**   Windows 作業系統的一部分，用來確保其他元件可以適當地彼此通訊，並一起運作。
+**VSS 服務**   Windows 作業系統的一部分，用來確保其他元件可以適當地彼此通訊，並一起運作。
 
-**VSS 要求者**   要求實際建立陰影複製 (或是匯入或刪除陰影複製等其他高階作業) 的軟體。 一般來說，這是指備份應用程式。 Windows Server Backup 公用程式和 System Center Data Protection Manager 應用程式都是 VSS 要求者。 非 Microsoft® VSS 要求者包含幾乎所有在 Windows 上執行的備份軟體。
+**VSS 要求者**   要求實際建立陰影複製 (或是匯入或刪除陰影複製等其他高階作業) 的軟體。 一般來說，這是指備份應用程式。 Windows Server Backup 公用程式和 System Center Data Protection Manager 應用程式都是 VSS 要求者。 非 Microsoft® VSS 要求者包含幾乎所有在 Windows 上執行的備份軟體。
 
-**VSS 寫入器**   該元件可確保我們有一致的資料集可進行備份。 此元件通常會在企業營運應用程式中提供，例如 SQL Server®或 Exchange Server。 適用於各種 Windows 元件 (例如登錄) 的 VSS 寫入器會隨附於 Windows 作業系統中。 許多需要在備份期間保證資料一致性的 Windows 版應用程式都包含非 Microsoft VSS 寫入器。
+**VSS 寫入器**   該元件可確保我們有一致的資料集可進行備份。 此元件通常會在企業營運應用程式中提供，例如 SQL Server®或 Exchange Server。 適用於各種 Windows 元件 (例如登錄) 的 VSS 寫入器會隨附於 Windows 作業系統中。 許多需要在備份期間保證資料一致性的 Windows 版應用程式都包含非 Microsoft VSS 寫入器。
 
-**VSS 提供者**   用於建立和維護陰影複製的元件。 這可能會出現在軟體或硬體中。 Windows 作業系統包含使用「寫入時複製」的 VSS 提供者。 如果您使用存放區域網路 (SAN)，請務必安裝適用於 SAN 的 VSS 硬體提供者 (如果有提供的話)。 硬體提供者會從主機作業系統卸載陰影複製的建立和維護工作。
+**VSS 提供者**   用於建立和維護陰影複製的元件。 這可能會出現在軟體或硬體中。 Windows 作業系統包含使用「寫入時複製」的 VSS 提供者。 如果您使用存放區域網路 (SAN)，請務必安裝適用於 SAN 的 VSS 硬體提供者 (如果有提供的話)。 硬體提供者會從主機作業系統卸載陰影複製的建立和維護工作。
 
 下圖說明 VSS 服務如何與要求者、寫入器和提供者合作，以建立磁碟區的陰影複製。
 
 ![磁碟區陰影複製服務的架構圖](media/volume-shadow-copy-service/Ee923636.94dfb91e-8fc9-47c6-abc6-b96077196741(WS.10).jpg)
 
-**圖 1**   磁碟區陰影複製服務的架構圖
+**圖 1**   磁碟區陰影複製服務的架構圖
 
 ### <a name="how-a-shadow-copy-is-created"></a>陰影複製的建立方式
 
@@ -103,11 +103,11 @@ VSS 會針對要備份的資料，協調用於建立一致陰影複製 (也稱�
 
 硬體或軟體陰影複製提供者會使用下列其中一種方法來建立陰影複製：
 
-**完整複製**   此方法會在指定時間點建立原始磁碟區的完整複本 (稱為「完整複本」或「再製」)。 此複本為唯讀狀態。
+**完整複製**   此方法會在指定時間點建立原始磁碟區的完整複本 (稱為「完整複本」或「再製」)。 此複本為唯讀狀態。
 
-**寫入時複製**   此方法不會複製原始磁碟區。 而是複製指定時間點之後磁碟區上的所有變更 (已完成的寫入 I/O 要求) 來建立差異複本。
+**寫入時複製**   此方法不會複製原始磁碟區。 而是複製指定時間點之後磁碟區上的所有變更 (已完成的寫入 I/O 要求) 來建立差異複本。
 
-**寫入時重新導向**   此方法不會複製原始磁碟區，也不會在指定時間點之後對原始磁碟區進行任何變更。 而是會將所有變更重新導向不同的磁碟區，藉此來建立差異複本。
+**寫入時重新導向**   此方法不會複製原始磁碟區，也不會在指定時間點之後對原始磁碟區進行任何變更。 而是會將所有變更重新導向不同的磁碟區，藉此來建立差異複本。
 
 ## <a name="complete-copy"></a>完整副本
 
@@ -157,7 +157,7 @@ VSS 會針對要備份的資料，協調用於建立一致陰影複製 (也稱�
 </tbody>
 </table>
 
-**表 1**   建立陰影複製的寫入時複製方法
+**表 1**   建立陰影複製的寫入時複製方法
 
 「寫入時複製」方法是建立陰影複製的快速方法，因為其只會複製已變更的資料。 相異區域中的已複製區塊可以與原始磁碟區上的已變更資料結合，以便將磁碟區還原到進行任何變更之前的狀態。 如果有許多變更，則「寫入時複製方法」的成本可能會變高。
 
@@ -198,7 +198,7 @@ VSS 會針對要備份的資料，協調用於建立一致陰影複製 (也稱�
 </tbody>
 </table>
 
-**表 2**   建立陰影複製的寫入時重新導向方法
+**表 2**   建立陰影複製的寫入時重新導向方法
 
 如同「寫入時複製」方法，「寫入時重新導向」方法也是建立陰影複製的快速方法，因為其只會複製資料中已變更的部分。 相異區域中已複製的區塊可以與原始磁碟區上未變更的資料結合，以建立完整的最新資料複本。 如果有許多讀取 I/O 要求，則「寫入時重新導向」方法的成本可能會變高。
 
@@ -308,7 +308,7 @@ LUN 重新同步與 LUN 交換不同。 LUN 交換是在 Windows Server 2003 SP
 
 ![如何在兩個伺服器之間傳輸陰影複製的圖表](media/volume-shadow-copy-service/Ee923636.633752e0-92f6-49a7-9348-f451b1dc0ed7(WS.10).jpg)
 
-**圖 3**   在兩部伺服器之間建立和轉移陰影複製
+**圖 3**   在兩部伺服器之間建立和轉移陰影複製
 
 
 > [!NOTE]
@@ -338,13 +338,13 @@ VSS 是在 Windows XP 中引進的。 其適用於 Windows XP、Windows Server 
 
 磁碟區陰影複製服務支援高達 64 TB 的磁碟區大小。
 
-### <a name="i-made-a-backup-on-windows-server2008-can-i-restore-it-on-windows-server2008r2"></a>我在 Windows Server 2008 上進行了備份。 我可以在 Windows Server 2008 R2 上將其還原嗎？
+### <a name="i-made-a-backup-on-windows-server-2008-can-i-restore-it-on-windows-server-2008-r2"></a>我在 Windows Server 2008 上進行了備份。 我可以在 Windows Server 2008 R2 上將其還原嗎？
 
 這取決於您所使用的備份軟體。 大部分的備份程式都可在資料上支援此案例，但不適用於系統狀態備份。
 
 在這兩個 Windows 版本上建立的陰影複製都可以用在另一個版本上。
 
-### <a name="i-made-a-backup-on-windows-server2003-can-i-restore-it-on-windows-server2008"></a>我在 Windows Server 2003 上進行了備份。 我可以在 Windows Server 2008 上將其還原嗎？
+### <a name="i-made-a-backup-on-windows-server-2003-can-i-restore-it-on-windows-server-2008"></a>我在 Windows Server 2003 上進行了備份。 我可以在 Windows Server 2008 上將其還原嗎？
 
 這取決於您所使用的備份軟體。 您無法在 Windows Server 2008 上使用您在 Windows Server 2003 上建立的陰影複製。 同樣的，您無法在 Windows Server 2003 上還原您在 Windows Server 2008 上建立的陰影複製。
 
@@ -363,7 +363,7 @@ VSS 是在 Windows XP 中引進的。 其適用於 Windows XP、Windows Server 
 
 VSS 的設計目的是要建立整個磁碟區的陰影複製。 系統會自動在陰影複製中省略暫存檔案 (例如分頁檔案) 來節省空間。
 
-若要從陰影複製中排除特定檔案，請使用下列登錄機碼：**FilesNotToSnapshot**。
+若要從陰影複製中排除特定檔案，請使用下列登錄機碼： **FilesNotToSnapshot** 。
 
 
 > [!NOTE]
@@ -417,11 +417,11 @@ VSS 的設計目的是要建立整個磁碟區的陰影複製。 系統會自動
 
 ### <a name="whats-the-maximum-number-of-software-shadow-copies-created-by-the-system-provider-that-i-can-maintain-for-a-volume"></a>針對單一磁碟區，我最多可以維護多少個系統提供者建立的軟體陰影複製？
 
-每個磁碟區的軟體陰影複製數目上限為 512 個。 不過，根據預設，您只能維護 64 個「共用資料夾陰影複製」功能所使用的陰影複製。 若要變更「共用資料夾陰影複製」功能的限制，請使用下列登錄機碼：**MaxShadowCopies**。
+每個磁碟區的軟體陰影複製數目上限為 512 個。 不過，根據預設，您只能維護 64 個「共用資料夾陰影複製」功能所使用的陰影複製。 若要變更「共用資料夾陰影複製」功能的限制，請使用下列登錄機碼： **MaxShadowCopies** 。
 
 ### <a name="how-can-i-control-the-space-that-is-used-for-shadow-copy-storage-space"></a>如何控制用於陰影複製儲存空間的空間？
 
-輸入 **vssadmin resize shadowstorage**命令。
+輸入 **vssadmin resize shadowstorage** 命令。
 
 如需詳細資訊，請參閱 TechNet 上的 [Vssadmin resize shadowstorage](https://go.microsoft.com/fwlink/?linkid=180906) (https://go.microsoft.com/fwlink/?LinkId=180906) 。
 
@@ -442,15 +442,15 @@ Windows 作業系統提供下列工具來使用 VSS：
 
 DiskShadow 是 VSS 要求者，可讓您用來管理系統上可以擁有的所有硬體和軟體快照集。 DiskShadow 包含如下所示的命令：
 
-  - **list**：列出 VSS 寫入器、VSS 提供者和陰影複製
+  - **list** ：列出 VSS 寫入器、VSS 提供者和陰影複製
 
-  - **create**：建立新的陰影複製
+  - **create** ：建立新的陰影複製
 
-  - **import**：匯入可轉移的陰影複製
+  - **import** ：匯入可轉移的陰影複製
 
-  - **expose**：公開持續性的陰影複製 (例如磁碟機代號)
+  - **expose** ：公開持續性的陰影複製 (例如磁碟機代號)
 
-  - **revert**：將磁碟區還原回指定的陰影複製
+  - **revert** ：將磁碟區還原回指定的陰影複製
 
 
 這項工具主要提供給 IT 專業人員使用，但是開發人員在測試 VSS 寫入器或 VSS 提供者時，可能也會發現該工具很實用。
@@ -463,15 +463,15 @@ VssAdmin 可用來建立、刪除和列出陰影複製的相關資訊。 也可�
 
 VssAdmin 包含如下所示的命令：
 
-  - **create shadow**：建立新的陰影複製
+  - **create shadow** ：建立新的陰影複製
 
-  - **delete shadows**：刪除陰影複製
+  - **delete shadows** ：刪除陰影複製
 
-  - **list providers**：列出所有已註冊的 VSS 提供者
+  - **list providers** ：列出所有已註冊的 VSS 提供者
 
-  - **list writers**：列出所有已訂閱的 VSS 寫入器
+  - **list writers** ：列出所有已訂閱的 VSS 寫入器
 
-  - **resize shadowstorage**：變更陰影複製存放區域的大小上限
+  - **resize shadowstorage** ：變更陰影複製存放區域的大小上限
 
 
 VssAdmin 只能用來管理系統軟體提供者所建立的陰影複製。
@@ -538,12 +538,12 @@ VssAdmin 可在 Windows 用戶端和 Windows Server 作業系統版本上使用�
 <tr class="odd">
 <td><p>LUN 重新同步</p></td>
 <td><p>都不支援</p></td>
-<td><p>Windows Server 2008 R2</p></td>
+<td><p>Windows Server 2008 R2</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>FilesNotToSnapshot</strong> 登錄機碼</p></td>
 <td><p>Windows Vista</p></td>
-<td><p>Windows Server 2008</p></td>
+<td><p>Windows Server 2008</p></td>
 </tr>
 <tr class="odd">
 <td><p>可轉移的陰影複製</p></td>
@@ -553,12 +553,12 @@ VssAdmin 可在 Windows 用戶端和 Windows Server 作業系統版本上使用�
 <tr class="even">
 <td><p>硬體陰影複製</p></td>
 <td><p>都不支援</p></td>
-<td><p>Windows Server 2003</p></td>
+<td><p>Windows Server 2003</p></td>
 </tr>
 <tr class="odd">
 <td><p>先前的 Windows Server 版本</p></td>
 <td><p>Windows Vista</p></td>
-<td><p>Windows Server 2003</p></td>
+<td><p>Windows Server 2003</p></td>
 </tr>
 <tr class="even">
 <td><p>使用 LUN 交換快速復原</p></td>
@@ -587,22 +587,22 @@ VssAdmin 可在 Windows 用戶端和 Windows Server 作業系統版本上使用�
 <p></p>
 </div></td>
 <td><p>都不支援</p></td>
-<td><p>Windows Server 2008</p></td>
+<td><p>Windows Server 2008</p></td>
 </tr>
 <tr class="even">
 <td><p>共用資料夾陰影複製</p></td>
 <td><p>都不支援</p></td>
-<td><p>Windows Server 2003</p></td>
+<td><p>Windows Server 2003</p></td>
 </tr>
 <tr class="odd">
 <td><p>可轉移的自動復原陰影複製</p></td>
 <td><p>都不支援</p></td>
-<td><p>Windows Server 2008</p></td>
+<td><p>Windows Server 2008</p></td>
 </tr>
 <tr class="even">
 <td><p>並行備份工作階段 (最多 64 個)</p></td>
-<td><p>Windows XP</p></td>
-<td><p>Windows Server 2003</p></td>
+<td><p>Windows XP</p></td>
+<td><p>Windows Server 2003</p></td>
 </tr>
 <tr class="odd">
 <td><p>單一還原工作階段與備份並行</p></td>
@@ -612,7 +612,7 @@ VssAdmin 可在 Windows 用戶端和 Windows Server 作業系統版本上使用�
 <tr class="even">
 <td><p>最多 8 個還原工作階段與備份並行</p></td>
 <td><p>Windows 7</p></td>
-<td><p>Windows Server 2003 R2</p></td>
+<td><p>Windows Server 2003 R2</p></td>
 </tr>
 </tbody>
 </table>

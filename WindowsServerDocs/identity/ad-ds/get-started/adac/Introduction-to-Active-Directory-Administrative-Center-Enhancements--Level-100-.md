@@ -1,17 +1,17 @@
 ---
 ms.assetid: 074e63e9-976c-49da-8cba-9ae0b3325e34
 title: Introduction to Active Directory Administrative Center Enhancements (Level 100)
-ms.author: iainfou
+ms.author: daveba
 author: iainfoulds
 manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: a7639fccf472d3b23b06a64dc0e621cfa4f8bb37
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 4cb57ded79f77041b49f58a8779ba213840a253b
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88940108"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93071010"
 ---
 # <a name="introduction-to-active-directory-administrative-center-enhancements-level-100"></a>Introduction to Active Directory Administrative Center Enhancements (Level 100)
 
@@ -68,11 +68,11 @@ Windows Server 中的 Active Directory 管理中心包含下列各項的管理�
 
 1. 以滑鼠右鍵按一下 Windows PowerShell 圖示，按一下 [以 **系統管理員身分執行** ]，然後輸入 **dsac.exe** 以開啟 ADAC。
 
-2. 依序按一下 [管理]****、[新增瀏覽節點]****，在 [新增瀏覽節點]**** 對話方塊中選取適當的目標網域，然後按一下 [確定]****。
+2. 依序按一下 [管理]、[新增瀏覽節點]，在 [新增瀏覽節點] 對話方塊中選取適當的目標網域，然後按一下 [確定]。
 
-3. 在左瀏覽窗格中按一下目標網域，然後在 [工作]**** 窗格中按一下 [提高樹系功能等級]****。 選取至少為 Windows Server 2008 R2 或更高版本的樹系功能等級，然後按一下 **[確定]**。
+3. 在左瀏覽窗格中按一下目標網域，然後在 [工作] 窗格中按一下 [提高樹系功能等級]。 選取至少為 Windows Server 2008 R2 或更高版本的樹系功能等級，然後按一下 **[確定]** 。
 
-![AD 系統管理中心簡介](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***
+![AD 系統管理中心簡介 ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>Windows PowerShell 對等命令</em>_* _
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -80,7 +80,7 @@ Windows Server 中的 Active Directory 管理中心包含下列各項的管理�
 Set-ADForestMode -Identity contoso.com -ForestMode Windows2008R2Forest -Confirm:$false
 ```
 
-針對 **-Identity** 引數，請指定完整的 DNS 功能變數名稱。
+針對 _ *-Identity* * 引數，請指定完整的 DNS 功能變數名稱。
 
 ### <a name="step-2-enable-recycle-bin"></a><a name="bkmk_enable_recycle_bin"></a>步驟 2：啟用資源回收筒
 
@@ -90,13 +90,13 @@ Set-ADForestMode -Identity contoso.com -ForestMode Windows2008R2Forest -Confirm:
 
 1. 以滑鼠右鍵按一下 Windows PowerShell 圖示，按一下 [以 **系統管理員身分執行** ]，然後輸入 **dsac.exe** 以開啟 ADAC。
 
-2. 依序按一下 [管理]****、[新增瀏覽節點]****，在 [新增瀏覽節點]**** 對話方塊中選取適當的目標網域，然後按一下 [確定]****。
+2. 依序按一下 [管理]、[新增瀏覽節點]，在 [新增瀏覽節點] 對話方塊中選取適當的目標網域，然後按一下 [確定]。
 
-3. 在 [工作]**** 窗格中，按一下 [工作]**** 窗格中的 [啟用資源回收筒...]****，按一下警告訊息方塊上的 [確定]****，再按一下 [確定]**** 以重新整理 ADAC 訊息。
+3. 在 [工作] 窗格中，按一下 [工作] 窗格中的 [啟用資源回收筒...]，按一下警告訊息方塊上的 [確定]，再按一下 [確定] 以重新整理 ADAC 訊息。
 
 4. 按 F5 重新整理 ADAC。
 
-![AD 系統管理中心簡介](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***
+![AD 系統管理中心簡介 ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>Windows PowerShell 對等命令</em>_* _
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -110,15 +110,15 @@ Enable-ADOptionalFeature -Identity 'CN=Recycle Bin Feature,CN=Optional Features,
 
 #### <a name="to-create-test-users"></a>建立測試使用者
 
-1. 以滑鼠右鍵按一下 Windows PowerShell 圖示，按一下 [以 **系統管理員身分執行** ]，然後輸入 **dsac.exe** 以開啟 ADAC。
+1. 以滑鼠右鍵按一下 Windows PowerShell 圖示，然後按一下 [以 *系統管理員身分執行* ]，然後輸入 **dsac.exe** 以開啟 ADAC。
 
-2. 依序按一下 [管理]****、[新增瀏覽節點]****，在 [新增瀏覽節點]**** 對話方塊中選取適當的目標網域，然後按一下 [確定]****。
+2. 依序按一下 [管理]、[新增瀏覽節點]，在 [新增瀏覽節點] 對話方塊中選取適當的目標網域，然後按一下 [確定]。
 
-3. 在 [工作]**** 窗格中，依序按一下 [新增]**** 和 [使用者]****。
+3. 在 [工作] 窗格中，依序按一下 [新增] 和 [使用者]。
 
     ![AD 系統管理中心簡介](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/ADDS_ADACNewUser.gif)
 
-4. 在 [帳戶]**** 下方輸入下列資訊，然後按一下 [確定]：
+4. 在 [帳戶] 下方輸入下列資訊，然後按一下 [確定]：
 
    - 全名：test1
    - 使用者 SamAccountName 登入：test1
@@ -130,16 +130,16 @@ Enable-ADOptionalFeature -Identity 'CN=Recycle Bin Feature,CN=Optional Features,
 #### <a name="to-create-a-test-group-and-add-users-to-the-group"></a>建立測試群組，並將使用者新增到該群組。
 
 1. 以滑鼠右鍵按一下 Windows PowerShell 圖示，按一下 [以 **系統管理員身分執行** ]，然後輸入 **dsac.exe** 以開啟 ADAC。
-2. 依序按一下 [管理]****、[新增瀏覽節點]****，在 [新增瀏覽節點]**** 對話方塊中選取適當的目標網域，然後按一下 [確定]****。
-3. 在 [工作]**** 窗格中，依序按一下 [新增]**** 和 [群組]****。
-4. 在 [群組]**** 下方輸入下列資訊，然後按一下 [確定]****：
+2. 依序按一下 [管理]、[新增瀏覽節點]，在 [新增瀏覽節點] 對話方塊中選取適當的目標網域，然後按一下 [確定]。
+3. 在 [工作] 窗格中，依序按一下 [新增] 和 [群組]。
+4. 在 [群組] 下方輸入下列資訊，然後按一下 [確定]：
 
     -   **組名： group1**
 
-5. 按一下 [group1]****，然後按一下 [工作]**** 窗格下方的 [內容]****。
-6. 依序按一下 [成員]****、[新增]****，輸入 **test1;test2**，然後按一下 [確定]****。
+5. 按一下 [group1]，然後按一下 [工作] 窗格下方的 [內容]。
+6. 依序按一下 [成員]、[新增]，輸入 **test1;test2** ，然後按一下 [確定]。
 
-![AD 系統管理中心簡介](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***
+![AD 系統管理中心簡介 ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>Windows PowerShell 對等命令</em>_* _
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -149,14 +149,14 @@ Add-ADGroupMember -Identity group1 -Member test1
 
 #### <a name="to-create-an-organizational-unit"></a>建立組織單位
 
-1. 以滑鼠右鍵按一下 Windows PowerShell 圖示，按一下 [以 **系統管理員身分執行** ]，然後輸入 **dsac.exe** 以開啟 ADAC。
-2. 按一下 [ **管理**]，按一下 [ **新增流覽節點** ]，然後在 [ **新增流覽節點** ] 對話方塊中選取適當的目標網域，然後按一下 [確定]。
-3. 在 [工作]**** 窗格中，依序按一下 [新增]**** 和 [組織單位]****。
-4. 在 [組織單位]**** 下方輸入下列資訊，然後按一下 [確定]****：
+1. 以滑鼠右鍵按一下 Windows PowerShell 圖示，然後按一下 [以 *系統管理員身分執行* ]，然後輸入 **dsac.exe** 以開啟 ADAC。
+2. 按一下 [ **管理** ]，按一下 [ **新增流覽節點** ]，然後在 [ **新增流覽節點** ] 對話方塊中選取適當的目標網域，然後按一下 [確定]。
+3. 在 [工作] 窗格中，依序按一下 [新增] 和 [組織單位]。
+4. 在 [組織單位] 下方輸入下列資訊，然後按一下 [確定]：
 
    - **NameOU1**
 
-![AD 系統管理中心簡介](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***
+![AD 系統管理中心簡介 ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>Windows PowerShell 對等命令</em>_* _
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -168,59 +168,59 @@ New-ADOrganizationalUnit -Name OU1 -Path "DC=fabrikam,DC=com"
 
 ### <a name="step-4-restore-deleted-objects"></a><a name="bkmk_restore_del_obj"></a>步驟 4：還原刪除的物件
 
-在下列程序中，您要將 [Deleted Objects]**** 容器中的刪除物件還原到其原始位置和其他位置。
+在下列程式中，您會將已刪除的物件從 _ *Deleted objects* * 容器還原至其原始位置和其他位置。
 
 #### <a name="to-restore-deleted-objects-to-their-original-location"></a>將刪除的物件還原到其原始位置
 
 1. 以滑鼠右鍵按一下 Windows PowerShell 圖示，按一下 [以 **系統管理員身分執行** ]，然後輸入 **dsac.exe** 以開啟 ADAC。
 
-2. 依序按一下 [管理]****、[新增瀏覽節點]****，在 [新增瀏覽節點]**** 對話方塊中選取適當的目標網域，然後按一下 [確定]****。
+2. 依序按一下 [管理]、[新增瀏覽節點]，在 [新增瀏覽節點] 對話方塊中選取適當的目標網域，然後按一下 [確定]。
 
-3. 選取使用者 **test1** 與 **test2**，按一下 [工作]**** 窗格中的 [刪除]****，然後按一下 [是]**** 確認刪除。
+3. 選取使用者 **test1** 與 **test2** ，按一下 [工作] 窗格中的 [刪除]，然後按一下 [是] 確認刪除。
 
-    ![AD 系統管理中心簡介](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***
+    ![AD 系統管理中心簡介 ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>Windows PowerShell 對等命令</em>_* _
 
     下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
     ```powershell
-    Get-ADUser -Filter 'Name -Like "*test*"'|Remove-ADUser -Confirm:$false
+    Get-ADUser -Filter 'Name -Like "_test*"'|Remove-ADUser -Confirm:$false
     ```
 
-4. 瀏覽至 [Deleted Objects]**** 容器，選取 **test2** 與 **test1**，然後按一下 [工作]**** 窗格中的 [還原]****。
+4. 瀏覽至 [Deleted Objects] 容器，選取 **test2** 與 **test1** ，然後按一下 [工作] 窗格中的 [還原]。
 
 5. 為確認物件已還原到其原始位置，瀏覽至目標網域，確認使用者帳戶已經列出。
 
     > [!NOTE]
-    > 如果您瀏覽至使用者帳戶 **test1** 與 **test2** 的 [內容]**** 並按一下 [成員隸屬]****，您會看到它們的群組成員資格也已還原。
+    > 如果您瀏覽至使用者帳戶 **test1** 與 **test2** 的 [內容] 並按一下 [成員隸屬]，您會看到它們的群組成員資格也已還原。
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
-![AD 系統管理中心簡介](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***
+![AD 系統管理中心簡介 ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>Windows PowerShell 對等命令</em>_* _
 
 ```powershell
-Get-ADObject -Filter 'Name -Like "*test*"' -IncludeDeletedObjects | Restore-ADObject
+Get-ADObject -Filter 'Name -Like "_test*"' -IncludeDeletedObjects | Restore-ADObject
 ```
 
 #### <a name="to-restore-deleted-objects-to-a-different-location"></a>將刪除的物件還原到其他位置
 
 1. 以滑鼠右鍵按一下 Windows PowerShell 圖示，按一下 [以 **系統管理員身分執行** ]，然後輸入 **dsac.exe** 以開啟 ADAC。
 
-2. 依序按一下 [管理]****、[新增瀏覽節點]****，在 [新增瀏覽節點]**** 對話方塊中選取適當的目標網域，然後按一下 [確定]****。
+2. 依序按一下 [管理]、[新增瀏覽節點]，在 [新增瀏覽節點] 對話方塊中選取適當的目標網域，然後按一下 [確定]。
 
-3. 選取使用者 **test1** 與 **test2**，按一下 [工作]**** 窗格中的 [刪除]****，然後按一下 [是]**** 確認刪除。
+3. 選取使用者 **test1** 與 **test2** ，按一下 [工作] 窗格中的 [刪除]，然後按一下 [是] 確認刪除。
 
-4. 瀏覽至 [Deleted Objects]**** 容器，選取 **test2** 與 **test1**，然後按一下 [工作]**** 窗格中的 [還原到]****。
+4. 瀏覽至 [Deleted Objects] 容器，選取 **test2** 與 **test1** ，然後按一下 [工作] 窗格中的 [還原到]。
 
-5. 選取 [OU1]****，然後按一下 [確定]****。
+5. 選取 [OU1]，然後按一下 [確定]。
 
-6. 為確認物件已還原到 [OU1]****，瀏覽至目標網域，按兩下 [OU1]****，確認使用者帳戶已經列出。
+6. 為確認物件已還原到 [OU1]，瀏覽至目標網域，按兩下 [OU1]，確認使用者帳戶已經列出。
 
-![AD 系統管理中心簡介](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***
+![AD 系統管理中心簡介 ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>Windows PowerShell 對等命令</em>_* _
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
 ```powershell
-Get-ADObject -Filter 'Name -Like "*test*"' -IncludeDeletedObjects | Restore-ADObject -TargetPath "OU=OU1,DC=contoso,DC=com"
+Get-ADObject -Filter 'Name -Like "_test*"' -IncludeDeletedObjects | Restore-ADObject -TargetPath "OU=OU1,DC=contoso,DC=com"
 ```
 
 ## <a name="fine-grained-password-policy"></a><a name="fine_grained_pswd_policy_mgmt"></a>更細緻的密碼原則
@@ -266,11 +266,11 @@ Windows Server 2008 作業系統可以讓組織為網域中的不同使用者集
 
 1. 以滑鼠右鍵按一下 Windows PowerShell 圖示，按一下 [以 **系統管理員身分執行** ]，然後輸入 **dsac.exe** 以開啟 ADAC。
 
-2. 依序按一下 [管理]****、[新增瀏覽節點]****，在 [新增瀏覽節點]**** 對話方塊中選取適當的目標網域，然後按一下 [確定]****。
+2. 依序按一下 [管理]、[新增瀏覽節點]，在 [新增瀏覽節點] 對話方塊中選取適當的目標網域，然後按一下 [確定]。
 
-3. 在左瀏覽窗格中按一下目標網域，然後在 [工作]**** 窗格中按一下 [提高網域功能等級]****。 選取至少為 Windows Server 2008 或更高版本的樹系功能等級，然後按一下 **[確定]**。
+3. 在左瀏覽窗格中按一下目標網域，然後在 [工作] 窗格中按一下 [提高網域功能等級]。 選取至少為 Windows Server 2008 或更高版本的樹系功能等級，然後按一下 **[確定]** 。
 
-![AD 系統管理中心簡介](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***
+![AD 系統管理中心簡介 ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>Windows PowerShell 對等命令</em>_* _
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -288,25 +288,25 @@ Set-ADDomainMode -Identity contoso.com -DomainMode 3
 
 ##### <a name="to-create-a-new-fine-grained-password-policy"></a>建立新的更細緻的密碼原則
 
-1. 以滑鼠右鍵按一下 Windows PowerShell 圖示，按一下 [以 **系統管理員身分執行** ]，然後輸入 **dsac.exe** 以開啟 ADAC。
+1. 以滑鼠右鍵按一下 Windows PowerShell 圖示，然後按一下 [以 *系統管理員身分執行* ]，然後輸入 **dsac.exe** 以開啟 ADAC。
 
-2. 依序按一下 [管理]****、[新增瀏覽節點]****，在 [新增瀏覽節點]**** 對話方塊中選取適當的目標網域，然後按一下 [確定]****。
+2. 依序按一下 [管理]、[新增瀏覽節點]，在 [新增瀏覽節點] 對話方塊中選取適當的目標網域，然後按一下 [確定]。
 
-3. 在 ADAC [瀏覽窗格] 中，開啟 [System]**** 容器，然後按一下 [Password Settings Container]****。
+3. 在 ADAC [瀏覽窗格] 中，開啟 [System] 容器，然後按一下 [Password Settings Container]。
 
-4. 在 [工作]**** 窗格中，依序按一下 [新增]**** 和 [密碼設定]****。
+4. 在 [工作] 窗格中，依序按一下 [新增] 和 [密碼設定]。
 
-    填入或編輯內容頁面的欄位，以建立新的 [密碼設定]**** 物件。 [名稱]**** 和 [優先順序]**** 欄位是必要欄位。
+    填入或編輯內容頁面的欄位，以建立新的 [密碼設定] 物件。 [名稱] 和 [優先順序] 欄位是必要欄位。
 
     ![AD 系統管理中心簡介](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/ADDS_ADACNewFGPP.gif)
 
-5. 在 [ **直接套用至**] 下，按一下 [ **新增**]，輸入 **Group1**，然後按一下 **[確定]**。
+5. 在 [ **直接套用至** ] 下，按一下 [ **新增** ]，輸入 **Group1** ，然後按一下 **[確定]** 。
 
     這樣會將密碼原則物件與您為測試環境建立的全域群組成員關聯。
 
-6. 按一下 [確定]**** 以提交建立。
+6. 按一下 [確定] 以提交建立。
 
-![AD 系統管理中心簡介](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***
+![AD 系統管理中心簡介 ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>Windows PowerShell 對等命令</em>_* _
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -321,17 +321,17 @@ Add-ADFineGrainedPasswordPolicySubject TestPswd -Subjects group1
 
 ##### <a name="to-view-a-resultant-set-of-policies-for-a-user"></a>檢視使用者的原則結果組
 
-1. 以滑鼠右鍵按一下 Windows PowerShell 圖示，按一下 [以 **系統管理員身分執行** ]，然後輸入 **dsac.exe** 以開啟 ADAC。
+1. 以滑鼠右鍵按一下 Windows PowerShell 圖示，然後按一下 [以 *系統管理員身分執行* ]，然後輸入 **dsac.exe** 以開啟 ADAC。
 
-2. 依序按一下 [管理]****、[新增瀏覽節點]****，在 [新增瀏覽節點]**** 對話方塊中選取適當的目標網域，然後按一下 [確定]****。
+2. 依序按一下 [管理]、[新增瀏覽節點]，在 [新增瀏覽節點] 對話方塊中選取適當的目標網域，然後按一下 [確定]。
 
-3. 選取使用者 **test1**，該使用者隸屬於您在**步驟 3：建立更細緻的新密碼原則**中關聯更細緻的密碼原則的 [group1](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp) 群組。
+3. 選取使用者 **test1** ，該使用者隸屬於您在 **步驟 3：建立更細緻的新密碼原則** 中關聯更細緻的密碼原則的 [group1](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp) 群組。
 
-4. 按一下 [工作]**** 窗格中的 [檢視結果原則設定]****。
+4. 按一下 [工作] 窗格中的 [檢視結果原則設定]。
 
-5. 檢查密碼設定原則，然後按一下 [取消]****。
+5. 檢查密碼設定原則，然後按一下 [取消]。
 
-![AD 系統管理中心簡介](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***
+![AD 系統管理中心簡介 ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>Windows PowerShell 對等命令</em>_* _
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -345,19 +345,19 @@ Get-ADUserResultantPasswordPolicy test1
 
 ##### <a name="to-edit-a-fine-grained-password-policy"></a>編輯更細緻的密碼原則
 
-1. 以滑鼠右鍵按一下 Windows PowerShell 圖示，按一下 [以 **系統管理員身分執行** ]，然後輸入 **dsac.exe** 以開啟 ADAC。
+1. 以滑鼠右鍵按一下 Windows PowerShell 圖示，然後按一下 [以 *系統管理員身分執行* ]，然後輸入 **dsac.exe** 以開啟 ADAC。
 
-2. 依序按一下 [管理]****、[新增瀏覽節點]****，在 [新增瀏覽節點]**** 對話方塊中選取適當的目標網域，然後按一下 [確定]****。
+2. 依序按一下 [管理]、[新增瀏覽節點]，在 [新增瀏覽節點] 對話方塊中選取適當的目標網域，然後按一下 [確定]。
 
-3. 在 ADAC [瀏覽窗格]**** 中，展開 [System]****，然後按一下 [Password Settings Container]****。
+3. 在 ADAC [瀏覽窗格] 中，展開 [System]，然後按一下 [Password Settings Container]。
 
-4. 選取您在[步驟 3：建立更細緻的新密碼原則](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp)中建立的更細緻的密碼原則，然後按一下 [工作]**** 窗格中的 [內容]****。
+4. 選取您在[步驟 3：建立更細緻的新密碼原則](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp)中建立的更細緻的密碼原則，然後按一下 [工作] 窗格中的 [內容]。
 
-5. 在 [強制密碼歷程記錄]**** 下方，將 [記住的密碼數目]**** 值變更為 **30**。
+5. 在 [強制密碼歷程記錄]下方，將 [記住的密碼數目] 值變更為 **30** 。
 
-6. 按一下 [確定]。
+6. 按一下 [確定]  。
 
-![AD 系統管理中心簡介](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***
+![AD 系統管理中心簡介 ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>Windows PowerShell 對等命令</em>_* _
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -369,21 +369,21 @@ Set-ADFineGrainedPasswordPolicy TestPswd -PasswordHistoryCount:"30"
 
 ##### <a name="to-delete-a-fine-grained-password-policy"></a>刪除更細緻的密碼原則
 
-1. 以滑鼠右鍵按一下 Windows PowerShell 圖示，按一下 [以 **系統管理員身分執行** ]，然後輸入 **dsac.exe** 以開啟 ADAC。
+1. 以滑鼠右鍵按一下 Windows PowerShell 圖示，然後按一下 [以 *系統管理員身分執行* ]，然後輸入 **dsac.exe** 以開啟 ADAC。
 
-2. 依序按一下 [管理]****、[新增瀏覽節點]****，在 [新增瀏覽節點]**** 對話方塊中選取適當的目標網域，然後按一下 [確定]****。
+2. 依序按一下 [管理]、[新增瀏覽節點]，在 [新增瀏覽節點] 對話方塊中選取適當的目標網域，然後按一下 [確定]。
 
-3. 在 ADAC [瀏覽窗格] 中，展開 [System]****，然後按一下 [Password Settings Container]****。
+3. 在 ADAC [瀏覽窗格] 中，展開 [System]，然後按一下 [Password Settings Container]。
 
-4. 選取您在[步驟 3：建立更細緻的新密碼原則](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp)中建立的更細緻的密碼原則，然後在 [工作]**** 窗格按一下 [內容]****。
+4. 選取您在[步驟 3：建立更細緻的新密碼原則](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp)中建立的更細緻的密碼原則，然後在 [工作] 窗格按一下 [內容]。
 
-5. 清除 [保護以防止被意外刪除]**** 核取方塊，然後按一下 [確定]****。
+5. 清除 [保護以防止被意外刪除] 核取方塊，然後按一下 [確定]。
 
-6. 選取更細緻的密碼原則，然後在 [工作]**** 窗格按一下 [刪除]****。
+6. 選取更細緻的密碼原則，然後在 [工作] 窗格按一下 [刪除]。
 
-7. 按一下確認對話方塊中的 [確定]****。
+7. 按一下確認對話方塊中的 [確定]。
 
-![AD 系統管理中心簡介](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***
+![AD 系統管理中心簡介 ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>Windows PowerShell 對等命令</em>_* _
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -401,7 +401,7 @@ ADAC 是建立在 Windows PowerShell 之上的使用者介面工具。 在 Windo
 - 若要使用 Windows PowerShell 腳本檢視器，您必須使用 Windows Server 2012 或更新版本的 ADAC
 
     > [!NOTE]
-    > 您可以使用 **伺服器管理員** 安裝遠端伺服器管理工具 (RSAT) ，以使用正確版本的 Active Directory 管理中心透過使用者介面來管理資源回收筒。
+    > 您可以使用 _ *伺服器管理員* * 安裝遠端伺服器管理工具 (RSAT) ，以使用正確版本的 Active Directory 管理中心透過使用者介面來管理資源回收筒。
     >
     > 如需有關安裝 RSAT 的詳細資訊，請參閱 [遠端伺服器管理工具](../../../../remote/remote-server-administration-tools.md)的文章。
 
@@ -409,27 +409,27 @@ ADAC 是建立在 Windows PowerShell 之上的使用者介面工具。 在 Windo
 
 ### <a name="windows-powershell-history-viewer-step-by-step"></a>Windows PowerShell 歷程記錄檢視器逐步說明
 
-在下列程序中，您將在 ADAC 中使用 Windows PowerShell 歷程記錄檢視器來建構 Windows PowerShell 指令碼。  開始這個程序之前，請從 **group1** 群組中移除使用者 **test1**。
+在下列程序中，您將在 ADAC 中使用 Windows PowerShell 歷程記錄檢視器來建構 Windows PowerShell 指令碼。  開始這個程序之前，請從 **group1** 群組中移除使用者 **test1** 。
 
 #### <a name="to-construct-a-script-using-powershell-history-viewer"></a>使用 PowerShell 歷程記錄檢視器建構指令碼
 
 1. 以滑鼠右鍵按一下 Windows PowerShell 圖示，按一下 [以 **系統管理員身分執行** ]，然後輸入 **dsac.exe** 以開啟 ADAC。
 
-2. 依序按一下 [管理]****、[新增瀏覽節點]****，在 [新增瀏覽節點]**** 對話方塊中選取適當的目標網域，然後按一下 [確定]****。
+2. 依序按一下 [管理]、[新增瀏覽節點]，在 [新增瀏覽節點] 對話方塊中選取適當的目標網域，然後按一下 [確定]。
 
-3. 展開 ADAC 畫面下方的 [Windows PowerShell 歷程記錄]**** 窗格。
+3. 展開 ADAC 畫面下方的 [Windows PowerShell 歷程記錄] 窗格。
 
-4. 選取使用者 **test1**。
+4. 選取使用者 **test1** 。
 
-5. 按一下 **[工作**] 窗格中的 [**加入群組**]。
+5. 按一下 **[工作** ] 窗格中的 [ **加入群組** ]。
 
-6. 瀏覽至 [group1]****，按一下對話方塊中的 [確定]****。
+6. 瀏覽至 [group1]，按一下對話方塊中的 [確定]。
 
-7. 瀏覽至 [Windows PowerShell 歷程記錄]**** 窗格，尋找剛才產生的命令。
+7. 瀏覽至 [Windows PowerShell 歷程記錄] 窗格，尋找剛才產生的命令。
 
 8. 複製命令並貼到您使用的編輯器，以建構您的指令碼。
 
-    例如，您可以修改命令以將其他使用者新增到 **group1**，或將 **test1** 新增到其他群組。
+    例如，您可以修改命令以將其他使用者新增到 **group1** ，或將 **test1** 新增到其他群組。
 
 ## <a name="see-also"></a>另請參閱
 

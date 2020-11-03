@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 10/14/2020
+ms.date: 10/27/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8708f8ab6e8fb751f0ca39238574823ae5b499c4
-ms.sourcegitcommit: 45099dfe3682df1e2bc0bd5998594a79cfff16fe
+ms.openlocfilehash: 9f14d93176fd1bd7b97d90550701f79b55774297
+ms.sourcegitcommit: 40466c8af1fc60dfca733ea476f088549cedba65
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92079837"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92793605"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面用戶端的新功能
 
@@ -24,24 +24,26 @@ ms.locfileid: "92079837"
 
 |使用者群組 |最新版本  |最低支援版本 |
 |-----------|----------------|--------------------------|
-|公用     |1.2.1364        |1.2.945                   |
-|Insider    |1.2.1440        |1.2.945                   |
+|公用     |1.2.1446        |1.2.945                   |
+|Insider    |1.2.1446        |1.2.945                   |
 
-## <a name="updates-for-version-121440-insiders"></a>1\.2.1440 版的更新 (測試人員)
+## <a name="updates-for-version-121446"></a>1\.2.1446 版的更新
 
-*發行日期：2020/10/13*
+*發行日期：2020/10/27*
 
-下載：[Windows 64 位元](https://go.microsoft.com/fwlink/?linkid=2139233)、[Windows 32 位元](https://go.microsoft.com/fwlink/?linkid=2139144)、[Windows ARM64](https://go.microsoft.com/fwlink/?linkid=2139368)
+下載：[Windows 64 位元](https://go.microsoft.com/fwlink/?linkid=2139369)、[Windows 32 位元](https://go.microsoft.com/fwlink/?linkid=2139456)、[Windows ARM64](https://go.microsoft.com/fwlink/?linkid=2139370)
 
+- 已新增自動更新功能，可讓用戶端自動安裝最新的更新。
 - 用戶端現在可以在連線中心中區分不同的摘要。
 - 已修正訂用帳戶與使用者登入帳戶不相符的問題。
+- 已修正某些使用者無法透過下載的檔案存取遠端應用程式的問題。
 - 已修正智慧卡重新導向的問題。
 
 ## <a name="updates-for-version-121364"></a>1\.2.1364 版的更新
 
 *發行日期：09/22/2020*
 
-下載：[Windows 64 位元](https://go.microsoft.com/fwlink/?linkid=2139369)、[Windows 32 位元](https://go.microsoft.com/fwlink/?linkid=2139456)、[Windows ARM64](https://go.microsoft.com/fwlink/?linkid=2139370)
+下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4FTMK)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4G1t9)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4FTMI)
 
 - 已修正單一登入 (SSO) 在 Windows 7 上無法使用的問題。
 - 已修正當另一個應用程式具有在專有模式中開啟的音訊串流同時呼叫或加入 Teams 通話時，以及當 Teams 的媒體最佳化已停用時，所發生的連線失敗。
@@ -52,8 +54,6 @@ ms.locfileid: "92079837"
 ## <a name="updates-for-version-121275"></a>1\.2.1275 版的更新
 
 *發行日期：2020/8/25*
-
-下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4FpYR)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4FpYS)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4Fg3H)
 
 - 已新增從使用者身分識別自動偵測主權雲端的功能。
 - 已新增為所有使用者啟用自訂 URL 訂用帳戶的功能。
@@ -69,7 +69,7 @@ ms.locfileid: "92079837"
 - 您現在可以使用用戶端頂端命令列上的溢位功能表 ([ **...** ]) 選項，訂閱具有多個使用者帳戶的工作區。 為了區分工作區，工作區標題現在包含使用者名稱，如同所有應用程式捷徑標題一樣。
 - 將其他資訊新增至訂用帳戶錯誤訊息，以改善疑難排解功能。
 - 現在在重新整理期間，會保留工作區的摺疊/展開狀態。
-- 將 [**傳送診斷並關閉**] 按鈕，新增至 [**連線資訊**] 對話方塊中。
+- 將 [ **傳送診斷並關閉** ] 按鈕，新增至 [ **連線資訊** ] 對話方塊中。
 - 已修正遠端工作階段中的 CTRL + SHIFT 鍵問題。
 
 ## <a name="updates-for-version-121104"></a>1\.2.1104 版的更新
@@ -88,7 +88,7 @@ ms.locfileid: "92079837"
 *發行日期：2020/05/27*
 
 - 訂閱時，您現在可以選擇您的帳戶，而不用輸入電子郵件地址。
-- 新增一個新的**使用 URL 訂閱**選項，您可以使用該選項指定要訂閱的工作區 URL，或當無法自動找到您的資源時利用[電子郵件探索](../rds-email-discovery.md) (如果有的話)。 這類似於其他遠程桌面用戶端中的訂用帳戶處理程序。 這可以用來直接訂閱 Windows 虛擬桌面工作區。
+- 新增一個新的 **使用 URL 訂閱** 選項，您可以使用該選項指定要訂閱的工作區 URL，或當無法自動找到您的資源時利用 [電子郵件探索](../rds-email-discovery.md) (如果有的話)。 這類似於其他遠程桌面用戶端中的訂用帳戶處理程序。 這可以用來直接訂閱 Windows 虛擬桌面工作區。
 - 新增了對使用新的 [URI 配置](remote-desktop-uri.md)來訂閱工作區的支援，其可透過電子郵件傳送給使用者或新增至支援網站。
 - 已新增新的 [連線資訊] 對話方塊，以提供桌面和應用程式工作階段的用戶端、網路和伺服器詳細資料。 在全螢幕模式下，您可以從連線列存取此對話方塊，而在視窗模式下，則可以從 [系統] 功能表存取。
 - 在視窗模式下啟動的桌面工作階段現在一律會最大化，而不是在視窗最大化時進入全螢幕模式。 使用 [系統] 功能表中的 [全螢幕] 選項，即可進入全螢幕模式。
@@ -107,11 +107,11 @@ ms.locfileid: "92079837"
 *發行日期：2020/04/28*
 
 - 當您以滑鼠右鍵按一下連線中心上的桌面圖示時，就可以新增桌面連線的 [顯示設定] 選項。
-  - 現在有三個顯示組態選項：**所有顯示**、**單一顯示**，以及**選取 顯示**。
+  - 現在有三個顯示組態選項： **所有顯示** 、 **單一顯示** ，以及 **選取 顯示** 。
   - 我們現在只會在選取顯示組態時顯示可用的設定。
   - 在選取顯示模式中，新的 [將目前的顯示最大化] 選項可讓您以動態方式變更用於工作階段的顯示，而不需要重新連線。 啟用時，將工作階段最大化會讓工作階段視窗觸及的所有顯示上的畫面全滿。
-  - 我們已在所有顯示的中新增新的**使用視窗型時單一顯示**選項，並選取顯示模式。 當您結束全螢幕模式時，這個選項會自動將您的工作階段切換為單一顯示，當您將視窗最大化時，會自動返回多個顯示。
-- 我們已將新的**顯示設定**群組新增至系統功能表；以滑鼠右鍵按一下視窗型桌面工作階段的標題列時即會顯示。 這可讓您在工作階段期間動態變更一些設定。 例如，您可以變更新的**使用視窗型時單一顯示模式**和**將目前顯示最大化**設定。
+  - 我們已在所有顯示的中新增新的 **使用視窗型時單一顯示** 選項，並選取顯示模式。 當您結束全螢幕模式時，這個選項會自動將您的工作階段切換為單一顯示，當您將視窗最大化時，會自動返回多個顯示。
+- 我們已將新的 **顯示設定** 群組新增至系統功能表；以滑鼠右鍵按一下視窗型桌面工作階段的標題列時即會顯示。 這可讓您在工作階段期間動態變更一些設定。 例如，您可以變更新的 **使用視窗型時單一顯示模式** 和 **將目前顯示最大化** 設定。
 - 結束全螢幕並第一次進入全螢幕時，工作階段視窗會回到其原始位置。
 - 工作區的背景重新整理已變更為每四小時一次，而不是每小時一次。 現在會在啟動用戶端時自動重新整理。
 - 從「關於」頁面重設使用者資料時，現在會在完成時將您重新導向至「連線中心」，而不是關閉用戶端。

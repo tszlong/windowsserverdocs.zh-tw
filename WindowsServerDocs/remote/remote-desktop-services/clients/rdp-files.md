@@ -7,12 +7,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 09/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6524c186e42b2c1c39dae5b95f4c6657bdd9dcbf
-ms.sourcegitcommit: 0b3d6661c44aa1a697087e644437279142726d84
+ms.openlocfilehash: 00bda15c409f5323a96dcbf48bc2dd130ec6368b
+ms.sourcegitcommit: 40466c8af1fc60dfca733ea476f088549cedba65
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90083739"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92793595"
 ---
 # <a name="supported-remote-desktop-rdp-file-settings"></a>支援的遠端桌面 RDP 檔案設定
 
@@ -43,8 +43,8 @@ ms.locfileid: "90083739"
 | RDP 設定                        | 說明            | 值                 | 預設值          | Windows 虛擬桌面支援 |
 |------------------------------------|------------------------|------------------------|:----------------------:|:-----------------------:|
 | autoreconnection enabled:i:value | 決定如果連線中斷 (例如當網路連線中斷時)，用戶端是否會自動嘗試重新連線到遠端電腦。 | - 0：用戶端不會自動嘗試重新連線</br>- 1：用戶端會自動嘗試重新連線 | 1 | 是 |
-| bandwidthautodetect:i:value | 決定是否啟用自動網路類型偵測 | - 0：停用自動網路類型偵測</br>- 1：啟用自動網路類型偵測 | 1 | 是 |
-| networkautodetect:i:value | 決定是否使用自動網路頻寬偵測。 需要將 bandwidthautodetect 設定為 1。 | - 0：不要使用自動網路頻寬偵測</br> - 1：使用自動網路頻寬偵測 | 1 | 是 |
+| bandwidthautodetect:i:value | 決定是否使用自動網路頻寬偵測。 需要將 bandwidthautodetect 設定為 1。 | - 0：停用自動網路類型偵測</br>- 1：啟用自動網路類型偵測 | 1 | 是 |
+| networkautodetect:i:value | 決定是否啟用自動網路類型偵測 | - 0：不要使用自動網路頻寬偵測</br> - 1：使用自動網路頻寬偵測 | 1 | 是 |
 | compression:i:value | 決定當透過 RDP 傳輸到本機電腦時是否啟用大量壓縮。|- 0：停用 RDP 大量壓縮</br>- 1：啟用 RDP 大量壓縮 | 1 | 是 |
 | videoplaybackmode:i:value| 決定連線是否會使用 RDP 高效多媒體串流來播放視訊。|- 0：不要使用 RDP 高效多媒體串流來播放視訊</br>- 1：盡可能使用 RDP 高效多媒體串流來播放視訊 | 1 | 是 |
 

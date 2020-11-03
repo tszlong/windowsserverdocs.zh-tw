@@ -2,16 +2,16 @@
 ms.assetid: c54b544f-cc32-4837-bb2d-a8656b22f3de
 title: Introduction to Active Directory Replication and Topology Management Using Windows PowerShell (Level 100)
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: fd08814cd60f71f4ace9cfc0e374e80f54c6d89d
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: ac50dad556ceb536a23486e20a02587a05d2e578
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941498"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93070870"
 ---
 # <a name="introduction-to-active-directory-replication-and-topology-management-using-windows-powershell-level-100"></a>Introduction to Active Directory Replication and Topology Management Using Windows PowerShell (Level 100)
 
@@ -49,7 +49,7 @@ Active Directory 的 Windows PowerShell 可讓您管理複寫、站台、網域�
 
 #### <a name="to-view-all-active-directory-sites"></a>檢視所有 Active Directory 站台
 
-1.  在 **DC1** 上，按一下工作列的 **Windows PowerShell**。
+1.  在 **DC1** 上，按一下工作列的 **Windows PowerShell** 。
 
 2.  輸入以下命令：
 
@@ -70,20 +70,20 @@ Active Directory 的 Windows PowerShell 可讓您管理複寫、站台、網域�
 
 #### <a name="to-produce-a-table-of-all-domain-controllers"></a>產生包含所有網域控制站的表格
 
--   在 [Windows PowerShell 的 Active Directory 模組]**** 命令提示字元中輸入下列命令：
+-   在 [Windows PowerShell 的 Active Directory 模組] 命令提示字元中輸入下列命令：
 
     `Get-ADDomainController -Filter * | ft Hostname,Site`
 
     這個命令會傳回網域控制站主機名稱與它們的站台關聯。
 
 ## <a name="manage-replication-topology"></a>管理複寫拓撲
-在上一個步驟中，執行完 `Get-ADDomainController -Filter * | ft Hostname,Site` 命令以後，**DC2** 會列為 **CORPORATE** 站台的一部分。 在下列程序中，您將會建立一個新的分公司站台 **BRANCH1**、建立新的站台連結、設定站台連結成本與複寫頻率，然後將 **DC2** 移到 **BRANCH1**。
+在上一個步驟中，執行完 `Get-ADDomainController -Filter * | ft Hostname,Site` 命令以後， **DC2** 會列為 **CORPORATE** 站台的一部分。 在下列程序中，您將會建立一個新的分公司站台 **BRANCH1** 、建立新的站台連結、設定站台連結成本與複寫頻率，然後將 **DC2** 移到 **BRANCH1** 。
 
 您必須是 Domain Admins 群組的成員或具備相等的權限，才能完成下列程序中的步驟。
 
 #### <a name="to-create-a-new-site"></a>建立新站台
 
--   在 [Windows PowerShell 的 Active Directory 模組]**** 命令提示字元中輸入下列命令：
+-   在 [Windows PowerShell 的 Active Directory 模組] 命令提示字元中輸入下列命令：
 
     `New-ADReplicationSite BRANCH1`
 
@@ -91,7 +91,7 @@ Active Directory 的 Windows PowerShell 可讓您管理複寫、站台、網域�
 
 #### <a name="to-create-a-new-site-link"></a>建立新的站台連結
 
--   在 [Windows PowerShell 的 Active Directory 模組]**** 命令提示字元中輸入下列命令：
+-   在 [Windows PowerShell 的 Active Directory 模組] 命令提示字元中輸入下列命令：
 
     `New-ADReplicationSiteLink 'CORPORATE-BRANCH1'  -SitesIncluded CORPORATE,BRANCH1 -OtherAttributes @{'options'=1}`
 
@@ -102,15 +102,15 @@ Active Directory 的 Windows PowerShell 可讓您管理複寫、站台、網域�
 
 #### <a name="to-set-the-site-link-cost-and-replication-frequency"></a>設定站台連結成本與複寫頻率
 
--   在 [Windows PowerShell 的 Active Directory 模組]**** 命令提示字元中輸入下列命令：
+-   在 [Windows PowerShell 的 Active Directory 模組] 命令提示字元中輸入下列命令：
 
     `Set-ADReplicationSiteLink CORPORATE-BRANCH1 -Cost 100 -ReplicationFrequencyInMinutes 15`
 
-    這個命令會將 **BRANCH1** 的站台連結成本設為 **100**，並將站台複寫頻率設為 **15 分鐘**。
+    這個命令會將 **BRANCH1** 的站台連結成本設為 **100** ，並將站台複寫頻率設為 **15 分鐘** 。
 
 #### <a name="to-move-a-domain-controller-to-a-different-site"></a>將網域控制站移到其他站台
 
--   在 [Windows PowerShell 的 Active Directory 模組]**** 命令提示字元中輸入下列命令：
+-   在 [Windows PowerShell 的 Active Directory 模組] 命令提示字元中輸入下列命令：
 
     `Get-ADDomainController DC2 | Move-ADDirectoryServer -Site BRANCH1`
 
@@ -120,13 +120,13 @@ Active Directory 的 Windows PowerShell 可讓您管理複寫、站台、網域�
 
 ##### <a name="to-verify-site-creation-new-site-link-and-cost-and-replication-frequency"></a>驗證站台建立結果、新的站台連結以及成本與複寫頻率
 
--   按一下 [伺服器管理員]****，依序按一下 [工具]**** 和 [Active Directory 站台及服務]****，然後進行下列驗證：
+-   按一下 [伺服器管理員]，依序按一下 [工具] 和 [Active Directory 站台及服務]，然後進行下列驗證：
 
     驗證 **BRANCH1** 站台包含 Windows PowerShell 命令中所有正確的值。
 
     驗證 **CORPORATE-BRANCH1** 站台連結已經建立，而且連接了 **BRANCH1** 與 **CORPORATE** 站台。
 
-    驗證 **DC2** 現在位於 **BRANCH1** 站台。 或者，您可以開啟 [Windows PowerShell 的 Active Directory 模組]**** 並輸入下列命令以驗證 **DC2** 現在位於 **BRANCH1** 站台：`Get-ADDomainController -Filter * | ft Hostname,Site`。
+    驗證 **DC2** 現在位於 **BRANCH1** 站台。 或者，您可以開啟 [Windows PowerShell 的 Active Directory 模組] 並輸入下列命令以驗證 **DC2** 現在位於 **BRANCH1** 站台：`Get-ADDomainController -Filter * | ft Hostname,Site`。
 
 ## <a name="view-replication-status-information"></a>檢視複寫狀態資訊
 在下列程序中，您將使用 Active Directory 複寫與管理適用的其中一個 Windows PowerShell Cmdlet (`Get-ADReplicationUpToDatenessVectorTable DC1`)，產生使用最新向量表格製成的簡單複寫報告 (由各個網域控制站維護)。 這個最新向量表格會記錄從樹系中的每個網域控制站所觀察到的最高來源寫入 USN。
@@ -135,11 +135,11 @@ Active Directory 的 Windows PowerShell 可讓您管理複寫、站台、網域�
 
 #### <a name="to-view-the-up-to-dateness-vector-table-for-a-single-domain-controller"></a>檢視單一網域控制站的最新向量表格
 
-1.  在 [Windows PowerShell 的 Active Directory 模組]**** 命令提示字元中輸入下列命令：
+1.  在 [Windows PowerShell 的 Active Directory 模組] 命令提示字元中輸入下列命令：
 
     `Get-ADReplicationUpToDatenessVectorTable DC1`
 
-    這樣會顯示 **DC1** 在樹系的每個網域控制站觀察到的最高 USN 清單。 **Server** 值指的是維護表格的伺服器，在此案例中是 **DC1**。 **Partner** 值指的是發生變更的複寫協力電腦 (直接或間接)。 UsnFilter 值是 **DC1** 從 Partner 觀察到的最高 USN。 如果新的網域控制站新增至樹系，則在**dc1**接收來自新網域的變更之前，它將不會出現在**dc1**的表格中。
+    這樣會顯示 **DC1** 在樹系的每個網域控制站觀察到的最高 USN 清單。 **Server** 值指的是維護表格的伺服器，在此案例中是 **DC1** 。 **Partner** 值指的是發生變更的複寫協力電腦 (直接或間接)。 UsnFilter 值是 **DC1** 從 Partner 觀察到的最高 USN。 如果新的網域控制站新增至樹系，則在 **dc1** 接收來自新網域的變更之前，它將不會出現在 **dc1** 的表格中。
 
 #### <a name="to-view-the-up-to-dateness-vector-table-for-all-domain-controllers-in-a-domain"></a>檢視網域中所有網域控制站的最新向量表格
 
