@@ -5,12 +5,12 @@ ms.date: 09/27/2018
 ms.topic: conceptual
 ms.author: damaerte
 author: maertendmsft
-ms.openlocfilehash: c7bdb2f31be8656ac6e136f7bbfaf5f69ba123ad
-ms.sourcegitcommit: 6931830a70c5849d8f884cdc7bd4f5afc1a00cce
+ms.openlocfilehash: bef4bc7a8ab5bcb2738a96edf797f42b23ba2894
+ms.sourcegitcommit: 8c0a419ae5483159548eb0bc159f4b774d4c3d85
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91955749"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93235805"
 ---
 # <a name="openssh-key-management"></a>OpenSSH 金鑰管理
 
@@ -21,9 +21,9 @@ Windows 環境中的大部分驗證都是使用使用者名稱-密碼配對來�
 相較之下，Linux 環境通常會使用公開金鑰/私密金鑰組來驅動驗證，不需要使用可猜測的密碼。
 OpenSSH 包含可協助支援此操作的工具，特別是：
 
-* __ssh-keygen__，用來產生安全金鑰
-* __ssh-agent__ 和 __ssh-add__，用來安全地儲存私密金鑰
-* __scp__ 和 __sftp__，在初始使用伺服器期間安全地複製公開金鑰檔案
+* __ssh-keygen__ ，用來產生安全金鑰
+* __ssh-agent__ 和 __ssh-add__ ，用來安全地儲存私密金鑰
+* __scp__ 和 __sftp__ ，在初始使用伺服器期間安全地複製公開金鑰檔案
 
 本文件概述如何在 Windows 上使用這些工具，開始搭配 SSH 使用金鑰驗證。
 如果您不熟悉 SSH 金鑰管理，我們強烈建議您檢閱 [NIST 文件 IR 7966](http://nvlpubs.nist.gov/nistpubs/ir/2015/NIST.IR.7966.pdf)，標題為「使用安全殼層 (SSH) 的互動式和自動化存取管理的安全性」。
@@ -53,6 +53,9 @@ SSH 公開金鑰驗證會使用非對稱式密碼編譯演算法來產生兩個�
 
 # Install the OpenSSHUtils module to the server. This will be valuable when deploying user keys.
 Install-Module -Force OpenSSHUtils -Scope AllUsers
+
+# By default the ssh-agent service is disabled. Allow it to be manually started for the next step to work.
+Get-Service -Name ssh-agent | Set-Service -StartupType Manual
 
 # Start the ssh-agent service to preserve the server keys
 Start-Service ssh-agent
