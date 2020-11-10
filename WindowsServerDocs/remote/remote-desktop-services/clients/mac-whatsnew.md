@@ -5,20 +5,37 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 08/19/2020
+ms.date: 11/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 72d828099d8dfe29639789f526533a7bb1ba159d
-ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
+ms.openlocfilehash: b53046f493fca630b24f31818ae724403ffc3c53
+ms.sourcegitcommit: 5fc77b4325a18d8c22385d899b14fe724a662347
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88702857"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361155"
 ---
 # <a name="whats-new-in-the-macos-client"></a>macOS 用戶端中的新功能
 
 我們會定期更新[適用於 macOS 的遠端桌面用戶端](remote-desktop-mac.md)，進而新增功能並修正問題。 您可以在這裡找到最新的更新。
 
 如果您遇到任何問題，可以隨時導覽至 [協助]   > [回報問題]  與我們連絡。
+
+## <a name="updates-for-version-1041"></a>10.4.1 版的更新
+
+*發行日期：11/06/2020*
+
+我們已將此 10.4.1 版的一些錯誤修正和小規模的功能更新放在一起。 以下是新增功能：
+
+- 解決當機報告中發現的幾個可靠性問題。
+- 解決鍵盤和 VoiceOver 相關的協助工具錯誤。
+- 修正從睡眠狀態恢復時，用戶端會在重新連線時當機的問題。
+- 修正播放重新導向音訊串流的第一個區塊時，所聽到的音訊成品。
+- 解決用戶端在使用 RD 閘道伺服器連線時，回報 0x5000007 錯誤訊息的問題。
+- 更正連線中心內所顯示電腦縮圖的外觀比例。
+- 改善智慧卡重新導向啟發學習法，以更妥善處理巢狀交易。
+- 修正當書籤的顯示名稱包含 "/" 字元時，就無法匯出書籤的錯誤。
+- 解決以遠端應用程式形式執行 Outlook 時，導致 0xD06 通訊協定發生錯誤的問題。
+- 新增新的整數 RDP 檔案屬性 (ForceHiDpiOptimizations) 支援，以啟用 Retina 顯示最佳化。
 
 ## <a name="updates-for-version-1040"></a>10.4.0 版的更新
 
@@ -320,14 +337,14 @@ ms.locfileid: "88702857"
 - 智慧卡重新導向修正。
 - 如果 ClientSettings.EnforceCredSSPSupport 使用者預設金鑰 (在 com.microsoft.rdc.macos 網域中) 設定為 0，則支援 [EnableCredSspSupport] 和 [驗證等級] RDP檔案設定的所有可能值。
 - 未交涉 NLA 時，支援 [在用戶端上提示要求認證] RDP 檔案設定。
-- 未交涉 NLA 時，支援在 Winlogon 提示下透過智慧卡重新導向進行智慧卡式登入。
+- 未交涉 NLA 時，支援在 Winlogon 提示下使用智慧卡重新導向進行智慧卡式登入。
 - 修正無法下載 URL 中有空格的摘要資源問題。
 
 ## <a name="updates-for-version-1021"></a>10.2.1 版的更新
 
 *發行日期：08/06/2018*
 
-- 允許連線到加入 Azure Active Directory (AAD) 的電腦。 若要連線到加入 AAD 的電腦，您的使用者名稱必須採用下列其中一種格式："AzureAD\user" 或 "AzureAD\user@domain"。
+- 允許連線到加入 Azure Active Directory (Azure AD) 的電腦。 若要連線到加入 Azure AD 的電腦，您的使用者名稱必須採用下列其中一種格式："AzureAD\user" 或 "AzureAD\user@domain"。
 - 解決影響在遠端工作階段中使用智慧卡的一些 Bug。
 
 ## <a name="updates-for-version-1020"></a>10.2.0 版的更新
@@ -347,7 +364,7 @@ ms.locfileid: "88702857"
 - 移出工作階段或 RemoteApp 視窗時，滑鼠游標形狀現在會正確更新。
 - 修正複製和貼上資料夾時造成資料遺失的資料夾重新導向 Bug。
 - 修正造成不正確回報資料夾大小的資料夾重新導向問題。
-- 修正無法使用本機帳戶登入加入 AAD 之電腦的迴歸問題。
+- 修正無法使用本機帳戶登入加入 Azure AD 之電腦的迴歸問題。
 - 修正造成工作階段視窗內容裁剪的 Bug。
 - 新增包含橢圓曲線非對稱金鑰的 RD 端點憑證支援。
 - 修正在某些情況下，無法下載受控資源的 Bug。
