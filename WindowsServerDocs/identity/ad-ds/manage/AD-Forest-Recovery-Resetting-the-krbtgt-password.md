@@ -6,12 +6,12 @@ manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 3bd6c1d0-d316-4b03-b7b4-557d4537635c
-ms.openlocfilehash: 1c42ab160f0d467cab10edeea1a5284614401b3c
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 62416758d373423246ccb030ea6baf325515fb49
+ms.sourcegitcommit: b39ea3b83280f00e5bb100df0dc8beaf1fb55be2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070830"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94520431"
 ---
 # <a name="ad-forest-recovery---resetting-the-krbtgt-password"></a>AD 樹系復原-重設 krbtgt 密碼
 
@@ -27,7 +27,7 @@ ms.locfileid: "93070830"
 ## <a name="to-reset-the-krbtgt-password"></a>重設 krbtgt 密碼
 
 1. 按一下 [ **開始** ]，指向 [ **主控台** ]，指向 [系統 **管理工具** ]，然後按一下 [ **Active Directory 消費者和電腦** ]。
-2. 按一下 [檢視]  ，然後按一下 [進階功能]  。
+2. 按一下 [檢視]，然後按一下 [進階功能]。
 3. 在主控台樹中，按兩下 [網域] 容器，然後按一下 [ **使用者** ]。
 4. 在詳細資料窗格中，以滑鼠右鍵按一下 **krbtgt** 使用者帳戶，然後按一下 [ **重設密碼** ]。
    ![重設密碼](media/AD-Forest-Recovery-Resetting-the-krbtgt-password/resetpass1.png)
@@ -35,6 +35,9 @@ ms.locfileid: "93070830"
 
 > [!NOTE]
 > 您應該執行此作業兩次。 Krbtgt 帳戶的密碼歷程記錄是二，這表示它包含兩個最新的密碼。 藉由重設密碼兩次，您可以有效地清除歷程記錄中的任何舊密碼，如此一來，就無法使用舊密碼將其他 DC 複寫到此 DC。
+
+> [!NOTE]
+> 重設金鑰發佈中心服務帳戶密碼兩次時，重設之間必須有10小時的等待期間。
 
 ## <a name="next-steps"></a>後續步驟
 

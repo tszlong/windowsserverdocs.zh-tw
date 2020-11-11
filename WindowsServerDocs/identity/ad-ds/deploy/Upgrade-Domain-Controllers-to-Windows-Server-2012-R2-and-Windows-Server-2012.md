@@ -6,20 +6,21 @@ author: iainfoulds
 manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: edffa7869aa1895a09e7007c375b8973f68e4eed
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: ebbbefebc420d83f8f74466698729c26395bdbec
+ms.sourcegitcommit: b39ea3b83280f00e5bb100df0dc8beaf1fb55be2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93069900"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94520501"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012"></a>將網域控制站升級為 Windows Server 2012 R2 與 Windows Server 2012
 
->適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 本主題提供有關 Windows Server 2012 R2 和 Windows Server 2012 中 Active Directory Domain Services 的背景資訊，以及說明從 Windows Server 2008 或 Windows Server 2008 R2 升級網域控制站的程式。
 
 ## <a name="domain-controller-upgrade-steps"></a><a name="BKMK_UpgradeWorkflow"></a>網域控制站升級步驟
+
 升級網域的建議方式是視需要升級執行較新版 Windows Server 的網域控制站，以及降級舊版網域控制站。 該方法是升級現有網域控制站之作業系統的慣用方法。 這份清單涵蓋您升級執行較新版本 Windows Server 的網域控制站之前，要遵循的一般步驟：
 
 1. 確認目標伺服器符合 [系統需求](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303418(v=ws.11))。
@@ -39,12 +40,12 @@ ms.locfileid: "93069900"
    |安裝動作|認證要求|
    |-----------------------|---------------------------|
    |安裝新樹系|目標伺服器上的本機 Administrator|
-   |在現有樹系中安裝新網域|企業系統管理員|
-   |在現有網域中安裝其他 DC|網域管理員|
+   |在現有樹系中安裝新網域|Enterprise Admins|
+   |在現有網域中安裝其他 DC|Domain Admins|
    |執行 adprep /forestprep|Schema Admins、Enterprise Admins 和 Domain Admins|
-   |執行 adprep /domainprep|網域管理員|
-   |執行 adprep /domainprep /gpprep|網域管理員|
-   |執行 adprep /rodcprep|企業系統管理員|
+   |執行 adprep /domainprep|Domain Admins|
+   |執行 adprep /domainprep /gpprep|Domain Admins|
+   |執行 adprep /rodcprep|Enterprise Admins|
 
    您可以委派 AD DS 的安裝權限。 如需詳細資訊，請參閱 [安裝管理工作](/previous-versions/windows/it-pro/windows-server-2003/cc773327(v=ws.10))。
 
@@ -124,9 +125,9 @@ Windows 8 與 Windows Server 2012 引進一項名為 [自動維護](/windows/win
 |**案例**|**建議的 configuration (s)**|
 |**WSUS 管理的**<p>-每週安裝更新一次<br />-晚上11點重新開機星期五|設定機器自動安裝，防止在需要的時間之前重新開機<p>**原則** ：設定自動更新 (啟用)<p>設定自動更新： 4-自動下載並排程安裝<p>**原則** ： (停用登入的使用者不會自動重新開機) <p>**WSUS 期限** ：設定為星期五晚上 11 點|
 |**WSUS 管理的**<p>-在不同的小時/天錯開安裝|為應該一起更新的不同電腦群組設定目標群組<p>為先前的案例使用上述步驟<p>為不同的目標群組設定不同期限|
-|**不受 WSUS 管理-不支援期限**<p>-錯開不同時間的安裝|**原則** ：設定自動更新 (啟用)<p>設定自動更新： 4-自動下載並排程安裝<p>**登錄機碼：** 如需啟用登錄機碼的資訊，請參閱 Microsoft 知識庫文章 [2835627](https://support.microsoft.com/kb/2835627)<p>**原則：** 自動維護隨機延遲 (啟用)<p>將 [定期維護隨機延遲]  設為 PT6H 以設定 6 小時的隨機延遲，可提供下列行為：<p>-更新將會安裝在設定的維護時間加上隨機延遲<p>-每台電腦的重新開機將會在3天后進行<p>或者，為每個電腦群組設定不同的維護時間|
+|**不受 WSUS 管理-不支援期限**<p>-錯開不同時間的安裝|**原則** ：設定自動更新 (啟用)<p>設定自動更新： 4-自動下載並排程安裝<p>**登錄機碼：** 如需啟用登錄機碼的資訊，請參閱 Microsoft 知識庫文章 [2835627](https://support.microsoft.com/kb/2835627)<p>**原則：** 自動維護隨機延遲 (啟用)<p>將 [定期維護隨機延遲] 設為 PT6H 以設定 6 小時的隨機延遲，可提供下列行為：<p>-更新將會安裝在設定的維護時間加上隨機延遲<p>-每台電腦的重新開機將會在3天后進行<p>或者，為每個電腦群組設定不同的維護時間|
 
-如需 Windows 工程小組為何實作這些變更的詳細資訊，請參閱 [最小化在 Windows Update 執行自動更新後的重新啟動次數](https://blogs.msdn.com/b/b8/archive/2011/11/14/minimizing-restarts-after-automatic-updating-in-windows-update.aspx)。
+如需 Windows 工程團隊如何實行這些變更的詳細資訊，請參閱 [如何降低系統提示重新開機電腦的機會](https://docs.microsoft.com/troubleshoot/windows-server/deployment/why-prompted-restart-computer#how-to-reduce-your-chances-of-being-prompted-to-restart-your-computer)。
 
 ## <a name="ad-ds-server-role-installation-changes"></a><a name="BKMK_InstallationChanges"></a>AD DS 伺服器角色安裝變更
 
@@ -148,23 +149,23 @@ AD DS 安裝精靈的先決條件檢查會在安裝開始前識別可能的錯�
 - **Dcpromo.exe 過時**
    - 雖然在 Windows Server 2012 中，Dcpromo 仍會被取代，但仍然可以使用回應檔案或命令列參數來執行，讓組織有時間將現有的自動化轉換到新的 Windows PowerShell 安裝選項。
 - **使用者帳戶停用 LMHash**
-  - Windows Server 2008、Windows Server 2008 R2 和 Windows Server 2012 安全性範本的安全預設會啟用 NoLMHash 原則，此原則在 Windows 2000 和 Windows Server 2003 網域控制站的安全性範本為停用。 可使用知識庫文章 [946405](https://support.microsoft.com/kb/946405)中的步驟，視需要停用與 LMHash 相依之用戶端的 NoLMHash 原則。
+  - Windows Server 2008、Windows Server 2008 R2 和 Windows Server 2012 安全性範本的安全預設會啟用 NoLMHash 原則，此原則在 Windows 2000 和 Windows Server 2003 網域控制站的安全性範本為停用。 您可以視需要停用 Lm 相依用戶端的 NoLMHash 原則，方法是使用頁面中的 [如何防止 Windows 將您密碼的 LAN manager 雜湊儲存在 Active Directory 和本機 SAM 資料庫中](https://docs.microsoft.com/troubleshoot/windows-server/windows-security/prevent-windows-store-lm-hash-password)所述的步驟。
 
-從 Windows Server 2008 開始，相較于執行 Windows Server 2003 或 Windows 2000 的網域控制站，網域控制站也有下列安全的預設設定。
+從 Windows Server 2008 開始，相較于執行 Windows Server 2003 或 Windows 2000 的網域控制站，網域控制站也有下列安全的預設設定：
 
 | 加密類型或原則 | Windows Server 2008 預設值 | Windows Server 2012 和 Windows Server 2008 R2 預設值 | 註解 |
 |--|--|--|--|
 | AllowNT4Crypto | 已停用 | 已停用 | 協力廠商伺服器訊息區 (SMB) 用戶端可能與網域控制站上的安全預設設定不相容。 在所有情況下，這些設定可放寬以允許交互操作性，但同時也會產生安全風險。 如需詳細資訊，請參閱 Microsoft 知識庫中的 [文章 942564](https://go.microsoft.com/fwlink/?LinkId=164558) (https://go.microsoft.com/fwlink/?LinkId=164558) 。 |
-| DES | 啟用 | 停用 | Microsoft 知識庫中的[文章 977321](https://go.microsoft.com/fwlink/?LinkId=177717) (https://go.microsoft.com/fwlink/?LinkId=177717) |
+| DES | 啟用 | 已停用 | Microsoft 知識庫中的[文章 977321](https://go.microsoft.com/fwlink/?LinkId=177717) (https://go.microsoft.com/fwlink/?LinkId=177717) |
 | CBT/整合式驗證的擴充保護 | N/A | 啟用 | 請參閱 microsoft 知識庫 (中的 [Microsoft 資訊安全諮詢 (937811) ](https://go.microsoft.com/fwlink/?LinkId=164559) (https://go.microsoft.com/fwlink/?LinkId=164559) 和 [文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) https://go.microsoft.com/fwlink/?LinkId=178251) 。<p>如有必要，請在 Microsoft 知識庫的 [文章 977073](https://go.microsoft.com/fwlink/?LinkId=186394) (中，檢查並安裝此修正程式 https://go.microsoft.com/fwlink/?LinkId=186394) 。 |
-| LMv2 | 啟用 | 停用 | Microsoft 知識庫中的[文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) (https://go.microsoft.com/fwlink/?LinkId=178251) |
+| LMv2 | 啟用 | 已停用 | Microsoft 知識庫中的[文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) (https://go.microsoft.com/fwlink/?LinkId=178251) |
 
 ## <a name="operating-system-requirements"></a><a name="BKMK_SysReqs"></a>作業系統需求
 
 下表列出 Windows Server 2012 的最低系統需求。 如需系統需求及預先安裝資訊的詳細資訊，請參閱 [安裝 Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134246(v=ws.11))。 安裝新 Active Directory 樹系沒有額外的系統需求，但是您應該增加足夠的記憶體用於快取 Active Directory 資料庫的內容，以便提升網域控制站、LDAP 用戶端要求和 Active Directory 應用程式的效能。 如果您要升級現有網域控制站或將新的網域控制站新增到現有的樹系，請參閱下一節以確保伺服器符合磁碟空間需求。
 
 | 需求 | 值 |
-|--|--|
+| ---------- | ----- |
 | 處理器 | 1.4 Ghz 64 位元處理器 |
 | RAM | 512 MB |
 | 可用磁碟空間需求 | 32 GB |
@@ -200,10 +201,10 @@ Standard 和 Datacenter 這兩個版本可支援 AD DS 角色。
 
 | 如果您執行這些版本 | 您可以升級到這些版本 |
 |--|--|
-| Windows Server 2008 Standard (含 SP2)<p>OR<p>Windows Server 2008 Enterprise (含 SP2) | Windows Server 2012 Standard<p>OR<p>Windows Server 2012 Datacenter |
+| Windows Server 2008 Standard (含 SP2)<p>或<p>Windows Server 2008 Enterprise (含 SP2) | Windows Server 2012 Standard<p>或<p>Windows Server 2012 Datacenter |
 | Windows Server 2008 Datacenter (含 SP2) | Windows Server 2012 Datacenter |
 | Windows Web Server 2008 | Windows Server 2012 Standard |
-| Windows Server 2008 R2 Standard (含 SP1)<p>OR<p>Windows Server 2008 R2 Enterprise (含 SP1) | Windows Server 2012 Standard<p>OR<p>Windows Server 2012 Datacenter |
+| Windows Server 2008 R2 Standard (含 SP1)<p>或<p>Windows Server 2008 R2 Enterprise (含 SP1) | Windows Server 2012 Standard<p>或<p>Windows Server 2012 Datacenter |
 | Windows Server 2008 R2 Datacenter (含 SP1) | Windows Server 2012 Datacenter |
 | Windows Web Server 2008 R2 | Windows Server 2012 Standard |
 
@@ -295,7 +296,7 @@ Windows Server 2012 中的一些新功能會影響操作主機角色：
 
 ## <a name="known-issues"></a><a name="BKMK_KnownIssues"></a>已知問題
 
-下表列出與 AD DS 安裝相關的已知問題。
+下表列出與 AD DS 安裝相關的已知問題：
 
 | 知識庫文章編號和標題 | 受影響的技術領域 | 問題/描述 |
 |--|--|--|
