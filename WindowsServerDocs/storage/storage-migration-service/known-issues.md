@@ -4,14 +4,14 @@ description: 儲存體遷移服務的已知問題和疑難排解支援，例如�
 author: nedpyle
 ms.author: nedpyle
 manager: tiaascs
-ms.date: 10/23/2020
+ms.date: 11/12/2020
 ms.topic: article
-ms.openlocfilehash: 25d0c6666e0706b1c772957d9328db43ecfc5b18
-ms.sourcegitcommit: 1b214ca5030c77900f095d77c73cedc6381eb0e4
+ms.openlocfilehash: 41cfbc5b5a8f91e97af330243015ecc1fcf749f6
+ms.sourcegitcommit: 6a245fefdf958bfc0aeb69f7a887d11a07bdcd23
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92639041"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94570323"
 ---
 # <a name="storage-migration-service-known-issues"></a>儲存體遷移服務的已知問題
 
@@ -653,7 +653,19 @@ Remote exception : a parameter cannot be found that matches parameter name 'Incl
 
 若要解決此問題，請在 Windows Admin Center 中將儲存體遷移服務延伸模組更新為至少版本1.113.0。 更新應該會自動出現在摘要中，並提示您進行安裝。
 
+## <a name="storage-migration-service-transfer-validation-returns-error-hresult-e_fail-has-been-returned-from-a-call-to-a-com-component"></a>儲存體遷移服務傳輸驗證會傳回「錯誤 HRESULT E_FAIL 已從對 COM 元件的呼叫傳回」
 
-## <a name="see-also"></a>請參閱
+在安裝 Windows Server 2019 11 月累積更新 [KB4586793](https://support.microsoft.com/office/november-10-2020%E2%80%94kb4586793-os-build-17763-1577-e6a24f90-5659-8b80-5a50-8752de3d90b7)之後，某些傳輸驗證可能會失敗，並出現：
+
+```
+Error HRESULT E_FAIL has been returned from a call to a COM component
+```
+
+所有來源電腦都不一定會發生此情況。 我們正在診斷此問題。 若要解決此問題，請在 Windows Admin Center 中，立即尋找儲存體遷移服務工具的更新。 更新應該會自動出現在 Windows Admin Center 摘要中，並提示您進行安裝，並可讓您忽略此錯誤並繼續進行。
+
+> [!IMPORTANT]
+> 請勿卸載 [KB4586793](https://support.microsoft.com/office/november-10-2020%E2%80%94kb4586793-os-build-17763-1577-e6a24f90-5659-8b80-5a50-8752de3d90b7)。 此更新會升級儲存體遷移服務資料庫，移除更新將會要求您刪除您的資料庫。
+
+## <a name="see-also"></a>另請參閱
 
 - [儲存體遷移服務總覽](overview.md)

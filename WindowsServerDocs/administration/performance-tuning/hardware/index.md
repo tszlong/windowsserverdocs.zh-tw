@@ -5,12 +5,12 @@ ms.topic: landing-page
 ms.author: phstee
 author: phstee
 ms.date: 01/08/2018
-ms.openlocfilehash: bac2aa367cc9a8d736fd83f7aeed3e467aeddb54
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 43203e4ff1095cc06be970a46a1f500bfb25ab88
+ms.sourcegitcommit: a7fb96c0b1d186baeb29349befbbd6bd3b955813
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896744"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94522511"
 ---
 # <a name="server-hardware-performance-considerations"></a>伺服器硬體效能考量
 
@@ -46,7 +46,7 @@ ms.locfileid: "87896744"
 您可以使用下列的分頁檔位置指導方針來最佳化分頁：
 - 將分頁檔獨立放在自己的存放裝置中，或至少確定其不會與其他經常存取的檔案共用相同存放裝置。 例如，將分頁檔與作業系統檔案放在不同的實體磁碟機上。
 
-- 將分頁檔放在不可容錯的磁碟機上。 如果磁碟故障，可能會發生系統當機。 如果您將分頁檔放在可容錯的磁碟機上，請注意容錯系統寫入資料的速度通常比較慢，因為須將資料寫入多個位置。
+- 將分頁檔放在容錯的磁碟機上。 如果非容錯的磁碟故障，可能會發生系統當機。 如果您將分頁檔放在可容錯的磁碟機上，請注意容錯系統寫入資料的速度通常比較慢，因為須將資料寫入多個位置。
 
 - 如果您需要額外的磁碟頻寬來進行分頁，請使用多個磁碟或磁碟陣列。 請勿將多個分頁檔放在相同實體磁碟機的不同分割區上。
 
