@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 10/27/2020
+ms.date: 11/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f14d93176fd1bd7b97d90550701f79b55774297
-ms.sourcegitcommit: 40466c8af1fc60dfca733ea476f088549cedba65
+ms.openlocfilehash: b5ee2f76acad471533c615ef2e5c68e7f827dbf6
+ms.sourcegitcommit: 7420c7c2ef14154f27e5bb810e774783a594b8e8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92793605"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94497413"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面用戶端的新功能
 
@@ -25,7 +25,16 @@ ms.locfileid: "92793605"
 |使用者群組 |最新版本  |最低支援版本 |
 |-----------|----------------|--------------------------|
 |公用     |1.2.1446        |1.2.945                   |
-|Insider    |1.2.1446        |1.2.945                   |
+|Insider    |1.2.1520        |1.2.945                   |
+
+## <a name="updates-for-version-121520-insider"></a>1\.2.1520 版的更新 (測試人員)
+
+*發行日期：2020/11/10*
+
+下載：[Windows 64 位元](https://go.microsoft.com/fwlink/?linkid=2139233)、[Windows 32 位元](https://go.microsoft.com/fwlink/?linkid=2139144)、[Windows ARM64](https://go.microsoft.com/fwlink/?linkid=2139368)
+
+- 為遠端應用程式建立清單檢視，以便讀取更長的應用程式名稱。
+- 已變更用戶端更新可用時所顯示的圖示。
 
 ## <a name="updates-for-version-121446"></a>1\.2.1446 版的更新
 
@@ -69,7 +78,7 @@ ms.locfileid: "92793605"
 - 您現在可以使用用戶端頂端命令列上的溢位功能表 ([ **...** ]) 選項，訂閱具有多個使用者帳戶的工作區。 為了區分工作區，工作區標題現在包含使用者名稱，如同所有應用程式捷徑標題一樣。
 - 將其他資訊新增至訂用帳戶錯誤訊息，以改善疑難排解功能。
 - 現在在重新整理期間，會保留工作區的摺疊/展開狀態。
-- 將 [ **傳送診斷並關閉** ] 按鈕，新增至 [ **連線資訊** ] 對話方塊中。
+- 將 [**傳送診斷並關閉**] 按鈕，新增至 [**連線資訊**] 對話方塊中。
 - 已修正遠端工作階段中的 CTRL + SHIFT 鍵問題。
 
 ## <a name="updates-for-version-121104"></a>1\.2.1104 版的更新
@@ -107,7 +116,7 @@ ms.locfileid: "92793605"
 *發行日期：2020/04/28*
 
 - 當您以滑鼠右鍵按一下連線中心上的桌面圖示時，就可以新增桌面連線的 [顯示設定] 選項。
-  - 現在有三個顯示組態選項： **所有顯示** 、 **單一顯示** ，以及 **選取 顯示** 。
+  - 現在有三個顯示組態選項：**所有顯示**、**單一顯示**，以及 **選取 顯示**。
   - 我們現在只會在選取顯示組態時顯示可用的設定。
   - 在選取顯示模式中，新的 [將目前的顯示最大化] 選項可讓您以動態方式變更用於工作階段的顯示，而不需要重新連線。 啟用時，將工作階段最大化會讓工作階段視窗觸及的所有顯示上的畫面全滿。
   - 我們已在所有顯示的中新增新的 **使用視窗型時單一顯示** 選項，並選取顯示模式。 當您結束全螢幕模式時，這個選項會自動將您的工作階段切換為單一顯示，當您將視窗最大化時，會自動返回多個顯示。

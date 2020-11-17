@@ -8,12 +8,12 @@ manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d94b6a2211cd9fbaefb8318ebdcc4eb52ba9ba1
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: bfed6f0c22a4949291d12cc417a15d0aa435ae00
+ms.sourcegitcommit: b39ea3b83280f00e5bb100df0dc8beaf1fb55be2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963300"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94520511"
 ---
 # <a name="general-remote-desktop-connection-troubleshooting"></a>針對一般遠端桌面連線進行疑難排解
 
@@ -31,7 +31,7 @@ ms.locfileid: "86963300"
 ### <a name="check-the-status-of-the-rdp-protocol-on-a-remote-computer"></a>檢查遠端電腦上 RDP 通訊協定的狀態
 
 > [!IMPORTANT]  
-> 請仔細遵循本節的指示。 如果您未正確修改登錄，就會發生嚴重問題。 在開始修改登錄之前，請先[備份登錄](https://support.microsoft.com/help/322756)，以便在發生問題時進行還原。
+> 請仔細遵循本節的指示。 如果您未正確修改登錄，就會發生嚴重問題。 在開始修改登錄之前，請先 [備份登錄](https://support.microsoft.com/help/322756)，以便在發生問題時進行還原。
 
 若要檢查並變更遠端電腦上 RDP 通訊協定的狀態，請使用網路登錄連線：
 
@@ -54,10 +54,10 @@ ms.locfileid: "86963300"
 gpresult /H c:\gpresult.html
 ```
 
-此命令完成後，開啟 gpresult.html。 在**電腦設定\\系統管理範本\\Windows 元件\\遠端桌面服務\\遠端桌面工作階段主機\\連線**中，尋找**允許使用者使用遠端桌面服務從遠端連線**原則。
+此命令完成後，開啟 gpresult.html。 在 **電腦設定\\系統管理範本\\Windows 元件\\遠端桌面服務\\遠端桌面工作階段主機\\連線** 中，尋找 **允許使用者使用遠端桌面服務從遠端連線** 原則。
 
-- 如果此原則的設定為**已啟用**，則群組原則不會封鎖 RDP 連線。
-- 如果此原則的設定為**已停用**，請檢查**優勢 GPO**。 這是封鎖 RDP 連線的 GPO。
+- 如果此原則的設定為 **已啟用**，則群組原則不會封鎖 RDP 連線。
+- 如果此原則的設定為 **已停用**，請檢查 **優勢 GPO**。 這是封鎖 RDP 連線的 GPO。
   ![Gpresult.html 的範例區段，在其中網域層級 GPO **封鎖 RDP** 會停用 RDP。](../media/troubleshoot-remote-desktop-connections/GPResult_RDSH_Connections_GP.png)
    
   ![Gpresult.html 的範例區段，在其中 **本機群組原則** 會停用 RDP。](../media/troubleshoot-remote-desktop-connections/GPResult_RDSH_Connections_LGP.png)
@@ -78,8 +78,8 @@ gpresult /S <computer name> /H c:\gpresult-<computer name>.html
 
 若要修改封鎖原則，請使用下列其中一種方法：
 
-- 在 GPE 中，存取適當的 GPO 層級 (例如本機或網域)，並巡覽至**電腦設定** > **系統管理範本** > **Windows 元件** > **遠端桌面服務** > **遠端桌面工作階段主機** > **連線** > **允許使用者使用遠端桌面服務從遠端連線**。  
-   1. 將原則設為**已啟用**或**未設定**。
+- 在 GPE 中，存取適當的 GPO 層級 (例如本機或網域)，並巡覽至 **電腦設定** > **系統管理範本** > **Windows 元件** > **遠端桌面服務** > **遠端桌面工作階段主機** > **連線** > **允許使用者使用遠端桌面服務從遠端連線**。  
+   1. 將原則設為 **已啟用** 或 **未設定**。
    2. 在受影響的電腦上，以系統管理員身分開啟命令提示字元視窗，並執行 **gpupdate /force** 命令。
 - 在 GPM 中巡覽到組織單位 (OU)，其中的封鎖原則已套用至受影響的電腦，從 OU 中刪除該原則。
 
@@ -116,7 +116,7 @@ gpresult /S <computer name> /H c:\gpresult-<computer name>.html
 
 2. 輸入 **qwinsta**。 
     ![qwinsta 命令會列出電腦連接埠上接聽的處理程序。](../media/troubleshoot-remote-desktop-connections/WPS_qwinsta.png)
-3. 如果清單包含 **rdp-tcp** 且狀態為**接聽**，則 RDP 接聽程式運作正常。 繼續[檢查 RDP 接聽程式連接埠](#check-the-rdp-listener-port)。 否則，請繼續執行步驟 4。
+3. 如果清單包含 **rdp-tcp** 且狀態為 **接聽**，則 RDP 接聽程式運作正常。 繼續[檢查 RDP 接聽程式連接埠](#check-the-rdp-listener-port)。 否則，請繼續執行步驟 4。
 4. 從工作電腦匯出 RDP 接聽程式設定。
     1. 登入與受影響電腦具有相同作業系統版本的電腦，並存取該電腦的登錄 (例如，藉由使用登錄編輯程式)。
     2. 巡覽至下列登錄項目：  
@@ -151,7 +151,7 @@ gpresult /S <computer name> /H c:\gpresult-<computer name>.html
 
 ### <a name="check-the-status-of-the-rdp-self-signed-certificate"></a>檢查 RDP 自我簽署憑證的狀態
 
-1. 如果您仍然無法連線，請開啟 [憑證] MMC 嵌入式管理單元。 當系統提示您選取要管理的憑證存放區，請選取**電腦帳戶**，然後選取受影響的電腦。
+1. 如果您仍然無法連線，請開啟 [憑證] MMC 嵌入式管理單元。 當系統提示您選取要管理的憑證存放區，請選取 **電腦帳戶**，然後選取受影響的電腦。
 2. 在 [遠端桌面]  下方的 [憑證]  資料夾中，刪除 RDP 自我簽署憑證。 
     ![MMC 憑證嵌入式管理單元中的遠端桌面憑證。](../media/troubleshoot-remote-desktop-connections/MMCCert_Delete.png)
 3. 在受影響的電腦上，重新啟動「遠端桌面服務」服務。

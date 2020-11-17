@@ -8,16 +8,16 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 23b7322b76eb60c0ae19d3aa0e9e826998a92c77
-ms.sourcegitcommit: 8c0a419ae5483159548eb0bc159f4b774d4c3d85
+ms.openlocfilehash: a9664d11e61d69faab87f351ae5f9915afd47f98
+ms.sourcegitcommit: 094482d0e7a8a9688790af06968d68f0294b78df
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93235875"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94550731"
 ---
 # <a name="securing-privileged-access"></a>保護特殊權限存取
 
->適用於：Windows Server
+> 適用於：Windows Server
 
 保護特殊權限存取是針對現代組織中的企業資產建立安全性保證時重要的第一個步驟。 IT 組織中大部分或所有企業資產的安全性，都需仰賴用來管理及開發的特殊權限帳戶的完整性。 網路攻擊者常會以這些帳戶以及特殊權限存取的其他項目作為目標，使用認證竊取攻擊 (例如[傳遞雜湊與傳遞票證](https://www.microsoft.com/pth)) 取得取得資料與系統的存取權。
 
@@ -29,7 +29,7 @@ ms.locfileid: "93235875"
 
 特殊權限帳戶 (例如 Active Directory Domain Services 的系統管理員) 可直接或間接存取 IT 組織中大部分或所有的資產，而使這些帳戶的入侵成為高度商業風險。
 
-## <a name="why-securing-privileged-access-is-important"></a>保護特殊權限存取為何如此重要？
+## <a name="why-is-securing-privileged-access-important"></a>保護特殊權限存取為何如此重要？
 
 網路攻擊者會重點攻擊系統的特殊權限存取 (例如 Active Directory (AD))，以快速取得所有組織目標資料的存取權。 傳統的安全性方法著重於以網路和防火牆作為主要安全性周邊，但網路安全性的有效性已因兩個趨勢而明顯降低︰
 
@@ -46,7 +46,7 @@ ms.locfileid: "93235875"
 
 下圖說明兩個路徑：
 
-* 一個「藍色」路徑，會使用標準使用者帳戶對電子郵件、網頁瀏覽等資源進行非特殊權限存取，以及完成日常工作。
+* 一個「藍色」路徑，會使用標準使用者帳戶對電子郵件、網頁瀏覽等資源進行非特殊權限存取，並且完成日常工作。
 
    > [!NOTE]
    > 稍後說明的藍色路徑項目將指出超出系統管理帳戶範圍的廣泛環境保護。
@@ -83,15 +83,15 @@ Microsoft 建議您遵循這份藍圖來保護特殊權限存取以對抗積極�
 
 ### <a name="1-separate-accounts"></a>1.個別帳戶
 
-為了將網際網路風險 (網路釣魚攻擊、網頁瀏覽) 隔絕在特殊權限存取帳戶外，請為所有具備特殊權限存取權的人員建立專用帳戶。 系統管理員不應以具備高特殊權限的帳戶瀏覽網頁、查看其電子郵件，以及執行日常生產力工作。 如需詳細資訊，請參閱參考文件的[個別的系統管理帳戶](securing-privileged-access-reference-material.md#separate-administrative-accounts)一節。
+為了將網際網路風險 (網路釣魚攻擊、網頁瀏覽) 隔絕在特殊權限存取帳戶外，請為所有具備特殊權限存取權的人員建立專用帳戶。 系統管理員不應以具備高特殊權限的帳戶來瀏覽網頁、查看其電子郵件，或執行日常生產力工作。 如需詳細資訊，請參閱參考文件的[個別的系統管理帳戶](securing-privileged-access-reference-material.md#separate-administrative-accounts)一節。
 
 請依照[在 Azure AD 中管理緊急存取帳戶](/azure/active-directory/users-groups-roles/directory-emergency-access)一文中的指引，在您的內部部署 AD 和 Azure AD 環境中建立至少兩個緊急存取帳戶，且都必須具備永久指派的系統管理員權限。 只有在傳統系統管理員帳戶無法執行必要的工作時 (例如，在發生災害的情況下)，才可使用這些帳戶。
 
 ### <a name="2-just-in-time-local-admin-passwords"></a>2.Just in Time 本機系統管理員密碼
 
-為了降低攻擊者從本機 SAM 資料庫竊取本機系統管理員帳戶密碼雜湊，並濫用它來攻擊其他電腦的風險，組織應確保每部電腦都有唯一的本機系統管理員密碼。 本機系統管理員密碼解決方案 (LAPS) 工具可在每個工作站和伺服器上設定唯一的隨機密碼，並將其儲存在受到 ACL 保護的 Active Directory (AD) 中。 只有合格的授權使用者才可讀取或要求重設這些本機系統管理員帳戶密碼。 您可以從 [Microsoft 下載中心](https://aka.ms/LAPS)取得要在工作站和伺服器上使用的 LAPS。
+為了降低攻擊者從本機 SAM 資料庫竊取本機系統管理員帳戶密碼雜湊，並濫用其來攻擊其他電腦的風險，組織應確保每部電腦都有唯一的本機系統管理員密碼。 本機系統管理員密碼解決方案 (LAPS) 工具可在每個工作站和伺服器上設定唯一的隨機密碼，並將其儲存在受到 ACL 保護的 Active Directory (AD) 中。 只有合格的授權使用者才可讀取或要求重設這些本機系統管理員帳戶密碼。 您可以從 [Microsoft 下載中心](https://aka.ms/LAPS)取得要在工作站和伺服器上使用的 LAPS。
 
-如需使用 LAP 和 PAW 操作環境的其他指導方針，請參閱[以乾淨來源準則為基礎的操作標準](securing-privileged-access-reference-material.md#operational-standards-based-on-clean-source-principle)。
+如需使用 LAP 和 PAW (特殊權限存取工作站) 操作環境的其他指導方針，請參閱[以乾淨來源準則為基礎的操作標準](securing-privileged-access-reference-material.md#operational-standards-based-on-clean-source-principle)。
 
 ### <a name="3-administrative-workstations"></a>3.系統管理工作站
 
@@ -109,9 +109,9 @@ Microsoft 建議您遵循這份藍圖來保護特殊權限存取以對抗積極�
 
 ### <a name="1-require-windows-hello-for-business-and-mfa"></a>1.需要 Windows Hello 企業版和 MFA
 
-系統管理員可受益於 Windows Hello 企業版在使用上的相關便利性。 系統管理員可在其電腦上將其複雜的密碼取代為強式雙重要素驗證。 攻擊者必須同時擁有裝置和生物特徵辨識資訊或 PIN 碼，因此要在員工不知情的情況下取得存取權，難度會提高許多。 如需 Windows Hello 企業版和推出路徑的詳細資訊，請參閱 [Windows Hello 企業版概觀](/windows/security/identity-protection/hello-for-business/hello-overview)
+系統管理員可受益於 Windows Hello 企業版在使用上的相關便利性。 系統管理員可在其電腦上將其複雜的密碼取代為強式雙重要素驗證。 攻擊者必須同時擁有裝置和生物特徵辨識資訊或 PIN 碼，因此要在員工不知情的情況下取得存取權，難度會提高許多。 如需 Windows Hello 企業版和推出路徑的詳細資訊，請參閱 [Windows Hello 企業版概觀](/windows/security/identity-protection/hello-for-business/hello-overview)。
 
-使用 Azure MFA，為您在 Azure AD 中的系統管理員帳戶啟用多重要素驗證 (MFA)。 您至少應啟用[基準保護條件式存取原則](/azure/active-directory/conditional-access/baseline-protection#require-mfa-for-admins)。如需 Azure Multi-Factor Authentication 的詳細資訊，請參閱[部署雲端式 Azure Multi-Factor Authentication](/azure/active-directory/authentication/howto-mfa-getstarted) 一文
+使用 Azure MFA，為您在 Azure AD 中的系統管理員帳戶啟用多重要素驗證 (MFA)。 您至少應啟用 [基準保護條件式存取原則](/azure/active-directory/conditional-access/baseline-protection#require-mfa-for-admins)。 如需 Azure Multi-Factor Authentication 的詳細資訊，請參閱[部署雲端式 Azure Multi-Factor Authentication](/azure/active-directory/authentication/howto-mfa-getstarted) 一文。
 
 ### <a name="2-deploy-paw-to-all-privileged-identity-access-account-holders"></a>2.將 PAW 部署至所有特殊權限身分識別存取的帳戶持有者
 
@@ -136,7 +136,7 @@ Microsoft 建議您遵循這份藍圖來保護特殊權限存取以對抗積極�
 
 ### <a name="6-azure-atp-lateral-movement-paths"></a>6.Azure ATP 橫向移動路徑
 
-請確定特殊權限存取的帳戶持有者僅將其 PAW 用於系統管理，讓遭入侵的非特殊權限帳戶無法透過認證竊取攻擊 (例如傳遞雜湊或傳遞票證) 取得特殊權限帳戶的存取權。 [Azure ATP 橫向移動路徑 (LMP)](/azure-advanced-threat-protection/use-case-lateral-movement-path) 可讓您輕鬆了解報告，以識別特殊權限帳戶在何處可能有漏洞會遭到入侵。
+請確定特殊權限存取的帳戶持有者僅將其 PAW 用於系統管理，從而將遭入侵的非特殊權限帳戶，以透過認證竊取攻擊 (例如傳遞雜湊或傳遞票證) 取得特殊權限帳戶存取權的風險降到最低。 [Azure ATP 橫向移動路徑 (LMP)](/azure-advanced-threat-protection/use-case-lateral-movement-path) 可讓您輕鬆了解報告，以識別特殊權限帳戶在何處可能有漏洞會遭到入侵。
 
 ## <a name="phase-3-security-improvement-and-sustainment"></a>階段 3：安全性改善和持續維護
 
@@ -158,7 +158,7 @@ Microsoft 建議您遵循這份藍圖來保護特殊權限存取以對抗積極�
 
 將記錄整合到集中式 SIEM 工具中，可協助您的組織分析、偵測及回應安全性事件。 [監視 Active Directory 遭到危害的徵兆](../ad-ds/plan/security-best-practices/monitoring-active-directory-for-signs-of-compromise.md)和[附錄 L：要監視的事件](../ad-ds/plan/appendix-l--events-to-monitor.md)這兩篇文章提供您在環境中應監視哪些事件的指引。
 
-這屬於計畫以外的部分，因為要在安全性資訊及事件管理 (SIEM) 中彙總、建立和調整警示，需仰賴具經驗的分析人員 (不同於 30 天計畫中的 Azure ATP，其中包含現成可用的警示)
+這屬於計畫以外的部分，因為要在安全性資訊及事件管理 (SIEM) 中彙總、建立和調整警示，需仰賴具經驗的分析人員 (不同於 30 天計畫中的 Azure ATP，其中包含現成可用的警示)。
 
 ### <a name="4-leaked-credentials---force-password-reset"></a>4.認證外洩 - 強制密碼重設
 

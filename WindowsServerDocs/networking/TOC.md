@@ -225,6 +225,13 @@
 ### [在主機電腦或 VM 上建立新的 NIC 小組](technologies/nic-teaming/create-a-New-NIC-Team-on-a-Host-computer-or-VM.md)
 ### [對 NIC 小組進行疑難排解](technologies/nic-teaming/Troubleshooting-NIC-Teaming.md)
 
+## [封包監視器 (Pktmon)](technologies/pktmon/pktmon.md)
+### [Pktmon 命令語法和格式](technologies/pktmon/pktmon-syntax.md)
+### [Windows Admin Center 中的封包監視擴充功能](technologies/pktmon/pktmon-wac-extension.md)
+### [Windows Admin Center 中的 SDN 資料路徑診斷擴充功能](technologies/pktmon/pktmon-sdn-data-path-wac-extension.md)
+### [Microsoft 網路監視器 (Netmon) 支援](technologies/pktmon/pktmon-netmon-support.md)
+### [Wireshark (pcapng 格式) 支援](technologies/pktmon/pktmon-pcapng-support.md)
+
 ## [服務品質 (QoS) 原則](technologies/qos/qos-policy-top.md)
 ### [開始使用 QoS 原則](technologies/qos/qos-policy-get-started.md)
 #### [QoS 原則的運作方式](technologies/qos/qos-policy-works.md)

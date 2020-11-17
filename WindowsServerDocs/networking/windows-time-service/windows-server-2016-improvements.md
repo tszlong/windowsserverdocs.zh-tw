@@ -5,12 +5,12 @@ author: dahavey
 ms.author: dahavey
 ms.date: 10/17/2018
 ms.topic: article
-ms.openlocfilehash: f7593b085dd07694bf7d51d2712501bea612e9af
-ms.sourcegitcommit: b5b040a47cf48c94852de9aad8b91475f891d2f7
+ms.openlocfilehash: a09022cf1ad2929dfdffa244b86c211970b53aae
+ms.sourcegitcommit: a7fb96c0b1d186baeb29349befbbd6bd3b955813
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88563398"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94522521"
 ---
 # <a name="time-accuracy-improvements-for-windows-server-2016"></a>Windows Server 2016 的時間準確度改善
 
@@ -52,13 +52,13 @@ Windows 2016 改進了 Hyper-v TimeSync 服務。 改進功能包括更準確的
 | |輪詢頻率|64 - 1024 秒|NA|一週一次|
 | |時鐘更新頻率|每秒一次|NA|一小時一次|
 |**獨立用戶端**||||
-| |時間伺服器|NA|time.windows.com|time.windows.com|
-| |輪詢頻率|NA|一天一次|一週一次|
-| |時鐘更新頻率|NA|一天一次|一週一次|
+| |*時間伺服器*|NA|time.windows.com|time.windows.com|
+| |*輪詢頻率*|NA|一天一次|一週一次|
+| |*時鐘更新頻率*|NA|一天一次|每小時一次|
 |**網域控制站**||||
-| |時間伺服器|PDC/GTIMESERV|NA|PDC/GTIMESERV|
-| |輪詢頻率|64 -1024 秒|NA|1024 - 32768 秒|
-| |時鐘更新頻率|一天一次|NA|一週一次|
+| |*時間伺服器*|PDC/GTIMESERV|NA|PDC/GTIMESERV|
+| |*輪詢頻率*|64 -1024 秒|NA|1024 - 32768 秒|
+| |*時鐘更新頻率*|每秒一次|NA|每小時一次|
 |**網域成員伺服器**||||
 | |時間伺服器|DC|NA|DC|
 | |輪詢頻率|64 -1024 秒|NA|1024 - 32768 秒|
@@ -361,7 +361,7 @@ Windows Server 2016 Windows Time 服務會公開效能計數器，可用來收�
 ### <a name="windows-traceability-example"></a>Windows 追蹤範例
 建議您在 w32tm 記錄檔中驗證兩個資訊片段。 第一個指出記錄檔目前是條件時鐘。 這證明您的時鐘在發生爭議的時間是由 Windows Time 服務進行調整。
 
- 151802 20:18:32.9821765s - ClockDispln Discipline:*SKEW*TIME* - PhCRR:223 CR:156250 UI:100 phcT:65 KPhO:14307 151802 20:18:33.9898460s - ClockDispln Discipline:*SKEW*TIME* - PhCRR:1 CR:156250 UI:100 phcT:64 KPhO:41 151802 20:18:44.1090410s - ClockDispln Discipline:*SKEW*TIME* - PhCRR:1 CR:156250 UI:100 phcT:65 KPhO:38
+ 151802 20:18:32.9821765s - ClockDispln Discipline:*SKEW* TIME* - PhCRR:223 CR:156250 UI:100 phcT:65 KPhO:14307 151802 20:18:33.9898460s - ClockDispln Discipline:*SKEW* TIME* - PhCRR:1 CR:156250 UI:100 phcT:64 KPhO:41 151802 20:18:44.1090410s - ClockDispln Discipline:*SKEW* TIME* - PhCRR:1 CR:156250 UI:100 phcT:65 KPhO:38
 
 重點是，您會看到前面加上 ClockDispln Discipline 的訊息，也就是 w32time 與您的系統時鐘互動的證明。
 
