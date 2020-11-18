@@ -6,12 +6,12 @@ ms.author: nedpyle
 manager: tiaascs
 ms.date: 11/12/2020
 ms.topic: article
-ms.openlocfilehash: 84a531b1026215484619bc5bc9fbb3ce74899bea
-ms.sourcegitcommit: de207e887575757f3389ccf940c2e0ad2dc70bd3
+ms.openlocfilehash: bc23bdefe1f6b852dc057debd53e1a66c300f592
+ms.sourcegitcommit: adfc886dd7d3513820ac7569b68e50ee8bc51945
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94617188"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94785914"
 ---
 # <a name="storage-migration-service-known-issues"></a>儲存體遷移服務的已知問題
 
@@ -661,10 +661,10 @@ Remote exception : a parameter cannot be found that matches parameter name 'Incl
 Error HRESULT E_FAIL has been returned from a call to a COM component
 ```
 
-所有來源電腦都不一定會發生此情況。 我們正在診斷此問題。 因應措施是在 Windows Admin Center 中安裝1.115 或更新版本的儲存體遷移服務工具。 更新應該會自動出現在 Windows Admin Center 摘要中，並提示您進行安裝，並可讓您忽略此錯誤。 若要 workarond：
+所有來源電腦都不一定會發生此情況。 我們正在診斷此問題。 因應措施是在 Windows Admin Center 中安裝1.115 或更新版本的儲存體遷移服務工具。 更新應該會自動出現在 Windows Admin Center 摘要中，並提示您進行安裝，並可讓您忽略此錯誤。 若要解決此問題：
 
-1. 流覽至傳輸階段的「調整設定」步驟。 
-2. 啟用「覆寫傳輸驗證」
+1. 流覽至傳輸階段的「調整設定」步驟。
+2. 啟用「覆寫傳輸驗證」。
 3. 繼續進行轉移，不論是不執行「驗證」或執行，並忽略 E_FAIL 錯誤。
 
 > [!IMPORTANT]
