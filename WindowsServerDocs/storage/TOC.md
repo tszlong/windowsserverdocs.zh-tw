@@ -109,6 +109,7 @@
 ## 存放裝置移轉服務
 ### [概觀](storage-migration-service/overview.md)
 ### [移轉伺服器](storage-migration-service/migrate-data.md)
+### [轉換的運作方式](storage-migration-service/cutover.md)
 ### [常見問題集 (FAQ)](storage-migration-service/faq.md)
 ### [已知問題](storage-migration-service/known-issues.md)
 
