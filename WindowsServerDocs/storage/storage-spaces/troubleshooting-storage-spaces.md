@@ -6,12 +6,12 @@ ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 525db4b22e0408847e4a52659d06ecddf5b1df8f
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: aeb8161ec5250856cb932035cc1acc28a9e9baf6
+ms.sourcegitcommit: 6d720d4ddaf6362fad1ab04364563cfa6590e3af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90078665"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96332088"
 ---
 # <a name="troubleshoot-storage-spaces-direct"></a>針對儲存空間直接存取進行疑難排解
 
@@ -196,14 +196,14 @@ Volume Name:
    ```
    **DiskRunChkdsk 值 7** 用來連接空間磁片區，並將磁碟分割設為唯讀模式。 這可讓您藉由觸發修復來讓空間進行自我探索和自我修復。 修復將會自動執行一次。 它也可讓您存取資料，這有助於存取您可以複製的任何資料。 對於某些錯誤狀況，例如完整的 DRT 記錄檔，您必須針對損毀復原排程工作執行資料完整性掃描。
 
-損毀復原工作的**資料完整性掃描**可用來同步處理和清除完整的區域追蹤 (的) 記錄檔。 這項工作可能需要數小時才能完成。 「損毀復原的資料完整性掃描」是一項不會顯示為儲存工作的工作，而且沒有進度指標。 如果工作顯示為 [執行中]，表示它正在執行中。 完成時，它會顯示為已完成。 如果您在執行此工作時取消工作或重新開機節點，則該工作將需要從頭開始。
+損毀復原工作的 **資料完整性掃描** 可用來同步處理和清除完整的區域追蹤 (的) 記錄檔。 這項工作可能需要數小時才能完成。 「損毀復原的資料完整性掃描」是一項不會顯示為儲存工作的工作，而且沒有進度指標。 如果工作顯示為 [執行中]，表示它正在執行中。 完成時，它會顯示為已完成。 如果您在執行此工作時取消工作或重新開機節點，則該工作將需要從頭開始。
 
 如需詳細資訊，請參閱 [疑難排解儲存空間直接存取健康情況和操作狀態](storage-spaces-states.md)。
 
 ## <a name="event-5120-with-status_io_timeout-c00000b5"></a>STATUS_IO_TIMEOUT c00000b5 的事件5120
 
 > [!Important]
-> 若**為 Windows Server 2016：** 若要減少在將更新套用至修正程式時遇到這些徵兆的機率，建議使用下列的儲存體維護模式程式，在節點目前已安裝 windows Server 2016 累積更新（從[5 月8日至 2018](https://support.microsoft.com/help/4103723)至[10 月 9 2018 日](https://support.microsoft.com/help/KB4462917)）時，安裝 windows server 2016 或更新版本的[2018 年10月18日累計](https://support.microsoft.com/help/4462928)更新。
+> 若 **為 Windows Server 2016：** 若要減少在將更新套用至修正程式時遇到這些徵兆的機率，建議使用下列的儲存體維護模式程式，在節點目前已安裝 windows Server 2016 累積更新（從 [5 月8日至 2018](https://support.microsoft.com/help/4103723)至 [10 月 9 2018 日](https://support.microsoft.com/help/KB4462917)）時，安裝 windows server 2016 或更新版本的 [2018 年10月18日累計](https://support.microsoft.com/help/4462928)更新。
 
 當您重新開機 Windows Server 2016 上的節點時，您可能會收到 STATUS_IO_TIMEOUT c00000b5 的事件5120，其中包含從 [5 月8日發行的累積更新、2018 KB 4103723](https://support.microsoft.com/help/4103723) 至 [10 月9日、已安裝 2018 kb 的 4462917](https://support.microsoft.com/help/4462917) 。
 
@@ -231,7 +231,7 @@ Description: Cluster node 'NODENAME'was removed from the active failover cluster
 
 ### <a name="shutdown-process-flow"></a>關機程式流程：
 
-1. 執行 VirtualDisk 指令程式，並確定 HealthStatus 值的狀況良好。
+1. 執行 Get-VirtualDisk Cmdlet，並確定 HealthStatus 值狀況良好。
 2. 執行下列 Cmdlet 來清空節點：
 
    ```powershell
@@ -326,7 +326,7 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
     {d543f90c-798b-d2fe-7f0a-cb226c77eeed},10,false,false,1,20,{00000000-0000-0000-0000-000000000000},CacheDiskStateIneligibleDataPartition,0,0,0,false,false,NVMe    ,INTEL SSDPE7KX02,  PHLF7330004V2P0LGN,0170,{79b4d631-976f-4c94-a783-df950389fd38},[R/M 0 R/U 0 R/T 0 W/M 0 W/U 0 W/T 0],
     ```
 2. 從 SDDCDiagnosticInfo 使用 Get-PhysicalDisk.xml
-    1. 使用 "$d = Import-module Clixml GetPhysicalDisk.XML" 來開啟 XML 檔案
+    1. 使用 "$d = Import-Clixml GetPhysicalDisk.XML" 來開啟 XML 檔案
     2. 執行「ipmo 儲存體」
     3. 執行 "$d"。 請注意，使用方式是自動選取，而不是日誌，您會看到如下的輸出：
 
@@ -355,7 +355,7 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
 
 現在，如果您在任何節點上執行 **PhysicalDisk** ，就會看到集區中的所有磁片。 例如，在具有4個節點叢集（具有4個 SAS 磁片）的實驗室中，每個節點都會顯示 100 GB。 在此情況下，停用儲存空間直接存取之後，會移除 SBL (儲存體匯流排層) 但離開篩選器。如果您執行 **PhysicalDisk**，它應該會報告4個磁片，但不包括本機 OS 磁片。 改為回報16。 這對叢集中的所有節點都是相同的。 當您執行 **磁片磁碟機** 命令時，您會看到在本機連接的磁片編號為0、1、2等等，如下列範例輸出所示：
 
-|Number| 易記名稱| 序號|HealthStatus|OperationalStatus|總共大小| 分割區樣式|
+|數字| 易記名稱| 序號|HealthStatus|OperationalStatus|總共大小| 分割區樣式|
 |-|-|-|-|-|-|-|-|
 |0|Msft Virtu .。。  ||Healthy | 線上|  127 GB| GPT|
 ||Msft Virtu .。。 ||Healthy| 離線| 100 GB| RAW|
@@ -375,7 +375,7 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
 ||Msft Virtu .。。 ||Healthy| 離線| 100 GB| RAW|
 ||Msft Virtu .。。 ||Healthy| 離線| 100 GB| RAW|
 
-## <a name="error-message-about-unsupported-media-type-when-you-create-an-storage-spaces-direct-cluster-using-enable-clusters2d"></a>當您使用 >enable-clusters2d 建立儲存空間直接存取叢集時，有關「不支援的媒體類型」的錯誤訊息
+## <a name="error-message-about-unsupported-media-type-when-you-create-an-storage-spaces-direct-cluster-using-enable-clusters2d"></a>當您使用 Enable-ClusterS2D 建立儲存空間直接存取叢集時，有關「不支援的媒體類型」的錯誤訊息
 
 當您執行 **>enable-clusters2d** Cmdlet 時，您可能會看到類似下面的錯誤：
 
@@ -383,7 +383,7 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
 
 若要修正此問題，請確定已在 HBA 模式中設定 HBA 介面卡。 未在 RAID 模式中設定 HBA。
 
-## <a name="enable-clusterstoragespacesdirect-hangs-at-waiting-until-sbl-disks-are-surfaced-or-at-27"></a>ClusterStorageSpacesDirect 會在「等候到 SBL 磁片出現」或27% 時停止回應
+## <a name="enable-clusterstoragespacesdirect-hangs-at-waiting-until-sbl-disks-are-surfaced-or-at-27"></a>Enable-ClusterStorageSpacesDirect 在「等候 SBL 磁片出現」或27% 時停止回應
 
 您將會在驗證報告中看到下列資訊：
 
@@ -395,7 +395,7 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
 您可能會發現，在下列範例中，Intel SSD DC P4600 系列裝置似乎針對多個命名空間（例如0100000001000000E4D25C000014E214 或0100000001000000E4D25C0000EEE214）報告類似的16位元組 n 的問題。
 
 
-|               唯一               | deviceid | MediaType | BusType |               serialnumber               |      大小      | canpool | 友好 | OperationalStatus |
+|               uniqueid               | deviceid | MediaType | BusType |               serialnumber               |      大小      | canpool | 友好 | OperationalStatus |
 |--------------------------------------|----------|-----------|---------|------------------------------------------|----------------|---------|--------------|-------------------|
 |           5000CCA251D12E30           |    0     |    HDD    |   SAS   |                 7PKR197G                 | 10000831348736 |  否  |     HGST     |  HUH721010AL4200  |
 | eui. 0100000001000000E4D25C000014E214 |    4     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214。 | 1600321314816  |  是   |    英特爾     |   SSDPE2KE016T7   |
@@ -415,11 +415,12 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
 「從集區移除」是在呼叫 **PhysicalDisk** 時設定的意圖，但會儲存在健全狀況中以維護狀態，並允許在移除作業失敗時進行復原。 您可以使用下列其中一種方法，以手動方式將 OperationalStatus 變更為「狀況良好」：
 
 - 從集區移除實體磁片，然後將它新增回來。
+- Import-Module Clear-PhysicalDiskHealthData.ps1
 - 執行 [Clear-PhysicalDiskHealthData.ps1 腳本](https://go.microsoft.com/fwlink/?linkid=2034205) 來清除意圖。  (可供下載為。TXT 檔。 您必須將它另存為。PS1 檔案，才能執行它。 ) 
 
 以下是顯示如何執行腳本的一些範例：
 
-- 使用 **SerialNumber** 參數來指定您需要設定為狀況良好的磁片。 您可以從 **WMI MSFT_PhysicalDisk** 或 **PhysicalDisk**取得序號。  (我們只是使用0以下的序號。 ) 
+- 使用 **SerialNumber** 參數來指定您需要設定為狀況良好的磁片。 您可以從 **WMI MSFT_PhysicalDisk** 或 **PhysicalDisk** 取得序號。  (我們只是使用0以下的序號。 ) 
 
    ```powershell
    Clear-PhysicalDiskHealthData -Intent -Policy -SerialNumber 000000000000000 -Verbose -Force
