@@ -7,15 +7,15 @@ author: pronichkin
 ms.author: artemp
 ms.localizationpriority: medium
 ms.date: 07/23/2019
-ms.openlocfilehash: 55d08b426ace5cf6cd0dfc0a0928536bfb751124
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: 754211824208e582382cb9c6ad196483c6506708
+ms.sourcegitcommit: 3181fcb69a368f38e0d66002e8bc6fd9628b1acc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90077815"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96330372"
 ---
 # <a name="manage-a-server-core-server"></a>管理 Server Core 伺服器
- 
+ 
 > 適用于： Windows Server 2019、Windows Server 2016 和 Windows Server (半年通道) 
 
 您可以利用下列方式來管理 Server Core 伺服器：
@@ -30,13 +30,13 @@ ms.locfileid: "90077815"
 
 當您使用 Server Core 時，有一些重要的限制和秘訣要牢記在心：
 
-- 如果您關閉所有命令提示字元視窗，而且想要開啟新的 [命令提示字元] 視窗，您可以從工作管理員。 按 **下 CTRL \+ ALT \+ DELETE**、依序按一下 [ **開始工作管理員**、> 檔案 **> 執行**的詳細資料]，然後輸入 **cmd.exe**。  (輸入 **Powershell.exe** 開啟 PowerShell 命令視窗。 ) 或者，您也可以先登出再重新登入。
+- 如果您關閉所有命令提示字元視窗，而且想要開啟新的 [命令提示字元] 視窗，您可以從工作管理員。 按 **下 CTRL \+ ALT \+ DELETE**、依序按一下 [ **開始工作管理員**、> 檔案 **> 執行** 的詳細資料]，然後輸入 **cmd.exe**。  (輸入 **Powershell.exe** 開啟 PowerShell 命令視窗。 ) 或者，您也可以先登出再重新登入。
 - 嘗試啟動 Windows 檔案總管的任何命令或工具都將無法運作。 例如，正在執行 **start。** 從命令提示字元無法運作。
 - Server Core 不支援 HTML 轉譯或 HTML 說明。
 - Server Core 支援以無訊息模式 Windows Installer，讓您可以從 Windows Installer 檔案安裝工具和公用程式。 在 Server Core 上安裝 Windows Installer 封裝時，請使用 **/qb** 選項來顯示基本的使用者介面。
 - 若要變更時區，請執行 **設定日期**。
 - 若要變更國際設定，請執行 **control intl.cpl**。
-- **Control.exe** 不會自行執行。 您必須使用 **Timedate.cpl** 或 **Intl.cpl**來執行它。
+- **Control.exe** 不會自行執行。 您必須使用 **Timedate.cpl** 或 **Intl.cpl** 來執行它。
 - **Winver.exe** 在 Server Core 中無法使用。 若要取得版本資訊，請使用 **Systeminfo.exe**。
 
 ## <a name="managing-server-core-with-windows-admin-center"></a>使用 Windows Admin Center 管理 Server Core
@@ -46,7 +46,7 @@ ms.locfileid: "90077815"
 
 伺服器管理員是 Windows Server 中的管理主控台，可協助您從桌面布建和管理本機與遠端 Windows 伺服器，而不需要實際存取伺服器，或啟用遠端桌面通訊協定 (RDP) 連線到每部伺服器。 伺服器管理員支援遠端多伺服器管理。
 
-若要讓本機伺服器受伺服器管理員在遠端伺服器上執行的管理，請 **Configure-SMRemoting.exe – enable**執行 Windows PowerShell Cmdlet。
+若要讓本機伺服器受伺服器管理員在遠端伺服器上執行的管理，請 **Configure-SMRemoting.exe – enable** 執行 Windows PowerShell Cmdlet。
 
 ## <a name="managing-with-microsoft-management-console"></a>使用 Microsoft Management Console 管理
 
@@ -71,14 +71,14 @@ ms.locfileid: "90077815"
 2. 出現提示時，輸入您所指定之使用者名稱的密碼。
    如果尚未將 Server Core 伺服器上的防火牆設定為允許 MMC 嵌入式管理單元進行連線，請依照下列步驟將 Windows 防火牆設定為允許 MMC 嵌入式管理單元。 然後繼續進行步驟3。
 3. 在不同的電腦上，啟動 MMC 嵌入式管理單元，例如 [ **電腦管理**]。
-4. 在左窗格中，以滑鼠右鍵按一下嵌入式管理單元，然後按一下 [連線 **到另一台電腦]**。  (例如，在電腦管理範例中，您會在 [電腦管理] 上按一下滑鼠右鍵， ** (本機) **。 ) 
+4. 在左窗格中，以滑鼠右鍵按一下嵌入式管理單元，然後按一下 [連線 **到另一台電腦]**。  (例如，在電腦管理範例中，您會在 [電腦管理] 上按一下滑鼠右鍵， **(本機)**。 ) 
 5. 在 [ **另一台電腦**] 中，輸入 server Core 伺服器的電腦名稱稱，然後按一下 **[確定]**。 您現在可以使用 MMC 嵌入式管理單元來管理 Server Core 伺服器，如同管理執行 Windows Server 作業系統的其他任何電腦一樣。
 
 ### <a name="to-configure-windows-firewall-to-allow-mmc-snap-ins-to-connect"></a>設定 Windows 防火牆允許 MMC 嵌入式管理單元連線
 若要允許所有 MMC 嵌入式管理單元連接，請執行下列命令：
 
 ```PowerShell
-Enable-NetFirewallRule -DisplayGroup "Remote Administration"
+Enable-NetFirewallRule -DisplayGroup "Windows Remote Management"
 ```
 
 若只要允許特定 MMC 嵌入式管理單元連接，請執行下列動作：
@@ -105,7 +105,7 @@ Enable-NetFirewallRule -DisplayGroup "<rulegroup>"
 > 此外，某些嵌入式管理單元在可以透過 Windows 防火牆連線之前，需要進一步的設定：
 >
 > - 磁碟管理。 您必須先在 Server Core 電腦上啟動虛擬磁碟服務 (VDS)。 您也必須在執行 MMC 嵌入式管理單元的電腦上，適當地設定磁碟管理規則。
-> - IP 安全性監視器。 您必須先啟用此嵌入式管理單元的遠端管理。 若要這樣做，請在命令提示字元中輸入 **Cscript \windows\system32\scregedit.wsf/im 1**
+> - IP 安全性監視器。 您必須先啟用此嵌入式管理單元的遠端管理。 若要這樣做，請在命令提示字元中輸入 **cscript c:\windows\system32\scregedit.wsf/im 1**
 > - 可靠性和效能。 此嵌入式管理單元不需要其他設定，但是當您使用它來監視 Server Core 電腦時，僅能監視效能資料。 可靠性資料無法使用。
 
 ## <a name="managing-with-remote-desktop-services"></a>使用遠端桌面服務管理
@@ -149,4 +149,4 @@ sc query type= driver
 sc delete <service_name>
 ```
 
-其中 *service_name* 是當您執行 **sc query type = driver**時所取得的服務名稱。
+其中 *service_name* 是當您執行 **sc query type = driver** 時所取得的服務名稱。

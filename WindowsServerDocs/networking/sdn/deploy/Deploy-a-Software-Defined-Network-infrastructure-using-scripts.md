@@ -7,16 +7,18 @@ ms.assetid: 5ba5bb37-ece0-45cb-971b-f7149f658d19
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: 84b96e724706db49945c2e4936d0b4d8691d8daa
-ms.sourcegitcommit: 3d59c2aaebcd190b20d24bc8a449eee0681b6a3c
+ms.openlocfilehash: 4e3ebcae7696d1b16930e50aacff4f0edc198ce7
+ms.sourcegitcommit: 3181fcb69a368f38e0d66002e8bc6fd9628b1acc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88583323"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96330390"
 ---
 # <a name="deploy-a-software-defined-network-infrastructure-using-scripts"></a>使用指令碼部署軟體定義網路的基礎結構
 
->適用于： Windows Server (半年通道) ，Windows Server 2016 ' 在本主題中，您會使用腳本部署 Microsoft 軟體定義的網路 (SDN) 基礎結構。 基礎結構包含高可用性 (HA) 網路控制站、HA 軟體 Load Balancer (SLB) /MUX、虛擬網路，以及 (Acl) 相關聯的存取控制清單。 此外，另一個腳本會為您部署租使用者工作負載，以驗證 SDN 基礎結構。
+> 適用於：Windows Server (半年度管道)、Windows Server 2016
+
+在本主題中，您會使用腳本，將 Microsoft 軟體定義的網路 (SDN) 基礎結構部署。 基礎結構包含高可用性 (HA) 網路控制站、HA 軟體 Load Balancer (SLB) /MUX、虛擬網路，以及 (Acl) 相關聯的存取控制清單。 此外，另一個腳本會為您部署租使用者工作負載，以驗證 SDN 基礎結構。
 
 如果您想要讓租使用者工作負載在其虛擬網路之外進行通訊，您可以設定 SLB NAT 規則、站對站閘道通道，或第3層轉送，以在虛擬和實體工作負載之間路由傳送。
 
@@ -35,6 +37,7 @@ ms.locfileid: "88583323"
 ### <a name="install-host-networking"></a>安裝主機網路功能
 
 1. 安裝適用于您的 NIC 硬體的最新網路驅動程式。
+
 2. 在所有主機上安裝 Hyper-v 角色 (如需詳細資訊，請參閱 [Windows Server 2016 上的 hyper-v 入門](../../../virtualization/hyper-v/get-started/get-started-with-hyper-v-on-windows.md)。
 
    ```PowerShell
@@ -47,8 +50,8 @@ ms.locfileid: "88583323"
    New-VMSwitch "<switch name>" -NetAdapterName "<NetAdapter1>" [, "<NetAdapter2>" -EnableEmbeddedTeaming $True] -AllowManagementOS $True
    ```
 
-   >[!TIP]
-   >如果您有個別的管理 Nic，您可以略過步驟4和5。
+   > [!TIP]
+   > 如果您有個別的管理 Nic，您可以略過步驟4和5。
 
 3. 請參閱規劃主題 ([規劃軟體定義網路基礎結構](../../sdn/plan/../../sdn/plan/../../sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md)) 並與網路系統管理員合作，以取得管理 VLAN 的 vlan 識別碼。 將新建立之虛擬交換器的管理 vNIC 附加至管理 VLAN。 如果您的環境不使用 VLAN 標記，就可以省略此步驟。
 
@@ -66,14 +69,14 @@ ms.locfileid: "88583323"
 
     a. 將 Active Directory/DNS 伺服器虛擬機器連接到管理 VLAN：
 
-      ```PowerShell
-      Set-VMNetworkAdapterIsolation -VMName "<VM Name>" -Access -VlanId <Management VLAN> -AllowUntaggedTraffic $True
-      ```
+    ```PowerShell
+    Set-VMNetworkAdapterIsolation -VMName "<VM Name>" -Access -VlanId <Management VLAN> -AllowUntaggedTraffic $True
+    ```
 
    b. 安裝 Active Directory Domain Services 和 DNS。
 
-   >[!NOTE]
-   >網路控制站支援 Kerberos 和 x.509 憑證以進行驗證。 本指南會針對不同用途使用這兩種驗證機制 (但) 只需要一個。
+   > [!NOTE]
+   > 網路控制站支援 Kerberos 和 x.509 憑證以進行驗證。 本指南會針對不同用途使用這兩種驗證機制 (但) 只需要一個。
 
 6. 將所有 Hyper-v 主機加入網域。 確定已將 IP 位址指派給管理網路的網路介面卡的 DNS 伺服器專案指向可解析功能變數名稱的 DNS 伺服器。
 
@@ -82,12 +85,13 @@ ms.locfileid: "88583323"
    ```
 
    a. 以滑鼠右鍵按一下 [ **開始**]，按一下 [ **系統**]，然後按一下 [ **變更設定**]。
-   b. 按一下 [變更]****。
-   c. 按一下 [ **網域** ]，並指定功能變數名稱。  "" "" d。 按一下 [確定]  。
+   b. 按一下 [變更]。
+   c. 按一下 [ **網域** ]，並指定功能變數名稱。  "" "" d。 按一下 [確定]。
    e. 出現提示時，請輸入使用者名稱和密碼認證。
    f. 重新啟動伺服器。
 
 ### <a name="validation"></a>驗證
+
 使用下列步驟來驗證是否已正確設定主機網路功能。
 
 1. 確定已成功建立 VM 交換器：
@@ -98,8 +102,8 @@ ms.locfileid: "88583323"
 
 2. 確認 VM 交換器上的管理 vNIC 已連線到管理 VLAN：
 
-   >[!NOTE]
-   >只有在管理和租使用者流量共用相同的 NIC 時才適用。
+   > [!NOTE]
+   > 只有在管理和租使用者流量共用相同的 NIC 時才適用。
 
    ```PowerShell
    Get-VMNetworkAdapterIsolation -ManagementOS
@@ -107,12 +111,16 @@ ms.locfileid: "88583323"
 
 3. 驗證所有 Hyper-v 主機和外部管理資源，例如 DNS 伺服器。<p>使用 (FQDN) 的管理 IP 位址和/或完整功能變數名稱，確定可透過 ping 存取它們。
 
-   ``ping <Hyper-V Host IP>``
-   ``ping <Hyper-V Host FQDN>``
+   ```
+   ping <Hyper-V Host IP>
+   ping <Hyper-V Host FQDN>
+   ```
 
 4. 在部署主機上執行下列命令，並指定每部 Hyper-v 主機的 FQDN，以確保所使用的 Kerberos 認證能提供所有伺服器的存取權。
 
-   ``winrm id -r:<Hyper-V Host FQDN>``
+   ```
+   winrm id -r:<Hyper-V Host FQDN>
+   ```
 
 ### <a name="run-sdn-express-scripts"></a>執行 SDN Express 腳本
 
@@ -120,37 +128,42 @@ ms.locfileid: "88583323"
 
 2. 從存放庫將安裝檔案下載到指定的部署電腦。 按一下 [ **複製] 或 [下載** ]，然後按一下 [ **下載 ZIP**]。
 
-   >[!NOTE]
-   >指定的部署電腦必須執行 Windows Server 2016 或更新版本。
+   > [!NOTE]
+   > 指定的部署電腦必須執行 Windows Server 2016 或更新版本。
 
 3. 展開 zip 檔案，並將 **SDNExpress** 資料夾複製到部署電腦的 `C:\` 資料夾。
 
-4. 將 `C:\SDNExpress` 資料夾共用為「**SDNExpress**」，並具備 **每個人都** 可 **讀取/寫入**的許可權。
+4. 將 `C:\SDNExpress` 資料夾共用為「**SDNExpress**」，並具備 **每個人都** 可 **讀取/寫入** 的許可權。
 
 5. 瀏覽至 `C:\SDNExpress` 資料夾。<p>您會看到下列資料夾：
 
-   | 資料夾名稱 | 描述 |
+   | 資料夾名稱 | 說明 |
    |--|--|
    | AgentConf | 保存每個 Windows Server 2016 Hyper-v 主機上 SDN 主機代理程式所使用之 OVSDB 架構的全新複本，以程式設計網路原則。 |
    | 憑證 | NC 憑證檔案的暫存共用位置。 |
    | 影像 | 是空的，請將您的 Windows Server 2016 vhdx 映射放在這裡 |
    | 工具 | 疑難排解和偵錯工具的公用程式。  已複製到主機和虛擬機器。  建議您在這裡放置網路監視器或 Wireshark，以便在需要時使用。 |
-   | 指令碼 | 部署腳本。<p>- **SDNExpress.ps1**<br>部署及設定網狀架構，包括網路控制站虛擬機器、SLB Mux 虛擬機器、閘道集區 (s) 和 HNV 閘道虛擬機器 (s) 對應至集區 () 。<br />-   **FabricConfig.psd1**<br>SDNExpress 腳本的設定檔範本。  您將會針對您的環境進行自訂。<br />-   **SDNExpressTenant.ps1**<br>在具有負載平衡 VIP 的虛擬網路上部署範例租使用者工作負載。<br>也會在連線至先前所建立租使用者工作負載的服務提供者邊緣閘道上，布建一或多個網路連線 (IPSec S2S VPN、GRE、L3) 。 IPSec 和 GRE 閘道可透過對應的 VIP IP 位址進行連線，並可透過對應的位址集區進行 L3 轉送閘道。<br>您也可以使用此腳本刪除具有復原選項的對應設定。<br />- **TenantConfig.psd1**<br>租使用者工作負載和 S2S 閘道設定的範本設定檔案。<br />- **SDNExpressUndo.ps1**<br>清除網狀架構環境，並將其重設為啟動狀態。<br />- **SDNExpressEnterpriseExample.ps1**<br>布建一或多個具有一個遠端存取閘道的企業網站環境，並 (選擇性地為每個網站) 一個對應的企業虛擬機器。 IPSec 或 GRE 企業閘道會連接到服務提供者閘道的對應 VIP IP 位址，以建立 S2S 通道。 L3 轉送閘道會透過對應的對等 IP 位址來連接。 <br> 您也可以使用此腳本刪除具有復原選項的對應設定。<br />- **EnterpriseConfig.psd1**<br>適用于企業站對站閘道和用戶端 VM 設定的範本設定檔案。 |
+   | 指令碼 | 部署腳本。<p> - **SDNExpress.ps1**<br>部署及設定網狀架構，包括網路控制站虛擬機器、SLB Mux 虛擬機器、閘道集區 (s) 和 HNV 閘道虛擬機器 (s) 對應至集區 () 。<br /> - **FabricConfig.psd1**<br>SDNExpress 腳本的設定檔範本。 您將會針對您的環境進行自訂。<br /> - **SDNExpressTenant.ps1**<br>在具有負載平衡 VIP 的虛擬網路上部署範例租使用者工作負載。<br>也會在連線至先前所建立租使用者工作負載的服務提供者邊緣閘道上，布建一或多個網路連線 (IPSec S2S VPN、GRE、L3) 。 IPSec 和 GRE 閘道可透過對應的 VIP IP 位址進行連線，並可透過對應的位址集區進行 L3 轉送閘道。<br>您也可以使用此腳本刪除具有復原選項的對應設定。<br /> - **TenantConfig.psd1**<br>租使用者工作負載和 S2S 閘道設定的範本設定檔案。<br /> - **SDNExpressUndo.ps1**<br>清除網狀架構環境，並將其重設為啟動狀態。<br /> - **SDNExpressEnterpriseExample.ps1**<br>布建一或多個具有一個遠端存取閘道的企業網站環境，並 (選擇性地為每個網站) 一個對應的企業虛擬機器。 IPSec 或 GRE 企業閘道會連接到服務提供者閘道的對應 VIP IP 位址，以建立 S2S 通道。 L3 轉送閘道會透過對應的對等 IP 位址來連接。 <br> 您也可以使用此腳本刪除具有復原選項的對應設定。<br /> - **EnterpriseConfig.psd1**<br>適用于企業站對站閘道和用戶端 VM 設定的範本設定檔案。 |
    | TenantApps | 用來部署範例租使用者工作負載的檔案。 |
 
 6. 確認 Windows Server 2016 VHDX 檔案位於 **Images** 資料夾中。
 
-7. 藉由變更<< 以特定值 ** 取代 >>** 標記來自訂 SDNExpress\scripts\FabricConfig.psd1 檔案，以符合您的實驗室基礎結構，包括主機名稱、功能變數名稱、使用者名稱和密碼，以及規劃網路主題中所列網路的網路資訊。
+7. 藉由變更<< 以特定值 **取代 >>** 標記來自訂 SDNExpress\scripts\FabricConfig.psd1 檔案，以符合您的實驗室基礎結構，包括主機名稱、功能變數名稱、使用者名稱和密碼，以及規劃網路主題中所列網路的網路資訊。
 
 8. 在 DNS 中為 NetworkControllerRestName (FQDN) 和 NetworkControllerRestIP 建立主機 A 記錄。
 
 9. 以具有網域系統管理員認證的使用者身分執行腳本：
 
-   ``SDNExpress\scripts\SDNExpress.ps1 -ConfigurationDataFile FabricConfig.psd1 -Verbose``
+   ```
+   SDNExpress\scripts\SDNExpress.ps1 -ConfigurationDataFile FabricConfig.psd1 -Verbose
+   ```
 
 10. 若要復原所有作業，請執行下列命令：
 
-    ``SDNExpress\scripts\SDNExpressUndo.ps1 -ConfigurationDataFile FabricConfig.psd1 -Verbose``
+   ```
+    SDNExpress\scripts\SDNExpressUndo.ps1 -ConfigurationDataFile FabricConfig.psd1 -Verbose
+   ```
+
 
 #### <a name="validation"></a>驗證
 
@@ -158,22 +171,28 @@ ms.locfileid: "88583323"
 
 使用 [診斷工具](../troubleshoot/troubleshoot-windows-server-software-defined-networking-stack.md) ，以確保網路控制站中的任何網狀架構資源都沒有錯誤。
 
-   ``Debug-NetworkControllerConfigurationState -NetworkController <FQDN of Network Controller Rest Name>``
+   ```
+   Debug-NetworkControllerConfigurationState -NetworkController <FQDN of Network Controller Rest Name>
+   ```
 
 
 ### <a name="deploy-a-sample-tenant-workload-with-the-software-load-balancer"></a>使用軟體負載平衡器部署範例租使用者工作負載
 
 現在已部署網狀架構資源，您可以藉由部署範例租使用者工作負載，以端對端方式驗證 SDN 部署。 此租使用者工作負載是由兩個虛擬子網所組成 (web 層和資料庫層) 透過存取控制清單 (ACL) 規則使用 SDN 分散式防火牆來保護。 Web 層的虛擬子網可透過使用虛擬 IP (VIP) 位址的 SLB/MUX 來存取。 腳本會自動部署兩個 web 層虛擬機器和一個資料庫層虛擬機器，並將這些虛擬機器連接到虛擬子網。
 
-1.  藉由變更<< 以特定值 ** 取代 >>** 標記來自訂 SDNExpress\scripts\TenantConfig.psd1 檔案 (例如： VHD 映射名稱、網路控制器 REST 名稱、vSwitch 名稱等，如先前在 FabricConfig.psd1 檔案中所定義) 
+1. 藉由變更<< 以特定值 **取代 >>** 標記來自訂 SDNExpress\scripts\TenantConfig.psd1 檔案 (例如： VHD 映射名稱、網路控制器 REST 名稱、vSwitch 名稱等，如先前在 FabricConfig.psd1 檔案中所定義) 
 
-2.  執行指令碼。 例如：
+2. 執行指令碼。 例如：
 
-    ``SDNExpress\scripts\SDNExpressTenant.ps1 -ConfigurationDataFile TenantConfig.psd1 -Verbose``
+   ```
+   SDNExpress\scripts\SDNExpressTenant.ps1 -ConfigurationDataFile TenantConfig.psd1 -Verbose
+   ```
 
-3.  若要復原設定，請使用 **undo** 參數執行相同的腳本。 例如：
+3. 若要復原設定，請使用 **undo** 參數執行相同的腳本。 例如：
 
-    ``SDNExpress\scripts\SDNExpressTenant.ps1 -Undo -ConfigurationDataFile TenantConfig.psd1 -Verbose``
+   ```
+   SDNExpress\scripts\SDNExpressTenant.ps1 -Undo -ConfigurationDataFile TenantConfig.psd1 -Verbose
+   ```
 
 #### <a name="validation"></a>驗證
 
@@ -183,15 +202,19 @@ ms.locfileid: "88583323"
 
 2. 檢查網路控制站租使用者資源是否有任何錯誤。 從具有第3層連線能力到網路控制站的任何 Hyper-v 主機執行下列各項：
 
-   ``Debug-NetworkControllerConfigurationState -NetworkController <FQDN of Network Controller REST Name>``
+   ```
+   Debug-NetworkControllerConfigurationState -NetworkController <FQDN of Network Controller REST Name>
+   ```
 
 3. 若要確認負載平衡器是否正常運作，請從任何 Hyper-v 主機執行下列程式：
 
-   ``wget <VIP IP address>/unique.htm -disablekeepalive -usebasicparsing``
+   ```
+   wget <VIP IP address>/unique.htm -disablekeepalive -usebasicparsing
+   ```
 
    其中 `<VIP IP address>` 是您在 TenantConfig.psd1 檔案中設定的 web 層 VIP IP 位址。
 
-   >[!TIP]
-   >`VIPIP`在 TenantConfig.psd1 中搜尋變數。
+   > [!TIP]
+   > `VIPIP`在 TenantConfig.psd1 中搜尋變數。
 
-   執行此多個時間，以查看可用 Dip 之間的負載平衡器切換。 您也可以使用網頁瀏覽器來觀察此行為。 瀏覽至 `<VIP IP address>/unique.htm` 。 關閉瀏覽器並開啟新的實例，然後再次流覽。 您將會看到藍色的頁面和綠色的頁面替代，但瀏覽器會在快取超時之前快取頁面。
+   請多次執行此命令，以查看可用 Dip 之間的負載平衡器切換。 您也可以使用網頁瀏覽器來觀察此行為。 瀏覽至 `<VIP IP address>/unique.htm` 。 關閉瀏覽器並開啟新的實例，然後再次流覽。 您將會看到藍色的頁面和綠色的頁面替代，但瀏覽器會在快取超時之前快取頁面。

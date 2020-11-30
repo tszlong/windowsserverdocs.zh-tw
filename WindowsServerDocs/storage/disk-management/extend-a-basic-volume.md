@@ -6,12 +6,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: d0cd4c0c2bd6909c82ee39c97b58909e85aeef9f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 806bbb9027ddbe0fc245c279e3106f3b60eef3a4
+ms.sourcegitcommit: 3181fcb69a368f38e0d66002e8bc6fd9628b1acc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961612"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96330440"
 ---
 # <a name="extend-a-basic-volume"></a>延伸基本磁碟區
 
@@ -27,7 +27,7 @@ ms.locfileid: "87961612"
 
 1. 使用系統管理員權限開啟 [磁碟管理]。
 
-   執行此動作的簡易方法，是在工作列上的 [搜尋] 方塊中輸入**電腦管理**，選取並按住 (以滑鼠右鍵按一下) [電腦管理]  ，然後選取 [以系統管理員身分執行]   > [是]  。 在開啟 [電腦管理] 後，移至 [存放裝置]   > [磁碟管理]  。
+   執行此動作的簡易方法，是在工作列上的 [搜尋] 方塊中輸入 **電腦管理**，選取並按住 (以滑鼠右鍵按一下) [電腦管理]  ，然後選取 [以系統管理員身分執行]   > [是]  。 在開啟 [電腦管理] 後，移至 [存放裝置]   > [磁碟管理]  。
 2. 選取並按住 (或以滑鼠右鍵按一下) 您要延伸的磁碟區，然後選取 [延伸磁碟區]  。
 
    如果 [延伸磁碟區]  呈現為灰色，請確認下列事項：
@@ -57,7 +57,7 @@ ms.locfileid: "87961612"
    Resize-Partition -DriveLetter $drive_letter -Size $size.SizeMax
    ```
 
-## <a name="see-slso"></a>另請參閱
+## <a name="see-also"></a>另請參閱
 
 - [Resize-Partition](/powershell/module/storage/resize-partition)
 - [Diskpart 延伸](../../administration/windows-commands/extend.md)

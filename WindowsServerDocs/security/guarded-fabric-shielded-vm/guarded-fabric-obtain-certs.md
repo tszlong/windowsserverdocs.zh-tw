@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 09/25/2019
-ms.openlocfilehash: 392065ac9fe9e32e84550e14cd9ef39349ac8d67
-ms.sourcegitcommit: 664ed9bb0bbac2c9c0727fc2416d8c437f2d5cbe
+ms.openlocfilehash: 43762e34e2987473954e3f9408ddd6e74b0de3cb
+ms.sourcegitcommit: 3181fcb69a368f38e0d66002e8bc6fd9628b1acc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89472018"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96330360"
 ---
 # <a name="obtain-certificates-for-hgs"></a>取得 HGS 的憑證
 
@@ -33,7 +33,7 @@ ms.locfileid: "89472018"
 
 憑證範本屬性 | 必要值
 ------------------------------|----------------
-密碼編譯提供者               | 任何金鑰儲存提供者 (KSP) 。 **不**支援 (csp) 的舊版密碼編譯服務提供者。
+密碼編譯提供者               | 任何金鑰儲存提供者 (KSP) 。 **不** 支援 (csp) 的舊版密碼編譯服務提供者。
 金鑰演算法                 | RSA
 最小金鑰大小              | 2048 位元
 簽章演算法           | 建議： SHA256
@@ -81,13 +81,13 @@ Remove-Item -Path "Cert:\LocalMachine\CA\$($encCert.Thumbprint)"
 ## <a name="request-an-ssl-certificate"></a>要求 SSL 憑證
 
 在 Hyper-v 主機與 HGS 之間傳輸的所有金鑰和敏感性資訊都會在訊息層級進行加密，也就是說，資訊是以 HGS 或 Hyper-v 的已知金鑰加密，防止他人探查您的網路流量，並竊取 Vm 的金鑰。
-但是，如果您有合規性 reqiurements 或只是想要加密 Hyper-v 與 HGS 之間的所有通訊，您可以使用 SSL 憑證來設定 HGS，以將傳輸層級的所有資料加密。
+但是，如果您有合規性需求，或只是想要加密 Hyper-v 與 HGS 之間的所有通訊，您可以使用 SSL 憑證設定 HGS，以加密傳輸層級的所有資料。
 
 Hyper-v 主機和 HGS 節點都必須信任您提供的 SSL 憑證，因此建議您從企業憑證授權單位單位要求 SSL 憑證。 要求憑證時，請務必指定下列各項：
 
 SSL 憑證屬性 | 必要值
 -------------------------|---------------
-主體名稱             | 請解決 HGS 用戶端 (也就是 Guraded 主機) 將用來存取 HGS 伺服器。 這通常是 HGS 叢集（稱為「分散式網路名稱」或「虛擬電腦」物件） (VCO) 的 DNS 位址。 這將是您提供的 HGS 服務名稱與 `Initialize-HgsServer` hgs 功能變數名稱的串連。
+主體名稱             | 請解決 HGS 用戶端 (也就是受防護主機) 將會用來存取 HGS 伺服器。 這通常是 HGS 叢集（稱為「分散式網路名稱」或「虛擬電腦」物件） (VCO) 的 DNS 位址。 這將是您提供的 HGS 服務名稱與 `Initialize-HgsServer` hgs 功能變數名稱的串連。
 主體別名 | 如果您要使用不同的 DNS 名稱來連線 HGS 叢集 (例如，如果它是在負載平衡器後方，或您針對複雜拓撲) 中的節點子集使用不同的位址，請務必在您的憑證要求的 [SAN] 欄位中包含這些 DNS 名稱。 請注意，如果已填入 SAN 延伸模組，則會忽略主體名稱，因此 SAN 應該包含所有值，包括通常會放入主體名稱的所有值。
 
 [設定第一個 hgs 節點](guarded-fabric-initialize-hgs.md)時，會涵蓋在初始化 hgs 伺服器時指定此憑證的選項。

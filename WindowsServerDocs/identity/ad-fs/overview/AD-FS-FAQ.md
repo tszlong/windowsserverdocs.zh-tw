@@ -5,14 +5,14 @@ description: AD FS 常見問題集
 author: billmath
 ms.author: billmath
 manager: mtillman
-ms.date: 04/29/2020
+ms.date: 11/02/2020
 ms.topic: article
-ms.openlocfilehash: 50767d5b1941e397583f6c2bfa1d6b2ae3f253cf
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d4b1130de67d4e4d7f57065dac307cddc0aef369
+ms.sourcegitcommit: 3181fcb69a368f38e0d66002e8bc6fd9628b1acc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87949682"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96330480"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>AD FS 常見問題集 (FAQ)
 
@@ -87,6 +87,7 @@ AD FS 會提供一個可延伸的機制，以供第三方 MFA 提供者進行整
 以下是我們所知道的第三方提供者清單。  永遠都可能有我們不知道的提供者可用，我們將會在得知時更新清單。
 
 - [F5 存取原則管理員](https://support.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-third-party-integration-13-1-0/12.html#guid-1ee8fbb3-1b33-4982-8bb3-05ae6868d9ee)
+- [Citrix 應用程式傳遞控制器 (ADC)](https://docs.citrix.com/en-us/citrix-adc/current-release/aaa-tm/adfs-proxy-wsfed.html)
 
 
 ### <a name="where-is-the-capacity-planning-sizing-spreadsheet-for-ad-fs-2016"></a>AD FS 2016 的容量規劃大小調整試算表在哪裡？
@@ -235,7 +236,7 @@ AD FS UserInfo 端點一律會傳回 OpenID 標準中所指定的主體宣告。
 ### <a name="why-am-i-seeing-a-warning-for-failure-to-add-the-ad-fs-service-account-to-the-enterprise-key-admins-group"></a>為何我會看到無法將 AD FS 服務帳戶新增至 Enterprise Key Admins 群組的警告？
 只有當網域中存在具有 FSMO PDC 角色的 Windows 2016 網域控制站時，才會建立此群組。 若要解決此錯誤，您可以手動建立群組，並遵循下列步驟，在將服務帳戶新增為群組成員之後，提供必要的權限。
 1.    開啟 [Active Directory 使用者和電腦] 。
-2.    在導覽窗格中您的網域名稱上**按一下滑鼠右鍵**，然後按一下 [屬性]。
+2.    在導覽窗格中您的網域名稱上 **按一下滑鼠右鍵**，然後按一下 [屬性]。
 3.    按一下 [安全性] (如果沒看見 [安全性] 索引標籤，請從 [檢視] 功能表開啟 [進階功能])。
 4.    按一下 [進階]。 按一下 [新增]。 按一下 [選取主體]。
 5.    [選取使用者、電腦、服務帳戶或群組] 對話方塊隨即出現。  在 [輸入物件名稱來選取] 文字方塊中，鍵入 Key Admin Group。  按一下 [確定]。

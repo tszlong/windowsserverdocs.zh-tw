@@ -7,12 +7,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 09/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8519d69c39cb86f10c66b3c28410a285ca06252d
-ms.sourcegitcommit: 14c9526b1c74821341d4b66de92adce9bee92f10
+ms.openlocfilehash: ae5c0af5f434b73b9b4590c2a5c53c9551b76b6c
+ms.sourcegitcommit: 3181fcb69a368f38e0d66002e8bc6fd9628b1acc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94558275"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96330400"
 ---
 # <a name="whats-new-in-the-web-client"></a>Web 用戶端中的新功能
 
@@ -29,7 +29,7 @@ ms.locfileid: "94558275"
 
 - 使用者現在可以移動最小化功能表。
 - 已改進對 4K 和 Ultra-wide 監視器的支援，並修正了複製大量資料時會導致工作階段當機的問題。
-- 已改進在遠端工作階段中使用輸入法編輯器的支援。 若要深入了解透過 Web 用戶端使用輸入法編輯器，請參閱[透過 Web 用戶端連線到 Windows 虛擬桌面](/azure/virtual-desktop/connect-web.md)。
+- 已改進在遠端工作階段中使用輸入法編輯器的支援。 若要深入了解透過 Web 用戶端使用輸入法編輯器，請參閱[透過 Web 用戶端連線到 Windows 虛擬桌面](https://docs.microsoft.com/azure/virtual-desktop/connect-web)。
 - 已變更 [所有資源] 頁面 UI。
 - 已修正 Web 用戶端傳回 [一般通訊協定錯誤] 的數個連線順序失敗。
 - 已修正某些特定按鍵順序未適當處理的鍵盤輸入問題。
