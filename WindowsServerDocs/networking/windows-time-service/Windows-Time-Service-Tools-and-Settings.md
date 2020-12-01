@@ -2,15 +2,16 @@
 ms.assetid: 6086947f-f9ef-4e18-9f07-6c7c81d7002c
 title: Windows 時間服務工具和設定
 author: Teresa-Motiv
+description: 描述可用於 Windows Time 服務 (W32Time) 的設定，以及可用來設定這些設定的工具。
 ms.author: v-tea
-ms.date: 02/24/2020
+ms.date: 11/20/2020
 ms.topic: article
-ms.openlocfilehash: 60aae8d96107b45ca3ef101780a3f1fec9c5f364
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 3a9f079160f3af2b175b16654ce5aa77b4dd323e
+ms.sourcegitcommit: 3181fcb69a368f38e0d66002e8bc6fd9628b1acc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766581"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96330500"
 ---
 # <a name="windows-time-service-tools-and-settings"></a>Windows 時間服務工具和設定
 
@@ -55,7 +56,7 @@ ms.locfileid: "90766581"
 |**w32tm /?** |顯示 W32tm 命令列說明 |
 |**w32tm /register** |將時間服務註冊為以服務的形式執行，並將預設設定資訊新增至登錄中。 |
 |**w32tm /unregister** |取消註冊時間服務，並從登錄中移除其所有設定資訊。 |
-|**w32tm /monitor [/domain:\<*domain name*>] [/computers:\<*name*>[,\<*name*>[,\<*name*>...]]] [/threads:\<*num*>]** |監視 Windows 時間服務。<p>**/domain**:指定所要監視的網域。 如果未給定網域名稱，或 **/domain** 和 **/computers** 這兩項均未指定，則會使用預設網域。 此選項可能會使用多次。<p>**/computers**:監視給定的電腦清單。 電腦名稱會以逗號分隔，且不含空格。 如果名稱前面加上 **\*** ，則系統會將其視為 PDC。 此選項可能會使用多次。<p>**/threads**:指定要同時分析的電腦數目。 預設值為 3。 允許的範圍是 1 至 50。 |
+|**w32tm /monitor [/domain:\<*domain name*>] [/computers:\<*name*>[,\<*name*>[,\<*name*>...]]] [/threads:\<*num*>]** |監視 Windows 時間服務。<p>**/domain**:指定所要監視的網域。 如果未給定網域名稱，或 **/domain** 和 **/computers** 這兩項均未指定，則會使用預設網域。 此選項可能會使用多次。<p>**/computers**:監視給定的電腦清單。 電腦名稱會以逗號分隔，且不含空格。 如果名稱前面加上 **\**_，則系統會將其視為 PDC。此選項可能會使用多次。<p>_*/threads**：指定要同時分析的電腦數目。 預設值為 3。 允許的範圍是 1 至 50。 |
 |**w32tm /ntte \<NT *time epoch*>** |將 Windows NT 系統時間 (從 0h 1-Jan 1601 開始，以 10<sup>-7</sup> 秒間隔測量) 轉換成可讀取的格式。 |
 |**w32tm /ntpte \<NTP *time epoch*>** |將 NTP 系統時間 (從 0h 1-Jan 1900 開始，以 2<sup>-32</sup> 秒間隔測量) 轉換成可讀取的格式。 |
 |**w32tm /resync [/computer:\<*computer*>] [/nowait] [/rediscover] [/soft]** |指示電腦應盡快重新同步其時鐘，並丟掉所有累積的錯誤統計資料。<p>**/computer:\<*computer*>** :指定應該重新同步的電腦。 如果未指定，則本機電腦會重新同步。<p>**/nowait**: 不等候重新同步開始；立即傳回。 否則，等候重新同步完成後再傳回。<p>**/rediscover**:重新偵測網路設定，並重新探索網路來源，然後重新同步。<p>**/soft**:使用現有的錯誤統計資料來重新同步。 沒什麼用處，為確保相容性而提供。 |
@@ -75,8 +76,6 @@ ms.locfileid: "90766581"
 ```cmd
 w32tm /config /manualpeerlist:"ntpserver.contoso.com clock.adatum.com" /syncfromflags:manual /update
 ```
-
-如需可在網際網路上用於外部時間同步處理的有效 NTP 伺服器清單，請參閱[網際網路上可用的簡易網路時間通訊協定 (SNTP) 時間伺服器清單](https://go.microsoft.com/fwlink/?linkid=60401)。
 
 如果您想從主機名稱為 CONTOSOW1 的 Windows 用戶端電腦檢查 Windows 時間用戶端設定，請執行下列命令：
 
@@ -107,7 +106,7 @@ Windows 會將 Windows 時間服務原則資訊儲存在 W32Time.admx 系統管�
 > [!IMPORTANT]
 > 某些預設的群組原則物件 (GPO) 設定與對應的預設登錄項目不同。 如果您打算使用 GPO 來設定任何 Windows Time 設定，請務必要檢閱 [Windows Time 服務群組原則設定的預設值與 Windows Server 2003 中對應的 Windows Time 服務登錄項目不同](https://go.microsoft.com/fwlink/?LinkId=186066)。 此問題適用於 Windows Server 2008 R2、Windows Server 2008、Windows Server 2003 R2 和 Windows Server 2003。
 
-例如，假設您 **設定 Windows NTP 用戶端**原則中編輯原則設定。
+例如，假設您 **設定 Windows NTP 用戶端** 原則中編輯原則設定。
 
 您的變更會儲存在系統管理範本中的下列位置：
 
@@ -295,7 +294,7 @@ Windows 時間服務會將資訊儲存在下列登錄子機碼下：
 | 登錄項目 | 版本 | 說明 |
 | --- | --- | --- |
 |**AllowNonstandardModeCombinations** |所有版本 |指出對等之間的同步允許非標準模式組合。 網域成員的預設值是 **1**。 獨立用戶端和伺服器的預設值是 **1**。 |
-|**NtpServer** |所有版本 |指定可供電腦從中取得時間戳記的對等清單 (以空格分隔)，每行會包含一或多個 DNS 名稱或 IP 位址。 所列出的每個 DNS 名稱或 IP 位址都必須是唯一的。 連線到網域的電腦必須與更可靠的時間來源同步，例如美國官方的時鐘。  <ul><li>0x01 SpecialInterval </li><li>0x02 UseAsFallbackOnly</li><li>0x04 SymmetricActive:如需此模式的詳細資訊，請參閱 [Windows 時間伺服器：3.3 操作模式](https://go.microsoft.com/fwlink/?LinkId=208012)。</li><li>0x08 用戶端</li></ul><br />網域成員上沒有此登錄項目的預設值。 獨立用戶端和伺服器上的預設值是 time.windows.com,0x1。<p>**注意**<br />如需可用 NTP 伺服器的詳細資訊，請參閱 KB 262680，[可在網際網路上取得的簡易網路時間通訊協定 (SNTP) 時間伺服器清單](https://support.microsoft.com/help/262680/a-list-of-the-simple-network-time-protocol-sntp-time-servers-that-are) |
+|**NtpServer** |所有版本 |指定可供電腦從中取得時間戳記的對等清單 (以空格分隔)，每行會包含一或多個 DNS 名稱或 IP 位址。 所列出的每個 DNS 名稱或 IP 位址都必須是唯一的。 連線到網域的電腦必須與更可靠的時間來源同步，例如美國官方的時鐘。  <ul><li>0x01 SpecialInterval </li><li>0x02 UseAsFallbackOnly</li><li>0x04 SymmetricActive:如需此模式的詳細資訊，請參閱 [Windows 時間伺服器：3.3 操作模式](https://go.microsoft.com/fwlink/?LinkId=208012)。</li><li>0x08 用戶端</li></ul><br />網域成員上沒有此登錄項目的預設值。 獨立用戶端和伺服器上的預設值是 **time.windows.com,0x1**。 |
 |**ServiceDll** |所有版本 |由 W32Time 維護。 其包含 Windows 作業系統所使用的保留資料，而且對此設定所做的任何變更都可能會導致無法預期的結果。 此 DLL 在網域成員和獨立用戶端與伺服器上的預設位置是 %windir%\System32\W32Time.dll。 |
 |**ServiceMain** |所有版本 |由 W32Time 維護。 其包含 Windows 作業系統所使用的保留資料，而且對此設定所做的任何變更都可能會導致無法預期的結果。 網域成員上的預設值是 **SvchostEntry_W32Time**。 獨立用戶端和伺服器上的預設值是 **SvchostEntry_W32Time**。 |
 |**類型** |所有版本 |指出要接受作為同步來源的對等：  <ul><li>**NoSync**。 時間服務不會與其他來源同步。</li><li>**NTP**： 時間服務會從 **NtpServer** 中指定的伺服器同步。 登錄項目。</li><li>**NT5DS**。 時間服務會從網域階層同步。  </li><li>**AllSync**。 時間服務會使用所有可用的同步機制。  </li></ul>網域成員上的預設值是 **NT5DS**。 獨立用戶端和伺服器上的預設值是 **NTP**。 |
@@ -328,7 +327,7 @@ Windows 時間服務會將資訊儲存在下列登錄子機碼下：
 
 ## <a name="reference-pre-set-values-for-the-windows-time-service-gpo-settings"></a>參考：Windows 時間服務 GPO 設定的預先設定值
 
-下表列出與 Windows Time 服務相關聯的全域群組原則設定，以及與每個設定相關聯的預先設定值。 如需有關每個設定的詳細資訊，請參閱本文先前提到的[參考：Windows 時間服務的登錄項目](#reference-windows-time-service-registry-entries)。 下列設定包含在名為**全域組態設定**的單一 GPO 中。
+下表列出與 Windows Time 服務相關聯的全域群組原則設定，以及與每個設定相關聯的預先設定值。 如需有關每個設定的詳細資訊，請參閱本文先前提到的[參考：Windows 時間服務的登錄項目](#reference-windows-time-service-registry-entries)。 下列設定包含在名為 **全域組態設定** 的單一 GPO 中。
 
 ### <a name="pre-set-values-for-global-group-policy-settings"></a>「全域群組原則」設定的預先設定值
 
@@ -352,7 +351,7 @@ Windows 時間服務會將資訊儲存在下列登錄子機碼下：
 
 ### <a name="pre-set-values-for-configure-windows-ntp-client-settings"></a>「設定 Windows NTP 用戶端」設定的預先設定值
 
-下表列出**設定 Windows NTP 用戶端** GPO 的可用設定以及與 Windows Time 服務相關聯的預先設定值。 如需有關每個設定的詳細資訊，請參閱本文先前提到的[參考：Windows 時間服務的登錄項目](#reference-windows-time-service-registry-entries)。
+下表列出 **設定 Windows NTP 用戶端** GPO 的可用設定以及與 Windows Time 服務相關聯的預先設定值。 如需有關每個設定的詳細資訊，請參閱本文先前提到的[參考：Windows 時間服務的登錄項目](#reference-windows-time-service-registry-entries)。
 
 |群組原則設定|預先設定值|
 |------------------------|-----------------|
@@ -369,7 +368,7 @@ Windows 時間服務會將資訊儲存在下列登錄子機碼下：
 Windows Time 遵循 NTP 規範，因此必須使用 UDP 連接埠 123 來進行所有的時間同步通訊。 此連接埠保留供 Windows Time 使用，且會永遠保持保留狀態。 每當電腦同步其時鐘或提供時間給另一部電腦時，就會在 UDP 連接埠 123 上執行通訊。
 
 > [!NOTE]
-> 如果您的電腦有多個網路介面卡 (也稱為*多重主目錄*電腦)，您就無法根據網路介面卡來選擇性地啟用 Windows Time 服務。
+> 如果您的電腦有多個網路介面卡 (也稱為 *多重主目錄* 電腦)，您就無法根據網路介面卡來選擇性地啟用 Windows Time 服務。
 
 ## <a name="related-information"></a>相關資訊
 
