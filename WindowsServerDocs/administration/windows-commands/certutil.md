@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: fc1065ab3853f6098c725f4ccaaafc483cb6015d
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 3cd3c5f73a6642ed4ce754cb8529ae3e1e990c75
+ms.sourcegitcommit: f18097c21e50a09aef2f1937f52608b0042ef0e1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89629917"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96755365"
 ---
 # <a name="certutil"></a>certutil
 
@@ -154,7 +154,7 @@ certutil [options] -setextension requestID extensionname flags {long | date | st
 
 #### <a name="remarks"></a>備註
 
-- 如果最後一個參數是數值，則會採用 **Long**格式。
+- 如果最後一個參數是數值，則會採用 **Long** 格式。
 
 - 如果最後一個參數可以剖析為日期，則會被視為 **日期**。
 
@@ -250,13 +250,13 @@ certutil [options] -cainfo [infoname [index | errorcode]]
 
 - **infoname** 會根據下列 infoname 引數語法來指出要顯示的 CA 屬性：
 
-  - **file**檔案檔案版本
+  - **file** 檔案檔案版本
 
   - **產品** 產品版本
 
   - **exitcount** -Exit module count
 
-  - **結束 `[index]` **-Exit 模組描述
+  - **結束 `[index]`**-Exit 模組描述
 
   - **原則** -原則模組描述
 
@@ -288,45 +288,45 @@ certutil [options] -cainfo [infoname [index | errorcode]]
 
   - **propidmax** -最大 CA PropId
 
-  - **certstate `[index]` **-CA 憑證
+  - **certstate `[index]`**-CA 憑證
 
-  - **certversion `[index]` **-CA 憑證版本
+  - **certversion `[index]`**-CA 憑證版本
 
-  - **certstatuscode `[index]` **-CA 憑證驗證狀態
+  - **certstatuscode `[index]`**-CA 憑證驗證狀態
 
-  - **crlstate `[index]` **-CRL
+  - **crlstate `[index]`**-CRL
 
-  - **krastate `[index]` **-KRA cert
+  - **krastate `[index]`**-KRA cert
 
-  - **crossstate + `[index]` **-向前交叉 cert
+  - **crossstate + `[index]`**-向前交叉 cert
 
-  - **crossstate- `[index]` **-反向交叉憑證
+  - **crossstate- `[index]`**-反向交叉憑證
 
-  - **cert `[index]` **-CA 憑證
+  - **cert `[index]`**-CA 憑證
 
-  - **certchain `[index]` **-CA cert 鏈
+  - **certchain `[index]`**-CA cert 鏈
 
-  - **certcrlchain `[index]` **-CA cert chain 與 Crl
+  - **certcrlchain `[index]`**-CA cert chain 與 Crl
 
-  - **xchg `[index]` **-CA exchange 憑證
+  - **xchg `[index]`**-CA exchange 憑證
 
-  - **xchgchain `[index]` **-CA exchange 憑證鏈
+  - **xchgchain `[index]`**-CA exchange 憑證鏈
 
-  - **xchgcrlchain `[index]` **-CA exchange cert chain 與 Crl
+  - **xchgcrlchain `[index]`**-CA exchange cert chain 與 Crl
 
-  - **kra `[index]` **-KRA cert
+  - **kra `[index]`**-KRA cert
 
-  - **跨 + `[index]` **-向前交叉 cert
+  - **跨 + `[index]`**-向前交叉 cert
 
-  - **跨 `[index]` **-反向交叉憑證
+  - **跨 `[index]`**-反向交叉憑證
 
-  - **CRL `[index]` **-基底 CRL
+  - **CRL `[index]`**-基底 CRL
 
-  - **deltacrl `[index]` **-Delta CRL
+  - **deltacrl `[index]`**-Delta CRL
 
-  - **crlstatus `[index]` **-CRL 發佈狀態
+  - **crlstatus `[index]`**-CRL 發佈狀態
 
-  - **deltacrlstatus `[index]` **-Delta CRL 發佈狀態
+  - **deltacrlstatus `[index]`**-Delta CRL 發佈狀態
 
   - **dns** -dns 名稱
 
@@ -336,11 +336,11 @@ certutil [options] -cainfo [infoname [index | errorcode]]
 
   - **範本** -範本
 
-  - **csp `[index]` **-OCSP Url
+  - **csp `[index]`**-OCSP Url
 
-  - **aia `[index]` **-AIA Url
+  - **aia `[index]`**-AIA Url
 
-  - **cdp `[index]` **-CDP Url
+  - **cdp `[index]`**-CDP Url
 
   - **>localename** -CA 地區設定名稱
 
@@ -396,7 +396,9 @@ certutil [options] -ca.chain outcacertchainfile [index]
 
 取得 (CRL) 的憑證撤銷清單。
 
-certutil [options]-getcrl outfile [index] [delta]
+```
+certutil [options] -getcrl outfile [index] [delta]
+```
 
 其中：
 
@@ -420,7 +422,7 @@ certutil [options] -crl [dd:hh | republish] [delta]
 
 - **dd： hh** 是新的 CRL 有效期間（以天和時數為單位）。
 
-- 重新**發佈**將最近的 crl。
+- 重新 **發佈** 將最近的 crl。
 
 - **差異** 只會發佈差異 crl (預設為基底和 delta crl) 。
 
@@ -525,7 +527,7 @@ certutil [options] -view [queue | log | logfail | revoked | ext | attrib | crl] 
 
 - 若要顯示三個要求的 **RequestID** 和 **處置** ，請輸入： `-restrict requestID>37,requestID<40 -out requestID,disposition`
 
-- 若要顯示所有基底 Crl 的資料列識別碼資料**列識別碼** 和 **CRL 號碼** ，請輸入： `-restrict crlminbase=0 -out crlrowID,crlnumber crl`
+- 若要顯示所有基底 Crl 的資料列識別碼資料 **列識別碼** 和 **CRL 號碼** ，請輸入： `-restrict crlminbase=0 -out crlrowID,crlnumber crl`
 
 - 若要顯示，請輸入： `-v -restrict crlminbase=0,crlnumber=3 -out crlrawcrl crl`
 
@@ -557,7 +559,7 @@ certutil [options] -deleterow rowID | date [request | cert | ext | attrib | crl]
 
 其中：
 
-- 根據提交日期，**要求**會刪除失敗和擱置的要求。
+- 根據提交日期，**要求** 會刪除失敗和擱置的要求。
 
 - **cert** 會根據到期日刪除已過期和已撤銷的憑證。
 
@@ -697,7 +699,7 @@ certutil [options] -importpfx [certificatestorename] pfxfile [modifiers]
 
 - **>certificatestorename** 是憑證存放區的名稱。
 
-- 修飾**詞是以**逗號分隔的清單，其中可包含下列一或多項：
+- 修飾 **詞是以** 逗號分隔的清單，其中可包含下列一或多項：
 
   1. **AT_SIGNATURE** -將 keyspec 變更為 SIGNATURE
 
@@ -1088,7 +1090,7 @@ certutil [options] -setcasites delete
 
 其中：
 
-- 只有在以單一憑證授權單位單位為目標時，才能使用**sitename** 。
+- 只有在以單一憑證授權單位單位為目標時，才能使用 **sitename** 。
 
 ```
 [-f] [-config Machine\CAName] [-dc DCName]
@@ -1098,7 +1100,7 @@ certutil [options] -setcasites delete
 
 - `-config`選項以單一憑證授權單位單位為目標 (預設為所有 CAs) 。
 
-- `-f`選項可以用來覆寫指定之**sitename**的驗證錯誤，或刪除所有的 CA sitenames。
+- `-f`選項可以用來覆寫指定之 **sitename** 的驗證錯誤，或刪除所有的 CA sitenames。
 
 > [!NOTE]
 > 如需有關為 Active Directory Domain Services (AD DS) 網站感知設定 Ca 的詳細資訊，請參閱 AD DS [和 PKI 用戶端的 AD CS 網站感知](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11))。
@@ -1118,7 +1120,7 @@ certutil [options] -enrollmentserverURL URL delete
 
   1. **kerberos** -使用 kerberos SSL 認證。
 
-  2. 使用者**名稱-使用 SSL 認證的命名**帳戶。
+  2. 使用者 **名稱-使用 SSL 認證的命名** 帳戶。
 
   3. **clientcertificate**：-使用 X.509 憑證 SSL 認證。
 
@@ -1128,9 +1130,9 @@ certutil [options] -enrollmentserverURL URL delete
 
 - **priority** `1` 如果在新增 URL 時未指定，優先順序預設為。
 
-- 修飾**詞是以**逗號分隔的清單，其中包含下列一或多項：
+- 修飾 **詞是以** 逗號分隔的清單，其中包含下列一或多項：
 
-1. 僅限**allowrenewalsonly**的更新要求可透過此 URL 提交至此 CA。
+1. 僅限 **allowrenewalsonly** 的更新要求可透過此 URL 提交至此 CA。
 
 2. **allowkeybasedrenewal** -允許使用 AD 中沒有相關聯帳戶的憑證。 這僅適用于 clientcertificate 和 allowrenewalsonly 模式
 
@@ -1281,7 +1283,7 @@ certutil [options] -DCInfo [domain] [verify | deletebad | deleteall]
 ```
 
 > [!TIP]
-> 可以指定 Active Directory Domain Services (AD DS) 網域 **[網域]** ，並指定在 Windows Server 2012 中新增網域控制站 (**-dc**) 。 若要成功執行此命令，您必須使用 **Domain admins** 或 **Enterprise admins**成員的帳戶。 此命令的行為修改如下所示：<ol><li>1. 如果未指定網域，且未指定特定網域控制站，此選項會傳回要從預設網域控制站處理的網域控制站清單。</li><li>2. 如果未指定網域，但指定網域控制站，則會產生指定網域控制站上的憑證報告。</li><li>3. 如果指定網域，但未指定網域控制站，則會產生網域控制站清單，以及清單中每個網域控制站之憑證的報告。</li><li>4. 如果指定網域和網域控制站，則會從目標網域控制站產生網域控制站清單。 此外，也會產生清單中每個網域控制站的憑證報表。</li></ol>
+> 可以指定 Active Directory Domain Services (AD DS) 網域 **[網域]** ，並指定在 Windows Server 2012 中新增網域控制站 (**-dc**) 。 若要成功執行此命令，您必須使用 **Domain admins** 或 **Enterprise admins** 成員的帳戶。 此命令的行為修改如下所示：<ol><li>1. 如果未指定網域，且未指定特定網域控制站，此選項會傳回要從預設網域控制站處理的網域控制站清單。</li><li>2. 如果未指定網域，但指定網域控制站，則會產生指定網域控制站上的憑證報告。</li><li>3. 如果指定網域，但未指定網域控制站，則會產生網域控制站清單，以及清單中每個網域控制站之憑證的報告。</li><li>4. 如果指定網域和網域控制站，則會從目標網域控制站產生網域控制站清單。 此外，也會產生清單中每個網域控制站的憑證報表。</li></ol>
 >
 >例如，假設有一個名為 CPANDL 的網域，且網域控制站名為 CPANDL-DC1。 您可以執行下列命令，以從 CPANDL-DC1 取得網域控制站清單及其憑證： `certutil -dc cpandl-dc1 -DCInfo cpandl`
 
@@ -1385,9 +1387,9 @@ certutil [options] -verify CRLfile cacertfile [deltaCRLfile]
 
 - **cacertfile** 是選擇性的發行 CA 憑證，可進行驗證。
 
-- **crossedcacertfile** 是 **certfile**所交叉認證的選擇性憑證。
+- **crossedcacertfile** 是 **certfile** 所交叉認證的選擇性憑證。
 
-- **Crlfile.crl** 是用來驗證 **cacertfile**的 CRL 檔案。
+- **Crlfile.crl** 是用來驗證 **cacertfile** 的 CRL 檔案。
 
 - **issuedcertfile** 是 crlfile.crl 所涵蓋的選擇性已發行憑證。
 
@@ -1403,15 +1405,15 @@ certutil [options] -verify CRLfile cacertfile [deltaCRLfile]
 
 - 使用 **issuancepolicylist** 會將 chain 系結限制為僅適用于指定之發行原則的鏈。
 
-- 使用 **cacertfile**  會根據 **certfile** 或 **crlfile.crl**來驗證檔案中的欄位。
+- 使用 **cacertfile**  會根據 **certfile** 或 **crlfile.crl** 來驗證檔案中的欄位。
 
-- 使用 **issuedcertfile** 會針對 **crlfile.crl**驗證檔案中的欄位。
+- 使用 **issuedcertfile** 會針對 **crlfile.crl** 驗證檔案中的欄位。
 
-- 使用 deltaCRLfile 會針對 **certfile**驗證檔案中的欄位。
+- 使用 deltaCRLfile 會針對 **certfile** 驗證檔案中的欄位。
 
-- 如果未指定 **cacertfile** ，就會針對 **certfile**建立並驗證完整的鏈。
+- 如果未指定 **cacertfile** ，就會針對 **certfile** 建立並驗證完整的鏈。
 
-- 如果同時指定 **cacertfile** 和 **crossedcacertfile** ，這兩個檔案中的欄位都會針對 **certfile**進行驗證。
+- 如果同時指定 **cacertfile** 和 **crossedcacertfile** ，這兩個檔案中的欄位都會針對 **certfile** 進行驗證。
 
 ### <a name="-verifyctl"></a>-verifyCTL
 
@@ -1431,11 +1433,11 @@ certutil [options] -verifyCTL CTLobject [certdir] [certfile]
 
   - **AuthRoot** -讀取登錄快取的 AuthRoot CTL。 使用與 `-f` 和不受信任的 **certfile** 來強制登錄快取 AuthRoot 和不允許的憑證 ctl 進行更新。
 
-  - 不**允許**-讀取登錄-快取不允許的憑證 CTL。 使用與 `-f` 和不受信任的 **certfile** 來強制登錄快取 AuthRoot 和不允許的憑證 ctl 進行更新。
+  - 不 **允許**-讀取登錄-快取不允許的憑證 CTL。 使用與 `-f` 和不受信任的 **certfile** 來強制登錄快取 AuthRoot 和不允許的憑證 ctl 進行更新。
 
 - **CTLfilename** 指定 CTL 或 CAB 檔案的檔案或 HTTP 路徑。
 
-- **certdir** 指定包含與 CTL 專案相符之憑證的資料夾。 預設為與 **CTLobject**相同的資料夾或網站。 使用 HTTP 資料夾路徑時，結尾必須有路徑分隔符號。 如果您未指定 **AuthRoot** 或不 **允許**，則會在多個位置搜尋相符的憑證，包括本機憑證存放區、crypt32.dll 資源和本機 URL 快取。 `-f`視需要使用從 Windows Update 下載。
+- **certdir** 指定包含與 CTL 專案相符之憑證的資料夾。 預設為與 **CTLobject** 相同的資料夾或網站。 使用 HTTP 資料夾路徑時，結尾必須有路徑分隔符號。 如果您未指定 **AuthRoot** 或不 **允許**，則會在多個位置搜尋相符的憑證，包括本機憑證存放區、crypt32.dll 資源和本機 URL 快取。 `-f`視需要使用從 Windows Update 下載。
 
 - **certfile** 指定要驗證) 的憑證 (。 憑證會與 CTL 專案相符，並顯示結果。 此選項會隱藏大部分的預設輸出。
 
@@ -1462,7 +1464,7 @@ certutil [options] -sign infilelist | serialnumber | CRL outfilelist [#hashalgor
 
 - **outfilelist** 是修改過的憑證或 CRL 輸出檔清單（以逗號分隔）。 檔案數目必須符合 infilelist。
 
-- 開始**日期 + dd： hh**是憑證或 CRL 檔案的新有效期間，包括：
+- 開始 **日期 + dd： hh** 是憑證或 CRL 檔案的新有效期間，包括：
 
   - 選擇性的日期加上
 
@@ -1474,7 +1476,7 @@ certutil [options] -sign infilelist | serialnumber | CRL outfilelist [#hashalgor
 
 - **objectIDlist** 是要移除之檔案的逗點分隔擴充功能 ObjectId 清單。
 
-- ** \@ extensionfile**是包含要更新或移除之擴充功能的 INF 檔案。 例如：
+- **\@ extensionfile** 是包含要更新或移除之擴充功能的 INF 檔案。 例如：
 
   ```
   [Extensions]
@@ -1531,7 +1533,7 @@ certutil [options] -addenrollmentserver kerberos | username | clientcertificate 
 
   - **kerberos** 使用 kerberos SSL 認證。
 
-  - 使用者**名稱使用 SSL**認證的命名帳戶。
+  - 使用者 **名稱使用 SSL** 認證的命名帳戶。
 
   - **clientcertificate** 使用 X.509 憑證 SSL 認證。
 
@@ -1557,7 +1559,7 @@ certutil [options] -deleteenrollmentserver kerberos | username | clientcertifica
 
   - **kerberos** 使用 kerberos SSL 認證。
 
-  - 使用者**名稱使用 SSL**認證的命名帳戶。
+  - 使用者 **名稱使用 SSL** 認證的命名帳戶。
 
   - **clientcertificate** 使用 X.509 憑證 SSL 認證。
 
@@ -1579,7 +1581,7 @@ certutil [options] -addpolicyserver kerberos | username | clientcertificate [key
 
   - **kerberos** 使用 kerberos SSL 認證。
 
-  - 使用者**名稱使用 SSL**認證的命名帳戶。
+  - 使用者 **名稱使用 SSL** 認證的命名帳戶。
 
   - **clientcertificate** 使用 X.509 憑證 SSL 認證。
 
@@ -1589,7 +1591,9 @@ certutil [options] -addpolicyserver kerberos | username | clientcertificate [key
 
 視需要刪除原則伺服器應用程式和應用程式集區。 此命令不會移除二進位檔或封裝。
 
-certutil [options]-deletePolicyServer kerberos |使用者名稱 |clientcertificate [keybasedrenewal]
+```
+certutil [options] -deletePolicyServer kerberos | username | clientcertificate [keybasedrenewal]
+```
 
 其中：
 
@@ -1597,7 +1601,7 @@ certutil [options]-deletePolicyServer kerberos |使用者名稱 |clientcertifica
 
   - **kerberos** 使用 kerberos SSL 認證。
 
-  - 使用者**名稱使用 SSL**認證的命名帳戶。
+  - 使用者 **名稱使用 SSL** 認證的命名帳戶。
 
   - **clientcertificate** 使用 X.509 憑證 SSL 認證。
 
@@ -1837,9 +1841,9 @@ certutil [options] -getkey searchtoken retrieve | recover outputfilebasename
 
 其中：
 
-- 如果找到多個相符的復原候選項目，或如果找不到輸出檔) ，**腳本**會產生腳本，以取得 (預設行為的金鑰。
+- 如果找到多個相符的復原候選項目，或如果找不到輸出檔) ，**腳本** 會產生腳本，以取得 (預設行為的金鑰。
 
-- **retrieve**如果只找到一個相符的復原候選項，則抓取會將一個或多個金鑰修復 blob (預設行為，而且如果) 指定輸出檔。 使用這個選項會截斷任何擴充功能，並針對每個金鑰修復 blob 附加憑證特定字串和 rec 副檔名。  每個檔案都包含憑證鏈和相關聯的私密金鑰，仍會加密為一或多個金鑰復原代理憑證。
+- **retrieve** 如果只找到一個相符的復原候選項，則抓取會將一個或多個金鑰修復 blob (預設行為，而且如果) 指定輸出檔。 使用這個選項會截斷任何擴充功能，並針對每個金鑰修復 blob 附加憑證特定字串和 rec 副檔名。  每個檔案都包含憑證鏈和相關聯的私密金鑰，仍會加密為一或多個金鑰復原代理憑證。
 
 - **復原** 會在一個步驟中抓取和復原私密金鑰 (需要) 的金鑰復原代理憑證和私密金鑰。 使用這個選項會截斷任何擴充功能，並附加 p12 副檔名。  每個檔案都包含已復原的憑證鏈和相關聯的私密金鑰，並儲存為 PFX 檔案。
 

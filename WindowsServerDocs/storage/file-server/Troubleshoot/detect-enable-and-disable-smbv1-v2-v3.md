@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.author: delhan
 ms.date: 10/29/2020
 ms.custom: contperfq2
-ms.openlocfilehash: e38bbc5a80f80747ae3cb90c91123d91ed4e5e25
-ms.sourcegitcommit: 28b5ab74cb0b40539ccc1a83998d6391e87fe51f
+ms.openlocfilehash: a465a7e777dae0473966b6185470dbb6d563e2b7
+ms.sourcegitcommit: f18097c21e50a09aef2f1937f52608b0042ef0e1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96614950"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96755395"
 ---
 # <a name="how-to-detect-enable-and-disable-smbv1-smbv2-and-smbv3-in-windows"></a>如何在 Windows 中偵測、啟用和停用 SMBv1、Smbv2 弱點和 SMBv3
 
@@ -94,7 +94,7 @@ Smbv2 弱點通訊協定是在 Windows Vista 和 Windows Server 2008 中引進�
 - 檢測：
 
   ```PowerShell
-  Get-WindowsOptionalFeature –Online –FeatureName SMB1Protocol
+  Get-WindowsOptionalFeature -Online -FeatureName SMB1Protocol
   ```
 
 - 禁用：
@@ -120,13 +120,13 @@ Smbv2 弱點通訊協定是在 Windows Vista 和 Windows Server 2008 中引進�
 - 禁用：
 
   ```PowerShell
-  Set-SmbServerConfiguration –EnableSMB2Protocol $false
+  Set-SmbServerConfiguration -EnableSMB2Protocol $false
   ```
 
 - 啟用：
 
   ```PowerShell
-  Set-SmbServerConfiguration –EnableSMB2Protocol $true
+  Set-SmbServerConfiguration -EnableSMB2Protocol $true
   ```
 
 #### <a name="windows-81-and-windows-10-add-or-remove-programs-method"></a>Windows 8.1 和 Windows 10：新增或移除程式方法
@@ -206,13 +206,13 @@ Get-Item HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters | ForEa
 禁用：
 
 ```PowerShell
-Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 0 –Force
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 0 -Force
 ```
 
 啟用：
 
 ```PowerShell
-Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 1 –Force
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 1 -Force
 ```
 
 **注意** 進行這些變更之後，您必須重新開機電腦。
@@ -228,13 +228,13 @@ Get-ItemProperty HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters
 禁用：
 
 ```PowerShell
-Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB2 -Type DWORD -Value 0 –Force
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB2 -Type DWORD -Value 0 -Force
 ```
 
 啟用：
 
 ```PowerShell
-Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB2 -Type DWORD -Value 1 –Force
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB2 -Type DWORD -Value 1 -Force
 ```
 
 > [!NOTE]
@@ -434,13 +434,13 @@ Default: 1 = Enabled (No registry key is created)
 - 啟用：
 
   ```PowerShell
-  Set-SmbServerConfiguration –AuditSmb1Access $true
+  Set-SmbServerConfiguration -AuditSmb1Access $true
   ```
 
 - 禁用：
 
   ```PowerShell
-  Set-SmbServerConfiguration –AuditSmb1Access $false
+  Set-SmbServerConfiguration -AuditSmb1Access $false
   ```
 
 - 檢測：

@@ -6,18 +6,18 @@ manager: dongill
 ms.topic: article
 author: jasongerend
 ms.date: 05/29/2019
-ms.openlocfilehash: b186f664411bde60351c949c0ca16e7b4d3bb40c
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: e7f41e134908d1d9dc7773cf5f1af91e1910089a
+ms.sourcegitcommit: f18097c21e50a09aef2f1937f52608b0042ef0e1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766991"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96755375"
 ---
 # <a name="whats-new-in-storage-in-windows-server"></a>Windows Server 儲存體的新功能
 
 >適用於：Windows Server 2019、Windows Server 2016、Windows Server (半年通道)
 
-本主題說明 Windows Server 2019、Windows Server 2016 和 Windows Server 半年通道版本中儲存空間的新功能和變更的功能。
+本主題說明 Windows Server 2019、Windows Server 2016 和 Windows Server Semi-Annual 通道版本中儲存體的新功能和變更的功能。
 
 ## <a name="whats-new-in-storage-in-windows-server-version-1903"></a>Windows Server 中儲存體的新功能，版本1903
 
@@ -41,7 +41,7 @@ ms.locfileid: "90766991"
 
 [系統深入解析](../manage/system-insights/overview.md)是預測性分析功能，可在本機上分析 Windows Server 系統資料，並提供伺服器的功能深入解析。 其隨附許多內建功能，但從磁碟異常偵測開始，我們已新增能夠透過 Windows Admin Center 安裝額外功能的能力。
 
-磁碟異常偵測是一項新功能，可在磁碟出現與平常「不同」** 的行為時醒目提示。 雖然不同不一定是件壞事，但查看這些異常狀態有助於針對系統問題進行疑難排解。
+磁碟異常偵測是一項新功能，可在磁碟出現與平常「不同」的行為時醒目提示。 雖然不同不一定是件壞事，但查看這些異常狀態有助於針對系統問題進行疑難排解。
 
 這項功能也適用於執行 Windows Server 2019 的伺服器。
 
@@ -65,7 +65,7 @@ Windows Admin Center 是一種獨立的下載，可在 Windows Server 2019 和�
 
 ### <a name="storage-spaces-direct-windows-server-2019-only"></a><a id="storage-spaces-direct"></a>儲存空間直接存取 (僅限 Windows Server 2019) 
 
-Windows server 2019 中的儲存空間直接存取有一些改善 (儲存空間直接存取不包含在 Windows Server 中，半年通道) ：
+Windows server 2019 中的儲存空間直接存取有一些改善 (儲存空間直接存取不包含在 Windows Server 中，Semi-Annual 通道) ：
 
 - **ReFS 磁碟區的重複資料刪除和壓縮**
 
@@ -81,7 +81,7 @@ Windows server 2019 中的儲存空間直接存取有一些改善 (儲存空間�
 
 - **使用 USB 快閃磁碟做為見證的兩個伺服器叢集**
 
-    使用插入您路由器的低成本 USB 快閃磁片磁碟機，作為兩部伺服器叢集中的見證。 如果伺服器關閉後再備份，USB 磁片磁碟機叢集就會知道哪一台伺服器具有最新的資料。 如需詳細資訊，請參閱 [Microsoft blog 的儲存體](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)。
+    使用插入您路由器的低成本 USB 快閃磁片磁碟機，作為兩部伺服器叢集中的見證。 如果伺服器關閉後再備份，USB 磁片磁碟機叢集就會知道哪一台伺服器具有最新的資料。 如需詳細資訊，請參閱 [Microsoft blog 的儲存體](https://techcommunity.microsoft.com/t5/storage-at-microsoft/here-s-what-you-missed-8211-five-big-announcements-for-storage/ba-p/428257) 和 [有關如何部署檔案共用見證的檔](../failover-clustering/file-share-witness.md#creating-a-file-share-witness-on-a-router-with-a-usb-device)。
 
 - **Windows Admin Center**
 
@@ -162,7 +162,7 @@ Windows Server 1803 版包含在服務啟動時，防止檔案伺服器 Resource
 
 ## <a name="whats-new-in-storage-in-windows-server-version-1709"></a>Windows Server 中儲存體的新功能，版本1709
 
-Windows Server 1709 版是半年通道中的第一個 Windows Server 版本。 半年通道是一項軟體保證的權益，並在生產環境中受到完整支援18個月，每六個月會有一個新的版本。
+Windows Server 1709 版是 Semi-Annual 通道中的第一個 Windows Server 版本。 Semi-Annual 通道是軟體保證的優點，並在生產環境中受到完整支援18個月，每六個月會有一個新的版本。
 
 如需詳細資訊，請參閱 [Windows Server 半年通道概觀](../get-started-19/servicing-channels-19.md)。
 
@@ -245,10 +245,10 @@ Windows Server 1709 版是半年通道中的第一個 Windows Server 版本。 �
 
 如需詳細資訊，請參閱 [儲存體服務品質](storage-qos/storage-qos-overview.md)
 
-### <a name="data-deduplication"></a><a name="dedup"></a>重複資料刪除
+### <a name="data-deduplication"></a><a name="dedup"></a>重復資料刪除
 | 功能 | 新功能或更新功能 | 描述 |
 |---------------|----------------|-------------|
-| [支援大型磁片區](data-deduplication/whats-new.md#large-volume-support) | 已更新 | 在 Windows Server 2016 之前，使用者必須特別針對預期的變動設定磁碟區大小，而大於 10 TB 的磁碟區並不是重複資料刪除的良好候選項目。 在 Windows Server 2016 中，重復資料刪除支援 **最多 64 TB**的磁片區大小。 |
+| [支援大型磁片區](data-deduplication/whats-new.md#large-volume-support) | 已更新 | 在 Windows Server 2016 之前，使用者必須特別針對預期的變動設定磁碟區大小，而大於 10 TB 的磁碟區並不是重複資料刪除的良好候選項目。 在 Windows Server 2016 中，重復資料刪除支援 **最多 64 TB** 的磁片區大小。 |
 | [支援大型檔案](data-deduplication/whats-new.md#large-file-support) | 已更新 | 在 Windows Server 2016 之前，大小接近 1 TB 的檔案並不是重複資料刪除的良好候選項目。 在 Windows Server 2016 中，完全支援 **最多 1 TB** 的檔案。 |
 | [支援 Nano 伺服器](data-deduplication/whats-new.md#nano-server-support) | 新增 | Windows Server 2016 的新 Nano 伺服器部署選項可以使用並且完全支援重複資料刪除。 |
 | [簡化的備份支援](data-deduplication/whats-new.md#simple-backup-support) | 新增 | 在 Windows Server 2012 R2 中，虛擬備份應用程式 (例如 Microsoft 的 [Data Protection Manager](/previous-versions/system-center/system-center-2012-R2/hh758173(v=sc.12))) 必須透過一系列的手動設定步驟來取得支援。 在 Windows Server 2016 中，已加入新的預設使用類型 "Backup"，以無接縫地針對虛擬備份應用程式部署重複資料刪除。 |

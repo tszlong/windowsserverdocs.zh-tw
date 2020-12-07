@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 7d5c7b971d2ca77308c24210ee50c17c4b3a0c95
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: dd605283396757f1ef0de05d620583c895f71f1a
+ms.sourcegitcommit: f18097c21e50a09aef2f1937f52608b0042ef0e1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89640341"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96755305"
 ---
 # <a name="mklink"></a>mklink
 
@@ -37,7 +37,7 @@ mklink [[/d] | [/h] | [/j]] <link> <target>
 
 ### <a name="examples"></a>範例
 
-若要建立和移除名為、MyFolder 和 Myfile.txt 的符號連結，請從根目錄到 \Users\User1\Documents 目錄，並將檔案放在目錄中，輸入：
+若要從根目錄建立名為 MyFolder 的符號連結，並將其從根目錄中移除，並將名為 Myfile.txt 的硬式連結，輸入到目錄中的範例檔案，請輸入：
 
 ```
 mklink /d \MyFolder \Users\User1\Documents
