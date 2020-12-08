@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 02/15/2019
-ms.openlocfilehash: e5ea882347a0605d814682b50c2ec71e24047472
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 11cfe250bd08a04f1577a5537389885718a755a3
+ms.sourcegitcommit: 2365a7b23e2eccd13be350306c622d2ad9d36bc8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766971"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787897"
 ---
 # <a name="get-started-with-windows-admin-center"></a>使用 Windows Admin Center 開始
 
@@ -42,7 +42,7 @@ ms.locfileid: "90766971"
 
 3. 確定已選取 [**一律允許存取**]，然後按一下 [**允許**]
 
-    !需要認證對話方塊] (。/media/launch-cert-3.png) 
+    ![需要認證對話方塊](../media/launch-cert-3.png)
 
 ## <a name="connecting-to-managed-nodes-and-clusters"></a>連接到受管理的節點和叢集
 
@@ -113,7 +113,7 @@ Windows Admin Center 支援數個使用受控節點進行驗證的機制。 預�
 
 您可以將認證套用至所有連線，以針對該特定瀏覽器會話進行快取。 如果您重載瀏覽器，則必須重新輸入您的 [ **管理** 身分] 認證。
 
-**區域系統管理員密碼解決方案 (LAPS) **
+**區域系統管理員密碼解決方案 (LAPS)**
 
 如果您的環境使用 [LAPS](/previous-versions/mt227395(v=msdn.10))，且您的 Windows 10 電腦上已安裝 Windows Admin Center，則可以使用 LAPS 認證來向受管理的節點進行驗證。 **如果您使用此案例，請**[提供意見](https://aka.ms/WACFeedback)反應。
 
