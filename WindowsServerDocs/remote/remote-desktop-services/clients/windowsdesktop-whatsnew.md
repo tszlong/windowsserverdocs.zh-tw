@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 11/10/2020
+ms.date: 12/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b5ee2f76acad471533c615ef2e5c68e7f827dbf6
-ms.sourcegitcommit: 7420c7c2ef14154f27e5bb810e774783a594b8e8
+ms.openlocfilehash: a9d10b23da6dc5fcd414bdab05afc20e15273763
+ms.sourcegitcommit: 090be8d858a830e46e1a9097afafd9c4275477b7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94497413"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96578431"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面用戶端的新功能
 
@@ -24,23 +24,23 @@ ms.locfileid: "94497413"
 
 |使用者群組 |最新版本  |最低支援版本 |
 |-----------|----------------|--------------------------|
-|公用     |1.2.1446        |1.2.945                   |
-|Insider    |1.2.1520        |1.2.945                   |
+|公用     |1.2.1524        |1.2.945                   |
+|Insider    |1.2.1524        |1.2.945                   |
 
-## <a name="updates-for-version-121520-insider"></a>1\.2.1520 版的更新 (測試人員)
+## <a name="updates-for-version-121524"></a>1\.2.1524 版的更新
 
-*發行日期：2020/11/10*
+*發行日期：2020/12/01*
 
-下載：[Windows 64 位元](https://go.microsoft.com/fwlink/?linkid=2139233)、[Windows 32 位元](https://go.microsoft.com/fwlink/?linkid=2139144)、[Windows ARM64](https://go.microsoft.com/fwlink/?linkid=2139368)
+下載：[Windows 64 位元](https://go.microsoft.com/fwlink/?linkid=2139369)、[Windows 32 位元](https://go.microsoft.com/fwlink/?linkid=2139456)、[Windows ARM64](https://go.microsoft.com/fwlink/?linkid=2139370)
 
-- 為遠端應用程式建立清單檢視，以便讀取更長的應用程式名稱。
-- 已變更用戶端更新可用時所顯示的圖示。
+- 已新增遠端資源的清單檢視，以便讀取更長的應用程式名稱。
+- 已新增當用戶端有可用的更新時所顯示的通知圖示。
 
 ## <a name="updates-for-version-121446"></a>1\.2.1446 版的更新
 
 *發行日期：2020/10/27*
 
-下載：[Windows 64 位元](https://go.microsoft.com/fwlink/?linkid=2139369)、[Windows 32 位元](https://go.microsoft.com/fwlink/?linkid=2139456)、[Windows ARM64](https://go.microsoft.com/fwlink/?linkid=2139370)
+下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4Hq7C)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4HvgF)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4Ho64)
 
 - 已新增自動更新功能，可讓用戶端自動安裝最新的更新。
 - 用戶端現在可以在連線中心中區分不同的摘要。
@@ -51,8 +51,6 @@ ms.locfileid: "94497413"
 ## <a name="updates-for-version-121364"></a>1\.2.1364 版的更新
 
 *發行日期：09/22/2020*
-
-下載：[Windows 64 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4FTMK)、[Windows 32 位元](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4G1t9)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4FTMI)
 
 - 已修正單一登入 (SSO) 在 Windows 7 上無法使用的問題。
 - 已修正當另一個應用程式具有在專有模式中開啟的音訊串流同時呼叫或加入 Teams 通話時，以及當 Teams 的媒體最佳化已停用時，所發生的連線失敗。

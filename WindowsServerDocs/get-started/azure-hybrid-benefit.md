@@ -6,21 +6,20 @@ ms.topic: article
 author: eross-msft
 ms.author: chrisrin
 ms.localizationpriority: high
-ms.openlocfilehash: 7ad0b2e2d45a0bd74484c253cb0f92a7b5e491f3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a997f60d4b36d85a895dedd567560be4edcd4d98
+ms.sourcegitcommit: fa325ef993e62fba59de803d8998922db1cb1dc8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87972335"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96482579"
 ---
 # <a name="azure-hybrid-benefit-for-windows-server"></a>適用於 Windows Server 的 Azure Hybrid Benefit
 
->適用於：Windows Server
+> 適用於：Windows Server 2019、Windows Server 2016、Windows Server 2012 R2
 
 ## <a name="benefit-description-rules-and-use-cases"></a>Benefit 描述、規則與使用案例
 
-適用於 Windows Server 的 Azure Hybrid Benefit 可讓您利用內部部署 Windows Server 授權搭配軟體保證，在 Azure 中節省高達 40% 的 Windows Server VM。  透過這項權益，客戶只需要支付基礎結構成本，因為軟體保證權益已涵蓋 Windows Server 的授權。  此權益適用於 Windows Server 2008R2、2012、2012R2 與 2016 版本的 Standard 和 Datacenter 版本。  這項權益在所有地區和 Sovereign 雲端都能使用。
-
+適用於 Windows Server 的 Azure Hybrid Benefit 可讓您利用內部部署 Windows Server 授權搭配軟體保證，在 Azure 中節省高達 40% 的 Windows Server VM。  透過這項權益，客戶只需要支付基礎結構成本，因為軟體保證權益已涵蓋 Windows Server 的授權。  此權益適用於 Windows Server 2012 R2、Windows Server 2016 與 Windows Server 2019 版本的 Windows Server Standard 和 Datacenter 版本。 這項權益在所有地區和 Sovereign 雲端都能使用。
 
 ![影像 1](media/ahb01.png)
 
@@ -80,7 +79,7 @@ Windows Server 搭配 SA 需求參考表：
     ```
 
 請注意，帳單不會即時套用，亦即在您啟動搭配 Hybrid Benefit 的 VM 到它顯示在帳單上，會有幾個小時的延遲時間。
-接著您可以將結果填入下方的**適用於 Windows Server 的 Azure Hybrid Benefit SA 計數工具**，以取得所需的 SA 或訂閱涵蓋 WS 授權數。
+接著您可以將結果填入下方的 **適用於 Windows Server 的 Azure Hybrid Benefit SA 計數工具**，以取得所需的 SA 或訂閱涵蓋 WS 授權數。
 
 請務必在您擁有的每個訂閱中進行清查，以產生您授權定位的完整檢視。
 

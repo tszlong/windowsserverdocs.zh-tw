@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 09/16/2019
+ms.date: 12/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 12e2535092b2842cf23fcc573b417f7520e99504
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fe553c03e85f3cb68f76b1a8d27e1da93bf9d9a3
+ms.sourcegitcommit: dce404a0a4500a693e294e0431c93f0ae90f8b13
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961832"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96563778"
 ---
 # <a name="windows-desktop-client-for-admins"></a>適用於系統管理員的 Windows 桌面用戶端
 
@@ -42,12 +42,14 @@ msiexec.exe /i `<path to the MSI>` /qn ALLUSERS=2 MSIINSTALLPERUSER=1
 
 ### <a name="configure-update-notifications"></a>設定更新通知
 
-根據預設，每當有更新時，用戶端就會通知您。 若要關閉通知，請設定下列登錄資訊：
+根據預設，用戶端會在每次更新時通知您，當用戶端關閉且沒有作用中的連線時，就會自動進行自我本身。 即使沒有作用中的連線，msrdc.exe 程序也會在背景執行，讓您在重新開啟用戶端時能快速重新連線。 您可以用滑鼠右鍵按一下系統匣區域中的 Windows 虛擬桌面圖示，然後在下拉式功能表中選取 [中斷連線所有工作階段] 來停止 msrdc.exe。
+
+若要關閉通知，請設定下列登錄資訊：
 
 - **索引鍵：** HKLM\Software\Microsoft\MSRDC\Policies
 - **類型：** REG_DWORD
 - **名稱：** AutomaticUpdates
-- **資料：** 0 = 停用通知。 1 = 顯示通知。
+- **資料：** 0 = 停用通知。 1 = 顯示通知。 2 = 顯示通知並在關閉時自動更新。
 
 ### <a name="configure-user-groups"></a>設定使用者群組
 

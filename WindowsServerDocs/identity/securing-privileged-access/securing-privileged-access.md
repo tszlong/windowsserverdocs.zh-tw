@@ -8,12 +8,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: a9664d11e61d69faab87f351ae5f9915afd47f98
-ms.sourcegitcommit: 094482d0e7a8a9688790af06968d68f0294b78df
+ms.openlocfilehash: 076bc138620cb3babe2fbd08253577f3f740d976
+ms.sourcegitcommit: f18097c21e50a09aef2f1937f52608b0042ef0e1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94550731"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96755405"
 ---
 # <a name="securing-privileged-access"></a>保護特殊權限存取
 
@@ -99,7 +99,7 @@ Microsoft 建議您遵循這份藍圖來保護特殊權限存取以對抗積極�
 
 ### <a name="4-identity-attack-detection"></a>4.身分識別攻擊偵測
 
-[Azure 進階威脅防護 (ATP)](/azure-advanced-threat-protection/what-is-atp) 是一種雲端式安全性解決方案，可識別、偵測及協助您調查進階威脅、遭到入侵的身分識別，以及惡意內部人員在您的內部部署 Active Directory 環境內導入的動作。
+[適用於身分識別的 Microsoft Defender](https://docs.microsoft.com/defender-for-identity/what-is) 是一種雲端式安全性解決方案，可識別、偵測及協助您調查進階威脅、遭到入侵的身分識別，以及惡意內部人員在內部部署 Active Directory 環境內導入的動作。
 
 ## <a name="phase-2-significant-incremental-improvements"></a>階段 2：累積實質改善
 
@@ -134,9 +134,9 @@ Microsoft 建議您遵循這份藍圖來保護特殊權限存取以對抗積極�
 
 啟用 Microsoft Azure AD Identity Protection 可報告認證外洩的使用者，以便進行補救。 [Azure AD Identity Protection](/azure/active-directory/identity-protection/index) 可用來協助您的組織保護雲端和混合式環境免於遭受威脅。
 
-### <a name="6-azure-atp-lateral-movement-paths"></a>6.Azure ATP 橫向移動路徑
+### <a name="6-microsoft-defender-for-identity-lateral-movement-paths"></a>6.適用於身分識別的 Microsoft Defender 橫向移動路徑
 
-請確定特殊權限存取的帳戶持有者僅將其 PAW 用於系統管理，從而將遭入侵的非特殊權限帳戶，以透過認證竊取攻擊 (例如傳遞雜湊或傳遞票證) 取得特殊權限帳戶存取權的風險降到最低。 [Azure ATP 橫向移動路徑 (LMP)](/azure-advanced-threat-protection/use-case-lateral-movement-path) 可讓您輕鬆了解報告，以識別特殊權限帳戶在何處可能有漏洞會遭到入侵。
+請確定特殊權限存取的帳戶持有者僅將其 PAW 用於系統管理，從而將遭入侵的非特殊權限帳戶，以透過認證竊取攻擊 (例如傳遞雜湊或傳遞票證) 取得特殊權限帳戶存取權的風險降到最低。 [適用於身分識別的 Microsoft Defender 橫向移動路徑 (LMP)](https://docs.microsoft.com/defender-for-identity/use-case-lateral-movement-path) 可讓您輕鬆了解報告，以識別特殊權限帳戶在何處可能有漏洞會遭到入侵。
 
 ## <a name="phase-3-security-improvement-and-sustainment"></a>階段 3：安全性改善和持續維護
 
@@ -158,7 +158,7 @@ Microsoft 建議您遵循這份藍圖來保護特殊權限存取以對抗積極�
 
 將記錄整合到集中式 SIEM 工具中，可協助您的組織分析、偵測及回應安全性事件。 [監視 Active Directory 遭到危害的徵兆](../ad-ds/plan/security-best-practices/monitoring-active-directory-for-signs-of-compromise.md)和[附錄 L：要監視的事件](../ad-ds/plan/appendix-l--events-to-monitor.md)這兩篇文章提供您在環境中應監視哪些事件的指引。
 
-這屬於計畫以外的部分，因為要在安全性資訊及事件管理 (SIEM) 中彙總、建立和調整警示，需仰賴具經驗的分析人員 (不同於 30 天計畫中的 Azure ATP，其中包含現成可用的警示)。
+這屬於計畫以外的部分，因為要在安全性資訊及事件管理 (SIEM) 中彙總、建立和調整警示，需仰賴具經驗的分析人員 (不同於 30 天計畫中適用於身分識別的 Microsoft Defender，其中包含現成可用的警示)。
 
 ### <a name="4-leaked-credentials---force-password-reset"></a>4.認證外洩 - 強制密碼重設
 

@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 11/06/2020
+ms.date: 12/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: beb97113165127c50c815ccca8a667a1654215fa
-ms.sourcegitcommit: 5fc77b4325a18d8c22385d899b14fe724a662347
+ms.openlocfilehash: ab03feb27e2f03f8765cd42b8acaec6b61836d3b
+ms.sourcegitcommit: dce404a0a4500a693e294e0431c93f0ae90f8b13
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361165"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96563828"
 ---
 # <a name="whats-new-in-the-ios-client"></a>iOS 用戶端中的新功能
 
@@ -21,6 +21,21 @@ ms.locfileid: "94361165"
 ## <a name="how-to-report-issues"></a>如何回報問題
 
 我們致力於讓 iOS 的遠端桌面用戶端發揮出最佳效果，因此我們非常重視您的意見反應。 您可以在 [說明]   > [報告問題]  中回報任何問題。
+
+## <a name="updates-for-version-1022"></a>10.2.2 版的更新
+
+*發行日期：2020/11/23*
+
+在此版本中，我們已解決一些會影響使用者執行 iOS 14 和 iPadOS 14 的錯誤。
+
+## <a name="updates-for-version-1021"></a>10.2.1 版的更新
+
+*發行日期：2020/11/11*
+
+現在要進行快速更新了。 在此版本中，我們進行了下列修正：
+
+- 已新增新發行 iPhone 和 iPad 裝置的支援。
+- 解決用戶端在使用 RD 閘道伺服器進行連線時，回報 0x30000066 錯誤的問題。
 
 ## <a name="updates-for-version-1020"></a>10.2.0 版的更新
 
@@ -150,12 +165,12 @@ ms.locfileid: "94361165"
 - 已修正手勢辨識器中的 Bug，這些 Bug 會導致用戶端在連接到遠端工作模式時變成沒有回應。
 - 您現在只需單一撥動即可進入應用程式切換模式 (除非您是在觸控模式下，並將工作階段延伸到首頁指示器區域)。
 - 首頁指示器現在會在連接到遠端工作階段時自動隱藏，而且當您點選螢幕時，將會重新出現。
-- 已新增鍵盤快速鍵，以移至連線中心的應用程式設定 ( **Command + ,** )。
-- 已新增鍵盤快速鍵，以重新整理連線中心的所有工作區 ( **Command + R** )。
-- 連接到遠端工作階段時，連結系統鍵盤快速鍵來進行逸出 ( **Command + .** )。
+- 已新增鍵盤快速鍵，以移至連線中心的應用程式設定 (**Command + ,** )。
+- 已新增鍵盤快速鍵，以重新整理連線中心的所有工作區 (**Command + R**)。
+- 連接到遠端工作階段時，連結系統鍵盤快速鍵來進行逸出 (**Command + .** )。
 - 已修正遠端工作階段中的 Windows 螢幕小鍵盤太小的案例。
 - 已在整個連接中心實作自動鍵盤對焦，讓資料輸入更順暢。
-- 在認證提示下按下 **Enter** ，現在會導致關閉提示，並繼續進行目前的流程。
+- 在認證提示下按下 **Enter**，現在會導致關閉提示，並繼續進行目前的流程。
 - 已修正當按下 Shift + Option + 向左、向上或向下方向鍵時，用戶端會當機的案例。
 - 已修正當移除 SwiftPoint 裝置時發生的當機。
 - 已修正自上次發行後，使用者回報給我們的其他當機。

@@ -5,20 +5,38 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 11/06/2020
+ms.date: 12/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b53046f493fca630b24f31818ae724403ffc3c53
-ms.sourcegitcommit: 5fc77b4325a18d8c22385d899b14fe724a662347
+ms.openlocfilehash: b9b811f3a0beb71461f868c61f0508566136a5d8
+ms.sourcegitcommit: dce404a0a4500a693e294e0431c93f0ae90f8b13
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361155"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96563818"
 ---
 # <a name="whats-new-in-the-macos-client"></a>macOS 用戶端中的新功能
 
 我們會定期更新[適用於 macOS 的遠端桌面用戶端](remote-desktop-mac.md)，進而新增功能並修正問題。 您可以在這裡找到最新的更新。
 
 如果您遇到任何問題，可以隨時導覽至 [協助]   > [回報問題]  與我們連絡。
+
+## <a name="updates-for-version-1050"></a>10.5.0 版的更新
+
+*發行日期：2020/12/02*
+
+現在要進行另一個更新了。 由衷感謝每一個回報錯誤，並與我們合作診斷並修正問題的人員。 在此版本中，我們進行了下列變更：
+
+- 您現在可以編輯已發佈電腦連線的顯示、裝置和資料夾重新導向設定。
+- 將遠端應用程式視窗最小化時，視窗會縮小為固定面板。
+- 新增 [連接資訊] 對話方塊，該對話方塊顯示目前的頻寬和來回行程時間。
+- 已新增對 RD 閘道同意和系統管理員訊息的支援。
+- 已修正指定 gatewayusagemethod 值為 0 或 4 的 RDP 檔案未正確匯入的問題。
+- [編輯工作區] 工作表現在顯示了上次更新工作區的確切時間。
+- 已移除使用 *--script* 參數時輸出的追蹤發出。
+- 解決用戶端在使用 RD 閘道伺服器進行連線時，回報 0x30000066 錯誤的問題。
+- 已修正在伺服器上設定驗證擴充保護時，會重複提示使用者提供認證的問題。
+- 解決當機報告中使用者發現的可靠性問題。
+- 解決鍵盤和 VoiceOver 相關的協助工具錯誤。
 
 ## <a name="updates-for-version-1041"></a>10.4.1 版的更新
 
