@@ -7,12 +7,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 04/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 109f60ec099606dfc031fc07a8f457287f8fb50d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a9cf5f32a2cffb52b56e619e42b22483e7cbe48a
+ms.sourcegitcommit: f18097c21e50a09aef2f1937f52608b0042ef0e1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87946431"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96755385"
 ---
 # <a name="remote-desktop---allow-access-to-your-pc-from-outside-your-pcs-network"></a>遠端桌面 - 允許從電腦網路外部存取您的電腦
 
@@ -45,7 +45,7 @@ ms.locfileid: "87946431"
 
 對於大部分的路由器，您都可以定義哪個來源 IP 或來源網路可使用連接埠對應。 因此，如果您知道您只會從工作場所連線，您就可以為工作場所網路新增 IP 位址 - 這樣可讓您避免對整個公用網際網路開放連接埠。 如果您用來連線的主機使用動態 IP 位址，請設定來源限制，以允許該 ISP 的整個範圍所進行的存取。
 
-您也可以考慮在您的電腦上設定[靜態 IP 位址](/windows-hardware/customize/mobile/mcsf/enable-static-ip)，而使內部 IP 位址不會變更。 如果您這麼做，路由器的連接埠轉送將一律指向正確的 IP 位址。
+您也可以考慮在您的電腦上設定靜態 IP 位址，而使內部 IP 位址不會變更。 如果您這麼做，路由器的連接埠轉送將一律指向正確的 IP 位址。
 
 
 ## <a name="use-a-vpn"></a>使用 VPN
