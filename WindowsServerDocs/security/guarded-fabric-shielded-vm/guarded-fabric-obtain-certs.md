@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 09/25/2019
-ms.openlocfilehash: 43762e34e2987473954e3f9408ddd6e74b0de3cb
-ms.sourcegitcommit: 3181fcb69a368f38e0d66002e8bc6fd9628b1acc
+ms.openlocfilehash: c6f20ebdf2bedd74af98e075ccf6f6ff60f96767
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96330360"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864157"
 ---
 # <a name="obtain-certificates-for-hgs"></a>取得 HGS 的憑證
 
@@ -91,7 +91,7 @@ SSL 憑證屬性 | 必要值
 主體別名 | 如果您要使用不同的 DNS 名稱來連線 HGS 叢集 (例如，如果它是在負載平衡器後方，或您針對複雜拓撲) 中的節點子集使用不同的位址，請務必在您的憑證要求的 [SAN] 欄位中包含這些 DNS 名稱。 請注意，如果已填入 SAN 延伸模組，則會忽略主體名稱，因此 SAN 應該包含所有值，包括通常會放入主體名稱的所有值。
 
 [設定第一個 hgs 節點](guarded-fabric-initialize-hgs.md)時，會涵蓋在初始化 hgs 伺服器時指定此憑證的選項。
-您也可以稍後使用 [HgsServer](/powershell/module/hgsserver/set-hgsserver?view=win10-ps) 指令 Cmdlet 來新增或變更 SSL 憑證。
+您也可以稍後使用 [HgsServer](/powershell/module/hgsserver/set-hgsserver) 指令 Cmdlet 來新增或變更 SSL 憑證。
 
 ## <a name="next-step"></a>後續步驟
 

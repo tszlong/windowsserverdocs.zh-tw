@@ -6,12 +6,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: e448a12659ca7aa9fbc4230dce51df4fbcd7bcf0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 533cad2971e6962fc4fa35b2bce477c11d5b6875
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936101"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865237"
 ---
 # <a name="set-the-ordering-method-for-targets-in-referrals"></a>設定轉介中目標的排序方法
 
@@ -28,15 +28,15 @@ ms.locfileid: "87936101"
 
 1.  按一下 [**開始**]，然後指向 [**系統管理工具**]，再按一下 [**DFS 管理**]。
 
-2.  在主控台樹狀目錄的 [命名空間]**** 節點下，以滑鼠右鍵按一下命名空間，然後按一下 [內容]****。
+2.  在主控台樹狀目錄的 [命名空間] 節點下，以滑鼠右鍵按一下命名空間，然後按一下 [內容]。
 
 3.  在 **\[轉介\]** 索引標籤上，選取排序方法。
 
 > [!NOTE]
-> 若要使用 Windows PowerShell 來設定命名空間根目錄轉介中的目標排序方法，請使用 [Set-DfsnRoot](/powershell/module/dfsr/update-dfsrconfigurationfromad?view=win10-ps) Cmdlet 並搭配下列其中一個參數：
->    -   **EnableSiteCosting** 指定**最低成本排序**方法
->    -   **EnableInsiteReferrals** 指定**排除用戶端站台外的目標**排序方法。
->    -   省略任一參數則指定**隨機順序**轉介排序方法。
+> 若要使用 Windows PowerShell 來設定命名空間根目錄轉介中的目標排序方法，請使用 [Set-DfsnRoot](/powershell/module/dfsr/update-dfsrconfigurationfromad) Cmdlet 並搭配下列其中一個參數：
+>    -   **EnableSiteCosting** 指定 **最低成本排序** 方法
+>    -   **EnableInsiteReferrals** 指定 **排除用戶端站台外的目標** 排序方法。
+>    -   省略任一參數則指定 **隨機順序** 轉介排序方法。
 
 DFSN Windows PowerShell 模組於 Windows Server 2012 中引進。
 
@@ -46,12 +46,12 @@ DFSN Windows PowerShell 模組於 Windows Server 2012 中引進。
 
 1.  按一下 [**開始**]，然後指向 [**系統管理工具**]，再按一下 [**DFS 管理**]。
 
-2.  在主控台樹狀目錄的 [命名空間]**** 節點下，以滑鼠右鍵按一下含目標的資料夾，然後按一下 [內容]****。
+2.  在主控台樹狀目錄的 [命名空間] 節點下，以滑鼠右鍵按一下含目標的資料夾，然後按一下 [內容]。
 
 3.  在 **\[轉介\]** 索引標籤上，選取 **\[排除用戶端站台外的目標\]** 核取方塊。
 
 > [!NOTE]
-> 若要使用 Windows PowerShell 來排除用戶端站台外的資料夾目標，請使用 [Set-DfsnFolder –EnableInsiteReferrals](/powershell/module/dfsr/update-dfsrconfigurationfromad?view=win10-ps) Cmdlet。
+> 若要使用 Windows PowerShell 來排除用戶端站台外的資料夾目標，請使用 [Set-DfsnFolder –EnableInsiteReferrals](/powershell/module/dfsr/update-dfsrconfigurationfromad) Cmdlet。
 
 ## <a name="target-referral-ordering-methods"></a>目標轉介排序方法
 

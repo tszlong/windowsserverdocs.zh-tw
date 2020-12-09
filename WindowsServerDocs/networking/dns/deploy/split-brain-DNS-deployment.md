@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: a255a4a5-c1a0-4edc-b41a-211bae397e3c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: e8b19df2313bd0f3f6599aae8a23a18233f469e7
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 5e9187fd549f9982ab8d0bea5ffa9b45d6e1e3c7
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766921"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865277"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-deployment"></a>使用 DNS 原則進行分割 \- 腦 DNS 部署
 
@@ -20,7 +20,7 @@ ms.locfileid: "90766921"
 您可以使用本主題來瞭解如何在 Windows Server 2016 中設定 &reg; 分割腦 dns 部署的 dns 原則，其中有兩個版本的單一區域-一個適用于組織內部網路上的內部使用者，另一個用於外部使用者（通常是網際網路上的使用者）。
 
 >[!NOTE]
->如需有關如何針對使用 \- Active Directory 整合式 Dns 區域的分割大腦 dns 部署使用 Dns 原則的詳細資訊，請參閱 [Active Directory 中的使用分割大腦 DNS 的 dns 原則](dns-sb-with-ad.md)。
+>如需有關如何針對使用 Active Directory 整合式 DNS 區域的分割大腦 DNS 部署使用 DNS 原則的詳細資訊 \- ，請參閱 [Active Directory 中 Split-Brain Dns 的使用 dns 原則](dns-sb-with-ad.md)。
 
 先前，在此案例中，DNS 系統管理員需要維護兩部不同的 DNS 伺服器，每一部都為內部和外部的每一組使用者提供服務。 如果區域內只有少數記錄被分割 \- brained 或區域的兩個實例 (內部和外部) 委派給相同的父系網域，則這會成為管理之間謎。
 
@@ -28,16 +28,16 @@ ms.locfileid: "90766921"
 
 本主題包含下列各節。
 
-- [DNS 分割腦部署範例](#bkmk_sbexample)
+- [DNS Split-Brain 部署範例](#bkmk_sbexample)
 - [DNS 選擇性遞迴控制的範例](#bkmk_recursion)
 
-## <a name="example-of-dns-split-brain-deployment"></a><a name="bkmk_sbexample"></a>DNS 分割腦部署範例
+## <a name="example-of-dns-split-brain-deployment"></a><a name="bkmk_sbexample"></a>DNS Split-Brain 部署範例
 以下範例說明如何使用 DNS 原則來完成先前所述的分裂式 DNS 案例。
 
 此章節包含下列主題。
 
-- [DNS 分割大腦部署的運作方式](#bkmk_sbhow)
-- [如何設定 DNS 分割腦部署](#bkmk_sbconfigure)
+- [DNS Split-Brain 部署的運作方式](#bkmk_sbhow)
+- [如何設定 DNS Split-Brain 部署](#bkmk_sbconfigure)
 
 這個範例會使用一個虛構公司 Contoso，在 www.career.contoso.com 維護一個事業網站。
 
@@ -51,9 +51,9 @@ ms.locfileid: "90766921"
 
 下圖描述此案例。
 
-![分裂式 DNS 部署](../../media/DNS-Split-Brain/Dns-Split-Brain-01.jpg)
+![Split-Brain DNS 部署](../../media/DNS-Split-Brain/Dns-Split-Brain-01.jpg)
 
-## <a name="how-dns-split-brain-deployment-works"></a><a name="bkmk_sbhow"></a>DNS 分割大腦部署的運作方式
+## <a name="how-dns-split-brain-deployment-works"></a><a name="bkmk_sbhow"></a>DNS Split-Brain 部署的運作方式
 
 使用必要的 DNS 原則設定 DNS 伺服器時，會針對 DNS 伺服器上的原則評估每個名稱解析要求。
 
@@ -63,8 +63,8 @@ ms.locfileid: "90766921"
 
 因此，在我們的範例中，在私人 IP () 10.0.0.56 收到的 www.career.contoso.com DNS 查詢會收到包含內部 IP 位址的 DNS 回應;而在公用網路介面上接收的 DNS 查詢會收到包含預設區域範圍中公用 IP 位址的 DNS 回應 (這與一般查詢解析) 相同。
 
-## <a name="how-to-configure-dns-split-brain-deployment"></a><a name="bkmk_sbconfigure"></a>如何設定 DNS 分割腦部署
-若要使用 DNS 原則設定 DNS 分割大腦部署，您必須使用下列步驟。
+## <a name="how-to-configure-dns-split-brain-deployment"></a><a name="bkmk_sbconfigure"></a>如何設定 DNS Split-Brain 部署
+若要使用 DNS 原則設定 DNS Split-Brain 部署，您必須使用下列步驟。
 
 - [建立區域範圍](#bkmk_zscopes)
 - [將記錄新增至區域範圍](#bkmk_records)
@@ -86,7 +86,7 @@ ms.locfileid: "90766921"
 
 `Add-DnsServerZoneScope -ZoneName "contoso.com" -Name "internal"`
 
-如需詳細資訊，請參閱 [新增-DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
+如需詳細資訊，請參閱 [新增-DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope)
 
 ### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>將記錄新增至區域範圍
 
@@ -103,14 +103,14 @@ Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4A
 Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4Address "10.0.0.39” -ZoneScope "internal"
 `
 
-如需詳細資訊，請參閱 [DnsServerResourceRecord](/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。
+如需詳細資訊，請參閱 [DnsServerResourceRecord](/powershell/module/dnsserver/add-dnsserverresourcerecord)。
 
 ### <a name="create-the-dns-policies"></a><a name="bkmk_policies"></a>建立 DNS 原則
 
 在您識別出外部網路和內部網路的伺服器介面，並且已建立區域範圍之後，您必須建立 DNS 原則來連接內部和外部區域範圍。
 
 >[!NOTE]
->此範例會使用伺服器介面做為區分內部和外部用戶端的準則。 另一種區分外部和內部用戶端的方法是使用用戶端子網作為準則。 如果您可以識別內部用戶端所屬的子網，您可以設定 DNS 原則以根據用戶端子網區分。 如需有關如何使用用戶端子網準則設定流量管理的詳細資訊，請參閱 [使用 DNS 原則進行以地理位置為基礎的流量管理與主伺服器](./primary-geo-location.md)。
+>此範例會使用伺服器介面做為區分內部和外部用戶端的準則。 另一種區分外部和內部用戶端的方法是使用用戶端子網作為準則。 如果您可以識別內部用戶端所屬的子網，您可以設定 DNS 原則以根據用戶端子網區分。 如需有關如何使用用戶端子網準則設定流量管理的詳細資訊，請參閱 [使用 DNS 原則進行以 Geo-Location 為基礎的流量管理與主伺服器](./primary-geo-location.md)。
 
 當 DNS 伺服器收到私用介面的查詢時，會從內部區域範圍傳回 DNS 查詢回應。
 
@@ -121,7 +121,7 @@ Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4A
 
 `Add-DnsServerQueryResolutionPolicy -Name "SplitBrainZonePolicy" -Action ALLOW -ServerInterface "eq,10.0.0.56" -ZoneScope "internal,1" -ZoneName contoso.com`
 
-如需詳細資訊，請參閱 [DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
+如需詳細資訊，請參閱 [DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy)。
 
 ## <a name="example-of-dns-selective-recursion-control"></a><a name="bkmk_recursion"></a>DNS 選擇性遞迴控制的範例
 
@@ -183,7 +183,7 @@ Set-DnsServerRecursionScope -Name . -EnableRecursion $False
 Add-DnsServerRecursionScope -Name "InternalClients" -EnableRecursion $True
 ```
 
-如需詳細資訊，請參閱 [新增-DnsServerRecursionScope](/powershell/module/dnsserver/add-dnsserverrecursionscope?view=win10-ps)
+如需詳細資訊，請參閱 [新增-DnsServerRecursionScope](/powershell/module/dnsserver/add-dnsserverrecursionscope)
 
 #### <a name="create-dns-recursion-policies"></a><a name="bkmk_recpolicy"></a>建立 DNS 遞迴原則
 
@@ -199,7 +199,7 @@ Add-DnsServerRecursionScope -Name "InternalClients" -EnableRecursion $True
 Add-DnsServerQueryResolutionPolicy -Name "SplitBrainRecursionPolicy" -Action ALLOW -ApplyOnRecursion -RecursionScope "InternalClients" -ServerInterfaceIP "EQ,10.0.0.39"
 ```
 
-如需詳細資訊，請參閱 [DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
+如需詳細資訊，請參閱 [DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy)。
 
 現在，DNS 伺服器會使用針對內部用戶端啟用選擇性遞迴控制的分裂式名稱伺服器或 DNS 伺服器所需的 DNS 原則來設定。
 

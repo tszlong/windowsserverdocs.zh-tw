@@ -5,12 +5,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 7f3174e203aca130b06b410066ec714254a7f125
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 8b72ea800f63110904af80a178f96af232507344
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89627739"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864347"
 ---
 # <a name="server-performance-advisor-pack-development-guide"></a>Server Performance Advisor 套件開發指南
 
@@ -114,7 +114,7 @@ func .sql
 
 每個 advisor 套件都必須有一個稱為 ProvisionMetadata.xml 的檔案。 它會定義基本的 advisor 套件資訊、要收集的資料、通知和規則，以及報表的儲存和顯示方式。 SPA 架構會使用這項資訊來產生臨時表，然後將臨時表中的結果傳送至使用者可以存取的資料表。
 
-所有報表 SQL 腳本都必須儲存在稱為 **腳本**的子資料夾中。 基於維護目的，建議您將不同的資料庫物件儲存在不同的 SQL Server 檔案中。 至少必須有一個預存程式作為主要進入點。
+所有報表 SQL 腳本都必須儲存在稱為 **腳本** 的子資料夾中。 基於維護目的，建議您將不同的資料庫物件儲存在不同的 SQL Server 檔案中。 至少必須有一個預存程式作為主要進入點。
 
 > [!NOTE]
 > 除非您的建議程式套件收集 ETW 追蹤，否則不需要架構 man 檔。 此架構檔案是用來描述 ETW 事件的架構，以及解碼 ETW 事件。
@@ -201,7 +201,7 @@ SPA 架構會從腳本進入點尋找主要的預存程式名稱，並以安全�
 </advisorPack>
 ```
 
-在上一個範例中， ** &lt; dataCollectorSet &gt; /** 的**duration**屬性定義資料收集的持續時間， (時間單位是秒) 。 **duration** 是必要的屬性。 此設定會控制效能計數器和 ETW 所使用的收集持續時間。
+在上一個範例中， **&lt; dataCollectorSet &gt; /** 的 **duration** 屬性定義資料收集的持續時間， (時間單位是秒) 。 **duration** 是必要的屬性。 此設定會控制效能計數器和 ETW 所使用的收集持續時間。
 
 ### <a name="collect-registry-data"></a>收集登錄資料
 
@@ -257,7 +257,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\db31
 <registryKey>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\\</registryKey>
 ```
 
-在執行 SQL 報表腳本之前，所有收集的資料都會匯入名為** \# registryKeys**的臨時表中。 下表顯示範例2的結果：
+在執行 SQL 報表腳本之前，所有收集的資料都會匯入名為 **\# registryKeys** 的臨時表中。 下表顯示範例2的結果：
 
 KeyName | KeytypeId | 值
 ------ | ----- | -------
@@ -267,7 +267,7 @@ HKEY_LOCAL_MACHINE. ..\PowerSchemes | 1 | db310065-829b-4671-9647-2261c00e86ef
 ...\6738e2c4-e8a5-4a42-b16a-e040e769756e\ACSettingIndex | 4 | 180
 ...\6738e2c4-e8a5-4a42-b16a-e040e769756e\DCSettingIndex | 4 | 30
 
-**#RegistryKeys**資料表的架構如下所示：
+**#RegistryKeys** 資料表的架構如下所示：
 
 資料行名稱 | SQL 資料類型 | 描述
 -------- | -------- | --------
@@ -275,7 +275,7 @@ KeyName | NVarchar (300) NOT Null | 登錄機碼的完整路徑名稱
 KeytypeId | Smallint 非 Null | 內部類型識別碼
 值 | NVarchar (4000) NOT Null | 所有值
 
-**KeytypeID**資料行可以具有下列其中一種類型：
+**KeytypeID** 資料行可以具有下列其中一種類型：
 
 識別碼 | 類型
 --- | ---
@@ -301,7 +301,7 @@ KeytypeId | Smallint 非 Null | 內部類型識別碼
 
 上述範例中的查詢會傳回一筆記錄：
 
-Caption | 名稱 | PeakUsage
+標題 | 名稱 | PeakUsage
 ----- | ----- | -----
 C:\pagefile.sys | C:\pagefile.sys | 215
 
@@ -347,7 +347,7 @@ SequenceId | Int NOT Null | 使資料列與其屬性相互關聯
 
 資料行名稱 | SQL 資料類型 | 描述
 --- | --- | ---
-Id | Int NOT Null | >唯一的查詢識別碼
+識別碼 | Int NOT Null | >唯一的查詢識別碼
 查詢 | NVarchar (4000) NOT Null | 布建中繼資料中的原始查詢字串
 
 ### <a name="collect-performance-counters"></a>收集效能計數器
@@ -360,11 +360,11 @@ Id | Int NOT Null | >唯一的查詢識別碼
 </performanceCounters>
 ```
 
-**Interval**屬性是所有效能計數器的必要全域設定。 它會定義間隔 (時間單位是收集效能資料) 的秒數。
+**Interval** 屬性是所有效能計數器的必要全域設定。 它會定義間隔 (時間單位是收集效能資料) 的秒數。
 
 在上述範例中， \\ \* \\ 會每秒查詢 counter PhysicalDisk () Avg. Disk sec/Transfer。
 
-可能有兩個實例： ** \_ Total**和**0 C： D：**，輸出可能如下所示：
+可能有兩個實例： **\_ Total** 和 **0 C： D：**，輸出可能如下所示：
 
 timestamp | CategoryName | CounterName | _Total 的實例值 | 實例值為 0 C： D：
 ---- | ---- | ---- | ---- | ----
@@ -373,7 +373,7 @@ timestamp | CategoryName | CounterName | _Total 的實例值 | 實例值為 0 C�
 13：45：54.627 | PhysicalDisk | Avg.Disk sec/Transfer | 0.00385999853230048 | 0.00385999853230048
 13：45：55.626 | PhysicalDisk | Avg.Disk sec/Transfer | 0.000933297607934224 | 0.000933297607934224
 
-若要將資料匯入資料庫中，資料將正規化為稱為** \# PerformanceCounters**的資料表。
+若要將資料匯入資料庫中，資料將正規化為稱為 **\# PerformanceCounters** 的資料表。
 
 CategoryDisplayName | InstanceName | CounterdisplayName | 值
 ---- | ---- | ---- | ----
@@ -388,7 +388,7 @@ PhysicalDisk | 0 C： D： | Avg.Disk sec/Transfer | 0.000933297607934224
 
 **注意** 當地語系化的名稱（例如 **CategoryDisplayName** 和 **CounterdisplayName**）會根據目標伺服器上所使用的顯示語言而有所不同。 如果您想要建立語言中立的 advisor 套件，請避免使用這些欄位。
 
-** \# PerformanceCounters**資料表架構
+**\# PerformanceCounters** 資料表架構
 
 資料行名稱 | SQL 資料類型 | 描述
 ---- | ---- | ---- | ----
@@ -412,9 +412,9 @@ CounterdisplayName | NVarchar (200) NOT Null | 當地語系化的計數器名稱
 <path>%windir%\System32\inetsrv\config\applicationHost.config</path>
 ```
 
-您可以**在稱為檔案的資料表中找到 \# **結果，例如：
+您可以 **在稱為檔案的資料表中找到 \#** 結果，例如：
 
-querypath | Fullpath | Parentpath | FileName | Content
+querypath | Fullpath | Parentpath | FileName | 內容
 ----- | ----- | ----- | ----- | -----
 % windir% \...\applicationHost.config |C:\Windows<br>\...\applicationHost.config | C:\Windows<br>\...\config | Applicationhost.config g | 0x3C3F78
 
@@ -426,7 +426,7 @@ querypath | NVarchar (300) NOT Null | 原始查詢語句
 Fullpath | NVarchar (300) NOT Null | 絕對檔案路徑和檔案名
 Parentpath | NVarchar (300) NOT Null | 檔案路徑
 FileName | NVarchar (300) NOT Null | 檔案名稱
-Content | Varbinary (MAX) Null | 二進位檔中的檔案內容
+內容 | Varbinary (MAX) Null | 二進位檔中的檔案內容
 
 ### <a name="defining-rules"></a>定義規則
 
@@ -463,7 +463,7 @@ Content | Varbinary (MAX) Null | 二進位檔中的檔案內容
 </advisorPack>
 ```
 
-### <a name="threshold"></a>閾值
+### <a name="threshold"></a>臨界值
 
 閾值是可設定的因素，可讓系統管理員決定何時規則應顯示良好或不良的狀態。 下列範例顯示的規則可偵測系統磁片磁碟機上的可用空間，以及當可用空間小於 10 GB 時的警告。
 
@@ -532,7 +532,7 @@ Install OS on larger disk.</advice>
 
 總而言之，有三種類型的 UI 元素：
 
-* [部分](#bkmk-ui-section)
+* [章節](#bkmk-ui-section)
 
 * [單一值群組](#bkmk-ui-svg)
 
@@ -562,7 +562,7 @@ Install OS on larger disk.</advice>
 </advisorPack>
 ```
 
-### <a name="sections"></a><a href="" id="bkmk-ui-section"></a>部分
+### <a name="sections"></a><a href="" id="bkmk-ui-section"></a>章節
 
 區段純粹適用于 UI 版面配置。 它不會參與任何邏輯計算。 每一份報表都包含一組最上層區段，而這些區段沒有父區段。 最上層區段會顯示為報表中的索引標籤。 區段可以有子區段，最多可有10個層級。 最上層區段底下的所有子區段都會顯示在可擴充的區域中。 區段可以包含多個子區段、單一值群組和清單值資料表。 單一值群組和清單值資料表會顯示為數據表。
 
@@ -590,7 +590,7 @@ Install OS on larger disk.</advice>
 
 單一值群組和清單值表包含不同類型的資料，例如字串、int 和 float。 因為這些值會儲存在 SQL Server 資料庫中，所以您可以定義每個資料屬性的 SQL 資料類型。 不過，定義 SQL 資料類型相當複雜。 您必須指定長度或有效位數，這可能會很容易變更。
 
-若要定義邏輯資料類型，您可以使用** &lt; reportdefinition.xsd/ &gt; **的第一個子系，也就是您可以在其中定義 SQL 資料類型和邏輯型別的對應。
+若要定義邏輯資料類型，您可以使用 **&lt; reportdefinition.xsd/ &gt;** 的第一個子系，也就是您可以在其中定義 SQL 資料類型和邏輯型別的對應。
 
 下列範例會定義兩個資料類型。 其中一個是 **字串** ，另一個則是 **companyCode**。
 
@@ -649,7 +649,7 @@ Install OS on larger disk.</advice>
 
 * varchar
 
-如需這些 SQL 資料類型的詳細資訊，請參閱 [ (transact-sql) 的資料類型 ](/sql/t-sql/data-types/data-types-transact-sql?view=sql-server-ver15)。
+如需這些 SQL 資料類型的詳細資訊，請參閱 [ (transact-sql) 的資料類型 ](/sql/t-sql/data-types/data-types-transact-sql)。
 
 ### <a name="single-value-groups"></a><a href="" id="bkmk-ui-svg"></a>單一值群組
 
@@ -663,13 +663,13 @@ Install OS on larger disk.</advice>
 </singleValue>
 ```
 
-在上述範例中，我們定義了單一值群組。 它是 **SystemoverviewSection**區段的子節點。 此群組具有單一值，也就是 **OsName**、 **Osversion**和 **OsLocation**。
+在上述範例中，我們定義了單一值群組。 它是 **SystemoverviewSection** 區段的子節點。 此群組具有單一值，也就是 **OsName**、 **Osversion** 和 **OsLocation**。
 
 單一值必須有全域唯一的名稱屬性。 在此範例中，全域唯一名稱屬性為 **Systemoverview**。 唯一名稱將用來產生自訂報表的對應視圖。 每個視圖都包含前置詞 **vw**，例如 vwSystemoverview。
 
 雖然您可以定義多個單一值群組，但是沒有兩個單一值名稱可以相同，即使它們位於不同的群組中也一樣。 SQL 腳本報表會使用單一值名稱，據此設定值。
 
-您可以定義每個單一值的資料類型。 **Type**的允許輸入是在** &lt; datatype/ &gt; **中定義。 最終的報告看起來可能像這樣：
+您可以定義每個單一值的資料類型。 **Type** 的允許輸入是在 **&lt; datatype/ &gt;** 中定義。 最終的報告看起來可能像這樣：
 
 **事實**
 
@@ -679,7 +679,7 @@ Install OS on larger disk.</advice>
 OS 版本 | &lt;_值將由報表腳本設定_&gt;
 OS 位置 | &lt;_值將由報表腳本設定_&gt;
 
-** &lt; 值 &gt; /** 的**caption**屬性會顯示在第一個資料行中。 [值] 資料行中的值會在未來透過 dbo 的腳本報表設定 \[ \] 。 \[SetSingleValue \] 。 [ ** &lt; 值 &gt; /** ] 的 [**描述**] 屬性會顯示在工具提示中。 工具提示通常會顯示使用者資料的來源。 如需工具提示的詳細資訊，請參閱 [工具提示](#bkmk-tooltips)。
+**&lt; 值 &gt; /** 的 **caption** 屬性會顯示在第一個資料行中。 [值] 資料行中的值會在未來透過 dbo 的腳本報表設定 \[ \] 。 \[SetSingleValue \] 。 [ **&lt; 值 &gt; /** ] 的 [**描述**] 屬性會顯示在工具提示中。 工具提示通常會顯示使用者資料的來源。 如需工具提示的詳細資訊，請參閱 [工具提示](#bkmk-tooltips)。
 
 ### <a name="list-value-tables"></a><a href="" id="bkmk-ui-lvt"></a>清單值表
 
@@ -741,7 +741,7 @@ SPA 使用單一值群組來支援靜態統計資料，並使用清單值資料�
 
 在設計階段不知道動態統計資料索引鍵，因此可能的值數目未知。 不過，因為清單值會儲存在多個資料列中，所以使用清單值資料表來儲存動態統計資料很容易。
 
-例如，如果我們需要針對不同核心的平均 CPU 使用率來顯示圖表，我們可以定義具有 **CpuId** 和 **AverageCpuUsage**資料行的資料表：
+例如，如果我們需要針對不同核心的平均 CPU 使用率來顯示圖表，我們可以定義具有 **CpuId** 和 **AverageCpuUsage** 資料行的資料表：
 
 ``` syntax
 <listValue name="CpuPerformance">
@@ -750,11 +750,11 @@ SPA 使用單一值群組來支援靜態統計資料，並使用清單值資料�
 </listValue>
 ```
 
-另一個屬性 **columntype**可以是索引 **鍵**、 **值**或 **資訊**。 索引 **鍵** 資料行的資料類型必須是 double 或 double 轉換。 在索引 **鍵** 資料行中，您無法將相同的索引鍵插入資料表中。 **值** 或 **資訊** 資料行沒有這項限制。
+另一個屬性 **columntype** 可以是索引 **鍵**、 **值** 或 **資訊**。 索引 **鍵** 資料行的資料類型必須是 double 或 double 轉換。 在索引 **鍵** 資料行中，您無法將相同的索引鍵插入資料表中。 **值** 或 **資訊** 資料行沒有這項限制。
 
 統計資料值會儲存在 **值** 資料行中。
 
-**資訊** 資料行就像一般清單值表中的一般資料行。 如果您未指定，**資訊**是預設資料行類型。 這類資料行不會影響統計資料索引鍵的數目，也不會參與統計資料相關的計算。
+**資訊** 資料行就像一般清單值表中的一般資料行。 如果您未指定，**資訊** 是預設資料行類型。 這類資料行不會影響統計資料索引鍵的數目，也不會參與統計資料相關的計算。
 
 繼續先前的範例，如果伺服器有兩個 CPU 核心，則資料表中的結果可能如下所示：
 
@@ -765,9 +765,9 @@ CpuId | AverageCpuUsage
 
 同時，SPA 架構會產生兩個統計資料索引鍵。 一個用於 CPU 0，另一個則用於 CPU 1。
 
-如下列範例所示，表示支援多個索引**鍵**資料行的多個**值**資料行。
+如下列範例所示，表示支援多個索引 **鍵** 資料行的多個 **值** 資料行。
 
-CounterName | InstanceName | 平均 | Sum
+CounterName | InstanceName | Average | Sum
 --- | :---: | :---: | :---:
 % Processor time | _Total | 10 | 20
 % Processor time | CPU0 | 20 | 30 
@@ -802,7 +802,7 @@ SPA 會產生許多統計資料索引鍵。 其中有些可能不會對您感興
 </listValue>
 ```
 
-** &lt; trendableKeyValues/ &gt; **可以定義在任何索引鍵資料行底下。 如果有一個以上的索引鍵資料行已設定此篩選準則，則會套用邏輯。
+**&lt; trendableKeyValues/ &gt;** 可以定義在任何索引鍵資料行底下。 如果有一個以上的索引鍵資料行已設定此篩選準則，則會套用邏輯。
 
 ### <a name="developing-report-scripts"></a>開發報表腳本
 
@@ -824,7 +824,7 @@ create PROCEDURE [Microsoft.ServerPerformanceAdvisor.CoreOS.V2].[ReportScript] A
 - Prepare data for report view
 ```
 
-**Name**屬性將用來做為資料庫架構名稱，例如命名空間。 此規則會套用至屬於目前 advisor 套件的所有其他資料庫物件，例如清單值和預存程式。
+**Name** 屬性將用來做為資料庫架構名稱，例如命名空間。 此規則會套用至屬於目前 advisor 套件的所有其他資料庫物件，例如清單值和預存程式。
 
 在資料庫物件前面加上此架構名稱的優點包括：
 
@@ -832,7 +832,7 @@ create PROCEDURE [Microsoft.ServerPerformanceAdvisor.CoreOS.V2].[ReportScript] A
 
 * 提供更高的安全性
 
-在 SQL Server 資料庫中，預設架構名稱是 **dbo**。 資料庫擁有者認證通常是在 **dbo**下操作資料庫物件時所需的認證。 如果我們未建立每個建議程式套件的架構，則兩個 advisor 套件可能會定義名稱相同的清單值。 這應該是不相關的，因為您可以引入架構名稱來解決此問題。 此外，取消布建 advisor 套件會更容易。 因為 advisor 套件物件屬於 **dbo**以外的架構，所以可讓 SPA 使用較低的使用者權限來存取它們。
+在 SQL Server 資料庫中，預設架構名稱是 **dbo**。 資料庫擁有者認證通常是在 **dbo** 下操作資料庫物件時所需的認證。 如果我們未建立每個建議程式套件的架構，則兩個 advisor 套件可能會定義名稱相同的清單值。 這應該是不相關的，因為您可以引入架構名稱來解決此問題。 此外，取消布建 advisor 套件會更容易。 因為 advisor 套件物件屬於 **dbo** 以外的架構，所以可讓 SPA 使用較低的使用者權限來存取它們。
 
 一般報表腳本會執行下列動作：
 
@@ -876,7 +876,7 @@ create PROCEDURE [Microsoft.ServerPerformanceAdvisor.CoreOS.V2].[ReportScript] A
 
 ### <a name="set-rule-status"></a>設定規則狀態
 
-\[Dbo \] 。 \[SetNotification \] API 會設定規則狀態，讓您可以在 UI 中看到**成功**或**警告**圖示。
+\[Dbo \] 。 \[SetNotification \] API 會設定規則狀態，讓您可以在 UI 中看到 **成功** 或 **警告** 圖示。
 
 * @ruleName Nvarchar (50) 
 
@@ -1049,7 +1049,7 @@ VALUES (
 exec dbo.WriteSystemLog N'Any information you want to show to the system administrators , N Warning 
 ```
 
-第一個參數是您想要在記錄檔中顯示的訊息。 第二個參數是記錄層級。 第二個參數的有效輸入可能是 **資訊**、 **警告**或 **錯誤**。
+第一個參數是您想要在記錄檔中顯示的訊息。 第二個參數是記錄層級。 第二個參數的有效輸入可能是 **資訊**、 **警告** 或 **錯誤**。
 
 ### <a name="debug"></a>偵錯
 
@@ -1080,7 +1080,7 @@ SPA 主控台可在兩種模式中執行： Debug 或 Release。 發行模式是
 
     例如，輸出可能是：
 
-    Id | SessionId | AdvisoryPackageId | ReportStatusId | LastUpdatetime | ThresholdversionId
+    識別碼 | SessionId | AdvisoryPackageId | ReportStatusId | LastUpdatetime | ThresholdversionId
     :---: | :---: | :---: | :---: | :---: | :---:
     12 | 17 | 1 | 2 | 2011-05-11 05：35：24.387 | 1
 
@@ -1112,7 +1112,7 @@ SPA 主控台可在兩種模式中執行： Debug 或 Release。 發行模式是
 
 |                                                                 Pascal 大小寫                                                                 |                       駝峰式命名法的大小寫                        |             大寫             |
 |-----------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|-----------------------------------|
-| <ul><li>ProvisionMetadata.xml 中的名稱</li><li>預存程序</li><li>函數</li><li>視圖名稱</li><li>臨時表名稱</li></ul> | <ul><li>參數名稱</li><li>區域變數</li></ul> | 用於所有 SQL 保留關鍵字 |
+| <ul><li>ProvisionMetadata.xml 中的名稱</li><li>預存程序</li><li>函式</li><li>視圖名稱</li><li>臨時表名稱</li></ul> | <ul><li>參數名稱</li><li>區域變數</li></ul> | 用於所有 SQL 保留關鍵字 |
 
 ### <a name="other-recommendations"></a>其他建議
 
@@ -1150,7 +1150,7 @@ SPA 支援同時執行多個 advisor 套件。 當您想要同時查看 Internet
 
    1. 以最小間隔做為新的間隔。
 
-   2. 取得效能計數器的超級組。 例如，使用**進程 (\*) \\ % processor time**和**process (\*) \\ \* ， \\ 進程 (\*) \\ \\ *** 會傳回更多資料，因此會從合併的資料收集器集合中移除處理常式** (\*) \\ % 處理器時間**和**進程 (\*) \\ \\ ***。
+   2. 取得效能計數器的超級組。 例如，使用 **進程 (\*) \\ % processor time** 和 **process (\*) \\ \* ， \\ 進程 (\*) \\ \\*** 會傳回更多資料，因此會從合併的資料收集器集合中移除處理常式 **(\*) \\ % 處理器時間** 和 **進程 (\*) \\ \\***。
 
 ### <a name="collect-dynamic-data"></a>收集動態資料
 
@@ -1164,7 +1164,7 @@ SPA 在設計階段需要定義的資料收集器集合。 由於動態資料和
 Get-WmiObject -Namespace Root\Cimv2 -query "select PNPDeviceID FROM Win32_NetworkAdapter" | forEach-Object { Write-Output $_.PNPDeviceID }
 ```
 
-它會傳回網路介面卡物件的清單。 每個物件都有一個稱為 **PNPDeviceID**的屬性，它會維護相對的登錄機碼路徑。 以下是前一個查詢的範例輸出：
+它會傳回網路介面卡物件的清單。 每個物件都有一個稱為 **PNPDeviceID** 的屬性，它會維護相對的登錄機碼路徑。 以下是前一個查詢的範例輸出：
 
 ``` syntax
 ROOT\*ISatAP\0001
@@ -1173,7 +1173,7 @@ ROOT\*IPHTTPS\0000
 
 ```
 
-若要尋找**FriendlyName**值，請開啟 [登錄編輯程式]，並藉由結合**HKEY \_ LOCAL \_ MACHINE \\ SYSTEM \\ CurrentControlSet \\ Enum \\ **與上一個範例中的每一行，來流覽至登錄設定。 例如： **HKEY \_ LOCAL \_ MACHINE \\ SYSTEM \\ CurrentControlSet \\ Enum \\ ROOT \\ \* IPHTTPS \\ 0000**。
+若要尋找 **FriendlyName** 值，請開啟 [登錄編輯程式]，並藉由結合 **HKEY \_ LOCAL \_ MACHINE \\ SYSTEM \\ CurrentControlSet \\ Enum \\** 與上一個範例中的每一行，來流覽至登錄設定。 例如： **HKEY \_ LOCAL \_ MACHINE \\ SYSTEM \\ CurrentControlSet \\ Enum \\ ROOT \\ \* IPHTTPS \\ 0000**。
 
 若要將先前的步驟轉譯成 SPA 布建中繼資料，請在下列程式碼範例中新增腳本：
 
@@ -1189,7 +1189,7 @@ ROOT\*IPHTTPS\0000
 </managementpaths>
 ```
 
-在此範例中，您會先在 managementpaths 下新增 WMI 查詢，然後定義索引鍵名稱 **NetworkAdapter**。 然後您會新增登錄機碼，並使用 " ** (NetworkAdapter. PNPDeviceID) **語法來參考**NetworkAdapter** 。
+在此範例中，您會先在 managementpaths 下新增 WMI 查詢，然後定義索引鍵名稱 **NetworkAdapter**。 然後您會新增登錄機碼，並使用 " **(NetworkAdapter. PNPDeviceID)** 語法來參考 **NetworkAdapter** 。
 
 下表定義 SPA 中的資料收集器是否支援動態資料，以及是否可供其他資料收集器參考：
 
@@ -1234,7 +1234,7 @@ ETW | 否 | 否
 
 ### <a name="versioning-limitations"></a>版本控制限制
 
-SPA 支援重設和次要版本更新。 這些進程會使用相同的演算法。 程式是重新整理所有資料庫物件和臨界值設定，但保留現有的資料。 這可以升級為較高的版本，或降級為較低的版本。 選取 advisor 套件，然後在 SPA 的 [設定建議程式**套件**] 對話方塊中按一下 [**重設**]，以重設或套用或更新。
+SPA 支援重設和次要版本更新。 這些進程會使用相同的演算法。 程式是重新整理所有資料庫物件和臨界值設定，但保留現有的資料。 這可以升級為較高的版本，或降級為較低的版本。 選取 advisor 套件，然後在 SPA 的 [設定建議程式 **套件**] 對話方塊中按一下 [**重設**]，以重設或套用或更新。
 
 這項功能主要是用於次要更新。 您無法大幅變更 UI 顯示元素。 如果您想要進行重大變更，則必須建立不同的 advisor 套件。 您應在 advisor 套件名稱中包含主要版本。
 
@@ -1269,7 +1269,7 @@ SPA 支援重設和次要版本更新。 這些進程會使用相同的演算法
 </listValue>
 ```
 
-**DescriptionColumn**屬性是指資料行的名稱。 在此範例中，[描述] 資料行不會顯示為實體資料行。 但是，當您將滑鼠移至第一個資料行的每個資料列時，它會顯示為工具提示。
+**DescriptionColumn** 屬性是指資料行的名稱。 在此範例中，[描述] 資料行不會顯示為實體資料行。 但是，當您將滑鼠移至第一個資料行的每個資料列時，它會顯示為工具提示。
 
 建議您將資料來源顯示給使用者。 以下是用來顯示資料來源的格式：
 

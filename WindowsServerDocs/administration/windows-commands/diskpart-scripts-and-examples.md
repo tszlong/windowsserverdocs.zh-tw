@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 820b83ab9c6c70c24c10c16678da9bf90892135f
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 51ebd58874e2bf56c391fe7ec9a6d257ab5a0567
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89635139"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864207"
 ---
 # <a name="diskpart-scripts-and-examples"></a>diskpart 腳本和範例
 
@@ -49,7 +49,7 @@ diskpart /s scriptname.txt > logfile.txt
 
 - 當您將 **diskpart** 命令當作腳本的一部分使用時，建議您將所有的 diskpart 作業一起完成為單一 diskpart 腳本的一部分。 您可以執行連續的 diskpart 腳本，但是在後續的腳本中再次執行 **diskpart** 命令之前，您必須在每個腳本之間至少允許15秒，才能完成先前的執行。 否則，後續的指令檔可能會失敗。 您可以在連續的 diskpart 腳本之間新增暫停，方法是將 `timeout /t 15` 命令連同您的 diskpart 腳本新增至您的批次檔。
 
-- 當 diskpart 啟動時，會在命令提示字元中顯示 diskpart 版本與電腦名稱稱。 根據預設，如果在嘗試執行腳本工作時，diskpart 遇到錯誤，diskpart 會停止處理腳本，並顯示錯誤碼 (除非您指定了 **noerr** 參數) 。 但是，不論您是否使用了 **noerr** 參數，diskpart 一律會在遇到語法錯誤時傳回錯誤。 **Noerr**參數可讓您執行有用的工作，例如使用單一腳本刪除所有磁片上的所有磁碟分割，而不考慮磁片總數。
+- 當 diskpart 啟動時，會在命令提示字元中顯示 diskpart 版本與電腦名稱稱。 根據預設，如果在嘗試執行腳本工作時，diskpart 遇到錯誤，diskpart 會停止處理腳本，並顯示錯誤碼 (除非您指定了 **noerr** 參數) 。 但是，不論您是否使用了 **noerr** 參數，diskpart 一律會在遇到語法錯誤時傳回錯誤。 **Noerr** 參數可讓您執行有用的工作，例如使用單一腳本刪除所有磁片上的所有磁碟分割，而不考慮磁片總數。
 
 ## <a name="additional-references"></a>其他參考資料
 
@@ -59,4 +59,4 @@ diskpart /s scriptname.txt > logfile.txt
 
 - [範例：使用 Windows PE 和 DiskPart 設定以 BIOS/MBR 為基礎的硬碟磁碟分割](/previous-versions/windows/it-pro/windows-8.1-and-8/hh825677(v=win.10))
 
-- [Windows PowerShell 中的儲存體 Cmdlet](/powershell/module/storage/?view=win10-ps)
+- [Windows PowerShell 中的儲存體 Cmdlet](/powershell/module/storage/)

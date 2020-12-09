@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 9fb3883403dd0f4a88b612655247c4f4a2df7de7
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 7ea0cd5c73ad9b415d121fb7f6e3ffee317b07b3
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89635045"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864217"
 ---
 # <a name="dfsutil"></a>dfsutil.exe
 
@@ -22,7 +22,7 @@ Dfsutil 命令會管理 DFS 命名空間、伺服器和用戶端。
 
 ## <a name="functionality-available-in-powershell"></a>PowerShell 提供的功能
 
-[DFSN](/powershell/module/dfsn/?view=win10-ps) PowerShell 模組會提供對等的功能給下列 dfsutil 參數。
+[DFSN](/powershell/module/dfsn/) PowerShell 模組會提供對等的功能給下列 dfsutil 參數。
 
 | 參數 | 描述 |
 | --------- | ----------- |

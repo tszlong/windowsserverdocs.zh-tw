@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 69e0e28a-98ae-4ade-bd27-ce2ad7eb310f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 85d622094ac81aea8a2d90e4ef6eb5d226d0b290
-ms.sourcegitcommit: 50b295002d60f4183f452cc169f0768a347830ea
+ms.openlocfilehash: 3f359656a42100e79c475a0ca3f55251731f8222
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91248581"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865097"
 ---
 # <a name="configure-and-view-vlan-settings-on-hyper-v-virtual-switch-ports"></a>設定和檢視 Hyper-V 虛擬交換器連接埠上的 VLAN 設定
 
@@ -55,7 +55,7 @@ Set-VMNetworkAdapterVlan <VM-name|-managementOS> -Access -VlanID <vlan-value>
 
 如需有關本主題中所述 Windows PowerShell 命令的詳細資訊，請參閱下列主題：
 
-- [設定-Set-vmnetworkadapterisolation](/powershell/module/hyper-v/set-vmnetworkadapterisolation?view=win10-ps)
-- [Set-vmnetworkadapterisolation](/powershell/module/hyper-v/get-vmnetworkadapterisolation?view=win10-ps)
-- [設定-Get-vmnetworkadaptervlan](/powershell/module/hyper-v/set-vmnetworkadaptervlan?view=win10-ps)
-- [Get-vmnetworkadaptervlan](/powershell/module/hyper-v/get-vmnetworkadaptervlan?view=win10-ps)
+- [設定-Set-vmnetworkadapterisolation](/powershell/module/hyper-v/set-vmnetworkadapterisolation)
+- [Set-vmnetworkadapterisolation](/powershell/module/hyper-v/get-vmnetworkadapterisolation)
+- [設定-Get-vmnetworkadaptervlan](/powershell/module/hyper-v/set-vmnetworkadaptervlan)
+- [Get-vmnetworkadaptervlan](/powershell/module/hyper-v/get-vmnetworkadaptervlan)

@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 3e2a28ce747df9223e609392ab46abe2e947bb92
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 0270039fcbc9f99ff2569635ddd75918baed783e
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89640614"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865407"
 ---
 # <a name="msdt"></a>msdt
 
@@ -29,7 +29,7 @@ msdt </id <name> | /path <name> | /cab < name>> <</parameter> [options] … <par
 | 參數 | 描述 |
 | --------- | ----------- |
 | /id `<packagename>` | 指定要執行的診斷封裝。 如需可用封裝的清單，請參閱 [可用的疑難排解套件](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/ee424379(v=ws.11)#available-troubleshooting-packs)。 |
-| /path `<directory|.diagpkg file|.diagcfg file>` | 指定診斷封裝的完整路徑。 如果您指定目錄，目錄必須包含診斷套件。 您無法搭配 * */id * *、 **/dci**或 **/cab**參數使用 **/path**參數。 |                                                                                   |
+| /path `<directory|.diagpkg file|.diagcfg file>` | 指定診斷封裝的完整路徑。 如果您指定目錄，目錄必須包含診斷套件。 您無法搭配 * */id * *、 **/dci** 或 **/cab** 參數使用 **/path** 參數。 |                                                                                   |
 | /dci `<passkey>` | 會預先填入通行金鑰欄位。 只有當支援提供者提供密碼金鑰時，才會使用此參數。 |
 | /dt `<directory>` | 顯示指定目錄中的疑難排解記錄。 診斷結果會儲存在使用者的 **%LOCALAPPDATA%\Diagnostics** 或 **%LOCALAPPDATA%\ElevatedDiagnostics** 目錄中。 |
 | /af `<answerfile>` | 指定 XML 格式的回應檔案，其中包含一或多個診斷互動的回應。 |
@@ -46,7 +46,7 @@ msdt </id <name> | /path <name> | /cab < name>> <</parameter> [options] … <par
 | 程式碼 | 描述 |
 | ---- | ----------- |
 | -1 | **中斷：** 疑難排解程式在疑難排解工作完成之前已關閉。 |
-| 0 | 已**修正：** 疑難排解員已識別並修正至少一個根本原因，而且沒有任何根本原因會維持不固定狀態。 |
+| 0 | 已 **修正：** 疑難排解員已識別並修正至少一個根本原因，而且沒有任何根本原因會維持不固定狀態。 |
 | 1 | **存在但未修正：** 疑難排解員找出一個或多個保持不固定狀態的根本原因。 即使已修正另一個根本原因，也會傳回此程式碼。 |
 | 2 | **找不到：** 疑難排解員未找出任何根本原因。 |
 
@@ -56,4 +56,4 @@ msdt </id <name> | /path <name> | /cab < name>> <</parameter> [options] … <par
 
 - [可用的疑難排解套件](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/ee424379(v=ws.11)#available-troubleshooting-packs)
 
-- [TroubleshootingPack Powershell 參考](/powershell/module/troubleshootingpack/?view=win10-ps)
+- [TroubleshootingPack Powershell 參考](/powershell/module/troubleshootingpack/)

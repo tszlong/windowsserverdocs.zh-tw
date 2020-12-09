@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: pavel
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 799598223812f5992db0354780424f7da13033ea
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: 31cc9f964ac7ea2d95d5240376ea2ce7fb46fcee
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90078005"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864327"
 ---
 # <a name="cache-and-memory-manager-improvements"></a>快取和記憶體管理員改進
 
@@ -18,7 +18,7 @@ ms.locfileid: "90078005"
 
 ## <a name="cache-manager-improvements-in-windows-server-2016"></a>Windows Server 2016 中的快取管理員改進
 快取管理員也加入了對真正非同步快取讀取的支援。
-如果應用程式高度依賴非同步快取讀取，這可能會改善應用程式的效能。雖然大部分的內建檔案系統都支援非同步快取讀取一段時間，但由於與處理執行緒集區和檔案系統內部工作佇列相關的各種設計選項，通常會有效能上的限制。快取管理員可透過核心適當的支援，從檔案系統中隱藏所有線程集區和工作佇列管理的複雜度，使其更有效率地處理非同步快取的讀取。快取管理員針對每個 (系統所支援的一組控制項 >datastructures，支援最大) VHD 的嵌套層級，以最大化平行處理原則。
+如果應用程式高度依賴非同步快取讀取，這可能會改善應用程式的效能。  雖然大部分的內建檔案系統都支援非同步快取讀取一段時間，但由於與處理執行緒集區和檔案系統內部工作佇列相關的各種設計選項，通常會有效能上的限制。  快取管理員可透過核心適當的支援，從檔案系統中隱藏所有線程集區和工作佇列管理的複雜度，使其更有效率地處理非同步快取的讀取。快取管理員針對每個 (系統所支援的一組控制項 >datastructures，支援最大) VHD 的嵌套層級，以最大化平行處理原則。
 
 
 ## <a name="cache-manager-improvements-in-windows-server-2012"></a>Windows Server 2012 中的快取管理員改進
@@ -33,4 +33,4 @@ ms.locfileid: "90078005"
 
 -   設定為使用 AWE 或大型頁面的 Microsoft SQL Server (大部分的記憶體都是私用的，但無法分頁) 
 
-預設會停用頁面合併，但可使用 [mmagent.ps1](/powershell/module/mmagent/enable-mmagent?view=win10-ps) Windows PowerShell Cmdlet 來啟用。 Windows Server 2012 中已新增頁面合併。
+預設會停用頁面合併，但可使用 [mmagent.ps1](/powershell/module/mmagent/enable-mmagent) Windows PowerShell Cmdlet 來啟用。 Windows Server 2012 中已新增頁面合併。

@@ -6,12 +6,12 @@ author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 0aeb1f4b-2e75-430b-9557-fe64738c4992
 ms.date: 8/16/2016
-ms.openlocfilehash: 68953fe3efaba64c853e4da83d4ca47ff13ca00a
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 2771a9814fb9061756626466f446ca6131580dc2
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90745813"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864657"
 ---
 # <a name="replica-servers-should-be-configured-to-identify-specific-primary-servers-authorized-to-send-replication-traffic"></a>應設定複本伺服器，以識別授權傳送複寫流量的特定主伺服器
 
@@ -24,7 +24,7 @@ ms.locfileid: "90745813"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 
@@ -34,7 +34,7 @@ ms.locfileid: "90745813"
 ### <a name="impact"></a>影響
 *所有主伺服器的所有複寫都會儲存在一個位置，而這可能會導致隱私權或安全性問題。*
 
-## <a name="resolution"></a>解決方案
+## <a name="resolution"></a>解決方法
 *使用 Hyper-v 管理員為特定的主伺服器建立新的授權專案，並為每個伺服器指定個別的儲存位置。您可以使用萬用字元，將主伺服器分組為每個授權專案的集合。*
 
 #### <a name="create-authorization-entries-using-hyper-v-manager"></a>使用 Hyper-v 管理員建立授權專案
@@ -45,7 +45,7 @@ ms.locfileid: "90745813"
 
 3.  在流覽窗格中 **，按一下 [** 複寫設定]。
 
-4.  在 [ **授權與存放裝置**] 下，按一下 **[允許從指定的伺服器**複寫]。
+4.  在 [ **授權與存放裝置**] 下，按一下 **[允許從指定的伺服器** 複寫]。
 
 5.  在伺服器清單底下，按一下 [ **新增**]。
 
@@ -80,4 +80,4 @@ New-VMReplicationAuthorizationEntry server01.domain01.contoso.com D:\ReplicaVMSt
 ```
 
 ## <a name="see-also"></a>另請參閱
-[新 New-vmreplicationauthorizationentry](/powershell/module/hyper-v/new-vmreplicationauthorizationentry?view=win10-ps)
+[新 New-vmreplicationauthorizationentry](/powershell/module/hyper-v/new-vmreplicationauthorizationentry)

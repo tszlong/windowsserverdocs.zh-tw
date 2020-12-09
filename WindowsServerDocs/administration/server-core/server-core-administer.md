@@ -7,12 +7,12 @@ author: pronichkin
 ms.author: artemp
 ms.localizationpriority: medium
 ms.date: 12/18/2018
-ms.openlocfilehash: 089d6437bd8c246bae3da5898870ea9cdd442656
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: 2cdddf706d03aa5b1aa1239b58fd4d8a9f4beed2
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90077865"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864317"
 ---
 # <a name="administer-a-server-core-server"></a>管理 Server Core 伺服器
 
@@ -33,7 +33,7 @@ ms.locfileid: "90077865"
 若要設定靜態 IP 位址，請執行下列動作：
 
 1. 執行 **Get-get-netipinterface**。
-2. 請注意 IP 介面或**InterfaceDescription**字串的**IfIndex**資料行中的數位。 如果您有一個以上的網路介面卡，請記下您想要設定其靜態 IP 位址之介面的對應數位或字串。
+2. 請注意 IP 介面或 **InterfaceDescription** 字串的 **IfIndex** 資料行中的數位。 如果您有一個以上的網路介面卡，請記下您想要設定其靜態 IP 位址之介面的對應數位或字串。
 3. 執行下列 Cmdlet 來設定靜態 IP 位址：
 
    ```powershell
@@ -73,18 +73,18 @@ ms.locfileid: "90077865"
    ```
    net localgroup administrators /add <DomainName>\<UserName>
    ```
-3. 將電腦重新開機。 您可以執行 **重新開機電腦**來執行此動作。
+3. 重新啟動電腦。 您可以執行 **重新開機電腦** 來執行此動作。
 
 ### <a name="rename-the-server"></a>重新命名伺服器
 使用下列步驟來重新命名伺服器。
 
 1. 使用 **hostname** 或 **ipconfig** 命令判斷伺服器的目前名稱。
-2. 執行**重新命名-電腦- \<new_name\> ComputerName **。
-3. 將電腦重新開機。
+2. 執行 **重新命名-電腦- \<new_name\> ComputerName**。
+3. 重新啟動電腦。
 
 ### <a name="activate-the-server"></a>啟用伺服器
 
-執行**slmgr.vbs – ipk \<productkey\> **。 然後執行 **slmgr.vbs – ato**。 如果啟用成功，您將不會收到訊息。
+執行 **slmgr.vbs – ipk \<productkey\>**。 然後執行 **slmgr.vbs – ato**。 如果啟用成功，您將不會收到訊息。
 
 > [!NOTE]
 > 您也可以透過電話、使用 [ (KMS) server 的金鑰管理服務](../../get-started/server-2016-activation.md)，或從遠端啟用伺服器。 若要從遠端啟用，請從遠端電腦執行下列 Cmdlet：
@@ -95,11 +95,11 @@ ms.locfileid: "90077865"
 
 ### <a name="configure-windows-firewall"></a>設定 Windows 防火牆
 
-您可以在 Server Core 電腦上，在本機使用 Windows PowerShell Cmdlet 和指令檔設定 Windows 防火牆。 如需可用於設定 Windows 防火牆的 Cmdlet，請參閱 [NetSecurity](/powershell/module/netsecurity/?view=win10-ps) 。
+您可以在 Server Core 電腦上，在本機使用 Windows PowerShell Cmdlet 和指令檔設定 Windows 防火牆。 如需可用於設定 Windows 防火牆的 Cmdlet，請參閱 [NetSecurity](/powershell/module/netsecurity/) 。
 
 ### <a name="enable-windows-powershell-remoting"></a>啟用 Windows PowerShell 遠端執行功能
 
-您可以啟用 Windows PowerShell 遠端執行功能，這個功能可讓在一部電腦上輸入的 Windows PowerShell 命令在另一部電腦上執行。 使用 **>enable-psremoting**啟用 Windows PowerShell 遠端處理。
+您可以啟用 Windows PowerShell 遠端執行功能，這個功能可讓在一部電腦上輸入的 Windows PowerShell 命令在另一部電腦上執行。 使用 **>enable-psremoting** 啟用 Windows PowerShell 遠端處理。
 
 如需詳細資訊，請參閱 [關於遠端常見問題](/powershell/module/microsoft.powershell.core/about/about_remote_faq?view=powershell-5.1)。
 
@@ -111,7 +111,7 @@ ms.locfileid: "90077865"
 |                             Task                              |                                                                                                                                                                                                                 Command                                                                                                                                                                                                                 |
 |---------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |             設定本機系統管理密碼             |                                                                                                                                                                                                      **net 使用者系統管理員**\*                                                                                                                                                                                                      |
-|                  將電腦加入網域                  |                                                                                                                                                       **netdom join% computername%** **/domain： \<domain\> /userd： \<domain\\username\> /passwordd：**\* <br> 將電腦重新開機。                                                                                                                                                        |
+|                  將電腦加入網域                  |                                                                                                                                                       **netdom join% computername%** **/domain： \<domain\> /userd： \<domain\\username\> /passwordd：**\* <br> 重新啟動電腦。                                                                                                                                                        |
 |              確認網域已變更              |                                                                                                                                                                                                                 **set**                                                                                                                                                                                                                 |
 |                從網域移除電腦                |                                                                                                                                                                                                   **netdom 移除 \<computername\>**                                                                                                                                                                                                    |
 |         將使用者新增至本機系統管理員群組          |                                                                                                                                                                                       **net localgroup 系統管理員/add \<domain\\username\>**                                                                                                                                                                                       |
@@ -120,7 +120,7 @@ ms.locfileid: "90077865"
 |               將群組新增至本機電腦               |                                                                                                                                                                                                 **net localgroup \<group name\> /add**                                                                                                                                                                                                  |
 |          變更加入網域之電腦的名稱          |                                                                                                                                                           **netdom renamecomputer% computername%/NewName： \<new computer name\> /userd： \<domain\\username\> /passwordd：**\*                                                                                                                                                            |
 |                 確認新的電腦名稱                 |                                                                                                                                                                                                                 **set**                                                                                                                                                                                                                 |
-|         變更工作群組中電腦的名稱         |                                                                                                                                                                **netdom renamecomputer \<currentcomputername\> /NewName：\<newcomputername\>** <br>將電腦重新開機。                                                                                                                                                                 |
+|         變更工作群組中電腦的名稱         |                                                                                                                                                                **netdom renamecomputer \<currentcomputername\> /NewName：\<newcomputername\>** <br>重新啟動電腦。                                                                                                                                                                 |
 |                停用分頁檔管理                 |                                                                                                                                                                        **在 name = " \<computername\> " Set AutomaticManagedPagefile = False 的情況下，wmic**                                                                                                                                                                         |
 |                   設定分頁檔                   |                                                            **wmic pagefileset，其中 name = " \<path/filename\> " Set InitialSize = \<initialsize\> ，MaximumSize =\<maxsize\>** <br>其中 *path/filename* 是分頁檔案的路徑和名稱， *initialsize* 是分頁檔案的開始大小（以位元組為單位），而 *maxsize* 是分頁檔的大小上限（以位元組為單位）。                                                             |
 |                 變更到靜態 IP 位址                 | **ipconfig/all** <br>請記錄相關資訊，或將其重新導向至文字檔 (**ipconfig/all >ipconfig.txt**) 。<br>**netsh interface ipv4 show interfaces**<br>確認有介面清單。<br>**netsh interface ipv4 set address \<Name ID from interface list\> source = static address = \<preferred IP address\> gateway =\<gateway address\>**<br>執行 **ipconfig/all** ，確認 [DHCP 已啟用] 設定為 [ **否**]。 |
@@ -128,7 +128,7 @@ ms.locfileid: "90077865"
 | 從靜態 IP 位址變更為 DHCP 提供的 IP 位址 |                                                                                                                                      **netsh interface ipv4 set address name = \<IP address of local system\> source = DHCP** <br>執行 **ipconfig/all** 來確認 [DCHP 已啟用] 設定為 **[是]**。                                                                                                                                      |
 |                      輸入產品金鑰                      |                                                                                                                                                                                                   **slmgr.vbs – ipk \<product key\>**                                                                                                                                                                                                    |
 |                  從本機啟用伺服器                  |                                                                                                                                                                                                           **slmgr.vbs -ato**                                                                                                                                                                                                            |
-|                 從遠端啟用伺服器                  |                                            **cscript slmgr.vbs-ipk \<product key\>\<server name\>\<username\>\<password\>** <br>**cscript slmgr.vbs-ato \<servername\> \<username\>\<password\>** <br>藉由執行**cscript slmgr.vbs**來取得電腦的 GUID-已執行 <br> 執行**cscript slmgr.vbs-dli \<GUID\> ** <br>確認 [授權狀態] 設定為 [已 **啟用授權 (]) **。                                             |
+|                 從遠端啟用伺服器                  |                                            **cscript slmgr.vbs – ipk \<product key\>\<server name\>\<username\>\<password\>** <br>**cscript slmgr.vbs-ato \<servername\> \<username\>\<password\>** <br>藉由執行 **cscript slmgr.vbs** 來取得電腦的 GUID <br> 執行 **cscript slmgr.vbs-dli \<GUID\>** <br>確認 [授權狀態] 設定為 [已 **啟用授權 (])**。                                             |
 
 ### <a name="networking-and-firewall"></a>網路功能和防火牆
 
@@ -165,8 +165,8 @@ ms.locfileid: "90077865"
 |                               Task                               |                                                                                                                                                                                                             Command                                                                                                                                                                                                              |
 |------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                    列出正在執行的服務                     |                                                                                                                                                                                                  **sc 查詢** 或 **net start**                                                                                                                                                                                                   |
-|                         啟動服務                          |                                                                                                                                                                                 **sc start \<service name\> **或**net start \<service name\> **                                                                                                                                                                                  |
-|                          停止服務                          |                                                                                                                                                                                  **sc stop \<service name\> **或**net stop \<service name\> **                                                                                                                                                                                   |
+|                         啟動服務                          |                                                                                                                                                                                 **sc start \<service name\>** 或 **net start \<service name\>**                                                                                                                                                                                  |
+|                          停止服務                          |                                                                                                                                                                                  **sc stop \<service name\>** 或 **net stop \<service name\>**                                                                                                                                                                                   |
 | 擷取執行中應用程式與相關處理程序的清單 |                                                                                                                                                                                                           **tasklist**                                                                                                                                                                                                           |
 |                        啟動工作管理員                        |                                                                                                                                                                                                           **taskmgr**                                                                                                                                                                                                            |
 |    建立和管理事件追蹤會話和效能記錄    | 若要建立計數器、追蹤、設定資料收集或 API： **logman 建立** <br>若要查詢資料收集器屬性： **logman query** <br>若要啟動或停止資料收集： **logman 開始 \| 停止** <br>刪除收集器： **logman delete** <br> 更新收集器的屬性： **logman 更新** <br>若要從 XML 檔案匯入資料收集器集合，或將它匯出至 XML 檔案： **logman 匯入 \| 匯出** |
@@ -200,5 +200,5 @@ ms.locfileid: "90077865"
 
 |Task|Command|
 |----|-------|
-|新增新硬體裝置的驅動程式|將驅動程式複製到位於% homedrive% 的資料夾 \\ \<driver folder\> 。 執行**pnputil-i-a% homedrive% \\ \<driver folder\> \\ \<driver\> .inf**|
-|移除硬體裝置的驅動程式|如需載入的驅動程式清單，請執行 **sc query type = driver**。 然後執行**sc delete \<service_name\> **|
+|新增新硬體裝置的驅動程式|將驅動程式複製到位於% homedrive% 的資料夾 \\ \<driver folder\> 。 執行 **pnputil-i-a% homedrive% \\ \<driver folder\> \\ \<driver\> .inf**|
+|移除硬體裝置的驅動程式|如需載入的驅動程式清單，請執行 **sc query type = driver**。 然後執行 **sc delete \<service_name\>**|

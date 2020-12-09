@@ -6,12 +6,12 @@ author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 8aa8a9a5-e3fa-4c9b-8331-ba5a3de22429
 ms.date: 8/16/2016
-ms.openlocfilehash: b6099410d4d5e043387594022e8bb376d5fb52f7
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 00312413c8da02ce5221767667ecd941f0095776
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746673"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865157"
 ---
 # <a name="the-wfp-virtual-switch-extension-should-be-enabled-if-it-is-required-by-third-party-extensions"></a>應該啟用協力廠商擴充功能所需的 WFP 虛擬交換器擴充功能
 
@@ -24,7 +24,7 @@ ms.locfileid: "90746673"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 
@@ -52,4 +52,4 @@ Enable-VMSwitchExtension -VMSwitchName External -Name Microsoft Windows Filterin
 ```
 
 ## <a name="see-also"></a>另請參閱
-[啟用-Disable-vmswitchextension](/powershell/module/hyper-v/enable-vmswitchextension?view=win10-ps)
+[啟用-Disable-vmswitchextension](/powershell/module/hyper-v/enable-vmswitchextension)

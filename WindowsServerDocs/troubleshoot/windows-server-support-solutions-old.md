@@ -6,12 +6,12 @@ ms.date: 03/16/2018
 ms.topic: article
 author: kaushika-msft
 ms.author: elizapo
-ms.openlocfilehash: ba9654fd60534e53211d65cfd2006320cea20383
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 7bc533063c52af2087d822a428458ba8efab94fc
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997278"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864667"
 ---
 # <a name="top-support-solutions-for-windows-server-2016"></a>Windows Server 2016 的最佳支援解決方案
 
@@ -28,9 +28,9 @@ Microsoft 會定期發行 Windows Server 的更新及解決方案。 為了確�
 - [Windows 10 版本 1607 及 Windows Server 2016 的服務堆疊更新：2017 年 8 月 8 日](https://support.microsoft.com/help/4035631)
 - [適用於升級至 Windows 10 版本 1607 及 Windows Server 2016 的相容性更新：2017 年 8 月 3 日](https://support.microsoft.com/help/4033524)
 - [Windows Azure VM 不支援就地系統升級](https://support.microsoft.com/help/4014997)
-- [Windows Server 2016 的升級和轉換選項](../get-started/supported-upgrade-paths.md)
+- [Windows Server 2016 的升級與轉換選項](../get-started/supported-upgrade-paths.md)
 - [Windows Server 2016 的伺服器角色升級和移轉矩陣](../get-started/server-role-upgradeability-table.md)
-- [Windows Server 安裝和升級](../get-started/installation-and-upgrade.md)
+- [Windows Server 安裝與升級](../get-started/installation-and-upgrade.md)
 - [版本資訊：Windows Server 2016 中的重要問題](../get-started/windows-server-2016-ga-release-notes.md)
 - [移至 Windows Server 2016 的建議](../get-started/recommendations-moving-to-server2016.md)
 
@@ -41,12 +41,12 @@ Microsoft 會定期發行 Windows Server 的更新及解決方案。 為了確�
 - [如何疑難排解金鑰管理服務 (KMS)](/previous-versions/tn-archive/ee939272(v=technet.10))
 - [大量啟用疑難排解](/previous-versions/tn-archive/ff793439(v=technet.10))
 - [啟用錯誤碼](/previous-versions/ff793399(v=technet.10))
-- [Windows 安裝可能會失敗，並出現錯誤：「輸入的產品金鑰不符合任何可供安裝的 Windows 映像。輸入不同的產品金鑰」](https://support.microsoft.com/help/2796988/windows-8-or-windows-server-2012-installation-may-fail-with-error-mess)
+- [Windows 安裝可能會失敗，並出現錯誤：「輸入的產品金鑰與任何可用來安裝的 Windows 映像不符。輸入不同的產品金鑰」](https://support.microsoft.com/help/2796988/windows-8-or-windows-server-2012-installation-may-fail-with-error-mess)
 
 ## <a name="solutions-related-to-dcpromo-and-installing-domain-controllers"></a>與 DCPromo 及安裝網域控制站相關的解決方案
 - [Active Directory 和 Active Directory 網域服務連接埠需求](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772723(v=ws.10))
 - [Active Directory 防火牆埠–讓我們試著簡化](http://blogs.msmvps.com/acefekay/2011/11/01/active-directory-firewall-ports-let-s-try-to-make-this-simple/)
-- [Windows Server 2016 的 Exchange Server 支援](/Exchange/plan-and-deploy/supportability-matrix?view=exchserver-2019)
+- [Windows Server 2016 的 Exchange Server 支援](/Exchange/plan-and-deploy/supportability-matrix)
 - [使用 Ntdsutil.exe 將 FSMO 角色傳輸或抓取到網域控制站。](https://support.microsoft.com/kb/255504)
 - [疑難排解網域控制站部署](../identity/ad-ds/deploy/troubleshooting-domain-controller-deployment.md)
 - [Active Directory 安裝精靈問題疑難排解](/previous-versions/windows/it-pro/windows-2000-server/bb727058(v=technet.10))

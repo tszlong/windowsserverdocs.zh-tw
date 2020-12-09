@@ -5,12 +5,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 05/05/2020
 ms.topic: article
-ms.openlocfilehash: c70c117716f5e60a75182a7529a39daa46c796b1
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ece40ea47c78c1d45cf55ff9daec551d940276e1
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87942923"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865147"
 ---
 # <a name="build-plug-ins-with-ad-fs-2019-risk-assessment-model"></a>使用 AD FS 2019 風險評估模型建置外掛程式
 
@@ -22,7 +22,7 @@ ms.locfileid: "87942923"
 
 模型可讓您在 AD FS authentication 管線的三個階段中的任一個外掛程式程式碼，如下所示
 
-![model](media/ad-fs-risk-assessment-model/risk1.png)
+![模型](media/ad-fs-risk-assessment-model/risk1.png)
 
 1.    **要求收到的階段** ：當 AD FS 收到驗證要求（亦即使用者輸入認證之前）時，可讓建立外掛程式允許或封鎖要求。 您可以在這個階段使用要求內容 (例如用戶端 IP、Http 方法、proxy 伺服器 DNS 等等 ) 來執行風險評估。 例如，您可以建立外掛程式以從要求內容讀取 IP，並在 IP 位於具風險 Ip 的預先定義清單中時封鎖驗證要求。
 
@@ -56,7 +56,7 @@ ms.locfileid: "87942923"
    git clone https://github.com/Microsoft/adfs-sample-RiskAssessmentModel-RiskyIPBlock
    ```
 
-2. 在 AD FS 伺服器上的任何位置建立 **.csv**檔案 (在我的案例中，我在**C:\extensions**) 建立了**authconfigdb.csv**檔案，然後將您要封鎖的 ip 新增至這個檔案。
+2. 在 AD FS 伺服器上的任何位置建立 **.csv** 檔案 (在我的案例中，我在 **C:\extensions**) 建立了 **authconfigdb.csv** 檔案，然後將您要封鎖的 ip 新增至這個檔案。
 
    範例外掛程式將會封鎖來自此檔案中所列外部網路 **ip** 的任何驗證要求。
 
@@ -77,20 +77,20 @@ ms.locfileid: "87942923"
    >[!NOTE]
    >在我的案例中，我會在 AD FS 伺服器本身上建立外掛程式。 如果您的開發環境位於不同的伺服器上，請 `Microsoft.IdentityServer.dll` 從 AD FS server 上的 AD FS 安裝資料夾，複製到您的開發箱。</br>
 
-   ![model](media/ad-fs-risk-assessment-model/risk4.png)
+   ![模型](media/ad-fs-risk-assessment-model/risk4.png)
 
    c.    確定已選取核取方塊之後，請按一下 [**參考管理員**] 視窗上的 **[確定**] `Microsoft.IdentityServer.dll`</br>
    ![model](media/ad-fs-risk-assessment-model/risk5.png)
 
 6. 所有類別和參考現在都已就緒，可進行組建。   不過，由於此專案的輸出是 dll，因此必須將它安裝到 AD FS 伺服器的 **全域組件快取**（GAC）中，而且必須先簽署 dll。 以下步驟可以達到此目的：
 
-   a.    以**滑鼠右鍵按一下**專案的名稱 ThreatDetectionModule。 從功能表按一下 [ **屬性**]。</br>
+   a.    以 **滑鼠右鍵按一下** 專案的名稱 ThreatDetectionModule。 從功能表按一下 [ **屬性**]。</br>
    ![model](media/ad-fs-risk-assessment-model/risk6.png)
 
-   b.    在 [ **屬性** ] 頁面上，按一下左側的 [簽署]，然後 **核**取標示為 **[簽署元件**] 的核取方塊。 從 [ **選擇強式名稱金鑰**檔：] 下拉式功能表中，選取 **<新增] >**</br>
+   b.    在 [ **屬性** ] 頁面上，按一下左側的 [簽署]，然後 **核** 取標示為 **[簽署元件**] 的核取方塊。 從 [ **選擇強式名稱金鑰** 檔：] 下拉式功能表中，選取 **<新增] >**</br>
    ![model](media/ad-fs-risk-assessment-model/risk7.png)
 
-   c.    在 [ **建立強式名稱金鑰] 對話方塊**中，輸入名稱 (您可以為金鑰選擇任何名稱) ，取消核取 [ **以密碼保護我的金鑰**檔] 核取方塊。 然後按一下 **[確定]**。</br>
+   c.    在 [ **建立強式名稱金鑰] 對話方塊** 中，輸入名稱 (您可以為金鑰選擇任何名稱) ，取消核取 [ **以密碼保護我的金鑰** 檔] 核取方塊。 然後按一下 **[確定]**。</br>
    ![model](media/ad-fs-risk-assessment-model/risk8.png)
 
    d.    儲存專案，如下所示</br>
@@ -115,14 +115,14 @@ ms.locfileid: "87942923"
 
 2. 開始 Visual Studio 的 **開發人員命令提示字元** ，然後移至包含 **sn.exe** (的目錄。在我的案例中，目錄是 **C:\Program Files (X86) \microsoft SDKs\Windows\v10.0A\bin\NETFX 4.7.2 Tools**) ![ model](media/ad-fs-risk-assessment-model/risk12.png)
 
-3. 使用 **-T**參數和檔案在我的案例中的位置) 模型來執行**SN**命令 `SN -T "C:\extensions\ThreatDetectionModule.dll"` (![](media/ad-fs-risk-assessment-model/risk13.png)</br>
+3. 使用 **-T** 參數和檔案在我的案例中的位置) 模型來執行 **SN** 命令 `SN -T "C:\extensions\ThreatDetectionModule.dll"` (![](media/ad-fs-risk-assessment-model/risk13.png)</br>
    此命令會為您提供公開金鑰 token (， **公開金鑰 token 為 714697626ef96b35**) 
 
-4. 將 dll 加入 AD FS server 的 **全域組件快取** 中，我們的最佳作法是為您的專案建立適當的安裝程式，並使用安裝程式將檔案加入至 GAC。 另一個解決方案是使用**Gacutil.exe** (您的開發電腦上[) 所](/dotnet/framework/tools/gacutil-exe-gac-tool)提供**Gacutil.exe**的詳細資訊。  由於我在 AD FS 的相同伺服器上有 visual studio，因此我將使用 **Gacutil.exe** ，如下所示
+4. 將 dll 加入 AD FS server 的 **全域組件快取** 中，我們的最佳作法是為您的專案建立適當的安裝程式，並使用安裝程式將檔案加入至 GAC。 另一個解決方案是使用 **Gacutil.exe** (您的開發電腦上 [) 所](/dotnet/framework/tools/gacutil-exe-gac-tool)提供 **Gacutil.exe** 的詳細資訊。  由於我在 AD FS 的相同伺服器上有 visual studio，因此我將使用 **Gacutil.exe** ，如下所示
 
    a.    在 Visual Studio 的開發人員命令提示字元，並移至在我的案例中包含 **Gacutil.exe** (的目錄，目錄是 **C:\Program Files (x86) \Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.7.2 Tools**) 
 
-   b.    在**Gacutil** `Gacutil /IF C:\extensions\ThreatDetectionModule.dll`) 模型的案例中執行 Gacutil 命令 ![ (](media/ad-fs-risk-assessment-model/risk14.png)
+   b.    在 **Gacutil** `Gacutil /IF C:\extensions\ThreatDetectionModule.dll`) 模型的案例中執行 Gacutil 命令 ![ (](media/ad-fs-risk-assessment-model/risk14.png)
 
    >[!NOTE]
    >如果您有 AD FS 伺服器陣列，則必須在伺服器陣列中的每個 AD FS 伺服器上執行上述程式。
@@ -155,7 +155,7 @@ ms.locfileid: "87942923"
 
 ### <a name="testing-the-plug-in"></a>測試外掛程式
 
-1. 開啟我們稍早在位置**C:\extensions**的案例中所建立的**authconfig.csv**檔案 () 然後新增您想要封鎖的**外部網路 ip** 。 每個 IP 都應該在不同的行上，且結尾不能有空格。</br>
+1. 開啟我們稍早在位置 **C:\extensions** 的案例中所建立的 **authconfig.csv** 檔案 () 然後新增您想要封鎖的 **外部網路 ip** 。 每個 IP 都應該在不同的行上，且結尾不能有空格。</br>
    ![model](media/ad-fs-risk-assessment-model/risk18.png)
 
 2. 儲存並關閉檔案
@@ -171,7 +171,7 @@ ms.locfileid: "87942923"
    Import-AdfsThreatDetectionModuleConfiguration -name "IPBlockPlugin" -ConfigurationFilePath "C:\extensions\authconfigdb.csv")
    ```
 
-4. 使用您在 **authconfig.csv**中新增的相同 IP，從伺服器起始驗證要求。
+4. 使用您在 **authconfig.csv** 中新增的相同 IP，從伺服器起始驗證要求。
 
    在此示範中，我將使用 [AD FS 協助宣告 X 光線工具](https://adfshelp.microsoft.com/ClaimsXray/TokenRequest) 來起始要求。 如果您想要使用 X 光線工具，請依照指示進行。
 
@@ -185,10 +185,10 @@ ms.locfileid: "87942923"
 
 ## <a name="plug-in-code-walkthrough"></a>外掛程式程式碼逐步解說
 
-`ThreatDetectionModule.sln`使用 Visual Studio 開啟專案，然後從畫面右側的**方案瀏覽器**開啟主要檔案**UserRiskAnalyzer.cs**</br>
+`ThreatDetectionModule.sln`使用 Visual Studio 開啟專案，然後從畫面右側的 **方案瀏覽器** 開啟主要檔案 **UserRiskAnalyzer.cs**</br>
 ![model](media/ad-fs-risk-assessment-model/risk17.png)
 
-檔案包含主要類別 UserRiskAnalyzer，它會執行抽象類別 [ThreatDetectionModule](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule?view=adfs-2019) 和介面 [IRequestReceivedThreatDetectionModule](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.irequestreceivedthreatdetectionmodule?view=adfs-2019) ，從要求內容中讀取 ip、將取得的 IP 與從 AD FS DB 載入的 ip 進行比較，並在 ip 相符時封鎖要求。 讓我們更詳細地探討這些類型
+檔案包含主要類別 UserRiskAnalyzer，它會執行抽象類別 [ThreatDetectionModule](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule) 和介面 [IRequestReceivedThreatDetectionModule](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.irequestreceivedthreatdetectionmodule) ，從要求內容中讀取 ip、將取得的 IP 與從 AD FS DB 載入的 ip 進行比較，並在 ip 相符時封鎖要求。 讓我們更詳細地探討這些類型
 
 ### <a name="threatdetectionmodule-abstract-class"></a>ThreatDetectionModule 抽象類別
 
@@ -211,18 +211,18 @@ public abstract class ThreatDetectionModule
 
 |方法 |類型|定義|
 |-----|-----|-----|
-|[OnAuthenticationPipelineLoad](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineload?view=adfs-2019) |Void|外掛程式載入至其管線時由 AD FS 呼叫|
-|[OnAuthenticationPipelineUnload](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineunload?view=adfs-2019) |Void|從管線卸載外掛程式時由 AD FS 呼叫|
-|[OnConfigurationUpdate](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate?view=adfs-2019)| Void|在設定更新時由 AD FS 呼叫 |
-|**屬性** |**型別** |**定義**|
-|[VendorName](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.vendorname?view=adfs-2019)|String |取得擁有外掛程式之廠商的名稱|
-|[ModuleIdentifier](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.moduleidentifier?view=adfs-2019)|String |取得外掛程式的識別碼|
+|[OnAuthenticationPipelineLoad](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineload) |Void|外掛程式載入至其管線時由 AD FS 呼叫|
+|[OnAuthenticationPipelineUnload](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineunload) |Void|從管線卸載外掛程式時由 AD FS 呼叫|
+|[OnConfigurationUpdate](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate)| Void|在設定更新時由 AD FS 呼叫 |
+|**屬性** |**型別** |**[定義]**|
+|[VendorName](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.vendorname)|String |取得擁有外掛程式之廠商的名稱|
+|[ModuleIdentifier](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.moduleidentifier)|String |取得外掛程式的識別碼|
 
-在我們的範例外掛程式中，我們會使用 [OnAuthenticationPipelineLoad](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineload?view=adfs-2019) 和 [OnConfigurationUpdate](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate?view=adfs-2019) 方法來讀取 AD FS DB 中預先定義的 ip。 當外掛程式註冊 AD FS 時，會呼叫[OnAuthenticationPipelineLoad](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineload?view=adfs-2019) ，而當使用 Cmdlet 匯入 .csv 時，會呼叫[OnConfigurationUpdate](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate?view=adfs-2019) 。 `Import-AdfsThreatDetectionModuleConfiguration`
+在我們的範例外掛程式中，我們會使用 [OnAuthenticationPipelineLoad](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineload) 和 [OnConfigurationUpdate](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate) 方法來讀取 AD FS DB 中預先定義的 ip。 當外掛程式註冊 AD FS 時，會呼叫[OnAuthenticationPipelineLoad](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineload) ，而當使用 Cmdlet 匯入 .csv 時，會呼叫[OnConfigurationUpdate](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate) 。 `Import-AdfsThreatDetectionModuleConfiguration`
 
 #### <a name="irequestreceivedthreatdetectionmodule-interface"></a>IRequestReceivedThreatDetectionModule 介面
 
-此 [介面](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.irequestreceivedthreatdetectionmodule?view=adfs-2019) 可讓您在 AD FS 收到驗證要求時，但在使用者輸入認證（也就是在驗證程式的收到要求階段）之前，執行風險評估。
+此 [介面](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.irequestreceivedthreatdetectionmodule) 可讓您在 AD FS 收到驗證要求時，但在使用者輸入認證（也就是在驗證程式的收到要求階段）之前，執行風險評估。
 
 ```
 public interface IRequestReceivedThreatDetectionModule
@@ -233,20 +233,20 @@ RequestContext requestContext );
 }
 ```
 
-此介面包含 [EvaluateRequest](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.irequestreceivedthreatdetectionmodule.evaluaterequest?view=adfs-2019) 方法，可讓您使用 requestCoNtext 輸入參數中所傳遞之驗證要求的內容，以撰寫您的風險評量邏輯。 RequestCoNtext 參數的類型為 [requestCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext?view=adfs-2019)。
+此介面包含 [EvaluateRequest](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.irequestreceivedthreatdetectionmodule.evaluaterequest) 方法，可讓您使用 requestCoNtext 輸入參數中所傳遞之驗證要求的內容，以撰寫您的風險評量邏輯。 RequestCoNtext 參數的類型為 [requestCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext)。
 
-傳遞的另一個輸入參數是 [ThreatDetectionLogger](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionlogger?view=adfs-2019)類型的記錄器。 參數可以用來將錯誤、audit 和/或 debug 訊息寫入 AD FS 記錄。
+傳遞的另一個輸入參數是 [ThreatDetectionLogger](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionlogger)類型的記錄器。 參數可以用來將錯誤、audit 和/或 debug 訊息寫入 AD FS 記錄。
 
-如果 NotEvaluated、1至 Block，方法會傳回 [ThrottleStatus](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.throttlestatus?view=adfs-2019) (0，而2則會允許) AD FS 然後封鎖或允許要求。
+如果 NotEvaluated、1至 Block，方法會傳回 [ThrottleStatus](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.throttlestatus) (0，而2則會允許) AD FS 然後封鎖或允許要求。
 
-在我們的範例外掛程式中， [EvaluateRequest](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.irequestreceivedthreatdetectionmodule.evaluaterequest?view=adfs-2019)方法執行會從[RequestCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext?view=adfs-2019)參數剖析[clientIpAddress](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext.clientipaddresses?view=adfs-2019#Microsoft_IdentityServer_Public_ThreatDetectionFramework_RequestContext_ClientIpAddresses) ，並將其與從 AD FS DB 載入的所有 ip 進行比較。 如果找到相符的，方法會針對 **Block**傳回2，否則會針對 **Allow**傳回1。 根據傳回的值，AD FS 封鎖或允許要求。
+在我們的範例外掛程式中， [EvaluateRequest](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.irequestreceivedthreatdetectionmodule.evaluaterequest)方法執行會從[RequestCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext)參數剖析[clientIpAddress](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext.clientipaddresses#Microsoft_IdentityServer_Public_ThreatDetectionFramework_RequestContext_ClientIpAddresses) ，並將其與從 AD FS DB 載入的所有 ip 進行比較。 如果找到相符的，方法會針對 **Block** 傳回2，否則會針對 **Allow** 傳回1。 根據傳回的值，AD FS 封鎖或允許要求。
 
 >[!NOTE]
 >上面所討論的範例外掛程式只會實 IRequestReceivedThreatDetectionModule 介面。 不過，風險評估模型提供兩個額外的介面： IPreAuthenticationThreatDetectionModule (來實行風險評定邏輯 duing 預先驗證階段) 和 IPostAuthenticationThreatDetectionModule (，在驗證後階段) 執行風險評估邏輯。 以下提供兩個介面上的詳細資料。
 
 #### <a name="ipreauthenticationthreatdetectionmodule-interface"></a>IPreAuthenticationThreatDetectionModule 介面
 
-此 [介面](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.ipreauthenticationthreatdetectionmodule?view=adfs-2019) 可讓您在使用者提供認證的時間點，但在 AD FS 評估之前（即預先驗證階段）來執行風險評定邏輯。
+此 [介面](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.ipreauthenticationthreatdetectionmodule) 可讓您在使用者提供認證的時間點，但在 AD FS 評估之前（即預先驗證階段）來執行風險評定邏輯。
 
 ```
 public interface IPreAuthenticationThreatDetectionModule
@@ -260,18 +260,18 @@ IList<Claim> additionalClams
 );
 }
 ```
-此介面包含 [EvaluatePreAuthentication](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.ipreauthenticationthreatdetectionmodule.evaluatepreauthentication?view=adfs-2019) 方法，可讓您使用 [RequestCoNtext RequestCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext?view=adfs-2019)、 [SecurityCoNtext SecurityCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.securitycontext?view=adfs-2019)、 [ProtocolCoNtext ProtocolCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.protocolcontext?view=adfs-2019)和 [IList <Claim> additionalClams](/dotnet/api/system.collections.generic.ilist-1?view=netframework-4.7.2) 輸入參數中傳遞的資訊，來撰寫預先驗證風險評定邏輯。
+此介面包含 [EvaluatePreAuthentication](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.ipreauthenticationthreatdetectionmodule.evaluatepreauthentication) 方法，可讓您使用 [RequestCoNtext RequestCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext)、 [SecurityCoNtext SecurityCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.securitycontext)、 [ProtocolCoNtext ProtocolCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.protocolcontext)和 [IList <Claim> additionalClams](/dotnet/api/system.collections.generic.ilist-1?view=netframework-4.7.2) 輸入參數中傳遞的資訊，來撰寫預先驗證風險評定邏輯。
 
 >[!NOTE]
->如需每個內容類型傳遞的屬性清單，請造訪 [RequestCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext?view=adfs-2019)、 [SecurityCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.securitycontext?view=adfs-2019)和 [ProtocolCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.protocolcontext?view=adfs-2019) 類別定義。
+>如需每個內容類型傳遞的屬性清單，請造訪 [RequestCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext)、 [SecurityCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.securitycontext)和 [ProtocolCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.protocolcontext) 類別定義。
 
-傳遞的另一個輸入參數是 [ThreatDetectionLogger](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionlogger?view=adfs-2019)類型的記錄器。 參數可以用來將錯誤、audit 和/或 debug 訊息寫入 AD FS 記錄。
+傳遞的另一個輸入參數是 [ThreatDetectionLogger](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionlogger)類型的記錄器。 參數可以用來將錯誤、audit 和/或 debug 訊息寫入 AD FS 記錄。
 
-如果 NotEvaluated、1至 Block，方法會傳回 [ThrottleStatus](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.throttlestatus?view=adfs-2019) (0，而2則會允許) AD FS 然後封鎖或允許要求。
+如果 NotEvaluated、1至 Block，方法會傳回 [ThrottleStatus](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.throttlestatus) (0，而2則會允許) AD FS 然後封鎖或允許要求。
 
 #### <a name="ipostauthenticationthreatdetectionmodule-interface"></a>IPostAuthenticationThreatDetectionModule 介面
 
-此 [介面](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.ipostauthenticationthreatdetectionmodule?view=adfs-2019) 可讓您在使用者提供認證，並 AD FS 執行驗證（即驗證後階段）之後，執行風險評定邏輯。
+此 [介面](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.ipostauthenticationthreatdetectionmodule) 可讓您在使用者提供認證，並 AD FS 執行驗證（即驗證後階段）之後，執行風險評定邏輯。
 
 ```
 public interface IPostAuthenticationThreatDetectionModule
@@ -287,17 +287,17 @@ IList<Claim> additionalClams
 }
 ```
 
-此介面包含 [EvaluatePostAuthentication](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.ipostauthenticationthreatdetectionmodule.evaluatepostauthentication?view=adfs-2019) 方法，可讓您使用 [RequestCoNtext RequestCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext?view=adfs-2019)、 [SecurityCoNtext SecurityCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.securitycontext?view=adfs-2019)、 [ProtocolCoNtext ProtocolCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.protocolcontext?view=adfs-2019)和 [IList <Claim> additionalClams](/dotnet/api/system.collections.generic.ilist-1?view=netframework-4.7.2) 輸入參數中傳遞的資訊，來撰寫驗證後風險評定邏輯。
+此介面包含 [EvaluatePostAuthentication](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.ipostauthenticationthreatdetectionmodule.evaluatepostauthentication) 方法，可讓您使用 [RequestCoNtext RequestCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext)、 [SecurityCoNtext SecurityCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.securitycontext)、 [ProtocolCoNtext ProtocolCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.protocolcontext)和 [IList <Claim> additionalClams](/dotnet/api/system.collections.generic.ilist-1?view=netframework-4.7.2) 輸入參數中傳遞的資訊，來撰寫驗證後風險評定邏輯。
 
 >[!NOTE]
-> 如需每個內容類型傳遞之屬性的完整清單，請參閱 [RequestCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext?view=adfs-2019)、 [SecurityCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.securitycontext?view=adfs-2019)和 [ProtocolCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.protocolcontext?view=adfs-2019) 類別定義。
+> 如需每個內容類型傳遞之屬性的完整清單，請參閱 [RequestCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext)、 [SecurityCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.securitycontext)和 [ProtocolCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.protocolcontext) 類別定義。
 
-傳遞的另一個輸入參數是 [ThreatDetectionLogger](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionlogger?view=adfs-2019)類型的記錄器。 參數可以用來將錯誤、audit 和/或 debug 訊息寫入 AD FS 記錄。
+傳遞的另一個輸入參數是 [ThreatDetectionLogger](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionlogger)類型的記錄器。 參數可以用來將錯誤、audit 和/或 debug 訊息寫入 AD FS 記錄。
 
-方法會傳回可用於 AD FS 原則和宣告規則的 [風險分數](/dotnet/api/microsoft.identityserver.authentication.riskscoreconstants?view=adfs-2019) 。
+方法會傳回可用於 AD FS 原則和宣告規則的 [風險分數](/dotnet/api/microsoft.identityserver.authentication.riskscoreconstants) 。
 
 >[!NOTE]
->若要讓外掛程式運作， (在此案例中的主要類別) 需要衍生 [ThreatDetectionModule](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule?view=adfs-2019) 抽象類別，且應至少執行上述三個介面的其中一個。 登錄 dll 之後，AD FS 會檢查所要執行的介面，並在管線中適當的階段呼叫這些介面。
+>若要讓外掛程式運作， (在此案例中的主要類別) 需要衍生 [ThreatDetectionModule](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule) 抽象類別，且應至少執行上述三個介面的其中一個。 登錄 dll 之後，AD FS 會檢查所要執行的介面，並在管線中適當的階段呼叫這些介面。
 
 ### <a name="faqs"></a>常見問題集
 

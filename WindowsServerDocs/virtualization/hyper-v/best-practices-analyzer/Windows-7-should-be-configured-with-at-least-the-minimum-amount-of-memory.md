@@ -6,12 +6,12 @@ author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 1b81ec0b-ceca-4fba-83ea-90d5f1d9bda8
 ms.date: 8/16/2016
-ms.openlocfilehash: 2668322287b26820f2e00e67e55598812cd5d9e3
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: c2bd302fb5adafe0bb1d9252cbac3d6ba6a6a8ac
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746113"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864607"
 ---
 # <a name="windows-7-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>應至少設定 Windows 7 的最小記憶體數量
 
@@ -24,7 +24,7 @@ ms.locfileid: "90746113"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|錯誤|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 
@@ -38,17 +38,17 @@ ms.locfileid: "90746113"
 ```
 <list of virtual machine names>
 ```
-## <a name="resolution"></a>解決方案
+## <a name="resolution"></a>解決方法
 
 *使用 Hyper-v 管理員將配置給此虛擬機器的記憶體增加到至少 512 MB。*
 
 ### <a name="to-increase-the-memory-using-hyper-v-manager"></a>使用 Hyper-v 管理員來增加記憶體
 
-1.  開啟 Hyper-V 管理員。 按一下 [開始]****，指向 [系統管理工具]****，然後按一下 [Hyper-V 管理員]****。
+1.  開啟 Hyper-V 管理員。 按一下 [開始]，指向 [系統管理工具]，然後按一下 [Hyper-V 管理員]。
 
 2.  在結果窗格的 [ **虛擬機器**] 下，選取您要設定的虛擬機器。 虛擬機器的狀態應列為 [ **關閉**]。 如果不是，請在虛擬機器上按一下滑鼠右鍵，然後按一下 [ **關機**]。
 
-3.  在 [執行]**** 窗格的虛擬機器名稱之下，按一下 [設定]****。
+3.  在 [執行] 窗格的虛擬機器名稱之下，按一下 [設定]。
 
 4.  在流覽窗格中，按一下 [ **記憶體**]。
 
@@ -67,4 +67,4 @@ Set-VMMemory <MyVM> -StartupBytes 512MB
 ```
 
 ## <a name="see-also"></a>另請參閱
-[設定-Get-vmmemory](/powershell/module/hyper-v/set-vmmemory?view=win10-ps)
+[設定-Get-vmmemory](/powershell/module/hyper-v/set-vmmemory)

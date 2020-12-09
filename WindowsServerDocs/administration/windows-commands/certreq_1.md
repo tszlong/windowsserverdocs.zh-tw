@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 1f2cdc1123595dae9c0c72bcdc77c2f55382c760
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: c5b82b490abb5564392be3a26db5c47a5a372f6e
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89629945"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864278"
 ---
 # <a name="certreq"></a>certreq
 
@@ -67,7 +67,7 @@ certreq –submit certrequest.req certnew.cer certnew.pfx
 
 - 這是預設的 certreq.exe 參數。 如果在命令提示字元中未指定任何選項，certreq.exe 會嘗試將憑證要求提交給憑證授權單位單位。 使用 **– submit** 選項時，您必須指定憑證要求檔案。 如果省略此參數，則會顯示一般的 [ **開啟** 檔案] 視窗，讓您選取適當的憑證要求檔案。
 
-- 若要藉由指定 SAN 屬性來要求憑證，請參閱 Microsoft 知識庫文章 931351[如何將主體別名新增至安全 LDAP 憑證](https://support.microsoft.com/kb/931351)中的*如何使用 certreq.exe 公用程式建立並提交憑證要求*一節。
+- 若要藉由指定 SAN 屬性來要求憑證，請參閱 Microsoft 知識庫文章 931351 [如何將主體別名新增至安全 LDAP 憑證](https://support.microsoft.com/kb/931351)中的 *如何使用 certreq.exe 公用程式建立並提交憑證要求* 一節。
 
 ### <a name="certreq--retrieve"></a>certreq-取得
 
@@ -119,7 +119,7 @@ INF 檔案的這個區域對於任何新的憑證要求範本是必要的，而�
 | EncryptionLength | 要使用的加密演算法長度。 | 指定之 EncryptionAlgorithm 允許的任何長度。 | `EncryptionLength = 128` |
 | ProviderName | 提供者名稱是 CSP 的顯示名稱。 | 如果您不知道所使用的 CSP 提供者名稱，請 `certutil –csplist` 從命令列執行。 此命令會顯示本機系統上所有可用的 Csp 名稱。 | `ProviderName = Microsoft RSA SChannel Cryptographic Provider` |
 | ProviderType | 提供者類型是用來根據特定的演算法功能（例如 RSA Full）來選取特定的提供者。 | 如果您不知道所使用的 CSP 提供者類型，請 `certutil –csplist` 從命令列提示字元執行。 此命令會顯示本機系統上所有可用 Csp 的提供者類型。 | `ProviderType = 1` |
-| RenewalCert | 如果您需要更新的憑證存在於產生憑證要求的系統上，您必須指定其憑證雜湊做為此金鑰的值。 | 在建立憑證要求的電腦上可用之任何憑證的憑證雜湊。 如果您不知道憑證雜湊，請使用 [憑證] MMC 嵌入式管理單元，並查看應該更新的憑證。 開啟憑證內容，並查看 `Thumbprint` 憑證的屬性。 憑證更新需要 `PKCS#7` 或 `CMC` 要求格式。 | `RenewalCert = 4EDF274BD2919C6E9EC6A522F0F3B153E9B1582D` |
+| RenewalCert | 如果您需要更新的憑證存在於產生憑證要求的系統上，您必須指定其憑證雜湊做為此金鑰的值。 | 在建立憑證要求的電腦上可用之任何憑證的憑證雜湊。 如果您不知道憑證雜湊，請使用 [憑證] MMC Snap-In 並查看應該更新的憑證。 開啟憑證內容，並查看 `Thumbprint` 憑證的屬性。 憑證更新需要 `PKCS#7` 或 `CMC` 要求格式。 | `RenewalCert = 4EDF274BD2919C6E9EC6A522F0F3B153E9B1582D` |
 | RequesterName | 提出要求以代表其他使用者要求進行註冊。要求也必須使用註冊代理憑證來簽署，否則 CA 將會拒絕要求。 使用 `-cert` 選項來指定註冊代理程式憑證。 如果設定為或，則可以指定憑證要求的要求者名稱 `RequestType` `PKCS#7` `CMC` 。 如果 `RequestType` 設定為，則 `PKCS#10` 會忽略此索引鍵。 `Requestername`只能設定為要求的一部分。 您無法 `Requestername` 在暫止的要求中操作。 | `Domain\User` | `Requestername = Contoso\BSmith` |
 | RequestType | 決定用來產生和傳送憑證要求的標準。 | <ul><li>`PKCS10 -- 1`</li><li>`PKCS7 -- 2`</li><li>`CMC -- 3`</li><li>`Cert -- 4`</li><li>`SCEP -- fd00 (64768)`</li></ul>**秘訣：** 此選項表示自我簽署或自我發行的憑證。 它不會產生要求，而是會產生新的憑證，然後安裝憑證。 預設值為自我簽署。 使用– cert 選項指定簽署憑證，以建立未自我簽署的自我簽發憑證。 | `RequestType = CMC` |
 | SecurityDescriptor | 包含與安全物件相關聯的安全性資訊。 對於大部分的安全物件而言，您可以在建立物件的函式呼叫中指定物件的安全描述項。以 [安全描述項定義語言](/windows/win32/secauthz/security-descriptor-definition-language)為基礎的字串。<p>**秘訣：** 這只與機器內容非智慧卡金鑰有關。 | `SecurityDescriptor = D:P(A;;GA;;;SY)(A;;GA;;;BA)` |
@@ -172,7 +172,7 @@ INF 檔案的這個區域對於任何新的憑證要求範本是必要的，而�
 > [!NOTE]
 > `SubjectNameFlags` 允許 INF 檔案根據目前的使用者或 **目前的電腦** 屬性，指定 certreq 自動填入的主旨和 **SubjectAltName** 延伸模組欄位： DNS 名稱、UPN 等等。 使用常值範本表示會改為使用範本名稱旗標。 這可讓您在多個內容中使用單一 INF 檔案，以產生具有特定內容之主體資訊的要求。
 >
-> `X500NameFlags` 指定將值轉換為 asn.1 編碼的 `CertStrToName` `Subject INF keys` 辨別 **名稱**時，要直接傳遞至 API 的旗標。
+> `X500NameFlags` 指定將值轉換為 asn.1 編碼的 `CertStrToName` `Subject INF keys` 辨別 **名稱** 時，要直接傳遞至 API 的旗標。
 
 #### <a name="example"></a>範例
 
@@ -339,7 +339,7 @@ certreq –enroll -machine –cert 61 2d 3c fe 00 00 00 00 00 05 renew
 
 - [如何手動建立網頁伺服器 SSL 憑證](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/how-to-create-a-web-server-ssl-certificate-manually/ba-p/1128529)
 
-- [System Center Operations Manager 代理程式的憑證註冊](/system-center/scom/plan-planning-agent-deployment?view=sc-om-2019)
+- [System Center Operations Manager 代理程式的憑證註冊](/system-center/scom/plan-planning-agent-deployment)
 
 - [Active Directory 憑證服務概觀](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11))
 

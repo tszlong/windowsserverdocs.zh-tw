@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 09/28/2016
-ms.openlocfilehash: 2e7eecbf68a8b08caae2851bce45673ebb09bcef
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 5a18aad091314543dece0c0270935be020f6810b
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90745923"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864557"
 ---
 # <a name="plan-for-hyper-v-scalability-in-windows-server-2016-and-windows-server-2019"></a>規劃 Windows Server 2016 和 Windows Server 2019 中的 Hyper-v 擴充性
 
@@ -21,12 +21,12 @@ ms.locfileid: "90745923"
 記憶體和邏輯處理器最大的增加，與 Windows Server 2012 的增加，是為了回應支援較新案例的要求，例如機器學習和資料分析。 Windows Server blog 最近發行了虛擬機器的效能結果，此虛擬機器具有 5.5 tb 的記憶體和128個虛擬處理器，執行 4 TB 的記憶體內部資料庫。 效能高於實體伺服器效能的95%。 如需詳細資訊，請參閱 [Windows Server 2016 hyper-v 大型 VM 效能以進行記憶體中的交易處理](https://blogs.technet.microsoft.com/windowsserver/2016/09/28/windows-server-2016-hyper-v-large-scale-vm-performance-for-in-memory-transaction-processing/)。 其他數位與適用于 Windows Server 2012 的數位類似。 \(Windows Server 2012 R2 的最大可與 Windows Server 2012 相同。\)
 
 > [!NOTE]
-> 如需有關 System Center 虛擬機器管理員 (VMM) 的資訊，請參閱 [Virtual Machine Manager](/system-center/vmm/overview?view=sc-vmm-2019)。 VMM 是 Microsoft 的產品，用來管理虛擬化的資料中心，此產品單獨銷售。
+> 如需有關 System Center 虛擬機器管理員 (VMM) 的資訊，請參閱 [Virtual Machine Manager](/system-center/vmm/overview)。 VMM 是 Microsoft 的產品，用來管理虛擬化的資料中心，此產品單獨銷售。
 
 ## <a name="maximums-for-virtual-machines"></a>虛擬機器的最大
 這些上限適用于每部虛擬機器。 並非所有元件都適用于兩個世代的虛擬機器。 如需有關世代的比較，請參閱 [我應該在 hyper-v 中建立第1代或第2代虛擬機器嗎？](should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v.md)
 
-|元件|最大值|備註|
+|元件|最大值|注意|
 |-------------|-----------|---------|
 |檢查點|50|實際數字可能較低，取決於可用的存放裝置。 每個檢查點都會儲存為使用實體儲存體的 .avhd 檔案。|
 |記憶體|第2代的 12 TB; <br>1 TB （代1）|檢閱特定作業系統的需求，以判定需求量下限及建議的需求量。|
@@ -44,9 +44,9 @@ ms.locfileid: "90745923"
 ## <a name="maximums-for-hyper-v-hosts"></a>最大的 Hyper-v 主機
 這些上限適用于每部 Hyper-v 主機。
 
-|元件|最大值|備註|
+|元件|最大值|注意|
 |-------------|-----------|---------|
-|邏輯處理器|512|這兩個都必須在固件中啟用：<p>-硬體輔助虛擬化<br />-硬體-強制執行的資料執行防止 (DEP) <p>主機作業系統 (根磁碟分割) 只會看到最大320的邏輯處理器|  
+|邏輯處理器|512|這兩個都必須在固件中啟用：<p>-硬體輔助虛擬化<br />-硬體-強制執行的資料執行防止 (DEP) <p>主機作業系統 (根磁碟分割) 只會看到最大320的邏輯處理器|  
 |記憶體|24 TB|無。|
 |網路介面卡小組 (NIC 小組)|Hyper-V 並無強制限制。|如需詳細資訊，請參閱 [NIC](../../../networking/technologies/nic-teaming/NIC-Teaming.md)小組。|
 |實體網路介面卡|Hyper-V 並無強制限制。|無。|
@@ -63,7 +63,7 @@ ms.locfileid: "90745923"
 
 若要深入瞭解容錯移轉叢集的更新，包括虛擬機器的新功能，請參閱 [Windows Server 2016 中容錯移轉叢集的新](../../../failover-clustering/whats-new-in-failover-clustering.md)功能。
 
-|元件|最大值|備註|
+|元件|最大值|注意|
 |-------------|-----------|---------|
 |每一叢集的節點|64|請考量要保留給容錯移轉的節點數目，以及例如套用更新等維護工作。 建議您規劃足夠的資源，將一個節點保留給容錯移轉；這表示該節點將維持閒置，直到其他節點容錯移轉至該節點為止  (這有時稱為被動節點 ) 。如果您想要保留額外的節點，則可以增加此數目。 使用中節點沒有保留節點的建議比率或乘數;唯一的需求是叢集中的節點總數不能超過最大值64。|
 |每個叢集的每個節點執行的虛擬機器|每個叢集 8000 個|有幾個因素會影響您可以在一個節點上同時執行的實際虛擬機器數目，例如：<br />-每部虛擬機器正在使用的實體記憶體數量。<br />-網路和儲存體頻寬。<br />-磁片主軸數目，會影響磁片 i/o 效能。|

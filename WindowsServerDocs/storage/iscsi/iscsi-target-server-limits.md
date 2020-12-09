@@ -6,12 +6,12 @@ author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 09/11/2018
-ms.openlocfilehash: 3be878629d19542629cc3cbb849ac46fe14de0bd
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 14ef17f96138c23aeac8e38b93a50b562ca69bba
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766831"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865167"
 ---
 # <a name="iscsi-target-server-scalability-limits"></a>iSCSI 目標伺服器的擴充性限制
 
@@ -442,7 +442,7 @@ ISCSI 目標存放提供者是 Windows Server 2016、Windows Server 2012 R2 和 
 
 請注意，如果 iSCSI 目標伺服器是由執行 Windows Server 2012 R2 或更新版本的伺服器所裝載，而您想要從遠端伺服器使用 VSS 或 VDS，則遠端伺服器也必須執行相同版本的 Windows Server，並安裝 iSCSI 目標儲存提供者角色服務。 另請注意，在所有版本的 Windows 上，您應該只安裝一個版本的 iSCSI 目標儲存提供者角色服務。
 
-如需 iSCSI 目標儲存提供者的詳細資訊，請參閱 [ (VDS/VSS) 提供者的 Iscsi 目標儲存體](/powershell/module/iscsi/?view=win10-ps)。
+如需 iSCSI 目標儲存提供者的詳細資訊，請參閱 [ (VDS/VSS) 提供者的 Iscsi 目標儲存體](/powershell/module/iscsi/)。
 
 ## <a name="tested-compatibility-with-iscsi-initiators"></a>測試與 iSCSI 啟動器的相容性
 
