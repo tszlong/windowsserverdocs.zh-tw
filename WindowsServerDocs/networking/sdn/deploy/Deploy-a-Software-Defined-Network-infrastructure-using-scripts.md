@@ -7,12 +7,12 @@ ms.assetid: 5ba5bb37-ece0-45cb-971b-f7149f658d19
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: 4e3ebcae7696d1b16930e50aacff4f0edc198ce7
-ms.sourcegitcommit: 3181fcb69a368f38e0d66002e8bc6fd9628b1acc
+ms.openlocfilehash: 244f18baefa0be9b9b392682e48931e7d4e195b8
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96330390"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865617"
 ---
 # <a name="deploy-a-software-defined-network-infrastructure-using-scripts"></a>使用指令碼部署軟體定義網路的基礎結構
 
@@ -22,7 +22,7 @@ ms.locfileid: "96330390"
 
 如果您想要讓租使用者工作負載在其虛擬網路之外進行通訊，您可以設定 SLB NAT 規則、站對站閘道通道，或第3層轉送，以在虛擬和實體工作負載之間路由傳送。
 
-您也可以使用 Virtual Machine Manager (VMM) 來部署 SDN 基礎結構。 如需詳細資訊，請參閱在 [VMM 網狀架構中設定軟體定義網路 (SDN) 基礎結構](/system-center/vmm/deploy-sdn?view=sc-vmm-2019)。
+您也可以使用 Virtual Machine Manager (VMM) 來部署 SDN 基礎結構。 如需詳細資訊，請參閱在 [VMM 網狀架構中設定軟體定義網路 (SDN) 基礎結構](/system-center/vmm/deploy-sdn)。
 
 ## <a name="pre-deployment"></a>前置部署
 
@@ -137,7 +137,7 @@ ms.locfileid: "96330390"
 
 5. 瀏覽至 `C:\SDNExpress` 資料夾。<p>您會看到下列資料夾：
 
-   | 資料夾名稱 | 說明 |
+   | 資料夾名稱 | 描述 |
    |--|--|
    | AgentConf | 保存每個 Windows Server 2016 Hyper-v 主機上 SDN 主機代理程式所使用之 OVSDB 架構的全新複本，以程式設計網路原則。 |
    | 憑證 | NC 憑證檔案的暫存共用位置。 |
@@ -217,4 +217,4 @@ ms.locfileid: "96330390"
    > [!TIP]
    > `VIPIP`在 TenantConfig.psd1 中搜尋變數。
 
-   請多次執行此命令，以查看可用 Dip 之間的負載平衡器切換。 您也可以使用網頁瀏覽器來觀察此行為。 瀏覽至 `<VIP IP address>/unique.htm` 。 關閉瀏覽器並開啟新的實例，然後再次流覽。 您將會看到藍色的頁面和綠色的頁面替代，但瀏覽器會在快取超時之前快取頁面。
+   請多次執行此命令，以查看可用 Dip 之間的負載平衡器切換。 您也可以使用網頁瀏覽器來觀察此行為。 瀏覽至 `<VIP IP address>/unique.htm`。 關閉瀏覽器並開啟新的實例，然後再次流覽。 您將會看到藍色的頁面和綠色的頁面替代，但瀏覽器會在快取超時之前快取頁面。

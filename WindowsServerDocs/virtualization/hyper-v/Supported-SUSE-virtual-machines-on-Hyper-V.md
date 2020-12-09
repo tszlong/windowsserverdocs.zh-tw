@@ -6,12 +6,12 @@ ms.assetid: 7ec0e14c-4498-4bd9-8fe6-b94260198efc
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 04/07/2020
-ms.openlocfilehash: 92dd65669a537d619d9104378adae26c91878dca
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: cae0a1218badc9d3110a14c81f95ffa2a944702b
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746733"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866386"
 ---
 # <a name="supported-suse-virtual-machines-on-hyper-v"></a>Hyper-v 上支援的 SUSE 虛擬機器
 
@@ -23,7 +23,7 @@ ms.locfileid: "90746733"
 
 ## <a name="table-legend"></a>資料表圖例
 
-* **內建的內建** 元件包含在此 Linux 發行版本中。Microsoft 提供的 .LIS 下載套件不適用於此散發套件，因此請勿安裝。內建的 .LIS (的核心模組版本號碼如 **lsmod**所示，例如) 與 Microsoft 提供的 .lis 下載套件上的版本號碼不同。 不相符並不表示內建的 .LIS 已過期。
+* **內建的內建** 元件包含在此 Linux 發行版本中。Microsoft 提供的 .LIS 下載套件不適用於此散發套件，因此請勿安裝。內建的 .LIS (的核心模組版本號碼如 **lsmod** 所示，例如) 與 Microsoft 提供的 .lis 下載套件上的版本號碼不同。 不相符並不表示內建的 .LIS 已過期。
 
 * &#10004;-可用功能
 
@@ -44,16 +44,16 @@ SLES12 + 僅限64位。
 |vRSS|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|||
 |TCP 分割和總和檢查碼卸載|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;||
 |SR-IOV|2019、2016|&#10004;|&#10004;|&#10004;|&#10004;||||
-|**[儲存體](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**|||||||||
+|**[存儲](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**|||||||||
 |VHDX 調整大小|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |虛擬光纖通道|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |即時虛擬機器備份|2019、2016、2012 R2|&#10004; 附注2，3，8|&#10004;附注2，3，8|&#10004; 附注2，3，8|&#10004; 附注2，3，8|&#10004; 附注2，3，8|&#10004; 附注2，3，8|&#10004; 附注2，3，8|
 |TRIM 支援|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;||
 |SCSI WWN|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;||||
-|**[記憶](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||||||
+|**[記憶體](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||||||
 |PAE 核心支援|2019、2016、2012 R2|N/A|N/A|N/A|N/A|N/A|&#10004;|&#10004;|
 |設定 MMIO 間距|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|動態記憶體-熱新增|2019、2016、2012 R2|&#10004; 附注6|&#10004;附注6|&#10004; 附注6|&#10004; 附注6|&#10004; 附注6|&#10004; 附注4，5，6|&#10004; 附注4，5，6|
+|動態記憶體-Hot-Add|2019、2016、2012 R2|&#10004; 附注6|&#10004;附注6|&#10004; 附注6|&#10004; 附注6|&#10004; 附注6|&#10004; 附注4，5，6|&#10004; 附注4，5，6|
 |動態記憶體-佔用|2019、2016、2012 R2|&#10004; 附注6|&#10004; 附注6|&#10004; 附注6|&#10004; 附注6|&#10004; 附注6|&#10004; 附注4，5，6|&#10004; 附注4，5，6|
 |執行時間記憶體大小調整|2019、2016|&#10004; 附注6|&#10004; 附注6|&#10004; 附注6|&#10004; 附注6||||
 |**[影片](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**|||||||||
@@ -85,13 +85,13 @@ SLES12 + 僅限64位。
 
 5. 動態記憶體支援僅適用于64位的虛擬機器。
 
-6. 如果您在 Windows Server 2016 或 Windows Server 2012 作業系統上使用動態記憶體，請指定 **啟動記憶體**、 **最小記憶體**和 **最大記憶體** 參數（以 128 mb (MB) 的倍數表示）。 若未這麼做，可能會導致熱新增失敗，而且您可能不會在客體作業系統中看到任何記憶體增加。
+6. 如果您在 Windows Server 2016 或 Windows Server 2012 作業系統上使用動態記憶體，請指定 **啟動記憶體**、 **最小記憶體** 和 **最大記憶體** 參數（以 128 mb (MB) 的倍數表示）。 如果無法這麼做，可能會導致 Hot-Add 失敗，而且您可能不會在客體作業系統中看到任何記憶體增加。
 
 7. 在 Windows Server 2016 或 Windows Server 2012 R2 中，金鑰/值組基礎結構可能無法在沒有 Linux 軟體更新的情況下正常運作。 如果您看到此功能有問題，請洽詢您的散發廠商以取得軟體更新。
 
 8. 如果單一分割區已多次裝載，VSS 備份將會失敗。
 
-9. 在 Windows Server 2012 R2 上，第2代虛擬機器預設會啟用安全開機，除非停用安全開機選項，否則第2代 Linux 虛擬機器將不會開機。 您可以在 [Hyper-V 管理員] 虛擬機器設定的 [韌體]**** 區段停用安全開機，或是使用 Powershell 停用安全開機：
+9. 在 Windows Server 2012 R2 上，第2代虛擬機器預設會啟用安全開機，除非停用安全開機選項，否則第2代 Linux 虛擬機器將不會開機。 您可以在 [Hyper-V 管理員] 虛擬機器設定的 [韌體] 區段停用安全開機，或是使用 Powershell 停用安全開機：
 
    ```Powershell
    Set-VMFirmware -VMName "VMname" -EnableSecureBoot Off
@@ -100,7 +100,7 @@ SLES12 + 僅限64位。
 
 ## <a name="see-also"></a>另請參閱
 
-* [設定-Get-vmfirmware](/powershell/module/hyper-v/set-vmfirmware?view=win10-ps)
+* [設定-Get-vmfirmware](/powershell/module/hyper-v/set-vmfirmware)
 
 * [Hyper-v 上支援的 CentOS 和 Red Hat Enterprise Linux 虛擬機器](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 

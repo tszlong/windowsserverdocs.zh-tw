@@ -6,12 +6,12 @@ ms.assetid: 75c32e42-97f7-48df-aac9-1d82d34825e1
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 01/17/2017
-ms.openlocfilehash: b02c30a612ef6aa1ed56e1c26e86c21a48b5b138
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: f006b20c023f009bc366da97b3f7982b985aa2c4
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746633"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865757"
 ---
 # <a name="use-live-migration-without-failover-clustering-to-move-a-virtual-machine"></a>在不使用容錯移轉叢集的情況下，使用即時移轉來移動虛擬機器
 
@@ -39,7 +39,7 @@ ms.locfileid: "90746633"
 
 4.  使用 [wizard] 頁面選擇移動、目的地伺服器和選項的類型。
 
-5.  在 [摘要]**** 頁面上檢視您的選擇，然後按一下 [完成]****。
+5.  在 [摘要] 頁面上檢視您的選擇，然後按一下 [完成]。
 
 ## <a name="use-windows-powershell-to-move-a-running-virtual-machine"></a>使用 Windows PowerShell 來移動執行中的虛擬機器
 
@@ -56,7 +56,7 @@ PS C:\> Move-VM LMTest TestServer02 -IncludeStorage -DestinationStoragePath D:\L
 如果您尚未設定限制委派，您必須先登入來源伺服器，才能移動虛擬機器。 如果您沒有這麼做，驗證嘗試就會失敗，並出現錯誤，並顯示此訊息：
 
 「在遷移來源的虛擬機器遷移作業失敗。
-無法建立與主 *電腦名稱稱*的連接：安全性封裝0x8009030E 中沒有可用的認證。」
+無法建立與主 *電腦名稱稱* 的連接：安全性封裝0x8009030E 中沒有可用的認證。」
 
  若要修正此問題，請登入來源伺服器，然後再次嘗試移動。 若要避免在進行即時移轉之前，必須先登入來源伺服器，請設定限制委派。 您將需要網域系統管理員認證來設定限制委派。 如需相關指示，請參閱 [設定主機以進行即時移轉](../deploy/Set-up-hosts-for-live-migration-without-Failover-Clustering.md)。
 
@@ -73,7 +73,7 @@ PS C:\> Move-VM LMTest TestServer02 -IncludeStorage -DestinationStoragePath D:\L
 3. 檢查 **遷移至具有不同處理器版本的電腦**。
 4. 按一下 [確定]。
 
-   若要使用 Windows PowerShell，請使用 [get-vmprocessor](/powershell/module/hyper-v/set-vmprocessor?view=win10-ps) Cmdlet：
+   若要使用 Windows PowerShell，請使用 [get-vmprocessor](/powershell/module/hyper-v/set-vmprocessor) Cmdlet：
 
    ```
    PS C:\> Set-VMProcessor TestVM -CompatibilityForMigrationEnabled $true

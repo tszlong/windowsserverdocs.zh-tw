@@ -6,12 +6,12 @@ ms.assetid: b5e3c405-cb76-4ff2-8042-c2284448c435
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 9/30/2016
-ms.openlocfilehash: 98a7dbdfa0bb89ba8c857e171b513c00ba297896
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: aa192a9447bdcc49f3943534b53a3523e905f1c8
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746063"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866167"
 ---
 # <a name="set-up-hosts-for-live-migration-without-failover-clustering"></a>設定主機進行即時移轉，而不需要容錯移轉叢集
 
@@ -41,11 +41,11 @@ ms.locfileid: "90746063"
       CredSPP 需要登入可能不明顯的情況。 例如，如果您登入 TestServer01 將虛擬機器移至 TestServer02，然後想要將虛擬機器移回 TestServer01，您必須先登入 TestServer02，再嘗試將虛擬機器移回 TestServer01。 如果您沒有這麼做，驗證嘗試就會失敗，並出現錯誤，並顯示下列訊息：
 
       「在遷移來源的虛擬機器遷移作業失敗。
-      無法建立與主 *電腦名稱稱*的連接：安全性封裝0x8009030E 中沒有可用的認證。」
+      無法建立與主 *電腦名稱稱* 的連接：安全性封裝0x8009030E 中沒有可用的認證。」
 
 -   **效能**：設定效能選項是否合理？ 這些選項可以減少網路和 CPU 使用量，以及讓即時移轉更快。 請考慮您的需求和基礎結構，並測試不同的設定，以協助您決定。 這些選項會在步驟2結束時說明。
 
--  **網路喜好**設定：您是否允許透過任何可用網路的即時移轉流量，或將流量隔離到特定網路？ 最佳的安全性做法，建議您將流量隔離到受信任的私用網路，因為在網路上傳送即時移轉時不會加密。 透過實際隔離的網路或另一種受信任的網路技術 (例如 Vlan) 可以達成網路隔離。
+-  **網路喜好** 設定：您是否允許透過任何可用網路的即時移轉流量，或將流量隔離到特定網路？ 最佳的安全性做法，建議您將流量隔離到受信任的私用網路，因為在網路上傳送即時移轉時不會加密。 透過實際隔離的網路或另一種受信任的網路技術 (例如 Vlan) 可以達成網路隔離。
 
 ## <a name="step-1-configure-constrained-delegation-optional"></a><a name="BKMK_Step1"></a>步驟1：設定限制委派 (選擇性) 
 如果您已決定使用 Kerberos 來驗證即時移轉流量，請使用網域系統管理員群組成員的帳戶設定限制委派。
@@ -54,15 +54,15 @@ ms.locfileid: "90746063"
 
 1.  開啟 [Active Directory 使用者和電腦] 嵌入式管理單元。 從伺服器管理員 (，如果未選取伺服器，請選取該伺服器，然後按一下 [**工具**]  >>  **Active Directory 消費者和電腦**) 。
 
-2.  從 **Active Directory 消費者和電腦**的流覽窗格中，選取網域，然後按兩下 [ **電腦** ] 資料夾。
+2.  從 **Active Directory 消費者和電腦** 的流覽窗格中，選取網域，然後按兩下 [ **電腦** ] 資料夾。
 
-3.  在 [ **電腦** ] 資料夾中，以滑鼠 **按右鍵來源**伺服器的電腦帳戶，然後按一下 [內容]。
+3.  在 [ **電腦** ] 資料夾中，以滑鼠 **按右鍵來源** 伺服器的電腦帳戶，然後按一下 [內容]。
 
 4.  在 [ **屬性**] 中，按一下 [ **委派** ] 索引標籤。
 
 5.  在 [委派] 索引標籤上，選取 **[信任這台電腦，但只委派指定的服務** ]，然後選取 [ **使用任何驗證通訊協定**]。
 
-6.  按一下 [新增] 。
+6.  按一下 [新增]  。
 
 7.  從 [ **新增服務**] 中，按一下 [ **使用者或電腦**]。
 
@@ -70,13 +70,13 @@ ms.locfileid: "90746063"
 
 9. 從 [ **新增服務**] 的 [可用的服務] 清單中，執行下列動作，然後按一下 **[確定]**：
 
-    -   若要移動虛擬機器存放裝置，請選取 [cifs]****。 如果您想要移動儲存體以及虛擬機器，以及只想要移動虛擬機器的存放裝置，這是必要的。 如果伺服器設定為在 Hyper-V 使用 SMB 存放裝置，這個選項應該已經選取。
+    -   若要移動虛擬機器存放裝置，請選取 [cifs]。 如果您想要移動儲存體以及虛擬機器，以及只想要移動虛擬機器的存放裝置，這是必要的。 如果伺服器設定為在 Hyper-V 使用 SMB 存放裝置，這個選項應該已經選取。
 
-    -   若要移動虛擬機器，請選取 [Microsoft 虛擬系統移轉服務]****。
+    -   若要移動虛擬機器，請選取 [Microsoft 虛擬系統移轉服務]。
 
-10. 在 [內容] 對話方塊的 [委派]**** 索引標籤上，確認您在上一個步驟中選取的服務已經列示為目的電腦可以顯示委派認證的服務。 按一下 [確定]。
+10. 在 [內容] 對話方塊的 [委派] 索引標籤上，確認您在上一個步驟中選取的服務已經列示為目的電腦可以顯示委派認證的服務。 按一下 [確定]。
 
-11. 從 [Computers]**** 資料夾，選取目的地伺服器的電腦帳戶，然後重複這個程序。 在 [選取使用者或電腦]**** 對話方塊中，確定指定了來源伺服器的名稱。
+11. 從 [Computers] 資料夾，選取目的地伺服器的電腦帳戶，然後重複這個程序。 在 [選取使用者或電腦] 對話方塊中，確定指定了來源伺服器的名稱。
 
 設定變更會在下列兩種情況發生之後生效：
 
@@ -94,11 +94,11 @@ ms.locfileid: "90746063"
 
 3.  在 [**動作**] 窗格中，按一下 [ **hyper-v 設定**  >> **即時移轉**]。
 
-4.  在 [即時移轉]**** 窗格中，核取 [啟用連入與連出即時移轉]****。
+4.  在 [即時移轉] 窗格中，核取 [啟用連入與連出即時移轉]。
 
 5.  如果您不想使用預設值2，請在 [ **同時即時移轉**] 下指定不同的數位。
 
-6.  在 [連入即時移轉]**** 下，如果您想要使用特定網路連線來接受即時移轉流量，請按一下 [新增]**** 以便輸入 IP 位址資訊。 否則，請按一下 [使用任何可用的網路來進行即時移轉]****。 按一下 [確定]。
+6.  在 [連入即時移轉] 下，如果您想要使用特定網路連線來接受即時移轉流量，請按一下 [新增] 以便輸入 IP 位址資訊。 否則，請按一下 [使用任何可用的網路來進行即時移轉]。 按一下 [確定]。
 
 7.  若要選擇 Kerberos 和效能選項，請展開 [ **即時移轉** ]，然後選取 [ **Advanced Features**]。
 
@@ -111,7 +111,7 @@ ms.locfileid: "90746063"
 
 ### <a name="use-windows-powershell-to-set-up-the-source-and-destination-computers-for-live-migration"></a>使用 Windows PowerShell 設定來源和目的地電腦以進行即時移轉
 
-有三個 Cmdlet 可用來設定非叢集主機上的即時移轉： [disable-vmmigration](/powershell/module/hyper-v/enable-vmmigration?view=win10-ps)、 [get-vmmigrationnetwork](/powershell/module/hyper-v/set-vmmigrationnetwork?view=win10-ps)和 [VMHost](/powershell/module/hyper-v/set-vmhost?view=win10-ps)。 此範例會使用這三種，並執行下列動作：
+有三個 Cmdlet 可用來設定非叢集主機上的即時移轉： [disable-vmmigration](/powershell/module/hyper-v/enable-vmmigration)、 [get-vmmigrationnetwork](/powershell/module/hyper-v/set-vmmigrationnetwork)和 [VMHost](/powershell/module/hyper-v/set-vmhost)。 此範例會使用這三種，並執行下列動作：
   - 設定本機主機上的即時移轉
   - 只允許在特定的網路上進行傳入的遷移流量
   - 選擇 Kerberos 作為驗證通訊協定
@@ -126,7 +126,7 @@ PS C:\> Set-VMMigrationNetwork 192.168.10.1
 PS C:\> Set-VMHost -VirtualMachineMigrationAuthenticationType Kerberos
 ```
 
-VMHost 也可讓您選擇效能選項 (以及許多其他主機設定) 。 例如，若要選擇 SMB，但讓驗證通訊協定設定為預設的 CredSSP，請輸入：
+Set-VMHost 也可讓您選擇效能選項 (以及許多其他主機設定) 。 例如，若要選擇 SMB，但讓驗證通訊協定設定為預設的 CredSSP，請輸入：
 
 ```PowerShell
 PS C:\> Set-VMHost -VirtualMachineMigrationPerformanceOption SMB

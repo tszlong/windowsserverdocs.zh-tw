@@ -6,12 +6,12 @@ ms.assetid: 02e31413-6140-4723-a8d6-46c7f667792d
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 12/05/2016
-ms.openlocfilehash: f9cdb144e7edacf8a1be0f2d98509517adf5c87e
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 19416bbb8800f12d37d3fdd28760082eb8ea523d
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746593"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866007"
 ---
 # <a name="should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v"></a>我應在 Hyper-V 建立第 1 或 2 代的虛擬機器嗎？
 
@@ -61,7 +61,7 @@ ms.locfileid: "90746593"
 |Windows Server 2008 R2|&#10004;| &#10006;|
 |Windows Server 2008|&#10004;| &#10006;|
 |Windows 10|&#10004;|&#10004;|
-|Windows 8。1|&#10004;|&#10004;|
+|Windows 8.1|&#10004;|&#10004;|
 |Windows 8|&#10004;|&#10004;|
 |Windows 7|&#10004;| &#10006;|
 
@@ -70,7 +70,7 @@ ms.locfileid: "90746593"
 |32位版本的 Windows|第 1 代|第 2 代|
 |-------------------------------|----------------|----------------|
 |Windows 10|&#10004;| &#10006;|
-|Windows 8。1|&#10004;| &#10006;|
+|Windows 8.1|&#10004;| &#10006;|
 |Windows 8|&#10004;| &#10006;|
 |Windows 7|&#10004;| &#10006;|
 
@@ -219,7 +219,7 @@ ms.locfileid: "90746593"
 
 ### <a name="use-ipv6-instead-of-ipv4"></a>使用 IPv6 而不是 IPv4
 
-第 2 代虛擬機器預設使用 IPv4。 若要改為使用 IPv6，請執行 [get-vmfirmware](/powershell/module/hyper-v/set-vmfirmware?view=win10-ps) Windows PowerShell Cmdlet。 例如，下列命令會針對名為 TestVM 的虛擬機器，將慣用的通訊協定設定為 IPv6：
+第 2 代虛擬機器預設使用 IPv4。 若要改為使用 IPv6，請執行 [get-vmfirmware](/powershell/module/hyper-v/set-vmfirmware) Windows PowerShell Cmdlet。 例如，下列命令會針對名為 TestVM 的虛擬機器，將慣用的通訊協定設定為 IPv6：
 
 ```powershell
 Set-VMFirmware -VMName TestVM -IPProtocolPreference IPv6
@@ -231,13 +231,13 @@ Set-VMFirmware -VMName TestVM -IPProtocolPreference IPv6
 
 若要新增 COM 埠：
 
-1. 停用安全開機。 內核調試與安全開機不相容。 請確定虛擬機器處於關閉狀態，然後使用 [get-vmfirmware](/powershell/module/hyper-v/set-vmfirmware?view=win10-ps) Cmdlet。 例如，下列命令會停用虛擬機器 TestVM 上的安全開機：
+1. 停用安全開機。 內核調試與安全開機不相容。 請確定虛擬機器處於關閉狀態，然後使用 [get-vmfirmware](/powershell/module/hyper-v/set-vmfirmware) Cmdlet。 例如，下列命令會停用虛擬機器 TestVM 上的安全開機：
 
     ```powershell
     Set-VMFirmware -Vmname TestVM -EnableSecureBoot Off
     ```
 
-2. 新增 COM 埠。 使用 Get-vmcomport 指令 Cmdlet 來執行這 [一](/powershell/module/hyper-v/set-vmcomport?view=win10-ps) 作業。 例如，下列命令會將虛擬機器 TestVM 上的第一個 COM 埠設定為連接到本機電腦上的具名管道（TestPipe）：
+2. 新增 COM 埠。 使用 Get-vmcomport 指令 Cmdlet 來執行這 [一](/powershell/module/hyper-v/set-vmcomport) 作業。 例如，下列命令會將虛擬機器 TestVM 上的第一個 COM 埠設定為連接到本機電腦上的具名管道（TestPipe）：
 
     ```powershell
     Set-VMComPort -VMName TestVM 1 \\.\pipe\TestPipe

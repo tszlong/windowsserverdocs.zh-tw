@@ -6,12 +6,12 @@ ms.assetid: c02fdb5b-62f3-43cb-a190-ab74b3ebcf77
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 06/05/2020
-ms.openlocfilehash: 7c1029f31abe70b09bddc83f928ee492be18ef2b
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: e4cf39e9c96a92df3962fa1a8fc2493c3022d898
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746393"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866407"
 ---
 # <a name="supported-oracle-linux-virtual-machines-on-hyper-v"></a>Hyper-v 上支援的 Oracle Linux 虛擬機器
 
@@ -28,7 +28,7 @@ ms.locfileid: "90746393"
 
 ## <a name="table-legend"></a>資料表圖例
 
-* **內建的內建** 元件包含在此 Linux 發行版本中。 內建的 .LIS (的核心模組版本號碼如 **lsmod**所示，例如) 與 Microsoft 提供的 .lis 下載套件上的版本號碼不同。 不相符並不表示內建的 .LIS 已過期。
+* **內建的內建** 元件包含在此 Linux 發行版本中。 內建的 .LIS (的核心模組版本號碼如 **lsmod** 所示，例如) 與 Microsoft 提供的 .lis 下載套件上的版本號碼不同。 不相符並不表示內建的 .LIS 已過期。
 
 * &#10004;-可用功能
 *  (*空白*) -功能無法使用
@@ -40,7 +40,7 @@ ms.locfileid: "90746393"
 
 ## <a name="oracle-linux-8x-series"></a>Oracle Linux 8.x 系列
 
-|       **功能**     |       **Windows Server 版本**      |       **8.0-8.1 (RHCK) ** |
+|       **功能**     |       **Windows Server 版本**      |       **8.0-8.1 (RHCK)** |
 |-----------------------|---------------------------------------|-------------------|
 |       **可用性**        |   |
 |       **[核心](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**      | 2019、2016、2012 R2 | &#10004; |
@@ -53,22 +53,22 @@ ms.locfileid: "90746393"
 |       vRSS     | 2019、2016、2012 R2 | &#10004; |
 |       TCP 分割和總和檢查碼卸載 | 2019、2016、2012 R2 | &#10004;|
 |       SR-IOV  | 2019、2016 |  &#10004;   |
-|       **[儲存體](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)** |  |
+|       **[存儲](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)** |  |
 |       VHDX 調整大小  | 2019、2016、2012 R2 | &#10004; |
 |       虛擬光纖通道 | 2019、2016、2012 R2 | &#10004; 附注3  |
 |       即時虛擬機器備份  | 2019、2016、2012 R2 | &#10004; 附注5 |
 |       TRIM 支援 | 2019、2016、2012 R2 | &#10004;  |
 |       SCSI WWN | 2019、2016、2012 R2 | &#10004;  |
-|       **[記憶](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)** | |
+|       **[記憶體](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)** | |
 |       PAE 核心支援  | 2019、2016、2012 R2 |  N/A |
 |       設定 MMIO 間距  | 2019、2016、2012 R2 | &#10004; |
-|       動態記憶體-熱新增 | 2019、2016、2012 R2  | &#10004; 附注7、8、9 |
+|       動態記憶體-Hot-Add | 2019、2016、2012 R2  | &#10004; 附注7、8、9 |
 |       動態記憶體-佔用 | 2019、2016、2012 R2 | &#10004; 附注7、8、9 |
 |       執行時間記憶體大小調整 | 2019、2016  | &#10004;  |
 |       **[影片](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)** | |
 |       Hyper-v 特定的影片裝置 | 2019、2016、2012 R2 | &#10004;   |
 |       **[其他](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)** | |
-|       索引鍵/值組  | 2019、2016、2012 R2 | &#10004;   |
+|       Key-Value 配對  | 2019、2016、2012 R2 | &#10004;   |
 |       非遮罩式插斷 | 2019、2016、2012 R2 | &#10004;  |
 |       從主機到來賓的檔案複製 | 2019、2016、2012 R2 | &#10004;  |
 |       lsvmbus 命令 | 2019、2016、2012 R2 | &#10004;  |
@@ -86,7 +86,7 @@ ms.locfileid: "90746393"
 <tr height="50px">
 <td width="20%" rowspan="2">
 
-功能
+特徵
 </td>
 <td width="20%" rowspan="2">
 
@@ -483,7 +483,7 @@ SR-IOV
 <tr height="50px">
 <td width="20%">
 
-**[儲存體](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**
+**[存儲](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**
 </td>
 <td width="20%">
 
@@ -679,7 +679,7 @@ SCSI WWN
 <tr height="50px">
 <td width="20%">
 
-**[記憶](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**
+**[記憶體](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**
 </td>
 <td width="20%">
 
@@ -775,7 +775,7 @@ N/A
 <tr height="50px">
 <td width="20%">
 
-動態記憶體熱新增
+動態記憶體 Hot-Add
 </td>
 <td width="20%">
 
@@ -1267,7 +1267,7 @@ PCI 傳遞/DDA
 
 此系列只有64位核心。
 
-|       **功能**     |       **Windows Server 版本**      |       **6.8-6.10 (RHCK) ** |       **6.8-6.10 (UEK4) **     |
+|       **功能**     |       **Windows Server 版本**      |       **6.8-6.10 (RHCK)** |       **6.8-6.10 (UEK4)**     |
 |-----------------------|---------------------------------------|-------------------|-------------------|
 |       **可用性**     |   | .LIS 4。3  | 內建  |
 |       **[核心](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**      | 2019、2016、2012 R2 | &#10004; | &#10004;
@@ -1280,22 +1280,22 @@ PCI 傳遞/DDA
 |       vRSS     | 2019、2016、2012 R2 | &#10004; | &#10004;|
 |       TCP 分割和總和檢查碼卸載 | 2019、2016、2012 R2 | &#10004;|  &#10004; |
 |       SR-IOV  | 2019、2016 |    |  |
-|       **[儲存體](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)** |  |  |
+|       **[存儲](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)** |  |  |
 |       VHDX 調整大小  | 2019、2016、2012 R2 | &#10004; | &#10004; |
 |       虛擬光纖通道 | 2019、2016、2012 R2 | &#10004; 附注3  | &#10004; 附注3 |
 |       即時虛擬機器備份  | 2019、2016、2012 R2 | &#10004; 附注5 | &#10004; 附注5|
 |       TRIM 支援 | 2019、2016、2012 R2 | &#10004;  | &#10004; |
 |       SCSI WWN | 2019、2016、2012 R2 | &#10004;  | &#10004; |
-|       **[記憶](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)** | |  |
+|       **[記憶體](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)** | |  |
 |       PAE 核心支援  | 2019、2016、2012 R2 |  N/A | N/A
 |       設定 MMIO 間距  | 2019、2016、2012 R2 | &#10004; | &#10004;  |
-|       動態記憶體-熱新增 | 2019、2016、2012 R2  | &#10004; 附注6、8、9 | &#10004; 附注6、8、9 |
+|       動態記憶體-Hot-Add | 2019、2016、2012 R2  | &#10004; 附注6、8、9 | &#10004; 附注6、8、9 |
 |       動態記憶體-佔用 | 2019、2016、2012 R2 | &#10004; 附注6、8、9 | &#10004; 附注6、8、9 |
 |       執行時間記憶體大小調整 | 2019、2016  |  | |
 |       **[影片](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)** | | |
 |       Hyper-v 特定的影片裝置 | 2019、2016、2012 R2 | &#10004;   | &#10004; |
 |       **[其他](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)** | | |
-|       索引鍵/值組  | 2019、2016、2012 R2 | &#10004; 附注10，11   | &#10004; 附注10，11  |
+|       Key-Value 配對  | 2019、2016、2012 R2 | &#10004; 附注10，11   | &#10004; 附注10，11  |
 |       非遮罩式插斷 | 2019、2016、2012 R2 | &#10004;  | &#10004; |
 |       從主機到來賓的檔案複製 | 2019、2016、2012 R2 | &#10004;  | &#10004; |
 |       lsvmbus 命令 | 2019、2016、2012 R2 | &#10004;  | &#10004; |
@@ -1321,13 +1321,13 @@ PCI 傳遞/DDA
 
 6. 動態記憶體支援僅適用于64位的虛擬機器。
 
-7. 此散發套件中預設不會啟用熱新增支援。 若要啟用熱新增支援，您需要在/etc/udev/rules.d/底下新增 udev 規則，如下所示：
+7. 在此散發套件中，預設不會啟用 Hot-Add 支援。 若要啟用 Hot-Add 支援，您需要在/etc/udev/rules.d/底下新增 udev 規則，如下所示：
 
    1. 建立檔案 **/etc/udev/rules.d/100-balloon.rules**。 您可以針對檔案使用任何其他想要的名稱。
 
    2. 將下列內容新增至檔案： `SUBSYSTEM=="memory", ACTION=="add", ATTR{state}="online"`
 
-   3. 重新開機系統以啟用熱新增支援。
+   3. 重新開機系統以啟用 Hot-Add 支援。
 
    雖然 Linux Integration Services 下載會在安裝時建立此規則，但卸載 IIS 時也會移除規則，因此，如果在卸載後需要動態記憶體，就必須重新建立規則。
 
@@ -1343,7 +1343,7 @@ PCI 傳遞/DDA
 
 11. KVP) 基礎結構的索引鍵/值組 (可能無法在沒有 Linux 軟體更新的情況下正常運作。 如果您看到此功能有問題，請洽詢您的散發廠商以取得軟體更新。
 
-12. 在 Windows Server 2012 R2 第2代虛擬機器上，預設會啟用安全開機，除非停用安全開機選項，否則部分 Linux 虛擬機器將不會開機。 您可以在**Hyper-v 管理員**的虛擬機器設定的 [**固件**] 區段中停用安全開機，也可以使用 Powershell 來停用它：
+12. 在 Windows Server 2012 R2 第2代虛擬機器上，預設會啟用安全開機，除非停用安全開機選項，否則部分 Linux 虛擬機器將不會開機。 您可以在 **Hyper-v 管理員** 的虛擬機器設定的 [**固件**] 區段中停用安全開機，也可以使用 Powershell 來停用它：
 
     ```Powershell
     Set-VMFirmware -VMName "VMname" -EnableSecureBoot Off
@@ -1354,7 +1354,7 @@ PCI 傳遞/DDA
 
 另請參閱
 
-* [設定-Get-vmfirmware](/powershell/module/hyper-v/set-vmfirmware?view=win10-ps)
+* [設定-Get-vmfirmware](/powershell/module/hyper-v/set-vmfirmware)
 
 * [Hyper-v 上支援的 CentOS 和 Red Hat Enterprise Linux 虛擬機器](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 

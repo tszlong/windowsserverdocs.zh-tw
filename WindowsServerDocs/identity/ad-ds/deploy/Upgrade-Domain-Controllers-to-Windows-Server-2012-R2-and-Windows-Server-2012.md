@@ -6,12 +6,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: ebbbefebc420d83f8f74466698729c26395bdbec
-ms.sourcegitcommit: b39ea3b83280f00e5bb100df0dc8beaf1fb55be2
+ms.openlocfilehash: be94260946c696eed060b9b2d85f5042ed737a1f
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94520501"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866347"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012"></a>將網域控制站升級為 Windows Server 2012 R2 與 Windows Server 2012
 
@@ -70,7 +70,7 @@ Windows 8 與 Windows Server 2012 引進一項名為 [自動維護](/windows/win
 
 下表摘要說明 Windows Server 2012 R2 中的 AD DS 新功能，並附上含有詳細資訊的連結。 如需某些功能更詳細的說明，包含這些功能的需求，請參閱 [Windows Server 2012 R2 中 Active Directory 的新功能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn268294(v=ws.11))。
 
-|功能|描述|
+|特徵|描述|
 |-----------|---------------|
 |[加入工作場所](../../ad-fs/operations/join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications.md)|可讓資訊工作者將其個人裝置與公司聯結，以存取公司資源和服務。|
 |[Web 應用程式 Proxy](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280942(v=ws.11))|運用新的遠端存取角色服務提供 Web 應用程式的存取。|
@@ -89,7 +89,7 @@ Windows 8 與 Windows Server 2012 引進一項名為 [自動維護](/windows/win
 
 下表摘要說明 Windows Server 2012 中的 AD DS 新功能，並附上含有詳細資訊的連結。 如需某些功能的詳細說明，包括它們的需求，請參閱 [Active Directory Domain Services (AD DS) 的新 ](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831477(v=ws.11))功能。
 
-|功能|描述|
+|特徵|描述|
 |-----------|---------------|
 |Active Directory 型啟用 (AD BA)；請參閱 [大量啟用概觀](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831612(v=ws.11))|簡化大量軟體授權發佈和管理的設定工作。|
 |[Active Directory Federation Services (AD FS)](../../active-directory-federation-services.md)|透過伺服器管理員新增角色安裝、簡化信任設定、自動化信任管理、SAML 通訊協定支援等等。|
@@ -123,9 +123,9 @@ Windows 8 與 Windows Server 2012 引進一項名為 [自動維護](/windows/win
 |||
 |-|-|
 |**案例**|**建議的 configuration (s)**|
-|**WSUS 管理的**<p>-每週安裝更新一次<br />-晚上11點重新開機星期五|設定機器自動安裝，防止在需要的時間之前重新開機<p>**原則** ：設定自動更新 (啟用)<p>設定自動更新： 4-自動下載並排程安裝<p>**原則** ： (停用登入的使用者不會自動重新開機) <p>**WSUS 期限** ：設定為星期五晚上 11 點|
+|**WSUS 管理的**<p>-每週安裝更新一次<br />-晚上11點重新開機星期五|設定機器自動安裝，防止在需要的時間之前重新開機<p>**原則**：設定自動更新 (啟用)<p>設定自動更新： 4-自動下載並排程安裝<p>**原則**： (停用登入的使用者不會自動重新開機) <p>**WSUS 期限**：設定為星期五晚上 11 點|
 |**WSUS 管理的**<p>-在不同的小時/天錯開安裝|為應該一起更新的不同電腦群組設定目標群組<p>為先前的案例使用上述步驟<p>為不同的目標群組設定不同期限|
-|**不受 WSUS 管理-不支援期限**<p>-錯開不同時間的安裝|**原則** ：設定自動更新 (啟用)<p>設定自動更新： 4-自動下載並排程安裝<p>**登錄機碼：** 如需啟用登錄機碼的資訊，請參閱 Microsoft 知識庫文章 [2835627](https://support.microsoft.com/kb/2835627)<p>**原則：** 自動維護隨機延遲 (啟用)<p>將 [定期維護隨機延遲] 設為 PT6H 以設定 6 小時的隨機延遲，可提供下列行為：<p>-更新將會安裝在設定的維護時間加上隨機延遲<p>-每台電腦的重新開機將會在3天后進行<p>或者，為每個電腦群組設定不同的維護時間|
+|**不受 WSUS 管理-不支援期限**<p>-錯開不同時間的安裝|**原則**：設定自動更新 (啟用)<p>設定自動更新： 4-自動下載並排程安裝<p>**登錄機碼：** 如需啟用登錄機碼的資訊，請參閱 Microsoft 知識庫文章 [2835627](https://support.microsoft.com/kb/2835627)<p>**原則：** 自動維護隨機延遲 (啟用)<p>將 [定期維護隨機延遲] 設為 PT6H 以設定 6 小時的隨機延遲，可提供下列行為：<p>-更新將會安裝在設定的維護時間加上隨機延遲<p>-每台電腦的重新開機將會在3天后進行<p>或者，為每個電腦群組設定不同的維護時間|
 
 如需 Windows 工程團隊如何實行這些變更的詳細資訊，請參閱 [如何降低系統提示重新開機電腦的機會](https://docs.microsoft.com/troubleshoot/windows-server/deployment/why-prompted-restart-computer#how-to-reduce-your-chances-of-being-prompted-to-restart-your-computer)。
 
@@ -201,10 +201,10 @@ Standard 和 Datacenter 這兩個版本可支援 AD DS 角色。
 
 | 如果您執行這些版本 | 您可以升級到這些版本 |
 |--|--|
-| Windows Server 2008 Standard (含 SP2)<p>或<p>Windows Server 2008 Enterprise (含 SP2) | Windows Server 2012 Standard<p>或<p>Windows Server 2012 Datacenter |
+| Windows Server 2008 Standard (含 SP2)<p>或者<p>Windows Server 2008 Enterprise (含 SP2) | Windows Server 2012 Standard<p>或者<p>Windows Server 2012 Datacenter |
 | Windows Server 2008 Datacenter (含 SP2) | Windows Server 2012 Datacenter |
 | Windows Web Server 2008 | Windows Server 2012 Standard |
-| Windows Server 2008 R2 Standard (含 SP1)<p>或<p>Windows Server 2008 R2 Enterprise (含 SP1) | Windows Server 2012 Standard<p>或<p>Windows Server 2012 Datacenter |
+| Windows Server 2008 R2 Standard (含 SP1)<p>或者<p>Windows Server 2008 R2 Enterprise (含 SP1) | Windows Server 2012 Standard<p>或者<p>Windows Server 2012 Datacenter |
 | Windows Server 2008 R2 Datacenter (含 SP1) | Windows Server 2012 Datacenter |
 | Windows Web Server 2008 R2 | Windows Server 2012 Standard |
 
@@ -224,7 +224,7 @@ Windows 2000 網域控制站必須先行移除，才能將 Windows Server 2012 �
 4. 安裝執行 Windows Serer 2012 的網域控制站。
 5. 移除執行舊版 Windows Server 的網域控制站。
 
-新的 Windows Server 2012 網域功能等級啟用了一項新功能： **宣告、複合驗證和 Kerberos** 防護 kdc 系統管理範本原則的 KDC 支援有兩項設定 ( **一律提供宣告** ，以及 **未受防護驗證要求失敗** ，) 需要 Windows Server 2012 網域功能等級。
+新的 Windows Server 2012 網域功能等級啟用了一項新功能： **宣告、複合驗證和 Kerberos** 防護 kdc 系統管理範本原則的 KDC 支援有兩項設定 (**一律提供宣告** ，以及 **未受防護驗證要求失敗** ，) 需要 Windows Server 2012 網域功能等級。
 
 Windows Server 2012 樹系功能等級不提供任何新功能，但可確保樹系中建立的任何新網域都會自動在 Windows Server 2012 網域功能等級運作。 Windows Server 2012 網域功能等級不提供宣告、複合驗證和 Kerberos 防護的 KDC 支援以外的其他新功能。 但它可以確保網域中的任何網域控制站都執行 Windows Server 2012。 如需不同功能等級可用之其他功能的詳細資訊，請參閱 [了解 Active Directory 網域服務 (AD DS) 功能等級](../active-directory-functional-levels.md)。
 
@@ -274,7 +274,7 @@ Windows Server 2012 中的一些新功能會影響操作主機角色：
 
 下表涵蓋常見的整合 Active Directory Microsoft 應用程式。 表格內容包含應用程式可以安裝在哪些版本的 Windows Server 上，以及採用 Windows Server 2012 DC 是否會對應用程式相容性產生影響。
 
-|產品|備註|
+|產品|注意|
 |-----------|---------|
 |[Microsoft SharePoint 2010](https://support.microsoft.com/kb/2724471)|需要 SharePoint 2010 Service Pack 2，才能在  <br />Windows Server 2012 伺服器上 安裝和操作 SharePoint 2010<p>在 Windows Server 2012 伺服器上安裝和操作 SharePoint 2010 Foundation 需要有 SharePoint 2010 Foundation Service Pack 2<p>SharePoint Server 2010 (不含 Service Pack) 安裝程序在 Windows Server 2012 上會失敗<p>SharePoint Server 2010 必要條件安裝程式 ( # A0) 失敗，並出現錯誤「此程式有相容性問題」。 按一下 [執行程式而不取得說明]，會顯示錯誤「正在驗證是否可以在不含 service pack &#124; SharePoint Server 2010 (中安裝 SharePoint) 無法在 Windows Server 2012 上安裝。」|
 |[Microsoft SharePoint 2013](/SharePoint/install/hardware-and-software-requirements-0)|伺服器陣列中的資料庫伺服器最低需求：<p>64 位元版本的 Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise 或 Datacenter，或是 64 位元版本的 Windows Server 2012 Standard 或 Datacenter<p>含內建資料庫的單一伺服器最低需求：<p>64 位元版本的 Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise 或 Datacenter，或是 64 位元版本的 Windows Server 2012 Standard 或 Datacenter<p>伺服器陣列中的前端網頁伺服器和應用程式伺服器最低需求：<p>64 位元版本的 Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise 或 Datacenter，或是 64 位元版本的 Windows Server 2012 Standard 或 Datacenter。|
@@ -287,7 +287,7 @@ Windows Server 2012 中的一些新功能會影響操作主機角色：
 |Forefront Threat Management Gateway (TMG)|僅支援 TMG 在 Windows Server 2008 和 Windows Server 2008 R2 上執行。 如需詳細資訊，請參閱 [Forefront TMG 的系統需求](/previous-versions/tn-archive/dd896981(v=technet.10))。|
 |Windows Server Update Services|這個版本的 WSUS 已經可以支援 Windows 8 電腦或 Windows Server 2012 電腦做為用戶端。|
 |Windows Server Update Services 3.0|Update KB 文章 [2734608](https://support.microsoft.com/kb/2734608) 可讓執行 WINDOWS SERVER UPDATE SERVICES (WSUS) 3.0 SP2 的伺服器為執行 Windows 8 或 Windows Server 2012 的電腦提供更新： **注意：** 具有獨立 wsus 3.0 SP2 環境或 Configuration Manager 2007 Service PACK 2 環境搭配 wsus 3.0 SP2 的客戶需要 [2734608](https://support.microsoft.com/kb/2734608) 才能適當地管理 Windows 8 型電腦或 windows server 2012 電腦做為用戶端。|
-|[Exchange 2013](/Exchange/plan-and-deploy/prerequisites?view=exchserver-2019)|Windows Server 2012 Standard 和 Datacenter 支援下列角色：架構主機、通用類別目錄伺服器、網域控制站、信箱和用戶端存取伺服器角色<p>樹系功能等級：Windows Server 2003 或更新版本<p>來源：Exchange 2013 系統需求|
+|[Exchange 2013](/Exchange/plan-and-deploy/prerequisites)|Windows Server 2012 Standard 和 Datacenter 支援下列角色：架構主機、通用類別目錄伺服器、網域控制站、信箱和用戶端存取伺服器角色<p>樹系功能等級：Windows Server 2003 或更新版本<p>來源：Exchange 2013 系統需求|
 |Exchange 2010|[來源：Exchange 2010 Service Pack 3](https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange)<p>Exchange 2010 (含 Service Pack 3) 可以安裝在 Windows Server 2012 成員伺服器上。<p>[Exchange 2010 系統需求](/previous-versions/office/exchange-server-2010/aa996719(v=exchg.141)) 會列出最新支援的架構主機、通用類別目錄和網域控制站，如同 Windows Server 2008 R2。<p>樹系功能等級：Windows Server 2003 或更新版本|
 |SQL Server 2012|來源：KB [2681562](https://support.microsoft.com/kb/2681562)<p>Windows Server 2012 支援 SQL Server 2012 RTM。|
 |SQL Server 2008 R2|來源：KB [2681562](https://support.microsoft.com/kb/2681562)<p>需要 SQL Server 2008 R2 (含 Service Pack 1) 或更新版本才能安裝在 Windows Server 2012。|

@@ -6,12 +6,12 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
-ms.openlocfilehash: b8410cb5804e8cbac3ce03e575c2f33c2bc61388
-ms.sourcegitcommit: 00406560a665a24d5a2b01c68063afdba1c74715
+ms.openlocfilehash: 84d90e8c1de81498cbc832c8cf068e2ac339ac97
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91716859"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866197"
 ---
 # <a name="advanced-data-deduplication-settings"></a>進階重複資料刪除設定
 
@@ -20,16 +20,16 @@ ms.locfileid: "91716859"
 本文件說明如何修改進階[重複資料刪除](overview.md)設定。 針對[建議的工作負載](install-enable.md#enable-dedup-candidate-workloads)，預設設定應已足夠。 修改這些設定的主要原因，是為了改進重複資料刪除搭配其他工作負載類型時的效能。
 
 ## <a name="modifying-data-deduplication-job-schedules"></a><a id="modifying-job-schedules"></a>修改重複資料刪除工作排程
-[預設重複資料刪除工作排程](understand.md#job-info)是專為搭配建議的工作負載運作並盡可能不干擾工作而設計 (不包括為[**備份**使用類型](understand.md#usage-type-backup)啟用的「優先順序最佳化」** 工作)。 當工作負載有大型資源需求時，它可以確保工作僅在閒置時間執行，或是減少或增加允許重複資料刪除工作使用的系統資源量。
+[預設重複資料刪除工作排程](understand.md#job-info)是專為搭配建議的工作負載運作並盡可能不干擾工作而設計 (不包括為 [**備份** 使用類型](understand.md#usage-type-backup)啟用的「優先順序最佳化」工作)。 當工作負載有大型資源需求時，它可以確保工作僅在閒置時間執行，或是減少或增加允許重複資料刪除工作使用的系統資源量。
 
 ### <a name="changing-a-data-deduplication-schedule"></a><a id="modifying-job-schedules-change-schedule"></a>變更重複資料刪除排程
 重複資料刪除工作是透過 Windows 工作排程器排程，並且可以在 Microsoft\Windows\Deduplication 路徑下檢視及編輯。 重複資料刪除包括數個可讓您輕鬆排程的 Cmdlet。
-* [`Get-DedupSchedule`](https://docs.microsoft.com/powershell/module/deduplication/get-dedupschedule?view=win10-ps) 顯示目前的排程工作。
-* [`New-DedupSchedule`](https://docs.microsoft.com/powershell/module/deduplication/new-dedupschedule?view=win10-ps) 建立新的排程工作。
-* [`Set-DedupSchedule`](https://docs.microsoft.com/powershell/module/deduplication/set-dedupschedule?view=win10-ps) 修改現有的排程工作。
-* [`Remove-DedupSchedule`](https://docs.microsoft.com/powershell/module/deduplication/remove-dedupschedule?view=win10-ps) 移除排程工作。
+* [`Get-DedupSchedule`](https://docs.microsoft.com/powershell/module/deduplication/get-dedupschedule) 顯示目前的排程工作。
+* [`New-DedupSchedule`](https://docs.microsoft.com/powershell/module/deduplication/new-dedupschedule) 建立新的排程工作。
+* [`Set-DedupSchedule`](https://docs.microsoft.com/powershell/module/deduplication/set-dedupschedule) 修改現有的排程工作。
+* [`Remove-DedupSchedule`](https://docs.microsoft.com/powershell/module/deduplication/remove-dedupschedule) 移除排程工作。
 
-變更重複資料刪除工作執行時間最常見的原因，是為了確保工作在非尖峰時間執行。 以下的逐步範例示範如何針對「陽光普照的一天」** 案例修改重複資料刪除排程：有一部超交集 Hyper-V 主機會在週末以及工作日下午 7:00 之後閒置。 為了變更排程，請使用系統管理員身分執行下列 PowerShell Cmdlet。
+變更重複資料刪除工作執行時間最常見的原因，是為了確保工作在非尖峰時間執行。 以下的逐步範例示範如何針對「陽光普照的一天」案例修改重複資料刪除排程：有一部超交集 Hyper-V 主機會在週末以及工作日下午 7:00 之後閒置。 為了變更排程，請使用系統管理員身分執行下列 PowerShell Cmdlet。
 
 1. 停用排定的每小時[最佳化](understand.md#job-info-optimization)工作。
     ```PowerShell
@@ -49,7 +49,7 @@ ms.locfileid: "91716859"
     ```
 
     >[!NOTE]
-    > 為 `-Start` 提供之 `System.Datetime` 中的「日期」** 部分是無關的 (只要是過去的日期即可)，但「時間」** 部分會指定工作應該開始的時間。
+    > 為 `-Start` 提供之 `System.Datetime` 中的「日期」部分是無關的 (只要是過去的日期即可)，但「時間」部分會指定工作應該開始的時間。
 4. 建立每週的記憶體回收工作，它會在星期六上午 7:00 執行，具有高優先順序，並使用系統上所有可用的 CPU 和記憶體。
     ```PowerShell
     New-DedupSchedule -Name "WeeklyGarbageCollection" -Type GarbageCollection -DurationHours 23 -Memory 100 -Cores 100 -Priority High -Days @(6) -Start (Get-Date "2016-08-13 07:00:00")
@@ -154,7 +154,7 @@ ms.locfileid: "91716859"
             <td>工作必須有可唯一識別的名稱。</td>
         </tr>
         <tr>
-            <td>唯讀</td>
+            <td>ReadOnly</td>
             <td>指示清除工作程序，並報告它所發現的損毀，但不執行任何修復動作</td>
             <td>參數 (true/false)</td>
             <td>您可以手動還原位於磁碟損壞區段的檔案。</td>
@@ -325,8 +325,8 @@ ms.locfileid: "91716859"
 <a id="faq-full-v-regular-gc"></a>**完整和一般垃圾收集之間有何差異？**
 [記憶體回收](understand.md#job-info-gc)有兩種類型：
 
-- 「一般記憶體回收」** 會使用統計演算法來尋找符合特定條件 (記憶體與 IOPS 不足) 的大型未被參考區塊。 一般記憶體回收只有在未被參考區塊的百分比達到下限時，才會壓縮區塊存放區容器。 相較於完整記憶體回收，此類型記憶體回收的執行速度更快且使用的資源較少。 一般記憶體回收工作的預設排程是一星期執行一次。
-- 「完整記憶體回收」** 會執行更完整的工作，以尋找未參考區塊並釋放更多磁碟空間。 完整記憶體回收會壓縮每一個容器，即使容器內只有單一區塊未被參考。 如果在最佳化工作期間曾發生當機或電源中斷，完整記憶體回收也會釋放曾經使用的空間。 完整記憶體回收工作將會 100% 復原重複資料刪除磁碟區上可復原的可用空間，代價則是需要比執行一般記憶體回收工作時更多的時間與系統資源。 與一般記體回收工作相比，完整記憶體回收工作通常會尋找並釋放最多多 5% 的額外未被參考資料。 完整記憶體回收工作的預設排程是在每排程四次記憶體回收時執行。
+- 「一般記憶體回收」會使用統計演算法來尋找符合特定條件 (記憶體與 IOPS 不足) 的大型未被參考區塊。 一般記憶體回收只有在未被參考區塊的百分比達到下限時，才會壓縮區塊存放區容器。 相較於完整記憶體回收，此類型記憶體回收的執行速度更快且使用的資源較少。 一般記憶體回收工作的預設排程是一星期執行一次。
+- 「完整記憶體回收」會執行更完整的工作，以尋找未參考區塊並釋放更多磁碟空間。 完整記憶體回收會壓縮每一個容器，即使容器內只有單一區塊未被參考。 如果在最佳化工作期間曾發生當機或電源中斷，完整記憶體回收也會釋放曾經使用的空間。 完整記憶體回收工作將會 100% 復原重複資料刪除磁碟區上可復原的可用空間，代價則是需要比執行一般記憶體回收工作時更多的時間與系統資源。 與一般記體回收工作相比，完整記憶體回收工作通常會尋找並釋放最多多 5% 的額外未被參考資料。 完整記憶體回收工作的預設排程是在每排程四次記憶體回收時執行。
 
 <a id="faq-why-disable-full-gc"></a>**為什麼要停用完整垃圾收集？**
 - 記憶體回收可能會對磁碟區的存留期陰影複製和增量備份大小產生不利影響。 執行完整記憶體回收工作時，可能會看到高區塊或 I/O 密集性工作負載的效能降低。

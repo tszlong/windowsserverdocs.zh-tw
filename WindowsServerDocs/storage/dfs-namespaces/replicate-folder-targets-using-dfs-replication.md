@@ -6,12 +6,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 8345d12c77af92999d64f63809752180a3ea91bc
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 809333b23a12455aef49312f4cf880882dfdc802
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954745"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865987"
 ---
 # <a name="replicate-folder-targets-using-dfs-replication"></a>使用 DFS 複寫來複寫資料夾目標
 
@@ -28,9 +28,9 @@ ms.locfileid: "87954745"
 3.  依照 \[複寫資料夾精靈\] 中的指示執行。
 
 > [!NOTE]
-> 除非使用 [Suspend-DfsReplicationGroup](/powershell/module/dfsr/suspend-dfsreplicationgroup?view=win10-ps) 和 [Sync-DfsReplicationGroup](/powershell/module/dfsr/sync-dfsreplicationgroup?view=win10-ps) Cmdlet，否則變更設定不會立即套用所有成員。 新的組態必須複寫到所有網域控制站，而且複寫群組中的每個成員必須輪詢其最接近的網域控制站以取得變更。 這個動作所花的時間取決於 Active Directory Directory Services (AD DS) 的複寫延遲和每個成員的長輪詢間隔 (60 分鐘)。 若要針對組態變更立即輪詢，請開啟命令提示字元視窗，然後針對每個複寫群組成員輸入一次下列命令： <br /> dfsrdiag.exe PollAD /Member:DOMAIN\Server1
+> 除非使用 [Suspend-DfsReplicationGroup](/powershell/module/dfsr/suspend-dfsreplicationgroup) 和 [Sync-DfsReplicationGroup](/powershell/module/dfsr/sync-dfsreplicationgroup) Cmdlet，否則變更設定不會立即套用所有成員。 新的組態必須複寫到所有網域控制站，而且複寫群組中的每個成員必須輪詢其最接近的網域控制站以取得變更。 這個動作所花的時間取決於 Active Directory Directory Services (AD DS) 的複寫延遲和每個成員的長輪詢間隔 (60 分鐘)。 若要針對組態變更立即輪詢，請開啟命令提示字元視窗，然後針對每個複寫群組成員輸入一次下列命令： <br /> dfsrdiag.exe PollAD /Member:DOMAIN\Server1
 <br />
-若要從 Windows PowerShell 工作階段這樣做，請使用 [Update-DfsrConfigurationFromAD](/powershell/module/dfsr/update-dfsrconfigurationfromad?view=win10-ps) Cmdlet，此功能已在 Windows Server 2012 R2 推出。
+若要從 Windows PowerShell 工作階段這樣做，請使用 [Update-DfsrConfigurationFromAD](/powershell/module/dfsr/update-dfsrconfigurationfromad) Cmdlet，此功能已在 Windows Server 2012 R2 推出。
 
 ## <a name="additional-references"></a>其他參考資料
 

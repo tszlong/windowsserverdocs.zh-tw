@@ -6,12 +6,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 969c950d3a925afac400d128ac21ed0923f07ffa
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 625fb9c6a36717e57f3c6fd6da696b8df07fe8c3
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87950652"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866057"
 ---
 # <a name="configure-notification-limits"></a>設定通知限制
 
@@ -21,7 +21,7 @@ ms.locfileid: "87950652"
 
 -   電子郵件
 -   事件記錄檔
--   Command
+-   命令
 -   報告
 
 每項限制都會指定針對同樣問題產生另一相同類型已設定通知之前的一段時間。
@@ -30,14 +30,14 @@ ms.locfileid: "87950652"
 
 ## <a name="to-specify-a-standard-notification-limit-for-each-notification-type"></a>若要為每個通知類型指定標準通知限制
 
-1.  在主控台樹狀目錄中，以滑鼠右鍵按一下 **\[檔案伺服器資源管理員\]**，然後按一下 **\[設定選項\]**。 [檔案伺服器資源管理員選項]**** 對話方塊隨即開啟。
+1.  在主控台樹狀目錄中，以滑鼠右鍵按一下 **\[檔案伺服器資源管理員\]**，然後按一下 **\[設定選項\]**。 [檔案伺服器資源管理員選項] 對話方塊隨即開啟。
 
 2.  在 **\[通知限制\]** 索引標籤上，為每個顯示的通知類型輸入以分鐘為單位的值。
 
-3.  按一下 [確定]  。
+3.  按一下 [確定]。
 
 > [!Note]
-> 若要自訂與特定配額或檔案檢測之通知相關聯的時間限制，您可以使用檔案伺服器資源管理員命令列工具 **Dirquota.exe** 和 **Filescrn.exe**，或使用[檔案伺服器資源管理員](/powershell/module/fileserverresourcemanager/?view=win10-ps) Cmdlet。
+> 若要自訂與特定配額或檔案檢測之通知相關聯的時間限制，您可以使用檔案伺服器資源管理員命令列工具 **Dirquota.exe** 和 **Filescrn.exe**，或使用 [檔案伺服器資源管理員](/powershell/module/fileserverresourcemanager/) Cmdlet。
 
 ## <a name="additional-references"></a>其他參考資料
 

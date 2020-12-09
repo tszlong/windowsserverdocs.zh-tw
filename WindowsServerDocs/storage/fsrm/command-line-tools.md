@@ -6,18 +6,18 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 0300e8fa6845c58e61b695546daf4116286d975f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 937045a4ed0803fd160d9f01d06ade6e73df2d97
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87957515"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865967"
 ---
 # <a name="file-server-resource-manager-command-line-tools"></a>檔案伺服器資源管理員命令列工具
 
 > 適用於：Windows Server (半年度管道)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
-檔案伺服器資源管理員會安裝 [FileServerResourceManager](/powershell/module/fileserverresourcemanager/?view=win10-ps) PowerShell Cmdlet，以及下列命令列工具：
+檔案伺服器資源管理員會安裝 [FileServerResourceManager](/powershell/module/fileserverresourcemanager/) PowerShell Cmdlet，以及下列命令列工具：
 
 -   **Dirquota.exe**。 用於建立和管理配額，自動套用配額及配額範本。
 -   **Filescrn.exe**。 用於建立和管理檔案檢測、檔案檢測範本、檔案檢測例外及檔案群組。
@@ -25,9 +25,9 @@ ms.locfileid: "87957515"
 
 您可以使用這些工具，來管理在本機電腦或遠端電腦上的儲存資源。 如需這些命令列工具的詳細資訊，請參閱下列參考資料：
 
--   **Dirquota**：<https://go.microsoft.com/fwlink/?LinkId=92741>
--   **Filescrn**：<https://go.microsoft.com/fwlink/?LinkId=92742>
--   **Storrept**：<https://go.microsoft.com/fwlink/?LinkId=92743>
+-   **Dirquota**： <https://go.microsoft.com/fwlink/?LinkId=92741>
+-   **Filescrn**： <https://go.microsoft.com/fwlink/?LinkId=92742>
+-   **Storrept.exe**： <https://go.microsoft.com/fwlink/?LinkId=92743>
 
 
 > [!Note]
@@ -50,7 +50,7 @@ ms.locfileid: "87957515"
 若要使用命令列工具管理遠端資源：
 
 -   您必須使用屬於本機電腦或遠端電腦中 **\[系統管理員\]** 群組成員的網域帳戶來登入。
--   您必須從提高權限的 [命令提示字元] 視窗執行命令列工具。 若要開啟提升權限的命令提示字元視窗，請按一下 [開始]****，依序指向 [所有程式]**** 及 [附屬應用程式]****，以滑鼠右鍵按一下 [命令提示字元]****，然後按一下 [以系統管理員身分執行]****。
+-   您必須從提高權限的 [命令提示字元] 視窗執行命令列工具。 若要開啟提升權限的命令提示字元視窗，請按一下 [開始]，依序指向 [所有程式] 及 [附屬應用程式]，以滑鼠右鍵按一下 [命令提示字元]，然後按一下 [以系統管理員身分執行]。
 -   遠端電腦必須執行 Windows Server，而系統必須已安裝檔案伺服器資源管理員。
 -   必須啟用遠端電腦上的 **\[遠端檔案伺服器資源管理員管理\]** 例外。 使用 [控制台] 中的 [Windows 防火牆] 來啟用此例外。
 

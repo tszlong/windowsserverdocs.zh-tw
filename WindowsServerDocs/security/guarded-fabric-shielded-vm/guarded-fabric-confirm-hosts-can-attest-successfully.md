@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 09/25/2019
-ms.openlocfilehash: cda60c65772a41322a20b7277a7d7c80a4daf9e1
-ms.sourcegitcommit: a640c2d7f2d21d7cd10a9be4496e1574e5e955f0
+ms.openlocfilehash: cb21a6bfda238adb1a0a03731a179f13f441ddc9
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89446771"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866327"
 ---
 # <a name="confirm-guarded-hosts-can-attest"></a>確認受防護主機可以證明
 
@@ -37,9 +37,9 @@ ms.locfileid: "89446771"
 
         若要設定 fallback HGS 伺服器，請重複此命令，並指定金鑰保護和證明服務的回溯 Url。 如需詳細資訊，請參閱 [Fallback](guarded-fabric-manage-branch-office.md#fallback-configuration)設定。
 
-    - **透過 vmm**：如果您使用 SYSTEM CENTER VIRTUAL MACHINE MANAGER (vmm) ，您可以在 vmm 中設定證明和金鑰保護 url。 如需詳細資訊，請參閱在**VMM 中**布建受防護的主機中設定[全域 HGS 設定](/system-center/vmm/guarded-deploy-host?view=sc-vmm-2019#configure-global-hgs-settings)。
+    - **透過 vmm**：如果您使用 SYSTEM CENTER VIRTUAL MACHINE MANAGER (vmm) ，您可以在 vmm 中設定證明和金鑰保護 url。 如需詳細資訊，請參閱在 **VMM 中** 布建受防護的主機中設定 [全域 HGS 設定](/system-center/vmm/guarded-deploy-host#configure-global-hgs-settings)。
 
-    >**備註**
+    >**注意事項**
     > - 如果 HGS 系統管理員在 [hgs 伺服器上啟用 HTTPS](guarded-fabric-configure-hgs-https.md)，請使用來開始 url `https://` 。
     > - 如果 HGS 系統管理員在 HGS 伺服器上啟用 HTTPS，並使用自我簽署憑證，您必須將憑證匯入每部主機上的「受信任的根憑證授權單位」存放區。 若要這樣做，請在每部主機上執行下列命令：
        ```PowerShell

@@ -6,12 +6,12 @@ author: BenjaminArmstrong
 ms.date: 12/20/2016
 ms.topic: article
 ms.assetid: 9cafd6cb-dbbe-4b91-b26c-dee1c18fd8c2
-ms.openlocfilehash: 9056beec7d07d1657ece3703f461ecfe5d9cd0fc
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: f82ccc4e6dc2dbd7a34d829c0bc753fc6533f8dd
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746443"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866107"
 ---
 # <a name="manage-hyper-v-integration-services"></a>管理 Hyper-v Integration Services
 
@@ -34,7 +34,7 @@ Hyper-v Integration Services 利用與 Hyper-v 主機之間的雙向通訊，增
 
 ### <a name="turn-an-integration-service-on-or-off-using-powershell"></a>使用 PowerShell 開啟或關閉整合服務
 
-若要在 PowerShell 中執行這項操作，請使用 [get-vmintegrationservice](/powershell/module/hyper-v/enable-vmintegrationservice?view=win10-ps) 和 [停用-get-vmintegrationservice](/powershell/module/hyper-v/disable-vmintegrationservice?view=win10-ps)。
+若要在 PowerShell 中執行這項操作，請使用 [get-vmintegrationservice](/powershell/module/hyper-v/enable-vmintegrationservice) 和 [停用-get-vmintegrationservice](/powershell/module/hyper-v/disable-vmintegrationservice)。
 
 下列範例示範如何開啟和關閉名為 "demovm" 之虛擬機器的來賓檔案複製整合服務。
 
@@ -227,10 +227,10 @@ Linux 整合服務通常是透過 Linux 核心提供。 Linux integration servic
 > [!NOTE]
 > Windows 10/Windows Server 2016/2019 上的 Hyper-v 未隨附影像檔案 vmguest.iso，因為不再需要該檔案。
 
-| 來賓  | 更新機制 | 備註 |
+| 來賓  | 更新機制 | 注意 |
 |:---------|:---------|:---------|
 | Windows 10 | Windows Update | |
-| Windows 8。1 | Windows Update | |
+| Windows 8.1 | Windows Update | |
 | Windows 8 | Windows Update | 需要資料交換整合服務。* |
 | Windows 7 | Windows Update | 需要資料交換整合服務。* |
 | Windows Vista (SP 2) | Windows Update | 需要資料交換整合服務。* |
@@ -250,10 +250,10 @@ Linux 整合服務通常是透過 Linux 核心提供。 Linux integration servic
 
 **針對 Windows 8.1/Windows Server 2012R2 主機上執行的虛擬機器：**
 
-| 來賓  | 更新機制 | 備註 |
+| 來賓  | 更新機制 | 注意 |
 |:---------|:---------|:---------|
 | Windows 10 | Windows Update | |
-| Windows 8。1 | 整合服務光碟 | 請參閱下方的 [指示](#install-or-update-integration-services)。 |
+| Windows 8.1 | 整合服務光碟 | 請參閱下方的 [指示](#install-or-update-integration-services)。 |
 | Windows 8 | 整合服務光碟 | 請參閱下方的 [指示](#install-or-update-integration-services)。 |
 | Windows 7 | 整合服務光碟 | 請參閱下方的 [指示](#install-or-update-integration-services)。 |
 | Windows Vista (SP 2) | 整合服務光碟 | 請參閱下方的 [指示](#install-or-update-integration-services)。 |
@@ -275,9 +275,9 @@ Linux 整合服務通常是透過 Linux 核心提供。 Linux integration servic
 
 **針對 Windows 8/Windows Server 2012 主機上執行的虛擬機器：**
 
-| 來賓  | 更新機制 | 備註 |
+| 來賓  | 更新機制 | 注意 |
 |:---------|:---------|:---------|
-| Windows 8。1 | 整合服務光碟 | 請參閱下方的 [指示](#install-or-update-integration-services)。 |
+| Windows 8.1 | 整合服務光碟 | 請參閱下方的 [指示](#install-or-update-integration-services)。 |
 | Windows 8 | 整合服務光碟 | 請參閱下方的 [指示](#install-or-update-integration-services)。 |
 | Windows 7 | 整合服務光碟 | 請參閱下方的 [指示](#install-or-update-integration-services)。 |
 | Windows Vista (SP 2) | 整合服務光碟 | 請參閱下方的 [指示](#install-or-update-integration-services)。 |
@@ -307,7 +307,7 @@ Linux 整合服務通常是透過 Linux 核心提供。 Linux integration servic
 
 2.  連接至虛擬機器。 以滑鼠右鍵按一下虛擬機器，然後按一下 **[連線]**。
 
-3.  在虛擬機器連線的 [執行] 功能表中，按一下 [插入整合服務安裝磁片]****。 這個動作會載入虛擬 DVD 光碟機中的安裝磁片。 視客體作業系統而定，您可能需要手動開始安裝。
+3.  在虛擬機器連線的 [執行] 功能表中，按一下 [插入整合服務安裝磁片]。 這個動作會載入虛擬 DVD 光碟機中的安裝磁片。 視客體作業系統而定，您可能需要手動開始安裝。
 
 4.  安裝完成後，即可使用所有的整合服務。
 

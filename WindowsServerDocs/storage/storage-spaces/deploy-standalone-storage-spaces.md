@@ -6,12 +6,12 @@ author: JasonGerend
 ms.author: jgerend
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4758cc67c1dd5dc77ecacf1a8229d59f27eac60e
-ms.sourcegitcommit: 00406560a665a24d5a2b01c68063afdba1c74715
+ms.openlocfilehash: 9f31780480f2887747f80550d69792cacd5fd61a
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91716875"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865917"
 ---
 # <a name="deploy-storage-spaces-on-a-stand-alone-server"></a>在獨立伺服器上部署儲存空間
 
@@ -21,7 +21,7 @@ ms.locfileid: "91716875"
 
 若要建立儲存空間，您必須先建立一或多個儲存集區。 儲存集區是實體磁碟的集合。 儲存集區可啟用儲存彙總、彈性容量擴充，以及委派的系統管理。
 
-您可以從儲存集區建立一或多個虛擬磁碟。 這些虛擬磁碟也稱為「儲存空間」**。 儲存空間會對 Windows 作業系統顯示為一般磁碟，您可以從這個磁碟建立格式化磁碟區。 透過「檔案和存放服務」使用者介面建立虛擬磁碟時，您可以設定復原類型 (簡單、鏡像或同位)、佈建類型 (精簡或固定) 及大小。 透過 Windows PowerShell，您可以設定其他參數，例如欄位數目、間隔值，以及要使用集區中的哪一個實體磁碟。 如需這些額外參數的詳細資訊，請參閱 [VirtualDisk](/powershell/module/storage/new-virtualdisk?view=win10-ps) 和 [Windows Server storage 論壇](/answers/topics/windows-server-storage.html)。
+您可以從儲存集區建立一或多個虛擬磁碟。 這些虛擬磁碟也稱為「儲存空間」。 儲存空間會對 Windows 作業系統顯示為一般磁碟，您可以從這個磁碟建立格式化磁碟區。 透過「檔案和存放服務」使用者介面建立虛擬磁碟時，您可以設定復原類型 (簡單、鏡像或同位)、佈建類型 (精簡或固定) 及大小。 透過 Windows PowerShell，您可以設定其他參數，例如欄位數目、間隔值，以及要使用集區中的哪一個實體磁碟。 如需這些額外參數的詳細資訊，請參閱 [VirtualDisk](/powershell/module/storage/new-virtualdisk) 和 [Windows Server storage 論壇](/answers/topics/windows-server-storage.html)。
 
 > [!NOTE]
 > 您無法使用儲存空間來裝載 Windows 作業系統。
@@ -49,7 +49,7 @@ ms.locfileid: "91716875"
 |磁碟匯流排類型|- 序列連接 SCSI (SAS)<br>- 序列先進技術附件 (SATA)<br>- iSCSI 和光纖通道控制卡。 |您也可以使用 USB 磁碟機。 不過，在伺服器環境中使用 USB 磁片磁碟機並不是最佳做法。<br>ISCSI 和光纖通道 (FC) 控制器上都支援儲存空間，只要在其上建立的虛擬磁片都不具復原性， (簡單的資料行數目) 。<br>|
 |磁碟設定|-實體磁片必須至少為 4 GB<br>-磁片必須為空白且未格式化。 請勿建立磁碟區。||
 |HBA 考量|- 建議使用不支援 RAID 功能的簡易主機匯流排介面卡 (HBA)<br>- 若支援 RAID，HBA 必須處於非 RAID 模式，並停用所有 RAID 功能<br>- 介面卡不得抽象化實體磁碟、快取資料，或遮蔽任何連接的裝置。 這包括由連結的集束磁碟 (just-a-bunch-of-disks，JBOD) 裝置所提供的內含服務。 |「儲存空間」是只與您可以完全停用所有 RAID 功能的 HBA 相容。|
-|JBOD 機箱|-JBOD 主機殼是選擇性的<br>-建議使用列示在 Windows Server Catalog 上的儲存空間認證主機殼<br>-如果您使用的是 JBOD 主機殼，請向存放裝置廠商確認主機殼支援儲存空間，以確保完整的功能<br>-若要判斷 JBOD 主機殼是否支援主機殼和位置識別，請執行下列 Windows PowerShell Cmdlet：<br><br> PhysicalDisk \| 嗎？ {$_.BusType – eq "SAS"} \| fc <br> | 如果 **EnclosureNumber** 和 **SlotNumber** 欄位包含值，則主機殼支援這些功能。|
+|JBOD 機箱|-JBOD 主機殼是選擇性的<br>-建議使用列示在 Windows Server Catalog 上的儲存空間認證主機殼<br>-如果您使用的是 JBOD 主機殼，請向存放裝置廠商確認主機殼支援儲存空間，以確保完整的功能<br>-若要判斷 JBOD 主機殼是否支援主機殼和位置識別，請執行下列 Windows PowerShell Cmdlet：<br><br> Get-PhysicalDisk \| ？ {$_.BusType – eq "SAS"} \| fc <br> | 如果 **EnclosureNumber** 和 **SlotNumber** 欄位包含值，則主機殼支援這些功能。|
 
 若要規劃獨立伺服器部署所需的實體磁碟數目和復原類型，請使用下列指導方針。
 
@@ -67,10 +67,10 @@ ms.locfileid: "91716875"
 
 2. 在流覽窗格中，選取 [ **儲存集區** ] 頁面。
 
-    根據預設，可用的磁碟會包含在名為「原始」** 集區的集區中。 如果 [儲存集區]**** 底下沒有列出任何原始集區，即表示存放裝置不符合「儲存空間」的需求。 請確定磁碟符合＜先決條件＞一節所述的需求。
+    根據預設，可用的磁碟會包含在名為「原始」集區的集區中。 如果 [儲存集區] 底下沒有列出任何原始集區，即表示存放裝置不符合「儲存空間」的需求。 請確定磁碟符合＜先決條件＞一節所述的需求。
 
     > [!TIP]
-    > 如果您選取 [原始]**** 儲存集區，則可用的實體磁碟會列在 [實體磁碟]**** 底下。
+    > 如果您選取 [原始] 儲存集區，則可用的實體磁碟會列在 [實體磁碟] 底下。
 
 3. **在 [** **存放集區**] 底下，選取 [工作] 清單，然後選取 [**新增存放集區**]。 新的存放集區 Wizard 將會開啟。
 
@@ -89,9 +89,9 @@ ms.locfileid: "91716875"
 8. 在 [ **查看結果** ] 頁面上，確認所有工作都已完成，然後選取 [ **關閉**]。
 
     > [!NOTE]
-    > (選擇性) 若要直接繼續下一個步驟，您可以選取 [當此精靈關閉時建立虛擬磁碟]**** 核取方塊。
+    > (選擇性) 若要直接繼續下一個步驟，您可以選取 [當此精靈關閉時建立虛擬磁碟] 核取方塊。
 
-9. 在 [儲存集區]**** 底下，確認已列出新的儲存集區。
+9. 在 [儲存集區] 底下，確認已列出新的儲存集區。
 
 ### <a name="windows-powershell-equivalent-commands-for-creating-storage-pools"></a>Windows PowerShell 用來建立儲存集區的對等命令
 
@@ -126,7 +126,7 @@ Add-PhysicalDisk –StoragePoolFriendlyName StoragePool1 –PhysicalDisks $PDToA
 
 接著，您必須從儲存集區建立一或多個虛擬磁碟。 建立虛擬磁碟時，您可以選取將資料配置在各個實體磁碟上的方式。 這會同時影響可靠性和效能。 您也可以選取要建立精簡佈建或固定佈建的磁碟。
 
-1. 如果 [新增虛擬磁碟精靈] 尚未開啟，請在 [伺服器管理員] 的 [儲存集區]**** 頁面中，確定在 [儲存集區]**** 底下已選取想要的儲存集區。
+1. 如果 [新增虛擬磁碟精靈] 尚未開啟，請在 [伺服器管理員] 的 [儲存集區] 頁面中，確定在 [儲存集區] 底下已選取想要的儲存集區。
 
 2. **在 [** **虛擬磁片**] 下，選取 [工作] 清單，然後選取 [**新增虛擬磁片**]。 將會開啟新的虛擬磁片 Wizard。
 
@@ -159,17 +159,17 @@ Add-PhysicalDisk –StoragePoolFriendlyName StoragePool1 –PhysicalDisks $PDToA
      > [!TIP]
      > 使用「儲存空間」，您便可以將精簡佈建和固定佈建的虛擬磁碟建立在同一個儲存集區中。 例如，您可以使用精簡佈建的虛擬磁碟來裝載資料庫，使用固定佈建的虛擬磁碟來裝載關聯的記錄檔。
 
-9. 在 [指定的虛擬磁碟的大小]**** 頁面上，執行下列動作：
+9. 在 [指定的虛擬磁碟的大小] 頁面上，執行下列動作：
 
-    如果您在上一個步驟中選取了 [精簡布建]，請在 [ **虛擬磁片大小** ] 方塊中輸入虛擬磁片大小，選取單位 (**MB**、 **GB**或 **TB**) ，然後選取 **[下一步]**。
+    如果您在上一個步驟中選取了 [精簡布建]，請在 [ **虛擬磁片大小** ] 方塊中輸入虛擬磁片大小，選取單位 (**MB**、 **GB** 或 **TB**) ，然後選取 **[下一步]**。
 
     如果您在上一個步驟中選取 [固定布建]，請選取下列其中一項：
 
       - **指定大小**
 
-        若要指定大小，請在 [ **虛擬磁片大小** ] 方塊中輸入值，然後選取單位 (**MB**、 **GB**或 **TB**) 。
+        若要指定大小，請在 [ **虛擬磁片大小** ] 方塊中輸入值，然後選取單位 (**MB**、 **GB** 或 **TB**) 。
 
-        如果您使用簡單以外的儲存配置，虛擬磁碟使用的可用空間將會超過您指定的大小。 若要避免發生磁碟區大小超過儲存集區可用空間的可能錯誤，您可以選取 [建立所能建立的最大虛擬磁碟，但不超過指定的大小]**** 核取方塊。
+        如果您使用簡單以外的儲存配置，虛擬磁碟使用的可用空間將會超過您指定的大小。 若要避免發生磁碟區大小超過儲存集區可用空間的可能錯誤，您可以選取 [建立所能建立的最大虛擬磁碟，但不超過指定的大小] 核取方塊。
 
       - **最大容量**
 
@@ -180,31 +180,31 @@ Add-PhysicalDisk –StoragePoolFriendlyName StoragePool1 –PhysicalDisks $PDToA
 11. 在 [ **查看結果** ] 頁面上，確認所有工作都已完成，然後選取 [ **關閉**]。
 
     > [!TIP]
-    > [當此精靈關閉時建立磁碟區]**** 核取方塊預設為已選取狀態。 這會讓您直接進入下一個步驟。
+    > [當此精靈關閉時建立磁碟區] 核取方塊預設為已選取狀態。 這會讓您直接進入下一個步驟。
 
 ### <a name="windows-powershell-equivalent-commands-for-creating-virtual-disks"></a>Windows PowerShell 用來建立虛擬磁片的對等命令
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
-下列範例會在名為*StoragePool1*的存放集區上建立一個名為*VIRTUALDISK1*的 50 GB 虛擬磁片。
+下列範例會在名為 *StoragePool1* 的存放集區上建立一個名為 *VIRTUALDISK1* 的 50 GB 虛擬磁片。
 
 ```PowerShell
 New-VirtualDisk –StoragePoolFriendlyName StoragePool1 –FriendlyName VirtualDisk1 –Size (50GB)
 ```
 
-下列範例會在名為*StoragePool1*的存放集區上建立一個名為*VirtualDisk1*的鏡像虛擬磁片。 磁片會使用儲存集區的最大儲存體容量。
+下列範例會在名為 *StoragePool1* 的存放集區上建立一個名為 *VirtualDisk1* 的鏡像虛擬磁片。 磁片會使用儲存集區的最大儲存體容量。
 
 ```PowerShell
 New-VirtualDisk –StoragePoolFriendlyName StoragePool1 –FriendlyName VirtualDisk1 –ResiliencySettingName Mirror –UseMaximumSize
 ```
 
-下列範例會在名為*StoragePool1*的存放集區上建立一個名為*VIRTUALDISK1*的 50 GB 虛擬磁片。 這個磁碟使用精簡佈建類型。
+下列範例會在名為 *StoragePool1* 的存放集區上建立一個名為 *VIRTUALDISK1* 的 50 GB 虛擬磁片。 這個磁碟使用精簡佈建類型。
 
 ```PowerShell
 New-VirtualDisk –StoragePoolFriendlyName StoragePool1 –FriendlyName VirtualDisk1 –Size (50GB) –ProvisioningType Thin
 ```
 
-下列範例會在名為*StoragePool1*的存放集區上建立名為*VirtualDisk1*的虛擬磁片。 這個虛擬磁碟使用三向鏡像，並且具有 20 GB 的固定大小。
+下列範例會在名為 *StoragePool1* 的存放集區上建立名為 *VirtualDisk1* 的虛擬磁片。 這個虛擬磁碟使用三向鏡像，並且具有 20 GB 的固定大小。
 
 > [!NOTE]
 > 儲存集區中必須至少有五個虛擬磁碟，這個 Cmdlet 才能運作。 (這不包括任何已配置為熱備援的磁碟。)
@@ -217,7 +217,7 @@ New-VirtualDisk -StoragePoolFriendlyName StoragePool1 -FriendlyName VirtualDisk1
 
 接著，您必須從虛擬磁碟建立磁碟區。 您可以指派選用的磁碟機號或資料夾，然後使用檔案系統來格式化磁片區。
 
-1. 如果新的磁片區嚮導尚未開啟，請在 [ **存放集區** ] 頁面的 [ **虛擬磁片**] 下，伺服器管理員以滑鼠右鍵按一下所需的虛擬磁片，然後選取 [ **新增**磁片區]。
+1. 如果新的磁片區嚮導尚未開啟，請在 [ **存放集區** ] 頁面的 [ **虛擬磁片**] 下，伺服器管理員以滑鼠右鍵按一下所需的虛擬磁片，然後選取 [ **新增** 磁片區]。
 
     此時會開啟 [新增磁碟區精靈]。
 
@@ -229,7 +229,7 @@ New-VirtualDisk -StoragePoolFriendlyName StoragePool1 -FriendlyName VirtualDisk1
 
     2. 在 [ **磁片** ] 區域中，選取您要建立磁片區的虛擬磁片。
 
-4. 在 [ **指定磁片區大小** ] 頁面上，輸入磁片區大小，指定單位 (**MB**、 **GB**或 **TB**) ，然後選取 **[下一步]**。
+4. 在 [ **指定磁片區大小** ] 頁面上，輸入磁片區大小，指定單位 (**MB**、 **GB** 或 **TB**) ，然後選取 **[下一步]**。
 
 5. 在 [ **指派給磁碟機號或資料夾** ] 頁面上，設定所需的選項，然後選取 **[下一步]**。
 
@@ -237,13 +237,13 @@ New-VirtualDisk -StoragePoolFriendlyName StoragePool1 -FriendlyName VirtualDisk1
 
     1. 在 [ **檔案系統** ] 清單中，選取 [ **NTFS** ] 或 [ **ReFS**]。
 
-    2. 在 [配置單位大小]**** 清單中，將設定保留為 [預設]**** 或設定配置單位大小。
+    2. 在 [配置單位大小] 清單中，將設定保留為 [預設] 或設定配置單位大小。
 
         > [!NOTE]
         > 如需有關配置單位大小的詳細資訊，請參閱 [NTFS、FAT 及 exFAT 的預設叢集大小](https://support.microsoft.com/help/140365/default-cluster-size-for-ntfs-fat-and-exfat)。
 
 
-    3. (選擇性) 在 [磁碟區標籤]**** 方塊中，輸入磁碟區標籤名稱，例如「HR 資料」****。
+    3. (選擇性) 在 [磁碟區標籤] 方塊中，輸入磁碟區標籤名稱，例如「HR 資料」。
 
 7. 在 [ **確認選取專案** ] 頁面上，確認設定正確，然後選取 [ **建立**]。
 
@@ -264,6 +264,6 @@ Get-VirtualDisk –FriendlyName VirtualDisk1 | Get-Disk | Initialize-Disk –Pas
 ## <a name="additional-information"></a>其他資訊
 
 - [儲存空間](overview.md)
-- [Windows PowerShell 中的儲存體 Cmdlet](/powershell/module/storage/index?view=win10-ps)
+- [Windows PowerShell 中的儲存體 Cmdlet](/powershell/module/storage/index)
 - [部署叢集儲存空間](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11))
 - [Windows Server storage 論壇](/answers/topics/windows-server-storage.html)

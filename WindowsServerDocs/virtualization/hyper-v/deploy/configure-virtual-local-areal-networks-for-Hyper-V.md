@@ -6,12 +6,12 @@ ms.assetid: 8510a709-001c-4eee-b6d6-c451e8a8a836
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 10/11/2016
-ms.openlocfilehash: 7b756127e7396ec96e3f8e6901aaabef1d5664aa
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 22f9890fd1a3a90fcbab59a9ed1de8481e117e75
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746023"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866157"
 ---
 # <a name="configure-virtual-local-area-networks-for-hyper-v"></a>設定 Hyper-v 的虛擬區域網路絡
 虛擬區域網路絡 \( vlan \) 提供一種方式來隔離網路流量。 Vlan 設定在支援 802.1 q 的交換器和路由器中。 如果您設定多個 Vlan，並且想要在兩者之間進行通訊，您必須設定網路裝置來允許。
@@ -27,7 +27,7 @@ ms.locfileid: "90746023"
 
 1. 開啟 [Hyper-v \- 管理員]。
 
-2. 從 [動作]  功能表上，按一下 [虛擬交換器管理員] ****。
+2. 從 [動作]  功能表上，按一下 [虛擬交換器管理員] 。
 
 3. 在 [ **虛擬交換器**] 底下，選取連接至支援 vlan 之實體網路介面卡的虛擬交換器。
 
@@ -49,7 +49,7 @@ ms.locfileid: "90746023"
 
 - 將更多虛擬網路介面卡連接到適當的虛擬交換器，並指派 VLAN 識別碼。 請務必正確設定 IP 位址，而且您想要透過 VLAN 路由傳送的流量也會使用正確的 IP 位址。
 
-- 使用 [Set \- get-vmnetworkadaptervlan](/powershell/module/hyper-v/set-vmnetworkadaptervlan?view=win10-ps) Cmdlet 在主幹模式中設定虛擬網路介面卡。
+- 使用 [Set \- get-vmnetworkadaptervlan](/powershell/module/hyper-v/set-vmnetworkadaptervlan) Cmdlet 在主幹模式中設定虛擬網路介面卡。
 
 ## <a name="see-also"></a>另請參閱
 

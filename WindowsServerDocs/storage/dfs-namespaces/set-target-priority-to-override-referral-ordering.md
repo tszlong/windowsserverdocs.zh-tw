@@ -6,12 +6,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 04a295b8f6249521c809770af2c85fdce5dd54b4
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: f562a39d6b89ab117f6c3d8b274c03e5810f58c3
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971215"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866207"
 ---
 # <a name="set-target-priority-to-override-referral-ordering"></a>設定目標優先順序以覆寫轉介順序
 
@@ -51,7 +51,7 @@ ms.locfileid: "87971215"
 4.  在 **\[進階\]** 索引標籤上，按一下 **\[覆寫轉介順序\]**，然後按一下所需的優先順序。
 
 > [!NOTE]
-> 若要使用 Windows PowerShell 來設定目標優先順序，請使用 [Set-DfsnRootTarget](/powershell/module/dfsr/update-dfsrconfigurationfromad?view=win10-ps) 和 [Set-DfsnFolderTarget](/powershell/module/dfsr/update-dfsrconfigurationfromad?view=win10-ps) Cmdlet 與 **ReferralPriorityClass** 和 **ReferralPriorityRank** 參數。 這些 Cmdlet 於 Windows Server 2012 中引進。
+> 若要使用 Windows PowerShell 來設定目標優先順序，請使用 [Set-DfsnRootTarget](/powershell/module/dfsr/update-dfsrconfigurationfromad) 和 [Set-DfsnFolderTarget](/powershell/module/dfsr/update-dfsrconfigurationfromad) Cmdlet 與 **ReferralPriorityClass** 和 **ReferralPriorityRank** 參數。 這些 Cmdlet 於 Windows Server 2012 中引進。
 
 ## <a name="additional-references"></a>其他參考資料
 

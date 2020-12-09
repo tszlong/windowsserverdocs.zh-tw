@@ -6,12 +6,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 04/11/2019
 ms.topic: article
-ms.openlocfilehash: fef394aaef059ec83303c903ca5e548f002775c0
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 3da3a66a6d414c5e80b5f84dc14c5e739a7f788a
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93069070"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866337"
 ---
 # <a name="install-a-new-active-directory-forest-using-azure-cli"></a>使用 Azure CLI 安裝新的 Active Directory 樹系
 
@@ -34,7 +34,7 @@ AD DS 可以在 Azure 虛擬機器上執行 (VM) 的方式，與在許多內部�
 
 ## <a name="build-the-test-environment"></a>建立測試環境
 
-我們會使用 [Azure 入口網站](https://portal.azure.com) 和 [Azure CLI](/cli/azure/overview?view=azure-cli-latest) 來建立環境。
+我們會使用 [Azure 入口網站](https://portal.azure.com) 和 [Azure CLI](/cli/azure/overview) 來建立環境。
 
 Azure CLI 可用來從命令列或在指令碼中建立和管理 Azure 資源。 本教學課程詳細說明如何使用 Azure CLI 來部署執行 Windows Server 2019 的虛擬機器。 部署完成後，我們會連接到伺服器，並安裝 AD DS。
 
@@ -44,7 +44,7 @@ Azure CLI 可用來從命令列或在指令碼中建立和管理 Azure 資源。
 
 下列腳本會將建立兩個 Windows Server 2019 Vm 的程式自動化，以針對 Azure 中新的 Active Directory 樹系建立網域控制站。 系統管理員可以修改下列變數，以符合其需求，然後再完成一項作業。 此腳本會建立必要的資源群組、具有遠端桌面、虛擬網路和子網的流量規則和可用性群組的網路安全性群組。 接著，每個 Vm 都會以 20 GB 的資料磁片建立，並停用快取以供安裝 AD DS。
 
-您可以直接從 Azure 入口網站執行下列腳本。 如果您選擇在本機安裝和使用 CLI，本快速入門會要求您執行 Azure CLI 2.0.4 版或更新版本。 執行 `az --version` 以尋找版本。 如果您需要安裝或升級，請參閱[安裝 Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest)。
+您可以直接從 Azure 入口網站執行下列腳本。 如果您選擇在本機安裝和使用 CLI，本快速入門會要求您執行 Azure CLI 2.0.4 版或更新版本。 執行 `az --version` 以尋找版本。 如果您需要安裝或升級，請參閱[安裝 Azure CLI 2.0](/cli/azure/install-azure-cli)。
 
 | 變數名稱 | 目的 |
 | :---: | :--- |
@@ -160,14 +160,14 @@ az vm create \
 
 ## <a name="configure-the-vms-and-install-active-directory-domain-services"></a>設定 Vm 並安裝 Active Directory Domain Services
 
-腳本完成之後，請流覽至 [Azure 入口網站](https://portal.azure.com)，然後流覽至 [ **虛擬機器** ]。
+腳本完成之後，請流覽至 [Azure 入口網站](https://portal.azure.com)，然後流覽至 [ **虛擬機器**]。
 
 ### <a name="configure-the-first-domain-controller"></a>設定第一個網域控制站
 
 使用您在腳本中提供的認證連接到 AZDC01。
 
 * 將資料磁片初始化並格式化為 F：
-   * 開啟 [開始] 功能表並流覽至 [ **電腦管理** ]
+   * 開啟 [開始] 功能表並流覽至 [**電腦管理**]
    * 流覽至 **存放裝置**  >  **磁片管理**
    * 將磁片初始化為 MBR
    * 建立新的簡單磁片區並指派磁碟機號 F：如有需要，您可以提供磁片區標籤
@@ -176,7 +176,7 @@ az vm create \
    * 在 [網域控制站選項] 頁面上，將網域名稱系統 (DNS) 伺服器和通用類別目錄 (GC) 核取
    * 根據您的組織需求指定目錄服務還原模式密碼
    * 變更 C：的路徑，以指向我們在提示您輸入位置時所建立的 F：磁片磁碟機
-   * 查看在嚮導中所做的選擇，然後選擇 **[下一步** ]
+   * 查看在嚮導中所做的選擇，然後選擇 **[下一步**]
 
 > [!NOTE]
 > 必要條件檢查會警告您，實體網路介面卡沒有 (es) 指派的靜態 IP 位址，您可以放心地忽略此情況，因為在 Azure 虛擬網路中指派靜態 ip。
@@ -201,7 +201,7 @@ az vm create \
 使用您在腳本中提供的認證連接到 AZDC02。
 
 * 將資料磁片初始化並格式化為 F：
-   * 開啟 [開始] 功能表並流覽至 [ **電腦管理** ]
+   * 開啟 [開始] 功能表並流覽至 [**電腦管理**]
    * 流覽至 **存放裝置**  >  **磁片管理**
    * 將磁片初始化為 MBR
    * 建立新的簡單磁片區並指派磁碟機號 F： (如果想要的話，您可以提供磁片區標籤) 
@@ -212,7 +212,7 @@ az vm create \
    * 變更 C：的路徑，以指向我們在提示您輸入位置時所建立的 F：磁片磁碟機
    * 確定已在 [網域控制站選項] 頁面上檢查網域名稱系統 (DNS) 伺服器和通用類別目錄 (GC) 
    * 根據您的組織需求指定目錄服務還原模式密碼
-   * 查看在嚮導中所做的選擇，然後選擇 **[下一步** ]
+   * 查看在嚮導中所做的選擇，然後選擇 **[下一步**]
 
 > [!NOTE]
 > 必要條件檢查會警告您，實體網路介面卡沒有 (es) 指派的靜態 IP 位址。 您可以放心地忽略這種情況，因為靜態 Ip 是在 Azure 虛擬網路中指派的。
@@ -235,7 +235,7 @@ az vm create \
 
 ### <a name="remove-using-the-azure-portal"></a>使用 Azure 入口網站移除
 
-在 Azure 入口網站中，流覽至 [ **資源群組** ]，然後選擇我們在此範例 ADonAzureVMs) 所建立的資源群組 (，然後選取 [ **刪除資源群組** ]。 此程式會在刪除資源群組內包含的所有資源之前，先要求確認。
+在 Azure 入口網站中，流覽至 [ **資源群組** ]，然後選擇我們在此範例 ADonAzureVMs) 所建立的資源群組 (，然後選取 [ **刪除資源群組**]。 此程式會在刪除資源群組內包含的所有資源之前，先要求確認。
 
 ### <a name="remove-using-the-azure-cli"></a>使用 Azure CLI 移除
 
@@ -245,7 +245,7 @@ az vm create \
 az group delete --name ADonAzureVMs
 ```
 
-## <a name="next-steps"></a>下一步
+## <a name="next-steps"></a>後續步驟
 
 * [安全的虛擬化 Active Directory Domain Services (AD DS)](../../Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)
 * [Azure AD Connect](/azure/active-directory/connect/active-directory-aadconnect-get-started-express)

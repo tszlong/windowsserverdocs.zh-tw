@@ -1,39 +1,39 @@
 ---
 title: Network Load Balancing
-description: 在本主題中，我們將概述 \( Windows Server 2016 中的網路負載平衡 NLB \) 功能。 您可以使用 NLB，將兩部或多部伺服器當做單一虛擬叢集來管理。 NLB 可增強網際網路伺服器應用程式的可用性和擴充性，例如 web、FTP、防火牆、proxy、虛擬私人網路 \( VPN \) 和其他關鍵伺服器上所使用的 \- 。
+description: 在本主題中，我們將概述 \( Windows Server 2016 中的網路負載平衡 NLB \) 功能。 您可以使用 NLB 將兩部以上的伺服器當作單一虛擬叢集來管理。 NLB 可增強網際網路伺服器應用程式（例如，用於 web、FTP、防火牆、proxy、虛擬私人網路 \( VPN \) 及其他任務關鍵性伺服器上）的可用性和擴充性 \- 。
 manager: dougkim
 ms.topic: article
 ms.assetid: 244a4b48-06e5-4796-8750-a50e4f88ac72
 ms.author: lizross
 author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: 4417748504a0458396cd02e965547c2573f2c44f
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 2edcd046958854698fbcc61d96f2716a26de3367
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990083"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866267"
 ---
 # <a name="network-load-balancing"></a>Network Load Balancing
 
 >適用於：Windows Server (半年度管道)、Windows Server 2016
 
-在本主題中，我們將概述 \( Windows Server 2016 中的網路負載平衡 NLB \) 功能。 您可以使用 NLB，將兩部或多部伺服器當做單一虛擬叢集來管理。 NLB 可增強網際網路伺服器應用程式的可用性和擴充性，例如 web、FTP、防火牆、proxy、虛擬私人網路 \( VPN \) 和其他關鍵伺服器上所使用的 \- 。
+在本主題中，我們將概述 \( Windows Server 2016 中的網路負載平衡 NLB \) 功能。 您可以使用 NLB 將兩部以上的伺服器當作單一虛擬叢集來管理。 NLB 可增強網際網路伺服器應用程式（例如，用於 web、FTP、防火牆、proxy、虛擬私人網路 \( VPN \) 及其他任務關鍵性伺服器上）的可用性和擴充性 \- 。
 
 > [!NOTE]
-> Windows Server 2016 包含新的 Azure 靈感軟體 Load Balancer \( SLB， \) 做為軟體定義網路 \( SDN \) 基礎結構的元件。 如果您使用 SDN、使用非 Windows 工作負載、需要輸出網路位址轉譯 \( NAT \) ，或需要第3層 \( L3 \) 或非 TCP 型負載平衡，請使用 SLB 而非 NLB。 針對非 SDN 部署，您可以繼續使用 NLB 搭配 Windows Server 2016。 如需 SLB 的詳細資訊，請參閱[適用于 SDN 的軟體負載平衡 (SLB) ](../sdn/technologies/network-function-virtualization/software-load-balancing-for-sdn.md)。
+> Windows Server 2016 包含新的 Azure 靈感軟體，Load Balancer \( SLB \) 作為軟體定義網路 \( SDN 基礎結構的元件 \) 。 如果您使用 SDN、使用非 Windows 工作負載、需要輸出網路位址轉譯 \( NAT \) ，或需要第3層 \( L3 \) 或非 TCP 型負載平衡，請使用 SLB 而非 NLB。 您可以繼續針對非 SDN 部署使用 Windows Server 2016 的 NLB。 如需 SLB 的詳細資訊，請參閱 [SDN)  (slb 的軟體負載平衡](../sdn/technologies/network-function-virtualization/software-load-balancing-for-sdn.md)。
 
-網路負載平衡 \( NLB \) 功能會使用 TCP \/ IP 網路通訊協定，將流量分散到多部伺服器。 藉由將兩部或多部執行應用程式的電腦結合成單一虛擬叢集，NLB 可為網頁伺服器和其他關鍵伺服器提供可靠性和效能 \- 。
+網路負載平衡 \( NLB \) 功能會使用 TCP \/ IP 網路通訊協定，將流量分散到數部伺服器。 藉由將執行應用程式的兩部或多部電腦結合成單一虛擬叢集，NLB 可提供 web 伺服器與其他任務關鍵性伺服器的可靠性和效能 \- 。
 
-NLB 叢集中的伺服器稱為「主機」**，而且每部主機都會執行不同複本的伺服器應用程式。 NLB 將連入的用戶端要求分配給叢集中的各個主機。 您可以設定每部主機要處理的負載。 您也可以將主機動態新增至叢集，以處理增加的負載。 此外，NLB 可以將所有流量導向指定的單一主機，該主機稱為「預設主機」**。
+NLB 叢集中的伺服器稱為「主機」，而且每部主機都會執行不同複本的伺服器應用程式。 NLB 將連入的用戶端要求分配給叢集中的各個主機。 您可以設定每部主機要處理的負載。 您也可以將主機動態新增至叢集，以處理增加的負載。 此外，NLB 可以將所有流量導向指定的單一主機，該主機稱為「預設主機」。
 
-NLB 允許利用同一組 IP 位址將叢集中的所有電腦定址，而且它會針對每部主機維護一組唯一的固定 IP 位址。 針對負載 \- 平衡的應用程式，當主機故障或離線時，負載會在仍在運作的電腦之間自動重新分配。 準備好時，離線電腦可以通透方式重新加入叢集，並重新取得它的工作量共用，這能讓叢集中的其他電腦處理較少的流量。
+NLB 允許利用同一組 IP 位址將叢集中的所有電腦定址，而且它會針對每部主機維護一組唯一的固定 IP 位址。 針對負載 \- 平衡的應用程式，當主機失敗或離線時，會在仍在運作的電腦之間自動重新分配負載。 準備好時，離線電腦可以通透方式重新加入叢集，並重新取得它的工作量共用，這能讓叢集中的其他電腦處理較少的流量。
 
 ## <a name="practical-applications"></a>實際應用
-NLB 適用于確保無狀態應用程式（例如執行 Internet Information Services IIS 的 web \( 伺服器 \) ）在最短停機時間內可供使用，而且可以在 \( 負載增加時新增額外的伺服器來調整規模 \) 。 下列各節說明 NLB 如何支援執行這些應用程式的叢集伺服器之高可用性、延展性和管理性。
+NLB 適用于確保無狀態應用程式（例如執行 Internet Information Services IIS 的 web \( 伺服器 \) ）可在最短的停機時間內使用，而且可以在 \( 負載增加時新增額外的伺服器來調整規模 \) 。 下列各節說明 NLB 如何支援執行這些應用程式的叢集伺服器之高可用性、延展性和管理性。
 
 ### <a name="high-availability"></a>高可用性
-高可用性的系統能可靠地以最短的停機時間提供可接受的服務等級。 為了提供高可用性，NLB 包含 \- 的內建功能可自動執行：
+高可用性的系統能可靠地以最短的停機時間提供可接受的服務等級。 為了提供高可用性，NLB 包含 \- 可自動執行的內建功能：
 
 -   偵測失敗或離線的叢集主機，然後復原。
 
@@ -44,11 +44,11 @@ NLB 適用于確保無狀態應用程式（例如執行 Internet Information Ser
 ### <a name="scalability"></a>延展性
 延展性是測量電腦、服務或應用程式可以擴充至何種程度以符合漸增之效能需求的一種方式。 對於 NLB 叢集而言，延展性是指叢集的整體負載超過其功能時，可持續為現有叢集新增一或多個系統的能力。 若要支援延展性，您可以使用 NLB 來執行下列動作：
 
--   針對個別的 TCP IP 服務，跨 NLB 叢集平衡負載要求 \/ 。
+-   針對個別的 TCP IP 服務，在 NLB 叢集之間平衡負載要求 \/ 。
 
 -   在單一叢集中最多支援 32 部電腦。
 
--   在叢集中 \( 的多部主機之間，平衡來自相同用戶端或數個用戶端的多個伺服器負載要求 \) 。
+-   在叢集中的多部 \( 主機之間，從相同的用戶端或多個用戶端平衡多個伺服器載入要求 \) 。
 
 -   當負載增加時將主機新增至 NLB 叢集，而不會造成叢集失敗。
 
@@ -59,17 +59,17 @@ NLB 適用于確保無狀態應用程式（例如執行 Internet Information Ser
 ### <a name="manageability"></a>管理能力
 您可以使用 NLB 來執行下列動作以支援管理性：
 
--   [在 Windows PowerShell 中使用 Nlb 管理員或網路負載平衡 (nlb) Cmdlet](/previous-versions/windows/powershell-scripting/hh801274(v=wps.630))，從單一電腦管理和設定多個 NLB 叢集與叢集主機。
+-   使用 NLB 管理員或網路負載平衡，從單一電腦管理和設定多個 NLB 叢集和叢集主機， [Windows PowerShell 中 (nlb) Cmdlet](/previous-versions/windows/powershell-scripting/hh801274(v=wps.630))。
 
 -   使用連接埠管理規則來指定單一 IP 連接埠或連接埠群組的負載平衡行為。
 
 -   為每個網站定義不同的連接埠規則。 如果您 \- 針對多個應用程式或網站使用同一組負載平衡伺服器，連接埠規則會以 \( 使用虛擬叢集的目的地虛擬 IP 位址為基礎 \) 。
 
--   使用選擇性的單一主機規則，將所有用戶端要求導向到單一主機 \- 。 NLB 會將用戶端要求路由傳送到執行特定應用程式的特定主機。
+-   使用選擇性的單一主機規則，將所有用戶端要求導向至單一主機 \- 。 NLB 會將用戶端要求路由傳送到執行特定應用程式的特定主機。
 
 -   封鎖特定 IP 連接埠不需要的網路存取權。
 
--   在叢集主機上啟用網際網路群組管理通訊協定 \( IGMP \) 支援，以控制 \( \) 在多播模式中操作時，傳入網路封包傳送至交換器上所有埠的交換器埠氾濫。
+-   啟用叢集主機上的網際網路群組管理通訊協定 \( IGMP \) 支援，以控制切換埠氾濫， \( 其中傳入的網路封包在 \) 以多播模式運作時，會傳送到交換器上的所有埠。
 
 -   使用 Windows PowerShell 命令或指令碼，遠端啟動、停止和控制 NLB 動作。
 
@@ -77,7 +77,7 @@ NLB 適用于確保無狀態應用程式（例如執行 Internet Information Ser
 
 ## <a name="important-functionality"></a>重要功能
 
-NLB 會安裝為標準的 Windows Server 網路驅動程式元件。 其作業對 TCP IP 網路堆疊而言是透明的 \/ 。 下圖顯示在一般設定中，NLB 與其他軟體元件之間的關聯性。
+NLB 會安裝為標準的 Windows Server 網路驅動程式元件。 其作業對 TCP IP 網路堆疊而言是透明的 \/ 。 下圖顯示一般設定中的 NLB 與其他軟體元件之間的關聯性。
 
 ![網路負載平衡和其他軟體元件](../media/NLB/nlb.jpg)
 
@@ -87,10 +87,10 @@ NLB 會安裝為標準的 Windows Server 網路驅動程式元件。 其作業�
 
 - 提供網路負載平衡工具可讓您自單一遠端或本機電腦設定和管理多個叢集與所有主機。
 
-- 可讓用戶端使用單一的邏輯網際網路名稱和虛擬 IP 位址來存取叢集，這稱為叢集 IP 位址， \( 它會保留每部電腦的個別名稱 \) 。 NLB 允許多重主目錄伺服器使用多個虛擬 IP 位址。
+- 可讓用戶端使用單一的邏輯網際網路名稱和虛擬 IP 位址（稱為叢集 IP 位址）來存取叢集， \( 其會為每部電腦保留個別名稱 \) 。 NLB 允許多重主目錄伺服器使用多個虛擬 IP 位址。
 
 > [!NOTE]
-> 當您將 Vm 部署為虛擬叢集時，NLB 不需要伺服器為多重主目錄，也可以有多個虛擬 IP 位址。
+> 當您將 Vm 部署為虛擬叢集時，NLB 不需要將伺服器設為多重主目錄，就能有多個虛擬 IP 位址。
 
 - NLB 可繫結到多個網路介面卡，讓您在每部主機上設定多個獨立叢集。 支援多個網路介面卡與虛擬叢集的不同之處，在於虛擬叢集可讓您在單一網路介面卡上設定多個叢集。
 
@@ -114,7 +114,7 @@ NLB 會安裝為標準的 Windows Server 網路驅動程式元件。 其作業�
 ## <a name="software-requirements"></a>軟體需求
 以下是執行 NLB 叢集的軟體需求。
 
--   只有在每部 \/ 主機上啟用 NLB 的介面卡上，才可以使用 TCP IP。 請勿將任何其他通訊協定 \( （例如 IPX）新增 \) 至此介面卡。
+-   只有在 \/ 每個主機上啟用 NLB 的介面卡上，才可使用 TCP IP。 請勿將任何其他通訊協定 \( （例如 IPX）新增 \) 至此介面卡。
 
 -   叢集中伺服器的 IP 位址必須是靜態的。
 
@@ -128,12 +128,12 @@ NLB 會安裝為標準的 Windows Server 網路驅動程式元件。 其作業�
 
 ### <a name="installation-with-server-manager"></a>使用伺服器管理員安裝
 
-在伺服器管理員中，您可以使用 [新增角色及功能] Wizard 來新增**網路負載平衡**功能。 當您完成嚮導時，會安裝 NLB，而且您不需要重新開機電腦。
+在伺服器管理員中，您可以使用 [新增角色及功能] 嚮導來新增 **網路負載平衡** 功能。 當您完成嚮導時，系統會安裝 NLB，而您不需要重新開機電腦。
 
 
 ### <a name="installation-with-windows-powershell"></a>使用 Windows PowerShell 安裝
 
-若要使用 Windows PowerShell 安裝 NLB，請在您要安裝 NLB 的電腦上，于提升許可權的 Windows PowerShell 提示字元中執行下列命令。
+若要使用 Windows PowerShell 安裝 NLB，請在您想要安裝 NLB 的電腦上，于提升許可權的 Windows PowerShell 提示字元中執行下列命令。
 
 ```powershell
 Install-WindowsFeature NLB -IncludeManagementTools
@@ -141,18 +141,18 @@ Install-WindowsFeature NLB -IncludeManagementTools
 
 安裝完成之後，就不需要重新開機電腦。
 
-如需詳細資訊，請參閱 [Install-WindowsFeature](/powershell/module/servermanager/install-windowsfeature?view=win10-ps)。
+如需詳細資訊，請參閱 [Install-WindowsFeature](/powershell/module/servermanager/install-windowsfeature)。
 
 ### <a name="network-load-balancing-manager"></a>網路負載平衡管理員
-若要在伺服器管理員開啟網路負載平衡管理員，請按一下 [工具]****，然後按一下 [網路負載平衡管理員]****。
+若要在伺服器管理員開啟網路負載平衡管理員，請按一下 [工具]，然後按一下 [網路負載平衡管理員]。
 
 ## <a name="additional-resources"></a>其他資源
 下表提供 NLB 功能的其他資訊連結。
 
 |內容類型|參考|
 |----------------|--------------|
-|部署|[網路負載平衡部署指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754833(v=ws.10))&#124;[使用終端機服務設定網路負載平衡](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771300(v=ws.10))|
-|作業|[管理網路負載平衡](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753954(v=ws.10))叢集 &#124;[設定網路負載平衡參數](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731619(v=ws.10))&#124;[控制網路負載平衡叢集上的主機](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770870(v=ws.10))|
-|疑難排解|[疑難排解網路負載平衡](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732592(v=ws.10))叢集 &#124; [NLB 叢集事件與錯誤](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731678(v=ws.10))|
+|部署|[網路負載平衡部署指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754833(v=ws.10)) &#124; [使用終端機服務設定網路負載平衡](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771300(v=ws.10))|
+|作業|[管理網路負載平衡](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753954(v=ws.10)) 叢集 &#124; [設定網路負載平衡參數](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731619(v=ws.10)) &#124; [控制網路負載平衡叢集上的主機](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770870(v=ws.10))|
+|疑難排解|針對[網路負載平衡](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732592(v=ws.10))叢集 &#124; [NLB 叢集事件和錯誤](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731678(v=ws.10))進行疑難排解|
 |工具及設定|[網路負載平衡 Windows PowerShell Cmdlet](https://go.microsoft.com/fwlink/p/?LinkId=238123)|
-|社群資源|[高可用性 \( 叢集 \) 論壇](https://go.microsoft.com/fwlink/p/?LinkId=230641)
+|社群資源|[高可用性 \( 群集 \) 論壇](https://go.microsoft.com/fwlink/p/?LinkId=230641)

@@ -5,12 +5,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 358fae9a9ee477537d3ee929ff81920175d58298
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 34aa075b088e556695ea1697e578682e6c801bbb
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766411"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866317"
 ---
 # <a name="install-hgs-in-an-existing-bastion-forest"></a>在現有的防禦樹系中安裝 HGS
 
@@ -41,7 +41,7 @@ ms.locfileid: "90766411"
 
 ## <a name="group-managed-service-account"></a>群組受控服務帳戶
 
-群組受管理的服務帳戶 (gMSA) 是 HGS 用來取出和使用其憑證的身分識別。 使用 [uninstall-adserviceaccount](/powershell/module/addsadministration/new-adserviceaccount?view=win10-ps) 建立 gMSA。
+群組受管理的服務帳戶 (gMSA) 是 HGS 用來取出和使用其憑證的身分識別。 使用 [uninstall-adserviceaccount](/powershell/module/addsadministration/new-adserviceaccount) 建立 gMSA。
 如果這是網域中的第一個 gMSA，您將需要新增金鑰發佈服務根金鑰。
 
 每個 HGS 節點都必須允許存取 gMSA 密碼。
@@ -81,7 +81,7 @@ GMSA 需要在每部 HGS 伺服器的安全性記錄中產生事件的許可權�
 JEA 端點的設定包含指定包含 HGS 系統管理員和 HGS 審核者的2個安全性群組。
 屬於系統管理員群組的使用者可以新增、變更或移除 HGS 上的原則;審核者只能查看目前的設定。
 
-使用 Active Directory 管理工具或 [new-adgroup](/powershell/module/addsadministration/new-adgroup?view=win10-ps)，為這些 JEA 群組建立2個安全性群組。
+使用 Active Directory 管理工具或 [new-adgroup](/powershell/module/addsadministration/new-adgroup)，為這些 JEA 群組建立2個安全性群組。
 
 ```powershell
 New-ADGroup -Name 'HgsJeaReviewers' -GroupScope DomainLocal
@@ -140,7 +140,7 @@ Set-Acl -Path $vcoPath -AclObject $acl
 
 **原則名稱：** 網路安全性：設定 Kerberos 允許的加密類型
 
-**動作**：如果已設定此原則，您必須將 gMSA 帳戶更新為 [uninstall-adserviceaccount](/powershell/module/addsadministration/set-adserviceaccount?view=win10-ps) ，才能只在此原則中使用支援的加密類型。 比方說，如果您的原則只允許 AES128 \_ hmac \_ SHA1 和 AES256 \_ hmac \_ sha1，您應該執行 `Set-ADServiceAccount -Identity HGSgMSA -KerberosEncryptionType AES128,AES256` 。
+**動作**：如果已設定此原則，您必須將 gMSA 帳戶更新為 [uninstall-adserviceaccount](/powershell/module/addsadministration/set-adserviceaccount) ，才能只在此原則中使用支援的加密類型。 比方說，如果您的原則只允許 AES128 \_ hmac \_ SHA1 和 AES256 \_ hmac \_ sha1，您應該執行 `Set-ADServiceAccount -Identity HGSgMSA -KerberosEncryptionType AES128,AES256` 。
 
 
 

@@ -6,12 +6,12 @@ ms.author: jiwool
 ms.date: 01/26/2017
 ms.topic: article
 ms.assetid: 444e1496-9e5a-41cf-bfbc-306e2ed8e00a
-ms.openlocfilehash: 7e2c287666115b9a81c6ab5585187f26dad7a5e3
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: bc49260471394ab1efd342fa51b8649b680b2851
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746463"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865797"
 ---
 # <a name="create-hyper-v-vhd-set-files"></a>建立 Hyper-v VHD 設定檔案
 VHD 設定檔案是 Windows Server 2016 中來賓叢集的新共用虛擬磁片模型。 VHD 設定檔支援線上調整共用虛擬磁片大小、支援 Hyper-v 複本，而且可以包含在應用程式一致的檢查點中。
@@ -25,7 +25,7 @@ Hyper-v 會處理管理檢查點鏈和合併共用 VHD 集的所有層面。 管
 
 ## <a name="create-a-vhd-set-file-from-hyper-v-manager"></a>從 Hyper-v 管理員建立 VHD 設定檔案
 
-1.  開啟 Hyper-V 管理員。 按一下 [開始]****，指向 [系統管理工具]****，然後按一下 [Hyper-V 管理員]****。
+1.  開啟 Hyper-V 管理員。 按一下 [開始]，指向 [系統管理工具]，然後按一下 [Hyper-V 管理員]。
 2.  在 [動作] 窗格中，按一下 [ **新增**]，然後按一下 [ **硬碟**]。
 3.  在 [ **選擇磁片格式** ] 頁面上，選取 [ **VHD 設定** 為虛擬硬碟的格式]。
 4.  繼續流覽嚮導的頁面，以自訂虛擬硬碟。 您可以按 [ **下一步** ]，在嚮導的每個頁面上移動，也可以按一下左窗格中的頁面名稱，直接移至該頁面。
@@ -33,7 +33,7 @@ Hyper-v 會處理管理檢查點鏈和合併共用 VHD 集的所有層面。 管
 
 ## <a name="create-a-vhd-set-file-from-windows-powershell"></a>從 Windows PowerShell 建立 VHD 設定檔案
 
-使用具有檔案類型的 [新 VHD](/powershell/module/hyper-v/new-vhd?view=win10-ps) Cmdlet。檔案路徑中的 VHD。 此範例會建立名為 base .vhd 的 VHD 集檔案，其大小為 10 Gb。
+使用具有檔案類型的 [新 VHD](/powershell/module/hyper-v/new-vhd) Cmdlet。檔案路徑中的 VHD。 此範例會建立名為 base .vhd 的 VHD 集檔案，其大小為 10 Gb。
 
 ``` PowerShell
 PS c:\>New-VHD -Path c:\base.vhds -SizeBytes 10GB

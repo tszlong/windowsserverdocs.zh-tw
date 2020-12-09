@@ -7,12 +7,12 @@ manager: dougkim
 ms.author: jgerend
 ms.date: 06/15/2020
 description: 工作資料夾概觀 - 這是 Windows Server 中的一種伺服器角色，可提供使用者一致的方式來存取電腦和裝置中的工作檔案。
-ms.openlocfilehash: d8dcd07cd9a511cd0283030d048dff93ed02d6f1
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 03778cde78a3dabaf6b64acb151be8cce22b2d1d
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036726"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865637"
 ---
 # <a name="work-folders-overview"></a>工作資料夾概觀
 
@@ -119,7 +119,7 @@ ms.locfileid: "89036726"
 
     -   Windows 7 旗艦版
 
-    -   Windows 7 企業版
+    -   Windows 7 Enterprise
 
 -   Windows 7 電腦必須加入您組織的網域 (它們無法加入工作群組)。
 
@@ -168,7 +168,7 @@ ms.locfileid: "89036726"
 | ------------------ | ---------------- |
 | **產品評估** | -   [適用於 Android 的工作資料夾 – 已發佈](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (部落格文章) (英文)<br />-   [適用於 iOS 的工作資料夾 – iPad App 版本](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (部落格文章)<br />-   [Windows Server 2012 R2 上的工作資料夾簡介](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (blog 文章) <br />-   工作資料夾 (Channel 9 影片[的簡介](https://channel9.msdn.com/posts/Introduction-to-Work-Folders)) <br />-   [工作資料夾測試實驗室部署](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (部落格文章)<br />-   [適用於 Windows 7 的工作資料夾](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (部落格文章) (英文) |
 | **部署** | -   [設計工作資料夾的執行](plan-work-folders.md)<br />-   [部署工作資料夾](deploy-work-folders.md)<br />-   [使用 AD FS 和 Web 應用程式 Proxy 部署工作資料夾 (WAP) ](deploy-work-folders-adfs-overview.md)<br />-   [搭配 Azure AD 應用程式 Proxy 部署工作資料夾](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />- [離線檔案 (CSC) 至工作資料夾移轉指南](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />-   [工作資料夾部署的效能考量](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />-   [適用於 Windows 7 的工作資料夾 (64 位元下載)](https://www.microsoft.com/download/details.aspx?id=42558)<br />-   [適用於 Windows 7 的工作資料夾 (32 位元下載)](https://www.microsoft.com/download/details.aspx?id=42559) |
-| **作業** | -   [工作資料夾 iPad app：](https://windows.microsoft.com/windows/work-folders-ipad-faq) 使用者的常見問題 () <br />-   [工作資料夾憑證管理](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (部落格文章)<br />-   [監視 Windows Server 2012 R2 工作資料夾部署](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (blog 文章) <br />-   [Windows PowerShell 中的 Set-syncshare (工作資料夾) Cmdlet](/powershell/module/syncshare/?view=win10-ps)<br />-   [適用於 Windows Server 2012 R2 預覽版本的儲存空間和檔案服務 PowerShell Cmdlet 快速參考卡](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) |
+| **作業** | -   [工作資料夾 iPad app：](https://windows.microsoft.com/windows/work-folders-ipad-faq) 使用者的常見問題 () <br />-   [工作資料夾憑證管理](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (部落格文章)<br />-   [監視 Windows Server 2012 R2 工作資料夾部署](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (blog 文章) <br />-   [Windows PowerShell 中的 Set-syncshare (工作資料夾) Cmdlet](/powershell/module/syncshare/)<br />-   [適用於 Windows Server 2012 R2 預覽版本的儲存空間和檔案服務 PowerShell Cmdlet 快速參考卡](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) |
 | **疑難排解** | -   [Windows Server 2012 R2 – 解決與 IIS Websites 和工作資料夾之間的連接埠衝突](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (部落格文章) (英文)<br />-   [工作資料夾中常見的錯誤](https://techcommunity.microsoft.com/t5/storage-at-microsoft/troubleshooting-work-folders-on-windows-client/ba-p/425627) |
 | **社群資源** | -   [檔案服務和儲存體論壇](/answers/topics/windows-server-storage.html)<br />-   [Microsoft 的儲存體小組-檔案封包的 Blog](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />-   [詢問目錄服務小組的 Blog](/archive/blogs/askds/) |
 | **相關技術** | -   [Windows Server 2016 中的存放裝置](../storage.yml)<br>-   [檔案和存放服務](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831487(v=ws.11))<br />-   [檔案伺服器 Resource Manager](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831701(v=ws.11))<br />-   [資料夾重新導向、離線檔案及漫遊使用者設定檔](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh848267(v=ws.11))<br />-   [BranchCache](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831696(v=ws.11))<br />-   [DFS 命名空間和 DFS 複寫](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)) |

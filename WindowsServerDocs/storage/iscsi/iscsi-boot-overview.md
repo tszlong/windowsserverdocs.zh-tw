@@ -6,12 +6,12 @@ author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 09/11/2018
-ms.openlocfilehash: f3f2ce63afa3e75b6d2f55789866c1872504c8eb
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 04a62aa74d6e645bd2e66c2265b94a6026900fec
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87957415"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865957"
 ---
 # <a name="iscsi-target-boot-overview"></a>iSCSI 目標開機概觀
 
@@ -20,7 +20,7 @@ ms.locfileid: "87957415"
 Windows Server 中的 iSCSI 目標伺服器可透過儲存在集中位置的單一作業系統映像，將數百部電腦開機。 這個做法可以提升效率、管理性、可用性以及安全性。
 
 ## <a name="feature-description"></a><a name="BKMK_OVER"></a>功能描述
-藉由使用差異虛擬硬碟 \( vhd \) ，您可以使用單一作業系統映射「 \( 主要映射」 \) 來開機到256電腦。 例如，假設您使用大約 20 GB 的作業系統映射部署 Windows Server，而且您使用兩個鏡像磁片磁碟機做為開機磁碟區。 僅要將 256 部電腦的作業系統映像開機，您將需要大約 10 TB 的存放空間。 利用 iSCSI 目標伺服器，您會將 40 GB 供作業系統基礎映像使用，以及將 2 GB 供每個伺服器執行個體差異虛擬硬碟使用，總共 552 GB 用於作業系統映像。 相較於單獨儲存作業系統映像，這可以節省 90% 以上的儲存空間。
+藉由使用差異虛擬硬碟 \( vhd \) ，您可以使用單一作業系統映射（「 \( 主要映射」） \) 來開機到256電腦。 例如，假設您使用大約為 20 GB 的作業系統映像部署了 Windows Server，而您使用兩個鏡像磁碟機做為開機磁碟區。 僅要將 256 部電腦的作業系統映像開機，您將需要大約 10 TB 的存放空間。 利用 iSCSI 目標伺服器，您會將 40 GB 供作業系統基礎映像使用，以及將 2 GB 供每個伺服器執行個體差異虛擬硬碟使用，總共 552 GB 用於作業系統映像。 相較於單獨儲存作業系統映像，這可以節省 90% 以上的儲存空間。
 
 ## <a name="practical-applications"></a><a name="BKMK_APP"></a>實際應用
 使用受到控制的作業系統映像可提供下列優點：
@@ -35,7 +35,7 @@ Windows Server 中的 iSCSI 目標伺服器可透過儲存在集中位置的單�
 > 許多廠商提供存放區域網路 \(SAN\) 開機解決方案，可供 iSCSI 目標伺服器在採用商用硬體的 Windows Server 中使用。
 
 ## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>硬體需求
-iSCSI 目標伺服器不需要特殊硬體即可進行功能上的驗證。 在包含大規模部署的資料中心，應該針對特定硬體驗證設計。 如需參考，Microsoft 內部測試指出256電腦部署需要 \- 在 RAID 10 設定中 24X15k-rpm RPM 磁片以供存放裝置使用。 最佳的網路頻寬為 10 GB。 一般預估為每 1 GB 的網路介面卡供 60 部 iSCSI 開機伺服器使用。
+iSCSI 目標伺服器不需要特殊硬體即可進行功能上的驗證。 在包含大規模部署的資料中心，應該針對特定硬體驗證設計。 Microsoft 內部測試指出 256 部電腦的部署需要在 RAID 10 設定中有 24 個 15000 RPM 的磁碟用於儲存體，供您參考。 最佳的網路頻寬為 10 GB。 一般預估為每 1 GB 的網路介面卡供 60 部 iSCSI 開機伺服器使用。
 
 此案例不需要網路介面卡，並且可以使用軟體開機載入器 \(例如 iPXE 開放原始碼開機韌體\)。
 
@@ -47,5 +47,5 @@ iSCSI 目標伺服器可以隨著伺服器管理員中的檔案和 iSCSI 服務�
 
 ## <a name="additional-references"></a>其他參考資料
 * [iSCSI 目標伺服器](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh848272(v=ws.11))
-* [iSCSI 啟動器 Cmdlet](/powershell/module/iscsi/?view=win10-ps)
-* [iSCSI 目標伺服器 Cmdlet](/powershell/module/iscsi/?view=win10-ps)
+* [iSCSI 啟動器 Cmdlet](/powershell/module/iscsi/)
+* [iSCSI 目標伺服器 Cmdlet](/powershell/module/iscsi/)

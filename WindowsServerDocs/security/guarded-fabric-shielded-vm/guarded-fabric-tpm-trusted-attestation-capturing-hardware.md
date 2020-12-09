@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 04/01/2019
-ms.openlocfilehash: c1d169147c6b09c8a238163a961c192e3e483728
-ms.sourcegitcommit: f45640cf4fda621b71593c63517cfdb983d1dc6a
+ms.openlocfilehash: 8ce4528ec7e8143c6f9af977079eed1cf8cc3940
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92155955"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865657"
 ---
 # <a name="authorize-guarded-hosts-using-tpm-based-attestation"></a>使用以 TPM 為基礎的證明授權受防護主機
 
@@ -41,7 +41,7 @@ Windows Server 2019 引進了新的證明方法，稱為 *v2 證明*，其中必
 
 ## <a name="capture-the-tpm-identifier-platform-identifier-or-ekpub-for-each-host"></a>為每部主機捕獲 (平臺識別碼或 EKpub) 的 TPM 識別碼
 
-1.  在網狀架構網域中，確定每部主機上的 TPM 都已備妥可供使用，也就是已初始化 TPM 並取得擁有權。 您可以藉由開啟 TPM 管理主控台 (的) 或在提高許可權的 Windows PowerShell 視窗中執行 **取得 tpm** ，來檢查 tpm 的狀態。 如果您的 TPM 未處於 [ **就緒** ] 狀態，則必須將它初始化並設定其擁有權。 這可以在 TPM 管理主控台中或藉由執行 **Initialize-TPM**來完成。
+1.  在網狀架構網域中，確定每部主機上的 TPM 都已備妥可供使用，也就是已初始化 TPM 並取得擁有權。 您可以藉由開啟 TPM 管理主控台 (的) 或在提高許可權的 Windows PowerShell 視窗中執行 **取得 tpm** ，來檢查 tpm 的狀態。 如果您的 TPM 未處於 [ **就緒** ] 狀態，則必須將它初始化並設定其擁有權。 這可以在 TPM 管理主控台中或藉由執行 **Initialize-TPM** 來完成。
 
 2.  在每個受防護主機上，在提高許可權的 Windows PowerShell 主控台中執行下列命令，以取得其 EKpub。 針對 `<HostName>` ，請將唯一的主機名稱替換成適合用來識別此主機的名稱，這可以是其主機名稱或網狀架構清查服務所使用的名稱（如果有的話)  (）。 為了方便起見，請使用主機名稱來命名輸出檔。
 
@@ -80,13 +80,13 @@ Windows Server 2019 引進了新的證明方法，稱為 *v2 證明*，其中必
 
 建議您先在 audit (記錄) 模式中建立 CI 原則，以查看它是否遺失任何檔案，然後強制執行主機生產工作負載的原則。
 
-如果您使用 [CIPolicy 指令程式](/powershell/module/configci/new-cipolicy?view=win10-ps) 來產生您自己的程式碼完整性原則，您將需要決定要使用的規則層級。
+如果您使用 [CIPolicy 指令程式](/powershell/module/configci/new-cipolicy) 來產生您自己的程式碼完整性原則，您將需要決定要使用的規則層級。
 我們建議主要的「 **發行者** 」層級使用「回復為 **雜湊**」，這可讓您更新大部分數位簽署的軟體，而不需要變更 CI 原則。
 相同發行者所撰寫的新軟體也可以安裝在伺服器上，而不需要變更 CI 原則。
 未數位簽署的可執行檔將會雜湊處理--這些檔案的更新將會要求您建立新的 CI 原則。
 如需可用 CI 原則規則層級的詳細資訊，請參閱 [部署程式碼完整性原則：原則規則和檔案規則](/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create#windows-defender-application-control-policy-rules) 和 Cmdlet 說明。
 
-1.  在參考主機上，產生新的程式碼完整性原則。 下列命令會在「 **發行者** 」層級建立具有回 **希**的原則。 然後，它會將 XML 檔案轉換成二進位檔案格式 Windows 和 HGS 需要分別套用和測量 CI 原則。
+1.  在參考主機上，產生新的程式碼完整性原則。 下列命令會在「 **發行者** 」層級建立具有回 **希** 的原則。 然後，它會將 XML 檔案轉換成二進位檔案格式 Windows 和 HGS 需要分別套用和測量 CI 原則。
 
     ```powershell
     New-CIPolicy -Level Publisher -Fallback Hash -FilePath 'C:\temp\HW1CodeIntegrity.xml' -UserPEs
@@ -101,7 +101,7 @@ Windows Server 2019 引進了新的證明方法，稱為 *v2 證明*，其中必
 
 3.  將 CI 原則套用至您的參考主機：
 
-    1.  執行下列命令，將電腦設定為使用您的 CI 原則。 您也可以使用 [群組原則](/windows/security/threat-protection/windows-defender-application-control/deploy-windows-defender-application-control-policies-using-group-policy) 或 [SYSTEM CENTER VIRTUAL MACHINE MANAGER](/system-center/vmm/guarded-deploy-host?view=sc-vmm-2019#manage-and-deploy-code-integrity-policies-with-vmm)來部署 CI 原則。
+    1.  執行下列命令，將電腦設定為使用您的 CI 原則。 您也可以使用 [群組原則](/windows/security/threat-protection/windows-defender-application-control/deploy-windows-defender-application-control-policies-using-group-policy) 或 [SYSTEM CENTER VIRTUAL MACHINE MANAGER](/system-center/vmm/guarded-deploy-host#manage-and-deploy-code-integrity-policies-with-vmm)來部署 CI 原則。
 
         ```powershell
         Invoke-CimMethod -Namespace root/Microsoft/Windows/CI -ClassName PS_UpdateAndCompareCIPolicy -MethodName Update -Arguments @{ FilePath = "C:\temp\HW1CodeIntegrity.p7b" }

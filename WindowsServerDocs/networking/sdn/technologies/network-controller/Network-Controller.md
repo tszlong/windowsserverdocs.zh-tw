@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 31f3fa4e-cd25-4bf3-89e9-a01a6cec7893
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 27ceace93c42ccabdb2db0208c6e3dabce41e1b0
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 5f789904903838e838e5de0c8de78266055fbcd6
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766811"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866497"
 ---
 # <a name="network-controller"></a>網路控制站
 
@@ -28,9 +28,9 @@ ms.locfileid: "90766811"
 > - [使用 Windows PowerShell 部署網路控制卡](../../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)
 > - [使用伺服器管理員安裝網路控制卡伺服器角色](Install-the-Network-Controller-server-role-using-Server-Manager.md)
 > - [網路控制站的部署後步驟](post-deploy-steps-nc.md)
-> - [網路控制站 Cmdlet](/powershell/module/networkcontroller/?view=win10-ps)
+> - [網路控制站 Cmdlet](/powershell/module/networkcontroller/)
 
-## <a name="network-controller-overview"></a><a name="bkmk_overview"></a>網路控制器概觀
+## <a name="network-controller-overview"></a><a name="bkmk_overview"></a>網路控制站總覽
 
 網路控制站是高度可用且可擴充的伺服器角色，並提供一個應用程式開發介面 API，可 \( \) 讓網路控制器與網路通訊，並提供可讓您與網路控制站通訊的第二個 api。
 
@@ -62,7 +62,7 @@ Network Controller Northbound API 可讓您使用 Windows PowerShell、具象狀
 
 在下圖中，系統管理員會使用與網路控制器直接互動的管理工具。 網路控制站會將網路基礎結構的相關資訊（包括虛擬和實體基礎結構）提供給管理工具，並在使用此工具時，根據系統管理員的動作進行設定變更。
 
-![網路控制站總覽](../../../media/Network-Controller/NetController_overview.png)
+![網路控制器概觀](../../../media/Network-Controller/NetController_overview.png)
 
 如果您要在測試實驗室環境中部署網路控制站，您可以在安裝在 hyper-v 主機上的 Hyper-v 虛擬機器 VM 上執行網路控制站伺服器角色 \( \) 。
 
@@ -126,7 +126,7 @@ Network Controller Northbound API 可讓您使用 Windows PowerShell、具象狀
 
 ## <a name="network-controller-deployment-options"></a>網路控制站部署選項
 
-若要使用 System Center Virtual Machine Manager VMM 來部署網路控制站 \( \) ，請參閱在 [vmm 網狀架構中設定 SDN 網路控制](/system-center/vmm/sdn-controller?view=sc-vmm-2019)站。
+若要使用 System Center Virtual Machine Manager VMM 來部署網路控制站 \( \) ，請參閱在 [vmm 網狀架構中設定 SDN 網路控制](/system-center/vmm/sdn-controller)站。
 
 若要使用腳本部署網路控制站，請參閱 [使用腳本部署軟體定義的網路基礎結構](../../deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)。
 

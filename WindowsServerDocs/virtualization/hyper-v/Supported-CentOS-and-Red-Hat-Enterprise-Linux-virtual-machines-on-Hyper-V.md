@@ -6,12 +6,12 @@ ms.assetid: 4bf8783d-dee5-4b3e-8cce-2b11b117c189
 author: danihalfin
 ms.author: vichen
 ms.date: 04/06/2020
-ms.openlocfilehash: 46372029bb31a8b76f564dca9851a8ce473240ea
-ms.sourcegitcommit: 82fe3e79ea14c51ae3c445d8fa3ed43843597314
+ms.openlocfilehash: 654af785cfdd9c3a5bd054c75d6712d547ada991
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92098497"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866427"
 ---
 <a name="supported-centos-and-red-hat-enterprise-linux-virtual-machines-on-hyper-v"></a>Hyper-v 上支援的 CentOS 和 Red Hat Enterprise Linux 虛擬機器
 =========================================================================
@@ -38,12 +38,12 @@ Hyper-v (的內建 Red Hat Enterprise Linux Integration Services 驅動程式可
 
 -   [RHEL/CentOS 5.x 系列](#rhelcentos-5x-series)
 
--   [備註](#notes)
+-   [注意事項](#notes)
 
 <a name="table-legend"></a>資料表圖例
 ------------
 
--   **內建的內建** 元件包含在此 Linux 發行版本中。 內建的 .LIS (的核心模組版本號碼如 **lsmod**所示，例如) 與 Microsoft 提供的 .lis 下載套件上的版本號碼不同。 不相符並不表示內建的 .LIS 已過期。
+-   **內建的內建** 元件包含在此 Linux 發行版本中。 內建的 .LIS (的核心模組版本號碼如 **lsmod** 所示，例如) 與 Microsoft 提供的 .lis 下載套件上的版本號碼不同。 不相符並不表示內建的 .LIS 已過期。
 
 -   ✔-可用功能
 
@@ -58,7 +58,7 @@ Hyper-v (的內建 Red Hat Enterprise Linux Integration Services 驅動程式可
 | [核心](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)                                                   | 2019、2016、2012 R2        | ✔               | ✔               |
 | Windows Server 2016 精確時間                                                                                                        | 2019、2016                 | ✔               | ✔               |
 | \>256個 vcpu                                                                                                                              |                            |                 |                 |
-| [網路功能](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)                                       |                            |                 |                 |
+| [網路](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)                                       |                            |                 |                 |
 | 大型訊框                                                                                                                             | 2019、2016、2012 R2        | ✔               | ✔               |
 | VLAN 標記和中繼                                                                                                                | 2019、2016、2012 R2        | ✔               | ✔               |
 | 即時移轉                                                                                                                           | 2019、2016、2012 R2        | ✔               | ✔               |
@@ -102,7 +102,7 @@ Hyper-v (的內建 Red Hat Enterprise Linux Integration Services 驅動程式可
 | [核心](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)                                                   | 2019、2016、2012 R2        | ✔                                                                   | ✔                                                                   | ✔                                                                   | ✔            | ✔            | ✔            | ✔            | ✔            | ✔               |
 | Windows Server 2016 精確時間                                                                                                        | 2019、2016                 | ✔                                                                   | ✔                                                                   |                                                                     |              |              |              |              |              |                 |
 | \>256個 vcpu                                                                                                                              |                            |                                                                     |                                                                     |                                                                     |              |              |              |              |              |                 |
-| [網路功能](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)                                       |                            |                                                                     |                                                                     |                                                                     |              |              |              |              |              |                 |
+| [網路](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)                                       |                            |                                                                     |                                                                     |                                                                     |              |              |              |              |              |                 |
 | 大型訊框                                                                                                                             | 2019、2016、2012 R2        | ✔                                                                   | ✔                                                                   | ✔                                                                   | ✔            | ✔            | ✔            | ✔            | ✔            | ✔               |
 | VLAN 標記和中繼                                                                                                                | 2019、2016、2012 R2        | ✔                                                                   | ✔                                                                   | ✔                                                                   | ✔            | ✔            | ✔            | ✔            | ✔            | ✔               |
 | 即時移轉                                                                                                                           | 2019、2016、2012 R2        | ✔                                                                   | ✔                                                                   | ✔                                                                   | ✔            | ✔            | ✔            | ✔            | ✔            | ✔               |
@@ -146,7 +146,7 @@ Hyper-v (的內建 Red Hat Enterprise Linux Integration Services 驅動程式可
 | [核心](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)                                                   | 2019、2016、2012 R2        | ✔                                                                   | ✔                                                                   | ✔                                                                   | ✔                  | ✔                  | ✔                  | ✔                   |
 | Windows Server 2016 精確時間                                                                                                        | 2019、2016                 |                                                                     |                                                                     |                                                                     |                    |                    |                    |                     |
 | \>256個 vcpu                                                                                                                              |                            |                                                                     |                                                                     |                                                                     |                    |                    |                    |                     |
-| [網路功能](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)                                       |                            |                                                                     |                                                                     |                                                                     |                    |                    |                    |                     |
+| [網路](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)                                       |                            |                                                                     |                                                                     |                                                                     |                    |                    |                    |                     |
 | 大型訊框                                                                                                                             | 2019、2016、2012 R2        | ✔                                                                   | ✔                                                                   | ✔                                                                   | ✔                  | ✔                  | ✔                  | ✔                   |
 | VLAN 標記和中繼                                                                                                                | 2019、2016、2012 R2        | ✔附注1                                                            | ✔附注1                                                            | ✔附注1                                                            | ✔附注1           | ✔附注1           | ✔附注1           | ✔附注1            |
 | 即時移轉                                                                                                                           | 2019、2016、2012 R2        | ✔                                                                   | ✔                                                                   | ✔                                                                   | ✔                  | ✔                  | ✔                  | ✔                   |
@@ -191,7 +191,7 @@ Hyper-v (的內建 Red Hat Enterprise Linux Integration Services 驅動程式可
 | [核心](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)                                                   | 2019、2016、2012 R2        | ✔                                                                   | ✔                                                                   | ✔              |
 | Windows Server 2016 精確時間                                                                                                        | 2019、2016                 |                                                                     |                                                                     |                |
 | \>256個 vcpu                                                                                                                              |                            |                                                                     |                                                                     |                |
-| [網路功能](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)                                       |                            |                                                                     |                                                                     |                |
+| [網路](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)                                       |                            |                                                                     |                                                                     |                |
 | 大型訊框                                                                                                                             | 2019、2016、2012 R2        | ✔                                                                   | ✔                                                                   | ✔              |
 | VLAN 標記和中繼                                                                                                                | 2019、2016、2012 R2        | ✔附注1                                                            | ✔附注1                                                            | ✔附注1       |
 | 即時移轉                                                                                                                           | 2019、2016、2012 R2        | ✔                                                                   | ✔                                                                   | ✔              |
@@ -224,7 +224,7 @@ Hyper-v (的內建 Red Hat Enterprise Linux Integration Services 驅動程式可
 | 使用 UEFI 開機                                                                                                                          | 2019、2016、2012 R2        |                                                                     |                                                                     |                |
 | 安全開機                                                                                                                              | 2019、2016                 |                                                                     |                                                                     |                |
 
-<a name="notes"></a>備註
+<a name="notes"></a>注意
 -----
 
 1.  針對此 RHEL/CentOS 版本，VLAN 標記可正常運作，但 VLAN 中繼則否。
@@ -267,7 +267,7 @@ Hyper-v (的內建 Red Hat Enterprise Linux Integration Services 驅動程式可
 
 4.  KVP) 基礎結構的索引鍵/值組 (可能無法在沒有 Linux 軟體更新的情況下正常運作。 如果您看到此功能有問題，請洽詢您的散發廠商以取得軟體更新。
 
-5.  在 Windows Server 2012 R2 第2代虛擬機器上，預設會啟用安全開機，除非停用安全開機選項，否則部分 Linux 虛擬機器將不會開機。 您可以在**Hyper-v 管理員**的虛擬機器設定的 [**固件**] 區段中停用安全開機，也可以使用 Powershell 來停用它：
+5.  在 Windows Server 2012 R2 第2代虛擬機器上，預設會啟用安全開機，除非停用安全開機選項，否則部分 Linux 虛擬機器將不會開機。 您可以在 **Hyper-v 管理員** 的虛擬機器設定的 [**固件**] 區段中停用安全開機，也可以使用 Powershell 來停用它：
 
 -   Set-VMFirmware-VMName "VMname"-EnableSecureBoot Off
 
@@ -277,7 +277,7 @@ Hyper-v (的內建 Red Hat Enterprise Linux Integration Services 驅動程式可
 
 另請參閱
 
--   [設定-Get-vmfirmware](/powershell/module/hyper-v/set-vmfirmware?view=win10-ps)
+-   [設定-Get-vmfirmware](/powershell/module/hyper-v/set-vmfirmware)
 
 -   [Hyper-V 上支援的 Debian 虛擬機器](Supported-Debian-virtual-machines-on-Hyper-V.md)
 

@@ -6,12 +6,12 @@ ms.assetid: fdc8063c-47ce-4448-b445-d7ff9894dc17
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 10/04/2016
-ms.openlocfilehash: a0c89dc706e0403816317d7664325bf82f261705
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 1bb5c6492896cfdaaf9446502e0eee36ef7dd46a
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746033"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866137"
 ---
 # <a name="create-a-virtual-switch-for-hyper-v-virtual-machines"></a>為 Hyper-V 虛擬機器建立虛擬交換器
 
@@ -72,7 +72,7 @@ ms.locfileid: "90746033"
     Get-NetAdapter
     ```
 
-4.  使用 [新的-VMSwitch](/powershell/module/hyper-v/new-vmswitch?view=win10-ps) Cmdlet 來建立虛擬交換器。 例如，若要建立名為 ExternalSwitch 的外部虛擬交換器，並使用 ethernet 網路介面卡，並開啟 [ **允許管理作業系統共用此網路介面卡** ]，請執行下列命令。
+4.  使用 [新的-VMSwitch](/powershell/module/hyper-v/new-vmswitch) Cmdlet 來建立虛擬交換器。 例如，若要建立名為 ExternalSwitch 的外部虛擬交換器，並使用 ethernet 網路介面卡，並開啟 [ **允許管理作業系統共用此網路介面卡** ]，請執行下列命令。
 
     ```
     New-VMSwitch -name ExternalSwitch  -NetAdapterName Ethernet -AllowManagementOS $true

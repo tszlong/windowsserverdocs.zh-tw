@@ -7,12 +7,12 @@ ms.topic: article
 author: JasonGerend
 ms.date: 06/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ab69c6959fb6710d5020a73546975fc56a3b4cde
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b97263c0cc1fefd71eebd6eb4d7b66ca66741a04
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961042"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865927"
 ---
 # <a name="storage-class-memory-nvdimm-n-health-management-in-windows"></a>Windows 中的存放裝置類別記憶體 (NVDIMM-N) 健全狀況管理
 
@@ -23,15 +23,15 @@ ms.locfileid: "87961042"
 如果您不熟悉 Windows 對存放裝置類別記憶體裝置的支援，這些短片可提供概觀：
 - [在 Windows Server 2016 中使用非揮發性記憶體 (NVDIMM-N) 做為區塊存放裝置](https://channel9.msdn.com/Events/Build/2016/P466)
 - [在 Windows Server 2016 中使用非揮發性記憶體 (NVDIMM-N) 做為位元組可定址存放裝置](https://channel9.msdn.com/Events/Build/2016/P470)
-- [以 Windows Server 2016 中的持續性記憶體加速 SQL Server 2016 效能](https://channel9.msdn.com/Shows/Data-Exposed/SQL-Server-2016-and-Windows-Server-2016-SCM--FAST)
+- [利用 Windows Server 2016 中的持續性記憶體加速 SQL Server 2016 效能](https://channel9.msdn.com/Shows/Data-Exposed/SQL-Server-2016-and-Windows-Server-2016-SCM--FAST)
 
-另請參閱[瞭解和部署儲存空間直接存取中的持續性記憶體](deploy-pmem.md)。
+另請參閱 [瞭解並在儲存空間直接存取中部署持續性記憶體](deploy-pmem.md)。
 
 從 Windows Server 2016 和 Windows 10 (版本 1607) 開始，Windows 中使用原生驅動程式支援 JEDEC 相容的 NVDIMM-N 存放裝置類別記憶體裝置。 雖然這些裝置的行為類似於其他磁碟 (HDD 與 SSD)，還是有一些差異。
 
 這裡所列出的所有狀況都預期是非常罕見的，但還是要根據硬體使用的狀況而定。
 
-以下各種案例可能會參考儲存空間組態。 令人感興趣的特定組態是其中使用兩個 NVDIMM-N 裝置做為儲存空間中的鏡像回寫式快取。 若要設定這類組態，請參閱[使用 NVDIMM-N 回寫式快取設定儲存空間](/sql/relational-databases/performance/configuring-storage-spaces-with-a-nvdimm-n-write-back-cache?view=sql-server-ver15)。
+以下各種案例可能會參考儲存空間組態。 令人感興趣的特定組態是其中使用兩個 NVDIMM-N 裝置做為儲存空間中的鏡像回寫式快取。 若要設定這類組態，請參閱[使用 NVDIMM-N 回寫式快取設定儲存空間](/sql/relational-databases/performance/configuring-storage-spaces-with-a-nvdimm-n-write-back-cache)。
 
 在 Windows Server 2016 中，儲存空間 GUI 會將 NVDIMM N 匯流排類型顯示為「未知」。 這在建立集區、儲存空間 VD 時不會發生任何功能中斷或失效。 您可以執行下列命令來驗證匯流排類型：
 
@@ -61,7 +61,7 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 ## <a name="warning-health-status"></a>「警告」健全狀況狀態
 
-這是當您檢查存放裝置類別記憶體裝置的健全狀況，並看到其 [健全狀況狀態] 列為 [警告]**** 的情況，如下列範例輸出中所示︰
+這是當您檢查存放裝置類別記憶體裝置的健全狀況，並看到其 [健全狀況狀態] 列為 [警告] 的情況，如下列範例輸出中所示︰
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
@@ -77,11 +77,11 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 | 一般行為 | 裝置維持完全正常運作。 這是警告，而不是錯誤。 |
 | 儲存空間行為 | 裝置維持完全正常運作。 這是警告，而不是錯誤。 |
 | 其他資訊 | PhysicalDisk 物件的 OperationalStatus 欄位。 EventLog – Microsoft-Windows-ScmDisk0101/Operational |
-| 應採取的動作 | 根據違反的警告閾值，為謹慎起見，可能需要考慮取代整個或部分的 NVDIMM-N。 例如，如果 NVM 存留期達到閾值時，取代 NVDIMM-N 很合理。 |
+| 解決方式 | 根據違反的警告閾值，為謹慎起見，可能需要考慮取代整個或部分的 NVDIMM-N。 例如，如果 NVM 存留期達到閾值時，取代 NVDIMM-N 很合理。 |
 
 ## <a name="writes-to-an-nvdimm-n-fail"></a>寫入 NVDIMM-N 會失敗
 
-這是當您檢查存放裝置類別記憶體裝置的健全狀況，並看到其 [健全狀況狀態] 列為 [狀況不良]****，且 [操作狀態] 提及 [IO 錯誤]**** 的情況，如下列範例輸出中所示︰
+這是當您檢查存放裝置類別記憶體裝置的健全狀況，並看到其 [健全狀況狀態] 列為 [狀況不良]，且 [操作狀態] 提及 [IO 錯誤] 的情況，如下列範例輸出中所示︰
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
@@ -97,11 +97,11 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 |一般行為|NTFS 磁碟區將會卸載。<br>[PhysicalDisk 健全狀況狀態] 欄位會針對所有受影響的 NVDIMM-N 裝置顯示「狀況不良」。|
 |儲存空間行為|只要僅有一個 NVDIMM-N 受影響，儲存空間將會維持運作。 如果多個裝置受到影響，寫入儲存空間將會失敗。 <br>[PhysicalDisk 健全狀況狀態] 欄位會針對所有受影響的 NVDIMM-N 裝置顯示「狀況不良」。|
 |其他資訊|PhysicalDisk 物件的 OperationalStatus 欄位。<br>EventLog – Microsoft-Windows-ScmDisk0101/Operational|
-|應採取的動作|建議您備份受影響的 NVDIMM-N 的資料。 若要取得讀取權限，您可以手動讓磁碟重新上線 (它會顯示為唯讀 NTFS 磁碟區)。<br><br>若要完全清除這種情況，則必須解決根本原因 (也就是，根據問題來維修電源供應器或是更換 NVDIMM-N)，且 NVDIMM-N 上的磁碟區必須離線並重新上線，或者系統必須重新啟動。<br><br>若要讓 NVDIMM-N 可再度於儲存空間中使用，請使用 **Reset-PhysicalDisk** Cmdlet，這會重新整合裝置並啟動修復程序。|
+|解決方式|建議您備份受影響的 NVDIMM-N 的資料。 若要取得讀取權限，您可以手動讓磁碟重新上線 (它會顯示為唯讀 NTFS 磁碟區)。<br><br>若要完全清除這種情況，則必須解決根本原因 (也就是，根據問題來維修電源供應器或是更換 NVDIMM-N)，且 NVDIMM-N 上的磁碟區必須離線並重新上線，或者系統必須重新啟動。<br><br>若要讓 NVDIMM-N 可再度於儲存空間中使用，請使用 **Reset-PhysicalDisk** Cmdlet，這會重新整合裝置並啟動修復程序。|
 
 ## <a name="nvdimm-n-is-shown-with-a-capacity-of-0-bytes-or-as-a-generic-physical-disk"></a>NVDIMM-N 會顯示容量為 '0' 位元組或是「一般實體磁碟」
 
-這是當存放裝置類別記憶體裝置顯示容量為 0 位元組且無法使用，或者公開為「一般實體磁碟」物件且 [操作狀態] 為 [遺失通訊]**** 的情況，如下列範例輸出中所示︰
+這是當存放裝置類別記憶體裝置顯示容量為 0 位元組且無法使用，或者公開為「一般實體磁碟」物件且 [操作狀態] 為 [遺失通訊] 的情況，如下列範例輸出中所示︰
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
@@ -117,11 +117,11 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 |一般行為|NVDIMM-N 會顯示為未初始化，容量為 0 位元組且無法讀取或寫入。|
 |儲存空間行為|儲存空間會維持運作 (前提是只有 1 個　NVDIMM-N 受到影響)。<br>NVDIMM-N PhysicalDisk 物件會顯示 [健全狀況狀態] 為 [警告]，且為「一般實體磁碟」|
 |其他資訊|PhysicalDisk 物件的 OperationalStatus 欄位。 <br>EventLog – Microsoft-Windows-ScmDisk0101/Operational|
-|應採取的動作|NVDIMM-N 裝置必須更換或受到妥善處理，這樣伺服器平台才能將它重新公開給主機作業系統。 建議更換裝置，因為可能發生其他無法修正的錯誤。 將更換裝置新增到儲存空間組態的作業，可以使用 **Add-Physicaldisk** Cmdlet 來完成。|
+|解決方式|NVDIMM-N 裝置必須更換或受到妥善處理，這樣伺服器平台才能將它重新公開給主機作業系統。 建議更換裝置，因為可能發生其他無法修正的錯誤。 將更換裝置新增到儲存空間組態的作業，可以使用 **Add-Physicaldisk** Cmdlet 來完成。|
 
 ## <a name="nvdimm-n-is-shown-as-a-raw-or-empty-disk-after-a-reboot"></a>在重新開機後，NVDIMM-N 會顯示為 RAW 或空的磁碟
 
-這是當您檢查存放裝置類別記憶體裝置的健全狀況，並看到其 [健全狀況狀態] 為 [狀況不良]****，且 [操作狀態] 為 [無法識別的中繼資料]**** 的情況，如下列範例輸出中所示︰
+這是當您檢查存放裝置類別記憶體裝置的健全狀況，並看到其 [健全狀況狀態] 為 [狀況不良]，且 [操作狀態] 為 [無法識別的中繼資料] 的情況，如下列範例輸出中所示︰
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
@@ -137,7 +137,7 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 |一般行為|NVDIMM-N 會處於唯讀模式。 需要明確的使用者動作，才能再次使用它。|
 |儲存空間行為|如果只有一個 NVDIMM 受到影響，儲存空間會維持運作)。<br>NVDIMM-N 實體磁碟物件會顯示 [健全狀況狀態] 為 [狀況不良] 且儲存空間不會使用。|
 |其他資訊|PhysicalDisk 物件的 OperationalStatus 欄位。<br>EventLog – Microsoft-Windows-ScmDisk0101/Operational|
-|應採取的動作|如果使用者不想要更換受影響的裝置，他們可以使用 **Reset-PhysicalDisk** Cmdlet 來清除受影響 NVDIMM-N 的唯讀狀況。 在儲存空間環境中，這也會嘗試將 NVDIMM-N 重新整合至儲存空間，並啟動修復程序。|
+|解決方式|如果使用者不想要更換受影響的裝置，他們可以使用 **Reset-PhysicalDisk** Cmdlet 來清除受影響 NVDIMM-N 的唯讀狀況。 在儲存空間環境中，這也會嘗試將 NVDIMM-N 重新整合至儲存空間，並啟動修復程序。|
 
 ## <a name="interleaved-sets"></a>交錯式集合
 
