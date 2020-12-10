@@ -1,17 +1,18 @@
 ---
 ms.assetid: 68db7f26-d6e3-4e67-859b-80f352e6ab6a
 title: AD FS 設定資料庫的角色
+description: 瞭解設定資料庫的角色，用以儲存代表 AD FS 單一實例的所有設定資料。
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 86799d8cb2b6031105f7f4a86d6a29846c9bb8dc
-ms.sourcegitcommit: 03048411c07c1a1d0c8bb0b2a60c1c17c9987314
+ms.openlocfilehash: 7adcd3a62ff85167172fcd856a3214fb51d9bd0b
+ms.sourcegitcommit: f95a991491ff09260d979078e248e2636bd2db54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96938998"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "96997835"
 ---
 # <a name="the-role-of-the-ad-fs-configuration-database"></a>AD FS 設定資料庫的角色
 AD FS 設定資料庫會儲存代表 Active Directory 同盟服務單一實例的所有設定資料 \( AD FS \) \( 也就是同盟服務 \) 。 AD FS 設定資料庫定義了供 Federation Service 識別夥伴、憑證、屬性存放區、宣告與這些關聯實體之各種相關資料所需的參數集。 您可以將此設定資料儲存在 Microsoft SQL Server &reg; 資料庫或 \( \) Windows Server 2012 或更新版本隨附的 Windows 內部資料庫 WID 功能中。
@@ -74,10 +75,10 @@ WID 同步程序也支援遞增傳輸，可提供更有效率的變更傳輸。 
 ```
 PS C:\> Get-ADFSSyncProperties
 ```
-在主要 AD FS 伺服器上，這個 Cmdlet 只會顯示角色是主要電腦。 在次要成員上，它會顯示其餘的設定，包括從主要電腦最後一次同步處理的完整 Quallified 功能變數名稱、上次同步處理狀態和時間、輪詢持續時間、目前設定的主要電腦名稱稱、主要電腦埠，以及次要電腦的角色。 
+在主要 AD FS 伺服器上，這個 Cmdlet 只會顯示角色是主要電腦。 在次要成員上，它會顯示其餘的設定，包括從主要電腦最後一次同步處理的完整 Quallified 功能變數名稱、上次同步處理狀態和時間、輪詢持續時間、目前設定的主要電腦名稱稱、主要電腦埠，以及次要電腦的角色。
 
 **ADFSSyncProperties 指令程式** 會修改 Active Directory 同盟服務 (AD FS) 設定資料庫的同步處理頻率。
-此 Cmdlet 也會指定同盟伺服器陣列中的哪一部同盟伺服器是主伺服器。 
+此 Cmdlet 也會指定同盟伺服器陣列中的哪一部同盟伺服器是主伺服器。
 
 > [!NOTE]
 > 若主要同盟伺服器當機並離線，所有次要同盟伺服器會正常地繼續處理要求。 不過，在主要同盟伺服器重新上線之前，無法對 Federation Service 進行任何變更。 您也可以使用 Windows PowerShell 將次要同盟伺服器提升為主要同盟伺服器。 如果提名新的主伺服器，則必須修改保持伺服器的狀態，以反映新的主伺服器。 具有一個 WID 伺服器陣列的2主要複本將會影響伺服器陣列的 stableness，而且會 passibility 資料遺失。
@@ -102,9 +103,10 @@ PS C:\> Set-AdfsSyncProperties -Role "PrimaryComputer"
 PS C:\> Set-AdfsSyncProperties -Role "SecondaryComputer" -PrimaryComputerName "<FQDN of primary server>"
 ```
 
-此命令會將 WID 伺服器陣列中的主要 AD FS 伺服器變更為次要伺服器。 您必須指定主要伺服器的完整功能變數名稱。 若未這麼做，可能不會讓次要 AD FS 伺服器正確地進行同步處理。 注意：您必須可從次要伺服器透過埠80上的 HTTP 來存取主伺服器。
+此命令會將 WID 伺服器陣列中的主要 AD FS 伺服器變更為次要伺服器。 您必須指定主要伺服器的完整功能變數名稱。 若未這麼做，可能不會讓次要 AD FS 伺服器正確地進行同步處理。
+注意：您必須可從次要伺服器透過埠80上的 HTTP 來存取主伺服器。
 
-如需詳細資訊，請參閱： [設定-AdfsSyncProperties](https://docs.microsoft.com/en-us/powershell/module/adfs/set-adfssyncproperties?view=win10-ps)
+如需詳細資訊，請參閱： [設定-AdfsSyncProperties](https://docs.microsoft.com/powershell/module/adfs/set-adfssyncproperties?view=win10-ps)
 
 
 ## <a name="using-sql-server-to-store-the-ad-fs-configuration-database"></a>使用 SQL Server 來儲存 AD FS 設定資料庫

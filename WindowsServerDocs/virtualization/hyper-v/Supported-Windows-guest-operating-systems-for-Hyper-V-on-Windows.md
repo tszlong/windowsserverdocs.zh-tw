@@ -5,17 +5,17 @@ ms.topic: article
 ms.assetid: 06b35897-2192-48b7-8c2d-125c520b0786
 ms.author: benarm
 author: BenjaminArmstrong
-ms.date: 01/08/2019
-ms.openlocfilehash: 2e5cf6c94d0127a283c640a48aaa2fced5472e9d
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.date: 12/09/2020
+ms.openlocfilehash: 3c00a81d2e93f6ba39b76f0bfc4612f6f26f15fc
+ms.sourcegitcommit: f95a991491ff09260d979078e248e2636bd2db54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746723"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "96997825"
 ---
 # <a name="supported-windows-guest-operating-systems-for-hyper-v-on-windows-server"></a>Windows Server 上的 Hyper-v 支援的 Windows 客體作業系統
 
->適用於：Windows Server 2016、Windows Server 2019
+>適用于： Windows Server 2016、Windows Server 2019、Azure Stack HCI、version 20H2
 
 Hyper-v 支援以虛擬機器形式在虛擬機器中執行的數種 Windows Server、Windows 和 Linux 發行版本，作為客體作業系統。 本文涵蓋支援的 Windows Server 和 Windows 客體作業系統。 若為 Linux 和 FreeBSD 散發套件，請參閱 [Windows 上適用于 hyper-v 的支援 Linux 和 FreeBSD 虛擬機器](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)。
 
@@ -25,7 +25,7 @@ Hyper-v 支援以虛擬機器形式在虛擬機器中執行的數種 Windows Ser
 
 以下是 Windows server 2016 和 Windows Server 2019 中支援作為 Hyper-v 之客體作業系統的 Windows Server 版本。
 
-|客體作業系統 (伺服器)|虛擬處理器數量的上限|Integration Services|備註|
+|客體作業系統 (伺服器)|虛擬處理器數量的上限|Integration Services|注意|
 |-------------------------------------|----------------------------------------|------------------------|---------|
 |Windows Server 版本 1909 |適用于層代2的 240;<br>適用于層代1的64|內建|大於240的虛擬處理器支援需要 Windows Server、1903版或更新版本的客體作業系統。|
 |Windows Server 版本 1903 |適用于層代2的 240;<br>適用于層代1的64|內建||
@@ -42,10 +42,10 @@ Hyper-v 支援以虛擬機器形式在虛擬機器中執行的數種 Windows Ser
 
 以下是 Windows Server 2016 和 Windows Server 2019 中支援作為 Hyper-v 之客體作業系統的 Windows 用戶端版本。
 
-|客體作業系統 (用戶端)|虛擬處理器數量的上限|Integration Services|備註|
+|客體作業系統 (用戶端)|虛擬處理器數量的上限|Integration Services|注意|
 |-------------------------------------|----------------------------------------|------------------------|---------|
 |Windows 10|32|內建||
-|Windows 8。1|32|內建||
+|Windows 8.1|32|內建||
 |Windows 7 含 Service Pack 1 (SP 1)|4|在設定客體作業系統之後，請升級 integration services。|旗艦版、企業版和專業版版本 (32 位元與 64 位元)。|
 
 ## <a name="guest-operating-system-support-on-other-versions-of-windows"></a>其他 Windows 版本上的客體作業系統支援

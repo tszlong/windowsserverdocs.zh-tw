@@ -5,15 +5,15 @@ ms.author: stevenek
 ms.topic: get-started-article
 ms.assetid: 20fee213-8ba5-4cd3-87a6-e77359e82bc0
 author: stevenek
-ms.date: 09/09/2020
+ms.date: 12/09/2020
 description: 使用 Windows Server 中的儲存空間直接存取，將軟體定義的存放裝置部署為超融合式基礎結構或融合式 (（也稱為分類式) 基礎結構）的逐步指示。
 ms.localizationpriority: medium
-ms.openlocfilehash: c7ff6b1cf017405d90ae7e27d1d5853286a78b89
-ms.sourcegitcommit: c56e74743e5ad24b28ae81668668113d598047c6
+ms.openlocfilehash: 649d9154e08dcde0752447d2b8a290dce9dc15d2
+ms.sourcegitcommit: f95a991491ff09260d979078e248e2636bd2db54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91987308"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "96997845"
 ---
 # <a name="deploy-storage-spaces-direct"></a>部署儲存空間直接存取
 
@@ -22,7 +22,7 @@ ms.locfileid: "91987308"
 本主題提供逐步指示，說明如何在 Windows Server 上部署 [儲存空間直接存取](storage-spaces-direct-overview.md) 。 若要將儲存空間直接存取部署為 Azure Stack HCI 的一部分，請參閱 [Azure Stack HCI 的部署程式為何？](/azure-stack/hci/deploy/deployment-overview)
 
 > [!Tip]
-> 想要取得超融合式基礎結構嗎？ Microsoft 建議您向我們的合作夥伴購買經過驗證的硬體/軟體 Azure Stack HCI 解決方案。 這些解決方案是針對我們的參考架構來設計、組合和驗證，以確保相容性和可靠性，讓您可以快速啟動並執行。 若要詳閱與 Azure Stack HCI 搭配運作之硬體/軟體解決方案的目錄，請參閱 [Azure Stack HCI 目錄](https://azure.microsoft.com/products/azure-stack/hci/catalog/)。
+> 想要取得超融合式基礎結構嗎？ Microsoft 建議您向我們的合作夥伴購買經過驗證的硬體/軟體 Azure Stack HCI 解決方案。 這些解決方案是針對我們的參考架構來設計、組合和驗證，以確保相容性和可靠性，讓您可以快速啟動並執行。 若要詳閱與 Azure Stack HCI 搭配運作之硬體/軟體解決方案的目錄，請參閱 [Azure Stack HCI 目錄](https://aka.ms/azurestackhcicatalog)。
 
 > [!Tip]
 > 您可以使用 Hyper-v 虛擬機器（包括在 Microsoft Azure 中）來 [評估沒有硬體的儲存空間直接存取](storage-spaces-direct-in-vm.md)。 您也可能想要複習方便使用的 [Windows Server 快速實驗室部署腳本](https://aka.ms/wslab)，供定型之用。
@@ -49,7 +49,7 @@ ms.locfileid: "91987308"
 
 第一個步驟是在將在叢集中的每一部伺服器上安裝 Windows Server。 儲存空間直接存取需要 Windows Server Datacenter Edition。 您可以使用 Server Core 安裝選項，或使用桌面體驗的伺服器。
 
-當您使用安裝程式來安裝 Windows Server 時，您可以選擇 *Windows server* (參考 server Core) 和 *具有桌面體驗的 Windows server (server) *，這相當於 windows server 2012 R2 中可用的 *完全* 安裝選項。 如果您沒有選擇，將會取得 Server Core 安裝選項。 如需詳細資訊，請參閱 [安裝 Server Core](/windows-server/get-started/getting-started-with-server-core)。
+當您使用安裝程式來安裝 Windows Server 時，您可以選擇 *Windows server* (參考 server Core) 和 *具有桌面體驗的 Windows server (server)*，這相當於 windows server 2012 R2 中可用的 *完全* 安裝選項。 如果您沒有選擇，將會取得 Server Core 安裝選項。 如需詳細資訊，請參閱 [安裝 Server Core](/windows-server/get-started/getting-started-with-server-core)。
 
 ### <a name="step-12-connect-to-the-servers"></a>步驟1.2：連接到伺服器
 
@@ -60,7 +60,7 @@ ms.locfileid: "91987308"
 - 加入相同網域或完全信任的網域
 - 適用於 Hyper-V 和容錯移轉叢集的遠端伺服器管理工具 (RSAT) 和 PowerShell 模組。 RSAT 工具和 PowerShell 模組可在 Windows Server 上使用，並可在不安裝其他功能的情況下安裝。 您也可以在 Windows 10 管理電腦上安裝 [遠端伺服器管理工具](https://www.microsoft.com/download/details.aspx?id=45520) 。
 
-在管理系統上，安裝容錯移轉叢集與 Hyper-V 管理工具。 這可以透過伺服器管理員使用「新增角色及功能」**** 精靈完成。 在 [功能]**** 頁面上，選取 [遠端伺服器管理工具]****，然後選取要安裝的工具。
+在管理系統上，安裝容錯移轉叢集與 Hyper-V 管理工具。 這可以透過伺服器管理員使用「新增角色及功能」精靈完成。 在 [功能] 頁面上，選取 [遠端伺服器管理工具]，然後選取要安裝的工具。
 
 進入 PS 工作階段，並使用伺服器名稱，或是您要連線之節點的 IP 位址。 當您執行此命令之後，系統會提示您輸入密碼，請輸入您在設定 Windows 時所指定的系統管理員密碼。
 
@@ -384,7 +384,7 @@ CD $ScriptFolder
 
 部署叢集檔案伺服器之後，建議您先使用綜合工作負載來測試解決方案的效能，然後再啟動任何真正的工作負載。 這可讓您確認解決方案是否正確執行，並解決任何延遲問題，再增加工作負載的複雜性。 如需詳細資訊，請參閱 [使用綜合工作負載測試儲存空間的效能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn894707(v=ws.11))。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 -   [儲存空間直接存取總覽](storage-spaces-direct-overview.md)
 -   [了解儲存空間直接存取中的快取](understand-the-cache.md)

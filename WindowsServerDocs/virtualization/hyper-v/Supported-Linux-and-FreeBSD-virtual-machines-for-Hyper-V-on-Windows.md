@@ -5,17 +5,17 @@ ms.topic: article
 ms.assetid: 990ff94a-30fb-434b-b4a2-3804a5245ba6
 ms.author: benarm
 author: BenjaminArmstrong
-ms.date: 10/03/2016
-ms.openlocfilehash: 891ad97d8ae5ef01c6dbfd0d59f7be6316c6e687
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.date: 12/09/2020
+ms.openlocfilehash: 1eeb5a80d0f08a158f0052fb1ba69d2adacf0b4d
+ms.sourcegitcommit: f95a991491ff09260d979078e248e2636bd2db54
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746743"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "96997805"
 ---
 # <a name="supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows"></a>Windows 上適用于 Hyper-v 的支援 Linux 和 FreeBSD 虛擬機器
 
->適用于： Windows Server 2019、Windows Server 2016、Hyper-v Server 2016、Windows Server 2012 R2、Hyper-v Server 2012 R2、Windows Server 2012、Hyper-v Server 2012、Windows Server 2008 R2、Windows 10、Windows 8.1、Windows 8、Windows 7.1、Windows 7
+>適用于： Azure Stack HCI、版本 20H2;Windows Server 2019、Windows Server 2016、Hyper-v Server 2016、Windows Server 2012 R2、Hyper-v Server 2012 R2、Windows Server 2012、Hyper-v Server 2012、Windows Server 2008 R2、Windows 10、Windows 8.1、Windows 8、Windows 7.1、Windows 7
 
 Hyper-v 支援適用于 Linux 和 FreeBSD 虛擬機器的模擬和 Hyper-v 專用裝置。 使用模擬裝置執行時，不需要安裝其他軟體。 不過，模擬裝置不提供高效能，而且無法利用 Hyper-v 技術所提供的豐富虛擬機器管理基礎結構。 為了充分利用 Hyper-v 提供的所有優點，最好使用適用于 Linux 和 FreeBSD 的 Hyper-v 專用裝置。 執行 Hyper-v 專用裝置所需的驅動程式集合稱為 Linux Integration Services (.LIS) 或 FreeBSD Integration Services (BIS) 。
 
