@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：瞭解儲存空間直接存取中的快取
 title: 了解儲存空間直接存取中的快取
 ms.assetid: 69b1adc0-ee64-4eed-9732-0fb216777992
 ms.author: cosdar
@@ -7,18 +8,18 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 09/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 502b04676fcb9a9c7342e701e71be473890f9668
-ms.sourcegitcommit: 8a826e992f28a70e75137f876a5d5e61238a24e4
+ms.openlocfilehash: a6ab48a2079513e69538eb2673be4cf7d656b94f
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91365351"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97047756"
 ---
 # <a name="understanding-the-cache-in-storage-spaces-direct"></a>了解儲存空間直接存取中的快取
 
 >適用於：Windows Server 2019、Windows Server 2016
 
-[儲存空間直接存取](storage-spaces-direct-overview.md)包含內建的伺服器端快取，可將儲存效能發揮極致。 它是大型持久的即時*讀寫*快取。 啟用儲存空間直接存取時，就會自動設定快取。 大多數的情況下，不需要任何的手動管理。
+[儲存空間直接存取](storage-spaces-direct-overview.md)包含內建的伺服器端快取，可將儲存效能發揮極致。 它是大型持久的即時 *讀寫* 快取。 啟用儲存空間直接存取時，就會自動設定快取。 大多數的情況下，不需要任何的手動管理。
 快取的運作方式取決於磁碟機呈現的類型。
 
 下列影片深入探討儲存空間直接存取的快取運作方式，以及其他設計考量。
@@ -30,7 +31,7 @@ ms.locfileid: "91365351"
 
 儲存空間直接存取目前適用于四種類型的存放裝置：
 
-| 磁片磁碟機類型 | 說明 |
+| 磁片磁碟機類型 | 描述 |
 |----------------------|--------------------------|
 |![PMem](media/understand-the-cache/pmem-100px.png)|**PMem** 指的是持續性記憶體，這是一種新的低延遲、高效能儲存體。|
 |![NVMe](media/understand-the-cache/NVMe-100px.png)|**NVMe** (Non-Volatile Memory Express) 指的是直接位於 PCIe 匯流排的固態硬碟。 常見的板型規格為 2.5" U.2、PCIe Add-In-Card (AIC) 及 M.2。 NVMe 提供較高的 IOPS 和 IO 輸送量，其延遲低於我們目前支援的任何其他類型磁片磁碟機，但 PMem 除外。|
@@ -87,7 +88,7 @@ ms.locfileid: "91365351"
 
 ### <a name="readwrite-caching-for-hybrid-deployments"></a>混合式部署的讀/寫快取
 
-快取硬碟 (HDD) 時，會快取讀取*和*寫入，為兩者提供快閃式延遲 (通常提升約 10 倍速度)。 讀取快取儲存最近和經常讀取的資料供快速存取，並可將 HDD 的隨機流量減到最低。 (因為搜尋和旋轉延遲之故，隨機存取 HDD 發生的時間延遲和損失很可觀。) 快取寫入以吸收高載，且和以前一樣合併寫入及重寫，將容量磁碟機的累計流量降至最低。
+快取硬碟 (HDD) 時，會快取讀取 *和* 寫入，為兩者提供快閃式延遲 (通常提升約 10 倍速度)。 讀取快取儲存最近和經常讀取的資料供快速存取，並可將 HDD 的隨機流量減到最低。 (因為搜尋和旋轉延遲之故，隨機存取 HDD 發生的時間延遲和損失很可觀。) 快取寫入以吸收高載，且和以前一樣合併寫入及重寫，將容量磁碟機的累計流量降至最低。
 
 儲存空間直接存取實作的演算法，可以先取消隨機化再取消暫存寫入，模擬似乎循序的磁碟 IO 模式，即使實際的工作負載 IO (如虛擬機器) 為隨機。 這可最大化 IOPS 及 HDD 輸送量。
 
@@ -130,7 +131,7 @@ ms.locfileid: "91365351"
 
 ## <a name="handling-cache-drive-failures"></a>處理快取磁碟機失敗錯誤
 
-當快取磁碟機失敗時，任何尚未取消暫存的*本機伺服器*寫入都會遺失，表示它們只存在於其他複本 (在其他伺服器中)。 如同任何其他磁碟機失敗後，儲存空間可以並會諮詢留存的複本以自動復原。
+當快取磁碟機失敗時，任何尚未取消暫存的 *本機伺服器* 寫入都會遺失，表示它們只存在於其他複本 (在其他伺服器中)。 如同任何其他磁碟機失敗後，儲存空間可以並會諮詢留存的複本以自動復原。
 
 短時間內，繫結到遺失快取磁碟機的容量磁碟機會顯示狀況不良。 一旦快取重新繫結 (自動) 並完成資料修復 (自動)，它們會繼續顯示狀況良好。
 
@@ -249,7 +250,7 @@ CacheModeSSD : ReadWrite
 
 規則並無標準，但若讀取有太多快取遺漏，就需要縮減，而您應該考慮增加快取磁碟機擴張快取。 您可以隨時獨立新增快取磁碟機或容量磁碟機。
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [選擇磁碟機及復原類型](choosing-drives.md)
 - [容錯與儲存空間效率](storage-spaces-fault-tolerance.md)

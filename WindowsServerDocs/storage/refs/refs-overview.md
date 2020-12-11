@@ -1,16 +1,17 @@
 ---
+description: 深入瞭解：復原檔案系統 (ReFS) 總覽
 title: 復原檔案系統 (ReFS) 概觀
 ms.author: gawatu
 manager: mchad
 ms.topic: article
 author: gawatu
 ms.date: 06/29/2019
-ms.openlocfilehash: 65ae84f354f535ba94a7331680234b3ad32d230d
-ms.sourcegitcommit: 92e46b11154bab929e2c622d759ef62ec264c4e6
+ms.openlocfilehash: 5f220f766c0d41049e254a57dabab302561d0eab
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92734742"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97045216"
 ---
 # <a name="resilient-file-system-refs-overview"></a>復原檔案系統 (ReFS) 概觀
 

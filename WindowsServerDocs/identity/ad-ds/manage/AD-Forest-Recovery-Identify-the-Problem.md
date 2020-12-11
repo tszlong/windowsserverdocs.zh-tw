@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：找出問題
 title: AD 樹系復原 - 找出問題
 ms.author: daveba
 author: iainfoulds
@@ -6,12 +7,12 @@ manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
-ms.openlocfilehash: becbb729d8248771e23c79b586e5844738738718
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: ec26376b3a765c8e290b9845376930b241ebaa03
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93071290"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97045546"
 ---
 # <a name="identify-the-problem"></a>識別問題
 

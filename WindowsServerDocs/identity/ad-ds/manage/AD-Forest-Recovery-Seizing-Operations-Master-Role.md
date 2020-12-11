@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解： AD 樹系復原-佔用操作主機角色
 title: AD 樹系復原-佔用操作主機角色
 ms.author: daveba
 author: iainfoulds
@@ -6,12 +7,12 @@ manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 7e6bb370-f840-4416-b5e2-86b0ba715f4f
-ms.openlocfilehash: 76e32be8db1647a209f94b49484898cf88333040
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: d621f6382b927ddb555fa84571f8407f9b905246
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070800"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97047126"
 ---
 # <a name="ad-forest-recovery---seizing-an-operations-master-role"></a>AD 樹系復原-佔用操作主機角色
 
@@ -45,7 +46,7 @@ ms.locfileid: "93070800"
    Connect to server ServerFQDN
    ```
 
-   其中 *ServerFQDN* 是此 DC (FQDN) 的完整功能變數名稱，例如： **連接到伺服器 nycdc01.example.com** 。
+   其中 *ServerFQDN* 是此 DC (FQDN) 的完整功能變數名稱，例如： **連接到伺服器 nycdc01.example.com**。
 
    如果 *ServerFQDN* 失敗，請使用 DC 的 NetBIOS 名稱。
 
@@ -57,13 +58,13 @@ ms.locfileid: "93070800"
 
 6. 視您想要收回的角色而定，在 [ **FSMO 維護：** 提示] 下，輸入下表所述的適當命令，然後按 enter。
 
-|角色|認證|Command|
+|角色|認證|命令|
 |----------|-----------------|-------------|
-|網網域命名主機|企業系統管理員|**佔用命名主機**|
+|網網域命名主機|Enterprise Admins|**佔用命名主機**|
 |架構主機|Schema Admins|**佔用架構主機**|
-|基礎結構主機 **附注：**  在您抓住基礎結構主機角色之後，如果您需要執行 Adprep，稍後可能會收到錯誤/Rodcprep。 如需詳細資訊，請參閱知識庫文章 [949257](https://support.microsoft.com/kb/949257)。|網域管理員|**抓住基礎結構主機**|
-|PDC 模擬器主機|網域管理員|**佔用 pdc**|
-|RID 主機|網域管理員|**佔用 rid 主機**|
+|基礎結構主機 **附注：**  在您抓住基礎結構主機角色之後，如果您需要執行 Adprep，稍後可能會收到錯誤/Rodcprep。 如需詳細資訊，請參閱知識庫文章 [949257](https://support.microsoft.com/kb/949257)。|Domain Admins|**抓住基礎結構主機**|
+|PDC 模擬器主機|Domain Admins|**佔用 pdc**|
+|RID 主機|Domain Admins|**佔用 rid 主機**|
 
 確認要求之後，Active Directory 或 AD DS 嘗試傳輸角色。 當傳輸失敗時，會出現一些錯誤資訊，並 Active Directory 或 AD DS 繼續進行取代。 在完成建立之後，會顯示角色清單以及輕量型目錄存取協定 (LDAP) 目前保存每個角色之伺服器的名稱。 您也可以在提升許可權的命令提示字元中執行 **Netdom 查詢 FSMO** ，以確認目前的角色持有者。
 

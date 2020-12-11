@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解： AD 樹系復原-復原多網域樹系中的單一網域
 title: AD 樹系復原-復原多網域樹系中的單一網域
 ms.author: daveba
 author: iainfoulds
@@ -6,12 +7,12 @@ manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 267541be-2ea7-4af6-ab34-8b5a3fedee2d
-ms.openlocfilehash: ea92acab3839d735beea61873568556b4c72cbd1
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: adf533be07059b136edb3bacdb8e3085d0c1f1e4
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070860"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97047106"
 ---
 # <a name="ad-forest-recovery---recovering-a-single-domain-in-a-multidomain-forest"></a>AD 樹系復原-復原多網域樹系中的單一網域
 

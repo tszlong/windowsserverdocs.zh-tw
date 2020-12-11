@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：虛擬網域控制站額外資源
 ms.assetid: 47a7cede-f94a-4233-872b-fa65a5b9d8f1
 title: 虛擬網域控制站的其他資源
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: b602fe88c014b94223dff6f1dd209842ebc27c8a
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 109cb71b53ebfe1f3998cd93fd2c32f48d323b65
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070920"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97045096"
 ---
 # <a name="virtualized-domain-controller-additional-resources"></a>虛擬網域控制站的其他資源
 

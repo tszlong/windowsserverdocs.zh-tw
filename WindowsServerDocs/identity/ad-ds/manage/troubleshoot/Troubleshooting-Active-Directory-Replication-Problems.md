@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解： Active Directory 複寫問題進行疑難排解
 ms.assetid: b11f7a65-ec7b-4c11-8dc4-d7cabb54cd94
 title: 進行 Active Directory 複寫問題疑難排解
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: aef89bb1d57aff57b90f0eaeed67832f8778ba8c
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 7b095dc75d18af2a03f7d6a95d4865bc6e975097
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93068960"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97046326"
 ---
 # <a name="troubleshooting-active-directory-replication-problems"></a>進行 Active Directory 複寫問題疑難排解
 
@@ -155,7 +156,7 @@ Active Directory 複寫問題可能有數個不同的來源。 例如，網域�
 
 若要識別 Active Directory 複寫問題，請使用 <system>repadmin/showrepl</system> 命令，如上一節中所述。 下表顯示此命令所產生的錯誤訊息，以及錯誤的根本原因，以及提供錯誤解決方案的主題連結。
 
-|Repadmin 錯誤|根本原因|解決方法|
+|Repadmin 錯誤|根本原因|解決方案|
 | --- | --- | --- |
 |自上次複寫此伺服器以來的時間已超過標記存留期。|網域控制站的輸入複寫具有已命名來源網域控制站的失敗，夠長，足以讓您從 AD DS 中將刪除作業重寫、複寫和垃圾收集。|事件識別碼 2042：自此電腦複寫後已過太久|
 |沒有輸入相鄰專案。|如果在 repadmin/showrepl 產生之輸出的 [輸入鄰居] 區段中沒有出現任何專案，則網域控制站無法與另一個網域控制站建立複寫連結。|修正複寫連線問題 (事件識別碼 1925)|
@@ -168,7 +169,7 @@ Active Directory 複寫問題可能有數個不同的來源。 例如，網域�
 
 下表列出可能指出 Active Directory 複寫問題的常見事件，以及問題的根本原因，以及提供問題解決方案的主題連結。
 
-|事件識別碼和來源|根本原因|解決方法|
+|事件識別碼和來源|根本原因|解決方案|
 | --- | --- | --- |
 |1311 NTDS KCC|AD DS 中的複寫設定資訊無法精確反映網路的實體拓撲。|修正複寫拓撲問題 (事件識別碼 1311)|
 |1388 NTDS 複寫|Strict replication 一致性未生效，而且已將延遲物件複寫到網域控制站。|修正複寫延遲物件問題 (事件識別碼 1388、1988、2042)|
@@ -181,6 +182,6 @@ Active Directory 複寫問題可能有數個不同的來源。 例如，網域�
 
 如需有關複寫概念的詳細資訊，請參閱 [Active Directory 複寫技術](https://go.microsoft.com/fwlink/?LinkId=41950)。
 
-## <a name="next-steps"></a>下一步
+## <a name="next-steps"></a>後續步驟
 
 如需詳細資訊，包括錯誤碼專屬的支援文章，請參閱支援文章： [如何針對常見的 Active Directory 複寫錯誤進行疑難排解](https://support.microsoft.com/help/3108513)

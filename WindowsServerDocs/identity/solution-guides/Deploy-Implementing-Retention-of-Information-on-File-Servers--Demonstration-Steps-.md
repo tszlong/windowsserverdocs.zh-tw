@@ -1,4 +1,5 @@
 ---
+description: '深入瞭解：在檔案伺服器上部署執行資訊保留 (示範步驟) '
 ms.assetid: ee008835-7d3b-4977-adcb-7084c40e5918
 title: Deploy Implementing Retention of Information on File Servers (Demonstration Steps)
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 987d1af004955d7be75066de7a859272e656ffbc
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b4d74b3757e23e37116c7fafc8b1bb5f6f01ee43
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952799"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97046846"
 ---
 # <a name="deploy-implementing-retention-of-information-on-file-servers-demonstration-steps"></a>Deploy Implementing Retention of Information on File Servers (Demonstration Steps)
 
@@ -21,7 +22,7 @@ ms.locfileid: "87952799"
 
 **本文件內容**
 
--   [必要條件](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Prereqs)
+-   [先決條件](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Prereqs)
 
 -   [步驟 1：建立資源內容定義](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step1)
 
@@ -46,15 +47,15 @@ ms.locfileid: "87952799"
 
 1.  在網域控制站上，以 Domain Admins 安全性群組成員的身分登入伺服器。
 
-2.  開啟 Active Directory 管理中心。 在 [伺服器管理員] 中，按一下 [工具]****，然後按一下 [Active Directory 管理中心]****。
+2.  開啟 Active Directory 管理中心。 在 [伺服器管理員] 中，按一下 [工具]，然後按一下 [Active Directory 管理中心]。
 
-3.  展開 [動態存取控制]****，然後按一下 [資源內容]****。
+3.  展開 [動態存取控制]，然後按一下 [資源內容]。
 
-4.  以滑鼠右鍵按一下 [保留期間]****，然後按一下 [啟用]****。
+4.  以滑鼠右鍵按一下 [保留期間]，然後按一下 [啟用]。
 
-5.  用滑鼠右鍵按一下 [發現性] ****，然後按一下 [啟用] ****。
+5.  用滑鼠右鍵按一下 [發現性] ，然後按一下 [啟用] 。
 
-![解決方案指南](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***
+![解決方案指南 ](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif) * *_<em>Windows PowerShell 對等命令</em>_* _
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -72,23 +73,23 @@ Set-ADResourceProperty -Enabled:$true -Identity:'CN=Discoverability_MS,CN=Resour
 
 1.  以本機 Administrators 安全性群組成員的身分登入檔案伺服器。
 
-2.  在 Windows PowerShell 命令提示字元中，輸入 **Update-FsrmClassificationPropertyDefinition**，然後按下 ENTER。 這會將網域控制站上建立的內容定義與檔案伺服器同步。
+2.  在 Windows PowerShell 命令提示字元中，輸入 _ * Update-fsrmclassificationpropertydefinition * *，然後按 ENTER。 這會將網域控制站上建立的內容定義與檔案伺服器同步。
 
-3.  開啟檔案伺服器資源管理員。 在 [伺服器管理員] 中按一下 [工具]****，然後按一下 [檔案伺服器資源管理員]****。
+3.  開啟檔案伺服器資源管理員。 在 [伺服器管理員] 中按一下 [工具]，然後按一下 [檔案伺服器資源管理員]。
 
-4.  以滑鼠右鍵按一下 [檔案伺服器資源管理員 (本機)]****，然後按一下 [設定選項]****。
+4.  以滑鼠右鍵按一下 [檔案伺服器資源管理員 (本機)]，然後按一下 [設定選項]。
 
-5.  在 [電子郵件通知]**** 索引標籤中，設定下列選項：
+5.  在 [電子郵件通知] 索引標籤中，設定下列選項：
 
-    -   在 [SMTP 伺服器名稱或 IP 位址]**** 方塊中，輸入網路上 SMTP 伺服器的名稱。
+    -   在 [SMTP 伺服器名稱或 IP 位址] 方塊中，輸入網路上 SMTP 伺服器的名稱。
 
-    -   在 [預設系統管理員收件者]**** 方塊中，輸入應該收到通知的系統管理員電子郵件地址。
+    -   在 [預設系統管理員收件者] 方塊中，輸入應該收到通知的系統管理員電子郵件地址。
 
-    -   在預設的 [**寄件者電子郵件地址]** 方塊中，輸入要用來傳送通知的電子郵件地址。
+    -   在預設的 [ **寄件者] 電子郵件地址** 方塊中，輸入要用來傳送通知的電子郵件地址。
 
-6.  按一下 [確定]  。
+6.  按一下 [確定]。
 
-![解決方案指南](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***
+![解決方案指南 ](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif) * *_<em>Windows PowerShell 對等命令</em>_* _
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -111,35 +112,35 @@ Set-FsrmSetting -SmtpServer IP address of SMTP server -FromEmailAddress "FromEma
 
 1.  以本機 Administrators 安全性群組成員的身分登入檔案伺服器。
 
-2.  開啟檔案伺服器資源管理員。 在 [伺服器管理員] 中按一下 [工具]****，然後按一下 [檔案伺服器資源管理員]****。
+2.  開啟檔案伺服器資源管理員。 在伺服器管理員中，按一下 [工具]，然後按一下 [ **檔案伺服器] Resource Manager**。
 
-3.  使用滑鼠右鍵按一下 [檔案管理工作]****，然後按一下 [建立檔案管理工作]****。
+3.  使用滑鼠右鍵按一下 [檔案管理工作]，然後按一下 [建立檔案管理工作]。
 
-4.  在 [一般]**** 索引標籤上的 [工作名稱]**** 方塊中，輸入檔案管理工作的名稱，例如「保留工作」。
+4.  在 [一般] 索引標籤上的 [工作名稱] 方塊中，輸入檔案管理工作的名稱，例如「保留工作」。
 
-5.  在 [範圍]**** 索引標籤上，按一下 [新增]****，選擇這個規則中應該包含的資料夾，例如 D:\Finance Documents。
+5.  在 [範圍] 索引標籤上，按一下 [新增]，選擇這個規則中應該包含的資料夾，例如 D:\Finance Documents。
 
-6.  在 [動作]**** 索引標籤的 [類型]**** 方塊中，按一下 [檔案到期]****。 在 [到期目錄]**** 方塊中，輸入本機檔案伺服器上已過期的檔案將會移過去的資料夾路徑。 這個資料夾應該具有存取控制清單，只授與檔案伺服器系統管理員存取權。
+6.  在 [動作] 索引標籤的 [類型] 方塊中，按一下 [檔案到期]。 在 [到期目錄] 方塊中，輸入本機檔案伺服器上已過期的檔案將會移過去的資料夾路徑。 這個資料夾應該具有存取控制清單，只授與檔案伺服器系統管理員存取權。
 
-7.  在 [通知]**** 索引標籤上，按一下 [新增]****。
+7.  在 [通知] 索引標籤上，按一下 [新增]。
 
-    -   選取 [將電子郵件傳送給下列系統管理員]**** 核取方塊。
+    -   選取 [將電子郵件傳送給下列系統管理員] 核取方塊。
 
-    -   選取 [傳送電子郵件給擁有受影響檔案的使用者]**** 核取方塊，然後按一下 [確定]****。
+    -   選取 [傳送電子郵件給擁有受影響檔案的使用者] 核取方塊，然後按一下 [確定]。
 
-8.  在 [條件]**** 索引標籤上，按一下 [新增]****，然後新增下列內容：
+8.  在 [條件] 索引標籤上，按一下 [新增]，然後新增下列內容：
 
-    -   在 [內容]**** 清單中，按一下 [發現性]****。 在 [運算子]**** 清單中，按一下 [不等於]****。 在 [值]**** 清單中，按一下 [保存]****。
+    -   在 [內容] 清單中，按一下 [發現性]。 在 [運算子] 清單中，按一下 [不等於]。 在 [值] 清單中，按一下 [保存]。
 
-    -   在 [內容]**** 清單中，按一下 [保留期間]****。 在 [運算子]**** 清單中，按一下 [等於]****。 在 [值]**** 清單中，按一下 [長期]****。
+    -   在 [內容] 清單中，按一下 [保留期間]。 在 [運算子] 清單中，按一下 [等於]。 在 [值] 清單中，按一下 [長期]。
 
-9. 在 [條件]**** 索引標籤上，選取 [自上次修改檔案以來的天數]**** 核取方塊，並將值設為 **3650**。
+9. 在 [條件] 索引標籤上，選取 [自上次修改檔案以來的天數] 核取方塊，並將值設為 **3650**。
 
-10. 在 [排程]**** 索引標籤上，按一下 [每月]**** 選項，然後選取 [上次]**** 核取方塊。
+10. 在 [排程] 索引標籤上，按一下 [每月] 選項，然後選取 [上次] 核取方塊。
 
-11. 按一下 [確定]  。
+11. 按一下 [確定]。
 
-![解決方案指南](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***
+![解決方案指南 ](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif) * *_<em>Windows PowerShell 對等命令</em>_* _
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -164,19 +165,19 @@ $fmj1=New-FSRMFileManagementJob -Name "Retention Task" -Namespace @('D:\Finance 
 
 2.  瀏覽到步驟 3 中建立的檔案管理工作的範圍內設定的資料夾。
 
-3.  在資料夾上按一下滑鼠右鍵，然後按一下 [內容]****。
+3.  以滑鼠右鍵按一下資料夾，然後按一下 [屬性] * *。
 
-4.  在 [分類]**** 索引標籤上，按一下 [保留期間]****，按一下 [長期]****，然後按一下 [確定]****。
+4.  在 [分類] 索引標籤上，按一下 [保留期間]，按一下 [長期]，然後按一下 [確定]。
 
-5.  用滑鼠右鍵按一下該資料夾中的檔案，然後按一下 [內容]****。
+5.  用滑鼠右鍵按一下該資料夾中的檔案，然後按一下 [內容]。
 
-6.  在 [分類]**** 索引標籤上，依序按一下 [發現性]****、[保存]****、[套用]****，然後按一下 [確定]****。
+6.  在 [分類] 索引標籤上，依序按一下 [發現性]、[保存]、[套用]，然後按一下 [確定]。
 
 7.  在檔案伺服器上，使用 [檔案伺服器資源管理員] 主控台執行檔案管理工作。 檔案管理工作完成後，請檢查資料夾，確定檔案並未移動至到期目錄。
 
-8.  用滑鼠右鍵按一下該資料夾中同一個檔案，然後按一下 [內容]****。
+8.  用滑鼠右鍵按一下該資料夾中同一個檔案，然後按一下 [內容]。
 
-9. 在 [分類]**** 索引標籤上，依序按一下 [發現性]****、[不適用]****、[套用]****，然後按一下 [確定]****。
+9. 在 [分類] 索引標籤上，依序按一下 [發現性]、[不適用]、[套用]，然後按一下 [確定]。
 
 10. 在檔案伺服器上，再次使用 [檔案伺服器資源管理員] 主控台執行檔案管理工作。 檔案管理工作完成後，請檢查資料夾，確定檔案已移動至到期目錄。
 

@@ -1,17 +1,18 @@
 ---
 ms.assetid: 4ddb927d-d65e-491d-840a-16049c083d13
 title: 屬性存放區的角色
+description: 深入瞭解：屬性存放區的角色
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: b15eef56a071aea1b2af6ad2f17f7b97a86c9f88
-ms.sourcegitcommit: 853382db13aed60344a075fdd054ef42e09c34c9
+ms.openlocfilehash: dc23e15893672633c7e175d2b0313771d327fccc
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96932783"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97045306"
 ---
 # <a name="the-role-of-attribute-stores"></a>屬性存放區的角色
 Active Directory 同盟服務使用「屬性存放區」一詞來指稱組織用來儲存其使用者帳戶及其相關屬性值的目錄或資料庫。 在身分識別提供者組織中設定之後，AD FS 會從存放區中抓取這些屬性值，並根據該資訊建立宣告，如此一來，當同盟使用者的 \( 帳戶儲存在身分識別提供者組織中的使用者 \) 嘗試存取應用程式或服務時，裝載于信賴憑證者組織的 Web 應用程式或服務就可以進行適當的授權決策。
@@ -37,4 +38,3 @@ AD FS 支援廣泛的目錄和資料庫存放區，可供您用來解壓縮系�
 -   所有版本的 Microsoft SQL Server 2005、SQL Server 2008、SQL Server 2012、SQL Server 2014 以及 SQL Server 2016 和更新版本;
 
 -   自訂屬性存放區
-

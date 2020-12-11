@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解： Windows Server 2016 中的身分識別與存取
 ms.assetid: c248b41f-0de3-4247-9a25-b4b08e50ebf0
 title: 身分識別與存取
 author: billmath
@@ -7,12 +8,12 @@ manager: femila
 ms.date: 03/16/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 92584ba048791df5de3e525ee7d5456e1a44f3e7
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 331298197e0495017b0993bd8ffb7d7b1d5548a3
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87965175"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97047146"
 ---
 # <a name="identity-and-access-in-windows-server-2016"></a>Windows Server 2016 中的身分識別與存取
 
@@ -30,7 +31,7 @@ Windows Server 2016 中 AD FS 所有可用新功能的概觀。
 ## <a name="whats-new-in-active-directory-domain-services-for-windows-server-2016"></a>[Windows Server 2016 的 Active Directory Domain Services 新功能](whats-new-active-directory-domain-services.md)
 列出 Windows Server 2016 中 AD DS 所有可用的新功能。
 
-## <a name="privileged-access-management-for-active-directory-domain-services-40ad-ds41"></a>[Active Directory Domain Services &#40;AD DS 的特殊許可權存取管理&#41;](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services)
+## <a name="privileged-access-management-for-active-directory-domain-services-40ad-ds41"></a>[Privileged Access Management Active Directory Domain Services &#40;AD DS&#41;](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services)
 Active Directory Domain Services (AD DS) 的 Privileged Access Management (PAM) 是根據 Microsoft Identity Manager (MIM) 與 Windows Server 2012 R2 和 Windows Server 2016 的解決方案。
 
 ## <a name="windows-10-for-the-enterprise-ways-to-use-devices-for-work"></a>[Windows 10 企業版：用裝置來工作的方式](/azure/active-directory/devices/overview)

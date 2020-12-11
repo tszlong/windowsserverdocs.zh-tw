@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：保護 Active Directory 的最佳作法
 ms.assetid: e2651dc8-4b31-4cd8-a400-3b8123890210
 title: 保護 Active Directory 的最佳做法
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 79279cb5392234ad6516e9592e87356637782169
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: d6a7768ac5cbf50d0fe3dedab06cc1349e3b008d
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93069650"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97046966"
 ---
 # <a name="best-practices-for-securing-active-directory"></a>保護 Active Directory 的最佳做法
 

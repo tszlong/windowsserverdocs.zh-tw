@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：使用 Windows PowerShell Active Directory 複寫和拓撲管理
 ms.assetid: 853b7f02-bc69-416e-87b1-556f51cb2cea
 title: 使用 Windows PowerShell 進行 Active Directory 複寫和拓撲管理
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 8a3b238f056f337aa72ca204539c50f3595419fc
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 0e7ab0c012d31f4be80b0d66509260a603461e78
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070480"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97046426"
 ---
 # <a name="active-directory-replication-and-topology-management-using-windows-powershell"></a>使用 Windows PowerShell 進行 Active Directory 複寫和拓撲管理
 

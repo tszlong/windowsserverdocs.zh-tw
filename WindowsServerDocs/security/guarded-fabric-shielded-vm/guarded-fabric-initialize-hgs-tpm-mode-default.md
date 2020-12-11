@@ -1,16 +1,17 @@
 ---
+description: '深入瞭解：在新的專用樹系中使用 TPM 模式初始化 HGS 叢集 (預設) '
 title: '在新的專用樹系中使用 TPM 模式初始化 HGS 叢集 (預設) '
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 2a89ffb238b631fc24035f2b18a57c614003c644
-ms.sourcegitcommit: 8c0a419ae5483159548eb0bc159f4b774d4c3d85
+ms.openlocfilehash: eb63af4feb13b519906b8898a1eb9a352bf91d27
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93235825"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97047336"
 ---
 # <a name="initialize-the-hgs-cluster-using-tpm-mode-in-a-new-dedicated-forest-default"></a>在新的專用樹系中使用 TPM 模式初始化 HGS 叢集 (預設) 
 

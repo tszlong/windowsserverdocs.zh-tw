@@ -1,4 +1,5 @@
 ---
+description: '深入瞭解：使用 Windows PowerShell (層級200的 Advanced Active Directory 複寫和拓撲管理) '
 ms.assetid: fe05e52c-cbf8-428b-8176-63407991042f
 title: Advanced Active Directory Replication and Topology Management Using Windows PowerShell (Level 200)
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 74ceedfb48d4c885d41ca9b8688718c6f8c817ed
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: ecd4db8b4fdbda926cd6a65101c241c6282ebf98
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070960"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97046556"
 ---
 # <a name="advanced-active-directory-replication-and-topology-management-using-windows-powershell-level-200"></a>Advanced Active Directory Replication and Topology Management Using Windows PowerShell (Level 200)
 
@@ -36,7 +37,7 @@ ms.locfileid: "93070960"
 8. [拓撲](../../../ad-ds/manage/powershell/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-.md#BKMK_Topo)
 
 ## <a name="introduction"></a><a name="BKMK_Intro"></a>簡介
-Windows Server 2012 對「適用於 Windows PowerShell 的 Active Directory 模組」擴充了 25 個新的 Cmdlet 來管理複寫和樹系拓撲。 在此之前，您必須使用一般 Restore-adobject 名詞或呼叫 .NET 函 **\* 式** 。
+Windows Server 2012 對「適用於 Windows PowerShell 的 Active Directory 模組」擴充了 25 個新的 Cmdlet 來管理複寫和樹系拓撲。 在此之前，您必須使用一般 Restore-adobject 名詞或呼叫 .NET 函 **\* 式**。
 
 就像所有 Active Directory Windows PowerShell Cmdlet 一樣，此功能必須至少在一部網域控制站 (或者最好在所有網域控制站) 安裝 [Active Directory 管理閘道服務](https://www.microsoft.com/download/details.aspx?displaylang=en&id=2852) 。
 
@@ -90,7 +91,7 @@ Get-help New-ADReplicationSite
 ### <a name="replication-and-metadata"></a><a name="BKMK_Repl"></a>複寫和中繼資料
 Repadmin.exe 會驗證 Active Directory 複寫的健康情況與一致性。 Repadmin.exe 提供簡單的資料管理選項 (例如某些引數支援 CSV 輸出)，但自動化通常需要透過文字檔案輸出剖析。 「適用於 Windows PowerShell 的 Active Directory 模組」是第一次嘗試提供可真正控制傳回資料的選項；在此之前，您必須建立指令碼或使用協力廠商工具。
 
-此外，下列 Cmdlet 實作新的參數集 **Target** 、 **Scope** 與 **EnumerationServer** ：
+此外，下列 Cmdlet 實作新的參數集 **Target**、**Scope** 與 **EnumerationServer**：
 
 - **Get-ADReplicationFailure**
 
@@ -98,12 +99,12 @@ Repadmin.exe 會驗證 Active Directory 複寫的健康情況與一致性。 Rep
 
 - **Get-ADReplicationUpToDatenessVectorTable**
 
-**Target** 引數接受一個以逗號分隔的字串清單，識別由 **Scope** 引數所指定的目標伺服器、站台、網域或樹系。 \*也允許星號 () ，表示指定範圍內的所有伺服器。 如果未指定範圍，則表示目前使用者樹系中的所有伺服器。 **Scope** 引數指定搜尋的範圍。 可接受的值為 **Server** 、 **Site** 、 **Domain** 與 **Forest** 。 **EnumerationServer** 指定的伺服器會列舉 **Target** 和 **Scope** 中指定的網域控制站清單。 其運作方式與 **Server** 引數相同，而且要求指定的伺服器必須執行「Active Directory Web 服務」。
+**Target** 引數接受一個以逗號分隔的字串清單，識別由 **Scope** 引數所指定的目標伺服器、站台、網域或樹系。 \*也允許星號 () ，表示指定範圍內的所有伺服器。 如果未指定範圍，則表示目前使用者樹系中的所有伺服器。 **Scope** 引數指定搜尋的範圍。 可接受的值為 **Server**、**Site**、**Domain** 與 **Forest**。 **EnumerationServer** 指定的伺服器會列舉 **Target** 和 **Scope** 中指定的網域控制站清單。 其運作方式與 **Server** 引數相同，而且要求指定的伺服器必須執行「Active Directory Web 服務」。
 
 為了介紹新的 Cmdlet，以下範例案例顯示 repadmin.exe 無法執行的功能；有了這些實例，就能明確顯示出系統管理的可能性。 如需特定的使用需求，請檢閱 Cmdlet 說明。
 
 ### <a name="get-adreplicationattributemetadata"></a><a name="BKMK_ReplAttrMD"></a>Get-ADReplicationAttributeMetadata
-此 Cmdlet 類似 **repadmin.exe /showobjmeta** 。 它可以傳回複寫中繼資料，例如當屬性變更時的來源網域控制站、版本和 USN 資訊與屬性資料。 此 Cmdlet 可用來稽核變更的位置與時間。
+此 Cmdlet 類似 **repadmin.exe /showobjmeta**。 它可以傳回複寫中繼資料，例如當屬性變更時的來源網域控制站、版本和 USN 資訊與屬性資料。 此 Cmdlet 可用來稽核變更的位置與時間。
 
 Windows PowerShell 與 Repadmin 不同的地方在於，可提供彈性的搜尋與輸出控制。 例如，您可以將 Domain Admins 物件的中繼資料輸出成排列過而方便讀取的清單：
 
@@ -185,7 +186,7 @@ Get-ADReplicationPartnerMetadata -target * -scope server | where {$_.lastreplica
 ![使用 powershell 進行先進管理](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSGetADReplPartnerMdFail.png)
 
 ### <a name="get-adreplicationfailure"></a><a name="BKMK_ReplFail"></a>Get-ADReplicationFailure
-此 Cmdlet 可用來傳回複寫時發生最近錯誤的相關資訊。 它類似 **Repadmin.exe /showreplsum** ，不過同樣地，因為使用 Windows PowerShell 而能採取更多控制方式。
+此 Cmdlet 可用來傳回複寫時發生最近錯誤的相關資訊。 它類似 **Repadmin.exe /showreplsum**，不過同樣地，因為使用 Windows PowerShell 而能採取更多控制方式。
 
 例如，您可以傳回網域控制站最近的失敗，以及其無法連絡的複寫協力電腦：
 
@@ -208,7 +209,7 @@ Get-ADReplicationFailure -scope site -target default-first-site-name | format-ta
 這兩個 Cmdlet 都會傳回網域控制站「最即時」的其他層面，包括暫止中的複寫和版本向量資訊。
 
 ### <a name="sync-adobject"></a><a name="BKMK_Sync"></a>Sync-ADObject
-此 Cmdlet 類似執行 **Repadmin.exe /replsingleobject** 。 當您進行需要頻外複寫的變更，尤其是修正問題時，它會非常有用。
+此 Cmdlet 類似執行 **Repadmin.exe /replsingleobject**。 當您進行需要頻外複寫的變更，尤其是修正問題時，它會非常有用。
 
 例如，如果某人刪除了總裁的使用者帳戶，並使用 Active Directory 資源回收筒將它還原，您可能想要將它立即複寫到所有網域控制站。 您可能也想要執行此動作而不強制複寫所有其他物件的變更；畢竟，這就是為什麼要有複寫排程 (因為可以避免 WAN 連結超過負荷)。
 
@@ -224,7 +225,7 @@ Get-ADDomainController -filter * | foreach {Sync-ADObject -object "cn=tony wang,
 
 例如，新的分公司迅速擴編加上與其他分公司整併，根據實體位置、網路變更和新的容量需求，您可能會有上百個站台變更需要處理。 比起使用 Dssites.msc 和 Adsiedit.msc 進行變更，您可以進行自動化。 當您使用網路和設備團隊提供的試算表資料時，這樣會特別方便。
 
-**\\ Get-adreplication** _ Cmdlet 會傳回複寫拓撲的相關資訊，並可用於將大量的 _*get-adreplication \\* *_ Cmdlet 流入。 _*Get* * Cmdlet 不會變更資料，只會顯示資料，也不會 Windows PowerShell 建立可 **get-adreplication \\** Cmdlet 的會話物件_ 。 _ *New* * 和 **Remove** Cmdlet 適用于建立或移除 Active Directory 拓撲物件。
+**\\ Get-adreplication** _ Cmdlet 會傳回複寫拓撲的相關資訊，並可用於將大量的 _*get-adreplication \\* *_ Cmdlet 流入。 _*Get** Cmdlet 不會變更資料，只會顯示資料，也不會 Windows PowerShell 建立可 **get-adreplication \\** Cmdlet 的會話物件_。 _ *New** 和 **Remove** Cmdlet 適用于建立或移除 Active Directory 拓撲物件。
 
 例如，您可以使用 CSV 檔案建立新的站台：
 

@@ -1,16 +1,17 @@
 ---
 title: 使用 AD FS 2019 風險評估模型建置外掛程式
+description: 深入瞭解：使用 AD FS 2019 風險評估模型建立外掛程式
 author: billmath
 ms.author: billmath
 manager: mtillman
 ms.date: 05/05/2020
 ms.topic: article
-ms.openlocfilehash: ece40ea47c78c1d45cf55ff9daec551d940276e1
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 2c1d05450869d558d1991da2f95b72bcaeca7462
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865147"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97047816"
 ---
 # <a name="build-plug-ins-with-ad-fs-2019-risk-assessment-model"></a>使用 AD FS 2019 風險評估模型建置外掛程式
 
@@ -122,7 +123,7 @@ ms.locfileid: "96865147"
 
    a.    在 Visual Studio 的開發人員命令提示字元，並移至在我的案例中包含 **Gacutil.exe** (的目錄，目錄是 **C:\Program Files (x86) \Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.7.2 Tools**) 
 
-   b.    在 **Gacutil** `Gacutil /IF C:\extensions\ThreatDetectionModule.dll`) 模型的案例中執行 Gacutil 命令 ![ (](media/ad-fs-risk-assessment-model/risk14.png)
+   b.    在 `Gacutil /IF C:\extensions\ThreatDetectionModule.dll`) 模型的案例中執行 Gacutil 命令 ![ (](media/ad-fs-risk-assessment-model/risk14.png)
 
    >[!NOTE]
    >如果您有 AD FS 伺服器陣列，則必須在伺服器陣列中的每個 AD FS 伺服器上執行上述程式。
@@ -215,8 +216,8 @@ public abstract class ThreatDetectionModule
 |[OnAuthenticationPipelineUnload](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineunload) |Void|從管線卸載外掛程式時由 AD FS 呼叫|
 |[OnConfigurationUpdate](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate)| Void|在設定更新時由 AD FS 呼叫 |
 |**屬性** |**型別** |**[定義]**|
-|[VendorName](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.vendorname)|String |取得擁有外掛程式之廠商的名稱|
-|[ModuleIdentifier](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.moduleidentifier)|String |取得外掛程式的識別碼|
+|[VendorName](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.vendorname)|字串 |取得擁有外掛程式之廠商的名稱|
+|[ModuleIdentifier](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.moduleidentifier)|字串 |取得外掛程式的識別碼|
 
 在我們的範例外掛程式中，我們會使用 [OnAuthenticationPipelineLoad](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineload) 和 [OnConfigurationUpdate](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate) 方法來讀取 AD FS DB 中預先定義的 ip。 當外掛程式註冊 AD FS 時，會呼叫[OnAuthenticationPipelineLoad](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineload) ，而當使用 Cmdlet 匯入 .csv 時，會呼叫[OnConfigurationUpdate](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate) 。 `Import-AdfsThreatDetectionModuleConfiguration`
 

@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解： AD 樹系復原-重新部署剩餘的 Dc
 title: AD 樹系復原-重新部署剩餘的 Dc
 ms.author: daveba
 author: iainfoulds
@@ -6,12 +7,12 @@ manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
-ms.openlocfilehash: d3d826e0ec587289671723a4bd78d0d669189428
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 15e0384155b3a967dd3a0d627908ebe1565b1ba3
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070810"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97047136"
 ---
 # <a name="ad-forest-recovery---redeploy-remaining-dcs"></a>AD 樹系復原-重新部署剩餘的 Dc
 
@@ -38,7 +39,7 @@ ms.locfileid: "93070810"
 - 所複製之虛擬化 DC 的主機名稱或您想要安裝 AD DS 的伺服器沒有限制。 您可以使用先前使用的新主機名稱或主機名稱。 如需 DNS 主機名稱語法的詳細資訊，請參閱 () [建立 Dns 電腦名稱稱](/previous-versions/windows/it-pro/windows-server-2003/cc785282(v=ws.10)) [https://go.microsoft.com/fwlink/?LinkId=74564](https://go.microsoft.com/fwlink/?LinkId=74564) 。
 - 使用樹系中的第一部 DNS 伺服器來設定每部伺服器 (根域中還原的第一個 DC，) 作為其網路介面卡的 TCP/IP 內容中的慣用 DNS 伺服器。 如需詳細資訊，請參閱 [設定 tcp/ip 以使用 DNS](/previous-versions/windows/it-pro/windows-server-2003/cc779282(v=ws.10))。
 - 如果有數個 Rodc 部署在中央位置，或藉由移除並重新安裝 AD DS 的傳統方法，在地理位置（例如分公司）個別部署時，重新部署網域中的所有 Rodc （藉由虛擬化 DC 複製）。
-   - 重建 Rodc 可確保其不包含任何延遲物件，並可協助防止複寫衝突在稍後發生。 當您從 RODC 移除 AD DS 時，請 *選擇保留 DC 中繼資料的選項* 。 使用這個選項會保留 RODC 的 krbtgt 帳戶，並保留委派的 RODC 系統管理員帳戶和密碼複寫原則 (PRP) 的許可權，並防止您必須使用網域系統管理員認證，才能移除並重新安裝 RODC 上的 AD DS。 如果最初安裝在 RODC 上，它也會保留 DNS 伺服器和通用類別目錄角色。
+   - 重建 Rodc 可確保其不包含任何延遲物件，並可協助防止複寫衝突在稍後發生。 當您從 RODC 移除 AD DS 時，請 *選擇保留 DC 中繼資料的選項*。 使用這個選項會保留 RODC 的 krbtgt 帳戶，並保留委派的 RODC 系統管理員帳戶和密碼複寫原則 (PRP) 的許可權，並防止您必須使用網域系統管理員認證，才能移除並重新安裝 RODC 上的 AD DS。 如果最初安裝在 RODC 上，它也會保留 DNS 伺服器和通用類別目錄角色。
    - 當您重建 Dc (Rodc 或可寫入 Dc) 時，在重新安裝期間可能會增加複寫流量。 為了降低這項影響，您可以錯開 RODC 安裝的排程，也可以使用 [從媒體安裝] (IFM) 選項。 如果您使用 IFM 選項，請在您信任的可寫入 DC 上執行 **ntdsutil IFM** 命令，以釋放損毀的資料。 這有助於避免在 AD DS 重新安裝完成之後，在 RODC 上出現可能的損毀。 如需 IFM 的詳細資訊，請參閱 [從媒體安裝 AD DS](./managing-rid-issuance.md)。
    - 如需重建 Rodc 的詳細資訊，請參閱 [RODC 移除和重新安裝](/previous-versions/windows/it-pro/windows-server-2003/cc779282(v=ws.10))。
 - 如果 DC 在樹系故障之前執行 DNS 伺服器服務，請在安裝 AD DS 期間安裝並設定 DNS 伺服器服務。 否則，請使用其他 DNS 伺服器設定其先前的 DNS 用戶端。

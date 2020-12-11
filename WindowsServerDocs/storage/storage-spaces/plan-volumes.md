@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：規劃儲存空間直接存取中的磁片區
 ms.assetid: 342173ca-4e10-44f4-b2c9-02a6c26f7a4a
 title: 規劃儲存空間直接存取中的磁碟區
 ms.author: cosdar
@@ -7,37 +8,37 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 06/28/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: dcc98fba7194da322f9fc97b67eb43d481f50133
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d1f975299593db29da20c35a621ea870e436d8be
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971145"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048936"
 ---
 # <a name="planning-volumes-in-storage-spaces-direct"></a>規劃儲存空間直接存取中的磁碟區
 
 > 適用於：Windows Server 2019、Windows Server 2016
 
-此主題提供如何規劃儲存空間直接存取中的磁碟區，符合您工作負載的效能與容量需要，包括選擇它們的系統、復原類型和大小。
+本主題將引導您規劃儲存空間直接存取中的磁碟區，以符合您工作負載的效能和容量需求，包括選擇其檔案系統、復原類型和大小。
 
 ## <a name="review-what-are-volumes"></a>檢閱：什麼是磁碟區
 
-磁片區是您放置工作負載所需之檔案的位置，例如 Hyper-v 虛擬機器的 VHD 或 VHDX 檔案。 磁碟區會結合存放集區中的磁碟機，而導入儲存空間直接存取的容錯、延展性和效能等效益。
+磁碟區是您放置工作負載所需檔案的位置，例如 Hyper-V 虛擬機器的 VHD 或 VHDX 檔案。 磁碟區會結合存放集區中的磁碟機，而導入儲存空間直接存取的容錯、延展性和效能等效益。
 
    >[!NOTE]
-   > 在儲存空間直接存取的文件中，我們將磁碟區和其下的虛擬磁碟，包括提供其他內建 Windows 功能如叢集共用磁碟區 (CSV) 和 ReFS 所提供的功能，合稱為「磁碟區」一詞。 成功計劃及順利部署儲存空間直接存取，不需要了解這些實作層級區別。
+   > 在儲存空間直接存取的整份文件中，我們會使用「磁碟區」一詞來連帶稱呼磁碟區和磁碟區底下的虛擬磁碟，包括叢集共用磁碟區 (CSV) 和 ReFS 等其他內建 Windows 功能所提供的功能。 即使您不了解這些實作層級的差異，也可以順利規劃及部署儲存空間直接存取。
 
 ![what-are-volumes](media/plan-volumes/what-are-volumes.png)
 
-所有磁碟區可以由叢集中所有伺服器同時存取。 建立之後，它們會顯示在所有伺服器上的**C:\ClusterStorage \\ ** 。
+叢集中的所有伺服器可以同時存取所有磁碟區。 一旦建立之後，這些磁碟區就會顯示在所有伺服器上的 **C:\ClusterStorage\\** 。
 
 ![csv-folder-screenshot](media/plan-volumes/csv-folder-screenshot.png)
 
-## <a name="choosing-how-many-volumes-to-create"></a>選擇建立多少磁碟區
+## <a name="choosing-how-many-volumes-to-create"></a>選擇要建立的磁碟區數目
 
-我們建議磁碟區數目是您叢集中伺服器數目的倍數。 例如，如果您有4部伺服器，您的效能會比3或5的總磁片區多出更一致。 這可以讓叢集在伺服器之間平均分配磁碟區「擁有權」（針對每個磁碟區，一個伺服器處理中繼資料協調流程）。
+建議的磁碟區數目為叢集中伺服器數目的倍數。 例如，如果您有 4 部伺服器，則比起建立 3 個或 5 個磁碟區，建立 4 個磁碟區的效能會更一致。 這可讓叢集在伺服器之間平均分配「擁有權」 (一部伺服器處理一個磁碟區的中繼資料協調流程)。
 
-我們建議您將磁片區總數限制為：
+建議您將磁片區總數限制為：
 
 | Windows Server 2016          | Windows Server 2019          |
 |------------------------------|------------------------------|
@@ -45,7 +46,7 @@ ms.locfileid: "87971145"
 
 ## <a name="choosing-the-filesystem"></a>選擇檔案系統
 
-我們建議將新的[復原檔案系統 (ReFS)](../refs/refs-overview.md) 用於儲存空間直接存取。 ReFS 是專為模擬化用途打造的頂級檔案系統，提供許多好處，包括大幅效能加速和內建的資料毀損保護。 它支援幾乎所有的主要 NTFS 功能，包括 Windows Server 1709 版和更新版本中的重復資料刪除。 如需詳細資訊，請參閱 ReFS[功能比較表](../refs/refs-overview.md#feature-comparison)。
+我們建議將新的[復原檔案系統 (ReFS)](../refs/refs-overview.md) 用於儲存空間直接存取。 ReFS 是專為模擬化用途打造的頂級檔案系統，提供許多好處，包括大幅效能加速和內建的資料毀損保護。 它支援幾乎所有的主要 NTFS 功能，包括 Windows Server 1709 版和更新版本中的重復資料刪除。 如需詳細資料，請參閱 ReFS [功能比較表](../refs/refs-overview.md#feature-comparison) 。
 
 如果您的工作負載需要 ReFS 尚未支援的功能，您可以改為使用 NTFS。
 
@@ -61,37 +62,37 @@ ms.locfileid: "87971145"
 
 ### <a name="with-two-servers"></a>具有兩部伺服器
 
-透過叢集中的兩部伺服器，您可以使用雙向鏡像。 如果您執行的是 Windows Server 2019，也可以使用嵌套的復原功能。
+在叢集中有兩部伺服器，您可以使用雙向鏡像。 如果您執行的是 Windows Server 2019，您也可以使用嵌套的復原功能。
 
-雙向鏡像會保留兩份資料複本，每個伺服器的磁片磁碟機上都有一個複本。 其儲存效率為 50%-若要寫入 1 TB 的資料，存放集區中至少需要 2 TB 的實體儲存體容量。 雙向鏡像可以安全地容忍一次硬體失敗， (一部伺服器或磁片磁碟機) 。
+雙向鏡像會為所有資料保留兩份複本，每部伺服器的磁片磁碟機上都有一個複本。 其儲存效率為50% （若要寫入 1 TB 的資料，存放集區中至少需要 2 TB 的實體儲存體容量）。 雙向鏡像可以一次安全地容忍一個硬體故障 (一部伺服器或磁片磁碟機) 。
 
 ![雙向鏡像](media/plan-volumes/two-way-mirror.png)
 
-僅適用于 Windows Server) 2019 的 Nested 復原 (可在具有雙向鏡像的伺服器之間提供資料復原功能，然後在具有雙向鏡像或鏡像加速同位的伺服器內新增復原功能。 即使其中一部伺服器正在重新開機或無法使用，嵌套也會提供資料復原。 其儲存效率為25%，具有嵌套的雙向鏡像，以及大約35-40% 的嵌套鏡像加速同位。 Nested 復原可以安全地容忍兩個硬體失敗，一次 (兩個磁片磁碟機，或在其餘伺服器上) 的伺服器和磁片磁碟機。 基於這項新增的資料恢復功能，如果您執行的是 Windows Server 2019，建議您在兩個伺服器叢集的生產部署上使用嵌套的復原功能。 如需詳細資訊，請參閱[Nested 復原](nested-resiliency.md)。
+只有在 Windows Server 2019 上才能使用的嵌套復原 () 在具有雙向鏡像的伺服器之間提供資料恢復功能，然後在具有雙向鏡像或鏡像加速同位的伺服器內新增復原功能。 即使一部伺服器正在重新開機或無法使用，也會提供資料恢復功能。 其儲存效率是具有嵌套雙向鏡像的25%，以及嵌套鏡像加速同位的35-40% 左右。 嵌套復原可以安全地容忍兩個硬體故障 (兩個磁片磁碟機，或是伺服器和其餘伺服器) 的磁片磁碟機。 由於這項新增的資料恢復功能，如果您執行的是 Windows Server 2019，建議您在兩部伺服器叢集的生產部署上使用嵌套復原。 如需詳細資訊，請參閱 [嵌套復原](nested-resiliency.md)。
 
-![嵌套鏡像加速同位](media/nested-resiliency/nested-mirror-accelerated-parity.png)
+![嵌套的鏡像加速同位](media/nested-resiliency/nested-mirror-accelerated-parity.png)
 
 ### <a name="with-three-servers"></a>具有三部伺服器
 
-有三種伺服器，您應該使用三向鏡像，以取得更好的容錯和效能。 三向鏡像保留所有資料的三份複本，每個伺服器的磁碟機上各有一份複本。 其儲存效率是 33.3%，因此若要撰寫 1 TB 的資料，儲存集區需要至少 3 TB 的實體儲存容量。 三向鏡像可以安全地容忍[至少兩個硬體問題， (磁片磁碟機或伺服器) 一次](storage-spaces-fault-tolerance.md#examples)。 如果有2個節點變成無法使用，存放集區將會失去仲裁，因為2/3 的磁片無法使用，而且將會無法存取虛擬磁片。 不過，節點可能會關閉，而且另一個節點上的一或多個磁片可能會失敗，且虛擬磁片仍會保持連線。 例如，如果您在一個磁碟機或伺服器突然故障時重新啟動另一部伺服器，所有資料都將保有安全性，且持續可供存取。
+有三種伺服器，您應該使用三向鏡像，以取得更好的容錯和效能。 三向鏡像保留所有資料的三份複本，每個伺服器的磁碟機上各有一份複本。 其儲存效率是 33.3%，因此若要撰寫 1 TB 的資料，儲存集區需要至少 3 TB 的實體儲存容量。 三向鏡像可以安全地容忍 [至少兩個硬體問題 (磁片磁碟機或伺服器) 一次](storage-spaces-fault-tolerance.md#examples)。 如果有2個節點無法使用，儲存集區將會遺失仲裁，因為無法使用2/3 的磁片，且虛擬磁片將會無法存取。 不過，節點可能會關閉，而另一個節點上的一或多個磁片可能會失敗，且虛擬磁片將維持在線上。 例如，如果您在一個磁碟機或伺服器突然故障時重新啟動另一部伺服器，所有資料都將保有安全性，且持續可供存取。
 
 ![three-way-mirror](media/plan-volumes/three-way-mirror.png)
 
 ### <a name="with-four-or-more-servers"></a>具有四個以上伺服器
 
-有四部以上的伺服器，您可以選擇每個磁片區，不論是使用三向鏡像、雙重同位 (通常稱為「抹除編碼」 ) ，或是混用鏡像加速同位的兩個。
+有四部以上的伺服器，您可以選擇每個磁片區是否使用三向鏡像、雙重同位 (通常稱為「抹除編碼」 ) ，或混搭兩者與鏡像加速同位。
 
-雙同位提供與三向鏡像相同的容錯功能，但具有更佳的儲存效率。 有四部伺服器，其儲存體效率50.0% —若要儲存 2 TB 的資料，您需要在存放集區中使用 4 TB 的實體儲存體容量。 使用七部伺服器時增加到 66.7% 儲存效率，並持續增至 80.0% 儲存效率。 缺點是同位編碼大量耗用運算資源，這可能會限制其效能。
+雙同位提供與三向鏡像相同的容錯功能，但具有更佳的儲存效率。 有四部伺服器，其儲存效率為50.0% —若要儲存 2 TB 的資料，您需要在存放集區中有 4 TB 的實體儲存體容量。 使用七部伺服器時增加到 66.7% 儲存效率，並持續增至 80.0% 儲存效率。 缺點是同位編碼大量耗用運算資源，這可能會限制其效能。
 
 ![dual-parity](media/plan-volumes/dual-parity.png)
 
-要使用的復原類型，端視您的工作負載需求。 下表摘要說明哪些工作負載適合各種復原類型，以及每種復原類型的效能和儲存效率。
+要使用的復原類型，端視您的工作負載需求。 以下資料表摘要說明哪些工作負載適合每種復原類型，以及每種復原類型的效能和儲存效率。
 
 | 復原類型 | 容量效率 | 速度 | 工作負載 |
 | ------------------- | ----------------------  | --------- | ------------- |
-| **鏡像**         | ![儲存體效率顯示33%](media/plan-volumes/3-way-mirror-storage-efficiency.png)<br>三向鏡像：33% <br>雙向鏡像：50%     |![顯示100% 的效能](media/plan-volumes/three-way-mirror-perf.png)<br> 最高效能  | 虛擬化工作負載<br> 資料庫<br>其他高效能工作負載 |
-| **鏡像加速的同位** |![顯示大約50% 的儲存體效率](media/plan-volumes/mirror-accelerated-parity-storage-efficiency.png)<br> 視鏡像和同位的比例而定 | ![顯示大約20% 的效能](media/plan-volumes/mirror-accelerated-parity-perf.png)<br>速度比鏡像慢很多，但最多兩倍的雙同位檢查速度<br> 適用于大型順序寫入和讀取 | 封存和備份<br> 虛擬桌面基礎結構     |
-| **雙同位**               | ![顯示大約80% 的儲存體效率](media/plan-volumes/dual-parity-storage-efficiency.png)<br>4部伺服器：50% <br>16部伺服器：最多80% | ![顯示大約10% 的效能](media/plan-volumes/dual-parity-perf.png)<br>寫入時 CPU 使用量 & 最高的 i/o 延遲<br> 適用于大型順序寫入和讀取 | 封存和備份<br> 虛擬桌面基礎結構  |
+| **鏡像**         | ![顯示33% 的儲存效率](media/plan-volumes/3-way-mirror-storage-efficiency.png)<br>三向鏡像：33% <br>雙向鏡像：50%     |![顯示100% 的效能](media/plan-volumes/three-way-mirror-perf.png)<br> 效能最高  | 虛擬化工作負載<br> 資料庫<br>其他高效能工作負載 |
+| **鏡像加速的同位** |![顯示大約50% 的儲存效率](media/plan-volumes/mirror-accelerated-parity-storage-efficiency.png)<br> 取決於鏡像和同位的比例 | ![顯示大約20% 的效能](media/plan-volumes/mirror-accelerated-parity-perf.png)<br>比鏡像慢很多，但速度最多兩倍雙同位<br> 最適用于大型順序寫入和讀取 | 封存與備份<br> 虛擬化桌面基礎結構     |
+| **雙同位**               | ![顯示大約80% 的儲存效率](media/plan-volumes/dual-parity-storage-efficiency.png)<br>4部伺服器：50% <br>16部伺服器：最高80% | ![顯示大約10% 的效能](media/plan-volumes/dual-parity-perf.png)<br>寫入時 & CPU 使用率的最高 i/o 延遲<br> 最適用于大型順序寫入和讀取 | 封存與備份<br> 虛擬化桌面基礎結構  |
 
 #### <a name="when-performance-matters-most"></a>當效能是最重要時
 
@@ -111,7 +112,7 @@ ms.locfileid: "87971145"
 結果儲存效率視您選擇的比例而定。 如需範例，請參閱[此示範](https://www.youtube.com/watch?v=-LK2ViRGbWs&t=36m55s)。
 
    > [!TIP]
-   > 如果您觀察到透過資料內嵌的寫入效能中途突然降低，可能表示鏡像部分不夠大，或鏡像加速同位不適合您的使用案例。 例如，如果寫入效能從 400 MB/秒減少到 40 MB/s，請考慮展開鏡像部分或切換至三向鏡像。
+   > 如果您觀察到透過資料內嵌大幅減少寫入效能中途，可能表示鏡像部分不夠大，或是鏡像加速同位不適合您的使用案例。 例如，如果寫入效能從 400 MB/秒減少為 40 MB/s，請考慮展開鏡像部分或切換至三向鏡像。
 
 ### <a name="about-deployments-with-nvme-ssd-and-hdd"></a>關於 NVMe、SSD 和 HDD 部署
 
@@ -124,20 +125,20 @@ ms.locfileid: "87971145"
 
 ## <a name="choosing-the-size-of-volumes"></a>選擇磁碟區大小
 
-我們建議您將每個磁片區的大小限制為：
+建議您將每個磁片區的大小限制為：
 
 | Windows Server 2016 | Windows Server 2019 |
 | ------------------- | ------------------- |
 | 最高 32 TB         | 最高 64 TB         |
 
    > [!TIP]
-   > 如果您使用依賴磁片區陰影複製服務的備份解決方案 (VSS) 和 Volsnap 軟體提供者（如同檔案伺服器工作負載的常見），將磁片區大小限制為 10 TB，將可改善效能和可靠性。 使用較新 Hyper-V RCT API 和/或 ReFS 區塊複製和/或原生 SQL 備份 API 的備份解決方案，磁碟區大小達到 32 TB 以上時也可以順利執行。
+   > 如果您使用依賴磁片區陰影複製服務的備份解決方案 (VSS) 和 Volsnap 軟體提供者（檔案伺服器工作負載很常見），將磁片區大小限制為 10 TB 將可改善效能和可靠性。 使用較新 Hyper-V RCT API 和/或 ReFS 區塊複製和/或原生 SQL 備份 API 的備份解決方案，磁碟區大小達到 32 TB 以上時也可以順利執行。
 
 ### <a name="footprint"></a>使用量
 
 磁碟區大小是指其可用容量，可以儲存的資料量。 這是由 **New-Volume** cmdlet 的 **-Size** 參數提供，然後當您執行 **Get-Volume** cmdlet 時顯示在 **Size** 屬性中。
 
-大小不同於磁碟區*使用量*，它占儲存集區的實體儲存總容量。 使用量視其復原類型而定。 例如，使用三向鏡像的磁碟區有其大小三倍大的使用量。
+大小不同於磁碟區 *使用量*，它占儲存集區的實體儲存總容量。 使用量視其復原類型而定。 例如，使用三向鏡像的磁碟區有其大小三倍大的使用量。
 
 磁碟區使用量需要放在儲存集區中。
 
@@ -193,7 +194,7 @@ ms.locfileid: "87971145"
 
 為了簡化，這整個範例使用十進位 (以 10 為底數) 單位，表示 1 TB = 1,000,000,000,000 位元組。 不過，Windows 中的儲存數量以二進位 (以 2 為底數) 單位表示。 例如，每個 2 TB 磁碟機在 Windows 中顯示為 1.82 TiB。 同樣地，128 TB 儲存集區顯示為 116.41 TiB。 這是預期行為。
 
-## <a name="usage"></a>使用量
+## <a name="usage"></a>使用方式
 
 請參閱[建立儲存空間直接存取中的磁碟區](create-volumes.md)。
 

@@ -1,17 +1,18 @@
 ---
 title: 受防護的 VM - 託管服務提供者會設定 Windows Azure Pack
+description: 深入瞭解：受防護的 Vm-主機服務提供者設定 Windows Azure 套件
 ms.topic: article
 ms.assetid: d528c689-58b0-425c-9740-25e2553ed689
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 0bf64e363226be582c24d644491dcbf4f85ac52e
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: dec0272172cf3277000f0f1f592e4b7a204916bd
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96863956"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97047376"
 ---
 # <a name="shielded-vms---hosting-service-provider-sets-up-windows-azure-pack"></a>受防護的 VM - 託管服務提供者會設定 Windows Azure Pack
 

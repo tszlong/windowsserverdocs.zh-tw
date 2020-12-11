@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：重復資料刪除的新功能
 ms.assetid: d11acbc2-40c6-4ab2-9514-2bc3ad81499a
 title: 重複資料刪除的新功能
 ms.topic: article
@@ -6,24 +7,24 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 04/17/2019
-ms.openlocfilehash: 4db55ece9edbd261bad05d94f6bcca288c54109f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a33a248c8fce180b6ffe3de335fa876829ae05a9
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87957866"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048466"
 ---
 # <a name="whats-new-in-data-deduplication"></a>重複資料刪除的新功能
 
 > 適用於：Windows Server 2019、Windows Server 2016、Windows Server (半年通道)
 
-Windows Server 中的[重復資料刪除](overview.md)已經過優化，可在私用雲端規模進行高效能、彈性且易於管理。 如需 Windows Server 中軟體定義儲存堆疊的詳細資訊，請參閱[Windows server 中存放裝置的新功能](../whats-new-in-storage.md)。
+Windows Server 中的[重復資料刪除](overview.md)已經過優化，可在私用雲端規模進行高度效能、彈性且容易管理。 如需 Windows Server 中軟體定義的存放裝置堆疊的詳細資訊，請參閱 [Windows server 中的存放裝置新功能](../whats-new-in-storage.md)。
 
 重復資料刪除在 Windows Server 2019 中具有下列增強功能：
 
 | 功能 | 新功能或更新功能 | 描述 |
 |---------------|----------------|-------------|
-| ReFS 支援  | 新增            | 使用 ReFS 檔案系統的重復資料刪除和壓縮，在相同的磁片區上儲存多達10倍的資料。  ([只需按一下](https://www.youtube.com/watch?v=PRibTacyKko&feature=youtu.be)就可以開啟 Windows 系統管理中心。使用選擇性壓縮來 ) 可變大小的區塊存放區，可將節省成本降到最低，而多執行緒的後置處理架構則會使效能影響最小。 支援高達 64 TB 的磁片區，並將刪除重複每個檔案的前 4 TB。|
+| ReFS 支援  | 新增            | 使用 ReFS 檔案系統的重復資料刪除和壓縮，在相同的磁片區上儲存多達10倍以上的資料。  ([只需按一下](https://www.youtube.com/watch?v=PRibTacyKko&feature=youtu.be) 就能開啟 Windows Admin Center。 ) 具有選擇性壓縮的可變大社區塊存放區，可將節省率降至最大，而多執行緒的後置處理架構會讓效能的影響降至最小。 支援高達 64 TB 的磁片區，並將刪除每個檔案的前 4 TB。|
 
 從 Windows Server 2016 開始，重復資料刪除具有下列增強功能：
 

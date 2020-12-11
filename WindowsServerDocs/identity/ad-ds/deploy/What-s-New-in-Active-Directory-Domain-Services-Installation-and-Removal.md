@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解： Active Directory Domain Services 安裝和移除的新功能
 ms.assetid: ba7f2b9f-7351-4680-b7d8-a5f270614f1c
 title: Active Directory 網域服務安裝和移除的新功能
 ms.author: daveba
@@ -6,12 +7,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: a16d4ab1a831eb4f057e3802ad644a13a234805b
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: b21233a72cc7e2587a95e0fdb19fa0b71cb6f311
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93069910"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97045936"
 ---
 # <a name="whats-new-in-active-directory-domain-services-installation-and-removal"></a>Active Directory 網域服務安裝和移除的新功能
 
@@ -57,7 +58,7 @@ Windows Server 2012 版的 adprep.exe 可以在任何執行 Windows Server 2008 
 >
 > Adprep.exe 不是有效的 Win32 應用程式。
 
-![最新消息](media/What-s-New-in-Active-Directory-Domain-Services-Installation-and-Removal/AdprepNotValid.gif)
+![新功能](media/What-s-New-in-Active-Directory-Domain-Services-Installation-and-Removal/AdprepNotValid.gif)
 
 如需解決 Adprep.exe 傳回的其他錯誤的相關資訊，請參閱[已知問題](../../ad-ds/deploy/What-s-New-in-Active-Directory-Domain-Services-Installation-and-Removal.md#BKMK_KnownIssues)。
 
@@ -165,7 +166,7 @@ Windows server 2012 的系統需求與 Windows Server 2008 R2 不相同。 如�
 
    這個情況中傳回的錯誤訊息如下：
 
-   無法連線複寫來源網域控制站 *來源網域控制站名稱* 。 (例外：登入失敗：未知的使用者名稱或密碼錯誤)
+   無法連線複寫來源網域控制站 *來源網域控制站名稱*。 (例外：登入失敗：未知的使用者名稱或密碼錯誤)
 
    如果將目標伺服器加入網域，然後使用智慧卡執行安裝，則安裝會成功。
 

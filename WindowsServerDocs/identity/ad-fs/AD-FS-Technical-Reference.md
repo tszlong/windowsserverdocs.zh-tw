@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解： AD FS 技術參考
 ms.assetid: e2c940f5-4b1f-457a-bc71-dcced0c752f7
 title: AD FS 技術參考
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: d58bce837486d47141fd93b42a3a8e5b3a76e7f6
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 30b50b00e22d7d1f9eef7347b890f3d56b0e8bad
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954384"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97046756"
 ---
 # <a name="ad-fs-technical-reference"></a>AD FS 技術參考
 
@@ -24,7 +25,7 @@ ms.locfileid: "87954384"
 -   [使用者隱私權和 AD FS](../ad-fs/technical-reference/GDPR-and-AD-FS-Compliance.md)
 
 > [!TIP]
-> 您可以在[AD FS 2.0 內容地圖](https://support.microsoft.com/help/974408/availability-and-description-of-active-directory-federation-services-2)頁面找到其他 AD FS 2.0 設計內容。
+> 您可以在 [AD FS 2.0 內容對應](https://support.microsoft.com/help/974408/availability-and-description-of-active-directory-federation-services-2) 頁面找到其他 AD FS 2.0 設計內容。
 
 ## <a name="see-also"></a>另請參閱
 

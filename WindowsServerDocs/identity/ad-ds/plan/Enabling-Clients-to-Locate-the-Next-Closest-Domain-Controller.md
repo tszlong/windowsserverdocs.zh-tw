@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：讓用戶端找出下一個最接近的網域控制站
 ms.assetid: 7dd905ea-4235-4519-8400-31b4fa0ed1bf
 title: 讓用戶端找出下一個最近的網域控制站
 ms.author: daveba
@@ -6,12 +7,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 08/08/2018
 ms.topic: article
-ms.openlocfilehash: 959a95d3cf8664fbaedaa31aa88146a462378161
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 1907cf1dd857c66cc2d1bd4ce300edaf4e58b7d5
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93068641"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97046046"
 ---
 # <a name="enabling-clients-to-locate-the-next-closest-domain-controller"></a>讓用戶端找出下一個最近的網域控制站
 

@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解： Windows Server 中的健全狀況服務
 title: Windows Server 中的健全狀況服務
 manager: eldenc
 ms.author: cosdar
@@ -6,36 +7,36 @@ ms.topic: article
 ms.assetid: 5bc71e71-920e-454f-8195-afebd2a23725
 author: cosmosdarwin
 ms.date: 02/09/2018
-ms.openlocfilehash: 69bf8d66fdd3e7fac4066791d0521173484a894f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 486234923a9eff0c185249701b4f9ee28c752e24
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953414"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97047726"
 ---
 # <a name="health-service-in-windows-server"></a>Windows Server 中的健全狀況服務
 
 > 適用於：Windows Server 2019、Windows Server 2016
 
-健全狀況服務是 Windows Server 2016 中的新功能，可改善執行儲存空間直接存取之叢集的日常監視和操作體驗。
+健全狀況服務是 Windows Server 2016 中的一項新功能，可改善執行儲存空間直接存取之叢集的日常監視和操作體驗。
 
 ## <a name="prerequisites"></a>必要條件
 
-根據預設，「健全狀況服務」會隨「儲存空間直接存取」一起啟用。 不需要其他動作來設定或啟動它。 若要深入瞭解儲存空間直接存取，請參閱[Windows Server 2016 中的儲存空間直接存取](../storage/storage-spaces/storage-spaces-direct-overview.md)。
+根據預設，「健全狀況服務」會隨「儲存空間直接存取」一起啟用。 不需要其他動作來設定或啟動它。 若要深入瞭解儲存空間直接存取，請參閱 [Windows Server 2016 中的儲存空間直接存取](../storage/storage-spaces/storage-spaces-direct-overview.md)。
 
-## <a name="reports"></a>報表
+## <a name="reports"></a>報告
 
-請參閱[健全狀況服務報表](health-service-reports.md)。
+請參閱 [健全狀況服務報表](health-service-reports.md)。
 
 ## <a name="faults"></a>錯誤
 
-請參閱[健全狀況服務錯誤](health-service-faults.md)。
+請參閱 [健全狀況服務錯誤](health-service-faults.md)。
 
 ## <a name="actions"></a>動作
 
-請參閱[健全狀況服務動作](health-service-actions.md)。
+請參閱 [健全狀況服務動作](health-service-actions.md)。
 
-## <a name="automation"></a>Automation
+## <a name="automation"></a>自動化
 
 本節說明「健全狀況服務」在磁碟生命週期內自動執行的工作流程。
 
@@ -54,7 +55,7 @@ ms.locfileid: "87953414"
 -   沒有回應：實體磁碟在一小時內發生三次以上超過 5.0 秒的延遲。
 
 >[!NOTE]
-> 如果同時失去對多個實體磁碟 (或整個節點或存放裝置機箱) 的連線，健全狀況服務「不會」** 淘汰這些磁碟，因為它們是根本問題的可能性較低。
+> 如果同時失去對多個實體磁碟 (或整個節點或存放裝置機箱) 的連線，健全狀況服務「不會」淘汰這些磁碟，因為它們是根本問題的可能性較低。
 
 如果被淘汰的磁碟曾作為其他多個實體磁碟的快取，且有其他可用的快取磁碟，系統將會自動重新指派一個給它們。 使用者不需要採取特別的動作。
 
@@ -74,11 +75,11 @@ ms.locfileid: "87953414"
 
 #### <a name="physical-replacement"></a>實體磁碟更換
 
-若情況允許，您應該更換淘汰的實體磁碟。 最常見的情況是由熱交換（也就是不需要關閉節點或存放裝置主機殼）所組成。 請參閱「錯誤」以取得很有用的位置和組件資訊。
+若情況允許，您應該更換淘汰的實體磁碟。 最常見的是，這是由熱交換所組成，也就是不需要關閉節點或儲存主機殼的電源。 請參閱「錯誤」以取得很有用的位置和組件資訊。
 
 #### <a name="verification"></a>驗證
 
-插入更換磁片時，將會針對支援的元件檔進行驗證， (請參閱下一節) 。
+插入更換磁片時，將會根據支援的元件檔進行驗證， (請參閱下一節) 。
 
 #### <a name="pooling"></a>Pooling
 
@@ -86,22 +87,22 @@ ms.locfileid: "87953414"
 
 ## <a name="supported-components-document"></a>支援的元件檔
 
-健全狀況服務提供強制機制，將儲存空間直接存取所使用的元件限制為系統管理員或解決方案廠商所提供的支援元件檔。 這可以防止您或其他人誤用不支援的硬體，這有助於符合保固或支援合約的規定。 此功能目前僅限於實體磁片裝置，包括 Ssd、Hdd 和 NVMe 磁片磁碟機。 支援的元件檔可以限制型號、製造商 (選擇性) ，以及 (選用) 的固件版本。
+健全狀況服務提供強制機制，將儲存空間直接存取所使用的元件，限制為系統管理員或解決方案廠商所提供之支援元件檔上的元件。 這可以防止您或其他人誤用不支援的硬體，這有助於符合保固或支援合約的規定。 這項功能目前僅限於實體磁片裝置，包括 Ssd、Hdd 和 NVMe 磁片磁碟機。 支援的元件檔可以限制模型、製造商 (選用) ，以及 (選用) 的固件版本。
 
-### <a name="usage"></a>使用量
+### <a name="usage"></a>使用方式
 
-支援的元件檔使用以 XML 為靈感的語法。 建議您使用您慣用的文字編輯器（例如免費的[Visual Studio Code](https://code.visualstudio.com/)或記事本）來建立可儲存和重複使用的 XML 檔。
+支援的元件檔會使用 XML 靈感的語法。 建議您使用慣用的文字編輯器（例如免費的 [Visual Studio Code](https://code.visualstudio.com/) 或「記事本」）來建立可儲存並重複使用的 XML 檔。
 
 #### <a name="sections"></a>章節
 
-檔有兩個獨立的區段： `Disks` 和 `Cache` 。
+檔有兩個獨立區段： `Disks` 和 `Cache` 。
 
-如果 `Disks` 已提供區段，則只允許 (列為) 的磁片磁碟機加入集區 `Disk` 。 任何未列出的磁片磁碟機都無法加入集區，這可有效地避免其在生產環境中使用。 如果此區段保留空白，則會允許任何磁片磁碟機加入集區。
+如果 `Disks` 提供區段，則只允許將列為)  (的磁片磁碟機加入集區 `Disk` 。 任何未列出的磁片磁碟機都無法加入集區，這會有效地避免在生產環境中使用。 如果此區段保持空白，則會允許任何磁片磁碟機加入集區。
 
-如果 `Cache` 已提供區段，則只會使用列出 (作為) 的磁片磁碟機 `CacheDisk` 來進行快取。 如果此區段保留空白，儲存空間直接存取會嘗試[根據媒體類型和匯流排類型來猜測](../storage/storage-spaces/understand-the-cache.md#cache-drives-are-selected-automatically)。 這裡所列的磁片磁碟機也應該列在中 `Disks` 。
+如果 `Cache` 提供區段，則只會使用列為)  (的磁片磁碟機 `CacheDisk` 來進行快取。 如果此區段保持空白，儲存空間直接存取會嘗試 [根據媒體類型和匯流排類型來猜測](../storage/storage-spaces/understand-the-cache.md#cache-drives-are-selected-automatically)。 此處所列的磁片磁碟機也應列在中 `Disks` 。
 
 >[!IMPORTANT]
-> 支援的元件檔並不會將追溯套用到已集區和使用中的磁片磁碟機。
+> 支援的元件檔不會將追溯套用至已共用和使用中的磁片磁碟機。
 
 #### <a name="example"></a>範例
 
@@ -139,7 +140,7 @@ ms.locfileid: "87953414"
 
 ```
 
-若要列出多個磁片磁碟機，只要新增額外的標籤 `<Disk>` 或 `<CacheDisk>` 標記即可。
+若要列出多個磁片磁碟機，只要新增額外 `<Disk>` 的 `<CacheDisk>` 標記即可。
 
 若要在部署儲存空間直接存取時插入此 XML，請使用 `-XML` 參數：
 
@@ -148,7 +149,7 @@ $MyXML = Get-Content <Filepath> | Out-String
 Enable-ClusterS2D -XML $MyXML
 ```
 
-若要在部署儲存空間直接存取之後，設定或修改支援的元件檔：
+若要在部署儲存空間直接存取之後設定或修改支援的元件檔：
 
 ```PowerShell
 $MyXML = Get-Content <Filepath> | Out-String
@@ -166,7 +167,7 @@ Get-PhysicalDisk | Select Model, Manufacturer, FirmwareVersion
 
 ## <a name="settings"></a>設定
 
-請參閱[健全狀況服務設定](health-service-settings.md)。
+請參閱 [健全狀況服務設定](health-service-settings.md)。
 
 ## <a name="additional-references"></a>其他參考資料
 

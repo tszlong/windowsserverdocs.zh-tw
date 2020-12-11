@@ -1,16 +1,17 @@
 ---
+description: 深入瞭解：簡化的 SMB 多重通道和多個 NIC 的叢集網路
 ms.assetid: a6343f1c-e9dd-4a02-91ad-39bd519d66cd
 title: 簡化 SMB 多重通道和多個 NIC 的叢集網路
 ms.topic: article
 author: RobHindman
 ms.author: robhind
 ms.date: 09/15/2016
-ms.openlocfilehash: 1abaf439a25e5175aba7290c0600c0f5b56db0d4
-ms.sourcegitcommit: 6c53a7d37b4884212469c38dc97c192cd767e49b
+ms.openlocfilehash: 537c5339505a57992c702d343bf9e130ced8d185
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94919380"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97047236"
 ---
 # <a name="simplified-smb-multichannel-and-multi-nic-cluster-networks"></a>簡化 SMB 多重通道和多個 NIC 的叢集網路
 
@@ -25,7 +26,7 @@ ms.locfileid: "94919380"
 - 預設會在每個叢集存取點上設定單一 IP 位址資源， (CAP) 網路名稱 (NN) 。
 - 在相同的子網上找到多個 Nic 時，叢集驗證不再發出警告訊息。
 
-## <a name="requirements"></a>規格需求
+## <a name="requirements"></a>需求
 -   每一伺服器的多個 Nic，使用相同的交換器/子網。
 
 ## <a name="how-to-take-advantage-of-multi-nic-clusters-networks-and-simplified-smb-multichannel"></a>如何利用多個 NIC 叢集網路和簡化的 SMB 多重通道

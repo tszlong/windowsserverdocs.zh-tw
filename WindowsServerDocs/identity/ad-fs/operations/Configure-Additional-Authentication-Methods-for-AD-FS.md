@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：設定 AD FS 的其他驗證方法
 ms.assetid: ddfbbda3-30ca-4537-af12-667efc6f63ff
 title: Configure Additional Authentication Methods for AD FS
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 07/26/2019
 ms.topic: article
-ms.openlocfilehash: dd773ce7198ffd30d8269ab47ae3d3dcfa7ef7cb
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: c18f5c932c20e74de402942c75ac987873c538cf
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766771"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97046677"
 ---
 # <a name="configure-additional-authentication-methods-for-ad-fs"></a>Configure Additional Authentication Methods for AD FS
 

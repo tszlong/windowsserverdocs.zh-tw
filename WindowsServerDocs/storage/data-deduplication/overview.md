@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：重復資料刪除總覽
 ms.assetid: 4b844404-36ba-4154-aa5d-237a3dd644be
 title: 重複資料刪除概觀
 ms.topic: article
@@ -6,12 +7,12 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 05/09/2017
-ms.openlocfilehash: 8959cde3254db31f077ae276ad72899a12f09feb
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: f8ab5916a3e0172471708a1847cd729115538e22
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766841"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97046276"
 ---
 # <a name="data-deduplication-overview"></a>重複資料刪除概觀
 
@@ -34,7 +35,7 @@ ms.locfileid: "90766841"
 
 重複資料刪除可獲得的空間節省效果，取決於資料集或磁碟區上的工作負載。 將資料重複性高的資料集最佳化比率可能會高達 95%，或讓存放裝置使用率降低 20 倍。 下表強調說明各種內容類型一般會有的重複資料刪除節省量：
 
-| 狀況       | Content                                        | 一般的節省空間 |
+| 案例       | Content                                        | 一般的節省空間 |
 |----------------|------------------------------------------------|-----------------------|
 | 使用者文件 | Office 文件、相片、音樂、影片等  | 30-50%                |
 | 部署共用 | 軟體二進位檔、cab 檔案、符號等 | 70-80%                |

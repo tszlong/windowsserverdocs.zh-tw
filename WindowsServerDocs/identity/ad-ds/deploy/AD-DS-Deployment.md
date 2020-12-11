@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解： AD DS 部署
 ms.assetid: 241d93f9-06cf-4327-96a3-70dfe656f19d
 title: AD DS 部署
 ms.author: daveba
@@ -6,12 +7,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: 3544beee5fce90d6b373adf62e04d9809dccd35d
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: f8e20c21237b0cc8555bda6b824750c75ad8c2c9
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93068270"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048946"
 ---
 # <a name="ad-ds-deployment"></a>AD DS 部署
 

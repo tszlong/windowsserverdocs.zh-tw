@@ -1,17 +1,18 @@
 ---
 ms.assetid: e983d2ab-4153-41e7-b243-12cf7d71a552
 title: 使用 SQL Server 的同盟伺服器陣列
+description: 深入瞭解：使用 SQL Server 的舊版 AD FS 同盟伺服器陣列
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: d283cc3ed8b848ba705a4e7773c1cd0861da1095
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 781c3d99fdd063d094b85032e1ccaca0860cba9a
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96864627"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97046986"
 ---
 # <a name="legacy-ad-fs-federation-server-farm-using-sql-server"></a>使用 SQL Server 的舊版 AD FS 同盟伺服器陣列
 
@@ -158,4 +159,3 @@ AlwaysOn 可用性群組是在 SQL Server 2012 中引進，並提供新的方式
 ## <a name="see-also"></a>另請參閱
 [規劃您的 AD FS 部署拓撲](Plan-Your-AD-FS-Deployment-Topology.md) 
 [Windows Server 2012 R2 中的 AD FS 設計指南](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)
-

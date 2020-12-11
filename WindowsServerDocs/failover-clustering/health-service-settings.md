@@ -1,24 +1,25 @@
 ---
+description: 深入瞭解：健全狀況服務設定
 title: 健全狀況服務設定
 manager: eldenc
 ms.author: cosdar
 ms.topic: article
 author: cosmosdarwin
 ms.date: 08/14/2017
-ms.openlocfilehash: 389dfa8890e67b3caf7d9ec6fb69b16ae6a8083b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7638b501e31985020c0bc32cbf47dd745c45db0f
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953380"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97047746"
 ---
 # <a name="health-service-settings"></a>健全狀況服務設定
 
 > 適用於：Windows Server 2019、Windows Server 2016
 
-健全狀況服務是 Windows Server 2016 中的新功能，可改善執行儲存空間直接存取之叢集的日常監視和操作體驗。
+健全狀況服務是 Windows Server 2016 中的一項新功能，可改善執行儲存空間直接存取之叢集的日常監視和操作體驗。
 
-許多管理健全狀況服務行為的參數都會公開為設定。 您可以修改這些資訊來微調錯誤或動作的增強功能、開啟/關閉特定行為，以及執行其他操作。
+管理健全狀況服務行為的許多參數都會公開為設定。 您可以修改這些功能來微調錯誤或動作的增強功能、開啟/關閉特定行為等等。
 
 使用下列 PowerShell Cmdlet 來設定或修改設定。
 
@@ -36,7 +37,7 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.V
 
 ### <a name="common-settings"></a>一般設定
 
-以下列出一些經常修改的設定，以及其預設值。
+以下列出一些經常修改的設定，以及它們的預設值。
 
 #### <a name="volume-capacity-threshold"></a>磁片區容量閾值
 
@@ -67,7 +68,7 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.V
 
 請參閱上一節。
 
-#### <a name="firmware-rollout"></a>固件推出
+#### <a name="firmware-rollout"></a>推出固件
 
 ```
 "System.Storage.PhysicalDisk.AutoFirmwareUpdate.SingleDrive.Enabled"       = True

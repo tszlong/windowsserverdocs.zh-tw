@@ -1,17 +1,18 @@
 ---
 ms.assetid: e4c31187-f15f-410b-bb79-8d63e2f2b421
 title: 將網域控制站升級為 Windows Server 2012 R2 與 Windows Server 2012
+description: 深入瞭解：將網域控制站升級至 Windows Server 2012 R2 和 Windows Server 2012
 ms.author: daveba
 author: iainfoulds
 manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: be94260946c696eed060b9b2d85f5042ed737a1f
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: d60a4073d39cae39bea53ea57a93424f6573ba12
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96866347"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97045956"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012"></a>將網域控制站升級為 Windows Server 2012 R2 與 Windows Server 2012
 
@@ -70,7 +71,7 @@ Windows 8 與 Windows Server 2012 引進一項名為 [自動維護](/windows/win
 
 下表摘要說明 Windows Server 2012 R2 中的 AD DS 新功能，並附上含有詳細資訊的連結。 如需某些功能更詳細的說明，包含這些功能的需求，請參閱 [Windows Server 2012 R2 中 Active Directory 的新功能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn268294(v=ws.11))。
 
-|特徵|描述|
+|功能|描述|
 |-----------|---------------|
 |[加入工作場所](../../ad-fs/operations/join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications.md)|可讓資訊工作者將其個人裝置與公司聯結，以存取公司資源和服務。|
 |[Web 應用程式 Proxy](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280942(v=ws.11))|運用新的遠端存取角色服務提供 Web 應用程式的存取。|
@@ -89,7 +90,7 @@ Windows 8 與 Windows Server 2012 引進一項名為 [自動維護](/windows/win
 
 下表摘要說明 Windows Server 2012 中的 AD DS 新功能，並附上含有詳細資訊的連結。 如需某些功能的詳細說明，包括它們的需求，請參閱 [Active Directory Domain Services (AD DS) 的新 ](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831477(v=ws.11))功能。
 
-|特徵|描述|
+|功能|描述|
 |-----------|---------------|
 |Active Directory 型啟用 (AD BA)；請參閱 [大量啟用概觀](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831612(v=ws.11))|簡化大量軟體授權發佈和管理的設定工作。|
 |[Active Directory Federation Services (AD FS)](../../active-directory-federation-services.md)|透過伺服器管理員新增角色安裝、簡化信任設定、自動化信任管理、SAML 通訊協定支援等等。|
@@ -157,7 +158,7 @@ AD DS 安裝精靈的先決條件檢查會在安裝開始前識別可能的錯�
 |--|--|--|--|
 | AllowNT4Crypto | 已停用 | 已停用 | 協力廠商伺服器訊息區 (SMB) 用戶端可能與網域控制站上的安全預設設定不相容。 在所有情況下，這些設定可放寬以允許交互操作性，但同時也會產生安全風險。 如需詳細資訊，請參閱 Microsoft 知識庫中的 [文章 942564](https://go.microsoft.com/fwlink/?LinkId=164558) (https://go.microsoft.com/fwlink/?LinkId=164558) 。 |
 | DES | 啟用 | 已停用 | Microsoft 知識庫中的[文章 977321](https://go.microsoft.com/fwlink/?LinkId=177717) (https://go.microsoft.com/fwlink/?LinkId=177717) |
-| CBT/整合式驗證的擴充保護 | N/A | 啟用 | 請參閱 microsoft 知識庫 (中的 [Microsoft 資訊安全諮詢 (937811) ](https://go.microsoft.com/fwlink/?LinkId=164559) (https://go.microsoft.com/fwlink/?LinkId=164559) 和 [文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) https://go.microsoft.com/fwlink/?LinkId=178251) 。<p>如有必要，請在 Microsoft 知識庫的 [文章 977073](https://go.microsoft.com/fwlink/?LinkId=186394) (中，檢查並安裝此修正程式 https://go.microsoft.com/fwlink/?LinkId=186394) 。 |
+| CBT/整合式驗證的擴充保護 | N/A | 已啟用 | 請參閱 microsoft 知識庫 (中的 [Microsoft 資訊安全諮詢 (937811) ](https://go.microsoft.com/fwlink/?LinkId=164559) (https://go.microsoft.com/fwlink/?LinkId=164559) 和 [文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) https://go.microsoft.com/fwlink/?LinkId=178251) 。<p>如有必要，請在 Microsoft 知識庫的 [文章 977073](https://go.microsoft.com/fwlink/?LinkId=186394) (中，檢查並安裝此修正程式 https://go.microsoft.com/fwlink/?LinkId=186394) 。 |
 | LMv2 | 啟用 | 已停用 | Microsoft 知識庫中的[文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) (https://go.microsoft.com/fwlink/?LinkId=178251) |
 
 ## <a name="operating-system-requirements"></a><a name="BKMK_SysReqs"></a>作業系統需求
@@ -274,7 +275,7 @@ Windows Server 2012 中的一些新功能會影響操作主機角色：
 
 下表涵蓋常見的整合 Active Directory Microsoft 應用程式。 表格內容包含應用程式可以安裝在哪些版本的 Windows Server 上，以及採用 Windows Server 2012 DC 是否會對應用程式相容性產生影響。
 
-|產品|注意|
+|產品|備註|
 |-----------|---------|
 |[Microsoft SharePoint 2010](https://support.microsoft.com/kb/2724471)|需要 SharePoint 2010 Service Pack 2，才能在  <br />Windows Server 2012 伺服器上 安裝和操作 SharePoint 2010<p>在 Windows Server 2012 伺服器上安裝和操作 SharePoint 2010 Foundation 需要有 SharePoint 2010 Foundation Service Pack 2<p>SharePoint Server 2010 (不含 Service Pack) 安裝程序在 Windows Server 2012 上會失敗<p>SharePoint Server 2010 必要條件安裝程式 ( # A0) 失敗，並出現錯誤「此程式有相容性問題」。 按一下 [執行程式而不取得說明]，會顯示錯誤「正在驗證是否可以在不含 service pack &#124; SharePoint Server 2010 (中安裝 SharePoint) 無法在 Windows Server 2012 上安裝。」|
 |[Microsoft SharePoint 2013](/SharePoint/install/hardware-and-software-requirements-0)|伺服器陣列中的資料庫伺服器最低需求：<p>64 位元版本的 Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise 或 Datacenter，或是 64 位元版本的 Windows Server 2012 Standard 或 Datacenter<p>含內建資料庫的單一伺服器最低需求：<p>64 位元版本的 Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise 或 Datacenter，或是 64 位元版本的 Windows Server 2012 Standard 或 Datacenter<p>伺服器陣列中的前端網頁伺服器和應用程式伺服器最低需求：<p>64 位元版本的 Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise 或 Datacenter，或是 64 位元版本的 Windows Server 2012 Standard 或 Datacenter。|

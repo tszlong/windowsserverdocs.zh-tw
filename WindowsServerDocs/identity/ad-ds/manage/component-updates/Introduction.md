@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：簡介
 ms.assetid: 84754c23-f039-4de4-a378-853942e662df
 title: 簡介
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: e9df8c913db5c25b53abd1f4fd8aad1c4dbe2e54
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 9f022f30b977fee15d7d20ba3f9330806a3570a4
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070660"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048816"
 ---
 # <a name="introduction"></a>簡介
 
@@ -31,11 +32,11 @@ ms.locfileid: "93070660"
 |**帳戶/群組位置**|**帳戶/群組的名稱**|**本檔的參考方式**|
 | --- | --- | --- |
 |Active Directory-每個網域|系統管理員|內建的系統管理員帳戶|
-|Active Directory-每個網域|系統管理員|內建系統管理員 (BA) 群組|
-|Active Directory-每個網域|網域管理員|Domain Admins (DA) 群組|
-|Active Directory-樹系根域|企業系統管理員|企業系統管理員 (EA) 群組|
+|Active Directory-每個網域|Administrators|內建系統管理員 (BA) 群組|
+|Active Directory-每個網域|Domain Admins|Domain Admins (DA) 群組|
+|Active Directory-樹系根域|Enterprise Admins|企業系統管理員 (EA) 群組|
 |本機電腦安全性性帳戶管理員 (SAM 在執行 Windows Server 的電腦和非網域控制站的工作站上) 資料庫|系統管理員|本機系統管理員帳戶|
-|本機電腦安全性性帳戶管理員 (SAM 在執行 Windows Server 的電腦和非網域控制站的工作站上) 資料庫|系統管理員|本機系統管理員群組|
+|本機電腦安全性性帳戶管理員 (SAM 在執行 Windows Server 的電腦和非網域控制站的工作站上) 資料庫|Administrators|本機系統管理員群組|
 
 ## <a name="about-this-document"></a>關於本檔
 Microsoft 資訊安全與風險管理 (ISRM) 的組織，這是 Microsoft 資訊技術 (MSIT) 的一部分，可與內部營業單位、外部客戶和產業對等互連，以收集、散佈和定義原則、實務和控制項。 Microsoft 與我們的客戶可以使用這項資訊來提高安全性，並減少 IT 基礎結構的受攻擊面。 本檔中提供的建議是以 MSIT 和 ISRM 中使用的一些資訊來源與實務為基礎。 下列各節提供有關本檔之來源的詳細資訊。

@@ -1,16 +1,17 @@
 ---
+description: 深入瞭解：裝置健康情況證明
 title: 裝置健康情況證明
 ms.topic: article
 ms.assetid: 8e7b77a4-1c6a-4c21-8844-0df89b63f68d
 author: brianlic-msft
 ms.author: brianlic
 ms.date: 10/12/2016
-ms.openlocfilehash: fc5b0a3e3b3da3b329baec37888fd04c9f3adc0e
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 6caff885e936809c649564a950d78a99e8fa49ce
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995725"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97047546"
 ---
 # <a name="device-health-attestation"></a>裝置健康情況證明
 
@@ -87,13 +88,13 @@ DHA 內部部署服務提供所有 DHA 雲端服務提供的功能。  它也可
 
 #### <a name="ekcert-validation-mode"></a>EKCert 驗證模式
 
-EKCert 驗證模式已經針對未連線到網際網路的組織最佳化。 連線到以 EKCert 驗證模式執行之 DHA 服務的裝置「不會」**** 直接存取網際網路。
+EKCert 驗證模式已經針對未連線到網際網路的組織最佳化。 連線到以 EKCert 驗證模式執行之 DHA 服務的裝置「不會」直接存取網際網路。
 
 當 DHA 以 EKCert 驗證模式執行時，它是依賴企業管理的信任鏈結，必須偶爾更新 (每年大約 5-10 次)。
 
 Microsoft 會在 .cab 封存中可公開存取的封存中，針對核准的 TPM 製造商發行 (在它們可用時) 受信任的根憑證和中繼 CA 的可彙總套件。 您需要下載該摘要，驗證其完整性，並將其安裝在執行「裝置健康情況證明」的伺服器上。
 
-封存的範例為 [https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925) 。
+範例封存為 [https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925) 。
 
 #### <a name="aikcert-validation-mode"></a>AIKCert 驗證模式
 
@@ -118,31 +119,31 @@ AIKCert 驗證模式已經針對可存取網際網路的作業環境最佳化。
 
 ### <a name="install-windows-server-2016"></a>安裝 Windows Server 2016
 
-使用您想要的安裝方式 (例如「Windows 部署服務」) 安裝 Windows Server 2016，或從開機媒體、USB 磁碟機或本機檔案系統執行安裝程式。 如果這是您第一次設定 DHA 內部部署服務，您應該使用「桌面體驗」**** 安裝選項來安裝 Windows Server 2016。
+使用您想要的安裝方式 (例如「Windows 部署服務」) 安裝 Windows Server 2016，或從開機媒體、USB 磁碟機或本機檔案系統執行安裝程式。 如果這是您第一次設定 DHA 內部部署服務，您應該使用「桌面體驗」安裝選項來安裝 Windows Server 2016。
 
 ### <a name="add-the-device-health-attestation-server-role"></a>新增裝置健康情況證明伺服器角色
 
 您可以使用「伺服器管理員」來安裝「裝置健康情況證明」伺服器角色和其相依性。
 
-安裝 Windows Server 2016 之後，裝置會重新啟動並開啟「伺服器管理員」。 如果「伺服器管理員」沒有自動啟動，請按一下 [開始]****，然後按一下 [伺服器管理員]****。
+安裝 Windows Server 2016 之後，裝置會重新啟動並開啟「伺服器管理員」。 如果「伺服器管理員」沒有自動啟動，請按一下 [開始]，然後按一下 [伺服器管理員]。
 
-1.    按一下 [**新增角色及功能**]。
+1.    按一下 [ **新增角色及功能**]。
 2.    在 [在您開始前]  頁面上，按一下 [下一步]  。
-3.    在 [選取安裝類型]**** 頁面上，按一下 [角色型或功能型安裝]****，然後按 [下一步]****。
-4.    在 [選取目的地伺服器]**** 頁面上，按一下 [從伺服器集區選取伺服器]****，選取伺服器然後按一下 [下一步]****。
-5.    在 [選取伺服器角色]**** 頁面上，選取 [裝置健康情況證明]**** 核取方塊。
-6.    按一下 [新增功能]**** 來安裝其他必要的角色服務和功能。
-7.    按 [下一步]  。
-8.    在 [選取功能]**** 頁面上，按 [下一步]****。
-9.    在 [網頁伺服器 (IIS) 角色]**** 頁面上，按一下 [下一步]****。
-10.    在 [選取角色服務]**** 頁面上，按 [下一步]****。
-11.    在 [裝置健全狀況證明服務]**** 頁面上，按一下 [下一步]****。
-12.    在 [確認安裝選項]**** 頁面上，按一下 [安裝]****。
-13.    安裝完成時，按一下 [關閉]****。
+3.    在 [選取安裝類型] 頁面上，按一下 [角色型或功能型安裝]，然後按 [下一步]。
+4.    在 [選取目的地伺服器] 頁面上，按一下 [從伺服器集區選取伺服器]，選取伺服器然後按一下 [下一步]。
+5.    在 [選取伺服器角色] 頁面上，選取 [裝置健康情況證明] 核取方塊。
+6.    按一下 [新增功能] 來安裝其他必要的角色服務和功能。
+7.    按一下 [下一步] 。
+8.    在 [選取功能] 頁面上，按 [下一步]。
+9.    在 [網頁伺服器 (IIS) 角色] 頁面上，按一下 [下一步]。
+10.    在 [選取角色服務] 頁面上，按 [下一步]。
+11.    在 [裝置健全狀況證明服務] 頁面上，按一下 [下一步]。
+12.    在 [確認安裝選項] 頁面上，按一下 [安裝]。
+13.    安裝完成時，按一下 [關閉]。
 
 ### <a name="install-the-signing-and-encryption-certificates"></a>安裝簽署和加密憑證
 
-使用下列 Windows PowerShell 指令碼安裝簽署和加密憑證。 如需指紋的詳細資訊，請參閱[如何：取出憑證的指紋](/dotnet/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate)。
+使用下列 Windows PowerShell 指令碼安裝簽署和加密憑證。 如需有關指紋的詳細資訊，請參閱 [如何：取出憑證的指紋](/dotnet/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate)。
 
 ```
 $key = Get-ChildItem Cert:\LocalMachine\My | Where-Object {$_.Thumbprint -like "<thumbprint>"}
@@ -171,7 +172,7 @@ mkdir .\TrustedTpm
 expand -F:* .\TrustedTpm.cab .\TrustedTpm
 ```
 
-#### <a name="remove-the-trust-chains-for-tpm-vendors-that-are-not-trusted-by-your-organization-optional"></a>移除您的組織「不信任」** 的 TPM 廠商的信任鏈結 (選擇性)
+#### <a name="remove-the-trust-chains-for-tpm-vendors-that-are-not-trusted-by-your-organization-optional"></a>移除您的組織「不信任」的 TPM 廠商的信任鏈結 (選擇性)
 
 刪除您的組織不信任的任何 TPM 廠商信任鏈結的資料夾。
 
@@ -246,7 +247,7 @@ Remove-DHASInactiveSigningCertificates -Force
 Remove-DHASInactiveSigningCertificates  -Thumbprint "<hex>" -Force
 ```
 
-> **注意：** 服務中一次只能存在「一個」** 非作用中憑證 (任何類型)。 當憑證已不再需要時，應將它們從非作用中憑證清單中移除。
+> **注意：** 服務中一次只能存在「一個」非作用中憑證 (任何類型)。 當憑證已不再需要時，應將它們從非作用中憑證清單中移除。
 
 ### <a name="get-the-active-encryption-certificate"></a>取得作用中加密憑證
 
@@ -297,6 +298,6 @@ Set-DHASCertificateChainPolicy = $certificateChainPolicy
 以下是 DHA 服務向 MDM 解決方案所回報訊息的清單：
 
 - **200** HTTP 正常。 傳回憑證。
-- **400**不正確的要求。 無效的要求格式、無效的健康情況憑證、憑證簽署不相符、無效的健康情況證明 Blob，或無效的健全狀態 Blob。 如回應結構描述所述，回應也包含訊息，其中包含可用於診斷的錯誤碼和錯誤訊息。
-- **500**內部伺服器錯誤。 如果有導致服務無法發出憑證的問題，就可能會發生此情況。
+- **400** 錯誤的要求。 無效的要求格式、無效的健康情況憑證、憑證簽署不相符、無效的健康情況證明 Blob，或無效的健全狀態 Blob。 如回應結構描述所述，回應也包含訊息，其中包含可用於診斷的錯誤碼和錯誤訊息。
+- **500** 內部伺服器錯誤。 如果有導致服務無法發出憑證的問題，就可能會發生此情況。
 - **503** 節流拒絕要求以防止伺服器超載。

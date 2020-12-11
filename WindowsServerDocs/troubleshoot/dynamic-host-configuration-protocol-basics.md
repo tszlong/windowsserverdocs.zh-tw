@@ -1,34 +1,34 @@
 ---
 title: DHCP (動態主機設定通訊協定) 基本概念
-description: ''
+description: 深入瞭解： DHCP (動態主機設定通訊協定) 基本概念
 manager: dcscontentpm
 ms.date: 5/26/2020
 ms.topic: troubleshoot
 author: Deland-Han
 ms.author: delhan
 ms.reviewer: ''
-ms.openlocfilehash: 445663569fca7182e5343dd6f7ac677fd7f87f3b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 73b79eedf1d792c30c7dc6997c3005db8076d924
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970055"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97045986"
 ---
 # <a name="dhcp-dynamic-host-configuration-protocol-basics"></a>DHCP (動態主機設定通訊協定) 基本概念
 
-動態主機設定通訊協定 (DHCP) 是由 RFC 1541 (所) 2131 取代的標準通訊協定，可讓伺服器將 IP 位址和設定資訊動態散發給用戶端。 通常 DHCP 伺服器至少會提供此基本資訊給用戶端：
+ (DHCP) 的動態主機設定通訊協定是由 rfc 1541) 2131 (所定義的標準通訊協定，可讓伺服器將 IP 位址和設定資訊動態散發給用戶端。 通常 DHCP 伺服器至少會為用戶端提供下列基本資訊：
 
 - IP 位址
 
 - 子網路遮罩
 
-- 也可以提供預設的 GatewayOther 資訊，例如功能變數名稱服務 (DNS) 伺服器位址和 Windows 網際網路名稱服務 (WINS) 伺服器位址。 系統管理員會使用向外剖析至用戶端的選項來設定 DHCP 伺服器。
+- 您也可以提供預設的 GatewayOther 資訊，例如功能變數名稱服務 (DNS) 伺服器位址和 Windows 網際網路名稱服務 (WINS) 伺服器位址。 系統管理員將 DHCP 伺服器設定為向外剖析至用戶端的選項。
 
 ## <a name="more-information"></a>相關資訊
 
 下列 Microsoft 產品提供 DHCP 用戶端功能：
 
-- Windows NT Server 版本3.5、3.51 和4。0
+- Windows NT 伺服器版本3.5、3.51 和4。0
 
 - Windows NT 工作站版本3.5、3.51 和4。0
 
@@ -36,21 +36,21 @@ ms.locfileid: "87970055"
 
 - 適用于 MS-DOS 的 Microsoft Network Client 3.0 版
 
-- 適用于 MS-DOS 的 Microsoft LAN Manager Client 2.2 版 c
+- 適用于 MS-DOS 的 Microsoft LAN Manager 用戶端2.2 版
 
-- 適用于工作組3.11、3.11 和 3.11 b 版本的 Microsoft TCP/IP-32 for Windows
+- 適用于 Windows 的 Microsoft TCP/IP-32 （適用于工作組版本3.11、3.11 a 和 3.11 b）
 
-不同的 DHCP 用戶端支援可以從 DHCP 伺服器接收的不同選項。
+不同的 DHCP 用戶端支援可從 DHCP 伺服器接收的不同選項。
 
 下列 Microsoft 伺服器作業系統提供 DHCP 伺服器功能：
 
-- Windows NT Server 版本3。5
+- Windows NT Server 3.5 版
 
-- Windows NT Server 版本3.51
+- Windows NT Server 3.51 版
 
-- Windows NT Server 版本4。0
+- Windows NT Server 4.0 版
 
-當用戶端在設定為接收 DHCP 資訊後第一次初始化時，它會起始與伺服器的交談。
+當用戶端在設定為接收 DHCP 資訊之後第一次初始化時，它會起始與伺服器的交談。
 
 以下是用戶端與伺服器之間交談的摘要資料表，後面接著進程的封包層級描述：
 
@@ -68,7 +68,7 @@ DHCP 用戶端和 DHCP 伺服器之間的詳細交談如下所示：
 
 ### <a name="dhcpdiscover"></a>DHCPDISCOVER
 
-用戶端會傳送 DHCPDISCOVER 封包。 以下是網路監視器捕捉的摘錄，其中顯示 DHCPDISCOVER 封包的 IP 和 DHCP 部分。 在 [IP] 區段中，您可以看到 [目的地位址] 是255.255.255.255，而 [來源位址] 是0.0.0.0。 DHCP 區段會將封包識別為探索封包，並使用網路卡的實體位址在兩個地方識別用戶端。 請注意，[CHADDR] 欄位和 [DHCP：用戶端識別碼] 欄位中的值完全相同。
+用戶端會傳送 DHCPDISCOVER 封包。 以下是網路監視器捕獲的摘要，顯示 DHCPDISCOVER 封包的 IP 和 DHCP 部分。 在 [IP] 區段中，您可以看到目的地位址為255.255.255.255，而來源位址為0.0.0.0。 DHCP 區段會使用網路介面卡的實體位址，將封包識別為探索封包，並在兩個位置中識別用戶端。 請注意 [CHADDR] 欄位和 [DHCP：用戶端識別碼] 欄位中的值完全相同。
 
 ```
 
@@ -121,7 +121,7 @@ DHCP: Discover (xid=21274A1D)
 
 ### <a name="dhcpoffer"></a>DHCPOFFER
 
-DHCP 伺服器會藉由傳送 DHCPOFFER 封包來回應。 在下面的 capture 摘錄的 IP 區段中，來源位址現在是 DHCP 伺服器 IP 位址，而目的地位址是廣播位址255.255.255.255。 DHCP 區段會將封包識別為供應專案。 [YIADDR] 欄位會填入伺服器提供給用戶端的 IP 位址。 請注意，CHADDR 欄位仍然包含要求用戶端的實體位址。 此外，我們也會在 DHCP 選項欄位區段中看到伺服器傳送的各種選項，以及 IP 位址。 在此情況下，伺服器會傳送子網路遮罩、預設閘道 (路由器) 、租用時間、WINS 伺服器位址 (NetBIOS 名稱服務) 和 NetBIOS 節點類型。
+DHCP 伺服器會透過傳送 DHCPOFFER 封包來回應。 在以下 [抓取摘要] 的 [IP] 區段中，來源位址現在是 [DHCP 伺服器 IP 位址]，而 [目的地位址] 是 [廣播位址 255.255.255.255]。 DHCP 區段會將封包識別為供應專案。 YIADDR 欄位會填入伺服器提供用戶端的 IP 位址。 請注意，CHADDR 欄位仍包含要求用戶端的實體位址。 此外，我們會在 [DHCP 選項欄位] 區段中看到伺服器傳送的各種選項以及 IP 位址。 在此情況下，伺服器會傳送子網路遮罩、預設閘道 (路由器) 、租用時間、WINS 伺服器位址 (NetBIOS 名稱服務) 和 NetBIOS 節點類型。
 
 ```
 
@@ -179,7 +179,7 @@ DHCP: Offer (xid=21274A1D)
 
 ### <a name="dhcprequest"></a>DHCPREQUEST
 
-用戶端會藉由傳送 DHCPREQUEST 來回應 DHCPOFFER。 在下面的 capture 的 IP 區段中，用戶端的來源位址仍然是0.0.0.0，封包的目的地仍然是255.255.255.255。 用戶端會保留0.0.0.0，因為用戶端未收到伺服器的驗證，因此可以使用提供的位址開始。 目的地仍在廣播中，因為一部以上的 DHCP 伺服器可能已回應，而且可能會保留對用戶端的供應專案。 這可讓其他 DHCP 伺服器知道它們可以釋放其提供的位址，並將其傳回給其可用的集區。 DHCP 區段會將封包識別為要求，並使用 DHCP：要求的位址欄位來驗證提供的位址。 [DHCP：伺服器識別碼] 欄位會顯示提供租用之 DHCP 伺服器的 IP 位址。
+用戶端會藉由傳送 DHCPREQUEST 來回應 DHCPOFFER。 在下方的 [IP] 區段中，用戶端的來源位址仍然是0.0.0.0，封包的目的地仍是255.255.255.255。 用戶端會保留0.0.0.0，因為用戶端未收到來自伺服器的驗證，因此可以使用提供的位址開始。 因為有一部以上的 DHCP 伺服器回應，而且可能保留給用戶端的供應專案，所以目的地仍在廣播中。 這可讓其他 DHCP 伺服器知道他們可以釋出其提供的位址，並將其傳回給其可用的集區。 DHCP 區段會將封包識別為要求，並使用 [DHCP：要求的位址] 欄位來確認提供的位址。 [DHCP：伺服器識別碼] 欄位會顯示提供租用之 DHCP 伺服器的 IP 位址。
 
 ```
 
@@ -234,7 +234,7 @@ DHCP: Request (xid=21274A1D)
 
 ### <a name="dhcpack"></a>DHCPACK
 
-DHCP 伺服器會以 DHCPACK 回應 DHCPREQUEST，因此會完成初始化週期。 來源位址是 DHCP 伺服器 IP 位址，而目的地位址仍然是255.255.255.255。 YIADDR 欄位包含用戶端的位址，而 [CHADDR] 和 [DHCP：用戶端識別碼] 欄位是要求用戶端中網路卡的實體位址。 DHCP 選項區段會將封包識別為 ACK。
+DHCP 伺服器會以 DHCPACK 回應 DHCPREQUEST，進而完成初始化週期。 來源位址是 DHCP 伺服器的 IP 位址，而目的地位址仍然是255.255.255.255。 YIADDR 欄位包含用戶端的位址，而 CHADDR 和 DHCP：用戶端識別碼欄位是要求用戶端中網路卡的實體位址。 DHCP 選項區段會將封包識別為 ACK。
 
 ```
 
@@ -290,7 +290,7 @@ DHCP: ACK (xid=21274A1D)
 
 ```
 
-如果用戶端先前已有 DHCP 指派的 IP 位址，且已重新開機，用戶端會特別在特殊 DHCPREQUEST 封包中要求先前租用的 IP 位址。 來源位址為0.0.0.0，而目的地為廣播位址255.255.255.255。 Microsoft 用戶端會在 DHCP 選項欄位 DHCP：要求的位址中填入先前指派的位址。 嚴格符合 RFC 規範的用戶端會將所要求的位址填入 CIADDR 欄位。 Microsoft DHCP 伺服器將接受其中一項。
+如果用戶端先前已有 DHCP 指派的 IP 位址，且已重新開機，用戶端就會特別要求特殊 DHCPREQUEST 封包中先前租用的 IP 位址。 來源位址為0.0.0.0，目的地為廣播位址255.255.255.255。 Microsoft 用戶端會將 dhcp 選項 [DHCP：要求的位址] 填入先前指派的位址。 嚴格符合 RFC 規範的用戶端會在 CIADDR 欄位中填入所要求的位址。 Microsoft DHCP 伺服器將接受其中一種。
 
 ```
 
@@ -342,7 +342,7 @@ DHCP: Request (xid=2757554E)
 
 ```
 
-此時，伺服器可能會或可能不會回應。 Windows NT DHCP 伺服器的行為取決於所使用的作業系統版本，以及其他因素，例如 superscoping。 如果伺服器判斷用戶端仍然可以使用該位址，它會保持無訊息或通知 DHCPREQUEST。 如果伺服器判斷用戶端不能擁有該位址，則會傳送 NACK。
+此時，伺服器不一定會回應。 Windows NT DHCP 伺服器的行為取決於所使用的作業系統版本，以及其他因素（例如 superscoping）。 如果伺服器判斷用戶端仍然可以使用該位址，它會維持無訊息或通知 DHCPREQUEST。 如果伺服器判斷用戶端無法擁有位址，則會傳送 NACK。
 
 ```
 
@@ -391,7 +391,7 @@ DHCP: NACK (xid=74A005CE)
 
 ```
 
-接著，用戶端會開始探索程式，但 DHCPDISCOVER 封包仍然會嘗試租用相同的位址。 在許多情況下，tth 用戶端會取得相同的位址，但可能不會。
+用戶端接著會開始探索程式，但 DHCPDISCOVER 封包仍會嘗試租用相同的位址。 在許多情況下，tth 用戶端會取得相同的位址，但可能不會。
 
 ```
 
@@ -443,10 +443,10 @@ DHCP: Discover (xid=3ED14752)
 
 ```
 
-用戶端從 DHCP 伺服器取得的 DHCP 資訊將會有相關聯的租用時間。 租用時間定義用戶端可以使用 DHCP 指派資訊的時間長度。 當租用到達特定里程碑時，用戶端會嘗試更新其 DHCP 資訊。
+用戶端從 DHCP 伺服器取得的 DHCP 資訊會有相關聯的租用時間。 租用時間定義用戶端可以使用 DHCP 指派資訊的時間長度。 當租用達到特定里程碑時，用戶端會嘗試更新其 DHCP 資訊。
 
 若要在 Windows 或 Windows 上查看工作組用戶端的 IP 資訊，請使用 IPCONFIG 公用程式。 如果用戶端是 Windows 95，請使用 WINIPCFG。
 
-## <a name="references"></a>參考
+## <a name="references"></a>參考資料
 
-如需有關 DHCP 的詳細資訊，請參閱 RFC1541 和 RFC2131。 Rfc 可以透過網際網路在多個網站上取得，例如： [http://www.rfc-editor.org/](http://www.rfc-editor.org/) 和[http://www.tech-nic.qc.ca/](http://www.tech-nic.qc.ca/)
+如需 DHCP 的詳細資訊，請參閱 RFC1541 和 RFC2131。 Rfc 可透過網際網路在許多網站上取得，例如：和。 [http://www.rfc-editor.org/](http://www.rfc-editor.org/)[http://www.tech-nic.qc.ca/](http://www.tech-nic.qc.ca/)

@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：脫離的命名空間
 ms.assetid: d92731f1-e4d8-4223-9b07-ca1f40bb0e1f
 title: 斷續命名空間
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 76733e31497ab92ab54cb583b9db88b989400389
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: eeba64a9bddbf06797413dd1ec1e3843785809ac
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93068730"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97045146"
 ---
 # <a name="disjoint-namespace"></a>斷續命名空間
 

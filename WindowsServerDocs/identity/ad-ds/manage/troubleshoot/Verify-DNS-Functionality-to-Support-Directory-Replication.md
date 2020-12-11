@@ -1,15 +1,16 @@
 ---
+description: 深入瞭解：驗證 DNS 功能以支援目錄複寫
 ms.assetid: 709353b0-b913-4367-8580-44745183e2bc
 title: 驗證 DNS 功能以支援目錄複寫
 ms.author: daveba
 ms.date: 05/31/2017
 author: Femila
-ms.openlocfilehash: 0a79a4b73a9e3d610408076c8e7526f504055d53
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 540b62236acb9a1026219193de208b2948c2b12d
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93071250"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97046306"
 ---
 # <a name="verify-dns-functionality-to-support-directory-replication"></a>驗證 DNS 功能以支援目錄複寫
 
@@ -40,7 +41,7 @@ ms.locfileid: "93071250"
 ### <a name="to-verify-basic-dns-functionality"></a>若要驗證基本 DNS 功能：
 
 
-1. 在您要測試的網域控制站上，或已安裝 Active Directory Domain Services (AD DS) 工具的網域成員電腦上，以系統管理員身分開啟命令提示字元。 若要以系統管理員身分開啟命令提示字元，按一下 [ **開始** ]。
+1. 在您要測試的網域控制站上，或已安裝 Active Directory Domain Services (AD DS) 工具的網域成員電腦上，以系統管理員身分開啟命令提示字元。 若要以系統管理員身分開啟命令提示字元，按一下 [**開始**]。
 2. 在 [開始搜尋] 中輸入 Command Prompt，
 3. 在 [開始] 功能表的頂端，以滑鼠右鍵按一下 [命令提示字元]，然後按一下 [以系統管理員身分執行]。 如果出現 [使用者帳戶控制] 對話方塊，請確認它所顯示的動作就是您所需的動作，然後按一下 [繼續]。
 4. 在命令提示字元中輸入下列命令，然後按 ENTER 鍵： `dcdiag /test:dns /v /s:<DCName> /DnsBasic /f:dcdiagreport.txt`
@@ -73,8 +74,8 @@ ms.locfileid: "93071250"
 - **別名 (CNAME) ：** 找出複寫夥伴的全域唯一識別碼 (GUID) 架構資源記錄
 - **主機 () ：**  包含網域控制站 IP 位址的主機資源記錄
 - **LDAP SRV：** 服務 (SRV) 找出 LDAP 伺服器的資源記錄
-- **GC SRV** ：服務 (SRV) 找出通用類別目錄伺服器的資源記錄
-- **PDC SRV** ：服務 (SRV) 資源記錄，以找出網域主控站 (PDC) 模擬器操作主機
+- **GC SRV**：服務 (SRV) 找出通用類別目錄伺服器的資源記錄
+- **PDC SRV**：服務 (SRV) 資源記錄，以找出網域主控站 (PDC) 模擬器操作主機
 
 您可以使用下列程式單獨驗證別名 (CNAME) 資源記錄註冊。
 

@@ -1,16 +1,17 @@
 ---
+description: 深入瞭解： TLS (Schannel SSP) Windows 10 和 Windows Server 2016 中的變更
 title: 'TLS (Schannel SSP) '
 ms.topic: article
 ms.assetid: ebd3c40c-b4c0-4f6d-a00c-f90eda4691df
 author: justinha
 ms.author: Justinha
 ms.date: 05/16/2018
-ms.openlocfilehash: 389a5a009320f7a19f5cbf942fe7c86f08f573ac
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: 28774f9be853a133bfc69f5ca86fc25c4b1fd88f
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90078525"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97045476"
 ---
 # <a name="tls-schannel-ssp-changes-in-windows-10-and-windows-server-2016"></a>TLS (Schannel SSP) Windows 10 和 Windows Server 2016 中的變更
 
@@ -45,11 +46,11 @@ Windows 10，版本1507和 Windows Server 2016 新增用戶端 RSA 金鑰大小�
 
 如需詳細資訊，請參閱 [Asymmetricalgorithm.keyexchangealgorithm 用戶端 RSA 金鑰大小](tls-registry-settings.md#keyexchangealgorithm---client-rsa-key-sizes)。
 
-### <a name="diffie-hellman-key-changes"></a>Diffie-hellman 金鑰變更
+### <a name="diffie-hellman-key-changes"></a>Diffie-Hellman 金鑰變更
 
-Windows 10，版本1507和 Windows Server 2016 新增 Diffie-hellman 金鑰大小的登錄設定選項。
+Windows 10，版本1507和 Windows Server 2016 新增 Diffie-Hellman 金鑰大小的登錄設定選項。
 
-如需詳細資訊，請參閱 [asymmetricalgorithm.keyexchangealgorithm-diffie-hellman 金鑰大小](tls-registry-settings.md#keyexchangealgorithm---diffie-hellman-key-sizes)。
+如需詳細資訊，請參閱 [asymmetricalgorithm.keyexchangealgorithm-Diffie-Hellman 金鑰大小](tls-registry-settings.md#keyexchangealgorithm---diffie-hellman-key-sizes)。
 
 ### <a name="sch_use_strong_crypto-option-changes"></a>SCH_USE_STRONG_CRYPTO 選項變更
 
@@ -105,7 +106,7 @@ Windows 10，版本1607和 Windows Server 2016 新增了 PSK 金鑰交換演算�
 - Windows 10、1607版和 Windows Server 2016 TLS_PSK_WITH_AES_128_GCM_SHA256 (RFC 5487) 
 - Windows 10、1607版和 Windows Server 2016 TLS_PSK_WITH_AES_256_GCM_SHA384 (RFC 5487) 
 
-## <a name="session-resumption-without-server-side-state-server-side-performance-improvements"></a>沒有伺服器端狀態伺服器端效能改進的會話繼續
+## <a name="session-resumption-without-server-side-state-server-side-performance-improvements"></a>沒有 Server-Side 狀態伺服器端效能改進的會話繼續
 
 相較于 Windows Server 2012，1507版和 Windows Server 2016 Windows 10 提供每秒30% 的會話繼續。
 

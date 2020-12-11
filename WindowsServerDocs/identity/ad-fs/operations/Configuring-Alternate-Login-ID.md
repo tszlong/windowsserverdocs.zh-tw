@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：設定替代登入識別碼
 ms.assetid: f0cbdd78-f5ae-47ff-b5d3-96faf4940f4a
 title: 設定替代登入識別碼
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 11/14/2018
 ms.topic: article
-ms.openlocfilehash: 549ba062a30ce3b2d1a9f06d60357c0199766d84
-ms.sourcegitcommit: c6e2e545100bbbc4864088fd0d103bafc147fcbb
+ms.openlocfilehash: 93bca831222700f12cccd2ae6aef60ca189197b9
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88785060"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048846"
 ---
 # <a name="configuring-alternate-login-id"></a>設定替代登入識別碼
 
@@ -119,9 +120,9 @@ Office 應用程式依賴目錄管理員所推送的資訊來識別替代識別�
 
 |要新增的 Regkey|Regkey 資料名稱、類型和值|Windows 7/8|Windows 10|描述|
 |-----|-----|-----|-----|-----|
-|HKEY_CURRENT_USER \Software\Microsoft\AuthN|DomainHint</br>REG_SZ</br>contoso.com|必要|必要|此 regkey 的值是組織租使用者中已驗證的自訂功能變數名稱。 例如，如果 Contoso.com 是租使用者 Contoso.onmicrosoft.com 中其中一個已驗證的自訂功能變數名稱，則 Contoso corp 可以在此登錄中提供 Contoso.com 值。|
-HKEY_CURRENT_USER \Software\Microsoft\Office\16.0\Common\Identity|EnableAlternateIdSupport</br>REG_DWORD</br>1|Outlook 2016 ProPlus 的必要參數|Outlook 2016 ProPlus 的必要參數|此 regkey 的值可能是 1/0，表示 Outlook 應用程式是否應該參與改良的替代識別碼驗證邏輯。|
-HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\contoso.com\sts|&#42;</br>REG_DWORD</br>1|必要|必要|此登錄可以用來將 STS 設定為網際網路設定中的信任區域。 標準 ADFS 部署建議將 ADFS 命名空間新增至近端內部網路區域，以供 Internet Explorer|
+|HKEY_CURRENT_USER\Software\Microsoft\AuthN|DomainHint</br>REG_SZ</br>contoso.com|必要|必要|此 regkey 的值是組織租使用者中已驗證的自訂功能變數名稱。 例如，如果 Contoso.com 是租使用者 Contoso.onmicrosoft.com 中其中一個已驗證的自訂功能變數名稱，則 Contoso corp 可以在此登錄中提供 Contoso.com 值。|
+HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Common\Identity|EnableAlternateIdSupport</br>REG_DWORD</br>1|Outlook 2016 ProPlus 的必要參數|Outlook 2016 ProPlus 的必要參數|此 regkey 的值可能是 1/0，表示 Outlook 應用程式是否應該參與改良的替代識別碼驗證邏輯。|
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\contoso.com\sts|&#42;</br>REG_DWORD</br>1|必要|必要|此登錄可以用來將 STS 設定為網際網路設定中的信任區域。 標準 ADFS 部署建議將 ADFS 命名空間新增至近端內部網路區域，以供 Internet Explorer|
 
 ## <a name="new-authentication-flow-after-additional-configuration"></a>其他設定之後的新驗證流程
 
@@ -141,7 +142,7 @@ HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\Z
 |用戶端|支援聲明|備註|
 | ----- | -----|-----|
 |Microsoft Teams|支援|<li>Microsoft 小組支援 AD FS (的 SAML-P、WS-ADDRESSING、WS-TRUST 和 OAuth) 以及新式驗證。</li><li> 通道、聊天室和檔案等核心 Microsoft 團隊都可以使用替代登入識別碼。</li><li>第1和協力廠商應用程式必須由客戶個別調查。 這是因為每個應用程式都有自己的可支援性驗證通訊協定。</li>|
-|商務用 OneDrive|支援-建議使用用戶端登錄機碼 |設定替代識別碼之後，您會看到內部部署 UPN 已預先填入驗證欄位中。 這需要變更為所使用的替代身分識別。 我們建議使用本文中所述的用戶端登錄機碼： Office 2013 和 Lync 2013 會定期提示您輸入 SharePoint Online、OneDrive 和 Lync Online 的認證。|
+|OneDrive for Business|支援-建議使用用戶端登錄機碼 |設定替代識別碼之後，您會看到內部部署 UPN 已預先填入驗證欄位中。 這需要變更為所使用的替代身分識別。 我們建議使用本文中所述的用戶端登錄機碼： Office 2013 和 Lync 2013 會定期提示您輸入 SharePoint Online、OneDrive 和 Lync Online 的認證。|
 |商務用 OneDrive 行動用戶端|支援||
 |Office 365 Pro Plus 啟用頁面|支援-建議使用用戶端登錄機碼|設定替代識別碼之後，您會看到內部部署 UPN 已預先填入驗證欄位中。 這需要變更為所使用的替代身分識別。 我們建議使用本文中所述的用戶端登錄機碼： Office 2013 和 Lync 2013 會定期提示您輸入 SharePoint Online、OneDrive 和 Lync Online 的認證。|
 
