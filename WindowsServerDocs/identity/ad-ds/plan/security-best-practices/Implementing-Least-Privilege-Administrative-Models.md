@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：實施 Least-Privilege 系統管理模型
 ms.assetid: 7a7ab95c-9cb3-4a7b-985a-3fc08334cf4f
 title: 實作最低權限管理模型
 ms.author: daveba
@@ -6,12 +7,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: 95f8158f5565c57904b7423456eb7189f9e58a2a
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 02ce80d936caff5ef77a78585a2e0f35e0b12ca5
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93069660"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97040716"
 ---
 # <a name="implementing-least-privilege-administrative-models"></a>實作最低權限管理模型
 
@@ -95,7 +96,7 @@ ms.locfileid: "93069660"
 - 拒絕以服務方式登入
 - 拒絕透過遠端桌面服務登入
 
-當您將系統管理員帳戶新增至這些使用者權限時，請指定您要以標籤帳戶的方式新增本機系統管理員帳戶或網域的系統管理員帳戶。 例如，若要將 NWTRADERS 網域的系統管理員帳戶新增到這些拒絕許可權，您可以將帳戶輸入為 **NWTRADERS\Administrator** ，或流覽至 NWTRADERS 網域的系統管理員帳戶。 為確保您限制本機系統管理員帳戶，請在群組原則物件編輯器的這些使用者權限設定中輸入 **系統管理員** 。
+當您將系統管理員帳戶新增至這些使用者權限時，請指定您要以標籤帳戶的方式新增本機系統管理員帳戶或網域的系統管理員帳戶。 例如，若要將 NWTRADERS 網域的系統管理員帳戶新增到這些拒絕許可權，您可以將帳戶輸入為 **NWTRADERS\Administrator**，或流覽至 NWTRADERS 網域的系統管理員帳戶。 為確保您限制本機系統管理員帳戶，請在群組原則物件編輯器的這些使用者權限設定中輸入 **系統管理員** 。
 
 > [!NOTE]
 > 即使已重新命名本機系統管理員帳戶，仍會套用原則。
@@ -142,7 +143,7 @@ ms.locfileid: "93069660"
 - 拒絕透過遠端桌面服務登入
 
 > [!NOTE]
-> 當您將本機系統管理員帳戶加入此設定時，您必須指定是否要設定本機系統管理員帳戶或網域系統管理員帳戶。 例如，若要將 NWTRADERS 網域的本機系統管理員帳戶新增到這些拒絕許可權，您必須將帳戶輸入為 **NWTRADERS\Administrator** ，或流覽至 NWTRADERS 網域的本機系統管理員帳戶。 如果您在群組原則物件編輯器的這些使用者權限設定中輸入 **系統管理員** ，您將會限制套用 GPO 之每部電腦上的本機系統管理員帳戶。
+> 當您將本機系統管理員帳戶加入此設定時，您必須指定是否要設定本機系統管理員帳戶或網域系統管理員帳戶。 例如，若要將 NWTRADERS 網域的本機系統管理員帳戶新增到這些拒絕許可權，您必須將帳戶輸入為 **NWTRADERS\Administrator**，或流覽至 NWTRADERS 網域的本機系統管理員帳戶。 如果您在群組原則物件編輯器的這些使用者權限設定中輸入 **系統管理員** ，您將會限制套用 GPO 之每部電腦上的本機系統管理員帳戶。
 >
 > 建議您以網域系統管理員帳戶的相同方式，限制成員伺服器和工作站上的本機系統管理員帳戶。 因此，您通常應該將樹系中每個網域的系統管理員帳戶，以及本機電腦的系統管理員帳戶新增至這些使用者權限設定。
 

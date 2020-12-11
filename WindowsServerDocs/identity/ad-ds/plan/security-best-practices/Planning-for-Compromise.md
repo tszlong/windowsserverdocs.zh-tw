@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：危害的規劃
 ms.assetid: 6f50476c-a1f1-48fb-999b-76c4c3816496
 title: 規劃危害因應措施
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: b4cdd6d9383a27b97d3368903fed4b41fe5b5952
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 744632c9ea02c5b0a274e32a63aa51a9221c6ab8
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93069570"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97040666"
 ---
 # <a name="planning-for-compromise"></a>規劃危害因應措施
 

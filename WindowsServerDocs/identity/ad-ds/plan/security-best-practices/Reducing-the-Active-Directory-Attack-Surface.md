@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：減少 Active Directory 攻擊面
 ms.assetid: 864ad4bc-8428-4a8b-8671-cb93b68b0c03
 title: 減少 Active Directory 的攻擊面
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 8802091de7746844176a97acf5e958d55b0b1f92
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 0486f62f2c53c427a196cd6e68a8b879c63df2ab
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93069510"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97040626"
 ---
 # <a name="reducing-the-active-directory-attack-surface"></a>減少 Active Directory 的攻擊面
 
@@ -35,14 +36,14 @@ Active Directory 有助於委派管理，並支援指派權利和許可權的最
 
 #### <a name="highest-privilege-groups-in-active-directory"></a>Active Directory 中的最高許可權群組
 
-##### <a name="enterprise-admins"></a>企業系統管理員
+##### <a name="enterprise-admins"></a>Enterprise Admins
 Enterprise Admins (EA) 是只存在於樹系根域中的群組，依預設，它是樹系中所有網域的 Administrators 群組成員。 樹系根域中的內建系統管理員帳戶是 EA 群組的唯一預設成員。 EAs 被授與許可權，可讓他們執行全樹系的變更， (也就是會影響) 樹系中所有網域的變更，例如新增或移除網域、建立樹系信任，或提高樹系功能等級。 在適當設計及實施的委派模型中，只有在第一次建立樹系或進行特定全樹系的變更（例如建立輸出樹系信任）時，才需要 EA 成員資格。 對 EA 群組授與的大部分權利和許可權，都可以委派給較低許可權的使用者和群組。
 
-##### <a name="domain-admins"></a>網域管理員
+##### <a name="domain-admins"></a>Domain Admins
 
 樹系中的每個網域都有自己的 Domain Admins (DA) 群組，也就是該網域的 Administrators 群組成員，以及加入網域之每部電腦上的本機 Administrators 群組成員。 網域的 DA 群組唯一預設成員是該網域的內建系統管理員帳戶。 DAs 在其網域內是「功能強大」，而 EAs 具有全樹系的許可權。 在適當設計及實施的委派模型中，只有在「中斷玻璃」案例中才需要 Domain Admins 成員資格 (例如，需要在網域中的每一部電腦上具有高階許可權的帳戶) 。 雖然原生 Active Directory 委派機制允許委派可在緊急情況下使用 DA 帳戶的程度，但是建立有效的委派模型可能相當耗時，而且許多組織會利用協力廠商工具來加速程式。
 
-##### <a name="administrators"></a>系統管理員
+##### <a name="administrators"></a>Administrators
 第三個群組是內建的網域本機系統管理員 (BA) 群組，其中的 DAs 和 EAs 會進行嵌套。 此群組被授與目錄和網域控制站上的許多直接許可權和許可權。 但是，網域的 Administrators 群組沒有成員伺服器或工作站上的許可權。 它是透過授與本機許可權的電腦本機系統管理員群組成員資格。
 
 > [!NOTE]
@@ -69,14 +70,14 @@ Enterprise Admins (EA) 是只存在於樹系根域中的群組，依預設，它
 
 |**Windows 2000 <SP4**|**Windows 2000 SP4-Windows Server 2003**|**Windows Server 2003 SP1 +**|**Windows Server 2008-Windows Server 2012**|
 |--|--|--|--|
-|系統管理員|Account Operators|Account Operators|Account Operators|
+|Administrators|Account Operators|Account Operators|Account Operators|
 ||系統管理員|系統管理員|系統管理員|
-||系統管理員|系統管理員|系統管理員|
-|網域管理員|Backup Operators|Backup Operators|Backup Operators|
+||Administrators|Administrators|Administrators|
+|Domain Admins|Backup Operators|Backup Operators|Backup Operators|
 ||Cert Publishers|||
-||網域管理員|網域管理員|網域管理員|
-|企業系統管理員|網域控制站|網域控制站|網域控制站|
-||企業系統管理員|企業系統管理員|企業系統管理員|
+||Domain Admins|Domain Admins|Domain Admins|
+|Enterprise Admins|網域控制站|網域控制站|網域控制站|
+||Enterprise Admins|Enterprise Admins|Enterprise Admins|
 ||Krbtgt|Krbtgt|Krbtgt|
 ||Print Operators|Print Operators|Print Operators|
 ||||Read-only Domain Controllers|

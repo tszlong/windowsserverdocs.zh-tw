@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：維護更安全的環境
 ms.assetid: 8f994e2e-6c07-43f0-aef4-75f8b2c9a144
 title: 維護更安全的環境
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 14cbe8a6610a370e20e338f3a09ab24f21334169
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 23c49a6e1ccadd2ccdfa17c93ef4ce346c019083
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93069580"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97042436"
 ---
 # <a name="maintaining-a-more-secure-environment"></a>維護更安全的環境
 

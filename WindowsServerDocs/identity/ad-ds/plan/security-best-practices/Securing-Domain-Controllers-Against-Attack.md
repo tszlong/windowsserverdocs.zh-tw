@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：保護網域控制站免于遭受攻擊
 ms.assetid: ba28bd05-16e6-465f-982b-df49633cfde4
 title: 保護網域控制站不受攻擊
 ms.author: daveba
@@ -6,12 +7,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 06/18/2017
 ms.topic: article
-ms.openlocfilehash: 31cb962d03fab418f3d98320662a15ef4f3f3764
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 54540bd1c42f82c267e0986ba14ed09b2908f7e0
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93069480"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97040616"
 ---
 # <a name="securing-domain-controllers-against-attack"></a>保護網域控制站不受攻擊
 

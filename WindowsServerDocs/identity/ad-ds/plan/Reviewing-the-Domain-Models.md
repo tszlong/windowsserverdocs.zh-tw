@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：檢查領域模型
 ms.assetid: e727a33d-133b-43c9-b6a4-7c00f9cb6000
 title: 檢查領域模型
 ms.author: daveba
@@ -6,12 +7,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 08/08/2018
 ms.topic: article
-ms.openlocfilehash: 9f5cc2b73a06ed8e08820c4eb342484db84d55d0
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: c7a934c4d5e9ca8d60c555bd665a76984bc2f9e7
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070240"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97042556"
 ---
 # <a name="reviewing-the-domain-models"></a>檢查領域模型
 

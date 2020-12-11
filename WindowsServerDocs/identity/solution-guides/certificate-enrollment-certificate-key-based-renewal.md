@@ -1,16 +1,17 @@
 ---
 title: 在自訂埠上為憑證金鑰型更新設定憑證註冊 Web 服務
+description: 深入瞭解：在自訂埠上設定憑證金鑰型更新的憑證註冊 Web 服務
 author: Deland-Han
 ms.author: delhan
 manager: dcscontentpm
 ms.date: 11/12/2019
 ms.topic: article
-ms.openlocfilehash: 9f9930cc59badf19036c598f11f2a5b423711c94
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 55ac25e37f7c7621426db031ba1ad148d3a02a98
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96866067"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97042396"
 ---
 # <a name="configuring-certificate-enrollment-web-service-for-certificate-key-based-renewal-on-a-custom-port"></a>在自訂埠上為憑證金鑰型更新設定憑證註冊 Web 服務
 
