@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：要入侵的途徑
 ms.assetid: d7a4d2e1-217d-4ffc-93f0-817149bd9e7f
 title: 危及系統安全的途徑
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 58578d96f3a66177f858f78861cb93be51df3a1e
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: f85fdb8c723972ce1d441d45510b738d0e166cff
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93069680"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97045506"
 ---
 # <a name="avenues-to-compromise"></a>危及系統安全的途徑
 

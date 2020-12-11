@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：判斷如何復原樹系
 title: AD 樹系復原-決定如何復原樹系
 ms.author: daveba
 author: iainfoulds
@@ -6,12 +7,12 @@ manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
-ms.openlocfilehash: 2cf48d391e675507d3fc227efc4ab691b10234bb
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 15d05a5c37b81fe059fcb2b0be111fd694bd3f57
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93071340"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97045626"
 ---
 # <a name="determine-how-to-recover-the-forest"></a>判斷如何復原樹系
 
@@ -90,12 +91,12 @@ ms.locfileid: "93071340"
 |DC 名稱|作業系統|FSMO|GC|RODC|備份|DNS|Server Core|VM|VM-GenID|
 |-------------|----------------------|----------|--------|----------|------------|---------|-----------------|--------|---------------|
 |DC_1|Windows Server 2012|架構主機，網網域命名主機|是|否|是|否|否|是|是|
-|DC_2|Windows Server 2012|None|是|否|是|是|否|是|是|
+|DC_2|Windows Server 2012|無|是|否|是|是|否|是|是|
 |DC_3|Windows Server 2012|基礎結構主機|否|否|否|是|是|是|是|
 |DC_4|Windows Server 2012|PDC 模擬器，RID 主機|是|否|否|否|否|是|否|
-|DC_5|Windows Server 2012|None|否|否|是|是|否|是|是|
-|RODC_1|Windows Server 2008 R2|None|是|是|是|是|是|是|否|
-|RODC_2|Windows Server 2008|None|是|是|否|是|是|是|否|
+|DC_5|Windows Server 2012|無|否|否|是|是|否|是|是|
+|RODC_1|Windows Server 2008 R2|無|是|是|是|是|是|是|否|
+|RODC_2|Windows Server 2008|無|是|是|否|是|是|是|否|
 
 針對樹系中的每個網域，識別具有該網域 Active Directory 資料庫之受信任備份的單一可寫入 DC。 當您選擇要還原 DC 的備份時，請特別小心。 如果發生失敗的日期和原因大約是已知的，一般建議是使用在該日期之前的幾天進行的備份。
 
