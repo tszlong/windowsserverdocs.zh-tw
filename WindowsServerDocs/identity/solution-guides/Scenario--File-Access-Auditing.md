@@ -1,17 +1,18 @@
 ---
+description: 深入瞭解：案例：檔案存取權審核
 ms.assetid: 7be1f2cb-02d5-4209-ba79-edf496a88f47
-title: 案例檔案存取審核
+title: 案例檔案存取權審核
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 7cd1619204a6406d2570e29f752538d781893ee3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ea5f416bd3652a1766cbf88bbee9e8258e82708b
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87940261"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97044566"
 ---
 # <a name="scenario-file-access-auditing"></a>Scenario: File Access Auditing
 
@@ -33,7 +34,7 @@ ms.locfileid: "87940261"
 
 安全性稽核的一個最大考量就是收集、儲存及分析稽核事件的成本。 如果稽核原則的範圍過大，收集的稽核事件數量就會上升，進而導致成本增加。 如果稽核原則的範圍過小，很可能會遺漏重要事件。
 
-有了 Windows Server 2012，您可以使用宣告和資源內容來編寫稽核原則。 這會產生更豐富、更具目標性及更容易管理的稽核原則。 它可以解決到目前為止仍無法或難以執行稽核原則的案例。 以下為系統管理員可以編寫的稽核原則範例：
+使用 Windows Server 2012，您可以使用宣告和資源屬性來編寫稽核原則。 這會產生更豐富、更具目標性及更容易管理的稽核原則。 它可以解決到目前為止仍無法或難以執行稽核原則的案例。 以下為系統管理員可以編寫的稽核原則範例：
 
 -   稽核每位未具備高度安全性許可但嘗試存取 HBI 文件的人員。 例如，Audit | Everyone | All-Access | Resource.BusinessImpact=HBI AND User.SecurityClearance!=High。
 
@@ -41,15 +42,15 @@ ms.locfileid: "87940261"
 
 這些原則可以協助控制稽核事件的數量，並限制只稽核最相關的資料或使用者。
 
-當系統管理員建立並套用稽核原則後，下一個考量就是從收集的稽核事件中蒐集有意義的資訊。 以運算式為基礎的稽核事件可以協助減少稽核數量。 不過，使用者需要一種方式來查詢這些事件，以取得有意義的資訊，並詢問「誰正在存取我的 HBI 資料？」等問題。 或「是否有未經授權的嘗試存取敏感性資料？」
+當系統管理員建立並套用稽核原則後，下一個考量就是從收集的稽核事件中蒐集有意義的資訊。 以運算式為基礎的稽核事件可以協助減少稽核數量。 不過，使用者需要一種方式來查詢這些事件以取得有意義的資訊，並詢問「誰正在存取我的 HBI 資料？」等問題。 或「是否有未經授權嘗試存取機密資料？」
 
- Windows Server 2012 利用使用者、電腦及資源宣告，增強現有資料存取事件的許可權。 這些事件會以每一伺服器的基礎產生。 為提供整個組織的完整事件檢視，Microsoft 與合作夥伴共同提供了事件集合與分析工具，像是 System Center Operation Manager 的稽核收集服務。
+ Windows Server 2012 使用使用者、電腦和資源宣告，增強現有資料存取事件的許可權。 這些事件會以每一伺服器的基礎產生。 為提供整個組織的完整事件檢視，Microsoft 與合作夥伴共同提供了事件集合與分析工具，像是 System Center Operation Manager 的稽核收集服務。
 
 圖 4 顯示集中稽核原則的概觀。
 
 ![解決方案指南](media/Scenario--File-Access-Auditing/DynamicAccessControl_RevGuide_4.JPG)
 
-**圖 4**集中式審核體驗
+**圖 4** 集中式審核體驗
 
 設定和耗用安全性稽核通常包含下列一般步驟：
 
@@ -66,15 +67,15 @@ ms.locfileid: "87940261"
 
 -   [規劃檔案存取稽核](Plan-for-File-Access-Auditing.md)
 
--   [使用集中稽核原則部署安全性審核 &#40;示範步驟&#41;](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md)
+-   [使用集中式稽核原則部署安全性審核 &#40;示範步驟&#41;](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md)
 
 ## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>這個案例包含的角色與功能
 下表列出這個案例中的角色與功能，並說明它們如何支援這個案例。
 
 |角色/功能|如何支援本案例|
 |-----------------|---------------------------------|
-|Active Directory 網域服務角色|Windows Server 2012 中的 AD DS 引進了以宣告為基礎的授權平臺，可讓您建立使用者宣告和裝置宣告、複合身分識別、 (使用者加上裝置宣告) 、新的集中存取原則 (CAP) 模型，以及在授權決策中使用檔案分類資訊。|
-|檔案和存放服務角色|Windows Server 2012 中的檔案伺服器提供使用者介面，讓系統管理員可以在其中查看使用者對於檔案或資料夾的有效許可權，並針對存取問題進行疑難排解，並視需要授與存取權。|
+|Active Directory 網域服務角色|Windows Server 2012 中的 AD DS 引進以宣告為基礎的授權平臺，可讓您建立使用者宣告和裝置宣告、複合身分識別、 (使用者加上裝置宣告) 、新的集中存取原則 (CAP) 模型，以及在授權決策中使用檔案分類資訊。|
+|檔案和存放服務角色|Windows Server 2012 中的檔案伺服器提供使用者介面，讓系統管理員可以為檔案或資料夾查看使用者的有效許可權，並針對存取問題進行疑難排解，並視需要授與存取權。|
 
 
 

@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：在信任的一端重設信任密碼
 title: AD 樹系復原-重設信任密碼
 ms.author: daveba
 author: iainfoulds
@@ -6,12 +7,12 @@ manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 398918dc-c8ab-41a6-a377-95681ec0b543
-ms.openlocfilehash: a4e1c02710b215ff5a527fa8ad39c6f78cdedceb
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 6ed37c1e85d097602c52c3448a4c1e6e6128cd1e
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070820"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97041546"
 ---
 # <a name="resetting-a-trust-password-on-one-side-of-the-trust"></a>在信任的一端重設信任密碼
 

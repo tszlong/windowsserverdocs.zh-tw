@@ -1,4 +1,5 @@
 ---
+description: '深入瞭解：將主機守護者服務部署 (HGS) '
 title: 部署主機守護者服務
 ms.topic: article
 ms.assetid: 0bd96e2a-1612-4bbf-8c23-7602020f4eec
@@ -6,12 +7,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 01/14/2020
-ms.openlocfilehash: 36bdb55ddd9d356e07b007759b893cda8e32d893
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: bd3b706bf27e77277922e9fd26861adda916e914
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971275"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97043872"
 ---
 # <a name="deploy-the-host-guardian-service-hgs"></a>部署主機守護者服務 (HGS) /(英文/)
 
@@ -23,7 +24,7 @@ ms.locfileid: "87971275"
 - [準備主機守護者服務部署](guarded-fabric-prepare-for-hgs.md)
 - [安裝 HGS](guarded-fabric-choose-where-to-install-hgs.md)
 - [初始化 HGS](guarded-fabric-initialize-hgs.md)
-- [設定 Https (選擇性) ](guarded-fabric-configure-hgs-https.md)
+- [設定 Https (選用) ](guarded-fabric-configure-hgs-https.md)
 - [新增節點](guarded-fabric-configure-additional-hgs-nodes.md)
 
 ## <a name="additional-references"></a>其他參考資料

@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：執行初始復原
 title: AD 樹系復原-執行初始復原
 ms.author: daveba
 author: iainfoulds
@@ -6,12 +7,12 @@ manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
-ms.openlocfilehash: 8b0498b30966c22ec8dca267988e109d976f6b69
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: d0a260b248b18286861e92cc6f3a2f1c914cc36c
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93067740"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97040016"
 ---
 # <a name="perform-initial-recovery"></a>執行初始復原
 
@@ -50,7 +51,7 @@ ms.locfileid: "93067740"
 
       **HKLM\System\CurrentControlSet\Services\NTDS\Parameters\Repl 執行初始同步處理**
 
-      使用資料類型 **REG_DWORD** 建立專案，並以 **0** 為值建立專案。 完整復原樹系之後，您可以將此專案的值重設為 **1** ，這需要一個網域控制站來重新開機並保存操作主機角色，才能在將本身宣告為網域控制站，並開始為用戶端提供服務時，成功 AD DS 輸入和輸出複寫與其已知的複本夥伴。 如需有關初始同步處理需求的詳細資訊，請參閱知識庫文章 [305476](https://support.microsoft.com/kb/305476)。
+      使用資料類型 **REG_DWORD** 建立專案，並以 **0** 為值建立專案。 完整復原樹系之後，您可以將此專案的值重設為 **1**，這需要一個網域控制站來重新開機並保存操作主機角色，才能在將本身宣告為網域控制站，並開始為用戶端提供服務時，成功 AD DS 輸入和輸出複寫與其已知的複本夥伴。 如需有關初始同步處理需求的詳細資訊，請參閱知識庫文章 [305476](https://support.microsoft.com/kb/305476)。
 
       請在您還原和驗證資料之後，以及將這部電腦加入生產網路之前，繼續進行下一個步驟。
 

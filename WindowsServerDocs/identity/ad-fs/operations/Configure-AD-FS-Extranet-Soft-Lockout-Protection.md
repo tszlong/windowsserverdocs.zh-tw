@@ -1,17 +1,18 @@
 ---
 ms.assetid: 777aab65-c9c7-4dc9-a807-9ab73fac87b8
 title: 設定 AD FS 外部網路軟鎖定保護
+description: 深入瞭解：設定 AD FS 外部網路鎖定保護
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 02/01/2019
 ms.topic: article
-ms.openlocfilehash: 0511063581fd633b56803999b761156c8217c967
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: d64e30e3d59cf47ad3a8eb448ad5f856d28f1bea
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96864497"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97040136"
 ---
 # <a name="configure-ad-fs-extranet-lockout-protection"></a>設定 AD FS 外部網路鎖定保護
 
@@ -94,5 +95,3 @@ AD FS 中的外部網路鎖定功能獨立于 AD 鎖定原則。 不過，您必
 - [設定-Set-adfsproperties](/powershell/module/adfs/set-adfsproperties)
 
 [AD FS 操作](../ad-fs-operations.md)
-
-

@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：案例：集中存取原則
 ms.assetid: 7f285c9f-c3e8-4aae-9ff4-a9123815114e
 title: 案例集中存取原則
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 61ef5be004b4c138ed9654cf326703bbbd7d7053
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 74fab5d6d790c4cf8ff4548f723a58dee50a941e
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952768"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97044606"
 ---
 # <a name="scenario-central-access-policy"></a>案例：集中存取原則
 
@@ -53,11 +54,11 @@ ms.locfileid: "87952768"
 
 ![解決方案指南](media/Scenario--Central-Access-Policy/DynamicAccessControl_RevGuide.JPG)
 
-**圖 1**集中存取和稽核原則的概念
+**圖 1** 集中存取和稽核原則的概念
 
 ![解決方案指南](media/Scenario--Central-Access-Policy/DynamicAccessControl_RevGuide_2.JPG)
 
-**圖 2**集中存取原則工作流程
+**圖 2** 集中存取原則工作流程
 
 集中授權原則結合了下列元件：
 
@@ -71,7 +72,7 @@ ms.locfileid: "87952768"
 
 ![解決方案指南](media/Scenario--Central-Access-Policy/DynamicAccessControl_RevGuide3.JPG)
 
-**圖 3**結合原則
+**圖 3** 合併原則
 
 ## <a name="in-this-scenario"></a>在這個案例中
 下列準則供您用在集中存取原則：
@@ -87,7 +88,7 @@ ms.locfileid: "87952768"
 
 |角色/功能|如何支援本案例|
 |-----------------|---------------------------------|
-|Active Directory 網域服務角色|Windows Server 2012 中的 AD DS 引進了以宣告為基礎的授權平臺，可讓您建立使用者宣告和裝置宣告、複合身分識別、 (使用者加上裝置宣告) 、新的集中存取原則 (端點) 模型，以及在授權決策中使用檔案分類資訊。|
+|Active Directory 網域服務角色|Windows Server 2012 中的 AD DS 引進以宣告為基礎的授權平臺，可讓您建立使用者宣告和裝置宣告、複合身分識別、 (使用者加上裝置宣告) 、新的集中存取原則 (CAP) 模型，以及在授權決策中使用檔案分類資訊。|
 |檔案和存放服務角色|檔案和存放服務提供的技術可幫助您設定和管理一或多個檔案伺服器，這些伺服器會在網路上提供儲存檔案以及讓使用者共用檔案的中心位置。 如果您的網路使用者需要存取相同的檔案和應用程式，或集中式的備份與檔案管理對您的組織來說很重要，則應透過新增檔案和存放服務角色與適當的角色服務，將一或多個電腦設成檔案伺服器。|
 |Windows 用戶端電腦|使用者可以透過用戶端電腦存取網路上的檔案和資料夾。|
 

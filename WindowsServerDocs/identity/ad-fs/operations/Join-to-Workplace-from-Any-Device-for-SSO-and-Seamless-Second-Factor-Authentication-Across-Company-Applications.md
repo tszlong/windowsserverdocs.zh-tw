@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：從任何裝置加入工作地點，以在公司應用程式之間進行 SSO 和無縫式第二要素驗證
 ms.assetid: e22d84a5-113d-4bec-b484-036ed29f0c28
 title: 從任何裝置加入工作地點網路，並在公司的各個應用程式提供 SSO 和無縫式的次要因素驗證
 author: billmath
@@ -6,18 +7,18 @@ ms.author: billmath
 manager: femila
 ms.date: 12/05/2017
 ms.topic: article
-ms.openlocfilehash: 584088900bea8acb83da076311d29ed5f45ea71e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3f681ba75ea55245948b1ed9acfd84830b3f3909
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954234"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97039796"
 ---
 # <a name="join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications"></a>從任何裝置加入工作地點網路，並在公司的各個應用程式提供 SSO 和無縫式的次要因素驗證
 
 
 
-消費性裝置數目與資訊存取需求的快速增加正在變更人們對其科技的看待方式。 今日對於資訊技術的持續使用與簡單的資訊存取方式，使得工作與居家生活的界線越來越模糊。 這些轉移界限的考慮，是為了符合使用者的特質、活動和排程而選擇個人技術並加以自訂，應延伸到工作場所。 為了配合讓個人消費性裝置連線到企業網路這種持續成長的需求，我們引進了下列價值主張：
+消費性裝置數目與資訊存取需求的快速增加正在變更人們對其科技的看待方式。 今日對於資訊技術的持續使用與簡單的資訊存取方式，使得工作與居家生活的界線越來越模糊。 這些轉變的界限與個人技術的選擇和自訂，都必須符合使用者的特質、活動和排程，才能延伸至工作場所。 為了配合讓個人消費性裝置連線到企業網路這種持續成長的需求，我們引進了下列價值主張：
 
 -   系統管理員可以根據應用程式、使用者、裝置與位置，來控制誰可以存取公司資源。
 
@@ -31,7 +32,7 @@ ms.locfileid: "87954234"
 ### <a name="azure-active-directory-device-registration-service"></a><a name="BKMK_DRS"></a>Azure Active Directory 裝置註冊服務
 可使用 Azure Active Directory 裝置註冊服務來執行 [加入工作地點網路]。 使用 [加入工作地點網路] 加入裝置時，服務會在 Azure Active Directory 中佈建裝置物件，然後在本機裝置上設定可用來代表裝置身分識別的金鑰。 接著可針對雲端和內部部署中裝載的應用程式，搭配使用此裝置身分識別與存取控制規則。
 
-如需詳細資訊，請參閱[Azure Active Directory 中的裝置管理簡介](/azure/active-directory/device-management-introduction)。
+如需詳細資訊，請參閱 [Azure Active Directory 中的裝置管理簡介](/azure/active-directory/device-management-introduction)。
 
 ### <a name="workplace-join-as-a-seamless-second-factor-authentication"></a>透過「加入工作地點網路」提供無縫式次要因素驗證
 公司可以管理與資訊存取相關的風險並進行合規性控管，同時將對公司資源的存取權授消費性裝置。 裝置上的「加入工作地點網路」為系統管理員提供下列功能：

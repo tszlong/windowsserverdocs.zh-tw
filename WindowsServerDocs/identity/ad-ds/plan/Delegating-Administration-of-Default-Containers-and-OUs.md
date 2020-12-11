@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：委派預設容器和 Ou 的管理
 ms.assetid: ac6604b0-7459-4ff3-af1c-4936897f5d14
 title: 委派預設容器與 OU 的管理
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 8f52ca20cce86c869f66ea9d0e2e795956a0c75f
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 4056c01ec9d940a6c7c405b57b270a4f3a749f02
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93069410"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97039287"
 ---
 # <a name="delegating-administration-of-default-containers-and-ous"></a>委派預設容器與 OU 的管理
 
@@ -49,7 +50,7 @@ ms.locfileid: "93069410"
 
 |知名的使用者和群組|內建帳戶|
 |--------------------------------|----------------------|
-|Cert Publishers<p>網域控制站<p>Group Policy Creator Owners<p>KRBTGT<p>網域來賓<p>系統管理員<p>網域管理員<p>Schema Admins (僅限樹系根域) <p>Enterprise Admins (僅限樹系根域) <p>網域使用者|系統管理員<p>來賓<p>Guests<p>Account Operators<p>系統管理員<p>Backup Operators<p>Incoming Forest Trust Builders<p>Print Operators<p>Pre-Windows 2000 Compatible Access<p>Server Operators<p>使用者|
+|Cert Publishers<p>網域控制站<p>Group Policy Creator Owners<p>KRBTGT<p>網域來賓<p>系統管理員<p>Domain Admins<p>Schema Admins (僅限樹系根域) <p>Enterprise Admins (僅限樹系根域) <p>網域使用者|系統管理員<p>來賓<p>Guests<p>Account Operators<p>Administrators<p>Backup Operators<p>Incoming Forest Trust Builders<p>Print Operators<p>Pre-Windows 2000 Compatible Access<p>Server Operators<p>使用者|
 
 ## <a name="domain-controller-ou"></a>網域控制站 OU
 將網域控制站新增至網域時，會自動將其電腦物件新增至網域控制站 OU。 此 OU 已套用一組預設原則。 為了確保這些原則會一致地套用至所有網域控制站，建議您不要將網域控制站的電腦物件移出此 OU。 若無法套用預設原則，可能會導致網域控制站無法正常運作。

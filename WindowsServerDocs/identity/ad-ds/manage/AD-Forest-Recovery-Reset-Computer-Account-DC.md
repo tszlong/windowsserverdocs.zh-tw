@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解： AD 樹系復原-重設 DC 上的電腦帳戶
 title: AD 樹系復原-重設 DC 上的電腦帳戶
 ms.author: daveba
 author: iainfoulds
@@ -6,12 +7,12 @@ manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 4e1a6070-df0a-4dfe-8773-899a010bfabd
-ms.openlocfilehash: 81c3197729d9fc97f243ed1f7ca3c3387e46a1bd
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 21d36989ff6174e5b59eed0b6b63e8aea0a9d921
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070839"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97041566"
 ---
 # <a name="ad-forest-recovery---resetting-the-computer-account-on-the-dc"></a>AD 樹系復原-重設 DC 上的電腦帳戶
 

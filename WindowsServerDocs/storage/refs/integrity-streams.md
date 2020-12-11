@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解： ReFS 完整性資料流程
 title: ReFS 完整性資料流
 author: gawatu
 ms.author: jgerend
@@ -6,12 +7,12 @@ manager: dmoss
 ms.date: 10/16/2018
 ms.topic: article
 ms.assetid: 1f1215cd-404f-42f2-b55f-3888294d8a1f
-ms.openlocfilehash: 15c4b7942be949af33e70d2a5f299af426040e7b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: aed3de02a21f59102bcaa4d0efce2ef6e2816856
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87950502"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97041256"
 ---
 # <a name="refs-integrity-streams"></a>ReFS 完整性資料流
 >適用于： Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server (半年通道) 、Windows 10
@@ -24,7 +25,7 @@ ms.locfileid: "87950502"
 
 一旦啟用完整性資料流，ReFS 將為該檔案中繼資料夾中的特定檔案建立和維護總和檢查碼。 此總和檢查碼允許 ReFS 在存取之前先驗證該資料的完整性。 在傳回任何啟用完整性資料流的資料之前，ReFS 會先計算它的總和檢查碼：
 
-![檔案資料的計算總和檢查碼](media/compute-checksum.gif)
+![計算檔案資料的總和檢查碼](media/compute-checksum.gif)
 
 然後，此總和檢查碼將會與檔案中繼資料的總和檢查碼進行比對。 如果總和檢查碼相符，則會將資料標記為有效並傳回至使用者。 如果總和檢查碼不相符，則資料已損毀。 該磁碟區的復原功能將決定 ReFS 如何回應損毀：
 

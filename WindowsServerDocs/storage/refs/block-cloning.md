@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：在 ReFS 上複製區塊
 ms.assetid: fd427da3-3869-428f-bf2a-56c4b7d99b40
 title: ReFS 上的區塊複製
 author: gawatu
@@ -6,12 +7,12 @@ ms.author: gawatu
 manager: gawatu
 ms.date: 10/17/2018
 ms.topic: article
-ms.openlocfilehash: 01177b24646f7f1213378f08c930cdaae8f591de
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c73f6bde78011e2244ce857b52ed3cbe97abe8ff
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87939433"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97041267"
 ---
 # <a name="block-cloning-on-refs"></a>ReFS 上的區塊複製
 

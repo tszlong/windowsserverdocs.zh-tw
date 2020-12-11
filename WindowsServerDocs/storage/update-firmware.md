@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：更新磁片磁碟機固件
 ms.assetid: e5945bae-4a33-487c-a019-92a69db8cf6c
 title: 更新磁碟機韌體
 ms.author: toklima
@@ -6,12 +7,12 @@ manager: dmoss
 ms.topic: article
 author: toklima
 ms.date: 10/04/2016
-ms.openlocfilehash: 15e0d6dedc6bb81c0b511479ee342dbd463654e2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2393afa82b61d432a4191753771b27db22e1691c
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87946211"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97039166"
 ---
 # <a name="updating-drive-firmware"></a>更新磁碟機韌體
 >適用于： Windows Server 2019、Windows Server 2016、Windows 10
@@ -28,9 +29,9 @@ ms.locfileid: "87946211"
 如需硬體是否支援 Windows 更新磁碟機韌體的相關資訊，請連絡解決方案廠商。
 以下是各種需求的連結︰
 
--   SATA：[Device.Storage.Hd.Sata](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)#devicestoragehdsata) - 在 **[如果已實作\] 韌體下載和啟用**小節
+-   SATA：[Device.Storage.Hd.Sata](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)#devicestoragehdsata) - 在 **[如果已實作\] 韌體下載和啟用** 小節
 
--   SAS：[Device.Storage.Hd.Sas](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)#devicestoragehdsas) - 在 **[如果已實作\] 韌體下載和啟用**小節
+-   SAS：[Device.Storage.Hd.Sas](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)#devicestoragehdsas) - 在 **[如果已實作\] 韌體下載和啟用** 小節
 
 -   NVMe：[Device.Storage.ControllerDrive.NVMe](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)#devicestoragecontrollerdrivenvme) - 在 **5.7** 和 **5.8** 小節。
 
@@ -41,7 +42,7 @@ ms.locfileid: "87946211"
 -   Get-StorageFirmwareInformation
 -   Update-StorageFirmware
 
-第一個 Cmdlet 提供裝置功能、韌體映像和修訂的詳細資訊。 在此情況下，機器只會包含有 1 個韌體插槽的單一 SATA SSD。 以下為範例：
+第一個 Cmdlet 提供裝置功能、韌體映像和修訂的詳細資訊。 在此情況下，機器只會包含有 1 個韌體插槽的單一 SATA SSD。 以下是範例：
 
    ```powershell
    Get-PhysicalDisk | Get-StorageFirmwareInformation
@@ -162,7 +163,7 @@ $NewDoc = Get-Content <Path> | Out-String
 $SpacesDirect | Set-StorageHealthSetting -Name "System.Storage.SupportedComponents.Document" -Value $NewDoc
 ```
 
-如果您想要查看作用中的健全狀況服務，並深入瞭解其推出機制，請看一下這段影片：https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct
+如果您想要查看健全狀況服務的實際運作方式，並深入瞭解其推出機制，請看看這段影片： https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct
 
 ## <a name="frequently-asked-questions"></a>常見問題集
 

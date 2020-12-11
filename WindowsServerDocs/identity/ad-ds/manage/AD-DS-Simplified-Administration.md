@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解： AD DS 簡化的管理
 ms.assetid: f74eec9a-2485-4ee0-a0d8-cce01250a294
 title: AD DS 簡化的系統管理
 ms.author: daveba
@@ -6,12 +7,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: 6390fcea3cf0b08cf36b9c8e73514b3af284122e
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 680664d1ef24e714b86661d5fb334b82250137f5
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93068130"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97043106"
 ---
 # <a name="ad-ds-simplified-administration"></a>AD DS 簡化的系統管理
 
@@ -111,7 +112,7 @@ Windows Server 2012 新增額外的 Active Directory 複寫 Cmdlet 到 Active Di
 
 Windows 2000 Active Directory 引進 RID 主機，其可將相關的識別元集區發行到網域控制站，以建立安全性信任者 (如使用者、群組及電腦) 的安全性識別碼 (SID)。  根據預設，這個全域的 RID 空間大小限制為 2<sup>30</sup> (或網域中共建立 1,073,741,823 個 SID) 。 SID 無法傳回集區或重新發行。 經過一段時間，大型網域的 RID 可能會開始不足，或意外可能導致不必要的 RID 消耗，最後終究匱乏。
 
-Windows Server 2012 可解決自 1999 年首次建立 Active Directory 網域以來，隨著 AD DS 成熟而有許多客戶和 Microsoft 客戶支援未發現的 RID 發行與管理問題。 它們包括：
+Windows Server 2012 可解決自 1999 年首次建立 Active Directory 網域以來，隨著 AD DS 成熟而有許多客戶和 Microsoft 客戶支援未發現的 RID 發行與管理問題。 其中包含：
 
 - 定期的 RID 消耗警告會寫入事件記錄檔
 - 當系統管理員使 RID 集區失效時會產生事件記錄檔
@@ -174,7 +175,7 @@ Adprep 不再需要於架構主機上執行。 它可以從執行 Windows Server
 
 ADDSDeployment Windows PowerShell Managed 程式碼內建的先決條件檢查系統會依據作業而有不同的運作模式。 下表描述當其使用時的每個測試，並說明其驗證方式與內容。 如果有驗證失敗但錯誤不足以疑難排解問題的情況，這些表格可能會很有用。
 
-這些測試記錄在工作類別 **Core** 底下的 **DirectoryServices-Deployment** 作業事件記錄檔通道中，事件識別碼一律為 **103** 。
+這些測試記錄在工作類別 **Core** 底下的 **DirectoryServices-Deployment** 作業事件記錄檔通道中，事件識別碼一律為 **103**。
 
 ### <a name="prerequisite-windows-powershell"></a>先決條件 Windows PowerShell
 

@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：建立樹系設計
 ms.assetid: e92bdf05-d888-4935-af6a-8ded6ad13fab
 title: 建立樹系設計
 ms.author: daveba
@@ -6,12 +7,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: dca37139590876482ebb48dd55d19db5ff924a2e
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: d8de9884649797f2059d1ac3a0510a5c7bd03503
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93068860"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97043566"
 ---
 # <a name="creating-a-forest-design"></a>建立樹系設計
 

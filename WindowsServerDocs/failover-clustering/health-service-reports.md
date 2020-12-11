@@ -1,16 +1,17 @@
 ---
+description: 深入瞭解：健全狀況服務報表
 title: 健全狀況服務報表
 manager: eldenc
 ms.author: cosdar
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: 1e6b11bc73ef34e5247ca43140d3e2122e77ab61
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: e453744524381240f8b870326275fae56eca1635
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990780"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97039496"
 ---
 # <a name="health-service-reports"></a>健全狀況服務報表
 
@@ -18,17 +19,17 @@ ms.locfileid: "87990780"
 
 ## <a name="what-are-reports"></a>什麼是報表
 
-健全狀況服務可減少從儲存空間直接存取叢集取得即時效能和容量資訊所需的工作。 其中一個新的 Cmdlet 會提供基本計量的策劃清單，這些度量會在節點之間以動態方式收集和匯總，並具有內建邏輯來偵測叢集成員資格。 所有的值都是即時且為該時間點的值。
+健全狀況服務可減少從儲存空間直接存取叢集取得即時效能和容量資訊所需的工作。 其中一個新的 Cmdlet 提供基本計量的策劃清單，這些計量可透過內建的邏輯來偵測叢集成員資格，以有效率地跨節點收集並動態地匯總。 所有的值都是即時且為該時間點的值。
 
 ## <a name="usage-in-powershell"></a>PowerShell 中的使用方式
 
-使用此 Cmdlet 取得整個儲存空間直接存取叢集的計量：
+使用這個 Cmdlet 取得整個儲存空間直接存取叢集的度量：
 
 ```PowerShell
 Get-StorageSubSystem Cluster* | Get-StorageHealthReport
 ```
 
-選擇性的**Count**參數表示要傳回多少組值（以一秒為間隔）。
+選擇性的 **Count** 參數表示要傳回的值集合數目（以一秒為間隔）。
 
 ```PowerShell
 Get-StorageSubSystem Cluster* | Get-StorageHealthReport -Count <Count>
@@ -42,11 +43,11 @@ Get-Volume -FileSystemLabel <Label> | Get-StorageHealthReport -Count <Count>
 Get-StorageNode -Name <Name> | Get-StorageHealthReport -Count <Count>
 ```
 
-## <a name="usage-in-net-and-c"></a>.NET 和 C 中的使用方式#
+## <a name="usage-in-net-and-c"></a>使用 .NET 和 C#
 
 ### <a name="connect"></a>連線
 
-為了查詢健全狀況服務，您必須建立叢集的**CimSession** 。 若要這麼做，您將需要一些只在完整 .NET 中提供的專案，這表示您無法直接從 web 或行動裝置應用程式進行這項操作。 這些程式碼範例會使用 C \# ，這是最直接的資料存取層選擇。
+若要查詢健全狀況服務，您必須建立與叢集的 **CimSession** 。 若要這樣做，您將需要一些只能在完整 .NET 中使用的專案，這表示您無法直接從 web 或行動應用程式進行這項作業。 這些程式碼範例會使用 C \# ，這是最直接的資料存取層選項。
 
 ```
 using System.Security;
@@ -69,15 +70,15 @@ public CimSession Connect(string Domain = "...", string Computer = "...", string
 }
 ```
 
-提供的使用者名稱應該是目的電腦的本機系統管理員。
+提供的使用者名稱應為目的電腦的本機系統管理員。
 
-建議您以即時的方式直接從使用者輸入來**SecureString**密碼，因此其密碼絕對不會以純文字的方式儲存在記憶體中。 這有助於減輕各種安全性考慮。 但是在實務上，如上面所述，通常是針對原型設計的用途。
+建議您以即時方式直接從使用者輸入建立密碼 **SecureString** ，使其密碼永遠不會以純文字儲存在記憶體中。 這有助於減輕各種安全性問題。 但在實務上，以上述方式進行建立通常是為了原型設計之用。
 
 ### <a name="discover-objects"></a>探索物件
 
-建立**CimSession**之後，您就可以查詢叢集上的 WINDOWS MANAGEMENT INSTRUMENTATION (WMI) 。
+建立 **CimSession** 之後，您就可以查詢叢集上的 WINDOWS MANAGEMENT INSTRUMENTATION (WMI) 。
 
-在您取得錯誤或計量之前，您必須取得數個相關物件的實例。 首先， **MSFT \_ StorageSubSystem**代表叢集儲存空間直接存取。 使用這種方式，您可以取得叢集中的每個**msft \_ StorageNode** ，以及每個**msft \_ 磁片**區（資料磁片區）。 最後，您還需要**MSFT \_ StorageHealth**，也就是健全狀況服務本身。
+在您可以取得錯誤或計量之前，您必須取得數個相關物件的實例。 首先，代表叢集上儲存空間直接存取的 **MSFT \_ StorageSubSystem** 。 使用該功能，您可以取得叢集中的每個 **msft \_ StorageNode** ，以及每個 **msft \_ 磁片** 區的資料磁片區。 最後，您也需要健全狀況服務的 **MSFT \_ StorageHealth**。
 
 ```
 CimInstance Cluster;
@@ -105,9 +106,9 @@ public void DiscoverObjects(CimSession Session)
 }
 ```
 
-這些是您在 PowerShell 中使用**StorageSubSystem**、 **StorageNode**和**取得磁片**區等 Cmdlet 取得的相同物件。
+這些是您在 PowerShell 中使用 **StorageSubSystem**、 **StorageNode** 和 **Volume** 等 Cmdlet 取得的相同物件。
 
-您可以存取[儲存管理 API 類別](/previous-versions/windows/desktop/stormgmt/storage-management-api-classes)中記載的所有相同屬性。
+您可以存取所有相同的屬性，記載于 [儲存體管理 API 類別](/previous-versions/windows/desktop/stormgmt/storage-management-api-classes)中。
 
 ```
 using System.Diagnostics;
@@ -119,15 +120,15 @@ foreach (CimInstance Node in Nodes)
 }
 ```
 
-叫用**GetReport**以開始串流處理基本計量的策劃清單，這些範例會在節點之間以動態方式收集，並以內建邏輯來偵測叢集成員資格。 之後每秒就會到達範例。 所有的值都是即時且為該時間點的值。
+叫用 **GetReport** 來開始串流處理基本計量策劃清單的串流範例，這些範例會使用內建的邏輯來偵測叢集成員資格，以有效率地跨節點收集並動態地匯總。 之後每秒都會抵達範例。 所有的值都是即時且為該時間點的值。
 
-計量可以針對三個範圍進行串流處理：叢集、任何節點或任何磁片區。
+計量可以串流處理三個範圍：叢集、任何節點或任何磁片區。
 
-Windows Server 2016 中每個領域的可用計量完整清單記載于下面。
+您可以在 Windows Server 2016 的每個範圍取得可用計量的完整清單，如下所述。
 
-### <a name="iobserveronnext"></a>IObserver. Iobserver.onnext ( # A1
+### <a name="iobserveronnext"></a>IObserver. OnNext ( # A1
 
-這個範例程式碼會使用[觀察者設計模式](/dotnet/standard/events/observer-design-pattern)來執行觀察器，其**Iobserver.onnext ( # B1**方法會在每個新的度量樣本抵達時叫用。 如果串流結束，將會呼叫其**OnCompleted ( # B1**方法。 例如，您可以使用它來重新起始串流，因此它會無限期地繼續。
+此範例程式碼會使用 [觀察者設計模式](/dotnet/standard/events/observer-design-pattern) 來執行觀察器，其 **OnNext ( # B1** 方法會在每個新的度量樣本抵達時叫用。 如果串流結束，則會呼叫其 **OnCompleted ( # B1** 方法。 例如，您可以使用它來重新起始串流，因此它會無限期地繼續進行。
 
 ```
 class MetricsObserver<T> : IObserver<T>
@@ -172,9 +173,9 @@ class MetricsObserver<T> : IObserver<T>
 
 定義觀察者之後，您就可以開始串流處理。
 
-指定您想要設定計量範圍的目標**CimInstance** 。 它可以是叢集、任何節點或任何磁片區。
+指定您想要設定計量範圍的目標 **CimInstance** 。 它可以是叢集、任何節點或任何磁片區。
 
-Count 參數是串流結束前的樣本數。
+Count 參數是串流結束之前的樣本數。
 
 ```
 CimInstance Target = Cluster; // From among the objects discovered in DiscoverObjects()
@@ -199,15 +200,15 @@ public void BeginStreamingMetrics(CimSession Session, CimInstance HealthService,
 }
 ```
 
-不用說，這些計量可以視覺化、儲存在資料庫中，或以您認為適合的任何方式使用。
+不用說，這些計量可以視覺化、儲存在資料庫中，或以您所能使用的任何方式使用。
 
 ### <a name="properties-of-reports"></a>報表的屬性
 
-計量的每個範例都是一個「報表」，其中包含多個對應于個別計量的「記錄」。
+計量的每個範例都是一個「報表」，其中包含與個別計量對應的許多「記錄」。
 
-如需完整的架構，請檢查*storagewmi*中的**Msft \_ StorageHealthReport**和**msft \_ HealthRecord**類別。
+如需完整的架構，請檢查 *storagewmi* 中的 **Msft \_ StorageHealthReport** 和 **msft \_ HealthRecord** 類別。
 
-根據此資料表，每個計量都只有三個屬性。
+每個度量都只有三個屬性，每個都有此資料表。
 
 | **屬性** | **範例**       |
 | -------------|-------------------|
@@ -215,11 +216,11 @@ public void BeginStreamingMetrics(CimSession Session, CimInstance HealthService,
 | 值        | 0.00021           |
 | 單位        | 3                 |
 
-單位 = {0，1，2，3，4}，其中 0 = "Bytes"，1 = "BytesPerSecond"，2 = "CountPerSecond"，3 = "Seconds"，或 4 = "百分比"。
+單位 = {0，1，2，3，4}，其中 0 = "Bytes"，1 = "BytesPerSecond"，2 = "CountPerSecond"，3 = "Seconds" 或 4 = "百分比"。
 
 ## <a name="coverage"></a>涵蓋範圍
 
-以下是 Windows Server 2016 中每個領域的可用計量。
+以下是 Windows Server 2016 中每個範圍的可用計量。
 
 ### <a name="msft_storagesubsystem"></a>MSFT_StorageSubSystem
 

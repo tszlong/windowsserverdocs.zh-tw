@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：虛擬網域控制站部署和設定
 ms.assetid: b146f47e-3081-4c8e-bf68-d0f993564db2
 title: 虛擬網域控制站的部署與設定
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 9c4ab9ff6819ec14bb0a3ca9c784c7c97f15da5b
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: fd35c76efa8419df1b1032ddf551b054c4d290e9
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93068380"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97043386"
 ---
 # <a name="virtualized-domain-controller-deployment-and-configuration"></a>虛擬網域控制站的部署與設定
 
@@ -71,7 +72,7 @@ ms.locfileid: "93068380"
 如需詳細資訊，請檢閱[Microsoft software running in non-Microsoft hardware virtualization software](https://support.microsoft.com/kb/897615) (在非 Microsoft 硬體虛擬化軟體中執行的 Microsoft 軟體) 的支援政策。
 
 ### <a name="critical-caveats"></a>重要注意事項
-虛擬網域控制站「不」  支援下列項目的安全還原：
+虛擬網域控制站「不」支援下列項目的安全還原：
 
 - 手動複製 VHD 和 VHDX 檔案以覆寫現有的 VHD 檔案
 
@@ -85,7 +86,7 @@ ms.locfileid: "93068380"
 > [!WARNING]
 > 虛擬網域控制站的安全還原不能取代系統狀態備份和 AD DS 資源回收筒。
 >
-> 還原快照之後，在快照後源自於該網域控制站之先前未複寫的變更差異將永久遺失。 安全還原會實作自動非權威還原，「僅能」  防止意外發生網域控制站隔離。
+> 還原快照之後，在快照後源自於該網域控制站之先前未複寫的變更差異將永久遺失。 安全還原會實作自動非權威還原，「僅能」防止意外發生網域控制站隔離。
 
 如需 USN 泡泡與延遲物件的詳細資訊，請參閱[Troubleshooting Active Directory operations that fail with error 8606: "Insufficient attributes were given to create an object"](https://support.microsoft.com/kb/2028495) (為 Active Directory 作業失敗進行疑難排解，出現錯誤 8606：「提供的屬性不足以建立物件」)。
 
@@ -129,19 +130,19 @@ ms.locfileid: "93068380"
 
 如果 Microsoft Hyper-V 的虛擬程式，請確定它是在 Windows Server 2012 上執行。 您可以使用 [裝置管理] 來驗證這一點
 
-開啟 [Devmgmt.msc]  ，然後針對已安裝的 Microsoft Hyper-V 裝置和驅動程式檢查 [系統裝置]  。 虛擬網域控制站所需的特定系統裝置是 (驅動程式的 **Microsoft Hyper-V 產生計數器** ： vmgencounter.sys) 。
+開啟 [Devmgmt.msc]，然後針對已安裝的 Microsoft Hyper-V 裝置和驅動程式檢查 [系統裝置]。 虛擬網域控制站所需的特定系統裝置是 (驅動程式的 **Microsoft Hyper-V 產生計數器** ： vmgencounter.sys) 。
 
 ![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_HyperVVMGenIDCounter.png)
 
 ### <a name="step-2---verify-the-pdce-fsmo-role"></a>步驟 2 - 確認 PDCE FSMO 角色
 在您嘗試複製 DC 之前，必須先驗證裝載網域主控站模擬器 FSMO 的網域控制站執行的是 Windows Server 2012。 需要 PDC 模擬器 (PDCE) 有下列數個原因：
 
-1. PDCE 會建立特殊的 [可複製的網域控制站]  群組，並在網域的根目錄上設定它的權限，以允許網域控制站複製其本身。
+1. PDCE 會建立特殊的 [可複製的網域控制站] 群組，並在網域的根目錄上設定它的權限，以允許網域控制站複製其本身。
 
 2. 複製網域控制站會使用 DRSUAPI RPC 通訊協定直接連絡 PDCE，以便為複製 DC 建立電腦物件。
 
     > [!NOTE]
-    > Windows Server 2012 擴充了現有的目錄複寫服務 (DRS) 遠端通訊協定 (UUID **E3514235-4B06-11D1-AB04-00C04FC2DCD2** ) 以納入新的 RPC 方法 **IDL_DRSAddCloneDC** (Opnum **28** )。 **IDL_DRSAddCloneDC** 方法會藉由從現有的網域控制站物件複製屬性，來建立新的網域控制站物件。
+    > Windows Server 2012 擴充了現有的目錄複寫服務 (DRS) 遠端通訊協定 (UUID **E3514235-4B06-11D1-AB04-00C04FC2DCD2**) 以納入新的 RPC 方法 **IDL_DRSAddCloneDC** (Opnum **28**)。 **IDL_DRSAddCloneDC** 方法會藉由從現有的網域控制站物件複製屬性，來建立新的網域控制站物件。
     >
     > 網域控制站的狀態是由電腦、伺服器、NTDS 設定、FRS、DFSR，以及針對每個網域控制站所維護的連線物件所組成。 複製物件時，這個 RPC 方法會使用新網域控制站的對應物件，來取代原始網域控制站的所有參考。 呼叫者在網域命名內容上必須具備控制存取權限 DS-Clone-Domain-Controller。
     >
@@ -151,7 +152,7 @@ ms.locfileid: "93068380"
     >
     > 如需詳細資訊，請參閱 [4.1.29 IDL_DRSAddCloneDC (Opnum 28)](/openspecs/windows_protocols/ms-drsr/ef0bfb1d-037b-4626-a6d9-cc7589bc5786)。
 
-**_這也表示使用非完全路由網路時，虛擬網域控制站複製需要具有 PDCE _ 存取權的網路區段_* 。 您可以在複製之後將複製的網域控制站移至不同的網路 (就像是實體網域控制站一樣)，只要您謹慎更新 AD DS 邏輯站台資訊即可。
+**_這也表示使用非完全路由網路時，虛擬網域控制站複製需要具有 PDCE _ 存取權的網路區段_*。 您可以在複製之後將複製的網域控制站移至不同的網路 (就像是實體網域控制站一樣)，只要您謹慎更新 AD DS 邏輯站台資訊即可。
 
 > [!IMPORTANT]
 > 在複製僅包含單一網域控制站的網域時，您必須先確定已使來源 DC 再度上線，然後才能開始複製複本。 實際執行的網域一律至少應包含兩個網域控制站。
@@ -160,7 +161,7 @@ ms.locfileid: "93068380"
 
 1. 使用 Dsa.msc 嵌入式管理單元，以滑鼠右鍵按一下網域，然後按一下 [_ * 操作主機]。 記下 [PDC] 索引標籤上具名的網域控制站，然後關閉對話方塊。
 
-2. 在 DC 的電腦物件上按一下滑鼠右鍵、按一下 [屬性]  ，然後驗證 [作業系統] 資訊。
+2. 在 DC 的電腦物件上按一下滑鼠右鍵、按一下 [屬性]，然後驗證 [作業系統] 資訊。
 
 #### <a name="windows-powershell-method"></a>Windows PowerShell 方法
 您可以結合下列的 Active Directory Windows PowerShell 模組 Cmdlet，以傳回 PDC 模擬器的版本：
@@ -183,16 +184,16 @@ get-adcomputer(Get-ADDomainController -Discover -Service "PrimaryDC").name -prop
 ![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PDCOSInfo.png)
 
 ### <a name="step-3---authorize-a-source-dc"></a>步驟 3 - 授權來源 DC
-來源網域控制站在網域 NC 標頭上必須具備控制存取權限 (CAR) [允許 DC 建立本身的複製品]  。 根據預設，已知群組 [可複製的網域控制站]  具備這個權限且未含任何成員。 PDCE 會在該 FSMO 角色移轉到 Windows Server 2012 網域控制站時建立這個群組。
+來源網域控制站在網域 NC 標頭上必須具備控制存取權限 (CAR) [允許 DC 建立本身的複製品]。 根據預設，已知群組 [可複製的網域控制站] 具備這個權限且未含任何成員。 PDCE 會在該 FSMO 角色移轉到 Windows Server 2012 網域控制站時建立這個群組。
 
 #### <a name="active-directory-administrative-center-method"></a>Active Directory 管理中心方法
 
 1. 啟動 Dsac.exe 並瀏覽到來源 DC，然後開啟它的詳細資料頁面。
 
-2. 在 [成員隸屬]  區段中，新增該網域的 [可複製的網域控制站]  群組。
+2. 在 [成員隸屬] 區段中，新增該網域的 [可複製的網域控制站] 群組。
 
 #### <a name="windows-powershell-method"></a>Windows PowerShell 方法
-您可以結合下列的 Active Directory Windows PowerShell 模組 Cmdlet  群組：
+您可以結合下列的 Active Directory Windows PowerShell 模組 Cmdlet **get-adcomputer** 和 **add-adgroupmember**，將網域控制站新增到 [可複製的網域控制站] 群組：
 
 ```
 Get-adcomputer <dc name> | %{add-adgroupmember "cloneable domain controllers" $_.samaccountname}
@@ -207,11 +208,11 @@ Get-adcomputer <dc name> | %{add-adgroupmember "cloneable domain controllers" $_
 
 ##### <a name="active-directory-administrative-center-method"></a>Active Directory 管理中心方法
 
-1. 開啟 [Active Directory 管理中心]  、在網域標頭上按一下滑鼠右鍵，依序按一下 [屬性]  、[擴充功能]  索引標籤、[安全性]  及 [進階]  。 按一下 [只有這個物件]  。
+1. 開啟 [Active Directory 管理中心]、在網域標頭上按一下滑鼠右鍵，依序按一下 [屬性]、[擴充功能] 索引標籤、[安全性] 及 [進階]。 按一下 [只有這個物件]。
 
-2. 按一下 [新增]  ，在 [輸入要選取的物件名稱]  下方，輸入群組名稱 [可複製的網域控制站]  。
+2. 按一下 [新增]，在 [輸入要選取的物件名稱] 下方，輸入群組名稱 [可複製的網域控制站]。
 
-3. 在 [權限] 下方，按一下 [允許 DC 建立本身的複製品]  ，然後按一下 [確定]  。
+3. 在 [權限] 下方，按一下 [允許 DC 建立本身的複製品]，然後按一下 [確定]。
 
 > [!NOTE]
 > 您也可以移除預設的權限，並新增個別的網域控制站。 這樣做很可能會導致持續發生維護問題，而新的系統管理員將不知道這項自訂。 變更預設設定不會提高安全性，因此不建議使用。
@@ -236,7 +237,7 @@ cd c:
 或者，在 Windows PowerShell 主控台中執行範例 [FixVDCPermissions.ps1](../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Technical-Reference-Appendix.md#BKMK_FixPDCPerms)，其中的主控台會在受影響的網域中的網域控制站上，以提升權限的系統管理員身分啟動。 它會自動設定權限。 這個範例位於本單元的附錄中。
 
 ### <a name="step-4---remove-incompatible-applications-or-services-if-not-using-customdccloneallowlistxml"></a>步驟 4 - 移除不相容的應用程式或服務 (如果不使用 CustomDCCloneAllowList.xml)
-Get-ADDCCloningExcludedApplicationList 先前傳回「且未新增到 CustomDCCloneAllowList.xml」  的任何程式或服務都必須在複製之前移除。 建議的方法是取消安裝應用程式或服務。
+Get-ADDCCloningExcludedApplicationList 先前傳回「且未新增到 CustomDCCloneAllowList.xml」的任何程式或服務都必須在複製之前移除。 建議的方法是取消安裝應用程式或服務。
 
 > [!WARNING]
 > 未取消安裝或新增到 CustomDCCloneAllowList.xml 的所有不相容的程式或服務都會妨礙複製進行。
@@ -325,7 +326,7 @@ Stop-computer 是不論是否虛擬化，都支援將電腦關機的 Cmdlet，�
 
 必須複製虛擬機器的所有磁碟，不只是系統磁碟機。 如果來源網域控制站使用差異磁碟，而您規劃將複製的網域控制站移到另一台 HYPER-V 主機，則您必須將它匯出。
 
-如果來源網域控制站只有「一個」  磁碟機，則建議手動複製磁碟。 建議針對含有「一個以上」  磁碟機或其他複雜的虛擬硬體自訂 (例如多個 NIC) 的 VM 使用匯出/匯入。
+如果來源網域控制站只有「一個」磁碟機，則建議手動複製磁碟。 建議針對含有「一個以上」磁碟機或其他複雜的虛擬硬體自訂 (例如多個 NIC) 的 VM 使用匯出/匯入。
 
 如果手動複製檔案，請在複製前先刪除所有快照。 如果匯出 VM，請在匯出前先刪除快照，或者在匯入後從新的 VM 中刪除它們。
 
@@ -346,7 +347,7 @@ Stop-computer 是不論是否虛擬化，都支援將電腦關機的 Cmdlet，�
 然後您可以使用 Windows 檔案總管、Xcopy.exe 或 Robocopy.exe，手動複製 VHD 或 VHDX 檔案。 不需要任何特殊步驟。 最好的做法是變更檔名，即使移到其他資料夾也一樣。
 
 > [!NOTE]
-> 如果在 LAN 上 (1 Gbit 或以上) 的主機電腦之間進行複製， **Xcopy.exe /J** 選項複製 VHD/VHDX 檔案的速度會大幅領先任何其他工具，代價則是需要更大的頻寬使用量。
+> 如果在 LAN 上 (1 Gbit 或以上) 的主機電腦之間進行複製，**Xcopy.exe /J** 選項複製 VHD/VHDX 檔案的速度會大幅領先任何其他工具，代價則是需要更大的頻寬使用量。
 
 ##### <a name="windows-powershell-method"></a>Windows PowerShell 方法
 若要使用 Windows PowerShell 來判斷磁碟，請使用 HYPER-V 模組：
@@ -401,11 +402,11 @@ Get-VMIdeController dc2-sourceclone | Get-VMHardDiskDrive | select-Object {copy-
 ##### <a name="hyper-v-manager-method"></a>HYPER-V 管理員方法
 使用 [HYPER-V 管理員] 匯出 VM：
 
-1. 在來源網域控制站上按一下滑鼠右鍵，然後按一下 [匯出]  。
+1. 在來源網域控制站上按一下滑鼠右鍵，然後按一下 [匯出]。
 
 2. 選取現有的資料夾做為匯出容器。
 
-3. 等待 [狀態] 欄停止顯示 [正在匯出]  。
+3. 等待 [狀態] 欄停止顯示 [正在匯出]。
 
 ##### <a name="windows-powershell-method"></a>Windows PowerShell 方法
 若要使用 HYPER-V Windows PowerShell 模組匯出 VM，請使用下列 Cmdlet：
@@ -427,11 +428,11 @@ Export-vm
 ##### <a name="hyper-v-manager-method"></a>HYPER-V 管理員方法
 使用 [HYPER-V 管理員] 建立合併的磁碟：
 
-1. 按一下 [ **編輯磁片** ]。
+1. 按一下 [ **編輯磁片**]。
 
 2. 瀏覽最低階的子磁碟。 例如，如果您使用的是差異磁碟，子磁碟就是最低階的子項。 如果虛擬機器有一個 (或多個) 快照，則目前選取的快照就是最低階的子磁碟。
 
-3. 選取 [合併]  選項，為整個父系-子系結構建立單一磁碟。
+3. 選取 [合併]選項，為整個父系-子系結構建立單一磁碟。
 
 4. 選取新的虛擬硬碟，並提供路徑。 這會將現有的 VHD/VHDX 檔案調解成為新的單一可攜式單位，還原先前快照時便不會有風險。
 
@@ -463,7 +464,7 @@ Convert-vm
 
 1. HKey_Local_Machine\System\CurrentControlSet\Services\NTDS\Parameters
 
-    AllowListFolder ( *REG_SZ* )
+    AllowListFolder (*REG_SZ*)
 
 2. DSA 工作目錄
 
@@ -507,11 +508,11 @@ New-ADDCCloneConfigFile -Offline -IPv4DNSResolver "10.0.0.1" -IPv6DNSResolver "2
 ##### <a name="windows-explorer-method"></a>Windows 檔案總管方法
 Windows Server 2012 現在提供掛接 VHD 和 VHDX 檔案的圖形化選項。 這需要在 Windows Server 2012 上安裝 [桌面體驗] 功能。
 
-1. 按一下新複製且包含來源 DC 系統磁碟機或 DSA 工作目錄位置資料夾的 VHD/VHDX 檔案，然後按一下 [光碟映像工具]  功能表中的 [掛接]  。
+1. 按一下新複製且包含來源 DC 系統磁碟機或 DSA 工作目錄位置資料夾的 VHD/VHDX 檔案，然後按一下 [光碟映像工具] 功能表中的 [掛接]。
 
 2. 在目前掛接的磁碟機中，將 XML 檔案複製到有效的位置。 系統可能會提示您具備資料夾的權限。
 
-3. 按一下掛接的磁碟機，然後按一下 [磁碟工具]  功能表中的 [退出]  。
+3. 按一下掛接的磁碟機，然後按一下 [磁碟工具] 功能表中的 [退出]。
 
 ![虛擬化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_HyperVClickMountedDrive.png)
 
@@ -588,18 +589,18 @@ New-VM
 如果您想要從相同的匯出 VM 建立其他複本，可視需要製作多份匯出 VM 的複本。 然後針對每個複本使用 [匯入]。
 
 > [!IMPORTANT]
-> 請務必使用 [複製]  選項，因為匯出保留所有來源資訊；如果在相同的 HYPER-V 主機伺服器上執行，使用 [移動]  或 [就地]  匯入伺服器會造成資訊衝突。
+> 請務必使用 [複製] 選項，因為匯出保留所有來源資訊；如果在相同的 HYPER-V 主機伺服器上執行，使用 [移動] 或 [就地] 匯入伺服器會造成資訊衝突。
 
 ##### <a name="hyper-v-manager-method"></a>HYPER-V 管理員方法
 使用 [HYPER-V 管理員] 嵌入式管理單元進行匯入：
 
-1. 按一下 [匯入虛擬機器] 
+1. 按一下 [匯入虛擬機器]
 
-2. 在 [尋找資料夾]  頁面上，使用 [瀏覽] 按鈕選取匯出的 VM 定義檔案
+2. 在 [尋找資料夾] 頁面上，使用 [瀏覽] 按鈕選取匯出的 VM 定義檔案
 
-3. 在 [選取虛擬機器]  頁面上，按一下來源電腦。
+3. 在 [選取虛擬機器] 頁面上，按一下來源電腦。
 
-4. 在 [選擇匯入類型]  頁面上，按一下 [複製虛擬機器 (建立新的唯一識別碼)]  ，然後按一下 [完成]  。
+4. 在 [選擇匯入類型] 頁面上，按一下 [複製虛擬機器 (建立新的唯一識別碼)]，然後按一下 [完成]。
 
 5. 如果是在相同的 Hyper-V 主機上進行匯入，請將匯入的 VM 重新命名；它的名稱將與匯出的來源網域控制站相同。
 
@@ -736,7 +737,7 @@ Start-VM
 Repadmin.exe /showchanges <Name of partner DC><DSA Object GUID of the domain controller being restored><naming context to compare> /statistics
 ```
 
-例如 (有針對可讀性和重要專案修改的輸出 * *_斜體_* _) ，您可以在這裡查看 DC4 的複寫合作關係：
+例如 (有針對可讀性和重要專案修改的輸出 **_斜體_* _) ，您可以在這裡查看 DC4 的複寫合作關係：
 
 ```
 C:\>repadmin.exe /showrepl dc4.corp.contoso.com /repsto
@@ -775,7 +776,7 @@ Objects returned: 1
 
 您也可以測試其他協力電腦，以確定它尚未複寫。
 
-或者，如果您不在意哪些物件尚未進行複寫，而且只關懷任何物件都未完成，您可以使用 _ */statistics* * 選項：
+或者，如果您不在意哪些物件尚未進行複寫，而且只關懷任何物件都未完成，您可以使用 _ */statistics** 選項：
 
 ```
 C:\>repadmin /showchanges dc2.corp.contoso.com 5d083398-4bd3-48a4-a80d-fb2ebafb984f dc=corp,dc=contoso,dc=com /statistics

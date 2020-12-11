@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：虛擬機器負載平衡總覽
 ms.assetid: f0d4cecc-5a03-448c-bef9-86c4730b4eb0
 title: 虛擬機器負載平衡概觀
 ms.topic: article
@@ -6,12 +7,12 @@ manager: eldenc
 ms.author: johnmar
 author: JasonGerend
 ms.date: 09/19/2016
-ms.openlocfilehash: 868f5c0646b3842f605447d1fe8fdbe74593c2a6
-ms.sourcegitcommit: 7a8a608df059b4278a974c52ed7b865421a83aa6
+ms.openlocfilehash: 1ea777f2e48482bce32cd81b8d8cc5de814d19b4
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91833304"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97040516"
 ---
 # <a name="virtual-machine-load-balancing-overview"></a>虛擬機器負載平衡概觀
 
@@ -29,7 +30,7 @@ ms.locfileid: "91833304"
 * *與您現有的叢集環境緊密整合*：會接受失敗的原則，例如反親和性、容錯網域和可能的擁有者。
 * *平衡的啟發學習法*： <abbr title="虛擬機器">VM</abbr> 節點的記憶體壓力和 CPU 使用率。
 * *細微控制*：預設為啟用。 可以視需要或週期性間隔來啟用。
-* 增強*閾值*：根據您部署的特性，有三個可用的閾值。
+* 增強 *閾值*：根據您部署的特性，有三個可用的閾值。
 
 ## <a name="the-feature-in-action"></a><a id="feature-in-action"></a>作用中的功能
 ### <a name="a-new-node-is-added-to-your-failover-cluster"></a><a id="new-node-added"></a>新節點新增至您的容錯移轉叢集

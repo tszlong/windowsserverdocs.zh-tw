@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：尋找邏輯結構設計的其他資源
 ms.assetid: 8b900c2b-35b1-4c95-a73d-e5f2e9cf0adb
 title: 尋找其他邏輯結構設計資源
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: c2b445661fb10e03a3d764611a1a3e213613b69e
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: bb6459ff5f5a48865762451b0dbd94a8f41ca767
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93068568"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97041216"
 ---
 # <a name="finding-additional-resources-for-logical-structure-design"></a>尋找其他邏輯結構設計資源
 

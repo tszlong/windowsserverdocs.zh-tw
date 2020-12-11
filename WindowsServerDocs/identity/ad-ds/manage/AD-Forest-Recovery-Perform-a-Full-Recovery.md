@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解： AD 樹系復原-執行完整伺服器復原
 title: AD 樹系復原-執行完整伺服器復原
 ms.author: daveba
 author: iainfoulds
@@ -6,12 +7,12 @@ manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 1a1182a6-4462-4a13-806e-0e642a0d5db2
-ms.openlocfilehash: 3aec8863ff97a3b3497603837ec3783b78fa0bf8
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 9be3507fb484570de76f95e9de56eb8ffdb9011d
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070890"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97042986"
 ---
 # <a name="ad-forest-recovery---performing-a-full-server-recovery"></a>AD 樹系復原-執行完整伺服器復原
 
@@ -32,16 +33,16 @@ ms.locfileid: "93070890"
 
 ## <a name="perform-a-full-server-restore-with-a-local-backup-with-the-latest-image"></a>使用具有最新映射的本機備份來執行完整伺服器還原
 
-1. 開始 Windows 安裝程式，指定語言、時間和貨幣格式，以及鍵盤選項，然後按 **[下一步]** 。
-2. 按一下 **\[修復您的電腦\]** 。
+1. 開始 Windows 安裝程式，指定語言、時間和貨幣格式，以及鍵盤選項，然後按 **[下一步]**。
+2. 按一下 **\[修復您的電腦\]**。
    ![伺服器還原](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore1.png)
-3. 按一下 **\[疑難排解\]** 。</br>
+3. 按一下 **\[疑難排解\]**。</br>
    ![伺服器還原](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore2.png)
-4. 按一下 [ **系統映射修復** ]。</br>
+4. 按一下 [ **系統映射修復**]。</br>
    ![伺服器還原](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore3.png)
-5. 按一下 [ **Windows Server 2016** ]。
+5. 按一下 [ **Windows Server 2016**]。
    ![伺服器還原](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore4.png)
-6. 如果您要還原最新的本機備份，請按一下 [ **使用最新可用的系統映射 (建議的)** ，然後按 **[下一步]** 。
+6. 如果您要還原最新的本機備份，請按一下 [ **使用最新可用的系統映射 (建議的)** ，然後按 **[下一步]**。
    ![伺服器還原](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore5.png)
 7. 現在您將可以選擇下列選項：
    -  格式化和重新分割磁片
@@ -55,19 +56,19 @@ ms.locfileid: "93070890"
 
 ## <a name="perform-a-full-server-restore-with-any-image-local-or-remote"></a>使用本機或遠端的任何映射執行完整伺服器還原
 
-1. 開始 Windows 安裝程式，指定語言、時間和貨幣格式，以及鍵盤選項，然後按 **[下一步]** 。
-2. 按一下 **\[修復您的電腦\]** 。</br>
-3. 按一下 [ **疑難排解** ]，然後按一下 [ **系統映射修復** ]，再按一下 [ **Windows Server 2016** ]。
-4. 如果您要還原最新的本機備份，請按一下 [ **選取系統映射** ]，然後按 **[下一步]** 。
+1. 開始 Windows 安裝程式，指定語言、時間和貨幣格式，以及鍵盤選項，然後按 **[下一步]**。
+2. 按一下 **\[修復您的電腦\]**。</br>
+3. 按一下 [ **疑難排解**]，然後按一下 [ **系統映射修復**]，再按一下 [ **Windows Server 2016**]。
+4. 如果您要還原最新的本機備份，請按一下 [ **選取系統映射** ]，然後按 **[下一步]**。
 5. 現在您可以選取您想要還原之備份的位置。 如果映射位於本機，您可以從清單中選取它。
-6. 如果映射是在網路共用上，請選取 [ **Advanced** ]。 如果您需要安裝驅動程式，也可以選取 [ **Advanced** ]。
+6. 如果映射是在網路共用上，請選取 [ **Advanced**]。 如果您需要安裝驅動程式，也可以選取 [ **Advanced** ]。
    ![伺服器還原](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore7.png)
-7. 如果您在按一下 [ **Advanced** ] 之後從網路還原，請選取 **[搜尋網路上的系統映射** ]。 系統可能會提示您還原網路連線能力。 選取 [確定]。 </br>
+7. 如果您在按一下 [ **Advanced** ] 之後從網路還原，請選取 **[搜尋網路上的系統映射**]。 系統可能會提示您還原網路連線能力。 選取 [確定]。 </br>
    ![伺服器還原](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore8.png)
-8. 輸入備份共用位置的 UNC 路徑 (例如 \\ \server1\backups) ，然後按一下 **[確定]** 。 您也可以輸入目標伺服器的 IP 位址，例如 \\ \192.168.1.3\backups。
+8. 輸入備份共用位置的 UNC 路徑 (例如 \\ \server1\backups) ，然後按一下 **[確定]**。 您也可以輸入目標伺服器的 IP 位址，例如 \\ \192.168.1.3\backups。
    ![伺服器還原](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore9.png)
 9. 輸入存取共用所需的認證，然後按一下 [確定]。
-10. 現在， **選取要還原的系統映射日期和時間** ，然後按 **[下一步]** 。
+10. 現在， **選取要還原的系統映射日期和時間** ，然後按 **[下一步]**。
 11. 現在您將可以選擇下列選項：
     - 格式化和重新分割磁片
     - 安裝驅動程式
@@ -80,9 +81,9 @@ ms.locfileid: "93070890"
 
 如果您需要從命令提示字元啟用網路介面卡，以從網路共用還原，請使用下列步驟。
 
-1. 開始 Windows 安裝程式，指定語言、時間和貨幣格式，以及鍵盤選項，然後按 **[下一步]** 。
-2. 按一下 **\[修復您的電腦\]** 。 I
-3. 按一下 [ **疑難排解** ]，然後按一下 [ **命令提示** 字元]。
+1. 開始 Windows 安裝程式，指定語言、時間和貨幣格式，以及鍵盤選項，然後按 **[下一步]**。
+2. 按一下 **\[修復您的電腦\]**。 I
+3. 按一下 [ **疑難排解**]，然後按一下 [ **命令提示** 字元]。
 4. 輸入下列命令，然後按 ENTER：
 
    ```

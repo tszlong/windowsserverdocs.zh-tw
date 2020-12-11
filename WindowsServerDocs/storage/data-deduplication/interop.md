@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：重復資料刪除互通性
 ms.assetid: 60fca6b2-f1c0-451f-858f-2f6ab350d220
 title: 重複資料刪除互通性
 ms.topic: article
@@ -6,12 +7,12 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/16/2016
-ms.openlocfilehash: 7f99b4d12821e505a229ac02d0198a9ac2ed31fa
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0acd0b05dcf4bf0d98cd14d9b5e1991d40feadea
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936303"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97039177"
 ---
 # <a name="data-deduplication-interoperability"></a>重複資料刪除互通性
 
@@ -20,7 +21,7 @@ ms.locfileid: "87936303"
 ## <a name="supported"></a>支援
 
 ### <a name="refs"></a>ReFS
-從 Windows Server 2019，支援重復資料刪除。
+從 Windows Server 2019 支援重復資料刪除。
 
 ### <a name="failover-clustering"></a>容錯移轉叢集
 

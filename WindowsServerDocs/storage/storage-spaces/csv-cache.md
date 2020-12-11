@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：使用儲存空間直接存取搭配 CSV 記憶體內部讀取快取
 title: 儲存空間直接存取記憶體中讀取快取
 ms.author: eldenc
 manager: siroy
@@ -6,12 +7,12 @@ ms.topic: article
 author: eldenchristensen
 ms.date: 09/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 94f541b38e0084ae3284dc0e56b2643f23b15bfe
-ms.sourcegitcommit: 8a826e992f28a70e75137f876a5d5e61238a24e4
+ms.openlocfilehash: abda5d2bfeb5bcf65c66609c1e89ab2371089330
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91365331"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97040526"
 ---
 # <a name="using-storage-spaces-direct-with-the-csv-in-memory-read-cache"></a>使用儲存空間直接存取搭配 CSV 記憶體內部讀取快取
 
@@ -30,7 +31,7 @@ ms.locfileid: "91365331"
 您最多可以針對 CSV 記憶體中讀取快取使用80% 的總實體記憶體。
 
   > [!TIP]
-  > 針對在相同伺服器上執行計算和儲存體的超交集部署，請小心將足夠的記憶體保留給您的虛擬機器。 針對交集的向外延展檔案伺服器 (SoFS) 部署，記憶體的爭用較少，這並不適用。
+  > 針對在相同伺服器上執行計算和儲存體的超交集部署，請小心將足夠的記憶體保留給您的虛擬機器。 針對融合式 Scale-Out 檔案伺服器 (SoFS) 部署，記憶體的爭用較少，這並不適用。
 
   > [!NOTE]
   > 某些 microbenchmarking 工具（例如 DISKSPD 和 [VM 車隊](https://github.com/Microsoft/diskspd/tree/master/Frameworks/VMFleet) ）可能會產生較差的結果，並啟用 CSV 記憶體中的讀取快取，而不需要它。 依預設，VM 車隊會為每部虛擬機器建立 1 10 gib (GiB) VHDX –大約 1 TiB 的 Vm 總數，然後對它們執行一致100的 *隨機* 讀取和寫入。 不同于實際的工作負載，讀取不會遵循任何可預測或重複的模式，因此記憶體內部快取不會有效，而只會產生額外負荷。
@@ -70,6 +71,6 @@ Get-ClusterSharedVolume | ForEach {
 }
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [儲存空間直接存取總覽](storage-spaces-direct-overview.md)

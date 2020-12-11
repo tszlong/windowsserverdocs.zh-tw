@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解： AD 樹系復原-程式
 title: AD 樹系復原 - 程序
 ms.author: daveba
 author: iainfoulds
@@ -6,12 +7,12 @@ manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 47a471fb-3b0b-4aa8-8525-1c92d0d51e93
-ms.openlocfilehash: 3a4edd21cb538c2aa8fd1f2d1eb4f3832c3fac56
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 9ab44e3dd8927387cc6dc2922eec75387c4b1631
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93067790"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97041746"
 ---
 # <a name="ad-forest-recovery---procedures"></a>AD 樹系復原 - 程序
 

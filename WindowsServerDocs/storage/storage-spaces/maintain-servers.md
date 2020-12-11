@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：讓儲存空間直接存取的伺服器離線進行維護
 title: 將儲存空間直接存取伺服器離線以進行維護
 ms.author: eldenc
 manager: eldenc
@@ -7,12 +8,12 @@ author: eldenchristensen
 ms.date: 10/08/2018
 ms.assetid: 73dd8f9c-dcdb-4b25-8540-1d8707e9a148
 ms.localizationpriority: medium
-ms.openlocfilehash: 1190028ce94b8ecb37d188e5571443f55d6e12d1
-ms.sourcegitcommit: 7f859d8ec86664fdedd05901ac3714f84e7868b5
+ms.openlocfilehash: 5f2a8a926fefe68b0afe79c0d120164d97f1eb90
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94703774"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97042066"
 ---
 # <a name="taking-a-storage-spaces-direct-server-offline-for-maintenance"></a>將儲存空間直接存取伺服器離線以進行維護
 

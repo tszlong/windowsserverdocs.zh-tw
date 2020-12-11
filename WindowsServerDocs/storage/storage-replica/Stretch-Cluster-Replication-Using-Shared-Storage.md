@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：使用共用存放裝置的 Stretch Cluster 複寫
 title: 使用共用存放裝置的延展式叢集複寫
 manager: eldenc
 ms.author: nedpyle
@@ -6,12 +7,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/26/2019
 ms.assetid: 6c5b9431-ede3-4438-8cf5-a0091a8633b0
-ms.openlocfilehash: efc2727c913ac2bab5ea619101ebef12f40a69b2
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 096d1258cd74dec51e93b4b26266478206742beb
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991511"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97043756"
 ---
 # <a name="stretch-cluster-replication-using-shared-storage"></a>使用共用存放裝置的延展式叢集複寫
 
@@ -38,7 +39,7 @@ ms.locfileid: "87991511"
 
 ## <a name="prerequisites"></a>必要條件
 -   Active Directory 網域服務樹系 (不需要執行 Windows Server 2016)。
--   2-64 部執行 Windows Server 2019 或 Windows Server 2016 Datacenter Edition 的伺服器。 如果您執行的是 Windows Server 2019，如果您確定只複寫最多 2 TB 大小的單一磁片區，就可以改用 Standard Edition。
+-   2-64 執行 Windows Server 2019 或 Windows Server 2016 Datacenter Edition 的伺服器。 如果您執行的是 Windows Server 2019，您可以改為使用 Standard Edition，如果您確定只複寫大小上限為 2 TB 的單一磁片區。
 -   兩組共用的存放裝置，使用 SAS JBOD (例如搭配「儲存空間」)、光纖通道 SAN、共用 VHDX 或 iSCSI 目標。 存放裝置應包含 HDD 和 SSD 媒體的混合，且必須支援「持續保留」。 您要將每組存放裝置設定為只能供其中兩部伺服器使用 (非對稱)。
 -   每組存放裝置必須允許建立至少兩個虛擬磁碟，一個供複寫的資料使用，另一個供記錄檔使用。 實體存放裝置的所有資料磁碟上，必須都要有相同的磁區大小。 實體存放裝置的所有記錄檔磁碟上，必須都要有相同的磁區大小。
 -   每部伺服器上至少要有一個 1GbE 連線，以進行同步複寫，但最好是 RDMA。
@@ -51,7 +52,7 @@ ms.locfileid: "87991511"
 
 ## <a name="provision-operating-system-features-roles-storage-and-network"></a>佈建作業系統、功能、角色、儲存體及網路
 
-1.  使用 [Server Core] 或 [Server 含桌面體驗] 安裝選項，在所有伺服器節點上安裝 Windows Server。
+1.  在所有伺服器節點上安裝 Windows Server，方法是使用 Server Core 或具有桌面體驗安裝選項的伺服器。
     > [!IMPORTANT]
     > 從此時開始，一律要以所有伺服器上內建系統管理員群組成員的網域使用者身分登入。 請務必記住，在圖形化伺服器安裝或在 Windows 10 電腦上執行時，一開始要提升 PowerShell 和 CMD 命令提示字元的權限。
 
@@ -74,10 +75,10 @@ ms.locfileid: "87991511"
 
     -   **圖形化方法**
 
-        執行 **ServerManager.exe**，然後按一下 [管理]**** 和 [新增伺服器]**** 來新增所有伺服器節點。
+        執行 **ServerManager.exe**，然後按一下 [管理] 和 [新增伺服器] 來新增所有伺服器節點。
 
         > [!IMPORTANT]
-        > 在每個節點上安裝 [容錯移轉叢集]**** 和 [儲存體複本]**** 角色和功能，然後將它們重新啟動。 如果計劃要使用像是 Hyper-V、檔案伺服器等其他角色，您也可以現在安裝它們。
+        > 在每個節點上安裝 [容錯移轉叢集] 和 [儲存體複本] 角色和功能，然後將它們重新啟動。 如果計劃要使用像是 Hyper-V、檔案伺服器等其他角色，您也可以現在安裝它們。
 
     -   **使用 Windows PowerShell 方法**
 
@@ -112,7 +113,7 @@ ms.locfileid: "87991511"
 
         1.  確定每組成對的伺服器節點只能看到該網站的存放裝置機箱 (亦即非對稱式存放裝置)，同時已正確設定 SAS 連線。
 
-        2.  遵循[在獨立伺服器上部署儲存空間](../storage-spaces/deploy-standalone-storage-spaces.md)中提供的**步驟 1-3**，使用 Windows PowerShell 或伺服器管理員，使用儲存空間佈建儲存體。
+        2.  遵循 [在獨立伺服器上部署儲存空間](../storage-spaces/deploy-standalone-storage-spaces.md)中提供的 **步驟 1-3**，使用 Windows PowerShell 或伺服器管理員，使用儲存空間佈建儲存體。
 
     -   **對於 iSCSI 儲存體：**
 
@@ -132,12 +133,12 @@ ms.locfileid: "87991511"
 *  [Hyper-V 容錯移轉叢集](#BKMK_HyperV)
 *  [適用於一般用途叢集的檔案伺服器](#BKMK_FileServer)
 
-### <a name="configure-a-hyper-v-failover-cluster"></a><a name="BKMK_HyperV"></a>設定 Hyper-v 容錯移轉叢集
+### <a name="configure-a-hyper-v-failover-cluster"></a><a name="BKMK_HyperV"></a> 設定 Hyper-v 容錯移轉叢集
 
 >[!NOTE]
 > 如果您想要建立檔案伺服器叢集，而非 Hyper-V 叢集，請略過本節並移至[設定適用於一般用途叢集的檔案伺服器](#BKMK_FileServer)一節。
 
-您現在將建立標準的容錯移轉叢集。 完成設定、驗證及測試之後，您將會使用儲存體複本加以延展。 您可以直接在叢集節點上，或從包含 Windows Server 遠端伺服器管理工具的遠端系統管理電腦，執行下列所有步驟。
+您現在將建立標準的容錯移轉叢集。 完成設定、驗證及測試之後，您將會使用儲存體複本加以延展。 您可以直接在叢集節點上執行下列所有步驟，或從包含 Windows Server 遠端伺服器管理工具的遠端系統管理電腦執行。
 
 #### <a name="graphical-method"></a>圖形化方法
 
@@ -148,21 +149,21 @@ ms.locfileid: "87991511"
    > [!NOTE]
    > 由於使用的是非對稱式存放裝置，您應該預期會在叢集驗證時發生存放裝置錯誤。
 
-3. 建立 Hyper-V 計算叢集。 確定叢集名稱等於或少於 15 個字元。 以下使用的範例是 SR-SRVCLUS。 如果節點要位於不同的子網中，您必須為每個子網的叢集名稱建立 IP 位址，並使用「或」相依性。  如需詳細資訊，請參閱設定[多重子網叢集的 IP 位址和相依性–第 III 部分](https://techcommunity.microsoft.com/t5/Failover-Clustering/Configuring-IP-Addresses-and-Dependencies-for-Multi-Subnet/ba-p/371698)。
+3. 建立 Hyper-V 計算叢集。 確定叢集名稱等於或少於 15 個字元。 以下使用的範例是 SR-SRVCLUS。 如果節點位於不同的子網，您必須為每個子網的叢集名稱建立 IP 位址，並使用「或」相依性。  如需詳細資訊，請參閱設定 [多重子網叢集的 IP 位址和相依性–第三部分](https://techcommunity.microsoft.com/t5/Failover-Clustering/Configuring-IP-Addresses-and-Dependencies-for-Multi-Subnet/ba-p/371698)。
 
 4. 設定檔案共用見證或雲端見證，以在發生網站遺失時提供仲裁。
 
    > [!NOTE]
-   > WIndows Server 現在包含 Cloud (Azure) 型見證的選項。 您可以選擇此仲裁選項，而不是檔案共用見證。
+   > WIndows Server 現在包含適用于雲端 (Azure) 為基礎的見證的選項。 您可以選擇此仲裁選項，而不是檔案共用見證。
 
    > [!WARNING]
    > 如需仲裁設定的詳細資訊，請參閱[設定和管理 Windows Server 2012 容錯移轉叢集中的仲裁指南的見證設定](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj612870(v=ws.11))。 如需 `Set-ClusterQuorum` Cmdlet 的詳細資訊，請參閱 [Set-ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum)。
 
 5. 檢閱 [Windows Server 2012 中 Hyper-V 叢集的網路建議](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn550728(v=ws.11))，並確定您是以最佳方式設定叢集網路。
 
-6. 在 Redmond 網站中，將一個磁碟新增到叢集 CSV。 若要這樣做，在 [存放裝置]**** 區段的 [磁碟]**** 節點中，使用滑鼠右鍵按一下來源磁碟，然後按一下 [新增至叢集共用磁碟區]****。
+6. 在 Redmond 網站中，將一個磁碟新增到叢集 CSV。 若要這樣做，在 [存放裝置] 區段的 [磁碟] 節點中，使用滑鼠右鍵按一下來源磁碟，然後按一下 [新增至叢集共用磁碟區]。
 
-7. 使用[部署 Hyper-V 叢集](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj863389(v=ws.11))指南，在 **Redmond** 網站中只遵循步驟 7-10 來建立測試虛擬機器，以確保叢集可在第一個測試網站中共用存放裝置的兩個節點內運作正常。
+7. 使用 [部署 Hyper-V 叢集](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj863389(v=ws.11))指南，在 **Redmond** 網站中只遵循步驟 7-10 來建立測試虛擬機器，以確保叢集可在第一個測試網站中共用存放裝置的兩個節點內運作正常。
 
 8. 如果您要建立兩個節點延展叢集，必須先新增所有儲存體才能繼續進行。 若要這樣做，在叢集節點上使用系統管理權限開啟 PowerShell 工作階段，並執行下列命令︰`Get-ClusterAvailableDisk -All | Add-ClusterDisk`。
 
@@ -172,12 +173,12 @@ ms.locfileid: "87991511"
 
     例如，若要驗證兩個建議的延展式叢集節點，其中每一個都有 **D:** 與 **E:** 磁碟區，並且執行測試 30 分鐘：
    1. 將所有可用的存放裝置移至 **SR-SRV01**。
-   2. 在容錯移轉叢集管理員的 [角色]**** 區段中，按一下 [建立空白角色]****。
-   3. 將線上存放裝置新增至名為 [新角色]**** 的空白角色。
+   2. 在容錯移轉叢集管理員的 [角色] 區段中，按一下 [建立空白角色]。
+   3. 將線上存放裝置新增至名為 [新角色] 的空白角色。
    4. 將所有可用的存放裝置移至 **SR-SRV03**。
-   5. 在容錯移轉叢集管理員的 [角色]**** 區段中，按一下 [建立空白角色]****。
-   6. 將空白的 [新角色 (2)]**** 移至 **SR-SRV03**。
-   7. 將線上存放裝置新增至名為 [新角色 (2)]**** 的空白角色。
+   5. 在容錯移轉叢集管理員的 [角色] 區段中，按一下 [建立空白角色]。
+   6. 將空白的 [新角色 (2)] 移至 **SR-SRV03**。
+   7. 將線上存放裝置新增至名為 [新角色 (2)] 的空白角色。
    8. 現在您已利用磁碟機代號掛接了所有存放裝置，接著可以使用 `Test-SRTopology` 來評估叢集。
 
         例如：
@@ -189,7 +190,7 @@ ms.locfileid: "87991511"
         ```
 
       > [!IMPORTANT]
-      > 在指定的來源磁碟區上，若評估期間使用的測試伺服器沒有任何寫入 IO 負載，請考慮新增工作負載，否則 Test-SRTopology 將不會產生有用的報告。 您應該使用和實際執行類似的工作負載來測試，才能看出實際的數字與建議的記錄檔大小。 或者，只要在測試期間，將一些檔案複製到來源磁碟區，或下載並執行 DISKSPD 以產生寫入 IO 即可。 例如，在 D：磁片區中有10分鐘的寫入 IO 工作負載較低的範例：`Diskspd.exe -c1g -d600 -W5 -C5 -b4k -t2 -o2 -r -w5 -i100 d:\test.dat`
+      > 在指定的來源磁碟區上，若評估期間使用的測試伺服器沒有任何寫入 IO 負載，請考慮新增工作負載，否則 Test-SRTopology 將不會產生有用的報告。 您應該使用和實際執行類似的工作負載來測試，才能看出實際的數字與建議的記錄檔大小。 或者，只要在測試期間，將一些檔案複製到來源磁碟區，或下載並執行 DISKSPD 以產生寫入 IO 即可。 例如，具有低寫入 IO 工作負載的範例，在 D：磁片區中有十分鐘： `Diskspd.exe -c1g -d600 -W5 -C5 -b4k -t2 -o2 -r -w5 -i100 d:\test.dat`
 
 1.  檢查 **TestSrTopologyReport-< 日期 >.html** 報告，以確定您符合儲存體複本需求，並記下初始同步時間預測和記錄檔建議。
 
@@ -217,7 +218,7 @@ ms.locfileid: "87991511"
     > [!NOTE]
     > 沒有任何選項可以使用 Windows Server 2016 中的容錯移轉叢集管理員來設定網站感知。
 
-5.  ** (選擇性) **設定叢集網路和 Active Directory，以取得更快的 DNS 網站容錯移轉。 您可以利用 Hyper-V 軟體定義的網路功能、延展的 VLAN、網路抽象裝置、降低的 DNS TTL，以及其他常見的技巧。
+5.  **(選擇性)** 設定叢集網路和 Active Directory，以加快 DNS 網站容錯移轉的速度。 您可以利用 Hyper-V 軟體定義的網路功能、延展的 VLAN、網路抽象裝置、降低的 DNS TTL，以及其他常見的技巧。
 
     如需詳細資訊，請參閱 Microsoft Ignite 工作階段：[Stretching Failover Clusters and Using Storage Replica in Windows Server vNext](https://channel9.msdn.com/Events/Ignite/2015/BRK3487) (在 Windows Server vNext 中延展容錯移轉叢集和使用儲存體複本) 和 [Enable Change Notifications between Sites - How and Why?](/archive/blogs/qzaidi/enable-change-notifications-between-sites-how-and-why) (啟用網站之間的變更通知 - 方式與原因？) 部落格文章。
 
@@ -241,7 +242,7 @@ ms.locfileid: "87991511"
    > [!NOTE]
    >  由於使用的是非對稱式存放裝置，您應該預期會在叢集驗證時發生存放裝置錯誤。
 
-2. 建立一般使用儲存叢集的檔案伺服器 (您必須指定您自己的靜態 IP 位址，叢集將會使用) 。 確定叢集名稱等於或少於 15 個字元。  如果節點位於不同的子網中，則必須使用「或」相依性來建立其他網站的 IP 位址。 如需詳細資訊，請參閱設定[多重子網叢集的 IP 位址和相依性–第 III 部分](https://techcommunity.microsoft.com/t5/Failover-Clustering/Configuring-IP-Addresses-and-Dependencies-for-Multi-Subnet/ba-p/371698)。
+2. 建立一般使用儲存體叢集的檔案伺服器 (您必須指定叢集將用) 的靜態 IP 位址。 確定叢集名稱等於或少於 15 個字元。  如果節點位於不同的子網中，則必須使用「或」相依性建立其他網站的 IP 位址。 如需詳細資訊，請參閱設定 [多重子網叢集的 IP 位址和相依性–第三部分](https://techcommunity.microsoft.com/t5/Failover-Clustering/Configuring-IP-Addresses-and-Dependencies-for-Multi-Subnet/ba-p/371698)。
    ```PowerShell
    New-Cluster -Name SR-SRVCLUS -Node SR-SRV01, SR-SRV02, SR-SRV03, SR-SRV04 -StaticAddress <your IP here>
    Add-ClusterResource -Name NewIPAddress -ResourceType “IP Address” -Group “Cluster Group”
@@ -255,7 +256,7 @@ ms.locfileid: "87991511"
    ```
 
    > [!NOTE]
-   > WIndows Server 現在包含 Cloud (Azure) 型見證的選項。 您可以選擇此仲裁選項，而不是檔案共用見證。
+   > WIndows Server 現在包含適用于雲端 (Azure) 為基礎的見證的選項。 您可以選擇此仲裁選項，而不是檔案共用見證。
 
    如需仲裁設定的詳細資訊，請參閱[設定和管理 Windows Server 2012 容錯移轉叢集中的仲裁指南的見證設定](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj612870(v=ws.11))。 如需 `Set-ClusterQuorum` Cmdlet 的詳細資訊，請參閱 [Set-ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum)。
 
@@ -265,7 +266,7 @@ ms.locfileid: "87991511"
 
    這是 Windows Server 2016 中內建的行為。
 
-6. 使用[部署 Hyper-V 叢集](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj863389(v=ws.11))指南，在 **Redmond** 網站中只遵循步驟 7-10 來建立測試虛擬機器，以確保叢集可在第一個測試網站中共用存放裝置的兩個節點內運作正常。
+6. 使用 [部署 Hyper-V 叢集](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj863389(v=ws.11))指南，在 **Redmond** 網站中只遵循步驟 7-10 來建立測試虛擬機器，以確保叢集可在第一個測試網站中共用存放裝置的兩個節點內運作正常。
 
 7. 一旦滿足之後，請移除測試 VM。 視需要將任何實際的測試虛擬機器新增到建議的來源節點，以進行進一步評估。
 
@@ -284,7 +285,7 @@ ms.locfileid: "87991511"
    (Get-Cluster).PreferredSite="Seattle"
    ```
 
-9. ** (選擇性) **設定叢集網路和 Active Directory，以取得更快的 DNS 網站容錯移轉。 您可以利用 Hyper-V 軟體定義的網路功能、延展的 VLAN、網路抽象裝置、降低的 DNS TTL，以及其他常見的技巧。
+9. **(選擇性)** 設定叢集網路和 Active Directory，以加快 DNS 網站容錯移轉的速度。 您可以利用 Hyper-V 軟體定義的網路功能、延展的 VLAN、網路抽象裝置、降低的 DNS TTL，以及其他常見的技巧。
 
    如需詳細資訊，請參閱 Microsoft Ignite 工作階段：[Stretching Failover Clusters and Using Storage Replica in Windows Server vNext](https://channel9.msdn.com/Events/Ignite/2015/BRK3487) (在 Windows Server vNext 中延展容錯移轉叢集和使用儲存體複本) 和 [Enable Change Notifications between Sites - How and Why](/archive/blogs/qzaidi/enable-change-notifications-between-sites-how-and-why) (啟用網站之間的變更通知 - 方式與原因)。
 
@@ -299,12 +300,12 @@ ms.locfileid: "87991511"
 
 
 
-### <a name="configure-a-file-server-for-general-use-cluster"></a><a name="BKMK_FileServer"></a>設定一般用途叢集的檔案伺服器
+### <a name="configure-a-file-server-for-general-use-cluster"></a><a name="BKMK_FileServer"></a> 設定一般使用叢集的檔案伺服器
 
 >[!NOTE]
 > 如果您已經設定 Hyper-V 容錯移轉叢集 (如[設定 Hyper-V 容錯移轉叢集](#BKMK_HyperV)中所述)，請略過本節。
 
-您現在將建立標準的容錯移轉叢集。 完成設定、驗證及測試之後，您將會使用儲存體複本加以延展。 您可以直接在叢集節點上，或從包含 Windows Server 遠端伺服器管理工具的遠端系統管理電腦，執行下列所有步驟。
+您現在將建立標準的容錯移轉叢集。 完成設定、驗證及測試之後，您將會使用儲存體複本加以延展。 您可以直接在叢集節點上執行下列所有步驟，或從包含 Windows Server 遠端伺服器管理工具的遠端系統管理電腦執行。
 
 #### <a name="graphical-method"></a>圖形化方法
 
@@ -313,11 +314,11 @@ ms.locfileid: "87991511"
 2. 驗證建議的叢集並分析結果，以確保您能繼續進行。
    >[!NOTE]
    >由於使用的是非對稱式存放裝置，您應該預期會在叢集驗證時發生存放裝置錯誤。
-3. 建立適用於一般用途存放裝置叢集的檔案伺服器。 確定叢集名稱等於或少於 15 個字元。 以下使用的範例是 SR-SRVCLUS。  如果節點要位於不同的子網中，您必須為每個子網的叢集名稱建立 IP 位址，並使用「或」相依性。  如需詳細資訊，請參閱設定[多重子網叢集的 IP 位址和相依性–第 III 部分](https://techcommunity.microsoft.com/t5/Failover-Clustering/Configuring-IP-Addresses-and-Dependencies-for-Multi-Subnet/ba-p/371698)。
+3. 建立適用於一般用途存放裝置叢集的檔案伺服器。 確定叢集名稱等於或少於 15 個字元。 以下使用的範例是 SR-SRVCLUS。  如果節點位於不同的子網，您必須為每個子網的叢集名稱建立 IP 位址，並使用「或」相依性。  如需詳細資訊，請參閱設定 [多重子網叢集的 IP 位址和相依性–第三部分](https://techcommunity.microsoft.com/t5/Failover-Clustering/Configuring-IP-Addresses-and-Dependencies-for-Multi-Subnet/ba-p/371698)。
 
 4. 設定檔案共用見證或雲端見證，以在發生網站遺失時提供仲裁。
    >[!NOTE]
-   > WIndows Server 現在包含 Cloud (Azure) 型見證的選項。 您可以選擇此仲裁選項，而不是檔案共用見證。
+   > WIndows Server 現在包含適用于雲端 (Azure) 為基礎的見證的選項。 您可以選擇此仲裁選項，而不是檔案共用見證。
    >[!NOTE]
    >  如需仲裁設定的詳細資訊，請參閱[設定和管理 Windows Server 2012 容錯移轉叢集中的仲裁指南的見證設定](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj612870(v=ws.11))。 如需 Set-ClusterQuorum Cmdlet 的詳細資訊，請參閱 [Set-ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum)。
 
@@ -329,19 +330,19 @@ ms.locfileid: "87991511"
     >[!NOTE]
     > 繼續進行下一個步驟之前，必須先在所有節點上安裝檔案伺服器角色。   |
 
-7. 在 [角色]**** 中，按一下 [設定角色]****。 檢閱 [在您開始前]****，然後按 [下一步]****。
+7. 在 [角色] 中，按一下 [設定角色]。 檢閱 [在您開始前]，然後按 [下一步]。
 
-8. 選取 [檔案伺服器]****，然後按 [下一步]****。
+8. 選取 [檔案伺服器]，然後按 [下一步]。
 
-9. 保留選取 [一般用途的檔案伺服器]****，然後按 [下一步]****。
+9. 保留選取 [一般用途的檔案伺服器]，然後按 [下一步]。
 
-10. 為 [用戶端存取點]**** 命名 (15 個字元或更少)，然後按 [下一步]****。
+10. 為 [用戶端存取點] 命名 (15 個字元或更少)，然後按 [下一步]。
 
-11. 選取磁碟做為您的資料磁碟區，然後按 [下一步]****。
+11. 選取磁碟做為您的資料磁碟區，然後按 [下一步]。
 
-12. 檢閱您的設定，然後按 [下一步]****。 按一下 [完成] 。
+12. 檢閱您的設定，然後按 [下一步]。 按一下 [完成] 。
 
-13. 在新的檔案伺服器角色上按一下滑鼠右鍵，然後按一下 [新增檔案共用]****。 繼續執行精靈以設定共用。
+13. 在新的檔案伺服器角色上按一下滑鼠右鍵，然後按一下 [新增檔案共用]。 繼續執行精靈以設定共用。
 
 14. 選擇性︰新增其他會在此網站中使用另一個存放裝置的檔案伺服器角色。
 
@@ -378,7 +379,7 @@ ms.locfileid: "87991511"
     > [!NOTE]
     >  由於使用的是非對稱式存放裝置，您應該預期會在叢集驗證時發生存放裝置錯誤。
 
-2.  建立 Hyper-V 計算叢集 (您必須指定自己的靜態 IP 位址，而叢集將使用此位址)。 確定叢集名稱等於或少於 15 個字元。  如果節點位於不同的子網中，則必須使用「或」相依性來建立其他網站的 IP 位址。 如需詳細資訊，請參閱設定[多重子網叢集的 IP 位址和相依性–第 III 部分](https://techcommunity.microsoft.com/t5/Failover-Clustering/Configuring-IP-Addresses-and-Dependencies-for-Multi-Subnet/ba-p/371698)。
+2.  建立 Hyper-V 計算叢集 (您必須指定自己的靜態 IP 位址，而叢集將使用此位址)。 確定叢集名稱等於或少於 15 個字元。  如果節點位於不同的子網中，則必須使用「或」相依性建立其他網站的 IP 位址。 如需詳細資訊，請參閱設定 [多重子網叢集的 IP 位址和相依性–第三部分](https://techcommunity.microsoft.com/t5/Failover-Clustering/Configuring-IP-Addresses-and-Dependencies-for-Multi-Subnet/ba-p/371698)。
 
     ```PowerShell
     New-Cluster -Name SR-SRVCLUS -Node SR-SRV01, SR-SRV02, SR-SRV03, SR-SRV04 -StaticAddress <your IP here>
@@ -396,9 +397,9 @@ ms.locfileid: "87991511"
     ```
 
     >[!NOTE]
-    > Windows Server 現在包含使用 Azure 的雲端見證選項。 您可以選擇此仲裁選項，而不是檔案共用見證。
+    > Windows Server 現在包含使用 Azure 進行雲端見證的選項。 您可以選擇此仲裁選項，而不是檔案共用見證。
 
-   如需仲裁設定的詳細資訊，請參閱[瞭解叢集和集區仲裁](../storage-spaces/understand-quorum.md)。 如需 Set-ClusterQuorum Cmdlet 的詳細資訊，請參閱 [Set-ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum)。
+   如需仲裁設定的詳細資訊，請參閱 [瞭解叢集和集區仲裁](../storage-spaces/understand-quorum.md)。 如需 Set-ClusterQuorum Cmdlet 的詳細資訊，請參閱 [Set-ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum)。
 
 4.  如果您要建立兩個節點延展叢集，必須先新增所有儲存體才能繼續進行。 若要這樣做，在叢集節點上使用系統管理權限開啟 PowerShell 工作階段，並執行下列命令︰`Get-ClusterAvailableDisk -All | Add-ClusterDisk`。
 
@@ -437,7 +438,7 @@ ms.locfileid: "87991511"
     如需詳細資訊，請參閱 Microsoft Ignite 工作階段：[Stretching Failover Clusters and Using Storage Replica in Windows Server vNext](https://channel9.msdn.com/events/ignite/2015/brk3487) (在 Windows Server vNext 中延展容錯移轉叢集和使用儲存體複本) 和部落格文章：[Enable Change Notifications between Sites - How and Why](/archive/blogs/qzaidi/enable-change-notifications-between-sites-how-and-why) (啟用網站之間的變更通知 - 方式與原因)。
 
 ### <a name="configure-a-stretch-cluster"></a>設定延展式叢集
-現在您將使用容錯移轉叢集管理員或 Windows PowerShell，來設定延展式叢集。 您可以直接在叢集節點上，或從包含 Windows Server 遠端伺服器管理工具的遠端系統管理電腦，執行下列所有步驟。
+現在您將使用容錯移轉叢集管理員或 Windows PowerShell，來設定延展式叢集。 您可以直接在叢集節點上執行下列所有步驟，或從包含 Windows Server 遠端伺服器管理工具的遠端系統管理電腦執行。
 
 #### <a name="failover-cluster-manager-method"></a>容錯移轉叢集管理員方法
 
@@ -446,22 +447,22 @@ ms.locfileid: "87991511"
 
     ![此畫面顯示容錯移轉叢集管理員](./media/Stretch-Cluster-Replication-Using-Shared-Storage/Storage_SR_OnlineDisks2.png)
 
-2.  在 CSV 磁碟或角色連接的磁碟上按一下滑鼠右鍵、按一下 [複寫]****，然後按一下 [啟用]****。
+2.  在 CSV 磁碟或角色連接的磁碟上按一下滑鼠右鍵、按一下 [複寫]，然後按一下 [啟用]。
 
-3.  選取適當的目的地資料磁碟區，然後按 [下一步]****。 顯示的目的地磁碟將擁有大小與所選取來源磁碟相同的磁碟區。 在這些精靈對話方塊之間移動時，可用的存放裝置將會自動移動，並視需要在背景上線。
+3.  選取適當的目的地資料磁碟區，然後按 [下一步]。 顯示的目的地磁碟將擁有大小與所選取來源磁碟相同的磁碟區。 在這些精靈對話方塊之間移動時，可用的存放裝置將會自動移動，並視需要在背景上線。
 
     ![此畫面顯示 [設定存放裝置複本] 精靈的 [選取目的地磁碟] 頁面](./media/Stretch-Cluster-Replication-Using-Shared-Storage/Storage_SR_SelectDestinationDataDisk2.png)
 
-4.  選取適當的來源記錄磁碟，然後按 [下一步]****。 來源記錄磁碟區必須是在使用 SSD 或同樣快速媒體的磁碟上，而不是轉盤式磁碟。
+4.  選取適當的來源記錄磁碟，然後按 [下一步]。 來源記錄磁碟區必須是在使用 SSD 或同樣快速媒體的磁碟上，而不是轉盤式磁碟。
 
 5.  選取適當的目的地記錄檔磁碟區，然後按 [下一步]。 顯示的目的地記錄磁碟將擁有大小與所選來源記錄磁碟區相同的磁碟區。
 
-6.  如果目的地磁碟區不包含先前來自來源伺服器的資料複本，請保留 [覆寫目的地磁碟區]**** 上的 [覆寫磁碟區]**** 值。 如果目的地包含來自最新備份或先前複寫的類似資料，選取 [已植入資料的目的地磁碟]****，然後按 [下一步]****。
+6.  如果目的地磁碟區不包含先前來自來源伺服器的資料複本，請保留 [覆寫目的地磁碟區] 上的 [覆寫磁碟區] 值。 如果目的地包含來自最新備份或先前複寫的類似資料，選取 [已植入資料的目的地磁碟]，然後按 [下一步]。
 
-7.  如果您不打算使用 RPO 複寫，請保留 [同步複寫]**** 上的 [複寫模式]**** 值。 如果您想要透過較高延遲的網路來延展叢集，或在主要網站節點上需要較低的 IO 延遲，請將它變更為 [非同步複寫]****。
-8.  如果您不打算稍後搭配複寫群組中的其他磁碟配對來使用寫入順序，請保留 [最高效能]**** 上的 [一致性群組]**** 值。 如果您打算進一步將磁碟新增到此複寫群組，而且您需要保證寫入順序，選取 [啟用寫入順序]****，然後按 [下一步]****。
+7.  如果您不打算使用 RPO 複寫，請保留 [同步複寫] 上的 [複寫模式] 值。 如果您想要透過較高延遲的網路來延展叢集，或在主要網站節點上需要較低的 IO 延遲，請將它變更為 [非同步複寫]。
+8.  如果您不打算稍後搭配複寫群組中的其他磁碟配對來使用寫入順序，請保留 [最高效能] 上的 [一致性群組] 值。 如果您打算進一步將磁碟新增到此複寫群組，而且您需要保證寫入順序，選取 [啟用寫入順序]，然後按 [下一步]。
 
-9.  按 [下一步]**** 以設定複寫和延展性叢集資訊。
+9.  按 [下一步] 以設定複寫和延展性叢集資訊。
 
     ![此畫面顯示 [設定存放裝置複本] 精靈的 [選取確認] 頁面](./media/Stretch-Cluster-Replication-Using-Shared-Storage/Storage_SR_ConfigureSR2.png)
 
@@ -631,7 +632,7 @@ ms.locfileid: "87991511"
     ```
 
 ### <a name="manage-stretched-cluster-replication"></a>管理延展式叢集複寫
-現在您將要管理與操作延展式叢集。 您可以直接在叢集節點上，或從包含 Windows Server 遠端伺服器管理工具的遠端系統管理電腦，執行下列所有步驟。
+現在您將要管理與操作延展式叢集。 您可以直接在叢集節點上執行下列所有步驟，或從包含 Windows Server 遠端伺服器管理工具的遠端系統管理電腦執行。
 
 #### <a name="graphical-tools-method"></a>圖形化工具方法
 
@@ -641,21 +642,21 @@ ms.locfileid: "87991511"
 
     1.  在目的地節點上：
 
-        1.  針對資料磁碟區新增**儲存體複本統計資料**物件及其效能計數器。
+        1.  針對資料磁碟區新增 **儲存體複本統計資料** 物件及其效能計數器。
 
         2.  檢查結果。
 
     2.  在來源節點上：
 
-        1.  針對資料磁碟區新增**儲存體複本統計資料**和**儲存體複本磁碟分割 I/O 統計資料**物件及其所有的效能計數器 (後者只適用於目前來源伺服器上的資料)。
+        1.  針對資料磁碟區新增 **儲存體複本統計資料** 和 **儲存體複本磁碟分割 I/O 統計資料** 物件及其所有的效能計數器 (後者只適用於目前來源伺服器上的資料)。
 
         2.  檢查結果。
 
 3.  若要改變延展式叢集內的複寫來源和目的地，請使用下列方法：
 
-    1.  若要在相同網站的節點之間移動來源複寫︰在來源 CSV 上按一下滑鼠右鍵、按一下 [移動存放裝置]****、按一下 [選取節點]****，然後選取同一個網站中的節點。 如果針對已指派角色的磁碟使用非 CSV 的存放裝置，您就要移動該角色。
+    1.  若要在相同網站的節點之間移動來源複寫︰在來源 CSV 上按一下滑鼠右鍵、按一下 [移動存放裝置]、按一下 [選取節點]，然後選取同一個網站中的節點。 如果針對已指派角色的磁碟使用非 CSV 的存放裝置，您就要移動該角色。
 
-    2.  若要將來源複寫從某一個網站移至另一個網站︰在來源 CSV 上按一下滑鼠右鍵、按一下 [移動存放裝置]****、按一下 [選取節點]****，然後選取另一個網站中的節點。 如果您設定了慣用的網站，就可以使用最可能的節點，一律將來源存放裝置移至慣用網站中的節點。 如果針對已指派角色的磁碟使用非 CSV 的存放裝置，您就要移動該角色。
+    2.  若要將來源複寫從某一個網站移至另一個網站︰在來源 CSV 上按一下滑鼠右鍵、按一下 [移動存放裝置]、按一下 [選取節點]，然後選取另一個網站中的節點。 如果您設定了慣用的網站，就可以使用最可能的節點，一律將來源存放裝置移至慣用網站中的節點。 如果針對已指派角色的磁碟使用非 CSV 的存放裝置，您就要移動該角色。
 
     3.  若要執行計劃的容錯移轉且複寫方向是從某一個網站到另一個網站：在某一個網站中，使用 **ServerManager.exe** 或 **SConfig** 同時關閉這兩個節點。
 
@@ -667,12 +668,12 @@ ms.locfileid: "87991511"
         > [!NOTE]
         > 儲存空間複本會卸載目的地磁碟區。 這是原廠設定。
 
-4.  若要變更預設 8 GB 的記錄檔大小，請以滑鼠右鍵按一下來源和目的地記錄磁片，按一下 [複寫**記錄**檔] 索引標籤，然後變更兩個磁片上的大小以符合。
+4.  若要變更預設的8GB 記錄檔大小，請以滑鼠右鍵按一下來源和目的地記錄磁片，按一下 [複寫 **記錄** 檔] 索引標籤，然後變更兩個磁片上要符合的大小。
 
     > [!NOTE]
     > 預設記錄檔大小為 8 GB。 根據 `Test-SRTopology` Cmdlet 的結果，您可能會決定以較高或較低的值來使用 `-LogSizeInBytes`。
 
-5.  若要將另一對複寫的磁碟新增到現有的複寫群組，您必須確定在可用存放裝置中至少有一個額外的磁碟。 您接著可以滑鼠右鍵按一下來源磁碟，並選取 [新增複寫合作關係]****。
+5.  若要將另一對複寫的磁碟新增到現有的複寫群組，您必須確定在可用存放裝置中至少有一個額外的磁碟。 您接著可以滑鼠右鍵按一下來源磁碟，並選取 [新增複寫合作關係]。
     > [!NOTE]
     > 可用的存放裝置中需要「虛設」磁碟，是因為要用於迴歸而非刻意。 容錯移轉叢集管理員先前通常支援新增更多磁碟，這在未來的版本中將會再度支援。
 
@@ -681,7 +682,7 @@ ms.locfileid: "87991511"
 
     1.  啟動 **cluadmin.msc**。
 
-    2.  以滑鼠右鍵按一下來源 CSV 磁碟、按一下 [複寫]****，然後按一下 [移除]****。 接受警告提示。
+    2.  以滑鼠右鍵按一下來源 CSV 磁碟、按一下 [複寫]，然後按一下 [移除]。 接受警告提示。
 
     3.  (選擇性) 從 CSV 移除存放裝置，並讓它回到可用的存放裝置中，以進行進一步測試。
 
@@ -771,7 +772,7 @@ ms.locfileid: "87991511"
         > [!NOTE]
         > 儲存空間複本會卸載目的地磁碟區。 這是原廠設定。
 
-4.  若要變更預設 8 GB 的記錄檔大小，請在來源和目的地儲存體複本群組上使用**set-srgroup** 。   例如，若要將所有記錄檔設定為 2 GB：
+4.  若要變更預設的8GB 記錄檔大小，請在來源和目的地儲存體複本群組上使用 **Set-SRGroup** 。   例如，若要將所有記錄檔設定為 2 GB：
 
     ```PowerShell
     Get-SRGroup | Set-SRGroup -LogSizeInBytes 2GB
@@ -796,7 +797,7 @@ ms.locfileid: "87991511"
 ### <a name="related-topics"></a>相關主題
 - [儲存體複本總覽](storage-replica-overview.md)
 - [伺服器對伺服器儲存體複寫](server-to-server-storage-replication.md)
-- [叢集對叢集儲存體複寫](cluster-to-cluster-storage-replication.md)
+- [叢集至叢集儲存體複寫](cluster-to-cluster-storage-replication.md)
 - [儲存體複本：已知問題](storage-replica-known-issues.md)
 - [儲存體複本：常見問題集](storage-replica-frequently-asked-questions.md)
 

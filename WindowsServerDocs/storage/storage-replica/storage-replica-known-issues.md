@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：儲存體複本的已知問題
 title: 儲存體複本的已知問題
 manager: siroy
 ms.author: nedpyle
@@ -6,12 +7,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 06/25/2019
 ms.assetid: ceddb0fa-e800-42b6-b4c6-c06eb1d4bc55
-ms.openlocfilehash: ed566e5db46cb147925799b055e8bde8ead57b25
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2609d52cfa4ccc84125617567dbe4c44f16b6bfb
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961172"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97043226"
 ---
 # <a name="known-issues-with-storage-replica"></a>儲存體複本的已知問題
 
@@ -53,13 +54,13 @@ ms.locfileid: "87961172"
 
 ## <a name="during-initial-sync-see-event-log-4004-warnings"></a>初始同步處理期間，請參閱事件記錄檔 4004 警告
 
-在 Windows Server 2016 中，設定複寫時，來源和目的地伺服器可能會在初始同步處理期間顯示多個 **StorageReplica\Admin*事件記錄4004警告，其狀態為「系統資源不足，無法完成 API」。 您可能也會看到 5014 錯誤。 這些資訊表示伺服器沒有足夠的可用記憶體 (RAM) 來同時執行初始同步處理以及執行工作負載。 請增加 RAM 或減少儲存體複本以外的功能與應用程式使用的 RAM。
+在 Windows Server 2016 中，設定複寫時，來源和目的地伺服器在初始同步處理期間可能會顯示多個 **StorageReplica\Admin*-事件記錄4004警告，狀態為「沒有足夠的系統資源可完成 API」。 您可能也會看到 5014 錯誤。 這些資訊表示伺服器沒有足夠的可用記憶體 (RAM) 來同時執行初始同步處理以及執行工作負載。 請增加 RAM 或減少儲存體複本以外的功能與應用程式使用的 RAM。
 
 ## <a name="when-using-guest-clusters-with-shared-vhdx-and-a-host-without-a-csv-virtual-machines-stop-responding-after-configuring-replication"></a>當使用包含共用 VHDX 的客體叢集與沒有 CSV 的主機時，虛擬機器會在設定複寫後停止回應
 
 在 Windows Server 2016 中，針對儲存體複本測試或示範目的使用 Hyper-V 客體叢集，以及使用共用 VHDX 作為客體叢集儲存體時，虛擬機器會在您設定複寫後停止回應。 如果您重新啟動 Hyper-V 主機，虛擬機器就會開始回應，但複寫組態將不會完成，且不會發生複寫。
 
-當您使用 **fltmc.exe attach svhdxflt*-略過執行 CSV 之 hyper-v 主機的需求時，就會發生這種行為。 不支援使用此命令，並僅供測試與示範使用。
+當您使用 **fltmc.exe 附加 svhdxflt*-來略過執行 CSV 之 hyper-v 主機的需求時，就會發生這種行為。 不支援使用此命令，並僅供測試與示範使用。
 
 速度變慢的原因是 Windows Server 2016 中的儲存體 QoS 功能以及手動附加的共用 VHDX 篩選器之間一個設計上的互通性問題。 若要解決此問題，請停用儲存體 QoS 篩選器驅動程式並重新啟動 Hyper-V 主機︰
 
@@ -75,7 +76,7 @@ SC config storqosflt start= disabled
 Data partition sizes are different in those two groups
 ```
 
-使用 `New-Partition**` Cmdlet 而非 `New-Volume` 來建立磁碟區並將磁碟區格式化，因為第二個 Cmdlet 可能會將不同存放裝置陣列上的磁碟區大小四捨五入。 如果您已經建立 NTFS 磁碟區，您可以使用 `Resize-Partition` 來擴大或縮小其中一個磁碟區，以和另一個相符 (這無法透過 ReFS 磁碟區來完成)。 如果使用 **diskmgmt.msc*或**伺服器管理員**，將不會進行舍入。
+使用 `New-Partition**` Cmdlet 而非 `New-Volume` 來建立磁碟區並將磁碟區格式化，因為第二個 Cmdlet 可能會將不同存放裝置陣列上的磁碟區大小四捨五入。 如果您已經建立 NTFS 磁碟區，您可以使用 `Resize-Partition` 來擴大或縮小其中一個磁碟區，以和另一個相符 (這無法透過 ReFS 磁碟區來完成)。 如果使用 **diskmgmt.msc* 或 **伺服器管理員**，則不會進行四捨五入。
 
 ## <a name="running-test-srtopology-fails-with-name-related-errors"></a>執行發生名稱相關錯誤的 Test-SRTopology 失敗
 
@@ -137,7 +138,7 @@ At line: 1 char: 1
 + FullyQua1ifiedErrorId : Windows System Error 1168 ,New-SRPartnership
 ```
 
-這是因為選取和系統磁片磁碟機位於相同磁碟分割上的資料磁片區所造成的， (亦即 **C：*-磁片磁碟機及其 Windows 資料夾) 。 例如，在同時包含 **C：*-和 **D：* 磁片區的磁片磁碟機上，從相同的分割區建立。 這在儲存體複本中不支援；您必須挑選不同的磁碟區來複寫。
+這是因為選取與系統磁片區位於相同磁碟分割上的資料磁片區 (例如 **C：*-磁片磁碟機及其 Windows 資料夾) 。 例如，在包含從相同磁碟分割建立的 **C：*-和 **D：* 磁片區的磁片磁碟機上。 這在儲存體複本中不支援；您必須挑選不同的磁碟區來複寫。
 
 ## <a name="attempting-to-grow-a-replicated-volume-fails-due-to-missing-update"></a>由於遺失更新，嘗試增加複寫的磁碟區失敗
 
@@ -162,7 +163,7 @@ Element not found
 
 即使您使用 `Set-SRGroup -Name rg01 -AllowVolumeResize $TRUE` 正確地在來源伺服器上啟用磁碟區調整大小，則會發生這個錯誤。
 
-此問題已在 Windows 10 的累積更新（版本 1607 (年度更新) 和 Windows Server 2016）中修正：12月9日 2016 (KB3201845) 。
+此問題已在 Windows 10 的累積更新中修正，版本 1607 (周年更新) 和 Windows Server 2016：2016年12月9日 (KB3201845) 。
 
 ## <a name="attempting-to-grow-a-replicated-volume-fails-due-to-missing-step"></a>由於遺失步驟，嘗試增加複寫的磁碟區失敗
 
@@ -194,7 +195,7 @@ Guidance: To grow a source data partition, set the policy on the replication gro
 Set-SRGroup -ComputerName [ComputerName] -Name [ReplicationGroupName] -AllowVolumeResize $true
 ```
 
-在您擴大來源資料分割之前，請確定目的地資料分割有足夠的空間可成長至相等的大小。 已封鎖儲存體複本所保護的資料分割縮減。
+在您擴大來源資料分割區之前，請確定目的地資料分割區有足夠的空間可成長至相等的大小。 儲存體複本所保護的資料分割區壓縮已遭到封鎖。
 
 磁碟管理嵌入式管理單元錯誤：
 
@@ -233,7 +234,7 @@ At line:1 char:1
 
 這起因於 Windows Server 2016 中內建的行為。 使用 `Set-SRPartnership` 移動非同步延伸叢集中的這些 PDR 磁碟。
 
-Windows Server 版本1709中的這項行為已變更，可根據客戶的意見反應，使用非同步複寫來進行手動和自動容錯移轉。
+此行為已在 Windows Server 1709 版中變更，以根據客戶的意見反應以非同步方式進行手動和自動容錯移轉。
 
 ## <a name="attempting-to-add-disks-to-a-two-node-asymmetric-cluster-returns-no-disks-suitable-for-cluster-disks-found"></a>嘗試將磁碟新增至兩個節點的非對稱式叢集會傳回「找不到適用於叢集磁碟的磁碟」
 
@@ -261,7 +262,7 @@ Get-ClusterAvailableDisk -All | Add-ClusterDisk
 Set-SmbBandwidthLimit  -Category StorageReplication -BytesPerSecond 32MB
 ```
 
-因為儲存體複本與 SMB 之間的互通性問題而發生此問題。 此問題已在 Windows Server 2016 的2017年7月累積更新和 Windows Server 1709 版中先修正。
+因為儲存體複本與 SMB 之間的互通性問題而發生此問題。 此問題是在 Windows Server 2016 的2017年7月累積更新和 Windows Server 1709 版中第一次修正。
 
 ## <a name="event-1241-warning-repeated-during-initial-sync"></a>在初始同步期間重複出現的事件 1241 警告
 
@@ -294,7 +295,7 @@ TargetRPO: 30
 
 - 非同步的目的地目前中斷連線。 RPO 可能在恢復連線後可以使用。
 
-- 非同步目的地無法跟上來源的步調，使最新的目的地記錄檔記錄不再存在於來源記錄檔中。 目的地將會開始區塊複製。 在區塊複製完成之後，RPO 應該會變成可用。
+- 非同步目的地無法與來源保持一致，因此最新的目的地記錄檔記錄不再存在於來源記錄檔中。 目的地將開始區塊複製。 在區塊複製完成之後，RPO 應該會變成可用。
 
 這是初始同步期間預期會出現的行為，可以安全地忽略。 此行為可能會在未來版本中變更。 如果您在進行中的非同步複寫期間看到此行為，請調查合作關係以判斷為何複寫延遲超過您設定的 RPO (預設 30 秒) 的原因。
 
@@ -328,7 +329,7 @@ A process has requested access to an object, but has not been granted those acce
 Guidance: Possible causes include network failures, share creation failures for the remote replication group, or firewall settings. Make sure SMB traffic is allowed and there are no connectivity issues between the local computer and the remote computer. You should expect this event when suspending replication or removing a replication partnership.
 ```
 
-請注意 `Status: "{Access Denied}"` ， `A process has requested access to an object, but has not been granted those access rights.` 這是儲存體複本中的已知問題，而且在2017年9月12日的品質更新中已修正-KB4038782 (OS 組建 14393.1715) https://support.microsoft.com/help/4038782/windows-10-update-kb4038782
+請注意 `Status: "{Access Denied}"` ，此訊息 `A process has requested access to an object, but has not been granted those access rights.` 是儲存體複本內的已知問題，並已在2017年9月12日的品質更新中修正-KB4038782 (作業系統組建 14393.1715) https://support.microsoft.com/help/4038782/windows-10-update-kb4038782
 
 ## <a name="error-failed-to-bring-the-resource-cluster-disk-x-online-with-a-stretch-cluster"></a>錯誤「無法使資源 'Cluster Disk x' 上線。」 出現在延展式叢集
 
@@ -354,7 +355,7 @@ Error Code: 0x8007138d
 A cluster node is not available for this operation
 ```
 
-這個問題是由一或多個未初始化的磁片連接到一或多個叢集節點所造成。 若要解決問題，請使用 DiskMgmt.msc、DISKPART.EXE 或 Initialize-Disk PowerShell Cmdlet 初始化所有連接的儲存體。
+此問題是由一或多個未初始化的磁片連接至一或多個叢集節點所造成。 若要解決問題，請使用 DiskMgmt.msc、DISKPART.EXE 或 Initialize-Disk PowerShell Cmdlet 初始化所有連接的儲存體。
 
 我們正努力提供可永久解決此問題的更新。 如果您願意協助我們並且您擁有 Microsoft 頂級支援合約，請透過 SRFEED@microsoft.com 寄送電子郵件給我們，我們才能為您提出向後修補的請求。
 
@@ -397,10 +398,10 @@ At line:1 char:1
 Run Get-Cluster | fl - on each node.
 ```
 
-如果為，則為在 `ClusterFunctionalLevel = 9` 此節點上執行儲存體複本所需的 Windows 2016 ClusterFunctionalLevel 版本。
+如果為 `ClusterFunctionalLevel = 9` ，則為在此節點上執行儲存體複本所需的 Windows 2016 ClusterFunctionalLevel 版本。
 如果 ClusterFunctionalLevel 不是 9，ClusterFunctionalLevel 將需要進行更新，才能在此節點實作儲存體複本。
 
-若要解決此問題，請執行 PowerShell Cmdlet 來提高叢集功能等級： [ClusterFunctionalLevel](/powershell/module/failoverclusters/update-clusterfunctionallevel)。
+若要解決此問題，請執行 PowerShell Cmdlet： [ClusterFunctionalLevel](/powershell/module/failoverclusters/update-clusterfunctionallevel)來提高叢集功能等級。
 
 ## <a name="small-unknown-partition-listed-in-diskmgmt-for-each-replicated-volume"></a>每個複寫的磁碟區都有小型不明磁碟分割在 DISKMGMT 中列出
 
@@ -416,25 +417,25 @@ An Unexpected Error has Occurred
 
 ## <a name="a-storage-replica-node-hangs-when-creating-snapshots"></a>建立快照集時，儲存體複本節點停止回應
 
-透過備份、VSSADMIN 等建立 VSS 快照集 () 儲存體複本節點停止回應，而且您必須強制重新開機節點以進行復原。 沒有錯誤，只是伺服器的硬停止回應。
+透過備份、VSSADMIN 等) 儲存體複本節點建立 VSS 快照集 (時，您必須強制重新開機節點以復原。 沒有錯誤，只是伺服器的硬碟機。
 
-當您建立記錄檔磁片區的 VSS 快照集時，就會發生此問題。 根本原因是 VSS 的舊版設計層面，而不是儲存體複本。 當您建立儲存體複本記錄磁片區的快照集時，所產生的行為是 VSS i/o 佇列機制會使伺服器鎖死。
+當您建立記錄磁片區的 VSS 快照集時，就會發生此問題。 根本原因是 VSS 的舊版設計層面，而非儲存體複本。 當您將儲存體複本記錄磁片區快照集時所產生的行為，是 VSS i/o 佇列機制會使伺服器鎖死。
 
-若要避免此行為，請勿將儲存體複本記錄磁片區快照集。 不需要快照儲存體複本記錄檔磁片區，因為這些記錄檔無法還原。 此外，記錄磁片區絕對不應包含任何其他工作負載，因此通常不需要任何快照集。
+若要避免此行為，請不要將儲存體複本記錄磁片區快照集。 不需要快照儲存體複本記錄磁片區，因為這些記錄檔無法還原。 此外，記錄磁片區絕對不應該包含任何其他工作負載，因此一般不需要任何快照集。
 
-## <a name="high-io-latency-increase-when-using-storage-spaces-direct-with-storage-replica"></a>搭配儲存體複本使用儲存空間直接存取時，高 IO 延遲增加
+## <a name="high-io-latency-increase-when-using-storage-spaces-direct-with-storage-replica"></a>搭配使用儲存空間直接存取與儲存體複本時，高 IO 延遲增加
 
-使用具有 NVME 或 SSD 快取的儲存空間直接存取時，您會在設定儲存空間直接存取叢集之間的儲存體複本複寫時看到大於預期的延遲增加。 當您在效能 + 容量設定中使用 NVME 和 SSD，而且沒有 HDD 層或容量層級時，延遲變更的比例會高於您所看到的內容。
+搭配 NVME 或 SSD 快取使用儲存空間直接存取時，您會在設定儲存空間直接存取叢集之間的儲存體複本複寫時看到大於預期的延遲增加。 延遲的變更比例高於您在效能 + 容量設定中使用 NVME 和 SSD 時所看到的程度，而且沒有 HDD 層和容量層。
 
-此問題發生的原因是儲存體複本的記錄機制內的架構限制與較慢的媒體相比，與 NVME 的極低延遲相較。 使用儲存空間直接存取快取時，儲存體複本記錄的所有 i/o （以及應用程式的所有最近讀取/寫入 IO）都會出現在快取中，而且永遠不會在效能或容量層。 這表示所有儲存體複本活動都是在相同的速度媒體上執行-這是支援的設定，但不建議 (https://aka.ms/srfaq 如需) 記錄建議，請參閱。
+發生此問題的原因是儲存體複本的記錄機制內的架構限制，相較于較慢的媒體，與 NVME 的延遲極低。 使用儲存空間直接存取快取時，儲存體複本記錄的所有 i/o （以及所有最近的讀取/寫入 IO）都會出現在快取中，而且永遠不會出現在效能或容量層上。 這表示所有的儲存體複本活動都會在相同的速度媒體上執行-支援這項設定，但不建議 (請參閱 https://aka.ms/srfaq) 的記錄建議。
 
-搭配 Hdd 使用儲存空間直接存取時，您無法停用或避免快取。 因應措施是，如果只使用 SSD 和 NVME，您可以只設定效能和容量層。 如果使用該設定，而且只將 SR 記錄放在效能層，而只將其服務在容量層上的資料磁片區，您就可以避免上述的高延遲問題。 這種做法可以混合使用更快速且更慢的 Ssd，而且沒有 NVME。
+使用儲存空間直接存取與 Hdd 時，無法停用或避免快取。 因應措施是，如果只使用 SSD 和 NVME，您可以只設定效能和容量層。 如果使用該設定，並只將 SR 記錄檔放在效能層，只將其服務的資料磁片區放在容量層上，您就可以避免上述的高延遲問題。 您可以使用更快速且更慢的 Ssd，而不是 NVME 來完成相同的工作。
 
-這種因應措施並非理想，而且有些客戶可能無法使用它。 儲存體複本小組正致力於優化和更新的記錄機制，以供未來減少這些人為的瓶頸。 此 v1.1 記錄檔第一次變成可在 Windows Server 2019 中使用，而其改善的效能則在[伺服器存放裝置的 Blog](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)中有所說明。
+這種因應措施當然不理想，有些客戶可能無法使用它。 儲存體複本小組正致力於優化和更新的記錄機制，以便日後減少這些人為瓶頸。 此 v1.1 記錄檔首次在 Windows Server 2019 中變成可用，並在 [伺服器儲存體的 Blog](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)中說明其改進的效能。
 
-## <a name="error-could-not-find-file-when-running-test-srtopology-between-two-clusters"></a>在兩個叢集之間執行 Test-srtopology 時發生「找不到檔案」錯誤
+## <a name="error-could-not-find-file-when-running-test-srtopology-between-two-clusters"></a>在兩個叢集之間執行 Test-SRTopology 時發生「找不到檔案」錯誤
 
-在兩個叢集和其 CSV 路徑之間執行 Test-srtopology 時，會失敗，並出現錯誤：
+在兩個叢集與其 CSV 路徑之間執行 Test-SRTopology 時，將會失敗，並出現下列錯誤：
 
 ```powershell
 PS C:\Windows\system32> Test-SRTopology -SourceComputerName NedClusterA -SourceVolumeName C:\ClusterStorage\Volume1 -SourceLogVolumeName L: -DestinationComputerName NedClusterB -DestinationVolumeName C:\ClusterStorage\Volume1 -DestinationLogVolumeName L: -DurationInMinutes 1 -ResultPath C:\Temp
@@ -453,11 +454,11 @@ At line:1 char:1
 + FullyQualifiedErrorId : TestSRTopologyFailure,Microsoft.FileServices.SR.Powershell.TestSRTopologyCommand
 ```
 
-這是由 Windows Server 2016 中已知的程式碼瑕疵所造成。 此問題先在 Windows Server、版本1709和相關聯的 RSAT 工具中修正。 若要進行舊版解析，請洽詢 Microsoft 支援服務並要求將更新。 沒有因應措施。
+這是因為 Windows Server 2016 中的已知程式碼瑕疵所造成。 此問題是在 Windows Server 1709 版和相關聯的 RSAT 工具中第一次修正。 如需舊版的解決方式，請聯絡 Microsoft 支援服務並要求將更新。 沒有因應措施。
 
-## <a name="error-specified-volume-could-not-be-found-when-running-test-srtopology-between-two-clusters"></a>在兩個叢集之間執行 Test-srtopology 時發生「找不到指定的磁片區」錯誤
+## <a name="error-specified-volume-could-not-be-found-when-running-test-srtopology-between-two-clusters"></a>在兩個叢集之間執行 Test-SRTopology 時發生「找不到指定的磁片區」錯誤
 
-在兩個叢集和其 CSV 路徑之間執行 Test-srtopology 時，會失敗，並出現錯誤：
+在兩個叢集與其 CSV 路徑之間執行 Test-SRTopology 時，將會失敗，並出現下列錯誤：
 
 ```
 PS C:\> Test-SRTopology -SourceComputerName RRN44-14-09 -SourceVolumeName C:\ClusterStorage\Volume1 -SourceLogVolumeName L: -DestinationComputerName RRN44-14-13 -DestinationVolumeName C:\ClusterStorage\Volume1 -DestinationLogVolumeName L: -DurationInMinutes 30 -ResultPath c:\report
@@ -474,19 +475,19 @@ At line:1 char:1
 
 ## <a name="unable-to-access-the-data-drive-in-storage-replica-after-unexpected-reboot-when-bitlocker-is-enabled"></a>啟用 BitLocker 時，無法在非預期的重新開機後存取儲存體複本中的資料磁片磁碟機
 
-如果同時在這兩個磁片磁碟機上啟用 BitLocker (記錄磁片磁碟機和資料磁片磁碟機) 同時在這兩個存放裝置複本磁片磁碟機中，如果主伺服器重新開機，則即使在從 BitLocker 解除鎖定記錄磁片磁碟機之後，您仍無法存取主要磁碟磁碟機。
+如果同時在兩個磁片磁碟機上啟用 BitLocker (記錄磁片磁碟機和資料磁片磁碟機) 和兩個儲存體複本磁片磁碟機中，如果主要伺服器重新開機，您就無法存取主要磁碟磁碟機，即使是從 BitLocker 解除鎖定記錄磁片磁碟機之後也無法存取。
 
-這是預期中的行為。 若要復原資料或存取磁片磁碟機，您必須先解除鎖定記錄磁片磁碟機，然後開啟 Diskmgmt.msc 來找出資料磁片磁碟機。 再次將資料磁片磁碟機離線並上線。 找出磁片磁碟機上的 BitLocker 圖示並解除鎖定磁片磁碟機。
+這是預期中的行為。 若要復原資料或存取磁片磁碟機，您必須先解除鎖定記錄磁片磁碟機，然後開啟 Diskmgmt.msc 以找出資料磁片磁碟機。 請再次將資料磁片磁碟機離線並上線。 找出磁片磁碟機上的 BitLocker 圖示並解除鎖定磁片磁碟機。
 
-## <a name="issue-unlocking-the-data-drive-on-secondary-server-after-breaking-the-storage-replica-partnership"></a>中斷儲存體複本合作關係之後，將次要伺服器上的資料磁片磁碟機解除鎖定
+## <a name="issue-unlocking-the-data-drive-on-secondary-server-after-breaking-the-storage-replica-partnership"></a>中斷儲存體複本合作關係之後，在次要伺服器上解除鎖定資料磁片磁碟機的問題
 
-停用 SR 合作關係並移除儲存體複本之後，如果您無法使用其各自的密碼或金鑰來解除鎖定次要伺服器的資料磁片磁碟機，就會發生這種情況。
+停用 SR 合作關係並移除儲存體複本之後，如果您無法使用其各自的密碼或金鑰來解除鎖定次要伺服器的資料磁片磁碟機，就會發生此情況。
 
-您需要使用主伺服器資料磁片磁碟機的金鑰或密碼來解除鎖定次要伺服器的資料磁片磁碟機。
+您必須使用主伺服器資料磁片磁碟機的金鑰或密碼，才能解除鎖定次要伺服器的資料磁片磁碟機。
 
 ## <a name="test-failover-doesnt-mount-when-using-asynchronous-replication"></a>使用非同步複寫時，不會掛接測試容錯移轉
 
-執行 SRDestination 以在測試容錯移轉功能中讓目的地磁片區上線時，它會失敗，並出現錯誤：
+當執行 Mount-SRDestination 將目的地磁片區作為測試容錯移轉功能的一部分上線時，它會失敗，並出現下列錯誤：
 
 ```
 Mount-SRDestination: Unable to mount SR group <TEST>, detailed reason: The group or resource is not in the correct state to perform the supported operation.
@@ -497,15 +498,15 @@ Mount-SRDestination: Unable to mount SR group <TEST>, detailed reason: The group
         + FullyQua1ifiedErrorId : Windows System Error 5823, Mount-SRDestination.
 ```
 
-如果使用同步合作關係類型，測試容錯移轉會正常運作。
+如果使用同步合作關係類型，則測試容錯移轉會正常運作。
 
-這是由 Windows Server 版本1709中的已知程式碼瑕疵所造成。 若要解決此問題，請安裝[2018 年10月18日更新](https://support.microsoft.com/help/4462932/windows-10-update-kb4462932)。 此問題不存在於 Windows Server 2019 和 Windows Server 1809 版和更新版本中。
+這是因為 Windows Server 1709 版中的已知程式碼缺失所造成。 若要解決此問題，請安裝 [2018 年10月18日更新](https://support.microsoft.com/help/4462932/windows-10-update-kb4462932)。 此問題不在 Windows Server 2019 和 Windows Server 1809 版和更新版本中。
 
 ## <a name="additional-references"></a>其他參考資料
 
 - [儲存體複本](storage-replica-overview.md)
-- [使用共用存放裝置的延展叢集複寫](stretch-cluster-replication-using-shared-storage.md)
+- [使用共用儲存體延展叢集複寫](stretch-cluster-replication-using-shared-storage.md)
 - [伺服器對伺服器儲存體複寫](server-to-server-storage-replication.md)
-- [叢集對叢集儲存體複寫](cluster-to-cluster-storage-replication.md)
+- [叢集至叢集儲存體複寫](cluster-to-cluster-storage-replication.md)
 - [儲存體複本：常見問題集](storage-replica-frequently-asked-questions.md)
 - [儲存空間直接存取](../storage-spaces/storage-spaces-direct-overview.md)

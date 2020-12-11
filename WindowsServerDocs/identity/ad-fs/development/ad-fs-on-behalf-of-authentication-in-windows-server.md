@@ -1,17 +1,18 @@
 ---
 ms.assetid: 5052f13c-ff35-471d-bff5-00b5dd24f8aa
 title: 使用 OAuth 搭配 AD FS 2016 或更新版本，使用 (OBO) 來建立多層式應用程式
+description: 深入瞭解：使用 OAuth 搭配 AD FS 2016 或更新版本，使用 (OBO) 建立多層式應用程式
 author: billmath
 ms.author: billmath
 manager: mtillman
 ms.date: 02/22/2018
 ms.topic: article
-ms.openlocfilehash: b080f45d36d26ed566eacc5ae1ad84d98dd45d48
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 24dcb859c35d82ab81460ccaea2ceb1dba5e502c
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96864757"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97040876"
 ---
 # <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016-or-later"></a>使用 OAuth 搭配 AD FS 2016 或更新版本，使用 (OBO) 來建立多層式應用程式
 
@@ -279,7 +280,7 @@ authContext = new AuthenticationContext(authority, false);
 * 開啟 Web.config 檔案
 * 修改下列金鑰
 
-| Key | 值 |
+| 機碼 | 值 |
 |:-|:-|
 | ida：物件 | 設定 ToDoListService WebAPI 時，提供給 AD FS 的 ToDoListService 識別碼，例如 https://localhost:44321/ |
 | ida： ClientID | 設定 ToDoListService WebAPI 時，提供給 AD FS 的 ToDoListService 識別碼，例如 <https://localhost:44321/> </br>**Ida：物件和 ida： ClientID 彼此相符相當重要** |

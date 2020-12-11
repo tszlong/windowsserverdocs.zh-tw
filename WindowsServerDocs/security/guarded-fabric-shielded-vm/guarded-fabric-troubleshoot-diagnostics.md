@@ -1,17 +1,18 @@
 ---
 title: 使用受防護網狀架構診斷工具進行疑難排解
+description: 深入瞭解：使用受防護網狀架構診斷工具進行疑難排解
 ms.topic: article
 ms.assetid: 07691d5b-046c-45ea-8570-a0a85c3f2d22
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 01/14/2020
-ms.openlocfilehash: 5aa8b0f93a98e9cbf142476e6b05056d9a47eefd
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: a7921ba40f4fcc760aad1c281a0c29ba0abb6954
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96864807"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97039326"
 ---
 # <a name="troubleshooting-using-the-guarded-fabric-diagnostic-tool"></a>使用受防護網狀架構診斷工具進行疑難排解
 

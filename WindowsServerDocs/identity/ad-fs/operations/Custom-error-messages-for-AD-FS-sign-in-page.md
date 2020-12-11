@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解： AD FS 登入頁面的自訂錯誤訊息
 ms.assetid: 1df78c2a-5054-4b54-8310-c48ea62e6e0b
 title: AD FS 登入頁面的自訂錯誤訊息
 author: billmath
@@ -6,16 +7,16 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 91d9e0e5ba0a0272c1efc820578fb6547a14abc8
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: acfe34a7d151a7e14348e44350e9304a816428b9
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87956435"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97039906"
 ---
 # <a name="custom-error-messages-for-ad-fs-sign-in-page"></a>AD FS 登入頁面的自訂錯誤訊息
 
-您可以設定自訂錯誤訊息，以符合組織需求。 下圖顯示自訂的錯誤頁面描述，以及一般錯誤訊息。 使用下列 Windows PowerShell Cmdlet 來自訂您的錯誤訊息。
+您可以設定自訂錯誤訊息，以符合組織需求。 下圖顯示自訂的錯誤頁面描述，以及一般錯誤訊息。 使用下列 Windows PowerShell Cmdlet 自訂錯誤訊息。
 
 ![自訂錯誤](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom3.png)
 

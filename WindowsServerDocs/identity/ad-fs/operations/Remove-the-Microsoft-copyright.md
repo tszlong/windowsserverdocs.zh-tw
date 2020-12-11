@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：移除 Microsoft 著作權
 ms.assetid: c89a977c-b09f-44ec-be42-41e76a6cf3ad
 title: 移除 Microsoft 著作權
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: ec7d9cb02508fc046ce3e8f0378e63c82eecca8d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a5b377989315462789b9b33faf5267211c93bf8c
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87949772"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97039726"
 ---
 # <a name="remove-the-microsoft-copyright"></a>移除 Microsoft 著作權
 
@@ -35,7 +36,7 @@ ms.locfileid: "87949772"
    Export-AdfsWebTheme -Name custom -DirectoryPath C:\CustomWebTheme
    ```
 
-3. 找出 `Style.css` 位於輸出檔案夾中的檔案。 藉由使用上述範例，路徑會是`C:\CustomWebTheme\Css\Style.css.`
+3. 找出 `Style.css` 位於輸出檔案夾中的檔案。 使用上述範例，路徑會是 `C:\CustomWebTheme\Css\Style.css.`
 
 4. `Style.css`使用編輯器（例如 [記事本]）開啟檔案。
 

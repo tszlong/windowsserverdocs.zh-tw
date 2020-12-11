@@ -1,16 +1,17 @@
 ---
+description: 深入瞭解：分隔儲存空間直接存取中的磁片區配置
 title: 在儲存空間直接存取中分隔磁片區的配置
 manager: eldenc
 ms.topic: article
 author: cosmosdarwin
 ms.author: cosdar
 ms.date: 03/29/2018
-ms.openlocfilehash: 394d9dbb41f502fe9be273e97177237dea79fde7
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: b0d036b08ab3c538a134cdbc294c2208d8d547aa
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90078493"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97041406"
 ---
 # <a name="delimit-the-allocation-of-volumes-in-storage-spaces-direct"></a>在儲存空間直接存取中分隔磁片區的配置
 > 適用於：Windows Server 2019
@@ -67,7 +68,7 @@ Windows Server 2019 引進了在儲存空間直接存取中手動分隔磁片區
 
 1. 系統管理員必須負責分隔每個磁片區的配置，以平衡伺服器之間的儲存使用率，並保持存活的高機率，如 [最佳作法](#best-practices) 一節中所述。
 
-2. 使用分隔配置時，請為 **每個伺服器 (保留同一個容量磁片磁碟機，而沒有最大) **。 這不是一般配置的 [發佈建議](plan-volumes.md#choosing-the-size-of-volumes) ，而是到超出在四個容量磁片磁碟機總計。
+2. 使用分隔配置時，請為 **每個伺服器 (保留同一個容量磁片磁碟機，而沒有最大)**。 這不是一般配置的 [發佈建議](plan-volumes.md#choosing-the-size-of-volumes) ，而是到超出在四個容量磁片磁碟機總計。
 
 3. 如果伺服器失敗且需要被取代（如 [移除伺服器及其磁片磁碟機](remove-servers.md#remove-a-server-and-its-drives)中所述），系統管理員必須藉由新增新的伺服器並移除失敗的單一範例（以下範例），負責更新受影響磁片區的 delimitation。
 
@@ -112,7 +113,7 @@ VirtualDiskFriendlyName TotalFootprint Server1 Server2 Server3 Server4 Server5 S
 MyVolume                300 GB         100 GB  100 GB  100 GB  100 GB  0       0
 ```
 
-請注意，只有 Server1、Server2、Server3 和 Server4 包含 *MyVolume*的 slab。
+請注意，只有 Server1、Server2、Server3 和 Server4 包含 *MyVolume* 的 slab。
 
 ### <a name="change-a-delimited-allocation"></a>變更分隔配置
 
@@ -120,13 +121,13 @@ MyVolume                300 GB         100 GB  100 GB  100 GB  100 GB  0       0
 
 例如，若要將 *MyVolume* 移到一部伺服器上：
 
-1. 指定第五部伺服器 **可以** 儲存 *MyVolume*的 slab：
+1. 指定第五部伺服器 **可以** 儲存 *MyVolume* 的 slab：
 
     ```PowerShell
     Get-VirtualDisk MyVolume | Add-StorageFaultDomain -StorageFaultDomains $Servers[4]
     ```
 
-2. 指定第一部伺服器 **無法** 儲存 *MyVolume*的 slab：
+2. 指定第一部伺服器 **無法** 儲存 *MyVolume* 的 slab：
 
     ```PowerShell
     Get-VirtualDisk MyVolume | Remove-StorageFaultDomain -StorageFaultDomains $Servers[0]
@@ -193,7 +194,7 @@ MyVolume                300 GB         0       100 GB  100 GB  100 GB  100 GB  0
 
 ### <a name="can-i-delimit-some-volumes-but-not-others"></a>我可以分隔某些磁片區，而不是其他磁片區嗎？
 
-可以。 您可以選擇是否要分隔配置的每個磁片區。
+是。 您可以選擇是否要分隔配置的每個磁片區。
 
 ### <a name="does-delimited-allocation-change-how-drive-replacement-works"></a>分隔配置變更磁片磁碟機更換的運作方式為何？
 

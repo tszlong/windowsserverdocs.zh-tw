@@ -1,17 +1,18 @@
 ---
 title: 受防護的租使用者 Vm-使用 Virtual Machine Manager 部署受防護的 VM
+description: 深入瞭解：租使用者的受防護 Vm-使用 Virtual Machine Manager 部署受防護的 VM
 ms.topic: article
 ms.assetid: 39d5e29c-835d-490a-b74d-798a0dcb3f39
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 2d1671b0676d64e93e76e40687e889cb89800602
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 689cbf3a609cc9f0846663797898d4772865556f
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96866217"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97043746"
 ---
 # <a name="shielded-vms-for-tenants---deploying-a-shielded-vm-by-using-virtual-machine-manager"></a>受防護的租使用者 Vm-使用 Virtual Machine Manager 部署受防護的 VM
 

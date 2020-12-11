@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：支援使用虛擬網域控制站的 Hyper-v 複本
 ms.assetid: 45a65504-70b5-46ea-b2e0-db45263fabaa
 title: 支援針對虛擬網域控制站使用 Hyper-V 複本
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 0a8d59da05f7dbf675114c96ceac5e755b06a66a
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 4e91ea30c27d9e9c27386cdc6bccc0605845a86a
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93071050"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97043096"
 ---
 # <a name="support-for-using-hyper-v-replica-for-virtualized-domain-controllers"></a>支援針對虛擬網域控制站使用 Hyper-V 複本
 

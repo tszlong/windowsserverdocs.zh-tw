@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：選擇儲存空間直接存取的磁片磁碟機
 ms.assetid: 1368bc83-9121-477a-af09-4ae73ac16789
 title: 選擇儲存空間直接存取的磁碟機
 ms.author: cosdar
@@ -7,12 +8,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 07/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e01966d268968a5bdec3d704d32bcc84b2638b27
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7de0e6017a532d6ceefc5791450d144aabfdbaa1
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961031"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97041286"
 ---
 # <a name="choosing-drives-for-storage-spaces-direct"></a>選擇儲存空間直接存取的磁碟機
 
@@ -30,7 +31,7 @@ ms.locfileid: "87961031"
             <img src="media/understand-the-cache/pmem-100px.png" alt="Image of PMem (persistent memory)">
         </td>
         <td style="padding: 10px; border: 0;" valign="middle">
-            <b>PMem</b>指的是持續性記憶體，這是一種新的低延遲、高效能儲存體。
+            <b>PMem</b> 指的是持續性記憶體，這是一種新的低延遲、高效能儲存體。
         </td>
     </tr>
     <tr style="border: 0;">
@@ -38,7 +39,7 @@ ms.locfileid: "87961031"
             <img src="media/understand-the-cache/NVMe-100px.png" alt="Image of NVMe (Non-Volatile Memory Express)">
         </td>
         <td style="padding: 10px; border: 0;" valign="middle">
-            <b>NVMe</b> (Non-Volatile Memory Express) 指的是直接位於 PCIe 匯流排的固態硬碟。 常見的板型規格為 2.5" U.2、PCIe Add-In-Card (AIC) 及 M.2。 NVMe 提供較高的 IOPS 和 IO 輸送量，其延遲比目前支援的其他任何類型的磁片磁碟機（持續性記憶體除外）。
+            <b>NVMe</b> (Non-Volatile Memory Express) 指的是直接位於 PCIe 匯流排的固態硬碟。 常見的板型規格為 2.5" U.2、PCIe Add-In-Card (AIC) 及 M.2。 NVMe 提供較高的 IOPS 和 IO 輸送量，其延遲低於目前支援的任何其他類型磁片磁碟機（持續性記憶體除外）。
         </td>
     </tr>
     <tr style="border: 0;">
@@ -46,7 +47,7 @@ ms.locfileid: "87961031"
             <img src="media/understand-the-cache/SSD-100px.png" alt="Image of SSD drive">
         </td>
         <td style="padding: 10px; border: 0;" valign="middle">
-            <b>SSD</b>是指透過傳統 SATA 或 SAS 連接的固態硬碟。
+            <b>SSD</b> 是指透過傳統 SATA 或 SAS 連接的固態硬碟。
         </td>
     </tr>
     <tr style="border: 0;">
@@ -73,7 +74,7 @@ ms.locfileid: "87961031"
 
 ![All-Flash-Deployment-Possibilities](media/choosing-drives-and-resiliency-types/All-Flash-Deployment-Possibilities.png)
 
-1. **所有 NVMe。** 使用全 NVMe 可提供無與倫比的效能，包括最能夠預測的低延遲。 若您的磁碟機全為相同的模型，則沒有快取。 您也可混合較高耐力及較低耐力的 NVMe 模型，並將前者設定為替後者快取寫入 ([需要設定](understand-the-cache.md#manual-configuration))。
+1. **全部 NVMe。** 使用全 NVMe 可提供無與倫比的效能，包括最能夠預測的低延遲。 若您的磁碟機全為相同的模型，則沒有快取。 您也可混合較高耐力及較低耐力的 NVMe 模型，並將前者設定為替後者快取寫入 ([需要設定](understand-the-cache.md#manual-configuration))。
 
 2. **NVMe + SSD。** 搭配 SSD 使用 NVMe，NVMe 會自動快取 SSD 的寫入。 這可讓寫入只在需要時於快取中進行聯合並取消暫存，以減少耗用 SSD。 這可提供類似 NVMe 的特性，而讀取會直接由同樣快速的 SSD 提供。
 
@@ -92,7 +93,7 @@ ms.locfileid: "87961031"
 
 2. **SSD + HDD**。 如同上述項目，SSD 會透過快取讀取與寫入來加快兩者的速度。 這會提供類似 SSD 的寫入特性，而對於經常或最近讀取的資料會提供類似 SSD 的讀取特性。
 
-    還有另外一項較奇特的選項：使用*全部三種*類型。
+    還有另外一項較奇特的選項：使用 *全部三種* 類型。
 
 3. **NVMe + SSD + HDD。** 有了所有三種類型的磁碟機，NVMe 磁碟機會對 SSD 和 HDD 進行快取。 好處是您可在相同叢集中並排在 SSD 及 HDD 上建立磁碟區，全由 NVMe 進行加速。 前者完全形同「全快閃」部署，而後者完全形同「混合式」部署，如上所述。 在概念上形同擁有兩個集區，且具備極度的獨立容量管理及錯誤及修復循環等。
 
@@ -108,7 +109,7 @@ ms.locfileid: "87961031"
 1. **SSD + HDD**。 SSD 會快取讀取與寫入，以吸收高載並提供類似 SSD 的寫入效能，並於稍後對 HDD 進行最佳化的取消暫存。
 
 >[!IMPORTANT]
->不支援使用 Hdd 進行設定。 不建議將高耐用性 Ssd 快取提升至低耐用性 Ssd。
+>不支援只使用 Hdd 進行設定。 不建議將高耐用性 Ssd 快取至低耐用性 Ssd。
 
 ## <a name="sizing-considerations"></a>大小調整考量
 
@@ -116,11 +117,11 @@ ms.locfileid: "87961031"
 
 每個伺服器都必須具備至少兩個快取磁碟機 (備援所需的下限)。 建議您讓容量磁碟機數為快取磁碟機數的倍數。 例如，若有 4 部快取磁碟機，則 8 部容量磁碟機 (比例為 1:2) 展現的效能會比 7 或 9 部更一致。
 
-快取應該調整大小，以配合您的應用程式和工作負載的工作集，也就是它們在任何指定時間主動讀取和寫入的所有資料。 此外即無其他快取大小需求。 針對具有 Hdd 的部署，合理的起點是容量的10% –例如，如果每部伺服器都有 4 x 4 TB HDD = 16 TB 的容量，則每一部伺服器 2 x 800 GB SSD = 1.6 TB 的快取。 針對所有的 flash 部署（特別是極[高](https://techcommunity.microsoft.com/t5/storage-at-microsoft/understanding-ssd-endurance-drive-writes-per-day-dwpd-terabytes/ba-p/426024)的 ssd），較接近容量的5% （例如，如果每部伺服器具有 24 x 1.2 TB SSD = 28.8 tb 的容量），則 2 x 750 GB NVMe = 每一伺服器的 1.5 TB 快取。 您稍後隨時都可新增或移除快取磁碟機進行調整。
+快取應該調整大小以容納您的應用程式和工作負載的工作集，也就是在任何指定時間主動讀取和寫入的所有資料。 此外即無其他快取大小需求。 針對具有 Hdd 的部署，合理的起始位置是容量的10%，例如，如果每部伺服器都有 4 x 4 TB 的 HDD = 16 TB 的容量，則每一部伺服器的 2 x 800 GB SSD = 1.6 TB 的快取。 針對所有的快閃部署（特別是非常 [高的耐用](https://techcommunity.microsoft.com/t5/storage-at-microsoft/understanding-ssd-endurance-drive-writes-per-day-dwpd-terabytes/ba-p/426024) ssd），可能會很公平地開始更接近5% 的容量，例如，如果每部伺服器都有 24 x 1.2 TB 的 SSD = 28.8 TB 的容量，則每一部伺服器的 2 x 750 GB NVMe = 1.5 TB 的快取。 您稍後隨時都可新增或移除快取磁碟機進行調整。
 
 ### <a name="general"></a>一般
 
-建議您將每部伺服器的儲存容量總計限制為大約 400 tb (TB) 。 每個伺服器的儲存容量愈多，停機或重新開機後 (如套用軟體更新) 重新同步資料所需花費的時間愈長。 每個存放集區目前的大小上限為 4 pb (PB)  (4000 TB) 適用于 Windows Server 2019，或 1 pb （適用于 Windows Server 2016）。
+建議您將每部伺服器的總儲存容量限制為大約 400 tb (TB) 。 每個伺服器的儲存容量愈多，停機或重新開機後 (如套用軟體更新) 重新同步資料所需花費的時間愈長。 每個存放集區目前的大小上限為 4 pb (PB)  (4000 TB) 適用于 Windows Server 2019，或 1 pb （適用于 Windows Server 2016）。
 
 ## <a name="additional-references"></a>其他參考資料
 

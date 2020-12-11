@@ -1,17 +1,18 @@
 ---
 ms.assetid: 5fd4063d-34dc-4b15-9a88-cc6c1fff455a
 title: 逐步解說指南-使用機密應用程式的額外 Multi-Factor Authentication 管理風險
+description: 深入瞭解：逐步解說指南：使用機密應用程式的額外 Multi-Factor Authentication 管理風險
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 1dc0b0c278577e7318ead6b4e3ebba04b21c8a9c
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 15e2355dfa04bc53ac232b9f20bd7d26ea3535f6
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96866278"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97039536"
 ---
 # <a name="walkthrough-guide-manage-risk-with-additional-multi-factor-authentication-for-sensitive-applications"></a>逐步解說指南：透過其他多因素驗證管理機密應用程式的風險
 
@@ -202,7 +203,7 @@ ms.locfileid: "96866278"
 
 ##### <a name="to-configure-the-mfa-policy-based-on-users-group-membership-data-for-claimapp--via-the-ad-fs-management-console"></a>透過 AD FS 管理主控台，根據使用者的群組成員資格資料設定 MFA 原則
 
-1.  在您的同盟伺服器上，于 AD FS 管理主控台中， **Authentication Policies** 流覽至 [ \\ **每個信賴** 憑證者信任節點的驗證原則]，然後選取代表您範例應用程式的信賴憑證者信任 (**claimapp**) 。
+1.  在您的同盟伺服器上，于 AD FS 管理主控台中， 流覽至 [ \\ **每個信賴** 憑證者信任節點的驗證原則]，然後選取代表您範例應用程式的信賴憑證者信任 (**claimapp**) 。
 
 2.  在 [動作] 頁面，或在 [claimapp] 按一下滑鼠右鍵，選取 [編輯自訂多因素驗證]。
 

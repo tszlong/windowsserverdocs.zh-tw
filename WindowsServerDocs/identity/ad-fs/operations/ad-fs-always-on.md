@@ -1,16 +1,17 @@
 ---
 title: 使用 AlwaysOn 可用性群組設定 AD FS 部署
+description: 深入瞭解：使用 AlwaysOn 可用性群組設定 AD FS 部署
 author: billmath
 ms.author: billmath
 manager: daveba
 ms.date: 01/20/2020
 ms.topic: article
-ms.openlocfilehash: fac086cdcc08cb8941eba1dda9f4c41058d1b5d2
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 3d1ad6745eb7051857bc27b4fc60400f40b01731
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865067"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97039416"
 ---
 # <a name="setting-up-an-ad-fs-deployment-with-alwayson-availability-groups"></a>使用 AlwaysOn 可用性群組設定 AD FS 部署
 高可用性異地分散拓撲提供：
@@ -49,7 +50,7 @@ Always On 可用性群組 (AG) 是一或多個一起進行容錯移轉的使用�
 下表說明 WID 與 SQL database 之間支援的功能差異。
 
 
-| 類別      | 特徵       | WID 支援  | 受 SQL 支援 |
+| 類別      | 功能       | WID 支援  | 受 SQL 支援 |
 | ------------------ |:-------------:| :---:|:---: |
 | AD FS 功能     | 同盟伺服器陣列部署 | 是  | 是 |
 | AD FS 功能     | SAML 成品解析。 注意：這並不常見於 SAML 應用程式     |   否 | 是  |

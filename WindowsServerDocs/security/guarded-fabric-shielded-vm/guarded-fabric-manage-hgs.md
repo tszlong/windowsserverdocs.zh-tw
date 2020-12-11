@@ -1,16 +1,17 @@
 ---
+description: 深入瞭解：管理主機守護者服務
 title: 管理主機守護者服務
 ms.topic: article
 ms.assetid: eecb002e-6ae5-4075-9a83-2bbcee2a891c
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.openlocfilehash: 4c6fe87cd407a41b3686d86a37308bb08ddd6793
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 415e4980a718bac04925d349aa9bca0773f04a8b
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766741"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97044036"
 ---
 # <a name="managing-the-host-guardian-service"></a>管理主機守護者服務
 
@@ -48,7 +49,7 @@ HGS 隨附預先設定的2個 JEA 角色：
 - **HGS 審核者** ，只允許使用者審核現有的原則。 他們無法對 HGS 設定進行任何變更。
 
 若要使用 JEA，您必須先建立新的標準使用者，並將其設為 HGS admins 或 HGS 審核者群組的成員。
-如果您使用 `Install-HgsServer` 設定 hgs 的新樹系，則這些群組分別會命名為「*servicename*系統管理員」和「*servicename*審核者」，其中 *servicename* 是 hgs 叢集的網路名稱。
+如果您使用 `Install-HgsServer` 設定 hgs 的新樹系，則這些群組分別會命名為「*servicename* 系統管理員」和「*servicename* 審核者」，其中 *servicename* 是 hgs 叢集的網路名稱。
 如果您將 HGS 加入現有的網域，您應該參考您在中指定的組名 `Initialize-HgsServer` 。
 
 **為 HGS 系統管理員和審核者角色建立標準使用者**
@@ -160,7 +161,7 @@ HGS 保留數項資訊，可協助 it 人員判斷哪些主機已獲授權可執
 
 應定期進行備份，以確保資訊是最新的，並且安全地儲存，以避免遭到篡改或遭竊。
 
-**建議您不要**備份或嘗試還原 HGS 節點的整個系統映射。
+**建議您不要** 備份或嘗試還原 HGS 節點的整個系統映射。
 如果您遺失整個叢集，最佳作法是設定全新的 HGS 節點，並只還原 HGS 狀態，而不是整個伺服器作業系統。
 
 #### <a name="recovering-from-the-loss-of-one-node"></a>從一個節點遺失中復原
@@ -243,7 +244,7 @@ Get-WebBinding -Protocol https | Select-Object certificateHash
 
 具體而言，您需要：
 1. [設定 hgs 網域或將](guarded-fabric-choose-where-to-install-hgs.md) hgs 加入現有網域
-2. 使用您現有的金鑰*或*一組暫時金鑰來[初始化 HGS 伺服器](guarded-fabric-initialize-hgs.md)。 從 HGS 備份檔案匯入實際金鑰之後，您可以 [移除暫時金鑰](#renewing-or-replacing-keys) 。
+2. 使用您現有的金鑰 *或* 一組暫時金鑰來 [初始化 HGS 伺服器](guarded-fabric-initialize-hgs.md)。 從 HGS 備份檔案匯入實際金鑰之後，您可以 [移除暫時金鑰](#renewing-or-replacing-keys) 。
 3. 從備份匯[入 HGS 設定](#import-settings-from-a-backup)，以還原信任的主機群組、程式碼完整性原則、tpm 基準和 tpm 識別碼
 
 > [!TIP]
@@ -668,7 +669,7 @@ HGS 上過期的加密或簽署憑證不表示受防護 Vm 的弱點或保護遺
 
 1. 為您的 HGS 伺服器建立一組新的加密和簽署憑證。 在理想情況下，這些都是在硬體安全性模組中建立的。
 
-2. 使用**Add-HgsKeyProtectionCertificate**註冊新的加密和簽署憑證
+2. 使用 **Add-HgsKeyProtectionCertificate** 註冊新的加密和簽署憑證
 
     ```powershell
     Add-HgsKeyProtectionCertificate -CertificateType Signing -Thumbprint <Thumbprint>

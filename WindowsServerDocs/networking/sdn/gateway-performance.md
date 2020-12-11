@@ -1,44 +1,45 @@
 ---
+description: 深入瞭解： Windows Server 2019 閘道效能
 title: Windows Server 2019 閘道效能
 manager: grcusanz
 ms.topic: get-started-article
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/22/2018
-ms.openlocfilehash: d7ca57b9cb1013d1e6c1081bdf7c5c50fa6a918d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d6e20febf5730d1b0f249e0979037de298157e56
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969535"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97044356"
 ---
 # <a name="windows-server-2019-gateway-performance"></a>Windows Server 2019 閘道效能
 
 >適用于： Windows Server
 
 
-在 Windows Server 2016 中，客戶關心的其中一個問題是，SDN 閘道無法符合新式網路的輸送量需求。 IPsec 和 GRE 通道的網路輸送量具有單一連線輸送量的限制，IPsec 連線大約是 300 Mbps，而 GRE 連線則是 2.5 Gbps。
+在 Windows Server 2016 中，其中一個客戶的考慮是無法將 SDN 閘道滿足新式網路的輸送量需求。 IPsec 和 GRE 通道的網路輸送量對於 IPsec 連線能力大約是 300 Mbps，而 GRE 連線能力大約是 2.5 Gbps 的單一連線輸送量有所限制。
 
-我們已大幅改善 Windows Server 2019，分別 soaring 為 1.8 Gbps 的數位，以及適用于 IPsec 和 GRE 連線的 15 Gbps。 如此一來，每個位元組就能大幅減少 CPU 週期，進而提供具有較少 CPU 使用率的超高效能輸送量。
+我們已在 Windows Server 2019 中大幅改善，並分別針對 IPsec 和 GRE 連線使用提升到 1.8 Gbps 和 15 Gbps 的數位。 如此一來，就能大幅降低 CPU 週期/每個位元組，進而提供具有更少 CPU 使用率的超高效能輸送量。
 
-## <a name="enable-high-performance-with-gateways-in-windows-server-2019"></a>在 Windows Server 2019 中使用閘道啟用高效能
+## <a name="enable-high-performance-with-gateways-in-windows-server-2019"></a>使用 Windows Server 2019 中的閘道啟用高效能
 
-針對**GRE**連線，一旦您部署/升級至閘道 vm 上的 Windows Server 2019 之後，您應該會自動看到改善的效能。 不涉及任何手動步驟。
+針對 **GRE** 連線，一旦您部署/升級至閘道 vm 上的 Windows Server 2019 組建，您應該會自動看到改善的效能。 不涉及任何手動步驟。
 
-針對**IPsec**連線，根據預設，當您建立虛擬網路的連線時，您會取得 Windows Server 2016 資料路徑和效能數位。 若要啟用 Windows Server 2019 資料路徑，請執行下列動作：
+針對 **IPsec** 連線，根據預設，當您建立虛擬網路的連線時，會取得 Windows Server 2016 資料路徑和效能號碼。 若要啟用 Windows Server 2019 資料路徑，請執行下列動作：
 
-   1. 在 SDN 閘道 VM 上，移至 [**服務**] [主控台] [ (services.msc] [) ]。
-   2. 尋找名為 [ **Azure 閘道服務**] 的服務，並將 [啟動類型] 設定為 [**自動**]。
+   1. 在 SDN 閘道 VM 上，移至 [ **服務** ] 主控台 (services.msc) 。
+   2. 尋找名為「 **Azure 閘道服務**」的服務，並將啟動類型設定為「 **自動**」。
    3. 重新開機閘道 VM。
-      此閘道上的作用中連接會容錯移轉至多餘的閘道 VM。
+      此閘道上的作用中連線會容錯移轉至多餘的閘道 VM。
    4. 針對其餘的閘道 Vm 重複上述步驟。
 
 >[!TIP]
->為了獲得最佳效能結果，請確定 IPsec 連線的快速配置設定中的 cipherTransformationConstant 和 authenticationTransformConstant 使用**GCMAES256**加密套件。
+>為了獲得最佳效能結果，請確定 IPsec 連線的 cipherTransformationConstant 和 authenticationTransformConstant 是使用 **GCMAES256** cipher 套件。
 >
->為了達到最大效能，閘道主機硬體必須支援 AES-NI 和 PCLMULQDQ CPU 指令集。 這些可用於任何 Westmere (32nm) 和更新版本的 Intel CPU，但已停用 AES-NI 的模型除外。 您可以查看硬體廠商的檔，以查看 CPU 是否支援 AES-NI 和 PCLMULQDQ CPU 指令集。
+>為了達到最大效能，閘道主機硬體必須支援 AES-NI 和 PCLMULQDQ 的 CPU 指令集。 這些都可在任何 Westmere (32nm) 和更新版本的 Intel CPU 上取得，但已停用 AES-NI 的模型除外。 您可以查看您的硬體廠商檔，以查看 CPU 是否支援 AES-NI 和 PCLMULQDQ 的 CPU 指令集。
 
-以下是具有最佳安全性演算法的 IPsec 連線的 REST 範例：
+以下是使用最佳安全性演算法的 IPsec 連線 REST 範例：
 
 ```PowerShell
 # NOTE: The virtual gateway must be created before creating the IPsec connection. More details here.
@@ -90,6 +91,6 @@ New-NetworkControllerVirtualGatewayNetworkConnection -ConnectionUri $uri -Virtua
 
 ## <a name="testing-results"></a>測試結果
 
-我們已對測試實驗室中的 SDN 閘道進行大量的效能測試。 在測試中，我們已比較 SDN 案例和非 SDN 案例中的閘道網路效能與 Windows Server 2019。 您可以在[這裡](https://blogs.technet.microsoft.com/networking/2018/08/15/high-performance-gateways/)的 blog 文章中找到所捕獲的結果和測試設定詳細資料。
+我們已在測試實驗室中為 SDN 閘道完成大量效能測試。 在測試中，我們已比較 SDN 案例和非 SDN 案例中的閘道網路效能與 Windows Server 2019。 您可以在 [這裡](https://blogs.technet.microsoft.com/networking/2018/08/15/high-performance-gateways/)的 blog 文章中找到結果和測試設定詳細資料。
 
 ---

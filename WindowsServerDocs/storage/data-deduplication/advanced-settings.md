@@ -1,17 +1,18 @@
 ---
 ms.assetid: 01c8cece-66ce-4a83-a81e-aa6cc98e51fc
 title: 進階重複資料刪除設定
+description: 深入瞭解： Advanced 重復資料刪除設定
 ms.topic: article
 author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
-ms.openlocfilehash: 84d90e8c1de81498cbc832c8cf068e2ac339ac97
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: aa5f34f1c1fdc2b2a706cb0dfe1b7cf5a30456eb
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96866197"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97039196"
 ---
 # <a name="advanced-data-deduplication-settings"></a>進階重複資料刪除設定
 
@@ -124,7 +125,7 @@ ms.locfileid: "96866197"
             <td>避免工作負載&#39;的非閒置時間</td>
         </tr>
         <tr>
-            <td>啟用</td>
+            <td>已啟用</td>
             <td>是否將執行工作</td>
             <td>True/false</td>
             <td>停用工作而不移除工作</td>
@@ -150,7 +151,7 @@ ms.locfileid: "96866197"
         <tr>
             <td>名稱</td>
             <td>已排程工作的名稱</td>
-            <td>String</td>
+            <td>字串</td>
             <td>工作必須有可唯一識別的名稱。</td>
         </tr>
         <tr>
@@ -163,7 +164,7 @@ ms.locfileid: "96866197"
             <td>開始</td>
             <td>指定工作應該開始的時間</td>
             <td><code>System.DateTime</code></td>
-            <td>所提供的開始<em>日期</em>部分與 <code>System.Datetime</code> 過去) 中的&#39;(無關，但時間部分則會指定作業應開始的<em>時間</em>。 <em>Start</em></td>
+            <td>所提供的開始<em>日期</em>部分與 <code>System.Datetime</code> 過去) 中的&#39;(無關，但時間部分則會指定作業應開始的<em>時間</em>。 <em></em></td>
         </tr>
         <tr>
             <td>StopWhenSystemBusy</td>

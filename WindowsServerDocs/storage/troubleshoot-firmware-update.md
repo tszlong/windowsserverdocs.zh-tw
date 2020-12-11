@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：磁片磁碟機固件更新疑難排解
 ms.assetid: 13210461-1e92-48a1-91a2-c251957ba256
 title: 對磁碟機韌體更新進行疑難排解
 ms.author: toklima
@@ -6,12 +7,12 @@ manager: masriniv
 ms.topic: article
 author: toklima
 ms.date: 04/18/2017
-ms.openlocfilehash: b63df280585c4e1d5de88bc8a2ab08cce74c06d7
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: f1fed8ce79fc9918b4b11bb002bd7ba352e337fc
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87946221"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97039185"
 ---
 # <a name="troubleshooting-drive-firmware-updates"></a>對磁碟機韌體更新進行疑難排解
 
@@ -62,7 +63,7 @@ SupportsUpdate 欄位 (至少 SATA 和 NVMe 裝置的這個欄位) 將會指出�
 
 要驗證 SAS 裝置是否支援所需的命令集，有兩個方式可以選擇︰
 1.  透過 Update-StorageFirmware Cmdlet，以適當的韌體映像來試試看，或者
-2.  請參閱 Windows Server 目錄，以識別哪些 SAS 裝置已成功取得 FW 更新 AQ (https://www.windowsservercatalog.com/)
+2.  請參閱 Windows Server 目錄，找出哪些 SAS 裝置已成功取得 FW 更新 AQ (https://www.windowsservercatalog.com/)
 
 ### <a name="remediation-options"></a>修復選項
 如果您測試中的特定裝置不支援適當命令集，請向廠商查詢以了解是否有更新的韌體提供所需的命令集，或是查閱 Windows Server 目錄以確認裝置是否有實作適當命令集的來源。
@@ -117,7 +118,7 @@ CdbBytes    3B0E0000000001000000
 NumberOfRetriesDone 0
 ```
 
-來自通道的 ETW 事件507顯示 SCSI SRB 要求失敗，並提供 SenseKey 為 ' 5 ' 的其他資訊 (不合法的要求) ，而且 AdditionalSense 資訊是 ' 36 ' (CDB) 中不合法的欄位。
+通道中的 ETW 事件507顯示 SCSI SRB 要求失敗，並提供 SenseKey 為 ' 5 ' (不合法要求) 的其他資訊，而且 AdditionalSense 資訊是 ' 36 ' (CDB) 中不合法的欄位。
 
    > [!Note]
    > 此資訊是由前述 Miniport 提供，而該資訊的正確性取決於 Miniport 驅動程式的實作和複雜性。
@@ -132,7 +133,7 @@ NumberOfRetriesDone 0
 ## <a name="additional-troubleshooting-with-microsoft-drivers-satanvme"></a>Microsoft 驅動程式 (SATA/NVMe) 其他疑難排解
 使用 Windows 原生驅動程式 (例如 StorAHCI.sys 或 StorNVMe.sys) 來支援存放裝置時，可以在韌體更新作業期間取得有關可能失敗情況的其他資訊。
 
-除了 ClassPnP 操作通道之外，StorAHCI 和 StorNVMe 會在下列 ETW 通道中記錄裝置的通訊協定特定傳回碼：
+除了 ClassPnP 操作通道之外，StorAHCI 和 StorNVMe 將會在下列 ETW 通道中記錄裝置的通訊協定特定傳回碼：
 
 事件檢視器 - 應用程式及服務記錄檔 - Microsoft - Windows - StorDiag - **Microsoft-Windows-存放裝置-StorPort/診斷**
 

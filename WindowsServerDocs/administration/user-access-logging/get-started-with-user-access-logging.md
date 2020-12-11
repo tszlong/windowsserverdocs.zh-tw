@@ -1,18 +1,18 @@
 ---
 title: 使用使用者存取記錄進行開始
-desctription: Describes the User Access Logging feature and how to start using it.
+description: 描述使用者存取記錄功能，以及如何開始使用它。
 ms.topic: article
 ms.assetid: 5c395b8b-3b35-4042-b9cc-07e438f86d50
 author: brentfor
 ms.author: brentf
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 24471aca151a59306e8bf51119232f08dacdc606
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 8664adc42b2d749dc353e34c66c999537032fc07
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89628157"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97041046"
 ---
 # <a name="get-started-with-user-access-logging"></a>使用使用者存取記錄進行開始
 
@@ -44,7 +44,7 @@ UAL 可以支援下列伺服器角色和服務：
 
 -   Active Directory 憑證服務 (AD CS)
 
--   Active Directory Rights Management Services (AD RMS)
+-   Active Directory Rights Management Services (AD RMS)
 
 -   BranchCache
 
@@ -100,7 +100,7 @@ UAL 可以支援下列伺服器角色和服務：
 
 |資料|描述|
 |--------|---------------|
-|**UserName**|伴隨已安裝角色及產品之 UAL 項目的用戶端上的使用者名稱 (如果有的話)。|
+|**使用者名稱**|伴隨已安裝角色及產品之 UAL 項目的用戶端上的使用者名稱 (如果有的話)。|
 |**活動計數**|特定使用者存取角色或服務的次數。|
 |**FirstSeen**|使用者第一次存取角色或服務的日期和時間。|
 |**LastSeen**|使用者最後一次存取角色或服務的日期和時間。|

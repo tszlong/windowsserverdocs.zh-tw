@@ -1,17 +1,18 @@
 ---
+description: 深入瞭解：案例：使用分類取得資料的見解
 ms.assetid: ad3f0480-99f7-428a-ab33-6d165a440840
-title: 案例使用分類取得資料的深入解析
+title: 案例使用分類取得資料的見解
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 7c06cc4bbca7e21ffa5ef58ec6e33fc43b3f9e49
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 386f3a1f40cb3f93fb9ece34b667f51057f5347a
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87940241"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97044546"
 ---
 # <a name="scenario-get-insight-into-your-data-by-using-classification"></a>Scenario: Get Insight into Your Data by Using Classification
 
@@ -22,7 +23,7 @@ ms.locfileid: "87940241"
 ## <a name="scenario-description"></a><a name="BKMK_OVER"></a>案例描述
 檔案分類基礎結構使用分類規則自動掃描檔案，並按照檔案內容來分類檔案。 分類內容是在 Active Directory 內集中定義，因此可以在組織中各個檔案伺服器之間共用。 您可以建立分類規則，掃描檔案以尋找標準字串或符合某個模式 (規則運算式) 的字串。 在檔案中找到設定的分類參數時，該檔案會依分類規則中的設定進行分類。 分類規則的一些範例包括：
 
--   將包含「Contoso 機密」字串的任何檔案分類為具有高商業影響
+-   將包含「Contoso 機密」字串的任何檔案分類為具有高業務衝擊
 
 -   將包含至少 10 個身分證號碼的檔案分類為具有個人識別資訊
 
@@ -30,7 +31,7 @@ ms.locfileid: "87940241"
 
 您可以在[規劃自動檔案分類](assetId:///e3c3bb4b-3034-42b7-b391-8ef5f5851955)中找到設定自動檔案分類的規劃資訊。
 
-您可以在部署自動檔案分類中找到如何自動分類檔案的步驟[&#40;示範步驟&#41;](Deploy-Automatic-File-Classification--Demonstration-Steps-.md)。
+您可以在 [部署自動檔案分類] 中找到如何自動分類檔案的步驟， [&#40;示範步驟&#41;](Deploy-Automatic-File-Classification--Demonstration-Steps-.md)。
 
 ## <a name="in-this-scenario"></a>在這個案例中
 此案例是動態存取控制案例的一部分。 如需動態存取控制的其他資訊，請參閱：
@@ -38,7 +39,7 @@ ms.locfileid: "87940241"
 -   [動態存取控制：案例概觀](Dynamic-Access-Control--Scenario-Overview.md)
 
 ## <a name="practical-applications"></a><a name="BKMK_APP"></a>實際應用
-Windows Server 2012 中的檔案分類基礎結構可讓商務資料擁有者輕鬆分類和標籤資料，藉此提供動態存取控制。 儲存在集中存取原則中的分類資訊可讓您定義對企業很重要的資料類別存取原則。
+Windows Server 2012 中的檔案分類基礎結構可讓商務資料擁有者輕鬆分類和標示資料，藉此提供動態存取控制。 儲存在集中存取原則中的分類資訊可讓您定義對企業很重要的資料類別存取原則。
 
 ## <a name="features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>這個案例包含的功能
 下表列出這個案例中的功能，並說明它們如何支援這個案例。

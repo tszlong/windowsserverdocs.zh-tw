@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：判斷是要升級現有網域或部署新網域
 ms.assetid: c20231dd-2b83-4494-9385-1172272e00d6
 title: 決定是否要升級現有網域或部署新網域
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 2b7a1bcc6bb157c91b32edd9d4465ac54fb1ea42
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: b89ea1c898fc1c7a6859b88d2b7ba21d47516d06
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93069210"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97044066"
 ---
 # <a name="determining-whether-to-upgrade-existing-domains-or-deploy-new-domains"></a>決定是否要升級現有網域或部署新網域
 

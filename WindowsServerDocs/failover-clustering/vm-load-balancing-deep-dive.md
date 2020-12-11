@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：虛擬機器負載平衡深入探討
 ms.assetid: 5b5bab7a-727b-47ce-8efa-1d37a9639cba
 title: 虛擬機器負載平衡深入探討
 ms.topic: article
@@ -6,12 +7,12 @@ manager: eldenc
 ms.author: johnmar
 author: JasonGerend
 ms.date: 09/19/2016
-ms.openlocfilehash: 7fc9b449b11b5faf05ac279628f093053e292e8c
-ms.sourcegitcommit: 7a8a608df059b4278a974c52ed7b865421a83aa6
+ms.openlocfilehash: 719aad65d5b4683e7c3a4472ae29098522c89f2e
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91833317"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97040536"
 ---
 # <a name="virtual-machine-load-balancing-deep-dive"></a>虛擬機器負載平衡深入探討
 
@@ -33,7 +34,7 @@ ms.locfileid: "91833317"
 
 | AutoBalancerLevel | 侵略 性 | 行為 |
 |-------------------|----------------|----------|
-| 1 (預設值) | 低度 | 當主機超過80% 載入時移動 |
+| 1 (預設值) | 低 | 當主機超過80% 載入時移動 |
 | 2 | 中 | 當主機超過70% 載入時移動 |
 | 3 | 高 | 當主機的平均超過5% 時的平均節點和移動 |
 

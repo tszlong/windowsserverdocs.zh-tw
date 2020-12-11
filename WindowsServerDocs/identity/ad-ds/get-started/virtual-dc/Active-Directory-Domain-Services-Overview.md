@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解： Active Directory Domain Services 總覽
 ms.assetid: f052dfcd-dace-4485-8d0a-cc7df5cf3751
 title: Active Directory 網域服務概觀
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 27c903aea659b973a63130e16a914d881e6e13f2
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 0d9569b9941810e8eea6ac1d54e646b215f2710c
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070980"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97043156"
 ---
 # <a name="active-directory-domain-services-overview"></a>Active Directory 網域服務概觀
 
@@ -27,13 +28,13 @@ Active Directory 會將物件的相關資訊儲存在網路上，並讓系統管
 安全性透過登入驗證和存取控制，與目錄中的物件整合 Active Directory。 透過單一網路登入，系統管理員可以管理整個網路中的目錄資料和組織，而授權的網路使用者可以存取網路上任何位置的資源。 原則式的系統管理甚至可以減輕最複雜的網路管理工作。 如需 Active Directory 安全性的詳細資訊，請參閱 [安全性總覽](../../plan/security-best-practices/best-practices-for-securing-active-directory.md)。
 
 Active Directory 也包含：
-* 一組規則（ **架構** ），定義目錄中包含的物件和屬性的類別、這些物件之實例的條件約束和限制，以及其名稱的格式。 如需架構的詳細資訊，請參閱架構。
+* 一組規則（ **架構**），定義目錄中包含的物件和屬性的類別、這些物件之實例的條件約束和限制，以及其名稱的格式。 如需架構的詳細資訊，請參閱架構。
 
 
-* **通用類別目錄** ，包含目錄中每個物件的相關資訊。 這可讓使用者和系統管理員尋找目錄資訊，而不論目錄中的哪個網域實際包含資料。 如需通用類別目錄的詳細資訊，請參閱通用類別目錄的角色。
+* **通用類別目錄**，包含目錄中每個物件的相關資訊。 這可讓使用者和系統管理員尋找目錄資訊，而不論目錄中的哪個網域實際包含資料。 如需通用類別目錄的詳細資訊，請參閱通用類別目錄的角色。
 
 
-* **查詢和索引機制** ，可讓網路使用者或應用程式發佈及尋找物件和其屬性。 如需有關查詢目錄的詳細資訊，請參閱尋找目錄資訊。
+* **查詢和索引機制**，可讓網路使用者或應用程式發佈及尋找物件和其屬性。 如需有關查詢目錄的詳細資訊，請參閱尋找目錄資訊。
 
 
 * 將目錄資料分散到網路的複寫 **服務** 。 網域中的所有網域控制站都參與複寫，並且包含其網域的所有目錄資訊的完整複本。 目錄資料的任何變更都會複寫到網域中的所有網域控制站。 如需 Active Directory 複寫的詳細資訊，請參閱複寫總覽。

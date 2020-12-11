@@ -1,16 +1,17 @@
 ---
+description: 深入瞭解： AD 樹系復原-設定 DNS 伺服器服務
 title: AD 樹系復原-設定 DNS 伺服器服務
 ms.author: daveba
 author: iainfoulds
 manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: 6dd9caff9f4dc36ee2e55850bb764dd298c2bc7e
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: c03d223bcfcf4be9360d175bfcc9f70e7b4cd59e
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93067950"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97042936"
 ---
 # <a name="ad-forest-recovery---configuring-the-dns-server-service"></a>AD 樹系復原-設定 DNS 伺服器服務
 
@@ -29,19 +30,19 @@ ms.locfileid: "93067950"
 
 ### <a name="to-install-and-the-dns-server-service-using-server-manager"></a>使用伺服器管理員安裝和 DNS 伺服器服務
 
-1. 開啟伺服器管理員，然後按一下 [ **新增角色及功能** ]。
-2. 在 [新增角色精靈] 中，如果出現 [ **在您開始前** ] 頁面，請按 [ **下一步** ]。
-3. 在 [ **安裝類型** ] 畫面上，選取 [ **角色型或功能型安裝** ]，然後按 **[下一步]** 。
-4. 在 [ **伺服器選取** ] 畫面上選取伺服器，然後按 **[下一步]** 。
-5. 在 [ **伺服器角色** ] 畫面上選取 [ **DNS 伺服器** ]，如果出現提示，請按一下 [ **新增功能** ]，然後按一下 **[**
-6. 在 [ **功能** ] 畫面上，按 **[下一步]** 。
-7. 閱讀 [ **DNS 伺服器** ] 頁面上的資訊，然後按 **[下一步]** 。
+1. 開啟伺服器管理員，然後按一下 [ **新增角色及功能**]。
+2. 在 [新增角色精靈] 中，如果出現 [**在您開始前**] 頁面，請按 [**下一步**]。
+3. 在 [ **安裝類型** ] 畫面上，選取 [ **角色型或功能型安裝** ]，然後按 **[下一步]**。
+4. 在 [ **伺服器選取** ] 畫面上選取伺服器，然後按 **[下一步]**。
+5. 在 [**伺服器角色**] 畫面上選取 [ **DNS 伺服器**]，如果出現提示，請按一下 [**新增功能**]，然後按一下 **[**
+6. 在 [ **功能** ] 畫面上，按 **[下一步]**。
+7. 閱讀 [ **DNS 伺服器** ] 頁面上的資訊，然後按 **[下一步]**。
    ![DNS 伺服器](media/AD-Forest-Recovery-Configure-DNS/dns1.png)
-8. 在 [ **確認** ] 頁面上，確認將會安裝 DNS 伺服器角色，然後按一下 [ **安裝** ]。
+8. 在 [ **確認** ] 頁面上，確認將會安裝 DNS 伺服器角色，然後按一下 [ **安裝**]。
 
 ### <a name="to-configure-the-dns-server-service"></a>設定 DNS 伺服器服務
 
-1. 開啟伺服器管理員，按一下 [ **工具** ]，然後按一下 [ **DNS** ]。
+1. 開啟伺服器管理員，按一下 [ **工具** ]，然後按一下 [ **DNS**]。
    ![DNS 伺服器](media/AD-Forest-Recovery-Configure-DNS/dns2.png)
 2. 在發生嚴重錯誤之前，為 DNS 伺服器上裝載的相同 DNS 功能變數名稱建立 DNS 區域。 如需詳細資訊，請參閱新增正向對應區域 ([https://go.microsoft.com/fwlink/?LinkId=74574](https://go.microsoft.com/fwlink/?LinkId=74574)) 。
 3. 在發生嚴重錯誤之前，設定其存在的 DNS 資料。 例如：

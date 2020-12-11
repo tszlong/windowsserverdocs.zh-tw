@@ -1,17 +1,18 @@
 ---
 ms.assetid: 777aab65-c9c7-4dc9-a807-9ab73fac87b8
 title: 設定 AD FS 外部網路智慧鎖定保護
+description: 深入瞭解： AD FS 外部網路鎖定和外部網路智慧鎖定
 author: billmath
 ms.author: billmath
 manager: mtilman
 ms.date: 05/20/2019
 ms.topic: article
-ms.openlocfilehash: a5ce41597c7cb25202be61f47c640d3f749568b4
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 182d529ce2cd5bdf8ce0dc833cb43a283f874218
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96864537"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97040146"
 ---
 # <a name="ad-fs-extranet-lockout-and-extranet-smart-lockout"></a>AD FS 外部網路鎖定和外部網路智慧鎖定
 
@@ -40,7 +41,7 @@ ESL 僅適用于透過外部網路進行 Web 應用程式 Proxy 或協力廠商 
 
  如果次要節點無法連絡主機，則會將錯誤事件寫入 AD FS 管理員記錄檔中。 驗證將繼續進行處理，但 AD FS 只會在本機寫入更新的狀態。 AD FS 會每10分鐘重試一次連線到主伺服器，並在有可用的主機之後切換回主要主機。
 
-### <a name="terminology"></a>術語
+### <a name="terminology"></a>詞彙
 - **FamiliarLocation**：在驗證要求期間，ESL 會檢查所有顯示的 ip。 這些 ip 將會是網路 IP、轉送 IP 和選擇性的 x 轉送 IP 的組合。 如果要求成功，則所有 Ip 都會新增至帳戶活動資料表做為「熟悉的 Ip」。 如果要求中有所有 Ip 出現在「熟悉的 Ip」中，則會將要求視為「熟悉的」位置。
 - **Unknownlocation.xsd**：如果傳入的要求至少有一個 IP 沒有存在於現有的 "FamiliarLocation" 清單中，則會將要求視為「未知」的位置。 這是為了處理 proxy 處理案例，例如 Exchange online 的傳統驗證，其中 Exchange Online 位址可處理成功和失敗的要求。
 - **badPwdCount**：代表不正確的密碼提交次數以及驗證失敗次數的值。 針對每個使用者，會針對熟悉的位置和未知的位置保留個別的計數器。

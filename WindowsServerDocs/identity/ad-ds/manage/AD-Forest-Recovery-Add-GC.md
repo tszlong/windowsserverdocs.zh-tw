@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解： AD 樹系復原-新增 GC
 title: AD 樹系復原-新增 GC
 ms.author: daveba
 author: iainfoulds
@@ -6,12 +7,12 @@ manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
-ms.openlocfilehash: 91f638c5a73b334c63a1ce765aaf0fb776806d5d
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: ed64cf4830fb47da58190721f5b1fe056bc4e4a2
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93067990"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97043006"
 ---
 # <a name="ad-forest-recovery---adding-the-gc"></a>AD 樹系復原-新增 GC
 
@@ -21,10 +22,10 @@ ms.locfileid: "93067990"
 
 ## <a name="to-add-the-global-catalog"></a>新增通用類別目錄
 
-1. 按一下 [ **開始** ]，指向 [ **所有程式** ]，指向 [系統 **管理工具** ]，然後按一下 [ **Active Directory 網站和服務** ]。
+1. 按一下 [ **開始**]，指向 [ **所有程式**]，指向 [系統 **管理工具**]，然後按一下 [ **Active Directory 網站和服務**]。
 2. 在主控台樹中，展開 [ **網站** ] 容器，然後選取包含目標伺服器的適當網站。
 3. 展開 [ **伺服器** ] 容器，然後展開您要新增通用類別目錄之 DC 的伺服器物件。
-4. 以滑鼠右鍵按一下 [ **NTDS 設定** ]， **然後按一下 [** 內容]。
+4. 以滑鼠右鍵按一下 [ **NTDS 設定**]， **然後按一下 [** 內容]。
 5. 選取 [ **通用類別目錄** ] 核取方塊。
 ![新增 GC](media/AD-Forest-Recovery-Add-GC/addgc1.png)
 

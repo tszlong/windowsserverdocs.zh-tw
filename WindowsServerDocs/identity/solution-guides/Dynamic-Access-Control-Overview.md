@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：動態存取控制總覽
 ms.assetid: 9ee8a6cb-7550-46e2-9c11-78d0545c3a97
 title: 動態存取控制概觀
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: ef1c5686bb692f2fbe18e2f4bf7b2d0bd6efe52d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fb0099b730e21e9dd9208bd1ba12c35c487bdd86
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952758"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97044476"
 ---
 # <a name="dynamic-access-control-overview"></a>動態存取控制概觀
 
@@ -21,7 +22,7 @@ ms.locfileid: "87952758"
 
 網域型動態存取控制讓系統管理員能夠根據明確定義的規則套用存取控制權限與限制，這些規則可以包含資源的敏感度、使用者的工作或角色，以及用來存取這些資源的裝置設定。
 
-例如，使用者從辦公室電腦存取資源和透過虛擬私人網路使用可攜式電腦時，可能會有不同的權限。 或者，只有在裝置符合網路系統管理員所定義的安全性需求時才允許存取。 使用動態存取控制時，如果使用者的工作或角色變更時，使用者的許可權會動態變更，而不需要額外的系統管理員介入， (導致 AD DS) 中使用者帳戶屬性的變更。
+例如，使用者從辦公室電腦存取資源和透過虛擬私人網路使用可攜式電腦時，可能會有不同的權限。 或者，只有在裝置符合網路系統管理員所定義的安全性需求時才允許存取。 使用動態存取控制時，如果使用者的工作或角色變更 (導致 AD DS) 中使用者的帳戶屬性變更，則使用者的許可權會動態變更，而不需要額外的系統管理員介入。
 
 Windows Server 2012 與 Windows 8 之前的 Windows 作業系統不支援動態存取控制。 在使用支援和不支援的 Windows 版本的環境中設定動態存取控制時，只有支援的版本會實作變更。
 
@@ -43,7 +44,7 @@ Windows Server 2012 與 Windows 8 之前的 Windows 作業系統不支援動態�
 如果已針對網域定義了一或多個集中存取規則，檔案共用系統管理員便可將特定的規則與特定的資源和業務需求進行比對。
 
 ### <a name="central-access-policies"></a><a name="BKMK_Policies"></a>集中存取原則
-集中存取原則是包含條件運算式的授權原則。 例如，假設組織有商務需求，將個人識別資訊的存取許可權制為只有檔案擁有者和 (人力資源) 部門的成員可以查看 PII 資訊， (PII) 檔案。 這代表要套用至 PII檔案的全組織原則，而不論它們位於組織中檔案伺服器上的何處。 若要實作這個原則，組織需要能夠：
+集中存取原則是包含條件運算式的授權原則。 例如，假設組織有商務需求，可將檔案中的個人標識 (資訊存取許可權制為僅限檔案擁有者，以及可查看 PII 資訊 (HR) 部門成員的人力資源) 。 這代表要套用至 PII檔案的全組織原則，而不論它們位於組織中檔案伺服器上的何處。 若要實作這個原則，組織需要能夠：
 
 -   識別和標記包含 PII 的檔案。
 
@@ -53,8 +54,8 @@ Windows Server 2012 與 Windows 8 之前的 Windows 作業系統不支援動態�
 
 集中存取原則就像是安全性保護傘，組織可以跨伺服器套用這個保護傘。 這些是套用到檔案和資料夾的本機存取原則或判別存取控制清單 (DACL) 以外 (但不取代) 的原則。
 
-### <a name="claims"></a><a name="BKMK_Claims"></a>退款
-宣告是由網域控制站所發佈的使用者、裝置或資源的相關資訊中一個獨特的部分。 使用者的標題、檔案的部門分類，或電腦的健全狀況狀態，都是宣告的有效範例。 實體可以包含一個以上的宣告，而且所有的宣告組合都可用來授權資源的存取。 下列宣告類型可以在支援的 Windows 版本中使用：
+### <a name="claims"></a><a name="BKMK_Claims"></a>索賠
+宣告是由網域控制站所發佈的使用者、裝置或資源的相關資訊中一個獨特的部分。 使用者的標題、檔案的部門分類或電腦的健全狀況狀態都是宣告的有效範例。 實體可以包含一個以上的宣告，而且所有的宣告組合都可用來授權資源的存取。 下列宣告類型可以在支援的 Windows 版本中使用：
 
 -   **使用者宣告** 與特定的使用者相關聯的 Active Directory 屬性。
 
@@ -81,10 +82,10 @@ Windows Server 2012 與 Windows 8 之前的 Windows 作業系統不支援動態�
 根據預設，執行任何支援之 Windows 版本的裝置能夠處理與動態存取控制相關的 Kerberos 票證，其中包含複合驗證所需的資料。 網域控制站能夠利用與複合驗證相關的資訊，發出與回應 Kerberos 票證。 將網域設定為可辨識動態存取控制時，裝置會在初始驗證期間，收到來自網域控制站的宣告，然後在提交服務票證要求時收到複合驗證票證。 複合驗證會產生存取權杖，其中包含資源上可辨識動態存取控制的使用者和裝置的身分識別。
 
 ### <a name="support-for-using-the-key-distribution-center-kdc-group-policy-setting-to-enable-dynamic-access-control-for-a-domain"></a>支援使用金鑰發佈中心 (KDC) 群組原則設定，以啟用網域的動態存取控制。
-每個網域控制站都需要具備相同的系統管理範本原則設定，這個設定位於 [電腦設定\原則\系統管理範本\系統\KDC\支援動態存取控制和 Kerberos 保護]**** 中。
+每個網域控制站都需要具備相同的系統管理範本原則設定，這個設定位於 [電腦設定\原則\系統管理範本\系統\KDC\支援動態存取控制和 Kerberos 保護] 中。
 
 ### <a name="support-for-using-the-key-distribution-center-kdc-group-policy-setting-to-enable-dynamic-access-control-for-a-domain"></a>支援使用金鑰發佈中心 (KDC) 群組原則設定，以啟用網域的動態存取控制。
-每個網域控制站都需要具備相同的系統管理範本原則設定，這個設定位於 [電腦設定\原則\系統管理範本\系統\KDC\支援動態存取控制和 Kerberos 保護]**** 中。
+每個網域控制站都需要具備相同的系統管理範本原則設定，這個設定位於 [電腦設定\原則\系統管理範本\系統\KDC\支援動態存取控制和 Kerberos 保護] 中。
 
 ### <a name="support-in-active-directory-to-store-user-and-device-claims-resource-properties-and-central-access-policy-objects"></a>支援 Active Directory，以儲存使用者和裝置宣告、資源內容和集中存取原則物件。
 
@@ -92,7 +93,7 @@ Windows Server 2012 與 Windows 8 之前的 Windows 作業系統不支援動態�
 以下的群組原則設定讓您能夠將集中存取原則物件部署到組織中的檔案伺服器：**電腦設定\原則\ Windows 設定\安全性設定\檔案系統\集中存取原則**。
 
 ### <a name="support-for-claims-based-file-authorization-and-auditing-for-file-systems-by-using-group-policy-and-global-object-access-auditing"></a>使用群組原則和全域物件存取稽核，支援宣告型檔案授權並對檔案系統進行稽核
-您必須啟用分段集中存取原則稽核，使用建議的權限來稽核集中存取原則的有效存取權。 您可以在群組原則物件 (GPO) 的 [安全性設定]**** 中，在 [進階稽核原則設定]**** 下方設定這個電腦設定。 當您在 GPO 中設定安全性原則設定之後，就可以將 GPO 部署到網路中的電腦上。
+您必須啟用分段集中存取原則稽核，使用建議的權限來稽核集中存取原則的有效存取權。 您可以在群組原則物件 (GPO) 的 [安全性設定] 中，在 [進階稽核原則設定] 下方設定這個電腦設定。 當您在 GPO 中設定安全性原則設定之後，就可以將 GPO 部署到網路中的電腦上。
 
 ### <a name="support-for-transforming-or-filtering-claim-policy-objects-that-traverse-active-directory-forest-trusts"></a>支援轉換或篩選周遊 Active Directory 樹系信任的宣告原則物件
 您可以篩選或轉換周遊樹系信任的連入與連出宣告。 篩選和轉換宣告有下列三種基本案例：
@@ -120,12 +121,12 @@ Windows Server 2012 與 Windows 8 之前的 Windows 作業系統不支援動態�
 
 如果用戶端無法辨識動態存取控制，則兩個樹系之間必須具備雙向的信任關係。
 
-如果宣告會在離開樹系時轉換，則使用者樹系根目錄中的所有網域控制站都必須設定為 Windows Server 2012 或更高的功能等級。
+如果宣告在離開樹系時轉換，則使用者樹系根目錄中的所有網域控制站都必須設定為 Windows Server 2012 或更高的功能等級。
 
-執行 Windows Server 2012 或 Windows Server 2012 R2 的檔案伺服器必須具有一個群組原則設定，指定它是否需要針對不含宣告的使用者權杖取得使用者宣告。 這個設定預設會設定為 [自動]****，如果有包含該檔案伺服器的使用者或裝置宣告的集中原則，則會將這個群組原則設定轉換為 [開啟]****。 如果檔案伺服器包含內含使用者宣告的判別 ACL，您需要將這個群組原則設定為 [開啟]****，如此便能讓伺服器知道要代表在存取伺服器時未提供宣告的使用者要求宣告。
+執行 Windows Server 2012 或 Windows Server 2012 R2 的檔案伺服器必須具有一個群組原則設定，指定它是否需要針對不含宣告的使用者權杖取得使用者宣告。 這個設定預設會設定為 [自動]，如果有包含該檔案伺服器的使用者或裝置宣告的集中原則，則會將這個群組原則設定轉換為 [開啟]。 如果檔案伺服器包含內含使用者宣告的判別 ACL，您需要將這個群組原則設定為 [開啟]，如此便能讓伺服器知道要代表在存取伺服器時未提供宣告的使用者要求宣告。
 
 ## <a name="additional-resource"></a>其他資源
-如需根據這項技術來執行解決方案的詳細資訊，請參閱[Dynamic 存取控制：案例總覽](Dynamic-Access-Control--Scenario-Overview.md)。
+如需有關以這項技術為基礎執行解決方案的詳細資訊，請參閱 [動態存取控制：案例總覽](Dynamic-Access-Control--Scenario-Overview.md)。
 
 
 

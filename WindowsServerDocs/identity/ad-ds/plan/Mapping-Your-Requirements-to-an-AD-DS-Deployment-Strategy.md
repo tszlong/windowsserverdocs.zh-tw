@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：將您的需求對應至 AD DS 部署策略
 ms.assetid: ce3be131-06ad-41dc-a26b-1168fa68c8ed
 title: 將您的需求和 AD DS 部署策略對應
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: c50fce47b3bd9f848b5620bcbfb0fba5b4a7e3f7
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: e143b3aa277baead63f321195963f220cdc16953
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93071090"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97042746"
 ---
 # <a name="mapping-your-requirements-to-an-ad-ds-deployment-strategy"></a>將您的需求和 AD DS 部署策略對應
 
