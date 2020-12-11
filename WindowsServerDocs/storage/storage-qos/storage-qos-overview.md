@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：儲存體服務品質
 title: 存放裝置服務品質
 manager: dongill
 ms.author: JGerend
@@ -6,12 +7,12 @@ ms.topic: get-started-article
 ms.assetid: 8dcb8cf9-0e08-4fdd-9d7e-ec577ce8d8a0
 author: kumudd
 ms.date: 10/10/2016
-ms.openlocfilehash: ced2fe051f0595e8333aa2704889cc88ec1304ac
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: f4cb836cd76933b400e472d10adfeda47b717c0b
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994728"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97050386"
 ---
 # <a name="storage-quality-of-service"></a>存放裝置服務品質
 
@@ -69,7 +70,7 @@ Windows Server 2016 中的「存放裝置服務品質」(QoS) 可提供方法，
 |詞彙|描述|
 |--------|---------------|
 |標準化的 IOPS|所有的存放裝置使用量都是以「標準化的 IOPS」來測量。  這是存放裝置每秒輸入/輸出作業的計數。  任何等於或小於 8 KB 的 IO 都會被視為一個標準化的 IO。  任何大於 8 KB 的 IO 都會被視為多個標準化的 IO。 例如，256 KB 的要求會被視為 32 個標準化的 IOPS。<p>Windows Server 2016 讓您能夠指定要用來將 IO 標準化的大小。  在存放裝置叢集上，可以指定標準化的大小，並在整個標準化計算叢集中生效。  預設值會維持 8 KB。|
-|Flow|每個由 Hyper-V 伺服器開啟到 VHD 或 VHDX 檔案的檔案控制代碼都會被視為一個「流程」。 如果一個虛擬機器連接了兩個虛擬硬碟，則每個檔案中都會有 1 個連至檔案伺服器叢集的流程。 如果 VHDX 會與多個虛擬機器共用，則每個虛擬機器中將會有 1 個流程。|
+|流程|每個由 Hyper-V 伺服器開啟到 VHD 或 VHDX 檔案的檔案控制代碼都會被視為一個「流程」。 如果一個虛擬機器連接了兩個虛擬硬碟，則每個檔案中都會有 1 個連至檔案伺服器叢集的流程。 如果 VHDX 會與多個虛擬機器共用，則每個虛擬機器中將會有 1 個流程。|
 |InitiatorName|針對每個流程要對向外延展檔案伺服器報告的虛擬機器名稱。|
 |InitiatorID|符合虛擬機器識別碼的識別碼。  這一律可用來唯一識別個別流程的虛擬機器，即使虛擬機器具有相同的 InitiatorName 也一樣。|
 |原則|存放裝置 QoS 原則會儲存於叢集資料庫中，並具有下列屬性︰PolicyId、MinimumIOPS、MaximumIOPS、 ParentPolicy 和 PolicyType。|
@@ -89,7 +90,7 @@ Windows Server 2016 中的「存放裝置服務品質」(QoS) 可提供方法，
 如果您已在 Windows Server 2016 上設定了新的容錯移轉叢集和叢集共用磁碟區 (CSV)，則將會自動設定存放裝置 QoS 功能。
 
 #### <a name="verify-storage-qos-installation"></a>確認存放裝置 QoS 的安裝
-在建立容錯移轉叢集並設定 CSV 磁碟之後，**存放裝置 QoS 資源**即會顯示為叢集核心資源，並出現在容錯移轉叢集管理員與 Windows PowerShell 中。 這表示容錯移轉叢集系統將會管理此資源，而您應該不需對此資源執行任何動作。  我們會在容錯移轉叢集管理員和 PowerShell 中顯示此資源，使其可與其他容錯移轉叢集系統資源 (例如新的健全狀況服務) 保持一致。
+在建立容錯移轉叢集並設定 CSV 磁碟之後，**存放裝置 QoS 資源** 即會顯示為叢集核心資源，並出現在容錯移轉叢集管理員與 Windows PowerShell 中。 這表示容錯移轉叢集系統將會管理此資源，而您應該不需對此資源執行任何動作。  我們會在容錯移轉叢集管理員和 PowerShell 中顯示此資源，使其可與其他容錯移轉叢集系統資源 (例如新的健全狀況服務) 保持一致。
 
 ![[存放裝置 QoS 資源] 會出現在 [叢集核心資源] 中](media/overview-Clustering_StorageQoSFCM.png)
 
@@ -306,7 +307,7 @@ MinimumIops    : 781
 
 因此，如果您有一組 VHD/VHDX 檔案，而您想要讓它們展現相同的效能特性且想省去建立多個類似原則的麻煩，您可以使用單一的專用原則並套用到每個虛擬機器的檔案。
 
-將指派給單一匯總原則的 VHD/VHDx 檔案數目保持為20或更少。  此原則類型的目的是要在叢集上使用幾個 Vm 進行匯總。
+將指派給單一匯總原則的 VHD/VHDx 檔案數目保留為20或更少。  此原則類型的目的是要使用叢集上的幾個 Vm 進行匯總。
 
 ### <a name="create-and-apply-a-dedicated-policy"></a>建立和套用專用原則
 首先，使用 `New-StorageQosPolicy` Cmdlet，在向外延展檔案伺服器上建立原則，如下列範例所示：
@@ -384,7 +385,7 @@ IsDeleted                     : False
 ```
 
 ### <a name="query-for-storage-qos-policies"></a>存放裝置 QoS 原則的查詢
-`Get-StorageQosPolicy`列出所有已設定的原則及其在向外延展檔案伺服器上的狀態。
+`Get-StorageQosPolicy` 列出所有已設定的原則及其在 Scale-Out 檔案伺服器上的狀態。
 
 ```PowerShell
 PS C:\> Get-StorageQosPolicy
@@ -823,7 +824,7 @@ while ($true)
 
 ### <a name="what-new-functionality-was-added-in-windows-server-2016"></a><a name="BKMK_Updates"></a>Windows Server 2016 中的新增功能
 
-在 Windows Server 2016 中，已將存放裝置 QoS 原則類型名稱重新命名。  **Multi-instance** 原則類型已重新命名為**專用**，而 **Single-instance** 已重新命名為**彙總**。 同時也修改了專用原則的管理行為 - 相同虛擬機器中已將相同**專用**原則套用到其中的 VHD/VHDX 檔案將不會共用 I/O 配置。
+在 Windows Server 2016 中，已將存放裝置 QoS 原則類型名稱重新命名。  **Multi-instance** 原則類型已重新命名為 **專用**，而 **Single-instance** 已重新命名為 **彙總**。 同時也修改了專用原則的管理行為 - 相同虛擬機器中已將相同 **專用** 原則套用到其中的 VHD/VHDX 檔案將不會共用 I/O 配置。
 
 Windows Server 2016 中有兩個新的存放裝置 QoS 功能：
 

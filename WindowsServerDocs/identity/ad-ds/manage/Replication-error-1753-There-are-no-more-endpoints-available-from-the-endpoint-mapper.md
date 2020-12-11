@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：複寫錯誤1753端點對應程式中沒有其他可用的端點
 ms.assetid: 0f21951c-b1bf-43bb-a329-bbb40c58c876
 title: 複寫錯誤 1753：端點對應表中無更多可用的端點
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 94e63d439217c21c1634e7f1b685267ad98178b4
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 359e5c39667f29deb03b8587e94e777a23232c5c
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93067670"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049486"
 ---
 # <a name="replication-error-1753-there-are-no-more-endpoints-available-from-the-endpoint-mapper"></a>複寫錯誤 1753：端點對應表中無更多可用的端點
 
@@ -237,7 +238,7 @@ ncacn_http:CONTOSO-DC01[6004]
 * 確認 rpc 用戶端的啟動值和服務狀態，以及 rpc 用戶端的 OS 版本是否正確（ (目的地 DC) 和 RPC 伺服器 (來源 DC) 。 如果服務目前已停止或未以預設啟動值設定，請重設預設啟動值、重新開機已修改的 DC，然後重試此作業。
    * 此外，請確定服務內容符合下表所列的預設設定。
 
-      | 服務 | Windows Server 2003 和更新版本中的預設狀態 (啟動類型)  | Windows Server 2000 中的預設狀態 (啟動類型)  |
+      | Service | Windows Server 2003 和更新版本中的預設狀態 (啟動類型)  | Windows Server 2000 中的預設狀態 (啟動類型)  |
       | --- | --- | --- |
       | 遠端程序呼叫 | 已開始 (自動)  | 已開始 (自動)  |
       | 遠端程序呼叫定位器 | Null 或已停止 (手動)  | 已開始 (自動)  |
@@ -284,7 +285,7 @@ F# SRC    DEST    Operation
 11 x.x.1.2 x.x.1.1 EPM:Response: ept_map: 0x16C9A0D6 - EP_S_NOT_REGISTERED
 ```
 
-在畫面格 **10** ，目的地 dc 會針對 Active Directory replication SERVICE Class UUID E351，在埠135上查詢來源 dc 端點對應程式。
+在畫面格 **10**，目的地 dc 會針對 Active Directory replication SERVICE Class UUID E351，在埠135上查詢來源 dc 端點對應程式。
 
 在畫面格 **11** 中，來源 DC （在此案例中為尚未裝載 DC 角色的成員電腦，因此尚未註冊 E351 .。。具有本機 EPM 的複寫服務的 UUID 會回應符號錯誤 EP_S_NOT_REGISTERED 其對應至十進位錯誤1753、十六進位錯誤0x6d9 和易記錯誤「端點對應程式中沒有可用的端點」。
 

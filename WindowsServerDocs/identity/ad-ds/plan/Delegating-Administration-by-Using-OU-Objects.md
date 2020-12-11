@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：使用 OU 物件來委派管理
 ms.assetid: d8e61aa4-8e4b-4097-83ca-70cf61366b75
 title: 使用 OU 物件委派管理
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 7ce0f59dc2c9d556425b8b59b7fd438e0577fb13
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: f18552551a63547692399a73526b78952fc52a30
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93069430"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97050076"
 ---
 # <a name="delegating-administration-by-using-ou-objects"></a>使用 OU 物件委派管理
 

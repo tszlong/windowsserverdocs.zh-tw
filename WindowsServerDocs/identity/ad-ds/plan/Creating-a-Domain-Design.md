@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：建立定義域設計
 ms.assetid: 2a25bf86-a8ec-4b1a-9cbb-924d5b574481
 title: 建立網域設計
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 02081f39d9aff0d0334af9ffc7606f4978ca62dc
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 98d97b859765195167fdab23b9b36a69d07037cf
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93068890"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049986"
 ---
 # <a name="creating-a-domain-design"></a>建立網域設計
 

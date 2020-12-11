@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：附錄 A： DNS 清查
 ms.assetid: f3506489-f695-4d7d-b27a-ec714843c002
 title: 附錄 A-DNS 清查
 ms.author: daveba
@@ -6,12 +7,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: c1b00c0d6b97e6bda15bd9fe123408824dc92b2e
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 9fa79a2a80848753f34e81bd55ea5503754c354e
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93071200"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97050106"
 ---
 # <a name="appendix-a-dns-inventory"></a>附錄 A：DNS 清查
 

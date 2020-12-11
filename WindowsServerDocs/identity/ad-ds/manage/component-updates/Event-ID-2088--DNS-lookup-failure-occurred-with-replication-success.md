@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：事件識別碼2088：複寫成功時發生 DNS 查閱失敗
 ms.assetid: 0fd7b6aa-3e50-45a3-a3a6-56982844363e
 title: 事件識別碼 2088-複寫成功時發生 DNS 查閱失敗
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 41ab450c98dd607c3c849fb94a1adbb9f1708375
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: cb0a75c7573c25441fc38d761a866789fe5a1c33
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070710"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049596"
 ---
 # <a name="event-id-2088-dns-lookup-failure-occurred-with-replication-success"></a>事件識別碼 2088：發生 DNS 查閱錯誤但複寫成功
 

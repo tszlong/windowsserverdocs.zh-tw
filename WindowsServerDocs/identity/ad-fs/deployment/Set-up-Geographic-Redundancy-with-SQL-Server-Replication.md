@@ -1,17 +1,18 @@
 ---
 title: 使用 SQL Server 複寫設定地理位置冗余
+description: 深入瞭解：使用 SQL Server 複寫設定地理位置冗余
 author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
 ms.author: billmath
 ms.assetId: 7b9f9a4f-888c-4358-bacd-3237661b1935
-ms.openlocfilehash: 574171b8e5569b2041492a95ebfe146cfd487523
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: dd666023e7b53af72f63edf1750321317e08f527
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865787"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049236"
 ---
 # <a name="setup-geographic-redundancy-with-sql-server-replication"></a>使用 SQL Server 複寫設定地理位置冗余
 
@@ -129,7 +130,7 @@ ms.locfileid: "96865787"
 
 9. 在 **訂** 用帳戶類型上，選擇 [ **用戶端** **]**，然後按
 
-   這種情況的含意記載于[here](/sql/relational-databases/replication/subscribe-to-publications)[此處](/sql/relational-databases/replication/merge/advanced-merge-replication-conflict-detection-and-resolution)。  基本上，我們會採用簡單的「第一次到發行者獲勝」衝突解決方式，而不需要重新發佈給其他訂閱者。
+   這種情況的含意記載于[](/sql/relational-databases/replication/subscribe-to-publications)[此處](/sql/relational-databases/replication/merge/advanced-merge-replication-conflict-detection-and-resolution)。  基本上，我們會採用簡單的「第一次到發行者獲勝」衝突解決方式，而不需要重新發佈給其他訂閱者。
    ![設定地理位置冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql33.png) </br>
 
 10. 在 [ **嚮導動作]** 頁面上，確定已核取 **[建立訂閱** ]，然後按一下 **[下一步]**。

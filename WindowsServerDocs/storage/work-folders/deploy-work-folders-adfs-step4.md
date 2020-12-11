@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：使用 AD FS 和 Web 應用程式 Proxy 部署工作資料夾：步驟4、設定 Web 應用程式 Proxy
 title: 搭配 AD FS 與 Web 應用程式 Proxy 部署工作資料夾 - 步驟 4 設定 Web 應用程式 Proxy
 ms.topic: article
 manager: klaasl
@@ -6,12 +7,12 @@ ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 06/24/2017
 ms.assetid: 4a11ede0-b000-4188-8190-790971504e17
-ms.openlocfilehash: 0b7748332d8760db24010a04d0ecf3a5094bcda6
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8a44359e257024b9ba74ee16684a1e4226891594
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87965825"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049146"
 ---
 # <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-4-set-up-web-application-proxy"></a>搭配 AD FS 與 Web 應用程式 Proxy 部署工作資料夾：步驟 4 設定 Web 應用程式 Proxy
 
@@ -30,7 +31,7 @@ ms.locfileid: "87965825"
 -   [搭配 AD FS 與 Web 應用程式 Proxy 部署工作資料夾︰步驟 5 設定用戶端](deploy-work-folders-adfs-step5.md)
 
 > [!NOTE]
->   本節涵蓋的指示適用于 Windows Server 2019 或 Windows Server 2016 環境。 如果您使用 Windows Server 2012 R2，請依照 [Windows Server 2012 R2 指示](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn747208(v=ws.11))。
+>   本節所涵蓋的指示適用于 Windows Server 2019 或 Windows Server 2016 環境。 如果您使用 Windows Server 2012 R2，請依照 [Windows Server 2012 R2 指示](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn747208(v=ws.11))。
 
 若要設定 Web 應用程式 Proxy 以搭配工作資料夾使用，請使用以下程序。
 
@@ -53,9 +54,9 @@ ms.locfileid: "87965825"
 
 6.  選取 **\[本機電腦 (執行這個主控台的電腦)\]**，然後按一下 **\[完成\]**。
 
-7.  按一下 [確定]  。
+7.  按一下 [確定]。
 
-8.  展開資料夾**主控台 [Root\Certificates \( 本機電腦]，) \personal\certificates**]。
+8.  展開資料夾 **主控台 Root\Certificates \( 本機電腦) \personal\certificates**]。
 
 9. 以滑鼠右鍵按一下 **\[憑證\]**，按一下 **\[所有工作\]**，然後按一下 **\[匯入\]**。
 
@@ -63,7 +64,7 @@ ms.locfileid: "87965825"
 
 11. 重複執行步驟 9 和 10，這次瀏覽到工作資料夾憑證並將其匯入。
 
-12. 展開資料夾**主控台 [Root\Certificates \( 本機電腦]，) \Trusted 根憑證 Authorities\Certificates**]。
+12. 展開資料夾 **主控台 Root\Certificates \( 本機電腦) \Trusted 根憑證 Authorities\Certificates**。
 
 13. 以滑鼠右鍵按一下 **\[憑證\]**，按一下 **\[所有工作\]**，然後按一下 **\[匯入\]**。
 
@@ -86,7 +87,7 @@ ms.locfileid: "87965825"
 
 6.  在 **\[角色服務\]** 頁面上，選取 **\[Web 應用程式 Proxy\]**，按一下 **\[新增功能\]**，然後按 **\[下一步\]**。
 
-7.  在 [確認安裝選項]**** 頁面上，按一下 [安裝]****。
+7.  在 [確認安裝選項] 頁面上，按一下 [安裝]。
 
 ## <a name="configure-web-application-proxy"></a>設定 Web 應用程式 Proxy
 若要設定 Web 應用程式 Proxy，請依照下列步驟執行︰
@@ -99,9 +100,9 @@ ms.locfileid: "87965825"
 
 4.  輸入同盟伺服器上的本機系統管理員帳戶的認證。 不要輸入網域認證 (例如，contoso\administrator)，而輸入本機認證 (例如系統管理員)。
 
-5.  在 **\[AD FS Proxy 憑證\]** 頁面上，選取之前匯入的 AD FS 憑證。 在測試案例中，這是 **blueadfs.contoso.com**。 按 [下一步]  。
+5.  在 **\[AD FS Proxy 憑證\]** 頁面上，選取之前匯入的 AD FS 憑證。 在測試案例中，這是 **blueadfs.contoso.com**。 按一下 [下一步] 。
 
-6.  確認頁面會顯示將執行的 Windows PowerShell 命令以設定服務。 按一下 [設定]****。
+6.  確認頁面會顯示將執行的 Windows PowerShell 命令以設定服務。 按一下 [設定]  。
 
 ## <a name="publish-the-work-folders-web-application"></a>發佈工作資料夾 web 應用程式
 下一個步驟是發佈將可讓用戶端使用工作資料夾的 Web 應用程式。 若要發佈工作資料夾 Web 應用程式，請依照下列步驟執行︰
@@ -136,13 +137,13 @@ ms.locfileid: "87965825"
 
    名稱︰**WorkFolders**
 
-   外部 URL：**https://workfolders.contoso.com**
+   外部 URL： **https://workfolders.contoso.com**
 
    外部憑證︰**您先前安裝的工作資料夾憑證**
 
-   後端伺服器 URL：**https://workfolders.contoso.com**
+   後端伺服器 URL： **https://workfolders.contoso.com**
 
-9. 確認頁面會顯示將執行的 \[Windows PowerShell\] 命令以發佈應用程式。 按一下 [發佈]。
+9. 確認頁面會顯示將執行的 \[Windows PowerShell\] 命令以發佈應用程式。 按一下 [發佈] 。
 
 10. 在 **\[結果\]** 頁面上，您應該會看見已應用程式成功發佈。
     >[!NOTE]

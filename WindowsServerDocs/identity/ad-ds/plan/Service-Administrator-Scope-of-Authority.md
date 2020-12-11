@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：服務管理員的授權範圍
 ms.assetid: da7b6dcf-53ec-4394-88c0-c087d92f3893
 title: 授權單位的服務管理員範圍
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 7094a46fc848e188309abb040f3e1383b6f9b6b7
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 600ee3ff18464219f278b1525db6e3a14e5ab1f3
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070190"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049276"
 ---
 # <a name="service-administrator-scope-of-authority"></a>授權單位的服務管理員範圍
 

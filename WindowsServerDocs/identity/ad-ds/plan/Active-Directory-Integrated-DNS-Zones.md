@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解： Active Directory-Integrated DNS 區域
 ms.assetid: 39c0126d-af5e-4dcb-88c1-aa38f888e973
 title: Active Directory 整合 DNS 區域
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 6224885ba4e28c7fe21e6c50e86dfce01ed1049b
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: d07e6ae9751d299cb2f81edb20b036a1cfe63048
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93071210"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97050126"
 ---
 # <a name="active-directory-integrated-dns-zones"></a>Active Directory 整合 DNS 區域
 

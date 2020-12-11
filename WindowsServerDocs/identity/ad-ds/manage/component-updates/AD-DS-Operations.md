@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解： AD DS 作業
 ms.assetid: 560dfa18-0398-4186-ba91-da03ab72c2d5
 title: AD DS 作業
 ms.author: daveba
@@ -6,12 +7,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: d15fb4bf7454dae9baf87fbe24611e21eff37ad9
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 5ed805029a109f83b594f54bce7c016aafe624f2
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93067530"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049476"
 ---
 # <a name="ad-ds-operations"></a>AD DS 作業
 

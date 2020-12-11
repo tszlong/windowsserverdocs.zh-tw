@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：識別您的 AD DS 設計和部署需求
 ms.assetid: f0398494-773d-4070-aa4e-25b4815b001e
 title: 識別您的 AD DS 設計與部署需求
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 871b7d3fb37814e3ec439e23865e3897357db6d8
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 923d7d1def40825e9312a1faeeb1b32519d49e3b
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93068420"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049646"
 ---
 # <a name="identifying-your-ad-ds-design-and-deployment-requirements"></a>識別您的 AD DS 設計與部署需求
 

@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：如何設定受保護帳戶的指引
 ms.assetid: 70c99703-ff0d-4278-9629-b8493b43c833
 title: 如何設定受保護帳戶的指引
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: ada9ebb22e4e98f1caa63fb66ff3aaaf2b231df7
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 1e4aff28a2212b678770cb9f78400e1db48cf8ec
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93067980"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049616"
 ---
 # <a name="guidance-about-how-to-configure-protected-accounts"></a>如何設定受保護帳戶的指引
 
@@ -63,11 +64,11 @@ Protected Users 是新的全域安全性群組，您可以將新的或現有的�
 
 Protected Users 群組的成員必須能夠使用具備進階加密標準 (AES) 的 Kerberos 進行驗證。 此方法需要 Active Directory 中帳戶的 AES 金鑰。 內建的系統管理員沒有 AES 金鑰，除非在執行 Windows Server 2008 或更新版本的網域控制站上變更密碼。 此外，在執行舊版 Windows Server 的網域控制站上，任何已變更密碼的帳戶都會遭到鎖定。因此，請遵循下列最佳作法：
 
--   不要在網域中進行測試，除非 **所有網域控制站都執行 Windows Server 2008 或更新版本** 。
+-   不要在網域中進行測試，除非 **所有網域控制站都執行 Windows Server 2008 或更新版本**。
 
--   為在建立網域「之前」就建立的所有網域帳戶 *變更密碼* 。 否則，這些帳戶都會無法驗證。
+-   為在建立網域「之前」就建立的所有網域帳戶 *變更密碼*。 否則，這些帳戶都會無法驗證。
 
--   請在將帳戶新增到 Protected Users 群組之前變更每位使用者的 **密碼** ，或確定最近在執行 Windows Server 2008 或更新版本的網域控制站上變更密碼。
+-   請在將帳戶新增到 Protected Users 群組之前變更每位使用者的 **密碼**，或確定最近在執行 Windows Server 2008 或更新版本的網域控制站上變更密碼。
 
 ### <a name="requirements-for-using-protected-accounts"></a><a name="BKMK_Prereq"></a>使用受保護的帳戶的需求
 受保護的帳戶有下列部署需求：
@@ -192,7 +193,7 @@ AP 交換通常會發生在應用程式通訊協定內的資料，且不會受�
 2.  在 [選項] 下的下拉式清單方塊中，選取 [永遠提供宣告]。
 
     > [!NOTE]
-    > 也可以設定 **支援** ，但因為網域是在 Windows Server 2012 R2 DFL，所以 dc 一律會提供宣告，讓使用者以宣告為基礎的存取檢查在使用非宣告感知裝置和主機連接到宣告感知服務時進行。
+    > 也可以設定 **支援**，但因為網域是在 Windows Server 2012 R2 DFL，所以 dc 一律會提供宣告，讓使用者以宣告為基礎的存取檢查在使用非宣告感知裝置和主機連接到宣告感知服務時進行。
 
     ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AlwaysProvideClaims.png)
 
@@ -232,7 +233,7 @@ AP 交換通常會發生在應用程式通訊協定內的資料，且不會受�
 
     ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_TGTLifetime.gif)
 
-    例如，如果您想要以 10 小時做為最大的 TGT 存留期，請如所示輸入 **600** 。 若未設定 TGT 存留期，且帳戶是 **Protected Users** 群組的成員，則 TGT 存留期和更新為 4 小時。 否則，TGT 存留期和更新會根據網域的下列 [群組原則管理編輯器] 視窗中所顯示的網域原則採取預設設定。
+    例如，如果您想要以 10 小時做為最大的 TGT 存留期，請如所示輸入 **600**。 若未設定 TGT 存留期，且帳戶是 **Protected Users** 群組的成員，則 TGT 存留期和更新為 4 小時。 否則，TGT 存留期和更新會根據網域的下列 [群組原則管理編輯器] 視窗中所顯示的網域原則採取預設設定。
 
     ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_TGTExpiration.png)
 
@@ -333,7 +334,7 @@ AP 交換通常會發生在應用程式通訊協定內的資料，且不會受�
 ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AccountsAssigned.gif)
 
 #### <a name="use-the-authentication-policy-failures---domain-controller-administrative-log"></a>使用驗證原則失敗-網域控制站系統管理記錄
-新的 **驗證原則失敗-** **應用程式和服務記錄** 下的網域控制站系統管理記錄檔已  >  建立 **Microsoft**  >  **Windows**  >  **驗證** ，讓您更輕鬆地探索由於驗證原則所造成的失敗。 該記錄檔預設為停用。 若要啟用它，請在記錄檔名稱上按一下滑鼠右鍵，然後按一下 [啟用記錄]。 新的事件在內容上非常類似現有的 Kerberos TGT 與服務票證稽核事件。 如需這些事件的詳細資訊，請參閱 [驗證原則和驗證原則定址接收器](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486813(v=ws.11))。
+新的 **驗證原則失敗-** **應用程式和服務記錄** 下的網域控制站系統管理記錄檔已  >  建立 **Microsoft**  >  **Windows**  >  **驗證**，讓您更輕鬆地探索由於驗證原則所造成的失敗。 該記錄檔預設為停用。 若要啟用它，請在記錄檔名稱上按一下滑鼠右鍵，然後按一下 [啟用記錄]。 新的事件在內容上非常類似現有的 Kerberos TGT 與服務票證稽核事件。 如需這些事件的詳細資訊，請參閱 [驗證原則和驗證原則定址接收器](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486813(v=ws.11))。
 
 ### <a name="manage-authentication-policies-by-using-windows-powershell"></a><a name="BKMK_ManageAuthnPoliciesUsingPSH"></a>使用 Windows PowerShell 管理驗證原則
 此命令會建立一個名為 **TestAuthenticationPolicy** 的驗證原則。 **UserAllowedToAuthenticateFrom** 參數指定使用者可透過名為 someFile.txt 之檔案中的 SDDL 字串，從其驗證的裝置。
@@ -456,7 +457,7 @@ PS C:\>Get-ADAuthenticationPolicySilo -Filter 'Enforce -eq $False' | Remove-ADAu
 PS C:\>Grant-ADAuthenticationPolicySiloAccess -Identity Silo -Account User01
 ```
 
-此命令會撤銷名為 *User01* 的使用者帳戶對名為 *Silo* 之驗證原則定址接收器的存取權。 因為 **Confirm** 參數設定為 **$False** ，所以不會顯示任何確認訊息。
+此命令會撤銷名為 *User01* 的使用者帳戶對名為 *Silo* 之驗證原則定址接收器的存取權。 因為 **Confirm** 參數設定為 **$False**，所以不會顯示任何確認訊息。
 
 ```
 PS C:\>Revoke-ADAuthenticationPolicySiloAccess -Identity Silo -Account User01 -Confirm:$False

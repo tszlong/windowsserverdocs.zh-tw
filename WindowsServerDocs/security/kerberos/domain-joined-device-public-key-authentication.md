@@ -1,16 +1,17 @@
 ---
+description: 深入瞭解：已加入網域的裝置公開金鑰驗證
 title: 加入網域的裝置公開金鑰驗證
 ms.topic: article
 ms.assetid: 7bd17803-6e42-4a3b-803f-e47c74725813
 author: justinha
 ms.author: Justinha
 ms.date: 08/18/2017
-ms.openlocfilehash: d9603cde90ca4a689d6d5993c8e131ba5a2e7d40
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: fbf5db62d9526283a9d52f5edde5d89e7a5c8fd4
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90077595"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049086"
 ---
 # <a name="domain-joined-device-public-key-authentication"></a>加入網域的裝置公開金鑰驗證
 

@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解： Active Directory 樹系復原虛擬化
 title: AD 樹系修復虛擬化
 ms.author: daveba
 author: iainfoulds
@@ -6,12 +7,12 @@ manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: c49b40b2-598d-49aa-85b4-766bce960e0d
-ms.openlocfilehash: 61c28bf5edce2855320669f446e0ade559d10716
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: bf84f5db627d2383a47a9d23ce72acbc45251ea6
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070770"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049546"
 ---
 # <a name="active-directory-forest-recovery-virtualization"></a>Active Directory 樹系復原虛擬化
 
@@ -31,7 +32,7 @@ ms.locfileid: "93070770"
 
 如需有關如何執行虛擬化 DC 複製的逐步指示，請參閱 [Active Directory Domain Services (AD DS) 虛擬化 (層級 100) 的簡介 ](../Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)。 如需虛擬化 DC 複製運作方式的詳細資訊，請參閱 [虛擬網域控制站技術參考 (層級 300) ](../deploy/virtual-dc/virtualized-domain-controller-technical-reference--level-300-.md)。
 
-## <a name="next-steps"></a>下一步
+## <a name="next-steps"></a>後續步驟
 
 - [AD 樹系復原 - 先決條件](AD-Forest-Recovery-Prerequisties.md)
 - [AD 樹系復原-設計自訂樹系復原方案](AD-Forest-Recovery-Devising-a-Plan.md)

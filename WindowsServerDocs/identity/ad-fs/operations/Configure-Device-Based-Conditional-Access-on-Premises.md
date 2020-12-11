@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：使用已註冊的裝置設定內部部署條件式存取
 ms.assetid: 35de490f-c506-4b73-840c-b239b72decc2
 title: 設定裝置型條件式存取內部部署
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 08/11/2017
 ms.topic: article
-ms.openlocfilehash: 2306c5ad57b7714c10076a5bb11f6cae5bb7f92d
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 5b840243a7f17dc65db5d3c0605c3e5a321352f2
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766881"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049716"
 ---
 # <a name="configure-on-premises-conditional-access-using-registered-devices"></a>使用已註冊的裝置設定內部部署條件式存取
 
@@ -208,7 +209,7 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
 若要啟用已註冊裝置的自動 MDM 註冊，讓您可以在存取控制原則中使用 >iscompliant 宣告，請遵循[此處](/windows/client-management/join-windows-10-mobile-to-azure-active-directory)的步驟。
 
 ## <a name="troubleshooting"></a>疑難排解
-1.  如果您在該抱怨上收到錯誤 `Initialize-ADDeviceRegistration` ，指出物件已存在於錯誤的狀態中，例如「找不到所有必要屬性的 drs 服務物件」，您可能先前已執行 Azure AD Connect powershell 命令，並在 AD DS 中有部分設定。  請嘗試在**CN = Device Registration configuration，cn = Services，cn = Configuration，DC = &lt; 網域 &gt; **下手動刪除物件，然後再試一次。
+1.  如果您在該抱怨上收到錯誤 `Initialize-ADDeviceRegistration` ，指出物件已存在於錯誤的狀態中，例如「找不到所有必要屬性的 drs 服務物件」，您可能先前已執行 Azure AD Connect powershell 命令，並在 AD DS 中有部分設定。  請嘗試在 **CN = Device Registration configuration，cn = Services，cn = Configuration，DC = &lt; 網域 &gt;** 下手動刪除物件，然後再試一次。
 2.  針對已加入網域的 Windows 10 用戶端
     1. 若要確認裝置驗證是否正常運作，請以測試使用者帳戶登入加入網域的用戶端。 若要快速觸發布建，請至少一次鎖定並解除鎖定桌面。
     2. 在 AD DS 物件上檢查 [stk 金鑰認證] 連結的指示 (是否仍需要執行兩次？ ) 

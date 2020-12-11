@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：使用 AD FS 和 Web 應用程式 Proxy 部署工作資料夾：步驟3、設定工作資料夾
 title: 搭配 AD FS 與 Web 應用程式 Proxy 部署工作資料夾 - 步驟 3 設定工作資料夾
 ms.topic: article
 manager: klaasl
@@ -6,12 +7,12 @@ ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 4/5/2017
 ms.assetid: 5a43b104-4d02-4d73-a385-da1cfb67e341
-ms.openlocfilehash: 784b4467fccaefc2911c501d49ac4c1cd9196c67
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2c85e0fc34fcbd735a79c8c768dbee70ff5e2e8d
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970075"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049156"
 ---
 # <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-3-set-up-work-folders"></a>搭配 AD FS 與 Web 應用程式 Proxy 部署工作資料夾︰步驟 3 設定工作資料夾
 
@@ -30,7 +31,7 @@ ms.locfileid: "87970075"
 -   [搭配 AD FS 與 Web 應用程式 Proxy 部署工作資料夾︰步驟 5 設定用戶端](deploy-work-folders-adfs-step5.md)
 
 > [!NOTE]
->   本節涵蓋的指示適用于 Windows Server 2019 或 Windows Server 2016 環境。 如果您使用 Windows Server 2012 R2，請依照 [Windows Server 2012 R2 指示](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn747208(v=ws.11))。
+>   本節所涵蓋的指示適用于 Windows Server 2019 或 Windows Server 2016 環境。 如果您使用 Windows Server 2012 R2，請依照 [Windows Server 2012 R2 指示](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn747208(v=ws.11))。
 
 若要設定工作資料夾，請使用下列程序。
 
@@ -55,7 +56,7 @@ ms.locfileid: "87970075"
 
 5.  在 **\[目標主機的完整網域名稱\]** 欄位中，輸入工作資料夾伺服器的 FQDN。 在測試範例中，該值為 **2016-WF.contoso.com**。
 
-6.  按一下 [確定]  。
+6.  按一下 [確定]。
 
 若要透過 Windows PowerShell 完成相同的步驟，請使用下列命令。 命令必須在網域控制站中執行。
 
@@ -78,15 +79,15 @@ Add-DnsServerResourceRecord  -ZoneName "contoso.com" -Name workfolders -CName  -
 
 6.  選取 **\[本機電腦 (執行這個主控台的電腦)\]**，然後按一下 **\[完成\]**。
 
-7.  按一下 [確定]  。
+7.  按一下 [確定]。
 
-8.  展開資料夾**主控台 [Root\Certificates \( 本機電腦]，) \personal\certificates**]。
+8.  展開資料夾 **主控台 Root\Certificates \( 本機電腦) \personal\certificates**]。
 
 9. 以滑鼠右鍵按一下 **\[憑證\]**，按一下 **\[所有工作\]**，然後按一下 **\[匯入\]**。
 
 10. 瀏覽至含有 AD FS 憑證的資料夾，然後依照精靈中的指示匯入檔案，並將它放在憑證存放區。
 
-11. 展開資料夾**主控台 [Root\Certificates \( 本機電腦]，) \Trusted 根憑證 Authorities\Certificates**]。
+11. 展開資料夾 **主控台 Root\Certificates \( 本機電腦) \Trusted 根憑證 Authorities\Certificates**。
 
 12. 以滑鼠右鍵按一下 **\[憑證\]**，按一下 **\[所有工作\]**，然後按一下 **\[匯入\]**。
 
@@ -117,7 +118,7 @@ Add-DnsServerResourceRecord  -ZoneName "contoso.com" -Name workfolders -CName  -
 
 7.  當系統提示您輸入主體別名 (SAN) 的名稱時，請按下 Y 鍵，然後輸入 SAN 名稱 (一次輸入一個)。
 
-    例如，輸入**workfolders.contoso.com**，然後按 Enter 鍵。 然後輸入 **2016-WF.contoso.com** 並按 Enter 鍵。
+    例如，輸入 **workfolders.contoso.com**，然後按 Enter 鍵。 然後輸入 **2016-WF.contoso.com** 並按 Enter 鍵。
 
     在輸入所有的 SAN 名稱後，在空白行上按 Enter 鍵。
 
@@ -140,7 +141,7 @@ Add-DnsServerResourceRecord  -ZoneName "contoso.com" -Name workfolders -CName  -
 
 1.  開啟 **\[伺服器管理員\]**，按一下 **\[新增角色及功能\]**，然後按 **\[下一步\]**。
 
-2.  在 [**安裝類型**] 頁面上，選取 [**角色型或功能型安裝**]，然後按 **[下一步]**。
+2.  在 [ **安裝類型** ] 頁面上，選取 [ **角色型或以功能為基礎的安裝**]，然後按 **[下一步]**。
 
 3.  在 **\[選取伺服器\]** 頁面上，選取您目前的伺服器，然後按 **\[下一步\]**。
 
@@ -148,32 +149,32 @@ Add-DnsServerResourceRecord  -ZoneName "contoso.com" -Name workfolders -CName  -
 
 5.  在 **\[新增角色及功能精靈\]** 頁面上，按一下 **\[新增功能\]**，然後按 **\[下一步\]**。
 
-6.  在 [**功能**] 頁面上，按 **[下一步]**。
+6.  在 [ **功能** ] 頁面上，按 **[下一步]**。
 
-7.  在 [確認]**** 頁面上，按一下 [安裝]****。
+7.  在 [確認] 頁面上，按一下 [安裝]。
 
 ## <a name="configure-work-folders"></a>設定工作資料夾
 若要設定工作資料夾，請依照下列步驟執行：
 
-1.  開啟**伺服器管理員**。
+1.  開啟 **[伺服器管理員]** 。
 
 2.  選取 **\[檔案和存放服務\]**，然後選取 **\[工作資料夾\]**。
 
 3.  在 **\[工作資料夾\]** 頁面上，啟動 **\[新增同步共用精靈\]**，然後按 **\[下一步\]**。
 
-4.  在**\[伺服器和路徑\]** 頁面上，選取將建立同步共用的伺服器，輸入要儲存工作資料夾資料的本機路徑，然後按 **\[下一步\]**。
+4.  在 **\[伺服器和路徑\]** 頁面上，選取將建立同步共用的伺服器，輸入要儲存工作資料夾資料的本機路徑，然後按 **\[下一步\]**。
 
-    如果路徑不存在，系統將會提示您建立它。 按一下 [確定]  。
+    如果路徑不存在，系統將會提示您建立它。 按一下 [確定]。
 
-5.  在 **\[使用者資料夾結構\]** 頁面上，選取**\[使用者別名\]**，然後按 **\[下一步\]**。
+5.  在 **\[使用者資料夾結構\]** 頁面上，選取 **\[使用者別名\]**，然後按 **\[下一步\]**。
 
-6.  在 **\[同步共用名稱\]** 頁面上，輸入同步共用的名稱。 在測試範例中，此別名為 **WorkFolders**。 按 [下一步]  。
+6.  在 **\[同步共用名稱\]** 頁面上，輸入同步共用的名稱。 在測試範例中，此別名為 **WorkFolders**。 按一下 [下一步] 。
 
-7.  在 **\[同步存取\]** 頁面上，新增將具備同步共用存取權限的使用者或群組。 在測試範例中會將存取權限授予所有網域使用者。 按 [下一步]  。
+7.  在 **\[同步存取\]** 頁面上，新增將具備同步共用存取權限的使用者或群組。 在測試範例中會將存取權限授予所有網域使用者。 按一下 [下一步] 。
 
-8.  在 **\[電腦安全性原則\]** 頁面上，選取 **\[加密工作資料夾\]** 和 **\[自動鎖定頁面並要求輸入密碼\]**。 按 [下一步]  。
+8.  在 **\[電腦安全性原則\]** 頁面上，選取 **\[加密工作資料夾\]** 和 **\[自動鎖定頁面並要求輸入密碼\]**。 按一下 [下一步] 。
 
-9. 在**\[確認\]** 頁面中，按一下 **\[建立\]** 以完成設定程序。
+9. 在 **\[確認\]** 頁面中，按一下 **\[建立\]** 以完成設定程序。
 
 ## <a name="work-folders-post-configuration-work"></a>工作資料夾後設定工作
 若要完成工作資料夾設定，請執行這些額外步驟︰
@@ -197,7 +198,7 @@ $subject = "workfolders.contoso.com"
 Try
 {
 #In case there are multiple certificates with the same subject, get the latest version
-$cert = Get-ChildItem CERT:\LocalMachine\My |where {$_.Subject -match $subject} | sort $_.NotAfter -Descending | select -first 1 
+$cert = Get-ChildItem CERT:\LocalMachine\My |where {$_.Subject -match $subject} | sort $_.NotAfter -Descending | select -first 1 
 $thumbprint = $cert.Thumbprint
 $Command = "http add sslcert ipport=0.0.0.0:443 certhash=$thumbprint appid={CE66697B-3AA0-49D1-BDBD-A25C8359FD5D} certstorename=MY"
 $Command | netsh
@@ -215,7 +216,7 @@ Exit
 > [!NOTE]
 > 安裝 IIS 管理工具並不會在工作資料夾電腦上啟用 Internet Information Services 的完整版，它只會啟用管理 Cmdlet。 此設定還可提供一些好處， (比如說) 要是您正在尋找 Cmdlet 以提供 netsh 所發揮之功能的話。 當憑證是透過 New-WebBinding Cmdlet 繫結至連接埠時，該繫結並不會以任何方式依存於 IIS。 在進行繫結之後，即使您已移除 Web-Mgmt-Console 功能，憑證仍可繫結至連接埠。 您可以輸入 **netsh http show sslcert** 以透過 netsh 驗證繫結。
 
-以下範例使用 New-WebBinding Cmdlet 以尋找具有主體**workfolders.contoso.com** 的憑證，並將其繫結至連接埠 443：
+以下範例使用 New-WebBinding Cmdlet 以尋找具有主體 **workfolders.contoso.com** 的憑證，並將其繫結至連接埠 443：
 
 ```powershell
 $subject = "workfolders.contoso.com"
@@ -240,15 +241,15 @@ Exit
 ### <a name="set-up-ad-fs-authentication"></a>設定 AD FS 驗證
 若要設定工作資料夾以使用 AD FS 進行驗證，請依照下列步驟執行：
 
-1.  開啟**伺服器管理員**。
+1.  開啟 **[伺服器管理員]** 。
 
-2.  按一下 **\[伺服器\] **，然後在清單中選取您的工作資料夾。
+2.  按一下 **\[伺服器\]**，然後在清單中選取您的工作資料夾。
 
 3.  在伺服器名稱上按滑鼠右鍵，再按一下 **\[工作資料夾設定\]**。
 
 4.  在 **\[工作資料夾設定\]** 視窗中，選取 **\[Active Directory 同盟服務\]**，並輸入 Federation Service URL。 按一下 [套用]。
 
-    在測試範例中，URL 是 **https://blueadfs.contoso.com** 。
+    在測試範例中，URL 為 **https://blueadfs.contoso.com** 。
 
 透過 Windows PowerShell 完成相同工作的 Cmdlet 是：
 

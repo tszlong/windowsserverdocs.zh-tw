@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：網站函式
 ms.assetid: 22c514b2-401e-49e1-a87e-0cbaa2c1dac1
 title: 站台功能
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 633c9557dffd2ce93bb913a2009a265472f4c500
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: d505a67cbe0003c802096debfff4e33c3dfc7d23
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070150"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049266"
 ---
 # <a name="site-functions"></a>站台功能
 

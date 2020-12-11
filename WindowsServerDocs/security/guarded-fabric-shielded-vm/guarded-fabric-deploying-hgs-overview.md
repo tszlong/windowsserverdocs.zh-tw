@@ -1,17 +1,18 @@
 ---
 title: 部署主機守護者服務
+description: 深入瞭解：部署主機守護者服務
 ms.topic: article
 ms.assetid: 310b63d9-5ac7-4961-98ef-103af45d706a
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 01/14/2020
-ms.openlocfilehash: 4267acb6058a1e39ed42e986f195f8f9d4c8d17b
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: a6a885661107c4e16b495f845ee28677dd5bbba4
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96864147"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049836"
 ---
 # <a name="deploying-the-host-guardian-service"></a>部署主機守護者服務
 
