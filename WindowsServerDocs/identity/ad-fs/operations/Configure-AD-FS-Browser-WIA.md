@@ -6,12 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 03/20/2020
 ms.topic: article
-ms.openlocfilehash: cea61a282a560645613b4444aa4de06086bb7dbe
-ms.sourcegitcommit: 03048411c07c1a1d0c8bb0b2a60c1c17c9987314
+ms.openlocfilehash: c7779522e874fb484f3801780495f96ddcead990
+ms.sourcegitcommit: 4165d4a9198228d4ec809ccd7d791f8de2aeb159
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96938988"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091272"
 ---
 # <a name="configure-browsers-to-use-windows-integrated-authentication-wia-with-ad-fs"></a>將瀏覽器設定為使用 Windows 整合式驗證 (WIA) 搭配 AD FS
 
@@ -20,7 +20,7 @@ ms.locfileid: "96938988"
 AD FS 2016 現在具有改良的預設設定，可讓 Edge 瀏覽器執行 WIA，同時也不會 (錯誤地) 捕捉 Windows Phone：
 
 ```
-=~Windows\s*NT.*Edge
+=~Windows\s*NT.*Edg.*
 ```
 
 上述表示您不再需要設定個別的使用者代理程式字串來支援常見的邊緣案例，即使它們經常更新也是一樣。

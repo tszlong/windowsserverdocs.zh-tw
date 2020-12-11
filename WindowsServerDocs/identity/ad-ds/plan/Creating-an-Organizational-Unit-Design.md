@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：建立組織單位設計
 ms.assetid: b8df1828-5ead-4c90-b0fe-95c675116b7c
 title: 建立組織單位設計
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 5dca71251ec0766720afe15b7c53a628f0335eb6
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 208ad85954f3c622a92dc03ac714043066867310
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93067760"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97050176"
 ---
 # <a name="creating-an-organizational-unit-design"></a>建立組織單位設計
 

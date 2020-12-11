@@ -1,4 +1,5 @@
 ---
+description: '深入瞭解：部署自動檔案分類 (示範步驟) '
 ms.assetid: 01988844-df02-4952-8535-c87aefd8a38a
 title: Deploy Automatic File Classification (Demonstration Steps)
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 19c2ddbdc7ae00c32147023b2204efface9c4727
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 218fd28153631828dcb1ee076bda379de61a725b
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952880"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048556"
 ---
 # <a name="deploy-automatic-file-classification-demonstration-steps"></a>Deploy Automatic File Classification (Demonstration Steps)
 
@@ -19,7 +20,7 @@ ms.locfileid: "87952880"
 
 這個主題說明如何啟用 Active Directory 中的資源內容、在檔案伺服器上建立分類規則，然後將值指派給檔案伺服器上檔案的資源內容。 針對這個範例會建立下列分類規則：
 
--   一種內容分類規則，可搜尋一組檔案中是否有字串「Contoso 機密」。 如果檔案中找到這個字串，檔案上的 [影響] 資源內容就會設為 [高]。
+-   一種內容分類規則，可在一組檔案中搜尋「Contoso 機密」字串。 如果檔案中找到這個字串，檔案上的 [影響] 資源內容就會設為 [高]。
 
 -   利用規則運算式搜尋一組檔案，尋找一個檔案中至少有 10 次比對到身分證號碼的內容分類規則。 如果找到這個模式，則檔案會分類為包含個人識別資訊，且 [個人識別資訊] 資源內容會設為 [高]。
 
@@ -45,15 +46,15 @@ ms.locfileid: "87952880"
 
 1.  在網域控制站上，以 Domain Admins 安全性群組成員的身分登入伺服器。
 
-2.  開啟 Active Directory 管理中心。 在 [伺服器管理員] 中，按一下 [工具]****，然後按一下 [Active Directory 管理中心]****。
+2.  開啟 Active Directory 管理中心。 在 [伺服器管理員] 中，按一下 [工具]，然後按一下 [Active Directory 管理中心]。
 
-3.  展開 [動態存取控制]****，然後按一下 [資源內容]****。
+3.  展開 [動態存取控制]，然後按一下 [資源內容]。
 
-4.  用滑鼠右鍵按一下 [影響]****，然後按一下 [啟用]****。
+4.  用滑鼠右鍵按一下 [影響]，然後按一下 [啟用]。
 
-5.  在 [個人識別資訊]**** 上按一下滑鼠右鍵，然後按一下 [啟用]****。
+5.  在 [個人識別資訊] 上按一下滑鼠右鍵，然後按一下 [啟用]。
 
-![解決方案指南](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***
+![解決方案指南 ](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif) * *_<em>Windows PowerShell 對等命令</em>_* _
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -63,7 +64,7 @@ Set-ADResourceProperty '"Enabled:$true '"Identity:'CN=PII_MS,CN=Resource Propert
 ```
 
 ## <a name="step-2-create-a-string-content-classification-rule"></a><a name="BKMK_Step2"></a>步驟 2：建立字串內容分類規則
-字串內容分類規則會掃描檔案是否包含特定字串。 如果找到字串，則可以設定資源內容的值。 在此範例中，我們會掃描網路共用資料夾上的每個檔案，並尋找「Contoso 機密」字串。 如果找到字串，關聯的檔案會被分類為具有高商業影響。
+字串內容分類規則會掃描檔案是否包含特定字串。 如果找到字串，則可以設定資源內容的值。 在此範例中，我們將掃描網路共用資料夾上的每個檔案，並尋找「Contoso 機密」字串。 如果找到字串，關聯的檔案會被分類為具有高商業影響。
 
 [使用 Windows PowerShell 進行此步驟](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep2)
 
@@ -71,40 +72,40 @@ Set-ADResourceProperty '"Enabled:$true '"Identity:'CN=PII_MS,CN=Resource Propert
 
 1.  以本機 Administrators 安全性群組成員的身分登入檔案伺服器。
 
-2.  在 Windows PowerShell 命令提示字元中，輸入 **Update-FsrmClassificationPropertyDefinition**，然後按下 ENTER。 這會將網域控制站上建立的內容定義與檔案伺服器同步。
+2.  在 Windows PowerShell 命令提示字元中，輸入 _ *Update-update-fsrmclassificationpropertydefinition**，然後按 enter。 這會將網域控制站上建立的內容定義與檔案伺服器同步。
 
-3.  開啟檔案伺服器資源管理員。 在 [伺服器管理員] 中按一下 [工具]****，然後按一下 [檔案伺服器資源管理員]****。
+3.  開啟檔案伺服器資源管理員。 在 [伺服器管理員] 中按一下 [工具]，然後按一下 [檔案伺服器資源管理員]。
 
-4.  展開 [分類管理]****，以滑鼠右鍵按一下 [分類規則]****，然後按一下 [設定分類排程]****。
+4.  展開 [分類管理]，以滑鼠右鍵按一下 [分類規則]，然後按一下 [設定分類排程]。
 
-5.  選取 [啟用固定的排程]**** 核取方塊，選取 [允許對新檔案進行連續分類]**** 核取方塊，選擇每週中執行分類的日子，然後按一下 [確定]****。
+5.  選取 [啟用固定的排程] 核取方塊，選取 [允許對新檔案進行連續分類]核取方塊，選擇每週中執行分類的日子，然後按一下 [確定]。
 
-6.  在 [分類規則]**** 上按一下滑鼠右鍵，然後按一下 [建立分類規則]****。
+6.  在 [分類規則] 上按一下滑鼠右鍵，然後按一下 [建立分類規則]。
 
-7.  在 [一般]**** 索引標籤的 [規則名稱]**** 方塊中，輸入規則的名稱，例如 **Contoso Confidential**。
+7.  在 [一般] 索引標籤的 [規則名稱] 方塊中，輸入規則的名稱，例如 **Contoso Confidential**。
 
-8.  在 [範圍]**** 索引標籤上，按一下 [新增]****，選擇這個規則中應該包含的資料夾，例如 D:\Finance Documents。
+8.  在 [範圍] 索引標籤上，按一下 [新增]，選擇這個規則中應該包含的資料夾，例如 D:\Finance Documents。
 
     > [!NOTE]
-    > 您也可以為範圍選擇動態命名空間。 如需分類規則的動態命名空間的詳細資訊，請參閱[Windows server 2012 中檔案伺服器 Resource Manager 的新功能重新 \[ 導向 \] ](assetId:///d53c603e-6217-4b98-8508-e8e492d16083)。
+    > 您也可以為範圍選擇動態命名空間。 如需分類規則的動態命名空間的詳細資訊，請參閱[Windows server 2012 中的檔案伺服器 Resource Manager 的新功能重新 \[ 導向 \] ](assetId:///d53c603e-6217-4b98-8508-e8e492d16083)。
 
-9. 在 [分類]**** 索引標籤中，設定下列選項：
+9. 在 [分類] 索引標籤中，設定下列選項：
 
-    -   在 [選擇將內容指派給檔案的方法]**** 方塊中，確定已選取 [內容分類器]****。
+    -   在 [選擇將內容指派給檔案的方法] 方塊中，確定已選取 [內容分類器]。
 
-    -   在 [選擇要指派給檔案的內容]**** 方塊中，按一下 [影響]****。
+    -   在 [選擇要指派給檔案的內容] 方塊中，按一下 [影響]。
 
-    -   在 [指定值]**** 方塊中，按一下 [高]****。
+    -   在 [指定值] 方塊中，按一下 [高]。
 
-10. 在 [參數]**** 標題之下，按一下 [設定]****。
+10. 在 [參數] 標題之下，按一下 [設定]。
 
-11. 在 [運算式類型]**** 欄中，選取 [字串]****。
+11. 在 [運算式類型] 欄中，選取 [字串]。
 
-12. 在 [運算式]**** 欄中，輸入 **Contoso Confidential**，然後按一下 [確定]****。
+12. 在 [運算式] 欄中，輸入 **Contoso Confidential**，然後按一下 [確定]。
 
-13. 在 [評估類型]**** 索引標籤上，選取 [重新評估現有的內容值]**** 核取方塊，按一下 [覆寫現有的值]****，然後按一下 [確定]****。
+13. 在 [評估類型] 索引標籤上，選取 [重新評估現有的內容值] 核取方塊，按一下 [覆寫現有的值]，然後按一下 [確定]。
 
-![解決方案指南](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***
+![解決方案指南 ](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif) * *_<em>Windows PowerShell 對等命令</em>_* _
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -124,35 +125,35 @@ New-FSRMClassificationRule -Name 'Contoso Confidential' -Property "Impact_MS" -P
 
 1.  以本機 Administrators 安全性群組成員的身分登入檔案伺服器。
 
-2.  在 Windows PowerShell 命令提示字元中，輸入 **Update-FsrmClassificationPropertyDefinition**，然後按下 ENTER。 這會將網域控制站上建立的內容定義與檔案伺服器同步。
+2.  在 Windows PowerShell 命令提示字元中，輸入 _ * Update-fsrmclassificationpropertydefinition * *，然後按 ENTER。 這會將網域控制站上建立的內容定義與檔案伺服器同步。
 
-3.  開啟檔案伺服器資源管理員。 在 [伺服器管理員] 中按一下 [工具]****，然後按一下 [檔案伺服器資源管理員]****。
+3.  開啟檔案伺服器資源管理員。 在 [伺服器管理員] 中按一下 [工具]，然後按一下 [檔案伺服器資源管理員]。
 
-4.  在 [分類規則]**** 上按一下滑鼠右鍵，然後按一下 [建立分類規則]****。
+4.  在 [分類規則] 上按一下滑鼠右鍵，然後按一下 [建立分類規則]。
 
-5.  在 [一般]**** 索引標籤上的 [規則名稱]**** 方塊中，輸入分類規則的名稱，例如「PII 規則」。
+5.  在 [一般] 索引標籤上的 [規則名稱] 方塊中，輸入分類規則的名稱，例如「PII 規則」。
 
-6.  在 [範圍]**** 索引標籤上，按一下 [新增]****，選擇這個規則中應該包含的資料夾，例如 D:\Finance Documents。
+6.  在 [範圍] 索引標籤上，按一下 [新增]，選擇這個規則中應該包含的資料夾，例如 D:\Finance Documents。
 
-7.  在 [分類]**** 索引標籤中，設定下列選項：
+7.  在 [分類] 索引標籤中，設定下列選項：
 
-    -   在 [選擇將內容指派給檔案的方法]**** 方塊中，確定已選取 [內容分類器]****。
+    -   在 [選擇將內容指派給檔案的方法] 方塊中，確定已選取 [內容分類器]。
 
-    -   在 [選擇要指派給檔案的內容]**** 方塊中，按一下 [個人識別資訊]****。
+    -   在 [選擇要指派給檔案的內容] 方塊中，按一下 [個人識別資訊]。
 
-    -   在 [指定值]**** 方塊中，按一下 [高]****。
+    -   在 [指定值] 方塊中，按一下 [高]。
 
-8.  在 [參數]**** 標題之下，按一下 [設定]****。
+8.  在 [參數] 標題之下，按一下 [設定]。
 
-9. 在 [運算式類型]**** 欄中，選取 [規則運算式]****。
+9. 在 [運算式類型] 欄中，選取 [規則運算式]。
 
-10. 在 [**運算式**] 資料行中，輸入 **^ (？！000) # A2 [0-7] \d {2} | 7 ( [0-7] \d | 7 [012] ) # A5 # A6 [-]？ ) # A8？！00) \d\d\3 (？！0000) \d {4} $**
+10. 在 [ **運算式** ] 資料行中，輸入 **^ (？！000) # A2 [0-7] \d {2} | 7 ( [0-7] \d | 7 [012] ) # A5 # A6 [-]？ ) # A8？！00) \d\d\3 (？！0000) \d {4} $**
 
-11. 在 [發生次數下限]**** 欄中，輸入 **10**，然後按一下 [確定]****。
+11. 在 [發生次數下限] 欄中，輸入 **10**，然後按一下 [確定]。
 
-12. 在 [評估類型]**** 索引標籤上，選取 [重新評估現有的內容值]**** 核取方塊，按一下 [覆寫現有的值]****，然後按一下 [確定]****。
+12. 在 [評估類型] 索引標籤上，選取 [重新評估現有的內容值] 核取方塊，按一下 [覆寫現有的值]，然後按一下 [確定]。
 
-![解決方案指南](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 對等命令</em>***
+![解決方案指南 ](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif) * *_<em>Windows PowerShell 對等命令</em>_* _
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -167,9 +168,9 @@ New-FSRMClassificationRule -Name "PII Rule" -Property "PII_MS" -PropertyValue "5
 
 1.  在檔案伺服器上，使用 [檔案伺服器資源管理員] 執行分類規則。
 
-    1.  按一下 [分類管理]****，以滑鼠右鍵按一下 [分類規則]****，然後按一下 [立即使用所有規則執行分類]****。
+    1.  按一下 [分類管理]，以滑鼠右鍵按一下 [ **分類規則**]，然後按一下 [ **立即以所有規則執行分類**]。
 
-    2.  按一下 [等待分類完成]**** 選項，然後再按一下 [確定]****。
+    2.  按一下 [等待分類完成] 選項，然後再按一下 [確定]。
 
     3.  關閉自動分類報告。
 
@@ -177,9 +178,9 @@ New-FSRMClassificationRule -Name "PII Rule" -Property "PII_MS" -PropertyValue "5
 
 2.  瀏覽至分類規則中指定的資料夾，例如 D:\Finance Documents。
 
-3.  以滑鼠右鍵按一下該資料夾中的檔案，然後按一下 [內容]****。
+3.  以滑鼠右鍵按一下該資料夾中的檔案，然後按一下 [內容]。
 
-4.  按一下 [分類]**** 索引標籤，並確認已正確分類檔案。
+4.  按一下 [分類] 索引標籤，並確認已正確分類檔案。
 
 ## <a name="see-also"></a><a name="BKMK_Links"></a>另請參閱
 

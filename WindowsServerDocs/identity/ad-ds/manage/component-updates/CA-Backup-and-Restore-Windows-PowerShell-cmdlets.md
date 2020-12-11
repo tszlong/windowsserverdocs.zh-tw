@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解： CA 備份和還原 Windows PowerShell Cmdlet
 ms.assetid: 7e195f5b-b194-40f3-a26d-5cf4ade5fc4d
 title: CA 備份與還原 Windows PowerShell Cmdlet
 author: iainfoulds
@@ -6,18 +7,18 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 1a36e72858e5ea2ae95cc0f1730e5906b3c85866
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: f6db1828b52a2987ee3df9f1028a66db4536c0a8
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070730"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049466"
 ---
 # <a name="ca-backup-and-restore-windows-powershell-cmdlets"></a>CA 備份與還原 Windows PowerShell Cmdlet
 
 > 適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 >
-> **作者** ： Justin Turner，與 Windows 群組的資深支援擴大工程師
+> **作者**： Justin Turner，與 Windows 群組的資深支援擴大工程師
 >
 > [!NOTE]
 > 本內容由 Microsoft 客戶支援工程師編寫，適用對象為經驗豐富的系統管理員和系統架構​​師，如果 TechNet 提供的主題已無法滿足您，您要找的是 Windows Server 2012 R2 中功能和解決方案的更深入技術講解，則您是本文的適用對象。 不過，本文未經過相同的編輯階段，因此部分語句也許不如 TechNet 文章那樣洗鍊。
@@ -79,7 +80,7 @@ Backup-CARoleService c:\adcsbackup5 -Password (ConvertTo-SecureString "Pa55w0rd!
 
 **表 SEQ 資料表 \\ \* 阿拉伯文18：常見錯誤**
 
-|動作|錯誤|註解|
+|動作|[錯誤]|註解|
 |----------|---------|-----------|
 |**Restore-Backup-caroleservice C:\ADCSBackup**|Restore-CARoleService：進程無法存取檔案，因為另一個進程正在使用該檔案。 (發生例外狀況於 HRESULT:<p>0x80070020) |執行 Restore-CARoleService Cmdlet 之前，請先停止 Active Directory 憑證服務服務|
 |**Restore-Backup-caroleservice C:\ADCSBackup**|Restore-CARoleService：目錄不是空的。 HRESULT 的 (例外狀況： 0x80070091) |使用-Force 參數來覆寫預先存在的金鑰|

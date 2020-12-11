@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：識別部署專案參與者
 ms.assetid: 50bd2566-e03c-4884-b5c4-895c8aab80aa
 title: 識別部署專案參與者
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 45c844cc1a4a417d18ff723ccc9769ffd5e8b2e9
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 34b73326ffa1fd81fdd4b8556e57b5392c53e2a7
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93071120"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049636"
 ---
 # <a name="identifying-the-deployment-project-participants"></a>識別部署專案參與者
 

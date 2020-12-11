@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：使用 AD FS 和 Web 應用程式 Proxy 部署工作資料夾：步驟1、設定 AD FS
 title: 搭配 AD FS 與 Web 應用程式 Proxy 部署工作資料夾 - 步驟 1 設定 AD FS
 ms.topic: article
 manager: klaasl
@@ -6,12 +7,12 @@ ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 10/18/2018
 ms.assetid: 938cdda2-f17e-4964-9218-f5868fd96735
-ms.openlocfilehash: f9cb2a47b4478e440b6f9491358a2de4822912cb
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0cb9e88455a6c7c1b3d917a8ad839d7f7217a6a3
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87965835"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048576"
 ---
 # <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-1-set-up-ad-fs"></a>搭配 AD FS 與 Web 應用程式 Proxy 部署工作資料夾︰步驟 1 設定 AD FS
 
@@ -30,7 +31,7 @@ ms.locfileid: "87965835"
 -   [搭配 AD FS 與 Web 應用程式 Proxy 部署工作資料夾︰步驟 5 設定用戶端](deploy-work-folders-adfs-step5.md)
 
 > [!NOTE]
->   本節涵蓋的指示適用于 Windows Server 2019 或 Windows Server 2016 環境。 如果您使用 Windows Server 2012 R2，請依照 [Windows Server 2012 R2 指示](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn747208(v=ws.11))。
+>   本節所涵蓋的指示適用于 Windows Server 2019 或 Windows Server 2016 環境。 如果您使用 Windows Server 2012 R2，請依照 [Windows Server 2012 R2 指示](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn747208(v=ws.11))。
 
 若要設定 AD FS 以搭配使用工作資料夾，請使用下列程序。
 
@@ -111,7 +112,7 @@ Workplace Join 需要 enterpriseregistration SAN。
 
 2.  在 **\[伺服器角色\]** 頁面上，選取 **\[Active Directory 同盟服務\]**，然後按 **\[下一步\]**。
 
-3.  在 **\[Active Directory 同盟服務 (AD FS)** \] 頁面上，您會看到一則訊息表示 Web 應用程式 Proxy 角色無法安裝在與 AD FS 同一部電腦上。 按 [下一步]  。
+3.  在 **\[Active Directory 同盟服務 (AD FS)** \] 頁面上，您會看到一則訊息表示 Web 應用程式 Proxy 角色無法安裝在與 AD FS 同一部電腦上。 按一下 [下一步] 。
 
 4.  在確認頁面上，按一下 **\[安裝\]**。
 
@@ -136,16 +137,16 @@ Add-WindowsFeature ADFS-Federation –IncludeManagementTools
 
 4.  在 **\[指定服務內容\]** 頁面上，輸入 SSL 憑證的主體名稱，以用於 AD FS 通訊。 在測驗範例中，這是 **blueadfs.contoso.com**。
 
-5.  輸入同盟服務名稱。 在測驗範例中，這是 **blueadfs.contoso.com**。 按 [下一步]  。
+5.  輸入同盟服務名稱。 在測驗範例中，這是 **blueadfs.contoso.com**。 按一下 [下一步] 。
 
     > [!NOTE]
     > 同盟服務名稱不得使用環境中現有伺服器的名稱。 如果您使用現有伺服器的名稱，AD FS 安裝就會失敗且必須重新開始。
 
-6.  在 **\[指定服務帳戶\]** 頁面上，輸入您想要用於受管理服務帳戶的名稱。 對於測試範例，選取 **\[建立群組受管理的服務帳戶\]**，並在 **\[帳戶名稱\]** 中輸入 **ADFSService**。 按 [下一步]  。
+6.  在 **\[指定服務帳戶\]** 頁面上，輸入您想要用於受管理服務帳戶的名稱。 對於測試範例，選取 **\[建立群組受管理的服務帳戶\]**，並在 **\[帳戶名稱\]** 中輸入 **ADFSService**。 按一下 [下一步] 。
 
-7.  在 [**指定設定資料庫**] 頁面上，選取 [**使用 Windows 內部資料庫在此伺服器上建立資料庫**]，然後按 **[下一步]**。
+7.  在 [ **指定設定資料庫** ] 頁面上，選取 [ **使用 Windows 內部資料庫在這部伺服器上建立資料庫**]，然後按 **[下一步]**。
 
-8.  **\[檢閱選項\]** 頁面會顯示您所選擇的選項的概觀。 按 [下一步]  。
+8.  **\[檢閱選項\]** 頁面會顯示您所選擇的選項的概觀。 按一下 [下一步] 。
 
 9. **\[先決條件檢查\]** 頁面會指出所有必要條件是否成功通過檢查。 如果沒有任何問題，請按一下 **\[設定\]**。
 
@@ -175,7 +176,7 @@ New-ADServiceAccount "ADFSService"-Server 2016-DC.contoso.com -Path "CN=Managed 
 若要設定 AD FS 陣列︰
 
 ```powershell
-$cert = Get-ChildItem CERT:\LocalMachine\My |where {$_.Subject -match blueadfs.contoso.com} | sort $_.NotAfter -Descending | select -first 1 
+$cert = Get-ChildItem CERT:\LocalMachine\My |where {$_.Subject -match blueadfs.contoso.com} | sort $_.NotAfter -Descending | select -first 1 
 $thumbprint = $cert.Thumbprint
 Install-ADFSFarm -CertificateThumbprint $thumbprint -FederationServiceDisplayName "Contoso Corporation" –FederationServiceName blueadfs.contoso.com -GroupServiceAccountIdentifier contoso\ADFSService$ -OverwriteConfiguration -ErrorAction Stop
 ```

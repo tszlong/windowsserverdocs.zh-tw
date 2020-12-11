@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解： AD FS 作業
 ms.assetid: eefcc989-8763-45ee-8a64-3a97b4397160
 title: AD FS 操作
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 3fb672d9557e7f10245e8c29ea1585cf9f4aadf9
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 84a8b2cef4bc9741d782e49c0909ef7beec9c15c
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953185"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048676"
 ---
 # <a name="ad-fs-operations"></a>AD FS 操作
 
@@ -22,19 +23,19 @@ ms.locfileid: "87953185"
 ## <a name="service-configuration"></a>服務組態
 - [更新 AD FS 和 WAP 2016 中的 SSL 憑證](./operations/manage-ssl-certificates-ad-fs-wap.md)
 - [AD FS 快速還原工具](../ad-fs/operations/AD-FS-Rapid-Restore-Tool.md)
-- [在 AD FS 中設定憑證驗證的替代主機名稱系結](../ad-fs/operations/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication.md)
+- [在 AD FS 中為憑證驗證設定替代主機名稱系結](../ad-fs/operations/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication.md)
 - [新增屬性存放區](../ad-fs/operations/Add-an-Attribute-Store.md)
 - [使用 AD FS 2019 自訂 HTTP 安全性回應標頭](../ad-fs/operations/customize-http-security-headers-ad-fs.md)
 - [將 AD FS Powershell Cmdlet 存取權委派給非系統管理員使用者](../ad-fs/operations/delegate-ad-fs-pshell-access.md)
-- [微調 SQL 並解決延遲](../ad-fs/operations/adfs-sql-latency.md)
+- [微調 SQL 和解決延遲](../ad-fs/operations/adfs-sql-latency.md)
 - [AlwaysOn 可用性群組](../ad-fs/operations/ad-fs-always-on.md)
 
 
 ## <a name="authentication-configuration"></a>驗證設定
-### <a name="strong-authentication-mfa--password-less"></a>增強式驗證 (MFA) & 不限密碼
-- [將外部驗證提供者設定為 AD FS (2019 或更新版本中的主要) ](../ad-fs/operations/Additional-Authentication-Methods-AD-FS.md)
+### <a name="strong-authentication-mfa--password-less"></a>增強式驗證 (MFA) & 不密碼
+- [在 AD FS (2019 或更新版本中，將外部驗證提供者設定為主要) ](../ad-fs/operations/Additional-Authentication-Methods-AD-FS.md)
 - [設定 AD FS (2016 或更新版本) 和 Azure MFA](./operations/configure-ad-fs-and-azure-mfa.md)
-- [設定 AD FS 的其他驗證方法](../ad-fs/operations/Configure-Additional-Authentication-Methods-for-AD-FS.md)
+- [針對 AD FS 設定其他驗證方法](../ad-fs/operations/Configure-Additional-Authentication-Methods-for-AD-FS.md)
 
 ### <a name="lockout-protection"></a>鎖定保護
 - [設定 AD FS 外部網路軟鎖定保護](../ad-fs/operations/Configure-AD-FS-Extranet-Soft-Lockout-Protection.md)
@@ -44,12 +45,12 @@ ms.locfileid: "87953185"
 ### <a name="policy-configuration"></a>原則設定
 - [使用驗證原則](../ad-fs/operations/Configure-Authentication-Policies.md)
 - [設定替代登入識別碼](../ad-fs/operations/Configuring-Alternate-Login-ID.md)
-- [設定 Azure AD 提示登入行為以搭配 AD FS 原則使用](../ad-fs/operations/AD-FS-Prompt-Login.md)
+- [設定 Azure AD 提示登入行為以使用 AD FS 原則](../ad-fs/operations/AD-FS-Prompt-Login.md)
 
 ### <a name="kerberos--certificate-authentication"></a>Kerberos & 憑證驗證
 - [在 AD FS 中啟用 AD DS 宣告 & kerberos 複合驗證](../ad-fs/operations/AD-FS-Compound-Authentication-and-AD-DS-claims.md)
-- [設定使用者憑證驗證的 AD FS](../ad-fs/operations/Configure-User-Certificate-Authentication.md)
-- [在 AD FS 中設定憑證驗證的替代主機名稱系結](../ad-fs/operations/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication.md)
+- [設定使用者憑證驗證 AD FS](../ad-fs/operations/Configure-User-Certificate-Authentication.md)
+- [在 AD FS 中為憑證驗證設定替代主機名稱系結](../ad-fs/operations/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication.md)
 
 
 ### <a name="device"></a>裝置
@@ -60,13 +61,13 @@ ms.locfileid: "87953185"
 - [在 AD FS 中設定存取控制原則](../ad-fs/operations/Access-Control-Policies-in-AD-FS.md)
 - [設定裝置型條件式存取內部部署](../ad-fs/operations/Configure-Device-based-Conditional-Access-on-Premises.md)
 
-## <a name="rpt--cpt-configuration"></a>RPT & CPT 設定
+## <a name="rpt--cpt-configuration"></a>RPT & CPT configuration
 - [設定 AD FS 驗證 LDAP 目錄中儲存的使用者](../ad-fs/operations/Configure-AD-FS-to-authenticate-users-stored-in-LDAP-directories.md)
 - [設定宣告規則](../ad-fs/operations/Configure-Claim-Rules.md)
 - [建立宣告提供者信任](../ad-fs/operations/Create-a-Claims-Provider-Trust.md)
 - [建立一個非宣告感知信賴憑證者信任](../ad-fs/operations/Create-a-Non-Claims-Aware-Relying-Party-Trust.md)
 - [建立信賴憑證者信任](../ad-fs/operations/Create-a-Relying-Party-Trust.md)
-- [設定 AD FS 以使用匯總的同盟提供者， (例如 InCommon) ](../ad-fs/operations/Improved-interoperability-with-SAML-2.0.md)
+- [將 AD FS 設定為使用匯總的同盟提供者 (例如 InCommon) ](../ad-fs/operations/Improved-interoperability-with-SAML-2.0.md)
 
 ## <a name="sign-in-experience-configuration"></a>登入體驗設定
 - [設定 AD FS 2016 單一登入設定](./operations/ad-fs-single-sign-on-settings.md)
@@ -80,7 +81,7 @@ ms.locfileid: "87953185"
 - [透過其他多重要素驗證管理機密應用程式的風險](../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 - [使用條件式存取控制管理風險](../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)
 - [設定 AD FS 實驗室環境](../ad-fs/operations/Set-up-an-AD-FS-lab-environment.md)
-- [逐步解說指南：透過其他多因素驗證管理機密應用程式的風險](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
+- [逐步解說指南：使用機密應用程式的額外 Multi-Factor Authentication 管理風險](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 - [逐步解說指南：使用條件式存取控制管理風險](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)
 - [逐步解說：將 Windows 裝置加入工作地點網路](../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
 - [逐步解說：將 iOS 裝置加入工作地點網路](../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)

@@ -1,17 +1,18 @@
 ---
 title: iSCSI 目標伺服器的擴充性限制
 TOCTitle: iSCSI Target Server Scalability Limits
+description: 深入瞭解： iSCSI 目標伺服器的擴充性限制
 ms.topic: article
 author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 09/11/2018
-ms.openlocfilehash: 14ef17f96138c23aeac8e38b93a50b562ca69bba
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 657dfea08aba671883d0cca01f53854f48871544
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865167"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048726"
 ---
 # <a name="iscsi-target-server-scalability-limits"></a>iSCSI 目標伺服器的擴充性限制
 

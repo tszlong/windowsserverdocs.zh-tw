@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：使用 AD FS 和 Web 應用程式 Proxy 部署工作資料夾：總覽
 title: 搭配 AD FS 與 Web 應用程式 Proxy 部署工作資料夾概觀
 ms.topic: article
 ms.assetid: ea19f0f0-6cc0-4322-b387-c0873f7795ad
@@ -6,12 +7,12 @@ manager: klaasl
 ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 4/5/2017
-ms.openlocfilehash: 386f7b4ad2646b09b06c98321385143d09483160
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0c0b913d2b896e102c221217cb85b233110f6e5f
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87965975"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048596"
 ---
 # <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-overview"></a>搭配 AD FS 與 Web 應用程式 Proxy 部署工作資料夾︰概觀
 

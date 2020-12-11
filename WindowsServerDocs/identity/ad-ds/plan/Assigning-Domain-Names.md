@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：指派功能變數名稱
 ms.assetid: 73897497-b189-4305-b234-e057ffda163a
 title: 指派網域名稱
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 84a74c9c210f4e3c826b7efd3451b76bcec96616
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: ae3ba69ff86af25ed73876a1b4064a5a5aab609b
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93071160"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97050036"
 ---
 # <a name="assigning-domain-names"></a>指派網域名稱
 

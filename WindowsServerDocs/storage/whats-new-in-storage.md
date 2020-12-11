@@ -1,17 +1,18 @@
 ---
 ms.assetid: 0f2a7f7b-aca8-4e5d-ad67-4258e88bc52f
 title: Windows Server 中存放裝置的新功能
+description: 深入瞭解： Windows Server 中儲存體的新功能
 ms.author: jgerend
 manager: dongill
 ms.topic: article
 author: jasongerend
 ms.date: 05/29/2019
-ms.openlocfilehash: e7f41e134908d1d9dc7773cf5f1af91e1910089a
-ms.sourcegitcommit: f18097c21e50a09aef2f1937f52608b0042ef0e1
+ms.openlocfilehash: b025960aabe03ed752ecd9ebeb0870166b25826b
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96755375"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048586"
 ---
 # <a name="whats-new-in-storage-in-windows-server"></a>Windows Server 儲存體的新功能
 

@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：委派帳戶 Ou 和資源 Ou 的管理
 ms.assetid: 19feca0e-a6d0-4d27-93b0-cb44f8c26484
 title: 委派帳戶 OU 與資源 OU 的管理
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: a3da376f3e84d0fb16145d6de3677896db753d26
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 3d434b1619c476d2a80003fd6c8d379d6177462e
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93069460"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97050116"
 ---
 # <a name="delegating-administration-of-account-ous-and-resource-ous"></a>委派帳戶 OU 與資源 OU 的管理
 

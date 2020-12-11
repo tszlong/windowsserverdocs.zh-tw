@@ -5,12 +5,12 @@ ms.topic: reference
 author: jasongerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 1d2f4cc814dad4313e7eb0925b60f44ec0348a30
-ms.sourcegitcommit: de207e887575757f3389ccf940c2e0ad2dc70bd3
+ms.openlocfilehash: 3bdb980754fedefebddfb33b998b37b621c3505a
+ms.sourcegitcommit: 4165d4a9198228d4ec809ccd7d791f8de2aeb159
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94617198"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091282"
 ---
 # <a name="diskpart"></a>diskpart
 
@@ -42,7 +42,7 @@ Diskpart 命令直譯器可協助您管理電腦的磁片磁碟機 (磁片、磁
 
 您只能將焦點提供給所選磁片上的磁碟分割。 在分割區具有焦點之後，如果有任何) 也有焦點，則相關的磁片區 (。 當磁片區具有焦點之後，如果磁片區對應到單一特定磁碟分割，則相關的磁片和磁碟分割也會有焦點。 如果不是這種情況，則會將焦點放在磁片上，而磁碟分割會遺失。
 
-## <a name="syntax"></a>語法
+## <a name="syntax"></a>Syntax
 
 若要啟動 diskpart 命令直譯器，請在命令提示字元中輸入：
 
@@ -80,9 +80,9 @@ diskpart <parameter>
 | [format](format.md) | 將磁片格式化以接受 Windows 檔案。 |
 | [gpt](gpt.md) | 將) 的 gpt (屬性指派給分割區，並將焦點放在基本 GUID 磁碟分割表格 (gpt) 磁片上。 |
 | [說明](help.md) | 顯示指定命令的可用命令或詳細說明資訊的清單。 |
-| [import](import.md) | 將外部磁片群組匯入本機電腦的磁片群組。 |
+| [import](import_1.md) | 將外部磁片群組匯入本機電腦的磁片群組。 |
 | [inactive](inactive.md) | 在基本主機開機記錄上，將具有焦點的系統磁碟分割或開機磁碟分割標示為非使用中 (MBR) 磁片。 |
-| list | 顯示磁片的磁碟分割清單、磁片中的磁片區，或虛擬硬碟 (Vhd) 。 |
+| [list](list.md) | 顯示磁片的磁碟分割清單、磁片中的磁片區，或虛擬硬碟 (Vhd) 。 |
 | [merge vdisk](merge-vdisk.md) | 將差異虛擬硬碟 (VHD) 與其對應的父 VHD 合併。 |
 | [offline](offline.md) | 使線上磁片或磁片區進入離線狀態。 |
 | [online](online.md) | 會將離線磁片或磁片區設為線上狀態。 |

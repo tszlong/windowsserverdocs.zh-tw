@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解： Windows Server 2016 Active Directory Domain Services 的新功能
 ms.assetid: 6a852428-c1ec-4703-b3b3-a4bfdf8cbb9d
 title: Windows Server 2016 中 Active Directory Domain Services 的新功能
 ms.author: joflore
@@ -6,12 +7,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: 727e3dde99c0c2e7d4aa8999a91a2b913d9a314b
-ms.sourcegitcommit: 1808ce451b9e37ec1110bd684e1b0d3812fc77e0
+ms.openlocfilehash: d13e4f64d0e73d9066bf0c614e8c653b94a6db1e
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91772398"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97050056"
 ---
 # <a name="whats-new-in-active-directory-domain-services-for-windows-server-2016"></a>Windows Server 2016 的 Active Directory Domain Services 新功能
 
@@ -60,18 +61,18 @@ Azure Active Directory Join 增強了企業、企業和 EDU 客戶的身分識�
 
 優點：
 
-- 公司擁有的 Windows 裝置上**的新式設定可用性**。 氧氣服務不再需要個人 Microsoft 帳戶：他們現在會在使用者現有的工作帳戶中執行，以確保符合規範。 氧氣服務將適用于已加入內部部署 Windows 網域的電腦，以及「加入」至 Azure AD 租使用者 ( 「雲端網域」 ) 的電腦和裝置。 這些設定包括：
+- 公司擁有的 Windows 裝置上 **的新式設定可用性**。 氧氣服務不再需要個人 Microsoft 帳戶：他們現在會在使用者現有的工作帳戶中執行，以確保符合規範。 氧氣服務將適用于已加入內部部署 Windows 網域的電腦，以及「加入」至 Azure AD 租使用者 ( 「雲端網域」 ) 的電腦和裝置。 這些設定包括：
 
    - 漫遊或個人化、協助工具設定和認證
    - 備份與還原
    - 使用工作帳戶存取 Microsoft Store
    - 動態磚和通知
 
-- 存取行動裝置上的**組織資源** (手機、無法加入 Windows 網域的平板電腦) ，不論它們是公司所擁有或 BYOD。
+- 存取行動裝置上的 **組織資源** (手機、無法加入 Windows 網域的平板電腦) ，不論它們是公司所擁有或 BYOD。
 - **單一登入** Office 365 和其他組織應用程式、網站和資源。
 - **在 BYOD 裝置上**，將工作帳戶 (從內部部署網域或 Azure AD) 新增至個人擁有的裝置，並透過應用程式和 web 上的方式享受 SSO 至工作資源，以協助確保符合條件式帳戶控制和裝置健康情況證明的新功能。
 - **Mdm 整合** 可讓您將裝置自動註冊到您的 MDM (Intune 或協力廠商) 。
-- 為組織中的多個使用者**設定「kiosk」模式和共用裝置**。
+- 為組織中的多個使用者 **設定「kiosk」模式和共用裝置**。
 - **開發人員體驗** 可讓您建立應用程式，以使用共用的程式設計堆疊來滿足企業和個人環境。
 - **影像處理** 選項可讓您選擇映射處理，並允許使用者在第一次執行體驗期間直接設定 corp 擁有的裝置。
 

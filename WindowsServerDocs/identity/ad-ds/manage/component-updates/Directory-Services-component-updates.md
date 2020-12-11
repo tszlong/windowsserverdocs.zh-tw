@@ -1,4 +1,5 @@
 ---
+description: 深入瞭解：目錄服務元件更新
 ms.assetid: 8a3cf2ae-2511-4eea-afd5-a43179a78613
 title: 目錄服務元件更新
 author: iainfoulds
@@ -6,18 +7,18 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 85095e1b75ca5c2ae781ffddbeed43e5bb3a3864
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: a5836f3dda9615a449c89fe130798566e7481906
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070760"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049656"
 ---
 # <a name="directory-services-component-updates"></a>目錄服務元件更新
 
 >適用於：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-**作者** ： Justin Turner，與 Windows 群組的資深支援擴大工程師
+**作者**： Justin Turner，與 Windows 群組的資深支援擴大工程師
 
 > [!NOTE]
 > 本內容由 Microsoft 客戶支援工程師編寫，適用對象為經驗豐富的系統管理員和系統架構​​師，如果 TechNet 提供的主題已無法滿足您，您要找的是 Windows Server 2012 R2 中功能和解決方案的更深入技術講解，則您是本文的適用對象。 不過，本文未經過相同的編輯階段，因此部分語句也許不如 TechNet 文章那樣洗鍊。
@@ -269,17 +270,17 @@ Log Record Bytes Generated: 0
 
 1.  開啟 LDP.exe，並連接並系結至網域控制站。
 
-2.  在 [ **選項** ] 功能表上，按一下 [ **控制項** ]。
+2.  在 [ **選項** ] 功能表上，按一下 [ **控制項**]。
 
-3.  在 [控制項] 對話方塊中，展開 [ **載入預先定義** ] 下拉式功能表，然後按一下 [ **搜尋統計** 資料]，再按一下 **[確定]** 。
+3.  在 [控制項] 對話方塊中，展開 [ **載入預先定義** ] 下拉式功能表，然後按一下 [ **搜尋統計** 資料]，再按一下 **[確定]**。
 
     ![目錄服務更新](media/Directory-Services-component-updates/GTR_ADDS_Controls.gif)
 
-4.  在 [ **流覽]** 功能表上，按一下 [ **搜尋** ]
+4.  在 [**流覽]** 功能表上，按一下 [**搜尋**]
 
 5.  在 [搜尋] 對話方塊中，選取 [ **選項** ] 按鈕。
 
-6.  確定已在 [搜尋選項] 對話方塊中選取 [ **擴充** ] 核取方塊，然後選取 **[確定]** 。
+6.  確定已在 [搜尋選項] 對話方塊中選取 [ **擴充** ] 核取方塊，然後選取 **[確定]**。
 
     ![目錄服務更新](media/Directory-Services-component-updates/GTR_ADDS_SearchOptions.gif)
 
