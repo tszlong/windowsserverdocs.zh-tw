@@ -7,12 +7,12 @@ author: jasongerend
 ms.author: jgerend
 manager: lizapo
 ms.date: 06/07/2020
-ms.openlocfilehash: d08e969d0296c9ca1efc34bfd0ac6ad7e42519cf
-ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
+ms.openlocfilehash: 23d2742d7afeba630c11545cefa3696da05fbcc6
+ms.sourcegitcommit: 7c0794e257f602bd71af5eb9a11b8a03d2b9adfd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89554541"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97390256"
 ---
 # <a name="robocopy"></a>robocopy
 
@@ -24,7 +24,7 @@ ms.locfileid: "89554541"
 robocopy <source> <destination> [<file>[ ...]] [<options>]
 ```
 
-例如，若要將名為*yearly-report*的檔案從*c:\reports*複製到檔案共用* \\ marketing\videos* ，同時啟用多執行緒處理以提供更高的效能 (使用 **/mt**參數) 並且能夠在使用 **/z**參數) 中斷 (的情況下重新開機傳輸，請輸入：
+例如，若要將名為 *yearly-report* 的檔案從 *c:\reports* 複製到檔案共用 *\\ marketing\videos* ，同時啟用多執行緒處理以提供更高的效能 (使用 **/mt** 參數) 並且能夠在使用 **/z** 參數) 中斷 (的情況下重新開機傳輸，請輸入：
 
 ```dos
 robocopy c:\reports '\\marketing\videos' yearly-report.mov /mt /z
@@ -36,8 +36,8 @@ robocopy c:\reports '\\marketing\videos' yearly-report.mov /mt /z
 |--|--|
 | `<source>` | 指定來源目錄的路徑。 |
 | `<destination>` | 指定目的地目錄的路徑。 |
-| `<file>` | 指定要複製的檔案。 支援 (**&#42;** 或 **？**) 的萬用字元。 如果您未指定此參數， `*.` 則會使用做為預設值。 |
-| `<options>` | 指定要搭配**robocopy**命令使用的**選項，包括****複製**、檔案、**重試**、**記錄**和**工作**選項。 |
+| `<file>` | 指定要複製的檔案。 支援 (**&#42;** 或 **？**) 的萬用字元。 如果您未指定此參數， `*.*` 則會使用做為預設值。 |
+| `<options>` | 指定要搭配 **robocopy** 命令使用的 **選項，包括****複製**、檔案、**重試**、**記錄** 和 **工作** 選項。 |
 
 #### <a name="copy-options"></a>複製選項
 
@@ -61,14 +61,14 @@ robocopy c:\reports '\\marketing\videos' yearly-report.mov /mt /z
 | /mir | 鏡像目錄樹狀結構 (相當於 **/e** plus **/purge**) 。 使用這個選項搭配 **/e** 選項和目的地目錄，會覆寫目的地目錄安全性設定。 |
 | /mov | 移動檔案，並在複製後從來源刪除它們。 |
 | /move | 移動檔案和目錄，並在複製後從來源刪除它們。 |
-| /a +： [RASHCNET] | 將指定的屬性加入至複製的檔案。  此選項的有效值為： <ul><li>**R** -唯讀</li><li>**A**封存</li><li>**S** -系統</li><li>**H** -隱藏</li><li>**C** -壓縮</li><li>**N** -未編制內容索引</li><li>**電子** 加密</li><li>**T** -暫存</li></ul> |
-| /a-： [RASHCNET] | 從複製的檔案中移除指定的屬性。 此選項的有效值為： <ul><li>**R** -唯讀</li><li>**A**封存</li><li>**S** -系統</li><li>**H** -隱藏</li><li>**C** -壓縮</li><li>**N** -未編制內容索引</li><li>**電子** 加密</li><li>**T** -暫存</li></ul> |
+| /a +： [RASHCNET] | 將指定的屬性加入至複製的檔案。  此選項的有效值為： <ul><li>**R** -唯讀</li><li>封存</li><li>**S** -系統</li><li>**H** -隱藏</li><li>**C** -壓縮</li><li>**N** -未編制內容索引</li><li>**電子** 加密</li><li>**T** -暫存</li></ul> |
+| /a-： [RASHCNET] | 從複製的檔案中移除指定的屬性。 此選項的有效值為： <ul><li>**R** -唯讀</li><li>封存</li><li>**S** -系統</li><li>**H** -隱藏</li><li>**C** -壓縮</li><li>**N** -未編制內容索引</li><li>**電子** 加密</li><li>**T** -暫存</li></ul> |
 | /create | 只建立樹狀目錄和長度為零的檔案。 |
 | /fat | 只使用8.3 字元長度的 FAT 檔案名來建立目的地檔案。 |
 | /256 | 關閉路徑超過256個字元的支援。 |
 | 族`<n>` | 會監視來源，並在偵測到超過 *n* 個變更時重新執行。 |
 | /mot:`<m>` | 監視來源，並在偵測到變更時，于 *m* 分鐘內再次執行。 |
-| /MT`[:n]` | 使用 *n* 個執行緒建立多執行緒複製。 *n* 必須是介於1到128之間的整數。 *N*的預設值為8。 為了達到較佳的效能，請使用 **/log** 選項來重新導向您的輸出。<p>**/Mt**參數無法搭配 **/ipg**和 **/efsraw**參數使用。 |
+| /MT`[:n]` | 使用 *n* 個執行緒建立多執行緒複製。 *n* 必須是介於1到128之間的整數。 *N* 的預設值為8。 為了達到較佳的效能，請使用 **/log** 選項來重新導向您的輸出。<p>**/Mt** 參數無法搭配 **/ipg** 和 **/efsraw** 參數使用。 |
 | /rh： hhmm-hhmm | 指定新複本可能啟動的執行時間。 |
 | /pf | 檢查每個檔案的執行時間 (不會) 基礎。 |
 | /ipg： n | 指定可在較慢線上釋放頻寬的封包間間距。 |
@@ -88,9 +88,9 @@ robocopy c:\reports '\\marketing\videos' yearly-report.mov /mt /z
 | 選項 | 描述 |
 |--|--|
 | /a | 只複製已設定 Archive 屬性的 **檔案** 。 |
-| /m | 只會複製已設定**archive**屬性的檔案，並重設封存**屬性。** |
-| ia`[RASHCNETO]` | 只包含已設定任何指定屬性的檔案。  此選項的有效值為： <ul><li>**R** -唯讀</li><li>**A**封存</li><li>**S** -系統</li><li>**H** -隱藏</li><li>**C** -壓縮</li><li>**N** -未編制內容索引</li><li>**電子** 加密</li><li>**T** -暫存</li><li>**O** -離線</li></ul> |
-| xa`[RASHCNETO]` | 排除已設定任何指定屬性的檔案。 此選項的有效值為： <ul><li>**R** -唯讀</li><li>**A**封存</li><li>**S** -系統</li><li>**H** -隱藏</li><li>**C** -壓縮</li><li>**N** -未編制內容索引</li><li>**電子** 加密</li><li>**T** -暫存</li><li>**O** -離線</li></ul> |
+| /m | 只會複製已設定 **archive** 屬性的檔案，並重設封存 **屬性。** |
+| ia`[RASHCNETO]` | 只包含已設定任何指定屬性的檔案。  此選項的有效值為： <ul><li>**R** -唯讀</li><li>封存</li><li>**S** -系統</li><li>**H** -隱藏</li><li>**C** -壓縮</li><li>**N** -未編制內容索引</li><li>**電子** 加密</li><li>**T** -暫存</li><li>**O** -離線</li></ul> |
+| xa`[RASHCNETO]` | 排除已設定任何指定屬性的檔案。 此選項的有效值為： <ul><li>**R** -唯讀</li><li>封存</li><li>**S** -系統</li><li>**H** -隱藏</li><li>**C** -壓縮</li><li>**N** -未編制內容索引</li><li>**電子** 加密</li><li>**T** -暫存</li><li>**O** -離線</li></ul> |
 | /xf `<filename>[ ...]` | 排除符合指定名稱或路徑的檔案。 支援萬用字元 (**&#42;** 和 **？**) 。 |
 | /xd `<directory>[ ...]` | 排除符合指定名稱和路徑的目錄。 |
 | /xc | 排除變更的檔案。 |
@@ -116,8 +116,8 @@ robocopy c:\reports '\\marketing\videos' yearly-report.mov /mt /z
 
 | 選項 | 描述 |
 |--|--|
-| /r:`<n>` | 指定失敗複製的重試次數。 *N*的預設值為 1000000 (1000000 重試) 。 |
-| /w:`<n>` | 指定重試之間的等待時間 (以秒為單位)。 *N*的預設值是 30 (等候時間30秒) 。 |
+| /r:`<n>` | 指定失敗複製的重試次數。 *N* 的預設值為 1000000 (1000000 重試) 。 |
+| /w:`<n>` | 指定重試之間的等待時間 (以秒為單位)。 *N* 的預設值是 30 (等候時間30秒) 。 |
 | /reg | 將 **/r** 和 **/w** 選項中指定的值儲存為登錄中的預設設定。 |
 | /tbd | 指定系統將等待定義共用名稱 (重試錯誤 67) 。 |
 

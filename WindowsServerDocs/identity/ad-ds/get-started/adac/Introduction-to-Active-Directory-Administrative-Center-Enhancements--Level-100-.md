@@ -7,12 +7,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: 884710e1cf327940937d627fbbbc124bb99baca9
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 901078ec17ce744fb4eb4a2bb3a29f1d79718060
+ms.sourcegitcommit: 7c0794e257f602bd71af5eb9a11b8a03d2b9adfd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97045826"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97390326"
 ---
 # <a name="introduction-to-active-directory-administrative-center-enhancements-level-100"></a>Introduction to Active Directory Administrative Center Enhancements (Level 100)
 
@@ -151,7 +151,7 @@ Add-ADGroupMember -Identity group1 -Member test1
 #### <a name="to-create-an-organizational-unit"></a>建立組織單位
 
 1. 以滑鼠右鍵按一下 Windows PowerShell 圖示，然後按一下 [以 *系統管理員身分執行*]，然後輸入 **dsac.exe** 以開啟 ADAC。
-2. 按一下 [ **管理**]，按一下 [ **新增流覽節點** ]，然後在 [ **新增流覽節點** ] 對話方塊中選取適當的目標網域，然後按一下 [確定]。
+2. 依序按一下 [管理]、[新增瀏覽節點]，在 [新增瀏覽節點] 對話方塊中選取適當的目標網域，然後按一下 [確定]。
 3. 在 [工作] 窗格中，依序按一下 [新增] 和 [組織單位]。
 4. 在 [組織單位] 下方輸入下列資訊，然後按一下 [確定]：
 

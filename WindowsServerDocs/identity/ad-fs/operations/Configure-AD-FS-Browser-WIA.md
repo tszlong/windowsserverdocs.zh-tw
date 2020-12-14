@@ -6,12 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 03/20/2020
 ms.topic: article
-ms.openlocfilehash: c7779522e874fb484f3801780495f96ddcead990
-ms.sourcegitcommit: 4165d4a9198228d4ec809ccd7d791f8de2aeb159
+ms.openlocfilehash: 61369f2dde82264190bcbd4d81eaae317e159a0d
+ms.sourcegitcommit: 7c0794e257f602bd71af5eb9a11b8a03d2b9adfd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97091272"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97390266"
 ---
 # <a name="configure-browsers-to-use-windows-integrated-authentication-wia-with-ad-fs"></a>將瀏覽器設定為使用 Windows 整合式驗證 (WIA) 搭配 AD FS
 
@@ -66,8 +66,8 @@ Set-AdfsProperties -WIASupportedUserAgents @("MSIE 6.0", "MSIE 7.0; Windows NT",
 |Windows NT 6.3;Trident/7。0</br></br>Windows NT 6.3;Win6464Trident/7。0</br></br>Windows NT 6.3;WOW64Trident/7。0| Windows 8.1 桌面作業系統，不同的平臺|
 |Windows NT 6.2;Trident/7。0</br></br>Windows NT 6.2;Win6464Trident/7。0</br></br>Windows NT 6.2;WOW64Trident/7。0|Windows 8 桌面作業系統，不同的平臺|
 |Windows NT 6.1;Trident/7。0</br></br>Windows NT 6.1;Win6464Trident/7。0</br></br>Windows NT 6.1;WOW64Trident/7。0|Windows 7 桌面作業系統，不同的平臺|
-|Edg/79.0.309.43 | 適用于 Windows Server 2012 R2 或更早版本的 Microsoft Edge (Chromium)  |
-|Edg/*| 適用于 Windows Server 2016 或更新版本的 Microsoft Edge (Chromium) |
+|Edg/和 Edge/| 適用于 Windows Server 2012 R2 或更早版本的 Microsoft Edge (Chromium)  |
+|= ~ Windows\s *NT.* Edg. *| 適用于 Windows Server 2016 或更新版本的 Microsoft Edge (Chromium) |
 |[MSIPC]| Microsoft Information Protection and Control 用戶端|
 |Windows Rights Management 用戶端|Windows Rights Management 用戶端|
 
