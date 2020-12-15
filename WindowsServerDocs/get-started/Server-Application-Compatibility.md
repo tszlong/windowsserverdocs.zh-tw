@@ -7,12 +7,12 @@ ms.assetid: 2afe7c32-1fda-4441-989b-1415dabddc72
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: f0e78b23797d291dca33e2734e4c463717e56a01
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3e9e316182b08593aaf2b8b8cdf406c1a3978dd9
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87959336"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866307"
 ---
 # <a name="windows-server-2016-and-microsoft-server-application-compatibility"></a>Windows Server 2016 和 Microsoft Server 應用程式相容性
 
@@ -33,7 +33,7 @@ ms.locfileid: "87959336"
 |Configuration Manager (1606 版)|    是|    [Configuration Manager 1606 版的新功能](/mem/configmgr/core/plan-design/changes/whats-new-in-version-1606)|
 |SharePoint Server 2016|    是|    [SharePoint Server 2016 的硬體與軟體需求](/SharePoint/install/hardware-and-software-requirements)|
 |Project Server 2016|    是|    [Project Server 2016 的軟體需求](/project/software-requirements-for-project-server-2016)|
-|Exchange Server 2016|    是|    [Exchange 2016 更新](/Exchange/new-features/updates?view=exchserver-2019)|
+|Exchange Server 2016|    是|    [Exchange 2016 更新](/Exchange/new-features/updates)|
 |Biztalk Server 2016|    是|    [Microsoft BizTalk Server](https://www.microsoft.com/cloud-platform/biztalk)|
 |Host Integration Server 2016|    是|    [HIS 2016 的新功能](/host-integration-server/install-and-config-guides/what-s-new-in-his-2016) \(英文\)|
 |Visual Studio Team Foundation Server 2017|    是|    [Team Foundation Server 2017](https://www.visualstudio.com/news/releasenotes/tfs2017-relnotes)|

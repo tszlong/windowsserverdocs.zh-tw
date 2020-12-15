@@ -8,12 +8,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 727525d426a8417e642485be51db7206f3efa64a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8b3a28af19ef1840856b7751deb9b362451a5905
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87959466"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865747"
 ---
 # <a name="configure-a-server-core-installation-of-windows-server-2016-or-windows-server-version-1709-with-sconfigcmd"></a>使用 Sconfig.cmd 設定 Windows Server 2016 或 Windows Server 1709 版的 Server Core 安裝
 
@@ -56,7 +56,7 @@ ms.locfileid: "87959466"
 您可以設定由 DHCP 伺服器自動指派 IP 位址，或者您可以手動指派靜態 IP 位址。 這個選項也可讓您設定伺服器的 DNS 伺服器設定。
 
 > [!NOTE]
-> 這些選項及其他更多選項現在可以使用網路 Windows PowerShell Cmdlet 取得。 如需詳細資訊，請參閱 Windows Server 文件庫中的 [網路介面卡 Cmdlet](/powershell/module/netadapter/?view=win10-ps) 。
+> 這些選項及其他更多選項現在可以使用網路 Windows PowerShell Cmdlet 取得。 如需詳細資訊，請參閱 Windows Server 文件庫中的 [網路介面卡 Cmdlet](/powershell/module/netadapter/) 。
 
 ## <a name="windows-update-settings"></a>Windows Update 設定
 

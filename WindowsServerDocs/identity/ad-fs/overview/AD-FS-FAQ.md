@@ -7,12 +7,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 11/02/2020
 ms.topic: article
-ms.openlocfilehash: d4b1130de67d4e4d7f57065dac307cddc0aef369
-ms.sourcegitcommit: 3181fcb69a368f38e0d66002e8bc6fd9628b1acc
+ms.openlocfilehash: a04fb0cec0d93180e6a9f0c822754a64435b79f9
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96330480"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96863917"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>AD FS 常見問題集 (FAQ)
 
@@ -101,7 +101,7 @@ Apple 發行了一組稱為 App Transport Security (ATS) 的需求，其可能�
 
 您可以使用[管理 AD FS 中的 SSL 通訊協定](../operations/Manage-SSL-Protocols-in-AD-FS.md)，啟用及停用 SSL 2.0 和 3.0 以及 TLS 1.0、1.1 和1.2 版。
 
-若要確保 AD FS 和 WAP 伺服器只會交涉可支援 ATP 的 TLS 加密套件，您可停用不在 [ATP 相容加密套件清單](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW57)中的所有加密套件。  若要這麼做，請使用 [Windows TLS PowerShell Cmdlet](/powershell/module/tls/?view=win10-ps)。
+若要確保 AD FS 和 WAP 伺服器只會交涉可支援 ATP 的 TLS 加密套件，您可停用不在 [ATP 相容加密套件清單](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW57)中的所有加密套件。  若要這麼做，請使用 [Windows TLS PowerShell Cmdlet](/powershell/module/tls/)。
 
 ## <a name="developer"></a>Developer
 

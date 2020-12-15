@@ -6,12 +6,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 05/21/2019
-ms.openlocfilehash: 3e9ddf80c4891a621f8633df636bcc37608fd29b
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 1aab06c4f5ff2b78960c8477176412d83e033882
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766181"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864167"
 ---
 # <a name="windows-server-servicing-channels-ltsc-and-sac"></a>Windows Server 維護通道：LTSC 和 SAC
 
@@ -23,7 +23,7 @@ Windows Server 客戶有兩個適用的主要發行通道：長期維護通道�
 
 ## <a name="long-term-servicing-channel-ltsc"></a>長期維護通道 (LTSC)
 
-這是您已經熟悉的發行模型 (先前稱為「長期維護*分支*」)，Windows Server 依此模型每隔 2-3 年發行一次新的主要版本。 使用者有權接受 5 年的主要支援和 5 年的延伸支援。 此通道適用於需要較長期維護選項及功能穩定性的系統。 Windows Server 2019 及舊版 Windows Server 的部署不會受到新的半年通道發行影響。 長期維護通道仍將繼續收到安全性及非安全性更新，但無法獲得新特色與新功能。
+這是您已經熟悉的發行模型 (先前稱為「長期維護 *分支*」)，Windows Server 依此模型每隔 2-3 年發行一次新的主要版本。 使用者有權接受 5 年的主要支援和 5 年的延伸支援。 此通道適用於需要較長期維護選項及功能穩定性的系統。 Windows Server 2019 及舊版 Windows Server 的部署不會受到新的半年通道發行影響。 長期維護通道仍將繼續收到安全性及非安全性更新，但無法獲得新特色與新功能。
 
 > [!NOTE]
 > **目前的長期維護通道 (LTSC) 產品是 Windows Server 2019**。 如果您想要繼續留在這個通道中，就必須安裝 (或繼續使用) Windows Server 2019，而這可使用 [Server Core] 安裝選項或 [含桌面體驗的伺服器] 安裝選項來安裝。
@@ -37,17 +37,17 @@ Windows Server 客戶有兩個適用的主要發行通道：長期維護通道�
 半年通道可供大量授權客戶搭配[軟體保證](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx)，以及透過 Azure Marketplace 或其他雲端/主機服務提供者和忠誠度方案 (例如 Visual Studio 訂閱) 來享用。
 
 > [!Note]
-> **目前的半年通道版本是 Windows Server 版本 2004**。 如果您想將伺服器加入這個通道，就應該安裝 Windows Server 版本 2004，其可以在 Server Core 模式下進行安裝，或是將其安裝成執行於容器中的 Nano 伺服器。 不支援從長期維護通道版本中進行就地升級，因為這些升級位在**不同的發行管道**。 半年通道版本未更新 – 這是半年通道中的下一個 Windows Server 版本。
+> **目前的半年通道版本是 Windows Server 版本 2004**。 如果您想將伺服器加入這個通道，就應該安裝 Windows Server 版本 2004，其可以在 Server Core 模式下進行安裝，或是將其安裝成執行於容器中的 Nano 伺服器。 不支援從長期維護通道版本中進行就地升級，因為這些升級位在 **不同的發行管道**。 半年通道版本未更新 – 這是半年通道中的下一個 Windows Server 版本。
 
-在此模型中，Windows Server 版本可依發行年份及月份來識別：例如，2017 年 9 月發行的版本會以**版本 1709** 做為識別。 半年通道中的 Windows Server 全新版本會每年發行兩次。 每個發行版本的支援週期為 18 個月。
+在此模型中，Windows Server 版本可依發行年份及月份來識別：例如，2017 年 9 月發行的版本會以 **版本 1709** 做為識別。 半年通道中的 Windows Server 全新版本會每年發行兩次。 每個發行版本的支援週期為 18 個月。
 
 ## <a name="should-you-keep-servers-on-the-ltsc-or-move-them-to-the-semi-annual-channel"></a>您應該讓伺服器保持在 LTSC 或是移到半年通道？
 
 以下是要考慮的關鍵差異：
 
-- 您需要迅速創新嗎？ 您需要優先取得最新的 Windows Server 功能嗎？ 您需要支援快節奏的混合式應用程式、DevOps 和 Hyper-V 網狀架構嗎？ 若是，您應該考慮透過安裝 **Windows Server 版本 2004** 來**加入半年通道**。 如本主題所述，您將會每年收到兩次新版本，每個版本各有 18 個月的主要生產環境支援。 您可以透過大量授權、Azure 或 Visual Studio 訂閱服務取得項目。 目前，如果您想在生產環境中執行產品，半年通道發行需要大量授權和軟體保證。
+- 您需要迅速創新嗎？ 您需要優先取得最新的 Windows Server 功能嗎？ 您需要支援快節奏的混合式應用程式、DevOps 和 Hyper-V 網狀架構嗎？ 若是，您應該考慮透過安裝 **Windows Server 版本 2004** 來 **加入半年通道**。 如本主題所述，您將會每年收到兩次新版本，每個版本各有 18 個月的主要生產環境支援。 您可以透過大量授權、Azure 或 Visual Studio 訂閱服務取得項目。 目前，如果您想在生產環境中執行產品，半年通道發行需要大量授權和軟體保證。
 
-- 您需要穩定性與可預測性嗎？ 您需要在實體伺服器上執行虛擬機器和傳統工作負載嗎？ 若是，您應該考慮**將那些伺服器保持在長期維護通道**。 目前的 LTSC 版本是 **Windows Server 2019**。 如本主題所述，您可以每 2-3 年存取新版本，每個版本具備 5 年主要支援外加 5 年延伸支援。 LTSC 版本可透過所有發行機制提供。 無論使用何種授權模型，任何人都能取得 LTSC 中的發行版本。
+- 您需要穩定性與可預測性嗎？ 您需要在實體伺服器上執行虛擬機器和傳統工作負載嗎？ 若是，您應該考慮 **將那些伺服器保持在長期維護通道**。 目前的 LTSC 版本是 **Windows Server 2019**。 如本主題所述，您可以每 2-3 年存取新版本，每個版本具備 5 年主要支援外加 5 年延伸支援。 LTSC 版本可透過所有發行機制提供。 無論使用何種授權模型，任何人都能取得 LTSC 中的發行版本。
 
 下表摘要說明通道間的主要差異：
 
@@ -163,7 +163,7 @@ OsVersion                     : 10.0.17763
 OsHardwareAbstractionLayer    : 10.0.17763.107
 ````
 
-若要查詢伺服器上是否存在新的 [Server Core 應用程式相容性功能 FOD](./install-fod-19.md)，請使用 [Get-WindowsCapability](/powershell/module/dism/get-windowscapability?view=win10-ps) Cmdlet 並尋找：
+若要查詢伺服器上是否存在新的 [Server Core 應用程式相容性功能 FOD](./install-fod-19.md)，請使用 [Get-WindowsCapability](/powershell/module/dism/get-windowscapability) Cmdlet 並尋找：
 ````
 Name    :     ServerCore.AppCompatibility~~~~0.0.1.0
 State   :     Installed

@@ -8,12 +8,12 @@ ms.assetid: 9f109c91-7c2e-4065-856c-ce9e2e9ce558
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: deb17bb54f2576cdb811a11d78d4cb324a120140
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 67ef50ce2c788ac5028de1ab39a5f6b6bf388978
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87959896"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865717"
 ---
 # <a name="deploy-nano-server"></a>部署 Nano Server
 
@@ -69,10 +69,10 @@ Nano Server Image Builder 會建立 VHD、VHDX 或 ISO 格式的自訂 Nano Serv
 | Windows Defender，包括預設簽章檔案 | -Defender |
 | 反轉轉寄站以與應用程式相容，例如 Ruby、Node.js 等通用應用程式架構。 | 現在預設會包含 |
 | DNS 伺服器角色 | -Package Microsoft-NanoServer-DNS-Package |
-| PowerShell Desired State Configuration (DSC) | -Package Microsoft-NanoServer-DSC-Package<p>**注意：** 如需完整詳細資訊，請參閱[在 Nano Server 上使用 DSC](/archive/blogs/askcore/kms-host-client-count-not-increasing-due-to-duplicate-cmids)。 |
+| PowerShell Desired State Configuration (DSC) | -Package Microsoft-NanoServer-DSC-Package<p>**注意：** 如需完整詳細資訊，請參閱 [在 Nano Server 上使用 DSC](/archive/blogs/askcore/kms-host-client-count-not-increasing-due-to-duplicate-cmids)。 |
 | Internet Information Server (IIS) | -Package Microsoft-NanoServer-IIS-Package<p>**注意：** 如需使用 IIS 的詳細資訊，請參閱 [Nano Server 上的 IIS](IIS-on-Nano-Server.md)。 |
 | Windows 容器的主機支援 | -Containers |
-| System Center Virtual Machine Manager 代理程式 | -Package Microsoft-NanoServer-SCVMM-Package<p>-Package Microsoft-NanoServer-SCVMM-Compute-Package<p>**注意：** 只有在監視 Hyper-V 時才能使用 SCVMM 計算套件。 針對 VMM 中的超融合部署，您應該同時指定 -Storage 參數。 如需詳細資訊，請參閱 [VMM 文件](/system-center/vmm/hyper-v-nano?view=sc-vmm-2016&viewFallbackFrom=sc-vmm-2019)。 |
+| System Center Virtual Machine Manager 代理程式 | -Package Microsoft-NanoServer-SCVMM-Package<p>-Package Microsoft-NanoServer-SCVMM-Compute-Package<p>**注意：** 只有在監視 Hyper-V 時才能使用 SCVMM 計算套件。 針對 VMM 中的超融合部署，您應該同時指定 -Storage 參數。 如需詳細資訊，請參閱 [VMM 文件](/system-center/vmm/hyper-v-nano?view=sc-vmm-2016)。 |
 | System Center Operations Manager 代理程式 | 個別安裝。 如需詳細資訊，請參閱 https://technet.microsoft.com/system-center-docs/om/manage/install-agent-on-nano-server 的 System Center Operations Manager 文件。 |
 | 資料中心橋接 (包括 DCBQoS) | -Package Microsoft-NanoServer-DCB-Package |
 | 在虛擬機器上部署 | -Package Microsoft-NanoServer-Guest-Package |
@@ -217,7 +217,7 @@ Bcdboot.exe n:\Windows /s s:
 ## <a name="installing-roles-and-features-online"></a><a name=BKMK_online></a>線上安裝角色和功能
 
 > [!NOTE]
-> 如果您是從媒體或線上存放庫安裝選用的 Nano Server 套件，其並不會包含最新的安全性問題修正。 若要避免選用套件和基本作業系統之間的版本不符，您應該在安裝任何選用套件之後和重新啟動伺服器**之前**，立即安裝[最新的累積更新](./update-nano-server.md)。
+> 如果您是從媒體或線上存放庫安裝選用的 Nano Server 套件，其並不會包含最新的安全性問題修正。 若要避免選用套件和基本作業系統之間的版本不符，您應該在安裝任何選用套件之後和重新啟動伺服器 **之前**，立即安裝 [最新的累積更新](./update-nano-server.md)。
 
 ### <a name="installing-roles-and-features-from-a-package-repository"></a>從套件存放庫安裝角色和功能
 
@@ -523,7 +523,7 @@ PnP 和檔案系統篩選器驅動程式套件必須遵循通用驅動程式需�
 
 #### <a name="installing-driver-packages-offline"></a>離線安裝驅動程式套件
 
-您可以透過 [DISM.exe](/windows-hardware/manufacture/desktop/dism-driver-servicing-command-line-options-s14) 或 [DISM PowerShell](/powershell/module/dism/add-windowsdriver?view=win10-ps) Cmdlet，將支援的驅動程式套件安裝到離線 Nano Server。
+您可以透過 [DISM.exe](/windows-hardware/manufacture/desktop/dism-driver-servicing-command-line-options-s14) 或 [DISM PowerShell](/powershell/module/dism/add-windowsdriver) Cmdlet，將支援的驅動程式套件安裝到離線 Nano Server。
 
 #### <a name="installing-driver-packages-online"></a>線上安裝驅動程式套件
 您可以使用 [PnpUtil](/windows-hardware/drivers/devtest/pnputil)，將 PnP 驅動程式套件安裝到線上 Nano Server。 Nano Server 目前不支援非 PnP 驅動程式套件的線上驅動程式安裝。

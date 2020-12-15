@@ -7,12 +7,12 @@ manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: 1f331a7ea987f413f814dcb1b0e4173714b1153b
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 33002210a27dcea0c39ede5997a7b20d3d7d1df0
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994617"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864827"
 ---
 # <a name="network-shell-netsh"></a>網路殼層 \(Netsh\)
 
@@ -27,7 +27,7 @@ ms.locfileid: "87994617"
 此外，還有適用於網路技術的 netsh 命令 (例如 IPv6、網路橋接器，以及遠端程序呼叫 \(RPC\))，無法在 Windows Server 中作為 MMC 嵌入式管理單元使用。
 
 >[!IMPORTANT]
->建議您使用 Windows PowerShell 來管理 [Windows Server 2016 和 Windows 10](/powershell/windows/get-started?view=win10-ps) 中的網路技術，而不是使用網路殼層。 不過，為了與您的指令碼相容，系統會納入網路殼層，並可支援使用。
+>建議您使用 Windows PowerShell 來管理 [Windows Server 2016 和 Windows 10](/powershell/windows/get-started) 中的網路技術，而不是使用網路殼層。 不過，為了與您的指令碼相容，系統會納入網路殼層，並可支援使用。
 
 ## <a name="network-shell-netsh-technical-reference"></a>網路殼層 (Netsh) 技術參考
 

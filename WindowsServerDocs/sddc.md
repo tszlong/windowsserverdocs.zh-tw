@@ -1,6 +1,6 @@
 ---
 title: Windows Server 軟體定義資料中心
-Description: Windows Server SDDC 概觀
+description: Windows Server SDDC 概觀
 ms.prod: windows-server
 ms.topic: get-started article
 ms.author: lizross
@@ -8,12 +8,12 @@ author: eross-msft
 manager: mtillman
 ms.date: 06/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0be52c1b0df5f93d39e38327bdcce6cd0984cb5b
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: f3013acdb9a0351b447f10a57e5f1073facb9272
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89640873"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97045186"
 ---
 # <a name="windows-server-software-defined-datacenter"></a>Windows Server 軟體定義資料中心
 
@@ -27,7 +27,7 @@ ms.locfileid: "89640873"
 
 Microsoft 的 SDDC 實作包含本文中提出的 Windows Server 技術。 這是從 Hyper-V Hypervisor 開始實作，提供建置網路及儲存體的虛擬化平台。 針對虛擬化基礎結構獨特挑戰所開發的安全性技術減輕內部與外部威脅的影響。 利用內建於 Windows Server 的 PowerShell，加上 [System Center](/system-center/) 和/或 [Operations Management Suite](/azure/operations-management-suite/operations-management-suite-overview)，您就可以將佈建、部署、設定和管理程式化和自動化。
 
-內建於 Windows Server 和 System Center 的技術是 Windows Server SDDC 體驗的主要建置組塊。 但即使是虛擬化平台，底層仍需要正確的硬體來支援。 參與 **Windows Server 軟體定義 (WSSD) 解決方案**和 **Azure Stack HCI 解決方案**計畫的 Microsoft 合作夥伴，可協助您的企業取得正確的硬體，並提前做好啟動和執行的準備。
+內建於 Windows Server 和 System Center 的技術是 Windows Server SDDC 體驗的主要建置組塊。 但即使是虛擬化平台，底層仍需要正確的硬體來支援。 參與 **Windows Server 軟體定義 (WSSD) 解決方案** 和 **Azure Stack HCI 解決方案** 計畫的 Microsoft 合作夥伴，可協助您的企業取得正確的硬體，並提前做好啟動和執行的準備。
 
 ![影片圖示](media/sddc/video.png)**[觀看影片進一步了解 Microsoft 的 SDDC](https://mva.microsoft.com/training-courses/whats-new-in-windows-server-2016-16457?l=YcsJR6sXC_1006218965)**
 

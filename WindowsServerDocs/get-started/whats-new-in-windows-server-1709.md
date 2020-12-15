@@ -7,12 +7,12 @@ author: eross-msft
 manager: mtillman
 ms.localizationpriority: medium
 ms.date: 06/03/2019
-ms.openlocfilehash: 0e477a404e7bef9ed1e201393a95e875c308e80f
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: f80e08817a8c7e4d3e9aef64f84d534413b32281
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766891"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865447"
 ---
 # <a name="whats-new-in-windows-server-version-1709"></a>Windows Server 版本 1709 中的新功能
 
@@ -62,9 +62,9 @@ Project Honolulu 包含直覺式全新管理體驗，適用於管理電腦、Win
 
 **以 Server Core 做為容器** (與基礎結構) 主機，可依據現代化程序為現有應用程式提供更好的彈性、密度和效能，並且為已經使用雲端模型開發的新應用程式建立品牌。
 
-**VM 啟動順序**也透過作業系統及應用程式感知獲得改善，提供有關在何時先將 VM 視為已啟動再啟動下一個 VM 方面增強的觸發程序。
+**VM 啟動順序** 也透過作業系統及應用程式感知獲得改善，提供有關在何時先將 VM 視為已啟動再啟動下一個 VM 方面增強的觸發程序。
 
-**對 VM 的存放裝置類別記憶體支援**可讓 NTFS 格式的直接存取磁碟區建立在非揮發性 DIMM 上並公開給 Hyper-V VM。 這樣就能讓 Hyper-V VMs 運用存放裝置類別記憶體裝置的低延遲效能優勢。
+**對 VM 的存放裝置類別記憶體支援** 可讓 NTFS 格式的直接存取磁碟區建立在非揮發性 DIMM 上並公開給 Hyper-V VM。 這樣就能讓 Hyper-V VMs 運用存放裝置類別記憶體裝置的低延遲效能優勢。
 
 **虛擬化持續性記憶體 (vPMEM)** 的啟用方式為，在主機的直接存取磁碟區上建立 VHD 檔案 (.vhdpmem)、將 vPMEM 控制器新增至 VM，然後將建立的裝置 (.vhdpmem) 新增至 VM。 在主機上使用直接存取磁碟區的 vhdpmem 檔案來支援 vPMEM，可啟用配置彈性，並運用熟悉的管理模型，將磁碟新增至 VM。
 
@@ -76,11 +76,11 @@ Project Honolulu 包含直覺式全新管理體驗，適用於管理電腦、Win
 
 ## <a name="security-and-assurance"></a>安全性和保證
 
-**網路加密**可讓您快速加密軟體定義網路基礎結構上的網路區段，以符合安全性與合規性需求。
+**網路加密** 可讓您快速加密軟體定義網路基礎結構上的網路區段，以符合安全性與合規性需求。
 
-做為受防護 VM 的**主機守護者服務 (HGS)** 已啟用。 在此版本之前，建議的是部署 3 節點實體叢集。 雖然這樣可確保 HGS 環境不會遭到系統管理員盜用，但是成本高到令人卻步。
+做為受防護 VM 的 **主機守護者服務 (HGS)** 已啟用。 在此版本之前，建議的是部署 3 節點實體叢集。 雖然這樣可確保 HGS 環境不會遭到系統管理員盜用，但是成本高到令人卻步。
 
-現在支援**做為受防護 VM 的 Linux**。
+現在支援 **做為受防護 VM 的 Linux**。
 
 如需詳細資訊，請參閱[受防護網狀架構與受防護的 VM 概觀](../security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms.md)。
 
@@ -112,7 +112,7 @@ Project Honolulu 包含直覺式全新管理體驗，適用於管理電腦、Win
 
 支援 **Docker 的路由網格**。 輸入路由網格屬於[群集模式](https://docs.docker.com/engine/swarm/)的一部分，Docker 內建的容器協調流程解決方案。 如需詳細資訊，請參閱 [Windows Server 版本 1709 隨附的 Docker 路由網格](https://techcommunity.microsoft.com/t5/virtualization/bg-p/Virtualization)。
 
-提供**適用於 Docker 的新功能**。 如需詳細資訊，請參閱 [Windows Server 1709 提供適用於 Docker 的新功能](https://blog.docker.com/2017/09/docker-windows-server-1709/)。
+提供 **適用於 Docker 的新功能**。 如需詳細資訊，請參閱 [Windows Server 1709 提供適用於 Docker 的新功能](https://blog.docker.com/2017/09/docker-windows-server-1709/)。
 
 **與 Linux 同等適用於 Kubernetes 的 Windows 網路功能**：Windows 目前在網路功能上絲毫不遜色於 Linux。 客戶可以在任何環境 (包括 Azure、內部部署) 中，以及在使用與 Linux 所支援相同網路基本項目和拓撲的協力廠商雲端堆疊上，部署混合作業系統 Kubernetes 叢集，而不需要任何工作負載或交換器擴充功能。
 
@@ -143,11 +143,11 @@ Project Honolulu 包含直覺式全新管理體驗，適用於管理電腦、Win
 
   - **ISATAP 和 6to4**：Creators Update 預設會停用這些技術，做為邁向未來取代的一步。
 - **失效閘道偵測 (Dead Gateway Detection，DGD)** ：當目前閘道無法連線時，DGD 演算法會自動將連線轉換到另一個閘道。 在此版本中，已將演算法改善為定期重新探查網路環境。
-- [Test-NetConnection](/powershell/module/nettcpip/test-netconnection?view=win10-ps) 是 Windows PowerShell 中執行各種網路診斷的內建 Cmdlet。  在此版本中，我們增強此 Cmdlet，以提供有關路由選取及來源位址選取的詳細資訊。
+- [Test-NetConnection](/powershell/module/nettcpip/test-netconnection) 是 Windows PowerShell 中執行各種網路診斷的內建 Cmdlet。  在此版本中，我們增強此 Cmdlet，以提供有關路由選取及來源位址選取的詳細資訊。
 
 **軟體定義網路**
 
-- **虛擬網路加密**是新的功能，可讓虛擬網路流量在彼此於標示為「加密已啟用」的子網路內通訊的虛擬機器之間進行加密。 這項功能利用虛擬子網路上的資料包傳輸層安全性 (DTLS) 來加密封包。  DTLS 會提供保護以防止任何可存取實體網路的人進行竊聽、竄改和偽造。
+- **虛擬網路加密** 是新的功能，可讓虛擬網路流量在彼此於標示為「加密已啟用」的子網路內通訊的虛擬機器之間進行加密。 這項功能利用虛擬子網路上的資料包傳輸層安全性 (DTLS) 來加密封包。  DTLS 會提供保護以防止任何可存取實體網路的人進行竊聽、竄改和偽造。
 
 **Windows 10 VPN**
 

@@ -7,12 +7,12 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.date: 02/19/2020
-ms.openlocfilehash: 2caecd2b625de8790ddd0d1ebfeeb9db24d11635
-ms.sourcegitcommit: faa5db4cdba4ad2b3a65533b6b49d960080923c9
+ms.openlocfilehash: 94deca783d770fb5322f9fc489d692f925cfa1a9
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91752910"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866257"
 ---
 # <a name="optimizing-windows-10-version-1909-for-a-virtual-desktop-infrastructure-vdi-role"></a>針對虛擬桌面基礎結構 (VDI) 角色將 Windows 10 版本 1909 最佳化
 
@@ -180,7 +180,7 @@ VDI 映像的目標之一是要越精簡越好。 縮小映像大小的方式之
 
 [Windows 10 1607：使應用程式不會在部署功能更新時再次出現](/archive/blogs/mniehaus/windows-10-1607-keeping-apps-from-coming-back-when-deploying-the-feature-update)
 
-然後，執行 [Remove-AppxProvisionedPackage](/powershell/module/dism/remove-appxprovisionedpackage?view=win10-ps) PowerShell 命令以移除 UWP 應用程式承載：
+然後，執行 [Remove-AppxProvisionedPackage](/powershell/module/dism/remove-appxprovisionedpackage) PowerShell 命令以移除 UWP 應用程式承載：
 
 ```powershell
 Remove-AppxProvisionedPackage -Online -PackageName
@@ -755,7 +755,7 @@ Microsoft 近期發佈了關於在 VDI 環境中使用 Windows Defender 的文�
 
 適用於 Windows 10。 預設值是 **1023**。 此參數可指定在應用程式關閉檔案之後，共用資源上應該保持開啟的檔案數目上限。 有數千個用戶端要連線至 SMB 伺服器時，請考慮將此值縮減至 **256**。
 
-您可以使用 [Set-SmbClientConfiguration](/powershell/module/smbshare/set-smbclientconfiguration?view=win10-ps) 和 [Set-SmbServerConfiguration](/powershell/module/smbshare/set-smbserverconfiguration?view=win10-ps) Windows PowerShell Cmdlet 來設定其中許多 SMB 設定。 您也可以使用 Windows PowerShell 來設定僅限登錄的設定，如下列範例所示：
+您可以使用 [Set-SmbClientConfiguration](/powershell/module/smbshare/set-smbclientconfiguration) 和 [Set-SmbServerConfiguration](/powershell/module/smbshare/set-smbserverconfiguration) Windows PowerShell Cmdlet 來設定其中許多 SMB 設定。 您也可以使用 Windows PowerShell 來設定僅限登錄的設定，如下列範例所示：
 
 ```powershell
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters" RequireSecuritySignature -Value 0 -Force

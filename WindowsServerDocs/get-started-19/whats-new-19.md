@@ -6,12 +6,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 06/04/2019
-ms.openlocfilehash: 6337a3812cb6e1ca838c463bc811f8959d1f0714
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9260cf9cc377c5a0665e4ad6b3ca5871f016a256
+ms.sourcegitcommit: 2365a7b23e2eccd13be350306c622d2ad9d36bc8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87972365"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788035"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Windows Server 2019 的新功能
 
@@ -57,7 +57,7 @@ ATP 的深度平台感應器和回應動作會公開記憶體和核心層級攻�
 
 -   如需上架伺服器的詳細資訊，請參閱[將伺服器上架到 Windows Defender ATP 服務](/windows/security/threat-protection/windows-defender-atp/configure-server-endpoints-windows-defender-advanced-threat-protection)。
 
-**Windows Defender ATP 惡意探索防護**是一組新的主機入侵預防功能。 Windows Defender 惡意探索防護的四個元件專門設計來鎖定裝置以抵禦各種攻擊方式，並封鎖惡意程式碼攻擊中常用的行為，同時讓您平衡安全性風險和生產力需求。
+**Windows Defender ATP 惡意探索防護** 是一組新的主機入侵預防功能。 Windows Defender 惡意探索防護的四個元件專門設計來鎖定裝置以抵禦各種攻擊方式，並封鎖惡意程式碼攻擊中常用的行為，同時讓您平衡安全性風險和生產力需求。
 
 -   [降低攻擊面 (ASR)](/windows/security/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard?ocid=cx-blog-mmpc) 是一組控制項，可透過封鎖可疑的惡意檔案 (例如 Office 檔案)、指令碼、橫向移動、勒索軟體行為以及電子郵件型威脅，讓企業防止惡意軟體進入機器。
 
@@ -69,7 +69,7 @@ ATP 的深度平台感應器和回應動作會公開記憶體和核心層級攻�
 
 [Windows Defender 應用程式控制](/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control) (也稱為程式碼完整性 (CI) 原則) 在 Windows Server 2016 推出。
 客戶反應這是個很好的概念，但部署困難。
-為了解決這個問題，我們建置了預設 CI 原則，這會允許所有 Windows 隨附檔案和 Microsoft 應用程式 (例如 SQL Server)，並封鎖可略過 CI 的已知執行檔。 
+為了解決這個問題，我們建置了預設 CI 原則，這會允許所有 Windows 隨附檔案和 Microsoft 應用程式 (例如 SQL Server)，並封鎖可略過 CI 的已知執行檔。 
 
 ### <a name="security-with-software-defined-networking-sdn"></a>軟體定義網路 (SDN) 的安全性
 
