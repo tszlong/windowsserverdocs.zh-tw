@@ -1,16 +1,17 @@
 ---
+description: 深入了解：Windows Time 服務
 ms.assetid: e34622ff-b2d0-4f81-8d00-dacd5d6c215e
 title: Windows Time 服務
 author: dahavey
 ms.author: dahavey
 ms.date: 05/08/2018
 ms.topic: article
-ms.openlocfilehash: a8bce2d3f43d3c2bc6c35a107efe8e8170a9860d
-ms.sourcegitcommit: b5b040a47cf48c94852de9aad8b91475f891d2f7
+ms.openlocfilehash: 3b0eef62e35e7d0001662961cd39f62cebab158f
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88563238"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97046786"
 ---
 # <a name="windows-time-service"></a>Windows Time 服務
 
@@ -33,7 +34,7 @@ Windows Time 服務 (也稱為 W32time) 會為執行於 AD DS 網域的所有電
 > 在 Windows Server 2016 之前，W32Time 服務並非設計來滿足有時效性應用程式的需求。  但現在，Windows Server 2016 的更新可讓您在網域中實作需要 1 毫秒準確度的解決方案。  如需詳細資訊，請參閱 [Windows 2016 的精確時間](accurate-time.md)和[可為高準確度環境設定 Windows Time 服務的支援界限](support-boundary.md)。
 
 ## <a name="where-to-find-windows-time-service-configuration-information"></a><a name="BKMK_Config"></a>可在何處找到 Windows Time 服務的設定資訊
-本指南**不會**討論如何設定 Windows Time 服務。 在 Microsoft TechNet 和 Microsoft 知識庫中，有好幾個不同的主題會說明 Windows Time 服務的設定程序。 如果您需要設定資訊，下列主題應可協助您找到適當資訊。
+本指南 **不會** 討論如何設定 Windows Time 服務。 在 Microsoft TechNet 和 Microsoft 知識庫中，有好幾個不同的主題會說明 Windows Time 服務的設定程序。 如果您需要設定資訊，下列主題應可協助您找到適當資訊。
 
 -   若要為樹系根主要網域控制站 (PDC) 模擬器設定 Windows Time 服務，請參閱：
 

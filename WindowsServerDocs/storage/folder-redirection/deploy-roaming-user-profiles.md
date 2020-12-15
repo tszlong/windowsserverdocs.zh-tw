@@ -1,17 +1,18 @@
 ---
 title: 部署漫遊使用者設定檔
+description: 深入了解：部署漫遊使用者設定檔
 TOCTitle: Deploying Roaming User Profiles
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.date: 06/07/2019
 ms.author: jgerend
-ms.openlocfilehash: 8019986ed29e9ffedaca8d714f63d5de06ae3c80
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1ed7e52b5408e654d007e1f5c02cb9e61ad5c8bb
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87942249"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049186"
 ---
 # <a name="deploying-roaming-user-profiles"></a>部署漫遊使用者設定檔
 
@@ -96,14 +97,14 @@ ms.locfileid: "87942249"
 如何建立漫遊使用者設定檔的安全性群組：
 
 1. 在已安裝 Active Directory 系統管理中心的電腦上開啟伺服器管理員。
-2. 在 [工具]  功能表上，選取 [Active Directory 系統管理中心]  。 [Active Directory 系統管理中心] 隨即顯示。
-3. 以滑鼠右鍵按一下適當的網域或 OU，選取 [新增]  ，然後選取 [群組]  。
+2. 在 [工具] 功能表上，選取 [Active Directory 系統管理中心]。 [Active Directory 系統管理中心] 隨即顯示。
+3. 以滑鼠右鍵按一下適當的網域或 OU，選取 [新增]，然後選取 [群組] 。
 4. 在 [建立群組]  視窗內的 [群組]  區段中，指定下列設定：
 
     - 在 [群組名稱]  中，輸入安全性群組的名稱，例如：**漫遊使用者設定檔使用者和電腦**。
     - 在 [群組領域]  中，選取 [安全性]  ，然後選取 [全域]  。
 
-5. 在 [成員]  區段中，選取 [新增]  。 [選取使用者、連絡人、電腦、服務帳戶或群組] 對話方塊隨即顯示。
+5. 在 [成員] 區段中，選取 [新增]。 [選取使用者、連絡人、電腦、服務帳戶或群組] 對話方塊隨即顯示。
 6. 如果想要在安全性群組納入電腦帳戶，請選取 [物件類型]  、[電腦]  核取方塊，然後選取 [確定]  。
 7. 輸入想要部署漫遊使用者設定檔的使用者、群組和/或電腦的名稱，選取 [確定]  ，然後再選取 [確定]  。
 
@@ -118,7 +119,7 @@ ms.locfileid: "87942249"
 
 1. 在 [伺服器管理員] 瀏覽窗格中，選取 [檔案和存放服務]  ，然後選取 [共用]  以顯示 [共用] 頁面。
 2. 在 [共用] 磚中，選取 [工作]  ，然後選取 [新增共用]  。 「新增共用精靈」隨即顯示。
-3. 在 [選取設定檔]  頁面上，選取 [SMB 共用 - 快速]  。 如果您已安裝檔案伺服器資源管理員，並使用資料夾管理屬性，則改為選取 [SMB 共用 - 進階]  。
+3. 在 [選取設定檔] 頁面上，選取 [SMB 共用 - 快速]。 如果您已安裝檔案伺服器資源管理員，並使用資料夾管理屬性，則改為選取 [SMB 共用 - 進階]。
 4. 在 [共用位置]  頁面上，選取您要在上面建立共用的伺服器和磁碟區。
 5. 在 [共用名稱]  頁面的 [共用名稱]  方塊中輸入共用的名稱 (例如， **使用者設定檔$** )。
 
@@ -156,12 +157,12 @@ ms.locfileid: "87942249"
 1. 在已安裝群組原則管理的電腦上開啟伺服器管理員。
 2. 在 [工具]  功能表上，選取 [群組原則管理]  。 [群組原則管理] 隨即會出現。
 3. 以滑鼠右鍵按一下要設定漫遊使用者設定檔的網域或 OU，然後選取 [在這個網域中建立 GPO 並連結]  。
-4. 在 [新增 GPO]  對話方塊中，輸入 GPO 的名稱 (例如**漫遊使用者設定檔設定**)，然後選取 [確定]  。
+4. 在 [新增 GPO]  對話方塊中，輸入 GPO 的名稱 (例如 **漫遊使用者設定檔設定**)，然後選取 [確定]  。
 5. 以滑鼠右鍵按一下新建立的 GPO，然後清除 [啟用連結]  核取方塊。 這可以防止在您完成設定之前就套用 GPO。
-6. 選取 GPO。 在 [範圍]  索引標籤的 [安全性篩選]  區段中，選取 [已驗證的使用者]  ，然後選取 [移除]  ，避免將 GPO 套用至所有人。
+6. 選取 GPO。 在 [範圍] 索引標籤的 [安全性篩選] 區段中，選取 [已驗證的使用者]，然後選取 [移除]，避免將 GPO 套用至所有人。
 7. 在 [安全性篩選]  區段中，選取 [新增]  。
-8. 在 [選取使用者、電腦或群組]  對話方塊中，輸入您在步驟 1 建立的安全性群組名稱 (例如**漫遊使用者設定檔使用者和電腦**)，然後選取 [確定]  。
-9. 選取 [委派]  索引標籤並選取 [新增]  ，輸入**已驗證的使用者**，再選取 [確定]  ，然後再次選取 [確定]  以接受預設的 [讀取] 權限。
+8. 在 [選取使用者、電腦或群組]  對話方塊中，輸入您在步驟 1 建立的安全性群組名稱 (例如 **漫遊使用者設定檔使用者和電腦**)，然後選取 [確定]  。
+9. 選取 [委派]  索引標籤並選取 [新增]  ，輸入 **已驗證的使用者**，再選取 [確定]  ，然後再次選取 [確定]  以接受預設的 [讀取] 權限。
 
     由於 [MS16-072](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14%2c-2016) 中所做的安全性變更，這是必要步驟。
 
@@ -225,7 +226,7 @@ ms.locfileid: "87942249"
 
 1. 將 Windows 10 電腦更新為 Windows 10 1607 版本 (也稱為年度更新版) 或更高版本，並安裝 3 月 14 日的 2017 累積更新 ([KB4013429](https://support.microsoft.com/kb/4013429)) 或較新版本。
 2. 建立完整或部分的開始功能表配置 XML 檔案。 若要這樣做，請參閱[自訂和匯出開始功能表配置](/windows/configuration/customize-and-export-start-layout)。
-    * 如果您指定*完整*開始功能表配置，使用者就無法自訂開始功能表的任何部分。 如果您指定*部分*開始功能表配置，使用者可以自訂任何項目，但系統會鎖定您指定的磚群組。 不過，使用部分開始功能表配置時，其使用者自訂項目不會漫遊到其他電腦。
+    * 如果您指定 *完整* 開始功能表配置，使用者就無法自訂開始功能表的任何部分。 如果您指定 *部分* 開始功能表配置，使用者可以自訂任何項目，但系統會鎖定您指定的磚群組。 不過，使用部分開始功能表配置時，其使用者自訂項目不會漫遊到其他電腦。
 3. 使用群組原則將自訂的開始功能表配置套用至您為漫遊使用者設定檔所建立的 GPO。 若要這樣做，[使用群組原則在網域中套用自訂的開始功能表配置](/windows/configuration/customize-windows-10-start-screens-by-using-group-policy#bkmk-domaingpodeployment)。
 4. 使用群組原則在 Windows 10 電腦上設定下列登錄值。 若要這樣做，請參閱[設定登錄項目](</previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753092(v=ws.11)>)。
 
@@ -240,7 +241,7 @@ ms.locfileid: "87942249"
 
 5. (選用) 啟用第一次登入最佳化，以更快速地登入使用者。 若要這麼做，請參閱[套用原則以改善登入時間](/windows/client-management/mandatory-user-profile#apply-policies-to-improve-sign-in-time)。
 6. (選用) 從用來部署用戶端電腦的 Windows 10 基礎映像中移除不必要的應用程式，以進一步減少登入次數。 Windows Server 2019 和 Windows Server 2016 沒有任何預先佈建的應用程式，因此您可以在伺服器映像上略過此步驟。
-    - 若要移除應用程式，請使用 Windows PowerShell 中的 [Remove-AppxProvisionedPackage](/powershell/module/dism/remove-appxprovisionedpackage?view=win10-ps) Cmdlet 將下列應用程式解除安裝。 如果您的電腦已部署完成，可以使用 [Remove-AppxPackage](/powershell/module/appx/remove-appxpackage?view=win10-ps) 來編寫移除這些應用程式的程式碼。
+    - 若要移除應用程式，請使用 Windows PowerShell 中的 [Remove-AppxProvisionedPackage](/powershell/module/dism/remove-appxprovisionedpackage) Cmdlet 將下列應用程式解除安裝。 如果您的電腦已部署完成，可以使用 [Remove-AppxPackage](/powershell/module/appx/remove-appxpackage) 來編寫移除這些應用程式的程式碼。
 
       - Microsoft.windowscommunicationsapps\_8wekyb3d8bbwe
       - Microsoft.BingWeather\_8wekyb3d8bbwe

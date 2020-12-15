@@ -1,16 +1,17 @@
 ---
+description: 深入了解：Windows Time 服務 (W32Time)
 ms.assetid: e34622ff-b2d0-4f81-8d00-dacd5d6c215e
 title: Windows Time 服務 (W32Time)
 author: dahavey
 ms.author: dahavey
 ms.date: 05/08/2018
 ms.topic: article
-ms.openlocfilehash: a24ba463ecf939fc0c4192d4441ccc2fbae09d47
-ms.sourcegitcommit: b5b040a47cf48c94852de9aad8b91475f891d2f7
+ms.openlocfilehash: b8b4459b57f66efb2587b1370a5e3018d9c8d359
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88563348"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97047846"
 ---
 # <a name="windows-time-service-w32time"></a>Windows Time 服務 (W32Time)
 

@@ -1,15 +1,16 @@
 ---
+description: 深入了解：將 SYSVOL 複寫移轉至 DFS 複寫
 title: 將 SYSVOL 複寫移轉至 DFS 複寫
 ms.date: 07/02/2012
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: e3917f0170e70ea6ba8ca09dc25415650f8a0dcc
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: c0ab678542260b9b7d1975a633b2244aac7fe3d7
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766623"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048756"
 ---
 # <a name="migrate-sysvol-replication-to-dfs-replication"></a>將 SYSVOL 複寫移轉至 DFS 複寫
 

@@ -6,12 +6,12 @@ ms.date: 8/28/2020
 ms.localizationpriority: medium
 ms.topic: article
 author: christianmontoya
-ms.openlocfilehash: 71b892d95b15f02445ec7898a6c57f931bc4b501
-ms.sourcegitcommit: 2b1a12c85acff137e5ac84cd0e62d8353fcdde31
+ms.openlocfilehash: a3a38581a257007d9e6afbf4059c88c485ac5a04
+ms.sourcegitcommit: 97af0c18f5868567a1435658bce9c7751454caea
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89087461"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96913408"
 ---
 # <a name="set-up-email-discovery-to-subscribe-to-your-rds-feed"></a>設定電子郵件探索以訂閱您的 RDS 摘要
 
@@ -35,7 +35,7 @@ ms.locfileid: "89087461"
 3. 輸入具有下列屬性的新 DNS 記錄：
    - **Host：** _msradc
    - **Text：** \<RD Web Feed URL\>
-   - **TTL：** 300
+   - **TTL：** 300 秒
 
    DNS 記錄欄位的名稱會隨著網域名稱註冊機構而不同，但此程序將產生名為 _msradc.\<domain_name\> (例如 _msradc.contoso.com)、具有完整 RD Web 摘要值的 TXT 記錄。
 

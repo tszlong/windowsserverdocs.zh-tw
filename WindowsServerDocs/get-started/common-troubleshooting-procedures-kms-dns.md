@@ -1,16 +1,17 @@
 ---
+description: 深入了解：針對 DNS 相關啟用問題進行疑難排解的指導方針
 title: 針對 DNS 相關啟用問題進行疑難排解的指導方針
 ms.topic: troubleshooting
 ms.date: 09/10/2019
 author: Teresa-Motiv
 ms.author: v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d44da55f62348dfc0f776a6106d4fb613227057
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: eda94c17dcf54e689daf853cfde39f9e0253b615
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953367"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97040926"
 ---
 # <a name="guidelines-for-troubleshooting-dns-related-activation-issues"></a>針對 DNS 相關啟用問題進行疑難排解的指導方針
 
@@ -55,7 +56,7 @@ ms.locfileid: "87953367"
     slmgr -ipk xxxxx-xxxxx-xxxxx-xxxxx-xxxxx
    ```
    > [!NOTE]
-   > **xxxxx-xxxxx-xxxxx-xxxxx-xxxxx**預留位置代表您的 MAK產品金鑰。
+   > **xxxxx-xxxxx-xxxxx-xxxxx-xxxxx** 預留位置代表您的 MAK產品金鑰。
 
 [返回程式清單。](#list)
 
@@ -92,7 +93,7 @@ KMS 啟用要求針對要啟動的用戶端設定 KMS 主機。 如果您的環�
 1. 找出 **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SL** 子機碼，並檢查 **DisableDnsPublishing** 項目的值。 此項目具有下列可能的值：
    - **0** 或未定義 (預設值)：KMS 主機伺服器會每隔 24 小時登錄一次 SRV 記錄。
    - **1**：KMS 主機伺服器不會自動登錄 SRV 記錄。 如果您的實作不支援動態更新，請參閱[手動建立 KMS SRV 記錄](#manually-create-a-kms-srv-record)。
-1. 如果遺漏 **DisableDnsPublishing**項目，請加以建立 (類型為 DWORD)。 如果可接受動態登錄，請將值保持未定義狀態，或將其設定為 **0**。
+1. 如果遺漏 **DisableDnsPublishing** 項目，請加以建立 (類型為 DWORD)。 如果可接受動態登錄，請將值保持未定義狀態，或將其設定為 **0**。
 
 [返回程式清單。](#list)
 
@@ -156,7 +157,7 @@ KMS 啟用要求針對要啟動的用戶端設定 KMS 主機。 如果您的環�
        > [!NOTE]
        > 在此項目中，contoso.com 代表 KMS 主機的網域。
       1. 確認 KMS 主機的 IP 位址、主機名稱、連接埠和網域。
-      1. 如果這些 **_vlmcs** 項目存在，而且它們包含預期的 KMS 主機名稱，請移至[手動將 KMS 主機指派給 KMS 用戶端](#manually-assign-a-kms-host-to-a-kms-client)。
+      1. 如果這些 **_vlmcs** 項目存在，而且它們包含預期的 KMS 主機名稱，請移至 [手動將 KMS 主機指派給 KMS 用戶端](#manually-assign-a-kms-host-to-a-kms-client)。
       > [!NOTE]
       > 如果 [**nslookup**](../administration/windows-commands/nslookup.md) 命令找到 KMS 主機，並不表示 DNS 用戶端可找到 KMS 主機。 如果 **nslookup** 命令找到 KMS 主機，但您仍然無法使用 KMS 主機進行啟用，請檢查其他 DNS 設定，例如主要 DNS 尾碼和 DNS 尾碼的搜尋清單。
 1. 確認主要 DNS 尾碼的搜尋清單包含與 KMS 主機相關聯的 DNS 網域尾碼。 如果搜尋清單不包含這項資訊，請移至[將 KMS 主機設定為在多個 DNS 網域中發佈](#configure-the-kms-host-to-publish-in-multiple-dns-domains)程序。

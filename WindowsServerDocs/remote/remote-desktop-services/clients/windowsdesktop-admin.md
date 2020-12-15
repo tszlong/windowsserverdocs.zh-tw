@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 12/02/2020
+ms.date: 12/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: fe553c03e85f3cb68f76b1a8d27e1da93bf9d9a3
-ms.sourcegitcommit: dce404a0a4500a693e294e0431c93f0ae90f8b13
+ms.openlocfilehash: b4085868c136f2f8653f623e5a167a283f463eee
+ms.sourcegitcommit: 7c0794e257f602bd71af5eb9a11b8a03d2b9adfd
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96563778"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97390316"
 ---
 # <a name="windows-desktop-client-for-admins"></a>適用於系統管理員的 Windows 桌面用戶端
 
@@ -49,7 +49,7 @@ msiexec.exe /i `<path to the MSI>` /qn ALLUSERS=2 MSIINSTALLPERUSER=1
 - **索引鍵：** HKLM\Software\Microsoft\MSRDC\Policies
 - **類型：** REG_DWORD
 - **名稱：** AutomaticUpdates
-- **資料：** 0 = 停用通知。 1 = 顯示通知。 2 = 顯示通知並在關閉時自動更新。
+- **資料：** 0 = 停用通知並關閉自動更新。 1 = 顯示通知並關閉自動更新。 2 = 顯示通知並在關閉時自動更新。
 
 ### <a name="configure-user-groups"></a>設定使用者群組
 

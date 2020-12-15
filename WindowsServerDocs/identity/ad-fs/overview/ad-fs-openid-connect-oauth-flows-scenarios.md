@@ -1,4 +1,5 @@
 ---
+description: 深入了解：AD FS OpenID Connect/OAuth 流程和應用程式案例
 ms.assetid: 8a64545b-16bd-4c13-a664-cdf4c6ff6ea0
 title: AD FS OpenID Connect/OAuth 流程和應用程式案例
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 05ee7a1e5e36ee7bc2ffcb41fbdabf4b5b6c2c4e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2f2feb9485eb63ea1727fbec8b8300d5ef4f5c51
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87966825"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97042086"
 ---
 # <a name="ad-fs-openid-connectoauth-flows-and-application-scenarios"></a>AD FS OpenID Connect/OAuth 流程和應用程式案例
 適用於 AD FS 2016 和更新版本
@@ -90,7 +91,7 @@ access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZEstZnl0aEV...
 ```
 
 
-|參數|說明|
+|參數|描述|
 |-----|-----|
 |access_token|如果 response_type 包含 `token`，則該參數也會包含在內。|
 |token_type|如果 response_type 包含 `token`，則該參數也會包含在內。 一律會是「承載者」。|
@@ -205,7 +206,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 ```
 
 
-|參數|說明|
+|參數|描述|
 |-----|-----|
 |access_token|要求的存取權杖。 應用程式可以使用此權杖來對受保護的資源 (Web API) 進行驗證。|
 |token_type|指出權杖類型的值。 AD FS 唯一支援的類型是承載者 (Bearer)。
@@ -223,7 +224,7 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZn
  ```
 
 ### <a name="refresh-token-grant-flow"></a>重新整理權杖授與流程
- 
+ 
 Access_tokens 的存留期較短，您必須在過期後重新整理，才能繼續存取資源。 若要這麼做，您可以向  `/token`  端點提交另一個 POST 要求，但這次提供 refresh_token，而不是程式碼。 重新整理權杖適用於您用戶端已收到其存取權杖的所有權限。
 
 重新整理權杖沒有指定的存留期。 一般而言，重新整理權杖的存留期相對較長。 不過，在某些情況下，重新整理權杖會過期、遭到撤銷，或缺少所需動作的足夠權限。 您的應用程式必須預期並正確處理權杖發行端點所傳回的錯誤。
@@ -266,7 +267,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
     "id_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIyZDRkMTFhMi1mODE0LTQ2YTctOD...",
 }
 ```
-|參數|說明|
+|參數|描述|
 |-----|-----|
 |access_token|要求的存取權杖。 應用程式可以使用此權杖來對受保護的資源 (例如 Web API) 進行驗證。|
 |token_type|指出權杖類型的值。 AD FS 唯一支援的類型是承載者 (Bearer)|

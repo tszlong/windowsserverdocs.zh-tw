@@ -1,15 +1,16 @@
 ---
+description: 深入了解：DFS 複寫：常見問題集 (FAQ)
 title: DFS 複寫 - 常見問題集 (FAQ)
 ms.date: 06/18/2014
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 346fa77e1a22626094baa33aaf70ead23f2f0db0
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 976539e31fa335a09d834e889ecd6c729b533236
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766641"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048776"
 ---
 # <a name="dfs-replication-frequently-asked-questions-faq"></a>DFS 複寫：常見問題集 (FAQ)
 
@@ -68,7 +69,7 @@ DFS 複寫會在執行 Windows Server 作業系統的伺服器上與 NFS 交互�
 
 是。 磁碟區陰影複製服務 (VSS) 磁碟區支援 DFS 複寫，而且可搭配舊版用戶端順利還原先前的快照集。
 
-### <a name="can-i-use-windowsbackup-ntbackupexe-to-remotely-back-up-a-replicated-folder"></a>我可以使用 Windows 備份 (Ntbackup.exe) 從遠端備份複寫資料夾嗎？
+### <a name="can-i-use-windows-backup-ntbackupexe-to-remotely-back-up-a-replicated-folder"></a>我可以使用 Windows 備份 (Ntbackup.exe) 從遠端備份複寫資料夾嗎？
 
 不可以，系統不支援在執行 windows Server 2003 或更早版本的電腦上，使用 Windows 備份 (Ntbackup.exe) 備份執行 Windows Server 2012、Windows Server 2008 R2 或 Windows Server 2008 的電腦上複寫資料夾的內容。
 
@@ -189,7 +190,7 @@ DFS 複寫可以安全地複寫僅儲存供封存之用的 Microsoft Outlook 個
 
 ### <a name="does-dfs-replication-work-with-sparse-files"></a>DFS 複寫可以複寫疏鬆檔案嗎？
 
-是。 您可以複寫疏鬆檔案。 接收成員會保留**疏鬆**屬性。
+是。 您可以複寫疏鬆檔案。 接收成員會保留 **疏鬆** 屬性。
 
 ### <a name="do-i-need-to-log-in-as-administrator-to-replicate-files"></a>我需要以系統管理員身分登入才能複寫檔案嗎？
 
@@ -276,7 +277,7 @@ DFS 複寫在 Active Directory Domain Services 的網域命名內容中使用新
 
 ### <a name="does-dfs-replication-support-remote-management"></a>DFS 複寫是否支援遠端管理？
 
-是。 DFS 複寫支援使用 DFS 管理主控台和**新增複寫群組**命令進行遠端系統管理。 例如，在伺服器 A 上，您可以使用伺服器 A 和 B 做為成員，與樹系中定義的複寫群組連線。
+是。 DFS 複寫支援使用 DFS 管理主控台和 **新增複寫群組** 命令進行遠端系統管理。 例如，在伺服器 A 上，您可以使用伺服器 A 和 B 做為成員，與樹系中定義的複寫群組連線。
 
 Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008 及 Windows Server 2003 R2 均隨附 DFS 管理功能。 若要管理其他 Windows 版本的 DFS 複寫，請使用遠端桌面或[適用於 Windows 7 的遠端伺服器管理工具](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee449475(v=ws.10))。
 
@@ -292,7 +293,7 @@ Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows 
 
 ### <a name="how-can-files-be-recovered-from-the-conflictanddeleted-or-preexisting-folders"></a>如何從 ConflictAndDeleted 或 PreExisting 資料夾中復原檔案？
 
-若要復原遺失的檔案，請使用檔案歷程記錄、檔案總管中的**還原先前的版本**命令，或從備份還原檔案等方式，還原檔案系統資料夾或共用資料夾中的檔案。 若要直接從 ConflictAndDeleted 或 PreExisting 資料夾復原檔案，請使用 `Get-DfsrPreservedFiles` 和 `Restore-DfsrPreservedFiles`Windows PowerShell Cmdlet (隨附於 Windows Server 2012 R2 中的 DFSR 模組)，或 MSDN 程式碼庫中的 [RestoreDFSR](https://code.msdn.microsoft.com/restoredfsr) 範例指令碼。 此指令碼僅供災害復原修復之用，並依原樣提供，不含擔保。
+若要復原遺失的檔案，請使用檔案歷程記錄、檔案總管中的 **還原先前的版本** 命令，或從備份還原檔案等方式，還原檔案系統資料夾或共用資料夾中的檔案。 若要直接從 ConflictAndDeleted 或 PreExisting 資料夾復原檔案，請使用 `Get-DfsrPreservedFiles` 和 `Restore-DfsrPreservedFiles`Windows PowerShell Cmdlet (隨附於 Windows Server 2012 R2 中的 DFSR 模組)，或 MSDN 程式碼庫中的 [RestoreDFSR](https://code.msdn.microsoft.com/restoredfsr) 範例指令碼。 此指令碼僅供災害復原修復之用，並依原樣提供，不含擔保。
 
 ### <a name="is-there-a-way-to-know-the-state-of-replication"></a>是否有方法可以得知複寫的狀態？
 
@@ -369,7 +370,7 @@ DFS 複寫使用的磁碟、記憶體和 CPU 資源取決於數種因素，包�
 
 是。 您可以透過指定連線的屬性頁來關閉 RDC。 停用 RDC 可針對沒有頻寬限制的快速區域網路 (LAN) 連結，或多數檔案小於 64 KB 的複寫群組，減少 CPU 使用率和複寫延遲。 如果您選擇停用連線上的 RDC，請在變更前後測試複寫效率，以確認已改善複寫效能。
 
-您可以使用 **Dfsradmin 連線集**命令、DFS 複寫 WMI 提供者，或手動編輯組態 XML 檔案，變更 RDC 大小閾值。
+您可以使用 **Dfsradmin 連線集** 命令、DFS 複寫 WMI 提供者，或手動編輯組態 XML 檔案，變更 RDC 大小閾值。
 
 ### <a name="does-rdc-work-on-all-file-types"></a>RDC 適用於所有檔案類型嗎？
 
@@ -440,19 +441,19 @@ DFS 複寫會在下一次複寫期間，將複寫群組的所有其他成員上�
 <td><p>是</p></td>
 </tr>
 <tr class="even">
-<td><p>Windows Server 2008 R2</p></td>
+<td><p>Windows Server 2008 R2</p></td>
 <td><p>否</p></td>
 <td><p>是</p></td>
 <td><p>是</p></td>
 </tr>
 <tr class="odd">
-<td><p>Windows Server 2008</p></td>
+<td><p>Windows Server 2008</p></td>
 <td><p>否</p></td>
 <td><p>是</p></td>
 <td><p>否</p></td>
 </tr>
 <tr class="even">
-<td><p>Windows Server 2003 R2</p></td>
+<td><p>Windows Server 2003 R2</p></td>
 <td><p>否</p></td>
 <td><p>是</p></td>
 <td><p>否</p></td>
@@ -647,7 +648,7 @@ DFS 複寫不會複寫 FILE\_ATTRIBUTE\_TEMPORARY 值。
 
 ### <a name="what-happens-if-the-replication-schedule-closes-while-a-file-is-being-replicated"></a>如果複寫排程在複寫檔案時關閉，會發生什麼事？
 
-如果已在連線上啟用遠端差異壓縮 (RDC)，則在排程關閉之前 (或變更為**沒有頻寬**) 針對大於 64KB 的檔案立即開始傳入複寫的作業會繼續進行，並會在排程開啟時繼續進行 (或變更為**沒有頻寬**以外的狀態)。 複寫會從其停止時的狀態繼續進行。
+如果已在連線上啟用遠端差異壓縮 (RDC)，則在排程關閉之前 (或變更為 **沒有頻寬**) 針對大於 64KB 的檔案立即開始傳入複寫的作業會繼續進行，並會在排程開啟時繼續進行 (或變更為 **沒有頻寬** 以外的狀態)。 複寫會從其停止時的狀態繼續進行。
 
 如果 RDC 已關閉，DFS 複寫會完整重新啟動檔案傳輸。 當接收成員中有可供使用的檔案時，可能會造成延遲。
 
@@ -692,7 +693,7 @@ DFS 複寫不會複寫 FILE\_ATTRIBUTE\_TEMPORARY 值。
 </colgroup>
 <thead>
 <tr class="header">
-<th> </th>
+<th> </th>
 <th>啟用 RDC</th>
 <th>停用 RDC</th>
 </tr>

@@ -1,4 +1,5 @@
 ---
+description: 深入了解：樹系和網域功能等級
 ms.assetid: f964d056-11bf-4d9b-b5ab-dceaad8bfbc3
 title: Windows Server 2016 功能等級
 ms.author: daveba
@@ -8,12 +9,12 @@ ms.date: 08/25/2020
 ms.topic: article
 ms.custom: it-pro
 ms.reviewer: maheshu
-ms.openlocfilehash: b74bb786b3d1a6ec8a1f96054b2d74ca93bd9bcf
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: a05049c17e3d8fec8198c42c6dd589a4907e6e54
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93068370"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048956"
 ---
 # <a name="forest-and-domain-functional-levels"></a>樹系和網域功能等級
 

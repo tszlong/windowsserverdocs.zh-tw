@@ -8,18 +8,18 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 43a483df0f9ad8c6961f9309249a5c2eef88c085
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 74a98c02794c2bba95a9de8684e4e7d308d99da2
+ms.sourcegitcommit: 2365a7b23e2eccd13be350306c622d2ad9d36bc8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990541"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788057"
 ---
 # <a name="install-server-with-desktop-experience"></a>安裝含有桌面體驗的伺服器
 > 適用於：Windows Server 2016
 
 
-當您使用安裝精靈安裝 Windows Server 2016 時，您可以在 **Windows Server 2016**和 **Windows Server (含有桌面體驗的伺服器)** 之間進行選擇。 Windows Server 2016 的 [含有桌面體驗的伺服器] 選項，相當於已安裝桌面體驗功能之 Windows Server 2012 R2 中的 [完整] 安裝選項。 如果您不在安裝精靈中做出選擇，系統將會安裝 **Windows Server 2016**，這是 [Server Core]  安裝選項。
+當您使用安裝精靈安裝 Windows Server 2016 時，您可以在 **Windows Server 2016** 和 **Windows Server (含有桌面體驗的伺服器)** 之間進行選擇。 Windows Server 2016 的 [含有桌面體驗的伺服器] 選項，相當於已安裝桌面體驗功能之 Windows Server 2012 R2 中的 [完整] 安裝選項。 如果您不在安裝精靈中做出選擇，系統將會安裝 **Windows Server 2016**，這是 [Server Core]  安裝選項。
 
 此 [含有桌面體驗的伺服器] 選項會安裝標準使用者介面和所有工具，包括需要在 Windows Server 2012 R2 中另外安裝的用戶體驗功能。 伺服器角色及功能可由伺服器管理員或其他方法安裝。 與 Server Core 選項相較下，它需要更多的磁碟空間，而且具有較高的維護需求。因此，除非您特別需要 [含有桌面體驗的伺服器] 選項所包含的額外使用者介面元素與圖形化管理工具，否則我們建議您選擇 Server Core 安裝。 如果您認為不需要額外元素即可進行，請參閱[安裝 Server Core](Getting-Started-with-Server-Core.md)。 如需更輕量型的選項，請參閱[安裝 Nano Server](Getting-Started-with-Nano-Server.md)。
 
@@ -49,7 +49,7 @@ ms.locfileid: "87990541"
 若要從媒體安裝 [含有桌面體驗的伺服器] 安裝選項，請將媒體插入磁碟機、重新啟動電腦，然後執行 Setup.exe。 在開啟的精靈中，選取 [Windows Server (含有桌面體驗的伺服器)]  (Standard 或 Datacenter)，然後完成精靈。
 
 ### <a name="upgrade"></a>升級
-**升級**表示從現有作業系統版本移至更新的版本，但仍使用相同硬體。
+**升級** 表示從現有作業系統版本移至更新的版本，但仍使用相同硬體。
 
 如果您已經有適當 Windows Server 產品的完整安裝，您可以將它升級至適當 Windows Server 2016 版本的 [含有桌面體驗的伺服器] 安裝，如下所示。
 
@@ -64,7 +64,7 @@ ms.locfileid: "87990541"
 
 如果您在左欄看不到目前的版本，則不支援升級到這個 Windows Server 2016 版本。
 
-如果您在右欄看到多個版本，則支援從相同版本開始升級到列出的**任一**版本。
+如果您在右欄看到多個版本，則支援從相同版本開始升級到列出的 **任一** 版本。
 
 |如果您執行這個版本：|您可以升級到這些版本：|
 |-------------------|----------|
@@ -81,9 +81,9 @@ ms.locfileid: "87990541"
 如需移至 Windows Server 2016 的許多其他選項，例如在大量授權版本、評估版及其他版本之間的授權轉換，請參閱[升級選項](Supported-Upgrade-Paths.md)中的詳細資訊。
 
 ### <a name="migration"></a>移轉
-**移轉**表示藉由在一組不同的硬體或虛擬機器上執行全新安裝，然後將舊版伺服器的工作負載轉移到新的伺服器，來從現有作業系統移至 Windows Server 2016。 視您安裝的伺服器角色而定，移轉可能有極大的差異，這會在 [Windows Server Installation, Upgrade, and Migration](./installation-and-upgrade.md) (Windows Server 安裝、升級和移轉) 中深入討論。
+**移轉** 表示藉由在一組不同的硬體或虛擬機器上執行全新安裝，然後將舊版伺服器的工作負載轉移到新的伺服器，來從現有作業系統移至 Windows Server 2016。 視您安裝的伺服器角色而定，移轉可能有極大的差異，這會在 [Windows Server Installation, Upgrade, and Migration](./installation-and-upgrade.md) (Windows Server 安裝、升級和移轉) 中深入討論。
 
-移轉的功能會因不同的伺服器角色而異。 下表說明移至 Windows Server 2016 的特定伺服器角色升級和移轉選項。 如需個別角色移轉指南，請瀏覽[在 Windows Server 中移轉角色與功能](./migrate-roles-and-features.md)。 如需安裝和升級的詳細資訊，請參閱 [Windows Server Installation, Upgrade, and Migration](./installation-and-upgrade.md) (Windows Server 安裝、升級和移轉)。
+移轉的功能會因不同的伺服器角色而異。 下列方格說明專門用於移至 Windows Server 2016 的伺服器角色升級和移轉選項。 如需個別角色移轉指南，請瀏覽[在 Windows Server 中移轉角色與功能](./migrate-roles-and-features.md)。 如需安裝和升級的詳細資訊，請參閱 [Windows Server Installation, Upgrade, and Migration](./installation-and-upgrade.md) (Windows Server 安裝、升級和移轉)。
 
 |伺服器角色|是否可從 Windows Server 2012 R2 升級？|是否可從 Windows Server 2012 升級？|是否支援移轉？|是否可以在不停機的情況下完成移轉？|
 |-------------------|----------|--------------|--------------|----------|

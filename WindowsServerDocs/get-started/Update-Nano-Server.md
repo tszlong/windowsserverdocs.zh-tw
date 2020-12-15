@@ -1,30 +1,30 @@
 ---
 title: 更新 Nano Server
-description: ''
+description: 深入了解：更新 Nano Server
 manager: DonGill
 ms.date: 09/06/2017
 ms.topic: get-started-article
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 33bf8f3125ede8f3ac777e002e7d31dc174ba238
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 124f8d4ddd406b108588c82652ea3f3577ebf9c9
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87959196"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97045166"
 ---
 # <a name="updating-nano-server"></a>更新 Nano Server
 
 > [!IMPORTANT]
 > 從 Windows Server 1709 版開始，Nano Server 僅以[容器基礎 OS 映像](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)的形式來提供。 請查看 [Nano Server 的變更](nano-in-semi-annual-channel.md)以了解這代表的意義。
 
-Nano Server 提供各種方法讓您保持在最新狀態。 相較於 Windows Server 其他安裝選項，Nano Server 遵循更為主動的服務模型，類似 Windows 10。 這些定期版本稱為**最新商務分支 (CBB)** 版本。 這種方式可支援想要更迅速創新，並以雲端發佈頻率跟上快速開發週期的客戶。 您可以從 [Windows Server 部落格](https://cloudblogs.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/)上取得更多 CBB 的相關資訊。
+Nano Server 提供各種方法讓您保持在最新狀態。 相較於 Windows Server 其他安裝選項，Nano Server 遵循更為主動的服務模型，類似 Windows 10。 這些定期版本稱為 **最新商務分支 (CBB)** 版本。 這種方式可支援想要更迅速創新，並以雲端發佈頻率跟上快速開發週期的客戶。 您可以從 [Windows Server 部落格](https://cloudblogs.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/)上取得更多 CBB 的相關資訊。
 
-**在這些 CBB 版本之間**，Nano Server 會以一系列的*累積更新*保持在最新狀態。 例如，Nano Server 的第一個累積更新發佈於 2016 年 9 月 26 日，搭配 [KB4093120](https://support.microsoft.com/help/4093120/windows-10-update-kb4093120)。 我們提供在 Nano Server 上安裝此一更新和後續累積更新的各種選項。 在本文中，我們將使用 KB3192366 更新做為範例，說明如何取得並將累積更新套用到 Nano Server。 如需有關累積更新模型的詳細資訊，請參閱 [Microsoft Update 部落格](/archive/blogs/mu/patching-with-windows-server-2016)。
+**在這些 CBB 版本之間**，Nano Server 會以一系列的 *累積更新* 保持在最新狀態。 例如，Nano Server 的第一個累積更新發佈於 2016 年 9 月 26 日，搭配 [KB4093120](https://support.microsoft.com/help/4093120/windows-10-update-kb4093120)。 我們提供在 Nano Server 上安裝此一更新和後續累積更新的各種選項。 在本文中，我們將使用 KB3192366 更新做為範例，說明如何取得並將累積更新套用到 Nano Server。 如需有關累積更新模型的詳細資訊，請參閱 [Microsoft Update 部落格](/archive/blogs/mu/patching-with-windows-server-2016)。
 
 > [!NOTE]
-> 如果您是從媒體或線上存放庫安裝選用的 Nano Server 套件，其並不會包含最新的安全性問題修正。 若要避免選用套件和基本作業系統之間的版本不符，您應該在安裝任何選用套件之後和重新啟動伺服器**之前**，立即安裝最新的累積更新。
+> 如果您是從媒體或線上存放庫安裝選用的 Nano Server 套件，其並不會包含最新的安全性問題修正。 若要避免選用套件和基本作業系統之間的版本不符，您應該在安裝任何選用套件之後和重新啟動伺服器 **之前**，立即安裝最新的累積更新。
 
 在 Windows Server 2016：2016 年 9 月 26 日 ([KB3192366](https://support.microsoft.com/kb/3192366)) 的累計更新案例中，您應該先針對 Windows 10 版本 1607：2016 年 8 月 23 日安裝最新的服務堆疊更新，以作為先決條件 ([KB3176936](https://support.microsoft.com/kb/3176936))。 下方大部分選項，您都需要包含 .cab 更新套件的.msu 檔案。 請造訪 Microsoft Update Catalog 下載每個更新套件︰
 - [https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB3192366](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB3192366)

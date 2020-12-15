@@ -1,4 +1,5 @@
 ---
+description: 深入了解：AD DS 快速入門
 ms.assetid: 533ce45c-67cc-4fbf-bb19-f364874e52c1
 title: AD DS 快速入門
 ms.author: daveba
@@ -6,12 +7,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: c7ececd9db9b863d58ec0d6a453fb1f67b4bcb96
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 1aa3b7cbfc7e5afc0f3c6299f966fa045347f454
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070490"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048306"
 ---
 # <a name="ad-ds-getting-started"></a>AD DS 快速入門
 

@@ -1,15 +1,16 @@
 ---
+description: 深入了解：DFS 複寫概觀
 title: DFS 複寫概觀
 ms.date: 03/08/2019
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 6a68d27ec7c1d06e070d18362de68e12ecbf9578
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7cc69e3d1b3a141d79a1a0ef036db93762154039
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87950752"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048766"
 ---
 # <a name="dfs-replication-overview"></a>DFS 複寫概觀
 
@@ -73,7 +74,7 @@ DFS 複寫是檔案和存放服務角色的一部分。 DFS 管理工具 (DFS �
 
     - 若要只安裝 DFS 管理工具，請在 [功能]  頁面上，依序展開 [遠端伺服器管理工具] 、[角色管理工具] 、[檔案服務工具] ，然後選取 [DFS 管理工具] 。
 
-         **DFS 管理工具**會安裝 DFS 管理嵌入式管理單元、適用於 Windows PowerShell 的 DFS 複寫和 DFS 命名空間模組以及命令列工具，但是不會在伺服器上安裝任何 DFS 服務。
+         **DFS 管理工具** 會安裝 DFS 管理嵌入式管理單元、適用於 Windows PowerShell 的 DFS 複寫和 DFS 命名空間模組以及命令列工具，但是不會在伺服器上安裝任何 DFS 服務。
 
 ### <a name="to-install-dfs-replication-by-using-windows-powershell"></a>使用 Windows PowerShell 安裝 DFS 複寫
 

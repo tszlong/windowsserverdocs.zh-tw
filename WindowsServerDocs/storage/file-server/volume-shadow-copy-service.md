@@ -1,15 +1,16 @@
 ---
+description: 深入了解：磁碟區陰影複製服務
 title: 磁碟區陰影複製服務
 ms.date: 01/30/2019
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 0a8015096d22cfb384815f1e5b8c5b9c9c248922
-ms.sourcegitcommit: 7499749ce7baaf58a523cae2dd46737d635475ce
+ms.openlocfilehash: fce81dbff86ec06d69a9a684a5f418866fe485c6
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93043910"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97046036"
 ---
 # <a name="volume-shadow-copy-service"></a>磁碟區陰影複製服務
 
@@ -363,7 +364,7 @@ VSS 是在 Windows XP 中引進的。 其適用於 Windows XP、Windows Server 
 
 VSS 的設計目的是要建立整個磁碟區的陰影複製。 系統會自動在陰影複製中省略暫存檔案 (例如分頁檔案) 來節省空間。
 
-若要從陰影複製中排除特定檔案，請使用下列登錄機碼： **FilesNotToSnapshot** 。
+若要從陰影複製中排除特定檔案，請使用下列登錄機碼：**FilesNotToSnapshot**。
 
 
 > [!NOTE]
@@ -417,7 +418,7 @@ VSS 的設計目的是要建立整個磁碟區的陰影複製。 系統會自動
 
 ### <a name="whats-the-maximum-number-of-software-shadow-copies-created-by-the-system-provider-that-i-can-maintain-for-a-volume"></a>針對單一磁碟區，我最多可以維護多少個系統提供者建立的軟體陰影複製？
 
-每個磁碟區的軟體陰影複製數目上限為 512 個。 不過，根據預設，您只能維護 64 個「共用資料夾陰影複製」功能所使用的陰影複製。 若要變更「共用資料夾陰影複製」功能的限制，請使用下列登錄機碼： **MaxShadowCopies** 。
+每個磁碟區的軟體陰影複製數目上限為 512 個。 不過，根據預設，您只能維護 64 個「共用資料夾陰影複製」功能所使用的陰影複製。 若要變更「共用資料夾陰影複製」功能的限制，請使用下列登錄機碼：**MaxShadowCopies**。
 
 ### <a name="how-can-i-control-the-space-that-is-used-for-shadow-copy-storage-space"></a>如何控制用於陰影複製儲存空間的空間？
 
@@ -442,15 +443,15 @@ Windows 作業系統提供下列工具來使用 VSS：
 
 DiskShadow 是 VSS 要求者，可讓您用來管理系統上可以擁有的所有硬體和軟體快照集。 DiskShadow 包含如下所示的命令：
 
-  - **list** ：列出 VSS 寫入器、VSS 提供者和陰影複製
+  - **list**：列出 VSS 寫入器、VSS 提供者和陰影複製
 
-  - **create** ：建立新的陰影複製
+  - **create**：建立新的陰影複製
 
-  - **import** ：匯入可轉移的陰影複製
+  - **import**：匯入可轉移的陰影複製
 
-  - **expose** ：公開持續性的陰影複製 (例如磁碟機代號)
+  - **expose**：公開持續性的陰影複製 (例如磁碟機代號)
 
-  - **revert** ：將磁碟區還原回指定的陰影複製
+  - **revert**：將磁碟區還原回指定的陰影複製
 
 
 這項工具主要提供給 IT 專業人員使用，但是開發人員在測試 VSS 寫入器或 VSS 提供者時，可能也會發現該工具很實用。
@@ -463,15 +464,15 @@ VssAdmin 可用來建立、刪除和列出陰影複製的相關資訊。 也可�
 
 VssAdmin 包含如下所示的命令：
 
-  - **create shadow** ：建立新的陰影複製
+  - **create shadow**：建立新的陰影複製
 
-  - **delete shadows** ：刪除陰影複製
+  - **delete shadows**：刪除陰影複製
 
-  - **list providers** ：列出所有已註冊的 VSS 提供者
+  - **list providers**：列出所有已註冊的 VSS 提供者
 
-  - **list writers** ：列出所有已訂閱的 VSS 寫入器
+  - **list writers**：列出所有已訂閱的 VSS 寫入器
 
-  - **resize shadowstorage** ：變更陰影複製存放區域的大小上限
+  - **resize shadowstorage**：變更陰影複製存放區域的大小上限
 
 
 VssAdmin 只能用來管理系統軟體提供者所建立的陰影複製。
