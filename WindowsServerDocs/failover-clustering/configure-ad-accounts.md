@@ -5,12 +5,12 @@ ms.date: 11/12/2012
 author: JasonGerend
 manager: lizross
 ms.author: jgerend
-ms.openlocfilehash: e6b7c2a3af136fa7c3970de4550609f4eaa9fa8d
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 86662b623adb0a482c843286608a796b923e13fd
+ms.sourcegitcommit: 6fbe337587050300e90340f9aa3e899ff5ce1028
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97041066"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97599621"
 ---
 # <a name="configuring-cluster-accounts-in-active-directory"></a>在 Active Directory 中設定的叢集帳戶
 
@@ -156,7 +156,7 @@ ms.locfileid: "97041066"
 
    6.  在 [_容器_ 的 **許可權專案**] 對話方塊中，找出 [**建立電腦物件**] 和 [**讀取所有屬性**] 許可權，並確定已針對每個許可權選取 [**允許**] 核取方塊。
 
-       ![[許可權專案] 對話方塊](media/configure-ad-accounts/Cc731002.0a863ac5-2024-4f9f-8a4d-a419aff32fa0(WS.10).gif)
+       ![顯示 [建立電腦物件] 選項設定為 [允許] 的螢幕擷取畫面。 ](media/configure-ad-accounts/Cc731002.0a863ac5-2024-4f9f-8a4d-a419aff32fa0(WS.10).gif)
 
 ## <a name="steps-for-prestaging-the-cluster-name-account"></a>預先設置叢集名稱帳戶的步驟
 
@@ -208,7 +208,7 @@ ms.locfileid: "97041066"
 
     5.  確定已選取您剛剛新增的使用者帳戶，然後選取 [ **完全控制**] 旁的 [ **允許** ] 核取方塊。
 
-        ![[許可權專案] 對話方塊](media/configure-ad-accounts/Cc731002.fffaafe2-a494-498b-974c-8f9d70f7103b(WS.10).gif)
+        ![在 [Cluster1 屬性] 對話方塊中顯示 [安全性] 索引標籤的螢幕擷取畫面。](media/configure-ad-accounts/Cc731002.fffaafe2-a494-498b-974c-8f9d70f7103b(WS.10).gif)
 
 ## <a name="steps-for-prestaging-an-account-for-a-clustered-service-or-application"></a>為叢集服務或應用程式預先設置帳戶的步驟
 
@@ -306,7 +306,7 @@ ms.locfileid: "97041066"
 
 9. 針對叢集名稱帳戶 (也稱為叢集名稱物件或 CNO) ，請確定已選取 [**建立電腦物件**] 和 [**讀取所有屬性**] 許可權的 [**允許**]。
 
-   ![[許可權專案] 對話方塊](media/configure-ad-accounts/Cc731002.f5977c4d-a62e-4b17-81e3-8c19ddca2078(WS.10).gif)
+   ![顯示 [許可權專案] 對話方塊的螢幕擷取畫面，其中 [建立電腦物件] 選項設定為 [允許]。](media/configure-ad-accounts/Cc731002.f5977c4d-a62e-4b17-81e3-8c19ddca2078(WS.10).gif)
 
 10. 按一下 **[確定]** ，直到您回到 **Active Directory 消費者和電腦** 嵌入式管理單元為止。
 

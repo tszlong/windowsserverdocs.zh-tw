@@ -1,18 +1,18 @@
 ---
 description: 深入瞭解：虛擬網域控制站架構
-ms.assetid: 341614c6-72c2-444f-8b92-d2663aab7070
+s.assetid: 341614c6-72c2-444f-8b92-d2663aab7070
 title: 虛擬網域控制站架構
 author: iainfoulds
 ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 6f8984528aab0d1929d2a90d9558288b2c4cdf03
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 42a0bdd3fc8e6ec45c884322c1de71088a679837
+ms.sourcegitcommit: 6fbe337587050300e90340f9aa3e899ff5ce1028
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97045816"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97599650"
 ---
 # <a name="virtualized-domain-controller-architecture"></a>虛擬網域控制站架構
 
@@ -38,7 +38,7 @@ ms.locfileid: "97045816"
 
 **初始複製操作**
 
-![虛擬化 DC 架構](media/Virtualized-Domain-Controller-Architecture/ADDS_VDC_InitialCloningProcess.png)
+![此圖顯示初始複製作業和複製重試作業的架構。](media/Virtualized-Domain-Controller-Architecture/ADDS_VDC_InitialCloningProcess.png)
 
 **複製重試操作**
 
@@ -156,7 +156,7 @@ AD DS 依賴 Hypervisor 平台公開稱為「VM 世代識別碼」的識別碼�
 ### <a name="safe-restore-detailed-processing"></a>安全還原的詳細程序
 下列流程圖顯示當虛擬網域控制站在快照還原 (在它關閉時) 後啟動時，安全還原如何進行。
 
-![虛擬化 DC 架構](media/Virtualized-Domain-Controller-Architecture/ADDS_VDC_VirtualizationSafeguardsDuringNormalBoot.png)
+![流程圖，顯示當虛擬網域控制站在快照集于關閉時已還原後啟動時，如何進行安全還原。](media/Virtualized-Domain-Controller-Architecture/ADDS_VDC_VirtualizationSafeguardsDuringNormalBoot.png)
 
 1.  當虛擬機器在快照還原後開機，它會因快照還原而有 Hypervisor 主機提供的新「VM 世代識別碼」。
 
@@ -173,7 +173,7 @@ AD DS 依賴 Hypervisor 平台公開稱為「VM 世代識別碼」的識別碼�
 
 下圖顯示當快照在執行中的虛擬網域控制站上還原時，「虛擬化防護」如何防止 USN 復原引起的分歧。
 
-![虛擬化 DC 架構](media/Virtualized-Domain-Controller-Architecture/ADDS_VDC_VirtualizationSafeguardsDuringSnapShotRestore.png)
+![此圖顯示在執行中的虛擬網域控制站上還原快照集時，虛擬化保護措施如何防止 USN 復原所引發的分歧。](media/Virtualized-Domain-Controller-Architecture/ADDS_VDC_VirtualizationSafeguardsDuringSnapShotRestore.png)
 
 > [!NOTE]
 > 上圖經過簡化以說明概念。

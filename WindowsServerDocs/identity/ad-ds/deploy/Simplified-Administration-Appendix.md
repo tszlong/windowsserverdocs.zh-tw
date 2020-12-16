@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: d54ed836b60c4b1551b3a87ff92a50f2b10bda23
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 21b379b8138e95b70ebae91b34b8955e20715b3b
+ms.sourcegitcommit: 6fbe337587050300e90340f9aa3e899ff5ce1028
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97045996"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97599691"
 ---
 # <a name="simplified-administration-appendix"></a>簡化的系統管理附錄
 
@@ -100,6 +100,6 @@ dir
 |建立完整 NoDefrag% s|在資料夾% s 中建立 IFM 媒體，而不將完整 AD DC 或 AD/LDS 實例的磁碟重組|
 |建立 Sysvol Full NoDefrag% s|建立具有 SYSVOL 的 IFM 媒體，而不在資料夾% s 中將完整的 AD DC 磁碟重組|
 
-![簡化管理](media/Simplified-Administration-Appendix/ADDS_PSIFM.png)
+![終端機視窗的螢幕擷取畫面，其中顯示建立 IFM 媒體的進程。](media/Simplified-Administration-Appendix/ADDS_PSIFM.png)
 
-![簡化管理](media/Simplified-Administration-Appendix/ADDS_PSIFMComplete.gif)
+![顯示已成功建立 IFM 媒體的終端機視窗的螢幕擷取畫面。](media/Simplified-Administration-Appendix/ADDS_PSIFMComplete.gif)

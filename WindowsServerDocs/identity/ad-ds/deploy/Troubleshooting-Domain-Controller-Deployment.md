@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 03/20/2019
 ms.topic: article
-ms.openlocfilehash: 80f152b4a8d7c7c73226a3e32a63cc4b8620be66
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: e9d08bd4580766a7e4ccd2929dfc4695b3220f95
+ms.sourcegitcommit: 6fbe337587050300e90340f9aa3e899ff5ce1028
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97045976"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97599681"
 ---
 # <a name="troubleshooting-domain-controller-deployment"></a>疑難排解網域控制站部署
 
@@ -22,13 +22,13 @@ ms.locfileid: "97045976"
 
 ## <a name="introduction-to-troubleshooting"></a>疑難排解簡介
 
-![疑難排解](media/Troubleshooting-Domain-Controller-Deployment/adds_deploy_troubleshooting.png)
+![顯示疑難排解網域控制站部署工作流程的圖表。](media/Troubleshooting-Domain-Controller-Deployment/adds_deploy_troubleshooting.png)
 
 ## <a name="built-in-logs-for-troubleshooting"></a>用於疑難排解的內建記錄
 
 內建記錄檔是疑難排解網域控制站升級和降級問題的最重要工具。 預設會啟用及設定所有的這些記錄檔以提供最詳盡的詳細資訊。
 
-| 階段 | 記錄檔 |
+| 階段 | 記錄 |
 |--|--|
 | 伺服器管理員或 ADDSDeployment Windows PowerShell 作業 | - %systemroot%\debug\dcpromoui.log<p>-%systemroot%\debug\dcpromoui * .log |
 | 網域控制站的安裝/升級 | - %systemroot%\debug\dcpromo.log<p>-%systemroot%\debug\dcpromo * .log<p>-事件檢視器 \windows 記錄 \ 系統<p>-事件檢視器 \windows logs\Application<p>-事件 viewer\Applications 和服務 logs\Directory 服務<p>-事件 viewer\Applications 和服務 logs\File Replication Service<p>-事件 viewer\Applications 和服務 logs\DFS 複寫 |

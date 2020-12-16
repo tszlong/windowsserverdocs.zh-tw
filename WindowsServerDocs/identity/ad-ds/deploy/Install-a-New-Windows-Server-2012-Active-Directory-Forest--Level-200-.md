@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: cf52b257dc91cb5dc2bd7ad6097ea95bd0e7a8b0
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 96e9ee67b60c6c2e2125e8c518a70bdde7a9a863
+ms.sourcegitcommit: 6fbe337587050300e90340f9aa3e899ff5ce1028
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97049576"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97599791"
 ---
 # <a name="install-a-new-windows-server-2012-active-directory-forest-level-200"></a>安裝新的 Windows Server 2012 Active Directory 樹系 (等級 200)
 
@@ -63,16 +63,16 @@ AD DS 簡化的系統管理是網域部署的重新構思。 其中的一些功�
 ### <a name="functional-descriptions"></a>功能描述
 
 #### <a name="ad-ds-role-installation"></a>AD DS 角色安裝
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_SelectServerRoles.gif)
+![顯示 [新增角色及功能] wizard 中 [伺服器角色] 頁面的螢幕擷取畫面。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_SelectServerRoles.gif)
 
 Active Directory 網域服務安裝使用伺服器管理員與 Windows PowerShell，就像 Windows Server 2012 中的其他所有伺服器角色與功能一樣。 Dcpromo.exe 程式不再提供 GUI 設定選項。
 
 您可以在本機和遠端安裝中使用伺服器管理員中的圖形化精靈或 Windows PowerShell 的 ServerManager 模組。 透過執行多個精靈的執行個體或 Cmdlet 和以不同的伺服器為目標，您可以從單一主控台同時將 AD DS 部署到多個網域控制站。 雖然這些新功能不相容於 Windows Server 2008 R2 或舊版作業系統，您也依然可以使用 Windows Server 2008 R2 中引進的 Dism.exe 應用程式，透過傳統的命令列來安裝本機角色。
 
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSAddWindowsFeature.png)
+![顯示 Windows PowerShell 終端機視窗的螢幕擷取畫面。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSAddWindowsFeature.png)
 
 #### <a name="ad-ds-role-configuration"></a>AD DS 角色設定
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_DeploymentConfiguration_Forest.gif)
+![顯示 [Active Directory Domain Services 設定] 頁面中 [部署設定] 頁面的螢幕擷取畫面。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_DeploymentConfiguration_Forest.gif)
 
 Active Directory Domain Services 設定「先前稱為 DCPROMO」現在是角色安裝的獨立作業。 安裝 AD DS 角色後，系統管理員要使用伺服器管理員中獨立的精靈或使用 ADDSDeployment Windows PowerShell 模組，將伺服器設定為網域控制站。
 
@@ -84,7 +84,7 @@ Dcpromo.exe 保留在 Windows Server 2012 中只是為了執行命令列的自�
 
 這些新功能不相容於 Windows Server 2008 R2 或舊版作業系統。
 
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSInstallADDSForest.png)
+![在安裝期間顯示 Windows PowerShell 終端機視窗的螢幕擷取畫面。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSInstallADDSForest.png)
 
 > [!IMPORTANT]
 > Dcpromo.exe 不再包含圖形化精靈，因而不會再安裝角色或功能二進位檔。 嘗試透過 Explorer Shell 執行 Dcpromo.exe 會傳回：
@@ -106,7 +106,7 @@ Dcpromo.exe 保留在 Windows Server 2012 中只是為了執行命令列的自�
 ### <a name="server-manager-ad-ds-role-installation-process"></a>伺服器管理員 AD DS 角色安裝程序
 下圖說明 Active Directory 網域服務角色安裝程序，從您執行 ServerManager.exe 開始，到網域控制站升級前結束。
 
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/adds_servermanagerdeployment.png)
+![說明 Active Directory Domain Services 角色安裝程式的圖表，從執行 ServerManager.exe 開始，並在網域控制站升級前結束。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/adds_servermanagerdeployment.png)
 
 #### <a name="server-pool-and-add-roles"></a>伺服器集區與新增角色
 任何可從執行伺服器管理員的電腦存取的 Windows Server 2012 電腦都有資格加入集區。 加入集區後，您要在伺服器管理員中選取要遠端安裝 AD DS 的伺服器，或執行任何其他設定選項。
@@ -121,7 +121,7 @@ Dcpromo.exe 保留在 Windows Server 2012 中只是為了執行命令列的自�
 
 [新增伺服器] 對話方塊隨即開啟：
 
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_AddServers.png)
+![顯示 [新增伺服器] 對話方塊中 [Active Directory] 索引標籤的螢幕擷取畫面。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_AddServers.png)
 
 其中提供三種方式，供您將伺服器新增至集區以使用或分組：
 
@@ -138,59 +138,59 @@ Dcpromo.exe 保留在 Windows Server 2012 中只是為了執行命令列的自�
 
 您可以在加入集區的任一部 Windows Server 2012 電腦上遠端安裝角色，如下所示：
 
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/tADDS_SMI_TR_AddRolesFeatures.png)
+![顯示如何在已新增至集區的任何 Windows Server 2012 電腦上遠端安裝角色的螢幕擷取畫面。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/tADDS_SMI_TR_AddRolesFeatures.png)
 
 您無法完整管理作業系統比 Windows Server 2012 舊的伺服器。 [新增角色及功能] 選取項目執行的是 ServerManager Windows PowerShell 模組 **Install-WindowsFeature**。
 
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_AddADDSToAnotherServer.png)
+![顯示 [將 AD DS 加入至另一個伺服器] 功能表選項的螢幕擷取畫面。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_AddADDSToAnotherServer.png)
 
 您也可以使用現有的網域控制站上的 [伺服器管理員儀表板] 來選取已預先選取好角色的遠端伺服器 AD DS 安裝，方法是在 AD DS 儀表板磚上按一下滑鼠右鍵，然後選取 [將 AD DS 新增至另一部伺服器]。 這樣會叫用 **Install-WindowsFeature AD-Domain-Services**。
 
 執行伺服器管理員的電腦會自行加入集區。 如果要在此安裝 AD DS 角色，只要按一下 [管理] 功能表，再按一下 [新增角色及功能]。
 
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ManageAddRoles.png)
+![顯示如何存取 [新增角色及功能] 功能表選項的螢幕擷取畫面。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ManageAddRoles.png)
 
 #### <a name="installation-type"></a>安裝類型
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_SelectInstallationType.png)
+![螢幕擷取畫面，顯示 [新增角色及功能] Wizard 中的 [安裝類型] 頁面。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_SelectInstallationType.png)
 
 [安裝類型] 對話方塊提供不支援 Active Directory 網域服務的選項：[遠端桌面服務案例型安裝]。 該選項只允許在多伺服器分散式工作負載中的遠端桌面服務。 如果您選取該選項，AD DS 則無法安裝。
 
 安裝 AD DS 時，請始終保留預設的選取項目：[角色型或功能型安裝] 。
 
 #### <a name="server-selection"></a>伺服器選項
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_SelectDestinationServer.png)
+![螢幕擷取畫面，顯示 [移除角色及功能] Wizard 中的 [伺服器選擇] 頁面。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_SelectDestinationServer.png)
 
 [伺服器選取項目] 對話方塊可讓您從先前已加入集區的伺服器中選擇其中之一 (只要其可供存取)。 執行伺服器管理員的本機伺服器會自動成為可存取狀態。
 
 此外，您可以選取離線 Hyper-V VHD 檔案與 Windows Server 2012 作業系統，伺服器管理員會透過元件服務直接新增角色。 這可讓您在進一步設定虛擬伺服器之前，先使用必要的元件佈建虛擬伺服器。
 
 #### <a name="server-roles-and-features"></a>伺服器角色與功能
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_SelectServerRoles.png)
+![顯示 [新增角色及功能] Wizard 中 [伺服器角色] 頁面的螢幕擷取畫面。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_SelectServerRoles.png)
 
 如果您想升級網域控制站，請選取 [Active Directory 網域服務] 角色。 所有 Active Directory 管理功能和必要服務都會自動安裝 (即使它們明顯是另一個角色的一部分或在 [伺服器管理員] 介面中不是已選取狀態也一樣)。
 
 伺服器管理員也會提供一個資訊對話方塊，其中顯示此角色以隱含方式安裝的管理功能；這等同於 **-IncludeManagementTools** 引數。
 
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_AddFeaturesDialog.gif)
+![顯示此角色會隱含安裝哪些管理功能的螢幕擷取畫面;這相當於-IncludeManagementTools 引數。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_AddFeaturesDialog.gif)
 
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_SelectFeatures.png)
+![顯示 [新增角色及功能] Wizard 中 [功能] 頁面的螢幕擷取畫面。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_SelectFeatures.png)
 
 您可以視需要在此新增其他 [功能]。
 
-#### <a name="active-directory-domain-services"></a>Active Directory Domain Services
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ADDSIntro.png)
+#### <a name="active-directory-domain-services"></a>Active Directory 網域服務
+![顯示 [移除角色及功能] Wizard 中 AD DS 頁面的螢幕擷取畫面。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ADDSIntro.png)
 
 [Active Directory 網域服務] 對話方塊提供有限的需求及最佳做法資訊。 它主要是做為確認您選擇的 AD DS 角色」。如果此畫面未出現，表示您未選取 AD DS。
 
 #### <a name="confirmation"></a>確認
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_Confirmation.png)
+![顯示 [新增角色及功能] Wizard 中 [確認] 頁面的螢幕擷取畫面。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_Confirmation.png)
 
 在角色安裝開始之前，[確認] 對話方塊是最後的檢查點。 它提供在角色安裝後視需要重新啟動電腦的選項，但 AD DS 安裝不需要重新開機。
 
 透過按一下 [安裝]，您可以確認您已經準備好開始安裝角色。 開始安裝角色後即無法取消。
 
 #### <a name="results"></a>結果
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_Results.png)
+![顯示 [新增角色及功能] Wizard 中 [結果] 頁面的螢幕擷取畫面。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_Results.png)
 
 [結果] 對話方塊顯示目前的安裝進度和目前的安裝狀態。 無論伺服器管理員是否關閉，都會繼續安裝角色。
 
@@ -198,18 +198,18 @@ Dcpromo.exe 保留在 Windows Server 2012 中只是為了執行命令列的自�
 
 **工作通知**
 
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_TaskNotofications.png)
+![顯示工作通知的螢幕擷取畫面。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_TaskNotofications.png)
 
 **AD DS 詳細資料**
 
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ADDSDetails.png)
+![顯示 AD DS 詳細資料之位置的螢幕擷取畫面。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ADDSDetails.png)
 
 **工作詳細資料**
 
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_TaskDetails.png)
+![顯示要在何處查看工作詳細資料的螢幕擷取畫面。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_TaskDetails.png)
 
 #### <a name="promote-to-domain-controller"></a>升級成網域控制站
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_Promote.png)
+![顯示 [將這部伺服器升級為網域控制站] 連結的螢幕擷取畫面。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_Promote.png)
 
 在 AD DS 角色安裝結束時，您可以繼續使用 [將此伺服器升級為網域控制站] 連結來設定。 要使伺服器成為網域控制站，這是必要的動作，但不需要立即執行設定精靈。 例如，您可能只想先使用 AD DS 二進位檔佈建伺服器，再將它們送到另一個分公司進行後續設定。 在運送前新增 AD DS 角色，到了目的地便能節省時間。 您也必須遵守勿使網域控制站離線數天或數週的最佳做法。 最後，這可讓您在升級網域控制站之前更新元件，至少讓您少一次後續重新開機的動作。
 
@@ -228,10 +228,10 @@ Active Directory 網域服務角色移除不同於安裝，它需要先將網域
 ### <a name="create-an-ad-ds-forest-root-domain-with-server-manager"></a>使用伺服器管理員建立 AD DS 樹系根網域
 下圖說明 Active Directory 網域服務設定程序，在案例中，您先前已安裝過 AD DS 角色，並使用伺服器管理員啟動 [Active Directory 網域服務設定精靈]。
 
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/adds_forestdeploy2.png)
+![說明 Active Directory Domain Services 設定程式的圖表，在您先前已安裝 AD DS 角色並使用伺服器管理員啟動 Active Directory Domain Services 設定向導的情況下。 ](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/adds_forestdeploy2.png)
 
 #### <a name="deployment-configuration"></a>部署組態
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_AddNewForest.png)
+![顯示部署設定的螢幕擷取畫面。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_AddNewForest.png)
 
 [伺服器管理員] 會從 [部署設定] 頁面開始升級每個網域控制站。 這個頁面及後續頁面的剩餘選項及必要欄位會隨著您選取的部署操作而變更。
 
@@ -247,7 +247,7 @@ Active Directory 網域服務角色移除不同於安裝，它需要先將網域
 **DomainName** 需要有效的完整網域 DNS 名稱，而且是必須的。
 
 #### <a name="domain-controller-options"></a>網域控制站選項
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_DCOptions_Forest.gif)
+![螢幕擷取畫面，顯示 Active Directory Domain Services 設定向導中的網域控制站選項。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_DCOptions_Forest.gif)
 
 [網域控制站選項] 可讓您設定新的樹系根網域的 [樹系功能等級] 和 [網域功能等級]。 根據預設，這些設定是新樹系根域中的 Windows Server 2012。 Windows Server 2012 樹系功能等級不提供 Windows Server 2008 R2 樹系功能等級的任何新功能。 只有在執行新的 Kerberos 設定「永遠提供宣告」和「未受防護驗證要求失敗」時，才需要 Windows Server 2012 網域功能等級。 Windows Server 2012 中功能等級的主要用途是將網域的參與限制為符合最低允許作業系統需求的網域控制站。 換句話說，您可以指定 Windows Server 2012 網域功能等級，只有執行 Windows Server 2012 的網域控制站可以裝載網域。  Windows Server 2012 在 NetLogon 的 **DSGetDcName** 函式中，會將稱為 **DS_WIN8_REQUIRED** 的新網域控制站旗標，以獨佔方式找出 Windows Server 2012 網域控制站。 就何種作業系統可在網域控制站上執行而言，這可讓您彈性擁有更同質或異質的樹系。
 
@@ -258,7 +258,7 @@ Active Directory 網域服務角色移除不同於安裝，它需要先將網域
 指定的 [目錄服務還原模式密碼] 必須遵守套用至伺服器的密碼原則，預設不需為強式密碼；只需是非空白密碼。 務必選擇複雜的強式密碼，或者最好是使用複雜密碼。
 
 #### <a name="dns-options-and-dns-delegation-credentials"></a>DNS 選項與 DNS 委派認證
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ForestDNSOptions.png)
+![螢幕擷取畫面，顯示 Active Directory Domain Services 設定向導中的 DNS 選項。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ForestDNSOptions.png)
 
 [DNS 選項] 頁面可讓您設定 DNS 委派，並提供替代的 DNS 系統管理認證。
 
@@ -267,7 +267,7 @@ Active Directory 網域服務角色移除不同於安裝，它需要先將網域
 如需是否需要建立 DNS 委派的詳細資訊，請參閱[了解區域委派](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771640(v=ws.11))。
 
 #### <a name="additional-options"></a>其他選項
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ForestAdditionalOptions.png)
+![顯示 Active Directory Domain Services 設定向導中 [其他選項] 頁面的螢幕擷取畫面。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ForestAdditionalOptions.png)
 
 [其他選項] 頁面會顯示網域的 NetBIOS 名稱，並可讓您覆寫它。 根據預設，NetBIOS 網域名稱符合 [部署設定] 頁面所提供之完整網域名稱最左邊的標籤。 例如，如果您提供的完整的網域名稱是 corp.contoso.com，則預設的 NetBIOS 網域名稱是 CORP。
 
@@ -276,12 +276,12 @@ Active Directory 網域服務角色移除不同於安裝，它需要先將網域
 如需有效網域名稱的詳細資訊，請參閱知識庫文章 [Active Directory 中的電腦、網域、網站及 OU 的命名慣例](https://support.microsoft.com/kb/909264)。
 
 #### <a name="paths"></a>路徑
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ForestPaths.png)
+![顯示 Active Directory Domain Services 設定向導中 [路徑] 頁面的螢幕擷取畫面。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ForestPaths.png)
 
 [路徑] 頁面能讓您覆寫 AD DS 資料庫、資料庫交易記錄以及 SYSVOL 共用的預設資料夾位置。 預設位置一律是 %systemroot%(如 C:\Windows) 的子目錄。
 
 #### <a name="review-options-and-view-script"></a>檢閱選項和檢視指令碼
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ForestReviewOptions.png)
+![顯示 Active Directory Domain Services 設定向導中 [審核選項] 頁面的螢幕擷取畫面。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ForestReviewOptions.png)
 
 [檢閱選項] 頁面可讓您在開始安裝之前先驗證設定，並確保它們符合您的需求。 使用 [伺服器管理員] 時，這不是能停止安裝的最後機會。 這只是可讓您在繼續設定前確認設定的選項。
 
@@ -312,7 +312,7 @@ Install-ADDSForest `
 > [伺服器管理員] 通常會在升級時填入所有引數的值，並不會依賴預設值 (因為它們在未來的 Windows 版本或 Service Pack 中可能會變更)。 **-safemodeadministratorpassword** 引數是個例外 (刻意在指令碼中省略)。 若要強制確認提示，以互動方式執行 Cmdlet 時請省略該值。
 
 #### <a name="prerequisites-check"></a>先決條件檢查
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ForestPrereqCheck.png)
+![顯示 Active Directory Domain Services 設定向導中必要條件檢查頁面的螢幕擷取畫面。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ForestPrereqCheck.png)
 
 [先決條件檢查] 是 AD DS 網域設定中的新功能。 這個新階段會驗證伺服器設定是否能夠支援新的 AD DS 樹系。
 
@@ -323,7 +323,7 @@ Install-ADDSForest `
 如需特定先決條件檢查的詳細資訊，請參閱[先決條件檢查](../../ad-ds/manage/AD-DS-Simplified-Administration.md#BKMK_PrereuisiteChecking)。
 
 #### <a name="installation"></a>安裝
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ForestInstallation.png)
+![顯示 Active Directory Domain Services 設定向導中 [安裝] 頁面的螢幕擷取畫面。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ForestInstallation.png)
 
 當 [安裝] 頁面顯示時，網域控制站設定程序就開始執行，而且無法暫停或取消。 詳細的作業會顯示此頁面上，而且會寫入到記錄檔：
 
@@ -335,7 +335,7 @@ Install-ADDSForest `
 > 您可以從相同的伺服器管理員主控台中同時執行多個角色安裝與 AD DS 設定精靈。
 
 #### <a name="results"></a>結果
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ForestSignOff.png)
+![顯示 [結果] 頁面的螢幕擷取畫面，您可以在其中查看升級是否成功或失敗。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ForestSignOff.png)
 
 [結果] 頁面會顯示升級成功或失敗，以及任何重要的系統管理資訊。 網域控制站會在 10 秒後自動重新開機。
 
@@ -347,7 +347,7 @@ Install-ADDSForest `
 
 下圖說明 Active Directory 網域服務角色安裝程序，從您執行 **PowerShell.exe** 開始，到網域控制站升級前結束。
 
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/adds_servermanagerdeployment_powershell.png)
+![說明 Active Directory Domain Services 角色安裝程式的圖表，從您執行 PowerShell.exe 開始，並在網域控制站升級前結束。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/adds_servermanagerdeployment_powershell.png)
 
 | ServerManager Cmdlet | 引數 (**粗體** 的引數是必要的。 *斜體* 的引數可以使用 Windows PowerShell 或 [AD DS 設定精靈] 來指定。) |
 |--|--|
@@ -366,7 +366,7 @@ Get-Command -module ServerManager
 
 例如：
 
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSGetCommand.png)
+![終端機視窗的螢幕擷取畫面，顯示要在哪裡找到 Install-WindowsFeature Cmdlet。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSGetCommand.png)
 
 如果要新增 Active Directory 網域服務角色，只需執行 **Install-WindowsFeature** 並使用 AD DS 角色名稱做為引數。 和伺服器管理員一樣，AD DS 角色隱含的所有必要服務都會自動安裝。
 
@@ -382,7 +382,7 @@ Install-WindowsFeature -name AD-Domain-Services -IncludeManagementTools
 
 例如：
 
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSInstallWinFeature.png)
+![終端機視窗的螢幕擷取畫面，其中顯示要提供-IncludeManagementTools 引數的位置。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSInstallWinFeature.png)
 
 如果要列出所有功能與角色和其安裝狀態，請使用不含引數的 **Get-WindowsFeature**。 指定 **-ComputerName** 引數以從遠端伺服器取得安裝狀態。
 
@@ -422,11 +422,11 @@ Install-WindowsFeature | select-object | Format-List
 
 ```
 
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSInstallADDS.png)
+![終端機視窗的螢幕擷取畫面，顯示如何建立可讀取的結果。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSInstallADDS.png)
 
 請注意使用 **Select-Object** Cmdlet 搭配 **-expandproperty** 引數會如何傳回感興趣的資料：
 
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSInstallADDSWithTools.png)
+![終端機視窗的螢幕擷取畫面，顯示如何搭配-expandproperty 引數使用 Select-Object Cmdlet 會傳回感興趣的資料。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSInstallADDSWithTools.png)
 
 > [!NOTE]
 > **Select-Object -expandproperty** 引數會稍微降低整體安裝效能。
@@ -541,7 +541,7 @@ ADDSDeployment Cmdlet 提供略過自動設定 DNS 用戶端設定、轉寄站�
 
 例如：
 
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSPaths.png)
+![終端機視窗的螢幕擷取畫面，顯示如何使用選用的 Whatif 引數搭配 Install-ADDSForest Cmdlet 來檢查設定資訊。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSPaths.png)
 
 使用 [伺服器管理員] 時無法略過 [先決條件檢查]，但您可以在使用 AD DS 部署 Cmdlet 時使用下列引數略過該程序：
 
@@ -554,9 +554,9 @@ ADDSDeployment Cmdlet 提供略過自動設定 DNS 用戶端設定、轉寄站�
 
 請注意 **Install-ADDSForest** 如何提醒您升級會自動將伺服器重新開機 (和伺服器管理員一樣)：
 
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSReboot.png)
+![終端機視窗的螢幕擷取畫面，其中顯示 Install-ADDSForest 提醒您升級會自動重新開機伺服器。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSReboot.png)
 
-![安裝新樹系](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSInstallProgress.png)
+![顯示重新開機流程進度的終端機視窗螢幕擷取畫面。](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSInstallProgress.png)
 
 若要自動接受重新開機的提示，請使用 **-force** 或 **-confirm:$false** 引數搭配任一 ADDSDeployment Windows PowerShell Cmdlet。 若要避免伺服器在升級結束時自動重新開機，請使用 **-norebootoncompletion** 引數。
 

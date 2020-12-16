@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 11/14/2018
 ms.topic: article
-ms.openlocfilehash: 6ebbeed0ab8f06ba4f3189af31396d5c30b3427f
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 5a4d182d89f2e4f3143cb1f5d193a241fba3e672
+ms.sourcegitcommit: 6fbe337587050300e90340f9aa3e899ff5ce1028
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97049216"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97599761"
 ---
 # <a name="demoting-domain-controllers-and-domains"></a>降級網域控制站和網域
 
@@ -192,7 +192,7 @@ Uninstall-ADDSDomainController
 
 例如：
 
-![PowerShell Uninstall-ADDSDomainController 範例](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_PSUninstall.png)
+![終端機視窗的螢幕擷取畫面，其中顯示 Cmdlet 引數的明確和隱含值。](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_PSUninstall.png)
 
 使用 ADDSDeployment Windows PowerShell 時，重新啟動提示是您取消此作業的最後機會。 若要覆寫該提示，請使用 **-force** 或 **confirm:$false** 引數。
 
@@ -220,7 +220,7 @@ Uninstall-ADDSDomainController
 
 這裡是使用最低需求的 **-forceremoval** 與 **-demoteoperationmasterrole** 引數強制降級的範例。 不需要 **-credential** 引數，因為使用者是以 Enterprise Admins 群組成員身分登入的：
 
-![PowerShell Uninstall-ADDSDomainController 範例](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_PSUninstallExampleForce.png)
+![終端機視窗的螢幕擷取畫面，其中顯示使用其最基本的必要引數（-forceremoval 和-demoteoperationmasterrole）強制降級的範例。](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_PSUninstallExampleForce.png)
 
 這裡是使用最低需求的 **-lastdomaincontrollerindomain** 與 **-removeapplicationpartitions** 引數從網域中移除最後一個網域控制站的範例：
 

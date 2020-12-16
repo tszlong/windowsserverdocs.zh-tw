@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 6be71576dd8d31d50fac5527a1fab5b1631f27a0
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 972465f4fcb5d0aae14e8e27973e47a78de8e62b
+ms.sourcegitcommit: 6fbe337587050300e90340f9aa3e899ff5ce1028
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97049506"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97599721"
 ---
 # <a name="install-a-replica-windows-server-2012-domain-controller-in-an-existing-domain-level-200"></a>在現有網域中安裝複本 Windows Server 2012 網域控制站 (等級 200)
 
@@ -29,7 +29,7 @@ ms.locfileid: "97049506"
 ## <a name="upgrade-and-replica-workflow"></a><a name="BKMK_Workflow"></a>升級與複本工作流程
 下圖說明已安裝過 AD DS 角色，並且使用伺服器管理員啟動 Active Directory 網域服務設定精靈以在現有的網域中建立新的網域控制站時的 Active Directory 網域服務設定程序。
 
-![安裝複本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/adds_forestupgrade.png)
+![說明您先前安裝 AD DS 角色時 Active Directory Domain Services 設定程式的圖表。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/adds_forestupgrade.png)
 
 ## <a name="upgrade-and-replica-windows-powershell"></a><a name="BKMK_PS"></a>升級與複本 Windows PowerShell
 
@@ -43,7 +43,7 @@ ms.locfileid: "97049506"
 ## <a name="deployment"></a><a name="BKMK_Dep"></a>部署
 
 ### <a name="deployment-configuration"></a>部署組態
-![安裝複本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeDeployConfig.png)
+![顯示 [部署設定] 頁面的螢幕擷取畫面。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeDeployConfig.png)
 
 [伺服器管理員] 會從 [部署設定] 頁面開始升級每個網域控制站。 這個頁面及後續頁面的剩餘選項及必要欄位會隨著您選取的部署操作而變更。
 
@@ -61,16 +61,16 @@ Install-AddsDomainController
 -credential <pscredential>
 ```
 
-![安裝複本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeCreds.png)
+![螢幕擷取畫面，顯示您提供部署作業認證的位置。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeCreds.png)
 
-![安裝複本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeSelectDomain.png)
+![螢幕擷取畫面，顯示要在樹系中選取新網域控制站所在的網域。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeSelectDomain.png)
 
 在每個頁面中，會執行某些測試，其中的一部分是稍後會重複的各別先決條件檢查。 例如，如果所選的網域不符合最低的功能等級，在執行升級程序的先決條件檢查之前即可發現：
 
-![安裝複本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeFFLError.png)
+![醒目提示訊息的螢幕擷取畫面，指出選取的網域是否不符合最基本的功能等級。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeFFLError.png)
 
 ### <a name="domain-controller-options"></a>網域控制站選項
-![安裝複本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeDCOptions.png)
+![顯示 [網域控制站選項] 頁面的螢幕擷取畫面。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeDCOptions.png)
 
 [網域控制站選項] 頁面指定新網域控制站的網域控制站功能。 可設定的網域控制站功能包括 [DNS 伺服器] 和 [通用類別目錄]，以及 [唯讀網域控制站]。 Microsoft 建議所有網域控制站都提供 DNS 與 GC 服務，以在分散式環境中獲得高可用性。 GC 一律是預設選項，而如果目前的網域已在以起始授權 (SOA) 查詢為基礎的網域控制站上代管 DNS，則預設會選取 DNS 伺服器。 [網域控制站選項] 頁面也能讓您從樹系設定選擇適當的 Active Directory 邏輯 [站台名稱]。 它預設會選取包含最正確子網路的站台。 如果只有一個站台，就會自動選取該站台。
 
@@ -141,10 +141,10 @@ ADDSDeployment Cmdlet 提供略過自動設定 DNS 用戶端設定、轉寄站�
 
 如果您現有的網域執行的是 Windows Server 2003，[網域控制站選項] 頁面會警告您無法建立唯讀的網域控制站。 這是預期行為，您可以關閉警告。
 
-![安裝複本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeDCOptionsError.png)
+![醒目提示警告的螢幕擷取畫面，指出如果您現有的網域控制站執行 Windows Server 2003，您就無法建立唯讀網域控制站。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeDCOptionsError.png)
 
 ### <a name="dns-options-and-dns-delegation-credentials"></a>DNS 選項與 DNS 委派認證
-![安裝複本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeDNSOptions.png)
+![顯示您可以在其中指定 DNS 委派選項的螢幕擷取畫面。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeDNSOptions.png)
 
 如果您在 **網域控制站選項** 頁面選取 [DNS 伺服器] 選項，且如果指向的區域允許 DNS 委派，則 [DNS 選項] 頁面可讓您設定 DNS 委派。 您可能需要提供屬於 [DNS Admins] 群組成員的使用者的其他認證。
 
@@ -155,18 +155,18 @@ ADDSDeployment Cmdlet 提供略過自動設定 DNS 用戶端設定、轉寄站�
 -dnsdelegationcredential <pscredential>
 ```
 
-![安裝複本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeCreds.png)
+![螢幕擷取畫面，顯示為部署作業提供認證的 Windows 安全性對話方塊。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeCreds.png)
 
 如需是否需要建立 DNS 委派的詳細資訊，請參閱[了解區域委派](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771640(v=ws.11))。
 
 ### <a name="additional-options"></a>其他選項
-![安裝複本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeAdditionalOptions.png)
+![螢幕擷取畫面，顯示您可以在哪裡找到設定選項，以將網域控制站命名為複寫來源。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeAdditionalOptions.png)
 
 [其他選項] 頁面提供可將網域控制站指定為複寫來源的設定選項，或者您可以使用任一網域控制站做為複寫來源。
 
 您也可以使用「從媒體安裝」(IFM) 選項，使用備份的媒體來安裝網域控制站。 選取 [從媒體安裝] 核取方塊時會提供瀏覽選項，您必須按一下 [驗證] 以確保提供的路徑是有效的媒體。 IFM 選項使用的媒體，必須是從另一部現有的 Windows Server 2012 電腦使用 Windows Server Backup 或 Ntdsutil.exe 建立；您不能使用 Windows Server 2008 R2 或舊版作業系統為 Windows Server 2012 網域控制站建立媒體。 如需 IFM 變更的詳細資訊，請參閱[簡化的系統管理附錄](../../ad-ds/deploy/Simplified-Administration-Appendix.md)。 如果使用以 SYSKEY 保護的媒體，伺服器管理員在驗證期間會提示輸入映像的密碼。
 
-![安裝複本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_NtdsutilIFM.png)
+![在安裝網域控制站期間顯示終端機視窗的螢幕擷取畫面。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_NtdsutilIFM.png)
 
 [其他選項] ADDSDeployment Cmdlet 引數是：
 
@@ -177,7 +177,7 @@ ADDSDeployment Cmdlet 提供略過自動設定 DNS 用戶端設定、轉寄站�
 ```
 
 ### <a name="paths"></a>路徑
-![安裝複本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradePaths.png)
+![螢幕擷取畫面，顯示您可以在其中覆寫 AD DS 資料庫、資料庫交易記錄檔和 SYSVOL 共用的預設資料夾位置。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradePaths.png)
 
 [路徑] 頁面能讓您覆寫 AD DS 資料庫、資料庫交易記錄以及 SYSVOL 共用的預設資料夾位置。 預設位置一律是在 %systemroot% 的子目錄中。
 
@@ -190,7 +190,7 @@ Active Directory 路徑 ADDSDeployment Cmdlet 引數為：
 ```
 
 ### <a name="preparation-options"></a>準備選項
-![安裝複本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradePrepOptions.png)
+![顯示 [準備選項] 頁面的螢幕擷取畫面，其中會警示您 AD DS 的設定包括延伸架構 (forestprep) 以及更新網域 ([進行中]) 。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradePrepOptions.png)
 
 [準備選項] 頁面會警示您 AD DS 設定包括延伸結構描述 (forestprep) 及更新網域 (domainprep)。  只有在舊版的 Windows Server 2012 網域控制站安裝尚未準備樹系和網域時或您手動執行 Adprep.exe 時，才會看到這個頁面。 例如，如果您將新的網域控制站新增至現有的 Windows Server 2012 樹系根網域，Active Directory 網域服務設定精靈會封鎖這個頁面。
 
@@ -198,7 +198,7 @@ Active Directory 路徑 ADDSDeployment Cmdlet 引數為：
 
 這個頁面也會驗證目前使用者的認證是否為 Schema Admin 及 Enterprise Admins 群組的成員，因為您需要這些群組的成員資格才能延伸結構描述或準備網域。 如果這個頁面通知您目前的認證未提供足夠的權限，請按一下 [變更] 以提供適當的使用者認證。
 
-![安裝複本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradePrepOptionsCreds.png)
+![顯示 [準備選項] 頁面的螢幕擷取畫面，並反白顯示 [變更] 按鈕。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradePrepOptionsCreds.png)
 
 其他選項 ADDSDeployment Cmdlet 引數為：
 
@@ -212,7 +212,7 @@ Active Directory 路徑 ADDSDeployment Cmdlet 引數為：
 > 當您升級網域中的第一個未執行的 RODC 時，即會執行自動 RODCPrep。 它並不是在您升級第一個可寫入的 Windows Server 2012 網域控制站時發生。 如果您計劃部署唯讀網域控制站，您也仍然可以手動執行 **adprep.exe /rodcprep**。
 
 ### <a name="review-options-and-view-script"></a>檢閱選項和檢視指令碼
-![安裝複本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeReviewOptions.png)
+![顯示 [評論選項] 頁面的螢幕擷取畫面，可讓您驗證設定，並確保這些設定符合您的需求，然後再開始安裝。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeReviewOptions.png)
 
 [檢閱選項] 頁面能讓您驗證設定，並確保它們符合您的需求，然後才開始安裝。 這不是使用 [伺服器管理員] 停止安裝的最後機會。 這個頁面只是讓您檢閱並確認設定，然後才繼續設定。
 
@@ -244,10 +244,10 @@ Install-ADDSDomainController `
 >
 > 使用選擇性的 **Whatif** 引數搭配 **Install-ADDSDomainController** Cmdlet 來檢閱設定資訊。 這可讓您看到 Cmdlet 引數的明確值和隱含值。
 
-![安裝複本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_PSWhatIf.png)
+![終端機視窗的螢幕擷取畫面，其中顯示搭配 Install-ADDSDomainController Cmdlet 使用選用的 Whatif 引數。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_PSWhatIf.png)
 
 ### <a name="prerequisites-check"></a>先決條件檢查
-![安裝複本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradePrereqCheck.png)
+![顯示 [必要條件檢查] 頁面的螢幕擷取畫面，這是 AD DS 網域設定中的新功能。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradePrereqCheck.png)
 
 [先決條件檢查] 是 AD DS 網域設定中的新功能。 這個新階段會驗證網域和樹系可支援新的 Windows Server 2012 網域控制站。
 
@@ -270,7 +270,7 @@ Install-ADDSDomainController `
 按一下 [安裝] 以開始網域控制站升級程序。 這是取消安裝的最後機會。 升級程序一旦開始就無法取消。 無論升級結果為何，升級結束後，電腦將自動重新開機。[先決條件檢查] 頁面會顯示過程中發生的任何問題和解決問題的指導方針。
 
 ### <a name="installation"></a>安裝
-![安裝複本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeInstallProgress.png)
+![顯示 [安裝] 頁面的螢幕擷取畫面。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeInstallProgress.png)
 
 當 [安裝] 頁面顯示時，網域控制站設定程序就開始執行，而且無法暫停或取消。 詳細的作業會顯示此頁面上，而且會寫入到記錄檔：
 
@@ -292,16 +292,16 @@ Install-addsdomaincontroller
 
 **Install-AddsDomainController** Cmdlet 只有兩個階段 (先決條件檢查與安裝)。 下列兩個圖形顯示使用 **-domainname** 與 **-credential** 的基本必要引數的安裝階段。 請注意，在將第一個 Windows Server 2012 網域控制站新增至現有的 Windows Server 2003 樹系的過程中，Adprep 作業是如何自動執行：
 
-![安裝複本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_PSGetCred.png)
+![終端機視窗的螢幕擷取畫面，其中顯示具有-domainname 和-credential 的最小必要引數的安裝階段。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_PSGetCred.png)
 
 請注意 **Install-ADDSDomainController** 如何提醒您升級會自動將伺服器重新開機 (和伺服器管理員一樣)。 若要自動接受重新開機的提示，請使用 **-force** 或 **-confirm:$false** 引數搭配任一 ADDSDeployment Windows PowerShell Cmdlet。 若要避免伺服器在升級結束時自動重新開機，請使用 **-norebootoncompletion** 引數。
 
 > [!WARNING]
 > 建議您不要覆寫重新開機設定。 網域控制站必須重新開機才能正常運作。
 
-![安裝複本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_PSUpgradeConfirm.gif)
+![顯示網域控制站重新開機進程的終端機視窗螢幕擷取畫面。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_PSUpgradeConfirm.gif)
 
-![安裝複本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_PSUpgradeProgress.png)
+![終端機視窗的螢幕擷取畫面，顯示網域控制站重新開機程式已順利完成。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_PSUpgradeProgress.png)
 
 若要使用 Windows PowerShell 從遠端設定網域控制站，請將 **uninstall-addsdomaincontroller 指令程式** 包裝在 **invoke 命令** Cmdlet *內*。 這需要使用大括號。
 
@@ -317,7 +317,7 @@ invoke-command {install-addsdomaincontroller "domainname <domain> -credential (g
 > 如需安裝與 Adprep 程序運作的詳細資訊，請參閱[疑難排解網域控制站部署](../../ad-ds/deploy/Troubleshooting-Domain-Controller-Deployment.md)。
 
 ### <a name="results"></a>結果
-![安裝複本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_ForestSignOff.png)
+![結果頁面的螢幕擷取畫面，其中包含升級的成功或失敗訊息，以及任何重要的系統管理資訊。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_ForestSignOff.png)
 
 [結果] 頁面會顯示升級成功或失敗，以及任何重要的系統管理資訊。 如果成功，網域控制站會在 10 秒後自動重新開機。
 

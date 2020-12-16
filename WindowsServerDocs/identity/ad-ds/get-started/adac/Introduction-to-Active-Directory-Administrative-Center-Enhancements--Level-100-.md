@@ -7,12 +7,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: 901078ec17ce744fb4eb4a2bb3a29f1d79718060
-ms.sourcegitcommit: 7c0794e257f602bd71af5eb9a11b8a03d2b9adfd
+ms.openlocfilehash: 0ed7c9d61aa451675d474d38c74dd926a7225b2c
+ms.sourcegitcommit: 6fbe337587050300e90340f9aa3e899ff5ce1028
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97390326"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97599642"
 ---
 # <a name="introduction-to-active-directory-administrative-center-enhancements-level-100"></a>Introduction to Active Directory Administrative Center Enhancements (Level 100)
 
@@ -73,7 +73,7 @@ Windows Server 中的 Active Directory 管理中心包含下列各項的管理�
 
 3. 在左瀏覽窗格中按一下目標網域，然後在 [工作] 窗格中按一下 [提高樹系功能等級]。 選取至少為 Windows Server 2008 R2 或更高版本的樹系功能等級，然後按一下 **[確定]**。
 
-![AD 系統管理中心簡介 ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>Windows PowerShell 對等命令</em>_* _
+![PowerShell 標誌會顯示用來提高樹系功能等級的 PowerShell 對等命令。 ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) **_<em>Windows PowerShell 對等命令</em>_* _
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -97,7 +97,7 @@ Set-ADForestMode -Identity contoso.com -ForestMode Windows2008R2Forest -Confirm:
 
 4. 按 F5 重新整理 ADAC。
 
-![AD 系統管理中心簡介 ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>Windows PowerShell 對等命令</em>_* _
+![PowerShell 標誌，顯示啟用回收站的 PowerShell 對等命令。 ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) **_<em>Windows PowerShell 對等命令</em>_* _
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -117,7 +117,7 @@ Enable-ADOptionalFeature -Identity 'CN=Recycle Bin Feature,CN=Optional Features,
 
 3. 在 [工作] 窗格中，依序按一下 [新增] 和 [使用者]。
 
-    ![AD 系統管理中心簡介](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/ADDS_ADACNewUser.gif)
+    ![顯示如何建立新測試使用者的螢幕擷取畫面。](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/ADDS_ADACNewUser.gif)
 
 4. 在 [帳戶] 下方輸入下列資訊，然後按一下 [確定]：
 
@@ -140,7 +140,7 @@ Enable-ADOptionalFeature -Identity 'CN=Recycle Bin Feature,CN=Optional Features,
 5. 按一下 [group1]，然後按一下 [工作] 窗格下方的 [內容]。
 6. 依序按一下 [成員]、[新增]，輸入 **test1;test2**，然後按一下 [確定]。
 
-![AD 系統管理中心簡介 ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>Windows PowerShell 對等命令</em>_* _
+![PowerShell 標誌會顯示將使用者新增至群組的 PowerShell 對等命令。 ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) **_<em>Windows PowerShell 對等命令</em>_* _
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -151,13 +151,13 @@ Add-ADGroupMember -Identity group1 -Member test1
 #### <a name="to-create-an-organizational-unit"></a>建立組織單位
 
 1. 以滑鼠右鍵按一下 Windows PowerShell 圖示，然後按一下 [以 *系統管理員身分執行*]，然後輸入 **dsac.exe** 以開啟 ADAC。
-2. 依序按一下 [管理]、[新增瀏覽節點]，在 [新增瀏覽節點] 對話方塊中選取適當的目標網域，然後按一下 [確定]。
+2. 按一下 [ **管理**]，按一下 [ **新增流覽節點** ]，然後在 [ **新增流覽節點** ] 對話方塊中選取適當的目標網域，然後按一下 [確定]。
 3. 在 [工作] 窗格中，依序按一下 [新增] 和 [組織單位]。
 4. 在 [組織單位] 下方輸入下列資訊，然後按一下 [確定]：
 
    - **NameOU1**
 
-![AD 系統管理中心簡介 ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>Windows PowerShell 對等命令</em>_* _
+![PowerShell 標誌，顯示用來建立組織單位的 PowerShell 對等命令。 ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) **_<em>Windows PowerShell 對等命令</em>_* _
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -179,7 +179,7 @@ New-ADOrganizationalUnit -Name OU1 -Path "DC=fabrikam,DC=com"
 
 3. 選取使用者 **test1** 與 **test2**，按一下 [工作] 窗格中的 [刪除]，然後按一下 [是] 確認刪除。
 
-    ![AD 系統管理中心簡介 ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>Windows PowerShell 對等命令</em>_* _
+    ![PowerShell 標誌會顯示用來移除使用者的 PowerShell 對等命令。 ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) **_<em>Windows PowerShell 對等命令</em>_* _
 
     下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -196,7 +196,7 @@ New-ADOrganizationalUnit -Name OU1 -Path "DC=fabrikam,DC=com"
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
-![AD 系統管理中心簡介 ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>Windows PowerShell 對等命令</em>_* _
+![PowerShell 標誌會顯示將物件還原至其原始位置的 PowerShell 對等命令。 ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) **_<em>Windows PowerShell 對等命令</em>_* _
 
 ```powershell
 Get-ADObject -Filter 'Name -Like "_test*"' -IncludeDeletedObjects | Restore-ADObject
@@ -216,7 +216,7 @@ Get-ADObject -Filter 'Name -Like "_test*"' -IncludeDeletedObjects | Restore-ADOb
 
 6. 為確認物件已還原到 [OU1]，瀏覽至目標網域，按兩下 [OU1]，確認使用者帳戶已經列出。
 
-![AD 系統管理中心簡介 ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>Windows PowerShell 對等命令</em>_* _
+![PowerShell 標誌會顯示將已刪除的物件還原至不同位置的 PowerShell 對等命令。 ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) **_<em>Windows PowerShell 對等命令</em>_* _
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -271,7 +271,7 @@ Windows Server 2008 作業系統可以讓組織為網域中的不同使用者集
 
 3. 在左瀏覽窗格中按一下目標網域，然後在 [工作] 窗格中按一下 [提高網域功能等級]。 選取至少為 Windows Server 2008 或更高版本的樹系功能等級，然後按一下 **[確定]**。
 
-![AD 系統管理中心簡介 ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>Windows PowerShell 對等命令</em>_* _
+![PowerShell 標誌會顯示用來提高網域功能等級的 PowerShell 對等命令。 ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) **_<em>Windows PowerShell 對等命令</em>_* _
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -299,7 +299,7 @@ Set-ADDomainMode -Identity contoso.com -DomainMode 3
 
     填入或編輯內容頁面的欄位，以建立新的 [密碼設定] 物件。 [名稱] 和 [優先順序] 欄位是必要欄位。
 
-    ![AD 系統管理中心簡介](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/ADDS_ADACNewFGPP.gif)
+    ![顯示如何建立或編輯密碼設定的螢幕擷取畫面。](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/ADDS_ADACNewFGPP.gif)
 
 5. 在 [ **直接套用至**] 下，按一下 [ **新增**]，輸入 **Group1**，然後按一下 **[確定]**。
 
@@ -307,7 +307,7 @@ Set-ADDomainMode -Identity contoso.com -DomainMode 3
 
 6. 按一下 [確定] 以提交建立。
 
-![AD 系統管理中心簡介 ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>Windows PowerShell 對等命令</em>_* _
+![PowerShell 標誌，顯示用來建立新的更細緻密碼原則的 PowerShell 對等命令。 ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) **_<em>Windows PowerShell 對等命令</em>_* _
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -332,7 +332,7 @@ Add-ADFineGrainedPasswordPolicySubject TestPswd -Subjects group1
 
 5. 檢查密碼設定原則，然後按一下 [取消]。
 
-![AD 系統管理中心簡介 ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>Windows PowerShell 對等命令</em>_* _
+![PowerShell 標誌會顯示 PowerShell 對等命令，以供您用來查看使用者的原則結果組。 ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) **_<em>Windows PowerShell 對等命令</em>_* _
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 
@@ -358,7 +358,7 @@ Get-ADUserResultantPasswordPolicy test1
 
 6. 按一下 [確定]。
 
-![AD 系統管理中心簡介 ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>Windows PowerShell 對等命令</em>_* _
+![PowerShell 標誌，顯示用來編輯更細緻密碼原則的 PowerShell 對等命令。 ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) **_<em>Windows PowerShell 對等命令</em>_* _
 
 下列 Windows PowerShell Cmdlet 執行與前述程序相同的功能。 在單一行中，輸入各個 Cmdlet (即使因為格式限制，它們可能會在這裡出現自動換行成數行)。
 

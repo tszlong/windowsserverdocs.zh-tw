@@ -7,12 +7,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: 680664d1ef24e714b86661d5fb334b82250137f5
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 9b8ccb3ce08b098ca125d976bb30950c64a5ad61
+ms.sourcegitcommit: 6fbe337587050300e90340f9aa3e899ff5ce1028
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97043106"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97599781"
 ---
 # <a name="ad-ds-simplified-administration"></a>AD DS 簡化的系統管理
 
@@ -58,7 +58,7 @@ Adprep.exe 保留在 DVD 上是為了個別的樹系與網域準備。 隨附於
 
 ## <a name="server-manager-ad-ds-integration"></a>伺服器管理員 AD DS 整合
 
-![簡化管理](media/AD-DS-Simplified-Administration/ADDS_SMI_TR_Dashboard.png)
+![顯示伺服器管理員儀表板的螢幕擷取畫面。](media/AD-DS-Simplified-Administration/ADDS_SMI_TR_Dashboard.png)
 
 伺服器管理員是伺服器管理工作的集線器。 其儀表板樣式外觀會定期重新整理已安裝角色和遠端伺服器群組的檢視。 伺服器管理員提供本機與遠端伺服器的集中管理，而且不需存取主控台。
 
@@ -74,7 +74,7 @@ Active Directory Domain Services 是其中一個中樞角色;藉由在網域控�
 
 ## <a name="active-directory-administrative-center-recycle-bin"></a>Active Directory 管理中心資源回收筒
 
-![簡化管理](media/AD-DS-Simplified-Administration/ADDS_SMI_TR_ADAC.png)
+![顯示 Active Directory 管理中心資源回收筒中之刪除物件的螢幕擷取畫面。](media/AD-DS-Simplified-Administration/ADDS_SMI_TR_ADAC.png)
 
 Windows Server 2008 R2 引進 Active Directory 資源回收筒，可復原已刪除的 Active Directory 物件，而不需要從備份還原、重新啟動 AD DS 服務，或重新啟動網域控制站。
 
@@ -84,7 +84,7 @@ Windows Server 2012 增強了現有的 Windows PowerShell 還原功能，在 Act
 
 ## <a name="active-directory-administrative-center-fine-grained-password-policy"></a>Active Directory 管理中心更細緻的密碼原則
 
-![簡化管理](media/AD-DS-Simplified-Administration/ADDS_SMI_TR_FGPP.png)
+![顯示 Active Directory 管理中心 Fine-Grained 密碼原則圖形化介面的螢幕擷取畫面。](media/AD-DS-Simplified-Administration/ADDS_SMI_TR_FGPP.png)
 
 Windows Server 2008 中引進更細緻的密碼原則，可讓系統管理員依網域設定多個密碼及帳戶鎖定原則。 這可讓網域依據使用者和群組，彈性選擇強制執行較嚴格或較寬鬆的密碼規則。 它有沒有管理介面，需要系統管理員使用 Ldp.exe 或 Adsiedit.msc 來設定。 Windows Server 2008 R2 中引進 Windows PowerShell 的 Active Directory 模組，為系統管理員提供使用 FGPP 的命令列介面。
 
@@ -94,7 +94,7 @@ Windows Server 2012 則引進更細緻的密碼原則的圖形化介面。 Activ
 
 ## <a name="active-directory-administrative-center-windows-powershell-history-viewer"></a>Active Directory 管理中心 Windows PowerShell 歷程記錄檢視器
 
-![簡化管理](media/AD-DS-Simplified-Administration/ADDS_SMI_TR_HistoryViewer.png)
+![顯示 Active Directory 管理中心 Windows PowerShell 歷程記錄檢視器的螢幕擷取畫面。](media/AD-DS-Simplified-Administration/ADDS_SMI_TR_HistoryViewer.png)
 
 Windows Server 2008 R2 引進 Active Directory 管理中心，取代 Windows 2000 中舊版的 Active Directory 使用者和電腦嵌入式管理單元。 Active Directory 管理中心會建立一個圖形化的管理介面到 Windows PowerShell 的新 Active Directory 模組。
 
@@ -102,7 +102,7 @@ Windows Server 2008 R2 引進 Active Directory 管理中心，取代 Windows 200
 
 ## <a name="ad-replication-windows-powershell"></a>AD 複寫 Windows PowerShell
 
-![簡化管理](media/AD-DS-Simplified-Administration/ADDS_PSNewADReplSite.png)
+![顯示如何使用 AD 複寫 Cmdlet 的螢幕擷取畫面。](media/AD-DS-Simplified-Administration/ADDS_PSNewADReplSite.png)
 
 Windows Server 2012 新增額外的 Active Directory 複寫 Cmdlet 到 Active Directory Windows PowerShell 模組。 它們可用來設定新的或現有的站台、子網路、連線、站台連結與橋接器。 它們也會傳回 Active Directory 複寫中繼資料、複寫狀態、佇列和最新版向量資訊。 複寫 Cmdlet 的引進，再加上部署和其他現有的 AD DS Cmdlet，讓您只要使用 Windows PowerShell 即可管理樹系。 這使得想要佈建和管理 Windows Server 2012 的系統管理員不需使用圖形化介面即能達成目的，並能減少作業系統的攻擊面和服務的需求。 將伺服器部署到高安全性的網路 (例如機密網際網路通訊協定路由器 (SIPR) 與公司 DMZ) 時，這一點尤其重要。
 
@@ -166,7 +166,7 @@ Adprep 不再需要於架構主機上執行。 它可以從執行 Windows Server
 
 先前在 ADprep.exe 中的 AD 準備程式碼已重構為 adprep.dll。 這可讓 ADPrep.exe 和 ADDSDeployment Windows PowerShell 模組使用媒體櫃執行相同的工作，並具備相同的功能。 Adprep.exe 隨附於安裝媒體中，但自動化程序不會直接呼叫它 - 只有系統管理員可以手動執行。 它只能在 Windows Server 2008 x 64 及更新版本的作業系統上執行。 Ldifde.exe 和 csvde.exe 也有 DLL 格式的重構版本，由準備程序載入。 結構描述延伸仍會使用簽章驗證的 LDF 檔案，就像在先前的作業系統版本中一樣。
 
-![簡化管理](media/AD-DS-Simplified-Administration/ADDS_SMI_TR_AdprepDLLs.png)
+![此圖顯示 ADprep.dll 如何允許 ADPrep.exe 和 ADDSDeployment Windows PowerShell 模組將程式庫用於相同的工作，以及擁有相同的功能。](media/AD-DS-Simplified-Administration/ADDS_SMI_TR_AdprepDLLs.png)
 
 > [!IMPORTANT]
 > Windows Server 2012 沒有 32 位元的 Adprep32.exe 工具。 您必須至少擁有一部 Windows Server 2008 x64、Windows Server 2008 R2 或 Windows Server 2012 電腦執行為網域控制站、成員伺服器或在工作群組中執行，才能夠準備樹系和網域。 Adprep.exe 無法在 Windows Server 2003 x64 的作業系統上執行。
