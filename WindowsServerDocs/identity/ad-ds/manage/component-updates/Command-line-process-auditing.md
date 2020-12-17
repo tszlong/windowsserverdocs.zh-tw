@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 24d4541da55e97b5506719b7b6df0566695c4e5f
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 635910f1988a06ca86aff048a6df80eea28ef86e
+ms.sourcegitcommit: e57536e28902ae52d3040141bbd2aa00e91bbdd3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97049456"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97644628"
 ---
 # <a name="command-line-process-auditing"></a>命令列程序稽核
 
@@ -35,7 +35,7 @@ ms.locfileid: "97049456"
 
     -   「在進程建立事件中包含命令列」
 
-![命令列的審核](media/Command-line-process-auditing/GTR_ADDS_Event4688.gif)
+![醒目顯示進程命令列的螢幕擷取畫面。](media/Command-line-process-auditing/GTR_ADDS_Event4688.gif)
 
 **圖 SEQ 圖 \\ \* 阿拉伯文16事件4688**
 
@@ -72,13 +72,13 @@ ms.locfileid: "97049456"
 |**設定**|**在進程建立事件中包含命令列**|
 |**預設設定**|未設定 (未啟用) |
 |**支援於：**|?|
-|**說明**|此原則設定會決定在建立新的進程時，哪些資訊會記錄在安全性審核事件中。<p>這項設定僅適用于啟用審核程式建立原則時。 如果您啟用此原則設定，每個處理常式的命令列資訊都會以純文字的形式記錄在安全性事件記錄檔中，做為審核程式建立事件4688的一部分，也就是套用此原則設定的工作站和伺服器上的「已建立新的進程」。<p>如果您停用或未設定此原則設定，進程的命令列資訊將不會包含在 Audit Process 建立事件中。<p>預設值：未設定<p>注意：啟用此原則設定時，具有讀取安全性事件之存取權的任何使用者都可以讀取任何已成功建立之進程的命令列引數。 命令列引數可以包含機密或私用資訊，例如密碼或使用者資料。|
+|**描述**|此原則設定會決定在建立新的進程時，哪些資訊會記錄在安全性審核事件中。<p>這項設定僅適用于啟用審核程式建立原則時。 如果您啟用此原則設定，每個處理常式的命令列資訊都會以純文字的形式記錄在安全性事件記錄檔中，做為審核程式建立事件4688的一部分，也就是套用此原則設定的工作站和伺服器上的「已建立新的進程」。<p>如果您停用或未設定此原則設定，進程的命令列資訊將不會包含在 Audit Process 建立事件中。<p>預設值：未設定<p>注意：啟用此原則設定時，具有讀取安全性事件之存取權的任何使用者都可以讀取任何已成功建立之進程的命令列引數。 命令列引數可以包含機密或私用資訊，例如密碼或使用者資料。|
 
-![命令列的審核](media/Command-line-process-auditing/GTR_ADDS_IncludeCLISetting.gif)
+![顯示的螢幕擷取畫面 ](media/Command-line-process-auditing/GTR_ADDS_IncludeCLISetting.gif)
 
 當您使用 [進階稽核原則設定] 設定時，必須確認這些設定不會被基本稽核原則設定覆寫。  覆寫設定時，會記錄事件4719。
 
-![命令列的審核](media/Command-line-process-auditing/GTR_ADDS_Event4719.gif)
+![顯示 [在進程建立事件中包含命令列] 對話方塊的螢幕擷取畫面。](media/Command-line-process-auditing/GTR_ADDS_Event4719.gif)
 
 下列程序顯示如何透過封鎖任一基本稽核原則設定的套用，以防止發生衝突。
 

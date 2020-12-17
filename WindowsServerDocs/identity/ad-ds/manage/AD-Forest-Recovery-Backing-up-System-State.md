@@ -7,12 +7,12 @@ manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 9238cb27-0020-42f7-90d6-fcebf7e3c0bc
-ms.openlocfilehash: be7c7d99668512d3ea014b8826e257be38660101
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: b5dccb17f9cfa1ca9a6a09824d12659abb28707b
+ms.sourcegitcommit: e57536e28902ae52d3040141bbd2aa00e91bbdd3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97043086"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97644668"
 ---
 # <a name="ad-forest-recovery---backing-up-the-system-state-data"></a>AD 樹系復原-備份系統狀態資料
 
@@ -25,20 +25,20 @@ ms.locfileid: "97043086"
 1. 開啟 **伺服器管理員**，按一下 [ **工具**]，然後按一下 [ **Windows Server Backup**]。
    - 在 Windows Server 2008 R2 和 Windows Server 2008 中，按一下 [ **開始**]，指向 [系統 **管理工具**]，然後按一下 [ **Windows Server Backup**]。
 
-   ![安裝備份](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup1.png)
+   ![醒目顯示 [Windows Server Backup] 功能表選項的螢幕擷取畫面。](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup1.png)
 
 2. 如果出現提示，請在 [ **使用者帳戶控制** ] 對話方塊中，提供備份操作員認證，然後按一下 **[確定]**。
 3. 按一下 [ **本機備份**]。
 4. 在 [執行] 功能表上按一下 [一次性備份]。
 5. 在 [備份一次] 嚮導的 [ **備份選項** ] 頁面上，按一下 [ **不同選項**]，然後按 **[下一步**]。
 
-   ![安裝備份](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup3.png)
+   ![顯示 [備份選項] 頁面的螢幕擷取畫面，其中已選取不同的選項選項。](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup3.png)
 
 6. 在 [ **選取備份** 設定] 頁面上，按一下 [ **自訂])**，然後按 **[下一步]**。
 7. 在 [**選取要備份的專案**] 畫面上，按一下 [**新增專案**] 並選取 [**系統狀態**]，然後按一下 **[確定]**
    - 在 Windows Server 2008 R2 和 Windows Server 2008 中，選取要包含在備份中的磁片區。 如果您選取 [ **啟用系統修復** ] 核取方塊，則會選取所有重要磁片區。
 
-   ![安裝備份](media/AD-Forest-Recovery-Backing-up-System-State/systemstatebackup.png)
+   ![顯示已選取 [系統狀態] 核取方塊的螢幕擷取畫面。 ](media/AD-Forest-Recovery-Backing-up-System-State/systemstatebackup.png)
 
 8. 在 [ **指定目的地類型** ] 頁面上，按一下 [ **本機磁片磁碟機** 或 **遠端共用資料夾**]，然後按 **[下一步]**。  如果您要備份到遠端共用資料夾，請執行下列動作：
    - 輸入共用資料夾的路徑。

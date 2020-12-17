@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: a5836f3dda9615a449c89fe130798566e7481906
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 7b761ab0c645c33c3cc2d842d1db582590d7db90
+ms.sourcegitcommit: e57536e28902ae52d3040141bbd2aa00e91bbdd3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97049656"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97644648"
 ---
 # <a name="directory-services-component-updates"></a>目錄服務元件更新
 
@@ -108,7 +108,7 @@ Set-ADDomainMode -DomainMode Windows2008Domain -Identity contoso.com
 
 在現有樹系中建立新網域
 
-![目錄服務更新](media/Directory-Services-component-updates/GTR_ADDS_FFL.gif)
+![顯示 [網域控制站選項] 頁面的螢幕擷取畫面。](media/Directory-Services-component-updates/GTR_ADDS_FFL.gif)
 
 ### <a name="adprep"></a>ADPREP.LOG
 此版本中沒有新的樹系或網域作業。
@@ -150,9 +150,9 @@ FRS 已在 Windows Server 2012 R2 中淘汰。  藉由強制執行 Windows Serve
 
 您可以使用-DomainMode 參數搭配 Install-ADDSForest 或 Install-ADDSDomain Cmdlet 來指定網域功能等級。  此參數支援的值可以是有效的整數或對應的列舉字串值。 例如，若要將網域模式層級設定為 Windows Server 2008 R2，您可以指定值4或 "Win2008R2"。  從 Server 2012 R2 中執行這些 Cmdlet 時，有效的值包括 Windows Server 2008 (3、Win2008) Windows Server 2008 R2 (4、Win2008R2) Windows Server 2012 (5、Win2012) 和 Windows Server 2012 R2 (6、Win2012R2) 。 網域功能等級不能低於、但可以高於樹系功能等級。  由於 FRS 在此版本中已被取代，因此從 Windows Server 2012 R2 執行時，Windows Server 2003 (2，Win2003) 不是可辨識的參數與這些 Cmdlet。
 
-![目錄服務更新](media/Directory-Services-component-updates/GTR_ADDS_PS_Install2003DFL.gif)
+![終端機視窗的螢幕擷取畫面，其中顯示搭配 Install-ADDSForest Cmdlet 使用的-DomainMode 參數。](media/Directory-Services-component-updates/GTR_ADDS_PS_Install2003DFL.gif)
 
-![目錄服務更新](media/Directory-Services-component-updates/GTR_ADDS_PS_InstallDFL2.gif)
+![顯示如何使用 Install-ADDSForest Cmdlet 之終端機視窗的螢幕擷取畫面。](media/Directory-Services-component-updates/GTR_ADDS_PS_InstallDFL2.gif)
 
 ## <a name="ldap-query-optimizer-changes"></a><a name="BKMK_LDAPQuery"></a>LDAP 查詢最佳化工具變更
 
@@ -264,7 +264,7 @@ Log Record Bytes Generated: 0
 
     -   透過 ETW 追蹤和事件識別碼1644公開
 
-        ![目錄服務更新](media/Directory-Services-component-updates/GTR_ADDS_Event1644.gif)
+        ![醒目顯示阻礙優化值之屬性的螢幕擷取畫面。](media/Directory-Services-component-updates/GTR_ADDS_Event1644.gif)
 
 ### <a name="to-enable-the-stats-control-in-ldp"></a><a name="BKMK_EnableStats"></a>啟用 LDP 中的 Stats 控制項
 
@@ -274,7 +274,7 @@ Log Record Bytes Generated: 0
 
 3.  在 [控制項] 對話方塊中，展開 [ **載入預先定義** ] 下拉式功能表，然後按一下 [ **搜尋統計** 資料]，再按一下 **[確定]**。
 
-    ![目錄服務更新](media/Directory-Services-component-updates/GTR_ADDS_Controls.gif)
+    ![強調載入預先定義清單的螢幕擷取畫面。](media/Directory-Services-component-updates/GTR_ADDS_Controls.gif)
 
 4.  在 [**流覽]** 功能表上，按一下 [**搜尋**]
 
@@ -282,7 +282,7 @@ Log Record Bytes Generated: 0
 
 6.  確定已在 [搜尋選項] 對話方塊中選取 [ **擴充** ] 核取方塊，然後選取 **[確定]**。
 
-    ![目錄服務更新](media/Directory-Services-component-updates/GTR_ADDS_SearchOptions.gif)
+    ![醒目顯示 [擴充] 選項的螢幕擷取畫面。](media/Directory-Services-component-updates/GTR_ADDS_SearchOptions.gif)
 
 ### <a name="try-this-use-ldp-to-return-query-statistics"></a>試試看：使用 LDP 傳回查詢統計資料
 請在網域控制站上，或從已安裝 AD DS 工具的已加入網域的用戶端或伺服器執行下列動作。  針對您的 Windows Server 2012 DC 和您的 Windows Server 2012 R2 DC，重複下列目標。
@@ -368,7 +368,7 @@ Windows Registry Editor Version 5.00
 #### <a name="comparison-of-the-old-and-new-event-id-1644"></a>舊的和新事件識別碼1644的比較
 OLD
 
-![目錄服務更新](media/Directory-Services-component-updates/GTR_ADDS_Event1644_2012.gif)
+![顯示舊事件識別碼1664的螢幕擷取畫面。](media/Directory-Services-component-updates/GTR_ADDS_Event1644_2012.gif)
 
 NEW
 
