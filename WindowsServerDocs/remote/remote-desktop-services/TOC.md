@@ -102,6 +102,7 @@
 #### [受控應用程式和桌面的隱私權設定](clients/remote-privacy-settings.md)
 ### 已知問題
 #### [針對一般遠端桌面連線進行疑難排解](troubleshoot/rdp-error-general-troubleshooting.md)
+#### [每個應用程式的認證限制](troubleshoot/credential-limit.md)
 #### [用戶端無法連線並收到「類別未登錄」錯誤](troubleshoot/rdp-error-class-not-registered.md)
 #### [用戶端無法連線並看到「沒有可用的授權」錯誤](troubleshoot/rdp-error-no-licenses-available.md)
 #### [使用者無法驗證，或必須驗證兩次](troubleshoot/cannot-authenticate-or-must-authenticate-twice.md)
