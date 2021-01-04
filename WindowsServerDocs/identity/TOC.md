@@ -476,10 +476,7 @@
 ## Active Directory Rights Management Service
 ### [將 AD RMS 升級至 Windows Server 2016](ad-rms/adrms-deploy.md)
 
-
-## [保護特殊權限存取](securing-privileged-access/securing-privileged-access.md)
-### [特殊權限存取工作站](securing-privileged-access/privileged-access-workstations.md)
-### [保護特殊權限存取的參考資料](securing-privileged-access/securing-privileged-access-reference-material.md)
+## [系統管理工具和登入類型參考](securing-privileged-access/reference-tools-logon-types.md)
 
 ## [軟體限制原則](software-restriction-policies/software-restriction-policies.md)
 ### [軟體限制原則技術概觀](software-restriction-policies/software-restriction-policies-technical-overview.md)
