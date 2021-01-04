@@ -95,7 +95,8 @@
 #### [授與從網路外部存取電腦的權限](clients/remote-desktop-allow-outside-access.md)
 #### [變更電腦上的 RD 接聽連接埠](clients/change-listening-port.md)
 ### 進階資訊
-#### [比較用戶端](clients/remote-desktop-app-compare.md)
+#### [比較用戶端功能](clients/remote-desktop-features.md)
+#### [比較用戶端重新導向](clients/remote-desktop-app-compare.md)
 #### [支援的遠端桌面 RDP 檔案設定](clients/rdp-files.md)
 #### [遠端桌面 URI 配置](clients/remote-desktop-uri.md)
 #### [遠端桌面用戶端常見問題集](clients/remote-desktop-client-faq.md)
