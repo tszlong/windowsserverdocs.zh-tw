@@ -1,17 +1,17 @@
 ---
 title: Windows Server 2016 應設定為建議的記憶體數量
-description: 提供指示以解決這個最佳做法分析程式規則所報告的問題。
+description: 瞭解當執行 Windows Server 2016 的虛擬機器設定為小於建議的 RAM 數量（1 GB）時該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 7860e609-d278-42a3-85a4-ca92c8b6b2ad
 ms.date: 8/16/2016
-ms.openlocfilehash: 6d6a517fe2afb91a977a75a667817add5b4c174e
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: bc56327e1df636a4b36977a4a32adf9a35ce14ff
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865017"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97833673"
 ---
 # <a name="windows-server-2016-should-be-configured-with-the-recommended-amount-of-memory"></a>Windows Server 2016 應設定為建議的記憶體數量
 

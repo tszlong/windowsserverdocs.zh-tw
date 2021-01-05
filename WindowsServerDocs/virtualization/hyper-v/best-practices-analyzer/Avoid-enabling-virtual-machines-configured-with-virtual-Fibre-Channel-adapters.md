@@ -1,16 +1,16 @@
 ---
 title: 避免啟用使用虛擬光纖通道介面卡設定的虛擬機器，以允許在目的地上光纖通道邏輯單元 (Lun) 的路徑較少時進行即時移轉，而非來源
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當一或多部虛擬機器在虛擬化 WMI 提供者中設定 AllowReducedFcRedunancy 屬性時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.date: 8/16/2016
-ms.openlocfilehash: 71617bbf6718e77f004b57e38035f5277c45c3bc
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 9ba20bb14c908566419ad7a2e3bb9fda10fe9367
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90747063"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834653"
 ---
 # <a name="avoid-enabling-virtual-machines-configured-with-virtual-fibre-channel-adapters-to-allow-live-migrations-when-there-are-fewer-paths-to-fibre-channel-logical-units-luns-on-the-destination-than-on-the-source"></a>避免啟用使用虛擬光纖通道介面卡設定的虛擬機器，以允許在目的地上光纖通道邏輯單元 (Lun) 的路徑較少時進行即時移轉，而非來源
 
@@ -23,7 +23,7 @@ ms.locfileid: "90747063"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

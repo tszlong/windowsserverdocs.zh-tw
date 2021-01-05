@@ -1,17 +1,17 @@
 ---
 title: Windows 虛擬程式必須正在執行
-description: 提供指示以解決這個最佳做法分析程式規則所報告的問題。
+description: 瞭解 Windows 虛擬程式未執行時該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 501a9beb-c464-46c0-88c5-e3e7e3e70101
 ms.date: 10/03/2016
-ms.openlocfilehash: 75437680370672a1eef9fad2957f398ce4f267d7
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 12c8273d28266f02ff9af0fa5dd5975f3b764614
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90744814"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97833853"
 ---
 # <a name="windows-hypervisor-must-be-running"></a>Windows 虛擬程式必須正在執行
 
@@ -22,7 +22,7 @@ ms.locfileid: "90744814"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|Prerequisites|
+|**類別**|必要條件|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 
@@ -74,7 +74,7 @@ ms.locfileid: "90744814"
 
 1.  開啟 [事件檢視器]。 按一下 [ **開始**]，按一下 [系統 **管理工具**]，然後按一下 [ **事件檢視器**]。
 
-2.  開啟 Hyper-v-管理程式事件記錄檔。 在流覽窗格中，展開 [**應用程式及服務記錄**檔  >>  **Microsoft**  >>  **Windows**  >>  **hyper-v-管理**元件]，然後按一下 [**操作**]。
+2.  開啟 Hyper-v-管理程式事件記錄檔。 在流覽窗格中，展開 [**應用程式及服務記錄** 檔  >>  **Microsoft**  >>  **Windows**  >>  **hyper-v-管理** 元件]，然後按一下 [**操作**]。
 
 3.  如果 Windows 執行程式正在執行，則不需要採取任何進一步的動作。 如果 Windows 虛擬程式未執行，請執行下列動作：
 

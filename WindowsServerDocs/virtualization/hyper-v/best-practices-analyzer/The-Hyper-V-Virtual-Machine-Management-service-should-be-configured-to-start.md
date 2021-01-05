@@ -1,17 +1,17 @@
 ---
 title: Hyper-v 虛擬機器管理服務應該設定為自動啟動
-description: 提供指示以解決這個最佳做法分析程式規則所報告的問題。
+description: 瞭解當 Hyper-v 虛擬機器管理服務未設定為自動啟動時該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 222bbe76-c514-4a3f-b61b-860a4dc2826a
 ms.date: 8/16/2016
-ms.openlocfilehash: 8245e425adb1b1187918e9ee213135c16a190cde
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: ce54894bf30e610bf67def43c2605fcc6a56c1a4
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746493"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834893"
 ---
 # <a name="the-hyper-v-virtual-machine-management-service-should-be-configured-to-start-automatically"></a>Hyper-v 虛擬機器管理服務應該設定為自動啟動
 
@@ -24,7 +24,7 @@ ms.locfileid: "90746493"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 
@@ -46,13 +46,13 @@ ms.locfileid: "90746493"
 > 如果您在桌面應用程式中找不到服務，或命令列工具報表服務不存在，可能是未安裝 Hyper-v 管理工具。 若要進行安裝：
 >
 > - 在 Windows Server 上，開啟伺服器管理員，然後使用 [新增角色及功能] wizard。 如需詳細資訊，請參閱 [在 Windows Server 2016 上安裝 hyper-v 角色](../get-started/Install-the-Hyper-V-role-on-Windows-Server.md)。
-> - 在 Windows 上，從桌面開始輸入 [**程式**]，按一下 [**程式和功能**] (控制台) > 開啟或關閉 hyper-v **Turn Windows features on or off**  >  **Hyper-V**  >  **hyper-v 管理工具**上的 Windows 功能]。 然後按一下 **[確定]**。
+> - 在 Windows 上，從桌面開始輸入 [**程式**]，按一下 [**程式和功能**] (控制台) > 開啟或關閉 hyper-v   >    >  **hyper-v 管理工具** 上的 Windows 功能]。 然後按一下 **[確定]**。
 
 #### <a name="to-reconfigure-the-service-to-start-automatically-using-the-services-desktop-app"></a>若要將服務重新設定為使用服務桌面應用程式自動啟動
 
 1.  開啟服務桌面應用程式。  (按一下 [ **開始**]，在 [搜尋] 方塊中按一下，開始輸入 **服務**，然後按一下結果清單中的 [服務]。
 
-2.  在詳細資料窗格中，以滑鼠**按右鍵 [** **Hyper-v 虛擬機器管理**]，然後按一下 [內容]。
+2.  在詳細資料窗格中，以滑鼠 **按右鍵 [** **Hyper-v 虛擬機器管理**]，然後按一下 [內容]。
 
 3.  在 [ **一般** ] 索引標籤的 [ **啟動** 類型] 中，按一下 [ **自動**]。
 

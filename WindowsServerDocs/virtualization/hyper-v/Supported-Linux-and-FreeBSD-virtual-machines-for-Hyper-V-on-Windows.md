@@ -1,17 +1,17 @@
 ---
 title: Windows 上適用于 Hyper-v 的支援 Linux 和 FreeBSD 虛擬機器
-description: 列出每個版本中所包含的 Linux integration services 和功能
+description: 列出每個版本中所包含的 Linux 與 FreeBSD integration services 和功能
 ms.topic: article
 ms.assetid: 990ff94a-30fb-434b-b4a2-3804a5245ba6
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 12/09/2020
-ms.openlocfilehash: 1eeb5a80d0f08a158f0052fb1ba69d2adacf0b4d
-ms.sourcegitcommit: f95a991491ff09260d979078e248e2636bd2db54
+ms.openlocfilehash: 868d27a946fc91d4f651e6c7ad52c10d8ebc96af
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "96997805"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834873"
 ---
 # <a name="supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows"></a>Windows 上適用于 Hyper-v 的支援 Linux 和 FreeBSD 虛擬機器
 

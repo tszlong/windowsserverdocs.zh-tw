@@ -1,17 +1,17 @@
 ---
 title: 這部伺服器上一或多部虛擬機器的複寫已暫停
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當一或多部虛擬機器的複寫暫停時，該怎麼辦。 當主要虛擬機器暫停時，所發生的任何變更都會累積，並會在複寫繼續之後傳送至複本虛擬機器。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: e1119a40-eda3-4058-8648-7df81cbc6c29
 ms.date: 8/16/2016
-ms.openlocfilehash: 3a2bf07e1f93aed3966dd98ce608af53168bdf9e
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: bc8a173773217ea00c47080ded74901f70384b2a
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746513"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97846122"
 ---
 # <a name="replication-is-paused-for-one-or-more-virtual-machines-on-this-server"></a>這部伺服器上一或多部虛擬機器的複寫已暫停
 

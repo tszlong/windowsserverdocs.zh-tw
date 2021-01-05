@@ -1,18 +1,18 @@
 ---
 title: 瞭解和使用 Hyper-v 虛擬程式排程器類型
-description: 提供 Hyper-v 主機系統管理員使用 Hyper-v 排程器模式的相關資訊
+description: 深入瞭解虛擬處理器排程邏輯的新模式，以決定 Hyper-v 管理器如何跨來賓虛擬處理器配置和管理工作。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 08/14/2018
 ms.topic: article
 ms.localizationpriority: low
 ms.assetid: 6cb13f84-cb50-4e60-a685-54f67c9146be
-ms.openlocfilehash: 8dc2fec785771db4ccefb08e2359506932e11620
-ms.sourcegitcommit: 8c0a419ae5483159548eb0bc159f4b774d4c3d85
+ms.openlocfilehash: 661caf6bbab4c4da49a6c60d806b0fae00f8981b
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93235865"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97846170"
 ---
 # <a name="managing-hyper-v-hypervisor-scheduler-types"></a>管理 Hyper-v 虛擬程式排程器類型
 
@@ -162,7 +162,7 @@ bcdedit /set hypervisorschedulertype type
 其中 `type` 是下列其中一個：
 
 * 傳統
-* 核心
+* 核心版
 * Root
 
 系統必須重新開機，系統管理器排程器類型的任何變更才會生效。

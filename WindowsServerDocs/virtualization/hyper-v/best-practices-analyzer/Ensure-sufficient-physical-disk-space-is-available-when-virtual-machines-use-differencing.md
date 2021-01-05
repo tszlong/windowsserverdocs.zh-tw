@@ -1,17 +1,17 @@
 ---
 title: 當虛擬機器使用差異虛擬硬碟時，請確定有足夠的可用實體磁碟空間
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當一或多部虛擬機器使用差異虛擬硬碟時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 71f99aab-f994-4022-9da0-d661965b95ac
 ms.date: 8/16/2016
-ms.openlocfilehash: d5a8c5d38aa47845a88077eaa6b785dc5ebb148c
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: fe4cf45a9b93ce0a5277dcd6e108205a74ffca0b
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746273"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97846099"
 ---
 # <a name="ensure-sufficient-physical-disk-space-is-available-when-virtual-machines-use-differencing-virtual-hard-disks"></a>當虛擬機器使用差異虛擬硬碟時，請確定有足夠的可用實體磁碟空間
 
@@ -24,7 +24,7 @@ ms.locfileid: "90746273"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

@@ -1,17 +1,17 @@
 ---
 title: 針對執行 Windows Server 2008 R2 且已啟用動態記憶體的虛擬機器，至少設定所需的記憶體數量
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當一或多部虛擬機器設定為使用小於 Windows Server 2008 R2 所需記憶體數量的動態記憶體時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: db0bff4c-39fe-49c1-903a-1f2a0b0db891
 ms.date: 8/16/2016
-ms.openlocfilehash: eaafc5ba990e30880878c540642b32d2e81f63e0
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 3ccfb73448824f6f35d8b3831f6d596932010737
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746933"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834444"
 ---
 # <a name="configure-at-least-the-required-amount-of-memory-for-a-virtual-machine-running-windows-server-2008-r2-and-enabled-for-dynamic-memory"></a>針對執行 Windows Server 2008 R2 且已啟用動態記憶體的虛擬機器，至少設定所需的記憶體數量
 
@@ -24,7 +24,7 @@ ms.locfileid: "90746933"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|錯誤|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

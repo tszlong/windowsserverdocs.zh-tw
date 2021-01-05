@@ -1,17 +1,17 @@
 ---
 title: 至少為執行 Windows Vista 且啟用動態記憶體的虛擬機器設定所需的記憶體數量
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當一或多部虛擬機器設定為使用小於 Windows Vista 所需記憶體數量的動態記憶體時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: d3de7614-6eee-4839-a939-d390bca9ba89
 ms.date: 8/16/2016
-ms.openlocfilehash: 838bd69e9bc8efd250fa1b4339b1049eb521d6c9
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: d18ab7890e2043db131de37f1f3cff1b24985237
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746893"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834303"
 ---
 # <a name="configure-at-least-the-required-amount-of-memory-for-a-virtual-machine-running-windows-vista-and-enabled-for-dynamic-memory"></a>至少為執行 Windows Vista 且啟用動態記憶體的虛擬機器設定所需的記憶體數量
 
@@ -24,7 +24,7 @@ ms.locfileid: "90746893"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|錯誤|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

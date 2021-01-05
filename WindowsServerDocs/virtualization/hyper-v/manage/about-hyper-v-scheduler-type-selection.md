@@ -1,18 +1,18 @@
 ---
 title: 關於 Hyper-v 管理程式排程器類型選取專案
-description: 提供 Hyper-v 主機系統管理員使用 Hyper-v 排程器模式的相關資訊
+description: 瞭解 Hyper-v 預設和建議使用的程式管理器排程器類型的重要變更。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 08/14/2018
 ms.topic: article
 ms.localizationpriority: low
 ms.assetid: 5fe163d4-2595-43b0-ba2f-7fad6e4ae069
-ms.openlocfilehash: 9c41dfb5bad28122f8c2a6b06ff6574acd89a9ec
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 0e3dfd0d6a2ce4f7996efa42f74bcae3bc07833d
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746623"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97845952"
 ---
 # <a name="about-hyper-v-hypervisor-scheduler-type-selection"></a>關於 Hyper-v 管理程式排程器類型選取專案
 
@@ -172,7 +172,7 @@ Microsoft 虛擬程式提供多個 enlightenments 或提示，在來賓 VM 中�
 
 在某些設定中，管理程式不會指出 NoNonArchitecturalCoreSharing = 1。 例如，如果主機已啟用 SMT，且已設定為使用「虛擬程式管理器傳統排程器」，則 NoNonArchitecturalCoreSharing 將會是0。 這可能會導致啟用 rms 的來賓無法啟用某些優化。 因此，Microsoft 建議使用 SMT 的主機系統管理員依賴虛擬程式核心排程器，並確定虛擬機器已設定為從主機繼承其 SMT 設定，以確保工作負載效能最佳。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 安全性威脅的環境持續演進。 為了確保我們的客戶預設是安全的，Microsoft 會變更從 Windows Server 2019 Hyper-v 開始之虛擬機器和虛擬機器的預設設定，並為執行 Windows Server 2016 Hyper-v 的客戶提供更新的指引和建議。 虛擬化主機管理員應該：
 

@@ -1,17 +1,17 @@
 ---
 title: 應設定複本伺服器，以識別授權傳送複寫流量的特定主伺服器
-description: 提供指示以解決這個最佳做法分析程式規則所報告的問題。
+description: 瞭解當您的複本伺服器接受來自所有主伺服器的複寫流量，並將其儲存在單一位置時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 0aeb1f4b-2e75-430b-9557-fe64738c4992
 ms.date: 8/16/2016
-ms.openlocfilehash: 2771a9814fb9061756626466f446ca6131580dc2
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 542c58e3699a1132361f8698de6a72bbf967a5ca
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96864657"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834314"
 ---
 # <a name="replica-servers-should-be-configured-to-identify-specific-primary-servers-authorized-to-send-replication-traffic"></a>應設定複本伺服器，以識別授權傳送複寫流量的特定主伺服器
 
@@ -34,7 +34,7 @@ ms.locfileid: "96864657"
 ### <a name="impact"></a>影響
 *所有主伺服器的所有複寫都會儲存在一個位置，而這可能會導致隱私權或安全性問題。*
 
-## <a name="resolution"></a>解決方法
+## <a name="resolution"></a>解決方案
 *使用 Hyper-v 管理員為特定的主伺服器建立新的授權專案，並為每個伺服器指定個別的儲存位置。您可以使用萬用字元，將主伺服器分組為每個授權專案的集合。*
 
 #### <a name="create-authorization-entries-using-hyper-v-manager"></a>使用 Hyper-v 管理員建立授權專案

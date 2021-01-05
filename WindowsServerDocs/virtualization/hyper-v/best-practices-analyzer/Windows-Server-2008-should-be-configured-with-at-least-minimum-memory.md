@@ -1,17 +1,17 @@
 ---
 title: 應至少設定 Windows Server 2008 的最小記憶體數量
-description: 提供指示以解決這個最佳做法分析程式規則所報告的問題。
+description: 瞭解當執行 Windows Server 2008 的虛擬機器設定為小於最小 RAM 數量（也就是 512 MB）時該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: b5065a3f-364d-4aa9-8703-eafa7a46b575
 ms.date: 8/16/2016
-ms.openlocfilehash: 24fae758171c8bd21a913d09fafb0f25ed2a6b60
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 26817d5e6594b2f0d7c6a1d04b4b42c8413c56d2
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865867"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97833893"
 ---
 # <a name="windows-server-2008-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>應至少設定 Windows Server 2008 的最小記憶體數量
 
@@ -38,7 +38,7 @@ ms.locfileid: "96865867"
 
 \<list of virtual machine names>
 
-## <a name="resolution"></a>解決方法
+## <a name="resolution"></a>解決方案
 
 *使用 Hyper-v 管理員將配置給此虛擬機器的記憶體增加到至少 512 MB。*
 

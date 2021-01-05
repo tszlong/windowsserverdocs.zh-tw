@@ -1,17 +1,17 @@
 ---
 title: Hyper-v 上支援的 FreeBSD 虛擬機器
-description: 列出每個版本中所包含的 Linux integration services 和功能
+description: 列出每個版本中所包含的 FreeBSD/Linux integration services 和功能
 ms.topic: article
 ms.assetid: 930e758f-bd50-46b4-a3a4-9857110f17b4
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 04/07/2020
-ms.openlocfilehash: bf4b1aeb701741a7f58f3d186ffe7861cdd1e8e0
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: f79c2c09f5fdce570ad6e61037756dab0d4056a1
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746403"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834863"
 ---
 # <a name="supported-freebsd-virtual-machines-on-hyper-v"></a>Hyper-v 上支援的 FreeBSD 虛擬機器
 
@@ -21,7 +21,7 @@ ms.locfileid: "90746403"
 
 ## <a name="table-legend"></a>資料表圖例
 
-* 此 FreeBSD 版本包含**內建**的 (FreeBSD Integration Service) 。
+* 此 FreeBSD 版本包含 **內建** 的 (FreeBSD Integration Service) 。
 
 * &#10004;-可用功能
 
@@ -30,7 +30,7 @@ ms.locfileid: "90746403"
 |**功能**|**Windows Server 作業系統版本**|**12-12。1**|**11.1-11。3**|**11.0**|**10.3**|**10.2**|**10.0-10。1**|**9.1-9.3、8。4**|
 |-|-|-|-|-|-|-|-|-|
 |**可用性**||內建|內建|內建|內建|內建|內建|[連接埠](https://svnweb.freebsd.org/ports/branches/2015Q1/emulators/hyperv-is/) |
-|**[核心](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|**[核心版](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Windows Server 2016 精確時間|2019、2016|&#10004;|&#10004;||||||
 |**[網路功能](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**||||||||
 |大型訊框|2019、2016、2012 R2|&#10004; 附注3|&#10004; 附注3|&#10004; 附注3|&#10004; 附注3|&#10004; 附注3|&#10004; 附注3|&#10004; 附注3|
@@ -50,7 +50,7 @@ ms.locfileid: "90746403"
 |**[記憶](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||||||
 |PAE 核心支援|2019、2016、2012 R2||||||||
 |設定 MMIO 間距|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|動態記憶體-熱新增|2019、2016、2012 R2||||||||
+|動態記憶體-Hot-Add|2019、2016、2012 R2||||||||
 |動態記憶體-佔用|2019、2016、2012 R2||||||||
 |執行時間記憶體大小調整|2019、2016||||||||
 |**[影片](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**|||||||||

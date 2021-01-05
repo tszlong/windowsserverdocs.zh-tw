@@ -1,17 +1,17 @@
 ---
 title: 針對儲存虛擬機器檔案的檔案共用，至少使用 SMB 通訊協定3.0 版。
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當虛擬機器檔案或虛擬硬碟檔案儲存在不支援 SMB 通訊協定3.0 版的檔案共用時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 4bb832b8-f1aa-4c1f-a0f2-324dd53553ea
 ms.date: 8/16/2016
-ms.openlocfilehash: a979035c5b58542865faf6254baf49815f81cc2d
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 783ba7b2e8b5dc83eb575ee395d85e58701c0b89
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746783"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97846217"
 ---
 # <a name="use-at-least-smb-protocol-version-30-for-file-shares-that-store-files-for-virtual-machines"></a>針對儲存虛擬機器檔案的檔案共用，至少使用 SMB 通訊協定3.0 版。
 
@@ -24,7 +24,7 @@ ms.locfileid: "90746783"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|錯誤|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

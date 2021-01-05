@@ -1,17 +1,17 @@
 ---
 title: 啟用虛擬機器中的所有整合服務
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當一個或多個 integration services 停用或無法在虛擬機器中運作時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 16e202ad-3795-40c9-8176-7ca319e56d26
 ms.date: 8/16/2016
-ms.openlocfilehash: ca614074035678f50dd55b82864d989b789e61fb
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 59ee108cbe2c6b3ff62c4cb6a9d57d1ec8c8ca65
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746873"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97845927"
 ---
 # <a name="enable-all-integration-services-in-virtual-machines"></a>啟用虛擬機器中的所有整合服務
 
@@ -24,7 +24,7 @@ ms.locfileid: "90746873"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

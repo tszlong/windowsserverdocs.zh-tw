@@ -1,17 +1,17 @@
 ---
 title: 避免虛擬區塊與動態虛擬硬碟或差異磁片上的實體磁片磁區之間的對齊不一致
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當偵測到一或多個虛擬硬碟的對齊不一致時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: a17c8fd2-af81-485b-bfea-bd1ef3e43923
 ms.date: 8/16/2016
-ms.openlocfilehash: aa165dad38ae455f7c4a5a0d73cdd005c01a60ef
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: a35906161a51e2884a15944b51416a2404cce38a
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90747093"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834723"
 ---
 # <a name="avoid-alignment-inconsistencies-between-virtual-blocks-and-physical-disk-sectors-on-dynamic-virtual-hard-disks-or-differencing-disks"></a>避免虛擬區塊與動態虛擬硬碟或差異磁片上的實體磁片磁區之間的對齊不一致
 
@@ -24,7 +24,7 @@ ms.locfileid: "90747093"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

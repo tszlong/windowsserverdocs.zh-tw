@@ -1,17 +1,17 @@
 ---
 title: 為虛擬機器提供所有可用的 integration services
-description: 提供指示以解決這個最佳做法分析程式規則所報告的問題。
+description: 瞭解在虛擬機器上未啟用一或多個可用的整合服務時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 2c4b2043-ad81-495e-aa7a-467f813bb3d2
 ms.date: 8/16/2016
-ms.openlocfilehash: 1343761ae9e0982d25133bd429218c8fe31aadbc
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 0c618684e66f9a0af55e160ede8a263781d307a5
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746253"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97833723"
 ---
 # <a name="offer-all-available-integration-services-to-virtual-machines"></a>為虛擬機器提供所有可用的 integration services
 
@@ -24,7 +24,7 @@ ms.locfileid: "90746253"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 
@@ -46,11 +46,11 @@ ms.locfileid: "90746253"
 
 #### <a name="to-manage-the-availability-of-integration-services-to-a-virtual-machine"></a>管理 integration services 對虛擬機器的可用性
 
-1.  開啟 Hyper-V 管理員。 按一下 [開始]****，指向 [系統管理工具]****，然後按一下 [Hyper-V 管理員]****。
+1.  開啟 Hyper-V 管理員。 按一下 [開始]，指向 [系統管理工具]，然後按一下 [Hyper-V 管理員]。
 
 2.  在結果窗格的 [ **虛擬機器**] 下，選取您要設定的虛擬機器。
 
-3.  在 [執行]**** 窗格的虛擬機器名稱之下，按一下 [設定]****。
+3.  在 [執行] 窗格的虛擬機器名稱之下，按一下 [設定]。
 
 4.  在 [ **管理**] 底下，按一下 [ **Integration Services**]。
 

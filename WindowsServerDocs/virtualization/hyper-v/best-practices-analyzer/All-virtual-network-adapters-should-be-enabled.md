@@ -1,17 +1,17 @@
 ---
 title: 應啟用所有虛擬網路介面卡
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當管理作業系統中已停用與實體網路介面卡相關聯的一或多個虛擬網路介面卡時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: b17d647d-a34a-44de-ada6-01a2bf5eeb48
 ms.date: 8/16/2016
-ms.openlocfilehash: 48417108f780c8b145613b110bb51681bd69bdc6
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 6b3fcd786a1f7f294b7c35a4dc0a8b3cf0971c83
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746303"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834753"
 ---
 # <a name="all-virtual-network-adapters-should-be-enabled"></a>應啟用所有虛擬網路介面卡
 
@@ -24,7 +24,7 @@ ms.locfileid: "90746303"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

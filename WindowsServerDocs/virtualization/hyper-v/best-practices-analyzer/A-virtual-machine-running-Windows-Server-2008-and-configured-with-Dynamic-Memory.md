@@ -1,17 +1,17 @@
 ---
 title: 執行 Windows Server 2008 並設定動態記憶體的虛擬機器應該使用記憶體設定的建議值
-description: 提供指示以解決這個最佳做法分析程式規則所報告的問題。
+description: 瞭解如何使用 Hyper-v 管理員或 Windows PowerShell 將最小記憶體增加到至少 256 MB，並將啟動記憶體和最大記憶體增加到 512 MB。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: f4c05a2c-52d0-4fa2-987d-37a6ed667134
 ms.date: 8/16/2016
-ms.openlocfilehash: 34c5d5d22ffa08f7bfcedc593267313957ded535
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 2f7ffa9b73c69b114d90090c7de88fe03f00e0fc
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90745773"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834093"
 ---
 # <a name="a-virtual-machine-running-windows-server-2008-and-configured-with-dynamic-memory-should-use-recommended-values-for-memory-settings"></a>執行 Windows Server 2008 並設定動態記憶體的虛擬機器應該使用記憶體設定的建議值
 
@@ -24,7 +24,7 @@ ms.locfileid: "90745773"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

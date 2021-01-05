@@ -1,17 +1,17 @@
 ---
 title: 應在虛擬機器中啟用存放裝置控制器，以提供對連結儲存體的存取權
-description: 提供指示以解決這個最佳做法分析程式規則所報告的問題。
+description: 瞭解當虛擬機器中有一或多個存放裝置控制器可停用時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 532548a1-8ffe-4b5b-902e-ed2f0819012b
 ms.date: 8/16/2016
-ms.openlocfilehash: 5eb1767fd51253ed26c0a169be1043b633dbcbcd
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 4132eed0b376430922550d506613a496274b2f4c
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746193"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834833"
 ---
 # <a name="storage-controllers-should-be-enabled-in-virtual-machines-to-provide-access-to-attached-storage"></a>應在虛擬機器中啟用存放裝置控制器，以提供對連結儲存體的存取權
 
@@ -24,7 +24,7 @@ ms.locfileid: "90746193"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 
@@ -46,13 +46,13 @@ ms.locfileid: "90746193"
 
 #### <a name="to-remove-a-scsi-storage-controller-from-the-virtual-machine"></a>從虛擬機器移除 SCSI 存放裝置控制器
 
-1.  開啟 Hyper-V 管理員。 按一下 [開始]****，指向 [系統管理工具]****，然後按一下 [Hyper-V 管理員]****。
+1.  開啟 Hyper-V 管理員。 按一下 [開始]，指向 [系統管理工具]，然後按一下 [Hyper-V 管理員]。
 
 2.  在結果窗格的 [ **虛擬機器**] 下，選取您要設定的虛擬機器。
 
 3.  如果虛擬機器正在執行，請關閉虛擬機器。 在虛擬機器上按一下滑鼠右鍵，然後按一下 [ **關閉**]。
 
-4.  在 [執行]**** 窗格的虛擬機器名稱之下，按一下 [設定]****。
+4.  在 [執行] 窗格的虛擬機器名稱之下，按一下 [設定]。
 
 5.  在 [ **設定** ] 對話方塊的左窗格中，按一下 [ **硬體**] 底下的 [ **SCSI 控制器**]。
 

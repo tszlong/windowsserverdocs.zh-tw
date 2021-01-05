@@ -1,17 +1,17 @@
 ---
 title: 避免在設定為 Active Directory 網域控制站的電腦上安裝 RemoteFX
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解在網域控制站上安裝 RemoteFX 時該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: da58694e-91f6-45d8-a599-18966db165f4
 ms.date: 8/16/2016
-ms.openlocfilehash: 1f639998c568035d0c992403cd0b1056ea4607b5
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: d22f21af2fcc54c44d142ef790b9da4ae66483c9
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90747053"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834663"
 ---
 # <a name="avoid-installing-remotefx-on-a-computer-that-is-configured-as-an-active-directory-domain-controller"></a>避免在設定為 Active Directory 網域控制站的電腦上安裝 RemoteFX
 
@@ -24,7 +24,7 @@ ms.locfileid: "90747053"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|錯誤|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

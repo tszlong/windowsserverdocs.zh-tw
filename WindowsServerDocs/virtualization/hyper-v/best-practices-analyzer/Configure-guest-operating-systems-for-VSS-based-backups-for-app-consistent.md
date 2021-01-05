@@ -1,17 +1,17 @@
 ---
 title: 針對以 VSS 為基礎的備份設定客體作業系統，以啟用 Hyper-v 複本的應用程式一致快照集
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當應用程式一致快照集需要在參與複寫的虛擬機器的客體作業系統中啟用和設定磁片區陰影複製服務 (VSS) 時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 7638e996-d42d-47b8-a670-1e09e7183850
 ms.date: 8/16/2016
-ms.openlocfilehash: b6a7eec504282e63e0cb24efbd2cdc5f66849005
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: ca6b2656554f0f22a956159c770f24ad824462c6
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746883"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97846082"
 ---
 # <a name="configure-guest-operating-systems-for-vss-based-backups-to-enable-application-consistent-snapshots-for-hyper-v-replica"></a>針對以 VSS 為基礎的備份設定客體作業系統，以啟用 Hyper-v 複本的應用程式一致快照集
 
@@ -24,7 +24,7 @@ ms.locfileid: "90746883"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|錯誤|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

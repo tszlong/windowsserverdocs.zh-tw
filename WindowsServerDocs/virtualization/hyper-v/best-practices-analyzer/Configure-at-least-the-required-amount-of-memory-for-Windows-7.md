@@ -1,17 +1,17 @@
 ---
 title: 至少為執行 Windows 7 的虛擬機器設定所需的記憶體數量，並為其啟用動態記憶體
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當一或多部虛擬機器設定為使用小於 Windows 7 所需記憶體數量的動態記憶體時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 119965bf-6154-414d-b3a1-aa5b30eac5f6
 ms.date: 8/16/2016
-ms.openlocfilehash: cf6ab68e0c8d7339b8ba6574a7b0a4c02fa59e6e
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: e7108190a16880628a6739e14d9d22f1978737ee
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746963"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834803"
 ---
 # <a name="configure-at-least-the-required-amount-of-memory-for-a-virtual-machine-running-windows-7-and-enabled-for-dynamic-memory"></a>至少為執行 Windows 7 的虛擬機器設定所需的記憶體數量，並為其啟用動態記憶體
 
@@ -24,7 +24,7 @@ ms.locfileid: "90746963"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|錯誤|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

@@ -1,17 +1,17 @@
 ---
 title: 針對執行 Windows Server 2012 並啟用動態記憶體的虛擬機器，至少設定所需的記憶體數量
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當一或多部虛擬機器設定為使用小於 Windows Server 2012 所需記憶體數量的動態記憶體時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 46f9a5dc-355b-415b-863d-fb740609d6b6
 ms.date: 8/16/2016
-ms.openlocfilehash: d32bfafd8fa50ffcc9864f7b426e6bea4a70c8bc
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 8f95fde98f2d164161c2bc2c1035aa9cf36981f6
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746903"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834393"
 ---
 # <a name="configure-at-least-the-required-amount-of-memory-for-a-virtual-machine-running-windows-server-2012-and-enabled-for-dynamic-memory"></a>針對執行 Windows Server 2012 並啟用動態記憶體的虛擬機器，至少設定所需的記憶體數量
 
@@ -24,7 +24,7 @@ ms.locfileid: "90746903"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|錯誤|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

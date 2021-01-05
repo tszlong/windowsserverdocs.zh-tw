@@ -1,17 +1,17 @@
 ---
 title: 避免將虛擬機器設定為允許未篩選的 SCSI 命令
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當虛擬機器設定為允許未篩選的 SCSI 命令時該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: dd4a3d78-a77f-451e-a383-d5cf45ea17cf
 ms.date: 8/16/2016
-ms.openlocfilehash: 95d7fa223371aa3dbc3b66efcfefed217eed5216
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 70282ef6367c711e04bf5d29ee10303841019b2c
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90747083"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834693"
 ---
 # <a name="avoid-configuring-virtual-machines-to-allow-unfiltered-scsi-commands"></a>避免將虛擬機器設定為允許未篩選的 SCSI 命令
 

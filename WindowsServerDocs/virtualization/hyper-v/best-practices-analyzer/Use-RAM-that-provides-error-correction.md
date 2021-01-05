@@ -1,17 +1,17 @@
 ---
 title: 使用提供錯誤修正的 RAM
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當這部電腦上使用的 RAM 無法 (ECC) RAM 進行錯誤修正時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 67eb6cef-b045-4748-90e1-406af5345d6a
 ms.date: 8/16/2016
-ms.openlocfilehash: 818f7400b8ada5c92bc9f780c64a83d719cc13ee
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 486364c56134754afc94a4e125f40dead6651581
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746813"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97846323"
 ---
 # <a name="use-ram-that-provides-error-correction"></a>使用提供錯誤修正的 RAM
 
@@ -24,7 +24,7 @@ ms.locfileid: "90746813"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|錯誤|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

@@ -1,17 +1,17 @@
 ---
 title: 當虛擬機器使用動態擴充的虛擬硬碟時，請確定有足夠的可用實體磁碟空間
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當一或多部虛擬機器使用動態擴充的虛擬硬碟時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 9e3e3e64-4b3a-4b9d-acf1-e4df61a04f1e
 ms.date: 8/16/2016
-ms.openlocfilehash: 1e67b51aa3c41c9642a8972d25e0501b26e91cd5
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: cb4d3bbb21850f234fc9ff552612863970f89efc
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746863"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97846231"
 ---
 # <a name="ensure-sufficient-physical-disk-space-is-available-when-virtual-machines-use-dynamically-expanding-virtual-hard-disks"></a>當虛擬機器使用動態擴充的虛擬硬碟時，請確定有足夠的可用實體磁碟空間
 
@@ -24,7 +24,7 @@ ms.locfileid: "90746863"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

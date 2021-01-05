@@ -1,16 +1,16 @@
 ---
 title: 複本伺服器必須設定為接受複寫要求
-description: 提供指示以解決這個最佳做法分析程式規則所報告的問題。
+description: 瞭解當您的電腦被指定為 Hyper-v 複本伺服器，但未設定為接受來自主伺服器的傳入複寫資料時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.date: 8/16/2016
-ms.openlocfilehash: 941eccbafb7b84caf161f68b022c9a93fffd4f5f
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: a9f62c5dbfe6f78a4b1556ea2da30d4dfc8f2c8f
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746383"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834773"
 ---
 # <a name="a-replica-server-must-be-configured-to-accept-replication-requests"></a>複本伺服器必須設定為接受複寫要求
 
@@ -23,7 +23,7 @@ ms.locfileid: "90746383"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|錯誤|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 
@@ -44,7 +44,7 @@ ms.locfileid: "90746383"
 
 3.  在流覽窗格中 **，按一下 [** 複寫設定]。
 
-4.  在 [ **授權與存放裝置**] 下，按一下 **[允許從指定的伺服器**複寫]。
+4.  在 [ **授權與存放裝置**] 下，按一下 **[允許從指定的伺服器** 複寫]。
 
 5.  在伺服器清單底下，按一下 [ **新增**]。
 

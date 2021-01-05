@@ -1,17 +1,17 @@
 ---
 title: 應至少設定 Windows 7 的最小記憶體數量
-description: 提供指示以解決此最佳做法分析程式規則所報告的問題。」
+description: 瞭解當執行 Windows 7 的虛擬機器設定為小於最小 RAM 數量（512 MB）時該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 1b81ec0b-ceca-4fba-83ea-90d5f1d9bda8
 ms.date: 8/16/2016
-ms.openlocfilehash: c2bd302fb5adafe0bb1d9252cbac3d6ba6a6a8ac
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: e8f24fd0ebb0bcd40efcc11b4ba003339055077b
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96864607"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834033"
 ---
 # <a name="windows-7-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>應至少設定 Windows 7 的最小記憶體數量
 
@@ -38,7 +38,7 @@ ms.locfileid: "96864607"
 ```
 <list of virtual machine names>
 ```
-## <a name="resolution"></a>解決方法
+## <a name="resolution"></a>解決方案
 
 *使用 Hyper-v 管理員將配置給此虛擬機器的記憶體增加到至少 512 MB。*
 

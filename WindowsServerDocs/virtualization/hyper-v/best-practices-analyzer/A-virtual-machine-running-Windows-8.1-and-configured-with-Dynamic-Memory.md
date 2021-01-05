@@ -1,17 +1,17 @@
 ---
 title: 執行 Windows 8.1 並以動態記憶體設定的虛擬機器應該使用記憶體設定的建議值
-description: 提供指示以解決這個最佳做法分析程式規則所報告的問題。
+description: 瞭解當一或多部虛擬機器設定為使用小於 Windows 8.1 建議的記憶體容量動態記憶體時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: b9a14f85-326f-4916-9278-2c8d39a32848
 ms.date: 8/16/2016
-ms.openlocfilehash: 7ad74e982ad75a7763c37ad28599642c593b5612
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: c93acc1bc27af81ddca7b7ade1b8ca2df7cd1e94
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746333"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834113"
 ---
 # <a name="a-virtual-machine-running-windows-81-and-configured-with-dynamic-memory-should-use-recommended-values-for-memory-settings"></a>執行 Windows 8.1 並以動態記憶體設定的虛擬機器應該使用記憶體設定的建議值
 
@@ -24,7 +24,7 @@ ms.locfileid: "90746333"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

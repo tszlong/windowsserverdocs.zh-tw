@@ -1,17 +1,17 @@
 ---
 title: 應將複寫的重新同步處理排程在離峰時間
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當主要虛擬機器的複寫重新同步處理未排程在離峰時段時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 093a7bb7-8e0a-486b-b42b-04edd8809710
 ms.date: 8/16/2016
-ms.openlocfilehash: 97df7945988f117ed16d59685cc60841775737da
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 3669abf4da79db82d0ba7ca985b886a02a180ea9
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746153"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97845816"
 ---
 # <a name="resynchronization-of-replication-should-be-scheduled-for-off-peak-hours"></a>應將複寫的重新同步處理排程在離峰時間
 

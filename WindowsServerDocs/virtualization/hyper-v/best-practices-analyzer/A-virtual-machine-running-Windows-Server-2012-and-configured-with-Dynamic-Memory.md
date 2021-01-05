@@ -1,17 +1,17 @@
 ---
 title: 執行 Windows Server 2012 並設定動態記憶體的虛擬機器應該使用記憶體設定的建議值
-description: 提供指示以解決這個最佳做法分析程式規則所報告的問題。
+description: 瞭解當一或多部虛擬機器設定為使用小於 Windows Server 2012 建議的記憶體數量動態記憶體時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 0aa35e36-8e3b-498b-b71d-003a0a0947be
 ms.date: 8/16/2016
-ms.openlocfilehash: c14cb55ea11aad0801641535de2a544886db960a
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 5096e06816d1fc78b189a5b848063ad3e10fa8dd
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90744143"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834913"
 ---
 # <a name="a-virtual-machine-running-windows-server-2012-and-configured-with-dynamic-memory-should-use-recommended-values-for-memory-settings"></a>執行 Windows Server 2012 並設定動態記憶體的虛擬機器應該使用記憶體設定的建議值
 
@@ -24,7 +24,7 @@ ms.locfileid: "90744143"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

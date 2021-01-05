@@ -1,17 +1,17 @@
 ---
 title: Windows 8 應至少以最少的記憶體數量進行設定
-description: 提供指示以解決這個最佳做法分析程式規則所報告的問題。
-ms.author: benarm
+description: 瞭解當執行 Windows 8 的虛擬機器設定為小於最小 RAM 數量（512 MB）時該怎麼辦。
 author: BenjaminArmstrong
+ms.author: benarm
 ms.topic: article
 ms.assetid: 519d1091-fa4d-44d7-83ca-83f6aa71fb7d
 ms.date: 8/16/2016
-ms.openlocfilehash: 9c565b1e22091325c9e5017e5c82d225b835bad6
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: a193eb64fd11624c30ab7426ac4261b6dee74a08
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96866027"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834023"
 ---
 # <a name="windows-8-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>Windows 8 應至少以最少的記憶體數量進行設定
 

@@ -1,17 +1,17 @@
 ---
 title: Windows Server 2012 R2 至少應以最少的記憶體數量進行設定
-description: 提供指示以解決這個最佳做法分析程式規則所報告的問題。
+description: 瞭解當執行 Windows Server 2012 R2 的虛擬機器設定為小於最小 RAM 數量（512 MB）時該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 01da6f02-1a5f-4d3e-9bef-4d122a91c5c2
 ms.date: 8/16/2016
-ms.openlocfilehash: 1e077356b0e7bd918d54e55dac6f979eda5c4aeb
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: bd79a4804aa5d2ec9f560a0902dcfa8d468f489a
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865837"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97833663"
 ---
 # <a name="windows-server-2012-r2-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>Windows Server 2012 R2 至少應以最少的記憶體數量進行設定
 

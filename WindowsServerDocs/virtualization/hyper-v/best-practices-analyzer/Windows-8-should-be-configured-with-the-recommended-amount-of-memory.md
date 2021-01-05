@@ -1,17 +1,17 @@
 ---
 title: Windows 8 應設定建議的記憶體數量
-description: 提供指示以解決這個最佳做法分析程式規則所報告的問題。
+description: 瞭解當執行 Windows 8 的虛擬機器設定為小於建議的 RAM 數量（1 GB）時該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 0c739e7c-4403-4eff-9e69-213ba1ab7336
 ms.date: 10/03/2016
-ms.openlocfilehash: c8c38f5603926ae4042a30c34a4ccd9ebc43fc7c
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 67c2897d51dc5fe7c669ccd911247d77dcfa3c56
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96866017"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834013"
 ---
 # <a name="windows-8-should-be-configured-with-the-recommended-amount-of-memory"></a>Windows 8 應設定建議的記憶體數量
 

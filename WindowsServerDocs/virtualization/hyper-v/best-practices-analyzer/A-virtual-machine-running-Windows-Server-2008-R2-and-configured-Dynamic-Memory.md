@@ -1,17 +1,17 @@
 ---
 title: 執行 Windows Server 2008 R2 並使用動態記憶體設定的虛擬機器應該使用記憶體設定的建議值
-description: 提供指示以解決這個最佳做法分析程式規則所報告的問題。
+description: 瞭解當一或多部虛擬機器設定為使用小於 Windows Server 2008 R2 建議的記憶體數量動態記憶體時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 81b5034a-31ea-4397-bcd0-7b9ef50beb94
 ms.date: 8/16/2016
-ms.openlocfilehash: c92989ee8816c5315af85d106aa7a761881f2420
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: fcc4303a6e28fefca9b4a191fadd758f65069316
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746323"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834123"
 ---
 # <a name="a-virtual-machine-running-windows-server-2008-r2-and-configured-with-dynamic-memory-should-use-recommended-values-for-memory-settings"></a>執行 Windows Server 2008 R2 並使用動態記憶體設定的虛擬機器應該使用記憶體設定的建議值
 
@@ -24,7 +24,7 @@ ms.locfileid: "90746323"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

@@ -1,17 +1,17 @@
 ---
 title: 避免在系統磁片上儲存智慧分頁檔案
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當一或多部虛擬機器的記憶體設定可能需要在虛擬機器重新開機時使用智慧分頁，以及智慧分頁檔的指定位置是執行 Hyper-v 之伺服器的系統磁片時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 9b57c9b8-76c5-43c7-bfa6-2c95b3cb6510
 ms.date: 8/16/2016
-ms.openlocfilehash: c1d2a6ca3b1ffc96fb0761ab1b1c434971374142
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 990067509f0fbfe9ba19781da23ea3ea0b6e4091
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90747023"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834593"
 ---
 # <a name="avoid-storing-smart-paging-files-on-a-system-disk"></a>避免在系統磁片上儲存智慧分頁檔案
 

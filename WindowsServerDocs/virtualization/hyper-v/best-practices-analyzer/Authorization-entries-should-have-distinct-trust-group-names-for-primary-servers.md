@@ -1,17 +1,17 @@
 ---
 title: 對於具有不屬於相同信任群組之虛擬機器的主伺服器，授權專案應具有不同的信任組名
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當伺服器將在與虛擬機器相同的複寫標記關聯之授權清單中的任何伺服器接受複本虛擬機器時的複寫要求時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 8827a3a7-9f3c-4f51-826a-8e2ec43e01df
 ms.date: 8/16/2016
-ms.openlocfilehash: 984fa9233a433384cddae34af9a62bcf1e0204ca
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 7d66212f0633608ca9d094316c18b5fdd311640e
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90747103"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834733"
 ---
 # <a name="authorization-entries-should-have-distinct-trust-group-names-for-primary-servers-with-virtual-machines-that-are-not-part-of-the-same-trust-group"></a>對於具有不屬於相同信任群組之虛擬機器的主伺服器，授權專案應具有不同的信任組名
 
@@ -24,7 +24,7 @@ ms.locfileid: "90747103"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

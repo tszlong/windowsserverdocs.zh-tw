@@ -1,17 +1,17 @@
 ---
 title: 建議執行 Hyper-v 的伺服器使用網域成員資格
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當伺服器是工作組的成員時該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 2f4578e5-0848-46b4-a50b-7dbd480b80bf
 ms.date: 8/16/2016
-ms.openlocfilehash: 6a813af7d5064f91870652e6b0073c5c73c62604
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: e6e17da7f23eed04800a4c839ce52791f6221f9c
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90745663"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97845977"
 ---
 # <a name="domain-membership-is-recommended-for-servers-running-hyper-v"></a>建議執行 Hyper-v 的伺服器使用網域成員資格
 
@@ -26,7 +26,7 @@ ms.locfileid: "90745663"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

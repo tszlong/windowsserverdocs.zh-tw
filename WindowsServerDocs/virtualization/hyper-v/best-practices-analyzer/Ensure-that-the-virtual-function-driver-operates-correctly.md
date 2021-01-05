@@ -1,17 +1,17 @@
 ---
 title: 當虛擬機器設定為使用 SR-IOV 時，請確定虛擬函式驅動程式能正常運作
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當虛擬函式驅動程式未在一或多部虛擬機器的客體作業系統中正確運作時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: d21e4b93-29bf-423a-a635-71c6d48dc49e
 ms.date: 8/16/2016
-ms.openlocfilehash: 3be2f616ab8981e887688404f2907524f5f53e49
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: a009060dc67ba29c12e986167b2ed746865311d5
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746843"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97845920"
 ---
 # <a name="ensure-that-the-virtual-function-driver-operates-correctly-when-a-virtual-machine-is-configured-to-use-sr-iov"></a>當虛擬機器設定為使用 SR-IOV 時，請確定虛擬函式驅動程式能正常運作
 
@@ -24,7 +24,7 @@ ms.locfileid: "90746843"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

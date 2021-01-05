@@ -1,17 +1,17 @@
 ---
 title: 避免在生產環境中執行伺服器工作負載的虛擬機器上使用檢查點
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當找到具有一或多個檢查點的虛擬機器時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 1be75890-d316-495a-b9b7-be75fc1aac10
 ms.date: 8/16/2016
-ms.openlocfilehash: da0315ab06d4678d3cedc51092be7160d301ac4d
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 0fef612d9da5ad74561429c3852d407623d9d334
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90747003"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834563"
 ---
 # <a name="avoid-using-checkpoints-on-a-virtual-machine-that-runs-a-server-workload-in-a-production-environment"></a>避免在生產環境中執行伺服器工作負載的虛擬機器上使用檢查點
 

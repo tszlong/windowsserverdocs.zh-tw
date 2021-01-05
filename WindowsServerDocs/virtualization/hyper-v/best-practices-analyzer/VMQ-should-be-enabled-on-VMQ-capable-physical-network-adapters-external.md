@@ -1,17 +1,17 @@
 ---
 title: 必須在與外部虛擬交換器系結的 VMQ 功能實體網路介面卡上啟用 VMQ
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當下列網路介面卡能夠 (VMQ) 的虛擬機器佇列，但功能已停用時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 93d1b155-bf44-46b0-bb69-d34d5b30e574
 ms.date: 8/16/2016
-ms.openlocfilehash: 169f2ea06bf35c7bbc9bcaec354ca66e118c75d2
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 1ab79c106fd17d459a1b6b6adcedba620ae5a89c
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746763"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97846207"
 ---
 # <a name="vmq-should-be-enabled-on-vmq-capable-physical-network-adapters-bound-to-an-external-virtual-switch"></a>必須在與外部虛擬交換器系結的 VMQ 功能實體網路介面卡上啟用 VMQ
 
@@ -24,7 +24,7 @@ ms.locfileid: "90746763"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 
@@ -37,7 +37,7 @@ ms.locfileid: "90746763"
 \<list of network adapters>
 
 ## <a name="resolution"></a>**解決方法**
-*使用 NetAdapterVmq Windows PowerShell Cmdlet 或使用網路介面卡的 Advanced Properties 使用者介面來啟用 VMQ。*
+*使用 Enable-NetAdapterVmq Windows PowerShell Cmdlet 或使用網路介面卡的 Advanced Properties 使用者介面來啟用 VMQ。*
 
 
 

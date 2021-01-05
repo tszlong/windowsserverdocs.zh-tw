@@ -1,17 +1,17 @@
 ---
 title: 設定原則以節流網絡上的複寫流量
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當複寫允許使用的網路頻寬數量可能沒有限制時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 82cb1aef-cdc3-4d0a-88d4-ef497ab79606
 ms.date: 8/16/2016
-ms.openlocfilehash: 18c1c1e586075dfb1ef477c1d3f21e549791464a
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 69a03e85dd410f1f3b59daaf97ff97c2db5c7d48
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746983"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834843"
 ---
 # <a name="configure-a-policy-to-throttle-the-replication-traffic-on-the-network"></a>設定原則以節流網絡上的複寫流量
 
@@ -24,7 +24,7 @@ ms.locfileid: "90746983"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

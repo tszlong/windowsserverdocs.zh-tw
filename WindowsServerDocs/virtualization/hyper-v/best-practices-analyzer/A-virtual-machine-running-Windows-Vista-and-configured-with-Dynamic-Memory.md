@@ -1,17 +1,17 @@
 ---
 title: 執行 Windows Vista 並設定動態記憶體的虛擬機器應該使用記憶體設定的建議值
-description: 提供指示以解決這個最佳做法分析程式規則所報告的問題。
+description: 瞭解當一或多部虛擬機器設定為動態記憶體使用小於建議的 Windows Vista 記憶體數量時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: c35f08b2-e624-4811-a159-c1e5bb6d5281
 ms.date: 8/16/2016
-ms.openlocfilehash: 9cd96733de8bcc61195bf3d13d96cdea338643b6
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 9c6435ba203e834cfc17e52870f642e27e6f6a7a
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746523"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834853"
 ---
 # <a name="a-virtual-machine-running-windows-vista-and-configured-with-dynamic-memory-should-use-recommended-values-for-memory-settings"></a>執行 Windows Vista 並設定動態記憶體的虛擬機器應該使用記憶體設定的建議值
 
@@ -24,7 +24,7 @@ ms.locfileid: "90746523"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

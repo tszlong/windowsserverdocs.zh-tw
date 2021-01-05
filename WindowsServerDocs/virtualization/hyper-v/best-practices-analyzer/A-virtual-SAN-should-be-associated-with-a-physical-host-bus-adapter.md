@@ -1,17 +1,17 @@
 ---
 title: 虛擬 SAN 應該與實體主機匯流排介面卡相關聯
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當虛擬存放區域網路 (SAN) 已設定，而沒有與主機匯流排介面卡 (HBA) 的關聯時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 14bca69b-e779-4e90-b5c1-1b015625572f
 ms.date: 8/16/2016
-ms.openlocfilehash: d49cbedb76320f3c1967bfd6cfd1e9590fd8925d
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 73ce82a03e4831ab5056cb6e75c2bf08cc52b494
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746373"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834203"
 ---
 # <a name="a-virtual-san-should-be-associated-with-a-physical-host-bus-adapter"></a>虛擬 SAN 應該與實體主機匯流排介面卡相關聯
 
@@ -24,7 +24,7 @@ ms.locfileid: "90746373"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。

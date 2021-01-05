@@ -1,17 +1,17 @@
 ---
 title: 避免暫停虛擬機器
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當這部伺服器有一部或多部虛擬機器處於暫停狀態時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 930f927c-e414-4a36-9786-028941e886e4
 ms.date: 8/16/2016
-ms.openlocfilehash: 956ada130cea2d489545c8206ae8283041e6868f
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: c1f5ba73a181ef0ec89dfa83bdbb82b3b49e9c6d
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90747033"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834613"
 ---
 # <a name="avoid-pausing-a-virtual-machine"></a>避免暫停虛擬機器
 
@@ -24,7 +24,7 @@ ms.locfileid: "90747033"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

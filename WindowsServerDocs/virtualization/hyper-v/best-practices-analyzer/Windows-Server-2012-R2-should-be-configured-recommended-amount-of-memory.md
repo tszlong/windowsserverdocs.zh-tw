@@ -1,17 +1,17 @@
 ---
 title: Windows Server 2012 R2 應設定為建議的記憶體數量
-description: 提供指示以解決這個最佳做法分析程式規則所報告的問題。
+description: 瞭解當執行 Windows Server 2012 R2 的虛擬機器設定為小於建議的 RAM 數量（也就是 2 GB）時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: b383a3c9-3ab6-442e-abd8-0942a32b60f8
 ms.date: 8/16/2016
-ms.openlocfilehash: 8b4b51f1e143fa3e1879cc008aae30423e775a0d
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 61087b7a6dca280f06148f6e3e25de4781e986ad
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865847"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97833863"
 ---
 # <a name="windows-server-2012-r2-should-be-configured-with-the-recommended-amount-of-memory"></a>Windows Server 2012 R2 應設定為建議的記憶體數量
 

@@ -1,17 +1,17 @@
 ---
 title: 避免在生產環境中執行伺服器工作負載的虛擬機器上使用 VHD 格式的差異虛擬硬碟
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當一或多部虛擬機器使用 VHD 格式的差異虛擬硬碟時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 272de33d-2708-4679-8564-ee28848a2839
 ms.date: 8/16/2016
-ms.openlocfilehash: 688dd348a7b00a32a50778cf0fb6350b37232f58
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 4a5d1a2b1c94845b26fd90df4e62932f28c99d0d
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90747013"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834603"
 ---
 # <a name="avoid-using-vhd-format-differencing-virtual-hard-disks-on-virtual-machines-that-run-server-workloads-in-a-production-environment"></a>避免在生產環境中執行伺服器工作負載的虛擬機器上使用 VHD 格式的差異虛擬硬碟
 
@@ -24,7 +24,7 @@ ms.locfileid: "90747013"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

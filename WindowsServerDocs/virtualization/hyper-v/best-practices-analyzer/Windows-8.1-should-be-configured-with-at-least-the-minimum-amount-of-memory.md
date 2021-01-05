@@ -1,17 +1,17 @@
 ---
 title: Windows 8.1 應至少以最少的記憶體數量進行設定
-description: 提供指示以解決這個最佳做法分析程式規則所報告的問題。
+description: 瞭解當執行 Windows 8.1 的虛擬機器設定為小於最小 RAM 數量（512 MB）時該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 84d7edab-610e-4265-87d0-9869f64b0039
 ms.date: 8/16/2016
-ms.openlocfilehash: b7fa050d45d5430cd4ed98f48c29f4bd3c823dd2
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: d0ece01115926c546ea91d99b49c5520c62b9019
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865891"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834233"
 ---
 # <a name="windows-81-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>Windows 8.1 應至少以最少的記憶體數量進行設定
 

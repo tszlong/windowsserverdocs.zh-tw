@@ -1,17 +1,17 @@
 ---
 title: 容錯移轉之後應移除復原快照集
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解已容錯移轉的虛擬機器有一或多個復原快照時該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 922115fa-e8dd-4055-aaf1-4a4437c5cf28
 ms.date: 8/16/2016
-ms.openlocfilehash: b30dbf9996f2406e3d260c825dbe2dbbc6918324
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: e37e59b8796913c2d46914834f4467e927f7e32b
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90745543"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97846267"
 ---
 # <a name="recovery-snapshots-should-be-removed-after-failover"></a>容錯移轉之後應移除復原快照集
 
@@ -37,7 +37,7 @@ ms.locfileid: "90745543"
 \<list of virtual machines>
 
 ## <a name="resolution"></a>**解決方法**
-*針對每個已容錯移轉的虛擬機器，請使用 Windows PowerShell 中的 Start-vmfailover 指令程式來移除復原快照，並指出容錯移轉完成。*
+*針對每個已容錯移轉的虛擬機器，使用 Windows PowerShell 中的 Complete-VMFailover Cmdlet 移除復原快照集，並指出容錯移轉完成。*
 
 
 

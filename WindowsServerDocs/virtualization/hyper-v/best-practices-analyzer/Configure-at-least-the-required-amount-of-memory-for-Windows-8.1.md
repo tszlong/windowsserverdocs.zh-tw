@@ -1,17 +1,17 @@
 ---
 title: 至少為執行 Windows 8.1 且已啟用動態記憶體的虛擬機器設定所需的記憶體數量
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當一或多部虛擬機器設定為使用動態記憶體，但其數量小於 Windows 8.1 所需的記憶體數量時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: d43a62f5-75ff-4b50-9687-3e58f42c0f4f
 ms.date: 8/16/2016
-ms.openlocfilehash: e13db8236b28e02a18fb6c07c9bc5de39f5ba51d
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 92c7d07339cef65086572a13678c9127429bc5bb
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746953"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97833813"
 ---
 # <a name="configure-at-least-the-required-amount-of-memory-for-a-virtual-machine-running-windows-81-and-enabled-for-dynamic-memory"></a>至少為執行 Windows 8.1 且已啟用動態記憶體的虛擬機器設定所需的記憶體數量
 
@@ -24,7 +24,7 @@ ms.locfileid: "90746953"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|錯誤|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

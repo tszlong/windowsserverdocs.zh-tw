@@ -1,17 +1,17 @@
 ---
 title: Windows 8.1 應設定建議的記憶體數量
-description: 提供指示以解決這個最佳做法分析程式規則所報告的問題。
+description: 瞭解當執行 Windows 8.1 的虛擬機器設定為小於建議的 RAM 數量（1 GB）時該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 4972101a-c266-4045-bdd6-4e75a9cd750e
 ms.date: 8/16/2016
-ms.openlocfilehash: eecad1ccf0df2985703c1be379a7590fb808e4d4
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: cdb8212581f82fa09207878a4ed5ac1631a93629
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865889"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97833993"
 ---
 # <a name="windows-81-should-be-configured-with-the-recommended-amount-of-memory"></a>Windows 8.1 應設定建議的記憶體數量
 

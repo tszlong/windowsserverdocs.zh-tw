@@ -1,17 +1,17 @@
 ---
 title: 正在執行或已設定的虛擬機器數目必須在支援的限制內
-description: 提供指示以解決這個最佳做法分析程式規則所報告的問題。
+description: 瞭解當執行中或設定的虛擬機器數目超過支援時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 9d3c4aa3-8416-46ec-a253-26dc98088d7b
 ms.date: 8/16/2016
-ms.openlocfilehash: f97ca9ad38bfdeee7e6d543a32f62f7a5344e700
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 257c929364614dd058721012ff80ea352479b5d5
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746823"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834823"
 ---
 # <a name="the-number-of-running-or-configured-virtual-machines-must-be-within-supported-limits"></a>正在執行或已設定的虛擬機器數目必須在支援的限制內
 
@@ -24,7 +24,7 @@ ms.locfileid: "90746823"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|錯誤
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體表示在此問題的最佳做法分析程式工具中出現的文字。
 
@@ -51,7 +51,7 @@ ms.locfileid: "90746823"
    > [!IMPORTANT]
    > 如果您要匯出的 Hyper-v 主機屬於某個網域，而您想要將匯出的檔案儲存在遠端位置，則必須針對限制委派設定 Hyper-v 主機。 遠端位置可能是共用網路資料夾或您要匯入之主機上的資料夾。 限制委派可讓 Hyper-v 主機的電腦帳戶為 Common Internet File System (CIFS) 服務提供給遠端電腦的委派認證。 如需設定限制委派的指示，請參閱下面的匯出和匯入指示一節。
 
-1.  開啟 Hyper-V 管理員。 按一下 [開始]****，指向 [系統管理工具]****，然後按一下 [Hyper-V 管理員]****。
+1.  開啟 Hyper-V 管理員。 按一下 [開始]，指向 [系統管理工具]，然後按一下 [Hyper-V 管理員]。
 
 2.  在結果窗格的 [ **虛擬機器**] 下，以滑鼠右鍵按一下虛擬機器，然後按一下 [ **匯出**]。
 
@@ -69,7 +69,7 @@ ms.locfileid: "90746823"
 
 3.  在 [匯 **入虛擬機器** ] 對話方塊中，指定您匯出虛擬機器的位置。 除非您想要重新匯入此虛擬機器，否則請保留 [匯入設定]。
 
-4.  按一下 [匯入]  。
+4.  按一下 [匯入] 。
 
 ### <a name="to-configure-constrained-delegation"></a>設定限制委派
 
@@ -78,11 +78,11 @@ ms.locfileid: "90746823"
 1.  在安裝 Active Directory Domain Services 工具功能的電腦上，于 [系統 **管理工具**] 中開啟 **Active Directory 消費者和電腦**，然後流覽至執行 hyper-v 之電腦的電腦帳戶。
 
     > [!NOTE]
-    > 若未列出 ****[Active Directory 使用者和電腦]，請安裝「Active Directory 網域服務工具」功能。 如需相關指示，請參閱 [安裝適用于 AD DS (的遠端伺服器管理工具](https://go.microsoft.com/fwlink/?LinkId=140463) https://go.microsoft.com/fwlink/?LinkId=140463) 。
+    > 若未列出 [Active Directory 使用者和電腦]，請安裝「Active Directory 網域服務工具」功能。 如需相關指示，請參閱 [安裝適用于 AD DS (的遠端伺服器管理工具](https://go.microsoft.com/fwlink/?LinkId=140463) https://go.microsoft.com/fwlink/?LinkId=140463) 。
 
 2.  在執行 Hyper-v 之電腦的電腦帳戶上按一下滑鼠右鍵，然後按一下 [內容 **]。**
 
-3.  在 [委派]**** 索引標籤上，按一下 [選取這台電腦，但只委派指定的服務]****，然後再按一下 [使用任何授權通訊協定]****。
+3.  在 [委派] 索引標籤上，按一下 [選取這台電腦，但只委派指定的服務]，然後再按一下 [使用任何授權通訊協定]。
 
 4.  若要允許 Hyper-v 電腦帳戶將委派的認證呈現給遠端電腦：
 

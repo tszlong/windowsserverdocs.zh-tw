@@ -1,17 +1,17 @@
 ---
 title: Hyper-V 上支援的 Debian 虛擬機器
-description: 列出每個版本中所包含的 Linux integration services 和功能
+description: 列出每個版本中所包含的 Debin/Linux integration services 和功能
 ms.topic: article
 ms.assetid: 3cc62c10-02a3-4633-960c-23bf91a45bd5
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 04/07/2020
-ms.openlocfilehash: 440d3c0dc51cc9e7d9c4d8abe439f4adb5da07dc
-ms.sourcegitcommit: faa5db4cdba4ad2b3a65533b6b49d960080923c9
+ms.openlocfilehash: 22d356f668f0e289a41bb43d738b03998b985ceb
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91752890"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834324"
 ---
 # <a name="supported-debian-virtual-machines-on-hyper-v"></a>Hyper-V 上支援的 Debian 虛擬機器
 
@@ -21,18 +21,18 @@ ms.locfileid: "91752890"
 
 ## <a name="table-legend"></a>資料表圖例
 
-* **內建的內建** 元件包含在此 Linux 發行版本中。 Microsoft 提供的 .LIS 下載套件不適用於此散發套件，因此請勿安裝。 內建的 .LIS (的核心模組版本號碼如 **lsmod**所示，例如) 與 Microsoft 提供的 .lis 下載套件上的版本號碼不同。 不相符並不表示內建的 .LIS 已過期。
+* **內建的內建** 元件包含在此 Linux 發行版本中。 Microsoft 提供的 .LIS 下載套件不適用於此散發套件，因此請勿安裝。 內建的 .LIS (的核心模組版本號碼如 **lsmod** 所示，例如) 與 Microsoft 提供的 .lis 下載套件上的版本號碼不同。 不相符並不表示內建的 .LIS 已過期。
 
 * &#10004;-可用功能
 
 *  (*空白*) -功能無法使用
 
-| **功能**                                                                                                                                  | **Windows Server 作業系統版本** | **10.0-10.3 (buster) ** | **9.0-9.12 (延展) ** | **8.0-8.11 (jessie) ** | **7.0-7.11 (wheezy) ** |
+| **功能**                                                                                                                                  | **Windows Server 作業系統版本** | **10.0-10.3 (buster)** | **9.0-9.12 (延展)** | **8.0-8.11 (jessie)** | **7.0-7.11 (wheezy)** |
 |----------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------|-----------------------|-----------------------|-----------------------|-----------------------|
 | **可用性**                                                                                                                             |                                             | 內建              | 內建              | 內建              | 內建 (附注 5)      |
-| **[核心](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**                                                   | 2019、2016、2012 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
+| **[核心版](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**                                                   | 2019、2016、2012 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
 | Windows Server 2016 精確時間                                                                                                            | 2019、2016                                  | &#10004; 附注4       | &#10004; 附注4       |                       |                       |
-| **[網路](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**                                       |                                             |                       |                       |                       |                       |
+| **[網路功能](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**                                       |                                             |                       |                       |                       |                       |
 | 大型訊框                                                                                                                                 | 2019、2016、2012 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
 | VLAN 標記和中繼                                                                                                                    | 2019、2016、2012 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
 | 即時移轉                                                                                                                               | 2019、2016、2012 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
@@ -40,22 +40,22 @@ ms.locfileid: "91752890"
 | vRSS                                                                                                                                         | 2019、2016、2012 R2                         | &#10004; 附注4       | &#10004; 附注4       |                       |                       |
 | TCP 分割和總和檢查碼卸載                                                                                                       | 2019、2016、2012 R2          | &#10004; 附注4       | &#10004; 附注4       |                       |                       |
 | SR-IOV                                                                                                                                       | 2019、2016                                  | &#10004; 附注4       | &#10004; 附注4       |                       |                       |
-| **[Storage](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**                                             |                                             |                       |                       |                       |                       |
+| **[儲存體](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**                                             |                                             |                       |                       |                       |                       |
 | VHDX 調整大小                                                                                                                                  | 2019、2016、2012 R2                         | &#10004; 附注1       | &#10004; 附注1       | &#10004; 附注1       | &#10004; 附注1       |
 | 虛擬光纖通道                                                                                                                        | 2019、2016、2012 R2                         |                       |                       |                       |                       |
 | 即時虛擬機器備份                                                                                                                  | 2019、2016、2012 R2                         | &#10004; Note2 | &#10004; Note2 | &#10004; Note2 | &#10004; Note2 |
 | TRIM 支援                                                                                                                                 | 2019、2016、2012 R2                         | &#10004; 附注4       | &#10004; 附注4       |                       |                       |
 | SCSI WWN                                                                                                                                     | 2019、2016、2012 R2                         | &#10004; 附注4       | &#10004; 附注4       |                       |                       |
-| **[記憶體](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**                                               |                                             |                       |                       |                       |                       |
+| **[記憶](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**                                               |                                             |                       |                       |                       |                       |
 | PAE 核心支援                                                                                                                           | 2019、2016、2012 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
 | 設定 MMIO 間距                                                                                                                    | 2019、2016、2012 R2                         | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
-| 動態記憶體-熱新增                                                                                                                     | 2019、2016、2012 R2                   | &#10004; 附注4       | &#10004; 附注4       |                       |                       |
+| 動態記憶體-Hot-Add                                                                                                                     | 2019、2016、2012 R2                   | &#10004; 附注4       | &#10004; 附注4       |                       |                       |
 | 動態記憶體-佔用                                                                                                                  | 2019、2016、2012 R2                   | &#10004; 附注4       | &#10004; 附注4       |                       |                       |
 | 執行時間記憶體大小調整                                                                                                                        | 2019、2016                                  | &#10004; 附注4       | &#10004; 附注4       |                       |                       |
-| **[視頻](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**                                                 |                                             |                       |                       |                       |                       |
+| **[影片](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**                                                 |                                             |                       |                       |                       |                       |
 | Hyper-v 特定的影片裝置                                                                                                                | 2019、2016、2012 R2          | &#10004;              | &#10004;              | &#10004;              |                       |
 | **[其他](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**                                 |                                             |                       |                       |                       |                       |
-| 索引鍵/值組                                                                                                                               | 2019、2016、2012 R2          | &#10004; 附注2       | &#10004; 附注2       | &#10004; 附注2       |                       |
+| Key-Value 配對                                                                                                                               | 2019、2016、2012 R2          | &#10004; 附注2       | &#10004; 附注2       | &#10004; 附注2       |                       |
 | 非遮罩式插斷                                                                                                                       | 2019、2016、2012 R2                         | &#10004;              | &#10004;              | &#10004;              |                       |
 | 從主機到來賓的檔案複製                                                                                                                 | 2019、2016、2012 R2                         | &#10004; 附注2       | &#10004; 附注2       | &#10004; 附注2       |                       |
 | lsvmbus 命令                                                                                                                              | 2019、2016、2012 R2          |                       |                       |                       |                       |
@@ -66,13 +66,13 @@ ms.locfileid: "91752890"
 | 安全開機                                                                                                                                  | 2019、2016                                  | &#10004;              |                       |                       |                       |
 
 
-## <a name="notes"></a>備註
+## <a name="notes"></a>附註
 
 1. 不支援在大於2TB 的 Vhd 上建立檔案系統。
 
 2. 從 Debian 8.3 開始，手動安裝的 Debian 套件 "hyperv-守護程式" 包含機碼值組、fcopy 和 VSS 守護程式。 在 Debian 7.x 和 8.0-8.2 上，hyperv 的守護程式套件必須來自 [Debian 反向移植](https://wiki.debian.org/Backports)。
 
-3. 在 Windows Server 2012 R2 第2代虛擬機器上，預設會啟用安全開機，除非停用安全開機選項，否則部分 Linux 虛擬機器將不會開機。 您可以在**Hyper-v 管理員**的虛擬機器設定的 [**固件**] 區段中停用安全開機，也可以使用 Powershell 來停用它：
+3. 在 Windows Server 2012 R2 第2代虛擬機器上，預設會啟用安全開機，除非停用安全開機選項，否則部分 Linux 虛擬機器將不會開機。 您可以在 **Hyper-v 管理員** 的虛擬機器設定的 [**固件**] 區段中停用安全開機，也可以使用 Powershell 來停用它：
 
    ```Powershell
    Set-VMFirmware -VMName "VMname" -EnableSecureBoot Off

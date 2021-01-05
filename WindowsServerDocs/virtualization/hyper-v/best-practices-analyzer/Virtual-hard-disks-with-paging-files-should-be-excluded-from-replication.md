@@ -1,17 +1,17 @@
 ---
 title: 具有分頁檔案的虛擬硬碟應從複寫中排除
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當分頁檔案體驗大量的輸入/輸出活動時該怎麼辦，這將會不必要地需要更多資源來參與複寫。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: c0be8a5f-64a1-488a-944e-bb913bb90517
 ms.date: 8/16/2016
-ms.openlocfilehash: 14729113ee2ba3694bcc29d50da5e7113c763268
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: c710891396ffe8914819796c18abaf0ddc41fea4
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746563"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97845755"
 ---
 # <a name="virtual-hard-disks-with-paging-files-should-be-excluded-from-replication"></a>具有分頁檔案的虛擬硬碟應從複寫中排除
 
@@ -24,7 +24,7 @@ ms.locfileid: "90746563"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|資訊|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

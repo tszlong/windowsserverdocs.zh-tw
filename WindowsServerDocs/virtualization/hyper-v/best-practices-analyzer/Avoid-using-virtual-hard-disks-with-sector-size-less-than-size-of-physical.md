@@ -1,17 +1,17 @@
 ---
 title: 避免使用磁區大小小於儲存虛擬硬碟檔案之實體儲存體磁區大小的虛擬硬碟
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當一或多個虛擬硬碟的實體磁區大小小於虛擬硬碟檔案所在之儲存體的實體磁區大小時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: b7cf994e-bf4b-4b1b-bad6-ecf7d46d105e
 ms.date: 8/16/2016
-ms.openlocfilehash: 946168aa200ec80e5d2c9a69e0ecfad2477dcb6e
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: e664b0947479935dd22c3409eeb0948e01fa9b89
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90745883"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834483"
 ---
 # <a name="avoid-using-virtual-hard-disks-with-a-sector-size-less-than-the-sector-size-of-the-physical-storage-that-stores-the-virtual-hard-disk-file"></a>避免使用磁區大小小於儲存虛擬硬碟檔案之實體儲存體磁區大小的虛擬硬碟
 
@@ -24,7 +24,7 @@ ms.locfileid: "90745883"
 |**運作中** <br />**系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

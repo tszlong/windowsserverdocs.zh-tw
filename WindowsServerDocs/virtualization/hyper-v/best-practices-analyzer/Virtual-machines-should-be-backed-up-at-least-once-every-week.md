@@ -1,17 +1,17 @@
 ---
 title: 虛擬機器至少應每週備份一次
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當一或多部虛擬機器未在過去一周內備份時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 7dbd3dfc-c873-4a77-89f7-3166e18d9531
 ms.date: 8/16/2016
-ms.openlocfilehash: 3b6b515f795d6c3e85a48b0fc5e6ac5165c5b6d5
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 9c2cc7836eca57b5d7ae7e180a8af5c6e3104996
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746223"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97846299"
 ---
 # <a name="virtual-machines-should-be-backed-up-at-least-once-every-week"></a>虛擬機器至少應每週備份一次
 
@@ -24,7 +24,7 @@ ms.locfileid: "90746223"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|錯誤|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

@@ -1,17 +1,17 @@
 ---
 title: 至少一個用於即時移轉流量的網路應該有至少 1 Gbps 的連結速度
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當至少有一個網路進行即時移轉流量時，該怎麼辦至少有 1 Gbps 的連結速度。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 5714df3f-f810-4618-8c93-e24881651100
 ms.date: 8/16/2016
-ms.openlocfilehash: cf1f09a635d6f6a46ee2a0bab2de53c898af9084
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: e18b9c259963c9a6ab1a3495f517e05a522be0c2
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746293"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834743"
 ---
 # <a name="at-least-one-network-for-live-migration-traffic-should-have-a-link-speed-of-at-least-1-gbps"></a>至少一個用於即時移轉流量的網路應該有至少 1 Gbps 的連結速度
 
@@ -24,7 +24,7 @@ ms.locfileid: "90746293"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|錯誤|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

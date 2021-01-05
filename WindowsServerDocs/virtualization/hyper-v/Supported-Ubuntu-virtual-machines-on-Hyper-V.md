@@ -1,17 +1,17 @@
 ---
 title: Hyper-v 上支援的 Ubuntu 虛擬機器
-description: 列出每個版本中所包含的 Linux integration services 和功能
+description: 列出每個版本中所包含的 Ubuntu/Linux integration services 和功能
 ms.topic: article
 ms.assetid: 95ea5f7c-25c6-494b-8ffd-2a77f631ee94
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 08/29/2020
-ms.openlocfilehash: 40064ac11b9e6d27ea864ba286278179a2ebd4bf
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 4e1384d372714932d45f9274d8c6e98eb42a5a04
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96864018"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834813"
 ---
 # <a name="supported-ubuntu-virtual-machines-on-hyper-v"></a>Hyper-v 上支援的 Ubuntu 虛擬機器
 
@@ -30,7 +30,7 @@ ms.locfileid: "96864018"
 |**功能**|**Windows Server 作業系統版本**|**20.04 LTS**|**18.04 LTS**|**16.04 LTS**|**14.04 LTS**|
 |-|-|-|-|-|-|
 |**可用性**||內建|內建|內建|內建|
-|**[核心](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
+|**[核心版](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |Windows Server 2016 精確時間|2019、2016|&#10004;|&#10004;|&#10004;||
 |**[網路功能](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**||||||
 |大型訊框|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
@@ -40,13 +40,13 @@ ms.locfileid: "96864018"
 |vRSS|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |TCP 分割和總和檢查碼卸載|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |SR-IOV|2019、2016|&#10004;|&#10004;|&#10004;||
-|**[存儲](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**|||||
+|**[儲存體](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**|||||
 |VHDX 調整大小|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |虛擬光纖通道|2019、2016、2012 R2|&#10004; 附注2|&#10004; 附注2|&#10004; 附注2|&#10004; 附注2|
 |即時虛擬機器備份|2019、2016、2012 R2|&#10004; 附注3、4、5|&#10004; 附注3、4、5|&#10004; 附注3、4、5|&#10004; 附注3、4、5|
 |TRIM 支援|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |SCSI WWN|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
-|**[記憶體](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||
+|**[記憶](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||
 |PAE 核心支援|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |設定 MMIO 間距|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |動態記憶體-Hot-Add|2019、2016、2012 R2|&#10004; 附注6、7、8|&#10004; 附注6、7、8|&#10004; 附注6、7、8|&#10004; 附注6、7、8|
@@ -65,7 +65,7 @@ ms.locfileid: "96864018"
 |使用 UEFI 開機|2019、2016、2012 R2|&#10004; 附注10，11|&#10004; 附注10，11|&#10004; 附注10，11|&#10004; 附注10，11|
 |安全開機|2019、2016|&#10004;|&#10004;|&#10004;|&#10004;|
 
-## <a name="notes"></a>注意
+## <a name="notes"></a>附註
 
 1. 如果 **網路系統管理員** 已針對虛擬機器上指定的 hyper-v 特定網路介面卡進行設定，則靜態 IP 插入可能無法運作。 若要確保靜態 IP 插入的正常運作，請確定網路系統管理員已完全關閉，或已透過其 **>ifcfg-eth0 ethX** 檔關閉特定網路介面卡的功能。
 

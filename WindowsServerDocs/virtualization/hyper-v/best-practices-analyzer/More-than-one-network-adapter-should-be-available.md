@@ -1,17 +1,17 @@
 ---
 title: 應可使用多張網路介面卡
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當伺服器設定為使用一個網路介面卡時要採取的動作，必須由管理作業系統和所有需要存取實體網路的虛擬機器所共用。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 59940e56-e06a-490f-90ea-cf30d9f80b09
 ms.date: 8/16/2016
-ms.openlocfilehash: 05dc0583424ed155c4780f9f0b4c016be850a71c
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 4cf106b15d69079e860b5a76febbc0ab549b0f34
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746263"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97846293"
 ---
 # <a name="more-than-one-network-adapter-should-be-available"></a>應可使用多張網路介面卡
 
@@ -24,7 +24,7 @@ ms.locfileid: "90746263"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|錯誤|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

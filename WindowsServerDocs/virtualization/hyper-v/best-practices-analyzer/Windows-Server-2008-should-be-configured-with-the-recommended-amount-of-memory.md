@@ -1,17 +1,17 @@
 ---
 title: Windows Server 2008 應設定為建議的記憶體數量
-description: 提供指示以解決這個最佳做法分析程式規則所報告的問題。
+description: 瞭解當執行 Windows Server 2008 的虛擬機器設定為小於建議的 RAM 數量（也就是 2 GB）時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: a98a8594-603b-487a-8739-78887c568e57
 ms.date: 8/16/2016
-ms.openlocfilehash: d712ca14527fec503d8767ac08e608fdf325cfe9
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 2b4d1ccd41d5422c19322c4871ee0ab96308903d
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865857"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97833874"
 ---
 # <a name="windows-server-2008-should-be-configured-with-the-recommended-amount-of-memory"></a>Windows Server 2008 應設定為建議的記憶體數量
 
@@ -38,7 +38,7 @@ ms.locfileid: "96865857"
 
 \<list of virtual machine names>
 
-## <a name="resolution"></a>解決方法
+## <a name="resolution"></a>解決方案
 
 *使用 Hyper-v 管理員將配置給此虛擬機器的記憶體增加到至少 2 GB。*
 

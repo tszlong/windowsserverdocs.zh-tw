@@ -1,17 +1,17 @@
 ---
 title: 動態記憶體已啟用，但在某些虛擬機器上沒有回應
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當一或多部虛擬機器遇到客體作業系統動態記憶體所需的驅動程式問題時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 91b7f50f-a071-4ab6-beb1-1b29f92f52b6
 ms.date: 8/16/2016
-ms.openlocfilehash: c826fc39637b3a7cf0f155065945d180bce5e4cb
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 2fbf600e2fa06f01ddbf3ad3dafc02ded25dc6fc
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90744133"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97846113"
 ---
 # <a name="dynamic-memory-is-enabled-but-not-responding-on-some-virtual-machines"></a>動態記憶體已啟用，但在某些虛擬機器上沒有回應
 
@@ -24,7 +24,7 @@ ms.locfileid: "90744133"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

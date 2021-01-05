@@ -1,17 +1,17 @@
 ---
 title: 執行 Windows 7 並使用動態記憶體設定的虛擬機器應該使用記憶體設定的建議值
-description: 提供指示以解決這個最佳做法分析程式規則所報告的問題。
+description: 瞭解當一或多部虛擬機器設定為動態記憶體使用小於 Windows 7 建議的記憶體數量時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: c3a0292a-a619-4d1c-8f9d-391c741411c1
 ms.date: 8/16/2016
-ms.openlocfilehash: eb27e0ed37f1699013d18b3666fd00da7e90a521
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: c8fe3bda2977f01794d4f51d43c35085a4514525
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746353"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834193"
 ---
 # <a name="a-virtual-machine-running-windows-7-and-configured-with-dynamic-memory-should-use-recommended-values-for-memory-settings"></a>執行 Windows 7 並使用動態記憶體設定的虛擬機器應該使用記憶體設定的建議值
 
@@ -24,7 +24,7 @@ ms.locfileid: "90746353"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

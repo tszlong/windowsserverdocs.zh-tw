@@ -1,17 +1,17 @@
 ---
 title: Hyper-v 上支援的 SUSE 虛擬機器
-description: 列出每個版本中所包含的 Linux integration services 和功能
+description: 列出每個版本中包含的 SUSE/Linux integration services 和功能
 ms.topic: article
 ms.assetid: 7ec0e14c-4498-4bd9-8fe6-b94260198efc
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 04/07/2020
-ms.openlocfilehash: 6bd14354f007469f62ae070ca2c5c03b65a127de
-ms.sourcegitcommit: 4f7308430a69fe7965e16aa5b31f87c5d68e4a09
+ms.openlocfilehash: 7bbf64a4c5e1689196024d443c13710d4176d535
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97577330"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97833833"
 ---
 # <a name="supported-suse-virtual-machines-on-hyper-v"></a>Hyper-v 上支援的 SUSE 虛擬機器
 
@@ -50,7 +50,7 @@ SLES12 + 僅限64位。
 |即時虛擬機器備份|2019、2016、2012 R2|&#10004; 附注2，3，8|&#10004;附注2，3，8|&#10004; 附注2，3，8|&#10004; 附注2，3，8|&#10004; 附注2，3，8|&#10004; 附注2，3，8|&#10004; 附注2，3，8|
 |TRIM 支援|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;||
 |SCSI WWN|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;||||
-|**[記憶體](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||||||
+|**[記憶](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||||||
 |PAE 核心支援|2019、2016、2012 R2|N/A|N/A|N/A|N/A|N/A|&#10004;|&#10004;|
 |設定 MMIO 間距|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |動態記憶體-Hot-Add|2019、2016、2012 R2|&#10004; 附注6|&#10004;附注6|&#10004; 附注6|&#10004; 附注6|&#10004; 附注6|&#10004; 附注4，5，6|&#10004; 附注4，5，6|

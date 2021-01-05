@@ -1,17 +1,17 @@
 ---
 title: 避免將一個儲存體路徑對應到多個資源集區
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當儲存體檔案路徑對應到多個資源集區時該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 24992453-762b-4892-9a50-55d237b9b7f2
 ms.date: 8/16/2016
-ms.openlocfilehash: fb2756889907dd9e268782816a9d035c9e6478d7
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: f39ea4da5a7b966a29b0ad943d40b02556c9460d
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90747043"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834633"
 ---
 # <a name="avoid-mapping-one-storage-path-to-multiple-resource-pools"></a>避免將一個儲存體路徑對應到多個資源集區
 

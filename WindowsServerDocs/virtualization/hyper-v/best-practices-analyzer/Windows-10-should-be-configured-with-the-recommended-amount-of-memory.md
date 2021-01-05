@@ -1,17 +1,17 @@
 ---
 title: Windows 10 應設定建議的記憶體數量
-description: 提供指示以解決這個最佳做法分析程式規則所報告的問題。
+description: 瞭解當執行 Windows 10 的虛擬機器設定為小於建議的 RAM 數量（1 GB）時該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 0c810b82-b06a-4382-b598-5c642e8534be
 ms.date: 8/16/2016
-ms.openlocfilehash: ffe4b2060b7e57a8c70b00f0157c8fba10a093df
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 52339d59afbd7d6159e11d48d3d3eff7b2513ea4
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865907"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97833753"
 ---
 # <a name="windows-10-should-be-configured-with-the-recommended-amount-of-memory"></a>Windows 10 應設定建議的記憶體數量
 

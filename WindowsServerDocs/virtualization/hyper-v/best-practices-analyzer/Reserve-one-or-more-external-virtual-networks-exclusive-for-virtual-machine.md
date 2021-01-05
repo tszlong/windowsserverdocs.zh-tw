@@ -1,17 +1,17 @@
 ---
 title: 保留一或多個外部虛擬網路供虛擬機器獨佔使用
-description: 提供指示以解決這個最佳做法分析程式規則所報告的問題。
+description: 瞭解當所有外部虛擬網路都設定為供管理作業系統和虛擬機器使用時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: f7732258-93f1-44e8-835b-5ad2d1c45cd9
 ms.date: 8/16/2016
-ms.openlocfilehash: 8039f5ef94f1ca762a994607d5a1faf8eac0d98e
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 430b7a933a0e4b301c1ced9dbc894527adca766b
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746503"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834083"
 ---
 # <a name="reserve-one-or-more-external-virtual-networks-for-exclusive-use-by-virtual-machines"></a>保留一或多個外部虛擬網路供虛擬機器獨佔使用
 
@@ -24,7 +24,7 @@ ms.locfileid: "90746503"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|錯誤|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 
@@ -42,9 +42,9 @@ ms.locfileid: "90746503"
 
 #### <a name="to-stop-sharing-the-external-virtual-network-with-the-management-operating-system"></a>停止與管理作業系統共用外部虛擬網路
 
-1.  開啟 Hyper-V 管理員。 按一下 [開始]****，指向 [系統管理工具]****，然後按一下 [Hyper-V 管理員]****。
+1.  開啟 Hyper-V 管理員。 按一下 [開始]，指向 [系統管理工具]，然後按一下 [Hyper-V 管理員]。
 
-2.  從 [動作]**** 功能表上，按一下 [虛擬交換器管理員]****。
+2.  從 [動作] 功能表上，按一下 [虛擬交換器管理員]。
 
 3.  在 [ **虛擬交換器**] 底下，按一下外部虛擬交換器的名稱。
 

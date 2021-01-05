@@ -1,17 +1,17 @@
 ---
 title: 使用中的邏輯處理器數目不得超過支援的上限
-description: 提供指示以解決這個最佳做法分析程式規則所報告的問題。
+description: 瞭解當伺服器設定的邏輯處理器太多時該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 66df8b02-91d1-424b-8934-a39c214d530e
 ms.date: 8/16/2016
-ms.openlocfilehash: 580d04af45416e08e536d815390be0e45b760312
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 469f1a816be5b9ebd714a1c52b279111fed46da0
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746143"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97833803"
 ---
 # <a name="the-number-of-logical-processors-in-use-must-not-exceed-the-supported-maximum"></a>使用中的邏輯處理器數目不得超過支援的上限
 
@@ -40,7 +40,7 @@ ms.locfileid: "90746143"
 
 *請從此電腦移除一些處理器，或使用 msconfig 來限制可用的處理器數目。*
 
-請參閱下列指示以使用 Msconfig。 如需移除處理器的詳細資訊，請參閱電腦隨附的指示，或洽詢硬體製造商。 如需 Hyper-v 支援的最大設定的詳細資訊，請參閱 [規劃 Windows Server 2016 中的 hyper-v 擴充性](../plan/plan-hyper-v-scalability-in-windows-server.md)。
+請參閱下列指示以使用 MSConfig。 如需移除處理器的詳細資訊，請參閱電腦隨附的指示，或洽詢硬體製造商。 如需 Hyper-v 支援的最大設定的詳細資訊，請參閱 [規劃 Windows Server 2016 中的 hyper-v 擴充性](../plan/plan-hyper-v-scalability-in-windows-server.md)。
 
 ### <a name="to-limit-the-number-of-available-processors"></a>限制可用處理器的數目
 

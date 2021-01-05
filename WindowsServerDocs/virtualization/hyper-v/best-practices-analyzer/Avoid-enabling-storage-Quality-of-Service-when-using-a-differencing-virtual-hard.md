@@ -1,17 +1,17 @@
 ---
 title: 當父系和子系虛擬硬碟位於不同的磁片區時，請避免在使用差異虛擬硬碟時啟用存放裝置服務品質
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當具有不同磁片區上的父系和子系虛擬硬碟的差異虛擬硬碟啟用儲存體服務品質時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: aa9ed408-65cf-40dc-aad2-118b54c70179
 ms.date: 8/16/2016
-ms.openlocfilehash: 792ee7f84694171b7b44602c8bb1a5c307d80c6c
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: b02cb69d62e9cac74f42f68b1d4be136e1d7cd29
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90747073"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834673"
 ---
 # <a name="avoid-enabling-storage-quality-of-service-when-using-a-differencing-virtual-hard-disk-when-the-parent-and-child-virtual-hard-disks-are-on-different-volumes"></a>當父系和子系虛擬硬碟位於不同的磁片區時，請避免在使用差異虛擬硬碟時啟用存放裝置服務品質
 
@@ -24,7 +24,7 @@ ms.locfileid: "90747073"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 
